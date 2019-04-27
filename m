@@ -2,54 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B24DCB295
-	for <lists+openwrt-devel@lfdr.de>; Sat, 27 Apr 2019 06:11:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD023B351
+	for <lists+openwrt-devel@lfdr.de>; Sat, 27 Apr 2019 14:29:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:Date:To:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=M3T8sOrI67IKMXSJsIuWl6nAmyd7XIV1LnnU6CrEML0=; b=iU+
-	f1r0ilEiphrwzWxd+KSbCw1TucIIN21sPADvanSkCOW8UdIMe57l1U8o6A9tQM82plLRxBCn5aTvn
-	Gz1x5uY5DASf5PdbLd/apSGbY771gFiuX4SVWkcWhKUxLhHZfjednH03HeJqICjd1cBXK9nw782xa
-	AAbcvHvS4OUOsHNLUh2XNMnm3JOWNwL9IBdBPKJdv04i+A1gDWOs/miL5nkI6wNeBOVBjk5udYqR+
-	uw3WB7N2YQUmA8S+mixYa1VdnJg+2/auugPsYz7VJ5HsPAGYJ/MNsC7TJY68TECOy5Pwh8CTVtM4n
-	PyvOzLvEntzT2TzR96uNeFd8vazPSng==;
+	References:List-Owner; bh=uMQbDKbXJu7GhSEPxFu4wBNFGT2IMVgfJWvU2T0iheA=; b=a3p
+	hsiYjN6dE1Mg1/zg3CnBmS4RM6TwXjTeI67ugpYEKFQtDOSJF3+LR6xL/0FCIA1rYwr9wRIoLTTLO
+	o03IcnaTb0eCwQlCkgEg0+yckHm7doT3TN8ly7gyKfLQQ9U8CNSM0OnQvi4atxjwNoH/LPxbF9VNo
+	m3FtHFINPbOmHtHXVwcpV1haeoVXwtdgUHZ5lWkh+D1OpCJPPFhR2WKNWd0dZTxbxm0cFB4NqzOwd
+	MTsk3DVzLVZCXljlAWZOpJcC/YU1/JDwq/w0OErWCO7B/Wb7uiVYqIAc3rhM6tZuFBvLoHOUFjCBr
+	jXdSSS3f+hEvEdhpXqo9RkE6Pk2w+uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKEgW-0003aV-Fp; Sat, 27 Apr 2019 04:11:32 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1hKMSY-0007pY-Vq; Sat, 27 Apr 2019 12:29:38 +0000
+Received: from mail-qt1-x833.google.com ([2607:f8b0:4864:20::833])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKEgI-0003Zi-Sw
- for openwrt-devel@lists.openwrt.org; Sat, 27 Apr 2019 04:11:21 +0000
-Received: from bilbo.ozlabs.org (localhost [IPv6:::1])
- by ozlabs.org (Postfix) with ESMTP id 44rct4470kz9sSp
- for <openwrt-devel@lists.openwrt.org>; Sat, 27 Apr 2019 14:11:08 +1000 (AEST)
-Authentication-Results: ozlabs.org; dmarc=none (p=none dis=none)
- header.from=patchwork.ozlabs.org
+ id 1hKMST-0007ou-C6
+ for openwrt-devel@lists.openwrt.org; Sat, 27 Apr 2019 12:29:34 +0000
+Received: by mail-qt1-x833.google.com with SMTP id e2so6419587qtb.4
+ for <openwrt-devel@lists.openwrt.org>; Sat, 27 Apr 2019 05:29:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=bVrNrYOWP0HiPgV8TO2AnOCMotIhG472mIjEbttJWWY=;
+ b=dOVICfCjPwAdUxaqF55Wjdxun/qqwz0E/Feq6JXLVeNrnoKxyS+tlIxDu9UGEm7bKM
+ 4yuiBvwnlnVRm+OAoRZl3UOlwfxCmhgApav+6cvsDP+SPEMiO8epGCCM28LdvAnJrFr3
+ OLAf+I9tp2E3F8jV6tT8wFZPdWp2e9Z9os6ujOe9kBpJjU2/8KDUCzBnVaZjIEw2JgqE
+ StaFY26i3EDNLV4ww4qBEstkIVDHuhJSF+HBrIe+jladvOR59z60AShOLRBWl6yJPOwz
+ ZlTKcL7W0B8pONtjRxHgeQr7r5yC0UbL0KKxurQLzRQG+lH33SsSklw0ViwqxlgBhNJ3
+ lEqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=bVrNrYOWP0HiPgV8TO2AnOCMotIhG472mIjEbttJWWY=;
+ b=PkxOC2LzLe5agC3EnqgDF1kPu2FjLK0COviU/gk1fL4LbvOsi7JJodKd/5LCXDFT2S
+ usMjm+7ZMLDkDwDwBDP+pxyQjXR4YOP+0zMl4q+6W4L6YNb0gRCiijDcfWw1xpN2P/DV
+ 0wyQFfO00ujfw9BHHwi1/Fs/UbnDlE7ysX/2TKFsnD0DQidcI8UzDj63vIA2R5AGGAgg
+ fat3OlsohLT981nfKGbzFILv6cGKrMa9cxLST6+CyxmKFMwjztsJ9fC1vq8FnECmbxKz
+ mWsSG6md+F6zoZAdw1IrPKxS/YX7Xf6FYzeOS0aaneqibsPDVkvHVYqbVbUPMuRGFe3V
+ ALYw==
+X-Gm-Message-State: APjAAAWxAKr1ndZ6BdCVZB3REnhVSx9FrvNZmRFZSMT/xAQph/tPXHm4
+ 5ivewV9H4x/VjKL0xmdhDhUkLZ6jLtocW8EUa+N5FQ==
+X-Google-Smtp-Source: APXvYqwOSGet6aHVUTNgBh0SeJSfPxaLPyuJqA08MgFDteKN/B8r+HCz+p/DNuNMsNMyqO92t5S1LgfvGgkglPG0IY0=
+X-Received: by 2002:aed:3efb:: with SMTP id o56mr28702801qtf.8.1556368168410; 
+ Sat, 27 Apr 2019 05:29:28 -0700 (PDT)
 MIME-Version: 1.0
-From: Patchwork <patchwork@patchwork.ozlabs.org>
+Received: by 2002:aed:21c8:0:0:0:0:0 with HTTP; Sat, 27 Apr 2019 05:29:27
+ -0700 (PDT)
+From: ban Lin <linban888888@gmail.com>
+Date: Sat, 27 Apr 2019 05:29:27 -0700
+Message-ID: <CAG71GdBSH92PgU-juYmjPU2=GtUkLKSwCn18d1uYAUpihCYFCQ@mail.gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 27 Apr 2019 04:11:08 -0000
-Message-ID: <20190427041108.23711.96679@bilbo.ozlabs.org>
-Precedence: bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190426_211119_400138_EE8DB3A5 
-X-CRM114-Status: UNSURE (   4.76  )
+X-CRM114-CacheID: sfid-20190427_052933_450713_7123888B 
+X-CRM114-Status: UNSURE (   2.65  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:833 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [openwrt] Patch notification: 79 patches updated
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linban888888[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (linban888888[at]gmail.com)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] please help me
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
+Precedence: list
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
@@ -58,501 +93,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5560570667731872711=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
+--===============5560570667731872711==
+Content-Type: multipart/alternative; boundary="000000000000d163d705878233b8"
 
-The following patches (submitted by you) have been updated in Patchwork:
+--000000000000d163d705878233b8
+Content-Type: text/plain; charset="UTF-8"
 
- * openwrt: [OpenWrt-Devel] download.mk, image.mk: add --mode=a-s option to tar
-     - http://patchwork.ozlabs.org/patch/1068464/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
+I need firmware for totolink n305rb ,please help me ,thanks a lot,totolink
+n305rb
 
- * openwrt: [OpenWrt-Devel,1/2] openssl: patch to fix devcrypto sessions leak
-     - http://patchwork.ozlabs.org/patch/1043245/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
+--000000000000d163d705878233b8
+Content-Type: text/html; charset="UTF-8"
 
- * openwrt: [OpenWrt-Devel] kernel: nf-nathelper depends on ipt-raw
-     - http://patchwork.ozlabs.org/patch/967392/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
+I need firmware for totolink n305rb ,please help me ,thanks a lot,totolink n305rb
 
- * openwrt: [OpenWrt-Devel,v2] openssl: backport devcrypto changes from master
-     - http://patchwork.ozlabs.org/patch/1046426/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
+--000000000000d163d705878233b8--
 
- * openwrt: [OpenWrt-Devel,v2,1/1] libpcap: patch to add limits.h to pcap-usb-linux.c
-     - http://patchwork.ozlabs.org/patch/952133/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
 
- * openwrt: [OpenWrt-Devel,v2] kernel: nf-nathelper depends on ipt-raw
-     - http://patchwork.ozlabs.org/patch/967393/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] brcm63xx: initial support for Sky SR102 router
-     - http://patchwork.ozlabs.org/patch/944013/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] openssl: add Eneas U de Queiroz as maintainer
-     - http://patchwork.ozlabs.org/patch/1088859/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] cryptodev-linux: move from packages feed
-     - http://patchwork.ozlabs.org/patch/995670/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] ar71xx: add support for UniFi-AC-Mesh-Pro
-     - http://patchwork.ozlabs.org/patch/994769/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,1/2] iproute2: RFC update cake support
-     - http://patchwork.ozlabs.org/patch/918489/
-     - for: OpenWrt development
-    was: New
-    now: RFC
-
- * openwrt: [OpenWrt-Devel,2/2] kmod-sched-cake: RFC latest cake
-     - http://patchwork.ozlabs.org/patch/918490/
-     - for: OpenWrt development
-    was: New
-    now: RFC
-
- * openwrt: [OpenWrt-Devel,2/4] libevent2: Make it build using OpenSSL 1.1.0
-     - http://patchwork.ozlabs.org/patch/918219/
-     - for: OpenWrt development
-    was: New
-    now: Not Applicable
-
- * openwrt: [OpenWrt-Devel,1/4] openssl: Upgrade to 1.1.0h
-     - http://patchwork.ozlabs.org/patch/918220/
-     - for: OpenWrt development
-    was: New
-    now: Not Applicable
-
- * openwrt: [OpenWrt-Devel] Honour NO_COLOR in include/scan.mk
-     - http://patchwork.ozlabs.org/patch/1033566/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,1/1] openssl, wolfssl: match mbedTLS ciphersuite list
-     - http://patchwork.ozlabs.org/patch/950307/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v3] openssl: backport devcrypto changes from master
-     - http://patchwork.ozlabs.org/patch/1047918/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,3/4] adb: added patch for openssl 1.1.0 compatibility
-     - http://patchwork.ozlabs.org/patch/918221/
-     - for: OpenWrt development
-    was: New
-    now: Not Applicable
-
- * openwrt: [OpenWrt-Devel] openssl: fix devcrypto engine md blocksize
-     - http://patchwork.ozlabs.org/patch/1046380/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,v4] openssl: backport devcrypto changes from master
-     - http://patchwork.ozlabs.org/patch/1049156/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,4/4] ustream-ssl: openssl-1.1 compatibility
-     - http://patchwork.ozlabs.org/patch/918222/
-     - for: OpenWrt development
-    was: New
-    now: Not Applicable
-
- * openwrt: [OpenWrt-Devel] openssl: revert disallowing parallel build
-     - http://patchwork.ozlabs.org/patch/1054880/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] ath79: add support for GL.iNet GL-AR750S
-     - http://patchwork.ozlabs.org/patch/1019411/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel,v2,ubox] kmodloader: increase module name length
-     - http://patchwork.ozlabs.org/patch/1046591/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] wireguard: bump to 0.0.20180620
-     - http://patchwork.ozlabs.org/patch/932376/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v2] rtl8812au: Add out-of-tree driver.
-     - http://patchwork.ozlabs.org/patch/1013206/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v2,1/2] lantiq: atm: fix ifx_atm driver integration
-     - http://patchwork.ozlabs.org/patch/930353/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,v2] kernel: bump 4.14 to 4.14.51
-     - http://patchwork.ozlabs.org/patch/932897/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] libpcap: patch to add limits.h to pcap-usb-linux.c
-     - http://patchwork.ozlabs.org/patch/951550/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel,2/2] ath79: fix qca955x dual pci resource allocation
-     - http://patchwork.ozlabs.org/patch/1032463/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] nettle: bump to 3.4
-     - http://patchwork.ozlabs.org/patch/922626/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] ustream-ssl: mbedtls: use chacha-poly ciphersuites
-     - http://patchwork.ozlabs.org/patch/951211/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel,v2] openssl: disable digests by default, misc fixes
-     - http://patchwork.ozlabs.org/patch/1055395/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] ath79: add support for GL.iNet GL-AR750S
-     - http://patchwork.ozlabs.org/patch/1019450/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] openssl: disable digests by default, misc fixes
-     - http://patchwork.ozlabs.org/patch/1054879/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] libevent2: update to version 2.1.8
-     - http://patchwork.ozlabs.org/patch/916677/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel,v3,3/3] ustream-ssl: Revised security on mbedtls
-     - http://patchwork.ozlabs.org/patch/930308/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] openssl: Upgrade to 1.1.0h
-     - http://patchwork.ozlabs.org/patch/916676/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel] ath79: add support for GL.iNet GL-AR750S
-     - http://patchwork.ozlabs.org/patch/1019420/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel,v2.1,4/4] ustream-ssl: openssl-1.1 compatibility
-     - http://patchwork.ozlabs.org/patch/923349/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,v2,1/4] openssl: Upgrade to 1.1.0h
-     - http://patchwork.ozlabs.org/patch/923115/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] openssl: bump to release 1.1.1b
-     - http://patchwork.ozlabs.org/patch/1049147/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] kernel: bump to 4.9.105
-     - http://patchwork.ozlabs.org/patch/923566/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v2,3/4] adb: added patch for openssl 1.1.0 compatibility
-     - http://patchwork.ozlabs.org/patch/923106/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] openssl: fix OPENSSL_config bug affecting wget
-     - http://patchwork.ozlabs.org/patch/1088771/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v2,2/4] libevent2: Make it build using OpenSSL 1.1.0
-     - http://patchwork.ozlabs.org/patch/923105/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,v2,4/4] ustream-ssl: openssl-1.1 compatibility
-     - http://patchwork.ozlabs.org/patch/923108/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,1/2] ath79: fix qca955x pcie0 memory size
-     - http://patchwork.ozlabs.org/patch/1032465/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] kernel: bump 4.14 to 4.14.51
-     - http://patchwork.ozlabs.org/patch/932599/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] ramips: mir3g dts define usb port Vcc volt regulator GPIO
-     - http://patchwork.ozlabs.org/patch/926435/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] kernel: nf-nathelper-extra depends on ipt-raw
-     - http://patchwork.ozlabs.org/patch/967385/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] kernel: bump 4.9 to 4.9.107
-     - http://patchwork.ozlabs.org/patch/927114/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v2] openssl: change defaults: ENGINE:on, NPN:off, misc
-     - http://patchwork.ozlabs.org/patch/1086624/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] openssl: change defaults: ENGINE:on, NPN:off, misc
-     - http://patchwork.ozlabs.org/patch/1086267/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] ramips: mir3g: reduce usb power flapping at boot
-     - http://patchwork.ozlabs.org/patch/926983/
-     - for: OpenWrt development
-    was: New
-    now: Rejected
-
- * openwrt: [OpenWrt-Devel,v3,2/3] ustream-ssl: Revised security on openssl/wolfssl
-     - http://patchwork.ozlabs.org/patch/930306/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,1/2] lantiq: atm: fix ifx_atm driver integration
-     - http://patchwork.ozlabs.org/patch/930314/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] procd: remove /dev filter on uevents
-     - http://patchwork.ozlabs.org/patch/1009301/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel,v3,1/3] ustream-ssl: add openssl-1.1.0 compatibility
-     - http://patchwork.ozlabs.org/patch/930309/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,2/2] kernel: atm: pppoatm fix vc-mux connection failures
-     - http://patchwork.ozlabs.org/patch/930315/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] odhcpd: allow specifying lease trigger mode
-     - http://patchwork.ozlabs.org/patch/935092/
-     - for: OpenWrt development
-    was: New
-    now: Rejected
-
- * openwrt: [OpenWrt-Devel,v2,2/2] kernel: atm: pppoatm fix vc-mux connection failures
-     - http://patchwork.ozlabs.org/patch/930354/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,1/1] ustream-ssl: update to latest git HEAD
-     - http://patchwork.ozlabs.org/patch/954161/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] openssl: build kmods only if engines are selected
-     - http://patchwork.ozlabs.org/patch/1091056/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] hotplug: Allow renaming phy devices.
-     - http://patchwork.ozlabs.org/patch/1013207/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel] Change mwlwifi driver version to 10.3.8.0-20181022.
-     - http://patchwork.ozlabs.org/patch/987524/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel] V 2 Re: Change mwlwifi driver version to 10.3.8.0-20181022.
-     - http://patchwork.ozlabs.org/patch/987769/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] ath79: align GL-AR750S boardname to other GL.iNet devices
-     - http://patchwork.ozlabs.org/patch/1019756/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,v2] cryptodev-linux: move from packages feed
-     - http://patchwork.ozlabs.org/patch/1002890/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] lantiq: atm: fix ifx_atm driver integration
-     - http://patchwork.ozlabs.org/patch/930754/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] kernel: atm: pppoatm fix vc-mux connection failures
-     - http://patchwork.ozlabs.org/patch/930753/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,1/1] omcproxy: fix compilation on little-endian CPUs
-     - http://patchwork.ozlabs.org/patch/1013677/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel,RFC] ltq_atm: burn ifx_atm_alloc_tx with fire
-     - http://patchwork.ozlabs.org/patch/931120/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] wolfssl: reorganized build options
-     - http://patchwork.ozlabs.org/patch/930625/
-     - for: OpenWrt development
-    was: New
-    now: Not Applicable
-
- * openwrt: [OpenWrt-Devel,2/2] openssl: backport devcrypto changes from master
-     - http://patchwork.ozlabs.org/patch/1043246/
-     - for: OpenWrt development
-    was: New
-    now: Superseded
-
- * openwrt: [OpenWrt-Devel,1/1] libevent2: Don't build tests and samples
-     - http://patchwork.ozlabs.org/patch/950854/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] libevent2: Make it build using OpenSSL 1.1.0
-     - http://patchwork.ozlabs.org/patch/917627/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
- * openwrt: [OpenWrt-Devel] Honour NO_COLOR in include/scan.mk
-     - http://patchwork.ozlabs.org/patch/1028835/
-     - for: OpenWrt development
-    was: New
-    now: Accepted
-
- * openwrt: [OpenWrt-Devel] adb: added patch for openssl 1.1.0 compatibility
-     - http://patchwork.ozlabs.org/patch/917564/
-     - for: OpenWrt development
-    was: New
-    now: Changes Requested
-
-This email is a notification only - you do not need to respond.
-
-Happy patchworking.
-
---
-
-This is an automated mail sent by the Patchwork system at
-patchwork.ozlabs.org. To stop receiving these notifications, edit
-your mail settings at:
-  http://patchwork.ozlabs.org/mail/
+--===============5560570667731872711==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5560570667731872711==--
+

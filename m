@@ -2,50 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44417B4A0
-	for <lists+openwrt-devel@lfdr.de>; Sun, 28 Apr 2019 00:14:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9695CB5CB
+	for <lists+openwrt-devel@lfdr.de>; Sun, 28 Apr 2019 11:42:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EX4HB99n7gYNB9XxeTCLJ/6cA0dOmgQHLJCPdogPqqY=; b=Qydo3y25/Y5dzy
-	4sdZudGemJg3gwGNj8SgPwCFVbAm2mGNszioE509tdjGBrfOi/Nzc645ydVD3w9JkUhmbRUDIvAq/
-	ANB30LnyDRZqjZPUAruWXCDzt5ZASGOb4nAGRaV4+I9yldJTZp1a2Ff/yT3boUFVyBVnq0Zz+VnJl
-	tBFgbbNci5QYkqfkeYOOTgqstfHc2Rc46SpPdGk2m75yzSII9SRExY0JeHYMQq2E6a/1SAUmTVwMk
-	KnFYBPHd94fmDkvJe6gL8QgfrZePeddh3OcpOZ7ofdE3Z3nmuRk4WQAPtbCK7dGGbC7Ect5EDYM6W
-	e22v+E6lPdAFgkQdFRHg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9TIIsAKExvfhKj413WTDuce0Wq9CcgRb2tu+eum5Zao=; b=CP7
+	NQH1ADkbDLoj5Le93wiDxcBQRR+woC9ERkrWVO3kD/9a6K7YKcCZrJUyzaCBdir3T/dqnvPFCMsTx
+	+Kdfjl14pMR/ayt0Qwa3gp6gamzrGXoIT6KcrZe1iea7eJPFvv8mjtlAj6UMrRyUSXTU9vq0pHEPB
+	/kVVLug4pvC8MiR4L0sZTTCnoNu7+mN5TpPu5MNuWujc2lgoUtZZ73N4JfKdyWoAYGEt1t1KQiGCJ
+	09Xct5kkIHsPVXR14pAKd3diNZHwurWxPAOKfecWPxYOXMiWfv/HuQ879R281U6Of1fSW+1KjrRCe
+	KbvHxf1XklLgRvQzzNU1qDyeLC49ODg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKVa4-0005S9-Ne; Sat, 27 Apr 2019 22:14:00 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1hKgJz-0002y6-6C; Sun, 28 Apr 2019 09:42:07 +0000
+Received: from mail-ot1-x330.google.com ([2607:f8b0:4864:20::330])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKVZx-0005Nu-EK
- for openwrt-devel@lists.openwrt.org; Sat, 27 Apr 2019 22:13:55 +0000
-Received: from localhost.localdomain (ip5f5ab4b1.dynamic.kabel-deutschland.de
- [95.90.180.177]) (Authenticated sender: mail@aparcar.org)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 75E57200003;
- Sat, 27 Apr 2019 22:13:43 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 28 Apr 2019 00:13:38 +0200
-Message-Id: <20190427221338.17190-1-mail@aparcar.org>
-X-Mailer: git-send-email 2.20.1
+ id 1hKgJr-0002xl-G6
+ for openwrt-devel@lists.openwrt.org; Sun, 28 Apr 2019 09:42:00 +0000
+Received: by mail-ot1-x330.google.com with SMTP id d24so6191115otl.11
+ for <openwrt-devel@lists.openwrt.org>; Sun, 28 Apr 2019 02:41:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=j7mbazpi/2bR78aWjxlq1pFB26t3s+63EpWaz+mrIZo=;
+ b=Lp1GLdTHFjUjyh+4DKyxuuiK/kbHkR8JFIFOpyWy4JNKlhKcGloNq3jXV9vGUdXdGM
+ 1/9D5XY5X5F7iHqkVQuqn7aVySJDXcCDZCY7aSmPZ0Lbsw1lvgz/PoKr1if2TiiS3Ezc
+ MD/h4G1Pn2Dj3BDsQ1kytbDcCpeEocyCM1YqxUFgvYndXYyZm7rCYBaMS3J7WbAHqwBD
+ y0CAo4cD2kXQJAsmISJ6rQU+QOgzypevTkpmQoc3zCetpNbkbsBWNCH3gPyytR45itwj
+ S9O3ubq9aGhB4LtQrWtkJSYZS8A6cDKw9b/GDWkGqBxR774IdwAJbNq/UFQeCjtYzcad
+ WSYg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=j7mbazpi/2bR78aWjxlq1pFB26t3s+63EpWaz+mrIZo=;
+ b=msWpvClXBSAbKoDBFwfD9wTvEotP6P6wglvL2+QOvEG5dJy0z8GPI8cjYtJIsZdmqc
+ L/jRFkO9Fv2q/WXbwaUzoTMkZsHvS7Vsey2i6XNf+Q/mfwN81TAsvBbWsso4EmFomr4W
+ sFaLDE1Rad3jvn+H0U6SwLQhwdLiG/wmLBI9Pgk+Hv7hqrLuFHTehRSN27K0uUed2UyI
+ DlwGGdTTdYxIo4mzCJQmtGjYdU0Wgz5TLmAgLBHrqmP4HaOMjfotSkclF0UqaLTJgV4U
+ HKOtNoNbrmUT5iAMERi7ZIzjbNbjOoTlhh8vE+KosUu1QYNSCsJnVYyGZ2XN9K5P+ETs
+ OE7A==
+X-Gm-Message-State: APjAAAW+jOdcIlgXp3RBh64V3018bhXsx6I3esLt76c/1JjpKSMqylAB
+ H1+MEJB1elKY5LGhmxFebkiHty9sScw1mZz0thXbNnewF0w=
+X-Google-Smtp-Source: APXvYqyc5BldYJEr5Md0xP38Ie7XY6YhKBJJ8QXDCKuHL8OXSonmVqzwxV2w1o9qiV4ahUeAQUZi7iNfwb6sCkP750c=
+X-Received: by 2002:a9d:6e1a:: with SMTP id e26mr9317058otr.208.1556444516553; 
+ Sun, 28 Apr 2019 02:41:56 -0700 (PDT)
 MIME-Version: 1.0
+From: zhngq2312 <zhngq2312@gmail.com>
+Date: Sun, 28 Apr 2019 17:41:49 +0800
+Message-ID: <CAHQM781NyMjjMavjRdKB8wPS83FdioO0P6AyLz-+Udbts88X1A@mail.gmail.com>
+To: Felix Fietkau <nbd@nbd.name>, openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_151353_783462_5452946E 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190428_024159_562890_1450B388 
+X-CRM114-Status: UNSURE (   6.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:330 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (xinglp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] procd: detect lxc container and behave
- accordingly
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] TCP can be established but not transfer any data
+ with OFFLOAD ipset wireguard
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -57,133 +89,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Paul Spooren <mail@aparcar.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-meaning to not mount some specific parts witch cause trouble.
+If wireguard replaced with other type vpn,  this issue still same.
+The wireguard iface wg0 added to lan zone by openwrt configuration
+/etc/config/firewall.
+Then I can access my home network by wireguard,  even access the
+internet through my home network, so far so good.
 
-The patch is based on previous work of *containercraft* to combine
-OpenWrt with lxc[0]. This patch however adds a detection copied from
-*virt-what* to check /proc/1/environment for "container=lxc".
+But many sites are blocked in this country by GFW. So I add these
+sites's domain name to dnsmasq's ipset list,
+Add redirect these ipaddress in ipset to a linux PC which run openvpn
+to get throuth GFW.
+Now every devices in my home network can access the sites blocked by GFW.
 
-[0]: https://github.com/containercraft/openwrt-lxd/blob/master/patches/procd-openwrt-18.06/001_lxd_no_mounts.patch
+But when I use wireguard or other vpn connect to my home network, I
+can't visite the blocked  sites.
+The [syn syn+ack ack] packets get through well, but not the first data packets.
+If I use netcat to connect to one blocked site, it can established,
+then WAIT A SECOND and type some ramdom data, I can got "HTTP/1.0 400
+Bad Request" as expected.
+If send data IMMEDIATELY  after it established, I can not get any response.
+If I connect to a blocked smtp like "nc -vv smtp.gmail.com 25", it
+works well, maybe because the server send data first?
 
-Signed-off-by: Paul Spooren <mail@aparcar.org>
----
- initd/early.c   | 19 +++++++++++--------
- initd/zram.c    | 10 ++++++----
- plug/coldplug.c | 13 ++++++++-----
- procd.c         |  7 ++++++-
- 4 files changed, 31 insertions(+), 18 deletions(-)
+If I turn off OFFLOAD, everythings works well.
 
-diff --git a/initd/early.c b/initd/early.c
-index 2e15112..4018e63 100644
---- a/initd/early.c
-+++ b/initd/early.c
-@@ -56,14 +56,17 @@ early_mounts(void)
- {
- 	unsigned int oldumask = umask(0);
- 
--	mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
--	mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
--	mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
--	mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
--	ignore(symlink("/tmp/shm", "/dev/shm"));
--	mkdir("/dev/pts", 0755);
--	mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
--	early_dev();
-+	if (!container) {
-+		mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-+		mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-+		mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-+		mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
-+		ignore(symlink("/tmp/shm", "/dev/shm"));
-+		mkdir("/dev/pts", 0755);
-+		mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
-+
-+		early_dev();
-+	}
- 
- 	early_console("/dev/console");
- 	if (mount_zram_on_tmp()) {
-diff --git a/initd/zram.c b/initd/zram.c
-index b41bfd9..e8d71c2 100644
---- a/initd/zram.c
-+++ b/initd/zram.c
-@@ -116,10 +116,12 @@ mount_zram_on_tmp(void)
- 		waitpid(pid, NULL, 0);
- 	}
- 
--	ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
--	if (ret < 0) {
--		ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
--		return errno;
-+	if (!container) {
-+		ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
-+		if (ret < 0) {
-+			ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
-+			return errno;
-+		}
- 	}
- 
- 	LOG("Using up to %ld kB of RAM as ZRAM storage on /mnt\n", zramsize);
-diff --git a/plug/coldplug.c b/plug/coldplug.c
-index c6a89c3..aabe379 100644
---- a/plug/coldplug.c
-+++ b/plug/coldplug.c
-@@ -43,13 +43,16 @@ void procd_coldplug(void)
- 	char *argv[] = { "udevtrigger", NULL };
- 	unsigned int oldumask = umask(0);
- 
--	umount2("/dev/pts", MNT_DETACH);
--	umount2("/dev/", MNT_DETACH);
--	mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
-+	if (!container) {
-+		umount2("/dev/pts", MNT_DETACH);
-+		umount2("/dev/", MNT_DETACH);
-+		mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
-+		mkdir("/dev/pts", 0755);
-+		mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
-+	}
-+
- 	ignore(symlink("/tmp/shm", "/dev/shm"));
--	mkdir("/dev/pts", 0755);
- 	umask(oldumask);
--	mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
- 	udevtrigger.cb = udevtrigger_complete;
- 	udevtrigger.pid = fork();
- 	if (!udevtrigger.pid) {
-diff --git a/procd.c b/procd.c
-index 3de6208..b938a2f 100644
---- a/procd.c
-+++ b/procd.c
-@@ -26,7 +26,7 @@
- #include "plug/hotplug.h"
- 
- unsigned int debug;
--
-+unsigned int container = 0;
- static int usage(const char *prog)
- {
- 	fprintf(stderr, "Usage: %s [options]\n"
-@@ -50,6 +50,11 @@ int main(int argc, char **argv)
- 		unsetenv("DBGLVL");
- 	}
- 
-+	char *env_container = getenv("container");
-+	if (strcmp("lxc",env_container) != 0) {
-+		container = 1;
-+	}
-+
- 	while ((ch = getopt(argc, argv, "d:s:h:S")) != -1) {
- 		switch (ch) {
- 		case 'h':
--- 
-2.20.1
+I setup ipset by these commands
+ip route add default via <IP of PC run openvpn> table 100
+ip rule add fwmark 1 lookup 100
+iptables -t mangle -D OUTPUT -j fwmark
+iptables -t mangle -A PREROUTING -j fwmark
+iptables -t mangle -A fwmark -m set --match-set  <ipset name set by
+dnsmasq> dst -j MARK --set-mark 1
 
+Thanks.
 
 _______________________________________________
 openwrt-devel mailing list

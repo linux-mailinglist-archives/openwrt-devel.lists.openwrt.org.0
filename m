@@ -2,82 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4364DC33
-	for <lists+openwrt-devel@lfdr.de>; Mon, 29 Apr 2019 08:51:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75BEBDCEA
+	for <lists+openwrt-devel@lfdr.de>; Mon, 29 Apr 2019 09:34:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:To:References:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fdt6ADIHl7U2Bl1eZhO79PasqEVhrVcZcDKg29Gwh0A=; b=OkTZsqTZMneoZ6
-	WhtiRfpsUL5hZ+Znq7ycKhgizPC7x0S/ubYuqIQyKeAct9FBlC5WaGGuVNTBQEUunvt+rXeMIImg7
-	yZEMqd2qvYqQ37nllKBWBeRKntIoyWLDyNgoRj+C9xylHDKoRaEraSBm9HFDxVyD2S/xj4q6En/KS
-	yrkbiV0R/geoEUj7gMeY7n1m2PdYwmX54DI9qP3uqEctkLWdIr9210m9gpyYYwGgRsJvTySZ2nty6
-	jUVUEPVzZWv1aqTkHgEHAq26FgL1JK8jzcQ+ZyA8QZELvr9LO6sYf1u3VjKPPTj5yk74ar+omfrLC
-	Pz00U9JLqBEyYWV3IjmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Mx1U3fNeBUV5bvt+EkgP2KzL9cXjyNUfhd7DkG1nXGQ=; b=GJ8K9Xr0/PRqFLO08QIMEf/1O
+	fZVb4DRHXzOXWyFh46Sq3swK3O1VMHxGhp/eTVQV4UOMoS6UaaAdwcK99ggsIO2j+RwB3Muqy697g
+	GwPPHsKenim/qSYMLOR4q+FbvdKzVBLVwaXk+lFzMJpyf6aGX64RTa62XEmZf9drsZdVhulqLI1qo
+	dXJqiPCNkYue+Goq9DsxbF2TYwhaySDwOvNl20EtDQaWgcHPOhM2OSmhDLuw6U05qedjC8sI9dr2g
+	6dogoqkYh2o5pz3beem18DW1N9WSMd50888fP12WV69CQOJFrMJ4OjBgO3C5uBRorHESiBehnETl+
+	lKSs/uDqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL07Z-0002tu-Dd; Mon, 29 Apr 2019 06:50:37 +0000
-Received: from mail.neratec.com ([46.140.151.2])
+	id 1hL0nT-0007Sg-6S; Mon, 29 Apr 2019 07:33:55 +0000
+Received: from mx.allycomm.com ([138.68.30.55])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL07S-0002t3-Hy
- for openwrt-devel@lists.openwrt.org; Mon, 29 Apr 2019 06:50:32 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by mail.neratec.com (Postfix) with ESMTP id 83877CE03B5;
- Mon, 29 Apr 2019 08:50:24 +0200 (CEST)
-Received: from mail.neratec.com ([127.0.0.1])
- by localhost (mail.neratec.com [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id wHP8sMsXKCcE; Mon, 29 Apr 2019 08:50:24 +0200 (CEST)
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by mail.neratec.com (Postfix) with ESMTP id 5F375CE03BB;
- Mon, 29 Apr 2019 08:50:24 +0200 (CEST)
-DKIM-Filter: OpenDKIM Filter v2.10.3 mail.neratec.com 5F375CE03BB
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=neratec.com;
- s=9F5C293A-195B-11E9-BBA5-B4F3B9D999CA; t=1556520624;
- bh=iyS8ishFFsz9mKAWpbjgGr38FnQTOJ8/fNBABmmmKgM=;
- h=To:From:Message-ID:Date:MIME-Version;
- b=keDqQ5jSkrDFnDhBlO5FIRVuZLGkRBxmDz7wj5YPkaRREqO1Bo2jhYLrlzD3IXpJm
- 1zf1Z9ruynnxcftOy4/EfpfcXjaC/WrKBO8HbH/8LW/gIgoT8kbv9KPKvBqCcDOD+1
- YtDvcX5cbQz8YU1PmkII2g+W69alvVnr9beGq586F1752X3DobBq5JeyHwAs3ce7Zj
- qBXGoE8kP9m/ycsj0VQTM1qmwqty4KbJsZINl0Yp8ln1Mix/gF7yAXlzerndFV2BSI
- FVbnNkuJntKpM3ymAPN7ogj31YzD/9Nw+HnnuIbg+YbH6huTY6+MRLfa0QdgiSe4cm
- bLECisPVsFgMw==
-X-Virus-Scanned: amavisd-new at neratec.com
-Received: from mail.neratec.com ([127.0.0.1])
- by localhost (mail.neratec.com [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 8I5rhShO8HOU; Mon, 29 Apr 2019 08:50:24 +0200 (CEST)
-Received: from [172.29.101.151] (CHD500279.lan.neratec.com [172.29.101.151])
- by mail.neratec.com (Postfix) with ESMTPSA id 48324CE03B5;
- Mon, 29 Apr 2019 08:50:24 +0200 (CEST)
-References: <f0cd6229-71b1-fecc-3876-97a68ef743a6@ironai.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Matthias May <matthias.may@neratec.com>
-Message-ID: <cd20ab81-8400-0e34-dc7c-ff885aa5d1ef@neratec.com>
-Date: Mon, 29 Apr 2019 08:50:23 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.5.1
+ id 1hL0nM-0007Rf-2n
+ for openwrt-devel@lists.openwrt.org; Mon, 29 Apr 2019 07:33:50 +0000
+Received: from JKLETSKY-MBP15.local (184-23-189-67.vpn.dynamic.sonic.net
+ [184.23.189.67])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.allycomm.com (Postfix) with ESMTPSA id 95BA526C70;
+ Mon, 29 Apr 2019 00:33:45 -0700 (PDT)
+To: openwrt-devel@lists.openwrt.org
+References: <eb859404-cd9f-d340-7426-e3d58fa5d4cd@wagsky.com>
+From: Jeff Kletsky <lede@allycomm.com>
+Message-ID: <0dabc393-f4a4-5676-4318-0042f10889fe@allycomm.com>
+Date: Mon, 29 Apr 2019 08:33:44 +0100
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <f0cd6229-71b1-fecc-3876-97a68ef743a6@ironai.com>
-Content-Language: en-GB
+In-Reply-To: <eb859404-cd9f-d340-7426-e3d58fa5d4cd@wagsky.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_235030_924182_721180EC 
-X-CRM114-Status: UNSURE (   5.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190429_003348_119881_A999C5BC 
+X-CRM114-Status: GOOD (  17.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Fix TX power handling
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [138.68.30.55 listed in list.dnswl.org]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: Remove NAND targets as no
+ available drivers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,34 +63,174 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Vincent Wiemann <vincent.wiemann@ironai.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2266415539282555887=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 25/04/2019 17:54, Vincent Wiemann wrote:
-> First EIRP is by definition ERP + antenna gain - cable loss.
+This is a multi-part message in MIME format.
+--===============2266415539282555887==
+Content-Type: multipart/alternative;
+ boundary="------------89F6785AB714428779DFA857"
+Content-Language: en-US
 
-Hi
-Small detail: Don't forget the antenna array gain.
+This is a multi-part message in MIME format.
+--------------89F6785AB714428779DFA857
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-So EIRP as:
-Antenna Port Power
-+ Antenna Gain
-+ Antenna Array Gain
-- Cable Loss
+Updating this patch as likely still valuable for v19
 
-The Array Gain as a simple lookup table:
-1 Antenna: 0
-2 Antennas: 3
-3 Antennas: 5
-4 Antennas: 6
+WIP on master edited for Linux 4.19 and ath79 spi-nand suggests that
+support will be possible after ath79 master moves to Linux 4.19
 
-BR
-Matthias
+Jeff
+
+
+
+ From 7bd39bc01d8b0a03e796268f06f99b5a65fc353a Mon Sep 17 00:00:00 2001
+From: Jeff Kletsky <git-commits@allycomm.com>
+Date: Mon, 28 Jan 2019 08:25:52 -0800
+Subject: [PATCH] ath79: Remove NAND targets as no available drivers
+
+At this time, there are no drivers for NAND flash for ath79.
+
+Remove the only present ath79 NAND target, GL.iNet AR300M,
+as it will not boot due to lack of a suitable NAND driver.
+
+ From openwrt-devel on 2019-01-25
+
+   The upstream SPI NAND framework is available in 4.19.
+
+   As for raw nand driver for AR9344/QCA9558, the ar934x-nfc driver
+   isn't ported to ath79 yet.
+
+ From https://github.com/openwrt/openwrt/pull/1428 on 2018-11-26
+
+   (In reference to patches trying to support the GL.iNet AR300M NAND
+    without using the spi-nand as it not present in Kernel 4.14)
+
+   Please re-spin the patch as soon as we have kernel 4.19 support. The
+   approach was already NAK'ed upstream and I don't see much gain in
+   adding the hack if the next major kernel in OpenWrt will provide a
+   suitable solution.
+---
+  target/linux/ath79/image/nand.mk | 15 ++-------------
+  1 file changed, 2 insertions(+), 13 deletions(-)
+
+diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
+index eee419194b..91873ef007 100644
+--- a/target/linux/ath79/image/nand.mk
++++ b/target/linux/ath79/image/nand.mk
+@@ -1,13 +1,2 @@
+-define Device/glinet_gl-ar300m-nand
+-  ATH_SOC := qca9531
+-  DEVICE_TITLE := GL-AR300M (NAND)
+-  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-storage kmod-usb-ledtrig-usbport
+-  KERNEL_SIZE := 2048k
+-  BLOCKSIZE := 128k
+-  PAGESIZE := 2048
+-  VID_HDR_OFFSET := 512
+-  IMAGES += factory.ubi
+-  IMAGE/sysupgrade.bin := sysupgrade-tar
+-  IMAGE/factory.ubi := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
+-endef
+-TARGET_DEVICES += glinet_gl-ar300m-nand
++# No NAND drivers available for the ath79 target at this time
++# (January, 2019)
+-- 
+2.11.0
+
+
+
+--------------89F6785AB714428779DFA857
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <pre>Updating this patch as likely still valuable for v19
+
+WIP on master edited for Linux 4.19 and ath79 spi-nand suggests that
+support will be possible after ath79 master moves to Linux 4.19
+
+Jeff
+
+
+
+From 7bd39bc01d8b0a03e796268f06f99b5a65fc353a Mon Sep 17 00:00:00 2001
+From: Jeff Kletsky <a class="moz-txt-link-rfc2396E" href="mailto:git-commits@allycomm.com">&lt;git-commits@allycomm.com&gt;</a>
+Date: Mon, 28 Jan 2019 08:25:52 -0800
+Subject: [PATCH] ath79: Remove NAND targets as no available drivers
+
+At this time, there are no drivers for NAND flash for ath79.
+
+Remove the only present ath79 NAND target, GL.iNet AR300M,
+as it will not boot due to lack of a suitable NAND driver.
+
+From openwrt-devel on 2019-01-25
+
+  The upstream SPI NAND framework is available in 4.19.
+
+  As for raw nand driver for AR9344/QCA9558, the ar934x-nfc driver
+  isn't ported to ath79 yet.
+
+From <a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/pull/1428">https://github.com/openwrt/openwrt/pull/1428</a> on 2018-11-26
+
+  (In reference to patches trying to support the GL.iNet AR300M NAND
+   without using the spi-nand as it not present in Kernel 4.14)
+
+  Please re-spin the patch as soon as we have kernel 4.19 support. The
+  approach was already NAK'ed upstream and I don't see much gain in
+  adding the hack if the next major kernel in OpenWrt will provide a
+  suitable solution.
+---
+ target/linux/ath79/image/nand.mk | 15 ++-------------
+ 1 file changed, 2 insertions(+), 13 deletions(-)
+
+diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
+index eee419194b..91873ef007 100644
+--- a/target/linux/ath79/image/nand.mk
++++ b/target/linux/ath79/image/nand.mk
+@@ -1,13 +1,2 @@
+-define Device/glinet_gl-ar300m-nand
+-  ATH_SOC := qca9531
+-  DEVICE_TITLE := GL-AR300M (NAND)
+-  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-storage kmod-usb-ledtrig-usbport
+-  KERNEL_SIZE := 2048k
+-  BLOCKSIZE := 128k
+-  PAGESIZE := 2048
+-  VID_HDR_OFFSET := 512
+-  IMAGES += factory.ubi
+-  IMAGE/sysupgrade.bin := sysupgrade-tar
+-  IMAGE/factory.ubi := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
+-endef
+-TARGET_DEVICES += glinet_gl-ar300m-nand
++# No NAND drivers available for the ath79 target at this time
++# (January, 2019)
+-- 
+2.11.0
+
+
+</pre>
+  </body>
+</html>
+
+--------------89F6785AB714428779DFA857--
+
+
+--===============2266415539282555887==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2266415539282555887==--
+

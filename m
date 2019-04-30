@@ -2,70 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A9A1F239
-	for <lists+openwrt-devel@lfdr.de>; Tue, 30 Apr 2019 10:47:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3032FF8A5
+	for <lists+openwrt-devel@lfdr.de>; Tue, 30 Apr 2019 14:18:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Hx+VwZcIA0FXgWbgkuO/+O5t5LdNafp79Dnk1oUdI88=; b=RSI
-	BEq7KAQUJpA+PU2tqrOIosrhWrfGsNb3WJUiKXxlNKJPSqQqFpugKCykxoAxhIwI4XfxgIf6J6iF2
-	dLw5bbhkp5ZI5bIrALCNDQCgbc6xMMm4wmHQM0WcquW15sFrCsv+BFBaskWYklnmLUKSbuTv05HAx
-	BjaltJka1FauZP/nIKqgy075WPCV/ZHzdRnAm1Z3LPg1yjmlh8t/gNi2g3Q3bPgsKrq7+hLDAEM++
-	sozalinMGbBPVPkPvxfMSSZL5bkbHQsZ6k4jI7wK+uyP3oUhLVAuLBjdOX5wKefg91s1nSHh1W4Kb
-	wiiLFTIdqoGYgFz8tBWPTEgFuTYtrJQ==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ptf89ztanyr2+NjVTjWCfSzPIKtGGErBuDd59txOBBY=; b=NZQly671afuKoyHE0ZVkcclhF
+	E/wH9phVyS7lvkPPQ1y8LpAiGaPVaEllDpmVhKRcts/uvptkI+Y9hpmDVc8TMGRIvuTFx1UW3wkS9
+	//ue9MVrUyklmwhOKdldrkS6osneySqLnp+GKwomoXhUM3Q5aiVqodDQ9YPdJWQ0KkhPeAL7K/EA+
+	1poM11KvonqmeFCLQ70Unhoz1XyzjGi5B2vNExoO2K+NI1c186gbq/UYM610ATWebrUa+R+c6SX7f
+	TUy9Qhz8QRyQtBU5q+Xgfqb9KT3L+RLqNWgErvewB/5zA1mG0xYs9FSkbIFdijqsSKdgwabU8EDYt
+	XNsnUS/Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLOPk-0008QQ-MC; Tue, 30 Apr 2019 08:47:00 +0000
-Received: from server1.alphav.site ([134.209.89.213])
- by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLOPe-0008Pv-76
- for openwrt-devel@lists.openwrt.org; Tue, 30 Apr 2019 08:46:56 +0000
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=asdzxcv;
- d=seocompanysg.com; 
- h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
- i=janey@seocompanysg.com; bh=czrTLF1If36QGQf8F2X94kGuuBM=;
- b=liRO3YvV4XnDCeZ79yNwON4+BQeWSwbBEwjiS+snU8XjUVG1aJDkVwgdfpN8WVsjV43ZbvEQPhwQ
- 1w6uFOH8mH/27dHZTmLpivgIls00EEqiGiiTO3wMwgfx9Vpi+8179sY2odiye/9oMSLi8HAas/KV
- 9qjguSM3l2GUE7MCOE8=
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=asdzxcv;
- d=seocompanysg.com; 
- h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
- i=janey@seocompanysg.com; bh=czrTLF1If36QGQf8F2X94kGuuBM=;
- b=liRO3YvV4XnDCeZ79yNwON4+BQeWSwbBEwjiS+snU8XjUVG1aJDkVwgdfpN8WVsjV43ZbvEQPhwQ
- 1w6uFOH8mH/27dHZTmLpivgIls00EEqiGiiTO3wMwgfx9Vpi+8179sY2odiye/9oMSLi8HAas/KV
- 9qjguSM3l2GUE7MCOE8=
-DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=asdzxcv; d=seocompanysg.com;
- b=LQInD26E6MExho88yLmbJh22B0ic1KF0LDAF+zdWbAcxN78a8gJowRRHk6R1ihku2PuDjOc6uxe0
- JTL/MhNRTtv+zzD+TlTsnmW1VusLQD5feipER5q4Gx9gX84Nc4281ZwjHF9NDm0RHYrtSj4jR15K
- AKlrtWw/KGl483oVXQY=;
-From: "Janey Chang" <janey@seocompanysg.com>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Tue, 30 Apr 2019 14:02:57 +0530
-Message-ID: <46f301d4ff2f$d9a8a140$8cf9e3c0$@seocompanysg.com>
-MIME-Version: 1.0
+	id 1hLRiI-0000xn-Nz; Tue, 30 Apr 2019 12:18:22 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLRiB-0000wt-Fm
+ for openwrt-devel@lists.openwrt.org; Tue, 30 Apr 2019 12:18:17 +0000
+Received: from desktop ([188.195.207.50]) by mrelayeu.kundenserver.de
+ (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1N332D-1gcmad1LEz-013RSY; Tue, 30 Apr 2019 14:18:10 +0200
+From: <mail@adrianschmutzler.de>
+To: "'camden lindsay'" <camden.lindsay+lede@gmail.com>
+References: <20190417134552.9294-1-freifunk@adrianschmutzler.de>
+ <3153692.KaT8f5YDfS@debian64>
+ <8a272c0b-4f75-df8a-f2a4-f9197ee9f7c4@david-bauer.net>
+ <2243041.a4oj9KbRke@debian64>
+ <912fd259-fe71-3446-bd05-838bea125163@david-bauer.net>
+ <005601d4f900$da3d1760$8eb74620$@adrianschmutzler.de>
+ <CABkW7JNC7uNqx+BgH80WAywsXymxEfwzFA+YRSmsYfDiRZDLpg@mail.gmail.com>
+In-Reply-To: <CABkW7JNC7uNqx+BgH80WAywsXymxEfwzFA+YRSmsYfDiRZDLpg@mail.gmail.com>
+Date: Tue, 30 Apr 2019 14:18:09 +0200
+Message-ID: <007201d4ff4e$c6820a10$53861e30$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AdT/Lx491hg63fZmTnuUOfchZxcmMw==
-Content-Language: en-us
+MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQKjPi7u5lBoryOgLv3WXCS/yUXMzgJSngsKAeflfosB7OewiQG/UGe2AjQDHuUC9id5OKRPmB2g
+X-Provags-ID: V03:K1:6LQ0D/nrVJjO3DEAgZTnQWWr/VecNijJwmsKHKqhbMPrP66H0yW
+ qcerbmjbZ4GCQ8qqjsMVRDM+bH6XcTl2E/uwdH2g4wRL/ukcWVIt/uS5Xr1jMpakSjopkiZ
+ iRa/GMe6c5JeSIMUohZH7rJcR0xSTpRRQNHEFz1qhOo9YD17PC9ZwKXjC8HsdIbiDSe5r8x
+ 81gULAvMTnoAEGIZ2iRew==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:gUsTgfRWb+I=:IArOR7lf+f6g9j+8I/kUxT
+ tAnLU2vIZJMcl0vxPgz/66/Olv25V7D5I9C9spzVSWl8C5vUOVdy5oRCZhryA7C0hsTDYN7+n
+ vTs8ov2x37butzGPJDMpNDN/bXrXi1A9QyZ4L2AMjDCHWrMwgs/nfNgPFHO8/y4srop9SmJkR
+ y0Qpz184rOr82vGLDUCUVgDBb92LDBRp+1gi/FJKesJxuOUvZsCg1XfbJv5DFCTb2x54gOLOX
+ 2Irb63EdL90bZXZNM94EhBz8xSdMFcBbVOO39gfS8bys1RuxDI+Kki/REk4B0Aceo+PGvtX2L
+ nZrU2M9Lciiyw7DH81mqU3NwUraFvgsCd85Z4Lr9Gd2Xc029bpNADo4IgJnlnsW3zB9+hItgB
+ ff58Xw7gyPSgfbrv48gP3lGEBj/10LIml2zVUa87SJFBsCHc0wVaQMfCeVPGPaD4+w7o1ulBg
+ /UebF2nubkJ0fXlASZ4xbXwIEFDIu1Atw4b8+fVQ597AU2ITI5ZdiDbvMYISY9ai2cvQZ7+QQ
+ YDYxVWMRR5nmDlifMgJ7IGX2siRivX8FxND7s3NhAARRY20xl/zC7zepl5qwONODeQ408Qnxy
+ xLdmVq2lJJS/BTHxAw/nGCPsnkEfoWgzDMqQs+jZikJYumGU1o6oIbLJZFJFWjSuMDr2ciCz2
+ JiQxkOBwEqT4irYTjbHzDnTpsihwqB/7Arhw3+g446R6C3cljku8mn7mLA9WaacuqgIooxYiN
+ Hy4cmtGiVKCwy4sDOj4tiDvRW7wjLd+FJwn0KL2iPwANizmWNqHuAw6V/8Q=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_014654_403064_3BF218C7 
-X-CRM114-Status: UNSURE (  -3.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20190430_051815_827056_79117A16 
+X-CRM114-Status: GOOD (  22.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.7 URIBL_BLACK            Contains an URL listed in the URIBL blacklist
- [URIs: seocompanysg.com]
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
- 1.4 DOS_OUTLOOK_TO_MX      Delivered direct to MX with Outlook headers
-Subject: [OpenWrt-Devel] Improve local business
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: Add SUPPORTED_DEVICES for Archer
+ C7 v1/v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,295 +82,196 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7158853966521068798=="
+Cc: 'Adrian Schmutzler' <freifunk@adrianschmutzler.de>,
+ 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>,
+ 'Tomasz Maciej Nowak' <tomek_n@o2.pl>, 'David Bauer' <mail@david-bauer.net>,
+ 'Christian Lamparter' <chunkeey@gmail.com>
+Content-Type: multipart/mixed; boundary="===============7623556360168886445=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============7158853966521068798==
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_46F4_01D4FF5D.F3645FB0"
-Content-Language: en-us
+--===============7623556360168886445==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=U3KKQXo26W7Rtu=-="
 
 This is a multipart message in MIME format.
 
-------=_NextPart_000_46F4_01D4FF5D.F3645FB0
+--=-=U3KKQXo26W7Rtu=-=
 Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-
-Hi,
-
- 
-
-Hope you are doing well.
-
- 
-
-Are you looking to get SEO done on your website?
-
- 
-
-Want to see your website on Top of the 1st page of Google or other major
-search engine?
-
- 
-
-Over 85% of online searchers focus on the 1st page of any search engine
-result. If your website does not make it to the first page, you can lose
-potential traffic on your webpage and consequently major chunk of your
-business revenue.
-
- 
-
-Your website needs immediate improvement for some major issues with your
-website.
-
--Low online presence for many competitive keyword phrases
-
--Unorganized social media accounts
-
--Not compatible with all mobile devices
-
--Many bad back links to your website
-
- 
-
-If you are interested, please reply me on this email with the list of
-keywords and domain (s) which you want to target. We will analysis your
-website and send full free Analysis report along with suitable plan.
-
- 
-
-I'd be happy to share our past work and client testimonials and Client
-testimonials.
-
- 
-
-I'm waiting for your prompt reply.
-
-Thanks & Regards,
-
-Janey Chang
-
-Business Development Manager
-
-Contact No:- +65 3158 0551
-
- 
-
-Note: - Though this is not an automated email, (i.e., to ensure that we do
-not contact you again for this matter), please send a blank mail to it with
-NO as Subject.
-
- 
-
-
-------=_NextPart_000_46F4_01D4FF5D.F3645FB0
-Content-Type: text/html;
-	charset="us-ascii"
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
-HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
-charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
-(filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:8.0pt;
-	margin-left:0in;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";}
-h1
-	{mso-style-priority:9;
-	mso-style-link:"Heading 1 Char";
-	margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	margin-bottom:.0001pt;
-	line-height:107%;
-	page-break-after:avoid;
-	font-size:16.0pt;
-	font-family:"Calibri Light","sans-serif";
-	color:#2E74B5;
-	font-weight:normal;}
-h2
-	{mso-style-priority:9;
-	mso-style-link:"Heading 2 Char";
-	margin-top:2.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	margin-bottom:.0001pt;
-	line-height:107%;
-	page-break-after:avoid;
-	font-size:13.0pt;
-	font-family:"Calibri Light","sans-serif";
-	color:#2E74B5;
-	font-weight:normal;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-priority:9;
-	mso-style-link:"Heading 1";
-	font-family:"Calibri Light","sans-serif";
-	color:#2E74B5;}
-span.Heading2Char
-	{mso-style-name:"Heading 2 Char";
-	mso-style-priority:9;
-	mso-style-link:"Heading 2";
-	font-family:"Calibri Light","sans-serif";
-	color:#2E74B5;}
-span.m2648879249209206673il
-	{mso-style-name:m_2648879249209206673il;}
-p.m1882900596882432219xmsonormal, li.m1882900596882432219xmsonormal, =
-div.m1882900596882432219xmsonormal
-	{mso-style-name:m1882900596882432219xmsonormal;
-	mso-margin-top-alt:auto;
-	margin-right:0in;
-	mso-margin-bottom-alt:auto;
-	margin-left:0in;
-	font-size:12.0pt;
-	font-family:"Times New Roman","serif";}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-family:"Calibri","sans-serif";}
-.MsoPapDefault
-	{mso-style-type:export-only;
-	margin-bottom:8.0pt;
-	line-height:107%;}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
-	{page:WordSection1;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US><div =
-class=3DWordSection1><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span style=3D'color:#222222'>Hi,<o:p></o:p></span></p><p =
-class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span =
-style=3D'color:#222222'>&nbsp;<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span style=3D'color:#222222'>Hope you are doing =
-well.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span =
-style=3D'color:#222222'>&nbsp;<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span style=3D'color:#222222'>Are you looking to get SEO =
-done on your website?<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span =
-style=3D'color:#222222'>&nbsp;<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span style=3D'color:#222222'>Want to see your website on =
-Top of the 1st page of Google or other major search =
-engine?<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><b><span =
-style=3D'color:#222222'>&nbsp;</span></b><span =
-style=3D'color:#222222'><o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><b><span =
-style=3D'color:#222222'>Over&nbsp;85% of online searchers focus on the =
-1<sup>st</sup>&nbsp;page of any search engine =
-result.&nbsp;</span></b><span style=3D'color:#222222'>If your website =
-does not make it to the first page, you can lose potential traffic on =
-your webpage and consequently major chunk of your business =
-revenue.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span =
-style=3D'color:#222222'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span style=3D'color:#222222'>Your =
-website needs immediate improvement for some major issues with your =
-website.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span style=3D'color:#222222'>-Low =
-online presence for many competitive keyword =
-phrases<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span =
-style=3D'color:#222222'>-Unorganized social media =
-accounts<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span style=3D'color:#222222'>-Not =
-compatible with all mobile devices<o:p></o:p></span></p><p =
-class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span style=3D'color:#222222'>-Many bad =
-back links to your website<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span =
-style=3D'color:#222222'>&nbsp;<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;text-align:justify;line-=
-height:normal;background:white'><span style=3D'color:#222222'>If you are =
-interested, please reply me on this email with the list =
-of&nbsp;<b>keywords and domain (s)</b>&nbsp;which you want to target. We =
-will analysis your website and send full free Analysis report along with =
-suitable plan.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span =
-style=3D'color:#222222'>&nbsp;<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span style=3D'color:#222222'>I'd be happy&nbsp;<span =
-style=3D'background:white'>to share =
-our&nbsp;past&nbsp;work&nbsp;and&nbsp;client&nbsp;testimonials&nbsp;</spa=
-n>and Client testimonials.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span =
-style=3D'color:#222222'><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal><span lang=3DEN-GB>I'm waiting for your prompt =
-reply.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span lang=3DEN-IN style=3D'color:black'>Thanks &amp; =
-Regards,<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span lang=3DEN-IN style=3D'color:black'>Janey =
-Chang<o:p></o:p></span></p><p class=3Dm1882900596882432219xmsonormal =
-style=3D'margin:0in;margin-bottom:.0001pt;background:white'><span =
-lang=3DEN-IN =
-style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:black'=
->Business Development Manager</span><span =
-lang=3DVI><o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span lang=3DEN-IN>Contact No:- </span><span lang=3DEN-IN =
-style=3D'font-size:10.0pt;font-family:"Arial","sans-serif"'>+65 3158 =
-0551<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:normal;backg=
-round:white'><span lang=3DVI><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal><span lang=3DEN-GB>Note: -<b> </b>Though this is not =
-an automated email, (i.e., to ensure that we do not contact you again =
-for this matter), please send a blank mail to it with NO as =
-Subject.</span></p><p =
-class=3DMsoNormal>&nbsp;<o:p></o:p></p></div></body></html>
-------=_NextPart_000_46F4_01D4FF5D.F3645FB0--
+Hi Camden,
+
+> From: camden lindsay [mailto:camden.lindsay+lede@gmail.com]=20
+> Sent: Dienstag, 30. April 2019 03:48
+> To: mail@adrianschmutzler.de
+> Cc: David Bauer <mail@david-bauer.net>; Christian Lamparter <chunkeey@gma=
+il.com>; Adrian Schmutzler <freifunk@adrianschmutzler.de>; OpenWrt Developm=
+ent List <openwrt-devel@lists.openwrt.org>; Tomasz Maciej Nowak <tomek_n@o2=
+.pl>
+> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: Add SUPPORTED_DEVICES for Arc=
+her C7 v1/v2
+>
+> Adrian-
+> I have a C7V2 and can do some testing on it if you'd explain exactly what=
+ you're looking for...=C2=A0 I don't quite follow what is needed in the abo=
+ve thread.=C2=A0 Something about looking at PCI paths before and after an u=
+pgrade from one version to another...
+> Camden
+>
+
+Thanks for your offer.
+
+Unfortunately, I do not use the normal OpenWrt upgrade mechanism; so I also=
+ do not know precisely what's the problem here.
+=46rom the other people's comments, I can extract the following:
+
+> >>> In case of the v2, I think there's still the problem that a straight
+> >>> up upgrade from ar71xx to ath79 will affect the 5GHz ath10k wireless
+> >>> because it now has a new device path and hence a new default
+> >>> configuration (where the card is
+> >>> disabled) is created.
+> >>
+[ ... ]
+> >
+> > On my C7 v1 with a QCA9880v2 the ar71xx installation back in
+> > 2018-08-17 looked like this:
+> >
+> > config wifi-device 'radio0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option type=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'mac80211'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option country=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 'DE'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option channel=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 'auto'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option hwmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'11g'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option path=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'platform/qca955x_wmac'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option htmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'HT20'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option disabled=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0'0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option txpower=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 '10'
+> >
+> > config wifi-device 'radio1'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option type=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'mac80211'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option channel=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 '52'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option country=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 'DE'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option hwmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'11a'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option path=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'pci0000:01/0000:01:00.0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option htmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'VHT80'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option disabled=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0'0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option txpower=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 '14'
+> >
+> > vs ath79 (today):
+> >
+> > config wifi-device 'radio0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option type=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'mac80211'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option country=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 'DE'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option channel=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 'auto'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option hwmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'11g'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option path=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'platform/ahb/ahb:apb/18100000.wmac'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option htmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'HT20'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option disabled=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0'0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option txpower=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 '10'
+> >
+> > config wifi-device 'radio1'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option type=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'mac80211'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option channel=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 '52'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option country=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 'DE'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option hwmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'11a'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option path=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0'pci0000:00/0000:00:00.0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option htmode=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0'VHT80'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option disabled=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0'0'
+> >=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 option txpower=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 '14'
+> >
+> > so the path changed from "pci0000:01/0000:01:00.0" to
+> > "pci0000:00/0000:00:00.0". But again this is on a C7 v1.
+> >
+> > Based on the bootlog on the wiki for 18.06.1 :
+> > https://openwrt.org/toh/tp-link/archer-c7-1750#boot_logs
+> > The ar71xx image enabling both pcie Root Complexes of the QCA955x.
+> > But unfortunately the pcie slot of the C7 is wired to the second RC,
+> > so the ath10k card gets pci0000:01/0000:01:00.0. Does anybody want to
+> > test what happens if the ath79 C7 v2 DTS enables "pcie0" too? It might
+> > work, but it might not (depending on whenever it might end up in a
+> > different pci domain like pci0001:00.).
+>=20
+[...]
+> Regarding enabling the first bus: Personally, I would prefer a migration =
+script
+> over enabling a non-wired interface. There is already a migration script =
+for
+> exactly this case in the mpc85xx target, so most of this work is probably
+> straight up copy-paste ;)
+
+=46rom the different comments, I'm not quite sure whether this is a matter =
+of simple testing or whether there is still a migration script required.
+
+Best
+
+Adrian
+
+--=-=U3KKQXo26W7Rtu=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAlzIPPwACgkQoNyKO7qx
+AnDekg//cNKj6f7mCGEQQyhifwzUmVrVooeMYUXN+RYF2ZzRgzGjMy5CBIEfEAKj
+D0V1Dfz17LILJi7VbRC9Xpdz9E78uEQW922ut2YqJuE/4fiTqbv0Mv64JDr8nh15
+IIacKzmm1cAREFAJc0dRE5IHBVpMEVWBVEFCi95rXN9/LAbM9gwfXKSlu11YXHxv
+ly0pxPb5U0q7+5tuPdbfiSnCJLvcxlT1Bry8Hb8Zn2xcufcRwUisH1guF9me9GYO
+2Vz3oixFMCLQawOQQlrJDSrvBflIc0VPTM8co9AaJKt9nh2UDnsK1Hd7wjze1kW7
+NhNdnaw2DElaVssPb3EWb51CmS5L4v1lOnbdwQoITqFe9uvgGAhv7EGvqkz9ZwID
+ksVx6PgXi7fC0YdFfEaVE9X8nPxQRFAWIHuzYHAx0paLl/3q1QknwayHR71XKAmS
+tSGzKfzxjGbI8fALOxJZZ9bbUYWPpfB446/ysPSrHv709l2yyeG7IzX2cqeeUU6X
+1iUgRBZTMcHtAATD15lh4vpLPXkaMUkC0HTCeuaQadSlIdLmbdWQNUUqEoCYEgrS
+n9AYALJV4AB8rd+bSNtYR8d9u1JWXa+c/5sFs7Ty0cM49WT+/YY5H6alqEWlYI+N
+MZSpkBR3vE/6OjPoxm5PIsac3ya7e6j4C4zUzyxH9OaN6Iu2nA8=
+=8vcv
+-----END PGP SIGNATURE-----
+
+
+--=-=U3KKQXo26W7Rtu=-=--
 
 
 
---===============7158853966521068798==
+--===============7623556360168886445==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -376,6 +282,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7158853966521068798==--
+--===============7623556360168886445==--
 
 

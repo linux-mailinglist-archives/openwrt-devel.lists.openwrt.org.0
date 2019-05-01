@@ -2,75 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 842F610BBD
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:05:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91AA110BBE
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:05:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
 	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=41b1v0dMUbEt5E9dN+l08uWy5NRXJQuIlnj2ss/t7ew=; b=Mwd1YKK/8DIUMq
-	qpwbM0QPAxhppyRh+9R/lsSn0OprQc9WgkX6nUg3ewTsGDDpziuNvTF1Wl1j+6n6eopIV+4V+rMhG
-	2sGhiLXlGX4pCZ1g8agMlsIHTlGapRVME5tHN/H3+uj401JlTRcjCrkRprgQlSYD9OYQdGXdbOKcA
-	qUKx8zgmYbQ7LHQAnQrCibL90XwDE2H7tjaja4SYntexQa4PoiduT6twNTmxFPbV+MsDTo7OQS1++
-	ePC9cBrjdz24kzpJaygYaq8wB/8KzXlmS2G86c5GD7buX1a4KHsr1049bmXwnOwSgFWXpAYAWe1Uj
-	exvS8Ar30q5+nn3Aj63A==;
+	List-Owner; bh=BryEj2RuTOZM+bxlGu3IE866RZz3urwFpyf8loAoLNw=; b=Rh5GtK1KVmBNr/
+	iZaHM0SUk06CzkFtaU/AMpOcjFy/pUL3q05P+LX3Y1D+0cVxYR1hNOD8W0F1oJUS9D7A79rfMzUgq
+	xs3/Cjb20TSUq0hHjb8tqBxhiGxd5R6DnJWbtbbbG1XRqfak9swPjV3cPgPYCdLnNB0CQth8Ekkuu
+	0EefAEvT3K4TfYt8l4Aq+5+U9DSSOY60Hz/5OclDkTPUzh3FsPD7NDnjb5szmmLUH8IWs7qyNjp4E
+	445RqTV8Ab7l8+DqYCt2Pv2d8Ezv68mn0YNfkLWsKTTI6dsoBJa8n6h5Tpnl7yzMRLXBcGJXkBoYq
+	tkMdaAW70HeoKZ9CwaFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLsfB-0001LF-SJ; Wed, 01 May 2019 17:04:57 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hLsfi-0002o0-SC; Wed, 01 May 2019 17:05:30 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLsf5-0001Kn-1U
- for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:04:52 +0000
-Received: by mail-pg1-x542.google.com with SMTP id k19so8560472pgh.0
- for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 10:04:49 -0700 (PDT)
+ id 1hLsfb-0002mj-EQ
+ for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:05:24 +0000
+Received: by mail-pl1-x641.google.com with SMTP id b3so8433208plr.7
+ for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 10:05:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id;
- bh=PPW0V43Iar8YqCAQD8f5k+P8kJSOucLzybR2jX7w9jU=;
- b=B5svcGfl4kSgY2t5IrWv+ZSURmvwdklbGWmZcxCWx38ehIIHBfZ752CZZSVA4II4+6
- oom3O8BMh/a31yAs1VlrXGZFSKTKdDqUCJhLteE1KHDgnLM84LkykA1+02bgTlnJXNp1
- EvTDg/FjBKHXBSmhm1eOQA3inP/xjBR2KYpZ/4ebF+c0DczScgWJD0+zVscsYmfmbXgW
- N0q2T/9P18by2Si2IvcRpPv2pTpJTj+vaJWMXwcQQs3RVnQuZVuPOYP8AQbzotP25b6q
- uUEamNJ+egUGLP7SSeLIsX1xW9v0/Np8fovev4tZ+Tck7e7MJrrKfW9IJAb83ErFkrUW
- UG4A==
+ bh=RjylO2MK+140JF7IDciJWOLnw7b4R/PfRkIpImQ9Wm4=;
+ b=qicmYQyWYPzhj3O+Tmyib8v0vHUNUNPoA8jWhGU/G6ALtHDeuDK2JwOgsaV8a+pyaN
+ 1VNWLE28uyDVxu2EffxZU/DH6bFj0uAMDhBDBPO9yCg3oSLmpZqKemM/H9kdoh18equV
+ 2kNPdRow5arHz8BeoT21Ep/Hv+wM7mylxm/s4cJDZNRnQen9a5WxfCHFIwao8dG8AdCD
+ AJA0ssGwyKs7JLfZW3JZUidWrltEmVhk9aafrVNxKgquT/jpT/mNN3BfdrHMGFEuFzyz
+ 11+wQ2dbtgd5QLRS6MaUI10eidV2g1GG20yvkzOFUgYg6p+x01uuM04vvIACP4M4H+B0
+ 8RpA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id;
- bh=PPW0V43Iar8YqCAQD8f5k+P8kJSOucLzybR2jX7w9jU=;
- b=SQ9MJNvW3pMxxROgyb/vsRuuwiVlOEvBfRTr00Ab/WBIxvCuV03CBn19ocDuGk+11E
- ClbwGBqf3QNwpBtabYlTCS5jLdvAYbT7v1fpDjlO9CoXkGwKXLea2pVkNI8RGeelmLXV
- r/6yJcg3BjlQZG1gwbUEzboK63kEoVHs16sZ0GDuAZ/pOlquCipmvji8gYC15i41VBSL
- xWh19s02h/7NI6QFt7gsSWzndqF6NReF8Y1sd2dN2l6V6eufLXjzfBZI9px/I3HBOJLq
- NssASAX9G99i460CX3vx5TQo6Ws+q3+yxxC2QqiMTMsilnCf5JhhODbppaLQX6/h717K
- ztjg==
-X-Gm-Message-State: APjAAAXpYJi6B1ThmAJzI4FPTS6udw3l/gF1sOcGDU9bh9KYAY3jucGQ
- KNNRDNmnaPBTvXLWn17BpzF44YAvhkU=
-X-Google-Smtp-Source: APXvYqxguVs8d82/F3rBr7YDBm0xLdX06ThNsuLrCNuBPhAcwLl/35hsDUPLRAtPCgYV7YVs92axxQ==
-X-Received: by 2002:aa7:8186:: with SMTP id g6mr43455848pfi.126.1556730288460; 
- Wed, 01 May 2019 10:04:48 -0700 (PDT)
+ bh=RjylO2MK+140JF7IDciJWOLnw7b4R/PfRkIpImQ9Wm4=;
+ b=UPg2Eh1C+o/HE4K+Nhwg0/ZUKJPyMIODWWRSKkAU442HOOL2JYqcbyX9C2Yfimyo8C
+ OuKiog/AIA1vveM5kw8tikDlmhpCkdm6Ln/+v3FRfd/Xsxj8fmFM/XFxpFa0H9cDOZBp
+ NhsaCgWkaSxLBKJB6TIIz6+6C5DpZfs7meMkpyj2s5NH+PF4FZgFAnBPN+f6/CMXXHEh
+ ORqv4zDAhmrIfTSKl1/akTkArgxVZaue8PdPC0QO/eotAQ/x/kw5OZyuauhk+SlxWJ/3
+ 36GztuQxQRHrYTYtVadjOci7RLLEipbxIe5MZ5PPXw5qqcOPKEE8rO2GBuE2+JVbelTp
+ HnuA==
+X-Gm-Message-State: APjAAAWlg4EZMH4PH3eR+ykBLRdwO70EzNXUA3aMZqSDn/yoIfjfMy/j
+ VrEnC7zFZgFHg3wIExabjhI4YUiQ3vk=
+X-Google-Smtp-Source: APXvYqyY52jQzuBbLgkgdPhKA+XvY0DTh4WhjmUKMzzKTpEzhUGs01cGgmGmsvlM6CXrM3KgICuZng==
+X-Received: by 2002:a17:902:7783:: with SMTP id
+ o3mr24909819pll.159.1556730322100; 
+ Wed, 01 May 2019 10:05:22 -0700 (PDT)
 Received: from mangix-pc.lan (76-14-106-140.rk.wavecable.com. [76.14.106.140])
  by smtp.gmail.com with ESMTPSA id
- b5sm6740877pfo.153.2019.05.01.10.04.47
+ j22sm52155361pfn.129.2019.05.01.10.05.21
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 10:04:47 -0700 (PDT)
+ Wed, 01 May 2019 10:05:21 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed,  1 May 2019 10:04:45 -0700
-Message-Id: <20190501170445.4607-1-rosenp@gmail.com>
+Date: Wed,  1 May 2019 10:05:20 -0700
+Message-Id: <20190501170520.4733-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_100451_085424_53E3F352 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190501_100523_480555_51659131 
+X-CRM114-Status: GOOD (  10.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -82,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] libbsd: Fix compilation under ARC
+Subject: [OpenWrt-Devel] [PATCH] elfutils: Fix compile with uClibc-ng
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,49 +100,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The 8 year old file does not have any ARC definitions.
+Probably glibc too. argp_help takes a char *. not const char *.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- package/libs/libbsd/Makefile                  |  2 +-
- package/libs/libbsd/patches/010-fix-arc.patch | 15 +++++++++++++++
- 2 files changed, 16 insertions(+), 1 deletion(-)
- create mode 100644 package/libs/libbsd/patches/010-fix-arc.patch
+ package/libs/elfutils/Makefile                        |  2 +-
+ .../libs/elfutils/patches/200-uclibc-ng-compat.patch  | 11 +++++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 package/libs/elfutils/patches/200-uclibc-ng-compat.patch
 
-diff --git a/package/libs/libbsd/Makefile b/package/libs/libbsd/Makefile
-index 4101d5e0ee..63b9ceafc3 100644
---- a/package/libs/libbsd/Makefile
-+++ b/package/libs/libbsd/Makefile
-@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
+diff --git a/package/libs/elfutils/Makefile b/package/libs/elfutils/Makefile
+index c6b1d6df65..e148df096c 100644
+--- a/package/libs/elfutils/Makefile
++++ b/package/libs/elfutils/Makefile
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
  
- PKG_NAME:=libbsd
- PKG_VERSION:=0.8.7
--PKG_RELEASE:=2
-+PKG_RELEASE:=3
+ PKG_NAME:=elfutils
+ PKG_VERSION:=0.176
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
  
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
- PKG_HASH:=f548f10e5af5a08b1e22889ce84315b1ebe41505b015c9596bad03fd13a12b31
-diff --git a/package/libs/libbsd/patches/010-fix-arc.patch b/package/libs/libbsd/patches/010-fix-arc.patch
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+ PKG_SOURCE_URL:=https://sourceware.org/$(PKG_NAME)/ftp/$(PKG_VERSION)
+diff --git a/package/libs/elfutils/patches/200-uclibc-ng-compat.patch b/package/libs/elfutils/patches/200-uclibc-ng-compat.patch
 new file mode 100644
-index 0000000000..7b1bcbe348
+index 0000000000..b0ae1c7401
 --- /dev/null
-+++ b/package/libs/libbsd/patches/010-fix-arc.patch
-@@ -0,0 +1,15 @@
-+--- a/src/local-elf.h
-++++ b/src/local-elf.h
-+@@ -53,6 +53,12 @@
-+ #endif
-+ #define ELF_TARG_DATA	ELFDATA2LSB
-+ 
-++#elif defined (__arc__)
-++
-++#define ELF_TARG_MACH	EM_ARC
-++#define ELF_TARG_CLASS	ELFCLASS32
-++#define ELF_TARG_DATA	ELFDATA2LSB
-++
-+ #elif defined(__arm__)
-+ 
-+ #define ELF_TARG_MACH	EM_ARM
++++ b/package/libs/elfutils/patches/200-uclibc-ng-compat.patch
+@@ -0,0 +1,11 @@
++--- a/lib/color.c
+++++ b/lib/color.c
++@@ -132,7 +132,7 @@ valid arguments are:\n\
++   - 'auto', 'tty', 'if-tty'\n"),
++ 		     program_invocation_short_name, arg);
++ 	      argp_help (&color_argp, stderr, ARGP_HELP_SEE,
++-			 program_invocation_short_name);
+++			 (char *) program_invocation_short_name);
++ 	      exit (EXIT_FAILURE);
++ 	    }
++ 	}
 -- 
 2.17.1
 

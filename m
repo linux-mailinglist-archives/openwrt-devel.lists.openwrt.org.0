@@ -2,101 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BB0F10BC9
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:09:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA25210C56
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:44:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JX5IQxAJmSlIJakjhSqMnCaY87NRADDnssJ10WbV0F0=; b=d/99a3bSc+zKasYbi23RhneXF
-	unyJNFGwkDrB6jROQ3m3HsNH1JuAZ4a6MKc691NbBiHNytxn1oYvb9pbPUwM9J5+LPmap2DuCuZ99
-	P710gbDqOshHJZ+rjzhP0NU3ZvLcYrPIF07uZcVVGAmX1Km4dGTXS//XpaUS8HxoRV0wyHz0GcJpC
-	ZX7c+3Of5I7sX23JQ+u7Vn1DRhgZtY7Vq46HR17n/NdJg1bKuHt5qO5+C5KsNkuWPSLuxUHzs0TZm
-	03gl72BxzG1MmUOI4y0qnyI9Bx8ezdAXcI3jdm7deZ9RXB5G9It17k2DvmrMbn8jcxggJdbhtQCEM
-	knx6A/EPA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nGvJm4KAS9Zzb6Ajj31OZfjlbA4TJWoiQ3ppbZkRH6I=; b=nAgPtocRXGVjmv
+	fFkNjqV9QQWByfb9/08gDJ1mhw3LUvTA3FThdi/GrfTT3wIs42YTK+KL6WWoRubevbH/5cospH4Uv
+	uXTqLcbOjcd11D7nIsXMzxceKpYPKmlAr+a50o7QrywnlfcpN/hg4B9Nf3m3fWokKtZXCNYMhM3rP
+	5Dqf2JimWyU40ROyK9B6h8u2KXC1qx1h+ffr+RgrSzAyXdHa7wwLiio89M8inXCGcQJJdZ+OrAcbk
+	XgMiRz/at7ZNLs44hQvD8UPzNfhLMknhxg9/dpjuIlot3T8qSb5vvW0eCRnO6x/QRmeb5cmmjXPLf
+	OujkKpfSBnvctl7VTYQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLsjM-0003OY-NW; Wed, 01 May 2019 17:09:16 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1hLtHB-0000yw-0I; Wed, 01 May 2019 17:44:13 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLsjE-0003OF-Tf
- for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:09:10 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 2868654456; Wed,  1 May 2019 19:09:05 +0200 (CEST)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id E63E454454
- for <openwrt-devel@lists.openwrt.org>; Wed,  1 May 2019 19:09:04 +0200 (CEST)
-Received: (qmail 12706 invoked from network); 1 May 2019 19:09:04 +0200
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 1 May 2019 19:09:04 +0200
+ id 1hLtGr-0000hK-I3
+ for openwrt-devel@bombadil.infradead.org; Wed, 01 May 2019 17:43:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=LSADupJgctZI+V2PrNdzVKlrqPV5gvGqW51sFwQP8tY=; b=cvpu7i037pgq7fWpmWp6VkbQMW
+ XHo9v3BW7wa0PeqR30bheX0pYdQK1z2x03c4coNdGNbRT8X0EvpTNvT/jjdLDhvMokSqGJZLK0fH7
+ 3LnysRhJhzeuO2wv0N2eeimt29QeA/oKhh5NaKc5h6YOUxvkhAtYe3LGNthMOpVQVe9fbCjHqp/fW
+ Bvc8BPetpztAxnhDinPaDamDUXAk2QZf8lXCa+/Za2aE+acK71pgaGZuTvZRK40X9j6zQp+47015s
+ A4W6KQ3Hbn1NgsY6haa0/yWu2+IMpsLoasmxFmr9oaG9qu6qnYFNiTp9/nU016eB/BAAQ+oFs4lAH
+ n0k2RMsA==;
+Received: from mx-out.tlen.pl ([193.222.135.175])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLtGm-0002bB-Ua
+ for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:43:51 +0000
+Received: (wp-smtpd smtp.tlen.pl 38189 invoked from network);
+ 1 May 2019 19:42:30 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1556732550; bh=LSADupJgctZI+V2PrNdzVKlrqPV5gvGqW51sFwQP8tY=;
+ h=From:To:Subject;
+ b=NOGD3AOVO4svNFBi0ysWZxJUFQuPGQQHFB9C+5hUJ3ODjPy1C5FRvmDnVHaqtmPPK
+ evgUe4vDQ4xLRPekq2HMakXukzp0sONmr7/OgI0Jy3NvftkTjBnjA28wQPV9S+2s6X
+ TWg8DUpzKeL4EYzOHQRc2hmRcC05h6CMmaWWBzws=
+Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
+ (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 1 May 2019 19:42:30 +0200
+From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-References: <20190501052321.11985-1-zajec5@gmail.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
- 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
- Xx5IapIyoA==
-Message-ID: <de57d2ea-3090-1f56-d4c1-9692b86707b1@wwsnet.net>
-Date: Wed, 1 May 2019 19:08:53 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+Date: Wed,  1 May 2019 19:42:16 +0200
+Message-Id: <20190501174224.19089-1-tomek_n@o2.pl>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20190501052321.11985-1-zajec5@gmail.com>
+X-WP-MailID: e88b30ef4e9593c5626ff135634ef3e5
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000000 [YYPk]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_100909_117961_5D806B8B 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20190501_134349_314992_4BB73BA9 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
-Subject: Re: [OpenWrt-Devel] [PATCH] procd: add procd_running() helper for
- checking running state
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [193.222.135.175 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tomek_n[at]o2.pl)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH 0/8] mvebu: cleanups,
+ improvments and new ESPRESSObin variants
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,131 +94,82 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3893711954783006476=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============3893711954783006476==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7"
+This series drops unnecessary cruft and improves image code, so that
+it's better aligned with most well maintained targets in OpenWrt.
+Additionally it introduces image for three ESPRESSObin variants.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7
-Content-Type: multipart/mixed; boundary="eBDdrLsjtUtqoEnmhUGMiatkiAfq6zFRx";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <de57d2ea-3090-1f56-d4c1-9692b86707b1@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] [PATCH] procd: add procd_running() helper for
- checking running state
-References: <20190501052321.11985-1-zajec5@gmail.com>
-In-Reply-To: <20190501052321.11985-1-zajec5@gmail.com>
+Series is applicable after "mvebu: fix board_name condition in
+79_move_config" by Klaus Kudielka.
+https://patchwork.ozlabs.org/patch/1090367
 
---eBDdrLsjtUtqoEnmhUGMiatkiAfq6zFRx
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+Tomasz Maciej Nowak (8):
+  mvebu: remove unnecessary code building dtbs
+  mvebu: image: stack repeated variables
+  mvebu: image: introduce BOOT_SCRIPT variable
+  mvebu: image: improve readability of device recipes
+  mvebu: image: don't create unnecessarily shell variables
+  mvebu: add vendor to device names
+  mvebu: use device-tree board detection
+  mvebu: add images for additional ESPRESSObin boards
 
-Hi,
+ package/boot/uboot-mvebu/Makefile             |   2 +-
+ .../mvebu/base-files/etc/board.d/01_leds      |  22 ++--
+ .../mvebu/base-files/etc/board.d/02_network   |  60 +++++-----
+ target/linux/mvebu/base-files/etc/diag.sh     |  16 +--
+ .../base-files/etc/init.d/linksys_recovery    |   2 +-
+ .../base-files/etc/uci-defaults/03_wireless   |   4 +-
+ .../base-files/etc/uci-defaults/04_mambafan   |   2 +-
+ target/linux/mvebu/base-files/lib/mvebu.sh    |  94 ----------------
+ .../mvebu/base-files/lib/preinit/01_sysinfo   |   9 --
+ .../base-files/lib/preinit/06_set_iface_mac   |  14 +--
+ .../base-files/lib/preinit/79_move_config     |   2 +-
+ .../base-files/lib/preinit/81_linksys_syscfg  |   2 +-
+ .../mvebu/base-files/lib/upgrade/platform.sh  |  10 +-
+ .../mvebu/base-files/lib/upgrade/sdcard.sh    |   2 +-
+ .../marvell/armada-3720-espressobin-emmc.dts  |  28 +++++
+ .../armada-3720-espressobin-v7-emmc.dts       |  43 ++++++++
+ .../marvell/armada-3720-espressobin-v7.dts    |  31 ++++++
+ target/linux/mvebu/image/Makefile             |  62 +++++------
+ .../image/armada-388-clearfog-base.bootscript |  27 -----
+ .../image/armada-macchiatobin.bootscript      |  10 --
+ ...fog-pro.bootscript => clearfog.bootscript} |   6 +-
+ target/linux/mvebu/image/cortex-a53.mk        |  40 +++++--
+ target/linux/mvebu/image/cortex-a72.mk        |  32 ++----
+ target/linux/mvebu/image/cortex-a9.mk         | 103 ++++++++++--------
+ .../linux/mvebu/image/gen_mvebu_sdcard_img.sh |   4 +-
+ ...db.bootscript => generic-arm64.bootscript} |   2 +-
+ .../image/globalscale-espressobin.bootscript  |  10 --
+ .../patches-4.14/105-build_new_dtbs.patch     |  10 --
+ ...l-armada37xx-Add-emmc-sdio-pinctrl-d.patch |  40 +++++++
+ ...l-armada-37xx-Enable-emmc-on-espress.patch |  49 +++++++++
+ ...da-3720-espressobin-correct-spi-node.patch |   2 +-
+ ...l-armada-3720-espressobin-add-ports-.patch |  26 +++++
+ 32 files changed, 413 insertions(+), 353 deletions(-)
+ delete mode 100755 target/linux/mvebu/base-files/lib/mvebu.sh
+ delete mode 100644 target/linux/mvebu/base-files/lib/preinit/01_sysinfo
+ create mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts
+ create mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts
+ create mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts
+ delete mode 100644 target/linux/mvebu/image/armada-388-clearfog-base.bootscript
+ delete mode 100644 target/linux/mvebu/image/armada-macchiatobin.bootscript
+ rename target/linux/mvebu/image/{armada-388-clearfog-pro.bootscript => clearfog.bootscript} (78%)
+ rename target/linux/mvebu/image/{armada-3720-db.bootscript => generic-arm64.bootscript} (82%)
+ delete mode 100644 target/linux/mvebu/image/globalscale-espressobin.bootscript
+ delete mode 100644 target/linux/mvebu/patches-4.14/105-build_new_dtbs.patch
+ create mode 100644 target/linux/mvebu/patches-4.14/513-arm64-dts-marvell-armada37xx-Add-emmc-sdio-pinctrl-d.patch
+ create mode 100644 target/linux/mvebu/patches-4.14/514-arm64-dts-marvell-armada-37xx-Enable-emmc-on-espress.patch
+ create mode 100644 target/linux/mvebu/patches-4.14/522-arm64-dts-marvell-armada-3720-espressobin-add-ports-.patch
 
-comment inline below.
+-- 
+2.21.0
 
-> From: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
->=20
-> This should be helpful for implementing service_running() in procd init=
-
-> scripts.
->=20
-> Signed-off-by: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
-> ---
->  package/system/procd/files/procd.sh | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
->=20
-> diff --git a/package/system/procd/files/procd.sh b/package/system/procd=
-/files/procd.sh
-> index 72f25fe0c0..ade55a344f 100644
-> --- a/package/system/procd/files/procd.sh
-> +++ b/package/system/procd/files/procd.sh
-> @@ -26,6 +26,9 @@
->  # procd_close_instance():
->  #   Complete the instance being prepared
->  #
-> +# procd_running(service, [instance]):
-> +#   Checks if service/instance is currently running
-> +#
->  # procd_kill(service, [instance]):
->  #   Kill a service instance (or all instances)
->  #
-> @@ -398,6 +401,18 @@ _procd_add_instance() {
->  	_procd_close_instance
->  }
-> =20
-> +procd_running() {
-> +	local service=3D"$1"
-> +	local instance=3D"${2:-instance1}"
-> +	local running
-> +
-> +	json_init
-> +	json_add_string name "$service"
-> +	running=3D$(_procd_ubus_call list | jsonfilter -e "@.$service.instanc=
-es.${instance}.running")
-
-Pass '{ "name": "'"$service"'" }' as argument to the list call to reduce =
-the amount of output you
-need to filter.
-
-> +
-> +	[ "$running" =3D "true" ]
-> +}
-> +
->  _procd_kill() {
->  	local service=3D"$1"
->  	local instance=3D"$2"
->=20
-
-
-~ Jo
-
-
---eBDdrLsjtUtqoEnmhUGMiatkiAfq6zFRx--
-
---hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAlzJ0qUACgkQQuLLvzou
-ZtNvHxAArvM2Ey9hlfnh4VMlMrdu8pU6PNHGXhAIl00Gsqja4lk7K67EpAVEvGpG
-WxLxwJmIadNAeGV2dd3Vr9PsI2299UWqtAx/6oAUpDfrmR0w5eL5Mm6ed4V1DesO
-qiQV00VUjl0ETmJo3G0n+7GrIOssvdK0yQ/z+dF2HRF3L1nVSvvA5sTagK3IWJdQ
-G8L2XZbfpMXggvIoiXGsZhguHXl/SPqvqT9lLNwsRZuS2Nuf+Gfd4YMfoi+ldCka
-bykBGUHDihyV37dtV2EBUCwh42Ci+vw3A/Cb9vsp8BMQrRThBDuJkIbZHc3/gx6B
-D+dmKzIp5KuXKunJBRNpp/fraKxfYBZuxt8Ck87TTWwafgYg1Rcb17py9gENSdo+
-wKsTbUB0TAQWxoDEiXr+qCvsVFKl3QfDHj5JfgxlR6t7TrECRDtbddbvAV/zlZNr
-Rj4b0xcomsS4dNkQH9PoMwKh9spg0Un79m6j2dSdcVqLABovXms+qmZO4acqYCnH
-kOmBYPwLc1P03wJHsUPsE3mc4kFoRpjwnNwKHU+Sou6UrtcOwIauA44SBgqn7REJ
-MXI/Qgd/sWKO42/Fr7l54HEX6RCPj54v6f6HVar2Vkyq7BSy2QQZqgJ63bNcZmGl
-cYsVVWMls4IGG17zg6aaYG+SWelfzsEiPltIw0YA87bKgPIJqW8=
-=WZZQ
------END PGP SIGNATURE-----
-
---hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7--
-
-
---===============3893711954783006476==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3893711954783006476==--
-

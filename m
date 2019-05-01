@@ -2,87 +2,101 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BB9510BC8
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:08:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB0F10BC9
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:09:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3ENjMgB+aXFxDO58+naEo1IcONaWUa6m/dwjevMILUQ=; b=KIzwsEbPymGvZX
-	IbE0gjFr74DVHOvqSoW14/pcfSkovX719EvdPhLnpT4cNKN6oz8ila1WiGH4+BQfzOz8MlhxSYjqw
-	34Nzz9bUPWi/asZsJAMvx0DQ/axI2u4qg1UMmvzq3rVVHWn0Fyr+J7Zw3ip0i3BnlXvlcBXH6bJ/Y
-	lECZXFbHpfvCnM4OrJzXyK3X0JiCLLWLedIeQ2nygsIqHKt5X1mvWxNLZi3r7HHfvGqPeKNZd3l0v
-	OuFxs4msPRlptM46chCYwD43AllCzWXNOI3Ky8U0vrP/J7urK9HfPwFC2AmWKjfrXx8TEW2O5qbQL
-	f1qrMTha8D+095VLjM8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JX5IQxAJmSlIJakjhSqMnCaY87NRADDnssJ10WbV0F0=; b=d/99a3bSc+zKasYbi23RhneXF
+	unyJNFGwkDrB6jROQ3m3HsNH1JuAZ4a6MKc691NbBiHNytxn1oYvb9pbPUwM9J5+LPmap2DuCuZ99
+	P710gbDqOshHJZ+rjzhP0NU3ZvLcYrPIF07uZcVVGAmX1Km4dGTXS//XpaUS8HxoRV0wyHz0GcJpC
+	ZX7c+3Of5I7sX23JQ+u7Vn1DRhgZtY7Vq46HR17n/NdJg1bKuHt5qO5+C5KsNkuWPSLuxUHzs0TZm
+	03gl72BxzG1MmUOI4y0qnyI9Bx8ezdAXcI3jdm7deZ9RXB5G9It17k2DvmrMbn8jcxggJdbhtQCEM
+	knx6A/EPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLsiU-00038f-0A; Wed, 01 May 2019 17:08:22 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hLsjM-0003OY-NW; Wed, 01 May 2019 17:09:16 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLsiM-00038N-52
- for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:08:15 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z28so3568664pfk.0
- for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 10:08:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=sgU6kP3lXJ9QNo0kAIdw2pWG8PSWXofhOc+uStwULaE=;
- b=C21kk0wYsSN2Gzh19AKRNf6ksqBR2JpDKLrhpl6I4I8qvvNCUjKJr9lQD7sGDguz4P
- uDTJcDVGVS1bRHebCgIyRuBCbpC9jXQkG1t4BZMGuOJ4FaoyH50SpYr87MkI3qlL1aLL
- KNBKczf4mcBSoEt3To8gB3vrktH/H0Cnox9dENlDu8HyBKgsmSBRWr5gANv8Bfwyssdw
- Bi1qUYCNAAZgFECWfDsomHWwKdVbJ7g6mozTcsqfeUlYBn71x4QydTS4D2XR0qc7Lpn0
- hvVFsR3rfxB9DrLmGG0qtLzxJsK5Ir8iYBdTEadAvD3lHy5TLmHE2D/uJt05bk0c2UCD
- bS6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=sgU6kP3lXJ9QNo0kAIdw2pWG8PSWXofhOc+uStwULaE=;
- b=OlbGPrSsmgmRRkwcV4saU7TI1i9OOJ9TbJQfLxeyqzIo1870RDueGCVIoKa1c1PYLj
- M1yUR/o46doahYCMxo4TXipdqY3902n2axqsaNT58IHfx2WaVVV1JdjxDEPwvPn1iMdg
- hdXAPabc3CtN/Azwxtv2uAXe+eS88kCnJ0VDSyqYX399EpfHkqnzeXlQUAJ8J8M4Jsys
- oq/J3CWa32+4h0WXO0O6DmO0MLVttiOFv/wNzGMbD6u138PtunmNWvevgqNsEUaXYr5F
- h4RzbpU8EfB97RHVENanXu0v0YUVwjymXnJbzE4Q+g+MPMIXT1bKFef79kxyZM9d8ySA
- s2Bg==
-X-Gm-Message-State: APjAAAU72BgOOszhzO4nUo+adCpLxlPP+NoMUKfyEmpAoPkBuahjlJnZ
- pAxT9WNwStr0usHokI+2LZHi0zpvJSE=
-X-Google-Smtp-Source: APXvYqwT3Q0SSwidHC2De9xZFaMmR8hDDgQycX7kSAvBy62zvLhYmcbdKNcrOTJ3c8HEL3Cx/0Rvhw==
-X-Received: by 2002:aa7:8b8b:: with SMTP id r11mr49054362pfd.130.1556730492671; 
- Wed, 01 May 2019 10:08:12 -0700 (PDT)
-Received: from mangix-pc.lan (76-14-106-140.rk.wavecable.com. [76.14.106.140])
- by smtp.gmail.com with ESMTPSA id
- g13sm13183888pgr.63.2019.05.01.10.08.11
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 10:08:11 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1hLsjE-0003OF-Tf
+ for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:09:10 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 2868654456; Wed,  1 May 2019 19:09:05 +0200 (CEST)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id E63E454454
+ for <openwrt-devel@lists.openwrt.org>; Wed,  1 May 2019 19:09:04 +0200 (CEST)
+Received: (qmail 12706 invoked from network); 1 May 2019 19:09:04 +0200
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 1 May 2019 19:09:04 +0200
 To: openwrt-devel@lists.openwrt.org
-Date: Wed,  1 May 2019 10:08:10 -0700
-Message-Id: <20190501170810.5230-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
+References: <20190501052321.11985-1-zajec5@gmail.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
+ 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
+ Xx5IapIyoA==
+Message-ID: <de57d2ea-3090-1f56-d4c1-9692b86707b1@wwsnet.net>
+Date: Wed, 1 May 2019 19:08:53 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <20190501052321.11985-1-zajec5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_100814_197963_4581C243 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190501_100909_117961_5D806B8B 
+X-CRM114-Status: GOOD (  14.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] nftables: Fix compilation with uClibc-ng
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] [PATCH] procd: add procd_running() helper for
+ checking running state
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,57 +108,131 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3893711954783006476=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Missing header for va_list.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3893711954783006476==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7"
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- https://downloads.openwrt.org/snapshots/faillogs/arc_arc700/base/nftables/compile.txt
- actually shows the exact same change.
- package/network/utils/nftables/Makefile                |  2 +-
- .../network/utils/nftables/patches/010-uclibc-ng.patch | 10 ++++++++++
- 2 files changed, 11 insertions(+), 1 deletion(-)
- create mode 100644 package/network/utils/nftables/patches/010-uclibc-ng.patch
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7
+Content-Type: multipart/mixed; boundary="eBDdrLsjtUtqoEnmhUGMiatkiAfq6zFRx";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <de57d2ea-3090-1f56-d4c1-9692b86707b1@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH] procd: add procd_running() helper for
+ checking running state
+References: <20190501052321.11985-1-zajec5@gmail.com>
+In-Reply-To: <20190501052321.11985-1-zajec5@gmail.com>
 
-diff --git a/package/network/utils/nftables/Makefile b/package/network/utils/nftables/Makefile
-index d1e995116d..d4f91a2c89 100644
---- a/package/network/utils/nftables/Makefile
-+++ b/package/network/utils/nftables/Makefile
-@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=nftables
- PKG_VERSION:=0.9.0
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL:=https://netfilter.org/projects/$(PKG_NAME)/files
-diff --git a/package/network/utils/nftables/patches/010-uclibc-ng.patch b/package/network/utils/nftables/patches/010-uclibc-ng.patch
-new file mode 100644
-index 0000000000..4de1d1c324
---- /dev/null
-+++ b/package/network/utils/nftables/patches/010-uclibc-ng.patch
-@@ -0,0 +1,10 @@
-+--- a/include/gmputil.h
-++++ b/include/gmputil.h
-+@@ -7,6 +7,7 @@
-+ #include <gmp.h>
-+ #else
-+ #include <mini-gmp.h>
-++#include <stdarg.h>
-+ #include <stdio.h>
-+ /* mini-gmp doesn't come with gmp_vfprintf, so we use our own minimal variant */
-+ extern int mpz_vfprintf(FILE *fp, const char *format, va_list args);
--- 
-2.17.1
+--eBDdrLsjtUtqoEnmhUGMiatkiAfq6zFRx
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
+Hi,
+
+comment inline below.
+
+> From: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
+>=20
+> This should be helpful for implementing service_running() in procd init=
+
+> scripts.
+>=20
+> Signed-off-by: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
+> ---
+>  package/system/procd/files/procd.sh | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
+>=20
+> diff --git a/package/system/procd/files/procd.sh b/package/system/procd=
+/files/procd.sh
+> index 72f25fe0c0..ade55a344f 100644
+> --- a/package/system/procd/files/procd.sh
+> +++ b/package/system/procd/files/procd.sh
+> @@ -26,6 +26,9 @@
+>  # procd_close_instance():
+>  #   Complete the instance being prepared
+>  #
+> +# procd_running(service, [instance]):
+> +#   Checks if service/instance is currently running
+> +#
+>  # procd_kill(service, [instance]):
+>  #   Kill a service instance (or all instances)
+>  #
+> @@ -398,6 +401,18 @@ _procd_add_instance() {
+>  	_procd_close_instance
+>  }
+> =20
+> +procd_running() {
+> +	local service=3D"$1"
+> +	local instance=3D"${2:-instance1}"
+> +	local running
+> +
+> +	json_init
+> +	json_add_string name "$service"
+> +	running=3D$(_procd_ubus_call list | jsonfilter -e "@.$service.instanc=
+es.${instance}.running")
+
+Pass '{ "name": "'"$service"'" }' as argument to the list call to reduce =
+the amount of output you
+need to filter.
+
+> +
+> +	[ "$running" =3D "true" ]
+> +}
+> +
+>  _procd_kill() {
+>  	local service=3D"$1"
+>  	local instance=3D"$2"
+>=20
+
+
+~ Jo
+
+
+--eBDdrLsjtUtqoEnmhUGMiatkiAfq6zFRx--
+
+--hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAlzJ0qUACgkQQuLLvzou
+ZtNvHxAArvM2Ey9hlfnh4VMlMrdu8pU6PNHGXhAIl00Gsqja4lk7K67EpAVEvGpG
+WxLxwJmIadNAeGV2dd3Vr9PsI2299UWqtAx/6oAUpDfrmR0w5eL5Mm6ed4V1DesO
+qiQV00VUjl0ETmJo3G0n+7GrIOssvdK0yQ/z+dF2HRF3L1nVSvvA5sTagK3IWJdQ
+G8L2XZbfpMXggvIoiXGsZhguHXl/SPqvqT9lLNwsRZuS2Nuf+Gfd4YMfoi+ldCka
+bykBGUHDihyV37dtV2EBUCwh42Ci+vw3A/Cb9vsp8BMQrRThBDuJkIbZHc3/gx6B
+D+dmKzIp5KuXKunJBRNpp/fraKxfYBZuxt8Ck87TTWwafgYg1Rcb17py9gENSdo+
+wKsTbUB0TAQWxoDEiXr+qCvsVFKl3QfDHj5JfgxlR6t7TrECRDtbddbvAV/zlZNr
+Rj4b0xcomsS4dNkQH9PoMwKh9spg0Un79m6j2dSdcVqLABovXms+qmZO4acqYCnH
+kOmBYPwLc1P03wJHsUPsE3mc4kFoRpjwnNwKHU+Sou6UrtcOwIauA44SBgqn7REJ
+MXI/Qgd/sWKO42/Fr7l54HEX6RCPj54v6f6HVar2Vkyq7BSy2QQZqgJ63bNcZmGl
+cYsVVWMls4IGG17zg6aaYG+SWelfzsEiPltIw0YA87bKgPIJqW8=
+=WZZQ
+-----END PGP SIGNATURE-----
+
+--hIwxRUsqM7cx1veLpOnOiEWaTJmBDXbR7--
+
+
+--===============3893711954783006476==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3893711954783006476==--
+

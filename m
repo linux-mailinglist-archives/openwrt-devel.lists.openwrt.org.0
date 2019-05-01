@@ -2,75 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91AA110BBE
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:05:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BB9510BC8
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 May 2019 19:08:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
 	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BryEj2RuTOZM+bxlGu3IE866RZz3urwFpyf8loAoLNw=; b=Rh5GtK1KVmBNr/
-	iZaHM0SUk06CzkFtaU/AMpOcjFy/pUL3q05P+LX3Y1D+0cVxYR1hNOD8W0F1oJUS9D7A79rfMzUgq
-	xs3/Cjb20TSUq0hHjb8tqBxhiGxd5R6DnJWbtbbbG1XRqfak9swPjV3cPgPYCdLnNB0CQth8Ekkuu
-	0EefAEvT3K4TfYt8l4Aq+5+U9DSSOY60Hz/5OclDkTPUzh3FsPD7NDnjb5szmmLUH8IWs7qyNjp4E
-	445RqTV8Ab7l8+DqYCt2Pv2d8Ezv68mn0YNfkLWsKTTI6dsoBJa8n6h5Tpnl7yzMRLXBcGJXkBoYq
-	tkMdaAW70HeoKZ9CwaFA==;
+	List-Owner; bh=3ENjMgB+aXFxDO58+naEo1IcONaWUa6m/dwjevMILUQ=; b=KIzwsEbPymGvZX
+	IbE0gjFr74DVHOvqSoW14/pcfSkovX719EvdPhLnpT4cNKN6oz8ila1WiGH4+BQfzOz8MlhxSYjqw
+	34Nzz9bUPWi/asZsJAMvx0DQ/axI2u4qg1UMmvzq3rVVHWn0Fyr+J7Zw3ip0i3BnlXvlcBXH6bJ/Y
+	lECZXFbHpfvCnM4OrJzXyK3X0JiCLLWLedIeQ2nygsIqHKt5X1mvWxNLZi3r7HHfvGqPeKNZd3l0v
+	OuFxs4msPRlptM46chCYwD43AllCzWXNOI3Ky8U0vrP/J7urK9HfPwFC2AmWKjfrXx8TEW2O5qbQL
+	f1qrMTha8D+095VLjM8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLsfi-0002o0-SC; Wed, 01 May 2019 17:05:30 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hLsiU-00038f-0A; Wed, 01 May 2019 17:08:22 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLsfb-0002mj-EQ
- for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:05:24 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b3so8433208plr.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 10:05:23 -0700 (PDT)
+ id 1hLsiM-00038N-52
+ for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 17:08:15 +0000
+Received: by mail-pf1-x443.google.com with SMTP id z28so3568664pfk.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 10:08:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id;
- bh=RjylO2MK+140JF7IDciJWOLnw7b4R/PfRkIpImQ9Wm4=;
- b=qicmYQyWYPzhj3O+Tmyib8v0vHUNUNPoA8jWhGU/G6ALtHDeuDK2JwOgsaV8a+pyaN
- 1VNWLE28uyDVxu2EffxZU/DH6bFj0uAMDhBDBPO9yCg3oSLmpZqKemM/H9kdoh18equV
- 2kNPdRow5arHz8BeoT21Ep/Hv+wM7mylxm/s4cJDZNRnQen9a5WxfCHFIwao8dG8AdCD
- AJA0ssGwyKs7JLfZW3JZUidWrltEmVhk9aafrVNxKgquT/jpT/mNN3BfdrHMGFEuFzyz
- 11+wQ2dbtgd5QLRS6MaUI10eidV2g1GG20yvkzOFUgYg6p+x01uuM04vvIACP4M4H+B0
- 8RpA==
+ bh=sgU6kP3lXJ9QNo0kAIdw2pWG8PSWXofhOc+uStwULaE=;
+ b=C21kk0wYsSN2Gzh19AKRNf6ksqBR2JpDKLrhpl6I4I8qvvNCUjKJr9lQD7sGDguz4P
+ uDTJcDVGVS1bRHebCgIyRuBCbpC9jXQkG1t4BZMGuOJ4FaoyH50SpYr87MkI3qlL1aLL
+ KNBKczf4mcBSoEt3To8gB3vrktH/H0Cnox9dENlDu8HyBKgsmSBRWr5gANv8Bfwyssdw
+ Bi1qUYCNAAZgFECWfDsomHWwKdVbJ7g6mozTcsqfeUlYBn71x4QydTS4D2XR0qc7Lpn0
+ hvVFsR3rfxB9DrLmGG0qtLzxJsK5Ir8iYBdTEadAvD3lHy5TLmHE2D/uJt05bk0c2UCD
+ bS6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id;
- bh=RjylO2MK+140JF7IDciJWOLnw7b4R/PfRkIpImQ9Wm4=;
- b=UPg2Eh1C+o/HE4K+Nhwg0/ZUKJPyMIODWWRSKkAU442HOOL2JYqcbyX9C2Yfimyo8C
- OuKiog/AIA1vveM5kw8tikDlmhpCkdm6Ln/+v3FRfd/Xsxj8fmFM/XFxpFa0H9cDOZBp
- NhsaCgWkaSxLBKJB6TIIz6+6C5DpZfs7meMkpyj2s5NH+PF4FZgFAnBPN+f6/CMXXHEh
- ORqv4zDAhmrIfTSKl1/akTkArgxVZaue8PdPC0QO/eotAQ/x/kw5OZyuauhk+SlxWJ/3
- 36GztuQxQRHrYTYtVadjOci7RLLEipbxIe5MZ5PPXw5qqcOPKEE8rO2GBuE2+JVbelTp
- HnuA==
-X-Gm-Message-State: APjAAAWlg4EZMH4PH3eR+ykBLRdwO70EzNXUA3aMZqSDn/yoIfjfMy/j
- VrEnC7zFZgFHg3wIExabjhI4YUiQ3vk=
-X-Google-Smtp-Source: APXvYqyY52jQzuBbLgkgdPhKA+XvY0DTh4WhjmUKMzzKTpEzhUGs01cGgmGmsvlM6CXrM3KgICuZng==
-X-Received: by 2002:a17:902:7783:: with SMTP id
- o3mr24909819pll.159.1556730322100; 
- Wed, 01 May 2019 10:05:22 -0700 (PDT)
+ bh=sgU6kP3lXJ9QNo0kAIdw2pWG8PSWXofhOc+uStwULaE=;
+ b=OlbGPrSsmgmRRkwcV4saU7TI1i9OOJ9TbJQfLxeyqzIo1870RDueGCVIoKa1c1PYLj
+ M1yUR/o46doahYCMxo4TXipdqY3902n2axqsaNT58IHfx2WaVVV1JdjxDEPwvPn1iMdg
+ hdXAPabc3CtN/Azwxtv2uAXe+eS88kCnJ0VDSyqYX399EpfHkqnzeXlQUAJ8J8M4Jsys
+ oq/J3CWa32+4h0WXO0O6DmO0MLVttiOFv/wNzGMbD6u138PtunmNWvevgqNsEUaXYr5F
+ h4RzbpU8EfB97RHVENanXu0v0YUVwjymXnJbzE4Q+g+MPMIXT1bKFef79kxyZM9d8ySA
+ s2Bg==
+X-Gm-Message-State: APjAAAU72BgOOszhzO4nUo+adCpLxlPP+NoMUKfyEmpAoPkBuahjlJnZ
+ pAxT9WNwStr0usHokI+2LZHi0zpvJSE=
+X-Google-Smtp-Source: APXvYqwT3Q0SSwidHC2De9xZFaMmR8hDDgQycX7kSAvBy62zvLhYmcbdKNcrOTJ3c8HEL3Cx/0Rvhw==
+X-Received: by 2002:aa7:8b8b:: with SMTP id r11mr49054362pfd.130.1556730492671; 
+ Wed, 01 May 2019 10:08:12 -0700 (PDT)
 Received: from mangix-pc.lan (76-14-106-140.rk.wavecable.com. [76.14.106.140])
  by smtp.gmail.com with ESMTPSA id
- j22sm52155361pfn.129.2019.05.01.10.05.21
+ g13sm13183888pgr.63.2019.05.01.10.08.11
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 10:05:21 -0700 (PDT)
+ Wed, 01 May 2019 10:08:11 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed,  1 May 2019 10:05:20 -0700
-Message-Id: <20190501170520.4733-1-rosenp@gmail.com>
+Date: Wed,  1 May 2019 10:08:10 -0700
+Message-Id: <20190501170810.5230-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_100523_480555_51659131 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20190501_100814_197963_4581C243 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -82,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] elfutils: Fix compile with uClibc-ng
+Subject: [OpenWrt-Devel] [PATCH] nftables: Fix compilation with uClibc-ng
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,45 +100,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Probably glibc too. argp_help takes a char *. not const char *.
+Missing header for va_list.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- package/libs/elfutils/Makefile                        |  2 +-
- .../libs/elfutils/patches/200-uclibc-ng-compat.patch  | 11 +++++++++++
- 2 files changed, 12 insertions(+), 1 deletion(-)
- create mode 100644 package/libs/elfutils/patches/200-uclibc-ng-compat.patch
+ https://downloads.openwrt.org/snapshots/faillogs/arc_arc700/base/nftables/compile.txt
+ actually shows the exact same change.
+ package/network/utils/nftables/Makefile                |  2 +-
+ .../network/utils/nftables/patches/010-uclibc-ng.patch | 10 ++++++++++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 package/network/utils/nftables/patches/010-uclibc-ng.patch
 
-diff --git a/package/libs/elfutils/Makefile b/package/libs/elfutils/Makefile
-index c6b1d6df65..e148df096c 100644
---- a/package/libs/elfutils/Makefile
-+++ b/package/libs/elfutils/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+diff --git a/package/network/utils/nftables/Makefile b/package/network/utils/nftables/Makefile
+index d1e995116d..d4f91a2c89 100644
+--- a/package/network/utils/nftables/Makefile
++++ b/package/network/utils/nftables/Makefile
+@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
  
- PKG_NAME:=elfutils
- PKG_VERSION:=0.176
+ PKG_NAME:=nftables
+ PKG_VERSION:=0.9.0
 -PKG_RELEASE:=1
 +PKG_RELEASE:=2
  
  PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL:=https://sourceware.org/$(PKG_NAME)/ftp/$(PKG_VERSION)
-diff --git a/package/libs/elfutils/patches/200-uclibc-ng-compat.patch b/package/libs/elfutils/patches/200-uclibc-ng-compat.patch
+ PKG_SOURCE_URL:=https://netfilter.org/projects/$(PKG_NAME)/files
+diff --git a/package/network/utils/nftables/patches/010-uclibc-ng.patch b/package/network/utils/nftables/patches/010-uclibc-ng.patch
 new file mode 100644
-index 0000000000..b0ae1c7401
+index 0000000000..4de1d1c324
 --- /dev/null
-+++ b/package/libs/elfutils/patches/200-uclibc-ng-compat.patch
-@@ -0,0 +1,11 @@
-+--- a/lib/color.c
-++++ b/lib/color.c
-+@@ -132,7 +132,7 @@ valid arguments are:\n\
-+   - 'auto', 'tty', 'if-tty'\n"),
-+ 		     program_invocation_short_name, arg);
-+ 	      argp_help (&color_argp, stderr, ARGP_HELP_SEE,
-+-			 program_invocation_short_name);
-++			 (char *) program_invocation_short_name);
-+ 	      exit (EXIT_FAILURE);
-+ 	    }
-+ 	}
++++ b/package/network/utils/nftables/patches/010-uclibc-ng.patch
+@@ -0,0 +1,10 @@
++--- a/include/gmputil.h
+++++ b/include/gmputil.h
++@@ -7,6 +7,7 @@
++ #include <gmp.h>
++ #else
++ #include <mini-gmp.h>
+++#include <stdarg.h>
++ #include <stdio.h>
++ /* mini-gmp doesn't come with gmp_vfprintf, so we use our own minimal variant */
++ extern int mpz_vfprintf(FILE *fp, const char *format, va_list args);
 -- 
 2.17.1
 

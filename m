@@ -2,76 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6BAD110CF
-	for <lists+openwrt-devel@lfdr.de>; Thu,  2 May 2019 02:54:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7887111E9
+	for <lists+openwrt-devel@lfdr.de>; Thu,  2 May 2019 05:38:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=me+8ToktRfS3FnWpUSG693f7kYvn0mdv4w4kPNE33XA=; b=UaFCaCgCMlCEoHLgr/IFUB/pt
-	VXMEFrTQoADNV4dhN0jxS9VTPeRxpLmTdME81XtlBDhKmgwZ1BZgTVWGIuKRsazs8F4tp1xTG4For
-	Ch+y3c+lXqFbeUnJKAzapa2/C049toTq6wWqu+En+ZGMfeoheVcLRzOljO+etNgsQbnUSB4DgiGai
-	J+A8EoDgsZIqGM/v8TTGN33WBe48mHxgMuZN7N16ruCtd/eyhSMIm3cYGfivMykm6fVY3iax11Odv
-	CaWVBzKVmTWNL4RmbWrjG2REWvq+mwk0MDQ5u3fLU6ukMCVpuHHI4puysyC8F40mibLgjjYdblk91
-	iH1U/yieg==;
+	 bh=Bk1jvlY+1cOxGGLYbtmrxoRMbG0LNLiwU18OGN1VU48=; b=aVeQc4NlpcSLE6IEHWIehQupp
+	5gow47VVsL4QAcDNBgljsn4Zq0WBWA1dJFAD+nWS2LEzkI1Y62e0JeCv/Zc0IimxpfOjSo+R41qQX
+	6A740qOik6bNTLn7Xr8XFoMto694xZOIGTJPUz+QuV7hRk9cohv4vVHqV6qafGkerP4TNzpU72nIz
+	HJvgWGiOGWBcxisRRPyiBPCVu0qcEgVPYqMDJKSTvauIAeK2JNC6/5kqj5epspz7Zy1NPvrtyemJy
+	o5CR2KxyH+9vhRrEQpy50eIejBB+6oye9YNsVeqPJZ/k0kx2ZehVU0i3fq4rneW2dqtyhkP3+NoWL
+	o1Odiz6tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLzz1-0004Yd-33; Thu, 02 May 2019 00:53:55 +0000
-Received: from mail-oi1-x229.google.com ([2607:f8b0:4864:20::229])
+	id 1hM2Xp-0007I4-Gk; Thu, 02 May 2019 03:38:01 +0000
+Received: from mail-vs1-xe2a.google.com ([2607:f8b0:4864:20::e2a])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLzyu-0004YK-0c
- for openwrt-devel@lists.openwrt.org; Thu, 02 May 2019 00:53:49 +0000
-Received: by mail-oi1-x229.google.com with SMTP id y64so409016oia.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 17:53:45 -0700 (PDT)
+ id 1hM2Xh-0007HY-NK
+ for openwrt-devel@lists.openwrt.org; Thu, 02 May 2019 03:37:55 +0000
+Received: by mail-vs1-xe2a.google.com with SMTP id j184so536268vsd.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 20:37:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=D9X0FAC+6lzsFbJU2TNeD0pFFuBc81mFHk3DCo8ShAU=;
- b=CERYahLNgh04aM70vRRK3BmU7r3+blYsyZZ6VJ2gxJrr7ZjxNGKh74QwozlFOrsAx8
- 7xgorruDewF5892JTUIDMywAq/GuCBmaR0klGNuq7J1xh6lVUeBVDEIiehqOT4c6a6o3
- Ct7aN3uSmkfP+50/wxz43kYm3gJFk/4BypSTKpIknmp7uVG0NGvKIEJ9fc5Eeu4WiFgp
- IdApiNvwEOCMB5cp/Txx0f1K50LQDuFBLfp0BnVXqPM4iiH7swDpvRtLvGbevG4JFrZa
- TarwF4p00gs9WNL1pL7MB5WkKqzTeUogRL0/8aqha/plx7eYCNoXzjfDqquglE0qzZN8
- VztQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=B8BxGFG/y7RoMNh61MFXL5SS4FJQeoVKIwZ2Nwwh7eo=;
+ b=LBl8+dKYcl16XRMhcg9UuVDIgzMEhpkTbHflI6yCj0hP2864rWlTLEB0weZ1DfFrqq
+ V/46kLh/5JaOxzoR8rK6P3LJv9mj+vMD6lsLSI1bu09zzmjAX4HVNhR9ckB8TY56fvcq
+ PJ0/+hyLz40zPDHmehQtKUwSnbokl7UOfPHeFdvlpPDGIkHlXFlsKNDgh5GjrMnDnHsJ
+ 2d6DlxtbLW7oCHr4Wg6B1O4REdBCisqKaujZCRZqOH7vBHxhwMX/fLbxzSDeWboud7bF
+ dO6TTcICzEU0Uzj8LjIX2TFbeYdBRXut9t7YksAOszsfCKKlxqUR2oH45MT/Pinrk3re
+ Nplw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=D9X0FAC+6lzsFbJU2TNeD0pFFuBc81mFHk3DCo8ShAU=;
- b=Y4wDcxS2KICDDMIBqB4JcFBkBqNCR/KQjZzizJWkDs5+jfE+NWJEs+SQ2VcDqCB17c
- X8h/zRiOKps8HzcLRZh8EN4h+s/9Cbuyo3b0iyWsUBjI2/4hYlKxL+UJcAsPN7sIENEB
- OXQuuLgtSNvYayfkQ5IQyxSS3WY7trEVLNuLtCL144DSfh+Krc8wHid4XzMHaoViU1Xl
- KF2pYjwvh+rWJPY+Dob7e6oS9V/vOCmljPsqhTYb6veZuP2atWgEMYIv9vNFDQBBZgw0
- +UZHc3YaxT75CnDrPPttmA4smzV/PJqU5BRYfIAURtv8MPVgfF5oPohzdQsKVV9FT20H
- 3L8g==
-X-Gm-Message-State: APjAAAXhdiVqQd6wbkt8JhRTSaAwOXLYtF3OYN1EG9utn2oIuh1BL/4o
- hPDy5M73x5v7r11Qhzq2MZSnwxQwxiQ6efU1TT4=
-X-Google-Smtp-Source: APXvYqwyMsyXpFXNK9Oc/s71xX2n8RldZY9L5USBfJxqphk/6nb4ugp7bhX8wsErMnXkQqp54weBHMgMy0pzzZkndoI=
-X-Received: by 2002:aca:afd3:: with SMTP id y202mr756958oie.26.1556758424946; 
- Wed, 01 May 2019 17:53:44 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=B8BxGFG/y7RoMNh61MFXL5SS4FJQeoVKIwZ2Nwwh7eo=;
+ b=ldas1xklAwnqFwMtvziqoTicQjwhUjt0SkK+Ggd0IVcCaUbYo0cNuqsetDnkLJEt2q
+ i/8pfKKrBo2jayZ4wHZ/HR3wV6UziOON0BK94wSrz9uIUFm02gqlLNVRIGAVBOO+TQeE
+ dprVIHPdRbLm08cI9clFDEPtg4AAEffjbLR1O7sLdHz6Vl352LladTY1P95IaPf9GTAW
+ dNG0XknmlUNr+5dLU/QYKqIclfjTI5Xs//9GF//fioazM14CqBLbojsijoVCnPPuwa93
+ SQ922vVEh3oRS+r1liNsvPD1JFAG+NTiQ0gBZYDI3rhyY0T91NkjNirOxfqp4sEBXBi/
+ g2eA==
+X-Gm-Message-State: APjAAAVF31ip5z+4Wg7shUXSziizamq6JhZfwQAkAxPHnryn9z19aLt5
+ gwlzaTS+A3FxJbUhmcYpFfNt1B3vCq5YP+01wA==
+X-Google-Smtp-Source: APXvYqzp5fQEC0ZvOco2CZ6cQAKa0A+xfhgYkjfhk68GVCu2ql3TPUYgmh4SGiLz/qRDaAR4spx6+u+4PTe/GPhDcyw=
+X-Received: by 2002:a67:b343:: with SMTP id b3mr668740vsm.237.1556768270433;
+ Wed, 01 May 2019 20:37:50 -0700 (PDT)
 MIME-Version: 1.0
-References: <CACRpkdZiK+CVwMjE9Vh70Pn_FNMbVpd95sj7CWxj9FNVDGWbvw@mail.gmail.com>
- <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
-In-Reply-To: <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
-From: Boris Krasnovskiy <borkra@gmail.com>
-Date: Wed, 1 May 2019 20:53:34 -0400
-Message-ID: <CAEjdZ08kk3X-qU_GaD5NncBuKjLSa+oNONtJKD5Xb_drbTDAtQ@mail.gmail.com>
-To: Linus Walleij <linus.walleij@linaro.org>, 
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <20190417134552.9294-1-freifunk@adrianschmutzler.de>
+ <3153692.KaT8f5YDfS@debian64>
+ <8a272c0b-4f75-df8a-f2a4-f9197ee9f7c4@david-bauer.net>
+ <2243041.a4oj9KbRke@debian64>
+ <912fd259-fe71-3446-bd05-838bea125163@david-bauer.net>
+ <005601d4f900$da3d1760$8eb74620$@adrianschmutzler.de>
+ <CABkW7JNC7uNqx+BgH80WAywsXymxEfwzFA+YRSmsYfDiRZDLpg@mail.gmail.com>
+ <007201d4ff4e$c6820a10$53861e30$@adrianschmutzler.de>
+In-Reply-To: <007201d4ff4e$c6820a10$53861e30$@adrianschmutzler.de>
+From: camden lindsay <camden.lindsay+lede@gmail.com>
+Date: Wed, 1 May 2019 20:37:39 -0700
+Message-ID: <CABkW7JNc+GeMHKna-fWLDDCWND=BhcT7fCgC+NRLkzQLL2gb4A@mail.gmail.com>
+To: mail@adrianschmutzler.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_175348_087651_72A2D336 
-X-CRM114-Status: GOOD (  17.11  )
+X-CRM114-CacheID: sfid-20190501_203753_794351_1E739158 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:229 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e2a listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (borkra[at]gmail.com)
+ provider (camden.lindsay[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,8 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] Commit 8dcc1087602e breaks FA526 (Gemini)
- compile
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: Add SUPPORTED_DEVICES for Archer
+ C7 v1/v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,384 +99,443 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3831395800840633132=="
+Cc: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Tomasz Maciej Nowak <tomek_n@o2.pl>, David Bauer <mail@david-bauer.net>,
+ Christian Lamparter <chunkeey@gmail.com>
+Content-Type: multipart/mixed; boundary="===============8581666779349417317=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============3831395800840633132==
-Content-Type: multipart/alternative; boundary="000000000000eb8ce90587dd1040"
+--===============8581666779349417317==
+Content-Type: multipart/alternative; boundary="000000000000c1c43f0587df5b73"
 
---000000000000eb8ce90587dd1040
+--000000000000c1c43f0587df5b73
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
 
-Hi Linus,
+Hmmm; well, i've got this; Fresh 'firstboot' on an archer c7 V2, following
+version info:
+root@LEDE:~# cat /etc/openwrt_*
+DISTRIB_ID='LEDE'
+DISTRIB_RELEASE='SNAPSHOT'
+DISTRIB_REVISION='r3189-12db207'
+DISTRIB_CODENAME='reboot'
+DISTRIB_TARGET='ar71xx/generic'
+DISTRIB_ARCH='mips_24kc'
+DISTRIB_DESCRIPTION='LEDE Reboot SNAPSHOT r3189-12db207'
+DISTRIB_TAINTS='no-all'
+r3189-12db207
+root@LEDE:~#
 
-I did check generated toolchain defaults. They seem correct.
-As such I believe issue is with one of the packages.
-Extra information like crash log could help to determine which one.
+/etc/config/wifi has this in it:
+root@LEDE:~# cat /etc/config/wireless
 
-Here are the generated toolchain defaults for gimeni:
+config wifi-device 'radio0'
+option type 'mac80211'
+option channel '36'
+option hwmode '11a'
+option path 'pci0000:01/0000:01:00.0'
+option htmode 'VHT80'
+option disabled '1'
 
-The following options are target specific:
-  -mabi=3D                      aapcs-linux
-  -mabort-on-noreturn          [disabled]
-  -mandroid                    [disabled]
-  -mapcs                      [disabled]
-  -mapcs-frame                [disabled]
-  -mapcs-reentrant            [disabled]
-  -mapcs-stack-check          [disabled]
-  -march=3D                      armv4
-  -marm                        [enabled]
-  -masm-syntax-unified        [disabled]
-  -mbe32                      [enabled]
-  -mbe8                        [disabled]
-  -mbig-endian                [disabled]
-  -mbionic                    [disabled]
-  -mbranch-cost=3D              -1
-  -mcallee-super-interworking [disabled]
-  -mcaller-super-interworking [disabled]
-  -mcmse                      [disabled]
-  -mcpu=3D                      fa526
-  -mfix-cortex-m3-ldrd        [disabled]
-  -mflip-thumb                [disabled]
-  -mfloat-abi=3D                soft
-  -mfp16-format=3D              none
-  -mfpu=3D                      auto
-  -mglibc                      [enabled]
-  -mhard-float
-  -mlittle-endian              [enabled]
-  -mlong-calls                [disabled]
-  -mmusl                      [disabled]
-  -mneon-for-64bits            [disabled]
-  -mpic-data-is-text-relative [enabled]
-  -mpic-register=3D
-  -mpoke-function-name        [disabled]
-  -mprint-tune-info            [disabled]
-  -mpure-code                  [disabled]
-  -mrestrict-it                [disabled]
-  -msched-prolog              [enabled]
-  -msingle-pic-base            [disabled]
-  -mslow-flash-data            [disabled]
-  -msoft-float
-  -mstructure-size-boundary=3D  8
-  -mthumb                      [disabled]
-  -mthumb-interwork            [disabled]
-  -mtls-dialect=3D              gnu
-  -mtp=3D                        soft
-  -mtpcs-frame                [disabled]
-  -mtpcs-leaf-frame            [disabled]
-  -mtune=3D
-  -muclibc                    [disabled]
-  -munaligned-access          [disabled]
-  -mvectorize-with-neon-double [disabled]
-  -mvectorize-with-neon-quad  [enabled]
-  -mword-relocations          [disabled]
+config wifi-iface 'default_radio0'
+option device 'radio0'
+option network 'lan'
+option mode 'ap'
+option ssid 'LEDE'
+option encryption 'none'
+
+config wifi-device 'radio1'
+option type 'mac80211'
+option channel '11'
+option hwmode '11g'
+option path 'platform/qca955x_wmac'
+option htmode 'HT20'
+option disabled '1'
+
+config wifi-iface 'default_radio1'
+option device 'radio1'
+option network 'lan'
+option mode 'ap'
+option ssid 'LEDE'
+option encryption 'none'
+
+and
+root@LEDE:/sys/class/ieee80211# ls -al /sys/class/ieee80211/
+drwxr-xr-x    2 root     root             0 Jan 27 22:39 .
+drwxr-xr-x   21 root     root             0 Jan  1  1970 ..
+lrwxrwxrwx    1 root     root             0 Jan 27 22:39 phy0 ->
+../../devices/pci0000:01/0000:01:00.0/ieee80211/phy0
+lrwxrwxrwx    1 root     root             0 Jan 27 22:39 phy1 ->
+../../devices/platform/qca955x_wmac/ieee80211/phy1
 
 
+After upgrading using sysupgrade to stable ar71xx:
+http://downloads.openwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-archer-c7-v2-squashfs-sysupgrade.bin
+root@LEDE:~# cat /etc/openwrt_*
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='18.06.2'
+DISTRIB_REVISION='r7676-cddd7b4c77'
+DISTRIB_TARGET='ar71xx/generic'
+DISTRIB_ARCH='mips_24kc'
+DISTRIB_DESCRIPTION='OpenWrt 18.06.2 r7676-cddd7b4c77'
+DISTRIB_TAINTS=''
+r7676-cddd7b4c77
+root@LEDE:~#
 
-On Wed, May 1, 2019 at 6:30 PM Boris Krasnovskiy <borkra@gmail.com> wrote:
+I should have double checked wireless config but didn't :-/  derp. I'll
+rollback to this at the end and post a firstboot'd wireless config from
+18.06.2.
 
-> Hi Linus,
->
->
->
-> I do not see anything wrong for your target. And I do not have any Gemini
-> devices.
->
->
->
-> Crash during init that you can see, is pretty far along in the boot
-> process, so toolchain likely correct.
->
->
->
-> Maybe an issue with some packages=E2=80=A6
->
->
->
-> You can run =E2=80=9C gcc -Q --help=3Dtarget=E2=80=9D on the compiled cro=
-ss toolchain and
-> check if default settings are correct, or post the output.
->
->
->
-> Can you send us the crash log?
->
->
->
-> Thank you,
-> Boris Krasnovskiy
->
->
-> ------------------------------
-> *From:* Linus Walleij <linus.walleij@linaro.org>
-> *Sent:* Wednesday, May 1, 2019 6:08:11 PM
-> *To:* Boris Krasnovskiy; OpenWrt Development List
-> *Subject:* Commit 8dcc1087602e breaks FA526 (Gemini) compile
->
-> Hi Boris & friends,
->
-> commit 8dcc1087602e2dd606e4f6e81a06aee62cfd4f4c
-> "toolchain: ARM: Fix toolchain compilation for gcc 8.x"
-> regresses the Gemini (FA526-based).
->
-> I cannot quite see how. I noticed init crashed with the latest
-> OpenWrt codebase and bisected it down to this commit.
->
-> Before the commit include/target.mk has:
->
-> ifneq ($(findstring arm,$(ARCH)),)
->  ....
->  CPU_CFLAGS_fa526 =3D -mcpu=3Dfa526
->  ....
->  ifeq ($(CONFIG_SOFT_FLOAT),)
->     ....
->
-> After in toolchain/gcc/common.mk we have:
->
-> ifeq ($(CONFIG_arm),y)
-> CC_CONFIGURE+=3D \
->        --with-cpu=3D$(word 1, $(subst +," ,$(CONFIG_CPU_TYPE)))
->  ....
->  ifneq ($(CONFIG_SOFT_FLOAT),y)
->     GCC_CONFIGURE+=3D \
->                --with-fpu=3D$(word 2, $(subst +, ",$(CONFIG_CPU_TYPE)))
->                --with-float=3Dhard
->
-> It's a bit terse so I cannot really make this out :/
->
-> Relevant stuff from my .config is:
-> CONFIG_CPU_TYPE=3D"fa526"
-> CONFIG_arm=3Dy
-> CONFIG_ARCH=3D"arm"
-> CONFIG_SOFT_FLOAT=3Dy
->
-> Any hints?
->
-> Yours,
-> Linus Walleij
->
+PCI paths:
+root@LEDE:~# ls -al /sys/class/ieee80211/
+drwxr-xr-x    2 root     root             0 Jan 30 12:21 .
+drwxr-xr-x   22 root     root             0 Jan  1  1970 ..
+lrwxrwxrwx    1 root     root             0 Jan 30 12:21 phy0 ->
+../../devices/pci0000:01/0000:01:00.0/ieee80211/phy0
+lrwxrwxrwx    1 root     root             0 Jan 30 12:21 phy1 ->
+../../devices/platform/qca955x_wmac/ieee80211/phy1
+
+Attempting to sysupgrade to ath79 brings this on:
+root@LEDE:~# sysupgrade
+/tmp/openwrt-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin
+Device archer-c7 not supported by this image
+Supported devices: tplink,archer-c7-v2
+Image check 'fwtool_check_image' failed.
+root@LEDE:~#
+
+Forcing upgrade with -f ... After upgrading using sysupgrade to snapshot
+ath79:
+http://downloads.openwrt.org/snapshots/targets/ath79/generic/openwrt-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin
+
+root@LEDE:~# cat /etc/openwrt_*
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='SNAPSHOT'
+DISTRIB_REVISION='r9915-d6643aca34'
+DISTRIB_TARGET='ath79/generic'
+DISTRIB_ARCH='mips_24kc'
+DISTRIB_DESCRIPTION='OpenWrt SNAPSHOT r9915-d6643aca34'
+DISTRIB_TAINTS=''
+r9915-d6643aca34
+root@LEDE:~#
 
 
---=20
-Thank you,
-Boris Krasnovskiy
+root@LEDE:~# ls -al /sys/class/ieee80211/
+drwxr-xr-x    2 root     root             0 May  1 05:25 .
+drwxr-xr-x   24 root     root             0 Jan  1  1970 ..
+lrwxrwxrwx    1 root     root             0 May  1 05:25 phy0 ->
+../../devices/pci0000:00/0000:00:00.0/ieee80211/phy0
+lrwxrwxrwx    1 root     root             0 May  1 05:25 phy1 ->
+../../devices/platform/ahb/ahb:apb/18100000.wmac/ieee80211/phy1
+root@LEDE:~#
 
---000000000000eb8ce90587dd1040
+wireless config seems to have both new and old paths..
+root@LEDE:~# cat /etc/config/wireless
+
+config wifi-device 'radio0'
+option type 'mac80211'
+option channel '36'
+option hwmode '11a'
+option path 'pci0000:01/0000:01:00.0'
+option htmode 'VHT80'
+option disabled '1'
+
+config wifi-iface 'default_radio0'
+option device 'radio0'
+option network 'lan'
+option mode 'ap'
+option ssid 'LEDE'
+option encryption 'none'
+
+config wifi-device 'radio1'
+option type 'mac80211'
+option channel '11'
+option hwmode '11g'
+option htmode 'HT20'
+option disabled '1'
+option path 'platform/ahb/ahb:apb/18100000.wmac'
+
+config wifi-iface 'default_radio1'
+option device 'radio1'
+option network 'lan'
+option mode 'ap'
+option ssid 'LEDE'
+option encryption 'none'
+
+config wifi-device 'radio2'
+option type 'mac80211'
+option channel '36'
+option hwmode '11a'
+option path 'pci0000:00/0000:00:00.0'
+option htmode 'VHT80'
+option disabled '1'
+
+config wifi-iface 'default_radio2'
+option device 'radio2'
+option network 'lan'
+option mode 'ap'
+option ssid 'OpenWrt'
+option encryption 'none'
+
+root@LEDE:~#
+
+
+And .. sorry its out of order, after downgrading using sysupgrade -F  to
+18.06.2, then firstbooting,see as follows
+root@OpenWrt:~# grep 18 /etc/openwrt_*
+/etc/openwrt_release:DISTRIB_RELEASE='18.06.2'
+/etc/openwrt_release:DISTRIB_DESCRIPTION='OpenWrt 18.06.2 r7676-cddd7b4c77'
+root@OpenWrt:~#
+
+root@OpenWrt:~# cat /etc/config/wireless
+
+config wifi-device 'radio0'
+option type 'mac80211'
+option channel '36'
+option hwmode '11a'
+option path 'pci0000:01/0000:01:00.0'
+option htmode 'VHT80'
+option disabled '1'
+
+config wifi-iface 'default_radio0'
+option device 'radio0'
+option network 'lan'
+option mode 'ap'
+option ssid 'OpenWrt'
+option encryption 'none'
+
+config wifi-device 'radio1'
+option type 'mac80211'
+option channel '11'
+option hwmode '11g'
+option path 'platform/qca955x_wmac'
+option htmode 'HT20'
+option disabled '1'
+
+config wifi-iface 'default_radio1'
+option device 'radio1'
+option network 'lan'
+option mode 'ap'
+option ssid 'OpenWrt'
+option encryption 'none'
+
+root@OpenWrt:~#
+
+
+
+
+Hope this helps some.  I've never used DTS... Heck, i don't even know which
+DTS ya'll are talking about since none of these seem to make sense(
+https://en.wikipedia.org/wiki/DTS)... so i'm  not clear on what needs to be
+done to test the following... (oh, wait .. device tree source.... still
+unsure how to proceed):
+"Does anybody want to
+> > test what happens if the ath79 C7 v2 DTS enables "pcie0" too? It might
+> > work, but it might not (depending on whenever it might end up in a
+> > different pci domain like pci0001:00.)."
+
+ c
+
+--000000000000c1c43f0587df5b73
 Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div dir=3D"ltr">Hi Linus,<div><br></div><div>I did check =
-generated toolchain defaults. They seem correct.=C2=A0</div><div>As such I =
-believe issue is with one of the packages.=C2=A0</div><div>Extra informatio=
-n like crash log could help to determine which one.</div><div><br></div><di=
-v>Here are the generated toolchain defaults for gimeni:</div><div><br></div=
-><div><div>The following options are target specific:</div><div>=C2=A0 -mab=
-i=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 <span style=3D"white-space:pre">		</span>aapcs-linux</div><div>=C2=
-=A0 -mabort-on-noreturn=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"whi=
-te-space:pre">		</span>[disabled]</div><div>=C2=A0 -mandroid=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white=
--space:pre">		</span>[disabled]</div><div>=C2=A0 -mapcs=C2=A0 =C2=A0 =C2=A0=
- =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"whi=
-te-space:pre">		</span>[disabled]</div><div>=C2=A0 -mapcs-frame=C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pr=
-e">		</span>[disabled]</div><div>=C2=A0 -mapcs-reentrant=C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled=
-]</div><div>=C2=A0 -mapcs-stack-check=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <sp=
-an style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -march=3D=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0<span style=3D"white-space:pre">		</span>armv4</div><div>=C2=A0 -marm=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0<span style=3D"white-space:pre">		</span>[enabled]</div><div>=C2=A0 -=
-masm-syntax-unified=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:p=
-re">		</span>[disabled]</div><div>=C2=A0 -mbe32=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space=
-:pre">		</span>[enabled]</div><div>=C2=A0 -mbe8=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white=
--space:pre">		</span>[disabled]</div><div>=C2=A0 -mbig-endian=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">	=
-	</span>[disabled]</div><div>=C2=A0 -mbionic=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</=
-span>[disabled]</div><div>=C2=A0 -mbranch-cost=3D=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>-1</div><=
-div>=C2=A0 -mcallee-super-interworking <span style=3D"white-space:pre">		</=
-span>[disabled]</div><div>=C2=A0 -mcaller-super-interworking <span style=3D=
-"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mcmse=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
-=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mcpu=3D=C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span=
- style=3D"white-space:pre">		</span>fa526</div><div>=C2=A0 -mfix-cortex-m3-=
-ldrd=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[d=
-isabled]</div><div>=C2=A0 -mflip-thumb=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</d=
-iv><div>=C2=A0 -mfloat-abi=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 <span style=3D"white-space:pre">		</span>soft</div><div>=C2=A0 -=
-mfp16-format=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
-=3D"white-space:pre">		</span>none</div><div>=C2=A0 -mfpu=3D=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
-=3D"white-space:pre">		</span>auto</div><div>=C2=A0 -mglibc=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=
-=3D"white-space:pre">		</span>[enabled]</div><div>=C2=A0 -mhard-float=C2=A0=
- =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-spac=
-e:pre">		</span></div><div>=C2=A0 -mlittle-endian=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white-space:pre">		</span>[enabled]<=
-/div><div>=C2=A0 -mlong-calls=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</div><div>=
-=C2=A0 -mmusl=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</div><di=
-v>=C2=A0 -mneon-for-64bits=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span st=
-yle=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mpic-data-is-=
-text-relative <span style=3D"white-space:pre">		</span>[enabled]</div><div>=
-=C2=A0 -mpic-register=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<sp=
-an style=3D"white-space:pre">		</span></div><div>=C2=A0 -mpoke-function-nam=
-e=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disa=
-bled]</div><div>=C2=A0 -mprint-tune-info=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0<span style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 =
--mpure-code=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<s=
-pan style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mrestri=
-ct-it=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"=
-white-space:pre">		</span>[disabled]</div><div>=C2=A0 -msched-prolog=C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">	=
-	</span>[enabled]</div><div>=C2=A0 -msingle-pic-base=C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0<span style=3D"white-space:pre">		</span>[disabled]</di=
-v><div>=C2=A0 -mslow-flash-data=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<sp=
-an style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -msoft-fl=
-oat=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"w=
-hite-space:pre">		</span></div><div>=C2=A0 -mstructure-size-boundary=3D=C2=
-=A0 <span style=3D"white-space:pre">		</span>8</div><div>=C2=A0 -mthumb=C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<s=
-pan style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mthumb-=
-interwork=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white-spac=
-e:pre">		</span>[disabled]</div><div>=C2=A0 -mtls-dialect=3D=C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span=
->gnu</div><div>=C2=A0 -mtp=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white-space:pre">		</s=
-pan>soft</div><div>=C2=A0 -mtpcs-frame=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</d=
-iv><div>=C2=A0 -mtpcs-leaf-frame=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<s=
-pan style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mtune=
-=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0<span style=3D"white-space:pre">		</span></div><div>=C2=A0 -muclibc=
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span=
- style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -munaligned=
--access=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">	=
-	</span>[disabled]</div><div>=C2=A0 -mvectorize-with-neon-double <span styl=
-e=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mvectorize-with=
--neon-quad=C2=A0 <span style=3D"white-space:pre">		</span>[enabled]</div><d=
-iv>=C2=A0 -mword-relocations=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
-=3D"white-space:pre">		</span>[disabled]</div></div><div><br></div><div><br=
-></div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D=
-"gmail_attr">On Wed, May 1, 2019 at 6:30 PM Boris Krasnovskiy &lt;<a href=
-=3D"mailto:borkra@gmail.com">borkra@gmail.com</a>&gt; wrote:<br></div><bloc=
-kquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:=
-1px solid rgb(204,204,204);padding-left:1ex">
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"lt=
+r"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div=
+ dir=3D"ltr"><div dir=3D"ltr">Hmmm; well, i&#39;ve got this; Fresh &#39;fir=
+stboot&#39; on an archer c7 V2, following version info:<div><div>root@LEDE:=
+~# cat /etc/openwrt_*<br></div><div>DISTRIB_ID=3D&#39;LEDE&#39;</div><div>D=
+ISTRIB_RELEASE=3D&#39;SNAPSHOT&#39;</div><div>DISTRIB_REVISION=3D&#39;r3189=
+-12db207&#39;</div><div>DISTRIB_CODENAME=3D&#39;reboot&#39;</div><div>DISTR=
+IB_TARGET=3D&#39;ar71xx/generic&#39;</div><div>DISTRIB_ARCH=3D&#39;mips_24k=
+c&#39;</div><div>DISTRIB_DESCRIPTION=3D&#39;LEDE Reboot SNAPSHOT r3189-12db=
+207&#39;</div><div>DISTRIB_TAINTS=3D&#39;no-all&#39;</div><div>r3189-12db20=
+7</div><div>root@LEDE:~#=C2=A0</div><div><br></div><div>/etc/config/wifi ha=
+s this in it:</div><div><div>root@LEDE:~# cat /etc/config/wireless=C2=A0</d=
+iv><div><br></div><div>config wifi-device &#39;radio0&#39;</div><div><span =
+style=3D"white-space:pre">	</span>option type &#39;mac80211&#39;</div><div>=
+<span style=3D"white-space:pre">	</span>option channel &#39;36&#39;</div><d=
+iv><span style=3D"white-space:pre">	</span>option hwmode &#39;11a&#39;</div=
+><div><span style=3D"white-space:pre">	</span>option path &#39;pci0000:01/0=
+000:01:00.0&#39;</div><div><span style=3D"white-space:pre">	</span>option h=
+tmode &#39;VHT80&#39;</div><div><span style=3D"white-space:pre">	</span>opt=
+ion disabled &#39;1&#39;</div><div><br></div><div>config wifi-iface &#39;de=
+fault_radio0&#39;</div><div><span style=3D"white-space:pre">	</span>option =
+device &#39;radio0&#39;</div><div><span style=3D"white-space:pre">	</span>o=
+ption network &#39;lan&#39;</div><div><span style=3D"white-space:pre">	</sp=
+an>option mode &#39;ap&#39;</div><div><span style=3D"white-space:pre">	</sp=
+an>option ssid &#39;LEDE&#39;</div><div><span style=3D"white-space:pre">	</=
+span>option encryption &#39;none&#39;</div><div><br></div><div>config wifi-=
+device &#39;radio1&#39;</div><div><span style=3D"white-space:pre">	</span>o=
+ption type &#39;mac80211&#39;</div><div><span style=3D"white-space:pre">	</=
+span>option channel &#39;11&#39;</div><div><span style=3D"white-space:pre">=
+	</span>option hwmode &#39;11g&#39;</div><div><span style=3D"white-space:pr=
+e">	</span>option path &#39;platform/qca955x_wmac&#39;</div><div><span styl=
+e=3D"white-space:pre">	</span>option htmode &#39;HT20&#39;</div><div><span =
+style=3D"white-space:pre">	</span>option disabled &#39;1&#39;</div><div><br=
+></div><div>config wifi-iface &#39;default_radio1&#39;</div><div><span styl=
+e=3D"white-space:pre">	</span>option device &#39;radio1&#39;</div><div><spa=
+n style=3D"white-space:pre">	</span>option network &#39;lan&#39;</div><div>=
+<span style=3D"white-space:pre">	</span>option mode &#39;ap&#39;</div><div>=
+<span style=3D"white-space:pre">	</span>option ssid &#39;LEDE&#39;</div><di=
+v><span style=3D"white-space:pre">	</span>option encryption &#39;none&#39;<=
+/div></div><div><br></div><div>and=C2=A0</div><div><div>root@LEDE:/sys/clas=
+s/ieee80211# ls -al /sys/class/ieee80211/</div><div>drwxr-xr-x=C2=A0 =C2=A0=
+ 2 root=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A00 Jan 27 22:39 .</div><div>drwxr-xr-x=C2=A0 =C2=A021 root=C2=A0 =C2=
+=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 Jan=C2=A0 1=
+=C2=A0 1970 ..</div><div>lrwxrwxrwx=C2=A0 =C2=A0 1 root=C2=A0 =C2=A0 =C2=A0=
+root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 Jan 27 22:39 phy0 -&g=
+t; ../../devices/pci0000:01/0000:01:00.0/ieee80211/phy0</div><div>lrwxrwxrw=
+x=C2=A0 =C2=A0 1 root=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A00 Jan 27 22:39 phy1 -&gt; ../../devices/platform/qca955=
+x_wmac/ieee80211/phy1</div></div><div><br></div><div><br></div><div>After u=
+pgrading using sysupgrade to stable ar71xx: <a href=3D"http://downloads.ope=
+nwrt.org/releases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-gen=
+eric-archer-c7-v2-squashfs-sysupgrade.bin">http://downloads.openwrt.org/rel=
+eases/18.06.2/targets/ar71xx/generic/openwrt-18.06.2-ar71xx-generic-archer-=
+c7-v2-squashfs-sysupgrade.bin</a></div><div><div>root@LEDE:~# cat /etc/open=
+wrt_*</div><div>DISTRIB_ID=3D&#39;OpenWrt&#39;</div><div>DISTRIB_RELEASE=3D=
+&#39;18.06.2&#39;</div><div>DISTRIB_REVISION=3D&#39;r7676-cddd7b4c77&#39;</=
+div><div>DISTRIB_TARGET=3D&#39;ar71xx/generic&#39;</div><div>DISTRIB_ARCH=
+=3D&#39;mips_24kc&#39;</div><div>DISTRIB_DESCRIPTION=3D&#39;OpenWrt 18.06.2=
+ r7676-cddd7b4c77&#39;</div><div>DISTRIB_TAINTS=3D&#39;&#39;</div><div>r767=
+6-cddd7b4c77</div><div>root@LEDE:~#=C2=A0</div></div><div><br></div><div>I =
+should have double checked wireless config but didn&#39;t :-/=C2=A0 derp. I=
+&#39;ll rollback to this at the end and post a firstboot&#39;d wireless con=
+fig from 18.06.2.</div><div><br></div><div>PCI paths:</div><div><div>root@L=
+EDE:~# ls -al /sys/class/ieee80211/</div><div>drwxr-xr-x=C2=A0 =C2=A0 2 roo=
+t=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 =
+Jan 30 12:21 .</div><div>drwxr-xr-x=C2=A0 =C2=A022 root=C2=A0 =C2=A0 =C2=A0=
+root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 Jan=C2=A0 1=C2=A0 197=
+0 ..</div><div>lrwxrwxrwx=C2=A0 =C2=A0 1 root=C2=A0 =C2=A0 =C2=A0root=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 Jan 30 12:21 phy0 -&gt; ../../d=
+evices/pci0000:01/0000:01:00.0/ieee80211/phy0</div><div>lrwxrwxrwx=C2=A0 =
+=C2=A0 1 root=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A00 Jan 30 12:21 phy1 -&gt; ../../devices/platform/qca955x_wmac/iee=
+e80211/phy1</div><div><br></div></div><div>Attempting to sysupgrade to ath7=
+9 brings this on:</div><div><div>root@LEDE:~# sysupgrade /tmp/openwrt-ath79=
+-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin=C2=A0</div><div>Device=
+ archer-c7 not supported by this image</div><div>Supported devices: tplink,=
+archer-c7-v2</div><div>Image check &#39;fwtool_check_image&#39; failed.</di=
+v><div>root@LEDE:~#=C2=A0</div></div><div><br></div><div>Forcing upgrade wi=
+th -f ... After upgrading using sysupgrade to snapshot ath79:</div><div><a =
+href=3D"http://downloads.openwrt.org/snapshots/targets/ath79/generic/openwr=
+t-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin">http://downloa=
+ds.openwrt.org/snapshots/targets/ath79/generic/openwrt-ath79-generic-tplink=
+_archer-c7-v2-squashfs-sysupgrade.bin</a><br></div><div><br></div><div><div=
+>root@LEDE:~# cat /etc/openwrt_*</div><div>DISTRIB_ID=3D&#39;OpenWrt&#39;</=
+div><div>DISTRIB_RELEASE=3D&#39;SNAPSHOT&#39;</div><div>DISTRIB_REVISION=3D=
+&#39;r9915-d6643aca34&#39;</div><div>DISTRIB_TARGET=3D&#39;ath79/generic&#3=
+9;</div><div>DISTRIB_ARCH=3D&#39;mips_24kc&#39;</div><div>DISTRIB_DESCRIPTI=
+ON=3D&#39;OpenWrt SNAPSHOT r9915-d6643aca34&#39;</div><div>DISTRIB_TAINTS=
+=3D&#39;&#39;</div><div>r9915-d6643aca34</div><div>root@LEDE:~#=C2=A0</div>=
+</div><div><br></div><div><br></div><div><div>root@LEDE:~# ls -al /sys/clas=
+s/ieee80211/</div><div>drwxr-xr-x=C2=A0 =C2=A0 2 root=C2=A0 =C2=A0 =C2=A0ro=
+ot=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 May=C2=A0 1 05:25 .</di=
+v><div>drwxr-xr-x=C2=A0 =C2=A024 root=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 Jan=C2=A0 1=C2=A0 1970 ..</div><div>lrw=
+xrwxrwx=C2=A0 =C2=A0 1 root=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A00 May=C2=A0 1 05:25 phy0 -&gt; ../../devices/pci000=
+0:00/0000:00:00.0/ieee80211/phy0</div><div>lrwxrwxrwx=C2=A0 =C2=A0 1 root=
+=C2=A0 =C2=A0 =C2=A0root=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A00 M=
+ay=C2=A0 1 05:25 phy1 -&gt; ../../devices/platform/ahb/ahb:apb/18100000.wma=
+c/ieee80211/phy1</div><div>root@LEDE:~#=C2=A0</div></div><div><br></div><di=
+v>wireless config seems to have both new and old paths..</div></div><div><d=
+iv>root@LEDE:~# cat /etc/config/wireless=C2=A0</div><div><br></div><div>con=
+fig wifi-device &#39;radio0&#39;</div><div><span style=3D"white-space:pre">=
+	</span>option type &#39;mac80211&#39;</div><div><span style=3D"white-space=
+:pre">	</span>option channel &#39;36&#39;</div><div><span style=3D"white-sp=
+ace:pre">	</span>option hwmode &#39;11a&#39;</div><div><span style=3D"white=
+-space:pre">	</span>option path &#39;pci0000:01/0000:01:00.0&#39;</div><div=
+><span style=3D"white-space:pre">	</span>option htmode &#39;VHT80&#39;</div=
+><div><span style=3D"white-space:pre">	</span>option disabled &#39;1&#39;</=
+div><div><br></div><div>config wifi-iface &#39;default_radio0&#39;</div><di=
+v><span style=3D"white-space:pre">	</span>option device &#39;radio0&#39;</d=
+iv><div><span style=3D"white-space:pre">	</span>option network &#39;lan&#39=
+;</div><div><span style=3D"white-space:pre">	</span>option mode &#39;ap&#39=
+;</div><div><span style=3D"white-space:pre">	</span>option ssid &#39;LEDE&#=
+39;</div><div><span style=3D"white-space:pre">	</span>option encryption &#3=
+9;none&#39;</div><div><br></div><div>config wifi-device &#39;radio1&#39;</d=
+iv><div><span style=3D"white-space:pre">	</span>option type &#39;mac80211&#=
+39;</div><div><span style=3D"white-space:pre">	</span>option channel &#39;1=
+1&#39;</div><div><span style=3D"white-space:pre">	</span>option hwmode &#39=
+;11g&#39;</div><div><span style=3D"white-space:pre">	</span>option htmode &=
+#39;HT20&#39;</div><div><span style=3D"white-space:pre">	</span>option disa=
+bled &#39;1&#39;</div><div><span style=3D"white-space:pre">	</span>option p=
+ath &#39;platform/ahb/ahb:apb/18100000.wmac&#39;</div><div><br></div><div>c=
+onfig wifi-iface &#39;default_radio1&#39;</div><div><span style=3D"white-sp=
+ace:pre">	</span>option device &#39;radio1&#39;</div><div><span style=3D"wh=
+ite-space:pre">	</span>option network &#39;lan&#39;</div><div><span style=
+=3D"white-space:pre">	</span>option mode &#39;ap&#39;</div><div><span style=
+=3D"white-space:pre">	</span>option ssid &#39;LEDE&#39;</div><div><span sty=
+le=3D"white-space:pre">	</span>option encryption &#39;none&#39;</div><div><=
+br></div><div>config wifi-device &#39;radio2&#39;</div><div><span style=3D"=
+white-space:pre">	</span>option type &#39;mac80211&#39;</div><div><span sty=
+le=3D"white-space:pre">	</span>option channel &#39;36&#39;</div><div><span =
+style=3D"white-space:pre">	</span>option hwmode &#39;11a&#39;</div><div><sp=
+an style=3D"white-space:pre">	</span>option path &#39;pci0000:00/0000:00:00=
+.0&#39;</div><div><span style=3D"white-space:pre">	</span>option htmode &#3=
+9;VHT80&#39;</div><div><span style=3D"white-space:pre">	</span>option disab=
+led &#39;1&#39;</div><div><br></div><div>config wifi-iface &#39;default_rad=
+io2&#39;</div><div><span style=3D"white-space:pre">	</span>option device &#=
+39;radio2&#39;</div><div><span style=3D"white-space:pre">	</span>option net=
+work &#39;lan&#39;</div><div><span style=3D"white-space:pre">	</span>option=
+ mode &#39;ap&#39;</div><div><span style=3D"white-space:pre">	</span>option=
+ ssid &#39;OpenWrt&#39;</div><div><span style=3D"white-space:pre">	</span>o=
+ption encryption &#39;none&#39;</div><div><br></div><div>root@LEDE:~#=C2=A0=
+</div><div><br></div></div><div><br></div><div>And .. sorry its out of orde=
+r, after downgrading using sysupgrade -F=C2=A0 to 18.06.2, then firstbootin=
+g,see as follows</div><div>root@OpenWrt:~# grep 18 /etc/openwrt_*</div><div=
+>/etc/openwrt_release:DISTRIB_RELEASE=3D&#39;18.06.2&#39;</div><div>/etc/op=
+enwrt_release:DISTRIB_DESCRIPTION=3D&#39;OpenWrt 18.06.2 r7676-cddd7b4c77&#=
+39;</div><div>root@OpenWrt:~#=C2=A0</div><div><br></div><div>root@OpenWrt:~=
+# cat /etc/config/wireless=C2=A0</div><div><br></div><div>config wifi-devic=
+e &#39;radio0&#39;</div><div><span style=3D"white-space:pre">	</span>option=
+ type &#39;mac80211&#39;</div><div><span style=3D"white-space:pre">	</span>=
+option channel &#39;36&#39;</div><div><span style=3D"white-space:pre">	</sp=
+an>option hwmode &#39;11a&#39;</div><div><span style=3D"white-space:pre">	<=
+/span>option path &#39;pci0000:01/0000:01:00.0&#39;</div><div><span style=
+=3D"white-space:pre">	</span>option htmode &#39;VHT80&#39;</div><div><span =
+style=3D"white-space:pre">	</span>option disabled &#39;1&#39;</div><div><br=
+></div><div>config wifi-iface &#39;default_radio0&#39;</div><div><span styl=
+e=3D"white-space:pre">	</span>option device &#39;radio0&#39;</div><div><spa=
+n style=3D"white-space:pre">	</span>option network &#39;lan&#39;</div><div>=
+<span style=3D"white-space:pre">	</span>option mode &#39;ap&#39;</div><div>=
+<span style=3D"white-space:pre">	</span>option ssid &#39;OpenWrt&#39;</div>=
+<div><span style=3D"white-space:pre">	</span>option encryption &#39;none&#3=
+9;</div><div><br></div><div>config wifi-device &#39;radio1&#39;</div><div><=
+span style=3D"white-space:pre">	</span>option type &#39;mac80211&#39;</div>=
+<div><span style=3D"white-space:pre">	</span>option channel &#39;11&#39;</d=
+iv><div><span style=3D"white-space:pre">	</span>option hwmode &#39;11g&#39;=
+</div><div><span style=3D"white-space:pre">	</span>option path &#39;platfor=
+m/qca955x_wmac&#39;</div><div><span style=3D"white-space:pre">	</span>optio=
+n htmode &#39;HT20&#39;</div><div><span style=3D"white-space:pre">	</span>o=
+ption disabled &#39;1&#39;</div><div><br></div><div>config wifi-iface &#39;=
+default_radio1&#39;</div><div><span style=3D"white-space:pre">	</span>optio=
+n device &#39;radio1&#39;</div><div><span style=3D"white-space:pre">	</span=
+>option network &#39;lan&#39;</div><div><span style=3D"white-space:pre">	</=
+span>option mode &#39;ap&#39;</div><div><span style=3D"white-space:pre">	</=
+span>option ssid &#39;OpenWrt&#39;</div><div><span style=3D"white-space:pre=
+">	</span>option encryption &#39;none&#39;</div><div><br></div><div>root@Op=
+enWrt:~#=C2=A0</div><div><br></div><div><br></div><div><br></div><div><br><=
+/div><div>Hope this helps some.=C2=A0 I&#39;ve never used DTS... Heck, i do=
+n&#39;t even know which DTS ya&#39;ll are talking about since none of these=
+ seem to make sense(<a href=3D"https://en.wikipedia.org/wiki/DTS">https://e=
+n.wikipedia.org/wiki/DTS</a>)... so i&#39;m=C2=A0 not clear on what needs t=
+o be done to test the following... (oh, wait .. device tree source.... stil=
+l unsure how to proceed):</div><div>&quot;Does anybody want to</div><div>&g=
+t; &gt; test what happens if the ath79 C7 v2 DTS enables &quot;pcie0&quot; =
+too? It might</div><div>&gt; &gt; work, but it might not (depending on when=
+ever it might end up in a</div><div>&gt; &gt; different pci domain like pci=
+0001:00.).&quot;</div><div><br></div><div>=C2=A0c</div></div></div></div></=
+div></div></div></div></div></div></div></div></div></div></div></div>
+
+--000000000000c1c43f0587df5b73--
 
 
-
-
-
-<div>
-
-<div lang=3D"EN-US">
-<div class=3D"gmail-m_7993004021501858614x_WordSection1">
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Hi Linus,</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">I do not see anything w=
-rong for your target. And I do not have any Gemini devices.</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Crash during init that =
-you can see, is pretty far along in the boot process, so toolchain likely c=
-orrect.
-</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Maybe an issue with som=
-e packages=E2=80=A6</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">You can run =E2=80=9C <=
-span style=3D"font-size:10pt;font-family:Consolas;color:rgb(68,68,68);backg=
-round:rgb(247,247,247)">
-gcc -Q --help=3Dtarget=E2=80=9D on the compiled cross toolchain and check i=
-f default settings are correct, or post the output.</span></p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Can you send us the cra=
-sh log?</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Thank you,<br>
-Boris Krasnovskiy</p>
-<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
-</div>
-<hr style=3D"display:inline-block;width:98%">
-<div id=3D"gmail-m_7993004021501858614x_divRplyFwdMsg" dir=3D"ltr"><font fa=
-ce=3D"Calibri, sans-serif" color=3D"#000000" style=3D"font-size:11pt"><b>Fr=
-om:</b> Linus Walleij &lt;<a href=3D"mailto:linus.walleij@linaro.org" targe=
-t=3D"_blank">linus.walleij@linaro.org</a>&gt;<br>
-<b>Sent:</b> Wednesday, May 1, 2019 6:08:11 PM<br>
-<b>To:</b> Boris Krasnovskiy; OpenWrt Development List<br>
-<b>Subject:</b> Commit 8dcc1087602e breaks FA526 (Gemini) compile</font>
-<div>=C2=A0</div>
-</div>
-</div>
-<font size=3D"2"><span style=3D"font-size:11pt">
-<div class=3D"gmail-m_7993004021501858614PlainText">Hi Boris &amp; friends,=
-<br>
-<br>
-commit 8dcc1087602e2dd606e4f6e81a06aee62cfd4f4c<br>
-&quot;toolchain: ARM: Fix toolchain compilation for gcc 8.x&quot;<br>
-regresses the Gemini (FA526-based).<br>
-<br>
-I cannot quite see how. I noticed init crashed with the latest<br>
-OpenWrt codebase and bisected it down to this commit.<br>
-<br>
-Before the commit include/<a href=3D"http://target.mk" target=3D"_blank">ta=
-rget.mk</a> has:<br>
-<br>
-ifneq ($(findstring arm,$(ARCH)),)<br>
-=C2=A0....<br>
-=C2=A0CPU_CFLAGS_fa526 =3D -mcpu=3Dfa526<br>
-=C2=A0....<br>
-=C2=A0ifeq ($(CONFIG_SOFT_FLOAT),)<br>
-=C2=A0=C2=A0=C2=A0 ....<br>
-<br>
-After in toolchain/gcc/<a href=3D"http://common.mk" target=3D"_blank">commo=
-n.mk</a> we have:<br>
-<br>
-ifeq ($(CONFIG_arm),y)<br>
-CC_CONFIGURE+=3D \<br>
-=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --with-cpu=3D$(word 1, $(subst +,&quot=
-; ,$(CONFIG_CPU_TYPE)))<br>
-=C2=A0....<br>
-=C2=A0ifneq ($(CONFIG_SOFT_FLOAT),y)<br>
-=C2=A0=C2=A0=C2=A0 GCC_CONFIGURE+=3D \<br>
-=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0=C2=A0 --with-fpu=3D$(word 2, $(subst +, &quot;,$(CONFIG_CPU_TYPE)))<br>
-=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0=C2=A0 --with-float=3Dhard<br>
-<br>
-It&#39;s a bit terse so I cannot really make this out :/<br>
-<br>
-Relevant stuff from my .config is:<br>
-CONFIG_CPU_TYPE=3D&quot;fa526&quot;<br>
-CONFIG_arm=3Dy<br>
-CONFIG_ARCH=3D&quot;arm&quot;<br>
-CONFIG_SOFT_FLOAT=3Dy<br>
-<br>
-Any hints?<br>
-<br>
-Yours,<br>
-Linus Walleij<br>
-</div>
-</span></font>
-</div>
-
-</blockquote></div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr"=
- class=3D"gmail_signature">Thank you,<br>Boris Krasnovskiy</div>
-
---000000000000eb8ce90587dd1040--
-
-
---===============3831395800840633132==
+--===============8581666779349417317==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -482,5 +546,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3831395800840633132==--
+--===============8581666779349417317==--
 

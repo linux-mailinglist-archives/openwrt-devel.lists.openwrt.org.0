@@ -2,88 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D35F310F04
-	for <lists+openwrt-devel@lfdr.de>; Thu,  2 May 2019 00:30:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6BAD110CF
+	for <lists+openwrt-devel@lfdr.de>; Thu,  2 May 2019 02:54:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:In-Reply-To:References:Message-ID:Date:To:From:Reply-To:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZC2zi32v03AoRdQNVhVRf79c5QYwxUVlOuQKqPvwX7E=; b=VagqYKVKRmgPotQIn32z5+nqw
-	VBusFMP140PHTEEjR+yX1V6TH12ldgC6xxu2suMESN8B7iWHowhNv/UoJLJLK1YIcM3DZdqcRmOuu
-	FkU6+2ujuRCura6KPiCK73m84XLxCQfO+Vsgds0XM6Mz4H0or0Tnz9MYwizDasmvq6fmwFVQF2rXO
-	K7iHOj6PbgVus/0WlhBcvIUJg/3KlPe4r83kO/tyeOmIFD+Z3PGG+B7gC2oP+WJLzkiGCfpqrsmWe
-	D2xS/SUmdPCxeVR/CbmyC3N3qCuMmPF91j3j2zOq+0FFTe35MFE52pv0g9XAu3jIusEOKixCadcC6
-	FycbYRX1g==;
+	 bh=me+8ToktRfS3FnWpUSG693f7kYvn0mdv4w4kPNE33XA=; b=UaFCaCgCMlCEoHLgr/IFUB/pt
+	VXMEFrTQoADNV4dhN0jxS9VTPeRxpLmTdME81XtlBDhKmgwZ1BZgTVWGIuKRsazs8F4tp1xTG4For
+	Ch+y3c+lXqFbeUnJKAzapa2/C049toTq6wWqu+En+ZGMfeoheVcLRzOljO+etNgsQbnUSB4DgiGai
+	J+A8EoDgsZIqGM/v8TTGN33WBe48mHxgMuZN7N16ruCtd/eyhSMIm3cYGfivMykm6fVY3iax11Odv
+	CaWVBzKVmTWNL4RmbWrjG2REWvq+mwk0MDQ5u3fLU6ukMCVpuHHI4puysyC8F40mibLgjjYdblk91
+	iH1U/yieg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLxkZ-0000qK-DP; Wed, 01 May 2019 22:30:51 +0000
-Received: from mail-qk1-x736.google.com ([2607:f8b0:4864:20::736])
+	id 1hLzz1-0004Yd-33; Thu, 02 May 2019 00:53:55 +0000
+Received: from mail-oi1-x229.google.com ([2607:f8b0:4864:20::229])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLxkS-0000q1-OB
- for openwrt-devel@lists.openwrt.org; Wed, 01 May 2019 22:30:46 +0000
-Received: by mail-qk1-x736.google.com with SMTP id c1so357307qkk.4
- for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 15:30:43 -0700 (PDT)
+ id 1hLzyu-0004YK-0c
+ for openwrt-devel@lists.openwrt.org; Thu, 02 May 2019 00:53:49 +0000
+Received: by mail-oi1-x229.google.com with SMTP id y64so409016oia.7
+ for <openwrt-devel@lists.openwrt.org>; Wed, 01 May 2019 17:53:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:thread-topic:thread-index:date:message-id
- :references:in-reply-to:accept-language:content-language
- :mime-version; bh=OltiTrVmnaoZOo2/kKnkP+p7pJGf4I0LVNsFhPCY7+o=;
- b=RqWo/zCJVxi6H1Z49aaeKKXDUsMLur/tO3vNJpvmPvXspUWtg2nef2z4oXWfOlDfBc
- 0Hb6MKhpMVa6V7rKNCqJIOwnxejunGLZ9VYAJ6sYIahhtbRybv64189hk/9SKSYTz1A7
- 3KmjLouYeyePmyr9FBktnxMp+I9KNp9TdF1qkvaAReNMS8KIJYlmU5FzDycsZyQM7g/P
- CgQZdR8cPUNcga598V1043HI9QlOIQpYqASZjUrgImhOl/FP4tM0418hXkmZ/moL4Enh
- I+vUwWTvPGG/GPa6SW82lkJD6jn3NI0nU2vGv/d6At6P5gItHm9/5St+dJja2GE1vc04
- wDOA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=D9X0FAC+6lzsFbJU2TNeD0pFFuBc81mFHk3DCo8ShAU=;
+ b=CERYahLNgh04aM70vRRK3BmU7r3+blYsyZZ6VJ2gxJrr7ZjxNGKh74QwozlFOrsAx8
+ 7xgorruDewF5892JTUIDMywAq/GuCBmaR0klGNuq7J1xh6lVUeBVDEIiehqOT4c6a6o3
+ Ct7aN3uSmkfP+50/wxz43kYm3gJFk/4BypSTKpIknmp7uVG0NGvKIEJ9fc5Eeu4WiFgp
+ IdApiNvwEOCMB5cp/Txx0f1K50LQDuFBLfp0BnVXqPM4iiH7swDpvRtLvGbevG4JFrZa
+ TarwF4p00gs9WNL1pL7MB5WkKqzTeUogRL0/8aqha/plx7eYCNoXzjfDqquglE0qzZN8
+ VztQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:thread-topic:thread-index:date
- :message-id:references:in-reply-to:accept-language:content-language
- :mime-version;
- bh=OltiTrVmnaoZOo2/kKnkP+p7pJGf4I0LVNsFhPCY7+o=;
- b=efS/yrgHAiM97AhhHvnWY4st3x1XHQUBu+AS9CF+LtHMRFYOj0TpPNtcQ926l44eCI
- 7oww99KLCxf8MhxvPLfuI3m3NC8HhRV/kwiup8nezIYu4Xj53aVU2o6xsnx+vc33vk36
- EkGX/aWyaRe943y0ZUGl2f7rHD8RzpEHnciqi90sExFQ/3HaF0zkEQVaUM3Lj4ty4VtP
- zLBu8KzOgS/xAu5Kox0qLKFU9MX8ibXCa4R9t6iJtU4a8nQpAooMTmxgz1YtBoRsWuRZ
- rmuPDDDAv0kfxhrIRBWl0t11kyNtamYeRVcxREEhPhx3uFOap0cFCggtc2B2xbcpOlH0
- nsXQ==
-X-Gm-Message-State: APjAAAXEuKxApdAs5ycedWhWzpnPGZUMqdZ79bhlenO77wlmpCtlByLS
- 8tvMd58RB389uZnTzkQaI2E=
-X-Google-Smtp-Source: APXvYqzQpTlPiIKq3wC/EDfLdeo2arsk+rkm239luRFsThZSefmf+RXJdrvBMIZ0L8USC9kna7MDCw==
-X-Received: by 2002:a37:4b03:: with SMTP id y3mr486541qka.260.1556749843077;
- Wed, 01 May 2019 15:30:43 -0700 (PDT)
-Received: from BN7PR08MB6003.namprd08.prod.outlook.com ([40.97.229.253])
- by smtp.gmail.com with ESMTPSA id 17sm16776723qty.79.2019.05.01.15.30.41
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 01 May 2019 15:30:42 -0700 (PDT)
-From: Boris Krasnovskiy <borkra@gmail.com>
-To: Linus Walleij <linus.walleij@linaro.org>, OpenWrt Development List
- <openwrt-devel@lists.openwrt.org>
-Thread-Topic: Commit 8dcc1087602e breaks FA526 (Gemini) compile
-Thread-Index: AXdqcDcrC5lwSuN2drfSUtABu0Cmlrsr9TP4
-X-MS-Exchange-MessageSentRepresentingType: 1
-Date: Wed, 1 May 2019 22:30:41 +0000
-Message-ID: <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
-References: <CACRpkdZiK+CVwMjE9Vh70Pn_FNMbVpd95sj7CWxj9FNVDGWbvw@mail.gmail.com>
-In-Reply-To: <CACRpkdZiK+CVwMjE9Vh70Pn_FNMbVpd95sj7CWxj9FNVDGWbvw@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-Exchange-Organization-SCL: -1
-X-MS-TNEF-Correlator: 
-X-MS-Exchange-Organization-RecordReviewCfmType: 0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=D9X0FAC+6lzsFbJU2TNeD0pFFuBc81mFHk3DCo8ShAU=;
+ b=Y4wDcxS2KICDDMIBqB4JcFBkBqNCR/KQjZzizJWkDs5+jfE+NWJEs+SQ2VcDqCB17c
+ X8h/zRiOKps8HzcLRZh8EN4h+s/9Cbuyo3b0iyWsUBjI2/4hYlKxL+UJcAsPN7sIENEB
+ OXQuuLgtSNvYayfkQ5IQyxSS3WY7trEVLNuLtCL144DSfh+Krc8wHid4XzMHaoViU1Xl
+ KF2pYjwvh+rWJPY+Dob7e6oS9V/vOCmljPsqhTYb6veZuP2atWgEMYIv9vNFDQBBZgw0
+ +UZHc3YaxT75CnDrPPttmA4smzV/PJqU5BRYfIAURtv8MPVgfF5oPohzdQsKVV9FT20H
+ 3L8g==
+X-Gm-Message-State: APjAAAXhdiVqQd6wbkt8JhRTSaAwOXLYtF3OYN1EG9utn2oIuh1BL/4o
+ hPDy5M73x5v7r11Qhzq2MZSnwxQwxiQ6efU1TT4=
+X-Google-Smtp-Source: APXvYqwyMsyXpFXNK9Oc/s71xX2n8RldZY9L5USBfJxqphk/6nb4ugp7bhX8wsErMnXkQqp54weBHMgMy0pzzZkndoI=
+X-Received: by 2002:aca:afd3:: with SMTP id y202mr756958oie.26.1556758424946; 
+ Wed, 01 May 2019 17:53:44 -0700 (PDT)
 MIME-Version: 1.0
+References: <CACRpkdZiK+CVwMjE9Vh70Pn_FNMbVpd95sj7CWxj9FNVDGWbvw@mail.gmail.com>
+ <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
+In-Reply-To: <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
+From: Boris Krasnovskiy <borkra@gmail.com>
+Date: Wed, 1 May 2019 20:53:34 -0400
+Message-ID: <CAEjdZ08kk3X-qU_GaD5NncBuKjLSa+oNONtJKD5Xb_drbTDAtQ@mail.gmail.com>
+To: Linus Walleij <linus.walleij@linaro.org>, 
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190501_153044_823046_AFD9FED3 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190501_175348_087651_72A2D336 
+X-CRM114-Status: GOOD (  17.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:736 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:229 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (borkra[at]gmail.com)
@@ -109,175 +94,328 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5958380205513031766=="
+Content-Type: multipart/mixed; boundary="===============3831395800840633132=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5958380205513031766==
-Content-Language: en-US
-Content-Type: multipart/alternative;
-	boundary="_000_BN7PR08MB6003771629BC366B9F3D8FFAAE3B0BN7PR08MB6003namp_"
+--===============3831395800840633132==
+Content-Type: multipart/alternative; boundary="000000000000eb8ce90587dd1040"
 
---_000_BN7PR08MB6003771629BC366B9F3D8FFAAE3B0BN7PR08MB6003namp_
-Content-Type: text/plain; charset="Windows-1252"
+--000000000000eb8ce90587dd1040
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
 Hi Linus,
 
+I did check generated toolchain defaults. They seem correct.
+As such I believe issue is with one of the packages.
+Extra information like crash log could help to determine which one.
+
+Here are the generated toolchain defaults for gimeni:
+
+The following options are target specific:
+  -mabi=3D                      aapcs-linux
+  -mabort-on-noreturn          [disabled]
+  -mandroid                    [disabled]
+  -mapcs                      [disabled]
+  -mapcs-frame                [disabled]
+  -mapcs-reentrant            [disabled]
+  -mapcs-stack-check          [disabled]
+  -march=3D                      armv4
+  -marm                        [enabled]
+  -masm-syntax-unified        [disabled]
+  -mbe32                      [enabled]
+  -mbe8                        [disabled]
+  -mbig-endian                [disabled]
+  -mbionic                    [disabled]
+  -mbranch-cost=3D              -1
+  -mcallee-super-interworking [disabled]
+  -mcaller-super-interworking [disabled]
+  -mcmse                      [disabled]
+  -mcpu=3D                      fa526
+  -mfix-cortex-m3-ldrd        [disabled]
+  -mflip-thumb                [disabled]
+  -mfloat-abi=3D                soft
+  -mfp16-format=3D              none
+  -mfpu=3D                      auto
+  -mglibc                      [enabled]
+  -mhard-float
+  -mlittle-endian              [enabled]
+  -mlong-calls                [disabled]
+  -mmusl                      [disabled]
+  -mneon-for-64bits            [disabled]
+  -mpic-data-is-text-relative [enabled]
+  -mpic-register=3D
+  -mpoke-function-name        [disabled]
+  -mprint-tune-info            [disabled]
+  -mpure-code                  [disabled]
+  -mrestrict-it                [disabled]
+  -msched-prolog              [enabled]
+  -msingle-pic-base            [disabled]
+  -mslow-flash-data            [disabled]
+  -msoft-float
+  -mstructure-size-boundary=3D  8
+  -mthumb                      [disabled]
+  -mthumb-interwork            [disabled]
+  -mtls-dialect=3D              gnu
+  -mtp=3D                        soft
+  -mtpcs-frame                [disabled]
+  -mtpcs-leaf-frame            [disabled]
+  -mtune=3D
+  -muclibc                    [disabled]
+  -munaligned-access          [disabled]
+  -mvectorize-with-neon-double [disabled]
+  -mvectorize-with-neon-quad  [enabled]
+  -mword-relocations          [disabled]
 
 
-I do not see anything wrong for your target. And I do not have any Gemini d=
-evices.
+
+On Wed, May 1, 2019 at 6:30 PM Boris Krasnovskiy <borkra@gmail.com> wrote:
+
+> Hi Linus,
+>
+>
+>
+> I do not see anything wrong for your target. And I do not have any Gemini
+> devices.
+>
+>
+>
+> Crash during init that you can see, is pretty far along in the boot
+> process, so toolchain likely correct.
+>
+>
+>
+> Maybe an issue with some packages=E2=80=A6
+>
+>
+>
+> You can run =E2=80=9C gcc -Q --help=3Dtarget=E2=80=9D on the compiled cro=
+ss toolchain and
+> check if default settings are correct, or post the output.
+>
+>
+>
+> Can you send us the crash log?
+>
+>
+>
+> Thank you,
+> Boris Krasnovskiy
+>
+>
+> ------------------------------
+> *From:* Linus Walleij <linus.walleij@linaro.org>
+> *Sent:* Wednesday, May 1, 2019 6:08:11 PM
+> *To:* Boris Krasnovskiy; OpenWrt Development List
+> *Subject:* Commit 8dcc1087602e breaks FA526 (Gemini) compile
+>
+> Hi Boris & friends,
+>
+> commit 8dcc1087602e2dd606e4f6e81a06aee62cfd4f4c
+> "toolchain: ARM: Fix toolchain compilation for gcc 8.x"
+> regresses the Gemini (FA526-based).
+>
+> I cannot quite see how. I noticed init crashed with the latest
+> OpenWrt codebase and bisected it down to this commit.
+>
+> Before the commit include/target.mk has:
+>
+> ifneq ($(findstring arm,$(ARCH)),)
+>  ....
+>  CPU_CFLAGS_fa526 =3D -mcpu=3Dfa526
+>  ....
+>  ifeq ($(CONFIG_SOFT_FLOAT),)
+>     ....
+>
+> After in toolchain/gcc/common.mk we have:
+>
+> ifeq ($(CONFIG_arm),y)
+> CC_CONFIGURE+=3D \
+>        --with-cpu=3D$(word 1, $(subst +," ,$(CONFIG_CPU_TYPE)))
+>  ....
+>  ifneq ($(CONFIG_SOFT_FLOAT),y)
+>     GCC_CONFIGURE+=3D \
+>                --with-fpu=3D$(word 2, $(subst +, ",$(CONFIG_CPU_TYPE)))
+>                --with-float=3Dhard
+>
+> It's a bit terse so I cannot really make this out :/
+>
+> Relevant stuff from my .config is:
+> CONFIG_CPU_TYPE=3D"fa526"
+> CONFIG_arm=3Dy
+> CONFIG_ARCH=3D"arm"
+> CONFIG_SOFT_FLOAT=3Dy
+>
+> Any hints?
+>
+> Yours,
+> Linus Walleij
+>
 
 
-
-Crash during init that you can see, is pretty far along in the boot process=
-, so toolchain likely correct.
-
-
-
-Maybe an issue with some packages=85
-
-
-
-You can run =93 gcc -Q --help=3Dtarget=94 on the compiled cross toolchain a=
-nd check if default settings are correct, or post the output.
-
-
-
-Can you send us the crash log?
-
-
-
+--=20
 Thank you,
 Boris Krasnovskiy
 
-
-
-________________________________
-From: Linus Walleij <linus.walleij@linaro.org>
-Sent: Wednesday, May 1, 2019 6:08:11 PM
-To: Boris Krasnovskiy; OpenWrt Development List
-Subject: Commit 8dcc1087602e breaks FA526 (Gemini) compile
-
-Hi Boris & friends,
-
-commit 8dcc1087602e2dd606e4f6e81a06aee62cfd4f4c
-"toolchain: ARM: Fix toolchain compilation for gcc 8.x"
-regresses the Gemini (FA526-based).
-
-I cannot quite see how. I noticed init crashed with the latest
-OpenWrt codebase and bisected it down to this commit.
-
-Before the commit include/target.mk has:
-
-ifneq ($(findstring arm,$(ARCH)),)
- ....
- CPU_CFLAGS_fa526 =3D -mcpu=3Dfa526
- ....
- ifeq ($(CONFIG_SOFT_FLOAT),)
-    ....
-
-After in toolchain/gcc/common.mk we have:
-
-ifeq ($(CONFIG_arm),y)
-CC_CONFIGURE+=3D \
-       --with-cpu=3D$(word 1, $(subst +," ,$(CONFIG_CPU_TYPE)))
- ....
- ifneq ($(CONFIG_SOFT_FLOAT),y)
-    GCC_CONFIGURE+=3D \
-               --with-fpu=3D$(word 2, $(subst +, ",$(CONFIG_CPU_TYPE)))
-               --with-float=3Dhard
-
-It's a bit terse so I cannot really make this out :/
-
-Relevant stuff from my .config is:
-CONFIG_CPU_TYPE=3D"fa526"
-CONFIG_arm=3Dy
-CONFIG_ARCH=3D"arm"
-CONFIG_SOFT_FLOAT=3Dy
-
-Any hints?
-
-Yours,
-Linus Walleij
-
---_000_BN7PR08MB6003771629BC366B9F3D8FFAAE3B0BN7PR08MB6003namp_
-Content-Type: text/html; charset="Windows-1252"
+--000000000000eb8ce90587dd1040
+Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<html>
-<head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
-252">
-<meta name=3D"Generator" content=3D"Microsoft Exchange Server">
-<!-- converted from text --><style><!-- .EmailQuote { margin-left: 1pt; pad=
-ding-left: 4pt; border-left: #800000 2px solid; } --></style>
-</head>
-<body>
-<style>
-<!--
-@font-face
-	{font-family:"Cambria Math"}
-@font-face
-	{font-family:Calibri}
-@font-face
-	{font-family:Consolas}
-p.x_MsoNormal, li.x_MsoNormal, div.x_MsoNormal
-	{margin:0in;
-	margin-bottom:.0001pt;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif}
-a:link, span.x_MsoHyperlink
-	{color:blue;
-	text-decoration:underline}
-a:visited, span.x_MsoHyperlinkFollowed
-	{color:#954F72;
-	text-decoration:underline}
-.x_MsoChpDefault
-	{font-family:"Calibri",sans-serif}
-@page WordSection1
-	{margin:1.0in 1.0in 1.0in 1.0in}
-div.x_WordSection1
-	{}
--->
-</style>
-<div lang=3D"EN-US" link=3D"blue" vlink=3D"#954F72">
-<div class=3D"x_WordSection1">
-<p class=3D"x_MsoNormal">Hi Linus,</p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
-<p class=3D"x_MsoNormal">I do not see anything wrong for your target. And I=
- do not have any Gemini devices.</p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
-<p class=3D"x_MsoNormal">Crash during init that you can see, is pretty far =
-along in the boot process, so toolchain likely correct.
+<div dir=3D"ltr"><div dir=3D"ltr">Hi Linus,<div><br></div><div>I did check =
+generated toolchain defaults. They seem correct.=C2=A0</div><div>As such I =
+believe issue is with one of the packages.=C2=A0</div><div>Extra informatio=
+n like crash log could help to determine which one.</div><div><br></div><di=
+v>Here are the generated toolchain defaults for gimeni:</div><div><br></div=
+><div><div>The following options are target specific:</div><div>=C2=A0 -mab=
+i=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 <span style=3D"white-space:pre">		</span>aapcs-linux</div><div>=C2=
+=A0 -mabort-on-noreturn=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"whi=
+te-space:pre">		</span>[disabled]</div><div>=C2=A0 -mandroid=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white=
+-space:pre">		</span>[disabled]</div><div>=C2=A0 -mapcs=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"whi=
+te-space:pre">		</span>[disabled]</div><div>=C2=A0 -mapcs-frame=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pr=
+e">		</span>[disabled]</div><div>=C2=A0 -mapcs-reentrant=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled=
+]</div><div>=C2=A0 -mapcs-stack-check=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <sp=
+an style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -march=3D=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0<span style=3D"white-space:pre">		</span>armv4</div><div>=C2=A0 -marm=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0<span style=3D"white-space:pre">		</span>[enabled]</div><div>=C2=A0 -=
+masm-syntax-unified=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:p=
+re">		</span>[disabled]</div><div>=C2=A0 -mbe32=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space=
+:pre">		</span>[enabled]</div><div>=C2=A0 -mbe8=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white=
+-space:pre">		</span>[disabled]</div><div>=C2=A0 -mbig-endian=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">	=
+	</span>[disabled]</div><div>=C2=A0 -mbionic=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</=
+span>[disabled]</div><div>=C2=A0 -mbranch-cost=3D=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>-1</div><=
+div>=C2=A0 -mcallee-super-interworking <span style=3D"white-space:pre">		</=
+span>[disabled]</div><div>=C2=A0 -mcaller-super-interworking <span style=3D=
+"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mcmse=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
+=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mcpu=3D=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span=
+ style=3D"white-space:pre">		</span>fa526</div><div>=C2=A0 -mfix-cortex-m3-=
+ldrd=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[d=
+isabled]</div><div>=C2=A0 -mflip-thumb=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</d=
+iv><div>=C2=A0 -mfloat-abi=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 <span style=3D"white-space:pre">		</span>soft</div><div>=C2=A0 -=
+mfp16-format=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
+=3D"white-space:pre">		</span>none</div><div>=C2=A0 -mfpu=3D=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
+=3D"white-space:pre">		</span>auto</div><div>=C2=A0 -mglibc=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=
+=3D"white-space:pre">		</span>[enabled]</div><div>=C2=A0 -mhard-float=C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-spac=
+e:pre">		</span></div><div>=C2=A0 -mlittle-endian=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white-space:pre">		</span>[enabled]<=
+/div><div>=C2=A0 -mlong-calls=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</div><div>=
+=C2=A0 -mmusl=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</div><di=
+v>=C2=A0 -mneon-for-64bits=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span st=
+yle=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mpic-data-is-=
+text-relative <span style=3D"white-space:pre">		</span>[enabled]</div><div>=
+=C2=A0 -mpic-register=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<sp=
+an style=3D"white-space:pre">		</span></div><div>=C2=A0 -mpoke-function-nam=
+e=C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disa=
+bled]</div><div>=C2=A0 -mprint-tune-info=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0<span style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 =
+-mpure-code=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<s=
+pan style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mrestri=
+ct-it=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"=
+white-space:pre">		</span>[disabled]</div><div>=C2=A0 -msched-prolog=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">	=
+	</span>[enabled]</div><div>=C2=A0 -msingle-pic-base=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0<span style=3D"white-space:pre">		</span>[disabled]</di=
+v><div>=C2=A0 -mslow-flash-data=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<sp=
+an style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -msoft-fl=
+oat=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"w=
+hite-space:pre">		</span></div><div>=C2=A0 -mstructure-size-boundary=3D=C2=
+=A0 <span style=3D"white-space:pre">		</span>8</div><div>=C2=A0 -mthumb=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<s=
+pan style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mthumb-=
+interwork=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white-spac=
+e:pre">		</span>[disabled]</div><div>=C2=A0 -mtls-dialect=3D=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span=
+>gnu</div><div>=C2=A0 -mtp=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<span style=3D"white-space:pre">		</s=
+pan>soft</div><div>=C2=A0 -mtpcs-frame=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">		</span>[disabled]</d=
+iv><div>=C2=A0 -mtpcs-leaf-frame=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0<s=
+pan style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mtune=
+=3D=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0<span style=3D"white-space:pre">		</span></div><div>=C2=A0 -muclibc=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span=
+ style=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -munaligned=
+-access=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=3D"white-space:pre">	=
+	</span>[disabled]</div><div>=C2=A0 -mvectorize-with-neon-double <span styl=
+e=3D"white-space:pre">		</span>[disabled]</div><div>=C2=A0 -mvectorize-with=
+-neon-quad=C2=A0 <span style=3D"white-space:pre">		</span>[enabled]</div><d=
+iv>=C2=A0 -mword-relocations=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <span style=
+=3D"white-space:pre">		</span>[disabled]</div></div><div><br></div><div><br=
+></div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D=
+"gmail_attr">On Wed, May 1, 2019 at 6:30 PM Boris Krasnovskiy &lt;<a href=
+=3D"mailto:borkra@gmail.com">borkra@gmail.com</a>&gt; wrote:<br></div><bloc=
+kquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:=
+1px solid rgb(204,204,204);padding-left:1ex">
+
+
+
+
+
+<div>
+
+<div lang=3D"EN-US">
+<div class=3D"gmail-m_7993004021501858614x_WordSection1">
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Hi Linus,</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">I do not see anything w=
+rong for your target. And I do not have any Gemini devices.</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Crash during init that =
+you can see, is pretty far along in the boot process, so toolchain likely c=
+orrect.
 </p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
-<p class=3D"x_MsoNormal">Maybe an issue with some packages=85</p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
-<p class=3D"x_MsoNormal">You can run =93 <span style=3D"font-size:10.0pt; f=
-ont-family:Consolas; color:#444444; background:#F7F7F7">
-gcc -Q --help=3Dtarget=94 on the compiled cross toolchain and check if defa=
-ult settings are correct, or post the output.</span></p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
-<p class=3D"x_MsoNormal">Can you send us the crash log?</p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
-<p class=3D"x_MsoNormal">Thank you,<br>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Maybe an issue with som=
+e packages=E2=80=A6</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">You can run =E2=80=9C <=
+span style=3D"font-size:10pt;font-family:Consolas;color:rgb(68,68,68);backg=
+round:rgb(247,247,247)">
+gcc -Q --help=3Dtarget=E2=80=9D on the compiled cross toolchain and check i=
+f default settings are correct, or post the output.</span></p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Can you send us the cra=
+sh log?</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">Thank you,<br>
 Boris Krasnovskiy</p>
-<p class=3D"x_MsoNormal">&nbsp;</p>
+<p class=3D"gmail-m_7993004021501858614x_MsoNormal">=C2=A0</p>
 </div>
-<hr tabindex=3D"-1" style=3D"display:inline-block; width:98%">
-<div id=3D"x_divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" =
-color=3D"#000000" style=3D"font-size:11pt"><b>From:</b> Linus Walleij &lt;l=
-inus.walleij@linaro.org&gt;<br>
+<hr style=3D"display:inline-block;width:98%">
+<div id=3D"gmail-m_7993004021501858614x_divRplyFwdMsg" dir=3D"ltr"><font fa=
+ce=3D"Calibri, sans-serif" color=3D"#000000" style=3D"font-size:11pt"><b>Fr=
+om:</b> Linus Walleij &lt;<a href=3D"mailto:linus.walleij@linaro.org" targe=
+t=3D"_blank">linus.walleij@linaro.org</a>&gt;<br>
 <b>Sent:</b> Wednesday, May 1, 2019 6:08:11 PM<br>
 <b>To:</b> Boris Krasnovskiy; OpenWrt Development List<br>
 <b>Subject:</b> Commit 8dcc1087602e breaks FA526 (Gemini) compile</font>
-<div>&nbsp;</div>
+<div>=C2=A0</div>
 </div>
 </div>
-<font size=3D"2"><span style=3D"font-size:11pt;">
-<div class=3D"PlainText">Hi Boris &amp; friends,<br>
+<font size=3D"2"><span style=3D"font-size:11pt">
+<div class=3D"gmail-m_7993004021501858614PlainText">Hi Boris &amp; friends,=
+<br>
 <br>
 commit 8dcc1087602e2dd606e4f6e81a06aee62cfd4f4c<br>
 &quot;toolchain: ARM: Fix toolchain compilation for gcc 8.x&quot;<br>
@@ -286,31 +424,32 @@ regresses the Gemini (FA526-based).<br>
 I cannot quite see how. I noticed init crashed with the latest<br>
 OpenWrt codebase and bisected it down to this commit.<br>
 <br>
-Before the commit include/target.mk has:<br>
+Before the commit include/<a href=3D"http://target.mk" target=3D"_blank">ta=
+rget.mk</a> has:<br>
 <br>
 ifneq ($(findstring arm,$(ARCH)),)<br>
-&nbsp;....<br>
-&nbsp;CPU_CFLAGS_fa526 =3D -mcpu=3Dfa526<br>
-&nbsp;....<br>
-&nbsp;ifeq ($(CONFIG_SOFT_FLOAT),)<br>
-&nbsp;&nbsp;&nbsp; ....<br>
+=C2=A0....<br>
+=C2=A0CPU_CFLAGS_fa526 =3D -mcpu=3Dfa526<br>
+=C2=A0....<br>
+=C2=A0ifeq ($(CONFIG_SOFT_FLOAT),)<br>
+=C2=A0=C2=A0=C2=A0 ....<br>
 <br>
-After in toolchain/gcc/common.mk we have:<br>
+After in toolchain/gcc/<a href=3D"http://common.mk" target=3D"_blank">commo=
+n.mk</a> we have:<br>
 <br>
 ifeq ($(CONFIG_arm),y)<br>
-CC_CONFIGURE&#43;=3D \<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --with-cpu=3D$(word 1, $(subst &#43;,&=
-quot; ,$(CONFIG_CPU_TYPE)))<br>
-&nbsp;....<br>
-&nbsp;ifneq ($(CONFIG_SOFT_FLOAT),y)<br>
-&nbsp;&nbsp;&nbsp; GCC_CONFIGURE&#43;=3D \<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp; --with-fpu=3D$(word 2, $(subst &#43;, &quot;,$(CONFIG_CPU_TYPE)))=
+CC_CONFIGURE+=3D \<br>
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 --with-cpu=3D$(word 1, $(subst +,&quot=
+; ,$(CONFIG_CPU_TYPE)))<br>
+=C2=A0....<br>
+=C2=A0ifneq ($(CONFIG_SOFT_FLOAT),y)<br>
+=C2=A0=C2=A0=C2=A0 GCC_CONFIGURE+=3D \<br>
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0 --with-fpu=3D$(word 2, $(subst +, &quot;,$(CONFIG_CPU_TYPE)))<br>
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0 --with-float=3Dhard<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp; --with-float=3Dhard<br>
-<br>
-It's a bit terse so I cannot really make this out :/<br>
+It&#39;s a bit terse so I cannot really make this out :/<br>
 <br>
 Relevant stuff from my .config is:<br>
 CONFIG_CPU_TYPE=3D&quot;fa526&quot;<br>
@@ -324,13 +463,15 @@ Yours,<br>
 Linus Walleij<br>
 </div>
 </span></font>
-</body>
-</html>
+</div>
 
---_000_BN7PR08MB6003771629BC366B9F3D8FFAAE3B0BN7PR08MB6003namp_--
+</blockquote></div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr"=
+ class=3D"gmail_signature">Thank you,<br>Boris Krasnovskiy</div>
+
+--000000000000eb8ce90587dd1040--
 
 
---===============5958380205513031766==
+--===============3831395800840633132==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -341,5 +482,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5958380205513031766==--
+--===============3831395800840633132==--
 

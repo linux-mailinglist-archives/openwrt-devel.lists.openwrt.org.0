@@ -2,65 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E8A011D1E
-	for <lists+openwrt-devel@lfdr.de>; Thu,  2 May 2019 17:29:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2817512084
+	for <lists+openwrt-devel@lfdr.de>; Thu,  2 May 2019 18:47:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cMMGgXB6ZkIv8MBVG6n3lEl9ZmGw0PgcNmP9Ezx5lx8=; b=mFQraK6uzUcMBN
-	BPiuTL/7zEjToKTPkx1SthJ2fl0742kpCXX58UhcW0L8PEjOYVV9a9b5t6aq+mBQGmjNdkWqjbY9Q
-	zmp0mOillPkyfbxDHrVTAYBoeEaY1dIZS2s68ImBCxbJ0lkHc+phLIJHQH1GkdYsHgECSOQBGnAv6
-	RK3TbyvfUwGCaavsEt9jSnw/Epr0HFOXm8Ztqt/P6tXNmUDXnp1NiRg9PBJOd8idkYquZT+boitcv
-	iXyNymWk0F4V28XDKuN5V12aZBRmemAtvgMQiHSUOCOOtkCV3g0n8tBUIg4yFqNyHBTD61WVHn/vK
-	rSR7b/UHSwhY/mHoJPgQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fBUn8gCyjlWbkXg4s0+gAXaX2ri2MNDQDmgxXDAT/Vo=; b=Y/OzdDaV8RHVoj
+	kuF0XswfNMWLbb3WV4iXkSKD++L7M5vrbGsul53iLv+X3QM7D/80sLPguX2dyYEtbZzb27Nq9gyuN
+	cw7vOK4m1+K+2JPmeo9nOMiwSrygPnGUlSi95wO0paeASWsmGxPoZ5B77PzYX8Q/uT/bj1rr0huum
+	jyLS79O3DsKNWiKEtu1z59B0/dJwaQcTxGnek7agxId2bOoGT1NkkG3My3nPd5IzaNUZdwe8Mjh6Z
+	hbHIcO1906Z9GfCBv72ZTNH4WNEV/HZlczNoXHR4yd7lIJJhNzYTe3mDyVBL6MaZrK0KTJExUsHrp
+	8XcP/v+Ie2cutb/BXi8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMDda-0001iC-6A; Thu, 02 May 2019 15:28:42 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hMEs7-0001Nu-GW; Thu, 02 May 2019 16:47:47 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMDdU-0001hV-R0
- for openwrt-devel@lists.openwrt.org; Thu, 02 May 2019 15:28:38 +0000
-Received: by mail-lj1-x243.google.com with SMTP id z26so2588250ljj.2
- for <openwrt-devel@lists.openwrt.org>; Thu, 02 May 2019 08:28:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ahMfhUWBygrWQkkQpYsd+T4fN+DB5fjp3H5hd9T4S7o=;
- b=GgxeZ3Fw5ZA/cl5g+OgBcmZrYrXUgP/2iaYC8zNGIylWYVW3lkwNw1y+wo+5g/b6/m
- Q6UA/itdczAkFYA2qs5liS/V5PupJEwPUpBcrG12itojEnJkbcDQ9PWX9e5fm17Km5Lx
- R4yRpoWeK5D5Qte2jDQ9HEFQa67f7/GiVobeJbXWfL1eTgiJrr5XXraOYQn5sXmwIwVT
- 8RnSfvAWyRRqvkXLjZ2XOEvHq/XEBC/bJHNFrV1faT2h8lzfz3/8snv3ZuAnl/yhsLeO
- R6CM7x/xHbPEiunelipMdXGjZ9BBXwrbiCnQ6yhhBbXsmqJ6uBTehTpQt2WaHa2ZAoPM
- W12A==
+ id 1hMErz-0001Mq-GB
+ for openwrt-devel@lists.openwrt.org; Thu, 02 May 2019 16:47:41 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y3so1301885plp.0
+ for <openwrt-devel@lists.openwrt.org>; Thu, 02 May 2019 09:47:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iPR3AKpxGIR5XtJaSJBuPmwTbbNACL/pbTCRWVnTr2s=;
+ b=rXtKePyy7906IafpXATrA6iTFNyyDrWTwlkfUcKKuhoswvDCXlqza56OCdOE5HBc8D
+ 8cTjO+188UkH1OBY01+tldM67O6rjDoDw2G+qnEBziBsLaWcrAM3I2d5AEg2bwoHoCT7
+ BuF82SCWn4rN74kpqB8pau/GFVMkUT8s+e4xLS5bqoHf5ydN5lEdRXdUEmMdijSr5XQF
+ +Nq9eKRutJaHdWXtMHUNWpRVq0/oFegmZMOkgzDVfCHB8pL3bxpvM9IL3/vnbLUezjPg
+ 6uypvSX2MosyButQELpE5mjD6ald74/H346z0f9+JiBD7ad0pAzekdq+GCWRU/ciN3Dg
+ bvAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ahMfhUWBygrWQkkQpYsd+T4fN+DB5fjp3H5hd9T4S7o=;
- b=efRd7RWtKrVK64VpFH/cWpzR9igvxJ0t7qngNE2CsbCZK4YyGp4KqFtmXmxMep8DPO
- +WQz0w0/15uK2VNWpLsGCiGBPfg+0jjLt7Rs6UDVrTrQFRadkHA2pF3vzo26Dtg7LYu9
- nRl1SIB1zM4xrFxeL+gWWGLM6+bIrSVkXYXgINqR43LDp1kozU7jsfRox1rhK7aKtsDU
- uSpia8K/UVmIW76yecAxhNNjCk52DZJSVY+EhMx+5kV7CMuokSLPpu4JsvX5nLofz8P0
- mBrv62/3VNnjnKRiMI+GINyu8U4PENQIb0dNYp6vEj+i42exycmBSL1wCzyoW/+Mpe6T
- skaA==
-X-Gm-Message-State: APjAAAWBsjE1kPr+gOSmcsLJPAQvxDyhiG20JtSmfyfN4XmgYiIHCgkN
- gHCMAiDcacmMA/I3CyaFbHj80gFI6hZjA+xtVzLkgw==
-X-Google-Smtp-Source: APXvYqwNF+71Ptw4Qd9dMHYjrJMP1kovvFMnYKy/po235MdFySNmBX2izkBQGzZpvt0B8L3vxEueGN0m3WmBK6T1Bfw=
-X-Received: by 2002:a2e:3a17:: with SMTP id h23mr2453398lja.105.1556810915093; 
- Thu, 02 May 2019 08:28:35 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iPR3AKpxGIR5XtJaSJBuPmwTbbNACL/pbTCRWVnTr2s=;
+ b=Y6bZn1dD9w72E9s5vq5hD2GCah2p6QBoG97GATIgjTn574hUrHbe85ECVYJB8lFUM/
+ G5qFUV/Pj/IdVLIfOA+5VWL2Z8Z+bot5Av5itsyOWLnVG1/Wl2zHfZqVcYzfJucqfmz7
+ 72zNecBkPC6bwmAj04XGyWOvdjGZicskIrITIVPXawxAIhkQR+xan27TGbtvBMVTbUag
+ CczabTYMb7iGoSiLYf0bCFNuiWB6VgvyP1fZndnkvRCx2YHyZ+CoUdW2Pu0mi5RoCSpQ
+ 2UcNeWA+J+utNVksPCgapDE+QCz/bT7IxgViEoFqxFC5CYHU0c6HZWTWhZnOjWY7ZXY5
+ We8g==
+X-Gm-Message-State: APjAAAXZWifUN3u3hclb4Wnj5bkvzesXyL2KhT1npVy9tt8hYlfsKsAL
+ p8zZHiOLeo64fOBRG+VOcq5SNMqs
+X-Google-Smtp-Source: APXvYqx7WCz9K0MQTsDIooO6t4EpYXA1hxbhcghVNgbpqjOcHnd+eJhsvOVYcldWrXkHHqECii5Fzw==
+X-Received: by 2002:a17:902:2b88:: with SMTP id
+ l8mr4787902plb.262.1556815657579; 
+ Thu, 02 May 2019 09:47:37 -0700 (PDT)
+Received: from computer.lan (138019059130.ctinets.com. [138.19.59.130])
+ by smtp.gmail.com with ESMTPSA id z22sm44759868pgv.23.2019.05.02.09.47.35
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 02 May 2019 09:47:36 -0700 (PDT)
+From: Jeffery To <jeffery.to@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  3 May 2019 00:47:06 +0800
+Message-Id: <20190502164706.31453-1-jeffery.to@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <CACRpkdZiK+CVwMjE9Vh70Pn_FNMbVpd95sj7CWxj9FNVDGWbvw@mail.gmail.com>
- <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
-In-Reply-To: <BN7PR08MB6003771629BC366B9F3D8FFAAE3B0@BN7PR08MB6003.namprd08.prod.outlook.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 2 May 2019 17:28:22 +0200
-Message-ID: <CACRpkdYjcXVymuZDmTjf9vvQnfpUX8d5Cx032MeFf+r8kxOzRg@mail.gmail.com>
-To: Boris Krasnovskiy <borkra@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_082836_882451_E3C6C3FD 
-X-CRM114-Status: UNSURE (   7.14  )
+X-CRM114-CacheID: sfid-20190502_094739_541862_0F15D13F 
+X-CRM114-Status: UNSURE (   9.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,8 +72,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jeffery.to[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,8 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] Commit 8dcc1087602e breaks FA526 (Gemini)
- compile
+Subject: [OpenWrt-Devel] [PATCH] zlib: Use relative paths in pkg-config
+ metadata file
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,28 +97,59 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: Jeffery To <jeffery.to@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Thu, May 2, 2019 at 12:30 AM Boris Krasnovskiy <borkra@gmail.com> wrote:
+The default zlib.pc file generated by cmake contains absolute paths.
+This patches the file to use relative paths (relative to ${prefix} and
+${exec_prefix}).
 
-> Crash during init that you can see, is pretty far along in the boot process, so toolchain likely correct.
+Signed-off-by: Jeffery To <jeffery.to@gmail.com>
+---
+ package/libs/zlib/Makefile                         |  2 +-
+ .../patches/004-relative-pkg-config-paths.patch    | 14 ++++++++++++++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 package/libs/zlib/patches/004-relative-pkg-config-paths.patch
 
-I found the problem, actually the toolchain was incorrect, but that was
-a sideffect of the build system. After applying
-this patch a mere make menuconfig && make clean && make will not
-do it, you have to rm -rf build_dir.
+diff --git a/package/libs/zlib/Makefile b/package/libs/zlib/Makefile
+index 4a2a0e53b0..c7a8415c79 100644
+--- a/package/libs/zlib/Makefile
++++ b/package/libs/zlib/Makefile
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=zlib
+ PKG_VERSION:=1.2.11
+-PKG_RELEASE:=2
++PKG_RELEASE:=3
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=@SF/libpng http://www.zlib.net
+diff --git a/package/libs/zlib/patches/004-relative-pkg-config-paths.patch b/package/libs/zlib/patches/004-relative-pkg-config-paths.patch
+new file mode 100644
+index 0000000000..c86d19b412
+--- /dev/null
++++ b/package/libs/zlib/patches/004-relative-pkg-config-paths.patch
+@@ -0,0 +1,14 @@
++--- a/zlib.pc.cmakein
+++++ b/zlib.pc.cmakein
++@@ -1,8 +1,8 @@
++ prefix=@CMAKE_INSTALL_PREFIX@
++ exec_prefix=@CMAKE_INSTALL_PREFIX@
++-libdir=@INSTALL_LIB_DIR@
++-sharedlibdir=@INSTALL_LIB_DIR@
++-includedir=@INSTALL_INC_DIR@
+++libdir=${exec_prefix}/lib
+++sharedlibdir=${exec_prefix}/lib
+++includedir=${prefix}/include
++ 
++ Name: zlib
++ Description: zlib compression library
+-- 
+2.20.1
 
-After I did this and rebuilt the whole universe overnight it works
-again, so I am happy now! :D
-
-Thanks for your help anyway!
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,46 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E76912D7B
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 14:27:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF26C12DAA
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 14:32:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=HhbFMVKEMrhXaUuCl5ha0U6Svt+wbx2tN6s6dc+o1z8=; b=ha/QJTb1bmKFuO5UDR+nIjEzT4
-	3OMOR2hN/i9cuBAxwkIuzlsPlsu8Ip49dJu6/g8jU/2bW1bQMr2gQoL3TMS2SEGb63rqrh6NA5i36
-	JmCs9C9UaRu2ZyWV2nq80joxKtW+oHKBQcUeEFGbit3vzldW4+a1tLd2sP3JYotO1bLykHHhVK7kg
-	SHZFCgh2yfc21GB5GxUMuzkg6qadECw8cQaZzIQqdA/bPiRYy8FpQuzqSTfrze9kXDwBDidP/k0I1
-	UhQNqI2pdOl85KBIB5Z1E1TlFardEFOcUqEfEP6utiTkB4m2/WtrVIXpcVPG8PviOiQ3sEsAO/1Rr
-	qCkTDbmA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zzxQuaiDk4qKL6kWmg8FjxfYRZWpFI0R6GzwxKY1x04=; b=GH020nXtEt70xH
+	CloVe3EoqQAJSL07PoWzVDHE1AFceBlTZaqCYG8IFx70ZI+HKkIlZMZ2e0bLBbY2O+MCzfAOhNf9m
+	XuZiDVmsg8yVKNbWGb0C5OnxeJNUQTjxuextpATteXGz+CzYowURsKl/ZCo24obOHKvjqcHks7l59
+	zaUFPmVOq5oS6x7N/3ROR8NDp2juKDF5F5w8Cq1nC2oVPhYwCG4c/iZbSRvZyGxhi4ojz6Tz2Tl3s
+	KV+G773Qp10ti0dnFhbLcINEfh1W8YfDXRk52nBCI120J4BSe/gggFxm5FqvkY4NgeTdBz0r0z4aV
+	EXI5vCt8OtQB6FvdJ7pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXHD-0002nR-10; Fri, 03 May 2019 12:26:55 +0000
+	id 1hMXMF-0005aF-OU; Fri, 03 May 2019 12:32:07 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXH5-0002mb-1X
- for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 12:26:48 +0000
+ id 1hMXM9-0005Zs-7P
+ for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 12:32:02 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 838DB459C;
- Fri,  3 May 2019 14:26:44 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 5e04c023;
- Fri, 3 May 2019 14:26:43 +0200 (CEST)
-Date: Fri, 3 May 2019 14:26:43 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Luis Araneda <luaraneda@gmail.com>
-Message-ID: <20190503122643.GC71477@meh.true.cz>
-References: <20190428151714.5405-1-luaraneda@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190428151714.5405-1-luaraneda@gmail.com>
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id AE68245D7;
+ Fri,  3 May 2019 14:31:59 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id cb454145;
+ Fri, 3 May 2019 14:31:58 +0200 (CEST)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  3 May 2019 14:31:38 +0200
+Message-Id: <1556886698-26450-1-git-send-email-ynezz@true.cz>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <20190425133816.5877-1-tomek_n@o2.pl>
+References: <20190425133816.5877-1-tomek_n@o2.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_052647_243918_8C53E589 
-X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-CacheID: sfid-20190503_053201_420131_7B3D738E 
+X-CRM114-Status: UNSURE (   2.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -50,9 +47,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH] zynq: add manufactured to device title
+Subject: [OpenWrt-Devel] Merged: uboot-tegra: bump to 2019.04
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,51 +59,14 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ Tomasz Maciej Nowak <tomek_n@o2.pl>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Luis Araneda <luaraneda@gmail.com> [2019-04-28 11:17:14]:
-
-Hi,
-
-> Make the device's title consistent by adding the manufacturer to their
-> title, as the other boards on the target.  Additionally, this creates a
-> sorted by manufacturer board list on menuconfig
-
-your changes, doesn't correspond with the commit description, see bellow.
-
-> diff --git a/target/linux/zynq/image/Makefile b/target/linux/zynq/image/Makefile
-> index d8a882313b..380b07bb82 100644
-> --- a/target/linux/zynq/image/Makefile
-> +++ b/target/linux/zynq/image/Makefile
-> @@ -58,7 +58,7 @@ TARGET_DEVICES += avnet_zynq-zed
->  
->  define Device/digilent_zynq-zybo
->  	$(call Device/FitImageGzip)
-> -	DEVICE_TITLE := ZYBO Development Board
-> +	DEVICE_TITLE := Digilent Zybo board
-
-why are you removing the development part? I think, that it's useful
-information so it shouldn't be removed if you don't have a good reason for
-this. Putting appart the fact, that it's marked as trainer board on the
-vendor's site[1].
-
->  define Device/xlnx_zynq-zc702
->  	$(call Device/FitImageGzip)
-> -	DEVICE_TITLE := ZC702 Development Board
-> +	DEVICE_TITLE := Xilinx ZC702 board
-
-ditto, putting apart the fact, that it's marked as evaluation kit on the
-vendor's site[2].
-
-1. https://store.digilentinc.com/zybo-zynq-7000-arm-fpga-soc-trainer-board
-2. https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html
-
--- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

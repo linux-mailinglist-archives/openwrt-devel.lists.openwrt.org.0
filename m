@@ -2,93 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F926133E8
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 21:12:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 767DF13411
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 21:39:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:References:In-Reply-To:Message-Id:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=B9N4HckNOCS+jBKgyfA7bBRJbGbeFSWJau8WQih9l6I=; b=N2kPfHEd2ZBu+LWVKPer1frGJ
-	k4oAc71DQys7rHU7uhEWoIqcs6jJyFxgv4mo1jyqsmpNSqja39pDSWLyLzhihVVkA+0YEbUOvm5YR
-	JTni5v7KxVYNKQwwpqQ7jLOKCvWpejZXiuoeow+gtzxpKNCIHq5Hsq3fYCbsGod2UiMVHT1PuBYA/
-	lOQuw03VVPLkSrNqjEby+KZWj+prs9ryp5+lKN1USJFw3Y4Q/K9J/jhAAJnVIge8I1QOtV9WYMYJ5
-	9Ee2XEkGwwWA3GlgIDy7Ga5tA3y5Dq1/Q+y2LhVyGE0JF99M38GDUZgnH6atMwGWUY6sDXurzO1hh
-	qzcj1Xh3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=t75yhKXlhj9xiJDU7ICl/JFcv6yRisJQfEBko9Cqvlo=; b=RV3/XKqFMCUrtT2/xTLE1i++Cf
+	33wjbqjhhKtB3TaGpzgwxlofjvA2Bw4Npe0JeFIrDS2K4Fk+jYEMAgUUgx1OUfSJnjRghg86rLmme
+	bs1wD6/og8Hd9Pw8CLSyEDEfxnVJqKriv8q4Mx2zhi6ZbUiiew2Q6l5eJkgieBiox5+wWvdqwP3ei
+	om9/80IOHc4t0rvQygSHaHOIPsqh5zyeOxvynudlHn6obijINiQrVd7nD2UG7E4RDSJM1iISNoskZ
+	wU80pfXVTFemCDv3ZtxaNJRadi863nGhiqYqpuSwMAcFbcPOgkDCYBTCRISnAYM0V3j/jYLiJJnBl
+	FWEe+hmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMdbC-0006KU-JO; Fri, 03 May 2019 19:11:58 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hMe1J-0007He-LQ; Fri, 03 May 2019 19:38:57 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMdb5-0006K1-4d
- for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 19:11:52 +0000
-Received: by mail-pf1-x443.google.com with SMTP id u17so3331998pfn.7
- for <openwrt-devel@lists.openwrt.org>; Fri, 03 May 2019 12:11:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:message-id:in-reply-to:references
- :mime-version; bh=pCzmpgaraqOFjYqO28cJmTw35Sdn1wPUupLb/SFb2Cw=;
- b=W44/hSMZfCc7ho7mYiRaIMGGyvLTzN3644RzKGrEBezqGahBbiPW28LgLfzCYlJ4WS
- Kl9poGyjtBQp1FnM0yGfUaB34wFheY+VeaKRRPhbZ/DTUNlFU8mGycOtZfVfVFOYQpfJ
- qEL7LvmrzSXADumNKmi0W704FNipUAI+n98RyQOIAn7gsHqo/R62i0DajAa7lUUcUC+J
- qtOw+7DSA6+7Kn+aeGaMOVdL4K18qdqheq5ueBn+0ZwprUHZkEnUAzj/fICMm7XA2/OX
- 2tvMvitn4kvPhrkVSvkWyQFiBSw4jaaSeYK2YIXRNG++9zfBurOiRfWq/GkJp7io8fs/
- mffw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:message-id:in-reply-to
- :references:mime-version;
- bh=pCzmpgaraqOFjYqO28cJmTw35Sdn1wPUupLb/SFb2Cw=;
- b=UqdBZdl3VovH8EBvENBWbl0qtRGcMYBAEMSLi/UimGV8am+AC440ggRRVa3hktc2TF
- IeEynKtpeBfzehE4p0JaoFAI88XEb3scFWc1nTEC1F+bhDUBJS6s1suMLH7lWH11d9oL
- mzHFGoKbf5gvbavTXNGg+nUMj2WpN2hSX2Xb7pmrp+Seg0jpU1bv/hhjO7DH2UCrI4GV
- 7aZ27c6P2qhZ/D+0Zjuahwpy/5Mk2ctzl9q+D31ALWLigPNkcaSVQRUMVm//tMIhzO5Y
- FbRLi1HN9pfnhOYtxqAQbHi33PntA2geRfZq6I9CPe3Q4l/fyf8CCn8lHSAVaip+g/Oh
- lYhw==
-X-Gm-Message-State: APjAAAVsM3r5xW134jvbJLIbWql9i9m5dnLRLT7vIG9tzQnlofLUfxmS
- RJNKImWeKfN8LlIkjLsZ0qlWK7Js3t0=
-X-Google-Smtp-Source: APXvYqybfTZQ7wKzpOm4qEDDXdGsCkOFdB0Yr2h2LAhjFoZO5Jy8/Vic2k96fajp2Z6qljrXazzY+A==
-X-Received: by 2002:a65:51c5:: with SMTP id i5mr12695950pgq.189.1556910709728; 
- Fri, 03 May 2019 12:11:49 -0700 (PDT)
-Received: from [192.168.0.240] (76-14-106-140.rk.wavecable.com.
- [76.14.106.140])
- by smtp.gmail.com with ESMTPSA id b22sm7526918pgg.88.2019.05.03.12.11.48
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 03 May 2019 12:11:49 -0700 (PDT)
-Date: Fri, 03 May 2019 12:11:47 -0700
-From: Rosen Penev <rosenp@gmail.com>
-To: Petr =?iso-8859-2?q?=A9tetiar?= <ynezz@true.cz>
-Message-Id: <1556910707.1846.0@smtp.gmail.com>
-In-Reply-To: <20190503185541.GG71477@meh.true.cz>
-References: <20190501170445.4607-1-rosenp@gmail.com>
- <20190503171748.GA3101@meh.true.cz>
- <10C80B0A-E4F7-4619-85BE-B78580C58148@gmail.com>
- <20190503185541.GG71477@meh.true.cz>
-X-Mailer: pantheon-mail/1.0.8
+ id 1hMe1C-0007HD-8S
+ for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 19:38:51 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id C4BA2328A;
+ Fri,  3 May 2019 21:38:47 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id e8c0e44f;
+ Fri, 3 May 2019 21:38:46 +0200 (CEST)
+Date: Fri, 3 May 2019 21:38:46 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Klaus Kudielka <klaus.kudielka@gmail.com>
+Message-ID: <20190503193846.GI71477@meh.true.cz>
+References: <20190424191439.32298-1-klaus.kudielka@gmail.com>
+ <20190424191439.32298-2-klaus.kudielka@gmail.com>
+ <20190503170500.GA73395@meh.true.cz>
+ <524607f2-518e-7517-97c5-2ea5ae71846d@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <524607f2-518e-7517-97c5-2ea5ae71846d@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_121151_209328_EF638477 
-X-CRM114-Status: GOOD (  10.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_123850_454018_D2328048 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] libbsd: Fix compilation under ARC
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] base-files: improve
+ lib/upgrade/common.sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,106 +67,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============2402873643777084513=="
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org, Tomasz Maciej Nowak <tomek_n@o2.pl>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============2402873643777084513==
-Content-Type: multipart/alternative; boundary="=-gBKt2gePTsVVPPkgtgG6"
+Klaus Kudielka <klaus.kudielka@gmail.com> [2019-05-03 20:16:39]:
 
---=-gBKt2gePTsVVPPkgtgG6
-Content-Type: text/plain; charset=iso-8859-2; format=flowed
-Content-Transfer-Encoding: quoted-printable
+> Let me remind you that the common one *alone* breaks sysupgrade for those
+> four targets, as Tomasz already pointed out earlier.
 
+Well, how could I know what was wrong with v1 if you didn't included the
+changes between v1 -> v2 in your v2 patch :-)
 
-On Fri, May 3, 2019 at 11:55 AM, Petr =A9tetiar <ynezz@true.cz> wrote:
-> Rosen Penev <rosenp@gmail.com> [2019-05-03 10:49:54]:
->=20
->>  > On May 3, 2019, at 10:17, Petr =A9tetiar <ynezz@true.cz> wrote:
->>  >
->>  > Rosen Penev <rosenp@gmail.com> [2019-05-01 10:04:45]:
->>  >
->>  >> The 8 year old file does not have any ARC definitions.
->>  >
->>  > I'm wondering if we need to cary another patch forever, thus if=20
->> it wouldn't be
->>  > better to backport upstreamed patch and/or bump to fixed upstream=20
->> version.
->>=20
->>  As I said. This file has not been touched in 8 years. Upstream also=20
->> seems relatively dead.
->=20
-> According to this https://gitlab.freedesktop.org/libbsd/libbsd it=20
-> doesn't seem
-> that much dead to me, as I wouldn't expect that much changes in such=20
-> compat
-> library anyway.
-All of the merge requests (what GitLab calls pull requests) except one=20
-have no comments. There are also none that have actually been merged.
->=20
->=20
-> -- ynezz
+Anyway, thanks for the explanation, it wasn't that much clear to me from the
+commit message, so if you don't mind, I'll include the details there as well
+in order to help it better understand to other folks.
 
+Merged into my staging tree https://git.openwrt.org/?p=openwrt/staging/ynezz.git;a=commit;h=195178f88ee7b3815f9bea66a2454ccfdf2135a5
 
-
-=
-
---=-gBKt2gePTsVVPPkgtgG6
-Content-Type: text/html; charset=iso-8859-2
-Content-Transfer-Encoding: quoted-printable
-
-<br>
-
-On Fri, May 3, 2019 at 11:55 AM, Petr =A9tetiar &lt;ynezz@true.cz&gt; wrote=
-:<br>
-<blockquote type=3D"cite"><div class=3D"plaintext" style=3D"white-space: pr=
-e-wrap;">Rosen Penev &lt;<a href=3D"mailto:rosenp@gmail.com">rosenp@gmail.c=
-om</a>&gt; [2019-05-03 10:49:54]:
-
-<blockquote> &gt; On May 3, 2019, at 10:17, Petr =A9tetiar &lt;<a href=3D"m=
-ailto:ynezz@true.cz">ynezz@true.cz</a>&gt; wrote:
- &gt;=20
- &gt; Rosen Penev &lt;<a href=3D"mailto:rosenp@gmail.com">rosenp@gmail.com<=
-/a>&gt; [2019-05-01 10:04:45]:
- &gt;=20
- &gt;&gt; The 8 year old file does not have any ARC definitions.
- &gt;=20
- &gt; I'm wondering if we need to cary another patch forever, thus if it wo=
-uldn't be
- &gt; better to backport upstreamed patch and/or bump to fixed upstream ver=
-sion.
-
- As I said. This file has not been touched in 8 years. Upstream also seems =
-relatively dead.
-</blockquote>
-According to this <a href=3D"https://gitlab.freedesktop.org/libbsd/libbsd">=
-https://gitlab.freedesktop.org/libbsd/libbsd</a> it doesn't seem
-that much dead to me, as I wouldn't expect that much changes in such compat
-library anyway.</div></blockquote>All of the merge requests (what GitLab ca=
-lls pull requests) except one have no comments. There are also none that ha=
-ve actually been merged.<br><blockquote type=3D"cite"><div class=3D"plainte=
-xt" style=3D"white-space: pre-wrap;">
-
--- ynezz
-</div></blockquote><br><br>
-=
-
---=-gBKt2gePTsVVPPkgtgG6--
-
-
-
---===============2402873643777084513==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> In more detail:
+> 
+> The root of the problem is that the *existing* export_bootdevice in
+> /lib/upgrade/common.sh behaves differently, if the kernel is booted with
+> root=/dev/..., or if it is booted with root=PARTUUID=...
+> 
+> In the former case, it reports back major/minor of the root partition,
+> in the latter case it reports back major/minor of the complete boot disk.
+> 
+> The targets mentioned above have added workarounds to this behaviour, by
+> specifying *negative* increments to the export_partdevice function.
+> 
+> And then came the mvebu target to use export_bootdevice /
+> export_partdevice as well. Now, different subtargets boot differently,
+> and the workaround would be even more complex.
+> 
+> I think now is the time to make export_bootdevice behave consistently,
+> and to report major/minor of the boot disk, period.
+> 
+> Consequently, those targets, which boot with root=/dev/... *and* use
+> export_bootdevice / export_partdevice, have to be adapted to use
+> positive increments, otherwise they are broken by the change
+> to export_bootdevice.
+> 
+> The targets affected were easy to spot with find & grep.
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2402873643777084513==--
-
-

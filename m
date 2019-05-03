@@ -2,60 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 767DF13411
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 21:39:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196D913489
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 22:53:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=t75yhKXlhj9xiJDU7ICl/JFcv6yRisJQfEBko9Cqvlo=; b=RV3/XKqFMCUrtT2/xTLE1i++Cf
-	33wjbqjhhKtB3TaGpzgwxlofjvA2Bw4Npe0JeFIrDS2K4Fk+jYEMAgUUgx1OUfSJnjRghg86rLmme
-	bs1wD6/og8Hd9Pw8CLSyEDEfxnVJqKriv8q4Mx2zhi6ZbUiiew2Q6l5eJkgieBiox5+wWvdqwP3ei
-	om9/80IOHc4t0rvQygSHaHOIPsqh5zyeOxvynudlHn6obijINiQrVd7nD2UG7E4RDSJM1iISNoskZ
-	wU80pfXVTFemCDv3ZtxaNJRadi863nGhiqYqpuSwMAcFbcPOgkDCYBTCRISnAYM0V3j/jYLiJJnBl
-	FWEe+hmw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7syY6jriN1Mps0EVrZu0yG5Zl+mvn6/umIdz4soj/ds=; b=Fgh9ralBwMVh/K
+	HJ+9yeIFl55V7oYjnf/TNagBPhcS/0VWsk4wR+3DCf0FP3rtsG0xU9Qv9oV54DE1osSbx7ylRzPb1
+	FjulgjKgpXNd8oisjZRZeWlF9AY4r1wgXtYOZlHtlB3d2sPTMBL1XQVV2CIW2R8uL54CYw5bvyqZ6
+	zjae1+NjjhLbTolFkmWCRn2H6+4lXGcTiGCC+bizMCIOIzzKZxHKT47Ho8vizHp2f4lTneRZZbLgL
+	rxYmObbcXCuw8Ei6W/3adOawpD2ezcMA6g72jc2cpxPn02g0rikXMQaynffVylfrytA0Wcwr56i9K
+	LIR2m7ULVavE2AA5m4jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMe1J-0007He-LQ; Fri, 03 May 2019 19:38:57 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hMfB0-0007j8-0Q; Fri, 03 May 2019 20:53:02 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMe1C-0007HD-8S
- for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 19:38:51 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id C4BA2328A;
- Fri,  3 May 2019 21:38:47 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id e8c0e44f;
- Fri, 3 May 2019 21:38:46 +0200 (CEST)
-Date: Fri, 3 May 2019 21:38:46 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Klaus Kudielka <klaus.kudielka@gmail.com>
-Message-ID: <20190503193846.GI71477@meh.true.cz>
-References: <20190424191439.32298-1-klaus.kudielka@gmail.com>
- <20190424191439.32298-2-klaus.kudielka@gmail.com>
- <20190503170500.GA73395@meh.true.cz>
- <524607f2-518e-7517-97c5-2ea5ae71846d@gmail.com>
+ id 1hMfAh-0007Xe-3Q
+ for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 20:52:45 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 3B587A0011;
+ Fri,  3 May 2019 22:52:38 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id Uyqeu85Y_-IF; Fri,  3 May 2019 22:52:27 +0200 (CEST)
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  3 May 2019 22:51:57 +0200
+Message-Id: <20190503205207.7675-1-hauke@hauke-m.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <524607f2-518e-7517-97c5-2ea5ae71846d@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_123850_454018_D2328048 
-X-CRM114-Status: GOOD (  12.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190503_135243_297806_58F1DE44 
+X-CRM114-Status: GOOD (  10.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] base-files: improve
- lib/upgrade/common.sh
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH 00/10] kernel: Kernel Self Protection
+ Project/Recommended Settings
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -67,52 +64,64 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org, Tomasz Maciej Nowak <tomek_n@o2.pl>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Klaus Kudielka <klaus.kudielka@gmail.com> [2019-05-03 20:16:39]:
+This activates and deactivates some of the options suggested on the 
+Kernel Self Protection Project/Recommended Settings wiki page
+https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project/Recommended_Settings
 
-> Let me remind you that the common one *alone* breaks sysupgrade for those
-> four targets, as Tomasz already pointed out earlier.
+Hauke Mehrtens (10):
+  Kernel: Activate CONFIG_HARDENED_USERCOPY
+  kernel: Activate CONFIG_ARM64_SW_TTBR0_PAN
+  kernel: Remove CONFIG_DEBUG_RODATA and CONFIG_DEBUG_SET_MODULE_RONX
+  kernel: Remove CONFIG_COMPAT
+  kernel: Activate CONFIG_SYN_COOKIES for all targets
+  kernel: Do not set CONFIG_DEVMEM or CONFIG_DEVKMEM
+  kernel: Deactivate CONFIG_BINFMT_MISC
+  x86: Activate CONFIG_X86_SMAP
+  cns3xxx: Activate CONFIG_CPU_SW_DOMAIN_PAN
+  gemini: Make kernel text and rodata read-only
 
-Well, how could I know what was wrong with v1 if you didn't included the
-changes between v1 -> v2 in your v2 patch :-)
+ target/linux/armvirt/64/config-default        | 11 -----------
+ target/linux/at91/config-4.9                  |  1 -
+ target/linux/brcm2708/bcm2710/config-4.14     |  2 --
+ target/linux/cns3xxx/config-4.14              |  1 -
+ target/linux/cns3xxx/config-4.19              |  1 -
+ target/linux/gemini/config-4.14               |  4 ----
+ target/linux/gemini/config-4.19               |  4 ----
+ target/linux/generic/config-4.14              |  7 ++++---
+ target/linux/generic/config-4.19              |  8 +++++---
+ target/linux/generic/config-4.9               |  4 +++-
+ target/linux/layerscape/armv7/config-4.14     |  3 ---
+ target/linux/layerscape/armv8_32b/config-4.14 |  3 ---
+ target/linux/layerscape/armv8_64b/config-4.14 | 16 ----------------
+ target/linux/malta/be64/config-default        |  6 ------
+ target/linux/malta/le64/config-default        |  6 ------
+ target/linux/mediatek/mt7622/config-4.14      | 12 ------------
+ target/linux/mvebu/cortexa53/config-default   |  2 --
+ target/linux/mvebu/cortexa72/config-default   |  2 --
+ target/linux/octeon/config-4.14               |  6 ------
+ target/linux/octeon/config-4.19               |  7 -------
+ target/linux/octeontx/config-4.14             | 12 ------------
+ target/linux/omap/config-4.14                 |  1 -
+ target/linux/samsung/s5pv210/config-4.14      |  1 -
+ target/linux/sunxi/config-4.14                |  1 -
+ target/linux/sunxi/config-4.19                |  1 -
+ target/linux/sunxi/cortexa53/config-4.14      |  2 --
+ target/linux/sunxi/cortexa53/config-4.19      |  2 --
+ target/linux/uml/config/x86_64                |  1 -
+ target/linux/x86/config-4.14                  |  3 +--
+ target/linux/x86/config-4.19                  |  3 +--
+ target/linux/zynq/config-4.14                 |  1 -
+ 31 files changed, 14 insertions(+), 120 deletions(-)
 
-Anyway, thanks for the explanation, it wasn't that much clear to me from the
-commit message, so if you don't mind, I'll include the details there as well
-in order to help it better understand to other folks.
+-- 
+2.20.1
 
-Merged into my staging tree https://git.openwrt.org/?p=openwrt/staging/ynezz.git;a=commit;h=195178f88ee7b3815f9bea66a2454ccfdf2135a5
-
-> In more detail:
-> 
-> The root of the problem is that the *existing* export_bootdevice in
-> /lib/upgrade/common.sh behaves differently, if the kernel is booted with
-> root=/dev/..., or if it is booted with root=PARTUUID=...
-> 
-> In the former case, it reports back major/minor of the root partition,
-> in the latter case it reports back major/minor of the complete boot disk.
-> 
-> The targets mentioned above have added workarounds to this behaviour, by
-> specifying *negative* increments to the export_partdevice function.
-> 
-> And then came the mvebu target to use export_bootdevice /
-> export_partdevice as well. Now, different subtargets boot differently,
-> and the workaround would be even more complex.
-> 
-> I think now is the time to make export_bootdevice behave consistently,
-> and to report major/minor of the boot disk, period.
-> 
-> Consequently, those targets, which boot with root=/dev/... *and* use
-> export_bootdevice / export_partdevice, have to be adapted to use
-> positive increments, otherwise they are broken by the change
-> to export_bootdevice.
-> 
-> The targets affected were easy to spot with find & grep.
 
 _______________________________________________
 openwrt-devel mailing list

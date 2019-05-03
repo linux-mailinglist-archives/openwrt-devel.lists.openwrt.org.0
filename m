@@ -2,88 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43D97131D5
-	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 18:06:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F20B01323E
+	for <lists+openwrt-devel@lfdr.de>; Fri,  3 May 2019 18:33:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A9EKMj2jgXY3XAv222cc2o5WW2lpG294zmauguak6co=; b=HUCF4XD1AZZJLz
-	zL6eB3aJUiOgJRlsCElgS1/bjPlrCN0AJn3hGrkp/01wE068dVCX6eQj8eejfpMcD4n6mCecQBK4m
-	Z2XL15KL1it6yV57sjOCZV/H8MkAOdtnWKxrAxsTydfajvEYv8wNtZ3sgX+Dm57PrKqfWAFk18ilG
-	lbCh0nSoD06n7aBfkSLaZfHfaDzieZV0ZKupfEw0SfjxQJfNe2Y4jhh68ubzcH1g+ydNeDK25hsxY
-	VXZsArccyjqsm5mv1ZiyoLoQcYImh8014iGCWKJNQBqv5zHDM5j8klCQZVa8VvJthLO3X4gAID4jQ
-	vFZQH09yP7IuGeKYZbfA==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=w6QrjuZzm/THHzwRbHTWz+1+PQsEx9IKnP0FrzcqZyE=; b=RX2ZqVla1m7aCBTxN4t1ues25h
+	WfFptB1Y+qSJfuUquPYnm70CICePYxe4ZorsLJKkaCk+asjm8xtfzaoN00K7XSWlgBx16Kj6x8zFb
+	WXvpEx5RjOcB7vwu/IArpI8Msw0n28D6LIXL+VRCwcoKdZmx4I+C1RJY1fDW45UirSUbus5i39zmS
+	dlkvDpR84lkEEw1ktciga0CjwDdYARKcnDl/wAXmX/zTZIaSjvVCuk/9Oldg9cVPa2ltnYKA+9B1p
+	dgYQtjWARKOpdnrcaaRBceptGeyl4+kpvW1bBYnCOWAP5XLwRF8W8qPqxdWDGVGJEB16Svoqf2RvP
+	GF+kV00w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMagy-00036p-GN; Fri, 03 May 2019 16:05:44 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hMb7L-0005lm-Ic; Fri, 03 May 2019 16:32:59 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMagr-000363-OU
- for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 16:05:39 +0000
-Received: by mail-lj1-x243.google.com with SMTP id b12so5673421lji.4
- for <openwrt-devel@lists.openwrt.org>; Fri, 03 May 2019 09:05:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rBYGrjwk3HGOKNilbgcBmPVqAfiL75tvO0k42iiWyeM=;
- b=gqYNXZk5+304JMCdFqmQfqv9neYAKskawNkJVAvvq1IUZ4JOqfHgc6oc37cobwxOzF
- 8dFFSgEVAWb9LaY1MAVSjWWA5npiBVbKDt/Sw1QETM9K+NMfnaozSKIAyI4qlVbbhXfN
- WS1wfpQFP654wIfyZP8cdJPqpQzapMekfOEK3eUmZRmujkSp+Fmk5fgOnGACpKF1G6ku
- jQYwdd7wnXeaP5ob5cPJD5jHq32U7+U6c0SWhCKD8W9yqsmIrd6ivrt187j9g2Ox6s8v
- WJaOArVXrxb68GLMjx7T/mTcl1wA51LmD0lA2YeY0mxTOYfYMGmP8aKs4rbQiHJ7j8Au
- bsVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=rBYGrjwk3HGOKNilbgcBmPVqAfiL75tvO0k42iiWyeM=;
- b=Ciy7mq9vl2t34do0CTLJayrM8gvnh4XBt9QODciAsWUNoMlqy6ZVj6XCvHY+GrlH48
- dE8Ilw/sJSajYNPNUoFUgEln+bIvGSMkrZB+IGhRuehlzt1F8XZoCs24GBrv/MhoGtog
- oWNpIYy7ncKzngwEaPcyJPPZc62rNL2OSLbaUIAewDF6OMB2fBhtu4PzWopLnJv+hjsv
- oRWKszApFKwTsLgunlRSPSyUuNCzWQdTZXjhqz4WMImTl0Ri/C+WrwjYZ1cE5nejV3on
- zr4N6yQJNNeoS2sQ4rvykv9Dlk1iM6hZQXts1Tg5f8k/yuclMTbEELtp3e8zPHTrkZMc
- 28PQ==
-X-Gm-Message-State: APjAAAWoOEoTzc+c0Mr0jTjbrdK2suAub5mEUVSP8IOCq0N45vVbXweh
- RlawK8l0DEYeywy5IWhLKiSKDmdd
-X-Google-Smtp-Source: APXvYqzp7xoTgiGZPChptzt2Pqfys44uOo3a17bzbCHtoztSGsiDVsp2LkVlPC/Z1lq1K8GxTb/KgA==
-X-Received: by 2002:a2e:824b:: with SMTP id j11mr5324678ljh.197.1556899535257; 
- Fri, 03 May 2019 09:05:35 -0700 (PDT)
-Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
- by smtp.gmail.com with ESMTPSA id q15sm495728lfh.59.2019.05.03.09.05.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 May 2019 09:05:34 -0700 (PDT)
-From: Kristian Evensen <kristian.evensen@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri,  3 May 2019 18:05:32 +0200
-Message-Id: <20190503160532.2214-1-kristian.evensen@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hMb7D-0005lC-PY
+ for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 16:32:53 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 542E94D9B;
+ Fri,  3 May 2019 18:32:49 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 042e7aab;
+ Fri, 3 May 2019 18:32:47 +0200 (CEST)
+Date: Fri, 3 May 2019 18:32:47 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Kristian Evensen <kristian.evensen@gmail.com>
+Message-ID: <20190503163247.GF71477@meh.true.cz>
+References: <20190503145852.6125-1-kristian.evensen@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190503145852.6125-1-kristian.evensen@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_090537_822589_73CEBD10 
-X-CRM114-Status: GOOD (  10.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190503_093251_978776_0A68F07A 
+X-CRM114-Status: GOOD (  21.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] system: uci: Use config dir on uci_add and
- support add_/del_list
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ramips: Add support for Head Weblink
+ HDRM200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,49 +64,198 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhpcyBjb21taXQgbWFrZXMgdGhyZWUgY2hhbmdlcyB0byB0aGUgdWNpIHNoZWxsIGxpYnJhcnk6
-CgoqIEEgY2hlY2sgZm9yIFVDSV9DT05GSUdfRElSIGhhcyBiZWVuIGFkZGVkIHRvIHRoZSBjb21t
-YW5kIGxpbmUgd2hlbgphZGRpbmcgYW5vbnltb3VzIHNlY3Rpb25zLiBXaXRob3V0wqB0aGlzIGNo
-YW5nZSwgYWRkaW5nIGFub255bW91cwpzZWN0aW9ucyB0byBjb25maWdzIG5vdCBzdG9yZWQgaW4g
-L2V0Yy9jb25maWcgaXMgbm90IHBvc3NpYmxlLgoKKiBTdXBwb3J0IGZvciBhZGRpbmcvcmVtb3Zp
-bmcgaXRlbXMgZnJvbSBsaXN0cyB3ZXJlIG1pc3NpbmcsIHNvIEkgaGF2ZQphZGRlZCB0aGUgZnVu
-Y3Rpb25zIHVjaV9hZGRfbGlzdCgpIGFuZCB1Y2lfZGVsX2xpc3QoKSB0byBzaW1wbGlmeQp3b3Jr
-aW5nIHdpdGggdWNpIGxpc3RzIGZyb20gc2NyaXB0cy4KClNpZ25lZC1vZmYtYnk7IEtyaXN0aWFu
-IEV2ZW5zZW4gPGtyaXN0aWFuLmV2ZW5zZW5AZ21haWwuY29tPgotLS0KIHBhY2thZ2Uvc3lzdGVt
-L3VjaS9maWxlcy9saWIvY29uZmlnL3VjaS5zaCB8IDIwICsrKysrKysrKysrKysrKysrKystCiAx
-IGZpbGUgY2hhbmdlZCwgMTkgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdp
-dCBhL3BhY2thZ2Uvc3lzdGVtL3VjaS9maWxlcy9saWIvY29uZmlnL3VjaS5zaCBiL3BhY2thZ2Uv
-c3lzdGVtL3VjaS9maWxlcy9saWIvY29uZmlnL3VjaS5zaAppbmRleCA3OGVjMjc3NjY5Li44MDNh
-ZGY5ZDk3IDEwMDY0NAotLS0gYS9wYWNrYWdlL3N5c3RlbS91Y2kvZmlsZXMvbGliL2NvbmZpZy91
-Y2kuc2gKKysrIGIvcGFja2FnZS9zeXN0ZW0vdWNpL2ZpbGVzL2xpYi9jb25maWcvdWNpLnNoCkBA
-IC04NSw2ICs4NSwxNSBAQCB1Y2lfc2V0KCkgewogCS9zYmluL3VjaSAke1VDSV9DT05GSUdfRElS
-OistYyAkVUNJX0NPTkZJR19ESVJ9IHNldCAiJFBBQ0tBR0UuJENPTkZJRy4kT1BUSU9OPSRWQUxV
-RSIKIH0KIAordWNpX2FkZF9saXN0KCkgeworCWxvY2FsIFBBQ0tBR0U9IiQxIgorCWxvY2FsIENP
-TkZJRz0iJDIiCisJbG9jYWwgT1BUSU9OPSIkMyIKKwlsb2NhbCBWQUxVRT0iJDQiCisKKwkvc2Jp
-bi91Y2kgJHtVQ0lfQ09ORklHX0RJUjorLWMgJFVDSV9DT05GSUdfRElSfSBhZGRfbGlzdCAiJFBB
-Q0tBR0UuJENPTkZJRy4kT1BUSU9OPSRWQUxVRSIKK30KKwogdWNpX2dldF9zdGF0ZSgpIHsKIAl1
-Y2lfZ2V0ICIkMSIgIiQyIiAiJDMiICIkNCIgIi92YXIvc3RhdGUiCiB9CkBAIC0xMDgsNyArMTE3
-LDcgQEAgdWNpX2FkZCgpIHsKIAlsb2NhbCBDT05GSUc9IiQzIgogCiAJaWYgWyAteiAiJENPTkZJ
-RyIgXTsgdGhlbgotCQlleHBvcnQgJHtOT19FWFBPUlQ6Ky1ufSBDT05GSUdfU0VDVElPTj0iJCgv
-c2Jpbi91Y2kgYWRkICIkUEFDS0FHRSIgIiRUWVBFIikiCisJCWV4cG9ydCAke05PX0VYUE9SVDor
-LW59IENPTkZJR19TRUNUSU9OPSIkKC9zYmluL3VjaSAke1VDSV9DT05GSUdfRElSOistYyAkVUNJ
-X0NPTkZJR19ESVJ9IGFkZCAiJFBBQ0tBR0UiICIkVFlQRSIpIgogCWVsc2UKIAkJL3NiaW4vdWNp
-ICR7VUNJX0NPTkZJR19ESVI6Ky1jICRVQ0lfQ09ORklHX0RJUn0gc2V0ICIkUEFDS0FHRS4kQ09O
-RklHPSRUWVBFIgogCQlleHBvcnQgJHtOT19FWFBPUlQ6Ky1ufSBDT05GSUdfU0VDVElPTj0iJENP
-TkZJRyIKQEAgLTEzMiw2ICsxNDEsMTUgQEAgdWNpX3JlbW92ZSgpIHsKIAkvc2Jpbi91Y2kgJHtV
-Q0lfQ09ORklHX0RJUjorLWMgJFVDSV9DT05GSUdfRElSfSBkZWwgIiRQQUNLQUdFLiRDT05GSUck
-e09QVElPTjorLiRPUFRJT059IgogfQogCit1Y2lfZGVsX2xpc3QoKSB7CisJbG9jYWwgUEFDS0FH
-RT0iJDEiCisJbG9jYWwgQ09ORklHPSIkMiIKKwlsb2NhbCBPUFRJT049IiQzIgorCWxvY2FsIFZB
-TFVFPSIkNCIKKworCS9zYmluL3VjaSAke1VDSV9DT05GSUdfRElSOistYyAkVUNJX0NPTkZJR19E
-SVJ9IGRlbF9saXN0ICIkUEFDS0FHRS4kQ09ORklHLiRPUFRJT049JFZBTFVFIgorfQorCiB1Y2lf
-Y29tbWl0KCkgewogCWxvY2FsIFBBQ0tBR0U9IiQxIgogCS9zYmluL3VjaSAke1VDSV9DT05GSUdf
-RElSOistYyAkVUNJX0NPTkZJR19ESVJ9IGNvbW1pdCAkUEFDS0FHRQotLSAKMi4xOS4xCgoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZl
-bCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xp
-c3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+Kristian Evensen <kristian.evensen@gmail.com> [2019-05-03 16:58:52]:
+
+Hi,
+
+> In order to install OpenWRT, you first need to compile an initramfs
+> (ramdisk)-image for the device.
+
+if the ramdisk image is needed, then we probably should enable it for that
+target and provide it, we shouldn't demand end users to build the ramdisk
+images by themselves in order to be able to install OpenWrt, right?
+
+This needs adding `ramdisk` in FEATURES in target.mk.
+
+> * Copy the initramfs-image to your tftp-root (default filename is
+> test.bin) and configure networking accordingly (default server IP is
+> 10.10.10.3, client 10.10.10.123). Start your tftp server.
+> * Open the board and connect to UART. The pins are exposed and clearly
+> marked.
+> * Boot the board and press 1.
+> * Either use the default filename and client/server IP-addresses, or
+> specify your own.
+> 
+> The image should now be loaded to memory and board boot. If the router
+> reboots while the image is loading, you need to try again. 
+
+Why does it reboot? Is there any kind of watchdog? Do you get any error in the
+bootloader?
+
+> diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
+> index fa20ab0714..f9ca5c47b8 100755
+> --- a/target/linux/ramips/base-files/etc/board.d/01_leds
+> +++ b/target/linux/ramips/base-files/etc/board.d/01_leds
+> @@ -184,6 +184,9 @@ hc5861)
+>  	ucidef_set_led_netdev "wifi5g" "wifi5g" "$boardname:blue:wlan5g" "wlan0"
+>  	ucidef_set_led_netdev "wifi2g" "wifi2g" "$boardname:blue:wlan2g" "wlan1"
+>  	;;
+> +hdrm200)
+
+this should match device from the DT compatible property and use generic
+board/model detection as introduced in commit b3d699bdd3caa3d ("base-files:
+add generic preinit script to extract board/model info from device-tree").
+
+> +	set_wifi_led "$boardname:green:wifi"
+> +	;;
+>  hg255d)
+>  	set_wifi_led "$boardname:green:wlan"
+>  	ucidef_set_led_netdev "internet" "internet" "$boardname:green:internet" "eth0.2"
+> diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+> index c2646876a2..8ae41ae59e 100755
+> --- a/target/linux/ramips/base-files/etc/board.d/02_network
+> +++ b/target/linux/ramips/base-files/etc/board.d/02_network
+> @@ -314,6 +314,7 @@ ramips_setup_interfaces()
+>  			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
+>  		;;
+>  	hc5661|\
+> +	hdrm200|\
+
+ditto here.
+
+>  	y1s)
+>  		ucidef_add_switch "switch0" \
+>  			"1:lan" "2:lan" "3:lan" "4:lan" "5:lan" "0:wan" "6@eth0"
+> diff --git a/target/linux/ramips/base-files/lib/ramips.sh b/target/linux/ramips/base-files/lib/ramips.sh
+> index 093303892c..6d5a9cc391 100755
+> --- a/target/linux/ramips/base-files/lib/ramips.sh
+> +++ b/target/linux/ramips/base-files/lib/ramips.sh
+> @@ -229,6 +229,9 @@ ramips_board_detect() {
+>  	*"HC5962")
+>  		name="hc5962"
+>  		;;
+> +	*"HDRM200")
+> +		name="hdrm200"
+> +		;;
+
+so this is not necessary anymore and you can drop it.
+
+> diff --git a/target/linux/ramips/dts/HDRM200.dts b/target/linux/ramips/dts/HDRM200.dts
+> new file mode 100644
+> index 0000000000..05e0b1a6dc
+> --- /dev/null
+> +++ b/target/linux/ramips/dts/HDRM200.dts
+
+...
+
+> +	gpio-export {
+> +		compatible = "gpio-export";
+> +		#size-cells = <0>;
+> +
+> +		sim_switch {
+> +			gpio-export,name = "sim_switch";
+> +			gpio-export,output = <1>;
+> +			gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		io1 {
+> +			gpio-export,name = "io1";
+> +			gpio-export,output = <1>;
+> +			gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		io2 {
+> +			gpio-export,name = "io2";
+> +			gpio-export,output = <1>;
+> +			gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		io3 {
+> +			gpio-export,name = "io3";
+> +			gpio-export,output = <1>;
+> +			gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		io4 {
+> +			gpio-export,name = "io4";
+> +			gpio-export,output = <1>;
+> +			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		power_mpcie {
+> +			gpio-export,name = "power_mpcie";
+> +			gpio-export,output = <1>;
+> +			gpios = <&gpio0 21 GPIO_ACTIVE_HIGH>;
+> +		};
+> +	};
+
+We're trying to get rid of the `gpio-export` functionality as it's hack for
+missing kernel functionality, which was rejected in upstream kernel long time
+ago, for details see this email
+http://lists.infradead.org/pipermail/openwrt-devel/2019-February/015772.html,
+discussion in #1366 or
+https://github.com/openwrt/openwrt/pull/1814#issuecomment-462942022.
+
+So I'm wondering if it would be possible to replace the `gpio-export`
+construct with the userspace gpio-switch alternative, for example
+https://github.com/openwrt/openwrt/blob/master/target/linux/layerscape/base-files/etc/board.d/03_gpio_switches#L20-L22
+
+> +&spi0 {
+> +	status = "okay";
+> +
+> +	w25q128@0 {
+
+Can you please change the node name to more generic name `flash@0` and try if
+it boots for you?
+
+> +&ethernet {
+> +	status = "okay";
+
+I would add newline here in order to separate the `status` property from the
+rest.
+
+> +&pinctrl {
+> +	state_default: pinctrl0 {
+> +		default {
+> +			ralink,group = "i2c", "uartf", "pa", "spi refclk", "wled";
+> +			ralink,function = "gpio";
+> +		};
+> +	};
+> +};
+
+...
+
+> --- a/target/linux/ramips/image/mt7620.mk
+> +++ b/target/linux/ramips/image/mt7620.mk
+> @@ -358,6 +358,14 @@ define Device/hc5861
+>  endef
+>  TARGET_DEVICES += hc5861
+>  
+> +define Device/hdrm200
+
+this should be set to `Device/head-weblink_hdrm200` in order to add
+SUPPORTED_DEVICES variable with the proper value, matching the one in the DT
+compatible.
+
+> +  DTS := HDRM200
+> +  IMAGE_SIZE := $(ralink_default_fw_size_16M)
+> +  DEVICE_TITLE := Head Weblink HDRM2000
+> +  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb2 kmod-usb-ohci kmod-sdhci-mt7620
+> +endef
+> +TARGET_DEVICES += hdrm200
+
+TARGET_DEVICES += head-weblink_hdrm200
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

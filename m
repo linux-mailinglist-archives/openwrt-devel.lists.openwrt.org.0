@@ -2,41 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80C5213511
-	for <lists+openwrt-devel@lfdr.de>; Sat,  4 May 2019 00:00:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE64913531
+	for <lists+openwrt-devel@lfdr.de>; Sat,  4 May 2019 00:04:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lL2tV+8ys795lkxU7l4hw37ZORvdwkVBWTnN7/ZL+p0=; b=enYPqezg1OG7am
-	n8q8CM91HbXXLMdZOOlk4E91Ccm3SZReb51Qux01+cs/ldIC9JEXXqbS4aJTHt4utRHgJjDEWZnZ3
-	eXobIQIKaZfmtpBpKu4ProJFa8XmLoBXc6VFztM0FMaafiN3oqv91S2fJ8GZqLo88teYj1WDqkMA0
-	Nc6PKqqJp0+5SkNd5eixzT2dTI7nABpEN4Jpk2vFGJGkKxjDp9Io/ZJYTbF1Z1LLg8ndYwTwrS8xN
-	wKqui0oijxS04gTg6yhQvx9t02v3CWTLBRm6lYU1OZgOfLVYhLyYs6iyr7YVBu/3E+IrT3BizF1TW
-	n19dkFz8m1NtHLyo3mYA==;
+	List-Owner; bh=mSTxkyugf0ho3QiAuCxvVJ/tMSfZFnjkMbJs8JPR1nw=; b=cPxlhYdmEz5lL6
+	rgNK04BW4pBEKUIKM8nDsXekXLCxA+mBxJqnodc0Md0tY3wRsf77cBoU4kypbYKKwM4wBR0H2FGAN
+	eZADO3RZV5ubhLMSlVRwWNEt4or1P5106odSGARXFn501WjEv9T4OwK+PVpKh0fnliAPE7kyton+I
+	5k1QP85iq5WVEUOIduh5zmGPpZzjQChmOyJzjyogRaDSOiGEVgYvm0O7jgWlq29CUi2e5GHne4Yxv
+	gZokTAUrGNyreaOp2Z2TPAOzRI5oI5lEy6lNgm/D/6EZLIRfvmje4LmT0KDaVBVLum3syMKR3fNrJ
+	X7AYqQGQxlgT02YYEhBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMgEe-0002AW-Gw; Fri, 03 May 2019 22:00:52 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
- helo=mx2.mailbox.org)
+	id 1hMgHm-0002c5-T0; Fri, 03 May 2019 22:04:06 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMgEW-0002A0-AG
- for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 22:00:47 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1hMgHf-0002bX-Cw
+ for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 22:04:01 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id B74ACA1179;
- Sat,  4 May 2019 00:00:39 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id DB66C4DDDB;
+ Sat,  4 May 2019 00:03:56 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
+Received: from smtp1.mailbox.org ([80.241.60.240])
  by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
  [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id rjBUGKVIx2Wu; Sat,  4 May 2019 00:00:26 +0200 (CEST)
+ with ESMTP id kb84NX_DYiX7; Sat,  4 May 2019 00:03:30 +0200 (CEST)
 To: Tomasz Maciej Nowak <tomek_n@o2.pl>, openwrt-devel@lists.openwrt.org
 References: <20190501174224.19089-1-tomek_n@o2.pl>
- <20190501174224.19089-7-tomek_n@o2.pl>
+ <20190501174224.19089-8-tomek_n@o2.pl>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -99,24 +99,24 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <69de5f77-e694-d2bd-9c67-a94173c91243@hauke-m.de>
-Date: Sat, 4 May 2019 00:00:25 +0200
+Message-ID: <325719b5-84cf-005a-24b3-219a98dbd8fa@hauke-m.de>
+Date: Sat, 4 May 2019 00:03:29 +0200
 MIME-Version: 1.0
-In-Reply-To: <20190501174224.19089-7-tomek_n@o2.pl>
+In-Reply-To: <20190501174224.19089-8-tomek_n@o2.pl>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_150044_663244_54A4F2BC 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20190503_150359_741264_0993DAC4 
+X-CRM114-Status: GOOD (  17.33  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
- [list.dnswl.org]
+ low trust [80.241.60.212 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 6/8] mvebu: add vendor to device names
+Subject: Re: [OpenWrt-Devel] [PATCH 7/8] mvebu: use device-tree board
+ detection
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -134,214 +134,48 @@ Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 On 5/1/19 7:42 PM, Tomasz Maciej Nowak wrote:
-> Replace SoC names with vendors in device names, in few cases, and add
-> vendor to developemnt boards for easier identyfying potential firmware to
-> flash.
-
-Will sysupgrade still work after this rename? Isn't there some script
-which checks if the image is compatible with the currently installed image?
-
+> Convert whole target to Device Tree based board detection instead of
+> identifying devices by dts file name. With this we can drop mvebu.sh
+> translation script and rely on common method for model detection.
+> 
 > Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 > ---
->  package/boot/uboot-mvebu/Makefile      |  2 +-
->  target/linux/mvebu/image/Makefile      |  1 -
->  target/linux/mvebu/image/cortex-a53.mk |  4 +--
->  target/linux/mvebu/image/cortex-a72.mk | 12 +++----
->  target/linux/mvebu/image/cortex-a9.mk  | 44 +++++++++++++++-----------
->  5 files changed, 34 insertions(+), 29 deletions(-)
-> 
-> diff --git a/package/boot/uboot-mvebu/Makefile b/package/boot/uboot-mvebu/Makefile
-> index 61547acb27..06c574594b 100644
-> --- a/package/boot/uboot-mvebu/Makefile
-> +++ b/package/boot/uboot-mvebu/Makefile
-> @@ -24,7 +24,7 @@ endef
->  
->  define U-Boot/clearfog
->    NAME:=SolidRun ClearFog A1
-> -  BUILD_DEVICES:=armada-388-clearfog-base armada-388-clearfog-pro
-> +  BUILD_DEVICES:=solidrun-clearfog-base solidrun-clearfog-pro
->    BUILD_SUBTARGET:=cortexa9
->    UBOOT_IMAGE:=u-boot-spl.kwb
->  endef
-> diff --git a/target/linux/mvebu/image/Makefile b/target/linux/mvebu/image/Makefile
-> index 240cc88642..fe74a12c65 100644
-> --- a/target/linux/mvebu/image/Makefile
-> +++ b/target/linux/mvebu/image/Makefile
-> @@ -70,7 +70,6 @@ endef
->  
->  define Device/Default
->    PROFILES := Default
-> -  DEVICE_DTS := $(1)
->    BOARD_NAME = $$(DEVICE_DTS)
->    KERNEL_NAME := zImage
->    KERNEL := kernel-bin | append-dtb | uImage none
-> diff --git a/target/linux/mvebu/image/cortex-a53.mk b/target/linux/mvebu/image/cortex-a53.mk
-> index a102f52481..4dd1e44665 100644
-> --- a/target/linux/mvebu/image/cortex-a53.mk
-> +++ b/target/linux/mvebu/image/cortex-a53.mk
-> @@ -8,12 +8,12 @@ define Device/globalscale-espressobin
->  endef
->  TARGET_DEVICES += globalscale-espressobin
->  
-> -define Device/armada-3720-db
-> +define Device/marvell-armada-3720-db
->    $(call Device/Default-arm64)
->    DEVICE_TITLE := Marvell Armada 3720 Development Board DB-88F3720-DDR3
->    DEVICE_DTS := armada-3720-db
->    SUPPORTED_DEVICES := marvell,armada-3720-db
->  endef
-> -TARGET_DEVICES += armada-3720-db
-> +TARGET_DEVICES += marvell-armada-3720-db
->  
->  endif
-> diff --git a/target/linux/mvebu/image/cortex-a72.mk b/target/linux/mvebu/image/cortex-a72.mk
-> index 824f6b5d0f..3043f087cc 100644
-> --- a/target/linux/mvebu/image/cortex-a72.mk
-> +++ b/target/linux/mvebu/image/cortex-a72.mk
-> @@ -1,30 +1,30 @@
->  ifeq ($(SUBTARGET),cortexa72)
->  
-> -define Device/armada-macchiatobin
-> +define Device/marvell-macchiatobin
->    $(call Device/Default-arm64)
->    DEVICE_TITLE := MACCHIATObin (SolidRun Armada 8040 Community Board)
->    DEVICE_PACKAGES += kmod-i2c-core kmod-i2c-mux kmod-i2c-mux-pca954x
->    DEVICE_DTS := armada-8040-mcbin
->    SUPPORTED_DEVICES := marvell,armada8040-mcbin
->  endef
-> -TARGET_DEVICES += armada-macchiatobin
-> +TARGET_DEVICES += marvell-macchiatobin
->  
-> -define Device/armada-8040-db
-> +define Device/marvell-armada-8040-db
->    $(call Device/Default-arm64)
->    DEVICE_TITLE := Marvell Armada 8040 DB board
->    DEVICE_DTS := armada-8040-db
->    IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
->    SUPPORTED_DEVICES := marvell,armada8040-db
->  endef
-> -TARGET_DEVICES += armada-8040-db
-> +TARGET_DEVICES += marvell-armada-8040-db
->  
-> -define Device/armada-7040-db
-> +define Device/marvell-armada-7040-db
->    $(call Device/Default-arm64)
->    DEVICE_TITLE := Marvell Armada 7040 DB board
->    DEVICE_DTS := armada-7040-db
->    IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
->    SUPPORTED_DEVICES := marvell,armada7040-db
->  endef
-> -TARGET_DEVICES += armada-7040-db
-> +TARGET_DEVICES += marvell-armada-7040-db
->  
->  endif
-> diff --git a/target/linux/mvebu/image/cortex-a9.mk b/target/linux/mvebu/image/cortex-a9.mk
-> index 252300b942..e5459dad1a 100644
-> --- a/target/linux/mvebu/image/cortex-a9.mk
-> +++ b/target/linux/mvebu/image/cortex-a9.mk
-> @@ -61,57 +61,63 @@ define Device/linksys-wrt1900ac
->  endef
->  TARGET_DEVICES += linksys-wrt1900ac
->  
-> -define Device/openblocks-ax3-4
-> +define Device/plathome-openblocks-ax3-4
->    DEVICE_DTS := armada-xp-openblocks-ax3-4
-> -  SUPPORTED_DEVICES := $(1)
-> +  SUPPORTED_DEVICES := openblocks-ax3-4
->    BLOCKSIZE := 128k
->    PAGESIZE := 1
->    IMAGES += factory.img
->    IMAGE/factory.img := append-kernel | pad-to $$(BLOCKSIZE) | append-ubi
->    DEVICE_TITLE := Plat'Home OpenBlocks AX3
->  endef
-> -TARGET_DEVICES += openblocks-ax3-4
-> +TARGET_DEVICES += plathome-openblocks-ax3-4
->  
-> -define Device/armada-385-db-ap
-> +define Device/marvell-armada-385-db-ap
->    $(Device/NAND-256K)
-> +  DEVICE_DTS := armada-385-db-ap
->    IMAGES += factory.img
->    KERNEL_SIZE := 8192k
->    DEVICE_TITLE := Marvell Armada 385 DB AP (DB-88F6820-AP)
->  endef
-> -TARGET_DEVICES += armada-385-db-ap
-> +TARGET_DEVICES += marvell-armada-385-db-ap
->  
-> -define Device/armada-370-db
-> +define Device/marvell-armada-370-db
->    $(Device/NAND-512K)
->    DEVICE_TITLE := Marvell Armada 370 DB (DB-88F6710-BP-DDR3)
-> +  DEVICE_DTS := armada-370-db
->  endef
-> -TARGET_DEVICES += armada-370-db
-> +TARGET_DEVICES += marvell-armada-370-db
->  
-> -define Device/armada-370-rd
-> +define Device/marvell-armada-370-rd
->    $(Device/NAND-512K)
->    DEVICE_TITLE := Marvell Armada 370 RD (RD-88F6710-A1)
-> +  DEVICE_DTS := armada-370-rd
->  endef
-> -TARGET_DEVICES += armada-370-rd
-> +TARGET_DEVICES += marvell-armada-370-rd
->  
-> -define Device/armada-xp-db
-> +define Device/marvell-armada-xp-db
->    $(Device/NAND-512K)
->    DEVICE_TITLE := Marvell Armada XP DB (DB-78460-BP)
-> +  DEVICE_DTS := armada-xp-db
->  endef
-> -TARGET_DEVICES += armada-xp-db
-> +TARGET_DEVICES += marvell-armada-xp-db
->  
-> -define Device/armada-xp-gp
-> +define Device/marvell-armada-xp-gp
->    $(Device/NAND-512K)
->    DEVICE_TITLE := Marvell Armada XP GP (DB-MV784MP-GP)
-> +  DEVICE_DTS := armada-xp-gp
->  endef
-> -TARGET_DEVICES += armada-xp-gp
-> +TARGET_DEVICES += marvell-armada-xp-gp
->  
-> -define Device/armada-388-rd
-> +define Device/marvell-armada-388-rd
->    DEVICE_TITLE := Marvell Armada 388 RD (RD-88F6820-AP)
-> +  DEVICE_DTS := armada-388-rd
->    IMAGES := firmware.bin
->    IMAGE/firmware.bin := append-kernel | pad-to 256k | append-rootfs | pad-rootfs
->  endef
-> -TARGET_DEVICES += armada-388-rd
-> +TARGET_DEVICES += marvell-armada-388-rd
->  
-> -define Device/armada-388-clearfog-pro
-> +define Device/solidrun-clearfog-pro
->    KERNEL_INSTALL := 1
->    KERNEL := kernel-bin
->    DEVICE_TITLE := SolidRun ClearFog Pro
-> @@ -123,9 +129,9 @@ define Device/armada-388-clearfog-pro
->    UBOOT := clearfog-u-boot-spl.kwb
->    BOOT_SCRIPT := clearfog
->  endef
-> -TARGET_DEVICES += armada-388-clearfog-pro
-> +TARGET_DEVICES += solidrun-clearfog-pro
->  
-> -define Device/armada-388-clearfog-base
-> +define Device/solidrun-clearfog-base
->    KERNEL_INSTALL := 1
->    KERNEL := kernel-bin
->    DEVICE_TITLE := SolidRun ClearFog Base
-> @@ -136,7 +142,7 @@ define Device/armada-388-clearfog-base
->    UBOOT := clearfog-u-boot-spl.kwb
->    BOOT_SCRIPT := clearfog
->  endef
-> -TARGET_DEVICES += armada-388-clearfog-base
-> +TARGET_DEVICES += solidrun-clearfog-base
->  
->  define Device/globalscale-mirabox
->    $(Device/NAND-512K)
+>  .../mvebu/base-files/etc/board.d/01_leds      | 22 ++---
+>  .../mvebu/base-files/etc/board.d/02_network   | 60 ++++++------
+>  target/linux/mvebu/base-files/etc/diag.sh     | 16 ++--
+>  .../base-files/etc/init.d/linksys_recovery    |  2 +-
+>  .../base-files/etc/uci-defaults/03_wireless   |  4 +-
+>  .../base-files/etc/uci-defaults/04_mambafan   |  2 +-
+>  target/linux/mvebu/base-files/lib/mvebu.sh    | 94 -------------------
+>  .../mvebu/base-files/lib/preinit/01_sysinfo   |  9 --
+>  .../base-files/lib/preinit/06_set_iface_mac   | 14 +--
+>  .../base-files/lib/preinit/79_move_config     |  2 +-
+>  .../base-files/lib/preinit/81_linksys_syscfg  |  2 +-
+>  .../mvebu/base-files/lib/upgrade/platform.sh  | 10 +-
+>  .../mvebu/base-files/lib/upgrade/sdcard.sh    |  2 +-
+>  target/linux/mvebu/image/cortex-a9.mk         | 20 +++-
+>  14 files changed, 85 insertions(+), 174 deletions(-)
+>  delete mode 100755 target/linux/mvebu/base-files/lib/mvebu.sh
+>  delete mode 100644 target/linux/mvebu/base-files/lib/preinit/01_sysinfo
 > 
 
+> diff --git a/target/linux/mvebu/base-files/lib/preinit/79_move_config b/target/linux/mvebu/base-files/lib/preinit/79_move_config
+> index f7e23cc324..640fb5cdad 100644
+> --- a/target/linux/mvebu/base-files/lib/preinit/79_move_config
+> +++ b/target/linux/mvebu/base-files/lib/preinit/79_move_config
+> @@ -9,7 +9,7 @@ move_config() {
+>  
+>  	if export_bootdevice && export_partdevice partdev 1; then
+>  		case $(board_name) in
+> -			armada-385-turris-omnia)
+> +			cznic,turris-omnia)
+
+This does not apply correctly, the old version uses "turris-omnia" and
+not "armada-385-turris-omnia".
+
+>  			insmod nls_cp437
+>  			insmod nls_iso8859-1
+>  			insmod fat
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,41 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE64913531
-	for <lists+openwrt-devel@lfdr.de>; Sat,  4 May 2019 00:04:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03C0113535
+	for <lists+openwrt-devel@lfdr.de>; Sat,  4 May 2019 00:04:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mSTxkyugf0ho3QiAuCxvVJ/tMSfZFnjkMbJs8JPR1nw=; b=cPxlhYdmEz5lL6
-	rgNK04BW4pBEKUIKM8nDsXekXLCxA+mBxJqnodc0Md0tY3wRsf77cBoU4kypbYKKwM4wBR0H2FGAN
-	eZADO3RZV5ubhLMSlVRwWNEt4or1P5106odSGARXFn501WjEv9T4OwK+PVpKh0fnliAPE7kyton+I
-	5k1QP85iq5WVEUOIduh5zmGPpZzjQChmOyJzjyogRaDSOiGEVgYvm0O7jgWlq29CUi2e5GHne4Yxv
-	gZokTAUrGNyreaOp2Z2TPAOzRI5oI5lEy6lNgm/D/6EZLIRfvmje4LmT0KDaVBVLum3syMKR3fNrJ
-	X7AYqQGQxlgT02YYEhBg==;
+	List-Owner; bh=tnxMppnoBObGdxtQHc6pInJ5P9cVdj5QEPmavMbyGsY=; b=Ga68WV/BFDIq/i
+	KdjotzMA3fRUK0Ad5slJQ81MijbPsVlV0+xg1CIn0yuyoFmivo6Ig8thvl3Lwfv/pJi9D6+ldZ2nC
+	m6OzLEuuPLW0PWUXbzRqu7oD96uVB7arm07PQ5z7371RJpz3rjhEqg6i16bYR16TICDYlOYdR43W4
+	8vKsrKhbBkkr553rqkAwpDSzNKyms8rwUHjEnK4DtDUcRnG6xBkUK+c5GbYz7HKhv9VRySkyM3nzj
+	gcMY0xoc7XG0mk+h1f22q5BwaNWbprZghavN3EkIAPSte7N8qfmgfjLSy9MJw23xCe21yCH2yMz2o
+	oW+QvuNm6Dd+dAOw8lXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMgHm-0002c5-T0; Fri, 03 May 2019 22:04:06 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1hMgIC-0002uB-Ag; Fri, 03 May 2019 22:04:32 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMgHf-0002bX-Cw
- for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 22:04:01 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
+ id 1hMgI3-0002tO-By
+ for openwrt-devel@lists.openwrt.org; Fri, 03 May 2019 22:04:24 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id DB66C4DDDB;
- Sat,  4 May 2019 00:03:56 +0200 (CEST)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 681F1A1125;
+ Sat,  4 May 2019 00:04:21 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
+Received: from smtp2.mailbox.org ([80.241.60.241])
  by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
  [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id kb84NX_DYiX7; Sat,  4 May 2019 00:03:30 +0200 (CEST)
+ with ESMTP id I5vqQs6Yg6b8; Sat,  4 May 2019 00:04:14 +0200 (CEST)
 To: Tomasz Maciej Nowak <tomek_n@o2.pl>, openwrt-devel@lists.openwrt.org
 References: <20190501174224.19089-1-tomek_n@o2.pl>
- <20190501174224.19089-8-tomek_n@o2.pl>
+ <20190501174224.19089-7-tomek_n@o2.pl>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -99,24 +99,24 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <325719b5-84cf-005a-24b3-219a98dbd8fa@hauke-m.de>
-Date: Sat, 4 May 2019 00:03:29 +0200
+Message-ID: <a158c8c9-8ee2-ec28-7e59-f2f287e2606c@hauke-m.de>
+Date: Sat, 4 May 2019 00:04:13 +0200
 MIME-Version: 1.0
-In-Reply-To: <20190501174224.19089-8-tomek_n@o2.pl>
+In-Reply-To: <20190501174224.19089-7-tomek_n@o2.pl>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_150359_741264_0993DAC4 
-X-CRM114-Status: GOOD (  17.33  )
+X-CRM114-CacheID: sfid-20190503_150423_715564_F5A80369 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ low trust [80.241.60.215 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 7/8] mvebu: use device-tree board
- detection
+Subject: Re: [OpenWrt-Devel] [PATCH 6/8] mvebu: add vendor to device names
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -134,48 +134,32 @@ Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 On 5/1/19 7:42 PM, Tomasz Maciej Nowak wrote:
-> Convert whole target to Device Tree based board detection instead of
-> identifying devices by dts file name. With this we can drop mvebu.sh
-> translation script and rely on common method for model detection.
+> Replace SoC names with vendors in device names, in few cases, and add
+> vendor to developemnt boards for easier identyfying potential firmware to
+> flash.
 > 
 > Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
-> ---
->  .../mvebu/base-files/etc/board.d/01_leds      | 22 ++---
->  .../mvebu/base-files/etc/board.d/02_network   | 60 ++++++------
->  target/linux/mvebu/base-files/etc/diag.sh     | 16 ++--
->  .../base-files/etc/init.d/linksys_recovery    |  2 +-
->  .../base-files/etc/uci-defaults/03_wireless   |  4 +-
->  .../base-files/etc/uci-defaults/04_mambafan   |  2 +-
->  target/linux/mvebu/base-files/lib/mvebu.sh    | 94 -------------------
->  .../mvebu/base-files/lib/preinit/01_sysinfo   |  9 --
->  .../base-files/lib/preinit/06_set_iface_mac   | 14 +--
->  .../base-files/lib/preinit/79_move_config     |  2 +-
->  .../base-files/lib/preinit/81_linksys_syscfg  |  2 +-
->  .../mvebu/base-files/lib/upgrade/platform.sh  | 10 +-
->  .../mvebu/base-files/lib/upgrade/sdcard.sh    |  2 +-
->  target/linux/mvebu/image/cortex-a9.mk         | 20 +++-
->  14 files changed, 85 insertions(+), 174 deletions(-)
->  delete mode 100755 target/linux/mvebu/base-files/lib/mvebu.sh
->  delete mode 100644 target/linux/mvebu/base-files/lib/preinit/01_sysinfo
-> 
 
-> diff --git a/target/linux/mvebu/base-files/lib/preinit/79_move_config b/target/linux/mvebu/base-files/lib/preinit/79_move_config
-> index f7e23cc324..640fb5cdad 100644
-> --- a/target/linux/mvebu/base-files/lib/preinit/79_move_config
-> +++ b/target/linux/mvebu/base-files/lib/preinit/79_move_config
-> @@ -9,7 +9,7 @@ move_config() {
+
+> diff --git a/target/linux/mvebu/image/cortex-a72.mk b/target/linux/mvebu/image/cortex-a72.mk
+> index 824f6b5d0f..3043f087cc 100644
+> --- a/target/linux/mvebu/image/cortex-a72.mk
+> +++ b/target/linux/mvebu/image/cortex-a72.mk
+> @@ -1,30 +1,30 @@
+>  ifeq ($(SUBTARGET),cortexa72)
 >  
->  	if export_bootdevice && export_partdevice partdev 1; then
->  		case $(board_name) in
-> -			armada-385-turris-omnia)
-> +			cznic,turris-omnia)
+> -define Device/armada-macchiatobin
+> +define Device/marvell-macchiatobin
+>    $(call Device/Default-arm64)
+>    DEVICE_TITLE := MACCHIATObin (SolidRun Armada 8040 Community Board)
+>    DEVICE_PACKAGES += kmod-i2c-core kmod-i2c-mux kmod-i2c-mux-pca954x
+>    DEVICE_DTS := armada-8040-mcbin
+>    SUPPORTED_DEVICES := marvell,armada8040-mcbin
+>  endef
+> -TARGET_DEVICES += armada-macchiatobin
+> +TARGET_DEVICES += marvell-macchiatobin
 
-This does not apply correctly, the old version uses "turris-omnia" and
-not "armada-385-turris-omnia".
-
->  			insmod nls_cp437
->  			insmod nls_iso8859-1
->  			insmod fat
+This board is from solidrun
 
 _______________________________________________
 openwrt-devel mailing list

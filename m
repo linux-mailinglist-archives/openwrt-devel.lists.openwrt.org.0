@@ -2,75 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B11913E50
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 09:53:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62B0613E65
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 10:12:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+klVFt+fSrGjb9zF2Mhq/JEMvpd4t5IfISHGJyWjvFw=; b=rXbPY6JcryzUDo
-	n73797rjbYkKcSAhll31Ibt1k6Kq6M2+N1b10klHis6mxVxJa8DXafFcxyXmEZx0tpVO1oZd2O1FF
-	ky6HGWp0bVCvEFQ+8fWvH7lc6nl6/q5h9aZmbSgcb5oK0/ZYQQgi9hoYKzWC1Tmnjqt6gi2JDw7uO
-	eEoivr0O75JrxuSJ7Ifgxn767Vq2iAiFqi1bShFNtCv5gOmyc7veOi7ebCAUqcJu4ub+vC5LpKS3q
-	I2WZ42hxyjNu7G5WOtpOQsg24y9KsEwZEh7rdwemAMLjDoMNRIKwosZ38oiYKyDpIHQfgWtbeBtkW
-	GyvfZfKtevMakl6nGCiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hKqpX3DjOu/LzNP5BkBR4AnIHT8EMOVYtW/LsfDShtU=; b=qPN3JwEHgY6Dt751E7++ZFVxb
+	GqX2J2XmcGe8h98nIfwNF6ofN+3lw/TbEQPZdNOHCXZBR0KE/o0MV6EBPhNIqr6BkB2cWrFQvwrFq
+	5VkSDraIqS2swGSdB22h1pG2+hlqQSQbfzme0D5U6Ucp0OyidyIOpNALunZxopQlgKqvm5SPanvXR
+	pIOAm5YqwJQR+U6zfjYGSjjXtK8VZZH95kcWnw6RAEI3MH2Eij6oF2aAB81nXJf0giaK83eQZeUlz
+	oHZkEOqg6agTYBCergAVByq98ODjqS+8g7uBrKFJYKwnEeNz3eAeMM8qomc1eqhkDKTLJZ1BShzBm
+	DaIo+7aQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNBy1-0004r8-2c; Sun, 05 May 2019 07:53:49 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1hNCFW-0002sH-I5; Sun, 05 May 2019 08:11:54 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNBxq-0004qj-Ge
- for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 07:53:40 +0000
-Received: by mail-qt1-x841.google.com with SMTP id i31so11407300qti.13
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 May 2019 00:53:37 -0700 (PDT)
+ id 1hNCFL-0002rg-NV
+ for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 08:11:45 +0000
+Received: by mail-ed1-x541.google.com with SMTP id p26so11545271edr.2
+ for <openwrt-devel@lists.openwrt.org>; Sun, 05 May 2019 01:11:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vM/SvhmHTJVNgPktwSD88BFUbeAQFQgWdMtERlV9wOI=;
- b=Yfu0YWCcNcsZaG0bBlnMOVqq1ExJL6pv5DrD/cYCCI6ks7Bu8KmwH513h0P3qSe8bW
- FFYclZ0QYPYKixfBWeG/aSa4m8s1N+YzQT9sMl5pGyj7X4ucjmIeURZ535YT9E4TwFts
- aTFSDf+H4CWE6sKn/YUgLQXEkmkWA90tppGqv4bIFYJTN9g3fNSOoZIj4jVNkxDxJlo1
- 4Q5SCb9jWVm0s/KQj1pUeGgc3w8EI+rCfFH7aPBTNlST8VCnwAgIO1AuSH72vKm+W3gf
- JDj8jfGbN9T2YIdZYGpVgzvfA0ZU4dVbQQsWMqjvw05tl4jmmqHvJo/kmgF1NizRX+qV
- UpqA==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=j7hB53dWSU2UMdkEo9zVdMcyEydNwOZzb39Zp/smMH4=;
+ b=UMeJlCRXBj0nQ8rLtasNprmED4RCuHCniO/XZbdOmSz2HW9OmT7b7JdrzedX++eApq
+ n1x8Mf3e5iRxvE1w390BPUOzUelErxnyDTP3LxjYEuBqVIqprROKjRsfHGLujE/VJkmU
+ ohYnLF6IgLsD+s2ep0m9dRdhiTAS0S7i/ry1Dg9dEO/QJfL6jqwM+tLGpQeZBZ8FXR4+
+ jYZTRMNP19RtmPlJXU0nFpcUhNQ4E3ErSoRRmBVOluj4OYfWDm87hCbDb2txK/qzejW1
+ yxoj39MnnI6KYjGj+kUPTWEKnCBHYydRzIsStO/KgA8FVjSdL+i6fP7lyMR3EwSxi2Qo
+ atzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vM/SvhmHTJVNgPktwSD88BFUbeAQFQgWdMtERlV9wOI=;
- b=FUeH5A8fGZBgxg5qXsTiDuaYJ8hxaTfgfZG6zBczRdeRe81Dg4qbeDJ0D4/qE9NAZh
- AVuA65o9oz1I/zlVooCmuHwAabIz+xzhHKqXATMAhYi9mXx3bhldvxPpI0uDdtTyI9Ic
- 0CtUZ2o16ll5CSdDUHkmQ+MMXtzvECggeZmKvKXI4nB/gWnfprmPjFL9oG0Hf804hoH+
- akwAv5TR8BBRAUiBcbTYC0MX/qhk5JkIufxt0vS0A6JAARf/L0fqAeNszY83J70kVqhx
- yExiMn51BYVAL+4c7Af1SqgH1RVDqrGWB0CrlLA/vzCAC3HXJJZYUguEXt3g/cZSBo/7
- Cy3w==
-X-Gm-Message-State: APjAAAWK3YhtaxU5Viqz6OrLx2AIaGQNawqaCMr5dUGHnk26aIvl+BjQ
- BgCMmeqO7+PY1wagj7kI4fVUXIZ7mskiMr1DMW47lg==
-X-Google-Smtp-Source: APXvYqxVe+27lA33tLEJUDO49oFb/jxrghDhWkUMTc17m9iClGFQtYxtXou9LyU5K8MIUFDsVrNeeCq64GtN4JmCHOc=
-X-Received: by 2002:a0c:99df:: with SMTP id y31mr15772609qve.171.1557042816769; 
- Sun, 05 May 2019 00:53:36 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=j7hB53dWSU2UMdkEo9zVdMcyEydNwOZzb39Zp/smMH4=;
+ b=estVanmumRy3Wc9Ih/fXOuIsTvHbYgSGUXn+K9hZUjusYVPoAfR1/f0muvssOL0Nuy
+ OjCj7ExD41gVB00QOGGuHx0GN0WuwwXsBsMjRXRkXhfhQsq6eqwXc5/MxOyF+iem2y0o
+ cTvNFidvmS9qDYOd8Z7Do+IrZZF4aFhEXcykPw/66maoZFnKAifg0yNk2cifQhoRQ8+1
+ 4orHyjV6/2756bKlWCds0A8TtQdlORtCO7UenyafQ1+/1TKJKpqnNYKuvgKrGTuIUvXc
+ cisO63v9i7SAT+xbiCZ/0dJEzxXE8CJbte/hL25AAK+xoBa7PExj/cl2xXRGLhxJnJiM
+ 6pwg==
+X-Gm-Message-State: APjAAAVuPOgga/YF8KAvissVqfvdR0abElyf3ZMS6Tl8cS6VgJAF13oj
+ 4XFH3wmK2ZddO4hEOMkAUf0=
+X-Google-Smtp-Source: APXvYqzEVcawnN3vdViWO/T1bTMN0nrZkpp2HLHGumEmvdBspaGWdyB+CE/AKUp56rcwih+Cq7RUHA==
+X-Received: by 2002:a17:906:a4b:: with SMTP id
+ x11mr13894633ejf.200.1557043901352; 
+ Sun, 05 May 2019 01:11:41 -0700 (PDT)
+Received: from ?IPv6:2a02:168:6806:0:f58c:e2cb:4e35:220a?
+ ([2a02:168:6806:0:f58c:e2cb:4e35:220a])
+ by smtp.gmail.com with ESMTPSA id j25sm999964ejt.74.2019.05.05.01.11.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 05 May 2019 01:11:40 -0700 (PDT)
+To: Christian Lamparter <chunkeey@gmail.com>,
+ openwrt-devel@lists.openwrt.org, =?UTF-8?Q?Petr_=c5=a0tetiar?=
+ <ynezz@true.cz>
+References: <20190424191439.32298-1-klaus.kudielka@gmail.com>
+ <524607f2-518e-7517-97c5-2ea5ae71846d@gmail.com>
+ <20190503193846.GI71477@meh.true.cz> <97316402.u0ukOGWoMv@debian64>
+From: Klaus Kudielka <klaus.kudielka@gmail.com>
+Message-ID: <39e13e97-a698-9e8a-72db-9cbf2a78298f@gmail.com>
+Date: Sun, 5 May 2019 10:11:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <20190504202920.14779-1-mail@aparcar.org>
-In-Reply-To: <20190504202920.14779-1-mail@aparcar.org>
-From: Hans Dedecker <dedeckeh@gmail.com>
-Date: Sun, 5 May 2019 09:53:24 +0200
-Message-ID: <CAJLcKsGbiDeQxkrXsMpk2YAqBRZMygGu=cBotV3goA32=F8zew@mail.gmail.com>
-To: Paul Spooren <mail@aparcar.org>
+In-Reply-To: <97316402.u0ukOGWoMv@debian64>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_005338_582043_C1CE6D85 
-X-CRM114-Status: GOOD (  24.42  )
+X-CRM114-CacheID: sfid-20190505_011143_793281_1D71FC81 
+X-CRM114-Status: GOOD (  24.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dedeckeh[at]gmail.com)
+ provider (klaus.kudielka[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -78,8 +93,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH v2] procd: detect lxc container and
- behave accordingly
+Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] base-files: improve
+ lib/upgrade/common.sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,175 +106,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linus.walleij@linaro.org, Tomasz Maciej Nowak <tomek_n@o2.pl>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sat, May 4, 2019 at 10:30 PM Paul Spooren <mail@aparcar.org> wrote:
->
-> meaning to not mount some specific parts witch cause trouble.
->
-> The patch is based on previous work of @mikma to combine OpenWrt with
-> lxd[0]. This patch however adds a detection copied from *virt-what* to
-> check /proc/1/environment for the string "container".
->
-> Thanks to @dangowrt for the cleanup.
->
-> [0]: https://github.com/containercraft/openwrt-lxd/blob/master/patches/procd-openwrt-18.06/001_lxd_no_mounts.patch
->
-> Signed-off-by: Paul Spooren <mail@aparcar.org>
-> ---
->  container.h     | 22 ++++++++++++++++++++++
->  initd/early.c   | 20 ++++++++++++--------
->  initd/zram.c    | 11 +++++++----
->  plug/coldplug.c | 14 +++++++++-----
->  4 files changed, 50 insertions(+), 17 deletions(-)
->  create mode 100644 container.h
->
-> diff --git a/container.h b/container.h
-> new file mode 100644
-> index 0000000..c9b5e46
-> --- /dev/null
-> +++ b/container.h
-> @@ -0,0 +1,22 @@
-> +/*
-> + * Copyright (C) 2019 Paul Spooren <mail@aparcar.de>
-> + *
-> + * This program is free software; you can redistribute it and/or modify
-> + * it under the terms of the GNU Lesser General Public License version 2.1
-> + * as published by the Free Software Foundation
-> + *
-> + * This program is distributed in the hope that it will be useful,
-> + * but WITHOUT ANY WARRANTY; without even the implied warranty of
-> + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> + * GNU General Public License for more details.
-> + */
-> +
-> +#ifndef __CONTAINER_H
-> +#define __CONTAINER_H
-> +#include <stdlib.h>
-> +
-> +static inline unsigned short int is_container() {
-Let this function return a bool
-
-Hans
-> +       return !!getenv("container");
-> +}
-> +
-> +#endif
-> diff --git a/initd/early.c b/initd/early.c
-> index 2e15112..7b281b2 100644
-> --- a/initd/early.c
-> +++ b/initd/early.c
-> @@ -25,6 +25,7 @@
->  #include "../utils/utils.h"
->  #include "init.h"
->  #include "../libc-compat.h"
-> +#include "../container.h"
->
->  static void
->  early_dev(void)
-> @@ -56,14 +57,17 @@ early_mounts(void)
->  {
->         unsigned int oldumask = umask(0);
->
-> -       mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-> -       mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-> -       mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-> -       mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
-> -       ignore(symlink("/tmp/shm", "/dev/shm"));
-> -       mkdir("/dev/pts", 0755);
-> -       mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
-> -       early_dev();
-> +       if (!is_container()) {
-> +               mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-> +               mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-> +               mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-> +               mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
-> +               ignore(symlink("/tmp/shm", "/dev/shm"));
-> +               mkdir("/dev/pts", 0755);
-> +               mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
-> +
-> +               early_dev();
-> +       }
->
->         early_console("/dev/console");
->         if (mount_zram_on_tmp()) {
-> diff --git a/initd/zram.c b/initd/zram.c
-> index b41bfd9..487d3d6 100644
-> --- a/initd/zram.c
-> +++ b/initd/zram.c
-> @@ -12,6 +12,7 @@
->  #include <sys/stat.h>
->
->  #include "../log.h"
-> +#include "../container.h"
->
->  #include "init.h"
->
-> @@ -116,10 +117,12 @@ mount_zram_on_tmp(void)
->                 waitpid(pid, NULL, 0);
->         }
->
-> -       ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
-> -       if (ret < 0) {
-> -               ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
-> -               return errno;
-> +       if (!is_container()) {
-> +               ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
-> +               if (ret < 0) {
-> +                       ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
-> +                       return errno;
-> +               }
->         }
->
->         LOG("Using up to %ld kB of RAM as ZRAM storage on /mnt\n", zramsize);
-> diff --git a/plug/coldplug.c b/plug/coldplug.c
-> index c6a89c3..12df421 100644
-> --- a/plug/coldplug.c
-> +++ b/plug/coldplug.c
-> @@ -22,6 +22,7 @@
->  #include "../libc-compat.h"
->
->  #include "hotplug.h"
-> +#include "../container.h"
->
->  static struct uloop_process udevtrigger;
->
-> @@ -43,13 +44,16 @@ void procd_coldplug(void)
->         char *argv[] = { "udevtrigger", NULL };
->         unsigned int oldumask = umask(0);
->
-> -       umount2("/dev/pts", MNT_DETACH);
-> -       umount2("/dev/", MNT_DETACH);
-> -       mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
-> +       if (!is_container()) {
-> +               umount2("/dev/pts", MNT_DETACH);
-> +               umount2("/dev/", MNT_DETACH);
-> +               mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
-> +               mkdir("/dev/pts", 0755);
-> +               mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
-> +       }
-> +
->         ignore(symlink("/tmp/shm", "/dev/shm"));
-> -       mkdir("/dev/pts", 0755);
->         umask(oldumask);
-> -       mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
->         udevtrigger.cb = udevtrigger_complete;
->         udevtrigger.pid = fork();
->         if (!udevtrigger.pid) {
-> --
-> 2.20.1
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gMDQuMDUuMTkgMTY6NTEsIENocmlzdGlhbiBMYW1wYXJ0ZXIgd3JvdGU6Cj4gT24gRnJpZGF5
+LCBNYXkgMywgMjAxOSA5OjM4OjQ2IFBNIENFU1QgUGV0ciDFoHRldGlhciB3cm90ZToKPj4gS2xh
+dXMgS3VkaWVsa2EgPGtsYXVzLmt1ZGllbGthQGdtYWlsLmNvbT4gWzIwMTktMDUtMDMgMjA6MTY6
+MzldOgo+Pgo+Pj4gTGV0IG1lIHJlbWluZCB5b3UgdGhhdCB0aGUgY29tbW9uIG9uZSAqYWxvbmUq
+IGJyZWFrcyBzeXN1cGdyYWRlIGZvciB0aG9zZQo+Pj4gZm91ciB0YXJnZXRzLCBhcyBUb21hc3og
+YWxyZWFkeSBwb2ludGVkIG91dCBlYXJsaWVyLgo+PiBXZWxsLCBob3cgY291bGQgSSBrbm93IHdo
+YXQgd2FzIHdyb25nIHdpdGggdjEgaWYgeW91IGRpZG4ndCBpbmNsdWRlZCB0aGUKPj4gY2hhbmdl
+cyBiZXR3ZWVuIHYxIC0+IHYyIGluIHlvdXIgdjIgcGF0Y2ggOi0pCj4+Cj4+IEFueXdheSwgdGhh
+bmtzIGZvciB0aGUgZXhwbGFuYXRpb24sIGl0IHdhc24ndCB0aGF0IG11Y2ggY2xlYXIgdG8gbWUg
+ZnJvbSB0aGUKPj4gY29tbWl0IG1lc3NhZ2UsIHNvIGlmIHlvdSBkb24ndCBtaW5kLCBJJ2xsIGlu
+Y2x1ZGUgdGhlIGRldGFpbHMgdGhlcmUgYXMgd2VsbAo+PiBpbiBvcmRlciB0byBoZWxwIGl0IGJl
+dHRlciB1bmRlcnN0YW5kIHRvIG90aGVyIGZvbGtzLgo+Pgo+PiBNZXJnZWQgaW50byBteSBzdGFn
+aW5nIHRyZWUgaHR0cHM6Ly9naXQub3BlbndydC5vcmcvP3A9b3BlbndydC9zdGFnaW5nL3luZXp6
+LmdpdDthPWNvbW1pdDtoPTE5NTE3OGY4OGVlN2IzODE1ZjliZWE2NmEyNDU0Y2NmZGYyMTM1YTUK
+Pj4KPj4+IEluIG1vcmUgZGV0YWlsOgo+Pj4KPj4+IFRoZSByb290IG9mIHRoZSBwcm9ibGVtIGlz
+IHRoYXQgdGhlICpleGlzdGluZyogZXhwb3J0X2Jvb3RkZXZpY2UgaW4KPj4+IC9saWIvdXBncmFk
+ZS9jb21tb24uc2ggYmVoYXZlcyBkaWZmZXJlbnRseSwgaWYgdGhlIGtlcm5lbCBpcyBib290ZWQg
+d2l0aAo+Pj4gcm9vdD0vZGV2Ly4uLiwgb3IgaWYgaXQgaXMgYm9vdGVkIHdpdGggcm9vdD1QQVJU
+VVVJRD0uLi4KPj4+Cj4+PiBJbiB0aGUgZm9ybWVyIGNhc2UsIGl0IHJlcG9ydHMgYmFjayBtYWpv
+ci9taW5vciBvZiB0aGUgcm9vdCBwYXJ0aXRpb24sCj4+PiBpbiB0aGUgbGF0dGVyIGNhc2UgaXQg
+cmVwb3J0cyBiYWNrIG1ham9yL21pbm9yIG9mIHRoZSBjb21wbGV0ZSBib290IGRpc2suCj4+Pgo+
+Pj4gVGhlIHRhcmdldHMgbWVudGlvbmVkIGFib3ZlIGhhdmUgYWRkZWQgd29ya2Fyb3VuZHMgdG8g
+dGhpcyBiZWhhdmlvdXIsIGJ5Cj4+PiBzcGVjaWZ5aW5nICpuZWdhdGl2ZSogaW5jcmVtZW50cyB0
+byB0aGUgZXhwb3J0X3BhcnRkZXZpY2UgZnVuY3Rpb24uCj4+Pgo+Pj4gQW5kIHRoZW4gY2FtZSB0
+aGUgbXZlYnUgdGFyZ2V0IHRvIHVzZSBleHBvcnRfYm9vdGRldmljZSAvCj4+PiBleHBvcnRfcGFy
+dGRldmljZSBhcyB3ZWxsLiBOb3csIGRpZmZlcmVudCBzdWJ0YXJnZXRzIGJvb3QgZGlmZmVyZW50
+bHksCj4+PiBhbmQgdGhlIHdvcmthcm91bmQgd291bGQgYmUgZXZlbiBtb3JlIGNvbXBsZXguCj4+
+Pgo+Pj4gSSB0aGluayBub3cgaXMgdGhlIHRpbWUgdG8gbWFrZSBleHBvcnRfYm9vdGRldmljZSBi
+ZWhhdmUgY29uc2lzdGVudGx5LAo+Pj4gYW5kIHRvIHJlcG9ydCBtYWpvci9taW5vciBvZiB0aGUg
+Ym9vdCBkaXNrLCBwZXJpb2QuCj4gSnVzdCBhIG5vdGUgaGVyZToKPgo+IFRoZSBleHBvcnRfYm9v
+dGRldmljZSB3aXRoIGl0J3MgUEFSVFVVSUQtMDIgLyBzZFthLXpdMiBoYW5kbGluZyBpcyBub3Qg
+dGhhdAo+IGdyZWF0LiBJZGVhbGx5IHRoZSBmaXhlZCBwYXJ0aXRpb24gc2hvdWxkIGJlIGF2b2lk
+ZWQgYWx0b2dldGhlciBpbiBmYXZvdXIgb2YKPiBhIHVuaXF1ZSBmaWxlc3lzdGVtIGxhYmVsIG9y
+IChsZXNzIGlkZWFsKSBhIGZpbGVzeXN0ZW0gVVVJRC4KPgo+IFRyb3VibGUgaXMgdGhhdCBzcXVh
+c2hmcyBkb2VzIG5vdCBzdXBwb3J0IGVpdGhlci4gU28gdGhhdCdzIHdoZXJlIHRoZSBmaXhlZAo+
+IFBBUlRVVUlEIGFuZCBzZFgvbW1jWCBkZXZpY2UgbmFtZXMgY29tZSBpbnRvIHBsYXkgYmVjYXVz
+ZSBvdGhlcndpc2UgdGhlIGRldmljZXMKPiB3b3VsZG4ndCBib290LiAgU2FkbHkgSSB0aGluayBj
+aGFuZ2VzIGxpa2UgdGhpcyB3aWxsIHByb2JhYmx5IGdvIG9uIHVudGlsCj4gZWl0aGVyIHNxdWFz
+aGZzIGdldHMgdGhlc2UgbWV0YWRhdGEgaW1hZ2UgZmVhdHVyZXMgb3Igc29tZXRoaW5nIHJlcGxh
+Y2VzCj4gc3F1YXNoZnMgdGhhdCBoYXMgaXQuCj4KPj4+IENvbnNlcXVlbnRseSwgdGhvc2UgdGFy
+Z2V0cywgd2hpY2ggYm9vdCB3aXRoIHJvb3Q9L2Rldi8uLi4gKmFuZCogdXNlCj4+PiBleHBvcnRf
+Ym9vdGRldmljZSAvIGV4cG9ydF9wYXJ0ZGV2aWNlLCBoYXZlIHRvIGJlIGFkYXB0ZWQgdG8gdXNl
+Cj4+PiBwb3NpdGl2ZSBpbmNyZW1lbnRzLCBvdGhlcndpc2UgdGhleSBhcmUgYnJva2VuIGJ5IHRo
+ZSBjaGFuZ2UKPj4+IHRvIGV4cG9ydF9ib290ZGV2aWNlLgo+Pj4KPj4+IFRoZSB0YXJnZXRzIGFm
+ZmVjdGVkIHdlcmUgZWFzeSB0byBzcG90IHdpdGggZmluZCAmIGdyZXAuCj4gVHJ1ZSwgaXQgd291
+bGQgaGF2ZSBiZWVuIGdyZWF0IGlmIHRoZSBjb21taXQgbWVzc2FnZSBpbmNsdWRlZCB0aGF0Cj4g
+ZXhwb3J0X2Jvb3RkZXZpY2Ugbm93IGNvbnNpc3Rlbmx5IHdvcmtzIG9uIHRob3NlIGRldmljZXMg
+d2hlbiB0aGUKPiByb290PSBpbiB0aGUgY21kbGluZSBtYXRjaGVzIHRoYXQgUEFSVFVVSUQtMDIs
+IHNkW2Etel0yIG9yIG1tY2Jsa1swLTldcDIKPiBhbmQgbm90aGluZyBlbHNlLgo+Cj4gQmVjYXVz
+ZSB0aGVyZSBhcmUgc3RpbGwgYSBmZXcgZGV2aWNlcyAoSSB0aGluayBHZW1pbmkgRElSLTY4NSwg
+RElSLTMxMwo+IGFuZCBTUTIwMSwgYW5kIGEgS2lya3dvb2QgR29GbGV4IEhvbWUpIHRoYXQgaGF2
+ZSB0aGUgcm9vdD0gb24gc2RhMSBvcgo+IHNkYTQgYW5kIGNvdWxkIGJlIGNvbnZlcnRlZCB0byB1
+c2UgdGhlIGV4cG9ydF9ib290ZGV2aWNlIGZvciBzeXN1cGdyYWRlLgo+Cj4gQnV0IGFzIG9mIHll
+dCwgSSBkb24ndCBzZWUgdGhhdCBhbnkgb2YgdGhlc2UgZGV2aWNlcyBoYXZlIHN5c3VwZ3JhZGUg
+c3VwcG9ydC4KPiBTbyB5b3VyIHByb3Bvc2VkIHBhdGNoIGlzIGZpbmUsIHVubGVzcyB5b3Ugd2Fu
+dCB0byBjb21lIHVwIHdpdGggYSBzb2x1dGlvbgo+IHRoYXQgY2FuIGRlYWwgd2l0aCB0aGUgb2Rk
+LWJhbGxzLi4gQmVjYXVzZSB0aGF0IHdvdWxkIGJlIGF3ZXNvbWUhCldlbGwsIHRoZSBwcmltYXJ5
+IGdvYWwgb2YgdGhpcyBwYXRjaCB3YXMgKGFuZCBzdGlsbCBpcykgdG8gZml4IHN5c3VwZ3JhZGUK
+Zm9yIFR1cnJpcyBPbW5pYSwgd2l0aG91dCBpbnZlbnRpbmcgeWV0IGFub3RoZXIgd29ya2Fyb3Vu
+ZCBmb3IgdGhlIHJhdGhlcgpzY2hpem9waHJlbmljIGJlaGF2aW91ci4KClBlcnNvbmFsbHkgSSB3
+b3VsZCBwcmVwYXJlIGZvciBwb3RlbnRpYWwgZnV0dXJlIHVzZSBjYXNlcyBpbiBhIHNlcGFyYXRl
+CnBhdGNoLiBUbyBkZWFsIHdpdGggbm9uLXN0YW5kYXJkIHBhcnRpdGlvbiBsYXlvdXRzLCBpdCBj
+b3VsZCBiZSBhcyBzaW1wbGUKYXMgcmVwbGFjaW5nIHRoZSB0cmFpbGluZyAiMiIgd2l0aCAiWzEt
+NF0iIGluIHRoZSBzaXggcGF0dGVybnMgb2YgdGhlCiRyb290cGFydCBjYXNlIHN0YXRlbWVudC4u
+LiBpZiB0aGlzIGlzIHdoYXQgeW91IG1lYW4/CgpSZWdhcmRzLCBLbGF1cwoKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGlu
+ZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVu
+d3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

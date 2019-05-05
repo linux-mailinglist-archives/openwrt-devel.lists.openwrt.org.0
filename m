@@ -2,96 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6719314046
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 16:36:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CABC14118
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 18:32:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7nfk8e7jGNxnbXauaZi/0NHbf7Ie3W39IN8et2MhO6c=; b=QI6DqBldZ29fsm
-	hs966eLK/kDb/O9EZcQMOMPIEviMhfdOYK8QAEk3w7HI/EM8e/sN24Vxy3R3/yoJvRxJGNQf0Absb
-	m+rHPzr7vjtVyPIGYOeDKXG4dZZpmnxFkGIB2VeHZFhgLXhw614fBF6UqQpQMyhxTmS1YDJ/WvhuP
-	7ResBe9upFuJVO/iE6tDAb/Qa+ZWmDWSBS8/emj1bxc/0D+VYzRkMiAC8ntmIzsq7Z4iDNLW7GFsO
-	QoR9SMDGtUK76vJof3sbuzzDMxnL/z7gByyAAhtI0OmyqsE/7YqefnhUpbWbbVSctJJn5+HDCp8z5
-	qIeB+6I7Tsw38rs7tJfg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pdXfO/BeqkNh46shjQCp7udJ2jtvb7B7XbHxgMF+S3I=; b=qFFWgsLgq+cJlv
+	sP5xNv34AhK1MDU6hzFuHae5eHNRl5sPQnrJrCpsd7kHTUUyk8B1ySowfqhBeElqJWw7DDDzSuA+4
+	ALZ1jnoroE9JX9Wn1cu4gzUUgMQPAkEqmyjczrWva5pbZj/XlF/pXUgySbSjzkOqy387i/xF12KIN
+	vERH4vb+zybdKNJnDAHPuOczTjXymWsL8CDlQDNPZDec45z3fKl0bLfGahCnKo0w4EM+BhYD6sjSL
+	hbhYrCHZY9E1nzYEZowC6EBSxDmkVr8uil69bXlkZf4bktb6L3sziBHrgNdfjXDq1SvWmAtg2HPJO
+	m0iPIO5JHUMU36qkVPyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNIFF-00057e-K1; Sun, 05 May 2019 14:36:01 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hNK3w-0006Fl-N0; Sun, 05 May 2019 16:32:28 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNIF8-000573-Ig
- for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 14:35:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id b10so12696613wmj.4
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 May 2019 07:35:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=GkstFaOZ4sua4c0B9V4z2wsHPWH+qAcmN5giKe7+62k=;
- b=bsWZr5xd0H6IUQc7l+S44W3ozuU80sls+PXtAm5eZwPq+/Rw+5iGlBKNHamC8BpgiI
- nHfQMnCQj8VYErNEFfZsduTiedlUB0fsx2f2ZxeBGuA6pR+F/V2uYEUcILxJoHpbHsqk
- MfMzIvZlBQF85qtQS/VtzeoYTtuCHwn4p6xg1DZeCGbF7GbqIZbUoNoWIm6uzGf4En0c
- WhnL9bzKgHXAJ4nHs8DaguYhmQmJ2uYNYyV3/dA803V0CJVokUW4ekasVm+kvc1wtMhb
- lvT/sdQmBhFPNUgmnVsk5pb/vAO+IrCx5MODs7aby+/peuXSCFWzFJjXlo24aWQESphK
- zlsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=GkstFaOZ4sua4c0B9V4z2wsHPWH+qAcmN5giKe7+62k=;
- b=bHMCO/8Byfiw/OccMBABboZROoBo538xixa1Q4RsBy5tP8sufblyNKvEohyOL0wYW8
- kzZsXgPTgG8d9BihhssnHhJOnoBMFrg5VfexyrI+HLaUcvEWRFn0IpUhuKbYe4ldrcS8
- NvsK8Gx3vr8J5bLUkR2ha+KgUis2oSQs9dpCZ29bOB67pt5XveifYztejzfofB9+9Fim
- DfQdmXV5/+wf90/Y2A/WZOwLw6GLeE38eb1TpynHYbrBhkOMeDgUaitat82RcHwSjD4o
- E0EghzTH/0Yi+FdCbnDZNDHCJN6eAGl2I8fndiPT8M0RXuHPlAFCxUEB2tUi5/xXCJbN
- Co+A==
-X-Gm-Message-State: APjAAAXlrSl5lODlad956uM1009wKLhobYDRdD7S+d4c1eyKk6RE+GOJ
- 1TuEaT5dZ22sy7iVg8KvOdc=
-X-Google-Smtp-Source: APXvYqyIyitfEHh+TayN7CYy69LJqsnzBdyNc8VN7/QGYdsJWC9za+eC3Ggjs2mfgIEirCZ8Zk5SbA==
-X-Received: by 2002:a1c:7fce:: with SMTP id
- a197mr13905737wmd.134.1557066948662; 
- Sun, 05 May 2019 07:35:48 -0700 (PDT)
-Received: from debian64.daheim (p5B0D7EA6.dip0.t-ipconnect.de. [91.13.126.166])
- by smtp.gmail.com with ESMTPSA id f3sm10748111wmb.1.2019.05.05.07.35.47
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 05 May 2019 07:35:47 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.92)
- (envelope-from <chunkeey@gmail.com>)
- id 1hNIEz-0008UW-MO; Sun, 05 May 2019 16:35:45 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
-To: Klaus Kudielka <klaus.kudielka@gmail.com>
-Date: Sun, 05 May 2019 16:35:45 +0200
-Message-ID: <2643707.7QFsHqRdB7@debian64>
-In-Reply-To: <39e13e97-a698-9e8a-72db-9cbf2a78298f@gmail.com>
-References: <20190424191439.32298-1-klaus.kudielka@gmail.com>
- <97316402.u0ukOGWoMv@debian64>
- <39e13e97-a698-9e8a-72db-9cbf2a78298f@gmail.com>
+ id 1hNK3s-0006Fe-4t
+ for openwrt-devel@bombadil.infradead.org; Sun, 05 May 2019 16:32:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Vi+4hkmXz0Nnc309UKkNXFdChAy4lAu9+qxSq9E/8+M=; b=DCXnxw/LjTmMEdKAVd+8LZweII
+ 0l+/+twnF4yixUIGRY3tbuguSUMtu/7G3RzRFWC3ePkqnOL9JV3uXCXtHrdX13q+IC+UAIQaDLG3o
+ rY1j72nvstP7q/IbiFCwxT1wnipuMWo0E2oHdl78ImDIZS9FB2r854+WHmHpsFfxKwjEN+CG6Y0hN
+ xZN6fUNYBfS5+3JRoaqzK84nnlW/M4cUXJXIko4QlKrRPi9q4U1sA4v11BsD45IXx+5aPKXaVUvne
+ 7tmueLNOu0+fB2mwq5yLEcAgdyBPpZSlvpf2sPjocDvaPFR/zhGDWza+gvA3E6+p1HJ85AbONQ3gk
+ sQCOgxOg==;
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hNK3n-0008V4-Ox
+ for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 16:32:22 +0000
+Received: from localhost.localdomain (ip5f5ab4b1.dynamic.kabel-deutschland.de
+ [95.90.180.177]) (Authenticated sender: mail@aparcar.org)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 2A70B100002;
+ Sun,  5 May 2019 16:31:46 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun,  5 May 2019 18:31:41 +0200
+Message-Id: <20190505163141.6025-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_073554_643741_7C483B02 
-X-CRM114-Status: GOOD (  29.38  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20190505_173219_863563_DAA1F328 
+X-CRM114-Status: GOOD (  18.26  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] base-files: improve
- lib/upgrade/common.sh
+Subject: [OpenWrt-Devel] [PATCH v3] procd: detect lxc container and behave
+ accordingly
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,91 +73,165 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Petr =?utf-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org, Tomasz Maciej Nowak <tomek_n@o2.pl>,
- linus.walleij@linaro.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Spooren <mail@aparcar.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gU3VuZGF5LCBNYXkgNSwgMjAxOSAxMDoxMTo0MCBBTSBDRVNUIEtsYXVzIEt1ZGllbGthIHdy
-b3RlOgo+IE9uIDA0LjA1LjE5IDE2OjUxLCBDaHJpc3RpYW4gTGFtcGFydGVyIHdyb3RlOgo+ID4g
-T24gRnJpZGF5LCBNYXkgMywgMjAxOSA5OjM4OjQ2IFBNIENFU1QgUGV0ciDFoHRldGlhciB3cm90
-ZToKPiA+PiBLbGF1cyBLdWRpZWxrYSA8a2xhdXMua3VkaWVsa2FAZ21haWwuY29tPiBbMjAxOS0w
-NS0wMyAyMDoxNjozOV06Cj4gPj4KPiA+Pj4gTGV0IG1lIHJlbWluZCB5b3UgdGhhdCB0aGUgY29t
-bW9uIG9uZSAqYWxvbmUqIGJyZWFrcyBzeXN1cGdyYWRlIGZvciB0aG9zZQo+ID4+PiBmb3VyIHRh
-cmdldHMsIGFzIFRvbWFzeiBhbHJlYWR5IHBvaW50ZWQgb3V0IGVhcmxpZXIuCj4gPj4gV2VsbCwg
-aG93IGNvdWxkIEkga25vdyB3aGF0IHdhcyB3cm9uZyB3aXRoIHYxIGlmIHlvdSBkaWRuJ3QgaW5j
-bHVkZWQgdGhlCj4gPj4gY2hhbmdlcyBiZXR3ZWVuIHYxIC0+IHYyIGluIHlvdXIgdjIgcGF0Y2gg
-Oi0pCj4gPj4KPiA+PiBBbnl3YXksIHRoYW5rcyBmb3IgdGhlIGV4cGxhbmF0aW9uLCBpdCB3YXNu
-J3QgdGhhdCBtdWNoIGNsZWFyIHRvIG1lIGZyb20gdGhlCj4gPj4gY29tbWl0IG1lc3NhZ2UsIHNv
-IGlmIHlvdSBkb24ndCBtaW5kLCBJJ2xsIGluY2x1ZGUgdGhlIGRldGFpbHMgdGhlcmUgYXMgd2Vs
-bAo+ID4+IGluIG9yZGVyIHRvIGhlbHAgaXQgYmV0dGVyIHVuZGVyc3RhbmQgdG8gb3RoZXIgZm9s
-a3MuCj4gPj4KPiA+PiBNZXJnZWQgaW50byBteSBzdGFnaW5nIHRyZWUgaHR0cHM6Ly9naXQub3Bl
-bndydC5vcmcvP3A9b3BlbndydC9zdGFnaW5nL3luZXp6LmdpdDthPWNvbW1pdDtoPTE5NTE3OGY4
-OGVlN2IzODE1ZjliZWE2NmEyNDU0Y2NmZGYyMTM1YTUKPiA+Pgo+ID4+PiBJbiBtb3JlIGRldGFp
-bDoKPiA+Pj4KPiA+Pj4gVGhlIHJvb3Qgb2YgdGhlIHByb2JsZW0gaXMgdGhhdCB0aGUgKmV4aXN0
-aW5nKiBleHBvcnRfYm9vdGRldmljZSBpbgo+ID4+PiAvbGliL3VwZ3JhZGUvY29tbW9uLnNoIGJl
-aGF2ZXMgZGlmZmVyZW50bHksIGlmIHRoZSBrZXJuZWwgaXMgYm9vdGVkIHdpdGgKPiA+Pj4gcm9v
-dD0vZGV2Ly4uLiwgb3IgaWYgaXQgaXMgYm9vdGVkIHdpdGggcm9vdD1QQVJUVVVJRD0uLi4KPiA+
-Pj4KPiA+Pj4gSW4gdGhlIGZvcm1lciBjYXNlLCBpdCByZXBvcnRzIGJhY2sgbWFqb3IvbWlub3Ig
-b2YgdGhlIHJvb3QgcGFydGl0aW9uLAo+ID4+PiBpbiB0aGUgbGF0dGVyIGNhc2UgaXQgcmVwb3J0
-cyBiYWNrIG1ham9yL21pbm9yIG9mIHRoZSBjb21wbGV0ZSBib290IGRpc2suCj4gPj4+Cj4gPj4+
-IFRoZSB0YXJnZXRzIG1lbnRpb25lZCBhYm92ZSBoYXZlIGFkZGVkIHdvcmthcm91bmRzIHRvIHRo
-aXMgYmVoYXZpb3VyLCBieQo+ID4+PiBzcGVjaWZ5aW5nICpuZWdhdGl2ZSogaW5jcmVtZW50cyB0
-byB0aGUgZXhwb3J0X3BhcnRkZXZpY2UgZnVuY3Rpb24uCj4gPj4+Cj4gPj4+IEFuZCB0aGVuIGNh
-bWUgdGhlIG12ZWJ1IHRhcmdldCB0byB1c2UgZXhwb3J0X2Jvb3RkZXZpY2UgLwo+ID4+PiBleHBv
-cnRfcGFydGRldmljZSBhcyB3ZWxsLiBOb3csIGRpZmZlcmVudCBzdWJ0YXJnZXRzIGJvb3QgZGlm
-ZmVyZW50bHksCj4gPj4+IGFuZCB0aGUgd29ya2Fyb3VuZCB3b3VsZCBiZSBldmVuIG1vcmUgY29t
-cGxleC4KPiA+Pj4KPiA+Pj4gSSB0aGluayBub3cgaXMgdGhlIHRpbWUgdG8gbWFrZSBleHBvcnRf
-Ym9vdGRldmljZSBiZWhhdmUgY29uc2lzdGVudGx5LAo+ID4+PiBhbmQgdG8gcmVwb3J0IG1ham9y
-L21pbm9yIG9mIHRoZSBib290IGRpc2ssIHBlcmlvZC4KPiA+IEp1c3QgYSBub3RlIGhlcmU6Cj4g
-Pgo+ID4gVGhlIGV4cG9ydF9ib290ZGV2aWNlIHdpdGggaXQncyBQQVJUVVVJRC0wMiAvIHNkW2Et
-el0yIGhhbmRsaW5nIGlzIG5vdCB0aGF0Cj4gPiBncmVhdC4gSWRlYWxseSB0aGUgZml4ZWQgcGFy
-dGl0aW9uIHNob3VsZCBiZSBhdm9pZGVkIGFsdG9nZXRoZXIgaW4gZmF2b3VyIG9mCj4gPiBhIHVu
-aXF1ZSBmaWxlc3lzdGVtIGxhYmVsIG9yIChsZXNzIGlkZWFsKSBhIGZpbGVzeXN0ZW0gVVVJRC4K
-PiA+Cj4gPiBUcm91YmxlIGlzIHRoYXQgc3F1YXNoZnMgZG9lcyBub3Qgc3VwcG9ydCBlaXRoZXIu
-IFNvIHRoYXQncyB3aGVyZSB0aGUgZml4ZWQKPiA+IFBBUlRVVUlEIGFuZCBzZFgvbW1jWCBkZXZp
-Y2UgbmFtZXMgY29tZSBpbnRvIHBsYXkgYmVjYXVzZSBvdGhlcndpc2UgdGhlIGRldmljZXMKPiA+
-IHdvdWxkbid0IGJvb3QuICBTYWRseSBJIHRoaW5rIGNoYW5nZXMgbGlrZSB0aGlzIHdpbGwgcHJv
-YmFibHkgZ28gb24gdW50aWwKPiA+IGVpdGhlciBzcXVhc2hmcyBnZXRzIHRoZXNlIG1ldGFkYXRh
-IGltYWdlIGZlYXR1cmVzIG9yIHNvbWV0aGluZyByZXBsYWNlcwo+ID4gc3F1YXNoZnMgdGhhdCBo
-YXMgaXQuCj4gPgo+ID4+PiBDb25zZXF1ZW50bHksIHRob3NlIHRhcmdldHMsIHdoaWNoIGJvb3Qg
-d2l0aCByb290PS9kZXYvLi4uICphbmQqIHVzZQo+ID4+PiBleHBvcnRfYm9vdGRldmljZSAvIGV4
-cG9ydF9wYXJ0ZGV2aWNlLCBoYXZlIHRvIGJlIGFkYXB0ZWQgdG8gdXNlCj4gPj4+IHBvc2l0aXZl
-IGluY3JlbWVudHMsIG90aGVyd2lzZSB0aGV5IGFyZSBicm9rZW4gYnkgdGhlIGNoYW5nZQo+ID4+
-PiB0byBleHBvcnRfYm9vdGRldmljZS4KPiA+Pj4KPiA+Pj4gVGhlIHRhcmdldHMgYWZmZWN0ZWQg
-d2VyZSBlYXN5IHRvIHNwb3Qgd2l0aCBmaW5kICYgZ3JlcC4KPiA+IFRydWUsIGl0IHdvdWxkIGhh
-dmUgYmVlbiBncmVhdCBpZiB0aGUgY29tbWl0IG1lc3NhZ2UgaW5jbHVkZWQgdGhhdAo+ID4gZXhw
-b3J0X2Jvb3RkZXZpY2Ugbm93IGNvbnNpc3Rlbmx5IHdvcmtzIG9uIHRob3NlIGRldmljZXMgd2hl
-biB0aGUKPiA+IHJvb3Q9IGluIHRoZSBjbWRsaW5lIG1hdGNoZXMgdGhhdCBQQVJUVVVJRC0wMiwg
-c2RbYS16XTIgb3IgbW1jYmxrWzAtOV1wMgo+ID4gYW5kIG5vdGhpbmcgZWxzZS4KPiA+Cj4gPiBC
-ZWNhdXNlIHRoZXJlIGFyZSBzdGlsbCBhIGZldyBkZXZpY2VzIChJIHRoaW5rIEdlbWluaSBESVIt
-Njg1LCBESVItMzEzCj4gPiBhbmQgU1EyMDEsIGFuZCBhIEtpcmt3b29kIEdvRmxleCBIb21lKSB0
-aGF0IGhhdmUgdGhlIHJvb3Q9IG9uIHNkYTEgb3IKPiA+IHNkYTQgYW5kIGNvdWxkIGJlIGNvbnZl
-cnRlZCB0byB1c2UgdGhlIGV4cG9ydF9ib290ZGV2aWNlIGZvciBzeXN1cGdyYWRlLgo+ID4KPiA+
-IEJ1dCBhcyBvZiB5ZXQsIEkgZG9uJ3Qgc2VlIHRoYXQgYW55IG9mIHRoZXNlIGRldmljZXMgaGF2
-ZSBzeXN1cGdyYWRlIHN1cHBvcnQuCj4gPiBTbyB5b3VyIHByb3Bvc2VkIHBhdGNoIGlzIGZpbmUs
-IHVubGVzcyB5b3Ugd2FudCB0byBjb21lIHVwIHdpdGggYSBzb2x1dGlvbgo+ID4gdGhhdCBjYW4g
-ZGVhbCB3aXRoIHRoZSBvZGQtYmFsbHMuLiBCZWNhdXNlIHRoYXQgd291bGQgYmUgYXdlc29tZSEK
-PiBXZWxsLCB0aGUgcHJpbWFyeSBnb2FsIG9mIHRoaXMgcGF0Y2ggd2FzIChhbmQgc3RpbGwgaXMp
-IHRvIGZpeCBzeXN1cGdyYWRlCj4gZm9yIFR1cnJpcyBPbW5pYSwgd2l0aG91dCBpbnZlbnRpbmcg
-eWV0IGFub3RoZXIgd29ya2Fyb3VuZCBmb3IgdGhlIHJhdGhlcgo+IHNjaGl6b3BocmVuaWMgYmVo
-YXZpb3VyLgpXZWxsLCBmcm9tIGFmYXIgaXQgcmVhbGx5IGxvb2tzIGxpa2UgeW91ciBwYXRjaCBy
-ZXBsYWNlcyAqY29tbW9uKi5zaCBjb2RlCnRoYXQgd29ya3MgZm9yIGV2ZXJ5ICpnZW5lcmljKiBj
-bWRsaW5lIHJvb3Q9L2Rldi8qIHdpdGggc29tZXRoaW5nIHRoYXQKb25seSBjb25zaWRlcnMgcm9v
-dD0vZGV2L21tY2Jsa1swLTldcDJ8L2Rldi9zZFthLXpdMiAuCgpEb24ndCB5b3Ugc2VlIHdoeSB0
-aGlzIGEgcG9pbnQgb2YgY29udGVudGlvbj8KCj4gUGVyc29uYWxseSBJIHdvdWxkIHByZXBhcmUg
-Zm9yIHBvdGVudGlhbCBmdXR1cmUgdXNlIGNhc2VzIGluIGEgc2VwYXJhdGUKPiBwYXRjaC4gVG8g
-ZGVhbCB3aXRoIG5vbi1zdGFuZGFyZCBwYXJ0aXRpb24gbGF5b3V0cywgaXQgY291bGQgYmUgYXMg
-c2ltcGxlCj4gYXMgcmVwbGFjaW5nIHRoZSB0cmFpbGluZyAiMiIgd2l0aCAiWzEtNF0iIGluIHRo
-ZSBzaXggcGF0dGVybnMgb2YgdGhlCj4gJHJvb3RwYXJ0IGNhc2Ugc3RhdGVtZW50Li4uIGlmIHRo
-aXMgaXMgd2hhdCB5b3UgbWVhbj8KSSB0aGluayBpdCdzIHZlcnkgZGV2aWNlIHNwZWNpZmljeSB0
-byBzYXkgdGhhdCB0aGUgc2Vjb25kIHBhcnRpdGlvbiBpcyB0aGUKcm9vdCBwYXJ0aXRpb24uIElk
-ZWFsbHksIHRoZSBhIHV1aWQgb3IgZnMgbGFiZWwgc2hvdWxkIGJlIHVzZWQgYXMgcm9vdD0uCkJ1
-dCBpbiBjYXNlIG9mIHNxdWFzaGZzIGl0J3Mgbm90IHBvc3NpYmxlLCBvbmx5IFBBUlRVVUlEIG9y
-IGRldmljZSBmaWxlCm5hbWUgd29ya3MuCgpDaGVlcnMsCkNocmlzdGlhbgoKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxp
-bmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3Bl
-bndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+meaning to not mount some specific parts witch cause trouble.
+
+The patch is based on previous work of @mikma to combine OpenWrt with
+lxd[0]. This patch however adds a detection copied from *virt-what* to
+check /proc/1/environment for the string "container".
+
+Thanks to @dangowrt for the cleanup.
+
+[0]: https://github.com/containercraft/openwrt-lxd/blob/master/patches/procd-openwrt-18.06/001_lxd_no_mounts.patch
+
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+ container.h     | 22 ++++++++++++++++++++++
+ initd/early.c   | 20 ++++++++++++--------
+ initd/zram.c    | 11 +++++++----
+ plug/coldplug.c | 14 +++++++++-----
+ 4 files changed, 50 insertions(+), 17 deletions(-)
+ create mode 100644 container.h
+
+diff --git a/container.h b/container.h
+new file mode 100644
+index 0000000..7fb0768
+--- /dev/null
++++ b/container.h
+@@ -0,0 +1,22 @@
++/*
++ * Copyright (C) 2019 Paul Spooren <mail@aparcar.de>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU Lesser General Public License version 2.1
++ * as published by the Free Software Foundation
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ */
++
++#ifndef __CONTAINER_H
++#define __CONTAINER_H
++#include <stdlib.h>
++
++static inline bool is_container() {
++	return !!getenv("container");
++}
++
++#endif
+diff --git a/initd/early.c b/initd/early.c
+index 2e15112..7b281b2 100644
+--- a/initd/early.c
++++ b/initd/early.c
+@@ -25,6 +25,7 @@
+ #include "../utils/utils.h"
+ #include "init.h"
+ #include "../libc-compat.h"
++#include "../container.h"
+ 
+ static void
+ early_dev(void)
+@@ -56,14 +57,17 @@ early_mounts(void)
+ {
+ 	unsigned int oldumask = umask(0);
+ 
+-	mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
+-	mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
+-	mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
+-	mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
+-	ignore(symlink("/tmp/shm", "/dev/shm"));
+-	mkdir("/dev/pts", 0755);
+-	mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
+-	early_dev();
++	if (!is_container()) {
++		mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
++		mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
++		mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
++		mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
++		ignore(symlink("/tmp/shm", "/dev/shm"));
++		mkdir("/dev/pts", 0755);
++		mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
++
++		early_dev();
++	}
+ 
+ 	early_console("/dev/console");
+ 	if (mount_zram_on_tmp()) {
+diff --git a/initd/zram.c b/initd/zram.c
+index b41bfd9..487d3d6 100644
+--- a/initd/zram.c
++++ b/initd/zram.c
+@@ -12,6 +12,7 @@
+ #include <sys/stat.h>
+ 
+ #include "../log.h"
++#include "../container.h"
+ 
+ #include "init.h"
+ 
+@@ -116,10 +117,12 @@ mount_zram_on_tmp(void)
+ 		waitpid(pid, NULL, 0);
+ 	}
+ 
+-	ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
+-	if (ret < 0) {
+-		ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
+-		return errno;
++	if (!is_container()) {
++		ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
++		if (ret < 0) {
++			ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
++			return errno;
++		}
+ 	}
+ 
+ 	LOG("Using up to %ld kB of RAM as ZRAM storage on /mnt\n", zramsize);
+diff --git a/plug/coldplug.c b/plug/coldplug.c
+index c6a89c3..12df421 100644
+--- a/plug/coldplug.c
++++ b/plug/coldplug.c
+@@ -22,6 +22,7 @@
+ #include "../libc-compat.h"
+ 
+ #include "hotplug.h"
++#include "../container.h"
+ 
+ static struct uloop_process udevtrigger;
+ 
+@@ -43,13 +44,16 @@ void procd_coldplug(void)
+ 	char *argv[] = { "udevtrigger", NULL };
+ 	unsigned int oldumask = umask(0);
+ 
+-	umount2("/dev/pts", MNT_DETACH);
+-	umount2("/dev/", MNT_DETACH);
+-	mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
++	if (!is_container()) {
++		umount2("/dev/pts", MNT_DETACH);
++		umount2("/dev/", MNT_DETACH);
++		mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
++		mkdir("/dev/pts", 0755);
++		mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
++	}
++
+ 	ignore(symlink("/tmp/shm", "/dev/shm"));
+-	mkdir("/dev/pts", 0755);
+ 	umask(oldumask);
+-	mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
+ 	udevtrigger.cb = udevtrigger_complete;
+ 	udevtrigger.pid = fork();
+ 	if (!udevtrigger.pid) {
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

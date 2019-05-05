@@ -2,47 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F9FD13F1C
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 13:11:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B01713F69
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 14:27:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ACjHYRQBhr4uGkwCYoHGa6LpKvm+P/+tJ2BgRAuxiFI=; b=L4rdtn4BOmqDlq
-	lXhg+dFmxHpBm3gdRFthrkrWt9BtgLiBxGIwwc1nxlp2VXv6h8ldCOmIRYPkBQsfKuElfGaNsPjAu
-	cfknE+8L45Nva7NPvxYlh5H/oarfacf2s1L+GOnVNNPCpILoLFfrIxPRRfwnUMf0XJu4XgMLw1wwu
-	ZMt2MCj1vrQtLYGky9jf+qcfdRzBv5Qh+OW2JGKqt9tk4dFJHal+t2h8enJyEL1pO42dcmB2MRlVT
-	v1weOIiETUZVEbhFELe/JaEQoNt4/c74aIhX+8oZLCbEWijJMRRbZcVhObiGEc1XT0bh9wSsN1W+x
-	LlmOyXhdfWjjyaHhV0wA==;
+	List-Owner; bh=FHOHcnssOQv359kRcKeuvU4J4CvitUCO757dWSllUCQ=; b=qEU3GAumGmKDja
+	usucaM8tK52WsofFzJa/1WigfsoYyJFj5V1n1VKEEX7LxzwwnOYf99izFDbNVyqtuZYakStuuFW4E
+	dylK8PM1EpqsNGOZmDWviNZnKkTODfZHgUVXKE+4OTzap29m72U0Pi5g8pCfwsZZKzWuS+9mjdBwQ
+	iwsXcQ0D1qvNUuNa3trmd2VWwMRiS9viD+cbiOUGK4BZovapuOGs2cKe68K5OqVb6zBZ2trmoxTov
+	6ItT/7kZpVFYeFDGClo3b2znE85933oSnvTfSDWMLR9l4/Y0GtUA4PH7Be4bIRtRfAbTiiEF8QWoE
+	wwWU29L3HAsbtE2uerxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNF3N-0000MN-NY; Sun, 05 May 2019 11:11:33 +0000
-Received: from mscheck.de ([2a03:4000:f:629:540b:c2ff:fe0e:2f0c])
+	id 1hNGEX-0005z4-Df; Sun, 05 May 2019 12:27:09 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNF3G-0000M2-0N
- for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 11:11:28 +0000
-Received: from markus-MacBook-Pro.fritz.box (unknown
- [IPv6:2001:16b8:309a:ad00:148d:31dc:e73d:5088])
- by mscheck.de (Postfix) with ESMTPSA id 8A7B3200BE
- for <openwrt-devel@lists.openwrt.org>; Sun,  5 May 2019 11:11:16 +0000 (UTC)
-From: markus@mscheck.de
-To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 May 2019 13:11:07 +0200
-Message-Id: <20190505111107.2778-1-markus@mscheck.de>
-X-Mailer: git-send-email 2.21.0
+ id 1hNGEQ-0005yD-Mj
+ for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 12:27:04 +0000
+Received: by mail-lj1-x243.google.com with SMTP id 132so1077441ljj.4
+ for <openwrt-devel@lists.openwrt.org>; Sun, 05 May 2019 05:27:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JDn6zmVQY7haAPamNLcNmXzkvAJaz91dWDhDL9p/pgc=;
+ b=U3ELnk/jK8+Iskpm1DytXE/SwWyYxdLEUijqfz7UoKU+dbPElF57F97PDPzzPMpZWW
+ OGvxXXYI1yJ2vsyME1OmeAmkZxMHO23CZZAg/W+Q6GzHf1p4PKj69gcV8hGhNDeETy8p
+ mCTxjclf8ncGMU8DKZE9khXJdihU9ztJRtYn3Qnq2JsooX6nc31BHdJT25Z7XijlvQyX
+ ohYFRhU/R8frfDmU/imDcOXi959L6irOB/Sac40bHp7z5dBulmSC9lI/IX4i/+qzbFrd
+ tCqXf32ebXfV+fFJhdVV0FGNqKX3ZgIh1fcY99BirUojFR22xnsiULigzHuN/yup2zX3
+ pGVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JDn6zmVQY7haAPamNLcNmXzkvAJaz91dWDhDL9p/pgc=;
+ b=axN6O/s3ZXJ5xGF3F0x5KQsJO3n1j5BFkJ9el1vg8YklOSFi9+hvmZelGPq0YvPUQk
+ 0cGM9gJ4S08/zqeIY/4sXu652gdw03JUjO6EgWCM3iHf9OP/6/brUcgPppoUu77BvKXF
+ Exg8ry4rvokNhQG6vXqIzLgoXIVDKB8AkMUiRwV+f1McWftERl7zm5tWF9dhMI/aQdWO
+ waU/T6IKCHpJV72lSBl+XPbFG4l0HnvtCb6VXM2o5SrkxMfrWyBt9bPlVa+UvOsJJ8RF
+ BW4aSHrMNxEnPpnP/pmUaoO2bhqV6haTWTYC4emS5uWogukq28ppjQtGSYt6BUZanvkU
+ nfvQ==
+X-Gm-Message-State: APjAAAUCnFFLGiGuzfzpzYDPbE8hbAefzYbvOMQU/6mdL1MBiTy8qz0M
+ YbpotCnTP+9frZW2MYeBGOhBAw==
+X-Google-Smtp-Source: APXvYqwUomZw/qpu6aQJD69XVyVc93ZozO4DAd0AakUXBNm2qh+XrCGe5nSd312QJGjUQ/pkkmosbg==
+X-Received: by 2002:a2e:1311:: with SMTP id 17mr10462513ljt.75.1557059218523; 
+ Sun, 05 May 2019 05:26:58 -0700 (PDT)
+Received: from localhost.localdomain
+ (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.210])
+ by smtp.gmail.com with ESMTPSA id f25sm1508615lfc.46.2019.05.05.05.26.56
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 05 May 2019 05:26:56 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Christian Lamparter <chunkeey@gmail.com>
+Date: Sun,  5 May 2019 14:23:27 +0200
+Message-Id: <20190505122327.607-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190505_041126_351693_78CA0688 
-X-CRM114-Status: GOOD (  11.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190505_052702_787534_84AEDFB8 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
-Subject: [OpenWrt-Devel] [PATCH] ramips: add support for Xiaomi Mi Router 4A
- (100M Edition)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] gemini: Support sysupgrade on DIR-685
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -54,252 +95,104 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Petr Stetiar <ynezz@true.cz>, Florian Fainelli <f.fainelli@gmail.com>,
+ openwrt-devel@lists.openwrt.org, Linus Walleij <linus.walleij@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Markus Scheck <markus@mscheck.de>
+This makes sysupgrade work on the D-Link DIR-685 after
+initial factory install.
 
-- SoC:      MediaTek MT7628AN
-- Flash:    16MB (Winbond W25Q128JV)
-- RAM:      64MB
-- Serial:   As marked on PCB, 3V3 logic, baudrate is 115200
-- Ethernet: 3x 10/100 Mbps (switched, 2x LAN + WAN)
-- WIFI0:    MT7628AN 2.4GHz 802.11b/g/n
-- WIFI1:    MT7612EN 5GHz 802.11ac
-- Antennas: 4x external (2 per radio), non-detachable
-- LEDs:     Programmable power-LED (two-colored, yellow/blue)
-            Non-programmable internet-LED (shows WAN-activity)
-- Buttons:  Reset
+We create the platform.sh script to support sysupgrade
+on more targets as we move on with sysupgrade support.
 
-INSTALLATION:
-
-1. Connect to the serial port of the router and power it up.
-   If you get a prompt asking for boot-mode, go to step 3.
-2. Unplug the router after
-       > Erasing SPI Flash...
-       > raspi_erase: offs:20000 len:10000
-   occurs on the serial port. Plug the router back in.
-3. At the prompt select option 2 (Load system code then
-   write to Flash via TFTP.)
-4. Enter 192.168.1.1 as the device IP and 192.168.1.2 as the
-   Server-IP.
-5. Connect your computer to LAN1 and assign it as 192.168.1.2/24.
-6. Rename the sysupgrade image to test.bin and serve it via TFTP.
-7. Enter test.bin on the serial console and press enter.
-
-Signed-off-by: Markus Scheck <markus@mscheck.de>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- .../ramips/base-files/etc/board.d/02_network  |   4 +
- target/linux/ramips/base-files/lib/ramips.sh  |   3 +
- target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts | 146 ++++++++++++++++++
- target/linux/ramips/image/mt76x8.mk           |   8 +
- 4 files changed, 161 insertions(+)
- create mode 100644 target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts
+ .../gemini/base-files/lib/upgrade/platform.sh | 54 +++++++++++++++++++
+ target/linux/gemini/image/Makefile            |  3 +-
+ 2 files changed, 56 insertions(+), 1 deletion(-)
+ create mode 100644 target/linux/gemini/base-files/lib/upgrade/platform.sh
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index c2646876a2..29a1e7b54c 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -450,6 +450,10 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"1:lan:3" "2:lan:2" "3:lan:1" "4:wan" "6@eth0"
- 		;;
-+	xiaomi,mir4a-100m)
-+		ucidef_add_switch "switch0" \
-+			"4:lan:1" "2:lan:2" "0:wan" "6t@eth0"
-+		;;
- 	zbtlink,zbt-we1226|\
- 	y1)
- 		ucidef_add_switch "switch0" \
-diff --git a/target/linux/ramips/base-files/lib/ramips.sh b/target/linux/ramips/base-files/lib/ramips.sh
-index 093303892c..a9e7e746cd 100755
---- a/target/linux/ramips/base-files/lib/ramips.sh
-+++ b/target/linux/ramips/base-files/lib/ramips.sh
-@@ -649,6 +649,9 @@ ramips_board_detect() {
- 	*"X8")
- 		name="x8"
- 		;;
-+	*"Xiaomi Mi Router 4A (100M Edition)")
-+		name="xiaomi,mir4a-100m"
-+		;;
- 	*"Y1")
- 		name="y1"
- 		;;
-diff --git a/target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts b/target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts
+diff --git a/target/linux/gemini/base-files/lib/upgrade/platform.sh b/target/linux/gemini/base-files/lib/upgrade/platform.sh
 new file mode 100644
-index 0000000000..716b66ac44
+index 000000000000..0c6fc44ee725
 --- /dev/null
-+++ b/target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts
-@@ -0,0 +1,146 @@
-+/dts-v1/;
++++ b/target/linux/gemini/base-files/lib/upgrade/platform.sh
+@@ -0,0 +1,54 @@
++wrgg_get_image_magic() {
++	get_image "$@" | dd bs=4 count=1 skip=8 2>/dev/null | hexdump -v -n 4 -e '1/1 "%02x"'
++}
 +
-+#include "mt7628an.dtsi"
++platform_find_part_size() {
++	local first dev size erasesize name
++	while read dev size erasesize name; do
++		name=${name#'"'}; name=${name%'"'}
++		[ "$name" = "$1" ] && {
++			echo "$size"
++			break
++		}
++	done < /proc/mtd
++}
 +
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
++platform_check_image() {
++	local board=$(board_name)
++	# TODO: check size of sysupgrade image
 +
-+/ {
-+	compatible = "xiaomi,mir4a-100m", "mediatek,mt7628an-soc";
-+	model = "Xiaomi Mi Router 4A (100M Edition)";
++	case "$board" in
++	dlink,dir-685 )
++		local magic=$(wrgg_get_image_magic "$1")
++		[ "$magic" != "21030820" ] && {
++			echo "Invalid image. Bad magic for DIR-685."
++			return 1
++		}
++		echo "Image looks OK"
++		return 0
++		;;
++	esac
 +
-+	chosen {
-+		bootargs = "console=ttyS0,115200";
-+	};
++	echo "Sysupgrade is not yet supported on $board."
++	return 1
++}
 +
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0x0 0x4000000>;
-+	};
++platform_do_upgrade() {
++	local board=$(board_name)
 +
-+	aliases {
-+		led-boot = &power_yellow;
-+		led-failsafe = &power_yellow;
-+		led-running = &power_blue;
-+		led-upgrade = &power_yellow;
-+	};
++	v "board=$board"
++	case "$board" in
++	dlink,dir-685 )
++		# This will overwrite "firmware" which means that the
++		# partitions "kernel", "rootfs" and "rootfs_data" get
++		# overwritten in the flash. The "kernel" image has the
++		# necessary boot loader magic attached to it, and after
++		# the "rootfs" there is an empty space marker for "rootfs_data"
++		PART_NAME=firmware
++		default_do_upgrade "$ARGV"
++		;;
++	*)
 +
-+	gpio-leds {
-+		compatible = "gpio-leds";
-+
-+		power_blue: power_blue {
-+			label = "mir4a-100m:blue:power";
-+			gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		power_yellow: power_yellow {
-+			label = "mir4a-100m:yellow:power";
-+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	gpio-keys {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <20>;
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <10000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "bootloader";
-+				reg = <0x0 0x20000>;
-+				read-only;
-+			};
-+
-+			partition@20000 {
-+				label = "config";
-+				reg = <0x20000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@30000 {
-+				label = "factory";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@40000 {
-+				label = "crash";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				label = "cfg_bak";
-+				reg = <0x50000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@60000 {
-+				label = "overlay";
-+				reg = <0x60000 0x100000>;
-+				read-only;
-+			};
-+
-+			partition@160000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x160000 0xea0000>;
-+			};
-+		};
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+
-+	pcie-bridge {
-+		mt76@0,0 {
-+			reg = <0x0000 0 0 0 0>;
-+			device_type = "pci";
-+			mediatek,mtd-eeprom = <&factory 0x8000>;
-+			mediatek,2ghz = <0>;
-+		};
-+	};
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "gpio";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-+
-+&ethernet {
-+	pinctrl-names = "default";
-+	mtd-mac-address = <&factory 0x28>;
-+};
-+
-+&esw {
-+	mediatek,portmap = <0x2f>;
-+	mediatek,portdisable = <0x2a>;
-+};
-+
-+&wmac {
-+	status = "okay";
-+};
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 571ddf3d51..82659254cb 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -446,6 +446,14 @@ define Device/wrtnode2r
++		;;
++	esac
++}
+diff --git a/target/linux/gemini/image/Makefile b/target/linux/gemini/image/Makefile
+index 8fec250f186a..a7001eb0068a 100644
+--- a/target/linux/gemini/image/Makefile
++++ b/target/linux/gemini/image/Makefile
+@@ -143,9 +143,10 @@ define Device/dlink_dir-685
+ 	DEVICE_PACKAGES := $(GEMINI_NAS_PACKAGES) \
+ 			kmod-switch-rtl8366rb swconfig \
+ 			kmod-rt2800-pci
+-	IMAGES := factory.bin
++	IMAGES := factory.bin sysupgrade.bin
+ 	# Pad to 128k erase blocks with 160 bytes WRGG header
+ 	IMAGE/factory.bin := append-kernel | pad-offset 128k 160 | append-rootfs | dir685-pad-rootfs | dir685-image
++	IMAGE/sysupgrade.bin := append-kernel | pad-offset 128k 160 | dir685-image | append-rootfs | dir685-pad-rootfs
  endef
- TARGET_DEVICES += wrtnode2r
+ TARGET_DEVICES += dlink_dir-685
  
-+define Device/xiaomi_mir4a-100m
-+  DTS := XIAOMI-MIR4A-100M
-+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
-+  DEVICE_TITLE := Xiaomi Mi Router 4A (100M Edition)
-+  DEVICE_PACKAGES := kmod-mt76x2
-+endef
-+TARGET_DEVICES += xiaomi_mir4a-100m
-+
- define Device/zbtlink_zbt-we1226
-   DTS := ZBT-WE1226
-   IMAGE_SIZE := $(ralink_default_fw_size_8M)
 -- 
-2.21.0
+2.20.1
 
 
 _______________________________________________

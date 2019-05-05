@@ -2,66 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7568A13C12
-	for <lists+openwrt-devel@lfdr.de>; Sat,  4 May 2019 22:30:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C80113D81
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 May 2019 06:59:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IOXs5IILgD6ayKU/7CYv2kG4J0urJKAgNCVdEek40n0=; b=Czh1XaVi4zk9DT
-	FtxOVIV0RA9C80Vn9HSZbxadspJ9tQEM2rYoZcE1HSmgx5E+As+PNCl4sTi0WqmQziTRsJsOYfrCs
-	WScXn3O67tK7/l9Bz1YYwlRRX6PrdJ3Cz7pOMyoV13TNtIioroi8eVYj5UkE91EF9ERkFPpTGLri4
-	Gs9j4wscI808Hy49H6uv6JJ/sODKqQ+puUElqcJBprrLobpNDXecnd7QrmKYYk/mRhrVONqWJacq8
-	ow2TIFBA6Q+VvbGrIXVICAfJ5CvXIDX5sFY1cF8YLKG4IqRwd+f0Oauj4yLxzXO29uPf/iGcAgyNy
-	h7zAtVSvzmi/MQxg3QKw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2I42Jl+fPKpnC7Amdk86uFbgTO9eCUIJjOtjjvJsypY=; b=Db4Vvm2GucdZfW
+	MKDIrhpjHUcrXSLTnCGuiyE9WXR6yIIZfqCJqAsSVPnk8NSghsjewWke6M8DS5chwl0qikdRS54C4
+	C+r/Mzo7T2ys59Yk7xq0dXbFYc8wf0zY0IgaSiK8e2YLZJqTGjjpFwMFISPm2SUZOhY9vbmbftCjo
+	RWogTKAmmLT3MoNx362aAT7bhpTDXP0t+i2GNMA6NEyAIvGp5Y58uQzCrpQV/byR75qjD9Qvb6+9r
+	BFaMLrnP+sEehCMwmBSWFpWIPu2yedNdAUBgdjc/AL1vz31o8Qm/CaZFREa++sY4aCzdI1VNr7iY/
+	EKLVElqyUXUXsF1PZrAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hN1Iu-0000NB-92; Sat, 04 May 2019 20:30:40 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hN9FN-0006pO-DF; Sun, 05 May 2019 04:59:33 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hN1Io-0000N3-C5
- for openwrt-devel@bombadil.infradead.org; Sat, 04 May 2019 20:30:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jJQqxV0GnytFFX3PdLL5axAswX/4CRot0zgOk/aVZPI=; b=GiwKZpmTfxuZcX0/iYoOI7YeuS
- m9MEp2+4A3PJGtwNyrB2/FSDd0wzr7MzQ8TWExSCZBAo9NiULct9y2N014S9s9rf5do/awwhfh7VW
- DF3QSuLPwKvfL3zvHPV0H8/8sWYi2QCERVfr5OGv4FGjJv4HwFYG5KLWhxz6vs2SywrkSzW3oPR5o
- nxUSfDgXxXchOr+TiJlTUTgAlaJs7/Znufnknl6j+7dcAGSSzx7HKxDaxoJRmlOzHlmmbgSqfHr8k
- g6oRzsPlT/0QMwaewAZs2t5eckYDW7qCWaADyrg8xgVejoEe1asURGKKC1/5AvqRQFZJ1M3JHPI1V
- KZLBQxfQ==;
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by casper.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hN1Ij-0006G1-LB
- for openwrt-devel@lists.openwrt.org; Sat, 04 May 2019 20:30:32 +0000
-Received: from localhost.localdomain (ip5f5ab4b1.dynamic.kabel-deutschland.de
- [95.90.180.177]) (Authenticated sender: mail@aparcar.org)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id ABD51240007;
- Sat,  4 May 2019 20:29:57 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat,  4 May 2019 22:29:21 +0200
-Message-Id: <20190504202920.14779-1-mail@aparcar.org>
-X-Mailer: git-send-email 2.20.1
+ id 1hN9F2-0006ob-30
+ for openwrt-devel@lists.openwrt.org; Sun, 05 May 2019 04:59:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1557032346;
+ bh=pN+O2rsKMWpqWNubQEpLUheRXpD2XNI8yr3etqVrIMs=;
+ h=X-UI-Sender-Class:Date:From:To:Cc:Subject:In-Reply-To:References;
+ b=QPUqb6zvXE1adhnLCH5UcpLlmSn4KaAZrxygJxJ2ZJe/I1rbwzirU1cWr7eNHKadV
+ LcKzu5uUC3zHYk05ZWox08nSY2GPvWbeUsq8RFCPRQ00Pequ1DOe2E5QPHlCn/qXns
+ DYPcArdh18f3l6Lu4XJD5d6OSjdsHc/vHGBDgny4=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from mir ([217.249.114.101]) by mail.gmx.com (mrgmx002
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0Lqi70-1grxLn45yM-00eNCA; Sun, 05
+ May 2019 06:59:06 +0200
+Date: Sun, 5 May 2019 06:59:04 +0200
+From: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+To: Hauke Mehrtens <hauke@hauke-m.de>
+Message-ID: <20190505065904.23fb1d9a@mir>
+In-Reply-To: <20190504151602.7194-1-hauke@hauke-m.de>
+References: <20190504151602.7194-1-hauke@hauke-m.de>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:c4LiidrTZJcoNPs3StDwYm+crj7CG0sTgMb8ut/d6bldKXyYmEJ
+ LSOerx+Gp83emk5E+2KFJMBtsX9rM3PINpasqp3CUbnz5DeoPD6e4A5tQ7cGmCON6MaaNFH
+ qIG7DCnRIajnLi/jP9lCboVHzdIWu1xZLlGQ13yM6L/J5nnVFOQgLpqNiiSC3XdUIVDu0JS
+ joEpf9LkZea8KGuJsEqgQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:DFbRDOOF/4Q=:q9sT1S5RjBRaT0sEYVc5X4
+ 7hbcLKxGEzimBpfiSsyHTqZ+1bX3jlCWfGR/wdWFQO44/ADNgvuMsiLmJKHtRBXXxbGHSrHpZ
+ OSmG5WYxVjHKM22h7YPdYKQTrDJ3IF7as4UW7b/h6EG+HcTonlypAUxkBjUuWJ7tFfU6s4eDu
+ cWwAYrx10tiq0J6gQDJ3OcZHydeIbjjP2zMS7sORjsS5I/uamYDYCBYaMDPEfHgGqEeybcIuI
+ Wrn5vjEng/0QP9491uC42Gm66tUNwMdXsV6+Gsv50BQkJ2IDFjSTfv0xS9W5qbbBxGAEwM9d+
+ 9Y3mzv6dFfKpVu3X8EprM6nWrr0ekKBw+Vnx0c4HoX2bamyVtOtd6LK3nMQk4Mo19kdY6DTM2
+ r5IIk3wG30soF90j+Px5V3yvpUikPGUxBb7AQ+xitPCMHQ4MNN/QvX7FuFzjgDAgbc6TSgeW+
+ XFhgQQ6NECerKHzX8WWomHznmFXHgPAqoSutHF1hjJxA0Uk1Bh4LtuSjNz3n09vafC/iCsk52
+ oy8QLDGAZOgHL8zvl4DKNrDQBD3tVOd6OVUsez83Zd6TM9ZnVJAUzejjcnpUJD+NXg/SVZosD
+ DVV8d9sv5D2AeqTEVUCD55r62xKUZasdU2qkDI4HIRZXPjoDo2x+uQdkJLestJGDwNg4CI+0X
+ 6lmd88YK7CKrSLEM7fLNQRK59hb2P1PmN2U2AK1xz6v1u7cF5IYq4Ub1OGgR4fUoozLCzw3yu
+ lpq5PaAqLOMBMn33Cpsfommy9tWWvE8AJfnzOQcqrX5SulMpRMfO5Ie5ga88BGCzpElfX4gd9
+ sSVtSrs2vU3xE2nEhYI2Zef6ZEvCsHfEQV0uH6NO1tF7EQmRKAc+JEhwSciVt5Jr9prd8P9RP
+ lDgxhwKbncC98XicSeUyreMPeKaIkun6rb7j2ABIQilhKSFQdQJTP9QGCFcqNT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_213029_739732_622751F2 
-X-CRM114-Status: GOOD (  18.69  )
+X-CRM114-CacheID: sfid-20190504_215912_473777_662CAAC1 
+X-CRM114-Status: GOOD (  10.29  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [212.227.15.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v2] procd: detect lxc container and behave
- accordingly
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (s.l-h[at]gmx.de)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH 1/6] hostapd: update to version 2.8
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -73,163 +89,81 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Paul Spooren <mail@aparcar.org>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-meaning to not mount some specific parts witch cause trouble.
+Hi
 
-The patch is based on previous work of @mikma to combine OpenWrt with
-lxd[0]. This patch however adds a detection copied from *virt-what* to
-check /proc/1/environment for the string "container".
+Successfully build-tested on:
+- ath79
+- ipq806x
+- lantiq
 
-Thanks to @dangowrt for the cleanup.
+Succeffully runtime tested on:
+- ipq806x
 
-[0]: https://github.com/containercraft/openwrt-lxd/blob/master/patches/procd-openwrt-18.06/001_lxd_no_mounts.patch
+On 2019-05-04, Hauke Mehrtens wrote:
+> This also syncs the configuration files with the default configuration
+> files, but no extra options are activated or deactivated.
+>
+> The mesh patches were partially merged into hostapd 2.8, the remaining
+> patches were extracted from patchwork and are now applied by OpenWrt.
+> The patches still have open questions which are not fixed by the author.
+> They were taken from this page:
+> https://patchwork.ozlabs.org/project/hostap/list/?series=62725&state=*
+>
+> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+Tested-by: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 
-Signed-off-by: Paul Spooren <mail@aparcar.org>
----
- container.h     | 22 ++++++++++++++++++++++
- initd/early.c   | 20 ++++++++++++--------
- initd/zram.c    | 11 +++++++----
- plug/coldplug.c | 14 +++++++++-----
- 4 files changed, 50 insertions(+), 17 deletions(-)
- create mode 100644 container.h
+[...]
+> --- a/package/network/services/hostapd/Makefile
+> +++ b/package/network/services/hostapd/Makefile
+> @@ -11,9 +11,9 @@ PKG_RELEASE:=6
+>
+>  PKG_SOURCE_URL:=http://w1.fi/hostap.git
+>  PKG_SOURCE_PROTO:=git
+> -PKG_SOURCE_DATE:=2018-12-02
+[...]
+> +PKG_SOURCE_DATE:=2.8
+[...]
 
-diff --git a/container.h b/container.h
-new file mode 100644
-index 0000000..c9b5e46
---- /dev/null
-+++ b/container.h
-@@ -0,0 +1,22 @@
-+/*
-+ * Copyright (C) 2019 Paul Spooren <mail@aparcar.de>
-+ *
-+ * This program is free software; you can redistribute it and/or modify
-+ * it under the terms of the GNU Lesser General Public License version 2.1
-+ * as published by the Free Software Foundation
-+ *
-+ * This program is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+ * GNU General Public License for more details.
-+ */
-+
-+#ifndef __CONTAINER_H
-+#define __CONTAINER_H
-+#include <stdlib.h>
-+
-+static inline unsigned short int is_container() {
-+	return !!getenv("container");
-+}
-+
-+#endif
-diff --git a/initd/early.c b/initd/early.c
-index 2e15112..7b281b2 100644
---- a/initd/early.c
-+++ b/initd/early.c
-@@ -25,6 +25,7 @@
- #include "../utils/utils.h"
- #include "init.h"
- #include "../libc-compat.h"
-+#include "../container.h"
- 
- static void
- early_dev(void)
-@@ -56,14 +57,17 @@ early_mounts(void)
- {
- 	unsigned int oldumask = umask(0);
- 
--	mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
--	mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
--	mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
--	mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
--	ignore(symlink("/tmp/shm", "/dev/shm"));
--	mkdir("/dev/pts", 0755);
--	mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
--	early_dev();
-+	if (!is_container()) {
-+		mount("proc", "/proc", "proc", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-+		mount("sysfs", "/sys", "sysfs", MS_NOATIME | MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-+		mount("cgroup", "/sys/fs/cgroup", "cgroup",  MS_NODEV | MS_NOEXEC | MS_NOSUID, 0);
-+		mount("tmpfs", "/dev", "tmpfs", MS_NOATIME | MS_NOSUID, "mode=0755,size=512K");
-+		ignore(symlink("/tmp/shm", "/dev/shm"));
-+		mkdir("/dev/pts", 0755);
-+		mount("devpts", "/dev/pts", "devpts", MS_NOATIME | MS_NOEXEC | MS_NOSUID, "mode=600");
-+
-+		early_dev();
-+	}
- 
- 	early_console("/dev/console");
- 	if (mount_zram_on_tmp()) {
-diff --git a/initd/zram.c b/initd/zram.c
-index b41bfd9..487d3d6 100644
---- a/initd/zram.c
-+++ b/initd/zram.c
-@@ -12,6 +12,7 @@
- #include <sys/stat.h>
- 
- #include "../log.h"
-+#include "../container.h"
- 
- #include "init.h"
- 
-@@ -116,10 +117,12 @@ mount_zram_on_tmp(void)
- 		waitpid(pid, NULL, 0);
- 	}
- 
--	ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
--	if (ret < 0) {
--		ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
--		return errno;
-+	if (!is_container()) {
-+		ret = mount("/dev/zram0", "/tmp", "ext4", MS_NOSUID | MS_NODEV | MS_NOATIME, "errors=continue,noquota");
-+		if (ret < 0) {
-+			ERROR("Can't mount /dev/zram0 on /tmp: %m\n");
-+			return errno;
-+		}
- 	}
- 
- 	LOG("Using up to %ld kB of RAM as ZRAM storage on /mnt\n", zramsize);
-diff --git a/plug/coldplug.c b/plug/coldplug.c
-index c6a89c3..12df421 100644
---- a/plug/coldplug.c
-+++ b/plug/coldplug.c
-@@ -22,6 +22,7 @@
- #include "../libc-compat.h"
- 
- #include "hotplug.h"
-+#include "../container.h"
- 
- static struct uloop_process udevtrigger;
- 
-@@ -43,13 +44,16 @@ void procd_coldplug(void)
- 	char *argv[] = { "udevtrigger", NULL };
- 	unsigned int oldumask = umask(0);
- 
--	umount2("/dev/pts", MNT_DETACH);
--	umount2("/dev/", MNT_DETACH);
--	mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
-+	if (!is_container()) {
-+		umount2("/dev/pts", MNT_DETACH);
-+		umount2("/dev/", MNT_DETACH);
-+		mount("tmpfs", "/dev", "tmpfs", MS_NOSUID, "mode=0755,size=512K");
-+		mkdir("/dev/pts", 0755);
-+		mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
-+	}
-+
- 	ignore(symlink("/tmp/shm", "/dev/shm"));
--	mkdir("/dev/pts", 0755);
- 	umask(oldumask);
--	mount("devpts", "/dev/pts", "devpts", MS_NOEXEC | MS_NOSUID, 0);
- 	udevtrigger.cb = udevtrigger_complete;
- 	udevtrigger.pid = fork();
- 	if (!udevtrigger.pid) {
--- 
-2.20.1
+The version number goes backwards here, I'd suggest sticking to the
+date here (2019-04-21) otherwise opkg would like to install the older
+snapshot again:
 
+# opkg update
+[...]
+# opkg list-upgradable
+hostapd-utils - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
+wpad-openssl - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
+wpa-cli - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
+hostapd-common - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
+
+You might also want to reset PKG_RELEASE to 1:
+
+--- a/package/network/services/hostapd/Makefile
++++ b/package/network/services/hostapd/Makefile
+@@ -7,11 +7,11 @@
+ include $(TOPDIR)/rules.mk
+
+ PKG_NAME:=hostapd
+-PKG_RELEASE:=6
++PKG_RELEASE:=1
+
+ PKG_SOURCE_URL:=http://w1.fi/hostap.git
+ PKG_SOURCE_PROTO:=git
+-PKG_SOURCE_DATE:=2.8
++PKG_SOURCE_DATE:=2019-04-21
+ PKG_SOURCE_VERSION:=63962824309bb428e5f73d9caae08fcb949fbe36
+ PKG_MIRROR_HASH:=c3d789b822428c92bd47b3c85d9dc36cced38f7affe885cc2bb15e54248a4566
+
+
+--
+Regards
+	Stefan Lippers-Hollmann
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,78 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB6B9155D6
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 May 2019 23:57:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 687C5158BE
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 May 2019 07:07:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EDdR1HHOOVqgXh6jdlpuEwXr01J/Jsq9eXsu9rnfqV0=; b=BDIC0Wqw2uQv2s
-	A0L6yLr7/7bpAyg6MQjvDWBOAt9KCRlwnBLvEbCqHovlXevnf75n5ZcvlKh4UgP233Q7xnRquyZXu
-	1GKvscVmKAJwFEoXn4qYY/dMZpZHgKsnXJT82jojfXwxuFXVXJei1IyeqPzF4OtvAW/SDRp6URN8m
-	xJcVeKRWqQF1vK14JYmnXkT5bcv1OXXjJNRCyxLT4DHE8TXZ+hUwF1hVaYHJ4C81F6Ck2T9Cq2ttr
-	2xzevYXa2nVhPApR4cVQr79opFTotMApS7+eoLX8a7lu9kf01mhWN+xAa6vX09KRplosbq28fbKAc
-	gLkbJjhkYF1GMb/+8A4A==;
+	List-Owner; bh=XN+pAT8xkEKyksiVlbCQApFW5AcStOY0yJ/bTC59hDE=; b=JYF9L6jSnHX3ZI
+	vCLDmkUBZkVgObydcQ3ZFB835J6GkXQ3CHmwfoFvy8H6B6xaA+tIdVyNoJwoFeTcaT7jIh0lOB8Xe
+	ViJkIx6u+DjlHNlKTiUuvYq1QL74ycrpiUyEnCeKK49qpEt8DJbuMtMQ/8T3nCxree1lmIpl+WAYe
+	MCfTla+62QJmq4v1rkDId8ubShpQZefos3NAXEKeEuh/zDRqVr9JAz5P6hWvRuT3KxNJTxo4+9eX6
+	QmVsfRU9dwRqbiNrJYSI+Z/6PvLh2rUmXAU7MA9hB4lwU0Fhz2O4XAFOmjpM34Fde2jP/XQwStAqq
+	RZDlqpPrJFROnP6fFwLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNlc2-0003Tz-6K; Mon, 06 May 2019 21:57:30 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hNsKB-0007fk-Vo; Tue, 07 May 2019 05:07:31 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNlbv-0003Tb-NW
- for openwrt-devel@lists.openwrt.org; Mon, 06 May 2019 21:57:25 +0000
-Received: by mail-pf1-x441.google.com with SMTP id t87so6894826pfa.2
- for <openwrt-devel@lists.openwrt.org>; Mon, 06 May 2019 14:57:20 -0700 (PDT)
+ id 1hNsK5-0007fP-E4
+ for openwrt-devel@lists.openwrt.org; Tue, 07 May 2019 05:07:27 +0000
+Received: by mail-ed1-x542.google.com with SMTP id e24so17432824edq.6
+ for <openwrt-devel@lists.openwrt.org>; Mon, 06 May 2019 22:07:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=Rz1ZQ3Li3tKHkww/FBkjgiF0FVagTVbXxCE7sreevoQ=;
- b=SMAAyg3tQBOiEbksfJM+6NDX6er0lBbDJLVT3z5zNr863fNUEsOIb3isQyUVwYHjAv
- geUtja66sjmgreeJC2M26VVYlfIZLc3hjiEtCBxs4bcozWuufunYMTCn11cyr2aMqYm+
- nC7f56b90ttIlnthwmCwVOPTEVoDLB4D8nzus5hFIlyNQPTmYkOm8jtlWya9+7EaQ7q+
- WBUst3w25c8Xo2BXHqIxJ2sqVKPTEuv+vBDDScXax3jSJru1YO7wSd0eFGslu0C+5pOe
- gE0awMgk44/3uVzxqpPaFLq+nHR5z0/Pcw0Qaui/7UZENvwy+RXc4LSLzI6fm84de7ja
- 33Hg==
+ h=from:to:cc:subject:date:message-id;
+ bh=wmN+I+e0S9fSzpfKBEq4/4NBt3xfvelUSB8YsWwVruo=;
+ b=W2SdZ3l7otRqXWhkVhqhpLTBS8SJQ4zzkZEV29JleNBDoIpHhEqNOWw6DJs6DFgnPO
+ 8hE6kV6p2kUMTCt9v4xu76Yh7K+L1qLIp1fk2H1hoeDk9qYjVk43UP7mQKMrtjFoWL3D
+ bNPukXqAV+Rcf85oA+UPYIB0MUTW15QgcBvg+yOL6+RrmpPh0RBC0jnulrFsxsRrSO5T
+ 6zh5RabHu8tpNbSWYTWWP+2TVyemQ3KFoA82KLhuUmsTSBtj8UwnVeeSQVx1CVqbK9J/
+ lFjE0nig56zbtMAwe4s3pPw+OFBENIlxlmkKFxqK7mRsPK2OfSo8idSilXa9aUgdFsWI
+ cXtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=Rz1ZQ3Li3tKHkww/FBkjgiF0FVagTVbXxCE7sreevoQ=;
- b=bcpcAhUt84KW0q53NwKo7KNKz2Q0BVJd+eVO9rKw1rfzsMy0T7x8jUrHo097Ev/xSK
- cCi03ZCMYudfTLUPdY6FkVpBPkCelqiKeKP/A/EHgB6NkkMyFEl91Dg7fNEl9TZ1Mql9
- as4a5NnxTwJoEvwsxPLbl9OFm0TbXQzB0VPfgdw1zoRIWsqfh1HWj7MaXJI9wKp2VzNY
- GEawIsAAUZQfj6TDjyNV4NRW5vFfmHI8fIPRfTHrnG2FsUYAT4cibz91vvS1jZmhSfPd
- 8kpMTf4IjdAoye7a1AtlzeQQGDPUpVW9qL2u9mckmiYIoXxcln4NY7LkFQwAnQeRdKYp
- H90Q==
-X-Gm-Message-State: APjAAAUk5sNDjO8/gGn/pVJ1jExXodSLlsZBdclBQsETliwOj86L22uN
- i62AoVK/KikI/YgddsTbCXGvm17MVVA=
-X-Google-Smtp-Source: APXvYqzIwPlwrEtSeunGipMf7PnPKgXCR2sHAlSVSBYaERII8Vsh5l4GnDP5av8nJJ6fRY2Ut40sfQ==
-X-Received: by 2002:aa7:90d3:: with SMTP id k19mr20695792pfk.1.1557179839917; 
- Mon, 06 May 2019 14:57:19 -0700 (PDT)
-Received: from mangix-pc.lan (76-14-106-140.rk.wavecable.com. [76.14.106.140])
- by smtp.gmail.com with ESMTPSA id
- e16sm11848835pgv.89.2019.05.06.14.57.18
- for <openwrt-devel@lists.openwrt.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=wmN+I+e0S9fSzpfKBEq4/4NBt3xfvelUSB8YsWwVruo=;
+ b=YgPYc4t5CHJhbWodFxjMI+whTvGfYy+tBX+TkB2QTKQ0GHJM8fDZPGRWAPv+LW/LDM
+ 9QSOuo1D+vffD99rSGw+hk4MHhUEo7TfJ2DqjiA/D7l1GcoINhB/TA91huuwnHwFNT/f
+ CtsPC4fmOSFsW9DVpvgkCNAdGySE7EPzHCLZrjsQICEMy40dMc538QhtB5wxGkQg7Sal
+ I+8EOLvcAfxRRAfQff4pL4zaa/n8hDVfLDrLLIn+ovZEuARRwhF44n01DRtR0pb6LHH9
+ 7Y7fOdpzlSd4bRBftdwt/ZYdxni/HGIK2drUSTi0/IiYV371o4ZVl0Zpn3xIrbNZFZco
+ P3nw==
+X-Gm-Message-State: APjAAAXzqLp9Adcb/byp60Iq0foRDnvM+lZDh4PwbhY8z2BAugJGmdPM
+ Vi15kDNXCifl6tDUWJvuJpbmClqh
+X-Google-Smtp-Source: APXvYqyXFPyIzNKgtpEIYmoJ8E4LJMdpAhrF0eoHoj6zTeCbgtd6kGKVnD0hYlZ7cW/EFUADEeAPng==
+X-Received: by 2002:a50:aad9:: with SMTP id r25mr29943190edc.266.1557205642577; 
+ Mon, 06 May 2019 22:07:22 -0700 (PDT)
+Received: from localhost.localdomain ([2a02:168:6806:0:488a:517d:fdd7:fdca])
+ by smtp.gmail.com with ESMTPSA id c8sm1070496ejs.87.2019.05.06.22.07.21
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 06 May 2019 14:57:18 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ Mon, 06 May 2019 22:07:21 -0700 (PDT)
+From: Klaus Kudielka <klaus.kudielka@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  6 May 2019 14:57:18 -0700
-Message-Id: <20190506215718.14886-1-rosenp@gmail.com>
+Date: Tue,  7 May 2019 07:07:07 +0200
+Message-Id: <20190507050707.3709-1-klaus.kudielka@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_145723_794338_37B56327 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20190506_220725_504121_092C987B 
+X-CRM114-Status: GOOD (  17.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
+ provider (klaus.kudielka[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -81,7 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] xfsprogs: Replace valloc with posix_memalign
+Subject: [OpenWrt-Devel] [PATCH v3 1/2] base-files: improve
+ lib/upgrade/common.sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,71 +92,323 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Tomasz Maciej Nowak <tomek_n@o2.pl>,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ Klaus Kudielka <klaus.kudielka@gmail.com>, linus.walleij@linaro.org,
+ Christian Lamparter <chunkeey@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Fixes compilation under uClibc-ng.
+Recently, upgrade device autodetection has been added to the mvebu target.
+This exposes some shortcomings of the generic export_bootdevice function,
+e.g. on the Turris Omnia: export_bootdevice silently reports the root
+partition to be the boot device. This makes the sysupgrade process fail at
+several places.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
+Fix this by clearly distinguishing between /proc/cmdline arguments which
+specify the boot disk, and those which specify the root partition. Only in
+the latter case, strip off the partition, and do it consistently.  Include
+/dev/mmcblk* and /dev/sd* as potential arguments to "root=".
+
+The root of the problem is that the *existing* export_bootdevice in
+/lib/upgrade/common.sh behaves differently, if the kernel is booted with
+root=/dev/..., or if it is booted with root=PARTUUID=...
+
+In the former case, it reports back major/minor of the root partition,
+in the latter case it reports back major/minor of the complete boot disk.
+
+The targets mentioned below have added workarounds to this behaviour, by
+specifying *negative* increments to the export_partdevice function.
+
+And then came the mvebu target to use export_bootdevice / export_partdevice
+as well. Now, different subtargets boot differently, and the workaround
+would be even more complex.
+
+I think now is the time to make export_bootdevice behave consistently,
+and to report major/minor of the boot disk, period.
+
+Consequently, those targets, which boot with root=/dev/... *and* use
+export_bootdevice / export_partdevice, have to be adapted to use
+positive increments, otherwise they are broken by the change
+to export_bootdevice.
+
+v2:
+
+Remove workarounds for the old, inconsistent behaviour from the following
+targets: apm821xx, brcm2708, omap, sunxi.  The targets affected were easy
+to spot with find & grep.
+
+v3:
+
+Make export_bootdevice more generic. It now accepts
+root=PARTUUID=<pseudo PARTUUID for MBR> (any partition) and
+root=/dev/* (any partition).
+
+Fixes: 4e8345ff68 ("mvebu: base-files: autodetect upgrade device")
+
+Signed-off-by: Klaus Kudielka <klaus.kudielka@gmail.com>
 ---
- package/utils/xfsprogs/Makefile               |  2 +-
- ...six_memalign-instead-of-deprecated-v.patch | 31 +++++++++++++++++++
- 2 files changed, 32 insertions(+), 1 deletion(-)
- create mode 100644 package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch
+ .../base-files/files/lib/upgrade/common.sh    | 32 +++++++++++--------
+ .../apm821xx/base-files/lib/upgrade/wdbook.sh | 11 ++-----
+ .../base-files/lib/upgrade/platform.sh        | 11 ++-----
+ .../base-files/lib/preinit/79_move_config     |  2 +-
+ .../omap/base-files/lib/upgrade/platform.sh   |  7 ++--
+ .../base-files/lib/preinit/79_move_config     |  2 +-
+ .../sunxi/base-files/lib/upgrade/platform.sh  |  7 ++--
+ 7 files changed, 33 insertions(+), 39 deletions(-)
 
-diff --git a/package/utils/xfsprogs/Makefile b/package/utils/xfsprogs/Makefile
-index 50a5147b04..353773840a 100644
---- a/package/utils/xfsprogs/Makefile
-+++ b/package/utils/xfsprogs/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+diff --git a/package/base-files/files/lib/upgrade/common.sh b/package/base-files/files/lib/upgrade/common.sh
+index b3a29fb32..bbedeefd2 100644
+--- a/package/base-files/files/lib/upgrade/common.sh
++++ b/package/base-files/files/lib/upgrade/common.sh
+@@ -101,35 +101,41 @@ get_magic_long() {
+ }
  
- PKG_NAME:=xfsprogs
- PKG_CPE_ID:=cpe:/a:sgi:xfsprogs
--PKG_RELEASE:=2
-+PKG_RELEASE:=3
- PKG_VERSION:=4.11.0
- PKG_SOURCE_URL:=@KERNEL/linux/utils/fs/xfs/xfsprogs
- PKG_HASH:=c3a6d87b564d7738243c507df82276bed982265e345363a95f2c764e8a5f5bb2
-diff --git a/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch b/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch
-new file mode 100644
-index 0000000000..7bf1c77a40
---- /dev/null
-+++ b/package/utils/xfsprogs/patches/130-db-malloc-Use-posix_memalign-instead-of-deprecated-v.patch
-@@ -0,0 +1,31 @@
-+From 930f9aa8f08759fa739dd6e615ba8b3a1890008d Mon Sep 17 00:00:00 2001
-+From: Rosen Penev <rosenp@gmail.com>
-+Date: Mon, 6 May 2019 13:56:13 -0700
-+Subject: [PATCH] db/malloc: Use posix_memalign instead of deprecated valloc
+ export_bootdevice() {
+-	local cmdline uuid disk uevent line
++	local cmdline bootdisk rootpart uuid blockdev uevent line
+ 	local MAJOR MINOR DEVNAME DEVTYPE
+ 
+ 	if read cmdline < /proc/cmdline; then
+ 		case "$cmdline" in
+ 			*block2mtd=*)
+-				disk="${cmdline##*block2mtd=}"
+-				disk="${disk%%,*}"
++				bootdisk="${cmdline##*block2mtd=}"
++				bootdisk="${bootdisk%%,*}"
+ 			;;
+ 			*root=*)
+-				disk="${cmdline##*root=}"
+-				disk="${disk%% *}"
++				rootpart="${cmdline##*root=}"
++				rootpart="${rootpart%% *}"
+ 			;;
+ 		esac
+ 
+-		case "$disk" in
+-			PARTUUID=[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]-02)
+-				uuid="${disk#PARTUUID=}"
+-				uuid="${uuid%-02}"
+-				for disk in $(find /dev -type b); do
+-					set -- $(dd if=$disk bs=1 skip=440 count=4 2>/dev/null | hexdump -v -e '4/1 "%02x "')
++		case "$bootdisk" in
++			/dev/*)
++				uevent="/sys/class/block/${bootdisk##*/}/uevent"
++			;;
++		esac
 +
-+valloc is not available with uClibc-ng as well as being deprecated, which
-+causes compilation errors. aligned_alloc is not available before C11 so
-+used posix_memalign.'
-+
-+Signed-off-by: Rosen Penev <rosenp@gmail.com>
-+---
-+ db/malloc.c | 3 +--
-+ 1 file changed, 1 insertion(+), 2 deletions(-)
-+
-+diff --git a/db/malloc.c b/db/malloc.c
-+index 77b3e022..38fe0b05 100644
-+--- a/db/malloc.c
-++++ b/db/malloc.c
-+@@ -56,8 +56,7 @@ xmalloc(
-+ {
-+ 	void	*ptr;
-+ 
-+-	ptr = valloc(size);
-+-	if (ptr)
-++	if(!posix_memalign(&ptr, sysconf(_SC_PAGESIZE), size))
-+ 		return ptr;
-+ 	badmalloc();
-+ 	/* NOTREACHED */
-+-- 
-+2.17.1
-+
++		case "$rootpart" in
++			PARTUUID=[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]-[a-f0-9][a-f0-9])
++				uuid="${rootpart#PARTUUID=}"
++				uuid="${uuid%-[a-f0-9][a-f0-9]}"
++				for blockdev in $(find /dev -type b); do
++					set -- $(dd if=$blockdev bs=1 skip=440 count=4 2>/dev/null | hexdump -v -e '4/1 "%02x "')
+ 					if [ "$4$3$2$1" = "$uuid" ]; then
+-						uevent="/sys/class/block/${disk##*/}/uevent"
++						uevent="/sys/class/block/${blockdev##*/}/uevent"
+ 						break
+ 					fi
+ 				done
+ 			;;
+ 			/dev/*)
+-				uevent="/sys/class/block/${disk##*/}/uevent"
++				uevent="/sys/class/block/${rootpart##*/}/../uevent"
+ 			;;
+ 		esac
+ 
+diff --git a/target/linux/apm821xx/base-files/lib/upgrade/wdbook.sh b/target/linux/apm821xx/base-files/lib/upgrade/wdbook.sh
+index 2287e0619..c19127114 100644
+--- a/target/linux/apm821xx/base-files/lib/upgrade/wdbook.sh
++++ b/target/linux/apm821xx/base-files/lib/upgrade/wdbook.sh
+@@ -7,7 +7,7 @@ mbl_do_platform_check() {
+ 
+ 	[ "$#" -gt 1 ] && return 1
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -36,7 +36,7 @@ mbl_do_platform_check() {
+ mbl_do_upgrade() {
+ 	local diskdev partdev diff
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -70,10 +70,6 @@ mbl_do_upgrade() {
+ 
+ 	#iterate over each partition from the image and write it to the boot disk
+ 	while read part start size; do
+-		# root is /dev/sd[a|b]2 and not /dev/sd[a|b] this causes some problem
+-		# one of which is this offset, I'm not sure what's the best fix, so
+-		# here's a WA.
+-		let part=$((part - 2))
+ 		if export_partdevice partdev $part; then
+ 			echo "Writing image to /dev/$partdev..."
+ 			get_image "$@" | dd of="/dev/$partdev" ibs="512" obs=1M skip="$start" count="$size" conv=fsync
+@@ -90,8 +86,7 @@ mbl_do_upgrade() {
+ mbl_copy_config() {
+ 	local partdev
+ 
+-	# Same as above /dev/sd[a|b]2 is root, so /boot is -1
+-	if export_partdevice partdev -1; then
++	if export_partdevice partdev 1; then
+ 		mount -t ext4 -o rw,noatime "/dev/$partdev" /mnt
+ 		cp -af "$CONF_TAR" /mnt/
+ 		umount /mnt
+diff --git a/target/linux/brcm2708/base-files/lib/upgrade/platform.sh b/target/linux/brcm2708/base-files/lib/upgrade/platform.sh
+index 62eede53d..37e479272 100644
+--- a/target/linux/brcm2708/base-files/lib/upgrade/platform.sh
++++ b/target/linux/brcm2708/base-files/lib/upgrade/platform.sh
+@@ -9,7 +9,7 @@ platform_check_image() {
+ 
+ 	[ "$#" -gt 1 ] && return 1
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -38,7 +38,7 @@ platform_check_image() {
+ platform_do_upgrade() {
+ 	local diskdev partdev diff
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -72,10 +72,6 @@ platform_do_upgrade() {
+ 
+ 	#iterate over each partition from the image and write it to the boot disk
+ 	while read part start size; do
+-		# root is /dev/sd[a|b]2 and not /dev/sd[a|b] this causes some problem
+-		# one of which is this offset, I'm not sure what's the best fix, so
+-		# here's a WA.
+-		let part=$((part - 2))
+ 		if export_partdevice partdev $part; then
+ 			echo "Writing image to /dev/$partdev..."
+ 			get_image "$@" | dd of="/dev/$partdev" ibs="512" obs=1M skip="$start" count="$size" conv=fsync
+@@ -92,8 +88,7 @@ platform_do_upgrade() {
+ platform_copy_config() {
+ 	local partdev
+ 
+-	# Same as above /dev/sd[a|b]2 is root, so /boot is -1
+-	if export_partdevice partdev -1; then
++	if export_partdevice partdev 1; then
+ 		mkdir -p /boot
+ 		[ -f /boot/kernel.img ] || mount -t vfat -o rw,noatime "/dev/$partdev" /boot
+ 		cp -af "$CONF_TAR" /boot/
+diff --git a/target/linux/omap/base-files/lib/preinit/79_move_config b/target/linux/omap/base-files/lib/preinit/79_move_config
+index c11258868..83171b3ba 100644
+--- a/target/linux/omap/base-files/lib/preinit/79_move_config
++++ b/target/linux/omap/base-files/lib/preinit/79_move_config
+@@ -6,7 +6,7 @@ move_config() {
+ 
+ 	. /lib/upgrade/common.sh
+ 
+-	if export_bootdevice && export_partdevice partdev -1; then
++	if export_bootdevice && export_partdevice partdev 1; then
+ 		if mount -t vfat -o rw,noatime "/dev/$partdev" /mnt; then
+ 			if [ -f /mnt/sysupgrade.tgz ]; then
+ 				mv -f /mnt/sysupgrade.tgz /
+diff --git a/target/linux/omap/base-files/lib/upgrade/platform.sh b/target/linux/omap/base-files/lib/upgrade/platform.sh
+index 88ef4790e..abe910b15 100644
+--- a/target/linux/omap/base-files/lib/upgrade/platform.sh
++++ b/target/linux/omap/base-files/lib/upgrade/platform.sh
+@@ -1,7 +1,7 @@
+ platform_check_image() {
+ 	local diskdev partdev diff
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -28,7 +28,7 @@ platform_check_image() {
+ platform_copy_config() {
+ 	local partdev
+ 
+-	if export_partdevice partdev -1; then
++	if export_partdevice partdev 1; then
+ 		mount -t vfat -o rw,noatime "/dev/$partdev" /mnt
+ 		cp -af "$CONF_TAR" /mnt/
+ 		umount /mnt
+@@ -38,7 +38,7 @@ platform_copy_config() {
+ platform_do_upgrade() {
+ 	local diskdev partdev diff
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -74,7 +74,6 @@ platform_do_upgrade() {
+ 	get_image "$@" | dd of="$diskdev" bs=1024 skip=8 seek=8 count=1016 conv=fsync
+ 	#iterate over each partition from the image and write it to the boot disk
+ 	while read part start size; do
+-		part="$(($part - 2))"
+ 		if export_partdevice partdev $part; then
+ 			echo "Writing image to /dev/$partdev..."
+ 			get_image "$@" | dd of="/dev/$partdev" ibs="512" obs=1M skip="$start" count="$size" conv=fsync
+diff --git a/target/linux/sunxi/base-files/lib/preinit/79_move_config b/target/linux/sunxi/base-files/lib/preinit/79_move_config
+index c11258868..83171b3ba 100644
+--- a/target/linux/sunxi/base-files/lib/preinit/79_move_config
++++ b/target/linux/sunxi/base-files/lib/preinit/79_move_config
+@@ -6,7 +6,7 @@ move_config() {
+ 
+ 	. /lib/upgrade/common.sh
+ 
+-	if export_bootdevice && export_partdevice partdev -1; then
++	if export_bootdevice && export_partdevice partdev 1; then
+ 		if mount -t vfat -o rw,noatime "/dev/$partdev" /mnt; then
+ 			if [ -f /mnt/sysupgrade.tgz ]; then
+ 				mv -f /mnt/sysupgrade.tgz /
+diff --git a/target/linux/sunxi/base-files/lib/upgrade/platform.sh b/target/linux/sunxi/base-files/lib/upgrade/platform.sh
+index 88ef4790e..abe910b15 100644
+--- a/target/linux/sunxi/base-files/lib/upgrade/platform.sh
++++ b/target/linux/sunxi/base-files/lib/upgrade/platform.sh
+@@ -1,7 +1,7 @@
+ platform_check_image() {
+ 	local diskdev partdev diff
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -28,7 +28,7 @@ platform_check_image() {
+ platform_copy_config() {
+ 	local partdev
+ 
+-	if export_partdevice partdev -1; then
++	if export_partdevice partdev 1; then
+ 		mount -t vfat -o rw,noatime "/dev/$partdev" /mnt
+ 		cp -af "$CONF_TAR" /mnt/
+ 		umount /mnt
+@@ -38,7 +38,7 @@ platform_copy_config() {
+ platform_do_upgrade() {
+ 	local diskdev partdev diff
+ 
+-	export_bootdevice && export_partdevice diskdev -2 || {
++	export_bootdevice && export_partdevice diskdev 0 || {
+ 		echo "Unable to determine upgrade device"
+ 		return 1
+ 	}
+@@ -74,7 +74,6 @@ platform_do_upgrade() {
+ 	get_image "$@" | dd of="$diskdev" bs=1024 skip=8 seek=8 count=1016 conv=fsync
+ 	#iterate over each partition from the image and write it to the boot disk
+ 	while read part start size; do
+-		part="$(($part - 2))"
+ 		if export_partdevice partdev $part; then
+ 			echo "Writing image to /dev/$partdev..."
+ 			get_image "$@" | dd of="/dev/$partdev" ibs="512" obs=1M skip="$start" count="$size" conv=fsync
 -- 
 2.17.1
 

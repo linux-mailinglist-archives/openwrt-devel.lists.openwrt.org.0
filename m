@@ -2,54 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9CF18A8F
-	for <lists+openwrt-devel@lfdr.de>; Thu,  9 May 2019 15:28:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A50E18AB9
+	for <lists+openwrt-devel@lfdr.de>; Thu,  9 May 2019 15:31:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=e5UXzmg1n3P7BqflkHUEsAtJ5CdOQgFxoOLSq3bBoDI=; b=VFun6jPNxHy/ORsyo7mPNlb8N0
-	vTWszGBxLfJtBdmuTpX3VDPrqM2kyZU/vMzuFE20rFgp8IWSEGrWcxCz8veufPmSsXql8nyUvcJ4k
-	rMlK5z0DgUh/b20263W4tgw2TY4qVTC0KJ/p5c4mVfj/Zd3z13chFyDoPrsQzgrHwDGSAQ5aRoY0q
-	cv2eX33L6+e76K6HVPm4ZgAnSGV7aTw29V1OV5MbEr+WjKlfPL5TTrAWNG3QaGjL9S9ALjMhDV9Xd
-	IXn6vbB+rC487yuK0Ob3fFtoZ23/DWp0VDStekHk5c7NtGqsJq4AeYJIHuEOg+hqNuYHDE2G3xH6r
-	RuDwQuaw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=THD+SgBLlfV26DEGsOBuS1wuaxuUgZ/w3+g6045VE5w=; b=rmydswhLsUP/dy
+	NVbgNb0Nwcw5Ni4IoEcfLt4dp4wes3deFB21tpXtgZpgi81Dl17Jny79gwHpat+IVqoghXYl1/dd1
+	bzHMr9BAtPaAi8RXpTZKu4g11e7CUw4xOkWRxYBVOCiOG19W59y+yE88YRgP2GBUVv00SiSHD5pzW
+	Id5emn3xBTRXaxT214LOZLfpf8fLJoC9ZESFf4RnpYiK6cwphE9oVY7+smlxGgRKVdpUuM/FF/Qva
+	WdJNeW8Q612se2R5kXXvSTHeZK/mbuC/hiCkXO30FNxh/4fN2liQmkPVa3GUOKII5qn97n/Q/Tnat
+	0N/WFza0E3gDVbE63fzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOj5X-0007EL-1m; Thu, 09 May 2019 13:27:55 +0000
-Received: from mx-out.tlen.pl ([193.222.135.148])
+	id 1hOj8Y-0002jr-6s; Thu, 09 May 2019 13:31:02 +0000
+Received: from mx-out.tlen.pl ([193.222.135.140])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOj4m-0006AT-8v
- for openwrt-devel@lists.openwrt.org; Thu, 09 May 2019 13:27:18 +0000
-Received: (wp-smtpd smtp.tlen.pl 4002 invoked from network);
- 9 May 2019 15:27:03 +0200
+ id 1hOj8P-0002jN-Ac
+ for openwrt-devel@lists.openwrt.org; Thu, 09 May 2019 13:30:55 +0000
+Received: (wp-smtpd smtp.tlen.pl 23282 invoked from network);
+ 9 May 2019 15:30:49 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1557408424; bh=R0yTNg1HwM1cjQjrPGY2zFuN3b844npJb9R+EvlP7NQ=;
- h=From:To:Subject;
- b=haYW6Jtr5hIFOp8ukDNSpcLpglbthSbS13xPG+UtT5bjBgB/mmy5mrZp3XVBKSsGu
- ceaWW/dVjE/yl/cvg8FFb6tcaUPnHPP44nV4ZVW5qcjXoYq4+4f4Mpk4Y+df/6DWGZ
- Fg+QVmaXbY9ngDmD0TYPRdYKiyqxsW2cbf5D6E8o=
-Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
+ t=1557408649; bh=D5A5KQLF0wCX0YtSNnpqwUc7ISoDbAvqiwqR+byrs5Y=;
+ h=Subject:To:Cc:From;
+ b=uWxiulaUX7yh3Co34hJiPLMIaGvKSlogC0TuGzQDMbI8lRUdzfGbrbvtQc9544Q+S
+ od+MdCurDHB9vXfd/BHMODwTHnnK0WcDCMhgnN+JFS8XlrOve0MzPx6nYjhv5zWpob
+ Bj0whBkwWUDMiCVICRX+HYG4rcL9xDY4PB0Py9eI=
+Received: from 131.ip-164-132-48.eu (HELO [10.8.0.6])
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 9 May 2019 15:27:03 +0200
+ for <linus.walleij@linaro.org>; 9 May 2019 15:30:49 +0200
+To: Klaus Kudielka <klaus.kudielka@gmail.com>, openwrt-devel@lists.openwrt.org
+References: <20190508184051.4154-1-klaus.kudielka@gmail.com>
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu,  9 May 2019 15:26:28 +0200
-Message-Id: <20190509132628.4671-9-tomek_n@o2.pl>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190509132628.4671-1-tomek_n@o2.pl>
-References: <20190509132628.4671-1-tomek_n@o2.pl>
+Message-ID: <423576aa-d353-cba7-0c35-367e6740597d@o2.pl>
+Date: Thu, 9 May 2019 15:30:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-WP-MailID: 736748b494c4e9d36ba258e54deabb83
+In-Reply-To: <20190508184051.4154-1-klaus.kudielka@gmail.com>
+Content-Language: en-US
+X-WP-MailID: 085a57ec5590ab4c3f22053f86df3604
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [IdMk]                               
+X-WP-SPAM: NO 0000000 [kYNk]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_062709_076099_4D2988CB 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20190509_063053_528340_F121840C 
+X-CRM114-Status: GOOD (  24.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -65,8 +66,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v2 8/8] mvebu: add images for additional
- ESPRESSObin boards
+Subject: Re: [OpenWrt-Devel] [PATCH RESEND V3 1/2] base-files: improve
+ lib/upgrade/common.sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -78,349 +79,230 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>, linus.walleij@linaro.org,
+ Christian Lamparter <chunkeey@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit adds support for different iterations of ESPRESSObin.
-The added variants are:
-
-ESPRESSObin with soldered eMMC,
-
-ESPRESSObin V7, compared to V5 some passive elements changed and ethernet
-ports labels positions have been reversed,
-
-ESPRESSObin V7 with soldered eMMC.
-
-Please refer to:
-584d7c5 ("mvebu: new subtarget cortex A53")
-for instruction how to boot OpenWrt image placed on SD card. It is
-advised for owners of V5 and previous with bootloader based on U-Boot
-2015.01, to upgrade the latest version available at:
-http://espressobin.net/tech-spec.
-
-Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
----
- .../marvell/armada-3720-espressobin-emmc.dts  | 28 +++++++++++
- .../armada-3720-espressobin-v7-emmc.dts       | 43 ++++++++++++++++
- .../marvell/armada-3720-espressobin-v7.dts    | 31 ++++++++++++
- target/linux/mvebu/image/cortex-a53.mk        | 21 ++++++++
- ...l-armada37xx-Add-emmc-sdio-pinctrl-d.patch | 40 +++++++++++++++
- ...l-armada-37xx-Enable-emmc-on-espress.patch | 49 +++++++++++++++++++
- ...da-3720-espressobin-correct-spi-node.patch |  2 +-
- ...l-armada-3720-espressobin-add-ports-.patch | 26 ++++++++++
- 8 files changed, 239 insertions(+), 1 deletion(-)
- create mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts
- create mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts
- create mode 100644 target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts
- create mode 100644 target/linux/mvebu/patches-4.14/513-arm64-dts-marvell-armada37xx-Add-emmc-sdio-pinctrl-d.patch
- create mode 100644 target/linux/mvebu/patches-4.14/514-arm64-dts-marvell-armada-37xx-Enable-emmc-on-espress.patch
- create mode 100644 target/linux/mvebu/patches-4.14/522-arm64-dts-marvell-armada-3720-espressobin-add-ports-.patch
-
-diff --git a/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts
-new file mode 100644
-index 0000000000..ef90a1bd38
---- /dev/null
-+++ b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-emmc.dts
-@@ -0,0 +1,28 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Device Tree file for Globalscale Marvell ESPRESSOBin Board with eMMC
-+ * Copyright (C) 2018 Marvell
-+ *
-+ * Romain Perier <romain.perier@free-electrons.com>
-+ * Konstantin Porotchkin <kostap@marvell.com>
-+ *
-+ */
-+
-+#include "armada-3720-espressobin.dts"
-+
-+/ {
-+	model = "Globalscale Marvell ESPRESSOBin Board (eMMC)";
-+	compatible = "globalscale,espressobin-emmc", "globalscale,espressobin",
-+		     "marvell,armada3720", "marvell,armada3710";
-+};
-+
-+&sdhci0 {
-+	status = "okay";
-+
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	mmccard: mmccard@0 {
-+		compatible = "mmc-card";
-+		reg = <0>;
-+	};
-+};
-diff --git a/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts
-new file mode 100644
-index 0000000000..2b565ca8d8
---- /dev/null
-+++ b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7-emmc.dts
-@@ -0,0 +1,43 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Device Tree file for Globalscale Marvell ESPRESSOBin Board V7 with eMMC
-+ * Copyright (C) 2018 Marvell
-+ *
-+ * Romain Perier <romain.perier@free-electrons.com>
-+ * Konstantin Porotchkin <kostap@marvell.com>
-+ *
-+ */
-+
-+#include "armada-3720-espressobin.dts"
-+
-+/ {
-+	model = "Globalscale Marvell ESPRESSOBin Board V7 (eMMC)";
-+	compatible = "globalscale,espressobin-v7-emmc", "globalscale,espressobin-v7",
-+		     "globalscale,espressobin", "marvell,armada3720",
-+		     "marvell,armada3710";
-+};
-+
-+&ports {
-+	port@1 {
-+		reg = <1>;
-+		label = "lan1";
-+		phy-handle = <&switch0phy0>;
-+	};
-+
-+	port@3 {
-+		reg = <3>;
-+		label = "wan";
-+		phy-handle = <&switch0phy2>;
-+	};
-+};
-+
-+&sdhci0 {
-+	status = "okay";
-+
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	mmccard: mmccard@0 {
-+		compatible = "mmc-card";
-+		reg = <0>;
-+	};
-+};
-diff --git a/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts
-new file mode 100644
-index 0000000000..8a408c3c48
---- /dev/null
-+++ b/target/linux/mvebu/files-4.14/arch/arm64/boot/dts/marvell/armada-3720-espressobin-v7.dts
-@@ -0,0 +1,31 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Device Tree file for Globalscale Marvell ESPRESSOBin Board V7
-+ * Copyright (C) 2018 Marvell
-+ *
-+ * Romain Perier <romain.perier@free-electrons.com>
-+ * Konstantin Porotchkin <kostap@marvell.com>
-+ *
-+ */
-+
-+#include "armada-3720-espressobin.dts"
-+
-+/ {
-+	model = "Globalscale Marvell ESPRESSOBin Board V7";
-+	compatible = "globalscale,espressobin-v7", "globalscale,espressobin",
-+		     "marvell,armada3720", "marvell,armada3710";
-+};
-+
-+&ports {
-+	port@1 {
-+		reg = <1>;
-+		label = "lan1";
-+		phy-handle = <&switch0phy0>;
-+	};
-+
-+	port@3 {
-+		reg = <3>;
-+		label = "wan";
-+		phy-handle = <&switch0phy2>;
-+	};
-+};
-diff --git a/target/linux/mvebu/image/cortex-a53.mk b/target/linux/mvebu/image/cortex-a53.mk
-index de9c2164b1..d7014d6f02 100644
---- a/target/linux/mvebu/image/cortex-a53.mk
-+++ b/target/linux/mvebu/image/cortex-a53.mk
-@@ -7,6 +7,27 @@ define Device/globalscale_espressobin
- endef
- TARGET_DEVICES += globalscale_espressobin
- 
-+define Device/globalscale_espressobin-emmc
-+  $(call Device/Default-arm64)
-+  DEVICE_TITLE := ESPRESSObin eMMC (Marvell Armada 3700 Community Board)
-+  DEVICE_DTS := armada-3720-espressobin-emmc
-+endef
-+TARGET_DEVICES += globalscale_espressobin-emmc
-+
-+define Device/globalscale_espressobin-v7
-+  $(call Device/Default-arm64)
-+  DEVICE_TITLE := ESPRESSObin V7 (Marvell Armada 3700 Community Board)
-+  DEVICE_DTS := armada-3720-espressobin-v7
-+endef
-+TARGET_DEVICES += globalscale_espressobin-v7
-+
-+define Device/globalscale_espressobin-v7-emmc
-+  $(call Device/Default-arm64)
-+  DEVICE_TITLE := ESPRESSObin V7 eMMC (Marvell Armada 3700 Community Board)
-+  DEVICE_DTS := armada-3720-espressobin-v7-emmc
-+endef
-+TARGET_DEVICES += globalscale_espressobin-v7-emmc
-+
- define Device/marvell_armada-3720-db
-   $(call Device/Default-arm64)
-   DEVICE_TITLE := Marvell Armada 3720 Development Board DB-88F3720-DDR3
-diff --git a/target/linux/mvebu/patches-4.14/513-arm64-dts-marvell-armada37xx-Add-emmc-sdio-pinctrl-d.patch b/target/linux/mvebu/patches-4.14/513-arm64-dts-marvell-armada37xx-Add-emmc-sdio-pinctrl-d.patch
-new file mode 100644
-index 0000000000..19702a61ed
---- /dev/null
-+++ b/target/linux/mvebu/patches-4.14/513-arm64-dts-marvell-armada37xx-Add-emmc-sdio-pinctrl-d.patch
-@@ -0,0 +1,40 @@
-+From eefe328439642101774f0f5c4ea0dc6ba1cfb687 Mon Sep 17 00:00:00 2001
-+From: Ding Tao <miyatsu@qq.com>
-+Date: Fri, 26 Oct 2018 11:50:27 +0000
-+Subject: [PATCH] arm64: dts: marvell: armada37xx: Add emmc/sdio pinctrl
-+ definition
-+
-+Add emmc/sdio pinctrl definition for marvell armada37xx SoCs.
-+
-+Signed-off-by: Ding Tao <miyatsu@qq.com>
-+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-+---
-+ arch/arm64/boot/dts/marvell/armada-37xx.dtsi | 10 ++++++++++
-+ 1 file changed, 10 insertions(+)
-+
-+--- a/arch/arm64/boot/dts/marvell/armada-37xx.dtsi
-++++ b/arch/arm64/boot/dts/marvell/armada-37xx.dtsi
-+@@ -218,6 +218,11 @@
-+ 					groups = "uart2";
-+ 					function = "uart";
-+ 				};
-++
-++				mmc_pins: mmc-pins {
-++					groups = "emmc_nb";
-++					function = "emmc";
-++				};
-+ 			};
-+ 
-+ 			nb_pm: syscon@14000 {
-+@@ -247,6 +252,11 @@
-+ 					function = "mii";
-+ 				};
-+ 
-++				sdio_pins: sdio-pins {
-++					groups = "sdio_sb";
-++					function = "sdio";
-++				};
-++
-+ 			};
-+ 
-+ 			eth0: ethernet@30000 {
-diff --git a/target/linux/mvebu/patches-4.14/514-arm64-dts-marvell-armada-37xx-Enable-emmc-on-espress.patch b/target/linux/mvebu/patches-4.14/514-arm64-dts-marvell-armada-37xx-Enable-emmc-on-espress.patch
-new file mode 100644
-index 0000000000..26d090f050
---- /dev/null
-+++ b/target/linux/mvebu/patches-4.14/514-arm64-dts-marvell-armada-37xx-Enable-emmc-on-espress.patch
-@@ -0,0 +1,49 @@
-+From 43ebc7c1b3ed8198b9acf3019eca16e722f7331c Mon Sep 17 00:00:00 2001
-+From: Ding Tao <miyatsu@qq.com>
-+Date: Fri, 26 Oct 2018 11:50:28 +0000
-+Subject: [PATCH] arm64: dts: marvell: armada-37xx: Enable emmc on espressobin
-+
-+The ESPRESSObin board has a emmc interface available on U11: declare it
-+and let the bootloader enable it if the emmc is present.
-+
-+[gregory.clement@bootlin.com: disable the emmc by default]
-+Signed-off-by: Ding Tao <miyatsu@qq.com>
-+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-+---
-+ .../dts/marvell/armada-3720-espressobin.dts   | 22 +++++++++++++++++++
-+ 1 file changed, 22 insertions(+)
-+
-+--- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts
-++++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts
-+@@ -93,9 +93,31 @@
-+ 	cd-gpios = <&gpionb 3 GPIO_ACTIVE_LOW>;
-+ 	marvell,pad-type = "sd";
-+ 	vqmmc-supply = <&vcc_sd_reg1>;
-++
-++	pinctrl-names = "default";
-++	pinctrl-0 = <&sdio_pins>;
-+ 	status = "okay";
-+ };
-+ 
-++/* U11 */
-++&sdhci0 {
-++	non-removable;
-++	bus-width = <8>;
-++	mmc-ddr-1_8v;
-++	mmc-hs400-1_8v;
-++	marvell,xenon-emmc;
-++	marvell,xenon-tun-count = <9>;
-++	marvell,pad-type = "fixed-1-8v";
-++
-++	pinctrl-names = "default";
-++	pinctrl-0 = <&mmc_pins>;
-++/*
-++ * This eMMC is not populated on all boards, so disable it by
-++ * default and let the bootloader enable it, if it is present
-++ */
-++	status = "disabled";
-++};
-++
-+ &spi0 {
-+ 	status = "okay";
-+ 
-diff --git a/target/linux/mvebu/patches-4.14/521-arm64-dts-armada-3720-espressobin-correct-spi-node.patch b/target/linux/mvebu/patches-4.14/521-arm64-dts-armada-3720-espressobin-correct-spi-node.patch
-index 1d2bdfca75..fc7cb2af1e 100644
---- a/target/linux/mvebu/patches-4.14/521-arm64-dts-armada-3720-espressobin-correct-spi-node.patch
-+++ b/target/linux/mvebu/patches-4.14/521-arm64-dts-armada-3720-espressobin-correct-spi-node.patch
-@@ -29,7 +29,7 @@ Signed-off-by: Tomasz Maciej Nowak <tmn505@gmail.com>
- 
- --- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts
- +++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts
--@@ -101,25 +101,9 @@
-+@@ -123,25 +123,9 @@
-  
-  	flash@0 {
-  		reg = <0>;
-diff --git a/target/linux/mvebu/patches-4.14/522-arm64-dts-marvell-armada-3720-espressobin-add-ports-.patch b/target/linux/mvebu/patches-4.14/522-arm64-dts-marvell-armada-3720-espressobin-add-ports-.patch
-new file mode 100644
-index 0000000000..d0103bba19
---- /dev/null
-+++ b/target/linux/mvebu/patches-4.14/522-arm64-dts-marvell-armada-3720-espressobin-add-ports-.patch
-@@ -0,0 +1,26 @@
-+From 6ea9a1ee9367fb35acff1c08a0dc4213ff4687a0 Mon Sep 17 00:00:00 2001
-+From: Tomasz Maciej Nowak <tmn505@gmail.com>
-+Date: Tue, 9 Apr 2019 15:53:42 +0200
-+Subject: [PATCH] arm64: dts: marvell: armada-3720-espressobin: add ports
-+ phandle
-+
-+Instead of referencing the whole mdio node, add ports phandle to adjust
-+port labels in dts for different hardware iterations of ESPRESSObin
-+boards.
-+
-+Signed-off-by: Tomasz Maciej Nowak <tmn505@gmail.com>
-+---
-+ arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts | 2 +-
-+ 1 file changed, 1 insertion(+), 1 deletion(-)
-+
-+--- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts
-++++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dts
-+@@ -153,7 +153,7 @@
-+ 
-+ 		dsa,member = <0 0>;
-+ 
-+-		ports {
-++		ports: ports {
-+ 			#address-cells = <1>;
-+ 			#size-cells = <0>;
-+ 
--- 
-2.21.0
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+VyBkbml1IDA4LjA1LjIwMTkgb8KgMjA6NDAsIEtsYXVzIEt1ZGllbGthIHBpc3plOgo+IFJlY2Vu
+dGx5LCB1cGdyYWRlIGRldmljZSBhdXRvZGV0ZWN0aW9uIGhhcyBiZWVuIGFkZGVkIHRvIHRoZSBt
+dmVidSB0YXJnZXQuCj4gVGhpcyBleHBvc2VzIHNvbWUgc2hvcnRjb21pbmdzIG9mIHRoZSBnZW5l
+cmljIGV4cG9ydF9ib290ZGV2aWNlIGZ1bmN0aW9uLAo+IGUuZy4gb24gdGhlIFR1cnJpcyBPbW5p
+YTogZXhwb3J0X2Jvb3RkZXZpY2Ugc2lsZW50bHkgcmVwb3J0cyB0aGUgcm9vdAo+IHBhcnRpdGlv
+biB0byBiZSB0aGUgYm9vdCBkZXZpY2UuIFRoaXMgbWFrZXMgdGhlIHN5c3VwZ3JhZGUgcHJvY2Vz
+cyBmYWlsIGF0Cj4gc2V2ZXJhbCBwbGFjZXMuCj4gCj4gRml4IHRoaXMgYnkgY2xlYXJseSBkaXN0
+aW5ndWlzaGluZyBiZXR3ZWVuIC9wcm9jL2NtZGxpbmUgYXJndW1lbnRzIHdoaWNoCj4gc3BlY2lm
+eSB0aGUgYm9vdCBkaXNrLCBhbmQgdGhvc2Ugd2hpY2ggc3BlY2lmeSB0aGUgcm9vdCBwYXJ0aXRp
+b24uIE9ubHkgaW4KPiB0aGUgbGF0dGVyIGNhc2UsIHN0cmlwIG9mZiB0aGUgcGFydGl0aW9uLCBh
+bmQgZG8gaXQgY29uc2lzdGVudGx5Lgo+IHJvb3Q9UEFSVFVVSUQ9PHBzZXVkbyBQQVJUVVVJRCBm
+b3IgTUJSPiAoYW55IHBhcnRpdGlvbikgYW5kIHJvb3Q9L2Rldi8qCj4gKGFueSBwYXJ0aXRpb24p
+IGFyZSBhY2NlcHRlZC4KPiAKPiBUaGUgcm9vdCBvZiB0aGUgcHJvYmxlbSBpcyB0aGF0IHRoZSAq
+ZXhpc3RpbmcqIGV4cG9ydF9ib290ZGV2aWNlIGluCj4gL2xpYi91cGdyYWRlL2NvbW1vbi5zaCBi
+ZWhhdmVzIGRpZmZlcmVudGx5LCBpZiB0aGUga2VybmVsIGlzIGJvb3RlZCB3aXRoCj4gcm9vdD0v
+ZGV2Ly4uLiwgb3IgaWYgaXQgaXMgYm9vdGVkIHdpdGggcm9vdD1QQVJUVVVJRD0uLi4KPiAKPiBJ
+biB0aGUgZm9ybWVyIGNhc2UsIGl0IHJlcG9ydHMgYmFjayBtYWpvci9taW5vciBvZiB0aGUgcm9v
+dCBwYXJ0aXRpb24sCj4gaW4gdGhlIGxhdHRlciBjYXNlIGl0IHJlcG9ydHMgYmFjayBtYWpvci9t
+aW5vciBvZiB0aGUgY29tcGxldGUgYm9vdCBkaXNrLgo+IAo+IFRhcmdldHMsIHdoaWNoIGJvb3Qg
+d2l0aCByb290PS9kZXYvLi4uICphbmQqIHVzZSBleHBvcnRfYm9vdGRldmljZSAvCj4gZXhwb3J0
+X3BhcnRkZXZpY2UsIGhhdmUgYWRkZWQgd29ya2Fyb3VuZHMgdG8gdGhpcyBiZWhhdmlvdXIsIGJ5
+IHNwZWNpZnlpbmcKPiAqbmVnYXRpdmUqIGluY3JlbWVudHMgdG8gdGhlIGV4cG9ydF9wYXJ0ZGV2
+aWNlIGZ1bmN0aW9uLgo+IAo+IENvbnNlcXVlbnRseSwgdGhvc2UgdGFyZ2V0cyBoYXZlIHRvIGJl
+IGFkYXB0ZWQgdG8gdXNlIHBvc2l0aXZlIGluY3JlbWVudHMsCj4gb3RoZXJ3aXNlIHRoZXkgYXJl
+IGJyb2tlbiBieSB0aGUgY2hhbmdlIHRvIGV4cG9ydF9ib290ZGV2aWNlLgo+IAo+IEZpeGVzOiA0
+ZTgzNDVmZjY4ICgibXZlYnU6IGJhc2UtZmlsZXM6IGF1dG9kZXRlY3QgdXBncmFkZSBkZXZpY2Ui
+KQo+IFNpZ25lZC1vZmYtYnk6IEtsYXVzIEt1ZGllbGthIDxrbGF1cy5rdWRpZWxrYUBnbWFpbC5j
+b20+CgpUZXN0ZWQtYnk6IFRvbWFzeiBNYWNpZWogTm93YWsgPHRvbWVrX25AbzIucGw+CgpvbiBH
+bG9iYWxTY2FsZSBFU1BSRVNTT2Jpbi4KCj4gLS0tCj4gdjI6Cj4gCj4gUmVtb3ZlIHdvcmthcm91
+bmRzIGZvciB0aGUgb2xkLCBpbmNvbnNpc3RlbnQgYmVoYXZpb3VyIGZyb20gdGhlIGZvbGxvd2lu
+Zwo+IHRhcmdldHM6IGFwbTgyMXh4LCBicmNtMjcwOCwgb21hcCwgc3VueGkuCj4gCj4gdjM6Cj4g
+Cj4gTWFrZSBleHBvcnRfYm9vdGRldmljZSBtb3JlIGdlbmVyaWMuIEl0IG5vdyBhY2NlcHRzCj4g
+cm9vdD1QQVJUVVVJRD08cHNldWRvIFBBUlRVVUlEIGZvciBNQlI+IChhbnkgcGFydGl0aW9uKSBh
+bmQKPiByb290PS9kZXYvKiAoYW55IHBhcnRpdGlvbikuCj4gCj4gIC4uLi9iYXNlLWZpbGVzL2Zp
+bGVzL2xpYi91cGdyYWRlL2NvbW1vbi5zaCAgICB8IDMyICsrKysrKysrKysrLS0tLS0tLS0KPiAg
+Li4uL2FwbTgyMXh4L2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvd2Rib29rLnNoIHwgMTEgKystLS0t
+LQo+ICAuLi4vYmFzZS1maWxlcy9saWIvdXBncmFkZS9wbGF0Zm9ybS5zaCAgICAgICAgfCAxMSAr
+Ky0tLS0tCj4gIC4uLi9iYXNlLWZpbGVzL2xpYi9wcmVpbml0Lzc5X21vdmVfY29uZmlnICAgICB8
+ICAyICstCj4gIC4uLi9vbWFwL2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2ggICB8
+ICA3ICsrLS0KPiAgLi4uL2Jhc2UtZmlsZXMvbGliL3ByZWluaXQvNzlfbW92ZV9jb25maWcgICAg
+IHwgIDIgKy0KPiAgLi4uL3N1bnhpL2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2gg
+IHwgIDcgKystLQo+ICA3IGZpbGVzIGNoYW5nZWQsIDMzIGluc2VydGlvbnMoKyksIDM5IGRlbGV0
+aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9wYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvbGliL3Vw
+Z3JhZGUvY29tbW9uLnNoIGIvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2xpYi91cGdyYWRlL2Nv
+bW1vbi5zaAo+IGluZGV4IGIzYTI5ZmIzMi4uYmJlZGVlZmQyIDEwMDY0NAo+IC0tLSBhL3BhY2th
+Z2UvYmFzZS1maWxlcy9maWxlcy9saWIvdXBncmFkZS9jb21tb24uc2gKPiArKysgYi9wYWNrYWdl
+L2Jhc2UtZmlsZXMvZmlsZXMvbGliL3VwZ3JhZGUvY29tbW9uLnNoCj4gQEAgLTEwMSwzNSArMTAx
+LDQxIEBAIGdldF9tYWdpY19sb25nKCkgewo+ICB9Cj4gIAo+ICBleHBvcnRfYm9vdGRldmljZSgp
+IHsKPiAtCWxvY2FsIGNtZGxpbmUgdXVpZCBkaXNrIHVldmVudCBsaW5lCj4gKwlsb2NhbCBjbWRs
+aW5lIGJvb3RkaXNrIHJvb3RwYXJ0IHV1aWQgYmxvY2tkZXYgdWV2ZW50IGxpbmUKPiAgCWxvY2Fs
+IE1BSk9SIE1JTk9SIERFVk5BTUUgREVWVFlQRQo+ICAKPiAgCWlmIHJlYWQgY21kbGluZSA8IC9w
+cm9jL2NtZGxpbmU7IHRoZW4KPiAgCQljYXNlICIkY21kbGluZSIgaW4KPiAgCQkJKmJsb2NrMm10
+ZD0qKQo+IC0JCQkJZGlzaz0iJHtjbWRsaW5lIyMqYmxvY2sybXRkPX0iCj4gLQkJCQlkaXNrPSIk
+e2Rpc2slJSwqfSIKPiArCQkJCWJvb3RkaXNrPSIke2NtZGxpbmUjIypibG9jazJtdGQ9fSIKPiAr
+CQkJCWJvb3RkaXNrPSIke2Jvb3RkaXNrJSUsKn0iCj4gIAkJCTs7Cj4gIAkJCSpyb290PSopCj4g
+LQkJCQlkaXNrPSIke2NtZGxpbmUjIypyb290PX0iCj4gLQkJCQlkaXNrPSIke2Rpc2slJSAqfSIK
+PiArCQkJCXJvb3RwYXJ0PSIke2NtZGxpbmUjIypyb290PX0iCj4gKwkJCQlyb290cGFydD0iJHty
+b290cGFydCUlICp9Igo+ICAJCQk7Owo+ICAJCWVzYWMKPiAgCj4gLQkJY2FzZSAiJGRpc2siIGlu
+Cj4gLQkJCVBBUlRVVUlEPVthLWYwLTldW2EtZjAtOV1bYS1mMC05XVthLWYwLTldW2EtZjAtOV1b
+YS1mMC05XVthLWYwLTldW2EtZjAtOV0tMDIpCj4gLQkJCQl1dWlkPSIke2Rpc2sjUEFSVFVVSUQ9
+fSIKPiAtCQkJCXV1aWQ9IiR7dXVpZCUtMDJ9Igo+IC0JCQkJZm9yIGRpc2sgaW4gJChmaW5kIC9k
+ZXYgLXR5cGUgYik7IGRvCj4gLQkJCQkJc2V0IC0tICQoZGQgaWY9JGRpc2sgYnM9MSBza2lwPTQ0
+MCBjb3VudD00IDI+L2Rldi9udWxsIHwgaGV4ZHVtcCAtdiAtZSAnNC8xICIlMDJ4ICInKQo+ICsJ
+CWNhc2UgIiRib290ZGlzayIgaW4KPiArCQkJL2Rldi8qKQo+ICsJCQkJdWV2ZW50PSIvc3lzL2Ns
+YXNzL2Jsb2NrLyR7Ym9vdGRpc2sjIyovfS91ZXZlbnQiCj4gKwkJCTs7Cj4gKwkJZXNhYwo+ICsK
+PiArCQljYXNlICIkcm9vdHBhcnQiIGluCj4gKwkJCVBBUlRVVUlEPVthLWYwLTldW2EtZjAtOV1b
+YS1mMC05XVthLWYwLTldW2EtZjAtOV1bYS1mMC05XVthLWYwLTldW2EtZjAtOV0tW2EtZjAtOV1b
+YS1mMC05XSkKPiArCQkJCXV1aWQ9IiR7cm9vdHBhcnQjUEFSVFVVSUQ9fSIKPiArCQkJCXV1aWQ9
+IiR7dXVpZCUtW2EtZjAtOV1bYS1mMC05XX0iCj4gKwkJCQlmb3IgYmxvY2tkZXYgaW4gJChmaW5k
+IC9kZXYgLXR5cGUgYik7IGRvCj4gKwkJCQkJc2V0IC0tICQoZGQgaWY9JGJsb2NrZGV2IGJzPTEg
+c2tpcD00NDAgY291bnQ9NCAyPi9kZXYvbnVsbCB8IGhleGR1bXAgLXYgLWUgJzQvMSAiJTAyeCAi
+JykKPiAgCQkJCQlpZiBbICIkNCQzJDIkMSIgPSAiJHV1aWQiIF07IHRoZW4KPiAtCQkJCQkJdWV2
+ZW50PSIvc3lzL2NsYXNzL2Jsb2NrLyR7ZGlzayMjKi99L3VldmVudCIKPiArCQkJCQkJdWV2ZW50
+PSIvc3lzL2NsYXNzL2Jsb2NrLyR7YmxvY2tkZXYjIyovfS91ZXZlbnQiCj4gIAkJCQkJCWJyZWFr
+Cj4gIAkJCQkJZmkKPiAgCQkJCWRvbmUKPiAgCQkJOzsKPiAgCQkJL2Rldi8qKQo+IC0JCQkJdWV2
+ZW50PSIvc3lzL2NsYXNzL2Jsb2NrLyR7ZGlzayMjKi99L3VldmVudCIKPiArCQkJCXVldmVudD0i
+L3N5cy9jbGFzcy9ibG9jay8ke3Jvb3RwYXJ0IyMqL30vLi4vdWV2ZW50Igo+ICAJCQk7Owo+ICAJ
+CWVzYWMKPiAgCj4gZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9hcG04MjF4eC9iYXNlLWZpbGVz
+L2xpYi91cGdyYWRlL3dkYm9vay5zaCBiL3RhcmdldC9saW51eC9hcG04MjF4eC9iYXNlLWZpbGVz
+L2xpYi91cGdyYWRlL3dkYm9vay5zaAo+IGluZGV4IDIyODdlMDYxOS4uYzE5MTI3MTE0IDEwMDY0
+NAo+IC0tLSBhL3RhcmdldC9saW51eC9hcG04MjF4eC9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL3dk
+Ym9vay5zaAo+ICsrKyBiL3RhcmdldC9saW51eC9hcG04MjF4eC9iYXNlLWZpbGVzL2xpYi91cGdy
+YWRlL3dkYm9vay5zaAo+IEBAIC03LDcgKzcsNyBAQCBtYmxfZG9fcGxhdGZvcm1fY2hlY2soKSB7
+Cj4gIAo+ICAJWyAiJCMiIC1ndCAxIF0gJiYgcmV0dXJuIDEKPiAgCj4gLQlleHBvcnRfYm9vdGRl
+dmljZSAmJiBleHBvcnRfcGFydGRldmljZSBkaXNrZGV2IC0yIHx8IHsKPiArCWV4cG9ydF9ib290
+ZGV2aWNlICYmIGV4cG9ydF9wYXJ0ZGV2aWNlIGRpc2tkZXYgMCB8fCB7Cj4gIAkJZWNobyAiVW5h
+YmxlIHRvIGRldGVybWluZSB1cGdyYWRlIGRldmljZSIKPiAgCQlyZXR1cm4gMQo+ICAJfQo+IEBA
+IC0zNiw3ICszNiw3IEBAIG1ibF9kb19wbGF0Zm9ybV9jaGVjaygpIHsKPiAgbWJsX2RvX3VwZ3Jh
+ZGUoKSB7Cj4gIAlsb2NhbCBkaXNrZGV2IHBhcnRkZXYgZGlmZgo+ICAKPiAtCWV4cG9ydF9ib290
+ZGV2aWNlICYmIGV4cG9ydF9wYXJ0ZGV2aWNlIGRpc2tkZXYgLTIgfHwgewo+ICsJZXhwb3J0X2Jv
+b3RkZXZpY2UgJiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAwIHx8IHsKPiAgCQllY2hvICJV
+bmFibGUgdG8gZGV0ZXJtaW5lIHVwZ3JhZGUgZGV2aWNlIgo+ICAJCXJldHVybiAxCj4gIAl9Cj4g
+QEAgLTcwLDEwICs3MCw2IEBAIG1ibF9kb191cGdyYWRlKCkgewo+ICAKPiAgCSNpdGVyYXRlIG92
+ZXIgZWFjaCBwYXJ0aXRpb24gZnJvbSB0aGUgaW1hZ2UgYW5kIHdyaXRlIGl0IHRvIHRoZSBib290
+IGRpc2sKPiAgCXdoaWxlIHJlYWQgcGFydCBzdGFydCBzaXplOyBkbwo+IC0JCSMgcm9vdCBpcyAv
+ZGV2L3NkW2F8Yl0yIGFuZCBub3QgL2Rldi9zZFthfGJdIHRoaXMgY2F1c2VzIHNvbWUgcHJvYmxl
+bQo+IC0JCSMgb25lIG9mIHdoaWNoIGlzIHRoaXMgb2Zmc2V0LCBJJ20gbm90IHN1cmUgd2hhdCdz
+IHRoZSBiZXN0IGZpeCwgc28KPiAtCQkjIGhlcmUncyBhIFdBLgo+IC0JCWxldCBwYXJ0PSQoKHBh
+cnQgLSAyKSkKPiAgCQlpZiBleHBvcnRfcGFydGRldmljZSBwYXJ0ZGV2ICRwYXJ0OyB0aGVuCj4g
+IAkJCWVjaG8gIldyaXRpbmcgaW1hZ2UgdG8gL2Rldi8kcGFydGRldi4uLiIKPiAgCQkJZ2V0X2lt
+YWdlICIkQCIgfCBkZCBvZj0iL2Rldi8kcGFydGRldiIgaWJzPSI1MTIiIG9icz0xTSBza2lwPSIk
+c3RhcnQiIGNvdW50PSIkc2l6ZSIgY29udj1mc3luYwo+IEBAIC05MCw4ICs4Niw3IEBAIG1ibF9k
+b191cGdyYWRlKCkgewo+ICBtYmxfY29weV9jb25maWcoKSB7Cj4gIAlsb2NhbCBwYXJ0ZGV2Cj4g
+IAo+IC0JIyBTYW1lIGFzIGFib3ZlIC9kZXYvc2RbYXxiXTIgaXMgcm9vdCwgc28gL2Jvb3QgaXMg
+LTEKPiAtCWlmIGV4cG9ydF9wYXJ0ZGV2aWNlIHBhcnRkZXYgLTE7IHRoZW4KPiArCWlmIGV4cG9y
+dF9wYXJ0ZGV2aWNlIHBhcnRkZXYgMTsgdGhlbgo+ICAJCW1vdW50IC10IGV4dDQgLW8gcncsbm9h
+dGltZSAiL2Rldi8kcGFydGRldiIgL21udAo+ICAJCWNwIC1hZiAiJENPTkZfVEFSIiAvbW50Lwo+
+ICAJCXVtb3VudCAvbW50Cj4gZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9icmNtMjcwOC9iYXNl
+LWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoIGIvdGFyZ2V0L2xpbnV4L2JyY20yNzA4L2Jh
+c2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2gKPiBpbmRleCA2MmVlZGU1M2QuLjM3ZTQ3
+OTI3MiAxMDA2NDQKPiAtLS0gYS90YXJnZXQvbGludXgvYnJjbTI3MDgvYmFzZS1maWxlcy9saWIv
+dXBncmFkZS9wbGF0Zm9ybS5zaAo+ICsrKyBiL3RhcmdldC9saW51eC9icmNtMjcwOC9iYXNlLWZp
+bGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoCj4gQEAgLTksNyArOSw3IEBAIHBsYXRmb3JtX2No
+ZWNrX2ltYWdlKCkgewo+ICAKPiAgCVsgIiQjIiAtZ3QgMSBdICYmIHJldHVybiAxCj4gIAo+IC0J
+ZXhwb3J0X2Jvb3RkZXZpY2UgJiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAtMiB8fCB7Cj4g
+KwlleHBvcnRfYm9vdGRldmljZSAmJiBleHBvcnRfcGFydGRldmljZSBkaXNrZGV2IDAgfHwgewo+
+ICAJCWVjaG8gIlVuYWJsZSB0byBkZXRlcm1pbmUgdXBncmFkZSBkZXZpY2UiCj4gIAkJcmV0dXJu
+IDEKPiAgCX0KPiBAQCAtMzgsNyArMzgsNyBAQCBwbGF0Zm9ybV9jaGVja19pbWFnZSgpIHsKPiAg
+cGxhdGZvcm1fZG9fdXBncmFkZSgpIHsKPiAgCWxvY2FsIGRpc2tkZXYgcGFydGRldiBkaWZmCj4g
+IAo+IC0JZXhwb3J0X2Jvb3RkZXZpY2UgJiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAtMiB8
+fCB7Cj4gKwlleHBvcnRfYm9vdGRldmljZSAmJiBleHBvcnRfcGFydGRldmljZSBkaXNrZGV2IDAg
+fHwgewo+ICAJCWVjaG8gIlVuYWJsZSB0byBkZXRlcm1pbmUgdXBncmFkZSBkZXZpY2UiCj4gIAkJ
+cmV0dXJuIDEKPiAgCX0KPiBAQCAtNzIsMTAgKzcyLDYgQEAgcGxhdGZvcm1fZG9fdXBncmFkZSgp
+IHsKPiAgCj4gIAkjaXRlcmF0ZSBvdmVyIGVhY2ggcGFydGl0aW9uIGZyb20gdGhlIGltYWdlIGFu
+ZCB3cml0ZSBpdCB0byB0aGUgYm9vdCBkaXNrCj4gIAl3aGlsZSByZWFkIHBhcnQgc3RhcnQgc2l6
+ZTsgZG8KPiAtCQkjIHJvb3QgaXMgL2Rldi9zZFthfGJdMiBhbmQgbm90IC9kZXYvc2RbYXxiXSB0
+aGlzIGNhdXNlcyBzb21lIHByb2JsZW0KPiAtCQkjIG9uZSBvZiB3aGljaCBpcyB0aGlzIG9mZnNl
+dCwgSSdtIG5vdCBzdXJlIHdoYXQncyB0aGUgYmVzdCBmaXgsIHNvCj4gLQkJIyBoZXJlJ3MgYSBX
+QS4KPiAtCQlsZXQgcGFydD0kKChwYXJ0IC0gMikpCj4gIAkJaWYgZXhwb3J0X3BhcnRkZXZpY2Ug
+cGFydGRldiAkcGFydDsgdGhlbgo+ICAJCQllY2hvICJXcml0aW5nIGltYWdlIHRvIC9kZXYvJHBh
+cnRkZXYuLi4iCj4gIAkJCWdldF9pbWFnZSAiJEAiIHwgZGQgb2Y9Ii9kZXYvJHBhcnRkZXYiIGli
+cz0iNTEyIiBvYnM9MU0gc2tpcD0iJHN0YXJ0IiBjb3VudD0iJHNpemUiIGNvbnY9ZnN5bmMKPiBA
+QCAtOTIsOCArODgsNyBAQCBwbGF0Zm9ybV9kb191cGdyYWRlKCkgewo+ICBwbGF0Zm9ybV9jb3B5
+X2NvbmZpZygpIHsKPiAgCWxvY2FsIHBhcnRkZXYKPiAgCj4gLQkjIFNhbWUgYXMgYWJvdmUgL2Rl
+di9zZFthfGJdMiBpcyByb290LCBzbyAvYm9vdCBpcyAtMQo+IC0JaWYgZXhwb3J0X3BhcnRkZXZp
+Y2UgcGFydGRldiAtMTsgdGhlbgo+ICsJaWYgZXhwb3J0X3BhcnRkZXZpY2UgcGFydGRldiAxOyB0
+aGVuCj4gIAkJbWtkaXIgLXAgL2Jvb3QKPiAgCQlbIC1mIC9ib290L2tlcm5lbC5pbWcgXSB8fCBt
+b3VudCAtdCB2ZmF0IC1vIHJ3LG5vYXRpbWUgIi9kZXYvJHBhcnRkZXYiIC9ib290Cj4gIAkJY3Ag
+LWFmICIkQ09ORl9UQVIiIC9ib290Lwo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvb21hcC9i
+YXNlLWZpbGVzL2xpYi9wcmVpbml0Lzc5X21vdmVfY29uZmlnIGIvdGFyZ2V0L2xpbnV4L29tYXAv
+YmFzZS1maWxlcy9saWIvcHJlaW5pdC83OV9tb3ZlX2NvbmZpZwo+IGluZGV4IGMxMTI1ODg2OC4u
+ODMxNzFiM2JhIDEwMDY0NAo+IC0tLSBhL3RhcmdldC9saW51eC9vbWFwL2Jhc2UtZmlsZXMvbGli
+L3ByZWluaXQvNzlfbW92ZV9jb25maWcKPiArKysgYi90YXJnZXQvbGludXgvb21hcC9iYXNlLWZp
+bGVzL2xpYi9wcmVpbml0Lzc5X21vdmVfY29uZmlnCj4gQEAgLTYsNyArNiw3IEBAIG1vdmVfY29u
+ZmlnKCkgewo+ICAKPiAgCS4gL2xpYi91cGdyYWRlL2NvbW1vbi5zaAo+ICAKPiAtCWlmIGV4cG9y
+dF9ib290ZGV2aWNlICYmIGV4cG9ydF9wYXJ0ZGV2aWNlIHBhcnRkZXYgLTE7IHRoZW4KPiArCWlm
+IGV4cG9ydF9ib290ZGV2aWNlICYmIGV4cG9ydF9wYXJ0ZGV2aWNlIHBhcnRkZXYgMTsgdGhlbgo+
+ICAJCWlmIG1vdW50IC10IHZmYXQgLW8gcncsbm9hdGltZSAiL2Rldi8kcGFydGRldiIgL21udDsg
+dGhlbgo+ICAJCQlpZiBbIC1mIC9tbnQvc3lzdXBncmFkZS50Z3ogXTsgdGhlbgo+ICAJCQkJbXYg
+LWYgL21udC9zeXN1cGdyYWRlLnRneiAvCj4gZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9vbWFw
+L2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZvcm0uc2ggYi90YXJnZXQvbGludXgvb21hcC9i
+YXNlLWZpbGVzL2xpYi91cGdyYWRlL3BsYXRmb3JtLnNoCj4gaW5kZXggODhlZjQ3OTBlLi5hYmU5
+MTBiMTUgMTAwNjQ0Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L29tYXAvYmFzZS1maWxlcy9saWIvdXBn
+cmFkZS9wbGF0Zm9ybS5zaAo+ICsrKyBiL3RhcmdldC9saW51eC9vbWFwL2Jhc2UtZmlsZXMvbGli
+L3VwZ3JhZGUvcGxhdGZvcm0uc2gKPiBAQCAtMSw3ICsxLDcgQEAKPiAgcGxhdGZvcm1fY2hlY2tf
+aW1hZ2UoKSB7Cj4gIAlsb2NhbCBkaXNrZGV2IHBhcnRkZXYgZGlmZgo+ICAKPiAtCWV4cG9ydF9i
+b290ZGV2aWNlICYmIGV4cG9ydF9wYXJ0ZGV2aWNlIGRpc2tkZXYgLTIgfHwgewo+ICsJZXhwb3J0
+X2Jvb3RkZXZpY2UgJiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAwIHx8IHsKPiAgCQllY2hv
+ICJVbmFibGUgdG8gZGV0ZXJtaW5lIHVwZ3JhZGUgZGV2aWNlIgo+ICAJCXJldHVybiAxCj4gIAl9
+Cj4gQEAgLTI4LDcgKzI4LDcgQEAgcGxhdGZvcm1fY2hlY2tfaW1hZ2UoKSB7Cj4gIHBsYXRmb3Jt
+X2NvcHlfY29uZmlnKCkgewo+ICAJbG9jYWwgcGFydGRldgo+ICAKPiAtCWlmIGV4cG9ydF9wYXJ0
+ZGV2aWNlIHBhcnRkZXYgLTE7IHRoZW4KPiArCWlmIGV4cG9ydF9wYXJ0ZGV2aWNlIHBhcnRkZXYg
+MTsgdGhlbgo+ICAJCW1vdW50IC10IHZmYXQgLW8gcncsbm9hdGltZSAiL2Rldi8kcGFydGRldiIg
+L21udAo+ICAJCWNwIC1hZiAiJENPTkZfVEFSIiAvbW50Lwo+ICAJCXVtb3VudCAvbW50Cj4gQEAg
+LTM4LDcgKzM4LDcgQEAgcGxhdGZvcm1fY29weV9jb25maWcoKSB7Cj4gIHBsYXRmb3JtX2RvX3Vw
+Z3JhZGUoKSB7Cj4gIAlsb2NhbCBkaXNrZGV2IHBhcnRkZXYgZGlmZgo+ICAKPiAtCWV4cG9ydF9i
+b290ZGV2aWNlICYmIGV4cG9ydF9wYXJ0ZGV2aWNlIGRpc2tkZXYgLTIgfHwgewo+ICsJZXhwb3J0
+X2Jvb3RkZXZpY2UgJiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAwIHx8IHsKPiAgCQllY2hv
+ICJVbmFibGUgdG8gZGV0ZXJtaW5lIHVwZ3JhZGUgZGV2aWNlIgo+ICAJCXJldHVybiAxCj4gIAl9
+Cj4gQEAgLTc0LDcgKzc0LDYgQEAgcGxhdGZvcm1fZG9fdXBncmFkZSgpIHsKPiAgCWdldF9pbWFn
+ZSAiJEAiIHwgZGQgb2Y9IiRkaXNrZGV2IiBicz0xMDI0IHNraXA9OCBzZWVrPTggY291bnQ9MTAx
+NiBjb252PWZzeW5jCj4gIAkjaXRlcmF0ZSBvdmVyIGVhY2ggcGFydGl0aW9uIGZyb20gdGhlIGlt
+YWdlIGFuZCB3cml0ZSBpdCB0byB0aGUgYm9vdCBkaXNrCj4gIAl3aGlsZSByZWFkIHBhcnQgc3Rh
+cnQgc2l6ZTsgZG8KPiAtCQlwYXJ0PSIkKCgkcGFydCAtIDIpKSIKPiAgCQlpZiBleHBvcnRfcGFy
+dGRldmljZSBwYXJ0ZGV2ICRwYXJ0OyB0aGVuCj4gIAkJCWVjaG8gIldyaXRpbmcgaW1hZ2UgdG8g
+L2Rldi8kcGFydGRldi4uLiIKPiAgCQkJZ2V0X2ltYWdlICIkQCIgfCBkZCBvZj0iL2Rldi8kcGFy
+dGRldiIgaWJzPSI1MTIiIG9icz0xTSBza2lwPSIkc3RhcnQiIGNvdW50PSIkc2l6ZSIgY29udj1m
+c3luYwo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvc3VueGkvYmFzZS1maWxlcy9saWIvcHJl
+aW5pdC83OV9tb3ZlX2NvbmZpZyBiL3RhcmdldC9saW51eC9zdW54aS9iYXNlLWZpbGVzL2xpYi9w
+cmVpbml0Lzc5X21vdmVfY29uZmlnCj4gaW5kZXggYzExMjU4ODY4Li44MzE3MWIzYmEgMTAwNjQ0
+Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L3N1bnhpL2Jhc2UtZmlsZXMvbGliL3ByZWluaXQvNzlfbW92
+ZV9jb25maWcKPiArKysgYi90YXJnZXQvbGludXgvc3VueGkvYmFzZS1maWxlcy9saWIvcHJlaW5p
+dC83OV9tb3ZlX2NvbmZpZwo+IEBAIC02LDcgKzYsNyBAQCBtb3ZlX2NvbmZpZygpIHsKPiAgCj4g
+IAkuIC9saWIvdXBncmFkZS9jb21tb24uc2gKPiAgCj4gLQlpZiBleHBvcnRfYm9vdGRldmljZSAm
+JiBleHBvcnRfcGFydGRldmljZSBwYXJ0ZGV2IC0xOyB0aGVuCj4gKwlpZiBleHBvcnRfYm9vdGRl
+dmljZSAmJiBleHBvcnRfcGFydGRldmljZSBwYXJ0ZGV2IDE7IHRoZW4KPiAgCQlpZiBtb3VudCAt
+dCB2ZmF0IC1vIHJ3LG5vYXRpbWUgIi9kZXYvJHBhcnRkZXYiIC9tbnQ7IHRoZW4KPiAgCQkJaWYg
+WyAtZiAvbW50L3N5c3VwZ3JhZGUudGd6IF07IHRoZW4KPiAgCQkJCW12IC1mIC9tbnQvc3lzdXBn
+cmFkZS50Z3ogLwo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvc3VueGkvYmFzZS1maWxlcy9s
+aWIvdXBncmFkZS9wbGF0Zm9ybS5zaCBiL3RhcmdldC9saW51eC9zdW54aS9iYXNlLWZpbGVzL2xp
+Yi91cGdyYWRlL3BsYXRmb3JtLnNoCj4gaW5kZXggODhlZjQ3OTBlLi5hYmU5MTBiMTUgMTAwNjQ0
+Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L3N1bnhpL2Jhc2UtZmlsZXMvbGliL3VwZ3JhZGUvcGxhdGZv
+cm0uc2gKPiArKysgYi90YXJnZXQvbGludXgvc3VueGkvYmFzZS1maWxlcy9saWIvdXBncmFkZS9w
+bGF0Zm9ybS5zaAo+IEBAIC0xLDcgKzEsNyBAQAo+ICBwbGF0Zm9ybV9jaGVja19pbWFnZSgpIHsK
+PiAgCWxvY2FsIGRpc2tkZXYgcGFydGRldiBkaWZmCj4gIAo+IC0JZXhwb3J0X2Jvb3RkZXZpY2Ug
+JiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAtMiB8fCB7Cj4gKwlleHBvcnRfYm9vdGRldmlj
+ZSAmJiBleHBvcnRfcGFydGRldmljZSBkaXNrZGV2IDAgfHwgewo+ICAJCWVjaG8gIlVuYWJsZSB0
+byBkZXRlcm1pbmUgdXBncmFkZSBkZXZpY2UiCj4gIAkJcmV0dXJuIDEKPiAgCX0KPiBAQCAtMjgs
+NyArMjgsNyBAQCBwbGF0Zm9ybV9jaGVja19pbWFnZSgpIHsKPiAgcGxhdGZvcm1fY29weV9jb25m
+aWcoKSB7Cj4gIAlsb2NhbCBwYXJ0ZGV2Cj4gIAo+IC0JaWYgZXhwb3J0X3BhcnRkZXZpY2UgcGFy
+dGRldiAtMTsgdGhlbgo+ICsJaWYgZXhwb3J0X3BhcnRkZXZpY2UgcGFydGRldiAxOyB0aGVuCj4g
+IAkJbW91bnQgLXQgdmZhdCAtbyBydyxub2F0aW1lICIvZGV2LyRwYXJ0ZGV2IiAvbW50Cj4gIAkJ
+Y3AgLWFmICIkQ09ORl9UQVIiIC9tbnQvCj4gIAkJdW1vdW50IC9tbnQKPiBAQCAtMzgsNyArMzgs
+NyBAQCBwbGF0Zm9ybV9jb3B5X2NvbmZpZygpIHsKPiAgcGxhdGZvcm1fZG9fdXBncmFkZSgpIHsK
+PiAgCWxvY2FsIGRpc2tkZXYgcGFydGRldiBkaWZmCj4gIAo+IC0JZXhwb3J0X2Jvb3RkZXZpY2Ug
+JiYgZXhwb3J0X3BhcnRkZXZpY2UgZGlza2RldiAtMiB8fCB7Cj4gKwlleHBvcnRfYm9vdGRldmlj
+ZSAmJiBleHBvcnRfcGFydGRldmljZSBkaXNrZGV2IDAgfHwgewo+ICAJCWVjaG8gIlVuYWJsZSB0
+byBkZXRlcm1pbmUgdXBncmFkZSBkZXZpY2UiCj4gIAkJcmV0dXJuIDEKPiAgCX0KPiBAQCAtNzQs
+NyArNzQsNiBAQCBwbGF0Zm9ybV9kb191cGdyYWRlKCkgewo+ICAJZ2V0X2ltYWdlICIkQCIgfCBk
+ZCBvZj0iJGRpc2tkZXYiIGJzPTEwMjQgc2tpcD04IHNlZWs9OCBjb3VudD0xMDE2IGNvbnY9ZnN5
+bmMKPiAgCSNpdGVyYXRlIG92ZXIgZWFjaCBwYXJ0aXRpb24gZnJvbSB0aGUgaW1hZ2UgYW5kIHdy
+aXRlIGl0IHRvIHRoZSBib290IGRpc2sKPiAgCXdoaWxlIHJlYWQgcGFydCBzdGFydCBzaXplOyBk
+bwo+IC0JCXBhcnQ9IiQoKCRwYXJ0IC0gMikpIgo+ICAJCWlmIGV4cG9ydF9wYXJ0ZGV2aWNlIHBh
+cnRkZXYgJHBhcnQ7IHRoZW4KPiAgCQkJZWNobyAiV3JpdGluZyBpbWFnZSB0byAvZGV2LyRwYXJ0
+ZGV2Li4uIgo+ICAJCQlnZXRfaW1hZ2UgIiRAIiB8IGRkIG9mPSIvZGV2LyRwYXJ0ZGV2IiBpYnM9
+IjUxMiIgb2JzPTFNIHNraXA9IiRzdGFydCIgY291bnQ9IiRzaXplIiBjb252PWZzeW5jCj4gCgoK
+LS0gClRNTgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
+ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
+bAo=

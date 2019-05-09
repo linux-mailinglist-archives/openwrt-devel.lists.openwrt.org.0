@@ -2,76 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10D9518CF3
-	for <lists+openwrt-devel@lfdr.de>; Thu,  9 May 2019 17:28:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49B2D18CF4
+	for <lists+openwrt-devel@lfdr.de>; Thu,  9 May 2019 17:28:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QKDA2EixVFSGE/E5KWNOD6BfETxAywo93nMLbj84V6s=; b=WdIIjj9AwF/4b9
-	V9c8Tsfzw2X/3cwwO4rmZJbOBsgMXmX8AvtDmAdVrJxQbQDRFwcT/18IKiyxKeHvUAfqIbEBoCvp/
-	T1fC4o+j1yYA0HdtchCkRNuUHjIC3y6keGcAbUtlzGzZo+lxDq1ihnmY7ChhzcgEcVUegBSHcXMrI
-	WWb562fOXlekzYTyvSCBEsbNZ83A/3Kg2bYdZLhQ46q9mAnto2oB+4Ryx70GASvdqcLqIgI1v92if
-	wqzatHbV9xIAmjovCA4AqBBNRajSQkPDC0xnYmByMShKMXs3KI36XO/dwoW+COwVu4FDgmBqvBv2k
-	pTNr/mRHTS4xtgz9c30w==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l2enxvkJrAyssGVAwskKtHDSSMFdRY+qT3PMPwpio2s=; b=FnnLxFZDh4UI3v
+	jKO8F8rqac0MIPdSEhkXmqRYHBPQkH69BogK+GxK1rYiSZd1Jzk5BJeyofGDHeQWayOHSRJ7WNJ+N
+	URccm8UcK5M8U2I9cwfLokVe+1Chv/UslnecuWenM7obDdvgK+yCaTsGkRiBMfxtcMrYvW+/ORFnd
+	zdl6cKW5XaAoi6FOTTOmd0RXIFSKV5EngaiAu4gWQGydJEw8my+64sQna4TRIPIdtpT4ezazVe478
+	V0nG57NzmUFFPFj/ihj8AtJi3iua25K+dcAPEe/2Lrxhpj9mDafv4fJrB/3hHwtwr7TkuOe5VMQiv
+	Fc7FUR+nhZIpyMyaoRow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOkxx-0003eK-6P; Thu, 09 May 2019 15:28:13 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hOky8-0003lH-2T; Thu, 09 May 2019 15:28:24 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOkxr-0003da-8U
- for openwrt-devel@lists.openwrt.org; Thu, 09 May 2019 15:28:08 +0000
-Received: by mail-wm1-x344.google.com with SMTP id y197so3733002wmd.0
- for <openwrt-devel@lists.openwrt.org>; Thu, 09 May 2019 08:28:04 -0700 (PDT)
+ id 1hOkxq-0003dc-VJ
+ for openwrt-devel@lists.openwrt.org; Thu, 09 May 2019 15:28:09 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d12so3631695wrm.8
+ for <openwrt-devel@lists.openwrt.org>; Thu, 09 May 2019 08:28:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e9qhSjYqnpJPm/nAbaepRNJsKzKAnqTakhKiKsOeGck=;
- b=DUes7N+BJoQzBgtMFLOgRMVn71eAcjKCBekihYeDYjjqQqDnN1aIzJF1cDmh8KC3dR
- pgeLZQ4T2xNckfUTqBIu3wjux/lmK8GHent1QlCbchEhg/XmnmBpLHTpQWyMLxhIgHxv
- P3PB7fNtmig1YrqpgZeb3TwAO+f2Nh/l0/Kv2DbqfnEiZfBSHzNX8RZitDArTexOnWwY
- Xdj103dnrMBs6BNaRaV0coE6ycA39Fam4YG8JYzjGzGntZhawo3ZQwrQWW4qd2jcMDIF
- 2f0tGan7OoThvbb5G3rx6MD7TCWO+afXj37NrjmLtOFy6QQyxfTLRbF/gLVRq+0j+dow
- c42w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=YHfvFyCGZVvW2Lwt0NEn9nht9JDwvQ8D7R4NovkB2as=;
+ b=fQ1aNdvxn4uOKO5owH3420+HVy5VT5mOOfaiXVlB1OMnPStya3FS7zmyUviWYkzZuy
+ Zkqfar1IWXWoe4cI93OyzNMXi1xVd7aboVKqeIqdl+chcRuerw6htiupSf0XaVcgKY5a
+ h14gOdjfxUZADCkml7sNuUkJE2Dz/Q9daLSPvJ3TwbQIMpk78adWP1ZA/xMPcMohqcbZ
+ iK/VTP6+JO9G6VbqNn07LaH5uLbo3NuOKBVCZ/2D5MMRb0W9aYF/n6IooyRvEwepuZxx
+ X7aPx9tBdnEV2SZNvkczfSl3D8Xl2dgDMSV4TJmLtF0+wEhwbglMxBz3tP0Fjs466cmF
+ EhJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e9qhSjYqnpJPm/nAbaepRNJsKzKAnqTakhKiKsOeGck=;
- b=DXBUXijfQ6hXD3588qPKrww/RrB4/mJLQ5uiCYf7pAs6ryHUCKjQ6in2b3Dqwe3CUY
- r3eQ66URApF4pX3LgQsTLq1oMqKCOix647tW0Zt5KcrQsQGWgvDGNnj9BHm8U6HDLUEl
- 0VP7/LMTEZXZP99hDSSZHmyERkYH3BnEmCTPCHttzS4WXErnF1m1qpcXAyU2iRrZsvU/
- Q/xlq47/z4WlAfNQWUOpD2dBYDoxWAQUjHfzdfKmKMvrXAa/TBTdXHeiX+Iv7j91jTem
- qTrVxEln/wzPULBIyZOB6S4MdShHV26SoFC3///8Au5OI6pE0y8xCvKXUlnh8HON/aqj
- lUqw==
-X-Gm-Message-State: APjAAAU9firokwOiLCpGNbMSjJUlVFork604zymyJKwR0JUanCg3VQlD
- ft4K8OzK8pbDNk5finAHEnFNY08T
-X-Google-Smtp-Source: APXvYqwxdyGCEvOVa2tK+EL5jtERlmf3iMWous+wpaYLHMtox1Y2YtBbsFwuErCDVLNKC4JgBDrypQ==
-X-Received: by 2002:a1c:eb18:: with SMTP id j24mr3611870wmh.32.1557415683064; 
- Thu, 09 May 2019 08:28:03 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=YHfvFyCGZVvW2Lwt0NEn9nht9JDwvQ8D7R4NovkB2as=;
+ b=meVTT77Nlaz7pOSL1SeARQ7Z16coGeDXU+NXpkFRVYzALp7ZVPBn83Cw6hp13VIRbv
+ H7QVBS9pGYVH5U6ROQxYAT7EEG9Z5iLSzi6gjxowZCxY8o5JV9LqtL0GyHXXwsqNY6F8
+ sUrt2+kL7wFYT46eEfWvEuRZLmZTvt5QOgckvoicWGGfqWsml1S0wYwsKXiQA1ZFcFwh
+ 7PAAe+m08kh5BFLdwa4vo/8zCTZNusn9OyxPqKl8tS5vwCx6P+qce3s9IZ1xdkacBD11
+ RQp0JtvJ5+DiaPOH0pczMEmmuSiJZMIqVC3wxpdHD9zvxerHwm7FR10hLSdJZNxAw28D
+ ZRDQ==
+X-Gm-Message-State: APjAAAWDfGeIWVkHBDg5urcgedbSLfTdfUjMBxHYZO5194tn/boJb3g/
+ cmjWcRprdxLDhSH1zQMRLPo1ockg
+X-Google-Smtp-Source: APXvYqwBWvGv4AerEL7yLjBkbYbpn+K5GGTyzh6WAHJ/fhocZh2DZx1erXKvfpHNumIp1/RyHcorgQ==
+X-Received: by 2002:adf:9f4a:: with SMTP id f10mr3711765wrg.13.1557415684858; 
+ Thu, 09 May 2019 08:28:04 -0700 (PDT)
 Received: from localhost.localdomain (93-137-250-241.adsl.net.t-com.hr.
  [93.137.250.241])
- by smtp.gmail.com with ESMTPSA id c9sm1395400wrv.62.2019.05.09.08.28.01
+ by smtp.gmail.com with ESMTPSA id c9sm1395400wrv.62.2019.05.09.08.28.03
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 09 May 2019 08:28:02 -0700 (PDT)
+ Thu, 09 May 2019 08:28:04 -0700 (PDT)
 From: Robert Marko <robimarko@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  9 May 2019 17:27:57 +0200
-Message-Id: <20190509152758.20998-1-robimarko@gmail.com>
+Date: Thu,  9 May 2019 17:27:58 +0200
+Message-Id: <20190509152758.20998-2-robimarko@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190509152758.20998-1-robimarko@gmail.com>
+References: <20190509152758.20998-1-robimarko@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_082807_300627_4F48DA28 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20190509_082807_106427_DFAF0F0E 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -83,8 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 1/2] ath10k-firmware: update Candela Tech
- firmware images
+Subject: [OpenWrt-Devel] [PATCH 2/2] ath10k-ct: Update to current version
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,181 +103,478 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Here are recent release notes:
+This patch updates ath10k-ct to current version.
+Changes are:
+     ath10k-ct:  Fix printing PN in peer stats.
 
-wave-1:
+     Previous logic was incorrect.  Also add set-special API to enable
+     returning PN.
 
-   *  April 2, 2019:  Support some get/set API for eeprom rate power tables.  Mostly
-                      backported from 10.2
-
-   *  April 2, 2019:  Support adaptive-CCA, backported from 10.2
-
-   *  April 3, 2019:  Support adding eeprom configAddr pairs via the set-special API.
-                      These configAddrs can be used to change the default register settings
-                      for up to 12 registers.
-
-   *  May 3, 2019:  Fix tx-power settings for 2x2, 3x3 rates.  Original logic I put in back in
-                    2016 set 2x2 and 3x3 lower than the needed to be when using most NICs (very
-                    high powered NICs would not have been affected I think, not sure any of those
-                    exist though.)  This improves throughput for 2x2 and 3x3 devices,
-                    especially when the signal is weaker.
-
-wave-2:
-
-   *  April 8, 2019:   When setting keys, if high bit of high value of  key_rsc_counter is set to 0x1,
-                       then the lower 48 bits will be used as the PN value.  By default, PN is set to
-                       1 each time the key is set.
-
-   *  April 8, 2019:   Pack PN into un-used 'excretries' aka 'num_pkt_loss_excess_retry' high
-                       16 bits.  This lets us report peer PN, but *only* if driver has previously
-                       set a PN when setting key (or set-special cmd is used to enable PN reporting).
-                       This is done so that we know the driver is recent
-                       enough to deal with the PN stat reporting.
-
-   *  April 16, 2019:  Support specifying tx rate on a per-beacon packet.
-                       See ath10k_wmi_op_gen_beacon_dma and ath10k_convert_hw_rate_to_rate_info
-                       for API details.  Driver needs additional work to actually enable this
-                       feature currently.
-
-   *  April 30, 2019   Compile out tx-prefetch caching logic.  It is full of tricky bugs that cause
-                       tx hangs.  I fixed at least one, but more remain and I have wasted too much
-                       time on this already.
-
-   *  May 8, 2019  Start rate-ctrl at mcs-3 instead of mcs-5.  This significantly helps DHCP happen
-                   quickly, probably because the initial rate being too high would take a while to
-                   ramp down, especially since there are few packets sent by the time DHCP needs to
-                   start.  This bug was triggered by me decreasing retries of 0x1e (upstream default)
-                   to 0x4.  But, I think it is better to start with lower initial MCS instead
-                   of always having a very high retry count.
-
-Tested on 8devices Jalapeno dev board(IPQ4019)
+Patches refreshed and tested on 8devices Jalapeno dev board(IPQ4019)
 
 Signed-off-by: Robert Marko <robimarko@gmail.com>
 ---
- package/firmware/ath10k-firmware/Makefile | 48 +++++++++++------------
- 1 file changed, 24 insertions(+), 24 deletions(-)
+ package/kernel/ath10k-ct/Makefile             |  6 +--
+ .../081-ath10k-calibration-variant.patch      |  2 +-
+ .../ath10k-ct/patches/100-kernel_compat.patch |  4 +-
+ ...-IEs-for-variant-before-falling-back.patch |  8 +--
+ ...rt-for-configuring-management-packet.patch |  4 +-
+ ...ble-out-of-bound-access-of-ath10k_ra.patch |  2 +-
+ ...rect-multicast-broadcast-rate-settin.patch |  4 +-
+ ...64-ath10k-commit-rates-from-mac80211.patch |  6 +--
+ ...rolling-support-for-various-chipsets.patch | 50 +++++++++----------
+ ...h10k-4.16-use-tpt-trigger-by-default.patch |  8 +--
+ ...ilable-channels-via-DT-ieee80211-fre.patch |  2 +-
+ 11 files changed, 48 insertions(+), 48 deletions(-)
 
-diff --git a/package/firmware/ath10k-firmware/Makefile b/package/firmware/ath10k-firmware/Makefile
-index 452e7a36b3..dca1520ec4 100644
---- a/package/firmware/ath10k-firmware/Makefile
-+++ b/package/firmware/ath10k-firmware/Makefile
-@@ -64,92 +64,92 @@ define Download/ct-firmware-htt
-   URL_FILE:=$($(1)_FIRMWARE_FILE_CT_HTT)
- endef
+diff --git a/package/kernel/ath10k-ct/Makefile b/package/kernel/ath10k-ct/Makefile
+index 63d702cc22..8ade145983 100644
+--- a/package/kernel/ath10k-ct/Makefile
++++ b/package/kernel/ath10k-ct/Makefile
+@@ -8,9 +8,9 @@ PKG_LICENSE_FILES:=
  
--QCA988X_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.007
-+QCA988X_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.008
- define Download/ath10k-firmware-qca988x-ct
-   $(call Download/ct-firmware,QCA988X,)
--  HASH:=56b8faa255d053404981fc0e2ffa8dec1aa6adfffd4e4a2af2b6ac25f131ecce
-+  HASH:=c2407cbdaaf143c9796e654aed026f0aa70fc93a82dd1244c62e95ede894e829
- endef
- $(eval $(call Download,ath10k-firmware-qca988x-ct))
+ PKG_SOURCE_URL:=https://github.com/greearb/ath10k-ct.git
+ PKG_SOURCE_PROTO:=git
+-PKG_SOURCE_DATE:=2019-04-08
+-PKG_SOURCE_VERSION:=9cd701a4f028b1643928a1f03c76e3f8c9e56a5b
+-PKG_MIRROR_HASH:=0088fea964279842a105908f5ac573b84e43de3a9b434d427fb871390525dfee
++PKG_SOURCE_DATE:=2019-05-08
++PKG_SOURCE_VERSION:=f98b6dc4d27ea2d79a1577285d1d5cb0641b3eb4
++PKG_MIRROR_HASH:=ca2f0e9da25fc7140d26ddeeb8e929e172755aa0e41e4e92e5b87bb972b8ed41
  
--QCA988X_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.007
-+QCA988X_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.008
- define Download/ath10k-firmware-qca988x-ct-htt
-   $(call Download/ct-firmware-htt,QCA988X,)
--  HASH:=f85296afae06548256167a58ecf58f11cc79aba7f96629124dc7b07611f4614f
-+  HASH:=789c4d1c8ac5edeb43d507157944102b564cd6970c365a14b50cab08ffa4e3b5
- endef
- $(eval $(call Download,ath10k-firmware-qca988x-ct-htt))
+ # Build the 4.19 ath10k-ct driver version.  Other options are "-4.16", or
+ # leave un-defined for 4.7 kernel.  Probably this should match as closely as
+diff --git a/package/kernel/ath10k-ct/patches/081-ath10k-calibration-variant.patch b/package/kernel/ath10k-ct/patches/081-ath10k-calibration-variant.patch
+index 987a7d79e2..2b4273076b 100644
+--- a/package/kernel/ath10k-ct/patches/081-ath10k-calibration-variant.patch
++++ b/package/kernel/ath10k-ct/patches/081-ath10k-calibration-variant.patch
+@@ -98,7 +98,7 @@ Origin: upstream, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  	scnprintf(name, name_len,
+  		  "bus=%s,vendor=%04x,device=%04x,subsystem-vendor=%04x,subsystem-device=%04x%s",
+  		  ath10k_bus_str(ar->hif.bus),
+-@@ -2977,7 +2999,11 @@ static int ath10k_core_probe_fw(struct a
++@@ -3014,7 +3036,11 @@ static int ath10k_core_probe_fw(struct a
+  
+  	ret = ath10k_core_check_smbios(ar);
+  	if (ret)
+diff --git a/package/kernel/ath10k-ct/patches/100-kernel_compat.patch b/package/kernel/ath10k-ct/patches/100-kernel_compat.patch
+index 6fd254a57b..3f7db04376 100644
+--- a/package/kernel/ath10k-ct/patches/100-kernel_compat.patch
++++ b/package/kernel/ath10k-ct/patches/100-kernel_compat.patch
+@@ -97,7 +97,7 @@
+  	ATH10K_DFS_STAT_INC(ar, pulses_total);
+ --- a/ath10k-4.13/wmi.c
+ +++ b/ath10k-4.13/wmi.c
+-@@ -4030,7 +4030,7 @@ static void ath10k_dfs_radar_report(stru
++@@ -4033,7 +4033,7 @@ static void ath10k_dfs_radar_report(stru
+  
+  	ATH10K_DFS_STAT_INC(ar, pulses_detected);
+  
+@@ -108,7 +108,7 @@
+  		return;
+ --- a/ath10k-4.16/wmi.c
+ +++ b/ath10k-4.16/wmi.c
+-@@ -4105,7 +4105,7 @@ static void ath10k_dfs_radar_report(stru
++@@ -4117,7 +4117,7 @@ static void ath10k_dfs_radar_report(stru
+  
+  	ATH10K_DFS_STAT_INC(ar, pulses_detected);
+  
+diff --git a/package/kernel/ath10k-ct/patches/160-ath10k-search-all-IEs-for-variant-before-falling-back.patch b/package/kernel/ath10k-ct/patches/160-ath10k-search-all-IEs-for-variant-before-falling-back.patch
+index 985bb02b28..c6820dea09 100644
+--- a/package/kernel/ath10k-ct/patches/160-ath10k-search-all-IEs-for-variant-before-falling-back.patch
++++ b/package/kernel/ath10k-ct/patches/160-ath10k-search-all-IEs-for-variant-before-falling-back.patch
+@@ -249,7 +249,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  		goto success;
+ --- a/ath10k-4.16/core.c
+ +++ b/ath10k-4.16/core.c
+-@@ -1562,14 +1562,61 @@ out:
++@@ -1563,14 +1563,61 @@ out:
+  	return ret;
+  }
+  
+@@ -314,7 +314,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  
+  	ar->normal_mode_fw.board = ath10k_fetch_fw_file(ar,
+  							ar->hw_params.fw.dir,
+-@@ -1607,73 +1654,28 @@ static int ath10k_core_fetch_board_data_
++@@ -1608,73 +1655,28 @@ static int ath10k_core_fetch_board_data_
+  	data += magic_len;
+  	len -= magic_len;
+  
+@@ -397,7 +397,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  	return 0;
+  
+  err:
+-@@ -1682,12 +1684,12 @@ err:
++@@ -1683,12 +1685,12 @@ err:
+  }
+  
+  static int ath10k_core_create_board_name(struct ath10k *ar, char *name,
+@@ -412,7 +412,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  		scnprintf(variant, sizeof(variant), ",variant=%s",
+  			  ar->id.bdf_ext);
+  
+-@@ -1713,21 +1715,31 @@ out:
++@@ -1714,21 +1716,31 @@ out:
+  
+  static int ath10k_core_fetch_board_file(struct ath10k *ar)
+  {
+diff --git a/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch b/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
+index 7c59d14ffc..10b1d384bd 100644
+--- a/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
++++ b/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
+@@ -43,7 +43,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  static int ath10k_mac_get_max_vht_mcs_map(u16 mcs_map, int nss)
+  {
+  	switch ((mcs_map >> (2 * nss)) & 0x3) {
+-@@ -6262,9 +6278,10 @@ static void ath10k_bss_info_changed(stru
++@@ -6333,9 +6349,10 @@ static void ath10k_bss_info_changed(stru
+  	struct cfg80211_chan_def def;
+  	u32 vdev_param, pdev_param, slottime, preamble;
+  	u16 bitrate, hw_value;
+@@ -56,7 +56,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  
+  	mutex_lock(&ar->conf_mutex);
+  
+-@@ -6470,6 +6487,30 @@ static void ath10k_bss_info_changed(stru
++@@ -6541,6 +6558,30 @@ static void ath10k_bss_info_changed(stru
+  				    arvif->vdev_id,  ret);
+  	}
+  
+diff --git a/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch b/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
+index 5eba4f3542..f46bf4dc83 100644
+--- a/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
++++ b/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
+@@ -26,7 +26,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  		if (ath10k_rates[i].bitrate == bitrate)
+  			return hw_value_prefix | ath10k_rates[i].hw_value;
+  	}
+-@@ -6493,22 +6493,22 @@ static void ath10k_bss_info_changed(stru
++@@ -6564,22 +6564,22 @@ static void ath10k_bss_info_changed(stru
+  			return;
+  		}
+  
+diff --git a/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch b/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
+index ade1eb2d75..42d59e8e72 100644
+--- a/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
++++ b/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
+@@ -17,7 +17,7 @@ Origin: other, https://patchwork.kernel.org/patch/10723033/
  
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -6278,8 +6278,8 @@ static void ath10k_bss_info_changed(stru
++@@ -6349,8 +6349,8 @@ static void ath10k_bss_info_changed(stru
+  	struct cfg80211_chan_def def;
+  	u32 vdev_param, pdev_param, slottime, preamble;
+  	u16 bitrate, hw_value;
+@@ -28,7 +28,7 @@ Origin: other, https://patchwork.kernel.org/patch/10723033/
+  	enum nl80211_band band;
+  	const struct ieee80211_supported_band *sband;
+  
+-@@ -6452,7 +6452,11 @@ static void ath10k_bss_info_changed(stru
++@@ -6523,7 +6523,11 @@ static void ath10k_bss_info_changed(stru
+  	if (changed & BSS_CHANGED_MCAST_RATE &&
+  	    !WARN_ON(ath10k_mac_vif_chan(arvif->vif, &def))) {
+  		band = def.chan->band;
+diff --git a/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch b/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
+index 43f5591bba..ec8248f67b 100644
+--- a/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
++++ b/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
+@@ -11,7 +11,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
  
--QCA9887_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.007
-+QCA9887_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.008
- define Download/ath10k-firmware-qca9887-ct
-   $(call Download/ct-firmware,QCA9887,ath10k-9887)
--  HASH:=d42d57ded7de4f8caf4bfd163db0910af7f0e155b11e484dbaa94c341f1e6dec
-+  HASH:=07692a63ab9d11a65c17cc896aff89ea33b7af4e0e1e51ae100651291afe3a4d
- endef
- $(eval $(call Download,ath10k-firmware-qca9887-ct))
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -6474,6 +6474,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6545,6 +6545,7 @@ static void ath10k_bss_info_changed(stru
+  			   "mac vdev %d mcast_rate %x\n",
+  			   arvif->vdev_id, rate);
+  
+@@ -19,7 +19,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  		vdev_param = ar->wmi.vdev_param->mcast_data_rate;
+  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
+  						vdev_param, rate);
+-@@ -6482,6 +6483,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6553,6 +6554,7 @@ static void ath10k_bss_info_changed(stru
+  				    "failed to set mcast rate on vdev %i: %d\n",
+  				    arvif->vdev_id,  ret);
+  
+@@ -27,7 +27,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  		vdev_param = ar->wmi.vdev_param->bcast_data_rate;
+  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
+  						vdev_param, rate);
+-@@ -6508,6 +6510,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6579,6 +6581,7 @@ static void ath10k_bss_info_changed(stru
+  			return;
+  		}
+  
+diff --git a/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch b/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
+index 9069435d38..617505def9 100644
+--- a/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
++++ b/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
+@@ -161,8 +161,8 @@ v13:
+  		.patch_load_addr = QCA9888_HW_2_0_PATCH_LOAD_ADDR,
+  		.uart_pin = 7,
+  		.cc_wraparound_type = ATH10K_HW_CC_WRAP_SHIFTED_EACH,
+-@@ -3042,6 +3048,10 @@ int ath10k_core_start(struct ath10k *ar,
+- 						   ar->eeprom_overrides.rc_txbf_probe);
++@@ -3084,6 +3090,10 @@ int ath10k_core_start(struct ath10k *ar,
++ 			ath10k_wmi_check_apply_board_power_ctl_table(ar);
+  	}
+  
+ +	status = ath10k_leds_start(ar);
+@@ -172,7 +172,7 @@ v13:
+  	return 0;
+  
+  err_hif_stop:
+-@@ -3288,9 +3298,18 @@ static void ath10k_core_register_work(st
++@@ -3330,9 +3340,18 @@ static void ath10k_core_register_work(st
+  		goto err_spectral_destroy;
+  	}
+  
+@@ -191,7 +191,7 @@ v13:
+  err_spectral_destroy:
+  	ath10k_spectral_destroy(ar);
+  err_debug_destroy:
+-@@ -3348,6 +3367,8 @@ void ath10k_core_unregister(struct ath10
++@@ -3390,6 +3409,8 @@ void ath10k_core_unregister(struct ath10
+  	if (!test_bit(ATH10K_FLAG_CORE_REGISTERED, &ar->dev_flags))
+  		return;
+  
+@@ -210,7 +210,7 @@ v13:
+  
+  #include "htt.h"
+  #include "htc.h"
+-@@ -1255,6 +1256,13 @@ struct ath10k {
++@@ -1273,6 +1274,13 @@ struct ath10k {
+  	} testmode;
+  
+  	struct {
+@@ -455,7 +455,7 @@ v13:
+  static const struct wmi_peer_flags_map wmi_tlv_peer_flags_map = {
+ --- a/ath10k-4.16/wmi.c
+ +++ b/ath10k-4.16/wmi.c
+-@@ -7405,6 +7405,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
++@@ -7593,6 +7593,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
+  	return skb;
+  }
+  
+@@ -505,7 +505,7 @@ v13:
+  static struct sk_buff *
+  ath10k_wmi_op_gen_set_psmode(struct ath10k *ar, u32 vdev_id,
+  			     enum wmi_sta_ps_mode psmode)
+-@@ -9020,6 +9063,9 @@ static const struct wmi_ops wmi_ops = {
++@@ -9235,6 +9278,9 @@ static const struct wmi_ops wmi_ops = {
+  	.fw_stats_fill = ath10k_wmi_main_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -515,7 +515,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9090,6 +9136,8 @@ static const struct wmi_ops wmi_10_1_ops
++@@ -9305,6 +9351,8 @@ static const struct wmi_ops wmi_10_1_ops
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -524,7 +524,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9167,6 +9215,8 @@ static const struct wmi_ops wmi_10_2_ops
++@@ -9383,6 +9431,8 @@ static const struct wmi_ops wmi_10_2_ops
+  	.gen_delba_send = ath10k_wmi_op_gen_delba_send,
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+@@ -533,7 +533,7 @@ v13:
+  	/* .gen_pdev_enable_adaptive_cca not implemented */
+  };
+  
+-@@ -9237,6 +9287,8 @@ static const struct wmi_ops wmi_10_2_4_o
++@@ -9453,6 +9503,8 @@ static const struct wmi_ops wmi_10_2_4_o
+  	.gen_pdev_enable_adaptive_cca =
+  		ath10k_wmi_op_gen_pdev_enable_adaptive_cca,
+  	.get_vdev_subtype = ath10k_wmi_10_2_4_op_get_vdev_subtype,
+@@ -542,7 +542,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9313,6 +9365,8 @@ static const struct wmi_ops wmi_10_4_ops
++@@ -9529,6 +9581,8 @@ static const struct wmi_ops wmi_10_4_ops
+  	.gen_pdev_bss_chan_info_req = ath10k_wmi_10_2_op_gen_pdev_bss_chan_info,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+  	.gen_pdev_get_tpc_config = ath10k_wmi_10_2_4_op_gen_pdev_get_tpc_config,
+@@ -553,7 +553,7 @@ v13:
+  int ath10k_wmi_attach(struct ath10k *ar)
+ --- a/ath10k-4.16/wmi.h
+ +++ b/ath10k-4.16/wmi.h
+-@@ -3011,6 +3011,41 @@ enum wmi_10_4_feature_mask {
++@@ -3013,6 +3013,41 @@ enum wmi_10_4_feature_mask {
+  
+  };
+  
+@@ -674,8 +674,8 @@ v13:
+  		.patch_load_addr = QCA9888_HW_2_0_PATCH_LOAD_ADDR,
+  		.uart_pin = 7,
+  		.cc_wraparound_type = ATH10K_HW_CC_WRAP_SHIFTED_EACH,
+-@@ -3103,6 +3109,10 @@ int ath10k_core_start(struct ath10k *ar,
+- 						   ar->eeprom_overrides.rc_txbf_probe);
++@@ -3147,6 +3153,10 @@ int ath10k_core_start(struct ath10k *ar,
++ 			ath10k_wmi_check_apply_board_power_ctl_table(ar);
+  	}
+  
+ +	status = ath10k_leds_start(ar);
+@@ -685,7 +685,7 @@ v13:
+  	return 0;
+  
+  err_hif_stop:
+-@@ -3357,9 +3367,18 @@ static void ath10k_core_register_work(st
++@@ -3401,9 +3411,18 @@ static void ath10k_core_register_work(st
+  		goto err_spectral_destroy;
+  	}
+  
+@@ -704,7 +704,7 @@ v13:
+  err_spectral_destroy:
+  	ath10k_spectral_destroy(ar);
+  err_debug_destroy:
+-@@ -3417,6 +3436,8 @@ void ath10k_core_unregister(struct ath10
++@@ -3461,6 +3480,8 @@ void ath10k_core_unregister(struct ath10
+  	if (!test_bit(ATH10K_FLAG_CORE_REGISTERED, &ar->dev_flags))
+  		return;
+  
+@@ -723,7 +723,7 @@ v13:
+  
+  #include "htt.h"
+  #include "htc.h"
+-@@ -1113,7 +1114,6 @@ struct ath10k {
++@@ -1132,7 +1133,6 @@ struct ath10k {
+  	u32 low_5ghz_chan;
+  	u32 high_5ghz_chan;
+  	bool ani_enabled;
+@@ -731,7 +731,7 @@ v13:
+  	bool p2p;
+  	bool ct_all_pkts_htt; /* CT firmware only: native-wifi for all pkts */
+  
+-@@ -1362,6 +1362,13 @@ struct ath10k {
++@@ -1383,6 +1383,13 @@ struct ath10k {
+  	} testmode;
+  
+  	struct {
+@@ -977,7 +977,7 @@ v13:
+  static const struct wmi_peer_flags_map wmi_tlv_peer_flags_map = {
+ --- a/ath10k-4.19/wmi.c
+ +++ b/ath10k-4.19/wmi.c
+-@@ -7881,6 +7881,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
++@@ -8070,6 +8070,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
+  	return skb;
+  }
+  
+@@ -1027,7 +1027,7 @@ v13:
+  static struct sk_buff *
+  ath10k_wmi_op_gen_set_psmode(struct ath10k *ar, u32 vdev_id,
+  			     enum wmi_sta_ps_mode psmode)
+-@@ -9605,6 +9648,9 @@ static const struct wmi_ops wmi_ops = {
++@@ -9821,6 +9864,9 @@ static const struct wmi_ops wmi_ops = {
+  	.fw_stats_fill = ath10k_wmi_main_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -1037,7 +1037,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9675,6 +9721,8 @@ static const struct wmi_ops wmi_10_1_ops
++@@ -9891,6 +9937,8 @@ static const struct wmi_ops wmi_10_1_ops
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -1046,7 +1046,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9752,6 +9800,8 @@ static const struct wmi_ops wmi_10_2_ops
++@@ -9969,6 +10017,8 @@ static const struct wmi_ops wmi_10_2_ops
+  	.gen_delba_send = ath10k_wmi_op_gen_delba_send,
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+@@ -1055,7 +1055,7 @@ v13:
+  	/* .gen_pdev_enable_adaptive_cca not implemented */
+  };
+  
+-@@ -9822,6 +9872,8 @@ static const struct wmi_ops wmi_10_2_4_o
++@@ -10039,6 +10089,8 @@ static const struct wmi_ops wmi_10_2_4_o
+  	.gen_pdev_enable_adaptive_cca =
+  		ath10k_wmi_op_gen_pdev_enable_adaptive_cca,
+  	.get_vdev_subtype = ath10k_wmi_10_2_4_op_get_vdev_subtype,
+@@ -1064,7 +1064,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9902,6 +9954,8 @@ static const struct wmi_ops wmi_10_4_ops
++@@ -10119,6 +10171,8 @@ static const struct wmi_ops wmi_10_4_ops
+  	.gen_pdev_bss_chan_info_req = ath10k_wmi_10_2_op_gen_pdev_bss_chan_info,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+  	.gen_pdev_get_tpc_config = ath10k_wmi_10_2_4_op_gen_pdev_get_tpc_config,
+@@ -1075,7 +1075,7 @@ v13:
+  int ath10k_wmi_attach(struct ath10k *ar)
+ --- a/ath10k-4.19/wmi.h
+ +++ b/ath10k-4.19/wmi.h
+-@@ -3040,6 +3040,41 @@ enum wmi_10_4_feature_mask {
++@@ -3041,6 +3041,41 @@ enum wmi_10_4_feature_mask {
+  
+  };
+  
+diff --git a/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch b/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
+index 736ecbc454..394e06990c 100644
+--- a/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
++++ b/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
+@@ -16,7 +16,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
  
--QCA9887_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.007
-+QCA9887_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.008
- define Download/ath10k-firmware-qca9887-ct-htt
-   $(call Download/ct-firmware-htt,QCA9887,ath10k-9887)
--  HASH:=2b016a6f59520925ff9996e458c26dde3422e2d142a36e235cca7aad822ad2b6
-+  HASH:=ef336462d4a44ab9a0d89e83064124e647a9fb4a8af8be9df5724378611d2e82
- endef
- $(eval $(call Download,ath10k-firmware-qca9887-ct-htt))
- 
- 
--QCA99X0_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.007
-+QCA99X0_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.008
- define Download/ath10k-firmware-qca99x0-ct
-   $(call Download/ct-firmware,QCA99X0,ath10k-10-4b)
--  HASH:=3dbf966fdbad9e55936fa62516e2fcca2a5952030132407f80c41d7da819c82c
-+  HASH:=3357d7ba739512619ccd14043338cfe8e148d5d8e99343e3ccf7a2ff0d07d05f
- endef
- $(eval $(call Download,ath10k-firmware-qca99x0-ct))
- 
--QCA99X0_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.007
-+QCA99X0_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.008
- define Download/ath10k-firmware-qca99x0-ct-htt
-   $(call Download/ct-firmware-htt,QCA99X0,ath10k-10-4b)
--  HASH:=c98993f541fbe02e88dfd3d5ed70bbaaad228776da29260348c5b00966682b69
-+  HASH:=ce81e1b9b80b30263e9d5010e38fac3f005214fd955dc2cff95e7fe633796212
- endef
- $(eval $(call Download,ath10k-firmware-qca99x0-ct-htt))
- 
- 
--QCA9984_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.007
-+QCA9984_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.008
- define Download/ath10k-firmware-qca9984-ct
-   $(call Download/ct-firmware,QCA9984,ath10k-9984-10-4b)
--  HASH:=1bdb2f62fb7f6947db992f0dc48b2864b51c7544ff8672a6c7570ecf2273054c
-+  HASH:=e2794ce577ff7942dc5f767a77fa52167f323bc8f50f04570fc5efe92ed761cf
- endef
- $(eval $(call Download,ath10k-firmware-qca9984-ct))
- 
--QCA9984_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.007
-+QCA9984_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.008
- define Download/ath10k-firmware-qca9984-ct-htt
-   $(call Download/ct-firmware-htt,QCA9984,ath10k-9984-10-4b)
--  HASH:=ff4c4f734711d4ead8a8ed226c5347073a9ce32b60b91d995f197b6e7809b7c6
-+  HASH:=1f90555963c2e52ac8fc5581b2a0f9c658e3f5205844898bdc48c78d009bb6eb
- endef
- $(eval $(call Download,ath10k-firmware-qca9984-ct-htt))
- 
- 
--QCA4019_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.007
-+QCA4019_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.008
- define Download/ath10k-firmware-qca4019-ct
-   $(call Download/ct-firmware,QCA4019,ath10k-4019-10-4b)
--  HASH:=98568845cf82dea679b1f4dee23f3d3eb39755c6bcdaeb89ed188e52e0f42b2d
-+  HASH:=4e73cf8e24e83df87d6dce2038e350b3f67753ccca37a8c0d1b861818991e6aa
- endef
- $(eval $(call Download,ath10k-firmware-qca4019-ct))
- 
--QCA4019_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.007
-+QCA4019_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.008
- define Download/ath10k-firmware-qca4019-ct-htt
-   $(call Download/ct-firmware-htt,QCA4019,ath10k-4019-10-4b)
--  HASH:=b791820962e26ba186d2310c024dd16c5ec44bfbbaf40bfeb77ab30bb297e75f
-+  HASH:=8f6434856d6f0207bc3f519cf50d2bf45df1bfcbc69b864ed02fcb5cd5ef6f4b
- endef
- $(eval $(call Download,ath10k-firmware-qca4019-ct-htt))
- 
- 
--QCA9888_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.007
-+QCA9888_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.008
- define Download/ath10k-firmware-qca9888-ct
-   $(call Download/ct-firmware,QCA9888,ath10k-9888-10-4b)
--  HASH:=f96e5d62c9b5d79cad0b0ff702cdd2644c408bcaeb1bd23f340f0425a002c8cd
-+  HASH:=6b627746f88c1bfecb872e72c61d6097192e389592e391630d2661b44f13b10d
- endef
- $(eval $(call Download,ath10k-firmware-qca9888-ct))
- 
--QCA9888_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.007
-+QCA9888_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.008
- define Download/ath10k-firmware-qca9888-ct-htt
-   $(call Download/ct-firmware-htt,QCA9888,ath10k-9888-10-4b)
--  HASH:=1f6d872f29d1635df55737458fc054adc64803638b4ad220ce0ccb13be5c0010
-+  HASH:=4ef46b2bdd3ddc894f79da2dbf90ee04cb58781f3eb193840bd5fdb8624b447b
- endef
- $(eval $(call Download,ath10k-firmware-qca9888-ct-htt))
- 
+ --- a/ath10k-4.16/core.h
+ +++ b/ath10k-4.16/core.h
+-@@ -1346,6 +1346,10 @@ struct ath10k {
++@@ -1366,6 +1366,10 @@ struct ath10k {
+  	u8 csi_data[4096];
+  	u16 csi_data_len;
+  
+@@ -42,7 +42,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
+  	if (ret)
+ --- a/ath10k-4.16/mac.c
+ +++ b/ath10k-4.16/mac.c
+-@@ -9665,7 +9665,7 @@ int ath10k_mac_register(struct ath10k *a
++@@ -9739,7 +9739,7 @@ int ath10k_mac_register(struct ath10k *a
+  	wiphy_ext_feature_set(ar->hw->wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
+  
+  #ifdef CPTCFG_MAC80211_LEDS
+@@ -53,7 +53,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
+  #endif
+ --- a/ath10k-4.19/core.h
+ +++ b/ath10k-4.19/core.h
+-@@ -1459,6 +1459,10 @@ struct ath10k {
++@@ -1482,6 +1482,10 @@ struct ath10k {
+  	u8 csi_data[4096];
+  	u16 csi_data_len;
+  
+@@ -79,7 +79,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
+  	if (ret)
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -9837,7 +9837,7 @@ int ath10k_mac_register(struct ath10k *a
++@@ -9908,7 +9908,7 @@ int ath10k_mac_register(struct ath10k *a
+  	wiphy_ext_feature_set(ar->hw->wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
+  
+  #ifdef CPTCFG_MAC80211_LEDS
+diff --git a/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch b/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
+index f68b35af7b..45619c9169 100644
+--- a/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
++++ b/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
+@@ -29,7 +29,7 @@ Forwarded: https://patchwork.kernel.org/patch/10549245/
+  #include <net/mac80211.h>
+  #include <linux/etherdevice.h>
+  #include <linux/acpi.h>
+-@@ -9561,6 +9562,7 @@ int ath10k_mac_register(struct ath10k *a
++@@ -9632,6 +9633,7 @@ int ath10k_mac_register(struct ath10k *a
+  		ar->hw->wiphy->bands[NL80211_BAND_5GHZ] = band;
+  	}
+  
 -- 
 2.21.0
 

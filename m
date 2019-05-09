@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3378A18A87
-	for <lists+openwrt-devel@lfdr.de>; Thu,  9 May 2019 15:27:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10F7F18A8B
+	for <lists+openwrt-devel@lfdr.de>; Thu,  9 May 2019 15:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YLwacXNvLrMEKQPEOmJ+doiAxwZpuGZKxSObgq4xBx8=; b=ne5DhwhoTs9pnUJMqvcvDUF8oF
-	Y3gk1RqWYOyJIYqR2v2FcXXkrVIos2qQwDn7/cISWuQy/HXo2E/CCI493yJJQrcwQD2Qq1zRfrVwx
-	C6TtcJi8YZMYLhQ95hknFHaBa4tVges+8w1bZF84C9X+p32xjooGEyjOshoEWVShhnQkW7TY0f0Uz
-	S3CwTb7QLHDUPMIFkSrbImkBinU5htOgv/zp0LI2Z9YrE6TY/CKvy1SWe6fFD4dHwPjgx88XCFy3t
-	QMs3us8DAnmQYS5ut1EaXhEHXgyA9+JbSXjJRTk2n0FPpgJZG3zQRcN0t/SNPpfkkFUox408nCqPf
-	+eVsYzvg==;
+	bh=8LnwVqyTPCA6OMf8JFfMmo4Sw1H+mnEh4aB0pn8LUWU=; b=MmeaDhiF+vGS2rOCni5uU7uRFk
+	/vplfKf5g6FJKIFDBFNnz5a2uk9UXs1kaIJUmlTbskp934TgI0yDYc7GM+6pbUgILMN1hQrqYRZyN
+	DNN2LibXKYiFH5GJtXU4xU6SapKxl21gXrlrXTdlgnO0gkmFSdK3Lo8UM/fsKV6ve7CD1hafTY7Ce
+	4INUl4cCHSQFev8Y1393nH8LtcAjZDXmfEfe8VnArGG33KVm7ocmS5N0V2I8LcuPtkdzelCPwQEYa
+	lCRvxiMB+PCQmoF2RUCk3F5lxr1/LGUGxZpnPxns6O7NzTbQsTr22Q19d8q6Pi83s9xLtaV/27f+A
+	Jt2z8YsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOj4f-0005xD-9C; Thu, 09 May 2019 13:27:01 +0000
+	id 1hOj51-0006Mp-4i; Thu, 09 May 2019 13:27:23 +0000
 Received: from mx-out.tlen.pl ([193.222.135.148])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOj4W-0005wD-W6
- for openwrt-devel@lists.openwrt.org; Thu, 09 May 2019 13:26:55 +0000
-Received: (wp-smtpd smtp.tlen.pl 11102 invoked from network);
- 9 May 2019 15:26:47 +0200
+ id 1hOj4Y-0005wH-Ph
+ for openwrt-devel@lists.openwrt.org; Thu, 09 May 2019 13:26:56 +0000
+Received: (wp-smtpd smtp.tlen.pl 14429 invoked from network);
+ 9 May 2019 15:26:49 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1557408407; bh=GadcbN/eumP9iuPdj9Lt74HTBDYHIaVMTSh4QFX/01E=;
+ t=1557408409; bh=XCw8Hi0ExXOO8e6aO1Yi5k00aloF3xeAUUxLtCsjx+o=;
  h=From:To:Subject;
- b=XE8VrPJ/A1DGegDo6thwPeQoxMuWM+VP2bzsYC1MutttmikVg4YNX/hUT4Gb/jB69
- ry0bKfYdl9XI0+NpljlGEXTxov+3/+vff0K4uihe3KQ6pgzE95u76LsYkArOixrXxM
- cdBqCkuM5JflhzMU5RPuL6guV5rvRudmnOO1sSmA=
+ b=hA6hFswfCE5YU0y49CavGLDzWHHrTK96yM2nRVpaYLYJKnfgNBg86PuDb7rGFXjE6
+ j60kCHPKxaO5iQzZluNM88yRWd6wU9f+SbBseuFabF6LzdltVvJyKQAq4xYNQFy8td
+ x31ZyYr/pVaryOKfCP4ZPDZhEIGFJ9Az4JZ8cHXk=
 Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 9 May 2019 15:26:47 +0200
+ for <openwrt-devel@lists.openwrt.org>; 9 May 2019 15:26:49 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  9 May 2019 15:26:21 +0200
-Message-Id: <20190509132628.4671-2-tomek_n@o2.pl>
+Date: Thu,  9 May 2019 15:26:22 +0200
+Message-Id: <20190509132628.4671-3-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190509132628.4671-1-tomek_n@o2.pl>
 References: <20190509132628.4671-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: eb21ae5015ed33bfddac75ee260192fc
+X-WP-MailID: 3629984b0d0693723cdbb13ea86838cb
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [IRME]                               
+X-WP-SPAM: NO 0000000 [YQNU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_062653_352962_AA410E14 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20190509_062654_988889_C5D87A19 
+X-CRM114-Status: UNSURE (   6.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,8 +66,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v2 1/8] mvebu: remove unnecessary code
- building dtbs
+Subject: [OpenWrt-Devel] [PATCH v2 2/8] mvebu: image: stack repeated
+ variables
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,76 +84,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Even if dts is not included in upstream Makefile, it is built anyway by
-recipe specified in include/image.mk. Also remove Build/dtb, it's not
-used since 3f72f3a ("mvebu: clearfog: include DTB for all variants in
-image").
+All of arm64 devices have part of variables repeatedly defined. Stack
+them to common define, and reference it in each device recipe.
 
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- target/linux/mvebu/image/Makefile                      | 10 +++-------
- .../linux/mvebu/patches-4.14/105-build_new_dtbs.patch  | 10 ----------
- 2 files changed, 3 insertions(+), 17 deletions(-)
- delete mode 100644 target/linux/mvebu/patches-4.14/105-build_new_dtbs.patch
+ target/linux/mvebu/image/Makefile      |  8 ++++++++
+ target/linux/mvebu/image/cortex-a53.mk | 12 ++----------
+ target/linux/mvebu/image/cortex-a72.mk | 20 +++++---------------
+ 3 files changed, 15 insertions(+), 25 deletions(-)
 
 diff --git a/target/linux/mvebu/image/Makefile b/target/linux/mvebu/image/Makefile
-index 88790777d9..72b14e344b 100644
+index 72b14e344b..5f4ab89716 100644
 --- a/target/linux/mvebu/image/Makefile
 +++ b/target/linux/mvebu/image/Makefile
-@@ -15,10 +15,6 @@ KERNEL_LOADADDR := 0x00008000
- 
- SIGNATURE:=$(shell printf "%.8s" $(SOURCE_DATE_EPOCH))
- 
--define Build/dtb
--	$(call Image/BuildDTB,$(DTS_DIR)/$(DEVICE_DTS).dts,$@.dtb)
--endef
--
- define Build/boot-scr
- 	rm -f $@-boot.scr
- 	sed -e 's#@ROOT@#$(SIGNATURE)#g' \
-@@ -29,7 +25,7 @@ endef
- define Build/boot-img
- 	rm -f $@.boot
- 	mkfs.fat -C $@.boot $$(( $(CONFIG_TARGET_KERNEL_PARTSIZE) * 1024 ))
--	$(foreach dts,$(DEVICE_DTS), mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb ::$(dts).dtb;)
-+	$(foreach dts,$(DEVICE_DTS), mcopy -i $@.boot $(KDIR)/image-$(dts).dtb ::$(dts).dtb;)
- 	mcopy -i $@.boot $(IMAGE_KERNEL) ::$(KERNEL_NAME)
- 	-mcopy -i $@.boot $@-boot.scr ::boot.scr
+@@ -83,6 +83,14 @@ define Device/Default
  endef
-@@ -37,7 +33,7 @@ endef
- define Build/boot-img-ext4
- 	rm -fR $@.boot
- 	mkdir -p $@.boot
--	$(foreach dts,$(DEVICE_DTS), $(CP) $(DTS_DIR)/$(dts).dtb $@.boot;)
-+	$(foreach dts,$(DEVICE_DTS), $(CP) $(KDIR)/image-$(dts).dtb $@.boot/$(dts).dtb;)
- 	$(CP) $(IMAGE_KERNEL) $@.boot/$(KERNEL_NAME)
- 	-$(CP) $@-boot.scr $@.boot/boot.scr
- 	make_ext4fs -J -l $(CONFIG_TARGET_KERNEL_PARTSIZE)M $@.bootimg $@.boot
-@@ -70,7 +66,7 @@ define Build/omnia-medkit-initramfs
- 	rm -rf $(dir $(IMAGE_KERNEL))boot
- 	mkdir -p $(dir $(IMAGE_KERNEL))boot/boot/
- 	cp $(KDIR)/zImage-initramfs $(dir $(IMAGE_KERNEL))boot/boot/zImage
--	cp $(DTS_DIR)/$(DEVICE_DTS).dtb $(dir $(IMAGE_KERNEL))boot/boot/dtb
-+	cp $(KDIR)/image-$(DEVICE_DTS).dtb $(dir $(IMAGE_KERNEL))boot/boot/dtb
- 	$(TAR) -rp --numeric-owner --owner=0 --group=0 --sort=name \
- 		$(if $(SOURCE_DATE_EPOCH),--mtime="@$(SOURCE_DATE_EPOCH)") \
- 		--file=$@ -C $(dir $(IMAGE_KERNEL))boot/ .
-diff --git a/target/linux/mvebu/patches-4.14/105-build_new_dtbs.patch b/target/linux/mvebu/patches-4.14/105-build_new_dtbs.patch
-deleted file mode 100644
-index 92880b9971..0000000000
---- a/target/linux/mvebu/patches-4.14/105-build_new_dtbs.patch
-+++ /dev/null
-@@ -1,10 +0,0 @@
----- a/arch/arm/boot/dts/Makefile
--+++ b/arch/arm/boot/dts/Makefile
--@@ -1027,6 +1027,7 @@ dtb-$(CONFIG_MACH_ARMADA_38X) += \
-- 	armada-385-linksys-cobra.dtb \
-- 	armada-385-linksys-rango.dtb \
-- 	armada-385-linksys-shelby.dtb \
--+	armada-385-linksys-venom.dtb \
-- 	armada-385-synology-ds116.dtb \
-- 	armada-385-turris-omnia.dtb \
-- 	armada-388-clearfog.dtb \
+ DEVICE_VARS += UBOOT
+ 
++define Device/Default-arm64
++  DTS_DIR := $(DTS_DIR)/marvell
++  IMAGES := sdcard.img.gz
++  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
++  KERNEL_NAME := Image
++  KERNEL := kernel-bin
++endef
++
+ define Device/UBI
+   IMAGES := sysupgrade.bin
+   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+diff --git a/target/linux/mvebu/image/cortex-a53.mk b/target/linux/mvebu/image/cortex-a53.mk
+index dd6176100b..a102f52481 100644
+--- a/target/linux/mvebu/image/cortex-a53.mk
++++ b/target/linux/mvebu/image/cortex-a53.mk
+@@ -1,25 +1,17 @@
+ ifeq ($(SUBTARGET),cortexa53)
+ 
+ define Device/globalscale-espressobin
+-  KERNEL_NAME := Image
+-  KERNEL := kernel-bin
++  $(call Device/Default-arm64)
+   DEVICE_TITLE := ESPRESSObin (Marvell Armada 3700 Community Board)
+-  IMAGES := sdcard.img.gz
+-  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   DEVICE_DTS := armada-3720-espressobin
+-  DTS_DIR := $(DTS_DIR)/marvell
+   SUPPORTED_DEVICES := globalscale,espressobin
+ endef
+ TARGET_DEVICES += globalscale-espressobin
+ 
+ define Device/armada-3720-db
+-  KERNEL_NAME := Image
+-  KERNEL := kernel-bin
++  $(call Device/Default-arm64)
+   DEVICE_TITLE := Marvell Armada 3720 Development Board DB-88F3720-DDR3
+-  IMAGES := sdcard.img.gz
+-  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   DEVICE_DTS := armada-3720-db
+-  DTS_DIR := $(DTS_DIR)/marvell
+   SUPPORTED_DEVICES := marvell,armada-3720-db
+ endef
+ TARGET_DEVICES += armada-3720-db
+diff --git a/target/linux/mvebu/image/cortex-a72.mk b/target/linux/mvebu/image/cortex-a72.mk
+index 25bcf534bc..824f6b5d0f 100644
+--- a/target/linux/mvebu/image/cortex-a72.mk
++++ b/target/linux/mvebu/image/cortex-a72.mk
+@@ -1,38 +1,28 @@
+ ifeq ($(SUBTARGET),cortexa72)
+ 
+ define Device/armada-macchiatobin
+-  KERNEL_NAME := Image
+-  KERNEL := kernel-bin
++  $(call Device/Default-arm64)
+   DEVICE_TITLE := MACCHIATObin (SolidRun Armada 8040 Community Board)
+   DEVICE_PACKAGES += kmod-i2c-core kmod-i2c-mux kmod-i2c-mux-pca954x
+-  IMAGES := sdcard.img.gz
+-  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   DEVICE_DTS := armada-8040-mcbin
+-  DTS_DIR := $(DTS_DIR)/marvell
+   SUPPORTED_DEVICES := marvell,armada8040-mcbin
+ endef
+ TARGET_DEVICES += armada-macchiatobin
+ 
+ define Device/armada-8040-db
+-  KERNEL_NAME := Image
+-  KERNEL := kernel-bin
++  $(call Device/Default-arm64)
+   DEVICE_TITLE := Marvell Armada 8040 DB board
+-  IMAGES := sdcard.img.gz
+-  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   DEVICE_DTS := armada-8040-db
+-  DTS_DIR := $(DTS_DIR)/marvell
++  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   SUPPORTED_DEVICES := marvell,armada8040-db
+ endef
+ TARGET_DEVICES += armada-8040-db
+ 
+ define Device/armada-7040-db
+-  KERNEL_NAME := Image
+-  KERNEL := kernel-bin
++  $(call Device/Default-arm64)
+   DEVICE_TITLE := Marvell Armada 7040 DB board
+-  IMAGES := sdcard.img.gz
+-  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   DEVICE_DTS := armada-7040-db
+-  DTS_DIR := $(DTS_DIR)/marvell
++  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+   SUPPORTED_DEVICES := marvell,armada7040-db
+ endef
+ TARGET_DEVICES += armada-7040-db
 -- 
 2.21.0
 

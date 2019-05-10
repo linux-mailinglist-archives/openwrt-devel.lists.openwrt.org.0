@@ -2,79 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D62CB1A16E
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 May 2019 18:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC8471A46A
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 May 2019 23:19:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CRAXo0zzFUQN8KsbcBgIc+t/yh/8CMc/9dvbD7E/7Vw=; b=TB00V6lh+V9G/9
-	XU7FbSXV9l2D43hgdbTqjYHUh01PNJIYR8ZFYHk3GCvzvtm1Xp/DhnnckX15u5z6Eb3aqpceGLeoA
-	l29quSTIbPjQhf5zvSCw5QtQTRXk7UNrgjNd/A2o7F9RszC86EPNnVy2dcN9yK4Tn99/njS/Qhxye
-	6cUTn3iJpGNADUXT8UyeEBYuL22GXPSAOs4XBN3hrreRFkCxCT18Ts3lt7YRQWMwQcKIkFjmuiBwk
-	bGPvK5xOg9ihPC/naxbJbvjGQ8JmIoDwX1T5qFZVU2z0+i77L/jVLrnz3nRhWpSPl0KMdO9OaLKUG
-	xrri0Yx51RCRtScv8Kww==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qFxS3HgKDU4sJe2x5jhKaNwuIn/dBWLH4PxrUGn0MSE=; b=BEpN6RMELLx6o8
+	MWv9YalD4ytVF1yXo0eBM8Dg5X1skUSgRmDkiS2zcK2KKb3CPwokTaLvawLq2sDcQ0wcC0JmVos3n
+	EZGetVOD4zDWmElFax9XJiqBtNXhA6xLUSDclSAZbbJgu6gPFSaV6SZcFs3pa7U+0NssgjeZjj3p+
+	SJ3Rl/ohNFMOdFFeQ7tlGQ49UZbxu2Ws/lUEBLIHfoM/qXFZEqIdEPrVq7su/nePQtmPy8CIeJhDf
+	qBPO1TWCA9tRYnBx7ali5nOb+FToFYpxE8g0c4LTmTtZ4CotuDTl+uZFEhr/8YvhhffsCKeFJtH9m
+	4voHwYl2L+GDKdfLeWZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP8M5-0003m2-PU; Fri, 10 May 2019 16:26:41 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hPCv5-0001Oo-Jd; Fri, 10 May 2019 21:19:07 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP8Ly-0003lM-6V
- for openwrt-devel@lists.openwrt.org; Fri, 10 May 2019 16:26:36 +0000
-Received: by mail-wr1-x441.google.com with SMTP id s15so8550092wra.12
- for <openwrt-devel@lists.openwrt.org>; Fri, 10 May 2019 09:26:27 -0700 (PDT)
+ id 1hPCuo-0001OF-Uc
+ for openwrt-devel@lists.openwrt.org; Fri, 10 May 2019 21:18:57 +0000
+Received: by mail-wr1-x434.google.com with SMTP id d12so9265567wrm.8
+ for <openwrt-devel@lists.openwrt.org>; Fri, 10 May 2019 14:18:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e5lYhcWkoCY6B7gM/pn9TXegpEhcnmb8jKxTZNcXKpk=;
- b=JQ8EjxvwB8W6kGSaLTUth02n4jElV3vBUpE/l851Dx/pHr7gU4ZryH5AYtSx74diZA
- A5rcAPf1toageOnZM1TjVNGx+RXbNiu1YOWc6zjiqulcyCDurm8rKUVU7CJMq1tzVXl7
- nIDV2fyAnELQycKCJF217QXh/BHDaG2uz/U24NIG2Syp8Hc5JbqS0GTIP3moit+vNFl+
- euO0GwpqJAeqKwKE3qevyHuyTkdbsJv+SSVue9ULn761kE4CwrGgF/XcZkDmJOb7ldDQ
- NlobS/PW0oaGPJ9OoB7zHlyNje9qt7HFDnw4sMKOlBRzQ8jem/CB6Hf+z0mdCX3AQ43m
- wgdw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=5bFr4qK7UYkDwMxNbI/2pcAYX9VSSids++0SR1JOeBU=;
+ b=sIlyX4SGR9a0uQkyGkSoz/I3o71qLGBw99p21RelLgb3BuRqYSo6WE0nT51KsK2ed+
+ Hgn6oPjvOL/ieAXPv0pkf+KJYbHCV90sib8Gcl6uJ70Me+rJkIDVLPNjIscQhrQyxQar
+ /i4iyzRPJ1vwPwG030iGUfIhkrpGkNu3/HxcIMlA+eUS3Nib4S3aJ2rK/USbaazHVnmK
+ aVHLxUo6VbBwU1ILqZfLJow3ZeE4p2bbihEz50fnFRCr8wpSseoH5+x5P78MbQwnKxaG
+ p6B3NNCWDVKt07nWWrGdiMzsOAoYMPYcplJU8Epo/Tfia4yXUHSRNJa6fBi8blOEfCgz
+ pQsg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=e5lYhcWkoCY6B7gM/pn9TXegpEhcnmb8jKxTZNcXKpk=;
- b=sBsrIA+sSKaB/SWhfc56zr9hWJc4HGL/c6Vqn+ZGw/jaJECpPxpR0Dsfkk5/1KJ0Bj
- HtLBQ0PICAOSUmEJdVDJamj10fJ6Rl9DVUTArkwn39CUBiSjIzM6dmCnmRG9fNiR9FWq
- IwsfyKZNwzWcg9/pcahGP+Us5BiORpYxZIpAfkV4c8/gY4AftFW1gERf2qtGto1nh7xe
- LQdh43ECgM9ySLrGUUyXerHS+7mpTbh5wbPqijonOwEU4+MeClnFrtOgC3wksA7HNM0M
- YcDpkfo0XufTokhYsUf7yr6ljHMr/++e0Vb7b/sStV3mhs3TNGUGJxeeUQ4LwP9VZlVg
- H6WQ==
-X-Gm-Message-State: APjAAAV6L7Zdcr8oHze/enWoqrGw1dkZns6W7mk34N/mqepUa/fVQ/0U
- Q9JW4ZbnVhQa8ru2ImLJ45fjLipw
-X-Google-Smtp-Source: APXvYqyQwFQzBPfNHwsJIHDma9VbhpqDTEUGGeEJcmzSShPdACFt63KDu2YsB2p11aHbZnd2yjkctQ==
-X-Received: by 2002:a05:6000:1d0:: with SMTP id
- t16mr8850428wrx.239.1557505585620; 
- Fri, 10 May 2019 09:26:25 -0700 (PDT)
-Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
- by smtp.gmail.com with ESMTPSA id 6sm6542040wms.23.2019.05.10.09.26.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 10 May 2019 09:26:25 -0700 (PDT)
-From: Kristian Evensen <kristian.evensen@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=5bFr4qK7UYkDwMxNbI/2pcAYX9VSSids++0SR1JOeBU=;
+ b=mZQuDp4oaMz0MgahG7PltTBjhNGOHCedbUigborYJI9DmZqNqgo63lM8IRh3iUuKg+
+ cBpKfHNwUcmyBG0TJdVxe4MxtIjjttvvpMTJ8LMEMo0xqkH6ejHM4jscF83FWFALiV9f
+ V+veHQH54w2dNWKML2wAhuJX9qQLVJdOHuMit92fqor5TA0Ba3hnEsej+jc/6PWR1a6y
+ YUbfQZnVjqQd7LxJly9b0yOAZykvVUZ8KQn9zURgKs93hYR9aZc7xmdu/SLO211ybjE1
+ QrFhOqlbZLTuEgLojeBvgwI0lsuGXnMZiME3kwIamKD6mXOIedjedTnC2fcX8D82YWJN
+ 50Ww==
+X-Gm-Message-State: APjAAAUcXMbaPeOQkN3kPSyewOocttEtMZwYNHA8RmS0llTOaJCM2a76
+ D6d7Fdp3RiNlIkTCDCIYusZDSXu4
+X-Google-Smtp-Source: APXvYqyYdCIGuskQE9RpJszk3deOSNpIM10YJ6N7U2vFSKFDoUju25YxvOcX1owar3XD5eenEPhk2Q==
+X-Received: by 2002:adf:9c87:: with SMTP id d7mr9221335wre.68.1557523128128;
+ Fri, 10 May 2019 14:18:48 -0700 (PDT)
+Received: from debian64.daheim (p4FD09782.dip0.t-ipconnect.de.
+ [79.208.151.130])
+ by smtp.gmail.com with ESMTPSA id h188sm4526138wmf.48.2019.05.10.14.18.47
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 10 May 2019 14:18:47 -0700 (PDT)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.92)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1hPCuk-0006yg-PW; Fri, 10 May 2019 23:18:46 +0200
+From: Christian Lamparter <chunkeey@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 10 May 2019 18:26:22 +0200
-Message-Id: <20190510162622.22068-1-kristian.evensen@gmail.com>
-X-Mailer: git-send-email 2.19.1
+Date: Fri, 10 May 2019 23:18:46 +0200
+Message-ID: <4040720.Q0NHDdjkrE@debian64>
+In-Reply-To: <20190510135637.31204-1-lede@allycomm.com>
+References: <20190510135637.31204-1-lede@allycomm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_092634_239208_AE761702 
-X-CRM114-Status: GOOD (  22.86  )
+X-CRM114-CacheID: sfid-20190510_141851_014735_105FE1A2 
+X-CRM114-Status: GOOD (  18.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:434 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
+ provider (chunkeey[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH v3] ramips: Add support for Head Weblink
- HDRM200
+Subject: Re: [OpenWrt-Devel] [PATCH] utils/spidev_test: Update to current
+ source from upstream Linux
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,185 +101,416 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: lede@allycomm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVhZCBXZWJsaW5rIEhEUk0yMDAgaXMgYSBkdWFsLXNpbSByb3V0ZXIgYmFzZWQgb24gTVQ3NjIw
-QS4gVGhlIGRldGFpbGVkCnNwZWNpZmljYXRpb25zIGFyZToKCi0gTVQ3NjIwQSAoNTgwTUh6KQot
-IDY0TUIgUkFNCi0gMTZNQiBvZiBmbGFzaCAoU1BJIE5PUikKLSA2eCAxMC8xMDBNYnBzIEV0aGVy
-bmV0IChNVDc2MjBBIGJ1aWx0LWluIHN3aXRjaCkKLSAxeCBtaWNyb1NEIHNsb3QKLSAxeCBtaW5p
-UENJZSBzbG90IChvbmx5IFVTQjIuMCBidXMpLiBEZXZpY2UgaXMgc2hpcHBlZCB3aXRoIGEgU0lN
-Q09NClNJTTcxMDBFIExURSBtb2RlbS4KLSAyeCBTSU0gc2xvdHMgKHN0YW5kYXJkIHNpemUpCi0g
-MXggVVNCMi4wIHBvcnQKLSAxeCAyLjRHSHogd2lmaSAocnQyODAwKQotIDF4IDVHSHogd2lmaSAo
-bXQ3NjEyKQotIDF4IHJlc2V0IGJ1dHRvbgotIDF4IFdQUyBidXR0b24KLSAzeCBHUElPLWNvbnRy
-b2xsYWJsZSBMRURzCi0gMXggMTAgcGluIHRlcm1pbmFsIGJsb2NrIChSUzIzMiwgUlM0ODUsIDQg
-eCBHUElPKQoKVGVzdGVkOgotIEV0aGVybmV0IHN3aXRjaAotIFdpZmkKLSBVU0Igc2xvdAotIFNE
-IGNhcmQgc2xvdAotIG1pbmlQQ0llLXNsb3QKLSBzeXN1cGdyYWRlCi0gcmVzZXQgYnV0dG9uCgpJ
-bnN0YWxsYXRpb24gaW5zdHJ1Y3Rpb25zOgoKSW5zdGFsbGluZyBPcGVuV1JUIGZvciB0aGUgZmly
-c3QgdGltZSByZXF1aXJlcyBhIGJpdCBvZiB3b3JrLCBhcyB0aGUKYm9hcmQgZG9lcyBub3Qgc2hp
-cCB3aXRoIE9wZW5XUlQuIEluIGFkZGl0aW9uLCB0aGUgYm9vdGxvYWRlcgphdXRvbWF0aWNhbGx5
-IHJlYm9vdHMgd2hlbiBpbnN0YWxsaW5nIGFuIGltYWdlIG92ZXIgdGZ0cC4KCkluIG9yZGVyIHRv
-IGluc3RhbGwgT3BlbldSVCwgeW91IGZpcnN0IG5lZWQgdG8gY29tcGlsZSBhbiBpbml0cmFtZnMK
-KHJhbWRpc2spLWltYWdlIGZvciB0aGUgZGV2aWNlLiBPbmNlIHRoZSBpbWFnZSBpcyByZWFkeSwg
-eW91IG5lZWQgdG8gZG8KdGhlIGZvbGxvd2luZzoKCiogQ29weSB0aGUgaW5pdHJhbWZzLWltYWdl
-IHRvIHlvdXIgdGZ0cC1yb290IChkZWZhdWx0IGZpbGVuYW1lIGlzCnRlc3QuYmluKSBhbmQgY29u
-ZmlndXJlIG5ldHdvcmtpbmcgYWNjb3JkaW5nbHkgKGRlZmF1bHQgc2VydmVyIElQIGlzCjEwLjEw
-LjEwLjMsIGNsaWVudCAxMC4xMC4xMC4xMjMpLiBTdGFydCB5b3VyIHRmdHAgc2VydmVyLgoqIE9w
-ZW4gdGhlIGJvYXJkIGFuZCBjb25uZWN0IHRvIFVBUlQuIFRoZSBwaW5zIGFyZSBleHBvc2VkIGFu
-ZCBjbGVhcmx5Cm1hcmtlZC4KKiBCb290IHRoZSBib2FyZCBhbmQgcHJlc3MgMS4KKiBFaXRoZXIg
-dXNlIHRoZSBkZWZhdWx0IGZpbGVuYW1lIGFuZCBjbGllbnQvc2VydmVyIElQLWFkZHJlc3Nlcywg
-b3IKc3BlY2lmeSB5b3VyIG93bi4KClRoZSBpbWFnZSBzaG91bGQgbm93IGJlIGxvYWRlZCB0byBt
-ZW1vcnkgYW5kIGJvYXJkIGJvb3QuIElmIHRoZSByb3V0ZXIKcmVib290cyB3aGlsZSB0aGUgaW1h
-Z2UgaXMgbG9hZGluZywgeW91IG5lZWQgdG8gdHJ5IGFnYWluLiBPbmNlIHRoZQpib2FyZCBoYXMg
-Ym9vdGVkLCBjb3B5IHRoZSBzeXN1cGdyYWRlLWltYWdlIHRvIHRoZSByb3V0ZXIgYW5kIHJ1bgpz
-eXN1cGdyYWRlIGluIG9yZGVyIHRvIGluc3RhbGwgT3BlbldSVCB0byB0aGUgZmxhc2guCgpOb3Rl
-czoKCi0gWW91IGNvbnRyb2wgd2hpY2ggU0lNIHNsb3QgdG8gdXNlIGJ5IHdyaXRpbmcgMC8xIHRv
-Ci9zeXMvY2xhc3MvZ3Bpby9zaW1fc3dpdGNoL3ZhbHVlLiBJbiBvcmRlciBmb3IgdGhlIGNoYW5n
-ZSB0byB0YWtlCmVmZmVjdCwgeW91IGNhbiBlaXRoZXIgdXNlIEFULWNvbW1hbmRzIChBVCtDRlVO
-KSBvciBwb3dlci1jeWNsZSB0aGUKbW9kZW0gKHdyaXRlIDAvMSB0byAvc3lzL2NsYXNzL2dwaW8v
-cG93ZXJfbXBjaWUvdmFsdWUpLgotIFJTNDg1IGlzIGF2YWlsYWJsZSBvbiAvZGV2L3R0eVMwLgot
-IFJTMjMyIGlzIGF2YWlsYWJsZSBvbiAvZGV2L3R0eVMxLgotIFRoZSBuYW1lIG9mIHRoZSBpb1gt
-Z3Bpb3MgbWFwIHRvIHRoZSBsYWJlbHMgb24gdGhlIGNhc2luZy4KClNpZ25lZC1vZmYtYnk6IEty
-aXN0aWFuIEV2ZW5zZW4gPGtyaXN0aWFuLmV2ZW5zZW5AZ21haWwuY29tPgotLS0KdjItPnYzOgoK
-KiBCdWlsZCBpbml0cmFtZnMgYXV0b21hdGljYWxseSwgd2hpY2ggbWVhbnMgdGhhdCByYW1kaXNr
-IGlzIG5vdyBlbmFibGVkCnRoZSBtdDc2MjAtdGFyZ2V0LiBEdWUgdG8gdGhpcyBjaGFuZ2UsIGFu
-IGluaXRyYW1mcy1pbWFnZSBpcyBidWlsdCBmb3IgYWxsCmRlaXZjZXMsIGJ1dCB0aGlzIHNlZW1z
-IHRvIGJlIG9rIHdoZW4gbG9va2luZyBhdCBvdGhlciB0YXJnZXRzIChtdDc2MjEpCih0aGFua3Mg
-UGV0ciDFoHRldGlhcikuCiogVXNlIGdlbmVyaWMgYm9hcmQvbW9kZWwgZGV0ZWN0aW9uLCB1cGRh
-dGVkIHRoZSBtYXRjaCBpbiAwMV9sZWRzIGFuZAowMl9uZXR3b3JrICh0aGFua3MgUGV0ciDFoHRl
-dGlhcikuCiogQ2hhbmdlZCB0aGUgZGV2aWNlL3RhcmdldCBkZXZpY2UgaW4gdGhlIE1ha2VmaWxl
-IHRvIG1hdGNoIHRoZQpjb21wYXRpYmxlLXN0cmluZyBpbiB0aGUgRFRTICh0aGFua3MgUGV0ciDF
-oHRldGlhcikuCiogVXNlIHRoZSB1c2VyLXNwYWNlIGdwaW8tc3dpdGNoIGFsdGVybmF0aXZlIGlu
-c3RlYWQgb2YgZ3Bpby1leHBvcnQgaW4KdGhlIERUUyAodGhhbmtzIFBldHIgxaB0ZXRpYXIpLgoq
-IFVwZGF0ZSBuYW1lIG9mIGZsYXNoIG5vZGUgaW4gRFRTIHRvIHRoZSBtb3JlIGdlbmVyaWMgImZs
-YXNoMCIgKHRoYW5rcwpQZXRyIMWgdGV0aWFyKS4uCiogRml4IHR5cG8gaW4gY29tbWl0IG1lc3Nh
-Z2UgKG10NzYyMS0+bXQ3NjEyKSAodGhhbmtzIFRvbSBQc3lib3JnKS4KKiBBZGRlZCB0aGUgUU1J
-IGFuZCBvcHRpb24gZHJpdmVycywgYXMgd2VsbCBhcyB1cW1pLCBzbyB0aGF0IHRoZSBtb2RlbQpp
-cyBhdmFpbGFibGUgZm9yIHVzZSBvdXQgb2YgdGhlIGJveC4KCnYxLT52MjoKKiBBZGQgU1BEWCBs
-aW5lIHRvIERUUyAodGhhbmtzIFJhZmHFgiBNacWCZWNraSkuCi0tLQogLi4uL3JhbWlwcy9iYXNl
-LWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgICAgIHwgICAzICsKIC4uLi9yYW1pcHMvYmFzZS1m
-aWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrICB8ICAgMSArCiAuLi4vYmFzZS1maWxlcy9ldGMv
-Ym9hcmQuZC8wM19ncGlvX3N3aXRjaGVzICAgfCAgIDggKwogdGFyZ2V0L2xpbnV4L3JhbWlwcy9k
-dHMvSERSTTIwMC5kdHMgICAgICAgICAgIHwgMTg4ICsrKysrKysrKysrKysrKysrKwogdGFyZ2V0
-L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjAubWsgICAgICAgICAgIHwgICA5ICsKIHRhcmdldC9s
-aW51eC9yYW1pcHMvbXQ3NjIwL3RhcmdldC5tayAgICAgICAgICB8ICAgMiArLQogNiBmaWxlcyBj
-aGFuZ2VkLCAyMTAgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQogY3JlYXRlIG1vZGUgMTAw
-NjQ0IHRhcmdldC9saW51eC9yYW1pcHMvZHRzL0hEUk0yMDAuZHRzCgpkaWZmIC0tZ2l0IGEvdGFy
-Z2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgYi90YXJnZXQv
-bGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcwppbmRleCBmYTIwYWIw
-NzE0Li4wNzk5MzE0ZjZkIDEwMDc1NQotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmls
-ZXMvZXRjL2JvYXJkLmQvMDFfbGVkcworKysgYi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmls
-ZXMvZXRjL2JvYXJkLmQvMDFfbGVkcwpAQCAtMTg0LDYgKzE4NCw5IEBAIGhjNTg2MSkKIAl1Y2lk
-ZWZfc2V0X2xlZF9uZXRkZXYgIndpZmk1ZyIgIndpZmk1ZyIgIiRib2FyZG5hbWU6Ymx1ZTp3bGFu
-NWciICJ3bGFuMCIKIAl1Y2lkZWZfc2V0X2xlZF9uZXRkZXYgIndpZmkyZyIgIndpZmkyZyIgIiRi
-b2FyZG5hbWU6Ymx1ZTp3bGFuMmciICJ3bGFuMSIKIAk7OworaGVhZC13ZWJsaW5rLGhkcm0yMDAp
-CisJc2V0X3dpZmlfbGVkICIkYm9hcmRuYW1lOmdyZWVuOndpZmkiCisJOzsKIGhnMjU1ZCkKIAlz
-ZXRfd2lmaV9sZWQgIiRib2FyZG5hbWU6Z3JlZW46d2xhbiIKIAl1Y2lkZWZfc2V0X2xlZF9uZXRk
-ZXYgImludGVybmV0IiAiaW50ZXJuZXQiICIkYm9hcmRuYW1lOmdyZWVuOmludGVybmV0IiAiZXRo
-MC4yIgpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2Fy
-ZC5kLzAyX25ldHdvcmsgYi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJk
-LmQvMDJfbmV0d29yawppbmRleCBjMjY0Njg3NmEyLi5iMDAzN2EwY2UyIDEwMDc1NQotLS0gYS90
-YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yaworKysg
-Yi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yawpA
-QCAtMzE0LDYgKzMxNCw3IEBAIHJhbWlwc19zZXR1cF9pbnRlcmZhY2VzKCkKIAkJCSIxOmxhbiIg
-IjI6bGFuIiAiMzpsYW4iICI0OmxhbiIgIjA6d2FuIiAiNkBldGgwIgogCQk7OwogCWhjNTY2MXxc
-CisJaGVhZC13ZWJsaW5rLGhkcm0yMDB8XAogCXkxcykKIAkJdWNpZGVmX2FkZF9zd2l0Y2ggInN3
-aXRjaDAiIFwKIAkJCSIxOmxhbiIgIjI6bGFuIiAiMzpsYW4iICI0OmxhbiIgIjU6bGFuIiAiMDp3
-YW4iICI2QGV0aDAiCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMv
-ZXRjL2JvYXJkLmQvMDNfZ3Bpb19zd2l0Y2hlcyBiL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1m
-aWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCmluZGV4IDgwZTNjNGM0MWYuLmZjMzc2
-YTRkMWYgMTAwNzU1Ci0tLSBhL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1maWxlcy9ldGMvYm9h
-cmQuZC8wM19ncGlvX3N3aXRjaGVzCisrKyBiL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1maWxl
-cy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCkBAIC0xMSw2ICsxMSwxNCBAQCBkbGluayxk
-aXItNTEwbCkKIAl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJ1c2JfZW5hYmxlMSIgIlVTQiAxQSBl
-bmFibGUiICIxMiIgIjAiCiAJdWNpZGVmX2FkZF9ncGlvX3N3aXRjaCAidXNiX2VuYWJsZTA1IiAi
-VVNCIDAuNUEgZW5hYmxlIiAiMTMiICIxIgogCTs7CitoZWFkLXdlYmxpbmssaGRybTIwMCkKKwl1
-Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJzaW1fc3dpdGNoIiAiU0lNIHNsb3Qgc3dpdGNoIiAiMCIK
-Kwl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJpbzEiICJJL08gMSIgIjEiCisJdWNpZGVmX2FkZF9n
-cGlvX3N3aXRjaCAiaW8yIiAiSS9PIDIiICIyIgorCXVjaWRlZl9hZGRfZ3Bpb19zd2l0Y2ggImlv
-MyIgIkkvTyAzIiAiMTEiCisJdWNpZGVmX2FkZF9ncGlvX3N3aXRjaCAiaW80IiAiSS9PIDQiICIx
-NCIKKwl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJwb3dlcl9tcGNpZSIgIm1QQ0llIHBvd2VyIiAi
-MjEiICIxIgorCTs7CiBtaWtyb3RpayxyYjc1MGdyMykKIAl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNo
-ICJwb2VfcGFzc3Rocm91Z2giICJQb0UgUGFzc3Rocm91Z2giICIxNyIKIAk7OwpkaWZmIC0tZ2l0
-IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvSERSTTIwMC5kdHMgYi90YXJnZXQvbGludXgvcmFt
-aXBzL2R0cy9IRFJNMjAwLmR0cwpuZXcgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAw
-Li5hZDE2ZDAyNzE2Ci0tLSAvZGV2L251bGwKKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMv
-SERSTTIwMC5kdHMKQEAgLTAsMCArMSwxODggQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVy
-OiBHUEwtMi4wLW9yLWxhdGVyIE9SIE1JVAorL2R0cy12MS87CisKKyNpbmNsdWRlICJtdDc2MjBh
-LmR0c2kiCisKKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KKyNpbmNsdWRlIDxk
-dC1iaW5kaW5ncy9pbnB1dC9pbnB1dC5oPgorCisvIHsKKwljb21wYXRpYmxlID0gImhlYWQtd2Vi
-bGluayxoZHJtMjAwIiwgInJhbGluayxtdDc2MjBhLXNvYyI7CisJbW9kZWwgPSAiSGVhZCBXZWJs
-aW5rIEhEUk0yMDAiOworCisJYWxpYXNlcyB7CisJCWxlZC1ib290ID0gJmxlZF9zeXN0ZW07CisJ
-CWxlZC1mYWlsc2FmZSA9ICZsZWRfc3lzdGVtOworCQlsZWQtcnVubmluZyA9ICZsZWRfc3lzdGVt
-OworCQlsZWQtdXBncmFkZSA9ICZsZWRfc3lzdGVtOworCX07CisKKwljaG9zZW4geworCQlib290
-YXJncyA9ICJjb25zb2xlPXR0eVMxLDU3NjAwIjsKKwl9OworCisJbGVkcyB7CisJCWNvbXBhdGli
-bGUgPSAiZ3Bpby1sZWRzIjsKKworCQlyc3NpIHsKKwkJCWxhYmVsID0gImhkcm0yMDA6cmVkOnJz
-c2kiOworCQkJZ3Bpb3MgPSA8JmdwaW8wIDE5IEdQSU9fQUNUSVZFX0xPVz47CisJCX07CisKKwkJ
-bGVkX3N5c3RlbTogc3lzdGVtIHsKKwkJCWxhYmVsID0gImhkcm0yMDA6Z3JlZW46c3lzdGVtIjsK
-KwkJCWdwaW9zID0gPCZncGlvMSAxNCBHUElPX0FDVElWRV9ISUdIPjsKKwkJfTsKKworCQlhaXIg
-eworCQkJbGFiZWwgPSAiaGRybTIwMDpncmVlbjp3aWZpIjsKKwkJCWdwaW9zID0gPCZncGlvMyAw
-IEdQSU9fQUNUSVZFX0xPVz47CisJCX07CisJfTsKKworCWtleXMgeworCQljb21wYXRpYmxlID0g
-ImdwaW8ta2V5cy1wb2xsZWQiOworCQlwb2xsLWludGVydmFsID0gPDIwPjsKKworCQl3cHMgewor
-CQkJbGFiZWwgPSAid3BzIjsKKwkJCWdwaW9zID0gPCZncGlvMCAxMiBHUElPX0FDVElWRV9MT1c+
-OworCQkJbGludXgsY29kZSA9IDxLRVlfV1BTX0JVVFRPTj47CisJCX07CisKKwkJcmVzZXQgewor
-CQkJbGFiZWwgPSAicmVzZXQiOworCQkJZ3Bpb3MgPSA8JmdwaW8wIDEzIEdQSU9fQUNUSVZFX0xP
-Vz47CisJCQlsaW51eCxjb2RlID0gPEtFWV9SRVNUQVJUPjsKKwkJfTsKKwl9OworfTsKKworJnNw
-aTAgeworCXN0YXR1cyA9ICJva2F5IjsKKworCWZsYXNoQDAgeworCQljb21wYXRpYmxlID0gImpl
-ZGVjLHNwaS1ub3IiOworCQlyZWcgPSA8MD47CisJCXNwaS1tYXgtZnJlcXVlbmN5ID0gPDEwMDAw
-MDAwPjsKKworCQlwYXJ0aXRpb25zIHsKKwkJCWNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9u
-cyI7CisJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKKwkJCSNzaXplLWNlbGxzID0gPDE+OworCisJ
-CQlwYXJ0aXRpb25AMCB7CisJCQkJbGFiZWwgPSAidS1ib290IjsKKwkJCQlyZWcgPSA8MHgwIDB4
-MzAwMDA+OworCQkJCXJlYWQtb25seTsKKwkJCX07CisKKwkJCXBhcnRpdGlvbkAzMDAwMCB7CisJ
-CQkJbGFiZWwgPSAidS1ib290LWVudiI7CisJCQkJcmVnID0gPDB4MzAwMDAgMHgxMDAwMD47CisJ
-CQkJcmVhZC1vbmx5OworCQkJfTsKKworCQkJZmFjdG9yeTogcGFydGl0aW9uQDQwMDAwIHsKKwkJ
-CQlsYWJlbCA9ICJmYWN0b3J5IjsKKwkJCQlyZWcgPSA8MHg0MDAwMCAweDEwMDAwPjsKKwkJCQly
-ZWFkLW9ubHk7CisJCQl9OworCisJCQlmaXJtd2FyZTogcGFydGl0aW9uQDUwMDAwIHsKKwkJCQlj
-b21wYXRpYmxlID0gImRlbngsdWltYWdlIjsKKwkJCQlsYWJlbCA9ICJmaXJtd2FyZSI7CisJCQkJ
-cmVnID0gPDB4NTAwMDAgMHhmYjAwMDA+OworCQkJfTsKKwkJfTsKKwl9OworfTsKKworJmdwaW8w
-IHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismZ3BpbzEgeworCXN0YXR1cyA9ICJva2F5IjsK
-K307CisKKyZncGlvMyB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJnNkaGNpIHsKKwlzdGF0
-dXMgPSAib2theSI7Cit9OworCismZWhjaSB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJm9o
-Y2kgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZldGhlcm5ldCB7CisJc3RhdHVzID0gIm9r
-YXkiOworCisJbXRkLW1hYy1hZGRyZXNzID0gPCZmYWN0b3J5IDB4ND47CisJcGluY3RybC1uYW1l
-cyA9ICJkZWZhdWx0IjsKKwlwaW5jdHJsLTAgPSA8JnJnbWlpMV9waW5zICZyZ21paTJfcGlucyAm
-bWRpb19waW5zPjsKKworCXBvcnRANCB7CisJCXN0YXR1cyA9ICJva2F5IjsKKwkJcGh5LWhhbmRs
-ZSA9IDwmcGh5ND47CisJCXBoeS1tb2RlID0gInJnbWlpIjsKKwl9OworCisJcG9ydEA1IHsKKwkJ
-c3RhdHVzID0gIm9rYXkiOworCQlwaHktaGFuZGxlID0gPCZwaHk1PjsKKwkJcGh5LW1vZGUgPSAi
-cmdtaWkiOworCX07CisKKwltZGlvLWJ1cyB7CisJCXN0YXR1cyA9ICJva2F5IjsKKworCQlwaHk0
-OiBldGhlcm5ldC1waHlANCB7CisJCQlyZWcgPSA8ND47CisJCQlwaHktbW9kZSA9ICJyZ21paSI7
-CisJCX07CisKKwkJcGh5NTogZXRoZXJuZXQtcGh5QDUgeworCQkJcmVnID0gPDU+OworCQkJcGh5
-LW1vZGUgPSAicmdtaWkiOworCQl9OworCX07Cit9OworCismd21hYyB7CisJcmFsaW5rLG10ZC1l
-ZXByb20gPSA8JmZhY3RvcnkgMD47Cit9OworCismcGluY3RybCB7CisJc3RhdGVfZGVmYXVsdDog
-cGluY3RybDAgeworCQlkZWZhdWx0IHsKKwkJCXJhbGluayxncm91cCA9ICJpMmMiLCAidWFydGYi
-LCAicGEiLCAic3BpIHJlZmNsayIsCisJCQkJICAgICAgICJ3bGVkIjsKKwkJCXJhbGluayxmdW5j
-dGlvbiA9ICJncGlvIjsKKwkJfTsKKwl9OworfTsKKworJnBjaWUgeworCXN0YXR1cyA9ICJva2F5
-IjsKK307CisKKyZwY2llMCB7CisJd2lmaUAwLDAgeworCQljb21wYXRpYmxlID0gIm1lZGlhdGVr
-LG10NzYiOworCQlyZWcgPSA8MHgwMDAwIDAgMCAwIDA+OworCQltZWRpYXRlayxtdGQtZWVwcm9t
-ID0gPCZmYWN0b3J5IDB4ODAwMD47CisJCWllZWU4MDIxMS1mcmVxLWxpbWl0ID0gPDUwMDAwMDAg
-NjAwMDAwMD47CisJfTsKK307CisKKyZ1YXJ0IHsKKyAgICBzdGF0dXMgPSAib2theSI7Cit9Owpk
-aWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjAubWsgYi90YXJnZXQv
-bGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5tawppbmRleCBkYTkwNTY4ZGYwLi43NmU0MzIzZTlh
-IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5taworKysgYi90
-YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5tawpAQCAtMzU4LDYgKzM1OCwxNSBAQCBk
-ZWZpbmUgRGV2aWNlL2hjNTg2MQogZW5kZWYKIFRBUkdFVF9ERVZJQ0VTICs9IGhjNTg2MQogCitk
-ZWZpbmUgRGV2aWNlL2hlYWQtd2VibGlua19oZHJtMjAwCisgIERUUyA6PSBIRFJNMjAwCisgIElN
-QUdFX1NJWkUgOj0gJChyYWxpbmtfZGVmYXVsdF9md19zaXplXzE2TSkKKyAgREVWSUNFX1RJVExF
-IDo9IEhlYWQgV2VibGluayBIRFJNMjAwMAorICBERVZJQ0VfUEFDS0FHRVMgOj0ga21vZC1tdDc2
-eDIga21vZC11c2IyIGttb2QtdXNiLW9oY2kga21vZC1zZGhjaS1tdDc2MjAgXAorCSAgCSAgICAg
-dXFtaSBrbW9kLXVzYi1zZXJpYWwga21vZC11c2Itc2VyaWFsLW9wdGlvbgorZW5kZWYKK1RBUkdF
-VF9ERVZJQ0VTICs9IGhlYWQtd2VibGlua19oZHJtMjAwCisKIGRlZmluZSBEZXZpY2UvaW9kYXRh
-X3duLWFjMTE2N2dyCiAgIERUUyA6PSBXTi1BQzExNjdHUgogICBERVZJQ0VfVElUTEUgOj0gSS1P
-IERBVEEgV04tQUMxMTY3R1IKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMvbXQ3NjIw
-L3RhcmdldC5tayBiL3RhcmdldC9saW51eC9yYW1pcHMvbXQ3NjIwL3RhcmdldC5tawppbmRleCA1
-NDQyNTQ2MDRlLi44YjNmMGNlZDVlIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL210
-NzYyMC90YXJnZXQubWsKKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9tdDc2MjAvdGFyZ2V0Lm1r
-CkBAIC00LDcgKzQsNyBAQAogCiBTVUJUQVJHRVQ6PW10NzYyMAogQk9BUkROQU1FOj1NVDc2MjAg
-YmFzZWQgYm9hcmRzCi1GRUFUVVJFUys9dXNiCitGRUFUVVJFUys9dXNiIHJhbWRpc2sKIENQVV9U
-WVBFOj0yNGtjCiAKIERFRkFVTFRfUEFDS0FHRVMgKz0ga21vZC1ydDI4MDAtcGNpIGttb2QtcnQy
-ODAwLXNvYyB3cGFkLWJhc2ljCi0tIAoyLjE5LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0
-LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+On Friday, May 10, 2019 3:56:37 PM CEST lede@allycomm.com wrote:
+> From: Jeff Kletsky <git-commits@allycomm.com>
+> 
+> Incorporates multiple changes, including file-based input and output
+> 
+> From upstream commit:
+> 
+>     commit 35386dfd13b7
+>     Author: Geert Uytterhoeven <geert+renesas@glider.be>
+>     Date:   Mon Sep 3 19:33:23 2018 +0200
+> 
+> Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
+> ---
+
+Hm, this got me thinking. Because we could also just do what the perf
+package does and built the spidev_test from the device's linux kernel
+source and ship it. This would also entail that we don't need to ship
+the spidev_test.c in package/utils/spidev_test/src anymore. What do you
+think?
+
+Cheers,
+Christian
+
+---
+diff --git a/package/utils/spidev_test/Makefile b/package/utils/spidev_test/Makefile
+index b7c5227f91..29c6a90dc8 100644
+--- a/package/utils/spidev_test/Makefile
++++ b/package/utils/spidev_test/Makefile
+@@ -10,13 +10,16 @@ include $(INCLUDE_DIR)/kernel.mk
+ 
+ PKG_NAME:=spidev-test
+ PKG_RELEASE:=$(LINUX_VERSION)
++PKG_FLAGS:=nonshared
++PKG_BUILD_DIR:=$(LINUX_DIR)/tools/spi-$(TARGET_DIR_NAME)
++PKG_BUILD_PARALLEL:=1
+ 
+ include $(INCLUDE_DIR)/package.mk
+ 
+ define Package/spidev-test
+   SECTION:=utils
+   CATEGORY:=Utilities
+-  DEPENDS:=+kmod-spi-dev
++  DEPENDS:=+kmod-spi-dev @!IN_SDK
+   TITLE:=SPI testing utility
+   VERSION:=$(LINUX_VERSION)-$(PKG_RELEASE)
+   URL:=http://www.kernel.org
+@@ -27,9 +30,26 @@ define Package/spidev-test/description
+   SPI testing utility.
+ endef
+ 
++define Build/Prepare
++	$(CP) $(LINUX_DIR)/tools/spi/* $(PKG_BUILD_DIR)/
++endef
++
++MAKE_FLAGS = \
++	ARCH="$(LINUX_KARCH)" \
++	CROSS_COMPILE="$(TARGET_CROSS)" \
++	CC="$(TARGET_CC)" \
++	LD="$(TARGET_CROSS)ld" \
++	CFLAGS="$(TARGET_CFLAGS) $(TARGET_CPPFLAGS)" \
++	LDFLAGS="$(TARGET_LDFLAGS)" \
++	$(if $(findstring c,$(OPENWRT_VERBOSE)),V=1,V='') \
++	WERROR=0 \
++	prefix=/usr
++
+ define Build/Compile
+-	$(TARGET_CC) $(TARGET_CFLAGS) -o $(PKG_BUILD_DIR)/spidev_test \
+-		$(PKG_BUILD_DIR)/spidev_test.c
++	+$(MAKE_FLAGS) $(MAKE) $(PKG_JOBS) \
++		-C $(PKG_BUILD_DIR) \
++		-f Makefile \
++		--no-print-directory
+ endef
+ 
+ define Package/spidev-test/install
+diff --git a/package/utils/spidev_test/src/spidev_test.c b/package/utils/spidev_test/src/spidev_test.c
+deleted file mode 100644
+index 135b3f592b..0000000000
+--- a/package/utils/spidev_test/src/spidev_test.c
++++ /dev/null
+@@ -1,318 +0,0 @@
+-/*
+- * SPI testing utility (using spidev driver)
+- *
+- * Copyright (c) 2007  MontaVista Software, Inc.
+- * Copyright (c) 2007  Anton Vorontsov <avorontsov@ru.mvista.com>
+- *
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU General Public License as published by
+- * the Free Software Foundation; either version 2 of the License.
+- *
+- * Cross-compile with cross-gcc -I/path/to/cross-kernel/include
+- */
+-
+-#include <stdint.h>
+-#include <unistd.h>
+-#include <stdio.h>
+-#include <stdlib.h>
+-#include <string.h>
+-#include <getopt.h>
+-#include <fcntl.h>
+-#include <sys/ioctl.h>
+-#include <linux/types.h>
+-#include <linux/spi/spidev.h>
+-
+-#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
+-
+-static void pabort(const char *s)
+-{
+-	perror(s);
+-	abort();
+-}
+-
+-static const char *device = "/dev/spidev1.1";
+-static uint32_t mode;
+-static uint8_t bits = 8;
+-static uint32_t speed = 500000;
+-static uint16_t delay;
+-static int verbose;
+-
+-uint8_t default_tx[] = {
+-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+-	0x40, 0x00, 0x00, 0x00, 0x00, 0x95,
+-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+-	0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+-	0xF0, 0x0D,
+-};
+-
+-uint8_t default_rx[ARRAY_SIZE(default_tx)] = {0, };
+-char *input_tx;
+-
+-static void hex_dump(const void *src, size_t length, size_t line_size, char *prefix)
+-{
+-	int i = 0;
+-	const unsigned char *address = src;
+-	const unsigned char *line = address;
+-	unsigned char c;
+-
+-	printf("%s | ", prefix);
+-	while (length-- > 0) {
+-		printf("%02X ", *address++);
+-		if (!(++i % line_size) || (length == 0 && i % line_size)) {
+-			if (length == 0) {
+-				while (i++ % line_size)
+-					printf("__ ");
+-			}
+-			printf(" | ");  /* right close */
+-			while (line < address) {
+-				c = *line++;
+-				printf("%c", (c < 33 || c == 255) ? 0x2E : c);
+-			}
+-			printf("\n");
+-			if (length > 0)
+-				printf("%s | ", prefix);
+-		}
+-	}
+-}
+-
+-/*
+- *  Unescape - process hexadecimal escape character
+- *      converts shell input "\x23" -> 0x23
+- */
+-static int unescape(char *_dst, char *_src, size_t len)
+-{
+-	int ret = 0;
+-	char *src = _src;
+-	char *dst = _dst;
+-	unsigned int ch;
+-
+-	while (*src) {
+-		if (*src == '\\' && *(src+1) == 'x') {
+-			sscanf(src + 2, "%2x", &ch);
+-			src += 4;
+-			*dst++ = (unsigned char)ch;
+-		} else {
+-			*dst++ = *src++;
+-		}
+-		ret++;
+-	}
+-	return ret;
+-}
+-
+-static void transfer(int fd, uint8_t const *tx, uint8_t const *rx, size_t len)
+-{
+-	int ret;
+-
+-	struct spi_ioc_transfer tr = {
+-		.tx_buf = (unsigned long)tx,
+-		.rx_buf = (unsigned long)rx,
+-		.len = len,
+-		.delay_usecs = delay,
+-		.speed_hz = speed,
+-		.bits_per_word = bits,
+-	};
+-
+-	if (mode & SPI_TX_QUAD)
+-		tr.tx_nbits = 4;
+-	else if (mode & SPI_TX_DUAL)
+-		tr.tx_nbits = 2;
+-	if (mode & SPI_RX_QUAD)
+-		tr.rx_nbits = 4;
+-	else if (mode & SPI_RX_DUAL)
+-		tr.rx_nbits = 2;
+-	if (!(mode & SPI_LOOP)) {
+-		if (mode & (SPI_TX_QUAD | SPI_TX_DUAL))
+-			tr.rx_buf = 0;
+-		else if (mode & (SPI_RX_QUAD | SPI_RX_DUAL))
+-			tr.tx_buf = 0;
+-	}
+-
+-	ret = ioctl(fd, SPI_IOC_MESSAGE(1), &tr);
+-	if (ret < 1)
+-		pabort("can't send spi message");
+-
+-	if (verbose)
+-		hex_dump(tx, len, 32, "TX");
+-	hex_dump(rx, len, 32, "RX");
+-}
+-
+-static void print_usage(const char *prog)
+-{
+-	printf("Usage: %s [-DsbdlHOLC3]\n", prog);
+-	puts("  -D --device   device to use (default /dev/spidev1.1)\n"
+-	     "  -s --speed    max speed (Hz)\n"
+-	     "  -d --delay    delay (usec)\n"
+-	     "  -b --bpw      bits per word \n"
+-	     "  -l --loop     loopback\n"
+-	     "  -H --cpha     clock phase\n"
+-	     "  -O --cpol     clock polarity\n"
+-	     "  -L --lsb      least significant bit first\n"
+-	     "  -C --cs-high  chip select active high\n"
+-	     "  -3 --3wire    SI/SO signals shared\n"
+-	     "  -v --verbose  Verbose (show tx buffer)\n"
+-	     "  -p            Send data (e.g. \"1234\\xde\\xad\")\n"
+-	     "  -N --no-cs    no chip select\n"
+-	     "  -R --ready    slave pulls low to pause\n"
+-	     "  -2 --dual     dual transfer\n"
+-	     "  -4 --quad     quad transfer\n");
+-	exit(1);
+-}
+-
+-static void parse_opts(int argc, char *argv[])
+-{
+-	while (1) {
+-		static const struct option lopts[] = {
+-			{ "device",  1, 0, 'D' },
+-			{ "speed",   1, 0, 's' },
+-			{ "delay",   1, 0, 'd' },
+-			{ "bpw",     1, 0, 'b' },
+-			{ "loop",    0, 0, 'l' },
+-			{ "cpha",    0, 0, 'H' },
+-			{ "cpol",    0, 0, 'O' },
+-			{ "lsb",     0, 0, 'L' },
+-			{ "cs-high", 0, 0, 'C' },
+-			{ "3wire",   0, 0, '3' },
+-			{ "no-cs",   0, 0, 'N' },
+-			{ "ready",   0, 0, 'R' },
+-			{ "dual",    0, 0, '2' },
+-			{ "verbose", 0, 0, 'v' },
+-			{ "quad",    0, 0, '4' },
+-			{ NULL, 0, 0, 0 },
+-		};
+-		int c;
+-
+-		c = getopt_long(argc, argv, "D:s:d:b:lHOLC3NR24p:v", lopts, NULL);
+-
+-		if (c == -1)
+-			break;
+-
+-		switch (c) {
+-		case 'D':
+-			device = optarg;
+-			break;
+-		case 's':
+-			speed = atoi(optarg);
+-			break;
+-		case 'd':
+-			delay = atoi(optarg);
+-			break;
+-		case 'b':
+-			bits = atoi(optarg);
+-			break;
+-		case 'l':
+-			mode |= SPI_LOOP;
+-			break;
+-		case 'H':
+-			mode |= SPI_CPHA;
+-			break;
+-		case 'O':
+-			mode |= SPI_CPOL;
+-			break;
+-		case 'L':
+-			mode |= SPI_LSB_FIRST;
+-			break;
+-		case 'C':
+-			mode |= SPI_CS_HIGH;
+-			break;
+-		case '3':
+-			mode |= SPI_3WIRE;
+-			break;
+-		case 'N':
+-			mode |= SPI_NO_CS;
+-			break;
+-		case 'v':
+-			verbose = 1;
+-			break;
+-		case 'R':
+-			mode |= SPI_READY;
+-			break;
+-		case 'p':
+-			input_tx = optarg;
+-			break;
+-		case '2':
+-			mode |= SPI_TX_DUAL;
+-			break;
+-		case '4':
+-			mode |= SPI_TX_QUAD;
+-			break;
+-		default:
+-			print_usage(argv[0]);
+-			break;
+-		}
+-	}
+-	if (mode & SPI_LOOP) {
+-		if (mode & SPI_TX_DUAL)
+-			mode |= SPI_RX_DUAL;
+-		if (mode & SPI_TX_QUAD)
+-			mode |= SPI_RX_QUAD;
+-	}
+-}
+-
+-int main(int argc, char *argv[])
+-{
+-	int ret = 0;
+-	int fd;
+-	uint8_t *tx;
+-	uint8_t *rx;
+-	int size;
+-
+-	parse_opts(argc, argv);
+-
+-	fd = open(device, O_RDWR);
+-	if (fd < 0)
+-		pabort("can't open device");
+-
+-	/*
+-	 * spi mode
+-	 */
+-	ret = ioctl(fd, SPI_IOC_WR_MODE32, &mode);
+-	if (ret == -1)
+-		pabort("can't set spi mode");
+-
+-	ret = ioctl(fd, SPI_IOC_RD_MODE32, &mode);
+-	if (ret == -1)
+-		pabort("can't get spi mode");
+-
+-	/*
+-	 * bits per word
+-	 */
+-	ret = ioctl(fd, SPI_IOC_WR_BITS_PER_WORD, &bits);
+-	if (ret == -1)
+-		pabort("can't set bits per word");
+-
+-	ret = ioctl(fd, SPI_IOC_RD_BITS_PER_WORD, &bits);
+-	if (ret == -1)
+-		pabort("can't get bits per word");
+-
+-	/*
+-	 * max speed hz
+-	 */
+-	ret = ioctl(fd, SPI_IOC_WR_MAX_SPEED_HZ, &speed);
+-	if (ret == -1)
+-		pabort("can't set max speed hz");
+-
+-	ret = ioctl(fd, SPI_IOC_RD_MAX_SPEED_HZ, &speed);
+-	if (ret == -1)
+-		pabort("can't get max speed hz");
+-
+-	printf("spi mode: 0x%x\n", mode);
+-	printf("bits per word: %d\n", bits);
+-	printf("max speed: %d Hz (%d KHz)\n", speed, speed/1000);
+-
+-	if (input_tx) {
+-		size = strlen(input_tx+1);
+-		tx = malloc(size);
+-		rx = malloc(size);
+-		size = unescape((char *)tx, input_tx, size);
+-		transfer(fd, tx, rx, size);
+-		free(rx);
+-		free(tx);
+-	} else {
+-		transfer(fd, default_tx, default_rx, sizeof(default_tx));
+-	}
+-
+-	close(fd);
+-
+-	return ret;
+-}
+
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

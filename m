@@ -2,53 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B821A04E
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 May 2019 17:37:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D62CB1A16E
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 May 2019 18:26:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oKu9E9OQ55khH9evcqN8dBPNB7YZQx9tVUofzP7HezI=; b=IgL5h47SRObPI7
-	adKcdEMbRIHVfnhSFrH85c4AygKqnjoOOKTTFVAcazp7vdNZX4D+YALNdsVlQT3MtNZI43qdcqRDW
-	HKpKNw+AHIB71PNWGOI2PfX8mU5tHBd8HYYMFMUKdjCHAN/7C1BwA4atmV520jM94Mihe4uoNibcO
-	I61l3pTYN/VDIkIUTDn4UyTLvaHEm55lnp4jOTn67rSIEWMCXJ0QJirmylZ6yiirwDBTO1cS+MbnP
-	BGP7qmOQ0jjZVC8ktDFoTSXzAPk4OiwOKIkOzKhY7dsVgy0tro+litFp/uV7Y6CXam6uzvTPQ0acX
-	Fkx3UlPn5B1uNu0F6k8Q==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CRAXo0zzFUQN8KsbcBgIc+t/yh/8CMc/9dvbD7E/7Vw=; b=TB00V6lh+V9G/9
+	XU7FbSXV9l2D43hgdbTqjYHUh01PNJIYR8ZFYHk3GCvzvtm1Xp/DhnnckX15u5z6Eb3aqpceGLeoA
+	l29quSTIbPjQhf5zvSCw5QtQTRXk7UNrgjNd/A2o7F9RszC86EPNnVy2dcN9yK4Tn99/njS/Qhxye
+	6cUTn3iJpGNADUXT8UyeEBYuL22GXPSAOs4XBN3hrreRFkCxCT18Ts3lt7YRQWMwQcKIkFjmuiBwk
+	bGPvK5xOg9ihPC/naxbJbvjGQ8JmIoDwX1T5qFZVU2z0+i77L/jVLrnz3nRhWpSPl0KMdO9OaLKUG
+	xrri0Yx51RCRtScv8Kww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP7Zy-000236-Bq; Fri, 10 May 2019 15:36:58 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1hP8M5-0003m2-PU; Fri, 10 May 2019 16:26:41 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP7Zh-0001uW-HH
- for openwrt-devel@lists.openwrt.org; Fri, 10 May 2019 15:36:44 +0000
-X-Originating-IP: 139.18.242.240
-Received: from dawn.localdomain (edu242240.nat.uni-leipzig.de [139.18.242.240])
- (Authenticated sender: mail@aparcar.org)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 4258E1BF211;
- Fri, 10 May 2019 15:36:32 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
+ id 1hP8Ly-0003lM-6V
+ for openwrt-devel@lists.openwrt.org; Fri, 10 May 2019 16:26:36 +0000
+Received: by mail-wr1-x441.google.com with SMTP id s15so8550092wra.12
+ for <openwrt-devel@lists.openwrt.org>; Fri, 10 May 2019 09:26:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e5lYhcWkoCY6B7gM/pn9TXegpEhcnmb8jKxTZNcXKpk=;
+ b=JQ8EjxvwB8W6kGSaLTUth02n4jElV3vBUpE/l851Dx/pHr7gU4ZryH5AYtSx74diZA
+ A5rcAPf1toageOnZM1TjVNGx+RXbNiu1YOWc6zjiqulcyCDurm8rKUVU7CJMq1tzVXl7
+ nIDV2fyAnELQycKCJF217QXh/BHDaG2uz/U24NIG2Syp8Hc5JbqS0GTIP3moit+vNFl+
+ euO0GwpqJAeqKwKE3qevyHuyTkdbsJv+SSVue9ULn761kE4CwrGgF/XcZkDmJOb7ldDQ
+ NlobS/PW0oaGPJ9OoB7zHlyNje9qt7HFDnw4sMKOlBRzQ8jem/CB6Hf+z0mdCX3AQ43m
+ wgdw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e5lYhcWkoCY6B7gM/pn9TXegpEhcnmb8jKxTZNcXKpk=;
+ b=sBsrIA+sSKaB/SWhfc56zr9hWJc4HGL/c6Vqn+ZGw/jaJECpPxpR0Dsfkk5/1KJ0Bj
+ HtLBQ0PICAOSUmEJdVDJamj10fJ6Rl9DVUTArkwn39CUBiSjIzM6dmCnmRG9fNiR9FWq
+ IwsfyKZNwzWcg9/pcahGP+Us5BiORpYxZIpAfkV4c8/gY4AftFW1gERf2qtGto1nh7xe
+ LQdh43ECgM9ySLrGUUyXerHS+7mpTbh5wbPqijonOwEU4+MeClnFrtOgC3wksA7HNM0M
+ YcDpkfo0XufTokhYsUf7yr6ljHMr/++e0Vb7b/sStV3mhs3TNGUGJxeeUQ4LwP9VZlVg
+ H6WQ==
+X-Gm-Message-State: APjAAAV6L7Zdcr8oHze/enWoqrGw1dkZns6W7mk34N/mqepUa/fVQ/0U
+ Q9JW4ZbnVhQa8ru2ImLJ45fjLipw
+X-Google-Smtp-Source: APXvYqyQwFQzBPfNHwsJIHDma9VbhpqDTEUGGeEJcmzSShPdACFt63KDu2YsB2p11aHbZnd2yjkctQ==
+X-Received: by 2002:a05:6000:1d0:: with SMTP id
+ t16mr8850428wrx.239.1557505585620; 
+ Fri, 10 May 2019 09:26:25 -0700 (PDT)
+Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
+ by smtp.gmail.com with ESMTPSA id 6sm6542040wms.23.2019.05.10.09.26.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 10 May 2019 09:26:25 -0700 (PDT)
+From: Kristian Evensen <kristian.evensen@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 10 May 2019 17:36:21 +0200
-Message-Id: <20190510153621.30933-2-mail@aparcar.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190510153621.30933-1-mail@aparcar.org>
-References: <20190510153621.30933-1-mail@aparcar.org>
+Date: Fri, 10 May 2019 18:26:22 +0200
+Message-Id: <20190510162622.22068-1-kristian.evensen@gmail.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_083641_879309_FF00C3A2 
-X-CRM114-Status: GOOD (  18.24  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190510_092634_239208_AE761702 
+X-CRM114-Status: GOOD (  22.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kristian.evensen[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH 2/2] procd: apply official kernel
- clang-format style
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH v3] ramips: Add support for Head Weblink
+ HDRM200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,1059 +96,185 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Paul Spooren <mail@aparcar.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kristian Evensen <kristian.evensen@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Currently some files use a mixture of spaces and tabs within a single
-file, instead of fixing style manually, a tool could do the job.
-
-Signed-off-by: Paul Spooren <mail@aparcar.org>
----
- container.h   |   3 +-
- inittab.c     | 109 +++++++++++++++++++-----------------
- libc-compat.h |   5 +-
- log.h         |  12 ++--
- preload.h     |  49 ++++++----------
- procd.c       |   6 +-
- rcS.c         |  10 ++--
- signal.c      |  22 +++-----
- state.c       |  52 ++++++++---------
- system.c      | 151 +++++++++++++++++++++-----------------------------
- sysupgrade.c  |   4 +-
- sysupgrade.h  |   2 -
- ubus.c        |  12 ++--
- watchdog.c    |  10 ++--
- watchdog.h    |   4 +-
- 15 files changed, 207 insertions(+), 244 deletions(-)
-
-diff --git a/container.h b/container.h
-index d33fa32..4bc0191 100644
---- a/container.h
-+++ b/container.h
-@@ -17,7 +17,8 @@
- #include <stdlib.h>
- #include <stdbool.h>
- 
--static inline bool is_container() {
-+static inline bool is_container()
-+{
- 	return !!getenv("container");
- }
- 
-diff --git a/inittab.c b/inittab.c
-index 55554b9..c955bc6 100644
---- a/inittab.c
-+++ b/inittab.c
-@@ -32,22 +32,22 @@
- #include "rcS.h"
- 
- #ifndef O_PATH
--#define O_PATH		010000000
-+#define O_PATH 010000000
- #endif
- 
--#define TAG_ID		0
--#define TAG_RUNLVL	1
--#define TAG_ACTION	2
--#define TAG_PROCESS	3
-+#define TAG_ID 0
-+#define TAG_RUNLVL 1
-+#define TAG_ACTION 2
-+#define TAG_PROCESS 3
- 
--#define MAX_ARGS	8
-+#define MAX_ARGS 8
- 
- struct init_action;
- char *console = NULL;
- 
- struct init_handler {
- 	const char *name;
--	void (*cb) (struct init_action *a);
-+	void (*cb)(struct init_action *a);
- 	int multi;
- };
- 
-@@ -74,7 +74,7 @@ static int dev_exist(const char *dev)
- {
- 	int dfd, fd;
- 
--	dfd = open("/dev", O_PATH|O_DIRECTORY);
-+	dfd = open("/dev", O_PATH | O_DIRECTORY);
- 
- 	if (dfd < 0)
- 		return 0;
-@@ -109,9 +109,8 @@ static void fork_worker(struct init_action *a)
- 	}
- 
- 	if (a->proc.pid > 0) {
--		DEBUG(4, "Launched new %s action, pid=%d\n",
--					a->handler->name,
--					(int) a->proc.pid);
-+		DEBUG(4, "Launched new %s action, pid=%d\n", a->handler->name,
-+		      (int)a->proc.pid);
- 		uloop_process_add(&a->proc);
- 	}
- }
-@@ -121,7 +120,7 @@ static void child_exit(struct uloop_process *proc, int ret)
- 	struct init_action *a = container_of(proc, struct init_action, proc);
- 
- 	DEBUG(4, "pid:%d\n", proc->pid);
--        uloop_timeout_set(&a->tout, a->respawn);
-+	uloop_timeout_set(&a->tout, a->respawn);
- }
- 
- static void respawn(struct uloop_timeout *tout)
-@@ -184,8 +183,7 @@ static void askconsole(struct init_action *a)
- 
- 		console = strdup(tty);
- 		a->id = strdup(tty);
--	}
--	else {
-+	} else {
- 		console = NULL;
- 		a->id = NULL;
- 	}
-@@ -209,35 +207,39 @@ static void rcrespawn(struct init_action *a)
- 	fork_worker(a);
- }
- 
--static struct init_handler handlers[] = {
--	{
--		.name = "sysinit",
--		.cb = runrc,
--	}, {
--		.name = "shutdown",
--		.cb = runrc,
--	}, {
--		.name = "askfirst",
--		.cb = askfirst,
--		.multi = 1,
--	}, {
--		.name = "askconsole",
--		.cb = askconsole,
--		.multi = 1,
--	}, {
--		.name = "respawn",
--		.cb = rcrespawn,
--		.multi = 1,
--	}, {
--		.name = "askconsolelate",
--		.cb = askconsole,
--		.multi = 1,
--	}, {
--		.name = "respawnlate",
--		.cb = rcrespawn,
--		.multi = 1,
--	}
--};
-+static struct init_handler handlers[] = { {
-+						  .name = "sysinit",
-+						  .cb = runrc,
-+					  },
-+					  {
-+						  .name = "shutdown",
-+						  .cb = runrc,
-+					  },
-+					  {
-+						  .name = "askfirst",
-+						  .cb = askfirst,
-+						  .multi = 1,
-+					  },
-+					  {
-+						  .name = "askconsole",
-+						  .cb = askconsole,
-+						  .multi = 1,
-+					  },
-+					  {
-+						  .name = "respawn",
-+						  .cb = rcrespawn,
-+						  .multi = 1,
-+					  },
-+					  {
-+						  .name = "askconsolelate",
-+						  .cb = askconsole,
-+						  .multi = 1,
-+					  },
-+					  {
-+						  .name = "respawnlate",
-+						  .cb = rcrespawn,
-+						  .multi = 1,
-+					  } };
- 
- static int add_action(struct init_action *a, const char *name)
- {
-@@ -257,20 +259,21 @@ void procd_inittab_run(const char *handler)
- {
- 	struct init_action *a;
- 
--	list_for_each_entry(a, &actions, list)
--		if (!strcmp(a->handler->name, handler)) {
--			if (a->handler->multi) {
--				a->handler->cb(a);
--				continue;
--			}
-+	list_for_each_entry(a, &actions,
-+			    list) if (!strcmp(a->handler->name, handler))
-+	{
-+		if (a->handler->multi) {
- 			a->handler->cb(a);
--			break;
-+			continue;
- 		}
-+		a->handler->cb(a);
-+		break;
-+	}
- }
- 
- void procd_inittab(void)
- {
--#define LINE_LEN	128
-+#define LINE_LEN 128
- 	FILE *fp = fopen(tab, "r");
- 	struct init_action *a;
- 	regex_t pat_inittab;
-@@ -282,7 +285,9 @@ void procd_inittab(void)
- 		return;
- 	}
- 
--	regcomp(&pat_inittab, "([a-zA-Z0-9]*):([a-zA-Z0-9]*):([a-zA-Z0-9]*):(.*)", REG_EXTENDED);
-+	regcomp(&pat_inittab,
-+		"([a-zA-Z0-9]*):([a-zA-Z0-9]*):([a-zA-Z0-9]*):(.*)",
-+		REG_EXTENDED);
- 	line = malloc(LINE_LEN);
- 	a = calloc(1, sizeof(struct init_action));
- 
-diff --git a/libc-compat.h b/libc-compat.h
-index 9435346..8d7152d 100644
---- a/libc-compat.h
-+++ b/libc-compat.h
-@@ -2,7 +2,10 @@
- #define __PROCD_LIBC_COMPAT_H
- 
- #if defined(__GLIBC__) && !defined(__UCLIBC__)
--static inline int ignore(int x) {return x;}
-+static inline int ignore(int x)
-+{
-+	return x;
-+}
- #else
- #define ignore(x) x
- #endif
-diff --git a/log.h b/log.h
-index f0c4268..7eadc57 100644
---- a/log.h
-+++ b/log.h
-@@ -17,12 +17,14 @@
- 
- #include <libubox/ulog.h>
- 
--#define DEBUG(level, fmt, ...) do { \
--	if (debug >= level) { \
--		ulog(LOG_NOTICE, fmt, ## __VA_ARGS__); \
--	} } while (0)
-+#define DEBUG(level, fmt, ...)                                                 \
-+	do {                                                                   \
-+		if (debug >= level) {                                          \
-+			ulog(LOG_NOTICE, fmt, ##__VA_ARGS__);                  \
-+		}                                                              \
-+	} while (0)
- 
--#define LOG   ULOG_INFO
-+#define LOG ULOG_INFO
- #define ERROR ULOG_ERR
- 
- extern unsigned int debug;
-diff --git a/preload.h b/preload.h
-index 5e663ac..5a09db0 100644
---- a/preload.h
-+++ b/preload.h
-@@ -18,39 +18,24 @@
- #endif
- 
- #ifndef attribute_unused
--#define attribute_unused __attribute__ ((unused))
-+#define attribute_unused __attribute__((unused))
- #endif
- typedef int (*main_t)(int, char **, char **);
- 
- typedef int (*start_main_t)(main_t main, int, char *__unbounded *__unbounded,
--			ElfW(auxv_t) *,
--			__typeof (main),
--			void (*fini) (void),
--			void (*rtld_fini) (void),
--			void *__unbounded stack_end);
--
--int __libc_start_main(main_t main,
--			int argc,
--			char **argv,
--			ElfW(auxv_t) *auxvec,
--			__typeof (main) init,
--			void (*fini) (void),
--			void (*rtld_fini) (void),
--			void *stack_end);
--
--
--typedef void (*uClibc_main)(main_t main,
--			int argc,
--			char **argv,
--			void (*app_init)(void),
--			void (*app_fini)(void),
--			void (*rtld_fini)(void),
--			void *stack_end attribute_unused);
--
--void __uClibc_main(main_t main,
--			int argc,
--			char **argv,
--			void (*app_init)(void),
--			void (*app_fini)(void),
--			void (*rtld_fini)(void),
--			void *stack_end attribute_unused);
-+			    ElfW(auxv_t) *, __typeof(main), void (*fini)(void),
-+			    void (*rtld_fini)(void),
-+			    void *__unbounded stack_end);
-+
-+int __libc_start_main(main_t main, int argc, char **argv, ElfW(auxv_t) * auxvec,
-+		      __typeof(main) init, void (*fini)(void),
-+		      void (*rtld_fini)(void), void *stack_end);
-+
-+typedef void (*uClibc_main)(main_t main, int argc, char **argv,
-+			    void (*app_init)(void), void (*app_fini)(void),
-+			    void (*rtld_fini)(void),
-+			    void *stack_end attribute_unused);
-+
-+void __uClibc_main(main_t main, int argc, char **argv, void (*app_init)(void),
-+		   void (*app_fini)(void), void (*rtld_fini)(void),
-+		   void *stack_end attribute_unused);
-diff --git a/procd.c b/procd.c
-index 3de6208..451f56e 100644
---- a/procd.c
-+++ b/procd.c
-@@ -29,13 +29,15 @@ unsigned int debug;
- 
- static int usage(const char *prog)
- {
--	fprintf(stderr, "Usage: %s [options]\n"
-+	fprintf(stderr,
-+		"Usage: %s [options]\n"
- 		"Options:\n"
- 		"	-s <path>	Path to ubus socket\n"
- 		"	-h <path>	run as hotplug daemon\n"
- 		"	-d <level>	Enable debug messages\n"
- 		"	-S		Print messages to stdout\n"
--		"\n", prog);
-+		"\n",
-+		prog);
- 	return 1;
- }
- 
-diff --git a/rcS.c b/rcS.c
-index c2e1abb..0455714 100644
---- a/rcS.c
-+++ b/rcS.c
-@@ -118,7 +118,8 @@ static void q_initd_complete(struct runqueue *q, struct runqueue_task *p)
- 		ts_res.tv_nsec += 1000000000;
- 	}
- 
--	DEBUG(2, "stop %s %s - took %lu.%09lus\n", s->file, s->param, ts_res.tv_sec, ts_res.tv_nsec);
-+	DEBUG(2, "stop %s %s - took %lu.%09lus\n", s->file, s->param,
-+	      ts_res.tv_sec, ts_res.tv_nsec);
- 	ustream_free(&s->fd.stream);
- 	close(s->fd.fd.fd);
- 	free(s);
-@@ -152,7 +153,8 @@ static void add_initd(struct runqueue *q, char *file, char *param)
- 	runqueue_task_add(q, &s->proc.task, false);
- }
- 
--static int _rc(struct runqueue *q, char *path, const char *file, char *pattern, char *param)
-+static int _rc(struct runqueue *q, char *path, const char *file, char *pattern,
-+	       char *param)
- {
- 	char *dir = alloca(2 + strlen(path) + strlen(file) + strlen(pattern));
- 	glob_t gl;
-@@ -194,10 +196,10 @@ int rc(const char *file, char *param)
- 
- static void r_empty(struct runqueue *q)
- {
--
- }
- 
--static void __attribute__((constructor)) rc_init() {
-+static void __attribute__((constructor)) rc_init()
-+{
- 	runqueue_init(&r);
- 	r.empty_cb = r_empty;
- 	r.max_running_tasks = 8;
-diff --git a/signal.c b/signal.c
-index 9974153..df2254c 100644
---- a/signal.c
-+++ b/signal.c
-@@ -27,7 +27,7 @@ static void do_reboot(void)
- 	sleep(2);
- 	reboot(RB_AUTOBOOT);
- 	while (1)
--	;
-+		;
- }
- 
- static void signal_shutdown(int signal, siginfo_t *siginfo, void *data)
-@@ -36,7 +36,7 @@ static void signal_shutdown(int signal, siginfo_t *siginfo, void *data)
- 	char *msg = NULL;
- 
- #ifndef DISABLE_INIT
--	switch(signal) {
-+	switch (signal) {
- 	case SIGINT:
- 	case SIGTERM:
- 		event = RB_AUTOBOOT;
-@@ -56,10 +56,8 @@ static void signal_shutdown(int signal, siginfo_t *siginfo, void *data)
- 		procd_shutdown(event);
- }
- 
--struct sigaction sa_shutdown = {
--	.sa_sigaction = signal_shutdown,
--	.sa_flags = SA_SIGINFO
--};
-+struct sigaction sa_shutdown = { .sa_sigaction = signal_shutdown,
-+				 .sa_flags = SA_SIGINFO };
- 
- static void signal_crash(int signal, siginfo_t *siginfo, void *data)
- {
-@@ -67,20 +65,16 @@ static void signal_crash(int signal, siginfo_t *siginfo, void *data)
- 	do_reboot();
- }
- 
--struct sigaction sa_crash = {
--	.sa_sigaction = signal_crash,
--	.sa_flags = SA_SIGINFO
--};
-+struct sigaction sa_crash = { .sa_sigaction = signal_crash,
-+			      .sa_flags = SA_SIGINFO };
- 
- static void signal_dummy(int signal, siginfo_t *siginfo, void *data)
- {
- 	ERROR("Got unexpected signal %d\n", signal);
- }
- 
--struct sigaction sa_dummy = {
--	.sa_sigaction = signal_dummy,
--	.sa_flags = SA_SIGINFO
--};
-+struct sigaction sa_dummy = { .sa_sigaction = signal_dummy,
-+			      .sa_flags = SA_SIGINFO };
- 
- void procd_signal(void)
- {
-diff --git a/state.c b/state.c
-index ccf4104..7a519ef 100644
---- a/state.c
-+++ b/state.c
-@@ -27,48 +27,49 @@
- #include "service/service.h"
- #include "utils/utils.h"
- 
--enum {
--	STATE_NONE = 0,
--	STATE_EARLY,
--	STATE_UBUS,
--	STATE_INIT,
--	STATE_RUNNING,
--	STATE_SHUTDOWN,
--	STATE_HALT,
--	__STATE_MAX,
-+enum { STATE_NONE = 0,
-+       STATE_EARLY,
-+       STATE_UBUS,
-+       STATE_INIT,
-+       STATE_RUNNING,
-+       STATE_SHUTDOWN,
-+       STATE_HALT,
-+       __STATE_MAX,
- };
- 
- static int state = STATE_NONE;
- static int reboot_event;
- 
--static void set_stdio(const char* tty)
-+static void set_stdio(const char *tty)
- {
--	if (chdir("/dev") ||
--	    !freopen(tty, "r", stdin) ||
--	    !freopen(tty, "w", stdout) ||
--	    !freopen(tty, "w", stderr) ||
-+	if (chdir("/dev") || !freopen(tty, "r", stdin) ||
-+	    !freopen(tty, "w", stdout) || !freopen(tty, "w", stderr) ||
- 	    chdir("/"))
- 		ERROR("failed to set stdio: %m\n");
- 	else
--		fcntl(STDERR_FILENO, F_SETFL, fcntl(STDERR_FILENO, F_GETFL) | O_NONBLOCK);
-+		fcntl(STDERR_FILENO, F_SETFL,
-+		      fcntl(STDERR_FILENO, F_GETFL) | O_NONBLOCK);
- }
- 
- static void set_console(void)
- {
--	const char* tty;
--	char* split;
--	char line[ 20 ];
--	const char* try[] = { "tty0", "console", NULL }; /* Try the most common outputs */
-+	const char *tty;
-+	char *split;
-+	char line[20];
-+	const char *try
-+		[] = { "tty0", "console",
-+		       NULL }; /* Try the most common outputs */
- 	int f, i = 0;
- 
--	tty = get_cmdline_val("console",line,sizeof(line));
-+	tty = get_cmdline_val("console", line, sizeof(line));
- 	if (tty != NULL) {
- 		split = strchr(tty, ',');
--		if ( split != NULL )
-+		if (split != NULL)
- 			*split = '\0';
- 	} else {
- 		// Try a default
--		tty=try[i];
-+		tty = try
-+			[i];
- 		i++;
- 	}
- 
-@@ -76,14 +77,15 @@ static void set_console(void)
- 		ERROR("failed to change dir to /dev: %m\n");
- 		return;
- 	}
--	while (tty!=NULL) {
-+	while (tty != NULL) {
- 		f = open(tty, O_RDONLY);
- 		if (f >= 0) {
- 			close(f);
- 			break;
- 		}
- 
--		tty=try[i];
-+		tty = try
-+			[i];
- 		i++;
- 	}
- 	if (chdir("/"))
-@@ -163,7 +165,7 @@ static void state_enter(void)
- 		/* We have to fork here, since the kernel calls do_exit(EXIT_SUCCESS)
- 		 * in linux/kernel/sys.c, which can cause the machine to panic when
- 		 * the init process exits... */
--		if (!vfork( )) { /* child */
-+		if (!vfork()) { /* child */
- 			reboot(reboot_event);
- 			_exit(EXIT_SUCCESS);
- 		}
-diff --git a/system.c b/system.c
-index 8ed3f93..bad2aa1 100644
---- a/system.c
-+++ b/system.c
-@@ -36,8 +36,8 @@ static int notify;
- static struct ubus_context *_ctx;
- 
- static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
--                 struct ubus_request_data *req, const char *method,
--                 struct blob_attr *msg)
-+			struct ubus_request_data *req, const char *method,
-+			struct blob_attr *msg)
- {
- 	void *c;
- 	char line[256];
-@@ -47,16 +47,13 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 
- 	blob_buf_init(&b, 0);
- 
--	if (uname(&utsname) >= 0)
--	{
-+	if (uname(&utsname) >= 0) {
- 		blobmsg_add_string(&b, "kernel", utsname.release);
- 		blobmsg_add_string(&b, "hostname", utsname.nodename);
- 	}
- 
--	if ((f = fopen("/proc/cpuinfo", "r")) != NULL)
--	{
--		while(fgets(line, sizeof(line), f))
--		{
-+	if ((f = fopen("/proc/cpuinfo", "r")) != NULL) {
-+		while (fgets(line, sizeof(line), f)) {
- 			key = strtok(line, "\t:");
- 			val = strtok(NULL, "\t\n");
- 
-@@ -66,13 +63,12 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 			if (!strcasecmp(key, "system type") ||
- 			    !strcasecmp(key, "processor") ||
- 			    !strcasecmp(key, "cpu") ||
--			    !strcasecmp(key, "model name"))
--			{
-+			    !strcasecmp(key, "model name")) {
- 				strtoul(val + 2, &key, 0);
- 
--				if (key == (val + 2) || *key != 0)
--				{
--					blobmsg_add_string(&b, "system", val + 2);
-+				if (key == (val + 2) || *key != 0) {
-+					blobmsg_add_string(&b, "system",
-+							   val + 2);
- 					break;
- 				}
- 			}
-@@ -82,10 +78,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 	}
- 
- 	if ((f = fopen("/tmp/sysinfo/model", "r")) != NULL ||
--	    (f = fopen("/proc/device-tree/model", "r")) != NULL)
--	{
--		if (fgets(line, sizeof(line), f))
--		{
-+	    (f = fopen("/proc/device-tree/model", "r")) != NULL) {
-+		if (fgets(line, sizeof(line), f)) {
- 			val = strtok(line, "\t\n");
- 
- 			if (val)
-@@ -93,11 +87,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 		}
- 
- 		fclose(f);
--	}
--	else if ((f = fopen("/proc/cpuinfo", "r")) != NULL)
--	{
--		while(fgets(line, sizeof(line), f))
--		{
-+	} else if ((f = fopen("/proc/cpuinfo", "r")) != NULL) {
-+		while (fgets(line, sizeof(line), f)) {
- 			key = strtok(line, "\t:");
- 			val = strtok(NULL, "\t\n");
- 
-@@ -105,8 +96,7 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 				continue;
- 
- 			if (!strcasecmp(key, "machine") ||
--			    !strcasecmp(key, "hardware"))
--			{
-+			    !strcasecmp(key, "hardware")) {
- 				blobmsg_add_string(&b, "model", val + 2);
- 				break;
- 			}
-@@ -115,10 +105,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 		fclose(f);
- 	}
- 
--	if ((f = fopen("/tmp/sysinfo/board_name", "r")) != NULL)
--	{
--		if (fgets(line, sizeof(line), f))
--		{
-+	if ((f = fopen("/tmp/sysinfo/board_name", "r")) != NULL) {
-+		if (fgets(line, sizeof(line), f)) {
- 			val = strtok(line, "\t\n");
- 
- 			if (val)
-@@ -126,18 +114,13 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 		}
- 
- 		fclose(f);
--	}
--	else if ((f = fopen("/proc/device-tree/compatible", "r")) != NULL)
--	{
--		if (fgets(line, sizeof(line), f))
--		{
-+	} else if ((f = fopen("/proc/device-tree/compatible", "r")) != NULL) {
-+		if (fgets(line, sizeof(line), f)) {
- 			val = strtok(line, "\t\n");
- 
--			if (val)
--			{
-+			if (val) {
- 				next = val;
--				while ((next = strchr(next, ',')) != NULL)
--				{
-+				while ((next = strchr(next, ',')) != NULL) {
- 					*next = '-';
- 					next++;
- 				}
-@@ -149,12 +132,10 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 		fclose(f);
- 	}
- 
--	if ((f = fopen("/etc/openwrt_release", "r")) != NULL)
--	{
-+	if ((f = fopen("/etc/openwrt_release", "r")) != NULL) {
- 		c = blobmsg_open_table(&b, "release");
- 
--		while (fgets(line, sizeof(line), f))
--		{
-+		while (fgets(line, sizeof(line), f)) {
- 			char *dest;
- 			char ch;
- 
-@@ -180,7 +161,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- 			else
- 				continue;
- 
--			dest = blobmsg_alloc_string_buffer(&b, key, strlen(val));
-+			dest = blobmsg_alloc_string_buffer(&b, key,
-+							   strlen(val));
- 			if (!dest) {
- 				ERROR("Failed to allocate blob.\n");
- 				continue;
-@@ -220,8 +202,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
- }
- 
- static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
--                struct ubus_request_data *req, const char *method,
--                struct blob_attr *msg)
-+		       struct ubus_request_data *req, const char *method,
-+		       struct blob_attr *msg)
- {
- 	time_t now;
- 	struct tm *tm;
-@@ -243,7 +225,7 @@ static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
- 	blobmsg_add_u32(&b, "localtime", now + tm->tm_gmtoff);
- 
- #ifdef linux
--	blobmsg_add_u32(&b, "uptime",    info.uptime);
-+	blobmsg_add_u32(&b, "uptime", info.uptime);
- 
- 	c = blobmsg_open_array(&b, "load");
- 	blobmsg_add_u32(&b, NULL, info.loads[0]);
-@@ -252,15 +234,15 @@ static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
- 	blobmsg_close_array(&b, c);
- 
- 	c = blobmsg_open_table(&b, "memory");
--	blobmsg_add_u64(&b, "total",    info.mem_unit * info.totalram);
--	blobmsg_add_u64(&b, "free",     info.mem_unit * info.freeram);
--	blobmsg_add_u64(&b, "shared",   info.mem_unit * info.sharedram);
-+	blobmsg_add_u64(&b, "total", info.mem_unit * info.totalram);
-+	blobmsg_add_u64(&b, "free", info.mem_unit * info.freeram);
-+	blobmsg_add_u64(&b, "shared", info.mem_unit * info.sharedram);
- 	blobmsg_add_u64(&b, "buffered", info.mem_unit * info.bufferram);
- 	blobmsg_close_table(&b, c);
- 
- 	c = blobmsg_open_table(&b, "swap");
--	blobmsg_add_u64(&b, "total",    info.mem_unit * info.totalswap);
--	blobmsg_add_u64(&b, "free",     info.mem_unit * info.freeswap);
-+	blobmsg_add_u64(&b, "total", info.mem_unit * info.totalswap);
-+	blobmsg_add_u64(&b, "free", info.mem_unit * info.freeswap);
- 	blobmsg_close_table(&b, c);
- #endif
- 
-@@ -277,13 +259,7 @@ static int system_reboot(struct ubus_context *ctx, struct ubus_object *obj,
- 	return 0;
- }
- 
--enum {
--	WDT_FREQUENCY,
--	WDT_TIMEOUT,
--	WDT_MAGICCLOSE,
--	WDT_STOP,
--	__WDT_MAX
--};
-+enum { WDT_FREQUENCY, WDT_TIMEOUT, WDT_MAGICCLOSE, WDT_STOP, __WDT_MAX };
- 
- static const struct blobmsg_policy watchdog_policy[__WDT_MAX] = {
- 	[WDT_FREQUENCY] = { .name = "frequency", .type = BLOBMSG_TYPE_INT32 },
-@@ -302,10 +278,12 @@ static int watchdog_set(struct ubus_context *ctx, struct ubus_object *obj,
- 	if (!msg)
- 		return UBUS_STATUS_INVALID_ARGUMENT;
- 
--	blobmsg_parse(watchdog_policy, __WDT_MAX, tb, blob_data(msg), blob_len(msg));
-+	blobmsg_parse(watchdog_policy, __WDT_MAX, tb, blob_data(msg),
-+		      blob_len(msg));
- 	if (tb[WDT_FREQUENCY]) {
--		unsigned int timeout = tb[WDT_TIMEOUT] ? blobmsg_get_u32(tb[WDT_TIMEOUT]) :
--						watchdog_timeout(0);
-+		unsigned int timeout =
-+			tb[WDT_TIMEOUT] ? blobmsg_get_u32(tb[WDT_TIMEOUT]) :
-+					  watchdog_timeout(0);
- 		unsigned int freq = blobmsg_get_u32(tb[WDT_FREQUENCY]);
- 
- 		if (freq) {
-@@ -321,7 +299,7 @@ static int watchdog_set(struct ubus_context *ctx, struct ubus_object *obj,
- 
- 		if (timeout <= frequency)
- 			timeout = frequency * 2;
--		 watchdog_timeout(timeout);
-+		watchdog_timeout(timeout);
- 	}
- 
- 	if (tb[WDT_MAGICCLOSE])
-@@ -347,11 +325,7 @@ static int watchdog_set(struct ubus_context *ctx, struct ubus_object *obj,
- 	return 0;
- }
- 
--enum {
--	SIGNAL_PID,
--	SIGNAL_NUM,
--	__SIGNAL_MAX
--};
-+enum { SIGNAL_PID, SIGNAL_NUM, __SIGNAL_MAX };
- 
- static const struct blobmsg_policy signal_policy[__SIGNAL_MAX] = {
- 	[SIGNAL_PID] = { .name = "pid", .type = BLOBMSG_TYPE_INT32 },
-@@ -359,15 +333,16 @@ static const struct blobmsg_policy signal_policy[__SIGNAL_MAX] = {
- };
- 
- static int proc_signal(struct ubus_context *ctx, struct ubus_object *obj,
--			struct ubus_request_data *req, const char *method,
--			struct blob_attr *msg)
-+		       struct ubus_request_data *req, const char *method,
-+		       struct blob_attr *msg)
- {
- 	struct blob_attr *tb[__SIGNAL_MAX];
- 
- 	if (!msg)
- 		return UBUS_STATUS_INVALID_ARGUMENT;
- 
--	blobmsg_parse(signal_policy, __SIGNAL_MAX, tb, blob_data(msg), blob_len(msg));
-+	blobmsg_parse(signal_policy, __SIGNAL_MAX, tb, blob_data(msg),
-+		      blob_len(msg));
- 	if (!tb[SIGNAL_PID || !tb[SIGNAL_NUM]])
- 		return UBUS_STATUS_INVALID_ARGUMENT;
- 
-@@ -376,17 +351,16 @@ static int proc_signal(struct ubus_context *ctx, struct ubus_object *obj,
- 	return 0;
- }
- 
--enum {
--	SYSUPGRADE_PATH,
--	SYSUPGRADE_PREFIX,
--	SYSUPGRADE_COMMAND,
--	__SYSUPGRADE_MAX
--};
-+enum { SYSUPGRADE_PATH,
-+       SYSUPGRADE_PREFIX,
-+       SYSUPGRADE_COMMAND,
-+       __SYSUPGRADE_MAX };
- 
- static const struct blobmsg_policy sysupgrade_policy[__SYSUPGRADE_MAX] = {
- 	[SYSUPGRADE_PATH] = { .name = "path", .type = BLOBMSG_TYPE_STRING },
- 	[SYSUPGRADE_PREFIX] = { .name = "prefix", .type = BLOBMSG_TYPE_STRING },
--	[SYSUPGRADE_COMMAND] = { .name = "command", .type = BLOBMSG_TYPE_STRING },
-+	[SYSUPGRADE_COMMAND] = { .name = "command",
-+				 .type = BLOBMSG_TYPE_STRING },
- };
- 
- static int sysupgrade(struct ubus_context *ctx, struct ubus_object *obj,
-@@ -398,28 +372,31 @@ static int sysupgrade(struct ubus_context *ctx, struct ubus_object *obj,
- 	if (!msg)
- 		return UBUS_STATUS_INVALID_ARGUMENT;
- 
--	blobmsg_parse(sysupgrade_policy, __SYSUPGRADE_MAX, tb, blob_data(msg), blob_len(msg));
-+	blobmsg_parse(sysupgrade_policy, __SYSUPGRADE_MAX, tb, blob_data(msg),
-+		      blob_len(msg));
- 	if (!tb[SYSUPGRADE_PATH] || !tb[SYSUPGRADE_PREFIX])
- 		return UBUS_STATUS_INVALID_ARGUMENT;
- 
--	sysupgrade_exec_upgraded(blobmsg_get_string(tb[SYSUPGRADE_PREFIX]),
--				 blobmsg_get_string(tb[SYSUPGRADE_PATH]),
--				 tb[SYSUPGRADE_COMMAND] ? blobmsg_get_string(tb[SYSUPGRADE_COMMAND]) : NULL);
-+	sysupgrade_exec_upgraded(
-+		blobmsg_get_string(tb[SYSUPGRADE_PREFIX]),
-+		blobmsg_get_string(tb[SYSUPGRADE_PATH]),
-+		tb[SYSUPGRADE_COMMAND] ?
-+			blobmsg_get_string(tb[SYSUPGRADE_COMMAND]) :
-+			NULL);
- 
- 	/* sysupgrade_exec_upgraded() will never return unless something has gone wrong */
- 	return UBUS_STATUS_UNKNOWN_ERROR;
- }
- 
--static void
--procd_subscribe_cb(struct ubus_context *ctx, struct ubus_object *obj)
-+static void procd_subscribe_cb(struct ubus_context *ctx,
-+			       struct ubus_object *obj)
- {
- 	notify = obj->has_subscribers;
- }
- 
--
- static const struct ubus_method system_methods[] = {
- 	UBUS_METHOD_NOARG("board", system_board),
--	UBUS_METHOD_NOARG("info",  system_info),
-+	UBUS_METHOD_NOARG("info", system_info),
- 	UBUS_METHOD_NOARG("reboot", system_reboot),
- 	UBUS_METHOD("watchdog", watchdog_set, watchdog_policy),
- 	UBUS_METHOD("signal", proc_signal, signal_policy),
-@@ -437,8 +414,7 @@ static struct ubus_object system_object = {
- 	.subscribe_cb = procd_subscribe_cb,
- };
- 
--void
--procd_bcast_event(char *event, struct blob_attr *msg)
-+void procd_bcast_event(char *event, struct blob_attr *msg)
- {
- 	int ret;
- 
-@@ -447,7 +423,8 @@ procd_bcast_event(char *event, struct blob_attr *msg)
- 
- 	ret = ubus_notify(_ctx, &system_object, event, msg, -1);
- 	if (ret)
--		fprintf(stderr, "Failed to notify log: %s\n", ubus_strerror(ret));
-+		fprintf(stderr, "Failed to notify log: %s\n",
-+			ubus_strerror(ret));
- }
- 
- void ubus_init_system(struct ubus_context *ctx)
-diff --git a/sysupgrade.c b/sysupgrade.c
-index 07e33f7..2a7ef9a 100644
---- a/sysupgrade.c
-+++ b/sysupgrade.c
-@@ -13,7 +13,6 @@
-  * GNU General Public License for more details.
-  */
- 
--
- #include "watchdog.h"
- #include "sysupgrade.h"
- 
-@@ -21,11 +20,10 @@
- #include <stdlib.h>
- #include <unistd.h>
- 
--
- void sysupgrade_exec_upgraded(const char *prefix, char *path, char *command)
- {
- 	char *wdt_fd = watchdog_fd();
--	char *argv[] = { "/sbin/upgraded", NULL, NULL, NULL};
-+	char *argv[] = { "/sbin/upgraded", NULL, NULL, NULL };
- 	int ret;
- 
- 	ret = chroot(prefix);
-diff --git a/sysupgrade.h b/sysupgrade.h
-index 8c09fc9..2c0dbd3 100644
---- a/sysupgrade.h
-+++ b/sysupgrade.h
-@@ -14,8 +14,6 @@
- #ifndef __PROCD_SYSUPGRADE_H
- #define __PROCD_SYSUPGRADE_H
- 
--
- void sysupgrade_exec_upgraded(const char *prefix, char *path, char *command);
- 
--
- #endif
-diff --git a/ubus.c b/ubus.c
-index 8d521ac..02f93d7 100644
---- a/ubus.c
-+++ b/ubus.c
-@@ -37,8 +37,7 @@ static void timeout_retry(void)
- 		timeout = 1000;
- }
- 
--static void
--ubus_reconnect_cb(struct uloop_timeout *timeout)
-+static void ubus_reconnect_cb(struct uloop_timeout *timeout)
- {
- 	if (!ubus_reconnect(ctx, ubus_socket)) {
- 		ubus_add_uloop(ctx);
-@@ -48,16 +47,14 @@ ubus_reconnect_cb(struct uloop_timeout *timeout)
- 	timeout_retry();
- }
- 
--static void
--ubus_disconnect_cb(struct ubus_context *ctx)
-+static void ubus_disconnect_cb(struct ubus_context *ctx)
- {
- 	ubus_timer.cb = ubus_reconnect_cb;
- 	reset_timeout();
- 	timeout_retry();
- }
- 
--static void
--ubus_connect_cb(struct uloop_timeout *timeout)
-+static void ubus_connect_cb(struct uloop_timeout *timeout)
- {
- 	ctx = ubus_connect(ubus_socket);
- 
-@@ -78,8 +75,7 @@ ubus_connect_cb(struct uloop_timeout *timeout)
- 	procd_state_ubus_connect();
- }
- 
--void
--procd_connect_ubus(void)
-+void procd_connect_ubus(void)
- {
- 	ubus_timer.cb = ubus_connect_cb;
- 	reset_timeout();
-diff --git a/watchdog.c b/watchdog.c
-index 9d770b4..afcabb5 100644
---- a/watchdog.c
-+++ b/watchdog.c
-@@ -26,7 +26,7 @@
- #include "procd.h"
- #include "watchdog.h"
- 
--#define WDT_PATH	"/dev/watchdog"
-+#define WDT_PATH "/dev/watchdog"
- 
- static struct uloop_timeout wdt_timeout;
- static int wdt_fd = -1;
-@@ -110,8 +110,7 @@ void watchdog_set_stopped(bool val)
- 
- 		if (wdt_magicclose)
- 			watchdog_close();
--	}
--	else {
-+	} else {
- 		watchdog_open(true);
- 		watchdog_set_drv_timeout();
- 		watchdog_timeout_cb(&wdt_timeout);
-@@ -146,7 +145,7 @@ int watchdog_frequency(int frequency)
- 	return wdt_frequency;
- }
- 
--char* watchdog_fd(void)
-+char *watchdog_fd(void)
- {
- 	static char fd_buf[12];
- 
-@@ -172,7 +171,6 @@ void watchdog_init(int preinit)
- 	DEBUG(4, "Opened watchdog with timeout %ds\n", watchdog_timeout(0));
- }
- 
--
- void watchdog_set_cloexec(bool val)
- {
- 	if (wdt_fd < 0)
-@@ -183,5 +181,5 @@ void watchdog_set_cloexec(bool val)
- 		flags |= FD_CLOEXEC;
- 	else
- 		flags &= ~FD_CLOEXEC;
--	fcntl(wdt_fd, F_SETFD,  flags);
-+	fcntl(wdt_fd, F_SETFD, flags);
- }
-diff --git a/watchdog.h b/watchdog.h
-index 73c75d5..09f6be4 100644
---- a/watchdog.h
-+++ b/watchdog.h
-@@ -19,7 +19,7 @@
- 
- #ifndef DISABLE_INIT
- void watchdog_init(int preinit);
--char* watchdog_fd(void);
-+char *watchdog_fd(void);
- int watchdog_timeout(int timeout);
- int watchdog_frequency(int frequency);
- void watchdog_set_magicclose(bool val);
-@@ -33,7 +33,7 @@ static inline void watchdog_init(int preinit)
- {
- }
- 
--static inline char* watchdog_fd(void)
-+static inline char *watchdog_fd(void)
- {
- 	return "";
- }
--- 
-2.20.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGVhZCBXZWJsaW5rIEhEUk0yMDAgaXMgYSBkdWFsLXNpbSByb3V0ZXIgYmFzZWQgb24gTVQ3NjIw
+QS4gVGhlIGRldGFpbGVkCnNwZWNpZmljYXRpb25zIGFyZToKCi0gTVQ3NjIwQSAoNTgwTUh6KQot
+IDY0TUIgUkFNCi0gMTZNQiBvZiBmbGFzaCAoU1BJIE5PUikKLSA2eCAxMC8xMDBNYnBzIEV0aGVy
+bmV0IChNVDc2MjBBIGJ1aWx0LWluIHN3aXRjaCkKLSAxeCBtaWNyb1NEIHNsb3QKLSAxeCBtaW5p
+UENJZSBzbG90IChvbmx5IFVTQjIuMCBidXMpLiBEZXZpY2UgaXMgc2hpcHBlZCB3aXRoIGEgU0lN
+Q09NClNJTTcxMDBFIExURSBtb2RlbS4KLSAyeCBTSU0gc2xvdHMgKHN0YW5kYXJkIHNpemUpCi0g
+MXggVVNCMi4wIHBvcnQKLSAxeCAyLjRHSHogd2lmaSAocnQyODAwKQotIDF4IDVHSHogd2lmaSAo
+bXQ3NjEyKQotIDF4IHJlc2V0IGJ1dHRvbgotIDF4IFdQUyBidXR0b24KLSAzeCBHUElPLWNvbnRy
+b2xsYWJsZSBMRURzCi0gMXggMTAgcGluIHRlcm1pbmFsIGJsb2NrIChSUzIzMiwgUlM0ODUsIDQg
+eCBHUElPKQoKVGVzdGVkOgotIEV0aGVybmV0IHN3aXRjaAotIFdpZmkKLSBVU0Igc2xvdAotIFNE
+IGNhcmQgc2xvdAotIG1pbmlQQ0llLXNsb3QKLSBzeXN1cGdyYWRlCi0gcmVzZXQgYnV0dG9uCgpJ
+bnN0YWxsYXRpb24gaW5zdHJ1Y3Rpb25zOgoKSW5zdGFsbGluZyBPcGVuV1JUIGZvciB0aGUgZmly
+c3QgdGltZSByZXF1aXJlcyBhIGJpdCBvZiB3b3JrLCBhcyB0aGUKYm9hcmQgZG9lcyBub3Qgc2hp
+cCB3aXRoIE9wZW5XUlQuIEluIGFkZGl0aW9uLCB0aGUgYm9vdGxvYWRlcgphdXRvbWF0aWNhbGx5
+IHJlYm9vdHMgd2hlbiBpbnN0YWxsaW5nIGFuIGltYWdlIG92ZXIgdGZ0cC4KCkluIG9yZGVyIHRv
+IGluc3RhbGwgT3BlbldSVCwgeW91IGZpcnN0IG5lZWQgdG8gY29tcGlsZSBhbiBpbml0cmFtZnMK
+KHJhbWRpc2spLWltYWdlIGZvciB0aGUgZGV2aWNlLiBPbmNlIHRoZSBpbWFnZSBpcyByZWFkeSwg
+eW91IG5lZWQgdG8gZG8KdGhlIGZvbGxvd2luZzoKCiogQ29weSB0aGUgaW5pdHJhbWZzLWltYWdl
+IHRvIHlvdXIgdGZ0cC1yb290IChkZWZhdWx0IGZpbGVuYW1lIGlzCnRlc3QuYmluKSBhbmQgY29u
+ZmlndXJlIG5ldHdvcmtpbmcgYWNjb3JkaW5nbHkgKGRlZmF1bHQgc2VydmVyIElQIGlzCjEwLjEw
+LjEwLjMsIGNsaWVudCAxMC4xMC4xMC4xMjMpLiBTdGFydCB5b3VyIHRmdHAgc2VydmVyLgoqIE9w
+ZW4gdGhlIGJvYXJkIGFuZCBjb25uZWN0IHRvIFVBUlQuIFRoZSBwaW5zIGFyZSBleHBvc2VkIGFu
+ZCBjbGVhcmx5Cm1hcmtlZC4KKiBCb290IHRoZSBib2FyZCBhbmQgcHJlc3MgMS4KKiBFaXRoZXIg
+dXNlIHRoZSBkZWZhdWx0IGZpbGVuYW1lIGFuZCBjbGllbnQvc2VydmVyIElQLWFkZHJlc3Nlcywg
+b3IKc3BlY2lmeSB5b3VyIG93bi4KClRoZSBpbWFnZSBzaG91bGQgbm93IGJlIGxvYWRlZCB0byBt
+ZW1vcnkgYW5kIGJvYXJkIGJvb3QuIElmIHRoZSByb3V0ZXIKcmVib290cyB3aGlsZSB0aGUgaW1h
+Z2UgaXMgbG9hZGluZywgeW91IG5lZWQgdG8gdHJ5IGFnYWluLiBPbmNlIHRoZQpib2FyZCBoYXMg
+Ym9vdGVkLCBjb3B5IHRoZSBzeXN1cGdyYWRlLWltYWdlIHRvIHRoZSByb3V0ZXIgYW5kIHJ1bgpz
+eXN1cGdyYWRlIGluIG9yZGVyIHRvIGluc3RhbGwgT3BlbldSVCB0byB0aGUgZmxhc2guCgpOb3Rl
+czoKCi0gWW91IGNvbnRyb2wgd2hpY2ggU0lNIHNsb3QgdG8gdXNlIGJ5IHdyaXRpbmcgMC8xIHRv
+Ci9zeXMvY2xhc3MvZ3Bpby9zaW1fc3dpdGNoL3ZhbHVlLiBJbiBvcmRlciBmb3IgdGhlIGNoYW5n
+ZSB0byB0YWtlCmVmZmVjdCwgeW91IGNhbiBlaXRoZXIgdXNlIEFULWNvbW1hbmRzIChBVCtDRlVO
+KSBvciBwb3dlci1jeWNsZSB0aGUKbW9kZW0gKHdyaXRlIDAvMSB0byAvc3lzL2NsYXNzL2dwaW8v
+cG93ZXJfbXBjaWUvdmFsdWUpLgotIFJTNDg1IGlzIGF2YWlsYWJsZSBvbiAvZGV2L3R0eVMwLgot
+IFJTMjMyIGlzIGF2YWlsYWJsZSBvbiAvZGV2L3R0eVMxLgotIFRoZSBuYW1lIG9mIHRoZSBpb1gt
+Z3Bpb3MgbWFwIHRvIHRoZSBsYWJlbHMgb24gdGhlIGNhc2luZy4KClNpZ25lZC1vZmYtYnk6IEty
+aXN0aWFuIEV2ZW5zZW4gPGtyaXN0aWFuLmV2ZW5zZW5AZ21haWwuY29tPgotLS0KdjItPnYzOgoK
+KiBCdWlsZCBpbml0cmFtZnMgYXV0b21hdGljYWxseSwgd2hpY2ggbWVhbnMgdGhhdCByYW1kaXNr
+IGlzIG5vdyBlbmFibGVkCnRoZSBtdDc2MjAtdGFyZ2V0LiBEdWUgdG8gdGhpcyBjaGFuZ2UsIGFu
+IGluaXRyYW1mcy1pbWFnZSBpcyBidWlsdCBmb3IgYWxsCmRlaXZjZXMsIGJ1dCB0aGlzIHNlZW1z
+IHRvIGJlIG9rIHdoZW4gbG9va2luZyBhdCBvdGhlciB0YXJnZXRzIChtdDc2MjEpCih0aGFua3Mg
+UGV0ciDFoHRldGlhcikuCiogVXNlIGdlbmVyaWMgYm9hcmQvbW9kZWwgZGV0ZWN0aW9uLCB1cGRh
+dGVkIHRoZSBtYXRjaCBpbiAwMV9sZWRzIGFuZAowMl9uZXR3b3JrICh0aGFua3MgUGV0ciDFoHRl
+dGlhcikuCiogQ2hhbmdlZCB0aGUgZGV2aWNlL3RhcmdldCBkZXZpY2UgaW4gdGhlIE1ha2VmaWxl
+IHRvIG1hdGNoIHRoZQpjb21wYXRpYmxlLXN0cmluZyBpbiB0aGUgRFRTICh0aGFua3MgUGV0ciDF
+oHRldGlhcikuCiogVXNlIHRoZSB1c2VyLXNwYWNlIGdwaW8tc3dpdGNoIGFsdGVybmF0aXZlIGlu
+c3RlYWQgb2YgZ3Bpby1leHBvcnQgaW4KdGhlIERUUyAodGhhbmtzIFBldHIgxaB0ZXRpYXIpLgoq
+IFVwZGF0ZSBuYW1lIG9mIGZsYXNoIG5vZGUgaW4gRFRTIHRvIHRoZSBtb3JlIGdlbmVyaWMgImZs
+YXNoMCIgKHRoYW5rcwpQZXRyIMWgdGV0aWFyKS4uCiogRml4IHR5cG8gaW4gY29tbWl0IG1lc3Nh
+Z2UgKG10NzYyMS0+bXQ3NjEyKSAodGhhbmtzIFRvbSBQc3lib3JnKS4KKiBBZGRlZCB0aGUgUU1J
+IGFuZCBvcHRpb24gZHJpdmVycywgYXMgd2VsbCBhcyB1cW1pLCBzbyB0aGF0IHRoZSBtb2RlbQpp
+cyBhdmFpbGFibGUgZm9yIHVzZSBvdXQgb2YgdGhlIGJveC4KCnYxLT52MjoKKiBBZGQgU1BEWCBs
+aW5lIHRvIERUUyAodGhhbmtzIFJhZmHFgiBNacWCZWNraSkuCi0tLQogLi4uL3JhbWlwcy9iYXNl
+LWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgICAgIHwgICAzICsKIC4uLi9yYW1pcHMvYmFzZS1m
+aWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrICB8ICAgMSArCiAuLi4vYmFzZS1maWxlcy9ldGMv
+Ym9hcmQuZC8wM19ncGlvX3N3aXRjaGVzICAgfCAgIDggKwogdGFyZ2V0L2xpbnV4L3JhbWlwcy9k
+dHMvSERSTTIwMC5kdHMgICAgICAgICAgIHwgMTg4ICsrKysrKysrKysrKysrKysrKwogdGFyZ2V0
+L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjAubWsgICAgICAgICAgIHwgICA5ICsKIHRhcmdldC9s
+aW51eC9yYW1pcHMvbXQ3NjIwL3RhcmdldC5tayAgICAgICAgICB8ICAgMiArLQogNiBmaWxlcyBj
+aGFuZ2VkLCAyMTAgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQogY3JlYXRlIG1vZGUgMTAw
+NjQ0IHRhcmdldC9saW51eC9yYW1pcHMvZHRzL0hEUk0yMDAuZHRzCgpkaWZmIC0tZ2l0IGEvdGFy
+Z2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgYi90YXJnZXQv
+bGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcwppbmRleCBmYTIwYWIw
+NzE0Li4wNzk5MzE0ZjZkIDEwMDc1NQotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmls
+ZXMvZXRjL2JvYXJkLmQvMDFfbGVkcworKysgYi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmls
+ZXMvZXRjL2JvYXJkLmQvMDFfbGVkcwpAQCAtMTg0LDYgKzE4NCw5IEBAIGhjNTg2MSkKIAl1Y2lk
+ZWZfc2V0X2xlZF9uZXRkZXYgIndpZmk1ZyIgIndpZmk1ZyIgIiRib2FyZG5hbWU6Ymx1ZTp3bGFu
+NWciICJ3bGFuMCIKIAl1Y2lkZWZfc2V0X2xlZF9uZXRkZXYgIndpZmkyZyIgIndpZmkyZyIgIiRi
+b2FyZG5hbWU6Ymx1ZTp3bGFuMmciICJ3bGFuMSIKIAk7OworaGVhZC13ZWJsaW5rLGhkcm0yMDAp
+CisJc2V0X3dpZmlfbGVkICIkYm9hcmRuYW1lOmdyZWVuOndpZmkiCisJOzsKIGhnMjU1ZCkKIAlz
+ZXRfd2lmaV9sZWQgIiRib2FyZG5hbWU6Z3JlZW46d2xhbiIKIAl1Y2lkZWZfc2V0X2xlZF9uZXRk
+ZXYgImludGVybmV0IiAiaW50ZXJuZXQiICIkYm9hcmRuYW1lOmdyZWVuOmludGVybmV0IiAiZXRo
+MC4yIgpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2Fy
+ZC5kLzAyX25ldHdvcmsgYi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJk
+LmQvMDJfbmV0d29yawppbmRleCBjMjY0Njg3NmEyLi5iMDAzN2EwY2UyIDEwMDc1NQotLS0gYS90
+YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yaworKysg
+Yi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yawpA
+QCAtMzE0LDYgKzMxNCw3IEBAIHJhbWlwc19zZXR1cF9pbnRlcmZhY2VzKCkKIAkJCSIxOmxhbiIg
+IjI6bGFuIiAiMzpsYW4iICI0OmxhbiIgIjA6d2FuIiAiNkBldGgwIgogCQk7OwogCWhjNTY2MXxc
+CisJaGVhZC13ZWJsaW5rLGhkcm0yMDB8XAogCXkxcykKIAkJdWNpZGVmX2FkZF9zd2l0Y2ggInN3
+aXRjaDAiIFwKIAkJCSIxOmxhbiIgIjI6bGFuIiAiMzpsYW4iICI0OmxhbiIgIjU6bGFuIiAiMDp3
+YW4iICI2QGV0aDAiCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMv
+ZXRjL2JvYXJkLmQvMDNfZ3Bpb19zd2l0Y2hlcyBiL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1m
+aWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCmluZGV4IDgwZTNjNGM0MWYuLmZjMzc2
+YTRkMWYgMTAwNzU1Ci0tLSBhL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1maWxlcy9ldGMvYm9h
+cmQuZC8wM19ncGlvX3N3aXRjaGVzCisrKyBiL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1maWxl
+cy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCkBAIC0xMSw2ICsxMSwxNCBAQCBkbGluayxk
+aXItNTEwbCkKIAl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJ1c2JfZW5hYmxlMSIgIlVTQiAxQSBl
+bmFibGUiICIxMiIgIjAiCiAJdWNpZGVmX2FkZF9ncGlvX3N3aXRjaCAidXNiX2VuYWJsZTA1IiAi
+VVNCIDAuNUEgZW5hYmxlIiAiMTMiICIxIgogCTs7CitoZWFkLXdlYmxpbmssaGRybTIwMCkKKwl1
+Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJzaW1fc3dpdGNoIiAiU0lNIHNsb3Qgc3dpdGNoIiAiMCIK
+Kwl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJpbzEiICJJL08gMSIgIjEiCisJdWNpZGVmX2FkZF9n
+cGlvX3N3aXRjaCAiaW8yIiAiSS9PIDIiICIyIgorCXVjaWRlZl9hZGRfZ3Bpb19zd2l0Y2ggImlv
+MyIgIkkvTyAzIiAiMTEiCisJdWNpZGVmX2FkZF9ncGlvX3N3aXRjaCAiaW80IiAiSS9PIDQiICIx
+NCIKKwl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJwb3dlcl9tcGNpZSIgIm1QQ0llIHBvd2VyIiAi
+MjEiICIxIgorCTs7CiBtaWtyb3RpayxyYjc1MGdyMykKIAl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNo
+ICJwb2VfcGFzc3Rocm91Z2giICJQb0UgUGFzc3Rocm91Z2giICIxNyIKIAk7OwpkaWZmIC0tZ2l0
+IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvSERSTTIwMC5kdHMgYi90YXJnZXQvbGludXgvcmFt
+aXBzL2R0cy9IRFJNMjAwLmR0cwpuZXcgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAw
+Li5hZDE2ZDAyNzE2Ci0tLSAvZGV2L251bGwKKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMv
+SERSTTIwMC5kdHMKQEAgLTAsMCArMSwxODggQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVy
+OiBHUEwtMi4wLW9yLWxhdGVyIE9SIE1JVAorL2R0cy12MS87CisKKyNpbmNsdWRlICJtdDc2MjBh
+LmR0c2kiCisKKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KKyNpbmNsdWRlIDxk
+dC1iaW5kaW5ncy9pbnB1dC9pbnB1dC5oPgorCisvIHsKKwljb21wYXRpYmxlID0gImhlYWQtd2Vi
+bGluayxoZHJtMjAwIiwgInJhbGluayxtdDc2MjBhLXNvYyI7CisJbW9kZWwgPSAiSGVhZCBXZWJs
+aW5rIEhEUk0yMDAiOworCisJYWxpYXNlcyB7CisJCWxlZC1ib290ID0gJmxlZF9zeXN0ZW07CisJ
+CWxlZC1mYWlsc2FmZSA9ICZsZWRfc3lzdGVtOworCQlsZWQtcnVubmluZyA9ICZsZWRfc3lzdGVt
+OworCQlsZWQtdXBncmFkZSA9ICZsZWRfc3lzdGVtOworCX07CisKKwljaG9zZW4geworCQlib290
+YXJncyA9ICJjb25zb2xlPXR0eVMxLDU3NjAwIjsKKwl9OworCisJbGVkcyB7CisJCWNvbXBhdGli
+bGUgPSAiZ3Bpby1sZWRzIjsKKworCQlyc3NpIHsKKwkJCWxhYmVsID0gImhkcm0yMDA6cmVkOnJz
+c2kiOworCQkJZ3Bpb3MgPSA8JmdwaW8wIDE5IEdQSU9fQUNUSVZFX0xPVz47CisJCX07CisKKwkJ
+bGVkX3N5c3RlbTogc3lzdGVtIHsKKwkJCWxhYmVsID0gImhkcm0yMDA6Z3JlZW46c3lzdGVtIjsK
+KwkJCWdwaW9zID0gPCZncGlvMSAxNCBHUElPX0FDVElWRV9ISUdIPjsKKwkJfTsKKworCQlhaXIg
+eworCQkJbGFiZWwgPSAiaGRybTIwMDpncmVlbjp3aWZpIjsKKwkJCWdwaW9zID0gPCZncGlvMyAw
+IEdQSU9fQUNUSVZFX0xPVz47CisJCX07CisJfTsKKworCWtleXMgeworCQljb21wYXRpYmxlID0g
+ImdwaW8ta2V5cy1wb2xsZWQiOworCQlwb2xsLWludGVydmFsID0gPDIwPjsKKworCQl3cHMgewor
+CQkJbGFiZWwgPSAid3BzIjsKKwkJCWdwaW9zID0gPCZncGlvMCAxMiBHUElPX0FDVElWRV9MT1c+
+OworCQkJbGludXgsY29kZSA9IDxLRVlfV1BTX0JVVFRPTj47CisJCX07CisKKwkJcmVzZXQgewor
+CQkJbGFiZWwgPSAicmVzZXQiOworCQkJZ3Bpb3MgPSA8JmdwaW8wIDEzIEdQSU9fQUNUSVZFX0xP
+Vz47CisJCQlsaW51eCxjb2RlID0gPEtFWV9SRVNUQVJUPjsKKwkJfTsKKwl9OworfTsKKworJnNw
+aTAgeworCXN0YXR1cyA9ICJva2F5IjsKKworCWZsYXNoQDAgeworCQljb21wYXRpYmxlID0gImpl
+ZGVjLHNwaS1ub3IiOworCQlyZWcgPSA8MD47CisJCXNwaS1tYXgtZnJlcXVlbmN5ID0gPDEwMDAw
+MDAwPjsKKworCQlwYXJ0aXRpb25zIHsKKwkJCWNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9u
+cyI7CisJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKKwkJCSNzaXplLWNlbGxzID0gPDE+OworCisJ
+CQlwYXJ0aXRpb25AMCB7CisJCQkJbGFiZWwgPSAidS1ib290IjsKKwkJCQlyZWcgPSA8MHgwIDB4
+MzAwMDA+OworCQkJCXJlYWQtb25seTsKKwkJCX07CisKKwkJCXBhcnRpdGlvbkAzMDAwMCB7CisJ
+CQkJbGFiZWwgPSAidS1ib290LWVudiI7CisJCQkJcmVnID0gPDB4MzAwMDAgMHgxMDAwMD47CisJ
+CQkJcmVhZC1vbmx5OworCQkJfTsKKworCQkJZmFjdG9yeTogcGFydGl0aW9uQDQwMDAwIHsKKwkJ
+CQlsYWJlbCA9ICJmYWN0b3J5IjsKKwkJCQlyZWcgPSA8MHg0MDAwMCAweDEwMDAwPjsKKwkJCQly
+ZWFkLW9ubHk7CisJCQl9OworCisJCQlmaXJtd2FyZTogcGFydGl0aW9uQDUwMDAwIHsKKwkJCQlj
+b21wYXRpYmxlID0gImRlbngsdWltYWdlIjsKKwkJCQlsYWJlbCA9ICJmaXJtd2FyZSI7CisJCQkJ
+cmVnID0gPDB4NTAwMDAgMHhmYjAwMDA+OworCQkJfTsKKwkJfTsKKwl9OworfTsKKworJmdwaW8w
+IHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismZ3BpbzEgeworCXN0YXR1cyA9ICJva2F5IjsK
+K307CisKKyZncGlvMyB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJnNkaGNpIHsKKwlzdGF0
+dXMgPSAib2theSI7Cit9OworCismZWhjaSB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJm9o
+Y2kgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZldGhlcm5ldCB7CisJc3RhdHVzID0gIm9r
+YXkiOworCisJbXRkLW1hYy1hZGRyZXNzID0gPCZmYWN0b3J5IDB4ND47CisJcGluY3RybC1uYW1l
+cyA9ICJkZWZhdWx0IjsKKwlwaW5jdHJsLTAgPSA8JnJnbWlpMV9waW5zICZyZ21paTJfcGlucyAm
+bWRpb19waW5zPjsKKworCXBvcnRANCB7CisJCXN0YXR1cyA9ICJva2F5IjsKKwkJcGh5LWhhbmRs
+ZSA9IDwmcGh5ND47CisJCXBoeS1tb2RlID0gInJnbWlpIjsKKwl9OworCisJcG9ydEA1IHsKKwkJ
+c3RhdHVzID0gIm9rYXkiOworCQlwaHktaGFuZGxlID0gPCZwaHk1PjsKKwkJcGh5LW1vZGUgPSAi
+cmdtaWkiOworCX07CisKKwltZGlvLWJ1cyB7CisJCXN0YXR1cyA9ICJva2F5IjsKKworCQlwaHk0
+OiBldGhlcm5ldC1waHlANCB7CisJCQlyZWcgPSA8ND47CisJCQlwaHktbW9kZSA9ICJyZ21paSI7
+CisJCX07CisKKwkJcGh5NTogZXRoZXJuZXQtcGh5QDUgeworCQkJcmVnID0gPDU+OworCQkJcGh5
+LW1vZGUgPSAicmdtaWkiOworCQl9OworCX07Cit9OworCismd21hYyB7CisJcmFsaW5rLG10ZC1l
+ZXByb20gPSA8JmZhY3RvcnkgMD47Cit9OworCismcGluY3RybCB7CisJc3RhdGVfZGVmYXVsdDog
+cGluY3RybDAgeworCQlkZWZhdWx0IHsKKwkJCXJhbGluayxncm91cCA9ICJpMmMiLCAidWFydGYi
+LCAicGEiLCAic3BpIHJlZmNsayIsCisJCQkJICAgICAgICJ3bGVkIjsKKwkJCXJhbGluayxmdW5j
+dGlvbiA9ICJncGlvIjsKKwkJfTsKKwl9OworfTsKKworJnBjaWUgeworCXN0YXR1cyA9ICJva2F5
+IjsKK307CisKKyZwY2llMCB7CisJd2lmaUAwLDAgeworCQljb21wYXRpYmxlID0gIm1lZGlhdGVr
+LG10NzYiOworCQlyZWcgPSA8MHgwMDAwIDAgMCAwIDA+OworCQltZWRpYXRlayxtdGQtZWVwcm9t
+ID0gPCZmYWN0b3J5IDB4ODAwMD47CisJCWllZWU4MDIxMS1mcmVxLWxpbWl0ID0gPDUwMDAwMDAg
+NjAwMDAwMD47CisJfTsKK307CisKKyZ1YXJ0IHsKKyAgICBzdGF0dXMgPSAib2theSI7Cit9Owpk
+aWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjAubWsgYi90YXJnZXQv
+bGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5tawppbmRleCBkYTkwNTY4ZGYwLi43NmU0MzIzZTlh
+IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5taworKysgYi90
+YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5tawpAQCAtMzU4LDYgKzM1OCwxNSBAQCBk
+ZWZpbmUgRGV2aWNlL2hjNTg2MQogZW5kZWYKIFRBUkdFVF9ERVZJQ0VTICs9IGhjNTg2MQogCitk
+ZWZpbmUgRGV2aWNlL2hlYWQtd2VibGlua19oZHJtMjAwCisgIERUUyA6PSBIRFJNMjAwCisgIElN
+QUdFX1NJWkUgOj0gJChyYWxpbmtfZGVmYXVsdF9md19zaXplXzE2TSkKKyAgREVWSUNFX1RJVExF
+IDo9IEhlYWQgV2VibGluayBIRFJNMjAwMAorICBERVZJQ0VfUEFDS0FHRVMgOj0ga21vZC1tdDc2
+eDIga21vZC11c2IyIGttb2QtdXNiLW9oY2kga21vZC1zZGhjaS1tdDc2MjAgXAorCSAgCSAgICAg
+dXFtaSBrbW9kLXVzYi1zZXJpYWwga21vZC11c2Itc2VyaWFsLW9wdGlvbgorZW5kZWYKK1RBUkdF
+VF9ERVZJQ0VTICs9IGhlYWQtd2VibGlua19oZHJtMjAwCisKIGRlZmluZSBEZXZpY2UvaW9kYXRh
+X3duLWFjMTE2N2dyCiAgIERUUyA6PSBXTi1BQzExNjdHUgogICBERVZJQ0VfVElUTEUgOj0gSS1P
+IERBVEEgV04tQUMxMTY3R1IKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMvbXQ3NjIw
+L3RhcmdldC5tayBiL3RhcmdldC9saW51eC9yYW1pcHMvbXQ3NjIwL3RhcmdldC5tawppbmRleCA1
+NDQyNTQ2MDRlLi44YjNmMGNlZDVlIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL210
+NzYyMC90YXJnZXQubWsKKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9tdDc2MjAvdGFyZ2V0Lm1r
+CkBAIC00LDcgKzQsNyBAQAogCiBTVUJUQVJHRVQ6PW10NzYyMAogQk9BUkROQU1FOj1NVDc2MjAg
+YmFzZWQgYm9hcmRzCi1GRUFUVVJFUys9dXNiCitGRUFUVVJFUys9dXNiIHJhbWRpc2sKIENQVV9U
+WVBFOj0yNGtjCiAKIERFRkFVTFRfUEFDS0FHRVMgKz0ga21vZC1ydDI4MDAtcGNpIGttb2QtcnQy
+ODAwLXNvYyB3cGFkLWJhc2ljCi0tIAoyLjE5LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0
+LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

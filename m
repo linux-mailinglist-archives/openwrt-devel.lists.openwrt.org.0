@@ -2,56 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EE241A7B2
+	by mail.lfdr.de (Postfix) with ESMTPS id 766091A7B1
 	for <lists+openwrt-devel@lfdr.de>; Sat, 11 May 2019 13:48:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yJL2+QDwPAXv2m3nnnOotdZWyLRy3KQnhlhEpdjztkA=; b=bwRndNaJqKJg+v
-	N5OQmPYIcPx6nqsYh2WxhJP03W9jjBwrQNQVPCM84uZ0VSr4QHkGFOle5iPD5W6EVH8MEfSeVep8d
-	hD2xAtC0AO1qk4IWOjCHfBTq0LAi24C2NaIOAMwN5Mg/KDFy4u2zckeI/LTH/oQEHA6f/yjLPyCtk
-	xkf3CqvN6a8U3D5x1jIV8Y3X8UEMuyWGs1DCsJW3OlyqQzpxw4Fld6o+iUogPE5o89eIwpyicfp3z
-	SWxNgdNgls2vU3ZoD+dpr4rIt9PEIS7GR0jzh9KdJgNsTZ3JIOy29ZfB1GiE5s+lxRwhcVSzcyj3g
-	2xzgBEE+Zxbh4sVuk4bg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2mIYsN+uquVfHxZJ7e4VJQWW5rBHEgh6GUDRypE8uOo=; b=lXZ5//jNrlPdDw
+	ZTYQVjQKAmfTtoGAOjM3veooNeYPsh6LJiYATMR6kRgVQV3gHOtKXNA6KX65zkGqxVytM3X7cUz8C
+	BRaPbhr4i126mExEvKH6Ii9/8mbR8VLE0IupzrW+2owZnlYJ2EU9BLo8bqYgN6DPacqXbOXFBq2Ts
+	zoYGuaB7pISJInQPeoKgq4L4cjM1a8qXQxuBkD+OxyAWSCt1NEE9y878JACQGVGK9qZfaDAb4geZS
+	Ya8RS153l4KFGKEudktmFtB9b3/RA3faCGGUnpdiRcd6ft3nS1TGqP54XDwGlb+y1Xcx6vRvp8Im/
+	QeVRMF7NKcaqs77kvP8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPQUE-0006ZD-R1; Sat, 11 May 2019 11:48:18 +0000
-Received: from mx2.mailbox.org ([80.241.60.215])
+	id 1hPQU5-0006T8-6P; Sat, 11 May 2019 11:48:09 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPQTz-0006SU-6f
- for openwrt-devel@lists.openwrt.org; Sat, 11 May 2019 11:48:05 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1hPQTz-0006SV-3t
+ for openwrt-devel@lists.openwrt.org; Sat, 11 May 2019 11:48:04 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 44B2EA1161;
- Sat, 11 May 2019 13:47:55 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id 4294B4E9D2;
+ Sat, 11 May 2019 13:47:57 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id XVhnlu3GhSS7; Sat, 11 May 2019 13:47:46 +0200 (CEST)
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id B_SpzGq2X-ZG; Sat, 11 May 2019 13:47:46 +0200 (CEST)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 11 May 2019 13:47:35 +0200
-Message-Id: <20190511114737.11922-1-hauke@hauke-m.de>
+Date: Sat, 11 May 2019 13:47:36 +0200
+Message-Id: <20190511114737.11922-2-hauke@hauke-m.de>
+In-Reply-To: <20190511114737.11922-1-hauke@hauke-m.de>
+References: <20190511114737.11922-1-hauke@hauke-m.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_044803_405090_1C5E61E1 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190511_044803_311444_F5D5DFC8 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.215 listed in list.dnswl.org]
+ low trust [80.241.60.212 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH 0/2] ar7: Update kernel to version 4.14
+Subject: [OpenWrt-Devel] [PATCH 1/2] ar7: Refresh kernel configuration
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,48 +69,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The next OpenWrt release will only contain support for kernel 4.14, to 
-still support the ar7 target update it to kernel 4.14.
+The configuration of the generic subtarget was used as the default
+configuration and then the subtarget configurations were adapted.
 
-This was only build tested, I do not have this device, could someone 
-please run test it on some device and report the results back.
+Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+---
+ target/linux/ar7/config-4.9 | 3 +++
+ 1 file changed, 3 insertions(+)
 
-The patches are also available in this branch:
-https://git.openwrt.org/?p=openwrt/staging/hauke.git;a=shortlog;h=refs/heads/kernel-4.14
-
-Hauke Mehrtens (2):
-  ar7: Refresh kernel configuration
-  ar7: Update kernel to version 4.14
-
- .../patches-D7.04.03.00/270-4.14_fixes.patch  | 51 +++++++++++++++++++
- target/linux/ar7/Makefile                     |  2 +-
- target/linux/ar7/{config-4.9 => config-4.14}  | 20 +++++++-
- .../100-fix-highmem-offset.patch              |  0
- .../110-flash.patch                           |  4 +-
- .../160-vlynq_try_remote_first.patch          |  0
- .../200-free-mem-below-kernel-offset.patch    |  2 +-
- .../300-add-ac49x-platform.patch              |  4 +-
- .../310-ac49x-prom-support.patch              |  0
- .../320-ac49x-mtd-partitions.patch            |  4 +-
- .../920-ar7part.patch                         |  0
- .../925-actiontec_leds.patch                  |  6 +--
- .../950-cpmac_titan.patch                     |  8 +--
- ...R7-allow-NULL-clock-for-clk_get_rate.patch | 45 ----------------
- 14 files changed, 85 insertions(+), 61 deletions(-)
- create mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/270-4.14_fixes.patch
- rename target/linux/ar7/{config-4.9 => config-4.14} (86%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/100-fix-highmem-offset.patch (100%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/110-flash.patch (85%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/160-vlynq_try_remote_first.patch (100%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/200-free-mem-below-kernel-offset.patch (89%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/300-add-ac49x-platform.patch (96%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/310-ac49x-prom-support.patch (100%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/320-ac49x-mtd-partitions.patch (90%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/920-ar7part.patch (100%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/925-actiontec_leds.patch (90%)
- rename target/linux/ar7/{patches-4.9 => patches-4.14}/950-cpmac_titan.patch (86%)
- delete mode 100644 target/linux/ar7/patches-4.9/101-MIPS-AR7-allow-NULL-clock-for-clk_get_rate.patch
-
+diff --git a/target/linux/ar7/config-4.9 b/target/linux/ar7/config-4.9
+index 95a5375bae..95ee60ac59 100644
+--- a/target/linux/ar7/config-4.9
++++ b/target/linux/ar7/config-4.9
+@@ -18,6 +18,8 @@ CONFIG_ARCH_SUSPEND_POSSIBLE=y
+ CONFIG_ARCH_USE_BUILTIN_BSWAP=y
+ CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
+ CONFIG_BOOT_ELF32=y
++CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y
++# CONFIG_CC_OPTIMIZE_FOR_SIZE is not set
+ CONFIG_CEVT_R4K=y
+ CONFIG_CLONE_BACKWARDS=y
+ CONFIG_CMDLINE="rootfstype=squashfs,jffs2"
+@@ -105,6 +107,7 @@ CONFIG_KALLSYMS=y
+ CONFIG_LEDS_GPIO=y
+ CONFIG_LEDS_TRIGGER_HEARTBEAT=y
+ CONFIG_MDIO_BOARDINFO=y
++CONFIG_MIGRATION=y
+ CONFIG_MIPS=y
+ CONFIG_MIPS_ASID_BITS=8
+ CONFIG_MIPS_ASID_SHIFT=0
 -- 
 2.20.1
 

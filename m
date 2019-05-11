@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72B161A8D7
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 May 2019 19:38:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCAED1A8DA
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 May 2019 19:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,46 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8LnwVqyTPCA6OMf8JFfMmo4Sw1H+mnEh4aB0pn8LUWU=; b=AzyZnl2ywebVvmM4FdVQMRHV90
-	pCWQAwuozN8GPlQl7asIhjY7eqxjEz247HNklmQxPrxhrMaNQP4lMkgxMZQV5iXbzuMGIDyoyDUfo
-	I817Ns+Qv3hywbRsnlfSrnSbiRg1m94XyXd0M7w9MAPeo//OxBo7enAYipNaz+9olSo5wqwx1Huso
-	Yk3kzZiVk89LTfcRj8cLWhd5a/imGndQutbcBKuxtvwRte7KQF1Y6PhyGe/m7c482KwUyg18opFgy
-	W9+44P6bMiIXCLBVIB+TA1yqMJxSNfdpXB1PP9sFJsO5YvuLNxX1agaoQ99dJ5HQIEI+9py6U7fa3
-	VX5nfrZQ==;
+	bh=fRIZwJ7nPh1JofAvpd5TP9fYnz4N7Ks4N6IVVTpKOxo=; b=kSs6yH7ouljaBFi22epZvU0Z2Y
+	fqJ14aBIOM2JtT407T9SaBOVT3PyaZbxzj2ZCK/S3FTckuvHKGXqAzYbcMLkNGqpr6kNMvv+uPQlj
+	R1D/1qvjS3LUKpqKNYjkgAYeduWg7eMbme3u/wKTlLlkscvGI6OLFj0swM5L7U5AKfPGuDaKorQKA
+	hFtSBzRI/N/EAtWK9YfM54I+u4SQ+wBYtjox6vvW1CZdQKzoL36k6AbKQadA8wWbVpU/ecsqZjvp8
+	M5/OWljIW6zAPF+eICwQO3gXC2ZAztgUnFc26ThXWxYdakHiGenOr2ujfbYOQlTGzanSaGDZSBOrH
+	m+Uj90PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPVwy-0006Ik-NP; Sat, 11 May 2019 17:38:20 +0000
+	id 1hPVxS-000786-RG; Sat, 11 May 2019 17:38:50 +0000
 Received: from mx-out.tlen.pl ([193.222.135.158])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPVwT-0005pH-6D
- for openwrt-devel@lists.openwrt.org; Sat, 11 May 2019 17:37:52 +0000
-Received: (wp-smtpd smtp.tlen.pl 13685 invoked from network);
+ id 1hPVwT-0005pJ-IO
+ for openwrt-devel@lists.openwrt.org; Sat, 11 May 2019 17:37:53 +0000
+Received: (wp-smtpd smtp.tlen.pl 14403 invoked from network);
  11 May 2019 19:37:45 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1557596265; bh=XCw8Hi0ExXOO8e6aO1Yi5k00aloF3xeAUUxLtCsjx+o=;
+ t=1557596266; bh=l2dauDLlZQtoiwW6tu13n/n4oZhupfmP0aelTS6R06E=;
  h=From:To:Subject;
- b=NTa6ZJQvOSFHDEXo3/dpVl5CIQtR7j7S1/U9pCKV2SVfAkNADmxr6HRDtlkHK7b8q
- csXPtML3qOXr+Ihy8iuXD2U37f3mMGatdBdVAOSPs4+VS5B0YC+cCxd12U4jqdjHTy
- UzS1VwAgDZRgNEFRWij9hn4HX7YfXENmR8spLFpk=
+ b=km5oihijuyYxgbyhdUg8huk5jzb3vx3u0cUeWNv9phhCg8ayU6oEDcktGp6mXFC8b
+ tMcWpZENZBEaRQojm0ej/L1mcMiidnu04fVhJ50PDGkZwSnaS+WfTLWVurnqmYqKoY
+ OjkMO9SYd4kbM2zEHbyWDAoQ/69BDhOVGnlnYLhM=
 Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
  for <openwrt-devel@lists.openwrt.org>; 11 May 2019 19:37:45 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 11 May 2019 19:37:29 +0200
-Message-Id: <20190511173735.5549-3-tomek_n@o2.pl>
+Date: Sat, 11 May 2019 19:37:30 +0200
+Message-Id: <20190511173735.5549-4-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190511173735.5549-1-tomek_n@o2.pl>
 References: <20190511173735.5549-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: 6d1ecff6a27088d1d3002981f26a4b1d
+X-WP-MailID: 1ad9eb3ae34e6640948194e69586e1bb
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [YVPU]                               
+X-WP-SPAM: NO 0000000 [kSMk]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_103749_547258_AFA9E44C 
-X-CRM114-Status: UNSURE (   6.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190511_103749_777428_DF65DDE6 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -66,8 +65,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v3 2/8] mvebu: image: stack repeated
- variables
+Subject: [OpenWrt-Devel] [PATCH v3 3/8] mvebu: image: introduce BOOT_SCRIPT
+ variable
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -84,115 +83,191 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-All of arm64 devices have part of variables repeatedly defined. Stack
-them to common define, and reference it in each device recipe.
+All of U-Boot scripts repeat the same pattern with only Device Tree blob
+name changing for respective device. Therefore create generic scripts
+which will be altered on demad by image build process, and create
+BOOT_SCRIPT variable which can be added to device recipe and will allow
+referencing the same script by many device recipes. This will allow to
+slim down the ammount of files in buildroot tree and avoid needlessly
+incrementing amount of boot scripts if new devices will be added.
 
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- target/linux/mvebu/image/Makefile      |  8 ++++++++
- target/linux/mvebu/image/cortex-a53.mk | 12 ++----------
- target/linux/mvebu/image/cortex-a72.mk | 20 +++++---------------
- 3 files changed, 15 insertions(+), 25 deletions(-)
+ target/linux/mvebu/image/Makefile             | 10 ++++---
+ .../image/armada-388-clearfog-base.bootscript | 27 -------------------
+ .../image/armada-macchiatobin.bootscript      | 10 -------
+ ...fog-pro.bootscript => clearfog.bootscript} |  6 +----
+ target/linux/mvebu/image/cortex-a9.mk         |  4 ++-
+ ...db.bootscript => generic-arm64.bootscript} |  2 +-
+ .../image/globalscale-espressobin.bootscript  | 10 -------
+ 7 files changed, 12 insertions(+), 57 deletions(-)
+ delete mode 100644 target/linux/mvebu/image/armada-388-clearfog-base.bootscript
+ delete mode 100644 target/linux/mvebu/image/armada-macchiatobin.bootscript
+ rename target/linux/mvebu/image/{armada-388-clearfog-pro.bootscript => clearfog.bootscript} (78%)
+ rename target/linux/mvebu/image/{armada-3720-db.bootscript => generic-arm64.bootscript} (82%)
+ delete mode 100644 target/linux/mvebu/image/globalscale-espressobin.bootscript
 
 diff --git a/target/linux/mvebu/image/Makefile b/target/linux/mvebu/image/Makefile
-index 72b14e344b..5f4ab89716 100644
+index 5f4ab89716..95d4d5a79b 100644
 --- a/target/linux/mvebu/image/Makefile
 +++ b/target/linux/mvebu/image/Makefile
-@@ -83,6 +83,14 @@ define Device/Default
- endef
- DEVICE_VARS += UBOOT
+@@ -17,8 +17,10 @@ SIGNATURE:=$(shell printf "%.8s" $(SOURCE_DATE_EPOCH))
  
-+define Device/Default-arm64
-+  DTS_DIR := $(DTS_DIR)/marvell
-+  IMAGES := sdcard.img.gz
-+  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-+  KERNEL_NAME := Image
-+  KERNEL := kernel-bin
-+endef
-+
- define Device/UBI
-   IMAGES := sysupgrade.bin
-   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-diff --git a/target/linux/mvebu/image/cortex-a53.mk b/target/linux/mvebu/image/cortex-a53.mk
-index dd6176100b..a102f52481 100644
---- a/target/linux/mvebu/image/cortex-a53.mk
-+++ b/target/linux/mvebu/image/cortex-a53.mk
-@@ -1,25 +1,17 @@
- ifeq ($(SUBTARGET),cortexa53)
- 
- define Device/globalscale-espressobin
--  KERNEL_NAME := Image
--  KERNEL := kernel-bin
-+  $(call Device/Default-arm64)
-   DEVICE_TITLE := ESPRESSObin (Marvell Armada 3700 Community Board)
--  IMAGES := sdcard.img.gz
--  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   DEVICE_DTS := armada-3720-espressobin
--  DTS_DIR := $(DTS_DIR)/marvell
-   SUPPORTED_DEVICES := globalscale,espressobin
+ define Build/boot-scr
+ 	rm -f $@-boot.scr
+-	sed -e 's#@ROOT@#$(SIGNATURE)#g' \
+-		$(DEVICE_NAME).bootscript > $@-new.bootscript
++	sed \
++		-e 's#@ROOT@#$(SIGNATURE)#g' \
++		-e 's#@DTB@#$(firstword $(DEVICE_DTS))#g' \
++		$(BOOT_SCRIPT).bootscript > $@-new.bootscript
+ 	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -d $@-new.bootscript $@-boot.scr
  endef
- TARGET_DEVICES += globalscale-espressobin
  
- define Device/armada-3720-db
--  KERNEL_NAME := Image
--  KERNEL := kernel-bin
-+  $(call Device/Default-arm64)
-   DEVICE_TITLE := Marvell Armada 3720 Development Board DB-88F3720-DDR3
--  IMAGES := sdcard.img.gz
--  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   DEVICE_DTS := armada-3720-db
--  DTS_DIR := $(DTS_DIR)/marvell
-   SUPPORTED_DEVICES := marvell,armada-3720-db
+@@ -80,10 +82,12 @@ define Device/Default
+   KERNEL := kernel-bin | append-dtb | uImage none
+   SUPPORTED_DEVICES = $$(DEVICE_DTS)
+   UBOOT :=
++  BOOT_SCRIPT :=
  endef
- TARGET_DEVICES += armada-3720-db
-diff --git a/target/linux/mvebu/image/cortex-a72.mk b/target/linux/mvebu/image/cortex-a72.mk
-index 25bcf534bc..824f6b5d0f 100644
---- a/target/linux/mvebu/image/cortex-a72.mk
-+++ b/target/linux/mvebu/image/cortex-a72.mk
-@@ -1,38 +1,28 @@
- ifeq ($(SUBTARGET),cortexa72)
+-DEVICE_VARS += UBOOT
++DEVICE_VARS += BOOT_SCRIPT UBOOT
  
- define Device/armada-macchiatobin
--  KERNEL_NAME := Image
--  KERNEL := kernel-bin
-+  $(call Device/Default-arm64)
-   DEVICE_TITLE := MACCHIATObin (SolidRun Armada 8040 Community Board)
-   DEVICE_PACKAGES += kmod-i2c-core kmod-i2c-mux kmod-i2c-mux-pca954x
--  IMAGES := sdcard.img.gz
--  IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   DEVICE_DTS := armada-8040-mcbin
--  DTS_DIR := $(DTS_DIR)/marvell
-   SUPPORTED_DEVICES := marvell,armada8040-mcbin
- endef
- TARGET_DEVICES += armada-macchiatobin
+ define Device/Default-arm64
++  BOOT_SCRIPT := generic-arm64
+   DTS_DIR := $(DTS_DIR)/marvell
+   IMAGES := sdcard.img.gz
+   IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+diff --git a/target/linux/mvebu/image/armada-388-clearfog-base.bootscript b/target/linux/mvebu/image/armada-388-clearfog-base.bootscript
+deleted file mode 100644
+index 1755203dc5..0000000000
+--- a/target/linux/mvebu/image/armada-388-clearfog-base.bootscript
++++ /dev/null
+@@ -1,27 +0,0 @@
+-# Standard Boot-Script
+-# use only well-known variable names provided by U-Boot Distro boot
+-# This script assumes that there is a boot partition,
+-# and that the root partition is always the next one.
+-
+-# Override DeviceTree for Clearfog Base
+-# removed once U-Boot is able to detect the board variant.
+-setenv fdtfile armada-388-clearfog-base.dtb
+-
+-# rootfs is always on the next partition
+-setexpr openwrt_rootpart ${distro_bootpart} + 1
+-
+-# figure out partition uuid to pass to the kernel as root=
+-part uuid ${devtype} ${devnum}:${openwrt_rootpart} uuid
+-
+-# generate bootargs (rootfs)
+-setenv bootargs ${bootargs} root=PARTUUID=${uuid} rootfstype=auto rootwait
+-
+-# add console= option to bootargs, if any
+-if test -n "${console}"; then
+-	setenv bootargs ${bootargs} console=${console}
+-fi
+-
+-echo "Booting Linux with ${bootargs}"
+-load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${fdtfile}
+-load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} zImage
+-bootz ${kernel_addr_r} - ${fdt_addr_r}
+diff --git a/target/linux/mvebu/image/armada-macchiatobin.bootscript b/target/linux/mvebu/image/armada-macchiatobin.bootscript
+deleted file mode 100644
+index ae9fdca92d..0000000000
+--- a/target/linux/mvebu/image/armada-macchiatobin.bootscript
++++ /dev/null
+@@ -1,10 +0,0 @@
+-setenv bootargs "root=PARTUUID=@ROOT@-02 rw rootwait"
+-
+-if test -n "${console}"; then
+-	setenv bootargs "${bootargs} ${console}"
+-fi
+-
+-load mmc 1:1 ${fdt_addr} armada-8040-mcbin.dtb
+-load mmc 1:1 ${kernel_addr} Image
+-
+-booti ${kernel_addr} - ${fdt_addr}
+diff --git a/target/linux/mvebu/image/armada-388-clearfog-pro.bootscript b/target/linux/mvebu/image/clearfog.bootscript
+similarity index 78%
+rename from target/linux/mvebu/image/armada-388-clearfog-pro.bootscript
+rename to target/linux/mvebu/image/clearfog.bootscript
+index 99aa145858..20ba76f0da 100644
+--- a/target/linux/mvebu/image/armada-388-clearfog-pro.bootscript
++++ b/target/linux/mvebu/image/clearfog.bootscript
+@@ -3,10 +3,6 @@
+ # This script assumes that there is a boot partition,
+ # and that the root partition is always the next one.
  
- define Device/armada-8040-db
--  KERNEL_NAME := Image
--  KERNEL := kernel-bin
-+  $(call Device/Default-arm64)
-   DEVICE_TITLE := Marvell Armada 8040 DB board
--  IMAGES := sdcard.img.gz
--  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   DEVICE_DTS := armada-8040-db
--  DTS_DIR := $(DTS_DIR)/marvell
-+  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   SUPPORTED_DEVICES := marvell,armada8040-db
- endef
- TARGET_DEVICES += armada-8040-db
+-# Override DeviceTree for Clearfog Pro
+-# removed once U-Boot has been updated to the new name.
+-setenv fdtfile armada-388-clearfog-pro.dtb
+-
+ # rootfs is always on the next partition
+ setexpr openwrt_rootpart ${distro_bootpart} + 1
  
- define Device/armada-7040-db
--  KERNEL_NAME := Image
--  KERNEL := kernel-bin
-+  $(call Device/Default-arm64)
-   DEVICE_TITLE := Marvell Armada 7040 DB board
--  IMAGES := sdcard.img.gz
--  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   DEVICE_DTS := armada-7040-db
--  DTS_DIR := $(DTS_DIR)/marvell
-+  IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
-   SUPPORTED_DEVICES := marvell,armada7040-db
+@@ -22,6 +18,6 @@ if test -n "${console}"; then
+ fi
+ 
+ echo "Booting Linux with ${bootargs}"
+-load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} ${fdtfile}
++load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} @DTB@.dtb
+ load ${devtype} ${devnum}:${distro_bootpart} ${kernel_addr_r} zImage
+ bootz ${kernel_addr_r} - ${fdt_addr_r}
+diff --git a/target/linux/mvebu/image/cortex-a9.mk b/target/linux/mvebu/image/cortex-a9.mk
+index 66cf54f9c5..8e9ef41fb6 100644
+--- a/target/linux/mvebu/image/cortex-a9.mk
++++ b/target/linux/mvebu/image/cortex-a9.mk
+@@ -132,6 +132,7 @@ define Device/armada-388-clearfog-pro
+   DEVICE_DTS := armada-388-clearfog-pro armada-388-clearfog-base
+   SUPPORTED_DEVICES := armada-388-clearfog-pro armada-388-clearfog
+   UBOOT := clearfog-u-boot-spl.kwb
++  BOOT_SCRIPT := clearfog
  endef
- TARGET_DEVICES += armada-7040-db
+ TARGET_DEVICES += armada-388-clearfog-pro
+ 
+@@ -142,8 +143,9 @@ define Device/armada-388-clearfog-base
+   DEVICE_PACKAGES := mkf2fs e2fsprogs partx-utils
+   IMAGES := sdcard.img.gz
+   IMAGE/sdcard.img.gz := boot-scr | boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+-  DEVICE_DTS := armada-388-clearfog-pro armada-388-clearfog-base
++  DEVICE_DTS := armada-388-clearfog-base armada-388-clearfog-pro
+   UBOOT := clearfog-u-boot-spl.kwb
++  BOOT_SCRIPT := clearfog
+ endef
+ TARGET_DEVICES += armada-388-clearfog-base
+ 
+diff --git a/target/linux/mvebu/image/armada-3720-db.bootscript b/target/linux/mvebu/image/generic-arm64.bootscript
+similarity index 82%
+rename from target/linux/mvebu/image/armada-3720-db.bootscript
+rename to target/linux/mvebu/image/generic-arm64.bootscript
+index 65e39a1af5..f395590f84 100644
+--- a/target/linux/mvebu/image/armada-3720-db.bootscript
++++ b/target/linux/mvebu/image/generic-arm64.bootscript
+@@ -4,7 +4,7 @@ if test -n "${console}"; then
+ 	setenv bootargs "${bootargs} ${console}"
+ fi
+ 
+-load mmc 0:1 ${fdt_addr} armada-3720-db.dtb
++load mmc 0:1 ${fdt_addr} @DTB@.dtb
+ load mmc 0:1 ${kernel_addr} Image
+ 
+ booti ${kernel_addr} - ${fdt_addr}
+diff --git a/target/linux/mvebu/image/globalscale-espressobin.bootscript b/target/linux/mvebu/image/globalscale-espressobin.bootscript
+deleted file mode 100644
+index 0d03ac8513..0000000000
+--- a/target/linux/mvebu/image/globalscale-espressobin.bootscript
++++ /dev/null
+@@ -1,10 +0,0 @@
+-setenv bootargs "root=PARTUUID=@ROOT@-02 rw rootwait"
+-
+-if test -n "${console}"; then
+-	setenv bootargs "${bootargs} ${console}"
+-fi
+-
+-load mmc 0:1 ${fdt_addr} armada-3720-espressobin.dtb
+-load mmc 0:1 ${kernel_addr} Image
+-
+-booti ${kernel_addr} - ${fdt_addr}
 -- 
 2.21.0
 

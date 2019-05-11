@@ -2,46 +2,47 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C229F1A999
-	for <lists+openwrt-devel@lfdr.de>; Sat, 11 May 2019 23:23:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 596351A99B
+	for <lists+openwrt-devel@lfdr.de>; Sat, 11 May 2019 23:28:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sd3jnrJ/k7TJU+s7/znS1YuIy33LdOmBRlhLWzQaDfU=; b=SP2emlw7MNJ4U3
-	hx72UauhMESLJ52quFBs24ftkOOZucAJaatkDdBbbybHghAZc+c7hxxA/MaDHSJZ1W4BnFMbuuehZ
-	Zl99jDixEQxijOX+W/OKkKciIc5a6ZTEYWG2xBxpGoyZFFEzk+5mJ8Z3ELje0KW3QV45KUUz4Wdhe
-	vQMDvTXwMXCNo5qAG9w0cQ7ZLfSEmfXGddrta9zLf6OZlZui+YhETEXlBxEYmOL6wvaTt9U0l7yyb
-	zp90wVcMQjHY3RtOatrHZidAcT1YU8hMdtw09/Di3Wk3jly326SGlsJZDjKmXCuGxFllaBcZU1YYc
-	Ft1/qYYufbVVzREtOJ+w==;
+	List-Owner; bh=twPRgfktfkkMaT6UKL27hX6bOOfSiZZJXp/YAKrK+zY=; b=Eat00p/UbZVwhC
+	lnBN3bqd41CCK1q9QDhVEUyIejWVx5uY5U1wMOifXk7amWILOiVuafY1QFu7Cw1To19xSPVvyGHEp
+	74H1rHIRl7W+YgRtc5IJxtLS9YWt3h2IZb0S/Emco+ezoZyBXz+K7FQBvGm9Gn6Z7zn+5nN9pmHQw
+	aqyLsriBcY0FpQOcfyVknnNWdWDMfk8k/FvjbGAIqFdB515NaXeQCnanO9GPNebM19Qb360E8uRVK
+	mqQc6UmPN7AWm6zchwmdKcMvl76TvaPHe8Ka0FzxnPF/xY8/XJiCwHA8iIRMy3kLIMDo1rBe+d0ON
+	fIy0uIHm6tPF9bJzh5Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPZSi-0000W1-0q; Sat, 11 May 2019 21:23:20 +0000
+	id 1hPZY2-0002VF-1c; Sat, 11 May 2019 21:28:50 +0000
 Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
  helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPZSa-0000Vg-9W
- for openwrt-devel@lists.openwrt.org; Sat, 11 May 2019 21:23:14 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1hPZXu-0002Uu-Ip
+ for openwrt-devel@lists.openwrt.org; Sat, 11 May 2019 21:28:44 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 4E441A0031;
- Sat, 11 May 2019 23:23:09 +0200 (CEST)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 5AF16A017D;
+ Sat, 11 May 2019 23:28:41 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
  by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
  [80.241.56.117]) (amavisd-new, port 10030)
- with ESMTP id uzc2xzCuCde2; Sat, 11 May 2019 23:22:47 +0200 (CEST)
+ with ESMTP id Gg7CYzL-2O9z; Sat, 11 May 2019 23:28:32 +0200 (CEST)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 11 May 2019 23:22:43 +0200
-Message-Id: <20190511212243.21276-1-hauke@hauke-m.de>
+Date: Sat, 11 May 2019 23:28:29 +0200
+Message-Id: <20190511212829.21680-1-hauke@hauke-m.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190511_142312_482629_3E399696 
-X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-CacheID: sfid-20190511_142842_778672_52D26627 
+X-CRM114-Status: UNSURE (   9.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -52,8 +53,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [2001:67c:2050:104:0:2:25:2 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] uboot-envtools: Update to U-Boot version
- 2019.04
+Subject: [OpenWrt-Devel] [PATCH] linux-firmware: update to version from
+ 2019-05-02
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -65,67 +66,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, rosenp@gmail.com
+Cc: Hauke Mehrtens <hauke@hauke-m.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+The following firmware files we use are updated in this change:
+ath10k/QCA6174/hw3.0/board-2.bin
+ath10k/QCA9888/hw2.0/firmware-5.bin
+ath10k/QCA988X/hw2.0/firmware-5.bin
+ath10k/QCA9984/hw1.0/firmware-5.bin
+mrvl/sd8887_uapsta.bin
+mrvl/pcie8897_uapsta.bin
+iwlwifi-8000C-36.ucode
+iwlwifi-8265-36.ucode
+
 Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
 ---
+ package/firmware/linux-firmware/Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-I would prefer to switch back to the tar.bz2 download again as we
-download the U-Boot as a tar.bz2 also in other places.
-
- package/boot/uboot-envtools/Makefile                  | 8 ++++----
- package/boot/uboot-envtools/patches/001-compile.patch | 6 +++---
- 2 files changed, 7 insertions(+), 7 deletions(-)
-
-diff --git a/package/boot/uboot-envtools/Makefile b/package/boot/uboot-envtools/Makefile
-index 71b842b96e..e64aa1163a 100644
---- a/package/boot/uboot-envtools/Makefile
-+++ b/package/boot/uboot-envtools/Makefile
-@@ -9,16 +9,16 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=uboot-envtools
- PKG_DISTNAME:=u-boot
--PKG_VERSION:=2018.03
--PKG_RELEASE:=3
-+PKG_VERSION:=2019.04
-+PKG_RELEASE:=1
+diff --git a/package/firmware/linux-firmware/Makefile b/package/firmware/linux-firmware/Makefile
+index f460ac0ee6..20cea64f71 100644
+--- a/package/firmware/linux-firmware/Makefile
++++ b/package/firmware/linux-firmware/Makefile
+@@ -11,9 +11,9 @@ PKG_NAME:=linux-firmware
+ PKG_RELEASE:=1
  
  PKG_SOURCE_PROTO:=git
- PKG_SOURCE:=$(PKG_DISTNAME)-$(PKG_VERSION).tar.xz
- PKG_SOURCE_SUBDIR:=$(PKG_DISTNAME)-$(PKG_VERSION)
- PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_DISTNAME)-$(PKG_VERSION)
- PKG_SOURCE_URL:=https://git.denx.de/u-boot.git
--PKG_SOURCE_VERSION:=f95ab1fb6e37f0601f397091bb011edf7a98b890
--PKG_MIRROR_HASH:=b50d8b6fe0d90b92c8c147457b1b4c2ed1cdb03191085cfc57fdad77c0bfffab
-+PKG_SOURCE_VERSION:=3c99166441bf3ea325af2da83cfe65430b49c066
-+PKG_MIRROR_HASH:=aba2f0a72e51ea329d12c524cca5d4da6fd30229b1df19b17960d8590f5e2df4
+-PKG_SOURCE_DATE:=2018-12-16
+-PKG_SOURCE_VERSION:=211de1679a68b8ab0f841a8058df35e13e3963f0
+-PKG_MIRROR_HASH:=894a13a44c9de58528488682feb3ade582725cd766a16ccaca07089628229d90
++PKG_SOURCE_DATE:=2019-05-02
++PKG_SOURCE_VERSION:=92e17d0dd2437140fab044ae62baf69b35d7d1fa
++PKG_MIRROR_HASH:=5cf291ae4ccdbd4ac251302f69e47016227bf2e1946bdb59e6a7fe404d2efbf0
+ PKG_SOURCE_URL:=https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
  
- PKG_BUILD_DEPENDS:=fstools
- 
-diff --git a/package/boot/uboot-envtools/patches/001-compile.patch b/package/boot/uboot-envtools/patches/001-compile.patch
-index f7ec9130d6..34072f309d 100644
---- a/package/boot/uboot-envtools/patches/001-compile.patch
-+++ b/package/boot/uboot-envtools/patches/001-compile.patch
-@@ -1,6 +1,6 @@
- --- a/tools/env/Makefile
- +++ b/tools/env/Makefile
--@@ -10,6 +10,10 @@
-+@@ -8,6 +8,10 @@
-  # with "CC" here for the maximum code reuse of scripts/Makefile.host.
-  override HOSTCC = $(CC)
-  
-@@ -9,5 +9,5 @@
- +endif
- +
-  # Compile for a hosted environment on the target
-- HOST_EXTRACFLAGS  = $(patsubst -I%,-idirafter%, $(filter -I%, $(UBOOTINCLUDE))) \
-- 		-idirafter $(srctree)/tools/env \
-+ HOST_EXTRACFLAGS  = -I$(srctree)/tools \
-+ 		$(patsubst -I%,-idirafter%, $(filter -I%, $(UBOOTINCLUDE))) \
+ PKG_MAINTAINER:=Felix Fietkau <nbd@nbd.name>
 -- 
 2.20.1
 

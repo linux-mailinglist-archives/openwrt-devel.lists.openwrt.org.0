@@ -2,40 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E97021BF28
-	for <lists+openwrt-devel@lfdr.de>; Mon, 13 May 2019 23:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30AB61BF31
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 May 2019 23:42:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YVEf2hFbPcw8mxhebuV9Xb3VMpn1ImfYRTmpUr2zC+E=; b=pHyBmuMt/EHJt3
-	qkAw6TT90w46WVI0j7Wn4N8FadJH4bJ0PNImO1z3jd4GlzYOh0Ww6tYj6ZJhZYtLpZuc0c+bp7Yye
-	ENWWK4K/B4dFy9c+hQlTDly6rND60R26stPEbD5++laTwZcG2H4fw/sk1EGZz23rkmdTA9Z8s7pDX
-	srV/A7l+WekA5TJK7fbtBK1FjhnGcGZkwG6zljnbkKo73ZDTOnNmLLJcotp0gDoTLtEHPNLPD7PQj
-	shePoNt2WxsRZqMduB82DSHX4kiiFMqS880h2/udE6ghEz7ZTyEDD879bPimeTGQy95ReZ44X4UpL
-	64SNz9Rjnn1+OVUolZYA==;
+	List-Owner; bh=/KM3DMqW4csQAGKXM6wMUdMwDSN3M1Q5k5sMG5XgTh4=; b=RQnKTz1321sF8q
+	QlLkOZTthrgYW/Lqd8QFs4jdRnxEC3IxawtW7qxmCmjXljO7/wbFS7PWad0Whiv1F6zMf+YNnyP9a
+	mi1efh73toq3FLGP788NrAZJTcnCpzr5zZTdGa6ydDCtin/kQDFQvxUkHhFSi4zjVAmBfncq5gHqC
+	E03IeTT6s+tkhUxwLUT+N7NgdwcZiLAz5dP2mzPUjWK17BC12Oj46dVGtaAxx7BYBPRQTp19tFQfN
+	ykwhVcw4lHX8al03KKGlMx5TCypmFiGatdCg0JtG+GISlwPmQjyDFehrFebmkrrBGWVylSLXW2XsS
+	bpAAyz3F4ijrIvcGrPmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQIdx-0002B4-Km; Mon, 13 May 2019 21:37:57 +0000
+	id 1hQIhw-0004YY-4d; Mon, 13 May 2019 21:42:04 +0000
 Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQIdq-00029l-Jm
- for openwrt-devel@lists.openwrt.org; Mon, 13 May 2019 21:37:52 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1hQIhp-0004YF-Ak
+ for openwrt-devel@lists.openwrt.org; Mon, 13 May 2019 21:41:58 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 815114EDD6;
- Mon, 13 May 2019 23:37:42 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id 1C6B74DCA7;
+ Mon, 13 May 2019 23:41:56 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id 1y6AO-XsPd-l; Mon, 13 May 2019 23:37:32 +0200 (CEST)
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id TjqEncM6Syjo; Mon, 13 May 2019 23:41:53 +0200 (CEST)
 To: Daniel Engberg <daniel.engberg.lists@pyret.net>,
  openwrt-devel@lists.openwrt.org
-References: <2c19e9b8e7eb06e7ba90cab488a75829@pyret.net>
+References: <b9f469cd95bfa5fcd418c6b1aacc38cb@pyret.net>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -98,14 +99,14 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <d0473583-3d8e-792f-d938-24cc09408932@hauke-m.de>
-Date: Mon, 13 May 2019 23:37:31 +0200
+Message-ID: <fb0381cf-5e7c-8ef7-e4e3-d53870bcd494@hauke-m.de>
+Date: Mon, 13 May 2019 23:41:52 +0200
 MIME-Version: 1.0
-In-Reply-To: <2c19e9b8e7eb06e7ba90cab488a75829@pyret.net>
+In-Reply-To: <b9f469cd95bfa5fcd418c6b1aacc38cb@pyret.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_143750_950920_2E260AD5 
-X-CRM114-Status: GOOD (  19.49  )
+X-CRM114-CacheID: sfid-20190513_144157_668047_4C5B14EF 
+X-CRM114-Status: GOOD (  14.19  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -115,8 +116,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [2001:67c:2050:104:0:1:25:1 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] octeon: Deactivate MIPS O32 and N32
- support
+Subject: Re: [OpenWrt-Devel] Time to move on from 4.14 to 4.19?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,53 +133,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Daniel,
-
-On 5/12/19 10:24 PM, Daniel Engberg wrote:
+On 5/12/19 10:37 PM, Daniel Engberg wrote:
 > Hi,
 > 
-> This patch seems to touch more things that just that... (4.19)
+> I'm not sure what the current release roadmap is but since 19.X release
+> seems to slipping perhaps it's time to move working targets to 4.19 as
+> 4.14 has barely 6 months away before EoL status since there seems to be
+> a rather strong opinion for "LTS" releases/branches?
 
-I did a "make kernel_oldconfig" to refresh the configuration. This was
-either not done when this configuration was added, the generic
-configuration changed or some new Kconfig options were added in the
-stable kernel.
+Hi,
 
-> +CONFIG_ARCH_HIBERNATION_POSSIBLE=y
-> +CONFIG_ARCH_SUSPEND_POSSIBLE=y
-> Both these are optional and no supported hardware have these
-> capatibilities to my knowledge
+I assume that the kernel 4.14 support will be extended till 2014, Greg
+said some time ago that he will maintain one kernel per year for the
+next 5 years, mostly for Android.
 
-They are automatically set because CONFIG_CAVIUM_OCTEON_SOC selects
-CONFIG_SYS_SUPPORTS_HOTPLUG_CPU if CONFIG_CPU_BIG_ENDIAN is set.
+Switching now to kernel 4.19 would shift our timeline for the next
+release by multiple months in addition. I would prefer if we branch off
+the release after our meeting in Hamburg next month and use kernel 4.14.
 
-> +CONFIG_HAVE_DEBUG_KMEMLEAK=y
-> +CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
->
-> Why are these needed?
-
-The architecture supports them, they are automatically selected.
-
-> +CONFIG_HAVE_IDE=y
-> +CONFIG_HAVE_KVM=y
-> +CONFIG_MIPS_EBPF_JIT=y
-> These seems to be forced by the mips kernel config
-> 
-> +CONFIG_ZLIB_INFLATE=y
-> Where does this come from?
-> 
-> In general I think we need to come up with a better way of handling
-> kernel configs as many doesn't seem to be correct (see GitHub PRs) even
-> though the kernel compiles and it's very hard to get a good overview not
-> to mention maintain.
-
-Yes I agree with you, when I looked at the kernel configuration of the
-at91 target for example there were many problems in there. It is also
-not really documented on how to do it correctly.
-
-Only defining the options which are really needed and using the
-defconfig for all of the others could also be an option, but I think we
-would miss to much stuff.
+For the release after that I am not sure if we should take 4.19 or even
+5.3 or whatever will be the next LTS kernel. It will probably be done
+somewhere in the first half of 2020, so we should have about 6 months to
+stabilize 5.3
 
 Hauke
 

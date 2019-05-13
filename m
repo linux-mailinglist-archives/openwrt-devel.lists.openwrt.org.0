@@ -2,53 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E9851BB7A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 13 May 2019 19:02:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 296801BEE5
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 May 2019 22:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tIcaegBfKoFfDl6uyyYVWMl8LizyMB2VwdAnmpAT74o=; b=B/8
-	2ipSyX2b3VxruUDNLtUwn6hzQanewxN/9fdUeQKCqpqMYhtC7ko6FxeA1FUc40nfg8oKMHDcBiEPV
-	b59Yww3+i6Xb2ckR6UKOb5saDGNz77EQNDp/bEQz0X2FYC0xr/t18+2yi5lUJHOCfZV2hOhVG+aeY
-	KFrHN/EFXl4ncO+8j0XuCo5oR7ZU7KCwbDUUHk2pYBwClrQn1KTaQZ4+sy2u7srFHCxRvnswPvYDx
-	CZetm/X51PhEp8i/NgVEwF0uyApfbTcAxiQA+SZinv8rg14+tJOa2j2kVt/ucD07AEOIxeAe1BIUM
-	VV4IZOn9IDjaX+1BjFdfMlGnXwxZtzw==;
+	References:List-Owner; bh=c73EPEdMRLcqbxT+4BN6uApqjfEicK2UdyFEfMPEz+o=; b=lXh
+	tDnp1lQuUnXjaowqpYHKSGYj/V3yaLBlsWzxJJURVaEIfOJs2++DBGrPGgaYrtKvjcHyWxjyKUxEh
+	eX+ik7y8fiGuf5Za/ybBFwjwJvwmOE4ZzvtCp04FQ3/lkospMzXdTLThVEHohYoES0kdHl9aA7voP
+	eonIpKbaRRcsm1uOtixxi/gb44brduw3aXSVcazc6Od6G66Xehu/qfIjEtsxyiFCowLo65EF8TWFT
+	YasCLNUv/YefLXImLb2gJxNVfj2IJWlk+g2OFVR70h91ja0MdibIfNLKh06H8588DzdmJdU8pKwK6
+	/BK07ddfArTWT5mfGSTV5v+SjtyWVNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQELP-00030B-RB; Mon, 13 May 2019 17:02:31 +0000
-Received: from mx.allycomm.com ([138.68.30.55])
+	id 1hQI1b-0004Li-W8; Mon, 13 May 2019 20:58:20 +0000
+Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQELI-0002yu-O5
- for openwrt-devel@lists.openwrt.org; Mon, 13 May 2019 17:02:26 +0000
-Received: from jkletsky-mbp15.guidewire.com (inet.guidewire.com [199.91.42.30])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id 0EEB52404E;
- Mon, 13 May 2019 10:01:52 -0700 (PDT)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Jeff Kletsky <lede@allycomm.com>
-Message-ID: <3e56cf85-d668-01d7-3891-f0662ab73c1c@allycomm.com>
-Date: Mon, 13 May 2019 10:01:52 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.6.1
+ id 1hQI1U-0004Ks-QN
+ for openwrt-devel@lists.openwrt.org; Mon, 13 May 2019 20:58:14 +0000
+Received: by mail-pg1-x52a.google.com with SMTP id w22so7384129pgi.6
+ for <openwrt-devel@lists.openwrt.org>; Mon, 13 May 2019 13:58:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=hrcGfKfC/PgcOhD8UExjK96mmrGgKIOhd/y2vgV/fYQ=;
+ b=f5No8Tbm1VhUAxlADK5SafrwS7A0el0fVl9qR5LdGCqSQt3eT2aYlSABTAgvasDy8u
+ JdQMD2br3WgZtjTk76YbQfRjjojDWwIOhAzpKmOx5MtRW0HOzuTR6MWe8NsAZ3Mk1eH8
+ e4t7WXTz/6cGMBEqd0RM053nOMtcl9c7gncKd3pdHF7nJz3BFWcMJtqTdvMTpI8izTD7
+ Jok5bG7NzL3soC9oroqX0hKVQN4vPk8gmo8BD/B6qhyTK4rXsDJ38stb9moybIeRoR4f
+ mPGJhUJcEh7G+BMWHWfUblfhbLklo0wHkmtgqWTlumx867vq3AxhZfWsa3yM9/rbyD83
+ A1Ag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=hrcGfKfC/PgcOhD8UExjK96mmrGgKIOhd/y2vgV/fYQ=;
+ b=dibQW8w3WaPr+UAetrcD6USpoSfjIQf0Zo0dXkpuQc9o3ZpDapUG7wx8sRn97VR/Il
+ tfmOQ/LEeUL2GWxEXH6w5ET+WCYEdxO8ef0Gc6qOH+x8i9h3gSUkVamwmTmTpK2lMbXU
+ KqIR0rVodvXvUmQxHSDBvMZBH5eiMh9LnrjxqJFQdX3IPRIdv1QbQLrfehm8fLbB9NQ0
+ QRuHvUFX45+hkLRXlREY4WdstCPeHyOe2+yxVxTGvvX1rNjTj7kMq99Z73SNEEohjs5+
+ ZR1CiKBr2vr4mIRgZihDWSKZbuNOcVz4ojEvDoIbf1+5MLKLARxWl9/0PQ7stpPPn5yL
+ 5gmQ==
+X-Gm-Message-State: APjAAAWH4qyNvF9NgqVlAySV4fNO85yFBGb8ia/yf9RZmR+yUXjPnrnc
+ mZetS0tycxM4+/athNY0T2+cOGkAFOzeFiMw7c8naubOcA==
+X-Google-Smtp-Source: APXvYqw71xotUHloojumIC+yoo4zBt/N2vPHs9nyhq1LO23Eub19LpyuasEzBPGOgEFZoz3qo0+by2KSmzdsOucKdSY=
+X-Received: by 2002:a63:c64c:: with SMTP id x12mr33953243pgg.379.1557781091412; 
+ Mon, 13 May 2019 13:58:11 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+From: Sam Samy <to.swami1@gmail.com>
+Date: Mon, 13 May 2019 13:58:00 -0700
+Message-ID: <CAPGJ1o-fdnMVqoSL-8jDQUQJqBzzFDWttTPomFvm30R=iM-fkQ@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_100224_788248_A4D34617 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190513_135812_898269_C979232F 
+X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [138.68.30.55 listed in list.dnswl.org]
- 0.0 HTML_MESSAGE           BODY: HTML included in message
-Subject: [OpenWrt-Devel] [RFC] sysupgrade-tar: board_name in Image
- Generation vs. Run Time
+ no trust [2607:f8b0:4864:20:0:0:0:52a listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (to.swami1[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (to.swami1[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] ath10k TPC reg. domain incorrect?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,185 +90,71 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3390789868379923526=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============3390789868379923526==
-Content-Type: multipart/alternative;
- boundary="------------D66CF7F03ED6AA9C3B92D200"
-Content-Language: en-US
+Hi,
+ I installed master branch openwrt onto Asus MAP-AC2200 AP. It has tri
+band. Its based on IPQ4019 DK04 QCA reference platform. 2 radios
+(2Ghz/5Ghz) on AHB bus and one 5GHZ on PCIe bus. Its generally working
+fine except one problem in 5Ghz. On both the 5Ghz radios the RSSI is
+pretty low on any 5Ghz channel I put it in.  In one feet range I see -60dB
+RSSI, where as the stock firmware that came with the AP gives an RSSI
+of -36dB at one foot distance.The downstream transmit rates are MCS8/9
+for most part. The 2Ghz is working fine. Both radios seem to use the
+cal data from
+the flash that came with the AP.
 
-This is a multi-part message in MIME format.
---------------D66CF7F03ED6AA9C3B92D200
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 7bit
+After some discussion with ath10k firmware folks and looking at TPC
+dump I noticed some differences in TPC between the Asus stock image
+and openwrt image:
 
-TL;DR
+Here is the snippet from stock firmware:
 
-What would be a workable plan to reconcile mfgr_specific-board-name
-at image-generation time with mfgr,specific-board-name at run time?
+TPC Config for channel 5765 mode 10
+**************************************************
+CTL           = 0x10   Reg. Domain           = 20
+Antenna Gain  =  0     Reg. Max Antenna Gain = 12
+Power Limit   = 63     Reg. Max Power        = 60
+Num tx chains =  2    Num  Supported Rates  = 109
+**************************************************
+**************** CDD  POWER TABLE ****************
+**************************************************
 
+Where as in openwrt it is:
 
+*************************************
+TPC config for channel 5765 mode 10
+*************************************
+CTL        =  0x10 Reg. Domain        = 58
+Antenna Gain    =  0 Reg. Max Antenna Gain    =   0
+Power Limit    = 60 Reg. Max Power        = 30
+Num tx chains    =  2 Num supported rates    = 109
+********************************
 
-With the apparent tree-wide changes in progress to canonicalize board
-naming of TARGET_DEVICES to mfgr_specific-board-name, there becomes a
-disconnect between the board name at image generation and run time.
+So looks like reg domain is different even though both are set to US
+countrycode?
+(Although I didnt set anything on stock firmware. The countrycode from
+iwpriv get_countrycode says its 841.)
 
-This results in a "disconnect" between what is used in the tar file as
-the directory name and CONTROL contents by `scripts/sysupgrade-tar.sh`
+Also, the antenna gain seems different between stock and openwrt firmware..
 
-     mkdir -p "${tmpdir}/sysupgrade-${board}"
-     echo "BOARD=${board}" > "${tmpdir}/sysupgrade-${board}/CONTROL"
-     [ -z "${rootfs}" ] || cp "${rootfs}" "${tmpdir}/sysupgrade-${board}/root"
-     [ -z "${kernel}" ] || cp "${kernel}" "${tmpdir}/sysupgrade-${board}/kernel"
+How to change the reg. domain like in stock firmware in openwrt
+although I set the country code to US in the uci.
 
-where ${board} is, for example, `glinet_gl-ar750s-nand`
-
-and what is checked (or should be checked) by nand_do_platform_check()
-in `package/base-files/files/lib/upgrade/nand.sh`
-
-     tar xf $tar_file sysupgrade-$board_name/CONTROL
-
-where $(board_name) returns the comma-delimited form, `glinet,gl-ar750s-nand`
-(The contents of CONTROL are not checked at this time, but would suffer
-from the same mismatch issues.)
-
-The metadata commonly attached to the sysupgrade bundle often uses
-the run-time, comma-delimited form in "supported_devices", yet the
-build-time, underscore-delimited form in "board".
-
-
-
-At this time, there appear to be very few boards that actually call
-nand_do_platform_check(). Many still have board names that don't
-appear to be what I believe is canonical:
-
-   * layerscape
-   * pistachio
-   * imx6
-   * ar71xx
-
-While most either explicitly set the board name in the call or have
-comma-less board names, `sysupgrade-img,pistachio-marduk` makes a
-global, `tr ',' '_'` an unacceptable work-around.
+root@OpenWrt:/sys# uci show | grep country
+uhttpd.defaults.country='ZZ'
+wireless.radio0.country='US'
+wireless.radio1.country='US'
+wireless.radio2.country='US'
+root@OpenWrt:/sys#
 
 
-
-I can see a few paths forward on this, but don't have the project
-history and insight to properly evaluate them.
-
-Of the options out there that I've considered, transitioning
-scripts/sysupgrade-tar to use the run-time, comma-delimited form that
-is returned by $(board_name) seems the cleanest, at least to me.
-
-
-
-I can work around this for now with a device-specific workaround, but
-it seems to be something that should be considered going forward,
-perhaps before v19 is "cut" to reduce future upgrade issues.
-
-
-Jeff
-
-
-
---------------D66CF7F03ED6AA9C3B92D200
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 7bit
-
-<html>
-  <head>
-
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <pre>TL;DR
-
-What would be a workable plan to reconcile mfgr_specific-board-name
-at image-generation time with mfgr,specific-board-name at run time?
-
-
-
-With the apparent tree-wide changes in progress to canonicalize board
-naming of TARGET_DEVICES to mfgr_specific-board-name, there becomes a
-disconnect between the board name at image generation and run time.
-
-This results in a "disconnect" between what is used in the tar file as
-the directory name and CONTROL contents by `scripts/sysupgrade-tar.sh`
-
-    mkdir -p "${tmpdir}/sysupgrade-${board}"
-    echo "BOARD=${board}" &gt; "${tmpdir}/sysupgrade-${board}/CONTROL"
-    [ -z "${rootfs}" ] || cp "${rootfs}" "${tmpdir}/sysupgrade-${board}/root"
-    [ -z "${kernel}" ] || cp "${kernel}" "${tmpdir}/sysupgrade-${board}/kernel"
-
-where ${board} is, for example, `glinet_gl-ar750s-nand`
-
-and what is checked (or should be checked) by nand_do_platform_check()
-in `package/base-files/files/lib/upgrade/nand.sh`
-
-    tar xf $tar_file sysupgrade-$board_name/CONTROL
-
-where $(board_name) returns the comma-delimited form, `glinet,gl-ar750s-nand`
-(The contents of CONTROL are not checked at this time, but would suffer
-from the same mismatch issues.)
-
-The metadata commonly attached to the sysupgrade bundle often uses 
-the run-time, comma-delimited form in "supported_devices", yet the
-build-time, underscore-delimited form in "board".
-
-
-
-At this time, there appear to be very few boards that actually call
-nand_do_platform_check(). Many still have board names that don't
-appear to be what I believe is canonical:
-
-  * layerscape
-  * pistachio
-  * imx6
-  * ar71xx
-
-While most either explicitly set the board name in the call or have
-comma-less board names, `sysupgrade-img,pistachio-marduk` makes a
-global, `tr ',' '_'` an unacceptable work-around.
-
-
-
-I can see a few paths forward on this, but don't have the project
-history and insight to properly evaluate them.
-
-Of the options out there that I've considered, transitioning
-scripts/sysupgrade-tar to use the run-time, comma-delimited form that
-is returned by $(board_name) seems the cleanest, at least to me.
-
-
-
-I can work around this for now with a device-specific workaround, but
-it seems to be something that should be considered going forward,
-perhaps before v19 is "cut" to reduce future upgrade issues.
-
-
-Jeff
-
-
-</pre>
-  </body>
-</html>
-
---------------D66CF7F03ED6AA9C3B92D200--
-
-
---===============3390789868379923526==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks for your help!
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3390789868379923526==--
-

@@ -2,68 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA61C1C98A
-	for <lists+openwrt-devel@lfdr.de>; Tue, 14 May 2019 15:43:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95FC61C98B
+	for <lists+openwrt-devel@lfdr.de>; Tue, 14 May 2019 15:43:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1rXy4sHh/POojqVXgReWTVL5lQX7lD0XSE4bs30hzd0=; b=lnRM50NgIuD3OK
-	WwQcIRB1Kv/t0wFZZGkXc+R4JV/rUcoMAojKOyYUQF+1oGNbCBeMeh00/peY80a48PKYSKGT5QCLT
-	bOwUsvDBIZOcByyVM46BKgs+OPAhKCP5SaEB4613Tx8ifEFlBaADPe8Xs8vVq9qAmvbE6Z4ZRNK71
-	GbYQTRsXwOLqXahhdZNUZIRrNHWeAcQP60XzLSGWj2oVYINhnodsFDEmv+TKnprw/K553xtBJdXir
-	Kt9tQzEYt6Wk3n2C+XgGIQoPoYuzuUiNLenSFKKVy4q5Tuu2tQ7W0LTG7o7nv4TeeHEhzPUN0p9AU
-	9Njt0JV5EejDaU9BEQtQ==;
+	List-Owner; bh=ZwnggpbcZsoR1FhyM6rZDaAgz7JA5Hqgy6zcJrWgB2E=; b=qabeq04UeRv3Px
+	ZxkcdNablUDnTMjaxxEc7KXP6O0vYehe3IoussKqaS9lw8lLLKxxOJeRENQoLBOxPEvO9CDicJ3pK
+	qCq5RYJwRh6QPEV2pvVj1A/dTnk7OxcLExufTD+nDkBMEb7uexD/pp8mSmDaeO2BVOnENfu1iPwrf
+	fkDWk26H5Bkik7ySBRqS+wQOTSm4kaLq8jDW4JQc+NA8u9dllpjKA/kHy0qhq6K3mGoFJf8/Oc6YF
+	51toUV1HPhToGMUL/Vj/8cyk/UVHMTyfMpGDjk/CyMJ2sOrzpIbUkVJzI5mvZpceUI+vGKkiVQu66
+	AVsG599hcgjbcYFlcXvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQXi1-0003pm-U7; Tue, 14 May 2019 13:43:09 +0000
+	id 1hQXiE-00046v-N2; Tue, 14 May 2019 13:43:22 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQXha-0003PL-SE
+ id 1hQXhb-0003Pm-JF
  for openwrt-devel@lists.openwrt.org; Tue, 14 May 2019 13:42:45 +0000
-Received: by mail-lj1-x241.google.com with SMTP id z5so14349689lji.10
- for <openwrt-devel@lists.openwrt.org>; Tue, 14 May 2019 06:42:42 -0700 (PDT)
+Received: by mail-lj1-x241.google.com with SMTP id 188so14353380ljf.9
+ for <openwrt-devel@lists.openwrt.org>; Tue, 14 May 2019 06:42:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Bq+NYpztfV0v5J6Ko1VZTR/mhAltc7+FrxFG68ZSq20=;
- b=qD86Sy41hh1iuD0Ok3FacqbN7L4Bwt4mmUh9eU+zB+QHWbdbHAKNy5dwZDrKs7dqKe
- HRq+VqM9TPmRhCrzY65cZn68CNNG7OLgqqn64W8hZqhjKiUtN0x3RTGuySQPUzX3YO6o
- xtq8UmoB71JmqTxsCGxErZtwDlcmZ224tcHTXk0UjBQTXqSh9XxNdxVSvEKolt9pRZey
- tPK/MV7nw7Xlx/fgH9DoBKk2YgV3+UiYd8H5Ow4/puiRMVmnFVon8q9zmbgZKHi+vPc3
- 0Sk3qkU9aI02/LeTZccYyYakLuiWxSbcckbBc/gtpVdO5Aaa8k2sO7Ick++m38DAuJUM
- 9zYA==
+ bh=+/zBssRb7pssIOpJZxkFvWdzK2+RYIEybkKscsUHezw=;
+ b=Q0ZD+zygAycSGJIb/o+jDsqiw05C+0fzmKARW68DybmjFzUf7Vp5BqNoiiqvgHesJh
+ UJsqH9knDl4hP+MBX6HhvxXhVeBZxhWC6nHLC6IMQ84oozRPNaYcg/zJ3wxHq6EAJUcX
+ SWk/JCKXMqdhKnQwtu8DKBvhqwVsk3Qe8JLQcNb872qvM+z9abOAXfFx15OEFimlYKlZ
+ qc3lVJPDkm+sV7LoW5D7enQQargn+vCFv4FWxepQ3Hy8VGoJen4zAGqKGexorO1dbYX2
+ WOG8dedhemesxbGrTyTXyISDNqHHEm+2iCkfWNk4xDz8QvUpuPNfzXwDHgxgbTznASqF
+ Le7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Bq+NYpztfV0v5J6Ko1VZTR/mhAltc7+FrxFG68ZSq20=;
- b=AUIFpSeD8yTZM5iCuSrt29/CogYp6uq/j8yr8jdfkp2Ya0zFG6VlGUP37W2w5bV0LA
- LYQW38kwVnPJOT5sqXfs4T8Opusdw00c1l+e7vxza0Q76cK+80u6D2q+aooKKhQTluRj
- hbuI+PceoyJShPXMTaLQaOlvWzXGO/87yio7tI/AJ+ORUl1S1r6NkS7ha96E3hbjmdoi
- eOzNPB7aU6ntvspl2joE9/waUIW7C7ZbHHzHZJW5XEQ4t6kpdYTqV4UfvIr0Jv65ARve
- tdEjbMUJG+2gzjBVYEj0UiNf5bK7Kj4kpGCLzSR8vR15Osa186/zi8MSFUvnuYR3BRT7
- 6yMg==
-X-Gm-Message-State: APjAAAVhKVIXap6tF/R/Ig0yszWwklstjJukGCcB9YTgyeTd0zApCurv
- EDMyPSloOcs5MQSMMarcGkwxGrMlNXo=
-X-Google-Smtp-Source: APXvYqwAAXc2fFJ4UfkYhLcHqICK/s5WhgraqArkOt5N09gWLTCui0DeHQpouS4nT2JmvlhHUMuAJg==
-X-Received: by 2002:a2e:731a:: with SMTP id o26mr14005801ljc.105.1557841360647; 
- Tue, 14 May 2019 06:42:40 -0700 (PDT)
+ bh=+/zBssRb7pssIOpJZxkFvWdzK2+RYIEybkKscsUHezw=;
+ b=ueBS2iHbcQ9T1fEeWHKq8cXlnVTygN4JkKYiD8vt43bkOUvyR4YVkVZKNuhe39Nq2A
+ 1XbAhqLZLIrc0Bc3ge6REHJY5zwANR03Kpm7aUhKHIiB46iQfANPA92LqwgNHf9MbFcy
+ 09PEqjUA8EpQwb35D+khLZeUGbpyF6/O/S5x/F575BrjadkXB4XrqE0rT1uy4SlzANsS
+ ig3J+4AIdU7j0yi8uFg5eUG3qRr6j4BQDm8HxP8EE7+my2wuZrs43HohtOwa8HypGG5k
+ JRPGVHqmQUyXeSZTget1qOFlu2Vl1Mc0Hu3Ant5X8SRdWGCR+PuQyAoUlFAYbQ7BDNVY
+ 1P5A==
+X-Gm-Message-State: APjAAAXPvqnlbpAdYfbMXUkYkWX4JayocNB1g8KAGgz/mE0rTGjSnCGS
+ Osp6UZzmceEJVPrwlqn7RlHCsekU9LA=
+X-Google-Smtp-Source: APXvYqxobmetJxcjf4Czm96q7pvAEmvRGrA/GQ++iwcUYhrkoY2HuWqdOXfb4Ys0+VzfFwiCXc+pRQ==
+X-Received: by 2002:a2e:9116:: with SMTP id m22mr2109940ljg.12.1557841361664; 
+ Tue, 14 May 2019 06:42:41 -0700 (PDT)
 Received: from be1.dissentfirstbyte.example.com ([2a04:5200:fff5::d0])
- by smtp.gmail.com with ESMTPSA id u7sm1703920ljj.51.2019.05.14.06.42.39
+ by smtp.gmail.com with ESMTPSA id u7sm1703920ljj.51.2019.05.14.06.42.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 14 May 2019 06:42:39 -0700 (PDT)
+ Tue, 14 May 2019 06:42:40 -0700 (PDT)
 From: Pavel Kubelun <be.dissent@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 14 May 2019 16:42:19 +0300
-Message-Id: <20190514134220.3626-3-be.dissent@gmail.com>
+Date: Tue, 14 May 2019 16:42:20 +0300
+Message-Id: <20190514134220.3626-4-be.dissent@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190514134220.3626-1-be.dissent@gmail.com>
 References: <20190514134220.3626-1-be.dissent@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_064242_910104_CF4D081E 
-X-CRM114-Status: GOOD (  15.17  )
+X-CRM114-CacheID: sfid-20190514_064243_814033_15D02325 
+X-CRM114-Status: GOOD (  17.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -82,7 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 3/4] ipq40xx: fix high resolution timer
+Subject: [OpenWrt-Devel] [PATCH 4/4] ipq40xx: add support for secondary
+ cores bringup
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,180 +102,377 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Cherry-picked from CAF QSDK repo.
-Original commit message:
-The kernel is failing in switching the timer for high resolution
-mode and clock source operates in 10ms resolution. The always-on
-property needs to be given for timer device tree node to make
-clock source working in 1ns resolution.
-
-Change-Id: I7c00b3c74d97c2a30ac9f05e18b511a0550fd459
-Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
+Ipq40xx requires separate procedure.
+Cherry-pick from QSDK.
 
 Signed-off-by: Pavel Kubelun <be.dissent@gmail.com>
 ---
- .../090-ipq40xx-fix-high-resolution-timer.patch    | 30 ++++++++++++++++++++++
- .../701-dts-ipq4019-add-mdio-node.patch            |  2 +-
- .../702-dts-ipq4019-add-PHY-switch-nodes.patch     |  2 +-
- ...711-dts-ipq4019-add-ethernet-essedma-node.patch |  2 +-
- .../086-ipq40xx-fix-high-resolution-timer.patch    | 30 ++++++++++++++++++++++
- .../701-dts-ipq4019-add-mdio-node.patch            |  2 +-
- .../702-dts-ipq4019-add-PHY-switch-nodes.patch     |  2 +-
- ...711-dts-ipq4019-add-ethernet-essedma-node.patch |  2 +-
- 8 files changed, 66 insertions(+), 6 deletions(-)
- create mode 100644 target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer.patch
- create mode 100644 target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer.patch
+ ...x-add-support-for-secondary-cores-bringup.patch | 174 +++++++++++++++++++++
+ ...x-Add-support-for-secondary-cores-bringup.patch | 174 +++++++++++++++++++++
+ 2 files changed, 348 insertions(+)
+ create mode 100644 target/linux/ipq40xx/patches-4.14/091-ipq40xx-add-support-for-secondary-cores-bringup.patch
+ create mode 100644 target/linux/ipq40xx/patches-4.19/087-ipq40xx-Add-support-for-secondary-cores-bringup.patch
 
-diff --git a/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer.patch b/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer.patch
+diff --git a/target/linux/ipq40xx/patches-4.14/091-ipq40xx-add-support-for-secondary-cores-bringup.patch b/target/linux/ipq40xx/patches-4.14/091-ipq40xx-add-support-for-secondary-cores-bringup.patch
 new file mode 100644
-index 0000000000..0fc50ec533
+index 0000000000..798c740e3a
 --- /dev/null
-+++ b/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer.patch
-@@ -0,0 +1,30 @@
-+From 09f145f417a5d64d6b8d4476699dfb0eccc6c784 Mon Sep 17 00:00:00 2001
++++ b/target/linux/ipq40xx/patches-4.14/091-ipq40xx-add-support-for-secondary-cores-bringup.patch
+@@ -0,0 +1,174 @@
++From 6126701397fa6c884fd78453d995e49df91a566a Mon Sep 17 00:00:00 2001
 +From: Pavel Kubelun <be.dissent@gmail.com>
-+Date: Tue, 7 May 2019 10:14:05 +0300
-+Subject: [PATCH] ipq40xx: fix high resolution timer
++Date: Mon, 13 May 2019 11:25:05 +0300
++Subject: [PATCH] ipq40xx: Add support for secondary cores bringup
 +
-+Cherry-picked from CAF QSDK repo.
-+Original commit message:
-+The kernel is failing in switching the timer for high resolution
-+mode and clock source operates in 10ms resolution. The always-on
-+property needs to be given for timer device tree node to make
-+clock source working in 1ns resolution.
++Cherry-pick QSDK patches to enable proper ipq40xx
++secondary cores bringup.
 +
-+Change-Id: I7c00b3c74d97c2a30ac9f05e18b511a0550fd459
-+Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
++https://source.codeaurora.org/quic/qsdk/oss/kernel/linux-msm/commit/?h=eggplant&id=f810b63c356bd72d9b89fb9c0b7e27c250c3540f
 +
 +Signed-off-by: Pavel Kubelun <be.dissent@gmail.com>
 +---
-+ arch/arm/boot/dts/qcom-ipq4019.dtsi | 1 +
-+ 1 file changed, 1 insertion(+)
++ Documentation/devicetree/bindings/arm/cpus.txt |  1 +
++ arch/arm/boot/dts/qcom-ipq4019.dtsi            | 16 +++----
++ arch/arm/mach-qcom/platsmp.c                   | 62 ++++++++++++++++++++++++++
++ 3 files changed, 71 insertions(+), 8 deletions(-)
 +
++--- a/Documentation/devicetree/bindings/arm/cpus.txt
+++++ b/Documentation/devicetree/bindings/arm/cpus.txt
++@@ -210,6 +210,7 @@ described below.
++ 			    "marvell,98dx3236-smp"
++ 			    "mediatek,mt6589-smp"
++ 			    "mediatek,mt81xx-tz-smp"
+++			    "qcom,arm-cortex-a7acc"
++ 			    "qcom,gcc-msm8660"
++ 			    "qcom,kpss-acc-v1"
++ 			    "qcom,kpss-acc-v2"
 +--- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
 ++++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
-+@@ -167,6 +167,7 @@
-+ 			     <1 4 0xf08>,
-+ 			     <1 1 0xf08>;
-+ 		clock-frequency = <48000000>;
-++		always-on;
-+ 	};
++@@ -52,7 +52,7 @@
++ 		cpu@0 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc0>;
++ 			qcom,saw = <&saw0>;
++@@ -65,7 +65,7 @@
++ 		cpu@1 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc1>;
++ 			qcom,saw = <&saw1>;
++@@ -78,7 +78,7 @@
++ 		cpu@2 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc2>;
++ 			qcom,saw = <&saw2>;
++@@ -91,7 +91,7 @@
++ 		cpu@3 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc3>;
++ 			qcom,saw = <&saw3>;
++@@ -302,22 +302,22 @@
++ 		};
 + 
-+ 	soc {
-diff --git a/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch b/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
-index 0e1bb87368..b7e241058c 100644
---- a/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
-+++ b/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
-@@ -15,7 +15,7 @@ so the info might change.
- 
- --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
- +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
--@@ -566,6 +566,34 @@
-+@@ -567,6 +567,34 @@
-  			status = "disabled";
-  		};
-  
-diff --git a/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.patch b/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.patch
-index 03da6c863a..cc56a60ea3 100644
---- a/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.patch
-+++ b/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.patch
-@@ -14,7 +14,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
- 
- --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
- +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
--@@ -594,6 +594,29 @@
-+@@ -595,6 +595,29 @@
-  			};
-  		};
-  
-diff --git a/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-node.patch b/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-node.patch
-index 7302d237bc..80b16a8211 100644
---- a/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-node.patch
-+++ b/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-node.patch
-@@ -25,7 +25,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
-  	};
-  
-  	cpus {
--@@ -617,6 +619,64 @@
-+@@ -618,6 +620,64 @@
-  			status = "disabled";
-  		};
-  
-diff --git a/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer.patch b/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer.patch
++                 acc0: clock-controller@b088000 {
++-			compatible = "qcom,kpss-acc-v2";
+++			compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b088000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++                 acc1: clock-controller@b098000 {
++-			compatible = "qcom,kpss-acc-v2";
+++			compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b098000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++                 acc2: clock-controller@b0a8000 {
++-			compatible = "qcom,kpss-acc-v2";
+++			compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b0a8000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++                 acc3: clock-controller@b0b8000 {
++-			compatible = "qcom,kpss-acc-v2";
+++			compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b0b8000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++--- a/arch/arm/mach-qcom/platsmp.c
+++++ b/arch/arm/mach-qcom/platsmp.c
++@@ -89,6 +89,53 @@ static int scss_release_secondary(unsign
++ 	return 0;
++ }
++ 
+++static int a7ss_release_secondary(unsigned int cpu)
+++{
+++	struct device_node *node;
+++	void __iomem *base;
+++	struct resource res;
+++
+++	node = of_find_compatible_node(NULL, NULL, "qcom,arm-cortex-a7acc");
+++	if (!node) {
+++		pr_err("%s: can't find node\n", __func__);
+++		return -ENXIO;
+++	}
+++
+++	if (of_address_to_resource(node, 0, &res)) {
+++		of_node_put(node);
+++		return -ENXIO;
+++	}
+++
+++	res.start += cpu * 0x10000;
+++
+++	base = ioremap(res.start, 0x1000);
+++	of_node_put(node);
+++
+++	if (!base)
+++		return -ENOMEM;
+++
+++	/* Enable Clamp signal and assert core reset */
+++	writel_relaxed(0x00000033, base + 0x04);
+++	mb(); /* barrier */
+++
+++	/* Set GDHS and delay counter */
+++	writel_relaxed(0x20000001, base + 0x14);
+++	mb(); /* barrier */
+++
+++	udelay(2);
+++
+++	/* Enable Core memory HS */
+++	writel_relaxed(0x00020008, base + 0x04);
+++	mb(); /* barrier */
+++
+++	/* Report that the CPU is powered up */
+++	writel_relaxed(0x00020088, base + 0x04);
+++	mb(); /* barrier */
+++
+++	iounmap(base);
+++	return 0;
+++}
+++
++ static int kpssv1_release_secondary(unsigned int cpu)
++ {
++ 	int ret = 0;
++@@ -307,6 +354,11 @@ static int msm8660_boot_secondary(unsign
++ 	return qcom_boot_secondary(cpu, scss_release_secondary);
++ }
++ 
+++static int a7ss_boot_secondary(unsigned int cpu, struct task_struct *idle)
+++{
+++	return qcom_boot_secondary(cpu, a7ss_release_secondary);
+++}
+++
++ static int kpssv1_boot_secondary(unsigned int cpu, struct task_struct *idle)
++ {
++ 	return qcom_boot_secondary(cpu, kpssv1_release_secondary);
++@@ -361,3 +413,13 @@ static const struct smp_operations qcom_
++ #endif
++ };
++ CPU_METHOD_OF_DECLARE(qcom_smp_kpssv2, "qcom,kpss-acc-v2", &qcom_smp_kpssv2_ops);
+++
+++static struct smp_operations qcom_smp_a7ss_ops __initdata = {
+++	.smp_prepare_cpus       = qcom_smp_prepare_cpus,
+++	.smp_secondary_init     = qcom_secondary_init,
+++	.smp_boot_secondary     = a7ss_boot_secondary,
+++#ifdef CONFIG_HOTPLUG_CPU
+++	.cpu_die                = qcom_cpu_die,
+++#endif
+++};
+++CPU_METHOD_OF_DECLARE(qcom_smp_a7ss, "qcom,arm-cortex-a7acc", &qcom_smp_a7ss_ops);
+diff --git a/target/linux/ipq40xx/patches-4.19/087-ipq40xx-Add-support-for-secondary-cores-bringup.patch b/target/linux/ipq40xx/patches-4.19/087-ipq40xx-Add-support-for-secondary-cores-bringup.patch
 new file mode 100644
-index 0000000000..9d277fa8e0
+index 0000000000..4124aa3b23
 --- /dev/null
-+++ b/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer.patch
-@@ -0,0 +1,30 @@
-+From 09f145f417a5d64d6b8d4476699dfb0eccc6c784 Mon Sep 17 00:00:00 2001
++++ b/target/linux/ipq40xx/patches-4.19/087-ipq40xx-Add-support-for-secondary-cores-bringup.patch
+@@ -0,0 +1,174 @@
++From 6126701397fa6c884fd78453d995e49df91a566a Mon Sep 17 00:00:00 2001
 +From: Pavel Kubelun <be.dissent@gmail.com>
-+Date: Tue, 7 May 2019 10:14:05 +0300
-+Subject: [PATCH] ipq40xx: fix high resolution timer
++Date: Mon, 13 May 2019 11:25:05 +0300
++Subject: [PATCH] ipq40xx: Add support for secondary cores bringup
 +
-+Cherry-picked from CAF QSDK repo.
-+Original commit message:
-+The kernel is failing in switching the timer for high resolution
-+mode and clock source operates in 10ms resolution. The always-on
-+property needs to be given for timer device tree node to make
-+clock source working in 1ns resolution.
++Cherry-pick QSDK patches to enable proper ipq40xx
++secondary cores bringup.
 +
-+Change-Id: I7c00b3c74d97c2a30ac9f05e18b511a0550fd459
-+Signed-off-by: Abhishek Sahu <absahu@codeaurora.org>
++https://source.codeaurora.org/quic/qsdk/oss/kernel/linux-msm/commit/?h=eggplant&id=f810b63c356bd72d9b89fb9c0b7e27c250c3540f
 +
 +Signed-off-by: Pavel Kubelun <be.dissent@gmail.com>
 +---
-+ arch/arm/boot/dts/qcom-ipq4019.dtsi | 1 +
-+ 1 file changed, 1 insertion(+)
++ Documentation/devicetree/bindings/arm/cpus.txt |  1 +
++ arch/arm/boot/dts/qcom-ipq4019.dtsi            | 16 +++----
++ arch/arm/mach-qcom/platsmp.c                   | 62 ++++++++++++++++++++++++++
++ 3 files changed, 71 insertions(+), 8 deletions(-)
 +
++--- a/Documentation/devicetree/bindings/arm/cpus.txt
+++++ b/Documentation/devicetree/bindings/arm/cpus.txt
++@@ -216,6 +216,7 @@ described below.
++ 			    "marvell,98dx3236-smp"
++ 			    "mediatek,mt6589-smp"
++ 			    "mediatek,mt81xx-tz-smp"
+++			    "qcom,arm-cortex-a7acc"
++ 			    "qcom,gcc-msm8660"
++ 			    "qcom,kpss-acc-v1"
++ 			    "qcom,kpss-acc-v2"
 +--- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
 ++++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
-+@@ -171,6 +171,7 @@
-+ 			     <1 4 0xf08>,
-+ 			     <1 1 0xf08>;
-+ 		clock-frequency = <48000000>;
-++		always-on;
-+ 	};
++@@ -52,7 +52,7 @@
++ 		cpu@0 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc0>;
++ 			qcom,saw = <&saw0>;
++@@ -66,7 +66,7 @@
++ 		cpu@1 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc1>;
++ 			qcom,saw = <&saw1>;
++@@ -80,7 +80,7 @@
++ 		cpu@2 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc2>;
++ 			qcom,saw = <&saw2>;
++@@ -94,7 +94,7 @@
++ 		cpu@3 {
++ 			device_type = "cpu";
++ 			compatible = "arm,cortex-a7";
++-			enable-method = "qcom,kpss-acc-v2";
+++			enable-method = "qcom,arm-cortex-a7acc";
++ 			next-level-cache = <&L2>;
++ 			qcom,acc = <&acc3>;
++ 			qcom,saw = <&saw3>;
++@@ -306,22 +306,22 @@
++ 		};
 + 
-+ 	soc {
-diff --git a/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch b/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
-index e5936a0c93..0298644d22 100644
---- a/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
-+++ b/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
-@@ -15,7 +15,7 @@ so the info might change.
- 
- --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
- +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
--@@ -570,6 +570,34 @@
-+@@ -571,6 +571,34 @@
-  			status = "disabled";
-  		};
-  
-diff --git a/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.patch b/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.patch
-index 7c5d1ec2bb..df95699294 100644
---- a/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.patch
-+++ b/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.patch
-@@ -14,7 +14,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
- 
- --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
- +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
--@@ -598,6 +598,29 @@
-+@@ -599,6 +599,29 @@
-  			};
-  		};
-  
-diff --git a/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-node.patch b/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-node.patch
-index 51cf411143..8f7627b048 100644
---- a/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-node.patch
-+++ b/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-node.patch
-@@ -25,7 +25,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
-  	};
-  
-  	cpus {
--@@ -621,6 +623,64 @@
-+@@ -622,6 +624,64 @@
-  			status = "disabled";
-  		};
-  
++                 acc0: clock-controller@b088000 {
++-                        compatible = "qcom,kpss-acc-v2";
+++                        compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b088000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++                 acc1: clock-controller@b098000 {
++-                        compatible = "qcom,kpss-acc-v2";
+++                        compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b098000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++                 acc2: clock-controller@b0a8000 {
++-                        compatible = "qcom,kpss-acc-v2";
+++                        compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b0a8000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++                 acc3: clock-controller@b0b8000 {
++-                        compatible = "qcom,kpss-acc-v2";
+++                        compatible = "qcom,arm-cortex-a7acc";
++                         reg = <0x0b0b8000 0x1000>, <0xb008000 0x1000>;
++                 };
++ 
++--- a/arch/arm/mach-qcom/platsmp.c
+++++ b/arch/arm/mach-qcom/platsmp.c
++@@ -89,6 +89,53 @@ static int scss_release_secondary(unsign
++ 	return 0;
++ }
++ 
+++static int a7ss_release_secondary(unsigned int cpu)
+++{
+++	struct device_node *node;
+++	void __iomem *base;
+++	struct resource res;
+++
+++	node = of_find_compatible_node(NULL, NULL, "qcom,arm-cortex-a7acc");
+++	if (!node) {
+++		pr_err("%s: can't find node\n", __func__);
+++		return -ENXIO;
+++	}
+++
+++	if (of_address_to_resource(node, 0, &res)) {
+++		of_node_put(node);
+++		return -ENXIO;
+++	}
+++
+++	res.start += cpu * 0x10000;
+++
+++	base = ioremap(res.start, 0x1000);
+++	of_node_put(node);
+++
+++	if (!base)
+++		return -ENOMEM;
+++
+++	/* Enable Clamp signal and assert core reset */
+++	writel_relaxed(0x00000033, base + 0x04);
+++	mb(); /* barrier */
+++
+++	/* Set GDHS and delay counter */
+++	writel_relaxed(0x20000001, base + 0x14);
+++	mb(); /* barrier */
+++
+++	udelay(2);
+++
+++	/* Enable Core memory HS */
+++	writel_relaxed(0x00020008, base + 0x04);
+++	mb(); /* barrier */
+++
+++	/* Report that the CPU is powered up */
+++	writel_relaxed(0x00020088, base + 0x04);
+++	mb(); /* barrier */
+++
+++	iounmap(base);
+++	return 0;
+++}
+++
++ static int kpssv1_release_secondary(unsigned int cpu)
++ {
++ 	int ret = 0;
++@@ -307,6 +354,11 @@ static int msm8660_boot_secondary(unsign
++ 	return qcom_boot_secondary(cpu, scss_release_secondary);
++ }
++ 
+++static int a7ss_boot_secondary(unsigned int cpu, struct task_struct *idle)
+++{
+++	return qcom_boot_secondary(cpu, a7ss_release_secondary);
+++}
+++
++ static int kpssv1_boot_secondary(unsigned int cpu, struct task_struct *idle)
++ {
++ 	return qcom_boot_secondary(cpu, kpssv1_release_secondary);
++@@ -361,3 +413,13 @@ static const struct smp_operations qcom_
++ #endif
++ };
++ CPU_METHOD_OF_DECLARE(qcom_smp_kpssv2, "qcom,kpss-acc-v2", &qcom_smp_kpssv2_ops);
+++
+++static struct smp_operations qcom_smp_a7ss_ops __initdata = {
+++	.smp_prepare_cpus       = qcom_smp_prepare_cpus,
+++	.smp_secondary_init     = qcom_secondary_init,
+++	.smp_boot_secondary     = a7ss_boot_secondary,
+++#ifdef CONFIG_HOTPLUG_CPU
+++	.cpu_die                = qcom_cpu_die,
+++#endif
+++};
+++CPU_METHOD_OF_DECLARE(qcom_smp_a7ss, "qcom,arm-cortex-a7acc", &qcom_smp_a7ss_ops);
 -- 
 2.11.0
 

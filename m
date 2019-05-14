@@ -2,42 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D9191CC50
-	for <lists+openwrt-devel@lfdr.de>; Tue, 14 May 2019 17:57:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83C441CC55
+	for <lists+openwrt-devel@lfdr.de>; Tue, 14 May 2019 17:57:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=D82BcUjepkXaI1o7DTEJEQqhMuIJ9cmwErpFBxA8kfQ=; b=JnyBJ0DG79M+lp
-	6faoymbErlfAVJ/7wmZKeu0KoG9siXR72NNVHvHvWKVJoJXVtaUwGGfca0RfrfZpAL6XvxrGK3P4a
-	AN8I3HbwoINDRjjxgx9OUub/2q1G6bc+mnEvTmMCK8Fv0nysab/iN6lO7mmr6XUQcXd93SokDpnCl
-	G+cRtouchweey4ILFwxLN4Yn8nVz8TEv7NObO8JYOrCjgtSrcYy4pOCRlgluro8W+SXeNz2k/ZGZV
-	jNztUZ3cov3vZH17rCdTVb2cJPgRZzYt9N5ITpw0iraAS4aUlh6R8Az0m+bU/4zLON+lVonbu32RB
-	3iAhrCs4CZjh8AT24SMQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NvIxUn8UPSUmtE3Pla5a43OY92IvMeW7hEZfBavJxVM=; b=ELNzWSqKM+cZko
+	Tt+qdCbVQTKaTqWVHjBDZVIDYvfROW2sHBnjdlXquAAwP7SHnc0cZ3O9utlGmxFUk7yAgAvF+ORHb
+	dvxAYJ1J1Sren4GEOvZnTgxIYCFrtDBq1WmGDkGLr3X547MJt486NR5fHiAT5uFcS+7Wzw7fGN5aA
+	HB2jhi7MvWi1FuwEdB0AWuWSEtNkIUgp4qNgl+IdQszhJ9pdoRRo71YTSowEvCbT6GWaPy4/pzlHG
+	6YkgmYzlC9NTgBH8QbldciaeBG3Btd1AEDsQBtltKtHGO+i1mlvN5V414vDNc7j1m7lhCPF0Y0SPZ
+	ZWWYo8YTGm9WnESJG19w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQZo5-0006UA-Bz; Tue, 14 May 2019 15:57:33 +0000
+	id 1hQZoN-0006tT-GB; Tue, 14 May 2019 15:57:51 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQZnx-0006Tp-If
- for openwrt-devel@lists.openwrt.org; Tue, 14 May 2019 15:57:27 +0000
+ id 1hQZoC-0006kR-SS
+ for openwrt-devel@lists.openwrt.org; Tue, 14 May 2019 15:57:43 +0000
 X-Originating-IP: 139.18.242.240
 Received: from dawn.lan (edu242240.nat.uni-leipzig.de [139.18.242.240])
  (Authenticated sender: mail@aparcar.org)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 58D29E0002;
- Tue, 14 May 2019 15:57:23 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id C6550E000C;
+ Tue, 14 May 2019 15:57:38 +0000 (UTC)
 From: Paul Spooren <mail@aparcar.org>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 14 May 2019 17:56:09 +0200
-Message-Id: <20190514155608.13021-1-mail@aparcar.org>
+Date: Tue, 14 May 2019 17:56:11 +0200
+Message-Id: <20190514155608.13021-2-mail@aparcar.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190514155608.13021-1-mail@aparcar.org>
+References: <20190514155608.13021-1-mail@aparcar.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_085725_940461_694E3CF4 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190514_085741_233285_D738FE55 
+X-CRM114-Status: GOOD (  17.16  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -46,7 +47,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v2 1/2] procd: add clang-format kernel style
+Subject: [OpenWrt-Devel] [PATCH v2 2/2] procd: apply official kernel
+ clang-format style
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -64,533 +66,1194 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-copied from the official kernel style:
-
-https://github.com/torvalds/linux/blob/master/.clang-format
-
-also modify gitignore to unignore the style file
+using clang-format-9
 
 Signed-off-by: Paul Spooren <mail@aparcar.org>
 ---
-Added a single OpenWrt specific ForEachMacro rule
+ container.h   |   5 +-
+ inittab.c     | 108 +++++++++++++++++----------------
+ libc-compat.h |   5 +-
+ log.h         |  12 ++--
+ preload.h     |  49 ++++++---------
+ procd.c       |  16 ++---
+ rcS.c         |  18 +++---
+ signal.c      |  22 +++----
+ state.c       |  76 ++++++++++++-----------
+ system.c      | 162 ++++++++++++++++++++++----------------------------
+ sysupgrade.c  |   6 +-
+ sysupgrade.h  |   2 -
+ ubus.c        |  16 ++---
+ watchdog.c    |  14 ++---
+ watchdog.h    |   4 +-
+ 15 files changed, 241 insertions(+), 274 deletions(-)
 
- .clang-format | 496 ++++++++++++++++++++++++++++++++++++++++++++++++++
- .gitignore    |   1 +
- 2 files changed, 497 insertions(+)
- create mode 100644 .clang-format
-
-diff --git a/.clang-format b/.clang-format
-new file mode 100644
-index 0000000..3ee1935
---- /dev/null
-+++ b/.clang-format
-@@ -0,0 +1,496 @@
-+# SPDX-License-Identifier: GPL-2.0
-+#
-+# clang-format configuration file. Intended for clang-format >= 4.
-+#
-+# For more information, see:
-+#
-+#   Documentation/process/clang-format.rst
-+#   https://clang.llvm.org/docs/ClangFormat.html
-+#   https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-+#
-+---
-+AccessModifierOffset: -4
-+AlignAfterOpenBracket: Align
-+AlignConsecutiveAssignments: false
-+AlignConsecutiveDeclarations: false
-+#AlignEscapedNewlines: Left # Unknown to clang-format-4.0
-+AlignOperands: true
-+AlignTrailingComments: false
-+AllowAllParametersOfDeclarationOnNextLine: false
-+AllowShortBlocksOnASingleLine: false
-+AllowShortCaseLabelsOnASingleLine: false
-+AllowShortFunctionsOnASingleLine: None
-+AllowShortIfStatementsOnASingleLine: false
-+AllowShortLoopsOnASingleLine: false
-+AlwaysBreakAfterDefinitionReturnType: None
-+AlwaysBreakAfterReturnType: None
-+AlwaysBreakBeforeMultilineStrings: false
-+AlwaysBreakTemplateDeclarations: false
-+BinPackArguments: true
-+BinPackParameters: true
-+BraceWrapping:
-+  AfterClass: false
-+  AfterControlStatement: false
-+  AfterEnum: false
-+  AfterFunction: true
-+  AfterNamespace: true
-+  AfterObjCDeclaration: false
-+  AfterStruct: false
-+  AfterUnion: false
-+  #AfterExternBlock: false # Unknown to clang-format-5.0
-+  BeforeCatch: false
-+  BeforeElse: false
-+  IndentBraces: false
-+  #SplitEmptyFunction: true # Unknown to clang-format-4.0
-+  #SplitEmptyRecord: true # Unknown to clang-format-4.0
-+  #SplitEmptyNamespace: true # Unknown to clang-format-4.0
-+BreakBeforeBinaryOperators: None
-+BreakBeforeBraces: Custom
-+#BreakBeforeInheritanceComma: false # Unknown to clang-format-4.0
-+BreakBeforeTernaryOperators: false
-+BreakConstructorInitializersBeforeComma: false
-+#BreakConstructorInitializers: BeforeComma # Unknown to clang-format-4.0
-+BreakAfterJavaFieldAnnotations: false
-+BreakStringLiterals: false
-+ColumnLimit: 80
-+CommentPragmas: '^ IWYU pragma:'
-+#CompactNamespaces: false # Unknown to clang-format-4.0
-+ConstructorInitializerAllOnOneLineOrOnePerLine: false
-+ConstructorInitializerIndentWidth: 8
-+ContinuationIndentWidth: 8
-+Cpp11BracedListStyle: false
-+DerivePointerAlignment: false
-+DisableFormat: false
-+ExperimentalAutoDetectBinPacking: false
-+#FixNamespaceComments: false # Unknown to clang-format-4.0
+diff --git a/container.h b/container.h
+index d33fa32..749b33f 100644
+--- a/container.h
++++ b/container.h
+@@ -14,10 +14,11 @@
+ #ifndef __CONTAINER_H
+ #define __CONTAINER_H
+ 
+-#include <stdlib.h>
+ #include <stdbool.h>
++#include <stdlib.h>
+ 
+-static inline bool is_container() {
++static inline bool is_container()
++{
+ 	return !!getenv("container");
+ }
+ 
+diff --git a/inittab.c b/inittab.c
+index 55554b9..a2680ce 100644
+--- a/inittab.c
++++ b/inittab.c
+@@ -13,41 +13,41 @@
+  */
+ 
+ #define _GNU_SOURCE
+-#include <sys/types.h>
+-#include <sys/stat.h>
+ #include <sys/ioctl.h>
++#include <sys/stat.h>
++#include <sys/types.h>
+ 
++#include <ctype.h>
+ #include <fcntl.h>
++#include <regex.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <regex.h>
+-#include <ctype.h>
+ 
+-#include <libubox/utils.h>
+ #include <libubox/list.h>
++#include <libubox/utils.h>
+ 
+-#include "utils/utils.h"
+ #include "procd.h"
+ #include "rcS.h"
++#include "utils/utils.h"
+ 
+ #ifndef O_PATH
+-#define O_PATH		010000000
++#define O_PATH 010000000
+ #endif
+ 
+-#define TAG_ID		0
+-#define TAG_RUNLVL	1
+-#define TAG_ACTION	2
+-#define TAG_PROCESS	3
++#define TAG_ID 0
++#define TAG_RUNLVL 1
++#define TAG_ACTION 2
++#define TAG_PROCESS 3
+ 
+-#define MAX_ARGS	8
++#define MAX_ARGS 8
+ 
+ struct init_action;
+ char *console = NULL;
+ 
+ struct init_handler {
+ 	const char *name;
+-	void (*cb) (struct init_action *a);
++	void (*cb)(struct init_action *a);
+ 	int multi;
+ };
+ 
+@@ -74,7 +74,7 @@ static int dev_exist(const char *dev)
+ {
+ 	int dfd, fd;
+ 
+-	dfd = open("/dev", O_PATH|O_DIRECTORY);
++	dfd = open("/dev", O_PATH | O_DIRECTORY);
+ 
+ 	if (dfd < 0)
+ 		return 0;
+@@ -109,9 +109,8 @@ static void fork_worker(struct init_action *a)
+ 	}
+ 
+ 	if (a->proc.pid > 0) {
+-		DEBUG(4, "Launched new %s action, pid=%d\n",
+-					a->handler->name,
+-					(int) a->proc.pid);
++		DEBUG(4, "Launched new %s action, pid=%d\n", a->handler->name,
++		      (int)a->proc.pid);
+ 		uloop_process_add(&a->proc);
+ 	}
+ }
+@@ -121,7 +120,7 @@ static void child_exit(struct uloop_process *proc, int ret)
+ 	struct init_action *a = container_of(proc, struct init_action, proc);
+ 
+ 	DEBUG(4, "pid:%d\n", proc->pid);
+-        uloop_timeout_set(&a->tout, a->respawn);
++	uloop_timeout_set(&a->tout, a->respawn);
+ }
+ 
+ static void respawn(struct uloop_timeout *tout)
+@@ -184,8 +183,7 @@ static void askconsole(struct init_action *a)
+ 
+ 		console = strdup(tty);
+ 		a->id = strdup(tty);
+-	}
+-	else {
++	} else {
+ 		console = NULL;
+ 		a->id = NULL;
+ 	}
+@@ -209,35 +207,39 @@ static void rcrespawn(struct init_action *a)
+ 	fork_worker(a);
+ }
+ 
+-static struct init_handler handlers[] = {
+-	{
+-		.name = "sysinit",
+-		.cb = runrc,
+-	}, {
+-		.name = "shutdown",
+-		.cb = runrc,
+-	}, {
+-		.name = "askfirst",
+-		.cb = askfirst,
+-		.multi = 1,
+-	}, {
+-		.name = "askconsole",
+-		.cb = askconsole,
+-		.multi = 1,
+-	}, {
+-		.name = "respawn",
+-		.cb = rcrespawn,
+-		.multi = 1,
+-	}, {
+-		.name = "askconsolelate",
+-		.cb = askconsole,
+-		.multi = 1,
+-	}, {
+-		.name = "respawnlate",
+-		.cb = rcrespawn,
+-		.multi = 1,
+-	}
+-};
++static struct init_handler handlers[] = { {
++						  .name = "sysinit",
++						  .cb = runrc,
++					  },
++					  {
++						  .name = "shutdown",
++						  .cb = runrc,
++					  },
++					  {
++						  .name = "askfirst",
++						  .cb = askfirst,
++						  .multi = 1,
++					  },
++					  {
++						  .name = "askconsole",
++						  .cb = askconsole,
++						  .multi = 1,
++					  },
++					  {
++						  .name = "respawn",
++						  .cb = rcrespawn,
++						  .multi = 1,
++					  },
++					  {
++						  .name = "askconsolelate",
++						  .cb = askconsole,
++						  .multi = 1,
++					  },
++					  {
++						  .name = "respawnlate",
++						  .cb = rcrespawn,
++						  .multi = 1,
++					  } };
+ 
+ static int add_action(struct init_action *a, const char *name)
+ {
+@@ -257,7 +259,7 @@ void procd_inittab_run(const char *handler)
+ {
+ 	struct init_action *a;
+ 
+-	list_for_each_entry(a, &actions, list)
++	list_for_each_entry (a, &actions, list)
+ 		if (!strcmp(a->handler->name, handler)) {
+ 			if (a->handler->multi) {
+ 				a->handler->cb(a);
+@@ -270,7 +272,7 @@ void procd_inittab_run(const char *handler)
+ 
+ void procd_inittab(void)
+ {
+-#define LINE_LEN	128
++#define LINE_LEN 128
+ 	FILE *fp = fopen(tab, "r");
+ 	struct init_action *a;
+ 	regex_t pat_inittab;
+@@ -282,7 +284,9 @@ void procd_inittab(void)
+ 		return;
+ 	}
+ 
+-	regcomp(&pat_inittab, "([a-zA-Z0-9]*):([a-zA-Z0-9]*):([a-zA-Z0-9]*):(.*)", REG_EXTENDED);
++	regcomp(&pat_inittab,
++		"([a-zA-Z0-9]*):([a-zA-Z0-9]*):([a-zA-Z0-9]*):(.*)",
++		REG_EXTENDED);
+ 	line = malloc(LINE_LEN);
+ 	a = calloc(1, sizeof(struct init_action));
+ 
+diff --git a/libc-compat.h b/libc-compat.h
+index 9435346..8d7152d 100644
+--- a/libc-compat.h
++++ b/libc-compat.h
+@@ -2,7 +2,10 @@
+ #define __PROCD_LIBC_COMPAT_H
+ 
+ #if defined(__GLIBC__) && !defined(__UCLIBC__)
+-static inline int ignore(int x) {return x;}
++static inline int ignore(int x)
++{
++	return x;
++}
+ #else
+ #define ignore(x) x
+ #endif
+diff --git a/log.h b/log.h
+index f0c4268..7eadc57 100644
+--- a/log.h
++++ b/log.h
+@@ -17,12 +17,14 @@
+ 
+ #include <libubox/ulog.h>
+ 
+-#define DEBUG(level, fmt, ...) do { \
+-	if (debug >= level) { \
+-		ulog(LOG_NOTICE, fmt, ## __VA_ARGS__); \
+-	} } while (0)
++#define DEBUG(level, fmt, ...)                                                 \
++	do {                                                                   \
++		if (debug >= level) {                                          \
++			ulog(LOG_NOTICE, fmt, ##__VA_ARGS__);                  \
++		}                                                              \
++	} while (0)
+ 
+-#define LOG   ULOG_INFO
++#define LOG ULOG_INFO
+ #define ERROR ULOG_ERR
+ 
+ extern unsigned int debug;
+diff --git a/preload.h b/preload.h
+index 5e663ac..5a09db0 100644
+--- a/preload.h
++++ b/preload.h
+@@ -18,39 +18,24 @@
+ #endif
+ 
+ #ifndef attribute_unused
+-#define attribute_unused __attribute__ ((unused))
++#define attribute_unused __attribute__((unused))
+ #endif
+ typedef int (*main_t)(int, char **, char **);
+ 
+ typedef int (*start_main_t)(main_t main, int, char *__unbounded *__unbounded,
+-			ElfW(auxv_t) *,
+-			__typeof (main),
+-			void (*fini) (void),
+-			void (*rtld_fini) (void),
+-			void *__unbounded stack_end);
+-
+-int __libc_start_main(main_t main,
+-			int argc,
+-			char **argv,
+-			ElfW(auxv_t) *auxvec,
+-			__typeof (main) init,
+-			void (*fini) (void),
+-			void (*rtld_fini) (void),
+-			void *stack_end);
+-
+-
+-typedef void (*uClibc_main)(main_t main,
+-			int argc,
+-			char **argv,
+-			void (*app_init)(void),
+-			void (*app_fini)(void),
+-			void (*rtld_fini)(void),
+-			void *stack_end attribute_unused);
+-
+-void __uClibc_main(main_t main,
+-			int argc,
+-			char **argv,
+-			void (*app_init)(void),
+-			void (*app_fini)(void),
+-			void (*rtld_fini)(void),
+-			void *stack_end attribute_unused);
++			    ElfW(auxv_t) *, __typeof(main), void (*fini)(void),
++			    void (*rtld_fini)(void),
++			    void *__unbounded stack_end);
 +
-+# Taken from:
-+#   git grep -h '^#define [^[:space:]]*for_each[^[:space:]]*(' include/ \
-+#   | sed "s,^#define \([^[:space:]]*for_each[^[:space:]]*\)(.*$,  - '\1'," \
-+#   | sort | uniq
-+ForEachMacros:
-+# OpenWrt specific
-+  - 'blobmsg_list_for_each'
-+# Default
-+  - 'apei_estatus_for_each_section'
-+  - 'ata_for_each_dev'
-+  - 'ata_for_each_link'
-+  - '__ata_qc_for_each'
-+  - 'ata_qc_for_each'
-+  - 'ata_qc_for_each_raw'
-+  - 'ata_qc_for_each_with_internal'
-+  - 'ax25_for_each'
-+  - 'ax25_uid_for_each'
-+  - '__bio_for_each_bvec'
-+  - 'bio_for_each_bvec'
-+  - 'bio_for_each_integrity_vec'
-+  - '__bio_for_each_segment'
-+  - 'bio_for_each_segment'
-+  - 'bio_for_each_segment_all'
-+  - 'bio_list_for_each'
-+  - 'bip_for_each_vec'
-+  - 'blkg_for_each_descendant_post'
-+  - 'blkg_for_each_descendant_pre'
-+  - 'blk_queue_for_each_rl'
-+  - 'bond_for_each_slave'
-+  - 'bond_for_each_slave_rcu'
-+  - 'bpf_for_each_spilled_reg'
-+  - 'btree_for_each_safe128'
-+  - 'btree_for_each_safe32'
-+  - 'btree_for_each_safe64'
-+  - 'btree_for_each_safel'
-+  - 'card_for_each_dev'
-+  - 'cgroup_taskset_for_each'
-+  - 'cgroup_taskset_for_each_leader'
-+  - 'cpufreq_for_each_entry'
-+  - 'cpufreq_for_each_entry_idx'
-+  - 'cpufreq_for_each_valid_entry'
-+  - 'cpufreq_for_each_valid_entry_idx'
-+  - 'css_for_each_child'
-+  - 'css_for_each_descendant_post'
-+  - 'css_for_each_descendant_pre'
-+  - 'device_for_each_child_node'
-+  - 'drm_atomic_crtc_for_each_plane'
-+  - 'drm_atomic_crtc_state_for_each_plane'
-+  - 'drm_atomic_crtc_state_for_each_plane_state'
-+  - 'drm_atomic_for_each_plane_damage'
-+  - 'drm_connector_for_each_possible_encoder'
-+  - 'drm_for_each_connector_iter'
-+  - 'drm_for_each_crtc'
-+  - 'drm_for_each_encoder'
-+  - 'drm_for_each_encoder_mask'
-+  - 'drm_for_each_fb'
-+  - 'drm_for_each_legacy_plane'
-+  - 'drm_for_each_plane'
-+  - 'drm_for_each_plane_mask'
-+  - 'drm_for_each_privobj'
-+  - 'drm_mm_for_each_hole'
-+  - 'drm_mm_for_each_node'
-+  - 'drm_mm_for_each_node_in_range'
-+  - 'drm_mm_for_each_node_safe'
-+  - 'flow_action_for_each'
-+  - 'for_each_active_drhd_unit'
-+  - 'for_each_active_iommu'
-+  - 'for_each_available_child_of_node'
-+  - 'for_each_bio'
-+  - 'for_each_board_func_rsrc'
-+  - 'for_each_bvec'
-+  - 'for_each_card_components'
-+  - 'for_each_card_links'
-+  - 'for_each_card_links_safe'
-+  - 'for_each_card_prelinks'
-+  - 'for_each_card_rtds'
-+  - 'for_each_card_rtds_safe'
-+  - 'for_each_cgroup_storage_type'
-+  - 'for_each_child_of_node'
-+  - 'for_each_clear_bit'
-+  - 'for_each_clear_bit_from'
-+  - 'for_each_cmsghdr'
-+  - 'for_each_compatible_node'
-+  - 'for_each_component_dais'
-+  - 'for_each_component_dais_safe'
-+  - 'for_each_comp_order'
-+  - 'for_each_console'
-+  - 'for_each_cpu'
-+  - 'for_each_cpu_and'
-+  - 'for_each_cpu_not'
-+  - 'for_each_cpu_wrap'
-+  - 'for_each_dev_addr'
-+  - 'for_each_dma_cap_mask'
-+  - 'for_each_dpcm_be'
-+  - 'for_each_dpcm_be_rollback'
-+  - 'for_each_dpcm_be_safe'
-+  - 'for_each_dpcm_fe'
-+  - 'for_each_drhd_unit'
-+  - 'for_each_dss_dev'
-+  - 'for_each_efi_memory_desc'
-+  - 'for_each_efi_memory_desc_in_map'
-+  - 'for_each_element'
-+  - 'for_each_element_extid'
-+  - 'for_each_element_id'
-+  - 'for_each_endpoint_of_node'
-+  - 'for_each_evictable_lru'
-+  - 'for_each_fib6_node_rt_rcu'
-+  - 'for_each_fib6_walker_rt'
-+  - 'for_each_free_mem_range'
-+  - 'for_each_free_mem_range_reverse'
-+  - 'for_each_func_rsrc'
-+  - 'for_each_hstate'
-+  - 'for_each_if'
-+  - 'for_each_iommu'
-+  - 'for_each_ip_tunnel_rcu'
-+  - 'for_each_irq_nr'
-+  - 'for_each_link_codecs'
-+  - 'for_each_lru'
-+  - 'for_each_matching_node'
-+  - 'for_each_matching_node_and_match'
-+  - 'for_each_memblock'
-+  - 'for_each_memblock_type'
-+  - 'for_each_memcg_cache_index'
-+  - 'for_each_mem_pfn_range'
-+  - 'for_each_mem_range'
-+  - 'for_each_mem_range_rev'
-+  - 'for_each_migratetype_order'
-+  - 'for_each_msi_entry'
-+  - 'for_each_msi_entry_safe'
-+  - 'for_each_net'
-+  - 'for_each_netdev'
-+  - 'for_each_netdev_continue'
-+  - 'for_each_netdev_continue_rcu'
-+  - 'for_each_netdev_feature'
-+  - 'for_each_netdev_in_bond_rcu'
-+  - 'for_each_netdev_rcu'
-+  - 'for_each_netdev_reverse'
-+  - 'for_each_netdev_safe'
-+  - 'for_each_net_rcu'
-+  - 'for_each_new_connector_in_state'
-+  - 'for_each_new_crtc_in_state'
-+  - 'for_each_new_mst_mgr_in_state'
-+  - 'for_each_new_plane_in_state'
-+  - 'for_each_new_private_obj_in_state'
-+  - 'for_each_node'
-+  - 'for_each_node_by_name'
-+  - 'for_each_node_by_type'
-+  - 'for_each_node_mask'
-+  - 'for_each_node_state'
-+  - 'for_each_node_with_cpus'
-+  - 'for_each_node_with_property'
-+  - 'for_each_of_allnodes'
-+  - 'for_each_of_allnodes_from'
-+  - 'for_each_of_cpu_node'
-+  - 'for_each_of_pci_range'
-+  - 'for_each_old_connector_in_state'
-+  - 'for_each_old_crtc_in_state'
-+  - 'for_each_old_mst_mgr_in_state'
-+  - 'for_each_oldnew_connector_in_state'
-+  - 'for_each_oldnew_crtc_in_state'
-+  - 'for_each_oldnew_mst_mgr_in_state'
-+  - 'for_each_oldnew_plane_in_state'
-+  - 'for_each_oldnew_plane_in_state_reverse'
-+  - 'for_each_oldnew_private_obj_in_state'
-+  - 'for_each_old_plane_in_state'
-+  - 'for_each_old_private_obj_in_state'
-+  - 'for_each_online_cpu'
-+  - 'for_each_online_node'
-+  - 'for_each_online_pgdat'
-+  - 'for_each_pci_bridge'
-+  - 'for_each_pci_dev'
-+  - 'for_each_pci_msi_entry'
-+  - 'for_each_populated_zone'
-+  - 'for_each_possible_cpu'
-+  - 'for_each_present_cpu'
-+  - 'for_each_prime_number'
-+  - 'for_each_prime_number_from'
-+  - 'for_each_process'
-+  - 'for_each_process_thread'
-+  - 'for_each_property_of_node'
-+  - 'for_each_registered_fb'
-+  - 'for_each_reserved_mem_region'
-+  - 'for_each_rtd_codec_dai'
-+  - 'for_each_rtd_codec_dai_rollback'
-+  - 'for_each_rtdcom'
-+  - 'for_each_rtdcom_safe'
-+  - 'for_each_set_bit'
-+  - 'for_each_set_bit_from'
-+  - 'for_each_sg'
-+  - 'for_each_sg_dma_page'
-+  - 'for_each_sg_page'
-+  - 'for_each_sibling_event'
-+  - 'for_each_subelement'
-+  - 'for_each_subelement_extid'
-+  - 'for_each_subelement_id'
-+  - '__for_each_thread'
-+  - 'for_each_thread'
-+  - 'for_each_zone'
-+  - 'for_each_zone_zonelist'
-+  - 'for_each_zone_zonelist_nodemask'
-+  - 'fwnode_for_each_available_child_node'
-+  - 'fwnode_for_each_child_node'
-+  - 'fwnode_graph_for_each_endpoint'
-+  - 'gadget_for_each_ep'
-+  - 'genradix_for_each'
-+  - 'genradix_for_each_from'
-+  - 'hash_for_each'
-+  - 'hash_for_each_possible'
-+  - 'hash_for_each_possible_rcu'
-+  - 'hash_for_each_possible_rcu_notrace'
-+  - 'hash_for_each_possible_safe'
-+  - 'hash_for_each_rcu'
-+  - 'hash_for_each_safe'
-+  - 'hctx_for_each_ctx'
-+  - 'hlist_bl_for_each_entry'
-+  - 'hlist_bl_for_each_entry_rcu'
-+  - 'hlist_bl_for_each_entry_safe'
-+  - 'hlist_for_each'
-+  - 'hlist_for_each_entry'
-+  - 'hlist_for_each_entry_continue'
-+  - 'hlist_for_each_entry_continue_rcu'
-+  - 'hlist_for_each_entry_continue_rcu_bh'
-+  - 'hlist_for_each_entry_from'
-+  - 'hlist_for_each_entry_from_rcu'
-+  - 'hlist_for_each_entry_rcu'
-+  - 'hlist_for_each_entry_rcu_bh'
-+  - 'hlist_for_each_entry_rcu_notrace'
-+  - 'hlist_for_each_entry_safe'
-+  - '__hlist_for_each_rcu'
-+  - 'hlist_for_each_safe'
-+  - 'hlist_nulls_for_each_entry'
-+  - 'hlist_nulls_for_each_entry_from'
-+  - 'hlist_nulls_for_each_entry_rcu'
-+  - 'hlist_nulls_for_each_entry_safe'
-+  - 'i3c_bus_for_each_i2cdev'
-+  - 'i3c_bus_for_each_i3cdev'
-+  - 'ide_host_for_each_port'
-+  - 'ide_port_for_each_dev'
-+  - 'ide_port_for_each_present_dev'
-+  - 'idr_for_each_entry'
-+  - 'idr_for_each_entry_continue'
-+  - 'idr_for_each_entry_ul'
-+  - 'inet_bind_bucket_for_each'
-+  - 'inet_lhash2_for_each_icsk_rcu'
-+  - 'key_for_each'
-+  - 'key_for_each_safe'
-+  - 'klp_for_each_func'
-+  - 'klp_for_each_func_safe'
-+  - 'klp_for_each_func_static'
-+  - 'klp_for_each_object'
-+  - 'klp_for_each_object_safe'
-+  - 'klp_for_each_object_static'
-+  - 'kvm_for_each_memslot'
-+  - 'kvm_for_each_vcpu'
-+  - 'list_for_each'
-+  - 'list_for_each_codec'
-+  - 'list_for_each_codec_safe'
-+  - 'list_for_each_entry'
-+  - 'list_for_each_entry_continue'
-+  - 'list_for_each_entry_continue_rcu'
-+  - 'list_for_each_entry_continue_reverse'
-+  - 'list_for_each_entry_from'
-+  - 'list_for_each_entry_from_rcu'
-+  - 'list_for_each_entry_from_reverse'
-+  - 'list_for_each_entry_lockless'
-+  - 'list_for_each_entry_rcu'
-+  - 'list_for_each_entry_reverse'
-+  - 'list_for_each_entry_safe'
-+  - 'list_for_each_entry_safe_continue'
-+  - 'list_for_each_entry_safe_from'
-+  - 'list_for_each_entry_safe_reverse'
-+  - 'list_for_each_prev'
-+  - 'list_for_each_prev_safe'
-+  - 'list_for_each_safe'
-+  - 'llist_for_each'
-+  - 'llist_for_each_entry'
-+  - 'llist_for_each_entry_safe'
-+  - 'llist_for_each_safe'
-+  - 'media_device_for_each_entity'
-+  - 'media_device_for_each_intf'
-+  - 'media_device_for_each_link'
-+  - 'media_device_for_each_pad'
-+  - 'mp_bvec_for_each_page'
-+  - 'mp_bvec_for_each_segment'
-+  - 'nanddev_io_for_each_page'
-+  - 'netdev_for_each_lower_dev'
-+  - 'netdev_for_each_lower_private'
-+  - 'netdev_for_each_lower_private_rcu'
-+  - 'netdev_for_each_mc_addr'
-+  - 'netdev_for_each_uc_addr'
-+  - 'netdev_for_each_upper_dev_rcu'
-+  - 'netdev_hw_addr_list_for_each'
-+  - 'nft_rule_for_each_expr'
-+  - 'nla_for_each_attr'
-+  - 'nla_for_each_nested'
-+  - 'nlmsg_for_each_attr'
-+  - 'nlmsg_for_each_msg'
-+  - 'nr_neigh_for_each'
-+  - 'nr_neigh_for_each_safe'
-+  - 'nr_node_for_each'
-+  - 'nr_node_for_each_safe'
-+  - 'of_for_each_phandle'
-+  - 'of_property_for_each_string'
-+  - 'of_property_for_each_u32'
-+  - 'pci_bus_for_each_resource'
-+  - 'ping_portaddr_for_each_entry'
-+  - 'plist_for_each'
-+  - 'plist_for_each_continue'
-+  - 'plist_for_each_entry'
-+  - 'plist_for_each_entry_continue'
-+  - 'plist_for_each_entry_safe'
-+  - 'plist_for_each_safe'
-+  - 'pnp_for_each_card'
-+  - 'pnp_for_each_dev'
-+  - 'protocol_for_each_card'
-+  - 'protocol_for_each_dev'
-+  - 'queue_for_each_hw_ctx'
-+  - 'radix_tree_for_each_slot'
-+  - 'radix_tree_for_each_tagged'
-+  - 'rbtree_postorder_for_each_entry_safe'
-+  - 'rdma_for_each_port'
-+  - 'resource_list_for_each_entry'
-+  - 'resource_list_for_each_entry_safe'
-+  - 'rhl_for_each_entry_rcu'
-+  - 'rhl_for_each_rcu'
-+  - 'rht_for_each'
-+  - 'rht_for_each_from'
-+  - 'rht_for_each_entry'
-+  - 'rht_for_each_entry_from'
-+  - 'rht_for_each_entry_rcu'
-+  - 'rht_for_each_entry_rcu_from'
-+  - 'rht_for_each_entry_safe'
-+  - 'rht_for_each_rcu'
-+  - 'rht_for_each_rcu_from'
-+  - '__rq_for_each_bio'
-+  - 'rq_for_each_bvec'
-+  - 'rq_for_each_segment'
-+  - 'scsi_for_each_prot_sg'
-+  - 'scsi_for_each_sg'
-+  - 'sctp_for_each_hentry'
-+  - 'sctp_skb_for_each'
-+  - 'shdma_for_each_chan'
-+  - '__shost_for_each_device'
-+  - 'shost_for_each_device'
-+  - 'sk_for_each'
-+  - 'sk_for_each_bound'
-+  - 'sk_for_each_entry_offset_rcu'
-+  - 'sk_for_each_from'
-+  - 'sk_for_each_rcu'
-+  - 'sk_for_each_safe'
-+  - 'sk_nulls_for_each'
-+  - 'sk_nulls_for_each_from'
-+  - 'sk_nulls_for_each_rcu'
-+  - 'snd_array_for_each'
-+  - 'snd_pcm_group_for_each_entry'
-+  - 'snd_soc_dapm_widget_for_each_path'
-+  - 'snd_soc_dapm_widget_for_each_path_safe'
-+  - 'snd_soc_dapm_widget_for_each_sink_path'
-+  - 'snd_soc_dapm_widget_for_each_source_path'
-+  - 'tb_property_for_each'
-+  - 'tcf_exts_for_each_action'
-+  - 'udp_portaddr_for_each_entry'
-+  - 'udp_portaddr_for_each_entry_rcu'
-+  - 'usb_hub_for_each_child'
-+  - 'v4l2_device_for_each_subdev'
-+  - 'v4l2_m2m_for_each_dst_buf'
-+  - 'v4l2_m2m_for_each_dst_buf_safe'
-+  - 'v4l2_m2m_for_each_src_buf'
-+  - 'v4l2_m2m_for_each_src_buf_safe'
-+  - 'virtio_device_for_each_vq'
-+  - 'xa_for_each'
-+  - 'xa_for_each_marked'
-+  - 'xa_for_each_start'
-+  - 'xas_for_each'
-+  - 'xas_for_each_conflict'
-+  - 'xas_for_each_marked'
-+  - 'zorro_for_each_dev'
++int __libc_start_main(main_t main, int argc, char **argv, ElfW(auxv_t) * auxvec,
++		      __typeof(main) init, void (*fini)(void),
++		      void (*rtld_fini)(void), void *stack_end);
 +
-+#IncludeBlocks: Preserve # Unknown to clang-format-5.0
-+IncludeCategories:
-+  - Regex: '.*'
-+    Priority: 1
-+IncludeIsMainRegex: '(Test)?$'
-+IndentCaseLabels: false
-+#IndentPPDirectives: None # Unknown to clang-format-5.0
-+IndentWidth: 8
-+IndentWrappedFunctionNames: false
-+JavaScriptQuotes: Leave
-+JavaScriptWrapImports: true
-+KeepEmptyLinesAtTheStartOfBlocks: false
-+MacroBlockBegin: ''
-+MacroBlockEnd: ''
-+MaxEmptyLinesToKeep: 1
-+NamespaceIndentation: Inner
-+#ObjCBinPackProtocolList: Auto # Unknown to clang-format-5.0
-+ObjCBlockIndentWidth: 8
-+ObjCSpaceAfterProperty: true
-+ObjCSpaceBeforeProtocolList: true
++typedef void (*uClibc_main)(main_t main, int argc, char **argv,
++			    void (*app_init)(void), void (*app_fini)(void),
++			    void (*rtld_fini)(void),
++			    void *stack_end attribute_unused);
 +
-+# Taken from git's rules
-+#PenaltyBreakAssignment: 10 # Unknown to clang-format-4.0
-+PenaltyBreakBeforeFirstCallParameter: 30
-+PenaltyBreakComment: 10
-+PenaltyBreakFirstLessLess: 0
-+PenaltyBreakString: 10
-+PenaltyExcessCharacter: 100
-+PenaltyReturnTypeOnItsOwnLine: 60
-+
-+PointerAlignment: Right
-+ReflowComments: false
-+SortIncludes: false
-+#SortUsingDeclarations: false # Unknown to clang-format-4.0
-+SpaceAfterCStyleCast: false
-+SpaceAfterTemplateKeyword: true
-+SpaceBeforeAssignmentOperators: true
-+#SpaceBeforeCtorInitializerColon: true # Unknown to clang-format-5.0
-+#SpaceBeforeInheritanceColon: true # Unknown to clang-format-5.0
-+SpaceBeforeParens: ControlStatements
-+#SpaceBeforeRangeBasedForLoopColon: true # Unknown to clang-format-5.0
-+SpaceInEmptyParentheses: false
-+SpacesBeforeTrailingComments: 1
-+SpacesInAngles: false
-+SpacesInContainerLiterals: false
-+SpacesInCStyleCastParentheses: false
-+SpacesInParentheses: false
-+SpacesInSquareBrackets: false
-+Standard: Cpp03
-+TabWidth: 8
-+UseTab: Always
-+...
-diff --git a/.gitignore b/.gitignore
-index 9d80a74..7896aa0 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -10,4 +10,5 @@ utrace
- ujail
- *.so
- *.cmake
-+!.clang-format
- install_manifest.txt
++void __uClibc_main(main_t main, int argc, char **argv, void (*app_init)(void),
++		   void (*app_fini)(void), void (*rtld_fini)(void),
++		   void *stack_end attribute_unused);
+diff --git a/procd.c b/procd.c
+index 3de6208..c0c4ae1 100644
+--- a/procd.c
++++ b/procd.c
+@@ -12,30 +12,32 @@
+  * GNU General Public License for more details.
+  */
+ 
+-#include <sys/wait.h>
+-#include <sys/types.h>
+-#include <sys/stat.h>
+ #include <sys/reboot.h>
++#include <sys/stat.h>
++#include <sys/types.h>
++#include <sys/wait.h>
+ 
+-#include <unistd.h>
+ #include <getopt.h>
+ #include <libgen.h>
++#include <unistd.h>
+ 
++#include "plug/hotplug.h"
+ #include "procd.h"
+ #include "watchdog.h"
+-#include "plug/hotplug.h"
+ 
+ unsigned int debug;
+ 
+ static int usage(const char *prog)
+ {
+-	fprintf(stderr, "Usage: %s [options]\n"
++	fprintf(stderr,
++		"Usage: %s [options]\n"
+ 		"Options:\n"
+ 		"	-s <path>	Path to ubus socket\n"
+ 		"	-h <path>	run as hotplug daemon\n"
+ 		"	-d <level>	Enable debug messages\n"
+ 		"	-S		Print messages to stdout\n"
+-		"\n", prog);
++		"\n",
++		prog);
+ 	return 1;
+ }
+ 
+diff --git a/rcS.c b/rcS.c
+index c2e1abb..5a5b138 100644
+--- a/rcS.c
++++ b/rcS.c
+@@ -16,16 +16,16 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
+-#include <libubox/uloop.h>
+ #include <libubox/runqueue.h>
+-#include <stdlib.h>
++#include <libubox/uloop.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ 
+-#include <sys/types.h>
+-#include <sys/stat.h>
+ #include <fcntl.h>
+ #include <glob.h>
++#include <sys/stat.h>
++#include <sys/types.h>
+ 
+ #include <libubox/ustream.h>
+ 
+@@ -118,7 +118,8 @@ static void q_initd_complete(struct runqueue *q, struct runqueue_task *p)
+ 		ts_res.tv_nsec += 1000000000;
+ 	}
+ 
+-	DEBUG(2, "stop %s %s - took %lu.%09lus\n", s->file, s->param, ts_res.tv_sec, ts_res.tv_nsec);
++	DEBUG(2, "stop %s %s - took %lu.%09lus\n", s->file, s->param,
++	      ts_res.tv_sec, ts_res.tv_nsec);
+ 	ustream_free(&s->fd.stream);
+ 	close(s->fd.fd.fd);
+ 	free(s);
+@@ -152,7 +153,8 @@ static void add_initd(struct runqueue *q, char *file, char *param)
+ 	runqueue_task_add(q, &s->proc.task, false);
+ }
+ 
+-static int _rc(struct runqueue *q, char *path, const char *file, char *pattern, char *param)
++static int _rc(struct runqueue *q, char *path, const char *file, char *pattern,
++	       char *param)
+ {
+ 	char *dir = alloca(2 + strlen(path) + strlen(file) + strlen(pattern));
+ 	glob_t gl;
+@@ -194,10 +196,10 @@ int rc(const char *file, char *param)
+ 
+ static void r_empty(struct runqueue *q)
+ {
+-
+ }
+ 
+-static void __attribute__((constructor)) rc_init() {
++static void __attribute__((constructor)) rc_init()
++{
+ 	runqueue_init(&r);
+ 	r.empty_cb = r_empty;
+ 	r.max_running_tasks = 8;
+diff --git a/signal.c b/signal.c
+index 9974153..df2254c 100644
+--- a/signal.c
++++ b/signal.c
+@@ -27,7 +27,7 @@ static void do_reboot(void)
+ 	sleep(2);
+ 	reboot(RB_AUTOBOOT);
+ 	while (1)
+-	;
++		;
+ }
+ 
+ static void signal_shutdown(int signal, siginfo_t *siginfo, void *data)
+@@ -36,7 +36,7 @@ static void signal_shutdown(int signal, siginfo_t *siginfo, void *data)
+ 	char *msg = NULL;
+ 
+ #ifndef DISABLE_INIT
+-	switch(signal) {
++	switch (signal) {
+ 	case SIGINT:
+ 	case SIGTERM:
+ 		event = RB_AUTOBOOT;
+@@ -56,10 +56,8 @@ static void signal_shutdown(int signal, siginfo_t *siginfo, void *data)
+ 		procd_shutdown(event);
+ }
+ 
+-struct sigaction sa_shutdown = {
+-	.sa_sigaction = signal_shutdown,
+-	.sa_flags = SA_SIGINFO
+-};
++struct sigaction sa_shutdown = { .sa_sigaction = signal_shutdown,
++				 .sa_flags = SA_SIGINFO };
+ 
+ static void signal_crash(int signal, siginfo_t *siginfo, void *data)
+ {
+@@ -67,20 +65,16 @@ static void signal_crash(int signal, siginfo_t *siginfo, void *data)
+ 	do_reboot();
+ }
+ 
+-struct sigaction sa_crash = {
+-	.sa_sigaction = signal_crash,
+-	.sa_flags = SA_SIGINFO
+-};
++struct sigaction sa_crash = { .sa_sigaction = signal_crash,
++			      .sa_flags = SA_SIGINFO };
+ 
+ static void signal_dummy(int signal, siginfo_t *siginfo, void *data)
+ {
+ 	ERROR("Got unexpected signal %d\n", signal);
+ }
+ 
+-struct sigaction sa_dummy = {
+-	.sa_sigaction = signal_dummy,
+-	.sa_flags = SA_SIGINFO
+-};
++struct sigaction sa_dummy = { .sa_sigaction = signal_dummy,
++			      .sa_flags = SA_SIGINFO };
+ 
+ void procd_signal(void)
+ {
+diff --git a/state.c b/state.c
+index ccf4104..530b6e8 100644
+--- a/state.c
++++ b/state.c
+@@ -13,62 +13,65 @@
+  */
+ 
+ #include <fcntl.h>
+-#include <sys/reboot.h>
++#include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <unistd.h>
++#include <sys/reboot.h>
+ #include <sys/types.h>
+-#include <signal.h>
++#include <unistd.h>
+ 
+-#include "procd.h"
+-#include "syslog.h"
+ #include "plug/hotplug.h"
+-#include "watchdog.h"
++#include "procd.h"
+ #include "service/service.h"
++#include "syslog.h"
+ #include "utils/utils.h"
++#include "watchdog.h"
+ 
+-enum {
+-	STATE_NONE = 0,
+-	STATE_EARLY,
+-	STATE_UBUS,
+-	STATE_INIT,
+-	STATE_RUNNING,
+-	STATE_SHUTDOWN,
+-	STATE_HALT,
+-	__STATE_MAX,
++enum { STATE_NONE = 0,
++       STATE_EARLY,
++       STATE_UBUS,
++       STATE_INIT,
++       STATE_RUNNING,
++       STATE_SHUTDOWN,
++       STATE_HALT,
++       __STATE_MAX,
+ };
+ 
+ static int state = STATE_NONE;
+ static int reboot_event;
+ 
+-static void set_stdio(const char* tty)
++static void set_stdio(const char *tty)
+ {
+-	if (chdir("/dev") ||
+-	    !freopen(tty, "r", stdin) ||
+-	    !freopen(tty, "w", stdout) ||
+-	    !freopen(tty, "w", stderr) ||
++	if (chdir("/dev") || !freopen(tty, "r", stdin) ||
++	    !freopen(tty, "w", stdout) || !freopen(tty, "w", stderr) ||
+ 	    chdir("/"))
+ 		ERROR("failed to set stdio: %m\n");
+ 	else
+-		fcntl(STDERR_FILENO, F_SETFL, fcntl(STDERR_FILENO, F_GETFL) | O_NONBLOCK);
++		fcntl(STDERR_FILENO, F_SETFL,
++		      fcntl(STDERR_FILENO, F_GETFL) | O_NONBLOCK);
+ }
+ 
+ static void set_console(void)
+ {
+-	const char* tty;
+-	char* split;
+-	char line[ 20 ];
+-	const char* try[] = { "tty0", "console", NULL }; /* Try the most common outputs */
++	const char *tty;
++	char *split;
++	char line[20];
++	const char *
++	try
++		[] = { "tty0", "console",
++		       NULL }; /* Try the most common outputs */
+ 	int f, i = 0;
+ 
+-	tty = get_cmdline_val("console",line,sizeof(line));
++	tty = get_cmdline_val("console", line, sizeof(line));
+ 	if (tty != NULL) {
+ 		split = strchr(tty, ',');
+-		if ( split != NULL )
++		if (split != NULL)
+ 			*split = '\0';
+ 	} else {
+ 		// Try a default
+-		tty=try[i];
++		tty =
++		try
++			[i];
+ 		i++;
+ 	}
+ 
+@@ -76,14 +79,16 @@ static void set_console(void)
+ 		ERROR("failed to change dir to /dev: %m\n");
+ 		return;
+ 	}
+-	while (tty!=NULL) {
++	while (tty != NULL) {
+ 		f = open(tty, O_RDONLY);
+ 		if (f >= 0) {
+ 			close(f);
+ 			break;
+ 		}
+ 
+-		tty=try[i];
++		tty =
++		try
++			[i];
+ 		i++;
+ 	}
+ 	if (chdir("/"))
+@@ -106,7 +111,8 @@ static void state_enter(void)
+ 		break;
+ 
+ 	case STATE_UBUS:
+-		// try to reopen incase the wdt was not available before coldplug
++		// try to reopen incase the wdt was not available before
++		// coldplug
+ 		watchdog_init(0);
+ 		set_stdio("console");
+ 		LOG("- ubus -\n");
+@@ -160,10 +166,10 @@ static void state_enter(void)
+ 		/* Allow time for last message to reach serial console, etc */
+ 		sleep(1);
+ 
+-		/* We have to fork here, since the kernel calls do_exit(EXIT_SUCCESS)
+-		 * in linux/kernel/sys.c, which can cause the machine to panic when
+-		 * the init process exits... */
+-		if (!vfork( )) { /* child */
++		/* We have to fork here, since the kernel calls
++		 * do_exit(EXIT_SUCCESS) in linux/kernel/sys.c, which can cause
++		 * the machine to panic when the init process exits... */
++		if (!vfork()) { /* child */
+ 			reboot(reboot_event);
+ 			_exit(EXIT_SUCCESS);
+ 		}
+diff --git a/system.c b/system.c
+index 8ed3f93..e7f46ad 100644
+--- a/system.c
++++ b/system.c
+@@ -16,14 +16,14 @@
+ #ifdef linux
+ #include <sys/sysinfo.h>
+ #endif
++#include <fcntl.h>
++#include <signal.h>
++#include <stdlib.h>
+ #include <sys/ioctl.h>
+-#include <sys/types.h>
+ #include <sys/reboot.h>
+ #include <sys/stat.h>
+-#include <fcntl.h>
+-#include <signal.h>
++#include <sys/types.h>
+ #include <unistd.h>
+-#include <stdlib.h>
+ 
+ #include <libubox/uloop.h>
+ 
+@@ -36,8 +36,8 @@ static int notify;
+ static struct ubus_context *_ctx;
+ 
+ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+-                 struct ubus_request_data *req, const char *method,
+-                 struct blob_attr *msg)
++			struct ubus_request_data *req, const char *method,
++			struct blob_attr *msg)
+ {
+ 	void *c;
+ 	char line[256];
+@@ -47,16 +47,13 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 
+ 	blob_buf_init(&b, 0);
+ 
+-	if (uname(&utsname) >= 0)
+-	{
++	if (uname(&utsname) >= 0) {
+ 		blobmsg_add_string(&b, "kernel", utsname.release);
+ 		blobmsg_add_string(&b, "hostname", utsname.nodename);
+ 	}
+ 
+-	if ((f = fopen("/proc/cpuinfo", "r")) != NULL)
+-	{
+-		while(fgets(line, sizeof(line), f))
+-		{
++	if ((f = fopen("/proc/cpuinfo", "r")) != NULL) {
++		while (fgets(line, sizeof(line), f)) {
+ 			key = strtok(line, "\t:");
+ 			val = strtok(NULL, "\t\n");
+ 
+@@ -66,13 +63,12 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 			if (!strcasecmp(key, "system type") ||
+ 			    !strcasecmp(key, "processor") ||
+ 			    !strcasecmp(key, "cpu") ||
+-			    !strcasecmp(key, "model name"))
+-			{
++			    !strcasecmp(key, "model name")) {
+ 				strtoul(val + 2, &key, 0);
+ 
+-				if (key == (val + 2) || *key != 0)
+-				{
+-					blobmsg_add_string(&b, "system", val + 2);
++				if (key == (val + 2) || *key != 0) {
++					blobmsg_add_string(&b, "system",
++							   val + 2);
+ 					break;
+ 				}
+ 			}
+@@ -82,10 +78,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 	}
+ 
+ 	if ((f = fopen("/tmp/sysinfo/model", "r")) != NULL ||
+-	    (f = fopen("/proc/device-tree/model", "r")) != NULL)
+-	{
+-		if (fgets(line, sizeof(line), f))
+-		{
++	    (f = fopen("/proc/device-tree/model", "r")) != NULL) {
++		if (fgets(line, sizeof(line), f)) {
+ 			val = strtok(line, "\t\n");
+ 
+ 			if (val)
+@@ -93,11 +87,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 		}
+ 
+ 		fclose(f);
+-	}
+-	else if ((f = fopen("/proc/cpuinfo", "r")) != NULL)
+-	{
+-		while(fgets(line, sizeof(line), f))
+-		{
++	} else if ((f = fopen("/proc/cpuinfo", "r")) != NULL) {
++		while (fgets(line, sizeof(line), f)) {
+ 			key = strtok(line, "\t:");
+ 			val = strtok(NULL, "\t\n");
+ 
+@@ -105,8 +96,7 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 				continue;
+ 
+ 			if (!strcasecmp(key, "machine") ||
+-			    !strcasecmp(key, "hardware"))
+-			{
++			    !strcasecmp(key, "hardware")) {
+ 				blobmsg_add_string(&b, "model", val + 2);
+ 				break;
+ 			}
+@@ -115,10 +105,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 		fclose(f);
+ 	}
+ 
+-	if ((f = fopen("/tmp/sysinfo/board_name", "r")) != NULL)
+-	{
+-		if (fgets(line, sizeof(line), f))
+-		{
++	if ((f = fopen("/tmp/sysinfo/board_name", "r")) != NULL) {
++		if (fgets(line, sizeof(line), f)) {
+ 			val = strtok(line, "\t\n");
+ 
+ 			if (val)
+@@ -126,18 +114,13 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 		}
+ 
+ 		fclose(f);
+-	}
+-	else if ((f = fopen("/proc/device-tree/compatible", "r")) != NULL)
+-	{
+-		if (fgets(line, sizeof(line), f))
+-		{
++	} else if ((f = fopen("/proc/device-tree/compatible", "r")) != NULL) {
++		if (fgets(line, sizeof(line), f)) {
+ 			val = strtok(line, "\t\n");
+ 
+-			if (val)
+-			{
++			if (val) {
+ 				next = val;
+-				while ((next = strchr(next, ',')) != NULL)
+-				{
++				while ((next = strchr(next, ',')) != NULL) {
+ 					*next = '-';
+ 					next++;
+ 				}
+@@ -149,12 +132,10 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 		fclose(f);
+ 	}
+ 
+-	if ((f = fopen("/etc/openwrt_release", "r")) != NULL)
+-	{
++	if ((f = fopen("/etc/openwrt_release", "r")) != NULL) {
+ 		c = blobmsg_open_table(&b, "release");
+ 
+-		while (fgets(line, sizeof(line), f))
+-		{
++		while (fgets(line, sizeof(line), f)) {
+ 			char *dest;
+ 			char ch;
+ 
+@@ -180,7 +161,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ 			else
+ 				continue;
+ 
+-			dest = blobmsg_alloc_string_buffer(&b, key, strlen(val));
++			dest = blobmsg_alloc_string_buffer(&b, key,
++							   strlen(val));
+ 			if (!dest) {
+ 				ERROR("Failed to allocate blob.\n");
+ 				continue;
+@@ -220,8 +202,8 @@ static int system_board(struct ubus_context *ctx, struct ubus_object *obj,
+ }
+ 
+ static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
+-                struct ubus_request_data *req, const char *method,
+-                struct blob_attr *msg)
++		       struct ubus_request_data *req, const char *method,
++		       struct blob_attr *msg)
+ {
+ 	time_t now;
+ 	struct tm *tm;
+@@ -243,7 +225,7 @@ static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
+ 	blobmsg_add_u32(&b, "localtime", now + tm->tm_gmtoff);
+ 
+ #ifdef linux
+-	blobmsg_add_u32(&b, "uptime",    info.uptime);
++	blobmsg_add_u32(&b, "uptime", info.uptime);
+ 
+ 	c = blobmsg_open_array(&b, "load");
+ 	blobmsg_add_u32(&b, NULL, info.loads[0]);
+@@ -252,15 +234,15 @@ static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
+ 	blobmsg_close_array(&b, c);
+ 
+ 	c = blobmsg_open_table(&b, "memory");
+-	blobmsg_add_u64(&b, "total",    info.mem_unit * info.totalram);
+-	blobmsg_add_u64(&b, "free",     info.mem_unit * info.freeram);
+-	blobmsg_add_u64(&b, "shared",   info.mem_unit * info.sharedram);
++	blobmsg_add_u64(&b, "total", info.mem_unit * info.totalram);
++	blobmsg_add_u64(&b, "free", info.mem_unit * info.freeram);
++	blobmsg_add_u64(&b, "shared", info.mem_unit * info.sharedram);
+ 	blobmsg_add_u64(&b, "buffered", info.mem_unit * info.bufferram);
+ 	blobmsg_close_table(&b, c);
+ 
+ 	c = blobmsg_open_table(&b, "swap");
+-	blobmsg_add_u64(&b, "total",    info.mem_unit * info.totalswap);
+-	blobmsg_add_u64(&b, "free",     info.mem_unit * info.freeswap);
++	blobmsg_add_u64(&b, "total", info.mem_unit * info.totalswap);
++	blobmsg_add_u64(&b, "free", info.mem_unit * info.freeswap);
+ 	blobmsg_close_table(&b, c);
+ #endif
+ 
+@@ -277,13 +259,7 @@ static int system_reboot(struct ubus_context *ctx, struct ubus_object *obj,
+ 	return 0;
+ }
+ 
+-enum {
+-	WDT_FREQUENCY,
+-	WDT_TIMEOUT,
+-	WDT_MAGICCLOSE,
+-	WDT_STOP,
+-	__WDT_MAX
+-};
++enum { WDT_FREQUENCY, WDT_TIMEOUT, WDT_MAGICCLOSE, WDT_STOP, __WDT_MAX };
+ 
+ static const struct blobmsg_policy watchdog_policy[__WDT_MAX] = {
+ 	[WDT_FREQUENCY] = { .name = "frequency", .type = BLOBMSG_TYPE_INT32 },
+@@ -302,10 +278,12 @@ static int watchdog_set(struct ubus_context *ctx, struct ubus_object *obj,
+ 	if (!msg)
+ 		return UBUS_STATUS_INVALID_ARGUMENT;
+ 
+-	blobmsg_parse(watchdog_policy, __WDT_MAX, tb, blob_data(msg), blob_len(msg));
++	blobmsg_parse(watchdog_policy, __WDT_MAX, tb, blob_data(msg),
++		      blob_len(msg));
+ 	if (tb[WDT_FREQUENCY]) {
+-		unsigned int timeout = tb[WDT_TIMEOUT] ? blobmsg_get_u32(tb[WDT_TIMEOUT]) :
+-						watchdog_timeout(0);
++		unsigned int timeout =
++			tb[WDT_TIMEOUT] ? blobmsg_get_u32(tb[WDT_TIMEOUT]) :
++					  watchdog_timeout(0);
+ 		unsigned int freq = blobmsg_get_u32(tb[WDT_FREQUENCY]);
+ 
+ 		if (freq) {
+@@ -321,7 +299,7 @@ static int watchdog_set(struct ubus_context *ctx, struct ubus_object *obj,
+ 
+ 		if (timeout <= frequency)
+ 			timeout = frequency * 2;
+-		 watchdog_timeout(timeout);
++		watchdog_timeout(timeout);
+ 	}
+ 
+ 	if (tb[WDT_MAGICCLOSE])
+@@ -347,11 +325,7 @@ static int watchdog_set(struct ubus_context *ctx, struct ubus_object *obj,
+ 	return 0;
+ }
+ 
+-enum {
+-	SIGNAL_PID,
+-	SIGNAL_NUM,
+-	__SIGNAL_MAX
+-};
++enum { SIGNAL_PID, SIGNAL_NUM, __SIGNAL_MAX };
+ 
+ static const struct blobmsg_policy signal_policy[__SIGNAL_MAX] = {
+ 	[SIGNAL_PID] = { .name = "pid", .type = BLOBMSG_TYPE_INT32 },
+@@ -359,15 +333,16 @@ static const struct blobmsg_policy signal_policy[__SIGNAL_MAX] = {
+ };
+ 
+ static int proc_signal(struct ubus_context *ctx, struct ubus_object *obj,
+-			struct ubus_request_data *req, const char *method,
+-			struct blob_attr *msg)
++		       struct ubus_request_data *req, const char *method,
++		       struct blob_attr *msg)
+ {
+ 	struct blob_attr *tb[__SIGNAL_MAX];
+ 
+ 	if (!msg)
+ 		return UBUS_STATUS_INVALID_ARGUMENT;
+ 
+-	blobmsg_parse(signal_policy, __SIGNAL_MAX, tb, blob_data(msg), blob_len(msg));
++	blobmsg_parse(signal_policy, __SIGNAL_MAX, tb, blob_data(msg),
++		      blob_len(msg));
+ 	if (!tb[SIGNAL_PID || !tb[SIGNAL_NUM]])
+ 		return UBUS_STATUS_INVALID_ARGUMENT;
+ 
+@@ -376,17 +351,16 @@ static int proc_signal(struct ubus_context *ctx, struct ubus_object *obj,
+ 	return 0;
+ }
+ 
+-enum {
+-	SYSUPGRADE_PATH,
+-	SYSUPGRADE_PREFIX,
+-	SYSUPGRADE_COMMAND,
+-	__SYSUPGRADE_MAX
+-};
++enum { SYSUPGRADE_PATH,
++       SYSUPGRADE_PREFIX,
++       SYSUPGRADE_COMMAND,
++       __SYSUPGRADE_MAX };
+ 
+ static const struct blobmsg_policy sysupgrade_policy[__SYSUPGRADE_MAX] = {
+ 	[SYSUPGRADE_PATH] = { .name = "path", .type = BLOBMSG_TYPE_STRING },
+ 	[SYSUPGRADE_PREFIX] = { .name = "prefix", .type = BLOBMSG_TYPE_STRING },
+-	[SYSUPGRADE_COMMAND] = { .name = "command", .type = BLOBMSG_TYPE_STRING },
++	[SYSUPGRADE_COMMAND] = { .name = "command",
++				 .type = BLOBMSG_TYPE_STRING },
+ };
+ 
+ static int sysupgrade(struct ubus_context *ctx, struct ubus_object *obj,
+@@ -398,28 +372,32 @@ static int sysupgrade(struct ubus_context *ctx, struct ubus_object *obj,
+ 	if (!msg)
+ 		return UBUS_STATUS_INVALID_ARGUMENT;
+ 
+-	blobmsg_parse(sysupgrade_policy, __SYSUPGRADE_MAX, tb, blob_data(msg), blob_len(msg));
++	blobmsg_parse(sysupgrade_policy, __SYSUPGRADE_MAX, tb, blob_data(msg),
++		      blob_len(msg));
+ 	if (!tb[SYSUPGRADE_PATH] || !tb[SYSUPGRADE_PREFIX])
+ 		return UBUS_STATUS_INVALID_ARGUMENT;
+ 
+-	sysupgrade_exec_upgraded(blobmsg_get_string(tb[SYSUPGRADE_PREFIX]),
+-				 blobmsg_get_string(tb[SYSUPGRADE_PATH]),
+-				 tb[SYSUPGRADE_COMMAND] ? blobmsg_get_string(tb[SYSUPGRADE_COMMAND]) : NULL);
++	sysupgrade_exec_upgraded(
++		blobmsg_get_string(tb[SYSUPGRADE_PREFIX]),
++		blobmsg_get_string(tb[SYSUPGRADE_PATH]),
++		tb[SYSUPGRADE_COMMAND] ?
++			blobmsg_get_string(tb[SYSUPGRADE_COMMAND]) :
++			NULL);
+ 
+-	/* sysupgrade_exec_upgraded() will never return unless something has gone wrong */
++	/* sysupgrade_exec_upgraded() will never return unless something has
++	 * gone wrong */
+ 	return UBUS_STATUS_UNKNOWN_ERROR;
+ }
+ 
+-static void
+-procd_subscribe_cb(struct ubus_context *ctx, struct ubus_object *obj)
++static void procd_subscribe_cb(struct ubus_context *ctx,
++			       struct ubus_object *obj)
+ {
+ 	notify = obj->has_subscribers;
+ }
+ 
+-
+ static const struct ubus_method system_methods[] = {
+ 	UBUS_METHOD_NOARG("board", system_board),
+-	UBUS_METHOD_NOARG("info",  system_info),
++	UBUS_METHOD_NOARG("info", system_info),
+ 	UBUS_METHOD_NOARG("reboot", system_reboot),
+ 	UBUS_METHOD("watchdog", watchdog_set, watchdog_policy),
+ 	UBUS_METHOD("signal", proc_signal, signal_policy),
+@@ -437,8 +415,7 @@ static struct ubus_object system_object = {
+ 	.subscribe_cb = procd_subscribe_cb,
+ };
+ 
+-void
+-procd_bcast_event(char *event, struct blob_attr *msg)
++void procd_bcast_event(char *event, struct blob_attr *msg)
+ {
+ 	int ret;
+ 
+@@ -447,7 +424,8 @@ procd_bcast_event(char *event, struct blob_attr *msg)
+ 
+ 	ret = ubus_notify(_ctx, &system_object, event, msg, -1);
+ 	if (ret)
+-		fprintf(stderr, "Failed to notify log: %s\n", ubus_strerror(ret));
++		fprintf(stderr, "Failed to notify log: %s\n",
++			ubus_strerror(ret));
+ }
+ 
+ void ubus_init_system(struct ubus_context *ctx)
+diff --git a/sysupgrade.c b/sysupgrade.c
+index 07e33f7..cc9f9e4 100644
+--- a/sysupgrade.c
++++ b/sysupgrade.c
+@@ -13,19 +13,17 @@
+  * GNU General Public License for more details.
+  */
+ 
+-
+-#include "watchdog.h"
+ #include "sysupgrade.h"
++#include "watchdog.h"
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ 
+-
+ void sysupgrade_exec_upgraded(const char *prefix, char *path, char *command)
+ {
+ 	char *wdt_fd = watchdog_fd();
+-	char *argv[] = { "/sbin/upgraded", NULL, NULL, NULL};
++	char *argv[] = { "/sbin/upgraded", NULL, NULL, NULL };
+ 	int ret;
+ 
+ 	ret = chroot(prefix);
+diff --git a/sysupgrade.h b/sysupgrade.h
+index 8c09fc9..2c0dbd3 100644
+--- a/sysupgrade.h
++++ b/sysupgrade.h
+@@ -14,8 +14,6 @@
+ #ifndef __PROCD_SYSUPGRADE_H
+ #define __PROCD_SYSUPGRADE_H
+ 
+-
+ void sysupgrade_exec_upgraded(const char *prefix, char *path, char *command);
+ 
+-
+ #endif
+diff --git a/ubus.c b/ubus.c
+index 8d521ac..a69c173 100644
+--- a/ubus.c
++++ b/ubus.c
+@@ -12,10 +12,10 @@
+  * GNU General Public License for more details.
+  */
+ 
+-#include <sys/resource.h>
++#include <signal.h>
+ #include <stdlib.h>
++#include <sys/resource.h>
+ #include <unistd.h>
+-#include <signal.h>
+ 
+ #include "procd.h"
+ 
+@@ -37,8 +37,7 @@ static void timeout_retry(void)
+ 		timeout = 1000;
+ }
+ 
+-static void
+-ubus_reconnect_cb(struct uloop_timeout *timeout)
++static void ubus_reconnect_cb(struct uloop_timeout *timeout)
+ {
+ 	if (!ubus_reconnect(ctx, ubus_socket)) {
+ 		ubus_add_uloop(ctx);
+@@ -48,16 +47,14 @@ ubus_reconnect_cb(struct uloop_timeout *timeout)
+ 	timeout_retry();
+ }
+ 
+-static void
+-ubus_disconnect_cb(struct ubus_context *ctx)
++static void ubus_disconnect_cb(struct ubus_context *ctx)
+ {
+ 	ubus_timer.cb = ubus_reconnect_cb;
+ 	reset_timeout();
+ 	timeout_retry();
+ }
+ 
+-static void
+-ubus_connect_cb(struct uloop_timeout *timeout)
++static void ubus_connect_cb(struct uloop_timeout *timeout)
+ {
+ 	ctx = ubus_connect(ubus_socket);
+ 
+@@ -78,8 +75,7 @@ ubus_connect_cb(struct uloop_timeout *timeout)
+ 	procd_state_ubus_connect();
+ }
+ 
+-void
+-procd_connect_ubus(void)
++void procd_connect_ubus(void)
+ {
+ 	ubus_timer.cb = ubus_connect_cb;
+ 	reset_timeout();
+diff --git a/watchdog.c b/watchdog.c
+index 9d770b4..e5fd555 100644
+--- a/watchdog.c
++++ b/watchdog.c
+@@ -14,10 +14,10 @@
+ 
+ #include <linux/watchdog.h>
+ 
++#include <fcntl.h>
+ #include <sys/ioctl.h>
+-#include <sys/types.h>
+ #include <sys/stat.h>
+-#include <fcntl.h>
++#include <sys/types.h>
+ 
+ #include <unistd.h>
+ 
+@@ -26,7 +26,7 @@
+ #include "procd.h"
+ #include "watchdog.h"
+ 
+-#define WDT_PATH	"/dev/watchdog"
++#define WDT_PATH "/dev/watchdog"
+ 
+ static struct uloop_timeout wdt_timeout;
+ static int wdt_fd = -1;
+@@ -110,8 +110,7 @@ void watchdog_set_stopped(bool val)
+ 
+ 		if (wdt_magicclose)
+ 			watchdog_close();
+-	}
+-	else {
++	} else {
+ 		watchdog_open(true);
+ 		watchdog_set_drv_timeout();
+ 		watchdog_timeout_cb(&wdt_timeout);
+@@ -146,7 +145,7 @@ int watchdog_frequency(int frequency)
+ 	return wdt_frequency;
+ }
+ 
+-char* watchdog_fd(void)
++char *watchdog_fd(void)
+ {
+ 	static char fd_buf[12];
+ 
+@@ -172,7 +171,6 @@ void watchdog_init(int preinit)
+ 	DEBUG(4, "Opened watchdog with timeout %ds\n", watchdog_timeout(0));
+ }
+ 
+-
+ void watchdog_set_cloexec(bool val)
+ {
+ 	if (wdt_fd < 0)
+@@ -183,5 +181,5 @@ void watchdog_set_cloexec(bool val)
+ 		flags |= FD_CLOEXEC;
+ 	else
+ 		flags &= ~FD_CLOEXEC;
+-	fcntl(wdt_fd, F_SETFD,  flags);
++	fcntl(wdt_fd, F_SETFD, flags);
+ }
+diff --git a/watchdog.h b/watchdog.h
+index 73c75d5..09f6be4 100644
+--- a/watchdog.h
++++ b/watchdog.h
+@@ -19,7 +19,7 @@
+ 
+ #ifndef DISABLE_INIT
+ void watchdog_init(int preinit);
+-char* watchdog_fd(void);
++char *watchdog_fd(void);
+ int watchdog_timeout(int timeout);
+ int watchdog_frequency(int frequency);
+ void watchdog_set_magicclose(bool val);
+@@ -33,7 +33,7 @@ static inline void watchdog_init(int preinit)
+ {
+ }
+ 
+-static inline char* watchdog_fd(void)
++static inline char *watchdog_fd(void)
+ {
+ 	return "";
+ }
 -- 
 2.20.1
 

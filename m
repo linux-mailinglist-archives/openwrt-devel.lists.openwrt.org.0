@@ -2,91 +2,42 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88C941CC4E
-	for <lists+openwrt-devel@lfdr.de>; Tue, 14 May 2019 17:56:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D9191CC50
+	for <lists+openwrt-devel@lfdr.de>; Tue, 14 May 2019 17:57:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ys85LYeff2/NYstCgRx0OzJ0mUKuzaTQpFQshbmUIF8=; b=mGf1lrln+eiAEJ
-	tCJWFqxc5o3JVoFWpJggyDENbB2jPrV9okZk/4CA1aq1+pcKckEq5r5gLrBA49lE/+1KnOGkH48AK
-	w3X60sdqlMOyZX/07Hf9GjrS0DV9peGT6h6yC/Zuf+OUTvLw3Y7xVlEoHUkbXjmAAN8PaD5CJ91T8
-	GRfkRQs85o03kMvI3FRA+LwSJaop3PoZe2gv3Imh0r6LYZ2j94JsKvX7wCO9sUI0LXDTyJdwQdhvE
-	IXgyO+lmo0od4CsX1obUzM3v6NfXIbf5kyiCrtrehtH1IzfBI0hwUwMj4E8Gd1CWR2qa96CkfaJdt
-	sz4fwnSQVYUTMyB3V0+w==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=D82BcUjepkXaI1o7DTEJEQqhMuIJ9cmwErpFBxA8kfQ=; b=JnyBJ0DG79M+lp
+	6faoymbErlfAVJ/7wmZKeu0KoG9siXR72NNVHvHvWKVJoJXVtaUwGGfca0RfrfZpAL6XvxrGK3P4a
+	AN8I3HbwoINDRjjxgx9OUub/2q1G6bc+mnEvTmMCK8Fv0nysab/iN6lO7mmr6XUQcXd93SokDpnCl
+	G+cRtouchweey4ILFwxLN4Yn8nVz8TEv7NObO8JYOrCjgtSrcYy4pOCRlgluro8W+SXeNz2k/ZGZV
+	jNztUZ3cov3vZH17rCdTVb2cJPgRZzYt9N5ITpw0iraAS4aUlh6R8Az0m+bU/4zLON+lVonbu32RB
+	3iAhrCs4CZjh8AT24SMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQZmT-00069m-1m; Tue, 14 May 2019 15:55:53 +0000
+	id 1hQZo5-0006UA-Bz; Tue, 14 May 2019 15:57:33 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQZmM-00069K-7S
- for openwrt-devel@lists.openwrt.org; Tue, 14 May 2019 15:55:47 +0000
+ id 1hQZnx-0006Tp-If
+ for openwrt-devel@lists.openwrt.org; Tue, 14 May 2019 15:57:27 +0000
 X-Originating-IP: 139.18.242.240
-Received: from [172.24.187.150] (edu242240.nat.uni-leipzig.de [139.18.242.240])
+Received: from dawn.lan (edu242240.nat.uni-leipzig.de [139.18.242.240])
  (Authenticated sender: mail@aparcar.org)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 0DC02E0005;
- Tue, 14 May 2019 15:55:35 +0000 (UTC)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-References: <20190510153621.30933-1-mail@aparcar.org>
- <20190510153621.30933-2-mail@aparcar.org>
- <20190514140834.GA93050@meh.true.cz>
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 58D29E0002;
+ Tue, 14 May 2019 15:57:23 +0000 (UTC)
 From: Paul Spooren <mail@aparcar.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mail@aparcar.org; keydata=
- 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
-Message-ID: <f06f0eac-5cd9-efc6-86ed-27c2021fe1ba@aparcar.org>
-Date: Tue, 14 May 2019 17:55:35 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 14 May 2019 17:56:09 +0200
+Message-Id: <20190514155608.13021-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190514140834.GA93050@meh.true.cz>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_085546_568554_1C8BB31E 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20190514_085725_940461_694E3CF4 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -95,8 +46,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [217.70.183.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] procd: apply official kernel
- clang-format style
+Subject: [OpenWrt-Devel] [PATCH v2 1/2] procd: add clang-format kernel style
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,53 +58,544 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Daniel Golle <daniel@makrotopia.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Spooren <mail@aparcar.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gNS8xNC8xOSA0OjA4IFBNLCBQZXRyIMWgdGV0aWFyIHdyb3RlOgo+IFBhdWwgU3Bvb3JlbiA8
-bWFpbEBhcGFyY2FyLm9yZz4gWzIwMTktMDUtMTAgMTc6MzY6MjFdOgo+Cj4gSGksCj4KPj4gQ3Vy
-cmVudGx5IHNvbWUgZmlsZXMgdXNlIGEgbWl4dHVyZSBvZiBzcGFjZXMgYW5kIHRhYnMgd2l0aGlu
-IGEgc2luZ2xlCj4+IGZpbGUsIGluc3RlYWQgb2YgZml4aW5nIHN0eWxlIG1hbnVhbGx5LCBhIHRv
-b2wgY291bGQgZG8gdGhlIGpvYi4KPiBJIGZpbmQgY29uc2lzdGVudCBjb2Rpbmcgc3R5bGUgaW1w
-b3J0YW50LCBidXQgSSBhbHNvIGtub3csIGhvdyBoYXJkIGlzIGl0IHRvCj4gYWNoaWV2ZSBpdC4g
-SXQncyBzb21lIHRpbWUgYWxyZWFkeSwgc28gSSBkb24ndCByZW1lbWJlciBhbGwgdGhlIGdsb3J5
-IGRldGFpbHMsCj4gYnV0IGRpZmZlcmVudCBjbGFuZy1mb3JtYXQgdmVyc2lvbnMgcHJvZHVjZSBk
-aWZmZXJlbnQgcmVzdWx0cywgZG9lc24ndCBzdXBwb3J0Cj4gY2VydGFpbiBvcHRpb25zIGV0Yy4s
-IHNvIGl0J3MgcHJldHR5IGNvbmZ1c2luZyBhbmQgaW50cm9kdWNpbmcgYW5vdGhlcgo+IG92ZXJo
-ZWFkLgpUcnVlLCB0aGF0J3Mgd2h5IEkgbGlrZWQgdGhlIGlkZWEgb2YgdXNpbmcgdGhlIGtlcm5l
-bHMgc3R5bGUuCj4gVGhlbiB5b3Ugc2hvdWxkIGVuZm9yY2UgaXQgc29tZWhvdyAoY29tbWl0IGhv
-b2tzLCBtYWtlIHRhcmdldCksCj4gb3RoZXJ3aXNlIGl0J3MgZ29pbmcgdG8gYml0cm90IGFmdGVy
-IHNvbWV0aW1lIGFnYWluIGV0Yy4KSSdkIHN0YXJ0IHdvcmtpbmcgb24gc29tZSBDSSB0byB0ZXN0
-IGZvciBmdW5jdGlvbmFsaXR5IGFuZCBhbHNvIGNvZGUgc3R5bGUuCj4KPj4gK3N0YXRpYyBzdHJ1
-Y3QgaW5pdF9oYW5kbGVyIGhhbmRsZXJzW10gPSB7IHsKPj4gKwkJCQkJCSAgLm5hbWUgPSAic3lz
-aW5pdCIsCj4+ICsJCQkJCQkgIC5jYiA9IHJ1bnJjLAo+PiArCQkJCQkgIH0sCj4+ICsJCQkJCSAg
-ewo+PiArCQkJCQkJICAubmFtZSA9ICJzaHV0ZG93biIsCj4+ICsJCQkJCQkgIC5jYiA9IHJ1bnJj
-LAo+PiArCQkJCQkgIH0sCj4+ICsJCQkJCSAgewo+PiArCQkJCQkJICAubmFtZSA9ICJhc2tmaXJz
-dCIsCj4+ICsJCQkJCQkgIC5jYiA9IGFza2ZpcnN0LAo+PiArCQkJCQkJICAubXVsdGkgPSAxLAo+
-PiArCQkJCQkgIH0sCj4+ICsJCQkJCSAgewo+PiArCQkJCQkJICAubmFtZSA9ICJhc2tjb25zb2xl
-IiwKPj4gKwkJCQkJCSAgLmNiID0gYXNrY29uc29sZSwKPj4gKwkJCQkJCSAgLm11bHRpID0gMSwK
-Pj4gKwkJCQkJICB9LAo+PiArCQkJCQkgIHsKPj4gKwkJCQkJCSAgLm5hbWUgPSAicmVzcGF3biIs
-Cj4+ICsJCQkJCQkgIC5jYiA9IHJjcmVzcGF3biwKPj4gKwkJCQkJCSAgLm11bHRpID0gMSwKPj4g
-KwkJCQkJICB9LAo+PiArCQkJCQkgIHsKPj4gKwkJCQkJCSAgLm5hbWUgPSAiYXNrY29uc29sZWxh
-dGUiLAo+PiArCQkJCQkJICAuY2IgPSBhc2tjb25zb2xlLAo+PiArCQkJCQkJICAubXVsdGkgPSAx
-LAo+PiArCQkJCQkgIH0sCj4+ICsJCQkJCSAgewo+PiArCQkJCQkJICAubmFtZSA9ICJyZXNwYXdu
-bGF0ZSIsCj4+ICsJCQkJCQkgIC5jYiA9IHJjcmVzcGF3biwKPj4gKwkJCQkJCSAgLm11bHRpID0g
-MSwKPj4gKwkJCQkJICB9IH07Cj4gaXQncyBqdXN0IG1lIG9yIGlzIHRoaXMgdmVyeSB1Z2x5PwoK
-VmVyeSB0cnVlLCBJIHRoaW5rLiBGb3Igc29tZSBjYXNlcyBpdCBjb3VsZCBtYWtlIHNlbnNlIHRv
-IGRpc2FibGUKY2xhbmctZm9ybWF0OgoKaW50IGZvcm1hdHRlZF9jb2RlOwovLyBjbGFuZy1mb3Jt
-YXQgb2ZmCsKgwqDCoCB2b2lkwqDCoMKgIHVuZm9ybWF0dGVkX2NvZGXCoCA7Ci8vIGNsYW5nLWZv
-cm1hdCBvbgp2b2lkIGZvcm1hdHRlZF9jb2RlX2FnYWluOwoKPj4gLQlsaXN0X2Zvcl9lYWNoX2Vu
-dHJ5KGEsICZhY3Rpb25zLCBsaXN0KQo+PiAtCQlpZiAoIXN0cmNtcChhLT5oYW5kbGVyLT5uYW1l
-LCBoYW5kbGVyKSkgewo+PiAtCQkJaWYgKGEtPmhhbmRsZXItPm11bHRpKSB7Cj4+IC0JCQkJYS0+
-aGFuZGxlci0+Y2IoYSk7Cj4+IC0JCQkJY29udGludWU7Cj4+IC0JCQl9Cj4+ICsJbGlzdF9mb3Jf
-ZWFjaF9lbnRyeShhLCAmYWN0aW9ucywKPj4gKwkJCSAgICBsaXN0KSBpZiAoIXN0cmNtcChhLT5o
-YW5kbGVyLT5uYW1lLCBoYW5kbGVyKSkKPj4gKwl7Cj4+ICsJCWlmIChhLT5oYW5kbGVyLT5tdWx0
-aSkgewo+IGVoPyAoSSd2ZSBzdG9wcGVkIHJlYWRpbmcgdGhlIGNoYW5nZXMgYW55IGZ1cnRoZXIp
-CgpJIHRoaW5rIGl0J3MgYmVjYXVzZSBJIHJlbW92ZWQgdGhlIEZvckVhY2hNYWNybyBkZWZpbml0
-aW9uLCBJJ2xsIHNlbmQgYSB2Mi4KCkJlc3QsClBhdWwKCgoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9w
-ZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+copied from the official kernel style:
+
+https://github.com/torvalds/linux/blob/master/.clang-format
+
+also modify gitignore to unignore the style file
+
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+Added a single OpenWrt specific ForEachMacro rule
+
+ .clang-format | 496 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ .gitignore    |   1 +
+ 2 files changed, 497 insertions(+)
+ create mode 100644 .clang-format
+
+diff --git a/.clang-format b/.clang-format
+new file mode 100644
+index 0000000..3ee1935
+--- /dev/null
++++ b/.clang-format
+@@ -0,0 +1,496 @@
++# SPDX-License-Identifier: GPL-2.0
++#
++# clang-format configuration file. Intended for clang-format >= 4.
++#
++# For more information, see:
++#
++#   Documentation/process/clang-format.rst
++#   https://clang.llvm.org/docs/ClangFormat.html
++#   https://clang.llvm.org/docs/ClangFormatStyleOptions.html
++#
++---
++AccessModifierOffset: -4
++AlignAfterOpenBracket: Align
++AlignConsecutiveAssignments: false
++AlignConsecutiveDeclarations: false
++#AlignEscapedNewlines: Left # Unknown to clang-format-4.0
++AlignOperands: true
++AlignTrailingComments: false
++AllowAllParametersOfDeclarationOnNextLine: false
++AllowShortBlocksOnASingleLine: false
++AllowShortCaseLabelsOnASingleLine: false
++AllowShortFunctionsOnASingleLine: None
++AllowShortIfStatementsOnASingleLine: false
++AllowShortLoopsOnASingleLine: false
++AlwaysBreakAfterDefinitionReturnType: None
++AlwaysBreakAfterReturnType: None
++AlwaysBreakBeforeMultilineStrings: false
++AlwaysBreakTemplateDeclarations: false
++BinPackArguments: true
++BinPackParameters: true
++BraceWrapping:
++  AfterClass: false
++  AfterControlStatement: false
++  AfterEnum: false
++  AfterFunction: true
++  AfterNamespace: true
++  AfterObjCDeclaration: false
++  AfterStruct: false
++  AfterUnion: false
++  #AfterExternBlock: false # Unknown to clang-format-5.0
++  BeforeCatch: false
++  BeforeElse: false
++  IndentBraces: false
++  #SplitEmptyFunction: true # Unknown to clang-format-4.0
++  #SplitEmptyRecord: true # Unknown to clang-format-4.0
++  #SplitEmptyNamespace: true # Unknown to clang-format-4.0
++BreakBeforeBinaryOperators: None
++BreakBeforeBraces: Custom
++#BreakBeforeInheritanceComma: false # Unknown to clang-format-4.0
++BreakBeforeTernaryOperators: false
++BreakConstructorInitializersBeforeComma: false
++#BreakConstructorInitializers: BeforeComma # Unknown to clang-format-4.0
++BreakAfterJavaFieldAnnotations: false
++BreakStringLiterals: false
++ColumnLimit: 80
++CommentPragmas: '^ IWYU pragma:'
++#CompactNamespaces: false # Unknown to clang-format-4.0
++ConstructorInitializerAllOnOneLineOrOnePerLine: false
++ConstructorInitializerIndentWidth: 8
++ContinuationIndentWidth: 8
++Cpp11BracedListStyle: false
++DerivePointerAlignment: false
++DisableFormat: false
++ExperimentalAutoDetectBinPacking: false
++#FixNamespaceComments: false # Unknown to clang-format-4.0
++
++# Taken from:
++#   git grep -h '^#define [^[:space:]]*for_each[^[:space:]]*(' include/ \
++#   | sed "s,^#define \([^[:space:]]*for_each[^[:space:]]*\)(.*$,  - '\1'," \
++#   | sort | uniq
++ForEachMacros:
++# OpenWrt specific
++  - 'blobmsg_list_for_each'
++# Default
++  - 'apei_estatus_for_each_section'
++  - 'ata_for_each_dev'
++  - 'ata_for_each_link'
++  - '__ata_qc_for_each'
++  - 'ata_qc_for_each'
++  - 'ata_qc_for_each_raw'
++  - 'ata_qc_for_each_with_internal'
++  - 'ax25_for_each'
++  - 'ax25_uid_for_each'
++  - '__bio_for_each_bvec'
++  - 'bio_for_each_bvec'
++  - 'bio_for_each_integrity_vec'
++  - '__bio_for_each_segment'
++  - 'bio_for_each_segment'
++  - 'bio_for_each_segment_all'
++  - 'bio_list_for_each'
++  - 'bip_for_each_vec'
++  - 'blkg_for_each_descendant_post'
++  - 'blkg_for_each_descendant_pre'
++  - 'blk_queue_for_each_rl'
++  - 'bond_for_each_slave'
++  - 'bond_for_each_slave_rcu'
++  - 'bpf_for_each_spilled_reg'
++  - 'btree_for_each_safe128'
++  - 'btree_for_each_safe32'
++  - 'btree_for_each_safe64'
++  - 'btree_for_each_safel'
++  - 'card_for_each_dev'
++  - 'cgroup_taskset_for_each'
++  - 'cgroup_taskset_for_each_leader'
++  - 'cpufreq_for_each_entry'
++  - 'cpufreq_for_each_entry_idx'
++  - 'cpufreq_for_each_valid_entry'
++  - 'cpufreq_for_each_valid_entry_idx'
++  - 'css_for_each_child'
++  - 'css_for_each_descendant_post'
++  - 'css_for_each_descendant_pre'
++  - 'device_for_each_child_node'
++  - 'drm_atomic_crtc_for_each_plane'
++  - 'drm_atomic_crtc_state_for_each_plane'
++  - 'drm_atomic_crtc_state_for_each_plane_state'
++  - 'drm_atomic_for_each_plane_damage'
++  - 'drm_connector_for_each_possible_encoder'
++  - 'drm_for_each_connector_iter'
++  - 'drm_for_each_crtc'
++  - 'drm_for_each_encoder'
++  - 'drm_for_each_encoder_mask'
++  - 'drm_for_each_fb'
++  - 'drm_for_each_legacy_plane'
++  - 'drm_for_each_plane'
++  - 'drm_for_each_plane_mask'
++  - 'drm_for_each_privobj'
++  - 'drm_mm_for_each_hole'
++  - 'drm_mm_for_each_node'
++  - 'drm_mm_for_each_node_in_range'
++  - 'drm_mm_for_each_node_safe'
++  - 'flow_action_for_each'
++  - 'for_each_active_drhd_unit'
++  - 'for_each_active_iommu'
++  - 'for_each_available_child_of_node'
++  - 'for_each_bio'
++  - 'for_each_board_func_rsrc'
++  - 'for_each_bvec'
++  - 'for_each_card_components'
++  - 'for_each_card_links'
++  - 'for_each_card_links_safe'
++  - 'for_each_card_prelinks'
++  - 'for_each_card_rtds'
++  - 'for_each_card_rtds_safe'
++  - 'for_each_cgroup_storage_type'
++  - 'for_each_child_of_node'
++  - 'for_each_clear_bit'
++  - 'for_each_clear_bit_from'
++  - 'for_each_cmsghdr'
++  - 'for_each_compatible_node'
++  - 'for_each_component_dais'
++  - 'for_each_component_dais_safe'
++  - 'for_each_comp_order'
++  - 'for_each_console'
++  - 'for_each_cpu'
++  - 'for_each_cpu_and'
++  - 'for_each_cpu_not'
++  - 'for_each_cpu_wrap'
++  - 'for_each_dev_addr'
++  - 'for_each_dma_cap_mask'
++  - 'for_each_dpcm_be'
++  - 'for_each_dpcm_be_rollback'
++  - 'for_each_dpcm_be_safe'
++  - 'for_each_dpcm_fe'
++  - 'for_each_drhd_unit'
++  - 'for_each_dss_dev'
++  - 'for_each_efi_memory_desc'
++  - 'for_each_efi_memory_desc_in_map'
++  - 'for_each_element'
++  - 'for_each_element_extid'
++  - 'for_each_element_id'
++  - 'for_each_endpoint_of_node'
++  - 'for_each_evictable_lru'
++  - 'for_each_fib6_node_rt_rcu'
++  - 'for_each_fib6_walker_rt'
++  - 'for_each_free_mem_range'
++  - 'for_each_free_mem_range_reverse'
++  - 'for_each_func_rsrc'
++  - 'for_each_hstate'
++  - 'for_each_if'
++  - 'for_each_iommu'
++  - 'for_each_ip_tunnel_rcu'
++  - 'for_each_irq_nr'
++  - 'for_each_link_codecs'
++  - 'for_each_lru'
++  - 'for_each_matching_node'
++  - 'for_each_matching_node_and_match'
++  - 'for_each_memblock'
++  - 'for_each_memblock_type'
++  - 'for_each_memcg_cache_index'
++  - 'for_each_mem_pfn_range'
++  - 'for_each_mem_range'
++  - 'for_each_mem_range_rev'
++  - 'for_each_migratetype_order'
++  - 'for_each_msi_entry'
++  - 'for_each_msi_entry_safe'
++  - 'for_each_net'
++  - 'for_each_netdev'
++  - 'for_each_netdev_continue'
++  - 'for_each_netdev_continue_rcu'
++  - 'for_each_netdev_feature'
++  - 'for_each_netdev_in_bond_rcu'
++  - 'for_each_netdev_rcu'
++  - 'for_each_netdev_reverse'
++  - 'for_each_netdev_safe'
++  - 'for_each_net_rcu'
++  - 'for_each_new_connector_in_state'
++  - 'for_each_new_crtc_in_state'
++  - 'for_each_new_mst_mgr_in_state'
++  - 'for_each_new_plane_in_state'
++  - 'for_each_new_private_obj_in_state'
++  - 'for_each_node'
++  - 'for_each_node_by_name'
++  - 'for_each_node_by_type'
++  - 'for_each_node_mask'
++  - 'for_each_node_state'
++  - 'for_each_node_with_cpus'
++  - 'for_each_node_with_property'
++  - 'for_each_of_allnodes'
++  - 'for_each_of_allnodes_from'
++  - 'for_each_of_cpu_node'
++  - 'for_each_of_pci_range'
++  - 'for_each_old_connector_in_state'
++  - 'for_each_old_crtc_in_state'
++  - 'for_each_old_mst_mgr_in_state'
++  - 'for_each_oldnew_connector_in_state'
++  - 'for_each_oldnew_crtc_in_state'
++  - 'for_each_oldnew_mst_mgr_in_state'
++  - 'for_each_oldnew_plane_in_state'
++  - 'for_each_oldnew_plane_in_state_reverse'
++  - 'for_each_oldnew_private_obj_in_state'
++  - 'for_each_old_plane_in_state'
++  - 'for_each_old_private_obj_in_state'
++  - 'for_each_online_cpu'
++  - 'for_each_online_node'
++  - 'for_each_online_pgdat'
++  - 'for_each_pci_bridge'
++  - 'for_each_pci_dev'
++  - 'for_each_pci_msi_entry'
++  - 'for_each_populated_zone'
++  - 'for_each_possible_cpu'
++  - 'for_each_present_cpu'
++  - 'for_each_prime_number'
++  - 'for_each_prime_number_from'
++  - 'for_each_process'
++  - 'for_each_process_thread'
++  - 'for_each_property_of_node'
++  - 'for_each_registered_fb'
++  - 'for_each_reserved_mem_region'
++  - 'for_each_rtd_codec_dai'
++  - 'for_each_rtd_codec_dai_rollback'
++  - 'for_each_rtdcom'
++  - 'for_each_rtdcom_safe'
++  - 'for_each_set_bit'
++  - 'for_each_set_bit_from'
++  - 'for_each_sg'
++  - 'for_each_sg_dma_page'
++  - 'for_each_sg_page'
++  - 'for_each_sibling_event'
++  - 'for_each_subelement'
++  - 'for_each_subelement_extid'
++  - 'for_each_subelement_id'
++  - '__for_each_thread'
++  - 'for_each_thread'
++  - 'for_each_zone'
++  - 'for_each_zone_zonelist'
++  - 'for_each_zone_zonelist_nodemask'
++  - 'fwnode_for_each_available_child_node'
++  - 'fwnode_for_each_child_node'
++  - 'fwnode_graph_for_each_endpoint'
++  - 'gadget_for_each_ep'
++  - 'genradix_for_each'
++  - 'genradix_for_each_from'
++  - 'hash_for_each'
++  - 'hash_for_each_possible'
++  - 'hash_for_each_possible_rcu'
++  - 'hash_for_each_possible_rcu_notrace'
++  - 'hash_for_each_possible_safe'
++  - 'hash_for_each_rcu'
++  - 'hash_for_each_safe'
++  - 'hctx_for_each_ctx'
++  - 'hlist_bl_for_each_entry'
++  - 'hlist_bl_for_each_entry_rcu'
++  - 'hlist_bl_for_each_entry_safe'
++  - 'hlist_for_each'
++  - 'hlist_for_each_entry'
++  - 'hlist_for_each_entry_continue'
++  - 'hlist_for_each_entry_continue_rcu'
++  - 'hlist_for_each_entry_continue_rcu_bh'
++  - 'hlist_for_each_entry_from'
++  - 'hlist_for_each_entry_from_rcu'
++  - 'hlist_for_each_entry_rcu'
++  - 'hlist_for_each_entry_rcu_bh'
++  - 'hlist_for_each_entry_rcu_notrace'
++  - 'hlist_for_each_entry_safe'
++  - '__hlist_for_each_rcu'
++  - 'hlist_for_each_safe'
++  - 'hlist_nulls_for_each_entry'
++  - 'hlist_nulls_for_each_entry_from'
++  - 'hlist_nulls_for_each_entry_rcu'
++  - 'hlist_nulls_for_each_entry_safe'
++  - 'i3c_bus_for_each_i2cdev'
++  - 'i3c_bus_for_each_i3cdev'
++  - 'ide_host_for_each_port'
++  - 'ide_port_for_each_dev'
++  - 'ide_port_for_each_present_dev'
++  - 'idr_for_each_entry'
++  - 'idr_for_each_entry_continue'
++  - 'idr_for_each_entry_ul'
++  - 'inet_bind_bucket_for_each'
++  - 'inet_lhash2_for_each_icsk_rcu'
++  - 'key_for_each'
++  - 'key_for_each_safe'
++  - 'klp_for_each_func'
++  - 'klp_for_each_func_safe'
++  - 'klp_for_each_func_static'
++  - 'klp_for_each_object'
++  - 'klp_for_each_object_safe'
++  - 'klp_for_each_object_static'
++  - 'kvm_for_each_memslot'
++  - 'kvm_for_each_vcpu'
++  - 'list_for_each'
++  - 'list_for_each_codec'
++  - 'list_for_each_codec_safe'
++  - 'list_for_each_entry'
++  - 'list_for_each_entry_continue'
++  - 'list_for_each_entry_continue_rcu'
++  - 'list_for_each_entry_continue_reverse'
++  - 'list_for_each_entry_from'
++  - 'list_for_each_entry_from_rcu'
++  - 'list_for_each_entry_from_reverse'
++  - 'list_for_each_entry_lockless'
++  - 'list_for_each_entry_rcu'
++  - 'list_for_each_entry_reverse'
++  - 'list_for_each_entry_safe'
++  - 'list_for_each_entry_safe_continue'
++  - 'list_for_each_entry_safe_from'
++  - 'list_for_each_entry_safe_reverse'
++  - 'list_for_each_prev'
++  - 'list_for_each_prev_safe'
++  - 'list_for_each_safe'
++  - 'llist_for_each'
++  - 'llist_for_each_entry'
++  - 'llist_for_each_entry_safe'
++  - 'llist_for_each_safe'
++  - 'media_device_for_each_entity'
++  - 'media_device_for_each_intf'
++  - 'media_device_for_each_link'
++  - 'media_device_for_each_pad'
++  - 'mp_bvec_for_each_page'
++  - 'mp_bvec_for_each_segment'
++  - 'nanddev_io_for_each_page'
++  - 'netdev_for_each_lower_dev'
++  - 'netdev_for_each_lower_private'
++  - 'netdev_for_each_lower_private_rcu'
++  - 'netdev_for_each_mc_addr'
++  - 'netdev_for_each_uc_addr'
++  - 'netdev_for_each_upper_dev_rcu'
++  - 'netdev_hw_addr_list_for_each'
++  - 'nft_rule_for_each_expr'
++  - 'nla_for_each_attr'
++  - 'nla_for_each_nested'
++  - 'nlmsg_for_each_attr'
++  - 'nlmsg_for_each_msg'
++  - 'nr_neigh_for_each'
++  - 'nr_neigh_for_each_safe'
++  - 'nr_node_for_each'
++  - 'nr_node_for_each_safe'
++  - 'of_for_each_phandle'
++  - 'of_property_for_each_string'
++  - 'of_property_for_each_u32'
++  - 'pci_bus_for_each_resource'
++  - 'ping_portaddr_for_each_entry'
++  - 'plist_for_each'
++  - 'plist_for_each_continue'
++  - 'plist_for_each_entry'
++  - 'plist_for_each_entry_continue'
++  - 'plist_for_each_entry_safe'
++  - 'plist_for_each_safe'
++  - 'pnp_for_each_card'
++  - 'pnp_for_each_dev'
++  - 'protocol_for_each_card'
++  - 'protocol_for_each_dev'
++  - 'queue_for_each_hw_ctx'
++  - 'radix_tree_for_each_slot'
++  - 'radix_tree_for_each_tagged'
++  - 'rbtree_postorder_for_each_entry_safe'
++  - 'rdma_for_each_port'
++  - 'resource_list_for_each_entry'
++  - 'resource_list_for_each_entry_safe'
++  - 'rhl_for_each_entry_rcu'
++  - 'rhl_for_each_rcu'
++  - 'rht_for_each'
++  - 'rht_for_each_from'
++  - 'rht_for_each_entry'
++  - 'rht_for_each_entry_from'
++  - 'rht_for_each_entry_rcu'
++  - 'rht_for_each_entry_rcu_from'
++  - 'rht_for_each_entry_safe'
++  - 'rht_for_each_rcu'
++  - 'rht_for_each_rcu_from'
++  - '__rq_for_each_bio'
++  - 'rq_for_each_bvec'
++  - 'rq_for_each_segment'
++  - 'scsi_for_each_prot_sg'
++  - 'scsi_for_each_sg'
++  - 'sctp_for_each_hentry'
++  - 'sctp_skb_for_each'
++  - 'shdma_for_each_chan'
++  - '__shost_for_each_device'
++  - 'shost_for_each_device'
++  - 'sk_for_each'
++  - 'sk_for_each_bound'
++  - 'sk_for_each_entry_offset_rcu'
++  - 'sk_for_each_from'
++  - 'sk_for_each_rcu'
++  - 'sk_for_each_safe'
++  - 'sk_nulls_for_each'
++  - 'sk_nulls_for_each_from'
++  - 'sk_nulls_for_each_rcu'
++  - 'snd_array_for_each'
++  - 'snd_pcm_group_for_each_entry'
++  - 'snd_soc_dapm_widget_for_each_path'
++  - 'snd_soc_dapm_widget_for_each_path_safe'
++  - 'snd_soc_dapm_widget_for_each_sink_path'
++  - 'snd_soc_dapm_widget_for_each_source_path'
++  - 'tb_property_for_each'
++  - 'tcf_exts_for_each_action'
++  - 'udp_portaddr_for_each_entry'
++  - 'udp_portaddr_for_each_entry_rcu'
++  - 'usb_hub_for_each_child'
++  - 'v4l2_device_for_each_subdev'
++  - 'v4l2_m2m_for_each_dst_buf'
++  - 'v4l2_m2m_for_each_dst_buf_safe'
++  - 'v4l2_m2m_for_each_src_buf'
++  - 'v4l2_m2m_for_each_src_buf_safe'
++  - 'virtio_device_for_each_vq'
++  - 'xa_for_each'
++  - 'xa_for_each_marked'
++  - 'xa_for_each_start'
++  - 'xas_for_each'
++  - 'xas_for_each_conflict'
++  - 'xas_for_each_marked'
++  - 'zorro_for_each_dev'
++
++#IncludeBlocks: Preserve # Unknown to clang-format-5.0
++IncludeCategories:
++  - Regex: '.*'
++    Priority: 1
++IncludeIsMainRegex: '(Test)?$'
++IndentCaseLabels: false
++#IndentPPDirectives: None # Unknown to clang-format-5.0
++IndentWidth: 8
++IndentWrappedFunctionNames: false
++JavaScriptQuotes: Leave
++JavaScriptWrapImports: true
++KeepEmptyLinesAtTheStartOfBlocks: false
++MacroBlockBegin: ''
++MacroBlockEnd: ''
++MaxEmptyLinesToKeep: 1
++NamespaceIndentation: Inner
++#ObjCBinPackProtocolList: Auto # Unknown to clang-format-5.0
++ObjCBlockIndentWidth: 8
++ObjCSpaceAfterProperty: true
++ObjCSpaceBeforeProtocolList: true
++
++# Taken from git's rules
++#PenaltyBreakAssignment: 10 # Unknown to clang-format-4.0
++PenaltyBreakBeforeFirstCallParameter: 30
++PenaltyBreakComment: 10
++PenaltyBreakFirstLessLess: 0
++PenaltyBreakString: 10
++PenaltyExcessCharacter: 100
++PenaltyReturnTypeOnItsOwnLine: 60
++
++PointerAlignment: Right
++ReflowComments: false
++SortIncludes: false
++#SortUsingDeclarations: false # Unknown to clang-format-4.0
++SpaceAfterCStyleCast: false
++SpaceAfterTemplateKeyword: true
++SpaceBeforeAssignmentOperators: true
++#SpaceBeforeCtorInitializerColon: true # Unknown to clang-format-5.0
++#SpaceBeforeInheritanceColon: true # Unknown to clang-format-5.0
++SpaceBeforeParens: ControlStatements
++#SpaceBeforeRangeBasedForLoopColon: true # Unknown to clang-format-5.0
++SpaceInEmptyParentheses: false
++SpacesBeforeTrailingComments: 1
++SpacesInAngles: false
++SpacesInContainerLiterals: false
++SpacesInCStyleCastParentheses: false
++SpacesInParentheses: false
++SpacesInSquareBrackets: false
++Standard: Cpp03
++TabWidth: 8
++UseTab: Always
++...
+diff --git a/.gitignore b/.gitignore
+index 9d80a74..7896aa0 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -10,4 +10,5 @@ utrace
+ ujail
+ *.so
+ *.cmake
++!.clang-format
+ install_manifest.txt
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

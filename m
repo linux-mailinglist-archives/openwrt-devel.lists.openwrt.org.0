@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7B891EB71
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 11:52:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 755521EB91
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 12:02:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,42 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZNKlL7kMz4IPHD3QHzUTu6mzky3yYKVw9knyHZBZG1Y=; b=Pj47UYUYlH7WXozOWbI2w1BT7h
-	gcsmr035DKU77CGNYImplT+tVOahpTUu3B7esjcG7XaP46wAoYTDD7KNbBt3T3C/EhG0CuxBzrcNr
-	cB19D3KzNKh67JsmTjXUhb5eclWf1kkPDECw6TgAtvas8SFgwLzUmP4IeeyexxkheQZe3mQD3Ce1m
-	qU/VHtJMoDxnwdVWYCAoZorH090vyXz51PV+LYyuTgHR97vctwFIhNI+Qmcs/vX0/vKRD8FgqAR6g
-	p6xwTXO1Bch8EQMuvWEv9EByqNXUXueznOnD4I7Lg4eP0wlF/zBda6sx2mqN+Yf0+Q1ubwcwbQX77
-	TNQK5reA==;
+	bh=ImoFRNTTOr4u6Ywkl5JYJ/v6WZnjR5C6cbvqvgf1L5o=; b=qsT2DRqizqt6QqBzbcBbkEpnDu
+	oR+Q6SDidiiIDG3dtnpcRjxEdHl5tXb2NRfBED7bdIBRGlJhwgFGdXm8/JX/FwiEw9Uo2zMNjow0w
+	3crCayoR+90gXVE5J1gh8CJX4pfPkSc+xAsqHnCW8TTthDM8V/4nQbvJl7tv9EkG262t8xToZ3TCK
+	C9tyrHcqKiiZopQiCqcggT8o5vrw0ogqQVkypHfckh+S4GW4WBrdA+OFa9yIIxJtGK6e826UgCJeL
+	neXlLKnr7Fcl4PTYUTrmB+AO64nLmNvju+H6qgik1TWyimBOjz0Splof3r/BvOpOZQbXP0PPQrmWv
+	RDG9Gq5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQqZt-0004jM-SU; Wed, 15 May 2019 09:52:01 +0000
+	id 1hQqjl-0000lL-0i; Wed, 15 May 2019 10:02:13 +0000
 Received: from mail-out.xnet.cz ([82.113.55.122])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQqZm-0004dn-CN
- for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 09:51:56 +0000
+ id 1hQqje-0000kc-8q
+ for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 10:02:07 +0000
 Received: from smtp-out.xnet.cz (smtp-out.xnet.cz [178.217.244.18])
- by mail-out.xnet.cz (8.15.2/8.15.2) with ESMTPS id x4F9pm80021572
+ by mail-out.xnet.cz (8.15.2/8.15.2) with ESMTPS id x4FA20Fc022146
  (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Wed, 15 May 2019 11:51:49 +0200 (CEST) (envelope-from ynezz@true.cz)
+ Wed, 15 May 2019 12:02:00 +0200 (CEST) (envelope-from ynezz@true.cz)
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id AD6514405;
- Wed, 15 May 2019 11:51:45 +0200 (CEST)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 96293448A;
+ Wed, 15 May 2019 12:01:57 +0200 (CEST)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id f692dcc7;
- Wed, 15 May 2019 11:51:44 +0200 (CEST)
-Date: Wed, 15 May 2019 11:51:44 +0200
+ by meh.true.cz (OpenSMTPD) with ESMTPA id ec38b173;
+ Wed, 15 May 2019 12:01:56 +0200 (CEST)
+Date: Wed, 15 May 2019 12:01:56 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Val Kulkov <val.kulkov@gmail.com>
-Message-ID: <20190515095144.GK93050@meh.true.cz>
-References: <CABFXWOCfLLjun5miiPUV6Chx2L90S+fuPWB0bVzwt=Xt43_NQA@mail.gmail.com>
+To: Luis Araneda <luaraneda@gmail.com>
+Message-ID: <20190515100156.GL93050@meh.true.cz>
+References: <20190428151714.5405-1-luaraneda@gmail.com>
+ <20190503122643.GC71477@meh.true.cz>
+ <CAHbBuxrbgr8Yzifhh-ZrpTQJ1Z=S7cY7yi-pahskiX_bv0y84Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CABFXWOCfLLjun5miiPUV6Chx2L90S+fuPWB0bVzwt=Xt43_NQA@mail.gmail.com>
+In-Reply-To: <CAHbBuxrbgr8Yzifhh-ZrpTQJ1Z=S7cY7yi-pahskiX_bv0y84Q@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_025154_739753_97C2C971 
-X-CRM114-Status: UNSURE (   8.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190515_030206_626988_86AD8D23 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -54,8 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH] fstools: block: make extroot mount
- preparation more robust
+Subject: Re: [OpenWrt-Devel] [PATCH] zynq: add manufactured to device title
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,30 +68,33 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Val Kulkov <val.kulkov@gmail.com> [2019-05-14 17:03:11]:
+Luis Araneda <luaraneda@gmail.com> [2019-05-06 08:59:27]:
 
-> The patch was proposed last month by Kenneth Miller [1]. It enables
-> extroot on x86_64-based devices. I confirm that the patch does what it
-> claims. The issue with extroot on x86_64 devices is described in
-> FS#2231 [2].
+> > why are you removing the development part? I think, that it's useful
+> > information so it shouldn't be removed if you don't have a good reason for
+> > this. Putting appart the fact, that it's marked as trainer board on the
+> > vendor's site[1].
+> 
+> Having said that, I really care about the manufacturer being added to
+> the title, and for consistency reasons, I propose one of these
+> options:
+> 1: Remove the development part (modify 2 boards, this patch)
+> 2: Remove the development board part (modify 4 boards, new patch)
+> 3: Add the development/trainer/evaluation part (modify 2 boards, new patch)
+> 
+> I'm now more inclined to go for option 2 and drop everything that's
+> not part of the manufacturer and model, as the "board" part is not
+> adding meaningful information from a developer point of view, IMHO.
+> 
+> I'll wait for your reply before sending a V2.
 
-Then you should reply to that email[1] with your `Tested-by` tag[3], so the
-potential reviewer knows, that it has been actually tested and that there's
-some interest to get this fixed and merged.
-
-> Any possibility to see this patch in the trunk any time soon?
-
-You know, day has just 42 hours :-)
-
-> [1] http://lists.infradead.org/pipermail/openwrt-devel/2019-April/016654.html
-> [2] https://bugs.openwrt.org/index.php?do=details&task_id=2231
-[3] https://www.kernel.org/doc/html/latest/process/submitting-patches.html#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes
+Ok, lets do option 2.
 
 -- ynezz
 

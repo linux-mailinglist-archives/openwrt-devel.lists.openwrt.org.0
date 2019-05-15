@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 841D91F58B
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 15:24:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EDCE1F5A8
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 15:36:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qM46WoodauhjvcH9JkWrMyQHjhAFd9uF4Ah92Bho6DI=; b=Q8tqAwrEY1/Uer0sLM9a02rNu4
-	EYeFRS+raqt4qbHPDbGiaDgmbRj6I0M5q/IgHujTaxs7Zw7p2q9JjeA/e4EPQ2NzeIXH7Krzw/i5b
-	1iIKOhaLqrTyPMz+KiSRKT9iVLfOpO808bdpQY4m5dVYkW9+Hd8UT3PJBqHJwf6dQtPokNZq+9MZa
-	iSri1H5zODscH6nrXVN8fT7Dwq1Bqmid1C2YzRPcn4Ax1x1Krckrq4qjXURIglOwWPBdqerSTmnl3
-	Mf9EO1hKALZ6G1SXobuN4/Q03UdsXpK1oQ68raZqyJLAdMeLm0mlCf9enO8eZhX2CZznZUgOIS422
-	XW/aesbw==;
+	bh=HkrlmVjqJzfb/ECbntna4YyWmXeaeo9R5r2cdYwD0C0=; b=jRH9fSKE3mt2UR5+Hg+aXYgWOG
+	+3JWqMzEa7T8jn//Q3P33ETzpDFZRCmizLcDrFjwPqdMJZhPQw0YYMoM8/0YZp3U8TFiQrwZj24Bw
+	Rua+AU452yujs+o1IZ9NOiQt/h85DF+ob7YZKzKTejyZECHWeMTVfbEOZOca+4JaJSbaxv0jb9MKI
+	EsOfYAPN/e17VL29bU1JlMzvkFYhmtAFA8G532zQ4wbGzPPm+R2Dl/wVRu6Ltl+/ntrEymqLbWQQ0
+	YTWAEHoxpZXa0mwfwlY+icfVxra/1tL1q6FIlyypx6Uw9Sp4LHsIIQWUyHeOEhYB8neF1xxDGeVfm
+	RK129mcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQttT-00065R-An; Wed, 15 May 2019 13:24:27 +0000
+	id 1hQu4e-0003mt-Jl; Wed, 15 May 2019 13:36:00 +0000
 Received: from mail-out.xnet.cz ([82.113.55.122])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQttM-00064t-Am
- for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 13:24:21 +0000
+ id 1hQu2N-000281-KW
+ for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 13:35:51 +0000
 Received: from smtp-out.xnet.cz (smtp-out.xnet.cz [178.217.244.18])
- by mail-out.xnet.cz (8.15.2/8.15.2) with ESMTPS id x4FDODVR033668
+ by mail-out.xnet.cz (8.15.2/8.15.2) with ESMTPS id x4FDXYpV034999
  (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Wed, 15 May 2019 15:24:13 +0200 (CEST) (envelope-from ynezz@true.cz)
+ Wed, 15 May 2019 15:33:34 +0200 (CEST) (envelope-from ynezz@true.cz)
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id CC83830C8;
- Wed, 15 May 2019 15:24:10 +0200 (CEST)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 6589533C1;
+ Wed, 15 May 2019 15:33:31 +0200 (CEST)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 8fe2edc6;
- Wed, 15 May 2019 15:24:09 +0200 (CEST)
-Date: Wed, 15 May 2019 15:24:09 +0200
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 43550099;
+ Wed, 15 May 2019 15:33:30 +0200 (CEST)
+Date: Wed, 15 May 2019 15:33:30 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
 To: Jeffery To <jeffery.to@gmail.com>
-Message-ID: <20190515132409.GB30259@meh.true.cz>
-References: <20190502173327.23285-1-jeffery.to@gmail.com>
- <20190503093959.GG346@meh.true.cz>
- <CAJXyS=gLNzkQ4aMavWd6adrS0OiKWU-uwTMxu3bEoUztRWD2PQ@mail.gmail.com>
+Message-ID: <20190515133330.GC30259@meh.true.cz>
+References: <20190502164706.31453-1-jeffery.to@gmail.com>
+ <20190503093230.GF346@meh.true.cz>
+ <CAJXyS=i6OLmO-9nxOEqVgonHggXk5iAHAT-DHJRVO3vhCzpfxg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJXyS=gLNzkQ4aMavWd6adrS0OiKWU-uwTMxu3bEoUztRWD2PQ@mail.gmail.com>
+In-Reply-To: <CAJXyS=i6OLmO-9nxOEqVgonHggXk5iAHAT-DHJRVO3vhCzpfxg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_062420_684660_345C09ED 
-X-CRM114-Status: UNSURE (   5.83  )
+X-CRM114-CacheID: sfid-20190515_063548_381872_D11EB0CD 
+X-CRM114-Status: UNSURE (   6.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,8 +56,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH] build: fix STAGING_DIR cleaning when
- filenames contain spaces
+Subject: Re: [OpenWrt-Devel] [PATCH] zlib: Use relative paths in pkg-config
+ metadata file
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,28 +76,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Jeffery To <jeffery.to@gmail.com> [2019-05-15 19:03:16]:
+Jeffery To <jeffery.to@gmail.com> [2019-05-15 21:00:28]:
 
-> I finally remembered, I copied this syntax from
-> package/network/services/openvpn/files/openvpn.init[3]:
-> 
-> LIST_SEP="
-> "
+> The buildroot pkg-config (in staging_dir/host/bin) overrides the prefix and
+> exec_prefix variables in *.pc files, to supply the correct (buildroot)
+> paths for callers. If other variables are not defined relative to prefix
+> and exec_prefix, then the returned values will be incorrect.
 
-it just looks weird as well.
+Ok, makes sense, so can you add this explanation to the commit message please?
 
-> If you prefer, I can change this to use ksh93 syntax[5]:
-> 
-> IFS=$'\n'
-
-indeed, I like this a lot more, and 
-
- IFS="$(printf '\n\t')"
-
-from that TLDP page you've linked looks good as well, seems even more readable
-to me. Anyway, I'll leave the decision up to you, both are fine with me.
-
--- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

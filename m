@@ -2,73 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4BD21F955
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 19:28:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E20541F95C
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 19:30:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1lvBxiLOvs9cDvRvnG5Bb0LRn4FU0l5nIY8dkvUGUYE=; b=OSEX7+gqbQ7x0WF8Jms65PBqm
-	6kmEBqEYKXfcUA0MgkwNJDXvJEFpGLkypwOX6yKyAqTSVNZv8puYYVjoO0cCypkrng23Hv25+dLmE
-	ELIcODHMuQacLtnydHmsZdhL9xB77fwBmXrvWNOQknz4UsiIJcTrVinNHfzGsWPmfQ7gIgqPWJY73
-	ypyIAeE25xVytBuQ5SaDKeZuFDEtSR3MjDJdeN9t0xwRaKE3T4JXuiuAZEjBDZxwX5Xqwvf0M4jWF
-	SRbybhlxGJ3n9hVZhGGW1GDwyjPIEOhFqpZPSbr05c3yrPuBIRZx8MizbZvC+UqSztSWRvDumkYpz
-	hbqlRv06g==;
+	 bh=33+0ACGKkowUcKJ0onIOYLZxDkPfnMJfv/WZ2D8iqgQ=; b=WY+vL1ZMcyPxNL+R7onmQls4F
+	y2TlieASz/DXsk20VcqtTz8nC+LLi3jSHUwKAaCdIJgewQCnwPjxgsLJS2lbAJhilQuaXgXs+vRyy
+	XJsosTon9H9XlJOlB2uOd9Ou1quScziUWqL6AQJgX+KqW3xwZVNfjGG3No1WKQV49TCWE90RTyMSZ
+	7+iSech0v/Qgruw+crGtbC1vRH4MspnCZhqZc6BOxsaGIR699w8gTua2W5sbQVhbLU8voFZoy4Ylw
+	tUGwkusUGTTTcQhn7b3su44f1YWvqKswa06okuKQhuolEJlPb38tLKGCwB+9Z5X/9s/+OGuZi7few
+	z7vXG823A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQxhY-0007pr-A0; Wed, 15 May 2019 17:28:24 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1hQxja-0000tX-Jt; Wed, 15 May 2019 17:30:30 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQxhR-0007pG-14
- for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 17:28:18 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id j184so431904vsd.11
- for <openwrt-devel@lists.openwrt.org>; Wed, 15 May 2019 10:28:16 -0700 (PDT)
+ id 1hQxjS-0000tB-Mz
+ for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 17:30:24 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id z11so443129vsq.9
+ for <openwrt-devel@lists.openwrt.org>; Wed, 15 May 2019 10:30:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kFxN0yfMOMzL48x5Maa9TpXzFzanC7OwrDrKiUxfHFE=;
- b=WQHggAuYL6+gc9mq1bEs7ODsz2QuuW9udwpi3pWsjZxfhpy2Cu81OauiXjxLB+VDkw
- 1ovXmsS+oka0o1hhq0UofytcvSzHWxK371k9d4rlUuHcCb2rDcwGtg+4LQRZA+sINYet
- gD8mSGn4bTfgkEqUEUqK9de+mS8Os4jG8DInv7wI53vs/83gUi0C62mdoHHBRd5eYM2v
- Zi2lwRz3mr1qty8qaRJHpUpQPJ5ylI7BMOKXymTpche1b76cyQ0Oal2i6VDZiLozT+0k
- OZsR/QWgLBQTOmNi2BeTTc+UsY6atgBZRfq0HdLj1aSBJQligYVwALo3aI+P45S/MDTK
- WCOg==
+ :cc; bh=FhmiDYA2hbzlMWkf1oa6qKk2bWmJToJ0gIvLu/etU/g=;
+ b=K7Ce3Scq7KTRGa09iKU9nlwNnfeRVc7NL6tIQuI4XgvOurLd3mLA3GCepRMUH+nVol
+ J2e2Re/zdcKz+mdqvHK139ueMGrNVFcyGBJNnchJITgGhh+bvIP7WMxuuF4EhoRi+cN/
+ nUi19819CGzLWpog5XE/uhzd919Nac1jogHZQTB6TRKea412MO3IHXK3Xe3YPI6MZyic
+ +nWjGHnO6aQspK+Ve0T7hsT6HT+z6TN9g+1APhwEBJUpejmYXxVfP7HXD10eb1nRNkpl
+ UQn4D+ZHelYLwoRoFor7dOlpwwRfc4Y+611pO1bQKia1L6H++3UoQbFPRwsaGlBZX2v+
+ TWEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kFxN0yfMOMzL48x5Maa9TpXzFzanC7OwrDrKiUxfHFE=;
- b=rK4WdS7CcWp0b3pwhA3gQqhaq49x9nq+K/pbAvCvygxt5uJs9ldRq9VCHPixfMJcGk
- MPCOASI7Wn+3Erh7O0L7E41dpE6LBxqz2bcYh+CGJr5ESpo9HeXk9hsLXyiDELySXlQb
- JiVpUz+GIYi1olpzfSZYfcq6feqAZK5hCcnLRBKPnCLmD5K/yc05VWeayMCRdlPCmY97
- vivRcvQRIbpsYB4PPEURLGgWeW2YnPAmDfY0BXKWJTAtWGYLVnR1waAVS1pAyUTQ7DWA
- 9CPlUeryAfEbjEFzfBEj57b3xsb2tzbYhWuG16jaVtAZD7UMZ+slAzwd96tmFPJ4Nd32
- Rg+A==
-X-Gm-Message-State: APjAAAVoscAVXhFWFHSntBizNqJmdq39uspZt+xCGAmcbbHM1INUicg0
- HfW1cL1TpTIQGJvOy2nm0RBDRVMX48+6AOqZg88=
-X-Google-Smtp-Source: APXvYqwTGWTd7ZcVT0tMod+LDlhu1d9oPEJ+r3Es6ovuyhLEt9xc1k/JBQfPFRadgRBOEa3Fxr6gCjj2achuzTZBAxA=
-X-Received: by 2002:a67:e8c8:: with SMTP id y8mr10262509vsn.124.1557941295736; 
- Wed, 15 May 2019 10:28:15 -0700 (PDT)
+ bh=FhmiDYA2hbzlMWkf1oa6qKk2bWmJToJ0gIvLu/etU/g=;
+ b=Sj4tK5mxoEnA0hpjdrfcju86YBmK1Oe68dKkxwPAKuaLvr1q31n7jlJJEjD0WLqBrz
+ G9ApGW94ac+Q6fw+lg3fRw1B2l81FXWIBPVacK++PGyp03ESt+kY2Fih/Eu2w24lv8iB
+ gMKma9koReW0xZraKMxBKnM+n9iPPvspGjnpBn5iI35kpJ+R2hGoTUT9pEumqtqVJTM5
+ d7tY5nusfpXg2hyNex/gMrqNqRdWdecMLbZ3KRQxERd333hR0W3YeOD1nUBjx6JAGkYD
+ YHKhzJeoynMUOxHkToQb33qQXXV7kiYDpERSXLtarXjRvgoZE8ItjwbP1XcvpcvfNxFt
+ Vkuw==
+X-Gm-Message-State: APjAAAXvqqRFqlekT5eHj2fxAnpvd4tHIw475oTA3nYr7l7mNVzm/aBi
+ oXrEBnKyIYyKNIqIHdfyLiKW7l+7rsUSQJZKg2Y=
+X-Google-Smtp-Source: APXvYqw0ZpvU5Q5oEXlk02lzEkYKPRGaZCXGreeOPnhTdt7t/P/h9O3d7LogshFXQr7BI2PdpqjBCWQGM/QsCSloNhA=
+X-Received: by 2002:a67:ff08:: with SMTP id v8mr6895234vsp.81.1557941421098;
+ Wed, 15 May 2019 10:30:21 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190514134220.3626-1-be.dissent@gmail.com>
- <20190515161108.GA17661@meh.true.cz>
-In-Reply-To: <20190515161108.GA17661@meh.true.cz>
+ <20190514134220.3626-3-be.dissent@gmail.com>
+ <20190515155935.GB4938@meh.true.cz>
+In-Reply-To: <20190515155935.GB4938@meh.true.cz>
 From: =?UTF-8?B?0J/QsNCy0LXQuw==?= <be.dissent@gmail.com>
-Date: Wed, 15 May 2019 20:28:04 +0300
-Message-ID: <CAEdN=pEUmss2g-OFS9_rSWKGoggQOEQY5110p=9BDC6V_ZS8Sg@mail.gmail.com>
+Date: Wed, 15 May 2019 20:30:09 +0300
+Message-ID: <CAEdN=pG5p=i2wVQ0uWxELKLep+pd2=1f_T58iq7kTt=aRgZRfA@mail.gmail.com>
 To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190515_102817_074628_11254417 
-X-CRM114-Status: UNSURE (   8.64  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190515_103022_782146_3EF08EB1 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -82,8 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
-Subject: Re: [OpenWrt-Devel] [PATCH 1/4] ipq40xx: directly define voltage
- per opp
+ 1.0 FREEMAIL_REPLY         From and body contain different freemails
+Subject: Re: [OpenWrt-Devel] [PATCH 3/4] ipq40xx: fix high resolution timer
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,45 +96,79 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org, Christian Lamparter <chunkeey@gmail.com>
-Content-Type: multipart/mixed; boundary="===============5493673655000699525=="
+Content-Type: multipart/mixed; boundary="===============2578673559818517778=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5493673655000699525==
-Content-Type: multipart/alternative; boundary="000000000000836da10588f07969"
+--===============2578673559818517778==
+Content-Type: multipart/alternative; boundary="000000000000fc4cb50588f08009"
 
---000000000000836da10588f07969
+--000000000000fc4cb50588f08009
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-=D1=81=D1=80, 15 =D0=BC=D0=B0=D1=8F 2019 =D0=B3., 19:11 Petr =C5=A0tetiar <=
+=D1=81=D1=80, 15 =D0=BC=D0=B0=D1=8F 2019 =D0=B3., 18:59 Petr =C5=A0tetiar <=
 ynezz@true.cz>:
 
-> Pavel Kubelun <be.dissent@gmail.com> [2019-05-14 16:42:17]:
+> Pavel Kubelun <be.dissent@gmail.com> [2019-05-14 16:42:19]:
 >
 > > diff --git
-> a/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cpu0-s-qcom-saw2=
--reg-value.patch
-> b/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cpu0-s-qcom-saw2=
--reg-value.patch
-> > index d72e3d3c36..ac128ab9e1 100644
-> > ---
-> a/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cpu0-s-qcom-saw2=
--reg-value.patch
+> a/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer=
+.patch
+> b/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer=
+.patch
+> > new file mode 100644
+> > index 0000000000..0fc50ec533
+> > --- /dev/null
 > > +++
-> b/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cpu0-s-qcom-saw2=
--reg-value.patch
-> > @@ -22,7 +22,7 @@ Signed-off-by: John Crispin <john@phrozen.org>
+> b/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolution-timer=
+.patch
+> > @@ -0,0 +1,30 @@
+> > +From 09f145f417a5d64d6b8d4476699dfb0eccc6c784 Mon Sep 17 00:00:00 2001
+> > +From: Pavel Kubelun <be.dissent@gmail.com>
+> > +Date: Tue, 7 May 2019 10:14:05 +0300
+> > +Subject: [PATCH] ipq40xx: fix high resolution timer
+> > +
+> > +Cherry-picked from CAF QSDK repo.
+>
+> You should preserve the authorship of the changes if you do so. It looks
+> now,
+> like you're author of this work.
+>
+
+Sure, will fix this.
+
+
+> > +The kernel is failing in switching the timer for high resolution
+> > +mode and clock source operates in 10ms resolution. The always-on
+> > +property needs to be given for timer device tree node to make
+> > +clock source working in 1ns resolution.
+>
+> Shouldn't this go through upstream as well?
+>
+
+It should, but I'm not the author.
+
+
+> > +     soc {
+> > diff --git
+> a/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
+> b/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
+> > index 0e1bb87368..b7e241058c 100644
+> > ---
+> a/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
+> > +++
+> b/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.patch
+> > @@ -15,7 +15,7 @@ so the info might change.
 > >
 > >  --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
 > >  +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
-> > -@@ -262,7 +262,7 @@
-> > +@@ -266,7 +266,7 @@
-> >
-> >                   saw0: regulator@b089000 {
-> >                           compatible =3D "qcom,saw2";
+> > -@@ -566,6 +566,34 @@
+> > +@@ -567,6 +567,34 @@
+> >                       status =3D "disabled";
+> >               };
 >
-> Some leftover?
+> Probably some leftover?
 >
 
 It's a refresh of existing patches, because they are applied to the same
@@ -142,89 +176,353 @@ file.
 
 
 > > diff --git
-> a/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devicetree-n=
-odes.patch
-> b/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devicetree-n=
-odes.patch
-> > index 44c07f8f45..be413188a7 100644
+> a/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> b/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> > index 03da6c863a..cc56a60ea3 100644
 > > ---
-> a/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devicetree-n=
-odes.patch
+> a/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
 > > +++
-> b/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devicetree-n=
-odes.patch
-> > @@ -41,7 +41,7 @@ Signed-off-by: John Crispin <john@phrozen.org>
-> >   };
+> b/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> > @@ -14,7 +14,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.co=
+m
+> >
+> >
 > >  --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
 > >  +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
-> > -@@ -410,5 +410,79 @@
-> > +@@ -414,5 +414,79 @@
-> >                                         "legacy";
+> > -@@ -594,6 +594,29 @@
+> > +@@ -595,6 +595,29 @@
+> >                       };
+> >               };
+>
+> Ditto.
+>
+> > diff --git
+> a/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> b/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> > index 7302d237bc..80b16a8211 100644
+> > ---
+> a/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> > +++
+> b/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> > @@ -25,7 +25,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.co=
+m
+> >
+> >       };
+> >
+> >       cpus {
+> > -@@ -617,6 +619,64 @@
+> > +@@ -618,6 +620,64 @@
+> >                       status =3D "disabled";
+> >               };
+>
+> Ditto.
+>
+> > diff --git
+> a/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer=
+.patch
+> b/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer=
+.patch
+> > new file mode 100644
+> > index 0000000000..9d277fa8e0
+> > --- /dev/null
+> > +++
+> b/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolution-timer=
+.patch
+> > @@ -0,0 +1,30 @@
+> > +From 09f145f417a5d64d6b8d4476699dfb0eccc6c784 Mon Sep 17 00:00:00 2001
+> > +From: Pavel Kubelun <be.dissent@gmail.com>
+> > +Date: Tue, 7 May 2019 10:14:05 +0300
+> > +Subject: [PATCH] ipq40xx: fix high resolution timer
+> > +
+> > +Cherry-picked from CAF QSDK repo.
+> > +Original commit message:
+> > +The kernel is failing in switching the timer for high resolution
+> > +mode and clock source operates in 10ms resolution. The always-on
+> > +property needs to be given for timer device tree node to make
+> > +clock source working in 1ns resolution.
+>
+> Same as above.
+>
+> > diff --git
+> a/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
+> b/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
+> > index e5936a0c93..0298644d22 100644
+> > ---
+> a/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
+> > +++
+> b/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.patch
+> > @@ -15,7 +15,7 @@ so the info might change.
+> >
+> >  --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
+> >  +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
+> > -@@ -570,6 +570,34 @@
+> > +@@ -571,6 +571,34 @@
+> >                       status =3D "disabled";
+> >               };
+>
+> Ditto.
+>
+> > diff --git
+> a/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> b/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> > index 7c5d1ec2bb..df95699294 100644
+> > ---
+> a/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> > +++
+> b/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch-nodes.=
+patch
+> > @@ -14,7 +14,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.co=
+m
+> >
+> >
+> >  --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
+> >  +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
+> > -@@ -598,6 +598,29 @@
+> > +@@ -599,6 +599,29 @@
+> >                       };
+> >               };
+>
+> Ditto.
+>
+> > diff --git
+> a/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> b/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> > index 51cf411143..8f7627b048 100644
+> > ---
+> a/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> > +++
+> b/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-essedma-=
+node.patch
+> > @@ -25,7 +25,7 @@ Signed-off-by: Christian Lamparter <chunkeey@gmail.co=
+m
+> >
+> >       };
+> >
+> >       cpus {
+> > -@@ -621,6 +623,64 @@
+> > +@@ -622,6 +624,64 @@
 > >                       status =3D "disabled";
 > >               };
 >
 > Ditto.
 >
 
---000000000000836da10588f07969
+--000000000000fc4cb50588f08009
 Content-Type: text/html; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
 <div dir=3D"auto"><div><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
-class=3D"gmail_attr">=D1=81=D1=80, 15 =D0=BC=D0=B0=D1=8F 2019 =D0=B3., 19:1=
-1 Petr =C5=A0tetiar &lt;<a href=3D"mailto:ynezz@true.cz">ynezz@true.cz</a>&=
+class=3D"gmail_attr">=D1=81=D1=80, 15 =D0=BC=D0=B0=D1=8F 2019 =D0=B3., 18:5=
+9 Petr =C5=A0tetiar &lt;<a href=3D"mailto:ynezz@true.cz">ynezz@true.cz</a>&=
 gt;:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;=
 border-left:1px #ccc solid;padding-left:1ex">Pavel Kubelun &lt;<a href=3D"m=
 ailto:be.dissent@gmail.com" target=3D"_blank" rel=3D"noreferrer">be.dissent=
-@gmail.com</a>&gt; [2019-05-14 16:42:17]:<br>
+@gmail.com</a>&gt; [2019-05-14 16:42:19]:<br>
 <br>
-&gt; diff --git a/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cp=
-u0-s-qcom-saw2-reg-value.patch b/target/linux/ipq40xx/patches-4.14/073-qcom=
--ipq4019-fix-cpu0-s-qcom-saw2-reg-value.patch<br>
-&gt; index d72e3d3c36..ac128ab9e1 100644<br>
-&gt; --- a/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cpu0-s-qc=
-om-saw2-reg-value.patch<br>
-&gt; +++ b/target/linux/ipq40xx/patches-4.14/073-qcom-ipq4019-fix-cpu0-s-qc=
-om-saw2-reg-value.patch<br>
-&gt; @@ -22,7 +22,7 @@ Signed-off-by: John Crispin &lt;<a href=3D"mailto:jo=
-hn@phrozen.org" target=3D"_blank" rel=3D"noreferrer">john@phrozen.org</a>&g=
-t;<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-re=
+solution-timer.patch b/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-hi=
+gh-resolution-timer.patch<br>
+&gt; new file mode 100644<br>
+&gt; index 0000000000..0fc50ec533<br>
+&gt; --- /dev/null<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.14/090-ipq40xx-fix-high-resolutio=
+n-timer.patch<br>
+&gt; @@ -0,0 +1,30 @@<br>
+&gt; +From 09f145f417a5d64d6b8d4476699dfb0eccc6c784 Mon Sep 17 00:00:00 200=
+1<br>
+&gt; +From: Pavel Kubelun &lt;<a href=3D"mailto:be.dissent@gmail.com" targe=
+t=3D"_blank" rel=3D"noreferrer">be.dissent@gmail.com</a>&gt;<br>
+&gt; +Date: Tue, 7 May 2019 10:14:05 +0300<br>
+&gt; +Subject: [PATCH] ipq40xx: fix high resolution timer<br>
+&gt; +<br>
+&gt; +Cherry-picked from CAF QSDK repo.<br>
+<br>
+You should preserve the authorship of the changes if you do so. It looks no=
+w,<br>
+like you&#39;re author of this work.<br></blockquote></div></div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Sure, will fix this.</div><div dir=3D=
+"auto"><br></div><div dir=3D"auto"><div class=3D"gmail_quote"><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;=
+padding-left:1ex">
+<br>
+&gt; +The kernel is failing in switching the timer for high resolution<br>
+&gt; +mode and clock source operates in 10ms resolution. The always-on<br>
+&gt; +property needs to be given for timer device tree node to make<br>
+&gt; +clock source working in 1ns resolution.<br>
+<br>
+Shouldn&#39;t this go through upstream as well?<br></blockquote></div></div=
+><div dir=3D"auto"><br></div><div dir=3D"auto">It should, but I&#39;m not t=
+he author.</div><div dir=3D"auto"><br></div><div dir=3D"auto"><div class=3D=
+"gmail_quote"><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;=
+border-left:1px #ccc solid;padding-left:1ex">
+<br>
+&gt; +=C2=A0 =C2=A0 =C2=A0soc {<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdi=
+o-node.patch b/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-n=
+ode.patch<br>
+&gt; index 0e1bb87368..b7e241058c 100644<br>
+&gt; --- a/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.=
+patch<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.14/701-dts-ipq4019-add-mdio-node.=
+patch<br>
+&gt; @@ -15,7 +15,7 @@ so the info might change.<br>
 &gt;=C2=A0 <br>
 &gt;=C2=A0 --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
 &gt;=C2=A0 +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
-&gt; -@@ -262,7 +262,7 @@<br>
-&gt; +@@ -266,7 +266,7 @@<br>
-&gt;=C2=A0 =C2=A0<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0sa=
-w0: regulator@b089000 {<br>
+&gt; -@@ -566,6 +566,34 @@<br>
+&gt; +@@ -567,6 +567,34 @@<br>
 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0compatible =3D &quot;qcom,saw2&quot;;<br>
+=C2=A0 =C2=A0status =3D &quot;disabled&quot;;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
 <br>
-Some leftover?<br></blockquote></div></div><div dir=3D"auto"><br></div><div=
- dir=3D"auto">It&#39;s a refresh of existing patches, because they are appl=
-ied to the same file.</div><div dir=3D"auto"><br></div><div dir=3D"auto"><d=
-iv class=3D"gmail_quote"><blockquote class=3D"gmail_quote" style=3D"margin:=
-0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+Probably some leftover?<br></blockquote></div></div><div dir=3D"auto"><br><=
+/div><div dir=3D"auto"><span style=3D"font-family:sans-serif">It&#39;s a re=
+fresh of existing patches, because they are applied to the same file.</span=
+><br></div><div dir=3D"auto"><br></div><div dir=3D"auto"><div class=3D"gmai=
+l_quote"><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;borde=
+r-left:1px #ccc solid;padding-left:1ex">
 <br>
-&gt; diff --git a/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-US=
-B-devicetree-nodes.patch b/target/linux/ipq40xx/patches-4.14/077-qcom-ipq40=
-19-add-USB-devicetree-nodes.patch<br>
-&gt; index 44c07f8f45..be413188a7 100644<br>
-&gt; --- a/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devic=
-etree-nodes.patch<br>
-&gt; +++ b/target/linux/ipq40xx/patches-4.14/077-qcom-ipq4019-add-USB-devic=
-etree-nodes.patch<br>
-&gt; @@ -41,7 +41,7 @@ Signed-off-by: John Crispin &lt;<a href=3D"mailto:jo=
-hn@phrozen.org" target=3D"_blank" rel=3D"noreferrer">john@phrozen.org</a>&g=
-t;<br>
-&gt;=C2=A0 =C2=A0};<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY=
+-switch-nodes.patch b/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add=
+-PHY-switch-nodes.patch<br>
+&gt; index 03da6c863a..cc56a60ea3 100644<br>
+&gt; --- a/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch=
+-nodes.patch<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.14/702-dts-ipq4019-add-PHY-switch=
+-nodes.patch<br>
+&gt; @@ -14,7 +14,7 @@ Signed-off-by: Christian Lamparter &lt;<a href=3D"ma=
+ilto:chunkeey@gmail.com" target=3D"_blank" rel=3D"noreferrer">chunkeey@gmai=
+l.com</a>&gt;<br>
+&gt;=C2=A0 <br>
 &gt;=C2=A0 --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
 &gt;=C2=A0 +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
-&gt; -@@ -410,5 +410,79 @@<br>
-&gt; +@@ -414,5 +414,79 @@<br>
+&gt; -@@ -594,6 +594,29 @@<br>
+&gt; +@@ -595,6 +595,29 @@<br>
 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0&quot;legacy&quot;;<br>
+=C2=A0 =C2=A0};<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
+<br>
+Ditto.<br>
+<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-eth=
+ernet-essedma-node.patch b/target/linux/ipq40xx/patches-4.14/711-dts-ipq401=
+9-add-ethernet-essedma-node.patch<br>
+&gt; index 7302d237bc..80b16a8211 100644<br>
+&gt; --- a/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-e=
+ssedma-node.patch<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.14/711-dts-ipq4019-add-ethernet-e=
+ssedma-node.patch<br>
+&gt; @@ -25,7 +25,7 @@ Signed-off-by: Christian Lamparter &lt;<a href=3D"ma=
+ilto:chunkeey@gmail.com" target=3D"_blank" rel=3D"noreferrer">chunkeey@gmai=
+l.com</a>&gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
+&gt;=C2=A0 =C2=A0<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0cpus {<br>
+&gt; -@@ -617,6 +619,64 @@<br>
+&gt; +@@ -618,6 +620,64 @@<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0status =3D &quot;disabled&quot;;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
+<br>
+Ditto.<br>
+<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-re=
+solution-timer.patch b/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-hi=
+gh-resolution-timer.patch<br>
+&gt; new file mode 100644<br>
+&gt; index 0000000000..9d277fa8e0<br>
+&gt; --- /dev/null<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.19/086-ipq40xx-fix-high-resolutio=
+n-timer.patch<br>
+&gt; @@ -0,0 +1,30 @@<br>
+&gt; +From 09f145f417a5d64d6b8d4476699dfb0eccc6c784 Mon Sep 17 00:00:00 200=
+1<br>
+&gt; +From: Pavel Kubelun &lt;<a href=3D"mailto:be.dissent@gmail.com" targe=
+t=3D"_blank" rel=3D"noreferrer">be.dissent@gmail.com</a>&gt;<br>
+&gt; +Date: Tue, 7 May 2019 10:14:05 +0300<br>
+&gt; +Subject: [PATCH] ipq40xx: fix high resolution timer<br>
+&gt; +<br>
+&gt; +Cherry-picked from CAF QSDK repo.<br>
+&gt; +Original commit message:<br>
+&gt; +The kernel is failing in switching the timer for high resolution<br>
+&gt; +mode and clock source operates in 10ms resolution. The always-on<br>
+&gt; +property needs to be given for timer device tree node to make<br>
+&gt; +clock source working in 1ns resolution.<br>
+<br>
+Same as above.<br>
+<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdi=
+o-node.patch b/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-n=
+ode.patch<br>
+&gt; index e5936a0c93..0298644d22 100644<br>
+&gt; --- a/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.=
+patch<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.19/701-dts-ipq4019-add-mdio-node.=
+patch<br>
+&gt; @@ -15,7 +15,7 @@ so the info might change.<br>
+&gt;=C2=A0 <br>
+&gt;=C2=A0 --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
+&gt;=C2=A0 +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
+&gt; -@@ -570,6 +570,34 @@<br>
+&gt; +@@ -571,6 +571,34 @@<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0status =3D &quot;disabled&quot;;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
+<br>
+Ditto.<br>
+<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY=
+-switch-nodes.patch b/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add=
+-PHY-switch-nodes.patch<br>
+&gt; index 7c5d1ec2bb..df95699294 100644<br>
+&gt; --- a/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch=
+-nodes.patch<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.19/702-dts-ipq4019-add-PHY-switch=
+-nodes.patch<br>
+&gt; @@ -14,7 +14,7 @@ Signed-off-by: Christian Lamparter &lt;<a href=3D"ma=
+ilto:chunkeey@gmail.com" target=3D"_blank" rel=3D"noreferrer">chunkeey@gmai=
+l.com</a>&gt;<br>
+&gt;=C2=A0 <br>
+&gt;=C2=A0 --- a/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
+&gt;=C2=A0 +++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi<br>
+&gt; -@@ -598,6 +598,29 @@<br>
+&gt; +@@ -599,6 +599,29 @@<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0};<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
+<br>
+Ditto.<br>
+<br>
+&gt; diff --git a/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-eth=
+ernet-essedma-node.patch b/target/linux/ipq40xx/patches-4.19/711-dts-ipq401=
+9-add-ethernet-essedma-node.patch<br>
+&gt; index 51cf411143..8f7627b048 100644<br>
+&gt; --- a/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-e=
+ssedma-node.patch<br>
+&gt; +++ b/target/linux/ipq40xx/patches-4.19/711-dts-ipq4019-add-ethernet-e=
+ssedma-node.patch<br>
+&gt; @@ -25,7 +25,7 @@ Signed-off-by: Christian Lamparter &lt;<a href=3D"ma=
+ilto:chunkeey@gmail.com" target=3D"_blank" rel=3D"noreferrer">chunkeey@gmai=
+l.com</a>&gt;<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
+&gt;=C2=A0 =C2=A0<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0cpus {<br>
+&gt; -@@ -621,6 +623,64 @@<br>
+&gt; +@@ -622,6 +624,64 @@<br>
 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
 =C2=A0 =C2=A0status =3D &quot;disabled&quot;;<br>
 &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
@@ -232,10 +530,10 @@ t;<br>
 Ditto.<br>
 </blockquote></div></div></div>
 
---000000000000836da10588f07969--
+--000000000000fc4cb50588f08009--
 
 
---===============5493673655000699525==
+--===============2578673559818517778==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -246,5 +544,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5493673655000699525==--
+--===============2578673559818517778==--
 

@@ -2,53 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80CFB1E537
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 00:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A075B1E674
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 03:00:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1gWmRMgjWNn1zmRfmCsZHw2bp/s9EpphQD34dSiUt9Q=; b=frUuu7Q0PMged6YEXrljqUHe9z
-	E5U9a+PdA3F4zh8jm9+5/fSCl36KbAq3OcIAvEJiko0cTGRjgUtTMU8jxQc0CZyiBtWViSbCO8DLM
-	PsDiXvStYj8t+S4cc0/sH2XboQMHjb6esmYjI+AqEM6cO1ESB05CVmnOe5ImEMV17bP8b5FAnlQeV
-	1edyLL83q+tgNwubvxhcCxXRmuZGOnx6zTHfbYTJdSFRIzqVCm6TJyWLB4AJzdcEYasrxf/vAGgzB
-	8dmWM9AUul+oJTJkMNjiFB3xUdQEjfBaezmYuGAMkE1zDh0WWz8+QxiFGWgz40/LAYMfFCGWtM5TR
-	Nj0kaMow==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YMPEOM5ngZu7RhzORlC3yTIMQ3EUkPxLpEMmFyDIAzU=; b=b4cFJJTS9f2ycZ
+	3iyJKme6d7gSoJr/RNe5vAV6bE2AqYhWnXPm1kni1zF3nyryUayDVBMCI4OuHSihXoUSJBgS0Q1AZ
+	lCQ67Mste1mBQJOoSvDteF+LxKESLW2D8H4F3nwPln/kI9FmzIdtq27PURZKvPgzIUSVEujTS3SBr
+	vpVHDZOJmVHiYrop8A38imoyDLBpJdSYvt7FXG5BGNKgMoSHHdrVBKEB0WOZCUIjcLTIuBR1uUSp4
+	UpuDvdl48p0Crr7MCdoVTFEtojq3Vx4qlfMCBvAKhOejxTk+BxZZRUNOW2GU3nLgQPmsJryOlXGqL
+	Hbqdv7r9sAqeBzQ2WHIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQg63-0001Tx-B6; Tue, 14 May 2019 22:40:31 +0000
-Received: from mx.allycomm.com ([138.68.30.55])
+	id 1hQiHb-0004hh-Ep; Wed, 15 May 2019 01:00:35 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQg5u-0001Sk-QU
- for openwrt-devel@lists.openwrt.org; Tue, 14 May 2019 22:40:24 +0000
-Received: from allycomm.com (inet.guidewire.com [199.91.42.30])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id 9B1713BB6E;
- Tue, 14 May 2019 15:40:17 -0700 (PDT)
-From: Jeff Kletsky <lede@allycomm.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 14 May 2019 15:39:56 -0700
-Message-Id: <20190514223956.19663-4-lede@allycomm.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190514223956.19663-1-lede@allycomm.com>
-References: <20190514223956.19663-1-lede@allycomm.com>
+ id 1hQiHR-0004hA-4K
+ for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 01:00:30 +0000
+Received: by mail-pl1-x641.google.com with SMTP id w7so449246plz.1
+ for <openwrt-devel@lists.openwrt.org>; Tue, 14 May 2019 18:00:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tXk+0T8Ie3jt/MtD6x4HubfT79T5S8/Nu3BF894jPvQ=;
+ b=EhFdncwcjxm9eo+Y+dIudQEcjI5UuaH6bYzFDtD8yCD9+h1EnRKRZgdkrGIuWMJKsa
+ ezbsDyOzQS7jdhqmGVhWtv5F5fI4YrEEP1UtT4Lu9xmBRY7tK/BoZF0aNsTZr3JaMAsW
+ fVoiPFgsOe5gT/HxsIFAl5U6sW68BlX4RGXibD4nFm7sIhEEuDNQklLkEOijw7FrFPFK
+ wLQUOv9NyPWYuRkJ/86l0F8c2vlNCj/wvhoKizbr+ljIcabCJz/waXAWWP+LqGklYlsh
+ DqtK7SolWwrZ6rHOIV+pJV+p4VdLM2BCp2lWJREqWOHWrL1lDrwLqc9nWKy0mG/jxSOB
+ h8iA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tXk+0T8Ie3jt/MtD6x4HubfT79T5S8/Nu3BF894jPvQ=;
+ b=sWTyK+evl0AIoP64xnV8vsS+DCKTJ8CtMpFkZzQqCEUzGhOzXGMJu3suzSjl6TLvjK
+ T4TBL1URPOQD3QO9a9Giokv7I2wUZmpL4YGu3acHpT56QZ2J4bK2aza3hqhoE8QWXMvN
+ gmEzrKDGwH6qcwN2pS+ddXrRN8yX3pKWFBi56/0Iz1Eb3vPh0DQvLAcPQaC97r0lwFix
+ cUu7JQUxNj6hgFrxEJCAGam6fgt1FcXx5lkixhW4QG/QNucQWbYtTZdUSzy/fHSgGO4j
+ pgycQkYQtXCcgSg5aVaFclmuPHB4T3/krtvmfOkzqDUGE0V7B/G9B7GcHAPFqx68ju82
+ 9gPg==
+X-Gm-Message-State: APjAAAUxjl+FlkWgXvAewsy6Q73VaqwGPm2guDbSDDCJUjs4wkCJFcfs
+ VhC2a4jPV/0E8Cya/Wn2uqXggjMLMTFf4TBmEg==
+X-Google-Smtp-Source: APXvYqxJleIVcquk2xK6Pbr8NN/F8uPij+WrjKOA8DLz0vij2ojBolBjBeQ4gRxEHf9waurjvIUey+VWb+4DMTAFVmU=
+X-Received: by 2002:a17:902:322:: with SMTP id
+ 31mr28349798pld.204.1557882024206; 
+ Tue, 14 May 2019 18:00:24 -0700 (PDT)
 MIME-Version: 1.0
+References: <CAPGJ1o-fdnMVqoSL-8jDQUQJqBzzFDWttTPomFvm30R=iM-fkQ@mail.gmail.com>
+ <8244904.XkRuOMmhsn@bentobox>
+In-Reply-To: <8244904.XkRuOMmhsn@bentobox>
+From: Sam Samy <to.swami1@gmail.com>
+Date: Tue, 14 May 2019 18:00:12 -0700
+Message-ID: <CAPGJ1o9Pkp1QDbk2RpRhj0Uqgte+BOkYdj9cQmNphiHu9azRaA@mail.gmail.com>
+To: Sven Eckelmann <sven@narfation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_154022_876480_78DF2203 
-X-CRM114-Status: GOOD (  19.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190514_180025_172468_84564B4F 
+X-CRM114-Status: GOOD (  20.43  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [138.68.30.55 listed in list.dnswl.org]
-Subject: [OpenWrt-Devel] [PATCH 3/3] ath79: Extend GL.iNet AR750S support to
- NAND file system
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (to.swami1[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (to.swami1[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] ath10k TPC reg. domain incorrect?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,501 +94,78 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Ben Greear <greearb@candelatech.com>, openwrt-devel@lists.openwrt.org,
+ Marius Genheimer <mail@f0wl.cc>, Kalle Valo <kvalo@qca.qualcomm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Jeff Kletsky <git-commits@allycomm.com>
+> Yes, the implemented method for reading the data is not correct for the
+> wave 2 cards (and maybe also other). You can try the attached hack. At
+> least this worked in 2017 when I've poked around in the stuff with
+> Christian Lamparter.
 
-The GL.iNet AR750S ("Slate") is a dual-band, compact "travel router"
-which has previously been supported by OpenWrt with only its NOR flash
-accessible.
+Latest code already seem to be doing this.
 
-This ports the device to both NOR and NAND flash using the
-upstream SPI NAND framework available in Linux 4.19
+Thanks
 
-Device Highlights
-
-    * QCA9563 at 775 MHz
-    * QCA9887
-    * External antennas (2x)
-    * 128 MB DDR RAM
-    * 16 MB SPI NOR flash
-    * 128 MB SPI NAND flash
-    * 3x GigE ports
-    * USB 2 port
-    * microSD (USB-attached)
-    * One button, one switch
-    * I2C and serial headers
-    * OEM U-Boot supplies HTTP/GUI access
-    * Runs off 5 V supplied over microUSB
-
-Implementation Notes
-====================
-
-Both the NOR and NAND variants boot off a NOR-based kernel,
-consistent with the OEM's firmware.
-
-The mode LEDs are
-
-    * Boot, Running   power
-    * Failsafe        2G
-    * Upgrade         5G
-
-Installation
-============
-
-Using sysupgrade
-----------------
-
-sysupgrade may be used to install a NAND image on a device running
-a NAND image or a NOR image on a device running a NOR image. It is
-recommended to *not* preserve config when upgrading from OEM firmware
-or previous versions of OpenWrt. No supported sysupgrade path should
-require "force". Transitioning from NOR to NAND can be accomplished
-using U-Boot.
-
-To glinet_ar750s-nand:
-
-    gl-ar750s          OEM NAND, Self-built from OEM source NAND
-
-To glinet_ar750s-nor:
-
-    gl-ar750s          Self-built from OEM source NOR
-    glinet_gl-ar750s   OpenWrt NOR (prior builds)
-
-Using U-Boot
-------------
-
-The OEM U-Boot can be put into a graphical, firmware-upload mode by
-holding down the button on the side of the router while applying power
-and for a bit more than five seconds following with the current OEM
-U-Boot. The power LED will come on, then the 5G LED will flash five
-times, about once a second.  When the 5G LED stops flashing and the
-2G LED lights solid, the router's U-Boot will provide an upload page
-at http://192.168.1.1/ Either a browser may be used to upload an image,
-or a utility such as curl may be used:
-
-    curl -X POST -F gl_firmware=\@*-nand-squashfs-factory.img \
-         http://192.168.1.1/index.html
-or
-    curl -X POST -F gl_firmware=\@*-nor-squashfs-sysupgrade.bin \
-         http://192.168.1.1/index.html
-
-Note that NOR vs. NAND is based on the file name extension.
-
-Serial & I2C Access
-===================
-
-Serial access is *not* required to flash or enter U-Boot recovery.
-
-Serial is configured for 115200, 8n1. 3.3 V logic levels are compatible.
-
-Warning:  5 V ("TTL") or RS232 levels can cause permananent damage.
-
-The board has well-labled (unpopulated) headers for serial and I2C
-along the front edge of the board (the edge with the LEDs). Looking
-from the top, rear of the unit (behind Ethernet jacks)
-
-     -------------------------------------------
-          5G_LED        2G_LED      PWR_LED
-
-                    O O O O O O O
-
-                    3 S S G T R G
-		    V C D N X X N
-		    3 L A D     D
-
-Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
----
- package/boot/uboot-envtools/files/ath79       |   1 +
- .../ath79/base-files/etc/board.d/01_leds      |   4 +
- .../ath79/base-files/etc/board.d/02_network   |   2 +-
- .../etc/hotplug.d/firmware/11-ath10k-caldata  |   2 +-
- .../ath79/base-files/lib/upgrade/platform.sh  |  23 +++-
- .../dts/qca9563_glinet_gl-ar750s-nand.dts     |  10 ++
- .../dts/qca9563_glinet_gl-ar750s-nor.dts      |  15 +++
- ...750s.dts => qca9563_glinet_gl-ar750s.dtsi} | 109 +++++++++++++-----
- target/linux/ath79/image/generic.mk           |   6 +-
- target/linux/ath79/image/nand.mk              |  15 +++
- 10 files changed, 152 insertions(+), 35 deletions(-)
- create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nand.dts
- create mode 100644 target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nor.dts
- rename target/linux/ath79/dts/{qca9563_glinet_gl-ar750s.dts => qca9563_glinet_gl-ar750s.dtsi} (64%)
-
-diff --git a/package/boot/uboot-envtools/files/ath79 b/package/boot/uboot-envtools/files/ath79
-index 2144f61070..faa5c501f3 100644
---- a/package/boot/uboot-envtools/files/ath79
-+++ b/package/boot/uboot-envtools/files/ath79
-@@ -19,6 +19,7 @@ buffalo,wzr-hp-ag300h)
- buffalo,bhr-4grv2|\
- glinet,gl-ar300m-nand|\
- glinet,gl-ar300m-nor|\
-+glinet,gl-ar750s-*|\
- librerouter,librerouter-v1|\
- netgear,ex6400|\
- netgear,ex7300|\
-diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
-index 9c353baabe..c974c12d14 100755
---- a/target/linux/ath79/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/base-files/etc/board.d/01_leds
-@@ -78,6 +78,10 @@ glinet,gl-ar300m-nor)
- glinet,gl-ar300m-lite)
- 	ucidef_set_led_netdev "lan" "LAN" "gl-ar300m-lite:green:lan" "eth0"
- 	;;
-+glinet,gl-ar750s-*)
-+	ucidef_set_led_netdev "wlan2g" "WLAN 2G" "gl-ar750s:green:wlan2g"
-+	ucidef_set_led_netdev "wlan5g" "WLAN 5G" "gl-ar750s:green:wlan5g"
-+	;;
- glinet,gl-x750)
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth0"
- 	;;
-diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-index f877669f98..f1f8a11f81 100755
---- a/target/linux/ath79/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/base-files/etc/board.d/02_network
-@@ -114,7 +114,7 @@ ath79_setup_interfaces()
- 	etactica,eg200)
- 		ucidef_set_interface_lan "eth0" "dhcp"
- 		;;
--	glinet,gl-ar750s)
-+	glinet,gl-ar750s-*)
- 		ucidef_add_switch "switch0" \
- 			"0@eth0" "2:lan:2" "3:lan:1" "1:wan"
- 		;;
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-index fc3f7142bb..34248039b6 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-@@ -109,7 +109,7 @@ case "$FIRMWARE" in
- 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +1)
- 		;;
- 	engenius,ews511ap|\
--	glinet,gl-ar750s|\
-+	glinet,gl-ar750s-*|\
- 	glinet,gl-x750|\
- 	tplink,re450-v2)
- 		ath10kcal_extract "art" 20480 2116
-diff --git a/target/linux/ath79/base-files/lib/upgrade/platform.sh b/target/linux/ath79/base-files/lib/upgrade/platform.sh
-index c2fe08154d..aa46a03555 100644
---- a/target/linux/ath79/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/ath79/base-files/lib/upgrade/platform.sh
-@@ -1,3 +1,4 @@
-+#!/bin/sh
- #
- # Copyright (C) 2011 OpenWrt.org
- #
-@@ -32,14 +33,34 @@ redboot_fis_do_upgrade() {
- 	fi
- }
- 
-+
-+# During image creation the "board name" is of the format mfgr_board-name
-+# However, on a running device it is of the format mfgr,board-name
-+
-+comma_to_underscore() {
-+	echo "${1%%,*}_${1#*,}"
-+}
-+
- platform_check_image() {
--	return 0
-+	local board=$(board_name)
-+
-+	case "$board" in
-+	glinet,gl-ar750s-nand)
-+		nand_do_platform_check "$(comma_to_underscore "$board")" "$IMAGE"
-+		;;
-+	*)
-+		return 0
-+		;;
-+	esac
- }
- 
- platform_do_upgrade() {
- 	local board=$(board_name)
- 
- 	case "$board" in
-+	glinet,gl-ar750s-nand)
-+		nand_do_upgrade "$ARGV"
-+		;;
- 	jjplus,ja76pf2)
- 		redboot_fis_do_upgrade "$ARGV" linux
- 		;;
-diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nand.dts b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nand.dts
-new file mode 100644
-index 0000000000..3d5947d441
---- /dev/null
-+++ b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nand.dts
-@@ -0,0 +1,10 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "qca9563_glinet_gl-ar750s.dtsi"
-+
-+/ {
-+	compatible = "glinet,gl-ar750s-nand", "qca,qca9563";
-+};
-+
-+/delete-node/ &nor_firmware;
-diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nor.dts b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nor.dts
-new file mode 100644
-index 0000000000..37e50d71f6
---- /dev/null
-+++ b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s-nor.dts
-@@ -0,0 +1,15 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "qca9563_glinet_gl-ar750s.dtsi"
-+
-+/ {
-+	compatible = "glinet,gl-ar750s-nor", "qca,qca9563";
-+};
-+
-+/delete-node/ &nor_kernel;
-+/delete-node/ &nor_rootfs;
-+
-+&nand_ubi {
-+	label = "nand_ubi";
-+};
-diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi
-similarity index 64%
-rename from target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts
-rename to target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi
-index 378de5de90..e38879182e 100644
---- a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts
-+++ b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi
-@@ -15,10 +15,10 @@
- 	};
- 
- 	aliases {
--		led-boot = &power;
--		led-failsafe = &power;
--		led-running = &power;
--		led-upgrade = &power;
-+		led-boot = &led_power;
-+		led-failsafe = &led_wlan2g;
-+		led-running = &led_power;
-+		led-upgrade = &led_wlan5g;
- 	};
- 
- 	keys {
-@@ -44,36 +44,48 @@
- 	leds {
- 		compatible = "gpio-leds";
- 
--		power: power {
-+		led_power: power {
- 			label = "gl-ar750s:green:power";
- 			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
- 			default-state = "keep";
- 		};
- 
--		wlan2g {
-+		led_wlan2g: wlan2g {
- 			label = "gl-ar750s:green:wlan2g";
- 			gpios = <&gpio 19 GPIO_ACTIVE_LOW>;
- 			linux,default-trigger = "phy1tpt";
- 		};
- 
--		wlan5g {
-+		led_wlan5g: wlan5g {
- 			label = "gl-ar750s:green:wlan5g";
- 			gpios = <&gpio 20 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "phy0tpt";
- 		};
- 	};
-+
-+	i2c@0 {
-+		compatible = "i2c-gpio";
-+
-+		sda-gpios = <&gpio  5 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-+		scl-gpios = <&gpio 21 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-+		i2c-gpio,delay-us = <2>;	/* ~100 kHz */
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+	};
- };
- 
- &spi {
- 	status = "okay";
--	num-cs = <0>;
- 
--	flash@0 {
-+	num-cs = <2>;
-+	cs-gpios = <0>, <0>;
-+
-+	flash_nor: flash@0 {
- 		compatible = "jedec,spi-nor";
- 		reg = <0>;
- 		spi-max-frequency = <25000000>;
- 
--		partitions {
-+		nor_partitions: partitions {
- 			compatible = "fixed-partitions";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
-@@ -95,40 +107,61 @@
- 				read-only;
- 			};
- 
--			partition@60000 {
-+			nor_firmware: partition@60000 {
- 				compatible = "denx,uimage";
- 				label = "firmware";
- 				reg = <0x060000 0xfa0000>;
- 			};
-+
-+			nor_kernel: partition_alt@60000 {
-+				label = "kernel";
-+				reg = <0x060000 0x200000>;
-+			};
-+
-+			nor_rootfs: parition_alt@260000 {
-+				label = "nor_rootfs";
-+				reg = <0x260000 0xda0000>;
-+			};
- 		};
- 	};
--};
- 
--&pcie {
--	status = "okay";
--};
-+	flash_nand: flash@1 {
-+		compatible = "spi-nand";
-+		reg = <1>;
-+		spi-max-frequency = <25000000>;
- 
--&uart {
--	status = "okay";
-+		nand_partitions: partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			nand_ubi: partition@0 {
-+				label = "ubi";
-+				reg = <0x000000 0x8000000>;
-+			};
-+		};
-+	};
- };
- 
--&usb0 {
--	#address-cells = <1>;
--	#size-cells = <0>;
-+&eth0 {
- 	status = "okay";
- 
--	hub_port: port@1 {
--		reg = <1>;
--		#trigger-source-cells = <0>;
--	};
-+	phy-handle = <&phy0>;
-+	mtd-mac-address = <&art 0x0>;
- };
- 
--&usb_phy0 {
--	status = "okay";
-+&gpio {
-+	usb_power {
-+		gpio-hog;
-+		gpios = <7 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+		line-name = "usb-power";
-+	};
- };
- 
- &mdio0 {
- 	status = "okay";
-+
- 	phy-mask = <0>;
- 
- 	phy0: ethernet-phy@0 {
-@@ -141,15 +174,33 @@
- 	};
- };
- 
--&eth0 {
-+&pcie {
- 	status = "okay";
-+};
- 
--	mtd-mac-address = <&art 0x0>;
--	phy-handle = <&phy0>;
-+&uart {
-+	status = "okay";
-+};
-+
-+&usb0 {
-+	status = "okay";
-+};
-+
-+&usb1 {
-+	status = "okay";
-+};
-+
-+&usb_phy0 {
-+	status = "okay";
-+};
-+
-+&usb_phy1 {
-+	status = "okay";
- };
- 
- &wmac {
- 	status = "okay";
-+
- 	mtd-cal-data = <&art 0x1000>;
- 	mtd-mac-address = <&art 0x1002>;
- };
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 8e162e1d0e..0982a80460 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -360,14 +360,14 @@ define Device/glinet_gl-ar300m-nor
- endef
- TARGET_DEVICES += glinet_gl-ar300m-nor
- 
--define Device/glinet_gl-ar750s
-+define Device/glinet_gl-ar750s-nor
-   ATH_SOC := qca9563
-   DEVICE_TITLE := GL.iNet GL-AR750S
-   DEVICE_PACKAGES := kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
-   IMAGE_SIZE := 16000k
--  SUPPORTED_DEVICES += gl-ar750s
-+  SUPPORTED_DEVICES += gl-ar750s glinet_gl-ar750s
- endef
--TARGET_DEVICES += glinet_gl-ar750s
-+TARGET_DEVICES += glinet_gl-ar750s-nor
- 
- define Device/glinet_gl-x750
-   ATH_SOC := qca9531
-diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
-index e69de29bb2..7db5f51c98 100644
---- a/target/linux/ath79/image/nand.mk
-+++ b/target/linux/ath79/image/nand.mk
-@@ -0,0 +1,15 @@
-+define Device/glinet_gl-ar750s-nand
-+  ATH_SOC := qca9563
-+  DEVICE_TITLE := GL.iNet GL-AR750S
-+  DEVICE_PACKAGES := kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct kmod-i2c-gpio
-+  KERNEL_SIZE := 2048k
-+  BLOCKSIZE := 128k
-+  PAGESIZE := 2048
-+  VID_HDR_OFFSET := 2048
-+  IMAGES += factory.img
-+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-+  IMAGE/factory.img := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
-+  SUPPORTED_DEVICES += gl-ar750s
-+endef
-+TARGET_DEVICES += glinet_gl-ar750s-nand
-+
--- 
-2.20.1
-
+On Tue, May 14, 2019 at 1:33 AM Sven Eckelmann <sven@narfation.org> wrote:
+>
+> On Monday, 13 May 2019 22:58:00 CEST Sam Samy wrote:
+> >  I installed master branch openwrt onto Asus MAP-AC2200 AP. It has tri
+> > band. Its based on IPQ4019 DK04 QCA reference platform. 2 radios
+> > (2Ghz/5Ghz) on AHB bus and one 5GHZ on PCIe bus. Its generally working
+> > fine except one problem in 5Ghz. On both the 5Ghz radios the RSSI is
+> > pretty low on any 5Ghz channel I put it in.  In one feet range I see -60dB
+> > RSSI, where as the stock firmware that came with the AP gives an RSSI
+> > of -36dB at one foot distance.The downstream transmit rates are MCS8/9
+> > for most part. The 2Ghz is working fine.
+>
+> It could be the boarddata which contains more than the targetpower and CTLs
+> (and thus not necessarily visible in tpc_stats). As first check, test whether
+> your board-2.bin has the md5sum 34c1e73e609a27eb9848fdc89cbc2be7 for
+> /lib/firmware/ath10k/QCA4019/hw1.0/board-2.bin. Also check that the correct
+> BDF (with the variant string is loaded). But this should only affect
+> the QCA4019 5GHz PHY because the QCA9886 boarddata is generated here using the
+> pre-cal data from art (unsure whether this is valid or not for this board and
+> bootup sequence).
+>
+> You can just check with the ath10k-bdencoder [0] from qca-swiss-army-knife
+> whether the board files from board-2.bin are the ones which also your stock
+> firmware is loading.
+>
+> The next big problem are filters in the rx/tx chains [1]. The ieee80211-freq-
+> limit in the DTS file should assist you and not allow you to chose the wrong
+> channel/frequency for a specific PHY. But maybe the author accidentally
+> switched the settings in the board and actually wanted the lower 5GHz channels
+> on the SoC 5GHz PHY and the the upper 5GHz channels on the PCIe card? This
+> would be at least worth a try.
+>
+> > What is the reg. domains 0x20 and 0x58 value points to?
+>
+> It is 20 (0x14) and not 0x20. Same for 58 (0x3a)
+>
+> Btw. the regd numbers from QCA can be checked in regd_common.h [2]. The
+> mapping in regDomainPairs is not necessarily correct because someone has to
+> take them from the newest proprietary driver and use them to update the ath*k
+> stuff.
+>
+> >   Looks like ./sys/kernel/debug/ieee80211/phy2/ath10k/cal_data is junk
+> > for both the 5Ghz radios even though the
+> > pre-cal-pci-0000:01:00.0.bin/pre-cal-ahb-a800000.wifi.bin is correct.
+>
+> Yes, the implemented method for reading the data is not correct for the
+> wave 2 cards (and maybe also other). You can try the attached hack. At
+> least this worked in 2017 when I've poked around in the stuff with
+> Christian Lamparter.
+>
+> Kind regards,
+>         Sven
+>
+> [0] https://github.com/qca/qca-swiss-army-knife/blob/master/tools/scripts/ath10k/ath10k-bdencoder
+> [1] https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=41a86debe3c0a01e075e749d0bb1c6d631e35c32
+> [2] https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/tree/drivers/net/wireless/ath/regd_common.h?id=5fad78689a9229d08ea11af53e48de3c2a845ea3#n29
 
 _______________________________________________
 openwrt-devel mailing list

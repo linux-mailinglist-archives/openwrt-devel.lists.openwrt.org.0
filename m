@@ -2,87 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A075B1E674
-	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 03:00:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A41C91E9CC
+	for <lists+openwrt-devel@lfdr.de>; Wed, 15 May 2019 10:07:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YMPEOM5ngZu7RhzORlC3yTIMQ3EUkPxLpEMmFyDIAzU=; b=b4cFJJTS9f2ycZ
-	3iyJKme6d7gSoJr/RNe5vAV6bE2AqYhWnXPm1kni1zF3nyryUayDVBMCI4OuHSihXoUSJBgS0Q1AZ
-	lCQ67Mste1mBQJOoSvDteF+LxKESLW2D8H4F3nwPln/kI9FmzIdtq27PURZKvPgzIUSVEujTS3SBr
-	vpVHDZOJmVHiYrop8A38imoyDLBpJdSYvt7FXG5BGNKgMoSHHdrVBKEB0WOZCUIjcLTIuBR1uUSp4
-	UpuDvdl48p0Crr7MCdoVTFEtojq3Vx4qlfMCBvAKhOejxTk+BxZZRUNOW2GU3nLgQPmsJryOlXGqL
-	Hbqdv7r9sAqeBzQ2WHIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=v2tJTyL6zZ3v5f4W9UALZ47NbXTkzEIWjux+12kE7Bo=; b=XqzKi65CdiIm1DyxMTzDzw8zOp
+	Hwa8fGdSuRGSjmp02FiQra7p87SU1m8PBB4kQaHS80QI/mVkTVJ0KK94D/lsseu8rnqCwYr+ruMbs
+	doOwjP0vJj6pNCKQDP/z6z2vKfy71NZFUdMGxOy+fMYWtXiVPcrZStMz+F9jDWTxGVIHhkMFOldCm
+	q/mXCqFVoCwzMBgFxx/OXCSiOHbSn2LRoeFtYX8sg8M8GQWqOdP1D1Y22g+ytELbDMskqOqKUUSGm
+	PIUXFTLe49wTgCORk9BESZC4ArqXNEktcaAp61+v+99vXpmlQGK2g7+bmYWXqfJYtUIo/DdUU5GqO
+	W3LmCwxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQiHb-0004hh-Ep; Wed, 15 May 2019 01:00:35 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hQowE-0002ye-FH; Wed, 15 May 2019 08:06:58 +0000
+Received: from mail-out.xnet.cz ([82.113.55.122])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQiHR-0004hA-4K
- for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 01:00:30 +0000
-Received: by mail-pl1-x641.google.com with SMTP id w7so449246plz.1
- for <openwrt-devel@lists.openwrt.org>; Tue, 14 May 2019 18:00:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tXk+0T8Ie3jt/MtD6x4HubfT79T5S8/Nu3BF894jPvQ=;
- b=EhFdncwcjxm9eo+Y+dIudQEcjI5UuaH6bYzFDtD8yCD9+h1EnRKRZgdkrGIuWMJKsa
- ezbsDyOzQS7jdhqmGVhWtv5F5fI4YrEEP1UtT4Lu9xmBRY7tK/BoZF0aNsTZr3JaMAsW
- fVoiPFgsOe5gT/HxsIFAl5U6sW68BlX4RGXibD4nFm7sIhEEuDNQklLkEOijw7FrFPFK
- wLQUOv9NyPWYuRkJ/86l0F8c2vlNCj/wvhoKizbr+ljIcabCJz/waXAWWP+LqGklYlsh
- DqtK7SolWwrZ6rHOIV+pJV+p4VdLM2BCp2lWJREqWOHWrL1lDrwLqc9nWKy0mG/jxSOB
- h8iA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tXk+0T8Ie3jt/MtD6x4HubfT79T5S8/Nu3BF894jPvQ=;
- b=sWTyK+evl0AIoP64xnV8vsS+DCKTJ8CtMpFkZzQqCEUzGhOzXGMJu3suzSjl6TLvjK
- T4TBL1URPOQD3QO9a9Giokv7I2wUZmpL4YGu3acHpT56QZ2J4bK2aza3hqhoE8QWXMvN
- gmEzrKDGwH6qcwN2pS+ddXrRN8yX3pKWFBi56/0Iz1Eb3vPh0DQvLAcPQaC97r0lwFix
- cUu7JQUxNj6hgFrxEJCAGam6fgt1FcXx5lkixhW4QG/QNucQWbYtTZdUSzy/fHSgGO4j
- pgycQkYQtXCcgSg5aVaFclmuPHB4T3/krtvmfOkzqDUGE0V7B/G9B7GcHAPFqx68ju82
- 9gPg==
-X-Gm-Message-State: APjAAAUxjl+FlkWgXvAewsy6Q73VaqwGPm2guDbSDDCJUjs4wkCJFcfs
- VhC2a4jPV/0E8Cya/Wn2uqXggjMLMTFf4TBmEg==
-X-Google-Smtp-Source: APXvYqxJleIVcquk2xK6Pbr8NN/F8uPij+WrjKOA8DLz0vij2ojBolBjBeQ4gRxEHf9waurjvIUey+VWb+4DMTAFVmU=
-X-Received: by 2002:a17:902:322:: with SMTP id
- 31mr28349798pld.204.1557882024206; 
- Tue, 14 May 2019 18:00:24 -0700 (PDT)
+ id 1hQow7-0002yK-96
+ for openwrt-devel@lists.openwrt.org; Wed, 15 May 2019 08:06:53 +0000
+Received: from smtp-out.xnet.cz (smtp-out.xnet.cz [178.217.244.18])
+ by mail-out.xnet.cz (8.15.2/8.15.2) with ESMTPS id x4F85LXD014556
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Wed, 15 May 2019 10:05:21 +0200 (CEST) (envelope-from ynezz@true.cz)
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 36DA03C91;
+ Wed, 15 May 2019 10:05:18 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 89c357a1;
+ Wed, 15 May 2019 10:05:16 +0200 (CEST)
+Date: Wed, 15 May 2019 10:05:16 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Jeff Kletsky <lede@allycomm.com>
+Message-ID: <20190515080516.GG93050@meh.true.cz>
+References: <20190514223956.19663-1-lede@allycomm.com>
+ <20190514223956.19663-3-lede@allycomm.com>
 MIME-Version: 1.0
-References: <CAPGJ1o-fdnMVqoSL-8jDQUQJqBzzFDWttTPomFvm30R=iM-fkQ@mail.gmail.com>
- <8244904.XkRuOMmhsn@bentobox>
-In-Reply-To: <8244904.XkRuOMmhsn@bentobox>
-From: Sam Samy <to.swami1@gmail.com>
-Date: Tue, 14 May 2019 18:00:12 -0700
-Message-ID: <CAPGJ1o9Pkp1QDbk2RpRhj0Uqgte+BOkYdj9cQmNphiHu9azRaA@mail.gmail.com>
-To: Sven Eckelmann <sven@narfation.org>
+Content-Disposition: inline
+In-Reply-To: <20190514223956.19663-3-lede@allycomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_180025_172468_84564B4F 
-X-CRM114-Status: GOOD (  20.43  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190515_010651_632336_1627037A 
+X-CRM114-Status: GOOD (  14.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (to.swami1[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (to.swami1[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] ath10k TPC reg. domain incorrect?
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: Prepare nand subtarget for
+ SPI-NAND boards under Linux 4.19
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,78 +67,125 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Ben Greear <greearb@candelatech.com>, openwrt-devel@lists.openwrt.org,
- Marius Genheimer <mail@f0wl.cc>, Kalle Valo <kvalo@qca.qualcomm.com>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org,
+ "Marty E. Plummer" <hanetzer@startmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-> Yes, the implemented method for reading the data is not correct for the
-> wave 2 cards (and maybe also other). You can try the attached hack. At
-> least this worked in 2017 when I've poked around in the stuff with
-> Christian Lamparter.
+Jeff Kletsky <lede@allycomm.com> [2019-05-14 15:39:55]:
 
-Latest code already seem to be doing this.
+[ adding Marty (author of ar300m-nand support) to the Cc loop ]
 
-Thanks
+>   * Removed non-functional GL.iNet AR300M NAND target
 
-On Tue, May 14, 2019 at 1:33 AM Sven Eckelmann <sven@narfation.org> wrote:
->
-> On Monday, 13 May 2019 22:58:00 CEST Sam Samy wrote:
-> >  I installed master branch openwrt onto Asus MAP-AC2200 AP. It has tri
-> > band. Its based on IPQ4019 DK04 QCA reference platform. 2 radios
-> > (2Ghz/5Ghz) on AHB bus and one 5GHZ on PCIe bus. Its generally working
-> > fine except one problem in 5Ghz. On both the 5Ghz radios the RSSI is
-> > pretty low on any 5Ghz channel I put it in.  In one feet range I see -60dB
-> > RSSI, where as the stock firmware that came with the AP gives an RSSI
-> > of -36dB at one foot distance.The downstream transmit rates are MCS8/9
-> > for most part. The 2Ghz is working fine.
->
-> It could be the boarddata which contains more than the targetpower and CTLs
-> (and thus not necessarily visible in tpc_stats). As first check, test whether
-> your board-2.bin has the md5sum 34c1e73e609a27eb9848fdc89cbc2be7 for
-> /lib/firmware/ath10k/QCA4019/hw1.0/board-2.bin. Also check that the correct
-> BDF (with the variant string is loaded). But this should only affect
-> the QCA4019 5GHz PHY because the QCA9886 boarddata is generated here using the
-> pre-cal data from art (unsure whether this is valid or not for this board and
-> bootup sequence).
->
-> You can just check with the ath10k-bdencoder [0] from qca-swiss-army-knife
-> whether the board files from board-2.bin are the ones which also your stock
-> firmware is loading.
->
-> The next big problem are filters in the rx/tx chains [1]. The ieee80211-freq-
-> limit in the DTS file should assist you and not allow you to chose the wrong
-> channel/frequency for a specific PHY. But maybe the author accidentally
-> switched the settings in the board and actually wanted the lower 5GHz channels
-> on the SoC 5GHz PHY and the the upper 5GHz channels on the PCIe card? This
-> would be at least worth a try.
->
-> > What is the reg. domains 0x20 and 0x58 value points to?
->
-> It is 20 (0x14) and not 0x20. Same for 58 (0x3a)
->
-> Btw. the regd numbers from QCA can be checked in regd_common.h [2]. The
-> mapping in regDomainPairs is not necessarily correct because someone has to
-> take them from the newest proprietary driver and use them to update the ath*k
-> stuff.
->
-> >   Looks like ./sys/kernel/debug/ieee80211/phy2/ath10k/cal_data is junk
-> > for both the 5Ghz radios even though the
-> > pre-cal-pci-0000:01:00.0.bin/pre-cal-ahb-a800000.wifi.bin is correct.
->
-> Yes, the implemented method for reading the data is not correct for the
-> wave 2 cards (and maybe also other). You can try the attached hack. At
-> least this worked in 2017 when I've poked around in the stuff with
-> Christian Lamparter.
->
-> Kind regards,
->         Sven
->
-> [0] https://github.com/qca/qca-swiss-army-knife/blob/master/tools/scripts/ath10k/ath10k-bdencoder
-> [1] https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=41a86debe3c0a01e075e749d0bb1c6d631e35c32
-> [2] https://git.kernel.org/pub/scm/linux/kernel/git/kvalo/ath.git/tree/drivers/net/wireless/ath/regd_common.h?id=5fad78689a9229d08ea11af53e48de3c2a845ea3#n29
+you've probably missed some parts:
+
+ package/boot/uboot-envtools/files/ath79:glinet,gl-ar300m-nand|\
+ target/linux/ath79/base-files/etc/board.d/01_leds:glinet,gl-ar300m-nand|\
+ target/linux/ath79/base-files/etc/board.d/02_network:   glinet,gl-ar300m-nand|\
+ target/linux/ath79/dts/qca9531_glinet_gl-ar300m-nand.dts:       compatible = "glinet,gl-ar300m-nand", "qca,qca9531";
+
+could you please make this ar300m-nand removal separate commit (probably first
+in the series) and add Marty to the Cc?
+
+ Cc: Marty E. Plummer <hanetzer@startmail.com>
+ Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
+
+It would be nice to make him aware about this possible device removal as he
+might be interested in fixing of support for this device or in the other case,
+he can possibly give you his Acked-by/Reviewed-by tag.
+
+> ---
+>  target/linux/ath79/image/nand.mk       | 13 -----------
+>  target/linux/ath79/nand/config-default | 32 +++++++++++++++-----------
+>  target/linux/ath79/nand/target.mk      | 10 +++++---
+>  3 files changed, 26 insertions(+), 29 deletions(-)
+> 
+> diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
+> index eee419194b..e69de29bb2 100644
+> --- a/target/linux/ath79/image/nand.mk
+> +++ b/target/linux/ath79/image/nand.mk
+> @@ -1,13 +0,0 @@
+> -define Device/glinet_gl-ar300m-nand
+> -  ATH_SOC := qca9531
+> -  DEVICE_TITLE := GL-AR300M (NAND)
+> -  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-storage kmod-usb-ledtrig-usbport
+> -  KERNEL_SIZE := 2048k
+> -  BLOCKSIZE := 128k
+> -  PAGESIZE := 2048
+> -  VID_HDR_OFFSET := 512
+> -  IMAGES += factory.ubi
+> -  IMAGE/sysupgrade.bin := sysupgrade-tar
+> -  IMAGE/factory.ubi := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
+> -endef
+> -TARGET_DEVICES += glinet_gl-ar300m-nand
+> diff --git a/target/linux/ath79/nand/config-default b/target/linux/ath79/nand/config-default
+> index 738c29c9b1..05a5a8dbd0 100644
+> --- a/target/linux/ath79/nand/config-default
+> +++ b/target/linux/ath79/nand/config-default
+> @@ -1,14 +1,20 @@
+> -CONFIG_BCH=y
+> -CONFIG_MTD_NAND=y
+> -CONFIG_MTD_NAND_BCH=y
+> -CONFIG_MTD_NAND_ECC=y
+> -CONFIG_MTD_NAND_ECC_BCH=y
+> -CONFIG_MTD_SPINAND_MT29F=y
+> -CONFIG_MTD_SPINAND_ONDIEECC=y
+> +CONFIG_BLK_MQ_PCI=y
+> +CONFIG_LEDS_RESET=y
+> +CONFIG_MTD_NAND_CORE=y
+> +CONFIG_MTD_SPI_NAND=y
+>  CONFIG_MTD_UBI=y
+> -CONFIG_MTD_UBI_BEB_LIMIT=20
+> -# CONFIG_MTD_UBI_BLOCK is not set
+> -# CONFIG_MTD_UBI_FASTMAP is not set
+> -# CONFIG_MTD_UBI_GLUEBI is not set
+> -CONFIG_MTD_UBI_WL_THRESHOLD=4096
+> -# CONFIG_UBIFS_FS is not set
+> +CONFIG_MTD_UBI_BLOCK=y
+> +CONFIG_OF_ADDRESS_PCI=y
+> +CONFIG_OF_PCI=y
+> +CONFIG_OF_PCI_IRQ=y
+> +CONFIG_PCI=y
+> +# CONFIG_PCI_AR71XX is not set
+> +CONFIG_PCI_AR724X=y
+> +CONFIG_PCI_DISABLE_COMMON_QUIRKS=y
+> +CONFIG_PCI_DOMAINS=y
+> +# CONFIG_PHY_AR7100_USB is not set
+> +CONFIG_PHY_AR7200_USB=y
+> +CONFIG_UBIFS_FS=y
+> +CONFIG_UBIFS_FS_ADVANCED_COMPR=y
+> +CONFIG_UBIFS_FS_LZO=y
+> +CONFIG_UBIFS_FS_ZLIB=y
+> diff --git a/target/linux/ath79/nand/target.mk b/target/linux/ath79/nand/target.mk
+> index 91afe675c5..6ab9748ca4 100644
+> --- a/target/linux/ath79/nand/target.mk
+> +++ b/target/linux/ath79/nand/target.mk
+> @@ -1,9 +1,13 @@
+>  BOARDNAME := Generic devices with NAND flash
+> -FEATURES += squashfs nand rtc
+> +
+> +# SPI NAND support requires at least Linux 4.19
+
+You can drop this comment, having this in the commit message is enough.
+
+> +KERNEL_PATCHVER:=4.19
+> +
+> +FEATURES += squashfs nand
+>  
+>  DEFAULT_PACKAGES += wpad-basic
+>  
+>  define Target/Description
+> -	Build firmware for Atheros AR71xx/AR913x based boards with
+> -	NAND flash, e.g. Netgear WNDR4300.
+> +	Firmware for boards based on MIPS 24kc Atheros/Qualcomm SoCs
+> +	in the ar72xx and subsequent generations with support for NAND flash
+>  endef
+> -- 
+> 2.20.1
 
 _______________________________________________
 openwrt-devel mailing list

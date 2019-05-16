@@ -2,99 +2,104 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96BFC20DFA
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 May 2019 19:28:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CAEF20E52
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 May 2019 20:01:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:
 	References:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mxDbOELsk37UZocuVrz9lOUX1IXOvSQep8NwE5DzYoM=; b=SfSQ4kR3XhZ+Fl
-	5Ke6ICreiOtAUy2cIsIQMuxl7ENL9RMRnJ6oWw7K4HLFkCfaAgFOoxo+8EoUMPnwCYVoU9qYd+YTS
-	FPc3DOPNObfzrVZhLbaiFrZPALKXurWADWhfoaz+OdMrDg8ejyYnRvDXXdjnze1A4Ft6ryIjmFf9r
-	yKAVN0nIJwrgCbm81oi1HzYDsotVmkHfYlpuooWtyju32M41ACLz1xcYFCByRs15vlOyY1DrZAnIc
-	+YryjN+FF8fBkdrjPmaGM5P2wB1WdF2cHoJclWwpmj6bKU5BKrZ5TtaQee/QmsXwBgG7zGW269vaE
-	f7mjViliIP19khOzxZAg==;
+	List-Owner; bh=D+Om8ZHpL0KzYpSXyb/WM+Om8jZ0GMjI3rj7RsU/ZMA=; b=PjZbRxhe0iyHn0
+	nfKUGgchws5kQBnKWvflaizWVs8x4TU/K5M29HGFaF8pYeXkqRf669GPljHrbfSHo71dbOfpuWsko
+	73MQyPWAtWj/grFXMSBTHfMTOif8nyLO9cMsngrV6IhB+wGcClSu/DEJszXHkcPfuOiSWktj6o+Iy
+	NTpmENydQ5oE5i1eKQ30NeuNOWPsu+9ovI5R28kjKufDz3sThFfuY0hPCjH98/riv/8/JTdCqwH4D
+	yLWExwbwWOPEiyIC1t/NDpmYdE0syp0oMsq8yUbxnJIQ9OqOHlyVC3aSWBSdtU7pXXOSZdGaVEVyZ
+	D7OS/gv/9t7yPx+BwoAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRKAk-0004Ga-IS; Thu, 16 May 2019 17:28:02 +0000
-Received: from mail-oln040092067032.outbound.protection.outlook.com
- ([40.92.67.32] helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1hRKgc-0000dI-VU; Thu, 16 May 2019 18:00:58 +0000
+Received: from mail-ve1eur02olkn0824.outbound.protection.outlook.com
+ ([2a01:111:f400:fe06::824]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRKAd-0004G6-0l
- for openwrt-devel@lists.openwrt.org; Thu, 16 May 2019 17:27:56 +0000
+ id 1hRKgW-0000cP-87
+ for openwrt-devel@lists.openwrt.org; Thu, 16 May 2019 18:00:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=live.com; s=selector1; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eBTcT1Wb8+ewAuWyLH6tRgW3ibmIk93Xi7N7DZxK9fk=;
- b=OrUJj0febwoKHAE0jikux9xjASQERgdLfJ0ImTghBhyJtTsujHXnU3dr9J+A0UuYvwodGVdzwfimPWkPTKvRs/M8uzVcKNbT4q2RGsWGrzikr1xNJMv5l7YSpcrkNManrt6lvd0CgJWl/iSbvAv5YrxGN7ryAclldQYZuKk2UHucl0BMl4KLdIXBX/LGITpn7gmXQGUCpdCj8SJX7z5gNzmOr5YuKxQe7xdleMDxFbMRovLYammcwlKss6AINQt2awodhoE6Um7/el06tCV6EfZV6f149Vd1AKTxrCKSnZtOyBKH64O6aXlkUQUQIIS6tAJVKYyxaBPESeOIPDk3jw==
-Received: from VE1EUR02FT048.eop-EUR02.prod.protection.outlook.com
- (10.152.12.60) by VE1EUR02HT035.eop-EUR02.prod.protection.outlook.com
- (10.152.13.92) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1856.11; Thu, 16 May
- 2019 17:27:48 +0000
-Received: from AM6PR03MB4821.eurprd03.prod.outlook.com (10.152.12.57) by
- VE1EUR02FT048.mail.protection.outlook.com (10.152.13.177) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.1900.16 via Frontend Transport; Thu, 16 May 2019 17:27:48 +0000
+ bh=hiwypyjRhoO3uPdgZRBHhXe8bLJLDT6OqPAlo3O65YA=;
+ b=SU8gXdoHCxrgTTVpqC12AM4QzCqc9sXeSJTTNBGlv5iGaTTfv4L8hSkysHUrjxtOfcjWEwhWVRP8KwXfvkVWdT/F+vEJ8x9uKICY3FCEbH/YNNc6Jt+V2q0R6qZ/ANmx5j0w2QDNhKvTgz6F6zpQPdutYV0qRnlnQ/BxcfJzJrnF3Y4gC0tuL0Ypez3oFs371sHUFft5R5uB0hj6jE1dYnXqacKX8NIIb7JlbYNYAHcIEy6kVxdHXiKGsVydB6bHnpxygS3Nedtg9gk5Dx7Cqa7KernHEFVsRbbstvQUFA6DDBEbPZwSaa6f4iVb9TLuZYxrKYRXK92kKTlb3rc8IQ==
+Received: from AM5EUR02FT028.eop-EUR02.prod.protection.outlook.com
+ (10.152.8.56) by AM5EUR02HT068.eop-EUR02.prod.protection.outlook.com
+ (10.152.9.220) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1856.11; Thu, 16 May
+ 2019 18:00:47 +0000
+Received: from AM6PR03MB4821.eurprd03.prod.outlook.com (10.152.8.60) by
+ AM5EUR02FT028.mail.protection.outlook.com (10.152.8.115) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1900.16 via Frontend Transport; Thu, 16 May 2019 18:00:47 +0000
 Received: from AM6PR03MB4821.eurprd03.prod.outlook.com
  ([fe80::e5e2:30fd:1274:902b]) by AM6PR03MB4821.eurprd03.prod.outlook.com
  ([fe80::e5e2:30fd:1274:902b%7]) with mapi id 15.20.1900.010; Thu, 16 May 2019
- 17:27:48 +0000
+ 18:00:47 +0000
 From: Tan Xiaofan <xfan1024@live.com>
-To: Hans Dedecker <dedeckeh@gmail.com>
-Thread-Topic: =?gb2312?B?u9i4tDogW09wZW5XcnQtRGV2ZWxdIFtQQVRDSF0gaW50ZXJmYWNlLWlwOiBm?=
- =?gb2312?Q?ix_find_locally_addressable_target_for_p2p?=
-Thread-Index: AQHVDAYgBLwIj4rXG0+Oxwt/mwR5+qZtikZg
-Date: Thu, 16 May 2019 17:27:48 +0000
-Message-ID: <AM6PR03MB482128572B599B74D0946A7FB50A0@AM6PR03MB4821.eurprd03.prod.outlook.com>
+To: Hans Dedecker <dedeckeh@gmail.com>, Tan Xiaofan <xfan1024@live.com>
+Thread-Topic: [OpenWrt-Devel] [PATCH] interface-ip: fix find locally
+ addressable target for p2p
+Thread-Index: AQHVDAYgBLwIj4rXG0+Oxwt/mwR5+qZuCjig
+Date: Thu, 16 May 2019 18:00:47 +0000
+Message-ID: <AM6PR03MB4821953F914D9BAF83521992B50A0@AM6PR03MB4821.eurprd03.prod.outlook.com>
 References: <AM6PR03MB4821E7027EF336E03B57C642B50A0@AM6PR03MB4821.eurprd03.prod.outlook.com>
  <CAJLcKsHrZ+SKkFz+w_Cb_aSztT9yB6p9xYdnc1c+Mdwh6ftOig@mail.gmail.com>
- <AM6PR03MB4821A0DBD99D2B7F7F49254DB50A0@AM6PR03MB4821.eurprd03.prod.outlook.com>,
+ <AM6PR03MB4821A0DBD99D2B7F7F49254DB50A0@AM6PR03MB4821.eurprd03.prod.outlook.com>
  <CAJLcKsFycig9BNYkh24CeFAjadb+wJgO4uqmaFp0Qa86P8WNtA@mail.gmail.com>
 In-Reply-To: <CAJLcKsFycig9BNYkh24CeFAjadb+wJgO4uqmaFp0Qa86P8WNtA@mail.gmail.com>
 Accept-Language: zh-CN, en-US
 Content-Language: zh-CN
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-incomingtopheadermarker: OriginalChecksum:C7FB775318A2F5E8ADF4622547C6CFABEB8B4670FD59E1A9D7B240FA9877306A;
- UpperCasedChecksum:80788CB2F9B8A956415A7AE10DD356B645D0CEE84DA0ADB81C1F2609E4CEA306;
- SizeAsReceived:7199; Count:44
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tmn: [fq3E6wHkTTweO6wEd4ITKpo3aoVYPmRF]
+x-incomingtopheadermarker: OriginalChecksum:8676623AA9446B2E2A0CECAA7FD6F6CDE1E57CA5E6EDD161281326C14A518911;
+ UpperCasedChecksum:0A8734D219986F0C3C9D102C2E8BC11A3612549E650F1C56394ECF861D26D0E6;
+ SizeAsReceived:7118; Count:43
+x-tmn: [y6r76Yf1VuBj8v12Elj0HgrlzMA2ZBkb]
 x-ms-publictraffictype: Email
-x-incomingheadercount: 44
+x-incomingheadercount: 43
 x-eopattributedmessage: 0
+x-ms-exchange-slblob-mailprops: xuHa6FHC+squCXxvJj9f126Cyq/VAEKh+Xep4cm+nXjGKczGYe11ZsbqRzj2bnLwxiEtPDnwI391wf5HhaeMjdNVWt/TLJjQoUX+eeekJZPD4I1fs8puALd1npUuvpRD1FsNp+r1jSQDNwcoNKPFPNvpdNf/AVWUqefgFozH9R2Az8qEebv9txaR51WsxI1QmohAZprruaPJe1Xe7bJGDLA4dhr8toIhFgJlBMS+xpZRtvAi8h2BcXzq4mT/gz1W5NcKKJ9unLCLFAUZubbVpJTgAG8jQzSHQe3CKa03Qq72tEiOzJPqunbL0hwhktZbZlv4OH4vsvTYB/IeSVAQlM1Uo7vwZtr78jvBKW+HrPjseHf8EXeKiV0+hmC4CJ3HuClLSn+ePrWLvKeDu1aadwaCHhoLsThy210QaQhoC2Omm2ip6wYZwbNOJBcDeKQTyoayPaA1B2WXLuDo0J58Qit36+6NC+K7rvX7u2ZRIf667roKmlBYY5s6IPVPedmwkvupfsEvwq+OrXJ7pDNEVGRaT8ygYGuKkPxfuBKMrmlAvFNGxDuRK2HR3i3txcpQ+U5EXGEGzIpgGcneYEujzC3HSq42njPw7BwUvAdAkoYhXLhNbkaVTMTJCrIlCE2J3sTNkCz2l6YVWaWMOpeiHdF9ZipILwRgBv75qfLnGlLSnVf0vSDiqa5wLCZKEwfMJ+pKz+EJIDctXnD2EZH8upJ/ZulZw+meEgHt/LKclmO+3zV8l7re3Y/ojGHMxG1tjTkkfJSq0BOodCVIcreRgRXHsbBBvQaJpJ7RS4jZRahJOLA6NSIuTWwnVyHzG71VhekbViSiZ2c=
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
- SRVR:VE1EUR02HT035; 
-x-ms-traffictypediagnostic: VE1EUR02HT035:
-x-microsoft-antispam-message-info: mSJyMw3lPqwnNrIRhpgGDq4/6+rmKZLRtjnQV6wyAzvKML65KKq/94UKqnzGj3DENz7BObVcoVFRd46OxvQ3C9gk4Y0sTD6qTne19Rknw3K+ZsND9F5Y1oxXc0X3IFD/FtOXKgT6tbx7xShIPPuAUVv9ZXAvQih3K3rw21FhDcCJuNimFgYm7cgKn5wUVxDF
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(201702181274)(2017031323274)(2017031324274)(2017031322404)(1601125500)(1603101475)(1701031045);
+ SRVR:AM5EUR02HT068; 
+x-ms-traffictypediagnostic: AM5EUR02HT068:
+x-ms-exchange-purlcount: 1
+x-microsoft-antispam-message-info: b8rOXHWpw6Wrno+kNy1mo50ZzGV/VGiRsTv0r+gApi9oo1XUNTo2BUe8BavdjZxgcU/EPhzvMEm+qEaCfrXDgPE5DOWmOvbyAGjLdVQOYX06rymItOPBMrRF0DNPn2OGTOkdPzT4SwCF+dLQkGUdJUupRQ767q4DWMI4Je6tLW0GzoqU5VdSFMuFkIzHI81F
 MIME-Version: 1.0
 X-OriginatorOrg: live.com
 X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-Network-Message-Id: 11cb0e5b-c99d-44bc-f66d-08d6da23d0e2
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9c82182d-7ce7-47db-234d-08d6da286cdd
 X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2019 17:27:48.2170 (UTC)
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 May 2019 18:00:47.8403 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Internet
 X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1EUR02HT035
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR02HT068
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_102755_148357_90D11ED4 
-X-CRM114-Status: GOOD (  21.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190516_110052_356137_0D49D25D 
+X-CRM114-Status: GOOD (  19.69  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.67.32 listed in list.dnswl.org]
+ no trust [2a01:111:f400:fe06:0:0:0:824 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (xfan1024[at]live.com)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (xfan1024[at]live.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 NORMAL_HTTP_TO_IP      URI: URI host has a public dotted-decimal IPv4
+ address
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -102,8 +107,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] =?gb2312?b?u9i4tDogIFtQQVRDSF0gaW50ZXJmYWNlLWlw?=
- =?gb2312?b?OiBmaXggZmluZCBsb2NhbGx5IGFkZHJlc3NhYmxlIHRhcmdldCBmb3IgcDJw?=
+Subject: Re: [OpenWrt-Devel] [PATCH] interface-ip: fix find locally
+ addressable target for p2p
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -121,43 +126,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi, this is a new patch
+Hi, the email replace TAB with SPACE, so apply failed.
+So, I put the patch file in my server
 
-From 66c6e2d739daf60c3d4336b6ec8fe24334ee44eb Mon Sep 17 00:00:00 2001
-From: xiaofan <xfan1024@live.com>
-Date: Fri, 17 May 2019 01:15:11 +0800
-Subject: [PATCH] interface-ip: fix find locally addressable target for p2p
-
-In case of tunnel over PPP(such as gretap over l2tp): tunnel interface
-use PPP's peer address as remote address, netifd script will call
-proto_add_host_dependency function, then netifd will search which device
-can reach to the remote address. Before the patch, netifd don't consider
-the PPP interface can reach to the remote address, so netifd will select
-default route to remote address, it will lead to remote address unreachable.
-
-Signed-off-by: xiaofan <xfan1024@live.com>
----
- interface-ip.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/interface-ip.c b/interface-ip.c
-index 6900cd7..8d5587c 100644
---- a/interface-ip.c
-+++ b/interface-ip.c
-@@ -196,6 +196,9 @@ __find_ip_addr_target(struct interface_ip_settings *ip, union if_addr *a, bool v
- 		if (v6 != ((addr->flags & DEVADDR_FAMILY) == DEVADDR_INET6))
- 			continue;
- 
-+		if (!v6 && addr->point_to_point && a->in.s_addr == addr->point_to_point)
-+			return true;
-+
- 		/* Handle offlink addresses correctly */
- 		unsigned int mask = addr->mask;
- 		if ((addr->flags & DEVADDR_FAMILY) == DEVADDR_INET6 &&
--- 
-2.17.1
-
-
+	http://167.88.124.64/0001-interface-ip-fix-find-locally-addressable-target-for.patch
 
 >  
 > Hi
@@ -193,15 +165,15 @@ index 6900cd7..8d5587c 100644
 > > --- a/interface-ip.c
 > > +++ b/interface-ip.c
 > > @@ -196,6 +196,9 @@ __find_ip_addr_target(struct interface_ip_settings *ip, union if_addr *a, bool v
-> >    if (v6 != ((addr->flags & DEVADDR_FAMILY) == DEVADDR_INET6))
-> >     continue;
+> >	if (v6 != ((addr->flags & DEVADDR_FAMILY) == DEVADDR_INET6))
+> >	 continue;
 > >
 > > +  if (!v6 && addr->point_to_point && a->in.s_addr == addr->point_to_point)
 > > +   return true;
 > > +
-> >    /* Handle offlink addresses correctly */
-> >    unsigned int mask = addr->mask;
-> >    if ((addr->flags & DEVADDR_FAMILY) == DEVADDR_INET6 &&
+> >	/* Handle offlink addresses correctly */
+> >	unsigned int mask = addr->mask;
+> >	if ((addr->flags & DEVADDR_FAMILY) == DEVADDR_INET6 &&
 > > --
 > > 2.17.1
 > >

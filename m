@@ -2,57 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23252207D6
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 May 2019 15:18:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E41C20805
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 May 2019 15:25:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oexpZYMhbg7FGWe8nT9D8t4HcO7IyCKqnLOWl2eP35Q=; b=agZKB+dw0A81ruGjNy7sVmQVUM
-	piOLSy5p0I9rlGmrp1+SvL96eUAgYiDK04kyroynF1h1ggUudm+uNAZWnzHhXoK/5Hob5XQWOkmQq
-	/xSVjjPdhJ+9uOpAj+p53lZaqAmbmFrYk7jjS9NuXHEyprdEJ+hs3Ho3QYeLPovuiuhZkWVzaVUYx
-	p5Otd4/ET6D1MJDL2bI1nfPhajMQhDLYGL70Zvq7SYb90g1e4I0kITwPUQ8/6u2qfd6Nb0iSQQ/G6
-	sG/vycKRux3gcTuTLE3BlosVgGOpvyWJfouwZWK9Pjtti21Rkt3bOsMuwvo9I0q5A4iakhrRLIgxI
-	KzknUJ5w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H9sKgUftjdtm1is0pUtTq5XM0+tFx2fxLIAL4RxKHK0=; b=bvAlizEutgKR80
+	OAi2A5QuDs8HRI3F1xrCuW+qmcKPhQaxtq5DFpLN7jLRDkFkbPw5FdjZz3f3b016DJ1UX5F/OAY3M
+	u9+TXJ6ZmG+dY0718ZWfK31Lh1E4/lwFeE2Hzp9ShvNWEb/6EgQo9L+aoNLHyXOQllIeB8Vz05pM9
+	M8Z6Q5EE1CDTfOkr4DlhYPG6s5dUDyirLmaqStdbrppOjDBZCkqPWEPiDVNyOVgy1tPcEaoipcM3y
+	WrhOargOqvjEN7+pRJeOmgHPHP5pXlc5ekHUvs9JZ+xLyl6tjmwf0otAR2WFho79Uad092F0DefSN
+	pMnLAcSMfIDGal9jSMjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRGGi-00045o-6N; Thu, 16 May 2019 13:17:56 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hRGNO-0000Jk-LR; Thu, 16 May 2019 13:24:50 +0000
+Received: from mail-it1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRGGa-00045N-OP
- for openwrt-devel@lists.openwrt.org; Thu, 16 May 2019 13:17:50 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 21C894BE4;
- Thu, 16 May 2019 15:17:46 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 78bc7434;
- Thu, 16 May 2019 15:17:44 +0200 (CEST)
-Date: Thu, 16 May 2019 15:17:44 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Kristian Evensen <kristian.evensen@gmail.com>
-Message-ID: <20190516131744.GF63920@meh.true.cz>
-References: <20190516130231.31513-1-kristian.evensen@gmail.com>
+ id 1hRGNI-0000JQ-1x
+ for openwrt-devel@lists.openwrt.org; Thu, 16 May 2019 13:24:45 +0000
+Received: by mail-it1-x141.google.com with SMTP id m140so6197741itg.2
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 May 2019 06:24:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=5FzgMbmkoAp+QmCuMD7lwjmjDG48vfqlweClmXD9mec=;
+ b=nAaUk78K0mK4H5d2GBwgYrL1SKnrGnvcShIiSEXo94v2blKPo79bC7MohxqGSkPsXn
+ 3pKBwlDVK6GvIxe8xi4AioELLEJQbyOvevEeAwgN7JBd9BXrml0vRZvaUI20jrWoMbhA
+ Rls3G58lmQy7Ww/hUdVyX5wmO8JPZBv6IKFfW58R/Gbobu3i3M4ZgtncPDY6POnlPxAc
+ fmJqPR3liTMXiXLcM2Gtyv4n/POMbMPK8nu7s73zqCndD1eCfVrhl/hRiVQxewLy4hao
+ T9CHsNPYflM8xr+c57yYFlmVto4+rPi0OxA2UWLxv/5Blmvxe5vAbDq8K0mvCf6fWrCQ
+ Jsug==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=5FzgMbmkoAp+QmCuMD7lwjmjDG48vfqlweClmXD9mec=;
+ b=JHeHt6nO5Syxlm+D9SLnCSkvK8nww3hSVjVwQB02j/uZIVctrItcKousQo1u2IRNTX
+ PBKIcH8A1X9LRHGOdS3VqtqtdNGKA3leIiLyAiBqHX6K9VHPQkCJcCh1Wcv3LEw8cwmG
+ B5bVruR0nIgoblFZA7GvFjt6Cl5w10WtwF0NkQ4MH5XjgjXkH4r/P1bL++V1hq0FaUqe
+ wT7Ll7ed2dpNfwE3U716M8348Ieflrj6KJP1XrgTvSmJsRtQRpYniSejH6OZmRg3N8FW
+ rJ/48VXLskAv8vcqPjWKb4L6ZvwTX99jyPWEdkmVLrHwqZ8G6n4sDBpO+sOrg0zVFPGN
+ JuGA==
+X-Gm-Message-State: APjAAAVZEkutsLHmK9+64UGMbtR4vFT55nA13tLdvCxISBz7g6oFM5zV
+ 8zVlU9/yWMaWxs6bed5BPR6Ku6QNNevz2xY40866pg==
+X-Google-Smtp-Source: APXvYqycm1WKrhSdZLYc/Ls4Ng2ks3EFOBLqYzL9ionAYZP7xe/vr9o/CteZ4+Ds+hyGaZ3ApQqKYs0da5aqAJTJdW8=
+X-Received: by 2002:a24:94c6:: with SMTP id j189mr5817039ite.97.1558013083041; 
+ Thu, 16 May 2019 06:24:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190516130231.31513-1-kristian.evensen@gmail.com>
+References: <20190516130231.31513-1-kristian.evensen@gmail.com>
+ <20190516131744.GF63920@meh.true.cz>
+In-Reply-To: <20190516131744.GF63920@meh.true.cz>
+From: Kristian Evensen <kristian.evensen@gmail.com>
+Date: Thu, 16 May 2019 15:24:32 +0200
+Message-ID: <CAKfDRXin2JEtee2H2rw6hMFEyw40WGnje8uQ-g8WW=2BGP_+GQ@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_061749_011951_D9F89538 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190516_062444_093874_5B945E20 
+X-CRM114-Status: GOOD (  11.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kristian.evensen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 Subject: Re: [OpenWrt-Devel] [PATCH v2] ramips: Add support for ZBT WE826-E
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
@@ -65,50 +93,26 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Kristian Evensen <kristian.evensen@gmail.com> [2019-05-16 15:02:31]:
-
-Hi,
-
-> The router ships with an older version of OpenWRT, but with a broken web
-> user interface. In order to install the image, you need to SSH into the
-> router and run sysupgrade. The default address of the router is
-> 192.168.1.1, user is root and password admin. Once you are in, run the
-> following command:
-> 
-> sysupgrade -n -F
-> openwrt-ramips-mt7620-zbtlink_zbt-we826-e-squashfs-sysupgrade.bin
-> 
-> Recovery:
-> 
-> The router ships with a web-based recovery system. If you need to
-> recover the router, keep the reset button pressed during boot and access
-> 192.168.1.1 in your browser when your machine obtains an IP address.
-> Upload the firmware to start the recovery process.
-
-it's not mandatory, so you're not obliged to do so, but it makes me wonder if
-it would be possible to generate factory image which could be flashed with the
-same recovery mechanism, thus avoiding the -F in the sysupgrade above
-(considered dangerous).
-
-> +++ b/target/linux/ramips/dts/ZBT-WE826-E.dts
-> @@ -0,0 +1,83 @@
-> +/dts-v1/;
-
-Please can you consider adding `SPDX-License-Identifier: GPL-2.0-or-later OR
-MIT` ?
-
-Otherwise LGTM.
-
--- ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGksCgpPbiBUaHUsIE1heSAxNiwgMjAxOSBhdCAzOjE3IFBNIFBldHIgxaB0ZXRpYXIgPHluZXp6
+QHRydWUuY3o+IHdyb3RlOgo+IGl0J3Mgbm90IG1hbmRhdG9yeSwgc28geW91J3JlIG5vdCBvYmxp
+Z2VkIHRvIGRvIHNvLCBidXQgaXQgbWFrZXMgbWUgd29uZGVyIGlmCj4gaXQgd291bGQgYmUgcG9z
+c2libGUgdG8gZ2VuZXJhdGUgZmFjdG9yeSBpbWFnZSB3aGljaCBjb3VsZCBiZSBmbGFzaGVkIHdp
+dGggdGhlCj4gc2FtZSByZWNvdmVyeSBtZWNoYW5pc20sIHRodXMgYXZvaWRpbmcgdGhlIC1GIGlu
+IHRoZSBzeXN1cGdyYWRlIGFib3ZlCj4gKGNvbnNpZGVyZWQgZGFuZ2Vyb3VzKS4KCklmIG15IG1l
+bW9yeSBzZXJ2ZXMgbWUgcmlnaHQsIHRoZW4gaXQgaXMgcG9zc2libGUgdG8gdXNlIHRoZQpzeXN1
+cGdyYWRlLWltYWdlcyB3aXRoIHRoZSByZWNvdmVyeSBtZWNoYW5pc20uIEkgd2lsbCB0ZXN0IGFn
+YWluIGFuZAp0aGVuIHVwZGF0ZSB0aGUgY29tbWl0IG1lc3NhZ2UgaWYgc28uCgo+Cj4gPiArKysg
+Yi90YXJnZXQvbGludXgvcmFtaXBzL2R0cy9aQlQtV0U4MjYtRS5kdHMKPiA+IEBAIC0wLDAgKzEs
+ODMgQEAKPiA+ICsvZHRzLXYxLzsKPgo+IFBsZWFzZSBjYW4geW91IGNvbnNpZGVyIGFkZGluZyBg
+U1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAtb3ItbGF0ZXIgT1IKPiBNSVRgID8KCkFu
+ZCBJIHRob3VnaHQgSSBoYWQgcmVtZW1iZXJlZCB0byBpbmNvcnBvcmF0ZSBhbGwgdGhlIGNvbW1l
+bnRzIGZyb20KYWRkaW5nIHRoZSBIRFJNMjAwIC4uLi4gOikKCkJSLApLcmlzdGlhbgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBt
+YWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3Rz
+Lm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

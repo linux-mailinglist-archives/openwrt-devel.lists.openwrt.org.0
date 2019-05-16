@@ -2,88 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3C7420784
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 May 2019 15:02:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23252207D6
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 May 2019 15:18:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aWTSutKGgEK1X4cD34Q4rl5xOodbZzcjoHClm5JqYY8=; b=RLgXYWDlI6ibsg
-	g9e7htChbpouSNOBSt2cfPzvxbjpLLpeLq40xaOG3vnV0YgBV6KMVnsPffWtH3MkXxYWaMi2gTgD4
-	ccjyrmctUV5V8/TrFzKXdWFcB+/vVtXygJiw/Ju/4AvNs/DHhgq23iFv51oXBGmS80OzQCstaxr0C
-	KCB8s6tqwyMk5nuek443JfWSobh+qjPceSnRn5KCozC7dXc8rpJ3PdFsL1cH45bYk3jU/AvlYV+Y4
-	LLtGG5m9uS7qYjnOU+Y1SmDnC0Wo7CKvyaBczwJXJJxn+JGO5PTgfLyyBv/4Rxi9QAmdwzoVPiFKS
-	aMyqqWecZXa1kQ1Wbh2w==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=oexpZYMhbg7FGWe8nT9D8t4HcO7IyCKqnLOWl2eP35Q=; b=agZKB+dw0A81ruGjNy7sVmQVUM
+	piOLSy5p0I9rlGmrp1+SvL96eUAgYiDK04kyroynF1h1ggUudm+uNAZWnzHhXoK/5Hob5XQWOkmQq
+	/xSVjjPdhJ+9uOpAj+p53lZaqAmbmFrYk7jjS9NuXHEyprdEJ+hs3Ho3QYeLPovuiuhZkWVzaVUYx
+	p5Otd4/ET6D1MJDL2bI1nfPhajMQhDLYGL70Zvq7SYb90g1e4I0kITwPUQ8/6u2qfd6Nb0iSQQ/G6
+	sG/vycKRux3gcTuTLE3BlosVgGOpvyWJfouwZWK9Pjtti21Rkt3bOsMuwvo9I0q5A4iakhrRLIgxI
+	KzknUJ5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRG23-0006xP-D1; Thu, 16 May 2019 13:02:47 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hRGGi-00045o-6N; Thu, 16 May 2019 13:17:56 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRG1v-0006x0-Et
- for openwrt-devel@lists.openwrt.org; Thu, 16 May 2019 13:02:41 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w8so3309177wrl.6
- for <openwrt-devel@lists.openwrt.org>; Thu, 16 May 2019 06:02:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=QnjiFGTbIDT9697gw3x2E7aq3aD+qvxNpDDDlXUt9iE=;
- b=BWL6exYTtZfnbL3wGhe77FJUwRM6cRfmkewVNo9LwkEt7CXzlgQ95nq1MzPcKyxF7D
- 8epYmB+765aukglDqF2rOk/ahkuJLsZTAmRG5/BBfzoUHrKsV1zsWxUH/NBw2a3dK2kg
- hI5ABZ6UWqTnURxOdse/QL566yjG+aKLVE9FvYXDNWrbg2vVVsf2okZ8i79nhiI0HRAQ
- hEMHIcdBEKfOKqITjid0GSuPrqZHPjTKiG1rV0ADKw2K/N369HL6CqdCJYmtwa9207UX
- 4VSO5iu4iHdIVJkwsjPGr430e+MKJJMvDxYBSu2DD9Ntp3J28wp9H3rlyzg3b4jHdqEN
- lPfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=QnjiFGTbIDT9697gw3x2E7aq3aD+qvxNpDDDlXUt9iE=;
- b=CP80Ro/soAzjQZmVkXPJeg4I1eTC8jXEDF+725q9PtgVkdPjerNgFZddlPkGxP2h7d
- rgOgqiKZ4+J0IcIF9RTkBeINJcu9wQ+ouR1pjMIxuJoDsvu0J845IytzH31+xQ5KIUK9
- rSbI0f0HqQIH3Dv+Qwr3J5BwhLwPUSrrebUCyk2c1NOYFk086EoqUkWzdJf185qRVMWU
- 2Lsdf4KjB1xoV76x6owl2Zu6i8ROSF41cfvl5lePslfxjnMrDsOmZZ/g4X0vAjUWxUWw
- ilzZhkUxcuktIOstkL76kB6pfAaTDf6Gjz3ooXNjcrUIrqAkjHOxmmDvqv9kFW3cFlXX
- cW0w==
-X-Gm-Message-State: APjAAAVIIgAFim8B5RA/Jk+xd6Y6na0Zgn6LNmmSLXsevk2DMTbqxpey
- 61eJMQKVHYVVMKyHIa3bAItWMRpy
-X-Google-Smtp-Source: APXvYqywYkAMLYc9cmip56SZck9GQTO4gkHgKE6byxpEmkvhtBnL/Ni2FVi6sE21nvKs9XTMW4RINw==
-X-Received: by 2002:a5d:4d11:: with SMTP id z17mr4519693wrt.308.1558011755587; 
- Thu, 16 May 2019 06:02:35 -0700 (PDT)
-Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
- by smtp.gmail.com with ESMTPSA id l16sm8225294wrb.40.2019.05.16.06.02.34
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 16 May 2019 06:02:34 -0700 (PDT)
-From: Kristian Evensen <kristian.evensen@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 16 May 2019 15:02:31 +0200
-Message-Id: <20190516130231.31513-1-kristian.evensen@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hRGGa-00045N-OP
+ for openwrt-devel@lists.openwrt.org; Thu, 16 May 2019 13:17:50 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 21C894BE4;
+ Thu, 16 May 2019 15:17:46 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 78bc7434;
+ Thu, 16 May 2019 15:17:44 +0200 (CEST)
+Date: Thu, 16 May 2019 15:17:44 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Kristian Evensen <kristian.evensen@gmail.com>
+Message-ID: <20190516131744.GF63920@meh.true.cz>
+References: <20190516130231.31513-1-kristian.evensen@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190516130231.31513-1-kristian.evensen@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190516_060239_524892_99B7E781 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190516_061749_011951_D9F89538 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v2] ramips: Add support for ZBT WE826-E
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ramips: Add support for ZBT WE826-E
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,130 +65,50 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-WkJUIFdFODI2LUUgaXMgYSBkdWFsLVNJTSB2ZXJzaW9uIG9mIHRoZSBaQlQgV0U4MjYuIFRoZSBy
-b3V0ZXIgaGFzIHRoZQpmb2xsb3dpbmcgc3BlY2lmaWNhdGlvbnM6CgotIE1UNzYyMEEgKDU4MCBN
-SHopCi0gMTI4TUIgUkFNCi0gMzJNQiBvZiBmbGFzaCAoU1BJIE5PUikKLSA1eCAxMC8xMDBNYnBz
-IEV0aGVybmV0IChNVDc2MjBBIGJ1aWx0LWluIHN3aXRjaCkKLSAxeCBtaWNyb1NEIHNsb3QKLSAx
-eCBtaW5pUENJZSBzbG90IChvbmx5IFVTQjIuMCBidXMpCi0gMnggU0lNIGNhcmQgc2xvdHMgKHN0
-YW5kYXJkIHNpemUpCi0gMXggVVNCMi4wIHBvcnQKLSAxeCAyLjRHSHogd2lmaSAocnQyODAwKQot
-IDEweCBMRURzICg0IEdQSU8tY29udHJvbGxlZCkKLSAxeCByZXNldCBidXR0b24KClRoZSBmb2xs
-b3dpbmcgaGF2ZSBiZWVuIHRlc3RlZCBhbmQgd29ya2luZzoKLSBFdGhlcm5ldCBzd2l0Y2gKLSB3
-aWZpCi0gbWluaVBDSWUgc2xvdAotIFVTQiBwb3J0Ci0gbWljcm9TRCBzbG90Ci0gc3lzdXBncmFk
-ZQotIHJlc2V0IGJ1dHRvbgoKSW5zdGFsbGF0aW9uOgoKVGhlIHJvdXRlciBzaGlwcyB3aXRoIGFu
-IG9sZGVyIHZlcnNpb24gb2YgT3BlbldSVCwgYnV0IHdpdGggYSBicm9rZW4gd2ViCnVzZXIgaW50
-ZXJmYWNlLiBJbiBvcmRlciB0byBpbnN0YWxsIHRoZSBpbWFnZSwgeW91IG5lZWQgdG8gU1NIIGlu
-dG8gdGhlCnJvdXRlciBhbmQgcnVuIHN5c3VwZ3JhZGUuIFRoZSBkZWZhdWx0IGFkZHJlc3Mgb2Yg
-dGhlIHJvdXRlciBpcwoxOTIuMTY4LjEuMSwgdXNlciBpcyByb290IGFuZCBwYXNzd29yZCBhZG1p
-bi4gT25jZSB5b3UgYXJlIGluLCBydW4gdGhlCmZvbGxvd2luZyBjb21tYW5kOgoKc3lzdXBncmFk
-ZSAtbiAtRgpvcGVud3J0LXJhbWlwcy1tdDc2MjAtemJ0bGlua196YnQtd2U4MjYtZS1zcXVhc2hm
-cy1zeXN1cGdyYWRlLmJpbgoKUmVjb3Zlcnk6CgpUaGUgcm91dGVyIHNoaXBzIHdpdGggYSB3ZWIt
-YmFzZWQgcmVjb3Zlcnkgc3lzdGVtLiBJZiB5b3UgbmVlZCB0bwpyZWNvdmVyIHRoZSByb3V0ZXIs
-IGtlZXAgdGhlIHJlc2V0IGJ1dHRvbiBwcmVzc2VkIGR1cmluZyBib290IGFuZCBhY2Nlc3MKMTky
-LjE2OC4xLjEgaW4geW91ciBicm93c2VyIHdoZW4geW91ciBtYWNoaW5lIG9idGFpbnMgYW4gSVAg
-YWRkcmVzcy4KVXBsb2FkIHRoZSBmaXJtd2FyZSB0byBzdGFydCB0aGUgcmVjb3ZlcnkgcHJvY2Vz
-cy4KCkhvdyB0byBzd2FwIFNJTXM6CgpZb3UgY29udHJvbCB3aGljaCBTSU0gc2xvdCB0byB1c2Ug
-Ynkgd3JpdGluZyAwLzEgdG8KL3N5cy9jbGFzcy9ncGlvL2dwaW8xMy92YWx1ZS4gSW4gb3JkZXIg
-Zm9yIHRoZSBjaGFuZ2UgdG8gdGFrZSBlZmZlY3QsCnlvdSBjYW4gZWl0aGVyIHVzZSBBVC1jb21t
-YW5kcyAoQVQrQ0ZVTikgb3IgcG93ZXItY3ljbGUgdGhlIG1vZGVtICh3cml0ZQowLzEgdG8gL3N5
-cy9jbGFzcy9ncGlvL2dwaW8xNC92YWx1ZSkuCgpTaWduZWQtb2ZmLWJ5OiBLcmlzdGlhbiBFdmVu
-c2VuIDxrcmlzdGlhbi5ldmVuc2VuQGdtYWlsLmNvbT4KLS0tCnYxLT52MjoKKiBVc2UgZ2VuZXJp
-YyBib2FyZC9tb2RlbCBkZXRlY3Rpb24sIHVwZGF0ZWQgdGhlIG1hdGNoIGluIDAxX2xlZHMgYW5k
-CjAyX25ldHdvcmsgKHRoYW5rcyBQZXRyIMWgdGV0aWFyKS4KKiBDaGFuZ2VkIHRoZSBkZXZpY2Uv
-dGFyZ2V0IGRldmljZSBpbiB0aGUgTWFrZWZpbGUgdG8gbWF0Y2ggdGhlCmNvbXBhdGlibGUtc3Ry
-aW5nIGluIHRoZSBEVFMgKHRoYW5rcyBQZXRyIMWgdGV0aWFyKS4KKiBVc2UgdGhlIHVzZXItc3Bh
-Y2UgZ3Bpby1zd2l0Y2ggYWx0ZXJuYXRpdmUgaW5zdGVhZCBvZiBncGlvLWV4cG9ydCBpbgp0aGUg
-RFRTICh0aGFua3MgUGV0ciDFoHRldGlhcikuCiogVXBkYXRlIG5hbWUgb2YgZmxhc2ggbm9kZSBp
-biBEVFMgdG8gdGhlIG1vcmUgZ2VuZXJpYyAiZmxhc2gwIiAodGhhbmtzClBldHIgxaB0ZXRpYXIp
-LgoqIEZpeCBpbWFnZSBzaXplIGluIHRoZSBNYWtlZmlsZSAodGhhbmtzIFBldHIgxaB0ZXRpYXIp
-LgoqIEdyb3VwIHRoZSB3aWZpLUxFRCB0b2dldGhlciB3aXRoIG90aGVyIGRldmljZXMgKHRoYW5r
-cyBQZXRyIMWgdGV0aWFyKS4KKiBVcGRhdGVkIGNvbW1pdCBtZXNzYWdlLgoqIFdoaWxlIHRoZSBk
-ZXZpY2UgY2FuIGJlIG9yZGVyZWQgd2l0aG91dCBhIG1vZGVtLCBJIGltYWdpbmUgbW9zdApkZXZp
-Y2VzIHdpbGwgYmUgZGVsaXZlcmVkIHdpdGggYSBtb2RlbS4gSSBoYXZlIHRoZXJlZm9yZSBlbmFi
-bGVkIHN1cHBvcnQKZm9yIFFNSSBhbmQgT3B0aW9uLCBzbyB0aGF0IG1vc3QgbW9kZW1zIGNhbiBi
-ZSB1c2VkIG91dCBvZiB0aGUgYm94LgotLS0KIC4uLi9yYW1pcHMvYmFzZS1maWxlcy9ldGMvYm9h
-cmQuZC8wMV9sZWRzICAgICB8ICAzICstCiAuLi4vcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJk
-LmQvMDJfbmV0d29yayAgfCAgMSArCiAuLi4vYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wM19ncGlv
-X3N3aXRjaGVzICAgfCAgNCArCiB0YXJnZXQvbGludXgvcmFtaXBzL2R0cy9aQlQtV0U4MjYtRS5k
-dHMgICAgICAgfCA4MyArKysrKysrKysrKysrKysrKysrCiB0YXJnZXQvbGludXgvcmFtaXBzL2lt
-YWdlL210NzYyMC5tayAgICAgICAgICAgfCAgOSArKwogNSBmaWxlcyBjaGFuZ2VkLCA5OSBpbnNl
-cnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCiBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4
-L3JhbWlwcy9kdHMvWkJULVdFODI2LUUuZHRzCgpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3Jh
-bWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgYi90YXJnZXQvbGludXgvcmFtaXBz
-L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcwppbmRleCBmYTIwYWIwNzE0Li45NDFiNGIx
-MDliIDEwMDc1NQotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJk
-LmQvMDFfbGVkcworKysgYi90YXJnZXQvbGludXgvcmFtaXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJk
-LmQvMDFfbGVkcwpAQCAtMjUxLDcgKzI1MSw4IEBAIG1yMjAwKQogbXRjLHdyMTIwMSkKIAl1Y2lk
-ZWZfc2V0X2xlZF9zd2l0Y2ggImV0aF9saW5rIiAiTEFOIGxpbmsiICIkYm9hcmRuYW1lOmdyZWVu
-OmV0aF9saW5rIiAic3dpdGNoMCIgIjB4MGYiCiAJOzsKLW16ay1leDc1MG5wKQorbXprLWV4NzUw
-bnB8XAoremJ0bGluayx6YnQtd2U4MjYtZSkKIAlzZXRfd2lmaV9sZWQgIiRib2FyZG5hbWU6cmVk
-OndpZmkiCiAJOzsKIG5ldGdlYXIscjYxMjApCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvcmFt
-aXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yayBiL3RhcmdldC9saW51eC9yYW1p
-cHMvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrCmluZGV4IGMyNjQ2ODc2YTIuLjYz
-YmZhYjI0ODYgMTAwNzU1Ci0tLSBhL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1maWxlcy9ldGMv
-Ym9hcmQuZC8wMl9uZXR3b3JrCisrKyBiL3RhcmdldC9saW51eC9yYW1pcHMvYmFzZS1maWxlcy9l
-dGMvYm9hcmQuZC8wMl9uZXR3b3JrCkBAIC0xMzMsNiArMTMzLDcgQEAgcmFtaXBzX3NldHVwX2lu
-dGVyZmFjZXMoKQogCXlvdWt1LHlrLWwyfFwKIAl6YnQtYXBlNTIyaWl8XAogCXpidC13ZTEzMjZ8
-XAorCXpidGxpbmssemJ0LXdlODI2LWV8XAogCXpidGxpbmssemJ0LXdlMzUyNnxcCiAJemJ0LXdl
-ODI2LTE2TXxcCiAJemJ0LXdlODI2LTMyTXxcCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvcmFt
-aXBzL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDNfZ3Bpb19zd2l0Y2hlcyBiL3RhcmdldC9saW51
-eC9yYW1pcHMvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCmluZGV4IDgw
-ZTNjNGM0MWYuLjYxMTlkN2M0ODUgMTAwNzU1Ci0tLSBhL3RhcmdldC9saW51eC9yYW1pcHMvYmFz
-ZS1maWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCisrKyBiL3RhcmdldC9saW51eC9y
-YW1pcHMvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCkBAIC0yNCw2ICsy
-NCwxMCBAQCB1Ym50LWVyeC1zZnApCiAJdWNpZGVmX2FkZF9ncGlvX3N3aXRjaCAicG9lX3Bvd2Vy
-X3BvcnQzIiAiUG9FIFBvd2VyIFBvcnQzIiAiNDk5IgogCXVjaWRlZl9hZGRfZ3Bpb19zd2l0Y2gg
-InBvZV9wb3dlcl9wb3J0NCIgIlBvRSBQb3dlciBQb3J0NCIgIjUwMCIKIAk7OworemJ0bGluayx6
-YnQtd2U4MjYtZSkKKwl1Y2lkZWZfYWRkX2dwaW9fc3dpdGNoICJzaW1fc3dpdGNoIiAiU0lNIHNs
-b3Qgc3dpdGNoIiAiMTMiCisJdWNpZGVmX2FkZF9ncGlvX3N3aXRjaCAicG93ZXJfbXBjaWUiICJt
-UENJZSBwb3dlciIgIjE0IiAiMSIKKwk7OwogZXNhYwogCiBib2FyZF9jb25maWdfZmx1c2gKZGlm
-ZiAtLWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMvZHRzL1pCVC1XRTgyNi1FLmR0cyBiL3Rhcmdl
-dC9saW51eC9yYW1pcHMvZHRzL1pCVC1XRTgyNi1FLmR0cwpuZXcgZmlsZSBtb2RlIDEwMDY0NApp
-bmRleCAwMDAwMDAwMDAwLi5hMWY3MWM3MTQ0Ci0tLSAvZGV2L251bGwKKysrIGIvdGFyZ2V0L2xp
-bnV4L3JhbWlwcy9kdHMvWkJULVdFODI2LUUuZHRzCkBAIC0wLDAgKzEsODMgQEAKKy9kdHMtdjEv
-OworCisjaW5jbHVkZSAiWkJULVdFODI2LmR0c2kiCisKKy8geworCWNvbXBhdGlibGUgPSAiemJ0
-bGluayx6YnQtd2U4MjYtZSIsICJ6YnRsaW5rLHpidC13ZTgyNiIsICJyYWxpbmssbXQ3NjIwYS1z
-b2MiOworCW1vZGVsID0gIlpCVC1XRTgyNi1FIjsKKworCS9kZWxldGUtbm9kZS8gbGVkczsKKwor
-CWxlZHMgeworCQljb21wYXRpYmxlID0gImdwaW8tbGVkcyI7CisKKwkJbGVkX3Bvd2VyOiBnc20g
-eworCQkJbGFiZWwgPSAiemJ0LXdlODI2LWU6Ymx1ZTpnc20iOworCQkJZ3Bpb3MgPSA8JmdwaW8w
-IDkgR1BJT19BQ1RJVkVfTE9XPjsKKwkJfTsKKworCQlzaWduYWwgeworCQkJbGFiZWwgPSAiemJ0
-LXdlODI2LWU6Z3JlZW46c2lnbmFsIjsKKwkJCWdwaW9zID0gPCZncGlvMCAxMSBHUElPX0FDVElW
-RV9MT1c+OworCQl9OworCisJCXNpbSB7CisJCQlsYWJlbCA9ICJ6YnQtd2U4MjYtZTpyZWQ6c2lt
-IjsKKwkJCWdwaW9zID0gPCZncGlvMCAxMiBHUElPX0FDVElWRV9MT1c+OworCQl9OworCisJCWFp
-ciB7CisJCQlsYWJlbCA9ICJ6YnQtd2U4MjYtZTpyZWQ6d2lmaSI7CisJCQlncGlvcyA9IDwmZ3Bp
-bzMgMCBHUElPX0FDVElWRV9MT1c+OworCQl9OworCX07Cit9OworCismc3BpMCB7CisJc3RhdHVz
-ID0gIm9rYXkiOworCisJZmxhc2hAMCB7CisJCWNvbXBhdGlibGUgPSAiamVkZWMsc3BpLW5vciI7
-CisJCXJlZyA9IDwwPjsKKwkJc3BpLW1heC1mcmVxdWVuY3kgPSA8MTAwMDAwMDA+OworCisJCXBh
-cnRpdGlvbnMgeworCQkJY29tcGF0aWJsZSA9ICJmaXhlZC1wYXJ0aXRpb25zIjsKKwkJCSNhZGRy
-ZXNzLWNlbGxzID0gPDE+OworCQkJI3NpemUtY2VsbHMgPSA8MT47CisKKwkJCXBhcnRpdGlvbkAw
-IHsKKwkJCQlsYWJlbCA9ICJ1LWJvb3QiOworCQkJCXJlZyA9IDwweDAgMHgzMDAwMD47CisJCQkJ
-cmVhZC1vbmx5OworCQkJfTsKKworCQkJcGFydGl0aW9uQDMwMDAwIHsKKwkJCQlsYWJlbCA9ICJ1
-LWJvb3QtZW52IjsKKwkJCQlyZWcgPSA8MHgzMDAwMCAweDEwMDAwPjsKKwkJCQlyZWFkLW9ubHk7
-CisJCQl9OworCisJCQlmYWN0b3J5OiBwYXJ0aXRpb25ANDAwMDAgeworCQkJCWxhYmVsID0gImZh
-Y3RvcnkiOworCQkJCXJlZyA9IDwweDQwMDAwIDB4MTAwMDA+OworCQkJCXJlYWQtb25seTsKKwkJ
-CX07CisKKwkJCWZpcm13YXJlOiBwYXJ0aXRpb25ANTAwMDAgeworCQkJCWNvbXBhdGlibGUgPSAi
-ZGVueCx1aW1hZ2UiOworCQkJCWxhYmVsID0gImZpcm13YXJlIjsKKwkJCQlyZWcgPSA8MHg1MDAw
-MCAweDFmYjAwMDA+OworCQkJfTsKKwkJfTsKKwl9OworfTsKKworJnBpbmN0cmwgeworCXN0YXRl
-X2RlZmF1bHQ6IHBpbmN0cmwwIHsKKwkJZGVmYXVsdCB7CisJCQlyYWxpbmssZ3JvdXAgPSAiaTJj
-IiwgInVhcnRmIiwgIndsZWQiOworCQkJcmFsaW5rLGZ1bmN0aW9uID0gImdwaW8iOworCQl9Owor
-CX07Cit9OwpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjAubWsg
-Yi90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5tawppbmRleCBkYTkwNTY4ZGYwLi4z
-NWZlY2I5YWM2IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5t
-aworKysgYi90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMC5tawpAQCAtODA5LDYgKzgw
-OSwxNSBAQCBkZWZpbmUgRGV2aWNlL3pidC13ZTgyNi0zMk0KIGVuZGVmCiBUQVJHRVRfREVWSUNF
-UyArPSB6YnQtd2U4MjYtMzJNCiAKK2RlZmluZSBEZXZpY2UvemJ0bGlua196YnQtd2U4MjYtZQor
-ICBEVFMgOj0gWkJULVdFODI2LUUKKyAgSU1BR0VfU0laRSA6PSAzMjQ0OGsKKyAgREVWSUNFX1RJ
-VExFIDo9IFpidGxpbmsgWkJULVdFODI2LUUKKyAgREVWSUNFX1BBQ0tBR0VTIDo9IGttb2QtdXNi
-MiBrbW9kLXVzYi1vaGNpIGttb2Qtc2RoY2ktbXQ3NjIwIHVxbWkgXAorCQkgICAgIGttb2QtdXNi
-LXNlcmlhbCBrbW9kLXVzYi1zZXJpYWwtb3B0aW9uCitlbmRlZgorVEFSR0VUX0RFVklDRVMgKz0g
-emJ0bGlua196YnQtd2U4MjYtZQorCiBkZWZpbmUgRGV2aWNlL3pidC13cjgzMDVydAogICBEVFMg
-Oj0gWkJULVdSODMwNVJUCiAgIERFVklDRV9USVRMRSA6PSBaYnRsaW5rIFpCVC1XUjgzMDVSVAot
-LSAKMi4xOS4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0
-Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1k
-ZXZlbAo=
+Kristian Evensen <kristian.evensen@gmail.com> [2019-05-16 15:02:31]:
+
+Hi,
+
+> The router ships with an older version of OpenWRT, but with a broken web
+> user interface. In order to install the image, you need to SSH into the
+> router and run sysupgrade. The default address of the router is
+> 192.168.1.1, user is root and password admin. Once you are in, run the
+> following command:
+> 
+> sysupgrade -n -F
+> openwrt-ramips-mt7620-zbtlink_zbt-we826-e-squashfs-sysupgrade.bin
+> 
+> Recovery:
+> 
+> The router ships with a web-based recovery system. If you need to
+> recover the router, keep the reset button pressed during boot and access
+> 192.168.1.1 in your browser when your machine obtains an IP address.
+> Upload the firmware to start the recovery process.
+
+it's not mandatory, so you're not obliged to do so, but it makes me wonder if
+it would be possible to generate factory image which could be flashed with the
+same recovery mechanism, thus avoiding the -F in the sysupgrade above
+(considered dangerous).
+
+> +++ b/target/linux/ramips/dts/ZBT-WE826-E.dts
+> @@ -0,0 +1,83 @@
+> +/dts-v1/;
+
+Please can you consider adding `SPDX-License-Identifier: GPL-2.0-or-later OR
+MIT` ?
+
+Otherwise LGTM.
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

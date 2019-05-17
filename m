@@ -2,67 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 124B821897
-	for <lists+openwrt-devel@lfdr.de>; Fri, 17 May 2019 14:46:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE06F21997
+	for <lists+openwrt-devel@lfdr.de>; Fri, 17 May 2019 16:09:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1196Mqr2cDRKfeU91LsNWGdk3XQa8CnZ9O6/nKLD9w8=; b=lj1ibkEBlZZdYu
-	MBjZ1toFjXCFf+A4v9UkkOovjd0nH6p59DV6bj1CyRR4ZqbCtyMltmZw5fdBWoxExBgFOEOTYEuHI
-	AjYANinHR9MABT1QjQufNLJGDntQTeg1EXls3CfVVLP128RMPGqxLPUiyWmmZnVR0jp/R0plHMFFT
-	fW31lLgo9hNtHTfi10VWjr6tpw+rjFHlmN8NBFZwv7FSGszStjjkduRFop6vNjChpVGvN+mcWMJhD
-	RpMvwyZ0t22pv8Zbrq+vI7MmCguQLnk8QHE6jJh9lBnrrWKTOOd3cEIPK86SCwJvRDTe95Qv+OGb1
-	7fKR/Mq8ZL8Ixu+ZdmZA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cmc3EVuv7Ke1MOhnzCPowPFPCljTNy2v6TJLDzsalUU=; b=QuXgIX3DYrirT/
+	DTYCMrN+Oc6Kjdosue9O1eU97CfnwhyUG0KKH4asEG55FhAamYklWl70XbPZp4zdjWpftOL80TL52
+	BtSVHLf4oHedJa6kREGxyBa3yVf9aFfreHcEAVpodGzWAKZaatXEBrx5yEpDHCAzrkd9mpjKzjjz/
+	goKMwYSx4cWkDyNGjvd/jWG8FFPIgEULEoOxDmt88L+anD18uDQe3nTvp8iBIv+sxX29vC00nPwTP
+	8fXGuW+PvWJbOFeeNfusCR2RCoTCYOsAQDeQnpDjIKbntclVDGmG9B2vZDdQZ8BXmmiUuew/pkjek
+	dUrfv/O3gM8lLBER98hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRcFm-00080V-DR; Fri, 17 May 2019 12:46:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1hRdXs-0002xQ-1Q; Fri, 17 May 2019 14:09:12 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRcFf-00080E-PO
- for openwrt-devel@lists.openwrt.org; Fri, 17 May 2019 12:46:21 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B4FB72168B;
- Fri, 17 May 2019 12:46:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558097179;
- bh=JaUrYoZV9rqgGBRrFaiPOdY7+bbSd4fDLNLfWdSDPOQ=;
- h=Subject:To:Cc:From:Date:From;
- b=Yk13jen9JTvJW+CydJuE7tLqCmzdv9+lKGq9EhqlzU57qOY0T7IuwZ5sS91LmTT+W
- cXCvGL1/eMSZVKpmk/JcoZ5t+Yg8wRvoyTVont1X3uTNXncvNFUCpZg5vr4x2kdBEW
- SOFQjFrPo+Fo6C471e8FjYTBIPmDxZy88hJ+z/UM=
-To: agross@kernel.org, chunkeey@gmail.com, gregkh@linuxfoundation.org,
- mail@david-bauer.net, openwrt-devel@lists.openwrt.org
-From: <gregkh@linuxfoundation.org>
-Date: Fri, 17 May 2019 14:45:47 +0200
-Message-ID: <155809714757240@kroah.com>
+ id 1hRdXl-0002wh-Oy
+ for openwrt-devel@bombadil.infradead.org; Fri, 17 May 2019 14:09:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=yyRQKYPrtJsKJc9k5MC6cmW8TRhi2Pnf0EjwZIVsI1E=; b=2ySRACA/xbc8m7xiWXCZ5lawRO
+ kH4lVfliBb/+G6+6baMZqGzOeWdWLnjQtVXhkk94r9c0BMWUy/lczcYQcoNQLCkvpYoRX897bb8r/
+ o0B1NMAuzx9l8kFkhQAAVpVetPwok+Iccx8/TCJoLUQIOqyMm2JJJryNryy/6wbpYGCBX2OSEoNjC
+ FHzdFJyt9RtSzq3frXfjotRNKHy9vlc4kRPBE44/gDbksw78U41Cb4W877/9BIEN5zr677Q74qp6s
+ Wg7XDZWMEMAnZIqyMGOLBY6XuvYc6tyS8VAQ8w33aEZDn9Ku9BmxT1wt3j3M3/jh1RF2nIdfnz3Of
+ SWaeehRg==;
+Received: from mx-out.tlen.pl ([193.222.135.142])
+ by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hRdXi-0001us-Kv
+ for openwrt-devel@lists.openwrt.org; Fri, 17 May 2019 14:09:03 +0000
+Received: (wp-smtpd smtp.tlen.pl 14268 invoked from network);
+ 17 May 2019 16:08:27 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1558102107; bh=yyRQKYPrtJsKJc9k5MC6cmW8TRhi2Pnf0EjwZIVsI1E=;
+ h=Subject:To:Cc:From;
+ b=rUVRuhlQgRKhOlmvP7t6GsVOk06CmVf/E7CaHiw3kjUAm1LdAyzMtvGSaoxuiv0PJ
+ wcBCPTiWIscSTUyHzBcSQUJp1JE7jl7l3rR3JAS9A1CWl5hELXQaVXWlLVMXw9E56V
+ CL92av4g6vJ6IBlUK6bgPi1j6J8v+3puPf+EofgQ=
+Received: from 131.ip-164-132-48.eu (HELO [10.8.0.6])
+ (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <sebastien.duponcheel@corp.ovh.com>; 17 May 2019 16:08:27 +0200
+To: Marek Behun <marek.behun@nic.cz>
+References: <20190516183828.15647-1-marek.behun@nic.cz>
+ <47a9684d-50b0-90fe-55e4-4fd6061864d2@o2.pl> <20190516234157.68c7a78f@nic.cz>
+From: Tomasz Maciej Nowak <tomek_n@o2.pl>
+Message-ID: <d24f7039-d62d-f42c-8889-25b514ed932a@o2.pl>
+Date: Fri, 17 May 2019 16:08:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-stable: commit
-X-Patchwork-Hint: ignore 
+In-Reply-To: <20190516234157.68c7a78f@nic.cz>
+Content-Language: en-US
+X-WP-MailID: 862f76ad2eadd926f72e864c50f86c9b
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000000 [8XNk]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_054619_843836_5FA30FD7 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-CRM114-CacheID: sfid-20190517_100902_968090_C30B7674 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tomek_n[at]o2.pl)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-Subject: [OpenWrt-Devel] Patch "ARM: dts: qcom: ipq4019: enlarge PCIe BAR
- range" has been added to the 5.0-stable tree
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] mvebu: Add support for kernel 4.19
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -74,90 +96,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: stable-commits@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stijn Tintel <stijn@linux-ipv6.be>, Jeremiah McConnell <miah@miah.com>,
+ openwrt-devel@lists.openwrt.org, Marko Ratkaj <marko.ratkaj@sartura.hr>,
+ Michael Gray <michael.gray@lantisproject.com>,
+ =?UTF-8?Q?DUPONCHEEL_S=c3=a9bastien?= <sebastien.duponcheel@corp.ovh.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>,
+ Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>,
+ Ryan Mounce <ryan@mounce.com.au>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Rosen Penev <rosenp@gmail.com>, Stijn Segers <foss@volatilesystems.org>,
+ Koen Vandeputte <koen.vandeputte@ncentric.com>,
+ Jonas Gorski <jonas.gorski@gmail.com>, Imre Kaloz <kaloz@openwrt.org>,
+ Felix Fietkau <nbd@nbd.name>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
-This is a note to let you know that I've just added the patch titled
-
-    ARM: dts: qcom: ipq4019: enlarge PCIe BAR range
-
-to the 5.0-stable tree which can be found at:
-    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
-
-The filename of the patch is:
-     arm-dts-qcom-ipq4019-enlarge-pcie-bar-range.patch
-and it can be found in the queue-5.0 subdirectory.
-
-If you, or anyone else, feels it should not be added to the stable tree,
-please let <stable@vger.kernel.org> know about it.
-
-
-From f3e35357cd460a8aeb48b8113dc4b761a7d5c828 Mon Sep 17 00:00:00 2001
-From: Christian Lamparter <chunkeey@gmail.com>
-Date: Tue, 26 Feb 2019 01:12:01 +0100
-Subject: ARM: dts: qcom: ipq4019: enlarge PCIe BAR range
-
-From: Christian Lamparter <chunkeey@gmail.com>
-
-commit f3e35357cd460a8aeb48b8113dc4b761a7d5c828 upstream.
-
-David Bauer reported that the VDSL modem (attached via PCIe)
-on his AVM Fritz!Box 7530 was complaining about not having
-enough space in the BAR. A closer inspection of the old
-qcom-ipq40xx.dtsi pulled from the GL-iNet repository listed:
-
-| qcom,pcie@80000 {
-|	compatible = "qcom,msm_pcie";
-|	reg = <0x80000 0x2000>,
-|	      <0x99000 0x800>,
-|	      <0x40000000 0xf1d>,
-|	      <0x40000f20 0xa8>,
-|	      <0x40100000 0x1000>,
-|	      <0x40200000 0x100000>,
-|	      <0x40300000 0xd00000>;
-|	reg-names = "parf", "phy", "dm_core", "elbi",
-|			"conf", "io", "bars";
-
-Matching the reg-names with the listed reg leads to
-<0xd00000> as the size for the "bars".
-
-Cc: stable@vger.kernel.org
-BugLink: https://www.mail-archive.com/openwrt-devel@lists.openwrt.org/msg45212.html
-Reported-by: David Bauer <mail@david-bauer.net>
-Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
-Signed-off-by: Andy Gross <agross@kernel.org>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-
----
- arch/arm/boot/dts/qcom-ipq4019.dtsi |    4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
---- a/arch/arm/boot/dts/qcom-ipq4019.dtsi
-+++ b/arch/arm/boot/dts/qcom-ipq4019.dtsi
-@@ -393,8 +393,8 @@
- 			#address-cells = <3>;
- 			#size-cells = <2>;
- 
--			ranges = <0x81000000 0 0x40200000 0x40200000 0 0x00100000
--				  0x82000000 0 0x40300000 0x40300000 0 0x400000>;
-+			ranges = <0x81000000 0 0x40200000 0x40200000 0 0x00100000>,
-+				 <0x82000000 0 0x40300000 0x40300000 0 0x00d00000>;
- 
- 			interrupts = <GIC_SPI 141 IRQ_TYPE_EDGE_RISING>;
- 			interrupt-names = "msi";
-
-
-Patches currently in stable-queue which might be from chunkeey@gmail.com are
-
-queue-5.0/crypto-crypto4xx-fix-cfb-and-ofb-overran-dst-buffer-issues.patch
-queue-5.0/arm-dts-qcom-ipq4019-enlarge-pcie-bar-range.patch
-queue-5.0/crypto-crypto4xx-fix-ctr-aes-missing-output-iv.patch
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+VyBkbml1IDE2LjA1LjIwMTkgb8KgMjM6NDEsIE1hcmVrIEJlaHVuIHBpc3plOgo+IE9uIFRodSwg
+MTYgTWF5IDIwMTkgMjI6MzU6MzUgKzAyMDAKPiBUb21hc3ogTWFjaWVqIE5vd2FrIDx0b21la19u
+QG8yLnBsPiB3cm90ZToKPiAKPj4gV2hhdCBJIHdvdWxkIGxpa2UgdG8gYXNrIGlzIGlmIFlvdSd2
+ZSBoYWQgYWxzbyBsaW5rIHRyYWluaW5nIGlzc3VlcyB3aXRoIFBDSWUgcG9ydAo+PiBhbmQgcGFy
+dGljdWxhciBBdGhlcm9zL1F1YWxjb21tIChBUjM4OTAsIFFDQTk4OTApIHdpZmkgY2FyZHMgb24g
+VHVycmlzIE1PWD8gV2hpY2ggd2UKPj4gd29yayBhcm91bmQgd2l0aCB0aGVzZSBwYXRjaGVzOgo+
+PiA1MjctUENJLWFhcmR2YXJrLWFsbG93LXRvLXNwZWNpZnktbGluay1jYXBhYmlsaXR5LnBhdGNo
+Cj4+IDUyOC1hcm02NC1kdHMtYXJtYWRhLTM3MjAtZXNwcmVzc29iaW4tc2V0LW1heC1saW5rLXRv
+LWdlLnBhdGNoCj4+IE9yIGRvIFlvdSB1c2UgZGlmZmVyZW50IGNoaXAgdmVuZG9ycz8KPiAKPiBI
+aSBUb21hc3osCj4gCj4geWVzLCB0aGUgcHJvYmxlbWF0aWMgY2hpcHNldHMgYXJlIDk4ODAgYW5k
+IDk4OTAuIEZvcmNpbmcgbGluayB0byBQQ0llCj4gMS4wIGRpZCBub3QgaGVscCBvbiBUdXJyaXMg
+TW94Lgo+IEFmdGVyIHdlZWtzIG9mIHBsYXlpbmcgd2l0aCB0aGUgY2FyZCBJIGRpc2NvdmVyZWQg
+dGhhdCBpdCBjb3VsZCBiZQo+IHNvbHZlZCBieSB0d2Vha2luZyB0aGUgbGVuZ3RoIG9mIHRoZSBQ
+RVJTVCBzaWduYWwgKHJlc2V0LWdwaW9zKSBpbiB0aGUKPiBhYXJkdmFyayBkcml2ZXIuIFRoaXMg
+aXMgaG93IEkgbWFkZSBpdCB3b3JrIG9uIDQuMTQgb24gVHVycmlzIE1veC4gT24KPiA0LjE5IGl0
+IGlzIG5vdCBuZWVkZWQsIGJ1dCB3aXRoIHRoZSBuZXcgcGF0Y2hlcyBieSBNaXF1ZWwgUmF5bmFs
+IHdoaWNoCj4gd2lsbCBiZSBpbiBrZXJuZWwgNS4yIG9yIDUuMyAoYWRkaW5nIHN1cHBvcnQgZm9y
+IHN1c3BlbmQvcmVzdW1lKSB0aGlzCj4gYWdhaW4gYnJlYWtzLCBiZWNhdXNlIHRoZSBQRVJTVCBz
+aWduYWwgaXMgbWFuaXB1bGF0ZWQgZGlmZmVyZW50bHkuIEkKPiBkaWQgbm90IHNvbHZlIHRoaXMg
+aXNzdWUsIGJ1dCBJIHRoaW5rIGl0IHdpbGwgYWdhaW4gYmUgZG9uZSB2aWEgdGhlCj4gUEVSU1Qg
+c2lnbmFsLgoKVGhhbmtzIGZvciB0aGUgZXhwbGFuYXRpb24sIG1pZ2h0IGdpdmUgYSBjbHVlIHdo
+ZXJlIHRvIHBva2UgYXQgaWYgc2V0dGluZyBnZW4xIHdpbGwKbm90IHdvcmsgYW55bW9yZSwgYW5k
+IGZvciBwb2ludGluZyB0byBNaXF1ZWwgUmF5bmFsIHBhdGNoZXMgKHNob3VsZCBoYXZlIHN1YnNj
+cmliZWQKdmdlciksIHdpbGwgdGVzdCB0aGVtIGFmdGVyIHRoZXknbGwgYXBwZWFyIGluIG5leHQg
+b3IgZWFybGllciBpZiB0aW1lIGFsbG93cy4KCj4gCj4gTWFyZWsKPiAKClJlZ2FyZHMKCi0tIApU
+TU4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53
+cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0
+cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

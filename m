@@ -2,88 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 904C821EF6
-	for <lists+openwrt-devel@lfdr.de>; Fri, 17 May 2019 22:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 083ED21F56
+	for <lists+openwrt-devel@lfdr.de>; Fri, 17 May 2019 23:06:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HTgKQX1yjaYdF2WknKjAfp+XUJJcht4Ts2uQVG08rnU=; b=kzTGPWeVH9IO3D
-	u+ZgsMy12zec+RgXZikPfK3ncGDsbzUlcQJkPgdVJ1aSBzUt15pi+AcadEOzz6jW2rKQ3dR/zeOMm
-	kWnLVik45WZaK9foPHqO9Dvkne9m/3jRyPLQZDkY8cw5BL6nSgh9fP6OY2csIdO3YHFPREI6UFeIM
-	IMynhgLo3//2MIj9g5V4ah2rGzWl+ngXEdd0vN22jpaXnE6RY2dNk7thwvDKknmiek3UY5sS2Mk8L
-	lTwLLAayM8bHdtV2PsoWt3lNnGzbpxIrFXgoXfsDWZDQDlnT82Sy5P5ZR03NvYTIVlwqy1+dmCy3v
-	jEBGri34fMBDt/93mzGg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HN6mjfdmuRWnHoCkM1VVYRjo+yYUo8pVpfJu37Q6yH0=; b=onDAej/tHmoXQH0OSiz22TGA7
+	QeugHhw0jX/dhi+KnsFsIY3YVCBkJ+37JXpC5r4zEa9tc6C14/ZJJNPXKyQHOV9Ngy5ffNUnk8gyX
+	qeFr+FpZjxuKTxKh8igwasiQEY8h6EoVMSZv1bIyelw0iPeKlfjFxOcN647prb4QMGqrgOgsrfS1a
+	A4PPWRciMsYsTYVYM9x/BqYwFf6Opa7f0HSQpsYClmf3k3G+cqr7V2RFRGdrU/P189H19dVRXjdVq
+	HZAwz0yuThsY4lWG8jqbbq/H2Bj6g7IJ3I5u5B8/G/AZSpsmvkMN+amWxBPNcG5m/geDUFX0TRUfD
+	WQgET4YxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRjJI-0006MN-Hq; Fri, 17 May 2019 20:18:32 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1hRk3d-0005R9-Qs; Fri, 17 May 2019 21:06:25 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRjJC-0006Lg-61
- for openwrt-devel@lists.openwrt.org; Fri, 17 May 2019 20:18:27 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e15so8382199wrs.4
- for <openwrt-devel@lists.openwrt.org>; Fri, 17 May 2019 13:18:25 -0700 (PDT)
+ id 1hRk3W-0005Ql-34
+ for openwrt-devel@lists.openwrt.org; Fri, 17 May 2019 21:06:20 +0000
+Received: by mail-ua1-x941.google.com with SMTP id u4so3208826uau.10
+ for <openwrt-devel@lists.openwrt.org>; Fri, 17 May 2019 14:06:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=GLKnyWHmqGiV7R0fngljzMYGms7zf3IeWEjQQ94danI=;
- b=e46L/quD1u/6Tbl3Pt4FwCizkwsV7yzHpjqkNOsueTYKlszLkL30ksn76hJo7X456R
- ru6MvCSpQfzD8JTfPdOxjaykJSE2WbhuM3M9aQ5GyvDHAdQs1r7z0oIRQHv1l49jiA//
- 2053XFvuZ71tEUQnY2bTypk7yPqdr4GKIA/H3CqWtGW5QmTtZZzNacSFAmVcvH2mzTbK
- dP+rAOiiNTRd0yiuILoFbNwaJFEucNILQkUpqflLV/pbfSlckkgGCBYsbBYZ+IZ45zhk
- +WuB3rA9CzsGismrF/cCj11lwkC5XfTgaL5bKQ/QIotKFXjyxqSmdKCPT/rK69xBUGgU
- W2RA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7T5eBWZdm72eIPPoeb6LBPaepyTP/yqBkm7JOh3aWYI=;
+ b=AxI66UhDDfSHtd45vFZWOFEfQaJYrE0Q8mOiLYSbjmxn3eCFkeutIm15VTJRUPSohG
+ yhTSFV7lvc7A7+G1K+5/Nbk4wijAJFqFL3+r7nvExo2FGVCEOaiitaWuW3up7isKwBtO
+ ByIZ2AP05K5CI77UPeTSLDy+ROXP/IHlShf3qY7/0aXo8DdIZGqEI+bUDRv48+Q6gDbM
+ kbCvTeKOBImvNOBrnzz/LuPcOJZsooG2fIbkgX2fnQvE9AZeg27tc9eBZmkUuPt1IFMs
+ 0m3uyrelSJIIE26FWzbyQUXbHnFP7E6Xd9LXgxCLVoNbnUh+V6x/nReAtIbC9NKAv3cv
+ Q5xw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=GLKnyWHmqGiV7R0fngljzMYGms7zf3IeWEjQQ94danI=;
- b=okAb+kbIOOxUd1+4XyGQo+hqLIatqNwcqty9058UGng7/KkGMRkYCxicIfxGcEwJwu
- C6dJo0q3JIcMRleJECc2Jj9VF2lZ/MEu61BFlOpvcBapfr+NKVMyi9mUPWCvvgcLYWQp
- Z7pYeTjUrLKXN5J1pEsWPdviudza8vZ/oXxHFbZC/Espta1K5rzZg7uwskd0NgxuGdWE
- PBAqOp64OaQnokwZKAxNNAejv17L0NIm+4JBwWIhSTzZ0osut8ySe+4Mlxx9Y9v8O2Tm
- NNv5Orh83jErjygMvldXUzYaxqtR5xbXijJfXZ90Ps37TWv5/tivggOC4hEdhGlB99cq
- Lm/A==
-X-Gm-Message-State: APjAAAWjBfXfgTXMBm1StTUNEgdtKpthSjKy2LulHsh/Q7zB+KOzjOhs
- QdiGZuAbhD95AhmY7sVa8K0=
-X-Google-Smtp-Source: APXvYqwOKa7DLw++p4Hu//T0MjZD/7g8wZXHEM9OvRvyazvC2r2DPrDEEsJwox49dCDzaJXBHedGMw==
-X-Received: by 2002:adf:f4c5:: with SMTP id h5mr19124469wrp.268.1558124303562; 
- Fri, 17 May 2019 13:18:23 -0700 (PDT)
-Received: from debian64.daheim (p4FD09697.dip0.t-ipconnect.de.
- [79.208.150.151])
- by smtp.gmail.com with ESMTPSA id o8sm14633932wra.4.2019.05.17.13.18.21
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 17 May 2019 13:18:21 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.92)
- (envelope-from <chunkeey@gmail.com>)
- id 1hRjJ6-0002IL-TI; Fri, 17 May 2019 22:18:20 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
-To: Petr =?utf-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
-Date: Fri, 17 May 2019 22:18:20 +0200
-Message-ID: <4726228.ymKfrnX4o1@debian64>
-In-Reply-To: <20190515193528.GD63920@meh.true.cz>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7T5eBWZdm72eIPPoeb6LBPaepyTP/yqBkm7JOh3aWYI=;
+ b=rQy7+5lSUEQnLEO0c8VvOpRmuTzr6k6WIQmDXzEMcopidK/N/IDjxvLpC9WGA1YDjY
+ pJ5U4ZRrGHcbJEdE7KMVRbN63QdHL07Ru6GGgNBiwEU/4sJd7FYoFVVZIJHhh7kUqr5Q
+ F6RBX3+0QbNDFfh0NNokDka6t+qQWj4jWATVo6IrioHEu1xNhpc9XhXjeEe72NYf+q+Z
+ gNVk+uBcv9238cnUioNzzmwBvEm3gb/o4bC2PZbcLsIcQEY0G5udx04gS5XC7vehUcy/
+ 7Ird+cnS/LGY6R4yGDtDtvq7vSiovTRs5YqwMEJs8n2wgps4YNs+saPLmF9mkbj4V/JZ
+ GGlQ==
+X-Gm-Message-State: APjAAAVaJMv+CpIFi7kp6bPuklp060QzIW2NcDOJPgr9pGDTVO+FWYys
+ mAHh4gs1EarrDYmGMKG/9UHLPYuvrFaS2Lhyoik=
+X-Google-Smtp-Source: APXvYqxxG+R7NjZeqDY5KYH1ffXfCCGWQOhjEeqkXVjGLOu+aDD7dB9dqKk9PYOFK6DMsPeOcjYmUhYUo1nTP3YXYIw=
+X-Received: by 2002:ab0:4a97:: with SMTP id s23mr26870387uae.19.1558127172683; 
+ Fri, 17 May 2019 14:06:12 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190514134220.3626-1-be.dissent@gmail.com>
  <CAEdN=pENo3cxEyffOBdLd1OAcmbpTYzrkk9bWx_F6csoiwLGVA@mail.gmail.com>
- <20190515193528.GD63920@meh.true.cz>
-MIME-Version: 1.0
+ <20190515193528.GD63920@meh.true.cz> <4726228.ymKfrnX4o1@debian64>
+In-Reply-To: <4726228.ymKfrnX4o1@debian64>
+From: =?UTF-8?B?0J/QsNCy0LXQuw==?= <be.dissent@gmail.com>
+Date: Sat, 18 May 2019 00:06:01 +0300
+Message-ID: <CAEdN=pGbwLDL5XbdGENBCmOZpTJ-raZs5=KfzHUvG7BA8hSiPg@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_131826_250096_D9226BB7 
-X-CRM114-Status: GOOD (  19.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190517_140618_139495_9448949E 
+X-CRM114-Status: GOOD (  27.92  )
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
+ provider (be.dissent[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.1 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 Subject: Re: [OpenWrt-Devel] [PATCH 4/4] ipq40xx: add support for secondary
  cores bringup
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -104,63 +96,279 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?utf-8?B?0J/QsNCy0LXQuw==?= <be.dissent@gmail.com>,
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org, Sven Eckelmann <sven@narfation.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============3640515689648950426=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gV2VkbmVzZGF5LCBNYXkgMTUsIDIwMTkgOTozNToyOCBQTSBDRVNUIFBldHIgxaB0ZXRpYXIg
-d3JvdGU6Cj4g0J/QsNCy0LXQuyA8YmUuZGlzc2VudEBnbWFpbC5jb20+IFsyMDE5LTA1LTE1IDIy
-OjE0OjQxXToKPiAKPiA+IE5vdCBhIHByb2JsZW0sIGFjdHVhbGx5LCBidXQgSSd2ZSBiZWVuIHN1
-Z2dlc3RlZCB0byBzcXVhc2ggdGhlbSA6KQo+ID4gaHR0cHM6Ly9naXRodWIuY29tL29wZW53cnQv
-b3BlbndydC9wdWxsLzIwNDMjaXNzdWVjb21tZW50LTQ5MTU4MTg5Nwo+IAo+IG9rLCB0aGFua3Mg
-Zm9yIHRoZSBiYWNrZ3JvdW5kLCBidXQgc3RpbGwsIHNxdWFzaGluZyBkb2Vzbid0IG1lYW4gY2hh
-bmdpbmcKPiBhdXRob3JzaGlwIGFuZCBDaHJpc3RpYW4gaGFzIHByb2JhYmx5IGFsc28gd2FybmVk
-IHlvdSBiZWZvcmVoYW5kIDotKQoKRGlkIGl0IG9jY3VyZSB0byBhbnlib2R5IHRvIGxvb2sgYXQg
-dGhlc2UgdHdvIHBhdGNoZXMgZm9yIGEgc2Vjb25kCmJlZm9yZSB3cml0aW5nIGxvbmcgZXNzYXlz
-IGFib3V0IHRoYXQncyByaWdodCBhbmQgbm90PyBCZWNhdXNlIFBhdGNoCiJvbmUiIGlzIGluY29t
-cGxldGUgYW5kIHRoZSBzZWNvbmQgcGF0Y2ggaXMgY2xlYXJseSBkb2luZyBhICJGSVhVUCIKZm9y
-IHRoZSBmaXJzdC4gVGhhdCdzIHdoeSB0aGV5IHNob3VsZCBiZSBzcXVhc2hlZC4gSSBkbyB0aGlu
-aywgeW91J2xsCmJlIGp1c3QgaWdub3JlZCBpZiB5b3UgdHJ5IHRvIHBvc3QgdGhlc2UgYXMtaXMg
-d2l0aCB5b3VyIHNpZ25lZC1vZmYKb24gdGhlIGxpbnV4LW1zbS1hcm0uIEJ1dCB0aGVuLCB3aHkg
-bm90IGdpdmUgaXQgYSBzaG90LCB0aGlzIHdvdWxkCm1ha2UgZm9yIHNvbWUgZ29vZCBsYXVnaHMg
-aWYgaXQgd2VudCB0aHJvdWdoIGFzLWlzLgoKQnV0IGZyb20gd2hhdCBJIG5vdGljZWQsIG5vYm9k
-eSBkaWQgYW55IG9mIHRoZSByZXF1ZXN0ZWQgcGVyZgp0ZXN0aW5nLiBUaGVzZSBhcmUgYWJzb2x1
-dGVseSBuZWNlc3NhcnkgYmVjYXVzZSB0aGUgc3dpdGNoCmZyb20ga3Bzcy12MSB0byBrcHNzLXYy
-IGNsZWFybHkgZGlkIGhhdmUgYW4gYmlnIGltcGFjdCBvbiB0aGUKcGVyZm9ybWFuY2UuIFNvIGxl
-dCdzIG5vdCBicmVhayBhbnl0aGluZyBiZWNhdXNlIG9mIGEgcG9zc2libGUKaW5jb21wbGV0ZSBw
-YXRjaCAodGhhdCBtaWdodCBvciBtaWdodCBub3QgcmVxdWlyZSAiUk9NIiBzdXBwb3J0CnRoYXQg
-bWlnaHQgb3IgbWlnaHQgbm90IGJlIHByZXNlbnQgb24gYWxsIGRldmljZXMpLgoKPiAiKE5vdGU6
-IEluIHNvbWUgb2YgdGhlIHBhdGNoZXMgdGhlICJBdXRob3IiIGluIHRoZSBjb21taXRzIGlzIGRp
-c3NlbnQxISBTbwo+ICAgd2F0Y2ggb3V0IGJlZm9yZSBzZW5kaW5nIHRoZW0gb2ZmKSIKPiAKPiA+
-IFNob3VsZG4ndCB0aGUgZGV2IHNlbmQgdGhlIHBhdGNoIGRpcmVjdGx5IHRvIG1lIGluIG9yZGVy
-IHRvIGJlIGFibGUgdG8gcG9zdAo+ID4gaXQgb24gaGlzIGJlaGFsZiwgbGlrZSBvcGVud3J0IHN1
-Ym1pdHRpbmcgcGF0Y2hlcyBndWlkZWxpbmUgZGVzY3JpYmVzPwo+IAo+IEZyb20gdGhlIGtlcm5l
-bCBkb2NzWzFdOgo+IAo+ICJUaGUgY29udHJpYnV0aW9uIGlzIGJhc2VkIHVwb24gcHJldmlvdXMg
-d29yayB0aGF0LCB0byB0aGUgYmVzdCBvZiBteQo+ICBrbm93bGVkZ2UsIGlzIGNvdmVyZWQgdW5k
-ZXIgYW4gYXBwcm9wcmlhdGUgb3BlbiBzb3VyY2UgbGljZW5zZSBhbmQgSSBoYXZlIHRoZQo+ICBy
-aWdodCB1bmRlciB0aGF0IGxpY2Vuc2UgdG8gc3VibWl0IHRoYXQgd29yayB3aXRoIG1vZGlmaWNh
-dGlvbnMsIHdoZXRoZXIKPiAgY3JlYXRlZCBpbiB3aG9sZSBvciBpbiBwYXJ0IGJ5IG1lLCB1bmRl
-ciB0aGUgc2FtZSBvcGVuIHNvdXJjZSBsaWNlbnNlICh1bmxlc3MKPiAgSSBhbSBwZXJtaXR0ZWQg
-dG8gc3VibWl0IHVuZGVyIGEgZGlmZmVyZW50IGxpY2Vuc2UpLCBhcyBpbmRpY2F0ZWQgaW4gdGhl
-IGZpbGU7Igo+IAo+IHNvIGluIHNob3J0LCBrZXJuZWwgaXMgY292ZXJlZCBieSBHUEx2MiB3aGlj
-aCBhbGxvd3MgeW91IHRvIGRvIHRoaXMgaWYgeW91Cj4gcmV0YWluIHRoZSBhdXRob3JzaGlwLgpU
-aGUgb3RoZXIgYXNwZWN0IG9mIHRoaXMgaXMgdGhhdCB5b3UgY2FuIGFsc28gIm9mZmxvYWQiIHNv
-bWUgb2YgdGhlIGJsYW1lCndpdGggcmV0YWluaW5nIHRoZSBvcmlnaW5hbCBhdXRob3JzaGlwIGlm
-IHRoZSBwYXRjaCBnb2VzIHNvdXIuIEJlY2F1c2UgYXMKeW91IGhhdmUgc2VlbiBldmVuIHRoZSBi
-ZW5pZ2h0IDMyS0h6ICgzMjAwMEh6IHZzIDMyNzY4SHopIG5vbi1pc3N1ZQooc2luY2UgaXQgZ2V0
-cyAicm91bmRlZCBkb3duIiBieSB0aGUgcWNvbS1jbGsgdG8gMzIwMDAgc2VlIGtlcm5lbCBkZWJ1
-ZykKY2FuIGJlIGEgaG90IHRvcGljIHdpdGggY29uZmxpY3RpbmcgImZhY3RzIi4gU2ltcGx5IGJl
-Y2F1c2Ugd2UgZG9uJ3Qga25vdwpob3cgdGhlIGNsb2NrIGNvdW50IGlzIGF0dGFpbmVkLiBJZiBp
-dCdzIGFuIGV4dGVybmFsIG9zYyB0aGVuIGl0J3MgcHJvYmFibHkKdGhlICJyb3VuZCIgMzI3Njgg
-SHosIGJ1dCBpZiB0aGlzIHNsZWVwIGNsb2NrIGlzIGdlbmVyYXRlZCBmcm9tIHRoZSA0OCBNSHoK
-T3NjIHJlZmVyZW5jZSAod2hpY2ggd2Uga25vdyBpcyB0aGVyZSwgYmVjYXVzZSB0aGVzZSBvc2Mg
-YXJlIGJpZyBlbm91Z2ggdG8KYmUgc3BvdHRlZCBieSBsb29raW5nIGF0IHRoZSBQQ0IpIHRoZW4g
-YSAib2RkIiAzMjAwMEh6IGlzIHBvc3NpYmxlLgoKKFRoYXQgc2FpZCwgdGhlIGhpZ2hyZXMgdGlt
-ZXIgZml4IHNlZW1zIHRvIGJlIGRlZmluaXRlbHkgYSB3aW5uZXIuIApJJ20gZ2xhZCB0aGF0IHlv
-dSBzcG90dGVkIGl0KS4KClJlZ3JhZHMsCkNocmlzdGlhbgoKCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
-cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+--===============3640515689648950426==
+Content-Type: multipart/alternative; boundary="000000000000a48adf05891bc0d1"
+
+--000000000000a48adf05891bc0d1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+=D0=BF=D1=82, 17 =D0=BC=D0=B0=D1=8F 2019 =D0=B3., 23:18 Christian Lamparter=
+ <chunkeey@gmail.com>:
+
+> On Wednesday, May 15, 2019 9:35:28 PM CEST Petr =C5=A0tetiar wrote:
+> > =D0=9F=D0=B0=D0=B2=D0=B5=D0=BB <be.dissent@gmail.com> [2019-05-15 22:14=
+:41]:
+> >
+> > > Not a problem, actually, but I've been suggested to squash them :)
+> > > https://github.com/openwrt/openwrt/pull/2043#issuecomment-491581897
+> >
+> > ok, thanks for the background, but still, squashing doesn't mean changi=
+ng
+> > authorship and Christian has probably also warned you beforehand :-)
+>
+> Did it occure to anybody to look at these two patches for a second
+> before writing long essays about that's right and not? Because Patch
+> "one" is incomplete and the second patch is clearly doing a "FIXUP"
+> for the first. That's why they should be squashed. I do think, you'll
+> be just ignored if you try to post these as-is with your signed-off
+> on the linux-msm-arm. But then, why not give it a shot, this would
+> make for some good laughs if it went through as-is.
+>
+> But from what I noticed, nobody did any of the requested perf
+> testing. These are absolutely necessary because the switch
+> from kpss-v1 to kpss-v2 clearly did have an big impact on the
+>
+
+Actually I've compared openssl benchmark (difference that you've mentioned)
+between kpss-acc-v2 and this one - there's completely no difference that I
+could notice. For example sha256 produces the same result. Here's
+cortex-a7acc edition:
+root@OpenWrt:~# openssl speed sha256
+Doing sha256 for 3s on 16 size blocks: 859807 sha256's in 3.00s
+Doing sha256 for 3s on 64 size blocks: 493458 sha256's in 3.00s
+Doing sha256 for 3s on 256 size blocks: 219786 sha256's in 3.00s
+Doing sha256 for 3s on 1024 size blocks: 68287 sha256's in 3.00s
+Doing sha256 for 3s on 8192 size blocks: 9187 sha256's in 3.00s
+Doing sha256 for 3s on 16384 size blocks: 4619 sha256's in 3.00s
+OpenSSL 1.1.1b  26 Feb 2019
+built on: Thu May 16 12:57:06 2019 UTC
+options:bn(64,32) rc4(char) des(long) aes(partial) blowfish(ptr)
+compiler: arm-openwrt-linux-muslgnueabi-gcc -fPIC -pthread
+-Wa,--noexecstack -Wall -O3 -pipe -fno-caller-saves -fno-plt -fhonour-copts
+-Wno-error=3Dunused-but-set-variable -Wno-error=3Dunused-result
+-mfloat-abi=3Dhard -Wformat -Werror=3Dformat-security -fstack-protector
+-D_FORTIFY_SOURCE=3D1 -Wl,-z,now -Wl,-z,relro -O3 -fpic -ffunction-sections
+-fdata-sections -znow -zrelro -DOPENSSL_USE_NODELETE -DOPENSSL_PIC
+-DOPENSSL_CPUID_OBJ -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM_GF2m -DSHA1_ASM
+-DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DAES_ASM -DBSAES_ASM
+-DGHASH_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM -DNDEBUG
+-DOPENSSL_PREFER_CHACHA_OVER_GCM
+The 'numbers' are in 1000s of bytes per second processed.
+type             16 bytes     64 bytes    256 bytes   1024 bytes   8192
+bytes  16384 bytes
+sha256            4585.64k    10527.10k    18755.07k    23308.63k
+25086.63k    25225.90k
+
+I'm not pasting the kpss-acc-v2 result because it doesn't differ.
+
+But I indeed noticed 2x difference between oem firmware that is probably
+still on kpss-acc-v1.
+
+performance. So let's not break anything because of a possible
+> incomplete patch (that might or might not require "ROM" support
+> that might or might not be present on all devices).
+>
+> > "(Note: In some of the patches the "Author" in the commits is dissent1!
+> So
+> >   watch out before sending them off)"
+> >
+> > > Shouldn't the dev send the patch directly to me in order to be able t=
+o
+> post
+> > > it on his behalf, like openwrt submitting patches guideline describes=
+?
+> >
+> > From the kernel docs[1]:
+> >
+> > "The contribution is based upon previous work that, to the best of my
+> >  knowledge, is covered under an appropriate open source license and I
+> have the
+> >  right under that license to submit that work with modifications, wheth=
+er
+> >  created in whole or in part by me, under the same open source license
+> (unless
+> >  I am permitted to submit under a different license), as indicated in
+> the file;"
+> >
+> > so in short, kernel is covered by GPLv2 which allows you to do this if
+> you
+> > retain the authorship.
+> The other aspect of this is that you can also "offload" some of the blame
+> with retaining the original authorship if the patch goes sour. Because as
+> you have seen even the benight 32KHz (32000Hz vs 32768Hz) non-issue
+> (since it gets "rounded down" by the qcom-clk to 32000 see kernel debug)
+> can be a hot topic with conflicting "facts". Simply because we don't know
+> how the clock count is attained. If it's an external osc then it's probab=
+ly
+> the "round" 32768 Hz, but if this sleep clock is generated from the 48 MH=
+z
+> Osc reference (which we know is there, because these osc are big enough t=
+o
+> be spotted by looking at the PCB) then a "odd" 32000Hz is possible.
+>
+> (That said, the highres timer fix seems to be definitely a winner.
+> I'm glad that you spotted it).
+>
+> Regrads,
+> Christian
+>
+>
+>
+
+--000000000000a48adf05891bc0d1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
+class=3D"gmail_attr">=D0=BF=D1=82, 17 =D0=BC=D0=B0=D1=8F 2019 =D0=B3., 23:1=
+8 Christian Lamparter &lt;<a href=3D"mailto:chunkeey@gmail.com" target=3D"_=
+blank" rel=3D"noreferrer">chunkeey@gmail.com</a>&gt;:<br></div><blockquote =
+class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid=
+;padding-left:1ex">On Wednesday, May 15, 2019 9:35:28 PM CEST Petr =C5=A0te=
+tiar wrote:<br>
+&gt; =D0=9F=D0=B0=D0=B2=D0=B5=D0=BB &lt;<a href=3D"mailto:be.dissent@gmail.=
+com" rel=3D"noreferrer noreferrer" target=3D"_blank">be.dissent@gmail.com</=
+a>&gt; [2019-05-15 22:14:41]:<br>
+&gt; <br>
+&gt; &gt; Not a problem, actually, but I&#39;ve been suggested to squash th=
+em :)<br>
+&gt; &gt; <a href=3D"https://github.com/openwrt/openwrt/pull/2043#issuecomm=
+ent-491581897" rel=3D"noreferrer noreferrer noreferrer" target=3D"_blank">h=
+ttps://github.com/openwrt/openwrt/pull/2043#issuecomment-491581897</a><br>
+&gt; <br>
+&gt; ok, thanks for the background, but still, squashing doesn&#39;t mean c=
+hanging<br>
+&gt; authorship and Christian has probably also warned you beforehand :-)<b=
+r>
+<br>
+Did it occure to anybody to look at these two patches for a second<br>
+before writing long essays about that&#39;s right and not? Because Patch<br=
+>
+&quot;one&quot; is incomplete and the second patch is clearly doing a &quot=
+;FIXUP&quot;<br>
+for the first. That&#39;s why they should be squashed. I do think, you&#39;=
+ll<br>
+be just ignored if you try to post these as-is with your signed-off<br>
+on the linux-msm-arm. But then, why not give it a shot, this would<br>
+make for some good laughs if it went through as-is.<br>
+<br>
+But from what I noticed, nobody did any of the requested perf<br>
+testing. These are absolutely necessary because the switch<br>
+from kpss-v1 to kpss-v2 clearly did have an big impact on the<br></blockquo=
+te></div></div><div dir=3D"auto"><br></div><div dir=3D"auto">Actually I&#39=
+;ve compared openssl benchmark (difference that you&#39;ve mentioned) betwe=
+en kpss-acc-v2 and this one - there&#39;s completely no difference that I c=
+ould notice. For example sha256 produces the same result. Here&#39;s cortex=
+-a7acc edition:</div><div dir=3D"auto"><div dir=3D"auto">root@OpenWrt:~# op=
+enssl speed sha256</div><div dir=3D"auto">Doing sha256 for 3s on 16 size bl=
+ocks: 859807 sha256&#39;s in 3.00s</div><div dir=3D"auto">Doing sha256 for =
+3s on 64 size blocks: 493458 sha256&#39;s in 3.00s</div><div dir=3D"auto">D=
+oing sha256 for 3s on 256 size blocks: 219786 sha256&#39;s in 3.00s</div><d=
+iv dir=3D"auto">Doing sha256 for 3s on 1024 size blocks: 68287 sha256&#39;s=
+ in 3.00s</div><div dir=3D"auto">Doing sha256 for 3s on 8192 size blocks: 9=
+187 sha256&#39;s in 3.00s</div><div dir=3D"auto">Doing sha256 for 3s on 163=
+84 size blocks: 4619 sha256&#39;s in 3.00s</div><div dir=3D"auto">OpenSSL 1=
+.1.1b=C2=A0 26 Feb 2019</div><div dir=3D"auto">built on: Thu May 16 12:57:0=
+6 2019 UTC</div><div dir=3D"auto">options:bn(64,32) rc4(char) des(long) aes=
+(partial) blowfish(ptr)=C2=A0</div><div dir=3D"auto">compiler: arm-openwrt-=
+linux-muslgnueabi-gcc -fPIC -pthread -Wa,--noexecstack -Wall -O3 -pipe -fno=
+-caller-saves -fno-plt -fhonour-copts -Wno-error=3Dunused-but-set-variable =
+-Wno-error=3Dunused-result -mfloat-abi=3Dhard -Wformat -Werror=3Dformat-sec=
+urity -fstack-protector -D_FORTIFY_SOURCE=3D1 -Wl,-z,now -Wl,-z,relro -O3 -=
+fpic -ffunction-sections -fdata-sections -znow -zrelro -DOPENSSL_USE_NODELE=
+TE -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_BN_ASM_MONT -DOPENSSL_BN_ASM=
+_GF2m -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DAES_ASM -DBSA=
+ES_ASM -DGHASH_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM -DNDEBUG -DOPENSSL_PRE=
+FER_CHACHA_OVER_GCM</div><div dir=3D"auto">The &#39;numbers&#39; are in 100=
+0s of bytes per second processed.</div><div dir=3D"auto">type=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A016 bytes=C2=A0 =C2=A0 =C2=A064 bytes=C2=
+=A0 =C2=A0 256 bytes=C2=A0 =C2=A01024 bytes=C2=A0 =C2=A08192 bytes=C2=A0 16=
+384 bytes</div><div dir=3D"auto">sha256=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 4585.64k=C2=A0 =C2=A0 10527.10k=C2=A0 =C2=A0 18755.07k=C2=A0 =C2=A0 =
+23308.63k=C2=A0 =C2=A0 25086.63k=C2=A0 =C2=A0 25225.90k</div></div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">I&#39;m not pasting the kpss-acc-v2 r=
+esult because it doesn&#39;t differ.</div><div dir=3D"auto"><br></div><div =
+dir=3D"auto">But I indeed noticed 2x difference between oem firmware that i=
+s probably still on kpss-acc-v1.</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto"><div class=3D"gmail_quote"><blockquote class=3D"gmail_quote" styl=
+e=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+performance. So let&#39;s not break anything because of a possible<br>
+incomplete patch (that might or might not require &quot;ROM&quot; support<b=
+r>
+that might or might not be present on all devices).<br>
+<br>
+&gt; &quot;(Note: In some of the patches the &quot;Author&quot; in the comm=
+its is dissent1! So<br>
+&gt;=C2=A0 =C2=A0watch out before sending them off)&quot;<br>
+&gt; <br>
+&gt; &gt; Shouldn&#39;t the dev send the patch directly to me in order to b=
+e able to post<br>
+&gt; &gt; it on his behalf, like openwrt submitting patches guideline descr=
+ibes?<br>
+&gt; <br>
+&gt; From the kernel docs[1]:<br>
+&gt; <br>
+&gt; &quot;The contribution is based upon previous work that, to the best o=
+f my<br>
+&gt;=C2=A0 knowledge, is covered under an appropriate open source license a=
+nd I have the<br>
+&gt;=C2=A0 right under that license to submit that work with modifications,=
+ whether<br>
+&gt;=C2=A0 created in whole or in part by me, under the same open source li=
+cense (unless<br>
+&gt;=C2=A0 I am permitted to submit under a different license), as indicate=
+d in the file;&quot;<br>
+&gt; <br>
+&gt; so in short, kernel is covered by GPLv2 which allows you to do this if=
+ you<br>
+&gt; retain the authorship.<br>
+The other aspect of this is that you can also &quot;offload&quot; some of t=
+he blame<br>
+with retaining the original authorship if the patch goes sour. Because as<b=
+r>
+you have seen even the benight 32KHz (32000Hz vs 32768Hz) non-issue<br>
+(since it gets &quot;rounded down&quot; by the qcom-clk to 32000 see kernel=
+ debug)<br>
+can be a hot topic with conflicting &quot;facts&quot;. Simply because we do=
+n&#39;t know<br>
+how the clock count is attained. If it&#39;s an external osc then it&#39;s =
+probably<br>
+the &quot;round&quot; 32768 Hz, but if this sleep clock is generated from t=
+he 48 MHz<br>
+Osc reference (which we know is there, because these osc are big enough to<=
+br>
+be spotted by looking at the PCB) then a &quot;odd&quot; 32000Hz is possibl=
+e.<br>
+<br>
+(That said, the highres timer fix seems to be definitely a winner. <br>
+I&#39;m glad that you spotted it).<br>
+<br>
+Regrads,<br>
+Christian<br>
+<br>
+<br>
+</blockquote></div></div></div>
+
+--000000000000a48adf05891bc0d1--
+
+
+--===============3640515689648950426==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3640515689648950426==--
+

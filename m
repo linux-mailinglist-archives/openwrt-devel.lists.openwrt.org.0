@@ -2,41 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 215BE2290E
-	for <lists+openwrt-devel@lfdr.de>; Sun, 19 May 2019 23:16:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 962AA22946
+	for <lists+openwrt-devel@lfdr.de>; Sun, 19 May 2019 23:46:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n86d790uV41R4jGvnOCT2V8ziL7FB77DtZLC5thKWbg=; b=h/BQ/wPn90y1/k
-	X5QDOryWgQojC7ZnAQj8vVH6jl2EDvBv5C0dCwk59vv70y/j2imKq2mmbdvwwi4bCtpZ5fZNvKgpo
-	laqHV0IlM8KaGhkwHbX3dEKWG2DJsgzo887qmZpP5MRyaZs4vOkmeEqM/rZ8XO5m6ZovcIYyJHOoa
-	NUsSQVkNQ2eUUPFocsrB9Y5ataH4ShOW/yLZQpagSJEwq0amChCY8KqAP32YLgy4NoiBRnhQ2gy33
-	6Vvz39cdxqHY7vxQthAbFIA4GJ8uVDAEjbTJRSQKrHMU+dzwAJHQx6/7NUnYt3TeXsFA6thLh92fB
-	y6hAjvTYwN2XiQ542M6Q==;
+	List-Owner; bh=kpTTRkEEM4cIl1kKm8JvLXPN50EbhumsKVf6562lTQ4=; b=XMnCFnWCWNeSkz
+	wQGQ0yVgwAjYPUDEtn885IGyQFQV38Cq05mk3ndVqyD03NfexyCVoTTTljLavx1bkhY1ojpyhLyCT
+	aPJkNBYZaHyoIWCg8mTSgVMebiFj1AUotOwlY1j88kdrS6DebVVMwYQjyXoltJHAthi2+ez51NTyZ
+	tNa25e3+EEWPl8OdaqT6Yl3uZ6nlZJkXJ5SR+JJL7gTiTMKrXTh+DW1K25VG3OssQ0xFItzWNevld
+	brU+BTA+LhX4neKiC0ttFok+BMUYcVpXUUp0uE5u2aUxnygW/QCY5pXZasXpbPqEdUB3lKjegWDKb
+	tlOtNzEgewvlEwT/CzAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hST9x-000871-GB; Sun, 19 May 2019 21:15:57 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1hSTdB-0000Pa-Tr; Sun, 19 May 2019 21:46:09 +0000
+Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hST9p-00085x-IF
- for openwrt-devel@lists.openwrt.org; Sun, 19 May 2019 21:15:52 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1hSTd5-0000PB-1i
+ for openwrt-devel@lists.openwrt.org; Sun, 19 May 2019 21:46:05 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 9BAB84F2B8;
- Sun, 19 May 2019 23:15:43 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id CE2B550852;
+ Sun, 19 May 2019 23:45:59 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
- [80.241.56.117]) (amavisd-new, port 10030)
- with ESMTP id s-vkJ7-FesiO; Sun, 19 May 2019 23:15:33 +0200 (CEST)
-To: Sandeep.Sheriker@microchip.com, openwrt-devel@lists.openwrt.org
-References: <20190511115320.12285-1-hauke@hauke-m.de>
- <20190511115320.12285-4-hauke@hauke-m.de>
- <BYAPR11MB3157455EFFE6402BF4CE6D9A820B0@BYAPR11MB3157.namprd11.prod.outlook.com>
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id 0SsoaTXgOkah; Sun, 19 May 2019 23:45:57 +0200 (CEST)
+To: Petr Cvek <petrcvekcz@gmail.com>, openwrt-devel@lists.openwrt.org
+References: <1675e3e2-da4b-79e9-f9e4-895be7cf7882@gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -99,24 +97,26 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <8da7ee39-4e10-4c69-14a9-15bd08f91f9d@hauke-m.de>
-Date: Sun, 19 May 2019 23:15:31 +0200
+Message-ID: <1a46720c-ac40-c874-d2ca-89819f38733b@hauke-m.de>
+Date: Sun, 19 May 2019 23:45:54 +0200
 MIME-Version: 1.0
-In-Reply-To: <BYAPR11MB3157455EFFE6402BF4CE6D9A820B0@BYAPR11MB3157.namprd11.prod.outlook.com>
+In-Reply-To: <1675e3e2-da4b-79e9-f9e4-895be7cf7882@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190519_141549_915532_B754BFFA 
-X-CRM114-Status: GOOD (  22.96  )
+X-CRM114-CacheID: sfid-20190519_144603_398102_D4BDD2CE 
+X-CRM114-Status: GOOD (  36.23  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 3/4] at91: Merge SAMA5 subtargets
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:1:25:1 listed in]
+ [list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] [PATCH v5] kernel: lantiq: add support for SMP
+ IRQ routing
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -128,632 +128,483 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: c.mignanti@gmail.com
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Cc: pakahmar@hotmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 5/17/19 6:41 PM, Sandeep.Sheriker@microchip.com wrote:
-> Hi Hauke Mehrtens,
-> =
+Hi Petr,
 
-> =A0 =A0 =A0The reason I created different=A0SAMA5 subtargets is:
+Thank you for the patch.
 
-The additional subtargets cause us extra maintenance efforts and we also
-need more compute resources for our build bots because we have to build
-more. We would like to reduce the number of subtargets especially for
-not so much used targets.
+On 5/17/19 5:44 AM, Petr Cvek wrote:
+> Some lantiq SoCs have multiple VPE support but no support for the IRQ
+> routing, so only the first VPE is receiving interrupts. This patch adds
+> support for rerouting interrupts to the other VPE. Basically it expands
+> the current ICU driver for the second controller, adds new address
+> ranges to the devicetree and fixes the interrupt masking on the second
+> core.
+> Some reg access locking was added too.
+> 
+> The mode of the operation is that userdefined IRQ affinity CPU mask is
+> either cycled between VPEs in every IRQ enable call
+> (AUTO_AFFINITY_ROTATION), or only the first VPE from affinity CPU mask
+> is used (AUTO_AFFINITY_ROTATION not defined).
+> 
+> Tested on TD-W9980B device (both VPEs used as linux CPUs).
+> 
+> Signed-off-by: Petr Cvek <petrcvekcz@gmail.com>
 
->  1. Able to set neon flags to sama5d2 & sama5d4 subtargets.
+It would be nice if you could split this up into multiple patches and
+also send to the Linux mips mailling list to get this into mainline
+Linux kernel. We can get it then in paralle into OpenWrt and upstream Linux.
 
-Yes, this is one disadvantage, because the sama5d3 does not support the
-ARM NEON extension. I do not think this extension brings so much
-advantages in the common use cases of OpenWrt and the at91 target is
-also not used so much as far as I know.
-
->  2. We can=A0configure kernel specific to these=A0subtarget.
-
-The kernel configurations of the different sama5 subtargets only had
-very little differences. In addition to the specific CONFIG_SOC_SAMA5DX
-configuration the sama5d2 subtarget had CAN support and
-CONFIG_POSIX_MQUEUE activated, otherwise they used the same kernel
-configuration.
-
->  3. Able to set vfpu4 flags to samad3 subtargets
-
-The vfpv4 feature flag is still set for the sama5 subtargets, the legacy
-subtarget still exists because this is rally a very different CPU.
-
-> I would not=A0recommend to merge subtargets into one. Adding neon
-> optimization improves performance.
-> =
-
-> =
-
-> Regards,
-> Sandeep Sheriker M
-> =
-
-> =
-
-> =
-
-> ------------------------------------------------------------------------
-> *From:* Hauke Mehrtens <hauke@hauke-m.de>
-> *Sent:* Saturday, May 11, 2019 4:53 AM
-> *To:* openwrt-devel@lists.openwrt.org
-> *Cc:* c.mignanti@gmail.com; Sandeep Sheriker Mallikarjun - C17018; Hauke
-> Mehrtens
-> *Subject:* [PATCH 3/4] at91: Merge SAMA5 subtargets
-> =A0
-> External E-Mail
-> =
-
-> =
-
-> Instead of maintaining 3 very similar subtargets merge them into one.
-> This does not use the Arm NEON extension any more, because the SAMA5D3
-> does not support NEON.
-> =
-
-> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
 > ---
-> =A0package/boot/at91bootstrap/Makefile=A0=A0=A0=A0=A0 | 26 ++++-----
-> =A0package/boot/uboot-at91/Makefile=A0=A0=A0=A0=A0=A0=A0=A0 | 22 ++++----
-> =A0target/linux/at91/Makefile=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=
-=A0 2 +-
-> =A0target/linux/at91/config-4.9=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 |=A0 =
-5 +-
-> =A0target/linux/at91/image/Makefile=A0=A0=A0=A0=A0=A0=A0=A0 | 10 +---
-> =A0target/linux/at91/image/sama5.mk=A0=A0=A0=A0=A0=A0=A0=A0 | 71 ++++++++=
-++++++++++++++++
-> =A0target/linux/at91/image/sama5d2.mk=A0=A0=A0=A0=A0=A0 | 31 -----------
-> =A0target/linux/at91/image/sama5d3.mk=A0=A0=A0=A0=A0=A0 | 33 -----------
-> =A0target/linux/at91/image/sama5d4.mk=A0=A0=A0=A0=A0=A0 | 19 -------
-> =A0target/linux/at91/sama5/config-default=A0=A0 |=A0 0
-> =A0target/linux/at91/sama5/target.mk=A0=A0=A0=A0=A0=A0=A0 | 10 ++++
-> =A0target/linux/at91/sama5d2/config-default |=A0 3 -
-> =A0target/linux/at91/sama5d2/target.mk=A0=A0=A0=A0=A0 | 10 ----
-> =A0target/linux/at91/sama5d3/config-default |=A0 2 -
-> =A0target/linux/at91/sama5d3/target.mk=A0=A0=A0=A0=A0 | 10 ----
-> =A0target/linux/at91/sama5d4/target.mk=A0=A0=A0=A0=A0 | 10 ----
-> =A016 files changed, 111 insertions(+), 153 deletions(-)
-> =A0create mode 100644 target/linux/at91/image/sama5.mk
-> =A0delete mode 100644 target/linux/at91/image/sama5d2.mk
-> =A0create mode 100644 target/linux/at91/sama5/config-default
-> =A0create mode 100644 target/linux/at91/sama5/target.mk
-> =A0delete mode 100644 target/linux/at91/sama5d2/config-default
-> =A0delete mode 100644 target/linux/at91/sama5d2/target.mk
-> =A0delete mode 100644 target/linux/at91/sama5d3/config-default
-> =A0delete mode 100644 target/linux/at91/sama5d3/target.mk
-> =A0delete mode 100644 target/linux/at91/sama5d4/target.mk
-> =
-
-> diff --git a/package/boot/at91bootstrap/Makefile
-> b/package/boot/at91bootstrap/Makefile
-> index 22afd1ec41..8a08a7aa2c 100644
-> --- a/package/boot/at91bootstrap/Makefile
-> +++ b/package/boot/at91bootstrap/Makefile
-> @@ -30,79 +30,79 @@ endef
-> =A0
-> =A0define AT91Bootstrap/sama5d2_xplaineddf_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D2 Xplained board (SPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d2_xplaineddf_qspi_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D2 Xplained board (QSPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d2_xplainedsd_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D2 Xplained board (SDcard/EMMC)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d3_xplainednf_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D3 Xplained board (Nand Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d3
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d3_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d3_xplainedsd_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D3 Xplained board (SDcard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d3
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d3_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d4_xplainednf_uboot_secure
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D4 Xplained board (Nand Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d4
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d4_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d4_xplaineddf_uboot_secure
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D4 Xplained board (SPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d4
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d4_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d4_xplainedsd_uboot_secure
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D4 Xplained board (SDcard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d4
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d4_xplained
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d27_som1_eksd_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D27 SOM1 Ek (SDcard0)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d27_som1_ek
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d27_som1_eksd1_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D27 SOM1 Ek (SDcard1)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d27_som1_ek
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d27_som1_ekqspi_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D27 SOM1 Ek (QSPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d27_som1_ek
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d2_ptc_eknf_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D2 PTC EK (Nand Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_ptc_ek
-> =A0endef
-> =A0
-> =A0define AT91Bootstrap/sama5d2_ptc_eksd_uboot
-> =A0=A0 TITLE:=3DAT91Bootstrap for SAMA5D2 PTC EK (SDCard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_ptc_ek
-> =A0endef
-> =A0
-> diff --git a/package/boot/uboot-at91/Makefile
-> b/package/boot/uboot-at91/Makefile
-> index f0a4ba56c2..23bd2d2b01 100644
-> --- a/package/boot/uboot-at91/Makefile
-> +++ b/package/boot/uboot-at91/Makefile
-> @@ -40,67 +40,67 @@ endef
-> =A0
-> =A0define U-Boot/sama5d3_xplained_nandflash
-> =A0=A0 NAME:=3DSAMA5D3 Xplained board (NandFlash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d3
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d3_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d3_xplained_mmc
-> =A0=A0 NAME:=3DSAMA5D3 Xplained board (SDcard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d3
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d3_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d2_xplained_spiflash
-> =A0=A0 NAME:=3DSAMA5D2 Xplained board (SPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d2_xplained_mmc
-> =A0=A0 NAME:=3DSAMA5D2 Xplained board (SDcard/EMMC)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d4_xplained_spiflash
-> =A0=A0 NAME:=3DSAMA5D4 Xplained board (SPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d4
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d4_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d4_xplained_mmc
-> =A0=A0 NAME:=3DSAMA5D4 Xplained board (SDcard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d4
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d4_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d4_xplained_nandflash
-> =A0=A0 NAME:=3DSAMA5D4 Xplained board (NandFlash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d4
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d4_xplained
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d27_som1_ek_mmc
-> =A0=A0 NAME:=3DSAMA5D27 SOM1 Ek (SDCard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d27_som1_ek
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d27_som1_ek_spiflash
-> =A0=A0 NAME:=3DSAMA5D27 SOM1 Ek (QSPI Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d27_som1_ek
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d2_ptc_ek_nandflash
-> =A0=A0 NAME:=3DSAMA5D2 PTC Ek (Nand Flash)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_ptc_ek
-> =A0endef
-> =A0
-> =A0define U-Boot/sama5d2_ptc_ek_mmc
-> =A0=A0 NAME:=3DSAMA5D2 PTC Ek (SDCard)
-> -=A0 BUILD_SUBTARGET:=3Dsama5d2
-> +=A0 BUILD_SUBTARGET:=3Dsama5
-> =A0=A0 BUILD_DEVICES:=3Dat91-sama5d2_ptc_ek
-> =A0endef
-> =A0
-> diff --git a/target/linux/at91/Makefile b/target/linux/at91/Makefile
-> index d71e0850ff..cae3c6278b 100644
-> --- a/target/linux/at91/Makefile
-> +++ b/target/linux/at91/Makefile
-> @@ -11,7 +11,7 @@ BOARD:=3Dat91
-> =A0MAINTAINER:=3DClaudio Mignanti <c.mignanti@gmail.com>
-> =A0BOARDNAME:=3DMicrochip (Atmel AT91)
-> =A0FEATURES:=3Dext4 squashfs targz usb usbgadget ubifs
-> -SUBTARGETS:=3Dsama5d2 sama5d3 sama5d4 legacy
-> +SUBTARGETS:=3Dsama5 legacy
-> =A0
-> =A0KERNEL_PATCHVER:=3D4.9
-> =A0
-> diff --git a/target/linux/at91/config-4.9 b/target/linux/at91/config-4.9
-> index 452cfd5aa3..ad18d6b826 100644
-> --- a/target/linux/at91/config-4.9
-> +++ b/target/linux/at91/config-4.9
-> @@ -214,6 +214,7 @@ CONFIG_HAVE_ARCH_PFN_VALID=3Dy
-> =A0CONFIG_HAVE_ARCH_SECCOMP_FILTER=3Dy
-> =A0CONFIG_HAVE_ARCH_TRACEHOOK=3Dy
-> =A0CONFIG_HAVE_ARM_SMCCC=3Dy
-> +CONFIG_HAVE_AT91_GENERATED_CLK=3Dy
-> =A0CONFIG_HAVE_AT91_H32MX=3Dy
-> =A0CONFIG_HAVE_AT91_SMD=3Dy
-> =A0CONFIG_HAVE_AT91_USB_CLK=3Dy
-> @@ -464,8 +465,8 @@ CONFIG_SND_SUPPORT_OLD_API=3Dy
-> =A0CONFIG_SND_TIMER=3Dy
-> =A0CONFIG_SOC_BUS=3Dy
-> =A0CONFIG_SOC_SAMA5=3Dy
-> -# CONFIG_SOC_SAMA5D2 is not set
-> -# CONFIG_SOC_SAMA5D3 is not set
-> +CONFIG_SOC_SAMA5D2=3Dy
-> +CONFIG_SOC_SAMA5D3=3Dy
-> =A0CONFIG_SOC_SAMA5D4=3Dy
-> =A0CONFIG_SOC_SAM_V7=3Dy
-> =A0CONFIG_SOUND=3Dy
-> diff --git a/target/linux/at91/image/Makefile
-> b/target/linux/at91/image/Makefile
-> index 49d93aa97d..f4d942b682 100644
-> --- a/target/linux/at91/image/Makefile
-> +++ b/target/linux/at91/image/Makefile
-> @@ -16,14 +16,8 @@ endef
-> =A0ifeq ($(SUBTARGET),legacy)
-> =A0include ./legacy.mk
-> =A0endif
-> -ifeq ($(SUBTARGET),sama5d2)
-> -include ./sama5d2.mk
-> -endif
-> -ifeq ($(SUBTARGET),sama5d3)
-> -include ./sama5d3.mk
-> -endif
-> -ifeq ($(SUBTARGET),sama5d4)
-> -include ./sama5d4.mk
-> +ifeq ($(SUBTARGET),sama5)
-> +include ./sama5.mk
-> =A0endif
-> =A0
-> =A0AT91_SD_BOOT_PARTSIZE:=3D64
-> diff --git a/target/linux/at91/image/sama5.mk
-> b/target/linux/at91/image/sama5.mk
+>  .../0901-add-icu-smp-support.patch            | 436 ++++++++++++++++++
+>  1 file changed, 436 insertions(+)
+>  create mode 100644
+> target/linux/lantiq/patches-4.14/0901-add-icu-smp-support.patch
+> 
+> diff --git
+> a/target/linux/lantiq/patches-4.14/0901-add-icu-smp-support.patch
+> b/target/linux/lantiq/patches-4.14/0901-add-icu-smp-support.patch
 > new file mode 100644
-> index 0000000000..f9a190c8b2
+> index 0000000000..eaefdf27a3
 > --- /dev/null
-> +++ b/target/linux/at91/image/sama5.mk
-> @@ -0,0 +1,71 @@
-> +
-> +define Device/default-nand
-> +=A0 BLOCKSIZE :=3D 128k
-> +=A0 PAGESIZE :=3D 2048
-> +=A0 SUBPAGESIZE :=3D 2048
-> +=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 124KiB -c 2048
-> +endef
-> +
-> +define Device/at91-sama5d2_xplained
-> +=A0 $(Device/evaluation-dtb)
-> +=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D2 Xplained
-> +=A0 KERNEL_SIZE :=3D 6144k
-> +=A0 $(Device/evaluation-sdimage)
-> +endef
-> +TARGET_DEVICES +=3D at91-sama5d2_xplained
-> +
-> +define Device/at91-sama5d27_som1_ek
-> +=A0 $(Device/evaluation-dtb)
-> +=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D27 SOM1 Ek
-> +=A0 KERNEL_SIZE :=3D 6144k
-> +=A0 $(Device/evaluation-sdimage)
-> +endef
-> +TARGET_DEVICES +=3D at91-sama5d27_som1_ek
-> +
-> +define Device/at91-sama5d2_ptc_ek
-> +=A0 $(Device/evaluation-dtb)
-> +=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D2 PTC Ek
-> +=A0 KERNEL_SIZE :=3D 6144k
-> +=A0 $(Device/evaluation-sdimage)
-> +endef
-> +TARGET_DEVICES +=3D at91-sama5d2_ptc_ek
-> +
-> +
-> +define Device/at91-sama5d3_xplained
-> +=A0 $(Device/evaluation-dtb)
-> +=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D3 Xplained
-> +=A0 KERNEL_SIZE :=3D 6144k
-> +=A0 $(Device/evaluation-sdimage)
-> +endef
-> +TARGET_DEVICES +=3D at91-sama5d3_xplained
-> +
-> +ifeq ($(strip $(CONFIG_EXTERNAL_KERNEL_TREE)),"")
-> + ifeq ($(strip $(CONFIG_KERNEL_GIT_CLONE_URI)),"")
-> +=A0 define Device/wb50n
-> +=A0=A0=A0 $(Device/evaluation-fit)
-> +=A0=A0=A0 DEVICE_TITLE :=3D Laird WB50N
-> +=A0=A0=A0 DEVICE_PACKAGES :=3D \
-> +=A0=A0=A0=A0=A0=A0=A0=A0 kmod-mmc-at91 kmod-ath6kl-sdio ath6k-firmware \
-> +=A0=A0=A0=A0=A0=A0=A0=A0 kmod-usb-storage kmod-fs-vfat kmod-fs-msdos \
-> +=A0=A0=A0=A0=A0=A0=A0=A0 kmod-leds-gpio
-> +=A0=A0=A0 BLOCKSIZE :=3D 128k
-> +=A0=A0=A0 PAGESIZE :=3D 2048
-> +=A0=A0=A0 SUBPAGESIZE :=3D 2048
-> +=A0=A0=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 124KiB -c 955
-> +=A0 endef
-> +=A0 TARGET_DEVICES +=3D wb50n
-> + endif
-> +endif
-> +
-> +
-> +define Device/at91-sama5d4_xplained
-> +=A0 $(Device/evaluation-dtb)
-> +=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D4 Xplained
-> +=A0 KERNEL_SIZE :=3D 6144k
-> +=A0 BLOCKSIZE :=3D 256k
-> +=A0 PAGESIZE :=3D 4096
-> +=A0 SUBPAGESIZE :=3D 2048
-> +=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 248KiB -c 2082
-> +=A0 $(Device/evaluation-sdimage)
-> +endef
-> +TARGET_DEVICES +=3D at91-sama5d4_xplained
-> diff --git a/target/linux/at91/image/sama5d2.mk
-> b/target/linux/at91/image/sama5d2.mk
-> deleted file mode 100644
-> index b841448633..0000000000
-> --- a/target/linux/at91/image/sama5d2.mk
-> +++ /dev/null
-> @@ -1,31 +0,0 @@
-> -
-> -define Device/default-nand
-> -=A0 BLOCKSIZE :=3D 128k
-> -=A0 PAGESIZE :=3D 2048
-> -=A0 SUBPAGESIZE :=3D 2048
-> -=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 124KiB -c 2048
-> -endef
-> -
-> -define Device/at91-sama5d2_xplained
-> -=A0 $(Device/evaluation-dtb)
-> -=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D2 Xplained
-> -=A0 KERNEL_SIZE :=3D 6144k
-> -=A0 $(Device/evaluation-sdimage)
-> -endef
-> -TARGET_DEVICES +=3D at91-sama5d2_xplained
-> -
-> -define Device/at91-sama5d27_som1_ek
-> -=A0 $(Device/evaluation-dtb)
-> -=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D27 SOM1 Ek
-> -=A0 KERNEL_SIZE :=3D 6144k
-> -=A0 $(Device/evaluation-sdimage)
-> -endef
-> -TARGET_DEVICES +=3D at91-sama5d27_som1_ek
-> -
-> -define Device/at91-sama5d2_ptc_ek
-> -=A0 $(Device/evaluation-dtb)
-> -=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D2 PTC Ek
-> -=A0 KERNEL_SIZE :=3D 6144k
-> -=A0 $(Device/evaluation-sdimage)
-> -endef
-> -TARGET_DEVICES +=3D at91-sama5d2_ptc_ek
-> diff --git a/target/linux/at91/image/sama5d3.mk
-> b/target/linux/at91/image/sama5d3.mk
-> index f48c981030..e69de29bb2 100644
-> --- a/target/linux/at91/image/sama5d3.mk
-> +++ b/target/linux/at91/image/sama5d3.mk
-> @@ -1,33 +0,0 @@
-> -
-> -define Device/default-nand
-> -=A0 BLOCKSIZE :=3D 128k
-> -=A0 PAGESIZE :=3D 2048
-> -=A0 SUBPAGESIZE :=3D 2048
-> -=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 124KiB -c 2048
-> -endef
-> -
-> -define Device/at91-sama5d3_xplained
-> -=A0 $(Device/evaluation-dtb)
-> -=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D3 Xplained
-> -=A0 KERNEL_SIZE :=3D 6144k
-> -=A0 $(Device/evaluation-sdimage)
-> -endef
-> -TARGET_DEVICES +=3D at91-sama5d3_xplained
-> -
-> -ifeq ($(strip $(CONFIG_EXTERNAL_KERNEL_TREE)),"")
-> - ifeq ($(strip $(CONFIG_KERNEL_GIT_CLONE_URI)),"")
-> -=A0 define Device/wb50n
-> -=A0=A0=A0 $(Device/evaluation-fit)
-> -=A0=A0=A0 DEVICE_TITLE :=3D Laird WB50N
-> -=A0=A0=A0 DEVICE_PACKAGES :=3D \
-> -=A0=A0=A0=A0=A0=A0=A0=A0 kmod-mmc-at91 kmod-ath6kl-sdio ath6k-firmware \
-> -=A0=A0=A0=A0=A0=A0=A0=A0 kmod-usb-storage kmod-fs-vfat kmod-fs-msdos \
-> -=A0=A0=A0=A0=A0=A0=A0=A0 kmod-leds-gpio
-> -=A0=A0=A0 BLOCKSIZE :=3D 128k
-> -=A0=A0=A0 PAGESIZE :=3D 2048
-> -=A0=A0=A0 SUBPAGESIZE :=3D 2048
-> -=A0=A0=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 124KiB -c 955
-> -=A0 endef
-> -=A0 TARGET_DEVICES +=3D wb50n
-> - endif
-> -endif
-> diff --git a/target/linux/at91/image/sama5d4.mk
-> b/target/linux/at91/image/sama5d4.mk
-> index 1140c3c4b2..e69de29bb2 100644
-> --- a/target/linux/at91/image/sama5d4.mk
-> +++ b/target/linux/at91/image/sama5d4.mk
-> @@ -1,19 +0,0 @@
-> -
-> -define Device/default-nand
-> -=A0 BLOCKSIZE :=3D 128k
-> -=A0 PAGESIZE :=3D 2048
-> -=A0 SUBPAGESIZE :=3D 2048
-> -=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 124KiB -c 2048
-> -endef
-> -
-> -define Device/at91-sama5d4_xplained
-> -=A0 $(Device/evaluation-dtb)
-> -=A0 DEVICE_TITLE :=3D Microchip(Atmel AT91) SAMA5D4 Xplained
-> -=A0 KERNEL_SIZE :=3D 6144k
-> -=A0 BLOCKSIZE :=3D 256k
-> -=A0 PAGESIZE :=3D 4096
-> -=A0 SUBPAGESIZE :=3D 2048
-> -=A0 MKUBIFS_OPTS :=3D -m $$(PAGESIZE) -e 248KiB -c 2082
-> -=A0 $(Device/evaluation-sdimage)
-> -endef
-> -TARGET_DEVICES +=3D at91-sama5d4_xplained
-> diff --git a/target/linux/at91/sama5/config-default
-> b/target/linux/at91/sama5/config-default
-> new file mode 100644
-> index 0000000000..e69de29bb2
-> diff --git a/target/linux/at91/sama5/target.mk
-> b/target/linux/at91/sama5/target.mk
-> new file mode 100644
-> index 0000000000..35df05b70d
-> --- /dev/null
-> +++ b/target/linux/at91/sama5/target.mk
-> @@ -0,0 +1,10 @@
-> +BOARDNAME:=3DSAMA5 boards(Cortex-A5)
-> +CPU_TYPE:=3Dcortex-a5
-> +CPU_SUBTYPE:=3Dvfpv4
-> +FEATURES+=3Dfpu
-> +DEFAULT_PACKAGES +=3D kmod-usb2
-> +
-> +define Target/Description
-> +=A0=A0=A0=A0=A0=A0 Build generic firmware for Microchip(Atmel AT91) SAMA=
-5D2,
-> +=A0=A0=A0=A0=A0=A0 SAMA5D3 and SAMA5D4 MPU's using the ARMv7 instruction=
- set.
-> +endef
-> diff --git a/target/linux/at91/sama5d2/config-default
-> b/target/linux/at91/sama5d2/config-default
-> deleted file mode 100644
-> index 1724375c33..0000000000
-> --- a/target/linux/at91/sama5d2/config-default
-> +++ /dev/null
-> @@ -1,3 +0,0 @@
-> -CONFIG_HAVE_AT91_GENERATED_CLK=3Dy
-> -CONFIG_SOC_SAMA5D2=3Dy
-> -# CONFIG_SOC_SAMA5D4 is not set
-> diff --git a/target/linux/at91/sama5d2/target.mk
-> b/target/linux/at91/sama5d2/target.mk
-> deleted file mode 100644
-> index 63f50aeea1..0000000000
-> --- a/target/linux/at91/sama5d2/target.mk
-> +++ /dev/null
-> @@ -1,10 +0,0 @@
-> -BOARDNAME:=3DSAMA5D2 boards(Cortex-A5)
-> -CPU_TYPE:=3Dcortex-a5
-> -CPU_SUBTYPE:=3Dneon-vfpv4
-> -FEATURES+=3Dfpu
-> -DEFAULT_PACKAGES +=3D kmod-usb2
-> -
-> -define Target/Description
-> -=A0=A0=A0=A0=A0=A0 Build generic firmware for Microchip(Atmel AT91) SAMA=
-5D2 MPU's
-> -=A0=A0=A0=A0=A0=A0 using the ARMv7 instruction set.
-> -endef
-> diff --git a/target/linux/at91/sama5d3/config-default
-> b/target/linux/at91/sama5d3/config-default
-> deleted file mode 100644
-> index eb0ec01cb9..0000000000
-> --- a/target/linux/at91/sama5d3/config-default
-> +++ /dev/null
-> @@ -1,2 +0,0 @@
-> -CONFIG_SOC_SAMA5D3=3Dy
-> -# CONFIG_SOC_SAMA5D4 is not set
-> diff --git a/target/linux/at91/sama5d3/target.mk
-> b/target/linux/at91/sama5d3/target.mk
-> deleted file mode 100644
-> index d30931bfc0..0000000000
-> --- a/target/linux/at91/sama5d3/target.mk
-> +++ /dev/null
-> @@ -1,10 +0,0 @@
-> -BOARDNAME:=3DSAMA5D3 boards(Cortex-A5)
-> -CPU_TYPE:=3Dcortex-a5
-> -CPU_SUBTYPE:=3Dvfpv4
-> -FEATURES+=3Dfpu
-> -DEFAULT_PACKAGES +=3D kmod-usb2
-> -
-> -define Target/Description
-> -=A0=A0=A0=A0=A0=A0 Build generic firmware for Microchip(Atmel AT91) SAMA=
-5D3 MPU's
-> -=A0=A0=A0=A0=A0=A0 using the ARMv7 instruction set.
-> -endef
-> diff --git a/target/linux/at91/sama5d4/target.mk
-> b/target/linux/at91/sama5d4/target.mk
-> deleted file mode 100644
-> index 2bbab60d81..0000000000
-> --- a/target/linux/at91/sama5d4/target.mk
-> +++ /dev/null
-> @@ -1,10 +0,0 @@
-> -BOARDNAME:=3DSAMA5D4 boards(Cortex-A5)
-> -CPU_TYPE:=3Dcortex-a5
-> -CPU_SUBTYPE:=3Dneon-vfpv4
-> -FEATURES+=3Dfpu
-> -DEFAULT_PACKAGES +=3D kmod-usb2
-> -
-> -define Target/Description
-> -=A0=A0=A0=A0=A0=A0 Build generic firmware for Microchip(Atmel AT91) SAMA=
-5D4 MPU's
-> -=A0=A0=A0=A0=A0=A0 using the ARMv7 instruction set.
-> -endef
-> -- =
+> +++ b/target/linux/lantiq/patches-4.14/0901-add-icu-smp-support.patch
+> @@ -0,0 +1,436 @@
+> +--- a/arch/mips/lantiq/irq.c	2019-03-10 20:44:58.755134326 +0100
+> ++++ b/arch/mips/lantiq/irq.c	2019-05-17 05:13:50.302149058 +0200
+> +@@ -22,14 +22,21 @@
+> + #include <lantiq_soc.h>
+> + #include <irq.h>
+> + ++/*
+> ++ * If defined, every IRQ enable call will switch the interrupt to
+> ++ * the other VPE. You can limit used VPEs from the userspace.
+> ++ *
+> ++ * If not defined, only the first configured VPE from the userspace
+> ++ * will be used.
+> ++ */
+> ++#define AUTO_AFFINITY_ROTATION
+> ++
+> + /* register definitions - internal irqs */
+> +-#define LTQ_ICU_IM0_ISR		0x0000
+> +-#define LTQ_ICU_IM0_IER		0x0008
+> +-#define LTQ_ICU_IM0_IOSR	0x0010
+> +-#define LTQ_ICU_IM0_IRSR	0x0018
+> +-#define LTQ_ICU_IM0_IMR		0x0020
+> +-#define LTQ_ICU_IM1_ISR		0x0028
+> +-#define LTQ_ICU_OFFSET		(LTQ_ICU_IM1_ISR - LTQ_ICU_IM0_ISR)
+> ++#define LTQ_ICU_ISR		0x0000
+> ++#define LTQ_ICU_IER		0x0008
+> ++#define LTQ_ICU_IOSR		0x0010
+> ++#define LTQ_ICU_IRSR		0x0018
+> ++#define LTQ_ICU_IMR		0x0020
+> + + /* register definitions - external irqs */
+> + #define LTQ_EIU_EXIN_C		0x0000
+> +@@ -49,24 +56,27 @@
+> +  */
+> + #define LTQ_ICU_EBU_IRQ		22
+> + +-#define ltq_icu_w32(m, x, y)	ltq_w32((x), ltq_icu_membase[m] + (y))
 
-> 2.20.1
-> =
+This line looks strange.
+It looks like your mail client broke the patch, I would suggest to use
+"git send-email" to send patches to mailing lists.
 
-> =
+> +-#define ltq_icu_r32(m, x)	ltq_r32(ltq_icu_membase[m] + (x))
+> ++#define ltq_icu_w32(vpe, m, x, y)	\
+> ++	ltq_w32((x), ltq_icu_membase[vpe] + m*0x28 + (y))
+> ++
+> ++#define ltq_icu_r32(vpe, m, x)		\
+> ++	ltq_r32(ltq_icu_membase[vpe] + m*0x28 + (x))
+> + + #define ltq_eiu_w32(x, y)	ltq_w32((x), ltq_eiu_membase + (y))
+> + #define ltq_eiu_r32(x)		ltq_r32(ltq_eiu_membase + (x))
+> + +-/* our 2 ipi interrupts for VSMP */
+> +-#define MIPS_CPU_IPI_RESCHED_IRQ	0
+> +-#define MIPS_CPU_IPI_CALL_IRQ		1
+> +-
+> + /* we have a cascade of 8 irqs */
+> + #define MIPS_CPU_IRQ_CASCADE		8
+> + ++#define MAX_VPES 2
+> ++
+> + static int exin_avail;
+> + static u32 ltq_eiu_irq[MAX_EIU];
+> +-static void __iomem *ltq_icu_membase[MAX_IM];
+> ++static void __iomem *ltq_icu_membase[MAX_VPES];
+> + static void __iomem *ltq_eiu_membase;
+> + static struct irq_domain *ltq_domain;
+> ++static DEFINE_SPINLOCK(ltq_eiu_lock);
+> ++static DEFINE_RAW_SPINLOCK(ltq_icu_lock);
+> + static int ltq_perfcount_irq;
+> + + int ltq_eiu_get_irq(int exin)
+> +@@ -78,50 +88,104 @@
+> + + void ltq_disable_irq(struct irq_data *d)
+> + {
+> +-	u32 ier = LTQ_ICU_IM0_IER;
+> +-	int offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> +-	int im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
 
+When you want to upstream this I would suggest to split this into
+multiple patches. One should only change the int to unsigned long for
+example to make the review easier.
 
+> ++	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned int vpe;
+> ++	unsigned long flags;
+> + + 	offset %= INT_NUM_IM_OFFSET;
+> +-	ltq_icu_w32(im, ltq_icu_r32(im, ier) & ~BIT(offset), ier);
+> ++
+> ++	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> ++	for_each_present_cpu(vpe) {
+> ++		ltq_icu_w32(vpe, im,
+> ++			    ltq_icu_r32(vpe, im, LTQ_ICU_IER) & ~BIT(offset),
+> ++			    LTQ_ICU_IER);
+> ++	}
+> ++	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+> + }
+> + + void ltq_mask_and_ack_irq(struct irq_data *d)
+> + {
+> +-	u32 ier = LTQ_ICU_IM0_IER;
+> +-	u32 isr = LTQ_ICU_IM0_ISR;
+> +-	int offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> +-	int im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> ++	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned int vpe;
+> ++	unsigned long flags;
+> + + 	offset %= INT_NUM_IM_OFFSET;
+> +-	ltq_icu_w32(im, ltq_icu_r32(im, ier) & ~BIT(offset), ier);
+> +-	ltq_icu_w32(im, BIT(offset), isr);
+> ++
+> ++	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> ++	for_each_present_cpu(vpe) {
+> ++		ltq_icu_w32(vpe, im,
+> ++			    ltq_icu_r32(vpe, im, LTQ_ICU_IER) & ~BIT(offset),
+> ++			    LTQ_ICU_IER);
+> ++		ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
+> ++	}
+> ++	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+> + }
+> + EXPORT_SYMBOL(ltq_mask_and_ack_irq);
+> + + static void ltq_ack_irq(struct irq_data *d)
+> + {
+> +-	u32 isr = LTQ_ICU_IM0_ISR;
+> +-	int offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> +-	int im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> ++	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned int vpe;
+> ++	unsigned long flags;
+> + + 	offset %= INT_NUM_IM_OFFSET;
+> +-	ltq_icu_w32(im, BIT(offset), isr);
+> ++
+> ++	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> ++	for_each_present_cpu(vpe) {
+> ++		ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
+> ++	}
+> ++	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+> + }
+> + + void ltq_enable_irq(struct irq_data *d)
+> + {
+> +-	u32 ier = LTQ_ICU_IM0_IER;
+> +-	int offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> +-	int im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+> ++	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> ++	unsigned int vpe;
+> ++	unsigned long flags;
+> + + 	offset %= INT_NUM_IM_OFFSET;
+> +-	ltq_icu_w32(im, ltq_icu_r32(im, ier) | BIT(offset), ier);
+> ++
+> ++#if defined(AUTO_AFFINITY_ROTATION)
+
+Have you seen such feature in any other upstream IRQ driver?
+This automatic assignment of IRQs to VPEs looks a little bit strange to
+me, but I am also not an expter on IRQs.
+
+> ++	vpe = cpumask_next(smp_processor_id(),
+> ++			   irq_data_get_effective_affinity_mask(d));
+> ++
+> ++	/*
+> ++	 * There is a theoretical race condition if affinity gets changed
+> ++	 * meanwhile, but it would only caused a wrong VPE to be used until
+> ++	 * the next IRQ enable. Also the SoC has only 2 VPEs which fits
+> ++	 * the single u32. You can move spinlock before first mask readout
+> ++	 * and add it to ltq_icu_irq_set_affinity.
+> ++	 */
+> ++
+> ++	if (vpe >= nr_cpu_ids)
+> ++		vpe = cpumask_first(irq_data_get_effective_affinity_mask(d));
+> ++#else
+> ++	vpe = cpumask_first(irq_data_get_effective_affinity_mask(d));
+> ++#endif
+> ++
+> ++	/* This shouldn't be even possible, maybe during CPU hotplug spam */
+> ++	if (unlikely(vpe >= nr_cpu_ids))
+> ++		vpe = smp_processor_id();
+> ++
+> ++	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> ++
+> ++	/* bugfix for fake interrupts? from UGW 3.x kernel */
+> ++	ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
+
+It could be that some (broken) bootloader does not deactivate all the
+IRQs when the control is given to Linux. Do you need this change,
+otherwise I would just deactivate all IRQs in the probe function.
+
+> ++
+> ++	ltq_icu_w32(vpe, im, ltq_icu_r32(vpe, im, LTQ_ICU_IER) | BIT(offset),
+> ++		    LTQ_ICU_IER);
+> ++
+> ++	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+> + }
+> + + static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
+> + {
+> + 	int i;
+> ++	unsigned long flags;
+> + + 	for (i = 0; i < exin_avail; i++) {
+> + 		if (d->hwirq == ltq_eiu_irq[i]) {
+> +@@ -158,8 +222,12 @@
+> + 			if (edge)
+> + 				irq_set_handler(d->hwirq, handle_edge_irq);
+> + +-			ltq_eiu_w32(ltq_eiu_r32(LTQ_EIU_EXIN_C) |
+> +-				(val << (i * 4)), LTQ_EIU_EXIN_C);
+> ++			// v3.10 kernel has this atomic for SMP
+> ++			spin_lock_irqsave(&ltq_eiu_lock, flags);
+> ++			ltq_eiu_w32((ltq_eiu_r32(LTQ_EIU_EXIN_C) &
+> ++				    (~(7 << (i * 4)))) | (val << (i * 4)),
+> ++				    LTQ_EIU_EXIN_C);
+> ++			spin_unlock_irqrestore(&ltq_eiu_lock, flags);
+> + 		}
+> + 	}
+> + +@@ -203,6 +271,21 @@
+> + 	}
+> + }
+> + ++#if defined(CONFIG_SMP)
+> ++static int ltq_icu_irq_set_affinity(struct irq_data *d,
+> ++				    const struct cpumask *cpumask, bool force)
+> ++{
+> ++	struct cpumask tmask;
+> ++
+> ++	if (!cpumask_and(&tmask, cpumask, cpu_online_mask))
+> ++		return -EINVAL;
+> ++
+> ++	irq_data_update_effective_affinity(d, &tmask);
+> ++
+> ++	return IRQ_SET_MASK_OK;
+> ++}
+> ++#endif
+> ++
+> + static struct irq_chip ltq_irq_type = {
+> + 	.name = "icu",
+> + 	.irq_enable = ltq_enable_irq,
+> +@@ -211,6 +294,9 @@
+> + 	.irq_ack = ltq_ack_irq,
+> + 	.irq_mask = ltq_disable_irq,
+> + 	.irq_mask_ack = ltq_mask_and_ack_irq,
+> ++#if defined(CONFIG_SMP)
+> ++	.irq_set_affinity = ltq_icu_irq_set_affinity,
+> ++#endif
+> + };
+> + + static struct irq_chip ltq_eiu_type = {
+> +@@ -224,15 +310,19 @@
+> + 	.irq_mask = ltq_disable_irq,
+> + 	.irq_mask_ack = ltq_mask_and_ack_irq,
+> + 	.irq_set_type = ltq_eiu_settype,
+> ++#if defined(CONFIG_SMP)
+> ++	.irq_set_affinity = ltq_icu_irq_set_affinity,
+> ++#endif
+> + };
+> + + static void ltq_hw_irq_handler(struct irq_desc *desc)
+> + {
+> +-	int module = irq_desc_get_irq(desc) - 2;
+> ++	unsigned int module = irq_desc_get_irq(desc) - 2;
+> + 	u32 irq;
+> +-	int hwirq;
+> ++	irq_hw_number_t hwirq;
+> ++	unsigned int vpe = smp_processor_id();
+> + +-	irq = ltq_icu_r32(module, LTQ_ICU_IM0_IOSR);
+> ++	irq = ltq_icu_r32(vpe, module, LTQ_ICU_IOSR);
+> + 	if (irq == 0)
+> + 		return;
+> + +@@ -253,6 +343,7 @@
+> + static int icu_map(struct irq_domain *d, unsigned int irq,
+> irq_hw_number_t hw)
+> + {
+> + 	struct irq_chip *chip = &ltq_irq_type;
+> ++	struct irq_data *data;
+> + 	int i;
+> + + 	if (hw < MIPS_CPU_IRQ_CASCADE)
+> +@@ -262,6 +353,10 @@
+> + 		if (hw == ltq_eiu_irq[i])
+> + 			chip = &ltq_eiu_type;
+> + ++	data = irq_get_irq_data(irq);
+> ++
+> ++	irq_data_update_effective_affinity(data, cpumask_of(0));
+> ++
+> + 	irq_set_chip_and_handler(irq, chip, handle_level_irq);
+> + + 	return 0;
+> +@@ -276,28 +371,40 @@
+> + {
+> + 	struct device_node *eiu_node;
+> + 	struct resource res;
+> +-	int i, ret;
+> ++	int i, ret, vpe;
+> + +-	for (i = 0; i < MAX_IM; i++) {
+> +-		if (of_address_to_resource(node, i, &res))
+> +-			panic("Failed to get icu memory range");
+> ++	/* TODO someone pls update+test devicetr5ee for danube (not SMP,
+> ++	 * foreach bellow should run once), ar9, amazon, falcon (no info).
+> ++	 * Addresses are known only for vr9, tested only in generic SMP
+> ++	 * ( = no VPE reserved for firmware).
+> ++	 */
+> ++	for_each_possible_cpu(vpe) {
+> ++		if (of_address_to_resource(node, vpe, &res))
+> ++			panic("Failed to get icu%i memory range", vpe);
+> + + 		if (!request_mem_region(res.start, resource_size(&res),
+> + 					res.name))
+> +-			pr_err("Failed to request icu memory");
+> ++			pr_err("Failed to request icu%i memory\n", vpe);
+> + +-		ltq_icu_membase[i] = ioremap_nocache(res.start,
+> ++		ltq_icu_membase[vpe] = ioremap_nocache(res.start,
+> + 					resource_size(&res));
+> +-		if (!ltq_icu_membase[i])
+> +-			panic("Failed to remap icu memory");
+> ++
+> ++		if (!ltq_icu_membase[vpe])
+> ++			panic("Failed to remap icu%i memory", vpe);
+> + 	}
+> + + 	/* turn off all irqs by default */
+> +-	for (i = 0; i < MAX_IM; i++) {
+> +-		/* make sure all irqs are turned off by default */
+> +-		ltq_icu_w32(i, 0, LTQ_ICU_IM0_IER);
+> +-		/* clear all possibly pending interrupts */
+> +-		ltq_icu_w32(i, ~0, LTQ_ICU_IM0_ISR);
+> ++	for_each_possible_cpu(vpe) {
+> ++		for (i = 0; i < MAX_IM; i++) {
+> ++			/* make sure all irqs are turned off by default */
+> ++			ltq_icu_w32(vpe, i, 0, LTQ_ICU_IER);
+> ++
+> ++			/* clear all possibly pending interrupts */
+> ++			ltq_icu_w32(vpe, i, ~0, LTQ_ICU_ISR);
+> ++			ltq_icu_w32(vpe, i, ~0, LTQ_ICU_IMR);
+> ++
+> ++			ltq_icu_w32(vpe, i, 0, LTQ_ICU_IRSR);
+> ++		}
+> + 	}
+> + + 	mips_cpu_irq_init();
+> +@@ -358,7 +465,7 @@
+> + 	return MIPS_CPU_TIMER_IRQ;
+> + }
+> + +-static struct of_device_id __initdata of_irq_ids[] = {
+> ++static const struct of_device_id of_irq_ids[] __initconst = {
+> + 	{ .compatible = "lantiq,icu", .data = icu_of_init },
+> + 	{},
+> + };
+> +--- a/arch/mips/kernel/smp-mt.c	2019-03-05 17:58:03.000000000 +0100
+> ++++ b/arch/mips/kernel/smp-mt.c	2019-05-16 03:09:02.268859090 +0200
+> +@@ -125,6 +125,8 @@
+> + 					 STATUSF_IP6 | STATUSF_IP7);
+> + 	else
+> + 		change_c0_status(ST0_IM, STATUSF_IP0 | STATUSF_IP1 |
+> ++					 STATUSF_IP2 | STATUSF_IP3 |
+> ++					 STATUSF_IP4 | STATUSF_IP5 |
+> + 					 STATUSF_IP6 | STATUSF_IP7);
+> + }
+
+This change should go into a seperate patch which also describes why you
+need this.
+
+> + +--- a/arch/mips/boot/dts/vr9.dtsi	2019-03-10 19:03:35.747182390 +0100
+> ++++ b/arch/mips/boot/dts/vr9.dtsi	2019-05-17 05:01:36.789319230 +0200
+> +@@ -38,11 +38,9 @@
+> + 			#interrupt-cells = <1>;
+> + 			interrupt-controller;
+> + 			compatible = "lantiq,icu";
+> +-			reg = <0x80200 0x28
+> +-				0x80228 0x28
+> +-				0x80250 0x28
+> +-				0x80278 0x28
+> +-				0x802a0 0x28>;
+> ++
+> ++			reg = <0x80200 0xc8	/* icu0 */
+> ++				0x80300 0xc8>;	/* icu1 */
+> + 		};
+> + + 		watchdog@803f0 {
+> +--- a/arch/mips/boot/dts/danube.dtsi	2019-03-10 19:03:35.746182403 +0100
+> ++++ b/arch/mips/boot/dts/danube.dtsi	2019-05-17 04:55:28.777920006 +0200
+> +@@ -34,11 +34,12 @@
+> + 			#interrupt-cells = <1>;
+> + 			interrupt-controller;
+> + 			compatible = "lantiq,icu";
+> +-			reg = <0x80200 0x28
+> +-				0x80228 0x28
+> +-				0x80250 0x28
+> +-				0x80278 0x28
+> +-				0x802a0 0x28>;
+> ++
+> ++			/*
+> ++			 * There is a second ICU, but the SoC is not SMP
+> ++			 * capable.
+> ++			 */
+> ++			reg = <0x80200 0xc8>;
+> + 		};
+> + + 		watchdog@803f0 {
+> +--- a/arch/mips/boot/dts/ar9.dtsi	2019-03-10 19:03:35.746182403 +0100
+> ++++ b/arch/mips/boot/dts/ar9.dtsi	2019-05-17 04:58:17.080815930 +0200
+> +@@ -34,11 +34,8 @@
+> + 			#interrupt-cells = <1>;
+> + 			interrupt-controller;
+> + 			compatible = "lantiq,icu";
+> +-			reg = <0x80200 0x28
+> +-				0x80228 0x28
+> +-				0x80250 0x28
+> +-				0x80278 0x28
+> +-				0x802a0 0x28>;
+> ++			reg = <0x80200 0xc8>;	/* ICU0 */
+> ++			/* TODO AR9 should have ICU1 (like VR9) too */
+
+Yes this is similar to VR9.
+
+> + 		};
+> + + 		watchdog@803f0 {
+> +--- a/arch/mips/boot/dts/amazonse.dtsi	2019-03-10 19:03:35.746182403 +0100
+> ++++ b/arch/mips/boot/dts/amazonse.dtsi	2019-05-17 04:58:56.343325081 +0200
+> +@@ -34,11 +34,7 @@
+> + 			#interrupt-cells = <1>;
+> + 			interrupt-controller;
+> + 			compatible = "lantiq,icu";
+> +-			reg = <0x80200 0x28
+> +-				0x80228 0x28
+> +-				0x80250 0x28
+> +-				0x80278 0x28
+> +-				0x802a0 0x28>;
+> ++			reg = <0x80200 0xc8>;	/* only 1 ICU */
+> + 		};
+> + + 		watchdog@803f0 {
+> +--- a/arch/mips/boot/dts/falcon.dtsi	2019-03-10 19:03:35.747182390 +0100
+> ++++ b/arch/mips/boot/dts/falcon.dtsi	2019-05-17 05:00:42.536997478 +0200
+> +@@ -293,11 +293,8 @@
+> + 			#interrupt-cells = <1>;
+> + 			interrupt-controller;
+> + 			compatible = "lantiq,icu";
+> +-			reg = <0x80200 0x28
+> +-				0x80228 0x28
+> +-				0x80250 0x28
+> +-				0x80278 0x28
+> +-				0x802a0 0x28>;
+> ++			reg = <0x80200 0xc8>;
+> ++			/* TODO I don't know if there is another ICU */
+
+The 2. ICU is at 0x80300, size is 0xe0 for both ICUs.
+
+> + 		};
+> + + 		watchdog@803F0 {
+> 
+
+Hauke
 
 _______________________________________________
 openwrt-devel mailing list

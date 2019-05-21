@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6260F24DA6
-	for <lists+openwrt-devel@lfdr.de>; Tue, 21 May 2019 13:11:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B71B224EA4
+	for <lists+openwrt-devel@lfdr.de>; Tue, 21 May 2019 14:07:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Wmtp9vOf73TGa8ylXLeoeyheyUoyk4jtMsnavLUDvCg=; b=iv3rsSOLQyeNuH/MW8wP8cOQv7
-	z7eYhj9NVbGjuUBZy9fMUkCrCKrTpPHCw9SFNUUQtwjKrnWp0sRrWUDKxoUWJPkkux2N6ya1iLK7k
-	FQTBocG5/laiWQrT+eR6/Sh9DichCWIgS+3SU1uGWRo2NCLJiVlMvFdQt9s5KXwpY/aFYr7rh3c0e
-	F/wdT0PcccLB5vZgqh/0RmJ204t0hVG6xBmZsQirdVPgfyL1tVMfXezn+SdnKZxs1dtS0Rg9YEZyd
-	Y/KShCoEC5X/zl2AaoVCeaqpdIPJ5f1zNcdvc57aFsLy55KogJDoH0waUQp6KnEp7h2e2uXr5aReW
-	Nh5taxLg==;
+	bh=PHfac+7rssxBUBa04NiKqsFqeCp7N88E+K/c3Ps9J/8=; b=GFXzmk7IrRJE9+3XkBFTObkOrN
+	V5r5VsG9IYPBz0T4co8WIwg2cd+XV7t1JrynwprXskM61xmV6iiSjL7nu7SCdFCSsZhF/CRyJgFG0
+	CO0g/WmfeRZyk85AQVr9g+k3ugA+4M4NVkYM9rXJE332kX3uyXzl2zVec5315+sjvj6Ea1F1tOg//
+	69jpRecSmwtWeulHfdF+lRz8Dvq28fLXhojWIvTi/1DR/3Ufj2ddvRgMdxp+AynORSPfr0VzJm1bM
+	qBhbvfJWDaI8o9gGnMj643mCUs6Ayy6ig84CSEI8HM5AqZmosuKIGJQKnBGMAMhK1jzzdIQiwhQa6
+	vJ4Yd8KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hT2fa-0001bj-3m; Tue, 21 May 2019 11:10:58 +0000
+	id 1hT3YN-0006V7-G2; Tue, 21 May 2019 12:07:35 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hT2fS-0001bB-8Z
- for openwrt-devel@lists.openwrt.org; Tue, 21 May 2019 11:10:51 +0000
+ id 1hT3YH-0006UN-FG
+ for openwrt-devel@lists.openwrt.org; Tue, 21 May 2019 12:07:31 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 6698E3C2A;
- Tue, 21 May 2019 13:10:47 +0200 (CEST)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 860503E6D;
+ Tue, 21 May 2019 14:07:26 +0200 (CEST)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id c4369174;
- Tue, 21 May 2019 13:10:45 +0200 (CEST)
-Date: Tue, 21 May 2019 13:10:45 +0200
+ by meh.true.cz (OpenSMTPD) with ESMTPA id aeeb20cc;
+ Tue, 21 May 2019 14:07:25 +0200 (CEST)
+Date: Tue, 21 May 2019 14:07:25 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <20190521111045.GM63920@meh.true.cz>
-References: <20190520202521.8587-1-linus.walleij@linaro.org>
- <20190520205644.GA536@meh.true.cz>
- <CACRpkdY91-5HUEMskMOCKpVPwAgnKu3XrMavwfA+5BLcROn2RA@mail.gmail.com>
- <83f8c392-2304-f14d-2b42-571827ae8761@gmail.com>
+To: Jeff Kletsky <lede@allycomm.com>
+Message-ID: <20190521120725.GA4606@meh.true.cz>
+References: <20190520101443.9192-1-bjorn@mork.no>
+ <26fb4086-42b5-a102-0bc7-cf17972c2823@allycomm.com>
+ <a8c56e6b-bde5-1191-f980-eb5afafa9d1f@allycomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <83f8c392-2304-f14d-2b42-571827ae8761@gmail.com>
+In-Reply-To: <a8c56e6b-bde5-1191-f980-eb5afafa9d1f@allycomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_041050_451687_0BD6950B 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20190521_050729_664102_8964EE63 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -56,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH v3] gemini: Support sysupgrade on DIR-685
+Subject: Re: [OpenWrt-Devel] [PATCH] upgrade: nand: fix board_name assumtions
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -69,60 +69,43 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org, Matti Laakso <matti.laakso@outlook.com>,
+ =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QWxiZXJ0byBCdXJzaSA8Ym9iYWZldHRob3RtYWlsQGdtYWlsLmNvbT4gWzIwMTktMDUtMjEgMTE6
-NDQ6MzddOgoKPiBPbiAyMC8wNS8xOSAyMzo0OCwgTGludXMgV2FsbGVpaiB3cm90ZToKPiA+IE9u
-IE1vbiwgTWF5IDIwLCAyMDE5IGF0IDEwOjU2IFBNIFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUu
-Y3o+IHdyb3RlOgo+ID4gCj4gPiBJIGNhbiBzdGFydCB3aGlsZSBJIHN0aWxsIGhhdmUgaXQgaW4g
-ZnJlc2ggbWVtb3J5IGFuZCB5b3UgY2FuIGNoaW1lCj4gPiBpbiBvbiBob3cgeW91IHdhbnQgcGVv
-cGxlIHRvIGRvIGdlbmVyaWMgY2hlY2tzdW0gZXRjLgo+Cj4gWW91IGRvbid0IG5lZWQgdG8gd29y
-cnkgdG9vIG11Y2ggYWJvdXQgZm9ybWF0dGluZyBhbmQgbWFraW5nIGl0IGxvb2sgY29vbCwKCkl0
-J3Mgbm90IGFib3V0IHRoZSBmb3JtYXR0aW5nLCBpdCdzIGFib3V0IHRoZSBjb250ZW50LiBIb3cg
-Y291bGQgSSAob3IgcG9zc2libHkKc29tZW9uZSBlbHNlKSBjaGltZSBpbiBhbmQgaW1wcm92ZSB0
-aGUgZG9jcyAoZWFzaWx5KT8KCllvdSBtZWFuLCB0aGF0IExpbnVzIHN0YXJ0cyBhZGRpbmcgYSBu
-ZXcgd2lraSBjb250ZW50LCB0aGVuIGhlIHNlbmRzIG1lIHRoZQpsaW5rIHRvIHRoZSB3aWtpIHZp
-YSBlbWFpbCwgSSdtIGdvaW5nIHRvIGxvZyBpbnRvIHRoYXQgd2lraSAobGVhcm4ganVzdAphbm90
-aGVyIHdpa2kgbWFya3VwIHN5bnRheCBtZWFud2hpbGUgdGhlIHBhZ2UgbG9hZHMgaW4gb3JkZXIg
-dG8gZm9yZ2V0IGFsbCBvZgp0aGlzIG9uY2UgSSBjbG9zZSB0aGF0IHRhYiksIHRoZW4gSSdsbCBz
-ZW5kIGEgcmVwbHkgdG8gTGludXMgKGFuZCBhbGwgb3RoZXIKaW50ZXJlc3RlZCkgb3ZlciB0aGUg
-ZW1haWwsIHRoYXQgSSd2ZSBhZGRlZCBzb21lIGNoYW5nZXMgYW5kIHNvIG9uPyAKCkZyb20gYSBk
-ZXZlbG9wZXIncyBwb2ludCBvZiB2aWV3IGl0IHNlZW1zIGxpa2UgYSB3YXN0ZSBvZiB0aW1lIGFu
-ZCBpdCB3aWxsCmluZXZpdGFibHkgbGVhZCB0byBqdXN0IGFub3RoZXIgd2lraSBwYWdlIHdpdGgg
-dGhlIG91dGRhdGVkIGNvbnRlbnQgYW55d2F5LgoKQlRXIGFyZSB3ZSBnb2luZyB0byBhZGQgbGlu
-a3MgdG8gdGhlIHdpa2kgaW50byB0aGUgY29kZT8gU28gaW4gY2FzZSBpZiBzb21lb25lCnRvdWNo
-ZXMgdGhlIGNvZGUgb25lIGRheSwgdGhlbiAocyloZSBkb24ndCBmb3JnZXQgdG8gdXBkYXRlIHRo
-ZSB3aWtpIHBhZ2UKKHNvbWV0aW1lcyBtb3JlIHRoZW4gb25lKSB3aXRoIHRoZSBkb2N1bWVudGF0
-aW9uIGFzIHdlbGw/IE9yIGFyZSB3ZSBnb2luZyB0bwpkbyB0aGUgb3Bwb3NpdGUsIGFkZGluZyBs
-aW5rcyB0byB0aGUgY29kZSBvbiB0aGUgV2lraSBzbyBpbiBjYXNlIEknbSBnb2luZyB0bwpjaGFu
-Z2Ugc29tZXRoaW5nLCBJJ2xsIGZpcnN0IGNoZWNrIHdpa2kgaWYgdGhlcmUncyBhbnkgcmVmZXJl
-bmNlIHRvIHRoYXQgY29kZT8KCk1heWJlIEknbSBleGFnZ2VyYXRpbmcsIGJ1dCB3aGF0IGlzIGZh
-c3RlciB0aGVuIGBnaXQgZ3JlcGAgPyBIb3cgY291bGQgeW91CnBvdGVudGlvbmFseSBhdXRvbWF0
-ZSBjb2RlL2RvY3VtZW50YXRpb24gY2hlY2tzIGlmIHlvdSd2ZSBkb2N1bWVudGF0aW9uCnNvbWV3
-aGVyZSBlbHNlPwoKPiBJJ20gYWZyYWlkIHRoYXQgd2FpdGluZyBmb3IgcGVvcGxlIHRvIGRlY2lk
-ZSB3aGVyZSB0aGV5IHdhbnQgdG8gYmlrZXNoZWQgdGhlCj4gZGV2ZWxvcGVyIGRvY3Mgd2lsbCBl
-bmQgbm93aGVyZSwganVzdCBsaWtlIGl0IGRpZCBpbiB0aGUgcGFzdC4KCldlbGwsIHRoZSBkaWZm
-ZXJlbmNlIGlzLCB0aGF0IEknbSB3aWxsaW5nIHRvIGhlbHAgbWFrZSBpdCBoYXBwZW4gdGhpcyB0
-aW1lLCBpZgp0aGVyZSdzIHN0aWxsIHNvbWUgaW50ZXJlc3QgYXJvdW5kIHRoaXMgdG9waWMuIEl0
-IHNpbXBseSBtYWtlcyBzZW5zZSB0byBtZS4KCkFjdHVhbGx5IEknbSBub3Qgc2F5aW5nLCB0aGF0
-IEknbSBnb2luZyB0byBwcmVwYXJlIHBhdGNoZXMgd2hpY2ggd291bGQgYWRkCnRoaXMgZmVhdHVy
-ZSB0byB0aGUgdHJlZSwgYnV0IEknbSB3aWxsaW5nIGhlbHAgd2l0aCB0ZXN0aW5nIGFuZCBnaXZp
-bmcgaXQgbXkKKzEgaW4gYSBwb3RlbnRpYWwgdm90ZS4KCkkndmUgYWJ1c2VkIHRoaXMgdGhyZWFk
-IGluIG9yZGVyIHRvIHNwYXJrIGV4YWN0bHkgdGhpcyBkaXNjdXNzaW9uIGFuZCB0byBzZWUKaWYg
-dGhlcmUncyBzb21lIGludGVyZXN0IGluIHBvdGVudGlhbHkgbW92aW5nIGZvcndhcmQgd2l0aCB0
-aGlzLiBJdCB3aWxsIHNlcnZlCmFsc28gYXMgYSBzbWFsbCByZW1pbmRlciB0byBtZSwgdGhhdCB0
-aGlzIG1pZ2h0IGJlIG5leHQgdG9waWMgSSBzaG91bGQgYnJpbmcKdG8gdG8gdGhlIGRpc2N1c3Np
-b24gb24gb3VyIG1lZXRpbmcgaW4gSnVuZS4KCkRvbid0IHRha2UgbWUgd3JvbmcsIHlvdSdyZSBh
-bGwgZG9pbmcgYW1hemluZyB3b3JrIG9uIHRoZSB3aWtpLCBJJ20gc29ycnkgdGhhdApJJ20gbm90
-IGNvbnRyaWJ1dGluZyB0aGVyZSBhcyB3ZWxsLCBidXQgV2lraSBzaW1wbHkgZG9lc24ndCBmaXRz
-IHdlbGwgaW50byBteQptdXR0L3ZpbS9naXQgZGFpbHkgd29ya2Zsb3cuCgpJbiB0aGUgZW5kLCB3
-ZSBjb3VsZCBzaW1wbHkganVzdCBkZWxldGUgdGhhdCBkb2NzIGZvbGRlciBhZ2FpbiBpbiAyMDIy
-IGlmIHdlCmZpbmQgb3V0LCB0aGF0IGl0IGRpZG4ndCB3b3JrZWQgYXMgZXhwZWN0ZWQgOi0pCgot
-LSB5bmV6egoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
-ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
-bAo=
+Jeff Kletsky <lede@allycomm.com> [2019-05-20 20:42:16]:
+
+> Having spent quite a bit of time today thinking about the impact of
+> board-name changes, I can see use cases where the running system doesn't
+> know a priori what the range of acceptable tar-dir values are.
+
+Well it makes me wonder, why you just don't do following:
+
+ platform_check_image() { 
+	return 0
+ }
+
+As the image is already checked with fwtool_check_image metadata based check
+which should be probably good enough in order to lift any other additional
+checks. Of course, just in case your platform has enabled metadata checking,
+which in case of ath79 is true.
+
+> Take the case where `mfgr,board-name` gets a new, compatible variant,
+> `mfgr,board-name-special-purpose`. If you're running `mfgr,board-name`, a
+> strict check for `mfgr_board-name` would fail, even though the
+> sysupgrade-tar was applicable. This kind of board-compatibility check should
+> arguably be done with image metadata, either or both appended or in the
+> CONTROL section.
+
+ BOARD_NAME := something
+ SUPPORTED_DEVICES += something
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

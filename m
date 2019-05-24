@@ -2,65 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B5722A039
-	for <lists+openwrt-devel@lfdr.de>; Fri, 24 May 2019 23:10:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA9622A062
+	for <lists+openwrt-devel@lfdr.de>; Fri, 24 May 2019 23:28:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lkw6uVv+t+wELbDw3gPJO3ukeiBrnW1mN69hek3KAEg=; b=aanktLhWfhXCPc
-	XHQRKOw5JD5odnxvlMbPfdG99qLr8CONE+IR3qBDHlyTM2y+qo3Ho8SKO5XPZFEK+6zoKRSmWktEM
-	516eAyjwiM8gRg5tCYp5mSl7kdnA2j6o22ju8r2cB/j8qC3qBokzn6agjQ9nvOcOfSZPe8zGNTk+X
-	ZiSCYZfi06iYWWRT32+8kTh6eBr3An7wq7mUApokiKwBEiTc7wOk1z3aiwQRbizaklGYMrInNZDI6
-	r+MjW1miPL+DWMYcG3xxSilmbqDQ+GO9/PF1phje0nGG+o1QZNFYFpB4gCgbNSvf9rn0rIcaBHIs3
-	X7IMrcG/1EDjqaxS0mKA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=afM7U2pXy1KwIVIx7l5QslWH41bPL6mhpjrougXV57Q=; b=buVMxOmNZoDJR/
+	Zf03cYRQVENYeNTX4t8yQv9pd04/+memyfBLXz86FSpsTLBcWCA+Sa5+5t1FrWk7SuLqIdrY14rVQ
+	0/p6OYCWJJSk2gokTSpJeD8PttI4HvSzSOcvntrd+nreZuYrnSgeXewYAyjoNfrosyr2ad0VP8kzs
+	b8xMLzbTA2BzjaNk1gteYuxEBrSa1YqRz7ZvSKtnUUv2LC0WYp/nYwxTNDItzXKLV6gsGCcZr2Qtn
+	AT6y94qE0YJvZh1C7qs28inQTzRmpNDkLLldmz86fCc45LaiBFGV3LvRBIo00h7GispDekV7557WT
+	91WNbqOMk486uo77UiHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUHRw-0003MT-Ej; Fri, 24 May 2019 21:10:00 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hUHjT-0001mW-8C; Fri, 24 May 2019 21:28:07 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUHRq-0003M6-6L
- for openwrt-devel@lists.openwrt.org; Fri, 24 May 2019 21:09:55 +0000
-Received: by mail-lf1-x144.google.com with SMTP id b11so1688189lfa.5
- for <openwrt-devel@lists.openwrt.org>; Fri, 24 May 2019 14:09:52 -0700 (PDT)
+ id 1hUHjM-0001m2-6i
+ for openwrt-devel@lists.openwrt.org; Fri, 24 May 2019 21:28:01 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m15so9827275ljg.13
+ for <openwrt-devel@lists.openwrt.org>; Fri, 24 May 2019 14:27:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uA+B7eCwFVLx4ZyJ+qkakuJZPWogfu1K2ToQPMfQzFg=;
- b=Ij5xBKLLLzOAnOP7bQATNTOYMCjt4XZuBivT9uCjBdBC7LEE4C6pDutuNq6en7w8hF
- /k8qicFVl/7Rjn09SmE6FPoejfYG6S9pHKLtvsCqLpztLuL0HWN/IKMT2s7bCv0AuohY
- 2HGS3Kba5btpa5rjpRfaTUDiqOTLlRZZ20oWorQ21YkY6WzkeypgGIE+JEcKsBIc8XFn
- 8r92NhS0p79OiWElaDNomEGIvnyodj8DxMu9/aSK19ZTNd5gJKZxZbRmL3Ry6kvxc8eQ
- GRQ+f7HtTlidf9D8q+uZZqtZWQu4eQRyGU7oO67qhs0ai8IoU7+ati3pib/1QtxwKxBV
- 3cnQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=s5P7umcAF01iD6eKC8QbIl69QGmHDTE4yaEcs9BgSyI=;
+ b=dcGjyCrn62f0cmHDfqTWGBWaOF7Ii2goTlzY+RFYqCvbeaDe1GnL/pzkiVSV6Z2mqu
+ of9nX9cjSXfJmr8V8yKBckQDSTP5NuIS9Fo0bV7EywdN7k78KTa75ktT0/r9V/LYMPdQ
+ y+FCKho0DH2gw7FsuE6VyggjREalWl3rysOJtHco4X4tBTNeJDp/eQxrXZ9FmJxXr7WX
+ kyFH6wNlxZ0ipXxuJbsCEn2C1ms1PcJeYY+IwtXIpW7iAKWb3U5e/X6AFohcQyiWC6Uc
+ B55oxLIrL8/ZoWXIoDZ+c0305j3UZrDA1MzUimlC20lodSFg+hmV6RCYUkLWC/cY1rdy
+ nSxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uA+B7eCwFVLx4ZyJ+qkakuJZPWogfu1K2ToQPMfQzFg=;
- b=i/EkxgAIMC0Zlsiy3Da+6XB/TsKI6DotOCfhdCYLnXJn9agEyO8yMct0FX9VTTxwU4
- xDdTtT18i5jZMbgF1/Tr8pXng0lVlc0l4OS3nXduEY2TWotTL64rMREtlPViNCWcvZXx
- FO0+8zGuHHeQYgvHnM52ThBjUM9lE0I4ec2ECKldHQpPo/naQWE0RK5aOnZ2fpfrQCbt
- osow3Iah50qyJInswh5EVuWAnLvsXu57oRARsIUy2ORirramho9fvSoJiVEvTHev1huM
- avSJ/6qQFkNIzb3SnYOSdyopQsH21gos8VxW4k3BiHjjHj5SYtuR1Jl6dR6+JRuvxs5U
- kcXA==
-X-Gm-Message-State: APjAAAWUwmtU60So+patFE1PqSf6IfXfJCmJ90dekUmdtYUDS2jbwOt0
- EAMHe2SLFlnuX/L0O7Tx4mmS1S9x8J+XW1yzNm8N0w==
-X-Google-Smtp-Source: APXvYqxUoDlHzA7k7qID3jHvD5Pj3otaHBKc2jeb7lyYQe2Sc+JKbWsDUoQ8SpBxnDbhjbT/mfwyBB/j7zVaazIEPZs=
-X-Received: by 2002:a19:cdcf:: with SMTP id
- d198mr13196789lfg.115.1558732190859; 
- Fri, 24 May 2019 14:09:50 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190512173151.27388-1-hauke@hauke-m.de>
-In-Reply-To: <20190512173151.27388-1-hauke@hauke-m.de>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=s5P7umcAF01iD6eKC8QbIl69QGmHDTE4yaEcs9BgSyI=;
+ b=mPhBZaz0nwzWyt9xGhHgtavd+nptBirYsqPmpGKl7n7+cEGDvt80bGkLtXut2+rPki
+ OOy/CNdPhaEuMC3Hk6q+f5pAL1/u9Ub4DhsRON+1smoZZ4cNKHBfOwEtStQQJ9wNv6Y5
+ 5EPaw6QbGUvq6rloDvaBGSGi39AAhzucv1gAZwK57pYvuDnbI7RZip+5o8WIAXSPl/EO
+ TV8gCsr24aQjSJpNynD6G4w6yXUppdEztdgae5uOgb4XkGUGQOkhEpXGtPu2cpEtpDhQ
+ lviJA65YgbCyS5POllR6bJc3pmuUqt1rCA6xx4m7wp0F52w35lnIuB9beLPd5kbWoJeb
+ CT8g==
+X-Gm-Message-State: APjAAAXmsG+6qC6aQVUlNL9roORt02FhWcXgpjWMsanGSV1h8H8cOeNW
+ 7F3JGQaZkreWagKszy0vO4Ofsg==
+X-Google-Smtp-Source: APXvYqxTJEqWMZAlE1aJr9VhYTxTzUvnZSWJKis1DdMLuY9v3VMd9EtSQGeWbGv/iqf8kAsvQ0aA4A==
+X-Received: by 2002:a2e:860a:: with SMTP id a10mr10878169lji.158.1558733277967; 
+ Fri, 24 May 2019 14:27:57 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.210])
+ by smtp.gmail.com with ESMTPSA id k20sm784450lfm.30.2019.05.24.14.27.56
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 24 May 2019 14:27:56 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 24 May 2019 23:09:38 +0200
-Message-ID: <CACRpkdYjbOihH4G1ND807JhbXjx7YnhGcnVmSqmakOagGVK62w@mail.gmail.com>
-To: Hauke Mehrtens <hauke@hauke-m.de>
+To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Christian Lamparter <chunkeey@gmail.com>
+Date: Fri, 24 May 2019 23:27:17 +0200
+Message-Id: <20190524212719.30694-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_140954_295389_D0493BE1 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20190524_142800_250838_C2253956 
+X-CRM114-Status: UNSURE (   9.59  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -79,8 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: Move some DSA config options to
- generic config
+Subject: [OpenWrt-Devel] [PATCH 1/3] gemini: Make a per-board case for
+ ethernet MAC
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,42 +98,72 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Hauke,
+The DNS-313 isn't the only special board so let's bite the
+bullet and create a case ladder in preparation for DIR-685.
 
-this patch regresses my Gemini systems because I really need these switches
-to come up and this patch:
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ .../lib/preinit/05_set_ether_mac_gemini       | 30 ++++++++++++-------
+ 1 file changed, 19 insertions(+), 11 deletions(-)
 
-On Sun, May 12, 2019 at 7:32 PM Hauke Mehrtens <hauke@hauke-m.de> wrote:
+diff --git a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
+index 1ce5c8067ef0..ebd3ae0f55c5 100644
+--- a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
++++ b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
+@@ -1,6 +1,25 @@
+ #!/bin/sh
+ 
+ set_ether_mac() {
++
++	. /lib/functions.sh
++
++	case $(board_name) in
++	dlink,dns-313)
++		# The DNS-313 has a special field in its RedBoot
++		# binary that we need to check
++		CONFIG_PARTITION="$(grep "RedBoot" /proc/mtd | cut -d: -f1)"
++		if [ ! -z $CONFIG_PARTITION ] ; then
++			DEVID="$(dd if=/dev/mtdblock0 bs=1 skip=119508 count=7 2>/dev/null)"
++			if [ "x$DEVID" = "xdns-313" ] ; then
++				MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -e '/1 ":%02X"' | sed s/^://g)"
++				ifconfig eth0 hw ether $MAC1 2>/dev/null
++				return 0
++			fi
++		fi
++		;;
++	esac
++
+ 	# Most devices have a standard "VCTL" partition
+ 	CONFIG_PARTITION="$(grep "VCTL" /proc/mtd | cut -d: -f1)"
+ 	if [ ! -z $CONFIG_PARTITION ] ; then
+@@ -12,17 +31,6 @@ set_ether_mac() {
+ 		return 0
+ 	fi
+ 
+-	# The DNS-313 has a special field in its RedBoot
+-	# binary that we need to check
+-	CONFIG_PARTITION="$(grep "RedBoot" /proc/mtd | cut -d: -f1)"
+-	if [ ! -z $CONFIG_PARTITION ] ; then
+-		DEVID="$(dd if=/dev/mtdblock0 bs=1 skip=119508 count=7 2>/dev/null)"
+-		if [ "x$DEVID" = "xdns-313" ] ; then
+-			MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -e '/1 ":%02X"' | sed s/^://g)"
+-			ifconfig eth0 hw ether $MAC1 2>/dev/null
+-			return 0
+-		fi
+-	fi
+ }
+ 
+ boot_hook_add preinit_main set_ether_mac
+-- 
+2.20.1
 
-> diff --git a/target/linux/gemini/config-4.19 b/target/linux/gemini/config-4.19
-
->  CONFIG_NET_DSA=y
-> -# CONFIG_NET_DSA_LEGACY is not set
-> -CONFIG_NET_DSA_REALTEK_SMI=y
-> -CONFIG_NET_DSA_VITESSE_VSC73XX=y
-
-Deletes my selected DSA switches and:
-
-> +# CONFIG_NET_DSA_REALTEK_SMI is not set
->  # CONFIG_NET_DSA_SMSC_LAN9303_I2C is not set
->  # CONFIG_NET_DSA_SMSC_LAN9303_MDIO is not set
->  # CONFIG_NET_DSA_TAG_DSA is not set
->  # CONFIG_NET_DSA_TAG_EDSA is not set
-> +# CONFIG_NET_DSA_VITESSE_VSC73XX is not set
-
-Adds them to the generic config as "not set" (disabled).
-
-It seems this needs to be partially reverted for Gemini to work,
-but not completely.
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

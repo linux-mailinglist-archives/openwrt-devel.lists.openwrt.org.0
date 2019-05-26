@@ -2,42 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D0A12AC3F
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 May 2019 23:08:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B95C62AC5D
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 May 2019 23:46:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7ona/mRl86OMjQqHmjWZv6ZxeoyI9o8ldmPOaHBhc+s=; b=VfxQCmlR4VTZJ8
-	pICEJ5QsDQJUVWcvuGYdrykDWUFKAUhiUt72OBEpTRaxcdF0vfAMuxOOUY8DpO8EMKLUxWHqSY0Cs
-	PN2hhPZClpbCTSXcRVo+n5J3x0S18Jy/VyOqh5AGDDTqVlTe2nqF3JX+5n9H4tRh1+M/bCIVmhjA9
-	82rJGSSeZ+SXk/rOTOdXUnjuQ9KR+QwjkQzlhBa5mozU0S9DzbPJ1fbtqEgyL4SyFGQD+gPtMh8ya
-	mv+7wGKRsxh2g0IM9dKCNRCTMN7S4JOzK0Ri27LKEmTqy3jAx+2ryF3ciX8P6yeXrlLQ9LgV+dS8c
-	He6BthOT1UiegFntaAvw==;
+	List-Owner; bh=ypxFB/974pixzNRtHUj/xmlsWPiOkXPZMbmNSzQBuBg=; b=ImxPOpsMppE4++
+	eUqIHEMO5u9Q5Xp+I95RpwInKNXD+EFrx3bfDKS+55lMwAu2K6rtxsV8FGBdbQVdDqa8757WNrMeJ
+	wYa9gbTLWI3d30ARPO5EuaMV510BrsuHiOJFwQeb9CXUhzXca6WRWfpvMKTwZRtjl3nRpXT8M9dAx
+	RgwyBR8N693MpnAtg8+eV5oPC5oHovK1+UjB2WIh9T/G1ghbBPCy85/UQ6xaHjh07wiNdiMSVF0fA
+	fHPdfurq87PjSHzAPfBz8R46q+IniDdcmxQSz9g6iu4glFIK60+bQkQboqMlXznl0KdSAOuL8LRxX
+	2plUPBGmsgNvdrX861cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV0Nh-0004ej-59; Sun, 26 May 2019 21:08:37 +0000
+	id 1hV0yD-00009j-0S; Sun, 26 May 2019 21:46:21 +0000
 Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV0NX-0004e8-IM
- for openwrt-devel@lists.openwrt.org; Sun, 26 May 2019 21:08:30 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1hV0y7-00009J-D7
+ for openwrt-devel@lists.openwrt.org; Sun, 26 May 2019 21:46:17 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 69D664F21B;
- Sun, 26 May 2019 23:08:23 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id BC51E4F266;
+ Sun, 26 May 2019 23:46:11 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id a2ynVnpBa8iR; Sun, 26 May 2019 23:07:58 +0200 (CEST)
-To: Peter Lundkvist <peter.lundkvist@gmail.com>
-References: <20190504151602.7194-1-hauke@hauke-m.de>
- <20190505065904.23fb1d9a@mir>
- <6577391b-9851-c3a3-2be0-ee5950d894d9@hauke-m.de>
- <2f4633ce-d456-b6ed-c7b6-9250088ad882@gmail.com>
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id lY3zpY6ivE38; Sun, 26 May 2019 23:46:07 +0200 (CEST)
+To: Linus Walleij <linus.walleij@linaro.org>
+References: <20190512173151.27388-1-hauke@hauke-m.de>
+ <CACRpkdYjbOihH4G1ND807JhbXjx7YnhGcnVmSqmakOagGVK62w@mail.gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -100,14 +99,14 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <c98af2d7-0a74-6be5-14e4-64959e8d37ae@hauke-m.de>
-Date: Sun, 26 May 2019 23:07:57 +0200
+Message-ID: <ffac899b-ec53-1627-d9cd-e2be7d78f142@hauke-m.de>
+Date: Sun, 26 May 2019 23:46:06 +0200
 MIME-Version: 1.0
-In-Reply-To: <2f4633ce-d456-b6ed-c7b6-9250088ad882@gmail.com>
+In-Reply-To: <CACRpkdYjbOihH4G1ND807JhbXjx7YnhGcnVmSqmakOagGVK62w@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_140827_915926_E4F543A6 
-X-CRM114-Status: GOOD (  17.81  )
+X-CRM114-CacheID: sfid-20190526_144615_749922_911FF6B0 
+X-CRM114-Status: GOOD (  17.20  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -117,7 +116,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [80.241.60.212 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/6] hostapd: update to version 2.8
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: Move some DSA config options to
+ generic config
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -129,124 +129,56 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 5/26/19 1:24 PM, Peter Lundkvist wrote:
-> Hi,
+On 5/24/19 11:09 PM, Linus Walleij wrote:
+> Hi Hauke,
 > 
-> On 2019-05-05 23:43, Hauke Mehrtens wrote:
->> On 5/5/19 6:59 AM, Stefan Lippers-Hollmann wrote:
->>> Hi
->>>
->>> Successfully build-tested on:
->>> - ath79
->>> - ipq806x
->>> - lantiq
->>>
->>> Succeffully runtime tested on:
->>> - ipq806x
->>>
->>> On 2019-05-04, Hauke Mehrtens wrote:
->>>> This also syncs the configuration files with the default configuration
->>>> files, but no extra options are activated or deactivated.
->>>>
->>>> The mesh patches were partially merged into hostapd 2.8, the remaining
->>>> patches were extracted from patchwork and are now applied by OpenWrt.
->>>> The patches still have open questions which are not fixed by the author.
->>>> They were taken from this page:
->>>> https://patchwork.ozlabs.org/project/hostap/list/?series=62725&state=*
->>>>
->>>> Signed-off-by: Hauke Mehrtens <hauke at hauke-m.de>
->>> Tested-by: Stefan Lippers-Hollmann <s.l-h at gmx.de>
->>>
->>> [...]
->>>> --- a/package/network/services/hostapd/Makefile
->>>> +++ b/package/network/services/hostapd/Makefile
->>>> @@ -11,9 +11,9 @@ PKG_RELEASE:=6
->>>>
->>>>  PKG_SOURCE_URL:=http://w1.fi/hostap.git
->>>>  PKG_SOURCE_PROTO:=git
->>>> -PKG_SOURCE_DATE:=2018-12-02
->>> [...]
->>>> +PKG_SOURCE_DATE:=2.8
->>> [...]
->>>
->>> The version number goes backwards here, I'd suggest sticking to the
->>> date here (2019-04-21) otherwise opkg would like to install the older
->>> snapshot again:
->>>
->>> # opkg update
->>> [...]
->>> # opkg list-upgradable
->>> hostapd-utils - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->>> wpad-openssl - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->>> wpa-cli - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->>> hostapd-common - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->>>
->>> You might also want to reset PKG_RELEASE to 1:
->>>
->>> --- a/package/network/services/hostapd/Makefile
->>> +++ b/package/network/services/hostapd/Makefile
->>> @@ -7,11 +7,11 @@
->>>  include $(TOPDIR)/rules.mk
->>>
->>>  PKG_NAME:=hostapd
->>> -PKG_RELEASE:=6
->>> +PKG_RELEASE:=1
->>>
->>>  PKG_SOURCE_URL:=http://w1.fi/hostap.git
->>>  PKG_SOURCE_PROTO:=git
->>> -PKG_SOURCE_DATE:=2.8
->>> +PKG_SOURCE_DATE:=2019-04-21
->>>  PKG_SOURCE_VERSION:=63962824309bb428e5f73d9caae08fcb949fbe36
->>>  PKG_MIRROR_HASH:=c3d789b822428c92bd47b3c85d9dc36cced38f7affe885cc2bb15e54248a4566
->>
->> Ok, I will fix this.
->>
->> Thanks for testing.
->> Did someone test the ieee80211s mesh functionality?
-> 
-> I did some quick tests with mesh, and I see one regression when trying to set
-> up mesh on DFS channels (seems to work ok on non-DFS channels).
-> 
-> With hostapd-2.8-63962824:
-> Sun May 26 10:23:09 2019 daemon.notice wpa_supplicant[18266]: mesh1: interface state COUNTRY_UPDATE->DFS
-> Sun May 26 10:23:09 2019 daemon.notice wpa_supplicant[18266]: mesh1: DFS-CAC-START freq=5680 chan=136 sec_chan=-1, width=0, seg0=0, seg1=0, cac_time=60s
-> Sun May 26 10:23:10 2019 daemon.notice wpa_supplicant[18266]: mesh1: MESH-GROUP-STARTED ssid="asdd390we12nwxx" id=0
-> Sun May 26 10:24:10 2019 daemon.notice wpa_supplicant[18266]: mesh1: DFS-CAC-COMPLETED success=1 freq=5680 ht_enabled=0 chan_offset=0 chan_width=0 cf1=5680 cf2=0
-> Sun May 26 10:24:12 2019 daemon.notice wpa_supplicant[18266]: mesh1: Unknown event 54
-> 
-> With hostapd-2018-12-02-c2c6c01b:
-> Sun May 26 10:33:15 2019 daemon.notice wpa_supplicant[18709]: mesh1: interface state COUNTRY_UPDATE->DFS
-> Sun May 26 10:33:15 2019 daemon.notice wpa_supplicant[18709]: mesh1: DFS-CAC-START freq=5680 chan=136 sec_chan=-1, width=0, seg0=134, seg1=0, cac_time=60s
-> Sun May 26 10:33:15 2019 daemon.notice wpa_supplicant[18709]: mesh1: MESH-GROUP-STARTED ssid="asdd390we12nwxx" id=0
-> Sun May 26 10:34:19 2019 daemon.notice wpa_supplicant[18709]: mesh1: DFS-CAC-COMPLETED success=1 freq=5680 ht_enabled=1 chan_offset=-1 chan_width=2 cf1=5670 cf2=0
-> Sun May 26 10:34:19 2019 daemon.err wpa_supplicant[18709]: Using interface mesh1 with hwaddr ba:ec:a3:d7:6a:c1 and ssid ""
-> Sun May 26 10:34:19 2019 daemon.notice wpa_supplicant[18709]: mesh1: interface state DFS->ENABLED
-> Sun May 26 10:34:19 2019 daemon.notice wpa_supplicant[18709]: mesh1: AP-ENABLED
-> 
-> /Peter
-> 
+> this patch regresses my Gemini systems because I really need these switches
+> to come up and this patch:
 
-Hi Peter,
+Sorry Linus,
 
-Thanks for reporting this.
-Event 54 is EVENT_DFS_PRE_CAC_EXPIRED
+I didn't know that they are needed, I assumed that they were
+accidentally added for the gemini target, on the ath79 target these
+options were not defined by the build system for kernel 4.19 at all.
 
-There are two places which print out "Unknown event", I assume you hit
-the version in ./wpa_supplicant/events.c because of the debug level.
-In this switch statement EVENT_DFS_PRE_CAC_EXPIRED is not handled, so we
-should see this message in case the code receives this event.
-
-I am not familiar with the hostapd code, but I would suggest to handle
-the event like it is done in ./src/ap/drv_callbacks.c by calling a local
-function and then the existing function hostapd_dfs_pre_cac_expired().
+Are both switches found on some of the gemini board? I will add them again.
 
 Hauke
+
+> 
+> On Sun, May 12, 2019 at 7:32 PM Hauke Mehrtens <hauke@hauke-m.de> wrote:
+> 
+>> diff --git a/target/linux/gemini/config-4.19 b/target/linux/gemini/config-4.19
+> 
+>>  CONFIG_NET_DSA=y
+>> -# CONFIG_NET_DSA_LEGACY is not set
+>> -CONFIG_NET_DSA_REALTEK_SMI=y
+>> -CONFIG_NET_DSA_VITESSE_VSC73XX=y
+> 
+> Deletes my selected DSA switches and:
+> 
+>> +# CONFIG_NET_DSA_REALTEK_SMI is not set
+>>  # CONFIG_NET_DSA_SMSC_LAN9303_I2C is not set
+>>  # CONFIG_NET_DSA_SMSC_LAN9303_MDIO is not set
+>>  # CONFIG_NET_DSA_TAG_DSA is not set
+>>  # CONFIG_NET_DSA_TAG_EDSA is not set
+>> +# CONFIG_NET_DSA_VITESSE_VSC73XX is not set
+> 
+> Adds them to the generic config as "not set" (disabled).
+> 
+> It seems this needs to be partially reverted for Gemini to work,
+> but not completely.
+> 
+> Yours,
+> Linus Walleij
+> 
+
 
 _______________________________________________
 openwrt-devel mailing list

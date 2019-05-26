@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACD522A9C1
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 May 2019 14:39:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B85772A9C5
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 May 2019 14:47:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,40 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WteXN4xE4PKBnqcXf90ymOlxjGyXUnJhhjfxtZ/ghRE=; b=JAf5xybHT966etp0lStZhJc09T
-	170RlhAihMXyGEFEK2CIAD+9KFbAqjJA5R0XR4y7GdKirQOqhd/rLR3/Pgx70TjhjZM11UQ8Jw8xy
-	S7uMhOM2lVsUgZ2mZsS7BxZCHmRSeihr1gGT6qwpfDHgNY8MiQ8dzmbY0zCaFc0J0HEW88WN3rfQD
-	xJ0SbcY6gm1qlsXFhgg2CdbvXFTgqloUrPoc3u0MtHUsdI9VHav/EK6jMQTFCZ8w45Xay2LoU/RsJ
-	oSVL1TtKaxQnFIo32ZKQmb6k+tR/h8nuoPEzcnUonkT8goAvKxjm4V0DlaGCOjGJSx1fgVt8uvdAC
-	4bZWq8vA==;
+	bh=OTPaA9JVZvGexsW0esTkRHsiYv5RkyfypAR8lm9XG2A=; b=hjGKaCiMB0mfCqe6aHx9JDu5mh
+	P0P/O0l7YDd98SI0j4TxksJBkYjJJ+tWca9l2JDTh5kHOQXJ/adIzNKOM1Kf07gFr5dMDyZgGSgl2
+	B5lz+qDdJ49uWHcRISUh1VBm7Yd9E7Ugvr2Ap3KVvY4Zw5RZaNwHOzSH4SuWmsO6A6vTmqkt5aNla
+	BcPi2llFAkbMPNMF5PdcrSEHq/tRnUFbXjpzpBiWTZHdkjj3LISJ6awBt33G8LNQ3dxBPZUabQ6k4
+	8/xbXJ1TprnQrl+WKP1oUkjLh1BFKls6zI1fp9ZZIM+hKxccYHZ3uHmt9wm5oOuaPaGk+98vmyFZ0
+	NNkH1qzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUsQc-00058e-16; Sun, 26 May 2019 12:39:06 +0000
+	id 1hUsYx-0001WA-Im; Sun, 26 May 2019 12:47:43 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUsQU-00057o-6W
- for openwrt-devel@lists.openwrt.org; Sun, 26 May 2019 12:39:00 +0000
+ id 1hUsYq-0001Vp-Jt
+ for openwrt-devel@lists.openwrt.org; Sun, 26 May 2019 12:47:38 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 1C8B04E7D;
- Sun, 26 May 2019 14:38:53 +0200 (CEST)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id E74284EC0;
+ Sun, 26 May 2019 14:47:34 +0200 (CEST)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 812b8329;
- Sun, 26 May 2019 14:38:51 +0200 (CEST)
-Date: Sun, 26 May 2019 14:38:51 +0200
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 8c7ce6c0;
+ Sun, 26 May 2019 14:47:33 +0200 (CEST)
+Date: Sun, 26 May 2019 14:47:33 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Etienne Champetier <champetier.etienne@gmail.com>
-Message-ID: <20190526123851.GF50588@meh.true.cz>
+To: Stephan =?utf-8?Q?M=C3=BCller?= <smueller@chronox.de>
+Message-ID: <20190526124733.GG50588@meh.true.cz>
 References: <1558368805-19484-1-git-send-email-ynezz@true.cz>
- <CAOdf3goqqUUXc7pM8wMR=edshXdJAfqEzUi5_wGSnSyJk-P7sg@mail.gmail.com>
  <20190521145502.GB4606@meh.true.cz>
  <CAOdf3gp4dAakvC7xjdA_JNzkBT0-1=6BSL0G3s2Hzake+T75fw@mail.gmail.com>
+ <7720302.cQ4CF4HUsA@positron.chronox.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAOdf3gp4dAakvC7xjdA_JNzkBT0-1=6BSL0G3s2Hzake+T75fw@mail.gmail.com>
+In-Reply-To: <7720302.cQ4CF4HUsA@positron.chronox.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_053858_636405_293B520C 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20190526_054736_804614_F536727C 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -70,75 +71,33 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Stephan Mueller <smueller@chronox.de>,
+Cc: Etienne Champetier <champetier.etienne@gmail.com>,
  OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
  Dustin Lundquist <d.lundquist@temperednetworks.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Etienne Champetier <champetier.etienne@gmail.com> [2019-05-25 12:43:25]:
-
-Hi,
-
-> I just want to be sure we don't make some devices worse / are not
-> missing something
-
-and I really appreciate that, the more eyes, the better.
-
-> > Exactly, that's why it's recommended[2] to save it during EVERY shutdown, so it's
-> > different EVERY boot.
-> 
-> I know and I'm in favour of it, but proper shutdown is not always a
-> thing on router, that is why I went with getrandom() at the time
-
-Indeed, and I think, that it served us well. Now, that we've found out, that
-it's not helping that much as it was expected, and having proper source of
-randomness, we could simply stop using it in default install. Should you still
-need it, you can `opkg install` it back.
-
-> > I started experiments with kmod-crypto-rng package which already contains
-> > jitterentropy, drbg, krng and rng kernel modules, but it didn't improved the
-> > long booting times for me on ath79.  Other reason was size of this kernel
-> > module(s) as they provide much more functionality of course.
-> 
-> I think before anyone merge this (I'm not a core dev),
-
-This is just an RFC, so I'm not going to merge it anyway. I'm going to post
-another series of patches without the RFC and I plan to merge it myself if I
-get Acked-by from at least one additional core developer. I find this part of
-the system important enough, that I'm not going to push it myself.
-
-My current plan for the new series is following:
-
- * enable CONFIG_WARN_ALL_UNSEEDED_RANDOM by default in all kernels
-
- * add urngd as default package, because it's going to improve the overall
-   system randomness
-
- * start urngd directly in procd to get rid of the following warnings:
-
-    random: procd: uninitialized urandom read (4 bytes read)
-    procd: - ubus -
-    random: ubusd: uninitialized urandom read (4 bytes read)
-    random: ubusd: uninitialized urandom read (4 bytes read)
-    random: ubusd: uninitialized urandom read (4 bytes read)
-    procd: - init -
-
- * create packages for urandom-seed, getrandom and remove those from the
-   default images
-
-> we need to explain why your user space version and the kernel module
-> version behave differently Is the kernel module underestimating entropy ?
-> Is you user space version over estimating entropy ?
-
-I hope, that Stephan has already provided that answer in the other email to
-you.
-
--- ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+U3RlcGhhbiBNw7xsbGVyIDxzbXVlbGxlckBjaHJvbm94LmRlPiBbMjAxOS0wNS0yNSAyMTo0Mjox
+OV06CgpIaSwKCj4gSWYgeW91IGFyZSBpbnRlcmVzdGVkLCBJIHdyb3RlIGEgY29tcGxldGUgcmVw
+bGFjZW1lbnQgaW1wbGVtZW50YXRpb24gb2YgdGhlIAo+IGN1cnJlbnQgL2Rldi9yYW5kb20gb3Ig
+L2Rldi91cmFuZG9tIGF2YWlsYWJsZSBhdCBbMl0uIEl0IHVzZXMgdGhlIGluLWtlcm5lbCAKPiBK
+aXR0ZXIgUk5HLCBpdCBoYXMgcGx1Z2dhYmxlIFBSTkdzIGFuZCBvdGhlciBsb2dpYyByZWxldmFu
+dCBmb3IsIHNheSwgRklQUyAKPiAxNDAtMi4gVGhpcyBpbXBsZW1lbnRhdGlvbiB3b3VsZCBub3Qg
+cmVxdWlyZSB5b3UgdG8gaGF2ZSB5b3VyIHNlcGFyYXRlIHVzZXIgCj4gc3BhY2UgZW50cm9weSBk
+YWVtb24gdGhhdCBpcyBkaXNjdXNzZWQgaGVyZS4gCgp0aGUgbWFpbiByZWFzb24gZm9yIHVybmdk
+IHdhcyBzaXplLCBiZWNhdXNlIEkgcGxhbiB0byBoYXZlIGl0IGluY2x1ZGVkIGluIGFsbApkZWZh
+dWx0IGZpcm13YXJlIGltYWdlcywgZXZlbiBmb3IgdGlueSBkZXZpY2VzIHdpdGggNE1pQiBvZiBm
+bGFzaCBzcGFjZS4gVGhlCmtlcm5lbCBtYWNoaW5lcnkgaXMgbW9yZSBoZWF2eSBhcyBpdCBoYXZl
+IG1vcmUgZmVhdHVyZXMuCgo+IFlldCwgdGhpcyBjb2RlIHdhcyByZWplY3RlZC4KCmNvdWxkIHlv
+dSBwbGVhc2UgcG9pbnQgbWUgdG8gdGhhdCBlbWFpbCB0aHJlYWQ/IFdoYXQncyB5b3VyIHBsYW4g
+bm93PyBEbyB5b3UKc2ltcGx5IHBsYW4gdG8gbWFpbnRhaW4gaXQgYXMgb3V0IG9mIHRyZWUga2Vy
+bmVsIG1vZHVsZSBmb3JldmVyIG9yIGRvIHlvdSBwbGFuCnRvIGV2ZW50dWFsbHkgYWRkcmVzcyB0
+aGUgY29tbWVudHMgbGVhZGluZyB0byB0aGUgcmVqZWN0IGFuZCB0cnkgaXQgYWdhaW4KbGF0ZXI/
+CgpUaGFua3MgYSBsb3QgZm9yIHlvdXIgZ3JlYXQgd29yayEKCj4gWzFdIGh0dHA6Ly93d3cuY2hy
+b25veC5kZS9saWJrY2FwaS5odG1sCj4gWzJdIGh0dHA6Ly93d3cuY2hyb25veC5kZS9scm5nLmh0
+bWwKCkNoZWVycywKClBldHIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMu
+b3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29w
+ZW53cnQtZGV2ZWwK

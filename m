@@ -2,96 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3A532A962
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 May 2019 13:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACD522A9C1
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 May 2019 14:39:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CnVzqpu0Nr1vUpdx3P/enzR8Ia24NFHplWdSwrTQID4=; b=Ik74R2tzNMuP1u
-	0puAjpEGR1eNDRsXnmwVenhFukmj7T6+Un2ty2szhj/KDG0qvu/Xak/0J3ffeqp3UuF8/KJYRngu8
-	bUd3GOVxGNFOyas2iowT4LZANdlrvHn2ESdMpzrW4cyQbTqFj2ggFL+5xZrgraB4b9/5GjKqURgdp
-	zwUnU16VPdH3WOhLfMNGGcTxDKk1yzs3vxx8uItRu7+3XYVpuqWi+dXQ2nISeSonz/CEJ0zmDvAtF
-	ZyH708YYM9zjBcGiDUvbQeq0ABXeC1HQGW7kV66a37/x3UIT51kXPpyIMe9ltKItsZHqcMlcRVPDh
-	Hg+PGP7tIxoz3ZW4V88A==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=WteXN4xE4PKBnqcXf90ymOlxjGyXUnJhhjfxtZ/ghRE=; b=JAf5xybHT966etp0lStZhJc09T
+	170RlhAihMXyGEFEK2CIAD+9KFbAqjJA5R0XR4y7GdKirQOqhd/rLR3/Pgx70TjhjZM11UQ8Jw8xy
+	S7uMhOM2lVsUgZ2mZsS7BxZCHmRSeihr1gGT6qwpfDHgNY8MiQ8dzmbY0zCaFc0J0HEW88WN3rfQD
+	xJ0SbcY6gm1qlsXFhgg2CdbvXFTgqloUrPoc3u0MtHUsdI9VHav/EK6jMQTFCZ8w45Xay2LoU/RsJ
+	oSVL1TtKaxQnFIo32ZKQmb6k+tR/h8nuoPEzcnUonkT8goAvKxjm4V0DlaGCOjGJSx1fgVt8uvdAC
+	4bZWq8vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUrHC-0000ZB-MT; Sun, 26 May 2019 11:25:18 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hUsQc-00058e-16; Sun, 26 May 2019 12:39:06 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUrH4-0000KZ-VT
- for openwrt-devel@lists.openwrt.org; Sun, 26 May 2019 11:25:12 +0000
-Received: by mail-lj1-x242.google.com with SMTP id q62so12258426ljq.7
- for <openwrt-devel@lists.openwrt.org>; Sun, 26 May 2019 04:25:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:cc:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=KLilfc/xotmRVJc8KI6FdiFzgtjBWe67ys3dYA7LzxQ=;
- b=QxbcXc+bTI7d61L+cX0a4vYpnqpBOREa822ySwN4pKdXDPlgRIO0rgoHpYQexNhg8R
- +q2Clswv6Zr8AkZhdvwI3xSqrUkI7zWZPrhuQfduyxIiFt3eciMs/hVjAz3SGJgmDkhp
- 67R6SCp0oXHYIbwCe/VFFzDH6rM/AzlEh2h1O2EiHZ8hOaeoAHy8stgd5TF4xWIcGTDp
- 06UNU5+hcjH28u3MWDM4ykqjTNAQvDfh216IUmt3vnFXiepndv94cWvFpqwQbWCAhcrl
- otNlvaYNVqK3HAf/Ra8CPhKoavdf1cyc9UkNe2OYdcD6+9zBn8RTnx4rOrEsxDIWzsyf
- qr4g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:cc:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=KLilfc/xotmRVJc8KI6FdiFzgtjBWe67ys3dYA7LzxQ=;
- b=i5cErklNMaIh+PNqR0eR4E6c3WHT5zQ03Ez1JKtd3LRs/tIipzcYZXkIDT8lxEdo6B
- UpyR5kER7hOzgvRmWD6mLV+8TxL1i813gcN6CE0ATIgl5NfDOOOJICR041c7dwCnMVGi
- g376in/TH/a6mClhqIjbyj34bMaXMIK/NAFTfMt3+ql7lfIAW0/m2jFjhUBIkXygWNYV
- kAXtvw4wihJxsW7u86a7RPOI0iE4FwaXKGCxooXFuFbpnF2BhbmglhdPabvmWN2nZ5LE
- GDc2APSAimETazOR79M1I0LfWVTmOEMhfR9tWv7ZD3ZNXqxPa9ZxfVmwN54YDgflWIdY
- NZ4w==
-X-Gm-Message-State: APjAAAVwpo/93AEniNyF+M8H5I7+P9qVr23PuF0CgaqUK8H4Ug5Fc7cM
- UV9m8zuPayRhHjWPvYbL6O7w7Ye9
-X-Google-Smtp-Source: APXvYqyqLb4bC+ISOuISSSaA4LWi5/iissivhPtVnyt9quCpgXqg8YftRKjpstd44plnjRUD84P3vw==
-X-Received: by 2002:a2e:9b46:: with SMTP id o6mr20912986ljj.76.1558869906739; 
- Sun, 26 May 2019 04:25:06 -0700 (PDT)
-Received: from [192.168.22.117] (h-8-196.A357.priv.bahnhof.se. [155.4.8.196])
- by smtp.googlemail.com with ESMTPSA id
- v16sm1598090lji.88.2019.05.26.04.25.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 26 May 2019 04:25:06 -0700 (PDT)
-To: Hauke Mehrtens <hauke@hauke-m.de>
-References: <20190504151602.7194-1-hauke@hauke-m.de>
- <20190505065904.23fb1d9a@mir>
- <6577391b-9851-c3a3-2be0-ee5950d894d9@hauke-m.de>
-From: Peter Lundkvist <peter.lundkvist@gmail.com>
-Message-ID: <2f4633ce-d456-b6ed-c7b6-9250088ad882@gmail.com>
-Date: Sun, 26 May 2019 13:24:52 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hUsQU-00057o-6W
+ for openwrt-devel@lists.openwrt.org; Sun, 26 May 2019 12:39:00 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 1C8B04E7D;
+ Sun, 26 May 2019 14:38:53 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 812b8329;
+ Sun, 26 May 2019 14:38:51 +0200 (CEST)
+Date: Sun, 26 May 2019 14:38:51 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Etienne Champetier <champetier.etienne@gmail.com>
+Message-ID: <20190526123851.GF50588@meh.true.cz>
+References: <1558368805-19484-1-git-send-email-ynezz@true.cz>
+ <CAOdf3goqqUUXc7pM8wMR=edshXdJAfqEzUi5_wGSnSyJk-P7sg@mail.gmail.com>
+ <20190521145502.GB4606@meh.true.cz>
+ <CAOdf3gp4dAakvC7xjdA_JNzkBT0-1=6BSL0G3s2Hzake+T75fw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <6577391b-9851-c3a3-2be0-ee5950d894d9@hauke-m.de>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CAOdf3gp4dAakvC7xjdA_JNzkBT0-1=6BSL0G3s2Hzake+T75fw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_042511_039483_41822CF6 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190526_053858_636405_293B520C 
+X-CRM114-Status: GOOD (  13.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peter.lundkvist[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] [PATCH 1/6] hostapd: update to version 2.8
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH RFC 0/5] ath79: add micro non-physical
+ true RNG based on timing jitter
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,112 +69,74 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: Stephan Mueller <smueller@chronox.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Dustin Lundquist <d.lundquist@temperednetworks.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Etienne Champetier <champetier.etienne@gmail.com> [2019-05-25 12:43:25]:
+
 Hi,
 
-On 2019-05-05 23:43, Hauke Mehrtens wrote:
-> On 5/5/19 6:59 AM, Stefan Lippers-Hollmann wrote:
->> Hi
->>
->> Successfully build-tested on:
->> - ath79
->> - ipq806x
->> - lantiq
->>
->> Succeffully runtime tested on:
->> - ipq806x
->>
->> On 2019-05-04, Hauke Mehrtens wrote:
->>> This also syncs the configuration files with the default configuration
->>> files, but no extra options are activated or deactivated.
->>>
->>> The mesh patches were partially merged into hostapd 2.8, the remaining
->>> patches were extracted from patchwork and are now applied by OpenWrt.
->>> The patches still have open questions which are not fixed by the author.
->>> They were taken from this page:
->>> https://patchwork.ozlabs.org/project/hostap/list/?series=62725&state=*
->>>
->>> Signed-off-by: Hauke Mehrtens <hauke at hauke-m.de>
->> Tested-by: Stefan Lippers-Hollmann <s.l-h at gmx.de>
->>
->> [...]
->>> --- a/package/network/services/hostapd/Makefile
->>> +++ b/package/network/services/hostapd/Makefile
->>> @@ -11,9 +11,9 @@ PKG_RELEASE:=6
->>>
->>>  PKG_SOURCE_URL:=http://w1.fi/hostap.git
->>>  PKG_SOURCE_PROTO:=git
->>> -PKG_SOURCE_DATE:=2018-12-02
->> [...]
->>> +PKG_SOURCE_DATE:=2.8
->> [...]
->>
->> The version number goes backwards here, I'd suggest sticking to the
->> date here (2019-04-21) otherwise opkg would like to install the older
->> snapshot again:
->>
->> # opkg update
->> [...]
->> # opkg list-upgradable
->> hostapd-utils - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->> wpad-openssl - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->> wpa-cli - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->> hostapd-common - 2.8-63962824-6 - 2018-12-02-c2c6c01b-6
->>
->> You might also want to reset PKG_RELEASE to 1:
->>
->> --- a/package/network/services/hostapd/Makefile
->> +++ b/package/network/services/hostapd/Makefile
->> @@ -7,11 +7,11 @@
->>  include $(TOPDIR)/rules.mk
->>
->>  PKG_NAME:=hostapd
->> -PKG_RELEASE:=6
->> +PKG_RELEASE:=1
->>
->>  PKG_SOURCE_URL:=http://w1.fi/hostap.git
->>  PKG_SOURCE_PROTO:=git
->> -PKG_SOURCE_DATE:=2.8
->> +PKG_SOURCE_DATE:=2019-04-21
->>  PKG_SOURCE_VERSION:=63962824309bb428e5f73d9caae08fcb949fbe36
->>  PKG_MIRROR_HASH:=c3d789b822428c92bd47b3c85d9dc36cced38f7affe885cc2bb15e54248a4566
+> I just want to be sure we don't make some devices worse / are not
+> missing something
+
+and I really appreciate that, the more eyes, the better.
+
+> > Exactly, that's why it's recommended[2] to save it during EVERY shutdown, so it's
+> > different EVERY boot.
 > 
-> Ok, I will fix this.
+> I know and I'm in favour of it, but proper shutdown is not always a
+> thing on router, that is why I went with getrandom() at the time
+
+Indeed, and I think, that it served us well. Now, that we've found out, that
+it's not helping that much as it was expected, and having proper source of
+randomness, we could simply stop using it in default install. Should you still
+need it, you can `opkg install` it back.
+
+> > I started experiments with kmod-crypto-rng package which already contains
+> > jitterentropy, drbg, krng and rng kernel modules, but it didn't improved the
+> > long booting times for me on ath79.  Other reason was size of this kernel
+> > module(s) as they provide much more functionality of course.
 > 
-> Thanks for testing.
-> Did someone test the ieee80211s mesh functionality?
+> I think before anyone merge this (I'm not a core dev),
 
-I did some quick tests with mesh, and I see one regression when trying to set
-up mesh on DFS channels (seems to work ok on non-DFS channels).
+This is just an RFC, so I'm not going to merge it anyway. I'm going to post
+another series of patches without the RFC and I plan to merge it myself if I
+get Acked-by from at least one additional core developer. I find this part of
+the system important enough, that I'm not going to push it myself.
 
-With hostapd-2.8-63962824:
-Sun May 26 10:23:09 2019 daemon.notice wpa_supplicant[18266]: mesh1: interface state COUNTRY_UPDATE->DFS
-Sun May 26 10:23:09 2019 daemon.notice wpa_supplicant[18266]: mesh1: DFS-CAC-START freq=5680 chan=136 sec_chan=-1, width=0, seg0=0, seg1=0, cac_time=60s
-Sun May 26 10:23:10 2019 daemon.notice wpa_supplicant[18266]: mesh1: MESH-GROUP-STARTED ssid="asdd390we12nwxx" id=0
-Sun May 26 10:24:10 2019 daemon.notice wpa_supplicant[18266]: mesh1: DFS-CAC-COMPLETED success=1 freq=5680 ht_enabled=0 chan_offset=0 chan_width=0 cf1=5680 cf2=0
-Sun May 26 10:24:12 2019 daemon.notice wpa_supplicant[18266]: mesh1: Unknown event 54
+My current plan for the new series is following:
 
-With hostapd-2018-12-02-c2c6c01b:
-Sun May 26 10:33:15 2019 daemon.notice wpa_supplicant[18709]: mesh1: interface state COUNTRY_UPDATE->DFS
-Sun May 26 10:33:15 2019 daemon.notice wpa_supplicant[18709]: mesh1: DFS-CAC-START freq=5680 chan=136 sec_chan=-1, width=0, seg0=134, seg1=0, cac_time=60s
-Sun May 26 10:33:15 2019 daemon.notice wpa_supplicant[18709]: mesh1: MESH-GROUP-STARTED ssid="asdd390we12nwxx" id=0
-Sun May 26 10:34:19 2019 daemon.notice wpa_supplicant[18709]: mesh1: DFS-CAC-COMPLETED success=1 freq=5680 ht_enabled=1 chan_offset=-1 chan_width=2 cf1=5670 cf2=0
-Sun May 26 10:34:19 2019 daemon.err wpa_supplicant[18709]: Using interface mesh1 with hwaddr ba:ec:a3:d7:6a:c1 and ssid ""
-Sun May 26 10:34:19 2019 daemon.notice wpa_supplicant[18709]: mesh1: interface state DFS->ENABLED
-Sun May 26 10:34:19 2019 daemon.notice wpa_supplicant[18709]: mesh1: AP-ENABLED
+ * enable CONFIG_WARN_ALL_UNSEEDED_RANDOM by default in all kernels
 
-/Peter
+ * add urngd as default package, because it's going to improve the overall
+   system randomness
 
-> 
-> Hauke
-> 
-> 
+ * start urngd directly in procd to get rid of the following warnings:
 
+    random: procd: uninitialized urandom read (4 bytes read)
+    procd: - ubus -
+    random: ubusd: uninitialized urandom read (4 bytes read)
+    random: ubusd: uninitialized urandom read (4 bytes read)
+    random: ubusd: uninitialized urandom read (4 bytes read)
+    procd: - init -
+
+ * create packages for urandom-seed, getrandom and remove those from the
+   default images
+
+> we need to explain why your user space version and the kernel module
+> version behave differently Is the kernel module underestimating entropy ?
+> Is you user space version over estimating entropy ?
+
+I hope, that Stephan has already provided that answer in the other email to
+you.
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

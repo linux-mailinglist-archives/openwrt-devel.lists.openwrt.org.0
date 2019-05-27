@@ -2,89 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4319B2BB65
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 22:24:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E01202BBBE
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 23:30:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AHO1UCry9tiA84ANy50J+EfFZb6Md0OOYKieRSE0cUc=; b=ZyIQse/yoW9LPCQA+UERHvd6H
-	JdrnyW1DM7PUaMSz4RvUQ2UUJdg7JKiIOESUtlplEi2oHcWU+MzGsYrTgp5ccJoYdPh1XNBJ4T5pL
-	/kBe5HVaAy+5fjc15oUKZqkFC6HiK42KNCjDLZKI56pcDEGsxP88JkP7LDOMrMYd6ymPy+JSLlTRR
-	tV7rDU1/BYxa82UbYzlPywO73t6fqdTnU6JeIpUZ3MDcnzKJBnoJCgQJiWnK1dM8rEz+7WKPoyvVS
-	0ICuC0AmNR9FeEPvf1bB+tHhIzd+dF0C57mpzNhNAflzHgZ4luu51p5wSU2nz1WXxGSsBdyFNhp7C
-	zXH0I1iww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0y+E5QKpyiF1DPhRXm73U0VDv9OaOX5cPp9Oh9wVYDs=; b=bVpIlOb8VeHgbC
+	nnSc8c6hzPS1xQJaroTmy5W8rDRQOhW1RD4kG4uVx/H42H7IkFr7M5fYFYNMDbsZzVul3qEg5LH92
+	AgZIkmdb8nkuNm7vkGoxbgVpQJGhL6l3Byr45ZIaU55IR+7dYOxyCP5DdjWfJogcbOLei5Jk7I3JT
+	xh5VzEbB6ioGVJ75TBVNTlc9e0Zz57Kc+iKdLhzlNZEqNeAdgRNZZsNoLDkZzYSCbFJfPq9Qjn0SM
+	LSuQcHL4er63rzGPLMCY3L+LVTOHpAkRGZUrkMrSlvIyI7fp6Jb2D0OeZck8c4UwcPMWvj8XJ2LI/
+	k/lNl0mSX6srudAfF3JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVMAB-0002an-Hb; Mon, 27 May 2019 20:24:07 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1hVNCG-0007Lu-LC; Mon, 27 May 2019 21:30:20 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVMA4-0002aT-4l
- for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 20:24:01 +0000
-Received: by mail-wr1-x429.google.com with SMTP id r7so17873832wrr.13
- for <openwrt-devel@lists.openwrt.org>; Mon, 27 May 2019 13:23:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mcsKEVvbP+FsCG1raokh2fABSNBx9U6WRH0ZH+W7t8Y=;
- b=bUcTedyNBxKz0N+YzF5y17hEsfrgKO5YMR04kTUIw8pcWOn4q5kla4yNmvAleb4Umr
- Sg1elid1h0QKpNepVHKFWj90AHMqZuEUA7ERhCntCvcIMXjHcB3QIKnPc/YgMT1Ng9w2
- Okqhhw/3DO/7RmcO0Rar1JYu3enpgZx9xnn9ErNaRt223yVdbmoyvBvjn6OFdFvtMmSN
- /GxCRqpZaBzAytgDojPF7r8U4FbhZS+Yr3uROhfAvFscy42X0ShfVOISoGyCx4lTI0Ng
- UX/pyebfaYtbiF0dap3bhFHV/Gvh0UC7rAWyh2DcHvO+yt+gLqdlDjf5N9XBXKuHYjD3
- iabg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mcsKEVvbP+FsCG1raokh2fABSNBx9U6WRH0ZH+W7t8Y=;
- b=ZM1lPG7TGFoW1qtNR385E+K+LjY9TvmXqF7guIV5HlRiSZtXZFea/wh8+ylsXR3hdy
- fdLnr9DML1T5BZoCzjvVq/f3Y1elt1lRcuw6LYmuU0+VZIIcvwAOowMt2aOakcr8VecC
- KOT//p4w2+SEA0XEprrSqcNAsx4OSkygvPkyY68QK3xy000svzGIILOfxI163oCBCbfO
- Q5tCzjVrCYZv/1oe/ddy/OKu4B43a0Dlw69E70shafSe69+r+2uvUuSPKcbq4QG+QAV5
- +RgqDCcp85rV57PtC4aglPJMTODV0APuzwmNnjEFeyZkvnwyb/L1jWJ462y7dGxrKJPc
- aveA==
-X-Gm-Message-State: APjAAAW2LnXEbk9LtC3UZyP+ZQdTxf8vuK0ItmAMTnP3IsbhmK5Of7cC
- olfvvCvRn3WKgmhjAK2YyTtHzVJD5P1uWVoK52wThAKNX78=
-X-Google-Smtp-Source: APXvYqxJOJjO0OnX8GV7Gp8KRQK/Yn7m4gTu0FucKlEUiEyyGzBxBrU+c7YTai+Oh84beUI1ksol0mRXBS1LTvxZPmo=
-X-Received: by 2002:a5d:4b52:: with SMTP id w18mr16342607wrs.262.1558988637392; 
- Mon, 27 May 2019 13:23:57 -0700 (PDT)
+ id 1hVNBv-0006BL-FP
+ for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 21:30:01 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 768444FA6;
+ Mon, 27 May 2019 23:29:56 +0200 (CEST)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 3a710324;
+ Mon, 27 May 2019 23:29:55 +0200 (CEST)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: openwrt-devel@lists.openwrt.org
+Subject: [PATCH 0/4] add μrngd: true RNG based on timing jitter
+Date: Mon, 27 May 2019 23:29:40 +0200
+Message-Id: <1558992584-11997-1-git-send-email-ynezz@true.cz>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-References: <CAC8mBSVP+Uev=H_x4actCT9g+FV1X0bVFZ=06biyBA=w-s6AkA@mail.gmail.com>
- <f30df01f-ea9d-32ae-2e7d-286fa4aab164@ironai.com>
- <CAC8mBSUYMvuwJaAftwYCL+TaYTaDs_4VT2P9Q3-j5sDOF6xO6Q@mail.gmail.com>
- <87imtvu3cl.fsf@husum.klickitat.com>
-In-Reply-To: <87imtvu3cl.fsf@husum.klickitat.com>
-From: =?UTF-8?Q?Denis_Peri=C5=A1a?= <darkman.hr@gmail.com>
-Date: Mon, 27 May 2019 22:23:53 +0200
-Message-ID: <CAC8mBSWfsK+f_8Od3FF1GtQeiZeENJnZAk89ir2Q8OABY7iJkg@mail.gmail.com>
-To: Russell Senior <russell@personaltelco.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_132400_207886_7ACC6316 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190527_142959_669113_60725D3D 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:429 listed in]
- [list.dnswl.org]
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (darkman.hr[at]gmail.com)
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] dnsmasq not leasing after a while. Sometimes
- more than 5 times a day
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.1 SUBJ_ILLEGAL_CHARS     Subject: has too many raw illegal characters
+ 0.1 SUBJECT_NEEDS_ENCODING Subject is encoded but does not specify
+ the encoding
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,136 +62,98 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============4966902957953754665=="
+Cc: =?UTF-8?q?Stephan=20M=C3=BCller?= <smueller@chronox.de>,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4966902957953754665==
-Content-Type: multipart/alternative; boundary="000000000000f0d2d00589e45372"
-
---000000000000f0d2d00589e45372
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-There is no other dhcp in network, it's routed connection RB435G with
-multiple cards wlan.
-this is config example:
-
-interface=3Deth0
-except-interface=3Deth1
-interface=3Dwlan3
-interface=3Dwlan0
-interface=3Dwlan1
-interface=3Dwlan2
-
-dhcp-range=3D172.17.3.20,172.17.3.253,255.255.255.0,1h
-dhcp-range=3D172.17.4.20,172.17.4.253,255.255.255.0,1h
-dhcp-range=3D172.17.5.20,172.17.5.253,255.255.255.0,1h
-dhcp-range=3D172.17.6.20,172.17.6.253,255.255.255.0,1h
-dhcp-range=3D172.17.7.20,172.17.7.253,255.255.255.0,1h
-
-On Mon, May 27, 2019 at 9:03 PM Russell Senior <russell@personaltelco.net>
-wrote:
-
-> >>>>> "Denis" =3D=3D Denis Peri=C5=A1a <darkman.hr@gmail.com> writes:
->
-> Denis> Yes, dnsmasq is still running but lease is not given.. I don't
-> Denis> know how to debug it more.  Configuration is simple, one subnet
-> Denis> range 192.168.0.10 to 192.168.0.200 on wlan0 interface for
-> Denis> example. But it's not wifi issue, local also.  It sends mail as
-> Denis> soon as error is detected and restarts dnsmasq after which it
-> Denis> works. Device is not rebooting.  OpenWrt 18.06-SNAPSHOT,
-> Denis> r7766-e9a7344550
->
-> Denis> Also my scripts checkes two times just to rule out false
-> Denis> negative.  Also, more public exposure or none is pretty much
-> Denis> same.. I have device which gets maybe 1-2 person and one with 50
-> Denis> .. behaving same. After a while it stops responding. Any more
-> Denis> debug I could use somewhere?
->
-> There may be another dhcp server detected on the network. See "force"
-> option here:
->
->   https://openwrt.org/docs/guide-user/base-system/dhcp#dhcp_pools
->
-> And/or post the contents of /var/etc/dnsmasq.conf.cfg*
->
->
-> --
-> Russell Senior, President
-> russell@personaltelco.net
->
-
---000000000000f0d2d00589e45372
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">There is no other dhcp in network, it&#39;s routed connect=
-ion RB435G with multiple cards wlan.<br>this is config example:<br><br>inte=
-rface=3Deth0<br>except-interface=3Deth1<br>interface=3Dwlan3<br>interface=
-=3Dwlan0<br>interface=3Dwlan1<br>interface=3Dwlan2<br><br>dhcp-range=3D172.=
-17.3.20,172.17.3.253,255.255.255.0,1h<br>dhcp-range=3D172.17.4.20,172.17.4.=
-253,255.255.255.0,1h<br>dhcp-range=3D172.17.5.20,172.17.5.253,255.255.255.0=
-,1h<br>dhcp-range=3D172.17.6.20,172.17.6.253,255.255.255.0,1h<br>dhcp-range=
-=3D172.17.7.20,172.17.7.253,255.255.255.0,1h<br></div><br><div class=3D"gma=
-il_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, May 27, 2019 at 9:0=
-3 PM Russell Senior &lt;<a href=3D"mailto:russell@personaltelco.net">russel=
-l@personaltelco.net</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quot=
-e" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204)=
-;padding-left:1ex">&gt;&gt;&gt;&gt;&gt; &quot;Denis&quot; =3D=3D Denis Peri=
-=C5=A1a &lt;<a href=3D"mailto:darkman.hr@gmail.com" target=3D"_blank">darkm=
-an.hr@gmail.com</a>&gt; writes:<br>
-<br>
-Denis&gt; Yes, dnsmasq is still running but lease is not given.. I don&#39;=
-t<br>
-Denis&gt; know how to debug it more.=C2=A0 Configuration is simple, one sub=
-net<br>
-Denis&gt; range 192.168.0.10 to 192.168.0.200 on wlan0 interface for<br>
-Denis&gt; example. But it&#39;s not wifi issue, local also.=C2=A0 It sends =
-mail as<br>
-Denis&gt; soon as error is detected and restarts dnsmasq after which it<br>
-Denis&gt; works. Device is not rebooting.=C2=A0 OpenWrt 18.06-SNAPSHOT,<br>
-Denis&gt; r7766-e9a7344550<br>
-<br>
-Denis&gt; Also my scripts checkes two times just to rule out false<br>
-Denis&gt; negative.=C2=A0 Also, more public exposure or none is pretty much=
-<br>
-Denis&gt; same.. I have device which gets maybe 1-2 person and one with 50<=
-br>
-Denis&gt; .. behaving same. After a while it stops responding. Any more<br>
-Denis&gt; debug I could use somewhere?<br>
-<br>
-There may be another dhcp server detected on the network. See &quot;force&q=
-uot;<br>
-option here:<br>
-<br>
-=C2=A0 <a href=3D"https://openwrt.org/docs/guide-user/base-system/dhcp#dhcp=
-_pools" rel=3D"noreferrer" target=3D"_blank">https://openwrt.org/docs/guide=
--user/base-system/dhcp#dhcp_pools</a><br>
-<br>
-And/or post the contents of /var/etc/dnsmasq.conf.cfg*<br>
-<br>
-<br>
--- <br>
-Russell Senior, President<br>
-<a href=3D"mailto:russell@personaltelco.net" target=3D"_blank">russell@pers=
-onaltelco.net</a><br>
-</blockquote></div>
-
---000000000000f0d2d00589e45372--
-
-
---===============4966902957953754665==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4966902957953754665==--
-
+SGksCgp0aGlzIHBhdGNoIHNlcmllcyBmaXhlcyBzb21lIG9mIHRoZSBjdXJyZW50IHVyYW5kb20t
+c2VlZCBmbGF3cyBhbmQgaW1wcm92ZXMKc2l0dWF0aW9uIHdpdGggbG93IGVudHJvcHkgaW4gdGhl
+IGtlcm5lbCBkdXJpbmcgdGhlIGJvb3QuCgpGaXJzdCwgc2ltcGx5IHdyaXRpbmcgdG8gL2Rldi91
+cmFuZG9tIGRvZXMgbm90IGluY3JlYXNlIHRoZSBrZXJuZWwncyBlbnRyb3B5CmNvdW50LCB0aGlz
+IGNhc3VzZXMgcHJvY2Vzc2VzIG9idGFpbmluZyByYW5kb21uZXNzIHRvIGJsb2NrLiAgUGFydGlj
+dWxhcmx5CnByb2Nlc3NlcyB1c2luZyBPcGVuU1NMJ3MgUkFORF9ieXRlcygpIHdpbGwgYmxvY2sg
+dW50aWwgdGhlIGtlcm5lbCBlbWl0cwoncmFuZG9tOiBjcm5nIGluaXQgZG9uZScuIFRoaXMgY2Fu
+IHRha2UgdXB3YXJkcyBvZiB0d2VudHkgbWludXRlcy4KCkFjY29yZGluZyB0byByYW5kb20oNCkg
+dGhlIGVudHJvcHkgY291bnQgaXMgb25seSBpbmNyZWFzZWQgd2hlbiB1c2luZyB0aGUKUk5EQURE
+RU5UUk9QWSBpb2N0bCwgd2hpY2ggdXJhbmRvbS1zZWVkIGN1cnJlbnRseSBkb2Vzbid0IHVzZSB3
+aGVuIGZlZWRpbmcgdGhlCmtlcm5lbCBSTkcuCgpTZWNvbmQsIHVyYW5kb20tc2VlZCBpcyB1c2lu
+ZyAvZXRjL3VyYW5kb20uc2VlZCBmaWxlIHRvIHNlZWQgdGhlIGtlcm5lbCdzIFJORwptYWNoaW5l
+cnkgdXBvbiBldmVyeSBib290LiBUaGUgcHJvYmxlbSBpcywgdGhhdCB0aGlzIGZpbGUgaXMgY3Jl
+YXRlZCBvbmx5IG9uY2UKZHVyaW5nIGZpcnN0LWJvb3QgYW5kIHRoZW4gcmV1c2VkIG9uIGV2ZXJ5
+IGNvbnNlY3V0aXZlIGJvb3QsIHNvIHByZXR0eSBtdWNoCnN0YXRpYy4KClNvIHRoaXMgcGF0Y2gg
+c2VyaWVzIGFkZHMgzrxybmdkLCB3aGljaCBpcyBhIG5ldyBtaWNybyBub24tcGh5c2ljYWwgdHJ1
+ZSByYW5kb20KbnVtYmVyIGdlbmVyYXRvciAoc3lzdGVtIHNlcnZpY2UpIGJhc2VkIG9uIHRpbWlu
+ZyBqaXR0ZXIuIE9uIGRldmljZXMgd2hpY2gKcHJvdmlkZSBhIHJlbGlhYmxlIGFuZCBwcmVjaXNl
+IGVub3VnaCB0aW1lciwgzrxybmdkIGNhbiBwcm92aWRlIHN1ZmZpY2llbnQKZW50cm9weS4KCs68
+cm5nZCBpcyB1c2luZyB0aGUgSml0dGVyIFJORyBjb3JlIHVuZGVyIHRoZSBob29kLCB3aGljaCBw
+cm92aWRlcyBhbiBlbnRyb3B5CnNvdXJjZSB0aGF0IM68cm5nZCBmZWVkcyBpbnRvIHRoZSBMaW51
+eCAvZGV2L3JhbmRvbSBkZXZpY2UgaWYgaXRzIGVudHJvcHkgcnVucwpsb3cuICBJdCB1cGRhdGVz
+IHRoZSAvZGV2L3JhbmRvbSBlbnRyb3B5IGVzdGltYXRvciBzdWNoIHRoYXQgdGhlIG5ld2x5CnBy
+b3ZpZGVkIGVudHJvcHkgdW5ibG9ja3MgL2Rldi9yYW5kb20uCgpUaGUgc2VlZGluZyBvZiAvZGV2
+L3JhbmRvbSBhbHNvIGVuc3VyZXMgdGhhdCAvZGV2L3VyYW5kb20gYmVuZWZpdHMgZnJvbQplbnRy
+b3B5LiBFc3BlY2lhbGx5IGR1cmluZyBib290IHRpbWUsIHdoZW4gdGhlIGVudHJvcHkgb2YgTGlu
+dXggaXMgbG93LCB0aGUKSml0dGVyIFJORyBiYXNlZCDOvHJuZ2QgcHJvdmlkZXMgYSBzb3VyY2Ug
+b2Ygc3VmZmljaWVudCBlbnRyb3B5LgoKU29tZSBSTkcgaW5pdCB0aW1lIG51bWJlcnMgZnJvbSBx
+Y2E5NTYzIChUUC1MaW5rIEFyY2hlciBDNyB2NSk6CgogWyAgIDEyLjA0NTY5M10gcmFuZG9tOiBj
+cm5nIGluaXQgZG9uZSAgICAgICAgKM68cm5nZCkKIFsgIDEyMC4wNDMxMzJdIHJhbmRvbTogY3Ju
+ZyBpbml0IGRvbmUgICAgICAgICh1cmFuZG9tLXNlZWQpCgrOvHJuZ2QgYmluYXJ5IGhhcyA0NTc5
+IGJ5dGVzIG9uIGF0aDc5LgoKSSdtIGNyZWF0aW5nIHNlcGFyYXRlIHBhY2thZ2VzIGZvciBnZXRy
+YW5kb20gYW5kIHVyYW5kb20tc2VlZCwgc28gdGhleSBjYW4gYmUKcmVtb3ZlZCBlYXNpbHkgb24g
+cGxhdGZvcm1zIHdoZXJlIGVpdGhlciDOvHJuZ2Qgb3IgYW55IG90aGVyIGhhcmR3YXJlIGJhc2Vk
+IFJORwpwcm92aWRlcyBnb29kIGVudHJvcHkuIEknbSBub3QgcmVtb3ZpbmcgdXJhbmRvbS1zZWVk
+IHBhY2thZ2UgZnJvbSB0aGUKZGVmYXVsdHMsIGJlY2F1c2UgZHVyaW5nIHRoZSB0ZXN0aW5nIG9m
+IM68cm5nZCBJJ3ZlIGZvdW5kIG91dCwgdGhhdCBmb3IgZXhhbXBsZQpNZWRpYVRlayBNVDc2MjBB
+IHZlcjoyIGVjbzo2IChNSVBTIDI0S0VjIFY1LjApIGRvZXNuJ3QgcHJvdmlkZSBoaWdoIHByZWNp
+c2lvbgp0aW1lciB3aGljaCBpcyBuZWVkZWQgZm9yIEppdHRlciBSTkcgc28gdGhlIGluaXRpYWxp
+emF0aW9uIG9mIEppdHRlciBSTkcKaW5zaWRlIM68cm5nZCBlbmRzIHdpdGggZm9sbG93aW5nIGVy
+cm9yOgoKIGplbnQtcm5nIGluaXQgZmFpbGVkLCBlcnI6IDIgKEVDT0FSU0VUSU1FKQoKc28gb24g
+c3VjaCBwbGF0Zm9ybXMgaXQgbWlnaHQgc3RpbGwgYmUgcHJvYmFibHkgYmV0dGVyIHRvIHN0aWNr
+IHRvCnVyYW5kb20tc2VlZCBhcyBhIGZhbGxiYWNrLiBUaGUgSml0dGVyIFJORyBpbXBsZW1lbnRz
+IGEgc3RhcnR1cCB0ZXN0IHRoYXQgaXMKaW50ZW5kZWQgdG8gZGV0ZWN0IG5vbi1hcHByb3ByaWF0
+ZSB0aW1lcnMuIElmIGl0IGlkZW50aWZpZXMgc3VjaApub24tYXBwcm9wcmlhdGUgdGltZXJzLCB0
+aGUgSml0dGVyIFJORyB3aWxsIGRlYWN0aXZhdGUuIFRodXMsIHRoZSBKaXR0ZXIgUk5HCmFsd2F5
+cyB0cmllcyB0byByZWFjaCBhIHNlY3VyZSBzdGF0ZS4KCkkgYmVsaWV2ZSwgdGhhdCDOvHJuZ2Qg
+aXMgZ29pbmcgdG8gaW1wcm92ZSBlbnRyb3B5IHNpdHVhdGlvbiBvbiBtb3N0IG9mIGN1cnJlbnQK
+cGxhdGZvcm1zIE9wZW5XcnQgc3VwcG9ydHMsIHNvIEkgd291bGQgbGlrZSB0byBlbmFibGUgaXQg
+YXMgZGVmYXVsdC4gIEhhdmluZwphbm90aGVyIHNvdXJjZSBvZiByZWxpYWJsZSBub2lzZSBpbiB0
+aGUgc3lzdGVtIGRvZXNuJ3QgaHVydCwgaXQgb25seSBoZWxwcy4KCkkgd291bGQgbGlrZSB0byBu
+b3RlLCB0aGF0IG1vc3Qgb2YgdGhpcyBzdHVmZiBpcyBiYXNlZCBvbiB0aGUgYW1hemluZyB3b3Jr
+CmRvbmVbMV0gYnkgU3RlcGhhbiBNw7xsbGVyLCBJJ3ZlIGp1c3QgYmVuZCBpdCBvdmVyIGFuZCBw
+YWNrYWdlZCBpdCBmb3IgT3BlbldydC4KCjEuIGh0dHA6Ly93d3cuY2hyb25veC5kZS9qZW50L2Rv
+Yy9DUFUtSml0dGVyLU5QVFJORy5odG1sCgpQZXRyIMWgdGV0aWFyICg0KToKICB1cm5nOiBhZGQg
+bWljcm8gbm9uLXBoeXNpY2FsIHRydWUgUk5HIGJhc2VkIG9uIHRpbWluZyBqaXR0ZXIKICB1Ym94
+OiBtb3ZlIGdldHJhbmRvbSBpbnRvIHNlcGFyYXRlIGdldHJhbmRvbSBwYWNrYWdlCiAgYmFzZS1m
+aWxlczogbW92ZSB1cmFuZG9tIHNlZWQgYml0cyBpbnRvIHNlcGFyYXRlIHBhY2thZ2UKICBidWls
+ZDogYWRkIHVyYW5kb20tc2VlZCBhbmQgdXJuZ2QgdG8gZGVmYXVsdCBwYWNrYWdlcyBzZXQKCiBp
+bmNsdWRlL3RhcmdldC5tayAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAyICst
+CiBwYWNrYWdlL2Jhc2UtZmlsZXMvTWFrZWZpbGUgICAgICAgICAgICAgICAgICAgICAgICB8IDEx
+ICsrKystCiBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvZXRjL2luaXQuZC91cmFuZG9tX3NlZWQg
+ICB8IDEyIC0tLS0tLQogLi4uL2Jhc2UtZmlsZXMvZmlsZXMvbGliL3ByZWluaXQvODFfdXJhbmRv
+bV9zZWVkICAgfCAyNCAtLS0tLS0tLS0tLQogcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4v
+dXJhbmRvbV9zZWVkICAgICAgICAgfCAyMCAtLS0tLS0tLS0KIHBhY2thZ2Uvc3lzdGVtL3Vib3gv
+TWFrZWZpbGUgICAgICAgICAgICAgICAgICAgICAgIHwgMTcgKysrKysrLS0KIHBhY2thZ2Uvc3lz
+dGVtL3VyYW5kb20tc2VlZC9NYWtlZmlsZSAgICAgICAgICAgICAgIHwgMzIgKysrKysrKysrKysr
+KysrCiAuLi4vdXJhbmRvbS1zZWVkL2ZpbGVzL2V0Yy9pbml0LmQvdXJhbmRvbV9zZWVkICAgICB8
+IDEyICsrKysrKwogLi4uL3VyYW5kb20tc2VlZC9maWxlcy9saWIvcHJlaW5pdC84MV91cmFuZG9t
+X3NlZWQgfCAyNCArKysrKysrKysrKwogLi4uL3N5c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvc2Jp
+bi91cmFuZG9tX3NlZWQgICAgfCAyMCArKysrKysrKysKIHBhY2thZ2Uvc3lzdGVtL3VybmdkL01h
+a2VmaWxlICAgICAgICAgICAgICAgICAgICAgIHwgNDggKysrKysrKysrKysrKysrKysrKysrKwog
+cGFja2FnZS9zeXN0ZW0vdXJuZ2QvZmlsZXMvdXJuZ2QuaW5pdCAgICAgICAgICAgICAgfCAyMSAr
+KysrKysrKysrCiAxMiBmaWxlcyBjaGFuZ2VkLCAxODIgaW5zZXJ0aW9ucygrKSwgNjEgZGVsZXRp
+b25zKC0pCiBkZWxldGUgbW9kZSAxMDA3NTUgcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2V0Yy9p
+bml0LmQvdXJhbmRvbV9zZWVkCiBkZWxldGUgbW9kZSAxMDA2NDQgcGFja2FnZS9iYXNlLWZpbGVz
+L2ZpbGVzL2xpYi9wcmVpbml0LzgxX3VyYW5kb21fc2VlZAogZGVsZXRlIG1vZGUgMTAwNzU1IHBh
+Y2thZ2UvYmFzZS1maWxlcy9maWxlcy9zYmluL3VyYW5kb21fc2VlZAogY3JlYXRlIG1vZGUgMTAw
+NjQ0IHBhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9NYWtlZmlsZQogY3JlYXRlIG1vZGUgMTAw
+NzU1IHBhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9maWxlcy9ldGMvaW5pdC5kL3VyYW5kb21f
+c2VlZAogY3JlYXRlIG1vZGUgMTAwNjQ0IHBhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9maWxl
+cy9saWIvcHJlaW5pdC84MV91cmFuZG9tX3NlZWQKIGNyZWF0ZSBtb2RlIDEwMDc1NSBwYWNrYWdl
+L3N5c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvc2Jpbi91cmFuZG9tX3NlZWQKIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCBwYWNrYWdlL3N5c3RlbS91cm5nZC9NYWtlZmlsZQogY3JlYXRlIG1vZGUgMTAwNjQ0
+IHBhY2thZ2Uvc3lzdGVtL3VybmdkL2ZpbGVzL3VybmdkLmluaXQKCi0tIAoxLjkuMQoKCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwg
+bWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0
+cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

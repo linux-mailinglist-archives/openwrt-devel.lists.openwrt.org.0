@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88F7E2B5B2
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 14:47:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AE1D2B5B1
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 14:47:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6PjY/JuIa6TNuPEmkevly8UX+MiHkZXAqzdTl+pejys=; b=N+sRYQrQufMbSNXY3oGJR3/eVj
-	3Qd3SejskPlMv5LPkivMcZu5BtAspDWKqiLRZGdoA07OMBgsAD1ZPj2e3pQj3TqZhk8BZ8hFiCDvN
-	M38DkFdtr5lTAszQJTzoEGqakBRBI2Q5F7ldBwHtamyziIpNFXpGK1P8LtGSv4UJ8Mv8nCbVYJH3s
-	LIAamVqy4WyrFIniQZSlQFgYl3zutbBFb22R2EgTl42Ea4JPhFN9ZMm+Yv3f7Psy/1aXkDmqbxO+j
-	IRqGdQL23zujDxWC503j6ORAKUg21R6Udt8WBD3FzV5l55+8ptE3vCCrvvPLH4H8w6MvsBphZtQ68
-	gL31F59A==;
+	bh=wUesAA+7M/X5reuL5cLBwIl6dZ8+cRTK3Ev++cTV5Fo=; b=l8Hpcfao/vStBLlOhOP5WjqB3Y
+	FVBXMie0X89+7qNh7bCMP4+cXoGAfyfXKKNlo1lvdOnfAyteTlxGGQaX+a9IYWtasa4Y/F8HbYoeM
+	hHCNZEKpyLi0CwSVfnK7YKuoafNnWtBOndVouWuojAS4asRUZ3d5Ka9SGBwK5ZO4pXx8wKa4IcHRa
+	BJmsru9VAW+7xs03nqGb3LtV0wHvw/le7hA92MGsjHr/bE3X6ajaYlkaT0MbE8kfpm9LCvDPad2ML
+	KzO4fnOCNax1cb3rEbj5IQovZLQFO5L5SH5IOmaNsSfN3VRLa9/0M1av5Vf2pEn2BqwGN06nmuabB
+	ZUwjI//g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVF2A-0004B8-Vd; Mon, 27 May 2019 12:47:22 +0000
+	id 1hVF20-0003w8-7D; Mon, 27 May 2019 12:47:12 +0000
 Received: from mx-out.tlen.pl ([193.222.135.140])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVF1X-0003V5-Mg
+ id 1hVF1Y-0003V9-0y
  for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 12:46:46 +0000
-Received: (wp-smtpd smtp.tlen.pl 15198 invoked from network);
+Received: (wp-smtpd smtp.tlen.pl 16276 invoked from network);
  27 May 2019 14:46:40 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1558961200; bh=wC7dn7V/J9uxl6ai9+Uh+knwL1fiAMlnIVY9/R7MqaQ=;
+ t=1558961201; bh=ZnFR+bLhRgbc2tzFihJw5fTuXAA5T3mZpNRimj0atjI=;
  h=From:To:Subject;
- b=dXgsLTQLWY3gnDuMdU8tJV0wAO3A5WLKrWaHCVScmeCOl0XaqTzqWWtnSd3hOgd2D
- 2/3SS7hpadngOxIwyVMaho9QF8pjBF4v9gmBS97NWzuGLJDwymE6mHqsM2x/m9UH+y
- RrurdrbRihChrobWAUQgNrpLBqdfEhTjz50pkWpw=
+ b=mUHKB/NX3mxz3fyCo/Yoow76nlXlscvfkB2GBJ2BDrWyiRS/s0fLDE91wfdXROqPL
+ a7T49ZKuS1/eYPFxvw+wGqRM+NVfHcYr+UQgqCakTueu/nam85fF5hYQG6pFGljRg7
+ T9cSpURLu8c0eEb7PunHgee45jpXyCflNl0Kbbv0=
 Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
  for <openwrt-devel@lists.openwrt.org>; 27 May 2019 14:46:40 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 27 May 2019 14:46:29 +0200
-Message-Id: <20190527124630.5042-3-tomek_n@o2.pl>
+Date: Mon, 27 May 2019 14:46:30 +0200
+Message-Id: <20190527124630.5042-4-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190527124630.5042-1-tomek_n@o2.pl>
 References: <20190527124630.5042-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: 081ec87a4a8268346f41a0109bdbd45a
+X-WP-MailID: 93ea97db71be6b3fb133b22d246be1ee
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000001 [0fIk]                               
+X-WP-SPAM: NO 0000000 [AfPU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_054644_310608_3ACCFA23 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20190527_054644_310622_6C7991B7 
+X-CRM114-Status: UNSURE (   9.44  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,8 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 2/3] x86: add bootloader upgrade on
- sysupgrade
+Subject: [OpenWrt-Devel] [PATCH 3/3] x86: add preinit hook for bootloader
+ upgrade
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -85,112 +85,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Currently bootloader always stays on the same version as when first
-written to boot medium. That creates inconveniences as it always stays
-with same features or/and bugs. Users wishing to add support to
-additional modules or new version, would need to write the whole image,
-potentially destroying previous system configuration. To fix these, this
-commit adds additional routine to sysupgrade which upgrades
-unconditionally the bootloader to the latest state provided by OpenWrt.
+The current OpenWrt installations lack the necessary bits to upgrade
+bootloader on sysupgrade, therefore add preinit hook which will perform
+upgrade of the bootloader on first boot after sysupgrade.
 
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- package/boot/grub2/Makefile                   |  5 +++++
- .../x86/base-files/lib/upgrade/platform.sh    | 20 ++++++++++++++++++-
- target/linux/x86/image/Makefile               |  7 ++++---
- 3 files changed, 28 insertions(+), 4 deletions(-)
+ .../lib/preinit/81_upgrade_bootloader         | 19 +++++++++++++++++++
+ .../x86/base-files/lib/upgrade/platform.sh    |  3 ++-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+ create mode 100644 target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader
 
-diff --git a/package/boot/grub2/Makefile b/package/boot/grub2/Makefile
-index d6af65128e..d3a347ce84 100644
---- a/package/boot/grub2/Makefile
-+++ b/package/boot/grub2/Makefile
-@@ -83,6 +83,11 @@ define Host/Configure
- 	$(Host/Configure/Default)
- endef
- 
-+define Package/grub2/install
-+	$(INSTALL_DIR) $(1)/usr/sbin
-+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/grub-bios-setup $(1)/usr/sbin/
-+endef
+diff --git a/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader b/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader
+new file mode 100644
+index 0000000000..3a4e756b1e
+--- /dev/null
++++ b/target/linux/x86/base-files/lib/preinit/81_upgrade_bootloader
+@@ -0,0 +1,19 @@
++#!/bin/sh
 +
- define Package/grub2-editenv/install
- 	$(INSTALL_DIR) $(1)/usr/sbin
- 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/grub-editenv $(1)/usr/sbin/
++upgrade_bootloader() {
++	local diskdev
++
++	. /lib/upgrade/common.sh
++
++	if [ ! -f /boot/grub/upgraded ] && export_bootdevice && export_partdevice diskdev 0; then
++		echo "(hd0) /dev/$diskdev" > /tmp/device.map
++		/usr/sbin/grub-bios-setup \
++			-m "/tmp/device.map" \
++			-d "/boot/grub" \
++			-r "hd0,msdos1" \
++			"/dev/$diskdev" \
++		&& touch /boot/grub/upgraded
++	fi
++}
++
++[ "$INITRAMFS" = "1" ] || boot_hook_add preinit_main upgrade_bootloader
 diff --git a/target/linux/x86/base-files/lib/upgrade/platform.sh b/target/linux/x86/base-files/lib/upgrade/platform.sh
-index 439ba8f512..1a42fd3a11 100644
+index 1a42fd3a11..05bbd97f3b 100644
 --- a/target/linux/x86/base-files/lib/upgrade/platform.sh
 +++ b/target/linux/x86/base-files/lib/upgrade/platform.sh
-@@ -1,3 +1,5 @@
-+RAMFS_COPY_BIN='grub-bios-setup'
-+
- platform_check_image() {
- 	local diskdev partdev diff
- 	[ "$#" -gt 1 ] && return 1
-@@ -45,7 +47,7 @@ platform_copy_config() {
- }
+@@ -106,7 +106,8 @@ platform_do_upgrade() {
+ 			-m "/tmp/device.map" \
+ 			-d "/tmp/boot/boot/grub" \
+ 			-r "hd0,msdos1" \
+-			"/dev/$diskdev"
++			"/dev/$diskdev" \
++		&& touch /boot/grub/upgraded
  
- platform_do_upgrade() {
--	local diskdev partdev diff
-+	local diskdev partdev diff bootpart
- 
- 	export_bootdevice && export_partdevice diskdev 0 || {
- 		echo "Unable to determine upgrade device"
-@@ -92,4 +94,20 @@ platform_do_upgrade() {
- 	#copy partition uuid
- 	echo "Writing new UUID to /dev/$diskdev..."
- 	get_image "$@" | dd of="/dev/$diskdev" bs=1 skip=440 count=4 seek=440 conv=fsync
-+
-+	#upgrade bootloader
-+	if export_partdevice bootpart 1; then
-+		mkdir -p /tmp/boot
-+		mount -o rw,noatime "/dev/$bootpart" /tmp/boot
-+		echo "(hd0) /dev/$diskdev" > /tmp/device.map
-+
-+		echo "Upgrading bootloader on /dev/$diskdev..."
-+		grub-bios-setup \
-+			-m "/tmp/device.map" \
-+			-d "/tmp/boot/boot/grub" \
-+			-r "hd0,msdos1" \
-+			"/dev/$diskdev"
-+
-+		umount /tmp/boot
-+	fi
- }
-diff --git a/target/linux/x86/image/Makefile b/target/linux/x86/image/Makefile
-index ca5fd72153..7f69f35ae8 100644
---- a/target/linux/x86/image/Makefile
-+++ b/target/linux/x86/image/Makefile
-@@ -67,11 +67,11 @@ ifneq ($(CONFIG_GRUB_IMAGES),)
- 	grub-mkimage \
- 		-p /boot/grub \
- 		-d $(STAGING_DIR_HOST)/lib/grub/i386-pc \
--		-o $(KDIR)/grub2/core.img \
-+		-o $(KDIR)/root.grub/boot/grub/core.img \
- 		-O i386-pc \
- 		-c ./grub-early.cfg \
- 		$(GRUB2_MODULES)
--	$(CP) $(STAGING_DIR_HOST)/lib/grub/i386-pc/*.img $(KDIR)/grub2/
-+	$(CP) $(STAGING_DIR_HOST)/lib/grub/i386-pc/*.img $(KDIR)/root.grub/boot/grub/
- 	echo '(hd0) $(BIN_DIR)/$(IMG_PREFIX)-combined-$(1).img' > $(KDIR)/grub2/device.map
- 	sed \
- 		-e 's#@SERIAL_CONFIG@#$(strip $(GRUB_SERIAL_CONFIG))#g' \
-@@ -81,6 +81,7 @@ ifneq ($(CONFIG_GRUB_IMAGES),)
- 		-e 's#@TITLE@#$(GRUB_TITLE)#g' \
- 		./grub.cfg > $(KDIR)/root.grub/boot/grub/grub.cfg
- 	-$(CP) $(STAGING_DIR_ROOT)/boot/. $(KDIR)/root.grub/boot/
-+	grub-bios-setup -V | cut -d' ' -f3 > $(KDIR)/root.grub/boot/grub/version
- 	PADDING="$(CONFIG_TARGET_IMAGES_PAD)" SIGNATURE="$(SIGNATURE)" PATH="$(TARGET_PATH)" $(SCRIPT_DIR)/gen_image_generic.sh \
- 		$(BIN_DIR)/$(IMG_PREFIX)-combined-$(1).img \
- 		$(CONFIG_TARGET_KERNEL_PARTSIZE) $(KDIR)/root.grub \
-@@ -88,7 +89,7 @@ ifneq ($(CONFIG_GRUB_IMAGES),)
- 		256
- 	grub-bios-setup \
- 		--device-map="$(KDIR)/grub2/device.map" \
--		-d "$(KDIR)/grub2" \
-+		-d "$(KDIR)/root.grub/boot/grub" \
- 		-r "hd0,msdos1" \
- 		"$(BIN_DIR)/$(IMG_PREFIX)-combined-$(1).img"
-   endef
+ 		umount /tmp/boot
+ 	fi
 -- 
 2.21.0
 

@@ -2,49 +2,109 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6970A2B967
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 19:26:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1DC52B97B
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 19:44:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qC6p9Ja+9nQQybOBT9yQaLA0xRwNSzDpWi9kjINQzJQ=; b=UAv0XSeDUEfOeI
-	rjj/AL9d7YcNWS2rKfh3UuStU0qG4t4OzAcsMJND6lwqtt0FpgRV1TB0IFtEdboXXbYuJk0Xow7XJ
-	pV3AuIScKQcvCR5ae2g21/T0m9UdQan4T66QJW3dHwbvCgBi7Ezc76wkuij8VQOAXYtLnVMrcHtkN
-	WK828qlMt+hYu8I+DlRDqnTDcaqTbRaB2DBkkK4P9fzK1rDd/9e/TQX0rQswxkxgnTQQnFGTZGf6d
-	cUDlvQiSMAbOS9l3KUcfqOQ80fg6h63ZTMFRRNFyG+5+i3stfLTL1hsEbXDL2XFb6UEaNRrEVSh3i
-	4gSa9a3obaBVuGE4CdOA==;
+	List-Owner; bh=fIfai36YTZVWE9JNfN1btYhBA37Sp9/MDChc+tZR4Ls=; b=MxMvGuX+lu/cWY
+	mQDIRTllOgkTWeXy7w06P+ERpwh+O1PDtF3M4G3cjyWV8hhIL7LsaLKYu570eHau4OLV1Kdw8+Uyn
+	AbV5Noqwb+T+K1a0uPSw7teL2ZjDTDHwhFB8FQwO9SE8wytG0/3nATJX/l/OoXFydYwuDs4lCfdrB
+	6RB/fMbwlbJILTNSGuNTNIO8at5wYyW7V9cc9U0uaNejd6iE0d7eGFX/J+U/Edxmof7vguph9PFMv
+	dNLkadbjgV5qOv4mwH8sSAP9wqQw2T5my6knJta8BCfZHBrJjN0BO1yQPsvUj5hlu7kg/FCqcfu33
+	Vmnc0eJi4LlwuGoE/Uyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVJNi-0002TH-He; Mon, 27 May 2019 17:25:54 +0000
-Received: from mscheck.de ([2a03:4000:f:629:540b:c2ff:fe0e:2f0c])
+	id 1hVJfi-0007WW-4X; Mon, 27 May 2019 17:44:30 +0000
+Received: from mail-db3eur04on0620.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0c::620]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVJNa-0002Sy-Eh
- for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 17:25:48 +0000
-Received: from localhost.localdomain (unknown
- [IPv6:2a02:908:1864:8e40:1f8d:bafd:2090:ecfb])
- by mscheck.de (Postfix) with ESMTPSA id DE405200C2
- for <openwrt-devel@lists.openwrt.org>; Mon, 27 May 2019 17:25:40 +0000 (UTC)
-From: Markus Scheck <markus@mscheck.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 27 May 2019 19:25:22 +0200
-Message-Id: <20190527172522.5722-1-markus@mscheck.de>
-X-Mailer: git-send-email 2.21.0
+ id 1hVJfZ-0007W9-B1
+ for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 17:44:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zEMoQfiYh7TN06RjNIz218am1vuFcaieqnoXqKeKX9o=;
+ b=FkBnJg8znFiT1frz2jmbl512KMt3Fl0rSq0rKe0at0GE7A8UnqZon5Fewbx8JuN3+ZtwzTqwnve0Nq1YU3IL4oCXdM14TmNSb7g+RXxIJKdmtrdXRKpPK+5yG4R2A9gvCudRyeLRomYqI8o9pCgbNlYh0wbD7I1kZhxAXFy15e0=
+Received: from VI1PR0302MB2750.eurprd03.prod.outlook.com (10.171.106.21) by
+ VI1PR0302MB3261.eurprd03.prod.outlook.com (52.134.12.29) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1922.16; Mon, 27 May 2019 17:44:15 +0000
+Received: from VI1PR0302MB2750.eurprd03.prod.outlook.com
+ ([fe80::603a:6eb9:2073:bde4]) by VI1PR0302MB2750.eurprd03.prod.outlook.com
+ ([fe80::603a:6eb9:2073:bde4%5]) with mapi id 15.20.1922.021; Mon, 27 May 2019
+ 17:44:15 +0000
+From: Kevin 'ldir' Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [PATCH] lantiq: net: wrong operator
+Thread-Index: AQHVFLPNOxh4LQFIPkCWyydp7JycKg==
+Date: Mon, 27 May 2019 17:44:15 +0000
+Message-ID: <20190527174349.34528-1-ldir@darbyshire-bryant.me.uk>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LO2P265CA0126.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:9f::18) To VI1PR0302MB2750.eurprd03.prod.outlook.com
+ (2603:10a6:800:e3::21)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ldir@darbyshire-bryant.me.uk; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.20.1 (Apple Git-117)
+x-originating-ip: [2a02:c7f:1268:6500::dc83]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9d3238d2-a9da-45c5-46d3-08d6e2caef66
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(7021145)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(7022145)(4603075)(4627221)(201702281549075)(8990200)(7048125)(7024125)(7027125)(7023125)(2017052603328)(7193020);
+ SRVR:VI1PR0302MB3261; 
+x-ms-traffictypediagnostic: VI1PR0302MB3261:
+x-microsoft-antispam-prvs: <VI1PR0302MB326103C779845D35CA993BBDC91D0@VI1PR0302MB3261.eurprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:254;
+x-forefront-prvs: 0050CEFE70
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(346002)(376002)(39830400003)(366004)(136003)(199004)(189003)(6436002)(5660300002)(86362001)(5640700003)(508600001)(6486002)(476003)(256004)(2616005)(2351001)(316002)(6116002)(14454004)(2906002)(74482002)(386003)(71190400001)(71200400001)(25786009)(81166006)(8676002)(81156014)(8936002)(50226002)(52116002)(6916009)(4326008)(305945005)(73956011)(66476007)(64756008)(66556008)(66446008)(66946007)(46003)(7736002)(1076003)(186003)(68736007)(486006)(6512007)(53936002)(99286004)(2501003)(107886003)(36756003)(6506007)(102836004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0302MB3261;
+ H:VI1PR0302MB2750.eurprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: darbyshire-bryant.me.uk does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: v/UOB4OwLEVr0IFwe2rMO1HetvjDlqkLLMMX9dbCh+p0ctg+nslP9l+Mt/tb+dMbBYJYyTUAnnISaAliw0Ak2bFbH8G4S5CvOqPGsWqJ37iwwdA3tKKnHM7oR8RkqJvdjg2CoZignBkyc0g77811xPyLr3ZP1huoIPPRIyfMXg32r1/tsttA/0oVe+MnV2A4U89G1bIhDUIa6pirg+wCQso5qgmdTkdlvB8Xy2ZknJrAcmb+58SrZvOiENsXdQeZb/9MOwgcT0txnZX6fYixENDOERvJDAoV9jJkJ0lM5I6es8aybYB+pOcqA0kFKDg9Zsq8sr8hjpMlHSz1D7/uLAxBT2gJWacRkmt+QqgB8EBN5qLGX/cUR73DZzokcfYwCcMlGqSB8KRqxpZUjGzmkxqC4NDK26+RF6LS1ROXrQM=
 MIME-Version: 1.0
+X-OriginatorOrg: darbyshire-bryant.me.uk
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9d3238d2-a9da-45c5-46d3-08d6e2caef66
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2019 17:44:15.1426 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 9151708b-c553-406f-8e56-694f435154a4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: kevin@darbyshire-bryant.me.uk
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0302MB3261
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_102546_777718_E2D0B344 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190527_104421_427755_32D4FB7D 
+X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v3] ramips: add support for Xiaomi Mi Router
- 4A (100M Edition)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe0c:0:0:0:620 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] lantiq: net: wrong operator
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -56,236 +116,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Kevin 'ldir' Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-- SoC:      MediaTek MT7628AN
-- Flash:    16MB (Winbond W25Q128JV)
-- RAM:      64MB
-- Serial:   As marked on PCB, 3V3 logic, baudrate is 115200
-- Ethernet: 3x 10/100 Mbps (switched, 2x LAN + WAN)
-- WIFI0:    MT7628AN 2.4GHz 802.11b/g/n
-- WIFI1:    MT7612EN 5GHz 802.11ac
-- Antennas: 4x external (2 per radio), non-detachable
-- LEDs:     Programmable power-LED (two-colored, yellow/blue)
-            Non-programmable internet-LED (shows WAN-activity)
-- Buttons:  Reset
-
-INSTALLATION:
-
-1. Connect to the serial port of the router and power it up.
-   If you get a prompt asking for boot-mode, go to step 3.
-2. Unplug the router after
-       > Erasing SPI Flash...
-       > raspi_erase: offs:20000 len:10000
-   occurs on the serial port. Plug the router back in.
-3. At the prompt select option 2 (Load system code then
-   write to Flash via TFTP.)
-4. Enter 192.168.1.1 as the device IP and 192.168.1.2 as the
-   Server-IP.
-5. Connect your computer to LAN1 and assign it as 192.168.1.2/24.
-6. Rename the sysupgrade image to test.bin and serve it via TFTP.
-7. Enter test.bin on the serial console and press enter.
-
-Signed-off-by: Markus Scheck <markus@mscheck.de>
+Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 ---
- .../ramips/base-files/etc/board.d/02_network  |   4 +
- target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts | 146 ++++++++++++++++++
- target/linux/ramips/image/mt76x8.mk           |   8 +
- 3 files changed, 158 insertions(+)
- create mode 100644 target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts
+ .../patches-4.14/0025-NET-MIPS-lantiq-adds-xrx200-net.patch   | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index dcc7b4a747..d3fecbc2bd 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -454,6 +454,10 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"1:lan:3" "2:lan:2" "3:lan:1" "4:wan" "6@eth0"
- 		;;
-+	xiaomi,mir4a-100m)
-+		ucidef_add_switch "switch0" \
-+			"4:lan:1" "2:lan:2" "0:wan" "6@eth0"
-+		;;
- 	zbtlink,zbt-we1226|\
- 	y1)
- 		ucidef_add_switch "switch0" \
-diff --git a/target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts b/target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts
-new file mode 100644
-index 0000000000..3bcb84d68b
---- /dev/null
-+++ b/target/linux/ramips/dts/XIAOMI-MIR4A-100M.dts
-@@ -0,0 +1,146 @@
-+//SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7628an.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	compatible = "xiaomi,mir4a-100m", "mediatek,mt7628an-soc";
-+	model = "Xiaomi Mi Router 4A (100M Edition)";
-+
-+	chosen {
-+		bootargs = "console=ttyS0,115200";
-+	};
-+
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0x0 0x4000000>;
-+	};
-+
-+	aliases {
-+		led-boot = &power_yellow;
-+		led-failsafe = &power_yellow;
-+		led-running = &power_blue;
-+		led-upgrade = &power_yellow;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		power_blue: power_blue {
-+			label = "mir4a-100m:blue:power";
-+			gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		power_yellow: power_yellow {
-+			label = "mir4a-100m:yellow:power";
-+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <20>;
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <10000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "bootloader";
-+				reg = <0x0 0x20000>;
-+				read-only;
-+			};
-+
-+			partition@20000 {
-+				label = "config";
-+				reg = <0x20000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@30000 {
-+				label = "factory";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@40000 {
-+				label = "crash";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				label = "cfg_bak";
-+				reg = <0x50000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@60000 {
-+				label = "overlay";
-+				reg = <0x60000 0x100000>;
-+				read-only;
-+			};
-+
-+			partition@160000 {
-+				label = "firmware";
-+				reg = <0x160000 0xea0000>;
-+				compatible = "denx,uimage";
-+			};
-+		};
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	wifi@0,0 {
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		ieee80211-freq-limit = <5000000 6000000>;
-+	};
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "gpio", "wdt", "wled_an";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x4>;
-+	mtd-mac-address-increment = <(-1)>;
-+};
-+
-+&esw {
-+	mediatek,portmap = <0x2f>;
-+	mediatek,portdisable = <0x2a>;
-+};
-+
-+&wmac {
-+	status = "okay";
-+};
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 22d79bad39..4213947d39 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -437,6 +437,14 @@ define Device/wrtnode2r
- endef
- TARGET_DEVICES += wrtnode2r
- 
-+define Device/xiaomi_mir4a-100m
-+  DTS := XIAOMI-MIR4A-100M
-+  IMAGE_SIZE := 14976k
-+  DEVICE_TITLE := Xiaomi Mi Router 4A (100M Edition)
-+  DEVICE_PACKAGES := kmod-mt76x2
-+endef
-+TARGET_DEVICES += xiaomi_mir4a-100m
-+
- define Device/zbtlink_zbt-we1226
-   DTS := ZBT-WE1226
-   IMAGE_SIZE := $(ralink_default_fw_size_8M)
+diff --git a/target/linux/lantiq/patches-4.14/0025-NET-MIPS-lantiq-adds-xrx200-net.patch b/target/linux/lantiq/patches-4.14/0025-NET-MIPS-lantiq-adds-xrx200-net.patch
+index 7eaf0b7b7b..0d97b4742b 100644
+--- a/target/linux/lantiq/patches-4.14/0025-NET-MIPS-lantiq-adds-xrx200-net.patch
++++ b/target/linux/lantiq/patches-4.14/0025-NET-MIPS-lantiq-adds-xrx200-net.patch
+@@ -934,8 +934,8 @@ Subject: [PATCH 25/36] NET: MIPS: lantiq: adds xrx200-net
+ +
+ +	link->duplex = xrx200sw_read_x(XRX200_MAC_PSTAT_FDUP, port);
+ +
+-+	link->rx_flow = !!(xrx200sw_read_x(XRX200_MAC_CTRL_0_FCON, port) && 0x0010);
+-+	link->tx_flow = !!(xrx200sw_read_x(XRX200_MAC_CTRL_0_FCON, port) && 0x0020);
+++	link->rx_flow = !!(xrx200sw_read_x(XRX200_MAC_CTRL_0_FCON, port) & 0x0010);
+++	link->tx_flow = !!(xrx200sw_read_x(XRX200_MAC_CTRL_0_FCON, port) & 0x0020);
+ +	link->aneg = !(xrx200sw_read_x(XRX200_MAC_CTRL_0_FCON, port));
+ +
+ +	link->speed = SWITCH_PORT_SPEED_10;
 -- 
-2.21.0
-
+2.20.1 (Apple Git-117)
 
 _______________________________________________
 openwrt-devel mailing list

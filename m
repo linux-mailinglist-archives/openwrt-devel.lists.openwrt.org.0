@@ -2,82 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7446A2B5FF
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 15:07:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DDE82B734
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 May 2019 16:03:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3F8xoVkF3eZ7QLtOvTPGKLYu8fD7pgdbzjwEI6EBQLw=; b=gJea3Esx7FXKqK
-	KDD/xZN7EJFWVTlnHsmTK2TsQzJCtm+zuuxaW6sowKEvPVuSnjtFsXE4vnEGaB/WTfBWcI0PZjHXI
-	gaSL2SlUmsVEuRRq7QGAl+mUBBA6wszLoHl6ahN7n1Fw+UnZuAWxMhV208gEWEDMP9InFOb7+9BjF
-	/9wCSurYJCbSq+gA1bovGLe3CnQnmJa0HhsDgwu+L6E8d8+jsipisOZRo6YxC23RG6wIxp2b/+3FP
-	tIQcnGEeTwVaDPzHm1urqeN8SGW3Gc4UmiCD0Nbk1nfSxLOeLvyTzg5/33coKJBNV0XwSknb68Iin
-	YBCILtPlnMZ7WtawG+Ig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xWPBU8f2e3d451S03sdAX/rQ67ZBAo6VxG1y4h5C6B4=; b=mG8aK4r85qOU0m81CxBcSaqNs
+	ayWdCLuJ7tWfTSg1QXNFQE83gfFI5T1kv/adl6YpiVs7w1j3XsKd0Kf+xIMagaVRDsI9hAPLlBvBB
+	6tJzKHJuTcAb41JVfPuA/u2dUZI5RtE3ZH9PlT1U3ZT6EmaxHAeszn+XrBRuorkeMHjE78hNEyR81
+	kBQ/72HTw7cWWz4yWMXH31X3rDkU7CPNfgJKoqIFMVOtrhZEjQmVmw6UZJqaeEJylFkhaa8iVy+c1
+	6tB+zqo1kq5JyNKnIOyQ8/ZfZdHDS+vGP/KiIjjfae+HNLX1GdoVy3pNBOKRcAPjHuMvPhXwz6tJn
+	54qm1Ee2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVFLp-0004al-Ul; Mon, 27 May 2019 13:07:41 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hVGE6-0001Of-9n; Mon, 27 May 2019 14:03:46 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVFLi-0004a5-HX
- for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 13:07:36 +0000
-Received: by mail-ot1-x344.google.com with SMTP id 66so14775159otq.0
- for <openwrt-devel@lists.openwrt.org>; Mon, 27 May 2019 06:07:31 -0700 (PDT)
+ id 1hVGDy-0001OG-Fs
+ for openwrt-devel@lists.openwrt.org; Mon, 27 May 2019 14:03:40 +0000
+Received: by mail-wr1-x432.google.com with SMTP id h1so2923832wro.4
+ for <openwrt-devel@lists.openwrt.org>; Mon, 27 May 2019 07:03:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=WAW2Dc8X6l1MySP7SZ2O87yB5mfSE8eVetiFR1gmgAE=;
- b=eLRH89zSSTFG5YNnDe4LpImXcz1irJZ2u9ob3rW9A84Tq0qB1E9xVb9fajQ8BJI77t
- RsCs7gYyQ1jhx+UBnJsZyzN8zEG2Gp7jEuRre6pka8jRLioERtvJgT6LYLewC2usolJU
- NyzzOm0MVoXCMtGZ0tppyYqunJL/tFmB0QOy+XBA0Rt1XMWeiya5bw4baoq+X2QTUGKE
- QIhYSRvxZ2VkCzJKBY0JDN7pvb7P8APEIx3Qjyb/drPxyquzS4y4iRHRyefIOf0LQAsg
- 2k27h9gwTlUkalxYNLiWoKNR0TOTAedX6mKMP7lsoOu68DfoKz/cJEWB8w1A4PMUzx6X
- 7hzg==
+ :cc; bh=DhucpNM/6u34itu8HEVw0ZizwmDKAB0Cbxtdt5FfU6w=;
+ b=KW8h0i0y4sFI7BBjuuS8vN5x6P1D3HkDrgdtZC2vlFBva2bTvcpVH1U8y404Xm6df1
+ TvEeZ80K6kU02stDg7h4h/g1SZHnIt0EZdC5URc1RxVZcO4WkJ0onmcs/lF1PGMNu+Ga
+ rq8N2oeeAaQpRCiqc2IhhR4UlZzNAvIuFGKLQ3xDoKvNcCQFoInPHCvECazrw5OUpHdH
+ g7iWGWocJWXoaBLSTbPcgYF1u7Ez0SmoPLIt5E0B3mUx29Ei1zRlYdFn/z1wO6TL8TJx
+ 5VDou4xZXL2p/u0beMZsK2j1oFCST3PYC3kSpPMot2exU76xA7khHOnA+rmUdoM9hoMe
+ bDZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=WAW2Dc8X6l1MySP7SZ2O87yB5mfSE8eVetiFR1gmgAE=;
- b=ad2sozR1MBt1DS636JYemm0HBRIgo3u1sV8sMWGVzoJpuwwgulpXpL5nTOUpNTUU0a
- 2VEoRvz68QR08sL90wXR4c3NUytgi03O8Dvvbci2Q3kg2lOXVUJov01/fj4Sh1p0Ys8n
- tiARRL6hxi6REgVKEzDjzMebqGDiT73SLbCl+EiVsYvfkt3IHh8dCugIZvgIxIvKytEf
- xoPPMxhXpY1RftecMg3Czq0ddT7Gze/iCx0mQOtdsjItpcXZTVE0rsbWcfQVywHie4j9
- myJre4ybSl3kZXjzH1FoPd/oASTednjjODh04dBdU5cbiGUe00PPzY8TVUj3UtF7VQ/2
- SOqQ==
-X-Gm-Message-State: APjAAAXcFIAzXtfAE54/pHcOpqp5jmzUH9cDo8lCrd/86DBQBqdI7dZy
- PTyEfJBkR/sf74MQALxgRTWATwhGkgQfKGsK3KE=
-X-Google-Smtp-Source: APXvYqzVoBueXYKQlk2gkDhSR/1uJFuob4TrWDKq1Klc7DgsLtvZ0ObbfvLeh3XVrKfNA8JDzRpXIH47eo8B2wyd49c=
-X-Received: by 2002:a9d:5a86:: with SMTP id w6mr43281655oth.82.1558962451183; 
- Mon, 27 May 2019 06:07:31 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=DhucpNM/6u34itu8HEVw0ZizwmDKAB0Cbxtdt5FfU6w=;
+ b=CX/EoMH/QB8TokfGvakrsWMH8q5o+cybK+qrnyL9Ird22Nc6qLF2ztNERx4OicSSb6
+ o+5hoYGCSbgTCmC4Yp8U9VDWrx8GoC3ljNQSYmDCGTfhh8mp5MNL7tex0yPwZjouYUSl
+ A27pPQxJri9gfR+gOSVSbq17Ofw/ixmDfP0ceGNkxxKbxhNNPrgtMTgRhscefycpWrpj
+ Vm4pjKZ9MN1tBC+c035XnXm1qgxZIUrvKH5L2dP3NO/Z/lPMExzwc+7UKynteFYD646W
+ syfeiPn8Ujpvc0ST3oDqdYrYGqpjla/eDQwGqF8E0Emy6bQ+HvhXqgHNiruORnw+U1yn
+ SE9Q==
+X-Gm-Message-State: APjAAAVKpIU8j/odA/EqIiAQR5jCZbGrHRAsM6bYGgBU6T4Nws41ghFZ
+ /TzuXiyI1IsXiEj9c1M7qTk40J8453yoTqyr6VKMAdn97Sc=
+X-Google-Smtp-Source: APXvYqwWuX2mxHiNbO8hbzdY3IydPPW3wNPoV75YbK6mvvtWHZb/0QOfTVaUhHOSAFlzSb6kxbZ4MelYgktVMN5BnpU=
+X-Received: by 2002:adf:de11:: with SMTP id b17mr3195050wrm.19.1558965816660; 
+ Mon, 27 May 2019 07:03:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <1558368805-19484-1-git-send-email-ynezz@true.cz>
- <CAOdf3goqqUUXc7pM8wMR=edshXdJAfqEzUi5_wGSnSyJk-P7sg@mail.gmail.com>
- <20190521145502.GB4606@meh.true.cz>
- <CAOdf3gp4dAakvC7xjdA_JNzkBT0-1=6BSL0G3s2Hzake+T75fw@mail.gmail.com>
- <20190527130023.GI50588@meh.true.cz>
-In-Reply-To: <20190527130023.GI50588@meh.true.cz>
-From: Etienne Champetier <champetier.etienne@gmail.com>
-Date: Mon, 27 May 2019 10:07:19 -0300
-Message-ID: <CAOdf3gpr8rgzPq4KgX_e5obz1YxWJO1dvTuc5DCuXqXu=7XrSQ@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+References: <CAC8mBSVP+Uev=H_x4actCT9g+FV1X0bVFZ=06biyBA=w-s6AkA@mail.gmail.com>
+ <f30df01f-ea9d-32ae-2e7d-286fa4aab164@ironai.com>
+In-Reply-To: <f30df01f-ea9d-32ae-2e7d-286fa4aab164@ironai.com>
+From: =?UTF-8?Q?Denis_Peri=C5=A1a?= <darkman.hr@gmail.com>
+Date: Mon, 27 May 2019 16:03:33 +0200
+Message-ID: <CAC8mBSUYMvuwJaAftwYCL+TaYTaDs_4VT2P9Q3-j5sDOF6xO6Q@mail.gmail.com>
+To: Vincent Wiemann <vincent.wiemann@ironai.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_060734_820070_D1FA2CAB 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190527_070338_534355_3059786C 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:432 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (champetier.etienne[at]gmail.com)
+ provider (darkman.hr[at]gmail.com)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,8 +81,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH RFC 0/5] ath79: add micro non-physical
- true RNG based on timing jitter
+Subject: Re: [OpenWrt-Devel] dnsmasq not leasing after a while. Sometimes
+ more than 5 times a day
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,38 +94,163 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Stephan Mueller <smueller@chronox.de>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Dustin Lundquist <d.lundquist@temperednetworks.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============2420688122596734827=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgUGV0ciwKCkxlIGx1bi4gMjcgbWFpIDIwMTkgw6AgMTA6MDAsIFBldHIgxaB0ZXRpYXIgPHlu
-ZXp6QHRydWUuY3o+IGEgw6ljcml0IDoKPgo+IEV0aWVubmUgQ2hhbXBldGllciA8Y2hhbXBldGll
-ci5ldGllbm5lQGdtYWlsLmNvbT4gWzIwMTktMDUtMjUgMTI6NDM6MjVdOgo+Cj4gPiBKdXN0IHRv
-IGJlIGNsZWFyIGknbSAxMDAlIGluIGZhdm9yIG9mIHlvdXIgZWZmb3J0IHRvIGhhdmUgcmFuZG9t
-IHBvb2wgaW5pdAo+ID4gZG9uZSBmYXN0IG9uIGFsbCBkZXZpY2VzLCBhbmQgeW91ciBzb2x1dGlv
-biwgYmFzZWQgb24gU3RlcGhhbiBhd3NvbWUgd29yaywKPiA+IHNlZW1zIHJlYWxseSBnb29kIEkg
-anVzdCB3YW50IHRvIGJlIHN1cmUgd2UgZG9uJ3QgbWFrZSBzb21lIGRldmljZXMgd29yc2UgLwo+
-ID4gYXJlIG5vdCBtaXNzaW5nIHNvbWV0aGluZwo+Cj4gRllJLCBJJ3ZlIGp1c3QgYWRkZWQgbW9y
-ZSBkZXZpY2VzIHRvIHRoZSB0ZXN0aW5nIGJlZm9yZSBzdWJtaXR0aW5nIHRoZSBuZXh0Cj4gcm91
-bmQgb2YgcGF0Y2hlcywgYW5kIGdvdCBmb2xsb3dpbmcgb24gdGhlIE1UNzYyMEEgYmFzZWQgZGV2
-aWNlOgo+Cj4gIHJvb3RAT3BlbldydDovIyBjYXQgL3Byb2MvY3B1aW5mbwo+ICBzeXN0ZW0gdHlw
-ZSAgICAgICAgICAgICA6IE1lZGlhVGVrIE1UNzYyMEEgdmVyOjIgZWNvOjYKPiAgbWFjaGluZSAg
-ICAgICAgICAgICAgICAgOiBCRENPTSBXQVAyMTAwLVNLCj4gIHByb2Nlc3NvciAgICAgICAgICAg
-ICAgIDogMAo+ICBjcHUgbW9kZWwgICAgICAgICAgICAgICA6IE1JUFMgMjRLRWMgVjUuMAo+Cj4g
-IHJvb3RAT3BlbldydDovIyBjYXQgL3N5cy9kZXZpY2VzL3N5c3RlbS9jbG9ja3NvdXJjZS9jbG9j
-a3NvdXJjZTAvYXZhaWxhYmxlX2Nsb2Nrc291cmNlCj4gIHN5c3RpY2sgTUlQUwo+Cj4gIHJvb3RA
-T3BlbldydDovIyAvc2Jpbi91cm5nZAo+ICBqZW50LXJuZyBpbml0IGZhaWxlZCwgZXJyOiAyCj4K
-PiBXaGVyZSB0aGF0IGVycm9yIDIgaXMgRUNPQVJTRVRJTUUuIEl0IG1ha2VzIG1lIHdvbmRlciBp
-ZiB0aGVyZSdzIHNvbWV0aGluZwo+IHdoaWNoIGNvdWxkIGJlIHR3ZWFrZWQgb24ga2VybmVsIHNp
-ZGUgaW4gb3JkZXIgdG8gcHJvdmlkZSBiZXR0ZXIgZW52aXJvbm1lbnQKPiBmb3IgamVudC1ybmcg
-b24gdGhpcyBxdWl0ZSBzdGlsbCBwb3B1bGFyIFNvQy4KClRoZSBmYWN0IHRoYXQgbWlzc2luZyBo
-aWdoIHByZWNpc2lvbiB0aW1lciBpcyBwcm9wZXJseSBkZXRlY3RlZCBpcyBhIGdvb2QgbmV3cywK
-YnV0IG5vdyB0aGF0IG1lYW5zIHlvdSByZWFsbHkgbmVlZCB0byBwcm92aWRlIGEgZmFsbGJhY2ss
-IGVsc2UKcmVtb3ZpbmcgdXJhbmRvbS1zZWVkIGlzIGEgcmVncmVzc2lvbgoKPgo+IC0tIHluZXp6
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0
-LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBz
-Oi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+--===============2420688122596734827==
+Content-Type: multipart/alternative; boundary="000000000000b817240589df0301"
+
+--000000000000b817240589df0301
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Yes, dnsmasq is still running but lease is not given.. I don't know how to
+debug it more.
+Configuration is simple, one subnet range 192.168.0.10 to 192.168.0.200 on
+wlan0 interface for example. But it's not wifi issue, local also.
+It sends mail as soon as error is detected and restarts dnsmasq after which
+it works. Device is not rebooting.
+ OpenWrt 18.06-SNAPSHOT, r7766-e9a7344550
+
+Also my scripts checkes two times just to rule out false negative.
+Also, more public exposure or none is pretty much same.. I have device
+which gets maybe 1-2 person and one with 50 .. behaving same. After a while
+it stops responding. Any more debug I could use somewhere?
+
+On Mon, May 27, 2019 at 2:37 PM Vincent Wiemann <vincent.wiemann@ironai.com=
+>
+wrote:
+
+> Hi Denis,
+>
+> I don't have such problems. Please post your configuration and device
+> setup and try to
+> get some logs. As far as I understand dnsmasq is unresponsible, but still
+> runs?!
+> What do you mean with "restart messages"? Are your devices rebooting?
+>
+> Regards,
+>
+> Vincent Wiemann
+>
+> On 27.05.19 13:43, Denis Peri=C5=A1a wrote:
+> > Hi all,
+> >
+> > This "bug" is following me for some time now.. a year at least. I'm
+> hoping day after day that someone might find reason and fix it. I've set =
+a
+> script that checks dnsmasq and restarts it.
+> >
+> > -->
+> >          if ! ( dhcping -q -h 00:99:99:99:99:99 -s 10.0.0.1 ) #Jos jedn=
+a
+> provjera
+> >                         then
+> >                                 echo "DEAD dnsmasq! - `date` " >>
+> /scripts/CRASH.log
+> >                                 killall dnsmasq
+> >                                 sleep 2
+> >                                 dnsmasq;
+> > .... .>.>>>> etc........... CUT ---
+> >
+> > two checks to be sure... and I get a lot of restart messages. different
+> nodes.
+> > I run this via cron every half hour.
+> >
+> > Anyone have similar problem?
+> >
+> > _______________________________________________
+> > openwrt-devel mailing list
+> > openwrt-devel@lists.openwrt.org
+> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> >
+>
+
+--000000000000b817240589df0301
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Yes, dnsmasq is still running but lease is not given.. I d=
+on&#39;t know how to debug it more.<br>Configuration is simple, one subnet =
+range 192.168.0.10 to 192.168.0.200 on wlan0 interface for example. But it&=
+#39;s not wifi issue, local also.<div>It sends mail as soon as error is det=
+ected and restarts dnsmasq after which it works. Device is not rebooting.</=
+div><div>=C2=A0OpenWrt 18.06-SNAPSHOT, r7766-e9a7344550=C2=A0<br><br>Also m=
+y scripts checkes two times just to rule out false negative.=C2=A0<br>Also,=
+ more public exposure or none is pretty much same.. I have device which get=
+s maybe 1-2 person and one with 50 .. behaving same. After a while it stops=
+ responding. Any more debug I could use somewhere?</div></div><br><div clas=
+s=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, May 27, 201=
+9 at 2:37 PM Vincent Wiemann &lt;<a href=3D"mailto:vincent.wiemann@ironai.c=
+om">vincent.wiemann@ironai.com</a>&gt; wrote:<br></div><blockquote class=3D=
+"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(2=
+04,204,204);padding-left:1ex">Hi Denis,<br>
+<br>
+I don&#39;t have such problems. Please post your configuration and device s=
+etup and try to<br>
+get some logs. As far as I understand dnsmasq is unresponsible, but still r=
+uns?!<br>
+What do you mean with &quot;restart messages&quot;? Are your devices reboot=
+ing?<br>
+<br>
+Regards,<br>
+<br>
+Vincent Wiemann<br>
+<br>
+On 27.05.19 13:43, Denis Peri=C5=A1a wrote:<br>
+&gt; Hi all,<br>
+&gt; <br>
+&gt; This &quot;bug&quot; is following me for some time now.. a year at lea=
+st. I&#39;m hoping day after day that someone might find reason and fix it.=
+ I&#39;ve set a script that checks dnsmasq and restarts it.<br>
+&gt; <br>
+&gt; --&gt;<br>
+&gt; =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0if ! ( dhcping -q -h 00:99:99:99:99:=
+99 -s 10.0.0.1 ) #Jos jedna provjera<br>
+&gt; =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 then<br>
+&gt; =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 echo &quot;DEAD dnsmasq! - `date`=
+ &quot; &gt;&gt; /scripts/CRASH.log<br>
+&gt; =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 killall dnsmasq<br>
+&gt; =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 sleep 2<br>
+&gt; =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 dnsmasq;<br>
+&gt; .... .&gt;.&gt;&gt;&gt;&gt; etc........... CUT ---<br>
+&gt; <br>
+&gt; two checks to be sure... and I get a lot of restart messages. differen=
+t nodes.<br>
+&gt; I run this via cron every half hour.<br>
+&gt; <br>
+&gt; Anyone have similar problem?<br>
+&gt; <br>
+&gt; _______________________________________________<br>
+&gt; openwrt-devel mailing list<br>
+&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">o=
+penwrt-devel@lists.openwrt.org</a><br>
+&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
+el=3D"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listi=
+nfo/openwrt-devel</a><br>
+&gt; <br>
+</blockquote></div>
+
+--000000000000b817240589df0301--
+
+
+--===============2420688122596734827==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2420688122596734827==--
+

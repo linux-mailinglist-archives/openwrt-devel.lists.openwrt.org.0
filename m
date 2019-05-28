@@ -2,193 +2,195 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 490B62D003
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 22:08:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4E9D2D0E5
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 23:17:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Date:Sender:Content-Type:
-	Subject:List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:To:Cc:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=JCv6Rh6BmmIDWMALtWyvKARf7a3KLNbWFPP54I0Pe5k=; b=Da/XkgZpy7U0tVvPZaBpfwwwQY
-	3Fn6M5iL5T1YpIDn5e6NIoDyptU9ESIvKdCOPAET4BWEaG6e0t5TVQS1WbIln8W7iANwWFgBrwCCc
-	0kO6SsE4Q7YcsA7p1+63cq4pCWOOH4vHkYkZ4T/X1pn65D15EEfK2AQJhfWsnqqMjMMx87XY4qurJ
-	8Cs3evOLSLC3xe/F1f8Rq008ARLF/bKHxTczkaPSQVYfvpeRo93Z1nCgCQv0F+6jP6Dr1UY7c0Zie
-	4xYhf/TTCVNDruL+6XO9E4Gt3bOMEPjdZo8PHGNIAAAk5HlAtDhK2G/JPbTBOq1ZQlLRDMupFup6T
-	qV0o6W+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yqwpcKeHcttIP9NMnqQ/v1Eed7wUQyqjEZtjWIDPB5E=; b=FoLZOJFuk+lFUnusAZo/uNU1z
+	W05ZEKQ1M3UUJ6Krwvl5+gyB6i3wR7tp4/W9SephE2cTVIe/ppXkFSUAA0jHUw848WXCmOhIY9efA
+	eprAJ6I4iYUk5gZZ8j1KspRavXaKeLVIKXczOXWANUN2qIXVmVt3tWd9CJoF0YfrTn2Lf+Mn1PIYK
+	VD180Sca99XhnZpD79yNonEIdFPt3EG2DWk/G9f9TQ7KyHbfjK7yCd/62FzhmwMPrN26z56RouWWS
+	JniYeGGZOZoSXwDwdPiDExN26ZOHULexcg2Ee0cL+oy1S6eV+0Nd6pA2YiPZRSiluE6kiyR7q2iQ8
+	ay8mKVvHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hViO8-0001kf-77; Tue, 28 May 2019 20:08:00 +0000
-To: openwrt-devel@lists.openwrt.org
+	id 1hVjTG-0000m4-Ad; Tue, 28 May 2019 21:17:22 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hVjT8-0000lb-EK
+ for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 21:17:16 +0000
+Received: by mail-oi1-x244.google.com with SMTP id w9so255093oic.9
+ for <openwrt-devel@lists.openwrt.org>; Tue, 28 May 2019 14:17:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=rbeBeZUJAlfYFcRkV2crTjq1cb9292Yb65VKxeskmiE=;
+ b=n/etwEA4/PqH3qnJ3H6pcKeUUggaiB9LMbqkeftuoJvLNGY9hDrlXary5e3VAwrsKl
+ U+vm0fAIsgvqb0KDzjGlmqpkPf3YLiSHzJi7ffWINv/vBWA7bBUgD4sfq7YeO/HRcexY
+ /My6eI6K8q7Z3ygHdSTfbTLzMj3JT1Qb6/CCLdh9aCbDbqAHxJxAHdTluYDXKNq/6RNs
+ z8nG9NMYuRX+K/Czda+J3gpJIet91VSMfSU1jF+CShLFIWXJphUHjcIg1a3V7PFXaw7a
+ KCunkDvUKbvI6Tmm80vyWPGeZpFFwUjKJ6v7nq+5w9XG/rxDzV3deKZHCZCDtW+kEHoO
+ u8Xw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=rbeBeZUJAlfYFcRkV2crTjq1cb9292Yb65VKxeskmiE=;
+ b=BcpNc1VcNkquhYyR9Y1gETs6PbMdPV76EIjiHJ0rT1Emq5gxserVoWmSujyKYej3jE
+ pw1TVxG2Z8fyPj62pCPOMfG10tFwp7DXcFDu0Lz5uz+xuBBo04G/hvHll0hEMYI/6pjZ
+ EvLQgEtrXdgLuwxFcbehTg9XMNM4q27W7q6k6h+W9ZHa8Wrqofv8T79bqJF9QUqP07Vt
+ HYxk/7aIl2TcNLxyRrgRqlTXOoT23cmxSWOH0y5e7DnXKt1QZEW+doM98ymnypf7BbrR
+ wjJ8NtQDUsyr8uU1wHK0VeD4bWR6TCwZVV6DbGyiuip2720JiwOF0c3VIMkjo8zjHMPG
+ k3Cg==
+X-Gm-Message-State: APjAAAX7BznlVvfA4S8OEXnsw8AI1JQLjDazWlkHIe5K+s/tjROeBmXT
+ RXZd4M9VB68dbD4+AzWRhTgZqHuFoL0xlk9hFwY=
+X-Google-Smtp-Source: APXvYqyDZGNsfe0wHpu7EJmUut6+epxWnzks1GagUl7m7WbKV9lMiti/FKmAzyrR3GRFgN0X6xjsqntuz5ggP1ffq6M=
+X-Received: by 2002:aca:d757:: with SMTP id o84mr420472oig.90.1559078232798;
+ Tue, 28 May 2019 14:17:12 -0700 (PDT)
 MIME-Version: 1.0
-Message-ID: <mailman.43208.1559074076.2376.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Eneas U de Queiroz via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-X-Mailman-Version: 2.1.21
-X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
-List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Eneas U de Queiroz <cote2004-github@yahoo.com>
-List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] [PATCH] openssl: update to version 1.1.1c
-Content-Type: multipart/mixed; boundary="===============3132169270458421764=="
-Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
-Date: Tue, 28 May 2019 20:08:00 +0000
-Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
-
---===============3132169270458421764==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
-
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============3132169270458421764==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from sonic310-21.consmr.mail.gq1.yahoo.com ([98.137.69.147])
-	by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hViO1-0001kK-KD
-	for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 20:07:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1559074061; bh=njJ8q9AtgcZbbLUmDIUJkWmcIx37F5rrI18YNi9nKAA=; h=From:To:Subject:Date:From:Subject; b=TMsg29kyJTJUi9nOotDBOWv4IKEAudCyXe2m4EqwcyJKRxpH7ChNVH0RoRjcEXASuZwe0fbeRWT1BDJwB9NaYyWSrRNZaD4F+0Sg32aigbkWUhOjpSduwFW0SuHAzfQ+JnhsWiHAuBzxvDSlIJbCRutKetzr3Q8AUaW9cgMjQyiXv1iRqIUFahQr5QgdrmGb2C0HgRONsXLm3BhK+kk9NjWBMA00qvp5ckZBv/WkwdbDJXqKLgB3DvYeYoOmazyLku9mF41xapZZp30rAD28NQD/dFJRCzzoVzw3oSsYM3a8dt5y8i0vYYToQte6vUlDj2jyMcbgrQbxQEPl36hI1Q==
-X-YMail-OSG: kNtuGtIVM1nikHW7gli7qGg6y4XjLm.IJJCRAdLVDzuvoMpBtHIWJ6gFs.F3Yub
- jYhy3XvQDZ2W92mMhVa2_kLQEqT8CF4GvHg1OrkZMd.5Hdcpab3QRs8tGX_70GJYzonIgZzsVEak
- f9oJN3H9bKDBC1iPMXMibuuDL8TYjU2kK5TE2svrKCKunMHVrUo8Z95gYLKdSSjbLEq5PHc3ASns
- UgUEeRCgzoK1seaCa4zsUy3HbP0PvtcU65T3hwZsERjgtF4tPen7agfrFjAGmsV_wGRvK4UD7WFU
- a36UWxOIB4W_kcUdKPt5AUcLBVi5cHUBooeK0IKXmR0hGQhFbQIw.9Y3qpeBEXFDhXaP_LihwK_Z
- R8M9sLSyHR6O.SymiONI7qbh6cLWWQDP4.UerfasN1vUepNO5SdxL.iSqE7OGWolmIXQsHmUZiQE
- _cEEbG18V3k.D_y0soVWcmINPIqRTXQ_AvodwxacQvTzLX.WEpTUIDbHvTGdvh6MEFND9IASGrZL
- XQ5r73n6denMmbMnNQKnNU_mhARMRpBwWBL_3XZXkrVXO2fqLJ90F0ImGjRTKKyFgkwaeVIIGniN
- rgzMFlmidh0A1xbQ6zMKWaKFfDFbd7Sm_68xTPwX9QpMl5VbtxS50Lo.VliPhW9ta9s994tnCdEc
- _2l_IHAuppOKolagj85f38xPXVQDiZe4ilqItOF_PcUQd3y_.cIJDJruIl0sfQ6AsMR6C4m41OK7
- 3QzJLeLKE.m18iHk7jpdpVDSALLDzBb.nona8TPO5KZGT4zYrm1u0hUzvM06OBzBLcFbD7b_TQr.
- bVZM339unv9cmYNY2lrlODVoKhGgps29rE5n1G8MCsLj7l7v8bDl4YBEK4.rlV7PzXVMRYjTO_CI
- HONAnu2x7nzQqUt.cr.yfxagbuOfAzdIa9X7o7O7IDlkE60kZHeoVHYVVsEvQ2TILvZHz1eOSx8O
- a36X1fL89vZFz4FD5mMgt4YgKypyTomO1zHbBo2HflRSvwGTTKYQLZhfvBtxJNge19840up4fGv7
- 3t7rWZ1sAEqn.mXhVZWglFLEwsGKKMSq16Cgeyw1VnTx0LSywwt_rwCXT7O0896LH5LULECZRp3b
- nRA8CEtkYELiBkY89eh_xGcbDy6RzgPTcA.vZvy_9y2sFP6JNTDx9HYnCa5NNEpGAkzFXQ58-
-Received: from sonic.gate.mail.ne1.yahoo.com by sonic310.consmr.mail.gq1.yahoo.com with HTTP; Tue, 28 May 2019 20:07:41 +0000
-Received: from 18.175.75.177.infopasa.com.br (EHLO gateway.troianet.com.br) ([177.75.175.18])
-          by smtp417.mail.gq1.yahoo.com (Oath Hermes SMTP Server) with ESMTPA ID 68f36e9e5b537ec963b367d92ba92b95
-          for <openwrt-devel@lists.openwrt.org>;
-          Tue, 28 May 2019 20:07:39 +0000 (UTC)
-From: Eneas U de Queiroz <cote2004-github@yahoo.com>
-To: openwrt-devel@lists.openwrt.org
-Subject: [PATCH] openssl: update to version 1.1.1c
-Date: Tue, 28 May 2019 17:07:33 -0300
-Message-Id: <20190528200733.14402-1-cote2004-github@yahoo.com>
-X-Mailer: git-send-email 2.21.0
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <1558992584-11997-1-git-send-email-ynezz@true.cz>
+ <1558992584-11997-4-git-send-email-ynezz@true.cz>
+ <CAECwjAjknY85+YOn07o6ixHkODkkE+85GrMn016ZUESq3EAfMg@mail.gmail.com>
+In-Reply-To: <CAECwjAjknY85+YOn07o6ixHkODkkE+85GrMn016ZUESq3EAfMg@mail.gmail.com>
+From: Etienne Champetier <champetier.etienne@gmail.com>
+Date: Tue, 28 May 2019 18:17:01 -0300
+Message-ID: <CAOdf3gob-vWdvHNiQfEcGOem0D68rGZXNe53nZc7WqH8vJxUkQ@mail.gmail.com>
+To: Yousong Zhou <yszhou4tech@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_130753_688440_02BA4A19 
-X-CRM114-Status: UNSURE (   5.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190528_141714_503164_7BB54081 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
- 
-  pts rule name              description
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [98.137.69.147 listed in list.dnswl.org]
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider (cote2004-github[at]yahoo.com)
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (champetier.etienne[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH 3/4] base-files: move urandom seed bits
+ into separate package
+X-BeenThere: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.21
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
+List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
+List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Stephan Mueller <smueller@chronox.de>,
+ =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============6072168139172768511=="
+Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
+Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Highlights of this version:
- - Prevent over long nonces in ChaCha20-Poly1305 (CVE-2019-1543)
- - Fix OPENSSL_config bug (patch removed)
- - Change the default RSA, DSA and DH size to 2048 bit instead of 1024.
- - Enable SHA3 pre-hashing for ECDSA and DSA
+--===============6072168139172768511==
+Content-Type: multipart/alternative; boundary="0000000000003e3c480589f9308b"
 
-Signed-off-by: Eneas U de Queiroz <cote2004-github@yahoo.com>
+--0000000000003e3c480589f9308b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/package/libs/openssl/Makefile b/package/libs/openssl/Makefile
-index c173ede9b3..f16c24f7c6 100644
---- a/package/libs/openssl/Makefile
-+++ b/package/libs/openssl/Makefile
-@@ -9,9 +9,9 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=openssl
- PKG_BASE:=1.1.1
--PKG_BUGFIX:=b
-+PKG_BUGFIX:=c
- PKG_VERSION:=$(PKG_BASE)$(PKG_BUGFIX)
--PKG_RELEASE:=5
-+PKG_RELEASE:=1
- PKG_USE_MIPS16:=0
- ENGINES_DIR=engines-1.1
- 
-@@ -24,7 +24,7 @@ PKG_SOURCE_URL:= \
- 	ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source/ \
- 	http://www.openssl.org/source/ \
- 	http://www.openssl.org/source/old/$(PKG_BASE)/
--PKG_HASH:=5c557b023230413dfb0756f3137a13e6d726838ccd1430888ad15bfb2b43ea4b
-+PKG_HASH:=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f4c90
- 
- PKG_LICENSE:=OpenSSL
- PKG_LICENSE_FILES:=LICENSE
-diff --git a/package/libs/openssl/patches/200-OPENSSL_config-restore-error-agnosticism.patch b/package/libs/openssl/patches/200-OPENSSL_config-restore-error-agnosticism.patch
-deleted file mode 100644
-index 3923ac41da..0000000000
---- a/package/libs/openssl/patches/200-OPENSSL_config-restore-error-agnosticism.patch
-+++ /dev/null
-@@ -1,31 +0,0 @@
--From 9933d4a06bd0a0b5b757f072944e8cd54d4bddd3 Mon Sep 17 00:00:00 2001
--From: Richard Levitte <levitte@openssl.org>
--Date: Wed, 20 Mar 2019 10:18:13 +0100
--Subject: [PATCH] OPENSSL_config(): restore error agnosticism
--
--Great effort has been made to make initialization more configurable.
--However, the behavior of OPENSSL_config() was lost in the process,
--having it suddenly generate errors it didn't previously, which is not
--how it's documented to behave.
--
--A simple setting of default flags fixes this problem.
--
--Fixes #8528
--
--Reviewed-by: Matt Caswell <matt@openssl.org>
--(Merged from https://github.com/openssl/openssl/pull/8533)
--
--(cherry picked from commit 905c9a72a708701597891527b422c7f374125c52)
--
--diff --git a/crypto/conf/conf_sap.c b/crypto/conf/conf_sap.c
--index 2ce42f0c67..3805c426d8 100644
----- a/crypto/conf/conf_sap.c
--+++ b/crypto/conf/conf_sap.c
--@@ -35,6 +35,7 @@ void OPENSSL_config(const char *appname)
--     memset(&settings, 0, sizeof(settings));
--     if (appname != NULL)
--         settings.appname = strdup(appname);
--+    settings.flags = DEFAULT_CONF_MFLAGS;
--     OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CONFIG, &settings);
-- }
-- #endif
+Hi Yousong,
+
+Le mar. 28 mai 2019 =C3=A0 09:01, Yousong Zhou <yszhou4tech@gmail.com> a =
+=C3=A9crit :
+
+> On Tue, 28 May 2019 at 05:30, Petr =C5=A0tetiar <ynezz@true.cz> wrote:
+>
+> ...
+>
+> > +
+> > +save() {
+> > +    touch "$1.tmp"
+> > +    chown root:root "$1.tmp"
+> > +    chmod 600 "$1.tmp"
+> > +    getrandom 512 > "$1.tmp"
+> > +    mv "$1.tmp" "$1"
+> > +    echo "Seed saved ($1)"
+> > +}
+>
+> Maybe we could prepare the .tmp file in /tmp of tmpfs type, to save a
+> few rounds of nor flash writes.
+>
+
+The idea was to be able to do atomic mv
 
 
---===============3132169270458421764==
+>                 yousong
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
+
+--0000000000003e3c480589f9308b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"auto"><div>Hi Yousong,<br><br><div class=3D"gm=
+ail_quote"><div dir=3D"ltr" class=3D"gmail_attr">Le mar. 28 mai 2019 =C3=A0=
+ 09:01, Yousong Zhou &lt;<a href=3D"mailto:yszhou4tech@gmail.com" target=3D=
+"_blank">yszhou4tech@gmail.com</a>&gt; a =C3=A9crit=C2=A0:<br></div><blockq=
+uote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc =
+solid;padding-left:1ex">On Tue, 28 May 2019 at 05:30, Petr =C5=A0tetiar &lt=
+;<a href=3D"mailto:ynezz@true.cz" rel=3D"noreferrer" target=3D"_blank">ynez=
+z@true.cz</a>&gt; wrote:<br>
+<br>
+...<br>
+<br>
+&gt; +<br>
+&gt; +save() {<br>
+&gt; +=C2=A0 =C2=A0 touch &quot;$1.tmp&quot;<br>
+&gt; +=C2=A0 =C2=A0 chown root:root &quot;$1.tmp&quot;<br>
+&gt; +=C2=A0 =C2=A0 chmod 600 &quot;$1.tmp&quot;<br>
+&gt; +=C2=A0 =C2=A0 getrandom 512 &gt; &quot;$1.tmp&quot;<br>
+&gt; +=C2=A0 =C2=A0 mv &quot;$1.tmp&quot; &quot;$1&quot;<br>
+&gt; +=C2=A0 =C2=A0 echo &quot;Seed saved ($1)&quot;<br>
+&gt; +}<br>
+<br>
+Maybe we could prepare the .tmp file in /tmp of tmpfs type, to save a<br>
+few rounds of nor flash writes.<br></blockquote></div></div></div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">The idea was to be able to do atomic =
+mv<br><div dir=3D"auto"><br></div><div dir=3D"auto"><div class=3D"gmail_quo=
+te"><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-lef=
+t:1px #ccc solid;padding-left:1ex">
+<br>
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 yousong<br>
+<br>
+_______________________________________________<br>
+openwrt-devel mailing list<br>
+<a href=3D"mailto:openwrt-devel@lists.openwrt.org" rel=3D"noreferrer" targe=
+t=3D"_blank">openwrt-devel@lists.openwrt.org</a><br>
+<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
+"noreferrer noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman=
+/listinfo/openwrt-devel</a><br>
+</blockquote></div></div></div>
+</div>
+
+--0000000000003e3c480589f9308b--
+
+
+--===============6072168139172768511==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -199,4 +201,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3132169270458421764==--
+--===============6072168139172768511==--
+

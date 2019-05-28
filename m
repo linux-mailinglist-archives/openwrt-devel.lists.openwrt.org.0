@@ -2,61 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BC042C607
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 14:01:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16A5A2C608
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 14:01:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=vjkCWJjULj3eD408AcVRhX/3Nuor/VU5v6eToufN3dI=; b=k6C
-	JucafV85hR4J3IqIC36gEuDmbEek0/Q5u/QD5PBGzZyhOF7Ami/ffowzQl9xykYuREcepSSTWnGxa
-	ItHpo/0OCAhFdyFgcBeTsgucp9d89caw1huChnkhxCFoCGmf6atIjiDM0+/4jLlfrQMGaU/0w4o3A
-	jsCXNrhHOQpYXdFjhM9NtK2uIbN062yOkKoP5/zPx8YjGopNbDLMFhFBE8G23yfOoZgUunvt+oSGS
-	7LE8wWDj0fEdboSk8mvTIV1WYdfVHcYwXS/4Qh/ZTj0Ia2Kr0L1FM8AxzLsPyCJg24rTnw6yNMt9b
-	oGZt7XEX32sSprxH2YsImEdBdRcWaRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=arCSn2Tjol3QUzWyiOkJlzkgpEiMshWk7Mkm14iqepY=; b=Ts6gVeJf1jm/Ah
+	8m8H36YE1+8LQRCpf3CE5DbeQcF/0KIu4a9pNML6Ys3BjByeUtGm2PDFufvmd//j/Q13Woxau4D+2
+	DPYlxLGocdXaR544RN+1UxhmumNO/510U3zw+wUdz2wlZedNZ1qpQp6Cc5Kn/nFmMwbSANtrqIgmn
+	FGokzGV1QvieEqrSO8BAGfLd/Xowlyrmn66Z6ueprIxe4/uDSHrKsiqzIqmr5a5w4xezO24S8kAM7
+	HqXNvpWdbCRaEZ//YkMMmdJpIhvIsRIHosX6TA3nmh6uAFWdTTxGU+/cRaOHnRPtmUtfv8d2z3o2a
+	3LoiRCe4tYpHLJuKnEvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVamj-0000e4-LZ; Tue, 28 May 2019 12:00:53 +0000
-Received: from mail-qk1-x72d.google.com ([2607:f8b0:4864:20::72d])
+	id 1hVan0-00010P-Sv; Tue, 28 May 2019 12:01:10 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVamb-0000dK-2I
- for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 12:00:48 +0000
-Received: by mail-qk1-x72d.google.com with SMTP id m14so249851qka.10
- for <openwrt-devel@lists.openwrt.org>; Tue, 28 May 2019 05:00:44 -0700 (PDT)
+ id 1hVams-0000yT-NS
+ for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 12:01:04 +0000
+Received: by mail-lf1-x144.google.com with SMTP id f1so14341492lfl.6
+ for <openwrt-devel@lists.openwrt.org>; Tue, 28 May 2019 05:01:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=xLscHNQU0mWEihvHvojmJ6thMus3r0slCk4cBPvEOwM=;
- b=W3auOl8pTjMNvW460Z+acAQs0eAeP4i/AyDCfpI4iOoa3mTEB9BCvLgh+vVHHq19AM
- iTf8GC5ErnqkAHo3BVBuyInKA3rkSr7i/zab4On4IRIMwemE0KZWZGAXFPnoDK1KWFN8
- /Gj5JhtcwUIGubkT3NxefNOcSqgGv/qposlJe2nVCG9eLxtSPwxVaWIZWUgP32FE5cp3
- UMhWWaktRKNJFE8MgNkrjLr3osa+MXenfegJm/Qv27SCJAoqc75HvCS6efO3i7da8d4m
- F6oAIo4Hm6VImfbcoEjDEGINs6pdKPATLHzASPWRgbxPUsNMhb9C6W2jClGvLOMGAJYE
- 4zqg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=vW7EKLb7jMiXSPo6MCvs8hX1FSwhDB3lPCHJ3OI3JO8=;
+ b=JDUnSQObcR/YixKS3pXKDblviAmud+VPtOiW2g9tj1QAFRcEaYpOvU/uY4SnoNjNd/
+ OF09iUoGPZllNlayf61EwtYtzmE6VyOJC81y01aieuwSzs/8AxNsVC8T14cw4Rf5K939
+ N1556rHIwzScQKJlZRA4LCoDC+EdfIoxCwJfd35XZ+TjtayJg+0tO3p00TgMWf8ImFvj
+ d9HqfZL1qFDg8iIvo8PUwyI+mKnyuh1f2PjzIe0h2mXXUeHIYO5ozcvWFR0llZaS1fj+
+ U0oYHUb5mNcKUkeKrFBuV/KpGGK6ubBo5HeioOZEcr7q5WBaFj2BHuu7h7rveixb7AD6
+ MOAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=xLscHNQU0mWEihvHvojmJ6thMus3r0slCk4cBPvEOwM=;
- b=DTPqOSQcJyiUXYxO1bUb1UnFj6s/l16UMJjeY33Dcg/ZN8UJd6nwnSvYpXdHsMwWwk
- T/qcn7RxkbDcnpLdeQ3NxwO71Ve1OeQ0I6XpltGKGCSMW5OlbCtcp9dw8tnDPWTx/OD4
- FfYiCTubaC5d5RueFNyHiDSthZWxhiglV+ir12H7mhFZpmCs2pluztwryiNaAScMdXSr
- 1Yy8jhcGFMPb1zRTYQqu8wItnoxI9bkNtqlvAVfm2lxGCDiBPk+p6jWSMcjTE4dWA8Sq
- NPLRKeb2/4jgUu1CzLXe2ypgF8lkrcyWTlZ+FStCvaAROHuqCn2d2tyu6+ns5mGTaAV2
- anPw==
-X-Gm-Message-State: APjAAAX4g+ItMFsbY7vKI2akltvlw2Ji8x/ywbrJYzlJszEMgVH3zuyt
- nMzMLdO9q9qeCdujOYlT/1L+Uyo+Iuumx9Cjrr+LZxU=
-X-Google-Smtp-Source: APXvYqxRmShmuqshmsxo3xZ/x+Ex59qoG5MuTAjrV2XwvUaIeJ6QUbDFO5c6K7YIWayyENu4ymAdD23zGVfqO82Z8T0=
-X-Received: by 2002:ac8:18b2:: with SMTP id s47mr5701361qtj.75.1559044843556; 
- Tue, 28 May 2019 05:00:43 -0700 (PDT)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=vW7EKLb7jMiXSPo6MCvs8hX1FSwhDB3lPCHJ3OI3JO8=;
+ b=BjUKeSQxK+z2yPCxzEItwJb/mTH4YBxDis3sRzLDCLHg8tfzaO6KuEU9GiG04i7gtq
+ MddsXCdj3Z1qoFF1MROr8HtS0Q4RUvWEnXYYnTEqGgGrSN7NHtLpsMS7+ucxcYvFZoQ9
+ R1wICpJCvnjY0ZJE/strm/Qgtw+9R2ATdWjmVk39L4sSuJnRd2yaET650wPzkczW+D0i
+ xa0aGLSbJsY2SZCyjrMN8wDrvI+km+BgDLNL3TLks6QUVgcYk5wfgFGVesZlIzR0j9tb
+ vwe0MNQQxvzxEzQXVfiv9lPa/XiEELRC+yU7SOsgT5jedjg4x1yX9/wt/v8HpHcHOFwS
+ XMXw==
+X-Gm-Message-State: APjAAAWcc8C0HqyfVfk32YFFXO2IPnamSY1xA5wfwhxrsPeGqkZvvIgX
+ f+aIMxipB643e2FdaUqQ0KvJSvV0e2cWEiyziSQ=
+X-Google-Smtp-Source: APXvYqz4veyvXVaRV4cNXO+ehFHeQWXKv2YoVE1QrJ5WkWHbsv563bPkTTHIfoBO6xF4pMPe4JTfYlx3gAkUEKke8c8=
+X-Received: by 2002:a19:660a:: with SMTP id a10mr1073151lfc.17.1559044859822; 
+ Tue, 28 May 2019 05:00:59 -0700 (PDT)
 MIME-Version: 1.0
-From: Chris <threshnode@gmail.com>
-Date: Tue, 28 May 2019 13:00:32 +0100
-Message-ID: <CANDHWrd_nLzKm8AXivb9xGZW=aKFniSS6GQng7NabrB83MmjRg@mail.gmail.com>
-To: openwrt-devel@lists.openwrt.org
+References: <1558992584-11997-1-git-send-email-ynezz@true.cz>
+ <1558992584-11997-4-git-send-email-ynezz@true.cz>
+In-Reply-To: <1558992584-11997-4-git-send-email-ynezz@true.cz>
+From: Yousong Zhou <yszhou4tech@gmail.com>
+Date: Tue, 28 May 2019 20:00:48 +0800
+Message-ID: <CAECwjAjknY85+YOn07o6ixHkODkkE+85GrMn016ZUESq3EAfMg@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_050045_104938_54802733 
-X-CRM114-Status: UNSURE (   5.43  )
+X-CRM114-CacheID: sfid-20190528_050102_763702_13FE82FF 
+X-CRM114-Status: UNSURE (   6.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -64,13 +69,12 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:72d listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (threshnode[at]gmail.com)
+ provider (yszhou4tech[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -78,7 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] Netgear DM200 Boot Issue/Patch Availability?
+Subject: Re: [OpenWrt-Devel] [PATCH 3/4] base-files: move urandom seed bits
+ into separate package
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,60 +95,20 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1635223283935297215=="
+Cc: =?UTF-8?Q?Stephan_M=C3=BCller?= <smueller@chronox.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============1635223283935297215==
-Content-Type: multipart/alternative; boundary="00000000000016d31b0589f16ac2"
-
---00000000000016d31b0589f16ac2
-Content-Type: text/plain; charset="UTF-8"
-
-Hi folks,
-
-I was wondering if a patch enabling this device was ever released?
-
-http://lists.infradead.org/pipermail/openwrt-devel/2019-January/015556.html
-
-The wiki suggests one can only install/boot into OpenWRT by wiring up a
-JTAG/serial interface and manually intervene... Which is far beyond my
-comfort zone.
-
-Am very eagar to make use of this equipment, so any news would be really
-appreciated.
-
-All the best,
-Chris
-
---00000000000016d31b0589f16ac2
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div>Hi folks,</div><div><br></div><div>I was wondering if=
- a patch enabling this device was ever released?</div><div><br></div><div><=
-a href=3D"http://lists.infradead.org/pipermail/openwrt-devel/2019-January/0=
-15556.html">http://lists.infradead.org/pipermail/openwrt-devel/2019-January=
-/015556.html</a></div><div><br></div><div>The wiki suggests one can only in=
-stall/boot into OpenWRT by wiring up a JTAG/serial interface and manually i=
-ntervene... Which is far beyond my comfort zone.<br></div><div><br></div><d=
-iv>Am very eagar to make use of this equipment, so any news would=C2=A0be r=
-eally appreciated.</div><div><br></div><div>All the best,</div><div>Chris<b=
-r></div></div>
-
---00000000000016d31b0589f16ac2--
-
-
---===============1635223283935297215==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1635223283935297215==--
-
+T24gVHVlLCAyOCBNYXkgMjAxOSBhdCAwNTozMCwgUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5j
+ej4gd3JvdGU6CgouLi4KCj4gKwo+ICtzYXZlKCkgewo+ICsgICAgdG91Y2ggIiQxLnRtcCIKPiAr
+ICAgIGNob3duIHJvb3Q6cm9vdCAiJDEudG1wIgo+ICsgICAgY2htb2QgNjAwICIkMS50bXAiCj4g
+KyAgICBnZXRyYW5kb20gNTEyID4gIiQxLnRtcCIKPiArICAgIG12ICIkMS50bXAiICIkMSIKPiAr
+ICAgIGVjaG8gIlNlZWQgc2F2ZWQgKCQxKSIKPiArfQoKTWF5YmUgd2UgY291bGQgcHJlcGFyZSB0
+aGUgLnRtcCBmaWxlIGluIC90bXAgb2YgdG1wZnMgdHlwZSwgdG8gc2F2ZSBhCmZldyByb3VuZHMg
+b2Ygbm9yIGZsYXNoIHdyaXRlcy4KCiAgICAgICAgICAgICAgICB5b3Vzb25nCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxp
+bmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3Bl
+bndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

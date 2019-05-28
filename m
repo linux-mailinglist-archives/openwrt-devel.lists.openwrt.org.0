@@ -2,74 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32E172BF7A
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 08:34:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 356A82C196
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 10:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l1RO8aQd3jAefGvMdSDyihQ0qd2UYq4f3MuBZdC1vGE=; b=GIIMFDwZ1+/K/3
-	uEgUtM7dRAwO+dWIJM5+UFT5dnCLph0S40JjxvPY5lTymIOueAaAV3MfK3IxBRDqjVn10sOQ7nDXr
-	VCYRgvqxVcYMepFliET9eN8IhdtupQBEcKuNBMV/7n445EsMvdnYlG0l/54nhgBrHU6OM4eJjERFS
-	RNkN5Py5R9FILyT9NUyEs4W0+c/P5auYpAHEm7PVUIncjsRqSfrRvYvPwbypmqXWd8JPRUn/nyRj2
-	//lx+V0baCOODOsK6uT0hSW+VBKRlH+Pezpyr4xRFFBvqfDLfSa9aU07y1+FdER4mMcZfxB1ikUyX
-	vAxFgV27LftdBzqOx8aA==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=KS955KmUUEedxWs1TExrjbOB2kJNJnG5eUz/Ohk1zC0=; b=ZDc7LR53WIxqhLxyfgGaLGeFXZ
+	Eij8nfN03OzCXa8uJ896CmaIvuBkLp9GnUk+iR9eS+9VLBOi66MGUVa+QdBqfShDi0bpXPWgwOxd3
+	YkQljXSumqu6jwFmrJQIa+e9X+ADVB2Njb767rwXvRAe09Kx9KjZXg/Fj7lmFoNhIHfmp6i78qxGt
+	iQ9LZUHzKk7d71+bOkHTvt/KQqyRwK6/N0w1Kfn1cR0yZ5Lpdq0S+9ZFXCrjpi/RKE0FdHHJoSFFL
+	IvOWfVWScVN2xSTDxL8JtocjuXkAgZIk4+RA3SXAvjlNpk8hFwf31496eQxpGzxacmDQ6cZaRKPzN
+	41EW6S0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVVgn-0004Ky-FO; Tue, 28 May 2019 06:34:25 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::8])
+	id 1hVXkO-0006Rl-Vs; Tue, 28 May 2019 08:46:17 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVVge-0004Jv-9x
- for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 06:34:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1559025249;
- s=strato-dkim-0002; d=chronox.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=DyXEUBsCIgAXT5n22JDG9v1udhUUWdDX1j0gN2FUyQk=;
- b=QBGcGzkCM9RBKJaVZaDR0hFGTfVBhnRZt6SoG7B5ldgVt/qQ6JCEUQwqmXECqXx+Vq
- oLFE2rCLiVG3RkcniNXJJB95DI1JwOswTv4vjWiEHAxyaHm5UI/QSh6f2e2g/N9GJ6h5
- vg3Sy+8ISi9Ueh0RiBul/SmW6yxSMsdI51NdpT8QSYCSAgi8dZE3uFIzZgV3KQUSvgLv
- IwPw59+5sz9yFqzV8xt1SaiwqJ1pq7wHWRPa9w1GihKE5mvRtAimtleyVu1PKsQNFNLN
- r7neKnwGi3/huxMYGjcBhyE+w0xOZu17f3nj1LDTRVvfsj5+WOlMoyK0e478n6u6CpFu
- pPSQ==
-X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPaJvSfTerW"
-X-RZG-CLASS-ID: mo00
-Received: from tauon.chronox.de by smtp.strato.de (RZmta 44.18 DYNA|AUTH)
- with ESMTPSA id R0373fv4S6Y9lHu
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Tue, 28 May 2019 08:34:09 +0200 (CEST)
-From: Stephan Mueller <smueller@chronox.de>
-To: Petr =?utf-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
-Date: Tue, 28 May 2019 08:34:08 +0200
-Message-ID: <15593483.ERmGyQBebA@tauon.chronox.de>
-In-Reply-To: <1558992584-11997-4-git-send-email-ynezz@true.cz>
+ id 1hVXkG-0006RB-Ev
+ for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 08:46:10 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 4B6024885;
+ Tue, 28 May 2019 10:46:06 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 89164a97;
+ Tue, 28 May 2019 10:46:05 +0200 (CEST)
+Date: Tue, 28 May 2019 10:46:05 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Stephan Mueller <smueller@chronox.de>
+Message-ID: <20190528084605.GA13432@meh.true.cz>
 References: <1558992584-11997-1-git-send-email-ynezz@true.cz>
  <1558992584-11997-4-git-send-email-ynezz@true.cz>
+ <15593483.ERmGyQBebA@tauon.chronox.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <15593483.ERmGyQBebA@tauon.chronox.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_233416_939137_D285AD64 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190528_014608_644938_0DC8F302 
+X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:8 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 Subject: Re: [OpenWrt-Devel] [PATCH 3/4] base-files: move urandom seed bits
  into separate package
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -83,151 +69,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QW0gTW9udGFnLCAyNy4gTWFpIDIwMTksIDIzOjI5OjQzIENFU1Qgc2NocmllYiBQZXRyIMWgdGV0
-aWFyOgoKSGkgUGV0ciwKCj4gU28gaXQncyBwb3NzaWJsZSB0byBpbnN0YWxsIG9yIHJlbW92ZSBp
-dCBhcyBuZWVkZWQuCj4gCj4gU2lnbmVkLW9mZi1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1
-ZS5jej4KPiAtLS0KPiAgcGFja2FnZS9iYXNlLWZpbGVzL01ha2VmaWxlICAgICAgICAgICAgICAg
-ICAgICAgICAgfCAxMSArKysrKysrLQo+ICBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvZXRjL2lu
-aXQuZC91cmFuZG9tX3NlZWQgICB8IDEyIC0tLS0tLS0tCj4gIC4uLi9iYXNlLWZpbGVzL2ZpbGVz
-L2xpYi9wcmVpbml0LzgxX3VyYW5kb21fc2VlZCAgIHwgMjQgLS0tLS0tLS0tLS0tLS0tLQo+ICBw
-YWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi91cmFuZG9tX3NlZWQgICAgICAgICB8IDIwIC0t
-LS0tLS0tLS0tLS0tCj4gIHBhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9NYWtlZmlsZSAgICAg
-ICAgICAgICAgIHwgMzIKPiArKysrKysrKysrKysrKysrKysrKysrIC4uLi91cmFuZG9tLXNlZWQv
-ZmlsZXMvZXRjL2luaXQuZC91cmFuZG9tX3NlZWQgICAgIHwKPiAxMiArKysrKysrKwo+ICAuLi4v
-dXJhbmRvbS1zZWVkL2ZpbGVzL2xpYi9wcmVpbml0LzgxX3VyYW5kb21fc2VlZCB8IDI0ICsrKysr
-KysrKysrKysrKysKPiAgLi4uL3N5c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvc2Jpbi91cmFuZG9t
-X3NlZWQgICAgfCAyMCArKysrKysrKysrKysrKwo+ICA4IGZpbGVzIGNoYW5nZWQsIDk4IGluc2Vy
-dGlvbnMoKyksIDU3IGRlbGV0aW9ucygtKQo+ICBkZWxldGUgbW9kZSAxMDA3NTUgcGFja2FnZS9i
-YXNlLWZpbGVzL2ZpbGVzL2V0Yy9pbml0LmQvdXJhbmRvbV9zZWVkCj4gIGRlbGV0ZSBtb2RlIDEw
-MDY0NCBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvbGliL3ByZWluaXQvODFfdXJhbmRvbV9zZWVk
-Cj4gIGRlbGV0ZSBtb2RlIDEwMDc1NSBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi91cmFu
-ZG9tX3NlZWQKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHBhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2Vl
-ZC9NYWtlZmlsZQo+ICBjcmVhdGUgbW9kZSAxMDA3NTUKPiBwYWNrYWdlL3N5c3RlbS91cmFuZG9t
-LXNlZWQvZmlsZXMvZXRjL2luaXQuZC91cmFuZG9tX3NlZWQgY3JlYXRlIG1vZGUKPiAxMDA2NDQg
-cGFja2FnZS9zeXN0ZW0vdXJhbmRvbS1zZWVkL2ZpbGVzL2xpYi9wcmVpbml0LzgxX3VyYW5kb21f
-c2VlZCBjcmVhdGUKPiBtb2RlIDEwMDc1NSBwYWNrYWdlL3N5c3RlbS91cmFuZG9tLXNlZWQvZmls
-ZXMvc2Jpbi91cmFuZG9tX3NlZWQKPiAKPiBkaWZmIC0tZ2l0IGEvcGFja2FnZS9iYXNlLWZpbGVz
-L01ha2VmaWxlIGIvcGFja2FnZS9iYXNlLWZpbGVzL01ha2VmaWxlCj4gaW5kZXggNjA5ZmZhMmMz
-ODkxLi45MWQ2NzdhY2IzYmUgMTAwNjQ0Cj4gLS0tIGEvcGFja2FnZS9iYXNlLWZpbGVzL01ha2Vm
-aWxlCj4gKysrIGIvcGFja2FnZS9iYXNlLWZpbGVzL01ha2VmaWxlCj4gQEAgLTEyLDcgKzEyLDcg
-QEAgaW5jbHVkZSAkKElOQ0xVREVfRElSKS92ZXJzaW9uLm1rCj4gIGluY2x1ZGUgJChJTkNMVURF
-X0RJUikvZmVlZHMubWsKPiAKPiAgUEtHX05BTUU6PWJhc2UtZmlsZXMKPiAtUEtHX1JFTEVBU0U6
-PTE5Nwo+ICtQS0dfUkVMRUFTRTo9MTk4Cj4gIFBLR19GTEFHUzo9bm9uc2hhcmVkCj4gCj4gIFBL
-R19GSUxFX0RFUEVORFM6PSQoUExBVEZPUk1fRElSKS8gJChHRU5FUklDX1BMQVRGT1JNX0RJUikv
-YmFzZS1maWxlcy8KPiBAQCAtNDMsNiArNDMsMTUgQEAgZGVmaW5lIFBhY2thZ2UvYmFzZS1maWxl
-cwo+ICAgIFZFUlNJT046PSQoUEtHX1JFTEVBU0UpLSQoUkVWSVNJT04pCj4gIGVuZGVmCj4gCj4g
-K2RlZmluZSBQYWNrYWdlL3VyYW5kb20tc2VlZAo+ICsgIFNFQ1RJT046PWJhc2UKPiArICBDQVRF
-R09SWTo9QmFzZSBzeXN0ZW0KPiArICBERVBFTkRTOj0rbGliYyArdWJveC1nZXRyYW5kb20KPiAr
-ICBUSVRMRTo9L2V0Yy91cmFuZG9tLnNlZWQgaGFuZGxpbmcgZm9yIE9wZW5XcnQKPiArICBVUkw6
-PWh0dHA6Ly9vcGVud3J0Lm9yZy8KPiArICBWRVJTSU9OOj0kKFBLR19SRUxFQVNFKS0kKFJFVklT
-SU9OKQo+ICtlbmRlZgo+ICsKPiAgZGVmaW5lIFBhY2thZ2UvYmFzZS1maWxlcy9jb25mZmlsZXMK
-PiAgL2V0Yy9jb25maWcvCj4gIC9ldGMvY29uZmlnL25ldHdvcmsKPiBkaWZmIC0tZ2l0IGEvcGFj
-a2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2V0Yy9pbml0LmQvdXJhbmRvbV9zZWVkCj4gYi9wYWNrYWdl
-L2Jhc2UtZmlsZXMvZmlsZXMvZXRjL2luaXQuZC91cmFuZG9tX3NlZWQgZGVsZXRlZCBmaWxlIG1v
-ZGUgMTAwNzU1Cj4gaW5kZXggMTdkOWMxMzQwMDc4Li4wMDAwMDAwMDAwMDAKPiAtLS0gYS9wYWNr
-YWdlL2Jhc2UtZmlsZXMvZmlsZXMvZXRjL2luaXQuZC91cmFuZG9tX3NlZWQKPiArKysgL2Rldi9u
-dWxsCj4gQEAgLTEsMTIgKzAsMCBAQAo+IC0jIS9iaW4vc2ggL2V0Yy9yYy5jb21tb24KPiAtCj4g
-LVNUQVJUPTk5Cj4gLVVTRV9QUk9DRD0xCj4gLQo+IC1zdGFydF9zZXJ2aWNlKCkgewo+IC0gICAg
-cHJvY2Rfb3Blbl9pbnN0YW5jZSAidXJhbmRvbV9zZWVkIgo+IC0gICAgcHJvY2Rfc2V0X3BhcmFt
-IGNvbW1hbmQgIi9zYmluL3VyYW5kb21fc2VlZCIKPiAtICAgIHByb2NkX3NldF9wYXJhbSBzdGRv
-dXQgMQo+IC0gICAgcHJvY2Rfc2V0X3BhcmFtIHN0ZGVyciAxCj4gLSAgICBwcm9jZF9jbG9zZV9p
-bnN0YW5jZQo+IC19Cj4gZGlmZiAtLWdpdCBhL3BhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9saWIv
-cHJlaW5pdC84MV91cmFuZG9tX3NlZWQKPiBiL3BhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9saWIv
-cHJlaW5pdC84MV91cmFuZG9tX3NlZWQgZGVsZXRlZCBmaWxlIG1vZGUKPiAxMDA2NDQKPiBpbmRl
-eCAyNjIxMmM2MGI1ZTAuLjAwMDAwMDAwMDAwMAo+IC0tLSBhL3BhY2thZ2UvYmFzZS1maWxlcy9m
-aWxlcy9saWIvcHJlaW5pdC84MV91cmFuZG9tX3NlZWQKPiArKysgL2Rldi9udWxsCj4gQEAgLTEs
-MjQgKzAsMCBAQAo+IC0jIS9iaW4vc2gKPiAtCj4gLWxvZ191cmFuZG9tX3NlZWQoKSB7Cj4gLSAg
-ICBlY2hvICJ1cmFuZG9tLXNlZWQ6ICQxIiA+IC9kZXYva21zZwo+IC19Cj4gLQo+IC1fZG9fdXJh
-bmRvbV9zZWVkKCkgewo+IC0gICAgWyAtZiAiJDEiIF0gfHwgeyBsb2dfdXJhbmRvbV9zZWVkICJT
-ZWVkIGZpbGUgbm90IGZvdW5kICgkMSkiOyByZXR1cm47IH0KPiAtICAgIFsgLU8gIiQxIiAtYSAt
-RyAiJDEiIC1hICEgLXggIiQxIiBdIHx8IHsgbG9nX3VyYW5kb21fc2VlZCAiV3Jvbmcgb3duZXIK
-PiAvIHBlcm1pc3Npb25zIGZvciAkMSI7IHJldHVybjsgfSAtCj4gLSAgICBsb2dfdXJhbmRvbV9z
-ZWVkICJTZWVkaW5nIHdpdGggJDEiCj4gLSAgICBjYXQgIiQxIiA+IC9kZXYvdXJhbmRvbQo+IC19
-Cj4gLQo+IC1kb191cmFuZG9tX3NlZWQoKSB7Cj4gLSAgICBbIC1jIC9kZXYvdXJhbmRvbSBdIHx8
-IHsgbG9nX3VyYW5kb21fc2VlZCAiU29tZXRoaW5nIGlzIHdyb25nIHdpdGgKPiAvZGV2L3VyYW5k
-b20iOyByZXR1cm47IH0gLQo+IC0gICAgX2RvX3VyYW5kb21fc2VlZCAiL2V0Yy91cmFuZG9tLnNl
-ZWQiCj4gLQo+IC0gICAgU0VFRD0iJCh1Y2kgLXEgZ2V0IHN5c3RlbS5Ac3lzdGVtWzBdLnVyYW5k
-b21fc2VlZCkiCj4gLSAgICBbICIke1NFRUQ6MDoxfSIgPSAiLyIgLWEgIiRTRUVEIiAhPSAiL2V0
-Yy91cmFuZG9tLnNlZWQiIF0gJiYKPiBfZG9fdXJhbmRvbV9zZWVkICIkU0VFRCIgLX0KPiAtCj4g
-LWJvb3RfaG9va19hZGQgcHJlaW5pdF9tYWluIGRvX3VyYW5kb21fc2VlZAo+IGRpZmYgLS1naXQg
-YS9wYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi91cmFuZG9tX3NlZWQKPiBiL3BhY2thZ2Uv
-YmFzZS1maWxlcy9maWxlcy9zYmluL3VyYW5kb21fc2VlZCBkZWxldGVkIGZpbGUgbW9kZSAxMDA3
-NTUKPiBpbmRleCA3MDQzZThhZjRlNmEuLjAwMDAwMDAwMDAwMAo+IC0tLSBhL3BhY2thZ2UvYmFz
-ZS1maWxlcy9maWxlcy9zYmluL3VyYW5kb21fc2VlZAo+ICsrKyAvZGV2L251bGwKPiBAQCAtMSwy
-MCArMCwwIEBACj4gLSMhL2Jpbi9zaAo+IC1zZXQgLWUKPiAtCj4gLXRyYXAgJ1sgIiQ/IiAtZXEg
-MCBdIHx8IGVjaG8gIkFuIGVycm9yIG9jY3VyZWQiID4mMicgRVhJVAo+IC0KPiAtc2F2ZSgpIHsK
-PiAtICAgIHRvdWNoICIkMS50bXAiCj4gLSAgICBjaG93biByb290OnJvb3QgIiQxLnRtcCIKPiAt
-ICAgIGNobW9kIDYwMCAiJDEudG1wIgo+IC0gICAgZ2V0cmFuZG9tIDUxMiA+ICIkMS50bXAiCj4g
-LSAgICBtdiAiJDEudG1wIiAiJDEiCj4gLSAgICBlY2hvICJTZWVkIHNhdmVkICgkMSkiCj4gLX0K
-PiAtCj4gLVNFRUQ9IiQodWNpIC1xIGdldCBzeXN0ZW0uQHN5c3RlbVswXS51cmFuZG9tX3NlZWQg
-fHwgdHJ1ZSkiCj4gLVsgIiR7U0VFRDowOjF9IiA9ICIvIiBdICYmIHNhdmUgIiRTRUVEIgo+IC0K
-PiAtU0VFRD0vZXRjL3VyYW5kb20uc2VlZAo+IC1bICEgLWYgJFNFRUQgXSAmJiBzYXZlICIkU0VF
-RCIKPiAtdHJ1ZQo+IGRpZmYgLS1naXQgYS9wYWNrYWdlL3N5c3RlbS91cmFuZG9tLXNlZWQvTWFr
-ZWZpbGUKPiBiL3BhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9NYWtlZmlsZSBuZXcgZmlsZSBt
-b2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4uNmJkZTJlMGI4YTQyCj4gLS0tIC9kZXYv
-bnVsbAo+ICsrKyBiL3BhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9NYWtlZmlsZQo+IEBAIC0w
-LDAgKzEsMzIgQEAKPiAraW5jbHVkZSAkKFRPUERJUikvcnVsZXMubWsKPiArCj4gK1BLR19OQU1F
-Oj11cmFuZG9tLXNlZWQKPiArUEtHX1ZFUlNJT046PTEuMAo+ICtQS0dfUkVMRUFTRTo9MQo+ICtQ
-S0dfTElDRU5TRTo9R1BMLTIuMAo+ICsKPiArUEtHX0JVSUxEX0RJUiA6PSAkKEJVSUxEX0RJUikv
-JChQS0dfTkFNRSkKPiArCj4gK2luY2x1ZGUgJChJTkNMVURFX0RJUikvcGFja2FnZS5tawo+ICsK
-PiArZGVmaW5lIFBhY2thZ2UvJChQS0dfTkFNRSkKPiArICBTRUNUSU9OOj1iYXNlCj4gKyAgQ0FU
-RUdPUlk6PUJhc2Ugc3lzdGVtCj4gKyAgREVQRU5EUzo9K2dldHJhbmRvbQo+ICsgIFRJVExFOj0v
-ZXRjL3VyYW5kb20uc2VlZCBoYW5kbGluZyBmb3IgT3BlbldydAo+ICsgIFVSTDo9aHR0cDovL29w
-ZW53cnQub3JnLwo+ICtlbmRlZgo+ICsKPiArZGVmaW5lIEJ1aWxkL1ByZXBhcmUKPiArCW1rZGly
-IC1wICQoUEtHX0JVSUxEX0RJUikKPiArZW5kZWYKPiArCj4gK2RlZmluZSBCdWlsZC9Db21waWxl
-L0RlZmF1bHQKPiArZW5kZWYKPiArQnVpbGQvQ29tcGlsZSA9ICQoQnVpbGQvQ29tcGlsZS9EZWZh
-dWx0KQo+ICsKPiArZGVmaW5lIFBhY2thZ2UvJChQS0dfTkFNRSkvaW5zdGFsbAo+ICsJJChDUCkg
-Li9maWxlcy8qICQoMSkvCj4gK2VuZGVmCj4gKwo+ICskKGV2YWwgJChjYWxsIEJ1aWxkUGFja2Fn
-ZSx1cmFuZG9tLXNlZWQpKQo+IGRpZmYgLS1naXQgYS9wYWNrYWdlL3N5c3RlbS91cmFuZG9tLXNl
-ZWQvZmlsZXMvZXRjL2luaXQuZC91cmFuZG9tX3NlZWQKPiBiL3BhY2thZ2Uvc3lzdGVtL3VyYW5k
-b20tc2VlZC9maWxlcy9ldGMvaW5pdC5kL3VyYW5kb21fc2VlZCBuZXcgZmlsZSBtb2RlCj4gMTAw
-NzU1Cj4gaW5kZXggMDAwMDAwMDAwMDAwLi4xN2Q5YzEzNDAwNzgKPiAtLS0gL2Rldi9udWxsCj4g
-KysrIGIvcGFja2FnZS9zeXN0ZW0vdXJhbmRvbS1zZWVkL2ZpbGVzL2V0Yy9pbml0LmQvdXJhbmRv
-bV9zZWVkCj4gQEAgLTAsMCArMSwxMiBAQAo+ICsjIS9iaW4vc2ggL2V0Yy9yYy5jb21tb24KPiAr
-Cj4gK1NUQVJUPTk5Cj4gK1VTRV9QUk9DRD0xCj4gKwo+ICtzdGFydF9zZXJ2aWNlKCkgewo+ICsg
-ICAgcHJvY2Rfb3Blbl9pbnN0YW5jZSAidXJhbmRvbV9zZWVkIgo+ICsgICAgcHJvY2Rfc2V0X3Bh
-cmFtIGNvbW1hbmQgIi9zYmluL3VyYW5kb21fc2VlZCIKPiArICAgIHByb2NkX3NldF9wYXJhbSBz
-dGRvdXQgMQo+ICsgICAgcHJvY2Rfc2V0X3BhcmFtIHN0ZGVyciAxCj4gKyAgICBwcm9jZF9jbG9z
-ZV9pbnN0YW5jZQoKSnVzdCBhcyBhIHJlY29tbWVuZGF0aW9uOiB3aGF0IGFib3V0IHRoZSBzY3Jp
-cHQgaXMgaW52b2tlZCwgc2F5LCBvbmNlIGV2ZXJ5IApob3VyIG9yIHNvPwoKPiArfQo+IGRpZmYg
-LS1naXQgYS9wYWNrYWdlL3N5c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvbGliL3ByZWluaXQvODFf
-dXJhbmRvbV9zZWVkCj4gYi9wYWNrYWdlL3N5c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvbGliL3By
-ZWluaXQvODFfdXJhbmRvbV9zZWVkIG5ldyBmaWxlCj4gbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAw
-MDAwMDAwMDAuLjI2MjEyYzYwYjVlMAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9wYWNrYWdlL3N5
-c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvbGliL3ByZWluaXQvODFfdXJhbmRvbV9zZWVkCj4gQEAg
-LTAsMCArMSwyNCBAQAo+ICsjIS9iaW4vc2gKPiArCj4gK2xvZ191cmFuZG9tX3NlZWQoKSB7Cj4g
-KyAgICBlY2hvICJ1cmFuZG9tLXNlZWQ6ICQxIiA+IC9kZXYva21zZwo+ICt9Cj4gKwo+ICtfZG9f
-dXJhbmRvbV9zZWVkKCkgewo+ICsgICAgWyAtZiAiJDEiIF0gfHwgeyBsb2dfdXJhbmRvbV9zZWVk
-ICJTZWVkIGZpbGUgbm90IGZvdW5kICgkMSkiOyByZXR1cm47IH0KPiArICAgIFsgLU8gIiQxIiAt
-YSAtRyAiJDEiIC1hICEgLXggIiQxIiBdIHx8IHsgbG9nX3VyYW5kb21fc2VlZCAiV3Jvbmcgb3du
-ZXIKPiAvIHBlcm1pc3Npb25zIGZvciAkMSI7IHJldHVybjsgfSArCj4gKyAgICBsb2dfdXJhbmRv
-bV9zZWVkICJTZWVkaW5nIHdpdGggJDEiCj4gKyAgICBjYXQgIiQxIiA+IC9kZXYvdXJhbmRvbQo+
-ICt9Cj4gKwo+ICtkb191cmFuZG9tX3NlZWQoKSB7Cj4gKyAgICBbIC1jIC9kZXYvdXJhbmRvbSBd
-IHx8IHsgbG9nX3VyYW5kb21fc2VlZCAiU29tZXRoaW5nIGlzIHdyb25nIHdpdGgKPiAvZGV2L3Vy
-YW5kb20iOyByZXR1cm47IH0gKwo+ICsgICAgX2RvX3VyYW5kb21fc2VlZCAiL2V0Yy91cmFuZG9t
-LnNlZWQiCj4gKwo+ICsgICAgU0VFRD0iJCh1Y2kgLXEgZ2V0IHN5c3RlbS5Ac3lzdGVtWzBdLnVy
-YW5kb21fc2VlZCkiCj4gKyAgICBbICIke1NFRUQ6MDoxfSIgPSAiLyIgLWEgIiRTRUVEIiAhPSAi
-L2V0Yy91cmFuZG9tLnNlZWQiIF0gJiYKPiBfZG9fdXJhbmRvbV9zZWVkICIkU0VFRCIgK30KPiAr
-Cj4gK2Jvb3RfaG9va19hZGQgcHJlaW5pdF9tYWluIGRvX3VyYW5kb21fc2VlZAo+IGRpZmYgLS1n
-aXQgYS9wYWNrYWdlL3N5c3RlbS91cmFuZG9tLXNlZWQvZmlsZXMvc2Jpbi91cmFuZG9tX3NlZWQK
-PiBiL3BhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9maWxlcy9zYmluL3VyYW5kb21fc2VlZCBu
-ZXcgZmlsZSBtb2RlIDEwMDc1NQo+IGluZGV4IDAwMDAwMDAwMDAwMC4uNzA0M2U4YWY0ZTZhCj4g
-LS0tIC9kZXYvbnVsbAo+ICsrKyBiL3BhY2thZ2Uvc3lzdGVtL3VyYW5kb20tc2VlZC9maWxlcy9z
-YmluL3VyYW5kb21fc2VlZAo+IEBAIC0wLDAgKzEsMjAgQEAKPiArIyEvYmluL3NoCj4gK3NldCAt
-ZQo+ICsKPiArdHJhcCAnWyAiJD8iIC1lcSAwIF0gfHwgZWNobyAiQW4gZXJyb3Igb2NjdXJlZCIg
-PiYyJyBFWElUCj4gKwo+ICtzYXZlKCkgewo+ICsgICAgdG91Y2ggIiQxLnRtcCIKPiArICAgIGNo
-b3duIHJvb3Q6cm9vdCAiJDEudG1wIgo+ICsgICAgY2htb2QgNjAwICIkMS50bXAiCj4gKyAgICBn
-ZXRyYW5kb20gNTEyID4gIiQxLnRtcCIKPiArICAgIG12ICIkMS50bXAiICIkMSIKPiArICAgIGVj
-aG8gIlNlZWQgc2F2ZWQgKCQxKSIKPiArfQo+ICsKPiArU0VFRD0iJCh1Y2kgLXEgZ2V0IHN5c3Rl
-bS5Ac3lzdGVtWzBdLnVyYW5kb21fc2VlZCB8fCB0cnVlKSIKPiArWyAiJHtTRUVEOjA6MX0iID0g
-Ii8iIF0gJiYgc2F2ZSAiJFNFRUQiCj4gKwo+ICtTRUVEPS9ldGMvdXJhbmRvbS5zZWVkCj4gK1sg
-ISAtZiAkU0VFRCBdICYmIHNhdmUgIiRTRUVEIgo+ICt0cnVlCgoKCkNpYW8KU3RlcGhhbgoKCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRl
-dmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8v
-bGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Stephan Mueller <smueller@chronox.de> [2019-05-28 08:34:08]:
+
+Hi,
+
+[...]
+
+> > +start_service() {
+> > +    procd_open_instance "urandom_seed"
+> > +    procd_set_param command "/sbin/urandom_seed"
+> > +    procd_set_param stdout 1
+> > +    procd_set_param stderr 1
+> > +    procd_close_instance
+> 
+> Just as a recommendation: what about the script is invoked, say, once every 
+> hour or so?
+
+unfortunately this is not an option, as currently most of the supported
+devices use SPI NOR flash for the persistent storage and those flash devices
+impose certain technological limits, like for example maximum number of erase
+cycles for each sector of flash memory which could be around 100000 erase
+cycles under certain conditions, so it might be less. That's the reason why we
+don't even try to update this seed file during every boot.
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

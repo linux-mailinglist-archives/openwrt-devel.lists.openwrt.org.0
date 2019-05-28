@@ -2,94 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61F4F2CAAF
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 17:52:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF3992CC0D
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 18:32:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jcRJF8VAlOTnKpjDLQu9DuMb7eTgnpq1Qf/ZXo5z8Ak=; b=u89np8383ZcZAwyRHVp4OMtoq
-	NKSPjtq9Rtsbn5aHhFzn1npPFEKDNLhlhE6ohCB4cwiMS8d/YhUsKsWfztz10ueGLgx7FENKoHDR0
-	U2Fxlf9R78U/VSO11qbc9qYEgyIs3quEorWRfVjShd17mkZvCjgToh9pLiohunh8UNyCDJQd0oXAH
-	Oze4m4Xs2Blnas6JigJpYmAAwsMGbLlfhIdBmXTLqRTLZPy967bw8KONDEH0AlhqX/n148/FdkaZS
-	RAW9zA/Y7cLsst6u7feEw2erJTajeaQnGwDaDqKA/MjtwBC3OPg5IQJxMRfuSTo7F6kF7LVAJec7I
-	KZ8ja5D+g==;
+	Subject:MIME-Version:Date:Message-ID:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ogL4UbDN+dYc0WpkWLyeV7wqhMtlb76Qsqq9kODfbAo=; b=b62
+	UVkb6vDpXNX0ljQzfkrVOnkkOZI40Pp71OGuA2bYijK8+NnUavNhlfETrAUjNDx/2VUWXXx2bsVvy
+	nBB/7QilZM3XubWKlq4o0DgODxKj1aEOlnMo0TsR7OwDPiMGYMR4ikVMT9CEN4otYhS+/aQjJPb+2
+	KODGZk0uhKb/vcOBN9ST7TRfC6cGRNF5Ev5MnYjSRoNtZY+UY+udomrVHa+Ng5LdS6Ue/zDec/7U/
+	7Gsvnd83KVDGppKsea9YlrDTwTaIDGPA7VtfSQr5S8WWDqSJHHxTsw9sQMXTYZscXxWWTTH4X8XMT
+	CYHgHFOZjhLfBUVhE/wQGGnSSCPZwIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVeOB-0000lJ-UL; Tue, 28 May 2019 15:51:47 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1hVf1i-0002OK-Hg; Tue, 28 May 2019 16:32:38 +0000
+Received: from mx.allycomm.com ([138.68.30.55])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVeO2-0000jx-Mr
- for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 15:51:43 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id d17so3524257wmb.3
- for <openwrt-devel@lists.openwrt.org>; Tue, 28 May 2019 08:51:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language;
- bh=CaRHiTeeNv9PUsyXbVz0S+nblrabbpfupUJD98zi/HQ=;
- b=dD2x2z4VPjFwlPaG0z0r1fMtOvNT7lZBYnwCM45Ym7fwO51sVrsCpPaICK8e08Mq8H
- y8DmNy6y0S+4iSnyPREYlVyjtRByU4mcq8FGVvboQjU2A+pzg7NujFvp+9dI5J+Cczrz
- XMPyxGPwqhSkD0SgBa9ky5ljS/HH30jM2I9CGRbYMTzHpB5W8FPs5zPUDZ0AcniQ9m5R
- wswv0yt2mrrvM+/8Ojw7GSOypVaHNCC/7Z5ppl1dqF0A/aH3VQmVMyKQ7K+sYD6IJRek
- b7xMDYUms1FXZG2gR4uBYV52V+mrKrmw/1lNwbJcZs9og26jY7cj8mEqMYuyvYuWeq7r
- Jzfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language;
- bh=CaRHiTeeNv9PUsyXbVz0S+nblrabbpfupUJD98zi/HQ=;
- b=c+UE2MBwLytZmZQb7hY1ERFnBGS+8r8+vpxwxzQQ8dSrPjecbTZts0qh4rdIdES/Wb
- ewkaQsbMaHQ4kFSpkR2v1mDw2I0xmXcpSWoeXtTEKU7JHm2riYvKA/voXVpMyAIMjtvL
- aXwOYWertnTWw6rShiMJCXDq4VYstzkHU6SV4eWzm2Yhxk3FuZVMEOZbqp3egIocU55d
- nM7gT1YbcWTSguTewZVuQ9mRZ8KxLuPeDrsgty47d6wTVa69AACwxvSi+7wFI83HzU9p
- l7e9H1APeHZrttEa/DtgB7XZ2jiT52RIl+ogOJNU4UyHCDla/3+NjFhw0Mk2wiWrC/gt
- N6rA==
-X-Gm-Message-State: APjAAAXzq4XRhcYrED5FTUSZeswctqyi1kJ011x/zKBZyumUUXHEumiJ
- 5dKLNTvRDE6Jhhs/dCVA1YXYFfKj
-X-Google-Smtp-Source: APXvYqz0GHuWb+KPS4uHjeo7Wc9eFBnr0kb1Xe7s85GCrGPIx2FUQxtACt7uIIFe7fMEqm5QYCjo1A==
-X-Received: by 2002:a7b:c397:: with SMTP id s23mr3470588wmj.85.1559058686798; 
- Tue, 28 May 2019 08:51:26 -0700 (PDT)
-Received: from [192.168.111.134] ([151.84.207.109])
- by smtp.gmail.com with ESMTPSA id l14sm13604914wrt.57.2019.05.28.08.51.25
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 May 2019 08:51:26 -0700 (PDT)
-To: openwrt-devel@lists.openwrt.org
-References: <CANDHWrd_nLzKm8AXivb9xGZW=aKFniSS6GQng7NabrB83MmjRg@mail.gmail.com>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <7dc092d9-2aa3-f2a4-2448-eee0e1a7f2f9@gmail.com>
-Date: Tue, 28 May 2019 17:51:34 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hVf1a-0002N1-GW
+ for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 16:32:32 +0000
+Received: from jkletsky-mbp15.guidewire.com (inet.guidewire.com [199.91.42.30])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.allycomm.com (Postfix) with ESMTPSA id 82F703EC36;
+ Tue, 28 May 2019 09:32:22 -0700 (PDT)
+From: Jeff Kletsky <lede@allycomm.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Message-ID: <4f2b99b8-0ee5-ed1e-4ffb-2aea0b8384d9@allycomm.com>
+Date: Tue, 28 May 2019 09:32:22 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CANDHWrd_nLzKm8AXivb9xGZW=aKFniSS6GQng7NabrB83MmjRg@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_085139_604833_F95C505D 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190528_093230_549107_923EF572 
+X-CRM114-Status: GOOD (  17.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32b listed in]
- [list.dnswl.org]
+ no trust [138.68.30.55 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bobafetthotmail[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] Netgear DM200 Boot Issue/Patch Availability?
+Subject: [OpenWrt-Devel] [RFC] Dual-Flash (NOR/NAND) Board Naming and Kernel
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -101,198 +61,355 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7996045363496861309=="
+Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
+Content-Type: multipart/mixed; boundary="===============2754871059163400194=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multi-part message in MIME format.
---===============7996045363496861309==
+--===============2754871059163400194==
 Content-Type: multipart/alternative;
- boundary="------------21C804BEF8E9D103CA62EAA2"
+ boundary="------------6F455BE3C2227D862D2E823C"
 Content-Language: en-US
 
 This is a multi-part message in MIME format.
---------------21C804BEF8E9D103CA62EAA2
+--------------6F455BE3C2227D862D2E823C
 Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
+
+With the availability of the SPI-NAND framework in Linux 4.19 and
+later it has become possible to support devices with SPI NAND on the
+ath79 platform. The two devices I've been working on have both NOR and
+NAND flash.
+
+These devices can be built in multiple configurations and, with U-Boot
+support, booted as:
+
+   * Kernel NOR,  rootfs NOR
+   * Kernel NOR,  rootfs NAND
+   * Kernel NAND, rootfs NAND
+   * Kernel NAND, rootfs NOR     (arguably "degenerate")
+
+In the case of at least the GL.iNet AR300M, the choice booting a
+NOR-resident kernel or a NAND-resident kernel can be made through
+use of a switch on the device, or by use of U-Boot environment value.
+
+Working with a dual-firmware Linksys device has convinced me of the
+value of having two, independent firmware versions, especially when
+one goes awry, either through misconfiguration or a bad build/flash.
+
+This becomes even more valuable when the "other" firmware can be
+mounted for read and potentially write access, as can be done with the
+Linksys devices[1].
+
+However, if a NOR-only kernel is booted, it is unable to access the
+NAND flash, preventing this valuable feature.
+
+The specific case that is driving naming is the AR750S. Its OEM
+configuration is kernel on NOR and file system on NAND. As either
+GL.iNet or another may provide an updated U-Boot that supports
+direct boot from NAND (like the AR300M, or finds that it already does),
+I'd like to "reserve" glinet,gl-ar750s-nand for a "full NAND" build
+in the future.
 
 
-Last attempt I saw was here https://github.com/openwrt/openwrt/pull/1770
+The proposal here is that:
 
-but it was rejected.
-
-
-I have some experience with the bootloader used in this device, I can
-
-provide more complete instructions to do the uboot fix though.
-
-TTL/serial access seems to be easy (there is a header as you see in the 
-photo),
-
-and you need an inexpensive "arduino USB-TTL dongle" to connect to this 
-device.
-
-Connect the pins as defined in the wiki, open up your serial
-
-communication program (Putty usually)
-
-and set it for 115200 serial speed, others default.
-
-Then boot the device, press a key to stop boot when you see
-
-"Hit any key to stop autoboot: 2  1  0"
-
-It should stop and accept console commands.
-
-then copy-paste this line
-
-setenv sleep 1;nmrp;sf probe 0:3;sf read $loadaddr 0x30000 
-0x400000;bootm $loadaddr
-
-This will alter the bootloader configuration that is causing the issue. 
-Now it will boot kernels up to 4MB big
-
-Will still be able to boot stock firmware, we are just increasing a size 
-limit.
-
-and then save the change by writing
-
-saveenv
-
-and then you can reboot the device by pulling the plug or writing
-
-reset
-
-Now you can install OpenWrt as normal.
-
--Alberto
+   (1) All NAND-bearing boards begin provide kernels that can
+       read/write their NAND, as well as providing UBI support
 
 
-On 28/05/19 14:00, Chris wrote:
-> Hi folks,
->
-> I was wondering if a patch enabling this device was ever released?
->
-> http://lists.infradead.org/pipermail/openwrt-devel/2019-January/015556.html
->
-> The wiki suggests one can only install/boot into OpenWRT by wiring up 
-> a JTAG/serial interface and manually intervene... Which is far beyond 
-> my comfort zone.
->
-> Am very eagar to make use of this equipment, so any news would be 
-> really appreciated.
->
-> All the best,
-> Chris
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+   (2) Boards that have both NOR and NAND memory start to be named in such a
+       manner to clearly identify the kernel and file-system locations,
+       as well as to permit future implementations of `sysupgrade` to be
+       able to "cross-grade" compatible images (NOR to/from NAND)
 
---------------21C804BEF8E9D103CA62EAA2
+
+
+On (1), only building with a SPI-NAND kernel with UBI support, the
+sizes of a "default" kernel for the ath79 platform for NOR and for
+NAND (based on WIP on the AR750S[2]) are:
+
+   * NOR only -- 1,618,231 bytes
+   * SPI-NAND -- 1,803,792 bytes
+
+for a net increase of 185,561 bytes by adding:
+
+     FEATURES += nand
+
+     CONFIG_MTD_NAND_CORE=y
+     CONFIG_MTD_SPI_NAND=y
+     CONFIG_MTD_UBI=y
+     CONFIG_MTD_UBI_BLOCK=y
+
+     CONFIG_UBIFS_FS=y
+     CONFIG_UBIFS_FS_ADVANCED_COMPR=y
+     CONFIG_UBIFS_FS_LZO=y
+     CONFIG_UBIFS_FS_ZLIB=y
+
+
+While a significant amount compared to 4 or 8 MB flash, NAND-bearing
+devices seem unlikely to be in the "bottom of the barrel" for
+resources, with 16 MB NOR being seen.  Even in the case where the
+device uses NOR for the kernel with no intention of providing a file
+system on NOR (such as the IPQ40xx-based EA6350), 4 MB of NOR should
+be more than sufficient for a kernel for at least the next several
+years (roughly double of current size, accounting for boot loader
+and device-specific partitions).
+
+This also means that if you have, for example, an AR300M which has
+NAND, you would always "look" in the "Generic devices with NAND flash"
+section for your device, then being presented, for example
+
+   [...]
+   GL.iNet AR300M (NAND)
+   GL.iNet AR300M (NOR)
+   [...]
+
+or the like. As the kernel config and required packages would be the
+same, it becomes straightforward to build and flash both to provide
+the same basic functionality, even if the total storage were different.
+
+The question of MTD-partition naming and associated auto-splitting
+becomes "trivial" with a DTS-based kernel through the use of
+node/property deletion and/or overrides in a handful of lines in
+"flavor-specific" DTS files.
+
+
+
+On (2), board (and DTS) naming, things are a bit murkier. At the
+moment, there appear to be several forms:
+
+   * legacy_name
+   * mfgr,board-name
+   * mfgr,board-name-nor
+   * mfgr,board-name-nand
+
+
+
+Leaving the migration of the legacy_name boards as a separate task,
+I'd propose for boards going forward:
+
+   * mfgr,board-name[-kernel[-rootfs]]
+
+with the suffixes applied only as needed to disambiguate.
+
+
+In more detail:
+
+   * mfgr,board-name
+
+         Single flash/kernel configuration possible due to *hardware* limitations
+         (only NOR or NAND flash present)
+
+   * mfgr,board-name-nor
+
+         Kernel and file system both on NOR
+
+   * mfgr,board-name-nand
+
+         Kernel and file system both on NAND
+
+   * mfgr,board-name-nor-nand
+
+         Kernel on NOR, file system on NAND  (OEM U-Boot on AR750S always boots NOR)
+
+   * mfgr,board-name-nand-nor (degenerate case, likely "never" offered)
+
+         Kernel on NAND, file system on NOR
+
+
+A similar naming approach would apply for the DTS files.
+
+
+
+Thoughts? Suggestions?
+
+
+
+Jeff
+
+
+[1] <https://forum.openwrt.org/t/script-mount-alternate-nand-firmware-linksys/33588?u=jeff>
+
+[2] <https://patchwork.ozlabs.org/patch/1099811/>
+
+
+--------------6F455BE3C2227D862D2E823C
 Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
 
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   </head>
   <body text="#000000" bgcolor="#FFFFFF">
-    <p><br>
-    </p>
-    <p>Last attempt I saw was here
-      <a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/pull/1770">https://github.com/openwrt/openwrt/pull/1770</a></p>
-    <p>but it was rejected.</p>
-    <p><br>
-    </p>
-    <p>I have some experience with the bootloader used in this device, I
-      can <br>
-    </p>
-    <p>provide more complete instructions to do the uboot fix though.</p>
-    <p>TTL/serial access seems to be easy (there is a header as you see
-      in the photo),</p>
-    <p>and you need an inexpensive "arduino USB-TTL dongle" to connect
-      to this device.<br>
-    </p>
-    <p>Connect the pins as defined in the wiki, open up your serial <br>
-    </p>
-    <p>communication program (Putty usually)</p>
-    <p>and set it for 115200 serial speed, others default.<br>
-    </p>
-    <p>Then boot the device, press a key to stop boot when you see <br>
-    </p>
-    <p>"Hit any key to stop autoboot: 2  1  0"</p>
-    <p>It should stop and accept console commands.<br>
-    </p>
-    <p> then copy-paste this line <br>
-    </p>
-    <p>setenv sleep 1;nmrp;sf probe 0:3;sf read $loadaddr 0x30000
-      0x400000;bootm $loadaddr</p>
-    <p>This will alter the bootloader configuration that is causing the
-      issue. Now it will boot kernels up to 4MB big</p>
-    <p>Will still be able to boot stock firmware, we are just increasing
-      a size limit.<br>
-    </p>
-    <p>and then save the change by writing</p>
-    <p>saveenv<br>
-    </p>
-    <p>and then you can reboot the device by pulling the plug or writing<br>
-    </p>
-    <p>reset</p>
-    <p>Now you can install OpenWrt as normal.<br>
-    </p>
-    <p>-Alberto<br>
-    </p>
-    <p><br>
-    </p>
-    <div class="moz-cite-prefix">On 28/05/19 14:00, Chris wrote:<br>
-    </div>
-    <blockquote type="cite"
-cite="mid:CANDHWrd_nLzKm8AXivb9xGZW=aKFniSS6GQng7NabrB83MmjRg@mail.gmail.com">
-      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <div dir="ltr">
-        <div>Hi folks,</div>
-        <div><br>
-        </div>
-        <div>I was wondering if a patch enabling this device was ever
-          released?</div>
-        <div><br>
-        </div>
-        <div><a
-href="http://lists.infradead.org/pipermail/openwrt-devel/2019-January/015556.html"
-            moz-do-not-send="true">http://lists.infradead.org/pipermail/openwrt-devel/2019-January/015556.html</a></div>
-        <div><br>
-        </div>
-        <div>The wiki suggests one can only install/boot into OpenWRT by
-          wiring up a JTAG/serial interface and manually intervene...
-          Which is far beyond my comfort zone.<br>
-        </div>
-        <div><br>
-        </div>
-        <div>Am very eagar to make use of this equipment, so any news
-          would be really appreciated.</div>
-        <div><br>
-        </div>
-        <div>All the best,</div>
-        <div>Chris<br>
-        </div>
-      </div>
-      <br>
-      <fieldset class="mimeAttachmentHeader"></fieldset>
-      <pre class="moz-quote-pre" wrap="">_______________________________________________
-openwrt-devel mailing list
-<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
-<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
+    <pre>With the availability of the SPI-NAND framework in Linux 4.19 and
+later it has become possible to support devices with SPI NAND on the
+ath79 platform. The two devices I've been working on have both NOR and
+NAND flash.
+
+These devices can be built in multiple configurations and, with U-Boot
+support, booted as:
+
+  * Kernel NOR,  rootfs NOR
+  * Kernel NOR,  rootfs NAND
+  * Kernel NAND, rootfs NAND
+  * Kernel NAND, rootfs NOR     (arguably "degenerate")
+
+In the case of at least the GL.iNet AR300M, the choice booting a 
+NOR-resident kernel or a NAND-resident kernel can be made through 
+use of a switch on the device, or by use of U-Boot environment value.
+
+Working with a dual-firmware Linksys device has convinced me of the
+value of having two, independent firmware versions, especially when
+one goes awry, either through misconfiguration or a bad build/flash.
+
+This becomes even more valuable when the "other" firmware can be
+mounted for read and potentially write access, as can be done with the
+Linksys devices[1].
+
+However, if a NOR-only kernel is booted, it is unable to access the
+NAND flash, preventing this valuable feature.
+
+The specific case that is driving naming is the AR750S. Its OEM
+configuration is kernel on NOR and file system on NAND. As either
+GL.iNet or another may provide an updated U-Boot that supports 
+direct boot from NAND (like the AR300M, or finds that it already does), 
+I'd like to "reserve" glinet,gl-ar750s-nand for a "full NAND" build 
+in the future.
+
+
+The proposal here is that:
+
+  (1) All NAND-bearing boards begin provide kernels that can 
+      read/write their NAND, as well as providing UBI support
+
+
+  (2) Boards that have both NOR and NAND memory start to be named in such a
+      manner to clearly identify the kernel and file-system locations, 
+      as well as to permit future implementations of `sysupgrade` to be
+      able to "cross-grade" compatible images (NOR to/from NAND)
+
+
+
+On (1), only building with a SPI-NAND kernel with UBI support, the
+sizes of a "default" kernel for the ath79 platform for NOR and for
+NAND (based on WIP on the AR750S[2]) are:
+
+  * NOR only -- 1,618,231 bytes
+  * SPI-NAND -- 1,803,792 bytes
+
+for a net increase of 185,561 bytes by adding:
+
+    FEATURES += nand
+
+    CONFIG_MTD_NAND_CORE=y
+    CONFIG_MTD_SPI_NAND=y
+    CONFIG_MTD_UBI=y
+    CONFIG_MTD_UBI_BLOCK=y
+
+    CONFIG_UBIFS_FS=y
+    CONFIG_UBIFS_FS_ADVANCED_COMPR=y
+    CONFIG_UBIFS_FS_LZO=y
+    CONFIG_UBIFS_FS_ZLIB=y
+
+
+While a significant amount compared to 4 or 8 MB flash, NAND-bearing
+devices seem unlikely to be in the "bottom of the barrel" for
+resources, with 16 MB NOR being seen.  Even in the case where the
+device uses NOR for the kernel with no intention of providing a file
+system on NOR (such as the IPQ40xx-based EA6350), 4 MB of NOR should
+be more than sufficient for a kernel for at least the next several
+years (roughly double of current size, accounting for boot loader 
+and device-specific partitions).
+
+This also means that if you have, for example, an AR300M which has
+NAND, you would always "look" in the "Generic devices with NAND flash"
+section for your device, then being presented, for example
+
+  [...]
+  GL.iNet AR300M (NAND)
+  GL.iNet AR300M (NOR)
+  [...]
+
+or the like. As the kernel config and required packages would be the
+same, it becomes straightforward to build and flash both to provide
+the same basic functionality, even if the total storage were different.
+
+The question of MTD-partition naming and associated auto-splitting
+becomes "trivial" with a DTS-based kernel through the use of 
+node/property deletion and/or overrides in a handful of lines in 
+"flavor-specific" DTS files.
+
+
+
+On (2), board (and DTS) naming, things are a bit murkier. At the
+moment, there appear to be several forms:
+
+  * legacy_name
+  * mfgr,board-name
+  * mfgr,board-name-nor
+  * mfgr,board-name-nand
+
+
+
+Leaving the migration of the legacy_name boards as a separate task,
+I'd propose for boards going forward:
+
+  * mfgr,board-name[-kernel[-rootfs]]
+
+with the suffixes applied only as needed to disambiguate.
+
+
+In more detail:
+
+  * mfgr,board-name
+
+        Single flash/kernel configuration possible due to *hardware* limitations
+        (only NOR or NAND flash present)
+
+  * mfgr,board-name-nor
+
+        Kernel and file system both on NOR
+
+  * mfgr,board-name-nand
+
+        Kernel and file system both on NAND
+
+  * mfgr,board-name-nor-nand
+
+        Kernel on NOR, file system on NAND  (OEM U-Boot on AR750S always boots NOR)
+
+  * mfgr,board-name-nand-nor (degenerate case, likely "never" offered)
+
+        Kernel on NAND, file system on NOR
+
+
+A similar naming approach would apply for the DTS files.
+
+
+
+Thoughts? Suggestions?
+
+
+
+Jeff
+
+
+[1] <a class="moz-txt-link-rfc2396E" href="https://forum.openwrt.org/t/script-mount-alternate-nand-firmware-linksys/33588?u=jeff">&lt;https://forum.openwrt.org/t/script-mount-alternate-nand-firmware-linksys/33588?u=jeff&gt;</a>
+
+[2] <a class="moz-txt-link-rfc2396E" href="https://patchwork.ozlabs.org/patch/1099811/">&lt;https://patchwork.ozlabs.org/patch/1099811/&gt;</a>
+
 </pre>
-    </blockquote>
   </body>
 </html>
 
---------------21C804BEF8E9D103CA62EAA2--
+--------------6F455BE3C2227D862D2E823C--
 
 
---===============7996045363496861309==
+--===============2754871059163400194==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -303,5 +420,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7996045363496861309==--
+--===============2754871059163400194==--
 

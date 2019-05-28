@@ -2,27 +2,27 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C0D82CD86
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 19:23:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 281692CD8A
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 19:23:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yeQtq+wpLEzMpsjq2ncCxWysv8NE2MW8G6Uusfj2lqQ=; b=PeoT5EJnKXVnfZ
-	BKyID8mR+1l79F7NX5A4uQNlifiwWd5r5K3+0RvxLKToewf2dqjGlwoodsBog0Yh9xSlcJiynpguQ
-	7lFq/PCMRFc9WT0AWwu3e7BHxUjZQRoX3M8nARjKG8SZGKYlzUTomWCkT8FX8rtvblFc3OYDydGo0
-	vD9roxTRj29PrXzUEEWOHkvdZ186FmHHFeFq7254E5/lFn8KYcLDIDegrTCB9z/nrdPBACQmW5FQX
-	pZHSO8UeizY5mG6+VpT9bAkVGsHQl1WMR/Ow4ahh/nqxfLSBjDNSRgAuIbo1k6qk58mDofdmfLHmd
-	KM6zOIfQ0JJ6J3H7z7ng==;
+	List-Owner; bh=3Jw91nCnY28Cpr3J/PF8i60f/yGTuWNmZCNIsDKU6uI=; b=Yhgzln6MiTQRlN
+	5J30e4dAHO6J5UrUKAnsZHynsTnq6NP7zJYqU0vG+QrVotGyUoHxQXWQtvaEuO/4wJLEKRPe1losK
+	M3CsKZuL8zXLDIKgt9Mkm2UNAZ7wFgTV/hOZJgK+55lNTL1J3ip9tofE9P2WnwfUZlKpBmU10c7G4
+	zluS+28JP1544auja+To9wRZYI+c/YIxLme33ksqr/2zr0R65IHB3QJFm/WurHk3BjfjXo1bqUma7
+	FdpDU5VYj5UuWUvB2YYaChN/7994Tk6xep9nwxN4Eq3vJr2UF0EVT40PycNg0LlA88xGUDFcaXToN
+	m0DWCo1Pv3QhUqD7WsXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVfol-0000tV-2g; Tue, 28 May 2019 17:23:19 +0000
+	id 1hVfp7-0001Or-3J; Tue, 28 May 2019 17:23:41 +0000
 Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVfoJ-0000RW-Ls
- for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 17:22:53 +0000
+ id 1hVfoJ-0000SF-Q0
+ for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 17:22:55 +0000
 Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,7 +45,7 @@ Authentication-Results: esa6.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,523,1549954800"; d="scan'208";a="32110487"
+X-IronPort-AV: E=Sophos;i="5.60,523,1549954800"; d="scan'208";a="32110488"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
@@ -55,27 +55,27 @@ Received: from sandeep-office.microchip.com (10.10.85.251) by mx.microchip.com
  Tue, 28 May 2019 10:22:25 -0700
 From: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 To: <openwrt-devel@lists.openwrt.org>
-Date: Tue, 28 May 2019 10:21:11 -0700
-Message-ID: <7488317a92aa8a0e6acb3f53e6743a71252be6d1.1559063196.git.sandeep.sheriker@microchip.com>
+Date: Tue, 28 May 2019 10:21:12 -0700
+Message-ID: <1559064079-18225-2-git-send-email-sandeep.sheriker@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1559063195.git.sandeep.sheriker@microchip.com>
 References: <cover.1559063195.git.sandeep.sheriker@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_102251_780036_2EB2B177 
-X-CRM114-Status: UNSURE (   6.54  )
+X-CRM114-CacheID: sfid-20190528_102251_897697_25B57B84 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -1.5 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [OpenWrt-Devel,
- 2/7] at91bootstrap: bump v3.8.10 to v3.8.12
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+Subject: [OpenWrt-Devel] [PATCH 2/4] at91: Clean up kernel configuration
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,84 +87,134 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
+From: Hauke Mehrtens <hauke@hauke-m.de>
 
-1. bump to v3.8.12
-2. add support for at91sam9x5ek
-3. add sama5d27_som1_eksd1_uboot as default defconfig
+This removes some settings which are normally set by the generic
+configuration and should not be changed.
 
-Signed-off-by: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
-Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
+Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
 ---
- package/boot/at91bootstrap/Makefile | 24 +++++++++++++++++++++---
- 1 file changed, 21 insertions(+), 3 deletions(-)
+ target/linux/at91/config-4.9             | 18 +-----------------
+ target/linux/at91/sama5d2/config-default |  3 ---
+ 2 files changed, 1 insertion(+), 20 deletions(-)
 
-diff --git a/package/boot/at91bootstrap/Makefile b/package/boot/at91bootstrap/Makefile
-index 8a08a7a..c06ea81 100644
---- a/package/boot/at91bootstrap/Makefile
-+++ b/package/boot/at91bootstrap/Makefile
-@@ -9,12 +9,12 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=at91bootstrap
--PKG_VERSION:=v3.8.10
-+PKG_VERSION:=v3.8.12
- PKG_RELEASE:=
- 
- PKG_SOURCE_PROTO:=git
- PKG_SOURCE_URL:=https://github.com/linux4sam/at91bootstrap.git
--PKG_SOURCE_VERSION:=04efa5500d60a0211d14b6ee60df7ce0a828704d
-+PKG_SOURCE_VERSION:= 28e15d07e9f24efb04b87bb0baa211a0c5640ef1
- 
- PKG_BUILD_DIR = \
-     $(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
-@@ -28,6 +28,22 @@ define AT91Bootstrap/Default
-   AT91BOOTSTRAP_IMAGE:=at91bootstrap.bin
- endef
- 
-+define AT91Bootstrap/at91sam9x5eknf_uboot
-+  NAME:=AT91Bootstrap for AT91SAM9X5-EK board (NandFlash)
-+  BUILD_SUBTARGET:=sam9x
-+  BUILD_DEVICES:=at91sam9g15ek at91sam9g25ek \
-+                 at91sam9g35ek at91sam9x25ek \
-+		 at91sam9x35ek
-+endef
-+
-+define AT91Bootstrap/at91sam9x5eksd_uboot
-+  NAME:=AT91Bootstrap for AT91SAM9X5-EK board (SDcard)
-+  BUILD_SUBTARGET:=sam9x
-+  BUILD_DEVICES:=at91sam9g15ek at91sam9g25ek \
-+                 at91sam9g35ek at91sam9x25ek \
-+		 at91sam9x35ek
-+endef
-+
- define AT91Bootstrap/sama5d2_xplaineddf_uboot
-   TITLE:=AT91Bootstrap for SAMA5D2 Xplained board (SPI Flash)
-   BUILD_SUBTARGET:=sama5
-@@ -107,6 +123,8 @@ define AT91Bootstrap/sama5d2_ptc_eksd_uboot
- endef
- 
- AT91BOOTSTRAP_TARGETS := \
-+    at91sam9x5eknf_uboot \
-+    at91sam9x5eksd_uboot \
-     sama5d2_xplaineddf_uboot \
-     sama5d2_xplaineddf_qspi_uboot \
-     sama5d2_xplainedsd_uboot \
-@@ -115,7 +133,7 @@ AT91BOOTSTRAP_TARGETS := \
-     sama5d4_xplainednf_uboot_secure \
-     sama5d4_xplaineddf_uboot_secure \
-     sama5d4_xplainedsd_uboot_secure \
--	sama5d27_som1_eksd_uboot \
-+	sama5d27_som1_eksd1_uboot \
- 	sama5d27_som1_ekqspi_uboot \
- 	sama5d2_ptc_eknf_uboot \
-     sama5d2_ptc_eksd_uboot
+diff --git a/target/linux/at91/config-4.9 b/target/linux/at91/config-4.9
+index 6a70793..452cfd5 100644
+--- a/target/linux/at91/config-4.9
++++ b/target/linux/at91/config-4.9
+@@ -58,8 +58,6 @@ CONFIG_BLK_DEV_RAM=y
+ CONFIG_BLK_DEV_RAM_COUNT=4
+ CONFIG_BLK_DEV_RAM_SIZE=8192
+ CONFIG_BLK_DEV_SD=y
+-# CONFIG_BPF_SYSCALL is not set
+-# CONFIG_BRIDGE is not set
+ CONFIG_CACHE_L2X0=y
+ CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y
+ # CONFIG_CC_OPTIMIZE_FOR_SIZE is not set
+@@ -71,7 +69,7 @@ CONFIG_CMA=y
+ CONFIG_CMA_ALIGNMENT=8
+ CONFIG_CMA_AREAS=7
+ # CONFIG_CMA_DEBUG is not set
+-CONFIG_CMA_DEBUGFS=y
++# CONFIG_CMA_DEBUGFS is not set
+ CONFIG_CMA_SIZE_MBYTES=16
+ # CONFIG_CMA_SIZE_SEL_MAX is not set
+ CONFIG_CMA_SIZE_SEL_MBYTES=y
+@@ -183,7 +181,6 @@ CONFIG_FIX_EARLYCON_MEM=y
+ CONFIG_FORCE_MAX_ZONEORDER=15
+ CONFIG_FREEZER=y
+ CONFIG_FS_MBCACHE=y
+-# CONFIG_FW_LOADER_USER_HELPER_FALLBACK is not set
+ CONFIG_GENERIC_ALLOCATOR=y
+ CONFIG_GENERIC_BUG=y
+ CONFIG_GENERIC_CLOCKEVENTS=y
+@@ -378,9 +375,6 @@ CONFIG_OLD_SIGSUSPEND3=y
+ CONFIG_OUTER_CACHE=y
+ CONFIG_OUTER_CACHE_SYNC=y
+ CONFIG_PAGE_OFFSET=0xC0000000
+-# CONFIG_PANIC_ON_OOPS is not set
+-CONFIG_PANIC_ON_OOPS_VALUE=0
+-CONFIG_PANIC_TIMEOUT=0
+ # CONFIG_PARTITION_ADVANCED is not set
+ # CONFIG_PCI_DOMAINS_GENERIC is not set
+ # CONFIG_PCI_SYSCALL is not set
+@@ -416,7 +410,6 @@ CONFIG_PWM_ATMEL_HLCDC_PWM=y
+ CONFIG_PWM_ATMEL_TCB=y
+ CONFIG_PWM_SYSFS=y
+ CONFIG_RATIONAL=y
+-# CONFIG_RCU_EXPERT is not set
+ # CONFIG_RCU_STALL_COMMON is not set
+ CONFIG_REGMAP=y
+ CONFIG_REGMAP_I2C=y
+@@ -444,8 +437,6 @@ CONFIG_SERIAL_ATMEL_PDC=y
+ # CONFIG_SERIAL_ATMEL_TTYAT is not set
+ CONFIG_SERIAL_MCTRL_GPIO=y
+ CONFIG_SG_POOL=y
+-CONFIG_SLAB=y
+-# CONFIG_SLUB is not set
+ CONFIG_SND=y
+ CONFIG_SND_ARM=y
+ # CONFIG_SND_AT73C213 is not set
+@@ -488,19 +479,15 @@ CONFIG_SPI_MASTER=y
+ # CONFIG_SQUASHFS is not set
+ CONFIG_SRAM=y
+ CONFIG_SRCU=y
+-# CONFIG_STAGING is not set
+ # CONFIG_STANDALONE is not set
+ CONFIG_SUSPEND=y
+ CONFIG_SUSPEND_FREEZER=y
+ CONFIG_SWIOTLB=y
+ CONFIG_SWPHY=y
+ # CONFIG_SWP_EMULATE is not set
+-CONFIG_SYSFS_SYSCALL=y
+ CONFIG_SYS_SUPPORTS_APM_EMULATION=y
+-# CONFIG_TCP_CONG_ADVANCED is not set
+ # CONFIG_THUMB2_KERNEL is not set
+ CONFIG_TICK_CPU_ACCOUNTING=y
+-# CONFIG_TMPFS_XATTR is not set
+ CONFIG_TOUCHSCREEN_ATMEL_MXT=y
+ # CONFIG_TOUCHSCREEN_ATMEL_MXT_T37 is not set
+ CONFIG_TOUCHSCREEN_PROPERTIES=y
+@@ -509,7 +496,6 @@ CONFIG_UBIFS_FS=y
+ CONFIG_UBIFS_FS_ADVANCED_COMPR=y
+ CONFIG_UBIFS_FS_LZO=y
+ CONFIG_UBIFS_FS_ZLIB=y
+-# CONFIG_UEVENT_HELPER is not set
+ CONFIG_UNCOMPRESS_INCLUDE="debug/uncompress.h"
+ CONFIG_USB=y
+ CONFIG_USB_ACM=y
+@@ -543,14 +529,12 @@ CONFIG_VIDEOMODE_HELPERS=y
+ # CONFIG_VIDEO_CPIA2 is not set
+ CONFIG_VIDEO_DEV=y
+ CONFIG_VIDEO_V4L2=y
+-# CONFIG_VLAN_8021Q is not set
+ CONFIG_VM_EVENT_COUNTERS=y
+ CONFIG_VT=y
+ CONFIG_VT_CONSOLE=y
+ CONFIG_VT_CONSOLE_SLEEP=y
+ # CONFIG_VT_HW_CONSOLE_BINDING is not set
+ CONFIG_WATCHDOG_CORE=y
+-# CONFIG_WLAN is not set
+ # CONFIG_WQ_POWER_EFFICIENT_DEFAULT is not set
+ CONFIG_ZBOOT_ROM_BSS=0x0
+ CONFIG_ZBOOT_ROM_TEXT=0x0
+diff --git a/target/linux/at91/sama5d2/config-default b/target/linux/at91/sama5d2/config-default
+index e8f0854..1724375 100644
+--- a/target/linux/at91/sama5d2/config-default
++++ b/target/linux/at91/sama5d2/config-default
+@@ -1,6 +1,3 @@
+-CONFIG_CAN=y
+ CONFIG_HAVE_AT91_GENERATED_CLK=y
+-CONFIG_POSIX_MQUEUE=y
+-CONFIG_POSIX_MQUEUE_SYSCTL=y
+ CONFIG_SOC_SAMA5D2=y
+ # CONFIG_SOC_SAMA5D4 is not set
 -- 
 2.7.4
 

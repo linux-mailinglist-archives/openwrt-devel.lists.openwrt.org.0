@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 356A82C196
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 10:46:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571962C35D
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 May 2019 11:38:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KS955KmUUEedxWs1TExrjbOB2kJNJnG5eUz/Ohk1zC0=; b=ZDc7LR53WIxqhLxyfgGaLGeFXZ
-	Eij8nfN03OzCXa8uJ896CmaIvuBkLp9GnUk+iR9eS+9VLBOi66MGUVa+QdBqfShDi0bpXPWgwOxd3
-	YkQljXSumqu6jwFmrJQIa+e9X+ADVB2Njb767rwXvRAe09Kx9KjZXg/Fj7lmFoNhIHfmp6i78qxGt
-	iQ9LZUHzKk7d71+bOkHTvt/KQqyRwK6/N0w1Kfn1cR0yZ5Lpdq0S+9ZFXCrjpi/RKE0FdHHJoSFFL
-	IvOWfVWScVN2xSTDxL8JtocjuXkAgZIk4+RA3SXAvjlNpk8hFwf31496eQxpGzxacmDQ6cZaRKPzN
-	41EW6S0A==;
+	bh=eTq4AZDNFAfQLVCCRdkQBiTELTa/ALEDky0C/mI4dxM=; b=mYN5nejwZe2y1DkMq/wJDuf9nb
+	hU0BIasd1QXARjBvoGPi5VKhnWJAIZpyNzLjz1atM7524RTM9XvPHNpE0BxTFeLc1fZ6V1w4+1Hfp
+	HE9ckWx5YxcFwjMCtJ7f5K8eygGYynW8I41Thj222GDZEp7wy5xsKSkOHxbMuobC58OXLKcK0tbMO
+	BsJ8anrVGsWxIsQLdk8BlBzONn668KfPjLSX697a+NwxUqgTQE7eXBjhm5OCTmgZcXIKpthtw++cZ
+	YA8CzjShVoxz6rzM8aD46R1q5b2KIZXhavqduYW0uPOWRV5eo7iDRLQH0DlLciUgOak5mFSZeV0Yz
+	FQqFRMyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVXkO-0006Rl-Vs; Tue, 28 May 2019 08:46:17 +0000
+	id 1hVYYS-0003Jy-SK; Tue, 28 May 2019 09:38:00 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVXkG-0006RB-Ev
- for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 08:46:10 +0000
+ id 1hVYYL-0003JR-6t
+ for openwrt-devel@lists.openwrt.org; Tue, 28 May 2019 09:37:55 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 4B6024885;
- Tue, 28 May 2019 10:46:06 +0200 (CEST)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 322E74C02;
+ Tue, 28 May 2019 11:37:50 +0200 (CEST)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 89164a97;
- Tue, 28 May 2019 10:46:05 +0200 (CEST)
-Date: Tue, 28 May 2019 10:46:05 +0200
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 4514f3ef;
+ Tue, 28 May 2019 11:37:48 +0200 (CEST)
+Date: Tue, 28 May 2019 11:37:48 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Stephan Mueller <smueller@chronox.de>
-Message-ID: <20190528084605.GA13432@meh.true.cz>
+To: Rosen Penev <rosenp@gmail.com>
+Message-ID: <20190528093748.GB13432@meh.true.cz>
 References: <1558992584-11997-1-git-send-email-ynezz@true.cz>
- <1558992584-11997-4-git-send-email-ynezz@true.cz>
- <15593483.ERmGyQBebA@tauon.chronox.de>
+ <CAKxU2N-XswSwUZHCLEAnoJ2Y_tkae2_KkZWzkC8ZP1G3k2fSmQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <15593483.ERmGyQBebA@tauon.chronox.de>
+In-Reply-To: <CAKxU2N-XswSwUZHCLEAnoJ2Y_tkae2_KkZWzkC8ZP1G3k2fSmQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190528_014608_644938_0DC8F302 
-X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-CacheID: sfid-20190528_023753_402866_52E2F170 
+X-CRM114-Status: UNSURE (   6.99  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,8 +55,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH 3/4] base-files: move urandom seed bits
- into separate package
+Subject: Re: [OpenWrt-Devel] 
+ =?utf-8?q?=5BPATCH_0/4=5D_add_=CE=BCrngd=3A_true?=
+ =?utf-8?q?_RNG_based_on_timing_jitter?=
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,36 +70,54 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: Stephan =?utf-8?Q?M=C3=BCller?= <smueller@chronox.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Stephan Mueller <smueller@chronox.de> [2019-05-28 08:34:08]:
+Rosen Penev <rosenp@gmail.com> [2019-05-27 19:19:53]:
 
 Hi,
 
-[...]
+> Tested this on both mt7621 and Turris Omnia. Works pretty well. Init
+> gets done fast.
 
-> > +start_service() {
-> > +    procd_open_instance "urandom_seed"
-> > +    procd_set_param command "/sbin/urandom_seed"
-> > +    procd_set_param stdout 1
-> > +    procd_set_param stderr 1
-> > +    procd_close_instance
-> 
-> Just as a recommendation: what about the script is invoked, say, once every 
-> hour or so?
+thanks a lot for testing, can you please reply with your Tested-by next time
+so the patchwork could add this tag automatically to this patch?
 
-unfortunately this is not an option, as currently most of the supported
-devices use SPI NOR flash for the persistent storage and those flash devices
-impose certain technological limits, like for example maximum number of erase
-cycles for each sector of flash memory which could be around 100000 erase
-cycles under certain conditions, so it might be less. That's the reason why we
-don't even try to update this seed file during every boot.
+> The Turris people might want something like this or they need to fix haveged
+> to run earlier.
 
--- ynezz
+I've been recommended haveged many times (by someone from nic.cz as well), so
+my initial idea was to simply give it a go and create uhaveged, but I quickly
+came to the conclusion, that it won't work for OpenWrt for many reasons, which
+I've already forget, but I think it wasn't truly multiplatform solution due to
+some compiler/assembly magic.
+
+Then I've simply found out, that haveged is no longer considered good
+enough[1] by the security community:
+
+ Also the use of `haveged` is recommended, which is a bad idea as this daemon
+ can create blocking situations during key generation effectively creating a
+ deadlock and thus security problems. haveged's design is from 2002, it has
+ never been audited, there're only papers by the original authors available.
+
+Even Andre Seznec, one of the main HAVEGE authors stated following[2]:
+
+ He also pointed out a security warning: with some VMs, the hardware cycles
+ counter is emulated and deterministic, and thus predictible[3]. He therefore
+ does not recommend using HAVEGE on those systems.
+
+so I started looking at other options and luckily enough, I've found out about
+this KISS jitter RNG.
+
+1. https://lists.cert.at/pipermail/ach/2017-May/002251.html
+2. https://github.com/BetterCrypto/Applied-Crypto-Hardening/commit/cf7cef7a870c1b77089b1bd6209ded6525b5a4e0#commitcomment-23006392
+3. https://tls.mbed.org/tech-updates/security-advisories/polarssl-security-advisory-2011-02
+
+-- ynezz 
 
 _______________________________________________
 openwrt-devel mailing list

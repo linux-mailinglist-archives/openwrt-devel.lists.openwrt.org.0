@@ -2,82 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FD3A2E5A6
-	for <lists+openwrt-devel@lfdr.de>; Wed, 29 May 2019 21:58:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12BD92E5A4
+	for <lists+openwrt-devel@lfdr.de>; Wed, 29 May 2019 21:58:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9FIu7rCcNyp09j8G9swS5k7Od3cbGCqndes779A+HSc=; b=b2iMV6gH1lt3d1
-	GTX5Rgc5lq6ln+gQrgCqspRCw3t9t/zn0Btz9xNo0ONC84Vcfyv3fJWykOu8ziXK6MuVcy3UsNCp2
-	a48U+DYNzvEfOY62uBTkhxY+YBcpnj2+3FTYoZk8Dy8uSL0n2An37wj6eCRh2EUGbDnrBXJHRxB2Z
-	8rfqfRQ61b6jvX+pht+PN+SiSsFht0olyDOVJ37TvrzM/+7sHlaDWc4oYOXlbkPI5xYL+LG9Wc9pg
-	+z5Tccd42sb61K8xwJ7YlIpBj3oblMiNuXcMc5xvjjUZBaGUgrE+amqZGVE39DwEy2bWXN9Pd1mOa
-	iKvC2T2pkJLknsjFtrQQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=LbXWHmbJw4fFwJZCcglDXcAlv9XVExuuoKZju+1my0s=; b=TTq0ozkowhsIUf+dJEyftQdmn3
+	Mgps8lYxwS01s7NxfTEXpl4o9CLjak9/utdbNlfVUzJusmBA6hVUzUcsF46YvrrJyInRL+wxgkm23
+	LU9mbSbmkQddHSTMAfKdbOALqgdPbZcEEY8YO1IZvPWpJ1QPt34F3bNk8kePYhvCE9SxuxC5O3iTe
+	Rby1Hyz3nmek/mzD+Inan3VtzmnhG0ZxIlJbPuuTfnEJ+F5T6s53jPqE+WXFtgevkL2B54zn5iikD
+	8YGEqmnbATjfV9lGc10YGvWs8dYlGKsqe6AV32Dy8zAgeLxsTsN+gVtppzB8bjGqmAgA1Dzez4MNg
+	ao3YQRPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW4io-0002XC-AT; Wed, 29 May 2019 19:58:50 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hW4if-0002PJ-Go; Wed, 29 May 2019 19:58:41 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW4iY-0002Ob-PR
+ id 1hW4iY-0002Oa-P6
  for openwrt-devel@lists.openwrt.org; Wed, 29 May 2019 19:58:36 +0000
-Received: by mail-wr1-x441.google.com with SMTP id h1so2626197wro.4
+Received: by mail-wm1-x344.google.com with SMTP id 7so2383968wmo.2
  for <openwrt-devel@lists.openwrt.org>; Wed, 29 May 2019 12:58:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
+ h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=gURLmSIQ/KhGoQJxce1JcilHd6Sp3OqZKbi9RrCAhHI=;
- b=iBHa2de4PzJVjE5TxseBoLnTmG+7E51J8LE0DMu51xL6B0NvY1uLLWPTu+QoPpqQZE
- 2HD4v9hUe2QiDkoITTU/hnNpBP5bF5zSVX5p+GwAUCYw5N7nolf/KhScWizrNbDXtb2c
- 3xiEWnbdAM9zkX+xXbJP+puXSInajkXuBKmQslSoicjkxLuUuHMec9mBzjRsCOMMHswL
- 6oAc0k4csb5G8q6DYje8fXQua8bgw5tCM24sTLmEmHnq1yeYWADk6DTuLvpEh/UMgjeE
- kHvDxaRld8UghmXKjkDfaU6lWdVlHDc1906l0cXEk3vLtnchGkUJyrm8ZZ1eRBEUzY9n
- 8sKw==
+ bh=0CNKlsq2Y8XlSY88vJUYmRo9/YAA+u+hKLZ/sJNR/y8=;
+ b=kokCa8CdM3XDxbH+wVCvA6Ofv4i/T98ReugylYhbKbUnQ9wRJrH2ZecYz41KHvWaO4
+ 2VbBZUs3E0qXwole2Kbjv7zsy2mNHqngusAGU8ZzCK3Ilp+UMXJmdDXStr2LLSpNYio/
+ iE452Ce26pgNTcLGK4ZtOqz77mw6aZvUAu7L6u6d9tRxYow5yBB5tzdaCNM2JTUMDZmO
+ pAflwpZQD0RfX3eWwdIjH4EypGwJdDShSB63EO28X3Qvzyw4PqtEiz++Qx1CpFAxXOqq
+ RN2TB2aCUHQrR+pfw1bIDI6dXO3ggfRiN3gVXrS7I1P4bmSk7W3CUzXXGLscQV3YXeub
+ 9A8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=gURLmSIQ/KhGoQJxce1JcilHd6Sp3OqZKbi9RrCAhHI=;
- b=LVtS0W4X2R928agrIw62GBnIjrjTvCAYJPcQnCv8PmsKamKDP9r8DMTL8+yKqlZSHf
- b5x5Xf0+8edsVykdHW8dwO/cnr2PGwgisgbanXd19jwora/Enm9SBq82dAxC2T09Vm63
- xhivFzBQKWOONFr9Cp2ppSIQSkBqfyRXs5s65/5rnF49/xTjY9NCDtaZlerI6xAgRndm
- 3P1VBhwIWABzJwPwKlwSWuOuty/XYp+qd9ju8m6/vgTEVkG0DdE7/ezOHQonRV9qFizi
- nUbZgLn707pRMpA4Tj/lQOJy3SGOrKZ3DRwBA2RRadv2AnNeIs28iNrpax6MS1k3Za/d
- VzSQ==
-X-Gm-Message-State: APjAAAVuwypDH0L6lnJsayO1pzXtzY7YoYJ9VsM+xzKijojUEzTH6x3x
- 2L7cQPLYCOnRuZMSIIROookEfX2f
-X-Google-Smtp-Source: APXvYqyxXtAYOKUGgwg0kb4JPDa9UXJ6h0kk4DRiunfaYKxhJEfPClocJ1Noz1IoRIbVAriCgwJoDQ==
-X-Received: by 2002:adf:c606:: with SMTP id n6mr5608015wrg.62.1559159912026;
- Wed, 29 May 2019 12:58:32 -0700 (PDT)
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=0CNKlsq2Y8XlSY88vJUYmRo9/YAA+u+hKLZ/sJNR/y8=;
+ b=FXVJDAL+4pXLLNA3UtmmSUBItNnW+rW+KaP4mKJR1D0nxBdgsv3TWvtywBsJ9X898/
+ E3m0XfjyQ6jJ2q9HttebEkRlxtHWYB73eRfj3HNObgYuJPW2sgb9IzPrXzVme2a0/Fhl
+ fqIdxt1tEhrbVBLrdBCn6PV0hil41vsZeymF3LLfZg4kA4JGzfaVMf5G9Q008IQ0RsXb
+ 3sNVcFzv/gFXgXwdP4+yRNnNzQG4XjBr4g/+K9bDUFmII9c4xuzI2invuozmMSBW6qvg
+ CVtUoEhnuL7fR7HZ1/7NVG4JAxqAo6T/wmHTy4NXY4kg8jZHOX3B2of8LHwUuGCkwFMs
+ mnqQ==
+X-Gm-Message-State: APjAAAU7JR5iTaOmB/9EdA0AxfPtOyTMXl4wNzrka/tA4Myp1STojl1J
+ QJJJ0lBnzPwong4Pckw7YMez1URV
+X-Google-Smtp-Source: APXvYqwzzXtlmbgpTC24b+fX89gl4a6JEX8+1Xv88mQQEdQlpgW3+tBrYAu0AmmZuQqoyLjBu6eiyw==
+X-Received: by 2002:a7b:cb84:: with SMTP id m4mr8418940wmi.50.1559159911691;
+ Wed, 29 May 2019 12:58:31 -0700 (PDT)
 Received: from debian64.daheim (pD9E29593.dip0.t-ipconnect.de.
  [217.226.149.147])
- by smtp.gmail.com with ESMTPSA id i15sm312858wre.30.2019.05.29.12.58.30
+ by smtp.gmail.com with ESMTPSA id t6sm831107wmt.34.2019.05.29.12.58.30
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 29 May 2019 12:58:31 -0700 (PDT)
+ Wed, 29 May 2019 12:58:30 -0700 (PDT)
 Received: from chuck by debian64.daheim with local (Exim 4.92)
- (envelope-from <chunkeey@gmail.com>) id 1hW4iU-00063O-AZ
+ (envelope-from <chunkeey@gmail.com>) id 1hW4iU-00063R-BI
  for openwrt-devel@lists.openwrt.org; Wed, 29 May 2019 21:58:30 +0200
 From: Christian Lamparter <chunkeey@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 29 May 2019 21:58:29 +0200
-Message-Id: <a3db69d2fc4b460dcb2e58e2608f7fdd8640c5c8.1559159872.git.chunkeey@gmail.com>
+Date: Wed, 29 May 2019 21:58:30 +0200
+Message-Id: <90f90b29ae7fa6625805a654a63b4f4765b6c1d6.1559159872.git.chunkeey@gmail.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <a3db69d2fc4b460dcb2e58e2608f7fdd8640c5c8.1559159872.git.chunkeey@gmail.com>
+References: <a3db69d2fc4b460dcb2e58e2608f7fdd8640c5c8.1559159872.git.chunkeey@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_125834_824211_9FA7E591 
-X-CRM114-Status: GOOD (  18.72  )
+X-CRM114-CacheID: sfid-20190529_125834_819588_D5E82151 
+X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (chunkeey[at]gmail.com)
@@ -88,8 +92,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 1/2] gpio-button-hotplug: support interrupt
- properties
+Subject: [OpenWrt-Devel] [PATCH 2/2] apm821xx: wndr4700: interrupt-driven
+ gpio-keys
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,240 +110,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Upstream Linux's input gpio-keys driver supports
-specifying a external interrupt for a gpio via the
-'interrupts' properties as well as having support
-for software debounce.
+This patch fixes the active_low setting and
+converts all of the physical keys on the wndr4700
+to utilize the interrupt-driven gpio-keys driver
+over the polled version.
 
-This patch ports these features to OpenWrt's event
-version. Only the "pure" interrupt-driven support is
-left behind, since this goes a bit against the "gpio"
-in the "gpio-keys" and I don't have a real device to
-test this with.
+The sdcard-insertion hack has been removed since the
+block-subsystem will now be polling the device instead.
 
-This patch also silences the generated warnings showing
-up since 4.14 due to the 'constification' of the
-struct gpio_keys_button *buttons variable in the
-upstream struct gpio_keys_platform_data declaration.
-
-gpio-button-hotplug.c: In function 'gpio_keys_get_devtree_pdata':
-gpio-button-hotplug.c:392:10: warning: assignment discards 'const'
-	qualifier from pointer target type [-Wdiscarded-qualifiers]
-   button = &pdata->buttons[i++];
-          ^
-gpio-button-hotplug.c: In function 'gpio_keys_button_probe':
-gpio-button-hotplug.c:537:12: warning: assignment discards 'const'
-	qualifier from pointer target type [-Wdiscarded-qualifiers]
-   bdata->b = &pdata->buttons[i];
-            ^
-gpio-button-hotplug.c: In function 'gpio_keys_probe':
-gpio-button-hotplug.c:563:37: warning: initialization discards 'const'
-	qualifier from pointer target type [-Wdiscarded-qualifiers]
-   struct gpio_keys_button *button = &pdata->buttons[i];
-                                     ^
 Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
 ---
- .../src/gpio-button-hotplug.c                 | 114 ++++++++++++++----
- 1 file changed, 93 insertions(+), 21 deletions(-)
+ .../linux/apm821xx/dts/netgear-wndr4700.dts   | 20 ++++++-------------
+ 1 file changed, 6 insertions(+), 14 deletions(-)
 
-diff --git a/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c b/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
-index 1aef23e876..6e730cdabe 100644
---- a/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
-+++ b/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
-@@ -26,6 +26,7 @@
- #include <linux/interrupt.h>
- #include <linux/platform_device.h>
- #include <linux/of_gpio.h>
-+#include <linux/of_irq.h>
- #include <linux/gpio_keys.h>
- 
- #define DRV_NAME	"gpio-keys"
-@@ -70,7 +71,10 @@ struct gpio_keys_button_data {
- 	int count;
- 	int threshold;
- 	int can_sleep;
--	struct gpio_keys_button *b;
-+	int irq;
-+	unsigned int software_debounce;
-+	struct gpio_desc *gpiod;
-+	const struct gpio_keys_button *b;
+diff --git a/target/linux/apm821xx/dts/netgear-wndr4700.dts b/target/linux/apm821xx/dts/netgear-wndr4700.dts
+index 0f1e97a921..24d5c33f90 100644
+--- a/target/linux/apm821xx/dts/netgear-wndr4700.dts
++++ b/target/linux/apm821xx/dts/netgear-wndr4700.dts
+@@ -307,23 +307,21 @@
  };
  
- extern u64 uevent_next_seqnum(void);
-@@ -297,7 +301,7 @@ static void gpio_keys_polled_check_state(struct gpio_keys_button_data *bdata)
- 			return;
- 		}
- 
--		if ((bdata->last_state != -1) || (type == EV_SW))
-+		if (bdata->last_state != -1 || type == EV_SW)
- 			button_hotplug_event(bdata, type, state);
- 
- 		bdata->last_state = state;
-@@ -339,11 +343,29 @@ static void gpio_keys_polled_close(struct gpio_keys_button_dev *bdev)
- 		pdata->disable(bdev->dev);
- }
- 
-+static void gpio_keys_irq_work_func(struct work_struct *work)
-+{
-+	struct gpio_keys_button_data *bdata = container_of(work,
-+		struct gpio_keys_button_data, work.work);
-+	int state = gpio_button_get_value(bdata);
+ &POB0 {
 +
-+	if (state != bdata->last_state) {
-+		unsigned int type = bdata->b->type ?: EV_KEY;
-+
-+		if (bdata->last_state != -1 || type == EV_SW)
-+			button_hotplug_event(bdata, type, state);
-+
-+		bdata->last_state = state;
-+	}
-+}
-+
- static irqreturn_t button_handle_irq(int irq, void *_bdata)
- {
--	struct gpio_keys_button_data *bdata = (struct gpio_keys_button_data *) _bdata;
-+	struct gpio_keys_button_data *bdata =
-+		(struct gpio_keys_button_data *) _bdata;
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		#interrupt-cells = <2>;
+-		autorepeat;
+-		poll-interval = <60>;   /* 3 * 20 = 60ms */
++		compatible = "gpio-keys";
  
--	button_hotplug_event(bdata, bdata->b->type ?: EV_KEY, gpio_button_get_value(bdata));
-+	schedule_delayed_work(&bdata->work,
-+			      msecs_to_jiffies(bdata->software_debounce));
+ 		reset {
+ 			label = "Reset button";
++			gpios = <&GPIO0 15 GPIO_ACTIVE_LOW>;
+ 			linux,code = <KEY_RESTART>;
+-			gpios = <&GPIO0 15 GPIO_ACTIVE_HIGH>;
+ 			interrupt-parent = <&UIC1>;
+ 			interrupts = <0x14 IRQ_TYPE_EDGE_FALLING>;
+ 		};
  
- 	return IRQ_HANDLED;
- }
-@@ -389,7 +411,9 @@ gpio_keys_get_devtree_pdata(struct device *dev)
- 			continue;
- 		}
+ 		backup_hd {
+ 			label = "Backup HD button";
+-			gpios = <&GPIO0 19 GPIO_ACTIVE_HIGH>;
++			gpios = <&GPIO0 19 GPIO_ACTIVE_LOW>;
+ 			linux,code = <BTN_0>;
+ 			interrupt-parent = <&UIC1>;
+ 			interrupts = <0x1e IRQ_TYPE_EDGE_FALLING>;
+@@ -331,7 +329,7 @@
  
--		button = &pdata->buttons[i++];
-+		button = (struct gpio_keys_button *)(&pdata->buttons[i++]);
-+
-+		button->irq = irq_of_parse_and_map(pp, 0);
+ 		rfkill {
+ 			label = "RFKILL button";
+-			gpios = <&GPIO0 20 GPIO_ACTIVE_HIGH>;
++			gpios = <&GPIO0 20 GPIO_ACTIVE_LOW>;
+ 			linux,code = <KEY_RFKILL>;
+ 			interrupt-parent = <&UIC1>;
+ 			interrupts = <0x1f IRQ_TYPE_EDGE_FALLING>;
+@@ -339,17 +337,11 @@
  
- 		button->gpio = of_get_gpio_flags(pp, 0, &flags);
- 		if (button->gpio < 0) {
-@@ -516,6 +540,9 @@ static int gpio_keys_button_probe(struct platform_device *pdev,
- 				gpio, error);
- 			return error;
- 		}
-+		bdata->gpiod = gpio_to_desc(gpio);
-+		if (!bdata->gpiod)
-+			return -EINVAL;
+ 		wps {
+ 			label = "WPS button";
+-			gpios = <&GPIO0 23 GPIO_ACTIVE_HIGH>;
++			gpios = <&GPIO0 23 GPIO_ACTIVE_LOW>;
+ 			linux,code = <KEY_WPS_BUTTON>;
+ 			interrupt-parent = <&UIC2>;
+ 			interrupts = <0x19 IRQ_TYPE_EDGE_FALLING>;
+ 		};
+-
+-		sdcard {
+-			label = "SDCard inserted";
+-			gpios = <&GPIO0 7 GPIO_ACTIVE_LOW>;
+-			linux,code = <BTN_1>;
+-		};
+ 	};
  
- 		error = gpio_direction_input(gpio);
- 		if (error) {
-@@ -528,12 +555,26 @@ static int gpio_keys_button_probe(struct platform_device *pdev,
- 		bdata->can_sleep = gpio_cansleep(gpio);
- 		bdata->last_state = -1;
- 
--		if (bdev->polled)
-+		if (bdev->polled) {
- 			bdata->threshold = DIV_ROUND_UP(button->debounce_interval,
--						pdata->poll_interval);
--		else
-+							pdata->poll_interval);
-+		} else {
- 			bdata->threshold = 1;
- 
-+			if (button->debounce_interval) {
-+				error = gpiod_set_debounce(bdata->gpiod,
-+					button->debounce_interval * 1000);
-+				/*
-+				 * use timer if gpiolib doesn't provide
-+				 * debounce.
-+				 */
-+				if (error < 0) {
-+					bdata->software_debounce =
-+						button->debounce_interval;
-+				}
-+			}
-+		}
-+
- 		bdata->b = &pdata->buttons[i];
- 	}
- 
-@@ -560,23 +601,39 @@ static int gpio_keys_probe(struct platform_device *pdev)
- 
- 	pdata = bdev->pdata;
- 	for (i = 0; i < pdata->nbuttons; i++) {
--		struct gpio_keys_button *button = &pdata->buttons[i];
-+		const struct gpio_keys_button *button = &pdata->buttons[i];
- 		struct gpio_keys_button_data *bdata = &bdev->data[i];
-+		unsigned long irqflags = IRQF_ONESHOT;
- 
--		if (!button->irq)
--			button->irq = gpio_to_irq(button->gpio);
--		if (button->irq < 0) {
--			dev_err(&pdev->dev, "failed to get irq for gpio:%d\n", button->gpio);
--			continue;
-+		if (!button->irq) {
-+			bdata->irq = gpio_to_irq(button->gpio);
-+
-+			if (bdata->irq < 0) {
-+				dev_err(&pdev->dev, "failed to get irq for gpio:%d\n",
-+					button->gpio);
-+				continue;
-+			}
-+
-+			irqflags |= IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING;
-+		} else {
-+			bdata->irq = button->irq;
- 		}
- 
--		ret = devm_request_threaded_irq(&pdev->dev, button->irq, NULL, button_handle_irq,
--						IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING | IRQF_ONESHOT,
--						dev_name(&pdev->dev), bdata);
--		if (ret < 0)
--			dev_err(&pdev->dev, "failed to request irq:%d for gpio:%d\n", button->irq, button->gpio);
--		else
--			dev_dbg(&pdev->dev, "gpio:%d has irq:%d\n", button->gpio, button->irq);
-+		INIT_DELAYED_WORK(&bdata->work, gpio_keys_irq_work_func);
-+
-+		ret = devm_request_threaded_irq(&pdev->dev,
-+			bdata->irq, NULL, button_handle_irq,
-+			irqflags, dev_name(&pdev->dev), bdata);
-+
-+		if (ret < 0) {
-+			bdata->irq = 0;
-+			dev_err(&pdev->dev, "failed to request irq:%d for gpio:%d\n",
-+				bdata->irq, button->gpio);
-+			continue;
-+		} else {
-+			dev_dbg(&pdev->dev, "gpio:%d has irq:%d\n",
-+				button->gpio, bdata->irq);
-+		}
- 
- 		if (bdata->b->type == EV_SW)
- 			button_hotplug_event(bdata, EV_SW, gpio_button_get_value(bdata));
-@@ -612,6 +669,19 @@ static int gpio_keys_polled_probe(struct platform_device *pdev)
- 	return ret;
- }
- 
-+static void gpio_keys_irq_close(struct gpio_keys_button_dev *bdev)
-+{
-+	struct gpio_keys_platform_data *pdata = bdev->pdata;
-+	size_t i;
-+
-+	for (i = 0; i < pdata->nbuttons; i++) {
-+		struct gpio_keys_button_data *bdata = &bdev->data[i];
-+
-+		disable_irq(bdata->irq);
-+		cancel_delayed_work_sync(&bdata->work);
-+	}
-+}
-+
- static int gpio_keys_remove(struct platform_device *pdev)
- {
- 	struct gpio_keys_button_dev *bdev = platform_get_drvdata(pdev);
-@@ -620,6 +690,8 @@ static int gpio_keys_remove(struct platform_device *pdev)
- 
- 	if (bdev->polled)
- 		gpio_keys_polled_close(bdev);
-+	else
-+		gpio_keys_irq_close(bdev);
- 
- 	return 0;
- }
+ 	leds {
 -- 
 2.20.1
 

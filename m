@@ -2,81 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66BA42E874
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 00:46:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A074F2E876
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 00:48:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W9L2SpaqevHBuMZIjlqSQuZm0x/lea5KDMwMC759A/w=; b=pZ/oE9MLBtDQSH
-	E+9MhBLp68LY+dmYA4o+QoyYmg7WZpx98OKLM0Wtx+Beu8w/PrIj0s6yFgmDKee0PM4vc9UoHWBs2
-	ji0pOkdw/4wc6HkHq4YbdZ/2AchKQEXaVjoqVpVKVkIH3YhgBoynDyeS0XvOicx0vl5SpfJvbk+gL
-	Gi5PZQMAXfI4H7MdEpFirRb8FdsCWMpynStxosLlJS5lxPhz4lAyI5N4O/Py7E+wsX3lPzFRdymBH
-	+3vTHPpXAX5HFieAqMnL0xutIZ4l0TJDkIpjqspNY35VJoAfhxvIBxBECfQ/x3QUhhUU/86mb+uus
-	kio/iYN88xKFecjQUoPQ==;
+	List-Owner; bh=mI0n9+G6Nj6h0OV0RgTOKTFtlrCzBzcsV4nt5N+xF6E=; b=hNKKHwgY/4RmOj
+	l55+g5ZXWuxxDVPojGuJ5aqy3gkj6OyP/tBEUT4maxLh6ajPYWjc+ZLfWfvWdw2awyZ58lX9Kot7P
+	HcKvBhETwXGJZ17uleeqnmc+OboRcbXvq8foOc5wspiDEJ7jQLdB6IV6Ct8PgnTJTmxB4X9Mj4t5B
+	kPTs1fBtoJRiSJHNIGUX61JZynAWiUUKLryFBzd6oseOtUAJGyo1UIL7zDU69yNwPBhvm/058BBcW
+	hKKDRVtMvw5buEpmiYo8rDZWDoGFWUuquBCBF01s/0/896qPquzBkoxheanI3mXRcW5cPuwbExn3G
+	z9IuGICzKE6JpkuCEB0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hW7LG-0007Gc-Q6; Wed, 29 May 2019 22:46:42 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hW7Mo-0007jQ-6X; Wed, 29 May 2019 22:48:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hW7LB-0007G2-4F
- for openwrt-devel@lists.openwrt.org; Wed, 29 May 2019 22:46:38 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t4so2840262wrx.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 29 May 2019 15:46:34 -0700 (PDT)
+ id 1hW7Mg-0007iU-Cr
+ for openwrt-devel@lists.openwrt.org; Wed, 29 May 2019 22:48:11 +0000
+Received: by mail-wr1-x444.google.com with SMTP id t4so2841712wrx.7
+ for <openwrt-devel@lists.openwrt.org>; Wed, 29 May 2019 15:48:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=c7gdBnCfXUVdEk0+kfUiSPeP/n95kcBT0Jg/EvmDC6k=;
- b=taKolcPTL163jq+ZFNfwD/dXLM4XbC8WWVTe4DlJ0u7OwYN28jmTp8zNBxXHLMWTqI
- Vkp5PsOwOVEp5mx3MjddPAz1/LL5MqTwNQcA7KqrXI0+fjvZjHNnQkHgCDtId0oHS/uN
- 986l4fk/+t7jyjEDSRWTZGqLt3Wwl8u2/jZxEaF4btC8eqEb0UbhsTZgDlswOMUoNLrP
- dbeJdY9QdQiMUk2ILC+qveA7wpZvh1V4+EKHFYDsoj4ddJ5EZOfYAslklQZJFAYPa47v
- +oHlyLbgtzGGpLEB7BxRYZhyotS8du9nyT9R0pr8hrRwkZ1F3UIl2ZjBtE9tkwo69Q4F
- PnhQ==
+ bh=PGprvlPfb/DXn2ePH8hmyQUoM0vw/6oHYCeXvZh93cg=;
+ b=qRiRe7TBc6CculMyn+dU2E18viDaVh3mezx/VewcqjY4MHl77brTccMeHJg3GqYYCR
+ YmEmO9vK7crJ1TYWj2Eh+OvAHHfUFbq6qS/wj/O+fU1WakGmrRC/Qp6+RnK4xcNA6ndB
+ rn4ik+Joreo01x++UrFy3q9/yFhYUh4HrnntG0RfNNJxDNQQS2aGBfj9Z9Jls1CZljor
+ cxFCAdRGgIfAaR5y3ll0Rt0/UXiDuoMZaqw2y5tM9jD69z2Pug7nHCjJcm3ADghRiJnX
+ aVeppVq98TVmlU1H2n2XAmQnKjyPoB6RLVc6lY1zfCkGRUq7C3uDwkHUPbFouj2b4AFG
+ NupQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=c7gdBnCfXUVdEk0+kfUiSPeP/n95kcBT0Jg/EvmDC6k=;
- b=CAn8aWCE3+MPgXdYIvlHNSpryP3ph9g/V3VN+vmg2+DdqkGTWKC0shiX1jIv94Ijlf
- ZO5XK8EAucEvULIly1xXum4ocuE6navR/n4DlFH1kWtyz1blwhAQ7fA31eZYYSvNKeUp
- P9GoktZR2V2jmKCsg4b2TsssuKDaKy2XlCbggPdmBKYvlwAtRqCePOADlNJjDlntG0SB
- mAdN14eMyyhLG79VHOfjKk4gAm7Ct3DTARJmwIANQpp5Gx/ctRDYD8kolPm/HcJjNrU2
- NMa4MR3NfKkLwCzIJ7OS46zfr9oCaYnOcXj9kOkronfjZcdxfZ1wdWUInRt5wxk5fgVJ
- eXQg==
-X-Gm-Message-State: APjAAAUFMX8qpNT5crenJY6UqtU2Efy4Z//C5K0s9Ry7DUUfpEjB8X0V
- 3X4WE24fgUj0uhdILF0cMBk=
-X-Google-Smtp-Source: APXvYqxOz/9uvGJ/P12+4XHBvZXaZU/GR1k6v2bznXOhiP66kuP2467NKyAsJqLMCm9AwfuOPi+XQw==
-X-Received: by 2002:adf:cf0c:: with SMTP id o12mr271925wrj.182.1559169992881; 
- Wed, 29 May 2019 15:46:32 -0700 (PDT)
+ bh=PGprvlPfb/DXn2ePH8hmyQUoM0vw/6oHYCeXvZh93cg=;
+ b=JszM1Jw1sWSZWs/K0KOtVEOKJolaVF2qRR26U5yzNATyMZCRRWvt5noASNyyrnbu/b
+ rzWplG8Qk51t+rES3z0uzyeiFFb0LZrBUK2M6wyhAD2yJb7njzobzxSjdbQcCvEuV/en
+ fCNSE0s1LbpcP3xSF/JAv2vGwduK87GcfmTf4lQ8U8WKl5Pds5C5NpmyL+ryT5nM6iK5
+ fefUlYESPhX6mA55xY6mbWPZWdKowkWYdP9eXAcE0Tq2YIzZsniVxRV2AeuSQ0eRA2+7
+ GJGUGNBZ0z9se/tSvHskEJ3M73AgI0WQHOVdP6jbHFikXQ3AQnHryX6bGFo0Tah0scPm
+ e2vg==
+X-Gm-Message-State: APjAAAWKYnwuEgHHBpnAtllr3s4J/L/+7f7Bai4sq44LK++9pwm5rvGF
+ Z0L20MXFfrcFlzKBrk0SoYQ=
+X-Google-Smtp-Source: APXvYqx3Cmgfs8ZrNX+dXmK9QgsrBX8gAkmK/mKLcdyxqv7zGSukmFOslkdmvExzBG1WdwLHSgIqFw==
+X-Received: by 2002:a5d:4148:: with SMTP id c8mr202309wrq.5.1559170088195;
+ Wed, 29 May 2019 15:48:08 -0700 (PDT)
 Received: from debian64.daheim (pD9E29593.dip0.t-ipconnect.de.
  [217.226.149.147])
- by smtp.gmail.com with ESMTPSA id p16sm1835428wrg.49.2019.05.29.15.46.31
+ by smtp.gmail.com with ESMTPSA id c14sm664897wrt.45.2019.05.29.15.48.07
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 29 May 2019 15:46:31 -0700 (PDT)
+ Wed, 29 May 2019 15:48:07 -0700 (PDT)
 Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
  by debian64.daheim with esmtp (Exim 4.92)
  (envelope-from <chunkeey@gmail.com>)
- id 1hW7L5-0000yu-7P; Thu, 30 May 2019 00:46:31 +0200
+ id 1hW7Mc-00010C-Tg; Thu, 30 May 2019 00:48:06 +0200
 From: Christian Lamparter <chunkeey@gmail.com>
 To: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 30 May 2019 00:46:31 +0200
-Message-ID: <2143459.csVk10Y2R9@debian64>
-In-Reply-To: <20190524212719.30694-1-linus.walleij@linaro.org>
+Date: Thu, 30 May 2019 00:48:06 +0200
+Message-ID: <2783949.jM1f73g667@debian64>
+In-Reply-To: <20190524212719.30694-2-linus.walleij@linaro.org>
 References: <20190524212719.30694-1-linus.walleij@linaro.org>
+ <20190524212719.30694-2-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190529_154637_202295_4CAE0956 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20190529_154810_442586_3D8D36AC 
+X-CRM114-Status: GOOD (  16.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -89,8 +90,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 1/3] gemini: Make a per-board case for
- ethernet MAC
+Subject: Re: [OpenWrt-Devel] [PATCH 2/3] gemini: Fix possible hexdump error
+ on MAC assignment
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,91 +111,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello, 
+On Friday, May 24, 2019 11:27:18 PM CEST Linus Walleij wrote:
+> If a MAC address is for example 00:50:c2:11:11:11 using
+> hexdump to extract this from raw bytes in the flash will
+> yield "00:50:c2:11*" with the asterisk indicating "more
+> of the same".
+> 
+> This will inhibit the MAC address from being assigned
+> correctly, so fix it by passing -v to hexdump.
 
-I have a few suggestions inline below.
+I think with the get_mac_binary will handle this already...
+Question is, should this be backported to openwrt-18.06?
+If so, can you please make a patch against it?
 
-On Friday, May 24, 2019 11:27:17 PM CEST Linus Walleij wrote:
-> The DNS-313 isn't the only special board so let's bite the
-> bullet and create a case ladder in preparation for DIR-685.
+Thanks.
 > 
 > Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 > ---
->  .../lib/preinit/05_set_ether_mac_gemini       | 30 ++++++++++++-------
->  1 file changed, 19 insertions(+), 11 deletions(-)
+>  .../linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 > diff --git a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-> index 1ce5c8067ef0..ebd3ae0f55c5 100644
+> index ebd3ae0f55c5..6072e828c678 100644
 > --- a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
 > +++ b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-> @@ -1,6 +1,25 @@
->  #!/bin/sh
->  
->  set_ether_mac() {
-> +
-> +	. /lib/functions.sh
-> +
-> +	case $(board_name) in
-> +	dlink,dns-313)
-> +		# The DNS-313 has a special field in its RedBoot
-> +		# binary that we need to check
-> +		CONFIG_PARTITION="$(grep "RedBoot" /proc/mtd | cut -d: -f1)"
-> +		if [ ! -z $CONFIG_PARTITION ] ; then
-This looks familiar. From afar, this is almost like
-package/base-files/files/lib/functions.sh's find_mtd_part with an extra check.
-
-> +			DEVID="$(dd if=/dev/mtdblock0 bs=1 skip=119508 count=7 2>/dev/null)"
-I think find_mtd_part's result from above would be the perfect input
-for dd if=... 
-> +			if [ "x$DEVID" = "xdns-313" ] ; then
-> +				MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -e '/1 ":%02X"' | sed s/^://g)"
-Isn't this like package/base-files/files/lib/functions/system.sh's
-mtd_get_mac_binary function?
-
-What does 
-
-. /lib/functions.sh
-. /lib/functions/system.sh
-echo $(mtd_get_mac_binary RedBoot 119540)
-
-produce? it should be the same MAC.
-
-if it is you could use the get_mac_binary with the find_mtd_part from above
-and get the mac this way.
-
-> +				ifconfig eth0 hw ether $MAC1 2>/dev/null
-I guess while we are at it, why not change it to
-"ip link set dev eth0 address $MAC1"
-
-in case the ifconfig deprecation ever materializes.
-
-> +				return 0
-> +			fi
-> +		fi
-> +		;;
-> +	esac
-> +
->  	# Most devices have a standard "VCTL" partition
->  	CONFIG_PARTITION="$(grep "VCTL" /proc/mtd | cut -d: -f1)"
->  	if [ ! -z $CONFIG_PARTITION ] ; then
-> @@ -12,17 +31,6 @@ set_ether_mac() {
->  		return 0
->  	fi
->  
-> -	# The DNS-313 has a special field in its RedBoot
-> -	# binary that we need to check
-> -	CONFIG_PARTITION="$(grep "RedBoot" /proc/mtd | cut -d: -f1)"
-> -	if [ ! -z $CONFIG_PARTITION ] ; then
-> -		DEVID="$(dd if=/dev/mtdblock0 bs=1 skip=119508 count=7 2>/dev/null)"
-> -		if [ "x$DEVID" = "xdns-313" ] ; then
-> -			MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -e '/1 ":%02X"' | sed s/^://g)"
-> -			ifconfig eth0 hw ether $MAC1 2>/dev/null
-> -			return 0
-> -		fi
-> -	fi
->  }
->  
->  boot_hook_add preinit_main set_ether_mac
+> @@ -12,7 +12,7 @@ set_ether_mac() {
+>  		if [ ! -z $CONFIG_PARTITION ] ; then
+>  			DEVID="$(dd if=/dev/mtdblock0 bs=1 skip=119508 count=7 2>/dev/null)"
+>  			if [ "x$DEVID" = "xdns-313" ] ; then
+> -				MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -e '/1 ":%02X"' | sed s/^://g)"
+> +				MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -v -e '/1 ":%02X"' | sed s/^://g)"
+>  				ifconfig eth0 hw ether $MAC1 2>/dev/null
+>  				return 0
+>  			fi
 > 
 
 

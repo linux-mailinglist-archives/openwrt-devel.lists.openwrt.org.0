@@ -2,69 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E746D2F8C0
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 10:52:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 280702F9EC
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 12:00:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jFCFkZDEast/kvFQHmtfkuHfBERmuOE5ksakgm71IdQ=; b=QXTVHDYv4m4tfG
-	iGlB7u1lAvqInypVFMXKP33wHYt7myP8GquV9gJ44vBEAM/hI7AH7lpACDlLGTr6niizPCETIy3jT
-	tJDGURGNm+sh4KM5zPrS3DpTvjUC3cgAnaxGsBzCKe9EBXNlc79cJ9hjpdUdDOGNWl5Q6lJq0LeLt
-	gEp3qF8Mz4lH2v6wIFX4HiT9b04A3/JtoMfQjfsEy/Rfb1aUbHJrf45aHIOVTAPw6h5Z8SnJVE2TQ
-	SYw9GiLzuPoD+TPtxGSUFKZze0PjE5s691UZpCCDaSqMOH/2bPfETYtp2uWTmBq/KYbcYPEpPLwIT
-	AIkKaWGRfBszQ4ZU30jg==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=8ov+O/tkb3g1x8BC9ere3wMU3Wqbm+lrvBT/FMFo8q8=; b=Ng02aoeWmkEki26jr4EjaUNGb2
+	wUm5cBHvS/Y5pb6NWiamZ3SvLAMKKQeuPStESJ/eBh8g1tUfWbtVLXtoa2Uo416XH0wqTPEnjxa13
+	K7hBVRpucHqki2cm0Ag4/CVrbYPHYBVA47bQ5atfC0jP0OPpnMts5KrV4fN+M0zGtuVqURh9gf1Re
+	7Q/kH8c5kawaVrwbvwP+Exx+m86fuMc0L1j01xV3C3XRGK0Mm7Ve6A533Ud5JR98+JTbFIkUnBOVL
+	yMK6tbtw5Mx9lPU1V1ftcHPZTvQ+T6PxdisVIzuaj5T6vchothveVLR1TcDBqvG+Tuu671D5MxaHf
+	CdMqyuew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWGn0-0002U7-9v; Thu, 30 May 2019 08:51:58 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hWHrT-0000Vq-QC; Thu, 30 May 2019 10:00:39 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWGmv-0002Tv-0G
- for openwrt-devel@bombadil.infradead.org; Thu, 30 May 2019 08:51:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8eZwZjMFp6Hfw7/KyS+MUbkadjL5NW/+XvzlnHFiPok=; b=1zEJme5NvBKpeDc0uQfYZqeCbg
- 4MAX9sjYWSjV8U5Pkd/Akny8bt/dgXIurbjiuvcZSVTts62vF+wXvvjwMLWA8pK7QcXKssEZP7h2l
- cDaz+KW1RcH4JM51A+2b4doQyphMXwLMFaa2ZttAuAYlMxOVLJ54D3Z9XgsarkYlAqPBAQGgIqjS0
- O77aSLAEK0eKkzPlTJ75XWbEc4i5HbVs/E6ak1qUVyek1SO6nfofxkufW7RskM5fTX0liEPFokPZb
- +6EtwVxgT63vwUsBaV/6eSxfwyF9kZGitp38/xOoTnZrnKIzte9sSoTugrBdtyEi6mL1JdOlrl2ue
- LgifKeTw==;
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWGmr-0005Hp-EE
- for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 08:51:50 +0000
-X-Originating-IP: 95.90.180.177
-Received: from localhost.localdomain (ip5f5ab4b1.dynamic.kabel-deutschland.de
- [95.90.180.177]) (Authenticated sender: mail@aparcar.org)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 7F9D21C0004;
- Thu, 30 May 2019 08:51:14 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 30 May 2019 10:50:51 +0200
-Message-Id: <20190530085050.19061-1-mail@aparcar.org>
-X-Mailer: git-send-email 2.20.1
+ id 1hWHrN-0000VN-4m
+ for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 10:00:34 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 037564F27;
+ Thu, 30 May 2019 12:00:28 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id f95b7945;
+ Thu, 30 May 2019 12:00:27 +0200 (CEST)
+Date: Thu, 30 May 2019 12:00:27 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Christian Lamparter <chunkeey@gmail.com>
+Message-ID: <20190530100027.GE13432@meh.true.cz>
+References: <a3db69d2fc4b460dcb2e58e2608f7fdd8640c5c8.1559159872.git.chunkeey@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a3db69d2fc4b460dcb2e58e2608f7fdd8640c5c8.1559159872.git.chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_045149_578655_C3DB641E 
-X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-CacheID: sfid-20190530_030033_337148_B5058619 
+X-CRM114-Status: UNSURE (   4.15  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] procd: fixup double negative docker
- detection
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] gpio-button-hotplug: support
+ interrupt properties
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,37 +67,20 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Double `!!` results in false positives, making the snapshot unusable as
-procd won't mount essential things on *non virtial machines*.
-
-Signed-off-by: Paul Spooren <mail@aparcar.org>
----
- container.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/container.h b/container.h
-index dd2e432..3c388ce 100644
---- a/container.h
-+++ b/container.h
-@@ -20,7 +20,7 @@
- 
- static inline bool is_container() {
- 	struct stat s;
--	return !!getenv("container") || !!stat("/.dockerenv", &s);
-+	return !!getenv("container") || !stat("/.dockerenv", &s);
- }
- 
- #endif
--- 
-2.20.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+Q2hyaXN0aWFuIExhbXBhcnRlciA8Y2h1bmtlZXlAZ21haWwuY29tPiBbMjAxOS0wNS0yOSAyMTo1
+ODoyOV06CgpIaSwKCj4gVXBzdHJlYW0gTGludXgncyBpbnB1dCBncGlvLWtleXMgZHJpdmVyIHN1
+cHBvcnRzCj4gc3BlY2lmeWluZyBhIGV4dGVybmFsIGludGVycnVwdCBmb3IgYSBncGlvIHZpYSB0
+aGUKPiAnaW50ZXJydXB0cycgcHJvcGVydGllcyBhcyB3ZWxsIGFzIGhhdmluZyBzdXBwb3J0Cj4g
+Zm9yIHNvZnR3YXJlIGRlYm91bmNlLgoKWy4uLl0KCkkndmUganVzdCBjaGVja2VkIHRoaXMgb24g
+YXRoNzkgKGFyY2hlci1jNy12NSkgYW5kIG9uIHJhbWlwcy9tdDc2MjAKKGJkY29tLHdhcDIxMDAt
+c2spIHdpdGggV1BTIGJ1dHRvbnMuCgpBY2tlZC1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1
+ZS5jej4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
+ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
+aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

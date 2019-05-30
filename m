@@ -2,43 +2,42 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B01152FADD
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 13:25:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BF432FB20
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 13:50:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NPgcsi8/7Tkx9I9yXJ6odTEpfkCr11GCnv0N5bDMGQs=; b=mSdWU4LLmPHQwC
-	b1jpLoM1IzPCFY1J0/WAFGaQODzf3Txw+D7ac6E/843Tz/zpcHoGyULN30ajGJ04VDt0Hm+s8EaE0
-	EVFKBVNHQzxvJ/D1cICP9HKUomC3AzHNlTsmy0ofJrZ9SxMBu0RFdKIccVOZczsfBeZBC8zlq+Wus
-	p2pwbytWFoZQLkGg8UohGjCZ4CKEUDdHteaWsEvjm0mkMzio5evCnNd2ZduW3ZLu2nyj8JbQ76dXL
-	+4cUnoSc9T+zDojiZiEjoH5rLapUPR/Mu2VVEV7HXdODC037YoUaRcme/Y3GQZhCC6CkrmJnHWapt
-	CwgG6G7AFnQWIXslQ0jg==;
+	List-Owner; bh=mCyTTbxXP1e7i7m0Bs/miCQwhAJVOd2QEUGLsOkl2nQ=; b=ptPyKslx/bZ89k
+	c96Da8ovGXKt7M4u1boeJD5PePWK66PIAy8jWTKzbmoLgMEt4ykp6HQU/RqYcLsEKnL9N1MAL3xOR
+	vjcu/POv75sTSqXeKZJgK/TuqxSvZmt4scQWyOw+Yq3pUOr7leJUETUF4PHzX9mDQ0dwAkq71ryNf
+	yRayrMEvk3BgFN9q3WIX73e3T3FVNtl6diQP2gtG76UkHIH6p3r6eXojGebk8j8z/jRJO5VNfNqgo
+	sEP8vZjDWgdZuyDJUQ486/SE5istAruWQcvluPDKmWI3qBa7klW/wNVFvBDJdv7oBF67ScHYF7GDp
+	OG4TfCYVMKze09cj1Nvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWJBl-0005c5-TK; Thu, 30 May 2019 11:25:41 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
- helo=mx2.mailbox.org)
+	id 1hWJZF-0004HX-Bu; Thu, 30 May 2019 11:49:57 +0000
+Received: from mx1.mailbox.org ([80.241.60.212])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWJBd-0005bd-Lp
- for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 11:25:36 +0000
+ id 1hWJZ7-0004H1-Lj
+ for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 11:49:51 +0000
 Received: from smtp1.mailbox.org (smtp1.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 15F6CA0142;
- Thu, 30 May 2019 13:25:29 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id 54F48503D3;
+ Thu, 30 May 2019 13:49:38 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id jLHpaceCtfdD; Thu, 30 May 2019 13:25:21 +0200 (CEST)
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id rd_88KbCpTh5; Thu, 30 May 2019 13:49:31 +0200 (CEST)
 To: Sandeep Sheriker M <sandeep.sheriker@microchip.com>,
  openwrt-devel@lists.openwrt.org
 References: <cover.1559063195.git.sandeep.sheriker@microchip.com>
- <7488317a92aa8a0e6acb3f53e6743a71252be6d1.1559063196.git.sandeep.sheriker@microchip.com>
+ <15eeaa33f9e573d2078fcdce24d3dd6514d2bb3d.1559063196.git.sandeep.sheriker@microchip.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -101,26 +100,25 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <c388e469-72f2-31da-31f0-1b9a5570f208@hauke-m.de>
-Date: Thu, 30 May 2019 13:25:19 +0200
+Message-ID: <f1b03c6d-b831-080f-1cd9-8581c792819f@hauke-m.de>
+Date: Thu, 30 May 2019 13:49:30 +0200
 MIME-Version: 1.0
-In-Reply-To: <7488317a92aa8a0e6acb3f53e6743a71252be6d1.1559063196.git.sandeep.sheriker@microchip.com>
+In-Reply-To: <15eeaa33f9e573d2078fcdce24d3dd6514d2bb3d.1559063196.git.sandeep.sheriker@microchip.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_042534_011577_318B7DBA 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20190530_044950_019194_9FCFC3FA 
+X-CRM114-Status: GOOD (  16.03  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
- [list.dnswl.org]
+ low trust [80.241.60.212 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: Re: [OpenWrt-Devel] [OpenWrt-Devel,
- 2/7] at91bootstrap: bump v3.8.10 to v3.8.12
+ 3/7] at91: Generate sdcard images for at91sam9x5ek boards.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -141,60 +139,46 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 On 5/28/19 7:21 PM, Sandeep Sheriker M wrote:
 > From: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
 > 
-> 1. bump to v3.8.12
-> 2. add support for at91sam9x5ek
-> 3. add sama5d27_som1_eksd1_uboot as default defconfig
-> 
 > Signed-off-by: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
 > Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 > ---
->  package/boot/at91bootstrap/Makefile | 24 +++++++++++++++++++++---
->  1 file changed, 21 insertions(+), 3 deletions(-)
+>  target/linux/at91/image/Makefile | 8 +++++++-
+>  target/linux/at91/image/sam9x.mk | 5 +++++
+>  2 files changed, 12 insertions(+), 1 deletion(-)
 > 
-> diff --git a/package/boot/at91bootstrap/Makefile b/package/boot/at91bootstrap/Makefile
-> index 8a08a7a..c06ea81 100644
-> --- a/package/boot/at91bootstrap/Makefile
-> +++ b/package/boot/at91bootstrap/Makefile
-> @@ -9,12 +9,12 @@
->  include $(TOPDIR)/rules.mk
+> diff --git a/target/linux/at91/image/Makefile b/target/linux/at91/image/Makefile
+> index e4c17e3..5b1433c 100644
+> --- a/target/linux/at91/image/Makefile
+> +++ b/target/linux/at91/image/Makefile
+> @@ -51,13 +51,19 @@ define Build/at91-sdcard
+>       mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
+>          ::$(dts).dtb)
 >  
->  PKG_NAME:=at91bootstrap
-> -PKG_VERSION:=v3.8.10
-> +PKG_VERSION:=v3.8.12
->  PKG_RELEASE:=
+> +  $(if $(findstring sama5,$(DEVICE_NAME)) , \
+>    mcopy -i $@.boot \
+>      $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc/u-boot.bin \
+>      ::u-boot.bin
 >  
->  PKG_SOURCE_PROTO:=git
->  PKG_SOURCE_URL:=https://github.com/linux4sam/at91bootstrap.git
-> -PKG_SOURCE_VERSION:=04efa5500d60a0211d14b6ee60df7ce0a828704d
-> +PKG_SOURCE_VERSION:= 28e15d07e9f24efb04b87bb0baa211a0c5640ef1
-
-Please remove this extra space
-
->  
->  PKG_BUILD_DIR = \
->      $(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
-> @@ -28,6 +28,22 @@ define AT91Bootstrap/Default
->    AT91BOOTSTRAP_IMAGE:=at91bootstrap.bin
->  endef
->  
-> +define AT91Bootstrap/at91sam9x5eknf_uboot
-> +  NAME:=AT91Bootstrap for AT91SAM9X5-EK board (NandFlash)
-> +  BUILD_SUBTARGET:=sam9x
-> +  BUILD_DEVICES:=at91sam9g15ek at91sam9g25ek \
-> +                 at91sam9g35ek at91sam9x25ek \
-> +		 at91sam9x35ek
-
-Please use the same indention
-
-> +endef
+>    mcopy -i $@.boot \
+>      $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
+> -    ::BOOT.bin
+> +    ::BOOT.bin ,
 > +
-> +define AT91Bootstrap/at91sam9x5eksd_uboot
-> +  NAME:=AT91Bootstrap for AT91SAM9X5-EK board (SDcard)
-> +  BUILD_SUBTARGET:=sam9x
-> +  BUILD_DEVICES:=at91sam9g15ek at91sam9g25ek \
-> +                 at91sam9g35ek at91sam9x25ek \
-> +		 at91sam9x35ek
-> +endef
+> +  mcopy -i $@.boot $(BIN_DIR)/u-boot-*_mmc/u-boot.bin ::u-boot.bin
+> +
+> +  mcopy -i $@.boot \
+> +    $(BIN_DIR)/at91bootstrap-*sd*/at91bootstrap.bin ::BOOT.bin)
+>  
+
+Wouldn't it be more maintainable to split the at91-sdcard build part
+into multiple parts?
+
+Is it save to use at91bootstrap-*sd*/ ? are you sure it will take the
+correct file?
+
+
+>    ./gen_at91_sdcard_img.sh \
+>        $@.img \
 
 _______________________________________________
 openwrt-devel mailing list

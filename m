@@ -2,84 +2,97 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AFBE2FB26
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 13:51:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7138D2FEF8
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 17:09:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8JaXpaxF8wxqfiLVxNK098w3pAwZm8N7j0ofqgmUuA8=; b=hyy
-	ZngpysYemnPMB7EnS2J0GZyl0N+n0+JscDwZP0RDZ9U8cZI08/p2YqdLckxKers1xoZUl+Tox63gw
-	xnt4AKYEkKhA+vLGHrL4rpWadj1pAc7Wy+Gb0mLZLfYSfCAaJnbZobedLaRB3XanGBSXZdvC+qzSR
-	jMQYI9fYitMIwb1PTaO0rXk18rtMTv34STxUSiMAO4Z+5ZVazluYoLMP47/uyKJpI4uhpQNn2ur9R
-	g2PTbvhs/fl6A1UCuqgTLzuO0JThjnv8WOQIyp7OhX4ZgKSM+TIUtcoSLjkT02JB/COtopLOOEutG
-	uokPfxBkVUI9/kpTHn2P2XVXbXbveKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DDCKz2ptqN0giCI1+ESZyLykeYpEqSrfLD21R4tGBaQ=; b=tBkKnlZJjQ5OY5
+	fZOO97zhdPA4li5QgmMxs6otC7Veztb0qRMuDs+nM5nMGrEOX9UA5ja57RRDIXj1R0mVyakFN4KkY
+	6/czMCH3WVbNipL9Ib9xGuSUVEpblfJW+L2fKcGaOYDo1upHt89tB+CM6o9jnebo8gC8wvZxWtqxn
+	P7QoIZF6LFqCuGVyLlvf0Y+jCQGskS3bkEqyU7ngHG9TzZ43bWwp7tXL095m9hnbBTQhjJA9ZHLQS
+	E8Ap+6KlR1NW6UJFC7FxgptYrttfVrzwamTm6rlbIRIHIgNXa7Kqay1zPO6Vn28fHdgl7Y2n95sSK
+	LSt9lsTIvFWJi1Zk/h8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWJav-00068Y-7j; Thu, 30 May 2019 11:51:41 +0000
-Received: from sonic304-26.consmr.mail.sg3.yahoo.com ([106.10.242.216])
+	id 1hWMgA-0007t7-F2; Thu, 30 May 2019 15:09:18 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWJai-0005r3-MB
- for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 11:51:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048;
- t=1559217083; bh=OB4Nx+G1L4F8xkLoswcb0Wu/C//gI+Ye20rV7p0I5Gg=;
- h=From:To:Subject:Date:From:Subject;
- b=LCKPZvokN5VC6mp4MI3fz0Mb5fa5JuConbm5oB1jy6XrZMAcElhX/IXRewweEWoj3tkmUfJNsEnqcY2MnTEp+XACqDImclpGW7A4tEf9jAr9hPfAkEUoLBSNEgw0p/ujTbB5dv6XuwEzDWrgBSsAWEFzXns4saz7UyzqHSbxQ0rNli3PY1ZqCVlCDTc75GXY+8C0etygGKx4+keq5mibtli1apE2+7DWzSnUaAXrTOftvF1u1w1pNsibxYeXdvbMKV9xPMgWiGF2lQDFSQxrfDrQtPTWXo4yPHiJH2tmayVvFqCoaq6z6pN55Tfx2AGfRgwPDYYsDHC18I1Np4PPxQ==
-X-YMail-OSG: qCO_3MsVM1mANJmEGTSOFYvzXuou5YLpWEG5nq7xhLxhmCJpabiqplBYF2QBShK
- BA_SJTC6_0AOnS.QQFvVPP2PHoX3vmnlKRHfubrUfwE9xOMaP9mqb8SKFOw2F8Og1qhzlTghRiIT
- .0UDBj.49JZ.xt.BRfC7uGHEZ_m6izQMKgK90GusV075SVjjKi2USq3YAMhiPdcecPfvQ.mhu.hy
- 5T.m6qXubCRSGQRBvIQ5olAEfwd01YdoTlS8X3Lpc0lnBJKd70dFdgwLtLQ9tERv9g42r0sLYXB6
- smKixuFPiw6Iy5zXelkysyyyUzgFvqd1l87IUovw4iR8IYqLpUzjr5lgX_n5rwudiBS2UBsGXL2t
- L6qBLQR015QP5RS4PjiJcQctTuer49GFDdv.tYp9QlP53De.GIJts0hbawSb1_W5NTHNX7DkJioP
- KpyJo8Ej_kOnW_oaXWXio3q72QahhZOE4O79xzAeNvOzPkL5fNY8GWvFwgjnyss3PT_Jqf3Vo0SG
- OP8fZDgQnf1Ws_SclWrKKvF8qwQ3A5Jqn0rC6y8VsjrB9e0fXDZgoGdp3Lmfzy_.RoURRzw.MiJl
- sWG7DIDrGQe7xPZ1EmLqvC.wni2xjDmG.aCowc2Tk7IqSsRGhgfQTzoL3IwgqE5vOzvMWG3yboDd
- uDaxsM1p3uy1p5hDFtapKoD_ZKjQRMm8tOIqPg6bc4VREnlySNcEPAO0L91xORq2ug6w27CYQcDG
- bL3ij8EYBWlGbFElLbWVV4inMn_Em6CeQSkR3vjv5gNOLxHXYFTnaGxPIjQI0V.XczgldLxVxEOb
- iPPihu6gWVMc3Jx9q85xveXKlprgAaCDTtI7A2bsp8Bh0tAzO6WsVZYOuU7zdBnKA88f8J_p9_CB
- Emy6kjyrju_CJ_oHSVNIMehhXHGNchqBll9.8qiZQItvPdRnzvHlZd.LD3rttZou3iCOiLvYL.I8
- evKZ6hiKNTJxYakpcHEFU7wV8O6zk3liIWkc110mSR3b0o9o82QuA5qA3LYSEJ5VFt3WwybebodO
- LPpKn9wwEd7xGzMVk4iZ0u2jI0Jppf7c6.Wr35QgmSbJOPriTHuQQQDUomdHV121XJhPC36yLgdx
- cU.gi7sqU0J9rRpcX_9.tBs_CR0nT6bWIjIVGTQ5iqL1.6ZBFK.As_v_F2bG3pBiCy0sLB8IGC5n
- 6Pl_jgn1v7s1jZEzegoTI19SXp.rXEZ_dYQxNwn0C4kYIOYcObUv2hcFoj6z4selrqHg-
-Received: from sonic.gate.mail.ne1.yahoo.com by
- sonic304.consmr.mail.sg3.yahoo.com with HTTP; Thu, 30 May 2019 11:51:23 +0000
-Received: from 123.201.241.200 (EHLO AdminPC) ([123.201.241.200])
- by smtp401.mail.sg3.yahoo.com (Oath Hermes SMTP Server) with ESMTPA ID
- 7c6f70415cc60b891fe8f9aba20dbf7f
- for <openwrt-devel@lists.openwrt.org>;
- Thu, 30 May 2019 11:51:21 +0000 (UTC)
-From: "Kristen Paladiino" <atoztec3@atoztec.com>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Thu, 30 May 2019 07:51:00 -0700
-Message-ID: <1e5501d516f7$1cc28160$56478420$@atoztec.com>
+ id 1hWMg4-0007sd-0z
+ for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 15:09:13 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v22so4049801wml.1
+ for <openwrt-devel@lists.openwrt.org>; Thu, 30 May 2019 08:09:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=h05uJprQM5n7MCI5pgNlxhvzqVD0gaejYDbwSJ3zFYw=;
+ b=bH3tjgVfr9HL9lzscQIxP9Dfd4Z9p+5q0tEAY9NsO+EVVD2maOzMyovdfP6jegM1Om
+ mVZoa5ATI1yYOmWbyhG7dIBj0nCjHvERWEYt5uYNoMMtOUmDbzfJLofWr0TzWO/dj7w1
+ yHyH5CPTHlOvFvb0+Y9MIKm3TAsZ2wdqMtQaDaMWCu+FOGO16gyVJ0MpBQKT56lv5H3w
+ EwPcjDjR9hW/X5Q27RcYgf4Eea4eVmGLGslrofLOLnZc5kRgtpZXv23eM4KmxiDNYdwu
+ xtWgUvm2jkqYhWmy4WrTsL8DFfh+L5B9/f4n0mXXbLagAOPWKsR9y24XrjPOiYkeM7ne
+ HuhQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=h05uJprQM5n7MCI5pgNlxhvzqVD0gaejYDbwSJ3zFYw=;
+ b=XdUU5tJZ881AjJ5i7p7WWJsX7XOO2gzzFlf5RF0AOqhZpy3KLB6UBFIGFf87c/Rf+U
+ 1JAlBsiKbO+cRM2w8vnCT3GmuYhyNYfO3DK4Gmf3nqXdIT8lAn6ts2RnTYuxmzWRgrqW
+ fY+tfVWi0GwVJOZF8P+OZCLV8C0MMHe7nMJeU4CuylsshZNuja8YtlHGhqSeIDLVuRc3
+ vVKRD2lFg7Ju2DCRoIlrGmRTSTV2CA3CqdI7VwgzxA9tK+1DpaemIAcoeW6LRc1d1oN4
+ NWu70KL/u0cFJOx6CLUekO+2znb19oZz0LajJo3IHMm7iC2oJNcOdOXrHmHHFwU1+GV8
+ 04Fg==
+X-Gm-Message-State: APjAAAUjIqhRKdcRLkfOWKESJlwFe/P7g93IoKwSnUqpCNXYIbUof7Zy
+ YmiY0MA0BLbzNg7g5WNf+bE=
+X-Google-Smtp-Source: APXvYqxn4p7xvLaNjMH5Pf+xSTa1r9qhD7KEwHulkVLFmEduV9szOI8vNICr/yHVwpMDpRRuvPDpdw==
+X-Received: by 2002:a1c:7e10:: with SMTP id z16mr2628502wmc.98.1559228949784; 
+ Thu, 30 May 2019 08:09:09 -0700 (PDT)
+Received: from debian64.daheim (pD9E29DF8.dip0.t-ipconnect.de.
+ [217.226.157.248])
+ by smtp.gmail.com with ESMTPSA id r9sm3406876wrq.0.2019.05.30.08.09.08
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 30 May 2019 08:09:08 -0700 (PDT)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.92)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1hWMg0-0004a1-B4; Thu, 30 May 2019 17:09:08 +0200
+From: Christian Lamparter <chunkeey@gmail.com>
+To: Petr =?utf-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
+Date: Thu, 30 May 2019 17:09:08 +0200
+Message-ID: <2839502.UJiEac7TxE@debian64>
+In-Reply-To: <20190530100027.GE13432@meh.true.cz>
+References: <a3db69d2fc4b460dcb2e58e2608f7fdd8640c5c8.1559159872.git.chunkeey@gmail.com>
+ <20190530100027.GE13432@meh.true.cz>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 14.0
-Thread-Index: AdUW9xIrjIhuu07/QceAo4w3QKG18Q==
-Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_045128_944240_94133DEC 
-X-CRM114-Status: UNSURE (  -4.49  )
+X-CRM114-CacheID: sfid-20190530_080912_091787_5F4E4237 
+X-CRM114-Status: UNSURE (   9.39  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [106.10.242.216 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (chunkeey[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
-Subject: [OpenWrt-Devel] Lists - Del Mar Electronics And Manufacturing Show
- 2019 - Register Portal List
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] gpio-button-hotplug: support
+ interrupt properties
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -91,180 +104,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2634423879135455682=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============2634423879135455682==
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_1E56_01D516BC.70641E90"
-Content-Language: en-us
-
-This is a multipart message in MIME format.
-
-------=_NextPart_000_1E56_01D516BC.70641E90
-Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-
- 
-
- 
-
-Dear Exhibitors,
-
- 
-
-Thanks for participating in DEL MAR ELECTRONICS AND MANUFACTURING SHOW 2019.
-
- 
-
-Del Mar Electronics And Manufacturing Show 01 - 02 MAY 2019 updated
-attendees List is Now Available! Which enables you to showcase your
-company's post-show marketing efforts with unlimited usage on the contact
-list (No restriction on usage).
-
- 
-
-Attendees: Engineers, Developers, Manufacturers, Design Electronic
-Packaging, Key Decision Makers, Industry Professionals and many more..
-
- 
-
-Qualified Data Field includes: Company Name, Web Address, Contact Name, Job
-Title, Mailing Address, Phone Number, and Industry, SIC Code, Company
-Mailing address with Zip Code, Fax Number, Industry Classification, Website
-URL along with verified business email address.
-
- 
-
-These contact list will be delivered in Excel format which can be used for
-telemarketing, direct marketing, and email marketing initiatives etc.
-
- 
-
-Please let me know your thoughts, as it will be my pleasure to share you the
-counts and pricing of the lists.
-
- 
-
-Looking back to hearing from you.
-
- 
-
-Regards
-
-Kristen Paladiino
-
-DMEMS - Event Specialist.
-
-01 - 02 MAY 2019 | SAN DIEGO, CA
-
- 
-
-
-------=_NextPart_000_1E56_01D516BC.70641E90
-Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
-HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
-charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =
-(filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	margin-bottom:.0001pt;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	color:blue;
-	text-decoration:underline;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-priority:99;
-	color:purple;
-	text-decoration:underline;}
-span.EmailStyle17
-	{mso-style-type:personal-compose;
-	font-family:"Calibri","sans-serif";
-	color:windowtext;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-family:"Calibri","sans-serif";}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
-	{page:WordSection1;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =
-vlink=3Dpurple><div class=3DWordSection1><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Dear =
-Exhibitors,<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Thanks for participating in <b>DEL MAR ELECTRONICS AND =
-MANUFACTURING SHOW 2019.<o:p></o:p></b></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><b><u>Del =
-Mar Electronics And Manufacturing Show</u></b><b> </b>01 - 02 MAY 2019 =
-updated attendees List is <b><u>Now Available</u></b>! Which enables you =
-to showcase your company&#8217;s post-show marketing efforts with =
-unlimited usage on the contact list (No restriction on =
-usage).<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><b><u>Attendees</u></b>: Engineers, Developers, =
-Manufacturers, Design Electronic Packaging, Key Decision Makers, =
-Industry Professionals and many more&#8230;.<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><b><u>Qualified Data Field includes</u></b>: Company =
-Name, Web Address, Contact Name, Job Title, Mailing Address, Phone =
-Number, and Industry, SIC Code, Company Mailing address with Zip Code, =
-Fax Number, Industry Classification, Website URL along with verified =
-business email address.<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>These =
-contact list will be delivered in Excel format which can be used for =
-telemarketing, direct marketing, and email marketing initiatives =
-etc.<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><b>Please let me know your thoughts, as it will be my =
-pleasure to share you the counts and pricing of the =
-lists.<o:p></o:p></b></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Looking back to hearing from you.<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Regards<o:p></o:p></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><b>Kristen Paladiino<o:p></o:p></b></p><p =
-class=3DMsoNormal><b><u>DMEMS</u></b> - Event =
-Specialist.<o:p></o:p></p><p class=3DMsoNormal>01 - 02 MAY 2019 | SAN =
-DIEGO, CA<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p></div></body></html>
-------=_NextPart_000_1E56_01D516BC.70641E90--
-
-
-
---===============2634423879135455682==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2634423879135455682==--
-
-
+SGVsbG8sCgpPbiBUaHVyc2RheSwgTWF5IDMwLCAyMDE5IDEyOjAwOjI3IFBNIENFU1QgUGV0ciDF
+oHRldGlhciB3cm90ZToKPiBDaHJpc3RpYW4gTGFtcGFydGVyIDxjaHVua2VleUBnbWFpbC5jb20+
+IFsyMDE5LTA1LTI5IDIxOjU4OjI5XToKPiA+IFVwc3RyZWFtIExpbnV4J3MgaW5wdXQgZ3Bpby1r
+ZXlzIGRyaXZlciBzdXBwb3J0cwo+ID4gc3BlY2lmeWluZyBhIGV4dGVybmFsIGludGVycnVwdCBm
+b3IgYSBncGlvIHZpYSB0aGUKPiA+ICdpbnRlcnJ1cHRzJyBwcm9wZXJ0aWVzIGFzIHdlbGwgYXMg
+aGF2aW5nIHN1cHBvcnQKPiA+IGZvciBzb2Z0d2FyZSBkZWJvdW5jZS4KPiAKPiBbLi4uXQo+IAo+
+IEkndmUganVzdCBjaGVja2VkIHRoaXMgb24gYXRoNzkgKGFyY2hlci1jNy12NSkgYW5kIG9uIHJh
+bWlwcy9tdDc2MjAKPiAoYmRjb20sd2FwMjEwMC1zaykgd2l0aCBXUFMgYnV0dG9ucy4KPgo+IEFj
+a2VkLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6PgoKQ2FuIHlvdSB0ZWxsIG1lIHdo
+YXQgeW91IHRlc3RlZD8gV2FzIGl0IHRoZSBzb2Z0d2FyZSBkZWJvdW5jZT8KQmVjYXVzZSB0aGlz
+IHNob3VsZCBiZSB0aGUgb25seSBiaXQgdGhhdCB3aWxsIGFmZmVjdCB0aGUgYXRoNzkKcGxhdGZv
+cm0gSSB0aGluayAoc2luY2UgaXQgYWxyZWFkeSBoYXMgc3VwcG9ydCBmb3IgaW50ZXJydXB0cwp0
+aHJvdWdoIHRoZSBncGlvIGNvbnRyb2xsZXIpLgoKRnJvbSB3aGF0IEkgY2FuIHRlbGwsIHJhbWlw
+cyBzaG91bGQgdXNlIGdwaW8ta2V5cy1wb2xsZWQgZXhjbHVzaXZseQpmb3Igbm93LiBUaGlzIGlz
+IGJlY2F1c2UgdGhlIHJ0Mjg4MC1waW5tdXggZHJpdmVyIGRvZXNuJ3QgaW1wbGVtZW50CmFuZCBp
+cnEgc3VwcG9ydCAodGhvdWdoIHNvbWUgb2YgdGhlIGNoaXBzIHNob3VsZCBzdXBwb3J0IGl0KS4K
+YWxsIGdwaW8ta2V5cy1wb2xsZWQgc2hvdWxkIHdvcmsgYXMgYmVmb3JlLgogCkNoZWVycywKQ2hy
+aXN0aWFuCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
+cmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2
+ZWwK

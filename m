@@ -2,123 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BF432FB20
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 13:50:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AFBE2FB26
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 May 2019 13:51:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mCyTTbxXP1e7i7m0Bs/miCQwhAJVOd2QEUGLsOkl2nQ=; b=ptPyKslx/bZ89k
-	c96Da8ovGXKt7M4u1boeJD5PePWK66PIAy8jWTKzbmoLgMEt4ykp6HQU/RqYcLsEKnL9N1MAL3xOR
-	vjcu/POv75sTSqXeKZJgK/TuqxSvZmt4scQWyOw+Yq3pUOr7leJUETUF4PHzX9mDQ0dwAkq71ryNf
-	yRayrMEvk3BgFN9q3WIX73e3T3FVNtl6diQP2gtG76UkHIH6p3r6eXojGebk8j8z/jRJO5VNfNqgo
-	sEP8vZjDWgdZuyDJUQ486/SE5istAruWQcvluPDKmWI3qBa7klW/wNVFvBDJdv7oBF67ScHYF7GDp
-	OG4TfCYVMKze09cj1Nvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8JaXpaxF8wxqfiLVxNK098w3pAwZm8N7j0ofqgmUuA8=; b=hyy
+	ZngpysYemnPMB7EnS2J0GZyl0N+n0+JscDwZP0RDZ9U8cZI08/p2YqdLckxKers1xoZUl+Tox63gw
+	xnt4AKYEkKhA+vLGHrL4rpWadj1pAc7Wy+Gb0mLZLfYSfCAaJnbZobedLaRB3XanGBSXZdvC+qzSR
+	jMQYI9fYitMIwb1PTaO0rXk18rtMTv34STxUSiMAO4Z+5ZVazluYoLMP47/uyKJpI4uhpQNn2ur9R
+	g2PTbvhs/fl6A1UCuqgTLzuO0JThjnv8WOQIyp7OhX4ZgKSM+TIUtcoSLjkT02JB/COtopLOOEutG
+	uokPfxBkVUI9/kpTHn2P2XVXbXbveKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWJZF-0004HX-Bu; Thu, 30 May 2019 11:49:57 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1hWJav-00068Y-7j; Thu, 30 May 2019 11:51:41 +0000
+Received: from sonic304-26.consmr.mail.sg3.yahoo.com ([106.10.242.216])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWJZ7-0004H1-Lj
- for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 11:49:51 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 54F48503D3;
- Thu, 30 May 2019 13:49:38 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id rd_88KbCpTh5; Thu, 30 May 2019 13:49:31 +0200 (CEST)
-To: Sandeep Sheriker M <sandeep.sheriker@microchip.com>,
- openwrt-devel@lists.openwrt.org
-References: <cover.1559063195.git.sandeep.sheriker@microchip.com>
- <15eeaa33f9e573d2078fcdce24d3dd6514d2bb3d.1559063196.git.sandeep.sheriker@microchip.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
- U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <f1b03c6d-b831-080f-1cd9-8581c792819f@hauke-m.de>
-Date: Thu, 30 May 2019 13:49:30 +0200
+ id 1hWJai-0005r3-MB
+ for openwrt-devel@lists.openwrt.org; Thu, 30 May 2019 11:51:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048;
+ t=1559217083; bh=OB4Nx+G1L4F8xkLoswcb0Wu/C//gI+Ye20rV7p0I5Gg=;
+ h=From:To:Subject:Date:From:Subject;
+ b=LCKPZvokN5VC6mp4MI3fz0Mb5fa5JuConbm5oB1jy6XrZMAcElhX/IXRewweEWoj3tkmUfJNsEnqcY2MnTEp+XACqDImclpGW7A4tEf9jAr9hPfAkEUoLBSNEgw0p/ujTbB5dv6XuwEzDWrgBSsAWEFzXns4saz7UyzqHSbxQ0rNli3PY1ZqCVlCDTc75GXY+8C0etygGKx4+keq5mibtli1apE2+7DWzSnUaAXrTOftvF1u1w1pNsibxYeXdvbMKV9xPMgWiGF2lQDFSQxrfDrQtPTWXo4yPHiJH2tmayVvFqCoaq6z6pN55Tfx2AGfRgwPDYYsDHC18I1Np4PPxQ==
+X-YMail-OSG: qCO_3MsVM1mANJmEGTSOFYvzXuou5YLpWEG5nq7xhLxhmCJpabiqplBYF2QBShK
+ BA_SJTC6_0AOnS.QQFvVPP2PHoX3vmnlKRHfubrUfwE9xOMaP9mqb8SKFOw2F8Og1qhzlTghRiIT
+ .0UDBj.49JZ.xt.BRfC7uGHEZ_m6izQMKgK90GusV075SVjjKi2USq3YAMhiPdcecPfvQ.mhu.hy
+ 5T.m6qXubCRSGQRBvIQ5olAEfwd01YdoTlS8X3Lpc0lnBJKd70dFdgwLtLQ9tERv9g42r0sLYXB6
+ smKixuFPiw6Iy5zXelkysyyyUzgFvqd1l87IUovw4iR8IYqLpUzjr5lgX_n5rwudiBS2UBsGXL2t
+ L6qBLQR015QP5RS4PjiJcQctTuer49GFDdv.tYp9QlP53De.GIJts0hbawSb1_W5NTHNX7DkJioP
+ KpyJo8Ej_kOnW_oaXWXio3q72QahhZOE4O79xzAeNvOzPkL5fNY8GWvFwgjnyss3PT_Jqf3Vo0SG
+ OP8fZDgQnf1Ws_SclWrKKvF8qwQ3A5Jqn0rC6y8VsjrB9e0fXDZgoGdp3Lmfzy_.RoURRzw.MiJl
+ sWG7DIDrGQe7xPZ1EmLqvC.wni2xjDmG.aCowc2Tk7IqSsRGhgfQTzoL3IwgqE5vOzvMWG3yboDd
+ uDaxsM1p3uy1p5hDFtapKoD_ZKjQRMm8tOIqPg6bc4VREnlySNcEPAO0L91xORq2ug6w27CYQcDG
+ bL3ij8EYBWlGbFElLbWVV4inMn_Em6CeQSkR3vjv5gNOLxHXYFTnaGxPIjQI0V.XczgldLxVxEOb
+ iPPihu6gWVMc3Jx9q85xveXKlprgAaCDTtI7A2bsp8Bh0tAzO6WsVZYOuU7zdBnKA88f8J_p9_CB
+ Emy6kjyrju_CJ_oHSVNIMehhXHGNchqBll9.8qiZQItvPdRnzvHlZd.LD3rttZou3iCOiLvYL.I8
+ evKZ6hiKNTJxYakpcHEFU7wV8O6zk3liIWkc110mSR3b0o9o82QuA5qA3LYSEJ5VFt3WwybebodO
+ LPpKn9wwEd7xGzMVk4iZ0u2jI0Jppf7c6.Wr35QgmSbJOPriTHuQQQDUomdHV121XJhPC36yLgdx
+ cU.gi7sqU0J9rRpcX_9.tBs_CR0nT6bWIjIVGTQ5iqL1.6ZBFK.As_v_F2bG3pBiCy0sLB8IGC5n
+ 6Pl_jgn1v7s1jZEzegoTI19SXp.rXEZ_dYQxNwn0C4kYIOYcObUv2hcFoj6z4selrqHg-
+Received: from sonic.gate.mail.ne1.yahoo.com by
+ sonic304.consmr.mail.sg3.yahoo.com with HTTP; Thu, 30 May 2019 11:51:23 +0000
+Received: from 123.201.241.200 (EHLO AdminPC) ([123.201.241.200])
+ by smtp401.mail.sg3.yahoo.com (Oath Hermes SMTP Server) with ESMTPA ID
+ 7c6f70415cc60b891fe8f9aba20dbf7f
+ for <openwrt-devel@lists.openwrt.org>;
+ Thu, 30 May 2019 11:51:21 +0000 (UTC)
+From: "Kristen Paladiino" <atoztec3@atoztec.com>
+To: <openwrt-devel@lists.openwrt.org>
+Date: Thu, 30 May 2019 07:51:00 -0700
+Message-ID: <1e5501d516f7$1cc28160$56478420$@atoztec.com>
 MIME-Version: 1.0
-In-Reply-To: <15eeaa33f9e573d2078fcdce24d3dd6514d2bb3d.1559063196.git.sandeep.sheriker@microchip.com>
-Content-Language: en-US
+X-Mailer: Microsoft Outlook 14.0
+Thread-Index: AdUW9xIrjIhuu07/QceAo4w3QKG18Q==
+Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_044950_019194_9FCFC3FA 
-X-CRM114-Status: GOOD (  16.03  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190530_045128_944240_94133DEC 
+X-CRM114-Status: UNSURE (  -4.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [106.10.242.216 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [OpenWrt-Devel,
- 3/7] at91: Generate sdcard images for at91sam9x5ek boards.
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
+Subject: [OpenWrt-Devel] Lists - Del Mar Electronics And Manufacturing Show
+ 2019 - Register Portal List
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -130,57 +91,180 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2634423879135455682=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 5/28/19 7:21 PM, Sandeep Sheriker M wrote:
-> From: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
-> 
-> Signed-off-by: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
-> Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
-> ---
->  target/linux/at91/image/Makefile | 8 +++++++-
->  target/linux/at91/image/sam9x.mk | 5 +++++
->  2 files changed, 12 insertions(+), 1 deletion(-)
-> 
-> diff --git a/target/linux/at91/image/Makefile b/target/linux/at91/image/Makefile
-> index e4c17e3..5b1433c 100644
-> --- a/target/linux/at91/image/Makefile
-> +++ b/target/linux/at91/image/Makefile
-> @@ -51,13 +51,19 @@ define Build/at91-sdcard
->       mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
->          ::$(dts).dtb)
->  
-> +  $(if $(findstring sama5,$(DEVICE_NAME)) , \
->    mcopy -i $@.boot \
->      $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc/u-boot.bin \
->      ::u-boot.bin
->  
->    mcopy -i $@.boot \
->      $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
-> -    ::BOOT.bin
-> +    ::BOOT.bin ,
-> +
-> +  mcopy -i $@.boot $(BIN_DIR)/u-boot-*_mmc/u-boot.bin ::u-boot.bin
-> +
-> +  mcopy -i $@.boot \
-> +    $(BIN_DIR)/at91bootstrap-*sd*/at91bootstrap.bin ::BOOT.bin)
->  
+This is a multipart message in MIME format.
 
-Wouldn't it be more maintainable to split the at91-sdcard build part
-into multiple parts?
+--===============2634423879135455682==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_1E56_01D516BC.70641E90"
+Content-Language: en-us
 
-Is it save to use at91bootstrap-*sd*/ ? are you sure it will take the
-correct file?
+This is a multipart message in MIME format.
+
+------=_NextPart_000_1E56_01D516BC.70641E90
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+ 
+
+ 
+
+Dear Exhibitors,
+
+ 
+
+Thanks for participating in DEL MAR ELECTRONICS AND MANUFACTURING SHOW 2019.
+
+ 
+
+Del Mar Electronics And Manufacturing Show 01 - 02 MAY 2019 updated
+attendees List is Now Available! Which enables you to showcase your
+company's post-show marketing efforts with unlimited usage on the contact
+list (No restriction on usage).
+
+ 
+
+Attendees: Engineers, Developers, Manufacturers, Design Electronic
+Packaging, Key Decision Makers, Industry Professionals and many more..
+
+ 
+
+Qualified Data Field includes: Company Name, Web Address, Contact Name, Job
+Title, Mailing Address, Phone Number, and Industry, SIC Code, Company
+Mailing address with Zip Code, Fax Number, Industry Classification, Website
+URL along with verified business email address.
+
+ 
+
+These contact list will be delivered in Excel format which can be used for
+telemarketing, direct marketing, and email marketing initiatives etc.
+
+ 
+
+Please let me know your thoughts, as it will be my pleasure to share you the
+counts and pricing of the lists.
+
+ 
+
+Looking back to hearing from you.
+
+ 
+
+Regards
+
+Kristen Paladiino
+
+DMEMS - Event Specialist.
+
+01 - 02 MAY 2019 | SAN DIEGO, CA
+
+ 
 
 
->    ./gen_at91_sdcard_img.sh \
->        $@.img \
+------=_NextPart_000_1E56_01D516BC.70641E90
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
+HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri","sans-serif";
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri","sans-serif";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =
+vlink=3Dpurple><div class=3DWordSection1><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Dear =
+Exhibitors,<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Thanks for participating in <b>DEL MAR ELECTRONICS AND =
+MANUFACTURING SHOW 2019.<o:p></o:p></b></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><b><u>Del =
+Mar Electronics And Manufacturing Show</u></b><b> </b>01 - 02 MAY 2019 =
+updated attendees List is <b><u>Now Available</u></b>! Which enables you =
+to showcase your company&#8217;s post-show marketing efforts with =
+unlimited usage on the contact list (No restriction on =
+usage).<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal><b><u>Attendees</u></b>: Engineers, Developers, =
+Manufacturers, Design Electronic Packaging, Key Decision Makers, =
+Industry Professionals and many more&#8230;.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal><b><u>Qualified Data Field includes</u></b>: Company =
+Name, Web Address, Contact Name, Job Title, Mailing Address, Phone =
+Number, and Industry, SIC Code, Company Mailing address with Zip Code, =
+Fax Number, Industry Classification, Website URL along with verified =
+business email address.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>These =
+contact list will be delivered in Excel format which can be used for =
+telemarketing, direct marketing, and email marketing initiatives =
+etc.<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal><b>Please let me know your thoughts, as it will be my =
+pleasure to share you the counts and pricing of the =
+lists.<o:p></o:p></b></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Looking back to hearing from you.<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Regards<o:p></o:p></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><b>Kristen Paladiino<o:p></o:p></b></p><p =
+class=3DMsoNormal><b><u>DMEMS</u></b> - Event =
+Specialist.<o:p></o:p></p><p class=3DMsoNormal>01 - 02 MAY 2019 | SAN =
+DIEGO, CA<o:p></o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p></div></body></html>
+------=_NextPart_000_1E56_01D516BC.70641E90--
+
+
+
+--===============2634423879135455682==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2634423879135455682==--
+
+

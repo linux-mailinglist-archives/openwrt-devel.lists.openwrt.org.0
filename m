@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1881C31F90
-	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Jun 2019 16:02:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D039931F91
+	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Jun 2019 16:02:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,18 +11,18 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=GU3//KdHrGC3sSPZfgZkK4Q9vQPBK4uio//wbJr3Llw=; b=AvB2XZkeahlfAQkWqA5X5wCRjw
-	rIRfb8P6z/Ui1rzIlB01dSRcVuXIwgLkKu6wqr47zjJxKahC71FIUCKF3b62VKcULLa6g1WghhCtu
-	6iUI8TL3+jBAzqhJjCA+UVNkey1q7mFba6NiqRddiS6cRWjrBsauigKsWa+N5i9ukMuU3vlI6709k
-	7yrF+ZFiCSHoTuUp+duzRwalGHNFP6UUhegzEq8fQOe5VQ1pZPGfMbQXUlD6NXaP7F5OekwiFMnB+
-	am1dxtY1fKKgc5aU7T3ps3F6fO+ndL6RXwCOlbMuGL5nIcyXDf1wKueRfCyMputfwvpeChKGETgsC
-	k5ZtZweA==;
+	bh=PI5QYDDuxsiO3OB3mHlm5Mbo9YzK21KM0os+qdiWGgw=; b=ToV31kbctkd1xo8KIy28bq4CUN
+	kMS0cJ+aKz6KEUxZIUMdhnhaBNFuROMMyXbSeLjkZs4852qjZf1dANuLQz48exGO+DwbDvUrxll0+
+	qlzkwrKg3UeoX283W21sxy/DNFvaHka63Iu5TKFJ65WFyWUsWyGIDv6Ka7WlCWiw+p7Tp25ppm8Oa
+	2b+ayLzMcwSkh+JxlfewE1fY8e/puQEVY4/puWkaZc/FWurDwnknb1t4211NF9i7fwkzm7ec1zxzF
+	EJiA7rvaEMTk4CyuMBz9A9WfaEoFvi2YAL5DEmDMgmiEYaxuaPCJwEDC82TKgoq0Id9ngvkLIyGic
+	rVLrVxjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX4aJ-0002YB-0D; Sat, 01 Jun 2019 14:02:11 +0000
+	id 1hX4aS-0002nK-IQ; Sat, 01 Jun 2019 14:02:20 +0000
 Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX4Yw-0000a9-Mw
+ id 1hX4Yw-0000aV-Mv
  for openwrt-devel@lists.openwrt.org; Sat, 01 Jun 2019 14:00:51 +0000
 Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
@@ -46,7 +46,7 @@ Authentication-Results: esa4.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,538,1549954800"; d="scan'208";a="35191649"
+X-IronPort-AV: E=Sophos;i="5.60,538,1549954800"; d="scan'208";a="35191650"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
@@ -60,15 +60,15 @@ Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
  15.1.1713.5; Thu, 30 May 2019 17:08:01 -0700
 From: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 To: <openwrt-devel@lists.openwrt.org>
-Date: Thu, 30 May 2019 17:06:53 -0700
-Message-ID: <aa036f839823d4b1773785e0b0e48bcbfa4c9a1c.1559260744.git.sandeep.sheriker@microchip.com>
+Date: Thu, 30 May 2019 17:06:54 -0700
+Message-ID: <96373d23749b0dfe2d522e47921642c049ff65a4.1559260744.git.sandeep.sheriker@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_070047_295170_3BF2638D 
-X-CRM114-Status: UNSURE (   6.09  )
+X-CRM114-CacheID: sfid-20190601_070047_307443_9F22752F 
+X-CRM114-Status: UNSURE (   7.05  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,8 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [patch v1 08/11] at91: move at91-sdcard command to
- sama5.mk
+Subject: [OpenWrt-Devel] [patch v1 09/11] at91: add uboot environments
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,96 +96,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+add uboot environments to sdcard image
+
 Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 ---
- target/linux/at91/image/Makefile | 31 -------------------------------
- target/linux/at91/image/sama5.mk | 31 +++++++++++++++++++++++++++++++
- 2 files changed, 31 insertions(+), 31 deletions(-)
+ target/linux/at91/image/sama5.mk      | 11 ++++++++++-
+ target/linux/at91/image/uboot-env.txt | 14 ++++++++++++++
+ 2 files changed, 24 insertions(+), 1 deletion(-)
+ create mode 100644 target/linux/at91/image/uboot-env.txt
 
-diff --git a/target/linux/at91/image/Makefile b/target/linux/at91/image/Makefile
-index e4c17e3..3b01d42 100644
---- a/target/linux/at91/image/Makefile
-+++ b/target/linux/at91/image/Makefile
-@@ -40,37 +40,6 @@ define Device/dtb
-   KERNEL := kernel-bin | lzma | uImage lzma
- endef
- 
--define Build/at91-sdcard
--  $(if $(findstring ext4,$@), \
--  rm -f $@.boot
--  mkfs.fat -C $@.boot $(FAT32_BLOCKS)
--
--  mcopy -i $@.boot $(KDIR)/zImage ::zImage
--
--  $(foreach dts,$(DEVICE_DTS), \
--     mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
--        ::$(dts).dtb)
--
--  mcopy -i $@.boot \
--    $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc/u-boot.bin \
--    ::u-boot.bin
--
--  mcopy -i $@.boot \
--    $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
--    ::BOOT.bin
--
--  ./gen_at91_sdcard_img.sh \
--      $@.img \
--      $@.boot \
--      $(KDIR)/root.ext4 \
--      $(AT91_SD_BOOT_PARTSIZE) \
--      $(CONFIG_TARGET_ROOTFS_PARTSIZE)
--
--  gzip -nc9 $@.img > $@
--
--  rm -f $@.img $@.boot )
--endef
--
- define Device/evaluation-sdimage
-   IMAGES += sdcard.img.gz
-   IMAGE/sdcard.img.gz := at91-sdcard
 diff --git a/target/linux/at91/image/sama5.mk b/target/linux/at91/image/sama5.mk
-index f9a190c..f4548fb 100644
+index f4548fb..bce89a0 100644
 --- a/target/linux/at91/image/sama5.mk
 +++ b/target/linux/at91/image/sama5.mk
-@@ -6,6 +6,37 @@ define Device/default-nand
-   MKUBIFS_OPTS := -m $$(PAGESIZE) -e 124KiB -c 2048
+@@ -25,6 +25,15 @@ define Build/at91-sdcard
+     $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
+     ::BOOT.bin
+ 
++  $(CP) uboot-env.txt $@-uboot-env.txt
++  sed -i '2d;3d' $@-uboot-env.txt
++  sed -i '2i board='"$(DEVICE_NAME:at91-%=%)"'' $@-uboot-env.txt
++  sed -i '3i board_name='"$(DEVICE_NAME:at91-%=%)"'' $@-uboot-env.txt
++
++  mkenvimage -s 0x4000 -o $@-uboot.env $@-uboot-env.txt
++
++  mcopy -i $@.boot $@-uboot.env ::uboot.env
++
+   ./gen_at91_sdcard_img.sh \
+       $@.img \
+       $@.boot \
+@@ -34,7 +43,7 @@ define Build/at91-sdcard
+ 
+   gzip -nc9 $@.img > $@
+ 
+-  rm -f $@.img $@.boot )
++  rm -f $@.img $@.boot $@-uboot.env $@-uboot-env.txt)
  endef
  
-+define Build/at91-sdcard
-+  $(if $(findstring ext4,$@), \
-+  rm -f $@.boot
-+  mkfs.fat -C $@.boot $(FAT32_BLOCKS)
-+
-+  mcopy -i $@.boot $(KDIR)/zImage ::zImage
-+
-+  $(foreach dts,$(DEVICE_DTS), \
-+     mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
-+        ::$(dts).dtb)
-+
-+  mcopy -i $@.boot \
-+    $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc*/u-boot.bin \
-+    ::u-boot.bin
-+
-+  mcopy -i $@.boot \
-+    $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
-+    ::BOOT.bin
-+
-+  ./gen_at91_sdcard_img.sh \
-+      $@.img \
-+      $@.boot \
-+      $(KDIR)/root.ext4 \
-+      $(AT91_SD_BOOT_PARTSIZE) \
-+      $(CONFIG_TARGET_ROOTFS_PARTSIZE)
-+
-+  gzip -nc9 $@.img > $@
-+
-+  rm -f $@.img $@.boot )
-+endef
-+
  define Device/at91-sama5d2_xplained
-   $(Device/evaluation-dtb)
-   DEVICE_TITLE := Microchip(Atmel AT91) SAMA5D2 Xplained
+diff --git a/target/linux/at91/image/uboot-env.txt b/target/linux/at91/image/uboot-env.txt
+new file mode 100644
+index 0000000..80d051b
+--- /dev/null
++++ b/target/linux/at91/image/uboot-env.txt
+@@ -0,0 +1,14 @@
++/* Do Not remove First 2 lines, Makefile will modify these lines with proper board names */
++board=at91sam9x25ek
++board_name=at91sam9x25ek
++bootargs=console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait rootfstype=ext4
++bootargsd2=console=ttyS0,115200 earlyprintk root=/dev/mmcblk1p2 rw rootwait rootfstype=ext4
++bootargsxx=console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait rootfstype=ext4
++bootcmd=run setbootargs; run fatload_mmc; bootm 0x21000000
++bootdelay=1
++fatload_mmc=if test ${board_name} = sama5d2_xplained || test ${board_name} = sama5d27_som1_ek; then fatload mmc 1:1 0x21000000 ${board_name}-fit.itb; else fatload mmc 0:1 0x21000000 ${board_name}-fit.itb; fi
++setbootargs=if test ${board_name} = sama5d2_xplained || test ${board_name} = sama5d27_som1_ek; then setenv bootargs ${bootargsd2}; else setenv bootargs ${bootargsxx}; fi
++ethact=gmac0
++stderr=serial
++stdin=serial
++stdout=serial
 -- 
 2.7.4
 

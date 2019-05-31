@@ -2,51 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD68A30F33
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 15:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 757F831072
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 16:45:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:To:From:Date:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/en9euY8CU3yLEl59kq210+vPrJOeYKq++c/X3fci0I=; b=Tz5
-	PcBj1pVeheqvFS/j6aAeLuUG21levLbmpXoJQx0KomK2eeT1OnkfIXunGNiI7B2qXaX3zTYHvoIuC
-	qRxQ057klYmxQYCD9hozRZOKkRR+52ja4oGjSFHQUb2k/96kyQdvGPg7ywGCv+oqReWNzACsEA4C0
-	z6kieEp42TIY8jLfjmCNkFE19tewFYTvLSHPR8Jy3PvIXeGLxHjjJv6U3lx9mg2hd+pzjAKH/kH2l
-	YJ5xxasgd+fTm6uBQNlPXpOr5xKpu18oy4ysQvCeXbLN9yJMLvfTLKKMH6t/126QiTkdSoZJ1REL8
-	k+3TP2Uc/fRtV5QduUteFla7oQw0pAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1dh9xMAHiJgdE5yrUCq/TD/SIFBcuPC2sy6gWk1SKjE=; b=KdreN7cK6CvCZP
+	KpjsCn3Hwn8PCVjFeezlrM2ZHHlYr9YiMJHQ+GYZYOS/5dAFBr8rXTEHxypqmEks8d05peJFoqWKS
+	xxQeCWVAJo4dLx7NhWKLadEt6nHJymCcMVcM16fNz/WV1NmUlR8gE3x2jacpTBkhqu56aPIkwwBH+
+	fCWW09JA6ac/0pRBRzrjdx7xeUDDVcJG9W7N/pNE/ThK0pUEvImpCNSBUen1HTRzJWKbrpxwywR2f
+	vPHOsIU1gKQIlnz/EQFlcYXzWaWF9pikegFx0MLYKNgT1JM68rcwLD8LKRMP/vcBp0rVkQjQsnZMi
+	wdcLz99pX5im7mLiWcbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWhr9-0005x1-Kt; Fri, 31 May 2019 13:46:03 +0000
-Received: from mails.bitsofnetworks.org ([2001:912:1800:ff::131])
+	id 1hWimN-0004TX-M0; Fri, 31 May 2019 14:45:11 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWhr1-0005wI-56
- for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 13:45:57 +0000
-Received: from [2001:912:1800:0:f3c3:fd02:8b06:8680]
- (helo=tuxmachine.localdomain) by mails.bitsofnetworks.org with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <baptiste@bitsofnetworks.org>) id 1hWhqu-00027z-Is
- for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 15:45:48 +0200
-Date: Fri, 31 May 2019 15:45:47 +0200
-From: Baptiste Jonglez <baptiste@bitsofnetworks.org>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <20190531134547.GE31876@tuxmachine.localdomain>
+ id 1hWimF-0003p2-7c
+ for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 14:45:04 +0000
+Received: by mail-ot1-x343.google.com with SMTP id j49so9386317otc.13
+ for <openwrt-devel@lists.openwrt.org>; Fri, 31 May 2019 07:45:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PNXsxeI1CUmNddrADEVk489yQbLEs9gL/M2JIzfQTOU=;
+ b=ZeQ/39wCa2BK3+/Olk3WP3UZWV/c015VVFb0KMpuQcof3bCBDTJj7rybn1Lh44Y4Nc
+ Dbdm0EDpdEFkWPrBP6B8/dY3vjIXxlifwR+W/bSoVeyPHkxKf1AFcOPnstdnTrHjGyWV
+ Bf2+NgOr24wAl4tIxtbsIrCd/dOLTBeYwGBLP3q5GCo1tn9Ynx6rksrUELlI/TWMSurQ
+ 91jAnfj4qs6GAGyMmdVaNXj3iBmfeSajC8EjMTn78u5EE15og0m8qbUr9svDFKp6klcw
+ J/qRaf74x5zEmiOWBectIczgX7XldMh/dHSuPbfRmthY+tbyAohs+8p50ADB6Md6jbEw
+ O5vw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PNXsxeI1CUmNddrADEVk489yQbLEs9gL/M2JIzfQTOU=;
+ b=GYyrAKp+I65FIvXgx5o8bq/Hcbps3LbpIX5HWBtST2HEKv+xQXbONBtaWjGC/2evYP
+ rZxDY3U0YT+vpNAbvx9Axfn8YNzz9CZ7PJDdZUDr5QalUMYRj/o4rb/lMKnZ3L7SPHzu
+ s4vAzgwflWZI4cCqS9FQGt1T8p8YgAL7PXgx8dqdaA7boOw2WeKk4Updcm0C0UqKI/i6
+ KV/HUkiqhn261zn32KeMFpZyl0cbCRGqbphmzImXX7KRnV9qQawAaTcfhFYiFmEnFxWI
+ InOCIibt3qSQ+YRMph+/fqQ+cSq4J228Np/eejee/EZ+6Mbb7HM7wf3ffVS6irCEhCXD
+ 2EPQ==
+X-Gm-Message-State: APjAAAUqbJzOzatrwu4U/VNylz7e/Gj7Z2tUGO1ijqq94h7GFJrXK7zz
+ Z26E2LCd56yyJRgO9eWbjNMVA5sU0Ev8tfWg0vM=
+X-Google-Smtp-Source: APXvYqzI/oJWnx/nkX+2CfFO3bmsuQqx7+rRTL1YU1nGUO6KUIJYQpxsFcfsOUeP6F1NUKVAKr6926a0x6RwznXAZiU=
+X-Received: by 2002:a9d:3f37:: with SMTP id m52mr2069141otc.181.1559313901640; 
+ Fri, 31 May 2019 07:45:01 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mutt/1.11.4 (2019-03-13)
+References: <20190411155945.28600-1-mail@david-bauer.net>
+ <20190411155945.28600-2-mail@david-bauer.net>
+ <2850061.LOaScECSic@debian64>
+In-Reply-To: <2850061.LOaScECSic@debian64>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Fri, 31 May 2019 22:44:50 +0800
+Message-ID: <CAJsYDV+yTFZafgzz0H42sfnzKYoB32ycxRBEht_XHXs4CzEcJg@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_064555_568478_15A74E90 
-X-CRM114-Status: UNSURE (   6.73  )
+X-CRM114-CacheID: sfid-20190531_074503_308699_351F9A17 
+X-CRM114-Status: UNSURE (   8.06  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gch981213[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gch981213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] Call for participation for BattleMesh V12 (8-14
- July 2019, Paris)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH 2/4] ath79: add QCA955x SGMII link loss
+ workaround
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -58,178 +97,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0184752987202869722=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ David Bauer <mail@david-bauer.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Hi!
 
---===============0184752987202869722==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="T7mxYSe680VjQnyC"
-Content-Disposition: inline
-
-
---T7mxYSe680VjQnyC
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hello,
-
-The local organization team is proud to announce that this year's
-Battlemesh will be held near Paris, from 8 to 14 July!
-
-The event aims to bring together people from across the globe who are
-interested in community networks, including wireless mesh network
-technologies, fiber infrastructure, Do-It-Yourself Internet Access
-Providers, and more generally how to create and maintain a thriving
-community of people involved in building their own networks.
-
-We envision 7 days full of expert presentations, practical workshops,
-late-night hacking sessions, and fruitful discussions: whether you are a
-mesh networking enthusiast, community networking activist, protocol
-developer, or have an interest in networking in general, come and join us!=
-=20
-
-More information about the event is available below or on the website:
-https://www.battlemesh.org/BattleMeshV12
-
-
-Where
-=3D=3D=3D=3D=3D
-
-Le 6B, 6-10 quai de Seine, 93200 Saint-Denis, France (very close to
-Paris).
-
-GPS: geo:48.93835,2.34259
-Map: https://www.openstreetmap.org/?mlat=3D48.93835&mlon=3D2.34259#map=3D18=
-/48.93835/2.34259
-Web: https://www.le6b.fr/
-Travel directions: https://www.battlemesh.org/BattleMeshV12#Where
-
-
-What
-=3D=3D=3D=3D
-
-We will have organized talks, workshops and discussion panels on community
-networks and wireless mesh networks.  There will also be more informal
-activities: cooperative hacking, self-organized projects, and (we hope)
-delightful conversations!
-
-A first draft of the schedule (handle with care!) is available here: https:=
-//www.battlemesh.org/BattleMeshV12#Talk_Schedule_and_Workshops
-
-
-How to register
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-
-The event itself is free of charge and open for all!  However, it makes
-the organisation much easier if you tell us in advance that you plan to
-come.
-
-To register: https://www.battlemesh.org/BattleMeshV12#How_to_register
-
-Current list of participants: https://battlemesh.org/BattleMeshV12/Particip=
-ants
-
-
-Accommodation package
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-
-For those of you who are looking for a convenient and low cost
-accommodation option in Paris: we negotiated a special group reservation
-for 24 people at an hostel.
-
-There are still a few beds left, register now before we run out! https://ww=
-w.battlemesh.org/BattleMeshV12#Accommodation_package
-
-
-Call for participation
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-
-We invite participants to propose workshops, talks or panel discussions
-relating to network infrastructure in general, how it can be built and
-operated as a common, and how to sustain a community around networking.
-
-We welcome contributions that broadly address these questions from any of
-several perspectives: technical, organisational, economical, regulatory,
-juridical, political.
-
-Deadline: 10 May 2019, now extended to June 7th!
-
-To submit an event: https://www.battlemesh.org/BattleMeshV12#Call_for_parti=
-cipation
-
-
-Endorsements
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-
-If your organization wants to support the event by spreading the word, you
-can endorse the event.
-
-For this, just write an article on your website / blog / social media, and
-send us an email with the link and your logo to: (v12) at (battlemesh) dot =
-(org)
-
-See existing endorsements for a template: https://www.battlemesh.org/Battle=
-MeshV12#Endorsements
-
-
-Contact
-=3D=3D=3D=3D=3D=3D=3D
-
-* Web: https://battlemesh.org/BattleMeshV12
-* Contact email (preferred): v12 at battlemesh.org
-* Public mailing list: https://ml.ninux.org/mailman/listinfo/battlemesh
-* IRC: irc.freenode.net #battlemesh
-* Twitter: https://twitter.com/battlemesh/
-* Mastodon: https://toot.aquilenet.fr/@battlemesh12
-
-
-The Local Organization Team
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D
-
-Aube
-Baptiste
-Daniele
-Dash
-Vi
-and many other volunteers!
-
---T7mxYSe680VjQnyC
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEEjVflzZuxNlVFbt5QvgHsIqBOLkYFAlzxMAsACgkQvgHsIqBO
-LkaeYhAAj0uhx4X7EkadhYageZckwLv753nr8WKG5Tpu1NzlE/88Bh/RX5SicqFc
-V4OjrOfB+Sy+x2jAEeabdeIJvFkCGkF5IM17+IdWnkj9x5RodX8qdtNOSv5NaiiI
-OdGYdbkhsJQ3LP77sFv4t3NoY/STJkhXNfEW9tuAB03HX5p4B/oxdyS/rFaOdZgY
-ZdFH3cRbRntSazzBX4NeKQx5vpaO2jUbzFMYpLPeo/Ns87d5kt15jsmUfwgENxFO
-wF3GdiSF+Bgg4DwAaeSpGuA+eBAGcsrTPNEo5K/Q9Dn5eLLuMPKz8e10trKO4wgx
-u02OU+tB4DYn/UeILBQ160UB7ruiroKCIcSYKSRJKF/Xry0RBfyZIIEqZUqQoDUz
-9JyNtt087sRFPKFiTOZWZltF4LmQcKwaFTtJZyLq0sxDerWnaEv0EHQaPCp5RER/
-1FRVd9ZRBqadZlNA1BSYuLywKI62gx1lCRy0+HkqTD7i526w2yyxaDrRH5Mz8vVR
-BqBbVvyB9ttDpG38whbSa4wmO51g0ZydsFO/bb8x8KmqDq+8IAw/MMcz2x6H5Ehj
-cpgIRNjKaObzbcYvcKfiIaz2up7djI3355B6cqC8Mrp3Tw8N0ovx4qfh2XhaB4/L
-k1DJmIISIzJcr5NE/YeclrvExMhNrR3TdEtto82gqubX0TKWUNk=
-=VSZM
------END PGP SIGNATURE-----
-
---T7mxYSe680VjQnyC--
-
-
---===============0184752987202869722==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+On Fri, May 31, 2019 at 9:34 PM Christian Lamparter <chunkeey@gmail.com> wrote:
+>
+> Not to be a party pooper. The ag71xx is well on its way to upstream.
+> https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/atheros/ag71xx.c?id=d51b6ce441d356369387d20bc1de5f2edb0ab71e
+>
+> So sadly this all would need to be somehow upstreamed first and then
+> backported again. *sight* :(
+>
+The upstream driver is pretty much broken on every SoCs with external
+PHY/switch. Getting every ath79 SoC working with that driver is
+already a headache.
+I think we should just keep maintaining our ag71xx driver until
+someone having a pile of ath79 routers get that driver working.
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0184752987202869722==--
-

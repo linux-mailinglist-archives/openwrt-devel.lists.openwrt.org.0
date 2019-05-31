@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A084305AC
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 02:09:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76508305AD
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 02:09:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,19 +11,19 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RqjxmxpWfHfDdeIOPg9YwBf7WtokfloFY2+H3k8hAxc=; b=NVXA+SyTJgJ6TIkHGrSrwh33D8
-	Om+vEEfuU+LxdxcjJYoqaJvOTC6T8otXtoQa7dyBOqDnGaJI66wTpt0NDCcajLEQnFIdXMBHquswq
-	ykim6qYDazcRUMHF96h0xS7GpPtQe8gYP8sIOwAGyullDr+cuBg78O+kiQc/eqjn4LMd35qA8yN90
-	HZ8+qbNI2E18FFTp03asR33UU2WgpQstYMKI5odzE4kb3Ze25paLJnEMv3yVxN2HcV0jS31g2tGcv
-	aE4HPUtjshHwXVB14bvFX47kOx10rGy4a3yh8v3L4BvtbuLRLXw4hy1vGAiXK3loiWL95+yKxqq59
-	XQfT27+g==;
+	bh=GU3//KdHrGC3sSPZfgZkK4Q9vQPBK4uio//wbJr3Llw=; b=AvB2XZkeahlfAQkWqA5X5wCRjw
+	rIRfb8P6z/Ui1rzIlB01dSRcVuXIwgLkKu6wqr47zjJxKahC71FIUCKF3b62VKcULLa6g1WghhCtu
+	6iUI8TL3+jBAzqhJjCA+UVNkey1q7mFba6NiqRddiS6cRWjrBsauigKsWa+N5i9ukMuU3vlI6709k
+	7yrF+ZFiCSHoTuUp+duzRwalGHNFP6UUhegzEq8fQOe5VQ1pZPGfMbQXUlD6NXaP7F5OekwiFMnB+
+	am1dxtY1fKKgc5aU7T3ps3F6fO+ndL6RXwCOlbMuGL5nIcyXDf1wKueRfCyMputfwvpeChKGETgsC
+	k5ZtZweA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWV6o-0000TI-V9; Fri, 31 May 2019 00:09:22 +0000
+	id 1hWV70-0000l1-DR; Fri, 31 May 2019 00:09:34 +0000
 Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWV5c-0007Gl-LI
- for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 00:08:09 +0000
+ id 1hWV5c-0007GG-UQ
+ for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 00:08:10 +0000
 Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -46,25 +46,25 @@ Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,533,1549954800"; d="scan'208";a="33803555"
+X-IronPort-AV: E=Sophos;i="5.60,533,1549954800"; d="scan'208";a="33803556"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
  30 May 2019 17:08:02 -0700
 Received: from sandeep-office.microchip.com (10.10.85.251) by mx.microchip.com
  (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5;
- Thu, 30 May 2019 17:08:00 -0700
+ Thu, 30 May 2019 17:08:01 -0700
 From: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 To: <openwrt-devel@lists.openwrt.org>
-Date: Thu, 30 May 2019 17:06:52 -0700
-Message-ID: <18636f3c7cf529c618ea532d749e980cd990c9ad.1559260744.git.sandeep.sheriker@microchip.com>
+Date: Thu, 30 May 2019 17:06:53 -0700
+Message-ID: <aa036f839823d4b1773785e0b0e48bcbfa4c9a1c.1559260744.git.sandeep.sheriker@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190530_170808_804919_0DF284CD 
-X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-CacheID: sfid-20190530_170809_087762_B7D11EBB 
+X-CRM114-Status: UNSURE (   6.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,8 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [patch v1 07/11] at91bootstrap: add
- sama5d27_som1_eksd1_uboot as default defconfig
+Subject: [OpenWrt-Devel] [patch v1 08/11] at91: move at91-sdcard command to
+ sama5.mk
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,26 +95,94 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 ---
- package/boot/at91bootstrap/Makefile | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ target/linux/at91/image/Makefile | 31 -------------------------------
+ target/linux/at91/image/sama5.mk | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 31 insertions(+), 31 deletions(-)
 
-diff --git a/package/boot/at91bootstrap/Makefile b/package/boot/at91bootstrap/Makefile
-index 6496b5a..1c07e21 100644
---- a/package/boot/at91bootstrap/Makefile
-+++ b/package/boot/at91bootstrap/Makefile
-@@ -128,9 +128,9 @@ AT91BOOTSTRAP_TARGETS := \
-     sama5d4_xplainednf_uboot_secure \
-     sama5d4_xplaineddf_uboot_secure \
-     sama5d4_xplainedsd_uboot_secure \
--	sama5d27_som1_eksd_uboot \
--	sama5d27_som1_ekqspi_uboot \
--	sama5d2_ptc_eknf_uboot \
-+    sama5d27_som1_eksd1_uboot \
-+    sama5d27_som1_ekqspi_uboot \
-+    sama5d2_ptc_eknf_uboot \
-     sama5d2_ptc_eksd_uboot
+diff --git a/target/linux/at91/image/Makefile b/target/linux/at91/image/Makefile
+index e4c17e3..3b01d42 100644
+--- a/target/linux/at91/image/Makefile
++++ b/target/linux/at91/image/Makefile
+@@ -40,37 +40,6 @@ define Device/dtb
+   KERNEL := kernel-bin | lzma | uImage lzma
+ endef
  
- define Build/Compile
+-define Build/at91-sdcard
+-  $(if $(findstring ext4,$@), \
+-  rm -f $@.boot
+-  mkfs.fat -C $@.boot $(FAT32_BLOCKS)
+-
+-  mcopy -i $@.boot $(KDIR)/zImage ::zImage
+-
+-  $(foreach dts,$(DEVICE_DTS), \
+-     mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
+-        ::$(dts).dtb)
+-
+-  mcopy -i $@.boot \
+-    $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc/u-boot.bin \
+-    ::u-boot.bin
+-
+-  mcopy -i $@.boot \
+-    $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
+-    ::BOOT.bin
+-
+-  ./gen_at91_sdcard_img.sh \
+-      $@.img \
+-      $@.boot \
+-      $(KDIR)/root.ext4 \
+-      $(AT91_SD_BOOT_PARTSIZE) \
+-      $(CONFIG_TARGET_ROOTFS_PARTSIZE)
+-
+-  gzip -nc9 $@.img > $@
+-
+-  rm -f $@.img $@.boot )
+-endef
+-
+ define Device/evaluation-sdimage
+   IMAGES += sdcard.img.gz
+   IMAGE/sdcard.img.gz := at91-sdcard
+diff --git a/target/linux/at91/image/sama5.mk b/target/linux/at91/image/sama5.mk
+index f9a190c..f4548fb 100644
+--- a/target/linux/at91/image/sama5.mk
++++ b/target/linux/at91/image/sama5.mk
+@@ -6,6 +6,37 @@ define Device/default-nand
+   MKUBIFS_OPTS := -m $$(PAGESIZE) -e 124KiB -c 2048
+ endef
+ 
++define Build/at91-sdcard
++  $(if $(findstring ext4,$@), \
++  rm -f $@.boot
++  mkfs.fat -C $@.boot $(FAT32_BLOCKS)
++
++  mcopy -i $@.boot $(KDIR)/zImage ::zImage
++
++  $(foreach dts,$(DEVICE_DTS), \
++     mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
++        ::$(dts).dtb)
++
++  mcopy -i $@.boot \
++    $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc*/u-boot.bin \
++    ::u-boot.bin
++
++  mcopy -i $@.boot \
++    $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd*/at91bootstrap.bin \
++    ::BOOT.bin
++
++  ./gen_at91_sdcard_img.sh \
++      $@.img \
++      $@.boot \
++      $(KDIR)/root.ext4 \
++      $(AT91_SD_BOOT_PARTSIZE) \
++      $(CONFIG_TARGET_ROOTFS_PARTSIZE)
++
++  gzip -nc9 $@.img > $@
++
++  rm -f $@.img $@.boot )
++endef
++
+ define Device/at91-sama5d2_xplained
+   $(Device/evaluation-dtb)
+   DEVICE_TITLE := Microchip(Atmel AT91) SAMA5D2 Xplained
 -- 
 2.7.4
 

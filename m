@@ -2,86 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AD0D3124C
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 18:26:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF80F31306
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 18:51:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=umNkFWdvMpPXL3yBaSVuNL8iRSOVsfHWeOOd8ZdZAl0=; b=qWD5RdCtyy8gZh
-	RfHUX6kOQ2ht20ko7k05RSYd23XlLMYhx++MakxPoGyDPPWU/3QKosGNIWUQJ1YiVBRO5Akrgv9I4
-	H6u1MIUj1ckVMAGuLay7TvbJxntVLj07+4rWoPqiJ/81hd9scBlazb+UlGlZrDgpxihmiKeI+RvCt
-	Cqb4K3fT3kgLdYhHOY/zDkLTt/KvD5CX9Ap1BEOPnwBiJThn8r839kcmEkOUpIwLXBQQR3gyYptTO
-	a+NptWdPA/gr1ei3AO9IkS5mK9w4vmeej+BntHtmS93KBTigvTG4jaZz3vzAEQAERHNciRVKXrpWm
-	KD+jFsp6Si5nWs7Gy5DA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p/v/2YIaLsWmrNr2ZVNgFt1FZp1yaFCoMGIrnAgkFgk=; b=XVGtDqudGjiRDA
+	qYMsy08uU9O6w31nwQFDqF9equbl0FxEuOhEAXaDEQRlou5456sgEWl8jZA8hr9H8XAS46Pc01V/V
+	qDGU5oVCVq3i+0kz8OiTt7ht0S7HCO/AgKfbb5E6fc56/0r1RvtH5pToXJcS7CohLWiUaE8fw2a4G
+	XJDAImI1r/z3cpioRTBH43qhOmtpmwV7pbecIZT6cW06cOB4/KfUiPNCLvJ3WIBcQkKvAIWRiwv+w
+	MjhiPYDNWOC5EMjyjLx0w0k4ueMgjpe9/8xvkHPULZlYtKg/vm1wiXqIeNSxr5UNfAlVVtdK2c6Qz
+	pIVcCd1Na3B7mwrnErLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWkMR-0001i2-J9; Fri, 31 May 2019 16:26:31 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hWkk0-0003Es-By; Fri, 31 May 2019 16:50:52 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWkML-0001hi-0K
- for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 16:26:26 +0000
-Received: by mail-wm1-x342.google.com with SMTP id d17so6422663wmb.3
- for <openwrt-devel@lists.openwrt.org>; Fri, 31 May 2019 09:26:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=dz1wbnL12Ejhb6XWz45k3D4XloK9u3IMYmAhPJN7R8A=;
- b=ZDRCv/+LuCP4Si5bK8dFdzHhUzyncO4R2+S4+2ly5Hn1NSLA2Yba30cmYq/DBZxMAJ
- vDkpdNHXq7UT9xHWM3SajGsPdgH+xUuHcmobz2oIyjDU1IAMa1dtbJs7zGmPGm4skSHF
- Y4+QPN7rJcRYfnldojnStEakE5LAGdRT2nCy55r4oWZygMIBrjZczi1nypWrbTFbXL3l
- pKclN63TBEkXx/n93Y6pbyZypwVUQ2QN0LQEocm+2Lp5T2ZG+Uh3s16bxHFz1h2RzBxs
- Xq8Ub5VaLqCofvRmLsFGCFDGT6PD9u4c/i3t7v9kGYGQxxL/28WsAfLkQrDlulNN6Suk
- SW6A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=dz1wbnL12Ejhb6XWz45k3D4XloK9u3IMYmAhPJN7R8A=;
- b=bMZn+xx+7RqYMCQyhGzdDDLz1CLeirxxEHGat9ad0UXyiKoLXANOU7HlvPllb9q2Bx
- EFyk+koGvLIOpz3p5EO6DeXnIku08OrTmMXmLu3PGLOxol80yh2p+L9Y5kVeYQSxwRQX
- d0y4KoNKXdcbWP1tRhUBKJiQvAC0ZJutY31etlz2S9vtm4xtbakWOmKM4M7jk26YDFL6
- V3RU0JyiyGHMBLL8bM8ErAlFwweIUNsiMg6VglV9XmxkTCfhy0dwTkANB1J+eT6dOuvS
- dB0xchGKYjFw6xQH9ihzxsGi7M001jVGUDqBh9E25a7Gn4D+OCA1XzUqlnXTFyL9hvIJ
- 6cQA==
-X-Gm-Message-State: APjAAAVNMYgSVJIaAYFz1KIA4ADZWaySbkAXrxXkU+ppvn6/Nj2vEFQj
- Ru+t/Dn+EN8NnxKIbRMppms=
-X-Google-Smtp-Source: APXvYqwmatAb9kP914GPEWpTzk+rpD2iA7PAF/b/6EUYXHutJ7uDcatnSJ+q0MPboBu05QAREVKwfQ==
-X-Received: by 2002:a1c:ed16:: with SMTP id l22mr6404463wmh.96.1559319981996; 
- Fri, 31 May 2019 09:26:21 -0700 (PDT)
-Received: from debian64.daheim (pD9E29608.dip0.t-ipconnect.de. [217.226.150.8])
- by smtp.gmail.com with ESMTPSA id q21sm4200091wmq.13.2019.05.31.09.26.17
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 31 May 2019 09:26:17 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.92)
- (envelope-from <chunkeey@gmail.com>)
- id 1hWkMC-0003yB-Ke; Fri, 31 May 2019 18:26:16 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
-To: Chuanhong Guo <gch981213@gmail.com>
-Date: Fri, 31 May 2019 18:26:16 +0200
-Message-ID: <2607811.gNoC5flUSi@debian64>
-In-Reply-To: <CAJsYDV+yTFZafgzz0H42sfnzKYoB32ycxRBEht_XHXs4CzEcJg@mail.gmail.com>
-References: <20190411155945.28600-1-mail@david-bauer.net>
- <2850061.LOaScECSic@debian64>
- <CAJsYDV+yTFZafgzz0H42sfnzKYoB32ycxRBEht_XHXs4CzEcJg@mail.gmail.com>
+ id 1hWkjs-0003E8-SZ
+ for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 16:50:46 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 318a1501;
+ Fri, 31 May 2019 16:19:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
+ :subject:date:message-id:mime-version:content-transfer-encoding;
+ s=mail; bh=5MiH7xKcljEut59bBB2apaLNix8=; b=dagf+J7xyPWDPPGErSoM
+ 9gjY0m+DYqFOghQ6GH1solCzDJ/4X9aYSTbYZ3ZumLyulpBGNA/wbHCsWf0R4y3w
+ Pukwi1aWEr33Y0w7MNJIu36NaIymMd8LazliphE77XPoRZmuzal3D/oQUYF3tLSf
+ x8lPTqP+EFDPuMWrWwy3ce8hjKsNK54AObXmJ2Bw5GpR8C2atTx31I6LtZka8ZSM
+ SKkc+1KjxVKxYlb/+SLeULc50LAZBTqGPFMlyPC98BKoY6YntvnPtCpDAqFC1sH2
+ NxUr1PDGYNxQPSSillwX7RgvusJLPJbyolF9Ni9kkjE8qr9O3iuJYqvsY1Y27ZD8
+ iw==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id a1cb9912
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
+ Fri, 31 May 2019 16:19:55 +0000 (UTC)
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 31 May 2019 18:50:33 +0200
+Message-Id: <20190531165033.20290-1-Jason@zx2c4.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_092625_073471_FC08FD0C 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20190531_095045_140791_5DD89871 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [192.95.5.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -90,8 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH 2/4] ath79: add QCA955x SGMII link loss
- workaround
+Subject: [OpenWrt-Devel] [PATCH] wireguard: bump to 0.0.20190531
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,38 +73,114 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- David Bauer <mail@david-bauer.net>
+Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Friday, May 31, 2019 4:44:50 PM CEST Chuanhong Guo wrote:
-> Hi!
-> 
-> On Fri, May 31, 2019 at 9:34 PM Christian Lamparter <chunkeey@gmail.com> wrote:
-> >
-> > Not to be a party pooper. The ag71xx is well on its way to upstream.
-> > https://git.kernel.org/pub/scm/linux/kernel/git/davem/net-next.git/commit/drivers/net/ethernet/atheros/ag71xx.c?id=d51b6ce441d356369387d20bc1de5f2edb0ab71e
-> >
-> > So sadly this all would need to be somehow upstreamed first and then
-> > backported again. *sight* :(
-> >
-> The upstream driver is pretty much broken on every SoCs with external
-> PHY/switch. Getting every ath79 SoC working with that driver is
-> already a headache.
->
-> I think we should just keep maintaining our ag71xx driver until
-> someone having a pile of ath79 routers get that driver working.
+* tools: add wincompat layer to wg(8)
 
-Well, look what happend to ar71xx then. The development on it is being
-defered in favor of the upstream ath79 dts. So what do you think will
-happen to the special out-of-tree ag71xx drivers now?
+Consistent with a lot of the Windows work we've been doing this last cycle,
+wg(8) now supports the WireGuard for Windows app by talking through a named
+pipe. You can compile this as `PLATFORM=windows make -C src/tools` with mingw.
+Because programming things for Windows is pretty ugly, we've done this via a
+separate standalone wincompat layer, so that we don't pollute our pretty *nix
+utility.
 
-Cheers,
-Christian
+* compat: udp_tunnel: force cast sk_data_ready
 
+This is a hack to work around broken Android kernel wrapper scripts.
+
+* wg-quick: freebsd: workaround SIOCGIFSTATUS race in FreeBSD kernel
+
+FreeBSD had a number of kernel race conditions, some of which we can vaguely
+work around. These are in the process of being fixed upstream, but probably
+people won't update for a while.
+
+* wg-quick: make darwin and freebsd path search strict like linux
+
+Correctness.
+
+* socket: set ignore_df=1 on xmit
+
+This was intended from early on but didn't work on IPv6 without the ignore_df
+flag. It allows sending fragments over IPv6.
+
+* qemu: use newer iproute2 and kernel
+* qemu: build iproute2 with libmnl support
+* qemu: do not check for alignment with ubsan
+
+The QEMU build system has been improved to compile newer versions. Linking
+against libmnl gives us better error messages. As well, enabling the alignment
+check on x86 UBSAN isn't realistic.
+
+* wg-quick: look up existing routes properly
+* wg-quick: specify protocol to ip(8), because of inconsistencies
+
+The route inclusion check was wrong prior, and Linux 5.1 made it break
+entirely. This makes a better invocation of `ip route show match`.
+
+* netlink: use new strict length types in policy for 5.2
+* kbuild: account for recent upstream changes
+* zinc: arm64: use cpu_get_elf_hwcap accessor for 5.2
+
+The usual churn of changes required for the upcoming 5.2.
+
+* timers: add jitter on ack failure reinitiation
+
+Correctness tweak in the timer system.
+
+* blake2s,chacha: latency tweak
+* blake2s: shorten ssse3 loop
+
+In every odd-numbered round, instead of operating over the state
+    x00 x01 x02 x03
+    x05 x06 x07 x04
+    x10 x11 x08 x09
+    x15 x12 x13 x14
+we operate over the rotated state
+    x03 x00 x01 x02
+    x04 x05 x06 x07
+    x09 x10 x11 x08
+    x14 x15 x12 x13
+The advantage here is that this requires no changes to the 'x04 x05 x06 x07'
+row, which is in the critical path. This results in a noticeable latency
+improvement of roughly R cycles, for R diagonal rounds in the primitive. As
+well, the blake2s AVX implementation is now SSSE3 and considerably shorter.
+
+* tools: allow setting WG_ENDPOINT_RESOLUTION_RETRIES
+
+System integrators can now specify things like
+WG_ENDPOINT_RESOLUTION_RETRIES=infinity when building wg(8)-based init
+scripts and services, or 0, or any other integer.
+
+Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
+---
+ package/network/services/wireguard/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index c04762b..e3471d0 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
+ 
+ PKG_NAME:=wireguard
+ 
+-PKG_VERSION:=0.0.20190406
++PKG_VERSION:=0.0.20190531
+ PKG_RELEASE:=1
+ 
+ PKG_SOURCE:=WireGuard-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://git.zx2c4.com/WireGuard/snapshot/
+-PKG_HASH:=2f06f3adf70b95e74a7736a22dcf6e9ef623b311a15b7d55b5474e57c3d0415b
++PKG_HASH:=8b0280322ec4c46fd1a786af4db0c4d0c600053542c4563582baac478e4127b1
+ 
+ PKG_LICENSE:=GPL-2.0 Apache-2.0
+ PKG_LICENSE_FILES:=COPYING
+-- 
+2.21.0
 
 
 _______________________________________________

@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D039931F91
-	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Jun 2019 16:02:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ADC7305AE
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 02:09:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -19,15 +19,15 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	rVLrVxjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hX4aS-0002nK-IQ; Sat, 01 Jun 2019 14:02:20 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1hWV79-00010b-9h; Fri, 31 May 2019 00:09:43 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hX4Yw-0000aV-Mv
- for openwrt-devel@lists.openwrt.org; Sat, 01 Jun 2019 14:00:51 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
+ id 1hWV5d-0007GH-Am
+ for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 00:08:10 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Sandeep.Sheriker@microchip.com";
  x-sender="Sandeep.Sheriker@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -35,29 +35,25 @@ Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  a:smtpout.microchip.com a:mx1.microchip.iphmx.com
  a:mx2.microchip.iphmx.com include:servers.mcsv.net
  include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Sandeep.Sheriker@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
+Authentication-Results: esa5.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.60,538,1549954800"; d="scan'208";a="35191650"
+X-IronPort-AV: E=Sophos;i="5.60,533,1549954800"; d="scan'208";a="33803558"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 01 Jun 2019 07:00:34 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
- chn-vm-ex01.mchp-main.com (10.10.87.71) with ShadowRedundancy id 15.1.1713.5; 
- Sat, 1 Jun 2019 14:00:17 +0000
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex01.mchp-main.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 30 May 2019 17:08:01 -0700
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 30 May 2019 17:08:02 -0700
+Received: from sandeep-office.microchip.com (10.10.85.251) by mx.microchip.com
+ (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5;
+ Thu, 30 May 2019 17:08:01 -0700
 From: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 To: <openwrt-devel@lists.openwrt.org>
 Date: Thu, 30 May 2019 17:06:54 -0700
@@ -67,8 +63,8 @@ In-Reply-To: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190601_070047_307443_9F22752F 
-X-CRM114-Status: UNSURE (   7.05  )
+X-CRM114-CacheID: sfid-20190530_170809_476939_2B88D2D8 
+X-CRM114-Status: UNSURE (   7.28  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: [OpenWrt-Devel] [patch v1 09/11] at91: add uboot environments

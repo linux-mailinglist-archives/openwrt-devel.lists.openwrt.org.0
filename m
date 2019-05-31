@@ -2,88 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 071C230F28
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 15:43:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD68A30F33
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 May 2019 15:46:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=usTXtClACmEOHqRzAOfvb47UaFB5iQSsmKzmZeihHMM=; b=sxphAl3it4HduA
-	AM7ZP3W8MkHLM/FPsLeUDnIBZDuiK57MtubWxAWsteUZ8L+e44R0h30U/WxXeZxH7X/VyGIMd/WVG
-	YQNqXYMINnRT7A2zBZkJ3CT0YYG9G3ilZKDgAmfR84SI9B+JljBVJVkK2vYLa9r2yQHymH0f+Ln7P
-	zOXFoV1h5uxMoCroUZNJftLUs6oB8OqwTR99/2+dCKL+Zzq8/B3JykhsKpd6warBdjmcd8MkVeUvw
-	f61WWGFr/loYZAFlzkuWdPLjBkdD3ogqPu1WaJuDEwZ/36bKTSGShkBQAWQsW9XMhPF62SbvJNJLk
-	csQ4+8RI8CX27BUSiSKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:To:From:Date:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/en9euY8CU3yLEl59kq210+vPrJOeYKq++c/X3fci0I=; b=Tz5
+	PcBj1pVeheqvFS/j6aAeLuUG21levLbmpXoJQx0KomK2eeT1OnkfIXunGNiI7B2qXaX3zTYHvoIuC
+	qRxQ057klYmxQYCD9hozRZOKkRR+52ja4oGjSFHQUb2k/96kyQdvGPg7ywGCv+oqReWNzACsEA4C0
+	z6kieEp42TIY8jLfjmCNkFE19tewFYTvLSHPR8Jy3PvIXeGLxHjjJv6U3lx9mg2hd+pzjAKH/kH2l
+	YJ5xxasgd+fTm6uBQNlPXpOr5xKpu18oy4ysQvCeXbLN9yJMLvfTLKKMH6t/126QiTkdSoZJ1REL8
+	k+3TP2Uc/fRtV5QduUteFla7oQw0pAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWhod-0004Ie-KK; Fri, 31 May 2019 13:43:27 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1hWhr9-0005x1-Kt; Fri, 31 May 2019 13:46:03 +0000
+Received: from mails.bitsofnetworks.org ([2001:912:1800:ff::131])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWhoW-0004IJ-GZ
- for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 13:43:22 +0000
-Received: by mail-wm1-x344.google.com with SMTP id w9so23981wmd.1
- for <openwrt-devel@lists.openwrt.org>; Fri, 31 May 2019 06:43:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=UVO39IORQtzHY9pDLFasqBkJR7M6SjvctyaTmdx+jEs=;
- b=Jhx7ysGOPBnaXTmlyJ0GR+QELrqz1hmsWT2W6eAKreJo9YYN4zcAtfPw82e4fbcexi
- HJOY9Vnb0iAm5DkdF7UgryyxIRMNSdtghjuT567eAuOGfbtte5aIKAV/ZSKeha26hvrz
- Cdj+cT9WnrEmQdrfr5OxtIWhgYROU0grrlbbQMV6gx3r//PyK0ZFIPEVk+Vq8JpfKGD4
- lRkZvfLGFfUu1rzn9S7te1/LEgrUOcKP4M7YdciO0e+7mRfUmtIYRo906Zt78Lt/c4zf
- 3YVgxmH2Vyhx+LQVJmzQR7dqQNE5VlXmiJepshTjtaa0hEB3350+bSVBfRiyoUAaxNzu
- J3dw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=UVO39IORQtzHY9pDLFasqBkJR7M6SjvctyaTmdx+jEs=;
- b=K75yCCPzUSXhiG8f1FxJ4FpTID623yAkOZzFmXH7Ju+lm7gJ6gvpXKtZGGg/VrjNpw
- 62abwCqsUXU/lqW2i11gfyLkG7Jaz91vQbHl55Sds9M0vuKG9SKzqvafZcPnEsWdCwC5
- UB2Y7xc5Dow9cr4HWrS1Gmg7PCqdQyaGOrqygTyhHISPC4kUpg0ozlRKUgoQfjkECW7+
- u0UH24BaG4fDJHtyIp9EJWgD3MJPGLwvN7KUaOLhKhvoa+RpOZFMQzoJa977PCvABh+K
- H+eamj8uV7ACELGgcbyZJSBYNGk/N79w1AadiwUN3plSFznUMW28YPSyREsesyJpV/6u
- emeA==
-X-Gm-Message-State: APjAAAWzsieIBeUmb+mmBtW/PGGm6RKtyHOOcdKaOgI4hUPhECRD9Qqe
- DzdQsGsCVcuUEhR2Fxo5F+1FsIIj
-X-Google-Smtp-Source: APXvYqx2K7KjA4oVUaNjlPh4jEKZq1aZ6jn1IQE/l3RrPrlhh4uiQiowv48MkCQbJIhhZOwPZPUwXw==
-X-Received: by 2002:a1c:f31a:: with SMTP id q26mr5909866wmq.137.1559310198097; 
- Fri, 31 May 2019 06:43:18 -0700 (PDT)
-Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
- by smtp.gmail.com with ESMTPSA id 65sm11578418wro.85.2019.05.31.06.43.16
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 31 May 2019 06:43:17 -0700 (PDT)
-From: Kristian Evensen <kristian.evensen@gmail.com>
+ id 1hWhr1-0005wI-56
+ for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 13:45:57 +0000
+Received: from [2001:912:1800:0:f3c3:fd02:8b06:8680]
+ (helo=tuxmachine.localdomain) by mails.bitsofnetworks.org with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <baptiste@bitsofnetworks.org>) id 1hWhqu-00027z-Is
+ for openwrt-devel@lists.openwrt.org; Fri, 31 May 2019 15:45:48 +0200
+Date: Fri, 31 May 2019 15:45:47 +0200
+From: Baptiste Jonglez <baptiste@bitsofnetworks.org>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 31 May 2019 15:43:14 +0200
-Message-Id: <20190531134314.26461-1-kristian.evensen@gmail.com>
-X-Mailer: git-send-email 2.19.1
+Message-ID: <20190531134547.GE31876@tuxmachine.localdomain>
 MIME-Version: 1.0
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_064320_583985_1F667479 
-X-CRM114-Status: GOOD (  18.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190531_064555_568478_15A74E90 
+X-CRM114-Status: UNSURE (   6.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH v2] ath79: Add support for ZBT-WD323
+Subject: [OpenWrt-Devel] Call for participation for BattleMesh V12 (8-14
+ July 2019, Paris)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,149 +58,178 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============0184752987202869722=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-WkJULVdEMzIzIGlzIGEgZHVhbC1MVEUgcm91dGVyIGJhc2VkIG9uIEFSOTM0NC4gVGhlIGRldGFp
-bGVkCnNwZWNpZmljYXRpb25zIGFyZToKCiogQVI5MzQ0IDU2ME1Iei80NTBNSHovMjI1TUh6IChD
-UFUvRERSL0FITikuCiogMTI4IE1CIFJBTQoqIDE2TUIgb2YgZmxhc2goU1BJLU5PUiwgMjJNSHop
-CiogMXggMi40R0h6IHdpZmkgKEF0aGVyb3MgQVI5MzQwKQoqIDN4IDEwLzEwME1ib3MgRXRoZXJu
-ZXQgKEFSODIyOSkKKiAxeCBVU0IyLjAgcG9ydAoqIDJ4IG1pbmlQQ0llLXNsb3RzIChVU0IyLjAg
-b25seSkKKiAyeCBTSU0gc2xvdHMgKHN0YW5kYXJkIHNpemUpCiogNHggTEVEcyAoMSBncGlvIGNv
-bnRyb2xsZWQpCiogMXggcmVzZXQgYnV0dG9uCiogMXggMTAgcGluIHRlcm1pbmFsIGJsb2NrIChS
-UzIzMiwgUlM0ODUsIDR4IEdQSU8pCiogMnggQ1AyMTB4IFVBUlQgYnJpZGdlIGNvbnRyb2xsZXJz
-ICh1c2VkIGZvciBSUzIzMiBhbmQgUlM0ODUpCiogMXggMiBwaW4gNW1tIGluZHVzdHJpYWwgaW50
-ZXJmYWNlIChpbnB1dCB2b2x0YWdlIDEyVn4zNlYpCiogMXggREMgamFjawoqIDF4IFJUQyAoUENG
-ODU2MykKClRlc3RlZDoKLSBFdGhlcm5ldCBzd2l0Y2gKLSBXaWZpCi0gVVNCIHBvcnQKLSBNaW5p
-UENJZS1zbG90cyAoKyBTSU0gc2xvdHMpCi0gU3lzdXBncmFkZQotIFJlc2V0IGJ1dHRvbgotIFJT
-MjMyCgpJbnRhbGxhdGlvbiBhbmQgcmVjb3Zlcnk6CgpUaGUgYm9hcmQgc2hpcHMgd2l0aCBPcGVu
-V1JULCBidXQgc3lzdXBncmFkZSBkb2VzIG5vdCB3b3JrIGFzIGEKZGlmZmVyZW50IGZpcm13YXJl
-IGZvcm1hdCB0aGFuIHdoYXQgaXMgZXhwZWN0ZWQgaXMgZ2VuZXJhdGVkLiAgVGhlCmVhc2llc3Qg
-d2F5IHRvIGluc3RhbGwgKGFuZCByZWNvdmVyKSB0aGUgcm91dGVyLCBpcyB0byB1c2UgdGhlCndl
-Yi1pbnRlcmZhY2UgcHJvdmlkZWQgYnkgdGhlIGJvb3Rsb2FkZXIgKEJyZWVkKS4KCldoaWxlIHRo
-ZSBpbnRlcmZhY2UgaXMgaW4gQ2hpbmVzZSwgaXQgaXMgZWFzeSB0byB1c2UuIEZpcnN0LCBpbiBv
-cmRlciB0bwphY2Nlc3MgdGhlIGludGVyZmFjZSwgeW91IG5lZWQgdG8gaG9sZCBkb3duIHRoZSBy
-ZXNldCBidXR0b24gZm9yIGFyb3VuZApmaXZlIHNlY29uZHMuIFRoZW4sIGdvIHRvIDE5Mi4xNjgu
-MS4xIGluIHlvdXIgYnJvd3Nlci4gQ2xpY2sgb24gdGhlCnNlY29uZCBpdGVtIGluIHRoZSBsaXN0
-IG9uIHRoZSBsZWZ0IHRvIGFjY2VzcyB0aGUgcmVjb3ZlcnkgcGFnZS4gVGhlCnNlY29uZCBpdGVt
-IG9uIHRoZSBuZXh0IHBhZ2UgaXMgd2hlcmUgeW91IHNlbGVjdCB0aGUgZmlybXdhcmUuICBTZWxl
-Y3QKdGhlIG1lbnUgaXRlbSBjb250YWluaW5nICJBdGhlcm9zIFNESyIgYW5kICIxNk1CIiBpbiB0
-aGUgZHJvcGRvd24gY2xvc2UKdG8gdGhlIGJ1dHRvbSwgYW5kIGNsaWNrIG9uIHRoZSBidXR0b24g
-YXQgdGhlIGJvdHRvbSB0byBzdGFydAppbnN0YWxsYXRpb24vcmVjb3ZlcnkuCgpOb3RlczoKKiBS
-UzIzMiBpcyBhdmFpbGFibGUgb24gL2Rldi90dHlVU0IwIGFuZCBSUzQ4NSBvbiAvZGV2L3R0eVVT
-QjEKClNpZ25lZC1vZmYtYnk6IEtyaXN0aWFuIEV2ZW5zZW4gPGtyaXN0aWFuLmV2ZW5zZW5AZ21h
-aWwuY29tPgotLS0KdjEtPnYyOgoqIEFkZGVkIFdMQU4gdHJpZ2dlciB0byBEVFMgKHRoYW5rcyBQ
-ZXRyIMWgdGV0aWFyKS4KKiBGaXhlZCB0eXBvIGluIGNvbXBhdGlibGUgc3RyaW5nIChhcjkzMzQt
-PmFyOTM0NCwgdGhhbmtzIFBldHIgxaB0ZXRpYXIpLgoqIFJlbW92ZWQgYSByZXVuZGFudCBhbGlh
-cyAodGhhbmtzIFBldHIgxaB0ZXRpYXIpLgoqIENoYW5nZWQgY29tcGF0aWJsZS12YWx1ZSBmb3Ig
-a2V5cyAoUGV0ciDFoHRldGlhcikuCiogRml4ZWQgTEFOLXBvcnQgTEVEcy4gSSBkaWQgbm90IG5v
-dGljZWQgdGhhdCB0aGUgTEVEcyBkaWQgbm90IHdvcmsKcGVyb3BseSB3aGVuIEkgc3VibWl0dGVk
-IHYxLgotLS0KIC4uLi9hdGg3OS9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAxX2xlZHMgICAgICB8
-ICAgNCArCiAuLi4vYXRoNzkvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrICAgfCAg
-IDEgKwogLi4uL2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDNfZ3Bpb19zd2l0Y2hlcyAgIHwgICA2
-ICsKIC4uLi9hdGg3OS9kdHMvYXI5MzQ0X3pidGxpbmtfemJ0LXdkMzIzLmR0cyAgICB8IDE2MyAr
-KysrKysrKysrKysrKysrKysKIHRhcmdldC9saW51eC9hdGg3OS9pbWFnZS9nZW5lcmljLm1rICAg
-ICAgICAgICB8ICAgOSArCiA1IGZpbGVzIGNoYW5nZWQsIDE4MyBpbnNlcnRpb25zKCspCiBjcmVh
-dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzNDRfemJ0bGlua196YnQt
-d2QzMjMuZHRzCgpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2Jhc2UtZmlsZXMvZXRj
-L2JvYXJkLmQvMDFfbGVkcyBiL3RhcmdldC9saW51eC9hdGg3OS9iYXNlLWZpbGVzL2V0Yy9ib2Fy
-ZC5kLzAxX2xlZHMKaW5kZXggNjllMjZhNDc3My4uYTIzZjJlN2M3MyAxMDA3NTUKLS0tIGEvdGFy
-Z2V0L2xpbnV4L2F0aDc5L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDFfbGVkcworKysgYi90YXJn
-ZXQvbGludXgvYXRoNzkvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMV9sZWRzCkBAIC0yMTAsNiAr
-MjEwLDEwIEBAIHl1bmNvcmUsYTc3MCkKIAl1Y2lkZWZfc2V0X2xlZF9uZXRkZXYgIndhbiIgIldB
-TiIgIiRib2FyZG5hbWU6Z3JlZW46d2FuIiAiZXRoMCIKIAl1Y2lkZWZfc2V0X2xlZF9zd2l0Y2gg
-ImxhbiIgIkxBTiIgIiRib2FyZG5hbWU6Z3JlZW46bGFuIiAic3dpdGNoMCIgIjB4MTAiCiAJOzsK
-K3pidGxpbmssemJ0LXdkMzIzKQorCXVjaWRlZl9zZXRfbGVkX3N3aXRjaCAibGFuMSIgIkxBTjEi
-ICJ6YnQtd2QzMjM6b3JhbmdlOmxhbjEiICJzd2l0Y2gwIiAiMHgxMCIKKwl1Y2lkZWZfc2V0X2xl
-ZF9zd2l0Y2ggImxhbjIiICJMQU4yIiAiemJ0LXdkMzIzOm9yYW5nZTpsYW4yIiAic3dpdGNoMCIg
-IjB4MDgiCisJOzsKIGVzYWMKIAogYm9hcmRfY29uZmlnX2ZsdXNoCmRpZmYgLS1naXQgYS90YXJn
-ZXQvbGludXgvYXRoNzkvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrIGIvdGFyZ2V0
-L2xpbnV4L2F0aDc5L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yawppbmRleCBjMmU5
-OTQ1MzBkLi4yMDA3ODI4MTJiIDEwMDc1NQotLS0gYS90YXJnZXQvbGludXgvYXRoNzkvYmFzZS1m
-aWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrCisrKyBiL3RhcmdldC9saW51eC9hdGg3OS9iYXNl
-LWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKQEAgLTI1OCw2ICsyNTgsNyBAQCBhdGg3OV9z
-ZXR1cF9pbnRlcmZhY2VzKCkKIAkJdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAiIFwKIAkJCSIw
-QGV0aDAiICI1OmxhbiIgIjE6d2FuIgogCQk7OworCXpidGxpbmssemJ0LXdkMzIzfFwKIAl4aWFv
-bWksbWktcm91dGVyLTRxKQogCQl1Y2lkZWZfc2V0X2ludGVyZmFjZV93YW4gImV0aDAiCiAJCXVj
-aWRlZl9hZGRfc3dpdGNoICJzd2l0Y2gwIiBcCmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvYXRo
-NzkvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzIGIvdGFyZ2V0L2xpbnV4
-L2F0aDc5L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDNfZ3Bpb19zd2l0Y2hlcwppbmRleCA2YTUx
-YTc5NzkwLi4xYzhhNDZkZjE5IDEwMDc1NQotLS0gYS90YXJnZXQvbGludXgvYXRoNzkvYmFzZS1m
-aWxlcy9ldGMvYm9hcmQuZC8wM19ncGlvX3N3aXRjaGVzCisrKyBiL3RhcmdldC9saW51eC9hdGg3
-OS9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAzX2dwaW9fc3dpdGNoZXMKQEAgLTI5LDYgKzI5LDEy
-IEBAIHVibnQsbmFub3N0YXRpb24tYWMpCiB1Ym50LGFjYi1pc3ApCiAJdWNpZGVmX2FkZF9ncGlv
-X3N3aXRjaCAicG9lX3Bhc3N0aHJvdWdoIiAiUG9FIFBhc3N0aHJvdWdoIiAiMTEiCiAJOzsKK3pi
-dGxpbmssemJ0LXdkMzIzKQorCXVjaWRlZl9hZGRfZ3Bpb19zd2l0Y2ggImlvMCIgIklPIzAiICIw
-IgorCXVjaWRlZl9hZGRfZ3Bpb19zd2l0Y2ggImlvMSIgIklPIzEiICIxIgorCXVjaWRlZl9hZGRf
-Z3Bpb19zd2l0Y2ggImlvMiIgIklPIzIiICIyIgorCXVjaWRlZl9hZGRfZ3Bpb19zd2l0Y2ggImlv
-MTQiICJJTyMxNCIgIjE0IgorCTs7CiBlc2FjCiAKIGJvYXJkX2NvbmZpZ19mbHVzaApkaWZmIC0t
-Z2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzNDRfemJ0bGlua196YnQtd2QzMjMuZHRz
-IGIvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzNDRfemJ0bGlua196YnQtd2QzMjMuZHRzCm5l
-dyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAuLjZhNzI1OWEyZmMKLS0tIC9kZXYv
-bnVsbAorKysgYi90YXJnZXQvbGludXgvYXRoNzkvZHRzL2FyOTM0NF96YnRsaW5rX3pidC13ZDMy
-My5kdHMKQEAgLTAsMCArMSwxNjMgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwt
-Mi4wLW9yLWxhdGVyIE9SIE1JVAorL2R0cy12MS87CisKKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9n
-cGlvL2dwaW8uaD4KKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnB1dC9pbnB1dC5oPgorCisjaW5j
-bHVkZSAiYXI5MzQ0LmR0c2kiCisKKy8geworCW1vZGVsID0gIlpCVCBXRDMyMyI7CisJY29tcGF0
-aWJsZSA9ICJ6YnRsaW5rLHpidC13ZDMyMyIsICJxY2EsYXI5MzQ0IjsKKworCWtleXMgeworCQlj
-b21wYXRpYmxlID0gImdwaW8ta2V5cyI7CisJCXBvbGwtaW50ZXJ2YWwgPSA8MjA+OworCisJCXJl
-c2V0IHsKKwkJCWxhYmVsID0gInJlc2V0IjsKKwkJCWdwaW9zID0gPCZncGlvIDE2IEdQSU9fQUNU
-SVZFX0hJR0g+OworCQkJbGludXgsY29kZSA9IDxLRVlfUkVTVEFSVD47CisJCX07CisJfTsKKwor
-CWkyYyB7CisJCWNvbXBhdGlibGUgPSAiaTJjLWdwaW8iOworCQlncGlvcyA9IDwmZ3BpbyAxOSBH
-UElPX0FDVElWRV9MT1cKKwkJCSAmZ3BpbyAxNSBHUElPX0FDVElWRV9MT1cKKwkJCT47CisJCSNh
-ZGRyZXNzLWNlbGxzID0gPDE+OworCQkjc2l6ZS1jZWxscyA9IDwwPjsKKworCQlwaW5jdHJsLW5h
-bWVzID0gImRlZmF1bHQiOworCQlwaW5jdHJsLTAgPSA8JmVuYWJsZV9ncGlvMTUgJmVuYWJsZV9n
-cGlvMTk+OworCisJCXBjZjg1NjM6IHBjZjg1NjNANTEgeworCQkJY29tcGF0aWJsZSA9ICJueHAs
-cGNmODU2MyI7CisJCQlyZWcgPSA8MHg1MT47CisJCQkjY2xvY2stY2VsbHMgPSA8MD47CisJCX07
-CisJfTsKKworCWxlZHMgeworCQljb21wYXRpYmxlID0gImdwaW8tbGVkcyI7CisKKwkJcGluY3Ry
-bC1uYW1lcyA9ICJkZWZhdWx0IjsKKwkJcGluY3RybC0wID0gPCZlbmFibGVfZ3BpbzIwX2dwaW8y
-Mj47CisKKwkJd2lmaSB7CisJCQlsYWJlbCA9ICJ6YnQtd2QzMjM6Z3JlZW46d2lmaSI7CisJCQln
-cGlvcyA9IDwmZ3BpbyAxMiBHUElPX0FDVElWRV9MT1c+OworCQkJbGludXgsZGVmYXVsdC10cmln
-Z2VyID0gInBoeTB0cHQiOworCQl9OworCisJCWxhbjEgeworCQkJbGFiZWwgPSAiemJ0LXdkMzIz
-Om9yYW5nZTpsYW4xIjsKKwkJCWdwaW9zID0gPCZncGlvIDIwIEdQSU9fQUNUSVZFX0xPVz47CisJ
-CX07CisKKwkJbGFuMiB7CisJCQlsYWJlbCA9ICJ6YnQtd2QzMjM6b3JhbmdlOmxhbjIiOworCQkJ
-Z3Bpb3MgPSA8JmdwaW8gMjIgR1BJT19BQ1RJVkVfTE9XPjsKKwkJfTsKKworCX07Cit9OworCism
-d2R0IHsKKwlzdGF0dXMgPSAib2theSI7CisKKwlwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwor
-CXBpbmN0cmwtMCA9IDwmZW5hYmxlX2dwaW8yMT47Cit9OworCismdWFydCB7CisJc3RhdHVzID0g
-Im9rYXkiOworfTsKKworJmdwaW8geworCXN0YXR1cyA9ICJva2F5IjsKKworCXBpbmN0cmwtbmFt
-ZXMgPSAiZGVmYXVsdCI7CisJcGluY3RybC0wID0gPCZqdGFnX2Rpc2FibGVfcGlucz47Cit9Owor
-CismdXNiIHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismdXNiX3BoeSB7CisJc3RhdHVzID0g
-Im9rYXkiOworfTsKKworJmV0aDAgeworCXN0YXR1cyA9ICJva2F5IjsKKwlwaHktaGFuZGxlID0g
-PCZzd3BoeTQ+OworCW10ZC1tYWMtYWRkcmVzcyA9IDwmYXJ0IDB4MD47Cit9OworCismZXRoMSB7
-CisJc3RhdHVzID0gIm9rYXkiOworCW10ZC1tYWMtYWRkcmVzcyA9IDwmYXJ0IDB4Nj47Cit9Owor
-Cismc3BpIHsKKwludW0tY2hpcHNlbGVjdHMgPSA8MT47CisJc3RhdHVzID0gIm9rYXkiOworCisJ
-Zmxhc2hAMCB7CisJCWNvbXBhdGlibGUgPSAiamVkZWMsc3BpLW5vciI7CisJCXNwaS1tYXgtZnJl
-cXVlbmN5ID0gPDIyMDAwMDAwPjsKKwkJcmVnID0gPDA+OworCisJCXBhcnRpdGlvbnMgeworCQkJ
-Y29tcGF0aWJsZSA9ICJmaXhlZC1wYXJ0aXRpb25zIjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDE+
-OworCQkJI3NpemUtY2VsbHMgPSA8MT47CisKKwkJCXVib290QDAgeworCQkJCXJlZyA9IDwweDAg
-MHg0MDAwMD47CisJCQkJcmVhZC1vbmx5OworCQkJfTsKKworCQkJdWJvb3QtZW52QDQwMDAwIHsK
-KwkJCQlyZWcgPSA8MHg0MDAwMCAweDEwMDAwPjsKKwkJCQlyZWFkLW9ubHk7CisJCQl9OworCisJ
-CQlmaXJtd2FyZUA1MDAwMCB7CisJCQkJY29tcGF0aWJsZSA9ICJkZW54LHVpbWFnZSI7CisJCQkJ
-cmVnID0gPDB4NTAwMDAgMHhmYTAwMDA+OworCQkJfTsKKworCQkJYXJ0OiBhcnRAZmYwMDAwIHsK
-KwkJCQlyZWcgPSA8MHhmZjAwMDAgMHgxMDAwMD47CisJCQkJcmVhZC1vbmx5OworCQkJfTsKKwkJ
-fTsKKwl9OworfTsKKworJndtYWMgeworCXN0YXR1cyA9ICJva2F5IjsKKwltdGQtY2FsLWRhdGEg
-PSA8JmFydCAweDEwMDA+OworCW10ZC1tYWMtYWRkcmVzcyA9IDwmYXJ0IDB4MTAwMj47Cit9Owor
-CismcGlubXV4IHsKKwllbmFibGVfZ3BpbzE1OiBwaW5tdXhfZW5hYmxlX2dwaW8xNSB7CisJCXBp
-bmN0cmwtc2luZ2xlLGJpdHMgPSA8MHhjIDB4MCAweGZmMDAwMDAwPjsKKwl9OworCisJZW5hYmxl
-X2dwaW8xOTogcGlubXV4X2VuYWJsZV9ncGlvMTkgeworCQlwaW5jdHJsLXNpbmdsZSxiaXRzID0g
-PDB4MTAgMHgwIDB4ZmYwMDAwMDA+OworCX07CisKKwllbmFibGVfZ3BpbzIwX2dwaW8yMjogcGlu
-bXV4X2VuYWJsZV9ncGlvMjBfZ3BpbzIyIHsKKwkJcGluY3RybC1zaW5nbGUsYml0cyA9IDwweDE0
-IDB4MCAweGZmMDBmZj47CisJfTsKKworCWVuYWJsZV9ncGlvMjE6IHBpbm11eF9lbmFibGVfZ3Bp
-bzIxIHsKKwkJcGluY3RybC1zaW5nbGUsYml0cyA9IDwweDE0IDB4MCAweGZmMDA+OworCX07Cit9
-OwpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2ltYWdlL2dlbmVyaWMubWsgYi90YXJn
-ZXQvbGludXgvYXRoNzkvaW1hZ2UvZ2VuZXJpYy5tawppbmRleCAxNTg1Mzc5ZjgzLi4zYzliMTcx
-ZDM1IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvYXRoNzkvaW1hZ2UvZ2VuZXJpYy5taworKysg
-Yi90YXJnZXQvbGludXgvYXRoNzkvaW1hZ2UvZ2VuZXJpYy5tawpAQCAtNzAxLDMgKzcwMSwxMiBA
-QCBkZWZpbmUgRGV2aWNlL3l1bmNvcmVfYTc3MAogICBJTUFHRV9TSVpFIDo9IDE2MDAwawogZW5k
-ZWYKIFRBUkdFVF9ERVZJQ0VTICs9IHl1bmNvcmVfYTc3MAorCitkZWZpbmUgRGV2aWNlL3pidGxp
-bmtfemJ0LXdkMzIzCisgIEFUSF9TT0MgOj0gYXI5MzQ0CisgIERFVklDRV9USVRMRSA6PSBaQlQg
-V0QzMjMKKyAgSU1BR0VfU0laRSA6PSAxNjAwMGsKKyAgREVWSUNFX1BBQ0tBR0VTIDo9IGttb2Qt
-dXNiMiBrbW9kLWkyYy1jb3JlIGttb2QtaTJjLWdwaW8ga21vZC1ydGMtcGNmODU2MyBcCisJCSAg
-ICAga21vZC11c2Itc2VyaWFsIGttb2QtdXNiLXNlcmlhbC1jcDIxMHggdXFtaQorZW5kZWYKK1RB
-UkdFVF9ERVZJQ0VTICs9IHpidGxpbmtfemJ0LXdkMzIzCi0tIAoyLjE5LjEKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxp
-bmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3Bl
-bndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+
+--===============0184752987202869722==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="T7mxYSe680VjQnyC"
+Content-Disposition: inline
+
+
+--T7mxYSe680VjQnyC
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+
+The local organization team is proud to announce that this year's
+Battlemesh will be held near Paris, from 8 to 14 July!
+
+The event aims to bring together people from across the globe who are
+interested in community networks, including wireless mesh network
+technologies, fiber infrastructure, Do-It-Yourself Internet Access
+Providers, and more generally how to create and maintain a thriving
+community of people involved in building their own networks.
+
+We envision 7 days full of expert presentations, practical workshops,
+late-night hacking sessions, and fruitful discussions: whether you are a
+mesh networking enthusiast, community networking activist, protocol
+developer, or have an interest in networking in general, come and join us!=
+=20
+
+More information about the event is available below or on the website:
+https://www.battlemesh.org/BattleMeshV12
+
+
+Where
+=3D=3D=3D=3D=3D
+
+Le 6B, 6-10 quai de Seine, 93200 Saint-Denis, France (very close to
+Paris).
+
+GPS: geo:48.93835,2.34259
+Map: https://www.openstreetmap.org/?mlat=3D48.93835&mlon=3D2.34259#map=3D18=
+/48.93835/2.34259
+Web: https://www.le6b.fr/
+Travel directions: https://www.battlemesh.org/BattleMeshV12#Where
+
+
+What
+=3D=3D=3D=3D
+
+We will have organized talks, workshops and discussion panels on community
+networks and wireless mesh networks.  There will also be more informal
+activities: cooperative hacking, self-organized projects, and (we hope)
+delightful conversations!
+
+A first draft of the schedule (handle with care!) is available here: https:=
+//www.battlemesh.org/BattleMeshV12#Talk_Schedule_and_Workshops
+
+
+How to register
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+The event itself is free of charge and open for all!  However, it makes
+the organisation much easier if you tell us in advance that you plan to
+come.
+
+To register: https://www.battlemesh.org/BattleMeshV12#How_to_register
+
+Current list of participants: https://battlemesh.org/BattleMeshV12/Particip=
+ants
+
+
+Accommodation package
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+For those of you who are looking for a convenient and low cost
+accommodation option in Paris: we negotiated a special group reservation
+for 24 people at an hostel.
+
+There are still a few beds left, register now before we run out! https://ww=
+w.battlemesh.org/BattleMeshV12#Accommodation_package
+
+
+Call for participation
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+We invite participants to propose workshops, talks or panel discussions
+relating to network infrastructure in general, how it can be built and
+operated as a common, and how to sustain a community around networking.
+
+We welcome contributions that broadly address these questions from any of
+several perspectives: technical, organisational, economical, regulatory,
+juridical, political.
+
+Deadline: 10 May 2019, now extended to June 7th!
+
+To submit an event: https://www.battlemesh.org/BattleMeshV12#Call_for_parti=
+cipation
+
+
+Endorsements
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+If your organization wants to support the event by spreading the word, you
+can endorse the event.
+
+For this, just write an article on your website / blog / social media, and
+send us an email with the link and your logo to: (v12) at (battlemesh) dot =
+(org)
+
+See existing endorsements for a template: https://www.battlemesh.org/Battle=
+MeshV12#Endorsements
+
+
+Contact
+=3D=3D=3D=3D=3D=3D=3D
+
+* Web: https://battlemesh.org/BattleMeshV12
+* Contact email (preferred): v12 at battlemesh.org
+* Public mailing list: https://ml.ninux.org/mailman/listinfo/battlemesh
+* IRC: irc.freenode.net #battlemesh
+* Twitter: https://twitter.com/battlemesh/
+* Mastodon: https://toot.aquilenet.fr/@battlemesh12
+
+
+The Local Organization Team
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D
+
+Aube
+Baptiste
+Daniele
+Dash
+Vi
+and many other volunteers!
+
+--T7mxYSe680VjQnyC
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEjVflzZuxNlVFbt5QvgHsIqBOLkYFAlzxMAsACgkQvgHsIqBO
+LkaeYhAAj0uhx4X7EkadhYageZckwLv753nr8WKG5Tpu1NzlE/88Bh/RX5SicqFc
+V4OjrOfB+Sy+x2jAEeabdeIJvFkCGkF5IM17+IdWnkj9x5RodX8qdtNOSv5NaiiI
+OdGYdbkhsJQ3LP77sFv4t3NoY/STJkhXNfEW9tuAB03HX5p4B/oxdyS/rFaOdZgY
+ZdFH3cRbRntSazzBX4NeKQx5vpaO2jUbzFMYpLPeo/Ns87d5kt15jsmUfwgENxFO
+wF3GdiSF+Bgg4DwAaeSpGuA+eBAGcsrTPNEo5K/Q9Dn5eLLuMPKz8e10trKO4wgx
+u02OU+tB4DYn/UeILBQ160UB7ruiroKCIcSYKSRJKF/Xry0RBfyZIIEqZUqQoDUz
+9JyNtt087sRFPKFiTOZWZltF4LmQcKwaFTtJZyLq0sxDerWnaEv0EHQaPCp5RER/
+1FRVd9ZRBqadZlNA1BSYuLywKI62gx1lCRy0+HkqTD7i526w2yyxaDrRH5Mz8vVR
+BqBbVvyB9ttDpG38whbSa4wmO51g0ZydsFO/bb8x8KmqDq+8IAw/MMcz2x6H5Ehj
+cpgIRNjKaObzbcYvcKfiIaz2up7djI3355B6cqC8Mrp3Tw8N0ovx4qfh2XhaB4/L
+k1DJmIISIzJcr5NE/YeclrvExMhNrR3TdEtto82gqubX0TKWUNk=
+=VSZM
+-----END PGP SIGNATURE-----
+
+--T7mxYSe680VjQnyC--
+
+
+--===============0184752987202869722==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0184752987202869722==--
+

@@ -2,94 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3695A33948
-	for <lists+openwrt-devel@lfdr.de>; Mon,  3 Jun 2019 21:51:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 969503397E
+	for <lists+openwrt-devel@lfdr.de>; Mon,  3 Jun 2019 22:04:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=UWlBhf0eEOla7WCvWE05wVsibi20py+Hf5AIOuO4XZk=; b=oj0rII2Mq8kpuewOVsmLd/FP4a
-	XQz6vwtGq6FL+xLwoyz3v8w6XT7jk2tICcUtKUCr+x/NAOW80xTvDsXJhjq3LnKz2G9xa1QakKdKx
-	00kQYsZYTf2A3CabQ5Z+5ZmlFhEvUV4s6NY5Zsa7+wPeJiH0bPmyyNBwucdTErWgUOWASWfJ4b0oK
-	VSc2IH2SvTH/BwDH+cWD649wQ+R1BsQS046tqGe0vHUjxYsKu2ci65vbYysGIIz1WBueWq+EXeIzB
-	bc1aUmvrl+6qu4v7C66DBZr4xANqp1uC7hd2qAf9xFVw75GYSa3STTMz3n0wUwBRQ2DT2kBxHHgZT
-	YJhp2wjA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
+	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RP6AXt1D2bYmCEMwjajssnJ/RAH/WMoOMSecmqkVi4w=; b=at81fg1Z5Ih6XI
+	fUlZW+qrU+9Qe6K3ojqW0mCPYzoKLy9/DZixG+3zwXZ7FUniFkgqtzCOKt4rCfJh4Sybo2BJ6neEA
+	+A7d3H9icJLVBbAx6R7U2frdZEWNHQApZx+sLrfbWDlVUAYdw+uZdfoeYovJIqmNmN9POmh+zU6xp
+	h6TZN6v709GhMmRU/8xf8eS1k/VnAOmUDMfaNa1h6LdPT9guudKVHQ245jBulYzeHj2QcCXQVo5f8
+	HwVQ8hPQuF+rM8PhkB5Rdy+Eu5ZcssTf4knE34k6qQssdeuAxefoobeQJS5+bDPH2NKmMmmuTh+Ww
+	eYH8ok+4iWIoOknTFpuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hXszY-0002ui-3c; Mon, 03 Jun 2019 19:51:36 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1hXtBv-0006yQ-Ml; Mon, 03 Jun 2019 20:04:23 +0000
+Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hXszR-0002uJ-Lj
- for openwrt-devel@lists.openwrt.org; Mon, 03 Jun 2019 19:51:30 +0000
-Received: by mail-lj1-x235.google.com with SMTP id r76so17411634lja.12
- for <openwrt-devel@lists.openwrt.org>; Mon, 03 Jun 2019 12:51:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=EFyoE7liwVpH0n2sfOAIgqNvN+P+DWsrbVyzy8sbSlI=;
- b=tbfl/ss8023pvD3nLV7LqtxuCsn3wcJQVAazBr3nHCSfwkn8o2SR81dYYraIQDNWoT
- P9i7tSixtXoRI8ul6XSWc/NbvSio/B++Te1si3IYIm+Wh8TuwHEjsGOGhJHFhFNhbFX4
- twdn6H/fxwmsrRhtPbRy9Q3hXi4LQ5PIWsh0BiRcUS922fuv2oZtxapW7ksag9vRHAr4
- wRmDuGnp6jFYhjt8KwjWMAip0mzEPQuL/uuptwwZ6NXiCH2til8AmfucL/1hPjNMMJJf
- nnN4FnRFHGF/57gK+0Oel7+RKRTmfBsM29EhJ0kNOaUCJkMdTqi/rkVFNqblCp+Vjveb
- wPSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=EFyoE7liwVpH0n2sfOAIgqNvN+P+DWsrbVyzy8sbSlI=;
- b=hYNlEe58IFTfS3N/USnHTLkS4MJ/4/QI5Kio2aeGH4TAugQH9VR0m2+36S7cRpFccg
- 5TWLrXaZM+GHyKozRIOV1al9IYLsizo6viWFn+lSHgwZr1cg+vtjqFc55+k31mCn3Jpb
- NraouQxYMOsZeAfAP+9owp22Gqjym6ZzmQttdFTgvthrY0n1Sx/+bmJQ6DMmy+HQAmth
- tVjiY+8QE4lHH+dlMHBXeRHtvlBKjhNsSLDuq1nHKF7IP/6mdn1uUthpvfk9tnxxnQNd
- H2B9CV0zrjPoR5t3/Uxm/Ed4AtXsM4WyDLkxkt7wg0lrclRs0zIE0wsh2tJ4KdVSxClp
- Hvaw==
-X-Gm-Message-State: APjAAAVEw46VnkLjkHmysFFrbjtz3pT+wEWqZsrXg8ncI2WIzOjy2Mfe
- xKvJk5v4ChNBO5IS24snWx4dK+Yo
-X-Google-Smtp-Source: APXvYqxM5gb3FtlrDolg5DlsbpX0oQK61vFCJtnSJa8C73sUT7fKmjR4zHk1P8MV2dYzkuzgIE2ZAA==
-X-Received: by 2002:a2e:390c:: with SMTP id g12mr4433649lja.17.1559591485047; 
- Mon, 03 Jun 2019 12:51:25 -0700 (PDT)
-Received: from samsung (095160102144.warszawa.vectranet.pl. [95.160.102.144])
- by smtp.gmail.com with ESMTPSA id
- v2sm3303748lfi.52.2019.06.03.12.51.23
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 03 Jun 2019 12:51:24 -0700 (PDT)
-Date: Mon, 3 Jun 2019 21:51:22 +0200
-From: Cezary Jackiewicz <cezary.jackiewicz@gmail.com>
+ id 1hXtBn-0006y3-Ma
+ for openwrt-devel@lists.openwrt.org; Mon, 03 Jun 2019 20:04:18 +0000
+Received: from p200300c587183300bc419a02ecbe4615.dip0.t-ipconnect.de
+ ([2003:c5:8718:3300:bc41:9a02:ecbe:4615]); authenticated
+ by wp175.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ id 1hXtBl-00031x-1C; Mon, 03 Jun 2019 22:04:13 +0200
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <20190603215122.6a8b16da@samsung>
-In-Reply-To: <d3184b92-ca35-9a55-c51f-274117e3c50f@birger-koblitz.de>
-References: <d3184b92-ca35-9a55-c51f-274117e3c50f@birger-koblitz.de>
-X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+From: Birger Koblitz <mail@birger-koblitz.de>
+Message-ID: <2ee07841-ad61-1c96-e523-24dc512ec6cf@birger-koblitz.de>
+Date: Mon, 3 Jun 2019 22:04:12 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+Content-Language: en-US
+X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1559592255;
+ af5aa082; 
+X-HE-SMSGID: 1hXtBl-00031x-1C
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190603_125129_731334_5EBD8B59 
-X-CRM114-Status: UNSURE (   5.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190603_130415_882611_B40D9121 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:235 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cezary.jackiewicz[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for Edimax
+Subject: [OpenWrt-Devel] [PATCH v2] ramips: add support for Edimax
  EW-7476RPC / EW-7478AC
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
@@ -102,17 +62,496 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-RG5pYSAyMDE5LTA2LTAzLCBvIGdvZHouIDE5OjA0OjIzCkJpcmdlciBLb2JsaXR6IDxtYWlsQGJp
-cmdlci1rb2JsaXR6LmRlPiBuYXBpc2HFgihhKToKCj4gKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9n
-cGlvL2dwaW8uaD4KPiArI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2lucHV0L2lucHV0Lmg+Cj4gKwo+
-ICsvIHsKPiArCWNvbXBhdGlibGUgPSAiZWRpbWF4LGV3LTc0NzhhYyIsICJyYWxpbmssbXQ3NjIw
-YS1zb2MiOwo+ICsJbW9kZWwgPSAiRWRpbWF4IEVXLTc0NzhhYyI7Cgptb2RlbCA9ICJFZGltYXgg
-RVctNzQ3OEFDIjs+CgotLSAKUG96ZHJhd2lhbSwKIENlemFyeSBKYWNraWV3aWN6CgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1h
-aWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMu
-b3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+
+ramips: add Edimax EW-7476RPC
+
+SoC:	MediaTek MT7620a @ 580MHz
+RAM:	64M (Winbond W9751G6KB-25)
+FLASH:	8MB (Macronix)
+WiFi:	SoC-integrated: MediaTek MT7620a bgn
+WiFi:	MediaTek MT7612EN nac
+GbE:	1x (RTL8211E)
+BTN:	WPS - RFKILL/RF 50%/RF 100% toggle
+LED:	- Wifi 5g (blue)
+	- Wifi 2g (blue)
+	- Crossband (green)
+	- Power (green)
+	- WPS (green)
+	- LAN (Green)
+UART:	UART is present as Pads with throughholes on the PCB. They are
+	located next to the switch for the wifi configuration
+	3.3V - RX - GND - TX / 57600-8N1
+	3.3V is the square pad
+
+Installation
+------------
+Update the factory image via the web-interfaces (by default:
+192.168.9.2/24).
+http://192.168.9.2/index.asp
+
+ramips: add Edimax EW-7478AC
+
+SoC:	MediaTek MT7620a @ 580MHz
+RAM:	64M (Winbond W9751G6KB-25)
+FLASH:	8MB (Macronix)
+WiFi:	SoC-integrated: MediaTek MT7620a bgn
+WiFi:	MediaTek MT7612EN nac
+GbE:	1x (RTL8211E)
+BTN:	WPS - RFKILL/RF 50%/RF 100% toggle
+LED:	- Wifi 5g (blue)
+	- Wifi 2g (blue)
+	- Crossband (green)
+	- Power (green)
+	- WPS (green)
+	- LAN (Green)
+UART:	UART is present as Pads with throughholes on the PCB. They are
+	located next to the switch for the wifi configuration
+	3.3V - RX - GND - TX / 57600-8N1
+	3.3V is the square pad
+
+Installation
+------------
+Update the factory image via the web-interfaces (by default:
+http://edimaxext.setup)
+Or push wpa button on power on and send firmware via tftp to 192.168.1.6
+
+The EW-7478AC is identical to the EW-7476RPC, except instead of 2 internal
+antennas it has 2 external ones.
+
+Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
+index 1b02088ed2..1f33f7c0d2 100755
+--- a/target/linux/ramips/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/base-files/etc/board.d/01_leds
+@@ -152,6 +152,10 @@ dir-860l-b1)
+ edimax,br-6478ac-v2)
+ 	set_wifi_led "$boardname:blue:wlan"
+ 	;;
++edimax,ew-7476rpc|\
++edimax,ew-7478ac)
++        ucidef_set_led_switch "lan" "lan" "$boardname:green:lan"  "switch0" "0x20"
++        ;;
+ ex2700|\
+ wn3000rpv3)
+ 	set_wifi_led "$boardname:green:router"
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index aa0816c9cc..d0f32285cf 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -50,6 +50,8 @@ ramips_setup_interfaces()
+ 	broadway|\
+ 	dcs-930|\
+ 	dcs-930l-b1|\
++	edimax,ew-7476rpc|\
++	edimax,ew-7478ac|\
+ 	ht-tm02|\
+ 	kimax,u35wf|\
+ 	linkits7688 | \
+diff --git a/target/linux/ramips/dts/EW-7476RPC.dts b/target/linux/ramips/dts/EW-7476RPC.dts
+new file mode 100644
+index 0000000000..0f35ee0f3c
+--- /dev/null
++++ b/target/linux/ramips/dts/EW-7476RPC.dts
+@@ -0,0 +1,47 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++/dts-v1/;
++
++#include "EW-747x.dtsi"
++
++/ {
++	compatible = "edimax,ew-7476rpc", "ralink,mt7620a-soc";
++	model = "Edimax EW-7476RPC";
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "ew-7476rpc:green:power";
++			gpios = <&gpio2 27 GPIO_ACTIVE_LOW>;
++		};
++
++		lan {
++			label = "ew-7476rpc:green:lan";
++			gpios = <&gpio2 26 GPIO_ACTIVE_LOW>;
++		};
++
++		wlan2g {
++			label = "ew-7476rpc:blue:wlan2g";
++			gpios = <&gpio2 30 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1radio";
++		};
++
++		wlan5g {
++			label = "ew-7476rpc:blue:wlan5g";
++			gpios = <&gpio2 31 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0radio";
++		};
++
++		wps {
++			label = "ew-7476rpc:green:wps";
++			gpios = <&gpio2 28 GPIO_ACTIVE_LOW>;
++		};
++
++		crossband {
++			label = "ew-7476rpc:green:crossband";
++			gpios = <&gpio2 29 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
++
+diff --git a/target/linux/ramips/dts/EW-7478AC.dts b/target/linux/ramips/dts/EW-7478AC.dts
+new file mode 100644
+index 0000000000..b869ff37f8
+--- /dev/null
++++ b/target/linux/ramips/dts/EW-7478AC.dts
+@@ -0,0 +1,46 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++/dts-v1/;
++
++#include "EW-747x.dtsi"
++
++/ {
++	compatible = "edimax,ew-7478ac", "ralink,mt7620a-soc";
++	model = "Edimax EW-7478ac";
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "ew-7478ac:green:power";
++			gpios = <&gpio2 27 GPIO_ACTIVE_LOW>;
++		};
++
++		lan {
++			label = "ew-7478ac:green:lan";
++			gpios = <&gpio2 26 GPIO_ACTIVE_LOW>;
++		};
++
++		wlan2g {
++			label = "ew-7478ac:blue:wlan2g";
++			gpios = <&gpio2 30 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1radio";
++		};
++
++		wlan5g {
++			label = "ew-7478ac:blue:wlan5g";
++			gpios = <&gpio2 31 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0radio";
++		};
++
++		wps {
++			label = "ew-7478ac:green:wps";
++			gpios = <&gpio2 28 GPIO_ACTIVE_LOW>;
++		};
++
++		crossband {
++			label = "ew-7478ac:green:crossband";
++			gpios = <&gpio2 29 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
+diff --git a/target/linux/ramips/dts/EW-747x.dtsi b/target/linux/ramips/dts/EW-747x.dtsi
+new file mode 100644
+index 0000000000..b7d8087d5a
+--- /dev/null
++++ b/target/linux/ramips/dts/EW-747x.dtsi
+@@ -0,0 +1,192 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++
++/dts-v1/;
++
++#include "mt7620a.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "ralink,mt7620a-soc";
++
++	aliases {
++		led-boot = &led_power;
++		led-failsafe = &led_power;
++		led-running = &led_power;
++		led-upgrade = &led_power;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,57600";
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset_wps {
++			label = "reset_wps";
++			gpios = <&gpio2 20 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		switch_high {
++			label = "switch high";
++			gpios = <&gpio2 22 GPIO_ACTIVE_LOW>;
++			linux,code = <BTN_0>;
++			linux,input-type = <EV_SW>;
++		};
++
++		switch_off {
++			label = "switch off";
++			gpios = <&gpio2 23 GPIO_ACTIVE_LOW>;
++			linux,code = <BTN_1>;
++			linux,input-type = <EV_SW>;
++		};
++	};
++};
++
++&gpio1 {
++	status = "okay";
++};
++
++&gpio2 {
++	status = "okay";
++};
++
++&spi0 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <10000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				label = "cimage";
++				reg = <0x50000 0x20000>;
++				read-only;
++			};
++
++			partition@70000 {
++				compatible = "edimax,uimage";
++				label = "firmware";
++				reg = <0x00070000 0x00790000>;
++			};
++		};
++	};
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "i2c", "uartf", "nd_sd", "rgmii2";
++			ralink,function = "gpio";
++		};
++	};
++
++	phy_reset_pins: phy-reset {
++		gpio {
++			ralink,group = "spi refclk";
++			ralink,function = "gpio";
++		};
++	};
++};
++
++&ethernet {
++
++	status = "okay";
++	mtd-mac-address = <&factory 0x4>;
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&rgmii1_pins &mdio_pins &phy_reset_pins>;
++
++	mediatek,portmap = "l";
++	mediatek,mdio-mode = <1>;
++
++	phy-reset-gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
++	phy-reset-duration = <30>;
++
++	port@5 {
++		status = "okay";
++		mediatek,fixed-link = <1000 1 1 1>;
++		phy-mode = "rgmii";
++	};
++
++	mdio-bus {
++		status = "okay";
++
++		phy0: ethernet-phy@0 {
++			status = "disabled";
++			reg = <0>;
++			phy-mode = "rgmii";
++		};
++
++		phy1: ethernet-phy@1 {
++			status = "disabled";
++			reg = <1>;
++			phy-mode = "rgmii";
++		};
++
++		phy2: ethernet-phy@2 {
++			status = "disabled";
++			reg = <2>;
++			phy-mode = "rgmii";
++		};
++
++		phy3: ethernet-phy@3 {
++			status = "disabled";
++			reg = <3>;
++			phy-mode = "rgmii";
++		};
++
++		phy4: ethernet-phy@4 {
++			status = "disabled";
++			reg = <4>;
++			phy-mode = "rgmii";
++		};
++	};
++};
++
++&gsw {
++	mediatek,port5 = "gmac";
++};
++
++&wmac {
++	ralink,mtd-eeprom = <&factory 0>;
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi@0,0 {
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		mediatek,2ghz = <0>;
++	};
++};
+diff --git a/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+index 10d9fd7a3e..7394a24fe9 100644
+--- a/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mtk_eth_soc.c
++++ b/target/linux/ramips/files-4.14/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+@@ -32,6 +32,9 @@
+ #include <linux/bug.h>
+ #include <linux/netfilter.h>
+ #include <net/netfilter/nf_flow_table.h>
++#include <linux/of_gpio.h>
++#include <linux/gpio.h>
++#include <linux/gpio/consumer.h>
+
+ #include <asm/mach-ralink/ralink_regs.h>
+
+@@ -1333,6 +1336,35 @@ static int fe_stop(struct net_device *dev)
+ 	return 0;
+ }
+
++static void fe_reset_phy(struct fe_priv *priv)
++{
++	int err, msec = 30;
++	struct gpio_desc *phy_reset;
++
++	phy_reset = devm_gpiod_get_optional(priv->dev, "phy-reset",
++					    GPIOD_OUT_HIGH);
++	if (!phy_reset)
++		return;
++
++	if (IS_ERR(phy_reset)) {
++		dev_err(priv->dev, "Error acquiring reset gpio pins: %ld\n",
++			PTR_ERR(phy_reset));
++		return;
++	}
++
++	err = of_property_read_u32(priv->dev->of_node, "phy-reset-duration",
++				   &msec);
++	if (!err && msec > 1000)
++		msec = 30;
++
++	if (msec > 20)
++		msleep(msec);
++	else
++		usleep_range(msec * 1000, msec * 1000 + 1000);
++
++	gpiod_set_value(phy_reset, 0);
++}
++
+ static int __init fe_init(struct net_device *dev)
+ {
+ 	struct fe_priv *priv = netdev_priv(dev);
+@@ -1348,6 +1380,8 @@ static int __init fe_init(struct net_device *dev)
+ 			return -ENODEV;
+ 		}
+
++	fe_reset_phy(priv);
++
+ 	mac_addr = of_get_mac_address(priv->dev->of_node);
+ 	if (mac_addr)
+ 		ether_addr_copy(dev->dev_addr, mac_addr);
+diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
+index cf38aa2cb1..3b700f868e 100644
+--- a/target/linux/ramips/image/mt7620.mk
++++ b/target/linux/ramips/image/mt7620.mk
+@@ -617,6 +617,30 @@ define Device/edimax_br-6478ac-v2
+ endef
+ TARGET_DEVICES += edimax_br-6478ac-v2
+
++define Device/edimax_ew-7476rpc
++  DTS := EW-7476RPC
++  DEVICE_TITLE := Edimax EW-7476RPC
++  BLOCKSIZE := 4k
++  IMAGE_SIZE := 7744k
++  IMAGE/sysupgrade.bin := append-kernel | append-rootfs | \
++        edimax-header -s CSYS -m RN79 -f 0x70000 -S 0x01100000 | pad-rootfs | \
++        append-metadata | check-size $$$$(IMAGE_SIZE)
++  DEVICE_PACKAGES := kmod-mt76x2 kmod-phy-realtek
++endef
++TARGET_DEVICES += edimax_ew-7476rpc
++
++define Device/edimax_ew-7478ac
++  DTS := EW-7478AC
++  DEVICE_TITLE := Edimax EW-7478AC
++  BLOCKSIZE := 4k
++  IMAGE_SIZE := 7744k
++  IMAGE/sysupgrade.bin := append-kernel | append-rootfs | \
++        edimax-header -s CSYS -m RN70 -f 0x70000 -S 0x01100000 | pad-rootfs | \
++        append-metadata | check-size $$$$(IMAGE_SIZE)
++  DEVICE_PACKAGES := kmod-mt76x2 kmod-phy-realtek
++endef
++TARGET_DEVICES += edimax_ew-7478ac
++
+ define Device/tplink_c2-v1
+   $(Device/Archer)
+   DTS := ArcherC2-v1
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

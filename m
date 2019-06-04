@@ -2,38 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CEBD33F7B
-	for <lists+openwrt-devel@lfdr.de>; Tue,  4 Jun 2019 09:04:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70C903402A
+	for <lists+openwrt-devel@lfdr.de>; Tue,  4 Jun 2019 09:32:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Y5bN/4lOERIia6csDsIrUWYALP4NOoaO2RrWHZ+PuPU=; b=itj2UyR2waT0k5cVXjZdCY//9
-	oipLI7tdRNiDbbNBKsSSRKz2zF2YBhTE8xns/CG18nLoxZHYWFwsklKER2juFLsIR0uVxD6MSjXuy
-	ab+VPvi2VngqdfQeU/kYgSmEvTgIzfGgDWIsW/KzvMJMuuOPtI3SD2X9eR40deuxvRVdRh9iqwlsH
-	2wcZ+gD5dmwD6NXScn6DhwQcgYc8Rfpn9RXiJeoX/PAufIaBHLe7r0uuybOhlvgmQf+fQU9fZxlB4
-	D4P6qLPoxSejzAQbpnJigGyVkzwjaaAH4/wdy67daiOnjGQEkD6ox9oou4WgtuCkcK7ADLgHr8BhV
-	fqSWeYLuA==;
+	 bh=HZWgjshW193Fe22vHi1nKfcq4McVYabA54jObhpjk10=; b=lheMDzohUpwp3yi1NiWbpiWEA
+	BN4avJUSSrJ96EevT/UhJIGDX6JlWrmHY8UcApnu2mLkdC0fVuL7XLJ7JahBM8IhuBAXv6OafFKNt
+	W2P6KQCoU/3pZuO9A+U8cACTYBCF94UpxDTvF72O5soqRweLr+MzrxWiog7ekB1Ias7TLMmWTYMbn
+	/hY45ROY99/JxAVThCmEhhhe/YdYd3bBm6YSPoVq41R8JOHSD2qEIWy4YCcf84ef3OcI2tAXYfKSO
+	ebEvtFMjyKCkfL5r9uQ8cCv7Ybh6vqL2v2+vC3/9uA1v8zCutnT9VBhnRwLp8Gcse58Cg+1F1MlSg
+	9b5WxdW5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hY3Uf-0007Y0-7f; Tue, 04 Jun 2019 07:04:25 +0000
+	id 1hY3vO-0002ZA-RT; Tue, 04 Jun 2019 07:32:02 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hY3UZ-0007Xc-0D
- for openwrt-devel@lists.openwrt.org; Tue, 04 Jun 2019 07:04:20 +0000
+ id 1hY3vH-0002Yh-Ey
+ for openwrt-devel@lists.openwrt.org; Tue, 04 Jun 2019 07:31:57 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 48CA0544C9; Tue,  4 Jun 2019 09:04:14 +0200 (CEST)
+ id 24A20565AE; Tue,  4 Jun 2019 09:31:54 +0200 (CEST)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 1033F544C7
- for <openwrt-devel@lists.openwrt.org>; Tue,  4 Jun 2019 09:04:13 +0200 (CEST)
-Received: (qmail 25565 invoked from network); 4 Jun 2019 09:04:13 +0200
+ by mxout01.bytecamp.net (Postfix) with ESMTP id DC601565A6
+ for <openwrt-devel@lists.openwrt.org>; Tue,  4 Jun 2019 09:31:53 +0200 (CEST)
+Received: (qmail 19465 invoked from network); 4 Jun 2019 09:31:53 +0200
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 4 Jun 2019 09:04:13 +0200
+ 4 Jun 2019 09:31:53 +0200
 To: openwrt-devel@lists.openwrt.org
 References: <20190604055552.17850-1-john@phrozen.org>
+ <20190604055552.17850-2-john@phrozen.org>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
@@ -79,15 +80,15 @@ Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
  BPsre6PGA7a1gXwPeTfUFMw0pKFhpPZO7XnPSgnRNDNI42Ldcoz0xI7Qg2zCsQR4YHwnu6o8
  pzadX6sSiW/la5oFlktj+IN1Avgqf5YenhKX8hj0d4uhJB4w5S+vQEySwmiZ1HWmYLcHHR9f
  Xx5IapIyoA==
-Message-ID: <a52f7d86-3360-1f60-228b-828abbdc37ca@wwsnet.net>
-Date: Tue, 4 Jun 2019 09:04:13 +0200
+Message-ID: <fb9627f2-2beb-2339-579c-ee2c262cfea5@wwsnet.net>
+Date: Tue, 4 Jun 2019 09:31:49 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190604055552.17850-1-john@phrozen.org>
+In-Reply-To: <20190604055552.17850-2-john@phrozen.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_000419_197513_6F2A3AE1 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20190604_003155_808185_787837F7 
+X-CRM114-Status: GOOD (  17.63  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -95,10 +96,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [212.204.60.217 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] image: make the folder that gets
- included intot he RootFS configurable
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] script/feeds: add a new command
+ that allows generating a new feeds.conf
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,29 +111,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8934827355780312686=="
+Content-Type: multipart/mixed; boundary="===============1958594810716202081=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============8934827355780312686==
+--===============1958594810716202081==
 Content-Type: multipart/signed; micalg=pgp-sha256;
  protocol="application/pgp-signature";
- boundary="3BPrzumGhCxquU26TldXW6VvmjQnJb3jv"
+ boundary="z5jsHwasc0RaJdw9DPPH4zkv2Dpv8TUjr"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---3BPrzumGhCxquU26TldXW6VvmjQnJb3jv
-Content-Type: multipart/mixed; boundary="KU3R8Ng6nzv6Bc8u4ZirpM9FcjMRxqLoM";
+--z5jsHwasc0RaJdw9DPPH4zkv2Dpv8TUjr
+Content-Type: multipart/mixed; boundary="JfoK8dSK9AsEi9qIzH8Mj4k6uwCSsZnu8";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <a52f7d86-3360-1f60-228b-828abbdc37ca@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] image: make the folder that gets
- included intot he RootFS configurable
+Message-ID: <fb9627f2-2beb-2339-579c-ee2c262cfea5@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] script/feeds: add a new command that
+ allows generating a new feeds.conf
 References: <20190604055552.17850-1-john@phrozen.org>
-In-Reply-To: <20190604055552.17850-1-john@phrozen.org>
+ <20190604055552.17850-2-john@phrozen.org>
+In-Reply-To: <20190604055552.17850-2-john@phrozen.org>
 
---KU3R8Ng6nzv6Bc8u4ZirpM9FcjMRxqLoM
+--JfoK8dSK9AsEi9qIzH8Mj4k6uwCSsZnu8
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
@@ -141,90 +143,133 @@ Hi,
 
 comments inline.
 
-~ Jo
-
 On 6/4/19 7:55 AM, John Crispin wrote:
-> This allows managing several different folder for varying env profiles.=
-
+> This can be used inside build setups for easy feeds.conf generation.
 >=20
 > Signed-off-by: John Crispin <john@phrozen.org>
 > ---
->  config/Config-images.in | 6 ++++++
->  package/Makefile        | 2 +-
->  2 files changed, 7 insertions(+), 1 deletion(-)
+>  scripts/feeds | 37 +++++++++++++++++++++++++++++++++++++
+>  1 file changed, 37 insertions(+)
 >=20
-> diff --git a/config/Config-images.in b/config/Config-images.in
-> index 8548c7cd24..a618da1b6c 100644
-> --- a/config/Config-images.in
-> +++ b/config/Config-images.in
-> @@ -286,4 +286,10 @@ menu "Target Images"
->  		  it will be mounted by PARTUUID which makes the kernel find the
->  		  appropriate disk automatically.
+> diff --git a/scripts/feeds b/scripts/feeds
+> index 304ef6cbaf..6f8c7be31d 100755
+> --- a/scripts/feeds
+> +++ b/scripts/feeds
+> @@ -7,6 +7,7 @@ use metadata;
+>  use warnings;
+>  use strict;
+>  use Cwd 'abs_path';
+> +use File::Copy
+
+Missing semicolon.
+
 > =20
-> +	config TARGET_ROOTFS_INCLUDE_FOLDER
-> +		string "RootFS include folder"
-> +		default "files"
-> +		help
-> +		  Override the folder that is included into the RootFS by default.
+>  chdir "$FindBin::Bin/..";
+>  $ENV{TOPDIR} //=3D getcwd();
+> @@ -819,6 +820,37 @@ sub update {
+>  	return $failed;
+>  }
+> =20
+> +sub setup {
+> +	my %opts;
 > +
->  endmenu
-> diff --git a/package/Makefile b/package/Makefile
-> index abbf5f91f2..054e5b5820 100644
-> --- a/package/Makefile
-> +++ b/package/Makefile
-> @@ -76,7 +76,7 @@ $(curdir)/install: $(TMP_DIR)/.build $(curdir)/merge =
-$(if $(CONFIG_TARGET_PER_DE
+> +	getopts('bh', \%opts);
+> +
+> +	if ($opts{h}) {
+> +		usage();
+> +		return 0;
+> +	}
+> +
+> +	if ($opts{b}) {
+> +		copy("feeds.conf.default", "feeds.conf") or die "Copy failed: $!"
+> +	} else {
+> +		unlink "feeds.conf"
+> +	}
+> +
+> +	open(my $fd, ">>feeds.conf");
+> +	while (my $entry =3D shift @ARGV) {
+> +		my ($type, $name, $src) =3D split /,/, $entry;
+
+I think it would make sense to check $name and $src to not contain whites=
+pace here,
+for example like this:
+
+if ($name =3D~ /\s/ || $src =3D~ /\s/) {
+	warn "Feed names or sources may not contain whitespace characters in par=
+ameter $entry\n";
+	unlink "feeds.conf";
+	return 1;
+}
+
+> +
+> +		$update_method{$type} or do {
+> +			warn "Unknown type '$type' in parameter $entry\n";
+> +			unlink "feeds.conf";
+> +			return 1;
+> +		};
+> +		printf $fd "%s %s %s\n", $type, $name, $src;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  sub feed_config() {
+>  	foreach my $feed (@feeds) {
+>  		my $installed =3D (-f "feeds/$feed->[1].index");
+> @@ -870,6 +902,10 @@ Commands:
+>  	    -i :           Recreate the index only. No feed update from repos=
+itory is performed.
+>  	    -f :           Force updating feeds even if there are changed, un=
+committed files.
 > =20
->  	$(CP) $(TARGET_DIR) $(TARGET_DIR_ORIG)
+> +	setup [options] <type,name,link> <type,name,link> ...: generate feeds=
+=2Econf
+> +	Options:
+> +	    -b :           Use feeds.conf.default as base for new feeds.conf.=
+
+> +
+>  	clean:             Remove downloaded/generated files.
 > =20
-> -	$(call prepare_rootfs,$(TARGET_DIR),$(TOPDIR)/files)
-> +	$(call prepare_rootfs,$(TARGET_DIR),$(TOPDIR)/$(if ifeq "$(CONFIG_TAR=
-GET_ROOTFS_INCLUDE_FOLDER)" "",files,$(CONFIG_TARGET_ROOTFS_INCLUDE_FOLDE=
-R)))
-
-I don't think that $(if ifeq ...) is a valid Make construct, to me it loo=
-ks
-as if it'll simply always evaluate to $(CONFIG_TARGET_ROOTFS_INCLUDE_FOLD=
-ER).
-Also don't we need to filter this through the "qstrip" macro? The .config=
-
-symbol will contain leading and trailing quotes for string value options.=
-
-
-> =20
->  $(curdir)/index: FORCE
->  	@echo Generating package index...
+>  EOF
+> @@ -883,6 +919,7 @@ my %commands =3D (
+>  	'search' =3D> \&search,
+>  	'uninstall' =3D> \&uninstall,
+>  	'feed_config' =3D> \&feed_config,
+> +	'setup' =3D> \&setup,
+>  	'clean' =3D> sub {
+>  		system("rm -rf ./feeds ./package/feeds");
+>  	}
 >=20
 
 
---KU3R8Ng6nzv6Bc8u4ZirpM9FcjMRxqLoM--
+--JfoK8dSK9AsEi9qIzH8Mj4k6uwCSsZnu8--
 
---3BPrzumGhCxquU26TldXW6VvmjQnJb3jv
+--z5jsHwasc0RaJdw9DPPH4zkv2Dpv8TUjr
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAlz2F+0ACgkQQuLLvzou
-ZtNCMQ/+Ob/HGwSE3mnVpN7SKhQwzDGfeZ7HjC1WGxjpaDV8doasdnrYUfD10nGA
-BaCUp2gOwoSgxGMaSVEvNHTg30jgkU9R6ktabKzBnCFfOoWXpLZ4hL+ygqDseheJ
-WZEZb15Rs+GRDODhJDp7Qu8H9W/0gmrmPcGY73MpI6vjxStjCfZMBJH3JZ2nVt8D
-ICZCBMX4iFkPkv0txIePRHV1dQVyKPIJuoBomTW6FPSpWJL3wH9Wips2oCRURZet
-RFlTgf4A0TBaCYWgnT3msymM3KPaTAqRdhv0d13+r5yPUjanXODJzKyyrC41CNml
-kLhkKZaXmRLGf0AZPgCTMp/K4qksTK5NJo3WuE7VAZq1VB9Uf8nPkh4hHaD0xAHV
-NcyD69sofAE3A3FLzWviajt+IipnFklhNfkX5CLHvmXZvXiM4imTL3cYO3jdILBz
-PgVJL+01NUw3wYwl/tXPPq55UEatLqo+a/b3FTwByi87UQ1eIkmkIHIpPqypwjyk
-k6c5DBKfdwUlvqaqe+KrhhE9DTQS3l3vcocH7s9iwuusEu5DDDDOcJFVHQVKVwEs
-/L12iAl94zs46vbIwOw51F6kqEVnxSC8Mwhq5bYZjuk6TrSPNeubN6K4VLIBJYf+
-thVXQKukQ+AAQHJhI5WVMFSqY9JgNzV4RErkwN+lkeCRnFiTcpM=
-=l4s4
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAlz2HmUACgkQQuLLvzou
+ZtNb1hAAgvLFc5PoHOjQfSi5NzQNYb6KWnBMEEvFoqImgUFG1eYlP/snZzogHh4x
+r7p5eCjSxyyYkUrmDQfcDzEQOuSlGcISn2KjIQEwuKOitsXba6IVxePCb4nNx1df
+pb9Rt2QESWzndTTM2EhqaHPMmB5/p0u7Jlc4DaFcwByDBw9cph6E6OUGc/l9Vobe
+3zFzOYdPnFa8TCepjBCKfGFmo8C0vH9WoAmJzSISv+xQdodq6ptqAmq8GZyHlD5l
+3D5H3tHJQRmCvqoC6NsdhLZLv2x2r0K8xaIZBATfuE5KmFqrWzDk+ev+L5RCsiY3
+7wqoHwOm3WNxayQC2zT1bnz6+025wI3dcA5lXVth3USY8zq9Vw+ZC08homVbfI6x
+fEcZngHgkunpIAYb+Z6PIhvpg0QBY1MllZ/enloJLpDHSPvyIMopkrzhSSQZyDuH
+vOUl44p8GNYvTXcSvjniim3evlcySZddCqtANjxqmTEVpfKPlLXpOl+zRVqkj2xP
+FMGptLXqYwTM0oGCUSDLLdR1C3WZGWHm08I3+xZOw9+if1OmEyB+Teut1P1gmGXt
+V+dAWGlPDqAgzZSXqGm7e76Gt+0cgQc+cq3WE8mHwEksWldKw6rsgzFA2TNa6v6A
+6UypHCL0i1FdGqFDoGKKpecsCcQP/Lzl9Zq6MNaHH8cExwtIrs4=
+=aIv+
 -----END PGP SIGNATURE-----
 
---3BPrzumGhCxquU26TldXW6VvmjQnJb3jv--
+--z5jsHwasc0RaJdw9DPPH4zkv2Dpv8TUjr--
 
 
---===============8934827355780312686==
+--===============1958594810716202081==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -235,5 +280,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8934827355780312686==--
+--===============1958594810716202081==--
 

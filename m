@@ -2,61 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A14435C42
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 14:04:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A28135C6D
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 14:19:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
-	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tfeV46LWqMxv0KJ8lyvssS3u7TZ9MJn77N5oc1FSYPU=; b=dnUcQlw0NxFkxw3Ui8mRwTIYW
-	5G4v0SX8JSLSoh7smEYNyoWA1vfhOd7Rz98PSYlzpj5Y8MYQ3L5cb/t1HYWKZ1xHMbXmYlxfk1YRa
-	BRyrYWATORyne+Zr9Du0ZIZdGAsi7uwNJaW7eKp872IrKG7gPLCzyRg7P/2Z2dgyVannlqV8IqVu1
-	Ci+NqPIwgfT2xEIgNgaiMk9rYvFP9s/rV3qK/nTRha4RcxPOX9sS1eT6XlhLB1Uo9USRTryR4Mdbe
-	Xd6VshIwdfjuksd4guElRe6cnvEiF4RC5BWJvih3hsBKK1s4mbLLLAiEM+5rBW6JW/jc2ry5stvBp
-	RxVyRUw5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KmyxqXjgIL7wAxhJE8OoQufuz1tJTT464FWCjaLpRi8=; b=i5wbuHq3AunhUy
+	D4kHukgJ33CIWxrh+DiiBxubGSTcrqS7++pTlOj0fqkrX+2UzRR2vq94njN6zcD+hu0e3dEKTgVQ9
+	e3JdRX71A0ib/aP6XM8ilair64T1DBx4ffYbC8iOiYtmwGkCGZiYYGP1kWX105HEJFozsckLqy+P2
+	r22tOZFWwJv9MaqTUT8LNcL1e3pSvssjcfprKLSVuxzzNN/GK0ZgLdm7UWihK+sg3ffaXlDZU5V0D
+	ZHji+V4AAC1Q14pzDBxHocBc/TneZ/kdOabZzXl+4Sud3Wy7qhTRV/c+2XDFoIG8g4pd4NPTl9fCz
+	nXnPrJ8QyIFioGFOxNjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYUec-0000Ys-4j; Wed, 05 Jun 2019 12:04:30 +0000
+	id 1hYUt6-0006Cy-Fo; Wed, 05 Jun 2019 12:19:28 +0000
 Received: from canardo.mork.no ([2001:4641::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYUeU-0000Xg-4I
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 12:04:24 +0000
-Received: from miraculix.mork.no ([IPv6:2a02:2121:309:b35d:f0c1:6ff:fe1f:cac9])
- (authenticated bits=0)
- by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id x55C4Fbu016184
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Wed, 5 Jun 2019 14:04:16 +0200
+ id 1hYUsy-00069i-Cu
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 12:19:22 +0000
+Received: from canardo.mork.no (ip6-localhost [IPv6:0:0:0:0:0:0:0:1])
+ by canardo.mork.no (8.15.2/8.15.2) with ESMTPS id x55CJG3W003402
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 5 Jun 2019 14:19:16 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
- t=1559736256; bh=fdBuau/gx2Aidv9HrdfzMo5mMFSH3+DU5k2tvdCe/kA=;
- h=From:To:Cc:Subject:References:Date:Message-ID:From;
- b=EzF2e8yFVXt10IHfgwU7WuZ0rMMSCqklwGr9LxJzcdlDp7ccw00B0x4r1+eOAgE4O
- /WZ1a1V1TNbE2oMCB2DCEI4fAVcFBtnP9qUy9100MAI9ocMDVXQDV6nhUPrVLQejGL
- eFSxf7ADuOC/FPBXlVwZ03592WXWHHbLjfVDOAc0=
-Received: from bjorn by miraculix.mork.no with local (Exim 4.89)
- (envelope-from <bjorn@mork.no>)
- id 1hYUeN-0007Fk-0C; Wed, 05 Jun 2019 14:04:15 +0200
-From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Organization: m
-References: <20190605063409.27769-1-john@phrozen.org>
- <hynK3tKHMk6tAKPpYkaNRSzi2nMrDdpKviIa49aQ2342@mailpile>
- <23ef4eed-1984-9189-65e8-dd6dba5c3aaa@phrozen.org>
- <20190605104549.GN13432@meh.true.cz>
-Date: Wed, 05 Jun 2019 14:04:14 +0200
-In-Reply-To: <20190605104549.GN13432@meh.true.cz> ("Petr =?utf-8?Q?=C5=A0t?=
- =?utf-8?Q?etiar=22's?= message of
- "Wed, 5 Jun 2019 12:45:49 +0200")
-Message-ID: <87pnnskzlt.fsf@miraculix.mork.no>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ t=1559737156; bh=aUxrVsE926qkQWtD1NnG4l8E5xpRAzGQJ5IR1KNU10U=;
+ h=From:To:Cc:Subject:Date:Message-Id:References:From;
+ b=YkzE2Q/8BrkbdKioWqvvUv+PXd34epdbwKViNbSnjuKiNZL5fotByIA62TOADnip0
+ VuXQPg6kbGFBBYbf6Wx1jP81Abqskb0gU3VtkrHnDZiwJGou0jKVKFXh45vS1AFjJk
+ mT3pcWu4j8nQZJr5gq6Wt0PR8GY4OUlzmD2cp9Hc=
+Received: (from bjorn@localhost)
+ by canardo.mork.no (8.15.2/8.15.2/Submit) id x55CJGVf003401;
+ Wed, 5 Jun 2019 14:19:16 +0200
+From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed,  5 Jun 2019 14:19:11 +0200
+Message-Id: <20190605121911.3324-1-bjorn@mork.no>
+X-Mailer: git-send-email 2.11.0
+In-Reply-To: <87pnnskzlt.fsf@miraculix.mork.no>
+References: <87pnnskzlt.fsf@miraculix.mork.no>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="=-=-="
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
+ shortcircuit=ham autolearn=disabled version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on canardo.mork.no
 X-Virus-Scanned: clamav-milter 0.100.3 at canardo
 X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_050422_985398_8470F288 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20190605_051920_787736_9D9F62C9 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -73,8 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH V3 2/2] script/feeds: add a new command
- that allows generating a new feeds.conf
+Subject: [OpenWrt-Devel] [PATCH v2] scripts/feeds: add src-include method
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,135 +80,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, John Crispin <john@phrozen.org>
+Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>, John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---=-=-=
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-
-A little late into this discussion, but something like the attached
-patch would suite my personal usage patterns much better.  I don't
-really need to update or change my local additions to feeds.conf at all.
-I just want to add them to the defaults for whatever version I am
-currently building.
-
-Another alternative would be to make scripts/feeds look for an optional
-feeds.conf.local when falling back to feeds.conf.default.  That would
-also work for me.
-
-But this might be on my wishlist only...
-
-
-Bj=C3=B8rn
-
-
---=-=-=
-Content-Type: text/x-diff; charset=utf-8
-Content-Disposition: inline;
- filename=0001-scripts-feeds-add-src-include-method.patch
-Content-Transfer-Encoding: quoted-printable
-
-From b43bdbbcc71ad881ac753b342f2ae400410e9257 Mon Sep 17 00:00:00 2001
-From: =3D?UTF-8?q?Bj=3DC3=3DB8rn=3D20Mork?=3D <bjorn@mork.no>
-Date: Wed, 5 Jun 2019 13:51:24 +0200
-Subject: [PATCH] scripts/feeds: add src-include method
-MIME-Version: 1.0
-Content-Type: text/plain; charset=3DUTF-8
-Content-Transfer-Encoding: 8bit
-
-The src-include method allows recursive inclusion of feeds.conf snippets.
-
-This can for example be used for adding static local feeds to
-feeds.conf.default without ever having to update the local feeds.conf:
-
- src-include defaults feeds.conf.default
- src-link custom /usr/local/src/lede/custom
-
-Signed-off-by: Bj=C3=B8rn Mork <bjorn@mork.no>
----
- scripts/feeds | 34 ++++++++++++++++++++++++----------
- 1 file changed, 24 insertions(+), 10 deletions(-)
-
-diff --git a/scripts/feeds b/scripts/feeds
-index 304ef6cbafd1..65072d673433 100755
---- a/scripts/feeds
-+++ b/scripts/feeds
-@@ -41,34 +41,48 @@ my $feed_src =3D {};
- my $feed_target =3D {};
- my $feed_vpackage =3D {};
-=20
--sub parse_config() {
--	my $line =3D 0;
--	my %name;
-+sub parse_file($$);
-+
-+sub parse_file($$) {
-+	my ($fname, $name) =3D @_;
-=20
--	open FEEDS, "feeds.conf" or
--		open FEEDS, "feeds.conf.default" or
--		die "Unable to open feeds configuration";
-+	my $line =3D 0;
-+	open FEEDS, $fname or return undef;
- 	while (<FEEDS>) {
- 		chomp;
- 		s/#.+$//;
-+		$line++;
- 		next unless /\S/;
- 		my @line =3D split /\s+/, $_, 3;
- 		my @src;
--		$line++;
-=20
- 		my $valid =3D 1;
- 		$line[0] =3D~ /^src-[\w-]+$/ or $valid =3D 0;
- 		$line[1] =3D~ /^\w+$/ or $valid =3D 0;
- 		@src =3D split /\s+/, ($line[2] or '');
- 		@src =3D ('') if @src =3D=3D 0;
--		$valid or die "Syntax error in feeds.conf, line: $line\n";
-+		$valid or die "Syntax error in $fname, line: $line\n";
-=20
--		$name{$line[1]} and die "Duplicate feed name '$line[1]', line: $line\n";
--		$name{$line[1]} =3D 1;
-+		$name->{$line[1]} and die "Duplicate feed name '$line[1]', line: $line\n=
-";
-+		$name->{$line[1]} =3D 1;
-+
-+		if ($line[0] eq "include") {
-+			parse_file($line[2], $name) or
-+			    die "Unable to open included file '$line[2]'";
-+			next;
-+		}
-=20
- 		push @feeds, [$line[0], $line[1], \@src];
- 	}
- 	close FEEDS;
-+	return 1;
-+}
-+
-+sub parse_config() {
-+	my %name;
-+	parse_file("feeds.conf", \%name) or
-+	    parse_file("feeds.conf.default", \%name)  or
-+	    die "Unable to open feeds configuration";
- }
-=20
- sub update_location($$)
---=20
-2.11.0
-
-
---=-=-=
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=-=--
-
+VGhlIHNyYy1pbmNsdWRlIG1ldGhvZCBhbGxvd3MgcmVjdXJzaXZlIGluY2x1c2lvbiBvZiBmZWVk
+cy5jb25mIHNuaXBwZXRzLgoKVGhpcyBjYW4gZm9yIGV4YW1wbGUgYmUgdXNlZCBmb3IgYWRkaW5n
+IHN0YXRpYyBsb2NhbCBmZWVkcyB0bwpmZWVkcy5jb25mLmRlZmF1bHQgd2l0aG91dCBldmVyIGhh
+dmluZyB0byB1cGRhdGUgdGhlIGxvY2FsIGZlZWRzLmNvbmY6Cgogc3JjLWluY2x1ZGUgZGVmYXVs
+dHMgZmVlZHMuY29uZi5kZWZhdWx0CiBzcmMtbGluayBjdXN0b20gL3Vzci9sb2NhbC9zcmMvbGVk
+ZS9jdXN0b20KClNpZ25lZC1vZmYtYnk6IEJqw7hybiBNb3JrIDxiam9ybkBtb3JrLm5vPgotLS0K
+Ckl0IHdvdWxkIG9mIGNvdXJzZSBiZSBuaWNlIG9mIG1lIGlmIEkgaGFkIHRlc3RlZCBteSBwYXRj
+aGVzLCBldmVuCmlmIHRoZXkgYXJlIG9ubHkgbWVhbnQgZm9yIGRpc2N1c3Npb24uCgpUaGlzIHZl
+cnNpb24gYWN0dWFsbHkgd29ya3MuICBDaGFuZ2VzIGluIHYyOgogLSB1c2UgYSB2YXJpYWJsZSBm
+b3IgdGhlIGZpbGUgaGFuZGxlIHNvIHdlIGNhbiBvcGVuIGZpbGVzIHJlY3Vyc2l2ZWx5CiAtIG1h
+dGNoIG9uIHRoZSByZWFsICdzcmMtaW5jbHVkZScga2V5d29yZAoKCkJqw7hybgoKIHNjcmlwdHMv
+ZmVlZHMgfCAzNyArKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tLS0tLS0tCiAxIGZpbGUg
+Y2hhbmdlZCwgMjYgaW5zZXJ0aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEv
+c2NyaXB0cy9mZWVkcyBiL3NjcmlwdHMvZmVlZHMKaW5kZXggMzA0ZWY2Y2JhZmQxLi5hNGRmZDll
+MjYwYTggMTAwNzU1Ci0tLSBhL3NjcmlwdHMvZmVlZHMKKysrIGIvc2NyaXB0cy9mZWVkcwpAQCAt
+NDEsMzQgKzQxLDQ5IEBAIG15ICRmZWVkX3NyYyA9IHt9OwogbXkgJGZlZWRfdGFyZ2V0ID0ge307
+CiBteSAkZmVlZF92cGFja2FnZSA9IHt9OwogCi1zdWIgcGFyc2VfY29uZmlnKCkgeworc3ViIHBh
+cnNlX2ZpbGUoJCQpOworCitzdWIgcGFyc2VfZmlsZSgkJCkgeworCW15ICgkZm5hbWUsICRuYW1l
+KSA9IEBfOwogCW15ICRsaW5lID0gMDsKLQlteSAlbmFtZTsKKwlteSAkZmg7CiAKLQlvcGVuIEZF
+RURTLCAiZmVlZHMuY29uZiIgb3IKLQkJb3BlbiBGRUVEUywgImZlZWRzLmNvbmYuZGVmYXVsdCIg
+b3IKLQkJZGllICJVbmFibGUgdG8gb3BlbiBmZWVkcyBjb25maWd1cmF0aW9uIjsKLQl3aGlsZSAo
+PEZFRURTPikgeworCW9wZW4gJGZoLCAkZm5hbWUgb3IgcmV0dXJuIHVuZGVmOworCXdoaWxlICg8
+JGZoPikgewogCQljaG9tcDsKIAkJcy8jLiskLy87CisJCSRsaW5lKys7CiAJCW5leHQgdW5sZXNz
+IC9cUy87CiAJCW15IEBsaW5lID0gc3BsaXQgL1xzKy8sICRfLCAzOwogCQlteSBAc3JjOwotCQkk
+bGluZSsrOwogCiAJCW15ICR2YWxpZCA9IDE7CiAJCSRsaW5lWzBdID1+IC9ec3JjLVtcdy1dKyQv
+IG9yICR2YWxpZCA9IDA7CiAJCSRsaW5lWzFdID1+IC9eXHcrJC8gb3IgJHZhbGlkID0gMDsKIAkJ
+QHNyYyA9IHNwbGl0IC9ccysvLCAoJGxpbmVbMl0gb3IgJycpOwogCQlAc3JjID0gKCcnKSBpZiBA
+c3JjID09IDA7Ci0JCSR2YWxpZCBvciBkaWUgIlN5bnRheCBlcnJvciBpbiBmZWVkcy5jb25mLCBs
+aW5lOiAkbGluZVxuIjsKKwkJJHZhbGlkIG9yIGRpZSAiU3ludGF4IGVycm9yIGluICRmbmFtZSwg
+bGluZTogJGxpbmVcbiI7CiAKLQkJJG5hbWV7JGxpbmVbMV19IGFuZCBkaWUgIkR1cGxpY2F0ZSBm
+ZWVkIG5hbWUgJyRsaW5lWzFdJywgbGluZTogJGxpbmVcbiI7Ci0JCSRuYW1leyRsaW5lWzFdfSA9
+IDE7CisJCSRuYW1lLT57JGxpbmVbMV19IGFuZCBkaWUgIkR1cGxpY2F0ZSBmZWVkIG5hbWUgJyRs
+aW5lWzFdJyBpbiAnJGZuYW1lJyBsaW5lOiAkbGluZVxuIjsKKwkJJG5hbWUtPnskbGluZVsxXX0g
+PSAxOworCisJCWlmICgkbGluZVswXSBlcSAic3JjLWluY2x1ZGUiKSB7CisJCQlwYXJzZV9maWxl
+KCRsaW5lWzJdLCAkbmFtZSkgb3IKKwkJCSAgICBkaWUgIlVuYWJsZSB0byBvcGVuIGluY2x1ZGVk
+IGZpbGUgJyRsaW5lWzJdJyI7CisJCQluZXh0OworCQl9CiAKIAkJcHVzaCBAZmVlZHMsIFskbGlu
+ZVswXSwgJGxpbmVbMV0sIFxAc3JjXTsKIAl9Ci0JY2xvc2UgRkVFRFM7CisJY2xvc2UgJGZoOwor
+CXJldHVybiAxOworfQorCitzdWIgcGFyc2VfY29uZmlnKCkgeworCW15ICVuYW1lOworCXBhcnNl
+X2ZpbGUoImZlZWRzLmNvbmYiLCBcJW5hbWUpIG9yCisJICAgIHBhcnNlX2ZpbGUoImZlZWRzLmNv
+bmYuZGVmYXVsdCIsIFwlbmFtZSkgIG9yCisJICAgIGRpZSAiVW5hYmxlIHRvIG9wZW4gZmVlZHMg
+Y29uZmlndXJhdGlvbiI7CiB9CiAKIHN1YiB1cGRhdGVfbG9jYXRpb24oJCQpCi0tIAoyLjExLjAK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0
+LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBz
+Oi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

@@ -2,61 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3E5136621
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 22:58:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55B0D36822
+	for <lists+openwrt-devel@lfdr.de>; Thu,  6 Jun 2019 01:35:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CvRCI0CeCziNoM7zFJyMv/XfF2CHvvbPP9dNa0E8QPY=; b=lI8h0kPRsxcjkxntucEWxTVMLv
-	h9L10eVWzr4aLgkjXQ54vValUXxkTLYvIB2tJ1ySHT/MKpan7QdFcEwr/9aUyOaoscXeSFpv9EKX5
-	JZf0mwRjTVydYQzuYNRAoSv4AWScKWY+fSlGkxzH8EZQOTFs19xBLJzUc13eeUiDM6+4bdo4lkRoT
-	N5NeX9ceOp30tK2bRnh/qY0Tv8bsYlzL/POXdykULWvkjF9ufJo/j1JXBhYXGu8GD0Do6MQ38n7PF
-	ZPUQe2CgYkyQEu7dn3WBSH6fNhQKN6ZWXwoq90yIQdBzw2gFWjFmixv3yBEawe36CF3Cwcjvd+4dx
-	fKRWxpuA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FaFWtiJ9JBn9uGckT3uRFBI0qBbTcZUBPYlGk34wYW8=; b=szW9dPs/YikcRI92FlHi1kurk
+	iW/jQaAl5DMd1uBrCf07zh1T2ZBwU9alkl3earT/qh4apd8+Zrk/92VfbG9eWDsUn1QvC9IJD4MU/
+	tgsR5K/aHyDCh62RBJD/IW86NcjzEz1PmjqpJbJwbVqQpDqox9cz7YLbpkiGfeVB10JOyWFWRTeNy
+	RTHhmtpphw6/SSfVwsXo/AlcEKE3QvJ5XsPIb1gHGsHWo+SigSwP6CvEg37gRVl+ZCFBqnarOFmj3
+	VrN48Qf/Ef+7uN7VnRPdCT3Yw2j1y54TVW8om7rjpYS5ksbfnI+TR51fGCHZCfw3S5Q9LDN5Y5e7W
+	2lbtGEMpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYcz3-0006xQ-Cz; Wed, 05 Jun 2019 20:58:09 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hYfQm-0000wv-Fi; Wed, 05 Jun 2019 23:34:56 +0000
+Received: from mx.allycomm.com ([138.68.30.55])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYcyv-0006x4-Ky
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 20:58:02 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 2D5AD4EF3;
- Wed,  5 Jun 2019 22:58:00 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id f77950f3;
- Wed, 5 Jun 2019 22:57:58 +0200 (CEST)
-Date: Wed, 5 Jun 2019 22:57:58 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Jeff Kletsky <lede@allycomm.com>
-Message-ID: <20190605205758.GP13432@meh.true.cz>
+ id 1hYfQf-0000wV-MS
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 23:34:51 +0000
+Received: from jkletsky-mbp15.guidewire.com (inet.guidewire.com [199.91.42.30])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.allycomm.com (Postfix) with ESMTPSA id 217FA22283;
+ Wed,  5 Jun 2019 16:34:48 -0700 (PDT)
+To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
 References: <20190605201706.27462-1-lede@allycomm.com>
- <20190605201706.27462-3-lede@allycomm.com>
+ <20190605201706.27462-2-lede@allycomm.com>
+ <20190605205449.GO13432@meh.true.cz>
+From: Jeff Kletsky <lede@allycomm.com>
+Message-ID: <0c85166b-9edf-8d80-468c-1ee5ea026a59@allycomm.com>
+Date: Wed, 5 Jun 2019 16:34:48 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190605201706.27462-3-lede@allycomm.com>
+In-Reply-To: <20190605205449.GO13432@meh.true.cz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_135801_831961_EA5FAF06 
-X-CRM114-Status: UNSURE (   5.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190605_163449_734031_46F8C6EE 
+X-CRM114-Status: GOOD (  26.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ no trust [138.68.30.55 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] kernel: mtd: spinand: Backport
- GigaDevice "F" from linux/next
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] kernel: mtd: spinand:
+ backport-4.19: Chip support through 5.1
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,28 +65,107 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org, Jeff Kletsky <git-commits@allycomm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org,
+ "Marty E. Plummer" <hanetzer@startmail.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Jeff Kletsky <lede@allycomm.com> [2019-06-05 13:17:06]:
-
-> Backport upstream support for GigaDevice GD5F1GQ4UFxxG SPI NAND
-> 
->  * Add support for GigaDevice GD5F1GQ4UFxxG
->  * Add support for two-byte device IDs
->  * Define macros for page-read ops with three-byte addresses
-
-What devices currently in the tree need (or want) this? I mean, the more
-patches, the more work during kernel bumps, so we should avoid it if the
-patches are not necessary.
-
--- ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gNi81LzE5IDE6NTQgUE0sIFBldHIgxaB0ZXRpYXIgd3JvdGU6Cgo+IEplZmYgS2xldHNreSA8
+bGVkZUBhbGx5Y29tbS5jb20+IFsyMDE5LTA2LTA1IDEzOjE3OjA1XToKPgo+IEhpLAo+Cj4gSSds
+bCBwdXQgYXNpZGUsIHRoYXQgaXQncyA0LjE5ICh3ZSBzaG91bGQgc3RpbGwgZm9jdXMgb24gNC4x
+NCksIGNhbiB5b3UgcGxlYXNlCj4gZXhwbGFpbiBpbiBtb3JlIGRldGFpbCwgd2h5IHdlIHdvdWxk
+IG5lZWQgYWxsIHRoaXMgYmFjcG9ydGVkIHBhdGNoZXM/Cj4KPj4gICAqIG1hY3Jvbml4OiBGaXgg
+RUNDIFN0YXR1cyBSZWFkCj4gSSBjYW4gdW5kZXJzdGFuZCB0aGlzIG9uZS4KPgo+PiAgICogd2lu
+Ym9uZDogQWRkIHN1cHBvcnQgZm9yIFcyNU4wMUdWCj4gVGhpcyBvbmUgYXMgd2VsbCwgYnV0IHRo
+ZW4geW91IG5lZWQgdG8gcmVtb3ZlIGV4aXN0aW5nIG9uZSBpbiB0aGUgaXBxNDB4eAo+IHBhdGNo
+ZXMgb3IgeW91J3JlIGdvaW5nIHRvIGludHJvZHVjZSBidWlsZCBmYWlsdXJlLgo+Cj4+ICAgKiBB
+ZGQgc3VwcG9ydCBmb3IgR2lnYURldmljZSBHRDVGMUdRNFVFeHhHCj4+ICAgKiBBZGQgc3VwcG9y
+dCBmb3IgYWxsIFRvc2hpYmEgTWVtb3J5IHByb2R1Y3RzCj4+ICAgKiBhZGQgc3VwcG9ydCBmb3Ig
+R2lnYURldmljZSBHRDVGeEdRNHhBCj4+ICAgKiBBZGQgaW5pdGlhbCBzdXBwb3J0IGZvciBUb3No
+aWJhIFRDNThDVkcyUzBICj4gV2hhdCBkZXZpY2VzIGN1cnJlbnRseSBpbiB0aGUgdHJlZSBuZWVk
+IChvciB3YW50KSB0aGlzPyBJIG1lYW4sIHRoZSBtb3JlCj4gcGF0Y2hlcywgdGhlIG1vcmUgd29y
+ayBkdXJpbmcga2VybmVsIGJ1bXBzLCBzbyB3ZSBzaG91bGQgYXZvaWQgaXQgaWYgdGhlCj4gcGF0
+Y2hlcyBhcmUgbm90IG5lY2Vzc2FyeS4KPgo+IC0tIHluZXp6CgpUaGFua3MgZm9yIHlvdXIgdGlt
+ZSBpbiByZXZpZXcsIGluc2lnaHQsIGFuZCBjb21tZW50cy4KClRoZSAiZm9jdXMiIG9uIDQuMTkg
+aXMgZm9yIHRoZSBhdGg3OSB0YXJnZXQgdG8gYmUgYWJsZSB0byB1c2UgU1BJIE5BTkQKd2l0aCB0
+aGUgdXBzdHJlYW0gc3VwcG9ydCB0aGF0IGJlY2FtZSBhdmFpbGFibGUgdG8gT3BlbldydCB3aXRo
+IDQuMTkKClRoaXMgd2lsbCBhbHNvIGhlbHAgT0VNL09ETXMgd2hvIGhhdmUgYm90aCBiZWVuIHRv
+bGQgdG8gbW92ZSBvZmYKdGhlIGFyNzF4eCBwbGF0Zm9ybSwgeWV0IGFyZSBzdHltaWVkIGJ5IHRo
+ZSBsYWNrIG9mICJPcGVuV3J0LWFwcHJvdmVkIgpTUEkgTkFORCBzdXBwb3J0LgoKQXMgb25lIGV4
+YW1wbGU6Cmh0dHBzOi8vZ2l0aHViLmNvbS9vcGVud3J0L29wZW53cnQvcHVsbC8xNDI4I2lzc3Vl
+Y29tbWVudC00NDE1OTQ0MDEKCiAgICAgbWtyZXNpbiBjb21tZW50ZWQgb24gTm92IDI2LCAyMDE4
+CgogICAgIEJ1dCBbU1BJLU5BTkQgc3VwcG9ydF0gcmVxdWlyZXMgNC4xOSB0byBub3QgaGF2ZSB0
+byBiYWNrcG9ydAogICAgIHByZXR0eSBtdWNoIHRoZSB3aG9sZSBNVEQgYW5kIFNQSSBzdWJzeXN0
+ZW1zCgogICAgIFBsZWFzZSByZS1zcGluIHRoZSBwYXRjaCBhcyBzb29uIGFzIHdlIGhhdmUga2Vy
+bmVsIDQuMTkgc3VwcG9ydC4KICAgICBUaGUgYXBwcm9hY2ggd2FzIGFscmVhZHkgTkFLJ2VkIHVw
+c3RyZWFtIGFuZCBJIGRvbid0IHNlZSBtdWNoIGdhaW4KICAgICBpbiBhZGRpbmcgdGhlIGhhY2sg
+aWYgdGhlIG5leHQgbWFqb3Iga2VybmVsIGluIE9wZW5XcnQKICAgICB3aWxsIHByb3ZpZGUgYSBz
+dWl0YWJsZSBzb2x1dGlvbi4KClRoYXQgZGlyZWN0aW9uIGlzIGVtYm9kaWVkIGluIGNvbXBsZXRl
+IGFuZCB0ZXN0ZWQgbG9jYWwgd29yaywKZWFzaWx5IGV4dGVuc2libGUgdG8gb3RoZXIgYm9hcmRz
+LCBvbmNlIGFjY2VwdGVkIGJ5IE9wZW5XUlQuCkhvd2V2ZXIsIGl0IHJlcXVpcmVzIHN1cHBvcnQg
+b2YgdGhlIGNoaXBzIGVtcGxveWVkIGluIHRoZSBib2FyZHMuCgoKVGhlIEdMLmlOZXQgR0wtQVIz
+MDBNIGFuZCBHTC1BUjc1MFMgdW5pdHMgaGF2ZSBiZWVuIHNoaXBwZWQgd2l0aDoKCiAgIFBhcmFn
+b24gICAgUE4yNkcwMUF4eHh4eAogICBHaWdhRGV2aWNlIEdENUYxR1E0VUV4eHgKICAgR2lnYURl
+dmljZSBHRDVGMUdRNFVGeHh4CgpCb3RoIG9mIHRoZXNlIHVuaXRzIGhhdmUgbm93IGJlZW4gc3Vj
+Y2Vzc2Z1bGx5IHBvcnRlZCB0byBPcGVuV3J0IHdpdGgKZnVsbCBOQU5EIHN1cHBvcnQgb24gdGhl
+IGF0aDc5L25hbmQgdGFyZ2V0ICg0LjE5KSwgaW5jbHVkaW5nIHN5c3VwZ3JhZGUKYW5kLCBvbiB0
+aGUgQVIzMDBNLCBkdWFsLWZpcm13YXJlIGJvb3Qgd2l0aCBhdXRvbWF0ZWQgZmFsbC1iYWNrLgoo
+VGhlIEdMLUFSNzUwUyBVLUJvb3Qgb25seSBsb2FkcyB0aGUga2VybmVsIE5PUiBhdCB0aGlzIHRp
+bWUuKQoKVGhlIEdpZ2FEZXZpY2UgIkYiIGNoaXBzIGFyZSBiZWluZyB1c2VkIGluIGN1cnJlbnRs
+eSBhdmFpbGFibGUgdW5pdHMuCkkgdW5kZXJzdGFuZCB0aGF0IE1hcnR5IChjYy1lZCksIHdobyBo
+YXMgd29ya2VkIG9uIHRoZSBBUjMwME0gYXMgd2VsbCwKaGFzIGEgUGFyYWdvbi1iYXNlZCBkZXZp
+Y2UsIHNvIHRoZXNlIGNoaXBzIGV4aXN0ICJpbiB0aGUgd2lsZCIgYXMgd2VsbC4KICAKVGhlc2Ug
+d2lkZWx5IGF2YWlsYWJsZSB1bml0cyBhbHNvIGFkZHJlc3MgdGhlIHNpbWlsYXIgcXVlc3Rpb24g
+YWJvdXRbMV0KW09wZW5XcnQtRGV2ZWwsMi8yXSBrZXJuZWw6IG10ZDogc3BpbmFuZDogQmFja3Bv
+cnQgR2lnYURldmljZSAiRiIgZnJvbSBsaW51eC9uZXh0CgpUaGUgUGFyYWdvbiBkcml2ZXIgaXMg
+Y29tcGxldGUsIHRlc3RlZCwgYW5kIGxpdGVyYWxseSBqdXN0IHN1Ym1pdHRlZAp0byBMaW51eCBN
+VEQgZm9yIHJldmlld1syXS4KCkFzIHRoaXMgZHJpdmVyIGhhcyBub3QgeWV0IHVuZGVyZ29uZSB1
+cHN0cmVhbSByZXZpZXcgYW5kIHRoYXQgdGhlcmUgYXJlClBhcmFnb24tYmFzZWQgdW5pdHMgdGhh
+dCB3b3VsZCBvdGhlcndpc2Ugbm90IGJvb3QsIEkgYW0gaG9sZGluZyB0aGUKcGF0Y2ggc2VyaWVz
+IGZvciB0aGVzZSB1bml0cyB1bnRpbCB0aGUgUGFyYWdvbiBkcml2ZXIgaXMgImNsZWFyZWQiIHVw
+c3RyZWFtLgoKCgpUaGUgbWFpbiByZWFzb24gZm9yIGluY2x1ZGluZyB0aGUgVG9zaGliYSBkZXZp
+Y2VzIGlzIHRvICpzaW1wbGlmeSogYnVtcHMuClRoZXkgYWxsICJpbnRlcm1pbmdsZSIgaW4gc3Bp
+bmFuZC5oIGFuZCBjb3JlLmMuIEVzdGFibGlzaGluZyBhIGxpc3QgY29uc2lzdGVudAp3aXRoIHVw
+c3RyZWFtIExpbnV4IG1lYW5zIHRoYXQgYW55IHBvdGVudGlhbCBwYXRjaGVzIHNob3VsZCBhcHBs
+eSBzbW9vdGhseS4KQnkgImZpbGxpbmcgb3V0IiB0aGUgc3VwcG9ydGVkIGRldmljZXMsIHRoZSB1
+cHN0cmVhbSBwYXRjaGVzIGluIHRoaXMgcGF0Y2ggc2V0CmFwcGx5IHdpdGhvdXQgc2lnbmlmaWNh
+bnQgY2hhbmdlcy4KCiAgIGdpdCBsb2cgLS1wcmV0dHk9JyVoICVzJ3N0YWJsZS9saW51eC01LjEu
+eSBedjQuMTkuNzQgLS0gXAogICAgIGRyaXZlcnMvbXRkL25hbmQvc3BpLyBpbmNsdWRlL2xpbnV4
+L210ZC9zcGluYW5kLmgKCmluZGljYXRlcyB0aGF0IHRoZXJlIGFyZSBubyBmdXJ0aGVyIHBhdGNo
+ZXMgdGhhdCBpbXBhY3QgdGhlc2UgZmlsZXMgcHJpb3IgdG8gNS4yCk9mIHRoYXQgbGlzdCwgYXMg
+Y2FsbGVkIG91dCBpbiB0aGUgY292ZXIgdG8gdGhpcyBzZXJpZXMgYW5kIHRoZSByZWxhdGVkIGNv
+bW1pdCwKdHdvIGhhdmUgYWxyZWFkeSBiZWVuIGJhY2twb3J0ZWQgdG8gNC4xOS43NC4KCkFsc28s
+IGFzIHRoZXNlIHBhdGNoZXMgcmVmbGVjdCB0aGUgc3RhdGUgb2YgdXBzdHJlYW0gTGludXgsIHRo
+ZXkgd291bGQgYmUgcmVtb3ZlZAppbiB0aGVpciBlbnRpcmVseSB3aGVuIHRoZSBuZXh0IExUUyBr
+ZXJuZWwgaXMgYXZhaWxhYmxlLCBzb21ldGltZSBhZnRlciA1LjIuCgpUaGVzZSBkcml2ZXJzIGFy
+ZSBvbmx5IGNvbXBpbGVkIHdoZW4gQ09ORklHX01URF9TUElfTkFORD15IGlzIHNldCBieSB0aGUg
+dGFyZ2V0LgoKVGhlc2UgdGFyZ2V0cyBhcmUgb25seSBwaXN0YWNoaW8gYW5kIGlwcTQwMTksIHdp
+dGggYXRoNzkvbmFuZCAobm90IC9nZW5lcmljKSBXSVAuCgpBcyBhIHJlc3VsdCwgdGhleSBkbyBu
+b3QgaW1wYWN0ICJ0aW55IiBib2FyZHMsIG9yIHRoZSBvZnRlbiAidmFsdWUtZm9jdXNlZCIKYW5k
+IGxvdy1yZXNvdXJjZSBhcjcxeHgsIGF0aDc5L2dlbmVyaWMsIGFuZCByYW1pcHMgYm9hcmRzLgoK
+QSBxdWljayBjaGVjayBvZiByZW1vdmluZyBzdXBwb3J0IG9mIHRoZSBUb3NoaWJhIFNQSSBOQU5E
+IGZyb20gYSBsb2NhbCBidWlsZCBoZXJlCnNob3dzIGEgY2hhbmdlIGluIGtlcm5lbCBzaXplIGlu
+IHRoZSBpbWFnZSBvZiBvbmx5IDM2NiBieXRlcy4gVGhpcyBpcyBjb25zaXN0ZW50CndpdGggdGhl
+IGNoYW5nZXMgYmVpbmcgYSBzZXQgb2Ygc3RydWN0cyBkZWZpbmluZyB0aGUgZGV2aWNlLCBhbmQg
+dHdvLCBicmllZiBiaXRzCm9mIGNvZGUsIG9uZSBmb3IgZGVjb2RpbmcgdGhlIHJldHVybiBzdGF0
+dXMgb2YgRUNDLCB0aGUgb3RoZXIgdG8gY2hlY2sgdGhlIE1JRC9ESUQuCgpUaGUgcnVuLXRpbWUg
+aW1wYWN0IGlzIGVmZmVjdGl2ZWx5IHplcm87IGlmIHRoZSBNSUQgZG9lc24ndCBtYXRjaCwgdGhl
+IHMvciByZXR1cm5zLgpJdCBpcyBvbmx5IGludm9rZWQgb25seSBkdXJpbmcgZHJpdmVyLWF0dGFj
+aG1lbnQgcHJvYmVzLCBub3QgZHVyaW5nICJydW4gdGltZSIuCgoKClRoYW5rIHlvdSBmb3IgcG9p
+bnRpbmcgb3V0CnBhdGNoZXMtNC4xOS8wODItdjQuMjAtbXRkLXNwaW5hbmQtd2luYm9uZC1BZGQt
+c3VwcG9ydC1mb3ItVzI1TjAxR1YucGF0Y2gKCkl0IGFwcGVhcnMgdG8gYmUgdGhlIHNhbWUgcGF0
+Y2ggYXMgcHJlc2VudCBhcyBwYXJ0IG9mIHRoaXMgY29tbWl0LgoKSSBkaWQgbm90IGZpbmQgIndp
+bmJvbmQiIGVsc2V3aGVyZSB1bmRlciB0YXJnZXQvbGludXggaW4gdGhlIGNvbnRleHQgb2YgU1BJ
+IE5BTkQuCgpJZiBkZWVtZWQgYXBwcm9wcmlhdGUsIHRoYXQgcGF0Y2ggY291bGQgYmUgcmVtb3Zl
+ZCBmcm9tIHRoZSBpcHE0MHggdGFyZ2V0CmFuZCB0aGUgImdlbmVyaWMiIG9uZSBiZSB1c2VkLCBt
+aW5pbWl6aW5nIHRoZSBudW1iZXIgb2YgcGF0Y2hlcyBtYW5hZ2VkIGJ5IE9wZW5XcnQuCgoKCkpl
+ZmYKCgoKWzFdIFtPcGVuV3J0LURldmVsLDIvMl0ga2VybmVsOiBtdGQ6IHNwaW5hbmQ6IEJhY2tw
+b3J0IEdpZ2FEZXZpY2UgIkYiIGZyb20gbGludXgvbmV4dAogICAgIGh0dHBzOi8vcGF0Y2h3b3Jr
+Lm96bGFicy5vcmcvcGF0Y2gvMTExMDY2NC8KClsyXSBbTGludXgtTVREXSBtdGQ6IHNwaW5hbmQ6
+IFN1cHBvcnQgUGFyYWdvbiBQTjI2RzAxQSBhbmQgUE4yNkcwMkEKICAgICBodHRwczovL3BhdGNo
+d29yay5vemxhYnMub3JnL3BhdGNoLzExMTA3ODUvCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Blbndy
+dC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxt
+YW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

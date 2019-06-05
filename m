@@ -2,47 +2,46 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F97835CE4
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 14:32:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EC3E35CEF
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 14:33:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
 	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0F5Zv2p+4vCOe04LRu4QRDzCnxhuX+Y2ZFvb2/i7czw=; b=uEomowcbc7I+R/h6CQ2mOk9TR
-	CEGhHHLeARNOy641aEy8Tj570JvtybPEN6zht03qDV8il+8JIaQwdFP/xtmvAvoPVIGIR2HgzAnfQ
-	hw3u3xw0wfNKqTDMmYLSQjsXR4sXLm3+CUSoEERUV8Ds8kG6bro7F6FpB407ntYvcQs/tLFkd1z01
-	PXyp6KvQ8HNXjnKwgMUoHXTgleqWiU4Igiub/ezORWAlJm7FN4DLzUlhMyyaRNSaQHNoxMlSDCe1t
-	HS2GvCaN+TMidp8tcwOrdN4MRgJ4FGdj5GT6rResLgvw1MKuYqYpfs/9F8/VA1bU6yBlHdl+nWzPf
-	ooK1sbO6w==;
+	 bh=B1uGyA3PcUzOrTxbTgkeXoUOFGUdtavcvx+pfwmjA8o=; b=F/yanklaeIWBe5Z2oFKxNlGlW
+	FuwmzwluLTIVc7jCxvEQ6xD53CiGDV8Yj2nHEvHtV8U3bA3TmVo7xYA9D2YAl7NGGIZMfQICndoPL
+	RTzFz0cUKnPcO0y85RaPvZik01e54zDqEQ5yxAjikL/APdcO/EAhN0WOSbwxWf074TrIK/KJsfTh4
+	+HR6UStU2lm2mbYTm5Tn44kPD3045po22hOUF18P3XTnBTa53McQVmd9lNUrUUVuZSc6oYWdqc95S
+	meN+v8qfil24qsJjEhEuH8Cj2nKoGB4Ic/bVljtyNBbb/Hxc7HH5xifl18Rp7AEMZxBqAeTk8t1l2
+	8t4sfN8zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYV5A-0000Z9-JU; Wed, 05 Jun 2019 12:31:56 +0000
+	id 1hYV71-0001EP-Pw; Wed, 05 Jun 2019 12:33:51 +0000
 Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYV4u-0000Rb-LX
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 12:31:42 +0000
+ id 1hYV6v-0001E6-CO
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 12:33:46 +0000
 Received: from p5dcfb869.dip0.t-ipconnect.de ([93.207.184.105]
  helo=[192.168.45.104])
  by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <john@phrozen.org>)
- id 1hYV4r-0002zx-96; Wed, 05 Jun 2019 14:31:37 +0200
-To: =?UTF-8?Q?Bj=c3=b8rn_Mork?= <bjorn@mork.no>,
- openwrt-devel@lists.openwrt.org
-References: <87pnnskzlt.fsf@miraculix.mork.no>
- <20190605121911.3324-1-bjorn@mork.no>
+ id 1hYV6t-00038T-Fq; Wed, 05 Jun 2019 14:33:43 +0200
+To: Karl Palsson <karlp@tweak.net.au>
+References: <23ef4eed-1984-9189-65e8-dd6dba5c3aaa@phrozen.org>
+ <DLiog63dMUCNvIuGWRoixvsPxUgrQbnsVeQEQH9A2342@mailpile>
 From: John Crispin <john@phrozen.org>
-Message-ID: <3db4da41-39b1-f2ae-94f7-ae2503225ce2@phrozen.org>
-Date: Wed, 5 Jun 2019 14:31:36 +0200
+Message-ID: <bfbe025d-a01d-264f-0dde-6e1bfc2cc43d@phrozen.org>
+Date: Wed, 5 Jun 2019 14:33:42 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190605121911.3324-1-bjorn@mork.no>
+In-Reply-To: <DLiog63dMUCNvIuGWRoixvsPxUgrQbnsVeQEQH9A2342@mailpile>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_053140_856073_7AE1D77E 
-X-CRM114-Status: GOOD (  21.36  )
+X-CRM114-CacheID: sfid-20190605_053345_576102_13D60F93 
+X-CRM114-Status: GOOD (  13.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -50,7 +49,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2] scripts/feeds: add src-include method
+Subject: Re: [OpenWrt-Devel] [PATCH V3 2/2] script/feeds: add a new command
+ that allows generating a new feeds.conf
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -62,59 +62,71 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDA1LzA2LzIwMTkgMTQ6MTksIEJqw7hybiBNb3JrIHdyb3RlOgo+IFRoZSBzcmMtaW5jbHVk
-ZSBtZXRob2QgYWxsb3dzIHJlY3Vyc2l2ZSBpbmNsdXNpb24gb2YgZmVlZHMuY29uZiBzbmlwcGV0
-cy4KPgo+IFRoaXMgY2FuIGZvciBleGFtcGxlIGJlIHVzZWQgZm9yIGFkZGluZyBzdGF0aWMgbG9j
-YWwgZmVlZHMgdG8KPiBmZWVkcy5jb25mLmRlZmF1bHQgd2l0aG91dCBldmVyIGhhdmluZyB0byB1
-cGRhdGUgdGhlIGxvY2FsIGZlZWRzLmNvbmY6Cj4KPiAgIHNyYy1pbmNsdWRlIGRlZmF1bHRzIGZl
-ZWRzLmNvbmYuZGVmYXVsdAo+ICAgc3JjLWxpbmsgY3VzdG9tIC91c3IvbG9jYWwvc3JjL2xlZGUv
-Y3VzdG9tCj4KPiBTaWduZWQtb2ZmLWJ5OiBCasO4cm4gTW9yayA8Ympvcm5AbW9yay5ubz4KPiAt
-LS0KPgo+IEl0IHdvdWxkIG9mIGNvdXJzZSBiZSBuaWNlIG9mIG1lIGlmIEkgaGFkIHRlc3RlZCBt
-eSBwYXRjaGVzLCBldmVuCj4gaWYgdGhleSBhcmUgb25seSBtZWFudCBmb3IgZGlzY3Vzc2lvbi4K
-Pgo+IFRoaXMgdmVyc2lvbiBhY3R1YWxseSB3b3Jrcy4gIENoYW5nZXMgaW4gdjI6Cj4gICAtIHVz
-ZSBhIHZhcmlhYmxlIGZvciB0aGUgZmlsZSBoYW5kbGUgc28gd2UgY2FuIG9wZW4gZmlsZXMgcmVj
-dXJzaXZlbHkKPiAgIC0gbWF0Y2ggb24gdGhlIHJlYWwgJ3NyYy1pbmNsdWRlJyBrZXl3b3JkCj4K
-Pgo+IEJqw7hybgoKCkhpIEJqw7hybgoKdGhhdCB3b3VsZCBhZ2FpbiBpbnZvbHZlIGNhcnJ5aW5n
-IGV4dHJhIGZpbGVzIGFyb3VuZCwgd2hpY2ggaXMgd2hhdCBJIGFtIAp0cnlpbmcgdG8gYXZvaWQK
-CiDCoMKgwqAgSm9obgoKCj4KPiAgIHNjcmlwdHMvZmVlZHMgfCAzNyArKysrKysrKysrKysrKysr
-KysrKysrKysrKy0tLS0tLS0tLS0tCj4gICAxIGZpbGUgY2hhbmdlZCwgMjYgaW5zZXJ0aW9ucygr
-KSwgMTEgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvc2NyaXB0cy9mZWVkcyBiL3Njcmlw
-dHMvZmVlZHMKPiBpbmRleCAzMDRlZjZjYmFmZDEuLmE0ZGZkOWUyNjBhOCAxMDA3NTUKPiAtLS0g
-YS9zY3JpcHRzL2ZlZWRzCj4gKysrIGIvc2NyaXB0cy9mZWVkcwo+IEBAIC00MSwzNCArNDEsNDkg
-QEAgbXkgJGZlZWRfc3JjID0ge307Cj4gICBteSAkZmVlZF90YXJnZXQgPSB7fTsKPiAgIG15ICRm
-ZWVkX3ZwYWNrYWdlID0ge307Cj4gICAKPiAtc3ViIHBhcnNlX2NvbmZpZygpIHsKPiArc3ViIHBh
-cnNlX2ZpbGUoJCQpOwo+ICsKPiArc3ViIHBhcnNlX2ZpbGUoJCQpIHsKPiArCW15ICgkZm5hbWUs
-ICRuYW1lKSA9IEBfOwo+ICAgCW15ICRsaW5lID0gMDsKPiAtCW15ICVuYW1lOwo+ICsJbXkgJGZo
-Owo+ICAgCj4gLQlvcGVuIEZFRURTLCAiZmVlZHMuY29uZiIgb3IKPiAtCQlvcGVuIEZFRURTLCAi
-ZmVlZHMuY29uZi5kZWZhdWx0IiBvcgo+IC0JCWRpZSAiVW5hYmxlIHRvIG9wZW4gZmVlZHMgY29u
-ZmlndXJhdGlvbiI7Cj4gLQl3aGlsZSAoPEZFRURTPikgewo+ICsJb3BlbiAkZmgsICRmbmFtZSBv
-ciByZXR1cm4gdW5kZWY7Cj4gKwl3aGlsZSAoPCRmaD4pIHsKPiAgIAkJY2hvbXA7Cj4gICAJCXMv
-Iy4rJC8vOwo+ICsJCSRsaW5lKys7Cj4gICAJCW5leHQgdW5sZXNzIC9cUy87Cj4gICAJCW15IEBs
-aW5lID0gc3BsaXQgL1xzKy8sICRfLCAzOwo+ICAgCQlteSBAc3JjOwo+IC0JCSRsaW5lKys7Cj4g
-ICAKPiAgIAkJbXkgJHZhbGlkID0gMTsKPiAgIAkJJGxpbmVbMF0gPX4gL15zcmMtW1x3LV0rJC8g
-b3IgJHZhbGlkID0gMDsKPiAgIAkJJGxpbmVbMV0gPX4gL15cdyskLyBvciAkdmFsaWQgPSAwOwo+
-ICAgCQlAc3JjID0gc3BsaXQgL1xzKy8sICgkbGluZVsyXSBvciAnJyk7Cj4gICAJCUBzcmMgPSAo
-JycpIGlmIEBzcmMgPT0gMDsKPiAtCQkkdmFsaWQgb3IgZGllICJTeW50YXggZXJyb3IgaW4gZmVl
-ZHMuY29uZiwgbGluZTogJGxpbmVcbiI7Cj4gKwkJJHZhbGlkIG9yIGRpZSAiU3ludGF4IGVycm9y
-IGluICRmbmFtZSwgbGluZTogJGxpbmVcbiI7Cj4gICAKPiAtCQkkbmFtZXskbGluZVsxXX0gYW5k
-IGRpZSAiRHVwbGljYXRlIGZlZWQgbmFtZSAnJGxpbmVbMV0nLCBsaW5lOiAkbGluZVxuIjsKPiAt
-CQkkbmFtZXskbGluZVsxXX0gPSAxOwo+ICsJCSRuYW1lLT57JGxpbmVbMV19IGFuZCBkaWUgIkR1
-cGxpY2F0ZSBmZWVkIG5hbWUgJyRsaW5lWzFdJyBpbiAnJGZuYW1lJyBsaW5lOiAkbGluZVxuIjsK
-PiArCQkkbmFtZS0+eyRsaW5lWzFdfSA9IDE7Cj4gKwo+ICsJCWlmICgkbGluZVswXSBlcSAic3Jj
-LWluY2x1ZGUiKSB7Cj4gKwkJCXBhcnNlX2ZpbGUoJGxpbmVbMl0sICRuYW1lKSBvcgo+ICsJCQkg
-ICAgZGllICJVbmFibGUgdG8gb3BlbiBpbmNsdWRlZCBmaWxlICckbGluZVsyXSciOwo+ICsJCQlu
-ZXh0Owo+ICsJCX0KPiAgIAo+ICAgCQlwdXNoIEBmZWVkcywgWyRsaW5lWzBdLCAkbGluZVsxXSwg
-XEBzcmNdOwo+ICAgCX0KPiAtCWNsb3NlIEZFRURTOwo+ICsJY2xvc2UgJGZoOwo+ICsJcmV0dXJu
-IDE7Cj4gK30KPiArCj4gK3N1YiBwYXJzZV9jb25maWcoKSB7Cj4gKwlteSAlbmFtZTsKPiArCXBh
-cnNlX2ZpbGUoImZlZWRzLmNvbmYiLCBcJW5hbWUpIG9yCj4gKwkgICAgcGFyc2VfZmlsZSgiZmVl
-ZHMuY29uZi5kZWZhdWx0IiwgXCVuYW1lKSAgb3IKPiArCSAgICBkaWUgIlVuYWJsZSB0byBvcGVu
-IGZlZWRzIGNvbmZpZ3VyYXRpb24iOwo+ICAgfQo+ICAgCj4gICBzdWIgdXBkYXRlX2xvY2F0aW9u
-KCQkKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Bl
-bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpo
-dHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+
+On 05/06/2019 13:35, Karl Palsson wrote:
+> John Crispin <john@phrozen.org> wrote:
+>> On 05/06/2019 12:17, Karl Palsson wrote:
+>>> John Crispin <john@phrozen.org> wrote:
+>>>> This can be used inside build setups for easy feeds.conf
+>>>> generation.
+>>> Could you give us an example of how this is actually easy, or
+>>> what sort of functionality this is providing beyond "cat
+>>> feeds.conf.default feeds.conf.extra > feeds.conf"
+>>>
+>>> It seems like a lot of perl for a narrow usecase.
+>>>
+>>> Sincerely,
+>>> Karl Palsson
+>> This was brought up as a missing feature by the prpl folks. I
+>> considered on how to best implement this and find that having
+>> proper tooling is much better than having to carry around an
+>> extra file that is cat. being able to build the feeds.conf
+>> dynamically like this just seems much cleaner to me and will
+>> allow downstream users, vendors, odms and integrators to have
+>> less need to patch their trees to death.
+> So, they still have to have a script, but now the script has...
+>
+>
+> ...
+> ./scripts/feeds setup -b src-git,private-aa,git://blah
+> src-link,private-bb,/wop/blah
+> ...
+>
+> instead of
+> ...
+> cp feeds.conf.default feeds.conf
+> echo "src-git private-aa git://blah" >> feeds.conf
+> echo "src-link private-bb /wop/blah" >> feeds.conf
+> ...
+>
+> I mean, _yes_ it's "simpler" but it's only simpler by bringing in
+> new tools with new layers of abstraction. I really question
+> whether that's actually simpler for anyone in the long run, and
+> also how this really counts as a "missing feature" There's still
+> going to be a requirement for that vendor script.
+>
+> Sincerely,
+> Karl Palsson
+
+Its not a new tool, its an extra call to an already existing one. I =
+
+believe that the one liner is much cleaner than the 3 line scriptage. =
+
+there is no requirement for a vendor script. they ship with a PDF that =
+
+has the build steps. This oneline will be much easier to use I believe.
+
+ =A0=A0=A0 John
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,87 +2,48 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79FED3607F
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 17:45:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFF23360F5
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 18:15:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HbBbNIXG/ebS3+p57DMVg3cQOrYYwgZBtUC/0xihwFE=; b=u+et5H3XXoivA4
-	xQyFoQcKUHfZ7ayXlstrvxZhTtQZNo88O9KV/nWuzcxca4S02oIdyaU/jpSXkOzlWIlFMLBVe/u9r
-	w3vvzWRkPdwD/j5dK/aiNuawPDJCd+Ya8j6ajdoNSMWKOh3R5NOAf6ZvyhYjk5HlfYnTmGe1QoYU7
-	swpMoUwUGBlcKW+R3QfuXTPslLkRmqhKYe9LVT6HOGTn+7X/abWM+F8sNt0DnXDEEdI1Je9+KAfjy
-	3nYRA7GCLLVKwdBlQmraRCJ/7WakbAWRG00S1hOBV4FCUbL8LNmLW6jcPgqFWbErrfEWDomk5gBJR
-	RIvgkOXFHCLvCzpzBgSw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u/YJpxPg3pB4rXiJMj2l6I8hw3qdC3OUeIFQZywkrCU=; b=W5qf2lOJj0LIe1
+	mft1IMpsOSkGdaBmyTDNYMeS5yU5ojH0tOhZKwqaTsw4ajbB0zeanBKKGzEMtWPJlMe6kgO5Qw/pV
+	3JwGovNZnVC0Q2QeeKF++llwTo/kkCvA4HLI+0DrVVDnCqo5mJ7YaP6osN/dlHqLW7uXliRY8FwyG
+	JGF4/c6uks6i3I0dWtxRVgnqLTEbWJ4pxHkYCuzBw9rqMAnHcfKtwPY2ohzR8ZYmk4TIZhRmYqMOw
+	0XorgFoUP5vhK15LLBtKPfkewt/PGbIihMG7GKONVQtn6Q+haKVslA24x4UaP2LSRbZ7jCIKaF9Ix
+	V8BFRAW+jaU1abH3w6lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYY6j-0002pW-Nq; Wed, 05 Jun 2019 15:45:45 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hYYZn-0004Ox-I5; Wed, 05 Jun 2019 16:15:47 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYY6c-0002oy-Ei
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 15:45:40 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 16so2749258wmg.5
- for <openwrt-devel@lists.openwrt.org>; Wed, 05 Jun 2019 08:45:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Cmdm6cIWE71Qg3EOH3dwTSUR9YDLaLM7Y4mQJEJv+eY=;
- b=OjCVLhMYtn6C2C135eNSXh0cRuGBWw2sw+GSaJFGvooYDFxIC4Zn+lRYM+SgBpsyef
- A6mX2fy06m4eqGooQq0NX6rbijfmC5GDPkLu7Ay9f92l3wLdXM7GWw1YyIjcHcI2eUSR
- LLaopKtVQf6m0W2ORVQ4im+WkaN3anDA6hJMg/SeXOw9C9Dds4g2T3QnK3SLdIC8Em9A
- OmNdFOld8qHuHD0VCR5WZq6IiJ7ct+SQ7s8AVI0Gpip5qx2gy7Xg4/4mK/k3y16YmBHu
- j7Spr8gKkGrlgsJt49wlDVxSCsFCRevp++Ndo/E4Ji39DDoT+LMJ5XwE9D0CmN4jvQiB
- JFug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Cmdm6cIWE71Qg3EOH3dwTSUR9YDLaLM7Y4mQJEJv+eY=;
- b=WxlEV/upSzKwWo5jITKxCoofz/wMkzr2KdOQHSVAxt+TaawqFL2wsOWE8qUevHlWN3
- qOaXRHiRc3VOjBrIAmvRxvh0bhoBkwkcqOHohS9xjT2EbqlvQ3rRysXhW6SPYAYdOKl6
- A/zZZ6fVU/sGhAcSYmlmHbSMsmnLzeQY142C8V+hsDrEqk7u0BPrK+G6OvRj/rHpsiMq
- B5tvW6cOGI420EzUD8Tw6yHhSZobEP7/sm1HRQZ7hrlWSEydCgitThXXqLAHX9qWLuz8
- QEwPy+P/5CEA/0dc6hb6UKgHZFBEpGb5WHiJnitcdaI+zSDF/ebTl5bVAkWqsxY8aE8S
- nmaA==
-X-Gm-Message-State: APjAAAWpiQbT3SISlGPQ7jCvroS9fIvgG54gbMShOuhCj7MQ9be3Ehuv
- oOPvCx5fRWt78xzP0RxO+YxjUO5O6SiynAwsPJ82pGqe
-X-Google-Smtp-Source: APXvYqyFlNaQKmUQ+u70WRCnoCJImEpEf0C6AckuMhExJNAkcD8gU2rjk0S4JUVmUD11eHT6alwXayo7G7sFLmtAx+o=
-X-Received: by 2002:a1c:9906:: with SMTP id b6mr10974873wme.117.1559749536909; 
- Wed, 05 Jun 2019 08:45:36 -0700 (PDT)
+ id 1hYYZe-0004OK-MN
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 16:15:41 +0000
+Received: from p5dcfbfee.dip0.t-ipconnect.de ([93.207.191.238] helo=bertha.lan)
+ by ds12 with esmtpa (Exim 4.89) (envelope-from <john@phrozen.org>)
+ id 1hYYZc-0002L1-8v; Wed, 05 Jun 2019 18:15:36 +0200
+From: John Crispin <john@phrozen.org>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Date: Wed,  5 Jun 2019 18:15:21 +0200
+Message-Id: <20190605161522.24420-1-john@phrozen.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190605143124.7598-1-tomek_n@o2.pl>
- <20190605143124.7598-2-tomek_n@o2.pl>
-In-Reply-To: <20190605143124.7598-2-tomek_n@o2.pl>
-From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Wed, 5 Jun 2019 17:45:33 +0200
-Message-ID: <CAOiHx=k3kQ-agOM8DSWr6q+-84H5mhN-CwUGKStK=uu16Z04XA@mail.gmail.com>
-To: Tomasz Maciej Nowak <tomek_n@o2.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_084538_538029_B8B2B53F 
-X-CRM114-Status: GOOD (  13.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190605_091538_895811_54E2A60E 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jonas.gorski[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] kernel: package module for SafeXcel
- crypto engine
+Subject: [OpenWrt-Devel] [PATCH 1/2] toolchain: add support for custom
+ toolchains
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,55 +55,218 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- =?UTF-8?B?TWFyZWsgQmVow7pu?= <marek.behun@nic.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gV2VkLCA1IEp1biAyMDE5IGF0IDE2OjMyLCBUb21hc3ogTWFjaWVqIE5vd2FrIDx0b21la19u
-QG8yLnBsPiB3cm90ZToKPgo+IFN1cHBvcnRzIEVJUDk3IGFuZCBFSVAxOTcgZm91bmQgb24gQXJt
-YWRhIDM3eHgsIDdrIGFuZCA4ayBTb0NzLgo+IFVuZm9ydHVuYXRlbHkgZmlybXdhcmUgZm9yIEVJ
-UDE5NyBpcyBub3QgZWFzaWx5IG9idGFpbmFibGUsIHRoZXJlZm9yZQo+IHRvIG5vdCBjYXVzZSBs
-b3Qgb2YgdXNlciByZXF1ZXN0cyBkaXJlY3RlZCBhdCBPcGVuV3J0LCBwYWNrYWdlIGl0IGFzCj4g
-bW9kdWxlIHdpdGggZXhwbGFuYXRpb24gd2hlcmUgdG8gb2J0YWluIHRoZSBmaXJtd2FyZS4KPgo+
-IENjOiBNYXJlayBCZWjDum4gPG1hcmVrLmJlaHVuQG5pYy5jej4KPiBTaWduZWQtb2ZmLWJ5OiBU
-b21hc3ogTWFjaWVqIE5vd2FrIDx0b21la19uQG8yLnBsPgo+IC0tLQo+ICBwYWNrYWdlL2tlcm5l
-bC9saW51eC9tb2R1bGVzL2NyeXB0by5tayB8IDI4ICsrKysrKysrKysrKysrKysrKysrKysrKysr
-Cj4gIDEgZmlsZSBjaGFuZ2VkLCAyOCBpbnNlcnRpb25zKCspCj4KPiBkaWZmIC0tZ2l0IGEvcGFj
-a2FnZS9rZXJuZWwvbGludXgvbW9kdWxlcy9jcnlwdG8ubWsgYi9wYWNrYWdlL2tlcm5lbC9saW51
-eC9tb2R1bGVzL2NyeXB0by5tawo+IGluZGV4IDljYWIwNGM2ZWQuLmVkMmFiNmFlZDcgMTAwNjQ0
-Cj4gLS0tIGEvcGFja2FnZS9rZXJuZWwvbGludXgvbW9kdWxlcy9jcnlwdG8ubWsKPiArKysgYi9w
-YWNrYWdlL2tlcm5lbC9saW51eC9tb2R1bGVzL2NyeXB0by5tawo+IEBAIC0zNTAsNiArMzUwLDM0
-IEBAIGVuZGVmCj4gICQoZXZhbCAkKGNhbGwgS2VybmVsUGFja2FnZSxjcnlwdG8taHctcGFkbG9j
-aykpCj4KPgo+ICtkZWZpbmUgS2VybmVsUGFja2FnZS9jcnlwdG8taHctc2FmZXhjZWwKPiArICBU
-SVRMRTo9IE1WRUJVIFNhZmVYY2VsIENyeXB0byBFbmdpbmUgbW9kdWxlCj4gKyAgREVQRU5EUzo9
-QExJTlVYXzRfMTkgQChUQVJHRVRfbXZlYnVfY29ydGV4YTUzfHxUQVJHRVRfbXZlYnVfY29ydGV4
-YTcyKSBcCgpBc3N1bWluZyB0aGlzIGlzIGlzbid0IGV4Y2x1c2l2ZSB0byA0LjE5LCBhIEAhTElO
-VVhfNF8xNCB3b3VsZCBiZSBtb3JlCmZ1dHVyZSBwcm9vZgoKPiArICAgICAgICtrbW9kLWNyeXB0
-by1hdXRoZW5jICtrbW9kLWNyeXB0by1tZDUKPiArICBLQ09ORklHOj0gXAo+ICsgICAgICAgQ09O
-RklHX0NSWVBUT19BRVM9eSBcCj4gKyAgICAgICBDT05GSUdfQ1JZUFRPX0JMS0NJUEhFUj15IFwK
-ClRoZXNlIHR3byBhcmUgYWxyZWFkeSBzZXQgdG8gPXkgYnkgdGhlIGRlZmF1bHQgY29uZmlnLCBu
-byBuZWVkIHRvCnNwZWNpZnkgdGhlbSBoZXJlLgoKPiArICAgICAgIENPTkZJR19DUllQVE9fREVW
-X1NBRkVYQ0VMIFwKPiArICAgICAgIENPTkZJR19DUllQVE9fSE1BQz15IFwKCitrbW9kLWNyeXB0
-by1obWFjCgo+ICsgICAgICAgQ09ORklHX0NSWVBUT19IVz15IFwKPiArICAgICAgIENPTkZJR19D
-UllQVE9fU0hBMjU2PXkgXAoKK2ttb2QtY3J5cHRvLXNoYTI1NgoKPiArICAgICAgIENPTkZJR19D
-UllQVE9fU0hBNTEyPXkKCitrbW9kLWNyeXB0by1zaGE1MTIKCj4gKyAgRklMRVM6PSQoTElOVVhf
-RElSKS9kcml2ZXJzL2NyeXB0by9pbnNpZGUtc2VjdXJlL2NyeXB0b19zYWZleGNlbC5rbwo+ICsg
-IEFVVE9MT0FEOj0kKGNhbGwgQXV0b0xvYWQsOTAsY3J5cHRvX3NhZmV4Y2VsKQo+ICsgICQoY2Fs
-bCBBZGREZXBlbmRzL2NyeXB0bykKPiArZW5kZWYKPiArCj4gK2RlZmluZSBLZXJuZWxQYWNrYWdl
-L2NyeXB0by1ody1zYWZleGNlbC9kZXNjcmlwdGlvbgo+ICtNVkVCVSdzIEVJUDk3IGFuZCBFSVAx
-OTcgQ3J5cHRvZ3JhcGhpYyBFbmdpbmUgZHJpdmVyIGRlc2lnbmVkIGJ5Cj4gK0luc2lkZSBTZWN1
-cmUuIFRoaXMgaXMgZm91bmQgb24gTWFydmVsbCBBcm1hZGEgMzd4eC83ay84ayBTb0NzLgo+ICsK
-PiArUGFydGljdXJhbCB2ZXJzaW9uIG9mIHRoZXNlIElQIChFSVAxOTdCIGFuZCBFSVAxOTdEKSBy
-ZXF1aXJlIGZpcm13YXJlLgoKcy9QYXJ0aWN1cmFsL1BhcnRpY3VsYXIvCgo+ICtJdCBjYW4gYmUg
-b2J0YWluZWQgYXQgaHR0cHM6Ly9leHRyYW5ldC5tYXJ2ZWxsLmNvbS4KCllvdSBuZWVkIGFuIE5E
-QSB0byBvYnRhaW4gaXQsIHdoaWNoIGlzbid0IHNvbWV0aGluZyBwb3NzaWJsZSBmb3IgdGhlCmF2
-ZXJhZ2UgZW5kIHVzZXIuIFRoZSBkZXNjcmlwdGlvbiBzaG91bGQgbWFrZSBpdCBjbGVhciB0aGF0
-IHRoaXMgaXNuJ3QKYSBzaW1wbGUgImRvd25sb2FkIGhlcmUiIHNpdHVhdGlvbi4gQXJlIHRoZXJl
-IGFueSBib2FyZHMgc3VwcG9ydGVkIGJ5Ck9wZW5XcnQgdXNhYmxlIHdpdGhvdXQgdGhlIGZpcm13
-YXJlPwoKClJlZ2FyZHMKSm9uYXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlz
-dHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L29wZW53cnQtZGV2ZWwK
+The requirement for being able to add custom src toolchains to the build
+system has been brought forward by the members of the prpl foundation.
+This patch tries to address this requirement by allowing a ned folder to be
+loaded into the tree call toolchain_custom. The subfolders contained within
+have the same layout as the toolchain folder. By placing optional Makefiles
+into these subfolders It is possible to override the versions of the various
+toolchain components aswell as their patch sets and make templates.
+
+Signed-off-by: John Crispin <john@phrozen.org>
+---
+ rules.mk                       | 5 +++++
+ toolchain/Config.in            | 5 +++++
+ toolchain/Makefile             | 2 ++
+ toolchain/binutils/Makefile    | 4 ++++
+ toolchain/gcc/common.mk        | 6 ++++++
+ toolchain/gcc/initial/Makefile | 4 ++++
+ toolchain/gcc/minimal/Makefile | 4 ++++
+ toolchain/gdb/Makefile         | 4 ++++
+ toolchain/musl/Makefile        | 2 ++
+ toolchain/musl/common.mk       | 2 ++
+ 10 files changed, 38 insertions(+)
+
+diff --git a/rules.mk b/rules.mk
+index 80cb3d63f4..7596250388 100644
+--- a/rules.mk
++++ b/rules.mk
+@@ -119,8 +119,13 @@ INCLUDE_DIR:=$(TOPDIR)/include
+ SCRIPT_DIR:=$(TOPDIR)/scripts
+ BUILD_DIR_BASE:=$(TOPDIR)/build_dir
+ ifeq ($(CONFIG_EXTERNAL_TOOLCHAIN),)
++ ifeq ($(CONFIG_CUSTOM_TOOLCHAIN),)
+   GCCV:=$(call qstrip,$(CONFIG_GCC_VERSION))
+   LIBC:=$(call qstrip,$(CONFIG_LIBC))
++ else
++  GCCV:=$(call qstrip,$(CONFIG_CUSTOM_GCC_VERSION))
++  LIBC:=$(call qstrip,$(CONFIG_CUSTOM_LIBC))
++ endif
+   REAL_GNU_TARGET_NAME=$(OPTIMIZE_FOR_CPU)-openwrt-linux$(if $(TARGET_SUFFIX),-$(TARGET_SUFFIX))
+   GNU_TARGET_NAME=$(OPTIMIZE_FOR_CPU)-openwrt-linux
+   DIR_SUFFIX:=_$(LIBC)$(if $(CONFIG_arm),_eabi)
+diff --git a/toolchain/Config.in b/toolchain/Config.in
+index 82dddbc209..cad492aa1e 100644
+--- a/toolchain/Config.in
++++ b/toolchain/Config.in
+@@ -155,6 +155,11 @@ menuconfig EXTERNAL_TOOLCHAIN
+ 		  Specify additional directories searched for libraries (override LDFLAGS).
+ 		  Use ./DIR for directories relative to the root above.
+ 
++config CUSTOM_TOOLCHAIN
++	depends on DEVEL
++
++source "toolchain_custom/*.in"
++
+ config NEED_TOOLCHAIN
+ 	bool
+ 	depends on DEVEL
+diff --git a/toolchain/Makefile b/toolchain/Makefile
+index 0336b2f72c..f067cb9c93 100644
+--- a/toolchain/Makefile
++++ b/toolchain/Makefile
+@@ -93,6 +93,8 @@ endif
+ 
+ $(curdir)/install: $(curdir)/compile
+ 
++include $(wildcard toolchain_custom/*.mk)
++
+ $(eval $(call stampfile,$(curdir),toolchain,compile,$(TOOLCHAIN_DIR)/stamp/.gcc-initial_installed,,$(TOOLCHAIN_DIR)))
+ $(eval $(call stampfile,$(curdir),toolchain,check,$(TMP_DIR)/.build))
+ $(eval $(call subdir,$(curdir)))
+diff --git a/toolchain/binutils/Makefile b/toolchain/binutils/Makefile
+index 24eaf70566..04620a8769 100644
+--- a/toolchain/binutils/Makefile
++++ b/toolchain/binutils/Makefile
+@@ -31,6 +31,8 @@ HOST_BUILD_PARALLEL:=1
+ 
+ PATCH_DIR:=./patches/$(PKG_VERSION)
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/binutils/*.var)
++
+ include $(INCLUDE_DIR)/toolchain-build.mk
+ 
+ HOST_CONFIGURE_ARGS = \
+@@ -99,4 +101,6 @@ define Host/Clean
+ 		$(BUILD_DIR_TOOLCHAIN)/$(PKG_NAME)
+ endef
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/binutils/*.build)
++
+ $(eval $(call HostBuild))
+diff --git a/toolchain/gcc/common.mk b/toolchain/gcc/common.mk
+index 6e0edfb36a..d6ca9b872f 100644
+--- a/toolchain/gcc/common.mk
++++ b/toolchain/gcc/common.mk
+@@ -47,6 +47,8 @@ PKGVERSION=OpenWrt GCC $(PKG_VERSION) $(REVISION)
+ 
+ HOST_BUILD_PARALLEL:=1
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/*.var)
++
+ include $(INCLUDE_DIR)/toolchain-build.mk
+ 
+ HOST_SOURCE_DIR:=$(HOST_BUILD_DIR)
+@@ -189,6 +191,8 @@ GCC_MAKE:= \
+ 		CXXFLAGS_FOR_TARGET="$(TARGET_CFLAGS)" \
+ 		GOCFLAGS_FOR_TARGET="$(TARGET_CFLAGS)"
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/*.build)
++
+ define Host/SetToolchainInfo
+ 	$(SED) 's,TARGET_CROSS=.*,TARGET_CROSS=$(REAL_GNU_TARGET_NAME)-,' $(TOOLCHAIN_DIR)/info.mk
+ 	$(SED) 's,GCC_VERSION=.*,GCC_VERSION=$(GCC_VERSION),' $(TOOLCHAIN_DIR)/info.mk
+@@ -229,3 +233,5 @@ define Host/Clean
+ 		$(TOOLCHAIN_DIR)/bin/$(REAL_GNU_TARGET_NAME)-gc* \
+ 		$(TOOLCHAIN_DIR)/bin/$(REAL_GNU_TARGET_NAME)-c*
+ endef
++
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/*.build)
+diff --git a/toolchain/gcc/initial/Makefile b/toolchain/gcc/initial/Makefile
+index c71b17dd87..b9ada19ec1 100644
+--- a/toolchain/gcc/initial/Makefile
++++ b/toolchain/gcc/initial/Makefile
+@@ -1,6 +1,8 @@
+ GCC_VARIANT:=initial
+ GCC_PREPARE=$(CONFIG_USE_MUSL)
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/initial/*.var)
++
+ include ../common.mk
+ 
+ GCC_CONFIGURE += \
+@@ -33,4 +35,6 @@ define Host/Install
+ 	$$(call file_copy,$(TOOLCHAIN_DIR)/initial/.,$(TOOLCHAIN_DIR)/)
+ endef
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/initial/*.build)
++
+ $(eval $(call HostBuild))
+diff --git a/toolchain/gcc/minimal/Makefile b/toolchain/gcc/minimal/Makefile
+index 31d6f675ab..0b5c485dd8 100644
+--- a/toolchain/gcc/minimal/Makefile
++++ b/toolchain/gcc/minimal/Makefile
+@@ -1,6 +1,8 @@
+ GCC_VARIANT:=minimal
+ GCC_PREPARE=$(if $(CONFIG_USE_MUSL),,1)
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/minimal/*.var)
++
+ include ../common.mk
+ 
+ GCC_CONFIGURE += \
+@@ -26,4 +28,6 @@ define Host/Clean
+ 		$(GCC_BUILD_DIR)
+ endef
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gcc/minimal/*.build)
++
+ $(eval $(call HostBuild))
+diff --git a/toolchain/gdb/Makefile b/toolchain/gdb/Makefile
+index 3b884f9e79..63cdc073fd 100644
+--- a/toolchain/gdb/Makefile
++++ b/toolchain/gdb/Makefile
+@@ -29,6 +29,8 @@ HOST_BUILD_DIR:=$(BUILD_DIR_TOOLCHAIN)/$(GDB_DIR)
+ 
+ HOST_BUILD_PARALLEL:=1
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gdb/*.var)
++
+ include $(INCLUDE_DIR)/toolchain-build.mk
+ 
+ HOST_CONFIGURE_VARS += \
+@@ -65,4 +67,6 @@ define Host/Clean
+ 		$(TOOLCHAIN_DIR)/bin/$(GNU_TARGET_NAME)-gdb
+ endef
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/gdb/*.build)
++
+ $(eval $(call HostBuild))
+diff --git a/toolchain/musl/Makefile b/toolchain/musl/Makefile
+index 2b9312bcbf..aec678ebbe 100644
+--- a/toolchain/musl/Makefile
++++ b/toolchain/musl/Makefile
+@@ -28,4 +28,6 @@ define Host/Install
+ 	$(CP) ./include $(TOOLCHAIN_DIR)/
+ endef
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/musl/*.build)
++
+ $(eval $(call HostBuild))
+diff --git a/toolchain/musl/common.mk b/toolchain/musl/common.mk
+index ae7758e8b5..6c63ffa9bf 100644
+--- a/toolchain/musl/common.mk
++++ b/toolchain/musl/common.mk
+@@ -25,6 +25,8 @@ BUILD_DIR_HOST:=$(BUILD_DIR_TOOLCHAIN)
+ HOST_BUILD_PREFIX:=$(TOOLCHAIN_DIR)
+ HOST_BUILD_DIR:=$(BUILD_DIR_TOOLCHAIN)/$(PKG_NAME)-$(PKG_VERSION)
+ 
++include $(wildcard $(TOPDIR)/toolchain_custom/musl/*.var)
++
+ include $(INCLUDE_DIR)/host-build.mk
+ include $(INCLUDE_DIR)/hardening.mk
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

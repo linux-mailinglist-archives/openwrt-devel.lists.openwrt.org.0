@@ -2,54 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C4D735A1A
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 12:03:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4537735A5C
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 12:18:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1UtcdmCvTwdVHmNTARqvnbeldS+mpVY66kNOoRptkUE=; b=MLgaDb8MQaGGZe
-	fW3iKatxfwwaaStZxLGNYGP7iJBKE46RaytJA2Eczs+DQ0LXdi8chhMdgT4zooesYyr/fHO0oMw/N
-	0R46/5ZfWul/4SVXpoD7OHsnOq+Nhzz/hGNvuiTipLi664zvG20Z3kGjd9V/Uaut26rRKMxCWmC1r
-	8nizJEc/bGM7b8rN9+Dj8JTig7NKd8AEID3GVeDr62aKPwOj/R2fKWzXJ3y1VRCYmZfVgO6HZ6rJt
-	XmiMt5hyH/tMN/cbGQJbaA8SckVPuHm2xeO6hQX3cZfSpJGVl0ZX11R2I3rlBV/ClkdKYpyCIzs/Y
-	D6jKTbl5N2V6MtRy38Nw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Date:Message-Id:References:In-Reply-To:To:From:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=E+fTwf6KACQp+iqQc3IDkK/udfGRboDl1Wm5zdu23Hk=; b=FP+7ftBPXp20w5OTZ8n4ynTtB
+	LEQlk/32+8o8okIkbebPLtaIbhMpXwsryiw4ozu0rChO14jvEv4kpRp6fMUKWnK6lyfx/kJ5VyzHZ
+	uo/t1u3B6A1RZa0RS7EZYGfYJpY6BgZn5to6mh+gBG0IQ6F6WCWUS8LffNUKG25Aa9z3vWS+a+zor
+	upQJJLy7BKvaLRbsuEklXJzrDpFIQ1ha2GsVClO46pa+4n9zk9bWJ0H7hIsY4ximmuxu/JEXDYtn7
+	VvJx5DtfOMim683jQd+prA5SlJkYACIa9eCZ41p/z5KYL5MUihL1s73OykfC2KR7x8VmGI7OCCKy4
+	IquBfyr6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYSlM-00057H-9u; Wed, 05 Jun 2019 10:03:20 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hYSzp-0002We-Ld; Wed, 05 Jun 2019 10:18:17 +0000
+Received: from palmtree.beeroclock.net ([2a01:7e00::f03c:91ff:fe93:f66c])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYSlF-00056m-I7
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 10:03:15 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id E11064B87;
- Wed,  5 Jun 2019 12:03:10 +0200 (CEST)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id 860b4ae5;
- Wed, 5 Jun 2019 12:03:08 +0200 (CEST)
-From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  5 Jun 2019 12:03:04 +0200
-Message-Id: <1559728984-11559-1-git-send-email-ynezz@true.cz>
-X-Mailer: git-send-email 1.9.1
+ id 1hYSzi-0002WA-H9
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 10:18:12 +0000
+Received: from mailpile.local (palmtree.beeroclock.net
+ [IPv6:2a01:7e00::f03c:91ff:fe93:f66c])
+ by palmtree.beeroclock.net (Postfix) with ESMTPSA id 546EC1FC23;
+ Wed,  5 Jun 2019 10:18:07 +0000 (UTC)
 MIME-Version: 1.0
+From: Karl Palsson <karlp@tweak.net.au>
+To: "John Crispin" <john@phrozen.org>
+In-Reply-To: <20190605063409.27769-1-john@phrozen.org>
+References: <20190605063409.27769-1-john@phrozen.org>
+User-Agent: Mailpile
+Message-Id: <hynK3tKHMk6tAKPpYkaNRSzi2nMrDdpKviIa49aQ2342@mailpile>
+Date: Wed, 05 Jun 2019 10:17:34 -0000
+OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_030313_747807_B5EA89B7 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190605_031810_844145_6A31751B 
+X-CRM114-Status: GOOD (  16.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] kirkwood: image: fix unwanted 2nd inclusion
- of kernel
+ 0.0 T_HTML_ATTACH          HTML attachment to bypass scanning?
+Subject: Re: [OpenWrt-Devel] [PATCH V3 2/2] script/feeds: add a new command
+ that allows generating a new feeds.conf
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -61,59 +60,184 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
- Mathias Kresin <dev@kresin.me>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============4602429622697403090=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SW4gY29tbWl0IGQyZTE4ZGFlMjg5MiAoImtpcmt3b29kOiBjbGVhbnVwIGltYWdlIGJ1aWxkIGNv
-ZGUiKSB0aGUgaW1hZ2UKYnVpbGQgY29kZSB3YXMgcmVmYWN0b3JlZCwgc2V0dGluZyBLRVJORUxf
-SU5fVUJJPTAgd2hpY2ggZG9lc24ndCB3b3JrIGFzCnRoZSBLRVJORUxfSU5fVUJJIG5lZWRzIHRv
-IGJlIHVuc2V0IGluIG9yZGVyIHRvIG1ha2UgaXQgd29ya2luZyBhcwppbnRlbmRlZCwgd2hpY2gg
-bGVhZHMgdG8gZmFjdG9yeSBpbWFnZXMgd2l0aCB0d28ga2VybmVscyBpbiB0aGVtOgoKIGJpbndh
-bGsgLS1rZWVwLWdvaW5nIG9wZW53cnQta2lya3dvb2QtY2lzY29fb24xMDAtc3F1YXNoZnMtZmFj
-dG9yeS5iaW4KIE1ENSBDaGVja3N1bTogIGMzM2UzZDFlYjBjYjYzMmJmMGE0ZGMyODc1OTJlYjcw
-CiBERUNJTUFMICAgCUhFWCAgICAgICAJREVTQ1JJUFRJT04KIC0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0KIDAgICAgICAgICAJMHgwICAgICAgIAl1SW1hZ2UgaGVhZGVyIFsuLi5dICJBUk0gT3Blbldy
-dCBMaW51eC00LjE0LjEyMyIKIDU3NjkyMTYgICAJMHg1ODA4MDAgIAl1SW1hZ2UgaGVhZGVyIFsu
-Li5dICJBUk0gT3BlbldydCBMaW51eC00LjE0LjEyMyIKCkNjOiBNYXRoaWFzIEtyZXNpbiA8ZGV2
-QGtyZXNpbi5tZT4KUmVmOiBodHRwczovL2J1Z3Mub3BlbndydC5vcmcvaW5kZXgucGhwP2RvPWRl
-dGFpbHMmdGFza19pZD0yMjg1CkZpeGVzOiBkMmUxOGRhZTI4OTIgKCJraXJrd29vZDogY2xlYW51
-cCBpbWFnZSBidWlsZCBjb2RlIikKU2lnbmVkLW9mZi1ieTogUGV0ciDFoHRldGlhciA8eW5lenpA
-dHJ1ZS5jej4KLS0tCiB0YXJnZXQvbGludXgva2lya3dvb2QvaW1hZ2UvTWFrZWZpbGUgfCAxMCAr
-KysrKy0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCspLCA1IGRlbGV0aW9ucygt
-KQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9raXJrd29vZC9pbWFnZS9NYWtlZmlsZSBiL3Rh
-cmdldC9saW51eC9raXJrd29vZC9pbWFnZS9NYWtlZmlsZQppbmRleCAwNjcyYmEwMzc0MWMuLjZk
-ODA2MmIzMzA1NCAxMDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L2tpcmt3b29kL2ltYWdlL01ha2Vm
-aWxlCisrKyBiL3RhcmdldC9saW51eC9raXJrd29vZC9pbWFnZS9NYWtlZmlsZQpAQCAtMzIsNyAr
-MzIsNyBAQCBkZWZpbmUgRGV2aWNlL2Npc2NvX29uMTAwCiAgIERFVklDRV9EVFMgOj0ga2lya3dv
-b2Qtb24xMDAKICAgREVWSUNFX1BBQ0tBR0VTIDo9IGttb2QtaTJjLW12NjR4eHgKICAgS0VSTkVM
-X1NJWkUgOj0gNTM3NmsKLSAgS0VSTkVMX0lOX1VCSSA6PSAwCisgIEtFUk5FTF9JTl9VQkkgOj0K
-ICAgVUJJTklaRV9PUFRTIDo9IC1FIDUKICAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gYXBwZW5kLWtl
-cm5lbCB8IHBhZC10byAkJCQkKEtFUk5FTF9TSVpFKSB8IGFwcGVuZC11YmkKICAgQk9BUkRfTkFN
-RSA6PSBvbjEwMApAQCAtNzEsOCArNzEsOCBAQCBkZWZpbmUgRGV2aWNlL2lvbV9peDJfMjAwCiAg
-IFNVQlBBR0VTSVpFIDo9IDI1NgogICBCTE9DS1NJWkUgOj0gMTZLaUIKICAgS0VSTkVMX1NJWkUg
-Oj0gMzA3MmsKLSAgS0VSTkVMX0lOX1VCSSA6PSAwCi0gIFVCSU5JWkVfT1BUUyA6PSAtRSA1ICAK
-KyAgS0VSTkVMX0lOX1VCSSA6PQorICBVQklOSVpFX09QVFMgOj0gLUUgNQogICBJTUFHRV9TSVpF
-IDo9IDMyNTA1ODU2CiAgIElNQUdFL2ZhY3RvcnkuYmluIDo9IGFwcGVuZC1rZXJuZWwgfCBwYWQt
-dG8gJCQkJChLRVJORUxfU0laRSkgfCBhcHBlbmQtdWJpIHwgY2hlY2stc2l6ZSAkJCQkKElNQUdF
-X1NJWkUpCiBlbmRlZgpAQCAtODMsNyArODMsNyBAQCBkZWZpbmUgRGV2aWNlL2xpbmtzeXNfYXVk
-aQogICBERVZJQ0VfUEFDS0FHRVMgOj0ga21vZC1td2w4ayBzd2NvbmZpZyB3cGFkLWJhc2ljIGtt
-b2QtZ3Bpby1idXR0b24taG90cGx1ZwogICBERVZJQ0VfRFRTIDo9IGtpcmt3b29kLWxpbmtzeXMt
-YXVkaQogICBLRVJORUxfU0laRSA6PSAyNjI0awotICBLRVJORUxfSU5fVUJJIDo9IDAKKyAgS0VS
-TkVMX0lOX1VCSSA6PQogICBVQklOSVpFX09QVFMgOj0gLUUgNQogICBJTUFHRS9mYWN0b3J5LmJp
-biA6PSBhcHBlbmQta2VybmVsIHwgcGFkLXRvICQkJCQoS0VSTkVMX1NJWkUpIHwgYXBwZW5kLXVi
-aQogICBCT0FSRF9OQU1FIDo9IGxpbmtzeXMtYXVkaQpAQCAtOTYsNyArOTYsNyBAQCBkZWZpbmUg
-RGV2aWNlL2xpbmtzeXNfdmlwZXIKICAgREVWSUNFX1BBQ0tBR0VTIDo9IGttb2QtbXdsOGsgc3dj
-b25maWcgd3BhZC1iYXNpYyBrbW9kLWdwaW8tYnV0dG9uLWhvdHBsdWcKICAgREVWSUNFX0RUUyA6
-PSBraXJrd29vZC1saW5rc3lzLXZpcGVyCiAgIEtFUk5FTF9TSVpFIDo9IDI2ODhrCi0gIEtFUk5F
-TF9JTl9VQkkgOj0gMAorICBLRVJORUxfSU5fVUJJIDo9CiAgIFVCSU5JWkVfT1BUUyA6PSAtRSA1
-CiAgIElNQUdFL2ZhY3RvcnkuYmluIDo9IGFwcGVuZC1rZXJuZWwgfCBwYWQtdG8gJCQkJChLRVJO
-RUxfU0laRSkgfCBhcHBlbmQtdWJpCiAgIEJPQVJEX05BTUUgOj0gbGlua3N5cy12aXBlcgotLSAK
-MS45LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
-cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
-Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
-Cg==
+--===============4602429622697403090==
+Content-Type: multipart/signed; boundary="==h6azuvzvIAg4R5DrrsC6Ta7EYpKcjr==";
+ micalg="pgp-sha512"; protocol="application/pgp-signature"
+
+--==h6azuvzvIAg4R5DrrsC6Ta7EYpKcjr==
+Content-Type: multipart/mixed; boundary="==tNsjLuQmHSfLq343sN3YujFpUGTC3m=="
+Subject: Re: [OpenWrt-Devel] [PATCH V3 2/2] script/feeds: add a new command
+ that allows generating a new feeds.conf
+From: Karl Palsson <karlp@tweak.net.au>
+To: "John Crispin" <john@phrozen.org>
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+In-Reply-To: <20190605063409.27769-1-john@phrozen.org>
+References: <20190605063409.27769-1-john@phrozen.org>
+User-Agent: Mailpile
+Date: Wed, 05 Jun 2019 10:17:34 -0000
+OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
+
+--==tNsjLuQmHSfLq343sN3YujFpUGTC3m==
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+
+John Crispin <john@phrozen.org> wrote:
+> This can be used inside build setups for easy feeds.conf
+> generation.
+
+
+Could you give us an example of how this is actually easy, or
+what sort of functionality this is providing beyond "cat
+feeds.conf.default feeds.conf.extra > feeds.conf"
+
+It seems like a lot of perl for a narrow usecase.
+
+Sincerely,
+Karl Palsson
+
+
+> 
+> Signed-off-by: John Crispin <john@phrozen.org>
+> ---
+>  scripts/feeds | 42 ++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 42 insertions(+)
+> 
+> diff --git a/scripts/feeds b/scripts/feeds
+> index 304ef6cbaf..7cd4639ca6 100755
+> --- a/scripts/feeds
+> +++ b/scripts/feeds
+> @@ -7,6 +7,7 @@ use metadata;
+>  use warnings;
+>  use strict;
+>  use Cwd 'abs_path';
+> +use File::Copy;
+>  
+>  chdir "$FindBin::Bin/..";
+>  $ENV{TOPDIR} //= getcwd();
+> @@ -819,6 +820,42 @@ sub update {
+>  	return $failed;
+>  }
+>  
+> +sub setup {
+> +	my %opts;
+> +
+> +	getopts('bh', \%opts);
+> +
+> +	if ($opts{h}) {
+> +		usage();
+> +		return 0;
+> +	}
+> +
+> +	if ($opts{b}) {
+> +		copy("feeds.conf.default", "feeds.conf") or die "Copy failed: $!"
+> +	} else {
+> +		unlink "feeds.conf"
+> +	}
+> +
+> +	open(my $fd, ">>feeds.conf");
+> +	while (my $entry = shift @ARGV) {
+> +		my ($type, $name, $src) = split /,/, $entry;
+> +
+> +		$update_method{$type} or do {
+> +			warn "Unknown type '$type' in parameter $entry\n";
+> +			unlink "feeds.conf";
+> +			return 1;
+> +		};
+> +		if ($name =~ /\s/ || $src =~ /\s/) {
+> +			warn "Feed names or sources may not contain whitespace characters in parameter $entry\n";
+> +			unlink "feeds.conf";
+> +			return 1;
+> +		}
+> +		printf $fd "%s %s %s\n", $type, $name, $src;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  sub feed_config() {
+>  	foreach my $feed (@feeds) {
+>  		my $installed = (-f "feeds/$feed->[1].index");
+> @@ -870,6 +907,10 @@ Commands:
+>  	    -i :           Recreate the index only. No feed update from repository is performed.
+>  	    -f :           Force updating feeds even if there are changed, uncommitted files.
+>  
+> +	setup [options] <type,name,link> <type,name,link> ...: generate feeds.conf
+> +	Options:
+> +	    -b :           Use feeds.conf.default as base for new feeds.conf.
+> +
+>  	clean:             Remove downloaded/generated files.
+>  
+>  EOF
+> @@ -883,6 +924,7 @@ my %commands = (
+>  	'search' => \&search,
+>  	'uninstall' => \&uninstall,
+>  	'feed_config' => \&feed_config,
+> +	'setup' => \&setup,
+>  	'clean' => sub {
+>  		system("rm -rf ./feeds ./package/feeds");
+>  	}
+> -- 
+> 2.20.1
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+--==tNsjLuQmHSfLq343sN3YujFpUGTC3m==--
+
+--==h6azuvzvIAg4R5DrrsC6Ta7EYpKcjr==
+Content-Type: application/pgp-signature; name="OpenPGP-digital-signature.html"
+Content-Description: OpenPGP Digital Signature
+Content-Disposition: attachment; filename="OpenPGP-digital-signature.html"
+
+<html><body><h1>Digital Signature</h1><p>
+
+This is a digital signature, which can be used to verify
+the authenticity of this message. You can safely discard
+or ignore this file if your e-mail software does not
+support digital signatures.
+
+</p><pre>
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEnwILnEDaXm8sr2OzGai1D9TVyvYFAlz3lsEACgkQGai1D9TV
+yvafNg/+NMKsQCdYV0JPU+5J3YRDgnTjLBO59KGUDmhcFecTGWFjyIsArneXZx6d
+VfwbXlK5jXjusvKNBnyzy4qIBaAWWlQESX7J4PD/iqRJE+iONsKfTi/U2PtbKsPf
+kiAV7OGO6VaMDBtAsTUCCRKfmzOyVbpPQQaY4J6R2FORVMenTGTQFrQqKYY3NM9S
+EYP2EGNU2WFs7F7MCTNy4QQP2qm99kW53+R82GgMYIKFJvPzRL5X+LcKqGQGKR05
+A4XywS4gX4Q8hhhYE6nXy6ZPcNGpa3vjL2flkeoS/1sh+RE/o8xAdbIJNJaH+C3j
+vpGfR4GlxJS/IhxkgSrYMzGTP4/PiKo5G54N90dRDY1YOtk5oTA1pwHZLQpoHVD3
+Xehl8TcHKUPxZvmJJLv+rMMb3rNVj/OIJAnrRVI1cBG4Tl734nKNpmY7a70TNd2v
+Pf2uAZLuxDRn2T1M9L0hTffNosU875C0jWJmntTtthEM7NvZAlItgyGMiMFbiKVF
+4hZDOzrHc+aFdwvTSPFF0YYxd9j2aL3ErEFTCYm7oT8z/RN8/LCwl2nL4VW66hkC
+kTsjyzzqgh9/H4WQWUxtWDv+6GXKl8vgaWkS/hr/eqOVot5C50VjTRbFUCofP8bK
+kp2No5L8v6AEOD0ftdbITxWhypCY3J5juhE4n9Or24bUly3Dp4o=
+=S1oO
+-----END PGP SIGNATURE-----
+
+</pre><hr><i><a href='https://www.mailpile.is/'>Generated by Mailpile</a>.</i></body></html>
+--==h6azuvzvIAg4R5DrrsC6Ta7EYpKcjr==--
+
+
+
+--===============4602429622697403090==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4602429622697403090==--
+
+

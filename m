@@ -2,80 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 348C036491
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 21:21:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B69236541
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 22:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oTOLx7SsRiEwZkWv79EEWQ7wlMyQ8XJD49jMlBazuYo=; b=bo/OR5+70jRje/8929OVhg+EG
-	gUf1VATXVGvKSsQY6zm1m02Qi8dzhEBQkMju2Q9lsgSZus0V0pK2jqxyOmKN3mCPhLx46COFm9Fon
-	jLrhmOs3BIEvidWFckXDIx84LWIFBbR5jm2JlgS/EVn5lxWpUe3Ckz//Lceefydbn8Z0aw+xqRm9l
-	XrcjmKiOcnOXg8c0bM4myITJqDSaKBEC1W1/DHmuBS9lD/a/Zfch/qUHa/qVD8Hy4CXEiZA4+MH0o
-	9kuRR2b0+FfCSJkLD25O75IL6TSgMZO3NQwqZ1FXSTbTUv0oxZXiMEV1r1YPlRKOuHElBsdfJnj0O
-	BRwgviVRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MNxJ2wywinTga7heF9A4Uz5bHGRxe8yPheRpMgUe1CQ=; b=OiLo0VM0T9YRtk
+	yiv2Gg4Tq76IInl+9h9D8Rg3t1kw3XZfKbH9xXQFYDoEPTEHSKy8EpCE/KDlTwBZiFsBrOcG2dFg9
+	ay5o+vNV+7C/sZl6ASOk0waYXZ1rxMz6MomKU80/VIhx1+9ampQtYrSsrX6KLmAB8R4bMTTbV99oW
+	DJ9tHNqJmu36QlafVsapnFMiWLUUS0RTynMNVCX0Mu4mKQp9zcP5soiwXVxVJ/N+K7gkxpvXDNB0e
+	RA4RMybNpg7JsAhGdEB5MEtTTmH4Nd+oYU3lU4QIIQo1I3Op6JJZw9PpZmhtlaFE0UVdLMnRQQS/G
+	WMYMdgY0uhUdcztjjd8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbTc-0004RM-0u; Wed, 05 Jun 2019 19:21:36 +0000
-Received: from smtp-out-so.shaw.ca ([64.59.136.137])
+	id 1hYcMD-000864-6R; Wed, 05 Jun 2019 20:18:01 +0000
+Received: from mx.allycomm.com ([138.68.30.55])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYbTU-0004Qv-UG
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 19:21:30 +0000
-Received: from [192.168.120.100] ([104.129.18.7]) by shaw.ca with ESMTPA
- id YbTNhvJXlGusjYbTRhfnUT; Wed, 05 Jun 2019 13:21:25 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=shaw.ca;
- s=s20180605; t=1559762485;
- bh=xga4Zt40C/77wdIo7ko3i9tnkhYU3t6EJ+R5FwzHMSo=;
- h=Subject:To:References:From:Date:In-Reply-To;
- b=LmgluHPh5+4BpGbD6ZA53ng6JuPvwwSJG+whzr5MlH7JA/N7WyZmgx2dU5qKmADFU
- FEHccNBqlUfwYJpw5KZXFHBUdNgBwgIKoqAGvY5D5BSuUFnJ4AQzpaLgNYQ5kYWw6d
- OLesW13cz5dHemAqju3NJLV9wo5NUE1vQOgYfVs9ffhA0eajlgMyMHRx7vcyZhl9EB
- MdUGsxZQP2GtS5ibT1BT7t+jzvsbhWkoEB9OHCh7MRVr/OrbE20baGItoXEom1wdcf
- 239IYaFX5ZNFdWMEl01VigdY8uFAEwuCCYkry24H2kcZZ7VoTiUVRn0SNB55r6VX6s
- h9rAYvHCj2I2w==
-X-Authority-Analysis: v=2.3 cv=fOdHIqSe c=1 sm=1 tr=0
- a=Bgo42vMeEbSibDPBEyw4oA==:117 a=Bgo42vMeEbSibDPBEyw4oA==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=r77TgQKjGQsHNAKrUKIA:9 a=jdP34snFAAAA:8
- a=XT_YGBXsNtQGTetirasA:9 a=QEXdDO2ut3YA:10 a=IM1BDPOpAAAA:8
- a=RPHX7RrVtH4Jw0-xi_QA:9 a=11BSWBsZ1i23WDfC:21 a=_W_S_7VecoQA:10
- a=jlphF6vWLdwq7oh3TaWq:22 a=siJ5BUxqvLcLn6gPV0Ge:22
+ id 1hYcM4-00083p-Au
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 20:17:54 +0000
+Received: from allycomm.com (unknown [IPv6:2601:647:5401:2210::49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.allycomm.com (Postfix) with ESMTPSA id B90DC22198;
+ Wed,  5 Jun 2019 13:17:20 -0700 (PDT)
+From: Jeff Kletsky <lede@allycomm.com>
 To: openwrt-devel@lists.openwrt.org
-References: <64c3f723-428e-df41-1186-d03477959544@shaw.ca>
- <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
-From: Kabuli Chana <anome@shaw.ca>
-Message-ID: <5f983fcb-7977-f923-f2a5-265bbd397697@shaw.ca>
-Date: Wed, 5 Jun 2019 13:21:20 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+Date: Wed,  5 Jun 2019 13:17:04 -0700
+Message-Id: <20190605201706.27462-1-lede@allycomm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfNr6NoqILHKZq+RULRwF73lY1KgUDDiCb4jslupxjOtv4fp/TB+RFh9++lRlgQ89LtsCQCL62KKV57x3rXd7jR0mhXQ38bTXU74bj5LYnrVEk47wuucH
- QpbSraa6QXCBpLcaQpUt+0iP1LOHBRiof3QYJ9c5+ZZOYjKzeAXBAFtTl1bpWLGYekmGWgWWLQtPZg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_122129_018790_56C3C5B2 
-X-CRM114-Status: UNSURE (   6.26  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190605_131752_445808_26FBBD7B 
+X-CRM114-Status: GOOD (  10.37  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.59.136.137 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [138.68.30.55 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] lua bug introduction
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH 0/2] kernel: mtd: spinand: backport-4.19:
+ Add'l chip support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,98 +59,74 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2504595237009553924=="
+Cc: Jeff Kletsky <git-commits@allycomm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============2504595237009553924==
-Content-Type: multipart/alternative;
- boundary="------------EEFDEBFDD986E510FE5F3A1D"
-Content-Language: en-US
+From: Jeff Kletsky <git-commits@allycomm.com>
 
-This is a multi-part message in MIME format.
---------------EEFDEBFDD986E510FE5F3A1D
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 7bit
+This patch series brings in various chips supported by the upstream
+SPI-NAND framework after 4.19 and through linux/next at this time.
 
-Through LuCI, stopping / disabling rngd, as I am also testing the urngd 
-change. Did not happen on an image generated yesterday.
+There are significant changes to the driver in 5.x that add new
+features that have not been backported as they are relatively invasive
+and/or require changes in upper layers, such as UBI, to provide
+benefit. These include:
 
-On 2019-06-05 1:16 p.m., Jo-Philipp Wich wrote:
-> Hi,
->
->> Something has started zeroing out /etc/rc.local contents, maybe:
->>
->> https://git.openwrt.org/?p=project/luci.git;a=commit;h=1c09ee5e42550d6339bffa58d4cba3461948e19c
-> Does it zero out itself or when using LuCI? The commit above will
-> touch rc.local when LuCI is not used.
->
-> ~ Jo
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+ * 509198485bf2 mtd: spinand: Implement mtd->_max_bad_blocks
+ * 377e517b5fa5 mtd: nand: Add max_bad_eraseblocks_per_lun info to memorg
+ * 981d1aa0697c mtd: spinand: Use the spi-mem dirmap API
 
---------------EEFDEBFDD986E510FE5F3A1D
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 7bit
+Those changes include the addition of a new bad-block limit parameter
+to the chip descriptions. This has been backed out of the impacted
+patch for the GD5F1GQ4UFxxG and noted in the OpenWrt patch file for
+future reference.
 
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <p>Through LuCI, stopping / disabling rngd, as I am also testing the
-      urngd change. Did not happen on an image generated yesterday.<br>
-    </p>
-    <div class="moz-cite-prefix">On 2019-06-05 1:16 p.m., Jo-Philipp
-      Wich wrote:<br>
-    </div>
-    <blockquote type="cite"
-      cite="mid:facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net">
-      <pre class="moz-quote-pre" wrap="">Hi,
+Two "fixes" present in upstream 5.0 appear already present on 4.19.47,
+and are noted in the related patch-commit message:
 
-</pre>
-      <blockquote type="cite">
-        <pre class="moz-quote-pre" wrap="">Something has started zeroing out /etc/rc.local contents, maybe:
+ * Fix the error/cleanup path in spinand_init()
+ * Handle the case where PROGRAM LOAD does not reset the cache
 
-<a class="moz-txt-link-freetext" href="https://git.openwrt.org/?p=project/luci.git;a=commit;h=1c09ee5e42550d6339bffa58d4cba3461948e19c">https://git.openwrt.org/?p=project/luci.git;a=commit;h=1c09ee5e42550d6339bffa58d4cba3461948e19c</a>
-</pre>
-      </blockquote>
-      <pre class="moz-quote-pre" wrap="">
-Does it zero out itself or when using LuCI? The commit above will
-touch rc.local when LuCI is not used.
+All patches refreshed against 4.19.47
 
-~ Jo
+This patch series supersedes https://patchwork.ozlabs.org/patch/1099813/
 
-</pre>
-      <br>
-      <fieldset class="mimeAttachmentHeader"></fieldset>
-      <pre class="moz-quote-pre" wrap="">_______________________________________________
-openwrt-devel mailing list
-<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
-<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
-</pre>
-    </blockquote>
-  </body>
-</html>
+Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
 
---------------EEFDEBFDD986E510FE5F3A1D--
+---
 
+Jeff Kletsky (2):
+  kernel: mtd: spinand: backport-4.19: Chip support through 5.1
+  kernel: mtd: spinand: Backport GigaDevice "F" from linux/next
 
---===============2504595237009553924==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ ...nbond-Add-support-for-W25N01GV.patch (new) |  42 ++++
+ ...l-support-for-Toshiba-TC58CVG2.patch (new) | 188 +++++++++++++++++
+ ...d-support-for-GigaDevice-GD5FxGQ4xA.patch} |  12 +-
+ ...d-macronix-Fix-ECC-Status-Read.patch (new) |  44 ++++
+ ...t-for-all-Toshiba-Memory-produ.patch (new) | 141 +++++++++++++
+ ...upport-for-GigaDevice-GD5F1GQ4UExxG.patch} |  13 +-
+ ...ros-for-page-read-ops-with-thr.patch (new) |  86 ++++++++
+ ...upport-for-two-byte-device-IDs.patch (new) |  48 +++++
+ ...t-for-GigaDevice-GD5F1GQ4UFxxG.patch (new) | 197 ++++++++++++++++++
+ 9 files changed, 761 insertions(+), 10 deletions(-)
+ create mode 100644 target/linux/generic/backport-4.19/421-v5.0-mtd-spinand-winbond-Add-support-for-W25N01GV.patch
+ create mode 100644 target/linux/generic/backport-4.19/422-v5.0-mtd-spinand-Add-initial-support-for-Toshiba-TC58CVG2.patch
+ rename target/linux/generic/backport-4.19/{450-v5.0-mtd-spinand-add-support-for-GigaDevice-GD5FxGQ4xA.patch => 423-v5.0-mtd-spinand-add-support-for-GigaDevice-GD5FxGQ4xA.patch} (94%)
+ create mode 100644 target/linux/generic/backport-4.19/426-v5.1-mtd-spinand-macronix-Fix-ECC-Status-Read.patch
+ create mode 100644 target/linux/generic/backport-4.19/427-v5.1-mtd-spinand-Add-support-for-all-Toshiba-Memory-produ.patch
+ rename target/linux/generic/backport-4.19/{451-v5.1-mtd-spinand-Add-support-for-GigaDevice-GD5F1GQ4UExxG.patch => 428-v5.1-mtd-spinand-Add-support-for-GigaDevice-GD5F1GQ4UExxG.patch} (89%)
+ create mode 100644 target/linux/generic/backport-4.19/431-v5.3-mtd-spinand-Define-macros-for-page-read-ops-with-thr.patch
+ create mode 100644 target/linux/generic/backport-4.19/432-v5.3-mtd-spinand-Add-support-for-two-byte-device-IDs.patch
+ create mode 100644 target/linux/generic/backport-4.19/433-v5.3-mtd-spinand-Add-support-for-GigaDevice-GD5F1GQ4UFxxG.patch
+
+-- 
+2.20.1
+
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2504595237009553924==--
-

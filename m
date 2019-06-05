@@ -2,38 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FAAF3647E
-	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 21:17:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D6523648E
+	for <lists+openwrt-devel@lfdr.de>; Wed,  5 Jun 2019 21:18:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7tVHpDDbbnZtbWYr+c5xVcRQXe6pwhhPO3KQabBUSgo=; b=Aycc2kF7DLRwK393kdPd4C5PJ
-	8NDDqB/QODQ3kuv/OCHoevsf/JJxhtrWX6+REgEbjPAr8TFxFiTpVeG1CPp7A6cOaG3TGXv+l2zg0
-	6toW6cf36U14hEcooJ+jGD45ccjlG7mN16xopWBOITX/MB4GOUm9p39JKx73efGWyGlP8bMQJfkIU
-	bKZpQ4U0k94NZ38D309TZK6KIlszLQBvTnERuX3qXSyXWcbpAP5tGU1/iQ2bQE5b9gQ6c+0izi555
-	+rv060LthXebE89oLOa+PxxoWDo5GQW2or6Qhy4NAlanbF4BIu65Ab1u7PP3Js3hv7+n1TcABQK26
-	a3dDg+Bfg==;
+	 bh=VQOB2X3IUe5VUQR1/IzMy2tNm6HDvQ7Hr5GoGDhaPZw=; b=GekdM3hNKdcr6n4cVNVAlTzzd
+	lbDy57opZApZNdlopJCgIh2b0C+hwrrcRYZ6+aucZ2DPZ4PxmY4SnsjTKtmgWhuW6SsDlLClnEXsM
+	BWrTDqTWOZPmtzwpqNvW95bKxMHVq/iTjQoRQtBD3gj/xDWw+RUX5oWh2mXd9HXeLWnNQ9dtOfDem
+	X7IkewMikmLTl9U3hGjF8k7YvWY53cCxOZlKbivCjrRuQPzwq1v037409DDYxUhRBc/P3vkkGbe+F
+	zKwptE2CZ9GN24IuIZ4rX/uGutXtW2YJ6ztH/c0greDl54D8XVSfPQ8A69u15zEUwxk5uVLrbDOPV
+	VnJa4RLbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYbOv-0002Gk-9O; Wed, 05 Jun 2019 19:16:45 +0000
+	id 1hYbQV-0002p2-5K; Wed, 05 Jun 2019 19:18:23 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYbOo-0002Fy-6P
- for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 19:16:40 +0000
+ id 1hYbQN-0002oh-2M
+ for openwrt-devel@lists.openwrt.org; Wed, 05 Jun 2019 19:18:16 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 60A9E556F5; Wed,  5 Jun 2019 21:16:31 +0200 (CEST)
+ id CF57A55719; Wed,  5 Jun 2019 21:18:13 +0200 (CEST)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 29CE5556F3
- for <openwrt-devel@lists.openwrt.org>; Wed,  5 Jun 2019 21:16:30 +0200 (CEST)
-Received: (qmail 9502 invoked from network); 5 Jun 2019 21:16:30 +0200
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 946A655717
+ for <openwrt-devel@lists.openwrt.org>; Wed,  5 Jun 2019 21:18:13 +0200 (CEST)
+Received: (qmail 13747 invoked from network); 5 Jun 2019 21:18:13 +0200
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 5 Jun 2019 21:16:30 +0200
+ 5 Jun 2019 21:18:13 +0200
 To: openwrt-devel@lists.openwrt.org
 References: <64c3f723-428e-df41-1186-d03477959544@shaw.ca>
+ <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
@@ -79,15 +80,15 @@ Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
  BPsre6PGA7a1gXwPeTfUFMw0pKFhpPZO7XnPSgnRNDNI42Ldcoz0xI7Qg2zCsQR4YHwnu6o8
  pzadX6sSiW/la5oFlktj+IN1Avgqf5YenhKX8hj0d4uhJB4w5S+vQEySwmiZ1HWmYLcHHR9f
  Xx5IapIyoA==
-Message-ID: <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
-Date: Wed, 5 Jun 2019 21:16:26 +0200
+Message-ID: <be617f00-c1b0-dd56-e0bc-684b031ff115@wwsnet.net>
+Date: Wed, 5 Jun 2019 21:18:12 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <64c3f723-428e-df41-1186-d03477959544@shaw.ca>
+In-Reply-To: <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190605_121638_397470_9FB88A3F 
-X-CRM114-Status: UNSURE (   6.89  )
+X-CRM114-CacheID: sfid-20190605_121815_261661_5EF2FFD1 
+X-CRM114-Status: UNSURE (   7.09  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -110,73 +111,71 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2908434659742889240=="
+Content-Type: multipart/mixed; boundary="===============0184493092659868934=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2908434659742889240==
+--===============0184493092659868934==
 Content-Type: multipart/signed; micalg=pgp-sha256;
  protocol="application/pgp-signature";
- boundary="ZbncLOMH3lVG2k3Qy6KkOcPHZ1fYgsvpS"
+ boundary="xFpxulULy2u2owy5Ta1Zw0s0ublnFga03"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---ZbncLOMH3lVG2k3Qy6KkOcPHZ1fYgsvpS
-Content-Type: multipart/mixed; boundary="OnyN25WOXoDUQVaWW1x1zbAtyJceZZZfl";
+--xFpxulULy2u2owy5Ta1Zw0s0ublnFga03
+Content-Type: multipart/mixed; boundary="B3MDpsCBtjlHUAhS5F4oODr7Gbsjf35Qo";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
+Message-ID: <be617f00-c1b0-dd56-e0bc-684b031ff115@wwsnet.net>
 Subject: Re: [OpenWrt-Devel] lua bug introduction
 References: <64c3f723-428e-df41-1186-d03477959544@shaw.ca>
-In-Reply-To: <64c3f723-428e-df41-1186-d03477959544@shaw.ca>
+ <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
+In-Reply-To: <facf0acf-63ac-37ab-ac22-83decbea6234@wwsnet.net>
 
---OnyN25WOXoDUQVaWW1x1zbAtyJceZZZfl
+--B3MDpsCBtjlHUAhS5F4oODr7Gbsjf35Qo
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-> Something has started zeroing out /etc/rc.local contents, maybe:
->=20
-> https://git.openwrt.org/?p=3Dproject/luci.git;a=3Dcommit;h=3D1c09ee5e42=
-550d6339bffa58d4cba3461948e19c
+> Does it zero out itself or when using LuCI? The commit above will
+> touch rc.local when LuCI is not used.
 
-Does it zero out itself or when using LuCI? The commit above will
-touch rc.local when LuCI is not used.
+This should have been: "will *not* touch rc.local when LuCI is not used"
 
 ~ Jo
 
 
---OnyN25WOXoDUQVaWW1x1zbAtyJceZZZfl--
+--B3MDpsCBtjlHUAhS5F4oODr7Gbsjf35Qo--
 
---ZbncLOMH3lVG2k3Qy6KkOcPHZ1fYgsvpS
+--xFpxulULy2u2owy5Ta1Zw0s0ublnFga03
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAlz4FQoACgkQQuLLvzou
-ZtMglg//TpcFlx+fkWFx2kMVmgHWaQpvtezNk0boQbwz08rwIk3dFG8TMu62D5Zw
-vdlXClwfbQwQ8aElyFFMJjJ+qhDE8v5GqjB0KQ3nF33R1JPP/WrZJ0Kk4tcglEfa
-T8+80zCS+PeI/Vjyx0+Kh60f8bQJIMtE2qzlbpJkNCpNWwmsHTtRlRGv3J9kZ58k
-F7PsnrU0/URuLMnPIQtsd73H0gG4yDJeT74Cm0qZtoA9xz6MiPyZB0/aUya1qW39
-z/wMEiscg5tY5NcYkTDDg5Ewa/wMEmzDhWVN200pBeVw0U9eq6Q0hCvR7evoT0j9
-xAnZdDQeEQ5xx2OB04HDHUFt65OvOBYjjf8ZM1XU5i09o4agx4H5BaiHzVMpfifo
-N0r5TDPB+8WgOdWwwu3Lk2ZK5wLvgn6Knjzy9kqyXSCS9TjZ4Oeh/VCIjMjRn8tq
-8qsZKLP7yzsHg4E3uM24OJmRNEVQQ/RRo/+U2Z6poTI/rPQoY5m+7SWZomwOUDsZ
-wmt1e7NfD43LUaRzIi/Tr1+aGWviGro2ysPIlcvOSK0oas3Y/gmkKWtx3Ep6NR6N
-FwpnljAieZi/OBOMom48ehACna0Sj/mm4c2Ci0ymAqaQID+T9g/2ynGXj1wkyM+H
-ggvKUwIV+C/dBr/tiFymr+O8GGJ78DguC8KXpMRQBeORPRsV7Ek=
-=LDiN
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAlz4FXQACgkQQuLLvzou
+ZtNXhxAA1du5C8th8ENglO7BK9yPrRz4VSQRzy+QLOyBgqZ86oZGQfBb83fgogg3
+QC4wxw8EvfwmBWvXBxHBzzg3YO8dewoPAZCCQ7e8NUqth68kXWb163BxO/6+sxru
+4c+tua8M/+KQJZU1IXyEdsaZ82ZtqmNJYiGa7inSbCnVpi0O642JbX0qxlPXLuGL
+jeRPhyVognsmYTtToWcbh3rNonu7W6e7xJx5fucIrtPfeRwX7Zd5z9izIUgX/I/p
+AhRzAN4WGALMTzGD2d4h14bJmcAMMU08OqumQD4SZq+zafC4A7kNOa0RcVI1uk/T
+stzsABBy4+mzvF3AwBdGEmzhU9E0CpXygMilI+xKlbmJlU4CfBs6uf5sAOaOVWWn
+Gp7cXfRziQWGmyHABj+xWqglSOoi3EezbwkBuffcmvySOLLLK8/wn8n1qrrzrAWb
+2neQAmab4tNOVRFM8LV6C7n4XtE6PLuX9LxBkn4R0mY4/aRnCWUY5/z4BI6BTiI1
+SLCHa66oTST9/Ir3eAV5WI950CU3qbaTu/cOFTKMlQDaWT86TmV8FpkhDgiY/+Mp
+4pPaWeii30BtPx2W7QeYNkfPDG/QniwMDNks5eZ2F11+6JlGJgPnKMBrzbHZFgOd
+axLPkVMyG/stg8I25ksYDQhnGXDAog4M2PpkjOnazgbHA7ZNw24=
+=Hr7T
 -----END PGP SIGNATURE-----
 
---ZbncLOMH3lVG2k3Qy6KkOcPHZ1fYgsvpS--
+--xFpxulULy2u2owy5Ta1Zw0s0ublnFga03--
 
 
---===============2908434659742889240==
+--===============0184493092659868934==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -187,5 +186,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2908434659742889240==--
+--===============0184493092659868934==--
 

@@ -2,89 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EFB13797B
-	for <lists+openwrt-devel@lfdr.de>; Thu,  6 Jun 2019 18:28:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3DA637A00
+	for <lists+openwrt-devel@lfdr.de>; Thu,  6 Jun 2019 18:49:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mgfRBXuW5WOcnQ0YIY+myx2ItVEIQG1NvHHvU8VEPWQ=; b=bEDFp8i02qn45Q
-	IJNLvridHnB18yo8ksFzh6UjXK0er2qYg7e+B4C411Lrbe3zcSUDkwaR4LHpBoBuRSJXT5p5Ivi5X
-	kkyt61DkDwC0pYKd4Ok54U3eYwpVzb2JXRvNThwobSRTsBs8TYLma9XjZePJE+jJk6fb2xqiMDTu3
-	kn7dooLDd+Sg9TbE/j2ldaiw87J9hX2CtBhIxoMX/SGMyan7pzIiE/TTJ7U93oAY8nARd3NT07eDe
-	mo+pOst20TE6Z/WcvM1D2ytdGx+GxGwl3YltUta6tzq4T7dyhNAOGWA7+DsW1noZv+vzgLSxBBjha
-	9/eZPaIbTH75UXjNOToQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+suAGqjjAJFK+knJNX0sO+w3gwEDYUAa3EK3driYrsc=; b=uqggmivvshwsZz2oiQu428ISU
+	wlet07iYbzZcozprNQDo86QK1AcnZbFwkOcG0bYR5/aQUFtosq/n1s05+RD4r2JSvlrHvCho8UQrH
+	t6ei2RnqLVGcCfCPFbx29Y+sHQFOAz12CSXQDIe9mjopqC/f9vLd/JnFni+BkwkgdHockVCPGmtKb
+	ykNij+Gtwvv+AdSk6nsbIzijt8iG45+XODsNq6p9Dmwn9AR4dn1LknQf7lzJ/ol1h4u9Ekm6IxHMN
+	atP83wzGGr3gQbMwDzL5vnQxKdISxgGxTVD/WxENWl7q1PabgyJjj4UDPwQHxkVTN4BOijVulODLu
+	gqPVZ3iFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYvF4-0004ui-Ug; Thu, 06 Jun 2019 16:27:54 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1hYvZw-00010o-1w; Thu, 06 Jun 2019 16:49:28 +0000
+Received: from mail3.marcant.net ([217.14.160.188])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYvEv-0004uN-UN
- for openwrt-devel@lists.openwrt.org; Thu, 06 Jun 2019 16:27:47 +0000
-Received: by mail-wr1-x443.google.com with SMTP id f9so3067245wre.12
- for <openwrt-devel@lists.openwrt.org>; Thu, 06 Jun 2019 09:27:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vEdO6SQW8ICnZA4vXXJRGFk+RF07UF+of5ElVN4SXQY=;
- b=ZperZ7W/lAeTS5Me36wutQ+SfKBtkP9Gfqf6jXwyPKA+Iod9YunEwwqmTVOYAqC66I
- CnXmFGWgIZ8zVePyogM+6jvn2CeIsZs7n0fnDvjxYL8ppjl3YcS7jYqcnu5xcxeVbSk3
- PQwN9gvLD3QkMv2L0wrL/Gi5O56ljOZhZKLDVziUBThe5J2MRzWeViRcaS8NW9oSVelU
- wCqX83GoZpNCJh4Odmp7uXUEORbPWUsOI8EeDZBQKGRIZepXJRWFEPRjFX86Nu0qflXr
- 630t9VTl+0KwEsaySLGICIyuyL20OKWlwwr1ybKq4zuwIVyENePMhFvOBkALfns1Z6Ep
- cNKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vEdO6SQW8ICnZA4vXXJRGFk+RF07UF+of5ElVN4SXQY=;
- b=JvZ7LNVkWoKp3xJEbxjTBIpjx12PYBeYQTfgJg8LrXqTM4nbkQMcvsDCGNFxWdxnG2
- g2X3rFmn5+DoINceihPX8vnLLHOYxTNhY/bJFdxtUlq4L0P+woijvOvftoTd43allqQq
- 3h3CRVmVQP/zNlL5m1jYPNpWg+nu0PYebUfT6YPEXcpr4Bfbkswmpai235x5uZyaScB6
- U88L0OmgvOQjqxgaCJGVuTpmiMa/u2soLGolPG/tYlicvcDsJmPrrHS/6WeaKCSgcB3J
- ShO/Ud0FCwzHe9YqP32bYl/nf0Vk90nLS8SajWLWhwzK4PIVdQCBwNZTMzutiDYPzcmd
- zLRw==
-X-Gm-Message-State: APjAAAWt3maqLDekhg40t9LD7nzSCTnlt2O+MxFGNWZzU+YBDv/8gceD
- fcXp5h3m8ZGeIzokXwEk9rKCPjw8
-X-Google-Smtp-Source: APXvYqyQp7r4Q6s1y755cztYpQNVJww0TR0iIcg8sLERVv9EOw9Wf5iTC4FELephHl/fWuyc4ytQOw==
-X-Received: by 2002:adf:c5c1:: with SMTP id v1mr12978081wrg.129.1559838462298; 
- Thu, 06 Jun 2019 09:27:42 -0700 (PDT)
-Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
- by smtp.gmail.com with ESMTPSA id b14sm1592617wro.5.2019.06.06.09.27.41
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 06 Jun 2019 09:27:41 -0700 (PDT)
-From: Kristian Evensen <kristian.evensen@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu,  6 Jun 2019 18:27:39 +0200
-Message-Id: <20190606162739.7531-1-kristian.evensen@gmail.com>
-X-Mailer: git-send-email 2.19.1
+ id 1hYvZq-00010T-3c
+ for openwrt-devel@lists.openwrt.org; Thu, 06 Jun 2019 16:49:23 +0000
+Received: from [192.168.180.1] (port=37608 helo=admins.marcant.net)
+ by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
+ (envelope-from <avalentin@marcant.net>) id 1hYvZd-00045w-09
+ for openwrt-devel@lists.openwrt.org; Thu, 06 Jun 2019 18:49:09 +0200
+Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
+ by admins.marcant.net (Postfix) with ESMTPA id D85DD28021E
+ for <openwrt-devel@lists.openwrt.org>; Thu,  6 Jun 2019 18:49:08 +0200 (CEST)
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <20190606135055.30432-1-avalentin@marcant.net>
+From: Andre Valentin <avalentin@marcant.net>
+Openpgp: id=C88B57BF85C414CC6289E3A9BAECFA393828FA4F; url=hkp://subkeys.pgp.net
+Message-ID: <b6c62122-aa2d-30e3-1fe2-5e4e40d75216@marcant.net>
+Date: Thu, 6 Jun 2019 18:49:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20190606135055.30432-1-avalentin@marcant.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_092745_978029_A4A4332B 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20190606_094922_297151_443781FD 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [217.14.160.188 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH] ramips: Remove redundant LED-cases
+Subject: Re: [OpenWrt-Devel] [PATCH 0/3] Add xfrm interface support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,261 +65,135 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5816457164938818161=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-01_leds has several redundant LED-cases. This commit cleans
-up the file by merging these cases into shared cases.
+This is a cryptographically signed message in MIME format.
 
-Signed-off-by: Kristian Evensen <kristian.evensen@gmail.com>
----
- .../ramips/base-files/etc/board.d/01_leds     | 100 ++++++------------
- 1 file changed, 32 insertions(+), 68 deletions(-)
+--===============5816457164938818161==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms090208070404060407070208"
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
-index 1b02088ed2..35d046cc90 100755
---- a/target/linux/ramips/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/base-files/etc/board.d/01_leds
-@@ -13,30 +13,29 @@ boardname="${board##*,}"
- board_config_update
- 
- case $board in
--3g-6200n)
-+3g-6200n|\
-+br-6475nd|\
-+mzk-w300nh2)
- 	set_wifi_led "$boardname:amber:wlan"
- 	;;
- 3g-6200nl|\
-+air3gii|\
- hilink,hlk-7628n|\
-+mr-102n|\
- skylab,skw92a|\
--wnce2001)
-+wnce2001|\
-+zbt-we2026)
- 	set_wifi_led "$boardname:green:wlan"
- 	;;
--br-6475nd|\
--mzk-w300nh2)
--	set_wifi_led "$boardname:amber:wlan"
--	;;
- ai-br100)
- 	ucidef_set_led_netdev "wan" "wan" "$boardname:blue:wan" "eth0.2"
- 	set_wifi_led "$boardname:blue:wlan"
- 	;;
--air3gii)
--	set_wifi_led "$boardname:green:wlan"
--	;;
- alfa-network,ac1200rm)
- 	set_wifi_led "$boardname:green:wlan2g" "wlan1"
- 	;;
--alfa-network,awusfree1)
-+alfa-network,awusfree1|\
-+edimax,br-6478ac-v2)
- 	set_wifi_led "$boardname:blue:wlan"
- 	;;
- alfa-network,tube-e4g)
-@@ -96,37 +95,47 @@ cudy,wr1000)
- 	ucidef_set_led_switch "lan1" "lan1" "$boardname:blue:lan1" "switch0" "0x08"
- 	ucidef_set_led_switch "lan2" "lan2" "$boardname:blue:lan2" "switch0" "0x04"
- 	;;
--d240)
-+d240|\
-+mlw221|\
-+mlwg2|\
-+rakwireless,rak633|\
-+rt-ac51u)
- 	set_wifi_led "$boardname:blue:wifi"
- 	;;
- dcs-930l-b1)
- 	ucidef_set_led_netdev "wifi" "WiFi" "$boardname:blue:wps"
- 	;;
- dir-300-b1|\
--dir-600-b1|\
--dir-620-a1)
--	set_wifi_led "rt2800pci-phy0::radio"
--	;;
- dir-300-b7|\
- dir-320-b1|\
-+dir-600-b1|\
- dir-610-a1|\
-+dir-615-d|\
-+dir-615-h1|\
-+dir-620-a1|\
- esr-9753|\
- hlk-rm04|\
-+kn|\
-+nbg-419n2|\
- sl-r7205|\
- v11st-fe|\
- w306r-v20|\
-+w502u|\
- wt1520-4M|\
--wt1520-8M)
--	set_wifi_led "rt2800pci-phy0::radio"
--	;;
--dir-615-d|\
--dir-615-h1)
-+wt1520-8M|\
-+zyxel,keenetic-start)
- 	set_wifi_led "rt2800pci-phy0::radio"
- 	;;
- dir-620-d1|\
- dlink,dwr-116-a1|\
- head-weblink,hdrm200|\
--mzk-ex300np)
-+kn_rc|\
-+kn_rf|\
-+kng_rc|\
-+mzk-ex300np|\
-+oy-0001|\
-+tew-714tru|\
-+zbt-wr8305rt)
- 	set_wifi_led "$boardname:green:wifi"
- 	;;
- dlink,dwr-118-a1)
-@@ -149,9 +158,6 @@ dlink,dwr-922-e2)
- dir-860l-b1)
- 	ucidef_set_led_netdev "wan" "wan" "$boardname:green:net" "eth0.2"
- 	;;
--edimax,br-6478ac-v2)
--	set_wifi_led "$boardname:blue:wlan"
--	;;
- ex2700|\
- wn3000rpv3)
- 	set_wifi_led "$boardname:green:router"
-@@ -163,7 +169,8 @@ ex3700)
- f5d8235-v1)
- 	set_wifi_led "$boardname:blue:wireless"
- 	;;
--fonera20n)
-+fonera20n|\
-+tiny-ac)
- 	set_wifi_led "$boardname:orange:wifi"
- 	;;
- gnubee,gb-pc1|\
-@@ -212,15 +219,6 @@ kimax,u35wf)
- 	set_wifi_led "$boardname:blue:wifi"
- 	ucidef_set_led_netdev "eth" "ETH" "$boardname:green:eth" "eth0"
- 	;;
--kn|\
--nbg-419n2)
--	set_wifi_led "rt2800pci-phy0::radio"
--	;;
--kn_rc|\
--kn_rf|\
--kng_rc)
--	set_wifi_led "$boardname:green:wifi"
--	;;
- lava,lr-25g001)
- 	ucidef_set_led_netdev "wlan2g" "WiFi 2.4GHz" "$boardname:green:wlan2g" "wlan1"
- 	ucidef_set_led_netdev "wlan5g" "WiFi 5GHz" "$boardname:green:wlan5g" "wlan0"
-@@ -243,13 +241,6 @@ mikrotik,rbm11g)
- miniembplug)
- 	set_wifi_led "$boardname:red:wlan"
- 	;;
--mlw221|\
--mlwg2)
--	set_wifi_led "$boardname:blue:wifi"
--	;;
--mr-102n)
--	set_wifi_led "$boardname:green:wlan"
--	;;
- mr200)
- 	ucidef_set_led_netdev "lan" "lan" "$boardname:white:lan" "eth0.1"
- 	ucidef_set_led_netdev "wan" "wan" "$boardname:white:wan" "usb0"
-@@ -267,9 +258,6 @@ netgear,r6120)
- 	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x10"
- 	ucidef_set_led_wlan "wlan2g" "WiFi 2.4GHz" "$boardname:green:wlan2g" "phy0tpt"
- 	;;
--oy-0001)
--	set_wifi_led "$boardname:green:wifi"
--	;;
- gehua,ghl-r-001|\
- pbr-m1)
- 	ucidef_set_led_netdev "internet" "internet" "$boardname:blue:internet" "eth0.2"
-@@ -292,9 +280,6 @@ wndr3700v5)
- 	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x10"
- 	set_wifi_led "$boardname:green:wifi"
- 	;;
--rakwireless,rak633)
--	set_wifi_led "$boardname:blue:wifi"
--	;;
- re350-v1)
- 	ucidef_set_led_netdev "wifi2g" "Wifi 2.4G" "$boardname:blue:wifi2G" "wlan0"
- 	ucidef_set_led_netdev "wifi5g" "Wifi 5G" "$boardname:blue:wifi5G" "wlan1"
-@@ -305,9 +290,6 @@ rp-n53)
- 	ucidef_set_led_netdev "eth" "Network" "$boardname:white:back" "eth0"
- 	set_wifi_led "$boardname:blue:wifi"
- 	;;
--rt-ac51u)
--	set_wifi_led "$boardname:blue:wifi"
--	;;
- rt-n12p)
- 	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" eth0.1
- 	ucidef_set_led_netdev "wan" "wan" "$boardname:green:wan" eth0.2
-@@ -322,12 +304,6 @@ tama,w06)
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth0"
- 	ucidef_set_led_wlan "wlan" "WLAN" "$boardname:green:wlan" "phy0tpt"
- 	;;
--tew-714tru)
--	set_wifi_led "$boardname:green:wifi"
--	;;
--tiny-ac)
--	set_wifi_led "$boardname:orange:wifi"
--	;;
- tl-wr840n-v4)
- 	ucidef_set_led_wlan "wlan2g" "wlan2g" "$boardname:green:wlan" "phy0tpt"
- 	ucidef_set_led_switch "lan" "lan" "$boardname:green:lan" "switch0" "0x1e"
-@@ -397,9 +373,6 @@ vocore-8M|\
- vocore-16M)
- 	ucidef_set_led_netdev "eth" "ETH" "vocore:orange:eth" "eth0"
- 	;;
--w502u)
--	set_wifi_led "rt2800pci-phy0::radio"
--	;;
- wavlink,wl-wn570ha1)
- 	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x01"
- 	ucidef_set_rssimon "wlan0" "200000" "1"
-@@ -457,9 +430,6 @@ zbt-ape522ii)
- zbt-wa05)
- 	set_wifi_led "$boardname:blue:air"
- 	;;
--zbt-we2026)
--	set_wifi_led "$boardname:green:wlan"
--	;;
- zbt-we826-16M|\
- zbt-we826-32M)
- 	set_wifi_led "zbt-we826:green:wifi"
-@@ -470,9 +440,6 @@ zbtlink,zbt-we1226)
- 	ucidef_set_led_switch "lan2" "LAN2" "$boardname:green:lan2" "switch0" "0x02"
- 	ucidef_set_led_switch "wan" "WAN" "$boardname:green:wan" "switch0" "0x10"
- 	;;
--zbt-wr8305rt)
--	set_wifi_led "$boardname:green:wifi"
--	;;
- zorlik,zl5900v2)
- 	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" eth0
- 	;;
-@@ -480,9 +447,6 @@ zyxel,keenetic-extra-ii)
- 	set_wifi_led "$boardname:green:wifi"
- 	ucidef_set_led_switch "internet" "internet" "$boardname:green:internet" "switch0" "0x01"
- 	;;
--zyxel,keenetic-start)
--	set_wifi_led "rt2800pci-phy0::radio"
--	;;
- youku-yk1)
- 	set_wifi_led "$boardname:blue:air"
- 	ucidef_set_led_switch "wan" "wan" "$boardname:blue:wan" "switch0" "0x10"
--- 
-2.19.1
+This is a cryptographically signed message in MIME format.
 
+--------------ms090208070404060407070208
+Content-Type: text/plain; charset=utf-8
+Content-Language: de-DE
+Content-Transfer-Encoding: quoted-printable
+
+Hi!
+
+the new strongswan release 5.8.0 supports these xfrm interfaces.
+
+Kind regards,
+
+Andr=C3=A9
+
+Am 06.06.19 um 15:50 schrieb Andr=C3=A9 Valentin:
+> This adds support for xfrm interfaces. These interfaces are used as tun=
+nel
+> interfaces for IPsec allowing route-based tunnels.
+> Compared to vti, xfrm interfaces do not need endpoints. This is optimal=
+ for
+> dynamic IP address setups.
+>=20
+
+
+--------------ms090208070404060407070208
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
+C6IwggVTMIIEO6ADAgECAhB+YQhLRWb/6UCa4sHjgGB7MA0GCSqGSIb3DQEBCwUAMIGCMQsw
+CQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoM
+GkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBB
+dXRoZW50aWNhdGlvbiBDQSBHMTAeFw0xOTAzMjkxMDA5NTlaFw0yMDAzMjkwOTA5NTlaMCAx
+HjAcBgNVBAMMFWF2YWxlbnRpbkBtYXJjYW50Lm5ldDCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBAJcCHX/1+jgsbWlaJ6wFap2kdliLBq0HeTyjDmKThw3IEaRnADoNzNuEkrcg
+1gesoOXULL92Qjde+35aSVOrlOEaB7bKZLIloA2cq5YbVlGHW7AbrhjwhwJwP/DLAvhUZ9K3
+jt3L5KLkeeA3fyX6SyUnuk2blXU7zT+WZdNrXBE3vGhGqWXmfVvaeKiWBEGU/yh9NoQyBj7r
+ufRlRwVcLB1U/g0UxfUGCM2f3SOJ8SQfKskq/cLt+GVx3wJKfRn6zKqlGXgkrzgBAwinhkNB
+YapdF49zDVvawv7mgFcUoGtNqqzFFHC4eYBM5XO7GcuBf+yO1XYXHSKcvCX/4sxEGBsCAwEA
+AaOCAiQwggIgMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUfmD8+GynPT3XrpOheQKPs3Qp
+O/UwSwYIKwYBBQUHAQEEPzA9MDsGCCsGAQUFBzAChi9odHRwOi8vY2FjZXJ0LmFjdGFsaXMu
+aXQvY2VydHMvYWN0YWxpcy1hdXRjbGlnMTAgBgNVHREEGTAXgRVhdmFsZW50aW5AbWFyY2Fu
+dC5uZXQwRwYDVR0gBEAwPjA8BgYrgR8BGAEwMjAwBggrBgEFBQcCARYkaHR0cHM6Ly93d3cu
+YWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
+BDCB6AYDVR0fBIHgMIHdMIGboIGYoIGVhoGSbGRhcDovL2xkYXAwNS5hY3RhbGlzLml0L2Nu
+JTNkQWN0YWxpcyUyMENsaWVudCUyMEF1dGhlbnRpY2F0aW9uJTIwQ0ElMjBHMSxvJTNkQWN0
+YWxpcyUyMFMucC5BLi8wMzM1ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9u
+TGlzdDtiaW5hcnkwPaA7oDmGN2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkv
+QVVUSENMLUcxL2dldExhc3RDUkwwHQYDVR0OBBYEFMojrOmK2PN+bO+vAvSFH10XzXmtMA4G
+A1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQsFAAOCAQEAp6+QqVi+3pAreJTDH3/gUS96AmOI
+dSr2XgwkOTLB3a3ONyfoXtcRnxD80HqBFuMa4e66cYm4iGpUSLJZjhxsKrtwmU9pb2lQIJCG
+T854lcbwhUDEu2By7hL/W4VXC+sejhUeYH3q5+6KcVNT5sydM5mhHgK1JfVW6Ml7t9ZRk4Op
+GKDuTt2viAVDerTvLiKbAXY9jwKXLNGeT0IUlfCVGzG+p4I0PSKsSRiRAmvEWTdZBCnhka0Y
+JGwIF3ZFUGdqPo7AskjLR70n78GGxpINWquCgH09GkrOu4eBWM4G+b4GQ+qZs8YHHTPd78ps
+2+n7iVsRX7066chFUo+O6rZRsTCCBkcwggQvoAMCAQICCCzUitOxHg+JMA0GCSqGSIb3DQEB
+CwUAMGsxCzAJBgNVBAYTAklUMQ4wDAYDVQQHDAVNaWxhbjEjMCEGA1UECgwaQWN0YWxpcyBT
+LnAuQS4vMDMzNTg1MjA5NjcxJzAlBgNVBAMMHkFjdGFsaXMgQXV0aGVudGljYXRpb24gUm9v
+dCBDQTAeFw0xNTA1MTQwNzE0MTVaFw0zMDA1MTQwNzE0MTVaMIGCMQswCQYDVQQGEwJJVDEP
+MA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5w
+LkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlv
+biBDQSBHMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMD8wYlW2Yji9ARlv80J
+NasoKTD+DMr3J6scEe6GPV3k9WxEtgxXM5WX3oiKjS2p25Mqk8cnV2fpMaEvdO9alrGes0vq
+cUqly7PkU753RGlseYXR2XCjVhs4cuRYjuBmbxpRSJxRImmPnThKY41r0nl6b3A6Z2MOjPQF
+7h6OCYYwtz/ziv/+UBV587U2uIlOukaS7Xjk4ArYkQsGTSsfBBXqqn06WL3xG+B/dRO5/mOt
+Y5tHdhPHydsBk2kksI3PJ0yNgKV7o6HM7pG9pB6sGhj96uVLnnVnJ0WXOuV1ISv2eit9ir60
+LjT99hf+TMZLxA5yaVJ57fYjBMbxM599cw0CAwEAAaOCAdUwggHRMEEGCCsGAQUFBwEBBDUw
+MzAxBggrBgEFBQcwAYYlaHR0cDovL29jc3AwNS5hY3RhbGlzLml0L1ZBL0FVVEgtUk9PVDAd
+BgNVHQ4EFgQUfmD8+GynPT3XrpOheQKPs3QpO/UwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSME
+GDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DBFBgNVHSAEPjA8MDoGBFUdIAAwMjAwBggrBgEF
+BQcCARYkaHR0cHM6Ly93d3cuYWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMIHjBgNVHR8Egdsw
+gdgwgZaggZOggZCGgY1sZGFwOi8vbGRhcDA1LmFjdGFsaXMuaXQvY24lM2RBY3RhbGlzJTIw
+QXV0aGVudGljYXRpb24lMjBSb290JTIwQ0EsbyUzZEFjdGFsaXMlMjBTLnAuQS4lMmYwMzM1
+ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdDtiaW5hcnkwPaA7oDmG
+N2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkvQVVUSC1ST09UL2dldExhc3RD
+UkwwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQBNk87VJL5BG0oWWHNfZYny
+2Xo+WIy8y8QP5VsWZ7LBS6Qz8kn8zJp3c9xdOkudZbcA3vm5U8HKXc1JdzNmpSh92zq/OeZL
+vUa+rnncmvhxkFE9Doag6NitggBPZwXHwDcYn430/F8wqAt3LX/bsd6INVrhPFk3C2SoAjLj
+UQZibXvQuFINMN4l6j86vCrkUaGzSqnXT45NxIivkAPhBQgpGtcTi4f+3DxkyTDbWtf9LuaC
+4l2jgB3gC7f56nmdpGfpYsyvKE7+Ip+WryH93pWt6C+r68KU3Gu02cU1/dHvNOXWUDeKkVT3
+T26wZVrTaMx+0nS3i63KDfJdhFzutfdBgCWHcp03NhOhMqy1RnAylF/dVZgkka6hKaWe1tOU
+21kS4uvsD4wM5k6tl0pin2o6u47kyoJJMOxRSQcosWtDXUmaLHUG91ZC6hvBDmDmpmS6h/r+
+7mtPrpYOxTr4hW3me2EfXkTvNTvBQtbi4LrZchg9vhi44EJ7L53g7GzQFn5KK8vqqgMb1c1+
+T0mkKdqSedgGiB9TDdYtv4HkUj/N00TKxZMLiDMw4V8ShUL6bKTXNfb3E68s47cD+MatFjUu
+GFj0uFPvZlvlNAoJ7IMfXzIiTWy35X+akm+d49wBh54yv6icz2t/cBU1y1weuPBd8NUH/Ue3
+mXk0SXwkGP3yVDGCA/YwggPyAgEBMIGXMIGCMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWls
+YW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIw
+OTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEI
+S0Vm/+lAmuLB44BgezANBglghkgBZQMEAgEFAKCCAi8wGAYJKoZIhvcNAQkDMQsGCSqGSIb3
+DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkwNjA2MTY0OTA4WjAvBgkqhkiG9w0BCQQxIgQgvPZ7
+54t5B3szei0xC9xDEL+rrHSWpiNqW0jCe9nbpagwbAYJKoZIhvcNAQkPMV8wXTALBglghkgB
+ZQMEASowCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG
+9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG9w0DAgIBKDCBqAYJKwYBBAGCNxAEMYGaMIGXMIGC
+MQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNV
+BAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVu
+dCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEIS0Vm/+lAmuLB44BgezCBqgYLKoZIhvcNAQkQ
+AgsxgZqggZcwgYIxCzAJBgNVBAYTAklUMQ8wDQYDVQQIDAZNaWxhbm8xDzANBgNVBAcMBk1p
+bGFubzEjMCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0Fj
+dGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcxAhB+YQhLRWb/6UCa4sHjgGB7MA0G
+CSqGSIb3DQEBAQUABIIBAHEtmmh4KKPXAn4yFRntHtmq0CpddsbuEy7HeXUF4xo6rPbYsA8e
+BQDTNlhKod5nX/z3KJQldh8MzrLUaYMuJJI4MOnCLuGPpgFsL+U18XMAFqEQmM0FWTPtavT8
+3QQ0n51iFgkttqvhrojmjtyGxc0WAV3CosbhUwiUVGKybBK02ZhY3j7z/+3C2M6lc3VZPM8v
+VIOvLlsyETB1xt5wGaQGWkxUTxhiP74zyA42Q7tHwBAgOUSpqfT9GKA1EEw3bd1excU/XCWS
+pVu3R+v7UXOcJzpHSO6VgKjrdrnsF6ymWcYGHjtAKf29ybZLgpSCg7OICXEE33Dr0bp/ngkb
+ihYAAAAAAAA=
+--------------ms090208070404060407070208--
+
+
+--===============5816457164938818161==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5816457164938818161==--
+

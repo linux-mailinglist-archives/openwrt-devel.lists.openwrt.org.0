@@ -2,55 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25F9A39E60
-	for <lists+openwrt-devel@lfdr.de>; Sat,  8 Jun 2019 13:49:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1BF239ED8
+	for <lists+openwrt-devel@lfdr.de>; Sat,  8 Jun 2019 13:52:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d9s/p+FmYzpSFdn9W47Ibz+iSoLaXsKQ67Rj/1pO+Js=; b=GeR7oqB5C+2snz
-	jq8e1pGHg2c1hHeqRGarxLbtmPFYl0p96TMcSQv73nQqk1Odb8j+lD6shhNafEMV+6JjOgnmSBnBt
-	uvJK3DN1AsSvnA6Pe2YktJsjshfsMBzLtgbAtMWN16MXweQCtOVhYj+fBWd6sBOdV4D/ppz+bXUCF
-	MyaV+2RGwXhPTyJCPPhEJo9hvWOWt165k4uCbxKjiUtKtcLNaGT/dDLR7VmOT1U6WNM+RPzHevT26
-	gnLYrIp/Fh5fNfK9e/wvhat6N7yV535uX0eNfkDrivFIOQOnlRu9YrF65inmd4rE41eurnJRBBqlO
-	5cIyUN/ZbWsHjG0DdyFA==;
+	List-Owner; bh=1o9eWYOcLeAOrBpVIZqYfbtVKQwd5LFaCgk0ViebVQ8=; b=I475hMN34pyCNu
+	dMaWhceZHINtlBdBksMFOtWjrQGaiFB1BH7O5sGKe691j2l8PrETNpJkzeJzWEwLzwsJXeefMtcOi
+	y4qYdkBASjHMEKsI8+AzPcQy+s+VgBdVCPuO+2zMfAbQD/WsBz7cnX4eS2DJzs5aPrndHenRgztSZ
+	nySpXaRINFy/qkv0C6A9twtw87o6EXtAZG6Fx3wJgOR5KE5RGituJBpAAJulxj8osyW7afozf7CHR
+	4GtkaJQ8LufkdYBLYHz91/AH4yUv2hn4yWzQ9Z7nFd3BnCLWxP7+EU9vhDMTVKpk4LqzMDPL6a1Zb
+	kzujO0Z2bhq+tr4/wNVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZZqK-0002wg-4K; Sat, 08 Jun 2019 11:49:04 +0000
-Received: from mail3.marcant.net ([217.14.160.188])
+	id 1hZZte-0004up-Un; Sat, 08 Jun 2019 11:52:31 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZZpi-0002Ci-Hn
- for openwrt-devel@lists.openwrt.org; Sat, 08 Jun 2019 11:48:30 +0000
-Received: from [192.168.180.1] (port=50388 helo=admins.marcant.net)
- by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
- (envelope-from <avalentin@marcant.net>) id 1hZZpV-0001fG-2v
- for openwrt-devel@lists.openwrt.org; Sat, 08 Jun 2019 13:48:13 +0200
-Received: from varus.marcant.loc (unknown [192.168.3.44])
- by admins.marcant.net (Postfix) with ESMTPA id CA10F2802FC;
- Sat,  8 Jun 2019 13:48:13 +0200 (CEST)
-From: =?UTF-8?q?Andr=C3=A9=20Valentin?= <avalentin@marcant.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat,  8 Jun 2019 13:48:09 +0200
-Message-Id: <20190608114809.9480-4-avalentin@marcant.net>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20190608114809.9480-1-avalentin@marcant.net>
-References: <20190608114809.9480-1-avalentin@marcant.net>
+ id 1hZZtW-0004u6-Kd
+ for openwrt-devel@lists.openwrt.org; Sat, 08 Jun 2019 11:52:24 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.91) (envelope-from <daniel@makrotopia.org>)
+ id 1hZZtO-0007F8-Sa; Sat, 08 Jun 2019 13:52:15 +0200
+Date: Sat, 8 Jun 2019 13:51:59 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: Daniel Santos <daniel.santos@pobox.com>
+Message-ID: <20190608115159.GA1559@makrotopia.org>
+References: <5316c6da-1966-4896-6f4d-8120d9f1ff6e@pobox.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <5316c6da-1966-4896-6f4d-8120d9f1ff6e@pobox.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_044826_754393_EC1F78FA 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20190608_045222_672498_68E2E4F8 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.14.160.188 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v3 3/3] netifd: add xfrm tunnel interface
- support
+Subject: Re: [OpenWrt-Devel] Using ethtool or swconfig to change link
+ settings for mt7620a?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,150 +59,63 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Andr=C3=A9=20Valentin?= <avalentin@marcant.net>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vitaly Chekryzhev <13hakta@gmail.com>, netdev@vger.kernel.org,
+ openwrt-devel <openwrt-devel@lists.openwrt.org>, Felix Fietkau <nbd@nbd.name>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This adds support for xfrm interfaces. These interfaces can be used since
-linux 4.19 for IPsec traffic, like VTI interface.
-XFRM interfaces are less complicated compared to VTI because they need no IP
-tunnel endpoints.
+Hi Daniel,
 
----
- system-linux.c | 61 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- system.c       |  9 +++++++++
- system.h       |  6 ++++++
- 3 files changed, 76 insertions(+)
+On Sat, Jun 08, 2019 at 04:06:54AM -0500, Daniel Santos wrote:
+> Hello,
+> =
 
-diff --git a/system-linux.c b/system-linux.c
-index 2f5bbe1..c63d8d8 100644
---- a/system-linux.c
-+++ b/system-linux.c
-@@ -2877,6 +2877,63 @@ failure:
- }
- #endif
- 
-+#ifdef IFLA_XFRM_MAX
-+static int system_add_xfrm_tunnel(const char *name, const char *kind,
-+				 const unsigned int link, struct blob_attr **tb)
-+{
-+	struct nl_msg *nlm;
-+	struct ifinfomsg ifi = { .ifi_family = AF_UNSPEC, };
-+	struct blob_attr *cur;
-+	int ret = 0;
-+
-+	nlm = nlmsg_alloc_simple(RTM_NEWLINK, NLM_F_REQUEST | NLM_F_ACK | NLM_F_CREATE | NLM_F_EXCL);
-+	if (!nlm)
-+		return -1;
-+
-+	nlmsg_append(nlm, &ifi, sizeof(ifi), 0);
-+	nla_put_string(nlm, IFLA_IFNAME, name);
-+
-+	struct nlattr *linkinfo = nla_nest_start(nlm, IFLA_LINKINFO);
-+	if (!linkinfo) {
-+		ret = -ENOMEM;
-+		goto failure;
-+	}
-+
-+	nla_put_string(nlm, IFLA_INFO_KIND, kind);
-+	struct nlattr *infodata = nla_nest_start(nlm, IFLA_INFO_DATA);
-+	if (!infodata) {
-+		ret = -ENOMEM;
-+		goto failure;
-+	}
-+
-+	if (link)
-+		nla_put_u32(nlm, IFLA_XFRM_LINK, link);
-+
-+	if ((cur = tb[TUNNEL_ATTR_DATA])) {
-+		struct blob_attr *tb_data[__XFRM_DATA_ATTR_MAX];
-+		uint32_t if_id = 0;
-+
-+		blobmsg_parse(xfrm_data_attr_list.params, __XFRM_DATA_ATTR_MAX, tb_data,
-+			blobmsg_data(cur), blobmsg_len(cur));
-+
-+		if ((cur = tb_data[XFRM_DATA_IF_ID])) {
-+			if ((if_id = blobmsg_get_u32(cur)))
-+				nla_put_u32(nlm, IFLA_XFRM_IF_ID, if_id);
-+		}
-+
-+	}
-+
-+	nla_nest_end(nlm, infodata);
-+	nla_nest_end(nlm, linkinfo);
-+
-+	return system_rtnl_call(nlm);
-+
-+failure:
-+	nlmsg_free(nlm);
-+	return ret;
-+}
-+#endif
-+
- #ifdef IFLA_VXLAN_MAX
- static int system_add_vxlan(const char *name, const unsigned int link, struct blob_attr **tb, bool v6)
- {
-@@ -3259,6 +3316,10 @@ int system_add_ip_tunnel(const char *name, struct blob_attr *attr)
- 	} else if (!strcmp(str, "vtiip6")) {
- 		return system_add_vti_tunnel(name, "vti6", link, tb, true);
- #endif
-+#ifdef IFLA_XFRM_MAX
-+	} else if (!strcmp(str, "xfrm")) {
-+		return system_add_xfrm_tunnel(name, "xfrm", link, tb);
-+#endif
- #ifdef IFLA_VXLAN_MAX
- 	} else if(!strcmp(str, "vxlan")) {
- 		return system_add_vxlan(name, link, tb, false);
-diff --git a/system.c b/system.c
-index dd9ab50..bbdfef7 100644
---- a/system.c
-+++ b/system.c
-@@ -70,6 +70,15 @@ const struct uci_blob_param_list vti_data_attr_list = {
- 	.params = vti_data_attrs,
- };
- 
-+static const struct blobmsg_policy xfrm_data_attrs[__XFRM_DATA_ATTR_MAX] = {
-+	[XFRM_DATA_IF_ID] = { .name = "ifid", .type = BLOBMSG_TYPE_INT32 },
-+};
-+
-+const struct uci_blob_param_list xfrm_data_attr_list = {
-+	.n_params = __XFRM_DATA_ATTR_MAX,
-+	.params = xfrm_data_attrs,
-+};
-+
- static const struct blobmsg_policy sixrd_data_attrs[__SIXRD_DATA_ATTR_MAX] = {
- 	[SIXRD_DATA_PREFIX] = { .name = "prefix", .type = BLOBMSG_TYPE_STRING },
- 	[SIXRD_DATA_RELAY_PREFIX] = { .name = "relay-prefix", .type = BLOBMSG_TYPE_STRING },
-diff --git a/system.h b/system.h
-index 9fefcae..61c4046 100644
---- a/system.h
-+++ b/system.h
-@@ -63,6 +63,11 @@ enum vti_data {
- 	__VTI_DATA_ATTR_MAX
- };
- 
-+enum xfrm_data {
-+	XFRM_DATA_IF_ID,
-+	__XFRM_DATA_ATTR_MAX
-+};
-+
- enum sixrd_data {
- 	SIXRD_DATA_PREFIX,
- 	SIXRD_DATA_RELAY_PREFIX,
-@@ -86,6 +91,7 @@ enum fmr_data {
- extern const struct uci_blob_param_list vxlan_data_attr_list;
- extern const struct uci_blob_param_list gre_data_attr_list;
- extern const struct uci_blob_param_list vti_data_attr_list;
-+extern const struct uci_blob_param_list xfrm_data_attr_list;
- extern const struct uci_blob_param_list sixrd_data_attr_list;
- extern const struct uci_blob_param_list ipip6_data_attr_list;
- extern const struct uci_blob_param_list fmr_data_attr_list;
--- 
-2.11.0
+> I need to change auto-negotiate, speed and duplex for a port on my
+> mt7620a-based device, but I'm not quite certain that I understand the
+> structure here.=A0 When using ethtool on eth0 I always get ENODEV,
+> apparently because priv->phy_dev is always NULL in fe_get_link_ksettings
+> of drivers/net/ethernet/mtk/ethtool.c.=A0 But I'm being told that eth0 is
+> only an internal device between the =B5C and the switch hardware, so it
+> isn't even the one I need to change.
 
+That's correct.
+
+> If this is true, then it looks like I will need to implement a
+> get_port_link function for struct switch_dev_ops?=A0 Can anybody confirm
+> this to be the case?=A0 Also, are there any examples aside from the
+> Broadcom drivers?=A0 I have the mt7620 programmer's guide and it specifies
+> the registers I need to change.
+
+Currently MT7620 still uses our legacy swconfig switch driver, which
+also doesn't support setting autoneg, speed and duplex. However, rather
+than implementing it there, it'd be great to add support for the FE-
+version of the MT7530 swtich found in the MT7620(A/N) WiSoC to the now
+upstream DSA driver[1]. While this driver was originally intended for
+use with standalone MT7530 GE switch chip or the ARM-based MT7623 SoC,
+the same switch fabric is also implemented in MT7621 and support for
+that chip was added to the driver recently[2]. MT7620 basically also
+features the same switch internally, however, it comes with only one
+CPU port, supports only FastEthernet and lacks some of the management
+counters.
+
+Assuming your MT7620 datasheet includes the decription of the MT7530
+switch registers, it'd be great if you can help working on supporting
+MT7620 in the DSA driver as well -- gaining per-port ethtool support
+as a reward :)
+
+
+Cheers
+
+
+Daniel
+
+
+[1]: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tre=
+e/drivers/net/dsa/mt7530.c
+[2]: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/com=
+mit/?id=3Dddda1ac116c852bb969541ed53cffef7255c4961
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,121 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5927F3A54A
-	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 14:00:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CFA73A56D
+	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 14:24:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tiz0yiDHwodQAiUGVqjRephkEpeGpp9iMPzBujqVLuY=; b=W0QbefSo+wuZxT
-	n/HBfDAchkuRi3pwZ8jksZvx8BESYG6hvq7Y3n3pmjRW/itz+V/eRW2l53tFc2gxogdaamVw76Aau
-	WWYjhYScBewCAYr78GMb7R0qo0NTsEiUQAHlXYFalHg62FpsblnOKkIi6kANX99u/bDYl0EaSBHNC
-	2q2LzNc++R76dW+rCPX0MsN3b3AOGbPJ7tNxetEbPs1v/Dza5w3Wl2w4fogC9pNy5X6eZ8X9LGDDv
-	Il3Ml5igcb6D5B37HGcEswBAmw9jv8KDhCIYvnJi+LW2H101gIptd706lpilH0/XER/yFBknvhLBR
-	JYIG8xUvA3VPKrtw6KTQ==;
+	List-Owner; bh=8T/lAYynl/qiN7aRHDX/o/twCRtKBFTAEa4k6FHUc8Q=; b=ju8QOHsGtSJmY4
+	R0kpywDiReuSVl2eeuecegNymS7ucpeW482UZsdVf6GbVGQeSGW2l7/wjGSPqtu+gIE5Ga/g/V+54
+	GnJfU1pTdawjsVtqwCIshUbs5SNgeFAGdbu6NJ+E5ewSgPx85NFt6p1srjHfoNGJlZU142JCWA1b8
+	Y+D3gf9htOSwqkkmt1zcagsbfIuZp5yvl2ew1lGeW4r9wVq9ecUmzBBsohDZYDy8/oWGYnVlbKuwH
+	tws4ufZGsk+jEBMCsurILEq2yimJfVoJaoAvEt/1nM3ZXyCmUfWV4xjvOYNW8s6ZsChYl6W1Gc7yg
+	PX9ReNFev2jlLqnrBd1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZwUc-0001LJ-E2; Sun, 09 Jun 2019 12:00:10 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1hZwrr-0000pZ-RX; Sun, 09 Jun 2019 12:24:11 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZwUN-0001Kk-0h
- for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 11:59:57 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 7A92D509D4;
- Sun,  9 Jun 2019 13:59:52 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id vcy0ZmjjCrZZ; Sun,  9 Jun 2019 13:59:45 +0200 (CEST)
-To: Sandeep Sheriker M <sandeep.sheriker@microchip.com>,
- openwrt-devel@lists.openwrt.org
-References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
- U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <4b76386e-6af0-5be7-e222-31b564cb567e@hauke-m.de>
-Date: Sun, 9 Jun 2019 13:59:36 +0200
+ id 1hZwrh-0000oi-NT
+ for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 12:24:03 +0000
+Received: by mail-io1-xd42.google.com with SMTP id w25so4812896ioc.8
+ for <openwrt-devel@lists.openwrt.org>; Sun, 09 Jun 2019 05:24:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ftbtER7mXIptpXrfOWlsHgxS/MPmWVX/NFrSlq1Rdc8=;
+ b=RYq69nE84q6BpzZIo4kgnpVmDMf8TgLqIm693F1mAVh+4rYsDQN3hh10eg/+bLm+Ng
+ uKeq7N4CoeMkFBg9xqMOnzKZlNj+RO6kZc5XojusFAm6jMZ5fe4FBzCpUcWm8KfE6QEY
+ Hrivnmb8KeJu0jsVYDf4aQzTc4myDTMh8vwzYFD6voCEQ8yXCSANvYA4HDJnurzvinmB
+ VOyyAiuHnWk1GQVVRr4fRVZA8jpuAE50xQfZX/lq//tBVk2Fey8KsdjuoeVo7UJbKfGu
+ 95tvelsuxEl2UymwgdeGJ7dKjs6pVq0heDVEnhBtsduPH30QU6x8IOIe81xWMs3E2Bir
+ gb1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ftbtER7mXIptpXrfOWlsHgxS/MPmWVX/NFrSlq1Rdc8=;
+ b=e7JmVQR+guG6xFRiGOrrLQkLqaDd/Mx2TMxXCFUN+EAsTUHwITAEGsQ3O2KP6xexIr
+ wTzMoPqQf6BvjzvH9HkWECd33VAXvzAsRMeLNSClCNxfbX0IucAfz30Cv8V00Kx2omJO
+ GJlOwNfZd+raM6vNhzSnUH1zOMVanFMN4n90DrncwV5MRhdhMuEPjIXN1b21ZqdB7g7Y
+ 4H7XfJQoeDUwiRohSR4YuoX0BDLByzEj+tx1RQMi0y24jSF9ioEi5k/Qkb4iIMOKAv7m
+ Vf+aOPAfIvFOAokCBuT3VsnO3P6lgKjj0TYyb+3i7fvSTKsZbSwGf1L1C5eqQDLdooQN
+ r7iA==
+X-Gm-Message-State: APjAAAVCGmjFGfKljuyIPglGA/3QiYtU2ADeZQ8PdPb3JgzPjeF0GdgB
+ v5J7kOd81aK/iM1Sac8aKhC1/6SsMsWG/eUzyhg=
+X-Google-Smtp-Source: APXvYqyROgBwMMldjZ1j3zNreXqvFt7bW+iEZ+lOzNMNoIFD+dE9e1TvcJzeSr4t8pjxXjILfHvLr7aHgTwWW4J2bxQ=
+X-Received: by 2002:a5d:88c6:: with SMTP id i6mr24884720iol.107.1560083039574; 
+ Sun, 09 Jun 2019 05:23:59 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <cover.1559260743.git.sandeep.sheriker@microchip.com>
-Content-Language: en-US
+References: <1559653541-26682-1-git-send-email-ynezz@true.cz>
+ <CAAd0S9CEPJqQXJ6OhW9_597ig92Typb7s0L5HwpLm-CU=ska6g@mail.gmail.com>
+ <CAKfDRXj1c32aAw5WVqkC9ULD8Xw8UoSjwamo=R3vanMvhOcPEg@mail.gmail.com>
+ <9290831.qgf20FLg21@debian64>
+In-Reply-To: <9290831.qgf20FLg21@debian64>
+From: Kristian Evensen <kristian.evensen@gmail.com>
+Date: Sun, 9 Jun 2019 14:23:48 +0200
+Message-ID: <CAKfDRXh4DrTdb0OH3G56M629SmbUv7dp5_4Au_bSgjtWJH3FZQ@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_045955_366973_9A65D773 
-X-CRM114-Status: GOOD (  15.35  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190609_052401_769165_EB1D8C44 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (kristian.evensen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [patch v1 00/11] at91 patch series.
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: fix
+ always missing first event
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,116 +96,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 5/31/19 2:06 AM, Sandeep Sheriker M wrote:
-> Hi,
->  This patch series contains 
-> 
-> 1. rework in creating sdcard images for different subtarget.
-> 2. creating a fit images.
-> 3. add support for sam9x5ek soc 
-> 4. add uboot env file.
-> 5. bump uboot & at91bootstrap to latest versions
-> 
-
 Hi,
 
-I run into the following build problem with these patches:
+On Sun, Jun 9, 2019 at 10:06 AM Christian Lamparter <chunkeey@gmail.com> wrote:
+> @ynezz, @Kristian
+>
+> The APM821xx checks out with both as well. While there are spurious
+> events on enabling the interrupt (one released event),
+> the /etc/rc.button/ scripts are setup to handle that. So, which patch
+> should we take and who gets the merge them? (I've seen that ynezz has
+> more patches as well.)
 
-rm -f
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/tmp/openwrt-at91-sam9x-at91sam9x25ek-ext4-sdcard.img.gz.boot
-mkfs.fat -C
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/tmp/openwrt-at91-sam9x-at91sam9x25ek-ext4-sdcard.img.gz.boot
-65536
-mkfs.fat 4.1 (2017-01-24)
-mcopy -i
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/tmp/openwrt-at91-sam9x-at91sam9x25ek-ext4-sdcard.img.gz.boot
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/at91sam9x25ek-fit-zImage.itb
-::at91sam9x25ek-fit.itb
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/at91sam9x25ek-fit-zImage.itb:
-No such file or directory
-make[5]: *** [Makefile:91:
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/tmp/openwrt-at91-sam9x-at91sam9x25ek-ext4-sdcard.img.gz]
-Error 1
-make[5]: Leaving directory
-'/home/hauke/openwrt/openwrt/target/linux/at91/image'
-make[4]: *** [Makefile:25: install] Error 2
-make[4]: Leaving directory '/home/hauke/openwrt/openwrt/target/linux/at91'
-make[3]: *** [Makefile:13: install] Error 2
-make[3]: Leaving directory '/home/hauke/openwrt/openwrt/target/linux'
-time: target/linux/install#37.01#6.26#43.54
-make[2]: *** [target/Makefile:25: target/linux/install] Error 2
-make[2]: Leaving directory '/home/hauke/openwrt/openwrt'
-make[1]: *** [target/Makefile:19:
-/home/hauke/openwrt/openwrt/staging_dir/target-arm_arm926ej-s_musl_eabi/stamp/.target_install]
-Error 2
-make[1]: Leaving directory '/home/hauke/openwrt/openwrt'
-make: *** [/home/hauke/openwrt/openwrt/include/toplevel.mk:218: world]
-Error 2
+I am unfortunately not familiar enough with the code in question to
+have an opinion on which patch is the most correct or the best way for
+going forward. I will let you two decide on which patch to merge and
+who gets the honor :)
 
-
-hauke@hauke-t480:~/openwrt/openwrt$ ./scripts/diffconfig.sh
-CONFIG_TARGET_at91=y
-CONFIG_TARGET_at91_sam9x=y
-CONFIG_TARGET_MULTI_PROFILE=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9263ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9g15ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9g20ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9g20ek_2mmc=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9g25ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9g35ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9m10g45ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9x25ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_at91sam9x35ek=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_lmu5000=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_tny_a9260=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_tny_a9263=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_tny_a9g20=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_usb_a9260=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_usb_a9263=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_usb_a9g20=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_ethernut5=y
-CONFIG_TARGET_DEVICE_at91_sam9x_DEVICE_wb45n=y
-CONFIG_TARGET_ALL_PROFILES=y
-hauke@hauke-t480:~/openwrt/openwrt$ ls -al
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/at91sam9x25ek-*
--rw-r--r-- 1 hauke hauke 3607738 Jun  9 13:56
-/home/hauke/openwrt/openwrt/build_dir/target-arm_arm926ej-s_musl_eabi/linux-at91_sam9x/at91sam9x25ek-uImage
-hauke@hauke-t480:~/openwrt/openwrt$
-
-
-
-
-> 
-> Sandeep Sheriker M (11):
->   uboot-at91: bump linux4sam_5.8 to linux4sam_6.0
->   uboot-at91:add at91sam9x5ek soc
->   uboot-at91: changed som1 ek default defconfigs
->   uboot-at91: fix -Wformat-security
->   at91bootstrap: bump v3.8.10 to v3.8.12
->   at91bootstrap: add support for at91sam9x5ek
->   at91bootstrap: add sama5d27_som1_eksd1_uboot as default defconfig
->   at91: move at91-sdcard command to sama5.mk
->   at91: add uboot environments
->   at91: create fit image
->   at91: create sdcard images for at91sam9x25 & at91sam9x25 boards.
-> 
->  package/boot/at91bootstrap/Makefile                | 25 ++++++++++----
->  package/boot/uboot-at91/Makefile                   | 25 +++++++++-----
->  .../patches/001-fix-Wformat-security.patch         | 13 +++++++
->  target/linux/at91/image/Makefile                   | 33 ++----------------
->  target/linux/at91/image/sam9x.mk                   | 40 ++++++++++++++++++++++
->  target/linux/at91/image/sama5.mk                   | 38 ++++++++++++++++++++
->  target/linux/at91/image/uboot-env.txt              | 14 ++++++++
->  7 files changed, 143 insertions(+), 45 deletions(-)
->  create mode 100644 package/boot/uboot-at91/patches/001-fix-Wformat-security.patch
->  create mode 100644 target/linux/at91/image/uboot-env.txt
-> 
-
+BR,
+Kristian
 
 _______________________________________________
 openwrt-devel mailing list

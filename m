@@ -2,42 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C8073A459
-	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 10:33:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 852D63A45A
+	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 10:33:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8cxSUvmjVXuHQ6P4G7/agbFPKaSqUlAs0ZdbtC5aX+U=; b=MbGPf/ksKZ8/u4
-	Z8Xnym01yfzCfPa62GMK+bCHtUKmKJ1EA+25p9w0lVZyx4GxeZvmltzR6iN/V7ft3DUbpiuMMcTbw
-	mhnvUTN4+WYUs7PShxNyXO2TY6w1kYpLHH0guq2D5U7Xoo5in6CIMPr5bi6e9b5Wto/xcllB8yI3b
-	He6UC1ESjeaVdYiAg/SCxl2Ve6r1qzL3HmdoszN2dgi1vDnL9cp+3KZIPJDK+YxzxgPXuoqVyOmmq
-	kypqgtcUnpLqLDU7hwGk9C8sG3s8MSvImmY3WE99amMcF6hdchbmQOzmt6OGDDUPR6qj79KLpw8g7
-	nigXMJtwLWTV6ByGEoxw==;
+	List-Owner; bh=Cbat1EulA+fQQFxyUj1YmdahrzKDrFCTqdqv0bilUAo=; b=PcSnw3xMifcdVa
+	MgpVpvu0bChexctBQDU57WI9xesTxfkTnFavhZyCHWIMRtkSeOXOGBUzNo5LfOf/ufhlGm6YDO0Pa
+	D+Epuq9Qd52+qojyay8LHRK6jeNXcgcgGVKM5v6Z49JKm+rELxhmRKp5JRlW3drUus/W7NZExuzH+
+	mBZHKzDFGQHLzDHf58JKSA/MYCE1J0OQb/lgBoJb6s4yfyTcO1z8PbUrd324euue+3kmxfdc/1L/z
+	eLKAMEfeJcmK8bJCq35HEBTlhOYe+B6U6j23rjSgzWNTo+gXGMjOAocRm5RVICbFN1smg9I1gANgy
+	eGEDWWi2I+VvvFU329hQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZtG3-0004Z9-GQ; Sun, 09 Jun 2019 08:32:55 +0000
+	id 1hZtGR-0004tn-S4; Sun, 09 Jun 2019 08:33:20 +0000
 Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZtFk-0004Ow-BJ
- for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 08:32:38 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1hZtGG-0004sT-0k
+ for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 08:33:09 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 9484850952;
- Sun,  9 Jun 2019 10:32:32 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id 973BC507F6;
+ Sun,  9 Jun 2019 10:33:06 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id c7wIzSAZfcZU; Sun,  9 Jun 2019 10:32:11 +0200 (CEST)
+ by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
+ [80.241.56.116]) (amavisd-new, port 10030)
+ with ESMTP id Kwnq6RSYZQTz; Sun,  9 Jun 2019 10:33:00 +0200 (CEST)
 To: Sandeep Sheriker M <sandeep.sheriker@microchip.com>,
  openwrt-devel@lists.openwrt.org
 References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
- <18636f3c7cf529c618ea532d749e980cd990c9ad.1559260744.git.sandeep.sheriker@microchip.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -100,14 +98,14 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <c86f4b62-f54b-f1fd-9f61-faf6f0110456@hauke-m.de>
-Date: Sun, 9 Jun 2019 10:31:01 +0200
+Message-ID: <8128dd11-feed-bf3c-bd0c-f2b2aa5f4d02@hauke-m.de>
+Date: Sun, 9 Jun 2019 10:32:58 +0200
 MIME-Version: 1.0
-In-Reply-To: <18636f3c7cf529c618ea532d749e980cd990c9ad.1559260744.git.sandeep.sheriker@microchip.com>
+In-Reply-To: <cover.1559260743.git.sandeep.sheriker@microchip.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_013236_707689_4D8C2E34 
-X-CRM114-Status: GOOD (  13.90  )
+X-CRM114-CacheID: sfid-20190609_013308_358604_C7DF47B8 
+X-CRM114-Status: GOOD (  13.25  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -118,8 +116,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [patch v1 07/11] at91bootstrap: add
- sama5d27_som1_eksd1_uboot as default defconfig
+Subject: Re: [OpenWrt-Devel] [patch v1 00/11] at91 patch series.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,34 +133,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
-
-The description does not match the patch. As far as I understand the
-patch it is only fixing some indention problems.
-
 On 5/31/19 2:06 AM, Sandeep Sheriker M wrote:
-> Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
-> ---
->  package/boot/at91bootstrap/Makefile | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+> Hi,
+>  This patch series contains 
 > 
-> diff --git a/package/boot/at91bootstrap/Makefile b/package/boot/at91bootstrap/Makefile
-> index 6496b5a..1c07e21 100644
-> --- a/package/boot/at91bootstrap/Makefile
-> +++ b/package/boot/at91bootstrap/Makefile
-> @@ -128,9 +128,9 @@ AT91BOOTSTRAP_TARGETS := \
->      sama5d4_xplainednf_uboot_secure \
->      sama5d4_xplaineddf_uboot_secure \
->      sama5d4_xplainedsd_uboot_secure \
-> -	sama5d27_som1_eksd_uboot \
-> -	sama5d27_som1_ekqspi_uboot \
-> -	sama5d2_ptc_eknf_uboot \
-> +    sama5d27_som1_eksd1_uboot \
-> +    sama5d27_som1_ekqspi_uboot \
-> +    sama5d2_ptc_eknf_uboot \
->      sama5d2_ptc_eksd_uboot
->  
->  define Build/Compile
+> 1. rework in creating sdcard images for different subtarget.
+> 2. creating a fit images.
+> 3. add support for sam9x5ek soc 
+> 4. add uboot env file.
+> 5. bump uboot & at91bootstrap to latest versions
+> 
+> 
+> Sandeep Sheriker M (11):
+>   uboot-at91: bump linux4sam_5.8 to linux4sam_6.0
+>   uboot-at91:add at91sam9x5ek soc
+>   uboot-at91: changed som1 ek default defconfigs
+>   uboot-at91: fix -Wformat-security
+>   at91bootstrap: bump v3.8.10 to v3.8.12
+>   at91bootstrap: add support for at91sam9x5ek
+>   at91bootstrap: add sama5d27_som1_eksd1_uboot as default defconfig
+>   at91: move at91-sdcard command to sama5.mk
+>   at91: add uboot environments
+>   at91: create fit image
+>   at91: create sdcard images for at91sam9x25 & at91sam9x25 boards.
+
+I received this series 4 times, is it correct that the patches are all
+the same?
+
+
+> 
+>  package/boot/at91bootstrap/Makefile                | 25 ++++++++++----
+>  package/boot/uboot-at91/Makefile                   | 25 +++++++++-----
+>  .../patches/001-fix-Wformat-security.patch         | 13 +++++++
+>  target/linux/at91/image/Makefile                   | 33 ++----------------
+>  target/linux/at91/image/sam9x.mk                   | 40 ++++++++++++++++++++++
+>  target/linux/at91/image/sama5.mk                   | 38 ++++++++++++++++++++
+>  target/linux/at91/image/uboot-env.txt              | 14 ++++++++
+>  7 files changed, 143 insertions(+), 45 deletions(-)
+>  create mode 100644 package/boot/uboot-at91/patches/001-fix-Wformat-security.patch
+>  create mode 100644 target/linux/at91/image/uboot-env.txt
 > 
 
 

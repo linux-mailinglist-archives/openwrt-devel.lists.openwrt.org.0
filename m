@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B97C3A57D
-	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 14:35:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A2C53A587
+	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 14:50:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,37 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=a0agTP0VX5nDz09duDMPxBTBGXeThrMpnxvcjrlZLj8=; b=To6WyXsf/OAtkJkGejG/2kOPTN
-	FscBbUewB2ERErMoMnNlZFHGgqVEW0WDYOlcA5IgYHELGDAZQTO99MIV4jqPgsHRaqb/8CKkzR7vC
-	DBhJVAe8rwN3dOg98GgYz4phThgrVLlHdUUGFfmFs+JwGxkbbuSRsTxqg9pnIgXOttz44kbopRa/I
-	V63zmZ1ZaXQWb0B5YeQ9iOr38wvEI24RiyBslwYmdyBgmcXmljfddCI8ZhRQHCDYZRJ6+Q9R7c2YL
-	typzo6H0pA7UyegrYOcBlG/7DTlWqgGyS7K1dm6ER+y1HRF7pJ19+4jJOyN526jDI0kIWm/TCa7ES
-	BtAavPow==;
+	bh=ZGQcEj/UDne14qa6MjMGcEqGVV0kF3jcSEME9Zm1Cog=; b=VovkF/dQrVju9G9tX8q1ldhDD1
+	Ouu/GTN/t3ddKT7mfm3nbudwEiLtl66rTxTLatR8MLPPtrY/1QJFIdzUlex72d6cbLUMmdNPgKuzW
+	XAjsgrtDdkvF6Nzr1G0Hs3IdwMqwVBVOl6bGZMSuK7GRhwssNRa1DHcPmbIogHNiAj8kjZ4riwBMw
+	OyTO1ap0Hn6IWq4pRXEE1pD6SwERiNb8aDC2D8ib1NGW+NYYQz44/qeT/ZQ+5oznlgd7AXb3c0n+u
+	fFuZ+AwIFeo+R0iSKCAXvLRilZdar8jUyS5g6mQSe4KAryrATkYZHm+W/w4Nf+mXyP/6xsT6h4Yze
+	RO9CpNVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZx2k-0005Q7-Mw; Sun, 09 Jun 2019 12:35:26 +0000
+	id 1hZxHi-00021Z-KW; Sun, 09 Jun 2019 12:50:54 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZx2c-0005PV-6D
- for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 12:35:20 +0000
+ id 1hZxHa-00021C-4Z
+ for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 12:50:47 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id EA8575630;
- Sun,  9 Jun 2019 14:35:13 +0200 (CEST)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id A31E958B6;
+ Sun,  9 Jun 2019 14:50:43 +0200 (CEST)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 7689f484;
- Sun, 9 Jun 2019 14:35:11 +0200 (CEST)
-Date: Sun, 9 Jun 2019 14:35:11 +0200
+ by meh.true.cz (OpenSMTPD) with ESMTPA id d3424f5e;
+ Sun, 9 Jun 2019 14:50:41 +0200 (CEST)
+Date: Sun, 9 Jun 2019 14:50:41 +0200
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Yousong Zhou <yszhou4tech@gmail.com>
-Message-ID: <20190609123511.GA39806@meh.true.cz>
-References: <20190608155442.16632-1-yszhou4tech@gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
+Message-ID: <20190609125041.GB39806@meh.true.cz>
+References: <1559653541-26682-1-git-send-email-ynezz@true.cz>
+ <CAAd0S9CEPJqQXJ6OhW9_597ig92Typb7s0L5HwpLm-CU=ska6g@mail.gmail.com>
+ <CAKfDRXj1c32aAw5WVqkC9ULD8Xw8UoSjwamo=R3vanMvhOcPEg@mail.gmail.com>
+ <9290831.qgf20FLg21@debian64>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190608155442.16632-1-yszhou4tech@gmail.com>
+In-Reply-To: <9290831.qgf20FLg21@debian64>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190609_053518_384129_3EADC560 
-X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-CacheID: sfid-20190609_055046_332165_232FEE56 
+X-CRM114-Status: UNSURE (   5.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -54,8 +57,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] generic: support
- mtd-mac-address-ascii
+Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: fix
+ always missing first event
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,46 +71,26 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Kristian Evensen <kristian.evensen@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Yousong Zhou <yszhou4tech@gmail.com> [2019-06-08 15:54:41]:
+Christian Lamparter <chunkeey@gmail.com> [2019-06-09 10:06:33]:
 
 Hi,
 
-> It supports formats of both 001122334455 and 00:11:22:33:44:55
+> The APM821xx checks out with both as well. While there are spurious
+> events on enabling the interrupt (one released event), 
+> the /etc/rc.button/ scripts are setup to handle that. So, which patch
+> should we take and who gets the merge them? (I've seen that ynezz has
+> more patches as well.)
 
-mtd-mac-address was rejected upstream[1], so I'm not sure if we should add new
-features to it and promote its usage as it's probably going to make the switch
-to the upstream provided solution harder in the future.
-
-As mtd-mac-address was rejected, I went ahead and added NVMEM support to
-of_get_mac_address[2] which was accepted and you can see already working
-example in my staging tree in the wip/nvmem-mac-address branch.
-
-In order to support MAC addresses stored in ASCII, we would probably need to
-add support for multiple reg value pairs into the nvmem core as suggested by
-the nvmem core maintainer[3].
-
-On top of that, we would need to add proper support for nvmem cells[4] under
-MTD partitions, because currently it doesn't work, MTD layer is simply treat
-those nvmem cells as sub partitions.
-
-> Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
-> ---
->  ...et-sched-Introduce-act_ctinfo-action.patch |  18 ----
->  ...et-sched-Introduce-act_ctinfo-action.patch |  20 ----
->  .../generic/hack-4.9/220-gc_sections.patch    |   2 +-
-
-probably some leftovers from other patch?
-
-1. https://patchwork.ozlabs.org/patch/1086628/#2154562
-2. https://patchwork.ozlabs.org/project/netdev/list/?series=105972&state=*
-3. https://www.spinics.net/lists/netdev/msg570314.html
-4. https://lkml.org/lkml/2018/6/7/972
+I think, that you're correct and we should stick to the previous behaviour, so
+I've taken your version of the patch included in this email and will push it
+with my other patches.
 
 -- ynezz
 

@@ -2,41 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A184F3A40B
-	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 08:43:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E6F43A423
+	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 09:30:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uCcEiMDQM2sfliyXyXbiXQjvXP1cKNeN5rMO5Gkifkk=; b=ranus7Fn+q7WW4
-	fsGKRxe6N257/CmVcuBesqb0ACK4GlfCG5dd2wo6euPof3S2RBlTcYoM8590qom1/1ANm9uMlIJh1
-	xn6CZsRoItNy2GpLSmkJSYEcT1/C4991/qnkqVTK3pcde394i3FiOrItfP1etX49h97x5RU98TjNx
-	wgsv2UPzrCEfe7f8pYlh6SupDeYR5vj+eSgVdp/8YBpAxm0C7i59fKL0GdFns0ZNwd+chKGZGcysO
-	Ndi9uDFI14rvKkLfW2gyxtjkkqdChjvmyVfclZc9uk8sTYzeVwwq0KrRb1nM5g3xIVbkQ3RxNwCEV
-	lvXzkMlWO01hi2ZkE4Dw==;
+	List-Owner; bh=ZO+5KwYUAU/yF2MSm6Oan8x65U/YiSc8AoUzbfTaRYk=; b=RHt0L8fjVjtA00
+	3jvRaljOsgsepte/dyoi8feIMSloi289McRGXNV0EQmC9DjSYRfuZeXFVJQggcAPCbNOvei/Jfycn
+	jEGaqbzsVp6N58Ob24j6AXxbsBfwM371bX83NOuBXUBKmAKb/kvORvbNr1WQScol22c0MJFoCmos2
+	pJhFVUFKaYTGSPspLJcKfaXFthFlr+Vf6lWF+vH5926zInaJF1ZWfCWZ/Gh/K2+nsc2cXK3KfJmKQ
+	1kU4SiyqUtzwven/R9G1rgr0mjsq70ETJTmapNTePgArhAuTBJktT+0gD6sthK5O90HSSDrf1DZ5R
+	tN92EogWhSHGMvREFQ5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZrXD-000300-Mf; Sun, 09 Jun 2019 06:42:32 +0000
+	id 1hZsHW-0001iW-LI; Sun, 09 Jun 2019 07:30:22 +0000
 Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZrX2-0002z7-Fr
- for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 06:42:23 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1hZsHK-0001Iw-Pf
+ for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 07:30:13 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 4B5CCA01A1;
- Sun,  9 Jun 2019 08:42:14 +0200 (CEST)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 9E331A0177;
+ Sun,  9 Jun 2019 09:30:05 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id OD3oVUJ8msXZ; Sun,  9 Jun 2019 08:42:03 +0200 (CEST)
-To: petrcvekcz@gmail.com, john@phrozen.org
-References: <cover.1560024463.git.petrcvekcz@gmail.com>
- <07892acc26ae73c6567254a28faac7a723cedbc3.1560024463.git.petrcvekcz@gmail.com>
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
+ (amavisd-new, port 10030)
+ with ESMTP id HZDACazdEH-J; Sun,  9 Jun 2019 09:29:55 +0200 (CEST)
+To: Tomasz Maciej Nowak <tomek_n@o2.pl>, openwrt-devel@lists.openwrt.org
+References: <20190605143124.7598-1-tomek_n@o2.pl>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -99,14 +97,14 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  qW4TeDaiKtaki/NrHwCH3aOWx0xrxj4Vr2qVEO9Qksk+4RZt2QLX9PClmDDZR/KgnAGIVaHc
  w6Onn02ka7+V9c8DcJjQpD6IysI0r4U0LCUMddtwqaDk/0LR8M3+LhQ70+kWRCAY0QCZa5pC
  U9K2P2+nz7is4sF1hNVarw==
-Message-ID: <b2d8730b-e98e-55c9-609a-aeeeea911415@hauke-m.de>
-Date: Sun, 9 Jun 2019 08:42:02 +0200
+Message-ID: <9b5e34c0-6ae0-1e2c-e831-4b0406afda7e@hauke-m.de>
+Date: Sun, 9 Jun 2019 09:29:46 +0200
 MIME-Version: 1.0
-In-Reply-To: <07892acc26ae73c6567254a28faac7a723cedbc3.1560024463.git.petrcvekcz@gmail.com>
+In-Reply-To: <20190605143124.7598-1-tomek_n@o2.pl>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_234220_837919_D7D368E8 
-X-CRM114-Status: GOOD (  33.10  )
+X-CRM114-CacheID: sfid-20190609_003011_141547_70F79ECB 
+X-CRM114-Status: GOOD (  20.76  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -116,8 +114,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [80.241.60.215 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH v1 7/7] MIPS: lantiq: Add SMP support
- for lantiq interrupt controller
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] mvebu: add kernel 4.19 support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,361 +126,196 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: pakahmar@hotmail.com, openwrt-devel@lists.openwrt.org,
- linux-mips@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vladimir Vid <vladimir.vid@sartura.hr>,
+ Marko Ratkaj <marko.ratkaj@sartura.hr>,
+ =?UTF-8?Q?Marek_Beh=c3=ban?= <marek.behun@nic.cz>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 6/8/19 10:48 PM, petrcvekcz@gmail.com wrote:
-> From: Petr Cvek <petrcvekcz@gmail.com>
-> 
-> Some lantiq devices have two ICU controllers. Both are respectively
-> routed to the individual VPEs. The patch adds the support for the second
-> ICU.
-> 
-> The patch changes a register definition of the driver. Instead of an
-> individual IM, the whole ICU is defined. This will only affects openwrt
-> patched kernel (vanilla doesn't have additional .dts files).
-
-There is one dtsi file for this driver in the mainline kernel in
-arch/mips/boot/dts/lantiq/danube.dtsi
-
-I am not aware that any of the SoCs which uses this IRQ controller
-provides the dtb from the bootloader to the kernel, if they use device
-tree it is always patched or appended to the kernel, so this change
-should be ok.
-
-> Also spinlocks has been added, both cores can RMW different bitfields
-> in the same register. Added affinity set function. The new VPE cpumask
-> will take into the action at the irq enable.
-> 
-> The driver can rotate the preset VPEs affinity cpumask. Either by
-> an automatic cycling or just by using the first VPE from the affinity
-> cpumask. This can be switched by macro AUTO_AFFINITY_ROTATION. The
-> automatic rotation can be switched off from userspace by limiting the IRQ
-> to only one VPE.
-> 
-> The rotation was taken from MIPS loongson64's ht_irqdispatch().
-> 
-> The functionality was tested on 4.14 openwrt kernel and TP-W9980B modem.
-> 
-> Signed-off-by: Petr Cvek <petrcvekcz@gmail.com>
-> ---
->  arch/mips/lantiq/irq.c | 155 ++++++++++++++++++++++++++++++++++-------
->  1 file changed, 131 insertions(+), 24 deletions(-)
-> 
-> diff --git a/arch/mips/lantiq/irq.c b/arch/mips/lantiq/irq.c
-> index b9ca20ff07d5..0cdb7e88bfe5 100644
-> --- a/arch/mips/lantiq/irq.c
-> +++ b/arch/mips/lantiq/irq.c
-> @@ -21,6 +21,15 @@
->  #include <lantiq_soc.h>
->  #include <irq.h>
->  
-> +/*
-> + * If defined, every IRQ enable call will switch the interrupt to
-> + * the other VPE. You can limit used VPEs from the userspace.
-> + *
-> + * If not defined, only the first configured VPE from the userspace
-> + * will be used.
-> + */
-> +#define AUTO_AFFINITY_ROTATION
-> +
->  /* register definitions - internal irqs */
->  #define LTQ_ICU_ISR		0x0000
->  #define LTQ_ICU_IER		0x0008
-> @@ -46,8 +55,11 @@
->   */
->  #define LTQ_ICU_EBU_IRQ		22
->  
-> -#define ltq_icu_w32(m, x, y)	ltq_w32((x), ltq_icu_membase[m] + (y))
-> -#define ltq_icu_r32(m, x)	ltq_r32(ltq_icu_membase[m] + (x))
-> +#define ltq_icu_w32(vpe, m, x, y)	\
-> +	ltq_w32((x), ltq_icu_membase[vpe] + m*0x28 + (y))
-
-Please use a define for the 0x28
-
-> +
-> +#define ltq_icu_r32(vpe, m, x)		\
-> +	ltq_r32(ltq_icu_membase[vpe] + m*0x28 + (x))
->  
->  #define ltq_eiu_w32(x, y)	ltq_w32((x), ltq_eiu_membase + (y))
->  #define ltq_eiu_r32(x)		ltq_r32(ltq_eiu_membase + (x))
-> @@ -55,11 +67,15 @@
->  /* we have a cascade of 8 irqs */
->  #define MIPS_CPU_IRQ_CASCADE		8
->  
-> +#define MAX_VPES 2
-> +
->  static int exin_avail;
->  static u32 ltq_eiu_irq[MAX_EIU];
-> -static void __iomem *ltq_icu_membase[MAX_IM];
-> +static void __iomem *ltq_icu_membase[MAX_VPES];
->  static void __iomem *ltq_eiu_membase;
->  static struct irq_domain *ltq_domain;
-> +static DEFINE_SPINLOCK(ltq_eiu_lock);
-> +static DEFINE_RAW_SPINLOCK(ltq_icu_lock);
->  static int ltq_perfcount_irq;
->  
->  int ltq_eiu_get_irq(int exin)
-> @@ -73,45 +89,98 @@ void ltq_disable_irq(struct irq_data *d)
->  {
->  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
->  	unsigned long im = offset / INT_NUM_IM_OFFSET;
-> +	unsigned long flags;
-> +	int vpe;
->  
->  	offset %= INT_NUM_IM_OFFSET;
-> -	ltq_icu_w32(im, ltq_icu_r32(im, LTQ_ICU_IER) & ~BIT(offset),
-> -		    LTQ_ICU_IER);
-> +
-> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
-> +	for_each_present_cpu(vpe) {
-> +		ltq_icu_w32(vpe, im,
-> +			    ltq_icu_r32(vpe, im, LTQ_ICU_IER) & ~BIT(offset),
-> +			    LTQ_ICU_IER);
-> +	}
-> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
->  }
->  
->  void ltq_mask_and_ack_irq(struct irq_data *d)
->  {
->  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
->  	unsigned long im = offset / INT_NUM_IM_OFFSET;
-> +	unsigned long flags;
-> +	int vpe;
->  
->  	offset %= INT_NUM_IM_OFFSET;
-> -	ltq_icu_w32(im, ltq_icu_r32(im, LTQ_ICU_IER) & ~BIT(offset),
-> -		    LTQ_ICU_IER);
-> -	ltq_icu_w32(im, BIT(offset), LTQ_ICU_ISR);
-> +
-> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
-> +	for_each_present_cpu(vpe) {
-> +		ltq_icu_w32(vpe, im,
-> +			    ltq_icu_r32(vpe, im, LTQ_ICU_IER) & ~BIT(offset),
-> +			    LTQ_ICU_IER);
-> +		ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
-> +	}
-> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
->  }
->  
->  static void ltq_ack_irq(struct irq_data *d)
->  {
->  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
->  	unsigned long im = offset / INT_NUM_IM_OFFSET;
-> +	unsigned long flags;
-> +	int vpe;
->  
->  	offset %= INT_NUM_IM_OFFSET;
-> -	ltq_icu_w32(im, BIT(offset), LTQ_ICU_ISR);
-> +
-> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
-> +	for_each_present_cpu(vpe) {
-> +		ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
-> +	}
-> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
->  }
->  
->  void ltq_enable_irq(struct irq_data *d)
->  {
->  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
->  	unsigned long im = offset / INT_NUM_IM_OFFSET;
-> +	unsigned long flags;
-> +	int vpe;
->  
->  	offset %= INT_NUM_IM_OFFSET;
-> -	ltq_icu_w32(im, ltq_icu_r32(im, LTQ_ICU_IER) | BIT(offset),
-> +
-> +#if defined(AUTO_AFFINITY_ROTATION)
-
-I do not like such a define. Is there some other way to automatically
-distribute the IRQs over the available CPUs?
-
-> +	vpe = cpumask_next(smp_processor_id(),
-> +			   irq_data_get_effective_affinity_mask(d));
-> +
-> +	/*
-> +	 * There is a theoretical race condition if affinity gets changed
-> +	 * meanwhile, but it would only caused a wrong VPE to be used until
-> +	 * the next IRQ enable. Also the SoC has only 2 VPEs which fits
-> +	 * the single u32. You can move spinlock before first mask readout
-> +	 * and add it to ltq_icu_irq_set_affinity.
-> +	 */
-> +
-> +	if (vpe >= nr_cpu_ids)
-> +		vpe = cpumask_first(irq_data_get_effective_affinity_mask(d));
-> +#else
-> +	vpe = cpumask_first(irq_data_get_effective_affinity_mask(d));
-> +#endif
-> +
-> +	/* This shouldn't be even possible, maybe during CPU hotplug spam */
-> +	if (unlikely(vpe >= nr_cpu_ids))
-> +		vpe = smp_processor_id();
-> +
-> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
-> +
-> +	ltq_icu_w32(vpe, im, ltq_icu_r32(vpe, im, LTQ_ICU_IER) | BIT(offset),
->  		    LTQ_ICU_IER);
-> +
-> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
->  }
->  
->  static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
->  {
->  	int i;
-> +	unsigned long flags;
->  
->  	for (i = 0; i < exin_avail; i++) {
->  		if (d->hwirq == ltq_eiu_irq[i]) {
-> @@ -148,9 +217,11 @@ static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
->  			if (edge)
->  				irq_set_handler(d->hwirq, handle_edge_irq);
->  
-> +			spin_lock_irqsave(&ltq_eiu_lock, flags);
->  			ltq_eiu_w32((ltq_eiu_r32(LTQ_EIU_EXIN_C) &
->  				    (~(7 << (i * 4)))) | (val << (i * 4)),
->  				    LTQ_EIU_EXIN_C);
-> +			spin_unlock_irqrestore(&ltq_eiu_lock, flags);
->  		}
->  	}
->  
-> @@ -194,6 +265,21 @@ static void ltq_shutdown_eiu_irq(struct irq_data *d)
->  	}
->  }
->  
-> +#if defined(CONFIG_SMP)
-> +static int ltq_icu_irq_set_affinity(struct irq_data *d,
-> +				    const struct cpumask *cpumask, bool force)
-> +{
-> +	struct cpumask tmask;
-> +
-> +	if (!cpumask_and(&tmask, cpumask, cpu_online_mask))
-> +		return -EINVAL;
-> +
-> +	irq_data_update_effective_affinity(d, &tmask);
-> +
-> +	return IRQ_SET_MASK_OK;
-> +}
-> +#endif
-> +
->  static struct irq_chip ltq_irq_type = {
->  	.name = "icu",
->  	.irq_enable = ltq_enable_irq,
-> @@ -202,6 +288,9 @@ static struct irq_chip ltq_irq_type = {
->  	.irq_ack = ltq_ack_irq,
->  	.irq_mask = ltq_disable_irq,
->  	.irq_mask_ack = ltq_mask_and_ack_irq,
-> +#if defined(CONFIG_SMP)
-> +	.irq_set_affinity = ltq_icu_irq_set_affinity,
-> +#endif
->  };
->  
->  static struct irq_chip ltq_eiu_type = {
-> @@ -215,6 +304,9 @@ static struct irq_chip ltq_eiu_type = {
->  	.irq_mask = ltq_disable_irq,
->  	.irq_mask_ack = ltq_mask_and_ack_irq,
->  	.irq_set_type = ltq_eiu_settype,
-> +#if defined(CONFIG_SMP)
-> +	.irq_set_affinity = ltq_icu_irq_set_affinity,
-> +#endif
-
-This looks strange to me. As far as I understood this, the eiu is an
-extra IRQ controller whith its own configuration.
-
->  };
->  
->  static void ltq_hw_irq_handler(struct irq_desc *desc)
-> @@ -222,8 +314,9 @@ static void ltq_hw_irq_handler(struct irq_desc *desc)
->  	unsigned int module = irq_desc_get_irq(desc) - 2;
->  	u32 irq;
->  	irq_hw_number_t hwirq;
-> +	int vpe = smp_processor_id();
->  
-> -	irq = ltq_icu_r32(module, LTQ_ICU_IOSR);
-> +	irq = ltq_icu_r32(vpe, module, LTQ_ICU_IOSR);
->  	if (irq == 0)
->  		return;
->  
-> @@ -244,6 +337,7 @@ static void ltq_hw_irq_handler(struct irq_desc *desc)
->  static int icu_map(struct irq_domain *d, unsigned int irq, irq_hw_number_t hw)
->  {
->  	struct irq_chip *chip = &ltq_irq_type;
-> +	struct irq_data *data;
->  	int i;
->  
->  	if (hw < MIPS_CPU_IRQ_CASCADE)
-> @@ -253,6 +347,10 @@ static int icu_map(struct irq_domain *d, unsigned int irq, irq_hw_number_t hw)
->  		if (hw == ltq_eiu_irq[i])
->  			chip = &ltq_eiu_type;
->  
-> +	data = irq_get_irq_data(irq);
-> +
-> +	irq_data_update_effective_affinity(data, cpumask_of(0));
-> +
->  	irq_set_chip_and_handler(irq, chip, handle_level_irq);
->  
->  	return 0;
-> @@ -267,28 +365,37 @@ int __init icu_of_init(struct device_node *node, struct device_node *parent)
->  {
->  	struct device_node *eiu_node;
->  	struct resource res;
-> -	int i, ret;
-> +	int i, ret, vpe;
->  
-> -	for (i = 0; i < MAX_IM; i++) {
-> -		if (of_address_to_resource(node, i, &res))
-> -			panic("Failed to get icu memory range");
-> +	/* load register regions of available ICUs */
-> +	for_each_possible_cpu(vpe) {
-> +		if (of_address_to_resource(node, vpe, &res))
-> +			panic("Failed to get icu%i memory range", vpe);
->  >  		if (!request_mem_region(res.start, resource_size(&res),
->  					res.name))
-> -			pr_err("Failed to request icu memory");
-> +			pr_err("Failed to request icu%i memory\n", vpe);
->  
-> -		ltq_icu_membase[i] = ioremap_nocache(res.start,
-> +		ltq_icu_membase[vpe] = ioremap_nocache(res.start,
->  					resource_size(&res));
-
-Please check that you do not write over the the end of the
-ltq_icu_membase array.
-
-> -		if (!ltq_icu_membase[i])
-> -			panic("Failed to remap icu memory");
-> +
-> +		if (!ltq_icu_membase[vpe])
-> +			panic("Failed to remap icu%i memory", vpe);
->  	}
->  
->  	/* turn off all irqs by default */
-> -	for (i = 0; i < MAX_IM; i++) {
-> -		/* make sure all irqs are turned off by default */
-> -		ltq_icu_w32(i, 0, LTQ_ICU_IER);
-> -		/* clear all possibly pending interrupts */
-> -		ltq_icu_w32(i, ~0, LTQ_ICU_ISR);
-> +	for_each_possible_cpu(vpe) {
-> +		for (i = 0; i < MAX_IM; i++) {
-> +			/* make sure all irqs are turned off by default */
-> +			ltq_icu_w32(vpe, i, 0, LTQ_ICU_IER);
-> +
-> +			/* clear all possibly pending interrupts */
-> +			ltq_icu_w32(vpe, i, ~0, LTQ_ICU_ISR);
-> +			ltq_icu_w32(vpe, i, ~0, LTQ_ICU_IMR);
-> +
-> +			/* clear resend */
-> +			ltq_icu_w32(vpe, i, 0, LTQ_ICU_IRSR);
-> +		}
->  	}
->  
->  	mips_cpu_irq_init();
-> 
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gNi81LzE5IDQ6MzEgUE0sIFRvbWFzeiBNYWNpZWogTm93YWsgd3JvdGU6Cj4gRnJvbTogTWFy
+a28gUmF0a2FqIDxtYXJrby5yYXRrYWpAc2FydHVyYS5ocj4KPiAKPiBDYzogVmxhZGltaXIgVmlk
+IDx2bGFkaW1pci52aWRAc2FydHVyYS5ocj4KPiBTaWduZWQtb2ZmLWJ5OiBNYXJrbyBSYXRrYWog
+PG1hcmtvLnJhdGthakBzYXJ0dXJhLmhyPgo+IFthZGRlZCBzZnAgcmVsYXRlZCBwYXRjaGVzIGZy
+b20gUnVzc2VsbCBLaW5nXQo+IFNpZ25lZC1vZmYtYnk6IE1hcmVrIEJlaMO6biA8bWFyZWsuYmVo
+dW5AbmljLmN6Pgo+IFtyZWJhc2U7IHJld29yayBwYXRjaGVzOyBzZXBhcmF0ZSBhbmQgY2xlYW51
+cCBrZXJuZWwgY29uZmlnczsKPiBhZGQgZXNwZXNzb2JpbiBkdHM7IGFkanVzdCB2ZW5vbSBkdHNd
+Cj4gU2lnbmVkLW9mZi1ieTogVG9tYXN6IE1hY2llaiBOb3dhayA8dG9tZWtfbkBvMi5wbD4KPiAt
+LS0KPiAgdGFyZ2V0L2xpbnV4L212ZWJ1L01ha2VmaWxlICAgICAgICAgICAgICAgICAgIHwgICAx
+ICsKPiAgdGFyZ2V0L2xpbnV4L212ZWJ1L2NvbmZpZy00LjE5ICAgICAgICAgICAgICAgIHwgNTAx
+ICsrKysrKysrKysrKwo+ICAuLi4vY29ydGV4YTUzL3tjb25maWctZGVmYXVsdCA9PiBjb25maWct
+NC4xNH0gfCAgIDAKPiAgdGFyZ2V0L2xpbnV4L212ZWJ1L2NvcnRleGE1My9jb25maWctNC4xOSAg
+ICAgIHwgMTE0ICsrKwo+ICAuLi4vY29ydGV4YTcyL3tjb25maWctZGVmYXVsdCA9PiBjb25maWct
+NC4xNH0gfCAgIDAKPiAgdGFyZ2V0L2xpbnV4L212ZWJ1L2NvcnRleGE3Mi9jb25maWctNC4xOSAg
+ICAgIHwgMTIyICsrKwo+ICAuLi4vYXJtL2Jvb3QvZHRzL2FybWFkYS0zODUtbGlua3N5cy12ZW5v
+bS5kdHMgfCAyMTMgKysrKysKPiAgLi4uL21hcnZlbGwvYXJtYWRhLTM3MjAtZXNwcmVzc29iaW4t
+ZW1tYy5kdHMgIHwgIDI4ICsKPiAgLi4uL2FybWFkYS0zNzIwLWVzcHJlc3NvYmluLXY3LWVtbWMu
+ZHRzICAgICAgIHwgIDQzICsKPiAgLi4uL21hcnZlbGwvYXJtYWRhLTM3MjAtZXNwcmVzc29iaW4t
+djcuZHRzICAgIHwgIDMxICsKPiAgLi4uL3BhdGNoZXMtNC4xOS8wMDItYWRkX3Bvd2VydGFibGVz
+LnBhdGNoICAgIHwgNzcwICsrKysrKysrKysrKysrKysrKwo+ICAuLi4vcGF0Y2hlcy00LjE5LzAw
+My1hZGRfc3dpdGNoX25vZGVzLnBhdGNoICAgfCAgNDAgKwo+ICAuLi4vMDA0LWFkZF9zYXRhX2Rp
+c2tfYWN0aXZpdHlfdHJpZ2dlci5wYXRjaCAgfCAgMzkgKwo+ICAuLi41LWxpbmtzeXNfaGFyZGNv
+ZGVfbmFuZF9lY2Nfc2V0dGluZ3MucGF0Y2ggfCAgMTcgKwo+ICAuLi5NYW5nbGUtYm9vdGxvYWRl
+ci1zLWtlcm5lbC1hcmd1bWVudHMucGF0Y2ggfCAyMDEgKysrKysKPiAgLi4uL3BhdGNoZXMtNC4x
+OS8xMDAtZmluZF9hY3RpdmVfcm9vdC5wYXRjaCAgIHwgIDYwICsrCj4gIC4uLi9wYXRjaGVzLTQu
+MTkvMTAyLXJldmVydF9pMmNfZGVsYXkucGF0Y2ggICB8ICAxNSArCj4gIC4uLi8yMDUtYXJtYWRh
+LTM4NS1yZC1tdGQtcGFydGl0aW9ucy5wYXRjaCAgICB8ICAxOSArCj4gIC4uLi8yMDYtQVJNLW12
+ZWJ1LTM4NS1hcC1BZGQtcGFydGl0aW9ucy5wYXRjaCB8ICAzNSArCj4gIC4uLi8yMTAtY2xlYXJm
+b2dfc3dpdGNoX25vZGUucGF0Y2ggICAgICAgICAgICB8ICAyMSArCj4gIC4uLi8yMjAtZGlzYWJs
+ZS11bnRlc3RlZC1kc2EtYm9hcmRzLnBhdGNoICAgICB8ICAzMCArCj4gIC4uLi1hcm1hZGEteHAt
+bGlua3N5cy1tYW1iYS1icm9rZW4taWRsZS5wYXRjaCB8ICAxMCArCj4gIC4uLi8zMDAtbXZuZXRh
+LXR4LXF1ZXVlLXdvcmthcm91bmQucGF0Y2ggICAgICB8ICAzNSArCj4gIC4uLmRpY2F0ZS1mYWls
+dXJlLXRvLWVudGVyLWRlZXBlci1zbGVlcC5wYXRjaCB8ICA0MCArCj4gIC4uLi1wY2ktbXZlYnUt
+dGltZS1vdXQtcmVzZXQtb24tbGluay11cC5wYXRjaCB8ICA2MCArKwo+ICAuLi4tY2FsbC1tYWNf
+Y29uZmlnLWR1cmluZy1yZXNvbHZlLXdoZW4ucGF0Y2ggfCAgNDQgKwo+ICAuLi5pbmstZW5zdXJl
+LWluYmFuZC1BTi13b3Jrcy1jb3JyZWN0bHkucGF0Y2ggfCAgNTkgKysKPiAgLi4uZXRkZXYtc2Zw
+X2J1cy1hbmQtdXNlLWZvci1zdGFydC1zdG9wLnBhdGNoIHwgIDM5ICsKPiAgLi4uNS1uZXQtcGh5
+LW1hcnZlbGwxMGctYWRkLVNGUC1zdXBwb3J0LnBhdGNoIHwgMTU1ICsrKysKPiAgLi4uLzQwNi1z
+ZnAtYWRkLXNmcC1jb21wYXRpYmxlLnBhdGNoICAgICAgICAgIHwgIDI0ICsKPiAgLi4uNy1zZnAt
+ZGlzcGxheS1TRlAtbW9kdWxlLWluZm9ybWF0aW9uLnBhdGNoIHwgMjk3ICsrKysrKysKPiAgLi4u
+LzQwOC1zZnAtbW9yZS1jb3Rzd29ya3MtZml4ZXMucGF0Y2ggICAgICAgIHwgIDQ0ICsKPiAgLi4u
+ZGEzODgtY2xlYXJmb2ctZW1tYy1vbi1jbGVhcmZvZy1iYXNlLnBhdGNoIHwgIDg3ICsrCj4gIC4u
+LnJtYWRhMzg4LWNsZWFyZm9nLWRvY3VtZW50LU1QUC11c2FnZS5wYXRjaCB8IDEyNCArKysKPiAg
+Li4uL3BhdGNoZXMtNC4xOS80NTAtcmVwcm9iZV9zZnBfcGh5LnBhdGNoICAgIHwgIDk0ICsrKwo+
+ICAuLi5sLWFybWFkYTM3eHgtQWRkLWVtbWMtc2Rpby1waW5jdHJsLWQucGF0Y2ggfCAgNDAgKwo+
+ICAuLi5sLWFybWFkYS0zN3h4LUVuYWJsZS1lbW1jLW9uLWVzcHJlc3MucGF0Y2ggfCAgNDkgKysK
+PiAgLi4udHMtbWFydmVsbC1hcm1hZGEzN3h4LUFkZC1ldGgwLWFsaWFzLnBhdGNoIHwgIDIwICsK
+PiAgLi4uZGEtMzcyMC1lc3ByZXNzb2Jpbi1jb3JyZWN0LXNwaS1ub2RlLnBhdGNoIHwgIDU4ICsr
+Cj4gIC4uLmwtYXJtYWRhLTM3MjAtZXNwcmVzc29iaW4tYWRkLXBvcnRzLS5wYXRjaCB8ICAyNiAr
+Cj4gIC4uLnJkdmFyay1Db252ZXJ0LXRvLXVzZS1wY2lfaG9zdF9wcm9iZS5wYXRjaCB8ICA0NCAr
+Cj4gIC4uLi1kZXZpY2UtdG8tdGhlLXNhbWUtTUFYLXBheWxvYWQtc2l6ZS5wYXRjaCB8IDEzOCAr
+KysrCj4gIC4uLmFyZHZhcmstZGlzYWJsZS1MT1Mtc3RhdGUtYnktZGVmYXVsdC5wYXRjaCB8ICA1
+NSArKwo+ICAuLi5hcmstYWxsb3ctdG8tc3BlY2lmeS1saW5rLWNhcGFiaWxpdHkucGF0Y2ggfCAg
+NDMgKwo+ICAuLi4tMzcyMC1lc3ByZXNzb2Jpbi1zZXQtbWF4LWxpbmstdG8tZ2UucGF0Y2ggfCAg
+NzMgKysKPiAgNDUgZmlsZXMgY2hhbmdlZCwgMzk1OCBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBt
+b2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvY29uZmlnLTQuMTkKPiAgcmVuYW1lIHRhcmdl
+dC9saW51eC9tdmVidS9jb3J0ZXhhNTMve2NvbmZpZy1kZWZhdWx0ID0+IGNvbmZpZy00LjE0fSAo
+MTAwJSkKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9jb3J0ZXhhNTMv
+Y29uZmlnLTQuMTkKPiAgcmVuYW1lIHRhcmdldC9saW51eC9tdmVidS9jb3J0ZXhhNzIve2NvbmZp
+Zy1kZWZhdWx0ID0+IGNvbmZpZy00LjE0fSAoMTAwJSkKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRh
+cmdldC9saW51eC9tdmVidS9jb3J0ZXhhNzIvY29uZmlnLTQuMTkKPiAgY3JlYXRlIG1vZGUgMTAw
+NjQ0IHRhcmdldC9saW51eC9tdmVidS9maWxlcy00LjE5L2FyY2gvYXJtL2Jvb3QvZHRzL2FybWFk
+YS0zODUtbGlua3N5cy12ZW5vbS5kdHMKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51
+eC9tdmVidS9maWxlcy00LjE5L2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzcy
+MC1lc3ByZXNzb2Jpbi1lbW1jLmR0cwo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4
+L212ZWJ1L2ZpbGVzLTQuMTkvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2FybWFkYS0zNzIw
+LWVzcHJlc3NvYmluLXY3LWVtbWMuZHRzCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGlu
+dXgvbXZlYnUvZmlsZXMtNC4xOS9hcmNoL2FybTY0L2Jvb3QvZHRzL21hcnZlbGwvYXJtYWRhLTM3
+MjAtZXNwcmVzc29iaW4tdjcuZHRzCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgv
+bXZlYnUvcGF0Y2hlcy00LjE5LzAwMi1hZGRfcG93ZXJ0YWJsZXMucGF0Y2gKPiAgY3JlYXRlIG1v
+ZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvMDAzLWFkZF9zd2l0Y2hf
+bm9kZXMucGF0Y2gKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRj
+aGVzLTQuMTkvMDA0LWFkZF9zYXRhX2Rpc2tfYWN0aXZpdHlfdHJpZ2dlci5wYXRjaAo+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS8wMDUtbGlua3N5
+c19oYXJkY29kZV9uYW5kX2VjY19zZXR0aW5ncy5wYXRjaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQg
+dGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS8wMDYtbXZlYnUtTWFuZ2xlLWJvb3Rsb2Fk
+ZXItcy1rZXJuZWwtYXJndW1lbnRzLnBhdGNoCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQv
+bGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzEwMC1maW5kX2FjdGl2ZV9yb290LnBhdGNoCj4gIGNy
+ZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzEwMi1yZXZl
+cnRfaTJjX2RlbGF5LnBhdGNoCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZl
+YnUvcGF0Y2hlcy00LjE5LzIwNS1hcm1hZGEtMzg1LXJkLW10ZC1wYXJ0aXRpb25zLnBhdGNoCj4g
+IGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzIwNi1B
+Uk0tbXZlYnUtMzg1LWFwLUFkZC1wYXJ0aXRpb25zLnBhdGNoCj4gIGNyZWF0ZSBtb2RlIDEwMDY0
+NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzIxMC1jbGVhcmZvZ19zd2l0Y2hfbm9k
+ZS5wYXRjaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMt
+NC4xOS8yMjAtZGlzYWJsZS11bnRlc3RlZC1kc2EtYm9hcmRzLnBhdGNoCj4gIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzIzMC1hcm1hZGEteHAtbGlu
+a3N5cy1tYW1iYS1icm9rZW4taWRsZS5wYXRjaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0
+L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS8zMDAtbXZuZXRhLXR4LXF1ZXVlLXdvcmthcm91bmQu
+cGF0Y2gKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQu
+MTkvNDAwLWNwdWlkbGUtbXZlYnUtaW5kaWNhdGUtZmFpbHVyZS10by1lbnRlci1kZWVwZXItc2xl
+ZXAucGF0Y2gKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVz
+LTQuMTkvNDAxLXBjaS1tdmVidS10aW1lLW91dC1yZXNldC1vbi1saW5rLXVwLnBhdGNoCj4gIGNy
+ZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzQwMi1uZXQt
+cGh5bGluay1vbmx5LWNhbGwtbWFjX2NvbmZpZy1kdXJpbmctcmVzb2x2ZS13aGVuLnBhdGNoCj4g
+IGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzQwMy1u
+ZXQtcGh5bGluay1lbnN1cmUtaW5iYW5kLUFOLXdvcmtzLWNvcnJlY3RseS5wYXRjaAo+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDQtc2ZwLXBy
+b3ZpZGUtbmV0ZGV2LXNmcF9idXMtYW5kLXVzZS1mb3Itc3RhcnQtc3RvcC5wYXRjaAo+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDUtbmV0LXBo
+eS1tYXJ2ZWxsMTBnLWFkZC1TRlAtc3VwcG9ydC5wYXRjaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQg
+dGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDYtc2ZwLWFkZC1zZnAtY29tcGF0aWJs
+ZS5wYXRjaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMt
+NC4xOS80MDctc2ZwLWRpc3BsYXktU0ZQLW1vZHVsZS1pbmZvcm1hdGlvbi5wYXRjaAo+ICBjcmVh
+dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDgtc2ZwLW1v
+cmUtY290c3dvcmtzLWZpeGVzLnBhdGNoCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGlu
+dXgvbXZlYnUvcGF0Y2hlcy00LjE5LzQxMi1BUk0tZHRzLWFybWFkYTM4OC1jbGVhcmZvZy1lbW1j
+LW9uLWNsZWFyZm9nLWJhc2UucGF0Y2gKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51
+eC9tdmVidS9wYXRjaGVzLTQuMTkvNDE1LUFSTS1kdHMtYXJtYWRhMzg4LWNsZWFyZm9nLWRvY3Vt
+ZW50LU1QUC11c2FnZS5wYXRjaAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212
+ZWJ1L3BhdGNoZXMtNC4xOS80NTAtcmVwcm9iZV9zZnBfcGh5LnBhdGNoCj4gIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzUxMy1hcm02NC1kdHMtbWFy
+dmVsbC1hcm1hZGEzN3h4LUFkZC1lbW1jLXNkaW8tcGluY3RybC1kLnBhdGNoCj4gIGNyZWF0ZSBt
+b2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzUxNC1hcm02NC1kdHMt
+bWFydmVsbC1hcm1hZGEtMzd4eC1FbmFibGUtZW1tYy1vbi1lc3ByZXNzLnBhdGNoCj4gIGNyZWF0
+ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzUyMC1hcm02NC1k
+dHMtbWFydmVsbC1hcm1hZGEzN3h4LUFkZC1ldGgwLWFsaWFzLnBhdGNoCj4gIGNyZWF0ZSBtb2Rl
+IDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzUyMS1hcm02NC1kdHMtYXJt
+YWRhLTM3MjAtZXNwcmVzc29iaW4tY29ycmVjdC1zcGktbm9kZS5wYXRjaAo+ICBjcmVhdGUgbW9k
+ZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS81MjItYXJtNjQtZHRzLW1h
+cnZlbGwtYXJtYWRhLTM3MjAtZXNwcmVzc29iaW4tYWRkLXBvcnRzLS5wYXRjaAo+ICBjcmVhdGUg
+bW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS81MjMtUmV2ZXJ0LVBD
+SS1hYXJkdmFyay1Db252ZXJ0LXRvLXVzZS1wY2lfaG9zdF9wcm9iZS5wYXRjaAo+ICBjcmVhdGUg
+bW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS81MjQtUENJLWFhcmR2
+YXJrLXNldC1ob3N0LWFuZC1kZXZpY2UtdG8tdGhlLXNhbWUtTUFYLXBheWxvYWQtc2l6ZS5wYXRj
+aAo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS81
+MjYtUENJLWFhcmR2YXJrLWRpc2FibGUtTE9TLXN0YXRlLWJ5LWRlZmF1bHQucGF0Y2gKPiAgY3Jl
+YXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvNTI3LVBDSS1h
+YXJkdmFyay1hbGxvdy10by1zcGVjaWZ5LWxpbmstY2FwYWJpbGl0eS5wYXRjaAo+ICBjcmVhdGUg
+bW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS81MjgtYXJtNjQtZHRz
+LWFybWFkYS0zNzIwLWVzcHJlc3NvYmluLXNldC1tYXgtbGluay10by1nZS5wYXRjaAo+IAo+IGRp
+ZmYgLS1naXQgYS90YXJnZXQvbGludXgvbXZlYnUvTWFrZWZpbGUgYi90YXJnZXQvbGludXgvbXZl
+YnUvTWFrZWZpbGUKPiBpbmRleCBhOTIwZjZkYjdkLi5mMzk1NzNjMDAyIDEwMDY0NAo+IC0tLSBh
+L3RhcmdldC9saW51eC9tdmVidS9NYWtlZmlsZQo+ICsrKyBiL3RhcmdldC9saW51eC9tdmVidS9N
+YWtlZmlsZQo+IEBAIC0xMyw2ICsxMyw3IEBAIFNVQlRBUkdFVFM6PWNvcnRleGE5IGNvcnRleGE1
+MyBjb3J0ZXhhNzIKPiAgTUFJTlRBSU5FUjo9SW1yZSBLYWxveiA8a2Fsb3pAb3BlbndydC5vcmc+
+Cj4gIAo+ICBLRVJORUxfUEFUQ0hWRVI6PTQuMTQKPiArS0VSTkVMX1RFU1RJTkdfUEFUQ0hWRVI6
+PTQuMTkKPiAgCj4gIGluY2x1ZGUgJChJTkNMVURFX0RJUikvdGFyZ2V0Lm1rCj4gIAo+IGRpZmYg
+LS1naXQgYS90YXJnZXQvbGludXgvbXZlYnUvY29uZmlnLTQuMTkgYi90YXJnZXQvbGludXgvbXZl
+YnUvY29uZmlnLTQuMTkKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAu
+LjJjOTk2ZDRkY2IKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIvdGFyZ2V0L2xpbnV4L212ZWJ1L2Nv
+bmZpZy00LjE5CgpQbGVhc2UgcnVuICJtYWtlIHRhcmdldC9saW51eC97Y2xlYW4scmVmcmVzaH0g
+Vj05OSIgYWdhaW4gdG8gcmVmcmVzaAp0aGlzIGNvbmZpZ3VyYXRpb24gc29tZSBvcHRpb25zIGFy
+ZSBub3cgaW4gdGhlIGdlbmVyaWMgY29uZmlndXJhdGlvbgpsaWtlIENPTkZJR19NU0NDX09DRUxP
+VF9TV0lUQ0guCgouLi4uLi4KCgo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvbXZlYnUvcGF0
+Y2hlcy00LjE5LzQwNC1zZnAtcHJvdmlkZS1uZXRkZXYtc2ZwX2J1cy1hbmQtdXNlLWZvci1zdGFy
+dC1zdG9wLnBhdGNoIGIvdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDQtc2ZwLXBy
+b3ZpZGUtbmV0ZGV2LXNmcF9idXMtYW5kLXVzZS1mb3Itc3RhcnQtc3RvcC5wYXRjaAo+IG5ldyBm
+aWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMC4uYmQ4ZjY0ZGNiZQo+IC0tLSAvZGV2
+L251bGwKPiArKysgYi90YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzQwNC1zZnAtcHJv
+dmlkZS1uZXRkZXYtc2ZwX2J1cy1hbmQtdXNlLWZvci1zdGFydC1zdG9wLnBhdGNoCj4gQEAgLTAs
+MCArMSwzOSBAQAo+ICtGcm9tIDAwNjhhODk3NDdlN2MxZDlhMGJiYjcyODJhMzQzODJhNDI3NDYz
+OGEgTW9uIFNlcCAxNyAwMDowMDowMCAyMDAxCj4gK0Zyb206IFJ1c3NlbGwgS2luZyA8cm1rK2tl
+cm5lbEBhcm1saW51eC5vcmcudWs+Cj4gK0RhdGU6IEZyaSwgMTQgQXByIDIwMTcgMTY6NDE6NTUg
+KzAxMDAKPiArU3ViamVjdDogW1BBVENIXSBzZnA6IHByb3ZpZGUgbmV0ZGV2IHNmcF9idXMgYW5k
+IHVzZSBmb3Igc3RhcnQvc3RvcAo+ICsKPiArQWRkIGEgbmV0ZGV2IHNmcF9idXMgcG9pbnRlciBm
+b3IgcHJvcGFnYXRpbmcgdGhlIHBoeWxpbmsgc3RhcnQvc3RvcAo+ICthY3Rpb25zIHRvIHRoZSBT
+RlAgY2FnZTogdGhlIFNGUCBjYWdlIG1heSBub3QgYmUgZGlyZWN0bHkgY29ubmVjdGVkIHRvCj4g
+K3BoeWxpbmssIGJ1dCBtYXkgYmUgdGhlIG90aGVyIHNpZGUgb2YgYSBmaXhlZCBQSFksIGFuZCBT
+RlAgbmVlZHMgdG8KPiAra25vdyB3aGVuIHRoZSBuZXRkZXYgaXMgYnJvdWdodCB1cCBvciB0YWtl
+biBkb3duLgo+ICsKPiArU2lnbmVkLW9mZi1ieTogUnVzc2VsbCBLaW5nIDxybWsra2VybmVsQGFy
+bWxpbnV4Lm9yZy51az4KPiArLS0tCj4gKyBkcml2ZXJzL25ldC9waHkvcGh5bGluay5jIHwgOCAr
+KysrLS0tLQo+ICsgMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMo
+LSkKPiArCj4gKy0tLSBhL2RyaXZlcnMvbmV0L3BoeS9waHlsaW5rLmMKPiArKysrIGIvZHJpdmVy
+cy9uZXQvcGh5L3BoeWxpbmsuYwo+ICtAQCAtOTQzLDggKzk0Myw4IEBAIHZvaWQgcGh5bGlua19z
+dGFydChzdHJ1Y3QgcGh5bGluayAqcGwpCj4gKyAKPiArIAlpZiAocGwtPmxpbmtfYW5fbW9kZSA9
+PSBNTE9fQU5fRklYRUQgJiYgIUlTX0VSUihwbC0+bGlua19ncGlvKSkKPiArIAkJbW9kX3RpbWVy
+KCZwbC0+bGlua19wb2xsLCBqaWZmaWVzICsgSFopOwo+ICstCWlmIChwbC0+c2ZwX2J1cykKPiAr
+LQkJc2ZwX3Vwc3RyZWFtX3N0YXJ0KHBsLT5zZnBfYnVzKTsKPiArKwlpZiAocGwtPm5ldGRldi0+
+c2ZwX2J1cykKPiArKwkJc2ZwX3Vwc3RyZWFtX3N0YXJ0KHBsLT5uZXRkZXYtPnNmcF9idXMpOwo+
+ICsgCWlmIChwbC0+cGh5ZGV2KQo+ICsgCQlwaHlfc3RhcnQocGwtPnBoeWRldik7Cj4gKyB9Cj4g
+K0BAIC05NjUsOCArOTY1LDggQEAgdm9pZCBwaHlsaW5rX3N0b3Aoc3RydWN0IHBoeWxpbmsgKnBs
+KQo+ICsgCj4gKyAJaWYgKHBsLT5waHlkZXYpCj4gKyAJCXBoeV9zdG9wKHBsLT5waHlkZXYpOwo+
+ICstCWlmIChwbC0+c2ZwX2J1cykKPiArLQkJc2ZwX3Vwc3RyZWFtX3N0b3AocGwtPnNmcF9idXMp
+Owo+ICsrCWlmIChwbC0+bmV0ZGV2LT5zZnBfYnVzKQo+ICsrCQlzZnBfdXBzdHJlYW1fc3RvcChw
+bC0+bmV0ZGV2LT5zZnBfYnVzKTsKPiArIAlpZiAocGwtPmxpbmtfYW5fbW9kZSA9PSBNTE9fQU5f
+RklYRUQgJiYgIUlTX0VSUihwbC0+bGlua19ncGlvKSkKPiArIAkJZGVsX3RpbWVyX3N5bmMoJnBs
+LT5saW5rX3BvbGwpOwo+ICsgCgpJcyB0aGlzIHBhdGNoIHN0aWxsIG5lZWRlZD8KClNob3VsZG4n
+dCB0aGUgU0ZQIHN1cHBvcnRlZCBiZSBpbnRlZ2FyZXRkIGludG8gdXBzdHJlYW0gbm93PyBJIHRo
+aW5rIHRoZQpTRlAgcmVsYXRlZCBwYXRjaGVzIHNob3VsZCBiZSBtb3N0bHkgYmFja3BvcnRzIG9y
+IG9sZGVyIHZlcnNpb25zIG9mIHRoZQp1cHN0cmVhbSBTRlAgc3VwcG9ydCBwYXRjaGVzIHdoaWNo
+IHduZXQgdXBzdHJlYW0uCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMu
+b3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29w
+ZW53cnQtZGV2ZWwK

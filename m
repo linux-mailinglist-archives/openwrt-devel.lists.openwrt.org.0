@@ -2,86 +2,122 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 975533A2A4
-	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 02:14:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A184F3A40B
+	for <lists+openwrt-devel@lfdr.de>; Sun,  9 Jun 2019 08:43:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rBPVXaQ/fQhRKthzvauZl+zb5weVwaA8+bECtMLcK1w=; b=pCrfSvh5vHwtwY
-	LQ9ILSknF7an5FFWJClE7Ntpot6lr2ZSgqcE4YHLvggFi5qW67wEIv7s8QymYUH4BGL3bd5BBMkO8
-	dn6IL6d14i5jNEOhkwCPUGza/+FET1RmplVHHL8I2Vi8klNHDNt51wObvnbp+2Un/5x/t1m2pOLFV
-	VAyDrYoEu0+eaf6jCz4tPt4z3V+cmrNN2aIuI5BQBr6u/9YdoelNuX7aMv5awAeOpgD9Km/G1tWXE
-	oISpk8diIA2+veyBHZk20iJcRkbB9xsOlwbotqmIeK19g6zS96Zfz+DZVWYFNFaxBPWRyIQMuFdtt
-	Uq6nxODTR1CbhR9V9wVw==;
+	List-Owner; bh=uCcEiMDQM2sfliyXyXbiXQjvXP1cKNeN5rMO5Gkifkk=; b=ranus7Fn+q7WW4
+	fsGKRxe6N257/CmVcuBesqb0ACK4GlfCG5dd2wo6euPof3S2RBlTcYoM8590qom1/1ANm9uMlIJh1
+	xn6CZsRoItNy2GpLSmkJSYEcT1/C4991/qnkqVTK3pcde394i3FiOrItfP1etX49h97x5RU98TjNx
+	wgsv2UPzrCEfe7f8pYlh6SupDeYR5vj+eSgVdp/8YBpAxm0C7i59fKL0GdFns0ZNwd+chKGZGcysO
+	Ndi9uDFI14rvKkLfW2gyxtjkkqdChjvmyVfclZc9uk8sTYzeVwwq0KrRb1nM5g3xIVbkQ3RxNwCEV
+	lvXzkMlWO01hi2ZkE4Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZlTj-0004DO-0J; Sun, 09 Jun 2019 00:14:31 +0000
-Received: from pb-smtp20.pobox.com ([173.228.157.52])
+	id 1hZrXD-000300-Mf; Sun, 09 Jun 2019 06:42:32 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZlTa-0004Cu-Ck
- for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 00:14:24 +0000
-Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
- by pb-smtp20.pobox.com (Postfix) with ESMTP id 779597BD70;
- Sat,  8 Jun 2019 20:14:18 -0400 (EDT)
- (envelope-from daniel.santos@pobox.com)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=subject:to:cc
- :references:from:message-id:date:mime-version:in-reply-to
- :content-type:content-transfer-encoding; s=sasl; bh=+hCIgWf2gGnv
- N1U5hkkWGBSChbE=; b=aeYHrYvdTdR1C/CiYJpgXMe/sBBO4cYk+Xom48ybbj4m
- m1jH0jnhXy1UXqktHQWtdqG0hwUoU1XWgGql86pwsfBghcDFbeUiqXobYZrJ2jiJ
- iqadRXKWY/OjDHNkJBEnaMT+mD9ZKOadJ3cUrnfHKF4qW6CuaKdaENZ+kfjGNX4=
-DomainKey-Signature: a=rsa-sha1; c=nofws; d=pobox.com; h=subject:to:cc
- :references:from:message-id:date:mime-version:in-reply-to
- :content-type:content-transfer-encoding; q=dns; s=sasl; b=tGcmYL
- fLKm0ypsjrcZRJn8fWcEyuTf6pINxrMtDMl4/eAbCMlC4aeaTpQePF0mmbOpmzAJ
- UeAhfJxIEpy23AvX+d3gCaaIesTPYW9hwylr87HGKIbkoWKJ4uXdXSP3TioaBusm
- tkp0db/zNC1O4vVM7FdOF7NN0nsT+SCtIm1QM=
-Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
- by pb-smtp20.pobox.com (Postfix) with ESMTP id 6FEB37BD6F;
- Sat,  8 Jun 2019 20:14:18 -0400 (EDT)
- (envelope-from daniel.santos@pobox.com)
-Received: from [192.168.2.4] (unknown [70.142.57.80])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1hZrX2-0002z7-Fr
+ for openwrt-devel@lists.openwrt.org; Sun, 09 Jun 2019 06:42:23 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by pb-smtp20.pobox.com (Postfix) with ESMTPSA id 5F9587BD6C;
- Sat,  8 Jun 2019 20:14:15 -0400 (EDT)
- (envelope-from daniel.santos@pobox.com)
-To: Daniel Golle <daniel@makrotopia.org>
-References: <5316c6da-1966-4896-6f4d-8120d9f1ff6e@pobox.com>
- <20190608115159.GA1559@makrotopia.org>
-From: Daniel Santos <daniel.santos@pobox.com>
-Message-ID: <42094a87-09e6-1278-97c5-b6faaaca0a95@pobox.com>
-Date: Sat, 8 Jun 2019 19:12:41 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by mx2.mailbox.org (Postfix) with ESMTPS id 4B5CCA01A1;
+ Sun,  9 Jun 2019 08:42:14 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
+ [80.241.56.116]) (amavisd-new, port 10030)
+ with ESMTP id OD3oVUJ8msXZ; Sun,  9 Jun 2019 08:42:03 +0200 (CEST)
+To: petrcvekcz@gmail.com, john@phrozen.org
+References: <cover.1560024463.git.petrcvekcz@gmail.com>
+ <07892acc26ae73c6567254a28faac7a723cedbc3.1560024463.git.petrcvekcz@gmail.com>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+ U9K2P2+nz7is4sF1hNVarw==
+Message-ID: <b2d8730b-e98e-55c9-609a-aeeeea911415@hauke-m.de>
+Date: Sun, 9 Jun 2019 08:42:02 +0200
 MIME-Version: 1.0
-In-Reply-To: <20190608115159.GA1559@makrotopia.org>
+In-Reply-To: <07892acc26ae73c6567254a28faac7a723cedbc3.1560024463.git.petrcvekcz@gmail.com>
 Content-Language: en-US
-X-Pobox-Relay-ID: 844A6420-8A4B-11E9-A518-B0405B776F7B-06139138!pb-smtp20.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190608_171422_478270_E70B0241 
-X-CRM114-Status: GOOD (  22.19  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190608_234220_837919_D7D368E8 
+X-CRM114-Status: GOOD (  33.10  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.215 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [173.228.157.52 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Using ethtool or swconfig to change link
- settings for mt7620a?
+Subject: Re: [OpenWrt-Devel] [PATCH v1 7/7] MIPS: lantiq: Add SMP support
+ for lantiq interrupt controller
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,76 +129,361 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Vitaly Chekryzhev <13hakta@gmail.com>, netdev@vger.kernel.org,
- openwrt-devel <openwrt-devel@lists.openwrt.org>,
- Luis Soltero <lsoltero@globalmarinenet.com>, Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: pakahmar@hotmail.com, openwrt-devel@lists.openwrt.org,
+ linux-mips@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVsbG8gRGFuaWVsLAoKVGhhbmtzIGZvciB5b3VyIGhlbHAhCgpPbiA2LzgvMTkgNjo1MSBBTSwg
-RGFuaWVsIEdvbGxlIHdyb3RlOgo+IEhpIERhbmllbCwKPgo+IE9uIFNhdCwgSnVuIDA4LCAyMDE5
-IGF0IDA0OjA2OjU0QU0gLTA1MDAsIERhbmllbCBTYW50b3Mgd3JvdGU6Cj4+IEhlbGxvLAo+Pgo+
-PiBJIG5lZWQgdG8gY2hhbmdlIGF1dG8tbmVnb3RpYXRlLCBzcGVlZCBhbmQgZHVwbGV4IGZvciBh
-IHBvcnQgb24gbXkKPj4gbXQ3NjIwYS1iYXNlZCBkZXZpY2UsIGJ1dCBJJ20gbm90IHF1aXRlIGNl
-cnRhaW4gdGhhdCBJIHVuZGVyc3RhbmQgdGhlCj4+IHN0cnVjdHVyZSBoZXJlLsKgIFdoZW4gdXNp
-bmcgZXRodG9vbCBvbiBldGgwIEkgYWx3YXlzIGdldCBFTk9ERVYsCj4+IGFwcGFyZW50bHkgYmVj
-YXVzZSBwcml2LT5waHlfZGV2IGlzIGFsd2F5cyBOVUxMIGluIGZlX2dldF9saW5rX2tzZXR0aW5n
-cwo+PiBvZiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tdGsvZXRodG9vbC5jLsKgIEJ1dCBJJ20gYmVp
-bmcgdG9sZCB0aGF0IGV0aDAgaXMKPj4gb25seSBhbiBpbnRlcm5hbCBkZXZpY2UgYmV0d2VlbiB0
-aGUgwrVDIGFuZCB0aGUgc3dpdGNoIGhhcmR3YXJlLCBzbyBpdAo+PiBpc24ndCBldmVuIHRoZSBv
-bmUgSSBuZWVkIHRvIGNoYW5nZS4KPiBUaGF0J3MgY29ycmVjdC4KCkl0IGFsd2F5cyBoZWxwcyB3
-aGVuIG15IGlkZWEgYWJvdXQgd2hhdCBJJ20gZG9pbmcgbWF0Y2hlcyByZWFsaXR5LgoKPj4gSWYg
-dGhpcyBpcyB0cnVlLCB0aGVuIGl0IGxvb2tzIGxpa2UgSSB3aWxsIG5lZWQgdG8gaW1wbGVtZW50
-IGEKPj4gZ2V0X3BvcnRfbGluayBmdW5jdGlvbiBmb3Igc3RydWN0IHN3aXRjaF9kZXZfb3BzP8Kg
-IENhbiBhbnlib2R5IGNvbmZpcm0KPj4gdGhpcyB0byBiZSB0aGUgY2FzZT/CoCBBbHNvLCBhcmUg
-dGhlcmUgYW55IGV4YW1wbGVzIGFzaWRlIGZyb20gdGhlCj4+IEJyb2FkY29tIGRyaXZlcnM/wqAg
-SSBoYXZlIHRoZSBtdDc2MjAgcHJvZ3JhbW1lcidzIGd1aWRlIGFuZCBpdCBzcGVjaWZpZXMKPj4g
-dGhlIHJlZ2lzdGVycyBJIG5lZWQgdG8gY2hhbmdlLgo+IEN1cnJlbnRseSBNVDc2MjAgc3RpbGwg
-dXNlcyBvdXIgbGVnYWN5IHN3Y29uZmlnIHN3aXRjaCBkcml2ZXIsIHdoaWNoCj4gYWxzbyBkb2Vz
-bid0IHN1cHBvcnQgc2V0dGluZyBhdXRvbmVnLCBzcGVlZCBhbmQgZHVwbGV4LiBIb3dldmVyLCBy
-YXRoZXIKPiB0aGFuIGltcGxlbWVudGluZyBpdCB0aGVyZSwgaXQnZCBiZSBncmVhdCB0byBhZGQg
-c3VwcG9ydCBmb3IgdGhlIEZFLQo+IHZlcnNpb24gb2YgdGhlIE1UNzUzMCBzd3RpY2ggZm91bmQg
-aW4gdGhlIE1UNzYyMChBL04pIFdpU29DIHRvIHRoZSBub3cKPiB1cHN0cmVhbSBEU0EgZHJpdmVy
-WzFdLgoKT2ssIHRoaXMgbWFrZXMgbXVjaCBtb3JlIHNlbnNlIG5vdy7CoCBTbyBzd2NvbmZpZyBp
-cyBvbiBpdHMgd2F5IG91dCBpbgpmYXZvciBvZiBEU0EgKHdoaWNoIEkndmUgbmV2ZXIgaGVhcmQg
-b2YgdW50aWwgbm93KT/CoCBJIHByZXN1bWUgdGhpcyB3aWxsCmFsc28gYWJzdHJhY3QgYXdheSBj
-aGFuZ2VzIG9mIGV0aHRvb2wgdG8gbmV0bGluay1iYXNlZCBpbnN0ZWFkIG9mIGlvY3RsCm9uIGEg
-cmFuZG9tIHNvY2tldCBhcyB3ZWxsPwoKPiBXaGlsZSB0aGlzIGRyaXZlciB3YXMgb3JpZ2luYWxs
-eSBpbnRlbmRlZCBmb3IKPiB1c2Ugd2l0aCBzdGFuZGFsb25lIE1UNzUzMCBHRSBzd2l0Y2ggY2hp
-cCBvciB0aGUgQVJNLWJhc2VkIE1UNzYyMyBTb0MsCj4gdGhlIHNhbWUgc3dpdGNoIGZhYnJpYyBp
-cyBhbHNvIGltcGxlbWVudGVkIGluIE1UNzYyMSBhbmQgc3VwcG9ydCBmb3IKPiB0aGF0IGNoaXAg
-d2FzIGFkZGVkIHRvIHRoZSBkcml2ZXIgcmVjZW50bHlbMl0uIE1UNzYyMCBiYXNpY2FsbHkgYWxz
-bwo+IGZlYXR1cmVzIHRoZSBzYW1lIHN3aXRjaCBpbnRlcm5hbGx5LCBob3dldmVyLCBpdCBjb21l
-cyB3aXRoIG9ubHkgb25lCj4gQ1BVIHBvcnQsIHN1cHBvcnRzIG9ubHkgRmFzdEV0aGVybmV0IGFu
-ZCBsYWNrcyBzb21lIG9mIHRoZSBtYW5hZ2VtZW50Cj4gY291bnRlcnMuCj4KPiBBc3N1bWluZyB5
-b3VyIE1UNzYyMCBkYXRhc2hlZXQgaW5jbHVkZXMgdGhlIGRlY3JpcHRpb24gb2YgdGhlIE1UNzUz
-MAo+IHN3aXRjaCByZWdpc3RlcnMsIGl0J2QgYmUgZ3JlYXQgaWYgeW91IGNhbiBoZWxwIHdvcmtp
-bmcgb24gc3VwcG9ydGluZwo+IE1UNzYyMCBpbiB0aGUgRFNBIGRyaXZlciBhcyB3ZWxsIC0tIGdh
-aW5pbmcgcGVyLXBvcnQgZXRodG9vbCBzdXBwb3J0Cj4gYXMgYSByZXdhcmQgOikKCldvbmRlcmZ1
-bCHCoCBTbyBpZiBJIHVuZGVyc3RhbmQgY29ycmVjdGx5LCB0aGlzIGlzIHRoZSBzYW1lIHN3aXRj
-aApoYXJkd2FyZSAoaW50ZXJuYWxseSBhdCBsZWFzdCksIHNvIGhhcyBhbGwgb2YgdGhlIHNhbWUg
-TUFDIGFuZCBNSUkKcmVnaXN0ZXJzIG9uIDc1MzAsIDc2MjEsIDc2MjAsIGV0Yz/CoCBGb3Igbm93
-IEkgaGF2ZSB0byBnZXQgYSBmaXggZm9yIGEKY3VzdG9tZXIgb24gYSAzLjE4IGtlcm5lbCwgc28g
-SSdsbCBiZSBkb2luZyB0aGUgc3djb25maWcgZmlyc3QgYW5kIHRoZW4Kc2VlIGhvdyBtdWNoIHRp
-bWUgd2UgY2FuIHB1dCBpbnRvIHRoZSBEU0EgaW1wbGVtZW50YXRpb24uCgo+Cj4gQ2hlZXJzCj4K
-Pgo+IERhbmllbAo+Cj4KPiBbMV06IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51
-eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL2RyaXZlcnMvbmV0L2RzYS9tdDc1
-MzAuYwo+IFsyXTogaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9n
-aXQvdG9ydmFsZHMvbGludXguZ2l0L2NvbW1pdC8/aWQ9ZGRkYTFhYzExNmM4NTJiYjk2OTU0MWVk
-NTNjZmZlZjcyNTVjNDk2MQo+CgpBbHNvLCB3b3VsZCB5b3UgaGFwcGVuIHRvIGtub3cgd2h5IHRo
-ZSBtdDc2MjAgbWRpbyBkcml2ZXIgaXMgdXNpbmcgYQozMi1iaXQgcmVhZCBmb3IgTUlJIHJlZ2lz
-dGVycyB0aGF0IGFyZSAzMi1iaXQ/wqAgRm9yIGV4YW1wbGUsIGluCl9tdDc2MjBfbWlpX3JlYWQu
-wqAgSXQgbG9va3MgbGlrZSBzb21lIG9mIHRoaXMgY2FuIHVzZSBzb21lIGltcHJvdmVkCmVycm9y
-IG1hbmFnZW1lbnQsIHNpbmNlIHJldHVybiBjb2RlcyBhcmUgYmVpbmcgaWdub3JlZCBpbiBhIGZl
-dyBwbGFjZXMuCgpGcm9tIHdoYXQgSSBjYW4gdGVsbCB0aHVzIGZhciwgaXQgbG9va3MgbGlrZSB0
-aGVzZSBNSUkgcmVnaXN0ZXJzIGFyZQpzdGFuZGFyZGl6ZWQsIHNvIHRoZSAiZ2VuZXJpYyIgdmVy
-c2lvbiBtaWdodCBkbyBtb3N0IG9yIGFsbCBvZiB3aGF0IEkKbmVlZCBpbiBzb21lIGNhc2VzLsKg
-IEJ1dCBhcyBmYXIgYXMgaW1wbGVtZW50aW5nIERTQSwgSSBndWVzcyBJJ2xsIGhhdmUKdG8gZXhh
-bWluZSB0aGUgbWFpbmxpbmVkIGRyaXZlciBhbmQgc2VlIGhvdyBpdCB3b3Jrcy7CoCBJIGp1c3Qg
-ZGlkbid0CmhhdmUgYSBzdHJ1Y3QgcGh5X2RldmljZSB0byB3b3JrIHdpdGggd2hlbiB0cnlpbmcg
-dG8gZ2V0IGl0IHRvIHdvcmsuCgpUaGFua3MsCkRhbmllbAoKCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
-cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+On 6/8/19 10:48 PM, petrcvekcz@gmail.com wrote:
+> From: Petr Cvek <petrcvekcz@gmail.com>
+> 
+> Some lantiq devices have two ICU controllers. Both are respectively
+> routed to the individual VPEs. The patch adds the support for the second
+> ICU.
+> 
+> The patch changes a register definition of the driver. Instead of an
+> individual IM, the whole ICU is defined. This will only affects openwrt
+> patched kernel (vanilla doesn't have additional .dts files).
+
+There is one dtsi file for this driver in the mainline kernel in
+arch/mips/boot/dts/lantiq/danube.dtsi
+
+I am not aware that any of the SoCs which uses this IRQ controller
+provides the dtb from the bootloader to the kernel, if they use device
+tree it is always patched or appended to the kernel, so this change
+should be ok.
+
+> Also spinlocks has been added, both cores can RMW different bitfields
+> in the same register. Added affinity set function. The new VPE cpumask
+> will take into the action at the irq enable.
+> 
+> The driver can rotate the preset VPEs affinity cpumask. Either by
+> an automatic cycling or just by using the first VPE from the affinity
+> cpumask. This can be switched by macro AUTO_AFFINITY_ROTATION. The
+> automatic rotation can be switched off from userspace by limiting the IRQ
+> to only one VPE.
+> 
+> The rotation was taken from MIPS loongson64's ht_irqdispatch().
+> 
+> The functionality was tested on 4.14 openwrt kernel and TP-W9980B modem.
+> 
+> Signed-off-by: Petr Cvek <petrcvekcz@gmail.com>
+> ---
+>  arch/mips/lantiq/irq.c | 155 ++++++++++++++++++++++++++++++++++-------
+>  1 file changed, 131 insertions(+), 24 deletions(-)
+> 
+> diff --git a/arch/mips/lantiq/irq.c b/arch/mips/lantiq/irq.c
+> index b9ca20ff07d5..0cdb7e88bfe5 100644
+> --- a/arch/mips/lantiq/irq.c
+> +++ b/arch/mips/lantiq/irq.c
+> @@ -21,6 +21,15 @@
+>  #include <lantiq_soc.h>
+>  #include <irq.h>
+>  
+> +/*
+> + * If defined, every IRQ enable call will switch the interrupt to
+> + * the other VPE. You can limit used VPEs from the userspace.
+> + *
+> + * If not defined, only the first configured VPE from the userspace
+> + * will be used.
+> + */
+> +#define AUTO_AFFINITY_ROTATION
+> +
+>  /* register definitions - internal irqs */
+>  #define LTQ_ICU_ISR		0x0000
+>  #define LTQ_ICU_IER		0x0008
+> @@ -46,8 +55,11 @@
+>   */
+>  #define LTQ_ICU_EBU_IRQ		22
+>  
+> -#define ltq_icu_w32(m, x, y)	ltq_w32((x), ltq_icu_membase[m] + (y))
+> -#define ltq_icu_r32(m, x)	ltq_r32(ltq_icu_membase[m] + (x))
+> +#define ltq_icu_w32(vpe, m, x, y)	\
+> +	ltq_w32((x), ltq_icu_membase[vpe] + m*0x28 + (y))
+
+Please use a define for the 0x28
+
+> +
+> +#define ltq_icu_r32(vpe, m, x)		\
+> +	ltq_r32(ltq_icu_membase[vpe] + m*0x28 + (x))
+>  
+>  #define ltq_eiu_w32(x, y)	ltq_w32((x), ltq_eiu_membase + (y))
+>  #define ltq_eiu_r32(x)		ltq_r32(ltq_eiu_membase + (x))
+> @@ -55,11 +67,15 @@
+>  /* we have a cascade of 8 irqs */
+>  #define MIPS_CPU_IRQ_CASCADE		8
+>  
+> +#define MAX_VPES 2
+> +
+>  static int exin_avail;
+>  static u32 ltq_eiu_irq[MAX_EIU];
+> -static void __iomem *ltq_icu_membase[MAX_IM];
+> +static void __iomem *ltq_icu_membase[MAX_VPES];
+>  static void __iomem *ltq_eiu_membase;
+>  static struct irq_domain *ltq_domain;
+> +static DEFINE_SPINLOCK(ltq_eiu_lock);
+> +static DEFINE_RAW_SPINLOCK(ltq_icu_lock);
+>  static int ltq_perfcount_irq;
+>  
+>  int ltq_eiu_get_irq(int exin)
+> @@ -73,45 +89,98 @@ void ltq_disable_irq(struct irq_data *d)
+>  {
+>  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+>  	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> +	unsigned long flags;
+> +	int vpe;
+>  
+>  	offset %= INT_NUM_IM_OFFSET;
+> -	ltq_icu_w32(im, ltq_icu_r32(im, LTQ_ICU_IER) & ~BIT(offset),
+> -		    LTQ_ICU_IER);
+> +
+> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> +	for_each_present_cpu(vpe) {
+> +		ltq_icu_w32(vpe, im,
+> +			    ltq_icu_r32(vpe, im, LTQ_ICU_IER) & ~BIT(offset),
+> +			    LTQ_ICU_IER);
+> +	}
+> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+>  }
+>  
+>  void ltq_mask_and_ack_irq(struct irq_data *d)
+>  {
+>  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+>  	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> +	unsigned long flags;
+> +	int vpe;
+>  
+>  	offset %= INT_NUM_IM_OFFSET;
+> -	ltq_icu_w32(im, ltq_icu_r32(im, LTQ_ICU_IER) & ~BIT(offset),
+> -		    LTQ_ICU_IER);
+> -	ltq_icu_w32(im, BIT(offset), LTQ_ICU_ISR);
+> +
+> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> +	for_each_present_cpu(vpe) {
+> +		ltq_icu_w32(vpe, im,
+> +			    ltq_icu_r32(vpe, im, LTQ_ICU_IER) & ~BIT(offset),
+> +			    LTQ_ICU_IER);
+> +		ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
+> +	}
+> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+>  }
+>  
+>  static void ltq_ack_irq(struct irq_data *d)
+>  {
+>  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+>  	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> +	unsigned long flags;
+> +	int vpe;
+>  
+>  	offset %= INT_NUM_IM_OFFSET;
+> -	ltq_icu_w32(im, BIT(offset), LTQ_ICU_ISR);
+> +
+> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> +	for_each_present_cpu(vpe) {
+> +		ltq_icu_w32(vpe, im, BIT(offset), LTQ_ICU_ISR);
+> +	}
+> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+>  }
+>  
+>  void ltq_enable_irq(struct irq_data *d)
+>  {
+>  	unsigned long offset = d->hwirq - MIPS_CPU_IRQ_CASCADE;
+>  	unsigned long im = offset / INT_NUM_IM_OFFSET;
+> +	unsigned long flags;
+> +	int vpe;
+>  
+>  	offset %= INT_NUM_IM_OFFSET;
+> -	ltq_icu_w32(im, ltq_icu_r32(im, LTQ_ICU_IER) | BIT(offset),
+> +
+> +#if defined(AUTO_AFFINITY_ROTATION)
+
+I do not like such a define. Is there some other way to automatically
+distribute the IRQs over the available CPUs?
+
+> +	vpe = cpumask_next(smp_processor_id(),
+> +			   irq_data_get_effective_affinity_mask(d));
+> +
+> +	/*
+> +	 * There is a theoretical race condition if affinity gets changed
+> +	 * meanwhile, but it would only caused a wrong VPE to be used until
+> +	 * the next IRQ enable. Also the SoC has only 2 VPEs which fits
+> +	 * the single u32. You can move spinlock before first mask readout
+> +	 * and add it to ltq_icu_irq_set_affinity.
+> +	 */
+> +
+> +	if (vpe >= nr_cpu_ids)
+> +		vpe = cpumask_first(irq_data_get_effective_affinity_mask(d));
+> +#else
+> +	vpe = cpumask_first(irq_data_get_effective_affinity_mask(d));
+> +#endif
+> +
+> +	/* This shouldn't be even possible, maybe during CPU hotplug spam */
+> +	if (unlikely(vpe >= nr_cpu_ids))
+> +		vpe = smp_processor_id();
+> +
+> +	raw_spin_lock_irqsave(&ltq_icu_lock, flags);
+> +
+> +	ltq_icu_w32(vpe, im, ltq_icu_r32(vpe, im, LTQ_ICU_IER) | BIT(offset),
+>  		    LTQ_ICU_IER);
+> +
+> +	raw_spin_unlock_irqrestore(&ltq_icu_lock, flags);
+>  }
+>  
+>  static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
+>  {
+>  	int i;
+> +	unsigned long flags;
+>  
+>  	for (i = 0; i < exin_avail; i++) {
+>  		if (d->hwirq == ltq_eiu_irq[i]) {
+> @@ -148,9 +217,11 @@ static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
+>  			if (edge)
+>  				irq_set_handler(d->hwirq, handle_edge_irq);
+>  
+> +			spin_lock_irqsave(&ltq_eiu_lock, flags);
+>  			ltq_eiu_w32((ltq_eiu_r32(LTQ_EIU_EXIN_C) &
+>  				    (~(7 << (i * 4)))) | (val << (i * 4)),
+>  				    LTQ_EIU_EXIN_C);
+> +			spin_unlock_irqrestore(&ltq_eiu_lock, flags);
+>  		}
+>  	}
+>  
+> @@ -194,6 +265,21 @@ static void ltq_shutdown_eiu_irq(struct irq_data *d)
+>  	}
+>  }
+>  
+> +#if defined(CONFIG_SMP)
+> +static int ltq_icu_irq_set_affinity(struct irq_data *d,
+> +				    const struct cpumask *cpumask, bool force)
+> +{
+> +	struct cpumask tmask;
+> +
+> +	if (!cpumask_and(&tmask, cpumask, cpu_online_mask))
+> +		return -EINVAL;
+> +
+> +	irq_data_update_effective_affinity(d, &tmask);
+> +
+> +	return IRQ_SET_MASK_OK;
+> +}
+> +#endif
+> +
+>  static struct irq_chip ltq_irq_type = {
+>  	.name = "icu",
+>  	.irq_enable = ltq_enable_irq,
+> @@ -202,6 +288,9 @@ static struct irq_chip ltq_irq_type = {
+>  	.irq_ack = ltq_ack_irq,
+>  	.irq_mask = ltq_disable_irq,
+>  	.irq_mask_ack = ltq_mask_and_ack_irq,
+> +#if defined(CONFIG_SMP)
+> +	.irq_set_affinity = ltq_icu_irq_set_affinity,
+> +#endif
+>  };
+>  
+>  static struct irq_chip ltq_eiu_type = {
+> @@ -215,6 +304,9 @@ static struct irq_chip ltq_eiu_type = {
+>  	.irq_mask = ltq_disable_irq,
+>  	.irq_mask_ack = ltq_mask_and_ack_irq,
+>  	.irq_set_type = ltq_eiu_settype,
+> +#if defined(CONFIG_SMP)
+> +	.irq_set_affinity = ltq_icu_irq_set_affinity,
+> +#endif
+
+This looks strange to me. As far as I understood this, the eiu is an
+extra IRQ controller whith its own configuration.
+
+>  };
+>  
+>  static void ltq_hw_irq_handler(struct irq_desc *desc)
+> @@ -222,8 +314,9 @@ static void ltq_hw_irq_handler(struct irq_desc *desc)
+>  	unsigned int module = irq_desc_get_irq(desc) - 2;
+>  	u32 irq;
+>  	irq_hw_number_t hwirq;
+> +	int vpe = smp_processor_id();
+>  
+> -	irq = ltq_icu_r32(module, LTQ_ICU_IOSR);
+> +	irq = ltq_icu_r32(vpe, module, LTQ_ICU_IOSR);
+>  	if (irq == 0)
+>  		return;
+>  
+> @@ -244,6 +337,7 @@ static void ltq_hw_irq_handler(struct irq_desc *desc)
+>  static int icu_map(struct irq_domain *d, unsigned int irq, irq_hw_number_t hw)
+>  {
+>  	struct irq_chip *chip = &ltq_irq_type;
+> +	struct irq_data *data;
+>  	int i;
+>  
+>  	if (hw < MIPS_CPU_IRQ_CASCADE)
+> @@ -253,6 +347,10 @@ static int icu_map(struct irq_domain *d, unsigned int irq, irq_hw_number_t hw)
+>  		if (hw == ltq_eiu_irq[i])
+>  			chip = &ltq_eiu_type;
+>  
+> +	data = irq_get_irq_data(irq);
+> +
+> +	irq_data_update_effective_affinity(data, cpumask_of(0));
+> +
+>  	irq_set_chip_and_handler(irq, chip, handle_level_irq);
+>  
+>  	return 0;
+> @@ -267,28 +365,37 @@ int __init icu_of_init(struct device_node *node, struct device_node *parent)
+>  {
+>  	struct device_node *eiu_node;
+>  	struct resource res;
+> -	int i, ret;
+> +	int i, ret, vpe;
+>  
+> -	for (i = 0; i < MAX_IM; i++) {
+> -		if (of_address_to_resource(node, i, &res))
+> -			panic("Failed to get icu memory range");
+> +	/* load register regions of available ICUs */
+> +	for_each_possible_cpu(vpe) {
+> +		if (of_address_to_resource(node, vpe, &res))
+> +			panic("Failed to get icu%i memory range", vpe);
+>  >  		if (!request_mem_region(res.start, resource_size(&res),
+>  					res.name))
+> -			pr_err("Failed to request icu memory");
+> +			pr_err("Failed to request icu%i memory\n", vpe);
+>  
+> -		ltq_icu_membase[i] = ioremap_nocache(res.start,
+> +		ltq_icu_membase[vpe] = ioremap_nocache(res.start,
+>  					resource_size(&res));
+
+Please check that you do not write over the the end of the
+ltq_icu_membase array.
+
+> -		if (!ltq_icu_membase[i])
+> -			panic("Failed to remap icu memory");
+> +
+> +		if (!ltq_icu_membase[vpe])
+> +			panic("Failed to remap icu%i memory", vpe);
+>  	}
+>  
+>  	/* turn off all irqs by default */
+> -	for (i = 0; i < MAX_IM; i++) {
+> -		/* make sure all irqs are turned off by default */
+> -		ltq_icu_w32(i, 0, LTQ_ICU_IER);
+> -		/* clear all possibly pending interrupts */
+> -		ltq_icu_w32(i, ~0, LTQ_ICU_ISR);
+> +	for_each_possible_cpu(vpe) {
+> +		for (i = 0; i < MAX_IM; i++) {
+> +			/* make sure all irqs are turned off by default */
+> +			ltq_icu_w32(vpe, i, 0, LTQ_ICU_IER);
+> +
+> +			/* clear all possibly pending interrupts */
+> +			ltq_icu_w32(vpe, i, ~0, LTQ_ICU_ISR);
+> +			ltq_icu_w32(vpe, i, ~0, LTQ_ICU_IMR);
+> +
+> +			/* clear resend */
+> +			ltq_icu_w32(vpe, i, 0, LTQ_ICU_IRSR);
+> +		}
+>  	}
+>  
+>  	mips_cpu_irq_init();
+> 
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

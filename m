@@ -2,73 +2,138 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B82583B75B
-	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Jun 2019 16:29:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CC783B825
+	for <lists+openwrt-devel@lfdr.de>; Mon, 10 Jun 2019 17:17:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wanVBsLkPBLLEebd7iQ4L1gRhs1900TiJApkPl3+AyQ=; b=iJwmsawwe/HU/J
-	wnnGTD+GKu55nnCFNyN1w3+wR5US630FYfbJ0r4tDFGYsfSsicll+ZfOgXDhQ6+CdsbktjHMPUHSQ
-	+Iq3/tdKy33cx8QyKQpbGv3TuC6kc+qQDTtfGRFrvE4jozgqe2FyebnPk5UCNvn5vsUheyDNKC/JC
-	4hjHYPs681LGPlczGC2Yjf7qaESCMQTbL7Cr6ouotwr8wwAsk7aHQh6PjcvP73llOOSsHRX1veqPP
-	j4tb+CpXNhxwtwzYkebjssZgdN1oW+f5ZORSon/pTObXsN15wKx6QsNgkclkn8qWFD2eRZKEFRrLr
-	R6dphQXe0ennHHHEunrg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:In-Reply-To:References:Message-ID:Date:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aBnGHjgk0wnxYzZJoJoGkknqBmwyrDVBbJAFjjcpO6s=; b=N7v2ikZS4SqTIEaSpvGFtsJoF
+	TkQl7nmiqK8MkvRrUX9sIOXPJnUcvubJw2m3MNG2vxfTlwn27ieC/T5o4GtPq6VCZR7OfKlce4cCI
+	R8yqUub1p6lzAsgYyu2s/PBqQEHrpjE3mA+YrBpFStDoCh+1n2FTbsAt0d7zcoGUA6ZtRkonVL8iw
+	dc1Qj7hhR2kg4qF//oq0HPfmnxVLDYMPEZKaGdCeCv9yiYuTgARrIPewPUvrC0cmevgePRwVR09g9
+	8x058R8MpzcgPndaUvZeJT2g94NZS0kqF2Kqj+iJbMpOlU0bacdaVRtA0tSAdPqpa+fYyJepnwiO2
+	u/6Yb6yPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haLIs-0001cS-Uk; Mon, 10 Jun 2019 14:29:43 +0000
-Received: from mx-out.tlen.pl ([193.222.135.142])
+	id 1haM2b-0005T9-O3; Mon, 10 Jun 2019 15:16:57 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haLIN-0001RB-Ko
- for openwrt-devel@lists.openwrt.org; Mon, 10 Jun 2019 14:29:13 +0000
-Received: (wp-smtpd smtp.tlen.pl 11884 invoked from network);
- 10 Jun 2019 16:29:08 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1560176948; bh=95TDiAjQ5OZfvXzAdmEVNwEW7rG7G6ePsMq/q1CoCxc=;
- h=Subject:To:Cc:From;
- b=oMuVf3cux6uiYolpFhhXIbCNcHbR+JvuS+3k+scM04IcQq4gSjdOa6kxqUfBYj2jv
- AQ7TEEan9tRvFQktDcWXkqf16hR1BbtlDxZgJakngr3Zp3N2BF8bB6H9IiL7DY6gLl
- +osYRgGDMITB5uYhGnB7hExyH6rrpVDFubmPsnaA=
-Received: from 131.ip-164-132-48.eu (HELO [10.8.0.6])
- (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <marek.behun@nic.cz>; 10 Jun 2019 16:29:08 +0200
-To: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
-References: <20190605143124.7598-1-tomek_n@o2.pl>
- <9b5e34c0-6ae0-1e2c-e831-4b0406afda7e@hauke-m.de>
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-Message-ID: <15ee5416-a462-a310-2d63-cb2304416d5b@o2.pl>
-Date: Mon, 10 Jun 2019 16:29:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
-In-Reply-To: <9b5e34c0-6ae0-1e2c-e831-4b0406afda7e@hauke-m.de>
+ id 1haM2P-0005RM-P1
+ for openwrt-devel@lists.openwrt.org; Mon, 10 Jun 2019 15:16:49 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Sandeep.Sheriker@microchip.com";
+ x-sender="Sandeep.Sheriker@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Sandeep.Sheriker@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+X-IronPort-AV: E=Sophos;i="5.63,575,1557212400"; d="scan'208,217";a="36875927"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Jun 2019 08:16:41 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.87.71) by
+ chn-vm-ex03.mchp-main.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 10 Jun 2019 08:16:41 -0700
+Received: from NAM03-BY2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Mon, 10 Jun 2019 08:16:40 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector1-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8QJqZAqSQVLJdpaKHpJavQgonsK7jiqiOQ07HqyKsjg=;
+ b=2uWo3fOFCFde0QOfIZuhcTEi5mfZTxz0tt3u42QS8weccwjLH9rh0RGL0lojH5ZyYNy0qG4B0toNayPOMKWnCeWMTmCDegqqoIQf2OqGBOWQcPhxNax4WKqSbKhQQuRYvm00SuZayoFuyi3tpKIsNXg0ckp7aN84K+9QVoDxSdo=
+Received: from BYAPR11MB3157.namprd11.prod.outlook.com (20.177.126.222) by
+ BYAPR11MB3751.namprd11.prod.outlook.com (20.178.238.144) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1965.12; Mon, 10 Jun 2019 15:16:38 +0000
+Received: from BYAPR11MB3157.namprd11.prod.outlook.com
+ ([fe80::c05:e2:ad3d:58b1]) by BYAPR11MB3157.namprd11.prod.outlook.com
+ ([fe80::c05:e2:ad3d:58b1%3]) with mapi id 15.20.1965.017; Mon, 10 Jun 2019
+ 15:16:38 +0000
+From: <Sandeep.Sheriker@microchip.com>
+To: <hauke@hauke-m.de>, <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [OpenWrt-Devel] [patch v1 07/11] at91bootstrap: add
+ sama5d27_som1_eksd1_uboot as default defconfig
+Thread-Index: AQHVHp4EvqIsvN0rTEWIOmy5eMTTlKaVAIcG
+Date: Mon, 10 Jun 2019 15:16:38 +0000
+Message-ID: <BYAPR11MB31570867AA6B3B0FD55E22C982130@BYAPR11MB3157.namprd11.prod.outlook.com>
+References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
+ <18636f3c7cf529c618ea532d749e980cd990c9ad.1559260744.git.sandeep.sheriker@microchip.com>,
+ <c86f4b62-f54b-f1fd-9f61-faf6f0110456@hauke-m.de>
+In-Reply-To: <c86f4b62-f54b-f1fd-9f61-faf6f0110456@hauke-m.de>
+Accept-Language: en-US
 Content-Language: en-US
-X-WP-MailID: 19d4d81504346f8226bc1ba88bdc83a7
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [0UP0]                               
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [198.175.253.81]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 0a66ecb9-fbce-41d2-6ef5-08d6edb6a29c
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600148)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:BYAPR11MB3751; 
+x-ms-traffictypediagnostic: BYAPR11MB3751:
+x-microsoft-antispam-prvs: <BYAPR11MB3751B160C2047921B38700F082130@BYAPR11MB3751.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2449;
+x-forefront-prvs: 0064B3273C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(396003)(346002)(136003)(39860400002)(376002)(189003)(199004)(99286004)(81156014)(76176011)(186003)(81166006)(7696005)(102836004)(26005)(6506007)(53546011)(486006)(72206003)(6436002)(2501003)(7736002)(3846002)(6116002)(8936002)(66066001)(52536014)(71200400001)(74316002)(476003)(8676002)(11346002)(446003)(5660300002)(71190400001)(19627405001)(33656002)(55016002)(9686003)(86362001)(229853002)(6246003)(54896002)(25786009)(478600001)(256004)(2906002)(64756008)(6606003)(53936002)(66556008)(66476007)(66946007)(14444005)(73956011)(76116006)(68736007)(316002)(110136005)(66446008)(14454004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR11MB3751;
+ H:BYAPR11MB3157.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: OY6Jrs3U/K4wkLc/xW5lGLhDNyEk2/Hv0weI35NyTLH5akbe8kQpqiEdFoJBJ0LlY+HkBjmhquHjuE6wORFVrW7UPAgdyfPlno5w1xpYakLGNwP81Z4zdlZk2kh3V5C3GjpOYt4mrlyaAfyJlncJBxeY77npwMjM1+XFrdQaLVDEFI1Qo+eOzMyZXkzBVmMzOPvfP/ytMvEISYvTDudaIv2YB/ebFFrkTsc7dkZ7TZ0vAuzvXrP34605yjoguMEQoCDQc0u7qqUvUNq6KbSso5sXnw3I3WECq4wgvhcPnKFcA3VCEIISsFp9vabSrsVP2Fgsn7+EkKJP+9GxTw7uNFpPkoIgRDTWQIbbkXYBNyS84LmSYntGFy6c/2dRNinoOXIoDBKEEtSSX72qEBo8a3nIYA9ubtzN5rSaTj2ySQk=
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0a66ecb9-fbce-41d2-6ef5-08d6edb6a29c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Jun 2019 15:16:38.5826 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sandeepsheriker.mallikarjun@microchip.com
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB3751
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_072911_846283_6F08874F 
-X-CRM114-Status: GOOD (  18.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190610_081645_972688_FB8DD8BB 
+X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tomek_n[at]o2.pl)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] mvebu: add kernel 4.19 support
+Subject: Re: [OpenWrt-Devel] [patch v1 07/11] at91bootstrap: add
+ sama5d27_som1_eksd1_uboot as default defconfig
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,205 +145,177 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Vladimir Vid <vladimir.vid@sartura.hr>,
- Marko Ratkaj <marko.ratkaj@sartura.hr>,
- =?UTF-8?Q?Marek_Beh=c3=ban?= <marek.behun@nic.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============2551173240403952456=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VyBkbml1IDA5LjA2LjIwMTkgb8KgMDk6MjksIEhhdWtlIE1laHJ0ZW5zIHBpc3plOgo+IE9uIDYv
-NS8xOSA0OjMxIFBNLCBUb21hc3ogTWFjaWVqIE5vd2FrIHdyb3RlOgo+PiBGcm9tOiBNYXJrbyBS
-YXRrYWogPG1hcmtvLnJhdGthakBzYXJ0dXJhLmhyPgo+Pgo+PiBDYzogVmxhZGltaXIgVmlkIDx2
-bGFkaW1pci52aWRAc2FydHVyYS5ocj4KPj4gU2lnbmVkLW9mZi1ieTogTWFya28gUmF0a2FqIDxt
-YXJrby5yYXRrYWpAc2FydHVyYS5ocj4KPj4gW2FkZGVkIHNmcCByZWxhdGVkIHBhdGNoZXMgZnJv
-bSBSdXNzZWxsIEtpbmddCj4+IFNpZ25lZC1vZmYtYnk6IE1hcmVrIEJlaMO6biA8bWFyZWsuYmVo
-dW5AbmljLmN6Pgo+PiBbcmViYXNlOyByZXdvcmsgcGF0Y2hlczsgc2VwYXJhdGUgYW5kIGNsZWFu
-dXAga2VybmVsIGNvbmZpZ3M7Cj4+IGFkZCBlc3Blc3NvYmluIGR0czsgYWRqdXN0IHZlbm9tIGR0
-c10KPj4gU2lnbmVkLW9mZi1ieTogVG9tYXN6IE1hY2llaiBOb3dhayA8dG9tZWtfbkBvMi5wbD4K
-Pj4gLS0tCj4+ICB0YXJnZXQvbGludXgvbXZlYnUvTWFrZWZpbGUgICAgICAgICAgICAgICAgICAg
-fCAgIDEgKwo+PiAgdGFyZ2V0L2xpbnV4L212ZWJ1L2NvbmZpZy00LjE5ICAgICAgICAgICAgICAg
-IHwgNTAxICsrKysrKysrKysrKwo+PiAgLi4uL2NvcnRleGE1My97Y29uZmlnLWRlZmF1bHQgPT4g
-Y29uZmlnLTQuMTR9IHwgICAwCj4+ICB0YXJnZXQvbGludXgvbXZlYnUvY29ydGV4YTUzL2NvbmZp
-Zy00LjE5ICAgICAgfCAxMTQgKysrCj4+ICAuLi4vY29ydGV4YTcyL3tjb25maWctZGVmYXVsdCA9
-PiBjb25maWctNC4xNH0gfCAgIDAKPj4gIHRhcmdldC9saW51eC9tdmVidS9jb3J0ZXhhNzIvY29u
-ZmlnLTQuMTkgICAgICB8IDEyMiArKysKPj4gIC4uLi9hcm0vYm9vdC9kdHMvYXJtYWRhLTM4NS1s
-aW5rc3lzLXZlbm9tLmR0cyB8IDIxMyArKysrKwo+PiAgLi4uL21hcnZlbGwvYXJtYWRhLTM3MjAt
-ZXNwcmVzc29iaW4tZW1tYy5kdHMgIHwgIDI4ICsKPj4gIC4uLi9hcm1hZGEtMzcyMC1lc3ByZXNz
-b2Jpbi12Ny1lbW1jLmR0cyAgICAgICB8ICA0MyArCj4+ICAuLi4vbWFydmVsbC9hcm1hZGEtMzcy
-MC1lc3ByZXNzb2Jpbi12Ny5kdHMgICAgfCAgMzEgKwo+PiAgLi4uL3BhdGNoZXMtNC4xOS8wMDIt
-YWRkX3Bvd2VydGFibGVzLnBhdGNoICAgIHwgNzcwICsrKysrKysrKysrKysrKysrKwo+PiAgLi4u
-L3BhdGNoZXMtNC4xOS8wMDMtYWRkX3N3aXRjaF9ub2Rlcy5wYXRjaCAgIHwgIDQwICsKPj4gIC4u
-Li8wMDQtYWRkX3NhdGFfZGlza19hY3Rpdml0eV90cmlnZ2VyLnBhdGNoICB8ICAzOSArCj4+ICAu
-Li41LWxpbmtzeXNfaGFyZGNvZGVfbmFuZF9lY2Nfc2V0dGluZ3MucGF0Y2ggfCAgMTcgKwo+PiAg
-Li4uTWFuZ2xlLWJvb3Rsb2FkZXItcy1rZXJuZWwtYXJndW1lbnRzLnBhdGNoIHwgMjAxICsrKysr
-Cj4+ICAuLi4vcGF0Y2hlcy00LjE5LzEwMC1maW5kX2FjdGl2ZV9yb290LnBhdGNoICAgfCAgNjAg
-KysKPj4gIC4uLi9wYXRjaGVzLTQuMTkvMTAyLXJldmVydF9pMmNfZGVsYXkucGF0Y2ggICB8ICAx
-NSArCj4+ICAuLi4vMjA1LWFybWFkYS0zODUtcmQtbXRkLXBhcnRpdGlvbnMucGF0Y2ggICAgfCAg
-MTkgKwo+PiAgLi4uLzIwNi1BUk0tbXZlYnUtMzg1LWFwLUFkZC1wYXJ0aXRpb25zLnBhdGNoIHwg
-IDM1ICsKPj4gIC4uLi8yMTAtY2xlYXJmb2dfc3dpdGNoX25vZGUucGF0Y2ggICAgICAgICAgICB8
-ICAyMSArCj4+ICAuLi4vMjIwLWRpc2FibGUtdW50ZXN0ZWQtZHNhLWJvYXJkcy5wYXRjaCAgICAg
-fCAgMzAgKwo+PiAgLi4uLWFybWFkYS14cC1saW5rc3lzLW1hbWJhLWJyb2tlbi1pZGxlLnBhdGNo
-IHwgIDEwICsKPj4gIC4uLi8zMDAtbXZuZXRhLXR4LXF1ZXVlLXdvcmthcm91bmQucGF0Y2ggICAg
-ICB8ICAzNSArCj4+ICAuLi5kaWNhdGUtZmFpbHVyZS10by1lbnRlci1kZWVwZXItc2xlZXAucGF0
-Y2ggfCAgNDAgKwo+PiAgLi4uLXBjaS1tdmVidS10aW1lLW91dC1yZXNldC1vbi1saW5rLXVwLnBh
-dGNoIHwgIDYwICsrCj4+ICAuLi4tY2FsbC1tYWNfY29uZmlnLWR1cmluZy1yZXNvbHZlLXdoZW4u
-cGF0Y2ggfCAgNDQgKwo+PiAgLi4uaW5rLWVuc3VyZS1pbmJhbmQtQU4td29ya3MtY29ycmVjdGx5
-LnBhdGNoIHwgIDU5ICsrCj4+ICAuLi5ldGRldi1zZnBfYnVzLWFuZC11c2UtZm9yLXN0YXJ0LXN0
-b3AucGF0Y2ggfCAgMzkgKwo+PiAgLi4uNS1uZXQtcGh5LW1hcnZlbGwxMGctYWRkLVNGUC1zdXBw
-b3J0LnBhdGNoIHwgMTU1ICsrKysKPj4gIC4uLi80MDYtc2ZwLWFkZC1zZnAtY29tcGF0aWJsZS5w
-YXRjaCAgICAgICAgICB8ICAyNCArCj4+ICAuLi43LXNmcC1kaXNwbGF5LVNGUC1tb2R1bGUtaW5m
-b3JtYXRpb24ucGF0Y2ggfCAyOTcgKysrKysrKwo+PiAgLi4uLzQwOC1zZnAtbW9yZS1jb3Rzd29y
-a3MtZml4ZXMucGF0Y2ggICAgICAgIHwgIDQ0ICsKPj4gIC4uLmRhMzg4LWNsZWFyZm9nLWVtbWMt
-b24tY2xlYXJmb2ctYmFzZS5wYXRjaCB8ICA4NyArKwo+PiAgLi4ucm1hZGEzODgtY2xlYXJmb2ct
-ZG9jdW1lbnQtTVBQLXVzYWdlLnBhdGNoIHwgMTI0ICsrKwo+PiAgLi4uL3BhdGNoZXMtNC4xOS80
-NTAtcmVwcm9iZV9zZnBfcGh5LnBhdGNoICAgIHwgIDk0ICsrKwo+PiAgLi4ubC1hcm1hZGEzN3h4
-LUFkZC1lbW1jLXNkaW8tcGluY3RybC1kLnBhdGNoIHwgIDQwICsKPj4gIC4uLmwtYXJtYWRhLTM3
-eHgtRW5hYmxlLWVtbWMtb24tZXNwcmVzcy5wYXRjaCB8ICA0OSArKwo+PiAgLi4udHMtbWFydmVs
-bC1hcm1hZGEzN3h4LUFkZC1ldGgwLWFsaWFzLnBhdGNoIHwgIDIwICsKPj4gIC4uLmRhLTM3MjAt
-ZXNwcmVzc29iaW4tY29ycmVjdC1zcGktbm9kZS5wYXRjaCB8ICA1OCArKwo+PiAgLi4ubC1hcm1h
-ZGEtMzcyMC1lc3ByZXNzb2Jpbi1hZGQtcG9ydHMtLnBhdGNoIHwgIDI2ICsKPj4gIC4uLnJkdmFy
-ay1Db252ZXJ0LXRvLXVzZS1wY2lfaG9zdF9wcm9iZS5wYXRjaCB8ICA0NCArCj4+ICAuLi4tZGV2
-aWNlLXRvLXRoZS1zYW1lLU1BWC1wYXlsb2FkLXNpemUucGF0Y2ggfCAxMzggKysrKwo+PiAgLi4u
-YXJkdmFyay1kaXNhYmxlLUxPUy1zdGF0ZS1ieS1kZWZhdWx0LnBhdGNoIHwgIDU1ICsrCj4+ICAu
-Li5hcmstYWxsb3ctdG8tc3BlY2lmeS1saW5rLWNhcGFiaWxpdHkucGF0Y2ggfCAgNDMgKwo+PiAg
-Li4uLTM3MjAtZXNwcmVzc29iaW4tc2V0LW1heC1saW5rLXRvLWdlLnBhdGNoIHwgIDczICsrCj4+
-ICA0NSBmaWxlcyBjaGFuZ2VkLCAzOTU4IGluc2VydGlvbnMoKykKPj4gIGNyZWF0ZSBtb2RlIDEw
-MDY0NCB0YXJnZXQvbGludXgvbXZlYnUvY29uZmlnLTQuMTkKPj4gIHJlbmFtZSB0YXJnZXQvbGlu
-dXgvbXZlYnUvY29ydGV4YTUzL3tjb25maWctZGVmYXVsdCA9PiBjb25maWctNC4xNH0gKDEwMCUp
-Cj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L2NvcnRleGE1My9jb25m
-aWctNC4xOQo+PiAgcmVuYW1lIHRhcmdldC9saW51eC9tdmVidS9jb3J0ZXhhNzIve2NvbmZpZy1k
-ZWZhdWx0ID0+IGNvbmZpZy00LjE0fSAoMTAwJSkKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJn
-ZXQvbGludXgvbXZlYnUvY29ydGV4YTcyL2NvbmZpZy00LjE5Cj4+ICBjcmVhdGUgbW9kZSAxMDA2
-NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L2ZpbGVzLTQuMTkvYXJjaC9hcm0vYm9vdC9kdHMvYXJtYWRh
-LTM4NS1saW5rc3lzLXZlbm9tLmR0cwo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51
-eC9tdmVidS9maWxlcy00LjE5L2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzcy
-MC1lc3ByZXNzb2Jpbi1lbW1jLmR0cwo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51
-eC9tdmVidS9maWxlcy00LjE5L2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzcy
-MC1lc3ByZXNzb2Jpbi12Ny1lbW1jLmR0cwo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9s
-aW51eC9tdmVidS9maWxlcy00LjE5L2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEt
-MzcyMC1lc3ByZXNzb2Jpbi12Ny5kdHMKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGlu
-dXgvbXZlYnUvcGF0Y2hlcy00LjE5LzAwMi1hZGRfcG93ZXJ0YWJsZXMucGF0Y2gKPj4gIGNyZWF0
-ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzAwMy1hZGRfc3dp
-dGNoX25vZGVzLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1
-L3BhdGNoZXMtNC4xOS8wMDQtYWRkX3NhdGFfZGlza19hY3Rpdml0eV90cmlnZ2VyLnBhdGNoCj4+
-ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS8wMDUt
-bGlua3N5c19oYXJkY29kZV9uYW5kX2VjY19zZXR0aW5ncy5wYXRjaAo+PiAgY3JlYXRlIG1vZGUg
-MTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvMDA2LW12ZWJ1LU1hbmdsZS1i
-b290bG9hZGVyLXMta2VybmVsLWFyZ3VtZW50cy5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0
-IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvMTAwLWZpbmRfYWN0aXZlX3Jvb3QucGF0
-Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5
-LzEwMi1yZXZlcnRfaTJjX2RlbGF5LnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0
-L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS8yMDUtYXJtYWRhLTM4NS1yZC1tdGQtcGFydGl0aW9u
-cy5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVz
-LTQuMTkvMjA2LUFSTS1tdmVidS0zODUtYXAtQWRkLXBhcnRpdGlvbnMucGF0Y2gKPj4gIGNyZWF0
-ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzIxMC1jbGVhcmZv
-Z19zd2l0Y2hfbm9kZS5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9t
-dmVidS9wYXRjaGVzLTQuMTkvMjIwLWRpc2FibGUtdW50ZXN0ZWQtZHNhLWJvYXJkcy5wYXRjaAo+
-PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvMjMw
-LWFybWFkYS14cC1saW5rc3lzLW1hbWJhLWJyb2tlbi1pZGxlLnBhdGNoCj4+ICBjcmVhdGUgbW9k
-ZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS8zMDAtbXZuZXRhLXR4LXF1
-ZXVlLXdvcmthcm91bmQucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgv
-bXZlYnUvcGF0Y2hlcy00LjE5LzQwMC1jcHVpZGxlLW12ZWJ1LWluZGljYXRlLWZhaWx1cmUtdG8t
-ZW50ZXItZGVlcGVyLXNsZWVwLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xp
-bnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDEtcGNpLW12ZWJ1LXRpbWUtb3V0LXJlc2V0LW9uLWxp
-bmstdXAucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0
-Y2hlcy00LjE5LzQwMi1uZXQtcGh5bGluay1vbmx5LWNhbGwtbWFjX2NvbmZpZy1kdXJpbmctcmVz
-b2x2ZS13aGVuLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1
-L3BhdGNoZXMtNC4xOS80MDMtbmV0LXBoeWxpbmstZW5zdXJlLWluYmFuZC1BTi13b3Jrcy1jb3Jy
-ZWN0bHkucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0
-Y2hlcy00LjE5LzQwNC1zZnAtcHJvdmlkZS1uZXRkZXYtc2ZwX2J1cy1hbmQtdXNlLWZvci1zdGFy
-dC1zdG9wLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3Bh
-dGNoZXMtNC4xOS80MDUtbmV0LXBoeS1tYXJ2ZWxsMTBnLWFkZC1TRlAtc3VwcG9ydC5wYXRjaAo+
-PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvNDA2
-LXNmcC1hZGQtc2ZwLWNvbXBhdGlibGUucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJn
-ZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzQwNy1zZnAtZGlzcGxheS1TRlAtbW9kdWxlLWlu
-Zm9ybWF0aW9uLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1
-L3BhdGNoZXMtNC4xOS80MDgtc2ZwLW1vcmUtY290c3dvcmtzLWZpeGVzLnBhdGNoCj4+ICBjcmVh
-dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MTItQVJNLWR0
-cy1hcm1hZGEzODgtY2xlYXJmb2ctZW1tYy1vbi1jbGVhcmZvZy1iYXNlLnBhdGNoCj4+ICBjcmVh
-dGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MTUtQVJNLWR0
-cy1hcm1hZGEzODgtY2xlYXJmb2ctZG9jdW1lbnQtTVBQLXVzYWdlLnBhdGNoCj4+ICBjcmVhdGUg
-bW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80NTAtcmVwcm9iZV9z
-ZnBfcGh5LnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1L3Bh
-dGNoZXMtNC4xOS81MTMtYXJtNjQtZHRzLW1hcnZlbGwtYXJtYWRhMzd4eC1BZGQtZW1tYy1zZGlv
-LXBpbmN0cmwtZC5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9tdmVi
-dS9wYXRjaGVzLTQuMTkvNTE0LWFybTY0LWR0cy1tYXJ2ZWxsLWFybWFkYS0zN3h4LUVuYWJsZS1l
-bW1jLW9uLWVzcHJlc3MucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgv
-bXZlYnUvcGF0Y2hlcy00LjE5LzUyMC1hcm02NC1kdHMtbWFydmVsbC1hcm1hZGEzN3h4LUFkZC1l
-dGgwLWFsaWFzLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L212ZWJ1
-L3BhdGNoZXMtNC4xOS81MjEtYXJtNjQtZHRzLWFybWFkYS0zNzIwLWVzcHJlc3NvYmluLWNvcnJl
-Y3Qtc3BpLW5vZGUucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCB0YXJnZXQvbGludXgvbXZl
-YnUvcGF0Y2hlcy00LjE5LzUyMi1hcm02NC1kdHMtbWFydmVsbC1hcm1hZGEtMzcyMC1lc3ByZXNz
-b2Jpbi1hZGQtcG9ydHMtLnBhdGNoCj4+ICBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4
-L212ZWJ1L3BhdGNoZXMtNC4xOS81MjMtUmV2ZXJ0LVBDSS1hYXJkdmFyay1Db252ZXJ0LXRvLXVz
-ZS1wY2lfaG9zdF9wcm9iZS5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51
-eC9tdmVidS9wYXRjaGVzLTQuMTkvNTI0LVBDSS1hYXJkdmFyay1zZXQtaG9zdC1hbmQtZGV2aWNl
-LXRvLXRoZS1zYW1lLU1BWC1wYXlsb2FkLXNpemUucGF0Y2gKPj4gIGNyZWF0ZSBtb2RlIDEwMDY0
-NCB0YXJnZXQvbGludXgvbXZlYnUvcGF0Y2hlcy00LjE5LzUyNi1QQ0ktYWFyZHZhcmstZGlzYWJs
-ZS1MT1Mtc3RhdGUtYnktZGVmYXVsdC5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdl
-dC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvNTI3LVBDSS1hYXJkdmFyay1hbGxvdy10by1zcGVj
-aWZ5LWxpbmstY2FwYWJpbGl0eS5wYXRjaAo+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9s
-aW51eC9tdmVidS9wYXRjaGVzLTQuMTkvNTI4LWFybTY0LWR0cy1hcm1hZGEtMzcyMC1lc3ByZXNz
-b2Jpbi1zZXQtbWF4LWxpbmstdG8tZ2UucGF0Y2gKPj4KPj4gZGlmZiAtLWdpdCBhL3RhcmdldC9s
-aW51eC9tdmVidS9NYWtlZmlsZSBiL3RhcmdldC9saW51eC9tdmVidS9NYWtlZmlsZQo+PiBpbmRl
-eCBhOTIwZjZkYjdkLi5mMzk1NzNjMDAyIDEwMDY0NAo+PiAtLS0gYS90YXJnZXQvbGludXgvbXZl
-YnUvTWFrZWZpbGUKPj4gKysrIGIvdGFyZ2V0L2xpbnV4L212ZWJ1L01ha2VmaWxlCj4+IEBAIC0x
-Myw2ICsxMyw3IEBAIFNVQlRBUkdFVFM6PWNvcnRleGE5IGNvcnRleGE1MyBjb3J0ZXhhNzIKPj4g
-IE1BSU5UQUlORVI6PUltcmUgS2Fsb3ogPGthbG96QG9wZW53cnQub3JnPgo+PiAgCj4+ICBLRVJO
-RUxfUEFUQ0hWRVI6PTQuMTQKPj4gK0tFUk5FTF9URVNUSU5HX1BBVENIVkVSOj00LjE5Cj4+ICAK
-Pj4gIGluY2x1ZGUgJChJTkNMVURFX0RJUikvdGFyZ2V0Lm1rCj4+ICAKPj4gZGlmZiAtLWdpdCBh
-L3RhcmdldC9saW51eC9tdmVidS9jb25maWctNC4xOSBiL3RhcmdldC9saW51eC9tdmVidS9jb25m
-aWctNC4xOQo+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAwMDAwLi4yYzk5
-NmQ0ZGNiCj4+IC0tLSAvZGV2L251bGwKPj4gKysrIGIvdGFyZ2V0L2xpbnV4L212ZWJ1L2NvbmZp
-Zy00LjE5Cj4gCj4gUGxlYXNlIHJ1biAibWFrZSB0YXJnZXQvbGludXgve2NsZWFuLHJlZnJlc2h9
-IFY9OTkiIGFnYWluIHRvIHJlZnJlc2gKPiB0aGlzIGNvbmZpZ3VyYXRpb24gc29tZSBvcHRpb25z
-IGFyZSBub3cgaW4gdGhlIGdlbmVyaWMgY29uZmlndXJhdGlvbgo+IGxpa2UgQ09ORklHX01TQ0Nf
-T0NFTE9UX1NXSVRDSC4KCldpbGwgZG8uCgo+IAo+IC4uLi4uLgo+IAo+IAo+PiBkaWZmIC0tZ2l0
-IGEvdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS80MDQtc2ZwLXByb3ZpZGUtbmV0ZGV2
-LXNmcF9idXMtYW5kLXVzZS1mb3Itc3RhcnQtc3RvcC5wYXRjaCBiL3RhcmdldC9saW51eC9tdmVi
-dS9wYXRjaGVzLTQuMTkvNDA0LXNmcC1wcm92aWRlLW5ldGRldi1zZnBfYnVzLWFuZC11c2UtZm9y
-LXN0YXJ0LXN0b3AucGF0Y2gKPj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPj4gaW5kZXggMDAwMDAw
-MDAwMC4uYmQ4ZjY0ZGNiZQo+PiAtLS0gL2Rldi9udWxsCj4+ICsrKyBiL3RhcmdldC9saW51eC9t
-dmVidS9wYXRjaGVzLTQuMTkvNDA0LXNmcC1wcm92aWRlLW5ldGRldi1zZnBfYnVzLWFuZC11c2Ut
-Zm9yLXN0YXJ0LXN0b3AucGF0Y2gKPj4gQEAgLTAsMCArMSwzOSBAQAo+PiArRnJvbSAwMDY4YTg5
-NzQ3ZTdjMWQ5YTBiYmI3MjgyYTM0MzgyYTQyNzQ2MzhhIE1vbiBTZXAgMTcgMDA6MDA6MDAgMjAw
-MQo+PiArRnJvbTogUnVzc2VsbCBLaW5nIDxybWsra2VybmVsQGFybWxpbnV4Lm9yZy51az4KPj4g
-K0RhdGU6IEZyaSwgMTQgQXByIDIwMTcgMTY6NDE6NTUgKzAxMDAKPj4gK1N1YmplY3Q6IFtQQVRD
-SF0gc2ZwOiBwcm92aWRlIG5ldGRldiBzZnBfYnVzIGFuZCB1c2UgZm9yIHN0YXJ0L3N0b3AKPj4g
-Kwo+PiArQWRkIGEgbmV0ZGV2IHNmcF9idXMgcG9pbnRlciBmb3IgcHJvcGFnYXRpbmcgdGhlIHBo
-eWxpbmsgc3RhcnQvc3RvcAo+PiArYWN0aW9ucyB0byB0aGUgU0ZQIGNhZ2U6IHRoZSBTRlAgY2Fn
-ZSBtYXkgbm90IGJlIGRpcmVjdGx5IGNvbm5lY3RlZCB0bwo+PiArcGh5bGluaywgYnV0IG1heSBi
-ZSB0aGUgb3RoZXIgc2lkZSBvZiBhIGZpeGVkIFBIWSwgYW5kIFNGUCBuZWVkcyB0bwo+PiAra25v
-dyB3aGVuIHRoZSBuZXRkZXYgaXMgYnJvdWdodCB1cCBvciB0YWtlbiBkb3duLgo+PiArCj4+ICtT
-aWduZWQtb2ZmLWJ5OiBSdXNzZWxsIEtpbmcgPHJtaytrZXJuZWxAYXJtbGludXgub3JnLnVrPgo+
-PiArLS0tCj4+ICsgZHJpdmVycy9uZXQvcGh5L3BoeWxpbmsuYyB8IDggKysrKy0tLS0KPj4gKyAx
-IGZpbGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+PiArCj4+ICst
-LS0gYS9kcml2ZXJzL25ldC9waHkvcGh5bGluay5jCj4+ICsrKysgYi9kcml2ZXJzL25ldC9waHkv
-cGh5bGluay5jCj4+ICtAQCAtOTQzLDggKzk0Myw4IEBAIHZvaWQgcGh5bGlua19zdGFydChzdHJ1
-Y3QgcGh5bGluayAqcGwpCj4+ICsgCj4+ICsgCWlmIChwbC0+bGlua19hbl9tb2RlID09IE1MT19B
-Tl9GSVhFRCAmJiAhSVNfRVJSKHBsLT5saW5rX2dwaW8pKQo+PiArIAkJbW9kX3RpbWVyKCZwbC0+
-bGlua19wb2xsLCBqaWZmaWVzICsgSFopOwo+PiArLQlpZiAocGwtPnNmcF9idXMpCj4+ICstCQlz
-ZnBfdXBzdHJlYW1fc3RhcnQocGwtPnNmcF9idXMpOwo+PiArKwlpZiAocGwtPm5ldGRldi0+c2Zw
-X2J1cykKPj4gKysJCXNmcF91cHN0cmVhbV9zdGFydChwbC0+bmV0ZGV2LT5zZnBfYnVzKTsKPj4g
-KyAJaWYgKHBsLT5waHlkZXYpCj4+ICsgCQlwaHlfc3RhcnQocGwtPnBoeWRldik7Cj4+ICsgfQo+
-PiArQEAgLTk2NSw4ICs5NjUsOCBAQCB2b2lkIHBoeWxpbmtfc3RvcChzdHJ1Y3QgcGh5bGluayAq
-cGwpCj4+ICsgCj4+ICsgCWlmIChwbC0+cGh5ZGV2KQo+PiArIAkJcGh5X3N0b3AocGwtPnBoeWRl
-dik7Cj4+ICstCWlmIChwbC0+c2ZwX2J1cykKPj4gKy0JCXNmcF91cHN0cmVhbV9zdG9wKHBsLT5z
-ZnBfYnVzKTsKPj4gKysJaWYgKHBsLT5uZXRkZXYtPnNmcF9idXMpCj4+ICsrCQlzZnBfdXBzdHJl
-YW1fc3RvcChwbC0+bmV0ZGV2LT5zZnBfYnVzKTsKPj4gKyAJaWYgKHBsLT5saW5rX2FuX21vZGUg
-PT0gTUxPX0FOX0ZJWEVEICYmICFJU19FUlIocGwtPmxpbmtfZ3BpbykpCj4+ICsgCQlkZWxfdGlt
-ZXJfc3luYygmcGwtPmxpbmtfcG9sbCk7Cj4+ICsgCj4gCj4gSXMgdGhpcyBwYXRjaCBzdGlsbCBu
-ZWVkZWQ/Cj4gCj4gU2hvdWxkbid0IHRoZSBTRlAgc3VwcG9ydGVkIGJlIGludGVnYXJldGQgaW50
-byB1cHN0cmVhbSBub3c/IEkgdGhpbmsgdGhlCj4gU0ZQIHJlbGF0ZWQgcGF0Y2hlcyBzaG91bGQg
-YmUgbW9zdGx5IGJhY2twb3J0cyBvciBvbGRlciB2ZXJzaW9ucyBvZiB0aGUKPiB1cHN0cmVhbSBT
-RlAgc3VwcG9ydCBwYXRjaGVzIHdoaWNoIHduZXQgdXBzdHJlYW0uCj4gCj4gCgpQcmVmZXJhYmx5
-LCB5ZXMsIGl0IHNob3VsZCBiZSBvbmx5IGJhY2twb3J0cy4gUGF0Y2hlcyB3aXRoIGluZGV4IG51
-bWJlciBvZiA0MDItNDA2CmFuZCA0MDggd2VyZSBhZGRlZCBieSBNYXJlaywgbWF5YmUgdGhleSBh
-cmUgbmVjZXNzYXJ5IHRvIHN1cHBvcnQgc29tZSBTRlAgbW9kdWxlcy4KVGhhdCdzIHNvbWV0aGlu
-ZyBoZSB3b3VsZCBuZWVkIHRvIGFuc3dlciwgYmVjYXVzZSBJIGRvbid0IGhhdmUgYW55IGhhcmR3
-YXJlIHdpdGggU0ZQCnBvcnQuCgpSZWdhcmRzCgotLSAKVE1OCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
-cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+--===============2551173240403952456==
+Content-Language: en-US
+Content-Type: multipart/alternative;
+	boundary="_000_BYAPR11MB31570867AA6B3B0FD55E22C982130BYAPR11MB3157namp_"
+
+--_000_BYAPR11MB31570867AA6B3B0FD55E22C982130BYAPR11MB3157namp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Hauke Mehrtens,
+
+  This patch will build images for sd1 interface (i.e sama5d27_som1_eksd1_u=
+boot defconfig)  instead of sd interface (i.e sama5d27_som1_eksd_uboot) and=
+ fix the indention problems
+
+
+Regards,
+
+Sandeep Sheriker
+
+________________________________
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Sent: Sunday, June 9, 2019 1:31 AM
+To: Sandeep Sheriker Mallikarjun - C17018; openwrt-devel@lists.openwrt.org
+Subject: Re: [OpenWrt-Devel] [patch v1 07/11] at91bootstrap: add sama5d27_s=
+om1_eksd1_uboot as default defconfig
+
+External E-Mail
+
+
+Hi,
+
+The description does not match the patch. As far as I understand the
+patch it is only fixing some indention problems.
+
+On 5/31/19 2:06 AM, Sandeep Sheriker M wrote:
+> Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
+> ---
+>  package/boot/at91bootstrap/Makefile | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+>
+> diff --git a/package/boot/at91bootstrap/Makefile b/package/boot/at91boots=
+trap/Makefile
+> index 6496b5a..1c07e21 100644
+> --- a/package/boot/at91bootstrap/Makefile
+> +++ b/package/boot/at91bootstrap/Makefile
+> @@ -128,9 +128,9 @@ AT91BOOTSTRAP_TARGETS :=3D \
+>      sama5d4_xplainednf_uboot_secure \
+>      sama5d4_xplaineddf_uboot_secure \
+>      sama5d4_xplainedsd_uboot_secure \
+> -     sama5d27_som1_eksd_uboot \
+> -     sama5d27_som1_ekqspi_uboot \
+> -     sama5d2_ptc_eknf_uboot \
+> +    sama5d27_som1_eksd1_uboot \
+> +    sama5d27_som1_ekqspi_uboot \
+> +    sama5d2_ptc_eknf_uboot \
+>      sama5d2_ptc_eksd_uboot
+>
+>  define Build/Compile
+>
+
+
+--_000_BYAPR11MB31570867AA6B3B0FD55E22C982130BYAPR11MB3157namp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"><!-- P {margin-top:0;margi=
+n-bottom:0;} --></style>
+</head>
+<body dir=3D"ltr">
+<div id=3D"divtagdefaultwrapper" style=3D"font-size:12pt;color:#000000;font=
+-family:Calibri,Helvetica,sans-serif;" dir=3D"ltr">
+<p style=3D"margin-top:0;margin-bottom:0">Hi Hauke Mehrtens,</p>
+<p style=3D"margin-top:0;margin-bottom:0">&nbsp; This patch will build imag=
+es for sd1 interface (<font size=3D"2"><span style=3D"font-size:11pt;">i.e =
+sama5d27_som1_eksd1_uboot defconfig)&nbsp; instead of
+<font size=3D"2"><span style=3D"font-size:11pt;">sd interface (i.e sama5d27=
+_som1_eksd_uboot) and fix the
+<font size=3D"2"><span style=3D"font-size:11pt;">indention problems</span><=
+/font></span></font></span></font></p>
+<p style=3D"margin-top:0;margin-bottom:0"><font size=3D"2"><span style=3D"f=
+ont-size:11pt;"><font size=3D"2"><span style=3D"font-size:11pt;"><font size=
+=3D"2"><span style=3D"font-size:11pt;"><br>
+</span></font></span></font></span></font></p>
+<p style=3D"margin-top:0;margin-bottom:0"><font size=3D"2"><span style=3D"f=
+ont-size:11pt;"><font size=3D"2"><span style=3D"font-size:11pt;"><font size=
+=3D"2"><span style=3D"font-size:11pt;">Regards,</span></font></span></font>=
+</span></font></p>
+<p style=3D"margin-top:0;margin-bottom:0"><font size=3D"2"><span style=3D"f=
+ont-size:11pt;"><font size=3D"2"><span style=3D"font-size:11pt;"><font size=
+=3D"2"><span style=3D"font-size:11pt;">Sandeep Sheriker</span></font></span=
+></font></span></font><br>
+</p>
+<br>
+<div style=3D"color: rgb(0, 0, 0);">
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font style=3D"font-size:11pt" face=
+=3D"Calibri, sans-serif" color=3D"#000000"><b>From:</b> Hauke Mehrtens &lt;=
+hauke@hauke-m.de&gt;<br>
+<b>Sent:</b> Sunday, June 9, 2019 1:31 AM<br>
+<b>To:</b> Sandeep Sheriker Mallikarjun - C17018; openwrt-devel@lists.openw=
+rt.org<br>
+<b>Subject:</b> Re: [OpenWrt-Devel] [patch v1 07/11] at91bootstrap: add sam=
+a5d27_som1_eksd1_uboot as default defconfig</font>
+<div>&nbsp;</div>
+</div>
+<div class=3D"BodyFragment"><font size=3D"2"><span style=3D"font-size:11pt;=
+">
+<div class=3D"PlainText">External E-Mail<br>
+<br>
+<br>
+Hi,<br>
+<br>
+The description does not match the patch. As far as I understand the<br>
+patch it is only fixing some indention problems.<br>
+<br>
+On 5/31/19 2:06 AM, Sandeep Sheriker M wrote:<br>
+&gt; Signed-off-by: Sandeep Sheriker M &lt;sandeep.sheriker@microchip.com&g=
+t;<br>
+&gt; ---<br>
+&gt;&nbsp; package/boot/at91bootstrap/Makefile | 6 &#43;&#43;&#43;---<br>
+&gt;&nbsp; 1 file changed, 3 insertions(&#43;), 3 deletions(-)<br>
+&gt; <br>
+&gt; diff --git a/package/boot/at91bootstrap/Makefile b/package/boot/at91bo=
+otstrap/Makefile<br>
+&gt; index 6496b5a..1c07e21 100644<br>
+&gt; --- a/package/boot/at91bootstrap/Makefile<br>
+&gt; &#43;&#43;&#43; b/package/boot/at91bootstrap/Makefile<br>
+&gt; @@ -128,9 &#43;128,9 @@ AT91BOOTSTRAP_TARGETS :=3D \<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sama5d4_xplainednf_uboot_secure \<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sama5d4_xplaineddf_uboot_secure \<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sama5d4_xplainedsd_uboot_secure \<br>
+&gt; -&nbsp;&nbsp;&nbsp;&nbsp; sama5d27_som1_eksd_uboot \<br>
+&gt; -&nbsp;&nbsp;&nbsp;&nbsp; sama5d27_som1_ekqspi_uboot \<br>
+&gt; -&nbsp;&nbsp;&nbsp;&nbsp; sama5d2_ptc_eknf_uboot \<br>
+&gt; &#43;&nbsp;&nbsp;&nbsp; sama5d27_som1_eksd1_uboot \<br>
+&gt; &#43;&nbsp;&nbsp;&nbsp; sama5d27_som1_ekqspi_uboot \<br>
+&gt; &#43;&nbsp;&nbsp;&nbsp; sama5d2_ptc_eknf_uboot \<br>
+&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sama5d2_ptc_eksd_uboot<br>
+&gt;&nbsp; <br>
+&gt;&nbsp; define Build/Compile<br>
+&gt; <br>
+<br>
+</div>
+</span></font></div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_BYAPR11MB31570867AA6B3B0FD55E22C982130BYAPR11MB3157namp_--
+
+
+--===============2551173240403952456==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2551173240403952456==--
+

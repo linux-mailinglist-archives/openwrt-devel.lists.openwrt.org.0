@@ -2,50 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 608A23C8F8
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 12:30:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AEB23C8F9
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 12:30:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SSZIvA2zZM5OJcJK0Xcgirahxisb87fNR09dqZ8pH4Y=; b=oKCDWQk5QRZnbT
-	gjt7CNEcB+M+lQ/0GP4HLYGLYo9LcL4zhstunBJdMfbHdTGt5aNEgbGjJdc96QkDCbMVk2K08bM6M
-	ayWdbZBiuGHVwSFLwOn7ogL2sbZGcHBVsNv49ol4vjtXScWDwued2PLD1U8nGRWqoltZFmonOGD+c
-	3c1Wfluk8qPh4oqP1EV7W9ehuJj3za0lOmMfeP5cM8DkdpsBi8bvfAyZQH8IUacV14Lp56LTzc66A
-	+gzWNqt3EnizBR/XHI7hUXQfnhPiMwSQ7RQNVkqN/sOjXYsozcos4W6kH3GUf1WQL6wdWSk6lLrNH
-	noQjqORvBgiBYSn1m8yg==;
+	List-Owner; bh=nIx0wuKa24WyqNHzLUhTSeI8Vxk1o91SQgo0DPc2nP0=; b=SdAvyxAm3Go/SD
+	sqWPfJZ0RNQ/sWemSfgaA3Xb+N1FSTeDqCM7jWh/gSQEZI4XhplNIxKt5YA1ImtY/vcmaD70jUNv6
+	f4Wrx1jba2runf8kGxsjOr+6vTTf9MU8N7Y1W93LkGb02I9RUBqphQfwN3huIy8ygsz+rEHlF/6eU
+	BJMaK6sXTfh7TSvxAaWQ12gtDhXBXY9EqNiehvaw8XuxFUiaTGNt2L6qKquHMx4aAGKvqmkLFlqvi
+	mCrPrGvSJS4QnOFeqEeqTpAVdBnj9d9u82CPhMvHaKFKZnU8FExccgNUZaY8g5LTZu/FRxaiFuIlB
+	Bj9pnMEVTRdus5Of7X2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hae2u-0007pu-JN; Tue, 11 Jun 2019 10:30:28 +0000
+	id 1hae36-00085M-9o; Tue, 11 Jun 2019 10:30:40 +0000
 Received: from 59-120-53-16.hinet-ip.hinet.net ([59.120.53.16]
  helo=ATCSQR.andestech.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hae2b-0007PF-1p
- for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 10:30:10 +0000
+ id 1hae2g-0007jq-2T
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 10:30:16 +0000
 Received: from mail.andestech.com (atcpcs16.andestech.com [10.0.1.222])
- by ATCSQR.andestech.com with ESMTP id x5BANTPh075905;
- Tue, 11 Jun 2019 18:23:29 +0800 (GMT-8)
+ by ATCSQR.andestech.com with ESMTP id x5BANYTq075925;
+ Tue, 11 Jun 2019 18:23:34 +0800 (GMT-8)
  (envelope-from nylon7@andestech.com)
 Received: from atcfdc88.andestech.com (10.0.15.132) by ATCPCS16.andestech.com
  (10.0.1.222) with Microsoft SMTP Server id 14.3.123.3;
- Tue, 11 Jun 2019 18:29:57 +0800
+ Tue, 11 Jun 2019 18:30:04 +0800
 From: Nylon Chen <nylon7@andestech.com>
 To: <openwrt-devel@lists.openwrt.org>
-Date: Tue, 11 Jun 2019 18:30:41 +0800
-Message-ID: <20190611103042.31736-2-nylon7@andestech.com>
+Date: Tue, 11 Jun 2019 18:30:42 +0800
+Message-ID: <20190611103042.31736-3-nylon7@andestech.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190611103042.31736-1-nylon7@andestech.com>
 References: <20190611103042.31736-1-nylon7@andestech.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.0.15.132]
 X-DNSRBL: 
-X-MAIL: ATCSQR.andestech.com x5BANTPh075905
+X-MAIL: ATCSQR.andestech.com x5BANYTq075925
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_033009_388860_95F9A261 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190611_033014_729337_D3EA0103 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -56,8 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.4 RDNS_DYNAMIC           Delivered to internal network by host with
  dynamic-looking rDNS
-Subject: [OpenWrt-Devel] [PATCH 1/4] toolchain: add support of nds32
- architecture
+Subject: [OpenWrt-Devel] [PATCH 2/4] nds32: add new target for AE3XX boards
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,158 +74,241 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit provides basic support for the
-Andes 32-bit (nds32) architecture.
+The AE3XX prototype demonstrates the AE3XX example platform on the FPGA.
+It is composed of one Andestech(nds32) processor and AE3XX.
 
 Signed-off-by: Che-Wei Chuang <cnoize@andestech.com>
 Signed-off-by: Nylon Chen <nylon7@andestech.com>
 ---
- include/kernel.mk   |  2 ++
- include/site/nds32  | 33 +++++++++++++++++++++++++++++++++
- include/target.mk   |  4 ++++
- target/Config.in    |  5 +++++
- toolchain/Config.in |  9 ++++++---
- 5 files changed, 50 insertions(+), 3 deletions(-)
- create mode 100644 include/site/nds32
+ target/linux/nds32/Makefile                   |  23 ++++
+ target/linux/nds32/config-4.19                | 126 ++++++++++++++++++
+ target/linux/nds32/image/Makefile             |  17 +++
+ ...0001-nds32-Fix-boot-messages-garbled.patch |  29 ++++
+ 4 files changed, 195 insertions(+)
+ create mode 100644 target/linux/nds32/Makefile
+ create mode 100644 target/linux/nds32/config-4.19
+ create mode 100644 target/linux/nds32/image/Makefile
+ create mode 100644 target/linux/nds32/patches-4.19/0001-nds32-Fix-boot-messages-garbled.patch
 
-diff --git a/include/kernel.mk b/include/kernel.mk
-index 3195090a0a..d0b5b779b9 100644
---- a/include/kernel.mk
-+++ b/include/kernel.mk
-@@ -85,6 +85,8 @@ ifneq (,$(findstring uml,$(BOARD)))
-   LINUX_KARCH=um
- else ifneq (,$(findstring $(ARCH) , aarch64 aarch64_be ))
-   LINUX_KARCH := arm64
-+else ifneq (,$(findstring $(ARCH) , nds32 ))
-+  LINUX_KARCH := nds32
- else ifneq (,$(findstring $(ARCH) , arceb ))
-   LINUX_KARCH := arc
- else ifneq (,$(findstring $(ARCH) , armeb ))
-diff --git a/include/site/nds32 b/include/site/nds32
+diff --git a/target/linux/nds32/Makefile b/target/linux/nds32/Makefile
 new file mode 100644
-index 0000000000..b0a0977671
+index 0000000000..faa79e8272
 --- /dev/null
-+++ b/include/site/nds32
-@@ -0,0 +1,33 @@
-+ac_cv_c_littleendian=${ac_cv_c_littleendian=yes}
-+ac_cv_c_bigendian=${ac_cv_c_bigendian=no}
++++ b/target/linux/nds32/Makefile
+@@ -0,0 +1,23 @@
++#
++# Copyright (C) 2010-2011 OpenWrt.org
++# Copyright (C) 2019 Andes Technology Corporation
++#
++# This is free software, licensed under the GNU General Public License v2.
++# See /LICENSE for more information.
++#
++include $(TOPDIR)/rules.mk
 +
-+ac_cv_sizeof___int64=${ac_cv_sizeof___int64=0}
-+ac_cv_sizeof_bool=${ac_cv_sizeof_bool=1}
-+ac_cv_sizeof_char=${ac_cv_sizeof_char=1}
-+ac_cv_sizeof_char_p=${ac_cv_sizeof_int_p=4}
-+ac_cv_sizeof_double=${ac_cv_sizeof_double=8}
-+ac_cv_sizeof_float=${ac_cv_sizeof_float=4}
-+ac_cv_sizeof_int=${ac_cv_sizeof_int=4}
-+ac_cv_sizeof_int_p=${ac_cv_sizeof_int_p=4}
-+ac_cv_sizeof_long=${ac_cv_sizeof_long=4}
-+ac_cv_sizeof_long_double=${ac_cv_sizeof_long_double=8}
-+ac_cv_sizeof_long_int=${ac_cv_sizeof_long_int=4}
-+ac_cv_sizeof_long_long=${ac_cv_sizeof_long_long=8}
-+ac_cv_sizeof_long_p=${ac_cv_sizeof_long_p=4}
-+ac_cv_sizeof_off_t=${ac_cv_sizeof_off_t=4}
-+ac_cv_sizeof_ptrdiff_t=${glib_cv_sizeof_ptrdiff_t=4}
-+ac_cv_sizeof_short=${ac_cv_sizeof_short=2}
-+ac_cv_sizeof_short_int=${ac_cv_sizeof_short_int=2}
-+ac_cv_sizeof_signed_char=${ac_cv_sizeof_signed_char=1}
-+ac_cv_sizeof_size_t=${ac_cv_sizeof_size_t=4}
-+ac_cv_sizeof_unsigned_char=${ac_cv_sizeof_unsigned_char=1}
-+ac_cv_sizeof_unsigned_short=${ac_cv_sizeof_unsigned_short=2}
-+ac_cv_sizeof_unsigned=${ac_cv_sizeof_unsigned=4}
-+ac_cv_sizeof_unsigned_int=${ac_cv_sizeof_unsigned_int=4}
-+ac_cv_sizeof_unsigned_long=${ac_cv_sizeof_unsigned_long=4}
-+ac_cv_sizeof_unsigned_long_long=${ac_cv_sizeof_unsigned_long_long=8}
-+ac_cv_sizeof_void_p=${ac_cv_sizeof_void_p=4}
-+ac_cv_sizeof_wchar_t=${ac_cv_sizeof_wchar_t=1}
++ARCH:=nds32
++BOARD:=nds32
++CPU_TYPE:=v3
++BOARDNAME:=Andes CPU SOC
++MAINTAINER:=Nylon Chen <Nylon7@andestech.com>
++#
++KERNEL_PATCHVER:=4.19
++#
++#
++include $(INCLUDE_DIR)/target.mk
++#
++DEFAULT_PACKAGES +=
++#
++$(eval $(call BuildTarget))
+diff --git a/target/linux/nds32/config-4.19 b/target/linux/nds32/config-4.19
+new file mode 100644
+index 0000000000..9d0b35c8b9
+--- /dev/null
++++ b/target/linux/nds32/config-4.19
+@@ -0,0 +1,126 @@
++CONFIG_CROSS_COMPILE="nds32le-linux-"
++CONFIG_SYSVIPC=y
++CONFIG_POSIX_MQUEUE=y
++CONFIG_HIGH_RES_TIMERS=y
++CONFIG_BSD_PROCESS_ACCT=y
++CONFIG_BSD_PROCESS_ACCT_V3=y
++CONFIG_IKCONFIG=y
++CONFIG_IKCONFIG_PROC=y
++CONFIG_LOG_BUF_SHIFT=14
++CONFIG_USER_NS=y
++CONFIG_RELAY=y
++CONFIG_BLK_DEV_INITRD=y
++CONFIG_KALLSYMS_ALL=y
++CONFIG_PROFILING=y
++CONFIG_MODULES=y
++CONFIG_MODULE_UNLOAD=y
++# CONFIG_BLK_DEV_BSG is not set
++# CONFIG_CACHE_L2 is not set
++CONFIG_PREEMPT=y
++# CONFIG_COMPACTION is not set
++CONFIG_HZ_100=y
++# CONFIG_CORE_DUMP_DEFAULT_ELF_HEADERS is not set
++CONFIG_NET=y
++CONFIG_PACKET=y
++CONFIG_UNIX=y
++CONFIG_NET_KEY=y
++CONFIG_INET=y
++CONFIG_IP_MULTICAST=y
++# CONFIG_INET_XFRM_MODE_TRANSPORT is not set
++# CONFIG_INET_XFRM_MODE_TUNNEL is not set
++# CONFIG_INET_XFRM_MODE_BEET is not set
++# CONFIG_INET_DIAG is not set
++# CONFIG_IPV6 is not set
++# CONFIG_BLK_DEV is not set
++CONFIG_NETDEVICES=y
++# CONFIG_NET_CADENCE is not set
++# CONFIG_NET_VENDOR_BROADCOM is not set
++CONFIG_FTMAC100=y
++# CONFIG_NET_VENDOR_INTEL is not set
++# CONFIG_NET_VENDOR_MARVELL is not set
++# CONFIG_NET_VENDOR_MICREL is not set
++# CONFIG_NET_VENDOR_NATSEMI is not set
++# CONFIG_NET_VENDOR_SEEQ is not set
++# CONFIG_NET_VENDOR_STMICRO is not set
++# CONFIG_NET_VENDOR_WIZNET is not set
++CONFIG_INPUT_EVDEV=y
++# CONFIG_INPUT_KEYBOARD is not set
++# CONFIG_INPUT_MOUSE is not set
++CONFIG_INPUT_TOUCHSCREEN=y
++# CONFIG_SERIO is not set
++CONFIG_VT_HW_CONSOLE_BINDING=y
++CONFIG_SERIAL_8250=y
++# CONFIG_SERIAL_8250_DEPRECATED_OPTIONS is not set
++CONFIG_SERIAL_8250_CONSOLE=y
++CONFIG_SERIAL_8250_NR_UARTS=3
++CONFIG_SERIAL_8251_RUNTIME_UARTS=3
++CONFIG_SERIAL_OF_PLATFORM=y
++# CONFIG_HW_RANDOM is not set
++# CONFIG_HWMON is not set
++# CONFIG_HID_A4TECH is not set
++# CONFIG_HID_APPLE is not set
++# CONFIG_HID_BELKIN is not set
++# CONFIG_HID_CHERRY is not set
++# CONFIG_HID_CHICONY is not set
++# CONFIG_HID_CYPRESS is not set
++# CONFIG_HID_EZKEY is not set
++# CONFIG_HID_ITE is not set
++# CONFIG_HID_KENSINGTON is not set
++# CONFIG_HID_LOGITECH is not set
++# CONFIG_HID_MICROSOFT is not set
++# CONFIG_HID_MONTEREY is not set
++# CONFIG_USB_SUPPORT is not set
++CONFIG_GENERIC_PHY=y
++CONFIG_EXT4_FS=y
++CONFIG_EXT4_FS_POSIX_ACL=y
++CONFIG_EXT4_FS_SECURITY=y
++CONFIG_EXT4_ENCRYPTION=y
++CONFIG_FUSE_FS=y
++CONFIG_MSDOS_FS=y
++CONFIG_VFAT_FS=y
++CONFIG_TMPFS=y
++CONFIG_TMPFS_POSIX_ACL=y
++CONFIG_CONFIGFS_FS=y
++CONFIG_NFS_FS=y
++CONFIG_NFS_V3_ACL=y
++CONFIG_NFS_V4=y
++CONFIG_NFS_V4_1=y
++CONFIG_NFS_USE_LEGACY_DNS=y
++CONFIG_NLS_CODEPAGE_437=y
++CONFIG_NLS_ISO8859_1=y
++CONFIG_DEBUG_INFO=y
++CONFIG_DEBUG_INFO_DWARF4=y
++CONFIG_GDB_SCRIPTS=y
++CONFIG_READABLE_ASM=y
++CONFIG_HEADERS_CHECK=y
++CONFIG_DEBUG_SECTION_MISMATCH=y
++CONFIG_MAGIC_SYSRQ=y
++CONFIG_DEBUG_KERNEL=y
++CONFIG_PANIC_ON_OOPS=y
++# CONFIG_SCHED_DEBUG is not set
++# CONFIG_DEBUG_PREEMPT is not set
++CONFIG_STACKTRACE=y
++CONFIG_RCU_CPU_STALL_TIMEOUT=300
++# CONFIG_CRYPTO_HW is not set
++CONFIG_CPU_LITTLE_ENDIAN=y
++CONFIG_CPU_CACHE_ALIASING=y
++# CONFIG_CPU_N15 is not set
++# CONFIG_CPU_N13 is not set
++# CONFIG_CPU_N10 is not set
++# CONFIG_CPU_D15 is not set
++# CONFIG_CPU_D10 is not set
++CONFIG_CPU_V3=y
++CONFIG_ANDES_PAGE_SIZE_4KB=y
++# CONFIG_ANDES_PAGE_SIZE_8KB is not set
++# CONFIG_CPU_ICACHE_DISABLE is not set
++# CONFIG_CPU_DCACHE_DISABLE is not set
++# CONFIG_CPU_DCACHE_WRITETHROUGH is not set
++# CONFIG_WBNA is not set
++# CONFIG_ALIGNMENT_TRAP is not set
++# CONFIG_HW_SUPPORT_UNALIGNMENT_ACCESS is not set
++# CONFIG_CACHE_L2 is not set
++CONFIG_NDS32_BUILTIN_DTB="ae3xx"
++# CONFIG_NFS_V4_2 is not set
++CONFIG_ATCPIT100_TIMER=y
++CONFIG_NFS_V4_1_IMPLEMENTATION_ID_DOMAIN="kernel.org"
++# CONFIG_NFS_V4_1_MIGRATION is not set
+diff --git a/target/linux/nds32/image/Makefile b/target/linux/nds32/image/Makefile
+new file mode 100644
+index 0000000000..68a00d3106
+--- /dev/null
++++ b/target/linux/nds32/image/Makefile
+@@ -0,0 +1,17 @@
++#
++# Copyright (C) 2010 OpenWrt.org
++# Copyright (C) 2019 Andes Technology Corporation
++# This is free software, licensed under the GNU General Public License v2.
++# See /LICENSE for more information.
++#
++include $(TOPDIR)/rules.mk
++include $(INCLUDE_DIR)/image.mk
++#
++define Image/Prepare
++	cp $(KDIR)/vmlinux.elf $(BIN_DIR)/$(IMG_PREFIX)-vmlinux.elf
++endef
 +
-+ac_cv_func_realloc_0_nonnull=yes
-+ac_cv_func_malloc_0_nonnull=yes
-diff --git a/include/target.mk b/include/target.mk
-index 4f3bd43e6c..75e23f328f 100644
---- a/include/target.mk
-+++ b/include/target.mk
-@@ -176,6 +176,10 @@ ifeq ($(DUMP),1)
-     CPU_CFLAGS_74kc = -mips32r2 -mtune=74kc
-     CPU_CFLAGS_octeonplus = -march=octeon+ -mabi=64
-   endif
-+  ifeq ($(ARCH),nds32)
-+    CPU_TYPE ?= nds32
-+    CPU_CFLAGS += -march=v3
-+  endif
-   ifeq ($(ARCH),i386)
-     CPU_TYPE ?= pentium
-     CPU_CFLAGS_pentium = -march=pentium-mmx
-diff --git a/target/Config.in b/target/Config.in
-index 3ee23ebf7f..8d6aa8769c 100644
---- a/target/Config.in
-+++ b/target/Config.in
-@@ -192,6 +192,10 @@ config x86_64
- 	select ARCH_64BIT
- 	bool
- 
-+config nds32
-+	select LITTLE_ENDIAN
-+	bool
++define Image/Build
++	cp $(KDIR)/root.$(1) $(BIN_DIR)/$(IMG_PREFIX)-$(1).img
++endef
++$(eval $(call BuildImage))
+diff --git a/target/linux/nds32/patches-4.19/0001-nds32-Fix-boot-messages-garbled.patch b/target/linux/nds32/patches-4.19/0001-nds32-Fix-boot-messages-garbled.patch
+new file mode 100644
+index 0000000000..368fc73e5c
+--- /dev/null
++++ b/target/linux/nds32/patches-4.19/0001-nds32-Fix-boot-messages-garbled.patch
+@@ -0,0 +1,29 @@
++From cee312116ee359c633fd1b0492ac0cc4e15cfccf Mon Sep 17 00:00:00 2001
++From: Nylon Chen <nylon7@andestech.com>
++Date: Thu, 15 Nov 2018 16:49:30 +0800
++Subject: [PATCH] nds32:  Fix boot messages garbled
 +
- config ARCH
- 	string
- 	default "aarch64"   if aarch64
-@@ -215,4 +219,5 @@ config ARCH
- 	default "sh4eb"     if sh4eb
- 	default "sparc"     if sparc
- 	default "x86_64"    if x86_64
-+	default "nds32"	    if nds32
- 
-diff --git a/toolchain/Config.in b/toolchain/Config.in
-index 82dddbc209..7cb65e803e 100644
---- a/toolchain/Config.in
-+++ b/toolchain/Config.in
-@@ -67,6 +67,7 @@ menuconfig EXTERNAL_TOOLCHAIN
- 		default "mipsel-unknown-linux-gnu"   if mipsel
- 		default "powerpc-unknown-linux-gnu"  if powerpc
- 		default "x86_64-unknown-linux-gnu"   if x86_64
-+		default "nds32le-linux"              if nds32
- 
- 	config TOOLCHAIN_PREFIX
- 		string
-@@ -81,6 +82,7 @@ menuconfig EXTERNAL_TOOLCHAIN
- 		default "mipsel-unknown-linux-gnu-"   if mipsel
- 		default "powerpc-unknown-linux-gnu-"  if powerpc
- 		default "x86_64-unknown-linux-gnu-"   if x86_64
-+		default "nds32le-linux-"              if nds32
- 
- 	config TOOLCHAIN_ROOT
- 		string
-@@ -113,11 +115,12 @@ menuconfig EXTERNAL_TOOLCHAIN
- 		config EXTERNAL_TOOLCHAIN_LIBC_USE_UCLIBC
- 			bool "uClibc"
- 			select USE_UCLIBC
--			depends on !(aarch64 || aarch64_be)
-+			depends on !(aarch64 || aarch64_be || nds32)
- 
- 		config EXTERNAL_TOOLCHAIN_LIBC_USE_MUSL
- 			bool "musl"
- 			select USE_MUSL
-+			depends on !nds32
- 
- 	endchoice
- 
-@@ -251,13 +254,13 @@ choice
- 	config LIBC_USE_UCLIBC
- 		select USE_UCLIBC
- 		bool "Use uClibc"
--		depends on !(aarch64 || aarch64_be || powerpc64)
-+		depends on !(aarch64 || aarch64_be || powerpc64 || nds32)
- 		depends on BROKEN || !(arm || armeb || i386 || x86_64 || mips || mipsel || mips64 || mips64el || powerpc)
- 
- 	config LIBC_USE_MUSL
- 		select USE_MUSL
- 		bool "Use musl"
--		depends on !(arc || powerpc64)
-+		depends on !(arc || powerpc64 || nds32)
- 
- endchoice
- 
++In order to display uart correctly we have to pass the correct setting of uart to kernel by bootarg.
++This patch will provide such settings to set the correct uart baud rate.
++
++Signed-off-by: Nylon Chen <nylon7@andestech.com>
++Signed-off-by: Greentime Hu <greentime@andestech.com>
++---
++ arch/nds32/boot/dts/ae3xx.dts | 1 +
++ 1 file changed, 1 insertion(+)
++
++diff --git a/arch/nds32/boot/dts/ae3xx.dts b/arch/nds32/boot/dts/ae3xx.dts
++index bb39749a6673..02e059c295bf 100644
++--- a/arch/nds32/boot/dts/ae3xx.dts
+++++ b/arch/nds32/boot/dts/ae3xx.dts
++@@ -7,6 +7,7 @@
++ 
++ 	chosen {
++ 		stdout-path = &serial0;
+++		bootargs = "memblock=debug earlycon console=ttyS0,38400n8 debug loglevel=7";
++ 	};
++ 
++ 	memory@0 {
++-- 
++2.18.0
++
 -- 
 2.17.1
 

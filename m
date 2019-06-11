@@ -2,80 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6515C3DBBA
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 22:17:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A6784169B
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 23:08:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rStzjs8Eg0tS+GAePVZAfSmRphfIfKVpNKqsVtdEOVc=; b=cyogl5NMRGqeXX
-	CWpWMa9RJDtpHZomX8fNSFylVZ+nnKucePWMaXId93Q2O6qyRZPejI9MwjnynpjyBThPQM0m8HOSd
-	53ibeNHxpoYfCXcDwTJWyPa+N9VQkFinlX05A6b1nYvMnl5w9zfPO3oTU7znGUQpesWOOVhPhe6j8
-	WgDPFxAS+8X8VfZ3XZhtKbHEjpwFB2GSRxlFYdBucDanC0rmkAm5Lsp12DJudCr2zFhKyRF5WIGT2
-	zftzzo5U0ZatzVACWvPAn8L8s2e5YwieRHWeJsgcnuNuDD8Wxo8q7pyS+SEtjrQfsFK8k9msNJwCE
-	EDpmiETwz4gqy8sF0SmQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gGgBG6emDjE8nF/MBxUv3zlyBAanFvRnwm5IiopPU/4=; b=cpJy5eQlT+juZn
+	Gm1XVdfw8RpGcwnpWmbbD52kWrQ165EwQEaiDubFzPOUXipRkhzmG4Y5U8KBHCo5+Exa/sX6Ad6xQ
+	55PoA34l2ONN2o7C3KzghRI4m9hn0ygViBnvGeL455p48gY8capfr5JVbDaZzZy3lbnOPkIIKtAYB
+	OCsyta1FX7QADD1JF+VZ++GlppKru2kUZM0FQr8D8ADtbfoQ6AyJQ21myJ6nBugRvTgeOgpdODAGY
+	dQAalCMlZWULBYPVywnhe7dV4bU1bnf3+1C1AUDwnn3jHuB4sgVrj/4S0Lqd/WdprZJ0rGJwRjOPb
+	R+4NoAO6O3pRY3K6NqQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hanCJ-0007le-5y; Tue, 11 Jun 2019 20:16:47 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1hanzh-0005z7-Qq; Tue, 11 Jun 2019 21:07:49 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hanC8-0007l2-QD
- for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 20:16:39 +0000
-Received: by mail-qk1-x741.google.com with SMTP id a132so8489815qkb.13
- for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 13:16:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=bbE/UfXiW3F0sTmxNk+gkdGW6SDMgKK7YaPTNdJWEc8=;
- b=dSuDhHYSieOoMBsCSzNAMCDLEw/kKDK3BeW9b8s5IJNEr5CSPi5SQ+/+n7G5ZKecql
- 8+Uuc/pE+0f2uwvyER6sct3l6EN0iz8AgRVt7Luc/VkywEri178zlG32VhdcBfn9HQCy
- TXHVgvUnFp4tlXKJSNhKMxnYNgq/U/M4kJ4jkUtRpt/qZz8KewiKLZ3j9K6uR52Yjg4N
- tWQO8wRdT2lvLaVc1lVETDbtMpkfcZqJ9afP4JugZ2vutFcAbmUMUC5sDKiCAy5bl974
- XkbwxQx1TJiv0q4wuLKUaI0FlXegRwBIC6yDyJFOUvgoDVW0xOoUA/lt8MZSDXzCvdls
- NkZA==
+ id 1hanzW-0005yS-OB
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 21:07:40 +0000
+Received: by mail-lf1-x136.google.com with SMTP id y17so10394425lfe.0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 14:07:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/ckvCUHecmh6Oqh+GaJD4MqSVqxNDDagJkwRGRBflw4=;
+ b=gsjK6DIYK04sO/OIAde9EaGLOtJBIRgOjI5o+VPvG/NSTQNrUKunHtKeO7sXwFgLUd
+ TQBSGGN/bNSSmIZ9CSo8G1ET/Nyz9oP1Trzf27rrxBVEZaevGSTDIi+sVUzgIUSUSFiF
+ uzd5yvoODZz4DREhyHdiLtQ4K/gbA+sCxjsmSZS38WansSnjc6BhBCrUM+AW4LXrSmTA
+ NeZAG58KGnTBiDT6BMMd/BmBW02qLyTFVVgQRXswXQrPr/R+5iYPaNvHY3Q1O+aFkiB5
+ zJ9kbVQrjUHyUEqLDdn9q01XtWG45UvJ03t94eir5MwMlh0kJSvlRlltc3QWmmOVqJOn
+ Utjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=bbE/UfXiW3F0sTmxNk+gkdGW6SDMgKK7YaPTNdJWEc8=;
- b=j7PqkndLqWDvhawVtWlzUVCy91pQaz9RyWPSVjV6bTK/UsG2Pfqp/ijfXXjKNX7PwU
- h5m8MnSdcdBXDJ/tDvtnqNc1AdxB8yZWnGhBe6hhjgx5RGJbzm17G7WH3EvGME1j6GD8
- VfON+SdpnWMzXzxDKm8kBskqbLBcOJJ9GIAF4MHBrD9QP4m6RoLTbhhfMqwsWHqo1I54
- 5pE8CGGWMrxYSciO4LIqyZxw9MEKmcgOsVDPIKgKJOUTStISBR9AkeE60O14ifODsisx
- m2gpLQ4OCl3wV+nyx36m/gN6TaEp55RBeKIGGzoztZk0J3bRflsSNacdwZCad8sxBVFF
- IgoQ==
-X-Gm-Message-State: APjAAAU36k4QGN3OtGOrarS/BT4T5SgBUsTm6/WcsJn1ZpRh5YXyDUVo
- 1As9Ez7q58RVpwZbNNPBa3S1+KBoeOetmW9zT5rMc83U
-X-Google-Smtp-Source: APXvYqyID8uojGgVrS2NoEERTnnoW5414vB75YFWaBeT9/y3cI/WiG8viGyMjcBvObXpj3zrwZYpGGAqkO4yKBhpUXY=
-X-Received: by 2002:a37:b5c5:: with SMTP id e188mr23782779qkf.55.1560284195206; 
- Tue, 11 Jun 2019 13:16:35 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/ckvCUHecmh6Oqh+GaJD4MqSVqxNDDagJkwRGRBflw4=;
+ b=mToEeS2vgiR0eFslgivmwhG2UYlePMFONYAnJknP6W+LK1nbxY4hcwHxEU9Rbnt/0G
+ bJ8rEqEowct+WqYj1CqOgXZQ/mlGSyfhKaWLGRnLYZxUBfMmI6pKoUokazIRh6e36u2N
+ jS7o8qWpXZI20mfDKoea/tszUQ7UGQRnPpz1YgxpXIJPT6HMKB8wG68BOQS1q4YOzCHY
+ pT4g90e5Hlbimo8gdMOz+H7vwfH9C/yWF/y/3RZqRBLaAMxQ+UITbOqPLnztTpefcf7q
+ D5StxGrf08X3jDKJuJEAAfGGHOcnlvnoVDYJMXsclehC6fMUoDM0Peh+Ln61gskZry0M
+ k+1A==
+X-Gm-Message-State: APjAAAXNlnTZ/5RCcvSWP86NcMVz13aLF+cnjzS31QUW/sqxdMPOrMsi
+ 8p1FbXG1cz763LmfgKIM6FKrvA==
+X-Google-Smtp-Source: APXvYqzD8PFn7yKK1WbPezIP0VYy56SGZrZmwplRytSRo7fbgbqNO/oAqkESPjRuWKLPrFvSn6emyA==
+X-Received: by 2002:a19:f00a:: with SMTP id p10mr3739262lfc.68.1560287256962; 
+ Tue, 11 Jun 2019 14:07:36 -0700 (PDT)
+Received: from linux.local (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se.
+ [92.34.205.210])
+ by smtp.gmail.com with ESMTPSA id h131sm2711757lfe.80.2019.06.11.14.07.35
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 11 Jun 2019 14:07:35 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Christian Lamparter <chunkeey@gmail.com>
+Date: Tue, 11 Jun 2019 23:06:53 +0200
+Message-Id: <20190611210655.18652-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-References: <20190608114809.9480-1-avalentin@marcant.net>
- <20190608114809.9480-3-avalentin@marcant.net>
- <CAJLcKsEPFZWBcuTiVUL_mt1Qk6JXrg-q=jj7bvRDXESKrLVptw@mail.gmail.com>
- <5a1418f9-5b0c-ff52-2d60-01e382b62d08@marcant.net>
-In-Reply-To: <5a1418f9-5b0c-ff52-2d60-01e382b62d08@marcant.net>
-From: Hans Dedecker <dedeckeh@gmail.com>
-Date: Tue, 11 Jun 2019 22:16:24 +0200
-Message-ID: <CAJLcKsH3XoYnAzUeJknk5QEr76sZvvkb=XM2nvUUjD-3BdTL0w@mail.gmail.com>
-To: Andre Valentin <avalentin@marcant.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_131637_459601_0EE63DF2 
-X-CRM114-Status: GOOD (  21.43  )
+X-CRM114-CacheID: sfid-20190611_140738_789811_42E4121A 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:136 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dedeckeh[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH v3 2/3] network/config: add xfrm
- interface support scripts
+Subject: [OpenWrt-Devel] [PATCH 1/3 v2] gemini: Use library functions to
+ assign MAC address
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,137 +98,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGksCgpPbiBNb24sIEp1biAxMCwgMjAxOSBhdCA4OjEwIFBNIEFuZHJlIFZhbGVudGluIDxhdmFs
-ZW50aW5AbWFyY2FudC5uZXQ+IHdyb3RlOgo+Cj4gSGkgSGFucywKPgo+IGFmdGVyIHRlc3Rpbmcg
-eGZybSB0dW5uZWxzIGEgYml0IEkgZm91bmQgdG8gYmlnIGRpZmZlcmVuY2VzIGNvbXBhcmVkIHRv
-IG90aGVyIGNvbnZlbnRpYWwgdHVubmVscy4KPiAxKSB4ZnJtIHR1bm5lbCBpbnRlcmZhY2VzIGNh
-bm5vdCBiZSByZXBsYWNlZCB3aXRoIG5ldGxpbmsKPiAyKSB4ZnJtIHR1bm5lbCBpbnRlcmZhY2Vz
-IERPIE5PVCB2YW5pc2ggaWYgcGFyZW50IGlzIGRlbGV0ZWQKPgo+IFRoaXMgbGVhZHMgdG8gc29t
-ZSBlcnJvcnMgYW5kIGEgbG9vcCBpbiBpbnRlcmZhY2UgY3JlYXRpb24uIFdpdGggdGhlIGNoYW5n
-ZXMgYmVsb3csCj4gaXQgd29ya3Mgc21vb3RobHkgd2hlbiBub3QgYm91bmQgdG8gcHBwIGludGVy
-ZmFjZXMgKHVzaW5nIGxhbiBpbnN0ZWFkKSwgc2VlOgo+IE1vbiBKdW4gMTAgMTE6NDI6MDYgMjAx
-OSBkYWVtb24ubm90aWNlIG5ldGlmZDogeGZybTAgKDE0MjU1KTogQ29tbWFuZCBmYWlsZWQ6IFVu
-a25vd24gZXJyb3IKPiBNb24gSnVuIDEwIDExOjQyOjA2IDIwMTkgZGFlbW9uLm5vdGljZSBuZXRp
-ZmQ6IEludGVyZmFjZSAneGZybTAnIGlzIG5vdyBkb3duCj4gTW9uIEp1biAxMCAxMTo0MjowNiAy
-MDE5IGRhZW1vbi5ub3RpY2UgbmV0aWZkOiBJbnRlcmZhY2UgJ3hmcm0wJyBpcyBzZXR0aW5nIHVw
-IG5vdwo+IE1vbiBKdW4gMTAgMTE6NDI6MDYgMjAxOSBkYWVtb24ubm90aWNlIG5ldGlmZDogeGZy
-bTAgKDE0MjgxKTogQ29tbWFuZCBmYWlsZWQ6IFVua25vd24gZXJyb3IKPiBhbmQgc28gb24KPgo+
-IFdoYXQgZG8geW91IHRoaW5rPwpUaGUgZGVzY3JpcHRpb24gaXMgYSBiaXQgY3J5cHRpYyB0byBt
-ZTsgY291bGQgeW91IGV4cGxhaW4gd2hhdCB3b3JrcwphbmQgd2hhdCBkb2VzIG5vdCB3b3JrIGFu
-ZCB3aHkgPwoKSGFucwo+Cj4gS2luZCByZWdhcmRzLAo+Cj4gQW5kcsOpCj4KPgo+IEFtIDA5LjA2
-LjE5IHVtIDIxOjI3IHNjaHJpZWIgSGFucyBEZWRlY2tlcjoKPiA+IE9uIFNhdCwgSnVuIDgsIDIw
-MTkgYXQgMTo0OCBQTSBBbmRyw6kgVmFsZW50aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4gd3Jv
-dGU6Cj4gPj4KPiA+PiBUaGlzIHBhY2thZ2UgYWRkcyBzY3JpcHRzIGZvciB4ZnJtIGludGVyZmFj
-ZXMgc3VwcG9ydC4KPiA+PiBFeGFtcGxlIGNvbmZpZ3VyYXRpb24gdmlhIC9ldGMvY29uZmlnL25l
-dHdvcms6Cj4gPj4KPiA+PiBjb25maWcgaW50ZXJmYWNlICd4ZnJtMCcKPiA+PiAgICAgICAgIG9w
-dGlvbiBwcm90byAneGZybScKPiA+PiAgICAgICAgIG9wdGlvbiBtdHUgJzEzMDAnCj4gPj4gICAg
-ICAgICBvcHRpb24gem9uZSAnVlBOJwo+ID4+ICAgICAgICAgb3B0aW9uIHR1bmxpbmsgJ3dhbicK
-PiA+PiAgICAgICAgIG9wdGlvbiBpZmlkIDMwCj4gPj4KPiA+PiBjb25maWcgaW50ZXJmYWNlICd4
-ZnJtMF9zdGF0aWMnCj4gPj4gICAgICAgICBvcHRpb24gcHJvdG8gJ3N0YXRpYycKPiA+PiAgICAg
-ICAgIG9wdGlvbiBpZm5hbWUgJ0B4ZnJtMCcKPiA+PiAgICAgICAgIG9wdGlvbiBpcDZhZGRyICdm
-ZTgwOjoxLzY0Jwo+ID4+ICAgICAgICAgb3B0aW9uIGlwYWRkciAnMTAuMC4wLjEvMzAnCj4gPj4K
-PiA+PiBOb3cgc2V0IGluIHN0cm9uZ3N3YW4gSVBzZWMgcG9saWN5Ogo+ID4+ICAgICAgICAgaWZf
-aWRfaW4gPSAzMAo+ID4+ICAgICAgICAgaWZfaWRfb3V0ID0gMzAKPiA+PiAtLS0KPiA+PiAgcGFj
-a2FnZS9uZXR3b3JrL2NvbmZpZy94ZnJtL01ha2VmaWxlICAgICAgfCAzOCArKysrKysrKysrKysr
-KysrKysKPiA+PiAgcGFja2FnZS9uZXR3b3JrL2NvbmZpZy94ZnJtL2ZpbGVzL3hmcm0uc2ggfCA2
-NSArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gPj4gIDIgZmlsZXMgY2hhbmdlZCwg
-MTAzIGluc2VydGlvbnMoKykKPiA+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IHBhY2thZ2UvbmV0d29y
-ay9jb25maWcveGZybS9NYWtlZmlsZQo+ID4+ICBjcmVhdGUgbW9kZSAxMDA3NTUgcGFja2FnZS9u
-ZXR3b3JrL2NvbmZpZy94ZnJtL2ZpbGVzL3hmcm0uc2gKPiA+Pgo+ID4+IGRpZmYgLS1naXQgYS9w
-YWNrYWdlL25ldHdvcmsvY29uZmlnL3hmcm0vTWFrZWZpbGUgYi9wYWNrYWdlL25ldHdvcmsvY29u
-ZmlnL3hmcm0vTWFrZWZpbGUKPiA+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+ID4+IGluZGV4IDAw
-MDAwMDAwMDAuLmVmYzkwY2YzMTgKPiA+PiAtLS0gL2Rldi9udWxsCj4gPj4gKysrIGIvcGFja2Fn
-ZS9uZXR3b3JrL2NvbmZpZy94ZnJtL01ha2VmaWxlCj4gPj4gQEAgLTAsMCArMSwzOCBAQAo+ID4+
-ICsKPiA+PiAraW5jbHVkZSAkKFRPUERJUikvcnVsZXMubWsKPiA+PiArCj4gPj4gK1BLR19OQU1F
-Oj14ZnJtCj4gPj4gK1BLR19WRVJTSU9OOj0xCj4gPj4gK1BLR19SRUxFQVNFOj0xCj4gPj4gK1BL
-R19MSUNFTlNFOj1HUEwtMi4wCj4gPj4gKwo+ID4+ICtpbmNsdWRlICQoSU5DTFVERV9ESVIpL3Bh
-Y2thZ2UubWsKPiA+PiArCj4gPj4gK2RlZmluZSBQYWNrYWdlL3hmcm0vRGVmYXVsdAo+ID4+ICsg
-IFNFQ1RJT046PW5ldAo+ID4+ICsgIENBVEVHT1JZOj1OZXR3b3JrCj4gPj4gKyAgTUFJTlRBSU5F
-Ujo9QW5kcmUgVmFsZW50aW4gPGF2YWxlbnRpbkBtYXJjYW50Lm5ldD4KPiA+PiArZW5kZWYKPiA+
-PiArCj4gPj4gK2RlZmluZSBQYWNrYWdlL3hmcm0KPiA+PiArJChjYWxsIFBhY2thZ2UveGZybS9E
-ZWZhdWx0KQo+ID4+ICsgIFRJVExFOj1YRlJNIElQc2VjIFR1bm5lbCBJbnRlcmZhY2UgY29uZmln
-IHN1cHBvcnQKPiA+PiArICBERVBFTkRTOj0ra21vZC14ZnJtLWludGVyZmFjZQo+ID4+ICtlbmRl
-Zgo+ID4+ICsKPiA+PiArZGVmaW5lIFBhY2thZ2UveGZybS9kZXNjcmlwdGlvbgo+ID4+ICsgWEZS
-TSBJUHNlYyBUdW5uZWwgSW50ZXJmYWNlIGNvbmZpZyBzdXBwb3J0IChJUHY0IGFuZCBJUHY2KSBp
-biAvZXRjL2NvbmZpZy9uZXR3b3JrLgo+ID4+ICtlbmRlZgo+ID4+ICsKPiA+PiArZGVmaW5lIEJ1
-aWxkL0NvbXBpbGUKPiA+PiArZW5kZWYKPiA+PiArCj4gPj4gK2RlZmluZSBCdWlsZC9Db25maWd1
-cmUKPiA+PiArZW5kZWYKPiA+PiArCj4gPj4gK2RlZmluZSBQYWNrYWdlL3hmcm0vaW5zdGFsbAo+
-ID4+ICsgICAgICAgJChJTlNUQUxMX0RJUikgJCgxKS9saWIvbmV0aWZkL3Byb3RvCj4gPj4gKyAg
-ICAgICAkKElOU1RBTExfQklOKSAuL2ZpbGVzL3hmcm0uc2ggJCgxKS9saWIvbmV0aWZkL3Byb3Rv
-L3hmcm0uc2gKPiA+PiArZW5kZWYKPiA+PiArCj4gPj4gKyQoZXZhbCAkKGNhbGwgQnVpbGRQYWNr
-YWdlLHhmcm0pKQo+ID4+IGRpZmYgLS1naXQgYS9wYWNrYWdlL25ldHdvcmsvY29uZmlnL3hmcm0v
-ZmlsZXMveGZybS5zaCBiL3BhY2thZ2UvbmV0d29yay9jb25maWcveGZybS9maWxlcy94ZnJtLnNo
-Cj4gPj4gbmV3IGZpbGUgbW9kZSAxMDA3NTUKPiA+PiBpbmRleCAwMDAwMDAwMDAwLi5kZjI4ZDM4
-NjEzCj4gPj4gLS0tIC9kZXYvbnVsbAo+ID4+ICsrKyBiL3BhY2thZ2UvbmV0d29yay9jb25maWcv
-eGZybS9maWxlcy94ZnJtLnNoCj4gPj4gQEAgLTAsMCArMSw2NSBAQAo+ID4+ICsjIS9iaW4vc2gK
-PiA+PiArCj4gPj4gK1sgLW4gIiRJTkNMVURFX09OTFkiIF0gfHwgewo+ID4+ICsgICAgICAgLiAv
-bGliL2Z1bmN0aW9ucy5zaAo+ID4+ICsgICAgICAgLiAvbGliL2Z1bmN0aW9ucy9uZXR3b3JrLnNo
-Cj4gPj4gKyAgICAgICAuIC4uL25ldGlmZC1wcm90by5zaAo+ID4+ICsgICAgICAgaW5pdF9wcm90
-byAiJEAiCj4gPj4gK30KPiA+PiArCj4gPj4gK3Byb3RvX3hmcm1fc2V0dXAoKSB7Cj4gPj4gKyAg
-ICAgICBsb2NhbCBjZmc9IiQxIgo+ID4+ICsgICAgICAgbG9jYWwgbW9kZT0ieGZybSIKPiA+PiAr
-Cj4gPj4gKyAgICAgICBsb2NhbCB0dW5saW5rIGlmaWQgbXR1IHpvbmUKPiA+PiArICAgICAgIGpz
-b25fZ2V0X3ZhcnMgdHVubGluayBpZmlkIG10dSB6b25lCj4gPj4gKwo+IGlmIGV4aXN0cyAuLiBp
-cCBsaW5rIGRlbCAiJGNmZyIKPgo+ID4+ICsgICAgICAgcHJvdG9faW5pdF91cGRhdGUgIiRjZmci
-IDEKPiA+PiArCj4gPj4gKyAgICAgICBwcm90b19hZGRfdHVubmVsCj4gPj4gKyAgICAgICBqc29u
-X2FkZF9zdHJpbmcgbW9kZSAiJG1vZGUiCj4gPj4gKyAgICAgICBqc29uX2FkZF9pbnQgbXR1ICIk
-e210dTotMTI4MH0iCj4gPj4gKwo+ID4+ICsgICAgICAgWyAteiAiJHR1bmxpbmsiIF0gJiYgewo+
-ID4+ICsgICAgICAgICAgICAgICBwcm90b19ub3RpZnlfZXJyb3IgIiRjZmciIE5PX1RVTkxJTksK
-PiA+PiArICAgICAgICAgICAgICAgcHJvdG9fYmxvY2tfcmVzdGFydCAiJGNmZyIKPiA+PiArICAg
-ICAgICAgICAgICAgZXhpdAo+ID4+ICsgICAgICAgfQo+ID4+ICsgICAgICAganNvbl9hZGRfc3Ry
-aW5nIGxpbmsgIiR0dW5saW5rIgo+ID4+ICsKPiA+PiArICAgICAgIFsgLXogIiRpZmlkIiBdICYm
-IHsKPiA+PiArICAgICAgICAgICAgICAgcHJvdG9fbm90aWZ5X2Vycm9yICIkY2ZnIiBOT19JRklE
-Cj4gPj4gKyAgICAgICAgICAgICAgIHByb3RvX2Jsb2NrX3Jlc3RhcnQgIiRjZmciCj4gPj4gKyAg
-ICAgICAgICAgICAgIGV4aXQKPiA+PiArICAgICAgIH0KPiA+PiArICAgICAgIGpzb25fYWRkX29i
-amVjdCAnZGF0YScKPiA+PiArICAgICAgIFsgLW4gIiRpZmlkIiBdICYmIGpzb25fYWRkX2ludCBp
-ZmlkICIkaWZpZCIKPiA+PiArICAgICAgIGpzb25fY2xvc2Vfb2JqZWN0Cj4gPj4gKwo+ID4+ICsg
-ICAgICAgcHJvdG9fY2xvc2VfdHVubmVsCj4gPj4gKwo+ID4+ICsgICAgICAgcHJvdG9fYWRkX2Rh
-dGEKPiA+PiArICAgICAgIFsgLW4gIiR6b25lIiBdICYmIGpzb25fYWRkX3N0cmluZyB6b25lICIk
-em9uZSIKPiA+PiArICAgICAgIHByb3RvX2Nsb3NlX2RhdGEKPiA+PiArCj4gPj4gKyAgICAgICBw
-cm90b19zZW5kX3VwZGF0ZSAiJGNmZyIKPiA+PiArfQo+ID4+ICsKPiA+PiArcHJvdG9feGZybV90
-ZWFyZG93bigpIHsKPiA+PiArICAgICAgIGxvY2FsIGNmZz0iJDEiCj4gaXAgbGluayBkZWwgIiRj
-ZmciCj4gPj4gK30KPiA+PiArCj4gPj4gK3Byb3RvX3hmcm1faW5pdF9jb25maWcoKSB7Cj4gPj4g
-KyAgICAgICBub19kZXZpY2U9MQo+ID4+ICsgICAgICAgYXZhaWxhYmxlPTEKPiA+PiArCj4gPj4g
-KyAgICAgICBwcm90b19jb25maWdfYWRkX2ludCAibXR1Igo+ID4+ICsgICAgICAgcHJvdG9fY29u
-ZmlnX2FkZF9zdHJpbmcgInR1bmxpbmsiCj4gPj4gKyAgICAgICBwcm90b19jb25maWdfYWRkX3N0
-cmluZyAiem9uZSIKPiA+PiArICAgICAgIHByb3RvX2NvbmZpZ19hZGRfaW50ICJpZmlkIgo+ID4+
-ICt9Cj4gPj4gKwo+ID4+ICsKPiA+PiArWyAtbiAiJElOQ0xVREVfT05MWSIgXSB8fCB7Cj4gPj4g
-KyAgICAgICBbIC1mIC9saWIvbW9kdWxlcy8kKHVuYW1lIC1yKS94ZnJtX2ludGVyZmFjZS5rbyAt
-byAtZCAvc3lzL21vZHVsZS94ZnJtX2ludGVyZmFjZSBdICYmIGFkZF9wcm90b2NvbCB4ZnJtCj4g
-PiBJIG1pc3NlZCB0aGUgY2hlY2sgZm9yIC9zeXMvbW9kdWxlL3hmcm1faW50ZXJmYWNlIGluIG15
-IGluaXRpYWwKPiA+IHJldmlldzsgaXMgdGhlcmUgYW55IHNwZWNpZmljIHJlYXNvbiBmb3IgdGhp
-cyBhZGRpdGlvbmFsIGNoZWNrIGJlc2lkZQo+ID4gdGhlIHhmcm1faW50ZXJmYWNlLmtvIGNoZWNr
-ID8KPiA+Cj4gPiBIYW5zCj4gPj4gK30KPiA+PiAtLQo+ID4+IDIuMTEuMAo+ID4+Cj4gPj4KPiA+
-PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ID4+IG9w
-ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gPj4gb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0
-Lm9yZwo+ID4+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVu
-d3J0LWRldmVsCj4gPgo+ID4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KPiA+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gPiBvcGVud3J0LWRldmVs
-QGxpc3RzLm9wZW53cnQub3JnCj4gPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4v
-bGlzdGluZm8vb3BlbndydC1kZXZlbAo+ID4KPgo+Cj4gLS0KPiBNaXQgZnJldW5kbGljaGVuIEdy
-w7zDn2VuCj4gQW5kcsOpIFZhbGVudGluCj4KPiBTeXN0ZW1hZG1pbmlzdHJhdGlvbiAtIFByb2pl
-a3Rrb29yZGluYXRpb24KPgo+Cj4gLS0KPiBNYXJjYW5UIEFHLCBIZXJmb3JkZXIgU3RyYcOfZSAx
-NjNhLCBEIC0gMzM2MDkgQmllbGVmZWxkCj4gRm9uOiArNDkgKDUyMSkgOTU5NDUtMCB8IEZheDog
-KzQ5ICg1MjEpIDk1OTQ1LTE4Cj4gVVJMOiBodHRwOi8vd3d3Lm1hcmNhbnQubmV0IDxodHRwOi8v
-d3d3Lm1hcmNhbnQubmV0Lz4gfCBodHRwOi8vd3d3Lmdsb2JhbC1tMm0uY29tIDxodHRwOi8vd3d3
-Lmdsb2JhbC1tMm0uY29tLz4KPgo+IEludGVybmV0ICogTmV0endlcmsgKiBNb2JpbGUgRGF0ZW4K
-Pgo+IFZvcnN0YW5kOgo+IFRob3JzdGVuIEhvamFzIChWb3JzaXR6ZW5kZXIpCj4gTWFyYy1IZW5y
-aWsgRGVsa2VyCj4gRHIuIEFuamEtQ2hyaXN0aW5hIFBhZGJlcmcKPiBIYW5kZWxzcmVnaXN0ZXI6
-IEFHIEJpZWxlZmVsZCwgSFJCIDQyMjYwIFVTdC1JRCBOci46IERFIDE5MDIwMzIzOAo+Cj4KPgo+
-IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCj4gQXVzc2VyaGFsYiB1bnNlcmVyIEdlc2Now6RmdHN6ZWl0ZW4gKE1vbnRhZyBiaXMgRnJl
-aXRhZyB2b24gODozMCBVaHIgYmlzCj4gMTc6MzAgVWhyLCBhdXNnZW5vbW1lbiBnZXNldHpsaWNo
-ZSBGZWllcnRhZ2UgaW4gTlJXKSBzdGVoZW4gd2lyIElobmVuCj4gZ2Vtw6TDnyBJaHJlciBqZXdl
-aWxpZ2VuIFNlcnZpY2UtTGV2ZWwtQWdyZWVtZW50cyB1bnRlciBkZXIgSWhuZW4KPiBtaXRnZXRl
-aWx0ZW4gVGVsZWZvbm51bW1lciBmw7xyIFN0w7ZydW5nZW4gdW5kIE5vdGbDpGxsZSB6dXIgVmVy
-ZsO8Z3VuZy4KPiBTaWUga8O2bm5lbiBuYXTDvHJsaWNoIGF1Y2ggZ2VybmUgamVkZXJ6ZWl0IHVu
-dGVyIHN1cHBvcnRAbWFyY2FudC5uZXQgZWluCj4gVGlja2V0IGVyw7ZmZm5lbiwgd2VsY2hlcyBh
-bSBuw6RjaHN0ZW4gQXJiZWl0c3RhZyBiZWFyYmVpdGV0IHdpcmQuCj4KPgo+Cj4KCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFp
-bGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5v
-cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+This simplifies the ethernet address extraction script
+by using standard library functions to locate the MTD
+partitions and extract ethernet address from a binary
+offset location in the flash.
+
+Suggested-by: Christian Lamparter <chunkeey@gmail.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ChangeLog v1->v2:
+- New patch prepended to the series
+- Hold back switchover to use "ip" rather than "ifconfig".
+  ip link set eth0 address 00:50:c2:11:11:11
+  returns
+  ip: socket(AF_PACKET,2,0): Address family not supported by protocol
+  We can fix up the use of "ip" when we know why it's not
+  working.
+---
+ .../lib/preinit/05_set_ether_mac_gemini       | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+
+diff --git a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
+index 1ce5c8067ef0..a79ee5057ffc 100644
+--- a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
++++ b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
+@@ -1,11 +1,14 @@
+ #!/bin/sh
+ 
++. /lib/functions.sh
++. /lib/functions/system.sh
++
+ set_ether_mac() {
+ 	# Most devices have a standard "VCTL" partition
+-	CONFIG_PARTITION="$(grep "VCTL" /proc/mtd | cut -d: -f1)"
+-	if [ ! -z $CONFIG_PARTITION ] ; then
+-		MAC1="$(strings /dev/$CONFIG_PARTITION |grep MAC|cut -d: -f2|cut -c3-14|sed -e 's,\(..\),:\1,g' -e 's,^:,,')"
+-		MAC2="$(strings /dev/$CONFIG_PARTITION |grep MAC|cut -d: -f8|cut -c3-14|sed -e 's,\(..\),:\1,g' -e 's,^:,,')"
++	part=$(find_mtd_part VCTL)
++	if [ ! -z $part ] ; then
++		MAC1="$(strings $part |grep MAC|cut -d: -f2|cut -c3-14|sed -e 's,\(..\),:\1,g' -e 's,^:,,')"
++		MAC2="$(strings $part |grep MAC|cut -d: -f8|cut -c3-14|sed -e 's,\(..\),:\1,g' -e 's,^:,,')"
+ 
+ 		ifconfig eth0 hw ether $MAC1 2>/dev/null
+ 		ifconfig eth1 hw ether $MAC2 2>/dev/null
+@@ -14,11 +17,11 @@ set_ether_mac() {
+ 
+ 	# The DNS-313 has a special field in its RedBoot
+ 	# binary that we need to check
+-	CONFIG_PARTITION="$(grep "RedBoot" /proc/mtd | cut -d: -f1)"
+-	if [ ! -z $CONFIG_PARTITION ] ; then
+-		DEVID="$(dd if=/dev/mtdblock0 bs=1 skip=119508 count=7 2>/dev/null)"
++	part=$(find_mtd_part RedBoot)
++	if [ ! -z $part ] ; then
++		DEVID="$(dd if=$part bs=1 skip=119508 count=7 2>/dev/null)"
+ 		if [ "x$DEVID" = "xdns-313" ] ; then
+-			MAC1="$(dd if=/dev/mtdblock0 bs=1 skip=119540 count=6 2>/dev/null | hexdump -n6 -e '/1 ":%02X"' | sed s/^://g)"
++			MAC1=$(mtd_get_mac_binary RedBoot 119540)
+ 			ifconfig eth0 hw ether $MAC1 2>/dev/null
+ 			return 0
+ 		fi
+-- 
+2.21.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

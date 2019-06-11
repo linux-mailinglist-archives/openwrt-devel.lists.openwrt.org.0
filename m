@@ -2,78 +2,98 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29FA94169E
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 23:08:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C36214170F
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 23:43:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=247iW8f9H2pYEN3dJ2HX4FHojeB8SBwXf2ksvXymkq0=; b=ln9pjT2ZuGPJXm
-	C/WYVc/4FLbQphBjrlU9Nd5XzTHesHwupbK2OTvGUF40nFOzORaePwERZ8rP0xbhtr3rqo0E3alC8
-	ii7U1rAo8+LOf4wOw3W14hVwknYM++XlMaJ+jUAdfRtroex2GSZ0XnbY2f87/MTzu7VwlwLaU8YZ3
-	bwbuSDuvYLf0zRsJ05MAKQT438Oc9AMHpM5FRO1x28DWVpeow2nq7rkHKsV0mNSqzxd9NEv3cmfTQ
-	bWqc6wIoxOa4WlUT/e1ftGHG8fM+DnJSvvzPf+ql/2NI2xSvg4hKvGcB4OBWQp+StPabvWBwQPJVs
-	5xc3c39Wv+yxaIc9hW/Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=35qjUHxF4D0wD9CDZxQEoLZjH88VMznDqBvusMuzKGE=; b=Ilw/A4Buep0oLj
+	Ic7YKH/wwL8ryxtUZICguFizVbFqKgehmn13IfzS9n+nC6ST3DrFsPmByZZRK7iUpoYUuzksRGbfZ
+	whc+xmE8ATXyrXGvMKeeIJv4TmCTrx/Qs3yXIMkvbD0KbDcsQJAjiL2iqPfh3FsmQLRbur9V8egy3
+	UUNMkjPETy45B9RZRbwkmzaXX7awvFoQIHpdyp77OxDwRoaGr8iaQ4x4xd2XJgSa094XgFw/rBaj7
+	bvXIK9IALnhuTWOohg6fm26Htrj3fMr7EJpqAAgM6VfRcqF7DtO//Ozt+7L7xAOoeXUUSCNhzobte
+	s/SgMDa8Bu+jYX0Hg65g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hao0R-0006mf-LK; Tue, 11 Jun 2019 21:08:35 +0000
-Received: from mail.tintel.eu ([54.36.12.13])
+	id 1haoYU-0004Fb-LE; Tue, 11 Jun 2019 21:43:46 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hao0I-0006kY-4O
- for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 21:08:28 +0000
-Received: from localhost (localhost [IPv6:::1])
- by mail.tintel.eu (Postfix) with ESMTP id 09ABD453E83E
- for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 23:08:22 +0200 (CEST)
-Received: from mail.tintel.eu ([IPv6:::1])
- by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10032)
- with ESMTP id oCtuySq2HZTC for <openwrt-devel@lists.openwrt.org>;
- Tue, 11 Jun 2019 23:08:21 +0200 (CEST)
-Received: from localhost (localhost [IPv6:::1])
- by mail.tintel.eu (Postfix) with ESMTP id 5E81A443E70D
- for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 23:08:21 +0200 (CEST)
-DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu 5E81A443E70D
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
- s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1560287301;
- bh=gI6zgvrrXkVu1DJVV9ybWdhsP0qFTyG1m3k3bnDMu68=;
- h=To:From:Message-ID:Date:MIME-Version;
- b=vsV+avnF6cFMYYq9wmcQMK8kIWhTgJOueOodJ3XAJm3V4Y/ni0klKOhyN3p3490qM
- 5YDnhSQnauWN9XUduQGj1H1h0ulDlqxYcToLEq8hVb+4seECT106gy4lzOwy9KTavY
- bK5FU/6cGbEwpOldTlXXv45B2cEq+OWIpHRPv3l0=
-X-Virus-Scanned: amavisd-new at mail.tintel.eu
-Received: from mail.tintel.eu ([IPv6:::1])
- by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10026)
- with ESMTP id YxO54dN_8qDm for <openwrt-devel@lists.openwrt.org>;
- Tue, 11 Jun 2019 23:08:21 +0200 (CEST)
-Received: from [IPv6:2001:67c:21bc:24::adb] (taz.sof.bg.adlevio.net
- [IPv6:2001:67c:21bc:24::adb]) (Authenticated sender: stijn@tintel.eu)
- by mail.tintel.eu (Postfix) with ESMTPSA id C2850453E83E
- for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 23:08:20 +0200 (CEST)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Stijn Tintel <stijn@linux-ipv6.be>
-Openpgp: preference=signencrypt
-Message-ID: <f81aabc8-e8e5-42ea-37ab-2adeb4728896@linux-ipv6.be>
-Date: Wed, 12 Jun 2019 00:08:17 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1haoYO-0004FV-Dv
+ for openwrt-devel@bombadil.infradead.org; Tue, 11 Jun 2019 21:43:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Cc:To:Subject:Message-ID:
+ Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ECDA/CiYJ896Uq8B1k8YahjIOmVrURsLfQbj20AnPuQ=; b=hdIsP0Jc/eKWBofJLq1Pt0GCO
+ HIiWuVNGs1a/Kx00lzFWJizJmvw5HCODtTrpJ3R8uzbGPNU5JqM3Tz4+CIBjH+5YfLCX/ls+MTdzh
+ PctyUpurCJWYgFjROQrvCL9MALIEDBQ9zN5dc+9bKO3bhrBKtIfiYsBR49zMewFtSuN+e5wgJbNP2
+ x2AU41XVy0btjOfsXSJMR/OjiweZ6uJIDVXDaR2FUEKAq2WLDitPd3G2IrVxIBpR4MOxr1khxhdT+
+ 9U8zXc5ntLxc14xxRw773K+bb9Y0x0x98QNQjJr+scl1ZaEjuHoo9YX5aJK0Y74dBQRVUEM2hpVCJ
+ zYGe+DPfQ==;
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hao6V-0008Ru-UZ
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 21:14:53 +0000
+Received: by mail-wr1-x432.google.com with SMTP id x4so11922709wrt.6
+ for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 14:14:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ECDA/CiYJ896Uq8B1k8YahjIOmVrURsLfQbj20AnPuQ=;
+ b=Aa9c3/SJr2sBGqIT9SXAW9L0ATDQVGlkGc0d0NHWpp4TVbzTl+gVBbeaI0xYOneMaa
+ QLQK1plV9F1PaVZEGIwq3JlxSbGAfdfDVcziE/UcGF9TQSDDwu0u5uQa5nRe/+hVOhoh
+ upDhGWm171oaogtcqolwkK1anxSiZAqD+9zVDZhMfmidxp6w1UDRdN3GyVIMIi/nXats
+ JXVtcErPET8ffTQD3geEKlycNou3v2wOMWVjiktc+nEqRVUTD3EdhrG4Ioo2IKoVFcD6
+ RtuPmkGmH1t6sDHiyasjFjSj7rkpUd4YsyMhybJagcYDPdKtA/E8pswyIpnCYNYzXgK6
+ 1qBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ECDA/CiYJ896Uq8B1k8YahjIOmVrURsLfQbj20AnPuQ=;
+ b=j7ovkCleagTp0Y0mSz2VoU242ZxItSQzfFZO8BON8Zd54T+UyyrAub8P8rp0cUU2vT
+ 1KpS8q781QTJyOMoJZpE5wN26/fQbwTYHoX8lJ7bDe5jT9Gx/81M0/UlmFOwXo6aydsT
+ d13tgc5MnsPjfBqXpojqX52iaHF8CgzdeaBJQghfcwRXvGcmMp4LrDnrOB46MC2vI0bv
+ nGc9iAw8jdfJBxT/Ntt3zAlOGg41SvbLGval8diFtxX1d+ahS9LTnf6S1+18V5lDVvF1
+ aUdQKRTnokKPchXRr2vgqeY/pD37vlS8t4ZOFFtfTTwYo6AsrUC0eq0/X7AVuu9jtjRj
+ nD0Q==
+X-Gm-Message-State: APjAAAWzNy4GGqxBur+N8ZNRwmNbGLkx0w1d6+dqQ018dzfwnBVdU6dA
+ Dm9Wrukh0w2LHhOa5hyugmPw1ok1qBS+zlnXFJw=
+X-Google-Smtp-Source: APXvYqy6pMPDSaSFLXUJenExtVf14D3UdS880tSmRAugvGTK46ln1h1GPTK1fTMy5kdRPiOn3X78S8k4SmT9etFg1XU=
+X-Received: by 2002:adf:fb0b:: with SMTP id c11mr2510107wrr.56.1560287564745; 
+ Tue, 11 Jun 2019 14:12:44 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-GB
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_140826_495603_FA15DFE8 
-X-CRM114-Status: UNSURE (   3.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+References: <f81aabc8-e8e5-42ea-37ab-2adeb4728896@linux-ipv6.be>
+In-Reply-To: <f81aabc8-e8e5-42ea-37ab-2adeb4728896@linux-ipv6.be>
+From: Jonas Gorski <jonas.gorski@gmail.com>
+Date: Tue, 11 Jun 2019 23:12:36 +0200
+Message-ID: <CAOiHx=mbuuiL5G1Ay8oedPMhRFsLJZKOP06ZNfxT1ocmyrU3ZQ@mail.gmail.com>
+To: Stijn Tintel <stijn@linux-ipv6.be>
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:432 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jonas.gorski[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: [OpenWrt-Devel] KERNEL_PATCHVER in master
+Subject: Re: [OpenWrt-Devel] KERNEL_PATCHVER in master
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,6 +105,7 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
@@ -92,12 +113,20 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Hi,
 
-Since we now have a 19.07 branch, is it OK to switch KERNEL_PATCHVER for
-targets in master that have 4.19 support to 4.19?
+On Tue, 11 Jun 2019 at 23:08, Stijn Tintel <stijn@linux-ipv6.be> wrote:
+>
+> Hi,
+>
+> Since we now have a 19.07 branch, is it OK to switch KERNEL_PATCHVER for
+> targets in master that have 4.19 support to 4.19?
 
-Thanks,
-Stijn
+Fine by me. The earlier we start testing 4.19, the faster we can iron
+out the kinks, hopefully reducing the maturation phase of the next
+release.
 
+
+Regards
+Jonas
 
 _______________________________________________
 openwrt-devel mailing list

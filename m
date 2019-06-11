@@ -2,69 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 880C63C9F3
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 13:28:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C57EF3CF0C
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 16:41:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0tB8POSdB+SZ2e8YQ+rxRVZ/PmdykCOf4zC+GWmBkiA=; b=nym2KCbfu91ZkP
-	gIL8c7pHLrQwHjYEtU0bV7M1MVO7Sdu10kRS6Q5khHqGWkpMcVB0I7L6PdEiaYWPxLfCFHnFgkpbw
-	xQSApuTbBJECR9T6yO3sxuKHu8s4gi2Zw55eqVrHM3fHiJauJjZ3S8eyeLbr3ZS9d12xVEFekPeui
-	eDt9L1fOeDUnP3inJ6Nhr/Q4Uq/7s+GQsyXoX/Xjg/NMTpJtyRfrH7gxcRwt+LlThYKvc0L9R/nA1
-	un9R/vx/b0shA5rroom5AtPrFOvqWAeMYhzCKtBMGR68ssilSajmHhjgX2kDe0tOdeCdQ1Mgu3vac
-	46UpAR0PqzVr8Av8L1Og==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X7N6RX3WX4MS3OJJiqkzg/UyB8lJW5ecpWPk8At1Tgs=; b=gyw1VtwWC3k/A1
+	qfDG//EeJ1AEmZA4Ea9wQgRFqB5vcoyQHXeH+wjwEflHNFJWlxfPs+v/rExtJE74sqygXqH+NTcCJ
+	RJnXl6MhizWyahng4L+NSVdLJFr4EKOk9QQOtsH2vBBpZsoPqpGaF/I42+MH0PIIYZlyCexL9qKN4
+	LVzdfIHCZLkzXs/svnFgiwYwUWmMNPt9j5GDZJHkGQpCS2DZrVwxaRWyZkA8KMmuwJxlPms7r74Zr
+	QBKfoWd6r1taEaCsIaeSVbiYZDejxYET0EtSrP6BUDYaH6BZ/ajsTKZFn9KYAoN+5Baec0Clvi/R7
+	EZ1260etAYrYXSMKy+Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haewr-0007eJ-R9; Tue, 11 Jun 2019 11:28:17 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1hahx6-00057y-7j; Tue, 11 Jun 2019 14:40:44 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haewj-0007dp-Ox
- for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 11:28:11 +0000
-Received: from localhost.localdomain ([188.194.85.108]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MsqIi-1ghbS93EqG-00tE0f for <openwrt-devel@lists.openwrt.org>; Tue, 11
- Jun 2019 13:28:05 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 11 Jun 2019 13:28:02 +0200
-Message-Id: <20190611112802.2912-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.11.0
-X-Provags-ID: V03:K1:qrGKvPS6Sroze1/mrKEQZu5iYsE+EonaFJHv+0HIZPejjvmsICM
- sEO4GWlO3daM+2bMzKlAGX2z0dBTSdC5i9BdFCzBk/zy5TqVv6SiR8IPhYIC2opYVafHmxh
- 2xRerZpmvWSbQ7FDLYHZm62hZ2zQ/MHsP1R+C5rZkTV/PtBwtnhhDBvsDl3w6ypNTxg6YMu
- NwJgcBgyBokUPp/UC2vaw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ySst9h3sIsg=:qKUzpixFaYBBtocfH0XpFC
- v0G/v/3/VAAH5x7cfbHquVA4ymCjKbUCz61UHAZKusic7BOsdfL5AkSNiNLBgqWH7cQvtBRlm
- PWGn3uE+VPR7HJ0NZL6Pdh4uWzYPzyd5v3P5xtO+6z25JctNzOMyyoKYOYmLo+7nvqldxVg+6
- mPtVn/lN8HUQt6OsJlyhP8Q9A75GJzF3dd3nNRT+DnSdBnmFh7J4/EmbpSoTC0VSYTSyr1VRA
- 9FKKxIb3xbiWRmSvDjJe0+mobhKKrFHu8riRA1qTzkxbrOk1DZPA036cAPgUPV3i5BoI64aX7
- XN+9I3ZGbBTbLpMRjvtrTP0a5FGb4mIwJZ+K2jpi2AhnutURtPgf1GAzslwMLbtkkcbqt3ULp
- 0Ydpr6IY3tuFaPxugqQU5CMOPQIZrCsLg9MF+e5ykxfJMAqJ0Fi8M5OGllIjb3v+qhgQaFnv/
- R8HanDopAnOwfuTR+dzUuGpfcMRbftlReQJ+0l6ASyNCYg6TdttD6g2SboxmK2rBxsNdaQgo2
- 4X+Yxmm/DTiBImvXRUI5zd1J0NPrz1qUUTBNjZ4H+j/baYXYZpKZUEGTkIPOKxD5H8jDQXXul
- Taa831GQq4rlOOAyInMaggYKLv5z6Vskv2PCdBkRMgSDyooZWqtsQfv0ca0n9k2PUAEAXbuSo
- nUWHUzaYuplde/G00xkrYYgC2yXQy+HOdwLs9PvsedXi72gOw3cBYNWmlpO5SXLtfRfhAdYXr
- qP+2Z1REgOMKQO3Mt5sd7/cgIUKQlLJi57sBOsf8FmuwohYdFGbbaXed8fA=
+ id 1hahwo-00057V-2Q
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 14:40:27 +0000
+Received: by mail-lj1-x234.google.com with SMTP id x25so7298319ljh.2
+ for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 07:40:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=aemauKEBBDCGNPSvD0dc5/RogyAC4KMMEiFZRocQhPk=;
+ b=AHsjpLuKc/Pzuq33j9kwA1ipOuiFCUQ1EMHa/QCKI7yiguoDkOlqLHhcIEQYf6/izF
+ ebOMvIu15ANEVm/kc1gl6jJbI1SYPgeSwqhWHeT+Lw3pXFbRshWCJsadQ9KKkqnUPyAo
+ 29mCXJsBIGL6ZZKxXCc+g8g4V2mRlc2JT+sB3O+OL5bnvmxjGM2wPFDrOSWCPiTaSGPB
+ cKmZbiA13qisvi5i8ilaYReLtJJjIwLPynhA50kEkYqcQ6jdj9Ik9Kt5CBcq61dvGSVE
+ sG3K0AIkmeF+3zS2tQk9NNAZCTNpW+DdQQdKXs7g6okQftxZI8OP2NuzL2KbqJoYXiXR
+ jqfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=aemauKEBBDCGNPSvD0dc5/RogyAC4KMMEiFZRocQhPk=;
+ b=NO9hRSz3+uk5GXC9y3TfS8xOyvxYLjOPBqAhbt42kZx6EA473im/L6+UF/dPOTMLoX
+ Sa8aYh9kjnS9Np3HnP3yPRAp0rixgYJCZWO9bz5Qh6T8hi7eEo5r2oZ2rHvUwhoT/zXB
+ g1ZukIwjqrTWGXgUB/h5dkBxI2m83y058rLakkTQIN3MLGV/QsRWZWt2443rCkDeobd7
+ LFiXnVmNwO6jnF4xPPzVFEWny4x5p8ynqwY+DKRp0d5UtHx5pv/hgGG8MdseUVVZrR0p
+ a2yTrYeiNU/MXM5qsXjHKBCaKXInEHTvy0URJckGF/m2UpC5roq00KmIyLPTSxKCh4vv
+ //AA==
+X-Gm-Message-State: APjAAAXH4/PPV/5/CJFFi8QKR5vTcKyrau29Bm6AIVcwqdahQStSsQl/
+ h7PDi4gEZs7gocH16zitShGHRNxDMIoy/nsJiSWLlw==
+X-Google-Smtp-Source: APXvYqx35VpzwdO9kFD7HfMKzQY1vXcuGvzYOSM4bqmWDdiGpU2zPu2MX72DAjR3QiR/pufggYi0nUKDilGF2z7aWR4=
+X-Received: by 2002:a2e:5d54:: with SMTP id r81mr2852491ljb.104.1560264023421; 
+ Tue, 11 Jun 2019 07:40:23 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190524212719.30694-1-linus.walleij@linaro.org>
+ <2143459.csVk10Y2R9@debian64>
+In-Reply-To: <2143459.csVk10Y2R9@debian64>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 11 Jun 2019 16:40:12 +0200
+Message-ID: <CACRpkdag__7EeFKq=FJOFfJ+HQFi2qvW1UijEVkCyBiGj_-AAQ@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_042810_101729_A78B06CB 
-X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-CacheID: sfid-20190611_074026_120845_CFDCB065 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:234 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [PATCH] ath79: Merge cases in 11-ath10k-caldata
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH 1/3] gemini: Make a per-board case for
+ ethernet MAC
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,43 +92,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: Florian Fainelli <f.fainelli@gmail.com>, Roman Yeryomin <roman@advem.lv>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Sebastian Luft <sebastian.luft@gmail.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Cosmetical patch that just merges two cases.
+Hi Christian,
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- .../ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata      | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+I worked in all the changes you requested until I got to this:
 
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-index b96c9a00b5..8f0ea1d0a5 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-@@ -137,14 +137,11 @@ case "$FIRMWARE" in
- 		ath10kcal_extract "art" 20480 2116
- 		ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +16)
- 		;;
--	tplink,archer-c25-v1)
--		ath10kcal_extract "art" 20480 2116
--		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary info 8) -1)
--		;;
- 	tplink,archer-a7-v5|\
- 	tplink,archer-c2-v3|\
- 	tplink,archer-c7-v4|\
--	tplink,archer-c7-v5)
-+	tplink,archer-c7-v5|\
-+	tplink,archer-c25-v1)
- 		ath10kcal_extract "art" 20480 2116
- 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary info 8) -1)
- 		;;
--- 
-2.11.0
+On Thu, May 30, 2019 at 12:46 AM Christian Lamparter <chunkeey@gmail.com> wrote:
 
+> > +                             ifconfig eth0 hw ether $MAC1 2>/dev/null
+>
+> I guess while we are at it, why not change it to
+> "ip link set dev eth0 address $MAC1"
+
+Testing this:
+
+ip link set eth0 address 00:50:c2:11:11:11
+ip: socket(AF_PACKET,2,0): Address family not supported by protocol
+
+Any hints? According to the help it should work ...
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,85 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20BFA416EA
-	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 23:32:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8376241736
+	for <lists+openwrt-devel@lfdr.de>; Tue, 11 Jun 2019 23:53:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ryAmVEG5V+713M8Mn1Ar++3aQmgfq1NofZmCA0moEHc=; b=npjZwJIE6y7dWx
-	FDmGjz47g0VJrDeR75Q5pUuoR2oJsqVE82UeHMlDg2YcCc+jo4gL5gCSx+/RNZm7m0DYN/w0MGlmR
-	dmhR0ISY6ZulxKzVEkbIP4Ci34inNuId2+AYD4OzMKAX5Mt7Sl7e3xNDNH8moZFiGFBJKNXnH7n+O
-	xVkVpVUBbHBf9Qvpojogi9ShtItE5uyhrY0M+54vb545Gv3/j8HlGRJkPLs9wdDeEFdHp09YZJeoA
-	4GyxcsX6sGJTMy8Io/CERBykf4+oN534+FthsSk/JWpWtUdk8UGUUG/qjIGyJFH/MNV8cV/zJ5CI2
-	hqrAhT9wGnafl6v87FIQ==;
+	List-Owner; bh=7RlkdpFL92u3pLy4QOwKS46HXkF/7fVWKMUEYAveWEE=; b=s7dnhPfqt/BxcH
+	wFsmsbTvJHsI/inT+d7X8IWToID/LzBgOag1oRqqFRm24Fa2S6nnRKpma4eoP1pzpzwZnsDN+7G1/
+	bVrspkUJDeA6JZ0oMiDhaOlCH3OTSvWDpVr7GtKbnRwcK/C1gmIsiC1UAaBuKUfz4ThCWhUaT9AxM
+	82J27ghB0V5yOZXMhrCteR8l4/kxEgjaHevLvlCRkQo9bo7L2ZZLcGT2ToY8WjXFRh4/ojsPVoiTx
+	9a+iVfB8Kxjg7LeuQ/8AGqvtCUbJrzt1HgKxIMqLvg8yEWdNjYztN12SWEfADv7TuS9uk64m/wIns
+	XXON8SQ6GekX6C9DDnMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haoN4-0000Tc-6U; Tue, 11 Jun 2019 21:31:58 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1haohR-0008C1-3v; Tue, 11 Jun 2019 21:53:01 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haoMv-0000TH-Py
- for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 21:31:50 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m23so13091319lje.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 11 Jun 2019 14:31:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0seT/R+TWr+z933Re4pqjLfWTLuLppCZmgwcFbnMyp8=;
- b=hO6tUJqaHk/WU1JmUpSdDUczK2BaM3YB5BBrsG1zwD+m9eI845SczVbnx97Ex9Fe+r
- K0avHe/TS0bCtY0XTkfOtb9oY8cn9j4tL97T5XO2vwawm+ypR/5tlHkNCi7G2IwrQ3SW
- zzTrDvcdfehPLTgFEteo73nQjvM96SWcgqsJipBTV39CWeo1c8MNlykyLZUYZSfr31r/
- A8GOoZ8Wn6raGo+3YFMe7SL2RSPMU8Q4GBb5JF/drXtVgV5V2xbQtIyY79A1BjkVHbGH
- nfhnn5R/7IceL0VVFM//OH3ul11ofh9kouJfOH+RSg2FnM+O8utRQa2yfONCIO8hI+bz
- V9mw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0seT/R+TWr+z933Re4pqjLfWTLuLppCZmgwcFbnMyp8=;
- b=rLA7s0CpZQsFp1ph5h8M+OsNHPkhw2PICDZW2ER9dmYUIG6DXJmkd8vkNjbRAij6vD
- Gy3umPK4IJc1A+JJN3kmbvkvb+MGlc1XC9OezG8640/q/aCk18bLQtp2GBJXIFWEjqnc
- yvDdBrezQQF+82fkX1wcgh/uWlYJTC+9bPqKY9fLHdnKMK0EO63ah672fmcqMvxXaQo1
- O95hRwPkgl9peMbPDSbSrXa8yL9PA59hqDGpTSjY5cG0I53xYZE5lZ1vdBQDFzU2z5Ud
- ljnsJH486a7q9ZQS85AeVs+pbDU/GYgqtvcy4Hllk08rAYfduENW7mpqnxDmsCyg5+DA
- nZfA==
-X-Gm-Message-State: APjAAAV/+5rysEI/9Aj4zmKJOHhtEyu/6GSnHQfWmS+5U2upvR9+/mrr
- B2MAgs/3Pyodqr6wtU0xvOcVYh9qjK5MNV8vRSd6Eg==
-X-Google-Smtp-Source: APXvYqzJxIKKTMSOnpYybnIRox3l9XF4oK2lelLrO/P6Zkv3c4oYaCqiO4MAra71XVI4jiQ8f4ymCfaKbQscGnBKTdE=
-X-Received: by 2002:a2e:5dc4:: with SMTP id v65mr31513240lje.138.1560288707955; 
- Tue, 11 Jun 2019 14:31:47 -0700 (PDT)
+ id 1haohH-0008B3-34
+ for openwrt-devel@lists.openwrt.org; Tue, 11 Jun 2019 21:52:53 +0000
+Received: from [IPv6:2003:e5:3f0c:bc00:a23c:f0f7:74b0:7ff1]
+ (p200300E53F0CBC00A23CF0F774B07FF1.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f0c:bc00:a23c:f0f7:74b0:7ff1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 0636A222F2;
+ Tue, 11 Jun 2019 23:52:46 +0200 (CEST)
+To: Christian Lamparter <chunkeey@gmail.com>, =?UTF-8?Q?Petr_=c5=a0tetiar?=
+ <ynezz@true.cz>
+References: <1559653541-26682-1-git-send-email-ynezz@true.cz>
+ <CAAd0S9CEPJqQXJ6OhW9_597ig92Typb7s0L5HwpLm-CU=ska6g@mail.gmail.com>
+From: David Bauer <mail@david-bauer.net>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <1eaf3583-d246-8598-eecd-6d27e16b914e@david-bauer.net>
+Date: Tue, 11 Jun 2019 23:52:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-References: <20190611212811.32150-1-linus.walleij@linaro.org>
-In-Reply-To: <20190611212811.32150-1-linus.walleij@linaro.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 11 Jun 2019 23:31:35 +0200
-Message-ID: <CACRpkdamK+pesxxbd7ohZKq-UnNURhO0y=7uMFPjgmBBHNLk9Q@mail.gmail.com>
-To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>, Hauke Mehrtens <hauke@hauke-m.de>,
- Christian Lamparter <chunkeey@gmail.com>
+In-Reply-To: <CAAd0S9CEPJqQXJ6OhW9_597ig92Typb7s0L5HwpLm-CU=ska6g@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_143149_845776_84C6600A 
-X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-CacheID: sfid-20190611_145251_270582_52A532E6 
+X-CRM114-Status: UNSURE (   9.60  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] gemini: Fix up patch format
+Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: fix
+ always missing first event
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,23 +93,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, Jun 11, 2019 at 11:28 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+Hello,
 
-> One of the patches were not properly refreshed. Fix it up.
->
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+On 05.06.19 22:23, Christian Lamparter wrote:
+> I had to attach the patch as a file since gmail's webmail interface now seems to
+> eat all the tabs. I hope this still gets through.
 
-Bah, drop this patch. I was fixing my own out-of-tree patches :P
+I ran into problems booting multiple QCA9558 boards, namely the OCEDO
+Koala and the devolo WiFi pro 1200e with the current master. Both
+devices always go into failsafe mode when powering on.
 
-Sorry for the buzz
-Linus Walleij
+I haven't dug deeper into this issue, but reverting 6c5bfaac84 leads
+into both boards booting normally.
+
+Best wishes
+David
 
 _______________________________________________
 openwrt-devel mailing list

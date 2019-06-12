@@ -2,89 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FC6042039
-	for <lists+openwrt-devel@lfdr.de>; Wed, 12 Jun 2019 11:03:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3C2E42084
+	for <lists+openwrt-devel@lfdr.de>; Wed, 12 Jun 2019 11:17:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FBl1GU45v9pIRGjcExrGseqxFk6r6NRu9ythNlhdpsE=; b=I8yzOf5zsBslqzRjnSuPylKwN
-	bEO8CcVtBeZN6z+wrraUXirATLoSKgW3stZ37VeMyVb7U0UUg99os6tA83lF++57rLKXK+BC8HFAk
-	DSh3wNAcvZ6yRaNJTaITmK4SSdvczO8nZsKv0aq6H3jJur3y4zfky8vNm/un8jVpvv2m3jcQCntan
-	zW5MiDP74N0X81PFpk42yKoCp0bIL980pgc0AVT4p1SNmfLbuagt7/ilkLiOeMhhIWNhCp2dKrWjn
-	++vzPxHhvpm8VuxNiIenoruMc6i8Yp/0KNl1O67nnBd18K7+W7vq5Mcs2mhGKNc1+tnCvS3h8bgpo
-	SJpCXlsRg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ITPDYGEpokImJVmEY3VFD5edit32+XhnaxHIJACEuHo=; b=HF7e1lnLxxx7Kp
+	7GO1EIHQETQg8HeUqNZqefmrffMUHULXFbwwnNOnkfwVSIoYjNfTNMZeFRcyfLwdar3fSWBAzFaCS
+	oEwUW5W+/mRgGjrhuoZlXGtvyW5lBrxpRAUJh4xi5wd1cEtsajA74vhCrwt2u8/Yzv8irMD+zFHn9
+	HjKIceil6uRCwEcJZZzfLdaovb5mNKIb5r/hiUXkzQLCsTKAE7VXDKtxaOTwbDYPGAg+bxSYX/bwE
+	NxM1sako/PVXEom/pp5rMInx9AItv2hdCx399ra0szfEicyOoWkDQF8WzJ2saPUKMBi5w+KawKvcv
+	U1Zt3HbKyzgnkKs/fQEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haz9z-0004z3-0a; Wed, 12 Jun 2019 09:03:11 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1hazNe-0003lQ-AJ; Wed, 12 Jun 2019 09:17:18 +0000
+Received: from 59-120-53-16.hinet-ip.hinet.net ([59.120.53.16]
+ helo=ATCSQR.andestech.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haz9g-0004yK-Ul
- for openwrt-devel@lists.openwrt.org; Wed, 12 Jun 2019 09:02:54 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id k21so21204400edq.3
- for <openwrt-devel@lists.openwrt.org>; Wed, 12 Jun 2019 02:02:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ncentric-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=/uMADnZCbkBLGbvfAzETFPuI6IKtXIvlwPFqiKw/Cfs=;
- b=nP1BS07h4qBT4KrZQmlrsrfxn9AC8qIPkzggkdL/cnQF3Jh9kxr+KvJThA5tSqCLAM
- qAZ31FMbP+SwZ+0CyUpmg24lN/8UKs9PZM89efxLHVKYWJ+PJWGtUeoA4+xCk4OOqjlk
- WmC0ZiW+zFbw712oeyOWQlDCSxQaJoYmvjXnH8LWI+LYOTJOEzGcHVQB3pfUmjDCQUUW
- Tykw8l/BktDywlF9SwCC4MOwSclGkHsSrWneXCSOEEAWipfGbhq4F2fY4a3DKfnVEyJ0
- Tg2kBDcx5/n+SVVozP641d5dHpJAIM7+TAFfGRj7cwIB5I7OltTOerG2IneC0D48M++R
- FTMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=/uMADnZCbkBLGbvfAzETFPuI6IKtXIvlwPFqiKw/Cfs=;
- b=WLk886COL51FovmLHHYgXscIiS7/JP08M8qs2L2zsB3H+FziwA0oCGkRi73xT/uQpR
- Bm0MJxNwB+YXv4Os+c3tgvwqq58yBH+FXvsyjoExMni/etfXmU1jAwk25BezOh+0MqUi
- G8aPGtHeK1//dW7yjA/CIab02ISy74If4F699BJu79Pxw2qgZGBEnFnxtq40hllAMiLW
- X7Q3zGj5lCh0137xz2I2yOP0lSbgbaura3jGW0zVKRCAKt7rKyXKuJac41jG49lnMGUu
- w10ZDHVqwXwmUIV6KtLJUKaKQEQIkvFvyhYuRJVOilgQV2dyiz0NnrKxzQNguoWS1MrT
- RBIg==
-X-Gm-Message-State: APjAAAXZURqJ68lb8TaSpr/aPVczUiJZFXek5NBMWmRNveNE/hAWNFlL
- zKavzyiSlCOSghCT4u2nvPbpjlRi+84=
-X-Google-Smtp-Source: APXvYqxYsbimk/pMwobbcfuNIxbJMfwLeO8fCaDWLh71FQtk0Ex9eAaXE+KAFaQq7ybbIRgdkLYi+Q==
-X-Received: by 2002:a50:a941:: with SMTP id m1mr88242028edc.157.1560330169436; 
- Wed, 12 Jun 2019 02:02:49 -0700 (PDT)
-Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
- by smtp.gmail.com with ESMTPSA id w18sm2689617eji.44.2019.06.12.02.02.48
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 12 Jun 2019 02:02:49 -0700 (PDT)
-To: Jonas Gorski <jonas.gorski@gmail.com>, Stijn Tintel <stijn@linux-ipv6.be>
-References: <f81aabc8-e8e5-42ea-37ab-2adeb4728896@linux-ipv6.be>
- <CAOiHx=mbuuiL5G1Ay8oedPMhRFsLJZKOP06ZNfxT1ocmyrU3ZQ@mail.gmail.com>
-From: Koen Vandeputte <koen.vandeputte@ncentric.com>
-Message-ID: <6a97128f-4c5a-da4f-3964-0a0fcc20f05b@ncentric.com>
-Date: Wed, 12 Jun 2019 11:02:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hazLn-0002ap-60
+ for openwrt-devel@lists.openwrt.org; Wed, 12 Jun 2019 09:15:27 +0000
+Received: from mail.andestech.com (atcpcs16.andestech.com [10.0.1.222])
+ by ATCSQR.andestech.com with ESMTP id x5C98Y1E057025;
+ Wed, 12 Jun 2019 17:08:34 +0800 (GMT-8)
+ (envelope-from nylon7@andestech.com)
+Received: from app09 (10.0.15.117) by ATCPCS16.andestech.com (10.0.1.222) with
+ Microsoft SMTP Server id 14.3.123.3; Wed, 12 Jun 2019 17:15:09 +0800
+Date: Wed, 12 Jun 2019 17:10:24 +0800
+From: Nylon Chen <nylon7@andestech.com>
+To: Felix Fietkau <nbd@nbd.name>, <openwrt-devel@lists.openwrt.org>
+Message-ID: <20190612091024.GA7889@app09>
+References: <20190611103248.31917-1-nylon7@andestech.com>
+ <c9185d51-b742-7637-c190-fede043e9b6f@nbd.name>
 MIME-Version: 1.0
-In-Reply-To: <CAOiHx=mbuuiL5G1Ay8oedPMhRFsLJZKOP06ZNfxT1ocmyrU3ZQ@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <c9185d51-b742-7637-c190-fede043e9b6f@nbd.name>
+User-Agent: Mutt/1.5.21 (2010-09-15)
+X-Originating-IP: [10.0.15.117]
+X-DNSRBL: 
+X-MAIL: ATCSQR.andestech.com x5C98Y1E057025
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_020253_134902_32D01EDC 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190612_021523_556704_C94D4545 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:52e listed in]
- [list.dnswl.org]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] KERNEL_PATCHVER in master
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+Subject: Re: [OpenWrt-Devel] [PATCH 4/4] package: fix "LTO" option resulted
+ in building error
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,41 +70,79 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: Nylon Chen <nylon7717@gmail.com>, Che-Wei Chuang <cnoize@andestech.com>,
+ Greentime Hu <greentime@andestech.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+On Tue, Jun 11, 2019 at 11:21:45PM +0800, Felix Fietkau wrote:
+> On 2019-06-11 12:32, Nylon Chen wrote:
+> > When a building package has -flto option leads to building error
+> > 
+> > We must use the gcc-ar wrapper instead of ar to invoke ar with the right
+> > plugin arguments for handling the LTO objects when -flto is specified.
+> > 
+> > Signed-off-by: Che-Wei Chuang <cnoize@andestech.com>
+> > Signed-off-by: Nylon Chen <nylon7@andestech.com>
+> Why is this nds32 specific?
+Not only nds32
+> Does it not make sense to extend this to all targets?
+I am not sure, but I am trying the others toolchain
 
-On 11.06.19 23:12, Jonas Gorski wrote:
-> Hi,
->
-> On Tue, 11 Jun 2019 at 23:08, Stijn Tintel <stijn@linux-ipv6.be> wrote:
->> Hi,
->>
->> Since we now have a 19.07 branch, is it OK to switch KERNEL_PATCHVER for
->> targets in master that have 4.19 support to 4.19?
-> Fine by me. The earlier we start testing 4.19, the faster we can iron
-> out the kinks, hopefully reducing the maturation phase of the next
-> release.
->
-Fine for me, but please hold off a little bit until I pushed my kernel 
-bump later today. (already in staging)
+x86-gcc
+gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04)
+cc -flto -c f1.c
+cc -flto -c f2.c
+ar -r f.a f1.o f2.o
+ar: creating f.a
+rm -rf *.o *.a
 
-Otherwise there's a chance I need to redo it ;-)
+gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.11)
+cc -flto -c f1.c
+cc -flto -c f2.c
+ar -r f.a f1.o f2.o
+ar: creating f.a
+ar: f1.o: plugin needed to handle lto object
+ar: f2.o: plugin needed to handle lto object
+rm -rf *.o *.a
 
-Thanks,
+riscv
+riscv64-linux-gcc -flto -c f1.c
+riscv64-linux-gcc -flto -c f2.c
+riscv64-linux-ar -r f.a f1.o f2.o
+riscv64-linux-ar: creating f.a
+rm -rf *.o *.a
 
-Koen
+nds32
+nds32le-linux-gcc -flto -c f1.c
+nds32le-linux-gcc -flto -c f2.c
+nds32le-linux-ar -r f.a f1.o f2.o
+nds32le-linux-ar: creating f.a
+nds32le-linux-ar: f1.o: plugin needed to handle lto object
+nds32le-linux-ar: f2.o: plugin needed to handle lto object
+nds32le-linux-gcc-ar -r f.a f1.o f2.o
+nds32le-linux-glibc-v3-upstream/bin/../lib/gcc/nds32le-linux/8.0.1/../../../../nds32le-linux/bin/ar: creating f.a
+rm -rf *.o *.a
 
-> Regards
-> Jonas
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+arm
+arm-none-eabi-gcc -flto -c f1.c
+arm-none-eabi-gcc -flto -c f2.c
+arm-none-eabi-ar -r f.a f1.o f2.o
+arm-none-eabi-ar: creating f.a
+arm-none-eabi-ar: f1.o: plugin needed to handle lto object
+arm-none-eabi-ar: f2.o: plugin needed to handle lto object
+arm-none-eabi-gcc-ar -r f.a f1.o f2.o
+gcc-arm-none-eabi-8-2018-q4-major/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/bin/ar: creating f.a
+rm -rf *.o *.a
+
+summary
+1.the same issue could be found in other vendors' toolchain
+2.pass on newer than x86-gcc5.4 version
+3.specificed -ffat-lto-objects during building toolchain could be solved
+> 
+> - Felix
 
 _______________________________________________
 openwrt-devel mailing list

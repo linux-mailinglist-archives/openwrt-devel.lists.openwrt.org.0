@@ -2,79 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0073744CD0
-	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Jun 2019 22:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53D4E44DEC
+	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Jun 2019 22:57:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:References:In-Reply-To:Message-ID:Date:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U5ri2opXL+TSWT1ncQHakSzIEEq0tO4bzIsNAMzJ8Yw=; b=cUm45kWz6UkV1z1fJPP4BJxFB
-	w9YBU72/LeUL6bHfuMJlMc5R7Nu6r+hUAeZzpv/Hj68VANRbb9lUsTP2VuB+j3mCuWOQ1atxZA7LH
-	ZcGh7NxanDrxxCQdsXY62kWfdXkm8zA6333GW5SmPbDUaMhOdeCqep0GM5J95IO8qJTyWUJ3duywb
-	ukCy4J8X+v5AIOnwRDXgR48dP8Vj3ehJBI3eKjlj4hZ0nV/C4/B42oMRunES1a2nngycAvqqbNGQT
-	yAbnHqFzQViAsWMIJ7t8tvxXJPPohHBGDEN7CqkAv6Jd8rPjVJfHW9VXhTbEMNhjXL3h0fP4BOn5e
-	zc2Bh0kWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z3qvnAYaxmvcFC+up1JkmKW+Q+POHA5H+yDnBhWojKo=; b=UaANN0lFyO4oFp
+	PmZbvzBgQMCXy0fRpnW3U7DrLE6boCsPHibaV/0Wj9Nekl/eAmURO2sYmLAp2ZWjDORHjTyV2B7YA
+	mpmh7dHw40UiqEDa4mFlINq/L/eXfFpPJncOEcLr/NjrTPbGSORzsmtnzy3PT9IdbPfU0X72vLMwh
+	ee3V5Gsdi35UX2k1KxFh6E5fWQBjmit4Dvy2vhzY7gOJ1jkk6QR8AmmPjcYL2ZyTUmF9OmQunjCm/
+	bb87Ld4D9GoXV22zSxrRFAi0vPmWC0HJciXs2vA2lulMPrudHGjY6n8ihRzjFek/mVs9sWc36CsHD
+	leO/m55dVYvGwex8aBdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbVvy-0006mR-Ep; Thu, 13 Jun 2019 20:02:54 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::5])
+	id 1hbWmR-0003s7-JK; Thu, 13 Jun 2019 20:57:07 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbVvn-0006ln-DB
- for openwrt-devel@lists.openwrt.org; Thu, 13 Jun 2019 20:02:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1560456158;
- s=strato-dkim-0002; d=heimpold.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=9Iwjw+RHC/KtsKBoVFkmsMapW4fD3K+SzdHXViIkCp4=;
- b=U/mz4jpGiHATv/KbWFoWWqczfZ2+cod54vRXbnjTFwfShZyTpPLr9jVFT5+cCuV2ZA
- zXZBA15D3bPEf44qbaRexs31WsPI8NFN6SHs28YAERDDy+/kJxINPjq6equVByzEwMTi
- TsB/LcF/MTYJn6TFDrEXb2dWIHabW5D8nmj2jc7jXjnGQoaCgJWuxV8B+b2gav//q4bM
- syY+v6jvuE9rT8ui5foleiOZI7z9PA8q/aBEfSGz6E5EhNxTNPcFvmUUpj+f9WYrRTt/
- hgEFLznYCZv6xnvSoxk1GANGkSNy+iTgWu2dhPWg32nSbIX5o1iwABB/8L50mEyP3NM3
- M7cw==
-X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGQORRBv+ASfYPl1MuXZ4XzaezjGZycNF147TKSBWU/lF1yoSQ9cA=="
-X-RZG-CLASS-ID: mo00
-Received: from tonne.mhei.heimpold.itr by smtp.strato.de (RZmta 44.23 AUTH)
- with ESMTPSA id t027ffv5DK2a5VK
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Thu, 13 Jun 2019 22:02:36 +0200 (CEST)
-Received: from kerker.localnet (kerker.mhei.heimpold.itr [192.168.8.1])
- by tonne.mhei.heimpold.itr (Postfix) with ESMTP id A68F0149A2A;
- Thu, 13 Jun 2019 22:02:35 +0200 (CEST)
-From: Michael Heimpold <mhei@heimpold.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 13 Jun 2019 22:02:28 +0200
-Message-ID: <3788004.yiVpGnLRF1@kerker>
-In-Reply-To: <20190611210655.18652-3-linus.walleij@linaro.org>
-References: <20190611210655.18652-1-linus.walleij@linaro.org>
- <20190611210655.18652-3-linus.walleij@linaro.org>
+ id 1hbWmI-0003rj-30
+ for openwrt-devel@lists.openwrt.org; Thu, 13 Jun 2019 20:57:00 +0000
+Received: from [IPv6:2003:e5:3f09:9c00:93b6:e161:a050:d22a]
+ (p200300E53F099C0093B6E161A050D22A.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f09:9c00:93b6:e161:a050:d22a])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 9A5C9222F2;
+ Thu, 13 Jun 2019 22:56:52 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
+References: <1559653541-26682-1-git-send-email-ynezz@true.cz>
+ <CAAd0S9CEPJqQXJ6OhW9_597ig92Typb7s0L5HwpLm-CU=ska6g@mail.gmail.com>
+ <1eaf3583-d246-8598-eecd-6d27e16b914e@david-bauer.net>
+ <20190613195042.GD39806@meh.true.cz>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <ba94c68b-5640-96f3-fc9e-4cfe4baa64b6@david-bauer.net>
+Date: Thu, 13 Jun 2019 22:56:51 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190613195042.GD39806@meh.true.cz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_130244_039306_2C6AF969 
-X-CRM114-Status: GOOD (  13.14  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190613_135658_427589_359CD366 
+X-CRM114-Status: GOOD (  17.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:5 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH 3/3 v2] gemini: Fix MAC address
- assignment for DIR-685
+Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: fix
+ always missing first event
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,124 +93,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Christian Lamparter <chunkeey@gmail.com>, Roman Yeryomin <roman@advem.lv>,
- Hauke Mehrtens <hauke@hauke-m.de>, Linus Walleij <linus.walleij@linaro.org>,
- Sebastian Luft <sebastian.luft@gmail.com>,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>
-Content-Type: multipart/mixed; boundary="===============0607956854368217484=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Christian Lamparter <chunkeey@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0607956854368217484==
-Content-Type: multipart/signed; boundary="nextPart2436496.UH4ox845Ev"; micalg="pgp-sha512"; protocol="application/pgp-signature"
-
---nextPart2436496.UH4ox845Ev
-Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="us-ascii"
-
-Hi,
-
-Am Dienstag, 11. Juni 2019, 23:06:55 CEST schrieb Linus Walleij:
-> The DIR-685 has the MAC addresses in the RedBoot code just like
-> DNS-313. Check some magic numbers to determine that the MAC
-> address is where we want it and extract it from RedBoot.
-> 
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
-> ChangeLog v1->v2:
-> - Rebase on the other patches
-> - Use library functions to get partition and hex MAC address
-> - Use ip to set up mac address
-> ---
->  .../lib/preinit/05_set_ether_mac_gemini           | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
-> 
-> diff --git
-> a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-> b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini index
-> a51c223d85c9..f702e0458c2e 100644
-> --- a/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-> +++ b/target/linux/gemini/base-files/lib/preinit/05_set_ether_mac_gemini
-> @@ -18,6 +18,21 @@ set_ether_mac() {
->  			fi
->  		fi
->  		;;
-> +	dlink,dir-685)
-> +		# The DIR-685 has a special field in its RedBoot
-> +		# binary that we need to check
-> +		part=$(find_mtd_part RedBoot)
-> +		if [ ! -z $part ] ; then
-
-missing quotes here? and is "! -z " not equal to "-n" ?
-
-> +			DEVID="$(dd if=$part bs=1 skip=81516 count=7 2>/dev/null)"
-> +			if [ "x$DEVID" = "xILI9322" ] ; then
-
-not sure whether we have a style guide for shell, but personally I don't like
-the x in front of the values: since you already quote properly, it seems
-not to be necessary.
-
-> +				MAC1=$(mtd_get_mac_binary RedBoot 95040)
-> +				MAC2=$(mtd_get_mac_binary RedBoot 95046)
-> +				ifconfig eth0 hw ether $MAC1 2>/dev/null
-> +				ifconfig eth1 hw ether $MAC2 2>/dev/null
-
-missing quotes? just to be sure?
-
-Best regards,
-mhei
-
-> +				return 0
-> +			fi
-> +		fi
-> +		;;
->  	esac
-> 
->  	# Most devices have a standard "VCTL" partition
-
-
---nextPart2436496.UH4ox845Ev
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEuqZVIsj+7B0PnIAhlIIjA3pZHn8FAl0Cq9QACgkQlIIjA3pZ
-Hn880w/+OL8YANEneDmYTGqMVD+K0k0XBjCr6P/3YYnfDd+NCkbxGJppKmi645WB
-5pdnLD8Xnp+8QgTughnYduQSoNqW6h+/4XK6aN9N62KNcpZ3e8494jL56wkKKPjj
-6CcsXrimcGNmcGL4k2cadVQ3RXcXoe830ECSvbB2KiCUhA721lH0JtvE4UxK/eQr
-P5/0BLBj1HIQ1BoQlazKd9TsgHLBcGiPZkrIzt1p/ozq5BR3iZy5WUXnjG5uE/iV
-0BxnEV9LnkuBcI//JcPmuPMr5ztjBd0i5448xhNDArwk2KzKjQpl+pt0YkxqdCb8
-vakPwWVSaIKdmQ07jUxIoC8fF38s2qGQsrNl517AfazmE83tQ4BAs12PmXJ3Okfd
-d3Juj9S7gjunqX+ngERQ1GbabE3yuRvfngygwCQmUavnSHMXuGMOIppQKtWzcPGB
-TuaP3IThTSPkgwHkawa75Mcim0/Rf2zVRdEMb5Ui81LsRYetAfUPMlPIH7WCVPlK
-xNNwpnchxVLmqiRSsYIS/XKCYu4k04/n57QxjB3a8D1/UOIJDPWkbgBfOt4VCgZv
-gE259cp6eDS72xf0aSp5l+X/Q2HovlXUgw/4EkqxejY71BcbUF+APpEGrPMtD1/I
-xBQ4ifderxTRGo+YhM595xUmQgmb1QOLiIayJ7bBU/cf8WobZvY=
-=wyRj
------END PGP SIGNATURE-----
-
---nextPart2436496.UH4ox845Ev--
-
-
-
-
-
---===============0607956854368217484==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0607956854368217484==--
-
-
-
-
+SGVsbG8gUGV0ciwKCk9uIDEzLjA2LjE5IDIxOjUwLCBQZXRyIMWgdGV0aWFyIHdyb3RlOgo+IERh
+dmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD4gWzIwMTktMDYtMTEgMjM6NTI6NDZdOgo+
+IAo+IEhpLAo+IAo+PiBJIHJhbiBpbnRvIHByb2JsZW1zIGJvb3RpbmcgbXVsdGlwbGUgUUNBOTU1
+OCBib2FyZHMsIG5hbWVseSB0aGUgT0NFRE8KPj4gS29hbGEgYW5kIHRoZSBkZXZvbG8gV2lGaSBw
+cm8gMTIwMGUgd2l0aCB0aGUgY3VycmVudCBtYXN0ZXIuIEJvdGgKPj4gZGV2aWNlcyBhbHdheXMg
+Z28gaW50byBmYWlsc2FmZSBtb2RlIHdoZW4gcG93ZXJpbmcgb24uCj4gCj4gYXI3MXh4IG9yIGF0
+aDc5PyBDYW4geW91IHRlc3QgaWYgaXQgaGFwcGVucyBhbHNvIHdpdGggdGhlIGludGVycnVwdCBi
+YXNlZAo+IGBncGlvLWtleXNgIHZhcmlhbnQ/CgpJIGRpZCBzb21lIGZ1cnRoZXIgdGVzdGluZywg
+dGhlIGlzc3VlIG9uIG15IEtvYWxhIHdhcyBhIGhhcmR3YXJlIGZhdWx0Cih0aGUgcmVzZXQgc3dp
+dGNoIHdhcyBwaHlzaWNhbGx5IGJyb2tlbiBtKCApLiBXaXRoIHRoZSBoYXJkd2FyZSBidXR0b24K
+Zml4ZWQsIGl0IGRvZXMgbm90IHNob3cgdGhpcyBiZWhhdmlvci4KClRoaXMgd2FzIGV4cGVjdGVk
+IHRob3VnaCBhcyBpdCB1c2VzIHBvbGxlZCBncGlvLWtleXMgaW5zdGVhZCBvZiB0aGUKaW50ZXJy
+dXB0IGJhc2VkIG9uZXMuCgpUaGUgZGV2b2xvIFdpRmkgcHJvIDEyMDBlIGlzIGF0aDc5IHdpdGgg
+dGhlIGludGVycnVwdC1iYXNlZCBncGlvLWtleXMuClRoZSBpc3N1ZSBpcyBub3QgcHJlc2VudCB3
+aGVuIHVzaW5nIHBvbGxlZCBncGlvLWtleXMuIFRoZSBkZXZpY2UgZG9lcwpub3QgZ28gaW50byBm
+YWlsc2FmZSB3aGVuIHVzaW5nIHBvbGxlZCBHUElPIGtleXMuCgo+IAo+PiBJIGhhdmVuJ3QgZHVn
+IGRlZXBlciBpbnRvIHRoaXMgaXNzdWUsIGJ1dCByZXZlcnRpbmcgNmM1YmZhYWM4NCBsZWFkcwo+
+PiBpbnRvIGJvdGggYm9hcmRzIGJvb3Rpbmcgbm9ybWFsbHkuCj4gCj4gY291bGQgeW91IHBsZWFz
+ZSBjb21waWxlIGtlcm5lbCB3aXRoIGBDT05GSUdfS0VSTkVMX0RZTkFNSUNfREVCVUc9eWAgYW5k
+IHRoZW4KPiBhZGQgdG8gdGhlIGtlcm5lbCBjbWRsaW5lIGBncGlvX2J1dHRvbl9ob3RwbHVnLmR5
+bmRiZz0nZmlsZSBncGlvLWJ1dHRvbiogK3AnYAo+IChvciB0byBtb2Rwcm9iZSBhcmdzKSBhbmQg
+cHJvdmlkZSB0aGUgb3V0cHV0PwoKSSBkaWQgc29tZSBmdXJ0aGVyIHRlc3RpbmcgYW5kIGkgdGhp
+bmsgaSd2ZSBmb3VuZCB0aGUgY3VscHJpdCAtIE9uCnByb2JlIHRoZSBHUElPIHJlYWRzIGhpZ2gu
+IFNob3J0bHkgYWZ0ZXIgcHJvYmUsIGFuIGludGVycnVwdCBpcyByZWNlaXZlZAphbmQgdGhlIEdQ
+SU8gc3dpdGNoZWQgdG8gbG93IHdoaWNoIHRyaWdnZXJzIGEgYnV0dG9uIGV2ZW50IGFuZCB0aGVy
+ZWZvcmUKc2VuZHMgdGhlIGRldmljZSBpbnRvIGZhaWxzYWZlLiBJIHN1cHBvc2UgdGhlIEdQSU8g
+aGFzIGp1c3Qgc3dpdGNoZWQgdG8KYSBzdGFibGUgc3RhdGUgd2hpY2ggdHJpZ2dlcnMgdGhpcyBp
+bnRlcnJ1cHQuCgpJJ3ZlIHByZXBhcmVkIGEgcGF0Y2ggd2hpY2ggcmVhZHMgdGhlIGluaXRpYWwg
+c3RhdGUgYWZ0ZXIgdGhlIGRlYm91bmNlCmludGVydmFsIG9uIHByb2JlIHRvIGVuc3VyZSBvbmx5
+IHJlYWwgYnV0dG9uIHByZXNzZXMgd2lsbCB0cmlnZ2VyIGFuCmV2ZW50LiBJIHdpbGwgc2VuZCB0
+aGlzIHBhdGNoIHNob3J0bHkuCgpCZXN0IHdpc2hlcwpEYXZpZAoKPiAKPiBUaGFua3MuCj4gCj4g
+LS0geW5lenoKPiAKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVu
+d3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Blbndy
+dC1kZXZlbAo=

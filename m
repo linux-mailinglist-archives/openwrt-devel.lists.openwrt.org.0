@@ -2,90 +2,104 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE0AE44396
-	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Jun 2019 18:32:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46A6B44651
+	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Jun 2019 18:50:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aMHroL/Sc0VOgTwcZdnjKLsWg4iFTt81Zi1vaFyiTUk=; b=cbMf0Yg2b4lwm7
-	uRjwZwhyxYNPcBth0saSZ3v2m2NvFsTA4RHq6EGF7NcHeVh2dKioyO96Cm3LQ3yRA3bFCRRp/HAtj
-	FbKL1g/p2XHK/juf1lQipwokIYlrHFooNNeLSikdzHWqcalU77Tp1SKmd6Z4Od6Lyk0yongnAhS02
-	eLJeRC9ve8lBxa7380zZXQZtLljeGjXY5PKHtZxqWmsuitLNG7Om2y+AXmLkGmBooibNbFPNHyoHc
-	qkbp+2nZs00wR6Czs7phQMu25/6SEa6ahUkthhkLI+aXWd+Gh3FugFJ8Pal5hDIk2CTrr14Fwh7z3
-	bllBEbCehn8Ro66T62+g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aBgIMihQJUDtXpQEcHRrjxj0c3BEf4JTCPnj++lIXpQ=; b=Ev3HbITo4x05fgNYr4xNAbrIY
+	SdfjX5uVBKhLbJ11BQLs3RRtxIL+TzA6bn+ux7UlvFn9a4X/rmtAaYDx+eAG6dbkLricf36BV4FO3
+	Q59ERfZjpo2HYoKxHl2IAFyjFxSjvTTqgMwYr7BlNRpVWjrMudibT+COoL1bMpuIm4+k4CZk1YxzP
+	XXRndJeO5uajgvxtnSOjC+J8B6LLRvrT+OVugF+vNgDiqhMsxafGywA0n0dHt3UQ9R8UAxEbHguu2
+	3ftDtWP9MX/+5Td6AGWk2jnCmXU78wy9r1Q3bOmVjCPspB8LG/r3AbRWgy0g+hkz7eQxinQOPBDTx
+	i9DxmzAPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbSeA-0000Oj-IT; Thu, 13 Jun 2019 16:32:18 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hbSvr-000391-Ah; Thu, 13 Jun 2019 16:50:35 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbSdd-0008Tp-75
- for openwrt-devel@lists.openwrt.org; Thu, 13 Jun 2019 16:31:46 +0000
-Received: by mail-pf1-x444.google.com with SMTP id r7so6287823pfl.3
- for <openwrt-devel@lists.openwrt.org>; Thu, 13 Jun 2019 09:31:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Y50bx5NJCZZv27UYI0egoPzk/yuzzmWP9MpGLarq2tw=;
- b=hIWaOaqQU7Pdi/jb6X76jjbSr6HnaEV8LABQ/NfQBkaTKQ4+ZPNwLY0+wrJpD8z3uE
- oXTjzPfHFcP/vQaJG5Xxk1jjZY+2WF0kDcasAcypZNPq0FI6XwNB3fk4agsmnwnLv/0F
- SxkoYeL4NJ0Ifk/H9sm9A5po31mFk617N406ykJCLPfyKnTdD4YaMnLlLmnIaSS5t2Vj
- kVkrErkq1jFCNXz1a1cgVmka8aXPqKsO5OyllI7koBncEPOQi83/vz4vm0lgU1oCOOdV
- chzBej1bCb9SfIvXHGgasUJicKbwo07G+328wpppwhm7THLIkCpompvb3ccNlyqYNpqK
- i2zQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Y50bx5NJCZZv27UYI0egoPzk/yuzzmWP9MpGLarq2tw=;
- b=A9Y3N5UTPhmDJoJtKPMma2OkyjdV4003/v3+p++AAdThKJm51k9gk9MrAiRaz7vKH6
- MBSaWenevMvFFSXWZ0dcKiKYjJiqIe/vr/0pfHMJoyA+Ef4F7kHNK9evgswN7/xk1yeS
- HRMSYzz/bOqqeSDcSk8aCCPKK13BzqG4s46espTatW8YK0dn2DkEMd6+HAfD3HMdtxgd
- RoRS5AOZTG+1JICKjyT8s3V9SoIa121Afxk0h9s1cYpuHndVbzDYGRttCt75zLE/QNqX
- Wtw3bnpB/0L0zkkp2C8j8oFr0zzoARvi1dKsEWxZpEn5D/bkj6UqP8y4EoPZi90ZFHdy
- 8ZWw==
-X-Gm-Message-State: APjAAAW5yltHxQIb7Xku9+zqmpp1zjRZTY8mG4SY/3sM/Ib14yn4eikh
- 044TGya7MwUv1AuIDrI6jvw=
-X-Google-Smtp-Source: APXvYqxog8BKAX20nSP3ImTgrDoQmoeFL8tvtMcD2+bznOOv64lKQIYAfSihrjMXnxPUfoMtPAq/Zg==
-X-Received: by 2002:a63:a514:: with SMTP id n20mr2080617pgf.438.1560443504458; 
- Thu, 13 Jun 2019 09:31:44 -0700 (PDT)
-Received: from titan.hq.cloud.yunionyun.com
- (165.116.92.34.bc.googleusercontent.com. [34.92.116.165])
- by smtp.gmail.com with ESMTPSA id d187sm191331pfa.38.2019.06.13.09.31.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 13 Jun 2019 09:31:43 -0700 (PDT)
-From: Yousong Zhou <yszhou4tech@gmail.com>
-X-Google-Original-From: Yousong Zhou <zhouyousong@yunionyun.com>
-To: jo@mein.io
-Date: Thu, 13 Jun 2019 16:31:33 +0000
-Message-Id: <20190613163133.40306-1-zhouyousong@yunionyun.com>
+ id 1hbSvh-00037G-G8
+ for openwrt-devel@lists.openwrt.org; Thu, 13 Jun 2019 16:50:27 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 9BB295416C; Thu, 13 Jun 2019 18:50:21 +0200 (CEST)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 795DD5416A
+ for <openwrt-devel@lists.openwrt.org>; Thu, 13 Jun 2019 18:50:21 +0200 (CEST)
+Received: (qmail 54717 invoked from network); 13 Jun 2019 18:50:21 +0200
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 13 Jun 2019 18:50:21 +0200
+To: openwrt-devel@lists.openwrt.org
+References: <20190613163133.40306-1-zhouyousong@yunionyun.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
+ 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
+ Xx5IapIyoA==
+Message-ID: <e087e1a0-6745-ad56-5829-c84106082336@wwsnet.net>
+Date: Thu, 13 Jun 2019 18:50:17 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190613163133.40306-1-zhouyousong@yunionyun.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_093145_303954_2F2076DE 
-X-CRM114-Status: GOOD (  12.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190613_095025_699808_A9E11082 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (yszhou4tech[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH v2 opkg] alternatives: special-case busybox
- as alternatives provider
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH v2 opkg] alternatives: special-case
+ busybox as alternatives provider
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,129 +111,93 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Yousong Zhou <yszhou4tech@gmail.com>, openwrt-devel@lists.openwrt.org,
- Yousong Zhou <zhouyousong@yunionyun.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0166658944712095691=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Yousong Zhou <yszhou4tech@gmail.com>
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============0166658944712095691==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="0iK5oczvMtXwTQu9OoZdU308Yf3jWhbvp"
 
-Almost all busybox applets are alternatives to some other existing
-"full" utilities.  To lift the maintenance burden of enumerating CONFIG
-symbols, symlink path of each applet, we special case busybox here as a
-known alternatives provider.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--0iK5oczvMtXwTQu9OoZdU308Yf3jWhbvp
+Content-Type: multipart/mixed; boundary="IP9jtgIoGgqY8qFUEX7lQayQOknXWPKKe";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <e087e1a0-6745-ad56-5829-c84106082336@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2 opkg] alternatives: special-case
+ busybox as alternatives provider
+References: <20190613163133.40306-1-zhouyousong@yunionyun.com>
+In-Reply-To: <20190613163133.40306-1-zhouyousong@yunionyun.com>
 
-All file pathes provided by busybox will serve as fallback alternatives
-with -inf priority.  Packages intending to switch to using alternatives
-mechanism will also not need to depend on the same kind of change be
-applied on busybox in base system
+--IP9jtgIoGgqY8qFUEX7lQayQOknXWPKKe
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-Signed-off-by: Yousong Zhou <zhouyousong@yunionyun.com>
----
-v2 <- v1 Make the code less busybox-specific by moving busybox into data section
+Hi Yousong,
 
- libopkg/pkg_alternatives.c | 49 +++++++++++++++++++++++++++++++++++---
- 1 file changed, 46 insertions(+), 3 deletions(-)
+> From: Yousong Zhou <yszhou4tech@gmail.com>
+>=20
+> Almost all busybox applets are alternatives to some other existing
+> "full" utilities.  To lift the maintenance burden of enumerating CONFIG=
 
-diff --git a/libopkg/pkg_alternatives.c b/libopkg/pkg_alternatives.c
-index 50e9d12..7ea6b5b 100644
---- a/libopkg/pkg_alternatives.c
-+++ b/libopkg/pkg_alternatives.c
-@@ -27,6 +27,42 @@
- #include "pkg_alternatives.h"
- #include "sprintf_alloc.h"
- 
-+struct alternative_provider {
-+	char *name;
-+	char *altpath;
-+};
-+
-+static const struct alternative_provider const providers[] = {
-+	{
-+		.name = "busybox",
-+		.altpath = "/bin/busybox",
-+	},
-+};
-+
-+static const char *pkg_alternatives_check_providers(const char *path)
-+{
-+	pkg_t *pkg;
-+	str_list_t *files;
-+	str_list_elt_t *iter;
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(providers); i++) {
-+		pkg = pkg_hash_fetch_installed_by_name(providers[i].name);
-+		if (!pkg) {
-+			return NULL;
-+		}
-+		files = pkg_get_installed_files(pkg);
-+		for (iter = str_list_first(files); iter; iter = str_list_next(files, iter)) {
-+			if (!strcmp(path, (char *)(iter->data))) {
-+				pkg_free_installed_files(pkg);
-+				return providers[i].altpath;
-+			}
-+		}
-+		pkg_free_installed_files(pkg);
-+	}
-+	return NULL;
-+}
-+
- static int pkg_alternatives_update_path(pkg_t *pkg, const pkg_vec_t *installed, const char *path)
- {
- 	struct pkg_alternatives *pkg_alts;
-@@ -35,6 +71,7 @@ static int pkg_alternatives_update_path(pkg_t *pkg, const pkg_vec_t *installed,
- 	int i, j;
- 	int r;
- 	char *path_in_dest;
-+	const char *target_path = NULL;
- 
- 	for (i = 0; i < installed->len; i++) {
- 		pkg_t *pkg = installed->pkgs[i];
-@@ -60,6 +97,12 @@ static int pkg_alternatives_update_path(pkg_t *pkg, const pkg_vec_t *installed,
- 		return -1;
- 
- 	if (the_alt) {
-+		target_path = the_alt->altpath;
-+	} else {
-+		target_path = pkg_alternatives_check_providers(path);
-+	}
-+
-+	if (target_path) {
- 		struct stat sb;
- 
- 		r = lstat(path_in_dest, &sb);
-@@ -72,7 +115,7 @@ static int pkg_alternatives_update_path(pkg_t *pkg, const pkg_vec_t *installed,
- 				goto out;
- 			}
- 			realpath = xreadlink(path_in_dest);
--			if (realpath && strcmp(realpath, the_alt->altpath))
-+			if (realpath && strcmp(realpath, target_path))
- 				unlink(path_in_dest);
- 			free(realpath);
- 		} else if (errno != ENOENT) {
-@@ -87,7 +130,7 @@ static int pkg_alternatives_update_path(pkg_t *pkg, const pkg_vec_t *installed,
- 			if (r) {
- 				goto out;
- 			}
--			r = symlink(the_alt->altpath, path_in_dest);
-+			r = symlink(target_path, path_in_dest);
- 			if (r && errno == EEXIST) {
- 				/*
- 				 * the strcmp & unlink check above will make sure that if EEXIST
-@@ -96,7 +139,7 @@ static int pkg_alternatives_update_path(pkg_t *pkg, const pkg_vec_t *installed,
- 				r = 0;
- 			}
- 			if (r) {
--				opkg_perror(ERROR, "failed symlinking %s -> %s", path_in_dest, the_alt->altpath);
-+				opkg_perror(ERROR, "failed symlinking %s -> %s", path_in_dest, target_path);
- 			}
- 		}
- 	} else {
+> symbols, symlink path of each applet, we special case busybox here as a=
+
+> known alternatives provider.
+>=20
+> All file pathes provided by busybox will serve as fallback alternatives=
+
+> with -inf priority.  Packages intending to switch to using alternatives=
+
+> mechanism will also not need to depend on the same kind of change be
+> applied on busybox in base system
+>=20
+> Signed-off-by: Yousong Zhou <zhouyousong@yunionyun.com>
+
+Acked-by: Jo-Philipp Wich <jo@mein.io>
+
+
+--IP9jtgIoGgqY8qFUEX7lQayQOknXWPKKe--
+
+--0iK5oczvMtXwTQu9OoZdU308Yf3jWhbvp
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl0CfskACgkQQuLLvzou
+ZtMpog/6A/5f1vSa/T85xw7j90M8K+GyblPxTyvODILTeBgg1QkPXVM0spHJM41r
+4GUOmbzjrzr/azeDRwT5wWBgzzEA9NRkaJk3hSmi0KEdBnECDmzktOn+JNz6g3VN
+fwZeNfo2R+vhXYypGs/XWjwatB5JAe7F79R8FzUS0yq9vszSCZZlUiE1KbRIr1cS
+h4ERszq0ex/DfPaqXolJs4mFHqZpx/LVC2wxBxCJFHaBIRCo1n5QluyVYhjIqc6B
+EzEhUUBJKA7fFRD7mcOB8XhR5L4U+R5J132gBZLQMTwEocHW4n4WYPteG/t+qlCR
+Dfbh6UDBve0254PfdL34/wa4TVgI4DzL4RVX6UM5KyViSLDGW3wvb2vPeKJhFQmK
+UgJaH8CTuuwUg50CbB+JVZpBCq/p+YhZiadenuhMhJE/i1hidZ7PZYOKMNBfvU2b
+0yUk6bP66XEKtjZalsWtGRzbSKsPiadLwPkxvVg+uCBDPFwjSLAz8jyBTWnFSsIh
+9nwtnafUoSm+ZHOpg4l6MsnSr88erKu+aKKc+pm02TvwlOEVamoIAVxBYw84eJhT
+CtdG/lWQLfLiP6Z1QpuAdJE9jI237fAuzbxx+ties2SaapLUttDzmk8kUTd881K1
+Av0vdTOdY8jDmuVlJYZpqFITkSlyfJwrdZTLrO3IQPTO8OQL74E=
+=mia4
+-----END PGP SIGNATURE-----
+
+--0iK5oczvMtXwTQu9OoZdU308Yf3jWhbvp--
+
+
+--===============0166658944712095691==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0166658944712095691==--
+

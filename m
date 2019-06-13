@@ -2,53 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B79C43753
-	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Jun 2019 16:48:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9723943F09
+	for <lists+openwrt-devel@lfdr.de>; Thu, 13 Jun 2019 17:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0oyEczn4wFXU2Vd0GGi04rG5G1DhpCV92SQRde2jhZc=; b=FZo1Z+yp4zLTlR
-	U3l/cb1FHdAMSPtPbXT9uUNi3idN5FmKtOMDv4nGGTY6/dBqdxwBu1YMO/MGvDLSg8kBRLj4Q+8S8
-	8YzGLOH8tT9F1hZLhDX6kn0dE7nRg9+QJyPHv0Kbwk/MUQFBiObIn0kVc9zcNsbjTUK9TxhendxoS
-	CDbsTctop3us5nuLVHZopmZ1ix/cA8oNL+Zn6phhtaqi2ZCC8OTsOwYfIVLMlCt8W8cvxoLcBfncN
-	miZ+sekucZc7wVu1NKwiuTx4/G5BfMcdGm0rT5p6IyImvfkNzb8dpDAugCO0vBWZzU0OyNf5XNc1L
-	gUe+m/eWUIDSVfOqXDGg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To:From:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/HqkuJpkczSd3fPuq6ZbMefgjwMukSIDCF6UxpYObBo=; b=RpeWsUBYJs6jcF
+	YIlrUV0PBQuIRjvFKnAaBPtxpT/2NYrKuunWAUxZ0w0VraIbwQpKOlbEHOvElQ9URZ3IzXhjq9hYo
+	Z/T1olX6LnyRj+tX2//gacnNa7Ea1b1imHpd0AmiVGXBSVNqxvXNnRu/b3uf2bD5vJ63+wfnsM2Ig
+	RHlFy1yfsu8/H/AuRDMa3s0P/4tnf3rz5MLYo50+dTnUFDTPlXRqDkTJQoBQ5EwxfFu4bM4qJsHmt
+	CACsxcRNQ25ftLQYIQVS+C+Gq2bWLgbnXiX452E3syiNDCLs/dBI8ZYfKIgufjXcflsUmtLXO4Q/b
+	78r4MBZcb7JMIPAPHZfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbR1F-0003Bj-MB; Thu, 13 Jun 2019 14:48:01 +0000
-Received: from mx-out.tlen.pl ([193.222.135.142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbR14-0003BN-L1
- for openwrt-devel@lists.openwrt.org; Thu, 13 Jun 2019 14:47:52 +0000
-Received: (wp-smtpd smtp.tlen.pl 27315 invoked from network);
- 13 Jun 2019 16:41:09 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1560436869; bh=gBkekKAtF6yq7oyonyddSFVzYn64FS2YOZ5TL6Giaks=;
- h=From:To:Cc:Subject;
- b=d1NW/yCMzTmbO9I7kQyY7VGrj4IfvL6kdccxzEob2x8lDIfs1SILWqN0H6eeqlB4Z
- jM5rPxW1612l2bmeS2JClmyyB5NnV7fRXaQT2Js7mpN0MHEkFEuDstLubKlNV+EBQ/
- mqsreQqoM1V9uxZ+WHqxQcXk9+gtDVS9uK6MdeQo=
-Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
- (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 13 Jun 2019 16:41:09 +0200
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 13 Jun 2019 16:40:47 +0200
-Message-Id: <20190613144047.3472-2-tomek_n@o2.pl>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190613144047.3472-1-tomek_n@o2.pl>
-References: <20190613144047.3472-1-tomek_n@o2.pl>
+	id 1hbS3r-0002zC-BD; Thu, 13 Jun 2019 15:54:47 +0000
+Received: from mail2.candelatech.com ([208.74.158.173]
+ helo=mail3.candelatech.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbS3i-0002yY-0d
+ for openwrt-devel@lists.openwrt.org; Thu, 13 Jun 2019 15:54:39 +0000
+Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
+ [50.251.239.81])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail3.candelatech.com (Postfix) with ESMTPSA id D295ED92C
+ for <openwrt-devel@lists.openwrt.org>; Thu, 13 Jun 2019 08:54:36 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com D295ED92C
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+ s=default; t=1560441276;
+ bh=hxeHp3yB/tHcY6O24QVBmLLecRvTw46ru0aynoskJC4=;
+ h=From:Subject:To:Date:From;
+ b=cb9MOovJ7rRG74y6AI3xcq063vJOAfnjV/V9CCrgMGCdzUQA5aorQC2L+7iqYuwwS
+ ShNzAVy9aUWs0eYvruWj6HfO8bFmolNMkXrD9tabLmfusx1pY+9TVgJkypahdPJrnP
+ Jt4nbzcwJoRGIxvecW9D0UahvgGcqJhCQUy6kMJQ=
+From: Ben Greear <greearb@candelatech.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Organization: Candela Technologies
+Message-ID: <740907f4-b38b-2a1b-9b82-2975b2f08c91@candelatech.com>
+Date: Thu, 13 Jun 2019 08:54:36 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-X-WP-MailID: dc48e52c2ab025a7f260a492522263f1
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000002 [sbFF]                               
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_074750_852648_C96B6C2F 
-X-CRM114-Status: UNSURE (   5.48  )
+X-CRM114-CacheID: sfid-20190613_085438_175907_81BE8AD7 
+X-CRM114-Status: UNSURE (   9.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -56,8 +57,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tomek_n[at]o2.pl)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,8 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH v2 2/2] kernel: package module for SafeXcel
- crypto engine
+Subject: [OpenWrt-Devel] New ath10k-ct firmware and driver available
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,49 +77,98 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Marek=20Beh=C3=BAn?= <marek.behun@nic.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-U3VwcG9ydHMgRUlQOTcgYW5kIEVJUDE5NyBmb3VuZCBvbiBBcm1hZGEgMzd4eCwgN2sgYW5kIDhr
-IFNvQ3MuClVuZm9ydHVuYXRlbHkgZmlybXdhcmUgZm9yIEVJUDE5NyBpcyBub3QgZWFzaWx5IG9i
-dGFpbmFibGUsIHRoZXJlZm9yZQp0byBub3QgY2F1c2UgbG90IG9mIHVzZXIgcmVxdWVzdHMgZGly
-ZWN0ZWQgYXQgT3BlbldydCwgcGFja2FnZSBpdCBhcwptb2R1bGUgd2l0aCBleHBsYW5hdGlvbiB3
-aGVyZSB0byBvYnRhaW4gdGhlIGZpcm13YXJlLgoKQ2M6IE1hcmVrIEJlaMO6biA8bWFyZWsuYmVo
-dW5AbmljLmN6PgpTaWduZWQtb2ZmLWJ5OiBUb21hc3ogTWFjaWVqIE5vd2FrIDx0b21la19uQG8y
-LnBsPgotLS0KCnYxIC0+IHYyOiBhZGQgcHJvcGVyIGRlcGVuZGVuY2llcyBhbmQgZXh0ZW5kIG1v
-ZHVsZSBkZXNjcmlwdGlvbiBpbgpyZXN1bHQgb2YgcmV2aWV3IGJ5IEpvbmFzIEdvcnNraQoKIHBh
-Y2thZ2Uva2VybmVsL2xpbnV4L21vZHVsZXMvY3J5cHRvLm1rIHwgMjUgKysrKysrKysrKysrKysr
-KysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDI1IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQg
-YS9wYWNrYWdlL2tlcm5lbC9saW51eC9tb2R1bGVzL2NyeXB0by5tayBiL3BhY2thZ2Uva2VybmVs
-L2xpbnV4L21vZHVsZXMvY3J5cHRvLm1rCmluZGV4IDljYWIwNGM2ZWQuLjJlNTAwZjUxZDcgMTAw
-NjQ0Ci0tLSBhL3BhY2thZ2Uva2VybmVsL2xpbnV4L21vZHVsZXMvY3J5cHRvLm1rCisrKyBiL3Bh
-Y2thZ2Uva2VybmVsL2xpbnV4L21vZHVsZXMvY3J5cHRvLm1rCkBAIC0zNTAsNiArMzUwLDMxIEBA
-IGVuZGVmCiAkKGV2YWwgJChjYWxsIEtlcm5lbFBhY2thZ2UsY3J5cHRvLWh3LXBhZGxvY2spKQog
-CiAKK2RlZmluZSBLZXJuZWxQYWNrYWdlL2NyeXB0by1ody1zYWZleGNlbAorICBUSVRMRTo9IE1W
-RUJVIFNhZmVYY2VsIENyeXB0byBFbmdpbmUgbW9kdWxlCisgIERFUEVORFM6PUAhTElOVVhfNF8x
-NCBAKFRBUkdFVF9tdmVidV9jb3J0ZXhhNTN8fFRBUkdFVF9tdmVidV9jb3J0ZXhhNzIpIFwKKwkr
-a21vZC1jcnlwdG8tYXV0aGVuYyAra21vZC1jcnlwdG8tbWQ1ICtrbW9kLWNyeXB0by1obWFjICtr
-bW9kLWNyeXB0by1zaGEyNTYgK2ttb2QtY3J5cHRvLXNoYTUxMgorICBLQ09ORklHOj0gXAorCUNP
-TkZJR19DUllQVE9fSFc9eSBcCisJQ09ORklHX0NSWVBUT19ERVZfU0FGRVhDRUwKKyAgRklMRVM6
-PSQoTElOVVhfRElSKS9kcml2ZXJzL2NyeXB0by9pbnNpZGUtc2VjdXJlL2NyeXB0b19zYWZleGNl
-bC5rbworICBBVVRPTE9BRDo9JChjYWxsIEF1dG9Mb2FkLDkwLGNyeXB0b19zYWZleGNlbCkKKyAg
-JChjYWxsIEFkZERlcGVuZHMvY3J5cHRvKQorZW5kZWYKKworZGVmaW5lIEtlcm5lbFBhY2thZ2Uv
-Y3J5cHRvLWh3LXNhZmV4Y2VsL2Rlc2NyaXB0aW9uCitNVkVCVSdzIEVJUDk3IGFuZCBFSVAxOTcg
-Q3J5cHRvZ3JhcGhpYyBFbmdpbmUgZHJpdmVyIGRlc2lnbmVkIGJ5CitJbnNpZGUgU2VjdXJlLiBU
-aGlzIGlzIGZvdW5kIG9uIE1hcnZlbGwgQXJtYWRhIDM3eHgvN2svOGsgU29Dcy4KKworUGFydGlj
-dWxhciB2ZXJzaW9uIG9mIHRoZXNlIElQIChFSVAxOTdCIGFuZCBFSVAxOTdEKSByZXF1aXJlIGZp
-cm13YXJlLgorVW5mb3J0dW5hdGVseSBpdCdzIG5vdCBmcmVlbHkgYXZhaWxhYmxlIGFuZCBuZWVk
-cyBzaWduZWQgTm9uLURpc2Nsb3N1cmUKK0FncmVlbWVudCAoTkRBKSB3aXRoIE1hcnZlbGwuIEZv
-ciB0aG9zZSB3aG8gaGF2ZSBzaWduZWQgTkRBIHRoZSBmaXJtd2FyZSBjYW4gYmUKK29idGFpbmVk
-IGF0IGh0dHBzOi8vZXh0cmFuZXQubWFydmVsbC5jb20uCitlbmRlZgorCiskKGV2YWwgJChjYWxs
-IEtlcm5lbFBhY2thZ2UsY3J5cHRvLWh3LXNhZmV4Y2VsKSkKKworCiBkZWZpbmUgS2VybmVsUGFj
-a2FnZS9jcnlwdG8taHctdGFsaXRvcwogICBUSVRMRTo9RnJlZXNjYWxlIGludGVncmF0ZWQgc2Vj
-dXJpdHkgZW5naW5lIChTRUMpIGRyaXZlcgogICBERVBFTkRTOj0ra21vZC1jcnlwdG8tbWFuYWdl
-ciAra21vZC1jcnlwdG8taGFzaCAra21vZC1yYW5kb20tY29yZSAra21vZC1jcnlwdG8tYXV0aGVu
-YyAra21vZC1jcnlwdG8tZGVzCi0tIAoyLjIyLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0
-LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+
+Here are recent release notes:
+
+wave-1:
+
+   *  May 9, 2019:  Tweak rate-ctrl:  Ramp PER up faster, down slower.  This helps throughput
+                    in rate-vs-range test, especially with nss1.
+
+   *  May 20, 2019:  Disable adaptive-CCA.  I am not sure it helps, and it may make it slower
+                     to detect noise that should tell the system to stop transmitting.  If someone
+                     has means to test this properly, I'd be happy to work with them.
+
+wave-2:
+
+   *  May 15, 2019  Fix problem where rate-ctrl sometimes used rix of 0x0.
+
+   *  May 15, 2019  Allow raw-tx of encrypted frame.  Requires a patch to the driver to use
+                    raw mode when skb has WEP flag enabled AND skb is flagged to not be
+                    encrypted.  Lightly tested.
+
+   *  May 16, 2019  Fix tx-hang that happened when rate-ctrl chose an OFDM rate for 20Mhz
+                    and sent that as AMPDU.  To fix, limit to (V)HT rates if peer is (V)HT.
+                    It seems that MCS0 (V)HT20 should have as good of a chance of being
+                    detected as CCK or OFDM.
+
+   *  June 6, 2019  Disable TX-BFEE, TX-BFER for IBSS connections.  I suspect this is part of the tx-hang
+                    issue seen with IBSS between two 9984 radios.
+
+   *  June 12, 2019  Fix rx-rate reporting in 'fw_stats' logic.  This was at least partly due to regressions
+                     I had added earlier when working on some multi-vdev enhancements.
+
+   *  June 12, 2019  Fix case where extd peer-stats were not always populated.  The stats gathering
+                     code did not handle error conditions well.
+
+
+Driver changes include:
+* Fixing mfp/pmf for management frames (in htt-mgt mode)
+* Sven's txpower related fixes
+* raw tx of encrypted frames works (on wave 2, at least)
+
+
+Here are the new locations and checksums for the firmware images.
+
+988x
+d4ba8b386be0eda7e1e0ea1653e40a9776c9a5eeb4e7fef656466da30628b17b  firmware-2-ct-full-community-22.bin.lede.009
+12155e9599194c8274d6a96c603f00723b5f036fe8e4c1518ee64cac529a9b34  firmware-2-ct-full-htt-mgt-community-22.bin.lede.009
+/home/greearb/candela_html/downloads
+9887
+9e1a2b30fc9f680ab1a42335b0091953fa600573a7376b2d67f1b4032f518644  firmware-2-ct-full-community-22.bin.lede.009
+a19ea4bad001c1781d064114322502d5a612fb917e02480f971412e090d7f452  firmware-2-ct-full-htt-mgt-community-22.bin.lede.009
+/home/greearb/candela_html/downloads
+9980
+5ad3315297ce3a9cce8706b79eae7783d269b76a56063685100c7e8cd3ff47e5  firmware-5-ct-full-community-12.bin-lede.009
+52c5eebde1ef130273353630e7e91e4dfb638a7e9a3a74aaef44cdccb5ce5412  firmware-5-ct-full-htt-mgt-community-12.bin-lede.009
+/home/greearb/candela_html/downloads
+9984
+c54a53821d9b4fb36e69adb53277ad16e126afa692e5e488121c53cc39c7c4ba  firmware-5-ct-full-community-12.bin-lede.009
+7613d3387dc2d83759759bb14e25312c33f3984a11cd59e66ab2b0470f32abb6  firmware-5-ct-full-htt-mgt-community-12.bin-lede.009
+/home/greearb/candela_html/downloads
+4019
+cec771a2f5f911a77b1f254a113de67cc68edc5d02dc06c7fddbccb448340b55  firmware-5-ct-full-community-12.bin-lede.009
+aff872b4e6f4f7eb000518d3ff4056565a076b81a9dd3ce8f382ceeab7f069c3  firmware-5-ct-full-htt-mgt-community-12.bin-lede.009
+/home/greearb/candela_html/downloads
+9888
+c307c9cd44f650be9504b44786245381b0b88a4348fce85c76a6993fdc8e9e13  firmware-5-ct-full-community-12.bin-lede.009
+1a419f99d8283042434ed2de86e8aba85b9941ff3c75ab0805d71f4c108e272f  firmware-5-ct-full-htt-mgt-community-12.bin-lede.009
+/home/greearb/candela_html/downloads
+
+
+ath10k-ct HEAD:
+commit a045b1ce61fe0908468c019e17a3848f7842c927 (HEAD -> master, origin/master)
+Author: Ben Greear <greearb@candelatech.com>
+Date:   Thu Jun 13 08:45:12 2019 -0700
+
+     ath10k:  Improve PMF/MPF mgt frame check
+
+     And add a driver for 5.2 (beta, not even tested yet) kernel.
+
+
+Thanks,
+Ben
+
+-- 
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

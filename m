@@ -2,78 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C29634679F
-	for <lists+openwrt-devel@lfdr.de>; Fri, 14 Jun 2019 20:36:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E77CC467A2
+	for <lists+openwrt-devel@lfdr.de>; Fri, 14 Jun 2019 20:36:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IGFJn1U6ewVJTvPXH9thLDQCGPFTWgvOTF+gdXKWm20=; b=hdYZNZBnll89ct
-	leBWzDkZMfWP6ziN7h+fU4Q5w5PI6cUMHcc5z9jz+sBfUtXhn8xjz23Nwdp79cpsxuTxGrxAqkE4Z
-	tUqf3I49H/7qhoS3dmULp0+ucUctuFANQlzOtNSelsZacBL2h+EgoZRDkdKVHYHzJJfTkthCCgQzC
-	cB6LAwuKKbPtiCifhxPFJIqzDKKLf7cIlkttRHyw6CIcutyIQ22g+b5PEI8A420uPEMSdO2zKS1az
-	FUruL1rkOPYA0D3lRhq1SvQDlGZODYAQ7d3evRiD+i6PLLUEf7d5YRhQR9mC4dW48faH7INREj1Pl
-	b31MuNhZ4pX/VjDvx+bQ==;
+	List-Owner; bh=vFgrWqlJ+IKD8xlEpGWEjCUUC0tRQZ21vvtkVVm3rMI=; b=L+Cfp1sdDxgqNt
+	1+IMd3GojQzCQusFKLJ8hKWtMjRzHbrSiq31xGzplrykJ5s1QwVG5IoMr/PHIvwF7DBck/bPPU40x
+	6iXPpQ+Fsx4LtMqekdloEb/vLwJ75JwexVNeMv5GDPaBT9mDawSkxRB9e5jGS9t5fziHc+NmWADQu
+	rT9MFLm/ZZdFZm1aCFBVxGbrAumcgWaxMyYASZkkE9wX4f00gmxMbrDb9iBuMPyak8gBMLUb2+W/+
+	JmuKZxyQOr2hc6o3UySIIuFsdSaD+ST1lA9dNRgh00TVKZjJpWxmdxguar8U66o5uNUmMsRFjK/ch
+	L+agHMgLN//KJm8JMmag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbr3a-0002Jf-QA; Fri, 14 Jun 2019 18:36:10 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hbr3q-0002ZQ-El; Fri, 14 Jun 2019 18:36:26 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbr3D-00027Y-AC
- for openwrt-devel@lists.openwrt.org; Fri, 14 Jun 2019 18:35:48 +0000
-Received: by mail-pl1-x643.google.com with SMTP id k8so380122plt.3
- for <openwrt-devel@lists.openwrt.org>; Fri, 14 Jun 2019 11:35:46 -0700 (PDT)
+ id 1hbr3E-00029B-D4
+ for openwrt-devel@lists.openwrt.org; Fri, 14 Jun 2019 18:35:49 +0000
+Received: by mail-pl1-x641.google.com with SMTP id bh12so1353586plb.4
+ for <openwrt-devel@lists.openwrt.org>; Fri, 14 Jun 2019 11:35:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=U0KAvIJWiod0oR87iLYGKXUdgRWxHVfYNMZbCArfbEo=;
- b=nhet4PnN0xT6+sRvv8kzDzMUM7Wm3H6ajZU2avrhWwssU8T86DM1d4KehHE2He5KH+
- ZsGvhXDB+oCzQLD0ELlC0dlyFIKSdmMqQT8lo43qE/snm73az91WF18CyC7rWcuKtsIz
- hJRF6LqdLzpat1hVi9VP0PeXnAOlWlfc4G/prWkhONVEuq/S9LyNDZIPIAcdvTdcpALw
- rQIIL+INO7kUO/cclXldQXUYsa5VjDLdxgMbOCJqEOzNRnl5qnKB+rX8KXoUbQZL2SV1
- TAr2dvwrHfFk+Z50Hhqu3Na7e1rX1jDOSHkLi530mxWAHJFFBilbYrv73py3cpniYmAF
- Z2/g==
+ bh=kqH5lBg5HE8GGrdZX2pyEIrW7c/cm4WNl1buVDaqKyM=;
+ b=vOCKW1Q/4FLAZQk4iCC8oGNLn3DpQOmWFlipq7IojSfY+7Hunq49u86z2QIz3LMAE7
+ 3h7DwyTup0eflHmsSv6OMzjjH+g/hKBDwy5IBeowmLVpeFj1AbMJu1/3Zuq3aKBYB4/W
+ nPBHFMmkFiiBYXp670WLAxxtlDzYV2QMPv/QcdGg9wLTMnOm8mjtmXE9NeN3HiXEpGBj
+ 2LMozV5wHpwMLxk9bskiAdFLUpz3XhKQSNSwD/fUmIEfDyinyxBv8pMNYH/+fE2W/WCQ
+ P+5xBwnzu1QZsG5bIv821OnSOp8bqLcfFxIwr1BgQNRu0/1rqEwaNlJjvRySZdJpu927
+ KXpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=U0KAvIJWiod0oR87iLYGKXUdgRWxHVfYNMZbCArfbEo=;
- b=Oxb2dRqYbyrXM+1hRlmPQfAUIW8yZbAiwjyl0983yE4bh6gbQpPNZq3cni5ho0WMsY
- 0oqM2ylZrxV/1hT545cAssjmbUcTS09o+1HV+2/JEymEVDoW0kcPbeSM6r86q3Tq2q7f
- HsB0ksgmNFk8l0dTQAcA8yoRqcg4FEUGJNrHLfpvy34QKBkw/l3UUlpMqPI5Z02H93jI
- X1ockMn58dunZ1IgV6ArgF5McuMQqmnjsodlNq7UbWbn1NM06PZCk6Gl+z0BGZcSKoz9
- kym86dTSMDVb2pKfci2BezDISsckGOQSlRz4yk5TjhoPYkkznmM+hUaEn6FT5Q8AoqJc
- Excg==
-X-Gm-Message-State: APjAAAWACt/E2uFkRwrjR//Z/2R2+Gd7yVT1+595cnrWRcXwjUNICLeD
- 0EVkTsvmNjKojEMr7/MtqC0dDTp9dXY=
-X-Google-Smtp-Source: APXvYqwN55AC+NKsx/Pldhh7k6SGK8c/VqPGGWi+oT5xocCFzZh9dNTm4LzLq/mp2UWc/Z7RsBTiGw==
-X-Received: by 2002:a17:902:6b48:: with SMTP id
- g8mr10067335plt.151.1560537346321; 
- Fri, 14 Jun 2019 11:35:46 -0700 (PDT)
+ bh=kqH5lBg5HE8GGrdZX2pyEIrW7c/cm4WNl1buVDaqKyM=;
+ b=Nfh04M/+JgWOzK+T8c1/TakpdoGOtMnNbR6Tqa+jcI4Gxp0VogNwYNuZPlDm6nk9l1
+ MxFQq5/6GcviLNSNZtaoLZGRn6G3UL4IYaCmW/1o+YPIrk/P37KOvSnft9Rfb3qlZtTJ
+ VfQOxaqACCv6YEmVJHljz/CyBMde/28cC8LzmZnCx9eaxE/XdA52TmEIGQ0xmT6Bq/zA
+ oR8s8HFp/3QWvSbDEa2B90dBRQBjVEGYfVmpUT3Dg/fY+9xX+lDsDxNAebZdYDkkiQJz
+ vOGMT/E8qPpjBgS8WVdLVX+sq7YrRinR6/V47O6AM4XOKJPGwT/vM1vzCqxRF4Md2fRk
+ /ywA==
+X-Gm-Message-State: APjAAAUr+53mxngH20oV7qRNoRSwqO4C4SQczphW0NWrB7rOql2pLjEl
+ blM6KFMralgC6O0v4Pi/rzPqVhRyoZg=
+X-Google-Smtp-Source: APXvYqzRdl6kziTnJeJ08O9thMa8CwJVMBeVL9eIoLBvhl+R9cjobYQ3CjCmmNcbzALDjC1hQ8gMYQ==
+X-Received: by 2002:a17:902:2884:: with SMTP id
+ f4mr8179685plb.286.1560537347584; 
+ Fri, 14 Jun 2019 11:35:47 -0700 (PDT)
 Received: from computer.lan (138019059130.ctinets.com. [138.19.59.130])
- by smtp.gmail.com with ESMTPSA id a24sm3388775pgb.85.2019.06.14.11.35.45
+ by smtp.gmail.com with ESMTPSA id a24sm3388775pgb.85.2019.06.14.11.35.46
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Fri, 14 Jun 2019 11:35:45 -0700 (PDT)
+ Fri, 14 Jun 2019 11:35:47 -0700 (PDT)
 From: Jeffery To <jeffery.to@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 15 Jun 2019 02:35:30 +0800
-Message-Id: <20190614183534.14768-2-jeffery.to@gmail.com>
+Date: Sat, 15 Jun 2019 02:35:31 +0800
+Message-Id: <20190614183534.14768-3-jeffery.to@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190614183534.14768-1-jeffery.to@gmail.com>
 References: <20190614183534.14768-1-jeffery.to@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190614_113547_365725_4F9280C2 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20190614_113548_455477_1D98888D 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -86,8 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 2/6] build: Remove directory symbolic links
- when cleaning STAGING_DIR
+Subject: [OpenWrt-Devel] [PATCH 3/6] tools: Fix unintended lib link in
+ $(STAGING_DIR_HOST)/lib
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,32 +106,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Currently, a symbolic link whose target is a directory will not be
-removed by scripts/clean-package.sh. (In the first pass, the -f test is
-false because the link target is a directory. In the second pass, the
-link is not removed by rmdir.)
+Currently, if the $(STAGING_DIR_HOST)/lib64 link already exists, ln (in
+tools/prepare) will interpret $(STAGING_DIR_HOST)/lib64 as a directory
+rather than a link name.
 
-This updates clean-package.sh to remove all non-directories in the first
-pass.
+The result is a symbolic link named "lib" inside
+$(STAGING_DIR_HOST)/lib, pointing to itself.
+
+This adds the -n option to ln so that $(STAGING_DIR_HOST)/lib64 is
+treated as a link name.
 
 Signed-off-by: Jeffery To <jeffery.to@gmail.com>
 ---
- scripts/clean-package.sh | 2 +-
+ tools/Makefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/scripts/clean-package.sh b/scripts/clean-package.sh
-index 6dd9bf7306..035725625d 100755
---- a/scripts/clean-package.sh
-+++ b/scripts/clean-package.sh
-@@ -12,7 +12,7 @@ cat "$1" | (
- 	cd "$2"
- 	while read entry; do
- 		[ -n "$entry" ] || break
--		[ -f "$entry" ] && rm -f $entry
-+		[ ! -d "$entry" ] || [ -L "$entry" ] && rm -f "$entry"
- 	done
- )
- sort -r "$1" | (
+diff --git a/tools/Makefile b/tools/Makefile
+index d7207ba89d..f3d8debe23 100644
+--- a/tools/Makefile
++++ b/tools/Makefile
+@@ -138,7 +138,7 @@ $(STAGING_DIR_HOST)/.prepared: $(TMP_DIR)/.build
+ 	mkdir -p $(BUILD_DIR_HOST)/stamp $(STAGING_DIR_HOST)/include/sys
+ 	$(INSTALL_DATA) $(TOPDIR)/tools/include/*.h $(STAGING_DIR_HOST)/include/
+ 	$(INSTALL_DATA) $(TOPDIR)/tools/include/sys/*.h $(STAGING_DIR_HOST)/include/sys/
+-	ln -sf lib $(STAGING_DIR_HOST)/lib64
++	ln -snf lib $(STAGING_DIR_HOST)/lib64
+ 	touch $@
+ 
+ endif
 -- 
 2.20.1
 

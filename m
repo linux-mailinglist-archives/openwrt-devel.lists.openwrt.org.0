@@ -2,84 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78A9F46F90
-	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Jun 2019 12:39:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BFB546FD4
+	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Jun 2019 13:44:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+JLJpuq7dNWDePXn8pekkHypwMx+V9iD+ErxTpAB+jI=; b=qP6cVQP8SSjS+D
-	ND+YTR0U8QWvJ3JA6ybe6yIo+1ZWNLRn8B5U9FBsatnwPvtfwZklACBXBPLBtcNSzdWTYVZe6hr3X
-	5EmRDjAaOHjkJ6UM3fEkgOih2PVlrdGHQOwqFKGRRKasPeQM5gk/hcd1z2i50v1MhjXa1ssEU6dYP
-	DQJMQjWNh8IlEQv2r6ryoG3AVskRHQbehZti+qnZHG7fU9h3LX0snEzPM24YwSREStTg9XzZgO1Nw
-	/kwCGAbYPoS+uw0aDzJNoLfBY7sVDHfBIvb3r1TJmlh4pnrPlNaQzc6CsVgT3lB31o5XmAuy/+Nix
-	mvn0R8GqNcuIGcrJzjog==;
+	List-Owner; bh=XWWQ5eqvZDHk5IY+30aegQkXANGnxe+pcVz9Y9IZPPQ=; b=l+YozIUNmZ8HT8
+	QXSY82klUXoZIozsri+pwtl1P4b0GvY00hCRGq7OaEjTG/bownlY5JqwV38hRvh8eZAW3580DDs6E
+	qOWHUPcXUC7zHeHPHSA85AcNVbhX4WH+3X3VcfZy4SYYQ6TwNd29kcZklC8DXvUK+Uo0DOiz/VJHB
+	41DbN8mPwBLUdVFoXG2SS4l76DBnU7/5KETsrrQpjXb3vdwRrm18s0BuAftASC3jF6WbJ7tYl9N4h
+	pYxYpf1ErtJIkW8Hb6Nja35QQkd+mCec31mUTWIHJ1jcZhE6iy8/FHUxgK1R+DVf7FGaQoeW8mvaj
+	J8uO2M3GQSre5PyWgdIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc65K-000818-Vf; Sat, 15 Jun 2019 10:38:58 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1hc76f-0007gJ-DX; Sat, 15 Jun 2019 11:44:25 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc65D-00080d-VO
- for openwrt-devel@lists.openwrt.org; Sat, 15 Jun 2019 10:38:53 +0000
-Received: by mail-wm1-x341.google.com with SMTP id s15so4588008wmj.3
- for <openwrt-devel@lists.openwrt.org>; Sat, 15 Jun 2019 03:38:51 -0700 (PDT)
+ id 1hc76Y-0007g0-0r
+ for openwrt-devel@lists.openwrt.org; Sat, 15 Jun 2019 11:44:19 +0000
+Received: by mail-qt1-x842.google.com with SMTP id d17so611396qtj.8
+ for <openwrt-devel@lists.openwrt.org>; Sat, 15 Jun 2019 04:44:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=DTZ0uGAtLh2Kd6WDX2M4jdhJiDiw+aIAK6Ke8IVBJ9c=;
- b=l6mo45ckAWdNqAaUMwIEHlCL+KanJ8tyTvUJbYXtIdvjw/bUg8NVvCJ95B73Heors6
- EDpCZCi48NPBB/V/cye/dmx55LngehOEhT7cXEpTnfsw8PIsgzYb4C4UvJ1e+hEL+fIv
- 7kmISUgumQpPg6YNZRkDVEam5GPl44y7LlJ/Oc/XpjzPVJcQ4CRglPKP3Zu5FvzERhRn
- Y5+K7SoMp+MHgU2ygfQrzTtfr2YIHyRX98/Sr5Kf5QGN1ko3lQBlKQmPwWBVWSbOE9Rr
- mRN1yed0jfSKUFWUrdgl+Y1foepXnQ/0O+KIiOK4frxiX+bJhyBAqbrn0a6a52OX/8ju
- ECCA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=lHQf8lq02u0AEXNgZQTfn0vEQmY4u+D156spF/6cB54=;
+ b=OY1+HQFNlS7VV4dHx5f+b++8J0gd6NlwrwFS11IjVQrL7/jYzM2HHOYjZmOqGbsFQj
+ 6/b3pdrPGbo6XwSx4QjtAsHX4Hj01cFjV2TPFamDpfe+x/S4xTNMRvplAp51ydoFmDH+
+ WUiRL9CuERJFPbfuShfilQ5dvPkdvYd4vxY9uFPg0t4mKkTPM/AoAtdzzEDySX97qKAg
+ eQ4sCz+dcpFYdepHcRRyOKd/RkXgnAXfApkuN6R8fsJG0aFjxI8/dkdROBMF/dKQ/vc2
+ ZmB6nzIhu5Ia3lIVtOqW+LPBKeHfMiXlMXoz59QVBt0QulY9xmQGtv1RzlVJn6rG8jqy
+ /C6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=DTZ0uGAtLh2Kd6WDX2M4jdhJiDiw+aIAK6Ke8IVBJ9c=;
- b=prQNz2N2XC5+kHwDqAqM5e2evhEohf6jtRvqYp3/7OzoEh4pjLHmOovqUB4aWStgSM
- 20sbB5PjAYj3HpRVaRe1ToWcbm16HvKfIATXzRF6GFdzB6xz3KL1qhGizh1YsNX0EFyi
- m0lA8JRH0RTZ3tKKT3oxuYMxyLUSiPTrM3HoDlTNLFJI+fBoswxhUVBwLLtBVBa5r6Sg
- JyaVxWEVPHPpmZmxpxhr8vP5Kxs8R+K8b4Fg7GkM5K4Qi9AT5lgBnMfCF82LJVNtIFp3
- Yi77NN9iNVdRj5C9YrIPi4x1nBbjPGw12GrxLnjqbHKb0HZxaU++UMSaaZM5P3ktbAuo
- QKbQ==
-X-Gm-Message-State: APjAAAXWaUi0t19Kqc20711uGEwPnhAoW6oIFSyO3liUDHaGR54gkPlY
- kthqlSMKVd4ZxDtOk2E/PllYrAvDTmw=
-X-Google-Smtp-Source: APXvYqxobrnJgfsP8NrRMokx+MOgSBNtmTdS8Q+BLbp7zBO7SL65saGMPAeHTcqMLBl/GJ0fcZG5TQ==
-X-Received: by 2002:a7b:cf32:: with SMTP id m18mr11580876wmg.27.1560595130351; 
- Sat, 15 Jun 2019 03:38:50 -0700 (PDT)
-Received: from debian64.daheim (pD9E2960F.dip0.t-ipconnect.de.
- [217.226.150.15])
- by smtp.gmail.com with ESMTPSA id h1sm3926820wrt.20.2019.06.15.03.38.49
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 15 Jun 2019 03:38:49 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.92)
- (envelope-from <chunkeey@gmail.com>)
- id 1hc65A-0004KG-Ma; Sat, 15 Jun 2019 12:38:48 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 15 Jun 2019 12:38:48 +0200
-Message-ID: <2139352.pfxfOn4buR@debian64>
-In-Reply-To: <1559618019-5561-1-git-send-email-wurobinson@qq.com>
-References: <1559618019-5561-1-git-send-email-wurobinson@qq.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=lHQf8lq02u0AEXNgZQTfn0vEQmY4u+D156spF/6cB54=;
+ b=iv1OJIJ/QYkVmLPTMN7DtTdIEwRSMNlfaVO3QrWSbnK8fHhqztIHcR9R8Flkbm87eb
+ NCg7LEnnOU0/MVazAK6mhVh0MtqwZkVlmKmBv8sxOlJhGNqIT+tyTlomkWXeWtTh0KNv
+ RP+JjT+gF+0SFcJDh6lGnSNFoZd9uD6oGsBJh9qSrhbNxKoZXLM79x4bhkp9H1qr7Hb+
+ yLaINq5a65zQ8wmdL6XCvrthveYNI6meTlvUq5Dxljf8EMye4X38sgNfqWXkWUnRPBya
+ KM4SWVvclYuz3Dy92YrLGdZAmgpD1suZqZiezEdzxRpDOYIQReWif0PNxAghfpf6obYY
+ kB6Q==
+X-Gm-Message-State: APjAAAUuFYXwcFpS2Z9tADjkI5sAk1o9Ua5Irh2OXFyi9gwmfDX8KgOX
+ SBz7C0YGS5BI0qf9jbOjBVSokV8kq31J35VBwxU=
+X-Google-Smtp-Source: APXvYqxfsnrqaqRNJQ4T/dBXbswRjX0oLCwWCxZirDLwoE8OAl4IHZ88erMBUX6gOTYNfgyC2qdG+7/cW7TtN/xRGUE=
+X-Received: by 2002:aed:23ac:: with SMTP id j41mr57443179qtc.200.1560599056037; 
+ Sat, 15 Jun 2019 04:44:16 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190614110947.10540-1-avalentin@marcant.net>
+ <20190614110947.10540-4-avalentin@marcant.net>
+In-Reply-To: <20190614110947.10540-4-avalentin@marcant.net>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Sat, 15 Jun 2019 13:44:04 +0200
+Message-ID: <CAJLcKsGR2WcCsy-ehX=C6AoDAzusv82JOkZoFxDuR2hRDLHgmg@mail.gmail.com>
+To: =?UTF-8?Q?Andr=C3=A9_Valentin?= <avalentin@marcant.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_033852_037834_55F6C098 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20190615_044418_064448_0D3F0078 
+X-CRM114-Status: GOOD (  13.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
+ provider (dedeckeh[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,8 +81,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH 2/3] base-files:fix a bug when add led
- timer trigger
+Subject: Re: [OpenWrt-Devel] [PATCH 2/3] network/config/xfrm: add
+ host-dependency for xfrm interface parent
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,62 +94,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: robinson wu <wurobinson@qq.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tuesday, June 4, 2019 5:13:39 AM CEST robinson wu wrote:
-> When I tried to add a led timer tirgger in "target/linux/ramips/base-files/
-> etc/board.d/01_leds" like below
-> ucidef_set_led_timer "system" "system" "zhuotk:green:system" "1000" "1000"
-> it will be failed to add value to "delayon" and "delayoff". This commit fix this
-> bug.
-> 
-> Signed-off-by: robinson wu <wurobinson@qq.com>
-> ---
->  package/base-files/files/lib/functions/uci-defaults.sh | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/package/base-files/files/lib/functions/uci-defaults.sh b/package/base-files/files/lib/functions/uci-defaults.sh
-> index 315df7b..23bde9a 100755
-> --- a/package/base-files/files/lib/functions/uci-defaults.sh
-> +++ b/package/base-files/files/lib/functions/uci-defaults.sh
-> @@ -463,6 +463,7 @@ _ucidef_set_led_timer() {
->  
->  	_ucidef_set_led_common "$1" "$2" "$3"
->  
-> +	json_add_string type timer
-Hm, I think I see what's going on. Thank you for noticing this.
-
-I see that _ucidef_set_led_timer is also used by ucidef_set_led_oneshot
-which has a different type/trigger.
-But package/base-files/files/bin/config_generate's
-generate_led() routine's timer|oneshot type case does this:
-
-   set system.$cfg.trigger='$type'
-
-So in a way, for oneshot and timer the type and trigger are the same thing.
-(which begs the question if we really need both or not.). But let's worry
-about this some other time.
-
-In the mean time, I think this would be a better fit and also fix
-the oneshot type in the process. 
-
-json_add_string type "$trigger_name"
-
->  	json_add_string trigger "$trigger_name"
->  	json_add_int delayon "$delayon"
->  	json_add_int delayoff "$delayoff"
-> 
-
-Regards,
-Christian
-
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gRnJpLCBKdW4gMTQsIDIwMTkgYXQgMToxMCBQTSBBbmRyw6kgVmFsZW50aW4gPGF2YWxlbnRp
+bkBtYXJjYW50Lm5ldD4gd3JvdGU6Cj4KPiBBZGQgcHJvdG9fYWRkX2hvc3RfZGVwZW5kZW5jeSB0
+byBhZGQgYSBkZXBlbmRlbmN5IHRvIHRoZSB0dW5saW5rIGludGVyZmFjZQo+Cj4gU2lnbmVkLW9m
+Zi1ieTogQW5kcsOpIFZhbGVudGluIDxhdmFsZW50aW5AbWFyY2FudC5uZXQ+ClBhdGNoIHB1c2hl
+ZCB0byBtYXN0ZXI7IHRoeAoKSGFucwo+IC0tLQo+ICBwYWNrYWdlL25ldHdvcmsvY29uZmlnL3hm
+cm0vZmlsZXMveGZybS5zaCB8IDE5ICsrKysrKysrKysrLS0tLS0tLS0KPiAgMSBmaWxlIGNoYW5n
+ZWQsIDExIGluc2VydGlvbnMoKyksIDggZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvcGFj
+a2FnZS9uZXR3b3JrL2NvbmZpZy94ZnJtL2ZpbGVzL3hmcm0uc2ggYi9wYWNrYWdlL25ldHdvcmsv
+Y29uZmlnL3hmcm0vZmlsZXMveGZybS5zaAo+IGluZGV4IGRmMjhkMzg2MTMuLjQ3MTFiZjJmNTUg
+MTAwNzU1Cj4gLS0tIGEvcGFja2FnZS9uZXR3b3JrL2NvbmZpZy94ZnJtL2ZpbGVzL3hmcm0uc2gK
+PiArKysgYi9wYWNrYWdlL25ldHdvcmsvY29uZmlnL3hmcm0vZmlsZXMveGZybS5zaAo+IEBAIC0x
+NCwyNCArMTQsMjcgQEAgcHJvdG9feGZybV9zZXR1cCgpIHsKPiAgICAgICAgIGxvY2FsIHR1bmxp
+bmsgaWZpZCBtdHUgem9uZQo+ICAgICAgICAganNvbl9nZXRfdmFycyB0dW5saW5rIGlmaWQgbXR1
+IHpvbmUKPgo+IC0gICAgICAgcHJvdG9faW5pdF91cGRhdGUgIiRjZmciIDEKPiAtCj4gLSAgICAg
+ICBwcm90b19hZGRfdHVubmVsCj4gLSAgICAgICBqc29uX2FkZF9zdHJpbmcgbW9kZSAiJG1vZGUi
+Cj4gLSAgICAgICBqc29uX2FkZF9pbnQgbXR1ICIke210dTotMTI4MH0iCj4gLQo+ICAgICAgICAg
+WyAteiAiJHR1bmxpbmsiIF0gJiYgewo+ICAgICAgICAgICAgICAgICBwcm90b19ub3RpZnlfZXJy
+b3IgIiRjZmciIE5PX1RVTkxJTksKPiAgICAgICAgICAgICAgICAgcHJvdG9fYmxvY2tfcmVzdGFy
+dCAiJGNmZyIKPiAgICAgICAgICAgICAgICAgZXhpdAo+ICAgICAgICAgfQo+IC0gICAgICAganNv
+bl9hZGRfc3RyaW5nIGxpbmsgIiR0dW5saW5rIgo+IC0KPiAgICAgICAgIFsgLXogIiRpZmlkIiBd
+ICYmIHsKPiAgICAgICAgICAgICAgICAgcHJvdG9fbm90aWZ5X2Vycm9yICIkY2ZnIiBOT19JRklE
+Cj4gICAgICAgICAgICAgICAgIHByb3RvX2Jsb2NrX3Jlc3RhcnQgIiRjZmciCj4gICAgICAgICAg
+ICAgICAgIGV4aXQKPiAgICAgICAgIH0KPiArCj4gKyAgICAgICAoIHByb3RvX2FkZF9ob3N0X2Rl
+cGVuZGVuY3kgIiRjZmciICcnICIkdHVubGluayIgKQo+ICsKPiArICAgICAgIHByb3RvX2luaXRf
+dXBkYXRlICIkY2ZnIiAxCj4gKwo+ICsgICAgICAgcHJvdG9fYWRkX3R1bm5lbAo+ICsgICAgICAg
+anNvbl9hZGRfc3RyaW5nIG1vZGUgIiRtb2RlIgo+ICsgICAgICAganNvbl9hZGRfaW50IG10dSAi
+JHttdHU6LTEyODB9Igo+ICsKPiArICAgICAgIGpzb25fYWRkX3N0cmluZyBsaW5rICIkdHVubGlu
+ayIKPiArCj4gICAgICAgICBqc29uX2FkZF9vYmplY3QgJ2RhdGEnCj4gICAgICAgICBbIC1uICIk
+aWZpZCIgXSAmJiBqc29uX2FkZF9pbnQgaWZpZCAiJGlmaWQiCj4gICAgICAgICBqc29uX2Nsb3Nl
+X29iamVjdAo+IC0tCj4gMi4xMS4wCj4KPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiBvcGVud3J0
+LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWls
+bWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2
+ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL29wZW53cnQtZGV2ZWwK

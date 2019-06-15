@@ -2,73 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 523EE46EFB
-	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Jun 2019 10:27:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CA3646F7D
+	for <lists+openwrt-devel@lfdr.de>; Sat, 15 Jun 2019 12:12:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6L9BWHsM4hHV2ilLXK5J9oNuLQy4yiG+DM4aSWkQAd4=; b=H6MyR9j9kq53rF
-	72PXX8T1WsiP1DiJjO6b2BLfShCeAztxLHTVMaUTE0zcCw0szk7LX9Us93ExiN9Tn3hmXz48wzL2l
-	Eza0TzqFJTP4kSGXI1C4AXpsFSxbQBq5yFSXYa8jwS7TsZFpUtz4xhetcw1GV+uTPY0wQEosvKRbZ
-	8ERxUWw9L5Ot21NF1rlwAhJwsngu2DaKSg7wSoA23tQ59qwYhtfLRaKaYnwTYYfvW+adbcm7pis+I
-	FcuuDtOOS+vDs1cxQtwDIWfNPCSxb/BG20oDhGojXX8g7Q8uL9Lhf6BIM1oglPwInAGxcrKs6JdTe
-	mnh3pTD5krJ7L6QjtJPA==;
+	List-Owner; bh=ZhFZ4OPKt+benWHmA8y4j5QrV4GY95OC5p2MPlZyEH8=; b=kZwjHxLpbP9cVH
+	1qnhmQfKNhlHyrzXko03Snb8qux/AmDPkdE85N640fBW5qUV8M2ok/OTZpUvOXvtuTvFsA/ut146F
+	s1aRnCCJMWpBymVm1K1ZNeMk/K/RWfyIFU9txjSFljnDbpNWMCsBaDLZSvMrIcc+Xq9jBXTd2kj2W
+	OOUPpaqTwpbZOp4J5ExZvfOWuTJL8VYCUbEIf3hdWskmOawHMCFQ6rw25zacflgIE148HtteancM9
+	QqUPgrSVOBYTmBk7Ftj3JxuwPT4ddZLtodWspOOSrswnywWQpJmD2wDtUl16PiC0f/hsi7wJL5RNn
+	bEGqk2GVlOftoIWtFj9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hc422-0007DL-TM; Sat, 15 Jun 2019 08:27:27 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hc5fB-0006Oo-1E; Sat, 15 Jun 2019 10:11:57 +0000
+Received: from smtp.soverin.net ([159.69.232.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hc41k-0007D2-Qk
- for openwrt-devel@lists.openwrt.org; Sat, 15 Jun 2019 08:27:10 +0000
-Received: by mail-lf1-x142.google.com with SMTP id a25so3262490lfg.2
- for <openwrt-devel@lists.openwrt.org>; Sat, 15 Jun 2019 01:27:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ALP1b1YDYxl6ie3tqdkPo5BOns450eirza90XtSagW8=;
- b=wj1b1hUn7fU7By2ZbtfP5RU8R/CKA3CJb0LXQIgrgFTiEGFXuc8f6/vEuU8xw3vbI+
- QCxgGCu8iJCj9i6/4wi7HXNGlV9CiSzphjx3sQVhZOntGkmZYTgM6Lww8Brl+Gwq0qVs
- aJrEnnHEpbyj2IarTErDjQ7m5ZUb5Weqa9WztA7FvSSrl70mpfeFljdw8rgfPz2WyQfR
- 8gCllkYSq3w9kuJA450OPdx/NIygTd9uQ42rFNb6M+g9akGpJGYwLlgscZ+qxGRfk88T
- g/NZUMl/eYHM90+Xwva0oGuQT4Jovb2F4j7XaalissscZ8pmQzDB1uB5JEUcuiQXB0ZY
- 5oog==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ALP1b1YDYxl6ie3tqdkPo5BOns450eirza90XtSagW8=;
- b=i4gM9k9DtSKaXdRaB36CEMbUsIbpvcwUhR0vAAMZIftTl/4X629cYjaxtvTWDn0BbS
- lcXj1Lx6Gn5/ZQs6DjOmqjbMhRDAkTkBeBau56n/zIThZnwED5WzC5Ms8QIl37ib7LQS
- q3jIQLJamTTzZ5QBIc5xq/0pPT/rsoN5jPoGETfCBXEy6mKE5kcQd/eu3ltQfRb9KzMb
- KcvPm3nkDiVPnX2WLhFC2AdVH96mlDmgvQhSw5qEQ2n4rDnk7Wj8MgCuyUtU2qKVopei
- an4SmIc5dBKpazor1q4JaNnuLaO6Kmb9VOY2EBpc7Kg6XJVnKyo7mRFCVLR8tnqzcwsp
- gaxQ==
-X-Gm-Message-State: APjAAAVh6PRBLfwSHb7t+/6eUvNY8beIGwRc31pXysDGpeJQay58/i4r
- 3SHMSLMVudfdLvy8p4uZw8TL0kIMIoQmbJYklhTrPw==
-X-Google-Smtp-Source: APXvYqwhESMxv2gjVoiKrwZ1mNKR8tv6ZCREHoIOkqDFNaKpejzhLDfFVUjNb0Rf3hdTDeNOOqKwmKegMaRksHnVjd8=
-X-Received: by 2002:ac2:4891:: with SMTP id x17mr14864385lfc.60.1560587226718; 
- Sat, 15 Jun 2019 01:27:06 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190613210036.30922-1-mail@david-bauer.net>
- <7513956.bV6BmdoukA@debian64>
-In-Reply-To: <7513956.bV6BmdoukA@debian64>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 15 Jun 2019 10:26:54 +0200
-Message-ID: <CACRpkdYbd2qY4=L1rrDnvnaPqMcKjfqdNB1kWg1+AJBKoZnjcA@mail.gmail.com>
-To: Christian Lamparter <chunkeey@gmail.com>
+ id 1hc5dZ-0004o0-FC
+ for openwrt-devel@lists.openwrt.org; Sat, 15 Jun 2019 10:10:21 +0000
+Received: from soverin.net by soverin.net
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=oranjevos.nl;
+ s=default; t=1560593411;
+ bh=E3TQR1zLORGhDAf6Q55uC6l8KJpLFAFesRy/lgn4vPs=;
+ h=Subject:From:In-Reply-To:Date:Cc:References:To:From;
+ b=gWEd/AJ8NhoMMSqhl5svF/GBhKtdXWGGxLdapYAfq8AfJ94Jq/3y2b8yUepuM1yKS
+ wR8jP7MFrWxgWZ7L5yv+Tfz8uw8sbMVo+bwI5qPeR8EMGBExWOZwb4d99R5O+IW6eH
+ lOaGzMqgpRVRvHCdILrmpgp+n+Q9HFSA3egplZs4=
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+From: Paul Oranje <por@oranjevos.nl>
+In-Reply-To: <5667b3c1-d675-dc9e-8b33-27d6629d1111@gmail.com>
+Date: Sat, 15 Jun 2019 12:10:09 +0200
+Message-Id: <987922AB-9F3B-4DAA-8D6E-A4948B3C0492@oranjevos.nl>
+References: <CANDHWrd_nLzKm8AXivb9xGZW=aKFniSS6GQng7NabrB83MmjRg@mail.gmail.com>
+ <7dc092d9-2aa3-f2a4-2448-eee0e1a7f2f9@gmail.com>
+ <CANDHWrdHtN7qf7YYpsE2M2mYKsjFVj7Hf0Av4DbZmpfmtkJXfg@mail.gmail.com>
+ <5667b3c1-d675-dc9e-8b33-27d6629d1111@gmail.com>
+X-Virus-Scanned: clamav-milter 0.100.3 at c03mi01
+X-Virus-Status: Clean
+To: Alberto Bursi <bobafetthotmail@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190615_012708_937654_BC5E7ACC 
-X-CRM114-Status: GOOD (  22.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190615_031017_986068_3719B545 
+X-CRM114-Status: GOOD (  12.55  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [159.69.232.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,8 +62,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: read
- initial state
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] Netgear DM200 Boot Issue/Patch Availability?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,98 +76,120 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- David Bauer <mail@david-bauer.net>
+Cc: Chris <threshnode@gmail.com>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Fri, Jun 14, 2019 at 9:28 PM Christian Lamparter <chunkeey@gmail.com> wrote:
+IIRC OpenWRT can also be flashed onto the DM200 with nmrpflash [1].
 
-> Maybe he can point to a specifc reason why the interrupt gets triggered
-> when the module is loaded and how to handle it. Because this behavior
-> seems to be common between different platforms now and the upstream
-> gpio-keys (which does work differently!) seems to handle it just fine.
->
-> @Linus: Do you have any inside knowledge about the issue? That when
-> gpio-keys is loaded (in OpenWrt it's a module due to kernel size
-> constraint on various routers) the associated interrupt fires and
-> this results in a ghost key event.
+[1] https://github.com/jclehner/nmrpflash
 
-Without any detailed knowledge I'd say the most common cause
-is the underlying GPIO chip implementation. There are often transient
-line events when the system is powered up and initialized and it
-is often necessary for the gpio_chip driver to clear any interrupt
-flags in hardware before setting up the gpio chip, especially the
-irqchip portions of it.
+Regards,
+Paul
 
-I tried to half-guess what gpio chip this is using and since it
-is WiFi pro 1200e I guess ths gpio driver is
-drivers/gpio-ath79.c which does indeed initialize an
-irqchip without clearing the interrupts first.
+p.s.
+top posted as this thread already does that.
 
-Can you try this patch, if this solves the problem I will commit
-it upstream as well:
+> Op 2 jun. 2019, om 22:42 heeft Alberto Bursi <bobafetthotmail@gmail.com> het volgende geschreven:
+> 
+> It's not an Arduino, it's a USB dongle to communicate with Arduino
+> 
+> (and any other embedded device's) TTL serial pins.
+> 
+> Search for "arduino USB-TTL dongle" on ebay or amazon to find this tool.
+> 
+> -Alberto
+> 
+> On 02/06/19 17:39, Chris wrote:
+>> Hi Alberto,
+>> 
+>> Thanks for explaining the situation to me. I'll get hold of an Arduino and give this a shot.
+>> 
+>> All the best,
+>> Chris
+>> 
+>> On Tue, May 28, 2019 at 4:52 PM Alberto Bursi <bobafetthotmail@gmail.com> wrote:
+>> 
+>> 
+>> Last attempt I saw was here https://github.com/openwrt/openwrt/pull/1770
+>> 
+>> but it was rejected.
+>> 
+>> 
+>> 
+>> I have some experience with the bootloader used in this device, I can 
+>> 
+>> provide more complete instructions to do the uboot fix though.
+>> 
+>> TTL/serial access seems to be easy (there is a header as you see in the photo),
+>> 
+>> and you need an inexpensive "arduino USB-TTL dongle" to connect to this device.
+>> 
+>> Connect the pins as defined in the wiki, open up your serial 
+>> 
+>> communication program (Putty usually)
+>> 
+>> and set it for 115200 serial speed, others default.
+>> 
+>> Then boot the device, press a key to stop boot when you see 
+>> 
+>> "Hit any key to stop autoboot: 2 1 0"
+>> 
+>> It should stop and accept console commands.
+>> 
+>> then copy-paste this line 
+>> 
+>> setenv sleep 1;nmrp;sf probe 0:3;sf read $loadaddr 0x30000 0x400000;bootm $loadaddr
+>> 
+>> This will alter the bootloader configuration that is causing the issue. Now it will boot kernels up to 4MB big
+>> 
+>> Will still be able to boot stock firmware, we are just increasing a size limit.
+>> 
+>> and then save the change by writing
+>> 
+>> saveenv
+>> 
+>> and then you can reboot the device by pulling the plug or writing
+>> 
+>> reset
+>> 
+>> Now you can install OpenWrt as normal.
+>> 
+>> -Alberto
+>> 
+>> 
+>> 
+>> On 28/05/19 14:00, Chris wrote:
+>>> Hi folks,
+>>> 
+>>> I was wondering if a patch enabling this device was ever released?
+>>> 
+>>> http://lists.infradead.org/pipermail/openwrt-devel/2019-January/015556.html
+>>> 
+>>> The wiki suggests one can only install/boot into OpenWRT by wiring up a JTAG/serial interface and manually intervene... Which is far beyond my comfort zone.
+>>> 
+>>> Am very eagar to make use of this equipment, so any news would be really appreciated.
+>>> 
+>>> All the best,
+>>> Chris
+>>> 
+>>> 
+>>> _______________________________________________
+>>> openwrt-devel mailing list
+>>> 
+>>> openwrt-devel@lists.openwrt.org
+>>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>> _______________________________________________
+>> openwrt-devel mailing list
+>> openwrt-devel@lists.openwrt.org
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
-From ce4b6db51658e0954f97837095393c5fd1416db2 Mon Sep 17 00:00:00 2001
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 15 Jun 2019 10:18:48 +0200
-Subject: [PATCH] gpio: ath79: Clear pending IRQs
-
-The ath79 gpio driver may emit "ghost interrupts" because
-pending IRQs are sitting in the latches when we probe the
-driver. It appears this GPIO block clears interrupts by
-reading the status register, so read that and toss the
-result before adding the gpio irqchip.
-
-Reported-by: David Bauer <mail@david-bauer.net>
-Reported-by: Christian Lamparter <chunkeey@gmail.com>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- drivers/gpio/gpio-ath79.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/drivers/gpio/gpio-ath79.c b/drivers/gpio/gpio-ath79.c
-index 0a553d676042..39ccb48c03d5 100644
---- a/drivers/gpio/gpio-ath79.c
-+++ b/drivers/gpio/gpio-ath79.c
-@@ -290,6 +290,8 @@ static int ath79_gpio_probe(struct platform_device *pdev)
-     if (np && !of_property_read_bool(np, "interrupt-controller"))
-         return 0;
-
-+    /* Clear any pending IRQs so we have a clean slate */
-+    ath79_gpio_read(ctrl, AR71XX_GPIO_REG_INT_PENDING);
-     err = gpiochip_irqchip_add(&ctrl->gc, &ath79_gpio_irqchip, 0,
-                 handle_simple_irq, IRQ_TYPE_NONE);
-     if (err) {
--- 
-2.21.0
-
-> I have to add that OpenWrt's
-> gpio-button-hotplug.c (which registers the gpio-keys and
-> gpio-keys-polled) is a special, out-of-tree module that sends broadcast
-> events (netlink) rather than using the input-subsystem (again due
-> to space issues).
-
-This seems like a valid usecase. I guess it may be hard to drive
-that solution home upstream but at some point it should at least
-be discussed with Dmitry (the input maintainer) so he can give
-his view on how resource constrained systems should handle
-this.
-
-I suspect the root cause is the "footprint problem" that hits IOT
-devices like OpenWrt and I know Nicolas Pitre tried to drive
-a few approaches upstream to get footprint down, but the
-experience was somewhat discouraging.
-
-I think it's a worthy cause though! Small memory systems
-should be able to run Linux proper IMO, we just lack the
-manpower to make it happen.
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

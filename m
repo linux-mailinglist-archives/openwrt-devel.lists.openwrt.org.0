@@ -2,59 +2,124 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 182994757C
-	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 17:21:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CB54475F5
+	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 18:40:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/qJVedVKnlXy0aElozZQih8o3OJTZVwKQPqHygQAj7Q=; b=KY0YONXBU8QtylFmWrBJGgMgt
-	AXGMvQb7vg6pckmlLuTMKDsw4cyrRneU462DZVtKYu7LFhXvJLfkJIy4BbPkVLbHqEfbdj9LvEwXc
-	pookCvz2TtyNREL3U0K5s9MlK6bTf0y+tRAyr0Hm1ZmqBl5J2v+dA9v1DA3XJq2yG3pX9tROjYM6v
-	lLR6m+eaPiBrn9iIdLPKp68I/JA1IcN8KLKXAWocqJmDiu53PJyEbwSLqOMOB1jLGTOA2XDlp2mZW
-	vZThYbl1VQhoWI6miKiXqcS5YQCRPXkYXUT9UxxTcAZl6ao/28dMTXDuiWMRuGuAw70R6V3ZVUCCz
-	3LNafEPuA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n2heDj81Goa0ZJgmvOvfG6JSUpZFtBZWioQqv1rrFwk=; b=q+m+nZ94s41CPw
+	kDThJgW9YMb3K25P42s8PIszo7n05pcsKsm5ug/FIEa1QMu2dDmz7BPrvfRZKu8OI8Se2KBedIvkq
+	zo5Fhc1WLYxIPIAmcdzGYtHbUJofLmWm0kOObxLE6vsYwWLv0Hj5YakWqICN6j9cp9CkVjWOFPBHx
+	poJzUyfj5PbyPYgOCzIIW0T5d6pBNww4N5ChAxgNMDFLavKQD/xPjol7EUdBClXiydki/kBG49xiO
+	Zvi2Lh3ejA9ZlT1pIG+2TkW8b3CYcP4Cyk2bROTAB1P1RzOCW84wTBtrOcgVPXvRcoWpxdiGpaYxD
+	cGdfRu/DXdEogBwsqhtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcWxr-0004UU-N0; Sun, 16 Jun 2019 15:21:03 +0000
-Received: from mx.allycomm.com ([138.68.30.55])
+	id 1hcYCC-0007gB-KM; Sun, 16 Jun 2019 16:39:56 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcWxg-0004U2-QE
- for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 15:20:54 +0000
-Received: from ubuntu.pn.wagsky.com (c-69-181-42-248.hsd1.ca.comcast.net
- [69.181.42.248])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1hcYC1-0007f5-1W
+ for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 16:39:47 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id 8D04C25E94;
- Sun, 16 Jun 2019 08:20:50 -0700 (PDT)
-To: Christian Lamparter <chunkeey@gmail.com>
-References: <20190615214056.11729-1-lede@allycomm.com>
- <20190615214056.11729-2-lede@allycomm.com> <7807967.26YyYKSkP6@debian64>
-From: Jeff Kletsky <lede@allycomm.com>
-Message-ID: <b41f1f1e-16a3-1aff-e8ef-b53f05837f8c@allycomm.com>
-Date: Sun, 16 Jun 2019 08:20:50 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.7.1
+ by mx2.mailbox.org (Postfix) with ESMTPS id E3FC9A0131;
+ Sun, 16 Jun 2019 18:39:37 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id SZwURDQpejuy; Sun, 16 Jun 2019 18:39:30 +0200 (CEST)
+To: Sandeep.Sheriker@microchip.com, openwrt-devel@lists.openwrt.org
+References: <cover.1559260743.git.sandeep.sheriker@microchip.com>
+ <4b76386e-6af0-5be7-e222-31b564cb567e@hauke-m.de>
+ <BYAPR11MB3157E6513774DB757A32FFE282130@BYAPR11MB3157.namprd11.prod.outlook.com>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <880e34b9-c8b5-8feb-bb57-59aa49ec1094@hauke-m.de>
+Date: Sun, 16 Jun 2019 18:39:29 +0200
 MIME-Version: 1.0
-In-Reply-To: <7807967.26YyYKSkP6@debian64>
+In-Reply-To: <BYAPR11MB3157E6513774DB757A32FFE282130@BYAPR11MB3157.namprd11.prod.outlook.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_082052_855991_60CA82D0 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190616_093945_386373_CE4187E9 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [138.68.30.55 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] ipq40xx: Linksys: sysupgrade:
- Ensure OEM volumes are removed
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [patch v1 00/11] at91 patch series.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,167 +131,67 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============8506073561638547469=="
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============8506073561638547469==
-Content-Type: multipart/alternative;
- boundary="------------223095FDFB005DE7DA9EAD46"
-Content-Language: en-US
+On 6/10/19 5:27 PM, Sandeep.Sheriker@microchip.com wrote:
+> Hi Haukr Mehrten,
+> =
 
-This is a multi-part message in MIME format.
---------------223095FDFB005DE7DA9EAD46
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 7bit
+> =A0=A0=A0=A0 Please ignore the patch v1 00/11. I will rework on this patc=
+h and
+> send a new patch soon.
+> =
 
-On 6/16/19 4:49 AM, Christian Lamparter wrote:
+> =
 
-> On Saturday, June 15, 2019 11:40:56 PM CEST Jeff Kletsky wrote:
->> From: Jeff Kletsky <git-commits@allycomm.com>
->>
->> When OEM volumes are present in the [alt_]firmware partition,
->> sysupgrade will write a new kernel, but will fail to write
->> the root file system. The next boot will hang indefinitely
->>
->>      Waiting for root device /dev/ubiblock0_0...
->>
->> Modified ipq40xx/base-files/lib/upgrade/linksys.sh
->> to remove both `squashfs` and `ubifs` if found
->> on the target firmware partition's UBI device.
->>
->> Run-tested-on: Linksys EA8300
->>
->> Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
-> Can you check if this is still working? Or if I broke it
-> when I was implementing the shellcheck changes?
->
-> https://git.openwrt.org/?p=openwrt/staging/chunkeey.git;a=commit;h=003c63f7b1102702fb4a0580683b21ded1ee1a3e
->
-> Cheers,
-> Christian
->
-> [...]
+> if your ok with rest of the patches ? then, Please apply them.
+> =
 
-With the caveat that I don't know how to exercise the
-[ "$magic_long" = "27051956" ] branch of the code[1],
-your referenced commit from staging/chunkeey is able to
-sysupgrade my ipq4019-based EA8300 both over OpenWrt
-as well as over OEM. I have also spot-checked the
-"missing boot_part" path.
+> =
 
-Thanks for the quick review of the changes as well as
-the clean-up of existing code.
+> Regards,
+> =
 
-Jeff
+> Sandeep Sheriker M
+
+Hi,
+
+I will wait for a new version of this patch set.
+
+Without patch patch v1 11/11 I am getting this:
+
+mcopy -i
+/home/hauke/openwrt/openwrt/build_dir/target-arm_cortex-a5+vfpv4_musl_eabi/=
+linux-at91_sama5/tmp/openwrt-at91-sama5-at91-sama5d27_som1_ek-ext4-sdcard.i=
+mg.gz.boot
+/home/hauke/openwrt/openwrt/bin/targets/at91/sama5/u-boot-sama5d27_som1_ek_=
+mmc*/u-boot.bin
+::u-boot.bin
+Several file names given, but last argument (u-boot.bin) not a directory
+Long file name "u-boot.bin" already exists.
+a)utorename A)utorename-all r)ename R)ename-all o)verwrite O)verwrite-all
+s)kip S)kip-all q)uit (aArRoOsSq):
 
 
----
+I used this configuration:
+CONFIG_TARGET_at91=3Dy
+CONFIG_TARGET_at91_sama5=3Dy
+CONFIG_TARGET_MULTI_PROFILE=3Dy
+CONFIG_TARGET_DEVICE_at91_sama5_DEVICE_at91-sama5d2_ptc_ek=3Dy
+CONFIG_TARGET_DEVICE_at91_sama5_DEVICE_at91-sama5d2_xplained=3Dy
+CONFIG_TARGET_DEVICE_at91_sama5_DEVICE_at91-sama5d27_som1_ek=3Dy
+CONFIG_TARGET_DEVICE_at91_sama5_DEVICE_at91-sama5d3_xplained=3Dy
+CONFIG_TARGET_DEVICE_at91_sama5_DEVICE_at91-sama5d4_xplained=3Dy
+CONFIG_TARGET_ALL_PROFILES=3Dy
+CONFIG_TARGET_INITRAMFS_COMPRESSION_XZ=3Dy
+CONFIG_TARGET_ROOTFS_INITRAMFS=3Dy
 
-[1] EA8300 "factory" images don't match the "other" branch
-
-$ hexdump -C -n 128 ~/devel/ea8300/FW_EA8300_1.1.4.191539_prod.img
-00000000  d0 0d fe ed 00 27 72 7c  00 00 00 38 00 27 6e a8  |.....'r|...8.'n.|
-00000010  00 00 00 28 00 00 00 11  00 00 00 10 00 00 00 00  |...(............|
-00000020  00 00 00 6c 00 27 6e 70  00 00 00 00 00 00 00 00  |...l.'np........|
-00000030  00 00 00 00 00 00 00 00  00 00 00 01 00 00 00 00  |................|
-00000040  00 00 00 03 00 00 00 04  00 00 00 5c 5b d0 bf b0  |...........\[...|
-00000050  00 00 00 03 00 00 00 27  00 00 00 00 41 52 4d 20  |.......'....ARM |
-00000060  4c 69 6e 6b 73 79 73 20  46 49 54 20 28 46 6c 61  |Linksys FIT (Fla|
-00000070  74 74 65 6e 65 64 20 49  6d 61 67 65 20 54 72 65  |ttened Image Tre|
-00000080
-
-
---------------223095FDFB005DE7DA9EAD46
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 7bit
-
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <pre><tt>On 6/16/19 4:49 AM, Christian Lamparter wrote:</tt><tt>
-</tt></pre>
-    <blockquote type="cite" cite="mid:7807967.26YyYKSkP6@debian64">
-      <pre class="moz-quote-pre" wrap="">On Saturday, June 15, 2019 11:40:56 PM CEST Jeff Kletsky wrote:
-</pre>
-      <blockquote type="cite">
-        <pre class="moz-quote-pre" wrap="">From: Jeff Kletsky <a class="moz-txt-link-rfc2396E" href="mailto:git-commits@allycomm.com">&lt;git-commits@allycomm.com&gt;</a>
-
-When OEM volumes are present in the [alt_]firmware partition,
-sysupgrade will write a new kernel, but will fail to write
-the root file system. The next boot will hang indefinitely
-
-    Waiting for root device /dev/ubiblock0_0...
-
-Modified ipq40xx/base-files/lib/upgrade/linksys.sh
-to remove both `squashfs` and `ubifs` if found
-on the target firmware partition's UBI device.
-
-Run-tested-on: Linksys EA8300
-
-Signed-off-by: Jeff Kletsky <a class="moz-txt-link-rfc2396E" href="mailto:git-commits@allycomm.com">&lt;git-commits@allycomm.com&gt;</a>
-</pre>
-      </blockquote>
-      <pre class="moz-quote-pre" wrap="">
-Can you check if this is still working? Or if I broke it
-when I was implementing the shellcheck changes?
-
-<a class="moz-txt-link-freetext" href="https://git.openwrt.org/?p=openwrt/staging/chunkeey.git;a=commit;h=003c63f7b1102702fb4a0580683b21ded1ee1a3e">https://git.openwrt.org/?p=openwrt/staging/chunkeey.git;a=commit;h=003c63f7b1102702fb4a0580683b21ded1ee1a3e</a>
-
-Cheers,
-Christian
-
-[...]</pre>
-    </blockquote>
-    <pre>
-With the caveat that I don't know how to exercise the 
-[ "$magic_long" = "27051956" ] branch of the code[1], 
-your referenced commit from staging/chunkeey is able to 
-sysupgrade my ipq4019-based EA8300 both over OpenWrt
-as well as over OEM. I have also spot-checked the 
-"missing boot_part" path.
-
-Thanks for the quick review of the changes as well as 
-the clean-up of existing code.
-
-Jeff
-
-
----
-
-[1] EA8300 "factory" images don't match the "other" branch
-
-$ hexdump -C -n 128 ~/devel/ea8300/FW_EA8300_1.1.4.191539_prod.img 
-00000000  d0 0d fe ed 00 27 72 7c  00 00 00 38 00 27 6e a8  |.....'r|...8.'n.|
-00000010  00 00 00 28 00 00 00 11  00 00 00 10 00 00 00 00  |...(............|
-00000020  00 00 00 6c 00 27 6e 70  00 00 00 00 00 00 00 00  |...l.'np........|
-00000030  00 00 00 00 00 00 00 00  00 00 00 01 00 00 00 00  |................|
-00000040  00 00 00 03 00 00 00 04  00 00 00 5c 5b d0 bf b0  |...........\[...|
-00000050  00 00 00 03 00 00 00 27  00 00 00 00 41 52 4d 20  |.......'....ARM |
-00000060  4c 69 6e 6b 73 79 73 20  46 49 54 20 28 46 6c 61  |Linksys FIT (Fla|
-00000070  74 74 65 6e 65 64 20 49  6d 61 67 65 20 54 72 65  |ttened Image Tre|
-00000080
-</pre>
-  </body>
-</html>
-
---------------223095FDFB005DE7DA9EAD46--
-
-
---===============8506073561638547469==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Hauke
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8506073561638547469==--
-

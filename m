@@ -2,94 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2C5947469
-	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 13:56:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDB3547534
+	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 16:32:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o9t0ZObwzSHpTrajOYmG4qFTmYsPSCG9bNgBVTbn9ss=; b=klpQTxWU/ZG6Bs
-	eljhFFsTL19jVBvoNO3YYP4RD+sRbg5H8KO+RlKFKrPrKWlP5nGevE2njxBRwWYCXrJDgv2NWbWbv
-	ThzCEmwzz9dECJ6gBcaUy4zAqCZELk/v+J6kpqkFinDOpfTrE9HT40P17lah2phxZ6LWabcYBedJD
-	k8I2WyDJ5abpee25OJvtZVt+4GclGrOHyqFiaGRg5XnzFecY0DahYJoEOdji8OK8wYxlr5vX/jAMp
-	z03VbFvwNc/RZWc/jBBbK//ZklfAoogcHo5JjDb/xFbwNmINflsZb7KRufaCIP+ruzq6MjGwpaKBt
-	SyEbjunld29ZFsG3JSJg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=riTCumUhcCo+i+76A0vWq/4ZR+9H14/64WkM8vio1lo=; b=Sd7xlFAh+cDwum
+	pcuaQAUrArvzLJy8Lc3gAiFoUqnpiGOgZI0aYMseSqirSyHvIe/O7D8i+fKEEgMVY/W5atwtjDRdB
+	TBG9f64sSxlKW45bMcxf47EB1dw42EVk5awPtL1LbQWQyGkxzqFF+8jztoYP3ALtWme0Q+lXDPJvw
+	P5QiYJAN6AU/9h7stqJeIjp91UIGZJyu6WYvlyrm450i3+bvq1artCEQGnR/aWWm8s0T3+bmW+wTZ
+	Q9Ub+8YNXFPrWa8oyT7Ep7NAJ+cW48TuqcARFdiUqXQzpCfj4bpIKfIWipfLf4yvtVy72/e9ftY43
+	11kLqy4/smpInWqK8I7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcTll-0005xd-L5; Sun, 16 Jun 2019 11:56:21 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1hcWCH-0002UG-4S; Sun, 16 Jun 2019 14:31:53 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcTlZ-0005xG-ON
- for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 11:56:11 +0000
-Received: by mail-wm1-x343.google.com with SMTP id s15so6295897wmj.3
- for <openwrt-devel@lists.openwrt.org>; Sun, 16 Jun 2019 04:56:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lMe+A6zJLt8KFq9kZqFLoeSKj2OzG6ZBbtmvN7cJD2E=;
- b=Lxxx6UMcym64KTcmVwRBJfLYSyq36RlmYHEmAj4y7+Z5WBbIAaRuDWA9KgYAb9xF0b
- is+NXz4hvSvG/IezuvOyAuWj6IChmKe9840ixWxjuYCn4kw08xO1ZebdTxUf4osF7Tff
- wcl+dQclsS5j8tt0Y1DbssMQ8bIm1Yqegkm+CICL/+POmXoiDPFkRjfV+x53tD+5NKcd
- 0FC9qRfYxm3nqmSqLRtkYlIUYHHlzMZCnL0xgBsPPsoLmvqrbeO5/xnYt68yiXLXrnHM
- usqGe9dS9Qm8flmEeom7suRzaXLzbV71ai+ZfXXFuTEEPNsAUMsgP/vglVOJHlvveVCu
- 52Pw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lMe+A6zJLt8KFq9kZqFLoeSKj2OzG6ZBbtmvN7cJD2E=;
- b=eJZTUV1N4oZQeugreplgq0Bf3IslksQSEVT2vlltr2Vt/jPjaM4a8tuu3ldKguPna3
- ZiaYUUBRYYUdICKMUUlGsq067cGYY5ZyGKBX9PeQoRIwojZty6yHmhjK4eb30w6ZJAAJ
- weRRy4lKXUbO9Mb6+p3ErrZE17cX9VkZePMjFVZ8oFDEqvx0/nqu0sfd7loIqA/x157I
- NaQN2KWBURuIBhYuV9tZXMn9Q2x4yAs6m1OWbT7KOP0ySKRCxjh3THrZRDuuceCDpkpd
- PvJflGy57yg9wXr8r19yOpfhOze3NdDQIiDkS+7k1Y2BVOTddmmQfKGWRqSsTKHqETnF
- VKEg==
-X-Gm-Message-State: APjAAAUMBqSLS2WV1hNGijkDhojtGqlkJR2BeQ0u3FCzNdcEKaYLt4SW
- 1tdHJXnutd5TayplDy+HtKFiYU6K
-X-Google-Smtp-Source: APXvYqxtjV0ZRev+jYpWUSzDcZfGHj8HvdJPAAuDKwKvpSlAfuf15VVPhjLFRpQZ+E7/7IN/OTas+w==
-X-Received: by 2002:a7b:cf32:: with SMTP id m18mr15321441wmg.27.1560686166651; 
- Sun, 16 Jun 2019 04:56:06 -0700 (PDT)
-Received: from debian64.daheim (pD9E29820.dip0.t-ipconnect.de.
- [217.226.152.32])
- by smtp.gmail.com with ESMTPSA id 17sm6920972wmx.47.2019.06.16.04.56.05
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 16 Jun 2019 04:56:06 -0700 (PDT)
-Received: from chuck by debian64.daheim with local (Exim 4.92)
- (envelope-from <chunkeey@gmail.com>) id 1hcTlV-0001pW-DA
- for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 13:56:05 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 16 Jun 2019 13:56:05 +0200
-Message-Id: <20190616115605.6992-1-chunkeey@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ id 1hcWBw-0002TR-2W
+ for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 14:31:34 +0000
+Received: from [IPv6:2003:e5:3f3f:8f00:edb2:7028:6605:31e7]
+ (p200300E53F3F8F00EDB27028660531E7.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f3f:8f00:edb2:7028:6605:31e7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 60E7F1E151;
+ Sun, 16 Jun 2019 16:31:25 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Christian Lamparter <chunkeey@gmail.com>
+References: <20190613210036.30922-1-mail@david-bauer.net>
+ <7513956.bV6BmdoukA@debian64>
+ <CACRpkdYbd2qY4=L1rrDnvnaPqMcKjfqdNB1kWg1+AJBKoZnjcA@mail.gmail.com>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <c30d2d95-7d2b-ca8b-9e15-c0ffdd016ba9@david-bauer.net>
+Date: Sun, 16 Jun 2019 16:31:24 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
+In-Reply-To: <CACRpkdYbd2qY4=L1rrDnvnaPqMcKjfqdNB1kWg1+AJBKoZnjcA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_045609_818061_17148456 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190616_073132_411689_0CD338B7 
+X-CRM114-Status: GOOD (  21.60  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH] phytool: add phytool utility
+Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: read
+ initial state
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,96 +93,90 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From the README.md:
+Hello Linus,
 
-phytool is a Linux MDIO register access utility.
+On 15.06.19 10:26, Linus Walleij wrote:
+> Without any detailed knowledge I'd say the most common cause
+> is the underlying GPIO chip implementation. There are often transient
+> line events when the system is powered up and initialized and it
+> is often necessary for the gpio_chip driver to clear any interrupt
+> flags in hardware before setting up the gpio chip, especially the
+> irqchip portions of it.
+> 
+> I tried to half-guess what gpio chip this is using and since it
+> is WiFi pro 1200e I guess ths gpio driver is
+> drivers/gpio-ath79.c which does indeed initialize an
+> irqchip without clearing the interrupts first.
+> 
+> Can you try this patch, if this solves the problem I will commit
+> it upstream as well:
 
-Usage:
+Thanks for your patch. I've tested it on my device but sadly, i still
+see the ghost presses.
 
-phytool read  IFACE/ADDR/REG
-phytool write IFACE/ADDR/REG <0-0xffff>
-phytool print IFACE/ADDR[/REG]
+It seems the input is indeed not stable after setting the GPIO
+direction. With the following patch applied, i get zero ghost presses
+and the buttons work as expected. However I'm not sure if this approach
+is the right one to fix the underlying issue.
 
-where
 
-ADDR := C22 | C45
-C22  := <0-0x1f>
-C45  := <0-0x1f>:<0-0x1f>
-REG  := <0-0x1f>
+From 2b0c12c9c9aa1955a1fa42234597601148bcf548 Mon Sep 17 00:00:00 2001
+From: David Bauer <mail@david-bauer.net>
+Date: Sun, 16 Jun 2019 16:20:49 +0200
+Subject: [PATCH] gpio: ath79: circumvent ghost interrupts
 
-Note: Not all MDIO drivers support the port:device
-      Clause 45 address format.
+The ath79 gpio driver may emit "ghost interrupts" in case the interrupts
+are registered directly after setting the GPIO direction.
 
-The read and write commands are simple register level accessors.
-The print command will pretty-print a register. When using the
-print command, the register is optional. If left out, the most
-common registers will be shown.
+This patch adds a short delay before activating interrupts on any line
+to make sure no ghost interrupts will be registered.
 
-Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
+Signed-off-by: David Bauer <mail@david-bauer.net>
 ---
- package/network/utils/phytool/Makefile | 46 ++++++++++++++++++++++++++
- 1 file changed, 46 insertions(+)
- create mode 100644 package/network/utils/phytool/Makefile
+ drivers/gpio/gpio-ath79.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/package/network/utils/phytool/Makefile b/package/network/utils/phytool/Makefile
-new file mode 100644
-index 0000000000..b971c1ad13
---- /dev/null
-+++ b/package/network/utils/phytool/Makefile
-@@ -0,0 +1,46 @@
-+include $(TOPDIR)/rules.mk
+diff --git a/drivers/gpio/gpio-ath79.c b/drivers/gpio/gpio-ath79.c
+index 0a553d676042..238f5bdbe7a8 100644
+--- a/drivers/gpio/gpio-ath79.c
++++ b/drivers/gpio/gpio-ath79.c
+@@ -12,6 +12,7 @@
+  */
+ 
+ #include <linux/gpio/driver.h>
++#include <linux/delay.h>
+ #include <linux/platform_data/gpio-ath79.h>
+ #include <linux/of_device.h>
+ #include <linux/interrupt.h>
+@@ -96,6 +97,12 @@ static void ath79_gpio_irq_enable(struct irq_data *data)
+ 	u32 mask = BIT(irqd_to_hwirq(data));
+ 	unsigned long flags;
+ 
++	/*
++	 * The input can be unstable after configuring GPIO direction.
++	 * Wait a bit to assert the input is stable.
++	 */
++	msleep(25);
 +
-+PKG_NAME:=phytool
-+PKG_VERSION:=2
-+PKG_RELEASE:=1
-+
-+PKG_RELEASE=$(PKG_SOURCE_VERSION)
-+
-+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
-+PKG_SOURCE_URL:=https://github.com/wkz/phytool/releases/download/v$(PKG_VERSION)
-+PKG_HASH:=9901a14e8c6af02b7333c60b21ff81f50620e8326d54827185e5617ff9b11d21
-+
-+PKG_LICENSE:=GPL-2.0+
-+PKG_LICENSE_FILES:=LICENSE
-+
-+PKG_MAINTAINER:=Christian Lamparter <chunkeey@gmail.com>
-+
-+include $(INCLUDE_DIR)/package.mk
-+
-+define Package/phytool
-+  SECTION:=net
-+  CATEGORY:=Utilities
-+  TITLE:=phytool Linux MDIO register access
-+  URL:=https://github.com/wkz/phytool.git
-+endef
-+
-+define Package/phytool/description
-+   Linux MDIO register access
-+endef
-+
-+define Build/Configure
-+endef
-+
-+define Build/Compile
-+	$(MAKE) -C $(PKG_BUILD_DIR) \
-+		CC="$(TARGET_CC)" \
-+		CFLAGS="$(TARGET_CFLAGS) -Wall" \
-+		LDFLAGS="$(TARGET_LDFLAGS)"
-+endef
-+
-+define Package/phytool/install
-+	$(INSTALL_DIR) $(1)/usr/bin
-+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/phytool $(1)/usr/bin/
-+endef
-+
-+$(eval $(call BuildPackage,phytool))
+ 	raw_spin_lock_irqsave(&ctrl->lock, flags);
+ 	ath79_gpio_update_bits(ctrl, AR71XX_GPIO_REG_INT_ENABLE, mask, mask);
+ 	ath79_gpio_update_bits(ctrl, AR71XX_GPIO_REG_INT_MASK, mask, mask);
 -- 
-2.20.1
+2.22.0
+
+
+Best wishes
+David
+
+
+
 
 
 _______________________________________________

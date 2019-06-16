@@ -2,83 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D68C47606
-	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 19:02:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0B8447607
+	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 19:08:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zZulH4NDY2Ghfsroa9cMGoWDy9b0vLOwiOHbFofV1/w=; b=jDtSUvSbmEx0qp
-	298ZuyZBzcoUhEWHLDytYzxeq6D7o882R1bINNj567kwbGywmroAWzhW4SX26HR+4pTXTiC5PSMDO
-	wCYCH8laYWzCAANWaf6gAbMPXFtUwR8TbGG6gtMEpV/m0rrEcCCAveaNMUG/eML+A6qK0SI2S8Pr0
-	7Ny/5lqiQwwl8+ceA2GH/HgjIhLtnSsQVHBCObaIQaBhnPnU4YrWiWEU7h76A3I3x6ZNO/YhTZ95L
-	5H5L33266vd+5HnMMSo1elwsl64RZFSa773GZzVMYzAByAHLZZEQMiRTy9AMqXzQhCBeN6vEJhdUx
-	ulldBydKhcqk2h8FVYqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NtDIQ1REVpGoQmBHiSpaXwDXUQp9OgiJshat+7zeAdw=; b=TmDCeYpvatkDPurCkqSkg8H1y
+	MZ4Nr650+jbNXbSwMP0o1YDRMPjTSiL66mWdaR5/8iUbkUIVXRQyCTGxPtm1B9frtEWbwlxYjBSZz
+	PLqXziCle4zs93bwM4KLLTcG0vH2dgQ+ohgDjQ3H6TJhF15KL08LBJtNJL3RWOr87PsRuhOlUR7LQ
+	jhF3/sfU1W4LkEhizDivNLB3sLvs5rw3tbFnXHqxqfx4PTEVBPrBDE2xySk09rKveNRR3GsS/1MWi
+	zT1Fc3Z4+pCcqO3nUnptb904ETc6bkZWOGqAnPoH0n1CYfoCnvVI2nJMopdFe3AUyr5Hu4YbVEeCa
+	94kmGEjuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcYXa-0001Xu-EM; Sun, 16 Jun 2019 17:02:02 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1hcYe4-0003OV-5H; Sun, 16 Jun 2019 17:08:44 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcYWa-0000lN-Su
- for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 17:01:02 +0000
-Received: by mail-wm1-x334.google.com with SMTP id w9so2849667wmd.1
- for <openwrt-devel@lists.openwrt.org>; Sun, 16 Jun 2019 10:01:00 -0700 (PDT)
+ id 1hcYds-0003NW-55
+ for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 17:08:33 +0000
+Received: by mail-lf1-x141.google.com with SMTP id b11so4834748lfa.5
+ for <openwrt-devel@lists.openwrt.org>; Sun, 16 Jun 2019 10:08:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=xsnQltkr30uC84/+aA/PiFOF5en2qSwqWYp8xTYEMUg=;
- b=rXHrbTBE9UsG0Ls9cXb7U6IN6FalEFe0AZO4B6FUVTAyLoPybFyxCLeqd9UsksB1OC
- dKN+Xp46SPC1kSypJC99aSO2Wo6RwAHv9tMldNiPO8Cqb1kTORdjA0FAjjeDH1RxpFpe
- DJnjSD0oWMqA8gFuXH6wi4frpC0Qlb2MY0ceKS+xNavVSM783FibljoKBmFHE+pPgi2K
- WsmCP58suZzkw1QkmtfVgTJfq0Q8JwTIrkbNINaRnq0RR+TIHfcl7KeIZ6zYluKZOM+w
- a+LQmBRAbzmODgDv8SXQ0ift61lXwjguXoWxScmRVl4qaDKDkb5g+ow7A8lqTlnVU/Wv
- 4qAQ==
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=iMYd9bhbB01b+v+gkQrn4riQ6EDtj0plfkixNwxpMWE=;
+ b=LiYZaXQVNQT+7BY/kXqEX1GKiuOtX3t4AkkMS6rcFAchtCkOYLGk3wLE1xl24GGoWZ
+ 43/Uq+YNGgNdP6dQzWrp6sO8sqnxzNCFEkCj3ER2lj5QvMqi5RD/fRBXedNtLBj5nmAB
+ g8+dBSdjNVVNEfV7PJlSIl3QPmdEpHPepNAFw/NRW2VoJjHEPiRwGZDQR6hmIVKjHqaJ
+ 7IuH5mJ5im1vwzMszpsVpP7gVbH+vG1AjMVX/y9sTw/sHnPg2VnA6PDOerwRN3S4sT9H
+ FkR/s3ECzF1cxUqbasx83Ao4IpdPkZik71bgywXbj1o7u6NaA+3aDd9ZsnpSnGvqiV+7
+ HZXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=xsnQltkr30uC84/+aA/PiFOF5en2qSwqWYp8xTYEMUg=;
- b=RLOwnt9DAtooBoPMkfb1d/fOtzbEldI44PY8v1egtUYXo4eFxaCUDzrWko661D8imD
- 5kxtsSC1a19yZgoUo0JUcz8w5Fb016SHh7ULlfPajN42OeRyjFSn5wYprIaruG8hfeYA
- 0beqYhYKmiWa7YIcNSsU9SVdNk7TH1YRIYJwszCd9O34HX95BhNgP3Mlbkr9VXPEiTKr
- 4BJ8sGRrzMkGpdrEzuwKvReFk2vHpd64wncwyh4+qhJDBtK6/cTfGH819EP3xaTvjO5B
- rBaDDGNs+f2GNCCTYYFLKNEOy+uHqK4prd5+yxpQqnUGGB7qV7IHoEmHNWFqk1Fx4MXH
- 4otg==
-X-Gm-Message-State: APjAAAV0xdmOwH7JPBNOUoRAC6qMYpFz8xESD95+RPfLRYhVJkidEI2X
- GDBvQrjy0/Oi68uoL2EHO03CAdxe1lI=
-X-Google-Smtp-Source: APXvYqxk0/6/91ZepemdBTjlQhLjnBT3Pi09hUqQGHeQFGTkokv6SfRXojxIPpvBATj89WedLNS7Uw==
-X-Received: by 2002:a1c:3dc1:: with SMTP id k184mr16048530wma.88.1560704458784; 
- Sun, 16 Jun 2019 10:00:58 -0700 (PDT)
-Received: from Ansuel-XPS.localdomain (93-44-105-95.ip96.fastwebnet.it.
- [93.44.105.95])
- by smtp.googlemail.com with ESMTPSA id l8sm28907931wrg.40.2019.06.16.10.00.57
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 16 Jun 2019 10:00:57 -0700 (PDT)
-From: Ansuel Smith <ansuelsmth@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 16 Jun 2019 19:00:50 +0200
-Message-Id: <20190616170050.27126-4-ansuelsmth@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190616170050.27126-1-ansuelsmth@gmail.com>
-References: <20190616170050.27126-1-ansuelsmth@gmail.com>
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=iMYd9bhbB01b+v+gkQrn4riQ6EDtj0plfkixNwxpMWE=;
+ b=T2dbLmgOoPK9XupiZBSX6/br0Go/PZS3LOFWAG7IcQ8hAa6k6/ugA4O2W1Uqe2hW4K
+ AXQfBuNTB+4adRNnqpyOooTF5WRiu90bHc4txloJwg4b7RyJY62EIiYlhvRzdILvFbM3
+ 1bP5Me6ZzKOV7GxUvykZOrPiXT5EVQIWSGBqBFi9SXVm/WNhHvFsUUhrDeqPTWr8Mllk
+ lncD3yqP+Bf0kMif1eYsiJSCu6xIY4eYkcj3M2rbXk7UwUKpgg2uZfwk7kF5PeA4IUwq
+ YKf5/c91u5lDcUH31kLN1MMpQb6T2u6891L6ewKsN2t06iYuYSERHZKpav31PII/QjCG
+ C2lw==
+X-Gm-Message-State: APjAAAXvokCZKjQdKhsBEgymhdDIb7Bz4VYPhWXG012tMTeaC/YZmb2S
+ z+s8OYv8zqM78A1SZcDvIhg=
+X-Google-Smtp-Source: APXvYqwQ3uTXfl91MvW9AYq00J50WTQW804TaMk2QUtjInh/aNXbQt1hwdiiD1caId6SbLZo1JwN8A==
+X-Received: by 2002:ac2:5a01:: with SMTP id q1mr39163769lfn.46.1560704909252; 
+ Sun, 16 Jun 2019 10:08:29 -0700 (PDT)
+Received: from [192.168.55.103] (095160109150.warszawa.vectranet.pl.
+ [95.160.109.150])
+ by smtp.gmail.com with ESMTPSA id m24sm1366183lfl.41.2019.06.16.10.08.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 16 Jun 2019 10:08:28 -0700 (PDT)
+To: Christian Lamparter <chunkeey@gmail.com>
+References: <20190616115605.6992-1-chunkeey@gmail.com>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <83436d3e-5ddc-e8da-9f05-86f6e7829ccf@gmail.com>
+Date: Sun, 16 Jun 2019 19:08:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190616115605.6992-1-chunkeey@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_100100_930503_77582930 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20190616_100832_225221_E0E86B5F 
+X-CRM114-Status: GOOD (  18.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (ansuelsmth[at]gmail.com)
+ provider (pepe2k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:334 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,8 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [fstools PATCH: 4/4] libblkid-tiny: use
- blkid_probe_set_utf8label for label set
+Subject: Re: [OpenWrt-Devel] [PATCH] phytool: add phytool utility
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,89 +101,107 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Ansuel Smith <ansuelsmth@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel@lists.openwrt.org, Alexander Couzens <lynxis@fe80.eu>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Ansuel Smith <ansuelsmth@gmail.com>
----
- libblkid-tiny/f2fs.c | 2 --
- libblkid-tiny/hfs.c  | 2 --
- libblkid-tiny/ntfs.c | 6 +-----
- 3 files changed, 1 insertion(+), 9 deletions(-)
+Hi Christian,
 
-diff --git a/libblkid-tiny/f2fs.c b/libblkid-tiny/f2fs.c
-index 6efce61..2bf0f5e 100644
---- a/libblkid-tiny/f2fs.c
-+++ b/libblkid-tiny/f2fs.c
-@@ -71,12 +71,10 @@ static int probe_f2fs(blkid_probe pr, const struct blkid_idmag *mag)
- 	if (major == 1 && minor == 0)
- 		return 0;
- 
--#if 0
- 	if (*((unsigned char *) sb->volume_name))
- 		blkid_probe_set_utf8label(pr, (unsigned char *) sb->volume_name,
- 						sizeof(sb->volume_name),
- 						BLKID_ENC_UTF16LE);
--#endif
- 
- 	blkid_probe_set_uuid(pr, sb->uuid);
- 	blkid_probe_sprintf_version(pr, "%u.%u", major, minor);
-diff --git a/libblkid-tiny/hfs.c b/libblkid-tiny/hfs.c
-index 8676d36..04f25a1 100644
---- a/libblkid-tiny/hfs.c
-+++ b/libblkid-tiny/hfs.c
-@@ -294,11 +294,9 @@ static int probe_hfsplus(blkid_probe pr, const struct blkid_idmag *mag)
- 	if (be32_to_cpu(key->parent_id) != HFSPLUS_POR_CNID)
- 		return 0;
- 
--#if 0
- 	blkid_probe_set_utf8label(pr, key->unicode,
- 			be16_to_cpu(key->unicode_len) * 2,
- 			BLKID_ENC_UTF16BE);
--#endif
- 
- 	return 0;
- }
-diff --git a/libblkid-tiny/ntfs.c b/libblkid-tiny/ntfs.c
-index 93c1d88..3a9d5cb 100644
---- a/libblkid-tiny/ntfs.c
-+++ b/libblkid-tiny/ntfs.c
-@@ -82,13 +82,11 @@ enum {
- static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
- {
- 	struct ntfs_super_block *ns;
--#if 0
- 	struct master_file_table_record *mft;
--#endif
- 
- 	uint32_t sectors_per_cluster, mft_record_size;
- 	uint16_t sector_size;
--	uint64_t nr_clusters, off; //, attr_off;
-+	uint64_t nr_clusters, off, attr_off;
- 	unsigned char *buf_mft;
- 
- 	ns = blkid_probe_get_sb(pr, mag, struct ntfs_super_block);
-@@ -174,7 +172,6 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
- 	if (memcmp(buf_mft, "FILE", 4))
- 		return 1;
- 
--#if 0
- 	mft = (struct master_file_table_record *) buf_mft;
- 	attr_off = le16_to_cpu(mft->attrs_offset);
- 
-@@ -204,7 +201,6 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
- 
- 		attr_off += attr_len;
- 	}
--#endif
- 
- 	blkid_probe_sprintf_uuid(pr,
- 			(unsigned char *) &ns->volume_serial,
+On 16.06.2019 13:56, Christian Lamparter wrote:
+>  From the README.md:
+> 
+> phytool is a Linux MDIO register access utility.
+
+Is there any reason to keep it inside the main code base rather than in 
+packages feed?
+
 -- 
-2.20.1
+Cheers,
+Piotr
+
+> 
+> Usage:
+> 
+> phytool read  IFACE/ADDR/REG
+> phytool write IFACE/ADDR/REG <0-0xffff>
+> phytool print IFACE/ADDR[/REG]
+> 
+> where
+> 
+> ADDR := C22 | C45
+> C22  := <0-0x1f>
+> C45  := <0-0x1f>:<0-0x1f>
+> REG  := <0-0x1f>
+> 
+> Note: Not all MDIO drivers support the port:device
+>        Clause 45 address format.
+> 
+> The read and write commands are simple register level accessors.
+> The print command will pretty-print a register. When using the
+> print command, the register is optional. If left out, the most
+> common registers will be shown.
+> 
+> Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
+> ---
+>   package/network/utils/phytool/Makefile | 46 ++++++++++++++++++++++++++
+>   1 file changed, 46 insertions(+)
+>   create mode 100644 package/network/utils/phytool/Makefile
+> 
+> diff --git a/package/network/utils/phytool/Makefile b/package/network/utils/phytool/Makefile
+> new file mode 100644
+> index 0000000000..b971c1ad13
+> --- /dev/null
+> +++ b/package/network/utils/phytool/Makefile
+> @@ -0,0 +1,46 @@
+> +include $(TOPDIR)/rules.mk
+> +
+> +PKG_NAME:=phytool
+> +PKG_VERSION:=2
+> +PKG_RELEASE:=1
+> +
+> +PKG_RELEASE=$(PKG_SOURCE_VERSION)
+> +
+> +PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+> +PKG_SOURCE_URL:=https://github.com/wkz/phytool/releases/download/v$(PKG_VERSION)
+> +PKG_HASH:=9901a14e8c6af02b7333c60b21ff81f50620e8326d54827185e5617ff9b11d21
+> +
+> +PKG_LICENSE:=GPL-2.0+
+> +PKG_LICENSE_FILES:=LICENSE
+> +
+> +PKG_MAINTAINER:=Christian Lamparter <chunkeey@gmail.com>
+> +
+> +include $(INCLUDE_DIR)/package.mk
+> +
+> +define Package/phytool
+> +  SECTION:=net
+> +  CATEGORY:=Utilities
+> +  TITLE:=phytool Linux MDIO register access
+> +  URL:=https://github.com/wkz/phytool.git
+> +endef
+> +
+> +define Package/phytool/description
+> +   Linux MDIO register access
+> +endef
+> +
+> +define Build/Configure
+> +endef
+> +
+> +define Build/Compile
+> +	$(MAKE) -C $(PKG_BUILD_DIR) \
+> +		CC="$(TARGET_CC)" \
+> +		CFLAGS="$(TARGET_CFLAGS) -Wall" \
+> +		LDFLAGS="$(TARGET_LDFLAGS)"
+> +endef
+> +
+> +define Package/phytool/install
+> +	$(INSTALL_DIR) $(1)/usr/bin
+> +	$(INSTALL_BIN) $(PKG_BUILD_DIR)/phytool $(1)/usr/bin/
+> +endef
+> +
+> +$(eval $(call BuildPackage,phytool))
+> 
 
 
 _______________________________________________

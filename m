@@ -2,96 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF0304769B
-	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 21:44:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B4EF476FF
+	for <lists+openwrt-devel@lfdr.de>; Sun, 16 Jun 2019 23:41:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+pvvgeyVBylOG/5HOyy+ys4JJoLf/6nMHTeujwc7zt8=; b=U6nkLPo4rASDpteFz7tMcjad5
-	Y/vK5QJYLYGWTYw9qKb+6S9n+NLMEwNV+FERVyZUmQiZJq1JR5NUupJ5r4pCZVUah1YaWADs7lIaX
-	ky9tHXoiBbeanBdaZjYHpn76V9nRw0+1gqDx+2rxYJHpRa3GZP0hrVSGlq8PZa2WSvapUS49Z88M0
-	O2WWyHfTV1IeDLfEwgkvsSbMi3zdvSwIHDDg/Zm+V/EMP8IsnY+2L8LzVaySBKeZ6cpnl9ZFidp0I
-	QRL56KSUvnSIJ+myzPRFy0xkzmmb1n14QYr2d3gpifCRXBIHFBkTNGuvXvWfeENfQauUV5czatrIq
-	qREaySU4Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+WDqBYIAt3+9TPaiyY//EYDfAg4zGsSjUkk9fVTUZ8o=; b=hOi83ajeg+nMj2
+	s7uEM3EwoZkwGeH6Iqh6JQ+FiI0O0MnXzCIyw2T2aBJT4OyPYpdoCflfbmbAL2eyOqS2t6xLRyIeG
+	36bHlVUcVgTTM6XTrDMWAppN+ykbhgOPaG/t9d8+wgpnWyq2fFZ5r3UN+k9kUAjOHyUiETpPEC1SF
+	FG9i/+pgiVNaHzuCeYjxyxo3ganCj+/JXlDLfTRTzMzMjeJlNy3m4Basnatme3wIOLVV2lExOFPHy
+	uh6Tj1ZoeOCKaKDQ6ItXQ1iFpsZ45KvyyjUTu2cI38FYb5VEe7c5LPvdKgW3S/mlYvmnbroWifHDs
+	NrdjQ+98ys6U268vv5gA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcb4q-0006dH-0p; Sun, 16 Jun 2019 19:44:32 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hccuB-0000MG-06; Sun, 16 Jun 2019 21:41:39 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcb4g-0006cw-3b
- for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 19:44:23 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k18so7195064ljc.11
- for <openwrt-devel@lists.openwrt.org>; Sun, 16 Jun 2019 12:44:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=g2FvrKWDK8sCrJ3B3Y+jmK5xCi1WauugdGXEgzaHlfE=;
- b=DpL65hr688AQ9geN653dXWJZEsYgbG3NtFAv3wqIS0rhKfakVG6YmrAiqiXdOrUM26
- 09HaH3i0qk96llqG+TOVK15qOmbYS/m6d2PMcr5FziYivx4sCHVd7cnkWyMGbKPTxQzJ
- q9oCZr0An7KX5sSVvBX/7pAQ6ymDsRqzhH4+gP8j2NN289+4Qo7nh+u1/51ea0q5pd6v
- NdvNqhwo5LDMZu/kC0X7Qq4wouTQe2MBPS7VjUEkuKGKzSBZJCcE1oyJLlwdpxeWXTaI
- nKzk0cSAdIXA6uNyaHxBRSAJtvNuHfff1JlQLg+MoTedaWUqBD3DfRN9ERam9oXoYZD+
- 3fJg==
+ id 1hccu0-0000LH-Fn
+ for openwrt-devel@lists.openwrt.org; Sun, 16 Jun 2019 21:41:29 +0000
+Received: by mail-lf1-x141.google.com with SMTP id a9so5048911lff.7
+ for <openwrt-devel@lists.openwrt.org>; Sun, 16 Jun 2019 14:41:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vZ+O2sBuymz0JFURnyDpv5vD4FvOut6ISgM/pkke4dw=;
+ b=Szk1wb4qIgDoLZzgRBzC3J5HoDU4AyOKm4r7CNbUElt7pyQJEJ85k39OnORMuTX+hI
+ 6f41K/7i2SpsGX5FIzpbX6UcehbYQe29cFTvkcsOkSczvpJ2blrxdrgL3YTXerQJOcRY
+ xUO5/Kw+6oZZBk5i9OlMZU6H8bMtWcf/LwDHQtfbtjBwTo3XL090mrMHijiN7E0WTa+j
+ rgO2ue/7tXvHnEvxKM7RUngZ3u21+V1IGQVdIp8PBOHzfm/DUpZ4iD4KQnPImlGM6Et5
+ 6uHypJo+hk4ikyx120peIzSMAx4onf1zoGXhunHUCp42bHgJlyeaxQb8Oxm2B2M7Fts/
+ JWew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=g2FvrKWDK8sCrJ3B3Y+jmK5xCi1WauugdGXEgzaHlfE=;
- b=q+9pumTkI2juccNIgzvSzpHTHFYEAxzWlkowJQ3gjFQbRvuX7zyNs6BHEx0lwOZUbk
- qf4ovh28KX3WjYCe9/S8f+gBi/NmlXWolZBNfZ+5/5cK0qTK5GUFLtXbQwH8sXSVQ/sb
- 7cjwGE6pvHHshy9lT2bDPu+unlezZegWj5g/QZQuA7gI2h7nb4XvQ4wtBNVeQQCy9kSs
- gy+bTEuMnX5G5Yqx01g3GqACNip+SD2B5J1iOMSFdkWDUGCO58eriZpFoUCQq9Rm4DpJ
- OmMz9Vi72ojW+cGPSeZCMbFzM5Q9mPgFPiN12O1yh2G7ZuxoH6thgVJirbP4HAcYahwR
- dYqA==
-X-Gm-Message-State: APjAAAVaWQ81k/hgJ+sv6/3p/3QQhgFsq6mQ9v5dDwoOnDC5Syrpo3BD
- EX+xsNiscbt3gIUgHcJkq7M=
-X-Google-Smtp-Source: APXvYqx/dXvMG11a9v3Mr0P4tzPJ+tOjpK3hvPUpPvrMUKi+idNVz+d8V3FR2Sa1S8Pzc6eJxWhF3Q==
-X-Received: by 2002:a2e:8756:: with SMTP id q22mr26767842ljj.108.1560714257470; 
- Sun, 16 Jun 2019 12:44:17 -0700 (PDT)
-Received: from [192.168.55.103] (095160109150.warszawa.vectranet.pl.
- [95.160.109.150])
- by smtp.gmail.com with ESMTPSA id s66sm1742059lje.102.2019.06.16.12.44.16
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 16 Jun 2019 12:44:16 -0700 (PDT)
-To: Christian Lamparter <chunkeey@gmail.com>
-References: <20190616115605.6992-1-chunkeey@gmail.com>
- <83436d3e-5ddc-e8da-9f05-86f6e7829ccf@gmail.com>
- <CAAd0S9AMcg0qAyMNipj_zfnVcZ=EEsRP5_astyaJGw+pSrkyjg@mail.gmail.com>
-From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <b9d1b6af-bb16-37ed-f3f1-f05d6d467e41@gmail.com>
-Date: Sun, 16 Jun 2019 21:44:15 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ bh=vZ+O2sBuymz0JFURnyDpv5vD4FvOut6ISgM/pkke4dw=;
+ b=oyZk9VHNw32QHUotB4OdNmKH8D8BHrPl0aWlAy32jhwniV/jILcICKYx7qoqWg/pBL
+ W3g6M0vfFZm4trh/YNEr22aG25xjCR/E8bjC0vIdgH5LroDcObe2B0tFLtjdrvM1Iq7I
+ 6gB9S0/rp54btleOKMN/lKsAVw3BrEyirjVP/OVUtbA46jQERq0IgnyP6D2XudYkikdF
+ 7G850k3eutuUthekg07QX1xjmeygzH9trNISEoLKFEiuprlZZiXIsIsVBDY3ng5p5aw4
+ YDDT7Ig0UMkjKVUSJguivUXEOelEGOdG67VGERo0fglJfjlGNYDc0iGTmnDkjS39hgsZ
+ Y0gg==
+X-Gm-Message-State: APjAAAXBaaVN+MHgOWc3hX+vmml+5llbtkL19ylGbFyf7z6f/Sl2MhGQ
+ rRNpry9DJiehjpNj8oJ3b6B5Yg==
+X-Google-Smtp-Source: APXvYqwTMlZO6XCMxxHtHplwA5OucxBuTkfictbWTCctLM1Ebkhp7isI3Si7bhNalfAY9FWHV6XRrw==
+X-Received: by 2002:ac2:5595:: with SMTP id v21mr16571685lfg.54.1560721285960; 
+ Sun, 16 Jun 2019 14:41:25 -0700 (PDT)
+Received: from linux.local (c-d2cd225c.014-348-6c756e10.bbcust.telenor.se.
+ [92.34.205.210])
+ by smtp.gmail.com with ESMTPSA id 11sm1782520ljc.66.2019.06.16.14.41.24
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sun, 16 Jun 2019 14:41:24 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: linux-arm-kernel@lists.infradead.org,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>
+Date: Sun, 16 Jun 2019 23:41:20 +0200
+Message-Id: <20190616214120.9054-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <CAAd0S9AMcg0qAyMNipj_zfnVcZ=EEsRP5_astyaJGw+pSrkyjg@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190616_124422_178594_A805FB01 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190616_144128_597639_85C028C7 
+X-CRM114-Status: GOOD (  10.53  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pepe2k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] phytool: add phytool utility
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: [OpenWrt-Devel] [PATCH] ARM: dts: gemini Fix up DNS-313 compatible
+ string
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,42 +93,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Alexander Couzens <lynxis@fe80.eu>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ LEDE Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Christian,
+It's a simple typo in the DNS file, which was pretty serious.
+No scripts were working properly. Fix it up.
 
-On 16.06.2019 20:50, Christian Lamparter wrote:
-> Hello Piotr,
-> 
-> 
-> On Sun, Jun 16, 2019 at 7:08 PM Piotr Dymacz <pepe2k@gmail.com> wrote:
->>
->> Hi Christian,
->>
->> On 16.06.2019 13:56, Christian Lamparter wrote:
->> >  From the README.md:
->> >
->> > phytool is a Linux MDIO register access utility.
->>
->> Is there any reason to keep it inside the main code base rather than in
->> packages feed?
-> K, I rejected it on patchwork.
-> 
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/boot/dts/gemini-dlink-dns-313.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Just a side note here. During the meetup in Hamburg we discussed about 
-having only the required and actually "basic" packages inside the master 
-tree and move everything else to packages feed (after reviewing what's 
-there). I believe this will be also included in the official summary 
-from the meetup and discussed further afterwards.
-
+diff --git a/arch/arm/boot/dts/gemini-dlink-dns-313.dts b/arch/arm/boot/dts/gemini-dlink-dns-313.dts
+index b12504e10f0b..360642a02a48 100644
+--- a/arch/arm/boot/dts/gemini-dlink-dns-313.dts
++++ b/arch/arm/boot/dts/gemini-dlink-dns-313.dts
+@@ -11,7 +11,7 @@
+ 
+ / {
+ 	model = "D-Link DNS-313 1-Bay Network Storage Enclosure";
+-	compatible = "dlink,dir-313", "cortina,gemini";
++	compatible = "dlink,dns-313", "cortina,gemini";
+ 	#address-cells = <1>;
+ 	#size-cells = <1>;
+ 
 -- 
-Cheers,
-Piotr
+2.21.0
+
 
 _______________________________________________
 openwrt-devel mailing list

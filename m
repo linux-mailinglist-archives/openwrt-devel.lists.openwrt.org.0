@@ -2,37 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51B1249EA9
-	for <lists+openwrt-devel@lfdr.de>; Tue, 18 Jun 2019 12:54:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E434349EE5
+	for <lists+openwrt-devel@lfdr.de>; Tue, 18 Jun 2019 13:04:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=51BW6goqmUZCf58F9+Q7P2LImvy479WQM5St7uOG1U4=; b=ZFo8VURH0/UyNv
-	lcWe59zQEjNrCcnYtgFBIINidaEmcU5vc1enALabxHwilA4CvbbrxaVl2pJ1ebki3VczhH5yrnKlf
-	Xri/1Momk3Nm8SsinJRmwvoPTVGXl9bqlAO2CThdjTOhu4SAwy4GqwkXDbTBe2DdLIUIGyFQO+iiK
-	qqkMBZcVTin8wkLctnC2/POSNBHkL5fH/lTi2LvRnh/RsWRhcLJ3SROuM0up+9Vn6DsYhY0nsrbBw
-	+AF72DKV2eBikNDjbLvPIBNteGdsn3mCwk7E4aKi/kKCvGff0d6s+JIp5HCJZBzMd1XWcRg2SRD5y
-	je7+sLG5La6HrDr8BQmw==;
+	List-Owner; bh=VXYWyNhMOp1SfxEvcVGP4bq2KpIwzIetl/KNuP4wgrY=; b=C4WMtoq5W4gYss
+	D6i6EKLg3pf7yyZ2pDOLRGs/nT9KzhZpoTyuwk6iaOsdVod55XOuegWrEDxPSap8OaCQuyplOxQYS
+	1PUK2H1+yE4UY/Rg7M8uq/dC8DT0+qzevZcUTUVIhr5krn0bezr0456F7NIcDcxwhuk/Y5JI38bRl
+	xzH4KpDqwSkbKmuaJ4KfhLX4Z0wMipaHIlyzO6w2c3q6G2THiri9rx0s0fLDrf59iDxR+oj3q/vZn
+	ub0H5EvH2NaDXsfqrxKA1SUU0NZ3LNdao2GDV0xwHTxvPxuKG+ChcPyejDm2BZJOkBa+JyY5H7lln
+	eCsbRf30QFJBBOe3E4+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdBkP-0002Uc-Fk; Tue, 18 Jun 2019 10:53:53 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1hdBuO-0000SV-Qw; Tue, 18 Jun 2019 11:04:12 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdBkH-0002Tn-MF
- for openwrt-devel@lists.openwrt.org; Tue, 18 Jun 2019 10:53:47 +0000
-Received: from [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505] (unknown
- [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 55BFA2282E;
- Tue, 18 Jun 2019 12:53:42 +0200 (CEST)
-From: David Bauer <mail@david-bauer.net>
-To: Linus Walleij <linus.walleij@linaro.org>,
- Christian Lamparter <chunkeey@gmail.com>
+ id 1hdBuG-0000Ru-Ok
+ for openwrt-devel@lists.openwrt.org; Tue, 18 Jun 2019 11:04:06 +0000
+Received: by mail-lj1-x243.google.com with SMTP id k18so12604712ljc.11
+ for <openwrt-devel@lists.openwrt.org>; Tue, 18 Jun 2019 04:04:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zC7Z+BNZAphGCV2D0mt6/CuFpqMeSbx28Opl3BJgRhY=;
+ b=XuPm4geaYj25zgDTuP7JBHpQNVZRR4ZQQFfuvlr2GoIJQNxwMvF/kgt9hH9nrgGe5x
+ j7Ej85h03LDE5ztjg9WVxOriiStL7x212cWySyvbMpoKJEkJZurvMmC7Gdd6FH720Ri2
+ SkocHSyQQxB02M3LgB9WtUA3S+NwSCpnCvRtv72L8YCc3od6na6PIPUT34pjnumJ1cvZ
+ IB/UXGwuTHqbD6XO8eU1BXb1GgQB7UEL4vtmPJ4hgomq/0woapj92OLuHpAiz9gfkzdA
+ W+nLvuZ1tYQU6vpKPVIMiJJfihpD1WWi/yMt8UqLggDZLtgExjglXuk8oP/0ijRmhzfZ
+ TFHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zC7Z+BNZAphGCV2D0mt6/CuFpqMeSbx28Opl3BJgRhY=;
+ b=hLmHQ0Pds0lIXvz4E9dYKdjNvNv9f4dv9+4k9WdqR6jCyYro/l3K2tg2LmIFh26zBD
+ rbqTKaA7KDLw2KfCVV6XwYBkojur5mh6fzWcd9rrhq4IXUu1LWLOHysmQ4Fm5fH66Xr/
+ etnYEfQn5PSqkxgov8FWtkc6FYKVVYnr/V8wTKBkr6PkBI19wkFq7jBiSj9LtIBvaW5d
+ r/fVu7MwyHA6oxFa/pirY4pm4bvaEBsX91QWoqDC+g5aTdDj9O7I8YTPQa8sFnZmDcxg
+ wAPzUlA7yqVcf/H/D3iReiEWVFmktBLh3vCXJfe6sSiEJOnN94xzPkgEY7genfSYO1dV
+ 9EJg==
+X-Gm-Message-State: APjAAAUAYtVQmQZX9WOgZjyQpBg97JK7dVRGNhBFZrV/KE8hxACQ+GPF
+ CNB+btxLcWNvPe76lVj8HRDW2nmw1xxhUQUFXTrYwg==
+X-Google-Smtp-Source: APXvYqxITTW6iUrElJ07uwet9Hi8jhuhRWYkgX2K7H+7W6OPZBGhbC//vO3Z0HQgBhWOaKBXUqul786a3u7bIA1Bd28=
+X-Received: by 2002:a2e:650a:: with SMTP id z10mr22435467ljb.28.1560855842303; 
+ Tue, 18 Jun 2019 04:04:02 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190613210036.30922-1-mail@david-bauer.net>
  <7513956.bV6BmdoukA@debian64>
  <CACRpkdYbd2qY4=L1rrDnvnaPqMcKjfqdNB1kWg1+AJBKoZnjcA@mail.gmail.com>
@@ -40,49 +58,33 @@ References: <20190613210036.30922-1-mail@david-bauer.net>
  <CACRpkdauGYJ3LU6Zhepczp80QKSch6Foz0EqOx_qu_ERLM23bQ@mail.gmail.com>
  <1ac0e1cc-dee9-1ab1-6362-b41c8c52b208@david-bauer.net>
  <CACRpkdZ1TGXKj922yRhPRyHzdMDCcovw+1xT2dF2v_v+Qk6R6A@mail.gmail.com>
-Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <e447a702-88b9-0a74-69aa-4ac728641e70@david-bauer.net>
-Date: Tue, 18 Jun 2019 12:53:40 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
-MIME-Version: 1.0
-In-Reply-To: <CACRpkdZ1TGXKj922yRhPRyHzdMDCcovw+1xT2dF2v_v+Qk6R6A@mail.gmail.com>
-Content-Language: en-US
+ <e447a702-88b9-0a74-69aa-4ac728641e70@david-bauer.net>
+In-Reply-To: <e447a702-88b9-0a74-69aa-4ac728641e70@david-bauer.net>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 18 Jun 2019 13:03:50 +0200
+Message-ID: <CACRpkdZxzo5KPeX6eWQQoBO5+MX3TuHOycBW4H0UfUbVKt+_RA@mail.gmail.com>
+To: David Bauer <mail@david-bauer.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_035346_018423_48E7AF2F 
-X-CRM114-Status: GOOD (  26.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190618_040404_810266_6530F518 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: read
  initial state
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -96,100 +98,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Christian Lamparter <chunkeey@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Linus,
+On Tue, Jun 18, 2019 at 12:53 PM David Bauer <mail@david-bauer.net> wrote:
+> On 17.06.19 22:26, Linus Walleij wrote:
 
-On 17.06.19 22:26, Linus Walleij wrote:
-> Hm this sounds like something that would be solved by debouncing.
-> It might even be a bounce effect of sorts, it can be a capacitance
-> or something in the mechanics causing this.
-> 
-> If you look in:
-> drivers/input/keyboard/gpio_keys.c
-> you will see that GPIO keys in the input subsystem has debouncing
-> support. I guess something like this needs to be copied over to
-> the OpenWrt netlink thingie.
+> > I think it makes a lot of sense on mechanical pushbuttons to
+> > implement generic debounce.
+>
+> This is, however, not the job of the GPIO driver or is it?
 
-Thanks for your evaluation. So the underlying GPIO driver does not seem to be the
-culprit here.
+If the GPIO block supports it, GPIO provides an API to use a hardware
+debounce timer.
 
-> If the GPIO driver supports debounce (some do, it doesn't look like
-> the ath79 does) that can be utilized. If someone can double-check
-> the ath79 datasheet to check if it can do debounce that'd be great
-> because it would solve this in hardware.
+I'e had exotic ideas like pulling the debounce support from the input
+subsystem into the GPIO subsystem, so whenever a consumer asks
+for debounce they will get it, sometimes with a software timer
+sometimes from hardware. But it never became any more than a
+pipe dream.
 
-I've had a short look on the QCA9558 datasheet and it doesn't seem
-like the driver supports debouncing.
-
->> If delays are allowed there, we could add a 20ms delay when configuring the GPIO line
->> direction as input. This way we could also assure the line is stable for "normal" value
->> reads. We would need to override the direction_input method provided by gpio-mmio for this.
-> 
-> That's like an initial debounce.
-
-I've had a deeper look on
-
-drivers/input/keyboard/gpio_keys.c
-
-and i think I've understood the problem now as we finally found the "right level" of
-the problem ;)
-
-Upstream gpio_keys reports current state of all buttons on driver probe in
-gpio_keys_open()
-
-	/* Report current state of buttons that are connected to GPIOs */
-	gpio_keys_report_state(ddata);
-
-When an interrupt is handled, a job is created (or it's delay modified).
-So the job is not executed if a GPIO is unstable for the debounce interval.
-
-The job executes gpio_keys_gpio_work_func() as soon as it's state is stable,
-which reports an input_event() in gpio_keys_gpio_report_event().
-
-This event however is not handed down in the input subsystem if the value equals
-the last state. As we are not using the input subsystem, we need to keep track of
-the last button state ourselves.
-
-Correct me if I'm wrong with anything above. :)
-
-@Christian
-If I'm not mistaken is kinda what I've implemented with my initial patch.
-However, i think the logic is better placed elsewhere. I will send
-a reworked patch shortly.
-
-
-> 
->> Second:
->> We could store the kernel uptime together with the GPIO line and for how long interrupts
->> should be ignored within the driver. This could be checked when an interrupt is fired.
-> 
-> The third alternative is common software debounce. I.e. wait for any
-> value to stabilize before reporting keys. Some extra interrupts more
-> or less doesn't matter, we just frame it with some timer.
-> 
->> I do not really like the second idea as dropping interrupts without feedback is probably not
->> what we want.
-> 
-> I think it makes a lot of sense on mechanical pushbuttons to
-> implement generic debounce.
-
-This is, however, not the job of the GPIO driver or is it?
-
-
-Best wishes
-David
-
-> Yours,
-> Linus Walleij
-> 
-
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,89 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E452A4960A
-	for <lists+openwrt-devel@lfdr.de>; Tue, 18 Jun 2019 01:44:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51B1249EA9
+	for <lists+openwrt-devel@lfdr.de>; Tue, 18 Jun 2019 12:54:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sY7adHXxciTWi3HhLGnW6KHnxW5kXhCSo23/8E8Pg3s=; b=VKmEPIXBS/oTgZ
-	10BaojSDwcWnoBwes3SAFIrO+SOwT3PkETZ4R7l0yWQotOrruPA+gtJq4/hIAVJrMlN911NP3dxoM
-	kCX74n77XU+dTYGQP0ErQE1jFnCf4IF8xVb1jw/XSMiVrgecxrqDVKBWpFm1dcm/zlzSpPWlGdwpN
-	q59+x6hDmMP4lsV77Xw2Ssw02Kk8H1pkGWgypJb53f20XOmVJou/Yo/dteLGe6brvzF9VKCqOYvK1
-	BvFt5lalaHDtKu7M78TvGgSL22KWo2skX/3YYq/semKyf1oEwjsj4ZZkMmhkTD1V1vFY626RF6A1l
-	WA0tY0/TNGxk2yEry9MQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=51BW6goqmUZCf58F9+Q7P2LImvy479WQM5St7uOG1U4=; b=ZFo8VURH0/UyNv
+	lcWe59zQEjNrCcnYtgFBIINidaEmcU5vc1enALabxHwilA4CvbbrxaVl2pJ1ebki3VczhH5yrnKlf
+	Xri/1Momk3Nm8SsinJRmwvoPTVGXl9bqlAO2CThdjTOhu4SAwy4GqwkXDbTBe2DdLIUIGyFQO+iiK
+	qqkMBZcVTin8wkLctnC2/POSNBHkL5fH/lTi2LvRnh/RsWRhcLJ3SROuM0up+9Vn6DsYhY0nsrbBw
+	+AF72DKV2eBikNDjbLvPIBNteGdsn3mCwk7E4aKi/kKCvGff0d6s+JIp5HCJZBzMd1XWcRg2SRD5y
+	je7+sLG5La6HrDr8BQmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hd1IY-0005eV-E3; Mon, 17 Jun 2019 23:44:26 +0000
-Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
+	id 1hdBkP-0002Uc-Fk; Tue, 18 Jun 2019 10:53:53 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hd1IM-0005cx-Jf
- for openwrt-devel@lists.openwrt.org; Mon, 17 Jun 2019 23:44:16 +0000
-Received: by mail-pf1-x431.google.com with SMTP id 19so6507310pfa.4
- for <openwrt-devel@lists.openwrt.org>; Mon, 17 Jun 2019 16:44:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=UVR9Y+lABvzdQC/xBrA+Fm4Gtegu5z1Pj7RcJ3QmhKY=;
- b=SvoRKJDtICQZzGDsr8qmBdLCSFGpQxlORK3cDWzQ41ko6d61WDdQNyRA6nf1YqzbR1
- QfNJGkJ+KD/szC4tq8vNBZ3AVTe+D/bVXePFREZpBQTrcbfTQEP8/uCeSiE2HrTwQH6r
- 50qYimQkKgzRuDa2ZMTiW3X7DzNVRQ334uxuCX9/zevBEdkqmy1HkIp0agWLe2/KCmcN
- o/vsBlG82LFt03gBhFOZEha+ZlY9irLKck9dDm7+mAxzYDHwAtQ9gSZLQ5CgGXmP/FKn
- egp6p1NEwhwvHeUVJqbUTrfgwwgI3FKIjh0pWdRx/iFuWlGnXozbL6hA80tikRq8mFFN
- pXyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=UVR9Y+lABvzdQC/xBrA+Fm4Gtegu5z1Pj7RcJ3QmhKY=;
- b=lALf4xaY3h1RaDcH1pc/ac9ZxfRhMaZSJjNUxTe8tSzJeH9/e2CHjoi9CQZopwVHmA
- uVqNvMptR6ivd1BIbjTYuoE8QGaXU6oiN+ueSFQEryzPtP4OyTqm6GMM8VZpmi83RCwd
- YDWh5JUPsyD9iWaNKvqsO+20RSlda89cT0T5AKMFBzWnneDRJcJo2LhL8Sfk8DD2Cl36
- Rh75Hx8vavGhrjqi8h6e+ct6z9IAQ+QIAL9oavlWgqKYdrt0MCVGydZPXcuIEEBoqQ8b
- BM7k/xe9Bg7evjNquVySDDkv3mBfmnSysNPZH9dm60VC9+5MkU7UTyWk1nE5XAZDdIDT
- vvlw==
-X-Gm-Message-State: APjAAAUHoAQSyni5r9rnhCfwNLo4q6ndn0CPSNWNzicU/8eQCt2BZeBR
- lBZlD1tru9h8lFSG5wbCBsGG1ne1
-X-Google-Smtp-Source: APXvYqwVB8Vzl1+LugJosGN8POcaal82+rPraOxEBHv50sWXXkzsCWuZeSRP0d3MdAcfGuQPGXgJ6w==
-X-Received: by 2002:a62:2ec4:: with SMTP id
- u187mr115005120pfu.84.1560815053227; 
- Mon, 17 Jun 2019 16:44:13 -0700 (PDT)
-Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
- [76.14.106.55])
- by smtp.gmail.com with ESMTPSA id 5sm10916401pfh.109.2019.06.17.16.44.12
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Jun 2019 16:44:12 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 17 Jun 2019 16:44:12 -0700
-Message-Id: <20190617234412.6739-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1hdBkH-0002Tn-MF
+ for openwrt-devel@lists.openwrt.org; Tue, 18 Jun 2019 10:53:47 +0000
+Received: from [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505] (unknown
+ [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 55BFA2282E;
+ Tue, 18 Jun 2019 12:53:42 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Christian Lamparter <chunkeey@gmail.com>
+References: <20190613210036.30922-1-mail@david-bauer.net>
+ <7513956.bV6BmdoukA@debian64>
+ <CACRpkdYbd2qY4=L1rrDnvnaPqMcKjfqdNB1kWg1+AJBKoZnjcA@mail.gmail.com>
+ <c30d2d95-7d2b-ca8b-9e15-c0ffdd016ba9@david-bauer.net>
+ <CACRpkdauGYJ3LU6Zhepczp80QKSch6Foz0EqOx_qu_ERLM23bQ@mail.gmail.com>
+ <1ac0e1cc-dee9-1ab1-6362-b41c8c52b208@david-bauer.net>
+ <CACRpkdZ1TGXKj922yRhPRyHzdMDCcovw+1xT2dF2v_v+Qk6R6A@mail.gmail.com>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <e447a702-88b9-0a74-69aa-4ac728641e70@david-bauer.net>
+Date: Tue, 18 Jun 2019 12:53:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
+MIME-Version: 1.0
+In-Reply-To: <CACRpkdZ1TGXKj922yRhPRyHzdMDCcovw+1xT2dF2v_v+Qk6R6A@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_164414_648892_92FD9AD3 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190618_035346_018423_48E7AF2F 
+X-CRM114-Status: GOOD (  26.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:431 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] gdb-arc: Remove
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCH] gpio-button-hotplug: gpio-keys: read
+ initial state
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,210 +96,99 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Normal GDB has supported ARC since 8.0
+Hello Linus,
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- package/devel/gdb-arc/Makefile                | 94 -------------------
- .../patches/100-no_extern_inline.patch        | 32 -------
- .../gdb-arc/patches/110-no_testsuite.patch    | 21 -----
- .../120-fix-compile-flag-mismatch.patch       | 11 ---
- 4 files changed, 158 deletions(-)
- delete mode 100644 package/devel/gdb-arc/Makefile
- delete mode 100644 package/devel/gdb-arc/patches/100-no_extern_inline.patch
- delete mode 100644 package/devel/gdb-arc/patches/110-no_testsuite.patch
- delete mode 100644 package/devel/gdb-arc/patches/120-fix-compile-flag-mismatch.patch
+On 17.06.19 22:26, Linus Walleij wrote:
+> Hm this sounds like something that would be solved by debouncing.
+> It might even be a bounce effect of sorts, it can be a capacitance
+> or something in the mechanics causing this.
+> 
+> If you look in:
+> drivers/input/keyboard/gpio_keys.c
+> you will see that GPIO keys in the input subsystem has debouncing
+> support. I guess something like this needs to be copied over to
+> the OpenWrt netlink thingie.
 
-diff --git a/package/devel/gdb-arc/Makefile b/package/devel/gdb-arc/Makefile
-deleted file mode 100644
-index 7d087ffcb6..0000000000
---- a/package/devel/gdb-arc/Makefile
-+++ /dev/null
-@@ -1,94 +0,0 @@
--#
--# Copyright (C) 2006-2016 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--include $(TOPDIR)/rules.mk
--
--PKG_NAME:=gdb-arc
--PKG_VERSION:=arc-2017.09-gdb
--PKG_RELEASE:=1
--
--PKG_SOURCE:=gdb-arc-2017.09-gdb.tar.gz
--PKG_SOURCE_URL:=https://github.com/foss-for-synopsys-dwc-arc-processors/binutils-gdb/archive/$(PKG_VERSION)
--PKG_HASH:=6a91f86cc487c1548d3f5d4f29f7226d2019c0db8a63633aeabd5914a340f3f9
--
--PKG_BUILD_DIR:=$(BUILD_DIR)/binutils-gdb-arc-2017.09-gdb
--
--PKG_BUILD_PARALLEL:=1
--PKG_INSTALL:=1
--PKG_LICENSE:=GPL-3.0+
--
--include $(INCLUDE_DIR)/package.mk
--
--define Package/gdb-arc/Default
--  SECTION:=devel
--  CATEGORY:=Development
--  DEPENDS:=+!USE_MUSL:libthread-db +PACKAGE_zlib:zlib @arc
--  URL:=http://www.gnu.org/software/gdb/
--endef
--
--define Package/gdb-arc
--$(call Package/gdb-arc/Default)
--  TITLE:=GNU Debugger for ARC
--  DEPENDS+=+libreadline +libncurses +zlib
--endef
--
--define Package/gdb-arc/description
--GDB, the GNU Project debugger, allows you to see what is going on `inside'
--another program while it executes -- or what another program was doing at the
--moment it crashed.
--endef
--
--define Package/gdbserver-arc
--$(call Package/gdb-arc/Default)
--  TITLE:=Remote server for GNU Debugger
--endef
--
--define Package/gdbserver-arc/description
--GDBSERVER is a program that allows you to run GDB on a different machine than the
--one which is running the program being debugged.
--endef
--
--# XXX: add --disable-werror to prevent build failure with arm
--CONFIGURE_ARGS+= \
--	--with-system-readline \
--	--without-expat \
--	--without-lzma \
--	--disable-werror \
--	--disable-binutils \
--	--disable-ld \
--	--disable-gas \
--	--disable-sim
--
--CONFIGURE_VARS+= \
--	ac_cv_search_tgetent="$(TARGET_LDFLAGS) -lncurses -lreadline"
--
--define Build/Compile
--	+$(MAKE) $(PKG_JOBS) -C $(PKG_BUILD_DIR) \
--		DESTDIR="$(PKG_INSTALL_DIR)" \
--		CPPFLAGS="$(TARGET_CPPFLAGS)" \
--		all
--endef
--
--define Build/Install
--	$(MAKE) -C $(PKG_BUILD_DIR) \
--		DESTDIR="$(PKG_INSTALL_DIR)" \
--		CPPFLAGS="$(TARGET_CPPFLAGS)" \
--		install-gdb
--endef
--
--define Package/gdb-arc/install
--	$(INSTALL_DIR) $(1)/usr/bin
--	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/gdb $(1)/usr/bin/
--endef
--
--define Package/gdbserver-arc/install
--	$(INSTALL_DIR) $(1)/usr/bin
--	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/gdbserver $(1)/usr/bin/
--endef
--
--$(eval $(call BuildPackage,gdb-arc))
--$(eval $(call BuildPackage,gdbserver-arc))
-diff --git a/package/devel/gdb-arc/patches/100-no_extern_inline.patch b/package/devel/gdb-arc/patches/100-no_extern_inline.patch
-deleted file mode 100644
-index 8c18c6e2e7..0000000000
---- a/package/devel/gdb-arc/patches/100-no_extern_inline.patch
-+++ /dev/null
-@@ -1,32 +0,0 @@
----- a/sim/common/sim-arange.c
--+++ b/sim/common/sim-arange.c
--@@ -280,11 +280,7 @@ sim_addr_range_delete (ADDR_RANGE *ar, a
--   build_search_tree (ar);
-- }
-- 
---#endif /* DEFINE_NON_INLINE_P */
---
---#if DEFINE_INLINE_P
---
---SIM_ARANGE_INLINE int
--+int
-- sim_addr_range_hit_p (ADDR_RANGE *ar, address_word addr)
-- {
--   ADDR_RANGE_TREE *t = ar->range_tree;
--@@ -301,4 +297,4 @@ sim_addr_range_hit_p (ADDR_RANGE *ar, ad
--   return 0;
-- }
-- 
---#endif /* DEFINE_INLINE_P */
--+#endif /* DEFINE_NON_INLINE_P */
----- a/sim/common/sim-arange.h
--+++ b/sim/common/sim-arange.h
--@@ -73,7 +73,7 @@ extern void sim_addr_range_delete (ADDR_
-- 
-- /* Return non-zero if ADDR is in range AR, traversing the entire tree.
--    If no range is specified, that is defined to mean "everything".  */
---SIM_ARANGE_INLINE int
--+extern int
-- sim_addr_range_hit_p (ADDR_RANGE * /*ar*/, address_word /*addr*/);
-- #define ADDR_RANGE_HIT_P(ar, addr) \
--   ((ar)->range_tree == NULL || sim_addr_range_hit_p ((ar), (addr)))
-diff --git a/package/devel/gdb-arc/patches/110-no_testsuite.patch b/package/devel/gdb-arc/patches/110-no_testsuite.patch
-deleted file mode 100644
-index 1b284ea767..0000000000
---- a/package/devel/gdb-arc/patches/110-no_testsuite.patch
-+++ /dev/null
-@@ -1,21 +0,0 @@
----- a/gdb/configure
--+++ b/gdb/configure
--@@ -870,8 +870,7 @@ MAKEINFOFLAGS
-- YACC
-- YFLAGS
-- XMKMF'
---ac_subdirs_all='testsuite
---gdbtk
--+ac_subdirs_all='gdbtk
-- multi-ice
-- gdbserver'
-- 
--@@ -5610,7 +5610,7 @@ $as_echo "$with_auto_load_safe_path" >&6
-- 
-- 
-- 
---subdirs="$subdirs testsuite"
--+subdirs="$subdirs"
-- 
-- 
-- # Check whether to support alternative target configurations
-diff --git a/package/devel/gdb-arc/patches/120-fix-compile-flag-mismatch.patch b/package/devel/gdb-arc/patches/120-fix-compile-flag-mismatch.patch
-deleted file mode 100644
-index c8b41f264a..0000000000
---- a/package/devel/gdb-arc/patches/120-fix-compile-flag-mismatch.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/gdb/gdbserver/configure
--+++ b/gdb/gdbserver/configure
--@@ -2468,7 +2468,7 @@ $as_echo "$as_me: error: \`$ac_var' was
--       ac_cache_corrupted=: ;;
--     ,);;
--     *)
---      if test "x$ac_old_val" != "x$ac_new_val"; then
--+      if test "`echo x$ac_old_val`" != "`echo x$ac_new_val`"; then
-- 	# differences in whitespace do not lead to failure.
-- 	ac_old_val_w=`echo x $ac_old_val`
-- 	ac_new_val_w=`echo x $ac_new_val`
--- 
-2.17.1
+Thanks for your evaluation. So the underlying GPIO driver does not seem to be the
+culprit here.
+
+> If the GPIO driver supports debounce (some do, it doesn't look like
+> the ath79 does) that can be utilized. If someone can double-check
+> the ath79 datasheet to check if it can do debounce that'd be great
+> because it would solve this in hardware.
+
+I've had a short look on the QCA9558 datasheet and it doesn't seem
+like the driver supports debouncing.
+
+>> If delays are allowed there, we could add a 20ms delay when configuring the GPIO line
+>> direction as input. This way we could also assure the line is stable for "normal" value
+>> reads. We would need to override the direction_input method provided by gpio-mmio for this.
+> 
+> That's like an initial debounce.
+
+I've had a deeper look on
+
+drivers/input/keyboard/gpio_keys.c
+
+and i think I've understood the problem now as we finally found the "right level" of
+the problem ;)
+
+Upstream gpio_keys reports current state of all buttons on driver probe in
+gpio_keys_open()
+
+	/* Report current state of buttons that are connected to GPIOs */
+	gpio_keys_report_state(ddata);
+
+When an interrupt is handled, a job is created (or it's delay modified).
+So the job is not executed if a GPIO is unstable for the debounce interval.
+
+The job executes gpio_keys_gpio_work_func() as soon as it's state is stable,
+which reports an input_event() in gpio_keys_gpio_report_event().
+
+This event however is not handed down in the input subsystem if the value equals
+the last state. As we are not using the input subsystem, we need to keep track of
+the last button state ourselves.
+
+Correct me if I'm wrong with anything above. :)
+
+@Christian
+If I'm not mistaken is kinda what I've implemented with my initial patch.
+However, i think the logic is better placed elsewhere. I will send
+a reworked patch shortly.
+
+
+> 
+>> Second:
+>> We could store the kernel uptime together with the GPIO line and for how long interrupts
+>> should be ignored within the driver. This could be checked when an interrupt is fired.
+> 
+> The third alternative is common software debounce. I.e. wait for any
+> value to stabilize before reporting keys. Some extra interrupts more
+> or less doesn't matter, we just frame it with some timer.
+> 
+>> I do not really like the second idea as dropping interrupts without feedback is probably not
+>> what we want.
+> 
+> I think it makes a lot of sense on mechanical pushbuttons to
+> implement generic debounce.
+
+This is, however, not the job of the GPIO driver or is it?
+
+
+Best wishes
+David
+
+> Yours,
+> Linus Walleij
+> 
+
 
 
 _______________________________________________

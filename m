@@ -2,55 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDC2D4A787
-	for <lists+openwrt-devel@lfdr.de>; Tue, 18 Jun 2019 18:50:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1985C4AD9F
+	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Jun 2019 00:07:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+R6drd/lj43h8PFW+An6xO9WlFDptzLKdX+hsHekQGw=; b=OU17Km++I+0YZk
-	zMO+YH3Oyy8DelKfEaSKQNa6NWiz9wazmUxdIkEUWG2X4QoRJ4tlim6gs6FumCO/x/pVGq9Iqn3kv
-	baMaZkM0Gywm0LamOxZw0UeWHYtEng3zysCr7c6gAMJab8PA58iAOt89AO33ecbLbUHXsZLN+vmaA
-	twGakASb6IVinoMqXM2PRi8ZCPqIFmZ5GSsDlrMB3eQ6+4Cqz8PmfVrGglY6VIAAzAyRoMSIh7ac3
-	ODSschofMrOeZcEXWbglzH+UHCPFBaP0kLsbPNeNQ3zfCPnyrOZEAUxKa7iT/fvq8ZVmiJvV4gDG7
-	Dq8uEiAWSzdsh6Tv+H5g==;
+	List-Owner; bh=Q1kwSzwoYcjBX/uYhJXvlfuFw2xUMheIpPoy7DW3SgY=; b=dEdq70CUh5T3cR
+	AYZtdGFdiUYDPb2CgVSQ5um9llX7df6tnF3wP8fHuHDRC1XXDmQtWm2+zgo44e8w5f0dhVSubUkkk
+	hJQtQtKbsizNePN0WBle747UjCMVrtzOJuHMlt31DfNKWWGjEu7qycuyOCzD2Ki8twPWwhyvzPC26
+	7tbvR/zlmNaWOz64eGeiCMDnopF3E3KYqQiLAXdmKqSNGtukBRx19OgnGrZCe3fqddZ/J4Jm334s5
+	nvMHVTIV4sM5FzBbH0tJlRy+T4nm6jATi5vz7gB8/+s6tyOUGRH7MOPZ0YIcSSRt9fyncw6HliEyo
+	zm6vflX+CLEpFldw17eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdHJ7-0007Kb-9t; Tue, 18 Jun 2019 16:50:05 +0000
-Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
+	id 1hdMGa-0007CH-Us; Tue, 18 Jun 2019 22:07:49 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdHIs-0007JC-8C
- for openwrt-devel@lists.openwrt.org; Tue, 18 Jun 2019 16:49:52 +0000
-Received: from p200300c5871ba600c9654f2af2ee7ba4.dip0.t-ipconnect.de
- ([2003:c5:871b:a600:c965:4f2a:f2ee:7ba4]); authenticated
- by wp175.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- id 1hdHIk-0004EC-0j; Tue, 18 Jun 2019 18:49:42 +0200
+ id 1hdMGQ-0007BI-UW
+ for openwrt-devel@lists.openwrt.org; Tue, 18 Jun 2019 22:07:41 +0000
+Received: from localhost.localdomain
+ (p200300E53F0C4A000BD7EEFE5F1D565C.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f0c:4a00:bd7:eefe:5f1d:565c])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 59D5B2282E
+ for <openwrt-devel@lists.openwrt.org>; Wed, 19 Jun 2019 00:07:32 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
 To: openwrt-devel@lists.openwrt.org
-From: Birger Koblitz <mail@birger-koblitz.de>
-Message-ID: <45b5dc86-b353-2a1a-c9c2-cf4259a80a5b@birger-koblitz.de>
-Date: Tue, 18 Jun 2019 18:49:41 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+Date: Wed, 19 Jun 2019 00:07:12 +0200
+Message-Id: <20190618220712.6845-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Language: en-US
-X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1560876590;
- 241209e1; 
-X-HE-SMSGID: 1hdHIk-0004EC-0j
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190618_094950_430922_F309DE6A 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190618_150739_275478_848D4356 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCHv2] ramips: add support for Edimax EW-7478APC
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ath79: correct various phy-mode properties
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,284 +64,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-ramips: add Edimax EW-7478APC
+Upstream commit 6d4cd04 changes how the internal delays of the AR803x
+based PHYs are enabled. With this commit, all internal delays are
+disabled on driver probe and enabled based on the 'phy-mode' property in
+the device-tree.
 
-SoC:	MediaTek MT7620a @ 580MHz
-RAM:	64M (Winbond W9751G6KB-25)
-FLASH:	8MB (Macronix)
-WiFi:	SoC-integrated: MediaTek MT7620a bgn
-WiFi:	MediaTek MT7612EN nac
-Switch: Mediatek MT7530W Gigabit Switch (4 x LAN, 1 x WAN)
-USB:	Yes 1 x 2.0 (+ 1 x 2.0 unpopulated header)
-BTN:	Reset/WPS
-LED:    - Power (white)
-	- Internet (blue)
-	- Wifi (blue)
-	- USB (blue)
-UART:  UART is present as Pads with throughholes on the PCB. They are
-       located in the lower right corner (GbE ports facing up)
-       3.3V - RX - GND - TX / 57600-8N1
-       3.3V is the square pad
+Before this commit, the RX delay was always enabled upon soft-reset
+while the TX delay retained it's previous state. A hard reset enabled
+the RX delay while the TX delay was disabled.
 
-Installation
-------------
-Update the factory image via the web-interfaces (by default:
-http://edimax.setup)
+Because of this inconsistency, wrongly specified PHY-modes were working
+correctly while the hardware was in a different state.
 
-Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
+Fix the PHY-modes of some affected devices (and clean up misplaced
+properties along the way) to keep the devices working flawlessly with
+kernels >= 5.1.
 
+Signed-off-by: David Bauer <mail@david-bauer.net>
 ---
+ target/linux/ath79/dts/ar9344_ocedo_raccoon.dts    | 3 +--
+ target/linux/ath79/dts/qca9558_devolo_dvl1200i.dts | 1 +
+ target/linux/ath79/dts/qca9558_devolo_dvl1750c.dts | 4 ++++
+ target/linux/ath79/dts/qca9558_devolo_dvl1750i.dts | 1 +
+ target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi | 1 +
+ target/linux/ath79/dts/qca9558_ocedo_koala.dts     | 2 --
+ 6 files changed, 8 insertions(+), 4 deletions(-)
 
-Corrected formatting as requested by ynezz, changed gpio-export used for
-powering USB bus to using gpio-hog.
+diff --git a/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts b/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts
+index a1a912383f..812da3dea5 100644
+--- a/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts
++++ b/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts
+@@ -162,7 +162,6 @@
+ 
+ 	phy0: ethernet-phy@0 {
+ 		reg = <0>;
+-		phy-mode = "rgmii";
+ 	};
+ };
+ 
+@@ -173,6 +172,6 @@
+ 
+ 	mtd-mac-address = <&art 0x0>;
+ 
+-	phy-mode = "rgmii";
++	phy-mode = "rgmii-id";
+ 	phy-handle = <&phy0>;
+ };
+diff --git a/target/linux/ath79/dts/qca9558_devolo_dvl1200i.dts b/target/linux/ath79/dts/qca9558_devolo_dvl1200i.dts
+index 5900d8b487..a844ce777c 100644
+--- a/target/linux/ath79/dts/qca9558_devolo_dvl1200i.dts
++++ b/target/linux/ath79/dts/qca9558_devolo_dvl1200i.dts
+@@ -40,6 +40,7 @@
+ 
+ &eth0 {
+ 	pll-data = <0xbe000000 0x80000101 0x80001313>;
++	phy-mode = "rgmii-id";
+ };
+ 
+ &gmac_config {
+diff --git a/target/linux/ath79/dts/qca9558_devolo_dvl1750c.dts b/target/linux/ath79/dts/qca9558_devolo_dvl1750c.dts
+index b5a2954406..567f3c9ee4 100644
+--- a/target/linux/ath79/dts/qca9558_devolo_dvl1750c.dts
++++ b/target/linux/ath79/dts/qca9558_devolo_dvl1750c.dts
+@@ -38,6 +38,10 @@
+ 	};
+ };
+ 
++&eth0 {
++	phy-mode = "rgmii-id";
++};
++
+ &gmac_config {
+ 	rxdv-delay = <3>;
+ 	rxd-delay = <3>;
+diff --git a/target/linux/ath79/dts/qca9558_devolo_dvl1750i.dts b/target/linux/ath79/dts/qca9558_devolo_dvl1750i.dts
+index bd3702eb36..e0bdd20937 100644
+--- a/target/linux/ath79/dts/qca9558_devolo_dvl1750i.dts
++++ b/target/linux/ath79/dts/qca9558_devolo_dvl1750i.dts
+@@ -40,6 +40,7 @@
+ 
+ &eth0 {
+ 	pll-data = <0xbe000000 0x80000101 0x80001313>;
++	phy-mode = "rgmii-id";
+ };
+ 
+ &gmac_config {
+diff --git a/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi b/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
+index 9937186b1e..cfd43c8e8a 100644
+--- a/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
++++ b/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
+@@ -115,6 +115,7 @@
+ 
+ 	mtd-mac-address = <&art 0x00>;
+ 	phy-handle = <&phy4>;
++	phy-mode = "rgmii-rxid";
+ 	pll-data = <0xae000000 0x80000101 0x80001313>;
+ 
+ 	gmac_config: gmac-config {
+diff --git a/target/linux/ath79/dts/qca9558_ocedo_koala.dts b/target/linux/ath79/dts/qca9558_ocedo_koala.dts
+index 23835492a3..a80155b08c 100644
+--- a/target/linux/ath79/dts/qca9558_ocedo_koala.dts
++++ b/target/linux/ath79/dts/qca9558_ocedo_koala.dts
+@@ -142,8 +142,6 @@
+ 
+ 	phy5: ethernet-phy@5 {
+ 		reg = <5>;
+-		phy-mode = "rgmii-rxid";
+-
+ 		at803x-disable-smarteee;
+ 	};
+ };
+-- 
+2.22.0
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
-index 35d046cc90..1df459d3c7 100755
---- a/target/linux/ramips/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/base-files/etc/board.d/01_leds
-@@ -35,7 +35,8 @@ alfa-network,ac1200rm)
- 	set_wifi_led "$boardname:green:wlan2g" "wlan1"
- 	;;
- alfa-network,awusfree1|\
--edimax,br-6478ac-v2)
-+edimax,br-6478ac-v2|\
-+edimax,ew-7478apc)
- 	set_wifi_led "$boardname:blue:wlan"
- 	;;
- alfa-network,tube-e4g)
-diff --git a/target/linux/ramips/dts/EW-7478APC.dts b/target/linux/ramips/dts/EW-7478APC.dts
-new file mode 100644
-index 0000000000..d7aa2b5189
---- /dev/null
-+++ b/target/linux/ramips/dts/EW-7478APC.dts
-@@ -0,0 +1,204 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7620a.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	compatible = "edimax,ew-7478apc", "ralink,mt7620a-soc";
-+	model = "Edimax EW-7478APC";
-+
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <20>;
-+
-+		reset_wps {
-+			label = "reset_wps";
-+			gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "ew-7478apc:white:power";
-+			gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		internet {
-+			label = "ew-7478apc:blue:internet";
-+			gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wlan {
-+			label = "ew-7478apc:blue:wlan";
-+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		usb {
-+			label = "ew-7478apc:blue:usb";
-+			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
-+			trigger-sources = <&ohci_port1>, <&ehci_port1>;
-+			linux,default-trigger = "usbport";
-+		};
-+	};
-+
-+	
-+};
-+
-+&gpio2 {
-+	status = "okay";
-+
-+	enable_usb_power {
-+		gpio-hog;
-+		line-name = "enable USB power";
-+		gpios = <5 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <10000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				label = "cimage";
-+				reg = <0x50000 0x20000>;
-+				read-only;
-+			};
-+
-+			partition@70000 {
-+				compatible = "edimax,uimage";
-+				label = "firmware";
-+				reg = <0x00070000 0x00790000>;
-+			};
-+		};
-+	};
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "i2c", "uartf", "nd_sd";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-+
-+&ethernet {
-+	status = "okay";
-+	mtd-mac-address = <&factory 0x4>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&rgmii1_pins &rgmii2_pins &mdio_pins>;
-+	mediatek,portmap = "wllll";
-+
-+	port@5 {
-+		status = "okay";
-+		mediatek,fixed-link = <1000 1 1 1>;
-+		phy-mode = "rgmii";
-+	};
-+
-+	mdio-bus {
-+		status = "okay";
-+
-+		phy0: ethernet-phy@0 {
-+			reg = <0>;
-+			phy-mode = "rgmii";
-+		};
-+
-+		phy1: ethernet-phy@1 {
-+			reg = <1>;
-+			phy-mode = "rgmii";
-+		};
-+
-+		phy2: ethernet-phy@2 {
-+			reg = <2>;
-+			phy-mode = "rgmii";
-+		};
-+
-+		phy3: ethernet-phy@3 {
-+			reg = <3>;
-+			phy-mode = "rgmii";
-+		};
-+
-+		phy4: ethernet-phy@4 {
-+			reg = <4>;
-+			phy-mode = "rgmii";
-+		};
-+
-+		phy1f: ethernet-phy@1f {
-+			reg = <0x1f>;
-+			phy-mode = "rgmii";
-+		};
-+	};
-+};
-+
-+&gsw {
-+	mediatek,port4 = "gmac";
-+};
-+
-+&wmac {
-+	ralink,mtd-eeprom = <&factory 0>;
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	wifi@0,0 {
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		mediatek,2ghz = <0>;
-+	};
-+};
-+
-+&ehci {
-+	status = "okay";
-+};
-+
-+&ohci {
-+	status = "okay";
-+};
-diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
-index 8d35402561..3d480a5cb7 100644
---- a/target/linux/ramips/image/mt7620.mk
-+++ b/target/linux/ramips/image/mt7620.mk
-@@ -618,6 +618,18 @@ define Device/edimax_br-6478ac-v2
- endef
- TARGET_DEVICES += edimax_br-6478ac-v2
-
-+define Device/edimax_ew-7478apc
-+  DTS := EW-7478APC
-+  DEVICE_TITLE := Edimax EW-7478APC
-+  BLOCKSIZE := 4k
-+  IMAGE_SIZE := 7744k
-+  IMAGE/sysupgrade.bin := append-kernel | append-rootfs | \
-+        edimax-header -s CSYS -m RN75 -f 0x70000 -S 0x01100000 | pad-rootfs | \
-+        append-metadata | check-size $$$$(IMAGE_SIZE)
-+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport
-+endef
-+TARGET_DEVICES += edimax_ew-7478apc
-+
- define Device/tplink_c2-v1
-   $(Device/Archer)
-   DTS := ArcherC2-v1
 
 _______________________________________________
 openwrt-devel mailing list

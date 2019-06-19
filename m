@@ -2,83 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7B884B73F
-	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Jun 2019 13:42:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 530554B754
+	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Jun 2019 13:47:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FxHQOKftw+r1BpC9KsLpx8DNlzil3GTGHTPXVSk3y2M=; b=mL+Si0oKExKVM4pp+1E866QLS
-	XLZpqAsWJ5l+O7SI+HWwPa33N1iLnZ459DUC95chJEcgUEjFu/PPvq0KjXw0kIs4pLmPObe3WJI26
-	CLgAA5sCyidPFzLnIQQiRwouJaqr0E5gi3SAFZ78iwlljWyCEQZz/vGett8XGpnD860JR2Jn6zbhE
-	lzkkdM0c2PDJ2w7dNvbRW/wddebPWNfRunXzgkwG6RlnoSOH+7JiT5HhZO94QdomXVJg2KFJ47dqU
-	5L08/hrUfvlRgEKCmzTu20ru/I3qrxF2joA8FrR7wzWlkG21rvUCVRSyYvsXwCJdEtTy4oS8LNmiz
-	okidM6uIA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ILRh+ZrNaoFLnU+BPbf1hLFkcuFSkgHd6Pi114PYdJg=; b=P4yolikZBkdEnq
+	g1W8RApepIoACK0JfJvF3DXHIa65JHwdz93F3RWpaMBfifuEV5Ifx29G2aSCLggt7EZHFeUqspbM2
+	bXnQzQC+7EbLHTPt7WpO95N+i8LzNMkJBFF1AVxFFNp1dSP2DHrslTN0bxEbph5TT+uIbL/G0k2q9
+	t+gOweXRcBXJGr2/J6Ppb31Rlg+Uxh84VoChK/i4baoPC59F5LKMUsGutqDo4E6s7So/ZFR5pw8+C
+	izj0WdetPPNmgVSGtP+qRbR78F/xT5d9zC3TTEeF6iKCaCfbKl+SAZoxgg2XYzLuyqdQv+IeZv+4g
+	r+Eq7lEvzo1b+g2Xbdcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdYyV-0007Rp-OB; Wed, 19 Jun 2019 11:41:59 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1hdZ3J-0001IJ-SJ; Wed, 19 Jun 2019 11:46:57 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdYyL-0007RY-UV
- for openwrt-devel@lists.openwrt.org; Wed, 19 Jun 2019 11:41:51 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id s3so1405039wms.2
- for <openwrt-devel@lists.openwrt.org>; Wed, 19 Jun 2019 04:41:48 -0700 (PDT)
+ id 1hdZ3A-0001Ht-Mw
+ for openwrt-devel@lists.openwrt.org; Wed, 19 Jun 2019 11:46:50 +0000
+Received: by mail-lj1-x241.google.com with SMTP id r9so2943792ljg.5
+ for <openwrt-devel@lists.openwrt.org>; Wed, 19 Jun 2019 04:46:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=eaYEu4tKPca/8W51wN+UbMkEsDLmlioV8hkIssP5JH4=;
- b=kVoGlMF9GrFFeh5tRzqGg0bmkJh2dAw2NHeGnLGOAcotX5+m4mj5Mc1KsgkjXMRvTH
- e0VmISHIPQPlLCUIPcCxuYSl4F5i0sLJ58x3qoVY83XGxUmnx0PDfMP3YWu3H0eBaTSK
- vK9N+5P4Bx+fNk4XKJX27632mu27NbF6p6n+XpJC3Iq1AcbAhjhAV0NLiObhlweaixPj
- glv89ToFdzO7tvF3cWcpMhHkTMzXvZkmRx5Mgrw43vhW27JAu8zAw1352WjApFO+KC9t
- GobB63NkPlqzEdWoWYU2XAvPUUFq+JqfcEHoGnU02ZFOvWx3kdEHsFWt5nmqV2C2FJYc
- /5Dg==
+ :cc:content-transfer-encoding;
+ bh=xLhDQmrx21AmSmQ6yBbyfp7OkSiISjeBLcOyQb0Wakw=;
+ b=b6Nmq1ZQDLW9jxZcpVQx35QVQnFuVpZZaXcmsIrcI6K2k218ivL82mWzCTP0fWDdjj
+ cztWoFw5LBOFdEenCmpN9mMdqau4xEnWqnG56lFLYhkTk7DuGFCEKOxT7RJH+d53dAqr
+ 3C5q2xOTRgyvVUn7qVfUCVdgz97Z1/HtYtsq46YHYTxtvDboJ+aUtMgSjXZM/ChXNvKg
+ NsEKXxaRGLOYbzAsente3tr9/bYlZuMPVqwHs9hXAMNlQI7OXg0VqfCGgZULPPdE5NeF
+ Oq2Ow5oemH3KyIbWsqRc5+2CaxNFGHMEuq/HVvYxYG/4Sh297GaGvbD5af/KxlyaJgul
+ nqsA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=eaYEu4tKPca/8W51wN+UbMkEsDLmlioV8hkIssP5JH4=;
- b=gZ6IQtF+0f0GzQF91E2fgpN9TtbwGdYiRjx5Gfrh2r4nMaEyVJe0X9x56g05eABXGk
- lVl7/NNHGmU9eM7Rhm6BquEgZb+PhEeyzNkjT0ZalBrd8SCHLfGNh1WNk2NsBvR6wbcf
- rqqT7Aq/hVZKgTpieNFlB3ARHiJz3pgRdKutqjZt/a76NNL8gznsrVhlbEDZ54Yjv8ba
- uo4zfcwsh/Z46K69+pQn3JvBXe8fyu5vSWD3+Sk9z7LyztXa8Ivou5fSCtOCKepsyPX5
- AaxrUUPRxzuFf/8axkdVc0fEzBAbsRT8YeJw04DoX3HV83kjw6YGvdiw5/A2H2d7duhX
- /ZGQ==
-X-Gm-Message-State: APjAAAVVBUGuE6Q8truEwNWdFcmaLku+ZehCzTiDp0ntYnPNiQR++7Jz
- 6YHJYpHUbmth7B0JSjkBftos6y8dhpXzQjqjltI=
-X-Google-Smtp-Source: APXvYqz5EOxagD+oi6m6WhrVol4LGh3ziURHXM8KRy3tSa/vrMbUxM1c/ClOk7VkGJYLk+JOC629DO6mSqpKzgSgdjQ=
-X-Received: by 2002:a1c:a483:: with SMTP id n125mr7845325wme.3.1560944507450; 
- Wed, 19 Jun 2019 04:41:47 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=xLhDQmrx21AmSmQ6yBbyfp7OkSiISjeBLcOyQb0Wakw=;
+ b=IqFuSftkeHzGkwbFSdSX4bCGO762jqu/jQZHJFkdMZx3yDGm0QtJR6BdtECW8LNNx7
+ Xis96ex8ocQ/Xg0U2UaCX1qqKlOJ/tMwyKunUwfD1kE7YGfSWTsAsdtb67ud5RfEGMto
+ BFM2eE7EcRb2BmjGTODvRVcWuYO6l7SDLur/ByLbFMkD7ceHlRas3wBiXxt1DBVhwA34
+ 08GInaKdNSJJRKU2eNBsJnE2MFBSuzVKy2imbpctF5qyJeMObYEUfXTGfBwhcrmWeV7c
+ ZwbUUVauGvqm8uEeXylu8ZWL8FAJMQYDIslDh+r5AWW68iWyIbBT85DaDkL+PU40khRl
+ Ccvw==
+X-Gm-Message-State: APjAAAW3oI64Vu0FUjJGOfNt768Z9Yamfe66tZPd/CcB/xEJ6MkVXQsx
+ mzys/TWKSPlObc+7B/E43ZEMM9REgPeXH4p3IF8=
+X-Google-Smtp-Source: APXvYqyVmJMyxBNMyGosmREnYeBsRE1nCphQhVRL9GS9VxQhh4mI5kBKy5QRO8AXgItURT60+NgstC+GKBNaPfmgfwQ=
+X-Received: by 2002:a2e:8801:: with SMTP id x1mr17861331ljh.1.1560944807010;
+ Wed, 19 Jun 2019 04:46:47 -0700 (PDT)
 MIME-Version: 1.0
-References: <CAC8mBSVP+Uev=H_x4actCT9g+FV1X0bVFZ=06biyBA=w-s6AkA@mail.gmail.com>
- <f30df01f-ea9d-32ae-2e7d-286fa4aab164@ironai.com>
- <CAC8mBSUYMvuwJaAftwYCL+TaYTaDs_4VT2P9Q3-j5sDOF6xO6Q@mail.gmail.com>
- <87imtvu3cl.fsf@husum.klickitat.com>
- <CAC8mBSWfsK+f_8Od3FF1GtQeiZeENJnZAk89ir2Q8OABY7iJkg@mail.gmail.com>
- <87o93nqszl.fsf@husum.klickitat.com>
-In-Reply-To: <87o93nqszl.fsf@husum.klickitat.com>
-From: =?UTF-8?Q?Denis_Peri=C5=A1a?= <darkman.hr@gmail.com>
-Date: Wed, 19 Jun 2019 13:41:47 +0200
-Message-ID: <CAC8mBSWjrZ9n5hCT8LJ+fCfyjowQAr3+FvJRXknVhV-sobCOVQ@mail.gmail.com>
-To: Russell Senior <russell@personaltelco.net>
+References: <1560802136-4157-1-git-send-email-ynezz@true.cz>
+ <1560802136-4157-7-git-send-email-ynezz@true.cz>
+In-Reply-To: <1560802136-4157-7-git-send-email-ynezz@true.cz>
+From: Yousong Zhou <yszhou4tech@gmail.com>
+Date: Wed, 19 Jun 2019 19:46:35 +0800
+Message-ID: <CAECwjAhcmb3wzpy1_tF8Uh9=BwzEKmBu4ERtg+SHHo8+17hBHQ@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_044150_006142_F52B6098 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_044648_751498_4A77463B 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32c listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (darkman.hr[at]gmail.com)
+ provider (yszhou4tech[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,8 +81,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] dnsmasq not leasing after a while. Sometimes
- more than 5 times a day
+Subject: Re: [OpenWrt-Devel] [PATCH 6/6] build: cleanup possibly dangling
+ Python 2 host symlink
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,171 +95,51 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============3319316674801540445=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============3319316674801540445==
-Content-Type: multipart/alternative; boundary="000000000000e17999058babb636"
-
---000000000000e17999058babb636
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-This is final error message.. after this no dns  works and dnsmasq needs to
-be rebooted.. I also checked google and found numerous users have same
-issue back a year or more.
-
-Error sending DHCP packet to 172.16.6.50: Resource temporarily
-unavailable....
-l
-
-On Tue, May 28, 2019 at 3:15 AM Russell Senior <russell@personaltelco.net>
-wrote:
-
-> >>>>> "Denis" =3D=3D Denis Peri=C5=A1a <darkman.hr@gmail.com> writes:
->
-> Denis> There is no other dhcp in network, it's routed connection RB435G
-> Denis> with multiple cards wlan.  this is config example:
->
-> Denis> interface=3Deth0 except-interface=3Deth1 interface=3Dwlan3
-> Denis> interface=3Dwlan0 interface=3Dwlan1 interface=3Dwlan2
->
-> Denis> dhcp-range=3D172.17.3.20,172.17.3.253,255.255.255.0,1h
-> Denis> dhcp-range=3D172.17.4.20,172.17.4.253,255.255.255.0,1h
-> Denis> dhcp-range=3D172.17.5.20,172.17.5.253,255.255.255.0,1h
-> Denis> dhcp-range=3D172.17.6.20,172.17.6.253,255.255.255.0,1h
-> Denis> dhcp-range=3D172.17.7.20,172.17.7.253,255.255.255.0,1h
->
-> From experience, sometimes there are DHCP servers you don't know about.
->
-> This is what I see in my test bed:
->
->    # cat /var/etc/dnsmasq.conf.cfg01411c
->
->    # auto-generated config file from /etc/config/dhcp
->    conf-file=3D/etc/dnsmasq.conf
->    dhcp-authoritative
->    read-ethers
->    enable-ubus
->    bind-dynamic
->    local-service
->    domain=3Dlocalnet
->    server=3D/lan/
->    except-interface=3Deth1
->    dhcp-leasefile=3D/tmp/dhcp.leases
->    resolv-file=3D/tmp/resolv.conf.auto
->    dhcp-broadcast=3Dtag:needs-broadcast
->    addn-hosts=3D/tmp/hosts
->    conf-dir=3D/tmp/dnsmasq.d
->    user=3Ddnsmasq
->    group=3Ddnsmasq
->
->
->    dhcp-ignore-names=3Dtag:dhcp_bogus_hostname
->    conf-file=3D/usr/share/dnsmasq/dhcpbogushostname.conf
->
->
->    dhcp-range=3Dset:pub,10.11.24.5,10.11.24.30,255.255.255.224,1h
->    no-dhcp-interface=3Deth1
->    dhcp-range=3Dset:priv,192.168.11.100,192.168.11.249,255.255.255.0,12h
->
-> Try turning on the force option.
->
->
-> --
-> Russell Senior, President
-> russell@personaltelco.net
->
-
---000000000000e17999058babb636
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">This is final error message.. after this no dns=C2=A0 work=
-s and dnsmasq needs to be rebooted.. I also checked google and found numero=
-us users have same issue back a year or more.<br><br>Error sending DHCP pac=
-ket to <a href=3D"http://172.16.6.50">172.16.6.50</a>: Resource temporarily=
- unavailable....<br><div>l</div></div><br><div class=3D"gmail_quote"><div d=
-ir=3D"ltr" class=3D"gmail_attr">On Tue, May 28, 2019 at 3:15 AM Russell Sen=
-ior &lt;<a href=3D"mailto:russell@personaltelco.net">russell@personaltelco.=
-net</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"marg=
-in:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1e=
-x">&gt;&gt;&gt;&gt;&gt; &quot;Denis&quot; =3D=3D Denis Peri=C5=A1a &lt;<a h=
-ref=3D"mailto:darkman.hr@gmail.com" target=3D"_blank">darkman.hr@gmail.com<=
-/a>&gt; writes:<br>
-<br>
-Denis&gt; There is no other dhcp in network, it&#39;s routed connection RB4=
-35G<br>
-Denis&gt; with multiple cards wlan.=C2=A0 this is config example:<br>
-<br>
-Denis&gt; interface=3Deth0 except-interface=3Deth1 interface=3Dwlan3<br>
-Denis&gt; interface=3Dwlan0 interface=3Dwlan1 interface=3Dwlan2<br>
-<br>
-Denis&gt; dhcp-range=3D172.17.3.20,172.17.3.253,255.255.255.0,1h<br>
-Denis&gt; dhcp-range=3D172.17.4.20,172.17.4.253,255.255.255.0,1h<br>
-Denis&gt; dhcp-range=3D172.17.5.20,172.17.5.253,255.255.255.0,1h<br>
-Denis&gt; dhcp-range=3D172.17.6.20,172.17.6.253,255.255.255.0,1h<br>
-Denis&gt; dhcp-range=3D172.17.7.20,172.17.7.253,255.255.255.0,1h<br>
-<br>
-From experience, sometimes there are DHCP servers you don&#39;t know about.=
-<br>
-<br>
-This is what I see in my test bed:<br>
-<br>
-=C2=A0 =C2=A0# cat /var/etc/dnsmasq.conf.cfg01411c<br>
-<br>
-=C2=A0 =C2=A0# auto-generated config file from /etc/config/dhcp<br>
-=C2=A0 =C2=A0conf-file=3D/etc/dnsmasq.conf<br>
-=C2=A0 =C2=A0dhcp-authoritative<br>
-=C2=A0 =C2=A0read-ethers<br>
-=C2=A0 =C2=A0enable-ubus<br>
-=C2=A0 =C2=A0bind-dynamic<br>
-=C2=A0 =C2=A0local-service<br>
-=C2=A0 =C2=A0domain=3Dlocalnet<br>
-=C2=A0 =C2=A0server=3D/lan/<br>
-=C2=A0 =C2=A0except-interface=3Deth1<br>
-=C2=A0 =C2=A0dhcp-leasefile=3D/tmp/dhcp.leases<br>
-=C2=A0 =C2=A0resolv-file=3D/tmp/resolv.conf.auto<br>
-=C2=A0 =C2=A0dhcp-broadcast=3Dtag:needs-broadcast<br>
-=C2=A0 =C2=A0addn-hosts=3D/tmp/hosts<br>
-=C2=A0 =C2=A0conf-dir=3D/tmp/dnsmasq.d<br>
-=C2=A0 =C2=A0user=3Ddnsmasq<br>
-=C2=A0 =C2=A0group=3Ddnsmasq<br>
-<br>
-<br>
-=C2=A0 =C2=A0dhcp-ignore-names=3Dtag:dhcp_bogus_hostname<br>
-=C2=A0 =C2=A0conf-file=3D/usr/share/dnsmasq/dhcpbogushostname.conf<br>
-<br>
-<br>
-=C2=A0 =C2=A0dhcp-range=3Dset:pub,10.11.24.5,10.11.24.30,255.255.255.224,1h=
-<br>
-=C2=A0 =C2=A0no-dhcp-interface=3Deth1<br>
-=C2=A0 =C2=A0dhcp-range=3Dset:priv,192.168.11.100,192.168.11.249,255.255.25=
-5.0,12h<br>
-<br>
-Try turning on the force option.<br>
-<br>
-<br>
--- <br>
-Russell Senior, President<br>
-<a href=3D"mailto:russell@personaltelco.net" target=3D"_blank">russell@pers=
-onaltelco.net</a><br>
-</blockquote></div>
-
---000000000000e17999058babb636--
-
-
---===============3319316674801540445==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3319316674801540445==--
-
+T24gVHVlLCAxOCBKdW4gMjAxOSBhdCAwNDoxMCwgUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5j
+ej4gd3JvdGU6Cj4KPiBXaGVuIGJ1bXBpbmcgYnVpbGRyb290IHRvIFB5dGhvbiAzLCB3ZSBuZWVk
+IHRvIGFzc3VyZSwgdGhhdCBQeXRob24KPiBzeW1saW5rIGluIHN0YWdpbmcgYmluIGRpcmVjdG9y
+eSBwb2ludHMgdG8gUHl0aG9uID49IDMuNSBhcyB3ZWxsLgoKSSB0aG91Z2h0IGBsbiAtc2ZgIGlu
+IHByZXZpb3VzIHBhdGNoIHdpbGwgdXBkYXRlIHRoYXQgc3ltbGluayB0bwpweXRob24zLiAgSXNu
+J3QgdGhhdCB0aGUgY2FzZT8KCj4KPiBTaWduZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6
+ekB0cnVlLmN6Pgo+IC0tLQo+ICBpbmNsdWRlL3ByZXJlcS1idWlsZC5tayB8ICAyICsrCj4gIGlu
+Y2x1ZGUvcHJlcmVxLm1rICAgICAgIHwgMTEgKysrKysrKysrKysKPiAgMiBmaWxlcyBjaGFuZ2Vk
+LCAxMyBpbnNlcnRpb25zKCspCj4KPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9wcmVyZXEtYnVpbGQu
+bWsgYi9pbmNsdWRlL3ByZXJlcS1idWlsZC5tawo+IGluZGV4IGM1MmNhNzE5MDg3Yy4uNDBkZjg5
+NTc1ZDllIDEwMDY0NAo+IC0tLSBhL2luY2x1ZGUvcHJlcmVxLWJ1aWxkLm1rCj4gKysrIGIvaW5j
+bHVkZS9wcmVyZXEtYnVpbGQubWsKPiBAQCAtMTQxLDYgKzE0MSw4IEBAICQoZXZhbCAkKGNhbGwg
+U2V0dXBIb3N0Q29tbWFuZCx3Z2V0LFBsZWFzZSBpbnN0YWxsIEdOVSAnd2dldCcsIFwKPiAgJChl
+dmFsICQoY2FsbCBTZXR1cEhvc3RDb21tYW5kLHBlcmwsUGxlYXNlIGluc3RhbGwgUGVybCA1Lngs
+IFwKPiAgICAgICAgIHBlcmwgLS12ZXJzaW9uIHwgZ3JlcCAicGVybC4qdjUiKSkKPgo+ICskKGV2
+YWwgJChjYWxsIENsZWFudXBQeXRob24yKSkKPiArCj4gICQoZXZhbCAkKGNhbGwgU2V0dXBIb3N0
+Q29tbWFuZCxweXRob24sUGxlYXNlIGluc3RhbGwgUHl0aG9uID49IDMuNSwgXAo+ICAgICAgICAg
+cHl0aG9uMy43IC1WIDI+JjEgfCBncmVwIC1FICdQeXRob24gM1wuWzUtOV1cLj8nLCBcCj4gICAg
+ICAgICBweXRob24zLjYgLVYgMj4mMSB8IGdyZXAgLUUgJ1B5dGhvbiAzXC5bNS05XVwuPycsIFwK
+PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9wcmVyZXEubWsgYi9pbmNsdWRlL3ByZXJlcS5tawo+IGlu
+ZGV4IDBmMGYyNTM3NDQ4Zi4uNTFhMGE4NzllM2RjIDEwMDY0NAo+IC0tLSBhL2luY2x1ZGUvcHJl
+cmVxLm1rCj4gKysrIGIvaW5jbHVkZS9wcmVyZXEubWsKPiBAQCAtNjYsNiArNjYsMTcgQEAgZGVm
+aW5lIFJlcXVpcmVIZWFkZXIKPiAgICAkJChldmFsICQkKGNhbGwgUmVxdWlyZSwkKDEpLCQoMikp
+KQo+ICBlbmRlZgo+Cj4gK2RlZmluZSBDbGVhbnVwUHl0aG9uMgo+ICsgIGRlZmluZSBSZXF1aXJl
+L3B5dGhvbjItY2xlYW51cAo+ICsgICAgICAgWyAtZiAiJChTVEFHSU5HX0RJUl9IT1NUKS9iaW4v
+cHl0aG9uIiBdICYmIFwKPiArICAgICAgICAgICAgICAgJChTVEFHSU5HX0RJUl9IT1NUKS9iaW4v
+cHl0aG9uIC1WIDI+JjEgfCBcCj4gKyAgICAgICAgICAgICAgIGdyZXAgLUUgJ1B5dGhvbiAzXC5b
+NS05XVwuPycgPiAvZGV2L251bGwgMj4mMSB8fCBcCj4gKyAgICAgICAgICAgICAgIHJtICQoU1RB
+R0lOR19ESVJfSE9TVCkvYmluL3B5dGhvbgoKRnJlc2ggY2xvbmUgYW5kIGJ1aWxkIHdoZW4gZG9p
+bmcgdGhlIHJtIGNvbW1hbmQgd2lsbCByZXBvcnQgIm5vIHN1Y2gKZmlsZSBvciBkaXJlY3Rvcnki
+PwoKTWF5YmUgdGhpcyB3aWxsIGRvCgppZiBbIC1mICQoU1RBR0lOR19ESVJfSE9TVCkvYmluL3B5
+dGhvbiBdICYmCiQoU1RBR0lOR19ESVJfSE9TVCkvYmluL3B5dGhvbiAtViAyPiYxIHwgZ3JlcCAt
+cSAnUHl0aG9uIDNcLls1LTldJzsKdGhlbiBcCiAgICAgICAgcm0gJChTVEFHSU5HX0RJUl9IT1NU
+KS9iaW4vcHl0aG9uOyBcCmZpCgpSZWdhcmRzLAogICAgICAgICAgICAgICAgeW91c29uZwoKPiAr
+ICBlbmRlZgo+ICsKPiArICAkJChldmFsICQkKGNhbGwgUmVxdWlyZSxweXRob24yLWNsZWFudXAp
+KQo+ICtlbmRlZgo+ICsKPiAgZGVmaW5lIFF1b3RlSG9zdENvbW1hbmQKPiAgJyQoc3Vic3QgJywn
+IiciJywkKHN0cmlwICQoMSkpKScKPiAgZW5kZWYKPiAtLQo+IDEuOS4xCj4KPgo+IF9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBt
+YWlsaW5nIGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9s
+aXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFp
+bGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5v
+cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

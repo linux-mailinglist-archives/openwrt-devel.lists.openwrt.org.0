@@ -2,61 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36C644B39D
-	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Jun 2019 10:08:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C58C4B51C
+	for <lists+openwrt-devel@lfdr.de>; Wed, 19 Jun 2019 11:41:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=vH/JeBG0kFV/AknbY9M+O3l+Z4+yTEfQVMfQsZ/T08M=; b=oTZPAGuimGYbYX7Nk0wUWOdT9j
-	svPIAflXNLbvHen5Rf5+0YVzaeG4jtFTTRIkDZ43o07khPSqwozUpXhJkM71S/4iZGRscDHyETQ4p
-	0yTw33GlBV4Ti3hGi5vY8hQ67bQreKgbTl9m77ymrqfr5ZCeMfvOBwBGLVEZuVNc3ghNkOefekZkH
-	x3vscjSimAdTDvrbk7nuCL35KP7Bnyez2QcEbhuwDii3KqPblKAvSVl0NybtwaHl9/O6ruoD6KVCM
-	WJQvmDqdP/xl5j7AVQ2SX/qcsYUt4H5zeIwJfRfCRAl//acseAyBC84K8efw1OVxgWFK6cLDmZnoj
-	0PX3Pp7Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hbwlJJOsQ7UNdzFuuxJPJO42DaHZEFVKc8deq1PbC7M=; b=mpfdv4ItXSENxB
+	Kqoaxsgl/n3+a7ySuP4dfooTOXUnIYER1OHZIBowv/Jn1UjH3JJXaoluKrTYY9UtY402jUm023O51
+	mR1nVPuTNTwiw9slL7vquTqe/A+BCkQjVJ0tsYEQPMzewNXer+sZC6kylbZn2u9k+61CSRcldl9nu
+	9cgPPDYCTS8LogRtqUMbi2/YaSLvWVD3DMVl6PGDNzS2Re6j7wNeB1DsI6OT7jol6xHMw2ud5O344
+	sbrd4NtNmmKC8DnxiMBIb+M5wIsZ5cWbA8PLlM7eR5lGOy+dOMFctJ0wUt4kSNOtAkboNhw1ikalV
+	CfArT0lKwCiJ4gZr2lZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdVdO-0004NY-2H; Wed, 19 Jun 2019 08:07:58 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hdX6I-0001cF-7e; Wed, 19 Jun 2019 09:41:54 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdVcu-00047N-GA
- for openwrt-devel@lists.openwrt.org; Wed, 19 Jun 2019 08:07:30 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 39D174195;
- Wed, 19 Jun 2019 10:07:26 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 74b5cc56;
- Wed, 19 Jun 2019 10:07:24 +0200 (CEST)
-Date: Wed, 19 Jun 2019 10:07:24 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: "Y.b. Lu" <yangbo.lu@nxp.com>
-Message-ID: <20190619080724.GE95426@meh.true.cz>
-References: <1560802136-4157-1-git-send-email-ynezz@true.cz>
- <1560802136-4157-6-git-send-email-ynezz@true.cz>
- <VI1PR0401MB22375B608C0DADFC24249471F8E50@VI1PR0401MB2237.eurprd04.prod.outlook.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR0401MB22375B608C0DADFC24249471F8E50@VI1PR0401MB2237.eurprd04.prod.outlook.com>
+ id 1hdX6B-0001bg-Hn
+ for openwrt-devel@lists.openwrt.org; Wed, 19 Jun 2019 09:41:48 +0000
+Received: by mail-io1-xd43.google.com with SMTP id u19so36601671ior.9
+ for <openwrt-devel@lists.openwrt.org>; Wed, 19 Jun 2019 02:41:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=8devices-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=39qXC65CrfvbqhJScsIgHVFP/KKMwIA9vIQofW/Jzjo=;
+ b=CkBgNFHOHxQrXBPUdDCU/u4xp9a80s9Ag4nmrwDojCZkuFcT8k5iHJUUJD4TgrIFgv
+ 21uDoSw8ASJTLfcI/J4j3bCim89mXqT2EVrENbWSqwMLuie4CJLJi64/B2B1D1bROPPm
+ sKpS5umWnTQoFfASbSDddbZYObgsxUxxZo/KBGTYIISRVm+d/DP6FnzWQUDQqcIlv8h2
+ +zaH1tiIddz99P6Su2g9qMcgF916Uo/2A9ivhp6XjG1lzyMPrdhcO6aHTMKRvLTOwRDf
+ DiEBLz++ZrjIAQ4yncijxz4BPEK2HXRZYNj0nVFdOQBSPNQIi4ser2Emg9EqL1GcHEnh
+ Mvrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=39qXC65CrfvbqhJScsIgHVFP/KKMwIA9vIQofW/Jzjo=;
+ b=bLwdxFLu7qvizLYiFfpmiKnvITVqdaIIBEUdtQQ//2gSVLaLrMjjCSdhX5RN1hcKeO
+ UsiWDIm3m4zyqkrPZsmxAKOC3oPcGqc6iEcAlazrAoo4U/Y6+uSiLecmanvxhaSdsKMZ
+ wR/HNXWZwI0ae1oST4RUev6d/1qYrqsgH25p/wbKwhYKigVXleknLTHA64ujPxmjpvWf
+ A13vki0RAkvAA0TAhOd+CPZD3AA0pGa/gkqZq2Dqg25gWReEjnHPUQV4K+VvsB3+16jW
+ ueMlTtOrRmX1VBgtL6Od2L87O2fyUyjptM8Il1p0RdR/UPMiFEDPBkx0SYKCKQPcpVk+
+ 9P0w==
+X-Gm-Message-State: APjAAAUoUS90Gcl9hk3T1N2k5iNaMHKdsfwr4LKR7CFSWRh7xMB2/WGk
+ sXRb2zc1irFbGYIFCVIM80X82IxR1Oc=
+X-Google-Smtp-Source: APXvYqxRfIh5vpRIW7+qtf5Da+/FJtyxa1Bfw+R3qd23A3+kd3kIJCsn4MQNgWFW2mNuatAlX66XEA==
+X-Received: by 2002:a5e:cb06:: with SMTP id p6mr7344062iom.79.1560937305603;
+ Wed, 19 Jun 2019 02:41:45 -0700 (PDT)
+Received: from TAUTVYDAS.peraso-corp.perasotech.com
+ (88-119-50-40.static.zebra.lt. [88.119.50.40])
+ by smtp.gmail.com with ESMTPSA id x22sm14386374ioh.87.2019.06.19.02.41.44
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 19 Jun 2019 02:41:45 -0700 (PDT)
+From: Tautvydas Belgeras <tautvydas.b@8devices.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 19 Jun 2019 12:41:38 +0300
+Message-Id: <20190619094138.5431-1-tautvydas.b@8devices.com>
+X-Mailer: git-send-email 2.18.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190619_010728_686929_DC0F9317 
-X-CRM114-Status: UNSURE (   7.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_024147_651371_803DE919 
+X-CRM114-Status: GOOD (  11.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH 5/6] build: switch to Python 3
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH v2] uqmi: add explicit check for message
+ type when expecting a response
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,48 +89,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
- Mathew McBride <matt@traverse.com.au>
+Cc: Tautvydas Belgeras <tautvydas.b@8devices.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Y.b. Lu <yangbo.lu@nxp.com> [2019-06-19 03:20:43]:
+When the utility sends a request it expects a response type message,
+but does not explicitly check for it. When a device stays idle for
+some time, it switches into a sleep mode, and notifies the utility with an
+identification type message. In some configurations the device only sends
+this identification message when triggered by the utility, in this case by
+the request message. What the utility gets is two messages at the same time -
+an identification and a response. When it tries to decode former it obviously
+fails, because it is not what it expected.
 
-Hi,
+Signed-off-by: Tautvydas Belgeras <tautvydas.b@8devices.com>
+---
+ dev.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-> >  ath79/generic
-> >  imx6/generic
-> >  ipq40xx/generic
-> >  lantiq/xway
-> >  layerscape/armv7 (broken)
-> >  layerscape/armv8_32b (broken)
-> >  layerscape/armv8_64b (broken)
+diff --git a/dev.c b/dev.c
+index a586157..5f6967e 100644
+--- a/dev.c
++++ b/dev.c
+@@ -79,6 +79,12 @@ static void qmi_process_msg(struct qmi_dev *qmi, struct qmi_msg *msg)
+ 	struct qmi_request *req;
+ 	uint16_t tid;
+ 
++	if (msg->service == QMI_SERVICE_CTL && msg->flags != QMI_SERVICE_FLAG_RESPONSE) {
++		return;
++	} else if (msg->flags != QMI_SERVICE_FLAG_RESPONSE) {
++		return;
++	}
++
+ 	if (msg->qmux.service == QMI_SERVICE_CTL)
+ 		tid = msg->ctl.transaction;
+ 	else
+-- 
+2.18.1
 
-thanks a lot for such quick response and the fix, layerscape builds fine now
-with Python 3.
-
-> >  mvebu/cortexa72
-> >  ramips/mt7621
-> >  ramips/mt7620
-> >  sunxi/cortexa7
-> >  x86/64
-> > 
-> > Layerscape targets are unfortunately left broken as their ls-rcw firmware
-> > package uses Python 2 and converting it to Python 3 would take more then
-> > reasoanble amount of time (I've tried to fix it already) and would be better
-> > fixed by someone who can even run test it.
->
-> [Y.b. Lu] I created a pull request for ls-rcw to convert to python3. I
-> compared the binaries generated with python2 and python3. Looked good.
-> Please help to review or cherry-pick if you need.
-> https://github.com/openwrt/openwrt/pull/2149
-
-I've cherry-picked it to my wip/python3 branch. Thanks.
-
--- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,83 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDB4D4CC4C
-	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Jun 2019 12:52:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC3A74CD88
+	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Jun 2019 14:17:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WVZYGvlrHzP3FSNe92p2/jZvodM6v2hbz6O3l5z04nc=; b=lAuS8M4LhSRY2u
-	3XfrfKjaJwbLO+sypgnecbj/Z/C96Mnv29YmfCsEID0YczQpt5iNU8XXtt+aF1qD6piHd+2zBGEBl
-	d7A3viSxvL39XmCbmp2WSdJwiRZJiDdjJyBv9TC/okN3gTEE02Ul3w7ZFNExTBXvBr/cyhl6zfqeR
-	WkWIqTS45qaqIzXLBkofkL7cgZvS+KHHAADXNMNvr8JXjDnD/4x6MDT17/X9GJxewcSbNMRxlUHK0
-	y9N1GdYCJBZ/8zOfVj/jkcCNstswqKXO7drfxqq1ET/g86T9oxeYPPGrbjLbq4aYwlQas8h2ifsp8
-	kcvdoPt2rUFIRMSlsfUA==;
+	List-Owner; bh=EPjsDh+TFkREOl8sD3njQx5QWOp1LMw60NcHJJurCAE=; b=ijN7K3GlHQYglC
+	risv4gVVGEj7KEoZlHViE8TZ7kmoLQWPSv7ZaAuxlB9pvc6JXARjclj2fYS3X4K5NKGYQbmDbGLxW
+	rSa4VdL7XTvhs8xE1FNbalb1XWjNdcDoUz7Rv6MVExv2IHyCORmj+D/8xR6OtWDv4DlgjpCKZinpa
+	WRvf81MafRrP9D8mb3MpLvEEi5QsHIdlwx9sT/JJNPMIbCcw4X1xN5V1YNZIU373f/UZek5W/YOC5
+	3mBWHphpWnEDU7P6bF7A68EkIBf4uv+W9sA1FSiBfJ3V2Kb8kC0YbIwoXatL4cDh9ikLOGisHcgRj
+	8xRko+g1lu3N0eZDdvMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hdufe-0006Ls-Eq; Thu, 20 Jun 2019 10:51:58 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1hdw0J-0005K3-1v; Thu, 20 Jun 2019 12:17:23 +0000
+Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hdufJ-0006Fe-Jf
- for openwrt-devel@lists.openwrt.org; Thu, 20 Jun 2019 10:51:38 +0000
-Received: by mail-io1-xd41.google.com with SMTP id e5so857491iok.4
- for <openwrt-devel@lists.openwrt.org>; Thu, 20 Jun 2019 03:51:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=8devices-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id;
- bh=DweS3Sy1Cth3wIkOT2od3Q3pTLxbWpxYE4jRgJwUKS0=;
- b=c+Hk2LUOcy/Dcot5M3aZCgbDqD4pnYmKbPItH0Zdlee/fx+cAsc3Z3+9ejLEZmR6z0
- G67KNFcPMad4hDq2URijmioleoY4gtCwCnbE0tog16MN6do2hCGm2zFaxL7AgeYePUH/
- yeOlP4vfiEl328KBoDPAFEI4D2LBNef+nvd2r2atZ+bRKHszJO67qkF2+lvVH7/saPUv
- j34PLJ/XvZIs0Aimy/3WhXGv8iFGPNL01Xbw5IE/XF1HaDwJG/OsaCMD4Fz3gUNElWsg
- tjSWX6oqdtElBhquxHhKH+SMoxArU+PQvgV50Bm+b0bb1fZGICfK0pjsUjjNBXE0oePd
- N2Ug==
+ id 1hdw06-0005Jf-Q9
+ for openwrt-devel@lists.openwrt.org; Thu, 20 Jun 2019 12:17:15 +0000
+Received: by mail-pg1-x52c.google.com with SMTP id 145so1506451pgh.4
+ for <openwrt-devel@lists.openwrt.org>; Thu, 20 Jun 2019 05:17:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=tBJRhXN4Xh1EdspRN4l0luiSc4SuYeEqDhkowSrqVGU=;
+ b=aiqwMdNdUscfZWyApe0x6r2wjqq2vIjDuIThLuvFBc5uKeMgAsX8LHAPv/KB7GrP0f
+ lPi5wg3grdSXvLj59nRxV1dNHi3cWSt689jvLs+RjFJ1bzrq98LlOsnWTaEGcfyq3BYs
+ XHG4deLKZZLZL2GZLjxij1FTE3vh9OUIw9bIJy/aGP/1/RsLpGn0WUJ1Fskt0LEwuj18
+ vnI7Bnh0Pii8MtW3pOfUYovzCJxkW4S6+eDDG3IfY3kYC4SNY2LFhlPw8tyzH9JyPfqG
+ Q7BRv182D+N6zch7dltl3Vz7Q3FNnNa+YwWm3vTHNlAa7EsN2bDRVEfGz0SVb2bF9QFD
+ loSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=DweS3Sy1Cth3wIkOT2od3Q3pTLxbWpxYE4jRgJwUKS0=;
- b=C7Y+EYro1Dmcj6QtckmOS4tnMToIVEvrwsYzG/W0vDwOvq5qXeBhK26XZBABWrXE53
- eQpwNP3nxeXi6HkOwKUB2FQgWpBCUvwLyzJLHbODdl2P9s/S4j31C/FqoJZJu+PX8L9Z
- zLk3I6MTH2KeNtRmle74EUdbzivZNAUXT3h0LcP3wYDDD99EuZSszpcYCKUELm+mnmEM
- vE/d5Ng3dF9WPhhS7fNE+e261vipYDzxTCPdyOxKssfytQKoPqOvwt1cPzBBJQdCZtcl
- 4+L+OxM8NImihFfpKtMD2xdTlHGU4OCbUvq5ftPQTZKdI2WYNw5hZtoj0pknEXWdMU++
- /p9w==
-X-Gm-Message-State: APjAAAV8qINaevQfxlkrgcd9c1ouiSlrUGEWXcMzPLfnfF1O4FbWfLS3
- Ga4GtKs+6eflDDoWhgW4wgnwARoCLkc=
-X-Google-Smtp-Source: APXvYqzIxB62lPLle9rxFGqOl/iBB7VqOESk54NyNmFAsyHJHYorfFb3gOGOm+HC7IB5ieuyYp8KnA==
-X-Received: by 2002:a02:c952:: with SMTP id u18mr79391536jao.23.1561027896910; 
- Thu, 20 Jun 2019 03:51:36 -0700 (PDT)
-Received: from TAUTVYDAS.peraso-corp.perasotech.com
- (88-119-50-40.static.zebra.lt. [88.119.50.40])
- by smtp.gmail.com with ESMTPSA id t19sm15312504iog.41.2019.06.20.03.51.35
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=tBJRhXN4Xh1EdspRN4l0luiSc4SuYeEqDhkowSrqVGU=;
+ b=eWg5TYsAYEEkPf6HLbMthYvwohEhT+9nXG5Fl40IBS2PzUVPRPTGXHlqMPxF4k66pH
+ HFa3qs9zHPMEDYBsJtU+3KDAzIfzKWnGiIviHWOD1BrBRcgC18gVcKfGx2pYSjk0QywN
+ JMOVsAFS4L4teZUokSjpPI0jMu2RbzTFw2UI3PHsIOrStqitErXcdOasrsauPrZVvb1H
+ 7oVBy6C1gNwYtSNj1tnSDtJqnWkOQWLUKsK891PaVTULxvJf+ES6px1xEX3PhrVUiOuO
+ eNsD+yD90KJ94TO9FzqHw3wL4NwDqh0nkVFIdLNjyDOa5O1XO1T8stqhFMcXNYZhQOOF
+ 8POg==
+X-Gm-Message-State: APjAAAUBz819mSeFDan4661Sl8a/Ln0ui+wkf4e/XkCTX8rK+CPxPDtQ
+ vO0ui8zuQA9Xy01e+tjtqfg=
+X-Google-Smtp-Source: APXvYqwmK/5vIK03EDO1GcmwoISZVoQB+0/09E104OLR+zqBBfWMVN+lI60bVNt1czLGLX2oqangcw==
+X-Received: by 2002:a62:ed09:: with SMTP id u9mr15145957pfh.23.1561033028883; 
+ Thu, 20 Jun 2019 05:17:08 -0700 (PDT)
+Received: from titan.hq.cloud.yunionyun.com
+ (165.116.92.34.bc.googleusercontent.com. [34.92.116.165])
+ by smtp.gmail.com with ESMTPSA id a21sm4478461pjh.10.2019.06.20.05.17.06
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Jun 2019 03:51:36 -0700 (PDT)
-From: Tautvydas Belgeras <tautvydas.b@8devices.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 20 Jun 2019 13:51:29 +0300
-Message-Id: <20190620105129.17756-1-tautvydas.b@8devices.com>
-X-Mailer: git-send-email 2.18.1
+ Thu, 20 Jun 2019 05:17:07 -0700 (PDT)
+From: Yousong Zhou <yszhou4tech@gmail.com>
+To: ynezz@true.cz
+Date: Thu, 20 Jun 2019 12:16:54 +0000
+Message-Id: <20190620121654.113862-1-yszhou4tech@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_035137_645313_6773C2D6 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190620_051714_219752_C9C5AD4E 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:52c listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (yszhou4tech[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH,
- v5] uqmi: add explicit check for message type when expecting a
- response
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] base-files: apply new sysctl.conf at
+ postinst
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,44 +97,99 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Tautvydas Belgeras <tautvydas.b@8devices.com>
-MIME-Version: 1.0
+Cc: Yousong Zhou <yszhou4tech@gmail.com>,
+ Marco Sartorius <tidbits@ormoorgmen.info>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-When the utility sends a request it expects a response type message,
-but does not explicitly check for it. When a device stays idle for
-some time, it switches into a sleep mode, and notifies the utility with an
-identification type message. In some configurations the device only sends
-this identification message when triggered by the utility, in this case by
-the request message. What the utility gets is two messages at the same time -
-an identification and a response. When it tries to decode former it obviously
-fails, because it is not what it expected.
+This is mainly for kmod-br-netfilter.  To turn off
+bridge-netfilter-call-xxx immediately after installation
 
-Signed-off-by: Tautvydas Belgeras <tautvydas.b@8devices.com>
+While at it
+
+ - Define filelist="/usr/lib/opkg/info/${pkgname}.list"
+ - Reuse "[ -z "$root" ]"
+ - Grep with "-m1"
+
+Fixes FS#2300
+
+Reported-by: Marco Sartorius <tidbits@ormoorgmen.info>
+Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
 ---
- dev.c | 3 +++
- 1 file changed, 3 insertions(+)
+ package/base-files/Makefile               |  2 +-
+ package/base-files/files/lib/functions.sh | 33 ++++++++++++++---------
+ 2 files changed, 21 insertions(+), 14 deletions(-)
 
-diff --git a/dev.c b/dev.c
-index 4bca429..bd10207 100644
---- a/dev.c
-+++ b/dev.c
-@@ -96,6 +96,9 @@ static void qmi_process_msg(struct qmi_dev *qmi, struct qmi_msg *msg)
- 	struct qmi_request *req;
- 	uint16_t tid;
+diff --git a/package/base-files/Makefile b/package/base-files/Makefile
+index 91d677acb3..a6dee5aa5a 100644
+--- a/package/base-files/Makefile
++++ b/package/base-files/Makefile
+@@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/version.mk
+ include $(INCLUDE_DIR)/feeds.mk
  
-+	if (msg->flags != QMI_CTL_FLAG_RESPONSE && msg->flags != QMI_SERVICE_FLAG_RESPONSE)
-+		return;
+ PKG_NAME:=base-files
+-PKG_RELEASE:=198
++PKG_RELEASE:=199
+ PKG_FLAGS:=nonshared
+ 
+ PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/base-files/
+diff --git a/package/base-files/files/lib/functions.sh b/package/base-files/files/lib/functions.sh
+index edce75e8ff..59ef693db0 100755
+--- a/package/base-files/files/lib/functions.sh
++++ b/package/base-files/files/lib/functions.sh
+@@ -213,6 +213,7 @@ add_group_and_user() {
+ default_postinst() {
+ 	local root="${IPKG_INSTROOT}"
+ 	local pkgname="$(basename ${1%.*})"
++	local filelist="/usr/lib/opkg/info/${pkgname}.list"
+ 	local ret=0
+ 
+ 	add_group_and_user "${pkgname}"
+@@ -227,23 +228,29 @@ default_postinst() {
+ 		rm -fR $root/rootfs-overlay/
+ 	fi
+ 
+-	if [ -z "$root" ] && grep -q -s "^/etc/modules.d/" "/usr/lib/opkg/info/${pkgname}.list"; then
+-		kmodloader
+-	fi
++	if [ -z "$root" ]; then
++		if grep -m1 -q -s "^/etc/modules.d/" "$filelist"; then
++			kmodloader
++		fi
+ 
+-	if [ -z "$root" ] && grep -q -s "^/etc/uci-defaults/" "/usr/lib/opkg/info/${pkgname}.list"; then
+-		. /lib/functions/system.sh
+-		[ -d /tmp/.uci ] || mkdir -p /tmp/.uci
+-		for i in $(grep -s "^/etc/uci-defaults/" "/usr/lib/opkg/info/${pkgname}.list"); do
+-			( [ -f "$i" ] && cd "$(dirname $i)" && . "$i" ) && rm -f "$i"
+-		done
+-		uci commit
+-	fi
++		if grep -m1 -q -s "^/etc/sysctl.d/" "$filelist"; then
++			/etc/init.d/sysctl restart
++		fi
+ 
+-	[ -n "$root" ] || rm -f /tmp/luci-indexcache 2>/dev/null
++		if grep -m1 -q -s "^/etc/uci-defaults/" "$filelist"; then
++			. /lib/functions/system.sh
++			[ -d /tmp/.uci ] || mkdir -p /tmp/.uci
++			for i in $(grep -s "^/etc/uci-defaults/" "$filelist"); do
++				( [ -f "$i" ] && cd "$(dirname $i)" && . "$i" ) && rm -f "$i"
++			done
++			uci commit
++		fi
 +
- 	if (msg->qmux.service == QMI_SERVICE_CTL)
- 		tid = msg->ctl.transaction;
- 	else
--- 
-2.18.1
-
++		rm -f /tmp/luci-indexcache 2>/dev/null
++	fi
+ 
+ 	local shell="$(which bash)"
+-	for i in $(grep -s "^/etc/init.d/" "$root/usr/lib/opkg/info/${pkgname}.list"); do
++	for i in $(grep -s "^/etc/init.d/" "$root$filelist"); do
+ 		if [ -n "$root" ]; then
+ 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" enable
+ 		else
 
 _______________________________________________
 openwrt-devel mailing list

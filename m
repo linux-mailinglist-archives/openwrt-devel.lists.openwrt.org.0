@@ -2,68 +2,93 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B16C4DC23
-	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Jun 2019 22:59:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA3E64DCE3
+	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Jun 2019 23:40:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XNS0LDFl0Al7Y1U03ePCetrbE2aYTQQvvLtB6cH8swo=; b=aqPsH6239hwdvB
-	RPXjkmfQ8C0YxG1zrIunPC2HgsFphJGrzNHN1aaU2WTgZeSyUzJQF5649kfDG+cTKuWBlQ/eF2Yj5
-	iiyZVZ0xHq5b5H+7TIfHlPP02Wubrt5P+Ho+Cm9i542bowR6SBWBLYjmX226nUIt3m9QoZY7XdZdc
-	9ODXOthF2LbSgPfVFuBaUang83bFpy7O1JFJLj282fPSq7x/CzP4UD682Bu6epBLVojO/BVIsImEq
-	11Ndhh8NgqU8ZQER1H/WelvwAnAEidBAQJ8MNrKlrvUjyN+FQ+XOfr73rRMgbNf6FhzV0w6VIsNHY
-	NOW9puH1KV0iOaYvYtPg==;
+	List-Owner; bh=La3SKxpuHAMuTZ3MKf9LD139Wbp3aYAuggpspGTBQpU=; b=SFaajyM9/VTZ7Y
+	XP1ZNuAe9760tCgBLVgrYFmPwdaGbIGWqk5RnjQg6Gx1EtA7jXVy+Uhz+evRVCItvQMBA/s7d3Ky2
+	/Ap6l1VA5INkFnSSyIrVqdBVjzCFjFEjDH6I/FBAMMZysMXM59LpztFwjA3kVCc1TF842G/8rKjfM
+	/W2rgdKMshkbI9N7xZTnLR3GNKAWibGFdIZbRWfSVTK9YNv1JoVzqEFG37Su09n3FRU25VN+DWDx6
+	J+OrNmB7zDuopNmUdtKQRCpody3Y80NbV+1jPQzJ16UMFcgZHkzbIwHPlRDQ1BH2FPC9QSAa1vnV5
+	nOD57KYwq2OVl9noIfeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he49b-0004mR-J4; Thu, 20 Jun 2019 20:59:31 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1he4n7-0004yD-Tc; Thu, 20 Jun 2019 21:40:21 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he49R-0004m5-K3
- for openwrt-devel@lists.openwrt.org; Thu, 20 Jun 2019 20:59:23 +0000
-Received: from localhost.localdomain ([188.194.85.108]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1Mwfj2-1iWIMz3pPO-00yAix for <openwrt-devel@lists.openwrt.org>; Thu, 20
- Jun 2019 22:59:16 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 20 Jun 2019 22:58:02 +0200
-Message-Id: <20190620205802.62445-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.11.0
-X-Provags-ID: V03:K1:HdIgBf4fPPXIN/kHKB6PFippLZ87+Vgb1fVz8jbaHRwd52XnBp7
- rE1EsS6NXlFLd1x+kaTuagDILiDJH6Gm+iGN6jgOAfQJ0Js3fTpsX31NPij8aFljdodvjSU
- M3vsVCbQJOZbKmNP59Y1lXh+wl82h9QtSeo72JgKNzFjFES8qJDaV1zU5yNLJmO3g/UyQeI
- 6MJBy58hBW2dRtPHs/vzw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:NzUF5R9lJeU=:uwC2h0IqAV8DqKtsG5V1iU
- Eh05ZDQSHI7fVdjwM75N14Bn4l4NJ76vzNRgNwLcxjrgq17KBx1OrHWLFyo8bNmr9KVaZ/mmY
- ttvfAqxg3akh7xuMqbq9vsEHovytt4eccRFmpvvo8MuLXYv22Ne1t3u5l0/mE9NlClxz45uW5
- CU++AA6Fj9j6KJpHpM13C55F8x82F024hPnH9kQ1data/q3fiOWrETzyVzt7cgq2Ot8Xf3tdD
- P9rCzzRhXVGl59aij0wH727J6eql4HhioEiGXU1qWwC3CyB+TvR1XiLwLxu7ez2uW6/9WljAv
- ryiX5dIRsKnwuLqzabBdLVjKRz3KFiNBpz5rmZn3Kb48B0u5dR9ZP3MSl74T7Q9yy/NfV6aD+
- z1hEySSCnqHHk60L8EsbSj5g942lFKcaficUztMr1sajvuR3NF5OOZqkvPe8Mb3JCgHeaKH8/
- wgxxamsYk+4X+pIOZDNRFCelzWVC9XqkyXGCJddBE1iGpdEat1TL6h9TLO8MdfuK1IR8Kepqf
- r8YjBECGhwO3kgzSmOSW9zfGw55e1rOetjrgZl1geK5pNt1Y94yoto///A/S/G+SjxI/Sx41G
- XxvX1WgQyuuPgXFTUTMWi7AHigSUO6ZDiFB0+cFkmDiqPq98h5zlprA6aKNS/iPbFp7iHA3ii
- dQXCteGK53Ep+FCHCwuanhqaHnSzmSMxaovn3+1hIBxCvWqKubG/SDN5gbHu6hSZRi7GkXmBH
- we2VpxScAezvNRN5nCA+jjBFDeMz2NTVL6hqyJUsoGzI91BhzAK/lV4RdkE=
+ id 1he4mE-0003Qq-VU
+ for openwrt-devel@lists.openwrt.org; Thu, 20 Jun 2019 21:39:29 +0000
+Received: by mail-wr1-x443.google.com with SMTP id n9so4544240wru.0
+ for <openwrt-devel@lists.openwrt.org>; Thu, 20 Jun 2019 14:39:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=7Xk4hez7/mS6XBmLs1KNEHdoO4X2B42iD/8NGVo28lA=;
+ b=gGTfeNjDIzNM9k3EwYZY6jKw4puyD1fr5zWze0YHHgUca/2hrB/y6elMyC92KH4TvW
+ NTGcGnw9BFUn9QTmeR7DHiRgjQtDI2hudJdUqupxZkXacxHxVRpOpmuu/RCun8zHKqYC
+ BopsCbCb/09hHSNpJswoPlIkstAo8KnP5YVSCRZky6VQfqowRCvezoNOKoYVNL0htj1n
+ RaQTeRMro+lc1lpxwtCR0IDT1f0ht7OwVPaARe6EfST1JXTU28qiWvMrpYbZ0jBgsWa8
+ g8GST5dWsxAD9678nLdun7n/R/g8UKi4I4egm2w0EcrZg3dcn6/wDkCe9XTTLtC1xTm1
+ H0ew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=7Xk4hez7/mS6XBmLs1KNEHdoO4X2B42iD/8NGVo28lA=;
+ b=hKsndHeE3czio6hp4gMnAogeKL7MN7AmkXTi5/ff7QEBjtBXi6f+SRVlzQG6CitC5K
+ A2ynAqk6a6bHiX6AW6DZ/v7fMkLUIcBs6XEVyrtr+SpHVWQb7GVcEfp7dVYIm82p54rT
+ qdsvH2ZU5bE6fC+0XL/IRrdnjUV8aUQfrl9/UZKwP5RiDVOo2itHEI9lVp8Juqt0bXRX
+ JGbaqTTEfQvoQl5uIzKT1DNxzds/TYYiROcxxSpUOFtHMVlGRcgAaLC0T3yCdT2mpdEB
+ B3KGY8CzFOJSzkUAgmw4VqC6rpkvPp/OKEZfe2T43RrWw5qW4DjFsNS5Rc9+v2s9EXSQ
+ 6SkQ==
+X-Gm-Message-State: APjAAAU/1cqdx1crbRrxhaMQH0YdI7gU8XiQYTG59cIAH9nmSXo4P8Qj
+ IW9SdJOEigwttZXQA3+ZgbAhFdjI
+X-Google-Smtp-Source: APXvYqzw82nOMGtzkv5+JVz+jTNPz4eel+zr0vy9Eb+Uy7VeVKoHeeMqLq95b5s/XHaRq6eBkY2vYQ==
+X-Received: by 2002:a5d:5491:: with SMTP id h17mr366714wrv.46.1561066763893;
+ Thu, 20 Jun 2019 14:39:23 -0700 (PDT)
+Received: from kontron.lan
+ (2001-1ae9-0ff1-f191-ecaa-d74f-d492-3738.ip6.tmcz.cz.
+ [2001:1ae9:ff1:f191:ecaa:d74f:d492:3738])
+ by smtp.gmail.com with ESMTPSA id j4sm575426wrx.57.2019.06.20.14.39.22
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 20 Jun 2019 14:39:23 -0700 (PDT)
+From: petrcvekcz@gmail.com
+X-Google-Original-From: petrcvekcz.gmail.com
+To: hauke@hauke-m.de,
+	john@phrozen.org
+Date: Thu, 20 Jun 2019 23:39:32 +0200
+Message-Id: <cover.1561065843.git.petrcvekcz@gmail.com>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_135921_959224_1DF4B8C4 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190620_143927_100251_D660F2D1 
+X-CRM114-Status: GOOD (  14.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ath79: Remove redundant LED GPIO
- definitions for Archer C25 v1
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (petrcvekcz[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH v2 0/7] MIPS: lantiq: irq: Various fixes,
+ add SMP support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,38 +100,84 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: pakahmar@hotmail.com, openwrt-devel@lists.openwrt.org,
+ Petr Cvek <petrcvekcz@gmail.com>, linux-mips@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+From: Petr Cvek <petrcvekcz@gmail.com>
 
----
+Hi,
 
-Run-tested!
----
- target/linux/ath79/dts/qca9561_tplink_archer-c25-v1.dts | 4 ----
- 1 file changed, 4 deletions(-)
+While hacking with my modem in openwrt I've found in the lantiq vrx268 SoC
+there is only a support for the processes SMP and not for interrupt
+routing. After some looking into vendors released source codes (probably
+intel UGW) and by observing SoC's memory map I've found out there is
+a second interrupt controller (ICU) for the second VPE. The last patch of
+this series adds a support for it. The code is different from intel UGW's
+set affinity function, where the interrupt line gets enabled (switched)
+to the second ICU. Instead only the cpumask gets changed in my set affinity.
+The change will be written into the hardware after the next irq enable call.
+This was changed because of stability reasons in the high irq load of
+the SoC.
 
-diff --git a/target/linux/ath79/dts/qca9561_tplink_archer-c25-v1.dts b/target/linux/ath79/dts/qca9561_tplink_archer-c25-v1.dts
-index 3c971b5464..881e3a1822 100644
---- a/target/linux/ath79/dts/qca9561_tplink_archer-c25-v1.dts
-+++ b/target/linux/ath79/dts/qca9561_tplink_archer-c25-v1.dts
-@@ -24,10 +24,6 @@
- 		cs-gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
- 		num-chipselects = <1>;
- 
--		/* can be removed on 4.19 */
--		gpio-sck = <&gpio 15 GPIO_ACTIVE_HIGH>;
--		gpio-mosi = <&gpio 14 GPIO_ACTIVE_HIGH>;
--
- 		led_gpio: led_gpio@0 {
- 			compatible = "fairchild,74hc595";
- 			reg = <0>;
+The first part of the series are more or less cosmetic changes of long
+names, different types and few fixed warnings from checkpatch. There is
+a fix in part 5, where I've found the missing bitfield clear before ORing
+with a new value.
+
+The SMP in part 7 changes devicetree definition for a register regions
+of the ICU. Previously, there was a region for a single IM (a mask/unmask/
+enable/... set for 32 interrupts). Now it is the whole ICU. It match more
+the hardware layout. There is no compatibility issue in vanilla, only
+openwrt was affected by these devicetrees.
+
+Also in the UGW's ltq_enable_irq(), there was a status bit reset before
+the actual IRQ line enable. It was marked as "Bug fix for fake interrupt".
+The code seems to work without it (vanilla and new SMP), but I've made
+an assert if this bit is set before the actual enable. The assert reported
+these IRQ sources:
+
+	22:00004000     spi_rx  (only when SPI is accessed)
+	63:00800000     mei_cpe (permanent 1s)
+	112:00000100    asc_tx
+
+But the code seems to run anyway I didn't include the status bit reset part.
+
+The SMP affinity update is done every IRQ enable, where it extract the first
+valid VPE from affinity cpumask. This is standard in the kernel.
+
+The code was tested in nosmp configuration on TPLink W9980B in openwrt tree
+(patched kernel v4.14). The lantiq devices other than vrx268 were not
+tested.
+
+Discussion on openwrt related parts for lantiq ICU SMP is here (devicetrees,
+things not in the vanilla kernel, RFC versions of the patch):
+https://patchwork.ozlabs.org/patch/1100832/
+
+Changes since v1:
+ * Added a define for IM size
+ * Changed ltq_icu_membase array size to NR_CPUS so for_each_possible_cpu()
+   will not overflow
+ * Removed affinity auto rotation (can be add later from v1 if required)
+ * Commit messages wordings
+
+Petr Cvek (7):
+  MIPS: lantiq: Move macro directly to iomem function
+  MIPS: lantiq: Change variables to the same type as the source
+  MIPS: lantiq: Fix attributes of of_device_id structure
+  MIPS: lantiq: Remove unused macros
+  MIPS: lantiq: Fix bitfield masking
+  MIPS: lantiq: Shorten register names, remove unused macros
+  MIPS: lantiq: Add SMP support for lantiq interrupt controller
+
+ arch/mips/lantiq/irq.c | 177 +++++++++++++++++++++++++++++------------
+ 1 file changed, 126 insertions(+), 51 deletions(-)
+
 -- 
-2.11.0
+2.21.0
 
 
 _______________________________________________

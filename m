@@ -2,103 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 706B44D41D
-	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Jun 2019 18:48:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 476134D6AF
+	for <lists+openwrt-devel@lfdr.de>; Thu, 20 Jun 2019 20:11:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fZWGOdT3YRudbWXDCxPbhAimq0sk/C9GscIfe8GkyvQ=; b=eDrzDJ8lFqdYR/KBkLC3Mj0KH
-	NesyLf3H/l3Yg7/QQFGp5u8xS586+qC68qelQDNxStfP5ct43AT43n4lTCxAU0GDLShkysekTmaki
-	psRAF2tzoiWjCJQ1p4nxWTNQlA3atCvSuq5QmhYhvFoHN3/1z6SqTbFcmO05Er06HgizX71V77/Di
-	4CfMte5CFIWCyo7pQ5oqLmheT47MDS9DQZu1zaUqYfYtdgCom4gf1Lssd8gEjdarbPLAsdHjmXh1A
-	DzIyz9BnH1pYcSEOomeVqrWr40GhSMp9JeEP4qdPScv+ZoRz9GcyMF3HeRfU8PGgP32PuH29+SiyD
-	kVAm2ruDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wTObe5GTP7RnP/cjy1T6ZVfkaBw9WiRUbxxt7ULRDuk=; b=Lw4mYpZWqxjOWb
+	4HYYlp2upTN/HNpDDr82M9AbdjcUeMpb6/tSRwUohawVNNNse4B7+JtEDQGDt+p5Ottx7osKBdluu
+	6QbHdwNJnISYmG7z9FVz2fchecuBVoxUSqtMntzYk79pHDFpoSmVQw/hqkAsckp5fm17Y5+MHeBOm
+	tIBe0+0T6h4awnuEBXulGCILUd5MCGhm0YqXjl0PCafzskytXFQuv+CSrK6kYlhDrB+o3T75jBTc2
+	5up+L18zSiusktOJvT56dRscCp2L9C5+HnCxMNgLvmbsN1RpPFk0zyGPsX7kpY97NE4F/cpqA4yBm
+	JzJ0vYWAp2TEqOzo2BDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1he0Et-0000ag-Rd; Thu, 20 Jun 2019 16:48:44 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1he1Wa-0006kE-0P; Thu, 20 Jun 2019 18:11:04 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1he0EH-0000TF-Ma
- for openwrt-devel@lists.openwrt.org; Thu, 20 Jun 2019 16:48:07 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 7C72955377; Thu, 20 Jun 2019 18:48:03 +0200 (CEST)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 3959755325
- for <openwrt-devel@lists.openwrt.org>; Thu, 20 Jun 2019 18:48:02 +0200 (CEST)
-Received: (qmail 62306 invoked from network); 20 Jun 2019 18:47:48 +0200
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 20 Jun 2019 18:47:48 +0200
-To: openwrt-devel@lists.openwrt.org
-References: <CA+_ehUwmEv7dj5AquSYvxu3XPZ7Tu5mZdbmhnnGVpmGD79NCCg@mail.gmail.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
- 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
- Xx5IapIyoA==
-Message-ID: <6221ef8e-5d97-69eb-a5b1-f026d72e7746@wwsnet.net>
-Date: Thu, 20 Jun 2019 18:47:48 +0200
+ id 1he1W1-0006Sq-Np
+ for openwrt-devel@lists.openwrt.org; Thu, 20 Jun 2019 18:10:32 +0000
+Received: from [IPv6:2001:678:6e0:2e00:ed8c:f9a:637:5bdf] (unknown
+ [IPv6:2001:678:6e0:1001:eccf:a4ff:feb4:d5e7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id AD85122835;
+ Thu, 20 Jun 2019 20:10:20 +0200 (CEST)
+To: Christian Lamparter <chunkeey@gmail.com>
+References: <20190618110612.11063-1-mail@david-bauer.net>
+ <2379937.tmqAmWvn8S@debian64>
+From: David Bauer <mail@david-bauer.net>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <2b8d4dac-322e-40e6-6113-a1be432da42b@david-bauer.net>
+Date: Thu, 20 Jun 2019 20:10:18 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.1
 MIME-Version: 1.0
-In-Reply-To: <CA+_ehUwmEv7dj5AquSYvxu3XPZ7Tu5mZdbmhnnGVpmGD79NCCg@mail.gmail.com>
+In-Reply-To: <2379937.tmqAmWvn8S@debian64>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_094806_000692_DB54AF0E 
-X-CRM114-Status: UNSURE (   6.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190620_111030_064998_76B13F41 
+X-CRM114-Status: GOOD (  22.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] block bugged
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCH v2] gpio-button-hotplug: mind debounce
+ interval consistently
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,76 +90,171 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5404581665125029972=="
+Cc: ynezz@true.cz, openwrt-devel@lists.openwrt.org, linus.walleij@linaro.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============5404581665125029972==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="eg32TQzi0oWhVAAkVkAb8VJDhkZZWJlqt"
+Hello Christian,
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---eg32TQzi0oWhVAAkVkAb8VJDhkZZWJlqt
-Content-Type: multipart/mixed; boundary="VxWaYo1fYv2lx5n5IAGkETc9MSEBs3Fgz";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <6221ef8e-5d97-69eb-a5b1-f026d72e7746@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] block bugged
-References: <CA+_ehUwmEv7dj5AquSYvxu3XPZ7Tu5mZdbmhnnGVpmGD79NCCg@mail.gmail.com>
-In-Reply-To: <CA+_ehUwmEv7dj5AquSYvxu3XPZ7Tu5mZdbmhnnGVpmGD79NCCg@mail.gmail.com>
+On 20.06.19 17:21, Christian Lamparter wrote:
+> On Tuesday, June 18, 2019 1:06:12 PM CEST David Bauer wrote:
+>> This patch implements consistent handling of the debounce interval set
+>> for the GPIO buttons. Hotplug events will only be fired if
+>>
+>> 1. It's the initial stable state (no state-change for duration of the
+>> debounce interval) for a switch. Buttons will not trigger an event for
+>> the initial stable state.
+>>
+>> 2. The input changes it's state and remains stable for the debounce
+>> interval.
+>>
+>> Prior to this patch, this was handled inconsistently for interrupt-based
+>> an polled gpio-keys. We unify the shared logic in button_hotplug_event
+>> and modify both implementations to read the initial state.
+>>
+>> Run-tested for 'gpio-keys' and 'gpio-keys-polled' on
+>>
+>>  - devolo WiFi pro 1200e
+>>  - devolo WiFi pro 1750c
+>>  - devolo WiFi pro 1750x
+>>
+>> Signed-off-by: David Bauer <mail@david-bauer.net>
+>> ---
+>>  .../src/gpio-button-hotplug.c                 | 42 +++++++++----------
+>>  1 file changed, 20 insertions(+), 22 deletions(-)
+>>
+>> diff --git a/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c b/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
+>> index e63d414284..25150344e0 100644
+>> --- a/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
+>> +++ b/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
+>> @@ -241,6 +241,7 @@ static int button_get_index(unsigned int code)
+>>  static void button_hotplug_event(struct gpio_keys_button_data *data,
+>>  			   unsigned int type, int value)
+>>  {
+>> +	int last_state = data->last_state;
+>>  	struct bh_priv *priv = &data->bh;
+>>  	unsigned long seen = jiffies;
+>>  	int btn;
+>> @@ -250,6 +251,14 @@ static void button_hotplug_event(struct gpio_keys_button_data *data,
+>>  	if ((type != EV_KEY) && (type != EV_SW))
+>>  		return;
+>>  
+>> +	if (value == last_state)
+>> +		return;
+>> +
+>> +	data->last_state = value;
+>> +
+>> +	if (last_state == -1 && type != EV_SW)
+>> +		return;
+>> +
+>>  	btn = button_get_index(data->b->code);
+>>  	if (btn < 0)
+>>  		return;
+>> @@ -285,22 +294,14 @@ static int gpio_button_get_value(struct gpio_keys_button_data *bdata)
+>>  
+>>  static void gpio_keys_polled_check_state(struct gpio_keys_button_data *bdata)
+>>  {
+>> -	int state = gpio_button_get_value(bdata);
+>> -
+>> -	if (state != bdata->last_state) {
+>> -		unsigned int type = bdata->b->type ?: EV_KEY;
+>> -
+>> -		if (bdata->count < bdata->threshold) {
+>> -			bdata->count++;
+>> -			return;
+>> -		}
+>> -
+>> -		if (bdata->last_state != -1 || type == EV_SW)
+>> -			button_hotplug_event(bdata, type, state);
+>> -
+>> -		bdata->last_state = state;
+>> +	if (bdata->count < bdata->threshold) {
+>> +		bdata->count++;
+>> +		return;
+>>  	}
+>>  
+>> +	button_hotplug_event(bdata, bdata->b->type ?: EV_KEY,
+>> +				gpio_button_get_value(bdata));
+>> +
+>>  	bdata->count = 0;
+>>  }
+> Doesn't this change the logic of the gpio-key-polled software-debounce
+> a bit too aggressivly?
+> 
+> Previously, for the button event to happen the button new state had to
+> be stable for bdata->threshold counts.
+> 
+> Whereas now, bdata->count is counted upwards on every "tick" and once
+> bdata->count == bdata->threshold matches the "current state" gets passed
+> on. This seems that it would interfere with the debounce since a signal
+> doesn't have to be asserted stable for the whole duration now, instead
+> it now just has to show up "just before" the
+> bdata->count == bdata->threshold tick in order to be noticed. 
 
---VxWaYo1fYv2lx5n5IAGkETc9MSEBs3Fgz
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+You are right, i will rework this part.
 
-Hi,
+>> @@ -351,8 +352,8 @@ static irqreturn_t button_handle_irq(int irq, void *_bdata)
+>>  	struct gpio_keys_button_data *bdata =
+>>  		(struct gpio_keys_button_data *) _bdata;
+>>  
+>> -	schedule_delayed_work(&bdata->work,
+>> -			      msecs_to_jiffies(bdata->software_debounce));
+>> +	mod_delayed_work(system_wq, &bdata->work,
+>> +			 msecs_to_jiffies(bdata->software_debounce));
+>>  
+>>  	return IRQ_HANDLED;
+>>  }
+>> @@ -608,6 +609,9 @@ static int gpio_keys_probe(struct platform_device *pdev)
+>>  
+>>  		INIT_DELAYED_WORK(&bdata->work, gpio_keys_irq_work_func);
+>>  
+>> +		schedule_delayed_work(&bdata->work,
+>> +				      msecs_to_jiffies(bdata->software_debounce));
+>> +
+> Hm, well since the first state is -1 we could just as well schedule the work
+> immediately here... 
 
-make dirclean will fix it.
+Hmm, i have a bit trouble grasping your intention here.
 
-~ Jo
+Do you mean we can unify the scheduling for polled and interrupt-based keys?
 
+Best wishes
+David
 
---VxWaYo1fYv2lx5n5IAGkETc9MSEBs3Fgz--
-
---eg32TQzi0oWhVAAkVkAb8VJDhkZZWJlqt
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl0LuLQACgkQQuLLvzou
-ZtOI3RAAiQcnvUAM0ILrNa7phX319yfm8kuBoPHaoAAPLtNl9yZcPFM3OFJOmzgG
-kg5Q3H3zIGKdh4vJLDeAywiGnCw9OPhf3iFafYTKNXgcKQ+WjYmuVpOfhV9Mlwrz
-rXuK3qmvyK1t8UVCZBkgbyT4DybJ1ffaEMnXn6p1AMubZJFaC+tUPzo1rEtFH7Uf
-XfIxPY69Fhqktvbz3NtkU1Ljb1A+r0fYa8Tzp6aU4V5x3DKB6KaolqkCsXbomVMT
-CDYZ549hfxmGwNp4/0wLbKTiyxQEMp3Tp+LxINsnqSFuVlyfjzObpRbbXyB5NIQr
-xiDbDxr5DzvCZUi3jERpR1zZdti4UI0GHk+QV7TVF2/ncG4O6dinH5MPt8C0jyrT
-FonB3nq36OMdngF8cgjMPblArhHP4DPjTBIqe1sb/Ft9Wtrw2pJ+kIZf1opx4DOb
-PizypGwtw/86Cx78+jOG0MxulOBlNktRGi9kUJOu4Y74B4ObL05I1GZ7jCX+17xS
-bzDeY7PJxmXaReLDgoZFUTsmCClMLiZPQxFOKP4em8A3U10C6W+rA7kZ0NAexOF4
-QEqtW2WkMuF9xE+4brWV4lpqi4LoyuJu85sRVIYHHcbYBFxkg/G+IE6sGWNM7D+c
-kmASXDAA25jcg4Bqda4wzkneDi1AtZG+kEAknUco4X8KKhO2qwA=
-=oXzv
------END PGP SIGNATURE-----
-
---eg32TQzi0oWhVAAkVkAb8VJDhkZZWJlqt--
-
-
---===============5404581665125029972==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>>  		ret = devm_request_threaded_irq(&pdev->dev,
+>>  			bdata->irq, NULL, button_handle_irq,
+>>  			irqflags, dev_name(&pdev->dev), bdata);
+>> @@ -621,9 +625,6 @@ static int gpio_keys_probe(struct platform_device *pdev)
+>>  			dev_dbg(&pdev->dev, "gpio:%d has irq:%d\n",
+>>  				button->gpio, bdata->irq);
+>>  		}
+>> -
+>> -		if (bdata->b->type == EV_SW)
+>> -			button_hotplug_event(bdata, EV_SW, gpio_button_get_value(bdata));
+>>  	}
+>>  
+>>  	return 0;
+>> @@ -648,9 +649,6 @@ static int gpio_keys_polled_probe(struct platform_device *pdev)
+>>  	if (pdata->enable)
+>>  		pdata->enable(bdev->dev);
+>>  
+>> -	for (i = 0; i < pdata->nbuttons; i++)
+>> -		gpio_keys_polled_check_state(&bdev->data[i]);
+>> -
+> 
+> ...and leave this as is.
+>>  	gpio_keys_polled_queue_work(bdev);
+>>  
+>>  	return ret;
+>>
+> 
+> 
+> 
+> 
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5404581665125029972==--
-

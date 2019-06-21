@@ -2,27 +2,27 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 123C04F0F2
-	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Jun 2019 01:03:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12D884F0F4
+	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Jun 2019 01:04:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EjYWVYjliriPS/toutnczopr1ezCGQfmhh8qqwScu5o=; b=OL5FpGejQL6q0b
-	p1/0+KqLeGwhRaR8p4cQOIWAF3IsoU9aNBtZmUjslJDDOxJupjf2kXc4/xCS3Mq5BXUjIUgzDF0R0
-	gOyDlCSC2hOQYNGBuMbg4FS7BWxwV8bHfuwE03PIIAUkXPspT46+cKdI6WkCUmY8r1hDOpZTc+TUn
-	O4RN/kJhCr2pD2KttXnO+XD2wkNU5iUJkzdT929mCRb9E39DOCcMIu6BDRmWrusF2Tt8c9CGe97vX
-	iNL9z6gAtsRUqNs6ooNA5GISdUjstKrZCMUXfVy5AC0nav+K7kPt7gAiAuSbrw3eMoKLaM3Zl90Hl
-	LFkDaBXWNeBQVVtKAw3w==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gmgpaM6qlH8Q/a+eStO5PI/T4k3ZkAYtZX1yBz75FBM=; b=Q2VBERE3q1jIXF
+	ccXK5JpW1MUmuL4LCljB68Z7xqnftAu64Y3/SLjlkmZOvhmVTENLpAXPVI7LNB4hLOQXMBTk/0rm0
+	8mGRECQxMZasw/0e9BEJeE6kk12XeoYTXU2eddRJ+BwiOzbca7P+afVcP2sGWRQvJ579dhLnVGcFP
+	HQ+vIzcioDCeYJVdibVpe156qonzexP1Mk/4TljLlQJ9D3hjt+nIl+NSVdHrYDxYLFUTVEAujAlMX
+	2zkZ41OpEpAslpys3kfmEmEf8AdpyjdA9xL2y3K0eFRmPijdgs1Vkh77Tb8bwwUaUcFZ91hiemC9D
+	q60sptn+CO9BCDt/M5pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heSZS-00013b-B5; Fri, 21 Jun 2019 23:03:50 +0000
+	id 1heSZz-0001Xp-Tm; Fri, 21 Jun 2019 23:04:23 +0000
 Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heSZF-00011M-85
- for openwrt-devel@lists.openwrt.org; Fri, 21 Jun 2019 23:03:40 +0000
+ id 1heSZJ-00011M-06
+ for openwrt-devel@lists.openwrt.org; Fri, 21 Jun 2019 23:03:42 +0000
 Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,7 +45,7 @@ Authentication-Results: esa4.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-X-IronPort-AV: E=Sophos;i="5.63,402,1557212400"; d="scan'208";a="37936969"
+X-IronPort-AV: E=Sophos;i="5.63,402,1557212400"; d="scan'208";a="37936971"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
@@ -59,13 +59,15 @@ Received: from sandeep-office.microchip.com (10.10.85.251) by
  15.1.1713.5 via Frontend Transport; Fri, 21 Jun 2019 16:03:33 -0700
 From: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 To: <openwrt-devel@lists.openwrt.org>
-Date: Fri, 21 Jun 2019 16:02:08 -0700
-Message-ID: <1561158139-13473-1-git-send-email-sandeep.sheriker@microchip.com>
+Date: Fri, 21 Jun 2019 16:02:09 -0700
+Message-ID: <1561158139-13473-2-git-send-email-sandeep.sheriker@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1561158139-13473-1-git-send-email-sandeep.sheriker@microchip.com>
+References: <1561158139-13473-1-git-send-email-sandeep.sheriker@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_160337_320762_1D4A2F5B 
-X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-CacheID: sfid-20190621_160341_072660_F36CF4D6 
+X-CRM114-Status: UNSURE (   5.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +78,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [at91][patch v2 00/11] at91 patch series
+Subject: [OpenWrt-Devel] [at91][patch v2 01/11] uboot-at91: bump
+ linux4sam_5.8 to linux4sam_6.0
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,44 +97,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
-Hi,
- This patch series contains 
-
-1. rework in creating sdcard images for different subtarget.
-2. creating a fit images.
-3. add support for sam9x5ek soc 
-4. add uboot env file.
-5. bump uboot & at91bootstrap to latest versions
-
+Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
 ---
-v1 -> v2
- fixed errors while creating sdcard images.  
+ package/boot/uboot-at91/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Sandeep Sheriker M (11):
-  uboot-at91: bump linux4sam_5.8 to linux4sam_6.0
-  uboot-at91:add at91sam9x5ek soc
-  uboot-at91: changed som1 ek default defconfigs
-  uboot-at91: fix -Wformat-security
-  at91bootstrap: bump v3.8.10 to v3.8.12
-  at91bootstrap: add support for at91sam9x5ek
-  at91bootstrap: add sama5d27_som1_eksd1_uboot as default defconfig
-  at91: move at91-sdcard command to sama5.mk
-  at91: add uboot environments
-  at91:sama5: create fit image
-  at91:sam9x: create fit image and sdcard image
-
- package/boot/at91bootstrap/Makefile                | 25 +++++++++---
- package/boot/uboot-at91/Makefile                   | 25 ++++++++----
- .../patches/001-fix-Wformat-security.patch         | 13 +++++++
- target/linux/at91/image/Makefile                   | 33 +---------------
- target/linux/at91/image/sam9x.mk                   | 44 +++++++++++++++++++++-
- target/linux/at91/image/sama5.mk                   | 42 +++++++++++++++++++++
- target/linux/at91/image/uboot-env.txt              | 14 +++++++
- 7 files changed, 149 insertions(+), 47 deletions(-)
- create mode 100644 package/boot/uboot-at91/patches/001-fix-Wformat-security.patch
- create mode 100644 target/linux/at91/image/uboot-env.txt
-
+diff --git a/package/boot/uboot-at91/Makefile b/package/boot/uboot-at91/Makefile
+index a3262b5..15a26be 100644
+--- a/package/boot/uboot-at91/Makefile
++++ b/package/boot/uboot-at91/Makefile
+@@ -7,12 +7,12 @@
+ 
+ include $(TOPDIR)/rules.mk
+ 
+-PKG_VERSION:=linux4sam_5.8
++PKG_VERSION:=linux4sam_6.0
+ PKG_RELEASE:=1
+ 
+ PKG_SOURCE_PROTO:=git
+ PKG_SOURCE_URL:=https://github.com/linux4sam/u-boot-at91.git
+-PKG_SOURCE_VERSION:=59f202622154f82e708a6ca2bf86350a5c1b2d33
++PKG_SOURCE_VERSION:=1e7d2e5973c1fb780e55e28a801c6c574158ac14
+ 
+ include $(INCLUDE_DIR)/u-boot.mk
+ include $(INCLUDE_DIR)/package.mk
 -- 
 2.7.4
 

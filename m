@@ -2,72 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F0134F4B8
-	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Jun 2019 11:33:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0A9A4F580
+	for <lists+openwrt-devel@lfdr.de>; Sat, 22 Jun 2019 13:38:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=gnjqL3JycYOQfjKnDl2Sj/XBrhQASXXLmn9itGhZoIw=; b=Pf65iVvsZ1tWLhnHGafh34M67i
-	KWMgXRjPLfiYs7tcFE2vhv7J2UkdIfhStm7Qr+zKzZpF2npdl3CXCIeGwi4K+UsEJiIm8+f/bNlit
-	7FSEzwZrEd/EFLm0agHO986q3E83QobWPGDDyu4iN7M0557kjEG1e2BYcwuczVzZ3nsWyEfvsTjKX
-	/Vj54vQBaT1fQzpGcGvNrPVkfErO6jqv4tTT1clrFFWoV8Sch6/P3fth3so6qyAe/Cuu1sMP4sFbs
-	rQkwbi4v2yrLxEXqejey1egQ3atz0V+oOyb/Eb4yoUHC6ptX96Dpe9sZcRxbDNHCdOXsRiqfk07TM
-	WBjJ107Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pRZX6A/YAtJO6qmVAfzXB430QOp394+NHxDKn2jY5O4=; b=EnCqXWbvtSX8DA
+	JAXWF0tR4e+ISm+z/J6bZl3P1EYwCstMr52rJXYjoJKb8H0EyRiAeFzMC2dBYweYhhvTGAVbhwmXk
+	rtZ5fEb7l0ZCb/YZsGky2MRSXkEI+qlplb/1TXoe+pooX0TAlSah+rB9SWOdPWSO0GDgH42DtIi9J
+	GkLf+tRVabnCu+GAsYYY6UeWQbszFn8FN1PUdhT683RZ8xzIjHTOzxRSXY7gkVPw5C9wbwMwCynv7
+	3epTnigIvVD9SoD1qEpTJ+GX81usdq5DoGwjfLrdkS3atZwxhTdcdtuusB7oMhUo/nFkRxpLGcr1G
+	IPK0pr5Iz/lYqhyzeseA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hecOn-0003P5-Uc; Sat, 22 Jun 2019 09:33:30 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1heeKz-00029d-CO; Sat, 22 Jun 2019 11:37:41 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hecOO-0003D6-51
- for openwrt-devel@lists.openwrt.org; Sat, 22 Jun 2019 09:33:05 +0000
-Received: from localhost.localdomain ([188.194.85.108]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MJEAX-1huEUx0L87-00Kh6m for <openwrt-devel@lists.openwrt.org>; Sat, 22
- Jun 2019 11:33:00 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 22 Jun 2019 11:31:57 +0200
-Message-Id: <20190622093157.1372-2-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190622093157.1372-1-freifunk@adrianschmutzler.de>
-References: <20190622093157.1372-1-freifunk@adrianschmutzler.de>
+ id 1heeKn-00029J-AX
+ for openwrt-devel@lists.openwrt.org; Sat, 22 Jun 2019 11:37:31 +0000
+Received: by mail-lf1-x144.google.com with SMTP id b11so6855916lfa.5
+ for <openwrt-devel@lists.openwrt.org>; Sat, 22 Jun 2019 04:37:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:from:subject:message-id:date:user-agent:mime-version
+ :content-language:content-transfer-encoding;
+ bh=ZZav55uLTC0EAevuiAnyIFwNB5biyVgM762u54Gt9GE=;
+ b=C8ml0UidPMuOHPQJVEjwYBa3xgI1WlEcswPRecTLUUJJzBuqTmu9TmziSDtd409k76
+ UKJe+HWDI8sTHYJZc7w506Hrl+iahgnbwoGLLMzp5X6oaXho7eV6UR3dIi02Inqk2x9g
+ m9ocn+5c9IQWz5GxGe/iJ49cSZxfZ3LusBdoK4WEk2py4VvkZuoOQs7enoGhvKWxTtvS
+ NL1tvGa/jINJeGO8MFog8BQhm2ro7MVMLe+ypY/rqdvFE6xmWnyQv8oGsUQ12dFj2/Ve
+ aTyKh32UTTJXeb7uRDiNjHYwLSsq2++MLKgC64L4KvcnyLR6ElclPmDcQnGtzEpNQAnW
+ I4aQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:from:subject:message-id:date:user-agent
+ :mime-version:content-language:content-transfer-encoding;
+ bh=ZZav55uLTC0EAevuiAnyIFwNB5biyVgM762u54Gt9GE=;
+ b=FsNPJGujbqUVB3Zc0v0KNeo+EYm4GL/qrFELlOFwAOe//w8rgw+ZSY7YMO/nbYMxaf
+ MRA/vOl/S39tsVS3lQtCC5FVVpW6t9icJeUXutoR7huwUqN7yHyWFHmf9IOlaIXIiGaN
+ Spb0eFSqDsMPxe5UEg0zU0xXKKYfAuvEqUxO43Pmsd8MdrRDRl0htMo+93eu8Zzc/2xK
+ cPBJCSpBoSCZg2dd3LocZ0FehOze+WcgHf0PbRREr0mSQLAOJBitmey6Z77DXNEgdcQW
+ CtYgh3GaLWOltVV83hc+xHEv+WUXzcr6CX0ds7QW9FVvoU1x1ZeNt2aBnA50uSeg+0lO
+ 8QHw==
+X-Gm-Message-State: APjAAAUCiHmMvJR+2f7j7j7FfTecFCAZi3tKWYAvtTHApoVMZRfN3W7i
+ h9Y2G5TsI7emsknehm6wsQw=
+X-Google-Smtp-Source: APXvYqxWLRWHnSXyw4ZmFvqlJc0PVlzyAZebmdV0kTqXApmczn3BgopF2ittljdvRji3VHUK3NhVBA==
+X-Received: by 2002:ac2:4839:: with SMTP id 25mr32739624lft.79.1561203447174; 
+ Sat, 22 Jun 2019 04:37:27 -0700 (PDT)
+Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.googlemail.com with ESMTPSA id n24sm801508ljc.25.2019.06.22.04.37.26
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Sat, 22 Jun 2019 04:37:26 -0700 (PDT)
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
+ Jo-Philipp Wich <jo@mein.io>
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+Message-ID: <3f540e31-e4ee-1575-fd4d-3b2225aec3b0@gmail.com>
+Date: Sat, 22 Jun 2019 13:37:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.5.2
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:oExGv8XozlWLK1B6c/uUlDgsv/HB6TCqx+4dBfbEegqHgpmoeuX
- A1vKINyzuxfGrrCDhb4gshwgrWyZ9jqPYzTc6GRYt5MvgdAIiaQnXm4+RHab5kVyV40oqpT
- 3K1tTEFKMUBqclZ4rLmFkwfMobF+DpahvglSgNaOoeBFeITuZQJQX6IEpkmulZkTXqOlBIN
- x9w54Ng6VkppxFR0JsE9g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:CIqlkgLEM9Y=:OSpFr6e9oXViZrqTTbjxE5
- 06jk7E8hYKa0rBsVepl1s6hvpJLCypile1TRvOg2Q1nYJAQYBXQkrP0cR8DLwKLA9OOMgBjqi
- q5F12RntRa7pgQ0tgoipP4h8LaCvYsQolNv+j4Gvmo8rh6qNUr4ptu38t3dsJPXC0lDgz0o8W
- kZBeP2BNYsZhMQn1ywtGMduLd1+eppsBm2ySSsJMvdnqZpewBkLT8RJrL/HBYWGFQQ4ya4YVA
- E7IVvt9awV4EiEbjnD684tZfTggdbmHmUKJ2SliM+jrASeV+Vj1aSr1JiBM/22LML4Gv1ZEqg
- 07cqXIQK3McpKYM349iZ9+72fUsNH6Qagpsh1qRtGaQTyJYeeL4gBNKD+Y3/5r4gb6+RivBb2
- ag4zOjRakMNA5d1eRocC6JClaYplZSRFPGDeTCbXiSxhTAOefdbpyRCk17A6rJmY4yAKNg+ov
- sZcV0k1I/7YB672YXrShDuxs5o6EJdzVEOwtQuh56SAn57qI7wHvd3rxxURLteYK7BStaEpq/
- +/3Xkr4PY2Vxy767CD4jYavhndYY4z03EA8SMrUf8AFqtBMibEjqgUHh3A0qpMh6Zmpi/2x+q
- DBu0twGKLze75D7rY8Z/ik+sFfAUaLYvZsfadWtUT+5RjHcATjxODO6FwSGklYcwxrwjbxW3H
- 5oUhjiBs8SMdKKtDjHX4hXAYveJas8s4756lZeP8+WYr0vUMe04FGCE7xYKmmP8hUDYTU3hyv
- jFYlPcNkQCe+VSEDDPEvwJiEd7s+Fsvz+EyQ/F643MkE0L4zao0hp/EKldc=
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190622_023304_487373_82250FBF 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20190622_043729_394580_C82B0D0F 
+X-CRM114-Status: UNSURE (   9.80  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zajec5[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 2/2] openwrt-19.07: ar71xx: Code style fixes
- in 10_fix_wifi_mac
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+Subject: [OpenWrt-Devel] Dependency problem after changing package name
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,42 +103,90 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This fixes one comparison and one useless echo.
+I renamed locally package "lua" to "luax" and updated dependency of
+"lua-examples". A pretty simple change.
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- .../ar71xx/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/target/linux/ar71xx/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac b/target/linux/ar71xx/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
-index b58cf9b591..1082ad4ad3 100644
---- a/target/linux/ar71xx/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
-+++ b/target/linux/ar71xx/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
-@@ -1,6 +1,6 @@
- #!/bin/ash
- 
--[ "$ACTION" == "add" ] || exit 0
-+[ "$ACTION" = "add" ] || exit 0
- 
- PHYNBR=${DEVPATH##*/phy}
- 
-@@ -17,7 +17,7 @@ case "$board" in
- 	archer-c59-v2|\
- 	archer-c60-v1|\
- 	archer-c60-v2)
--		echo $(macaddr_add $(mtd_get_mac_binary mac 8)  $(($PHYNBR - 1)) ) > /sys${DEVPATH}/macaddress
-+		macaddr_add $(mtd_get_mac_binary mac 8) $(($PHYNBR - 1)) > /sys${DEVPATH}/macaddress
- 		;;
- 	*)
- 		;;
--- 
-2.20.1
+After that change I can't build OpenWrt anymore.
 
+# make V=s
+(...)
+Collected errors:
+  * satisfy_dependencies_for: Cannot satisfy the following dependencies for lua-examples:
+  *      luax
+  * opkg_install_cmd: Cannot install package lua-examples.
+make[2]: *** [package/Makefile:68: package/install] Error 255
+(...)
+
+# ./scripts/diffconfig.sh | grep -v "CONFIG_TARGET_DEVICE_"
+CONFIG_TARGET_bcm53xx=y
+CONFIG_TARGET_MULTI_PROFILE=y
+CONFIG_TARGET_ALL_PROFILES=y
+CONFIG_TARGET_PER_DEVICE_ROOTFS=y
+CONFIG_PACKAGE_libiwinfo=y
+CONFIG_PACKAGE_liblua=y
+CONFIG_PACKAGE_lua-examples=y
+CONFIG_PACKAGE_luax=y
+
+
+I've verified this problem occurs when building from a scratch.
+
+# git clone git@git.openwrt.org:openwrt/openwrt.git openwrt-19.07-tmp
+# git checkout c26420b9145759ca99aceef0510ab8b725867c7e
+# patch -p1 < ~/lua.diff
+# make menuconfig
+# make V=s
+
+
+Any idea what's causing it? Is that some bug in handling dependencies in
+OpenWrt? I noticed this while testing
+[PATCH 2/2] lua: rename package to lua5.1
+
+
+diff --git a/package/utils/lua/Makefile b/package/utils/lua/Makefile
+index 077a60fbf3..3075c8dc18 100644
+--- a/package/utils/lua/Makefile
++++ b/package/utils/lua/Makefile
+@@ -54,13 +54,13 @@ $(call Package/lua/Default/description)
+   This package contains the Lua shared libraries, needed by other programs.
+  endef
+
+-define Package/lua
++define Package/luax
+  $(call Package/lua/Default)
+    DEPENDS:=+liblua
+    TITLE+= (interpreter)
+  endef
+
+-define Package/lua/description
++define Package/luax/description
+  $(call Package/lua/Default/description)
+   This package contains the Lua language interpreter.
+  endef
+@@ -78,7 +78,7 @@ endef
+
+  define Package/lua-examples
+  $(call Package/lua/Default)
+-  DEPENDS:=lua
++  DEPENDS:=luax
+    TITLE+= (examples)
+  endef
+
+@@ -169,8 +169,7 @@ define Package/lua-examples/install
+  endef
+
+  $(eval $(call BuildPackage,liblua))
+-$(eval $(call BuildPackage,lua))
++$(eval $(call BuildPackage,luax))
+  $(eval $(call BuildPackage,luac))
+  $(eval $(call BuildPackage,lua-examples))
+  $(eval $(call HostBuild))
+-
 
 _______________________________________________
 openwrt-devel mailing list

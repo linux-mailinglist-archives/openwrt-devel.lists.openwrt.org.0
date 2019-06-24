@@ -2,89 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D7334FE32
-	for <lists+openwrt-devel@lfdr.de>; Sun, 23 Jun 2019 23:53:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD9F4504DA
+	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Jun 2019 10:49:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5Taj/7suc90UYK+Yq230CSuDqXBcEaxwf52iO6vewGE=; b=jkA3m1xVgVbPCt
-	tTj2+GfwTfkwYkC4/9flOOlVENWAJKdpV6Ee0RYgxi7vy1RNalQni6NqWq+/dU7UMsGCdeUkXFP/r
-	Rfn23grVoLdF7X5awtFZ2Bp/y7XRhu1ZDdzc6kKni9JxNzuSQt1cXfW0L0DsBRCmjJwpPFu2MkQvr
-	RrtKqUPR6fc7fv99Q7c2Zo04Zhgym0uN8VJjQVoVDXAK+p8uj5IYRKk2F8W8J1nMJv1UklWpfDUmp
-	8hrMFKaPF8IbOc89WxMezuxzqF0dmDjSwf4R4VL0g9ZqQyr0/Sg9E99jcx5UqLQQMJvmfwafm+ZqT
-	0Qxa6Zl3YUUBFY86z5Jg==;
+	List-Owner; bh=TjjKa0/3ouOtwCSq2eakd7iUtMfwTil1Hki6LjjYsFU=; b=efEOjeEBCspM4W
+	OeS5tZoprdLD6PmZB6JCk5n+LJwsSB0BFETZ0B/xAMY4l5tgAGM1Ruxb93B0JFN0gFtWZT1zUZoHC
+	GkNmp45KafB+4m4JVFApgthE0zzgpUWV484rdxbOemT/QcN0wVQw3QF5WeU6nHJot0HSQtXFGJ7ks
+	PVFnuPeMfxsvOMhxfstfCeetYzJbEjW3iffoyxbXTzCQECgJhSVSuH1LjZPmQF0idQaci6cTjSjV3
+	zAfhpjGCqZGCVuA0VRSSPTTMemzTIFHCNn7i/6k90GmZqkEUFbsuEWuFuWJrZQV4vwj5S3FNDp6zd
+	fP38CCxx8SWbFSN6c6JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfAPa-0002ur-4L; Sun, 23 Jun 2019 21:52:34 +0000
-Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
+	id 1hfKfd-0006eS-7f; Mon, 24 Jun 2019 08:49:49 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfAPH-0002uW-Ur
- for openwrt-devel@lists.openwrt.org; Sun, 23 Jun 2019 21:52:17 +0000
-Received: by mail-pl1-x634.google.com with SMTP id g4so5714425plb.5
- for <openwrt-devel@lists.openwrt.org>; Sun, 23 Jun 2019 14:52:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=6YxULxJTJXoN9/TiIXj0eutN762yUd8sYCcCBE3aD+8=;
- b=ZW2e4rD/5fzOWghIJu5ZJJTUTqAJV8PK1gB3m5cPpP5BpFoHcS3hohSoCRPtmvZ7IO
- WEQ1n8isGNo4N2pG4nnSY1gzxTmi95NwegwkTVBxI8enJbkHTy330+jvhFK3RuX40/2t
- JjtZseXV70JUwhhHjW+TqxtiqZs/qox/vhF/Ebqd6OTKNdUGGVL2DEnRcMOH2GmBCtan
- sBDfcW52Ti3d5lctXp2H7yGZXdikdrUdwcynDqhv6KYkBksmiRmgkCrtyrdFTecNyiwq
- xxuu9O/Sh12YHoYmSb7matOiGyKsDM4KkC0g9dsDQ0i02gdRsw14T/d9joeCGohVvvHa
- 7eIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=6YxULxJTJXoN9/TiIXj0eutN762yUd8sYCcCBE3aD+8=;
- b=AzmQnx+KHBA4s6dGlHGufItztUbXO19jMJyIk1C2/97Om8bixv3GCpRRHXndPag8ZF
- uBz5Byc28/mZBnUrNEDrMafJ5Mf+7o0Y7z45Ke2knynYECVYu3gTl7O7ojUCdnK/Hc9Z
- H80uZf4VQdnW5iAzKEAnFVUAXUOe0owASfuObCiOA4aYwt1nx7uloU1+QE8IJ/GvS01F
- WWyo4x0hRCOi70DXKn5PdLxv0r3FEePdfiSO1SaRlD2sdxYeVWmM5kr99m3tgYMv49g/
- 39jILzFM6jS727wtqha2NZfCTDsKd+cr9O2nyvMrgTRepeCeXiwhZThnsFqgj46CG/4S
- fYnw==
-X-Gm-Message-State: APjAAAVAY19xA+mWZYQpIgsvDg7gfQNyRUggQcf3XmCK3kBYf/mVv7sI
- WOqGjjp/fH3A70AXt4lCjeQAqZOI
-X-Google-Smtp-Source: APXvYqwlSLRmI0AUplr6ua9lLHn7rblfH3AaLN9IXc1SmVnibTzAXlGuHKbjz3bmlYp6dWuif+7VRA==
-X-Received: by 2002:a17:902:9689:: with SMTP id
- n9mr48428248plp.241.1561326732100; 
- Sun, 23 Jun 2019 14:52:12 -0700 (PDT)
-Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
- [76.14.106.55])
- by smtp.gmail.com with ESMTPSA id y12sm10641776pfn.187.2019.06.23.14.52.11
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 23 Jun 2019 14:52:11 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1hfKfL-0006e5-Eb
+ for openwrt-devel@bombadil.infradead.org; Mon, 24 Jun 2019 08:49:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=UcOzkB3VfkqdDViKZ5e1GVzZ3Ur3mnsAT5ooIo+6GXw=; b=m8ZYIjKT+oy8xdwk/PGtMdjgk
+ e1M7X815xgBs6m/3Z3Q3PTIUYat9VT5IN8/Elo/5F0zCZv/UeR/IbUkVGBq8RlsOXzE5NasqknCrk
+ Gs6DOKjvqFrwByy7/TjFDbwFhNXuidA0EJT42Fth3iNhQ+ZiwMcGbxJK6QdBNI8FAa3e3jsXEX2wN
+ 2/Cs9SQIjQBGav+F2sU59HeF2Ot0elVs3dQoxLuXG/BUZUbIRPbMq9RoFKZ9knIfviGGu8OHgPwQ1
+ f8NPh60oFdQNtXVKumu6Z+c3Eq+BrrgS4b59c7obCHtqpdVsTQsja6uut4tklyiMpgP+hU+Q4Y97C
+ cLvBcA7GQ==;
+Received: from smtpbgbr2.qq.com ([54.207.22.56])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfKfE-0006xa-2h
+ for openwrt-devel@lists.openwrt.org; Mon, 24 Jun 2019 08:49:28 +0000
+X-QQ-mid: bizesmtp17t1561365748tdflm7vi
+Received: from localhost.localdomain (unknown [113.116.57.80])
+ by esmtp6.qq.com (ESMTP) with 
+ id ; Mon, 24 Jun 2019 16:41:59 +0800 (CST)
+X-QQ-SSF: 01400000001000L0ZG40000A0000000
+X-QQ-FEAT: 19H10UpB2i5I48DNjrBVHmqODll51pYkOvRjBuRN+JQlJAukVMlUBWmATIkY0
+ 5ihG/6k3fGGW54lkxptbXfkD8WVV6c5x4G/ZRbjfs7/VC5B/+86aNPoZzDoNPAY8cnsdYGz
+ aWk1vfx8DjZmC+KnQlo+sPMdbOeRW2KVTLUd3iqkaRLdIRu7VMMPGc66TXfj06a1r+wcvXZ
+ 7XIxGPkyQgPOgW7td7gySW7TaJBHB+O9svLeH9ttQHhSYl3uaRbpDLmYbNKHbClzXveREJC
+ 2GQEAPxtbd08utNY357DbzFD2Ldk/hsOzLt8oUYLfYMPrDv6qJk1vStJPxSvXhOxKQaj3Vv
+ pcX8KYuf4ztLyDDAJo=
+X-QQ-GoodBg: 2
+From: Luochongjun <luochongjun@gl-inet.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 23 Jun 2019 14:52:10 -0700
-Message-Id: <20190623215210.287-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Date: Mon, 24 Jun 2019 16:41:37 +0800
+Message-Id: <1561365697-7221-1-git-send-email-luochongjun@gl-inet.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:gl-inet.com:qybgforeign:qybgforeign2
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190623_145216_021507_9F3A1359 
-X-CRM114-Status: UNSURE (   8.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20190624_094924_583331_B0429101 
+X-CRM114-Status: GOOD (  12.34  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:634 listed in]
- [list.dnswl.org]
+ no trust [54.207.22.56 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] ugps: Fix compilation under 64-bit
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support for gl-ar750
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,34 +83,213 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Luochongjun <luochongjun@gl-inet.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-strlen returns size_t, not int.
+This patch support gl-ar750 on ath79.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
+Signed-off-by: Luo chongjun <luochongjun@gl-inet.com>
 ---
- nmea.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../etc/hotplug.d/firmware/11-ath10k-caldata       |   1 +
+ target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts | 149 +++++++++++++++++++++
+ target/linux/ath79/image/generic.mk                |   8 ++
+ 3 files changed, 158 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
 
-diff --git a/nmea.c b/nmea.c
-index 42be71e..7d75ab8 100644
---- a/nmea.c
-+++ b/nmea.c
-@@ -118,7 +118,7 @@ nmea_rmc_cb(void)
- 	}
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index 8f0ea1d..6a9cb1c 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -116,6 +116,7 @@ case "$FIRMWARE" in
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +1)
+ 		;;
++	glinet,gl-ar750|\
+ 	glinet,gl-ar750s)
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0) +1)
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+new file mode 100644
+index 0000000..c173f0d
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+@@ -0,0 +1,149 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "qca953x.dtsi"
++
++/ {
++	compatible = "glinet,gl-ar750", "qca,qca9531";
++	model = "GL.iNet GL-AR750";
++
++	keys {
++		compatible = "gpio-keys-polled";
++
++		poll-interval = <20>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&jtag_disable_pins>;
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		mode {
++                        label = "mode";
++                        linux,code = <BTN_0>;
++                        gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++                };
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power {
++			label = "gl-ar750:green:power";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++			default-state = "on";
++		};
++
++		wlan2g {
++			label = "gl-ar750:green:wlan2g";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++
++		wlan5g {
++			label = "gl-ar750:green:wlan5g";
++			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++	};
++
++       i2c {
++                compatible = "i2c-gpio";
++
++                sda-gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++                scl-gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++
++                /* can be removed on 4.19 */
++                gpios = <&gpio 17 GPIO_ACTIVE_LOW>,
++                        <&gpio 16 GPIO_ACTIVE_LOW>;
++
++        };
++
++
++};
++
++&pcie0 {
++	status = "okay";
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	hub_port: port@1 {
++		reg = <1>;
++		#trigger-source-cells = <0>;
++	};
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&spi {
++	status = "okay";
++	num-cs = <0>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++			};
++
++			art: partition@50000 {
++				label = "art";
++				reg = <0x050000 0x010000>;
++				read-only;
++			};
++
++			partition@60000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x060000 0xfa0000>;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++	mtd-mac-address = <&art 0x0>;
++	phy-handle = <&swphy4>;
++};
++
++&eth1 {
++	mtd-mac-address = <&art 0x0>;
++	mtd-mac-address-increment = <1>;
++};
++
++&wmac {
++	status = "okay";
++	mtd-cal-data = <&art 0x1000>;
++	mtd-mac-address = <&art 0x1002>;
++};
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index d5f67b8..033cfa3 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -389,6 +389,14 @@ define Device/glinet_gl-ar300m-nor
+ endef
+ TARGET_DEVICES += glinet_gl-ar300m-nor
  
- 	if (strlen(nmea_params[3].str) < 9 || strlen(nmea_params[5].str) < 10) {
--		ERROR("lat/lng have invalid string length %d<9, %d<10\n",
-+		ERROR("lat/lng have invalid string length %zu<9, %zu<10\n",
- 		       strlen(nmea_params[3].str), strlen(nmea_params[5].str));
- 	} else {
- 		float minutes;
++define Device/glinet_gl-ar750
++  ATH_SOC := qca9531
++  DEVICE_TITLE := GL.iNet GL-AR750
++  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
++  IMAGE_SIZE := 16000k
++endef
++TARGET_DEVICES += glinet_gl-ar750
++
+ define Device/glinet_gl-ar750s
+   ATH_SOC := qca9563
+   DEVICE_TITLE := GL.iNet GL-AR750S
 -- 
-2.17.1
+2.7.4
+
+
 
 
 _______________________________________________

@@ -2,54 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0EC550AB9
-	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Jun 2019 14:32:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55E0F50F2A
+	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Jun 2019 16:53:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0j2x6pzoZDRKkREboQtqpthmINcko7Ov9Pw0kiSOvAw=; b=APHw3+B0zOQe4S
-	MkXM8zjRgW2c2fJlFoTOruLqHJP8yOY9AURtuBAZhIidh+XFRcZdfutzoWZQKSHtZQ0KhdtBe6AW9
-	SR/6fu/p7N4bEfz4cAj3/SDpewGTU3/J/8YD3fvkunFaL+HdzQxR65c7HcvSrAh5CUH6s+r9mD6DY
-	vxKqq/wFFW0oPCu2xqft4Gru1l8EuB6DIjuKYJOr+3QZSMtM4+bdWunez9n+s2IAczNzdkmG3p79w
-	mW0ivfzf/QUxPJIQtWOfK+cTIdmr712ZRqOYYT/NlP62WYdV0+S+K+J8sz+jB+HneszesPC5sYrK8
-	XAGhFRgqP2ec1ocgL7Jw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:Date:To:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ZEf5dvLuLS7zvLu+S21O+dNLDc0rHJqVWQv6REwlDNw=; b=ftB
+	5ri8JJ43VkSNeO/Z4T83281WSws3p9b48LghEsasBmewHJqKgjty53kfFY9PDcNKgfPFBwD5NEEKT
+	aLmOdje3KSgoTXhRDrAxSxLxL25H1mvwN1wWHLoIky7jfR956xjhP7LCnEe2xVqWEFA5uuCuUea8d
+	kN1JEAWi6Rwj081DjXc8vpHg1ADktHn8TV05s+Z0qqvPp4tqX0MlizdTyt9optkjry/c3n9m/HLxe
+	7Ei7dRjkoNYigElG4I76K/UeiOITIloezJ/uIcRwzd53YvL2NmPG/ZGo0eJSmVX//cpeoXGJ39df8
+	Vpx5nbo2EN0FKTUJI9ypXWDMVnAWJPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfO9E-0005WJ-4T; Mon, 24 Jun 2019 12:32:36 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1hfQL4-00041V-1l; Mon, 24 Jun 2019 14:52:58 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfO8r-0005Nc-4t
- for openwrt-devel@lists.openwrt.org; Mon, 24 Jun 2019 12:32:15 +0000
-Received: from dbauer-t470.tu-darmstadt.de (unknown
- [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 8BF4B1E0D6
- for <openwrt-devel@lists.openwrt.org>; Mon, 24 Jun 2019 14:32:08 +0200 (CEST)
-From: David Bauer <mail@david-bauer.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 24 Jun 2019 14:31:57 +0200
-Message-Id: <20190624123157.2437-1-mail@david-bauer.net>
-X-Mailer: git-send-email 2.22.0
+ id 1hfQIL-0000uV-6u
+ for openwrt-devel@lists.openwrt.org; Mon, 24 Jun 2019 14:50:15 +0000
+Received: from bilbo.ozlabs.org (localhost [IPv6:::1])
+ by ozlabs.org (Postfix) with ESMTP id 45XXJW2z0Zz9s4Y
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 00:50:03 +1000 (AEST)
+Authentication-Results: ozlabs.org; dmarc=none (p=none dis=none)
+ header.from=patchwork.ozlabs.org
 MIME-Version: 1.0
+From: Patchwork <patchwork@patchwork.ozlabs.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 24 Jun 2019 14:50:03 -0000
+Message-ID: <20190624145003.9337.29741@bilbo.ozlabs.org>
+Precedence: bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_053213_508745_A3F3B834 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190624_075009_540913_402C2B8E 
+X-CRM114-Status: UNSURE (   3.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ramips: add support for ASUS RT-AC57U
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Subject: [OpenWrt-Devel] [openwrt] Patch notification: 1 patch updated
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
@@ -63,266 +63,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SoC:   MediaTek MT7621AT
-RAM:   128M (Winbond W631GG6KB-15)
-FLASH: 16MB (Spansion S25FL128SA)
-WiFi:  MediaTek MT7603EN bgn 2SS
-WiFi:  MediaTek MT7612EN nac 2SS
-BTN:   Reset - WPS
-LED:    - Power
-        - LAN {1-4}
-        - WAN
-        - WiFi 2.4 GHz
-        - WiFi 5 GHz
-        - USB
-UART:  UART is present next to the Power LED.
-       TX - RX - GND - 3V3 / 57600-8N1
-       3V3 is the nearest one to the Power LED.
+Hello,
 
-Installation
-------------
-Via TFTP:
-1. Set your computers IP-Address to 192.168.1.75.
-2. Power up the Router with the Reset button pressed.
-3. Release the Reset button after 5 seconds.
-4. Upload OpenWRT sysupgrade image via TFTP:
- > tftp -4 -v -m binary 192.168.1.1 -c put <IMAGE>
+The following patch (submitted by you) has been updated in Patchwork:
 
-Via SSH:
-Note: User/password for SSH is identical with the one used in the
-Web-interface.
-1. Complete the initial setup wizard.
-2. Activate SSH under "Administration" -> "System".
-3. Transfer the OpenWrt sysupgrade image via scp:
- > scp owrt.bin admin@192.168.1.1:/tmp
-4. Connect via SSH to the router.
- > ssh admin@192.168.1.1
-5. Write the OpenWrt image to flash.
- > mtd-write -i /tmp/owrt.bin -d linux
-6. Reboot the router
- > reboot
+ * openwrt: [OpenWrt-Devel,v2,1/1] ustream-ssl: mbedtls: use chacha-poly ciphersuites
+     - http://patchwork.ozlabs.org/patch/952204/
+     - for: OpenWrt development
+    was: New
+    now: Accepted
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
----
- .../ramips/base-files/etc/board.d/02_network  |  10 +-
- target/linux/ramips/dts/RT-AC57U.dts          | 150 ++++++++++++++++++
- target/linux/ramips/image/mt7621.mk           |   8 +
- 3 files changed, 164 insertions(+), 4 deletions(-)
- create mode 100644 target/linux/ramips/dts/RT-AC57U.dts
+This email is a notification only - you do not need to respond.
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index 52204eacbf..1efbbf586e 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -215,6 +215,7 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"1:lan" "2:lan" "3:lan" "4:lan" "6t@eth0"
- 		;;
-+	asus,rt-ac57u|\
- 	atp-52b|\
- 	awm002-evb-4M|\
- 	awm002-evb-8M|\
-@@ -497,6 +498,11 @@ ramips_setup_macs()
- 	wmdr-143n)
- 		lan_mac=$(cat /sys/class/net/eth0/address)
- 		;;
-+	asus,rt-ac57u|\
-+	vr500)
-+		lan_mac=$(mtd_get_mac_binary factory 57344)
-+		wan_mac=$(mtd_get_mac_binary factory 57350)
-+		;;
- 	carambola|\
- 	freestation5|\
- 	w502u|\
-@@ -649,10 +655,6 @@ ramips_setup_macs()
- 		lan_mac=$(mtd_get_mac_ascii u-boot-env LAN_MAC_ADDR)
- 		wan_mac=$(mtd_get_mac_ascii u-boot-env WAN_MAC_ADDR)
- 		;;
--	vr500)
--		lan_mac=$(mtd_get_mac_binary factory 57344)
--		wan_mac=$(mtd_get_mac_binary factory 57350)
--		;;
- 	w306r-v20)
- 		lan_mac=$(cat /sys/class/net/eth0/address)
- 		wan_mac=$(macaddr_add "$lan_mac" 5)
-diff --git a/target/linux/ramips/dts/RT-AC57U.dts b/target/linux/ramips/dts/RT-AC57U.dts
-new file mode 100644
-index 0000000000..c9eb2a5223
---- /dev/null
-+++ b/target/linux/ramips/dts/RT-AC57U.dts
-@@ -0,0 +1,150 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7621.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	compatible = "asus,rt-ac57u", "ralink,mt7620a-soc";
-+	model = "ASUS RT-AC57U";
-+
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
-+
-+	memory@0 {
-+		device_type = "memory";
-+		reg = <0x0 0x8000000>;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-ac57u:blue:power";
-+			gpios = <&gpio1 16 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		usb {
-+			label = "rt-ac57u:blue:usb";
-+			gpios = <&gpio1 15 GPIO_ACTIVE_LOW>;
-+			trigger-sources = <&ehci_port2>;
-+			linux,default-trigger = "usbport";
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <20>;
-+
-+		wps {
-+			label = "wps";
-+			gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+
-+	led-regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "LED-Power";
-+		gpio = <&gpio1 14 GPIO_ACTIVE_LOW>;
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+	};
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <10000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "config";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0xfb0000>;
-+			};
-+		};
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	wifi@0,0 {
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+
-+		led {
-+			led-sources = <2>;
-+			led-active-low;
-+		};
-+	};
-+};
-+
-+&pcie1 {
-+	wifi@0,0 {
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x0000>;
-+
-+		led {
-+			led-active-low;
-+		};
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x4e000>;
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "sdhci";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index 2eb7feb5bf..d125fdc04d 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -92,6 +92,14 @@ define Device/11acnas
- endef
- TARGET_DEVICES += 11acnas
- 
-+define Device/asus_rt-ac57u
-+  DTS := RT-AC57U
-+  DEVICE_TITLE := ASUS RT-AC57U
-+  IMAGE_SIZE := 16064k
-+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
-+endef
-+TARGET_DEVICES += asus_rt-ac57u
-+
- define Device/dir-860l-b1
-   $(Device/seama)
-   DTS := DIR-860L-B1
--- 
-2.22.0
+Happy patchworking.
 
+--
+
+This is an automated mail sent by the Patchwork system at
+patchwork.ozlabs.org. To stop receiving these notifications, edit
+your mail settings at:
+  http://patchwork.ozlabs.org/mail/
 
 _______________________________________________
 openwrt-devel mailing list

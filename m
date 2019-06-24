@@ -2,82 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15D1D51C28
-	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Jun 2019 22:18:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D390051C78
+	for <lists+openwrt-devel@lfdr.de>; Mon, 24 Jun 2019 22:37:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/mM4ZvKHnbNn7XkQWr5ocncNw6BAbRymBXjMQuUxz3M=; b=O4KLP9GyavOfh6
-	05wzBbDKtEShNQtO/M48Ghl6hWsKRudBTh0MdiXOXKINzfngTRmyUTwEwOFR0yN/jY+aPGdgIVLVM
-	7xXU0hhuSpLS9E64ln1ZFF94jDkl4vw+SetFzRvADrULwbNw0lqq3ImR+Q6QiNYa2swtoah6z7Ic1
-	YZOK32D1auoH+2ssd8IR2JBJmEAVZYAZCTKbKfNhPxwSn0ehfJs8aRg1b0pMdDswmOTCYs2dDtMzF
-	h/BTn/XPw8GXHpe+W4Um9ALHaLjDeC4Q/pxFSV68dw4ARkgzQ9eMKr/aCY//QdD5QwawfCk1sm+Lp
-	IJBDeNADes2bfjq0HMkg==;
+	List-Owner; bh=Gk3/pfAzocVHMfAfAgH1Wx7zuFndZDt+0ZVrpbsB5fs=; b=WNE2b0lixQ9yIZ
+	PYGSta7YilXdmodsmGth9scpmUahwC+/pXZSzna8O8O2gWrRGyNt2nRg4/eCWUfq7c8VF/0WJ/uo+
+	vtBWjwrc0lH+wJYhnSms+ddvihfyjRT0KujqBnxQEDxQjuIv2rb3YuBkPYcLP1JUAuNZdnzDafpWO
+	XHnQl+B5UELAlAif4SYGY+kk3rQAyhaVNkE/NM4xmTzMeSVcKubvQ0xYM4/jlCWxvORQdkDP9cX3W
+	edEVlfQdWBZyTHj9CYukgnsQz65aKsGsZHbYX+5al0aJm8cgu83gZJ2fbjA5mS3T+17T5numqrfw1
+	ELHMvM9BmBF+GBBkIoPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfVPY-0001Yp-Dn; Mon, 24 Jun 2019 20:17:56 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1hfViI-0001ug-SY; Mon, 24 Jun 2019 20:37:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfVPO-0001Y0-BZ
- for openwrt-devel@lists.openwrt.org; Mon, 24 Jun 2019 20:17:48 +0000
-Received: by mail-wm1-x342.google.com with SMTP id s15so601674wmj.3
- for <openwrt-devel@lists.openwrt.org>; Mon, 24 Jun 2019 13:17:44 -0700 (PDT)
+ id 1hfVi5-0001rx-DH
+ for openwrt-devel@lists.openwrt.org; Mon, 24 Jun 2019 20:37:07 +0000
+Received: by mail-wr1-x444.google.com with SMTP id p13so15293347wru.10
+ for <openwrt-devel@lists.openwrt.org>; Mon, 24 Jun 2019 13:37:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=25oc4sN2N+QkNkzojFOzkx57n+cv3CPhpjNTQsf0CSw=;
- b=gJ83PUNGDqVfWH6VTgCAE8R1JuWSoFWyn0ZNweEkpq5ZPmacJ0I+9zOsbWQOWj7DXY
- nxjXNdVnJJL9ltxi17pxFB+udPXcFzjw5oWjl8NKfROtbBmzjA3Wr9RYz8GP/rE3A4Uk
- V0d9wHvyBGUhfnyfBMbYxb9NbnaLJRpXceBND0Q8lpKCD6nxi/uTOy81CulxTOp72eX5
- SZmrmffnK72bCYeonUTOrXIDvJId+WeK3n+u24jfieXszWMdKG3oXLE019j+maNK3egs
- RYExkRYjWWUjKbHCkhVgbeNiesHYBFlxiB3AkPbjyM45ItEv/jgGUMpbn6iyWPq7EjDf
- nqBg==
+ bh=ocOmiDwhDX6vGWTAhpqmWFVw+J8hFHeQoX+arG61ccQ=;
+ b=qVeqlz3H/9Udb2wfJFCnxnKAERqOjmJIYnA8hHcJzpnCzoNmVnoisJhh4GeKf+Na+u
+ 7III8Yqwo8eaCleHhs6yr2KoofF3CqS+CZeMSSqVbHGQz/yRuU34+EneeJciqmZD62XX
+ eP5H9PD4B2XJ82M5jm1de61zpNrlzudlCEjg02F+tOTRntTEQN9RRENKo77U1B/V+fo+
+ oDEgWMyo087yrSIcHvd7sPFGuew4M0cf008PP07DmFRBP5wLl1YcMdIEXRB+tEcB8MoO
+ 3YKltqpVn4KPvcMxJgm0sgyBOHz5Y4KSIc0utbavaniJGe9lRTjv3J/JCTF1kuPsvmur
+ uquw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=25oc4sN2N+QkNkzojFOzkx57n+cv3CPhpjNTQsf0CSw=;
- b=VtKp782da2IL0tQdVHMY1g/SLHhOdTbnz4zvWBYIfoVGkkxz09pUx3YF1cH7Sk1cIQ
- c27x7cyyNqFArtiVX0W3yOeDuoG+iUrbxDuFCSNHr4gf+GhqBWA2MwkHSYLwOx7sxe6w
- +c5V4kWwMEmHdcoECNeA9wbQ6YjRv90fB4vLROjTrworcm7xVgiSFFNLx5SC4g+jBdVf
- 3TpV1FGzt14jmuRBDCioTqMPFvXDJxMOIHIleCOAjqrnCGggNTM7S/ERRnb9oIHfIGuS
- PXbQ9ZoXU6xyidaqi+2gVWWGAdsB4ddkiYX58/S2AjQzJip8zpTmJVSSCfw1DiiYD2sb
- UkcA==
-X-Gm-Message-State: APjAAAUH88dYc/dRZTGw07EiyLMDr4E3GTkmHUTVSWJiO+eDO/RSeSQM
- dw+mN99CbxK6TLPkcIwN92Y4GJJ0
-X-Google-Smtp-Source: APXvYqym3C9zX1YjrefQL7vC0wMiJylb3Kot0ouIXKyr8d4m7ccqARgD9K+jEVZ4XJS3csoLxAwprg==
-X-Received: by 2002:a05:600c:28d:: with SMTP id
- 13mr17299632wmk.5.1561407462985; 
- Mon, 24 Jun 2019 13:17:42 -0700 (PDT)
+ bh=ocOmiDwhDX6vGWTAhpqmWFVw+J8hFHeQoX+arG61ccQ=;
+ b=HnlShEijmuopMDyie9BcvPV11qHnN9i9iyXhljZztxnv+b/8obUP7e4ZiTNvotGK47
+ d65yz8ZQZxbv/ZjkPJiez7eQxONBl48F71cyUDURnDUCiYUsoA1eRBfAnW7rgkpwyl1/
+ wR5edhsHTCndF6yM8h6uRx7HJ59b8kJtrjr8SHHHsrBfRTELWwpBKLmqYfZypVxLp2RD
+ JgjhaNvXUV8oI50GrjHCVeYHw5eb9VqnBm/K8xRzBDe/8WwhXLDALf64urihjelGS2Kg
+ sc3ZYTFCWVWZN01KjuVY5aDHd8vD4ftAsUldMRXHSbxujDdK6EX6qDzIvXQ48pNeaM9R
+ H+Mw==
+X-Gm-Message-State: APjAAAUxOoZ2opQZOCTgMZS79B75DuHmk88Bkl9X10VQzd1M6ZpgAjMC
+ SD6pAEIgVVYZ9+N4UhOENry69htD
+X-Google-Smtp-Source: APXvYqz/fDLp7KQHR5Qffw/W91m9QPTNOmLnOeOr62kRJY56QwimkLpUWavG7JL+duTKkTEoZA/bxA==
+X-Received: by 2002:adf:a443:: with SMTP id e3mr57810110wra.221.1561408623631; 
+ Mon, 24 Jun 2019 13:37:03 -0700 (PDT)
 Received: from debian64.daheim (pD9E29A68.dip0.t-ipconnect.de.
  [217.226.154.104])
- by smtp.gmail.com with ESMTPSA id o8sm11062154wrj.71.2019.06.24.13.17.42
+ by smtp.gmail.com with ESMTPSA id 35sm14054936wrj.87.2019.06.24.13.37.02
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 24 Jun 2019 13:17:42 -0700 (PDT)
+ Mon, 24 Jun 2019 13:37:03 -0700 (PDT)
 Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
  by debian64.daheim with esmtp (Exim 4.92)
  (envelope-from <chunkeey@gmail.com>)
- id 1hfVPJ-0005DX-Q8; Mon, 24 Jun 2019 22:17:41 +0200
+ id 1hfVi2-0005IV-HV; Mon, 24 Jun 2019 22:37:02 +0200
 From: Christian Lamparter <chunkeey@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 24 Jun 2019 22:17:37 +0200
-Message-ID: <3007342.El8puCmMqZ@debian64>
-In-Reply-To: <20190624161320.7316-1-daniel@dd-wrt.com>
-References: <20190624161320.7316-1-daniel@dd-wrt.com>
+Date: Mon, 24 Jun 2019 22:36:59 +0200
+Message-ID: <4779585.jP50ncvV1B@debian64>
+In-Reply-To: <1561365697-7221-1-git-send-email-luochongjun@gl-inet.com>
+References: <1561365697-7221-1-git-send-email-luochongjun@gl-inet.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_131746_404746_AD26DFD2 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20190624_133705_476551_A15ED77A 
+X-CRM114-Status: GOOD (  19.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -90,8 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: mt7621: Add new device AsiaRF
- AP7621-001
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for gl-ar750
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,235 +101,201 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: gch981213@gmail.com, Daniel Danzberger <daniel@dd-wrt.com>
+Cc: Luochongjun <luochongjun@gl-inet.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Monday, June 24, 2019 6:13:20 PM CEST Daniel Danzberger wrote:
->     SoC:    Mediatek MT7621A
->     CPU:    4x 880Mhz
->     Cache:  32 KB I-Cache and 32 KB D-Cach
->             256 KB L2 Cache (shared by Dual-Core)
->     RAM:    DDR3 512MB 16bits BUS
->     FLASH:  16MB
->     Switch: Mediatek Gigabit Switch (1 x LAN, 1 x WAN)
->     USB:    1x 3.0
->     PCI:    3x Mini PCIe
->     GPS:    Quectel L70B
->     BTN:    Reset
->     LED:    - Power
->             - Ethernet
->             - Wifi
->             - USB
->     UART:  UART is present as Pads with throughholes on the PCB.
-> 	   They are located on left side.
->            3.3V - RX - GND - TX / 57600-8N1
->            3.3V is the square pad
+On Monday, June 24, 2019 10:41:37 AM CEST Luochongjun wrote:
+> This patch support gl-ar750 on ath79.
+
+I'm looking at this previous patch for the GL-X750.
+<https://github.com/openwrt/openwrt/commit/9989fd5154fd8301bf363ddae0b5083220141865>
+
+And I think you can do better than this gl-ar750 post.
+
+Can you please take the time and amend your patch with the
+specification and a short description on how the flash the
+initial image. Thanks.
+
+More comments down below.
+
 > 
->     Installation
->     ------------
->     The stock image is a modified openwrt and can be overflashed via sysupgrade -F
-> 
-> Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
+> Signed-off-by: Luo chongjun <luochongjun@gl-inet.com>
+Please make sure your Name matches exactly (as in bit-for-bit) that of
+your E-Mail Client address. Otherwise this needs to be fixed by the
+commiter since the openwrt infrastructure does a checks that.
+
 > ---
->  .../ramips/base-files/etc/board.d/02_network  |   3 +
->  target/linux/ramips/dts/AP7621-001.dts        | 127 ++++++++++++++++++
->  target/linux/ramips/image/mt7621.mk           |  10 ++
->  3 files changed, 140 insertions(+)
->  create mode 100644 target/linux/ramips/dts/AP7621-001.dts
+>  .../etc/hotplug.d/firmware/11-ath10k-caldata       |   1 +
+>  target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts | 149 +++++++++++++++++++++
+>  target/linux/ath79/image/generic.mk                |   8 ++
+>  3 files changed, 158 insertions(+)
+>  create mode 100644 target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
 > 
-> diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-> index 52204eacbf..ffd1689263 100755
-> --- a/target/linux/ramips/base-files/etc/board.d/02_network
-> +++ b/target/linux/ramips/base-files/etc/board.d/02_network
-> @@ -39,6 +39,9 @@ ramips_setup_interfaces()
->  		ucidef_add_switch "switch0" \
->  			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
+> diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+> index 8f0ea1d..6a9cb1c 100644
+> --- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+> +++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+> @@ -116,6 +116,7 @@ case "$FIRMWARE" in
+>  		ath10kcal_extract "art" 20480 2116
+>  		ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +1)
 >  		;;
-> +	asiarf,ap7621-001)
-> +		ucidef_add_switch "switch0" "0:lan" "4:wan" "6@eth0"
-> +		;;
->  	3g150b|\
->  	3g300m|\
->  	a5-v11|\
-> diff --git a/target/linux/ramips/dts/AP7621-001.dts b/target/linux/ramips/dts/AP7621-001.dts
+> +	glinet,gl-ar750|\
+>  	glinet,gl-ar750s)
+>  		ath10kcal_extract "art" 20480 2116
+>  		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0) +1)
+> diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
 > new file mode 100644
-> index 0000000000..daab06ec90
+> index 0000000..c173f0d
 > --- /dev/null
-> +++ b/target/linux/ramips/dts/AP7621-001.dts
-> @@ -0,0 +1,127 @@
+> +++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+> @@ -0,0 +1,149 @@
 > +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-> +
 > +/dts-v1/;
-> +#include "mt7621.dtsi"
 > +
 > +#include <dt-bindings/gpio/gpio.h>
 > +#include <dt-bindings/input/input.h>
 > +
+> +#include "qca953x.dtsi"
+> +
 > +/ {
-> +	compatible = "asiarf,ap7621-001", "mediatek,mt7621-soc";
-> +	model = "AP7621-001";
-
-Oh boy, this is tricky.
-
-<https://github.com/devicetree-org/devicetree-specification/blob/4b1dac80eaca45b4babf5299452a951008a5d864/source/devicenodes.rst>
-'The recommended format ' (for the root node!) ' is "manufacturer,model-number".'
-
-BUT. Thing is, this string here gets printed on the LuCI system
-page and from past experience "Manugacturer Model" works best.
-
-> +
-> +	memory@0 {
-> +		device_type = "memory";
-> +		reg = <0x0 0x1c000000>, <0x20000000 0x4000000>;
-> +	};
-> +
-> +	chosen {
-> +		bootargs = "console=ttyS0,57600";
-> +	};
+> +	compatible = "glinet,gl-ar750", "qca,qca9531";
+> +	model = "GL.iNet GL-AR750";
 > +
 > +	keys {
-> +		compatible = "gpio-keys";
+> +		compatible = "gpio-keys-polled";
+ath79 should support "gpio-keys".
+
+> +
+> +		poll-interval = <20>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&jtag_disable_pins>;
 > +
 > +		reset {
 > +			label = "reset";
-> +			gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
 > +			linux,code = <KEY_RESTART>;
+> +			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
 > +		};
+> +
+> +		mode {
+> +                        label = "mode";
+> +                        linux,code = <BTN_0>;
+> +                        gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+> +                };
+Please use tabs instead of space for indent.
+(scripts/checkpatch.pl can help you find these cases).
 > +	};
 > +
 > +	leds {
 > +		compatible = "gpio-leds";
 > +
-> +		wlan1 {
-> +			label = "ap7621-001:orange:wlan1";
-> +			gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+> +		power {
+> +			label = "gl-ar750:green:power";
+> +			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+> +			default-state = "on";
 > +		};
 > +
-> +		wlan0 {
-> +			label = "ap7621-001:orange:wlan0";
-> +			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
+> +		wlan2g {
+> +			label = "gl-ar750:green:wlan2g";
+> +			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger = "phy1tpt";
 > +		};
+> +
+> +		wlan5g {
+> +			label = "gl-ar750:green:wlan5g";
+> +			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger = "phy0tpt";
+> +		};
+> +
 > +	};
+> +
+> +       i2c {
+> +                compatible = "i2c-gpio";
+> +
+> +                sda-gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
+> +                scl-gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
+> +
+> +                /* can be removed on 4.19 */
+> +                gpios = <&gpio 17 GPIO_ACTIVE_LOW>,
+> +                        <&gpio 16 GPIO_ACTIVE_LOW>;
+Hm, ath79 switched to 4.19. So they can be removed right now ;)
+> +
+> +        };
+> +
+> +
 > +};
 > +
-> +&sdhci {
+> +&pcie0 {
+> +	status = "okay";
+Please add a proper sub node with the right ath10k compatible
+(see qcom,ath10k.txt) for the attached pcie chip here.
+
+> +};
+> +
+> +&uart {
 > +	status = "okay";
 > +};
 > +
-> +&spi0 {
-> +        status = "okay";
-please use tabs here.
-
+> +&usb0 {
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	status = "okay";
 > +
-> +        flash@0 {
-> +                compatible = "jedec,spi-nor";
-> +                reg = <0>;
-> +                spi-max-frequency = <40000000>;
+> +	hub_port: port@1 {
+> +		reg = <1>;
+> +		#trigger-source-cells = <0>;
+> +	};
+> +};
+> +
+> +&usb_phy {
+> +	status = "okay";
+> +};
+> +
+> +&spi {
+> +	status = "okay";
+> +	num-cs = <0>;
+> +
+> +	flash@0 {
+> +		compatible = "jedec,spi-nor";
+> +		reg = <0>;
+> +		spi-max-frequency = <25000000>;
 > +
 > +		partitions {
-this needs one more tab.
 > +			compatible = "fixed-partitions";
-> +                	#address-cells = <1>;
-please use tabs to ident most of the properies 
-for the rest of the node. (scripts/checkpatch.pl will
-catch those lines)
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +
+> +			partition@0 {
+> +				label = "u-boot";
+> +				reg = <0x000000 0x040000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@40000 {
+> +				label = "u-boot-env";
+> +				reg = <0x040000 0x010000>;
+Please make this read-only, or explain in detail why
+this needs to be rw. (Note: I've seen jokers that
+overwrote bootcmd with reset and it required a external
+spi tool to get it fixed).
 
-> +                	#size-cells = <1>;
+> +			};
 > +
-> +                	partition@0 {
-> +                	        label = "u-boot";
-> +                	        reg = <0x0 0x30000>;
-> +                	        read-only;
-> +                	};
+> +			art: partition@50000 {
+> +				label = "art";
+> +				reg = <0x050000 0x010000>;
+> +				read-only;
+> +			};
 > +
-> +                	partition@30000 {
-> +                	        label = "u-boot-env";
-> +                	        reg = <0x30000 0x2000>;
-		needs read-only;
-> +                	};
-> +
-> +                	partition@32000 {
-> +                	        label = "2860";
-> +                	        reg = <0x32000 0x4000>;
-		needs read-only;
-
-> +                	};
-> +
-> +                	partition@36000 {
-> +                	        label = "rtdev";
-> +                	        reg = <0x36000 0x2000>;
-		needs read-only;
-
-> +                	};
-> +
-> +                	partition@38000 {
-> +                	        label = "Reserve";
-> +                	        reg = <0x38000 0x8000>;
-		needs read-only;
-
-> +                	};
-> +
-> +                	factory: partition@40000 {
-> +                	        label = "factory";
-> +                	        reg = <0x40000 0x10000>;
-> +                	        read-only;
-> +                	};
-> +
-> +                	firmware: partition@50000 {
-> +                	        label = "firmware";
-> +                	        reg = <0x50000 0xfa0000>;
+> +			partition@60000 {
 > +				compatible = "denx,uimage";
-> +                	};
-> +
-> +                	partition@ff0000 {
-> +                	        label = "nvram";
-> +                	        reg = <0xff0000 0x10000>;
-needs read-only;
-> +                	};
-> +		};
-> +        };
-> +};
-> +
-> +&pcie {
-> +	status = "okay";
-> +};
-> +
-> +&ethernet {
-> +	mtd-mac-address = <&factory 0xe000>;
-> +	mediatek,portmap = "llllw";
-> +};
-> +
-> +&pinctrl {
-> +	state_default: pinctrl0 {
-> +		gpio {
-> +			ralink,group = "wdt", "jtag";
-> +			ralink,function = "gpio";
+> +				label = "firmware";
+> +				reg = <0x060000 0xfa0000>;
+> +			};
 > +		};
 > +	};
-> +};
-> +
-> diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-> index 2eb7feb5bf..c1e445f84c 100644
-> --- a/target/linux/ramips/image/mt7621.mk
-> +++ b/target/linux/ramips/image/mt7621.mk
-> @@ -640,3 +640,13 @@ define Device/zbt-wg3526-32M
->  	kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
->  endef
->  TARGET_DEVICES += zbt-wg3526-32M
-> +
-> +define Device/asiarf_ap7621-001
-> +  DTS := AP7621-001
-> +  IMAGE_SIZE := $(ralink_default_fw_size_16M)
-> +  DEVICE_TITLE := AsiaRF AP7621-001
-> +  DEVICE_PACKAGES := \
-> +	kmod-sdhci-mt7620 kmod-mt76x2 kmod-usb3
-> +endef
-> +TARGET_DEVICES += asiarf_ap7621-001
-> +
-> 
 
 
 

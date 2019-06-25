@@ -2,71 +2,102 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0F86550DD
-	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Jun 2019 15:54:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5115A551A7
+	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Jun 2019 16:27:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OA530QH9e3Hq7RaV/8It7U5apKlafEAwZqvHqxryYhI=; b=IpNzTxD20q4tt+TNij6itiiEv
-	W7/F2g3nt6b8PQbT3ksg9ZIeyrN0RUJthVmAiZYETrVGZGt/78dMgCW52NpQ/Bv7V9nELII3GKsKJ
-	Nwk84V+sJ+9Y5Kd6IBWN67GUjHarDfiyLOHe4PRzw6rgA2YgRyxnf7ksb2wEPp2s4FN4HgNBpI2iz
-	/YQFf5+/AKotUmqWOhFaocMHxDekGzGhBwIg+RavGpdg4enY2r1qSI4ixcogcbYHUCln0l84Leh5z
-	EZ1vRPLqCdrz1LB0RXVUH071kWlmrmKperGSk1Eqy+o70gszcSBrvZbvmnkpoFeF1pQcnAe+XguIf
-	qRv7rvarQ==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VrBsFOzaJjcws9RN0E+BZeXBTz6OgU4Ch0xq4XTDPfg=; b=K0T
+	5IcHO7/tIOvW8oXMxZWVYsNyOjjJLsucoWRpeGRMgcjdk/hVFTA7HhW5g7iHoIZp4Bki6ChqNnzls
+	JDi1Sn/qRtOXNH61DwbSDmmOewOgtu0mSjrLbYNtTh+1HQ4xlfZNyCxbE8ETeCZIlLkxgDXRNUx9V
+	K3+VVBClJAx0X/RsLxSheLcITTV7JgWGXb1B9esqV8C/uCVFUIT4e5qd2I9t8F9ytsFIVqmRIRDVl
+	2JVVy+Hy8exQQtN9BCRkpODSo0z0jUZQgtm86NJ0fpEt2haN2PG/ymwvYSF5Wbn6yovkG6OlPNCxf
+	X4gHC52g2iR2GxG35wj1KHJIwZXEpPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfluC-0002ui-TR; Tue, 25 Jun 2019 13:54:40 +0000
-Received: from mail2.candelatech.com ([208.74.158.173]
- helo=mail3.candelatech.com)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hflu5-0002u2-1M
- for openwrt-devel@lists.openwrt.org; Tue, 25 Jun 2019 13:54:34 +0000
-Received: from [192.168.1.47] (unknown [50.34.200.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail3.candelatech.com (Postfix) with ESMTPSA id 89C66137560;
- Tue, 25 Jun 2019 06:54:29 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 89C66137560
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
- s=default; t=1561470869;
- bh=a/t12z+4krLGp39Wryviv0m6mTtWMUGIvbUrP/mM7e4=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=ot13TtuXyRrZu8rpmVmnBp48m4b0UVZQ0Hul07+VeFcSzZEWPfMGm+FMnTxo8ILXK
- RkbYHHvk7p9p9h0ZqT7Bs+28JZ/HXDsy9A06v0PCAL2wgE6XLHfAF0FniCaRf5LTiD
- ykTTjtwZ+bQI6PcDhGQIfgUErCRlCbZ2Wh5OGuN0=
-To: Koen Vandeputte <koen.vandeputte@ncentric.com>,
+	id 1hfmQ3-0002vC-6O; Tue, 25 Jun 2019 14:27:35 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hfmPm-0002sQ-0E
+ for openwrt-devel@lists.openwrt.org; Tue, 25 Jun 2019 14:27:19 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 0B52451818; Tue, 25 Jun 2019 16:27:14 +0200 (CEST)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id CB64C51813
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 16:27:12 +0200 (CEST)
+Received: (qmail 72944 invoked from network); 25 Jun 2019 16:27:12 +0200
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 25 Jun 2019 16:27:12 +0200
+To: OpenWrt Project Administration <openwrt-adm@lists.openwrt.org>,
  OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <abe6feb7-80a9-4587-db0b-7f3a37a792d8@ncentric.com>
- <7a68db11-1026-e576-2c26-425ea85ef609@candelatech.com>
- <93bc6089-e313-f51f-06e9-4c0b8f36f7e7@ncentric.com>
-From: Ben Greear <greearb@candelatech.com>
-Message-ID: <3d95432a-db21-d4ef-24c4-fc3659fee0a1@candelatech.com>
-Date: Tue, 25 Jun 2019 06:54:28 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
+ 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
+ Xx5IapIyoA==
+Message-ID: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
+Date: Tue, 25 Jun 2019 16:27:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <93bc6089-e313-f51f-06e9-4c0b8f36f7e7@ncentric.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_065433_161565_89B6F79D 
-X-CRM114-Status: GOOD (  24.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190625_072718_201067_16D1ADB6 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] ath10k-ct 4.19 and IBSS
+Subject: [OpenWrt-Devel] Problem with "base" release repositories
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,154 +109,104 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============4802417245831040111=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4802417245831040111==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="GymmzghS3uMgRdQz5jlG6O188LxVb94Kx"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--GymmzghS3uMgRdQz5jlG6O188LxVb94Kx
+Content-Type: multipart/mixed; boundary="TVz3HtRmvcg28uqJQ3SKs2A2yXqo2Eahf";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: OpenWrt Project Administration <openwrt-adm@lists.openwrt.org>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Message-ID: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
+Subject: Problem with "base" release repositories
+
+--TVz3HtRmvcg28uqJQ3SKs2A2yXqo2Eahf
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+Hi all,
+
+unfortunately there appears to be an issue with the build cluster which
+causes it to produce slightly broken SDKs with a wrong embedded package
+feeds configuration.
+
+Due to yet unknown issues in the buildroot (or the build setup itself),
+the target/sdk Make target fails to identify the current Git branch,
+causing it to emit feeds.conf.default files with
+
+src-git base https://git.openwrt.org/openwrt/openwrt.git
+
+instead of the expected
+
+src-git base https://git.openwrt.org/openwrt/openwrt.git;openwrt-18.06
 
 
-On 06/25/2019 02:53 AM, Koen Vandeputte wrote:
->
-> On 24.06.19 22:04, Ben Greear wrote:
->> On 6/24/19 8:32 AM, Koen Vandeputte wrote:
->>> Hi Ben,
->>> Hi All,
->>>
->>> So I'm going to give this another try ..
->>> As the IBSS functionality is heavily advertised as a delta to mainline, it would be very nice to get it working also :)
->>>
->>> Testing the latest ath10k-ct driver and firmware seems to be a step back compared to roughly a month ago.
->>>
->>> I'm currently seeing the firmware crashing, which was not the case before:
->>>
->>>
->>> ath10k-ct + htt-fw:
->>>
->>> https://pastebin.com/raw/7Sy9yx6s
->>
->> Looks like firmware ran out of some WMI event buffers and crashed instead of handling
->> it more gracefully.
->>
->> Please try the attached (untested) firmware and see if it behaves better.
->>
-> Hi Ben,
->
-> 1 step forward here.
->
-> I'm not seeing crashes anymore using the test-firmware.
->
-> https://pastebin.com/raw/4ZeXu7iw
->
->
-> I've linked up 2 IBSS devices (wave 1, VHT80)
->
-> OLSR traffic (UDP) works and packets here are nicely going back & forth.
->
-> Simply pinging (ICMP) between the 2 devices does not work.
->
-> When sending 100 pings, (64 byte large)  sometimes 1 gets through .. but with a latency of > 500ms
->
->
-> I think if the splat and the beacon spam below could be fixed .. this would be a major step forward:
->
-> [   30.328423] ------------[ cut here ]------------
-> [   30.333251] WARNING: CPU: 0 PID: 1578 at /mnt/ramdisk/koen/firmware/builds/generic_rb922/build_dir/target-mips_24kc_musl/linux-ar71xx_mikrotik/ath10k-ct-2019-05-08-f98b6dc4/ath10k-4.19/mac.c:6563 ath10k_mac_vif_beacon_free+0xc7c/0x115c [ath10k_core]
-> [   30.355636] Modules linked in: mbt ath9k ath9k_common qcserial pppoe ppp_async option cdc_mbim ath9k_hw ath10k_pci ath10k_core ath usb_wwan sierra_net sierra rndis_host qmi_wwan pppox ppp_generic mac80211 iptable_nat iptable_mangle iptable_filter ipt_REJECT ipt_MASQUERADE ip_tables huawei_cdc_ncm ftdi_sio cfg80211 cdc_subset cdc_ncm cdc_ether xt_time xt_tcpudp xt_state xt_nat xt_multiport xt_mark xt_mac xt_limt
-> [   30.427331]  nls_utf8 nls_iso8859_1 nls_cp437 authenc ehci_platform sd_mod scsi_mod ehci_hcd gpio_button_hotplug ext4 mbcache jbd2 usbcore nls_base usb_common ptp pps_core mii aead crypto_null cryptomgr crc32c_generic crypto_hash
-> [   30.448017] CPU: 0 PID: 1578 Comm: wpa_supplicant Not tainted 4.14.129 #0
+As a consequence, bad base packages from the master branch have been
+built and uploaded to the release repositories.
 
-Please look in your code and let me know the source around the line in mac.c (6563) that is splatting.
+To limit the amount of further damage, I have taken down the broken
+"base" repositories now and will investigate the size of the problem and
+potential root causes.
 
-Also, you might grab the latest ath10k-ct repo, it has a tweak that might fix the SWBA overrun
-messages.
+This process will unfortunately also delay 18.06.3 and 17.07.7 releases
+until further notice.
 
-https://github.com/greearb/ath10k-ct
 
-Thanks,
-Ben
+Will follow up with further information as it becomes available.
 
-> [   30.454906] Stack : 80500000 804c0870 00000000 00000000 80495404 86fc5a24 8606485c 804e7307
-> [   30.463402]         804915c8 0000062a 805437d0 000019a3 87d1ed28 00000001 86fc59d8 ebb059e8
-> [   30.471880]         00000000 00000000 80540000 000068e8 00000000 00000000 00000007 00000000
-> [   30.480373]         00000123 f55b2536 00000122 00000000 80000000 00000000 87152504 8710ccc4
-> [   30.488863]         00000009 000019a3 87d1ed28 876fd000 00000000 802a3964 00000000 80540000
-> [   30.497355]         ...
-> [   30.499839] Call Trace:
-> [   30.502320] [<8006c7ac>] show_stack+0x58/0x100
-> [   30.506838] [<80086de0>] __warn+0xe4/0x118
-> [   30.510994] [<80086ea4>] warn_slowpath_null+0x1c/0x28
-> [   30.516158] [<8710ccc4>] ath10k_mac_vif_beacon_free+0xc7c/0x115c [ath10k_core]
-> [   30.523505] ---[ end trace 83fd3571e310245a ]---
-> [   33.172852] wlan0: Trigger new scan to find an IBSS to join
-> [   33.237416] wlan0: Trigger new scan to find an IBSS to join
-> [   33.243317] wlan0: Trigger new scan to find an IBSS to join
-> [   33.249205] wlan0: Trigger new scan to find an IBSS to join
-> [   33.305210] wlan0: Trigger new scan to find an IBSS to join
-> [   34.049614] wlan0: Trigger new scan to find an IBSS to join
-> [   34.115369] wlan0: Trigger new scan to find an IBSS to join
-> [   34.189823] wlan0: Selected IBSS BSSID fa:77:78:55:af:7b based on configured SSID
-> [   34.280540] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.288002] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.295924] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.303406] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.310839] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.318280] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.325714] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.333148] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.340567] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> [   34.348003] ath10k_pci 0000:01:00.0: SWBA overrun on vdev 0, skipped old beacon
-> ...
-> ...
->
-> Thanks for your swift reply so far and the test-firmware.
->
-> Regards,
->
-> Koen
->
->>
->>> ath10k-ct + non-htt-fw:
->>>
->>> https://pastebin.com/raw/bqVqQmXq
->>>
->>>
->>> Mixing upstream ath10k driver with the non-htt CT fw does not work.
->>>
->>> Errors are seen here regarding missing IE's and stuff.
->>> Also IBSS functionality is not shown when running 'iw list'
->>
->> IBSS requires ct driver plus ct firmware, at least.
->
-> Ah, ok. :-)
->
-> Thought it was possible based on this one :
->
-> https://www.spinics.net/lists/linux-wireless/msg137827.html
->
->
->>
->> I'd expect the regular driver to work in normal STA/AP mode, though it would likely
->> warn about IEs.  Should be warning only though.
->>
->> Thanks,
->> Ben
->>
->>>
->>>
->>> Kind Regards,
->>>
->>> Koen
->>>
->>
->>
->
+I am very sorry for the inconvenience.
 
--- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
+
+~ Jo
+
+
+--TVz3HtRmvcg28uqJQ3SKs2A2yXqo2Eahf--
+
+--GymmzghS3uMgRdQz5jlG6O188LxVb94Kx
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl0SL0AACgkQQuLLvzou
+ZtPcSQ//Wl9/UdeuYL/7urzXuaZXVe9huC77wNN5K8EVWGhaPzR1qYniQd5ZPHmg
+rIkTpkTSNSb+9Dzov20V9bWvwibEKG5hAIiGPFmd/N2nGGdFhquCTdm2hfknqaWN
+ydUaCQoYSCCleaLyON0mBzQagG6dm4a9sTk3bVU4G3o9pc3eoySYcgUABiwvfwDp
+xSI0w5uNCJ/MjlHMqqm/+EAUbyq7Ja3mc2wWneFo5gCkGDHSEogsv4ZLEWGe8CLs
+fOHTuJxhWg4IZNE9lmqptYqEiA514QOkcmjToiuql2XQebtvvpeQxhIMwLeVncvj
+7z3mwrBP4hYwCC9bOIXr46clLpmdkphFJMV1LMXkLwJHRNnCjzdvPcTIVYfTII6F
+dp3zXQg/z74F4u8mKYmKtY/Fe0TubdcM6xacPLa1gvArPAi56Pce8objUpY2Wv+y
+vylW4ryVQCJ0WKgCWnpAhS00qFzJmiNC8eD1t4czkZotqveG3A4lFzY4821LAPq0
+lg5VSll+0yQ5lL2vX3wv6unQo7vqzqFwz+yS444PRbetA3KeddO1cTy9hLHkbEjP
+0WSwlWWl197ypVSD4TC14ixf7a4oQy0cTgHvzPB1AA8FJg/H/vpWafV8wOhQQ8wI
+FF9AaalgKODZZq86pwG7GW841p1Hr2NcOa6SH+CdBXUT5fWlRsA=
+=Tpph
+-----END PGP SIGNATURE-----
+
+--GymmzghS3uMgRdQz5jlG6O188LxVb94Kx--
+
+
+--===============4802417245831040111==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4802417245831040111==--
+

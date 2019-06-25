@@ -2,38 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5115A551A7
-	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Jun 2019 16:27:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D569552CE
+	for <lists+openwrt-devel@lfdr.de>; Tue, 25 Jun 2019 17:04:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VrBsFOzaJjcws9RN0E+BZeXBTz6OgU4Ch0xq4XTDPfg=; b=K0T
-	5IcHO7/tIOvW8oXMxZWVYsNyOjjJLsucoWRpeGRMgcjdk/hVFTA7HhW5g7iHoIZp4Bki6ChqNnzls
-	JDi1Sn/qRtOXNH61DwbSDmmOewOgtu0mSjrLbYNtTh+1HQ4xlfZNyCxbE8ETeCZIlLkxgDXRNUx9V
-	K3+VVBClJAx0X/RsLxSheLcITTV7JgWGXb1B9esqV8C/uCVFUIT4e5qd2I9t8F9ytsFIVqmRIRDVl
-	2JVVy+Hy8exQQtN9BCRkpODSo0z0jUZQgtm86NJ0fpEt2haN2PG/ymwvYSF5Wbn6yovkG6OlPNCxf
-	X4gHC52g2iR2GxG35wj1KHJIwZXEpPA==;
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0UNRLGLIl/y+poy0fjUIHcM7RmOQqlrT+kkK549lQoQ=; b=q+8Cuzpu3aHkB7sXTGh4Ituxy
+	NKMYWf3mhxsxaVICoW8axQmYtG17fgMWjADADcyR6QbwrTaNeCifLPDptVp998kAWnCLblV5mSWSr
+	ZfoAmvxWf3VDjHAKqKXcPWhQoM+p6KrCUFVqQJydDtPGph8d14AWugSYs7gTizo/kRyQh/peyROXu
+	Z/XH0qBHmglo6/bqv3tBIaY94g9CVDmWg7lE2aP6lQoN7w4uKOR7UPfAO0zDn2k7VdBEcxx9yjk7W
+	6ae2VszEr2A0A8aS5VPedpfuFr5BNMuWkvEJkY2FhzkTwhrT6oeW06RAgBPtKv8Ci5s8eD2U9jePo
+	L6kyiQFag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfmQ3-0002vC-6O; Tue, 25 Jun 2019 14:27:35 +0000
+	id 1hfmzj-0003kp-TE; Tue, 25 Jun 2019 15:04:27 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfmPm-0002sQ-0E
- for openwrt-devel@lists.openwrt.org; Tue, 25 Jun 2019 14:27:19 +0000
+ id 1hfmz9-0003XT-Bs
+ for openwrt-devel@lists.openwrt.org; Tue, 25 Jun 2019 15:03:55 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 0B52451818; Tue, 25 Jun 2019 16:27:14 +0200 (CEST)
+ id B7EDA52C99; Tue, 25 Jun 2019 17:03:49 +0200 (CEST)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id CB64C51813
- for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 16:27:12 +0200 (CEST)
-Received: (qmail 72944 invoked from network); 25 Jun 2019 16:27:12 +0200
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 753B352C94
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 17:03:49 +0200 (CEST)
+Received: (qmail 86762 invoked from network); 25 Jun 2019 17:03:49 +0200
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 25 Jun 2019 16:27:12 +0200
+ 25 Jun 2019 17:03:49 +0200
 To: OpenWrt Project Administration <openwrt-adm@lists.openwrt.org>,
  OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
@@ -79,14 +80,15 @@ Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
  BPsre6PGA7a1gXwPeTfUFMw0pKFhpPZO7XnPSgnRNDNI42Ldcoz0xI7Qg2zCsQR4YHwnu6o8
  pzadX6sSiW/la5oFlktj+IN1Avgqf5YenhKX8hj0d4uhJB4w5S+vQEySwmiZ1HWmYLcHHR9f
  Xx5IapIyoA==
-Message-ID: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
-Date: Tue, 25 Jun 2019 16:27:08 +0200
+Message-ID: <65e023e0-4927-45f3-1dee-d649ab2b4fd8@wwsnet.net>
+Date: Tue, 25 Jun 2019 17:03:45 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_072718_201067_16D1ADB6 
-X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-CacheID: sfid-20190625_080351_592603_1111392B 
+X-CRM114-Status: UNSURE (   9.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -97,7 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] Problem with "base" release repositories
+Subject: Re: [OpenWrt-Devel] Problem with "base" release repositories
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,95 +111,102 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4802417245831040111=="
+Content-Type: multipart/mixed; boundary="===============2590093087042005587=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4802417245831040111==
+--===============2590093087042005587==
 Content-Type: multipart/signed; micalg=pgp-sha256;
  protocol="application/pgp-signature";
- boundary="GymmzghS3uMgRdQz5jlG6O188LxVb94Kx"
+ boundary="3aTX6vc4Z1RKoo9kxvRRDdV9j4tQYnSph"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---GymmzghS3uMgRdQz5jlG6O188LxVb94Kx
-Content-Type: multipart/mixed; boundary="TVz3HtRmvcg28uqJQ3SKs2A2yXqo2Eahf";
+--3aTX6vc4Z1RKoo9kxvRRDdV9j4tQYnSph
+Content-Type: multipart/mixed; boundary="cP4dCnnapqUDUTBtup7uqbdkLsrrVqiBJ";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
 To: OpenWrt Project Administration <openwrt-adm@lists.openwrt.org>,
  OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Message-ID: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
-Subject: Problem with "base" release repositories
+Message-ID: <65e023e0-4927-45f3-1dee-d649ab2b4fd8@wwsnet.net>
+Subject: Re: Problem with "base" release repositories
+References: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
+In-Reply-To: <20a0263e-aba2-20f0-2850-63ee0ea0dcac@wwsnet.net>
 
---TVz3HtRmvcg28uqJQ3SKs2A2yXqo2Eahf
+--cP4dCnnapqUDUTBtup7uqbdkLsrrVqiBJ
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi all,
+Hi,
 
-unfortunately there appears to be an issue with the build cluster which
-causes it to produce slightly broken SDKs with a wrong embedded package
-feeds configuration.
+some updates.
 
-Due to yet unknown issues in the buildroot (or the build setup itself),
-the target/sdk Make target fails to identify the current Git branch,
-causing it to emit feeds.conf.default files with
+I managed to track down the root cause to some bad interaction between
+buildbot and Git.
 
-src-git base https://git.openwrt.org/openwrt/openwrt.git
+When buildbot tries to switch an already cloned repo back from a
+previously checked out tag to a branch, it performs this series of comman=
+ds:
 
-instead of the expected
+git clean -f -d -x
+git fetch -t https://git.openwrt.org/openwrt/openwrt.git $BRANCHNAME
+git reset --hard $SHA1
+git branch -M $BRANCHNAME
 
-src-git base https://git.openwrt.org/openwrt/openwrt.git;openwrt-18.06
+The last command currently fails with:
+
+error: refname refs/heads/HEAD not found
+fatal: Branch rename failed
+
+=2E.. leaving the Git tree in detached HEAD state neither pointing to a
+proper tag, nor a proper branch.
+
+Eventually, during the SDK build, buildroot will call "git rev-parse
+--abbrev-ref HEAD" to determine the current branch name which will
+simply return "HEAD" in detached head state, which is then subsequently
+filtered away, leading to a branchless base URL getting emitted in the
+SDKs which ultimately leads to the broken base repos getting built.
 
 
-As a consequence, bad base packages from the master branch have been
-built and uploaded to the release repositories.
+It appears that an unconditional "git checkout master" before buildbot's
+native Git clone/pull magic will solve the issue for now, I am going to
+implement this workaround now and see if the situation improves.
 
-To limit the amount of further damage, I have taken down the broken
-"base" repositories now and will investigate the size of the problem and
-potential root causes.
-
-This process will unfortunately also delay 18.06.3 and 17.07.7 releases
-until further notice.
-
-
-Will follow up with further information as it becomes available.
-
-I am very sorry for the inconvenience.
-
+I'll also add further checks to abort future builds early in case the
+problem ever resurfaces.
 
 ~ Jo
 
 
---TVz3HtRmvcg28uqJQ3SKs2A2yXqo2Eahf--
+--cP4dCnnapqUDUTBtup7uqbdkLsrrVqiBJ--
 
---GymmzghS3uMgRdQz5jlG6O188LxVb94Kx
+--3aTX6vc4Z1RKoo9kxvRRDdV9j4tQYnSph
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl0SL0AACgkQQuLLvzou
-ZtPcSQ//Wl9/UdeuYL/7urzXuaZXVe9huC77wNN5K8EVWGhaPzR1qYniQd5ZPHmg
-rIkTpkTSNSb+9Dzov20V9bWvwibEKG5hAIiGPFmd/N2nGGdFhquCTdm2hfknqaWN
-ydUaCQoYSCCleaLyON0mBzQagG6dm4a9sTk3bVU4G3o9pc3eoySYcgUABiwvfwDp
-xSI0w5uNCJ/MjlHMqqm/+EAUbyq7Ja3mc2wWneFo5gCkGDHSEogsv4ZLEWGe8CLs
-fOHTuJxhWg4IZNE9lmqptYqEiA514QOkcmjToiuql2XQebtvvpeQxhIMwLeVncvj
-7z3mwrBP4hYwCC9bOIXr46clLpmdkphFJMV1LMXkLwJHRNnCjzdvPcTIVYfTII6F
-dp3zXQg/z74F4u8mKYmKtY/Fe0TubdcM6xacPLa1gvArPAi56Pce8objUpY2Wv+y
-vylW4ryVQCJ0WKgCWnpAhS00qFzJmiNC8eD1t4czkZotqveG3A4lFzY4821LAPq0
-lg5VSll+0yQ5lL2vX3wv6unQo7vqzqFwz+yS444PRbetA3KeddO1cTy9hLHkbEjP
-0WSwlWWl197ypVSD4TC14ixf7a4oQy0cTgHvzPB1AA8FJg/H/vpWafV8wOhQQ8wI
-FF9AaalgKODZZq86pwG7GW841p1Hr2NcOa6SH+CdBXUT5fWlRsA=
-=Tpph
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl0SN9EACgkQQuLLvzou
+ZtOWSw/+Ly9Y/hR2EJDafhISkOJdXDGlg2f3aJ7Bzd21DBiRqZEjo/vLUrokC9Xt
+7ikej/f7oW4GiuYo/hN+NdxyqsGbRaasGvoxQ9He3rkK6NgRdPxUJnKa/4FT3PKK
+5G+qS949RPtcIw/5Av8Y43Z4X5oDWA5A0zZFScniy23E6noolNT9o/VtN+i0KB7R
+M+WNdEEIonieZXKG3CRdDGn2jaALgOoThEH4QgKGnQ0khCivzFpylgRXXMZ1EQBG
+hCT0K25ncRZdEOZ5T1YVGIC4MRjIsbMy8+sK0qOEObfHC13eRtBMud/uMVhhZRdl
+7oBlwxVvbclgUFfSIkqz7ty6Be2jRtM57RnvkG9kpiUQ58zFWo/i3jSqfS3lNuJC
+3Cwtsq5qxEvpkftpt7Y8rGGKE5AGw6v4dQjH1JBFTlRJJwzsGkiDfz1p53awwttg
+goYdhBD6f4HiFEvtUHTp8d2FM9T3oBP2WlfNZtRtqO2GlemHbOChoQtFJr83t+E4
+yrzIAR4dba+EqdP2/5wUUlHSkZn830mASXKQZTCOCCZJC2hdNFyYYeOj2AQGYc7R
+x2svdYtCPUwy7tsh7sM/ORghqUdEb4q+M6dbY7pkWEY7ZCMkzuiWH7hNvEXweWQw
+CMN6qX7KuNfKGLp+Yfu4+z05/6eNzaeg38FtS5FYW9qfO1wtZSk=
+=dt12
 -----END PGP SIGNATURE-----
 
---GymmzghS3uMgRdQz5jlG6O188LxVb94Kx--
+--3aTX6vc4Z1RKoo9kxvRRDdV9j4tQYnSph--
 
 
---===============4802417245831040111==
+--===============2590093087042005587==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -208,5 +217,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4802417245831040111==--
+--===============2590093087042005587==--
 

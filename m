@@ -2,82 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5990A55DF8
-	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Jun 2019 03:51:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0F7755F63
+	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Jun 2019 05:05:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U3YzmZgA4j3jMfFjtXhUfXKdHtVqCJNV/IXDHP3pjNg=; b=AXKunCjeoADki0
-	bJ5T5H/637SMj4LwqKE0Kr1IHGjgGmWKx1sAUPW2JDzHGVaZdIz0OchNhJnUt8/hItwkO0PGp5yPv
-	0HjaRzXzkzEb56KQ5FEzPyUbL6WZMa8QglVY9g6yTDiBrAmEQJADksOY1CUpLSvf9pdgigNghCV6B
-	0x7555otrDK+gWSHATZTfkmzX4X3lVWNFVHilOagqpDMvapay0cW+GsmBtobFn+nAKHI6MQUdcN/2
-	5Yq53FcgUyzAEQYhhZMJ7+vbWpQAG0eBaWqtUMbMO/daFUDIiPYt8eM92/SL1CxZ8cJNUauEGv/+A
-	QLj1gZEFLqA5chzGFszw==;
+	List-Owner; bh=4qynjKTNSa4gxATGqGN3cciRBoQ1JJ09ch1gHPIeDZQ=; b=KbAxrubeW0qzKH
+	H521lkmE0uhSHgroYsENPdKQ2bOFwcYNGo/aphZXFur9nlun42oHoFQkaixW9TyYBDp9/TfheyPGY
+	/EQSKiaEH7w5pPZ6BnbI7kbTSMFo9xhZq5QHOgjeE/Nu3smDkUgM5C7HIxXmJjrLsIDktZx5TlJsR
+	tIB21fAqulbDC+BpTyi5rWemKSX80taYuTV0Sh4uFdu90AvmxnxoWwvNBxWQzYmPftt2h2nf0Kwnj
+	+KZdce3X3p/J4UJ+z4Rx+1KOBtwvcX1W+YYwSRemfwtiT6Qdc8GOceRDvG2LnwlnvGTuIVR5Np+ed
+	gqO3rAfot9prkMO6tw4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfx64-0005e9-Jg; Wed, 26 Jun 2019 01:51:40 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1hfyFm-00012Y-MS; Wed, 26 Jun 2019 03:05:46 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfx4s-0004vD-Mt
- for openwrt-devel@lists.openwrt.org; Wed, 26 Jun 2019 01:50:28 +0000
-Received: by mail-qt1-x843.google.com with SMTP id n11so694219qtl.5
- for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 18:50:26 -0700 (PDT)
+ id 1hfyFS-00012C-6P
+ for openwrt-devel@lists.openwrt.org; Wed, 26 Jun 2019 03:05:27 +0000
+Received: by mail-oi1-x242.google.com with SMTP id f80so812701oib.0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 20:05:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Giz/tsPpTyW9yztEoYtJ2Vh87xjSR4TzvGjoDv4dI4o=;
- b=W1DC6Kwa90EgPY6Bsh3apm8dUDAyb+G0dKn/Rkud8kG1xrDEkEdc0rw1gy1wgRdMed
- yl0nQMLgrsoduUg4/1eK/L7gkRAb31F2c22/veNpbpH2DQnFPdNwbgzjPCEWrPAsni3I
- BmwNy2ZjTB4CyZTdYyUTXR7GHDavoQsxzZYjR9p4pModYd66Se4NsVce/zPem+7XVrKs
- c9EuuSl92LeFE6qS8BkeSTSthyhS/68mHSs6nC/PThEttnkcF4cRm0GV0sYkHZgheEI1
- NK3gNWuKHNKnwNkgOpYawlLkVkMLKeygsyeuJtsE4Zn6GlS3MnXp8JVSoyPHOCdUHkrz
- /kCg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=8MwsbfJin89QcKSEII+xR1DsJgKUwK7i6+nLTHOVS+s=;
+ b=BiRkHQ47LSQ73YdtSWA29Gf10RyDeIUUbVK0HK1SJA6IwIQFy37RaQEDt+bF8nHrY/
+ mnc1TN9EKKpgxSvs/VBcSpwbXUBkQ0FXEG8H/WHSjc5JODK1w50cm8rl7l5If/1/mPHR
+ ORsJbGsZ/pCnhGuCT/U4xL1WRci6GtdtYMEVHGZxVWx351AkiUQfr+1jdMCd9ISc8YGC
+ Q6OPNNtIuptH38rK07NSY6E5AKfU9hgS6hYeAMauC77p6pvQ2RIMc8zy5rxWBz8LkD0C
+ fs1IJIJfiBsBBj4kxbTcRWOzg/WBUsqc0iXNfDBzCg0+baOl2GKzk4sYCcgGcHhncNTa
+ A6+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Giz/tsPpTyW9yztEoYtJ2Vh87xjSR4TzvGjoDv4dI4o=;
- b=UDl8woTVr77kzYtblvshdfXa7JJ5g/gf3aYf6/FDqhgCp2FbyFgjK9o+Ti0cr9D/1n
- pM64bqP329lWhroNwBpj8bGfsTFFkAGW+aEPc4RUziOEIvDj0CFKXLiLZO9dQ4NJMdUA
- vzjxyxA3VI2BjzV0gR0HKX/b7UeHl3JxOXPnE+QkAv8TYjXLNhG5bNWduHVQRa8Xt5tN
- TIj+fwJpBh+7/7/9Eu2Q+uSFP2AcqOdeHtV6QJkvo1C0DjEZIDxRWNg1Hjxd+5VKYL0I
- imq85C7pa+tBTd4c0F3Uf5kKo+xp4XNyvNy44sYWiccPz58Qyhtgg2JepVgkc3vSx3ox
- C4ew==
-X-Gm-Message-State: APjAAAU16IGlkFKjXcYpEb5cGfJLztHtoEq28t3iB5UyZ8qrGTSQrUnv
- BhlNo7LPvcEta3lbUiJ8AOvRqnsU2ONyfw==
-X-Google-Smtp-Source: APXvYqxomLRD5Lkrbi3TGCdl8/ytt9NOLMjzEDwCn7jTQUUQzzMPncdAdCdOBf66LCUVOJGPrBx1GQ==
-X-Received: by 2002:aed:220e:: with SMTP id n14mr1380151qtc.388.1561513825357; 
- Tue, 25 Jun 2019 18:50:25 -0700 (PDT)
-Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
- [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id a54sm6523437qtk.85.2019.06.25.18.50.23
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 18:50:24 -0700 (PDT)
-From: Eneas U de Queiroz <cotequeiroz@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 25 Jun 2019 22:49:47 -0300
-Message-Id: <20190626014947.19818-4-cotequeiroz@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190626014947.19818-1-cotequeiroz@gmail.com>
-References: <20190626014947.19818-1-cotequeiroz@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=8MwsbfJin89QcKSEII+xR1DsJgKUwK7i6+nLTHOVS+s=;
+ b=f4D/QfPPPh7It0+N5aOTObLHgGfYW+5CBG4U6RM1O3zh5rTp6my2eF4AIfvL9dzK4t
+ sVTX1jkCiiEMV/AQieT9AQagyxzEwSRa+w/nnIOzAoWzyxrkZYDni/7wyzDEtzazTMpc
+ k5zNEfBuu+xaj32RPgI+GokmhFrhR1T5hRasdJxX5FEhg0iIHPsPXlyGMKykCLvgvXqh
+ QS1q1Rueiz7ScLyhEdpjiOtjeqEHrUEksScGw/GEUbIGAxmjeL9DBUyuCmEqsa+qfUWX
+ NDrjLlkNfUJQv4Y8TX5VWOgXfTeBJBjMi0CJlSGGlDTuMBSUFAFAHitKutVhb9YQF9oT
+ pfvg==
+X-Gm-Message-State: APjAAAXuSTgpQZvSCc5NhHQDGbJOAduTciTxeOU8gpFcJy2Xp6M/ThUh
+ O1SdmU8gTIZYG3eB4p2anGAv8S2r9pTtL+aiJco=
+X-Google-Smtp-Source: APXvYqxMj8IpB7tz3YSjRwEr1MxBX5tkWn2h+GjzaCsVbh2syt5DCy/cXg5xVa+NEneQvrRHtyfT+qAZSgrlDyzLFT0=
+X-Received: by 2002:aca:170d:: with SMTP id j13mr309349oii.77.1561518324250;
+ Tue, 25 Jun 2019 20:05:24 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190624123157.2437-1-mail@david-bauer.net>
+ <2106121.d8lVLhYgiR@debian64>
+ <312a0f5f-d712-dcfd-a07f-c2215d90002b@david-bauer.net>
+ <6483537.HxzJLxGeEp@debian64>
+In-Reply-To: <6483537.HxzJLxGeEp@debian64>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Wed, 26 Jun 2019 11:05:13 +0800
+Message-ID: <CAJsYDVK0UGC46mHG6XcgXWB5CZ6VqETaYsaM0jkv3EfioLGEHw@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_185027_298310_0D78CBEA 
-X-CRM114-Status: UNSURE (   4.81  )
+X-CRM114-CacheID: sfid-20190625_200526_264439_ACC2BA56 
+X-CRM114-Status: UNSURE (   8.10  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cotequeiroz[at]gmail.com)
+ provider (gch981213[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gch981213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -87,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 3/3] hostapd: adjust removed wolfssl options
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for ASUS RT-AC57U
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,42 +97,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>,
- Eneas U de Queiroz <cote2004-github@yahoo.com>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ David Bauer <mail@david-bauer.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Eneas U de Queiroz <cote2004-github@yahoo.com>
+Hi!
 
-This adjusts the selection of recently removed wolfssl options which
-have always been built into the library even in their absence.
-Also remove the selection of libwolfssl itself, allowing the library to
-be built as a module.
+On Tue, Jun 25, 2019 at 5:23 PM Christian Lamparter <chunkeey@gmail.com> wrote:
+> Is 10MHz even a supported frequency for the SPI-NOR chip?
 
-Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+It is supported. It's just unnecessarily slow. Mediatek uses 30MHz in
+their SDK and all my boards works fine with 40MHz.
 
-diff --git a/package/network/services/hostapd/Config.in b/package/network/services/hostapd/Config.in
-index 1966067219..9ce4b243cc 100644
---- a/package/network/services/hostapd/Config.in
-+++ b/package/network/services/hostapd/Config.in
-@@ -51,15 +51,11 @@ config WPA_WOLFSSL
- 	        PACKAGE_wpad-wolfssl ||\
- 	        PACKAGE_wpad-mesh-wolfssl ||\
- 	        PACKAGE_eapol-test-wolfssl
--	select PACKAGE_libwolfssl
- 	select WOLFSSL_HAS_AES_CCM
- 	select WOLFSSL_HAS_AES_GCM
- 	select WOLFSSL_HAS_ARC4
--	select WOLFSSL_HAS_DES3
- 	select WOLFSSL_HAS_DH
--	select WOLFSSL_HAS_ECC
- 	select WOLFSSL_HAS_OCSP
--	select WOLFSSL_HAS_PSK
- 	select WOLFSSL_HAS_SESSION_TICKET
- 	select WOLFSSL_HAS_WPAS
- 
+>
+> I think you can measure the time it takes to read the SPI-NOR and check
+> if the KiB/s match with the selected frequency or not.
+
+Did a quick test on my router with 40MHz SPI clock:
+
+# time dd if=/dev/mtdblock3 of=/dev/null bs=64k
+251+0 records in
+251+0 records out
+real 0m 4.98s
+user 0m 0.00s
+sys 0m 0.16s
+
+around 25Mbit/s
+
+
+Regards,
+Chuanhong Guo
 
 _______________________________________________
 openwrt-devel mailing list

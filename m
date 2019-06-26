@@ -2,93 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAFBD565B4
-	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Jun 2019 11:34:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5BA1566AF
+	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Jun 2019 12:27:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	References:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5bKCi8PkKU5eu7gbfQoEEAQ0gtJan9GWCDj3NN7DH4Q=; b=fZM2TYHnkZfHx7n+QHVvgeK2l
-	61VfQlcyUQSwec5b5p7ayonZWZs/64VkXVH9PkomuG8SVgvNCSm7Klx0SWznXZtPxDCiGoxBhIkjm
-	ONbfbSxBcI6WR62J6vPLN6wMm919foGFqY725tukhlqf3m1+RwtZezxSuBDPa6vNOp9VdESmp7+pl
-	TWDuN5IOxYhj6hwTwqZpyHmZIObGvDKK34GW872fjgjChECyhDUHiw//LjTyxGgvttN8y9pl8PhmK
-	YmpQjWgYzeTuAhUAIvDAXbiaiChtnYnVA7gL9XMX42KbgVe8y53qITlwnrXPideNk1ISmo749yLOH
-	I3PFGNp6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Rxb4v0rcpoc4lzvmSAWTd420EWX9djU4K/5+xwJLycg=; b=pvzgsY5vu6JBie
+	w8mUCApcXzN8hpAxbNoYZat0Limsgg1IkRMckQL+ta9rPh/ydQh2ygsjoIdIzol3FN9tUMvstwGWu
+	lld4bZqFpo+OC4fbZpO984dbdWVXXjIDbt2IlTlfDcZ2IddYG9dhzHLkjAdFA4xHDIYIVEdvJbAGY
+	Zo4RHJzG1OyZZmVsdSt5g2A/trq9ihkyi6bmKi3TUPGTRTG5t4dXSyDtGPVzl2LdKEu4c+3HbnltT
+	bIoiOwMN/p8VrMYoseGxZsuRlLPUVWwz2q8SpOLhOrQyoVF448AgeUI6SNgIVqxRDTek9K3Ywd927
+	EpzPmU6SS//fThGdZW+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg4Ji-0000U4-Ad; Wed, 26 Jun 2019 09:34:14 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hg59Q-0006EU-KT; Wed, 26 Jun 2019 10:27:40 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg4JO-0000TU-GN
- for openwrt-devel@lists.openwrt.org; Wed, 26 Jun 2019 09:33:56 +0000
-Received: by mail-ed1-x542.google.com with SMTP id w20so2349238edd.2
- for <openwrt-devel@lists.openwrt.org>; Wed, 26 Jun 2019 02:33:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ncentric-com.20150623.gappssmtp.com; s=20150623;
- h=subject:from:to:references:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=mUQT9ZiHxxJkDucGBeUt6pMSP7AV4Y89/u6vXNolzw4=;
- b=xJd3EVw+Kqv4Ox6clGUS+cGCf6Vgg4YadOKLnZcZbWKzFCLnryH204XuxFWkZev6cG
- yiYtZuRPk+dl76wc0wKMpAH1ljSo/EcypfWMGBEY3mi33ViPiAT+9cG1hzpphf8yC9ib
- bnAF0nzrP4fuCCEcrTPA+vPagtNtlQbtX3mXhml8Y3tgxhvtjQtZKgqtxyAfNwWw8t7D
- k5aUYteba6V0CCHe3aWq6bJ2qrCia+X4JWnp+hXXfuv/97WAfEhcACfKJAkZcOMOAnXZ
- lMQ1z6XQOJ7P+QWUEdYLfvU+eHh9vTXa+A1HuBToS9X0dzzHhcPfcGGsXtdoeEPV65vx
- 7wuA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:from:to:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=mUQT9ZiHxxJkDucGBeUt6pMSP7AV4Y89/u6vXNolzw4=;
- b=eNIw75IWb6HfYF3fh8wm/BtiHByXD00b0Xl5LWlAG1jr10m0amwzH+no3B9SSkSIir
- W8MgxctVbAqYSQYbWuIpjiP1m5RdpkKHWNJeutBb66A74Uzspw5ffu9XduQG0584/bp/
- hznznL2lJJo1bra0yk0nWi2CYPZY5ROPoH62aTCZj0QvIDaNii0g+teKo5lv1rPayxZM
- za1lnpADuAzF1je3Qd6MAbgASzYvxZrWW0slqDK8OLaIdQnaGDS41J5LdX8mOu0n5Ot4
- HGY9UPwPnSfJIxWkIuzt3anKmDrz09A5HDuoJ/Vlp7yPmJ/ucsvaiv2q+uF/fJpCYQ+x
- arAA==
-X-Gm-Message-State: APjAAAUmPEUEQaYu+8I0EnYwxaujP39Z0u7DsfsFe2+hQAKqU0LI5Z7P
- aKy1zqsjCbvr0uXAGepnX4Myo/74pfFloQ==
-X-Google-Smtp-Source: APXvYqzDUb8DqB1+ZKjTZUfTq4mD4uNIlLqKgvDuKUv3QPh0PCrhQz8AkIeTtpZEOjXy1UZdGpDnXA==
-X-Received: by 2002:a50:d1c6:: with SMTP id i6mr3932677edg.110.1561541632552; 
- Wed, 26 Jun 2019 02:33:52 -0700 (PDT)
-Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
- by smtp.gmail.com with ESMTPSA id q14sm2909673eju.47.2019.06.26.02.33.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 26 Jun 2019 02:33:52 -0700 (PDT)
-From: Koen Vandeputte <koen.vandeputte@ncentric.com>
-To: Ben Greear <greearb@candelatech.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <abe6feb7-80a9-4587-db0b-7f3a37a792d8@ncentric.com>
- <7a68db11-1026-e576-2c26-425ea85ef609@candelatech.com>
- <93bc6089-e313-f51f-06e9-4c0b8f36f7e7@ncentric.com>
- <3d95432a-db21-d4ef-24c4-fc3659fee0a1@candelatech.com>
- <4248b808-d8a5-1972-f423-ba34e222abc2@ncentric.com>
-Message-ID: <2757cb92-e6a6-58db-e5a1-ca5eaff7855f@ncentric.com>
-Date: Wed, 26 Jun 2019 11:33:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.1
-MIME-Version: 1.0
-In-Reply-To: <4248b808-d8a5-1972-f423-ba34e222abc2@ncentric.com>
-Content-Language: en-US
+ id 1hg59K-0006E3-G5
+ for openwrt-devel@bombadil.infradead.org; Wed, 26 Jun 2019 10:27:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=i5tZTUun63Qjv6H/7KKKQ/nJm9E/3bTxWV6PkBg6pgc=; b=omGpu3I6Pb1YB4dIgautvhz9f
+ OIfoZTLoePsLrb2TRNn2ub3JdHbAGfk+Dx7WTJb0cP9D5sSHquwSwRg93TBGwmL2bY7zpHO58qebx
+ z5B/1aoCdapUuBsfeRXLOJnGpk+p3rVwbTaWBal0MePnSyvhfWuyVp4nRqamIcAaytTMg85xWRETP
+ VN1TOeW2kxf6saze0se0ADpyL9XI6e60KyVnDlcG2XyTSiCrQddu+2n7xcGACvvdNQWUAsrzCwvPj
+ AflZtGRYwruhjq8pr2Ae28Ib8Tyj3UFM/AG7vf51eec30J8x6ZgbWHwDgSqTxNH94npGU5zO3RXHx
+ l1bZWvBaw==;
+Received: from smtpbgau1.qq.com ([54.206.16.166])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hg59H-0006q1-0Q
+ for openwrt-devel@lists.openwrt.org; Wed, 26 Jun 2019 10:27:34 +0000
+X-QQ-mid: bizesmtp22t1561543371t61c48v2
+Received: from localhost.localdomain (unknown [113.116.56.127])
+ by esmtp6.qq.com (ESMTP) with 
+ id ; Wed, 26 Jun 2019 18:02:45 +0800 (CST)
+X-QQ-SSF: 01400000001000L0ZG50000A0000000
+X-QQ-FEAT: 4dGFzNVbfLODDbLv2Bn63g0ktXygvtkEW9D0MXAcKMykGB+Md9FwI+tMveLRD
+ UDUXuMqv4PsJbP21I8uSstwox7ohleHp8yakl7L5bvc3wlz480yNKX0Ps3mPr/8u8Wlvkwh
+ DCxa14VFMy58NAx9x2iRrKgwVtwOYo27l68Bfw2KrkcP6Opa2kQ+gflgGF1se5OUU2KKdc9
+ 46PuvPfDYAKAEL8pV78Jp4eKt5qqnEq9WfuhFXGLALi0rqCjbSxYWFvWHW8LqVynruS/fkO
+ Ubb0H+1vdY1xCA5PnDjtPQVrNUvYEXdarGNkHvrF9PMtREAsIcBu8JfevW0pkfuz7l/4Yie
+ fDgvJHeZyjteb3W8DM=
+X-QQ-GoodBg: 2
+From: Luochongjun <luochongjun@gl-inet.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 26 Jun 2019 18:02:23 +0800
+Message-Id: <1561543343-2930-1-git-send-email-luochongjun@gl-inet.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:gl-inet.com:qybgforeign:qybgforeign2
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_023354_550207_178AE134 
-X-CRM114-Status: GOOD (  20.90  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190626_112731_661089_F7A0C729 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [54.206.16.166 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] ath10k-ct 4.19 and IBSS
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support for gl-ar750
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,69 +83,232 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Luochongjun <luochongjun@gl-inet.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDI2LjA2LjE5IDExOjAyLCBLb2VuIFZhbmRlcHV0dGUgd3JvdGU6Cj4KPiBPbiAyNS4wNi4x
-OSAxNTo1NCwgQmVuIEdyZWVhciB3cm90ZToKPj4KPj4KPj4gT24gMDYvMjUvMjAxOSAwMjo1MyBB
-TSwgS29lbiBWYW5kZXB1dHRlIHdyb3RlOgo+Pj4KPj4+IE9uIDI0LjA2LjE5IDIyOjA0LCBCZW4g
-R3JlZWFyIHdyb3RlOgo+Pj4+IE9uIDYvMjQvMTkgODozMiBBTSwgS29lbiBWYW5kZXB1dHRlIHdy
-b3RlOgo+Pj4+PiBIaSBCZW4sCj4+Pj4+IEhpIEFsbCwKPj4+Pj4KPj4+Pj4gU28gSSdtIGdvaW5n
-IHRvIGdpdmUgdGhpcyBhbm90aGVyIHRyeSAuLgo+Pj4+PiBBcyB0aGUgSUJTUyBmdW5jdGlvbmFs
-aXR5IGlzIGhlYXZpbHkgYWR2ZXJ0aXNlZCBhcyBhIGRlbHRhIHRvIAo+Pj4+PiBtYWlubGluZSwg
-aXQgd291bGQgYmUgdmVyeSBuaWNlIHRvIGdldCBpdCB3b3JraW5nIGFsc28gOikKPj4+Pj4KPj4+
-Pj4gVGVzdGluZyB0aGUgbGF0ZXN0IGF0aDEway1jdCBkcml2ZXIgYW5kIGZpcm13YXJlIHNlZW1z
-IHRvIGJlIGEgCj4+Pj4+IHN0ZXAgYmFjayBjb21wYXJlZCB0byByb3VnaGx5IGEgbW9udGggYWdv
-Lgo+Pj4+Pgo+Pj4+PiBJJ20gY3VycmVudGx5IHNlZWluZyB0aGUgZmlybXdhcmUgY3Jhc2hpbmcs
-IHdoaWNoIHdhcyBub3QgdGhlIGNhc2UgCj4+Pj4+IGJlZm9yZToKPj4+Pj4KPj4+Pj4KPj4+Pj4g
-YXRoMTBrLWN0ICsgaHR0LWZ3Ogo+Pj4+Pgo+Pj4+PiBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcv
-N1N5OXl4NnMKPj4+Pgo+Pj4+IExvb2tzIGxpa2UgZmlybXdhcmUgcmFuIG91dCBvZiBzb21lIFdN
-SSBldmVudCBidWZmZXJzIGFuZCBjcmFzaGVkIAo+Pj4+IGluc3RlYWQgb2YgaGFuZGxpbmcKPj4+
-PiBpdCBtb3JlIGdyYWNlZnVsbHkuCj4+Pj4KPj4+PiBQbGVhc2UgdHJ5IHRoZSBhdHRhY2hlZCAo
-dW50ZXN0ZWQpIGZpcm13YXJlIGFuZCBzZWUgaWYgaXQgYmVoYXZlcyAKPj4+PiBiZXR0ZXIuCj4+
-Pj4KPj4+IEhpIEJlbiwKPj4+Cj4+PiAxIHN0ZXAgZm9yd2FyZCBoZXJlLgo+Pj4KPj4+IEknbSBu
-b3Qgc2VlaW5nIGNyYXNoZXMgYW55bW9yZSB1c2luZyB0aGUgdGVzdC1maXJtd2FyZS4KPj4+Cj4+
-PiBodHRwczovL3Bhc3RlYmluLmNvbS9yYXcvNFplWHU3aXcKPj4+Cj4+Pgo+Pj4gSSd2ZSBsaW5r
-ZWQgdXAgMiBJQlNTIGRldmljZXMgKHdhdmUgMSwgVkhUODApCj4+Pgo+Pj4gT0xTUiB0cmFmZmlj
-IChVRFApIHdvcmtzIGFuZCBwYWNrZXRzIGhlcmUgYXJlIG5pY2VseSBnb2luZyBiYWNrICYgCj4+
-PiBmb3J0aC4KPj4+Cj4+PiBTaW1wbHkgcGluZ2luZyAoSUNNUCkgYmV0d2VlbiB0aGUgMiBkZXZp
-Y2VzIGRvZXMgbm90IHdvcmsuCj4+Pgo+Pj4gV2hlbiBzZW5kaW5nIDEwMCBwaW5ncywgKDY0IGJ5
-dGUgbGFyZ2UpwqAgc29tZXRpbWVzIDEgZ2V0cyB0aHJvdWdoIC4uIAo+Pj4gYnV0IHdpdGggYSBs
-YXRlbmN5IG9mID4gNTAwbXMKPj4+Cj4+Pgo+Pj4gSSB0aGluayBpZiB0aGUgc3BsYXQgYW5kIHRo
-ZSBiZWFjb24gc3BhbSBiZWxvdyBjb3VsZCBiZSBmaXhlZCAuLiAKPj4+IHRoaXMgd291bGQgYmUg
-YSBtYWpvciBzdGVwIGZvcndhcmQ6Cj4+Pgo+Pj4gW8KgwqAgMzAuMzI4NDIzXSAtLS0tLS0tLS0t
-LS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0tLS0KPj4+IFvCoMKgIDMwLjMzMzI1MV0gV0FSTklORzog
-Q1BVOiAwIFBJRDogMTU3OCBhdCAKPj4+IC9tbnQvcmFtZGlzay9rb2VuL2Zpcm13YXJlL2J1aWxk
-cy9nZW5lcmljX3JiOTIyL2J1aWxkX2Rpci90YXJnZXQtbWlwc18yNGtjX211c2wvbGludXgtYXI3
-MXh4X21pa3JvdGlrL2F0aDEway1jdC0yMDE5LTA1LTA4LWY5OGI2ZGM0L2F0aDEway00LjE5L21h
-Yy5jOjY1NjMgCj4+PiBhdGgxMGtfbWFjX3ZpZl9iZWFjb25fZnJlZSsweGM3Yy8weDExNWMgW2F0
-aDEwa19jb3JlXQo+Pj4gW8KgwqAgMzAuMzU1NjM2XSBNb2R1bGVzIGxpbmtlZCBpbjogbWJ0IGF0
-aDlrIGF0aDlrX2NvbW1vbiBxY3NlcmlhbCAKPj4+IHBwcG9lIHBwcF9hc3luYyBvcHRpb24gY2Rj
-X21iaW0gYXRoOWtfaHcgYXRoMTBrX3BjaSBhdGgxMGtfY29yZSBhdGggCj4+PiB1c2Jfd3dhbiBz
-aWVycmFfbmV0IHNpZXJyYSBybmRpc19ob3N0IHFtaV93d2FuIHBwcG94IHBwcF9nZW5lcmljIAo+
-Pj4gbWFjODAyMTEgaXB0YWJsZV9uYXQgaXB0YWJsZV9tYW5nbGUgaXB0YWJsZV9maWx0ZXIgaXB0
-X1JFSkVDVCAKPj4+IGlwdF9NQVNRVUVSQURFIGlwX3RhYmxlcyBodWF3ZWlfY2RjX25jbSBmdGRp
-X3NpbyBjZmc4MDIxMSBjZGNfc3Vic2V0IAo+Pj4gY2RjX25jbSBjZGNfZXRoZXIgeHRfdGltZSB4
-dF90Y3B1ZHAgeHRfc3RhdGUgeHRfbmF0IHh0X211bHRpcG9ydCAKPj4+IHh0X21hcmsgeHRfbWFj
-IHh0X2xpbXQKPj4+IFvCoMKgIDMwLjQyNzMzMV3CoCBubHNfdXRmOCBubHNfaXNvODg1OV8xIG5s
-c19jcDQzNyBhdXRoZW5jIAo+Pj4gZWhjaV9wbGF0Zm9ybSBzZF9tb2Qgc2NzaV9tb2QgZWhjaV9o
-Y2QgZ3Bpb19idXR0b25faG90cGx1ZyBleHQ0IAo+Pj4gbWJjYWNoZSBqYmQyIHVzYmNvcmUgbmxz
-X2Jhc2UgdXNiX2NvbW1vbiBwdHAgcHBzX2NvcmUgbWlpIGFlYWQgCj4+PiBjcnlwdG9fbnVsbCBj
-cnlwdG9tZ3IgY3JjMzJjX2dlbmVyaWMgY3J5cHRvX2hhc2gKPj4+IFvCoMKgIDMwLjQ0ODAxN10g
-Q1BVOiAwIFBJRDogMTU3OCBDb21tOiB3cGFfc3VwcGxpY2FudCBOb3QgdGFpbnRlZCAKPj4+IDQu
-MTQuMTI5ICMwCj4+Cj4+IFBsZWFzZSBsb29rIGluIHlvdXIgY29kZSBhbmQgbGV0IG1lIGtub3cg
-dGhlIHNvdXJjZSBhcm91bmQgdGhlIGxpbmUgCj4+IGluIG1hYy5jICg2NTYzKSB0aGF0IGlzIHNw
-bGF0dGluZy4KPj4KPj4gQWxzbywgeW91IG1pZ2h0IGdyYWIgdGhlIGxhdGVzdCBhdGgxMGstY3Qg
-cmVwbywgaXQgaGFzIGEgdHdlYWsgdGhhdCAKPj4gbWlnaHQgZml4IHRoZSBTV0JBIG92ZXJydW4K
-Pj4gbWVzc2FnZXMuCj4+Cj4+IGh0dHBzOi8vZ2l0aHViLmNvbS9ncmVlYXJiL2F0aDEway1jdAo+
-Pgo+PiBUaGFua3MsCj4+IEJlbgo+Pgo+IEhpIEJlbiwKPgo+IEhlcmUgaXMgdGhlIG91dHB1dCBi
-YXNlZCBvbiB0aGUgbGF0ZXN0IGdpdCBIRUFEIG9mIHlvdXIgY3QgdHJlZSwgCj4gY29tYmluZWQg
-d2l0aCB0aGUgdGVzdCBmaXJtd2FyZToKPgo+IGh0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9rd0M2
-YzE4Sgo+Cj4KPiBSZWdhcmRzLAo+Cj4gS29lbgo+CkhlcmUgaXMgdGhlIHNvdXJjZSBhcyBjb21w
-aWxlZCBpbiBvcGVud3J0OgoKaHR0cDovL3d3dy54YmFjay5iZS9hdGgxMGstNDE5LnRhci54egoK
-CktvZW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
-cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
-Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
-Cg==
+This patch supports gl-ar750, which was previously supported by ar71xx.
+
+Specification:
+- SOC: QCA9531 (650MHz)
+- Flash: 16 MiB (W25Q128FVSG)
+- RAM: 128 MiB DDR2
+- Ethernet: 10/100: 2xLAN + 10/100: 1xWAN
+- Wireless: 2.4GHz (bgn) and 5GHz (ac)
+- USB: 1x USB 2.0 port
+- Switch: 1x switch
+- Button: 1x reset button
+- LED: 3x LEDS (white)
+
+Flash instruction:
+Support for sysupgrade directive upgrades, as well as luci upgrades.
+
+Signed-off-by: luochongjun <luochongjun@gl-inet.com>
+---
+ .../etc/hotplug.d/firmware/11-ath10k-caldata       |   1 +
+ target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts | 151 +++++++++++++++++++++
+ target/linux/ath79/image/generic.mk                |   8 ++
+ 3 files changed, 160 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index 8f0ea1d..6a9cb1c 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -116,6 +116,7 @@ case "$FIRMWARE" in
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +1)
+ 		;;
++	glinet,gl-ar750|\
+ 	glinet,gl-ar750s)
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0) +1)
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+new file mode 100644
+index 0000000..c20cdf5
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+@@ -0,0 +1,151 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "qca953x.dtsi"
++
++/ {
++	compatible = "glinet,gl-ar750", "qca,qca9531";
++	model = "GL.iNet GL-AR750";
++
++	keys {
++		compatible = "gpio-keys";
++
++		poll-interval = <20>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&jtag_disable_pins>;
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		mode {
++			label = "mode";
++			linux,code = <BTN_0>;
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power {
++			label = "gl-ar750:white:power";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++			default-state = "on";
++		};
++
++		wlan2g {
++			label = "gl-ar750:white:wlan2g";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++
++		wlan5g {
++			label = "gl-ar750:white:wlan5g";
++			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++	};
++
++	i2c {
++		compatible = "i2c-gpio";
++
++		sda-gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++		scl-gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++	};
++
++
++};
++
++&pcie0 {
++	status = "okay";
++
++	wifi@0,0 {
++		compatible = "qcom,ath10k";
++		reg = <0 0 0 0 0>;
++		device_type = "pci";
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	hub_port: port@1 {
++		reg = <1>;
++		#trigger-source-cells = <0>;
++	};
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&spi {
++	status = "okay";
++	num-cs = <0>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++				read-only;
++			};
++
++			art: partition@50000 {
++				label = "art";
++				reg = <0x050000 0x010000>;
++				read-only;
++			};
++
++			partition@60000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x060000 0xfa0000>;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++	mtd-mac-address = <&art 0x0>;
++	phy-handle = <&swphy4>;
++};
++
++&eth1 {
++	mtd-mac-address = <&art 0x0>;
++	mtd-mac-address-increment = <1>;
++};
++
++&wmac {
++	status = "okay";
++	mtd-cal-data = <&art 0x1000>;
++	mtd-mac-address = <&art 0x1002>;
++};
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index d5f67b8..033cfa3 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -389,6 +389,14 @@ define Device/glinet_gl-ar300m-nor
+ endef
+ TARGET_DEVICES += glinet_gl-ar300m-nor
+ 
++define Device/glinet_gl-ar750
++  ATH_SOC := qca9531
++  DEVICE_TITLE := GL.iNet GL-AR750
++  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
++  IMAGE_SIZE := 16000k
++endef
++TARGET_DEVICES += glinet_gl-ar750
++
+ define Device/glinet_gl-ar750s
+   ATH_SOC := qca9563
+   DEVICE_TITLE := GL.iNet GL-AR750S
+-- 
+2.7.4
+
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

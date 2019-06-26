@@ -2,72 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9DEC55DF6
-	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Jun 2019 03:51:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11CE755DF7
+	for <lists+openwrt-devel@lfdr.de>; Wed, 26 Jun 2019 03:51:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I3YjkfTaO07t8aUKNZhMjBHCU41peZQyOI/cNFzPaww=; b=OJcMTDgPFAgpWW
-	lGau7o+pez8LNzEm+hl4+BGouwv6182dTq5Fxz1I8mhcxs5E2yDV0pZiIpgVEGLqorG/dtEccR4RT
-	LotCPUuugZEeXNM9vvyKW8fXP4RLRltXDmyTVWtEWEDb+xwGoEG4+SSyVRWUIAILRpxEpx4L++2ku
-	FwcVpy/aAdDNv1BlboPLYcogqhakCn0Wv3akXL4V5Zsl6Rs7hVqVKJGPyAwjQd6kN+YJW97YzcJFz
-	tf4M4DITprVnIBkKsLItMqxDRMt4FZJMVcdX2XusLesqJ+zo8ySiQ0KrVFpFwq8ivXfHcvkJBW6O/
-	mGZ24WFPjVxm86ifqrkg==;
+	List-Owner; bh=wpbFxs0dwdWXkxtwXTW3ajpnvhsb7vlZ50VKcJr+M2g=; b=gYF8ncZ/fCswvV
+	UrDbFmpFD0gd2NSGbO5UjTvVajV8GWLI7P/JQnyZB9m+6gY8Hw1a41EnaDRrE0oYq/SEdXlTNMJvN
+	scw6C/I9NOyyffVVa89OHOphUiMPEPDBq+vxRsjOw3bCMzxLqNm8Pf4ZQ+zyGZp55klezlaZsR9po
+	425XAjgPVtacnZUUBOpK9gh2ePRUG4uW+a1BO3TggciKE60RHdqvyXYMNhX7Fw2rm8iFGV650jVl+
+	yjKcyKZ21aZUoLl9CUxQWX0loTPNVSpNx4kAY2L2k23zn65/1f5+YQ1kUEUk7MZTOgDC32K71jhw2
+	PJz3DklPLFFtWDb1rACw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfx5S-00056o-Tj; Wed, 26 Jun 2019 01:51:02 +0000
-Received: from mail-qk1-x730.google.com ([2607:f8b0:4864:20::730])
+	id 1hfx5m-0005Nk-TV; Wed, 26 Jun 2019 01:51:22 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfx4p-0004uA-Bf
+ id 1hfx4r-0004uY-0T
  for openwrt-devel@lists.openwrt.org; Wed, 26 Jun 2019 01:50:27 +0000
-Received: by mail-qk1-x730.google.com with SMTP id d15so371828qkl.4
- for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 18:50:23 -0700 (PDT)
+Received: by mail-qk1-x744.google.com with SMTP id a27so369732qkk.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 25 Jun 2019 18:50:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=WWbdPA8ylaAwnw4qnoetmv+bte2eFFOj8EL/qC/iCho=;
- b=UR+x8T2mlbyN4e0R2JckMG+4vhRdzp3FxboAN56m1afFX0IxjU9oqcZABUCUinXItC
- uCuWp4pRsPm+gDlW4ANoCBXG5MX7PVM4XbO/IL5cYHSrfrD58GqZazo+gvkjuxAtVYb4
- tzS3f+dqXPFLSdHlqPVT0TUwPLcpPKOrZ6JupdPX2Fvenswk6DjxVAtFVeCwNYQS6ptH
- k1/WHysBTFiZxof9cr9sbeO6/Bpdgl5XBh1/8iU3sCNRwHya6ARrYgcqryM2MovA2CTh
- vDjYvUdqKTLbuhJA8NOMqPKanicMODgNsdz1M/BtkjTg6fbVjk0OJfBG58PO6qA3+o3p
- 7CBg==
+ bh=emRk4wMXn4ql6DHl459EUbzDINmnf0S28X2BfPicAto=;
+ b=RUMGbXgxg7mMUhK2walvU85s/SxWJ0twK4A1BXgwLZnKh/kjrC9VduzWHa0TqR8MuL
+ g21Cy9Yuzp9wJ9FF5a2g+FhYcy8vMEneaJOAnbH4S7/eKDEXfWpkpdJbVrjqg072AJ0P
+ LVdDq9ARhXTmYY+JYHgiReG8NQFWJ2i4IGnzhWczxNtiwaHYicNuubDvjUqJV4k3r2FF
+ MlNJglWSF0MCJyOJL69sAVkKIQfeE54tCkF/8GwxycDBoQmz0hMfdwDcTlS1z3jXQcwm
+ yOo06oBimGGRpnPPKIYBiCZ3EDKLVtSEBKb1cVfMxgWWrQ7EUP6/XPMFoTwqZ2BZUPsi
+ +RTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=WWbdPA8ylaAwnw4qnoetmv+bte2eFFOj8EL/qC/iCho=;
- b=iocoMwmmNQNoqmaFVBHF8zfhAR9kmKbLuOUbIDJYZXANsIPvEjaT5jkTUCSLvXecTV
- RNi7A3y15YOz/FJoN345XgIh4CJwULXJgiGEkBiJnDxznRPNCeR60H/NpcwtmxNK1BOD
- CmwzgLArfA3kCP6q35qcjj3bB0H0v6X2URjNKd6CojzMXDsqU8917H1nVWQUitWDkd0R
- 0aIo/y6BC/p5XoSZij9F+lljZqH/ITQ2dRGuqH98Q5ARXdYdrImenpjSkQ4kuSgmUQB+
- yW7t5tKt1LFvMEf2vHMkkhPc/WLkkim86LpSGJyNW/cvXf68wP9uJk1poIIUdSgsmgjS
- L40g==
-X-Gm-Message-State: APjAAAVHD3gR6HIPpLQm9hhpnbeMibdkcAUUE5Qm21NpP97IbofY0Ka6
- h2M3Ra803IWNcgTRhf7DxTyuco95v7E=
-X-Google-Smtp-Source: APXvYqzokrHHy2417lliq/IKZyVnVUyBsWJMRKwmYMJ3hM6vythMC2FWN+6GAkiFVgN80B/93Jhpuw==
-X-Received: by 2002:a05:620a:12a2:: with SMTP id
- x2mr1566729qki.133.1561513822055; 
- Tue, 25 Jun 2019 18:50:22 -0700 (PDT)
+ bh=emRk4wMXn4ql6DHl459EUbzDINmnf0S28X2BfPicAto=;
+ b=gRrf3OMkQCVaBvxSrei7XUto26gPiibOFqN6iL4umzU7erHDjcHvdxCISaubIQP5l1
+ YMQUZztL5MfU4WhePXLSt6aFlXx3jb3YcR/fEQiBRQEcVEoI9wjn67ES4rtTDzN5pzqr
+ 3czRFbNwNIVUfOLLmKhvur1rrehtPm1wdbJzy9nCkha2Co4Xkyea4cCfbXdttwW4Jxvt
+ bj+PcH1Nb30sjp+kAN5FMUA8DaR6RkJwLxN0HGd5KzxkWC2oaSpOR7Sc8JWkjzaBjMva
+ jHfDDyJfPfL3jcprJ2IlD6ieeh2QBq6hqz6GYJD0aUvHnEcZJB/xxFf2NGEKFO0+5A22
+ QGyw==
+X-Gm-Message-State: APjAAAXjBmZ3oxvessSKcJEbtXrcGcq0YiBXcdkO0w8xncLthh/NRMyb
+ EpsJUwfV1jEQAVKYydEksGHpyTpryl4=
+X-Google-Smtp-Source: APXvYqyjYIbM/W7iPDuwFoVBu7tUdz+5O59oOJRvRnAAwzKXLvH90STNzV9mLuCYLNScLIHOznQiDg==
+X-Received: by 2002:a37:4e51:: with SMTP id c78mr1517521qkb.19.1561513823665; 
+ Tue, 25 Jun 2019 18:50:23 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id a54sm6523437qtk.85.2019.06.25.18.50.20
+ by smtp.gmail.com with ESMTPSA id a54sm6523437qtk.85.2019.06.25.18.50.22
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 18:50:21 -0700 (PDT)
+ Tue, 25 Jun 2019 18:50:23 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 25 Jun 2019 22:49:45 -0300
-Message-Id: <20190626014947.19818-2-cotequeiroz@gmail.com>
+Date: Tue, 25 Jun 2019 22:49:46 -0300
+Message-Id: <20190626014947.19818-3-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190626014947.19818-1-cotequeiroz@gmail.com>
 References: <20190626014947.19818-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_185023_396550_56ECC866 
-X-CRM114-Status: UNSURE (   5.98  )
+X-CRM114-CacheID: sfid-20190625_185025_533305_CF99B9CE 
+X-CRM114-Status: UNSURE (   7.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:730 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (cotequeiroz[at]gmail.com)
@@ -88,7 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 1/3] wolfssl: update to 3.15.7, fix Makefile
+Subject: [OpenWrt-Devel] [PATCH 2/3] wolfssl: reorganize, add build options
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,78 +100,266 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhpcyBpbmNsdWRlcyBhIGZpeCBmb3IgYSBtZWRpdW0tbGV2ZWwgcG90ZW50aWFsIGNhY2hlIGF0
-dGFjayB3aXRoIGEKdmFyaWFudCBvZiBCbGVpY2hlbmJhY2hlcuKAmXMgYXR0YWNrLiAgUGF0Y2hl
-cyB3ZXJlIHJlZnJlc2hlZC4KRml4ZWQgcG9seTEzMDUgYnVpbGQgb3B0aW9uLCBhbmQgbWFkZSBz
-b21lIE1ha2VmaWxlIHVwZGF0ZXMuCgpTaWduZWQtb2ZmLWJ5OiBFbmVhcyBVIGRlIFF1ZWlyb3og
-PGNvdGVxdWVpcm96QGdtYWlsLmNvbT4KCmRpZmYgLS1naXQgYS9wYWNrYWdlL2xpYnMvd29sZnNz
-bC9Db25maWcuaW4gYi9wYWNrYWdlL2xpYnMvd29sZnNzbC9Db25maWcuaW4KaW5kZXggNTBiMGJi
-OWNkZi4uNGFhMTYzYjM2MSAxMDA2NDQKLS0tIGEvcGFja2FnZS9saWJzL3dvbGZzc2wvQ29uZmln
-LmluCisrKyBiL3BhY2thZ2UvbGlicy93b2xmc3NsL0NvbmZpZy5pbgpAQCAtNTMsNyArNTMsNyBA
-QCBjb25maWcgV09MRlNTTF9IQVNfRUNDMjU1MTkKIAlkZXBlbmRzIG9uIFdPTEZTU0xfSEFTX0VD
-QwogCWRlZmF1bHQgbgogCi1jb25maWcgV09MRlNTTF9IQVNfUE9MWV8xMzA1Citjb25maWcgV09M
-RlNTTF9IQVNfUE9MWTEzMDUKIAlib29sICJJbmNsdWRlIFBvbHktMTMwNSBzdXBwb3J0IgogCWRl
-ZmF1bHQgbgogCmRpZmYgLS1naXQgYS9wYWNrYWdlL2xpYnMvd29sZnNzbC9NYWtlZmlsZSBiL3Bh
-Y2thZ2UvbGlicy93b2xmc3NsL01ha2VmaWxlCmluZGV4IDIzYmIxYzUyMjAuLmQ5NmRiZWEzMjMg
-MTAwNjQ0Ci0tLSBhL3BhY2thZ2UvbGlicy93b2xmc3NsL01ha2VmaWxlCisrKyBiL3BhY2thZ2Uv
-bGlicy93b2xmc3NsL01ha2VmaWxlCkBAIC04LDExICs4LDEwIEBACiBpbmNsdWRlICQoVE9QRElS
-KS9ydWxlcy5tawogCiBQS0dfTkFNRTo9d29sZnNzbAotUEtHX1ZFUlNJT046PTMuMTUuMy1zdGFi
-bGUKLVBLR19SRUxFQVNFOj0yCitQS0dfVkVSU0lPTjo9My4xNS43LXN0YWJsZQorUEtHX1JFTEVB
-U0U6PTEKIAotUEtHX1NPVVJDRTo9JChQS0dfTkFNRSktJChQS0dfVkVSU0lPTikuemlwCi0jIFBL
-R19TT1VSQ0VfVVJMOj1odHRwczovL3d3dy53b2xmc3NsLmNvbS8KK1BLR19TT1VSQ0U6PSQoUEtH
-X05BTUUpLSQoUEtHX1ZFUlNJT04pLnRhci5negogUEtHX1NPVVJDRV9VUkw6PWh0dHBzOi8vZ2l0
-aHViLmNvbS93b2xmU1NML3dvbGZzc2wvYXJjaGl2ZS92JChQS0dfVkVSU0lPTikKIFBLR19IQVNI
-Oj1kYzk3YzA3YTc2NjdiMzlhODkwZTE0ZjRiNGEyMDlmNTE1MjRhNGNhYmVlN2FkYjZjODA4MjJl
-ZTc4YzFmNjJhCiAKQEAgLTIwLDE1ICsxOSwxNiBAQCBQS0dfRklYVVA6PWxpYnRvb2wKIFBLR19J
-TlNUQUxMOj0xCiBQS0dfVVNFX01JUFMxNjo9MAogUEtHX0JVSUxEX1BBUkFMTEVMOj0xCi1QS0df
-TElDRU5TRTo9R1BMLTIuMCsKLVBLR19DUEVfSUQ6PWNwZTovYTp5YXNzbDpjeWFzc2wKK1BLR19M
-SUNFTlNFOj1HUEwtMi4wLW9yLWxhdGVyCitQS0dfTElDRU5TRV9GSUxFUzo9TElDRU5TSU5HIENP
-UFlJTkcKK1BLR19DUEVfSUQ6PWNwZTovYTp3b2xmc3NsOndvbGZzc2wKIAogUEtHX0NPTkZJR19E
-RVBFTkRTOj1cCiAJQ09ORklHX1dPTEZTU0xfSEFTX0FFU19DQ00gQ09ORklHX1dPTEZTU0xfSEFT
-X0FFU19HQ00gXAogCUNPTkZJR19XT0xGU1NMX0hBU19BUkM0IENPTkZJR19XT0xGU1NMX0hBU19D
-SEFDSEEgXAogCUNPTkZJR19XT0xGU1NMX0hBU19ERVMzIENPTkZJR19XT0xGU1NMX0hBU19ESCBD
-T05GSUdfV09MRlNTTF9IQVNfRFRMUyBcCiAJQ09ORklHX1dPTEZTU0xfSEFTX0VDQyBDT05GSUdf
-V09MRlNTTF9IQVNfRUNDMjU1MTkgXAotCUNPTkZJR19XT0xGU1NMX0hBU19PQ1NQIENPTkZJR19X
-T0xGU1NMX0hBU19QT0xZXzEzMDUgXAorCUNPTkZJR19XT0xGU1NMX0hBU19PQ1NQIENPTkZJR19X
-T0xGU1NMX0hBU19QT0xZMTMwNSBcCiAJQ09ORklHX1dPTEZTU0xfSEFTX1BTSyBDT05GSUdfV09M
-RlNTTF9IQVNfU0VTU0lPTl9USUNLRVQgXAogCUNPTkZJR19XT0xGU1NMX0hBU19XUEFTCiAKQEAg
-LTQyLDcgKzQyLDcgQEAgZGVmaW5lIFBhY2thZ2UvbGlid29sZnNzbAogICBVUkw6PWh0dHA6Ly93
-d3cud29sZnNzbC5jb20vCiAgIE1FTlU6PTEKICAgUFJPVklERVM6PWxpYmN5YXNzbAotICBBQklf
-VkVSU0lPTjo9MTgKKyAgQUJJX1ZFUlNJT046PTE5CiBlbmRlZgogCiBkZWZpbmUgUGFja2FnZS9s
-aWJ3b2xmc3NsL2Rlc2NyaXB0aW9uCmRpZmYgLS1naXQgYS9wYWNrYWdlL2xpYnMvd29sZnNzbC9w
-YXRjaGVzLzEwMC1kaXNhYmxlLWhhcmRlbmluZy1jaGVjay5wYXRjaCBiL3BhY2thZ2UvbGlicy93
-b2xmc3NsL3BhdGNoZXMvMTAwLWRpc2FibGUtaGFyZGVuaW5nLWNoZWNrLnBhdGNoCmluZGV4IGQ5
-MTNiNWZkZWEuLjhhNTE0MzQ2MzMgMTAwNjQ0Ci0tLSBhL3BhY2thZ2UvbGlicy93b2xmc3NsL3Bh
-dGNoZXMvMTAwLWRpc2FibGUtaGFyZGVuaW5nLWNoZWNrLnBhdGNoCisrKyBiL3BhY2thZ2UvbGli
-cy93b2xmc3NsL3BhdGNoZXMvMTAwLWRpc2FibGUtaGFyZGVuaW5nLWNoZWNrLnBhdGNoCkBAIC0x
-LDYgKzEsNiBAQAogLS0tIGEvd29sZnNzbC93b2xmY3J5cHQvc2V0dGluZ3MuaAogKysrIGIvd29s
-ZnNzbC93b2xmY3J5cHQvc2V0dGluZ3MuaAotQEAgLTE2MjQsNyArMTYyNCw3IEBAIGV4dGVybiB2
-b2lkIHVJVFJPTjRfZnJlZSh2b2lkICpwKSA7CitAQCAtMTc1OSw3ICsxNzU5LDcgQEAgZXh0ZXJu
-IHZvaWQgdUlUUk9ONF9mcmVlKHZvaWQgKnApIDsKICAjZW5kaWYKICAKICAvKiB3YXJuaW5nIGZv
-ciBub3QgdXNpbmcgaGFyZGVuIGJ1aWxkIG9wdGlvbnMgKGRlZmF1bHQgd2l0aCAuL2NvbmZpZ3Vy
-ZSkgKi8KQEAgLTgsNCArOCw0IEBACiArI2lmIDAKICAgICAgI2lmIChkZWZpbmVkKFVTRV9GQVNU
-X01BVEgpICYmICFkZWZpbmVkKFRGTV9USU1JTkdfUkVTSVNUQU5UKSkgfHwgXAogICAgICAgICAg
-KGRlZmluZWQoSEFWRV9FQ0MpICYmICFkZWZpbmVkKEVDQ19USU1JTkdfUkVTSVNUQU5UKSkgfHwg
-XAotICAgICAgICAgKCFkZWZpbmVkKE5PX1JTQSkgJiYgIWRlZmluZWQoV0NfUlNBX0JMSU5ESU5H
-KSAmJiAhZGVmaW5lZChIQVZFX0ZJUFMpKQorICAgICAgICAgKCFkZWZpbmVkKE5PX1JTQSkgJiYg
-IWRlZmluZWQoV0NfUlNBX0JMSU5ESU5HKSAmJiAhZGVmaW5lZChIQVZFX0ZJUFMpICYmIFwKZGlm
-ZiAtLWdpdCBhL3BhY2thZ2UvbGlicy93b2xmc3NsL3BhdGNoZXMvOTAwLXJlbW92ZS1icm9rZW4t
-YXV0b2NvbmYtbWFjcm9zLnBhdGNoIGIvcGFja2FnZS9saWJzL3dvbGZzc2wvcGF0Y2hlcy85MDAt
-cmVtb3ZlLWJyb2tlbi1hdXRvY29uZi1tYWNyb3MucGF0Y2gKaW5kZXggNjY1ODJjZmM0Ni4uNmIw
-ODYxMjg4ZiAxMDA2NDQKLS0tIGEvcGFja2FnZS9saWJzL3dvbGZzc2wvcGF0Y2hlcy85MDAtcmVt
-b3ZlLWJyb2tlbi1hdXRvY29uZi1tYWNyb3MucGF0Y2gKKysrIGIvcGFja2FnZS9saWJzL3dvbGZz
-c2wvcGF0Y2hlcy85MDAtcmVtb3ZlLWJyb2tlbi1hdXRvY29uZi1tYWNyb3MucGF0Y2gKQEAgLTEs
-NiArMSw2IEBACiAtLS0gYS9jb25maWd1cmUuYWMKICsrKyBiL2NvbmZpZ3VyZS5hYwotQEAgLTQx
-OTgsNyArNDE5OCw2IEBAIEFDX0NPTkZJR19GSUxFUyhbc3RhbXAtaF0sIFtlY2hvIHRpbWVzdGEK
-K0BAIC00NjE0LDcgKzQ2MTQsNiBAQCBBQ19DT05GSUdfRklMRVMoW3N0YW1wLWhdLCBbZWNobyB0
-aW1lc3RhCiAgQUNfQ09ORklHX0ZJTEVTKFtNYWtlZmlsZSB3b2xmc3NsL3ZlcnNpb24uaCB3b2xm
-c3NsL29wdGlvbnMuaCBjeWFzc2wvb3B0aW9ucy5oIHN1cHBvcnQvd29sZnNzbC5wYyBycG0vc3Bl
-Y10pCiAgCiAgQVhfQ1JFQVRFX0dFTkVSSUNfQ09ORklHCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVu
-d3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Removed options that can't be turned off because we're building with
+--enable-stunnel, some of which affect hostapd's Config.in.
+Adjusted the title of OCSP option, as OCSP itself can't be turned off,
+only the stapling part is selectable.
+Mark options turned on when wpad support is selected.
+Add building options for TLS 1.0 and TLS 1.3.
+Add hardware crypto support, which due to a bug, only works when CCM
+support is turned off.
+Reorganized option conditionals in Makefile.
+Add Eneas U de Queiroz as maintainer.
+
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+
+diff --git a/package/libs/wolfssl/Config.in b/package/libs/wolfssl/Config.in
+index 4aa163b361..711b789f6e 100644
+--- a/package/libs/wolfssl/Config.in
++++ b/package/libs/wolfssl/Config.in
+@@ -8,12 +8,8 @@ config WOLFSSL_HAS_AES_GCM
+ 	bool "Include AES-GCM support"
+ 	default y
+ 
+-config WOLFSSL_HAS_CHACHA
+-	bool "Include ChaCha cipher suite support"
+-	default n
+-
+-config WOLFSSL_HAS_ECC
+-	bool "Include ECC (Elliptic Curve Cryptography) support"
++config WOLFSSL_HAS_CHACHA_POLY
++	bool "Include ChaCha20-Poly1305 cipher suite support"
+ 	default y
+ 
+ config WOLFSSL_HAS_DH
+@@ -24,13 +20,18 @@ config WOLFSSL_HAS_ARC4
+ 	bool "Include ARC4 support"
+ 	default y
+ 
+-config WOLFSSL_HAS_DES3
+-	bool "Include DES3 (Tripple-DES) support"
++config WOLFSSL_HAS_TLSV10
++	bool "Include TLS 1.0 support"
+ 	default y
+ 
+-config WOLFSSL_HAS_PSK
+-	bool "Include PKS (Pre Share Key) support"
+-	default y
++if !(WOLFSSL_HAS_AES_CCM||WOLFSSL_HAS_AES_GCM||WOLFSSL_HAS_CHACHA_POLY)
++	comment "! TLS 1.3 support needs one of: AES-CCM, AES-GCM, ChaCha20-Poly1305"
++endif
++
++config WOLFSSL_HAS_TLSV13
++	bool "Include TLS 1.3 support"
++	depends on WOLFSSL_HAS_AES_CCM||WOLFSSL_HAS_AES_GCM||WOLFSSL_HAS_CHACHA_POLY
++	default n
+ 
+ config WOLFSSL_HAS_SESSION_TICKET
+ 	bool "Include session ticket support"
+@@ -41,20 +42,40 @@ config WOLFSSL_HAS_DTLS
+ 	default n
+ 
+ config WOLFSSL_HAS_OCSP
+-	bool "Include OSCP support"
++	bool "Include OSCP stapling support"
+ 	default y
+ 
+ config WOLFSSL_HAS_WPAS
+ 	bool "Include wpa_supplicant support"
++	select WOLFSSL_HAS_ARC4
++	select WOLFSSL_HAS_OCSP
++	select WOLFSSL_HAS_SESSION_TICKET
+ 	default y
+ 
+ config WOLFSSL_HAS_ECC25519
+ 	bool "Include ECC Curve 22519 support"
+-	depends on WOLFSSL_HAS_ECC
+ 	default n
+ 
+-config WOLFSSL_HAS_POLY1305
+-	bool "Include Poly-1305 support"
+-	default n
++if WOLFSSL_HAS_AES_CCM
++	comment "! Hardware Acceleration does not build with AES-CCM enabled"
++endif
++if !WOLFSSL_HAS_AES_CCM
++	choice
++		prompt "Hardware Acceleration"
++		default WOLFSSL_HAS_NO_HW
++
++		config WOLFSSL_HAS_NO_HW
++			bool "None"
++
++		config WOLFSSL_HAS_AFALG
++			bool "AF_ALG"
++
++		config WOLFSSL_HAS_DEVCRYPTO_AES
++			bool "/dev/crypto - AES-only"
++
++		config WOLFSSL_HAS_DEVCRYPTO_FULL
++			bool "/dev/crypto - full"
++	endchoice
++endif
+ 
+ endif
+diff --git a/package/libs/wolfssl/Makefile b/package/libs/wolfssl/Makefile
+index d96dbea323..77a5f9d8fd 100644
+--- a/package/libs/wolfssl/Makefile
++++ b/package/libs/wolfssl/Makefile
+@@ -13,7 +13,7 @@ PKG_RELEASE:=1
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+ PKG_SOURCE_URL:=https://github.com/wolfSSL/wolfssl/archive/v$(PKG_VERSION)
+-PKG_HASH:=dc97c07a7667b39a890e14f4b4a209f51524a4cabee7adb6c80822ee78c1f62a
++PKG_HASH:=70e4fbeb91284a269b25a84fc526755c670475aee4034a6f237b1f754d108af3
+ 
+ PKG_FIXUP:=libtool
+ PKG_INSTALL:=1
+@@ -21,15 +21,17 @@ PKG_USE_MIPS16:=0
+ PKG_BUILD_PARALLEL:=1
+ PKG_LICENSE:=GPL-2.0-or-later
+ PKG_LICENSE_FILES:=LICENSING COPYING
++PKG_MAINTAINER:=Eneas U de Queiroz <cotequeiroz@gmail.com>
+ PKG_CPE_ID:=cpe:/a:wolfssl:wolfssl
+ 
+ PKG_CONFIG_DEPENDS:=\
+ 	CONFIG_WOLFSSL_HAS_AES_CCM CONFIG_WOLFSSL_HAS_AES_GCM \
+-	CONFIG_WOLFSSL_HAS_ARC4 CONFIG_WOLFSSL_HAS_CHACHA \
+-	CONFIG_WOLFSSL_HAS_DES3 CONFIG_WOLFSSL_HAS_DH CONFIG_WOLFSSL_HAS_DTLS \
+-	CONFIG_WOLFSSL_HAS_ECC CONFIG_WOLFSSL_HAS_ECC25519 \
+-	CONFIG_WOLFSSL_HAS_OCSP CONFIG_WOLFSSL_HAS_POLY1305 \
+-	CONFIG_WOLFSSL_HAS_PSK CONFIG_WOLFSSL_HAS_SESSION_TICKET \
++	CONFIG_WOLFSSL_HAS_AFALG CONFIG_WOLFSSL_HAS_ARC4 \
++	CONFIG_WOLFSSL_HAS_CHACHA_POLY CONFIG_WOLFSSL_HAS_DEVCRYPTO_AES \
++	CONFIG_WOLFSSL_HAS_DEVCRYPTO_FULL, CONFIG_WOLFSSL_HAS_DH \
++	CONFIG_WOLFSSL_HAS_DTLS CONFIG_WOLFSSL_HAS_ECC25519 \
++	CONFIG_WOLFSSL_HAS_OCSP CONFIG_WOLFSSL_HAS_SESSION_TICKET \
++	CONFIG_WOLFSSL_HAS_TLSV10 CONFIG_WOLFSSL_HAS_TLSV13 \
+ 	CONFIG_WOLFSSL_HAS_WPAS
+ 
+ include $(INCLUDE_DIR)/package.mk
+@@ -42,6 +44,7 @@ define Package/libwolfssl
+   URL:=http://www.wolfssl.com/
+   MENU:=1
+   PROVIDES:=libcyassl
++  DEPENDS:=+WOLFSSL_HAS_DEVCRYPTO:kmod-cryptodev +WOLFSSL_HAS_AFALG:kmod-crypto-user
+   ABI_VERSION:=19
+ endef
+ 
+@@ -64,68 +67,20 @@ CONFIGURE_ARGS += \
+ 	--disable-examples \
+ 	--disable-leanpsk \
+ 	--disable-leantls \
+-
+-ifeq ($(CONFIG_IPV6),y)
+-CONFIGURE_ARGS += \
+-        --enable-ipv6
+-endif
+-
+-ifeq ($(CONFIG_WOLFSSL_HAS_AES_CCM),y)
+-CONFIGURE_ARGS += \
+-	--enable-aesccm
+-endif
+-
+-ifneq ($(CONFIG_WOLFSSL_HAS_AES_GCM),y)
+-CONFIGURE_ARGS += \
+-	--disable-aesgcm
+-endif
+-
+-ifneq ($(CONFIG_WOLFSSL_HAS_CHACHA),y)
+-CONFIGURE_ARGS += \
+-	--disable-chacha
+-endif
+-
+-ifeq ($(CONFIG_WOLFSSL_HAS_ECC),y)
+-CONFIGURE_ARGS += \
+-	--enable-ecc \
+-	--enable-supportedcurves
+-endif
+-
+-ifeq ($(CONFIG_WOLFSSL_HAS_DH),y)
+-CONFIGURE_ARGS += \
+-	--enable-dh
+-endif
+-
+-ifneq ($(CONFIG_WOLFSSL_HAS_ARC4),y)
+-CONFIGURE_ARGS += \
+-	--disable-arc4
+-else
+-CONFIGURE_ARGS += \
+-	--enable-arc4
+-endif
+-
+-ifneq ($(CONFIG_WOLFSSL_HAS_DES3),y)
+-CONFIGURE_ARGS += \
+-	--disable-des3
+-else
+-CONFIGURE_ARGS += \
+-	--enable-des3
+-endif
+-
+-ifeq ($(CONFIG_WOLFSSL_HAS_PSK),y)
+-CONFIGURE_ARGS += \
+-	--enable-psk
+-endif
+-
+-ifeq ($(CONFIG_WOLFSSL_HAS_SESSION_TICKET),y)
+-CONFIGURE_ARGS += \
+-	--enable-session-ticket
+-endif
+-
+-ifeq ($(CONFIG_WOLFSSL_HAS_DTLS),y)
+-CONFIGURE_ARGS += \
+-	--enable-dtls
+-endif
++	--$(if $(CONFIG_IPV6),enable,disable)-ipv6 \
++	--$(if $(CONFIG_WOLFSSL_HAS_AES_CCM),enable,disable)-aesccm \
++	--$(if $(CONFIG_WOLFSSL_HAS_AES_GCM),enable,disable)-aesgcm \
++	--$(if $(CONFIG_WOLFSSL_HAS_CHACHA_POLY),enable,disable)-chacha \
++	--$(if $(CONFIG_WOLFSSL_HAS_CHACHA_POLY),enable,disable)-poly1305 \
++	--$(if $(CONFIG_WOLFSSL_HAS_DH),enable,disable)-dh \
++	--$(if $(CONFIG_WOLFSSL_HAS_ARC4),enable,disable)-arc4 \
++	--$(if $(CONFIG_WOLFSSL_HAS_TLSV10),enable,disable)-tlsv10 \
++	--$(if $(CONFIG_WOLFSSL_HAS_TLSV13),enable,disable)-tls13 \
++	--$(if $(CONFIG_WOLFSSL_HAS_SESSION_TICKET),enable,disable)-session-ticket \
++	--$(if $(CONFIG_WOLFSSL_HAS_DTLS),enable,disable)-dtls \
++	--$(if $(CONFIG_WOLFSSL_HAS_ECC25519),enable,disable)-curve25519 \
++	--$(if $(CONFIG_WOLFSSL_HAS_AFALG),enable,disable)-afalg \
++	--enable-devcrypto=$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_AES),aes,$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_FULL),yes,no))
+ 
+ ifeq ($(CONFIG_WOLFSSL_HAS_OCSP),y)
+ CONFIGURE_ARGS += \
+@@ -137,23 +92,6 @@ CONFIGURE_ARGS += \
+ 	--enable-wpas --enable-sha512 --enable-fortress --enable-fastmath
+ endif
+ 
+-ifeq ($(CONFIG_WOLFSSL_HAS_ECC25519),y)
+-CONFIGURE_ARGS += \
+-	--enable-curve25519
+-endif
+-
+-ifneq ($(CONFIG_WOLFSSL_HAS_POLY1305),y)
+-CONFIGURE_ARGS += \
+-	--enable-poly1305
+-endif
+-
+-#ifneq ($(CONFIG_TARGET_x86),)
+-#	CONFIGURE_ARGS += --enable-intelasm
+-#endif
+-#ifneq ($(CONFIG_TARGET_x86_64),)
+-#	CONFIGURE_ARGS += --enable-intelasm
+-#endif
+-
+ define Build/InstallDev
+ 	$(INSTALL_DIR) $(1)/usr/include $(1)/usr/lib/pkgconfig
+ 	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

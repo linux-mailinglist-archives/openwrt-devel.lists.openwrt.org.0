@@ -2,30 +2,30 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 369645A6A5
-	for <lists+openwrt-devel@lfdr.de>; Fri, 28 Jun 2019 23:58:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A0C25A6C1
+	for <lists+openwrt-devel@lfdr.de>; Sat, 29 Jun 2019 00:10:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
 	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
 	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=0vASw6oQihuHIYkxlVpfKjMoq2UV78P96ixNZCLOfEs=; b=eck
-	Rb5bgrNPhOjRNA16rAI7PaLOqmFSCJquPTmu/j5tByZ3FDGERoImVz5mLDOIwt7/khfWqsWJCD+Nc
-	jNbQaZ8cF4Eir6D1YT5weDfI1mWL/RrqA8TfMvr04h+HGvLzc7M6qPCkvMygqeRIUHY81y0Mo97YQ
-	vuv/62uJQxijE89OKD0XisyOR/DoqHehc+xwOwkQAXngzLdRfxQJdSy1GJXsbg7kGLDJroXEx/Bu4
-	bJdrpR08lH9s/EYp1jUREEIfQDZNCOKdrBtfwALVq4X5aO7Tyjr243cif2XIWTkRxTJ2KRDa13ful
-	gdrI1x8FgzF3+T2UWXfb20MqYovhTnw==;
+	References:List-Owner; bh=CyCLkPPufY0aR6LFj6uIhL+c7WTJuwi6O+RPQ1m7T2A=; b=s3E
+	kG0sSip2yIZqcIg07FxnKOWXSt80evn9/bG+MfLqkO1wWNa9a+mOetLm5OHfV1nKTOgphoh7nxbJo
+	/DVxjfFn7pAL6mSvIbUqbm9li0MRf/eIW+13LFfL3T0JeFmJk2NF8GWdshN3kYbxNxKKTXnYJyCVA
+	1hRjrBXoozjutwREiRIsmn31Q8EGKeZcECNzgMmjzs34Vibaxt2ZE7ZCUXC3bYDySxojFNh8FUQEH
+	SZ7AKz+MW+AHNSztkq0AFEtBRlk1+9JXuWvDN8IV97Eh3WbVp5nLeKVcmXMz200YNZ4Q7JIS/gFnX
+	ZRpIz1VpmK/v5MIkSWDHw4PcV4bre9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgysE-0003X6-1M; Fri, 28 Jun 2019 21:57:38 +0000
+	id 1hgz4o-000806-Tk; Fri, 28 Jun 2019 22:10:39 +0000
 To: John Crispin <blogic@openwrt.org>, Sean Wang <sean.wang@mediatek.com>,
  Felix Fietkau <nbd@nbd.name>, openwrt-devel
  <openwrt-devel@lists.openwrt.org>, Michael Lee <igvtee@gmail.com>,
  linux-mediatek@lists.infradead.org
-Date: Fri, 28 Jun 2019 16:55:40 -0500
+Date: Fri, 28 Jun 2019 17:08:45 -0500
 MIME-Version: 1.0
-Message-ID: <mailman.5985.1561759043.19300.openwrt-devel@lists.openwrt.org>
+Message-ID: <mailman.5986.1561759829.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 From: Daniel Santos via openwrt-devel <openwrt-devel@lists.openwrt.org>
@@ -41,11 +41,11 @@ Reply-To: Daniel Santos <daniel@gsat.us>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 Subject: [OpenWrt-Devel] mt7620/1,
  mt7530: Where are these MAC and MII registers documented?
-Content-Type: multipart/mixed; boundary="===============0703882878371282480=="
+Content-Type: multipart/mixed; boundary="===============3126849556331903625=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0703882878371282480==
+--===============3126849556331903625==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -56,34 +56,34 @@ sending mailing list messages using the original "From" header.
 
 To mitigate this problem, the original message has been wrapped
 automatically by the mailing list software.
---===============0703882878371282480==
+--===============3126849556331903625==
 Content-Type: message/rfc822
 MIME-Version: 1.0
 Content-Disposition: inline
 
 Received: from mail.gsat.us ([66.165.183.93])
 	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgyrx-0003WH-Fk
-	for openwrt-devel@lists.openwrt.org; Fri, 28 Jun 2019 21:57:23 +0000
+	id 1hgz4d-0007zZ-5o
+	for openwrt-devel@lists.openwrt.org; Fri, 28 Jun 2019 22:10:28 +0000
 Received: from [192.168.1.134] (70-142-57-80.lightspeed.rcsntx.sbcglobal.net [70.142.57.80])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mailgse.com (Postfix) with ESMTPSA id 8A2A5FA41D9;
-	Fri, 28 Jun 2019 21:57:16 +0000 (GMT)
+	by mailgse.com (Postfix) with ESMTPSA id 2534AFA41D9;
+	Fri, 28 Jun 2019 22:10:25 +0000 (GMT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gsat.us; s=default;
-	t=1561759036; bh=O/6igsGHu3CNdxxLoDWCgpHt5xXBeQPxeyTohasL2MY=;
-	h=To:From:Subject:Date;
-	b=QT8N1GhBoJsKZlrgP4Hu6RSx/dTu6bYF0FGWT89ttxD65SL6jABGwRWiqCfQ2cVEE
-	 356F30CgyCxj9PCnOR3aKndIQvBo01XjBL1xmNNVf1zEGc3nWDioT7u5YZhcbUmeOS
-	 /wKInxOvtDktREwEViT9eca2ooEwtG8KuWxh4vhg=
+	t=1561759826; bh=O/6igsGHu3CNdxxLoDWCgpHt5xXBeQPxeyTohasL2MY=;
+	h=From:Subject:To:Date;
+	b=t0N8OUEo0Z+QL/1TgNu0QI1I7gHuvMe1JrjHiyPHEP50Eeo6eDAVSIxASVpVGmKvh
+	 O9bWJCsNt3uBv+6FqqFAnFxV2HmZBRMEAov8cRk8zn6GjXNG+QfPbFBoHgvvtSPLKC
+	 ct35QlnOzDREoVBc2t6wqnr5qhfOvfzguTWSIoXw=
+From: Daniel Santos <daniel@gsat.us>
+Subject: mt7620/1, mt7530: Where are these MAC and MII registers documented?
 To: John Crispin <blogic@openwrt.org>, Sean Wang <sean.wang@mediatek.com>,
  Felix Fietkau <nbd@nbd.name>, openwrt-devel
  <openwrt-devel@lists.openwrt.org>, Michael Lee <igvtee@gmail.com>,
  linux-mediatek@lists.infradead.org
-From: Daniel Santos <daniel@gsat.us>
-Subject: mt7620/1, mt7530: Where are these MAC and MII registers documented?
-Message-ID: <d40eafc3-b2c6-d4b6-cfe0-9e94092bfc03@gsat.us>
-Date: Fri, 28 Jun 2019 16:55:40 -0500
+Message-ID: <969a5fe6-2fa6-e8f0-a66e-d4aabbe937cd@gsat.us>
+Date: Fri, 28 Jun 2019 17:08:45 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
@@ -91,8 +91,8 @@ Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: 8bit
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_145721_748613_17457543 
-X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-CacheID: sfid-20190628_151027_362079_9A04FD3D 
+X-CRM114-Status: UNSURE (   9.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -266,7 +266,8 @@ Thanks,
 Daniel
 
 
---===============0703882878371282480==
+
+--===============3126849556331903625==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -277,4 +278,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0703882878371282480==--
+--===============3126849556331903625==--

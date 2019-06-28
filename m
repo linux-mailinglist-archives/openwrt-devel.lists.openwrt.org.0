@@ -2,83 +2,100 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4CBE58DFD
-	for <lists+openwrt-devel@lfdr.de>; Fri, 28 Jun 2019 00:32:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3716D593A3
+	for <lists+openwrt-devel@lfdr.de>; Fri, 28 Jun 2019 07:49:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=s7pCN7wC8LyWuYUJOT/mREDUbkrItoTyT7lSFocwzfQ=; b=nv54IzUD1uPzk/kpf0bvTRxR3U
-	KnJc3GQEtAvdQWIycunyIXhvlEtFCH1dggdXsT0PIJ2f64v1L514Xjvf+rceAJ1BFKChqb2yHaPav
-	ZpFcoIPth7nn/W87owux8FsJQqQxYel+Cz0Jv4jq9DqeNK1fcN71n4sQBxzT31+PdlklnOeHnfpd6
-	oJ9sq9xCQGJ2bMT/140ybLf1uSDMYjCSNYeztzSHjNvm4Frm0WAL3XLMeMKlYEFbO/iASKBmbxilk
-	QDxtaeXSNn00KAR475Ia7YZmhXfJCEWrU9Ciz4v7+4Qj6yQmiMkQOfvAVd36YlKXg7evfPSUm/1ss
-	/W8iMKPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	References:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OrhHf36UiY/+wkrJo8GFiD2wi7wqPc6Xd99IOTtuL9M=; b=ibdl9sPNzgDZCvIInikBjLKhK
+	HLEg2leEyjURSa2/GnMTiXR1NKFY7BzwwYlsrqB0rdzk6At8YLBzZQ4jtwwoeocchCPEL7WI5f3UF
+	6DhiSoaps1eosqa8z7fTTYsx4AQxxXxEcjwvfbU5ziMDww5o0wT0WM5nKSRTbhcTXI10/teSaDdCw
+	ofdn+bqQy6qpyk5grRnH8K0nttCGTa6JAWZ22uB4l3+Me7stVr5Fch7710KntyOcDkyAOHFVU3BJn
+	uEChXFiAowBoKjMEKxMC1vIwRY4gm1T2UJyq3X1HIs+AID9BGm7KP5a3meTF0Fsb3W36mNBLcjhVu
+	nLAAmWCvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgcwP-0008DN-Tu; Thu, 27 Jun 2019 22:32:29 +0000
-Received: from dazzle.geroedel.de ([2a02:180:6:1::b3])
+	id 1hgjkT-0003NY-L0; Fri, 28 Jun 2019 05:48:37 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgcwH-0008Bp-7E
- for openwrt-devel@lists.openwrt.org; Thu, 27 Jun 2019 22:32:22 +0000
-Received: from [192.168.15.2] (helo=feeble.bln.roederer.dhs.org)
- by dazzle.geroedel.de with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <devel-sven@geroedel.de>)
- id 1hgcw2-0002mU-DJ
- for openwrt-devel@lists.openwrt.org; Fri, 28 Jun 2019 00:32:07 +0200
-Received: from strike.bln.roederer.dhs.org ([192.168.8.36]
- helo=strike.localnet)
- by feeble.bln.roederer.dhs.org with esmtp (Exim 4.89)
- (envelope-from <devel-sven@geroedel.de>) id 1hgcw1-0007IA-TH
- for openwrt-devel@lists.openwrt.org; Fri, 28 Jun 2019 00:32:05 +0200
-From: Sven Roederer <devel-sven@geroedel.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 28 Jun 2019 00:32:05 +0200
-Message-ID: <1922993.feW1JY7zWx@strike>
-In-Reply-To: <1561543343-2930-1-git-send-email-luochongjun@gl-inet.com>
-References: <1561543343-2930-1-git-send-email-luochongjun@gl-inet.com>
+ id 1hgjkB-0003NB-5z
+ for openwrt-devel@lists.openwrt.org; Fri, 28 Jun 2019 05:48:20 +0000
+Received: by mail-lj1-x244.google.com with SMTP id 16so4688007ljv.10
+ for <openwrt-devel@lists.openwrt.org>; Thu, 27 Jun 2019 22:48:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=YNIfTXXzO+EulIUMIIRQk+Bro/OYVkcp3bhqWvdF25Y=;
+ b=OpZ3ehDz2Qb068u02HigTgB55rQqH/ltWSTjgJCKNQ5idPK0/IYd3Z9WPQSCyTTVTr
+ wYVAlpixJ4kcPbEWvbgsWCi+HTwUKvq0oPohypCJ9bTCMq8/lmfXQfkDvBfNgSVZPwtd
+ +XqKMk/SMMdZIJJhK/WDqqymW16wo+5YQHGAAks7pEevRWeY7GgRrwQkf2ea1x2gnDcf
+ YjqQrc9ijaCUhAqKNONUb6TY/FFNQaP3kqb+ssX/hkF9jMgxSJt9RA5mXFpVsz57K2/i
+ j2/AOpZKtXK/OlcSBKp1HHRLqY1CYv+3sn2l66b4VDOXdIUFqguf4eau7k45bte5APR5
+ 6EqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=YNIfTXXzO+EulIUMIIRQk+Bro/OYVkcp3bhqWvdF25Y=;
+ b=FvjYJH8wpXwjvChc27VODvdsEO5u7P1GTRqUnjm4aSXwFdGoUuDctge6MVtfkZ5jnW
+ m7H0sbTT1b38MnoaTwNc+pUe2muk1+QoRmyWhlj53iYhiS4TC1pF0IObls0boJfeA1dE
+ aG1rfnsXroz98VpbxI8Pl3H1qGUeBmDO/5Fl9eUg5e2GE2l5TxDy3UaORW3zvgP9ooD+
+ Pl99f9P32OVStzPOC0nO2bLyh1rOh96D13DHXOD5+fhh6CQmu4B4sGDVzZpuZu1/4T3f
+ QuR2dmImXUv122rwIU4fzIGrafm9rcc7k3IwmEu3CBRV4NC3lGAURwNS85ygHqh/v/OR
+ 5wkQ==
+X-Gm-Message-State: APjAAAXXPzy9jfvjsFcaFfxOP44YbQJ7Ebo96jwpUF+5JLubMnmt4Iyx
+ pNNNaR//iaUGLal1OAUg66E=
+X-Google-Smtp-Source: APXvYqwpS1yMWlgPCdZ48vrKcfn9xByJv5BcgrP6Zcetzdp7WNuujHcR+A9MNOT9IR1yVix7SZMMfw==
+X-Received: by 2002:a2e:5b1b:: with SMTP id p27mr4787082ljb.97.1561700896761; 
+ Thu, 27 Jun 2019 22:48:16 -0700 (PDT)
+Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.googlemail.com with ESMTPSA id p15sm382916lji.80.2019.06.27.22.48.15
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Thu, 27 Jun 2019 22:48:15 -0700 (PDT)
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+To: openwrt-devel@lists.openwrt.org, Jo-Philipp Wich <jow@openwrt.org>
+References: <20190621123002.9404-1-zajec5@gmail.com>
+ <20190622121135.5029-1-zajec5@gmail.com>
+Message-ID: <32a5526b-b547-ac24-4d26-ab85e79a969d@gmail.com>
+Date: Fri, 28 Jun 2019 07:48:14 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.5.2
 MIME-Version: 1.0
-X-Spam_score: -2.9
-X-Spam_score_int: -28
-X-Spam_bar: --
-X-Spam_report: Spam detection software, running on the system "dazzle",
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- @@CONTACT_ADDRESS@@ for details.
- Content preview:  Am Mittwoch, 26. Juni 2019,
- 12:02:23 CEST schrieb Luochongjun:
- > This patch supports gl-ar750, which was previously supported by ar71xx.
- > > Specification: > - SOC: QCA9531 (650MHz) > - Flash: 16 MiB [...] 
- Content analysis details:   (-2.9 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
-X-SA-Exim-Connect-IP: 192.168.15.2
-X-SA-Exim-Mail-From: devel-sven@geroedel.de
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dazzle
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=unavailable autolearn_force=no version=3.4.2
-X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
-X-SA-Exim-Scanned: Yes (on dazzle.geroedel.de)
+In-Reply-To: <20190622121135.5029-1-zajec5@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_153221_415808_4CAE5C90 
-X-CRM114-Status: UNSURE (   4.38  )
+X-CRM114-CacheID: sfid-20190627_224819_223231_621E3314 
+X-CRM114-Status: UNSURE (   9.99  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zajec5[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for gl-ar750
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+Subject: Re: [OpenWrt-Devel] [PATCH V2 1/2] lua: include version number in
+ installed files
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,42 +107,21 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Am Mittwoch, 26. Juni 2019, 12:02:23 CEST schrieb Luochongjun:
-> This patch supports gl-ar750, which was previously supported by ar71xx.
-> 
-> Specification:
-> - SOC: QCA9531 (650MHz)
-> - Flash: 16 MiB (W25Q128FVSG)
-> - RAM: 128 MiB DDR2
-> - Ethernet: 10/100: 2xLAN + 10/100: 1xWAN
-> - Wireless: 2.4GHz (bgn) and 5GHz (ac)
-> - USB: 1x USB 2.0 port
-> - Switch: 1x switch
-> - Button: 1x reset button
-> - LED: 3x LEDS (white)
-> 
-> Flash instruction:
-> Support for sysupgrade directive upgrades, as well as luci upgrades.
-> 
-
-Thanks for porting this device. Based on your previous patch I built an image 
-and flashed it.
-Two thing to mention:
-* probalby you can add a line "SUPPORTED_DEVICES += gl-ar750" to the Makefile, 
-to make sysupgrade accept the image without "-F" switch on ar71xx
-* the device has "printed MAC-address from case" + 1 for the LAN-ports. Not 
-sure what is used with vendor FW.
-
-Sven
-
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gMjIuMDYuMjAxOSAxNDoxMSwgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgo+IEZyb206IFJhZmHF
+giBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KPiAKPiBUaGlzIHdpbGwgYWxsb3cgaW5zdGFs
+bGluZyBMdWEgNS4xIGFuZCBuZXdlciB2ZXJzaW9ucyBhdCB0aGUgc2FtZSB0aW1lLgo+IAo+IFNp
+Z25lZC1vZmYtYnk6IFJhZmHFgiBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KPiAtLS0KPiBW
+MjogQnVtcCBQS0dfUkVMRUFTRQoKSSdtIGdvaW5nIHRvIGZpeDoKCkFwcGx5aW5nIC4vcGF0Y2hl
+cy1ob3N0LzAxMC1sdWEtNS4xLjMtbG51bS1mdWxsLTI2MDMwOC5wYXRjaCB1c2luZyBwbGFpbnRl
+eHQ6CnBhdGNoaW5nIGZpbGUgTWFrZWZpbGUKSHVuayAjMSBGQUlMRUQgYXQgNDIuCjEgb3V0IG9m
+IDEgaHVuayBGQUlMRUQgLS0gc2F2aW5nIHJlamVjdHMgdG8gZmlsZSBNYWtlZmlsZS5yZWoKCmFu
+ZCBwdXNoIHRoaXMgb25lLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5v
+cGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Bl
+bndydC1kZXZlbAo=

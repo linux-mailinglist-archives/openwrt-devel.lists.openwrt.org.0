@@ -2,111 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B5FA5D4F7
-	for <lists+openwrt-devel@lfdr.de>; Tue,  2 Jul 2019 19:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C9385D740
+	for <lists+openwrt-devel@lfdr.de>; Tue,  2 Jul 2019 22:09:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=73F0MEv6/bYOoRkhucrc9u4Wt0bPMgUbOc2JaOYVJtY=; b=RXHYp5JAQYbFUs
-	+/OjGy7qNkmZkPG9gQTjKDffGdk8LjsTPNsU5sCs4UEkQCs8H76XmKlBtkR5mOe8kXTDQT+KxKKB2
-	aWQ9ljDLmfx22tDjRXduTS/7wKW0/1ZQoDwMS0Dmw7JbBCq5zlmSfcP23S9ZY96YQNafDsYufozn6
-	Tl3SHLd8BZ+1PpghYY35caf1LBxp4aUQgPSiguaUH8NtAIbTvObeBT6doOXnDxYuS7Z1txLHOLIT4
-	EPM5UJH6Ngv++JMu4ky4Jm+EM6MwbrT22XSY/tRK4MJcD4rJ3BoEsdXGyi4zSHNzWwiE8fdqNsJru
-	IlPSxJoKVDQl3YKu+O7A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cVQqisN3dNnmoo66h2jSlRaZKvzVtZ8uXVwHh75Jf8o=; b=Uq3BqAZ7PUKHwT
+	FSr//dpL3fvYEA929NInkQWuyTOC0NXfpTj78hXZ6VDR69lg+Rso8UvCqG5WCT//L8ck8zLetsY51
+	+9BuebjSMR3TlPzI421J3YVNC34SjL9xup5WK7WQ6hV+hNf0uAAO9msuHudiuumxqR5k0FAbxkRC/
+	j9yWfLIUXtDoU6k+DJprDzm76gchlA8mYFkBrv/l8IAqROH0SwroAsHd2Mhhh6QA2IIc5MU+b6oXz
+	qCgeq+hg63DUXMyaMf9QxowxWRKQ8eRDCs0giRpwqy5ZvNt/oepw85Ji3o27Cky92wGjdlg0q51QP
+	TEqWJE/X/7Lk6puR7qKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiMB9-00057n-1D; Tue, 02 Jul 2019 17:02:51 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hiP5o-00008f-20; Tue, 02 Jul 2019 20:09:32 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiMB1-00057c-1n
- for openwrt-devel@bombadil.infradead.org; Tue, 02 Jul 2019 17:02:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:Date:Message-ID:Subject:From:To:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=u5gdHBmir5Tny+BV9O3xljS/MmkStZWCsdgcSpzyxCI=; b=KNDO9GDUfRjWj82+hBvUT0SPow
- /uCTrzq3kraqBl4ngtaiep9j07He86OEztURLhT1Y86sHDHBQzv30QsFdpjX5cdQq8NSIDKaXZNeG
- o8MQAtCd26O//87A4i9wnfy2I2+mnr2tse9cr6U85xyh3psYuSbV++wpp4inEMRhyq07Qj0pDE8Nc
- 2CI4lamzSBV4YfrjZr1mqsmdmM/PWKC/7wkyEc5EM2L80w9kwYioRaza24JNi8ZFjjWI+JbZdohdY
- /zetd4bOGowq31KPpSaVNwMmT39W1eZai/gFViinY+OXOGm+SP5oEHUjftrboWsLU6qzU2/ZAjxt8
- kGZiGXtA==;
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiMAw-0008NO-4M
- for openwrt-devel@lists.openwrt.org; Tue, 02 Jul 2019 17:02:40 +0000
-X-Originating-IP: 95.90.181.59
-Received: from [192.168.0.207] (ip5f5ab53b.dynamic.kabel-deutschland.de
- [95.90.181.59]) (Authenticated sender: mail@aparcar.org)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id AC4DDFF808
- for <openwrt-devel@lists.openwrt.org>; Tue,  2 Jul 2019 17:01:58 +0000 (UTC)
-To: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-From: Paul Spooren <mail@aparcar.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mail@aparcar.org; keydata=
- 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
-Message-ID: <1976f014-56cf-3b16-00b0-638165f71f4b@aparcar.org>
-Date: Tue, 2 Jul 2019 19:01:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hiP5V-000087-CC
+ for openwrt-devel@lists.openwrt.org; Tue, 02 Jul 2019 20:09:14 +0000
+Received: by mail-qt1-x844.google.com with SMTP id h21so20047599qtn.13
+ for <openwrt-devel@lists.openwrt.org>; Tue, 02 Jul 2019 13:09:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+nuhmE5MKbvpRQt22l+Dl6NZuZZrCvIva4VqvdQG8kk=;
+ b=THXrbsDrYrx5FwMkCx+lTVhOTGHVcX33CnbEbc4+FnrDvlY/CMOi47keL+srPapjTM
+ jIMOq4AIF5tHjTgygAsCsYbiseVKOmEaIl/eM9vVR6r9teSyGIAZtF221quj7giHS81P
+ OjZmO6wPp5K8u/26c8rWrWCvh2S790SWOeM9f0fYrzq2AYw3c4D3PGhaT3tCoFwVpdGL
+ dJtZ+Xd4r0GyppLWz4MjOM6IW49hG8GdqtG4g33p5/XvECPjHOc8My38s1OCm1f0YlQF
+ frwvWC5yUlUt9NsWihbQjBaSlX0ctCAlRtxsjAujxBA3bXqzHsJSlWgmNXKXFrbaKmh7
+ R6Lw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+nuhmE5MKbvpRQt22l+Dl6NZuZZrCvIva4VqvdQG8kk=;
+ b=tTp3NZYx6jIiNsnf874pT8G84CpuLwqK4k/0PMnn+FFbKGKXMKDctD10J8us4W5VZ3
+ ddpqUrd0p15AslHQxBViR2Q+Q43EVUCNII604GSEJ4+UXklJn+B6XdtzZat5xYE1Oltm
+ xJ7NDQk7823D/+C4AljeEmRgx7m0pSfWj1snJzcILeBgALHSW6edr2a8uveDpMEz/XAN
+ ifTC08LRIg4Kx7Va/ozogdChye6QuZJnA9/tWACP7dIAjVjGuhOurZtAkA7DK1XTpPcC
+ 1516FiauuTHIFcgM7YTq3y/vPY5lEx/hXTEPLIEVlPi/OzAsyj8jgM9VhQujruXpf5/C
+ 1KFw==
+X-Gm-Message-State: APjAAAX6JBzEPBzIF48O0KGZgZhHtDAWwZGzXgWTz8c3ZE2YKqCvqMui
+ hbWd65Qw1tMO5rDNDkaw7lxLfVAlyhu/GIAieQs=
+X-Google-Smtp-Source: APXvYqyWW/17kfrM77BZiH2h35NT77J4Ejpoz5W+1Ye2YxtxlB1Qbh7Gyu0SkehI0Cw+dqhz62QWnQulwKH6xXv2ACc=
+X-Received: by 2002:a0c:87a1:: with SMTP id 30mr28901928qvj.167.1562098149454; 
+ Tue, 02 Jul 2019 13:09:09 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+References: <20190702124250.11079-1-Jason@zx2c4.com>
+In-Reply-To: <20190702124250.11079-1-Jason@zx2c4.com>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Tue, 2 Jul 2019 22:08:57 +0200
+Message-ID: <CAJLcKsEJug3Ogdve5YWMVava0-6TGDn9VBuhLAjWjPFQtx1KEg@mail.gmail.com>
+To: "Jason A. Donenfeld" <Jason@zx2c4.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190702_130913_450504_E48C30D8 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [RFC]split DEVICE_TITLE in multiple variables
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dedeckeh[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] wireguard: bump to 0.0.20190702
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,28 +91,84 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgYWxsLAoKc29tZSBkYXlzIGFnbyBJIHdyb3RlIHRoaXMgcHJvcG9zYWxbMF0gdG8gc3BsaXQg
-REVWSUNFX1RJVExFIGluCkRFVklDRV9WRU5ET1IsIERFVklDRV9NT0RFTCBhbmQgREVWSUNFX1ZB
-UklBTlQgKGhvbGRpbmcgcmV2aXNpb25zIGFuZApzdG9yYWdlIHNpemVzIGlmIGFwcGxpY2FibGUp
-LgoKSSBleHRlbmRlZCB0aGUgaW1hZ2UubWsgdG8gdG8gdXNlIHRoZSBuZXdseSBpbnRyb2R1Y2Vk
-IHZhcmlhYmxlcyBpZgpERVZJQ0VfVElUTEUgaXMgZW1wdHksIG1lYW5pbmcgaXQgY2FuIGJlIHVz
-ZWQgYXMgYSBkcm9wIGluLgoKwqDCoCBERVZJQ0VfVElUTEUgPSAkJChERVZJQ0VfVkVORE9SKSAk
-JChERVZJQ0VfTU9ERUwpJCQoaWYgJCQodmFsdWUKREVWSUNFX1ZBUklBTlQpLCAkJChERVZJQ0Vf
-VkFSSUFOVCkpCgpUaGlzIHNpbXBsaWZpZXMgYW5kIHVuaWZpZXMgdGhlIERFVklDRV9USVRMRSBj
-cmVhdGlvbiBhbmQgaW50cm9kdWNlcyB0aGUKcG9zc2liaWxpdHkgdG8gc2VhcmNoIGFuZCBzb3J0
-IGRldmljZXMgYmFzZWQgb24gdmVuZG9yIGV0Yy4gQSBwcm9vZiBvZgpjb25jZXB0IGlzIGF2YWls
-YWJsZSBoZXJlWzFdLgoKSW4gZnV0dXJlIFBScyBJJ2QgcmV3b3JrIGV4aXN0aW5nIHRhcmdldHMg
-KG5vdCBvbmx5IGF0aDc5IGFzIGluIFswXSkgYW5kCnN1Z2dlc3QgZGV2ZWxvcGVycyBhZGRpbmcg
-bmV3IGRldmljZXMgdG8gdXNlIERFVklDRV9NT0RFTCByYXRoZXIgdGhhbgp0aGUgZnVsbCBERVZJ
-Q0VfVElMRSBpbiB0aGVpciBwYXRjaGVzLgoKSSdkIGJlIGhhcHB5IHRvIGhlYXIgc29tZSBjb21t
-ZW50cyEKCkJlc3QgcmVnYXJkcywKUGF1bAoKWzBdOiBodHRwczovL2dpdGh1Yi5jb20vb3Blbndy
-dC9vcGVud3J0L3B1bGwvMjEyNApbMV06IGh0dHBzOi8vc3VkaGFuc2h1MTYuZ2l0aHViLmlvL29w
-ZW53cnQtZmlybXdhcmUtc2VsZWN0b3IvCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2
-ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL29wZW53cnQtZGV2ZWwK
+On Tue, Jul 2, 2019 at 2:43 PM Jason A. Donenfeld <Jason@zx2c4.com> wrote:
+>
+> * curve25519: not all linkers support bmi2 and adx
+>
+> This should allow WireGuard to build on older toolchains.
+>
+> * global: switch to coarse ktime
+>
+> Our prior use of fast ktime before meant that sometimes, depending on how
+> broken the motherboard was, we'd wind up calling into the HPET slow path. Here
+> we move to coarse ktime which is always super speedy. In the process we had to
+> fix the resolution of the clock, as well as introduce a new interface for it,
+> landing in 5.3. Older kernels fall back to a fast-enough mechanism based on
+> jiffies.
+>
+> https://lore.kernel.org/lkml/tip-e3ff9c3678b4d80e22d2557b68726174578eaf52@git.kernel.org/
+> https://lore.kernel.org/lkml/20190621203249.3909-3-Jason@zx2c4.com/
+>
+> * netlink: cast struct over cb->args for type safety
+>
+> This follow recent upstream changes such as:
+>
+> https://lore.kernel.org/lkml/20190628144022.31376-1-Jason@zx2c4.com/
+>
+> * peer: use LIST_HEAD macro
+>
+> Style nit.
+>
+> * receive: queue dead packets to napi queue instead of empty rx_queue
+>
+> This mitigates a WARN_ON being triggered by the workqueue code. It was quite
+> hard to trigger, except sporadically, or reliably with a PC Engines ALIX, an
+> extremely slow board with an AMD LX800 that Ryan Whelan of Axatrax was kind
+> enough to mail me.
+>
+> Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
+Patch applied; thx
+
+Hand
+> ---
+>  package/network/services/wireguard/Makefile | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+> index 310d559..0516769 100644
+> --- a/package/network/services/wireguard/Makefile
+> +++ b/package/network/services/wireguard/Makefile
+> @@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
+>
+>  PKG_NAME:=wireguard
+>
+> -PKG_VERSION:=0.0.20190601
+> +PKG_VERSION:=0.0.20190702
+>  PKG_RELEASE:=1
+>
+>  PKG_SOURCE:=WireGuard-$(PKG_VERSION).tar.xz
+>  PKG_SOURCE_URL:=https://git.zx2c4.com/WireGuard/snapshot/
+> -PKG_HASH:=7528461824a0174bd7d4f15e68d8f0ce9a8ea318411502b80759438e8ef65568
+> +PKG_HASH:=1a1311bc71abd47a72c47d918be3bacc486b3de90734661858af75cc990dbaac
+>
+>  PKG_LICENSE:=GPL-2.0 Apache-2.0
+>  PKG_LICENSE_FILES:=COPYING
+> --
+> 2.21.0
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

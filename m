@@ -2,53 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8DE05D7F6
-	for <lists+openwrt-devel@lfdr.de>; Tue,  2 Jul 2019 23:58:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CDC45DDA2
+	for <lists+openwrt-devel@lfdr.de>; Wed,  3 Jul 2019 07:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WjXxaPsxJ5ol94p8D2i0dIXYaC2dqmP/iCc3ePDCbcc=; b=JfPE4T8ShPYbbR
-	RpnB9O4XtHQPYwSRLLajCuRs+cEEF98rrSc1BuHrvSib9hXBSK8RAJvonJfbQbsJ3zrEOxcI7y4Z8
-	a3EWN8eWQeUIqnx6v/85Dannz7Mt9hE/2DYOpwbz95b1f+i47as3NnTOCePZMuZVbwYfSVMwlnInW
-	3LiSi75h46HynPVZ/8SqPusppUPN3MCOV5qEdSJXKWyDi+jpALntManLhM7vsIafjzStG9rifKOxc
-	5EPMDpFZAB8kqoEq7XoQkfxe+SXgdINXmTyh0QNpp/hXRnwq0+kSJSlsdodZhx2JKyJNgBzF/Hivb
-	8sUupPqAO8akXX+2j0sw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=m6lhLj1xvR57+FJe3B2eUHAVpXsCB6R+Y38GcXOyRro=; b=R7A
+	l0Om8lfv30orG5fL2mZDy2UFhQGTPPok9sxrnibeIuXYn9m9fEngFrluZLFA6GFo3uzRJ6eJBK9qe
+	9cg2bY5sElAvlHxhbSlKtOynONBIuCSUbo5Bajjfannb1pGDXGzNdlun1WcNhgeSu0pDAhx8YAbvK
+	hGIdEXVyKrdSoYUgvy97bSDjJ4PigAdiBHy+2PuwgIYYtFe1k4HjqVd6N7IP2NSUIeLRkJZR7EOEK
+	IBvY3prQ20L1nWUNq3ewnDcmZ3a443XMK2rEiQzZ8mxFma621HHkRB7KsGX1Q7i/fAruX+1TWMMhr
+	EwJmKzoiBuWULNrNvi4KxHVMVPh1uTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiQmc-0000Wf-Vy; Tue, 02 Jul 2019 21:57:51 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1hiXNQ-0005iR-OM; Wed, 03 Jul 2019 05:00:17 +0000
+Received: from welho-filter2.welho.com ([83.102.41.24])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiQmI-0000W5-B4
- for openwrt-devel@lists.openwrt.org; Tue, 02 Jul 2019 21:57:32 +0000
-Received: from localhost.localdomain
- (p200300E53F0B6D00C4F0641D63AB03E8.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f0b:6d00:c4f0:641d:63ab:3e8])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 9B47A2284F
- for <openwrt-devel@lists.openwrt.org>; Tue,  2 Jul 2019 23:57:25 +0200 (CEST)
-From: David Bauer <mail@david-bauer.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue,  2 Jul 2019 23:57:18 +0200
-Message-Id: <20190702215718.4891-1-mail@david-bauer.net>
-X-Mailer: git-send-email 2.22.0
+ id 1hiXN7-0005Yw-6f
+ for openwrt-devel@lists.openwrt.org; Wed, 03 Jul 2019 05:00:00 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by welho-filter2.welho.com (Postfix) with ESMTP id 28F74C3F2A;
+ Wed,  3 Jul 2019 07:59:46 +0300 (EEST)
+X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
+Received: from welho-smtp1.welho.com ([IPv6:::ffff:83.102.41.84])
+ by localhost (welho-filter2.welho.com [::ffff:83.102.41.24]) (amavisd-new,
+ port 10024)
+ with ESMTP id pHog_tF1sGhs; Wed,  3 Jul 2019 07:59:45 +0300 (EEST)
+Received: from [192.168.1.180] (87-92-28-124.bb.dnainternet.fi [87.92.28.124])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128
+ bits)) (No client certificate requested)
+ by welho-smtp1.welho.com (Postfix) with ESMTPS id 27C237A;
+ Wed,  3 Jul 2019 07:59:42 +0300 (EEST)
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+From: Hannu Nyman <hannu.nyman@iki.fi>
+Message-ID: <4d8977dc-67df-f5cf-4a5f-ae1350a09aa0@iki.fi>
+Date: Wed, 3 Jul 2019 07:59:42 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_145730_676427_94A1FE01 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190702_215957_581395_3D4953AE 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [83.102.41.24 listed in list.dnswl.org]
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2] gpio-button-hotplug: mind debounce
- interval consistently
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+Subject: [OpenWrt-Devel] Lots of core packages fail in phase2(?) buildbot -
+ maybe due to lua changes?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,158 +69,171 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: rafal@milecki.pl
+Content-Type: multipart/mixed; boundary="===============4001785294864014572=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patch implements consistent handling of the debounce interval set
-for the GPIO buttons. Hotplug events will only be fired if
+This is a multi-part message in MIME format.
+--===============4001785294864014572==
+Content-Type: multipart/alternative;
+ boundary="------------3FCA1C0C2CE10171C3F751E2"
 
-1. It's the initial stable state (no state-change for duration of the
-debounce interval) for a switch. Buttons will not trigger an event for
-the initial stable state.
+This is a multi-part message in MIME format.
+--------------3FCA1C0C2CE10171C3F751E2
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-2. The input changes it's state and remains stable for the debounce
-interval.
+Based on forum discussion at 
+https://forum.openwrt.org/t/errors-when-using-image-builder-for-ipq806x/39992
 
-Prior to this patch, this was handled inconsistently for interrupt-based
-an polled gpio-keys. We unify the shared logic in button_hotplug_event
-and modify both implementations to read the initial state.
+I looked at the packages buildbot faillogs for OpenWrt master and the package 
+download directories, and noticed that quite a lot of the core OpenWrt 
+packages fail to build in the buildbot at the moment, like ubox, ubus, 
+firewall, uci, netifd... and they are also missing from the snapshot download 
+directories.
 
-Run-tested for 'gpio-keys' and 'gpio-keys-polled' on
+Example failllogs:
 
- - devolo WiFi pro 1200e
- - devolo WiFi pro 1750c
- - devolo WiFi pro 1750x
+http://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
----
-v2:
- - Debounce interval is now correctly considered  for polled GPIO-keys
+http://downloads.openwrt.org/snapshots/faillogs/mips_24kc/base/
 
- .../src/gpio-button-hotplug.c                 | 40 ++++++++++++-------
- 1 file changed, 26 insertions(+), 14 deletions(-)
 
-diff --git a/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c b/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
-index e63d414284..67b4549cc2 100644
---- a/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
-+++ b/package/kernel/gpio-button-hotplug/src/gpio-button-hotplug.c
-@@ -57,6 +57,7 @@ struct bh_map {
- struct gpio_keys_button_data {
- 	struct delayed_work work;
- 	struct bh_priv bh;
-+	int has_initial_state;
- 	int last_state;
- 	int count;
- 	int threshold;
-@@ -241,6 +242,7 @@ static int button_get_index(unsigned int code)
- static void button_hotplug_event(struct gpio_keys_button_data *data,
- 			   unsigned int type, int value)
- {
-+	int last_state = data->last_state;
- 	struct bh_priv *priv = &data->bh;
- 	unsigned long seen = jiffies;
- 	int btn;
-@@ -250,6 +252,15 @@ static void button_hotplug_event(struct gpio_keys_button_data *data,
- 	if ((type != EV_KEY) && (type != EV_SW))
- 		return;
- 
-+	data->last_state = value;
-+
-+	if (!data->has_initial_state) {
-+		data->has_initial_state = 1;
-+		if (type != EV_SW)
-+			return;
-+	} else if (value == last_state)
-+		return;
-+
- 	btn = button_get_index(data->b->code);
- 	if (btn < 0)
- 		return;
-@@ -285,19 +296,22 @@ static int gpio_button_get_value(struct gpio_keys_button_data *bdata)
- 
- static void gpio_keys_polled_check_state(struct gpio_keys_button_data *bdata)
- {
-+	int has_initial_state = bdata->has_initial_state;
-+	int last_state = bdata->last_state;
- 	int state = gpio_button_get_value(bdata);
- 
--	if (state != bdata->last_state) {
--		unsigned int type = bdata->b->type ?: EV_KEY;
-+	if (!has_initial_state && bdata->last_state == -1) {
-+		bdata->last_state = state;
-+		return;
-+	}
- 
-+	if (state != last_state || (!has_initial_state && last_state == state)) {
- 		if (bdata->count < bdata->threshold) {
- 			bdata->count++;
- 			return;
- 		}
--
--		if (bdata->last_state != -1 || type == EV_SW)
--			button_hotplug_event(bdata, type, state);
--
-+		button_hotplug_event(bdata, bdata->b->type ?: EV_KEY, state);
-+	} else if (!has_initial_state && last_state != state) {
- 		bdata->last_state = state;
- 	}
- 
-@@ -351,8 +365,8 @@ static irqreturn_t button_handle_irq(int irq, void *_bdata)
- 	struct gpio_keys_button_data *bdata =
- 		(struct gpio_keys_button_data *) _bdata;
- 
--	schedule_delayed_work(&bdata->work,
--			      msecs_to_jiffies(bdata->software_debounce));
-+	mod_delayed_work(system_wq, &bdata->work,
-+			 msecs_to_jiffies(bdata->software_debounce));
- 
- 	return IRQ_HANDLED;
- }
-@@ -540,6 +554,7 @@ static int gpio_keys_button_probe(struct platform_device *pdev,
- 		}
- 
- 		bdata->can_sleep = gpio_cansleep(gpio);
-+		bdata->has_initial_state = 0;
- 		bdata->last_state = -1;
- 
- 		if (bdev->polled) {
-@@ -608,6 +623,9 @@ static int gpio_keys_probe(struct platform_device *pdev)
- 
- 		INIT_DELAYED_WORK(&bdata->work, gpio_keys_irq_work_func);
- 
-+		schedule_delayed_work(&bdata->work,
-+				      msecs_to_jiffies(bdata->software_debounce));
-+
- 		ret = devm_request_threaded_irq(&pdev->dev,
- 			bdata->irq, NULL, button_handle_irq,
- 			irqflags, dev_name(&pdev->dev), bdata);
-@@ -621,9 +639,6 @@ static int gpio_keys_probe(struct platform_device *pdev)
- 			dev_dbg(&pdev->dev, "gpio:%d has irq:%d\n",
- 				button->gpio, bdata->irq);
- 		}
--
--		if (bdata->b->type == EV_SW)
--			button_hotplug_event(bdata, EV_SW, gpio_button_get_value(bdata));
- 	}
- 
- 	return 0;
-@@ -648,9 +663,6 @@ static int gpio_keys_polled_probe(struct platform_device *pdev)
- 	if (pdata->enable)
- 		pdata->enable(bdev->dev);
- 
--	for (i = 0; i < pdata->nbuttons; i++)
--		gpio_keys_polled_check_state(&bdev->data[i]);
--
- 	gpio_keys_polled_queue_work(bdev);
- 
- 	return ret;
--- 
-2.22.0
+Many of the error are CMake errors referrefing into ubox related stuff, like:
 
+UBUS:
+
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+blob_library
+     linked by target "cli" in directory /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/ubus-2018-10-06-221ce7e7
+     linked by target "ubusd" in directory /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/ubus-2018-10-06-221ce7e7
+     linked by target "server" in directory /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/ubus-2018-10-06-221ce7e7/examples
+ubox_include_dir
+
+
+Netifd has a somewhat clear reason for failure:
+
+In file included from /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/netifd-2019-06-15-9932ed02/main.c:22:0:
+/builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/netifd-2019-06-15-9932ed02/netifd.h:23:10: fatal error: libubox/uloop.h: No such file or directory
+  #include <libubox/uloop.h>
+           ^~~~~~~~~~~~~~~~~
+compilation terminated.
+
+
+The single-package errors are non-fatal in the phase2 buildbot, so these have 
+not surfaced earlier. And this apparently does not impact the phase1 
+buildbot, which apaprently seems to compile the packages ok and include them 
+in the firmware images.
+
+Based on that I am unsure if this is about phase2 buildbot trying to build 
+packages that it shouldn't, or something else.
+
+I can't see anything obvious in the commit logs in the past few days that 
+could have caused this. One possibiility is still the scripts/config change 
+two weeks ago, which affected dependency calculations.
+
+Hmmm.
+
+While writing this, I noticed that while other packages seem to fail mainly 
+for ubox related reasons, libubox itself seems to fail due to lua related 
+stuff. Maybe the lua / lua5.1 rename and version inclusion in the packaged 
+file names is causing havoc. cc'ing rmilecki
+
+http://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/libubox/compile.txt
+
+Reference to commit:
+
+https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=fe59b46ca7e0716e030a5d7cb0da9b4b6a79a8f4
+
+
+
+--------------3FCA1C0C2CE10171C3F751E2
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Based on forum discussion at
+<a class="moz-txt-link-freetext" href="https://forum.openwrt.org/t/errors-when-using-image-builder-for-ipq806x/39992">https://forum.openwrt.org/t/errors-when-using-image-builder-for-ipq806x/39992</a></p>
+    <p>I looked at the packages buildbot faillogs for OpenWrt master and
+      the package download directories, and noticed that quite a lot of
+      the core OpenWrt packages fail to build in the buildbot at the
+      moment, like ubox, ubus, firewall, uci, netifd... and they are
+      also missing from the snapshot download directories.</p>
+    <p>Example failllogs:</p>
+    <p><a class="moz-txt-link-freetext" href="http://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/">http://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/</a></p>
+    <p><a class="moz-txt-link-freetext" href="http://downloads.openwrt.org/snapshots/faillogs/mips_24kc/base/">http://downloads.openwrt.org/snapshots/faillogs/mips_24kc/base/</a></p>
+    <br>
+    <p>Many of the error are CMake errors referrefing into ubox related
+      stuff, like:<br>
+    </p>
+    <pre>UBUS:
+
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+blob_library
+    linked by target "cli" in directory /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/ubus-2018-10-06-221ce7e7
+    linked by target "ubusd" in directory /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/ubus-2018-10-06-221ce7e7
+    linked by target "server" in directory /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/ubus-2018-10-06-221ce7e7/examples
+ubox_include_dir
+</pre>
+    <p><br>
+    </p>
+    <p>Netifd has a somewhat clear reason for failure:</p>
+    <pre>In file included from /builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/netifd-2019-06-15-9932ed02/main.c:22:0:
+/builder/mips_24kc/build/sdk/build_dir/target-mips_24kc_musl/netifd-2019-06-15-9932ed02/netifd.h:23:10: fatal error: libubox/uloop.h: No such file or directory
+ #include &lt;libubox/uloop.h&gt;
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+</pre>
+    <p><br>
+    </p>
+    <p>The single-package errors are non-fatal in the phase2 buildbot,
+      so these have not surfaced earlier. And this apparently does not
+      impact the phase1 buildbot, which apaprently seems to compile the
+      packages ok and include them in the firmware images.</p>
+    <p>Based on that I am unsure if this is about phase2 buildbot trying
+      to build packages that it shouldn't, or something else.</p>
+    <p>I can't see anything obvious in the commit logs in the past few
+      days that could have caused this. One possibiility is still the
+      scripts/config change two weeks ago, which affected dependency
+      calculations.</p>
+    <p>Hmmm. <br>
+    </p>
+    <p>While writing this, I noticed that while other packages seem to
+      fail mainly for ubox related reasons, libubox itself seems to fail
+      due to lua related stuff. Maybe the lua / lua5.1 rename and
+      version inclusion in the packaged file names is causing havoc.
+      cc'ing rmilecki<br>
+    </p>
+    <p>
+<a class="moz-txt-link-freetext" href="http://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/libubox/compile.txt">http://downloads.openwrt.org/snapshots/faillogs/arm_cortex-a15_neon-vfpv4/base/libubox/compile.txt</a></p>
+    <p>Reference to commit:</p>
+    <p><a class="moz-txt-link-freetext" href="https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=fe59b46ca7e0716e030a5d7cb0da9b4b6a79a8f4">https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=fe59b46ca7e0716e030a5d7cb0da9b4b6a79a8f4</a></p>
+    <p><br>
+    </p>
+  </body>
+</html>
+
+--------------3FCA1C0C2CE10171C3F751E2--
+
+
+--===============4001785294864014572==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4001785294864014572==--
+

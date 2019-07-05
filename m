@@ -2,51 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE4C160703
-	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jul 2019 15:59:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84AE860706
+	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jul 2019 15:59:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2HqeM0IS2/rUZ02E6irEKLnSM3OLW27uMMeEPavJnx4=; b=IzS/r8laSIpQ2x
-	iGE99Cys6Okjmn6435ff1nMGCCXVtiWr7Ccn9U3HWJ+NdvDmOK4+QUYKW3RSFzFXmET1HBV2cXuOT
-	MLUMWImfyyPOKkIbYZwMm9SOLOy6llsX74gE83dYkxbD/c1m5T+XEpNyo8NFKH1NJWv3l/GFft7Ab
-	ApyMn8oB0/dfp12udDBstCPefl3FR3sBmMjpFHdYkLrWhYrN6w3LkvVsEkge+Mym0vo06aixzL88M
-	liSyI2ebdzu5Zlyi8MPst8dwxK6SNaNfjSBQoK31cbQNdctGIFizVpRM/ZV2YgOwMzgvARWhrDDY7
-	w/90pltpon6vmeNxZqRQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ReqwCiwE2ErXxTZa3rOA8S5qVMMhKgLWIakC+X9C/g4=; b=BNVhu1VNDYlwfy
+	jncPGQsGKdykZmisIXHG5S8dK/eyBktKqOHx1cx9xOUeitWeIrNS0JMoHKzS2iI41qfoYtCiMTeF1
+	yLuUCFU4Xhz5WE+0grFxKxcdjDWUjP+TMyybrJ5PTwNzj2cvrDLUgaVPRXfqQkeiIlSARYRlcMvyC
+	/hLGPv/cyVtAoKIjULvUvUp4dCMXO7ukhzWSOWDeMzhMHI/hp84PJyvVvv/tmuc7KMwbVaVgkDy3i
+	tM/eJnHmtGAt8HpqT/brHJ2UHXEkxr9aiGN7YCMwWETHPIoAQLogdE+3mJdqJQPLQGM/HIDvgEHnF
+	fU4nDXqTHkpG/3505kgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjOkI-00024Q-JY; Fri, 05 Jul 2019 13:59:26 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hjOkW-0002J4-AW; Fri, 05 Jul 2019 13:59:40 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjNCz-0007Je-EA
- for openwrt-devel@bombadil.infradead.org; Fri, 05 Jul 2019 12:20:57 +0000
+ id 1hjNJE-00007N-QO
+ for openwrt-devel@bombadil.infradead.org; Fri, 05 Jul 2019 12:27:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:References:To:From:Subject:Sender:
- Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=nt+T1Stzp1Qy7jTvew/qF6RuXYnPq9Thl0Plm3UPvGY=; b=awU9G5j43lQtc2mZbcWu9i+7xP
- UsesKTPYGTMOCCWiRRPDlQbLWngfaAnylanzA8uZOz8XQ1ONLeE0QmKY/EcduZiCEgYT5ZSZo3gcF
- fwy+8FWeE3gFmVBSB6LwwhkLX7IGJN/wEXbVpZ6gDyFBmkTZ1DW28hg0LWzBzHkyzLAvA44pdkexC
- GCZf3ineYgaN6rLlSjDh4xAeufNGLm4bT0FR0dAXDS2G8Mbu0JcO5r+VU9nQewm6yninw5aB+0hHD
- R5LYapXMMgSubA69jZIGvSc3pvoDdxV/liDNWiLN3DrbySWHBXkmp3EYGGh3xxPss+WuDAixJMg9X
- DQmrjlxg==;
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjNCo-0001Hb-Qy
- for openwrt-devel@lists.openwrt.org; Fri, 05 Jul 2019 12:20:49 +0000
-X-Originating-IP: 95.90.181.59
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Date:Message-ID:Subject:Cc:From:To:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=zDqiX5T1xnOdOIvke5IkMfPz92Ae0LL0uZyOI31mrCY=; b=GRe5809AlHUV8OIWrLbxHAmqMn
+ LeyROoghgq6oLdO6EnLVFsuT6R7XFdlc14NExi2lAq3Esess3V9NWjPgxDqkiTjnIBd3FNynfzLy/
+ eq3112o80U1eK7CL6J5lFbt24EWmI0PO1Mhpwp0KCVDDliesKHRXXVGF8fNggTC8B1lvfs+DvHNlv
+ PVN3c0k3i5U+95xpxXl8fvdvAsMdj303H7+yRSG99z2n1tkd3o5Ftui0pOhjxbfXhLif9z8j/kZ5B
+ BFJtI6dXDbmZRky4jISrC69LWNBP0uNuNzjDLhAcqvSUrXeOmb4O8EP/YUI/FfZptxRizGWDDuv1W
+ MnpGSX+g==;
+Received: from relay10.mail.gandi.net ([217.70.178.230])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hjNIt-0001jU-Ha
+ for openwrt-devel@lists.openwrt.org; Fri, 05 Jul 2019 12:27:04 +0000
 Received: from [192.168.0.207] (ip5f5ab53b.dynamic.kabel-deutschland.de
  [95.90.181.59]) (Authenticated sender: mail@aparcar.org)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 8193B2000B
- for <openwrt-devel@lists.openwrt.org>; Fri,  5 Jul 2019 12:20:06 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 5D99E24000D;
+ Fri,  5 Jul 2019 12:26:32 +0000 (UTC)
 To: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-References: <1976f014-56cf-3b16-00b0-638165f71f4b@aparcar.org>
+From: Paul Spooren <mail@aparcar.org>
 Openpgp: preference=signencrypt
 Autocrypt: addr=mail@aparcar.org; keydata=
  mQINBFxz2jMBEAC8Mf/NfBA6kbVD+tiXe3Tqf8l+WPclhdHBJ4wM1zD1pfV6IL1a13iC1D45
@@ -91,27 +89,23 @@ Autocrypt: addr=mail@aparcar.org; keydata=
  5OUi/C2Q3E7FAvHuijf1fTIYes7s1CDeql3vVR1TajMh1DCRmfdeeFE4nwv1x78nVnDfnD2j
  L1jN2qDSXZviGrr4EG0hizY/4AFwRWZdOHRBZCzRbgnqNvGJIPBzMhfQIM4K65nAQdVo4Z/L
  i1YmLKwXoPXUL3dkvK/e/1ZyhQbUJvLN9Xm7Vehwjbim65Lxvwm9fFwRhvy4d9v7Dg==
-Message-ID: <d6f232d3-7d0d-24ba-128b-afed75c33db6@aparcar.org>
-Date: Fri, 5 Jul 2019 14:20:04 +0200
+Message-ID: <dde0fff0-c03a-260f-29a9-4bdabfe301f9@aparcar.org>
+Date: Fri, 5 Jul 2019 14:26:31 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <1976f014-56cf-3b16-00b0-638165f71f4b@aparcar.org>
 Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_132046_961274_DD5CA04C 
-X-CRM114-Status: UNSURE (   6.68  )
-X-CRM114-Notice: Please train this message.
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [RFC]split DEVICE_TITLE in multiple variables
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [RFC]merge routing repository to packages
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,28 +117,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: jo@mein.io
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The PR was accepted, I'd be happy if newly ported devices could follow
-this style!
+Hi all,
 
-I'll do some work on reorganizing existing targets.
+just as a notification as I don't want to spread the discussion to all
+kinds of platforms:
 
-Best,
+I proposed (actually jow in 2017) to merge openwrt-routing/packages into
+openwrt/packages subfolder net.
+
+Please find the current discussion at GitHub[0].
+
+This is intended to be a transfer, not a fixup. Fixes of legacy/broken
+Makefiles are welcome in the future!
+
+Sunshine,
 Paul
 
-> [0]: https://github.com/openwrt/openwrt/pull/2124
-> [1]: https://sudhanshu16.github.io/openwrt-firmware-selector/
->
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+[0]: https://github.com/openwrt/packages/pull/9399
+
+
 
 _______________________________________________
 openwrt-devel mailing list

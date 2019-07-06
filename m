@@ -2,96 +2,95 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B745C60C63
-	for <lists+openwrt-devel@lfdr.de>; Fri,  5 Jul 2019 22:32:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1210C611F7
+	for <lists+openwrt-devel@lfdr.de>; Sat,  6 Jul 2019 17:45:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=O0VZvubtz86C4aJ98BVShOl2NJnUv9/pPYIgijLN20s=; b=tG7YLqQ9+/RBxhtpt34XaRH3R
-	kPOJ9a4GPhS6Uc8hVWP+lTudkgitHDtflXqAXJzSE0ZnkgWh/UpHjFmldMSm4AJIElG3OWTtFLqSt
-	PRFlmqvQaTMyMBRlC7gzWHwQtyCDh/xAoH6r3M+xki7EbNClBkchrFOzUts0Y0XbtW4IvTuqjKTd8
-	hGTrHpmzVnwmFwUUtIKL5iJwDafpO0uhso1wzkrX+BosgzxhLHUlRLHLUrFN2JPi5qGjQGqtIGWya
-	b4EObbjFTA3hdpqv2D1zpPUcCIDZa0sebrkiospU2wT7VIoSHZh7TTAkB/h++sXtSe4Q4/ILThXOv
-	8tyjZPdRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z0SeuuifgG87vLuU/XV4Ab5brOtNTJghHQz9/xRyWL4=; b=krdoKIyKsJGxR7
+	NEw+t+w1hZtKc55UNknzGO7mtMQ3M7rarzGEKBPq+qj3YRduKT6YzyKiNWxOeBNHelaOs7Q3TxHBJ
+	y85Oc/nkd7BTqU5knZwC4sLPgK8N+mMzf8I/L5ZNoAR/mUX9L0YltQkOEPXPnJr7iBeToTtUDu4o9
+	JKN3XhAtNhHYwvW7hA+MFMzevjcrccQSWxGxXa+0ufpUrrTC8hTpHtqigCG1c4uj+7g02BrdXRqkl
+	bkvvV+DbaU8Ay+0o9xKhwVnArh9RjLo4A0DMpq1NlsOIuL8bohyJ+8pmE39AqXhxkmvGf1aGnvEyG
+	2ZlRXX1WSf9suueJ2+jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hjUsT-0004xk-7F; Fri, 05 Jul 2019 20:32:17 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hjmsO-0003rE-9F; Sat, 06 Jul 2019 15:45:24 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hjUsI-0004xJ-Tj
- for openwrt-devel@lists.openwrt.org; Fri, 05 Jul 2019 20:32:08 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y8so361521plr.12
- for <openwrt-devel@lists.openwrt.org>; Fri, 05 Jul 2019 13:32:06 -0700 (PDT)
+ id 1hjms7-0003Tq-AT
+ for openwrt-devel@lists.openwrt.org; Sat, 06 Jul 2019 15:45:09 +0000
+Received: by mail-wr1-x443.google.com with SMTP id n9so3542465wrr.4
+ for <openwrt-devel@lists.openwrt.org>; Sat, 06 Jul 2019 08:45:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=iC0xhUMriKHU9Mh1TOa3uCmGm4sqztoG0HeZ+VyTqNI=;
- b=ky8EBK09TXOws3fJ4rk9ecODYWC93jHIupG4lxOwtT7Z/akhH1F28dVsDeN62nh/+R
- WIN8QufTmpxEbCKisdz6+4DgUVbhDy1Z6bobXf81N7S5zOXpQ3TwPokMM2XMoSF3c5GJ
- 4yC/bzLAABZ7LjSMHGtQHMQLPeCYEqZPFy/heBPasSoDehpz7czMqP0OUrEOKPLwh6ak
- uyIDjMn1gwj6v9eq3DgTm6WdxHOep4117YpO2Wk7hcW9LhNc9fHoJ4MJerlAdP6aHCv+
- FmZgAiZj3hP000vpU56d4aWeFDYiwPW82P1i2jSJUBnTBJ/03BTrCZ6IMQP+EjQBGUE5
- Ottw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=zv/7T0/iDpNmXM+S+P9wHe9I3XPY/7qUzIDw5OqAfrw=;
+ b=h3GFMtUHMN8kz1qGs/8grFRnEsiMYgh5z2wFj0Ae0Bw+1mfn13pZBpfhoGjp1fKnuV
+ D3auaJl6KjE6PE/Rzx/XJijTEmHwdnOCrOqtGMeuQu9CZNW7lWbjvB8CeI5s/bDs4DIv
+ l5+5oAuSSSYp1z+wsbRoqsy2tRYfgkWehVcR0LqpvkYVXIbpBsSLlkYvEQd5ydcYQCm2
+ cqgDIjbDnlfWFlV12Cm5n1aPcRwgaZu2yC+659xatIyDUqlFKIDUryxtrg+osU3FwdYG
+ tRo5O4QdWiEA9uXSZW5OjkOyx2pKWCG7s8ca8887kWWFVwXXh3wk5ZcpU4oOTCtL6tfu
+ eRxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=iC0xhUMriKHU9Mh1TOa3uCmGm4sqztoG0HeZ+VyTqNI=;
- b=hSANNzQWl18FzlYTvEv3LdOGZf2zH582RooA0ovJMfNRzfN0nbSCLYzcfQ3l1iQVCc
- 1wcYSYPd0zD5Cdd5hCZid2QUwYKGNXC4gzNLMvUtQDiOxmmxw3l8FaBwAapPsEwN8R2Y
- mxEMB8n4M4JYs4YKeWKzkEKyTPgkkg2WDakuYNxkwnEdxO1P3n1LaBj9E/Mpx/zbFZoW
- hrlrqcKtPf77ghMnYeBCniBAvvqqM1OxupQsE512wG4F3wikSkUHbVs65FrviqxZPl6c
- 32IqNpQZQakGgyrdIiu5noavciT0kCXxthekPibQyz7HER/VyaxtNxHT9YoQ8PNCn4Ed
- X72g==
-X-Gm-Message-State: APjAAAVlXO962/lAiaLfeWOFln8uVqwIB7zjLWYalyM/whiUwc5F+UMN
- bKpOYDpeFO3qH3/IRycQ7yTKX+aEsdI=
-X-Google-Smtp-Source: APXvYqz+ba4fOTPU4EKG+G5jkR9sO9PoIWtR12f6olTOvkpoDA+6lYLDS9RdoPBeoCZWiNPlKwAq+Q==
-X-Received: by 2002:a17:902:59c3:: with SMTP id d3mr486033plj.22.1562358725595; 
- Fri, 05 Jul 2019 13:32:05 -0700 (PDT)
-Received: from [192.168.0.240] (76-14-106-55.rk.wavecable.com. [76.14.106.55])
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=zv/7T0/iDpNmXM+S+P9wHe9I3XPY/7qUzIDw5OqAfrw=;
+ b=nzu85Piw3ED9x7xvUA2XtDDOKJbdqyO/m7hut3c06ogynRyimdL511/mfKzdhA+4Dm
+ WoGHpvhC9P1u3o0tCNGyIzE2Iiuba8kOGx09FV5bMSF8dsd8SOnbJuGwBbHmw5pwnuyg
+ bXjXxHHwyT0tFeRqCGVkVOm5+mxyjPwOBYSFjISO5ZlZS9VMzTqMW63MFGy6mMxA1YRK
+ Y7LBwOsFkqwdxGElUH/MyOabAuc9EF3LHFjaBVU6AAiTEY5Dq7u5RX4ex7zCEGWjprhe
+ Lleu0KXPKY9Js1OXhocVirrHPkzppdZf3mhp8YgBgHcvGkezbrdU3Y9KCnCl1bp/OjwN
+ SbWQ==
+X-Gm-Message-State: APjAAAVxI2CJDMBQ70pz/v9c1ELk0vvH+vMRItZWJ4L/Z4Lei2KIA/Fx
+ L1/jBZ7urbhzoW3XEg3oEQM=
+X-Google-Smtp-Source: APXvYqxLOcq7RHhZsKQjTYRz59G2Q9cqcC/iVMc+eQ/7X14TuwWSx8oVDbZ18nhG4K2ZhCG4e4ZD6w==
+X-Received: by 2002:adf:e8cb:: with SMTP id k11mr9215076wrn.244.1562427905441; 
+ Sat, 06 Jul 2019 08:45:05 -0700 (PDT)
+Received: from debian64.daheim (p5B0D755A.dip0.t-ipconnect.de. [91.13.117.90])
  by smtp.gmail.com with ESMTPSA id
- q1sm12803516pfg.84.2019.07.05.13.32.04
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 05 Jul 2019 13:32:04 -0700 (PDT)
-To: Christian Lamparter <chunkeey@gmail.com>, openwrt-devel@lists.openwrt.org
-References: <20190703201651.164-1-rosenp@gmail.com>
- <21122158.nGdb3KtYbb@debian64>
-From: Rosen Penev <rosenp@gmail.com>
-Message-ID: <3f4cc63c-5f8a-b173-0b62-764f6e4a51be@gmail.com>
-Date: Fri, 5 Jul 2019 13:32:04 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ a12sm11602923wrr.70.2019.07.06.08.45.04
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sat, 06 Jul 2019 08:45:04 -0700 (PDT)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.92)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1hjms3-0006ba-T3; Sat, 06 Jul 2019 17:45:03 +0200
+From: Christian Lamparter <chunkeey@gmail.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Date: Sat, 06 Jul 2019 17:45:03 +0200
+Message-ID: <3107719.WGKQvLnyPJ@debian64>
+In-Reply-To: <20190630150756.12439-1-linus.walleij@linaro.org>
+References: <20190630150756.12439-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <21122158.nGdb3KtYbb@debian64>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190705_133206_965330_671B498E 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20190706_084507_374226_79127EFE 
+X-CRM114-Status: GOOD (  19.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (chunkeey[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 T_PDS_NO_HELO_DNS      High profile HELO but no A record
-Subject: Re: [OpenWrt-Devel] [PATCHv2] toolchain: Don't force GCC8 on ARC
+ 0.0 PDS_NO_HELO_DNS        High profile HELO but no A record
+Subject: Re: [OpenWrt-Devel] [PATCH] gemini: Add StorLink SL93512r images
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,45 +102,120 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Florian Fainelli <f.fainelli@gmail.com>, Roman Yeryomin <roman@advem.lv>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Sebastian Luft <sebastian.luft@gmail.com>, openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+On Sunday, June 30, 2019 5:07:56 PM CEST Linus Walleij wrote:
+> This adds image generation for the StorLink reference design
+> SL93512r. This board is now supported upstream in kernel
+> v4.19.
+> 
+> As this image structure is identical to SQ201 and Raidsonic,
+> we simply refer to this as "storlink-reference" from now on.
+> 
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 
-On 7/5/2019 1:08 PM, Christian Lamparter wrote:
-> On Wednesday, July 3, 2019 10:16:51 PM CEST Rosen Penev wrote:
->> When selecting GCC9 under Advanced options, GCC8 still gets selected.
->>
->> Signed-off-by: Rosen Penev <rosenp@gmail.com>
-> Looks like we came to the same conclusion (see date).
->
-> https://git.openwrt.org/?p=openwrt/staging/chunkeey.git;a=commit;h=a03fe6d029d81c8ed6a5cd97603f975acf6731d5
-Works for me
->
->
->> ---
->>   v2: Allow selecting GCC9 but not 7 and below
->>   toolchain/gcc/Config.version | 2 +-
->>   1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/toolchain/gcc/Config.version b/toolchain/gcc/Config.version
->> index ef9bbb82e2..2a9dc289db 100644
->> --- a/toolchain/gcc/Config.version
->> +++ b/toolchain/gcc/Config.version
->> @@ -4,7 +4,7 @@ config GCC_VERSION_5
->>   
->>   config GCC_VERSION_8
->>   	default y if GCC_USE_VERSION_8
->> -	default y if arc
->> +	default y if arc && !GCC_USE_VERSION_9
->>   	bool
->>   
->>   config GCC_VERSION_9
->>
->
->
->
+The buildbots are currently in a bit of a pickle:
+<http://phase1.builds.lede-project.org/builders/gemini%2Fgeneric>
+
+The gemini-target is failing for some time now.
+
+This is due to this error (see patch):
+https://patchwork.ozlabs.org/patch/1128185/
+
+but also:
+
+cp ./ImageInfo-storlink_sl93512r /home/luser/owrt/test-chunkeey-20190705-170344/gemini-generic/build_dir/target-arm_fa526_musl_eabi/linux-gemini/tmp/openwrt-gemini-storlink_sl93512r-squashfs-factory.bin.tmp/ImageInfo
+cp: cannot stat './ImageInfo-storlink_sl93512r': No such file or directory
+
+This is because the script "Build/storlink-default-images" expects to have
+a "target/linux/gemini/image/ImageInfo-storlink_sl93512r".
+
+@Linus: Can you please make a patch that adds the missing file?
+
+Regards,
+Christian
+
+> ---
+>  target/linux/gemini/image/Makefile | 24 +++++++++++++++++-------
+>  1 file changed, 17 insertions(+), 7 deletions(-)
+> 
+> diff --git a/target/linux/gemini/image/Makefile b/target/linux/gemini/image/Makefile
+> index 5901bbf0c9b2..7b5faa04fd0e 100644
+> --- a/target/linux/gemini/image/Makefile
+> +++ b/target/linux/gemini/image/Makefile
+> @@ -74,14 +74,15 @@ define Build/wiligear-image
+>  	mv $@.new $@
+>  endef
+>  
+> -# Create the special NAS4220B and Itian Square One SQ201 image
+> -# format with the squashfs and overlay inside the "rd.gz" file.
+> +# Create the default image format used by the StorLink reference design
+> +# SL93512r, Raidsonic NAS4220B and Itian Square One SQ201
+> +# with the squashfs and overlay inside the "rd.gz" file.
+>  # We pad it out to 6144K which is the size of the initramfs partition.
+>  #
+>  # The "application" partition is just blank. You can put anything
+>  # there when using OpenWRT. We just use that to create the
+>  # "sysupgrade" firmware image.
+> -define Build/nas4220b-sq201-images
+> +define Build/storlink-default-images
+>  	mkdir -p $@.tmp
+>  
+>  	mv $@ $@.tmp/rd.gz
+> @@ -162,15 +163,16 @@ define Device/dlink_dns-313
+>  endef
+>  TARGET_DEVICES += dlink_dns-313
+>  
+> -define Device/itian-raidsonic
+> +# Default images setup used by the StorLink reference designs
+> +define Device/storlink-reference
+>  	IMAGES := factory.bin
+>  	IMAGE/factory.bin := append-rootfs | pad-rootfs | pad-to 6144k | \
+> -		nas4220b-sq201-images $(1)
+> +		storlink-default-images $(1)
+>  	DEVICE_PACKAGES := $(GEMINI_NAS_PACKAGES)
+>  endef
+>  
+>  define Device/itian_sq201
+> -	$(Device/itian-raidsonic)
+> +	$(Device/storlink-reference)
+>  	DEVICE_TITLE := ITian Square One SQ201
+>  	DEVICE_DTS := gemini-sq201
+>  	DEVICE_PACKAGES += kmod-rt61-pci kmod-usb2-pci
+> @@ -178,13 +180,21 @@ endef
+>  TARGET_DEVICES += itian_sq201
+>  
+>  define Device/raidsonic_ib-4220-b
+> -	$(Device/itian-raidsonic)
+> +	$(Device/storlink-reference)
+>  	DEVICE_TITLE := Raidsonic NAS IB-4220-B
+>  	DEVICE_DTS := gemini-nas4220b
+>  	DEVICE_TYPE := nas
+>  endef
+>  TARGET_DEVICES += raidsonic_ib-4220-b
+>  
+> +define Device/storlink-sl93512r
+> +	$(Device/storlink-reference)
+> +	DEVICE_TITLE := StorLink SL93512r
+> +	DEVICE_DTS := gemini-sl93512r
+> +endef
+> +TARGET_DEVICES += storlink_sl93512r
+> +
+> +
+>  # The wiliboard images need some changes to be functional and buildable.
+>  #
+>  # The dts would need to use the ecoscentric,redboot-fis-partitions partition
+> 
+
+
+
+
 
 _______________________________________________
 openwrt-devel mailing list

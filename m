@@ -2,84 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB6B7640EE
-	for <lists+openwrt-devel@lfdr.de>; Wed, 10 Jul 2019 08:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B425D642FE
+	for <lists+openwrt-devel@lfdr.de>; Wed, 10 Jul 2019 09:42:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=LQXbLY4aoYNKNVv9XtNLrhb6hGgKhDgLDnX2zQCo03Q=; b=HBJ
-	pk3Rai+kNd8HqiSxbn4EbGBmHvIjGCfOcKZIT9meQ69b0+NFSIb3xtgtQ/cGrwPPfBW3xEoa0R0IO
-	9iPW9uhV5g5SiADwlUl0+VcY34Zg8EeD+7S3cMu1d8VFtAPA7VTGUym8IQito/qm4nKMrPRgE5luP
-	36YAqxvOrVqF42+tWB3Te/H/iklkg3eB61BKMMFeaqZPuokEsJxqG3ujjdWuS9CWNJuh4cJHFXtFU
-	TymS/hTD2JKZf2sCcZSBUxxs75ohnkZpC9VJyImEPPrGNOD6sEIRckY+5Lu4hyZfw8ESskCjLszTj
-	+rfmQ/q2uduVmgd/NxYePQOUzDtXhBA==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=OgqmntDWQBdnoweBbOUT4lrQyayE1oQbHSs6rsAzon8=; b=sBF87q3KlECobSsOTG1bG6l8f6
+	p9NjGpJHIrsdf+R9jUL93gJ04lD+wLsDGR3KrR4ktEhwnjtAs7A9rTS9GxTLdsh1QMqTQTngqtcQl
+	+I/RDO4QhHQn1DlP/hXiVvYP169t7zRWx9GYucCwD49ZGxjkY8ZNB4AijwTiKgihoWbb72mZqKsV/
+	RA/1xJpu88gQpJ9cEzgZfF/oNn2dKa+ZzVjHwtl+YhrDtqmUKjKPvkD7XvMbXpkF22vmlZtY+U/kM
+	yL/Y2WVc3vJ/qN9qx9Ow1m24nwSSHzeZe4FCDOmjjoUiwHAQ0LZU0tK8Va6DyCOwVqA2cxRjNPMZ6
+	ZQfcdG8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hl5nW-0005uk-TJ; Wed, 10 Jul 2019 06:09:47 +0000
-Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
+	id 1hl7Es-0001p7-9w; Wed, 10 Jul 2019 07:42:06 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hl5nD-0005jP-Qp
- for openwrt-devel@lists.openwrt.org; Wed, 10 Jul 2019 06:09:29 +0000
-Received: by mail-pl1-x629.google.com with SMTP id ay6so651342plb.9
- for <openwrt-devel@lists.openwrt.org>; Tue, 09 Jul 2019 23:09:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=yzfIz3EfCq+Xfe2CsirtMArRNNLofREKHRq/uRmHfzc=;
- b=bb9ZTattz0ambkN9m1j1zWC4Xbn2dw+QNZzCWgGcYUwV0wB7iXoobUMGK2fy6DVHyB
- JA9653OArDiBsdAAuMynCFqsILDPCHuq8vSjCqflrem2MRZptw1Y3KXO8+vPCCB+7x06
- IjR8YD/AX0b1Qu2W+NFOCUbI4muBlHTdh2sJqQ9zHHWdsLlFa8+1xCHOqvS1gHK95AYr
- VqywY2TrJYL5k7AkjoVw5aVOpSYwtxPvweZtLeA7Q4Ed5OhU4b+UrP8CGJ+pneLdDw74
- o3YGzFCMlgGFs/zuDZXkMmOIk0CzT+lVYHMQA6oJt1TcZM2qVRjvH1PvC6Qo0fdtIK7L
- 6Qvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=yzfIz3EfCq+Xfe2CsirtMArRNNLofREKHRq/uRmHfzc=;
- b=Ag+/wr2qAiCY7kfYLxWLuPMG+OYgWutfYvaJU2rG80w/Ws/3VviCEuXjHffCf3TikU
- 7ODsccdVXSypSxxUWvYKAGvfb2w84NGGSQsc5//7uJEeArKkM47CF+Pk2VYtlIH9fsKH
- 5SyrWOIhALrF/OEx90yE4FGPo5dwkFARNcDevUZaxuzekFup8Ie+BYO7tvhj3BSRb3uO
- USp8bXx5TxH2+xWUBIy6Z4X51orpRm3+UoPxn5v3peLoIZqxMU3eFyAemgdGVYiwXff8
- 5uUe224PO7hKiF16yfYpg7xbdYakIqYtIUgQIgkKr4A9xVa3/Tj0wf1YiXJvtTxgImTN
- Z42g==
-X-Gm-Message-State: APjAAAWsuQ4Q11f6+DURMBjElmNWC+StS/0QWkZPUFlrQ1ljaNRut/HW
- DH7bnVCePXIn0rzqlCGh4YXCKCoeDmhazfDd7GwlM2nr
-X-Google-Smtp-Source: APXvYqzBxd6rWAUwO/Y2ZhxK0pxOSiUw9/xBsbAJ82iYKvn+G4hnJazylhsubjf0AZq8GdqKUS4yWflJ376j7YsMJj0=
-X-Received: by 2002:a17:902:be15:: with SMTP id
- r21mr20404200pls.293.1562738965174; 
- Tue, 09 Jul 2019 23:09:25 -0700 (PDT)
+ id 1hl7Ea-0001oA-Vx
+ for openwrt-devel@lists.openwrt.org; Wed, 10 Jul 2019 07:41:50 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 170423590;
+ Wed, 10 Jul 2019 09:41:41 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 49a42610;
+ Wed, 10 Jul 2019 09:41:33 +0200 (CEST)
+Date: Wed, 10 Jul 2019 09:41:33 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Hauke Mehrtens <hauke@hauke-m.de>
+Message-ID: <20190710074133.GF55350@meh.true.cz>
+References: <20190707170411.3393-1-hauke@hauke-m.de>
 MIME-Version: 1.0
-From: Matej Kupljen <matej.kupljen@gmail.com>
-Date: Wed, 10 Jul 2019 08:09:14 +0200
-Message-ID: <CAHMF36G6N0iqn_JjsRx4Qywxg+8086dxRLQDccwE6biW_ze=NA@mail.gmail.com>
-To: openwrt-devel@lists.openwrt.org
+Content-Disposition: inline
+In-Reply-To: <20190707170411.3393-1-hauke@hauke-m.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_230927_878200_70353202 
-X-CRM114-Status: UNSURE (   8.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20190710_004149_181549_033D6E6E 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:629 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matej.kupljen[at]gmail.com)
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 1.3 PDS_NO_HELO_DNS        High profile HELO but no A record
-Subject: [OpenWrt-Devel] ath10k on ipq4019 crashes and hitting WAN_ON macro
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH] mac80211: Update to version 5.2-rc7
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,53 +65,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
-
-I have a custom image build from OpenWRT 18.06 and also have updated
-ath10k driver and ath10k firmware to the latest master version. The
-device is based on IPQ4019 and the image can be build using "QCA
-AP-DK04.1-C1" target profile (with some modifications).
-
-The device works O.K. and also the wireless is working. However, when
-there are high number of stations connected to this AP, like over 60,
-we are experiencing very unstable wireless connection. Looking at the
-logs we see messages like:
-
-ath10k_ahb a800000.wifi: failed to set beacon mode for vdev 0: -11
-ath10k_ahb a800000.wifi: failed to set dtim period for vdev 0: -11
-nl80211: wpa_driver_nl80211_event_receive->nl_recvmsgs failed: -5
-WARNING: CPU: 3 PID: 9327 at
-backports-2017-11-01/net/mac80211/sta_info.c:1001
-sta_set_sinfo+0x9f4/0xa94 [mac80211]
-
-(Unfortunately I do not have the whole log, but I'll try to reproduce
-this again).
-
-It seems like that there was something wrong with the firmware, since
-we were getting errors that the driver practically cannot set any of
-the parameters. Those messages were for 5GHZ, on 2.4GHz everything
-seemed to be normal.
-
-We also tried with the ath10k-ct driver and we didn't see any errors
-there. But there is a huge difference between the drivers, since
-ath10k-ct only allows up to 32 devices to connect, while ath10k driver
-allows up to 512 devices.
-Any idea why?
-
-Has anybody experience similar problems?
-Is here the right place to report this problem, or should I report it elsewhere?
-
-Thanks for any info.
-
-BR,
-Matej
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGF1a2UgTWVocnRlbnMgPGhhdWtlQGhhdWtlLW0uZGU+IFsyMDE5LTA3LTA3IDE5OjA0OjExXToK
+CkhpIEhhdWtlLAoKPiBUaGlzIHVwZGF0ZXMgbWFjODAyMTEgdG8gdmVyc2lvbiA1LjItcmM3LCB0
+aGlzIGNvbnRhaW5zIGFsbCB0aGUgY2hhbmdlcwo+IHRvIHRoZSB3aXJlbGVzcyBzdWJzeXN0ZW0g
+dXAgdG8gTGludXggNS4yLXJjNy4KCnRoYW5rcyBhIGxvdCBmb3IgdGhpcyB1cGRhdGUhCgo+ICog
+VGhlIHJlbW92ZWQgcGF0Y2hlcyBhcmUgYXBwbGllZCB1cHN0cmVhbQo+ICogYjQzIG5vdyB1c2Vz
+IGttb2QtbGliLWNvcmRpYwo+ICogVXBkYXRlIHRoZSBubDgwMjExLmggZmlsZSBpbiBpdyB0byBt
+YXRjaCBiYWNrcG9ydHMgdmVyc2lvbi4KPiAqIFJlbW92ZSB0aGUgdHdvIGJhY2twb3J0cyBmcm9t
+IGtlcm5lbCA0LjksIHRoZXkgd2VyZSBuZWVkZWQgZm9yIG10NzYsCj4gICBidXQgdGhhdCBjYW4g
+dXNlIHRoZSB2ZXJzaW9uIGZyb20gYmFja3BvcnRzIG5vdywgb3RoZXJ3aXNlIHRoZXkKPiAgIGNv
+bGxpZGUgYW5kIGNhdXNlIGNvbXBpbGUgZXJyb3JzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEhhdWtl
+IE1laHJ0ZW5zIDxoYXVrZUBoYXVrZS1tLmRlPgo+IC0tLQo+IAo+IFRoaXMgcGF0Y2ggaXMgYWxz
+byBhdmFpbGFibGUgaW4gbXkgZ2l0IHRyZWUgYXQ6Cj4gaHR0cHM6Ly9naXQub3BlbndydC5vcmcv
+P3A9b3BlbndydC9zdGFnaW5nL2hhdWtlLmdpdDthPXNob3J0bG9nO2g9cmVmcy9oZWFkcy9tYWM4
+MDIxMS01LjIKCkkndmUgbWVyZ2VkIHRoaXMgY29tcGxldGUgYnJhbmNoIGluIG15IHN0YWdpbmcg
+dHJlZSBhbmQgdGVzdGVkIGl0IG92ZXJuaWdodCBvbgpteSBtdDc2MjArbXQ3NjEwZSAoNC4xNCkg
+YW5kIGF0aDc5K1FDQTk4ODAgKDQuMTkpIGFuZCBJIGRpZG4ndCBleHBlcmllbmNlZCBhbnkKaXNz
+dWUuCgpBY2tlZC1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4KCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGlu
+ZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVu
+d3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

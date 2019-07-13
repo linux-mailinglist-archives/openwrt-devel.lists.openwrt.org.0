@@ -2,89 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7C4E67BEE
-	for <lists+openwrt-devel@lfdr.de>; Sat, 13 Jul 2019 22:39:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96FC267C36
+	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 00:04:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NRZlcRAUtTJ2v8tdFfP8oZWQXNjKgjwf7jWkvlwdvx0=; b=dJXEHTXZ1TfQoY
-	CLG3XB7JOCjYcn4mdL0i15jX+wnncHQ6K5XhdSSn7mLi27WWTNM25qI/a30pZnU5PesQ5h0+GxqaZ
-	o2aly0WSmhJbOsT5H7O0BBUtjpt/X2L76/8RnV+boufyxPEFKE2jh6cbqF392J9T092OW2yGxFBDp
-	7dYOwDYtaP3+ECQNLK7c0ZoM87Ux/46VLez6/22O1quFNzh3lVKsH6eVGSYnZt4ZP11KsBwaTqEA2
-	YYy/pSn0hQWaZHxIt3r6V54lGORtHF75I8twPnhidm2/Z3/1oJ00viUfGLXZ3veS2LRQg/Zwv5JFg
-	KdDOtJZC6ZwweeIMWyBA==;
+	List-Owner; bh=0fMCWiDlHQNOhHfSYsTDg6sVtX6XWzp75X44S0AJuro=; b=BAtuMGjp287pN1
+	1JOml48bTQxpp6H/4IQOurI77REA15hJB29kSDQ3GLk7hhbd9nWFBSE/J/NNfrJHdobVGjU1InCtb
+	/bzjLJ5cQC80qk1HOcSiIW1HB6u3dw2pEtC91LFikjPh+jBbm4PGyQMI3szyvIPBxFG4g6ITRVRDG
+	Xw10lk2yG87yzo5/PdD/GPeo8dY/QNBUx7l12Tk9GbxisNVsFT5/JoaklaMhegy3cXTvJMJL/u/IX
+	tjEOsu9hdYqFMyrTK306X2AGYjW7yjqTZk+OHw5g98cEZT0XCQKTT7w5zwHFs3FAGAioD0YBiAycZ
+	PTEFmwBwTCOHZSA4Xqjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmOnJ-0000jj-8m; Sat, 13 Jul 2019 20:38:57 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hmQ8F-000226-Kh; Sat, 13 Jul 2019 22:04:39 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmOnA-0000jJ-4o
- for openwrt-devel@lists.openwrt.org; Sat, 13 Jul 2019 20:38:49 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q10so5731089pff.9
- for <openwrt-devel@lists.openwrt.org>; Sat, 13 Jul 2019 13:38:47 -0700 (PDT)
+ id 1hmQ86-000214-J2
+ for openwrt-devel@lists.openwrt.org; Sat, 13 Jul 2019 22:04:32 +0000
+Received: by mail-wm1-x344.google.com with SMTP id s15so11773928wmj.3
+ for <openwrt-devel@lists.openwrt.org>; Sat, 13 Jul 2019 15:04:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=KPFwpXKcCQ3EMczKagkLEuqG22SCS0dX8wY7zkrNFfY=;
- b=iXxdK1KXSUpkEBxB+kL1en3mb2yFqoDaIySkr9NGHCZUMlSbkC1utLu9M0af3c1ahh
- AA+R7uAnrzSRC8N4gRQbI9m21x4assRSSdvwfGGjEFAWsG2VlHAm85RtkuCZJB/GmYTm
- 52nJaOBgC38BnaHt7y4tC6xjgqSa14rXwwnopGNvW2fzt7WJ7KBja2ZE/FQjmhbASCml
- gTlkghD3vkz5mlVGYlYWmbu73/6Uc0GGshDvF1eazwTxUnXvw3fGjQHi3j0FVBSP/bjS
- eoYLTfHmqs87QGd3VAH4z1oRBmBJ6+VW+vDNCHNjH0NX1Y6LeNNPNhG88RiyxxNAHSwu
- Fkkw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=ABgl+kGGdS9UfT3SmtPWMxlAkrLrlkf54dwvS6c6vTw=;
+ b=b8/fdOevABD3fJ2/q5YweAjO93eLyFXQ5nexl9INzNHbcahnfl/WKI6wGSQKLcXJTH
+ ptTXjorxzIAgnMjRry15Ud/Hu9MfxvRmA2GBePqc9T0fCDEBchPBz5tmctjqIpdrMats
+ ADjK0Xqrkg2T6v3+FYPlSXFqe3L/YlLJwWd+rpaHCwTv2dB8iq046LbD89axlL6p9qO5
+ KZXqBzzxmeaFmnzAp4A9CF9YQjNYGf0r0KYVFMMhk53vysSe71sa4aEKD083jV1q4ufN
+ E5HZezNjXXf/SE+abD2k7Fsi/zrvBueQBQlBWZ0OME6C3f4fXgseX7vTROaHmXi6A4jz
+ G69w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=KPFwpXKcCQ3EMczKagkLEuqG22SCS0dX8wY7zkrNFfY=;
- b=gLRSt7BTLKL1r7SXwCNEnnGBX1BpuohRhlwPid6OgKqoqiusGYfc2S/xQs4PgELU2g
- F56aJt+LzR6EiRnNZIGoiZKmXLf66ZylDFVBC3otva1fQUkHBBwZ+Z5RRBomK12XyRFJ
- kzjEEjvMzPt2S4rwgaUbqTw0ETCsETBc5xu5tU/Zs8+EGEZtQl9jUiPvZDlsEn/lNjWC
- NBKkZhn2pDvsECvwizsq/Xt5pSoJ/O82t+mOR2LBbSOjM++qO4XRy8awbtL/1tHOawxw
- JxHT19LePcgn+ZPuePtiMCbV/1bl/vSdCdwhChahrm3mD0UK31AQ+f+2+JQiVuXbKNKe
- BqMw==
-X-Gm-Message-State: APjAAAXvvRnstXcEm2htD+0DRfwQTOMhgnX1ioQz5hObApli99EUrlZc
- Dcg2HyiD12BbexFh5P+cAjI=
-X-Google-Smtp-Source: APXvYqz9Zh0IRJnIsPI0ob27MwSE4SKozmD6RAIqhv25vxQRksCM76Wt7pLNRicubxz6W9MaXCigXg==
-X-Received: by 2002:a17:90a:5806:: with SMTP id
- h6mr19520142pji.126.1563050326642; 
- Sat, 13 Jul 2019 13:38:46 -0700 (PDT)
-Received: from [10.230.28.130] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id h9sm12388907pgh.51.2019.07.13.13.38.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 13 Jul 2019 13:38:45 -0700 (PDT)
-To: Linus Walleij <linus.walleij@linaro.org>, Hauke Mehrtens <hauke@hauke-m.de>
-References: <20190712060734.9824-1-linus.walleij@linaro.org>
- <0fec8249-aae5-55b3-4bb7-4b83d829842d@hauke-m.de>
- <CACRpkdYWfrcAAvzOMvN6gq5rp6vE-Ot3RvwDJ3LPyHGs5zeCMw@mail.gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Openpgp: preference=signencrypt
-Message-ID: <c6151d84-a5c0-805e-c02c-6b0fa3f9a25f@gmail.com>
-Date: Sat, 13 Jul 2019 13:38:41 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=ABgl+kGGdS9UfT3SmtPWMxlAkrLrlkf54dwvS6c6vTw=;
+ b=IPZgIGxtxlqETFk3nL9Jx7SdsId7vUPogINbgUwXbVhlJkdbiHrW+DZs1VMoEeXTww
+ kU5OW8x1CdPS3Uty/3B8JDx/tpP22cI6Q/m/LRNCY3+ABMjXvggEjQ2zv327lu7IAnTF
+ 6az3CkIxAZqCWSqAoC+iQvfJTpHe1yyZzG99iwqKYaCpVgnlmrUBi/6dELMQwvQthqKK
+ OmaVVYJn03v6Un0T3eCdFAZBT9OhCgPGdzvW6GVBzDmuPm6kowyQxhqH2cic+VisXbiL
+ J8O50jlinqUZmpBVS+DnL7YOaevBHxwyZi9JfkxFc/M2U1q3JAqbjPIfbS0lS65obKnr
+ POcA==
+X-Gm-Message-State: APjAAAUdb5611sfXV/+Xy6IA4lpSIWjIN09JRBpGyPfYjp7vpBCw4g7R
+ OIka6Kn4tONc6+gdQJtN5ss=
+X-Google-Smtp-Source: APXvYqxHRdcy5S9LSFFfKyu0JJaflLgnvv3uTe8docFtCyBDK/Sm7cJdpbB5IGL4tXPNEGZczZ/SQw==
+X-Received: by 2002:a1c:be11:: with SMTP id o17mr15679592wmf.115.1563055467214; 
+ Sat, 13 Jul 2019 15:04:27 -0700 (PDT)
+Received: from debian64.daheim (p5B0D790C.dip0.t-ipconnect.de. [91.13.121.12])
+ by smtp.gmail.com with ESMTPSA id
+ y16sm24687596wrg.85.2019.07.13.15.04.25
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Sat, 13 Jul 2019 15:04:25 -0700 (PDT)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.92)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1hmQ81-0002qQ-3N; Sun, 14 Jul 2019 00:04:25 +0200
+From: Christian Lamparter <chunkeey@gmail.com>
+To: David Bauer <mail@david-bauer.net>
+Date: Sun, 14 Jul 2019 00:04:24 +0200
+Message-ID: <3556813.HsO8LZ2TBR@debian64>
+In-Reply-To: <453b6bb7-ff2f-dd78-bb1b-6a9635348304@david-bauer.net>
+References: <20190702215718.4891-1-mail@david-bauer.net>
+ <2579646.vlONLxg212@debian64>
+ <453b6bb7-ff2f-dd78-bb1b-6a9635348304@david-bauer.net>
 MIME-Version: 1.0
-In-Reply-To: <CACRpkdYWfrcAAvzOMvN6gq5rp6vE-Ot3RvwDJ3LPyHGs5zeCMw@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190713_133848_218721_C648DF13 
-X-CRM114-Status: GOOD (  23.02  )
+X-CRM114-CacheID: sfid-20190713_150430_634824_9F016A37 
+X-CRM114-Status: GOOD (  42.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ provider (chunkeey[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,7 +91,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] gemini: Bring up DSA switches
+Subject: Re: [OpenWrt-Devel] [PATCH v2] gpio-button-hotplug: mind debounce
+ interval consistently
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,162 +104,283 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Alonso <aalonso@freescale.com>,
- Christian Lamparter <chunkeey@gmail.com>, Roman Yeryomin <roman@advem.lv>,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>,
- Sebastian Luft <sebastian.luft@gmail.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: linus.walleij@linaro.org, openwrt-devel@lists.openwrt.org,
+ Petr =?utf-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Hi David,
+
+On Saturday, July 13, 2019 7:53:05 PM CEST David Bauer wrote:
+> first of all, i wouldn't have imagined that there is so mush to talk about pressing buttons ;)
+
+Well, if you remember my first versions that I pushed out of the gpio-button
+rework were really buggy, so... :(
+On the other hand, the "git commit && git push" is just one
+"enter" away. ;) We can finish this "right now" and deal with
+the "shoot from the hip" later. (Though this is not advised)
+
+> On 13.07.19 18:04, Christian Lamparter wrote:
+> > On Wednesday, July 10, 2019 12:31:12 AM CEST David Bauer wrote:
+> >> thanks for your reworked patch. I think i found two bugs around the debounce
+> >> interval for both flavors. I'll have to admit, they are both edgecases ;)
+> >>
+> >> On 06.07.19 23:57, Christian Lamparter wrote
+> >>> -static void gpio_keys_polled_check_state(struct gpio_keys_button_data *bdata)
+> >>> +static void gpio_keys_handle_button(struct gpio_keys_button_data *bdata)
+> >>>   {
+> >>> +	unsigned int type = bdata->b->type ?: EV_KEY;
+> >>>   	int state = gpio_button_get_value(bdata);
+> >>> +	unsigned long seen = jiffies;
+> >>>   
+> >>> -	if (state != bdata->last_state) {
+> >>> -		unsigned int type = bdata->b->type ?: EV_KEY;
+> >>> +	pr_debug(PFX "event type=%u, code=%u, pressed=%d\n",
+> >>> +		 type, bdata->b->code, state);
+> >>> +
+> >>> +	/* is this the initialization state? */
+> >>> +	if (bdata->last_state == -1) {
+> >>> +		/*
+> >>> +		 * Don't advertise unpressed buttons on initialization.
+> >>> +		 * Just save their state and continue otherwise this
+> >>> +		 * can cause OpenWrt to enter failsafe.
+> >>> +		 */
+> >>> +		if (type == EV_KEY && state == 0)
+> >>> +			goto set_state;
+> >>
+> >> As we are calling gpio_keys_handle_button every poll-interval, we need 
+> >> to make sure we save the initial state AFTER the button has been stable 
+> >> for the debounce interval. For irq-based keys we get this "for free" as 
+> >> we modify the execution timer for the irq handling function.
+> > 
+> > Ah, I think due to how the patch looks (as in this mail and not applied
+> > to the source code) this feature/behavior got lost there. 
+> > 
+> > I've added the gpio_keys_handle_button() below after that version of the
+> > patch is applied.
+> > 
+> > ---
+> > static void gpio_keys_handle_button(struct gpio_keys_button_data *bdata)
+> > {
+> >         unsigned int type = bdata->b->type ?: EV_KEY;
+> >         int state = gpio_button_get_value(bdata);
+> >         unsigned long seen = jiffies;
+> > 
+> >         pr_debug(PFX "event type=%u, code=%u, pressed=%d\n",
+> >                  type, bdata->b->code, state);
+> > 
+> >         /* is this the initialization state? */
+> >         if (bdata->last_state == -1) {
+> >                 /*
+> >                  * Don't advertise unpressed buttons on initialization.
+> >                  * Just save their state and continue otherwise this
+> >                  * can cause OpenWrt to enter failsafe.
+> >                  */
+> >                 if (type == EV_KEY && state == 0)
+> >                         goto set_state;
+> >                 /*
+> >                  * But we are very interested in pressed buttons and
+> >                  * initial switch state. These will be reported to
+> >                  * userland.
+> >                  */
+> >         } else if (bdata->last_state == state) {
+> >                 /* reset asserted counter (only relevant for polled keys) */
+> >                 bdata->count = 0;
+> >                 return;
+> >         }
+> > 
+> >         if (bdata->count < bdata->threshold) {
+> >                 bdata->count++;
+> >                 return;
+> >         }
+> > 
+> >         if (bdata->seen == 0)
+> >                 bdata->seen = seen;
+> > 
+> >         button_hotplug_create_event(button_map[bdata->map_entry].name, type,
+> >                                     (seen - bdata->seen) / HZ, state);
+> >         bdata->seen = seen;
+> > 
+> > set_state:
+> >         bdata->last_state = state;
+> >         bdata->count = 0;
+> > }
+> > ---
+> > 
+> > The pressed button state (for the polled) version will now always have to be
+> > stable for the debounce-duration (including on the initial state). That's
+> > guaranteed by the "if (bdata->count < bdata->threshold) { count++;return; }"
+> > path. If there's a laps during the initial state then last_state gets set to
+> > 0 and the counter is reset. But this bogus "released" event is not reported
+> > to userspace, so if it's an inital pressed state it will still be reported
+> > correctly, altough it might take another full debounce-duration. 
+> 
+> Hmm, i might have some problems grasping here, but let's take the following
+> situation:
+> 
+>      goto set_state called here
+>      |
+> 0    5    10   15   20   25   30
+> |    |    |    |    |    |    |
+> 1111110000000000000000000000000
+> 
+> Debounce: 10ms
+> Poll:     5ms
+
+This might be "easy" or really complicated... (So please hold on.)
+
+> >                 if (type == EV_KEY && state == 0)
+> >                         goto set_state;
+
+The "goto set_setstate;" only happens if state = 0 (Which in gpio-button
+context means) that the button is in an unpressed state.
+
+But, there's more going on here. In this example for this button there is:
+
+bdata->threshold = DIV_ROUND_UP(button->debounce_interval,
+                                pdata->poll_interval); // this is existing code 
+Which breaks down to:
+bdata->threshold = __KERNEL_DIV_ROUND_UP(10, 5)
+bdata->threshold = (10 + 5 - 1) / 5 = 14 / 5 = 2 (integer math)
+
+Due to: 
+
+        if (bdata->count < bdata->threshold) {
+                bdata->count++;
+                return;
+        }
+
+count must be 2 for this exit path to get skipped. However the "count" always
+starts at 0 (devm_kzalloc and count=0;)  so there are effectively 3 poll intervals
+ (0, 1 and 2) that get checked before the event goes out. Which should work
+out as >=10 ms in this case, since on the first go through we start at 0.
+
+> So, from my understanding (and to keep the behavior in line), the initial stable
+> state for GPIO-polled should be set to 0 at 20ms. No event should be created
+> for this.
+> 
+> With the gpio_keys_handle_button function you snipped above however, we would initially
+> set our state to 1 and would fire a release event at 20ms, even though this is our real
+> initial stable state.
+> 
+> failsafe is triggered on both edges, so pressed & released events would trigger it.
+> 
+> Or am i missing something here?
+
+Ok, now I'm not so sure anymore what you mean (see above and below).
+
+In my comment on first "v2" of this patch 
+<https://patchwork.ozlabs.org/patch/1117787/> I commented that for the polled
+case we already wait "software_debounce" until gpio-button does the first read.
+(For reference, it's the "Hm, well since the first state is -1 we could just as
+well schedule the work immediately here... ") so in a way the first 10 ms in this
+example are already skipped/ignored at the moment. But we can change that and
+schedule the poll immediately (like in the current openwrt version) 
+
+But in regards to the current state of the failsafe script, you are
+definitly right. This is confusing and something smells rotten.
+
+Currently the failsafe script looks like this (procd basically forwards
+everything related to BUTTON during preinit to this script thanks to
+the handler in /etc/hotplug-preinit.json):
+
+|#!/bin/sh
+|
+|[ "${TYPE}" = "switch" ] || echo ${BUTTON} > /tmp/failsafe_button
+|
+|return 0
+
+So before my gpio-button commits it looked like this:
+
+|static void gpio_keys_polled_check_state(struct gpio_keys_button_data *bdata)
+|{
+|	int state = gpio_button_get_value(bdata);
+|
+|	if (state != bdata->last_state) {
+|		unsigned int type = bdata->b->type ?: EV_KEY;
+|
+|		if (bdata->count < bdata->threshold) {
+|			bdata->count++;
+| 			return;
+|		}
+|
+|		if ((bdata->last_state != -1) || (type == EV_SW))
+|			button_hotplug_event(bdata, type, state);
+|
+|		bdata->last_state = state;
+|	}
+|
+|	bdata->count = 0;
+|}
+
+You can see that gpio_keys_polled_check_state() always "ate" initial
+state event for polled buttons (yes, both states - pressed and unpressed -) got
+ignored.  Which I think is very wrong... mostly because it goes against the 
+decades of experience I have with "holding down buttons while powering up devices"
+and expect them to get noticed properly :D. That's why my code only eats the initial
+unpressed/0 event, but reports the pressed button event. This should still be
+compatible with the current failsafe setup. 
+
+Related Note: 
+As for the sudden burst of the "device is always entering failsafe".
+I can see how this is causing problems now. Because if the polarity of
+a button was declared (or that got copied from another device without
+checking ;) ) with the wrong way; This will now become a problem because
+it "physically unpressed" button gets reported as "pressed" and this causes
+the device to always enter failsafe (unless the very button with the wrong
+polarity is pressed, which in this context means unpressed).
+
+However, I think this is a problem of the individual dts/board support code.
+But sadly I have currently no time to monitor the forums, bugtracker, ML or
+github for these problems... so what to do?
+
+> > For the irq-driven case, threshold is now 0 and therefore this gets skipped.
+> > Which should be fine since we schedule the gpio_keys_handle_button() after
+> > the debounce-interval so it should be stable at that point (if not then the
+> > debounce interval needs tweaking).
+> > 
+> > So, the button behavoir should be Ok. The "switch" case is a definitely
+> > more lenient in that the initial state. It could jump between 0 and 1 and
+> > not reset. However, a "physical" switch that manages to constantly
+> > flip-flop during the poll interval probably has a electrical problem.
+> > 
+> >>> +		/*
+> >>> +		 * But we are very interested in pressed buttons and
+> >>> +		 * initial switch state. These will be reported to
+> >>> +		 * userland.
+> >>> +		 */
+> >>> +	} else if (bdata->last_state == state) {
+> >>> +		/* reset asserted counter (only relevant for polled keys) */
+> >>
+> >> This is also needed for irq-driven keys. If the state changes two times 
+> >> within the debounce interval, gpio_keys_handle_button is still executed 
+> >> and we need to terminate here. Otherwise, we would skip a "release" or
+> >> "push" action.
+> >>
+> >> I did rework those two parts a bit and tested it with the irq and
+> >> polled flavors without a problem. See below:
+> >>
+> > I don't follow there? In your v2, you have fixed the debounce-rearming
+> > timer for the irq-case by doing mod_delayed_work() function, which is
+> > correct! So, if a new event within the debounce interval, the timer
+> > will get rescheduled by another irq to fire after after a new
+> > debounce-interval passed (so it should be stable by then).
+> 
+> You are right. Your commit was relating to the reset of the counter, my remark was
+> about "There should be no events in case last_state == current_state also for irq
+> keys. So no functional problem to see here :)
+
+Ok, so this is fine?
+
+As everyone who follows the thread can see: The struggle is real!
+Even for something as seemingly simple and benign as a gpio-button.
+
+Cheers,
+Christian
 
 
-On 7/13/2019 4:04 AM, Linus Walleij wrote:
-> On Fri, Jul 12, 2019 at 8:57 AM Hauke Mehrtens <hauke@hauke-m.de> wrote:
->> On 7/12/19 8:07 AM, Linus Walleij wrote:
-> 
->>> +     # These are all connected to eth1 thru VSC7385
->>> +     ucidef_set_interfaces_lan_wan "eth1 lan1 lan2 lan3 lan4" "eth0"
->>
->> This will create a bridge over eth1, lan1, lan2, lan3 and lan4, but I
->> think you do not have to put eth1 into this bridge, it should be
->> sufficient to have all the lanX in it.
-> 
-> It is really puzzling to me too :(
-
-drivers/net/dsa/vitesse-vsc73xx.c returns DSA_TAG_PROTO_NONE for the
-tagging protocol, which means that the DSA slave devices are only
-control devices they are not used by the data-path (which requires an
-appropriate tagging protocol to allow differentiating the Ethernet
-frames on a per-port basis). If you supported a different tagging
-protocol, then you would not be able to enslave the DSA master device
-(eth1) into the bridge, because that would conflict with the bridge's
-rx_handler, see 8db0a2ee2c6302a1dcbcdb93cb731dfc6c0cdb5e ("net: bridge:
-reject DSA-enabled master netdevices as bridge members")
-
-Your second sequence is more in line with what you should do, see the
-recent documentation examples from Benedikt:
-
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/networking/dsa/configuration.rst
-
-> 
-> What I notice is that if I do this everything works fine and if eth1
-> is not included it doesn't.
-> 
-> This sequence also works fine:
-> ifconfig eth1 169.254.1.2 netmask 255.255.255.0 up
-> ifconfig lan1 up
-> ifconfig lan2 up
-> ifconfig lan3 up
-> ifconfig lan4 up
-> 
-> I think the reason is that the IP address is not assigned to
-> eth1 (the CPU port towards the switch/DSA).
-> 
-> Maybe other DSA switches are better with this? My dmesg
-> looks like this with eth1 included in the lan-facing interfaces:
-> 
-> [   52.704396] gemini-ethernet-port 6000c000.ethernet-port eth1: link
-> flow control: both
-> [   53.046012] br-lan: port 1(eth1) entered blocking state
-> [   53.170160] br-lan: port 1(eth1) entered disabled state
-> [   53.253455] device eth1 entered promiscuous mode
-> [   53.299150] IPv6: ADDRCONF(NETDEV_UP): br-lan: link is not ready
-> [   53.388545] vsc73xx spi0.0: enable port 0
-> [   53.446029] vsc73xx spi0.0 lan1: configuring for phy/gmii link mode
-> [   53.526483] br-lan: port 2(lan1) entered blocking state
-> [   53.594789] br-lan: port 2(lan1) entered disabled state
-> [   53.665816] device lan1 entered promiscuous mode
-> [   53.728728] br-lan: port 1(eth1) entered blocking state
-> [   53.760176] br-lan: port 1(eth1) entered forwarding state
-> [   53.874449] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
-> [   54.000353] vsc73xx spi0.0: enable port 1
-> [   54.056099] vsc73xx spi0.0 lan2: configuring for phy/gmii link mode
-> [   54.142223] br-lan: port 3(lan2) entered blocking state
-> [   54.214679] br-lan: port 3(lan2) entered disabled state
-> [   54.266496] device lan2 entered promiscuous mode
-> [   54.308593] vsc73xx spi0.0: enable port 2
-> [   54.335298] vsc73xx spi0.0 lan3: configuring for phy/gmii link mode
-> [   54.377279] br-lan: port 4(lan3) entered blocking state
-> [   54.444497] br-lan: port 4(lan3) entered disabled state
-> [   54.515791] device lan3 entered promiscuous mode
-> [   54.588687] vsc73xx spi0.0: enable port 3
-> [   54.646048] vsc73xx spi0.0 lan4: configuring for phy/gmii link mode
-> [   54.726991] br-lan: port 5(lan4) entered blocking state
-> [   54.785910] vsc73xx spi0.0 lan1: Link is Up - 1Gbps/Full - flow control rx/tx
-> [   54.844478] br-lan: port 5(lan4) entered disabled state
-> [   54.915911] device lan4 entered promiscuous mode
-> [   54.976533] br-lan: port 2(lan1) entered blocking state
-> [   55.007954] br-lan: port 2(lan1) entered forwarding state
-> 
-> After this I can ping the host:
-> # ping 169.254.1.1
-> PING 169.254.1.1 (169.254.1.1): 56 data bytes
-> 64 bytes from 169.254.1.1: seq=0 ttl=64 time=2.049 ms
-> 64 bytes from 169.254.1.1: seq=6 ttl=64 time=0.913 ms
-> 64 bytes from 169.254.1.1: seq=25 ttl=64 time=1.268 ms
-> And the host can ping the device:
-> $ ping 169.254.1.2
-> PING 169.254.1.2 (169.254.1.2) 56(84) bytes of data.
-> 64 bytes from 169.254.1.2: icmp_seq=1 ttl=64 time=1.12 ms
-> 64 bytes from 169.254.1.2: icmp_seq=2 ttl=64 time=0.582 ms
-> 64 bytes from 169.254.1.2: icmp_seq=3 ttl=64 time=0.576 ms
-> 64 bytes from 169.254.1.2: icmp_seq=4 ttl=64 time=0.654 ms
-> 
-> But if I remove eth1 from the LAN facing interfaces it looks like
-> this:
-> 
-> [   52.433253] gemini-ethernet-port 6000c000.ethernet-port eth1: link
-> flow control: both
-> [   52.769503] IPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready
-> [   52.925178] device eth1 entered promiscuous mode
-> [   52.987672] vsc73xx spi0.0: enable port 0
-> [   53.014460] vsc73xx spi0.0 lan1: configuring for phy/gmii link mode
-> [   53.054754] br-lan: port 1(lan1) entered blocking state
-> [   53.086323] br-lan: port 1(lan1) entered disabled state
-> [   53.119857] device lan1 entered promiscuous mode
-> [   53.160541] IPv6: ADDRCONF(NETDEV_UP): br-lan: link is not ready
-> [   53.250938] vsc73xx spi0.0: enable port 1
-> [   53.309220] vsc73xx spi0.0 lan2: configuring for phy/gmii link mode
-> [   53.394269] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
-> [   53.476271] br-lan: port 2(lan2) entered blocking state
-> [   53.543459] br-lan: port 2(lan2) entered disabled state
-> [   53.604655] device lan2 entered promiscuous mode
-> [   53.686932] vsc73xx spi0.0: enable port 2
-> [   53.744974] vsc73xx spi0.0 lan3: configuring for phy/gmii link mode
-> [   53.820229] br-lan: port 3(lan3) entered blocking state
-> [   53.893505] br-lan: port 3(lan3) entered disabled state
-> [   53.964682] device lan3 entered promiscuous mode
-> [   54.047383] vsc73xx spi0.0: enable port 3
-> [   54.087228] vsc73xx spi0.0 lan4: configuring for phy/gmii link mode
-> [   54.128009] br-lan: port 4(lan4) entered blocking state
-> [   54.160537] br-lan: port 4(lan4) entered disabled state
-> [   54.194726] device lan4 entered promiscuous mode
-> [   54.284743] vsc73xx spi0.0 lan1: Link is Up - 1Gbps/Full - flow control rx/tx
-> [   54.453740] br-lan: port 1(lan1) entered blocking state
-> [   54.485220] br-lan: port 1(lan1) entered forwarding state
-> [   54.883281] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
-> 
-> This kind of "should work".
-> 
-> But now I can't ping anything. As you can see what is missing,
-> since the eth1 is no longer part of the bridge, is this:
-> [   53.046012] br-lan: port 1(eth1) entered blocking state
-> [   53.170160] br-lan: port 1(eth1) entered disabled state
-> 
-> I wonder if it is some bug in my DSA driver or some basic assumption that
-> the network tools are making about the default state or so :/
-> 
-> I guess I keep digging around in it
-> 
-> Yours,
-> Linus Walleij
-> 
-
--- 
-Florian
 
 _______________________________________________
 openwrt-devel mailing list

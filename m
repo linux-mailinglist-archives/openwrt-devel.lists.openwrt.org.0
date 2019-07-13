@@ -2,82 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35025679D4
-	for <lists+openwrt-devel@lfdr.de>; Sat, 13 Jul 2019 13:04:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D2C5679EC
+	for <lists+openwrt-devel@lfdr.de>; Sat, 13 Jul 2019 13:13:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CyxcFe3PbbacYrHd1IAcMWZeydiQ5rMWyh1JCBMqccE=; b=p0ynrvlkVD6Q6L
-	w/w0nJMS2yn8GxjVfK+UIEIkP4i3PpqleAwSWtxhLlwYCKkzIDQ+Db1NAWt/zkcUHzqRbJ7GM3IJ0
-	uTNh9kn66KaTWyJ8RGuaTuzJyfhJx6KUcPr/l4xDnd0Vs7PGzaVzNrD7DtzWWa+DaOZLNuQwzYdpi
-	Q5sUjq+8N2zWpL4rqP23cQtYjI3YbCyoqhMjFy4naPFI2GVN+lm8a5AqYbtUeaxJP0gbnfe6LvjRV
-	AoUK/SRN7A6RUpXhLyDyJZu8OK1W79Rnc41vNl6lWjCKuZckMY1lo1lqomWlXibvohBdTCVW0M0LG
-	Vfg77I7yBtmR5qUPnPCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kciSypStRYXyWleKmfaZ/33N/wuw4FPx/NrcZcDus7g=; b=tOjyEKnmY4tpmyRo9ZBgEQ571
+	QFwD7ys5UCOchcpasWGIhaNSSI94zd+PHCz7szynGFnZiGBjAehoHA3fSKxxoyEl7OVWny0niv5+R
+	DLldXdfJsBVBr1VhmRl8eJJeTNHl4IPdy+L0lNz8NiOcPg7kvbm8a1sp2SdqlhunVZv82487mvgb/
+	PobVYDH8MxIY/1L+rgi4DzAmDqXQp30fKDHKCwjfTGOFLlZfPcrekBjeQaDTgEz6LzVKBrAwpZ0Rq
+	+aAo5K3R0EzWIK1lczWZO7W274rkckDCTrUxpaRm0zjJaDHd4K6Zf8FiK+iWMtC6ULZzYfABRiVAT
+	TM0lhubNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmFpS-0006PG-Qh; Sat, 13 Jul 2019 11:04:34 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1hmFyA-0001Qm-2I; Sat, 13 Jul 2019 11:13:34 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmFpM-0006Ow-CZ
- for openwrt-devel@lists.openwrt.org; Sat, 13 Jul 2019 11:04:30 +0000
-Received: by mail-lj1-x242.google.com with SMTP id r9so11722510ljg.5
- for <openwrt-devel@lists.openwrt.org>; Sat, 13 Jul 2019 04:04:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=A+sA4i9w/ahsNrv+ob7ssv1h9PEESNtOzRsXHGa4EhQ=;
- b=KtcDvkeSlYHDUhmkO9inQh90/0rUPy+qpvaWGr6z0XjuIQXtROE2fQXXkfYZyxxwQH
- UNTNQIKka6CiTaGz2D/mvTq3uEdCbEIS7h3t3LCFA82hj0FH8Jsoqrs5cZk9fVL3oVJC
- xZ0kiDOF8kv0mWoC67bmcSDJ5GakKEea21hPipxw9Fq7P2qeL5H8Gaov3VcCYXzYZZE6
- 0jMldL8yoUwsnNDz94/v8T6FB4lKXOF/gKzs8CZuqFpvGPuQC18YikdWI63HFYpoyfhs
- MJmsbm20bFhb09Xa45STsrR77XLSuAItrw+ZeYje2b8aTVLWAfHuGDI6GsxbVRilI072
- xotA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=A+sA4i9w/ahsNrv+ob7ssv1h9PEESNtOzRsXHGa4EhQ=;
- b=OeLeIJLqPKAA4pvqS4b7hKqG+XN1eELc1LsWgOi9TlxMh/LRUMcPdJZb6vhfLb1dlw
- I/RmEXGSuMO1JjduLtO5YLPtFbzBb/JHb9vsQGkBdbhZ154QSWv2BU7d+ctaN42OavLg
- uVG4YQVK1HKKQ7w4iArIlO3q24+Qxcd5J8mPPd9UxrbDp47GZsvspl6ZIfbEkGg94TqB
- j+TPpxMephm725Y2kyk6T3PEU6Y8bX7HH0/LUddu7tYMLZVVKr0AatciuZInVQksB8rE
- GScaT75EoIddsV9LIaQuNYgWQi/oNtASD0uagUkgRd3z7l4nayB/8G1cQuhkcCrkMfHN
- PwXA==
-X-Gm-Message-State: APjAAAVHAaN9pvvmL4nainl5UtW1kAn8DUqg/4zlgd/l1Zg+HVIHP9Xc
- dpmCZwS6MrNKxJC75oNCaIjD+ry179TFBazzQkqL/A==
-X-Google-Smtp-Source: APXvYqzkybhbV2v4GLSenlWhXLmUV9Z4r3lm+JZEIPmac1Cxa58M+hKr9dj8cO3Nqeq4QgYTlLEG1XMr3tJ8/PlCyP0=
-X-Received: by 2002:a2e:781a:: with SMTP id t26mr8551366ljc.28.1563015865735; 
- Sat, 13 Jul 2019 04:04:25 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hmFy1-0001Pt-GJ
+ for openwrt-devel@lists.openwrt.org; Sat, 13 Jul 2019 11:13:27 +0000
+Received: from pd95fd64b.dip0.t-ipconnect.de ([217.95.214.75]
+ helo=[192.168.45.104])
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>)
+ id 1hmFxw-0003mF-DQ; Sat, 13 Jul 2019 13:13:20 +0200
+To: Linus Walleij <linus.walleij@linaro.org>, Hauke Mehrtens <hauke@hauke-m.de>
 References: <20190712060734.9824-1-linus.walleij@linaro.org>
  <0fec8249-aae5-55b3-4bb7-4b83d829842d@hauke-m.de>
-In-Reply-To: <0fec8249-aae5-55b3-4bb7-4b83d829842d@hauke-m.de>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 13 Jul 2019 13:04:14 +0200
-Message-ID: <CACRpkdYWfrcAAvzOMvN6gq5rp6vE-Ot3RvwDJ3LPyHGs5zeCMw@mail.gmail.com>
-To: Hauke Mehrtens <hauke@hauke-m.de>
+ <CACRpkdYWfrcAAvzOMvN6gq5rp6vE-Ot3RvwDJ3LPyHGs5zeCMw@mail.gmail.com>
+From: John Crispin <john@phrozen.org>
+Message-ID: <5c7b8c87-a4c2-7281-3feb-6c6d134abcbf@phrozen.org>
+Date: Sat, 13 Jul 2019 13:13:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CACRpkdYWfrcAAvzOMvN6gq5rp6vE-Ot3RvwDJ3LPyHGs5zeCMw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190713_040428_494170_34F3314F 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190713_041325_730714_2A5CC03B 
+X-CRM114-Status: GOOD (  22.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 Subject: Re: [OpenWrt-Devel] [PATCH] gemini: Bring up DSA switches
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -90,142 +62,132 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
+Cc: Adrian Alonso <aalonso@freescale.com>,
  Christian Lamparter <chunkeey@gmail.com>, Roman Yeryomin <roman@advem.lv>,
  Hans Ulli Kroll <ulli.kroll@googlemail.com>,
- Adrian Alonso <aalonso@freescale.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
  Sebastian Luft <sebastian.luft@gmail.com>,
  OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Fri, Jul 12, 2019 at 8:57 AM Hauke Mehrtens <hauke@hauke-m.de> wrote:
-> On 7/12/19 8:07 AM, Linus Walleij wrote:
-
-> > +     # These are all connected to eth1 thru VSC7385
-> > +     ucidef_set_interfaces_lan_wan "eth1 lan1 lan2 lan3 lan4" "eth0"
->
-> This will create a bridge over eth1, lan1, lan2, lan3 and lan4, but I
-> think you do not have to put eth1 into this bridge, it should be
-> sufficient to have all the lanX in it.
-
-It is really puzzling to me too :(
-
-What I notice is that if I do this everything works fine and if eth1
-is not included it doesn't.
-
-This sequence also works fine:
-ifconfig eth1 169.254.1.2 netmask 255.255.255.0 up
-ifconfig lan1 up
-ifconfig lan2 up
-ifconfig lan3 up
-ifconfig lan4 up
-
-I think the reason is that the IP address is not assigned to
-eth1 (the CPU port towards the switch/DSA).
-
-Maybe other DSA switches are better with this? My dmesg
-looks like this with eth1 included in the lan-facing interfaces:
-
-[   52.704396] gemini-ethernet-port 6000c000.ethernet-port eth1: link
-flow control: both
-[   53.046012] br-lan: port 1(eth1) entered blocking state
-[   53.170160] br-lan: port 1(eth1) entered disabled state
-[   53.253455] device eth1 entered promiscuous mode
-[   53.299150] IPv6: ADDRCONF(NETDEV_UP): br-lan: link is not ready
-[   53.388545] vsc73xx spi0.0: enable port 0
-[   53.446029] vsc73xx spi0.0 lan1: configuring for phy/gmii link mode
-[   53.526483] br-lan: port 2(lan1) entered blocking state
-[   53.594789] br-lan: port 2(lan1) entered disabled state
-[   53.665816] device lan1 entered promiscuous mode
-[   53.728728] br-lan: port 1(eth1) entered blocking state
-[   53.760176] br-lan: port 1(eth1) entered forwarding state
-[   53.874449] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
-[   54.000353] vsc73xx spi0.0: enable port 1
-[   54.056099] vsc73xx spi0.0 lan2: configuring for phy/gmii link mode
-[   54.142223] br-lan: port 3(lan2) entered blocking state
-[   54.214679] br-lan: port 3(lan2) entered disabled state
-[   54.266496] device lan2 entered promiscuous mode
-[   54.308593] vsc73xx spi0.0: enable port 2
-[   54.335298] vsc73xx spi0.0 lan3: configuring for phy/gmii link mode
-[   54.377279] br-lan: port 4(lan3) entered blocking state
-[   54.444497] br-lan: port 4(lan3) entered disabled state
-[   54.515791] device lan3 entered promiscuous mode
-[   54.588687] vsc73xx spi0.0: enable port 3
-[   54.646048] vsc73xx spi0.0 lan4: configuring for phy/gmii link mode
-[   54.726991] br-lan: port 5(lan4) entered blocking state
-[   54.785910] vsc73xx spi0.0 lan1: Link is Up - 1Gbps/Full - flow control rx/tx
-[   54.844478] br-lan: port 5(lan4) entered disabled state
-[   54.915911] device lan4 entered promiscuous mode
-[   54.976533] br-lan: port 2(lan1) entered blocking state
-[   55.007954] br-lan: port 2(lan1) entered forwarding state
-
-After this I can ping the host:
-# ping 169.254.1.1
-PING 169.254.1.1 (169.254.1.1): 56 data bytes
-64 bytes from 169.254.1.1: seq=0 ttl=64 time=2.049 ms
-64 bytes from 169.254.1.1: seq=6 ttl=64 time=0.913 ms
-64 bytes from 169.254.1.1: seq=25 ttl=64 time=1.268 ms
-And the host can ping the device:
-$ ping 169.254.1.2
-PING 169.254.1.2 (169.254.1.2) 56(84) bytes of data.
-64 bytes from 169.254.1.2: icmp_seq=1 ttl=64 time=1.12 ms
-64 bytes from 169.254.1.2: icmp_seq=2 ttl=64 time=0.582 ms
-64 bytes from 169.254.1.2: icmp_seq=3 ttl=64 time=0.576 ms
-64 bytes from 169.254.1.2: icmp_seq=4 ttl=64 time=0.654 ms
-
-But if I remove eth1 from the LAN facing interfaces it looks like
-this:
-
-[   52.433253] gemini-ethernet-port 6000c000.ethernet-port eth1: link
-flow control: both
-[   52.769503] IPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready
-[   52.925178] device eth1 entered promiscuous mode
-[   52.987672] vsc73xx spi0.0: enable port 0
-[   53.014460] vsc73xx spi0.0 lan1: configuring for phy/gmii link mode
-[   53.054754] br-lan: port 1(lan1) entered blocking state
-[   53.086323] br-lan: port 1(lan1) entered disabled state
-[   53.119857] device lan1 entered promiscuous mode
-[   53.160541] IPv6: ADDRCONF(NETDEV_UP): br-lan: link is not ready
-[   53.250938] vsc73xx spi0.0: enable port 1
-[   53.309220] vsc73xx spi0.0 lan2: configuring for phy/gmii link mode
-[   53.394269] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
-[   53.476271] br-lan: port 2(lan2) entered blocking state
-[   53.543459] br-lan: port 2(lan2) entered disabled state
-[   53.604655] device lan2 entered promiscuous mode
-[   53.686932] vsc73xx spi0.0: enable port 2
-[   53.744974] vsc73xx spi0.0 lan3: configuring for phy/gmii link mode
-[   53.820229] br-lan: port 3(lan3) entered blocking state
-[   53.893505] br-lan: port 3(lan3) entered disabled state
-[   53.964682] device lan3 entered promiscuous mode
-[   54.047383] vsc73xx spi0.0: enable port 3
-[   54.087228] vsc73xx spi0.0 lan4: configuring for phy/gmii link mode
-[   54.128009] br-lan: port 4(lan4) entered blocking state
-[   54.160537] br-lan: port 4(lan4) entered disabled state
-[   54.194726] device lan4 entered promiscuous mode
-[   54.284743] vsc73xx spi0.0 lan1: Link is Up - 1Gbps/Full - flow control rx/tx
-[   54.453740] br-lan: port 1(lan1) entered blocking state
-[   54.485220] br-lan: port 1(lan1) entered forwarding state
-[   54.883281] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
-
-This kind of "should work".
-
-But now I can't ping anything. As you can see what is missing,
-since the eth1 is no longer part of the bridge, is this:
-[   53.046012] br-lan: port 1(eth1) entered blocking state
-[   53.170160] br-lan: port 1(eth1) entered disabled state
-
-I wonder if it is some bug in my DSA driver or some basic assumption that
-the network tools are making about the default state or so :/
-
-I guess I keep digging around in it
-
-Yours,
-Linus Walleij
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+Ck9uIDEzLzA3LzIwMTkgMTM6MDQsIExpbnVzIFdhbGxlaWogd3JvdGU6Cj4gT24gRnJpLCBKdWwg
+MTIsIDIwMTkgYXQgODo1NyBBTSBIYXVrZSBNZWhydGVucyA8aGF1a2VAaGF1a2UtbS5kZT4gd3Jv
+dGU6Cj4+IE9uIDcvMTIvMTkgODowNyBBTSwgTGludXMgV2FsbGVpaiB3cm90ZToKPj4+ICsgICAg
+ICMgVGhlc2UgYXJlIGFsbCBjb25uZWN0ZWQgdG8gZXRoMSB0aHJ1IFZTQzczODUKPj4+ICsgICAg
+IHVjaWRlZl9zZXRfaW50ZXJmYWNlc19sYW5fd2FuICJldGgxIGxhbjEgbGFuMiBsYW4zIGxhbjQi
+ICJldGgwIgo+PiBUaGlzIHdpbGwgY3JlYXRlIGEgYnJpZGdlIG92ZXIgZXRoMSwgbGFuMSwgbGFu
+MiwgbGFuMyBhbmQgbGFuNCwgYnV0IEkKPj4gdGhpbmsgeW91IGRvIG5vdCBoYXZlIHRvIHB1dCBl
+dGgxIGludG8gdGhpcyBicmlkZ2UsIGl0IHNob3VsZCBiZQo+PiBzdWZmaWNpZW50IHRvIGhhdmUg
+YWxsIHRoZSBsYW5YIGluIGl0Lgo+IEl0IGlzIHJlYWxseSBwdXp6bGluZyB0byBtZSB0b28gOigK
+Pgo+IFdoYXQgSSBub3RpY2UgaXMgdGhhdCBpZiBJIGRvIHRoaXMgZXZlcnl0aGluZyB3b3JrcyBm
+aW5lIGFuZCBpZiBldGgxCj4gaXMgbm90IGluY2x1ZGVkIGl0IGRvZXNuJ3QuCj4KPiBUaGlzIHNl
+cXVlbmNlIGFsc28gd29ya3MgZmluZToKPiBpZmNvbmZpZyBldGgxIDE2OS4yNTQuMS4yIG5ldG1h
+c2sgMjU1LjI1NS4yNTUuMCB1cAo+IGlmY29uZmlnIGxhbjEgdXAKPiBpZmNvbmZpZyBsYW4yIHVw
+Cj4gaWZjb25maWcgbGFuMyB1cAo+IGlmY29uZmlnIGxhbjQgdXAKPgo+IEkgdGhpbmsgdGhlIHJl
+YXNvbiBpcyB0aGF0IHRoZSBJUCBhZGRyZXNzIGlzIG5vdCBhc3NpZ25lZCB0bwo+IGV0aDEgKHRo
+ZSBDUFUgcG9ydCB0b3dhcmRzIHRoZSBzd2l0Y2gvRFNBKS4KPgo+IE1heWJlIG90aGVyIERTQSBz
+d2l0Y2hlcyBhcmUgYmV0dGVyIHdpdGggdGhpcz8gTXkgZG1lc2cKPiBsb29rcyBsaWtlIHRoaXMg
+d2l0aCBldGgxIGluY2x1ZGVkIGluIHRoZSBsYW4tZmFjaW5nIGludGVyZmFjZXM6CgpIaSBMaW51
+cywKCkkgcmVjYWxsIHdoaWxlIGJyaW5naW5nIHVwIFFDQThrIHRoYXQgdGhlIHVuZGVybHlpbmcg
+cGh5c2ljYWwgZXRoZXJuZXQgCm5lZWRzIHRvIGJlIHVwIGFuZCBoYXZlIGEgdmFsaWQgbWFjIGFk
+ZHIgb3RoZXJ3aXNlIHRoZSB1bmljYXN0IGZpbHRlciBvZiAKdGhlIG1hYyBpcCBibG9jayB3b3Vs
+ZCBkcm9wIHRyYWZmaWMuIGxvbmcgc2hvdCBndWVzcywgdGhlIG1hYyBvZiBldGgxIApwcm9iYWJs
+eSBpbXBsaWN0bHkgYnJpbmdzIHVwIHRoZSB1bmkgY2FzdCBmaWx0ZXIgd2hlbiB5b3Ugc2V0IGFu
+IElQLiB0cnkgCmp1c3QgZG9pbmcgYW4gaWZjb25maWcgdXAgYW5kIHNldHRpbmcgdGhlIHNhbWUg
+bWFjIGFzIHRoZSBzd2l0Y2hkZXYgcG9ydHMuCgogwqDCoMKgIEpvaG4KCgoKPiBbICAgNTIuNzA0
+Mzk2XSBnZW1pbmktZXRoZXJuZXQtcG9ydCA2MDAwYzAwMC5ldGhlcm5ldC1wb3J0IGV0aDE6IGxp
+bmsKPiBmbG93IGNvbnRyb2w6IGJvdGgKPiBbICAgNTMuMDQ2MDEyXSBici1sYW46IHBvcnQgMShl
+dGgxKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRlCj4gWyAgIDUzLjE3MDE2MF0gYnItbGFuOiBwb3J0
+IDEoZXRoMSkgZW50ZXJlZCBkaXNhYmxlZCBzdGF0ZQo+IFsgICA1My4yNTM0NTVdIGRldmljZSBl
+dGgxIGVudGVyZWQgcHJvbWlzY3VvdXMgbW9kZQo+IFsgICA1My4yOTkxNTBdIElQdjY6IEFERFJD
+T05GKE5FVERFVl9VUCk6IGJyLWxhbjogbGluayBpcyBub3QgcmVhZHkKPiBbICAgNTMuMzg4NTQ1
+XSB2c2M3M3h4IHNwaTAuMDogZW5hYmxlIHBvcnQgMAo+IFsgICA1My40NDYwMjldIHZzYzczeHgg
+c3BpMC4wIGxhbjE6IGNvbmZpZ3VyaW5nIGZvciBwaHkvZ21paSBsaW5rIG1vZGUKPiBbICAgNTMu
+NTI2NDgzXSBici1sYW46IHBvcnQgMihsYW4xKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRlCj4gWyAg
+IDUzLjU5NDc4OV0gYnItbGFuOiBwb3J0IDIobGFuMSkgZW50ZXJlZCBkaXNhYmxlZCBzdGF0ZQo+
+IFsgICA1My42NjU4MTZdIGRldmljZSBsYW4xIGVudGVyZWQgcHJvbWlzY3VvdXMgbW9kZQo+IFsg
+ICA1My43Mjg3MjhdIGJyLWxhbjogcG9ydCAxKGV0aDEpIGVudGVyZWQgYmxvY2tpbmcgc3RhdGUK
+PiBbICAgNTMuNzYwMTc2XSBici1sYW46IHBvcnQgMShldGgxKSBlbnRlcmVkIGZvcndhcmRpbmcg
+c3RhdGUKPiBbICAgNTMuODc0NDQ5XSBJUHY2OiBBRERSQ09ORihORVRERVZfQ0hBTkdFKTogYnIt
+bGFuOiBsaW5rIGJlY29tZXMgcmVhZHkKPiBbICAgNTQuMDAwMzUzXSB2c2M3M3h4IHNwaTAuMDog
+ZW5hYmxlIHBvcnQgMQo+IFsgICA1NC4wNTYwOTldIHZzYzczeHggc3BpMC4wIGxhbjI6IGNvbmZp
+Z3VyaW5nIGZvciBwaHkvZ21paSBsaW5rIG1vZGUKPiBbICAgNTQuMTQyMjIzXSBici1sYW46IHBv
+cnQgMyhsYW4yKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRlCj4gWyAgIDU0LjIxNDY3OV0gYnItbGFu
+OiBwb3J0IDMobGFuMikgZW50ZXJlZCBkaXNhYmxlZCBzdGF0ZQo+IFsgICA1NC4yNjY0OTZdIGRl
+dmljZSBsYW4yIGVudGVyZWQgcHJvbWlzY3VvdXMgbW9kZQo+IFsgICA1NC4zMDg1OTNdIHZzYzcz
+eHggc3BpMC4wOiBlbmFibGUgcG9ydCAyCj4gWyAgIDU0LjMzNTI5OF0gdnNjNzN4eCBzcGkwLjAg
+bGFuMzogY29uZmlndXJpbmcgZm9yIHBoeS9nbWlpIGxpbmsgbW9kZQo+IFsgICA1NC4zNzcyNzld
+IGJyLWxhbjogcG9ydCA0KGxhbjMpIGVudGVyZWQgYmxvY2tpbmcgc3RhdGUKPiBbICAgNTQuNDQ0
+NDk3XSBici1sYW46IHBvcnQgNChsYW4zKSBlbnRlcmVkIGRpc2FibGVkIHN0YXRlCj4gWyAgIDU0
+LjUxNTc5MV0gZGV2aWNlIGxhbjMgZW50ZXJlZCBwcm9taXNjdW91cyBtb2RlCj4gWyAgIDU0LjU4
+ODY4N10gdnNjNzN4eCBzcGkwLjA6IGVuYWJsZSBwb3J0IDMKPiBbICAgNTQuNjQ2MDQ4XSB2c2M3
+M3h4IHNwaTAuMCBsYW40OiBjb25maWd1cmluZyBmb3IgcGh5L2dtaWkgbGluayBtb2RlCj4gWyAg
+IDU0LjcyNjk5MV0gYnItbGFuOiBwb3J0IDUobGFuNCkgZW50ZXJlZCBibG9ja2luZyBzdGF0ZQo+
+IFsgICA1NC43ODU5MTBdIHZzYzczeHggc3BpMC4wIGxhbjE6IExpbmsgaXMgVXAgLSAxR2Jwcy9G
+dWxsIC0gZmxvdyBjb250cm9sIHJ4L3R4Cj4gWyAgIDU0Ljg0NDQ3OF0gYnItbGFuOiBwb3J0IDUo
+bGFuNCkgZW50ZXJlZCBkaXNhYmxlZCBzdGF0ZQo+IFsgICA1NC45MTU5MTFdIGRldmljZSBsYW40
+IGVudGVyZWQgcHJvbWlzY3VvdXMgbW9kZQo+IFsgICA1NC45NzY1MzNdIGJyLWxhbjogcG9ydCAy
+KGxhbjEpIGVudGVyZWQgYmxvY2tpbmcgc3RhdGUKPiBbICAgNTUuMDA3OTU0XSBici1sYW46IHBv
+cnQgMihsYW4xKSBlbnRlcmVkIGZvcndhcmRpbmcgc3RhdGUKPgo+IEFmdGVyIHRoaXMgSSBjYW4g
+cGluZyB0aGUgaG9zdDoKPiAjIHBpbmcgMTY5LjI1NC4xLjEKPiBQSU5HIDE2OS4yNTQuMS4xICgx
+NjkuMjU0LjEuMSk6IDU2IGRhdGEgYnl0ZXMKPiA2NCBieXRlcyBmcm9tIDE2OS4yNTQuMS4xOiBz
+ZXE9MCB0dGw9NjQgdGltZT0yLjA0OSBtcwo+IDY0IGJ5dGVzIGZyb20gMTY5LjI1NC4xLjE6IHNl
+cT02IHR0bD02NCB0aW1lPTAuOTEzIG1zCj4gNjQgYnl0ZXMgZnJvbSAxNjkuMjU0LjEuMTogc2Vx
+PTI1IHR0bD02NCB0aW1lPTEuMjY4IG1zCj4gQW5kIHRoZSBob3N0IGNhbiBwaW5nIHRoZSBkZXZp
+Y2U6Cj4gJCBwaW5nIDE2OS4yNTQuMS4yCj4gUElORyAxNjkuMjU0LjEuMiAoMTY5LjI1NC4xLjIp
+IDU2KDg0KSBieXRlcyBvZiBkYXRhLgo+IDY0IGJ5dGVzIGZyb20gMTY5LjI1NC4xLjI6IGljbXBf
+c2VxPTEgdHRsPTY0IHRpbWU9MS4xMiBtcwo+IDY0IGJ5dGVzIGZyb20gMTY5LjI1NC4xLjI6IGlj
+bXBfc2VxPTIgdHRsPTY0IHRpbWU9MC41ODIgbXMKPiA2NCBieXRlcyBmcm9tIDE2OS4yNTQuMS4y
+OiBpY21wX3NlcT0zIHR0bD02NCB0aW1lPTAuNTc2IG1zCj4gNjQgYnl0ZXMgZnJvbSAxNjkuMjU0
+LjEuMjogaWNtcF9zZXE9NCB0dGw9NjQgdGltZT0wLjY1NCBtcwo+Cj4gQnV0IGlmIEkgcmVtb3Zl
+IGV0aDEgZnJvbSB0aGUgTEFOIGZhY2luZyBpbnRlcmZhY2VzIGl0IGxvb2tzIGxpa2UKPiB0aGlz
+Ogo+Cj4gWyAgIDUyLjQzMzI1M10gZ2VtaW5pLWV0aGVybmV0LXBvcnQgNjAwMGMwMDAuZXRoZXJu
+ZXQtcG9ydCBldGgxOiBsaW5rCj4gZmxvdyBjb250cm9sOiBib3RoCj4gWyAgIDUyLjc2OTUwM10g
+SVB2NjogQUREUkNPTkYoTkVUREVWX1VQKTogZXRoMTogbGluayBpcyBub3QgcmVhZHkKPiBbICAg
+NTIuOTI1MTc4XSBkZXZpY2UgZXRoMSBlbnRlcmVkIHByb21pc2N1b3VzIG1vZGUKPiBbICAgNTIu
+OTg3NjcyXSB2c2M3M3h4IHNwaTAuMDogZW5hYmxlIHBvcnQgMAo+IFsgICA1My4wMTQ0NjBdIHZz
+YzczeHggc3BpMC4wIGxhbjE6IGNvbmZpZ3VyaW5nIGZvciBwaHkvZ21paSBsaW5rIG1vZGUKPiBb
+ICAgNTMuMDU0NzU0XSBici1sYW46IHBvcnQgMShsYW4xKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRl
+Cj4gWyAgIDUzLjA4NjMyM10gYnItbGFuOiBwb3J0IDEobGFuMSkgZW50ZXJlZCBkaXNhYmxlZCBz
+dGF0ZQo+IFsgICA1My4xMTk4NTddIGRldmljZSBsYW4xIGVudGVyZWQgcHJvbWlzY3VvdXMgbW9k
+ZQo+IFsgICA1My4xNjA1NDFdIElQdjY6IEFERFJDT05GKE5FVERFVl9VUCk6IGJyLWxhbjogbGlu
+ayBpcyBub3QgcmVhZHkKPiBbICAgNTMuMjUwOTM4XSB2c2M3M3h4IHNwaTAuMDogZW5hYmxlIHBv
+cnQgMQo+IFsgICA1My4zMDkyMjBdIHZzYzczeHggc3BpMC4wIGxhbjI6IGNvbmZpZ3VyaW5nIGZv
+ciBwaHkvZ21paSBsaW5rIG1vZGUKPiBbICAgNTMuMzk0MjY5XSBJUHY2OiBBRERSQ09ORihORVRE
+RVZfQ0hBTkdFKTogZXRoMTogbGluayBiZWNvbWVzIHJlYWR5Cj4gWyAgIDUzLjQ3NjI3MV0gYnIt
+bGFuOiBwb3J0IDIobGFuMikgZW50ZXJlZCBibG9ja2luZyBzdGF0ZQo+IFsgICA1My41NDM0NTld
+IGJyLWxhbjogcG9ydCAyKGxhbjIpIGVudGVyZWQgZGlzYWJsZWQgc3RhdGUKPiBbICAgNTMuNjA0
+NjU1XSBkZXZpY2UgbGFuMiBlbnRlcmVkIHByb21pc2N1b3VzIG1vZGUKPiBbICAgNTMuNjg2OTMy
+XSB2c2M3M3h4IHNwaTAuMDogZW5hYmxlIHBvcnQgMgo+IFsgICA1My43NDQ5NzRdIHZzYzczeHgg
+c3BpMC4wIGxhbjM6IGNvbmZpZ3VyaW5nIGZvciBwaHkvZ21paSBsaW5rIG1vZGUKPiBbICAgNTMu
+ODIwMjI5XSBici1sYW46IHBvcnQgMyhsYW4zKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRlCj4gWyAg
+IDUzLjg5MzUwNV0gYnItbGFuOiBwb3J0IDMobGFuMykgZW50ZXJlZCBkaXNhYmxlZCBzdGF0ZQo+
+IFsgICA1My45NjQ2ODJdIGRldmljZSBsYW4zIGVudGVyZWQgcHJvbWlzY3VvdXMgbW9kZQo+IFsg
+ICA1NC4wNDczODNdIHZzYzczeHggc3BpMC4wOiBlbmFibGUgcG9ydCAzCj4gWyAgIDU0LjA4NzIy
+OF0gdnNjNzN4eCBzcGkwLjAgbGFuNDogY29uZmlndXJpbmcgZm9yIHBoeS9nbWlpIGxpbmsgbW9k
+ZQo+IFsgICA1NC4xMjgwMDldIGJyLWxhbjogcG9ydCA0KGxhbjQpIGVudGVyZWQgYmxvY2tpbmcg
+c3RhdGUKPiBbICAgNTQuMTYwNTM3XSBici1sYW46IHBvcnQgNChsYW40KSBlbnRlcmVkIGRpc2Fi
+bGVkIHN0YXRlCj4gWyAgIDU0LjE5NDcyNl0gZGV2aWNlIGxhbjQgZW50ZXJlZCBwcm9taXNjdW91
+cyBtb2RlCj4gWyAgIDU0LjI4NDc0M10gdnNjNzN4eCBzcGkwLjAgbGFuMTogTGluayBpcyBVcCAt
+IDFHYnBzL0Z1bGwgLSBmbG93IGNvbnRyb2wgcngvdHgKPiBbICAgNTQuNDUzNzQwXSBici1sYW46
+IHBvcnQgMShsYW4xKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRlCj4gWyAgIDU0LjQ4NTIyMF0gYnIt
+bGFuOiBwb3J0IDEobGFuMSkgZW50ZXJlZCBmb3J3YXJkaW5nIHN0YXRlCj4gWyAgIDU0Ljg4MzI4
+MV0gSVB2NjogQUREUkNPTkYoTkVUREVWX0NIQU5HRSk6IGJyLWxhbjogbGluayBiZWNvbWVzIHJl
+YWR5Cj4KPiBUaGlzIGtpbmQgb2YgInNob3VsZCB3b3JrIi4KPgo+IEJ1dCBub3cgSSBjYW4ndCBw
+aW5nIGFueXRoaW5nLiBBcyB5b3UgY2FuIHNlZSB3aGF0IGlzIG1pc3NpbmcsCj4gc2luY2UgdGhl
+IGV0aDEgaXMgbm8gbG9uZ2VyIHBhcnQgb2YgdGhlIGJyaWRnZSwgaXMgdGhpczoKPiBbICAgNTMu
+MDQ2MDEyXSBici1sYW46IHBvcnQgMShldGgxKSBlbnRlcmVkIGJsb2NraW5nIHN0YXRlCj4gWyAg
+IDUzLjE3MDE2MF0gYnItbGFuOiBwb3J0IDEoZXRoMSkgZW50ZXJlZCBkaXNhYmxlZCBzdGF0ZQo+
+Cj4gSSB3b25kZXIgaWYgaXQgaXMgc29tZSBidWcgaW4gbXkgRFNBIGRyaXZlciBvciBzb21lIGJh
+c2ljIGFzc3VtcHRpb24gdGhhdAo+IHRoZSBuZXR3b3JrIHRvb2xzIGFyZSBtYWtpbmcgYWJvdXQg
+dGhlIGRlZmF1bHQgc3RhdGUgb3Igc28gOi8KPgo+IEkgZ3Vlc3MgSSBrZWVwIGRpZ2dpbmcgYXJv
+dW5kIGluIGl0Cj4KPiBZb3VycywKPiBMaW51cyBXYWxsZWlqCj4KPiBfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBs
+aXN0Cj4gb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwo+IGh0dHBzOi8vbGlzdHMub3Bl
+bndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlz
+dApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

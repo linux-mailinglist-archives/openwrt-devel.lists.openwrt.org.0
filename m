@@ -2,72 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9EC768131
-	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 22:46:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A5A768139
+	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 23:12:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qd8IIV8vaeu4ozaCrL1SlNebYTuwk8V8hREyc0nifKE=; b=uEL4kQKOLv9F1E
-	D/6/DCWT1bjVg90ibdmSK7HmT66RpbRaCAhGMmm3Z8QOPS1o6guLO4yM75Dhvznuwm7dvJjB5omd2
-	AoMcVPl14ktbhOIxrY3KgbiCx1ycD2jJc8sQVioRCcyqWVp79tE6YWWegwGPs6lrvJIp1EXj/fLro
-	r77U2ECpdq8tENOk8G9NmEaCVaDxeiY1tjFInlDOlQmkM8cdpzJ1eSWoFmauxgrTwkuNFY9Rj3duN
-	XTDGGpC5fEYukltVfQJv0lD6akXOWJRTO9SBn0NbE0KxZeClO5dTGI3oE/QaETTZVX2cAYQ+JOpCX
-	N8kn31Qf2cTBSoDciu9g==;
+	List-Owner; bh=3ItCqJyxbcg8w0bQ9bx5MP5tGTs9gO2fZ/ltm8wT8vM=; b=Upxnyq5LT3vfyT
+	wDljlIF4joXQFwQGRIJd1+1lcOnGxDcKU5JVv30+87uvUFpFDBDnvmGEOWqw5fDlJc7pD9LfbkyAo
+	/JMLkP4WCg6vWQbehrEgJovtJ/1kHYHij3xE7ZMCMylORZX83zPp6eRe0hoLX9VGlY6E9CE4pBkQC
+	teDPJuMicotTeblUrE7eHKHR2Fcqw+7nAzMrXmWJICAB989rU2siRnqkMxdkxEmhconimuq17ywee
+	6TufpnW9KQtxN9DBQKuzJUMaDlHrZsihXjOKL5loQ9Jb3rsGsd+1g5VdTfh9tIXVHXs8X+kXpwV0A
+	wqugquw3bhwOpOA7gQoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmlO8-0000xA-Qc; Sun, 14 Jul 2019 20:46:28 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1hmlnC-0008Cw-Cy; Sun, 14 Jul 2019 21:12:22 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmlNz-0000wa-S8
- for openwrt-devel@lists.openwrt.org; Sun, 14 Jul 2019 20:46:21 +0000
-Received: by mail-lf1-x143.google.com with SMTP id c9so9595022lfh.4
- for <openwrt-devel@lists.openwrt.org>; Sun, 14 Jul 2019 13:46:18 -0700 (PDT)
+ id 1hmln3-0008CW-IT
+ for openwrt-devel@lists.openwrt.org; Sun, 14 Jul 2019 21:12:14 +0000
+Received: by mail-lf1-x144.google.com with SMTP id v85so9604273lfa.6
+ for <openwrt-devel@lists.openwrt.org>; Sun, 14 Jul 2019 14:12:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kDtQLYb//e9krpk2CYI8P7mXQNcIf6XzsA09Ku4x8Lc=;
- b=gNyS+A53ZZaprpbz6lhBMe/9Bt7eYQQrVhdWSjeCW+lu3leR0z2M52dVnYjyvy7xbX
- NCjeW7hIhICK/DRqFux3b2+hZ6zFVOJ/R98dum3ao/jZFRKer4M1w7WMUMaUH/NkDmCL
- k5ev+d2Oa4Isz+qouXoLw/8AAfeEzfe5HbA6XbJC4FnAeoBMeyRDXv+2mdntKq2wjA2N
- 4BBatL5jFd3+EFOTt4kY4eLC6VdoLjbViLdEsYLZvvxrYO//sp045zHuh53agky+YX/L
- ldGRXvi+trJrDJUvBrLd1Rey6/d98hxnb6jZwwUTR8tzpo3GBlc+6PbYOhWPySQCLSw/
- DJSg==
+ :cc; bh=0MnrDSWuVuGSFsLoM9yghxvoIJyPc4LGihQz3yii388=;
+ b=KO1RGpcAYmO/sqDFe7WbtNQ64i5aMdMj2pOClFPIfrwlXAkyr6u1jgFL5gbpjrTFNU
+ wyX8cElbab6UNgFpXCiO4Bicco0d9NPTFTWKkaDnTrsrJNoBxWyRByX9hc+k7+4W6e5T
+ kl9g89hvTcGLPWbXrpujhSCtuV9zwYNaA45NPua+qCVGK/dIver/C6LS6WA0FxgriCwY
+ joFeZ11ielkCsUiCCCzQ318X/cHE675zIJzkh9Sksij7qKqzuU5C9M/jg83VXoqnA1eo
+ ww2tWi4J8+nOhu10qPY5shY4Ps044R8eF7Z0nKPA8T2i9np5l7lYEiimXRCAY3/hdAi0
+ cfng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kDtQLYb//e9krpk2CYI8P7mXQNcIf6XzsA09Ku4x8Lc=;
- b=ON/U4C59Upr/DwOo2pSV3LBuuBYUzmEweQQiVDQub4xPiKSJMVriY+US31/dKQahRS
- Epo4Sz0dNg2Y7f/eZWN8+AVssg6gQbxQsWxoMSuUeEpALm2n/G47NSvC4T/3gmPgQCj9
- guHwAHXfP1oFgQtJKBDSSZvjGk/MrVbsaah3wT0SXafJ+TdcqODDtluz9Zz+4WAh1jwa
- zzGTEjQ61wjLCcQUao0lXnE44avuE47txVoMxqoFMu0Fy4DEvS3XZ7zapRT7phIzQRZg
- JeNvfz7hYC/q9Mz2AAM4bp1TWJJ4527Sn9yFYPT7y2XFRAsDHmxhGXhtnrZSfvlouReu
- pWFA==
-X-Gm-Message-State: APjAAAVIPwVbj8aIIzgWSkit97820dd472rJdv12L2Qrwe8qJFtnY8Qq
- ErJ1U1sUsZ51DlSa4UxqXHmmNvYcO6ibL9JZ+Erv3g==
-X-Google-Smtp-Source: APXvYqxhHjFpjEPqtU3V+YcOC8iLZxD27HdFVx5u6+kiYFgGy/1hzr2ZNG32U3CDY1QRodE5p0grE0+r4svRLhtCpxw=
-X-Received: by 2002:a19:7616:: with SMTP id c22mr9933089lff.115.1563137176872; 
- Sun, 14 Jul 2019 13:46:16 -0700 (PDT)
+ bh=0MnrDSWuVuGSFsLoM9yghxvoIJyPc4LGihQz3yii388=;
+ b=e+SpyeDh6kV0HSKBfzaaQ3vk/t+JUXlpITMfpvFyPTo+Hk7YKjXCEJ38ZRjcRFEdOR
+ TyCkSstUynnOGpylIBeQyGovXLO44LUtA1dxJlL9UyYxkNSxpmR99YzGHTzCl/JW+2g4
+ yh1ky5i4j1hfTkoWF6u0HagKzUcPP5vL3autCT5FFEtQ5Q+FjeKZmy5BMmdHwPeN1gcH
+ 0XhFvcwWRP0GGKFT8s9bqE8A40YBmPgqJRgZyrUC/1Tlm8my6h0oqha1dlpCdp3gWeMN
+ 96GJPndSf8dLukOiSoSgd5lCKnV2ThD1BQ+8bMRsE4chKURTAjpT+hb1Pwn5nbAWmlOO
+ mSEA==
+X-Gm-Message-State: APjAAAWLA9/681NAvE11tqwzmI7G/Rc0nL3ZPnVAm5I47Q7IqRrbxD/O
+ Spd7VQopBkuwqEELnS+OtHdZbC3Dbfo6HNLUK+Goow==
+X-Google-Smtp-Source: APXvYqwN37JJAwas+Xa5HrKPfJAgQoAQ4AoYrwYebpiLmefr4EDn/jadOCEb4HlVj6zv/yMoXOhOwDr9oeDDgzNsvCs=
+X-Received: by 2002:a19:dc0d:: with SMTP id t13mr8932010lfg.152.1563138730406; 
+ Sun, 14 Jul 2019 14:12:10 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190714135037.18471-1-linus.walleij@linaro.org>
  <79ce4232-ea93-e9ee-a59d-b9b828b73be8@gmail.com>
-In-Reply-To: <79ce4232-ea93-e9ee-a59d-b9b828b73be8@gmail.com>
+ <CACRpkdazsAQ9guJUtqYdxnB-HjCY0jStZM=e5vGkfFVZbbLgjg@mail.gmail.com>
+In-Reply-To: <CACRpkdazsAQ9guJUtqYdxnB-HjCY0jStZM=e5vGkfFVZbbLgjg@mail.gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sun, 14 Jul 2019 22:46:05 +0200
-Message-ID: <CACRpkdazsAQ9guJUtqYdxnB-HjCY0jStZM=e5vGkfFVZbbLgjg@mail.gmail.com>
+Date: Sun, 14 Jul 2019 23:11:58 +0200
+Message-ID: <CACRpkdZTtpP5bxnpGOQPvLUwVYT69bp_-_E9dZLCoV3wKsu6ow@mail.gmail.com>
 To: Pawel Dembicki <paweldembicki@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_134619_938625_7BC3FA11 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20190714_141213_619953_3FCA84CF 
+X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,44 +101,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sun, Jul 14, 2019 at 5:15 PM Pawel Dembicki <paweldembicki@gmail.com> wrote:
-
-> > +storlink,gemini324)
-> > +     # These are all connected to eth1 thru VSC7385
-> > +     ucidef_set_interface "eth" ifname "eth1" protocol "none"
-> > +     ucidef_set_interfaces_lan_wan "eth1 lan1 lan2 lan3 lan4" "eth0"
-> > +     ;;
-
-Ooops I say I shall fix it then I don't. eth1 is still there.
-
-OK I fix a v3. The switch is working fine on the VSC7385 like
-this.
-
-> I can't reproduce working state on P2020RDB with this two methods.
-> In my device work this sequence:
+On Sun, Jul 14, 2019 at 10:46 PM Linus Walleij <linus.walleij@linaro.org> wrote:
+> On Sun, Jul 14, 2019 at 5:15 PM Pawel Dembicki <paweldembicki@gmail.com> wrote:
 >
-> ip link set eth0 up
-> ip link set lan1 up
-> ip link set lan2 up
-> ip link set lan3 up
-> ip link set lan4 up
-> ip link add name br-lan type bridge
-> ip link set dev lan1 master br-lan
-> ip link set dev lan2 master br-lan
-> ip link set dev lan3 master br-lan
-> ip link set dev lan4 master br-lan
-> ip addr add 192.168.1.1/24 dev br-lan
-> ip link set dev br-lan up
-> ip link set dev eth0 master br-lan
+> > > +storlink,gemini324)
+> > > +     # These are all connected to eth1 thru VSC7385
+> > > +     ucidef_set_interface "eth" ifname "eth1" protocol "none"
+> > > +     ucidef_set_interfaces_lan_wan "eth1 lan1 lan2 lan3 lan4" "eth0"
+> > > +     ;;
 >
-> I think, vsc73xx without vlan filtering is very tricky now.
+> Ooops I say I shall fix it then I don't. eth1 is still there.
+>
+> OK I fix a v3. The switch is working fine on the VSC7385 like
+> this.
 
-I think you should have it like this:
+Or no it doesn't. I'm not smart today...
+Keeping eth1 as "none" isn't working. I had to assign
+a static address (the same) to eth1 as well, then it works.
 
-ucidef_set_interface "eth" ifname "eth0" protocol "none"
-ucidef_set_interfaces_lan "lan1 lan2 lan3 lan4"
+In /etc/config/network it looks like this:
 
-If you don't have any WAN interface (uplink) on the device.
+config interface 'eth'
+        option ifname 'eth1'
+        option proto 'static'
+        option ipaddr '169.254.1.2'
+        option netmask '255.255.255.0'
+
+config interface 'lan'
+        option type 'bridge'
+        option ifname 'lan1 lan2 lan3 lan4'
+        option proto 'static'
+        option ipaddr '169.254.1.2'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+
+I don't know if there is any better way to fix it?
 
 Yours,
 Linus Walleij

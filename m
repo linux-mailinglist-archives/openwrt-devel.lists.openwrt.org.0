@@ -2,91 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F33C67CB9
-	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 04:44:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A7C167E71
+	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 12:06:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4hMex2WNlD+E8RrStGzIubm49svztmimzmaV/eU4sA4=; b=Sjdad8VJaAByQv
-	ByLk8+96waPIWjunUdSJtUc5fNUnwcdqdnNsh1gOppIUX7wZWZMsHWQX2lUiVslYCX/fbEWTIh2Oi
-	PH7e9KDMjGvy2s4ygx2jWMX81H6BI9Ji4Xd2zmDTAErfWgdTv1a7xhgpaXqexKtdA8Iws234Ien6Z
-	p80mAXTUTHQ2I6IoWyR4LLAVDc6jj3lE2g59kRLsa6/44+G5GO7zLoxrHNnrIcN9+MqLRDTf21Sak
-	bn7TaBBY4ITXYHUsk+0w4/fhXsQvgT9+C8vYrFCo8dwU+oWvQZqIm0KQB1Khz0IvBccO/I9BcdOp7
-	Mh0ET7zh1XdlqvBgnGQg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HDP4eDJstvBC3F5ZJIi5B3CuPK0Jbvg8FFITok5yibk=; b=pHDY8EUi4rnWYf
+	qvduaUoy6LM6TJFMp/yThb75Erksb/MdXW5/Zypv6p1Uf870+UFAWPwIBGfghK2IJarErcluV4wXJ
+	P+ZlQPf/KPvy+5TsSJAFI6Ie7JavscoPra2CPYEF1Qo800GjoPiN+eV0odlgzcuB1Kn37WWxVJNc9
+	qrDlo4Q/dy/Ro0WE/SXGSFty4KRGzJEcqx0BPMSglwcEMiQpB0Z3ey2gQjuouArk3r6MmYgdj1gUo
+	OQ00F5du67uCvW3YRfbAsXGZllJvzcwN9fTrIQaSYobmFVupvc6Ijo+In8i25wRagehOnS4Q5PJ3F
+	CBdRUq4+PBbUNMIX8VEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmUUS-0002ec-Js; Sun, 14 Jul 2019 02:43:52 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hmbNj-0006uT-Kj; Sun, 14 Jul 2019 10:05:24 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmUUI-0002eK-2U
- for openwrt-devel@lists.openwrt.org; Sun, 14 Jul 2019 02:43:43 +0000
-Received: by mail-pg1-x542.google.com with SMTP id i18so6155995pgl.11
- for <openwrt-devel@lists.openwrt.org>; Sat, 13 Jul 2019 19:43:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+9nvMMFQ3591er4MoLi2lQZ4UfhvKtHy5X1f9xIEWwM=;
- b=QYbFz1mn8JnHICxImqHTWJv+R2LxCSpNKt/MJlxIKdrRRZk0JI0Rqat8IuNRPUUj0J
- yJ76qjS7pX5n/0XHP6lm8iYQULjXviHKN6yV0i3KBCkcXp6utYHqiAIH+WDh9VvNx22V
- FRLWwpcXaof3JyEL56V3ByVH+j8CMYy2cxB0cXEzlcWK04dlusDnM+UoMZ3XRNy62PaG
- MKdvbzOoPLMvabZ2VF/ss7j3nNnVaT9p+F5oD3dYgZ5Hw3cwU+UrmtYy5Z+0Q5stmEkk
- p9/qdaF9SvI95RbHBNI8qFRbnQB1eUxdB1iLhBT7CRvtJ3lbbpxW4zXG+Qxo3gYqpJX7
- v9ZQ==
+ id 1hmbNS-0005iU-W3
+ for openwrt-devel@lists.openwrt.org; Sun, 14 Jul 2019 10:05:08 +0000
+Received: by mail-lf1-x143.google.com with SMTP id z15so4791676lfh.13
+ for <openwrt-devel@lists.openwrt.org>; Sun, 14 Jul 2019 03:05:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=rdmYyLvbRIHsxbd01ERfJzGwzyMyA+2nh9enUtMLe6U=;
+ b=gJG6Zj/tRoUJb7QCQFtRh5W9LcbUTWbOHbffVXkXB5GK+PmqQPN5ntgdIS60N6dCTA
+ 0f+n/Kd3LIZc80f0lyNSFqQSq9wMQjF3MqbitK5AawYmniSzadG5lcezelHYls49SE2x
+ fMw9074X9Q847erIT+L6ozbUZ+qZXh3lPBhaFMPVk7HlpjjcAU8F/ccsgJfuTWygbg25
+ aOBbrUkostQJAz6oYIjw3lnEzgNcFv7Slp3bXabEukj5gfSCbzTDlczaRWCnC+WxW9YK
+ CD0+fhlqCQMVoDAgq+VBBM05EyErjNamMN9v4GkTv66IX6WVz0iRLBE51ybeUuAMEaRz
+ aguw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+9nvMMFQ3591er4MoLi2lQZ4UfhvKtHy5X1f9xIEWwM=;
- b=R6crbp2QM1Q9rU9X3McZTHoBuhkpV15pyAl9vwv2fNATzzVHjGLQ+fxiQK1CMPWrt8
- QZUhUnNdszM9a3Cr0RFmjFGbPsxcTW+YpDxQMovAxvmWPG/z2i0FgywFWKvFR/MSOK36
- GS/KV112srpXhBgtwJ9+FQaERLa0hZ9fgcTKbkF/beegCCE24W5Lci/FM6nqjpUddOin
- v0En7ay83KKyLliuz9u0M6DS2CFcroHROuMs3MzBAAyQfX5xdvKWx6MsUQz2F+KM2mWn
- UqmMboaX1NmuWfFUlyza6FCm9PXuoVxUrwDLJcS8AFiN2QdAxFLPRGPI+PROLEAwNC9P
- eilA==
-X-Gm-Message-State: APjAAAU4UeypwOll6ulsHWY2mFzRY/PkZ5aLUJ4Cma9HJ30Mwy0WvuuG
- WHWt2K3Kknjd7ef52rZvnsUTEsjQqUg=
-X-Google-Smtp-Source: APXvYqzehYRrrYFJVwXlY7vo4x+qHOGlPJBc76wLtcNksTw8Y2AU0WPCIv9CJLgtoU8b2rWO5PRFxg==
-X-Received: by 2002:a65:5c0a:: with SMTP id u10mr19796609pgr.410.1563072220512; 
- Sat, 13 Jul 2019 19:43:40 -0700 (PDT)
-Received: from echampetier.lab1.anevia.com
- ([2601:646:8200:acf4:f6fd:cd2b:9563:c59a])
- by smtp.gmail.com with ESMTPSA id e13sm17681100pff.45.2019.07.13.19.43.38
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 13 Jul 2019 19:43:39 -0700 (PDT)
-From: Etienne Champetier <champetier.etienne@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 13 Jul 2019 19:43:28 -0700
-Message-Id: <20190714024328.17271-1-champetier.etienne@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=rdmYyLvbRIHsxbd01ERfJzGwzyMyA+2nh9enUtMLe6U=;
+ b=loL90sVNw+krS99koTyYgwOnq2YYHVBP1gqsaqS2hB0nJQr7HSXsdGxM5MXMi52xUQ
+ nokaa/AlEIlCusojALKQaRqGDiIEVbwNgZ39nQwg/d5r+6riB132GIlykrOKUxdVsynJ
+ RWfo8cgoP6WqLBD2KcW6NZgyb7Q1yEAsCubbapwCys2z8+YDM+z2B8Qd0kmw28zkTIr9
+ 8p6z0RKWfxTyTNNJt6hODRx/x6rroch5T8f2sUCCNDeCRAVgKDk1b9mFWv3iH9SgYs4t
+ /wfNEpaPtPscSjxDe57LOcfHSEqgfqI3/69VLseLjzYtRErxSLjdI1V4134lU5Ou6+mg
+ E04w==
+X-Gm-Message-State: APjAAAUztWdtahYCUh221uhRn/us3D+lWhlMjOgiYWVFiYs47nSANobQ
+ bHkLFAy3QQcWPNaO2Fcm8A8xXMElIWkA9Sllq9whMw==
+X-Google-Smtp-Source: APXvYqzFwjny1dDy0cRhxFOND4Rg2kr/qG9ucxMFfcj2d8Z1dLy505Wdt5gHjpav0zuU1zaZh3pANqoKl55RwqvEEpA=
+X-Received: by 2002:a19:e006:: with SMTP id x6mr8643530lfg.165.1563098697409; 
+ Sun, 14 Jul 2019 03:04:57 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190712060734.9824-1-linus.walleij@linaro.org>
+ <0fec8249-aae5-55b3-4bb7-4b83d829842d@hauke-m.de>
+ <CACRpkdYWfrcAAvzOMvN6gq5rp6vE-Ot3RvwDJ3LPyHGs5zeCMw@mail.gmail.com>
+ <c6151d84-a5c0-805e-c02c-6b0fa3f9a25f@gmail.com>
+In-Reply-To: <c6151d84-a5c0-805e-c02c-6b0fa3f9a25f@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Sun, 14 Jul 2019 12:04:44 +0200
+Message-ID: <CACRpkdZnupszv8kSZD015KxGayF1W+zC0s2jNPXQKVp4O4LP3g@mail.gmail.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190713_194342_141996_D34F4F92 
-X-CRM114-Status: UNSURE (   9.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190714_030507_058278_06E0A569 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (champetier.etienne[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] ar71xx: enable QCA955x SGMII fixup on
- Mikrotik wAP AC
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH] gemini: Bring up DSA switches
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,68 +92,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Etienne Champetier <champetier.etienne@gmail.com>,
- David Bauer <mail@david-bauer.net>
+Cc: Adrian Alonso <aalonso@freescale.com>,
+ Christian Lamparter <chunkeey@gmail.com>, Roman Yeryomin <roman@advem.lv>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Sebastian Luft <sebastian.luft@gmail.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-fixes intermittent loss of connectivity on 1Gbit port, with log message:
-> 803x_aneg_done: SGMII link is not ok
+On Sat, Jul 13, 2019 at 10:38 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
 
-Thanks to David Bauer for pointing me in the right direction
-I just had to figure out the right bus_id, which you find in this log:
-> ag71xx ag71xx.1: connected to PHY at gpio-1:00 [uid=004dd074, driver=Atheros 8031 ethernet]
+> drivers/net/dsa/vitesse-vsc73xx.c returns DSA_TAG_PROTO_NONE for the
+> tagging protocol, which means that the DSA slave devices are only
+> control devices they are not used by the data-path (which requires an
+> appropriate tagging protocol to allow differentiating the Ethernet
+> frames on a per-port basis). If you supported a different tagging
+> protocol, then you would not be able to enslave the DSA master device
+> (eth1) into the bridge, because that would conflict with the bridge's
+> rx_handler, see 8db0a2ee2c6302a1dcbcdb93cb731dfc6c0cdb5e ("net: bridge:
+> reject DSA-enabled master netdevices as bridge members")
 
-Fixes FS#2236
+Ah it's because of this! I try to figure it out. Thanks Florian!
 
-Signed-off-by: Etienne Champetier <champetier.etienne@gmail.com>
----
- .../ar71xx/files/arch/mips/ath79/mach-rbspi.c    | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+I really tried to figure out a way to get both the Vitesse and Realtek
+switches to do internal tagging but they just don't.
 
-diff --git a/target/linux/ar71xx/files/arch/mips/ath79/mach-rbspi.c b/target/linux/ar71xx/files/arch/mips/ath79/mach-rbspi.c
-index 96511a4080..1212a91d7e 100644
---- a/target/linux/ar71xx/files/arch/mips/ath79/mach-rbspi.c
-+++ b/target/linux/ar71xx/files/arch/mips/ath79/mach-rbspi.c
-@@ -512,6 +512,18 @@ static struct platform_device rbwapgsc_phy_device = {
- 	},
- };
- 
-+static struct at803x_platform_data rbwapgsc_at803x_data = {
-+    .override_sgmii_aneg = 1,
-+};
-+
-+static struct mdio_board_info rbwapgsc_mdio_info[] = {
-+    {
-+        .bus_id = "gpio-1",
-+        .mdio_addr = RBWAPGSC_MDIO_PHYADDR,
-+        .platform_data = &rbwapgsc_at803x_data,
-+    },
-+};
-+
- /* RB911L GPIOs */
- #define RB911L_GPIO_BTN_RESET	15
- #define RB911L_GPIO_LED_1	13
-@@ -1106,10 +1118,14 @@ static void __init rbwapgsc_setup(void)
- 
- 	platform_device_register(&rbwapgsc_phy_device);
- 
-+	mdiobus_register_board_info(rbwapgsc_mdio_info,
-+				    ARRAY_SIZE(rbwapgsc_mdio_info));
-+
- 	ath79_init_mac(ath79_eth1_data.mac_addr, ath79_mac_base, 0);
- 	ath79_eth1_data.mii_bus_dev = &rbwapgsc_phy_device.dev;
- 	ath79_eth1_data.phy_if_mode = PHY_INTERFACE_MODE_SGMII;
- 	ath79_eth1_data.phy_mask = BIT(RBWAPGSC_MDIO_PHYADDR);
-+	ath79_eth1_data.enable_sgmii_fixup = 1;
- 	ath79_eth1_pll_data.pll_1000 = 0x03000101;
- 	ath79_eth1_pll_data.pll_100 = 0x80000101;
- 	ath79_eth1_pll_data.pll_10 = 0x80001313;
--- 
-2.21.0
+The Vitesse switches can do VLAN but I just haven't implemented
+it yet, but now that Adrian is using it on a Freescale board as well
+I might get to it as we have some more users.
 
+There are some patches to the kernel do do port separation using
+only VLAN (by Vladimir Oltean) but of course I have to implement
+VLAN first if I want to try to use that.
+
+> Your second sequence is more in line with what you should do, see the
+> recent documentation examples from Benedikt:
+>
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/networking/dsa/configuration.rst
+
+Oh that is really good documentation. I linked it in the Ethernet switch
+page in the OpenWrt wiki.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 openwrt-devel mailing list

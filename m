@@ -2,79 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E00FA67EDF
-	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 13:42:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 922FB67F28
+	for <lists+openwrt-devel@lfdr.de>; Sun, 14 Jul 2019 15:51:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=T9WgPrnaIAvUqHo4bSpbVQ6yS9HGdv7AnXExqS55800=; b=cnyEh60A1EHQh1
-	FZu7oM5/D7pTgnsQSv3AdZQBBFoJQueIeBIOZ8Hud5T94QWcZ7OTn9ER6kQtB4BtZpLubc3qkZ6t+
-	96jr2zIFUM666St84G7fu2E3RhkQLAbvTfdt7nUiCTonwDHpJCwcSkESLLov1nIojdA7WdY0Pl1St
-	blQ72EqUz/yFc87YRhHAnPoNSL6dt4GI6wSmUBGkkqeyeqqGjSP2b7vyIyzr8Man+VMdb0YvETKmU
-	tYv7LeST1orkEMsLqwTFiQSRdILmc+duYRx2oApJnlInyrtNgmfz5P/Aia7Ixmlxq4KKr18qEUVev
-	Wc0tzfvwEzHkoV70QnSw==;
+	List-Owner; bh=0Bag3VhoOXKXx4dWOvvio7mCv1OlBQZiEK3p4GpfWwE=; b=m/uB0nYKq8AIF0
+	DezQh73BEAw8ld18nBoDT7PBrLvKsaUPrEO2tTY7MdZ7CYm3lXRMbUIQrk/XkedKvfhuHDOdsCIHY
+	i8tdPFDNXjr8H7NJsUpdgDpW4JEqDH/hHZ8MwDzM5GSCPEDjpHES/5lxC3x5G8EdYwNc5mUaEHndv
+	ePeAPIgkjhPUKr+qgdb3Tx9KfsVAyRMDSQT3ILyMMBtdCvdq3hrnMRS92IjUJeeT2n4g4f8mUSq4v
+	UvkGRZGDcqPESgXX/coTURQoMboAD4S4/QZz2V1jZXvNKk2mT1EOzQZMkbYYDdIhtAOOYjr3I3uMU
+	ChlmSeDZsWHNeMc6iTBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmctH-0001WU-Ms; Sun, 14 Jul 2019 11:42:03 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1hmeuP-000526-Ia; Sun, 14 Jul 2019 13:51:21 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmct0-0001W3-8a
- for openwrt-devel@lists.openwrt.org; Sun, 14 Jul 2019 11:41:48 +0000
-Received: by mail-lf1-x144.google.com with SMTP id q26so9164183lfc.3
- for <openwrt-devel@lists.openwrt.org>; Sun, 14 Jul 2019 04:41:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1hmeuG-00051S-M9
+ for openwrt-devel@lists.openwrt.org; Sun, 14 Jul 2019 13:51:14 +0000
+Received: by mail-lj1-x241.google.com with SMTP id d24so13575867ljg.8
+ for <openwrt-devel@lists.openwrt.org>; Sun, 14 Jul 2019 06:51:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=HTb7GF7zEw+HRXKmQH9nfyyN08aGwECXPJSAAIgfmiw=;
- b=VKIenwDZRX2a2EWIeDOlwoqbu2qNEWFgTRxvBP3FQDvdVMMCJKjREs2Sf1nnVytfMU
- fo9wksKTgflVIP4k0dfZQUv+0ru+gbsPtW7WAedQ0+jzist0bC+BxgzJHpaA8aAcFhbW
- zL1v57vHlW24m45qa1e3SVNif5iuNCHgtkAdY3XKUsCfd0Eb4zpL1f42wFZ770e1pGI+
- lLih2q9MSJ3NY175TGm/dgCzuep9gSUycclFg294rr8dYMMLpSnwehZIocS/xzIxZc2A
- dnwrNjuJbtbroUQ/EUjDxr0mFGChqqEZWWsnBD949qRo4VzRUOVRWcjvUFMC+KOKXGQJ
- P+Uw==
+ bh=TXLJxA+SGJWjBTHbC/2XzcVc9bCHgy3Td4XpBA3qw7E=;
+ b=m5SQw4v3A25/OA1TVaqM1kwx9zY6lfRouMVvq7dpxEd2Eu0uUYI7olE7PqyTYu+vHP
+ npZTHZIMtq5eBoxFYN7DVHOyU72MIdYVEhHAhEvFOGom15aRHTFQTtWlOgTovOc0T5Co
+ 6aksZMniJkxMtY8w8VGCKJVQ2TqEfbEehASk7wyJFXQghxpYfGQEOyGdjO9ypZKvyCiM
+ dc+vv5LHwfMTxpkNZn4k74WLMGuX+dFyvm6RBcOY312PJ5DkdlJ0W71s7+9wSXkLf4ho
+ 10/61+kLt/cmXJtzlR9zsWp11j/s2OvFjNMGAqVuBvGnzvDnvgiCoPKTA0wu2ddWwCHE
+ 11RQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=HTb7GF7zEw+HRXKmQH9nfyyN08aGwECXPJSAAIgfmiw=;
- b=iExlgVKS2Gk5Tl6U4XS7cfbZSalyt+X5RMtXm9zzJDB8eOVDhymG88eF4fE/olehi2
- P0JqtR6zA1D4y+fKDhQV0m0v+88gmYIGkr/rV/5XImdiF1GpbIwMAzaPviz5+aG+UsXR
- Ys1u/etGHdfsn5r8qpMtS6S/vAk+sCBFL2PYpz6rJQYccq+VGQDLszyR2mKrp/BbfZya
- PpzosONCoHb+aQK4IXnE9tsgkVxV6G02TsbP4YWsDNVscE4DAav12TNaS0DeVW3A3r8X
- HbZLEoNxCq9yeVu5e0EPooJW8VHPpRp+LnNptk2APvOzLd/JHGA15e06qiPvVOIv6WaD
- mHFQ==
-X-Gm-Message-State: APjAAAXsEZUAj4/q6bFFM7+sPITL/CF5RR/GGuoTX3c06LK+CMbLeMCj
- QOzxDfSDXpZIBfxlTcO3gkAXx81u
-X-Google-Smtp-Source: APXvYqwRDIy9lIPl30JrnoVORfxiCQVGQ1pR1KHuCNCRKUvDOo6LClgu4G82HyDXvu9y4ExcSUGnqw==
-X-Received: by 2002:ac2:465e:: with SMTP id s30mr9150400lfo.19.1563104502542; 
- Sun, 14 Jul 2019 04:41:42 -0700 (PDT)
-Received: from kristrev-XPS-15-9570.lan (155.51-175-192.customer.lyse.net.
- [51.175.192.155])
- by smtp.gmail.com with ESMTPSA id v86sm2509876lje.74.2019.07.14.04.41.41
+ bh=TXLJxA+SGJWjBTHbC/2XzcVc9bCHgy3Td4XpBA3qw7E=;
+ b=Jamj3ySuFKbqb0qN4UcluR6Gvm+25ESRZF/Z1XuruyOd3sdB0iEvkVAK1r22ZTMtBQ
+ cIQVDmr1/CKwH2SYCVEQYYhWJiaiFKZdk7OBxgHK+XRgsh/4aa5Tl5pxIml4Dg+eZF1J
+ /3Z9W+gUyFizP7U40CkR5XpkMTIC8Tvpa9gNcWOCmvXZyOz2x4WXo6Lf+gtrOT3EW5kU
+ G76RaFE4tFlJRh6XZu5sY4quPBfUqV0WlMNuo91UuRAwaKsov2SomcJRGvXxLfb0ap7m
+ YgZ6kJtTGqIywL6rD/eiLEQqiDvQkZ173llWGOX7SixEl93pX+aLFhHCbo7J8LtLq5IQ
+ gXHg==
+X-Gm-Message-State: APjAAAWB6+fAP8lXGycC0Y8zBkgkjxo5lkAnzVTpCpx4QtrtSg0eomBK
+ +VlEyxnQ7TV8ONLbN3AjN5yZjA==
+X-Google-Smtp-Source: APXvYqzlX50PWEpba1ZIYUiCEy5avzDhzHEyo7xObRgA/1WAl+LGjOu5QdHQT/BBJdIqiGqqKAjFTw==
+X-Received: by 2002:a2e:3602:: with SMTP id d2mr11415830lja.112.1563112265465; 
+ Sun, 14 Jul 2019 06:51:05 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
+ by smtp.gmail.com with ESMTPSA id z30sm2117324lfj.63.2019.07.14.06.51.03
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sun, 14 Jul 2019 04:41:41 -0700 (PDT)
-From: Kristian Evensen <kristian.evensen@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 14 Jul 2019 13:41:40 +0200
-Message-Id: <20190714114140.18320-1-kristian.evensen@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ Sun, 14 Jul 2019 06:51:04 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Christian Lamparter <chunkeey@gmail.com>
+Date: Sun, 14 Jul 2019 15:50:37 +0200
+Message-Id: <20190714135037.18471-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_044146_334291_697ACE61 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20190714_065112_787468_1A245104 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,8 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] nftables: Update nftables & clean up
- dependencies
+Subject: [OpenWrt-Devel] [PATCH v2] gemini: Bring up DSA switches
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,133 +97,76 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Rosen Penev <rosenp@gmail.com>, Pablo Neira Ayuso <pablo@netfilter.org>,
- Kristian Evensen <kristian.evensen@gmail.com>
+Cc: Pawel Dembicki <paweldembicki@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patch does three things:
+First group the interfaces on the DSA switch into the
+right LAN/WAN groups. Tested successfully on the Itian
+Square One SQ201 and the SL93512 reference design
+with the Vitesse DSA switches.
 
-* Bumps nftables from 0.9.0 to 0.9.1 and remove a patch that was
-accepted upstream.
-* Cleans up the nftables-dependencies in netfilter.mk. All targets are
-not at 4.14+, so there is no need to specify for example "ge 4.9.0" or
-keep "lt 4.9.0" around.
-* Fix building support for nftables sets. In 4.18 the configuration
-symbol changed from CONFIG_NFT_SET_RBTREE and CONFIG_NFT_SET_HAS, to
-CONFIG_NF_TABLES_SET.
+As discussed on the mailing list, these switches are
+untagged (DSA_TAG_PROTO_NONE) so the DSA slave devices
+are only slave devices with not datapath control.
+This means each of the CPU-facing interfaces need to
+be brought up with the "none" protocol before any
+slave devices are brought up. (The sequence matters
+here.)
 
-Signed-off-by: Kristian Evensen <kristian.evensen@gmail.com>
+Tested on each of the three affected devices.
+
+Cc: Pawel Dembicki <paweldembicki@gmail.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- include/netfilter.mk                          | 17 ++++++-----
- package/network/utils/nftables/Makefile       |  4 +--
- .../nftables/patches/010-uclibc-ng.patch      | 28 -------------------
- 3 files changed, 10 insertions(+), 39 deletions(-)
- delete mode 100644 package/network/utils/nftables/patches/010-uclibc-ng.patch
+ChangeLog v1->v2:
+- Remove the eth1 from the LAN bridge in both the
+  Vitesse switch devices, instead bring up each ethernet
+  master interface independently with "none" protocol.
+---
+ .../gemini/base-files/etc/board.d/02_network  | 27 +++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+ create mode 100755 target/linux/gemini/base-files/etc/board.d/02_network
 
-diff --git a/include/netfilter.mk b/include/netfilter.mk
-index 179d4ed7b9..0ba9c10dca 100644
---- a/include/netfilter.mk
-+++ b/include/netfilter.mk
-@@ -337,12 +337,11 @@ $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NF_TABLES, $(P_XT)nf_tables
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NF_TABLES_INET, $(P_XT)nf_tables_inet, lt 4.17),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_EXTHDR, $(P_XT)nft_exthdr),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_META, $(P_XT)nft_meta),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_NUMGEN, $(P_XT)nft_numgen, ge 4.9.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_NUMGEN, $(P_XT)nft_numgen),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_CT, $(P_XT)nft_ct),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_SET_RBTREE, $(P_XT)nft_set_rbtree, ge 4.9.0),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_RBTREE, $(P_XT)nft_rbtree, lt 4.9.0),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_SET_HASH, $(P_XT)nft_set_hash, ge 4.9.0),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_HASH, $(P_XT)nft_hash, lt 4.9.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_SET_RBTREE, $(P_XT)nft_set_rbtree, le 4.17.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_SET_HASH, $(P_XT)nft_set_hash, le 4.17.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NF_TABLES_SET, $(P_XT)nf_tables_set, gt 4.17),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_COUNTER, $(P_XT)nft_counter),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_LOG, $(P_XT)nft_log),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_LIMIT, $(P_XT)nft_limit),))
-@@ -352,8 +351,8 @@ $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NF_TABLES_IPV4, $(P_V4)nf_t
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_CHAIN_ROUTE_IPV4, $(P_V4)nft_chain_route_ipv4),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NF_TABLES_IPV6, $(P_V6)nf_tables_ipv6, lt 4.17),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_CHAIN_ROUTE_IPV6, $(P_V6)nft_chain_route_ipv6),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_REDIR, $(P_XT)nft_redir, ge 3.19.0),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_QUOTA, $(P_XT)nft_quota, ge 4.9.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_REDIR, $(P_XT)nft_redir),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_CORE,CONFIG_NFT_QUOTA, $(P_XT)nft_quota),))
- 
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_ARP,CONFIG_NF_TABLES_ARP, $(P_V4)nf_tables_arp, lt 4.17),))
- 
-@@ -363,11 +362,11 @@ $(eval $(if $(NF_KMOD),$(call nf_add,NFT_BRIDGE,CONFIG_NFT_BRIDGE_REJECT, $(P_EB
- 
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT,CONFIG_NFT_NAT, $(P_XT)nft_nat),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT,CONFIG_NFT_CHAIN_NAT_IPV4, $(P_V4)nft_chain_nat_ipv4),))
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT,CONFIG_NFT_REDIR_IPV4, $(P_V4)nft_redir_ipv4, ge 3.19.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT,CONFIG_NFT_REDIR_IPV4, $(P_V4)nft_redir_ipv4),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT,CONFIG_NFT_MASQ, $(P_XT)nft_masq),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT,CONFIG_NFT_MASQ_IPV4, $(P_V4)nft_masq_ipv4),))
- 
--$(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT6,CONFIG_NFT_REDIR_IPV6, $(P_V6)nft_redir_ipv6, ge 3.19.0),))
-+$(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT6,CONFIG_NFT_REDIR_IPV6, $(P_V6)nft_redir_ipv6),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT6,CONFIG_NFT_CHAIN_NAT_IPV6, $(P_V6)nft_chain_nat_ipv6),))
- $(eval $(if $(NF_KMOD),$(call nf_add,NFT_NAT6,CONFIG_NFT_MASQ_IPV6, $(P_V6)nft_masq_ipv6),))
- 
-diff --git a/package/network/utils/nftables/Makefile b/package/network/utils/nftables/Makefile
-index d4f91a2c89..0ffb2adc01 100644
---- a/package/network/utils/nftables/Makefile
-+++ b/package/network/utils/nftables/Makefile
-@@ -7,12 +7,12 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=nftables
--PKG_VERSION:=0.9.0
-+PKG_VERSION:=0.9.1
- PKG_RELEASE:=2
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL:=https://netfilter.org/projects/$(PKG_NAME)/files
--PKG_HASH:=ad8181b5fcb9ca572f444bed54018749588522ee97e4c21922648bb78d7e7e91
-+PKG_HASH:=ead3bb68ed540bfbb87a96f2b69c3d65ab0c2a0c3f6e739a395c09377d1b4fce
- PKG_MAINTAINER:=Steven Barth <steven@midlink.org>
- PKG_LICENSE:=GPL-2.0
- 
-diff --git a/package/network/utils/nftables/patches/010-uclibc-ng.patch b/package/network/utils/nftables/patches/010-uclibc-ng.patch
-deleted file mode 100644
-index 760fde5186..0000000000
---- a/package/network/utils/nftables/patches/010-uclibc-ng.patch
-+++ /dev/null
-@@ -1,28 +0,0 @@
--From c65c4f9998587a0c705b3635215f25fa5680c0d3 Mon Sep 17 00:00:00 2001
--From: Rosen Penev <rosenp@gmail.com>
--Date: Fri, 3 May 2019 11:49:11 -0700
--Subject: gmputil: Add missing header for va_list
--
--Otherwise it errors with unknown type name when using uClibc.
--
--Signed-off-by: Rosen Penev <rosenp@gmail.com>
--Signed-off-by: Pablo Neira Ayuso <pablo@netfilter.org>
-----
-- include/gmputil.h | 1 +
-- 1 file changed, 1 insertion(+)
--
--diff --git a/include/gmputil.h b/include/gmputil.h
--index 73959c17..ad63d67b 100644
----- a/include/gmputil.h
--+++ b/include/gmputil.h
--@@ -7,6 +7,7 @@
-- #include <gmp.h>
-- #else
-- #include <mini-gmp.h>
--+#include <stdarg.h>
-- #include <stdio.h>
-- /* mini-gmp doesn't come with gmp_vfprintf, so we use our own minimal variant */
-- extern int mpz_vfprintf(FILE *fp, const char *format, va_list args);
---- 
--cgit v1.2.1
--
+diff --git a/target/linux/gemini/base-files/etc/board.d/02_network b/target/linux/gemini/base-files/etc/board.d/02_network
+new file mode 100755
+index 000000000000..b5c486666c82
+--- /dev/null
++++ b/target/linux/gemini/base-files/etc/board.d/02_network
+@@ -0,0 +1,27 @@
++#!/bin/sh
++
++. /lib/functions/uci-defaults.sh
++
++board_config_update
++
++case "$(board_name)" in
++storlink,gemini324)
++	# These are all connected to eth1 thru VSC7385
++	ucidef_set_interface "eth" ifname "eth1" protocol "none"
++	ucidef_set_interfaces_lan_wan "eth1 lan1 lan2 lan3 lan4" "eth0"
++	;;
++itian,sq201)
++	# These are all connected to eth1 thru VSC7395
++	ucidef_set_interface "eth" ifname "eth1" protocol "none"
++	ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "eth0"
++	;;
++dlink,dir-685)
++	# These are all connected to eth0 thru RTL8366RB
++	ucidef_set_interface "eth" ifname "eth0" protocol "none"
++	ucidef_set_interfaces_lan_wan "lan0 lan1 lan2 lan3" "wan"
++	;;
++esac
++
++board_config_flush
++
++exit 0
 -- 
-2.20.1
+2.21.0
 
 
 _______________________________________________

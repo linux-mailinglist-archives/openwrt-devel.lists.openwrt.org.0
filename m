@@ -2,83 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D767C6998F
-	for <lists+openwrt-devel@lfdr.de>; Mon, 15 Jul 2019 19:09:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C13E66A0C3
+	for <lists+openwrt-devel@lfdr.de>; Tue, 16 Jul 2019 05:18:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rk+KZMzvWVpAVqKEsI9xaq2zOoWu4Hluxiub2thppVk=; b=pjCPjhWr91hbey
-	TTDNBjjH1r5NBc3xwQe99Lyn8Tyw7T6VOyF38JDEprRWX2vFXss/DaPY5zKq6ozmhU5wkP5hc4vHH
-	m0xPtlZffih+Hpvyde2CepqXZqjZsougVrv03g9XaiMCP25Z0MjzTUhnQaFVtzDOQmtbLQGW6JAN+
-	HEj7RVgLV77fkwZ5frv2MXwJ0m4jtFyv0MkeqkRMpqzMmlMga08bHIa9dQWbFPENT3FrCOTOVUdSq
-	2piN0ApxscPOqdzH5pVSzazKn5CCifqj1YNY/hZ8PxyAdnpWbupxV9SKwC0B7aLPxTKjPc0lKN/XM
-	Zs65G1lJo7RSTEY9MABA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YfuseJcgLdjog1RakD0WO4hlhKO+B6FWgzx7e/OVgEs=; b=S2CKusiJYlGJiXuHvE+N3jtrmB
+	S1euooPMmJWsRacbUmDlzmajqAiQK+kKklxkIRdlhfgekWVyzquWEqfFAhx2C75bOeIORynqzmo77
+	l6W+Mp7ctMQLTQ45C2Ug9YD7y82Ekii/OW0P/UhifBLOfVLVbhoCiHFr7dANut6jBq4eBIa/g7Plc
+	NriFNqJYVo0tzJ/du3tHGAhcOJaJ5HxOzfS1LTWbQB23I8uEmi2BMibm/0cDs3/zY3dszVCF8/8HJ
+	m59Z+cxwYNGvl0r51IqFOdixtp9r/8kZh7WNsx7WUd4DROlCpmHUwpBgmfim7boSaMyKeTrMIBKwR
+	8jDGl1zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn4Tj-0000Lh-BK; Mon, 15 Jul 2019 17:09:31 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hnDz3-00077b-3u; Tue, 16 Jul 2019 03:18:29 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn4Sm-0008JY-G4
- for openwrt-devel@lists.openwrt.org; Mon, 15 Jul 2019 17:08:34 +0000
-Received: by mail-qt1-x842.google.com with SMTP id d17so16367501qtj.8
- for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jul 2019 10:08:32 -0700 (PDT)
+ id 1hnDyr-00077A-IB
+ for openwrt-devel@lists.openwrt.org; Tue, 16 Jul 2019 03:18:18 +0000
+Received: by mail-oi1-x241.google.com with SMTP id w79so14415016oif.10
+ for <openwrt-devel@lists.openwrt.org>; Mon, 15 Jul 2019 20:18:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=6bhZn3D6z5dT8F040aPK2mwK85Kv4L7cfZoX2k6ma9c=;
- b=SWFAGVlAnCpLpHPoFRfqbVXWdSTgPleXJrAzw/antoVG+0/3KnO8hwk8ftiuHzoErK
- Bpq8smcJ1inmLEckd3ba6DvJaa9FmcHE7AyQ3F91SlgVw3kQ7LpBXrwD1SHGbJVXrYtE
- n5KmMUxVXuhgXTEFQLo1ooOr45DeGdWLsACCbmLgeXfY06TI+m8+lk7m37vwIDhmzPfa
- AdCEFMjXbHi6rzwmRri6v5DrH22oZU0x0kaFhjK18DLN70bTkcypINJSNueWK9yM08vN
- KUvCuIYm2f6+vObyxQHAtBtXvYC6zkIWm3zMd5oa79I/0AY+DTLQNjHx5+RyqJoC4zs8
- zHDQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=kJ1/gC1kVxh+cSdvw5T67/R+jZQhR/6TRXJDD3nYIgw=;
+ b=DkEtDJGN2HMbA2Au1fFNCR8U9tJU/kNXJnH8TYBndfx0yoEBE8p3QMQrKrC5CyQe88
+ 9RkazNNdDf3T5ib+twxmLb0MmnPddwHGrGieSuGZxAfPf/StOJ4nOzHTz6Hx69W1ieAV
+ MBKKuIW27TY4Rp6oxHxfMKSATIDh1N5ptgnxG8EPDrzbQkGNbOrzN7krSshfR/e83v69
+ YTNo3ogqWlXDW9UOrpuKiPc2duOrYwEzmQI521iCX5Yckn/4j8RROffiZO/HwEVNl+LA
+ cKT4bkGXYAqgBAwvH6m46Ozu/INdKZns+CWNk60gFMjydYVFvbHdM7J+FbVdKF5bCHMB
+ fyQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=6bhZn3D6z5dT8F040aPK2mwK85Kv4L7cfZoX2k6ma9c=;
- b=kFo2WSy/zV43ruiPrj8YDKfo5kNLK8RDt8s8Q34pIAcMI6SJ9J0lU6Xdx2noozkS72
- TN5K9odWWfv9ahVHBkadIjqOa6q4mTSYU265fnr14RjRChc7rNFcRlBlnZYj70L1FnIq
- YNIjbuL2qKfj4e8GzYOmMakonkrCiqJC0K5lwCFGlTYo3fG+eLEd4jwZ+gxafvTWSM4Q
- xl7/njGsfCd63aAsG6NeRWhueE79exC0bxGS/X/4+FwjQRbvOHpOd6jjfqV7obaRRI7p
- zVpz0S9rxRUZD24VRyE+LWesFnhOOUm8Xk+AsqKdPKayilvAnUGxJYtFbeVCwZRPFJrC
- LSWA==
-X-Gm-Message-State: APjAAAVYxfLdBiphvi4tgls6ubne8x6QeAhLW7e3HBpfu/3W9byzH2en
- idemYqAHAZvwpwRJMGSNZdsyDUhu
-X-Google-Smtp-Source: APXvYqxhZ/HI0DOD9JREUpOfcPqOd6A5FuOmaZyiv7oKrc1kHpBypnhsFbtqidKkyNvTPUxsVmJYBQ==
-X-Received: by 2002:a0c:aff8:: with SMTP id t53mr20293123qvc.47.1563210511255; 
- Mon, 15 Jul 2019 10:08:31 -0700 (PDT)
-Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
- [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id z50sm9714081qtz.36.2019.07.15.10.08.29
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 15 Jul 2019 10:08:30 -0700 (PDT)
-From: Eneas U de Queiroz <cotequeiroz@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 15 Jul 2019 14:08:00 -0300
-Message-Id: <20190715170801.6785-3-cotequeiroz@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190715170801.6785-1-cotequeiroz@gmail.com>
-References: <20190715170801.6785-1-cotequeiroz@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=kJ1/gC1kVxh+cSdvw5T67/R+jZQhR/6TRXJDD3nYIgw=;
+ b=tCHyxeAxmb3y5tk5+B1oB8klOI9VcBzd9MUh0lxzyp1liZDW7fwIKFfbAyAOILyDqS
+ iKMcgyI6PFsepZzA1Nmnopw90LtrMl5xvH4UFTWPQBWlW1TLchh3/Hf+jZmpwNRacdQc
+ ohIGPWHy0z4CwufFoSsC0wHaqN7h2f2Xz2JSa1b1QbVmMnD9CQtK2QMcJkT8RiVhVXXm
+ JzsqLqvAkLW/OToh+0ZmJa41JINb1ohU1y1IS4Es3xHVQf5EdX1pNbhvmA9o+WGrvBLl
+ Q1FxA1GQjjsrXACp3IAErooJMm16yvKI+EH2Eag5nTp10E3SS8lHEmnD4gxRYUSSR4yY
+ t4/A==
+X-Gm-Message-State: APjAAAXo+RYy1pXdCVTPfSUG1ubQKzywSJMe3nNxzK4ONbsaHMyGnvMo
+ Lifyw+RYOHYxIGoxrvz9MB75oJlk+69GiK10YBt6Wk50
+X-Google-Smtp-Source: APXvYqwWttLESJNqhdh04uJLwdxWCikH75/5DWpgKN4f79DmYGs4G10+WdjEEOkPWIzn7ekAEorNEd/lytVUZi/Embk=
+X-Received: by 2002:aca:170d:: with SMTP id j13mr3111904oii.77.1563247095629; 
+ Mon, 15 Jul 2019 20:18:15 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190714163428.26303-1-gch981213@gmail.com>
+ <20190714163428.26303-2-gch981213@gmail.com>
+In-Reply-To: <20190714163428.26303-2-gch981213@gmail.com>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Tue, 16 Jul 2019 11:18:04 +0800
+Message-ID: <CAJsYDVJ98Xp1Wp6A0av7RT-jQcmKjRy+p87GPhVSuaaRR9ZUQg@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_100832_852643_F28B3CC1 
-X-CRM114-Status: UNSURE (   4.83  )
+X-CRM114-CacheID: sfid-20190715_201817_630020_626115C9 
+X-CRM114-Status: UNSURE (   7.09  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gch981213[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cotequeiroz[at]gmail.com)
+ provider (gch981213[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -87,8 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 2/2] target/toolchain/files/wrapper.sh:
- simplify 'case'
+Subject: Re: [OpenWrt-Devel] [PATCH RFC 1/3] ramips: mtk-mmc: mt76x8: check
+ ESD_MODE before applying AGPIO_CFG
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,38 +97,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Removed an eglibc remnant, and while at it, grouped all of the
-TOOLCHAIN_PLATFORMs using the same FLAGS together.
+On Mon, Jul 15, 2019 at 12:34 AM Chuanhong Guo <gch981213@gmail.com> wrote:
+>
+> Since mt76x8an ver1 eco2, SDXC pins can be switched to the
+> following pinmap:
+> sd_d1  -> PAD_I2S_SDI
+> sd_d0  -> PAD_I2S_WS
+> sd_cmd -> PAD_I2S_CLK
+> sd_d3  -> PAD_I2C_SCLK
+> sd_d2  -> PAD_I2C_SD
+> sd_clk -> PAD_GPIO0
+> sd_wp  -> PAD_TXD1
+> sd_cd  -> PAD_RXD1
+>
+> To use this pinmap, one would need to set ESD_MODE bit (bit 15)
+> to 1 in GPIO1_MODE and switch other used pads into GPIO mode.
+> In this mode, we don't need to switch ethernet pins to digital
+> pad.
+>
+> Check ESD_MODE bit before applying AGPIO_CFG and use rt_sysc_m32
+> to set it.
+>
+> Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
 
-Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
-
-diff --git a/target/toolchain/files/wrapper.sh b/target/toolchain/files/wrapper.sh
-index 2b760840d8..4452128382 100755
---- a/target/toolchain/files/wrapper.sh
-+++ b/target/toolchain/files/wrapper.sh
-@@ -56,15 +56,7 @@ fi
- # --dynamic-linker=$TOOLCHAIN_SYSROOT/lib/ld-uClibc.so.0 
- 
- case $TOOLCHAIN_PLATFORM in
--   gnu|glibc|eglibc)
--	GCC_SYSROOT_FLAGS="--sysroot=$TOOLCHAIN_SYSROOT -Wl,-rpath=$TOOLCHAIN_SYSROOT/lib:$TOOLCHAIN_SYSROOT/usr/lib"
--	LD_SYSROOT_FLAGS="-rpath=$TOOLCHAIN_SYSROOT/lib:$TOOLCHAIN_SYSROOT/usr/lib"
--       ;;
--   uclibc)
--	GCC_SYSROOT_FLAGS="--sysroot=$TOOLCHAIN_SYSROOT -Wl,-rpath=$TOOLCHAIN_SYSROOT/lib:$TOOLCHAIN_SYSROOT/usr/lib"
--	LD_SYSROOT_FLAGS="-rpath=$TOOLCHAIN_SYSROOT/lib:$TOOLCHAIN_SYSROOT/usr/lib"
--       ;;
--   musl)
-+   gnu|glibc|uclibc|musl)
- 	GCC_SYSROOT_FLAGS="--sysroot=$TOOLCHAIN_SYSROOT -Wl,-rpath=$TOOLCHAIN_SYSROOT/lib:$TOOLCHAIN_SYSROOT/usr/lib"
- 	LD_SYSROOT_FLAGS="-rpath=$TOOLCHAIN_SYSROOT/lib:$TOOLCHAIN_SYSROOT/usr/lib"
-        ;;
+Pushed this single patch since it's just a fix for the original hack anyway.
 
 _______________________________________________
 openwrt-devel mailing list

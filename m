@@ -2,53 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E1866BCE1
-	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jul 2019 15:20:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21C266C04B
+	for <lists+openwrt-devel@lfdr.de>; Wed, 17 Jul 2019 19:22:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VXjjMNX7us/cCPfjRjedwRhjsPTxJ79BSdAB4MzMT3I=; b=XkvaLW+OW1VjRM
-	MI7xKgzlCWaPWR7xRAj9QGK2INcxSzE/ndLMtDNWGtHUNIEVPgwaGZLL+sKFRvibPshxjxnRhJfwx
-	afOXF3/myKp4W0RFlpkyW4KNDrE8OSvjYPDZOqRJk82BFxg++oDR+QLHKUyoA0jBcIdnjP6aixE6c
-	LVJQbbZaxnbHnocL9E7wkNbs2HoDJGu4AuGVgZ6t17biaV7qbPzz/z78GOLP0MDfVnkRZwNGiePk9
-	/ocT7xz1SG4p9zUr1LSo2yGG+wzMMXl0VWn1sifGItQR9LrXxQCxqIfvWSEOrZTsWU0DcX9oJ5BCg
-	qtF11nzhz6rvYQPOn2sw==;
+	List-Owner; bh=R6AM0GpS8fmThcOIJgov023X1kcG+Xz9RUUYRVJ4Fng=; b=qpakqxJCISFiyc
+	EuzrzRz5ReaVrvNpEtcwzAn8S7neur+cfvjnUsZhDc3ACmqFI3SuFYIbkKWSB53W7WJQFJfYCE+Dd
+	hwZl9fYHhN1kF4YP4oEtr0Cdso1fTBn7pjT7TAh9B9TocGzdSR2FF67Hwei8zeC2xwSgad+t4wYN0
+	uwsgVOlf6cF/ByXGaON2Mu53urEyJKY/PX6aYeKLa6neOws33RdNAFGfYe2BrQRaa7PrS/q/0EIE1
+	SBT8tpXjSoHTDDW2TSwwCRrU20ZN47ifCpM9BvzG3WOJK4H/mwPjwxBt5Ig7DyZPs3kS4TKgqZu0P
+	2ZrP1q7JeP2dOlBNtFQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnjqv-0004Md-5U; Wed, 17 Jul 2019 13:20:13 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hnnd2-0005yM-VP; Wed, 17 Jul 2019 17:22:08 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnjqi-000407-J6
- for openwrt-devel@lists.openwrt.org; Wed, 17 Jul 2019 13:20:02 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id EDED136D7;
- Wed, 17 Jul 2019 15:19:57 +0200 (CEST)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id f90e9eec;
- Wed, 17 Jul 2019 15:19:50 +0200 (CEST)
-From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 17 Jul 2019 15:19:54 +0200
-Message-Id: <20190717131954.16865-1-ynezz@true.cz>
-X-Mailer: git-send-email 2.17.1
+ id 1hnncr-0005xk-JW
+ for openwrt-devel@lists.openwrt.org; Wed, 17 Jul 2019 17:21:59 +0000
+Received: by mail-lf1-x143.google.com with SMTP id q26so17109492lfc.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 17 Jul 2019 10:21:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=X6AJRzBz4jYkiJvoAZ8E/p5bnCsVtY1dCm8DIDn1cC0=;
+ b=CmIjgwBOxrp9M5QcHP5CEsvDxhLtLLIMyt/SLIa0qqZouiEJpjcbJ2SCFNuR48NP19
+ ruWJqYNG/vt6Ct1wVKps0kyLa6dDWdoC8UJNrdAabZJdIVp4vRbf4kQn4lW0qHdbA4ia
+ jTiXtwvUbxQb1ZZI1dMx/NThL5uNHJDT9V0GTPP1AIfbcfqjfS3Oy8syOzCQ7ziBQYGt
+ idKXrzllNvIBHXFReEdnEksn5DhtnU/264l6s6X9ItecfpjmD26tCADvwrILCupOkRCn
+ XV7JFsMBu5/GLUiJq3pf+5p8q4vylgdHMZ2zjvZ8xWWO9jB+cyx3E7X4RinsNlpSNwuw
+ pWuw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=X6AJRzBz4jYkiJvoAZ8E/p5bnCsVtY1dCm8DIDn1cC0=;
+ b=AYktql0WFhTtzPJF/IjsmdVC0Sl1q40eTV7bX/dJbjNXGGowmnOKorqXypwcU7rcZw
+ 87CUrqwV+dRsIB0pxg+uIaLIycMsqfcMZx1cX8X9Sv1asGE4Ex0bwJQ6jQO9i6yuIbZ5
+ fRjC+MhM/WcZjwIbizwQvtqWtl2p5RVE701w3lI3LYWxewXO+y9d7QH3ITHDyqdVS04R
+ 0K9c+LxtFOppgOj7Astrcr6MI+7CvTxDzd4bARmIm2pUJtr+fG24qNwgVGX1DKWbulDO
+ T0nO3c5zj0p0TuVgem7OOIMRua/f4F8Ixpqx+z6aLT7AsiYMeE/anWGF8WlGAjBGi0bV
+ pI8A==
+X-Gm-Message-State: APjAAAUKft59Q9zqmzPmpfmNnd93R9jc6SBjYyFyxeKi2umieVASXkrI
+ zY0KFsBXolV6JY6ulgmRV4S5yQ==
+X-Google-Smtp-Source: APXvYqwm6vpOqihW4WDSYJLr/dguQU+CBR+ZAVv3f6z3foNQbmQ5UP/saXpK08tSA9bhwUFao3KcAg==
+X-Received: by 2002:ac2:4839:: with SMTP id 25mr18555823lft.79.1563384113223; 
+ Wed, 17 Jul 2019 10:21:53 -0700 (PDT)
+Received: from localhost.bredbandsbolaget
+ (c-22cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.34])
+ by smtp.gmail.com with ESMTPSA id o17sm4607298ljg.71.2019.07.17.10.21.51
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 17 Jul 2019 10:21:52 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Roman Yeryomin <roman@advem.lv>, Sebastian Luft <sebastian.luft@gmail.com>,
+ Hans Ulli Kroll <ulli.kroll@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, Christian Lamparter <chunkeey@gmail.com>
+Date: Wed, 17 Jul 2019 19:21:48 +0200
+Message-Id: <20190717172148.7986-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_062000_781654_F5EEDB23 
-X-CRM114-Status: UNSURE (   7.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190717_102157_704900_196A8297 
+X-CRM114-Status: GOOD (  13.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ath79: ar9330: add missing watchdog node
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH] gemini: Fix up some confused pin config on
+ SL93512r
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,27 +97,86 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SXQgd2FzIHJlcG9ydGVkIGluIEZTIzIzODUsIHRoYXQgQ2FyYW1ib2xhMiBkb2Vzbid0IGN1cnJl
-bnRseSBoYXZlCndvcmtpbmcgd2F0Y2hkb2cgc28gZml4IGl0IGJ5IGFkZGluZyB3YXRjaGRvZyBu
-b2RlLgoKUmVmOiBGUyMyMzg1ClNpZ25lZC1vZmYtYnk6IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRy
-dWUuY3o+Ci0tLQogdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzMzAuZHRzaSB8IDEwICsrKysr
-KysrKysKIDEgZmlsZSBjaGFuZ2VkLCAxMCBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvdGFy
-Z2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzMzAuZHRzaSBiL3RhcmdldC9saW51eC9hdGg3OS9kdHMv
-YXI5MzMwLmR0c2kKaW5kZXggNjAzYjE2NTgxY2U4Li42NGMxMzU0MDViOTcgMTAwNjQ0Ci0tLSBh
-L3RhcmdldC9saW51eC9hdGg3OS9kdHMvYXI5MzMwLmR0c2kKKysrIGIvdGFyZ2V0L2xpbnV4L2F0
-aDc5L2R0cy9hcjkzMzAuZHRzaQpAQCAtODYsNiArODYsMTYgQEAKIAkJCQkjY2xvY2stY2VsbHMg
-PSA8MT47CiAJCQl9OwogCisJCQl3ZHQ6IHdkdEAxODA2MDAwOCB7CisJCQkJY29tcGF0aWJsZSA9
-ICJxY2EsYXI3MTMwLXdkdCI7CisJCQkJcmVnID0gPDB4MTgwNjAwMDggMHg4PjsKKworCQkJCWlu
-dGVycnVwdHMgPSA8ND47CisKKwkJCQljbG9ja3MgPSA8JnBsbCBBVEg3OV9DTEtfQUhCPjsKKwkJ
-CQljbG9jay1uYW1lcyA9ICJ3ZHQiOworCQkJfTsKKwogCQkJcnN0OiByZXNldC1jb250cm9sbGVy
-QDE4MDYwMDFjIHsKIAkJCQljb21wYXRpYmxlID0gInFjYSxhcjcxMDAtcmVzZXQiOwogCQkJCXJl
-ZyA9IDwweDE4MDYwMDFjIDB4ND47Ci0tIAoyLjE3LjEKCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVu
-d3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Upstream patch fixing the errors in the device tree.
+
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ ...-gemini-Fix-up-confused-pin-settings.patch | 54 +++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+ create mode 100644 target/linux/gemini/patches-4.19/0024-ARM-dts-gemini-Fix-up-confused-pin-settings.patch
+
+diff --git a/target/linux/gemini/patches-4.19/0024-ARM-dts-gemini-Fix-up-confused-pin-settings.patch b/target/linux/gemini/patches-4.19/0024-ARM-dts-gemini-Fix-up-confused-pin-settings.patch
+new file mode 100644
+index 000000000000..9ae2a79cbf50
+--- /dev/null
++++ b/target/linux/gemini/patches-4.19/0024-ARM-dts-gemini-Fix-up-confused-pin-settings.patch
+@@ -0,0 +1,54 @@
++From 384ec5ed82845c2c81968743dde4a758f572c11b Mon Sep 17 00:00:00 2001
++From: Linus Walleij <linus.walleij@linaro.org>
++Date: Sat, 13 Jul 2019 11:52:29 +0200
++Subject: [PATCH] ARM: dts: gemini: Fix up confused pin settings
++
++The SL93512r board has its pin muxing set up for the wrong
++ASIC: SL3516 instead of SL3512 that it is using. Fix it
++up and reference the right GPIO for the WPS button.
++
++Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
++---
++ arch/arm/boot/dts/gemini-sl93512r.dts | 19 +++++++++++--------
++ 1 file changed, 11 insertions(+), 8 deletions(-)
++
++--- a/arch/arm/boot/dts/gemini-sl93512r.dts
+++++ b/arch/arm/boot/dts/gemini-sl93512r.dts
++@@ -36,8 +36,8 @@
++ 			wakeup-source;
++ 			linux,code = <KEY_WPS_BUTTON>;
++ 			label = "WPS";
++-			/* Conflict with NAND flash */
++-			gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+++			/* Conflicts with TVC and extended flash */
+++			gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
++ 		};
++ 
++ 		button-setup {
++@@ -153,17 +153,20 @@
++ 		syscon: syscon@40000000 {
++ 			pinctrl {
++ 				/*
++-				 * gpio0egrp cover line 16 used by HD LED
++-				 * gpio0fgrp cover line 17, 18 used by wireless LED and reset button
++-				 * gpio0hgrp cover line 21, 22 used by MDIO for Marvell PHY
++-				 * gpio0kgrp cover line 31 used by USB LED
+++				 * gpio0agrp cover line 0, used by WPS button
+++				 * gpio0fgrp cover line 16 used by HD LED
+++				 * gpio0ggrp cover line 17, 18 used by wireless LAN LED and
+++				 * reset button OR USB ID select on 17 and USB VBUS select
+++				 * on 18. (Confusing.)
+++				 * gpio0igrp cover line 21, 22 used by MDIO for Marvell PHY
++ 				 */
++ 				gpio0_default_pins: pinctrl-gpio0 {
++ 					mux {
++ 						function = "gpio0";
++-						groups = "gpio0egrp",
+++						groups = "gpio0agrp",
++ 						"gpio0fgrp",
++-						"gpio0hgrp";
+++						"gpio0ggrp",
+++						"gpio0igrp";
++ 					};
++ 				};
++ 				/*
+-- 
+2.21.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,68 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DA9C6D341
-	for <lists+openwrt-devel@lfdr.de>; Thu, 18 Jul 2019 19:54:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B71246D344
+	for <lists+openwrt-devel@lfdr.de>; Thu, 18 Jul 2019 19:55:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
 	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=r3UgGzFgmffgQjLdaZ8Qw/ilZxsOuZRLtJ56e219Iro=; b=F1N2SW0X22stz7
-	XIhzwudttt/eZ6SUVdARbNqsZYe+lVMjiSxRb087BWxWy6YPFY4vLBwJOQ6raDglT4nOjVfX1sNhq
-	RR2dfw1v0D5BJxz9iM9vBK7iJnvFlVOJt6AOKfgPpIJWaRsM9S6PNtALQOwqUaqHQW3kgVRR6kBhj
-	FzOj6hFBNQvrOqwOlG4vqVTrTo3nFObZiI8Q7Nw7lztSs9X4IqMzW6lR7nYWC7xPZ38LiqBmKIr/U
-	gukjJRhvQ9t0U9rC8pbrzbHI2X3Emxv1hna2lZhlQfioo8BwD965UNNCQdlQPDTgnKDmNLYG7DAfH
-	WGsObeLsrU4FN6FUEKFQ==;
+	List-Owner; bh=oYZMmoBhAvE4pVuMJt6+seKHTewGwnWSHAjfSCT1VwY=; b=udC5Hhi0Zgvl8i
+	EQIZfYS+AVolqwIKvS2D+GQVFsFi01M5m3b1E+JeHA4WQwcQQ+pfrfLEG00OKb40LdRIwZJE9RcwF
+	zRqM03CuIp6kHZnoNqqZVo22ACk/ZgWyaslx3X7OIP4ahH4tWF3faxGTQq47VxZK28sm91ix73ah7
+	B+Xd72SUkDjydqMgNj/q/bWtpuD1PZbQbOuYLuEhipV8EBj+fX4qK7wdiDJxNlmTUOkOTTcBOrSo6
+	fK/AlAqWV6FUkKpVYSBYxVF3BHt5nv9LAhZezacAr/okdNsload9oR0jFOZu92Et6t2y4XuVzJKC+
+	MEnE4kIcO+pBvJ3gzG6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoAb6-0000IK-Ez; Thu, 18 Jul 2019 17:53:40 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1hoAcQ-0000yY-NN; Thu, 18 Jul 2019 17:55:02 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoAaj-00009V-3y
- for openwrt-devel@lists.openwrt.org; Thu, 18 Jul 2019 17:53:22 +0000
-Received: by mail-pl1-x644.google.com with SMTP id i2so14272006plt.1
- for <openwrt-devel@lists.openwrt.org>; Thu, 18 Jul 2019 10:53:16 -0700 (PDT)
+ id 1hoAcB-0000xz-IN
+ for openwrt-devel@lists.openwrt.org; Thu, 18 Jul 2019 17:54:48 +0000
+Received: by mail-pl1-x642.google.com with SMTP id i2so14273731plt.1
+ for <openwrt-devel@lists.openwrt.org>; Thu, 18 Jul 2019 10:54:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id;
- bh=Hdxi5RRQTke18f2LVaUfUB/LtuqCT5hVTdjZ/vIl5zQ=;
- b=tjDBgwAAWVWuTccxohFtl8oOXV6FxUZCvgFFrFqKQtjb9fX58IL7DFk1A6zpIn3ubZ
- VoNJOsJMLdNQEqEnGbDaNsl2njDdVoBjZCIEQUVgotKSEeJBug1rR1oH3H6kLWoIy9K8
- M4AOicrpRYfjLM7Lev9zBJsBu8gfLxSK8NLPQ7AYbOtN4NqRB+txFNNvGlQRBZX0rsXM
- jWcUTQwJCF1hz4jAJivOzsGCqyEVMp2rEbLqir4TfaFcFN8kMaZDieWwXdgssk38X5CJ
- tBvnSgAdwQeWDAulkxMykrrT+C0rLKbwYkAZAPz6uyV0eMxJXZHwzdPMgL01T1RHeMaX
- QbVg==
+ bh=2aiZ2kjaDdmKEkleLDr9jTYss7wGCRN+SdSQNTSB8Sw=;
+ b=CN2Dyc0lb4eGIOzQgWJPCzL7OAsug7tUc0vSsF5w+nMMfjf1PWJVk+TP164bLb9cZ0
+ V0v3UtlxNIVf2tpcj02vybkxc/dKDQWgWhMhRCYKMRAIljQPWDLHIc5AM/PWSKglsU6d
+ h3pUmklAhPGmUKLHvRdHPx/FnvWBSdDZz5I645HUMVG7Y9JiY55id2L7sCMLbPtExLHr
+ tkF8TH6lN9EYfHYGnn1ZVPolIIHbZgSBPI9eMlcn08Qyj1SycLXaoapcEJOSM7H2GaEw
+ HtSKT6Fga93zzPlZJlv2+ukst4O+k8fxJCUrfAhN1IGhknMN/wb9vPlTz5u1WRy0XyQA
+ ObRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id;
- bh=Hdxi5RRQTke18f2LVaUfUB/LtuqCT5hVTdjZ/vIl5zQ=;
- b=KhhZ0AVYBWhdtjlh2BWlNfCjJKsVpWIICDmIE3sC9MbSoRaGbHtqU8YpNL2zyGk4GC
- 0ePMS64GVfSxDJ4uUKu987tJSo/KWjJrVfPRxZ3OQX39m+8Vy7zDCEL9EkBJ7i84CMsG
- Snj43puIUYCPl7P7C9kDbYoSYk++2H1Nn8t4lpBhsmmVbYQADVVYoPQ6Dy/8zcXEJ5ix
- PoOmLSHHHBZqWU76AuDcTCHavPN+fGsBB03RhXtVPfAEfadeJmTEEJVA67zgd38iY8+o
- 1qU38lgceP0RaRKe3kGP8oo/lWRaX1F42D85kIEHULFFUFNVW/0Lq8x5FyW6wanrByZN
- DIcg==
-X-Gm-Message-State: APjAAAW3uUTbdLCTJNxpiciCJm60yu16xIfqL9OU5DWrn8mkIUTBL1Gv
- v/pAWUbgYtt/SoNAAh+uKSdsTz/mEcw=
-X-Google-Smtp-Source: APXvYqxo02n+4GM3C3YIcp5SZLECZZs7JQsF1arbMVD9YwO6DPaI/MgwDkrKV2/qwrSQwyvtDgDX1w==
-X-Received: by 2002:a17:902:e210:: with SMTP id
- ce16mr52016566plb.335.1563472395596; 
- Thu, 18 Jul 2019 10:53:15 -0700 (PDT)
+ bh=2aiZ2kjaDdmKEkleLDr9jTYss7wGCRN+SdSQNTSB8Sw=;
+ b=ezKaG6ILhDzrd/9JQHMJLb2xw84k6dWbWd63p901B0n+fw83iQI+wEI+sF1z98jdDy
+ zne063IRfZmZZNT4o2IkGXnagqHr0B9mJRUJ2DmFa6wv+R20gq63DC/hm7lfaTuptvd3
+ RMjV+4st7TWvtYFEjG5fRDv89buRfIPzMoGR4kugLZn2KmVWddT/yJA446ifprWhTw9/
+ PhPcdwnwQS65WFZKfOB71z75ppc6+2CJYVPrrmYO5k4mF6uRMBWWucDqHhjofUxIECP9
+ szrMEh31w14iIPdFuEKInb4wu99vMpXJBJvdKO5ixjkdM//Ixtwmh37JqL2NzdsYl/py
+ 654w==
+X-Gm-Message-State: APjAAAWmZIAMjtcvi+EdWW4Ekit0CTK2rQ+O9xhLztIkxGFSZMGhsmVj
+ aOPZOrpsRX3EwFbBtnI0U72yutsAcp4=
+X-Google-Smtp-Source: APXvYqweiR3wM8Wx3WgHthXuat4lTVpR/SFLESNtTczBbZRa3yjrbMCzWy9abgBkZw3oyci3klvKNQ==
+X-Received: by 2002:a17:902:9a42:: with SMTP id
+ x2mr52002573plv.106.1563472486306; 
+ Thu, 18 Jul 2019 10:54:46 -0700 (PDT)
 Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
  [76.14.106.55])
- by smtp.gmail.com with ESMTPSA id u134sm26706770pfc.19.2019.07.18.10.53.14
+ by smtp.gmail.com with ESMTPSA id k3sm22983728pgo.81.2019.07.18.10.54.45
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 18 Jul 2019 10:53:14 -0700 (PDT)
+ Thu, 18 Jul 2019 10:54:45 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 18 Jul 2019 10:53:13 -0700
-Message-Id: <20190718175313.32657-1-rosenp@gmail.com>
+Date: Thu, 18 Jul 2019 10:54:44 -0700
+Message-Id: <20190718175444.475-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_105317_345196_519370BB 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20190718_105447_628205_F9F6C70E 
+X-CRM114-Status: UNSURE (   8.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -84,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] procd: Switch to nanosleep
+Subject: [OpenWrt-Devel] [PATCH] rpcd: Switch to nanosleep
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,28 +110,23 @@ nanosleep also has the advantage of being more accurate.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- initd/init.c | 3 ++-
+ sys.c | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/initd/init.c b/initd/init.c
-index 29eee50..e1c3da2 100644
---- a/initd/init.c
-+++ b/initd/init.c
-@@ -97,12 +97,13 @@ main(int argc, char **argv)
- 	if (pid <= 0) {
- 		ERROR("Failed to start kmodloader instance: %m\n");
- 	} else {
-+		const struct timespec req = {0, 10 * 1000 * 1000}
- 		int i;
+diff --git a/sys.c b/sys.c
+index 43eadc4..2d83522 100644
+--- a/sys.c
++++ b/sys.c
+@@ -145,7 +145,8 @@ rpc_cgi_password_set(struct ubus_context *ctx, struct ubus_object *obj,
+ 		if (n < 0)
+ 			return rpc_errno_status();
  
- 		for (i = 0; i < 1200; i++) {
- 			if (waitpid(pid, NULL, WNOHANG) > 0)
- 				break;
--			usleep(10 * 1000);
-+			nanosleep(&req, NULL);
- 			watchdog_ping();
- 		}
- 	}
+-		usleep(100 * 1000);
++		const struct timespec req = {0, 100 * 1000 * 1000};
++		nanosleep(&req, NULL);
+ 
+ 		n = write(fds[1], blobmsg_data(tb[RPC_P_PASSWORD]),
+ 		              blobmsg_data_len(tb[RPC_P_PASSWORD]) - 1);
 -- 
 2.17.1
 

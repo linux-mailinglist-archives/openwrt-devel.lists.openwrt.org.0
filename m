@@ -2,74 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6667B6F08C
-	for <lists+openwrt-devel@lfdr.de>; Sat, 20 Jul 2019 21:58:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CF946F095
+	for <lists+openwrt-devel@lfdr.de>; Sat, 20 Jul 2019 22:16:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b8ERDNsPwSQ3Y4HXnJ3V5ZYq86XgKgqB5yBLs6tFosY=; b=M+jjS0Aczw6OmbhhcnaJVEDNU
-	bkr1u8JLIP1sZYiM+KWsJb3si/cuU0bzx8TyX+FoEVOujWacDrp68fHjtoTGK9BnfzSwz1WGlcOTd
-	8VtsDd7Q61BLWFPHeukR76e5AGsu+QOFsKfaYv/gpwUK83qpEsy7itfzQWJVwV+O63LulHZtA10rU
-	4QGrpQL6U5a1EnovNQBjf1a/Q/nrfM/600AZXTPI4IrL/NIHfHW9F676eSxNzbINhiXxaMKvwxrKY
-	/uWXCYiUHV1oUqqt2g7X2Yx6FXbT5GKSuLWaseCCBNLhI4mQNxZRjZHfAD29xvuXDWuto8+wtwT52
-	DS2dc+M5A==;
+	 bh=hJnPEN/vOLGzC+4/P5fKZnJqHvqEstEyiEj2O1YaxrY=; b=iMjoabWaGcWOchVRT/d75cxMM
+	RVDQu/LjSV8uDnRo9XJue81BQO2eCZCRJyJXZ3vjsURitHvrxVhfL45n2ZCHB8AZoHZYGNB6Z6033
+	Rmvx7FPFu/cMuMQUsEtZNtvgJZI6IzmtXmtBmWfuaH0hFnx3WukFyhoZhvZeJRvsZxBWQEWf19izM
+	K/upKoVsWt/eb3hFKro5Jzvyr5BEuDtPHMOcmT46fAPQhvlvJz4UktnSvLj9WO/Wtuv6ISq0u4R8W
+	Hw6KFVqxLQTdLJ9XtrXN/1yd51OgNjxOkFqii8CxCrHVKZSGFNhfV3bL6D5PVgZ3F9MjvFGA68aou
+	nXwuT3+nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hovUg-0008OO-Vd; Sat, 20 Jul 2019 19:58:10 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1hovlx-0005ir-Lk; Sat, 20 Jul 2019 20:16:01 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hovUX-0008Nr-KO
- for openwrt-devel@lists.openwrt.org; Sat, 20 Jul 2019 19:58:03 +0000
+ id 1hovlj-0005iO-7K
+ for openwrt-devel@lists.openwrt.org; Sat, 20 Jul 2019 20:15:49 +0000
 Received: from desktop ([188.194.32.21]) by mrelayeu.kundenserver.de (mreue012
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MZAvp-1hsvpm0zMf-00V7sF; Sat, 20
- Jul 2019 21:57:51 +0200
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1MKuGD-1i9UUC14Pt-00LBjk; Sat, 20
+ Jul 2019 22:15:41 +0200
 From: <mail@adrianschmutzler.de>
 To: "'Birger Koblitz'" <mail@birger-koblitz.de>,
  <openwrt-devel@lists.openwrt.org>
-References: <88efe791-03b2-2047-d2c2-98ba06f1ee36@birger-koblitz.de>
-In-Reply-To: <88efe791-03b2-2047-d2c2-98ba06f1ee36@birger-koblitz.de>
-Date: Sat, 20 Jul 2019 21:57:49 +0200
-Message-ID: <006c01d53f35$69799550$3c6cbff0$@adrianschmutzler.de>
+References: <32dabb5c-00ec-8793-17e1-9f946ff4f6a0@birger-koblitz.de>
+In-Reply-To: <32dabb5c-00ec-8793-17e1-9f946ff4f6a0@birger-koblitz.de>
+Date: Sat, 20 Jul 2019 22:15:40 +0200
+Message-ID: <007e01d53f37$e7407510$b5c15f30$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Thread-Index: AQCpTA4eKbXfGbmPdHUvKSUFR0z7Bakr0ICA
+Thread-Index: AQIZjipF4endZsRPYgt7/qFrFYr2aaZLToew
 Content-Language: de
-X-Provags-ID: V03:K1:+7hjckr6lCPhRkFCSPBG95S+vcoJEHB1wgoV2iPHDoiQPYOy6HF
- wOp+6tcELLck3q1/H8hk8+Ugl4esPO2MZoJc7CG4NJepKHp0MnOHPNjylkC0CtwTMdX1W0x
- EIHA5bRiOaN7YaJTFJP7b2MCVJWDbrbLYbrVT15MgyBsCzOGFip/S18TJ8MB9y9hgCNPdoa
- /I4ZijdjjDKxh9NUY49bA==
+X-Provags-ID: V03:K1:09eoceNpWHZmDKkPggw+ukg7cRx5p7hh0l/g5qN4D3lrb6slShq
+ eZJBNfqGn1/K+QnjPDMuohLpndkne1N7Rm0OD5uzADgcyCzQXfxJG5kTx5LDRmtVSdnMsd0
+ zHvlTKjqMHSsH00PK9aiMwe+Vbl2V138h8aCxKCMobZ69r4jUyt9eEmujEjxceXvqjV6f2u
+ iEbkek+hTwEgdSdSwY55g==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Q1pIuiwx8uY=:5xVPjGrJN7GJJouQXe3tgn
- J+EMVCx+Hxg6bMsxwfgytyteGOrTRCy1pg7jdruBo4cXrL2upqNasAQ2P0gKba199mIjepUhw
- ViLRbknLghNfQQCu7LsGzsmRWpn94qP4Hy72k4LI1flHKpzHVyuYpMakCR+p9IPXcO6F3wbeG
- RDpSUnPcStkUEGGCVR9YKSCoILNSzUaRXbzCqLBjRB9Gqlc+gJmMw11ZKO5l4SN1L5z7xqXlo
- XvXpM9CQCp+jMd4LTsqkdt5pBCRHTjVN8h/FyB6DSEVt7F1dznQf94Jwjm3EeZvCPH6Yt41GA
- 31RMG+Ma8IUXrS0NUkDAONwuxFC9mX5wbDDfjsh6OyZxYlo31GrcBSz5t0h5mr0E0NaqydnAC
- BGxykwUtmtlg6N23jeB4uk2dkm/vsLtza+4PIlPH3F/p+txIeIEGjNXVOAj6J6pSdQkr02XU/
- px9+QSNJIHafo2Z0YcllJyE+MGgbuW3RynNbczATUdv+GvddamQElm4NSi4ukmQBp/hC48i+f
- Q93nN8XK3ZjWz+RpeNIyizz7Td31pZCZMaFKRTZeq66e0ahRjeJpWC79XVt8YGrA0d9XyA/db
- uNoSNgaBTmSV5/Oy6uD8CpwQ+i+jVGPWS8Za1aJYglIvmfqH+pwNZZC79TZDeWVSUTz1tWFtp
- XdSw2F4Pe9FnYZvTZNdt5UXgqa211iwfim1qkBGYWtahS1yIHDGw/MVWJTROIGV8nyx5qUg/s
- lCGoQHWDVG/dhkOcBTLFdFk57ft1DaesdTvTCm9NbH7RwzErp8/pvSnpU/E=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:2Ojb/HCZ/Z4=:SuUuCukOt6L8hYgNrmnDLt
+ e4a7YMR0jUJ7mpEGnDtUaXH11aKNFLQ9eS68H01iNh5yrVzo8vS/jFKu3Th4SRXz4amR0sOtx
+ Qa3zkvBu6ISIw6mfcMafTL7TZ1NnZdYoPMvomZZNoxEbKhVJQpDJSZi5shRvL5NmkRvyFhEcf
+ Y89wfV4Yr5SzAnmVguNAkND9Du/42Fw/BCP2JI3JwazHoaDwSSyjec8hRRlGvfbpZozRDpz3U
+ 65Y3kz2L9lcLMk0TtyPlZUJZSWDg8Oq/prl/7/y0ISa+5Ek7eriNAfBdQ0TVFwsPH+5GvNlYz
+ sTd6WTNhKK9waSwj1Bq9V2HIihEl48FEAYizQTI5mB31KNEISz243yWpKgwX9sja3BizK5TDe
+ 9YRvcmt19AlZvv8XHuRZptzqOqxpIwQ+ZWunXHS8jNWVtqHbN8Bgr8uPVIxwkcZeT+565lwZW
+ 2qD50Ft2ZsT6IaUEBMuops5MO9072oPrWZKLAHh6+VaI0eK1jAHtJOH5s2y2Vc9AsqjxsiaWK
+ ioTqRetjw/h6+FDYe/Q9UTrPN+uSmAMsCrhW4pY0Uk4fiSlOOvBOUpCY3M4Gr7PzVJKh/nmzO
+ mRCFjDLEU4kMch8BPxdCqVnE28J1EkQ4zbzfTClThkTIsvyDqXL0Jb0IFzP5LT7EmMEejNsvk
+ iwwPwa03mvPHBp4KRFIO58+7QOr4gkLd6eLUJUGKVJhg3FIbsZky0rlHav/3fy4Mi+xfNzAi0
+ f27cZjYI8jXnrdSjYCllLT8rrQ+HPXYUZv2KxrRkzGEn8v4Ip/KLwsGcn0w=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190720_125801_962618_96F16617 
-X-CRM114-Status: UNSURE (   8.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190720_131547_564360_2C0AAA61 
+X-CRM114-Status: GOOD (  14.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
-Subject: Re: [OpenWrt-Devel] [PATCH v3] ramips: add support for Edimax RG21S
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for Asus RT-AC85P
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,99 +78,275 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2375161558393139087=="
+Content-Type: multipart/mixed; boundary="===============6721890714063317690=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============2375161558393139087==
+--===============6721890714063317690==
 Content-Language: de
 Content-Type: multipart/signed;
-	boundary="=-=q2Hth+lm0JApy0=-=";
+	boundary="=-=Si5UQnxXI4NSpd=-=";
 	protocol="application/pgp-signature";
 	micalg=pgp-sha256
 
 This is a multipart message in MIME format.
 
---=-=q2Hth+lm0JApy0=-=
+--=-=Si5UQnxXI4NSpd=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-sorry, me again:
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Birger Koblitz
+> Sent: Samstag, 20. Juli 2019 19:36
+> To: openwrt-devel@lists.openwrt.org
+> Subject: [OpenWrt-Devel] [PATCH] ramips: add support for Asus RT-AC85P
+>=20
+> ramips: add Asus RT-AC85P
+>=20
+> SoC:	MediaTek MT7621AT dual-core @ 880MHz
+> RAM:	256M (Winbond W632GG6KB-1)
+> FLASH:	128MB (Macronix MX30LF1G18AC-TI)
+> WiFi:	- 2.4GHz MediaTek MT7615N bgn
+> 	- 5GHz MediaTek MT7615N nac
+> Switch: SoC integrated Gigabit Switch (4 x LAN, 1 x WAN)
+> USB:	1 x USB 3.1 (Gen 1)
+> BTN:	Reset, WPS
+> LED:	- Power (blue)
+> 	- 5Ghz (blue)
+> 	- 2.4GHz (blue)
+> 	- Internet (blue)
+> 	- 4x LAN (blue)
+> 	(LAN/WAN leds are not controllable by GPIOs)
+> UART: 	UART is present as Pads marked J4 on the PCB.
+> 	3.3V - TX - RX - GND / 57600-8N1
+> 	3.3V is the square pad
+> MAC:	The MAC address on the router-label matches the MAC of
+> 	the 2.4 GHz WiFi.
+> 	LAN and WAN MAC are identical: MAC_LABEL+4
+> 	5 GHz WiFi MAC: also MAC_LABEL+4
 
-> +	model =3D "RG21S";
+That's a nice idea. We should encourage adding similar description for othe=
+r device support commits, too.
 
-"Edimax RG21S"
+Question: So, LAN MAC, WAN MAC AND 5 GHz MAC are the same?
 
-> +	keys {
-> +		compatible =3D "gpio-keys-polled";
-> +		poll-interval =3D <20>;
+> +	asus,rt-ac85p|\
+>  	dlink,dir-860l-b1|\
+>  	elecom,wrc-1167ghbk2-s|\
+>  	elecom,wrc-1900gst|\
 
-Interrupt-driven "gpio-keys" should be available at mt7621.
-So replace compatible and remove poll-interval.
+Please move the block so sorting of blocks keep correct.
+
+> @@ -532,6 +533,9 @@ ramips_setup_macs()
+>  		lan_mac=3D$(macaddr_setbit_la "$lan_mac")
+>  		wan_mac=3D$(mtd_get_mac_binary factory 32772)
+>  		;;
+> +	asus,rt-ac85p)
+> +		wan_mac=3D$(mtd_get_mac_ascii u-boot-env et1macaddr)
+> +		;;
+
+This should be before asus,rt-n56u.
+
+Despite, if WAN_MAC and ethernet MAC address are really the same, you techn=
+ically would not need to set eth0.2 (wan) MAC address again.
+However, if you completely remove the case here, you will fall into default=
+ and set wrong addresses.
+So, one could just set the wan_mac anyway or just add an "empty" case:
+> +	asus,rt-ac85p)
+> +		;;
+
+...
+
+> +	compatible =3D "asus,rt-ac85p", "mediatek,mt7621-soc";
+> +	model =3D "Asus RC-AC85P";
+
+RT instead of RC?
 
 > +	leds {
 > +		compatible =3D "gpio-leds";
-> +		/* there are 4 red leds, unlabled */
 
-There is an "e" missing in unlabeled.
+Add an empty line here.
 
-Despite, recently reviewers preferred having comments like this in the comm=
-it message instead of the DTS.
-If you move it, add an empty line between the compatible and the first led.
+> +		led_power: power {
+> +			label =3D "rt-ac85p:blue:power";
+> +			gpios =3D <&gpio0 4 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger =3D "phy0tpt";
+> +		};
+> +		wlan2g {
+> +			label =3D "rt-ac85p:blue:wlan2g";
+> +			gpios =3D <&gpio0 10 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger =3D "phy0radio";
+> +		};
+> +
+> +		wlan5g {
+> +			label =3D "rt-ac85p:blue:wlan5g";
+> +			gpios =3D <&gpio0 8 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger =3D "phy1radio";
+> +		};
+> +	};
+> +};
+> +
+> +&sdhci {
+> +	status =3D "okay";
+> +};
+> +
+> +&nand {
+> +	status =3D "okay";
+> +
+> +	partitions {
+> +		compatible =3D "fixed-partitions";
+> +		#address-cells =3D <1>;
+> +		#size-cells =3D <1>;
+> +
+> +		partition@0 {
+> +			label =3D "u-boot";
+> +			reg =3D <0x0 0xe0000>;
+> +			read-only;
+> +		};
+> +
+> +		partition@e0000 {
+> +			label =3D "u-boot-env";
+> +			reg =3D <0xe0000 0x100000>;
+> +			read-only;
+> +		};
+> +
+> +		factory: partition@1e0000 {
+> +			label =3D "factory";
+> +			reg =3D <0x1e0000 0x100000>;
+> +			read-only;
+> +		};
+> +
+> +		factory2: partition@2e0000 {
+> +			label =3D "factory2";
+> +			reg =3D <0x2e0000 0x100000>;
+> +			read-only;
+> +		};
+> +
+> +		partition@3e0000 {
+> +			label =3D "kernel";
+> +			reg =3D <0x3e0000 0x400000>;
+> +		};
+> +
+> +		partition@7e0000 {
+> +			label =3D "ubi";
+> +			reg =3D <0x7e0000 0x2e00000>;
+> +		};
+> +
+> +		partition@35e0000 {
+> +			label =3D "firmware2";
 
+Where is firmware1? kernel+ubi?
+
+> +			reg =3D <0x35e0000 0x3200000>;
+> +		};
+> +	};
+> +};
+> +
+> +&pcie {
+> +	status =3D "okay";
+> +};
+> +
 > +&pcie0 {
 > +	wifi@0,0 {
 
-This is what I was referring to in my other mail:
+Maybe add "wifi0:" here.
 
-Maybe already use
-
-+	wifi0: wifi@0,0 {
-
-here, so I can refer to that one later.
-
+> +		compatible =3D "pci14c3,7603";
+> +		reg =3D <0x0000 0 0 0 0>;
+> +		mediatek,mtd-eeprom =3D <&factory 0x0000>;
+> +		ieee80211-freq-limit =3D <2400000 2500000>;
+> +		mtd-mac-address =3D <&factory 0x4>;
+> +	};
+> +};
+> +
 > +&pcie1 {
 > +	wifi@0,0 {
 
-Consider adding "wifi1:" here as discussed above.
+Maybe add "wifi1:" here.
+
+> +		compatible =3D "pci14c3,7662";
+> +		reg =3D <0x0000 0 0 0 0>;
+> +		mediatek,mtd-eeprom =3D <&factory 0x8000>;
+> +		ieee80211-freq-limit =3D <5000000 6000000>;
+> +		mtd-mac-address =3D <&factory 0x8004>;
+> +	};
+> +};
+> +
+> +&ethernet {
+> +	mtd-mac-address =3D <&factory 0xe000>;
+
+So, this is the same as <&factory 0x8004>, but stored twice?
+
+> +	mediatek,portmap =3D "wllll";
+> +	port@5 {
+> +		status =3D "disabled";
+> +	};
+> +};
+> +
+> +&i2c {
+> +    status =3D "disabled";
+> +};
+> +
+> +&pinctrl {
+> +	state_default: pinctrl0 {
+> +		gpio {
+> +			ralink,group =3D "uart2", "uart3", "i2c";
+> +			ralink,function =3D "gpio";
+> +		};
+> +	};
+> +};
+> diff --git a/target/linux/ramips/image/mt7621.mk
+> b/target/linux/ramips/image/mt7621.mk
+> index 73ded64e74..c1f07ca746 100644
+> --- a/target/linux/ramips/image/mt7621.mk
+> +++ b/target/linux/ramips/image/mt7621.mk
+> @@ -115,6 +115,22 @@ define Device/asus_rt-ac57u  endef
+> TARGET_DEVICES +=3D asus_rt-ac57u
+>=20
+> +define Device/asus_rt-ac85p
+> +  MTK_SOC :=3D mt7621
+> +  DEVICE_VENDOR :=3D Asus
+
+Use all caps as for the rt-ac57u.
 
 Best
 
-Adrian
+Adrian=20
 
---=-=q2Hth+lm0JApy0=-=
+--=-=Si5UQnxXI4NSpd=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl0zcjkACgkQoNyKO7qx
-AnBGLRAAkvVQes4CQ/gLM/7MiLNxZthrCs5jFSdIg810rfBIo9H6fMg+7qP58xxx
-4oc3Im4vYjONy2mRMLC+GzksLzHYtSIBu3ipznhZ/J2++Wln4pwQZe9WF6zORDV3
-BQZVnjHZK4fuVGirQGZsTrbrzBEelnGso0izGNl1NburItTy4KYRZkwfL8rvarhv
-ViBZ3/q03f6JQxEQT3Ec5pawi7bRxeBCfolTgzijojMd5UAyE2PwLxzigjLzITZf
-7QyGC+NvqE7veKRHN6PtzQGtANYnRFJsIROMPgcEepEO2C9ujkA7V2ITqqxbNb0h
-Rrmawnx+CCFA4Bm0qpZMJ03Jxr66vhi8jyDoDYzpBJoI0m8rFT3gzBxmHx4ZszxA
-PEmD15kmZr22Xy0KpEbDw3gcViRTJDPs1zvWFY7CpjfsBAZWkxUVfVe6L7i4ksI9
-dCQ/Pd1MTfaqNg37wtj7JHrJSxvG17VZbf9u+h9ZY3P5KqHJBh+4LvL1fD5/y5m4
-HxDB06sBokTyTFMo3hDKCaOfzitLjW/IlE+9ylxJ3Aah6LUVyfBg6W75meMrK6Cc
-xHaunAC0xkFs2McsFASmFQjbHgh5PFqmTcf0G37mFvVN5APPV0hrH15LIFWsvkYX
-EQd+9vDFD1UuBTZNaYhV8wWMUtOKBaamYc8fLRUoHC9/dJIFcCg=
-=SSnV
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl0zdmkACgkQoNyKO7qx
+AnBDOg/+NOwTbgjusG6qL281aopGvoQDTzuvC8c3AwSfNDRlgYZSvO3AQurnO1Vs
+Y4WTJ5yS305sUx4clA3MzVUb9OSh8OFYxP/OSLSD/Wf1i+8DzLpQWnMvoU4o7Jxt
+qU0vFilafZHUInhZ/oKeT+4A1O5ZcEquxBPNHKeRRQtWr6HrnAM4n8JeDRxy1iQW
+s9PCdqtnpTD7p9ZTRPyaY7Ow5VSVs9KlQFAmC/1wPeZwX5YLkrmRRgJj0nOsqyad
+JVtBsiq5Vr4Q0fq+K4JBGutgMHhUkJfOUSgNPXHg7QKSO4RAcLFIxrl0D6IW5DKG
+lFjz1+GNfsssJ5TO15FGboDjCzG3SADpGGIjBUDITzb7q3fA+jiqtDeSMUAnkTt/
+iu3OIGTJJNaQ4v1VzSeIHgnxML5ifYhHAakz68mQATNfJ0+QDxiN+THbNO4bCPOf
+vDoKIhY1yITgh6306b4k/bETGCI1G7jQeUcND/KpqhmomctGXDtmYGfHPI8Z7cVO
+ADmAP6JD7aHGpwxJ0DvzDiwuTdz3rYQYIURCuERuZ6PoUljbJd+UuKP4JN/mrakB
+KGBLiwBJVJvP1QvIt2m6Nuxwa3G17dZXNmRPVkwCkHrHZaEtN2AIY981rcJanFVE
+UYwE/X4JCbqStw1jrgE15TZ4kfQWLMeoTaSiDYb2iuolp1XIWaU=
+=jlcS
 -----END PGP SIGNATURE-----
 
 
---=-=q2Hth+lm0JApy0=-=--
+--=-=Si5UQnxXI4NSpd=-=--
 
 
 
---===============2375161558393139087==
+--===============6721890714063317690==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -184,6 +357,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2375161558393139087==--
+--===============6721890714063317690==--
 
 

@@ -2,122 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35C82707CD
-	for <lists+openwrt-devel@lfdr.de>; Mon, 22 Jul 2019 19:44:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7175870A33
+	for <lists+openwrt-devel@lfdr.de>; Mon, 22 Jul 2019 21:57:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h0z9JX25/2MwU9cNT595+gokcYEU5IKklsC66d7J2Cg=; b=CHjzBTth+PvL8D
-	vqWLFrEN/KmQq2JijHkbhmHXM4TkvGUlsvwyUxKf6qjyQSE1QofqsU8vMG2Q/POKHctPq8SMHf1ip
-	q/tntd8egoTLp7EYx3O12X5o0dfoAZ68GFMjrBJc3jvqXMvcUVoffclbQzTf+h8zjRzuC1/0AUqIA
-	R7U2X+aKrpsXz5hGIXic0GihqiQE/Wunsihui+JVb7NU44aMk0E6x5TVZwNpJzWFpWCjTZ1riGXXC
-	svAWNS+CNkMHDv/abVBlGoGm6ETJ5VlgV5CDH0xklK/EV9mz2w0zFqPaKDseug/j8Gyz1zw0OEcPr
-	/s2lIbSUQwC5sMPtiFjw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From:Date:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cEnIQUuzB5c6+4cM5RdrINuJv9g7whM1ciedgRILmk8=; b=kFn8KuqG4JOCvN
+	uoIUqfsL7Dh08jqsF4xJsobFzC4tpvcHvDpVdM6DCH5/v4r/s+GCYwWSrBZPlL1txgOPr4rY+OwdN
+	oJ/85GdTACT5hGg5L9poBVC+aHiXqHfHyYMKwI0gAmlCIoBT6kI0Okj/folYdU4q22Va8EphGcB9p
+	HYjOwK3VCI//za3eyyv2OspGYrsHE/b4vBa+6fdVFPdYdFLeQDOYBK4MVZZbuCr6Uzl3xUQur/nip
+	NTx3fbtFPA0TuGZUtY7V5Hpy5423h02RUWdjkjlnVzc4Tt4KmE1uBGqkmSwOVDsTgmCevSklU6Pto
+	0p5jqn0ll9vQh9fF8DNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpcMS-0001mL-77; Mon, 22 Jul 2019 17:44:32 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1hpeQF-0006u1-3M; Mon, 22 Jul 2019 19:56:35 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpcM3-0001lg-FZ
- for openwrt-devel@lists.openwrt.org; Mon, 22 Jul 2019 17:44:09 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id B9B814EBD7;
- Mon, 22 Jul 2019 19:44:02 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id xB8cZClbtTQ0; Mon, 22 Jul 2019 19:43:55 +0200 (CEST)
-To: Jeff Kletsky <lede@allycomm.com>, openwrt-devel@lists.openwrt.org
-References: <a84dbac4-32fd-5519-6d9e-c6196b5c7a51@allycomm.com>
- <8a21f8f9-310c-d146-02a4-85f390bbe28d@allycomm.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <1d1caf72-27c8-7d2a-4700-8033d4d0465f@hauke-m.de>
-Date: Mon, 22 Jul 2019 19:43:58 +0200
+ id 1hpeOF-0004hq-5H
+ for openwrt-devel@lists.openwrt.org; Mon, 22 Jul 2019 19:54:33 +0000
+Received: by mail-wr1-x430.google.com with SMTP id p17so40631488wrf.11
+ for <openwrt-devel@lists.openwrt.org>; Mon, 22 Jul 2019 12:54:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version;
+ bh=MCRPkn+fCI5v6GQd5/Yx+T6iqxKbD5Q5DGhfCRV3eP4=;
+ b=EMR+LSZ5W8yIPX31nE93wp0GD7yN/w8/WEg7cL4PTyP2itUmsczJ4OeGJvNELFoxAG
+ oI9Tt6B0td4gSLTj7d/Uf30VnQeEjfg1OfgLlaMQUGiJN2A5E68p3UvC4LxBhP/D0fb2
+ CBxNcIJe5RXRfUlsPkttgp5ZP2HgFYe5HzS16iZ4Sl52lHgFOu/GsRL4i1tapvRPfD6i
+ tx1yIIeiijjkZdnzkysNZJUntkwBFZOuHcOlmaV9sNl3Yq878hoIYHkDhLSMEBijwbGY
+ dS3u+xb/aRogETYYjJ6aIbSqtcX7jaQCooJ1lGQOygCCjeh8OLzn1pB7/fUsEfoNNqx1
+ BBvw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version;
+ bh=MCRPkn+fCI5v6GQd5/Yx+T6iqxKbD5Q5DGhfCRV3eP4=;
+ b=TSJYTl/VvbCJm56tMA02j/sYbj/pyv7dLhUKc6l6ijWRVnL4kAJK5OtvwwQQ/FfNBq
+ qgkGImuxID9aWrM9OZCS2n9BT7o7qsUSnKpwbHiR0EKFB3YS6Sc37laj+M9yA3Z9SUCk
+ vsBQRDZm+yY53+O6sx7qKKdxygkcf0V2voBheQllVt6PkCSfES+2lz1/u0mt3Z1DBr2x
+ anMt/YV83fwuPR58vxzHkcp0Oj42tZsWPNK/8f9mMJAfFBGYwBgzslk+uks12Vf3SPkf
+ Z2qs3+quXSVtGrHQiNeqLk19ivRd6s8pmOFlfrvou+fv/2LMO3JwjiQN1RoX2aHhf7Wl
+ 7quA==
+X-Gm-Message-State: APjAAAWQuq1GTIhFOvXEUP7Npn4iP+aE1tOjev5UnRrIe8XnAep64q6H
+ l23sKHzckltYcu7I046G67rhwzrLiWQ=
+X-Google-Smtp-Source: APXvYqzAw6XfIAFCpNd+vIa0NpQElZObPMYSQP9sYpNfj8lwz9k1x9o4m14k0hyxDQhgM/8SmxJEcA==
+X-Received: by 2002:adf:ce03:: with SMTP id p3mr81764005wrn.94.1563825268888; 
+ Mon, 22 Jul 2019 12:54:28 -0700 (PDT)
+Received: from localhost.localdomain
+ (host191-253-dynamic.14-87-r.retail.telecomitalia.it. [87.14.253.191])
+ by smtp.gmail.com with ESMTPSA id s188sm31765460wmf.40.2019.07.22.12.54.27
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 22 Jul 2019 12:54:28 -0700 (PDT)
+Received: from localhost (localhost [127.0.0.1])
+ by localhost.localdomain (OpenSMTPD) with ESMTP id 33258508
+ for <openwrt-devel@lists.openwrt.org>;
+ Mon, 22 Jul 2019 19:54:26 +0000 (UTC)
+Date: Mon, 22 Jul 2019 21:54:26 +0200 (CEST)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@localhost.localdomain
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <alpine.LNX.2.21.99999.352.1907222151440.3309@localhost.localdomain>
 MIME-Version: 1.0
-In-Reply-To: <8a21f8f9-310c-d146-02a4-85f390bbe28d@allycomm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_104407_826765_5FAD8A52 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190722_125431_217097_F8B00BD3 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:430 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] "mac80211: Update to version 5.2-rc7" breaks
- batman-adv
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mrkiko.rs[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] Flash layout question
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,47 +99,48 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gNy8yMi8xOSA2OjQ0IEFNLCBKZWZmIEtsZXRza3kgd3JvdGU6Cj4gCj4gT24gNy8yMS8xOSA0
-OjE2IFBNLCBKZWZmIEtsZXRza3kgd3JvdGU6Cj4+Cj4+IGdpdCBiaXNlY3Qgc3VnZ2VzdHPCoAo+
-Pgo+PiBjb21taXQgMGIyYzQyY2VkMiAoSEVBRCwgcmVmcy9iaXNlY3QvYmFkKQo+Pgo+PiDCoMKg
-wqAgbWFjODAyMTE6IFVwZGF0ZSB0byB2ZXJzaW9uIDUuMi1yYzcKPj4KPj4gYXMgdGhlIHByb2Js
-ZW0gYmVoaW5kIHRoZSBmYWlsdXJlIHRvIGNvbXBpbGUgYmF0bWFuLWFkdiBvbiBKdWx5IDIxLAo+
-PiAyMDE5IGFuZCBwZXJoYXBzIHByaW9yCj4+Cj4+IFNlZSwgZm9yIGV4YW1wbGUKPj4gaHR0cDov
-L2Rvd25sb2Fkcy5vcGVud3J0Lm9yZy9zbmFwc2hvdHMvZmFpbGxvZ3MvbWlwc18yNGtjL3JvdXRp
-bmcvYmF0bWFuLWFkdi9jb21waWxlLnR4dAo+Pgo+PiAvYnVpbGRlci9zaGFyZWQtd29ya2Rpci9i
-dWlsZC9zZGsvYnVpbGRfZGlyL3RhcmdldC1taXBzXzI0a2NfbXVzbC9saW51eC1hdGg3OV9nZW5l
-cmljL2JhdG1hbi1hZHYtMjAxOS4yL25ldC9iYXRtYW4tYWR2L25ldGxpbmsuYzoxMzQ3OjQ6IGVy
-cm9yOiAnY29uc3Qgc3RydWN0IGJhY2twb3J0X2dlbmxfb3BzJyBoYXMgbm8gbWVtYmVyIG5hbWVk
-ICdwb2xpY3knCj4+ICAgIC5wb2xpY3kgPSBiYXRhZHZfbmV0bGlua19wb2xpY3ksCj4+ICAgICBe
-fn5+fn4KPj4KPj4KPj4gU2FtZSBwcm9ibGVtIG9ic2VydmVkIGxvY2FsbHkgb24gYXRoNzkgYW5k
-IG9uIGlwcTQweHgKPj4KPj4gTm90aGluZyBvYnZpb3VzIGluIHRoZSBwYXRjaCBpdHNlbGYsIGJ1
-dCBidWlsZGluZyBhdCBkNjE2YjJjOTA2Cj4+IHJlc29sdmVzIHRoZSBpc3N1ZSBmb3IgYm90aCBp
-cHE0MHh4IGFuZCBhdGg3OSBidWlsZHMKPj4KPj4KPiAKPiBMb29rcyBsaWtlIHRoZSBsaWtlbHkg
-KHVwc3RyZWFtKSBldmVudCB0aGF0IHRyaWdnZXJlZCB0aGlzIHdhcwo+IAo+IChMaW51eCkgY29t
-bWl0IDNiMGYzMWYyYjhjOQo+IEF1dGhvcjogSm9oYW5uZXMgQmVyZyA8am9oYW5uZXMuYmVyZ0Bp
-bnRlbC5jb20+Cj4gRGF0ZTrCoMKgIFRodSBNYXIgMjEgMjI6NTE6MDIgMjAxOSArMDEwMAo+IAo+
-IMKgwqDCoCBnZW5ldGxpbms6IG1ha2UgcG9saWN5IGNvbW1vbiB0byBmYW1pbHkKPiAKPiAKPiB3
-aGljaCBtb3ZlcyAucG9saWN5IG9mZiB3aGVyZSAiY3VycmVudCIgYmF0bWFuLWFkdiBpcyBleHBl
-Y3RpbmcgaXQuCj4gCj4gVGhlIGJhY2twb3J0IHRhciBiYWxsIGRvZXMgY29udGFpbiBiYWNrcG9y
-dC1pbmNsdWRlL25ldC9nZW5ldGxpbmsuaAo+IHdoaWNoIHNlZW1zIHRvIGJlIHBpY2tlZCB1cCBp
-bmFwcHJvcHJpYXRlbHkgZm9yIGJhdG1hbi1hZHYsIG9yIHRoZXJlIGlzCj4gYSBwYXRjaCBtaXNz
-aW5nIGZvciBiYXRtYW4tYWR2IChjb21taXQgM2IwZjMxZjJiOGM5IGRvZXMgbW9kaWZ5IGl0KSwg
-b3IgLi4uCj4gCj4gSSBoYXZlbid0IHF1aXRlIGZpZ3VyZWQgb3V0IGhvdyB0aGUgYmFja3BvcnRz
-IHdvcmssIHNvIGRvbid0IHlldCBrbm93Cj4gdGhlIHJvb3QgY2F1c2UgYW5kICJiZXN0IiBzb2x1
-dGlvbi4KPiAKPiAKPiBKZWZmCj4gCj4gCj4gU2VlIGFsc28KPiBodHRwczovL2ZvcnVtLm9wZW53
-cnQub3JnL3QvYmF0bWFuLWFkdi1idWlsZC1mYWlsdXJlLW1hc3Rlci0yMDE5LTA3LTIxLzQxMjA1
-CgpIaSwKCllvdSBoYXZlIHRvIGJhY2twb3J0IHRoZSB1cHN0cmVhbSBjaGFuZ2VzIHRvIHRoZSBu
-ZXRsaW5rIGhhbmRsaW5nIGluCmJhdG1hbi1hZHYgaW50byBvdXIgYmF0bWFuLWFkdiB2ZXJzaW9u
-OgpodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxk
-cy9saW51eC5naXQvZGlmZi9uZXQvYmF0bWFuLWFkdi9uZXRsaW5rLmM/aWQ9M2IwZjMxZjJiOGM5
-ZmIzNDhlNDUzMGI4OGY2YjY0Zjk2MjFmODNkNgoKVGhlIGJhY2twb3J0cyBzeXN0ZW0gd2lsbCB0
-YWtlIGNhcmUgb2YgbWFraW5nIHRoaXMgYWxzbyB3b3JrIHdpdGggb2xkZXIKa2VybmVsIHZlcnNp
-b25zIGRvd24gdG8ga2VybmVsIHZlcnNpb24gMy4xMC4KCkhhdWtlCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlz
-dApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==
+Hi foks!
+
+First of all, thank you very very much for your work guys!
+
+Some days ago, I soft-bricked my C60 V2 by overwriting the whole flash, starting from the firmware partition and going ahead, thus overwriting the tplink and art partitions completely.
+I am blind and soldering UARTs to devices is a big issue for me - so I am seeking for help. Working with routers and devices like those is very interesting to me.
+But this is not the point.
+Great friends soldered an UART to my device and I rewrote the flash zones of the device via u-boot, and now it works fine!
+
+The device was running ar71xx firmware - now I upgraded it to the ath79 port.
+I noticed still that from there it's not possible to read the whole flash of the device.
+To be more specific: let's consider the mapping of the flash in ar71xx.
+The u-boot partition was from offset 0x000000000000 to 0x000000030000.
+In the new scheme this has been split like:
+factory: goes from offset 0x000000000000 to 0x00000001fb00
+mac: goes from 0x00000001fb00 to 0x000000020000
+and finally u-boot: from 0x000000020000 to 0x000000030000.
+And since 0x00000001fb00 + 0x000500 = 0x20000 (see DTS)
+then math says we are covering the whole flash range.
+Still, comparing the flash parts I can extract with
+cat /dev/mtdblock<number> >file
+from ar71xx and ath79, we can see that some flash areas are not visible.
+In particular, when "cat"'ing the mac partition on ath79, the dev_id property is not visible, as it is when "cat"'ing the entire block in ar71xx.
+I was thinking the kernel may stop reading when it finds more than some eraseblock blocks, but don't know.
+I am sure my flash contains the right things - since reverting back to ar71xx and re-reading flash via cat returns proper content, matching with the backup I did when the device was new.
+So I think this has to do with something else.
+I am asking this mainly to learn something new, and also due to the fact that, if someone overwrites it's flash chip in this part, he may not be able to restore it due to the fact that he actually did never read that.
+
+Infact, of the 1280 byes range, cat prints out a 1024 bytes file, as happens with dd.
+Anyone with an idea?
+Thank you very much to all of you again,
+Enrico
+
+P.S.: the backup of my flash, that still matches on ar71xx, can be found here:
+http://www.gstorm.eu/ArcherC60V2.7z
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

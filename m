@@ -2,89 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 590B370F78
-	for <lists+openwrt-devel@lfdr.de>; Tue, 23 Jul 2019 05:02:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EACE771339
+	for <lists+openwrt-devel@lfdr.de>; Tue, 23 Jul 2019 09:47:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4EjHicc4BEsniSNgu6dW1czff/Vu0Z2vCnH91lAMlHE=; b=H1KX+J3CEHsDvY
-	lAGltC/DHbMFrIDhFqJst856PpY6Uc0epKSK9OsdmSyWbOH9efncDmYBiApUe7EDbhV+bCM13wI1z
-	fd+YxlxLaCwyietWxcFg5/TjhEHTlfesTvhP1ZHobKhc70NnqZi11haXFhTKQyA5evS9giDoct1rW
-	QbTjDraV5fBgq9J5YqQvREAQNy09t4mRitRy04WWsSZczcL52jYkROSbRnzhpDlWDo/QlzKQGgLyg
-	Hn3U/744ixHhftgSjph8wKnVF/5h3rmH4PPU+2rjB+seq3xUYl7LKzksLsBp05kdC30Iic7ZTAZBW
-	WlK3eordybZoa5QTYB9w==;
+	List-Owner; bh=ZltTknDVa1Y6c0XYOWulq8fISNlBV45MFDhE6hLcT70=; b=NM96Ff63JDbKLZ
+	wxOGtnAI8+0gamCMcJt39mhgn9+0wgD2YNYYDjqngf8iSnVVHtDw4iPGenuI51cj+Evwjq0VcQ5zQ
+	UeYxl6pTSzFyYjKKTP41CTaLI+63Vfl5heMVCXaitXhKY1Iw8dGSY9PoC6TcQGUJVkUUDG7/dPL0P
+	ccQyTy7vRbH93YkWuLlLJy3x895GHEfOHY/lZh+QEzxQ8Vr/XgcWvI8kGGwAJ7MjW/1GzAepxwK6h
+	4ozuq05FSLbojGOx5KdBKC7HFS/XHjsckxfwF1Q7AN4nNED0SvWbBVWwe0jiNX8NbsJfOLXrvumNB
+	i5m4EkvuvDKjMp5zgsyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpl49-0001EW-Tu; Tue, 23 Jul 2019 03:02:14 +0000
-Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
+	id 1hppWT-0004KQ-Lt; Tue, 23 Jul 2019 07:47:45 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpl3e-0001E6-Ia
- for openwrt-devel@lists.openwrt.org; Tue, 23 Jul 2019 03:01:44 +0000
-Received: by mail-pl1-x630.google.com with SMTP id c2so19962598plz.13
- for <openwrt-devel@lists.openwrt.org>; Mon, 22 Jul 2019 20:01:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=LrokTUYKauTsMvcr68LcxTNspMaF8jmNOiLUmuO4T9s=;
- b=Hp6w8NdCl3ptapI8UDAdyPXsWkrewLCuJAhaH/OtOt+IKyHazD2xwsRrGpWM3XiLBc
- fYJZfXiFMUABJ7XWyua3M9hwGIrQvtrbJZ2wQtFUo7HhnsoWZ6KJkkBqYj9BxBBXGNq6
- nDAd1ATO9Fk3WdqxeewAt6558I/jgOXOzOnHPSp4KBM0c8rpRoEPMpy2SsXi4Om+h0N4
- Dc9G2pQ70TB/P79DjgsJRLuLfuT/CuiERHzXpui/XJde5d5/CPYFfMP1WQHVTnZyGCsO
- HqQjN/0GooPL2UzyFfJ2KnYfD5eJecYcqYvA4GMCLuBm858VLsjqlmC2w1aYA0/VL5Jz
- 97gA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=LrokTUYKauTsMvcr68LcxTNspMaF8jmNOiLUmuO4T9s=;
- b=LNGlCvNLBWsz6mb9UiETocrt5qL4v3WVxSh/XGKdCYoVFtwVDFRzX4zhOMugljwgDW
- zSlmcZ8aWd2yUH/IJL1R4FEeFQ0axnzHczxvW3nWZqe4VlrTRUVoSSHFLg6MIJfgHhKk
- +KuoqvMYWltR6FoNFp/aMDJ6OLd/nOLPyFlheAu77AjfqH64aKz4JrtKQetHWCrp3nm+
- i/6dLcotZvOnrCMdp8wL4V/11zoVIK/6KW3Ao8QmQ1+S8RyXnC7uahIP4rmQnsZ0667d
- GPi0o4zFMsFGF3JaKqhaz954URJQ6jKzkOUjjbJikc+yPVAbhXsxrjMkA15xqrMrucAO
- C3kg==
-X-Gm-Message-State: APjAAAVJhx0UQCSFwn5SKsR88xXiydINFGC+sMbEo5dEg7EG+6oXg8bk
- UhxBJhooCTmUR7/Qye/oFqLTY5P1rfw=
-X-Google-Smtp-Source: APXvYqzEmBY1lLWXT9rQgwpH73hE3BfNeM1e4va0WPPUMsThps9ZWHr0gzng/xIzurxHjVa0CQSPVg==
-X-Received: by 2002:a17:902:bc83:: with SMTP id
- bb3mr80028801plb.56.1563850900640; 
- Mon, 22 Jul 2019 20:01:40 -0700 (PDT)
-Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
- [76.14.106.55])
- by smtp.gmail.com with ESMTPSA id x26sm55424764pfq.69.2019.07.22.20.01.39
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 22 Jul 2019 20:01:39 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1hppVs-00048I-Db
+ for openwrt-devel@bombadil.infradead.org; Tue, 23 Jul 2019 07:47:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=qMJkp302CGRZGqdolIdRk3kbx4/g3RaWC7zs+Yxsgfg=; b=UN0lXawvLD1F0zSeX29AWYdt4
+ koaedG4fMcolLVAVubuCylmrFPWVzu5sWRNL9XhPhNt/4OOpQRe+IMPSeBu0pcJyNv9AQyzKFxfuw
+ IwBpghxCdfibDsU8mGZ+HZwy4hWiCooW6sE6tQi8YRY2N1u6ZflWBumk9FA1Gey/ZXJawOzHSYiaq
+ HO0CUI1/tjpOJ6pYk6gYR9qa8VoliCpcYS1tDgDpE/i2ma/0Rs8xeyAyyg5lZqTgzGxeNvNSYH/Pc
+ ib6ecnnenEOqYV7WBeQzXACjU8DzbJfM63X00pWt7vPTMwokGRgomtEb2PkdOQNaW/MWcIkCvpeur
+ RxWG79CyA==;
+Received: from smtpproxy21.qq.com ([184.105.206.83])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hppVn-0008OZ-IH
+ for openwrt-devel@lists.openwrt.org; Tue, 23 Jul 2019 07:47:08 +0000
+X-QQ-mid: bizesmtp12t1563867973t5isp862
+Received: from localhost.localdomain (unknown [113.116.58.99])
+ by esmtp6.qq.com (ESMTP) with 
+ id ; Tue, 23 Jul 2019 15:46:07 +0800 (CST)
+X-QQ-SSF: 01400000000000L0ZG50000A0000000
+X-QQ-FEAT: uJKlVohL8Wq0WbAU1pv00a4XwEaZUUIMDeEgfFWAldM7FLVy8xLaYPvs16v1y
+ +spk/cbqRqr6n7Q0TQkoICy9tB5rkEbl/vVKhTgTiMpvhtBM7mDoEECgNnlKhKYESiJKOMf
+ 364tZoLxFTPbhZSrN+0JqOCTuzPPe0w4ynz9Ero6IyMG3vrF/KRwYxYCmGK5EeZZfmDDevp
+ hDIQH9HZBpU4dEnEUvB69Evi4nJUDNB9y8rNyyhC3X3Q75RPekFsNGnn3GNKRJbghb3WdV7
+ 1iPUG2+0i77szpRXu+7TY/7RGMmaVu6gceV7IbNkGHlXURUst/LmZv9h1q7Mr+/H8soZ0Xk
+ GZ+vrgY6LIFwh9/TCK+yADtvPCCYQ==
+X-QQ-GoodBg: 2
+From: Luochongjun <luochongjun@gl-inet.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 22 Jul 2019 20:01:38 -0700
-Message-Id: <20190723030138.12976-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Date: Tue, 23 Jul 2019 15:45:25 +0800
+Message-Id: <1563867925-5931-1-git-send-email-luochongjun@gl-inet.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:gl-inet.com:qybgforeign:qybgforeign4
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_200142_641220_1158E629 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20190723_084703_901044_DA492F03 
+X-CRM114-Status: GOOD (  13.26  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:630 listed in]
- [list.dnswl.org]
+ no trust [184.105.206.83 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH-18.06] omcproxy: fix compilation on
- little-endian CPUs
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support for gl-ar750
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,81 +83,228 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Luochongjun <luochongjun@gl-inet.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Eneas U de Queiroz <cote2004-github@yahoo.com>
+This patch supports gl-ar750, which was previously supported by ar71xx.
 
-Don't use cpu_to_be32 outside of a function.
+Specification:
+- SOC: QCA9531 (650MHz)
+- Flash: 16 MiB (W25Q128FVSG)
+- RAM: 128 MiB DDR2
+- Ethernet: 10/100: 2xLAN + 10/100: 1xWAN
+- Wireless: 2.4GHz (bgn) and 5GHz (ac)
+- USB: 1x USB 2.0 port
+- Switch: 1x switch
+- Button: 1x reset button
+- LED: 3x LEDS (white)
 
-Signed-off-by: Eneas U de Queiroz <cote2004-github@yahoo.com>
+Flash instruction:
+Support for sysupgrade directive upgrades, as well as luci upgrades.
+
+Signed-off-by: Luochongjun <luochongjun@gl-inet.com>
 ---
- Please backport to 18.06
- https://downloads.openwrt.org/releases/faillogs-18.06/arm_cortex-a9_vfpv3/base/omcproxy/compile.txt
- package/network/services/omcproxy/Makefile    |  2 +-
- ...-use-cpu_to_be32-outside-of-function.patch | 35 +++++++++++++++++++
- 2 files changed, 36 insertions(+), 1 deletion(-)
- create mode 100644 package/network/services/omcproxy/patches/100-mrib.c-don-t-use-cpu_to_be32-outside-of-function.patch
+ .../etc/hotplug.d/firmware/11-ath10k-caldata       |   1 +
+ target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts | 149 +++++++++++++++++++++
+ target/linux/ath79/image/generic.mk                |   9 ++
+ 3 files changed, 159 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
 
-diff --git a/package/network/services/omcproxy/Makefile b/package/network/services/omcproxy/Makefile
-index 28de833a1c..e121fa0b23 100644
---- a/package/network/services/omcproxy/Makefile
-+++ b/package/network/services/omcproxy/Makefile
-@@ -8,7 +8,7 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=omcproxy
--PKG_RELEASE:=4
-+PKG_RELEASE:=5
- 
- PKG_SOURCE_URL:=https://github.com/sbyx/omcproxy.git
- PKG_SOURCE_PROTO:=git
-diff --git a/package/network/services/omcproxy/patches/100-mrib.c-don-t-use-cpu_to_be32-outside-of-function.patch b/package/network/services/omcproxy/patches/100-mrib.c-don-t-use-cpu_to_be32-outside-of-function.patch
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index 8f0ea1d..6a9cb1c 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -116,6 +116,7 @@ case "$FIRMWARE" in
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +1)
+ 		;;
++	glinet,gl-ar750|\
+ 	glinet,gl-ar750s)
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0) +1)
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
 new file mode 100644
-index 0000000000..d71315b60e
+index 0000000..b8f9735
 --- /dev/null
-+++ b/package/network/services/omcproxy/patches/100-mrib.c-don-t-use-cpu_to_be32-outside-of-function.patch
-@@ -0,0 +1,35 @@
-+From 721064f2eb1dabe5bda63dcaff249b73ab891e6c Mon Sep 17 00:00:00 2001
-+From: Eneas U de Queiroz <cote2004-github@yahoo.com>
-+Date: Fri, 14 Dec 2018 15:13:41 -0200
-+Subject: [PATCH] mrib.c: don't use cpu_to_be32 outside of function
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+@@ -0,0 +1,149 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
 +
-+cpu_to_be32 is not a constant, so it can't be used outside of a
-+function.
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
 +
-+Signed-off-by: Eneas U de Queiroz <cote2004-github@yahoo.com>
++#include "qca953x.dtsi"
 +
-+--- a/src/mrib.c
-++++ b/src/mrib.c
-+@@ -21,6 +21,7 @@
-+ #include <stdio.h>
-+ #include <string.h>
-+ #include <stdlib.h>
-++#include <endian.h>
-+ #include <sys/socket.h>
-+ #include <sys/ioctl.h>
-+ #include <unistd.h>
-+@@ -54,7 +55,13 @@ struct mrib_iface {
-+ 	struct uloop_timeout timer;
-+ };
-+ 
-+-static uint32_t ipv4_rtr_alert = cpu_to_be32(0x94040000);
-++/* we can't use cpu_to_be32 outside a function */
-++#if __BYTE_ORDER == __BIG_ENDIAN
-++static uint32_t ipv4_rtr_alert = 0x94040000;
-++#else
-++static uint32_t ipv4_rtr_alert = 0x00000494;
-++#endif
-++
-+ static struct {
-+ 	struct ip6_hbh hdr;
-+ 	struct ip6_opt_router rt;
++/ {
++	compatible = "glinet,gl-ar750", "qca,qca9531";
++	model = "GL.iNet GL-AR750";
++
++	keys {
++		compatible = "gpio-keys";
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&jtag_disable_pins>;
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		mode {
++			label = "mode";
++			linux,code = <BTN_0>;
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power {
++			label = "gl-ar750:white:power";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++			default-state = "on";
++		};
++
++		wlan2g {
++			label = "gl-ar750:white:wlan2g";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++
++		wlan5g {
++			label = "gl-ar750:white:wlan5g";
++			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++	};
++
++	i2c {
++		compatible = "i2c-gpio";
++
++		sda-gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++		scl-gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++	};
++
++
++};
++
++&pcie0 {
++	status = "okay";
++
++	wifi@0,0 {
++		compatible = "qcom,ath10k";
++		reg = <0 0 0 0 0>;
++		device_type = "pci";
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	hub_port: port@1 {
++		reg = <1>;
++		#trigger-source-cells = <0>;
++	};
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&spi {
++	status = "okay";
++	num-cs = <0>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++				read-only;
++			};
++
++			art: partition@50000 {
++				label = "art";
++				reg = <0x050000 0x010000>;
++				read-only;
++			};
++
++			partition@60000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x060000 0xfa0000>;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++	mtd-mac-address = <&art 0x0>;
++	phy-handle = <&swphy4>;
++};
++
++&eth1 {
++	mtd-mac-address = <&art 0x0>;
++	mtd-mac-address-increment = <1>;
++};
++
++&wmac {
++	status = "okay";
++	mtd-cal-data = <&art 0x1000>;
++};
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index d5f67b8..86da1a9 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -389,6 +389,15 @@ define Device/glinet_gl-ar300m-nor
+ endef
+ TARGET_DEVICES += glinet_gl-ar300m-nor
+ 
++define Device/glinet_gl-ar750
++  ATH_SOC := qca9531
++  DEVICE_TITLE := GL.iNet GL-AR750
++  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
++  IMAGE_SIZE := 16000k
++  SUPPORTED_DEVICES += gl-ar750
++endef
++TARGET_DEVICES += glinet_gl-ar750
++
+ define Device/glinet_gl-ar750s
+   ATH_SOC := qca9563
+   DEVICE_TITLE := GL.iNet GL-AR750S
 -- 
-2.17.1
+2.7.4
+
+
 
 
 _______________________________________________

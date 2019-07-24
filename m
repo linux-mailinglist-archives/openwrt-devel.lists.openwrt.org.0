@@ -2,71 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F2B673445
-	for <lists+openwrt-devel@lfdr.de>; Wed, 24 Jul 2019 18:55:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B400E73594
+	for <lists+openwrt-devel@lfdr.de>; Wed, 24 Jul 2019 19:32:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P2394vBW18ozfObUNAARY1RcgGvkAvvH6it951NFeNk=; b=kYinoOPoX5wSqN
-	L9PKOW+JBAdxA8qi7wqjrpTINu31L5c10c0zM9MOJweQYZEr3f/7WgowviCMR2q1rga7Qsxh27GbV
-	//Of8OWX9D5uIi5bGiXaI9COJs98dVv/YFqGrw4F8KXvTVG5MotCVfTfhjvjMr+nv8mqljJlflJkp
-	3EEffzTGOtH/olP9wvB/tcPdzurLe6ajYOxqSiUxQjbL+d3nBuzUfp53LiuPGRiHdgCIfRcy4zAZR
-	sZxa882TcoxCyJmXlBgIEDyIBb+0M5PjEb0Osr/olTJChCPXV8dY1/0VUN5KZyM9D8bWRP1KCLOmf
-	YCaN5+q4FnzY2Sw4MwyQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=97OJ69tsIoDJux5g7XG4Z9fGGj+sVkewfAJjCjasAkM=; b=l14GfvTRY+uZeg
+	ENEdYnmyPjUhaYIolk7Kn0kA+uFmylSSm41/0J3eTBD1oK4TqpHRkayO9IU/BBHm1pbpPmpEB1b9x
+	CPB9k0AJ2AxBrspNsmonSDb7lr0eT9io8afHEFlpf1qCdisebATNpYKgXLSLGpjHYwi2AwI7XnaBn
+	/2o+CnyIWESJNucRRxjfKSNnNJq1fj/aqB0ZN1LxjbAvSie/dCkfvpHSt9ubgvASJNcKUol0q+rUh
+	5VkAoZ+STes8ZMrkOZhFg/c1aZ+8UyIFUELCQpLJxgmin3V4xRvLEYsn3VkHrC1boqu9lxVpPEvUS
+	3K0KEviYRZZSWQQkjHaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqKXW-0006jm-FH; Wed, 24 Jul 2019 16:54:55 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hqL87-0008L8-NH; Wed, 24 Jul 2019 17:32:43 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqKWz-0006gd-KK
- for openwrt-devel@lists.openwrt.org; Wed, 24 Jul 2019 16:54:23 +0000
-Received: by mail-ot1-x342.google.com with SMTP id r6so48570801oti.3
- for <openwrt-devel@lists.openwrt.org>; Wed, 24 Jul 2019 09:54:19 -0700 (PDT)
+ id 1hqL7y-0008Kp-Fw
+ for openwrt-devel@lists.openwrt.org; Wed, 24 Jul 2019 17:32:35 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c2so22246926plz.13
+ for <openwrt-devel@lists.openwrt.org>; Wed, 24 Jul 2019 10:32:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=D8CnBXuAX+GqDR08i7KcPIylaWpUOk6IWoHj32DH82k=;
- b=bOTG4loH1hDQMxF0wzJOh+/NJphg2tYv2TBKbdmwbnm3na9NLTfttdOj7FLdjbBn40
- Y9L53FoWKgZVijv9D5oiAWKFVWOyp5sT7p/4CY+aETHMfKLSzzvbc+Y2qrUfJVHkPRaL
- YElsqr4/UudujP0lPXppCzyxtexLvSeGR+WusqMRnaiUEiFZPiYNnV3zbWQuMzQHJ9ZC
- 8XpOn2wnAPeEIM+ZA2yRq93lFIpubBxTrKtt8RYMHf5Hb4HjzCo/vUI0RoahCw3DwFO6
- i8wa3ellYyDm7KOAVu9z6yoIdpcFqOfu8Moep6X+3vr9CohP/jytvUeCsxTZa12N4fuU
- jALg==
+ h=from:to:subject:date:message-id;
+ bh=xscEOh4bJL0w1am9evvgtfJs0cqWLGdvL4/kMpxN8cs=;
+ b=P0lb0lXIZfuHX0ZI7x7rtJUFQT6Mw8fzVKjcYdAEY+AXcoTMCz+TgVRxGSLEynrORe
+ T7yDuDT136hFSzM4eoSvXCatnxyOpBlgSP9Vu6TOmVWxJF9IFcvf9szfT3WWjr/cb+UB
+ 5A/i+LGOWcWGGoKtHPwxO2G+m1liuNATXnXowviqSUCFqxtKct7gY8KY29ABYke4viyh
+ 721GJSORTzYUYm8kylbTJV2TL6XMBWLtvXGAQgBx4BAOh/ZYUgcYrEG5zP9MwJvpqVWw
+ cQrhQNuXo4BRoLxQFw/AAOtQrBvgzL18hQdaa4P1pp73Uo0nUYP6CXLZzMy01tCzQpS3
+ 0XoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=D8CnBXuAX+GqDR08i7KcPIylaWpUOk6IWoHj32DH82k=;
- b=s/3yvYZESnFQzESB6rSdUtTTgniO0DIPwdRnj/ExNZi68wWEkvp35p/8GscCYSZD9w
- FzBTOTmMv5Gqa61+cIxxYwgMPFolVNtAA0OyGMG3U3QeymAFzpd5vVsQa9d+QKxokk9S
- WC7bhPPA7KjK8Rxw4aP7NquMg0TqJAceGRIFxO4QoKRQKQYB3U9oX+lFUbVZjdnvH3i2
- F9hF4xsnTzXATjsfRvCOAPMv7tER80IJhGmXDZRq2hv65P7WMdaksVv1EVYiNjlno1to
- z3oeewd8Hs308gswWqBGWGNblhO2IaDcIJ4tmjjx6jJkbL9ZN8x5Gr6YRlb19+zYW/j3
- 9j3Q==
-X-Gm-Message-State: APjAAAVJ30tNtL9OWNTxIn65lAh+bxv/WxNPYrvOz1fVifg5yoxOH6kS
- j05GLE5MAi0KZ3HdrAqiZ5S6oCdqj/RtKM5zwQ6fIj4z
-X-Google-Smtp-Source: APXvYqwQ4RL2s5D9aVCm9n1N9rlJDa7CJQoNmF4XUTuRSl+ezHea9b03/sFDKT4pki7ObbOWFqT6u7C22FGBi527fwg=
-X-Received: by 2002:a9d:390:: with SMTP id f16mr6420993otf.93.1563987258543;
- Wed, 24 Jul 2019 09:54:18 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190724133351.2283-1-freifunk@adrianschmutzler.de>
-In-Reply-To: <20190724133351.2283-1-freifunk@adrianschmutzler.de>
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=xscEOh4bJL0w1am9evvgtfJs0cqWLGdvL4/kMpxN8cs=;
+ b=m9z5Ozfj5pVBxF51T9PipFF/kxR9TDZRPdaNZZWUH2q3Ekg/3bE4/ErqtW8Ys+pUV+
+ ttLUackJiQHP9rezVUfw4EokbEj1rFOwg7xs+nr48UDxNYUMckTNpxB9zMoaJkpz6a91
+ x/vhIC4HqricQu1WRWC/OeDW4Wp0GxR2MJzx0GnlwypFP2Fshg89T8t5IkB9E3UdDUpS
+ ER/macR2Rngtm56A0hcY+HJG6c+s+YoqqC8mlJf3xNch49SxqGR0RKdM/eqhotBhsB80
+ D+0/kpiWUXd1Z8WlQoFeqzO/cPOO7fCvLqyc98ukq+ENU+lCRWt5LPGAX0lymIQyXk1k
+ s0ew==
+X-Gm-Message-State: APjAAAUAQkC44DbphF06tFFl12pR+JwsArihTnlqRQWpz3hIeD3zpq0k
+ 7HnHsWp/YACVuqki1kux7uB7kHGeCPo=
+X-Google-Smtp-Source: APXvYqw9fT423Qa5jAPp0YmJHeApGaMFxMiLsWXLYN4tVfqZ6DaVGiOjtZkPETQ/jxbRu9BqYqx1Zw==
+X-Received: by 2002:a17:902:42a5:: with SMTP id
+ h34mr89638184pld.16.1563989553019; 
+ Wed, 24 Jul 2019 10:32:33 -0700 (PDT)
+Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
+ [76.14.106.55])
+ by smtp.gmail.com with ESMTPSA id q69sm65545082pjb.0.2019.07.24.10.32.32
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 24 Jul 2019 10:32:32 -0700 (PDT)
 From: Rosen Penev <rosenp@gmail.com>
-Date: Wed, 24 Jul 2019 09:54:07 -0700
-Message-ID: <CAKxU2N8HPCaEb1WahtbfbVGnJ-XOcjWa5_2GU2Bn=3QV9fhBKA@mail.gmail.com>
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 24 Jul 2019 10:32:31 -0700
+Message-Id: <20190724173231.9467-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_095422_149572_47822B24 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20190724_103234_536136_73EF2209 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -79,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] mvebu: Replace backticks by $(...)
+Subject: [OpenWrt-Devel] [PATCH] ubox: Run init script through shellcheck
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,60 +96,70 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Wed, Jul 24, 2019 at 6:34 AM Adrian Schmutzler
-<freifunk@adrianschmutzler.de> wrote:
->
-> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> ---
->  target/linux/mvebu/base-files/lib/upgrade/linksys.sh | 2 +-
->  target/linux/mvebu/base-files/sbin/fan_ctrl.sh       | 6 +++---
->  2 files changed, 4 insertions(+), 4 deletions(-)
->
-> diff --git a/target/linux/mvebu/base-files/lib/upgrade/linksys.sh b/target/linux/mvebu/base-files/lib/upgrade/linksys.sh
-> index 3f45d6cac5..ddf24836bc 100644
-> --- a/target/linux/mvebu/base-files/lib/upgrade/linksys.sh
-> +++ b/target/linux/mvebu/base-files/lib/upgrade/linksys.sh
-> @@ -6,7 +6,7 @@ linksys_get_target_firmware() {
->
->         local cur_boot_part mtd_ubi0
->
-> -       cur_boot_part=`/usr/sbin/fw_printenv -n boot_part`
-> +       cur_boot_part=$(/usr/sbin/fw_printenv -n boot_part)
->         if [ -z "${cur_boot_part}" ] ; then
->                 mtd_ubi0=$(cat /sys/devices/virtual/ubi/ubi0/mtd_num)
->                 case $(egrep ^mtd${mtd_ubi0}: /proc/mtd | cut -d '"' -f 2) in
-egrep is deprecated as well. I'm assuming you're running these through
-shellcheck.
-> diff --git a/target/linux/mvebu/base-files/sbin/fan_ctrl.sh b/target/linux/mvebu/base-files/sbin/fan_ctrl.sh
-> index 06e462119d..4234668317 100755
-> --- a/target/linux/mvebu/base-files/sbin/fan_ctrl.sh
-> +++ b/target/linux/mvebu/base-files/sbin/fan_ctrl.sh
-> @@ -1,8 +1,8 @@
->  #!/bin/sh
->
-> -CPU_TEMP=`cut -c1-2 /sys/class/hwmon/hwmon2/temp1_input`
-> -DDR_TEMP=`cut -c1-2 /sys/class/hwmon/hwmon1/temp1_input`
-> -WIFI_TEMP=`cut -c1-2 /sys/class/hwmon/hwmon1/temp2_input`
-> +CPU_TEMP=$(cut -c1-2 /sys/class/hwmon/hwmon2/temp1_input)
-> +DDR_TEMP=$(cut -c1-2 /sys/class/hwmon/hwmon1/temp1_input)
-> +WIFI_TEMP=$(cut -c1-2 /sys/class/hwmon/hwmon1/temp2_input)
->
->  CPU_LOW=85
->  CPU_HIGH=95
-> --
-> 2.20.1
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+Warnings fixed:
+
+SC2004: $/${} is unnecessary on arithmetic variables.
+SC2166: Prefer [ p ] && [ q ] as [ p -a q ] is not well defined.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ package/system/ubox/Makefile       | 2 +-
+ package/system/ubox/files/log.init | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/package/system/ubox/Makefile b/package/system/ubox/Makefile
+index 6e67951929..d303603c0d 100644
+--- a/package/system/ubox/Makefile
++++ b/package/system/ubox/Makefile
+@@ -1,7 +1,7 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=ubox
+-PKG_RELEASE:=3
++PKG_RELEASE:=4
+ 
+ PKG_SOURCE_PROTO:=git
+ PKG_SOURCE_URL=$(PROJECT_GIT)/project/ubox.git
+diff --git a/package/system/ubox/files/log.init b/package/system/ubox/files/log.init
+index ba9c124c8b..32821c4920 100644
+--- a/package/system/ubox/files/log.init
++++ b/package/system/ubox/files/log.init
+@@ -32,7 +32,7 @@ validate_log_daemon()
+ 
+ start_service_daemon()
+ {
+-	[ $log_buffer_size -eq 0 -a $log_size -gt 0 ] && log_buffer_size=$log_size
++	[ $log_buffer_size -eq 0 ] && [ $log_size -gt 0 ] && log_buffer_size=$log_size
+ 	[ $log_buffer_size -eq 0 ] && log_buffer_size=64
+ 	procd_open_instance
+ 	procd_set_param command "/sbin/logd"
+@@ -43,7 +43,7 @@ start_service_daemon()
+ 
+ start_service_file()
+ {
+-	PIDCOUNT="$(( ${PIDCOUNT} + 1))"
++	PIDCOUNT="$(${PIDCOUNT} + 1)"
+ 	local pid_file="/var/run/logread.${PIDCOUNT}.pid"
+ 
+ 	[ "$2" = 0 ] || {
+@@ -62,7 +62,7 @@ start_service_file()
+ 
+ start_service_remote()
+ {
+-	PIDCOUNT="$(( ${PIDCOUNT} + 1))"
++	PIDCOUNT="$(${PIDCOUNT} + 1)"
+ 	local pid_file="/var/run/logread.${PIDCOUNT}.pid"
+ 
+ 	[ "$2" = 0 ] || {
+-- 
+2.17.1
+
 
 _______________________________________________
 openwrt-devel mailing list

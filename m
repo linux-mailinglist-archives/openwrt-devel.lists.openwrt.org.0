@@ -2,59 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D61B737B7
-	for <lists+openwrt-devel@lfdr.de>; Wed, 24 Jul 2019 21:19:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 458EA74194
+	for <lists+openwrt-devel@lfdr.de>; Thu, 25 Jul 2019 00:40:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CHnWCzBuKGPi/leAzM7N9FrJT+e8Ieo9tuPlsiJpdcY=; b=hTqZ4d76F9EioVOqi/2xymxlP
-	9WHMRUo4LZnlBPYwrcOWzP0dH/iLWn54fIcVYN8V7cUEIkviCuo99b15zptocWwXZhIMKtiJo+SG7
-	jrL+f5ycW5Es2aLlH0HegkhI1QNVJ6locEQ4I5+JBFUwZug7WsQKl2bFNnlEig3iuPZ4hYAVp2oaF
-	iwKovix/l14Ep6WypDX8CF7hCa56TxdDvkCxdKJNiiinvNXXXDwvD7dFPNtJ0//A8VD4zS5jGSwpN
-	zI/VFB7pdFDwBOtkaH0tS45KEg9d8McpryiMftTq7STkcb1anpsODa7mglYxrBsovGrw+Pmt0L8kN
-	3cdc542IQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zMmUsGUvP1lyDUk4+l4yTrf5A7xc9OI7MyPDSQ9gmCs=; b=N9bPjapRHe2x8P
+	T7bq8OgNLsGpiBHWX9Xn8WvJzFfvzqyvvWIErrLlts5eBpTQkHZqVhTIC7IMUJOTJOQmVtWo/4hu2
+	MhcL9Tbl5YbPj0hCxwuv5WXgxkEhmY7giKC2xPeM+5mAXbvwrgQ7SoQpov4Ov/UH/M4A8FSR5/Iy+
+	+AgeM3VK98t3L9n7jbvHTlHEHr/TQhOEfBk+BuNxjVY6wSJWeHLeO3jTtwj7fGaWNFLAU2K1spjyK
+	NNDgZ8neWZReWtmMjnpARWoyMYwQ/IJpF2dK/PUEdZjZolVvpDhLThRRQc5FxujXCTS+1iU+x2XWD
+	uQifqDEyo9/5fsTesxZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqMn1-0000uD-Qj; Wed, 24 Jul 2019 19:19:03 +0000
-Received: from mx.allycomm.com ([138.68.30.55])
+	id 1hqPvx-0008NZ-64; Wed, 24 Jul 2019 22:40:29 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqMmt-0000t2-Gt
- for openwrt-devel@lists.openwrt.org; Wed, 24 Jul 2019 19:18:56 +0000
-Received: from JKLETSKY-MBP15.local (portal.bevandjeff.com [206.189.65.121])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id 6C39A385D6;
- Wed, 24 Jul 2019 12:18:53 -0700 (PDT)
-To: Rosen Penev <rosenp@gmail.com>,
- Adrian Schmutzler <mail@adrianschmutzler.de>
-References: <20190724133351.2283-1-freifunk@adrianschmutzler.de>
- <CAKxU2N8HPCaEb1WahtbfbVGnJ-XOcjWa5_2GU2Bn=3QV9fhBKA@mail.gmail.com>
- <011b01d54248$0f176e50$2d464af0$@adrianschmutzler.de>
- <CAKxU2N8AWz9UHk48pY0vBUbqOFBK9bZF+najpJiXFVYLA225Rg@mail.gmail.com>
-From: Jeff Kletsky <lede@allycomm.com>
-Message-ID: <557a9ff0-c0de-9c25-d830-c1e834f4c530@allycomm.com>
-Date: Wed, 24 Jul 2019 12:18:53 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.8.0
+ id 1hqPve-0008Mt-6g
+ for openwrt-devel@lists.openwrt.org; Wed, 24 Jul 2019 22:40:11 +0000
+Received: from buildfff.adridolf.com ([188.194.32.21]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MOiPx-1i3F1L0EPP-00QDZN for <openwrt-devel@lists.openwrt.org>; Thu, 25
+ Jul 2019 00:40:08 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 25 Jul 2019 00:39:13 +0200
+Message-Id: <20190724223913.34794-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <CAKxU2N8AWz9UHk48pY0vBUbqOFBK9bZF+najpJiXFVYLA225Rg@mail.gmail.com>
-Content-Language: en-US
+X-Provags-ID: V03:K1:6QluJ6Je4Ye+NV3rBRKIauZrH+OHkFvhp4G/SPykbFW0ifnsgya
+ 1cH0i4hkKnfnNWMXqwNHvC/0b2a+n8x8+ZnX1b6R6Dvg6lP6wjO/NDzB5Be0+s8FD3JIZmK
+ +96yrwiCYacXlkFKwBrn5LjJmOt29/6LQqC4zGZFEQM/kRGpfP1Gc1YQoLlR2BrwCFwQTPM
+ 2guTu/JMmxErXCMYdllkA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:JuVWrnSsWxE=:wMKNKQypgpE/rAuZwjzOde
+ Kt7UcQNSRkKEIYcVh1HA+OtWaAgsiRVWTUTKNK0LGOKWaITLydvTuU2E7mcwhpv3sKB1nLVA0
+ fF0wUSjOYrEwNJFg2U8qt7jhiFeDzaQDG/x9ZL+NfcrwYgwsvm958/h8ZHL8FsDMYE6DGmZT5
+ Qm4n/dnkPP9nX1TGO0YIqdq6E4hsTaiDjvr/64Jj8lfrFEoCxmNqyJeH+X2Qsvf1rXfKkIdtc
+ 0AsNAAcmT9CdwLT5OfRfONQw+fkCAHaN7ZhxPC2TvfnTyIZaXviCGIJpbKu4wVzjo9ebFzYUt
+ qHG+8qt53rM4PwlLw/M4WTzjCab0WDDhaJGJ+vAVrr7eLOHzjGLOzQYIuw6kUTUqr1msNAqg/
+ LwPAoR4sFZ4XQe8krQEgX8E//G0STSFs/De7+NAsz/rvCfWT9UzXaQiTi9jo13r0q/EdY/1PS
+ fKaZmh/tWKtgBb9ra7O4qPbG3g//AP/WuAaQq8atOVpgNopiC9dyqgn2e8XSuEGEI21WXDuyd
+ 4tcYGX7kyGePrrJJLsxXNrq+0UE5BHKCmZOIhYJ2b3r2efsfquJ9x0na2z59pJgc/x4QNCQrb
+ G21/k5IbLCg+KoBMdg4QNAZlEmc6x8Yzz1/tRPa9U/yKbpcm+JvPrseedWGqbHKCDPFA8r/jw
+ K4d9ntGXi6BULfX4jdzNO4eFGN7L4RCKOrL6Q2cjEimfS95FAkPCj7zAB5l5EO3Md5hgZy2e0
+ QfEuPCd5uYGy/LbSvlIrBU3pdNkl73hMfR/Dy/exF60GPEyXgPw5JgDMk+I=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190724_121855_566934_88875D7B 
-X-CRM114-Status: GOOD (  15.70  )
+X-CRM114-CacheID: sfid-20190724_154010_539398_CF1D97E7 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [138.68.30.55 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] mvebu: Replace backticks by $(...)
+Subject: [OpenWrt-Devel] [PATCH v2] ramips: Replace backticks by $(...)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,75 +75,75 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDcvMjQvMTkgMTE6MDUgQU0sIFJvc2VuIFBlbmV2IHdyb3RlOgo+IE9uIFdlZCwgSnVsIDI0
-LCAyMDE5IGF0IDEwOjQ4IEFNIEFkcmlhbiBTY2htdXR6bGVyCj4gPG1haWxAYWRyaWFuc2NobXV0
-emxlci5kZT4gd3JvdGU6Cj4+IEhpLAo+Pgo+Pj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0K
-Pj4+IEZyb206IFJvc2VuIFBlbmV2IFttYWlsdG86cm9zZW5wQGdtYWlsLmNvbV0KPj4+IFNlbnQ6
-IE1pdHR3b2NoLCAyNC4gSnVsaSAyMDE5IDE4OjU0Cj4+PiBUbzogQWRyaWFuIFNjaG11dHpsZXIg
-PGZyZWlmdW5rQGFkcmlhbnNjaG11dHpsZXIuZGU+Cj4+PiBDYzogT3BlbldydCBEZXZlbG9wbWVu
-dCBMaXN0IDxvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnPgo+Pj4gU3ViamVjdDogUmU6
-IFtPcGVuV3J0LURldmVsXSBbUEFUQ0hdIG12ZWJ1OiBSZXBsYWNlIGJhY2t0aWNrcyBieSAkKC4u
-LikKPj4+Cj4+PiBPbiBXZWQsIEp1bCAyNCwgMjAxOSBhdCA2OjM0IEFNIEFkcmlhbiBTY2htdXR6
-bGVyCj4+PiA8ZnJlaWZ1bmtAYWRyaWFuc2NobXV0emxlci5kZT4gd3JvdGU6Cj4+Pj4gU2lnbmVk
-LW9mZi1ieTogQWRyaWFuIFNjaG11dHpsZXIgPGZyZWlmdW5rQGFkcmlhbnNjaG11dHpsZXIuZGU+
-Cj4+Pj4gLS0tCj4+Pj4gICB0YXJnZXQvbGludXgvbXZlYnUvYmFzZS1maWxlcy9saWIvdXBncmFk
-ZS9saW5rc3lzLnNoIHwgMiArLQo+Pj4+ICAgdGFyZ2V0L2xpbnV4L212ZWJ1L2Jhc2UtZmlsZXMv
-c2Jpbi9mYW5fY3RybC5zaCAgICAgICB8IDYgKysrLS0tCj4+Pj4gICAyIGZpbGVzIGNoYW5nZWQs
-IDQgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPj4+Pgo+Pj4+IGRpZmYgLS1naXQgYS90
-YXJnZXQvbGludXgvbXZlYnUvYmFzZS1maWxlcy9saWIvdXBncmFkZS9saW5rc3lzLnNoCj4+PiBi
-L3RhcmdldC9saW51eC9tdmVidS9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL2xpbmtzeXMuc2gKPj4+
-PiBpbmRleCAzZjQ1ZDZjYWM1Li5kZGYyNDgzNmJjIDEwMDY0NAo+Pj4+IC0tLSBhL3RhcmdldC9s
-aW51eC9tdmVidS9iYXNlLWZpbGVzL2xpYi91cGdyYWRlL2xpbmtzeXMuc2gKPj4+PiArKysgYi90
-YXJnZXQvbGludXgvbXZlYnUvYmFzZS1maWxlcy9saWIvdXBncmFkZS9saW5rc3lzLnNoCj4+Pj4g
-QEAgLTYsNyArNiw3IEBAIGxpbmtzeXNfZ2V0X3RhcmdldF9maXJtd2FyZSgpIHsKPj4+Pgo+Pj4+
-ICAgICAgICAgIGxvY2FsIGN1cl9ib290X3BhcnQgbXRkX3ViaTAKPj4+Pgo+Pj4+IC0gICAgICAg
-Y3VyX2Jvb3RfcGFydD1gL3Vzci9zYmluL2Z3X3ByaW50ZW52IC1uIGJvb3RfcGFydGAKPj4+PiAr
-ICAgICAgIGN1cl9ib290X3BhcnQ9JCgvdXNyL3NiaW4vZndfcHJpbnRlbnYgLW4gYm9vdF9wYXJ0
-KQo+Pj4+ICAgICAgICAgIGlmIFsgLXogIiR7Y3VyX2Jvb3RfcGFydH0iIF0gOyB0aGVuCj4+Pj4g
-ICAgICAgICAgICAgICAgICBtdGRfdWJpMD0kKGNhdCAvc3lzL2RldmljZXMvdmlydHVhbC91Ymkv
-dWJpMC9tdGRfbnVtKQo+Pj4+ICAgICAgICAgICAgICAgICAgY2FzZSAkKGVncmVwIF5tdGQke210
-ZF91YmkwfTogL3Byb2MvbXRkIHwgY3V0IC1kICciJyAtZiAyKSBpbgo+Pj4gZWdyZXAgaXMgZGVw
-cmVjYXRlZCBhcyB3ZWxsLiBJJ20gYXNzdW1pbmcgeW91J3JlIHJ1bm5pbmcgdGhlc2UgdGhyb3Vn
-aAo+Pj4gc2hlbGxjaGVjay4KPj4gSSBpbmRlZWQgZ290IHRoaXMgaGludCBmcm9tIHNoZWxsY2hl
-Y2ssIHN1Z2dlc3RpbmcgImdyZXAgLUUiIGFzIHJlcGxhY2VtZW50Lgo+PiBIb3dldmVyLCBJJ20g
-bm90IGZhbWlsaWFyIHdpdGggdGhlIG9sZCBlZ3JlcC4KPj4gU28sIEkgd2FzIG5vdCBzdXJlIHdo
-ZXRoZXIgSSByZWFsbHkgY2FuIHJlcGxhY2UgaXQgd2l0aG91dCBzaWRlLWVmZmVjdHMsIGFuZCBz
-aW5jZSBJIGNhbm5vdCB0ZXN0IG9uIHRoaXMgdGFyZ2V0LCBJIGRlY2lkZWQgYWdhaW5zdCBjaGFu
-Z2luZyB0aGF0Lgo+Pgo+PiBJZiB5b3UgdGVsbCBtZSBpdCdzIG9rYXksIEkgY2FuIGluY2x1ZGUg
-aXQgaW4gYSB2Mi4KPiBlZ3JlcCBpcyBlcXVpdmFsZW50IHRvIGdyZXAgLUUuIEkgaGF2ZSBuZXZl
-ciBzZWVuIGFueSBmYWxsb3V0IGZyb20KPiBjaGFuZ2luZyB0aGlzLgoKWy4uLl0KClRoZSBvbmUg
-cGxhY2UgdGhhdCBJIGtub3cgaXQgaXMgY3JpdGljYWwgdG8gdXNlIGBncmVwIC1FYCBvdmVyIGBl
-Z3JlcGAgCmlzIGR1cmluZyBzdGFnZTIgb2Ygc3lzdXBncmFkZSwgd2hlbiBgZ3JlcGAgaXMgdHlw
-aWNhbGx5IGF2YWlsYWJsZSBhbmQgCmBlZ3JlcGAgaXMgb2Z0ZW4gbm90LgoKc3dpdGNoX3RvX3Jh
-bWZzKCkgewogwqDCoMKgwqDCoMKgwqAgZm9yIGJpbmFyeSBpbiBcCiDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgL2Jpbi9idXN5Ym94IC9iaW4vYXNoIC9iaW4vc2ggL2Jpbi9tb3VudCAv
-YmluL3Vtb3VudMKgwqDCoCBcCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcGl2b3Rf
-cm9vdCBtb3VudF9yb290IHJlYm9vdCBzeW5jIGtpbGwgc2xlZXDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIFwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBtZDVzdW0gaGV4ZHVtcCBjYXQg
-emNhdCBiemNhdCBkZCB0YXLCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBc
-CiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbHMgYmFzZW5hbWUgZmluZCBjcCBtdiBy
-bSBta2RpciBybWRpciBta25vZCB0b3VjaCBjaG1vZCBcCiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgJ1snIHByaW50ZiB3YyBncmVwIGF3ayBzZWQgY3V0wqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgXAogwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIG10ZCBwYXJ0eCBsb3NldHVwIG1rZnMuZXh0NMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIFwKIMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCB1Yml1cGRhdGV2b2wgdWJpYXR0YWNoIHViaWJsb2NrIHViaWZvcm1hdMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgXAogwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHViaWRldGFjaCB1Ymlyc3ZvbCB1YmlybXZvbCB1Ymlta3ZvbMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgIFwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBz
-bmFwc2hvdCBzbmFwc2hvdF90b29swqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIFwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCAkUkFNRlNfQ09QWV9CSU4KWy4uLl0KCgpBcyBJJ3ZlIGhhZCBteSBoYW5kcyBpbiBg
-bGlua3N5cy5zaGAgcmVjZW50bHkgKGNvbW1pdCBiMzc3MGVhY2EzKSwgSSBjYW4gCnNheSB0aGF0
-IHRoZSBwcmltYXJ5IHJlYXNvbiBJIGRpZG4ndCBjaGFuZ2UgaXQgaW4gdGhhdCBmaWxlIHRoZW4g
-d2FzIHRvIAprZWVwIHRoZSBsYXJnZSBudW1iZXIgb2YgY2hhbmdlcyBzb21ld2hhdCBtb3JlIHVu
-ZGVyc3RhbmRhYmxlLgoKCkplZmYKCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
-QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9vcGVud3J0LWRldmVsCg==
+This replaces deprecated backticks by more versatile $(...) syntax.
+
+While at it, remove some useless cat commands and deprecated
+egrep commands.
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/ramips/base-files/etc/board.d/02_network     | 8 ++++----
+ .../base-files/lib/preinit/07_set_preinit_iface_ramips    | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index a2b7d1cf33..f12daf7f04 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -14,10 +14,10 @@ ramips_setup_rt3x5x_vlans()
+ 	local wanports=""
+ 	local lanports=""
+ 	for port in 5 4 3 2 1 0; do
+-		if [ `swconfig dev rt305x port $port get disable` = "1" ]; then
++		if [ "$(swconfig dev rt305x port $port get disable)" = "1" ]; then
+ 			continue
+ 		fi
+-		if [ `swconfig dev rt305x port $port get lan` = "0" ]; then
++		if [ "$(swconfig dev rt305x port $port get lan)" = "0" ]; then
+ 			wanports="$port:wan $wanports"
+ 		else
+ 			lanports="$port:lan $lanports"
+@@ -480,7 +480,7 @@ ramips_setup_interfaces()
+ 			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "7t@eth0"
+ 		;;
+ 	*)
+-		RT3X5X=`cat /proc/cpuinfo | egrep "(RT3.5|RT5350)"`
++		RT3X5X=$(grep -E "(RT3.5|RT5350)" /proc/cpuinfo)
+ 		if [ -n "${RT3X5X}" ]; then
+ 			ramips_setup_rt3x5x_vlans
+ 		else
+@@ -599,7 +599,7 @@ ramips_setup_macs()
+ 	hiwifi,hc5861|\
+ 	hiwifi,hc5861b|\
+ 	hiwifi,hc5962)
+-		lan_mac=`mtd_get_mac_ascii bdinfo "Vfac_mac "`
++		lan_mac=$(mtd_get_mac_ascii bdinfo "Vfac_mac ")
+ 		[ -n "$lan_mac" ] || lan_mac=$(cat /sys/class/net/eth0/address)
+ 		wan_mac=$(macaddr_add "$lan_mac" 1)
+ 		;;
+diff --git a/target/linux/ramips/base-files/lib/preinit/07_set_preinit_iface_ramips b/target/linux/ramips/base-files/lib/preinit/07_set_preinit_iface_ramips
+index a395956d04..003a4dda7b 100644
+--- a/target/linux/ramips/base-files/lib/preinit/07_set_preinit_iface_ramips
++++ b/target/linux/ramips/base-files/lib/preinit/07_set_preinit_iface_ramips
+@@ -4,7 +4,7 @@
+ #
+ 
+ ramips_set_preinit_iface() {
+-	RT3X5X=`cat /proc/cpuinfo | egrep "(RT3.5|RT5350|MT7628|MT7688|MT7620|MT7621)"`
++	RT3X5X=$(grep -E "(RT3.5|RT5350|MT7628|MT7688|MT7620|MT7621)" /proc/cpuinfo)
+ 
+ 	if [ -n "${RT3X5X}" ]; then
+ 		# The ethernet switch driver enables VLAN by default, but
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

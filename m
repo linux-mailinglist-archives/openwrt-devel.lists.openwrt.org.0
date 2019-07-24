@@ -2,81 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F1A573270
-	for <lists+openwrt-devel@lfdr.de>; Wed, 24 Jul 2019 17:05:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F2B673445
+	for <lists+openwrt-devel@lfdr.de>; Wed, 24 Jul 2019 18:55:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BFkkZqy07CDCwHD83d/k0zBm5bka/DiSWUewZGhwUho=; b=IL8RICr1Cjg+4N
-	XHPVwNdcvMB+h9jA2ipMkJfRV1FjIySGm5K5ZgPGCRQJp2pFv4qTmgV4nuPAyYBDmLRX7VFN6ex/j
-	sJv7Oy+2lHn2Bb4zYicQeZMTRkQCuVtnuJ5u7sdTAcu4B2oo4vYYNgdcITztCKcSvrhee9y61P/h0
-	W0xDiXVH3FXX47rUH5ZCGQ5nNSm3vCRMRKx/Xuu0MB2D5PyFifMJZvYWUYVR6dWuke6/bcQsrgN/e
-	6+T2i6KS7i7TLdDYLKQgAg2jZKox8574R4vzeKsk86/J+JZXNHG4DFdGwpsx3VXGCJoqiyBrXU5/X
-	zOUz+KYu8C/b72FctnMA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P2394vBW18ozfObUNAARY1RcgGvkAvvH6it951NFeNk=; b=kYinoOPoX5wSqN
+	L9PKOW+JBAdxA8qi7wqjrpTINu31L5c10c0zM9MOJweQYZEr3f/7WgowviCMR2q1rga7Qsxh27GbV
+	//Of8OWX9D5uIi5bGiXaI9COJs98dVv/YFqGrw4F8KXvTVG5MotCVfTfhjvjMr+nv8mqljJlflJkp
+	3EEffzTGOtH/olP9wvB/tcPdzurLe6ajYOxqSiUxQjbL+d3nBuzUfp53LiuPGRiHdgCIfRcy4zAZR
+	sZxa882TcoxCyJmXlBgIEDyIBb+0M5PjEb0Osr/olTJChCPXV8dY1/0VUN5KZyM9D8bWRP1KCLOmf
+	YCaN5+q4FnzY2Sw4MwyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqIph-0001Bz-Ft; Wed, 24 Jul 2019 15:05:33 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hqKXW-0006jm-FH; Wed, 24 Jul 2019 16:54:55 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqIpa-0001Bf-KC
- for openwrt-devel@bombadil.infradead.org; Wed, 24 Jul 2019 15:05:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=76uBMeHaFLFDUHLoXRrWgNwq3QnQxsBVepqwQtM60qQ=; b=fpTONBYUie8qJibI11EK7mJjMH
- c21FJRwjfvGyycnF95ICBvnyIJCtxJnBny8VnusJsLrfjLLjjL+riR05KpFeW8X75sRGZtjwEMyfi
- MY8LG825d8ztqa5GWOp3JDNjAxScyoytgJXHvt1MhWM0QjRIw4pbkkfTW+8zoJBB7acHdWBdvOIvO
- dgMyy1eZxqIapx13mt69EMqk6eV8G64HkimIezZL6wbkb/3n5KiARfluXg2VeG1m322XlmzDzIMvW
- pqhvNZYu9SqCwFiu5z2y/MiYniSfitEQNt97ATdH7ZM52Z+6zQ//Qkoc440oZ913oaIHoIxjwlfXg
- MmhUtsLA==;
-Received: from mout.kundenserver.de ([212.227.126.134])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqIpX-0005xg-B4
- for openwrt-devel@lists.openwrt.org; Wed, 24 Jul 2019 15:05:24 +0000
-Received: from buildfff.adridolf.com ([188.194.32.21]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1M58zc-1hrPI648fM-001BtD for <openwrt-devel@lists.openwrt.org>; Wed, 24
- Jul 2019 17:05:15 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 24 Jul 2019 17:05:02 +0200
-Message-Id: <20190724150502.4005-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+ id 1hqKWz-0006gd-KK
+ for openwrt-devel@lists.openwrt.org; Wed, 24 Jul 2019 16:54:23 +0000
+Received: by mail-ot1-x342.google.com with SMTP id r6so48570801oti.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 24 Jul 2019 09:54:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=D8CnBXuAX+GqDR08i7KcPIylaWpUOk6IWoHj32DH82k=;
+ b=bOTG4loH1hDQMxF0wzJOh+/NJphg2tYv2TBKbdmwbnm3na9NLTfttdOj7FLdjbBn40
+ Y9L53FoWKgZVijv9D5oiAWKFVWOyp5sT7p/4CY+aETHMfKLSzzvbc+Y2qrUfJVHkPRaL
+ YElsqr4/UudujP0lPXppCzyxtexLvSeGR+WusqMRnaiUEiFZPiYNnV3zbWQuMzQHJ9ZC
+ 8XpOn2wnAPeEIM+ZA2yRq93lFIpubBxTrKtt8RYMHf5Hb4HjzCo/vUI0RoahCw3DwFO6
+ i8wa3ellYyDm7KOAVu9z6yoIdpcFqOfu8Moep6X+3vr9CohP/jytvUeCsxTZa12N4fuU
+ jALg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=D8CnBXuAX+GqDR08i7KcPIylaWpUOk6IWoHj32DH82k=;
+ b=s/3yvYZESnFQzESB6rSdUtTTgniO0DIPwdRnj/ExNZi68wWEkvp35p/8GscCYSZD9w
+ FzBTOTmMv5Gqa61+cIxxYwgMPFolVNtAA0OyGMG3U3QeymAFzpd5vVsQa9d+QKxokk9S
+ WC7bhPPA7KjK8Rxw4aP7NquMg0TqJAceGRIFxO4QoKRQKQYB3U9oX+lFUbVZjdnvH3i2
+ F9hF4xsnTzXATjsfRvCOAPMv7tER80IJhGmXDZRq2hv65P7WMdaksVv1EVYiNjlno1to
+ z3oeewd8Hs308gswWqBGWGNblhO2IaDcIJ4tmjjx6jJkbL9ZN8x5Gr6YRlb19+zYW/j3
+ 9j3Q==
+X-Gm-Message-State: APjAAAVJ30tNtL9OWNTxIn65lAh+bxv/WxNPYrvOz1fVifg5yoxOH6kS
+ j05GLE5MAi0KZ3HdrAqiZ5S6oCdqj/RtKM5zwQ6fIj4z
+X-Google-Smtp-Source: APXvYqwQ4RL2s5D9aVCm9n1N9rlJDa7CJQoNmF4XUTuRSl+ezHea9b03/sFDKT4pki7ObbOWFqT6u7C22FGBi527fwg=
+X-Received: by 2002:a9d:390:: with SMTP id f16mr6420993otf.93.1563987258543;
+ Wed, 24 Jul 2019 09:54:18 -0700 (PDT)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:QyERFn8ID5epp4/isuFB83PeaejESYibO8SyUphJ28V71+KvjLS
- XWqOq1VJWrPvsc62TyntyuNq5hFmA849teUESfFlgG3YwFpwUCxj41s+Qqq0PzlEvL/sKh+
- /Jitciq6E3cwQTptjvO63eA4An1s+1YunVHpWOXxSizNo3IH5qWHKJsJDOj9/DjDfOmUQRh
- DuCzL4tjzoIx6+DjmEzZw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:AGo8ZwNaFF8=:e87f7Pcqo/n1/i8pJp4Wy0
- v9jbu8eKKPu9nnTwHGiBE4UHJ7lOl5eNPcZZADfeusoUvpV80PUMmPjdJ1CklmZhKqSCUwTi1
- P+u7d7nmOqExOGMbk1vdZdatIJgPmrSM9e7pl6NHiChtWoMgRjWmZEbneBavKuefLZ0+EL03/
- bvFINuWCA7KnQCvuYM5Mh7jBjPmAzMO78GQe/Jy6QzJioK2UpL4GskwGsrb6MUMyu4MGoNBRe
- zhVw24vljmlgYjMDizhZ8Q3v4uLNAp2q0FpN0Vs9QUHSKKRMeK/C5W6wHJAgtDtM3HrCBOSir
- RUxD8RdFzJ3qtpFVOF2ARS5QL2K27mg8i2JdDyz00TOCQILmcX7ktdbPT6cJbSHEj8TS47NCh
- pM9t12nZLGgH1+XSe+OtWmxqFcIfck6Gk2FWr3ImAPnO9qiedSL+EPIYPbxoXO/8AJ0WsN/Fw
- MXRjBr/JxDOAb1CYMOnEvNb20mZor6BBHhq2Z4Q2yOcbCsdeSFZm7N19Nmo6FErUjBmSGvc1f
- vbkoNjnuUypEO392nqNvTJsWdMRqGT4PUmA+etIXBLak6KQ5z26EsJFpjy11imtYWnlhGtcqq
- KFp+sRptMEeHbVt2apCxDy0o21PM2IEfF7byp/8VCiCKO2b+YGbxE8r14UCApr8v2JkhwweZH
- RGUkU34FQt9WRzokEh0MrO+WOOg9EobbhMcgK3FXchwq9Hqcc3xyAGbpQ1QX+qDZOKovLZKvW
- Qb3VEZ9laFncnh43Vhm77HoRjQOO6/kGqXPZU99QiShEh7BXd3FtXliKYrM=
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.0 points)
+References: <20190724133351.2283-1-freifunk@adrianschmutzler.de>
+In-Reply-To: <20190724133351.2283-1-freifunk@adrianschmutzler.de>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Wed, 24 Jul 2019 09:54:07 -0700
+Message-ID: <CAKxU2N8HPCaEb1WahtbfbVGnJ-XOcjWa5_2GU2Bn=3QV9fhBKA@mail.gmail.com>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190724_095422_149572_47822B24 
+X-CRM114-Status: GOOD (  11.90  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ath79: Fix indent in 01_leds
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH] mvebu: Replace backticks by $(...)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,34 +91,60 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- target/linux/ath79/base-files/etc/board.d/01_leds | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
-index d24a42d239..f3bf43a247 100755
---- a/target/linux/ath79/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/base-files/etc/board.d/01_leds
-@@ -206,8 +206,8 @@ tplink,tl-wr842n-v2)
- 	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x02"
- 	;;
- trendnet,tew-823dru)
--       ucidef_set_led_netdev "wan" "WAN" "trendnet:green:planet" "eth0"
--       ;;
-+	ucidef_set_led_netdev "wan" "WAN" "trendnet:green:planet" "eth0"
-+	;;
- ubnt,bullet-m|\
- ubnt,bullet-m-xw|\
- ubnt,nanostation-m|\
--- 
-2.20.1
-
+On Wed, Jul 24, 2019 at 6:34 AM Adrian Schmutzler
+<freifunk@adrianschmutzler.de> wrote:
+>
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
+>  target/linux/mvebu/base-files/lib/upgrade/linksys.sh | 2 +-
+>  target/linux/mvebu/base-files/sbin/fan_ctrl.sh       | 6 +++---
+>  2 files changed, 4 insertions(+), 4 deletions(-)
+>
+> diff --git a/target/linux/mvebu/base-files/lib/upgrade/linksys.sh b/target/linux/mvebu/base-files/lib/upgrade/linksys.sh
+> index 3f45d6cac5..ddf24836bc 100644
+> --- a/target/linux/mvebu/base-files/lib/upgrade/linksys.sh
+> +++ b/target/linux/mvebu/base-files/lib/upgrade/linksys.sh
+> @@ -6,7 +6,7 @@ linksys_get_target_firmware() {
+>
+>         local cur_boot_part mtd_ubi0
+>
+> -       cur_boot_part=`/usr/sbin/fw_printenv -n boot_part`
+> +       cur_boot_part=$(/usr/sbin/fw_printenv -n boot_part)
+>         if [ -z "${cur_boot_part}" ] ; then
+>                 mtd_ubi0=$(cat /sys/devices/virtual/ubi/ubi0/mtd_num)
+>                 case $(egrep ^mtd${mtd_ubi0}: /proc/mtd | cut -d '"' -f 2) in
+egrep is deprecated as well. I'm assuming you're running these through
+shellcheck.
+> diff --git a/target/linux/mvebu/base-files/sbin/fan_ctrl.sh b/target/linux/mvebu/base-files/sbin/fan_ctrl.sh
+> index 06e462119d..4234668317 100755
+> --- a/target/linux/mvebu/base-files/sbin/fan_ctrl.sh
+> +++ b/target/linux/mvebu/base-files/sbin/fan_ctrl.sh
+> @@ -1,8 +1,8 @@
+>  #!/bin/sh
+>
+> -CPU_TEMP=`cut -c1-2 /sys/class/hwmon/hwmon2/temp1_input`
+> -DDR_TEMP=`cut -c1-2 /sys/class/hwmon/hwmon1/temp1_input`
+> -WIFI_TEMP=`cut -c1-2 /sys/class/hwmon/hwmon1/temp2_input`
+> +CPU_TEMP=$(cut -c1-2 /sys/class/hwmon/hwmon2/temp1_input)
+> +DDR_TEMP=$(cut -c1-2 /sys/class/hwmon/hwmon1/temp1_input)
+> +WIFI_TEMP=$(cut -c1-2 /sys/class/hwmon/hwmon1/temp2_input)
+>
+>  CPU_LOW=85
+>  CPU_HIGH=95
+> --
+> 2.20.1
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

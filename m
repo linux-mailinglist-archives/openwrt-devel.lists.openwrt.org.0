@@ -2,58 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95C8A74ED2
-	for <lists+openwrt-devel@lfdr.de>; Thu, 25 Jul 2019 15:08:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3CB57502C
+	for <lists+openwrt-devel@lfdr.de>; Thu, 25 Jul 2019 15:52:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OOaDEMDE1bmW7yUqRGTtQE4lW+iFyrMdFk1/z69iXKQ=; b=G3CjMU+/sECImU
-	TwbYpa57SvSfeHRtg4MuFWnjmk5VsvKwbO6r0ZeHZpA6gyxtlGHdo+mpOnYq5EW3Fuiat5jANCM8e
-	ZhcnllZvY3P1nFOATrRJFAbMdW4H6k7DrtTBuXr7fv/K7L1zoiZN17WjgKeua5OfnohAdNciFOha+
-	owPppv6nR8rYTMZx6f/iUf1+AgZF2zuLGYhuPgrjAE/RkopApbVSO5qcSN+OP7YsHNcMqPekqJ876
-	FA8BFrbnOnF4yZ1H7BpPy0M+O4r6s3lnZdWN8ypaUJ8H8qnkEPnrPq0PI+EOgqvGcI/nKMQLnVCfB
-	kx8dwTLsfnpYXzUgmpUw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Q0GtA7p4qpbkXb1NiM0elrwicSPNoR3GUtw7+gkXl1E=; b=CfaNs1s9pSG1AI
+	OyhJBo1RmYmY/eymcj6dqzy8U0OVusCMd2mSHcQAZaWcG5L+yoLtm0b5Xi7gxGA0HZ40ZVl31BFps
+	9NiRJHVlGlbvZyedOvTcv2DkrP3+IyiSVx0nZGKXUlJZhjReqy05NtEf/PMuxwRSDYsk9qdd25B8e
+	4NAg5pOz0rtgHlTXy0UQdxnBz0Zl8bKbXxH2swV7vqOcJS4r8QTMrn38ruZIn3dHi876dcoxezSHW
+	/rG+hHe509c4C+eTXAj06dgdWiECU15MlqTfxUyGYn2Ifm/tWxWtGF5uMHUgOHstdz9FYMw+7gpaX
+	CbPchaZPKWvJSWcTh5Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hqdTn-0000zn-Cm; Thu, 25 Jul 2019 13:08:19 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1hqeAm-0007qx-3k; Thu, 25 Jul 2019 13:52:44 +0000
+Received: from mx-out.tlen.pl ([193.222.135.148])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hqdTU-0000z4-Of
- for openwrt-devel@lists.openwrt.org; Thu, 25 Jul 2019 13:08:02 +0000
-X-Originating-IP: 86.250.200.211
-Received: from windsurf (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (Authenticated sender: thomas.petazzoni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id A959620006;
- Thu, 25 Jul 2019 13:07:51 +0000 (UTC)
-Date: Thu, 25 Jul 2019 15:07:50 +0200
-From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-To: Hauke Mehrtens <hauke@hauke-m.de>
-Message-ID: <20190725150750.2e70a106@windsurf>
-In-Reply-To: <20190325182009.67d6ebb5@windsurf>
-References: <20190311162028.13172-1-thomas.petazzoni@bootlin.com>
- <20190311162028.13172-2-thomas.petazzoni@bootlin.com>
- <500817b3-9bc8-5c37-9ae0-ba787324c694@hauke-m.de>
- <20190325182009.67d6ebb5@windsurf>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1hqe9s-00075M-P0
+ for openwrt-devel@lists.openwrt.org; Thu, 25 Jul 2019 13:51:51 +0000
+Received: (wp-smtpd smtp.tlen.pl 17591 invoked from network);
+ 25 Jul 2019 15:51:37 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1564062697; bh=zNKvM1BFeN5oPs/VU39/1G3f4cDINrXNgNj0ZJTotqM=;
+ h=From:To:Subject;
+ b=u/vJoEWdnwkgPYqjXNautNwjAWwqkcFdmOYzte32XQwBVVFuK/gZOo00cOlN5hHBH
+ ZWWffCoTF8MZCCfwKAiCy413T1AxBTpBRAK1aw88Qu/afG+cg65D4FOCwodTDUJxE2
+ PHbnX6yjukulGE5+gsdzfLNmbbdmduy4H7fcPG74=
+Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
+ (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 25 Jul 2019 15:51:37 +0200
+From: Tomasz Maciej Nowak <tomek_n@o2.pl>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 25 Jul 2019 15:51:30 +0200
+Message-Id: <20190725135130.4267-1-tomek_n@o2.pl>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
+X-WP-MailID: e34e744b76a0856ced3c5a44abe19687
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000002 [AfH1]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190725_060800_963439_E2F4DA2F 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190725_065149_225952_F61F4494 
+X-CRM114-Status: UNSURE (   6.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 01/11] tools/libaio: new package
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tomek_n[at]o2.pl)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH v2] mvebu: enable xHCI USB controller
+ connected to PCIe
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,86 +77,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Hauke,
+This commit fixes regression on Linksys WRT1900 (Mamba) where this device
+doesn't have USB 3.0 controller integrated in SoC, instead it has Etron
+EJ168 connected to PCIe lane. Previously enabled in kernel 4.4 and 4.9,
+was lost in transition to 4.14.
 
-I'm finally getting back to this dm-verity work, and I have a question below.
+Fixes: 4ccad92 ("mvebu: Add support for kernel 4.14")
+Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
+---
+v1 -> v2
+move unrelated to fix change in kmod-usb3 package to separate patch
 
-On Mon, 25 Mar 2019 18:20:09 +0100
-Thomas Petazzoni <thomas.petazzoni@bootlin.com> wrote:
+ target/linux/mvebu/config-4.14 | 1 +
+ target/linux/mvebu/config-4.19 | 1 +
+ 2 files changed, 2 insertions(+)
 
-> > > diff --git a/tools/Makefile b/tools/Makefile
-> > > index 9a354f6c70..9702b4df25 100644
-> > > --- a/tools/Makefile
-> > > +++ b/tools/Makefile
-> > > @@ -27,6 +27,7 @@ tools-y += sstrip make-ext4fs e2fsprogs mtd-utils mkimage
-> > >  tools-y += firmware-utils patch-image quilt padjffs2
-> > >  tools-y += mm-macros missing-macros cmake scons bc findutils gengetopt patchelf
-> > >  tools-y += mtools dosfstools libressl
-> > > +tools-y += libaio    
-> > 
-> > I would prefer if this only gets build when
-> > CONFIG_TARGET_ROOTFS_SQUASHFS_HASHED is set or some other config variable.  
-> 
-> Sure. I was a bit confused by this to be honest. Wouldn't it be
-> possible to just add "cryptsetup" to tools-y when
-> CONFIG_TARGET_ROOTFS_SQUASHFS_HASHED=y, and have the other packages
-> (libaio, popt, lvm2) be simply built as dependencies of cryptsetup ?
-> 
-> Indeed, what CONFIG_TARGET_ROOTFS_SQUASHFS_HASHED=y really needs is
-> cryptsetup, the rest are mere build dependencies to build cryptsetup.
-
-Do you have some feedback on this particular question ? Ideally, I'd
-like to have just:
-
-tools-$(CONFIG_TARGET_ROOTFS_SQUASHFS_HASHED) += cryptsetup
-
-in tools/Makefile, but I don't know in tools/cryptsetup/Makefile how to
-express the dependencies it has on other tools. I briefly looked at
-other tools/*/Makefile, and couldn't spot any that has a dependency on
-something else.
-
-> > > +include $(INCLUDE_DIR)/host-build.mk
-> > > +
-> > > +define Host/Configure
-> > > +endef    
-> > 
-> > Is this empty configure section needed?  
-> 
-> Meh, most likely not. Will fix and retest.
-
-In fact, if you look at tools/*/Makefile, there is a common pattern of
-defining Host/Configure to an empty variable:
-
-missing-macros/Makefile:define Host/Configure
-missing-macros/Makefile-endef
-
-padjffs2/Makefile:define Host/Configure
-padjffs2/Makefile-endef
-
-scons/Makefile:define Host/Configure
-scons/Makefile-endef
-
-sdimage/Makefile:define Host/Configure
-sdimage/Makefile-endef
-
-this is probably to avoid using the default Host/Configure
-implementation from include/host-build.mk. But ok, in my case, using
-the default implementation from include/host-build.mk, which does
-nothing if there's no configure script, should work just fine.
-
-Thanks,
-
-Thomas
+diff --git a/target/linux/mvebu/config-4.14 b/target/linux/mvebu/config-4.14
+index dca685cffe..7a0caeeb61 100644
+--- a/target/linux/mvebu/config-4.14
++++ b/target/linux/mvebu/config-4.14
+@@ -482,6 +482,7 @@ CONFIG_USB_STORAGE=y
+ CONFIG_USB_SUPPORT=y
+ CONFIG_USB_XHCI_HCD=y
+ CONFIG_USB_XHCI_MVEBU=y
++CONFIG_USB_XHCI_PCI=y
+ CONFIG_USB_XHCI_PLATFORM=y
+ CONFIG_USE_OF=y
+ CONFIG_VECTORS_BASE=0xffff0000
+diff --git a/target/linux/mvebu/config-4.19 b/target/linux/mvebu/config-4.19
+index 5a554a0bda..5fb93fa8e7 100644
+--- a/target/linux/mvebu/config-4.19
++++ b/target/linux/mvebu/config-4.19
+@@ -484,6 +484,7 @@ CONFIG_USB_STORAGE=y
+ CONFIG_USB_SUPPORT=y
+ CONFIG_USB_XHCI_HCD=y
+ CONFIG_USB_XHCI_MVEBU=y
++CONFIG_USB_XHCI_PCI=y
+ CONFIG_USB_XHCI_PLATFORM=y
+ CONFIG_USE_OF=y
+ CONFIG_VFP=y
 -- 
-Thomas Petazzoni, CTO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.22.0
+
 
 _______________________________________________
 openwrt-devel mailing list

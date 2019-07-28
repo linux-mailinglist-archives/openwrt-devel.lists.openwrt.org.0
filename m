@@ -2,54 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C2D177F06
-	for <lists+openwrt-devel@lfdr.de>; Sun, 28 Jul 2019 12:11:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6341578074
+	for <lists+openwrt-devel@lfdr.de>; Sun, 28 Jul 2019 18:40:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:Message-ID:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uV3gw7X+tpiU09jJqUt+BMPHpKZgRZJKv5WxZIBVfN4=; b=LLt7YLqFOxOVie
-	16FY0S944daJFNbeaUE6mCeTiIqgfhxFcHkPPQrDn0I5ngk6jxD5NGzCiHb9/pONHKz6x5//FAxUU
-	5abNfGxJUaJgDZOCPIvuJA/DgveVQS1AYwgxF+go/UBeZqmMWYc6gS6eGvf5+pq9a3MwaXtCJwz/z
-	SnXgPqUbI25wDRoYq799l1CP7vSoNUSgVJcMVuOxTuJCyoyTi1OsuPkSAqWs+Ge8cr/tHmrpIMuFM
-	E5LKX3CjLviSEv1JGIUq809CcJZSst7QB4expckK2rrb+Fm0tIWBhlgeSO3E67spxBj2jRt/IXA6N
-	jSgfSS+fXBqn5hPPG5PA==;
+	List-Owner; bh=KYkEMrRNhcPaR1yiWpw5Z7qvHROVuHVuxqqIYnJCcxQ=; b=K/D2E3J1zs/iT+
+	yxcd1MpkP8DRqvyyL/8AyOT4VhXVRLvxma4Ww7D+HjZH+j3zuOK/VklHdbY4A2AxtormePbe+oFrt
+	TITYvKIcOQcmkr8ua2A67GzIcw5Xuh5s8fvDfNj5xpziGPgaqv2Qw9RThR/dxFGh8g/5WZBhs6sca
+	2UNmnav3Nrao/ncWZHu9TTDAbvOm5MLZLJxL3jk1stOTVCeYkDqA+WbKHJhZlvzGMR62YGziOnqlO
+	U1Y8dRG6xKv5OSBAUKgJ8kj/fH1QIuOgq0MEXRgr9KzMA3hsJEbNZXyXdAyxV4sTEVP9R1m+LYfh1
+	wSjuXuIN/0yiXP+oU14Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hrg8p-0002Hd-Va; Sun, 28 Jul 2019 10:11:00 +0000
-Received: from mail.klickitat.com ([54.70.207.208])
+	id 1hrmDB-0003Nm-57; Sun, 28 Jul 2019 16:39:53 +0000
+Received: from out-7.smtp.github.com ([192.30.252.198])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hrg8X-0002HJ-Pl
- for openwrt-devel@lists.openwrt.org; Sun, 28 Jul 2019 10:10:43 +0000
-Received: by mail.klickitat.com (Postfix, from userid 182)
- id 29531A61125; Sun, 28 Jul 2019 03:10:39 -0700 (PDT)
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dodson.localdomain
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=ham autolearn_force=no version=3.4.2
-Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
- by mail.klickitat.com (Postfix) with ESMTP id 7BB74A610E1;
- Sun, 28 Jul 2019 03:10:34 -0700 (PDT)
-From: Russell Senior <russell@personaltelco.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 28 Jul 2019 03:10:34 -0700
-Message-ID: <87v9vm1nc5.fsf@husum.klickitat.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
-MIME-Version: 1.0
+ id 1hrmCt-0003NL-77
+ for lede-dev@lists.infradead.org; Sun, 28 Jul 2019 16:39:37 +0000
+Date: Sun, 28 Jul 2019 09:39:27 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+ s=pf2014; t=1564331967;
+ bh=+3pIPYGsMnb2tyu74F3XpbS5UhZCiJ2ErG47oIcZytc=;
+ h=Date:From:To:Subject:From;
+ b=emqJeg30ZXgZiHPg1+Wg0fRn2bMxMN/3k7PhMSAS2s1d72/t689VZsHev3ohZYI+2
+ Nz5/xCAHc/VPSACS6uI13cDCFw10wDgbJ4CvjLDzdfDcelwtpQeVYqDHk9Xg+W6X22
+ KKti0w1ALAKXw2ZlBxA9nNorPve9NSNuKmV0gek0=
+From: Stephen Walker <noreply@github.com>
+To: stephendwalker+github@gmail.com, 
+ openwrt-devel@lists.openwrt.org
+Message-ID: <sdwalker/sdwalker.github.io/push/refs/heads/master/3d13a8-7d9b0b@github.com>
+Mime-Version: 1.0
+X-GitHub-Recipient-Address: stephendwalker+github@gmail.com,
+ lede-dev@lists.infradead.org
+X-Auto-Response-Suppress: All
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190728_031041_881124_2970FFD4 
-X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-CacheID: sfid-20190728_093935_325697_38D33608 
+X-CRM114-Status: UNSURE (   1.87  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 2.5 HEADER_SPAM            Bulk email fingerprint (header-based) found
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] tools/scons: update scons to 3.1.0
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.30.252.198 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 7d9b0b: This week's
+ update
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,40 +74,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+  Branch: refs/heads/master
+  Home:   https://github.com/sdwalker/sdwalker.github.io
+  Commit: 7d9b0b87b23f0be5e8b96e9f00aa6cb4cb69368b
+      https://github.com/sdwalker/sdwalker.github.io/commit/7d9b0b87b23f0be5e8b96e9f00aa6cb4cb69368b
+  Author: Stephen Walker <stephendwalker+github@gmail.com>
+  Date:   2019-07-28 (Sun, 28 Jul 2019)
 
-Needed to build gpsd again, which is required by olsrd.
+  Changed paths:
+    M uscan/index-18.06.html
+    M uscan/index.html
 
-Signed-off-by: Russell Senior <russell@personaltelco.net>
----
- tools/scons/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/tools/scons/Makefile b/tools/scons/Makefile
-index 5ec6554165..931b662f95 100644
---- a/tools/scons/Makefile
-+++ b/tools/scons/Makefile
-@@ -8,12 +8,12 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=scons
--PKG_VERSION:=3.0.5
-+PKG_VERSION:=3.1.0
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
- PKG_SOURCE_URL:=@SF/scons \
- 		http://fossies.org/linux/misc/
--PKG_HASH:=df676f23dc6d4bfa384fc389d95dcd21ab907e6349d4c848958ba4befb73c73e
-+PKG_HASH:=f3f548d738d4a2179123ecd744271ec413b2d55735ea7625a59b1b59e6cd132f
- 
- include $(INCLUDE_DIR)/host-build.mk
- 
--- 
-2.22.0
+  Log Message:
+  -----------
+  This week's update
 
 
--- 
-Russell Senior, President
-russell@personaltelco.net
 
 _______________________________________________
 openwrt-devel mailing list

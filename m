@@ -2,86 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 696DD7DF09
-	for <lists+openwrt-devel@lfdr.de>; Thu,  1 Aug 2019 17:27:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B42287E1E5
+	for <lists+openwrt-devel@lfdr.de>; Thu,  1 Aug 2019 20:04:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=uMsBKnkG/yVYQj/xFdYpXaHlXfqYdu3VKQtKBv7pjcw=; b=FSEsbK2+0GqAFLCLp2pO2NoP0e
-	5KICoesYED9PPQJEPJkb4NGaLV3Lo/DUXZNUkx26HQ4J8TsXYOKz42iJy1c5wMKrtMolv4spLbwjd
-	Jxs9N+mQE9mUpnI0LDArblLa/0x/zfsxW4u64l8G4FM0W4CLdPbzwzEa8NM8fAvcpFNNvzALb81pg
-	yGf+rzqFU2cjiZydQJuZ8PvWvH3JmgIDGAfltde1M0V1R/nKw5C7VrfwtSjBXlvBV74rqkoVPmIUP
-	Wh5l5Rw+ywdFfSSfKuC1lRohGhPCM8uk9aI9SJjHsXFPBgH1fxb2h3VrLgcJtBPzKriuW/eBdY4cQ
-	5cv6xegw==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wQW9G35WFiTh5s4w3GIAAqGLmrGq05y/PiYm1q676No=; b=C9p
+	DfNdKoi9kNYUmfukUxX14hBymDHZicDBDnsjGPCb5q43WyvNp5IItoNuVPDylWNg5s1SpM0lj76+O
+	e4FYa4hkYP62FsyRkeHcXLUN3oAsneUG3zo/4iJkwZO8f+ZeBFKPNEFsH3MLXSb0czaxrXWqj/taD
+	bBTxTQ9/vscJL5ZXNFQ8gwlv5WUCFJvR+6e9O4ons1+S3tzRDuRbg/kPxnhGARPbs+F3ghM+VegGW
+	k0HEt+/ay7P4X5F9KLTeQLKuwcU7fOA/dVTU1776FJUZsxdNEXH3tdHeZJwQJ6m+9gThRHYv/AL6m
+	ohjGBPIsEldXGfKc4l/a+p6n6Pix5fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htCzd-0005qD-JT; Thu, 01 Aug 2019 15:27:49 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1htFRT-0000AJ-VW; Thu, 01 Aug 2019 18:04:43 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htCzS-0005pN-HQ
- for openwrt-devel@lists.openwrt.org; Thu, 01 Aug 2019 15:27:41 +0000
-Received: by mail-ed1-x543.google.com with SMTP id s49so34743531edb.1
- for <openwrt-devel@lists.openwrt.org>; Thu, 01 Aug 2019 08:27:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ncentric-com.20150623.gappssmtp.com; s=20150623;
- h=to:from:subject:cc:message-id:date:user-agent:mime-version
- :content-transfer-encoding:content-language;
- bh=W9zerLzhzM8D3SQxtPIScR1CBnOCmWcm/OBGbnUHNvE=;
- b=c6naDH4bcOgzNVpJCinzuJKwcFL2bIB9AhHtYpdDdtu+yp5LNrNN+chi2PU02Br/KH
- qsSUdZL2XtzVVNS0OtBoc1zA+CnYHo4fwz5p6I+wpcyWG5BrKk8lNEzMK8Tnqu4kskJZ
- 9BxEHnzNkkbmOkm2FvoM1Yx4tXa9jw/CHBNeR4keejmS1qd6W7+42dmLWIjtXFP2VcYy
- j4rkI7MxF4/dcVGHnAD0O+ksO6GfBSEIy8pWhCWj3Seus8iGIoFOe2sa7K/Iha8GuZ5y
- ArDDGwEWEtfTb1+7WyicYr9MY8jUi5wAvQP7E9gzPZ68W72I0xHn9KRwwcb2IQGlY/z/
- mXtw==
+ id 1htFRN-0000A0-EL
+ for openwrt-devel@lists.openwrt.org; Thu, 01 Aug 2019 18:04:39 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id v6so49552671vsq.4
+ for <openwrt-devel@lists.openwrt.org>; Thu, 01 Aug 2019 11:04:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=bMLFERbN0d/Lx373/GyHquVjI04/5vb4k1pBZDNmWtY=;
+ b=NrFfcdVkzFskore5bmYuw3KSyCeqvtNr0jNMwIffZVQLPnX+xAzUkKFkLYNL98ViRY
+ clPplCP98/of7lN4Ok3GhLtrkXjKxKLAvOhv/8I8yJCW3nOTzF8AgTPv0W5S3AKk8kmI
+ AdpAfJEwG32WO5ExdI38L6H6KipjPAJyZjowmenv1oD9VQzDq9e5QFU2w2DJe4V+kJV0
+ 9NM8ugwPYjJTSss8Rj1x5A+Smgs1smQJCmDERH1qB+nrtzuYYIZZkawG3MObP6kYbaTV
+ SZudxcSLgo0ot33R+Gka056px5/nyGcO1EniQ5/qOUBcnZYrp7dTBK3s6yessV2EuQU7
+ CRYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:subject:cc:message-id:date:user-agent
- :mime-version:content-transfer-encoding:content-language;
- bh=W9zerLzhzM8D3SQxtPIScR1CBnOCmWcm/OBGbnUHNvE=;
- b=rs3lao0WBcv9yKu2G7cTgd/dSQ0DJx/FjV/OvahepP9vhcxpSVKxhnPAFzj2D0Gsy6
- czG8hMf3SKT7QrgFo1zbVSWfGIlPcOgqc4m0HooXla6p6FUXLM3+KTeae6hUm5V/9yv8
- IRddgFXap0MITDb7W1g+yTmUMJQ4H5KTfy2Jm6ZLSPgpS/oW/Z4iF7zWr3wREz8LBars
- cqqDnTVy0i/zIELEmmGmKipHvQ8VL/PV76M2P0u+IN65DY2a1zr1vj/S32TZVk/8XdL4
- aExLlnvaKecCXj7ODUmXitbU1NM3uttDoqaS9zss6jyuMRjoXegVdVI1MPxW1WCBU3aV
- XQLw==
-X-Gm-Message-State: APjAAAU89+r64aih/3RFcBER5wQqaIvHAQOTAGauycEPnsDDFmKc5qri
- 3tTSrNTX+K16KAofskDQv/wb4w==
-X-Google-Smtp-Source: APXvYqwXWO6Yod5kBXTstu1Q0EEIZSZA+4fDtqStfy9ZbmSW9tSc+dErgLCwGKR6LyUWWa6nC050xA==
-X-Received: by 2002:a17:906:24c1:: with SMTP id
- f1mr99510045ejb.285.1564673255947; 
- Thu, 01 Aug 2019 08:27:35 -0700 (PDT)
-Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
- by smtp.gmail.com with ESMTPSA id k2sm12788141ejr.71.2019.08.01.08.27.35
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 01 Aug 2019 08:27:35 -0700 (PDT)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Koen Vandeputte <koen.vandeputte@ncentric.com>
-Message-ID: <28699ed1-e5c2-c9bf-c611-04ddef9ed254@ncentric.com>
-Date: Thu, 1 Aug 2019 17:27:34 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=bMLFERbN0d/Lx373/GyHquVjI04/5vb4k1pBZDNmWtY=;
+ b=R/9UOq6cZ4v0DmCqB2o557VKUGYZMGb9XcDY+qXEQGMWNuo3uNc2QC8wW7NQF+4pxm
+ 8u5TMiC26EMLwB7jkuaDmoYMLY4Snl1hKRwHvEPXZvjRdl3bm3OXcEL32VEKVEs/HEd4
+ Am+3YGL2tYsQWK94Nd5qOduO9zdSOZaOGJjzv3MBJ/WUGlU1UttHYqkr47lXW3Rl7mA9
+ aaR16eBs8wHBTDVMplXBzQrwSwzWYuwzaY7AKhIhoyuUTYIJ6EfuTb+Hl5mSy88XPzHN
+ YprweT9MMcOot3KVdDRV2Wg9w/O8dGmsHtG2q9P7/GffqFfH07PCzA+q9HviAB4euomz
+ WcXA==
+X-Gm-Message-State: APjAAAXw2yt6UNLocOJ2UnhjtZN3Ha4OQ7hX7JQkzRIzFo8XAwj8tbyf
+ C1R6YPRB4djRWvCZjaz/KqXQ+b2jLszy5rcxOvriyY8M
+X-Google-Smtp-Source: APXvYqxc/NI2iYfr+RwCpUJrWVABt9ZJPlIl6IpJic0uy/ExyZSrj+7g5k1d0tDwtR8RIZhxAS5eJ+IAJY34a8RYd5g=
+X-Received: by 2002:a67:c016:: with SMTP id v22mr85729853vsi.107.1564682674926; 
+ Thu, 01 Aug 2019 11:04:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+From: Jeffery To <jeffery.to@gmail.com>
+Date: Fri, 2 Aug 2019 02:04:23 +0800
+Message-ID: <CAJXyS=g12DcdYsUMoSOMTY6oDJrd8K+M6_Bp15fK0-dAJ3x-Zg@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_082738_603924_C2FB7122 
-X-CRM114-Status: GOOD (  12.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190801_110437_513619_748015DE 
+X-CRM114-Status: GOOD (  10.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jeffery.to[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
+ 0.0 WEIRD_PORT             URI: Uses non-standard port number for HTTP
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] atomic sleep bugs - 19.07 (and probably Master too)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] Cryptodev-linux compile error with armvirt-64 sdk
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,271 +90,267 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, Felix Fietkau <nbd@nbd.name>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============0781388921722341571=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgQWxsLAoKSSd2ZSBiZWVuIHBsYXlpbmcgYXJvdW5kIHRoZSBsYXN0IGZldyBkYXlzIHN0cmVz
-c3Rlc3RpbmcgbGF0ZXN0IDE5LjA3IG9uIApkaWZmZXJlbnQgdGFyZ2V0cyAoYXI3MXh4LCBjbnMz
-eHh4LCBpbXg2LCAuLi4pIHdpdGggZXh0cmEga2VybmVsIGRlYnVnIApmZWF0dXJlcyBlbmFibGVk
-LgoKSSdsbCBwb3N0IHNvbWUgcmVzdWx0cyBoZXJlIGFzIG1heWJlIHNvbWVib2R5IGhhcyBhIGNs
-dWUuIDopCgoKU29tZSBpbnRlcmVzdGluZyBzcGxhdHMgYWxyZWFkeSBzaG93ZWQgdXAsIGFjdHVh
-bGx5IGFsc28gKmJyZWFraW5nKiBzb21lIApmdW5jdGlvbmFsaXR5IHdoaWxlIHRoZSBib2FyZCBp
-cyBydW5uaW5nOgoKb24gTWlrcm90aWsgUkIyMDExIChhcjcxeHgpCgoKW8KgwqAgMTYuODg1MjA3
-XSBldGgwOiBsaW5rIGRvd24KW8KgwqAgMTYuOTE5NzUyXSBCVUc6IHNsZWVwaW5nIGZ1bmN0aW9u
-IGNhbGxlZCBmcm9tIGludmFsaWQgY29udGV4dCBhdCAKbmV0L2NvcmUvZGV2LmM6NTU2MwpbwqDC
-oCAxNy4wMTM2NjldIGluX2F0b21pYygpOiAxLCBpcnFzX2Rpc2FibGVkKCk6IDEsIHBpZDogNDYz
-LCBuYW1lOiBpcApbwqDCoCAxNy4wODc4MzldIDIgbG9ja3MgaGVsZCBieSBpcC80NjM6ClvCoMKg
-IDE3LjEyOTY2OF3CoCAjMDrCoCAocnRubF9tdXRleCl7Li4uLn0sIGF0OiBbPDgwMzc4ODE0Pl0g
-CnJ0bmV0bGlua19yY3ZfbXNnKzB4MmQ4LzB4MzgwClvCoMKgIDE3LjIyMjYxN13CoCAjMTrCoCAo
-JigmYWctPmxvY2spLT5ybG9jayl7Li4uLn0sIGF0OiBbPDgwMzMxOTAwPl0gCmFnNzF4eF9od19k
-aXNhYmxlKzB4MjQvMHg5NApbwqDCoCAxNy4zMjI4NzhdIENQVTogMCBQSUQ6IDQ2MyBDb21tOiBp
-cCBOb3QgdGFpbnRlZCA0LjE0LjEzNCAjMApbwqDCoCAxNy4zOTA3ODJdIFN0YWNrIDogODA1ZTAw
-MDAgODA1OGFlZmMgODA1NThlZDAgODc2Mjc4ZWMgODA2MTAwMDAgCjgwNjEwMDAwIDg3ZDFiMmZj
-IDgwNWI3MzY3ClvCoMKgIDE3LjQ5MTAzMl3CoMKgwqDCoMKgwqDCoMKgIDgwNTUyZjA0IDAwMDAw
-MWNmIDgwNjEzODZjIDg3NjI3Y2NjIDg3ZDViMTgwIAowMDAwMDAwMSA4NzYyNzhhMCA2YWUwNzU3
-OApbwqDCoCAxNy41OTEyODNdwqDCoMKgwqDCoMKgwqDCoCAwMDAwMDAwMCAwMDAwMDAwMCA4MGIw
-MDAwMCA4NzYyNzc5YyAwYTU1YTg5MSAKMDAwMDAwMDAgMDAwMDAwMDcgMDAwMDAwMDAKW8KgwqAg
-MTcuNjkxNTM1XcKgwqDCoMKgwqDCoMKgwqAgMDAwMDAwOTkgOGY5YjU2NDggMDAwMDAwOTggMDAw
-MDAwMDAgODAwMDAwMDAgCjg3ZDZlNThjIDg3ZDZlNWIwIDAwMDAwMDAxClvCoMKgIDE3Ljc5MTc4
-NV3CoMKgwqDCoMKgwqDCoMKgIDgwNDcwOTVjIDg3NjI3Y2NjIDg3ZDViMTgwIDg3ZDlhZTEwIDAw
-MDAwMDAzIAo4MDJjZmE1NCAwMDAwMDAwMCA4MDYxMDAwMApbwqDCoCAxNy44OTIwMzZdwqDCoMKg
-wqDCoMKgwqDCoCAuLi4KW8KgwqAgMTcuOTIxMzUyXSBDYWxsIFRyYWNlOgpbwqDCoCAxNy45NTA2
-NzZdIFs8ODAwNmNiMGM+XSBzaG93X3N0YWNrKzB4NTgvMHgxMDAKW8KgwqAgMTguMDAzOTk2XSBb
-PDgwMGFhZGY0Pl0gX19fbWlnaHRfc2xlZXArMHgxMDAvMHgxMjAKW8KgwqAgMTguMDYyNTEyXSBb
-PDgwMzVkN2Y0Pl0gbmFwaV9kaXNhYmxlKzB4MzAvMHhkOApbwqDCoCAxOC4xMTY4NTRdIFs8ODAz
-MzE5NDA+XSBhZzcxeHhfaHdfZGlzYWJsZSsweDY0LzB4OTQKW8KgwqAgMTguMTc2NDIxXSBbPDgw
-MzMxOTk0Pl0gYWc3MXh4X3N0b3ArMHgyNC8weDM4ClvCoMKgIDE4LjIyOTcyOV0gWzw4MDM1YjFm
-MD5dIF9fZGV2X2Nsb3NlX21hbnkrMHhjYy8weDEwNApbwqDCoCAxOC4yODkzMDZdIFs8ODAzNjQy
-NmM+XSBfX2Rldl9jaGFuZ2VfZmxhZ3MrMHhjOC8weDFhYwpbwqDCoCAxOC4zNTA5NTBdIFs8ODAz
-NjQzNzg+XSBkZXZfY2hhbmdlX2ZsYWdzKzB4MjgvMHg3MApbwqDCoCAxOC40MDk0NzNdIFs8ODAz
-NzdjMzA+XSBkb19zZXRsaW5rKzB4MzFjLzB4OTFjClvCoMKgIDE4LjQ2MzgyNl0gWzw4MDM3YTcw
-MD5dIHJ0bmxfbmV3bGluaysweDNlYy8weDdmOApbwqDCoCAxOC41MjAyNjFdIFs8ODAzNzg4Mzg+
-XSBydG5ldGxpbmtfcmN2X21zZysweDJmYy8weDM4MApbwqDCoCAxOC41ODE5MzhdIFs8ODAzOWJh
-YzQ+XSBuZXRsaW5rX3Jjdl9za2IrMHhkNC8weDE3OApbwqDCoCAxOC42NDA0MzldIFs8ODAzOWIw
-YTA+XSBuZXRsaW5rX3VuaWNhc3QrMHgxNjgvMHgyNTAKW8KgwqAgMTguNzAwMDA2XSBbPDgwMzli
-NjY0Pl0gbmV0bGlua19zZW5kbXNnKzB4M2Q4LzB4NDM0ClvCoMKgIDE4Ljc1OTU4MF0gWzw4MDM0
-MDRhND5dIF9fX3N5c19zZW5kbXNnKzB4MWRjLzB4MjkwClvCoMKgIDE4LjgxODA5OF0gWzw4MDM0
-MTUwMD5dIF9fc3lzX3NlbmRtc2crMHg1NC8weDg0ClvCoMKgIDE4Ljg3MzUwNF0gWzw4MDA3MjEy
-Yz5dIHN5c2NhbGxfY29tbW9uKzB4MzQvMHg1OAoKCm9uIE1pa3JvdGlrIFJCLTkxMiAoYXI3MXh4
-KSwgdXNpbmcgYXRoOWsgY29tYmluZWQgd2l0aCBhIFVTQiBtb2RlbSAKdG9nZXRoZXIuwqAgV2hl
-biBkaXNhYmxpbmcgYXRoOWsgb3IgdW5wbHVnZ2luZyB0aGUgbW9kZW0sIHRoZXNlIGJ1Z3MgCmRv
-bid0IGFwcGVhcgpIZXJlLCB0aGUgVVNCIG1vZGVtIHN0b3BzIHJlY2VpdmluZyBkYXRhIGFmdGVy
-IGEgZmV3IHNlY29uZHM6CgoKW8KgwqAgMzcuMTY1NDkzXSB3bGFuMDogVHJpZ2dlciBuZXcgc2Nh
-biB0byBmaW5kIGFuIElCU1MgdG8gam9pbgpbwqDCoCAzNy4xNzE1NDZdIEJVRzogc2xlZXBpbmcg
-ZnVuY3Rpb24gY2FsbGVkIGZyb20gaW52YWxpZCBjb250ZXh0IGF0IAprZXJuZWwvaXJxL21hbmFn
-ZS5jOjExMgpbwqDCoCAzNy4xODAwMDZdIGluX2F0b21pYygpOiAxLCBpcnFzX2Rpc2FibGVkKCk6
-IDEsIHBpZDogOSwgbmFtZTogCmt3b3JrZXIvdTI6MQpbwqDCoCAzNy4xODcxMTBdIDYgbG9ja3Mg
-aGVsZCBieSBrd29ya2VyL3UyOjEvOToKW8KgwqAgMzcuMTkxNDM0XcKgICMwOsKgICgiJXMid2lw
-aHlfbmFtZShsb2NhbC0+aHcud2lwaHkpKXsuLi4ufSwgYXQ6IApbPDgwMDlmODljPl0gcHJvY2Vz
-c19vbmVfd29yaysweDI1MC8weDRjMApbwqDCoCAzNy4yMDEyOThdwqAgIzE6wqAgKCgmc2RhdGEt
-PndvcmspKXsuLi4ufSwgYXQ6IFs8ODAwOWY4OWM+XSAKcHJvY2Vzc19vbmVfd29yaysweDI1MC8w
-eDRjMApbwqDCoCAzNy4yMDk2MDRdwqAgIzI6wqAgKCZ3ZGV2LT5tdHgpey4uLi59LCBhdDogWzw4
-MjkxNzEzMD5dIAppZWVlODAyMTFfaWJzc193b3JrKzB4NDAvMHg1YTQgW21hYzgwMjExXQpbwqDC
-oCAzNy4yMTkwNzddwqAgIzM6wqAgKCZsb2NhbC0+bXR4KXsuLi4ufSwgYXQ6IFs8ODI5MGQ5MTQ+
-XSAKaWVlZTgwMjExX3JlcXVlc3RfaWJzc19zY2FuKzB4NGMvMHgyYjggW21hYzgwMjExXQpbwqDC
-oCAzNy4yMjkyNDZdwqAgIzQ6wqAgKCZzYy0+bXV0ZXgpey4uLi59LCBhdDogWzw4MmFlNDg3OD5d
-IAphdGg5a19wc19yZXN0b3JlKzB4ZDU0LzB4MTFkYyBbYXRoOWtdClvCoMKgIDM3LjIzODE1OV3C
-oCAjNTrCoCAoJmlycV9kZXNjX2xvY2tfY2xhc3Mpey4uLi59LCBhdDogWzw4MDBjMjlkOD5dIApf
-X2lycV9nZXRfZGVzY19sb2NrKzB4OGMvMHhiMApbwqDCoCAzNy4yNDcxMTNdIENQVTogMCBQSUQ6
-IDkgQ29tbToga3dvcmtlci91MjoxIFRhaW50ZWQ6IEcgV8KgwqDCoMKgwqDCoCAKNC4xNC4xMzQg
-IzAKW8KgwqAgMzcuMjU1MjgyXSBXb3JrcXVldWU6IHBoeTAgaWVlZTgwMjExX2lic3NfbGVhdmUg
-W21hYzgwMjExXQpbwqDCoCAzNy4yNjEwNTVdIFN0YWNrIDogODI4NzAwODAgODI4NzAxNTggODI4
-NjBkNjAgODAwYzBmYTAgODA2MTAwMDAgCjAwMDAwMDAwIDAwMDAwMDAxIDgwNWIwMDAwClvCoMKg
-IDM3LjI2OTc0M13CoMKgwqDCoMKgwqDCoMKgIDgwNTUyZTdjIDgzODRkYjI0IDAwMDAwMzQ4IDgw
-MGMxZTA0IDgyODYwZDYwIAowMDAwMDAwMCA4Mzg0ZGIwMCAyMWJjMzI1YwpbwqDCoCAzNy4yNzg0
-MzRdwqDCoMKgwqDCoMKgwqDCoCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwNiA4Mzg0ZDlkNCBh
-Y2JiYmQwZCAKMDAwMDAwMDAgMDAwMDAwMDcgMDAwMDAwMDAKW8KgwqAgMzcuMjg3MTI1XcKgwqDC
-oMKgwqDCoMKgwqAgMDAwMDAxMzIgODA1YzAwMDAgMDAwMDAxMzEgMDAwMDAwMDAgMDAwMDAwMDAg
-CjgyODYyNmQ4IDgyODcwM2M4IDAwMDAwMzQ4ClvCoMKgIDM3LjI5NTgxNl3CoMKgwqDCoMKgwqDC
-oMKgIDgyODcwMDgwIDgyODcwMTU4IDgyODYwZDYwIDgyODcwM2M4IDAwMDAwMDAyIAo4MDJjZmE1
-NCAwMDAwMDAwMCA4MDYxMDAwMApbwqDCoCAzNy4zMDQ1MDhdwqDCoMKgwqDCoMKgwqDCoCAuLi4K
-W8KgwqAgMzcuMzA3MDU1XSBDYWxsIFRyYWNlOgpbwqDCoCAzNy4zMDk2MDFdIFs8ODAwNmNiMGM+
-XSBzaG93X3N0YWNrKzB4NTgvMHgxMDAKW8KgwqAgMzcuMzE0MjE5XSBbPDgwMGFhZGY0Pl0gX19f
-bWlnaHRfc2xlZXArMHgxMDAvMHgxMjAKW8KgwqAgMzcuMzE5MjgwXSBbPDgwMGMzMzQ0Pl0gc3lu
-Y2hyb25pemVfaXJxKzB4M2MvMHhhMApbwqDCoCAzNy4zMjQyNDVdIFs8ODAwYzY1OTQ+XSBfX2ly
-cV9kaXNhYmxlKzB4NjQvMHhiNApbwqDCoCAzNy4zMjkwMjRdIFs8ODAwYzM1ZjQ+XSBfX2Rpc2Fi
-bGVfaXJxX25vc3luYysweDNjLzB4NjgKW8KgwqAgMzcuMzM0NDM0XSBbPDgwMGMzNjNjPl0gZGlz
-YWJsZV9pcnErMHgxNC8weDM4ClvCoMKgIDM3LjMzOTE5NV0gWzw4MmFlNWI0OD5dIGF0aDlrX2Nh
-bGN1bGF0ZV9zdW1tYXJ5X3N0YXRlKzB4NTNjLzB4NmY0IApbYXRoOWtdClvCoMKgIDM3LjM1NzY2
-OV0gdHR5UyB0dHlTMDogMSBpbnB1dCBvdmVycnVuKHMpClvCoMKgIDM4LjE3MDU4OF0gQlVHOiBz
-bGVlcGluZyBmdW5jdGlvbiBjYWxsZWQgZnJvbSBpbnZhbGlkIGNvbnRleHQgYXQgCmtlcm5lbC9p
-cnEvbWFuYWdlLmM6MTEyClvCoMKgIDM4LjE3OTA1OV0gaW5fYXRvbWljKCk6IDEsIGlycXNfZGlz
-YWJsZWQoKTogMSwgcGlkOiA5LCBuYW1lOiAKa3dvcmtlci91MjoxClvCoMKgIDM4LjE4NjE2N10g
-NSBsb2NrcyBoZWxkIGJ5IGt3b3JrZXIvdTI6MS85OgpbwqDCoCAzOC4xOTA0OTJdwqAgIzA6wqAg
-KCIlcyJ3aXBoeV9uYW1lKGxvY2FsLT5ody53aXBoeSkpey4uLi59LCBhdDogCls8ODAwOWY4OWM+
-XSBwcm9jZXNzX29uZV93b3JrKzB4MjUwLzB4NGMwClvCoMKgIDM4LjIwMDM2NV3CoCAjMTogKCgm
-KCZsb2NhbC0+c2Nhbl93b3JrKS0+d29yaykpey4uLi59LCBhdDogCls8ODAwOWY4OWM+XSBwcm9j
-ZXNzX29uZV93b3JrKzB4MjUwLzB4NGMwClvCoMKgIDM4LjIwOTkyNV3CoCAjMjrCoCAoJmxvY2Fs
-LT5tdHgpey4uLi59LCBhdDogWzw4MjkwZDMzOD5dIAppZWVlODAyMTFfc2Nhbl93b3JrKzB4NDQv
-MHg1NzggW21hYzgwMjExXQpbwqDCoCAzOC4yMTk0OTddwqAgIzM6wqAgKCZzYy0+bXV0ZXgpey4u
-Li59LCBhdDogWzw4MmFlNDg3OD5dIAphdGg5a19wc19yZXN0b3JlKzB4ZDU0LzB4MTFkYyBbYXRo
-OWtdClvCoMKgIDM4LjIyODQxMF3CoCAjNDrCoCAoJmlycV9kZXNjX2xvY2tfY2xhc3Mpey4uLi59
-LCBhdDogWzw4MDBjMjlkOD5dIApfX2lycV9nZXRfZGVzY19sb2NrKzB4OGMvMHhiMApbwqDCoCAz
-OC4yMzczNjNdIENQVTogMCBQSUQ6IDkgQ29tbToga3dvcmtlci91MjoxIFRhaW50ZWQ6IEcgV8Kg
-wqDCoMKgwqDCoCAKNC4xNC4xMzQgIzAKW8KgwqAgMzguMjQ1NTMzXSBXb3JrcXVldWU6IHBoeTAg
-aWVlZTgwMjExX3NjYW5fd29yayBbbWFjODAyMTFdClvCoMKgIDM4LjI1MTIyNF0gU3RhY2sgOiA4
-Mjg3MDA4MCA4Mjg3MDE1OCA4Mjg2MGQ2MCA4MDBjMGZhMCA4MDYxMDAwMCAKMDAwMDAwMDAgMDAw
-MDAwMDEgODA1YjAwMDAKW8KgwqAgMzguMjU5OTEyXcKgwqDCoMKgwqDCoMKgwqAgODA1NTJlN2Mg
-ODM4NGRiOTQgMDAwMDAzYzAgODAwYzFlMDQgODI4NjBkNjAgCjAwMDAwMDAwIDgzODRkYjcwIDIx
-YmMzMjVjClvCoMKgIDM4LjI2ODYwNF3CoMKgwqDCoMKgwqDCoMKgIDAwMDAwMDAwIDAwMDAwMDAw
-IDAwMDAwMDA1IDgzODRkYTQ0IDFjODVmZmY3IAowMDAwMDAwMCAwMDAwMDAwNyAwMDAwMDAwMApb
-wqDCoCAzOC4yNzcyOTVdwqDCoMKgwqDCoMKgwqDCoCAwMDAwMDE0YiA4MDVjMDAwMCAwMDAwMDE0
-YSAwMDAwMDAwMCAwMDAwMDAwMCAKODI4NjI2ZDggODI4NzA0NDAgMDAwMDAzYzAKW8KgwqAgMzgu
-Mjg1OTg2XcKgwqDCoMKgwqDCoMKgwqAgODI4NzAwODAgODI4NzAxNTggODI4NjBkNjAgODI4NzA0
-NDAgMDAwMDAwMDEgCjgwMmNmYTU0IDAwMDAwMDAwIDgwNjEwMDAwClvCoMKgIDM4LjI5NDY3N13C
-oMKgwqDCoMKgwqDCoMKgIC4uLgpbwqDCoCAzOC4yOTcyMjNdIENhbGwgVHJhY2U6ClvCoMKgIDM4
-LjI5OTc2Ml0gWzw4MDA2Y2IwYz5dIHNob3dfc3RhY2srMHg1OC8weDEwMApbwqDCoCAzOC4zMDQz
-ODFdIFs8ODAwYWFkZjQ+XSBfX19taWdodF9zbGVlcCsweDEwMC8weDEyMApbwqDCoCAzOC4zMDk0
-NDBdIFs8ODAwYzMzNDQ+XSBzeW5jaHJvbml6ZV9pcnErMHgzYy8weGEwClvCoMKgIDM4LjMxNDQw
-Nl0gWzw4MDBjNjU5ND5dIF9faXJxX2Rpc2FibGUrMHg2NC8weGI0ClvCoMKgIDM4LjMxOTE4NF0g
-Wzw4MDBjMzVmND5dIF9fZGlzYWJsZV9pcnFfbm9zeW5jKzB4M2MvMHg2OApbwqDCoCAzOC4zMjQ1
-OTVdIFs8ODAwYzM2M2M+XSBkaXNhYmxlX2lycSsweDE0LzB4MzgKW8KgwqAgMzguMzI5MzU1XSBb
-PDgyYWU1YjQ4Pl0gYXRoOWtfY2FsY3VsYXRlX3N1bW1hcnlfc3RhdGUrMHg1M2MvMHg2ZjQgClth
-dGg5a10KW8KgwqAgMzkuMjEwNTk4XSBCVUc6IHNsZWVwaW5nIGZ1bmN0aW9uIGNhbGxlZCBmcm9t
-IGludmFsaWQgY29udGV4dCBhdCAKa2VybmVsL2lycS9tYW5hZ2UuYzoxMTIKW8KgwqAgMzkuMjE5
-MDczXSBpbl9hdG9taWMoKTogMSwgaXJxc19kaXNhYmxlZCgpOiAxLCBwaWQ6IDksIG5hbWU6IApr
-d29ya2VyL3UyOjEKW8KgwqAgMzkuMjI2MTgyXSA1IGxvY2tzIGhlbGQgYnkga3dvcmtlci91Mjox
-Lzk6ClvCoMKgIDM5LjIzMDUwNl3CoCAjMDrCoCAoIiVzIndpcGh5X25hbWUobG9jYWwtPmh3Lndp
-cGh5KSl7Li4uLn0sIGF0OiAKWzw4MDA5Zjg5Yz5dIHByb2Nlc3Nfb25lX3dvcmsrMHgyNTAvMHg0
-YzAKW8KgwqAgMzkuMjQwMzc5XcKgICMxOiAoKCYoJmxvY2FsLT5zY2FuX3dvcmspLT53b3JrKSl7
-Li4uLn0sIGF0OiAKWzw4MDA5Zjg5Yz5dIHByb2Nlc3Nfb25lX3dvcmsrMHgyNTAvMHg0YzAKW8Kg
-wqAgMzkuMjQ5OTQwXcKgICMyOsKgICgmbG9jYWwtPm10eCl7Li4uLn0sIGF0OiBbPDgyOTBkMzM4
-Pl0gCmllZWU4MDIxMV9zY2FuX3dvcmsrMHg0NC8weDU3OCBbbWFjODAyMTFdClvCoMKgIDM5LjI1
-OTUxOV3CoCAjMzrCoCAoJnNjLT5tdXRleCl7Li4uLn0sIGF0OiBbPDgyYWU0ODc4Pl0gCmF0aDlr
-X3BzX3Jlc3RvcmUrMHhkNTQvMHgxMWRjIFthdGg5a10KW8KgwqAgMzkuMjY4NDM0XcKgICM0OsKg
-ICgmaXJxX2Rlc2NfbG9ja19jbGFzcyl7Li4uLn0sIGF0OiBbPDgwMGMyOWQ4Pl0gCl9faXJxX2dl
-dF9kZXNjX2xvY2srMHg4Yy8weGIwClvCoMKgIDM5LjI3NzM4Nl0gQ1BVOiAwIFBJRDogOSBDb21t
-OiBrd29ya2VyL3UyOjEgVGFpbnRlZDogRyBXwqDCoMKgwqDCoMKgIAo0LjE0LjEzNCAjMApbwqDC
-oCAzOS4yODU1NTVdIFdvcmtxdWV1ZTogcGh5MCBpZWVlODAyMTFfc2Nhbl93b3JrIFttYWM4MDIx
-MV0KW8KgwqAgMzkuMjkxMjM4XSBTdGFjayA6IDgyODcwMDgwIDgyODcwMTU4IDgyODYwZDYwIDgw
-MGMwZmEwIDgwNjEwMDAwIAowMDAwMDAwMCAwMDAwMDAwMSA4MDViMDAwMApbwqDCoCAzOS4yOTk5
-MjddwqDCoMKgwqDCoMKgwqDCoCA4MDU1MmU3YyA4Mzg0ZGI5NCAwMDAwMDQ0NCA4MDBjMWUwNCA4
-Mjg2MGQ2MCAKMDAwMDAwMDAgODM4NGRiNzAgMjFiYzMyNWMKW8KgwqAgMzkuMzA4NjE4XcKgwqDC
-oMKgwqDCoMKgwqAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDUgODM4NGRhNDQgMWM4NWZmZjcg
-CjAwMDAwMDAwIDAwMDAwMDA3IDAwMDAwMDAwClvCoMKgIDM5LjMxNzMwOV3CoMKgwqDCoMKgwqDC
-oMKgIDAwMDAwMTYzIDgwNWMwMDAwIDAwMDAwMTYyIDAwMDAwMDAwIDAwMDAwMDAwIAo4Mjg2MjZk
-OCA4Mjg3MDRjNCAwMDAwMDQ0NApbwqDCoCAzOS4zMjYwMDBdwqDCoMKgwqDCoMKgwqDCoCA4Mjg3
-MDA4MCA4Mjg3MDE1OCA4Mjg2MGQ2MCA4Mjg3MDRjNCAwMDAwMDAwMSAKODAyY2ZhNTQgMDAwMDAw
-MDAgODA2MTAwMDAKW8KgwqAgMzkuMzM0NjkxXcKgwqDCoMKgwqDCoMKgwqAgLi4uClvCoMKgIDM5
-LjMzNzIzOF0gQ2FsbCBUcmFjZToKW8KgwqAgMzkuMzM5Nzg2XSBbPDgwMDZjYjBjPl0gc2hvd19z
-dGFjaysweDU4LzB4MTAwClvCoMKgIDM5LjM0NDQwNF0gWzw4MDBhYWRmND5dIF9fX21pZ2h0X3Ns
-ZWVwKzB4MTAwLzB4MTIwClvCoMKgIDM5LjM0OTQ2NF0gWzw4MDBjMzM0ND5dIHN5bmNocm9uaXpl
-X2lycSsweDNjLzB4YTAKW8KgwqAgMzkuMzU0NDI4XSBbPDgwMGM2NTk0Pl0gX19pcnFfZGlzYWJs
-ZSsweDY0LzB4YjQKW8KgwqAgMzkuMzU5MjA3XSBbPDgwMGMzNWY0Pl0gX19kaXNhYmxlX2lycV9u
-b3N5bmMrMHgzYy8weDY4ClvCoMKgIDM5LjM2NDYxOF0gWzw4MDBjMzYzYz5dIGRpc2FibGVfaXJx
-KzB4MTQvMHgzOApbwqDCoCAzOS4zNjkzNzddIFs8ODJhZTViNDg+XSBhdGg5a19jYWxjdWxhdGVf
-c3VtbWFyeV9zdGF0ZSsweDUzYy8weDZmNCAKW2F0aDlrXQpbwqDCoCAzOS4zNzk2MzddIHR0eVMg
-dHR5UzA6IDIgaW5wdXQgb3ZlcnJ1bihzKQpbwqDCoCA0NC4xMjQ5MjBdIHdsYW4wOiBUcmlnZ2Vy
-IG5ldyBzY2FuIHRvIGZpbmQgYW4gSUJTUyB0byBqb2luClvCoMKgIDQ0LjEzMDg3MF0gQlVHOiBz
-bGVlcGluZyBmdW5jdGlvbiBjYWxsZWQgZnJvbSBpbnZhbGlkIGNvbnRleHQgYXQgCmtlcm5lbC9p
-cnEvbWFuYWdlLmM6MTEyClvCoMKgIDQ0LjEzOTMyOF0gaW5fYXRvbWljKCk6IDEsIGlycXNfZGlz
-YWJsZWQoKTogMSwgcGlkOiA1LCBuYW1lOiAKa3dvcmtlci91MjowClvCoMKgIDQ0LjE0NjQzMV0g
-NiBsb2NrcyBoZWxkIGJ5IGt3b3JrZXIvdTI6MC81OgpbwqDCoCA0NC4xNTA3NTVdwqAgIzA6wqAg
-KCIlcyJ3aXBoeV9uYW1lKGxvY2FsLT5ody53aXBoeSkpey4uLi59LCBhdDogCls8ODAwOWY4OWM+
-XSBwcm9jZXNzX29uZV93b3JrKzB4MjUwLzB4NGMwClvCoMKgIDQ0LjE2MDYyMF3CoCAjMTrCoCAo
-KCZzZGF0YS0+d29yaykpey4uLi59LCBhdDogWzw4MDA5Zjg5Yz5dIApwcm9jZXNzX29uZV93b3Jr
-KzB4MjUwLzB4NGMwClvCoMKgIDQ0LjE2ODkyNV3CoCAjMjrCoCAoJndkZXYtPm10eCl7Li4uLn0s
-IGF0OiBbPDgyOTE3MTMwPl0gCmllZWU4MDIxMV9pYnNzX3dvcmsrMHg0MC8weDVhNCBbbWFjODAy
-MTFdClvCoMKgIDQ0LjE3ODQwOF3CoCAjMzrCoCAoJmxvY2FsLT5tdHgpey4uLi59LCBhdDogWzw4
-MjkwZDkxND5dIAppZWVlODAyMTFfcmVxdWVzdF9pYnNzX3NjYW4rMHg0Yy8weDJiOCBbbWFjODAy
-MTFdClvCoMKgIDQ0LjE4ODU3Nl3CoCAjNDrCoCAoJnNjLT5tdXRleCl7Li4uLn0sIGF0OiBbPDgy
-YWU0ODc4Pl0gCmF0aDlrX3BzX3Jlc3RvcmUrMHhkNTQvMHgxMWRjIFthdGg5a10KW8KgwqAgNDQu
-MTk3NDkwXcKgICM1OsKgICgmaXJxX2Rlc2NfbG9ja19jbGFzcyl7Li4uLn0sIGF0OiBbPDgwMGMy
-OWQ4Pl0gCl9faXJxX2dldF9kZXNjX2xvY2srMHg4Yy8weGIwClvCoMKgIDQ0LjIwNjQ0NF0gQ1BV
-OiAwIFBJRDogNSBDb21tOiBrd29ya2VyL3UyOjAgVGFpbnRlZDogRyBXwqDCoMKgwqDCoMKgIAo0
-LjE0LjEzNCAjMApbwqDCoCA0NC4yMTQ2MTZdIFdvcmtxdWV1ZTogcGh5MCBpZWVlODAyMTFfaWJz
-c19sZWF2ZSBbbWFjODAyMTFdClvCoMKgIDQ0LjIyMDM5NF0gU3RhY2sgOiA4Mjg3MDA4MCA4Mjg3
-MDE1OCA4Mjg2MGQ2MCA4MDBjMGZhMCA4MDYxMDAwMCAKMDAwMDAwMDAgMDAwMDAwMDEgODA1YjAw
-MDAKW8KgwqAgNDQuMjI5MDgyXcKgwqDCoMKgwqDCoMKgwqAgODA1NTJlN2MgODM4MzliMjQgMDAw
-MDAzNDggODAwYzFlMDQgODI4NjBkNjAgCjAwMDAwMDAwIDgzODM5YjAwIDIxODAyY2M4ClvCoMKg
-IDQ0LjIzNzc3M13CoMKgwqDCoMKgwqDCoMKgIDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAwMDA2IDgz
-ODM5OWQ0IGFjYmJiZDBkIAowMDAwMDAwMCAwMDAwMDAwNyAwMDAwMDAwMApbwqDCoCA0NC4yNDY0
-NjRdwqDCoMKgwqDCoMKgwqDCoCAwMDAwMDE3ZSA4MDVjMDAwMCAwMDAwMDE3ZCAwMDAwMDAwMCAw
-MDAwMDAwMCAKODI4NjI2ZDggODI4NzAzYzggMDAwMDAzNDgKW8KgwqAgNDQuMjU1MTU1XcKgwqDC
-oMKgwqDCoMKgwqAgODI4NzAwODAgODI4NzAxNTggODI4NjBkNjAgODI4NzAzYzggMDAwMDAwMDIg
-CjgwMmNmYTU0IDAwMDAwMDAwIDgwNjEwMDAwClvCoMKgIDQ0LjI2Mzg0N13CoMKgwqDCoMKgwqDC
-oMKgIC4uLgpbwqDCoCA0NC4yNjYzOTRdIENhbGwgVHJhY2U6ClvCoMKgIDQ0LjI2ODk0MF0gWzw4
-MDA2Y2IwYz5dIHNob3dfc3RhY2srMHg1OC8weDEwMApbwqDCoCA0NC4yNzM1NjFdIFs8ODAwYWFk
-ZjQ+XSBfX19taWdodF9zbGVlcCsweDEwMC8weDEyMApbwqDCoCA0NC4yNzg2MjBdIFs8ODAwYzMz
-NDQ+XSBzeW5jaHJvbml6ZV9pcnErMHgzYy8weGEwClvCoMKgIDQ0LjI4MzU4NF0gWzw4MDBjNjU5
-ND5dIF9faXJxX2Rpc2FibGUrMHg2NC8weGI0ClvCoMKgIDQ0LjI4ODM2Ml0gWzw4MDBjMzVmND5d
-IF9fZGlzYWJsZV9pcnFfbm9zeW5jKzB4M2MvMHg2OApbwqDCoCA0NC4yOTM3NjVdIFs8ODAwYzM2
-M2M+XSBkaXNhYmxlX2lycSsweDE0LzB4MzgKW8KgwqAgNDQuMjk4NTI2XSBbPDgyYWU1YjQ4Pl0g
-YXRoOWtfY2FsY3VsYXRlX3N1bW1hcnlfc3RhdGUrMHg1M2MvMHg2ZjQgClthdGg5a10KW8KgwqAg
-NDQuMzE1MDc3XSB0dHlTIHR0eVMwOiAxIGlucHV0IG92ZXJydW4ocykKW8KgwqAgNDUuMTMwNTg4
-XSBCVUc6IHNsZWVwaW5nIGZ1bmN0aW9uIGNhbGxlZCBmcm9tIGludmFsaWQgY29udGV4dCBhdCAK
-a2VybmVsL2lycS9tYW5hZ2UuYzoxMTIKW8KgwqAgNDUuMTM5MDYxXSBpbl9hdG9taWMoKTogMSwg
-aXJxc19kaXNhYmxlZCgpOiAxLCBwaWQ6IDUsIG5hbWU6IAprd29ya2VyL3UyOjAKW8KgwqAgNDUu
-MTQ2MTcxXSA1IGxvY2tzIGhlbGQgYnkga3dvcmtlci91MjowLzU6ClvCoMKgIDQ1LjE1MDQ5NV3C
-oCAjMDrCoCAoIiVzIndpcGh5X25hbWUobG9jYWwtPmh3LndpcGh5KSl7Li4uLn0sIGF0OiAKWzw4
-MDA5Zjg5Yz5dIHByb2Nlc3Nfb25lX3dvcmsrMHgyNTAvMHg0YzAKW8KgwqAgNDUuMTYwMzY4XcKg
-ICMxOiAoKCYoJmxvY2FsLT5zY2FuX3dvcmspLT53b3JrKSl7Li4uLn0sIGF0OiAKWzw4MDA5Zjg5
-Yz5dIHByb2Nlc3Nfb25lX3dvcmsrMHgyNTAvMHg0YzAKW8KgwqAgNDUuMTY5OTI3XcKgICMyOsKg
-ICgmbG9jYWwtPm10eCl7Li4uLn0sIGF0OiBbPDgyOTBkMzM4Pl0gCmllZWU4MDIxMV9zY2FuX3dv
-cmsrMHg0NC8weDU3OCBbbWFjODAyMTFdClvCoMKgIDQ1LjE3OTQ5OV3CoCAjMzrCoCAoJnNjLT5t
-dXRleCl7Li4uLn0sIGF0OiBbPDgyYWU0ODc4Pl0gCmF0aDlrX3BzX3Jlc3RvcmUrMHhkNTQvMHgx
-MWRjIFthdGg5a10KW8KgwqAgNDUuMTg4NDEyXcKgICM0OsKgICgmaXJxX2Rlc2NfbG9ja19jbGFz
-cyl7Li4uLn0sIGF0OiBbPDgwMGMyOWQ4Pl0gCl9faXJxX2dldF9kZXNjX2xvY2srMHg4Yy8weGIw
-ClvCoMKgIDQ1LjE5NzM2Nl0gQ1BVOiAwIFBJRDogNSBDb21tOiBrd29ya2VyL3UyOjAgVGFpbnRl
-ZDogRyBXwqDCoMKgwqDCoMKgIAo0LjE0LjEzNCAjMApbwqDCoCA0NS4yMDU1MzVdIFdvcmtxdWV1
-ZTogcGh5MCBpZWVlODAyMTFfc2Nhbl93b3JrIFttYWM4MDIxMV0KW8KgwqAgNDUuMjExMjI2XSBT
-dGFjayA6IDgyODcwMDgwIDgyODcwMTU4IDgyODYwZDYwIDgwMGMwZmEwIDgwNjEwMDAwIAowMDAw
-MDAwMCAwMDAwMDAwMSA4MDViMDAwMApbwqDCoCA0NS4yMTk5MTRdwqDCoMKgwqDCoMKgwqDCoCA4
-MDU1MmU3YyA4MzgzOWI5NCAwMDAwMDNjMCA4MDBjMWUwNCA4Mjg2MGQ2MCAKMDAwMDAwMDAgODM4
-MzliNzAgMjE4MDJjYzgKW8KgwqAgNDUuMjI4NjA2XcKgwqDCoMKgwqDCoMKgwqAgMDAwMDAwMDAg
-MDAwMDAwMDAgMDAwMDAwMDUgODM4MzlhNDQgMWM4NWZmZjcgCjAwMDAwMDAwIDAwMDAwMDA3IDAw
-MDAwMDAwClvCoMKgIDQ1LjIzNzI5N13CoMKgwqDCoMKgwqDCoMKgIDAwMDAwMTk3IDgwNWMwMDAw
-IDAwMDAwMTk2IDAwMDAwMDAwIDAwMDAwMDAwIAo4Mjg2MjZkOCA4Mjg3MDQ0MCAwMDAwMDNjMApb
-wqDCoCA0NS4yNDU5ODhdwqDCoMKgwqDCoMKgwqDCoCA4Mjg3MDA4MCA4Mjg3MDE1OCA4Mjg2MGQ2
-MCA4Mjg3MDQ0MCAwMDAwMDAwMSAKODAyY2ZhNTQgMDAwMDAwMDAgODA2MTAwMDAKW8KgwqAgNDUu
-MjU0NjgwXcKgwqDCoMKgwqDCoMKgwqAgLi4uClvCoMKgIDQ1LjI1NzIyNl0gQ2FsbCBUcmFjZToK
-W8KgwqAgNDUuMjU5NzY0XSBbPDgwMDZjYjBjPl0gc2hvd19zdGFjaysweDU4LzB4MTAwClvCoMKg
-IDQ1LjI2NDM4NF0gWzw4MDBhYWRmND5dIF9fX21pZ2h0X3NsZWVwKzB4MTAwLzB4MTIwClvCoMKg
-IDQ1LjI2OTQ0NF0gWzw4MDBjMzM0ND5dIHN5bmNocm9uaXplX2lycSsweDNjLzB4YTAKW8KgwqAg
-NDUuMjc0NDA4XSBbPDgwMGM2NTk0Pl0gX19pcnFfZGlzYWJsZSsweDY0LzB4YjQKW8KgwqAgNDUu
-Mjc5MTg3XSBbPDgwMGMzNWY0Pl0gX19kaXNhYmxlX2lycV9ub3N5bmMrMHgzYy8weDY4ClvCoMKg
-IDQ1LjI4NDU5OF0gWzw4MDBjMzYzYz5dIGRpc2FibGVfaXJxKzB4MTQvMHgzOApbwqDCoCA0NS4y
-ODkzNTddIFs8ODJhZTViNDg+XSBhdGg5a19jYWxjdWxhdGVfc3VtbWFyeV9zdGF0ZSsweDUzYy8w
-eDZmNCAKW2F0aDlrXQpbwqDCoCA0Ni4xNzA1OThdIEJVRzogc2xlZXBpbmcgZnVuY3Rpb24gY2Fs
-bGVkIGZyb20gaW52YWxpZCBjb250ZXh0IGF0IAprZXJuZWwvaXJxL21hbmFnZS5jOjExMgpbwqDC
-oCA0Ni4xNzkwNzZdIGluX2F0b21pYygpOiAxLCBpcnFzX2Rpc2FibGVkKCk6IDEsIHBpZDogNSwg
-bmFtZTogCmt3b3JrZXIvdTI6MApbwqDCoCA0Ni4xODYxODRdIDUgbG9ja3MgaGVsZCBieSBrd29y
-a2VyL3UyOjAvNToKW8KgwqAgNDYuMTkwNTA5XcKgICMwOsKgICgiJXMid2lwaHlfbmFtZShsb2Nh
-bC0+aHcud2lwaHkpKXsuLi4ufSwgYXQ6IApbPDgwMDlmODljPl0gcHJvY2Vzc19vbmVfd29yaysw
-eDI1MC8weDRjMApbwqDCoCA0Ni4yMDAzODJdwqAgIzE6ICgoJigmbG9jYWwtPnNjYW5fd29yaykt
-PndvcmspKXsuLi4ufSwgYXQ6IApbPDgwMDlmODljPl0gcHJvY2Vzc19vbmVfd29yaysweDI1MC8w
-eDRjMApbwqDCoCA0Ni4yMDk5NDJdwqAgIzI6wqAgKCZsb2NhbC0+bXR4KXsuLi4ufSwgYXQ6IFs8
-ODI5MGQzMzg+XSAKaWVlZTgwMjExX3NjYW5fd29yaysweDQ0LzB4NTc4IFttYWM4MDIxMV0KW8Kg
-wqAgNDYuMjE5NTIyXcKgICMzOsKgICgmc2MtPm11dGV4KXsuLi4ufSwgYXQ6IFs8ODJhZTQ4Nzg+
-XSAKYXRoOWtfcHNfcmVzdG9yZSsweGQ1NC8weDExZGMgW2F0aDlrXQpbwqDCoCA0Ni4yMjg0MzVd
-wqAgIzQ6wqAgKCZpcnFfZGVzY19sb2NrX2NsYXNzKXsuLi4ufSwgYXQ6IFs8ODAwYzI5ZDg+XSAK
-X19pcnFfZ2V0X2Rlc2NfbG9jaysweDhjLzB4YjAKW8KgwqAgNDYuMjM3Mzg5XSBDUFU6IDAgUElE
-OiA1IENvbW06IGt3b3JrZXIvdTI6MCBUYWludGVkOiBHIFfCoMKgwqDCoMKgwqAgCjQuMTQuMTM0
-ICMwClvCoMKgIDQ2LjI0NTU1OV0gV29ya3F1ZXVlOiBwaHkwIGllZWU4MDIxMV9zY2FuX3dvcmsg
-W21hYzgwMjExXQpbwqDCoCA0Ni4yNTEyNDldIFN0YWNrIDogODI4NzAwODAgODI4NzAxNTggODI4
-NjBkNjAgODAwYzBmYTAgODA2MTAwMDAgCjAwMDAwMDAwIDAwMDAwMDAxIDgwNWIwMDAwClvCoMKg
-IDQ2LjI1OTkzOF3CoMKgwqDCoMKgwqDCoMKgIDgwNTUyZTdjIDgzODM5Yjk0IDAwMDAwNDQ0IDgw
-MGMxZTA0IDgyODYwZDYwIAowMDAwMDAwMCA4MzgzOWI3MCAyMTgwMmNjOApbwqDCoCA0Ni4yNjg2
-MjldwqDCoMKgwqDCoMKgwqDCoCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwNSA4MzgzOWE0NCAx
-Yzg1ZmZmNyAKMDAwMDAwMDAgMDAwMDAwMDcgMDAwMDAwMDAKW8KgwqAgNDYuMjc3MzIwXcKgwqDC
-oMKgwqDCoMKgwqAgMDAwMDAxYWYgODA1YzAwMDAgMDAwMDAxYWUgMDAwMDAwMDAgMDAwMDAwMDAg
-CjgyODYyNmQ4IDgyODcwNGM0IDAwMDAwNDQ0ClvCoMKgIDQ2LjI4NjAxMV3CoMKgwqDCoMKgwqDC
-oMKgIDgyODcwMDgwIDgyODcwMTU4IDgyODYwZDYwIDgyODcwNGM0IDAwMDAwMDAxIAo4MDJjZmE1
-NCAwMDAwMDAwMCA4MDYxMDAwMApbwqDCoCA0Ni4yOTQ3MDJdwqDCoMKgwqDCoMKgwqDCoCAuLi4K
-W8KgwqAgNDYuMjk3MjQ5XSBDYWxsIFRyYWNlOgpbwqDCoCA0Ni4yOTk3ODddIFs8ODAwNmNiMGM+
-XSBzaG93X3N0YWNrKzB4NTgvMHgxMDAKW8KgwqAgNDYuMzA0NDA2XSBbPDgwMGFhZGY0Pl0gX19f
-bWlnaHRfc2xlZXArMHgxMDAvMHgxMjAKW8KgwqAgNDYuMzA5NDY2XSBbPDgwMGMzMzQ0Pl0gc3lu
-Y2hyb25pemVfaXJxKzB4M2MvMHhhMApbwqDCoCA0Ni4zMTQ0MzFdIFs8ODAwYzY1OTQ+XSBfX2ly
-cV9kaXNhYmxlKzB4NjQvMHhiNApbwqDCoCA0Ni4zMTkyMDldIFs8ODAwYzM1ZjQ+XSBfX2Rpc2Fi
-bGVfaXJxX25vc3luYysweDNjLzB4NjgKW8KgwqAgNDYuMzI0NjIwXSBbPDgwMGMzNjNjPl0gZGlz
-YWJsZV9pcnErMHgxNC8weDM4ClvCoMKgIDQ2LjMyOTM3OV0gWzw4MmFlNWI0OD5dIGF0aDlrX2Nh
-bGN1bGF0ZV9zdW1tYXJ5X3N0YXRlKzB4NTNjLzB4NmY0IApbYXRoOWtdClvCoMKgIDQ2LjMzOTY1
-N10gdHR5UyB0dHlTMDogMiBpbnB1dCBvdmVycnVuKHMpClvCoMKgIDQ2LjU3OTYxNl0gd2xhbjA6
-IENyZWF0aW5nIG5ldyBJQlNTIG5ldHdvcmssIEJTU0lEIGM4OmE5OjQ2Ojg3OjdkOmFkCgoKY25z
-M3h4eDsKCk5vbmUgc28gZmFyIC4uCgppbXg2OgoKTm9uZSBzbyBmYXIKClJlZ2FyZHMsCgpLb2Vu
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Blbndy
-dC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRw
-czovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+--===============0781388921722341571==
+Content-Type: multipart/alternative; boundary="0000000000000678cf058f121312"
+
+--0000000000000678cf058f121312
+Content-Type: text/plain; charset="UTF-8"
+
+Hi,
+
+I need to compile the Python package(s) somewhat regularly, but I haven't
+been able to recently using the armvirt-64 sdk, because of a compile error
+for cryptodev-linux. (I have copied the make output below.)
+
+I believe this started after a459d237 (this added
+CONFIG_ARM64_MODULE_PLTS=y, which leads make to look for a non-existent
+linker script file "./arch/arm64/kernel/module.lds"), but I haven't
+verified it yet.
+
+I tried doing a fresh checkout of master and building the Python package
+directly; it worked without an error, but it also didn't need to compile
+cryptodev-linux, so I'm not sure if any conclusions can be drawn from this.
+
+Does anyone have any insight on this? I'm not really sure where the root
+issue is, or how to go about fixing it.
+
+Thanks,
+Jeff
+
+
+Make output:
+make[2]: Entering directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/feeds/base/package/kernel/cryptodev-linux'
+touch
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.prepared_c86d6c695a6eb4715e8aacaf7644c80b_6664517399ebbbc92a37c5bb081b5c53_check
+. /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/include/shell.sh;
+gzip -dc /media/jeff/Jekyll/Files/openwrt/dl/cryptodev-linux-1.10.tar.gz |
+tar -C
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/..
+-xf -
+[ ! -d ./src/ ] || cp -fpR ./src/.
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10
+touch
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.prepared_c86d6c695a6eb4715e8aacaf7644c80b_6664517399ebbbc92a37c5bb081b5c53
+rm -f
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.configured_*
+rm -f
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/target-aarch64_generic_musl/stamp/.cryptodev-linux_installed
+touch
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.built
+touch
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.built_check
+cat /dev/null >
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/target-aarch64_generic_musl/pkginfo/cryptodev-linux.symvers;
+for subdir in .; do cat
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/target-aarch64_generic_musl/pkginfo/*.symvers
+2>/dev/null >
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/$subdir/Module.symvers;
+done
+make -C
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10
+HOSTCFLAGS="-O2
+-I/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/host/include
+-I/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/hostpkg/include
+-I/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/target-aarch64_generic_musl/host/include
+-Wall -Wmissing-prototypes -Wstrict-prototypes"
+CROSS_COMPILE="aarch64-openwrt-linux-musl-" ARCH="arm64" KBUILD_HAVE_NLS=no
+KBUILD_BUILD_USER="builder" KBUILD_BUILD_HOST="buildhost"
+KBUILD_BUILD_TIMESTAMP="Wed Jul 31 14:53:41 2019" KBUILD_BUILD_VERSION="0"
+HOST_LOADLIBES="-L/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/host/lib"
+CONFIG_SHELL="bash" V=''  cmd_syscalls= KERNELRELEASE=4.19.62
+KERNEL_DIR="/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/linux-4.19.62"
+make[3]: Entering directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10'
+make -C
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/linux-4.19.62
+M=/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10
+ARCH=arm64 CROSS_COMPILE=aarch64-openwrt-linux-musl- modules
+make[4]: Entering directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/linux-4.19.62'
+  CC [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/ioctl.o
+  CC [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/main.o
+  CC [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptlib.o
+  CC [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/authenc.o
+  CC [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/zc.o
+  CC [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/util.o
+  LD [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptodev.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptodev.mod.o
+  LD [M]
+ /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptodev.ko
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/toolchain-aarch64_generic_gcc-7.4.0_musl/bin/aarch64-openwrt-linux-musl-ld:
+cannot open linker script file ./arch/arm64/kernel/module.lds: No such file
+or directory
+make[5]: *** [scripts/Makefile.modpost:129:
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptodev.ko]
+Error 1
+make[4]: *** [Makefile:1519: modules] Error 2
+make[4]: Leaving directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/linux-4.19.62'
+make[3]: *** [Makefile:27: build] Error 2
+make[3]: Leaving directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10'
+make[2]: *** [Makefile:63:
+/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.built]
+Error 2
+make[2]: Leaving directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/feeds/base/package/kernel/cryptodev-linux'
+time: package/feeds/base/cryptodev-linux/compile#5.24#1.56#11.69
+make[1]: *** [package/Makefile:109:
+package/feeds/base/cryptodev-linux/compile] Error 2
+make[1]: Leaving directory
+'/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64'
+make: *** [/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/include/
+toplevel.mk:211: package/python/compile] Error 2
+
+--0000000000000678cf058f121312
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hi,</div><div><br></div><div>I need to compile the Py=
+thon package(s) somewhat regularly, but I haven&#39;t been able to recently=
+ using the armvirt-64 sdk, because of a compile error for cryptodev-linux. =
+(I have copied the make output below.)<br></div><div><br></div><div>I belie=
+ve this started after a459d237 (this added CONFIG_ARM64_MODULE_PLTS=3Dy, wh=
+ich leads make to look for a non-existent linker script file &quot;./arch/a=
+rm64/kernel/module.lds&quot;), but I haven&#39;t verified it yet.</div><div=
+><br></div><div>I tried doing a fresh checkout of master and building the P=
+ython package directly; it worked without an error, but it also didn&#39;t =
+need to compile cryptodev-linux, so I&#39;m not sure if any conclusions can=
+ be drawn from this.</div><div><br></div><div>Does anyone have any insight =
+on this? I&#39;m not really sure where the root issue is, or how to go abou=
+t fixing it.</div><div><br></div><div>Thanks,</div><div>Jeff</div><div><br>=
+</div><div><br></div><div>Make output:</div><div>make[2]: Entering director=
+y &#39;/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/feeds/base/packa=
+ge/kernel/cryptodev-linux&#39;<br>touch /media/jeff/Jekyll/Files/openwrt/te=
+sting/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cry=
+ptodev-linux-cryptodev-linux-1.10/.prepared_c86d6c695a6eb4715e8aacaf7644c80=
+b_6664517399ebbbc92a37c5bb081b5c53_check<br>. /media/jeff/Jekyll/Files/open=
+wrt/testing/armvirt-64/include/shell.sh; gzip -dc /media/jeff/Jekyll/Files/=
+openwrt/dl/cryptodev-linux-1.10.tar.gz | tar -C /media/jeff/Jekyll/Files/op=
+enwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvir=
+t_64/cryptodev-linux-cryptodev-linux-1.10/.. -xf -<br>[ ! -d ./src/ ] || cp=
+ -fpR ./src/. /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir=
+/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-lin=
+ux-1.10<br>touch /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_=
+dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-=
+linux-1.10/.prepared_c86d6c695a6eb4715e8aacaf7644c80b_6664517399ebbbc92a37c=
+5bb081b5c53<br>rm -f /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/bu=
+ild_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-crypto=
+dev-linux-1.10/.configured_*<br>rm -f /media/jeff/Jekyll/Files/openwrt/test=
+ing/armvirt-64/staging_dir/target-aarch64_generic_musl/stamp/.cryptodev-lin=
+ux_installed<br>touch /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/b=
+uild_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-crypt=
+odev-linux-1.10/.configured_68b329da9893e34099c7d8ad5cb9c940<br>rm -f /medi=
+a/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_gen=
+eric_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.built<br>t=
+ouch /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-a=
+arch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/.=
+built_check<br>cat /dev/null &gt; /media/jeff/Jekyll/Files/openwrt/testing/=
+armvirt-64/staging_dir/target-aarch64_generic_musl/pkginfo/cryptodev-linux.=
+symvers; for subdir in .; do cat /media/jeff/Jekyll/Files/openwrt/testing/a=
+rmvirt-64/staging_dir/target-aarch64_generic_musl/pkginfo/*.symvers 2&gt;/d=
+ev/null &gt; /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/=
+target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linu=
+x-1.10/$subdir/Module.symvers; done<br>make -C /media/jeff/Jekyll/Files/ope=
+nwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt=
+_64/cryptodev-linux-cryptodev-linux-1.10 HOSTCFLAGS=3D&quot;-O2 -I/media/je=
+ff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/host/include -I/medi=
+a/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/hostpkg/include =
+-I/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/target-aa=
+rch64_generic_musl/host/include -Wall -Wmissing-prototypes -Wstrict-prototy=
+pes&quot; CROSS_COMPILE=3D&quot;aarch64-openwrt-linux-musl-&quot; ARCH=3D&q=
+uot;arm64&quot; KBUILD_HAVE_NLS=3Dno KBUILD_BUILD_USER=3D&quot;builder&quot=
+; KBUILD_BUILD_HOST=3D&quot;buildhost&quot; KBUILD_BUILD_TIMESTAMP=3D&quot;=
+Wed Jul 31 14:53:41 2019&quot; KBUILD_BUILD_VERSION=3D&quot;0&quot; HOST_LO=
+ADLIBES=3D&quot;-L/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/stagi=
+ng_dir/host/lib&quot; CONFIG_SHELL=3D&quot;bash&quot; V=3D&#39;&#39; =C2=A0=
+cmd_syscalls=3D KERNELRELEASE=3D4.19.62 KERNEL_DIR=3D&quot;/media/jeff/Jeky=
+ll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/l=
+inux-armvirt_64/linux-4.19.62&quot;<br>make[3]: Entering directory &#39;/me=
+dia/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_g=
+eneric_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10&#39;<br>m=
+ake -C /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target=
+-aarch64_generic_musl/linux-armvirt_64/linux-4.19.62 M=3D/media/jeff/Jekyll=
+/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/lin=
+ux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10 ARCH=3Darm64 CROSS_COMPI=
+LE=3Daarch64-openwrt-linux-musl- modules<br>make[4]: Entering directory &#3=
+9;/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarc=
+h64_generic_musl/linux-armvirt_64/linux-4.19.62&#39;<br>=C2=A0 CC [M] =C2=
+=A0/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aar=
+ch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/ioc=
+tl.o<br>=C2=A0 CC [M] =C2=A0/media/jeff/Jekyll/Files/openwrt/testing/armvir=
+t-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux=
+-cryptodev-linux-1.10/main.o<br>=C2=A0 CC [M] =C2=A0/media/jeff/Jekyll/File=
+s/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-ar=
+mvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptlib.o<br>=C2=A0 CC [M] =
+=C2=A0/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-=
+aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/=
+authenc.o<br>=C2=A0 CC [M] =C2=A0/media/jeff/Jekyll/Files/openwrt/testing/a=
+rmvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-=
+linux-cryptodev-linux-1.10/zc.o<br>=C2=A0 CC [M] =C2=A0/media/jeff/Jekyll/F=
+iles/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux=
+-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/util.o<br>=C2=A0 LD [M] =
+=C2=A0/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-=
+aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/=
+cryptodev.o<br>=C2=A0 Building modules, stage 2.<br>=C2=A0 MODPOST 1 module=
+s<br>=C2=A0 CC =C2=A0 =C2=A0 =C2=A0/media/jeff/Jekyll/Files/openwrt/testing=
+/armvirt-64/build_dir/target-aarch64_generic_musl/linux-armvirt_64/cryptode=
+v-linux-cryptodev-linux-1.10/cryptodev.mod.o<br>=C2=A0 LD [M] =C2=A0/media/=
+jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_gener=
+ic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptodev.ko<=
+br>/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/staging_dir/toolchai=
+n-aarch64_generic_gcc-7.4.0_musl/bin/aarch64-openwrt-linux-musl-ld: cannot =
+open linker script file ./arch/arm64/kernel/module.lds: No such file or dir=
+ectory<br>make[5]: *** [scripts/Makefile.modpost:129: /media/jeff/Jekyll/Fi=
+les/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/linux-=
+armvirt_64/cryptodev-linux-cryptodev-linux-1.10/cryptodev.ko] Error 1<br>ma=
+ke[4]: *** [Makefile:1519: modules] Error 2<br>make[4]: Leaving directory &=
+#39;/media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir/target-aa=
+rch64_generic_musl/linux-armvirt_64/linux-4.19.62&#39;<br>make[3]: *** [Mak=
+efile:27: build] Error 2<br>make[3]: Leaving directory &#39;/media/jeff/Jek=
+yll/Files/openwrt/testing/armvirt-64/build_dir/target-aarch64_generic_musl/=
+linux-armvirt_64/cryptodev-linux-cryptodev-linux-1.10&#39;<br>make[2]: *** =
+[Makefile:63: /media/jeff/Jekyll/Files/openwrt/testing/armvirt-64/build_dir=
+/target-aarch64_generic_musl/linux-armvirt_64/cryptodev-linux-cryptodev-lin=
+ux-1.10/.built] Error 2<br>make[2]: Leaving directory &#39;/media/jeff/Jeky=
+ll/Files/openwrt/testing/armvirt-64/feeds/base/package/kernel/cryptodev-lin=
+ux&#39;<br>time: package/feeds/base/cryptodev-linux/compile#5.24#1.56#11.69=
+<br>make[1]: *** [package/Makefile:109: package/feeds/base/cryptodev-linux/=
+compile] Error 2<br>make[1]: Leaving directory &#39;/media/jeff/Jekyll/File=
+s/openwrt/testing/armvirt-64&#39;<br>make: *** [/media/jeff/Jekyll/Files/op=
+enwrt/testing/armvirt-64/include/<a href=3D"http://toplevel.mk:211">topleve=
+l.mk:211</a>: package/python/compile] Error 2</div><div><br></div></div>
+
+--0000000000000678cf058f121312--
+
+
+--===============0781388921722341571==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0781388921722341571==--
+

@@ -2,124 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C57A67FE8D
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 18:24:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D5FF7FEB4
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 18:38:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:In-Reply-To:
-	References:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2GpbFDU/BhQlAVZFkFd/IS8qN2CVdF2rEI9ivtg4Um8=; b=dysLgQso/3643h
-	07yJtbnULX9ZiSQxuGtTrslufETYGyR3rGWltdGqv83H8B0JaHhxrdcpOfP73/BZNhnOzP+wbyHrj
-	t5DM/05+XaJnTsvWW2oc/Ovja5l44MlzWL4HIqQSLPZSCReFdsKLI9OL2Se/ABgWLN4M2PY41dGc/
-	y4Ts7VldpFJG6cwuOj+ezknJN7DdS3Uv15qAGNcUKrGmD6HP6i/ybRnKZYEKGX7nkT8i7hnE8G1G6
-	yCd1iWdl8lp+YcyzeOOI4XqIxzcPLRbIfxdlhFVgf1FQh9/lm2HofB4Jc/hpcC2Sz93nYbiTl8+7n
-	z56JtXSxThW7TY0xU7Rg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7PWPaaCozYoKxcX/MTvqLxKhumc97RqY9ftgzSimXsk=; b=eT6J0AadbHVeRX7BLaWZ0CQnf
+	wPs4B/jL18pIO5vFyX+N5lYzDfIOEc66LmBSEtUWIJm5Q8pmYtNyDOJNtKM43mD0iQTBR/QHpdmKy
+	PFHXAMdTLImzggSr41xkt+KC6P8R7jW9qpX/fSs/Tt6wC8guhy7e2C+3gfjWJBWphufO+BZ+LN7lC
+	cXXuRi1jB8UHdb9zAGAi2cCRRAUwBBbacb+2r4gBjErautjt9txMn1GEHWlREsvmeycI5mZ2rI1fi
+	eHXxLWnwn5JBudEGT496m4qOCO80EKKFUEnChaw/G6l6n9NMbyd8k6kCFsfQwo7EyOAWoWedSRpCe
+	TNpA0PwbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htaLc-0004cF-BX; Fri, 02 Aug 2019 16:24:04 +0000
-Received: from mail-eopbgr700054.outbound.protection.outlook.com
- ([40.107.70.54] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htaLW-0004b4-J3
- for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 16:24:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=i6BfHvwXG4Qgfur6tR7LI0oWK8ADkplc4bFXETuA7QCD3Gnh+yGE8ljQ7px4coLRlNOYc4KMRlf1bZctRFwdT6F6K0ChsoD2plMp+rUdUR4bMbXBUz28ygYqdVlsVXQzXLojSG3vCrSWrgMUxWUb+3d4YNY30ey+vGJIQXpiLhn/1+E8gS9sRmHJ3Vcya18F4DUoyn1ZnvuFoqm4upT1GTmGgWlIoKi6ZIG7ufQVqHIOz8V8fCsSGUz2kKnvEs34APiZP/aIp3zYOt8kRfF2EWvbh1qpQf6kOVDUexqTlj/q98qxLWH2KosLX/O4dbG7eVVg7iTyAuzbx9AlpmJF8A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=G0VTs2BnOm3vtzPZz4jNZwMOiUnEAyMZoxMpGEaCNBQ=;
- b=mBywnykbKVh98Zc1lBFTpMQAvMoTvwkV+A+OKM3d41C5FqfFpTxcc4TipwW8ohDct8/R8IZalQI/6gz0E3nk/t0xOM1OAlc7PUeVWPypRLsa60xHMP4uQVn4WKkvDd6gBYuelvxH144UmxiPlCa8D9P4I+kDqXL+LfI8+SngMBG5nofAbmiCk4CZ3GktGBn5R1i2+zVkc1WgS1Il93u9D8ZFxBI6gU/y8kkZMcmbi7INS1IfV3xliHmrvFpKyQkZJTJKK0SCNmVsLhPJWKnF8UQk6+Q384br5CqCI7r8VJYM2GHBEMEZNtho4LPgYb75bhfWHoXEql+t0A8atPLy3Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1;spf=pass
- smtp.mailfrom=jci.com;dmarc=pass action=none header.from=jci.com;dkim=pass
- header.d=jci.com;arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jci.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=G0VTs2BnOm3vtzPZz4jNZwMOiUnEAyMZoxMpGEaCNBQ=;
- b=fnmQfJ+hZgC8nz/RMZgVcTEUU6gwL7QCPx4427N1/F/y9rWlkknYFFBcYfOMgMeb064eRRpn2Hi6qBGWJ3E26Ax7rrAESY6IdMc/RnTCRoPxrFnw0nFIn7V7fpOJncnXvpenZJo5Fip5p/yMVv2GBkFJ5YNwqvC+xSh6r7ssgIw=
-Received: from CY4P132MB0106.NAMP132.PROD.OUTLOOK.COM (141.251.37.149) by
- CY4P132MB0137.NAMP132.PROD.OUTLOOK.COM (52.135.21.84) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2115.16; Fri, 2 Aug 2019 16:23:55 +0000
-Received: from CY4P132MB0106.NAMP132.PROD.OUTLOOK.COM
- ([fe80::397b:1f8b:412f:14f2]) by CY4P132MB0106.NAMP132.PROD.OUTLOOK.COM
- ([fe80::397b:1f8b:412f:14f2%9]) with mapi id 15.20.2115.005; Fri, 2 Aug 2019
- 16:23:54 +0000
-From: Nick Schaf <nick.schaf@jci.com>
-To: =?iso-8859-2?Q?Petr_=A9tetiar?= <ynezz@true.cz>
-Thread-Topic: [OpenWrt-Devel] Memory leak related to OpenWrt patch of hostapd
-Thread-Index: AdVHpSrbxmcW5EsRRmWRCDlxLFoxcwBA516AACiv0CA=
-Date: Fri, 2 Aug 2019 16:23:54 +0000
-Message-ID: <CY4P132MB01068A35B953A54B9030E1FB8BD90@CY4P132MB0106.NAMP132.PROD.OUTLOOK.COM>
-References: <BN6P132MB0098F57D3CA062CE1CBB935C8BDF0@BN6P132MB0098.NAMP132.PROD.OUTLOOK.COM>
- <20190801203623.GO74752@meh.true.cz>
-In-Reply-To: <20190801203623.GO74752@meh.true.cz>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_Enabled=True;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_SiteId=a1f1e214-7ded-45b6-81a1-9e8ae3459641;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_Owner=cschafn@jci.com;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_SetDate=2019-08-02T16:23:53.2845377Z;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_Name=Internal ;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_ActionId=09382a4e-2571-42c4-9c8d-1e3e85d6199a;
- MSIP_Label_6be01c0c-f9b3-4dc4-af0b-a82110cc37cd_Extended_MSFT_Method=Automatic
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=nick.schaf@jci.com; 
-x-originating-ip: [165.225.57.37]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 33351ad4-dd1e-45ab-5446-08d71765d043
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:CY4P132MB0137; 
-x-ms-traffictypediagnostic: CY4P132MB0137:
-x-microsoft-antispam-prvs: <CY4P132MB01372B5694BE187D0EC4A2D28BD90@CY4P132MB0137.NAMP132.PROD.OUTLOOK.COM>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 011787B9DD
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(346002)(376002)(39860400002)(136003)(396003)(189003)(199004)(86362001)(81156014)(7736002)(9686003)(6116002)(478600001)(74316002)(7696005)(6436002)(81166006)(316002)(6506007)(44832011)(5660300002)(55016002)(52536014)(25786009)(53936002)(305945005)(4326008)(3846002)(2906002)(99286004)(14454004)(33656002)(68736007)(6246003)(66066001)(256004)(446003)(11346002)(476003)(8676002)(71190400001)(71200400001)(54906003)(102836004)(66556008)(55236004)(64756008)(66446008)(76116006)(486006)(66476007)(186003)(8936002)(229853002)(26005)(6916009)(66946007)(76176011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CY4P132MB0137;
- H:CY4P132MB0106.NAMP132.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: jci.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: 4ucKSJNx244FYBkpHYpnoyhSIR5nmZapdB1Ymhc2cuYlZ93gvHnkQsJNr7R07dsyZW90hmeQwccQA5PLjy5wtGN3VsBsWIaaOM3W8XxGydFcnzd2CCXVv2gcHooBx0gCLe0y/2KNAsJXLGSNDn2akyWBlJ9B2nyR43lPeqUZsMwkeNNpE1C/lV6uzuxq9RgIKg5TZuCvrDnf7V9M3Ivmlo7jCr8a3ZaVwte9xqaL0vcwLxv4wBeWH2KQW/225K9zajBv4yq80OKOxDaWJ76EC5hVVhtxh/3PoRAe83M0UrgLKwMGIsvB02w9rk4VLtvJr3BevJXraZVrn9DcZA7BBvHsHb6Vj9LtSsVbx6Z44mOoHMsgh+rvHDNaF6JXjpBd14nvcZpXFNilusBjC7Soa+gjQ61V8LsPlW3J6UJlUug=
+	id 1htaZx-0002Qe-RF; Fri, 02 Aug 2019 16:38:53 +0000
+Received: from vds2011x11.startdedicated.de ([62.138.18.229]
+ helo=mail.softart-ge.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1htaZr-0002Q1-Ec
+ for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 16:38:49 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.softart-ge.com (Postfix) with ESMTP id F2CB8C0558
+ for <openwrt-devel@lists.openwrt.org>; Fri,  2 Aug 2019 18:38:40 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at softart-ge.com
+Received: from mail.softart-ge.com ([127.0.0.1])
+ by localhost (softart-ge.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id o5fP-4y3yYJR for <openwrt-devel@lists.openwrt.org>;
+ Fri,  2 Aug 2019 18:38:37 +0200 (CEST)
+Received: from [192.168.182.2] (ip-84-119-114-184.unity-media.net
+ [84.119.114.184])
+ by mail.softart-ge.com (Postfix) with ESMTPA id 0822BC0256
+ for <openwrt-devel@lists.openwrt.org>; Fri,  2 Aug 2019 18:38:36 +0200 (CEST)
+To: openwrt-devel@lists.openwrt.org
+References: <20190723133717.20010-1-ynezz@true.cz>
+ <8646063f-e4eb-f32f-381e-6fa2a847d0f8@hauke-m.de>
+ <4d6009e6-090b-c513-aaa1-919dcd21a162@iki.fi>
+ <539D9517-E258-4906-978F-99241CCF11C4@darbyshire-bryant.me.uk>
+From: Reiner Karlsberg <karlsberg@softart-ge.com>
+Message-ID: <30819471-510c-d5f8-be64-4f4c1b1cbaf0@softart-ge.com>
+Date: Fri, 2 Aug 2019 18:38:32 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: jci.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 33351ad4-dd1e-45ab-5446-08d71765d043
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Aug 2019 16:23:54.8484 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a1f1e214-7ded-45b6-81a1-9e8ae3459641
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cschafn@jci.com
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4P132MB0137
+In-Reply-To: <539D9517-E258-4906-978F-99241CCF11C4@darbyshire-bryant.me.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_092358_665060_445C16DE 
-X-CRM114-Status: GOOD (  19.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190802_093847_790233_7F1F6BFF 
+X-CRM114-Status: GOOD (  17.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.54 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-Subject: Re: [OpenWrt-Devel] Memory leak related to OpenWrt patch of hostapd
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] base-files: make USE_PROCD=1 default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,96 +70,65 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
- Daniel Golle <daniel@makrotopia.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
-
-> Nick Schaf <nick.schaf@jci.com> [2019-07-31 16:34:36]:
-> 
-> Hi,
-> 
-> > I've noticed the wpa_supplicant process on my mesh interfaces leaking
-> > memory to the point that the kernel kills the process.  It was
-> > discovered in 18.06.2, but I've reproduced it with 18.06.4 and with
-> > the master branch from the GitHub repo.  Since the leak occurs as mesh
-> > links are created and destroyed, I was able to reproduce it with a
-> > simple two-node setup where I monitor the wpa_supplicant process VSZ
-> > on one node and repeatedly bring wifi up and down on the other node.
-> >
-> > I've traced it back to the 18.06.2 release, specifically to lines
-> > 34-35 of
-> > package/network/services/hostapd/patches/015-mesh-do-not-use-
-> offchan-m
-> > gmt-tx-on-DFS.patch
-> > +                 (modes = nl80211_get_hw_feature_data(bss,
-> > + &num_modes,
-> > &flags, +
-> > &dfs_domain)) && That code was added in
-> > a35f24309021c1c0e9cbed0faedf58b941cb4bd3.
-> >
-> > I removed the entire patch file to resolve the memory leak because the
-> > subsequent call to ieee80211_is_dfs() uses the return value from
-> > nl80211_get_hw_feature_data().  However, I know the problem is
-> > specifically related to the nl80211_get_hw_feature_data() call because
-> > I stepped-backward through commits of the hostapd source until I got
-> > back to 0f7fc6b98de9c69f511b9b22f2b65553126362eb, where
-> > ieee80211_is_dfs() had only one argument and didn't rely on the
-> > nl80211_get_hw_feature_data() return value.  At that point, the memory
-> > leak still occurred until I commented-out the call to
-> nl80211_get_hw_feature_data().
-> >
-> > I attempted to dive into nl80211_get_hw_feature_data(), but was
-> > quickly lost, so I defer to those that are more experienced in that code.
-> 
-> you did a nice job here to track it down, so thanks for reporting this, can you
-> try this patch[1]?
-> 
-
-I had already tried an os_free(modes) and found no resolution.  However, to be sure, I tried your patch today and still observe the leak, but also checked original code to determine whether the leak rate reduced with the patch.  From that test (data below) it seems possible that the modes leak I might be a small portion of the overall leak I observed.
-I still suspect the main leak to be somewhere inside nl80211_get_hw_feature_data.
-
-For your reference, data from today's quick test is below.  VSZ is "VmSize" from /proc/[PID]/status where PID=wpa_supplicant's process ID.  Unpatched is the clean 18.06.4 code.  Patched is the same with your patch applied.
-The other node cycles the connection ~ every 30 seconds (while [ 1 ]; do wifi down; sleep 10; wifi; sleep 20; done).
-We don't see a rise in memory every 30 seconds, leading me to believe the leaked memory was allocated from a memory pool and the pool size needs to be periodically increased as the leak continues.
-
-Time (s),VSZ unpatched,VSZ patched
-0,3408,3404
-10,3408,3408
-20,3408,3416
-30,3408,3416
-40,3408,3420
-50,3408,3440
-60,3408,3440
-70,3412,3440
-80,3432,3440
-90,3432,3440
-100,3432,3440
-110,3432,3464
-120,3432,3464
-130,3432,3464
-140,3432,3464
-150,3432,3464
-160,3436,3464
-170,3456,3464
-180,3456,3464
-190,3456,3464
-200,3456,3464
-210,3456,3464
-220,3460,3464
-230,3480,3468
-,,3468
-,,3468
-,,3472
-,,3472
-,,3472
-,,3496
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+QWx0aG91Z2ggbm90IGEgZGV2ZWxvcGVyIG9mIG9wZW53cnQgaXRzZWxmLCBidXQgYSBoYXBweSAo
+PykgdXNlciwgSSBoYXZlIHRvIGFncmVlIHRvIHRoZSBzdGF0ZW1lbnQgYmVsb3cuCgpQUk9DRD0x
+IGRlZmF1bHQgaXMgYSBOT0dPIGZvciBtZS4KClNpbXBsZSByZWFzb24sYXMgbWVudGlvbmVkIGFs
+cmVhZHk6IFNvZnR3YXJlLCB3aGljaCBpcyBub3QgZG9jdW1lbnRlZCwgZG9lcyBub3QgZXhpc3Qu
+CldoaWNoIGlzIGEgcmVxdWlyZW1lbnQsIHdlIGhhZCB0byBvYmV5IHRvIGFscmVhZHkgaGFsZiBh
+IGNlbnR1cnkgYWdvLiBXaGVuIEkgd3JvdGUgbXkgZmlyc3QgQXNzZW1ibGVyIGNvZGUuCgpGb3Ig
+bWUsIHRoaXMgaXMgYW5vdGhlciBzdGVwIG9mIG9wZW53cnQgaW50byBibG9hdHdhcmUsIGFzIGl0
+IGJlY29tZXMgbW9yZSBhbmQgbW9yZSAib2JmdXNjYXRlZCIsCnRoZSBzaW1wbGUgdXNlciBsaWtl
+IG1lIG5vdCBnaXZpbmcgYW55IGlkZWEsIGhvdyBpdCBpcyBzdXBwb3NlZCB0byB3b3JrLgoKV2hp
+Y2ggYnJlYWtzIGFub3RoZXIgb2xkIHByaW5jaXBsZSBvZiBzb2Z0d2FyZSBkZXZlbG9wbWVudDog
+RWdvbGVzcyBwcm9ncmFtbWluZy4KTm90IG9ubHkgdGhlIGNvZGVyIHNob3VsZCB1bmRlcnN0YW5k
+LCBob3cgaXQgd29ya3MuCgpPcGVuIFNvdXJjZSBpcyBoZWFkaW5nIGludG8gQ2xvc2VkIFNvdXJj
+ZS4KQmFjayB0byB0aGUgcm9vdHMuCgoKTXkgZmV3IGNlbnRzLgoKUmVpbmVyIEthcmxzYmVyZwoK
+CgoKCgoKQW0gMDIuMDguMjAxOSB1bSAxODoxOCBzY2hyaWViIEtldmluICdsZGlyJyBEYXJieXNo
+aXJlLUJyeWFudDoKPiAKPiAKPj4gT24gMiBBdWcgMjAxOSwgYXQgMTY6MDAsIEhhbm51IE55bWFu
+IDxoYW5udS5ueW1hbkBpa2kuZmk+IHdyb3RlOgo+Pgo+PiBIYXVrZSBNZWhydGVucyBraXJqb2l0
+dGkgMi44LjIwMTkga2xvIDE3LjQyOgo+Pj4gT24gNy8yMy8xOSAzOjM3IFBNLCBQZXRyIMWgdGV0
+aWFyIHdyb3RlOgo+Pj4+IFRyYW5zaXRpb24gcGVyaW9kIGZvciBpbml0IHNjcmlwdCBtaWdyYXRp
+b24gd2FzIGxvbmcgZW5vdWdoLCBsZXQncwo+Pj4+IG1ha2UgVVNFX1BST0NEPTEgZGVmYXVsdCBu
+b3cgc28gdGhlcmUncyBlbm91Z2ggdGltZSB0byBjb252ZXJ0IHRoZQo+Pj4+IHJlbWFpbmluZyBz
+ZXJ2aWNlcy9pbml0IHNjcmlwdHMgZm9yIHRoZSBuZXh0IHJlbGVhc2UuCj4+Pj4KPj4+PiBTaWdu
+ZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6Pgo+Pj4+IC0tLQo+Pj4+ICAg
+cGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL2V0Yy9yYy5jb21tb24gfCAxMTMgKysrKysrKysrKy0t
+LS0tLS0tLS0tLS0tLQo+Pj4+ICAgMSBmaWxlIGNoYW5nZWQsIDQ3IGluc2VydGlvbnMoKyksIDY2
+IGRlbGV0aW9ucygtKQo+Pj4+Cj4+PiBEbyB5b3Uga25vdyBob3cgbWFueSBwYWNrYWdlcyBpbiB0
+aGUgcGFja2FnZSBmZWVkIGFuZCB0aGUgbWFpbgo+Pj4gcmVwb3NpdG9yeSBhcmUgc3RpbGwgbm90
+IHVzaW5nIHByb2NkPwo+Pj4KPj4+IEV4dGVybmFsIHJlcG9zaXRvcmllcywgbm90IHRoZSBwYWNr
+YWdlIGZlZWQsIHdpbGwgcHJvYmFibHkgYmUgYWZmZWN0ZWQKPj4+IG1vc3QsIGJ1dCBJIHRoaW5r
+IHdlIGRvIG5vdCBoYXZlIHRvIGNhcmUgYW5kIHRoZXJlIHdlcmUgbWFueSB5ZWFycyB0bwo+Pj4g
+Y29udmVydC4KPj4+Cj4+PiBBY2tlZC1ieTogSGF1a2UgTWVocnRlbnMgPGhhdWtlQGhhdWtlLW0u
+ZGU+Cj4+Pgo+Pj4gSGF1a2UKPj4+Cj4+Cj4+IEkgZG8gbm90IHJlbWVtYmVyIHNlZWluZyBldmVy
+IGEgZ2VuZXJhbCBjYWxsIGZvciBjb252ZXJ0aW5nIHRoZSBvbGQgcGFja2FnZXMgdG8gdXNpbmcg
+cHJvY2QuIEluIHRoYXQgc2Vuc2UgdGhpcyBwcm9wb3NlZCBjaGFuZ2UgdG8gc3dpdGNoIHRoZSBk
+ZWZhdWx0IGNvbWVzIGEgYml0IHN1cnBpc2UuCj4+Cj4+IFF1aWNrIHNlYXJjaCBpbiB0aGUgcGFj
+a2FnZXMgZmVlZCByZXBvIHJldmVhbHMgdGhhdCB0aGVyZSBhcmUgMjgxIGluc3RhbmNlcyBvZiAi
+L2V0Yy9yYy5jb21tb24iIGFuZCBvbmx5IDIwNSBpbnN0YW5jZXMgb2YgVVNFX1BST0NELiBTbywg
+bGlrZWx5IGFib3V0IDc1IHBhY2thZ2VzIGluIHRoZSBwYWNrYWdlcyBmZWVkIHJlcG8gb25seSBh
+cmUgdXNpbmcgdGhlIG9sZCBzeW50YXggd2l0aG91dCBwcm9jZC4KPj4KPj4gSGFzIGEgZGVjaXNp
+b24gYmVlbiBtYWRlIHRvIGRlY2xhcmUgdGhlIG9sZC1zdHlsZSBpbml0IGZpbGUgaW52YWxpZD8g
+V2lsbCBpdCBiZSBwb3NzaWJsZSB0byBzdGlsbCB1c2UgdGhlIHN5bnRheD8gV2hhdCBpcyB0aGUg
+bmV3ICJvdmVycmlkZSIgdG8gaW5kaWNhdGUgdGhlIHVzYWdlIG9mIHRoZSBvbGQgc3ludGF4Pwo+
+Pgo+PiBPciB3aWxsIHRoZSBwcm9wb3NlZCBjaGFuZ2UgZGlzYWJsZSB0aGUgcGFja2FnZXMgdXNp
+bmcgdGhlIG9sZCBpbml0IGZpbGUgc3ludGF4IHRvdGFsbHk/Cj4gCj4gTXkgcmVhZGluZyBvZiB0
+aGUgY2hhbmdlIGlzIHRoYXQgb2xkIHN5bnRheCBpcyBiYXNpY2FsbHkgZHJvcHBlZC4KPiAKPiBX
+aXNoIGZvcjogIFdlIHNob3VsZCBiZSB1c2luZyBwcm9jZCBhbmQgdG8gdGhhdCBlbmQgSSBzdGFy
+dGVkIGxvb2tpbmcgYXQgY29udmVydGluZyB0aGUg4oCYaW1wb3J0YW50IHRvIG1l4oCZIHBhY2th
+Z2VzOiBkZG5zICYgbWluaXVwbnBkLgo+IAo+IFJlYWwgbGlmZTogRG9jdW1lbnRhdGlvbiBpcyBj
+b25mdXNpbmcgdnMgcmVhbCBsaWZlIHdoaWNoIGlzIGp1c3QgcGxhaW4gZGlmZmVyZW50LiBTZWUg
+YWRibG9jayBzdGFydHVwIHNjcmlwdCBhcyBhbiBleGNlbGxlbnQgZXhhbXBsZSBvZiAqKioqIHRo
+YXQganVzdCBpc27igJl0IGRvY3VtZW50ZWQuCj4gCj4gSSBnYXZlIHVwIGFuZCBsZWZ0IHRoZSBw
+cm9jZXNzIGZlZWxpbmcgdmVyeSBhbmdyeS4KPiAKPiAKPiBLREIKPiAKPiAKPiBfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IG9wZW53cnQtZGV2ZWwgbWFp
+bGluZyBsaXN0Cj4gb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwo+IGh0dHBzOi8vbGlz
+dHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCj4gCgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBt
+YWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3Rz
+Lm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

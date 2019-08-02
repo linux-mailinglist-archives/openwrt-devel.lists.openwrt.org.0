@@ -2,31 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA6D67E6F6
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 01:57:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA9F17E700
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 02:07:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:To:Date:Cc:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:To:Date:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kiOhtybjPCWJZhpIypJU13SsXmziR5iX+acm0fTU8sc=; b=HIg
-	2jmvc8JGuNC/uUtMCafNP0p/kB8TqVhBZoqLmvrsP1tLjMeKqmubkkoEUqiChEs8YCdf160hqWPzw
-	PgPmc4DZz8iSHnCqu6GQNVQWcOwO9lZWWUfbp0G+UE+92CGOiWBB0v+OHzAWhqIxXdnGf3HLOlC+Y
-	AgsEC2RQm5shY2uAvERS4E0uWsul0QP2+V+z6vibhq0WM7lDVW7S7SGhTMm+n3CabroTTkOCZhDGI
-	eqmy+rwaPhyL90wRA21X7Kx9uXaGMcP0bGI+f1N91skt+wYTzMAFPzh8DoKvePUFD+1WtACpfFJak
-	4ES3im1X+Ac4Yb0VWqDawFdCCv8WYLw==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=s0pKerF5W1iKRKbVEj9oENy16KFUpFT+cpuFUvoixhA=; b=SeogSMGyL6ImVdh92/1SU7Gv/
+	RqmxOyjJ+4EgfBTFU0HvUIVYtOeZ0XKMy2TyiLZRWlXN4N0ca3p5LQgdLl4zsLZ22FYRHZu6sk5/T
+	RlBdcwOPZs55tUf60YigpgG5Uqwk3yPHGyWbrqm1iy4JvEZRZlB7MpQR4beK84cnCdobWIP2+nmw7
+	e8wepzWEMqPxOSSMs5r1NGQtchRYXDbYXVKb/fio8SM1tUfTfoyKpiRgqKksUqNjcrWbfqxTe9WN3
+	/wbS9ai0sRFR/Obrhvr7uZAmk8LPKctIxmviQCukK8+34Inm5THGim/eEoSklGCazgg6CCxARoXe5
+	Mk2XXtGmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htKwI-0007th-Co; Thu, 01 Aug 2019 23:56:54 +0000
-Date: Fri, 02 Aug 2019 07:56:41 +0800
-To: openwrt-devel@lists.openwrt.org
+	id 1htL63-0002s1-F3; Fri, 02 Aug 2019 00:06:59 +0000
+Date: Fri, 02 Aug 2019 08:06:48 +0800
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+In-Reply-To: <20190801085402.GL74752@meh.true.cz>
+References: <CANoib0H81oGAEvhHbXLF2HBXnhUmZVcL8EZd4sKbvpwtLhvD_Q@mail.gmail.com>
+ <20190730093705.GF74752@meh.true.cz>
+ <CAKR_QV++ebOfgX-OUPY+OWz1_kUNiEP85csYFwswJL+vVXtfZw@mail.gmail.com>
+ <20190801085402.GL74752@meh.true.cz>
 MIME-Version: 1.0
-Message-ID: <mailman.13754.1564703810.19300.openwrt-devel@lists.openwrt.org>
+Message-ID: <mailman.13755.1564704415.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 From: Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org>
 Precedence: list
+Cc: Dmitry Tunin <hanipouspilot@gmail.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Tom Psyborg <pozega.tomislav@gmail.com>
 X-Mailman-Version: 2.1.29
 X-BeenThere: openwrt-devel@lists.openwrt.org
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
@@ -36,12 +44,12 @@ List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>,
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
 Reply-To: Joan Moreau <jom@grosjo.net>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] Compilation error on master / mt7620
-Content-Type: multipart/mixed; boundary="===============4669573404939229267=="
+Subject: Re: [OpenWrt-Devel] Why ath79 has been made source-only on 19.07?
+Content-Type: multipart/mixed; boundary="===============8131957396407281549=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4669573404939229267==
+--===============8131957396407281549==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -52,38 +60,45 @@ sending mailing list messages using the original "From" header.
 
 To mitigate this problem, the original message has been wrapped
 automatically by the mailing list software.
---===============4669573404939229267==
+--===============8131957396407281549==
 Content-Type: message/rfc822
 MIME-Version: 1.0
 Content-Disposition: inline
 
 Received: from grosjo.net ([94.130.37.163])
 	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
-	id 1htKwB-0007tK-NN
-	for openwrt-devel@lists.openwrt.org; Thu, 01 Aug 2019 23:56:49 +0000
+	id 1htL5w-0002rj-RM
+	for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 00:06:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=grosjo.net;
-	 s=dkim; h=Message-ID:Subject:To:From:Date:Content-Type:MIME-Version:Sender:
-	Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=VBX7MKhzcDWZhk/ahck6ocVLTVlhqN30T4uugpirjjU=; b=PECkw6gUt7Hv7/PsxcxdJKl8Zz
-	JYjoPHlwLsoasdO8LwlKl1U0Q5ktR9THeTjpUz1vdcp32qKVHhaAU+0MKFSRecUFBker45Tjc2Nvv
-	4QnoArq6MPXuQsHRhy3vVFWU/6NCNq5EAOSRZxxekerpv61od6t3lADEGu1m0Kwoix20=;
+	 s=dkim; h=Message-ID:References:In-Reply-To:Subject:Cc:To:From:Date:
+	Content-Type:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=CD4JU38Wq/+jYZR8PHvgG2hMDuhoGBSZUTX260xzOYM=; b=h360v0iRc3xMI2sSWgFa9NNmai
+	F2O92h8Ogx3cBoXtPMMI6HAMkUu2MqfZphIPOwOtTSi0IbRyWOd2ScHNxMUg/jBK8gysj33EyKaBW
+	BLAW4OPln4qEGdfEVfCz+eBgI8wMU8QBrpfWqnuLTJ35IEECwwoiTRoA1of8bcZLtuco=;
 Received: from localhost ([127.0.0.1] helo=grosjo.net)
 	by grosjo.net with esmtp (Exim 4.92.1)
 	(envelope-from <jom@grosjo.net>)
-	id 1htKw5-0003Wd-Oi
-	for openwrt-devel@lists.openwrt.org; Thu, 01 Aug 2019 23:56:43 +0000
+	id 1htL5s-0004Db-UP; Fri, 02 Aug 2019 00:06:50 +0000
 MIME-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="=_c4cc7c4927987eeabd53e886ff99e914"
-Date: Fri, 02 Aug 2019 07:56:41 +0800
+ boundary="=_038aef4ef81fbb726e46f039addecbf3"
+Date: Fri, 02 Aug 2019 08:06:48 +0800
 From: Joan Moreau <jom@grosjo.net>
-To: openwrt-devel@lists.openwrt.org
-Subject: Compilation error on master / mt7620
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+Cc: Tom Psyborg <pozega.tomislav@gmail.com>, Dmitry Tunin
+ <hanipouspilot@gmail.com>, OpenWrt Development List
+ <openwrt-devel@lists.openwrt.org>
+Subject: Re: [OpenWrt-Devel] Why ath79 has been made source-only on 19.07?
+In-Reply-To: <20190801085402.GL74752@meh.true.cz>
+References: <CANoib0H81oGAEvhHbXLF2HBXnhUmZVcL8EZd4sKbvpwtLhvD_Q@mail.gmail.com>
+ <20190730093705.GF74752@meh.true.cz>
+ <CAKR_QV++ebOfgX-OUPY+OWz1_kUNiEP85csYFwswJL+vVXtfZw@mail.gmail.com>
+ <20190801085402.GL74752@meh.true.cz>
 User-Agent: Roundcube Webmail/1.4-git
-Message-ID: <b0717bd2fea3e984c209f6c9e1dfb951@grosjo.net>
+Message-ID: <27cec590c2ebf0100d3f2d1152bfb15f@grosjo.net>
 X-Sender: jom@grosjo.net
 X-GJ: Sent from localhost
 X-Spam-Score: -2.9 (--)
@@ -93,10 +108,9 @@ X-Spam-Report: Spam detection software, running on the system "gjserver",
  similar future email.  If you have any questions, see
  admin@grosjo.net for details.
  
- Content preview:  Hello, I reach the following error while compiling my MT7620/ZBT826-16M
-    on master (no error on 18.06) : CC [M] /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.o
-    <command-line>:0:37: error: redeclaration of enumerator 'IEEE80211_HW_REPORTS_TX_
-    [...] 
+ Content preview:  Bottom line : When will the device PR (many pending for months,
+    few already pushed to master) of ath79 be made available on robot compilation
+    in a stable release ? On 2019-08-01 16:54, Petr Štetiar wrote: 
  
  Content analysis details:   (-2.9 points, 3.0 required)
  
@@ -108,8 +122,8 @@ X-Spam-Report: Spam detection software, running on the system "gjserver",
   0.0 HTML_MESSAGE           BODY: HTML included in message
 X-GJ-SMTP: h_FROM = Joan Moreau <jom@grosjo.net> RPATH=jom@grosjo.net SENDERADR= jom@grosjo.net:
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_165647_917091_1D6C23F6 
-X-CRM114-Status: UNSURE (  -2.00  )
+X-CRM114-CacheID: sfid-20190801_170652_888879_C2F5F5F6 
+X-CRM114-Status: UNSURE (   1.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -131,88 +145,85 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
                              envelope-from domain
 
---=_c4cc7c4927987eeabd53e886ff99e914
-Content-Transfer-Encoding: 7bit
+--=_038aef4ef81fbb726e46f039addecbf3
+Content-Transfer-Encoding: quoted-printable
 Content-Type: text/plain; charset=UTF-8;
  format=flowed
 
-Hello, 
+Bottom line :=20
 
-I reach the following error while compiling my MT7620/ZBT826-16M on
-master (no error on 18.06) : 
+When will the device PR (many pending for months, few already pushed to
+master) of ath79 be made available on robot compilation in a stable
+release ?=20
 
-CC [M]
-/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.o
-<command-line>:0:37: error: redeclaration of enumerator
-'IEEE80211_HW_REPORTS_TX_ACK_STATUS'
-<command-line>:0:37: note: in definition of macro
-'IEEE80211_HW_TX_STATUS_NO_AMPDU_LEN'
-In file included from
-/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/../mt76.h:27:0,
-from
-/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/mt7603.h:8,
-from
-/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.c:7:
-/usr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/usr/include/mac80211/net/mac80211.h:2293:2:
-note: previous definition of 'IEEE80211_HW_REPORTS_TX_ACK_STATUS' was
-here
-IEEE80211_HW_REPORTS_TX_ACK_STATUS,
-^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-make[6]: *** [scripts/Makefile.build:327:
-/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.o]
-Error 1
-make[5]: *** [scripts/Makefile.build:585:
-/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603]
-Error 2
-make[4]: *** [Makefile:1532:
-_module_/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45]
-Error 2 
+On 2019-08-01 16:54, Petr =C5=A0tetiar wrote:
 
-Can you help ? 
+> Tom Psyborg <pozega.tomislav@gmail.com> [2019-08-01 09:54:43]:
+>=20
+> Hi,
+>=20
+> On 30/07/2019, Petr =C5=A0tetiar <ynezz@true.cz> wrote:
+>=20
+> b) it was decided some time ago, that 19.07 is last release with ar71xx,
+> nothing about ath79 in 19.07=20
+> because you currently have both targets as source-only
 
-Thank you
---=_c4cc7c4927987eeabd53e886ff99e914
+This discussion is about openwrt-19.07 branch, so there's currently
+ath79
+source-only (which might still change before -rc1 as there was some
+discussion
+on IRC regarding this) and ar71xx is source-only in master.
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+--=_038aef4ef81fbb726e46f039addecbf3
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/html; charset=UTF-8
 
 <html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
 =3DUTF-8" /></head><body style=3D'font-size: 9pt; font-family: Verdana,Gene=
 va,sans-serif'>
-<p>Hello,</p>
+<p>Bottom line :</p>
+<p>When will the device PR (many pending for months, few already pushed to =
+master) of ath79 be made available on robot compilation in a stable release=
+ ?</p>
 <p><br /></p>
-<p>I reach the following error while compiling my MT7620/ZBT826-16M on mast=
-er (no error on 18.06) :</p>
+<div id=3D"signature">&nbsp;</div>
 <p><br /></p>
-<p>CC [M] /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramip=
-s_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.o<br />&lt;command-line&gt;:0:=
-37: error: redeclaration of enumerator 'IEEE80211_HW_REPORTS_TX_ACK_STATUS'=
-<br />&lt;command-line&gt;:0:37: note: in definition of macro 'IEEE80211_HW=
-_TX_STATUS_NO_AMPDU_LEN'<br />In file included from /usr/src/openwrt/4g/bui=
-ld_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45=
-/mt7603/../mt76.h:27:0,<br />from /usr/src/openwrt/4g/build_dir/target-mips=
-el_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/mt7603.h:8=
-,<br />from /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ram=
-ips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.c:7:<br />/usr/src/openwrt/4=
-g/staging_dir/target-mipsel_24kc_musl/usr/include/mac80211/net/mac80211.h:2=
-293:2: note: previous definition of 'IEEE80211_HW_REPORTS_TX_ACK_STATUS' wa=
-s here<br />IEEE80211_HW_REPORTS_TX_ACK_STATUS,<br />^~~~~~~~~~~~~~~~~~~~~~=
-~~~~~~~~~~~~<br />make[6]: *** [scripts/Makefile.build:327: /usr/src/openwr=
-t/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-=
-75656a45/mt7603/pci.o] Error 1<br />make[5]: *** [scripts/Makefile.build:58=
-5: /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt762=
-0/mt76-2019-07-22-75656a45/mt7603] Error 2<br />make[4]: *** [Makefile:1532=
-: _module_/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramip=
-s_mt7620/mt76-2019-07-22-75656a45] Error 2</p>
-<p><br /></p>
-<p>Can you help ?</p>
-<p>Thank you</p>
-
+<p id=3D"reply-intro">On 2019-08-01 16:54, Petr &Scaron;tetiar wrote:</p>
+<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
+px solid; margin: 0">
+<div class=3D"pre" style=3D"margin: 0; padding: 0; font-family: monospace">=
+Tom Psyborg &lt;<a href=3D"mailto:pozega.tomislav@gmail.com">pozega.tomisla=
+v@gmail.com</a>&gt; [2019-08-01 09:54:43]:<br /><br />Hi,<br /><br />
+<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
+px solid; margin: 0">On 30/07/2019, Petr &Scaron;tetiar &lt;<a href=3D"mail=
+to:ynezz@true.cz">ynezz@true.cz</a>&gt; wrote:<br /><br />
+<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
+px solid; margin: 0">b) it was decided some time ago, that 19.07 is last re=
+lease with ar71xx,<br />&nbsp;&nbsp;&nbsp;nothing about ath79 in 19.07</blo=
+ckquote>
+<br />because you currently have both targets as source-only</blockquote>
+<br />This discussion is about openwrt-19.07 branch, so there's currently a=
+th79<br />source-only (which might still change before -rc1 as there was so=
+me discussion<br />on IRC regarding this) and ar71xx is source-only in mast=
+er.<br /><br />-- ynezz<br /><br />________________________________________=
+_______<br />openwrt-devel mailing list<br /><a href=3D"mailto:openwrt-deve=
+l@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a><br /><a href=3D"ht=
+tps://lists.openwrt.org/mailman/listinfo/openwrt-devel" target=3D"_blank" r=
+el=3D"noopener noreferrer">https://lists.openwrt.org/mailman/listinfo/openw=
+rt-devel</a></div>
+</blockquote>
 </body></html>
 
---=_c4cc7c4927987eeabd53e886ff99e914--
+--=_038aef4ef81fbb726e46f039addecbf3--
 
 
---===============4669573404939229267==
+--===============8131957396407281549==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -223,5 +234,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4669573404939229267==--
+--===============8131957396407281549==--
 

@@ -2,40 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FDB77FC49
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 16:33:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B96C7FC58
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 16:37:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ni3XYhEGjHy0ZJrp7v374nN0RkXIaHyRZ9Qzk7d0GfY=; b=f4tkNtelkEzTEx+XdVvklsq3R
-	Alw8VgVey0ZDxMCp/S8Ce5FsyZ+vOMauDr/3VwFxtwlE8hAbbIagIR+o8BqtoqKwMmsTZhZP7Bheb
-	XsdD+0oUh1ho0ZPVfUdN+MHP+Wt02G7lKfkFR/KjyyeSAdBRZn67xk+tfaQU4CW3iN1hxFmvrKop8
-	cX+w3bhmmXiZqJMvKv3EGTQ8yVjpFbRXOvKXOfqSumyhAwkwPYPjXjnNxm4Kr1lqj6adzFR4tOvJA
-	vI2SLmJ3wQnwMkugYRcleNxJAuVpArtTyqMKyYVnSR8tdM2pHXix6zABRi4yWKWWtm3vZlIFfbAY+
-	ggTjiCwSw==;
+	 bh=u5SbjWxdrNAdVIoswK3X4W3MICbG2ENj1rMPUMtYXSo=; b=nLEYeCvAlmKJNiDtzCHfK1wxj
+	oPQti14miwTDMaJg6+0F5FwD3jOMZfSKtoQnhmYkDQaeVYI46fgPgn3PCP2Jq102gEAdhWnCOa3tU
+	Y9pZmwhGj8zKwGsw73ikmqccUe+btu9tBv7n5jIKT0RhgiXRqWbnRMs5579OnikhcMZo5VTgWYXhX
+	Se2kAZlWQ2DQbb+iSk9Z7p1PMX1DJhOyRVAkpTleOPRHlxN40Zg622dTX67INKnJvAptgLROcttbt
+	5SkYrLkNVqHxTyOFR6iY+tzYAogmk4YT1osL782dzNc8P9ZzndzQVVIfuIdxWgqK4nJfauBCaTD7l
+	16ux9m4ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htYcl-0002lh-HQ; Fri, 02 Aug 2019 14:33:39 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1htYgL-00055U-SD; Fri, 02 Aug 2019 14:37:21 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htYcf-0002l2-OV
- for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 14:33:35 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1htYgE-00054t-Pe
+ for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 14:37:16 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 280A342546;
- Fri,  2 Aug 2019 16:33:31 +0200 (CEST)
+ by mx2.mailbox.org (Postfix) with ESMTPS id C3BF8A1134;
+ Fri,  2 Aug 2019 16:37:11 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id x88bbCoVEKg2; Fri,  2 Aug 2019 16:33:25 +0200 (CEST)
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
+ [80.241.56.117]) (amavisd-new, port 10030)
+ with ESMTP id 9bIsTlzEwGQM; Fri,  2 Aug 2019 16:36:45 +0200 (CEST)
 To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org
-References: <20190731203133.3585-1-ynezz@true.cz>
+References: <20190728213134.4937-1-ynezz@true.cz>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -98,24 +99,24 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <2394a49c-3ade-0b37-3623-aab67f15eb93@hauke-m.de>
-Date: Fri, 2 Aug 2019 16:33:08 +0200
+Message-ID: <aad7ef94-be52-8ee5-0b50-eea3a70d8864@hauke-m.de>
+Date: Fri, 2 Aug 2019 16:36:24 +0200
 MIME-Version: 1.0
-In-Reply-To: <20190731203133.3585-1-ynezz@true.cz>
+In-Reply-To: <20190728213134.4937-1-ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_073334_101666_7A40284D 
-X-CRM114-Status: GOOD (  20.47  )
+X-CRM114-CacheID: sfid-20190802_073715_139074_CDB89629 
+X-CRM114-Status: GOOD (  19.05  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] wireless-regdb: fix build when python2
- from package feeds exists
+Subject: Re: [OpenWrt-Devel] [PATCH] scons: move to packages feed
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,70 +128,159 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0049395764051995691=="
+Content-Type: multipart/mixed; boundary="===============3424267162411878957=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0049395764051995691==
+--===============3424267162411878957==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="VTDc4FFNoRlzodQWhGTqdD07eD8oASZDa"
+ boundary="SgvCYdyeJ3RyT5rWdfQQ7ZNW6GB2PV3La"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---VTDc4FFNoRlzodQWhGTqdD07eD8oASZDa
-Content-Type: multipart/mixed; boundary="SOAnlIridjo09HdJSpIM5X4zIkiv03Or3";
+--SgvCYdyeJ3RyT5rWdfQQ7ZNW6GB2PV3La
+Content-Type: multipart/mixed; boundary="U9QBFGHYkmWuQC02JrFD2zyjyUbqytEVe";
  protected-headers="v1"
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org
-Message-ID: <2394a49c-3ade-0b37-3623-aab67f15eb93@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] [PATCH] wireless-regdb: fix build when python2
- from package feeds exists
-References: <20190731203133.3585-1-ynezz@true.cz>
-In-Reply-To: <20190731203133.3585-1-ynezz@true.cz>
+Message-ID: <aad7ef94-be52-8ee5-0b50-eea3a70d8864@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH] scons: move to packages feed
+References: <20190728213134.4937-1-ynezz@true.cz>
+In-Reply-To: <20190728213134.4937-1-ynezz@true.cz>
 
---SOAnlIridjo09HdJSpIM5X4zIkiv03Or3
+--U9QBFGHYkmWuQC02JrFD2zyjyUbqytEVe
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 7/31/19 10:31 PM, Petr =C5=A0tetiar wrote:
-> wireless-regdb fails to build if there is python2 installed from packag=
-e
-> feeds, as staging_dir/hostpkg/bin/python is python2 and
-> staging_dir/hostpkg/bin takes precedence over staging_dir/host/bin
-> (proper place with python -> python3 symlink) which leads to the build
-> failure of wireless-regdb, so this patch makes it explicit which python=
-
-> should be used.
+On 7/28/19 11:31 PM, Petr =C5=A0tetiar wrote:
+> This patch removes scons host build tool, as commit 0c090fde68b2
+> ("scons: move host build tool to a proper place") in the packages feed
+> has moved scons into the new home.
 >=20
-> Reported-by: Hauke Mehrtens <hauke@hauke-m.de>
-> Tested-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+> There are currently no packages in the master tree which would need
+> scons, yet scons is build always as part of host tools, just in order t=
+o
+> satisfy host build dependency of few packages in the packages feeds.
+>=20
 > Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
 
-Tested-by: Hauke Mehrtens <hauke@hauke-m.de>
+Acked-by: Hauke Mehrtens <hauke@hauke-m.de>
 
 > ---
->  package/firmware/wireless-regdb/Makefile | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  tools/Makefile                             |  2 +-
+>  tools/scons/Makefile                       | 35 ----------------------=
+
+>  tools/scons/files/pywrap.sh                | 15 ----------
+>  tools/scons/patches/001-platform_env.patch | 11 -------
+>  4 files changed, 1 insertion(+), 62 deletions(-)
+>  delete mode 100644 tools/scons/Makefile
+>  delete mode 100755 tools/scons/files/pywrap.sh
+>  delete mode 100644 tools/scons/patches/001-platform_env.patch
 >=20
-> diff --git a/package/firmware/wireless-regdb/Makefile b/package/firmwar=
-e/wireless-regdb/Makefile
-> index 88a8d0bd9c3b..26f470af44c4 100644
-> --- a/package/firmware/wireless-regdb/Makefile
-> +++ b/package/firmware/wireless-regdb/Makefile
-> @@ -20,7 +20,7 @@ define Package/wireless-regdb
->  endef
-> =20
->  define Build/Compile
-> -	$(PYTHON) $(PKG_BUILD_DIR)/db2fw.py $(PKG_BUILD_DIR)/regulatory.db $(=
-PKG_BUILD_DIR)/db.txt
-> +	$(STAGING_DIR_HOST)/bin/$(PYTHON) $(PKG_BUILD_DIR)/db2fw.py $(PKG_BUI=
-LD_DIR)/regulatory.db $(PKG_BUILD_DIR)/db.txt
->  endef
-> =20
->  define Package/wireless-regdb/install
+> diff --git a/tools/Makefile b/tools/Makefile
+> index d7207ba89dd9..a161154b806b 100644
+> --- a/tools/Makefile
+> +++ b/tools/Makefile
+> @@ -25,7 +25,7 @@ tools-$(BUILD_TOOLCHAIN) +=3D gmp mpfr mpc libelf exp=
+at
+>  tools-y +=3D m4 libtool autoconf automake flex bison pkg-config mklibs=
+ zlib
+>  tools-y +=3D sstrip make-ext4fs e2fsprogs mtd-utils mkimage
+>  tools-y +=3D firmware-utils patch-image quilt padjffs2
+> -tools-y +=3D mm-macros missing-macros cmake scons bc findutils gengeto=
+pt patchelf
+> +tools-y +=3D mm-macros missing-macros cmake bc findutils gengetopt pat=
+chelf
+>  tools-y +=3D mtools dosfstools libressl
+>  tools-$(CONFIG_TARGET_orion_generic) +=3D wrt350nv2-builder upslug2
+>  tools-$(CONFIG_TARGET_x86) +=3D qemu
+> diff --git a/tools/scons/Makefile b/tools/scons/Makefile
+> deleted file mode 100644
+> index 5ec655416585..000000000000
+> --- a/tools/scons/Makefile
+> +++ /dev/null
+> @@ -1,35 +0,0 @@
+> -#
+> -# Copyright (C) 2011-2015 OpenWrt.org
+> -#
+> -# This is free software, licensed under the GNU General Public License=
+ v2.
+> -# See /LICENSE for more information.
+> -#
+> -
+> -include $(TOPDIR)/rules.mk
+> -
+> -PKG_NAME:=3Dscons
+> -PKG_VERSION:=3D3.0.5
+> -
+> -PKG_SOURCE:=3D$(PKG_NAME)-$(PKG_VERSION).tar.gz
+> -PKG_SOURCE_URL:=3D@SF/scons \
+> -		http://fossies.org/linux/misc/
+> -PKG_HASH:=3Ddf676f23dc6d4bfa384fc389d95dcd21ab907e6349d4c848958ba4befb=
+73c73e
+> -
+> -include $(INCLUDE_DIR)/host-build.mk
+> -
+> -define Host/Configure
+> -endef
+> -
+> -define Host/Compile
+> -endef
+> -
+> -define Host/Install
+> -	./files/pywrap.sh $(HOST_BUILD_DIR)/setup.py install --prefix=3D$(STA=
+GING_DIR_HOST)
+> -	rm -f $(STAGING_DIR_HOST)/bin/scons*.py
+> -	for bin in $(STAGING_DIR_HOST)/bin/scons*; do \
+> -		mv "$$$$bin" "$$$$bin.py";                \
+> -		cp ./files/pywrap.sh "$$$$bin";           \
+> -	done
+> -endef
+> -
+> -$(eval $(call HostBuild))
+> diff --git a/tools/scons/files/pywrap.sh b/tools/scons/files/pywrap.sh
+> deleted file mode 100755
+> index 53910e947209..000000000000
+> --- a/tools/scons/files/pywrap.sh
+> +++ /dev/null
+> @@ -1,15 +0,0 @@
+> -#!/usr/bin/env bash
+> -
+> -case "${0##*/}" in
+> -	pywrap.sh) arg1=3D"";;
+> -	*) arg1=3D"$0.py" ;;
+> -esac
+> -
+> -for bin in python python3; do
+> -    case "$($bin -V 2>&1)" in
+> -        "Python 3"*) exec $bin $arg1 "$@" ;;
+> -    esac
+> -done
+> -
+> -echo "Unable to find a Python 3.x interpreter for executing ${arg1:+$a=
+rg1 }$@ !" >&2
+> -exit 1
+> diff --git a/tools/scons/patches/001-platform_env.patch b/tools/scons/p=
+atches/001-platform_env.patch
+> deleted file mode 100644
+> index 2be31470c27d..000000000000
+> --- a/tools/scons/patches/001-platform_env.patch
+> +++ /dev/null
+> @@ -1,11 +0,0 @@
+> ---- a/engine/SCons/Platform/__init__.py
+> -+++ b/engine/SCons/Platform/__init__.py
+> -@@ -65,6 +65,8 @@ def platform_default():
+> -     care about the machine architecture.
+> -     """
+> -     osname =3D os.name
+> -+    if 'PLATFORM' in os.environ:
+> -+        return os.environ['PLATFORM']
+> -     if osname =3D=3D 'java':
+> -         osname =3D os._osType
+> -     if osname =3D=3D 'posix':
 >=20
 > _______________________________________________
 > openwrt-devel mailing list
@@ -200,29 +290,29 @@ LD_DIR)/regulatory.db $(PKG_BUILD_DIR)/db.txt
 
 
 
---SOAnlIridjo09HdJSpIM5X4zIkiv03Or3--
+--U9QBFGHYkmWuQC02JrFD2zyjyUbqytEVe--
 
---VTDc4FFNoRlzodQWhGTqdD07eD8oASZDa
+--SgvCYdyeJ3RyT5rWdfQQ7ZNW6GB2PV3La
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl1ESaQACgkQ8bdnhZyy
-68eOxwgAvv3nSwkmzioBz81mBXVnirJyCJ1b/e0+rxkN1A7kupfpGtrNd15nu+Cf
-WvCOfTw4nl17XnDqDiY8Xyq3PISHMCpSrbspA9Jhgw0UxxPdgZD+zVtx6LTw06A2
-EzeYOBbihKupJFgBncZ6DgL41Hjp7NVSSP7yfCFPED6Q7r9FsYOFXyvwkG/zXwRI
-sZ2oVjlWeKG5pYVKyxzcXuDzcSzqsXBx2M7S5J6YZMQKvI97zU7aCJXhxHnRCkfU
-XOaYloJRRTsPr2L8jRw0TltCo0tbF8gFOieVvQMPqtBNo4QBvecJ22HNQZ71mzL5
-MakqS1CodMxrHA/Aah82+N63+20jIQ==
-=WPiR
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl1ESmgACgkQ8bdnhZyy
+68exRQgAy01uAlVAylW80fJ7nHowpevNd/kUwZ1VcLSSERhOSKseAh1oJU2BaEZo
+lRJttmzxV8U9U5yGFxOLoQlrBKAYkJf2wJknDOI3AR/hV+g1WM2u8Ogs3KxWIwbT
+jYmW92bFu1rYN/PIgRL1cnum49X2j5CLuKRoBnoiYwyl66HwpBbOXU65qQer/EiR
+bg+CTVlwAdm1KGRmDb5sppp8bqvJxlaxxvRdj6F/ctaG6CTOES17RTVNRroxSPV1
+nNui1WyjVUnPCrZDhblJNH0+7j3gPXZl48ggJpufU1h7UJb7DO2tcsXU98QTLUpC
+cpE7Do8lRWTbnHuzF09HzAoofLqTzg==
+=g8hp
 -----END PGP SIGNATURE-----
 
---VTDc4FFNoRlzodQWhGTqdD07eD8oASZDa--
+--SgvCYdyeJ3RyT5rWdfQQ7ZNW6GB2PV3La--
 
 
---===============0049395764051995691==
+--===============3424267162411878957==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -233,5 +323,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0049395764051995691==--
+--===============3424267162411878957==--
 

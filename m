@@ -2,119 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA7657FC75
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 16:43:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 843747FC7D
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 16:46:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JHEdp/Xe6thkHiBqTBvSpRlz6bcGXshi+uzaiLO6pYQ=; b=qWLfGtDI6ypofzGG6EUQ8Fj6+
-	aRhzmeC4P+awlQHqtnFHYR7VioIdRTTj/o8I16EPplzqx3ye/WFQMuFMMlWml1QWq0hBu9wCkvPMm
-	uTohWTHC1Tn9JIqcgy+tEXIK6Wh7PANDNeX/ltKNsY3dD4IqbVDmSawSvtO8ZPQaS3TcM0hZo2wLj
-	As9Ysv0Gb33+YVm/KQQsmNtL0T34E6Uy679Ek4vxvWhRk3A6QU4gGRxu1keQld3BH0Y8cYRV4OP8r
-	3vDI/mrQfJrqKREi9TjBKS9mfStzVaj7ZfIGTwN8XMFOVyUTfzr1p7Baz9yo1F6VqHkrKuXcBiveK
-	LSqlHhyJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Rs0RG5WiLUYHgu0bqErwVrXR7VMCrOAc1Ivti7VYxgc=; b=jvuwh484Ji1gkS
+	KhRy+vvaZ53J+zizE63M9BtDZB1vknpYGUlqkvRKZZK4O3WP9KdXAy3RAuMAJD5GHM8YM69tgyjiR
+	L/NUNAgkqbrVGp3E8z1vtr3gbK/Q4g+wGNu87OYULUyv0L7NR4eg49PuhYywvImY3O9iaBKAo5xnh
+	SGJDAUjpIlKSEBSAsjN26hNWdYeMBaypc+y8Zj8bIBHokOcEug7bH5V2YuA8cSFoX/5tNtvhZxHXJ
+	pN9M/q8qGYuoVRjvGCuEl1SWlKOPuN1TeSz+2Fz0BiE2/RdJWTk8nqJnZya1YekoIM7IgbCdLv0V3
+	FWd3R2X6mhD2szZ6fceQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htYll-0007Qw-Oy; Fri, 02 Aug 2019 14:42:57 +0000
-Received: from mx1.mailbox.org ([80.241.60.212])
+	id 1htYp8-0000jM-0L; Fri, 02 Aug 2019 14:46:26 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htYlf-0007Qc-Up
- for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 14:42:54 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 59AD050A42;
- Fri,  2 Aug 2019 16:42:49 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
- [80.241.56.117]) (amavisd-new, port 10030)
- with ESMTP id M3vDIM5AgINJ; Fri,  2 Aug 2019 16:42:42 +0200 (CEST)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-References: <20190723133717.20010-1-ynezz@true.cz>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <8646063f-e4eb-f32f-381e-6fa2a847d0f8@hauke-m.de>
-Date: Fri, 2 Aug 2019 16:42:24 +0200
+ id 1htYoz-0000iu-FP
+ for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 14:46:20 +0000
+Received: from buildfff.adridolf.com ([188.193.174.123]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MPoPd-1hh8dS13op-00Mqsu for <openwrt-devel@lists.openwrt.org>; Fri, 02
+ Aug 2019 16:46:13 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  2 Aug 2019 16:46:10 +0200
+Message-Id: <20190802144610.1229-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20190723133717.20010-1-ynezz@true.cz>
+X-Provags-ID: V03:K1:ViJqXCxsBUw24S+7u8/J2bRSNplTuoKiC8mnAKZewNRfdV+fo+k
+ 6cRTCk2PXnK+HL9+85ibz3roNSKb5d9hxyYY9iikJOk6S2c+Bm/lBo780lT4L/t8KyIFFdF
+ Us/JxbfPVGT4nQBpK2R8OwDciwXJzeXlHh7vDjcBUMEwsk/e0nACRtON18q/t/MHohHwbTb
+ 4polmgrGlo3PU8623NSVA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:3lCR9C35Nbs=:aBO/YSAZVs2UZzmKfJ/4sK
+ 6HCoTllC26Ekr4aeQFIC3Ak8siqj3e2jLNyDFZmx3cJ2FBFlJJJLX2ptgjfwVRuF63ZXDlDQb
+ o9JPdXQ7wBc/3kI42jOD/wXzlPaSV+J3mM7i10Fc+DhT8juAZ0tlr3KYoNaY7JTz07q9HHDuZ
+ Nwx2NzVn/X2grXMpmDMmtsjtDfs9IROfrgGr+uVu5Yii296GvKZ2QkKFhpHHvmk3tMyVm4bad
+ zQJhDbws8WJqRu0kM41DlnSkXqbneio9lmL28BG4bjUuZilWWGgy7T9p2YOR03eG2XkciLOu3
+ dPXGoqWaEmdPlFJvp12/0PKD52JnKOxqrkdgpo1oJU45nahsAvBey8kQlhxIYh/FU1hhHITq2
+ omvNXmUUgamdK2OPAJP3dwUvUc7SbxND6sQitLu5+bLMKwBpGvB1NEb4CSP6h4T0rNc+YNEVT
+ p7PO8QISjOHMy4/EGxnwsh9cotASodCfQphdKMSRZpp0EvJAnMmVeOuda3YGdSZ8gVm3d54OG
+ Cwh5S02sEcYCnutwEIJtC4DHINdNh4WWevXjaC5YuQeD4nFoeLe7A6vSfQU8Lf14oO5T7G1PR
+ CQYH31T0OBzuYMHxdDka1X+zoED1P0LBLr9hxk9AD/AaOcF7q+Ib+8rQTvwIXlH/IAAqWH+qF
+ mHafbYdp5gFir9yEKJBpwXlNzqlJHJU2WY5J0rzt9HSTIaVeaD9aNC+Nr3/6JVYsSfWSZ542y
+ yqdBlolvKLAGuxv+DgLuKcTKKrLMr9BAXWquWf7RGu5Bm0lsPBGsG0Yu9qg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_074252_897800_0CC68BFA 
-X-CRM114-Status: GOOD (  14.32  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190802_074617_970844_B3FF8435 
+X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.212 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] base-files: make USE_PROCD=1 default
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH] ath79: convert devices to interrupt-driven
+ gpio-keys
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,89 +76,810 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1468602155805391981=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============1468602155805391981==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="Mixg778XohoGYpJZbavVQTTV5Is7gcY0u"
+This converts all remaining devices to use interrupt-driven
+gpio-keys compatible instead of gpio-keys-polled.
+The poll-interval is removed.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Mixg778XohoGYpJZbavVQTTV5Is7gcY0u
-Content-Type: multipart/mixed; boundary="UtCkOg8azwpfPp3f1xhmEZQT8aKF9tvk0";
- protected-headers="v1"
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-Message-ID: <8646063f-e4eb-f32f-381e-6fa2a847d0f8@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] base-files: make USE_PROCD=1 default
-References: <20190723133717.20010-1-ynezz@true.cz>
-In-Reply-To: <20190723133717.20010-1-ynezz@true.cz>
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/ath79/dts/ar1022_iodata_wn-ag300dgr.dts         | 3 +--
+ target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts      | 3 +--
+ target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts           | 3 +--
+ target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts             | 3 +--
+ target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi        | 3 +--
+ target/linux/ath79/dts/ar7240_buffalo_whr-g301n.dts          | 3 +--
+ target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi         | 3 +--
+ target/linux/ath79/dts/ar7240_tplink_tl-wr74xn-v1.dtsi       | 3 +--
+ target/linux/ath79/dts/ar7241_tplink.dtsi                    | 3 +--
+ target/linux/ath79/dts/ar7241_tplink_tl-wr842n-v1.dts        | 3 +--
+ target/linux/ath79/dts/ar7241_ubnt_unifi.dts                 | 4 ++--
+ target/linux/ath79/dts/ar7241_ubnt_xm.dtsi                   | 4 ++--
+ target/linux/ath79/dts/ar7242_avm_fritz300e.dts              | 3 +--
+ target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi           | 3 +--
+ target/linux/ath79/dts/ar7242_buffalo_wzr-hp-g302h-a1a0.dts  | 3 +--
+ target/linux/ath79/dts/ar7242_tplink_tl-wr2543-v1.dts        | 3 +--
+ target/linux/ath79/dts/ar9330_glinet_gl-ar150.dts            | 3 +--
+ target/linux/ath79/dts/ar9330_pqi_air-pen.dts                | 3 +--
+ target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts     | 3 +--
+ target/linux/ath79/dts/ar9331_etactica_eg200.dts             | 3 +--
+ target/linux/ath79/dts/ar9331_pisen_wmm003n.dts              | 3 +--
+ target/linux/ath79/dts/ar9331_tplink_tl-mr3040-v2.dts        | 3 +--
+ target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi | 3 +--
+ target/linux/ath79/dts/ar9331_tplink_tl-wr710n-v1.dts        | 3 +--
+ target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi      | 3 +--
+ target/linux/ath79/dts/ar9341_pcs_cr3000.dts                 | 3 +--
+ target/linux/ath79/dts/ar9341_tplink_tl-wr841-v8.dts         | 3 +--
+ target/linux/ath79/dts/ar9341_tplink_tl-wr842n-v2.dts        | 3 +--
+ target/linux/ath79/dts/ar9342_iodata_etg3-r.dts              | 3 +--
+ target/linux/ath79/dts/ar9344_comfast_cf-e120a-v3.dts        | 3 +--
+ target/linux/ath79/dts/ar9344_ocedo_raccoon.dts              | 3 +--
+ target/linux/ath79/dts/ar9344_pcs_cap324.dts                 | 3 +--
+ target/linux/ath79/dts/ar9344_pcs_cr5000.dts                 | 3 +--
+ target/linux/ath79/dts/ar9344_tplink_tl-wdr4300.dtsi         | 3 +--
+ target/linux/ath79/dts/ar9344_winchannel_wb2000.dts          | 3 +--
+ target/linux/ath79/dts/qca9531_comfast_cf-e5.dts             | 3 +--
+ target/linux/ath79/dts/qca9531_engenius_ews511ap.dts         | 3 +--
+ target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi         | 4 ++--
+ target/linux/ath79/dts/qca9531_glinet_gl-x750.dts            | 3 +--
+ target/linux/ath79/dts/qca9533_comfast_cf-e110n-v2.dts       | 3 +--
+ target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi            | 3 +--
+ target/linux/ath79/dts/qca9557_buffalo_bhr-4grv2.dts         | 3 +--
+ target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi         | 3 +--
+ target/linux/ath79/dts/qca9558_engenius_epg5000.dts          | 3 +--
+ target/linux/ath79/dts/qca9558_ocedo_koala.dts               | 3 +--
+ target/linux/ath79/dts/qca9558_openmesh_om5p-ac-v2.dts       | 3 +--
+ target/linux/ath79/dts/qca9561_avm_fritz4020.dts             | 3 +--
+ target/linux/ath79/dts/qca9561_tplink_archer-c5x.dtsi        | 3 +--
+ target/linux/ath79/dts/qca9561_xiaomi_mi-router-4q.dts       | 3 +--
+ target/linux/ath79/dts/qca9563_dlink_dir-859-a1.dts          | 3 +--
+ target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts          | 4 ++--
+ target/linux/ath79/dts/qca9563_phicomm_k2t.dts               | 3 +--
+ 52 files changed, 56 insertions(+), 104 deletions(-)
 
---UtCkOg8azwpfPp3f1xhmEZQT8aKF9tvk0
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+diff --git a/target/linux/ath79/dts/ar1022_iodata_wn-ag300dgr.dts b/target/linux/ath79/dts/ar1022_iodata_wn-ag300dgr.dts
+index 5ad8196a15..64f471649e 100644
+--- a/target/linux/ath79/dts/ar1022_iodata_wn-ag300dgr.dts
++++ b/target/linux/ath79/dts/ar1022_iodata_wn-ag300dgr.dts
+@@ -55,8 +55,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		eco {
+ 			label = "eco";
+diff --git a/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts b/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
+index df22eb8dc4..f51bc0f771 100644
+--- a/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
++++ b/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
+@@ -81,8 +81,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+diff --git a/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts b/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
+index da19921973..87ad6e914c 100644
+--- a/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
++++ b/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
+@@ -81,8 +81,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts b/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts
+index 76f140fa55..8cd1268fd8 100644
+--- a/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts
++++ b/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts
+@@ -53,8 +53,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		sw1 {
+ 			label = "sw1";
+diff --git a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
+index 6e4361f10f..f21ffecc05 100644
+--- a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
++++ b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
+@@ -35,8 +35,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		wps {
+ 			label = "sw4";
+diff --git a/target/linux/ath79/dts/ar7240_buffalo_whr-g301n.dts b/target/linux/ath79/dts/ar7240_buffalo_whr-g301n.dts
+index 042219b234..fcd17b8d13 100644
+--- a/target/linux/ath79/dts/ar7240_buffalo_whr-g301n.dts
++++ b/target/linux/ath79/dts/ar7240_buffalo_whr-g301n.dts
+@@ -17,8 +17,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		router_on {
+ 			label = "router_on";
+diff --git a/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi b/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
+index 8e934429a3..7b5f0ca70b 100644
+--- a/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
++++ b/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
+@@ -15,8 +15,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar7240_tplink_tl-wr74xn-v1.dtsi b/target/linux/ath79/dts/ar7240_tplink_tl-wr74xn-v1.dtsi
+index b7db74d937..c4e10d9729 100644
+--- a/target/linux/ath79/dts/ar7240_tplink_tl-wr74xn-v1.dtsi
++++ b/target/linux/ath79/dts/ar7240_tplink_tl-wr74xn-v1.dtsi
+@@ -14,8 +14,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar7241_tplink.dtsi b/target/linux/ath79/dts/ar7241_tplink.dtsi
+index fa6ba71925..1433d7c6a1 100644
+--- a/target/linux/ath79/dts/ar7241_tplink.dtsi
++++ b/target/linux/ath79/dts/ar7241_tplink.dtsi
+@@ -14,8 +14,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar7241_tplink_tl-wr842n-v1.dts b/target/linux/ath79/dts/ar7241_tplink_tl-wr842n-v1.dts
+index 282446b1e1..bf11340a67 100644
+--- a/target/linux/ath79/dts/ar7241_tplink_tl-wr842n-v1.dts
++++ b/target/linux/ath79/dts/ar7241_tplink_tl-wr842n-v1.dts
+@@ -18,8 +18,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		rfkill {
+ 			label = "rfkill";
+diff --git a/target/linux/ath79/dts/ar7241_ubnt_unifi.dts b/target/linux/ath79/dts/ar7241_ubnt_unifi.dts
+index 27aec88cca..b8228c8982 100644
+--- a/target/linux/ath79/dts/ar7241_ubnt_unifi.dts
++++ b/target/linux/ath79/dts/ar7241_ubnt_unifi.dts
+@@ -24,8 +24,8 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
++
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+ 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi b/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
+index 5466575229..5aa05c00cf 100644
+--- a/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
++++ b/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
+@@ -16,8 +16,8 @@
+ 	};
+ */
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
++
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+ 			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+diff --git a/target/linux/ath79/dts/ar7242_avm_fritz300e.dts b/target/linux/ath79/dts/ar7242_avm_fritz300e.dts
+index 3621714d9d..acda2213ee 100644
+--- a/target/linux/ath79/dts/ar7242_avm_fritz300e.dts
++++ b/target/linux/ath79/dts/ar7242_avm_fritz300e.dts
+@@ -18,8 +18,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		wps {
+ 			label = "wps";
+diff --git a/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi b/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi
+index 70ce41b84d..3b5a4dd13d 100644
+--- a/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi
++++ b/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi
+@@ -20,8 +20,7 @@
+ 	};
+ 
+ 	keys: keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		usb {
+ 			label = "usb";
+diff --git a/target/linux/ath79/dts/ar7242_buffalo_wzr-hp-g302h-a1a0.dts b/target/linux/ath79/dts/ar7242_buffalo_wzr-hp-g302h-a1a0.dts
+index 97bfd0f842..8ac4df2194 100644
+--- a/target/linux/ath79/dts/ar7242_buffalo_wzr-hp-g302h-a1a0.dts
++++ b/target/linux/ath79/dts/ar7242_buffalo_wzr-hp-g302h-a1a0.dts
+@@ -23,8 +23,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar7242_tplink_tl-wr2543-v1.dts b/target/linux/ath79/dts/ar7242_tplink_tl-wr2543-v1.dts
+index c42207e6cf..7a7790c1cb 100644
+--- a/target/linux/ath79/dts/ar7242_tplink_tl-wr2543-v1.dts
++++ b/target/linux/ath79/dts/ar7242_tplink_tl-wr2543-v1.dts
+@@ -28,8 +28,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9330_glinet_gl-ar150.dts b/target/linux/ath79/dts/ar9330_glinet_gl-ar150.dts
+index 76f6e80236..92f900f305 100644
+--- a/target/linux/ath79/dts/ar9330_glinet_gl-ar150.dts
++++ b/target/linux/ath79/dts/ar9330_glinet_gl-ar150.dts
+@@ -38,8 +38,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		manual {
+ 			label = "manual";
+diff --git a/target/linux/ath79/dts/ar9330_pqi_air-pen.dts b/target/linux/ath79/dts/ar9330_pqi_air-pen.dts
+index 06f728b267..ffb28c7417 100644
+--- a/target/linux/ath79/dts/ar9330_pqi_air-pen.dts
++++ b/target/linux/ath79/dts/ar9330_pqi_air-pen.dts
+@@ -33,8 +33,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		wps {
+ 			label = "wps";
+diff --git a/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts b/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
+index d0e0169f1b..311a506b5d 100644
+--- a/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
++++ b/target/linux/ath79/dts/ar9331_embeddedwireless_dorin.dts
+@@ -28,8 +28,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		wps {
+ 			label = "wps";
+diff --git a/target/linux/ath79/dts/ar9331_etactica_eg200.dts b/target/linux/ath79/dts/ar9331_etactica_eg200.dts
+index d18a239d32..721e676ed7 100644
+--- a/target/linux/ath79/dts/ar9331_etactica_eg200.dts
++++ b/target/linux/ath79/dts/ar9331_etactica_eg200.dts
+@@ -15,8 +15,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <50>;
++		compatible = "gpio-keys";
+ 
+ 		restore {
+ 			linux,code = <KEY_WPS_BUTTON>;
+diff --git a/target/linux/ath79/dts/ar9331_pisen_wmm003n.dts b/target/linux/ath79/dts/ar9331_pisen_wmm003n.dts
+index b3bc2e4c45..6fb11545ad 100644
+--- a/target/linux/ath79/dts/ar9331_pisen_wmm003n.dts
++++ b/target/linux/ath79/dts/ar9331_pisen_wmm003n.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9331_tplink_tl-mr3040-v2.dts b/target/linux/ath79/dts/ar9331_tplink_tl-mr3040-v2.dts
+index ebf4d4485f..a970d9920f 100644
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-mr3040-v2.dts
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-mr3040-v2.dts
+@@ -40,8 +40,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi b/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
+index ffd3d71a62..f395d82e93 100644
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
+@@ -16,8 +16,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9331_tplink_tl-wr710n-v1.dts b/target/linux/ath79/dts/ar9331_tplink_tl-wr710n-v1.dts
+index 056e9fa512..9a57ae82d9 100644
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-wr710n-v1.dts
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-wr710n-v1.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi b/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi
+index e4b59f1591..1b763153a8 100644
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9341_pcs_cr3000.dts b/target/linux/ath79/dts/ar9341_pcs_cr3000.dts
+index 9a0b084a72..79611a687d 100644
+--- a/target/linux/ath79/dts/ar9341_pcs_cr3000.dts
++++ b/target/linux/ath79/dts/ar9341_pcs_cr3000.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+diff --git a/target/linux/ath79/dts/ar9341_tplink_tl-wr841-v8.dts b/target/linux/ath79/dts/ar9341_tplink_tl-wr841-v8.dts
+index ec89be5318..3f47cd35c1 100644
+--- a/target/linux/ath79/dts/ar9341_tplink_tl-wr841-v8.dts
++++ b/target/linux/ath79/dts/ar9341_tplink_tl-wr841-v8.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+diff --git a/target/linux/ath79/dts/ar9341_tplink_tl-wr842n-v2.dts b/target/linux/ath79/dts/ar9341_tplink_tl-wr842n-v2.dts
+index c7a251cbf1..4d223c915a 100644
+--- a/target/linux/ath79/dts/ar9341_tplink_tl-wr842n-v2.dts
++++ b/target/linux/ath79/dts/ar9341_tplink_tl-wr842n-v2.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+diff --git a/target/linux/ath79/dts/ar9342_iodata_etg3-r.dts b/target/linux/ath79/dts/ar9342_iodata_etg3-r.dts
+index bd2489aa28..5daa06711b 100644
+--- a/target/linux/ath79/dts/ar9342_iodata_etg3-r.dts
++++ b/target/linux/ath79/dts/ar9342_iodata_etg3-r.dts
+@@ -33,8 +33,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9344_comfast_cf-e120a-v3.dts b/target/linux/ath79/dts/ar9344_comfast_cf-e120a-v3.dts
+index b0fdce77a6..632f5962db 100644
+--- a/target/linux/ath79/dts/ar9344_comfast_cf-e120a-v3.dts
++++ b/target/linux/ath79/dts/ar9344_comfast_cf-e120a-v3.dts
+@@ -61,8 +61,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts b/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts
+index 812da3dea5..9e3177acae 100644
+--- a/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts
++++ b/target/linux/ath79/dts/ar9344_ocedo_raccoon.dts
+@@ -53,8 +53,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+diff --git a/target/linux/ath79/dts/ar9344_pcs_cap324.dts b/target/linux/ath79/dts/ar9344_pcs_cap324.dts
+index 7a211e9088..390beebab5 100644
+--- a/target/linux/ath79/dts/ar9344_pcs_cap324.dts
++++ b/target/linux/ath79/dts/ar9344_pcs_cap324.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+diff --git a/target/linux/ath79/dts/ar9344_pcs_cr5000.dts b/target/linux/ath79/dts/ar9344_pcs_cr5000.dts
+index 0b4a0ea374..211e339f30 100644
+--- a/target/linux/ath79/dts/ar9344_pcs_cr5000.dts
++++ b/target/linux/ath79/dts/ar9344_pcs_cr5000.dts
+@@ -19,8 +19,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+diff --git a/target/linux/ath79/dts/ar9344_tplink_tl-wdr4300.dtsi b/target/linux/ath79/dts/ar9344_tplink_tl-wdr4300.dtsi
+index 6be197c0cf..b600b1f6e0 100644
+--- a/target/linux/ath79/dts/ar9344_tplink_tl-wdr4300.dtsi
++++ b/target/linux/ath79/dts/ar9344_tplink_tl-wdr4300.dtsi
+@@ -59,8 +59,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+diff --git a/target/linux/ath79/dts/ar9344_winchannel_wb2000.dts b/target/linux/ath79/dts/ar9344_winchannel_wb2000.dts
+index 6895a22e12..4ee3ace829 100644
+--- a/target/linux/ath79/dts/ar9344_winchannel_wb2000.dts
++++ b/target/linux/ath79/dts/ar9344_winchannel_wb2000.dts
+@@ -59,8 +59,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <50>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+diff --git a/target/linux/ath79/dts/qca9531_comfast_cf-e5.dts b/target/linux/ath79/dts/qca9531_comfast_cf-e5.dts
+index c181b32aa6..a71f333fa6 100644
+--- a/target/linux/ath79/dts/qca9531_comfast_cf-e5.dts
++++ b/target/linux/ath79/dts/qca9531_comfast_cf-e5.dts
+@@ -11,8 +11,7 @@
+ 	model = "COMFAST CF-E5/E7";
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		button0 {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/qca9531_engenius_ews511ap.dts b/target/linux/ath79/dts/qca9531_engenius_ews511ap.dts
+index 4e0ae73d0d..2ece81e0c9 100644
+--- a/target/linux/ath79/dts/qca9531_engenius_ews511ap.dts
++++ b/target/linux/ath79/dts/qca9531_engenius_ews511ap.dts
+@@ -11,9 +11,8 @@
+ 	model = "EnGenius EWS511AP";
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
++		compatible = "gpio-keys";
+ 
+-		poll-interval = <20>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+ 
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi b/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi
+index 8b127ed1d8..4e5428b4c1 100644
+--- a/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi
+@@ -14,8 +14,8 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
++
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+ 
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-x750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-x750.dts
+index ddaf7709b7..de28f6c3f0 100644
+--- a/target/linux/ath79/dts/qca9531_glinet_gl-x750.dts
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-x750.dts
+@@ -11,9 +11,8 @@
+ 	model = "GL.iNet GL-X750";
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
++		compatible = "gpio-keys";
+ 
+-		poll-interval = <20>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+ 
+diff --git a/target/linux/ath79/dts/qca9533_comfast_cf-e110n-v2.dts b/target/linux/ath79/dts/qca9533_comfast_cf-e110n-v2.dts
+index 4bada93452..d6eef42f3f 100644
+--- a/target/linux/ath79/dts/qca9533_comfast_cf-e110n-v2.dts
++++ b/target/linux/ath79/dts/qca9533_comfast_cf-e110n-v2.dts
+@@ -65,8 +65,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi b/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi
+index f86ff30fc7..5f15cae7a0 100644
+--- a/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi
++++ b/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi
+@@ -48,8 +48,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		reset_button {
+ 			label = "Reset button";
+diff --git a/target/linux/ath79/dts/qca9557_buffalo_bhr-4grv2.dts b/target/linux/ath79/dts/qca9557_buffalo_bhr-4grv2.dts
+index 995ecb3b73..fc5df53fa9 100644
+--- a/target/linux/ath79/dts/qca9557_buffalo_bhr-4grv2.dts
++++ b/target/linux/ath79/dts/qca9557_buffalo_bhr-4grv2.dts
+@@ -47,8 +47,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi b/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi
+index 86b97437ea..0f7838fd56 100644
+--- a/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi
++++ b/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi
+@@ -51,8 +51,7 @@
+ 	};
+ 
+ 	keys: keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		eco {
+ 			label = "eco";
+diff --git a/target/linux/ath79/dts/qca9558_engenius_epg5000.dts b/target/linux/ath79/dts/qca9558_engenius_epg5000.dts
+index 6179150fdb..9545a85d62 100644
+--- a/target/linux/ath79/dts/qca9558_engenius_epg5000.dts
++++ b/target/linux/ath79/dts/qca9558_engenius_epg5000.dts
+@@ -54,8 +54,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/qca9558_ocedo_koala.dts b/target/linux/ath79/dts/qca9558_ocedo_koala.dts
+index a80155b08c..b5899b6b16 100644
+--- a/target/linux/ath79/dts/qca9558_ocedo_koala.dts
++++ b/target/linux/ath79/dts/qca9558_ocedo_koala.dts
+@@ -49,8 +49,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/qca9558_openmesh_om5p-ac-v2.dts b/target/linux/ath79/dts/qca9558_openmesh_om5p-ac-v2.dts
+index b6dc43fbfc..7d7433d44e 100644
+--- a/target/linux/ath79/dts/qca9558_openmesh_om5p-ac-v2.dts
++++ b/target/linux/ath79/dts/qca9558_openmesh_om5p-ac-v2.dts
+@@ -42,8 +42,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		button0 {
+ 			label = "reset";
+diff --git a/target/linux/ath79/dts/qca9561_avm_fritz4020.dts b/target/linux/ath79/dts/qca9561_avm_fritz4020.dts
+index e98d6688d1..5a850c7064 100644
+--- a/target/linux/ath79/dts/qca9561_avm_fritz4020.dts
++++ b/target/linux/ath79/dts/qca9561_avm_fritz4020.dts
+@@ -84,8 +84,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		wps_button {
+ 			label = "WPS button";
+diff --git a/target/linux/ath79/dts/qca9561_tplink_archer-c5x.dtsi b/target/linux/ath79/dts/qca9561_tplink_archer-c5x.dtsi
+index 6d32fa3fc4..75777149a5 100644
+--- a/target/linux/ath79/dts/qca9561_tplink_archer-c5x.dtsi
++++ b/target/linux/ath79/dts/qca9561_tplink_archer-c5x.dtsi
+@@ -33,8 +33,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		wps_button {
+ 			label = "WPS button";
+diff --git a/target/linux/ath79/dts/qca9561_xiaomi_mi-router-4q.dts b/target/linux/ath79/dts/qca9561_xiaomi_mi-router-4q.dts
+index 8b8818c82f..e4c737b8ff 100644
+--- a/target/linux/ath79/dts/qca9561_xiaomi_mi-router-4q.dts
++++ b/target/linux/ath79/dts/qca9561_xiaomi_mi-router-4q.dts
+@@ -22,8 +22,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <100>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			label = "Reset button";
+diff --git a/target/linux/ath79/dts/qca9563_dlink_dir-859-a1.dts b/target/linux/ath79/dts/qca9563_dlink_dir-859-a1.dts
+index 8bd9067afa..a17d9f263a 100644
+--- a/target/linux/ath79/dts/qca9563_dlink_dir-859-a1.dts
++++ b/target/linux/ath79/dts/qca9563_dlink_dir-859-a1.dts
+@@ -47,8 +47,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		wps {
+ 			linux,code = <KEY_RESTART>;
+diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts
+index 0145a24fba..24198e8043 100644
+--- a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts
++++ b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dts
+@@ -22,8 +22,8 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
++
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&jtag_disable_pins>;
+ 
+diff --git a/target/linux/ath79/dts/qca9563_phicomm_k2t.dts b/target/linux/ath79/dts/qca9563_phicomm_k2t.dts
+index d819a76fd2..cb5c01b01c 100644
+--- a/target/linux/ath79/dts/qca9563_phicomm_k2t.dts
++++ b/target/linux/ath79/dts/qca9563_phicomm_k2t.dts
+@@ -41,8 +41,7 @@
+ 	};
+ 
+ 	keys {
+-		compatible = "gpio-keys-polled";
+-		poll-interval = <20>;
++		compatible = "gpio-keys";
+ 
+ 		reset {
+ 			linux,code = <KEY_RESTART>;
+-- 
+2.20.1
 
-On 7/23/19 3:37 PM, Petr =C5=A0tetiar wrote:
-> Transition period for init script migration was long enough, let's
-> make USE_PROCD=3D1 default now so there's enough time to convert the
-> remaining services/init scripts for the next release.
->=20
-> Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
-> ---
->  package/base-files/files/etc/rc.common | 113 ++++++++++---------------=
-
->  1 file changed, 47 insertions(+), 66 deletions(-)
->=20
-
-Do you know how many packages in the package feed and the main
-repository are still not using procd?
-
-External repositories, not the package feed, will probably be affected
-most, but I think we do not have to care and there were many years to
-convert.
-
-Acked-by: Hauke Mehrtens <hauke@hauke-m.de>
-
-Hauke
-
-
---UtCkOg8azwpfPp3f1xhmEZQT8aKF9tvk0--
-
---Mixg778XohoGYpJZbavVQTTV5Is7gcY0u
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl1ES9EACgkQ8bdnhZyy
-68c1ZwgAr6x2w+O7Cb8vcYPCF4T80A9DjztaIQy1XsnGZxUjSwMN3cewMilvGPmV
-trR4luqMTCSZr3zcXDg3XjZgZuQ8cxlu5k3zWMBB1oHMjd52ECrtdVJAt0dpBYwT
-PgLny0I9r4p+t5z5lqS3qK3H1t0/7n5aOQZOokQx5EPTjtysLfxfahDqT/pMx0ZQ
-okrueh9Qwh8B0HTtrijDtZEYlf3kh10UdCqcw60MauIvbZ+B4aUs9p97PMlQmmtg
-DjA/XhdBjyOsJSoacQ0X0ibq+kOJZ7iO2Hnh6NDzVIVDQrochJfzASNN5vJ52N6W
-/UVYsFgfklBhHoB7+kZLugmPD8imUw==
-=BdFA
------END PGP SIGNATURE-----
-
---Mixg778XohoGYpJZbavVQTTV5Is7gcY0u--
-
-
---===============1468602155805391981==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1468602155805391981==--
-

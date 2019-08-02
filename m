@@ -2,58 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B5BB801E0
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 22:41:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C091E80260
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 23:59:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bABreXbY/9St1ryalBnjmTSB+y3nPBb4GID4kTlVegg=; b=utDIv7UTulztMsYFFsFsZj5sE
-	1zZdQAddc4jQVtq1wyAcjXKpXqE9YGg+gtUVsasFMGrVVAunur+oxO62FnQzOcSINC+L+7Jpq2+dk
-	WeICFmUfOh7Ig4aYy1LEXKA07MJn7AcJKFnwq5SF//tsWm9BhqCPwltblWhOmWvPUYRHtBaxk0dzZ
-	pQMCOC5QwzLH9g+awtH2wUdjCZInBLXHTuSCs0R1PIGF0bkFv8Wz0n/h5G7UQp5rczj2MOONTgDWG
-	UyWYrsP9iLxU9uy/pghQXsgOW2x5aNBbYSHSmQIZ3m5b0nte1th7Xk0GpcXMJKns9iKYPzvJPABEZ
-	x+X//TkkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dsNPnJS1TKgMWeVJsc5QClKkt4mdsBwfj2uNCRipSDY=; b=b0C8U/b/f6c5pF
+	f/TP394Uctm5jFIELERgBRdeUpqPGRVcrQn1PV8+TdWebRkeFmNOX5ifkLeP/JHVpGeL5dqlWLPhT
+	bFFBDUU9xwsWhNhtueX5SFOeMsIP33UwXl3IOPEilcZQvNbGv5xQvq8v3oYFprLS0wjAh9ocZNOIS
+	VlckklshECnfyzDzxEQgU98ndxBtty7c5lIOyiEez1kLjOCHKBYBwqa+gIFqSOR6rK1GJ9feUr/TH
+	0tpUta9Wh/mn+1RgiM/92ukkeQ8dqmyuJPFZxshpeeUVJyY1vQQFBY7PWMcjPeLDv5DPKMT5c2tDw
+	RYBiS5AXFzbw2QXoJ/6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hteMI-0008CJ-DH; Fri, 02 Aug 2019 20:41:02 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1htfaG-0001j7-3q; Fri, 02 Aug 2019 21:59:32 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hteM6-00081Z-J6
- for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 20:40:52 +0000
-Received: from [192.168.178.42] (dyndsl-095-033-090-082.ewe-ip-backbone.de
+ id 1htfa7-0001ic-Og
+ for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 21:59:25 +0000
+X-Originating-IP: 95.33.90.82
+Received: from reboot.fritz.box (dyndsl-095-033-090-082.ewe-ip-backbone.de
  [95.33.90.82]) (Authenticated sender: mail@aparcar.org)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 619F7240008;
- Fri,  2 Aug 2019 20:40:36 +0000 (UTC)
-To: Jeffery To <jeffery.to@gmail.com>, openwrt-devel@lists.openwrt.org
-References: <20190515123152.27834-1-jeffery.to@gmail.com>
- <CAJXyS=gU9aa_ZWj4DKk8K_KNRN4Ury__Si9U12vT=AHzUGnUAw@mail.gmail.com>
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 4DA9D40002;
+ Fri,  2 Aug 2019 21:59:06 +0000 (UTC)
 From: Paul Spooren <mail@aparcar.org>
-Openpgp: preference=signencrypt
-Message-ID: <61932cbe-c1f8-a3db-db27-d1890cee4f32@aparcar.org>
-Date: Fri, 2 Aug 2019 22:40:35 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  2 Aug 2019 23:58:27 +0200
+Message-Id: <20190802215826.21094-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <CAJXyS=gU9aa_ZWj4DKk8K_KNRN4Ury__Si9U12vT=AHzUGnUAw@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_134050_951349_C914819F 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20190802_145923_960757_7A0F4F06 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ low trust [217.70.183.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
-Subject: Re: [OpenWrt-Devel] [PATCH v2] build: include BUILD_VARIANT in
- PKG_BUILD_DIR
+Subject: [OpenWrt-Devel] [PATCH v2] procd: add daemon mode and remove pid 1
+ check
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,150 +59,79 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8217896719765630077=="
+Cc: John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============8217896719765630077==
-Content-Type: multipart/alternative;
- boundary="------------E5ACA9222CE2F6DD06797604"
-Content-Language: en-US
+Add arg -D to start procd in daemon mode. This allows running procd
+directly, not only via /init. Useful for CI environments to start
+services like ubus and netifd without needing the whole init process.
 
-This is a multi-part message in MIME format.
---------------E5ACA9222CE2F6DD06797604
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 7bit
+To make this work procd also spawns services when running on a different
+pid than 1, normal when started via terminal. Before it would only try
+to connect to an existing ubus instance.
 
-Hey,
+The -D arg handling was kindly created (with < 60 seconds RTT) by John,
+I just created the patch and removed pid checking.
 
-on commit 5e928acf22cdc956eabe6e4b2327b34eb0ee66da applying fails:
+CC: John Crispin <john@phrozen.org>
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+v2: added usage/help message
 
-error: patch failed: package/libs/ustream-ssl/Makefile:10
-error: package/libs/ustream-ssl/Makefile: patch does not apply
+ procd.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
-However removing the ustream-ssl part of the patch results in a working
-version for (at least) all three openvpn variants!
+diff --git a/procd.c b/procd.c
+index 3de6208..aaef4fe 100644
+--- a/procd.c
++++ b/procd.c
+@@ -35,6 +35,7 @@ static int usage(const char *prog)
+ 		"	-h <path>	run as hotplug daemon\n"
+ 		"	-d <level>	Enable debug messages\n"
+ 		"	-S		Print messages to stdout\n"
++		"	-D		Run procd as daemon process\n"
+ 		"\n", prog);
+ 	return 1;
+ }
+@@ -50,7 +51,7 @@ int main(int argc, char **argv)
+ 		unsetenv("DBGLVL");
+ 	}
+ 
+-	while ((ch = getopt(argc, argv, "d:s:h:S")) != -1) {
++	while ((ch = getopt(argc, argv, "d:s:h:SD")) != -1) {
+ 		switch (ch) {
+ 		case 'h':
+ 			return hotplug_run(optarg);
+@@ -63,6 +64,9 @@ int main(int argc, char **argv)
+ 		case 'S':
+ 			ulog_channels = ULOG_STDIO;
+ 			break;
++		case 'D':
++			daemon(1, 1);
++			break;
+ 		default:
+ 			return usage(argv[0]);
+ 		}
+@@ -74,10 +78,7 @@ int main(int argc, char **argv)
+ 	setsid();
+ 	uloop_init();
+ 	procd_signal();
+-	if (getpid() != 1)
+-		procd_connect_ubus();
+-	else
+-		procd_state_next();
++	procd_state_next();
+ 	uloop_run();
+ 	uloop_done();
+ 
+-- 
+2.20.1
 
-Best,
-Paul
-
-On 02.08.19 21:15, Jeffery To wrote:
-> On Wed, May 15, 2019 at 8:32 PM Jeffery To <jeffery.to@gmail.com
-> <mailto:jeffery.to@gmail.com>> wrote:
->
->     This changes the default PKG_BUILD_DIR to take BUILD_VARIANT into
->     account (if set), so that packages do not need to manually override
->     PKG_BUILD_DIR just to handle variants.
->
->     This also updates most base packages with variants to use the updated
->     default PKG_BUILD_DIR.
->
->     Signed-off-by: Jeffery To <jeffery.to@gmail.com
->     <mailto:jeffery.to@gmail.com>>
->     ---
->     v2: updated PKG_BUILD_DIR in include/kernel.mk <http://kernel.mk>,
->     removed undefines
->
->
-> Can someone take a look at this patch? (I have un-delegated it in
-> patchwork.)
->
-> Thanks,
-> Jeff
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---------------E5ACA9222CE2F6DD06797604
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 7bit
-
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <p><tt>Hey,</tt></p>
-    <p><tt>on commit 5e928acf22cdc956eabe6e4b2327b34eb0ee66da applying
-        fails:</tt></p>
-    <p>error: patch failed: package/libs/ustream-ssl/Makefile:10<br>
-      error: package/libs/ustream-ssl/Makefile: patch does not apply<br>
-    </p>
-    <p>However removing the ustream-ssl part of the patch results in a
-      working version for (at least) all three openvpn variants!</p>
-    <p>Best,<br>
-      Paul</p>
-    <div class="moz-cite-prefix">On 02.08.19 21:15, Jeffery To wrote:<br>
-    </div>
-    <blockquote type="cite"
-cite="mid:CAJXyS=gU9aa_ZWj4DKk8K_KNRN4Ury__Si9U12vT=AHzUGnUAw@mail.gmail.com">
-      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <div dir="ltr">
-        <div dir="ltr">On Wed, May 15, 2019 at 8:32 PM Jeffery To &lt;<a
-            href="mailto:jeffery.to@gmail.com" moz-do-not-send="true">jeffery.to@gmail.com</a>&gt;
-          wrote:<br>
-        </div>
-        <div class="gmail_quote">
-          <blockquote class="gmail_quote" style="margin:0px 0px 0px
-            0.8ex;border-left:1px solid
-            rgb(204,204,204);padding-left:1ex">This changes the default
-            PKG_BUILD_DIR to take BUILD_VARIANT into<br>
-            account (if set), so that packages do not need to manually
-            override<br>
-            PKG_BUILD_DIR just to handle variants.<br>
-            <br>
-            This also updates most base packages with variants to use
-            the updated<br>
-            default PKG_BUILD_DIR.<br>
-            <br>
-            Signed-off-by: Jeffery To &lt;<a
-              href="mailto:jeffery.to@gmail.com" target="_blank"
-              moz-do-not-send="true">jeffery.to@gmail.com</a>&gt;<br>
-            ---<br>
-            v2: updated PKG_BUILD_DIR in include/<a
-              href="http://kernel.mk" rel="noreferrer" target="_blank"
-              moz-do-not-send="true">kernel.mk</a>, removed undefines<br>
-          </blockquote>
-          <div><br>
-          </div>
-          <div>Can someone take a look at this patch? (I have
-            un-delegated it in patchwork.)</div>
-          <div><br>
-          </div>
-          <div>Thanks,</div>
-          <div>Jeff</div>
-          <div><br>
-          </div>
-        </div>
-      </div>
-      <br>
-      <fieldset class="mimeAttachmentHeader"></fieldset>
-      <pre class="moz-quote-pre" wrap="">_______________________________________________
-openwrt-devel mailing list
-<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
-<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
-</pre>
-    </blockquote>
-  </body>
-</html>
-
---------------E5ACA9222CE2F6DD06797604--
-
-
---===============8217896719765630077==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8217896719765630077==--
-

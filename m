@@ -2,142 +2,136 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D0397EFE1
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 11:08:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35F1B7F031
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 11:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mBOKcskKMWwlEsS2i4KM6qVl2CjAgQ1BkAhVi/HR9Ug=; b=SzPbfQRjCRMtMd
-	cjWcpIRnwSFtSYLznQpbkfikb4CPS+qInC4sfBEZTPKZ2GnBiF9ql3IZe8YERJDHsejwjDZKL1hXH
-	6SNZp+9CdF9eMZYF/WKq3FFTSn1W6Qif8GMEZTHZbXUlZ0tNoHvO/6nGTgeJoBZoMvjwJwssAqd0x
-	WpdZlg6T1Q6BsGSr2aT50HOJglJRMznTH6JGEPs4YmbBd5bW2YmNycxah69Sc7aHpXnU1E8ub7BXp
-	zdie2fB0yVFbOsYWKyY/T6VGTBhL/zcsqGd7QJAhlsNEzze37e/eaQGA7MUsARI/D1NinBDAhyy1s
-	Jh+lipplElq+UXKict4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=inaW2iy3IY3NgNVvLCvEdd01u1UL0yRnSl2mGk55TyI=; b=UJL
+	Q6ZgwRizzhI1oDupixqkmIB/VRBW4FZrrel2p/My3zRhYsovwllPBOOikSMmQaIRyvrIN5R17FYr3
+	OwtRhko67UzMUxbgO4Qzx9DvgM7mEG45OmFBIkAFwz+0HDC/1Yl3ykQnFW0LscVBu2T11ZpgldroQ
+	pWimvFQtGi1lqleN0HxG55U4/jr+8o+WVLteDUBZWQjPLELv1TxqFqGmO1HHIJ4NxEFPteazJPdfZ
+	rxzMm4VUK84EvwgNcEywsdya28ZY8pEvV5VLziWtGGKNVgkwb4eZBum8ATSnu7hZjwGvp581qxvxO
+	nxU9X5FVU+wE0cqTFVbaT5+HJRcvlUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htTXi-0000WN-DH; Fri, 02 Aug 2019 09:08:06 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTXR-0000WF-JK
- for openwrt-devel@bombadil.infradead.org; Fri, 02 Aug 2019 09:07:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=o8aXCaHVIFDeR7T1LnchrIb3DpAMKYIfeSV0/7fztKg=; b=bqqfgD0p/U8k23lFkTN0h45Jkt
- UlJ616NbEKbC4RSGCk7wA1J0sOSH8BPJMFqnWt7tGpKi+LMKroWjL8ixUC3xxwxHv2RInFWbtlwno
- Xfbu2llUF3IKj5bs/sw1RPViWkhR/sHEj6evWja0vNql6chWILWUT+Sr50jjDi1tQTLfrNz9lvPPo
- iegdBJltwP+lysfxV+/mKEhY6R1ed9Qx517sm3ur/MUi39a4e3sSn2OHhPzSU0wlfrZV9E6Pi6v1D
- fooFBteRPApawY7z280Es7JZ4g789lsXUnSI88DmHiFQJIpw4wBU6a5LVULYIsV3WKfMRBSwerg9d
- 6vCaTqwA==;
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htTXb-00071V-2M
- for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 09:08:01 +0000
-X-Originating-IP: 95.33.90.82
-Received: from reboot.fritz.box (dyndsl-095-033-090-082.ewe-ip-backbone.de
- [95.33.90.82]) (Authenticated sender: mail@aparcar.org)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id B459E2000E;
- Fri,  2 Aug 2019 09:07:09 +0000 (UTC)
-From: Paul Spooren <mail@aparcar.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri,  2 Aug 2019 11:06:56 +0200
-Message-Id: <20190802090656.14343-1-mail@aparcar.org>
-X-Mailer: git-send-email 2.20.1
+	id 1htThr-0004Lt-DI; Fri, 02 Aug 2019 09:18:35 +0000
+Date: Fri,  2 Aug 2019 09:15:05 GMT
+To: <openwrt-devel@lists.openwrt.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_100759_230858_C83A0468 
-X-CRM114-Status: GOOD (  11.16  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] procd: add daemon mode and remove pid 1
- check
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.13929.1564737508.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Kamil Adamec via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Kamil Adamec <kamil.adamec@automatics-control.eu>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] =?utf-8?b?RG9kYXRlxI1uw6kgemRyb2pl?=
+Content-Type: multipart/mixed; boundary="===============3690116836157103825=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Add arg -D to start procd in daemon mode. This allows running procd
-directly, not only via /init. Useful for CI environments to start
-services like ubus and netifd without needing the whole init process.
+--===============3690116836157103825==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-To make this work procd also spawns services when running on a different
-pid than 1, normal when started via terminal. Before it would only try
-to connect to an existing ubus instance.
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-The -D arg handling was kindly created (with < 60 seconds RTT) by John,
-I just created the patch and removed pid checking.
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============3690116836157103825==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-CC: John Crispin <john@phrozen.org>
-Signed-off-by: Paul Spooren <mail@aparcar.org>
----
- procd.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-diff --git a/procd.c b/procd.c
-index 3de6208..10b974b 100644
---- a/procd.c
-+++ b/procd.c
-@@ -50,7 +50,7 @@ int main(int argc, char **argv)
- 		unsetenv("DBGLVL");
- 	}
+Received: from mail.automatics-control.eu ([80.211.144.215])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1htThh-0004LN-As
+	for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 09:18:26 +0000
+Received: by mail.automatics-control.eu (Postfix, from userid 1001)
+	id 0DFFCA14D1; Fri,  2 Aug 2019 11:15:16 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+	d=automatics-control.eu; s=mail; t=1564737460;
+	bh=NjLcrs3cCMbbo+n0H6fjGJqdIYCaDUtkMzaQjEdJoS8=;
+	h=Date:From:To:Subject:From;
+	b=e8q4iscDAlJyZPK/TlJ1H5Mxy7BU9rK5Yz80mNeDbbpHzZZdhBYmAupP6DTMmjYYP
+	 3jH2mfk9Mk2sDkp5H59hAwLYPf4QG3FJ8JUYH0TOeRjVQTTQxsjlRkc6mF+RCvLrly
+	 cNic1TgcX//rszwOIwGS61rv0Q+xzgrbEDvwB9X4=
+Received: by mail.automatics-control.eu for <openwrt-devel@lists.openwrt.org>; Fri,  2 Aug 2019 09:15:05 GMT
+Message-ID: <20190802111207-0.1.d.xpp.0.jsc4p8x863@automatics-control.eu>
+Date: Fri,  2 Aug 2019 09:15:05 GMT
+From: "Kamil Adamec" <kamil.adamec@automatics-control.eu>
+To: <openwrt-devel@lists.openwrt.org>
+Subject: =?UTF-8?Q?Dodate=C4=8Dn=C3=A9_zdroje?=
+X-Mailer: mail.automatics-control.eu
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190802_021825_572844_762A2EDD 
+X-CRM114-Status: UNSURE (   0.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.1 (+)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (1.1 points)
  
--	while ((ch = getopt(argc, argv, "d:s:h:S")) != -1) {
-+	while ((ch = getopt(argc, argv, "d:s:h:SD")) != -1) {
- 		switch (ch) {
- 		case 'h':
- 			return hotplug_run(optarg);
-@@ -63,6 +63,9 @@ int main(int argc, char **argv)
- 		case 'S':
- 			ulog_channels = ULOG_STDIO;
- 			break;
-+		case 'D':
-+			daemon(1, 1);
-+			break;
- 		default:
- 			return usage(argv[0]);
- 		}
-@@ -74,10 +77,7 @@ int main(int argc, char **argv)
- 	setsid();
- 	uloop_init();
- 	procd_signal();
--	if (getpid() != 1)
--		procd_connect_ubus();
--	else
--		procd_state_next();
-+	procd_state_next();
- 	uloop_run();
- 	uloop_done();
- 
--- 
-2.20.1
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.9 SPF_HELO_SOFTFAIL      SPF: HELO does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+  0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 
+Dobr=C3=BD den!
+
+=C5=BDivnostn=C3=ADk=C5=AFm =C4=8Dasto stoj=C3=AD v cest=C4=9B k dosa=C5=BE=
+en=C3=AD =C3=BAsp=C4=9Bchu n=C3=ADzk=C3=A1 =C3=BArove=C5=88 provozn=C3=AD=
+ch zdroj=C5=AF na n=C3=A1kup materi=C3=A1lu, zbo=C5=BE=C3=AD nebo surovin=
+ z d=C5=AFvodu nap=C5=99. nezaplacen=C3=AD faktur (nezaplacen=C3=AD od do=
+davatel=C5=AF, prodlou=C5=BEen=C3=A1 splatnost apod.). V t=C3=A9to oblast=
+i jsme ji=C5=BE pomohli =C5=99ad=C4=9B firem, kter=C3=A9 mohly d=C3=ADky =
+z=C3=ADsk=C3=A1n=C3=AD n=C3=A1vratn=C3=A9ho financov=C3=A1n=C3=AD realizo=
+vat sv=C3=A9 kl=C3=AD=C4=8Dov=C3=A9 pl=C3=A1ny.
+
+Jsem partnerem mnoha spole=C4=8Dnost=C3=AD, jejich=C5=BE =C4=8Dinnost je =
+srovnateln=C3=A1 s tou Va=C5=A1=C3=AD a za kooperaci s n=C3=A1mi z=C3=ADs=
+k=C3=A1te bonus - rychl=C3=A9 splacen=C3=AD ve v=C3=BD=C5=A1i a=C5=BE 4 s=
+pl=C3=A1tek.
+
+Dovolte, abychom V=C3=A1s kontaktovali za =C3=BA=C4=8Delem proveden=C3=AD=
+ anal=C3=BDzy mo=C5=BEnost=C3=AD pomoci financov=C3=A1n=C3=AD. Kdy bych m=
+ohl zavolat?
+
+
+S pozdravem
+Kamil Adamec
+Account Manager
+www.automatics-control.eu
+
+
+--===============3690116836157103825==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3690116836157103825==--

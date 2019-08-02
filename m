@@ -2,87 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 496E0800CD
-	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 21:16:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 855778011C
+	for <lists+openwrt-devel@lfdr.de>; Fri,  2 Aug 2019 21:40:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7Osa2mPsScIuIFSEU/CDk85Wqa7QYYNAsT5VjLbcbuc=; b=VmrRAeK0QoCwvUtbWgH2r8vv4
-	KiBfkulRcMkSXuptC+wI+crIChTSvw9F7PjVeH1OAR10fGlbX4Bj8JtHzfqvpq6LgdrEeW/PCXjKy
-	TL0GxEuGNMC/SAE0+jjhvvAC6leDwnafWHfj1LwKRHWfQmTHJI493cfGcUZovn90fno7/6wTOlzVS
-	0qpfZvskY3EKuzxOazh4is7YldodGtlJHcS50+l7goOpWy7J8ktG+gujtXq7KhXlyyEXKe0bQVyG0
-	PevED6rMmfnefi5oISQyfRVVhsXZ16xVcuA+dVmfXGRgxBvhKGZt71yiWGbN9OOwKnveEYL3I6PJR
-	33MQ10xQw==;
+	 bh=XfYSyFnm/XnOFNtL5w8asX8VAEDg0s+v5v+72WXAtYU=; b=e8ubYZfV5i4acdBlD65dodiW0
+	CBUkiWN2OXdr/SW+adoKQFicEYYofzrmPkk+XQl9/N+B59kMXqKg/sCwJ+TlqC4Cy3mkUjWPmaf7Q
+	1vezdijjgBAxz1h1L/I6oJGW08Wcl/hIvZCruyOggObZqzg20rU2oc5ru0Y6q6gQSsK8R5AZmGBwn
+	9Y5bUiJjMLF/MElF86CoUbfVBH6kxSlHJUPn92rcbxW5H69EtAh1Ayzz2TQuFHTgXzx9lgiu72RzH
+	4g5mbYVgX8sTVEKTTb2B5rP2YCyepChkqBedNDt7aL8P9efnmlI11hEQAxa98x7Gr+AeqsA8DgZTJ
+	zD0FMA71A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htd2F-0004N0-Kd; Fri, 02 Aug 2019 19:16:15 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1htdPY-00034o-7U; Fri, 02 Aug 2019 19:40:20 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htd20-0004II-65
- for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 19:16:02 +0000
-Received: by mail-ua1-x943.google.com with SMTP id j2so3258176uaq.5
- for <openwrt-devel@lists.openwrt.org>; Fri, 02 Aug 2019 12:15:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=tQAVOr6+BDo8k8umg3BQIjiNU5WEu2NSlVGrQQprfoo=;
- b=sKJm30YoPTKghmG5GrwJxFLnoh+7UljXgukrM+sEIzKSlcuNG1VOZRCK1FAYYsG4BU
- dI62OpJKwylIQC3VQ91vhv0JJJyGe0XuQy6F3YYYOTzWJej3S4R+/l/XSFlpyamytOKz
- 8crG978Qzo/duQ1mnxi536Mkm3Imy4Xq0A++Iq1BRrcR5bKBob8mLuFeJfnixAQ86+l4
- ww/fqSfw5lEzj/Wwr2nFnCaWc7Es1qLFV7ukXUPQtzC6+BKb834k6MNJM+TkFkWxngxH
- MT6JX0HoEVwOjmllqZBth/7GSIfUTpEKJCGYGsvrbm3yMoPbn6yy2RwGJzkdvzaMX/v6
- h3cQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=tQAVOr6+BDo8k8umg3BQIjiNU5WEu2NSlVGrQQprfoo=;
- b=Tji5ycAJe0Q2+4Kju3+6waCpZiEjhXGcWWst0b0EuYs+dkrzp4wYi4owqfqIwpYjB5
- XtSOIYB+5ru0Y9RsmeMzGTAjgju9S6sFuPnYNHg/G1u0Thj/ieNt4YgKjhVcbmFfyPAg
- 1+/4h2JHeSlh60d64SZGWnV9t2HZaTwPSN6onEpJ9mtT0mBycppwl2N0lRqoeicfnA1j
- VUUgd4DJHpzzQhN5KvEqxvjrprr2m9MXruK5i56NM70AjGZ3zrOOwA0o6swNOYcfQZdh
- 7fTkyHrugArS2TtWrdChdYLYdkIkBgYLuPVDgEHeI+eAmkc5KaldwFH4RNcCv4yux/nF
- mnQQ==
-X-Gm-Message-State: APjAAAWE2atdLUBYmZY37O6cVv0rQsBuK7H75GF+dGxzkeUeXKdVOHJw
- 5UqE58B49xNROsDfTiSLH542PyCQ7OU2Vl12ScAd8w==
-X-Google-Smtp-Source: APXvYqyvdMHKqcJA9bMuGcEPr/kAFjiaTAt+55f+Ozcxku0OD51cTY0JVMSvzuJ0AmE4U8bFAKVaWbNZeVnjrL4gip4=
-X-Received: by 2002:ab0:67d6:: with SMTP id w22mr18747092uar.68.1564773358421; 
- Fri, 02 Aug 2019 12:15:58 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190515123152.27834-1-jeffery.to@gmail.com>
-In-Reply-To: <20190515123152.27834-1-jeffery.to@gmail.com>
-From: Jeffery To <jeffery.to@gmail.com>
-Date: Sat, 3 Aug 2019 03:15:47 +0800
-Message-ID: <CAJXyS=gU9aa_ZWj4DKk8K_KNRN4Ury__Si9U12vT=AHzUGnUAw@mail.gmail.com>
+ id 1htdPP-0002kL-BS
+ for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 19:40:13 +0000
+Received: from pd95fd255.dip0.t-ipconnect.de ([217.95.210.85]
+ helo=[192.168.45.104])
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>) id 1htdPI-0000dV-M9
+ for openwrt-devel@lists.openwrt.org; Fri, 02 Aug 2019 21:40:04 +0200
 To: openwrt-devel@lists.openwrt.org
+References: <20190723133717.20010-1-ynezz@true.cz>
+ <8646063f-e4eb-f32f-381e-6fa2a847d0f8@hauke-m.de>
+ <4d6009e6-090b-c513-aaa1-919dcd21a162@iki.fi>
+ <539D9517-E258-4906-978F-99241CCF11C4@darbyshire-bryant.me.uk>
+ <30819471-510c-d5f8-be64-4f4c1b1cbaf0@softart-ge.com>
+From: John Crispin <john@phrozen.org>
+Message-ID: <c1551aac-0f71-981d-ef01-d06e1e46fe9a@phrozen.org>
+Date: Fri, 2 Aug 2019 21:40:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <30819471-510c-d5f8-be64-4f4c1b1cbaf0@softart-ge.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_121600_539171_B6188A44 
-X-CRM114-Status: UNSURE (   7.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190802_124011_554886_402E31FF 
+X-CRM114-Status: GOOD (  25.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jeffery.to[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH v2] build: include BUILD_VARIANT in
- PKG_BUILD_DIR
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] base-files: make USE_PROCD=1 default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,74 +64,83 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1585525590472688703=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============1585525590472688703==
-Content-Type: multipart/alternative; boundary="0000000000002ecc11058f2730e0"
-
---0000000000002ecc11058f2730e0
-Content-Type: text/plain; charset="UTF-8"
-
-On Wed, May 15, 2019 at 8:32 PM Jeffery To <jeffery.to@gmail.com> wrote:
-
-> This changes the default PKG_BUILD_DIR to take BUILD_VARIANT into
-> account (if set), so that packages do not need to manually override
-> PKG_BUILD_DIR just to handle variants.
->
-> This also updates most base packages with variants to use the updated
-> default PKG_BUILD_DIR.
->
-> Signed-off-by: Jeffery To <jeffery.to@gmail.com>
-> ---
-> v2: updated PKG_BUILD_DIR in include/kernel.mk, removed undefines
->
-
-Can someone take a look at this patch? (I have un-delegated it in
-patchwork.)
-
-Thanks,
-Jeff
-
---0000000000002ecc11058f2730e0
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div dir=3D"ltr">On Wed, May 15, 2019 at 8:32 PM Jeffery T=
-o &lt;<a href=3D"mailto:jeffery.to@gmail.com">jeffery.to@gmail.com</a>&gt; =
-wrote:<br></div><div class=3D"gmail_quote"><blockquote class=3D"gmail_quote=
-" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);=
-padding-left:1ex">This changes the default PKG_BUILD_DIR to take BUILD_VARI=
-ANT into<br>
-account (if set), so that packages do not need to manually override<br>
-PKG_BUILD_DIR just to handle variants.<br>
-<br>
-This also updates most base packages with variants to use the updated<br>
-default PKG_BUILD_DIR.<br>
-<br>
-Signed-off-by: Jeffery To &lt;<a href=3D"mailto:jeffery.to@gmail.com" targe=
-t=3D"_blank">jeffery.to@gmail.com</a>&gt;<br>
----<br>
-v2: updated PKG_BUILD_DIR in include/<a href=3D"http://kernel.mk" rel=3D"no=
-referrer" target=3D"_blank">kernel.mk</a>, removed undefines<br></blockquot=
-e><div><br></div><div>Can someone take a look at this patch? (I have un-del=
-egated it in patchwork.)</div><div><br></div><div>Thanks,</div><div>Jeff</d=
-iv><div><br></div></div></div>
-
---0000000000002ecc11058f2730e0--
-
-
---===============1585525590472688703==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1585525590472688703==--
-
+SGksCgppZ25vcmluZyB0aGUgcmFudGluZyBhbmQgcHV0dGluZ8KgIHRoZSBlbmxpZ2h0ZW5pbmcg
+cGhpbGFudHJvcGhpYyAKY29tbWVudHMgYXNpZGUsIG9uIGEgcHVyZSB0ZWNobmljYWwgbGV2ZWws
+IGJlaW5nIHRoZSBhdXRob3Igb2YgcHJvY2QsIEkgCmRvbnQgdGhpbmsgdGhpcyBpcyBhIGdvb2Qg
+aWRlYS4gcHJvY2QgaXMgYW4gb3B0LWluIGZlYXR1cmUgZm9yIHRob3NlIAp0aGF0IHdhbnQgdG8g
+dXNlIGl0LiB0aGVyZSBoYXMgbmV2ZXIgYmVlbiBhIHJlcXVpcmVtZW50IHRvIG1ha2UgaXQgCmJh
+c2VsaW5lLiBVU0VfUFJPQ0Q9MSBpcyBvbmx5IGludGVuZGVkIGZvciB0aGUgb3dydCBzcGVjaWZp
+YyBjb3JlIApzZXJ2aWNlcyB0aGF0IHdhbnQgdG8gbWFrZSB1c2Ugb2YgdGhlIGFkdmFuY2VkIGZl
+YXR1cmVzLiBvd3J0IGlzIGEgbGludXggCnN5c3RlbSBhbmQgdGh1cyBzaG91bGQgYnkgZGVmYXVs
+dCBiZSBhYmxlIHRvIHJ1biBTWVNWIGluaXQgc3R5bGUgcmMuZCAKc2NyaXB0cy4gYW55dGhpbmcg
+ZWxzZSB3b3VsZCBiZSBhIHZlcnkgZGFyaW5nIHRoaW5nIHRvIGRvLiBUbyBiZSBob25lc3QgCkkg
+ZG9udCBldmVuIHVuZGVyc3RhbmQgdGhlIG1vdGl2YXRpb24gb2Ygd2FudGluZyB0byBtYWtlIHRo
+aXMgb3B0LW91dC4KCiDCoMKgwqAgSm9obgoKT24gMDIvMDgvMjAxOSAxODozOCwgUmVpbmVyIEth
+cmxzYmVyZyB3cm90ZToKPiBBbHRob3VnaCBub3QgYSBkZXZlbG9wZXIgb2Ygb3BlbndydCBpdHNl
+bGYsIGJ1dCBhIGhhcHB5ICg/KSB1c2VyLCBJIAo+IGhhdmUgdG8gYWdyZWUgdG8gdGhlIHN0YXRl
+bWVudCBiZWxvdy4KPgo+IFBST0NEPTEgZGVmYXVsdCBpcyBhIE5PR08gZm9yIG1lLgo+Cj4gU2lt
+cGxlIHJlYXNvbixhcyBtZW50aW9uZWQgYWxyZWFkeTogU29mdHdhcmUsIHdoaWNoIGlzIG5vdCBk
+b2N1bWVudGVkLCAKPiBkb2VzIG5vdCBleGlzdC4KPiBXaGljaCBpcyBhIHJlcXVpcmVtZW50LCB3
+ZSBoYWQgdG8gb2JleSB0byBhbHJlYWR5IGhhbGYgYSBjZW50dXJ5IGFnby4gCj4gV2hlbiBJIHdy
+b3RlIG15IGZpcnN0IEFzc2VtYmxlciBjb2RlLgo+Cj4gRm9yIG1lLCB0aGlzIGlzIGFub3RoZXIg
+c3RlcCBvZiBvcGVud3J0IGludG8gYmxvYXR3YXJlLCBhcyBpdCBiZWNvbWVzIAo+IG1vcmUgYW5k
+IG1vcmUgIm9iZnVzY2F0ZWQiLAo+IHRoZSBzaW1wbGUgdXNlciBsaWtlIG1lIG5vdCBnaXZpbmcg
+YW55IGlkZWEsIGhvdyBpdCBpcyBzdXBwb3NlZCB0byB3b3JrLgo+Cj4gV2hpY2ggYnJlYWtzIGFu
+b3RoZXIgb2xkIHByaW5jaXBsZSBvZiBzb2Z0d2FyZSBkZXZlbG9wbWVudDogRWdvbGVzcyAKPiBw
+cm9ncmFtbWluZy4KPiBOb3Qgb25seSB0aGUgY29kZXIgc2hvdWxkIHVuZGVyc3RhbmQsIGhvdyBp
+dCB3b3Jrcy4KPgo+IE9wZW4gU291cmNlIGlzIGhlYWRpbmcgaW50byBDbG9zZWQgU291cmNlLgo+
+IEJhY2sgdG8gdGhlIHJvb3RzLgo+Cj4KPiBNeSBmZXcgY2VudHMuCj4KPiBSZWluZXIgS2FybHNi
+ZXJnCj4KPgo+Cj4KPgo+Cj4KPiBBbSAwMi4wOC4yMDE5IHVtIDE4OjE4IHNjaHJpZWIgS2V2aW4g
+J2xkaXInIERhcmJ5c2hpcmUtQnJ5YW50Ogo+Pgo+Pgo+Pj4gT24gMiBBdWcgMjAxOSwgYXQgMTY6
+MDAsIEhhbm51IE55bWFuIDxoYW5udS5ueW1hbkBpa2kuZmk+IHdyb3RlOgo+Pj4KPj4+IEhhdWtl
+IE1laHJ0ZW5zIGtpcmpvaXR0aSAyLjguMjAxOSBrbG8gMTcuNDI6Cj4+Pj4gT24gNy8yMy8xOSAz
+OjM3IFBNLCBQZXRyIMWgdGV0aWFyIHdyb3RlOgo+Pj4+PiBUcmFuc2l0aW9uIHBlcmlvZCBmb3Ig
+aW5pdCBzY3JpcHQgbWlncmF0aW9uIHdhcyBsb25nIGVub3VnaCwgbGV0J3MKPj4+Pj4gbWFrZSBV
+U0VfUFJPQ0Q9MSBkZWZhdWx0IG5vdyBzbyB0aGVyZSdzIGVub3VnaCB0aW1lIHRvIGNvbnZlcnQg
+dGhlCj4+Pj4+IHJlbWFpbmluZyBzZXJ2aWNlcy9pbml0IHNjcmlwdHMgZm9yIHRoZSBuZXh0IHJl
+bGVhc2UuCj4+Pj4+Cj4+Pj4+IFNpZ25lZC1vZmYtYnk6IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRy
+dWUuY3o+Cj4+Pj4+IC0tLQo+Pj4+PiDCoCBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvZXRjL3Jj
+LmNvbW1vbiB8IDExMyAKPj4+Pj4gKysrKysrKysrKy0tLS0tLS0tLS0tLS0tLQo+Pj4+PiDCoCAx
+IGZpbGUgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKSwgNjYgZGVsZXRpb25zKC0pCj4+Pj4+Cj4+
+Pj4gRG8geW91IGtub3cgaG93IG1hbnkgcGFja2FnZXMgaW4gdGhlIHBhY2thZ2UgZmVlZCBhbmQg
+dGhlIG1haW4KPj4+PiByZXBvc2l0b3J5IGFyZSBzdGlsbCBub3QgdXNpbmcgcHJvY2Q/Cj4+Pj4K
+Pj4+PiBFeHRlcm5hbCByZXBvc2l0b3JpZXMsIG5vdCB0aGUgcGFja2FnZSBmZWVkLCB3aWxsIHBy
+b2JhYmx5IGJlIGFmZmVjdGVkCj4+Pj4gbW9zdCwgYnV0IEkgdGhpbmsgd2UgZG8gbm90IGhhdmUg
+dG8gY2FyZSBhbmQgdGhlcmUgd2VyZSBtYW55IHllYXJzIHRvCj4+Pj4gY29udmVydC4KPj4+Pgo+
+Pj4+IEFja2VkLWJ5OiBIYXVrZSBNZWhydGVucyA8aGF1a2VAaGF1a2UtbS5kZT4KPj4+Pgo+Pj4+
+IEhhdWtlCj4+Pj4KPj4+Cj4+PiBJIGRvIG5vdCByZW1lbWJlciBzZWVpbmcgZXZlciBhIGdlbmVy
+YWwgY2FsbCBmb3IgY29udmVydGluZyB0aGUgb2xkIAo+Pj4gcGFja2FnZXMgdG8gdXNpbmcgcHJv
+Y2QuIEluIHRoYXQgc2Vuc2UgdGhpcyBwcm9wb3NlZCBjaGFuZ2UgdG8gCj4+PiBzd2l0Y2ggdGhl
+IGRlZmF1bHQgY29tZXMgYSBiaXQgc3VycGlzZS4KPj4+Cj4+PiBRdWljayBzZWFyY2ggaW4gdGhl
+IHBhY2thZ2VzIGZlZWQgcmVwbyByZXZlYWxzIHRoYXQgdGhlcmUgYXJlIDI4MSAKPj4+IGluc3Rh
+bmNlcyBvZiAiL2V0Yy9yYy5jb21tb24iIGFuZCBvbmx5IDIwNSBpbnN0YW5jZXMgb2YgVVNFX1BS
+T0NELiAKPj4+IFNvLCBsaWtlbHkgYWJvdXQgNzUgcGFja2FnZXMgaW4gdGhlIHBhY2thZ2VzIGZl
+ZWQgcmVwbyBvbmx5IGFyZSAKPj4+IHVzaW5nIHRoZSBvbGQgc3ludGF4IHdpdGhvdXQgcHJvY2Qu
+Cj4+Pgo+Pj4gSGFzIGEgZGVjaXNpb24gYmVlbiBtYWRlIHRvIGRlY2xhcmUgdGhlIG9sZC1zdHls
+ZSBpbml0IGZpbGUgaW52YWxpZD8gCj4+PiBXaWxsIGl0IGJlIHBvc3NpYmxlIHRvIHN0aWxsIHVz
+ZSB0aGUgc3ludGF4PyBXaGF0IGlzIHRoZSBuZXcgCj4+PiAib3ZlcnJpZGUiIHRvIGluZGljYXRl
+IHRoZSB1c2FnZSBvZiB0aGUgb2xkIHN5bnRheD8KPj4+Cj4+PiBPciB3aWxsIHRoZSBwcm9wb3Nl
+ZCBjaGFuZ2UgZGlzYWJsZSB0aGUgcGFja2FnZXMgdXNpbmcgdGhlIG9sZCBpbml0IAo+Pj4gZmls
+ZSBzeW50YXggdG90YWxseT8KPj4KPj4gTXkgcmVhZGluZyBvZiB0aGUgY2hhbmdlIGlzIHRoYXQg
+b2xkIHN5bnRheCBpcyBiYXNpY2FsbHkgZHJvcHBlZC4KPj4KPj4gV2lzaCBmb3I6wqAgV2Ugc2hv
+dWxkIGJlIHVzaW5nIHByb2NkIGFuZCB0byB0aGF0IGVuZCBJIHN0YXJ0ZWQgbG9va2luZyAKPj4g
+YXQgY29udmVydGluZyB0aGUg4oCYaW1wb3J0YW50IHRvIG1l4oCZIHBhY2thZ2VzOiBkZG5zICYg
+bWluaXVwbnBkLgo+Pgo+PiBSZWFsIGxpZmU6IERvY3VtZW50YXRpb24gaXMgY29uZnVzaW5nIHZz
+IHJlYWwgbGlmZSB3aGljaCBpcyBqdXN0IAo+PiBwbGFpbiBkaWZmZXJlbnQuIFNlZSBhZGJsb2Nr
+IHN0YXJ0dXAgc2NyaXB0IGFzIGFuIGV4Y2VsbGVudCBleGFtcGxlIAo+PiBvZiAqKioqIHRoYXQg
+anVzdCBpc27igJl0IGRvY3VtZW50ZWQuCj4+Cj4+IEkgZ2F2ZSB1cCBhbmQgbGVmdCB0aGUgcHJv
+Y2VzcyBmZWVsaW5nIHZlcnkgYW5ncnkuCj4+Cj4+Cj4+IEtEQgo+Pgo+Pgo+PiBfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+PiBvcGVud3J0LWRldmVsIG1h
+aWxpbmcgbGlzdAo+PiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4+IGh0dHBzOi8v
+bGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCj4+Cj4KPgo+
+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3Blbndy
+dC1kZXZlbCBtYWlsaW5nIGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4g
+aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQt
+ZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6
+Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

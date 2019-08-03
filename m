@@ -2,420 +2,207 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2221280398
-	for <lists+openwrt-devel@lfdr.de>; Sat,  3 Aug 2019 02:55:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A299B803E4
+	for <lists+openwrt-devel@lfdr.de>; Sat,  3 Aug 2019 03:57:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:To:Date:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ocLe30r1Ytj3K5RvxnNg8KHDT+PzfMsMRq81Om1qjDg=; b=PHU4p9kjXZ59HV/lFFvIKCOEN
-	gnginUBXD8HAwJIR/dB6gVPrqKr1nBovlf44NmS6Cb1z4DWxY6LiymL80pM1XL0q46FVhdq7KBxpr
-	Fge+IaLQMGzINdQnUuz363MDqHgz/y0hQJzqRwYJqqR9o4ZgCFZ7N+k3xGhXWOO3oh3t5ADKAYsBj
-	ZZYMoQPj0KJB9CkKh9vohxKX6dG3AX8xKX0Nt31OnBi47ObL5XJuUsSHU+Lep9d7jL6ak8aQ7GJQS
-	OOnGgBJru+axmx2Mooq0ydrWUJXVgk56rdhqGdrNPp+H+miqE82pPeAc1Lh/Z+VVSuwfrbyi9pSAO
-	YKcQ9xiVg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A7rv2Hsg8JYDKNjrFADwAerKqN8zPd9Osl3bpKdHmGA=; b=Wn+u1hfqVAQ2uO
+	odpjEpLye62/wUCZawzPq5KTmBmyiAN0jEPuowhS45/kP+3Lkz02Rqyv5mOTbZ8J+D9YqGK2YB2ae
+	ZWYLxOX4Cs8TWoFUMGyLZ5daWD81argE35x0F606imihQ6THu6vEFebxxZK5Mx+FFnW5B1yRE28g9
+	8PipNRdyd6Qrzpi7+o616k8ksZ6y8dUqJoQfjgICnUiZ1lO7WnKR2BiMd0WMRMgWwnlj2cHpr+L9a
+	6V6Wou17AH5xgcL6COuuaHAoyz4VYtabqnKJ6qALQFWDhM7RmCIKlxiUXSY6Gj4rreQzXDOkIoErj
+	YYrsEakiK+PzaY2sskQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htiK4-0002WP-Pj; Sat, 03 Aug 2019 00:55:00 +0000
-Date: Sat, 03 Aug 2019 08:54:45 +0800
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-In-Reply-To: <2cec2c33f72eb4cc8d33e0a18289d099@grosjo.net>
+	id 1htjIx-0004hj-Bm; Sat, 03 Aug 2019 01:57:55 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1htjIq-0004h8-46
+ for openwrt-devel@lists.openwrt.org; Sat, 03 Aug 2019 01:57:49 +0000
+Received: by mail-ot1-x342.google.com with SMTP id r21so74007936otq.6
+ for <openwrt-devel@lists.openwrt.org>; Fri, 02 Aug 2019 18:57:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=mQLFlhwhEaHxFKwGuVhSy0yzjwA+yzb3x9qs2MAWW84=;
+ b=ESCC/goY/YAmS0J/aEkjGS/ctME7DppQ0IPkF7bAx7k/ZA5z6RyAUX4xoi7zox2/Ao
+ 4uF6loakjqr1M+ILdDjp7M0CxeAgHHguLZXoX70OH33ws7ii+5s918IFdhqePP6GtDU2
+ KGgy5jWbcpR0JfexbOwRzDeCzs8YBkJDlt1DtCRqxJ9t7src4QhjVfdtANH0lMFtGLt+
+ RDmh8EnpJ+b8cZGhzPkUVSsveFMuA6XPCjTw7o4ACM6dYmQr9Zkkv8rmWIitNn3h+c7Z
+ Ky6CILqtz9GVbJRAZc32hkc5jF/Vh3rOYNlCoh+YEfmKEDShR1/FPBUUUMXxrIbkKRPA
+ xtvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=mQLFlhwhEaHxFKwGuVhSy0yzjwA+yzb3x9qs2MAWW84=;
+ b=WnVTFPkvYneXhbo68zLsSYAWThn9Uu+1/3+BtzT67+miJRULlN1e9l1m3eze41phs3
+ +jl5VkNLq0Bw3wIFZ9OaXXgS+0xH8+vpHTfVsC6RSQO6wk0oH+4XN4nfuW4pyX8Ekr93
+ eMY4qQNrpZt9dktFXgoxVohEhFPiv6EA3f5lECDx7LeLorYxpL5ihSJMsv8afSxgGDEO
+ sNxX5Lj81iWUmltXt2rNMchEPwUfkhiSoZ8yyXOqSEb2VCV38+Q0StH0/72c1PAeW03u
+ kecULJWwyUU+uopIbIumFDVlW5vDXDwSGwbqP2/NMV94DvacPPQXMmOHk+3bVgoK++EE
+ HkUg==
+X-Gm-Message-State: APjAAAXzoYmvyvij2+SOZrvRgG8korUkEx95x3v4FENJuBvb/KCuXajC
+ DhJ67Jz6tO0pQNUFg9cd4ewXDb5iJP2S5BJ87uM=
+X-Google-Smtp-Source: APXvYqycKwDFkscFLetE7phXBGVahhMGB/ukkzddNO7o3gpyMf2ry1nGwTMdB4xu0RVBUKaqAm0p0J3mqQL2QJTCNrk=
+X-Received: by 2002:a9d:201:: with SMTP id 1mr97215611otb.279.1564797464247;
+ Fri, 02 Aug 2019 18:57:44 -0700 (PDT)
+MIME-Version: 1.0
 References: <mailman.13754.1564703810.19300.openwrt-devel@lists.openwrt.org>
  <20190802103653.GP74752@meh.true.cz>
  <2a6780799fb7077e5d731337bcfadbe0@grosjo.net>
  <b13b66b94fb80ac49631e0e2dc971c60@grosjo.net>
  <2cec2c33f72eb4cc8d33e0a18289d099@grosjo.net>
-MIME-Version: 1.0
-Message-ID: <mailman.14120.1564793695.19300.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
-List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Joan Moreau <jom@grosjo.net>
-List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] package mt76 fails to compile under certain
- configuration [Was: Compilation error on master / mt7620]
-Content-Type: multipart/mixed; boundary="===============8603388534146514464=="
-Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
-Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
-
---===============8603388534146514464==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
-
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============8603388534146514464==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from grosjo.net ([94.130.37.163])
-	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
-	id 1htiJv-0002W7-JR
-	for openwrt-devel@lists.openwrt.org; Sat, 03 Aug 2019 00:54:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=grosjo.net;
-	 s=dkim; h=Message-ID:References:In-Reply-To:Subject:Cc:To:From:Date:
-	Content-Type:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=7ypc1jLK03MflielLkCdnWJqM4BxE3slZ5SQW51hrI8=; b=TRe2mLSlQPl9sCCAgNa0N+PGkx
-	L5zFh7lcL5M1/jmG04OtZXolz0ygEIRRhdjSRb39LdQ6HWyD4g7JVq07A51InwMwmABdw6IapmH3y
-	PA4DSjjF6cgRPsW/hMM486+ciH6SQU+Q+DiuYWhN0fOqi1qxCNCAL3d3N8fCaFSV6Q14=;
-Received: from localhost ([127.0.0.1] helo=grosjo.net)
-	by grosjo.net with esmtp (Exim 4.92.1)
-	(envelope-from <jom@grosjo.net>)
-	id 1htiJp-0004qa-N4; Sat, 03 Aug 2019 00:54:47 +0000
-MIME-Version: 1.0
-Content-Type: multipart/alternative;
- boundary="=_b16fdb6f2d3430d7bfa24d9915a5cf38"
-Date: Sat, 03 Aug 2019 08:54:45 +0800
-From: Joan Moreau <jom@grosjo.net>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-Subject: Re: [OpenWrt-Devel] package mt76 fails to compile under certain
- configuration [Was: Compilation error on master / mt7620]
-In-Reply-To: <2cec2c33f72eb4cc8d33e0a18289d099@grosjo.net>
-References: <mailman.13754.1564703810.19300.openwrt-devel@lists.openwrt.org>
- <20190802103653.GP74752@meh.true.cz>
- <2a6780799fb7077e5d731337bcfadbe0@grosjo.net>
- <b13b66b94fb80ac49631e0e2dc971c60@grosjo.net>
- <2cec2c33f72eb4cc8d33e0a18289d099@grosjo.net>
-User-Agent: Roundcube Webmail/1.4-git
-Message-ID: <67c7c9fe54520aeb3da07df72bed0924@grosjo.net>
-X-Sender: jom@grosjo.net
-X-GJ: Sent from localhost
-X-Spam-Score: -2.9 (--)
-X-Spam-Report: Spam detection software, running on the system "gjserver",
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- admin@grosjo.net for details.
- 
- Content preview:  In an attempt to force LZO with JFFS2, I clicked on "mksquash"
-    in menuconfig. I reach the follwoing error mipsel-openwrt-linux-musl-gcc
-   -Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt
-    -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result
-    -msoft-float -mip [...] 
- 
- Content analysis details:   (-2.9 points, 3.0 required)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
-                             [score: 0.0000]
-  0.0 HTML_MESSAGE           BODY: HTML included in message
-X-GJ-SMTP: h_FROM = Joan Moreau <jom@grosjo.net> RPATH=jom@grosjo.net SENDERADR= jom@grosjo.net:
+ <mailman.14120.1564793695.19300.openwrt-devel@lists.openwrt.org>
+In-Reply-To: <mailman.14120.1564793695.19300.openwrt-devel@lists.openwrt.org>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Fri, 2 Aug 2019 18:57:33 -0700
+Message-ID: <CAKxU2N9hwSx3w0SLfJQBH_GMyJUwKLNU-k7sgjCCnB1ZgHy0Gw@mail.gmail.com>
+To: Joan Moreau <jom@grosjo.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_175451_947263_9203A1DE 
-X-CRM114-Status: UNSURE (   4.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190802_185748_172354_3EFD86E1 
+X-CRM114-Status: GOOD (  17.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
- 
-  pts rule name              description
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [94.130.37.163 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] package mt76 fails to compile under certain
+ configuration [Was: Compilation error on master / mt7620]
+X-BeenThere: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
+List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
+List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
+Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---=_b16fdb6f2d3430d7bfa24d9915a5cf38
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8;
- format=flowed
-
-In an attempt to force LZO with JFFS2, I clicked on "mksquash" in
-menuconfig.=20
-
-I reach the follwoing error=20
-
-mipsel-openwrt-linux-musl-gcc -Os -pipe -mno-branch-likely -mips32r2
--mtune=3D24kc -fno-caller-saves -fno-plt -fhonour-copts
--Wno-error=3Dunused-but-set-variable -Wno-error=3Dunused-result -msoft-floa=
-t
--mips16 -minterlink-mips16
--iremap/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/squashfs-tools=
--4.3:squashfs-tools-4.3
--Wformat -Werror=3Dformat-security -fstack-protector -D_FORTIFY_SOURCE=3D1
--Wl,-z,now -Wl,-z,relro
--I/usr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/usr/include
--I/usr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/include
--I/usr/src/openwrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/usr/=
-include
--I/usr/src/openwrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/incl=
-ude/fortify
--I/usr/src/openwrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/incl=
-ude
--I. -D_FILE_OFFSET_BITS=3D64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
--DCOMP_DEFAULT=3D\"gzip\" -Wall -DGZIP_SUPPORT -DXZ_SUPPORT -DLZO_SUPPORT
--DLZ4_SUPPORT -c -o mksquashfs.o mksquashfs.c
-mksquashfs.c: In function 'create_inode':
-mksquashfs.c:996:24: error: called object 'major' is not a function or
-function pointer
-unsigned int major =3D major(buf->st_rdev);
-^~~~~
-mksquashfs.c:996:16: note: declared here
-unsigned int major =3D major(buf->st_rdev);
-^~~~~=20
-
-Something is very broken in mt76=20
-
-On 2019-08-02 23:12, Joan Moreau wrote:
-
-> Additionally, I get the following error in the image generated (master) w=
-ithout the debugfs option then to allow compilation=20
->=20
-> [ 8.936247] jffs2: Error: unknown compressor "zlib"
-> [ 8.941939] mount_root: failed to mount -t jffs2 /dev/mtdblock6 /tmp/over=
-lay: Invalid argument
-> [ 8.951033] mount_root: overlay filesystem has not been fully initialized=
- yet
-> [ 8.958979] mount_root: switching to jffs2 overlay
-> [ 8.964114] mount_root: switching to jffs2 failed - fallback to ramoverla=
-y
->=20
-> On 2019-08-02 21:37, Joan Moreau wrote:=20
->=20
-> Removing "debug fs" in compilation options removes the problem.=20
->=20
-> So there is something very awkward in the Makefile=20
->=20
-> On 2019-08-02 20:28, Joan Moreau wrote:=20
->=20
-> attached
->=20
-> On 2019-08-02 18:36, Petr =C5=A0tetiar wrote:=20
-> Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org> [2019-08-=
-02 07:56:41]:
->=20
-> Hello,
->=20
-> I reach the following error while compiling my MT7620/ZBT826-16M on
-> master (no error on 18.06) :
->=20
-> CC [M]
-> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
-/mt76-2019-07-22-75656a45/mt7603/pci.o
-> <command-line>:0:37: error: redeclaration of enumerator
-> 'IEEE80211_HW_REPORTS_TX_ACK_STATUS'
-> <command-line>:0:37: note: in definition of macro
-> 'IEEE80211_HW_TX_STATUS_NO_AMPDU_LEN'
-> In file included from
-> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
-/mt76-2019-07-22-75656a45/mt7603/../mt76.h:27:0,
-> from
-> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
-/mt76-2019-07-22-75656a45/mt7603/mt7603.h:8,
-> from
-> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
-/mt76-2019-07-22-75656a45/mt7603/pci.c:7:
-> /usr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/usr/include/mac80=
-211/net/mac80211.h:2293:2:
-> note: previous definition of 'IEEE80211_HW_REPORTS_TX_ACK_STATUS' was
-> here
-> IEEE80211_HW_REPORTS_TX_ACK_STATUS,
-> ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-> make[6]: *** [scripts/Makefile.build:327:
-> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
-/mt76-2019-07-22-75656a45/mt7603/pci.o]
-> Error 1
-> make[5]: *** [scripts/Makefile.build:585:
-> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
-/mt76-2019-07-22-75656a45/mt7603]
-> Error 2
-> make[4]: *** [Makefile:1532:
-> _module_/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramip=
-s_mt7620/mt76-2019-07-22-75656a45]
-> Error 2
->=20
-> Can you help ?=20
-> the problem is probably in this compile check[1], so please do following:
->=20
-> make package/mt76/{clean,prepare}
-> sed -i 's;TMP";TMP" 2> $(TOPDIR)/meh.log;' build_dir/target-mipsel_24kc_m=
-usl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/Makefile=20
-> make package/mt76/compile
-> scripts/diffconfig.sh >> meh.log; gzip meh.log
->=20
-> and send meh.log.gz file as attachment.
->=20
-> 1. https://github.com/openwrt/mt76/blob/master/mt7603/Makefile#L7
->=20
-> -- ynezz
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
---=_b16fdb6f2d3430d7bfa24d9915a5cf38
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/html; charset=UTF-8
-
-<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
-=3DUTF-8" /></head><body style=3D'font-size: 9pt; font-family: Verdana,Gene=
-va,sans-serif'>
-<p>In an attempt to force LZO with JFFS2, I clicked on "mksquash" in menuco=
-nfig.</p>
-<p><br /></p>
-<p>I reach the follwoing error</p>
-<p>mipsel-openwrt-linux-musl-gcc -Os -pipe -mno-branch-likely -mips32r2 -mt=
-une=3D24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=3Dunused-bu=
-t-set-variable -Wno-error=3Dunused-result -msoft-float -mips16 -minterlink-=
-mips16 -iremap/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/squashf=
-s-tools-4.3:squashfs-tools-4.3 -Wformat -Werror=3Dformat-security -fstack-p=
-rotector -D_FORTIFY_SOURCE=3D1 -Wl,-z,now -Wl,-z,relro -I/usr/src/openwrt/4=
-g/staging_dir/target-mipsel_24kc_musl/usr/include -I/usr/src/openwrt/4g/sta=
-ging_dir/target-mipsel_24kc_musl/include -I/usr/src/openwrt/4g/staging_dir/=
-toolchain-mipsel_24kc_gcc-7.4.0_musl/usr/include -I/usr/src/openwrt/4g/stag=
-ing_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/include/fortify -I/usr/src/ope=
-nwrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/include -I. -D_FIL=
-E_OFFSET_BITS=3D64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE -DCOMP_DEFAULT=3D\"gzi=
-p\" -Wall -DGZIP_SUPPORT -DXZ_SUPPORT -DLZO_SUPPORT -DLZ4_SUPPORT -c -o mks=
-quashfs.o mksquashfs.c<br />mksquashfs.c: In function 'create_inode':<br />=
-mksquashfs.c:996:24: error: called object 'major' is not a function or func=
-tion pointer<br />unsigned int major =3D major(buf-&gt;st_rdev);<br />^~~~~=
-<br />mksquashfs.c:996:16: note: declared here<br />unsigned int major =3D =
-major(buf-&gt;st_rdev);<br />^~~~~</p>
-<p><br /></p>
-<p>Something is very broken in mt76</p>
-<p><br /></p>
-<p><br /></p>
-<div id=3D"signature">&nbsp;</div>
-<p><br /></p>
-<p id=3D"reply-intro">On 2019-08-02 23:12, Joan Moreau wrote:</p>
-<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
-px solid; margin: 0">
-<div id=3D"replybody1">
-<div style=3D"font-size: 9pt; font-family: Verdana,Geneva,sans-serif;">
-<p>Additionally, I get the following error in the image generated (master) =
-without the debugfs option then to allow compilation</p>
-<p><br /></p>
-<p>[ 8.936247] jffs2: Error: unknown compressor "zlib"<br />[ 8.941939] mou=
-nt_root: failed to mount -t jffs2 /dev/mtdblock6 /tmp/overlay: Invalid argu=
-ment<br />[ 8.951033] mount_root: overlay filesystem has not been fully ini=
-tialized yet<br />[ 8.958979] mount_root: switching to jffs2 overlay<br />[=
- 8.964114] mount_root: switching to jffs2 failed - fallback to ramoverlay</=
-p>
-<div id=3D"v1signature">&nbsp;</div>
-<p><br /></p>
-<p id=3D"v1reply-intro">On 2019-08-02 21:37, Joan Moreau wrote:</p>
-<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
-in: 0;">
-<div id=3D"v1replybody1">
-<div style=3D"font-size: 9pt; font-family: Verdana,Geneva,sans-serif;">
-<p>Removing "debug fs" in compilation options removes the problem.</p>
-<p>So there is something very awkward in the Makefile</p>
-<p><br /></p>
-<div id=3D"v1v1signature">&nbsp;</div>
-<p><br /></p>
-<p id=3D"v1v1reply-intro">On 2019-08-02 20:28, Joan Moreau wrote:</p>
-<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
-in: 0;">
-<div id=3D"v1v1replybody1">
-<div style=3D"font-size: 9pt; font-family: Verdana,Geneva,sans-serif;">
-<p>attached</p>
-<div id=3D"v1v1v1signature">&nbsp;</div>
-<p><br /></p>
-<p id=3D"v1v1v1reply-intro">On 2019-08-02 18:36, Petr &Scaron;tetiar wrote:=
-</p>
-<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
-in: 0;">
-<div class=3D"v1v1v1pre" style=3D"margin: 0; padding: 0; font-family: monos=
-pace;">Joan Moreau via openwrt-devel &lt;<a href=3D"mailto:openwrt-devel@li=
-sts.openwrt.org" rel=3D"noreferrer">openwrt-devel@lists.openwrt.org</a>&gt;=
- [2019-08-02 07:56:41]:<br /><br />
-<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
-in: 0;">Hello,<br /><br />I reach the following error while compiling my MT=
-7620/ZBT826-16M on<br />master (no error on 18.06) :<br /><br />CC [M]<br /=
->/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/=
-mt76-2019-07-22-75656a45/mt7603/pci.o<br />&lt;command-line&gt;:0:37: error=
-: redeclaration of enumerator<br />'IEEE80211_HW_REPORTS_TX_ACK_STATUS'<br =
-/>&lt;command-line&gt;:0:37: note: in definition of macro<br />'IEEE80211_H=
-W_TX_STATUS_NO_AMPDU_LEN'<br />In file included from<br />/usr/src/openwrt/=
-4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75=
-656a45/mt7603/../mt76.h:27:0,<br />from<br />/usr/src/openwrt/4g/build_dir/=
-target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603=
-/mt7603.h:8,<br />from<br />/usr/src/openwrt/4g/build_dir/target-mipsel_24k=
-c_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.c:7:<br />/u=
-sr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/usr/include/mac80211/=
-net/mac80211.h:2293:2:<br />note: previous definition of 'IEEE80211_HW_REPO=
-RTS_TX_ACK_STATUS' was<br />here<br />IEEE80211_HW_REPORTS_TX_ACK_STATUS,<b=
-r />^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />make[6]: *** [scripts/Makefile=
-=2Ebuild:327:<br />/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/li=
-nux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/pci.o]<br />Error 1<br />=
-make[5]: *** [scripts/Makefile.build:585:<br />/usr/src/openwrt/4g/build_di=
-r/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt76=
-03]<br />Error 2<br />make[4]: *** [Makefile:1532:<br />_module_/usr/src/op=
-enwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07=
--22-75656a45]<br />Error 2<br /><br />Can you help ?</blockquote>
-<br />the problem is probably in this compile check[1], so please do follow=
-ing:<br /><br />&nbsp;make package/mt76/{clean,prepare}<br />&nbsp;sed -i '=
-s;TMP";TMP" 2&gt; $(TOPDIR)/meh.log;' build_dir/target-mipsel_24kc_musl/lin=
-ux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/Makefile <br />&nbsp;make =
-package/mt76/compile<br />&nbsp;scripts/diffconfig.sh &gt;&gt; meh.log; gzi=
-p meh.log<br /><br />and send meh.log.gz file as attachment.<br /><br />1=
-=2E <a href=3D"https://github.com/openwrt/mt76/blob/master/mt7603/Makefile#=
-L7" target=3D"_blank" rel=3D"noopener noreferrer">https://github.com/openwr=
-t/mt76/blob/master/mt7603/Makefile#L7</a><br /><br />-- ynezz<br /><br />__=
-_____________________________________________<br />openwrt-devel mailing li=
-st<br /><a href=3D"mailto:openwrt-devel@lists.openwrt.org" rel=3D"noreferre=
-r">openwrt-devel@lists.openwrt.org</a><br /><a href=3D"https://lists.openwr=
-t.org/mailman/listinfo/openwrt-devel" target=3D"_blank" rel=3D"noopener nor=
-eferrer">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a><br />=
-<br /></div>
-</blockquote>
-</div>
-</div>
-</blockquote>
-</div>
-</div>
-</blockquote>
-</div>
-</div>
-</blockquote>
-</body></html>
-
---=_b16fdb6f2d3430d7bfa24d9915a5cf38--
-
-
---===============8603388534146514464==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8603388534146514464==--
-
+T24gRnJpLCBBdWcgMiwgMjAxOSBhdCA1OjU1IFBNIEpvYW4gTW9yZWF1IHZpYSBvcGVud3J0LWRl
+dmVsCjxvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnPiB3cm90ZToKPgo+IFRoZSBzZW5k
+ZXIgZG9tYWluIGhhcyBhIERNQVJDIFJlamVjdC9RdWFyYW50aW5lIHBvbGljeSB3aGljaCBkaXNh
+bGxvd3MKPiBzZW5kaW5nIG1haWxpbmcgbGlzdCBtZXNzYWdlcyB1c2luZyB0aGUgb3JpZ2luYWwg
+IkZyb20iIGhlYWRlci4KPgo+IFRvIG1pdGlnYXRlIHRoaXMgcHJvYmxlbSwgdGhlIG9yaWdpbmFs
+IG1lc3NhZ2UgaGFzIGJlZW4gd3JhcHBlZAo+IGF1dG9tYXRpY2FsbHkgYnkgdGhlIG1haWxpbmcg
+bGlzdCBzb2Z0d2FyZS4KPgo+Cj4gLS0tLS0tLS0tLSBGb3J3YXJkZWQgbWVzc2FnZSAtLS0tLS0t
+LS0tCj4gRnJvbTogSm9hbiBNb3JlYXUgPGpvbUBncm9zam8ubmV0Pgo+IFRvOiAiUGV0ciDFoHRl
+dGlhciIgPHluZXp6QHRydWUuY3o+Cj4gQ2M6IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
+cmcKPiBCY2M6Cj4gRGF0ZTogU2F0LCAwMyBBdWcgMjAxOSAwODo1NDo0NSArMDgwMAo+IFN1Ympl
+Y3Q6IFJlOiBbT3BlbldydC1EZXZlbF0gcGFja2FnZSBtdDc2IGZhaWxzIHRvIGNvbXBpbGUgdW5k
+ZXIgY2VydGFpbiBjb25maWd1cmF0aW9uIFtXYXM6IENvbXBpbGF0aW9uIGVycm9yIG9uIG1hc3Rl
+ciAvIG10NzYyMF0KPgo+IEluIGFuIGF0dGVtcHQgdG8gZm9yY2UgTFpPIHdpdGggSkZGUzIsIEkg
+Y2xpY2tlZCBvbiAibWtzcXVhc2giIGluIG1lbnVjb25maWcuCj4KPgo+IEkgcmVhY2ggdGhlIGZv
+bGx3b2luZyBlcnJvcgo+Cj4gbWlwc2VsLW9wZW53cnQtbGludXgtbXVzbC1nY2MgLU9zIC1waXBl
+IC1tbm8tYnJhbmNoLWxpa2VseSAtbWlwczMycjIgLW10dW5lPTI0a2MgLWZuby1jYWxsZXItc2F2
+ZXMgLWZuby1wbHQgLWZob25vdXItY29wdHMgLVduby1lcnJvcj11bnVzZWQtYnV0LXNldC12YXJp
+YWJsZSAtV25vLWVycm9yPXVudXNlZC1yZXN1bHQgLW1zb2Z0LWZsb2F0IC1taXBzMTYgLW1pbnRl
+cmxpbmstbWlwczE2IC1pcmVtYXAvdXNyL3NyYy9vcGVud3J0LzRnL2J1aWxkX2Rpci90YXJnZXQt
+bWlwc2VsXzI0a2NfbXVzbC9zcXVhc2hmcy10b29scy00LjM6c3F1YXNoZnMtdG9vbHMtNC4zIC1X
+Zm9ybWF0IC1XZXJyb3I9Zm9ybWF0LXNlY3VyaXR5IC1mc3RhY2stcHJvdGVjdG9yIC1EX0ZPUlRJ
+RllfU09VUkNFPTEgLVdsLC16LG5vdyAtV2wsLXoscmVscm8gLUkvdXNyL3NyYy9vcGVud3J0LzRn
+L3N0YWdpbmdfZGlyL3RhcmdldC1taXBzZWxfMjRrY19tdXNsL3Vzci9pbmNsdWRlIC1JL3Vzci9z
+cmMvb3BlbndydC80Zy9zdGFnaW5nX2Rpci90YXJnZXQtbWlwc2VsXzI0a2NfbXVzbC9pbmNsdWRl
+IC1JL3Vzci9zcmMvb3BlbndydC80Zy9zdGFnaW5nX2Rpci90b29sY2hhaW4tbWlwc2VsXzI0a2Nf
+Z2NjLTcuNC4wX211c2wvdXNyL2luY2x1ZGUgLUkvdXNyL3NyYy9vcGVud3J0LzRnL3N0YWdpbmdf
+ZGlyL3Rvb2xjaGFpbi1taXBzZWxfMjRrY19nY2MtNy40LjBfbXVzbC9pbmNsdWRlL2ZvcnRpZnkg
+LUkvdXNyL3NyYy9vcGVud3J0LzRnL3N0YWdpbmdfZGlyL3Rvb2xjaGFpbi1taXBzZWxfMjRrY19n
+Y2MtNy40LjBfbXVzbC9pbmNsdWRlIC1JLiAtRF9GSUxFX09GRlNFVF9CSVRTPTY0IC1EX0xBUkdF
+RklMRV9TT1VSQ0UgLURfR05VX1NPVVJDRSAtRENPTVBfREVGQVVMVD1cImd6aXBcIiAtV2FsbCAt
+REdaSVBfU1VQUE9SVCAtRFhaX1NVUFBPUlQgLURMWk9fU1VQUE9SVCAtRExaNF9TVVBQT1JUIC1j
+IC1vIG1rc3F1YXNoZnMubyBta3NxdWFzaGZzLmMKPiBta3NxdWFzaGZzLmM6IEluIGZ1bmN0aW9u
+ICdjcmVhdGVfaW5vZGUnOgo+IG1rc3F1YXNoZnMuYzo5OTY6MjQ6IGVycm9yOiBjYWxsZWQgb2Jq
+ZWN0ICdtYWpvcicgaXMgbm90IGEgZnVuY3Rpb24gb3IgZnVuY3Rpb24gcG9pbnRlcgo+IHVuc2ln
+bmVkIGludCBtYWpvciA9IG1ham9yKGJ1Zi0+c3RfcmRldik7Cj4gXn5+fn4KPiBta3NxdWFzaGZz
+LmM6OTk2OjE2OiBub3RlOiBkZWNsYXJlZCBoZXJlCj4gdW5zaWduZWQgaW50IG1ham9yID0gbWFq
+b3IoYnVmLT5zdF9yZGV2KTsKPiBefn5+fgo+Cj4KPiBTb21ldGhpbmcgaXMgdmVyeSBicm9rZW4g
+aW4gbXQ3NgpUaGF0IGVycm9yIGlzIHJlbGF0ZWQgdG8gc3F1YXNoZnMtdG9vbHMsIG5vdCBtdDc2
+OgpodHRwczovL2Rvd25sb2Fkcy5vcGVud3J0Lm9yZy9zbmFwc2hvdHMvZmFpbGxvZ3MvbWlwc18y
+NGtjL3BhY2thZ2VzL3NxdWFzaGZzLXRvb2xzL2NvbXBpbGUudHh0Cj4KPgo+Cj4KPgo+Cj4gT24g
+MjAxOS0wOC0wMiAyMzoxMiwgSm9hbiBNb3JlYXUgd3JvdGU6Cj4KPiBBZGRpdGlvbmFsbHksIEkg
+Z2V0IHRoZSBmb2xsb3dpbmcgZXJyb3IgaW4gdGhlIGltYWdlIGdlbmVyYXRlZCAobWFzdGVyKSB3
+aXRob3V0IHRoZSBkZWJ1Z2ZzIG9wdGlvbiB0aGVuIHRvIGFsbG93IGNvbXBpbGF0aW9uCj4KPgo+
+IFsgOC45MzYyNDddIGpmZnMyOiBFcnJvcjogdW5rbm93biBjb21wcmVzc29yICJ6bGliIgo+IFsg
+OC45NDE5MzldIG1vdW50X3Jvb3Q6IGZhaWxlZCB0byBtb3VudCAtdCBqZmZzMiAvZGV2L210ZGJs
+b2NrNiAvdG1wL292ZXJsYXk6IEludmFsaWQgYXJndW1lbnQKPiBbIDguOTUxMDMzXSBtb3VudF9y
+b290OiBvdmVybGF5IGZpbGVzeXN0ZW0gaGFzIG5vdCBiZWVuIGZ1bGx5IGluaXRpYWxpemVkIHll
+dAo+IFsgOC45NTg5NzldIG1vdW50X3Jvb3Q6IHN3aXRjaGluZyB0byBqZmZzMiBvdmVybGF5Cj4g
+WyA4Ljk2NDExNF0gbW91bnRfcm9vdDogc3dpdGNoaW5nIHRvIGpmZnMyIGZhaWxlZCAtIGZhbGxi
+YWNrIHRvIHJhbW92ZXJsYXkKPgo+Cj4KPgo+IE9uIDIwMTktMDgtMDIgMjE6MzcsIEpvYW4gTW9y
+ZWF1IHdyb3RlOgo+Cj4gUmVtb3ZpbmcgImRlYnVnIGZzIiBpbiBjb21waWxhdGlvbiBvcHRpb25z
+IHJlbW92ZXMgdGhlIHByb2JsZW0uCj4KPiBTbyB0aGVyZSBpcyBzb21ldGhpbmcgdmVyeSBhd2t3
+YXJkIGluIHRoZSBNYWtlZmlsZQo+Cj4KPgo+Cj4KPiBPbiAyMDE5LTA4LTAyIDIwOjI4LCBKb2Fu
+IE1vcmVhdSB3cm90ZToKPgo+IGF0dGFjaGVkCj4KPgo+Cj4KPiBPbiAyMDE5LTA4LTAyIDE4OjM2
+LCBQZXRyIMWgdGV0aWFyIHdyb3RlOgo+Cj4gSm9hbiBNb3JlYXUgdmlhIG9wZW53cnQtZGV2ZWwg
+PG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmc+IFsyMDE5LTA4LTAyIDA3OjU2OjQxXToK
+Pgo+IEhlbGxvLAo+Cj4gSSByZWFjaCB0aGUgZm9sbG93aW5nIGVycm9yIHdoaWxlIGNvbXBpbGlu
+ZyBteSBNVDc2MjAvWkJUODI2LTE2TSBvbgo+IG1hc3RlciAobm8gZXJyb3Igb24gMTguMDYpIDoK
+Pgo+IENDIFtNXQo+IC91c3Ivc3JjL29wZW53cnQvNGcvYnVpbGRfZGlyL3RhcmdldC1taXBzZWxf
+MjRrY19tdXNsL2xpbnV4LXJhbWlwc19tdDc2MjAvbXQ3Ni0yMDE5LTA3LTIyLTc1NjU2YTQ1L210
+NzYwMy9wY2kubwo+IDxjb21tYW5kLWxpbmU+OjA6Mzc6IGVycm9yOiByZWRlY2xhcmF0aW9uIG9m
+IGVudW1lcmF0b3IKPiAnSUVFRTgwMjExX0hXX1JFUE9SVFNfVFhfQUNLX1NUQVRVUycKPiA8Y29t
+bWFuZC1saW5lPjowOjM3OiBub3RlOiBpbiBkZWZpbml0aW9uIG9mIG1hY3JvCj4gJ0lFRUU4MDIx
+MV9IV19UWF9TVEFUVVNfTk9fQU1QRFVfTEVOJwo+IEluIGZpbGUgaW5jbHVkZWQgZnJvbQo+IC91
+c3Ivc3JjL29wZW53cnQvNGcvYnVpbGRfZGlyL3RhcmdldC1taXBzZWxfMjRrY19tdXNsL2xpbnV4
+LXJhbWlwc19tdDc2MjAvbXQ3Ni0yMDE5LTA3LTIyLTc1NjU2YTQ1L210NzYwMy8uLi9tdDc2Lmg6
+Mjc6MCwKPiBmcm9tCj4gL3Vzci9zcmMvb3BlbndydC80Zy9idWlsZF9kaXIvdGFyZ2V0LW1pcHNl
+bF8yNGtjX211c2wvbGludXgtcmFtaXBzX210NzYyMC9tdDc2LTIwMTktMDctMjItNzU2NTZhNDUv
+bXQ3NjAzL210NzYwMy5oOjgsCj4gZnJvbQo+IC91c3Ivc3JjL29wZW53cnQvNGcvYnVpbGRfZGly
+L3RhcmdldC1taXBzZWxfMjRrY19tdXNsL2xpbnV4LXJhbWlwc19tdDc2MjAvbXQ3Ni0yMDE5LTA3
+LTIyLTc1NjU2YTQ1L210NzYwMy9wY2kuYzo3Ogo+IC91c3Ivc3JjL29wZW53cnQvNGcvc3RhZ2lu
+Z19kaXIvdGFyZ2V0LW1pcHNlbF8yNGtjX211c2wvdXNyL2luY2x1ZGUvbWFjODAyMTEvbmV0L21h
+YzgwMjExLmg6MjI5MzoyOgo+IG5vdGU6IHByZXZpb3VzIGRlZmluaXRpb24gb2YgJ0lFRUU4MDIx
+MV9IV19SRVBPUlRTX1RYX0FDS19TVEFUVVMnIHdhcwo+IGhlcmUKPiBJRUVFODAyMTFfSFdfUkVQ
+T1JUU19UWF9BQ0tfU1RBVFVTLAo+IF5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4K
+PiBtYWtlWzZdOiAqKiogW3NjcmlwdHMvTWFrZWZpbGUuYnVpbGQ6MzI3Ogo+IC91c3Ivc3JjL29w
+ZW53cnQvNGcvYnVpbGRfZGlyL3RhcmdldC1taXBzZWxfMjRrY19tdXNsL2xpbnV4LXJhbWlwc19t
+dDc2MjAvbXQ3Ni0yMDE5LTA3LTIyLTc1NjU2YTQ1L210NzYwMy9wY2kub10KPiBFcnJvciAxCj4g
+bWFrZVs1XTogKioqIFtzY3JpcHRzL01ha2VmaWxlLmJ1aWxkOjU4NToKPiAvdXNyL3NyYy9vcGVu
+d3J0LzRnL2J1aWxkX2Rpci90YXJnZXQtbWlwc2VsXzI0a2NfbXVzbC9saW51eC1yYW1pcHNfbXQ3
+NjIwL210NzYtMjAxOS0wNy0yMi03NTY1NmE0NS9tdDc2MDNdCj4gRXJyb3IgMgo+IG1ha2VbNF06
+ICoqKiBbTWFrZWZpbGU6MTUzMjoKPiBfbW9kdWxlXy91c3Ivc3JjL29wZW53cnQvNGcvYnVpbGRf
+ZGlyL3RhcmdldC1taXBzZWxfMjRrY19tdXNsL2xpbnV4LXJhbWlwc19tdDc2MjAvbXQ3Ni0yMDE5
+LTA3LTIyLTc1NjU2YTQ1XQo+IEVycm9yIDIKPgo+IENhbiB5b3UgaGVscCA/Cj4KPgo+IHRoZSBw
+cm9ibGVtIGlzIHByb2JhYmx5IGluIHRoaXMgY29tcGlsZSBjaGVja1sxXSwgc28gcGxlYXNlIGRv
+IGZvbGxvd2luZzoKPgo+ICBtYWtlIHBhY2thZ2UvbXQ3Ni97Y2xlYW4scHJlcGFyZX0KPiAgc2Vk
+IC1pICdzO1RNUCI7VE1QIiAyPiAkKFRPUERJUikvbWVoLmxvZzsnIGJ1aWxkX2Rpci90YXJnZXQt
+bWlwc2VsXzI0a2NfbXVzbC9saW51eC1yYW1pcHNfbXQ3NjIwL210NzYtMjAxOS0wNy0yMi03NTY1
+NmE0NS9tdDc2MDMvTWFrZWZpbGUKPiAgbWFrZSBwYWNrYWdlL210NzYvY29tcGlsZQo+ICBzY3Jp
+cHRzL2RpZmZjb25maWcuc2ggPj4gbWVoLmxvZzsgZ3ppcCBtZWgubG9nCj4KPiBhbmQgc2VuZCBt
+ZWgubG9nLmd6IGZpbGUgYXMgYXR0YWNobWVudC4KPgo+IDEuIGh0dHBzOi8vZ2l0aHViLmNvbS9v
+cGVud3J0L210NzYvYmxvYi9tYXN0ZXIvbXQ3NjAzL01ha2VmaWxlI0w3Cj4KPiAtLSB5bmV6ego+
+Cj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBvcGVu
+d3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
+PiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
+bAo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBv
+cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
+cmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1k
+ZXZlbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Bl
+bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpo
+dHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

@@ -2,70 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BC8780950
-	for <lists+openwrt-devel@lfdr.de>; Sun,  4 Aug 2019 06:34:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60C5D80951
+	for <lists+openwrt-devel@lfdr.de>; Sun,  4 Aug 2019 06:34:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5PLfYbf05qrAbgG0Z72GVXTUQqUPxQjF2ENbnQzIqyw=; b=TgFSYsWXlO4T5c
-	B83VOTfWClBmfHSAywvaWh365zm1xx14sVBRBcZBlAnhLzPYzYEkG798CcoMh9enHEXPmsHegBh5N
-	grrN9MKgCxLkqcp6SBtpoJ9VnASgpmbyRfgDmgGWQMlBS6D3mH7HfiLVQdEm52bs0q/HTjQMTcLDM
-	mPFsiu/zrm4+oSBYA3qILJt92bVP/r3uwOULC12XJgdCEB0ukvq26VZIN+3j57q2ag2lkPc8MxiQU
-	BEfdag+gg2efigXXBO17hAbfWaoKB/kwzu1rDyIkPcicLYBiUUCcv9u8rs5sMI/5bl/UJIdUUQRDb
-	fzAhVg9Fh+nXTwmKtvpw==;
+	List-Owner; bh=jQKouvgJQgMwrJMqf++0nsmVIJtK+EkSm+OBsF/VsBU=; b=F83BQwr/HFMWTz
+	VezlrxYdFqxNAq6DkU/tJEp66Od21SgG10+zHBd+lp8w3gVM9XZLMJNTVszO1hLYO1KvR+/JB0UuL
+	8+CTSx7j1W4LYoA7bC86TLxQoHm8VwiyeHey5yjfBsxuBals/D6NMqCp3HtcGunQxpivlbP052YEe
+	pRggGtiumR5OoiW5dku68AKhTrm2i9mjn+oG0+G/doEq9JgJqwG7lJtkCWnVYb5dp2Ffn0naUVlDN
+	kuWodDYyOAWcOcWB236ejokkpFM8FMVPbdxEBZEYQvCQ4Cn72lytthmj4GWCzZ+gNe92GRpQjck+y
+	6oNa7btR6esQsStFNxjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hu8Dz-0004GX-13; Sun, 04 Aug 2019 04:34:27 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1hu8ED-0004Vu-V8; Sun, 04 Aug 2019 04:34:42 +0000
+Received: from mail-vs1-xe2c.google.com ([2607:f8b0:4864:20::e2c])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hu8D4-0003Rz-Hf
- for openwrt-devel@lists.openwrt.org; Sun, 04 Aug 2019 04:33:31 +0000
-Received: by mail-ua1-x943.google.com with SMTP id c4so4313843uad.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 03 Aug 2019 21:33:29 -0700 (PDT)
+ id 1hu8D5-0003W4-Bc
+ for openwrt-devel@lists.openwrt.org; Sun, 04 Aug 2019 04:33:33 +0000
+Received: by mail-vs1-xe2c.google.com with SMTP id v6so53948733vsq.4
+ for <openwrt-devel@lists.openwrt.org>; Sat, 03 Aug 2019 21:33:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=GxweKoPRlHGT6DjYcdu6STUW0ZmE5QkMuUqjAQskFJ8=;
- b=Fpf0czZXNKztMrCNhPO0imCDaZyeIHnR/GmGa0R88I96aVg3GI9xBMIWU7OIImyA/v
- hjLJxrf6GWtt0eGmFujHgFSMfUGv737hSomB98k6o+IqNzjvAVexu1+JJGUzBbq+MOBe
- sXD6cAOR+L9UghVqfWv+r4lRn3K5mHW/5AvutK8HcmOxSvVmOTPg4Z7z30aZMR8DhsTl
- bE1r089nqupOeeybsFK9mkb7D2CMVHCnYA6goBIgHjNbsIFHjXXB3r/ndT2yQeWkBqax
- VQhzs/INWR5rTRj4F/OivYtob/AFktkG2BP09NhgbJDmOlLQ1lFgWiPm5XgBYSbxaz6q
- NZLA==
+ bh=YqWHDuNMBa2fjLxT5mH4x7FgKNYOb8FO/GVf/7NSNTw=;
+ b=ClE9JVeEkIizzCjMjdt/cXJr87e3n6AGW8JztV3aeZovEBCsguEopg70+HoQXMktoH
+ TB0U1bcBafegqfdcm5cGGNHAxI7vCmJjnr6R6AUxY/DU1W9jh400wJyO+a/d9O9PqztI
+ 4qyzMIWV8rJ0P/rekFng887GH6Qrn73cAWGDeiRCGtjKWxVxvmlAouhHtnYhCEfrhTsO
+ S7ZOp6e+WzSJaBRan/badTm4nErkOJ7qsLPJvfny8CUPLnNexkvFxXkXZzXXp+lxZ0dT
+ vzEhJusQMaDqssOoNWMog8DWcN/2kAj1O4wkjVI+wJjPxXysfVB4qA/nZvvjqZPgXqU+
+ Gg8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=GxweKoPRlHGT6DjYcdu6STUW0ZmE5QkMuUqjAQskFJ8=;
- b=TjgM8Cc5H/dTdG92rTLG1q0uayD+O6aM9g0EkkKTj/lktWOHJykmW2yOCc+g0wecJZ
- wlN1UsOQ9IfUIs6D7VkWsAtUwLKHMescXmSxrHnFjM10mmxxQtRHV1WmorOobiNKUKD8
- 2Hp+GBVX8o0KwyIgm1d0QvwumAU+4Cqyuo+lfWNB41uV5jH3OHP1604c+/r8KDofmTmd
- +Gl0YuKdBwwMyvxeBXT1wVul2BYs575rGD1OYlkUe4bilIsXJJBa/2niL5PtjzzhYhR7
- Fu1bSc5N48elHTsRlRIzuA5KguTUjwVkvAd1/BDCiPQiIkWQuk5AMswpJeYDOG//Jtkb
- VbGg==
-X-Gm-Message-State: APjAAAXGATxR7h/BE3CQl5qqd2wn9hHZbw2GMJqu6NYESCd907BJqhgk
- zig2MaYUVoQkXgnlkS2Yax4XBl/I
-X-Google-Smtp-Source: APXvYqzSduJ8jYcBkBWs5IoquJvx9wprfvFu6DIA70loUbR4SHrlxHNyXkp4G03dVBf+R9IXyJTong==
-X-Received: by 2002:ab0:48e7:: with SMTP id y36mr20459562uac.79.1564893208801; 
- Sat, 03 Aug 2019 21:33:28 -0700 (PDT)
+ bh=YqWHDuNMBa2fjLxT5mH4x7FgKNYOb8FO/GVf/7NSNTw=;
+ b=Ybmmf9nZ6gszyXp7bcj2lKWOMSlbzSRhYWy2lS8vrWbXuuA2lDZNTOw4atra6SHyaa
+ gC/tBZwmBXtRonmCLhzr01W9RvR1Ng33nDrT5Zq437FqoR/Re6IPN0uxUsdTCiiW2xvB
+ L0UyRGd9p+oqwBpv+eU7Vxi6BV1wu4hPxU8ewULyWySX075XYKo9my+wrdSQnl0UvgWa
+ pTngMnuVg4JD9cK42jFFfx3c3w+8qttJ3N80stAswWX9LreWHzg76l0JrgfG3VaEKlxD
+ DJ0M39hNRAVxSJdASv81omWj/mZ1k0FNVTp/vHxj8B892gAQ2eVtUNnVtyc/hL6u/tfS
+ CcVg==
+X-Gm-Message-State: APjAAAWR37vRS6wJROfksrFaTqGuZFM3QW+dpMGr/CzVcYLn5aj91HfI
+ JKtbtYl+PceoRjfribsGOY4ITa4V
+X-Google-Smtp-Source: APXvYqyrAHVp3eQvFOzQLHLvkgNgnWle+b0ZgZ22yuoosu4kXmWDIpaLYEUryRQ2c4B4Q+4UQ16U3g==
+X-Received: by 2002:a67:f657:: with SMTP id u23mr55840979vso.154.1564893209994; 
+ Sat, 03 Aug 2019 21:33:29 -0700 (PDT)
 Received: from asus-S451LA.lan ([190.22.31.112])
- by smtp.gmail.com with ESMTPSA id 10sm33314346vkl.33.2019.08.03.21.33.27
+ by smtp.gmail.com with ESMTPSA id 10sm33314346vkl.33.2019.08.03.21.33.28
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 03 Aug 2019 21:33:28 -0700 (PDT)
+ Sat, 03 Aug 2019 21:33:29 -0700 (PDT)
 From: Luis Araneda <luaraneda@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  4 Aug 2019 00:32:04 -0400
-Message-Id: <20190804043206.30580-4-luaraneda@gmail.com>
+Date: Sun,  4 Aug 2019 00:32:05 -0400
+Message-Id: <20190804043206.30580-5-luaraneda@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190804043206.30580-1-luaraneda@gmail.com>
 References: <20190804043206.30580-1-luaraneda@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190803_213330_600887_773AD89F 
-X-CRM114-Status: GOOD (  13.44  )
+X-CRM114-CacheID: sfid-20190803_213331_410114_9D4AAD0D 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -74,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [190.22.31.112 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e2c listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -87,8 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 3/5] zynq: k4.19: fix kernel panic on smp
- bring-up
+Subject: [OpenWrt-Devel] [PATCH 4/5] zynq: switch to kernel 4.19
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,65 +106,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This fixes a kernel panic when validating the
-arguments of memcpy at runtime, which is enabled
-by generic's CONFIG_FORTIFY_SOURCE for k4.19
-
-This wasn't triggered on 4.14, as ARCH_HAS_FORTIFY_SOURCE
-was added on k4.17 for the ARM architecture
+Use kernel 4.19 by default
 
 Signed-off-by: Luis Araneda <luaraneda@gmail.com>
 ---
- ...nq-Use-memcpy_toio-instead-of-memcpy.patch | 40 +++++++++++++++++++
- 1 file changed, 40 insertions(+)
- create mode 100644 target/linux/zynq/patches-4.19/110-ARM-zynq-Use-memcpy_toio-instead-of-memcpy.patch
+ target/linux/zynq/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/target/linux/zynq/patches-4.19/110-ARM-zynq-Use-memcpy_toio-instead-of-memcpy.patch b/target/linux/zynq/patches-4.19/110-ARM-zynq-Use-memcpy_toio-instead-of-memcpy.patch
-new file mode 100644
-index 0000000000..4ee6eea17d
---- /dev/null
-+++ b/target/linux/zynq/patches-4.19/110-ARM-zynq-Use-memcpy_toio-instead-of-memcpy.patch
-@@ -0,0 +1,40 @@
-+From a801d4aa6000f7ba0ffc5ba9d841af62ec7e0bb1 Mon Sep 17 00:00:00 2001
-+From: Luis Araneda <luaraneda@gmail.com>
-+Date: Tue, 30 Jul 2019 00:29:03 -0400
-+Subject: [RFC PATCH] ARM: zynq: Use memcpy_toio instead of memcpy on smp bring-up
-+
-+This fixes a kernel panic (read overflow) on memcpy when
-+FORTIFY_SOURCE is enabled.
-+
-+The computed size of memcpy args are:
-+- p_size (dst): 4294967295 = (size_t) -1
-+- q_size (src): 1
-+- size (len): 8
-+
-+Additionally, the memory is marked as __iomem, so one of
-+the memcpy_* functions should be used for read/write
-+
-+Signed-off-by: Luis Araneda <luaraneda@gmail.com>
-+---
-+As of 2019-08-03, this patch is under review and waiting
-+comments from the maintainer / author
-+--
-+ arch/arm/mach-zynq/platsmp.c | 2 +-
-+ 1 file changed, 1 insertion(+), 1 deletion(-)
-+
-+diff --git a/arch/arm/mach-zynq/platsmp.c b/arch/arm/mach-zynq/platsmp.c
-+index a7cfe07156f4..407abade7336 100644
-+--- a/arch/arm/mach-zynq/platsmp.c
-++++ b/arch/arm/mach-zynq/platsmp.c
-+@@ -65,7 +65,7 @@ int zynq_cpun_start(u32 address, int cpu)
-+ 			* 0x4: Jump by mov instruction
-+ 			* 0x8: Jumping address
-+ 			*/
-+-			memcpy((__force void *)zero, &zynq_secondary_trampoline,
-++			memcpy_toio(zero, &zynq_secondary_trampoline,
-+ 							trampoline_size);
-+ 			writel(address, zero + trampoline_size);
-+ 
-+-- 
-+2.22.0
-+
+diff --git a/target/linux/zynq/Makefile b/target/linux/zynq/Makefile
+index 3081101924..bcd36ffe2c 100644
+--- a/target/linux/zynq/Makefile
++++ b/target/linux/zynq/Makefile
+@@ -20,7 +20,7 @@ define Target/Description
+ 	Build firmware image for Zynq 7000 SoC devices.
+ endef
+ 
+-KERNEL_PATCHVER:=4.14
++KERNEL_PATCHVER:=4.19
+ 
+ include $(INCLUDE_DIR)/target.mk
+ 
 -- 
 2.22.0
 

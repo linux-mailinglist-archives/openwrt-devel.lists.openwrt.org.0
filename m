@@ -2,62 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A64DE80BEE
-	for <lists+openwrt-devel@lfdr.de>; Sun,  4 Aug 2019 19:50:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30FBE80CAC
+	for <lists+openwrt-devel@lfdr.de>; Sun,  4 Aug 2019 22:53:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:Message-ID:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ypLM6020jhkip0QcqHMMbXKjW5oSCoSMrQl3LZCPl2c=; b=Z+YGZ50jWxC+5m
-	lDdPPUkFmhEFYxrEtKcxkH7Tj/mScCKuVbhi5bzlmZgbt1SHWd8AFCTKbWigPFve+8kl1jk0eFJrN
-	/n+Np+CgxUYJ7m5ICRFVx7/1GmNnbsG6DU7X6Ae5qsyukdbvAwU5CD6ApHP6xlbGWy1wNeC3YABTb
-	CvrIXCMaHGM4tZC3JwrCziJvB/XaE0y+s3goPTwjqUiC5acaqhARUFue8MJc72SkPtscyB0dDjRJg
-	3FvKGp0CUdlnn4K47FG4ZozbL93AAM8jY0lzwC7cVFPN6Iip7MDYi0n5IQ97WFiwjwGAjFxRamE1V
-	O/D8qQkK+1e1w1IzH8LA==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=EhKXhfbC39GW6d8FV9EkHqLu0YithxFsUmGgwqi8XVA=; b=C/5FDIiSIVIIzR/0neWrYsuXLm
+	pJMFCLQCU7yJkmCpB66rW4rHj7FHldx7UPj7iZVts23UY+rtfbWNa1KtKbOn8HPNCmNB41BqEuIXF
+	pD5N6d1c7v206D3MLT8dr+sc5+F533wcpTdRTG2ssIZXgdDo0wm9kI/uc5KRL99cIz0VRy+VyBiGE
+	iqTsFYFZZHzqXmXWqP2NhvDyMVp5uBWQchZegPIHkU7UDUN0hpk1moVs7Uuus/QjfK4ZfSYz6s2F1
+	/3hxjWqPozTzVKpxkxe20FyD/ape3NNvojuk34nA+C+voCC6/L4c9EDZc0l0+ghNP7J5R3RMZxPrd
+	eRsWVFMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huKe6-0006Cr-DJ; Sun, 04 Aug 2019 17:50:14 +0000
-Received: from out-4.smtp.github.com ([192.30.252.195])
+	id 1huNVC-0006ux-FD; Sun, 04 Aug 2019 20:53:14 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huKe1-0006Bh-31
- for lede-dev@lists.infradead.org; Sun, 04 Aug 2019 17:50:10 +0000
-Date: Sun, 04 Aug 2019 10:50:06 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
- s=pf2014; t=1564941006;
- bh=+s1Bs8qUJJ3Tyi2taJO/yvWeQ38AiSwLWjlKOv7OnxA=;
- h=Date:From:To:Subject:From;
- b=OppvJq0fURltSqwS11Bsc4oOCYhouV/OqNa2pBiozs1S72POLWn+F5Zlu++Eks2ns
- sb54Nfc0Orp63mFssUU/l2+O4TgQX1RyJXSsdhSe/mZHKR4pLauGFzOK7PMgwSR1xE
- iPItwVlgfzbXqeCN71K+NY060b976zVkACF9ycLg=
-From: Stephen Walker <noreply@github.com>
-To: stephendwalker+github@gmail.com, 
- openwrt-devel@lists.openwrt.org
-Message-ID: <sdwalker/sdwalker.github.io/push/refs/heads/master/7d9b0b-5c698c@github.com>
-Mime-Version: 1.0
-X-GitHub-Recipient-Address: stephendwalker+github@gmail.com,
- lede-dev@lists.infradead.org
-X-Auto-Response-Suppress: All
+ id 1huNV5-0006uf-6h
+ for openwrt-devel@lists.openwrt.org; Sun, 04 Aug 2019 20:53:08 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id ED7AA55B5;
+ Sun,  4 Aug 2019 22:53:02 +0200 (CEST)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id e6cdfe60;
+ Sun, 4 Aug 2019 22:52:53 +0200 (CEST)
+Date: Sun, 4 Aug 2019 22:52:53 +0200
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Message-ID: <20190804205253.GD12735@meh.true.cz>
+References: <20190803234256.2880-1-freifunk@adrianschmutzler.de>
+ <20190803234256.2880-2-freifunk@adrianschmutzler.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190803234256.2880-2-freifunk@adrianschmutzler.de>
+X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190804_105009_201311_CA9C0E41 
-X-CRM114-Status: UNSURE (   1.82  )
+X-CRM114-CacheID: sfid-20190804_135307_398774_B9245053 
+X-CRM114-Status: UNSURE (   2.98  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.5 HEADER_SPAM            Bulk email fingerprint (header-based) found
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.30.252.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 5c698c: This week's
- update
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] mediatek: fix typo in Banana Pi R64
+ device title
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,27 +69,18 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-  Branch: refs/heads/master
-  Home:   https://github.com/sdwalker/sdwalker.github.io
-  Commit: 5c698c4b33d62404320302a1aad7f06bac7bd396
-      https://github.com/sdwalker/sdwalker.github.io/commit/5c698c4b33d62404320302a1aad7f06bac7bd396
-  Author: Stephen Walker <stephendwalker+github@gmail.com>
-  Date:   2019-08-04 (Sun, 04 Aug 2019)
+Adrian Schmutzler <freifunk@adrianschmutzler.de> [2019-08-04 01:42:56]:
 
-  Changed paths:
-    M uscan/index-18.06.html
-    M uscan/index.html
+> Reported-by: @86423355844265459587182778
 
-  Log Message:
-  -----------
-  This week's update
-
-
+Uh? :-)
 
 _______________________________________________
 openwrt-devel mailing list

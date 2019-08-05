@@ -2,78 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BAA9825E0
-	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 22:08:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEC73825E1
+	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 22:08:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wfTsWe75u+YW9juw5roQDTIa1r1bVkZdyyA679y34xg=; b=lRvYSZSTjEyT/3
-	uHzVoRaf+0qUrQvk285j2N2YbdfLKeroNK9LO9Jija6fyilzEDj8Z1f0FMtj0OLFXf6KLhBcUSMxl
-	Jv/iLO5f0buWv2BiXP7Erq8/rvu2I6vA+fpHInry3e5PVz/xFirpmi/USadXVaH30dPxUempmw3DA
-	UKn5u/U0VhfLUCMGf4MNIxah9BJGHk3dJgwdds5osl7Z0Xs7W6bGEnfOoc22ipG0rQJJQK8nbwW8R
-	+oc7/fojt9wvc2u9pTse5SgUbxZ2HsjagZE/6k2IdHxdXROv8wr0KvWw6hfBUhFOVZ1EgbdGQQKeD
-	Qz8Ad5PfNneMn5Iq68pQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MvejCUYsFF/1Syytcl/xUR0pvUAyyj0o8bLWVZILOB4=; b=b21IHPo1EtJqkK
+	DYy1pJKruqCrLlDML1+8pomGDtcNs5pht6qtrNyDHxDnTCS4xtmboSNrGkHoHpbg0bhENT8ulm+9t
+	hJ4exr1I6kkf3tehw3uz+U1GJm67jtlTtKTK96LzpRudv3CEJ8w8nQJZ5LGuKAOAu7CiAY4UwURF9
+	W0iWsUlitOgi4de4Dorzy2/XoNNv3LteC8fJTJ0MzOlQm0CBN5b6G7QriVCeY5hNV6FSzQInaaKBX
+	fxKfTtzhcZ92vE6EDpuTVz6KZu6zk0nbQEDuOlz5/mJVWNflI2xyZ6gg904wiOMB6ALlmnfu8LXeV
+	E6E1pJnxMXsHlw9w8Wrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hujHb-0006UW-3t; Mon, 05 Aug 2019 20:08:39 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hujHm-0006nl-2T; Mon, 05 Aug 2019 20:08:50 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hujHT-0006Tr-O3
- for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 20:08:33 +0000
-Received: by mail-qt1-x842.google.com with SMTP id a15so82221391qtn.7
- for <openwrt-devel@lists.openwrt.org>; Mon, 05 Aug 2019 13:08:31 -0700 (PDT)
+ id 1hujHV-0006U6-53
+ for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 20:08:34 +0000
+Received: by mail-qk1-x742.google.com with SMTP id c74so127798qkb.8
+ for <openwrt-devel@lists.openwrt.org>; Mon, 05 Aug 2019 13:08:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zXgfo7JQvgWtV4ratKVZkrzOGCFs226Tv544I7eDTpY=;
- b=oulMFNcf0H0FMx/28mcLevbeb2PeoYzgoMLejDHwnfyOBfw3f4sYIUi/q3kvCFrQwZ
- Pgjdie/91ENJ3rxli+2EFzvWIN5rm2KofWqnkIQdqVjRcr0Sx7IXn/wEwEz9kDvpxFJG
- h1XCGbp5oJXAVHsvAZOXyK9wtXBtC4QV/mHOLlH0yYat/EzdpZJEjD+0Y6TC6v90iJXy
- FWnxzTHcjHV09t0XHpsYGdbxN1DuUC8cXtzmQpKNEToiyGM2G68hc5wrqJcJkhYdQB0T
- qCFogWZ5EkT6KvtMX7JLw1Z32FyJXNc+NX+RCnwOJ5bbvsR91Ib8t6qofLl8/o9yvRlm
- SA0w==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=dhIudazwiBKPiV6VmbUj2h8iGiKY0h0TFO9MNFqBb08=;
+ b=hKQqgvFyJIDLb7KbdSpuUQ23lA5oxSVUKGFYZnx0CPE4Jap0NiFn1AQ1z+qzP1m+uj
+ V2Vlpl5Nr/0HN4CN70RRnIz6VGcgoqfbJ4YckP4fbJQPJijm3JrF788/++zUeqgX6lKF
+ q+hm0jTSjFHgRswIBRgoMHSgeJN3j+eGOiDKbjNfFGT9WMG3meJsc7TOKFXI5a3+Pcds
+ mdZ2KqhAIaMrj6hx4A9vV7OVlUN5mE3xHJ+XKc1UwG/XWtivoQWbe3GyF1M5KOBsV4Vn
+ g9pLKFQOGxblX6/Qj+qrC4UJw9E/NyeHNhBqroUqnMCL4uqEaxk4XnZ6BgDgYWO7NqZ9
+ xXdg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=zXgfo7JQvgWtV4ratKVZkrzOGCFs226Tv544I7eDTpY=;
- b=F7D3p/kurwPn3DEfji7Ms0hDkxPq4GlAMxvCJEz3zz6Up5ZW0YoiqqX9jk4nQEUfjB
- KpsbjO76uDe68XhS3W5BcgcX5YMAz3Ldq6YsPwliqIsKehcipXK31e8//UVWG9dxmd12
- 6WFjx/h960vSqpnDcJdNgY2KFHj7Jg40Q5ktxuNSHr0xa/KLA7HFNxP0J3vPkbGX7HV4
- hNXkkUEGyadaRWNf2xN+FDAqXfK2GfwXVnCpAAY4zzp8l/sjGFnFqOIX/t8UQlcEdmvr
- bPWxEVO62sa3JsvO+PS8p8pFfapHTpGxznzMzyW0Vd52ExXvM6GlBN0b/kox5OcxkUO7
- kJIw==
-X-Gm-Message-State: APjAAAWfqFSC8y2AMYKKYXyRepix7aJRZ+cdNT7JDSwmhZVQWzz2Vt2N
- qBrXNp10X+1Qw+cwP81dbNiGeQB9Gg8=
-X-Google-Smtp-Source: APXvYqzplncdstn3c2ZdKjUWTOg2cTWP3RKfd7I2gluaSH7ZF63gpyMYPMJxtnYgeulZOWGh/clFMA==
-X-Received: by 2002:aed:3325:: with SMTP id
- u34mr106547410qtd.324.1565035710332; 
- Mon, 05 Aug 2019 13:08:30 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=dhIudazwiBKPiV6VmbUj2h8iGiKY0h0TFO9MNFqBb08=;
+ b=OaV9AUkh0TDbDDAOLhDnrPvh6masGAoJAbYbHTADYdqhWar0+DDF0S+xSFDjXZuLwU
+ iMPKNUjs1jv2XD1bggJLltOus47hOg5K6fx1MXp9O31KUtCFwKH2hB5p817OLy3eMeWy
+ HWmQMBHY/5ZuioGRzQ2mvDiFV14LUBEiaGu1gRP4KQv7w4slcJK/30Sq9FGq+zxhn2qr
+ YUfpn8AB2k7ky7Mbm4Ykhmcoc3PEgL7tj/MPSo5JEPoVpYgAL00ftvF0WBREjG7TiQal
+ imEfmjXFQTELfGnnpM1a/ME2o/2J6xfClvDFXDI+uuVWUjnr8a5/+yXAvVtS+RAy4Q6h
+ +akg==
+X-Gm-Message-State: APjAAAU5aY8P5rHhTqlkaFht/8ANCqu2br8hZ7iLYH2OY8IMbcb//BzC
+ JikrBV6uGX53koGIzUAPDnVarHZzsBY=
+X-Google-Smtp-Source: APXvYqynLc+5pkEQkFDYn5qg2UnH6R+hSkWgwDc6M1GDLUtQUfXZzRbmPLFumnF77tcBFWBTP5SuyQ==
+X-Received: by 2002:a37:aa10:: with SMTP id t16mr73638qke.332.1565035711869;
+ Mon, 05 Aug 2019 13:08:31 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id 2sm44390828qtz.73.2019.08.05.13.08.28
+ by smtp.gmail.com with ESMTPSA id 2sm44390828qtz.73.2019.08.05.13.08.30
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 13:08:29 -0700 (PDT)
+ Mon, 05 Aug 2019 13:08:31 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  5 Aug 2019 17:07:47 -0300
-Message-Id: <20190805200748.29474-1-cotequeiroz@gmail.com>
+Date: Mon,  5 Aug 2019 17:07:48 -0300
+Message-Id: <20190805200748.29474-2-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190805200748.29474-1-cotequeiroz@gmail.com>
+References: <20190805200748.29474-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_130831_803678_6D2B10AC 
-X-CRM114-Status: UNSURE (   4.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190805_130833_190697_A77FC730 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -86,8 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [ustream-ssl PATCH 1/2] wolfssl,
- openssl: use TLS 1.3, set ciphersuites
+Subject: [OpenWrt-Devel] [ustream-ssl PATCH 2/2] Revise supported
+ ciphersuites
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,80 +105,186 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-For wolfssl, instead of hard-coding TLS 1.2, use generic method and
-disable older protocols, adding the necessary ciphersuites.
+CBC ciphersuites have been under scrutiny because of the many padding
+oracle vulnerabilities that keep popping up; it seems that we won't be
+able to patch up the inherent wakness of MAC-then-encrypt forever.  They
+have been blacklisted by HTTP/2, and recently dropped from Mozilla's
+Security/Serverside TLS intermediate compatibility list:
+https://wiki.mozilla.org/Security/Server_Side_TLS
 
-Openssl already had TLS 1.3 compatiblity, but its ciphersuite ordering
-needs a separate call, so this sets the ciphersuite preference when
-using TLS 1.3.
+This commit removes ECDSA-CBC ciphersuites.  Basically, you can choose a
+level of ciphersuite security, using the private-key type as a switch:
+
+For RSA keys, CBC and RSA-key exchange ciphers will be enabled--mostly
+matching Mozilla's Old backward compatibility list.
+
+If you use an EC private key, then only ephemeral-key, authenticated
+ciphers will be used, along the lines of what Mozilla's Intermediate
+compatibility list prescribes.
+
+The order does not match Mozilla's list 100% because in most embedded
+systems, the server is going to be the least-capable machine.  So,
+chacha20-poly1305 is moved ahead of AES, and the cipher preference is
+always given to the server.  Also, DHE ciphers are not used for server.
+
+The client list had the order changed to prioritize authenticated
+ciphers, so DHE-chacha and DHE-GCM were moved ahead of ECDHE-CBC.
 
 Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+---
+If you use the intermediate compatibility list, you lose compatibility
+with Safari on iOS<=8 and OS X<=10.10. Windows XP will not work either,
+but since it is not compatible with EC keys, it does not change what we
+had before.
 
+I don't think we should drop ciphers from client-mode yet; none of the
+ciphers are terribly bad from a client perspective, and if we disable
+them, we can either get locked out of a service, or be forced to use an
+unencrypted connection.
+
+diff --git a/ustream-mbedtls.c b/ustream-mbedtls.c
+index b7d7629..85bbb1c 100644
+--- a/ustream-mbedtls.c
++++ b/ustream-mbedtls.c
+@@ -86,18 +86,25 @@ static int _urandom(void *ctx, unsigned char *out, size_t len)
+ 	return 0;
+ }
+ 
+-#define AES_CIPHERS(v)					\
++#define AES_GCM_CIPHERS(v)				\
+ 	MBEDTLS_TLS_##v##_WITH_AES_128_GCM_SHA256,	\
+-	MBEDTLS_TLS_##v##_WITH_AES_256_GCM_SHA384,	\
++	MBEDTLS_TLS_##v##_WITH_AES_256_GCM_SHA384
++
++#define AES_CBC_CIPHERS(v)				\
+ 	MBEDTLS_TLS_##v##_WITH_AES_128_CBC_SHA,		\
+ 	MBEDTLS_TLS_##v##_WITH_AES_256_CBC_SHA
+ 
++#define AES_CIPHERS(v)					\
++	AES_GCM_CIPHERS(v),				\
++	AES_CBC_CIPHERS(v)
++
+ static const int default_ciphersuites_server[] =
+ {
+ 	MBEDTLS_TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+-	AES_CIPHERS(ECDHE_ECDSA),
++	AES_GCM_CIPHERS(ECDHE_ECDSA),
+ 	MBEDTLS_TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+-	AES_CIPHERS(ECDHE_RSA),
++	AES_GCM_CIPHERS(ECDHE_RSA),
++	AES_CBC_CIPHERS(ECDHE_RSA),
+ 	AES_CIPHERS(RSA),
+ 	0
+ };
+@@ -105,11 +112,14 @@ static const int default_ciphersuites_server[] =
+ static const int default_ciphersuites_client[] =
+ {
+ 	MBEDTLS_TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256,
+-	AES_CIPHERS(ECDHE_ECDSA),
++	AES_GCM_CIPHERS(ECDHE_ECDSA),
+ 	MBEDTLS_TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+-	AES_CIPHERS(ECDHE_RSA),
++	AES_GCM_CIPHERS(ECDHE_RSA),
+ 	MBEDTLS_TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256,
+-	AES_CIPHERS(DHE_RSA),
++	AES_GCM_CIPHERS(DHE_RSA),
++	AES_CBC_CIPHERS(ECDHE_ECDSA),
++	AES_CBC_CIPHERS(ECDHE_RSA),
++	AES_CBC_CIPHERS(DHE_RSA),
+ 	MBEDTLS_TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA,
+ 	AES_CIPHERS(RSA),
+ 	MBEDTLS_TLS_RSA_WITH_3DES_EDE_CBC_SHA,
 diff --git a/ustream-openssl.c b/ustream-openssl.c
-index 7c72ce1..3810d6a 100644
+index 3810d6a..b2df362 100644
 --- a/ustream-openssl.c
 +++ b/ustream-openssl.c
-@@ -33,6 +33,21 @@
+@@ -22,14 +22,16 @@
+ #include "ustream-ssl.h"
+ #include "ustream-internal.h"
+ 
+-
+ /* Ciphersuite preference:
+- * - key exchange: prefer ECDHE, then DHE(client only), then RSA
+- * - prefer AEAD ciphers:
++ * - for server, no weak ciphers are used if you use an ECDSA key.
++ * - forward-secret (pfs), authenticated (AEAD) ciphers are at the top:
+  *   	chacha20-poly1305, the fastest in software, 256-bits
+  * 	aes128-gcm, 128-bits
+  * 	aes256-gcm, 256-bits
+- * - CBC ciphers
++ * - key exchange: prefer ECDHE, then DHE (client only)
++ * - forward-secret ECDSA CBC ciphers (client-only)
++ * - forward-secret RSA CBC ciphers
++ * - non-pfs ciphers
   *	aes128, aes256, 3DES(client only)
   */
  
-+#ifdef WOLFSSL_SSL_H
-+# define top_ciphers							\
-+				"TLS13-CHACHA20-POLY1305-SHA256:"	\
-+				"TLS13-AES128-GCM-SHA256:"		\
-+				"TLS13-AES256-GCM-SHA384:"		\
-+				ecdhe_ciphers
-+#else
-+# define tls13_ciphersuites	"TLS_CHACHA20_POLY1305_SHA256:"		\
-+				"TLS_AES_128_GCM_SHA256:"		\
-+				"TLS_AES_256_GCM_SHA384"
-+
-+# define top_ciphers							\
-+				ecdhe_ciphers
-+#endif
-+
- #define ecdhe_ciphers							\
+@@ -38,32 +40,38 @@
+ 				"TLS13-CHACHA20-POLY1305-SHA256:"	\
+ 				"TLS13-AES128-GCM-SHA256:"		\
+ 				"TLS13-AES256-GCM-SHA384:"		\
+-				ecdhe_ciphers
++				ecdhe_aead_ciphers
+ #else
+ # define tls13_ciphersuites	"TLS_CHACHA20_POLY1305_SHA256:"		\
+ 				"TLS_AES_128_GCM_SHA256:"		\
+ 				"TLS_AES_256_GCM_SHA384"
+ 
+ # define top_ciphers							\
+-				ecdhe_ciphers
++				ecdhe_aead_ciphers
+ #endif
+ 
+-#define ecdhe_ciphers							\
++#define ecdhe_aead_ciphers						\
  				"ECDHE-ECDSA-CHACHA20-POLY1305:"	\
  				"ECDHE-ECDSA-AES128-GCM-SHA256:"	\
-@@ -60,11 +75,11 @@
- 				"AES256-SHA"
+ 				"ECDHE-ECDSA-AES256-GCM-SHA384:"	\
+-				"ECDHE-ECDSA-AES128-SHA:"		\
+-				"ECDHE-ECDSA-AES256-SHA:"		\
+ 				"ECDHE-RSA-CHACHA20-POLY1305:"		\
+ 				"ECDHE-RSA-AES128-GCM-SHA256:"		\
+-				"ECDHE-RSA-AES256-GCM-SHA384:"		\
+-				"ECDHE-RSA-AES128-SHA:"			\
+-				"ECDHE-RSA-AES256-SHA"
++				"ECDHE-RSA-AES256-GCM-SHA384"
+ 
+-#define dhe_ciphers							\
++#define dhe_aead_ciphers						\
+ 				"DHE-RSA-CHACHA20-POLY1305:"		\
+ 				"DHE-RSA-AES128-GCM-SHA256:"		\
+-				"DHE-RSA-AES256-GCM-SHA384:"		\
++				"DHE-RSA-AES256-GCM-SHA384"
++
++#define ecdhe_ecdsa_cbc_ciphers						\
++				"ECDHE-ECDSA-AES128-SHA:"		\
++				"ECDHE-ECDSA-AES256-SHA"
++
++#define ecdhe_rsa_cbc_ciphers						\
++				"ECDHE-RSA-AES128-SHA:"			\
++				"ECDHE-RSA-AES256-SHA"
++
++#define dhe_cbc_ciphers							\
+ 				"DHE-RSA-AES128-SHA:"			\
+ 				"DHE-RSA-AES256-SHA:"			\
+ 				"DHE-DES-CBC3-SHA"
+@@ -76,11 +84,15 @@
  
  #define server_cipher_list						\
--				ecdhe_ciphers ":"			\
-+				top_ciphers ":"				\
+ 				top_ciphers ":"				\
++				ecdhe_rsa_cbc_ciphers ":"		\
  				non_pfs_aes
  
  #define client_cipher_list						\
--				ecdhe_ciphers ":"			\
-+				top_ciphers ":"				\
- 				dhe_ciphers ":"				\
+ 				top_ciphers ":"				\
+-				dhe_ciphers ":"				\
++				dhe_aead_ciphers ":"			\
++				ecdhe_ecdsa_cbc_ciphers ":"		\
++				ecdhe_rsa_cbc_ciphers ":"		\
++				dhe_cbc_ciphers ":"			\
  				non_pfs_aes ":"				\
  				"DES-CBC3-SHA"
-@@ -83,7 +98,7 @@ __ustream_ssl_context_new(bool server)
- 		SSL_library_init();
- 		_init = true;
- 	}
--# define TLS_server_method TLSv1_2_server_method
-+# define TLS_server_method SSLv23_server_method
- # define TLS_client_method SSLv23_client_method
- #endif
  
-@@ -101,10 +116,15 @@ __ustream_ssl_context_new(bool server)
- 			       SSL_OP_CIPHER_SERVER_PREFERENCE);
- #if defined(SSL_CTX_set_ecdh_auto) && OPENSSL_VERSION_NUMBER < 0x10100000L
- 	SSL_CTX_set_ecdh_auto(c, 1);
-+#elif OPENSSL_VERSION_NUMBER >= 0x10101000L
-+	SSL_CTX_set_ciphersuites(c, tls13_ciphersuites);
- #endif
- 	if (server) {
- #if OPENSSL_VERSION_NUMBER >= 0x10100000L
- 		SSL_CTX_set_min_proto_version(c, TLS1_2_VERSION);
-+#else
-+		SSL_CTX_set_options(c, SSL_OP_NO_SSLv3 | SSL_OP_NO_TLSv1 |
-+				       SSL_OP_NO_TLSv1_1);
- #endif
- 		SSL_CTX_set_cipher_list(c, server_cipher_list);
- 	} else {
 
 _______________________________________________
 openwrt-devel mailing list

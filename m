@@ -2,70 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEC6F824F1
-	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 20:35:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C93CD824F2
+	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 20:35:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+jJe6/H5HtB0TmgneIV+ct/Q9l95qiiW9IP9iEhQwoM=; b=FQJu7VCgoGIukm
-	D0Skx8MkYS4dH6CcfOu/NWri0kGfiQ7XoIgHt+kzVGisImwdlPgBpropvSktwY3E/qMZVzwTrRQqM
-	8RMLQ8ZYsoP714BzDv1eUcxfBtp6ZeBTIFBlJDgmM0jgnMttIwGfO/VWLt0Z54otD4ATcPOgNx5Yo
-	N4zLDBrIDebX0JQyqhpDAB5lILq2CwX9St+50b4vNLCALB5I42ilCwP8cN3sM7xTMHPQXjHQhfV7P
-	lMkgEXXy1Kl0vnsQLk78U+VMq/XBen880mujMX/K4Y+pQuu2ucpppXZQzO8OqXB1eBFX4zAlVWux/
-	j6BC8BM7oCRXji6PJwQQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M4qEMkxfa2pcOIY0gh7tgtBOW4zBBdXYjihcFN/wUdM=; b=oSXx94ClUp06Qu
+	A0JpXd6NsLbuH0ndW5WnJb1leM/eOBU2XBJh4C27lAAxwirdCQhLlb02m0bWNqbgw+0/VPJHmWhZr
+	U1SUNGyuiilnyswl7m3lDTZOfW7h+ExMnO8LS16RsllTIwxVov4zV5ztJvVWe1XP2woBN3qVP/4n9
+	hoQyM46wA+wVuI2auCXFs6elA3wuKuEfxBMGKpH6uxVpLFeIJ/N64ivqhu0xvdLGa6uIi59d49893
+	lVF4Unr+xSJATJ84bItc3z0OwPVODZYhmxwHxtK6A5Fe9zxafi+h2dYDOyo86sme4HoXqmksV9S0/
+	hUkHRgyKGA2IBV65E6JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huhpg-0001VS-Rn; Mon, 05 Aug 2019 18:35:44 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1huhpt-0001fp-G6; Mon, 05 Aug 2019 18:35:57 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huhpZ-0001Up-7g
- for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 18:35:38 +0000
-Received: by mail-qt1-x842.google.com with SMTP id n11so81919003qtl.5
- for <openwrt-devel@lists.openwrt.org>; Mon, 05 Aug 2019 11:35:36 -0700 (PDT)
+ id 1huhpa-0001V6-MQ
+ for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 18:35:39 +0000
+Received: by mail-qt1-x844.google.com with SMTP id y26so81960407qto.4
+ for <openwrt-devel@lists.openwrt.org>; Mon, 05 Aug 2019 11:35:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=qW//Y665C1xYe8UXvq92OVMUruboCq6ZPG8gknG9DIU=;
- b=B5WCPXgTyj0GdXI49EHdL4bN1k5C5ak7aKfi/zcqKmjSjakHU4Nr+2mEZ6XMVx+/Sq
- zVJGRPBS0Qt+wtRmmkK0yD2MPT6GRG7EqcLYCKG75OOr87kQNaZ8X7CgEUBYe+aafcfp
- PVh/MkYBvif7xNXg2Decqc9PRV2ncI4j0/ZtIJ0WIO/cRk0TQHPo8L1LvaA9IvBGkTmC
- iGOVarn2G5U01Ez0o9ocgWeUxxiKtQxs/tygvLAsjkR8AawD5jJJTZ3DKBHsnPxhjD04
- PCgqoIOxO9NxMaTliOF0zg03quYyx7wEC0vBDsN28zAVkQP0PzuWOoy3Usc5IrO6gAaR
- dJPA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=iYtmfZGKVRytPZAiIWkutGPwm6Kmcw3WC51PY9/Ya9g=;
+ b=gnWOHocI9d9i4g0ycyDxenXVDwQ1Bp+NNSr6fHJSBI1JRWk2mrn9Mmueq7wDQdYmO8
+ CMa2BRW9Nvv+sX8F5nmoKHS8tAdgLQG82v5LfaYREF2K7r8WZbQlU+GaHTEpMk2kmW/S
+ dkyMd9O6XyijvgzG9ts1LcDFb/T2ionXKObpNYsbHgvpwmKO70w2zpTdPdmU7MReM9RW
+ qF+K52Qreg/njWjQqd1dfJRocJlWyo3EGjgez2IWSHe/PvpobrIL4kXsDE1rZQKjBL/+
+ gHa5gHg6z0H9cenV9Mq9jejRPsX9PwR7j+ihZqsCSC5RgcQ83G/0ZOwOmzMHSaX6Cktr
+ kwew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=qW//Y665C1xYe8UXvq92OVMUruboCq6ZPG8gknG9DIU=;
- b=Pk1PNm3og5V2QwZLo7pWvEPjp2jvuLecU9CALZ3snCkgYxfew+vEF278cDwEOjHQxu
- Z/uQFLaqoazMoa5FzZsa+HwRYPW0kyHuuGl2DlwTOvEtw0NxZ5ysV00uqsiv04FzPBgu
- hEW7AcxwF22H9FkjMrPDPeodqovWUcp44pBk+Sj0w/8nXLjfQ3ZOXjbrpsjmS0QR1wxj
- E3vbOkRSSdldW7bGaldOQCQo4bKbrQ8/CfP7wrbfs7A4cXMHL0GV/Lmx18pct44RSL9X
- /1yt5iBV5qCKC3zFP0ZVIUMFZCFigmj1v+SJACp5KEuTppr1yFw/hJOxiHwGqAmAS31m
- XXrQ==
-X-Gm-Message-State: APjAAAX6wVQCt1+f0LdlZ3I5AJc8J4unRaRzFSzt0xMXSebaV9SeuueJ
- ZmyKBfUdiRHllY/5r31pr8AnDCk/wV0=
-X-Google-Smtp-Source: APXvYqyAh3AYrBN6/JLMdUKVv6+/z0Upx62YhteDwiSbsabo4ThcTOHa+UHFn3QJDWBhkvTJJtuKrw==
-X-Received: by 2002:ad4:4373:: with SMTP id
- u19mr112242117qvt.202.1565030135801; 
- Mon, 05 Aug 2019 11:35:35 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=iYtmfZGKVRytPZAiIWkutGPwm6Kmcw3WC51PY9/Ya9g=;
+ b=KO9rySt9WwUADXf4u3kMxrobmYn0I3Z1kO2QXAU8X97/rATbrqa8m+bE33RQSN2eb7
+ XX5J9pw2nRJcGxX98YGBmu2Lo56tlF3yQe8POBRxLY0yXj3Geup+8D/cHhDO2xr/E77p
+ eH0/5zAc83Wr735cJkBvqjaBdLNc/lZN14AjfbdLvrliMfSFYcJ+G+YO9GBTEDrulCEs
+ pVny4F7hPMOoylFJuQHKLr5sp493RuWRfwY/KjJg4gA8wXtrrgsR6kgNUJtFx5IgQF4k
+ t+wH8jddUzdt0FRAjYpg0FqKzQg9Z3944anqFbRUZIxF5FzqkFa5jbkEOVt6zPI3uK1K
+ 2aXw==
+X-Gm-Message-State: APjAAAUM3ibBRHaJJUK8T2NQFoCjeUG3yqnEFImoEitF+x4Dc+ng39C3
+ spzgGkp70nEajRsFX3Sid32vEYQ5Wi0=
+X-Google-Smtp-Source: APXvYqygC9CRYw3nHAhXkpw8Rtp8vsqdfaTU5n4ULb9/x+lgG1LKBLFHlqnEr/E5Wv6vS5aTREcvaQ==
+X-Received: by 2002:ac8:19d8:: with SMTP id s24mr108719026qtk.44.1565030137310; 
+ Mon, 05 Aug 2019 11:35:37 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id e7sm34565926qtp.91.2019.08.05.11.35.33
+ by smtp.gmail.com with ESMTPSA id e7sm34565926qtp.91.2019.08.05.11.35.36
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 11:35:34 -0700 (PDT)
+ Mon, 05 Aug 2019 11:35:36 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  5 Aug 2019 15:34:36 -0300
-Message-Id: <20190805183439.17926-1-cotequeiroz@gmail.com>
+Date: Mon,  5 Aug 2019 15:34:37 -0300
+Message-Id: <20190805183439.17926-2-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190805183439.17926-1-cotequeiroz@gmail.com>
+References: <20190805183439.17926-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_113537_281104_BAD898BD 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20190805_113538_728815_209A5836 
+X-CRM114-Status: UNSURE (   7.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,7 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -86,7 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 0/3] support EC keys in px5g/uhttpd
+Subject: [OpenWrt-Devel] [PATCH 1/3] openssl: always build with EC support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,44 +105,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-I'm adding support to create EC curves with px5g, and changing uhttpd
-to use it, adding two config options: key_type, and ec_curve. 
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
-* key_type should be set to either 'ec' or 'rsa'.  In practice, it will
-  silently use 'rsa' unless its value is 'ec'.
-
-* ec_curve takes an elliptic curve name, which should match one of the
-  certificate generator's TLS library's name.  Unfortunatly, they don't
-  necessarity match between px5g (mbedtls), and openssl.  Short names
-  P-256 and P-384 were added to px5g to have an uniform set, and are
-  guaranteed to work.  P-521 is there too, but mbedtls is currently
-  built without it.
-
-Right now the ciphersuites used with EC keys are stronger than with RSA
-keys, and I'm sending a patch to widen that gap further.  That way you
-can use the key type to choose the level of strenght vs. broad
-compatibility you wish to use.
-
-A P-256 EC key offers a strenght equivalent of 3072-bit RSA key, and is
-generated much faster than even a 2048-bit RSA key.
-
-uhttpd currently generates a 2048-bit RSA key by default, and that has
-not been changed.
-
-Eneas U de Queiroz (3):
-  openssl: always build with EC support
-  px5g: support EC keys
-  uhttpd: add support to generate EC keys
-
- package/libs/openssl/Config.in                | 12 ---
- package/libs/openssl/Makefile                 |  9 +-
- package/network/services/uhttpd/Makefile      |  2 +-
- .../services/uhttpd/files/uhttpd.config       |  8 ++
- .../network/services/uhttpd/files/uhttpd.init |  6 +-
- package/utils/px5g/Makefile                   |  4 +-
- package/utils/px5g/px5g.c                     | 86 +++++++++++++++----
- 7 files changed, 87 insertions(+), 40 deletions(-)
-
+diff --git a/package/libs/openssl/Config.in b/package/libs/openssl/Config.in
+index 63493829ba..d1281ec6fa 100644
+--- a/package/libs/openssl/Config.in
++++ b/package/libs/openssl/Config.in
+@@ -76,7 +76,6 @@ config OPENSSL_WITH_TLS13
+ 	bool
+ 	default y
+ 	prompt "Enable support for TLS 1.3"
+-	select OPENSSL_WITH_EC
+ 	help
+ 		TLS 1.3 is the newest version of the TLS specification.
+ 		It aims:
+@@ -120,19 +119,8 @@ config OPENSSL_WITH_CMS
+ 
+ comment "Algorithm Selection"
+ 
+-config OPENSSL_WITH_EC
+-	bool
+-	default y
+-	prompt "Enable elliptic curve support"
+-	help
+-		Elliptic-curve cryptography (ECC) is an approach to public-key
+-		cryptography based on the algebraic structure of elliptic curves
+-		over finite fields. ECC requires smaller keys compared to non-ECC
+-		cryptography to provide equivalent security.
+-
+ config OPENSSL_WITH_EC2M
+ 	bool
+-	depends on OPENSSL_WITH_EC
+ 	prompt "Enable ec2m support"
+ 	help
+ 		This option enables the more efficient, yet less common, binary
+diff --git a/package/libs/openssl/Makefile b/package/libs/openssl/Makefile
+index b8f97a82e8..24a84c0c54 100644
+--- a/package/libs/openssl/Makefile
++++ b/package/libs/openssl/Makefile
+@@ -11,7 +11,7 @@ PKG_NAME:=openssl
+ PKG_BASE:=1.1.1
+ PKG_BUGFIX:=c
+ PKG_VERSION:=$(PKG_BASE)$(PKG_BUGFIX)
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
+ PKG_USE_MIPS16:=0
+ ENGINES_DIR=engines-1.1
+ 
+@@ -28,7 +28,7 @@ PKG_HASH:=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f4c90
+ 
+ PKG_LICENSE:=OpenSSL
+ PKG_LICENSE_FILES:=LICENSE
+-PKG_MAINTAINER:=Eneas U de Queiroz <cote2004-github@yahoo.com>
++PKG_MAINTAINER:=Eneas U de Queiroz <cotequeiroz@gmail.com>
+ PKG_CPE_ID:=cpe:/a:openssl:openssl
+ PKG_CONFIG_DEPENDS:= \
+ 	CONFIG_OPENSSL_ENGINE \
+@@ -48,7 +48,6 @@ PKG_CONFIG_DEPENDS:= \
+ 	CONFIG_OPENSSL_WITH_CMS \
+ 	CONFIG_OPENSSL_WITH_COMPRESSION \
+ 	CONFIG_OPENSSL_WITH_DTLS \
+-	CONFIG_OPENSSL_WITH_EC \
+ 	CONFIG_OPENSSL_WITH_EC2M \
+ 	CONFIG_OPENSSL_WITH_ERROR_MESSAGES \
+ 	CONFIG_OPENSSL_WITH_GOST \
+@@ -203,10 +202,6 @@ ifndef CONFIG_OPENSSL_WITH_ASYNC
+   OPENSSL_OPTIONS += no-async
+ endif
+ 
+-ifndef CONFIG_OPENSSL_WITH_EC
+-  OPENSSL_OPTIONS += no-ec
+-endif
+-
+ ifndef CONFIG_OPENSSL_WITH_EC2M
+   OPENSSL_OPTIONS += no-ec2m
+ endif
 
 _______________________________________________
 openwrt-devel mailing list

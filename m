@@ -2,51 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2074681A44
-	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 15:04:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E3B081BFA
+	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 15:20:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a60mCcoszHu98gPO2XkkE8eJB50e7AsNIKm9zPssPeo=; b=t6iLDyUuT/KYiJ
-	qF6d8qdJ1/zz+kFKwbL8MMMIylgvjaTDdIOuH3/DbaMfHvMdiLVg4cSVUtuT5pvzIG0CqQ90yNcj0
-	0wIJqLENif/v7PwK0AlEClKh/QWe0g7G37xyvmyb2SDBQcKVHPbyJsoQYTAD2040XDZUBviFqJSDZ
-	ldh1y4J8vKu+cBLFERraNfXj6E82QZjQebBrt5P6Tjc61HBZERuImEptJPQ7S4kpHEccD27rf2Zb5
-	Nq/xKUDlwD5h/6bgDzleb4StJf4eOgGMlZGdeDrl2HsUSTwEW/wYaNljyShnLBN/b29mYiLfRKOFA
-	M+W0UClp1zZoo2b8Zm/A==;
+	List-Owner; bh=I7z+6euIH1W0W1SwBh2WESHwexTseKvKyP0xQ71dWjA=; b=pfqdfBMm2UPobV
+	/bZfBDrnCaG8KaqQxXGdChT7offqVZ6cY4njxbHbge+aW5jd4Kzlw3SUuzEO3+rJptBldEfbo0Jrm
+	XkTB8SpLYaT2KXzIdXNZzp8B88ygPaqFCWvc+s/tDLgG+uRLilfGMNu94zYBFMDWfoIwX/1Icm657
+	CJvc7WH515pxD8IOAULc2Pjs6tBbb/+eNuMbwVyvYe386gM8LzcqVOrhXzVTIzx7qwH2nYaqZBzf0
+	BHjWZcdXZjKxH2HpPvB3rkkUhdMpXE7IsYsv8ayhTX+/4nWEBMt5wXxIbx6hKJzM6m40vxsnHexbt
+	ALtMFl/XvoHNjDeFr/0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hucfI-0006uw-Gz; Mon, 05 Aug 2019 13:04:40 +0000
+	id 1hucv0-0001Vt-FF; Mon, 05 Aug 2019 13:20:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hucfA-0006uI-J2
- for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 13:04:33 +0000
+ id 1hucup-0001VA-Pc
+ for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 13:20:45 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C0921214C6;
- Mon,  5 Aug 2019 13:04:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DEB9020880;
+ Mon,  5 Aug 2019 13:20:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565010271;
- bh=kGX1jxzuDNRJqOod9t7QrMG4O+Bd/lEDlWmeu/BAsbA=;
+ s=default; t=1565011243;
+ bh=WQ6IdJnGylUw5D3tDviDE6y2TF7w0s6NvKTzLHZJjnU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=l7MmsMMQe14UJLfBK5IeGJNA/cqBr2X7wNHpLLOjsAu8qor6vbTjQvrqY87Six/IK
- dzhStr47peCyEQIXPn+NUZSVXcW3JIrYJf3Oe6yRvgYnxxntkq74O0moPNMA9khjDZ
- 7k3NOpdJNM26W+ehsIVRhiHra8j0+FlHAafmtiPs=
+ b=Ah51SoobktcbSasrrVRnjjcU0Efq0vfhxAUfQYrL7+hnddDe16i0cbZb01zmGc/7z
+ ev3N6Ho86GX7azuXQgX8zY2+MzCrAy48gJxInBjDSjk/e0UTUAwxFA5ImEEtodpB/q
+ Q8UF5Q2Qq8/eKMliKs6kspOk3CxtiCkHj8r4D9LU=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Date: Mon,  5 Aug 2019 15:02:41 +0200
-Message-Id: <20190805124919.695465347@linuxfoundation.org>
+Date: Mon,  5 Aug 2019 15:01:46 +0200
+Message-Id: <20190805124952.718096980@linuxfoundation.org>
 X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190805124918.070468681@linuxfoundation.org>
-References: <20190805124918.070468681@linuxfoundation.org>
+In-Reply-To: <20190805124951.453337465@linuxfoundation.org>
+References: <20190805124951.453337465@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_060432_650821_E6019664 
+X-CRM114-CacheID: sfid-20190805_062043_852180_A6B23168 
 X-CRM114-Status: GOOD (  10.06  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -61,7 +61,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-Subject: [OpenWrt-Devel] [PATCH 4.4 04/22] MIPS: lantiq: Fix bitfield masking
+Subject: [OpenWrt-Devel] [PATCH 5.2 019/131] MIPS: lantiq: Fix bitfield
+ masking
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,10 +102,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/arch/mips/lantiq/irq.c b/arch/mips/lantiq/irq.c
-index 2e7f60c9fc5df..a7057a06c0961 100644
+index cfd87e662fcf4..9c95097557c75 100644
 --- a/arch/mips/lantiq/irq.c
 +++ b/arch/mips/lantiq/irq.c
-@@ -160,8 +160,9 @@ static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
+@@ -154,8 +154,9 @@ static int ltq_eiu_settype(struct irq_data *d, unsigned int type)
  			if (edge)
  				irq_set_handler(d->hwirq, handle_edge_irq);
  

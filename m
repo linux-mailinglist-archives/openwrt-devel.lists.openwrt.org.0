@@ -2,71 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C93CD824F2
-	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 20:35:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72B3D824F4
+	for <lists+openwrt-devel@lfdr.de>; Mon,  5 Aug 2019 20:36:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M4qEMkxfa2pcOIY0gh7tgtBOW4zBBdXYjihcFN/wUdM=; b=oSXx94ClUp06Qu
-	A0JpXd6NsLbuH0ndW5WnJb1leM/eOBU2XBJh4C27lAAxwirdCQhLlb02m0bWNqbgw+0/VPJHmWhZr
-	U1SUNGyuiilnyswl7m3lDTZOfW7h+ExMnO8LS16RsllTIwxVov4zV5ztJvVWe1XP2woBN3qVP/4n9
-	hoQyM46wA+wVuI2auCXFs6elA3wuKuEfxBMGKpH6uxVpLFeIJ/N64ivqhu0xvdLGa6uIi59d49893
-	lVF4Unr+xSJATJ84bItc3z0OwPVODZYhmxwHxtK6A5Fe9zxafi+h2dYDOyo86sme4HoXqmksV9S0/
-	hUkHRgyKGA2IBV65E6JQ==;
+	List-Owner; bh=LzSnJD0LZhz+XMJLxZEHjsCUkERAqwUd9GqCPd/BV4s=; b=lodktzo/vzcwsp
+	LGLxNKNMQqntB+6eBqGBfMna5Mmo7K7yWZrmJ8upxk7WDp6G6ejomsKcDQVTR/fmRSgds7fUUX1eE
+	Qa+Jyzlcb6JJvpMXP2gmMY5dAhW0Va8xq4aJYVQMSP60/xA9msCFuxBlh0Itu4DqN8NglL7WSYcST
+	4XvqSMo5RPoM465tfyy+fdl3W6xiYTFgKNuorIoUUrkCSAgczzpr5svXf9NjmQ4BGuJsQsxj64tuK
+	GcahzWIGqKfhVX4OSTAC8Bqfqo+WBxJMeglH7b5GdEZ/n9QOob5NCGau6ra9weBVqxUL+R5KOnUhm
+	N4Is/y9k9yqwi0iwjiVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huhpt-0001fp-G6; Mon, 05 Aug 2019 18:35:57 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1huhq6-0001wo-SU; Mon, 05 Aug 2019 18:36:10 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huhpa-0001V6-MQ
- for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 18:35:39 +0000
-Received: by mail-qt1-x844.google.com with SMTP id y26so81960407qto.4
- for <openwrt-devel@lists.openwrt.org>; Mon, 05 Aug 2019 11:35:38 -0700 (PDT)
+ id 1huhpc-0001VY-AA
+ for openwrt-devel@lists.openwrt.org; Mon, 05 Aug 2019 18:35:41 +0000
+Received: by mail-qk1-x741.google.com with SMTP id d15so60856816qkl.4
+ for <openwrt-devel@lists.openwrt.org>; Mon, 05 Aug 2019 11:35:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=iYtmfZGKVRytPZAiIWkutGPwm6Kmcw3WC51PY9/Ya9g=;
- b=gnWOHocI9d9i4g0ycyDxenXVDwQ1Bp+NNSr6fHJSBI1JRWk2mrn9Mmueq7wDQdYmO8
- CMa2BRW9Nvv+sX8F5nmoKHS8tAdgLQG82v5LfaYREF2K7r8WZbQlU+GaHTEpMk2kmW/S
- dkyMd9O6XyijvgzG9ts1LcDFb/T2ionXKObpNYsbHgvpwmKO70w2zpTdPdmU7MReM9RW
- qF+K52Qreg/njWjQqd1dfJRocJlWyo3EGjgez2IWSHe/PvpobrIL4kXsDE1rZQKjBL/+
- gHa5gHg6z0H9cenV9Mq9jejRPsX9PwR7j+ihZqsCSC5RgcQ83G/0ZOwOmzMHSaX6Cktr
- kwew==
+ bh=3TT3O2lVbQI7RHfeUYHWZaZHO2ycslZOSUkCh3jN8fE=;
+ b=dwVbVfNozprwVj2MmxF6fyHI2kCz7afBaQ5PDvDnZNBn48SoSKx9KMuWmLi7UNKQs2
+ Y1IUysU7modO7r/B/ox1KL8l7C4Kw9ho3FEN+CXUJ2l1pc69lcGbiqCAKtI75XiwrDZQ
+ 7sYUvYkI3b4VhWI0ixfgkRJ9p/b8bqlGPCEJzw2QNDOcq0gogVH1kgz6Alf7qIlGvpA0
+ lv8gHHdqGnqJVRngLCMhP+hXG0EC585nmYfeQEzhjobe0ZusO0DlkWoJ3KJXCmRLJ29E
+ UmYv/XbET6wgURwZYZZe1Hv9mIYMfoEHx/lcaa8fopkiFkIjJlH9po/Gd2nGyClQ9cD/
+ TJ3Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=iYtmfZGKVRytPZAiIWkutGPwm6Kmcw3WC51PY9/Ya9g=;
- b=KO9rySt9WwUADXf4u3kMxrobmYn0I3Z1kO2QXAU8X97/rATbrqa8m+bE33RQSN2eb7
- XX5J9pw2nRJcGxX98YGBmu2Lo56tlF3yQe8POBRxLY0yXj3Geup+8D/cHhDO2xr/E77p
- eH0/5zAc83Wr735cJkBvqjaBdLNc/lZN14AjfbdLvrliMfSFYcJ+G+YO9GBTEDrulCEs
- pVny4F7hPMOoylFJuQHKLr5sp493RuWRfwY/KjJg4gA8wXtrrgsR6kgNUJtFx5IgQF4k
- t+wH8jddUzdt0FRAjYpg0FqKzQg9Z3944anqFbRUZIxF5FzqkFa5jbkEOVt6zPI3uK1K
- 2aXw==
-X-Gm-Message-State: APjAAAUM3ibBRHaJJUK8T2NQFoCjeUG3yqnEFImoEitF+x4Dc+ng39C3
- spzgGkp70nEajRsFX3Sid32vEYQ5Wi0=
-X-Google-Smtp-Source: APXvYqygC9CRYw3nHAhXkpw8Rtp8vsqdfaTU5n4ULb9/x+lgG1LKBLFHlqnEr/E5Wv6vS5aTREcvaQ==
-X-Received: by 2002:ac8:19d8:: with SMTP id s24mr108719026qtk.44.1565030137310; 
- Mon, 05 Aug 2019 11:35:37 -0700 (PDT)
+ bh=3TT3O2lVbQI7RHfeUYHWZaZHO2ycslZOSUkCh3jN8fE=;
+ b=qLJGxbtwJGBtOjUEX1+SSgyTZXFsfhe3wl5I61obKGpWx2GU3C2+0ds1wNR5aHkBg6
+ 0wKVXLjJJxcjtAd6uBzMINpbdsmWrFr/evZlUUedrG8yBfau5/WAX6Dg1jpXqlVMP07s
+ hDDGUKMa7Cb2G5mK8CcZYpuLLCfYwQNSAZpZb9CpOPiKIRVHZllhP6rNQ0vhc5jT/sQj
+ +J77ybA2T8ifuz5uZVS9C8FiZeY9Mpky3JmcMRwLl6Gya+O28Ji8iEEXpLXKnrndk7im
+ dAZupWq2VNmu9lT8xoakdvQNVDmsWlYUiiYMa4CNKElMSHZQiOlz8iA8lZ4zkSRbxRQM
+ 5G6Q==
+X-Gm-Message-State: APjAAAUwUbTrJkJrzmx1Zn3uxEHpAXWg/iDDNNWPprLvoCI+HR6PZpAl
+ FFTKjDSHwutBxaAanKEaxpnYs+4QjRM=
+X-Google-Smtp-Source: APXvYqyhQPGHbnplGeqkd+XPy+BcELYg4XAMpVnGWKOB2GV9NaKXZVbXmF3KUfPiOwAldFeJ1trn3Q==
+X-Received: by 2002:a37:6312:: with SMTP id
+ x18mr102303332qkb.300.1565030138863; 
+ Mon, 05 Aug 2019 11:35:38 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id e7sm34565926qtp.91.2019.08.05.11.35.36
+ by smtp.gmail.com with ESMTPSA id e7sm34565926qtp.91.2019.08.05.11.35.37
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 05 Aug 2019 11:35:36 -0700 (PDT)
+ Mon, 05 Aug 2019 11:35:38 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  5 Aug 2019 15:34:37 -0300
-Message-Id: <20190805183439.17926-2-cotequeiroz@gmail.com>
+Date: Mon,  5 Aug 2019 15:34:38 -0300
+Message-Id: <20190805183439.17926-3-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190805183439.17926-1-cotequeiroz@gmail.com>
 References: <20190805183439.17926-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_113538_728815_209A5836 
-X-CRM114-Status: UNSURE (   7.23  )
+X-CRM114-CacheID: sfid-20190805_113540_357653_F339D343 
+X-CRM114-Status: UNSURE (   9.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -87,7 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH 1/3] openssl: always build with EC support
+Subject: [OpenWrt-Devel] [PATCH 2/3] px5g: support EC keys
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,81 +106,221 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This adds an 'eckey' command to generate an EC key, with an optional
+curve name argument, with P-256 as default.
+
+For the 'selfsigned' command, it adds an 'ec' algorithm argument to the
+'-newkey' option, and a '-pkeyopt ec_paramgen_curve:<curvename>' option,
+mirroring the way openssl specifies the curve name.
+
+Notice that curve names are not necessarily the same in mbedtls and
+openssl.  In particular, secp256r1 works for mbedtls, but openssl uses
+prime256v1 instead. px5g uses mbedtls, but short NIST curve names P-256
+and P-384 are specifically supported.
+
+Package size increased by about 900 bytes (arm).
+
 Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
-diff --git a/package/libs/openssl/Config.in b/package/libs/openssl/Config.in
-index 63493829ba..d1281ec6fa 100644
---- a/package/libs/openssl/Config.in
-+++ b/package/libs/openssl/Config.in
-@@ -76,7 +76,6 @@ config OPENSSL_WITH_TLS13
- 	bool
- 	default y
- 	prompt "Enable support for TLS 1.3"
--	select OPENSSL_WITH_EC
- 	help
- 		TLS 1.3 is the newest version of the TLS specification.
- 		It aims:
-@@ -120,19 +119,8 @@ config OPENSSL_WITH_CMS
+diff --git a/package/utils/px5g/Makefile b/package/utils/px5g/Makefile
+index 7b5748425d..cfd1bfc80e 100644
+--- a/package/utils/px5g/Makefile
++++ b/package/utils/px5g/Makefile
+@@ -8,7 +8,7 @@
+ include $(TOPDIR)/rules.mk
  
- comment "Algorithm Selection"
+ PKG_NAME:=px5g
+-PKG_RELEASE:=8
++PKG_RELEASE:=9
+ PKG_LICENSE:=LGPL-2.1
+ PKG_BUILD_DIR:=$(BUILD_DIR)/px5g-$(BUILD_VARIANT)
  
--config OPENSSL_WITH_EC
--	bool
--	default y
--	prompt "Enable elliptic curve support"
--	help
--		Elliptic-curve cryptography (ECC) is an approach to public-key
--		cryptography based on the algebraic structure of elliptic curves
--		over finite fields. ECC requires smaller keys compared to non-ECC
--		cryptography to provide equivalent security.
--
- config OPENSSL_WITH_EC2M
- 	bool
--	depends on OPENSSL_WITH_EC
- 	prompt "Enable ec2m support"
- 	help
- 		This option enables the more efficient, yet less common, binary
-diff --git a/package/libs/openssl/Makefile b/package/libs/openssl/Makefile
-index b8f97a82e8..24a84c0c54 100644
---- a/package/libs/openssl/Makefile
-+++ b/package/libs/openssl/Makefile
-@@ -11,7 +11,7 @@ PKG_NAME:=openssl
- PKG_BASE:=1.1.1
- PKG_BUGFIX:=c
- PKG_VERSION:=$(PKG_BASE)$(PKG_BUGFIX)
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- PKG_USE_MIPS16:=0
- ENGINES_DIR=engines-1.1
- 
-@@ -28,7 +28,7 @@ PKG_HASH:=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f4c90
- 
- PKG_LICENSE:=OpenSSL
- PKG_LICENSE_FILES:=LICENSE
--PKG_MAINTAINER:=Eneas U de Queiroz <cote2004-github@yahoo.com>
-+PKG_MAINTAINER:=Eneas U de Queiroz <cotequeiroz@gmail.com>
- PKG_CPE_ID:=cpe:/a:openssl:openssl
- PKG_CONFIG_DEPENDS:= \
- 	CONFIG_OPENSSL_ENGINE \
-@@ -48,7 +48,6 @@ PKG_CONFIG_DEPENDS:= \
- 	CONFIG_OPENSSL_WITH_CMS \
- 	CONFIG_OPENSSL_WITH_COMPRESSION \
- 	CONFIG_OPENSSL_WITH_DTLS \
--	CONFIG_OPENSSL_WITH_EC \
- 	CONFIG_OPENSSL_WITH_EC2M \
- 	CONFIG_OPENSSL_WITH_ERROR_MESSAGES \
- 	CONFIG_OPENSSL_WITH_GOST \
-@@ -203,10 +202,6 @@ ifndef CONFIG_OPENSSL_WITH_ASYNC
-   OPENSSL_OPTIONS += no-async
+@@ -53,7 +53,7 @@ ifeq ($(BUILD_VARIANT),standalone)
+   TARGET_LDFLAGS := -Wl,-Bstatic $(TARGET_LDFLAGS) -Wl,-Bdynamic
  endif
  
--ifndef CONFIG_OPENSSL_WITH_EC
--  OPENSSL_OPTIONS += no-ec
--endif
+-TARGET_CFLAGS += -Wl,--gc-sections
++TARGET_CFLAGS += -Wl,--gc-sections -Wall -Werror
+ 
+ define Build/Compile
+ 	$(TARGET_CC) $(TARGET_CPPFLAGS) $(TARGET_CFLAGS) -o $(PKG_BUILD_DIR)/px5g px5g.c $(TARGET_LDFLAGS)
+diff --git a/package/utils/px5g/px5g.c b/package/utils/px5g/px5g.c
+index f0fe4dcfd3..0b72154509 100644
+--- a/package/utils/px5g/px5g.c
++++ b/package/utils/px5g/px5g.c
+@@ -32,6 +32,7 @@
+ 
+ #include <mbedtls/bignum.h>
+ #include <mbedtls/x509_crt.h>
++#include <mbedtls/ecp.h>
+ #include <mbedtls/rsa.h>
+ #include <mbedtls/pk.h>
+ 
+@@ -73,6 +74,23 @@ static void write_file(const char *path, int len, bool pem)
+ 	fclose(f);
+ }
+ 
++static mbedtls_ecp_group_id ecp_curve(const char *name)
++{
++	const mbedtls_ecp_curve_info *curve_info;
++
++	if (!strcmp(name, "P-256"))
++		return MBEDTLS_ECP_DP_SECP256R1;
++	else if (!strcmp(name, "P-384"))
++		return MBEDTLS_ECP_DP_SECP384R1;
++	else if (!strcmp(name, "P-521"))
++		return MBEDTLS_ECP_DP_SECP521R1;
++	curve_info = mbedtls_ecp_curve_info_from_name(name);
++	if (curve_info == NULL)
++		return MBEDTLS_ECP_DP_NONE;
++	else
++		return curve_info->grp_id;
++}
++
+ static void write_key(mbedtls_pk_context *key, const char *path, bool pem)
+ {
+ 	int len = 0;
+@@ -89,24 +107,33 @@ static void write_key(mbedtls_pk_context *key, const char *path, bool pem)
+ 	write_file(path, len, pem);
+ }
+ 
+-static void gen_key(mbedtls_pk_context *key, int ksize, int exp, bool pem)
++static void gen_key(mbedtls_pk_context *key, bool rsa, int ksize, int exp,
++		    mbedtls_ecp_group_id curve, bool pem)
+ {
+ 	mbedtls_pk_init(key);
+-	fprintf(stderr, "Generating RSA private key, %i bit long modulus\n", ksize);
+-	mbedtls_pk_setup(key, mbedtls_pk_info_from_type(MBEDTLS_PK_RSA));
+-	if (mbedtls_rsa_gen_key(mbedtls_pk_rsa(*key), _urandom, NULL, ksize, exp)) {
+-		fprintf(stderr, "error: key generation failed\n");
+-		exit(1);
++	if (rsa) {
++		fprintf(stderr, "Generating RSA private key, %i bit long modulus\n", ksize);
++		mbedtls_pk_setup(key, mbedtls_pk_info_from_type(MBEDTLS_PK_RSA));
++		if (!mbedtls_rsa_gen_key(mbedtls_pk_rsa(*key), _urandom, NULL, ksize, exp))
++			return;
++	} else {
++		fprintf(stderr, "Generating EC private key\n");
++		mbedtls_pk_setup(key, mbedtls_pk_info_from_type(MBEDTLS_PK_ECKEY));
++		if (!mbedtls_ecp_gen_key(curve, mbedtls_pk_ec(*key), _urandom, NULL))
++			return;
+ 	}
++	fprintf(stderr, "error: key generation failed\n");
++	exit(1);
+ }
+ 
+-int rsakey(char **arg)
++int dokey(bool rsa, char **arg)
+ {
+ 	mbedtls_pk_context key;
+ 	unsigned int ksize = 512;
+ 	int exp = 65537;
+ 	char *path = NULL;
+ 	bool pem = true;
++	mbedtls_ecp_group_id curve = MBEDTLS_ECP_DP_SECP256R1;
+ 
+ 	while (*arg && **arg == '-') {
+ 		if (!strcmp(*arg, "-out") && arg[1]) {
+@@ -120,10 +147,17 @@ int rsakey(char **arg)
+ 		arg++;
+ 	}
+ 
+-	if (*arg)
++	if (*arg && rsa) {
+ 		ksize = (unsigned int)atoi(*arg);
++	} else if (*arg) {
++		curve = ecp_curve((const char *)*arg);
++		if (curve == MBEDTLS_ECP_DP_NONE) {
++			fprintf(stderr, "error: invalid curve name: %s\n", *arg);
++			return 1;
++		}
++	}
+ 
+-	gen_key(&key, ksize, exp, pem);
++	gen_key(&key, rsa, ksize, exp, curve, pem);
+ 	write_key(&key, path, pem);
+ 
+ 	mbedtls_pk_free(&key);
+@@ -146,20 +180,37 @@ int selfsigned(char **arg)
+ 	time_t from = time(NULL), to;
+ 	char fstr[20], tstr[20], sstr[17];
+ 	int len;
++	bool rsa = true;
++	mbedtls_ecp_group_id curve = MBEDTLS_ECP_DP_SECP256R1;
+ 
+ 	while (*arg && **arg == '-') {
+ 		if (!strcmp(*arg, "-der")) {
+ 			pem = false;
+ 		} else if (!strcmp(*arg, "-newkey") && arg[1]) {
+-			if (strncmp(arg[1], "rsa:", 4)) {
+-				fprintf(stderr, "error: invalid algorithm");
++			if (!strncmp(arg[1], "rsa:", 4)) {
++				rsa = true;
++				ksize = (unsigned int)atoi(arg[1] + 4);
++			} else if (!strcmp(arg[1], "ec")) {
++				rsa = false;
++			} else {
++				fprintf(stderr, "error: invalid algorithm\n");
+ 				return 1;
+ 			}
+-			ksize = (unsigned int)atoi(arg[1] + 4);
+ 			arg++;
+ 		} else if (!strcmp(*arg, "-days") && arg[1]) {
+ 			days = (unsigned int)atoi(arg[1]);
+ 			arg++;
++		} else if (!strcmp(*arg, "-pkeyopt") && arg[1]) {
++			if (strncmp(arg[1], "ec_paramgen_curve:", 18)) {
++				fprintf(stderr, "error: invalid pkey option: %s\n", arg[1]);
++				return 1;
++			}
++			curve = ecp_curve((const char *)(arg[1] + 18));
++			if (curve == MBEDTLS_ECP_DP_NONE) {
++				fprintf(stderr, "error: invalid curve name: %s\n", arg[1] + 18);
++				return 1;
++			}
++			arg++;
+ 		} else if (!strcmp(*arg, "-keyout") && arg[1]) {
+ 			keypath = arg[1];
+ 			arg++;
+@@ -196,8 +247,7 @@ int selfsigned(char **arg)
+ 		}
+ 		arg++;
+ 	}
 -
- ifndef CONFIG_OPENSSL_WITH_EC2M
-   OPENSSL_OPTIONS += no-ec2m
- endif
+-	gen_key(&key, ksize, exp, pem);
++	gen_key(&key, rsa, ksize, exp, curve, pem);
+ 
+ 	if (keypath)
+ 		write_key(&key, keypath, pem);
+@@ -223,7 +273,7 @@ int selfsigned(char **arg)
+ 	mbedtls_x509write_crt_set_subject_key_identifier(&cert);
+ 	mbedtls_x509write_crt_set_authority_key_identifier(&cert);
+ 
+-	_urandom(NULL, buf, 8);
++	_urandom(NULL, (void *) buf, 8);
+ 	for (len = 0; len < 8; len++)
+ 		sprintf(sstr + len*2, "%02x", (unsigned char) buf[len]);
+ 
+@@ -260,8 +310,10 @@ int main(int argc, char *argv[])
+ 
+ 	if (!argv[1]) {
+ 		//Usage
++	} else if (!strcmp(argv[1], "eckey")) {
++		return dokey(false, argv+2);
+ 	} else if (!strcmp(argv[1], "rsakey")) {
+-		return rsakey(argv+2);
++		return dokey(true, argv+2);
+ 	} else if (!strcmp(argv[1], "selfsigned")) {
+ 		return selfsigned(argv+2);
+ 	}
+@@ -269,6 +321,6 @@ int main(int argc, char *argv[])
+ 	fprintf(stderr,
+ 		"PX5G X.509 Certificate Generator Utility v" PX5G_VERSION "\n" PX5G_COPY
+ 		"\nbased on PolarSSL by Christophe Devine and Paul Bakker\n\n");
+-	fprintf(stderr, "Usage: %s [rsakey|selfsigned]\n", *argv);
++	fprintf(stderr, "Usage: %s [eckey|rsakey|selfsigned]\n", *argv);
+ 	return 1;
+ }
 
 _______________________________________________
 openwrt-devel mailing list

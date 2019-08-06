@@ -2,62 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F63C833A4
-	for <lists+openwrt-devel@lfdr.de>; Tue,  6 Aug 2019 16:10:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D50FF833A1
+	for <lists+openwrt-devel@lfdr.de>; Tue,  6 Aug 2019 16:10:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YflgDmlSc6Vr8oKUmFtweJWbZnb1UTTIFyWuVJy1/bE=; b=Vk98O5L0bjiqzk
-	qEXnSPWdZBJp9e0vu78R1le1mCAAuholyi6tc/6Y6ivb5DuPuyPSYVMBnF/8SDX8ebm/jw1QgFZan
-	FdYRWUbkXaVutzpnmOuisoQEUG6DgSdfG6rBOtqwctg3jck14vjzIclpXTPfG1SMXdtw6wJDAuuZp
-	0Yc94Bn6aqlkDM/R6RoEocg9c9jy0QPNuJylhfSStoFSX8fgL47a7aH0wbgwMEq0Z/X7lzCToprd1
-	yYYNDKlsc9rt6tHaoahM5vKogQBxqipGyUCsSRs5TM35OSZ1VOfzzn76n1ctJJBTyjTns/1JhbDrW
-	+Z0Qp57Cagjbp0hBHTmw==;
+	List-Owner; bh=M/RBCG6Ovt8TzjU91thlZYRU/u83ZauNCiDkKsX4uGc=; b=maM/1LSk/algp8
+	rJtyas8QOy7muzjmExPww86xvZf8rdX7YGx5BC/abTn5qGp8/8MekDgrtRmcemdooNUCY77/0Ru3D
+	H7yv/2/3NAyjkiWrPi+fxFVUTgIe1z5DvrKA1JYwXby4p2i59scUQAkl1uMMHi/TA7mfgjLKLtzMU
+	37xBL3TWh2ZLKOYhtWtqmRG/uxBlbmTs4sYrN2VCwRlIBrzzj97RtkPabprCEeATUqzb0aANY10ZY
+	infPXdDwT2Jh8VVybhrFkHJf/oxRZubEqlXLuCTQ9PVR9oglGh2Rm8IDD0/W4ITKc2a4GzrQUG/+H
+	DvADBNhZdN2m/RK3AsEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv0AJ-0004Lb-RG; Tue, 06 Aug 2019 14:10:15 +0000
-Received: from mx4.wp.pl ([212.77.101.11])
+	id 1hv0A4-0003sw-9U; Tue, 06 Aug 2019 14:10:00 +0000
+Received: from mx3.wp.pl ([212.77.101.9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv09B-0002y1-Qe
- for openwrt-devel@lists.openwrt.org; Tue, 06 Aug 2019 14:09:07 +0000
-Received: (wp-smtpd smtp.wp.pl 28259 invoked from network);
- 6 Aug 2019 16:09:03 +0200
+ id 1hv09A-0002wF-2R
+ for openwrt-devel@lists.openwrt.org; Tue, 06 Aug 2019 14:09:06 +0000
+Received: (wp-smtpd smtp.wp.pl 23679 invoked from network);
+ 6 Aug 2019 16:09:01 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1565100543; bh=vxySi+pWCSVXyXRkfpiFvo95K4jG8JpRPc41rQZ99eQ=;
+ t=1565100541; bh=kZN5n8sHTq/Qq30Mii0MuCGXzv0Oka392WF7mwRpjbQ=;
  h=From:To:Cc:Subject;
- b=cmYWwh7FiabCWTSgMSmXnIkMP8lBtsDnSL1MbksR5UYB0/zabVuXzixdwY5H7MzbC
- xoCUg6o8xzOfJarJhNinavO1JKlWSCOzqvRKMYIQGAB1bBSp2rAuom0KTj9U0BVOJY
- zr+PfXbTaKxOIfhc0ODYhRv/FXLIlbgt5xVZwSm8=
+ b=A7+7jWP/KLwfBCOBGkb+3Pg/IR9slSi/yHCSHZafvyLgL2j65j0/gXbhs50JbF3qx
+ GxKcV+O7M4sVjaWikr2zuL8/YdIxjOumokvfSUuO+LSCXGAB+dxKdfvxs0+Te5brlS
+ 4z9ceWKfZze5NZyylGhqY6E4cjDG0INCyHJAhvik=
 Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
  (michal.cieslakiewicz@wp.pl@[89.79.49.72])
  (envelope-sender <michal.cieslakiewicz@wp.pl>)
  by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 6 Aug 2019 16:09:03 +0200
-Date: Tue, 6 Aug 2019 16:01:58 +0200
+ for <openwrt-devel@lists.openwrt.org>; 6 Aug 2019 16:09:01 +0200
+Date: Tue, 6 Aug 2019 16:07:28 +0200
 From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Message-ID: <20190806160158.69876d23@kosmio.komorska>
+Message-ID: <20190806160728.398bc2b5@kosmio.komorska>
 In-Reply-To: <20190806155540.4e27407b@kosmio.komorska>
 References: <20190806155540.4e27407b@kosmio.komorska>
 X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-X-WP-MailID: b7e6ae297310ab974ab70a517451cccf
+X-WP-MailID: 1a288fdbc78c100e0a1cea2e74f91a4d
 X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [UUNU]                               
+X-WP-SPAM: NO 000000A [0eNE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_070906_140679_DC89D9A6 
-X-CRM114-Status: UNSURE (   9.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190806_070904_300895_5BFCFD29 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.11 listed in list.dnswl.org]
+ no trust [212.77.101.9 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -69,8 +68,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v2 2/5] ath79: WNR612v2: improve device
- support
+Subject: [OpenWrt-Devel] [PATCH v2 5/5] ath79: add support for Netgear
+ WNR2200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,104 +87,386 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patch improves ath79 support for Netgear WNR612v2.
-Router functionality becomes identical to ar71xx version.
+This patch adds ath79 support for Netgear WNR2200.
+Router was previously supported by ar71xx target only.
 
-Changes include:
-* software control over LAN LEDs via sysfs
-* correct MAC addresses for network interfaces
-* correct image size in device definition
+Specification
+=============
+  * Description: Netgear WNR2200
+  * Loader: U-boot
+  * SOC: Atheros AR7241 (360 MHz)
+  * RAM: 64 MiB
+  * Flash: 8 MiB (SPI NOR)
+	- U-boot binary: 256 KiB
+	- U-boot environment: 64 KiB
+	- Firmware: 7808 KiB
+	- ART: 64 KiB
+  * Ethernet: 4 x 10/100 LAN + 1 x 10/100 WAN
+  * Wireless: 2.4 GHz b/g/n (Atheros AR9287)
+  * USB: yes, 1 x USB 2.0
+  * Buttons:
+	- Reset
+	- WiFi (rfkill)
+	- WPS
+  * LEDs:
+	- Power (amber/green)
+	- WAN (amber/green)
+	- WLAN (blue)
+	- 4 x LAN (amber/green)
+	- WPS (green)
+  * UART: 4-pin connector JP1, 3.3V (Vcc, TX, RX, GND), 115200 8N1
+  * Power supply: DC 12V 1.5A
+  * MAC addresses: LAN on case label, WAN +1, WLAN +2
+
+Installation
+============
+  * TFTP recovery
+  * TFTP via U-boot prompt
+  * sysupgrade
+  * Web interface
+
+Test build configuration
+========================
+CONFIG_TARGET_ath79=y
+CONFIG_TARGET_ath79_generic=y
+CONFIG_TARGET_ath79_generic_DEVICE_netgear_wnr2200=y
+CONFIG_ALL_KMODS=y
+CONFIG_DEVEL=y
+CONFIG_CCACHE=y
+CONFIG_COLLECT_KERNEL_DEBUG=y
+CONFIG_IMAGEOPT=y
+CONFIG_KERNEL_DEBUG_INFO=y
+CONFIG_KERNEL_DEBUG_KERNEL=y
 
 Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 ---
- .../ath79/dts/ar7240_netgear_wnr612-v2.dtsi   | 20 +++++++++++++------
- target/linux/ath79/image/tiny-netgear.mk      |  2 +-
- 2 files changed, 15 insertions(+), 7 deletions(-)
+ .../ath79/base-files/etc/board.d/01_leds      |  14 ++
+ .../ath79/base-files/etc/board.d/02_network   |   1 +
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   1 +
+ .../ath79/dts/ar7241_netgear_wnr2200.dts      | 237 ++++++++++++++++++
+ target/linux/ath79/image/generic.mk           |  16 ++
+ 5 files changed, 269 insertions(+)
+ create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
 
-diff --git a/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi b/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
-index 8e934429a3..b987408fbb 100644
---- a/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
-+++ b/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
-@@ -28,6 +28,10 @@
- 
- 	leds {
- 		compatible = "gpio-leds";
+diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
+index 5f5d5a7b2a..c366df50ec 100755
+--- a/target/linux/ath79/base-files/etc/board.d/01_leds
++++ b/target/linux/ath79/base-files/etc/board.d/01_leds
+@@ -107,6 +107,20 @@ netgear,wnr2000-v3)
+ 	ucidef_set_led_switch "lan3amber" "LAN3 (amber)" "netgear:amber:lan3" "switch0" "0x08" "0x02"
+ 	ucidef_set_led_switch "lan4amber" "LAN4 (amber)" "netgear:amber:lan4" "switch0" "0x10" "0x02"
+ 	;;
++netgear,wnr2200)
++	ucidef_set_led_netdev "wan-amber" "WAN (amber)" "netgear:amber:wan" "eth0"
++	ucidef_set_led_default "wan-green" "WAN (green)" "netgear:green:wan" "0"
++	ucidef_set_led_wlan "wlan" "WLAN" "netgear:blue:wlan" "phy0tpt"
++	ucidef_set_led_switch "lan1green" "LAN1 (green)" "netgear:green:lan1" "switch0" "0x02" "0x04"
++	ucidef_set_led_switch "lan2green" "LAN2 (green)" "netgear:green:lan2" "switch0" "0x04" "0x04"
++	ucidef_set_led_switch "lan3green" "LAN3 (green)" "netgear:green:lan3" "switch0" "0x08" "0x04"
++	ucidef_set_led_switch "lan4green" "LAN4 (green)" "netgear:green:lan4" "switch0" "0x10" "0x04"
++	ucidef_set_led_switch "lan1amber" "LAN1 (amber)" "netgear:amber:lan1" "switch0" "0x02" "0x02"
++	ucidef_set_led_switch "lan2amber" "LAN2 (amber)" "netgear:amber:lan2" "switch0" "0x04" "0x02"
++	ucidef_set_led_switch "lan3amber" "LAN3 (amber)" "netgear:amber:lan3" "switch0" "0x08" "0x02"
++	ucidef_set_led_switch "lan4amber" "LAN4 (amber)" "netgear:amber:lan4" "switch0" "0x10" "0x02"
++	ucidef_set_led_usbport "usb" "USB" "netgear:green:usb" "usb1-port1"
++	;;
+ netgear,wnr612-v2|\
+ on,n150r)
+ 	ucidef_set_led_netdev "wan" "WAN" "netgear:green:wan" "eth0"
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+index a4b6b4e1dd..0a2775568b 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/base-files/etc/board.d/02_network
+@@ -182,6 +182,7 @@ ath79_setup_interfaces()
+ 		;;
+ 	netgear,wnr1000-v2|\
+ 	netgear,wnr2000-v3|\
++	netgear,wnr2200|\
+ 	netgear,wnr612-v2|\
+ 	on,n150r|\
+ 	tplink,tl-wr740n-v1|\
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index e2edebed66..3ce1e70725 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -166,6 +166,7 @@ case "$FIRMWARE" in
+ 		;;
+ 	netgear,wnr1000-v2|\
+ 	netgear,wnr2000-v3|\
++	netgear,wnr2200|\
+ 	netgear,wnr612-v2|\
+ 	on,n150r|\
+ 	pcs,cap324|\
+diff --git a/target/linux/ath79/dts/ar7241_netgear_wnr2200.dts b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
+new file mode 100644
+index 0000000000..3b4eb7fa86
+--- /dev/null
++++ b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
+@@ -0,0 +1,237 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "ar7241.dtsi"
++
++/ {
++	model = "Netgear WNR2200";
++	compatible = "netgear,wnr2200", "qca,ar7241";
++
++	chosen {
++		bootargs = "console=ttyS0,115200n8";
++	};
++
++	aliases {
++		led-boot = &power_amber;
++		led-failsafe = &power_amber;
++		led-running = &power_green;
++		led-upgrade = &power_amber;
++	};
++
++	keys {
++		compatible = "gpio-keys-polled";
++		poll-interval = <20>;
++
++		wps {
++			label = "wps";
++			linux,code = <KEY_WPS_BUTTON>;
++			gpios = <&ath9k 5 GPIO_ACTIVE_LOW>;
++			debounce-interval = <60>;
++		};
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&ath9k 6 GPIO_ACTIVE_LOW>;
++			debounce-interval = <60>;
++		};
++
++		rfkill {
++			label = "rfkill";
++			linux,code = <KEY_RFKILL>;
++			gpios = <&ath9k 3 GPIO_ACTIVE_LOW>;
++			debounce-interval = <60>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
 +
 +		pinctrl-names = "default";
 +		pinctrl-0 = <&jtag_disable_pins &switch_led_disable_pins &clks_disable_pins>;
 +
- 		power: power {
- 			label = "netgear:green:power";
- 			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-@@ -47,6 +51,10 @@
- 			label = "netgear:green:wan";
- 			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
- 		};
++		wan_green {
++			label = "netgear:green:wan";
++			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++		};
++
++		wan_amber {
++			label = "netgear:amber:wan";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++		};
++
++		lan1_green {
++			label = "netgear:green:lan1";
++			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
++		};
++
++		lan1_amber {
++			label = "netgear:amber:lan1";
++			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
++		};
++
++		lan2_green {
++			label = "netgear:green:lan2";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++		};
++
++		lan2_amber {
++			label = "netgear:amber:lan2";
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++		};
++
++		lan3_green {
++			label = "netgear:green:lan3";
++			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
++		};
++
++		lan3_amber {
++			label = "netgear:amber:lan3";
++			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
++		};
++
++		lan4_green {
++			label = "netgear:green:lan4";
++			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++		};
++
++		lan4_amber {
++			label = "netgear:amber:lan4";
++			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
++		};
++
++		wps_green {
++			label = "netgear:green:wps";
++			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
++		};
++
++		usb_green {
++			label = "netgear:green:usb";
++			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
++			trigger-sources = <&hub_port>;
++			linux,default-trigger = "usbport";
++		};
 +	};
 +
 +	ath9k-leds {
 +		compatible = "gpio-leds";
- 
- 		wlan: wlan {
- 			label = "netgear:green:wlan";
-@@ -70,7 +78,7 @@
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 
--			uboot: partition@0 {
++
++		power_green: power_green {
++			label = "netgear:green:power";
++			gpios = <&ath9k 2 GPIO_ACTIVE_LOW>;
++		};
++
++		power_amber: power_amber {
++			label = "netgear:amber:power";
++			gpios = <&ath9k 1 GPIO_ACTIVE_LOW>;
++			default-state = "keep";
++		};
++
++		wlan_blue {
++			label = "netgear:blue:wlan";
++			gpios = <&ath9k 0 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++	};
++};
++
++&spi {
++	status = "okay";
++	num-cs = <1>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
 +			partition@0 {
- 				reg = <0x0 0x40000>;
- 				label = "u-boot";
- 				read-only;
-@@ -87,7 +95,7 @@
- 				label = "firmware";
- 			};
- 
--			partition@3f0000 {
-+			art: partition@3f0000 {
- 				reg = <0x3f0000 0x10000>;
- 				label = "art";
- 				read-only;
-@@ -99,15 +107,13 @@
- &eth0 {
- 	status = "okay";
- 
--	mtd-mac-address = <&uboot 0x1fc00>;
--	mtd-mac-address-increment = <(-1)>;
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++			};
++
++			partition@50000 {
++				label = "firmware";
++				reg = <0x050000 0x7a0000>;
++				compatible = "netgear,uimage";
++			};
++
++			art: partition@7f0000 {
++				label = "art";
++				reg = <0x7f0000 0x010000>;
++				read-only;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++
 +	mtd-mac-address = <&art 0x00>;
- };
- 
- &eth1 {
- 	status = "okay";
- 
--	mtd-mac-address = <&uboot 0x1fc00>;
--	mtd-mac-address-increment = <1>;
++};
++
++&eth1 {
++	status = "okay";
++
++	compatible = "qca,ar7241-eth", "syscon", "simple-mfd";
 +	mtd-mac-address = <&art 0x06>;
- };
- 
- &pcie {
-@@ -116,6 +122,8 @@
- 	ath9k: wifi@0,0 {
- 		compatible = "pci168c,002b";
- 		reg = <0x0000 0 0 0 0>;
++};
++
++&pcie {
++	status = "okay";
++
++	ath9k: wifi@0,0 {
++		compatible = "pci168c,002e";
++		reg = <0x0000 0 0 0 0>;
 +		mtd-mac-address = <&art 0x00>;
 +		mtd-mac-address-increment = <1>;
- 		qca,no-eeprom;
- 		#gpio-cells = <2>;
- 		gpio-controller;
-diff --git a/target/linux/ath79/image/tiny-netgear.mk b/target/linux/ath79/image/tiny-netgear.mk
-index 67ef28c9cc..2f17d79757 100644
---- a/target/linux/ath79/image/tiny-netgear.mk
-+++ b/target/linux/ath79/image/tiny-netgear.mk
-@@ -4,7 +4,7 @@ define Device/netgear_ar7240
-   ATH_SOC := ar7240
-   NETGEAR_KERNEL_MAGIC := 0x32303631
-   KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma -d20 | netgear-uImage lzma
--  IMAGE_SIZE := 3904k
-+  IMAGE_SIZE := 3712k
-   IMAGE/default := append-kernel | pad-to $$$$(BLOCKSIZE) | netgear-squashfs | append-rootfs | pad-rootfs
-   $(Device/netgear_ath79)
++		mtd-cal-data = <&art 0x1000>;
++		qca,no-eeprom;
++		#gpio-cells = <2>;
++		gpio-controller;
++
++		usb {
++			gpio-hog;
++			line-name = "netgear:power:usb";
++			gpios = <4 GPIO_ACTIVE_HIGH>;
++			output-high;
++		};
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&gpio {
++        status = "okay";
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&usb {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	hub_port: port@1 {
++		reg = <1>;
++		#trigger-source-cells = <0>;
++	};
++};
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index 8009582778..83b76bda2b 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -789,6 +789,22 @@ define Device/netgear_wndr3800
  endef
+ TARGET_DEVICES += netgear_wndr3800
+ 
++define Device/netgear_wnr2200
++  ATH_SOC := ar7241
++  DEVICE_VENDOR := Netgear
++  DEVICE_MODEL := WNR2200
++  DEVICE_DTS := ar7241_netgear_wnr2200
++  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport
++  NETGEAR_KERNEL_MAGIC := 0x32323030
++  IMAGE_SIZE := 7808k
++  IMAGE/default := append-kernel | pad-to $$$$(BLOCKSIZE) | netgear-squashfs | append-rootfs | pad-rootfs
++  IMAGES += factory-NA.img
++  IMAGE/factory-NA.img := $$(IMAGE/default) | netgear-dni NA | check-size $$$$(IMAGE_SIZE)
++  SUPPORTED_DEVICES += wnr2200
++  $(Device/netgear_ath79)
++endef
++TARGET_DEVICES += netgear_wnr2200
++
+ define Device/phicomm_k2t
+   ATH_SOC := qca9563
+   DEVICE_VENDOR := Phicomm
 -- 
 2.22.0
 

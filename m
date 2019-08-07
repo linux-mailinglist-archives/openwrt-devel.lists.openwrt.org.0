@@ -2,75 +2,98 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 906E3850DB
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 18:17:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBDB08524B
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 19:43:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+aIAYzGxwZJFOGWkp7niDgalx0lxBIsqDSMiPbvo0po=; b=RK6pHR+AyHXAdNxsaepTOumn4
-	AAPuwSv6UUXn9looEf32WDu7rjPS/rx0JLadKYqBk+VvRoUSnHEq4KbTHWtHWWKc5spz3peMHfheG
-	3P7oTgiv9I1tqTu3hbRgkbOv14xJ9ynjZM9TXNoblYNl4QKx8DnPmqs7MoCtSu3VtTKQlUMPegc5u
-	co4F+jX0/dODl3IjknXp3U9mfGulBqND+OAsv9MHfMxqZWxa7rAQLKN1jXQ+1pjOnS0JOccizAzBJ
-	BLTdZULabyP5inpmqX27M594WWSc/g3FdI86vq5lD/wFTjELiSIXEIgQkNhS9DXu0pHKmLxUX9yNs
-	f6QSU2XPA==;
+	 bh=qfPJoBfdR4UGyx/2PXqHkaHa5mV6nkE5FTleJ2La/Cc=; b=CLw6ikXve/A97M4OvBTQuUM8S
+	BfjfY+BJ/COBl4BiU/vrnvTkwTg+jQSIx1MIgJsI6hgvZEzfe1LVUif061dDe32DG0hnbSe0Q56Pq
+	4oDTR6/1JJ/kECHXY+zrr7dyGnFYDDFM4ooAXULzifBG3LFJ3u6X2iQ7NLQqkFbWnWJDCPydzny9P
+	tGitUHKS3YxeJA2RIT1ZFhz/J3QjoUomJbM9dlxh/ioOweRYjDw4dcKok+YngkYHwyHGiIaATRuQn
+	M4S/NKHRVmNhsvSe51Ir66HBLm3pg/icNC9t1TlEpVU9uIIk39V38VXNrxBzB9fyL0RiLBkgGZdPF
+	R6uc4BiXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvOct-00035v-0L; Wed, 07 Aug 2019 16:17:23 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1hvPyY-0004Uc-0Y; Wed, 07 Aug 2019 17:43:50 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvOck-00035W-Gh
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 16:17:16 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1Mw9Dg-1iDtPW2Ipo-00s3eW; Wed, 07
- Aug 2019 18:17:10 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Tom Psyborg'" <pozega.tomislav@gmail.com>
-References: <20190806131039.51484-1-freifunk@adrianschmutzler.de>
- <20190806131039.51484-2-freifunk@adrianschmutzler.de>
- <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
-In-Reply-To: <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
-Date: Wed, 7 Aug 2019 18:17:10 +0200
-Message-ID: <022201d54d3b$90d19080$b274b180$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1hvPyP-0004UC-GK
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 17:43:43 +0000
+Received: by mail-pl1-x642.google.com with SMTP id b7so41923693pls.6
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 10:43:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=accuratebizleads-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:references:in-reply-to:subject:date:message-id:mime-version
+ :thread-index:content-language:importance;
+ bh=ikL7pL4VBmqT/D6PkLX3qyz38XSKtDiy0luID2fiYZQ=;
+ b=QYuHXjtS5NJsbZri+jfkosc9xpPCLzGeYS7oaDdGjgZScVZ+oBqwBo5emX63i6an3A
+ zKPIhEsJ2ov/CYoVBFFGQsGqu2sg5Pcc12aw9Cy+Li2GsZSJwV1Pgt2Je/4BTWTQgZgK
+ FXLDQBzK2rCnSvFUmbbHwQINAYZLSd6DChc5+gtl+oHQq1hWFemEg9TDr2vMuKmzC3LG
+ h2SL0KL+8dZiJLiBn3e1yfoVxQZBcolc1XZDmrZ8hvETTfH0QqcYeTj1P2QDkeQNfmtD
+ oEbSLKybvIyO/Qu8I1n0b9jctDd4qlPRfR5DVOwFHyWSXdM8hvWmk+YmN713Qyu8loR1
+ ewIQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:references:in-reply-to:subject:date
+ :message-id:mime-version:thread-index:content-language:importance;
+ bh=ikL7pL4VBmqT/D6PkLX3qyz38XSKtDiy0luID2fiYZQ=;
+ b=FGCaCQBX7L3k8wjy/nvAQ6712691ONmq+uFlJ1SzujjcrySRGOc6F/U5aTCNl/iqLi
+ V/m1swnrZEVm7WZixt7Rar5dzCl+zTD/DJCAx1eegHdVkpO3AHqeCaYmXcC4+m0IFeyd
+ vepVYZCWgTRLokRuaM4KGEmeE5nx9oE6rA2JustwdHjsL6rgRql+Gkt3bpYJyTXjY+ek
+ +n/6ROR7ircrYxZGtbeLSUE3yIT3FESxAqhlaIycxfHhGQYYE7WZEimIanKGs6TSW7I3
+ lMmNL6NUwB62SJQ6KfDbhNQu1OgtCLbNFekrGKzCMCA/WIkTOnxXjrM5LfhWGXUSJiqe
+ iAcQ==
+X-Gm-Message-State: APjAAAWkLIbzI05QCwluBVBMN1Hl8wKu03oz49lnZfDno3P73tbtMjxT
+ GgCmdW/RXUf1RUIcxUEKD3PDIPV7Bog=
+X-Google-Smtp-Source: APXvYqwicy9soep8GWoY14NgjdljPqXaJud2nCrUJs9DxB8fA/f/eWtLnKGlW0KnRMpV+13KakbIyg==
+X-Received: by 2002:a17:902:2889:: with SMTP id
+ f9mr8730944plb.230.1565199819861; 
+ Wed, 07 Aug 2019 10:43:39 -0700 (PDT)
+Received: from adminPC ([49.207.52.136])
+ by smtp.gmail.com with ESMTPSA id f12sm76986792pgq.52.2019.08.07.10.43.38
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 07 Aug 2019 10:43:38 -0700 (PDT)
+From: Jenny Ouyang <jenny.ouyang@accuratebizleads.com>
+X-Google-Original-From: "Jenny Ouyang" <Jenny.Ouyang@accuratebizleads.com>
+To: <openwrt-devel@lists.openwrt.org>
+References: 
+In-Reply-To: 
+Date: Wed, 7 Aug 2019 12:43:10 -0500
+Message-ID: <726401d54d47$a5f01890$f1d049b0$@accuratebizleads.com>
 MIME-Version: 1.0
-Thread-Index: AQEB+24oOP0+hQ7HGqEJP9eZ0+GFFAFVG5ecAak0eYuofoyPMA==
-Content-Language: de
-X-Provags-ID: V03:K1:tFupblRLjinDvFLV9VlZLywBrKdmHCCo+txAdmQON/Styostyl4
- cnw7+TXxOLRZazSrWgl1xMfJAp5k78XOB5Nqz3spXZWhbuj77PkxjsZ/ZoybxShvSRO1q4M
- LMnNfR6rMUtcbAXwRXfmkntDt8/sUvVA6zUwmc347BH9cAH0hJZOMIdKrwofQslkwebwoIV
- OZE2dWA2BtmNZ2I1gx58w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:z9ctRVbnDRA=:NCGEA3pruXzE5EhtfePd8v
- 7tNmUA5zAKb7Dp2nEzWCDMKAkTGKASaL0sCoo41hb6RmsTCEGeEciGe9ewtEAxq0DCEIFztNA
- SbG9q23KFrrLO3lyAbIV/qKpSMJfbPAdw5nhlpvY2pn4gqeGNe0KlvMxnq2L0oz5x5VkiTs6z
- D/f8QtByoHlhRRYtzPf5Ic6dhRcx2DuMms/ORF8dd9XAUCAIAbk9cXyIgh5mD4Xem2X+3Q5gx
- RqVukRcklVRiCEWg2lWIl9TMqT9gfr0ual/BdANE3ilav/H/b0FeO5FT9hM9ArZ3eYbs8PJjs
- Ge3hvbgTM36nt+gqQQipReOVNTY6yoxRltHZV8l1CHu0OGsW6/IsUKGaj7f3l8FCYsoS4U0/i
- TqR+kzvrDGyBu2nN0rKuX2PnSgdHoyfyytl/+JxU6N3c/55ks5w7Omjonjq3qZveHrZaYWKI7
- Q23pTJ/xETlE2w8oXKcoLocgRXcCw4C3iCcMBm87/iiiD73pYUD8HMIWOlIRNjlu/s1qUEru0
- voVrpGLPIkApnn4k7pT4ztMswVKjqhkr1jvq9zMGlxRIdA/xR6mA/Q7skQrWsuTqcKKjniwjP
- PmhQySoSNeBFOK3eCZBvzCbk/Cjpb4jS8yvT23yRkNsxfxEEw85789XtpwJtj60IGwQctsIiV
- ISTVikpUsYpK0OSHi44bz5BBwBNinxd1EznjFEWT4fkqTN6uL2YYBCjc1bWi7JrLiMlkWaqzm
- q424Zb+E5BM3qkqUCImprt/+95W0VLY2z88ogx7lElzXUxH4zvd6/EY0vTw=
+X-Priority: 1 (Highest)
+X-MSMail-Priority: High
+X-Mailer: Microsoft Outlook 14.0
+Thread-Index: AdVNNih/dT8+WxDtTQO2LS0tJXPPigAETy0wAAAAFMAAAAAE8AAAAAMgAAAABFAAAAAEgAAAAAOwAAAABCAAAAAEUAAAAASAAAAAA+AAAAAEEAAAAARwAAAABKAAAAAEEAAAAANAAAAABaAAAAAE0AAAAARwAAAABKAAAAAEAAAAAARgAAAABdAAAAAEMAAAAASQ
+Content-Language: en-us
+Importance: High
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_091714_845746_7E235B8E 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20190807_104341_749392_CEEBA7AD 
+X-CRM114-Status: UNSURE (  -4.27  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common
- TP-Link definitions
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
+Subject: [OpenWrt-Devel] Attendees Database Of Cable-Tec Expo 2019
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,94 +105,215 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============0938081424112829060=="
+Content-Type: multipart/mixed; boundary="===============7057450625046628527=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============0938081424112829060==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=6fAd65kbAmhdSl=-="
+--===============7057450625046628527==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_7265_01D54D1D.BD1A1090"
+Content-Language: en-us
 
 This is a multipart message in MIME format.
 
---=-=6fAd65kbAmhdSl=-=
+------=_NextPart_000_7265_01D54D1D.BD1A1090
 Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
-ehalf Of Tom Psyborg
-> Sent: Mittwoch, 7. August 2019 17:58
-> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> Cc: openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common=
- TP-Link definitions
->=20
-> Hi
->=20
-> Looks like there were many doubts about image size over the years.
->=20
-> One thing that should be considered is use of OEM firmware, either in
-> case of just a single revert after OpenWrt flashing, or multiple
-> reverts/switching between OEM/OpenWrt firmwares.
->=20
-> Relevant in this case is config partition within OEM fw, and by
-> specifying OpenWrt image size to occupy all available flash space
-> between u-boot and art partitions destroys config contents which may
-> turn up very impractical for those that do frequent switching between
-> the two.
->=20
-> Further, config partition size also varies from device to device, some
-> have it 64KB others 128KB in size, at least what I observed with my
-> devices.
->=20
-> So, the correct image size for Archer C7 v1 turned out to be 0x7b0000
-
-But wouldn't this call for introducing a config partition for the C7 v1?
-I'm not sure how your analysis is affecting the IMAGE_SIZE discussion (unle=
-ss you say TP-Link devices generally have this config partition with differ=
-ent sizes, and thus the whole concept of including IMAGE_SIZE in common def=
-initions is "wrong")...
-
-Best
-
-Adrian
-
---=-=6fAd65kbAmhdSl=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
+	charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 
------BEGIN PGP SIGNATURE-----
+Hi, 
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1K+YMACgkQoNyKO7qx
-AnAjnw/+L+nXLylmB9Neq1+EaWb5MxI9TAhHoVDbJjAlL7oE2tagQ+kmTIzixFxP
-oki1Sd5RYell1ADJ1cL3r6rYREi+wLlb3H6gVjsSlNm1CpxvoVhd6bmeDoqRxIxn
-ODJ2cT2b7aBCGzjo4+t5cotInbLnQMjR4h02002IGiwDWzOXaWOiPDoPF+sgD6ND
-st7F88Pw6IqF2quWYo+E+oJaSI0SD/ineFKuZzw81s9zoJVjOYP3Q4lovnYVXI43
-pdayjlt1Ql+EqerC3Xz96GJ6Knz92Qr/c9SoAMPgu0plqsQp9LpyJGh5k6452B2r
-YyRErj+9N8jf1qFHg4v8/RoU6qL/VdYasYmdioLlWcUkJW+2RYQtE/gzaxymc9pE
-mI/Dfsi8CDN4jgeUL67PDVUthNdCfbc27nOofFyL24l66U8sPxqJe6n0AiAo+HZw
-WS6JjQCqIcAfUVXR8wL2KPaCZB2xnUD/R4CG9tY5epd+zv1rvjLWmYAdlpTUowD5
-YQ7BJO2IsX76F9a8g/AfdBWOcvOwBZrWKDLlsDfZg8NpqWzWJBkaIN2uGk+IxNa9
-Sew8IEZJqzOLfYal4eLmz2llqai9UPmOiGBrlxTQqPrUaMhVUECHCehM2KcEZOmK
-pzB3YH3uD7eNEy0GL13gr9u1G+ZjX92wKGESgCtK7vIb0xbT+9I=
-=iim+
------END PGP SIGNATURE-----
+ 
+
+Would you be interested in procuring an Attendees Database Cable-Tec Expo
+2019 and there will be a cost associated with the contacts.
+
+ 
 
 
---=-=6fAd65kbAmhdSl=-=--
+Attendees: SCTE's International Brand, International Society of Broadband
+Experts (ISBE), Industry Leaders, Cable ROI, Machine Learning, Data
+Analytics, 10G, IoT, Artificial Intelligence and many More.
+
+ 
+
+
+Data Contains: Contact Name, Title, Company Name, Size, Physical Address,
+Opt-In Email address, Phone & Fax numbers and etc.
+
+ 
+
+If you're interested, Please let me know I will assist you with counts,
+pricing and more information.
+
+ 
+
+Awaiting Response,
+
+Jenny Ouyang
+
+Marketing Executive
+
+ 
+
+                                    
+
+If you do not wish to hear from us again, please respond back with "Abolish"
+and we will honour your request.
+
+
+------=_NextPart_000_7265_01D54D1D.BD1A1090
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta =
+http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	font-family:"Times New Roman","serif";
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	font-family:"Times New Roman","serif";
+	color:purple;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Verdana","sans-serif";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =
+vlink=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal =
+style=3D'text-autospace:none'><span style=3D'font-size:10.0pt'>Hi, =
+<o:p></o:p></span></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><span =
+style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal style=3D'text-autospace:none'><span =
+style=3D'font-size:10.0pt'>Would you be interested in procuring an =
+Attendees Database <b>Cable-Tec Expo 2019 </b>and there will be a cost =
+associated with the contacts.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p; <o:p></o:p></span></p><p class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt'>Attendees:</span></b><span =
+style=3D'font-size:10.0pt'> </span><span =
+style=3D'font-size:10.0pt'>SCTE&#8217;s International Brand,</span><span =
+style=3D'font-size:10.0pt'> International Society of Broadband Experts =
+(ISBE),</span><span style=3D'font-size:10.0pt'> </span><span =
+style=3D'font-size:10.0pt'>Industry Leaders,</span> <span =
+style=3D'font-size:10.0pt'>Cable ROI,</span> <span =
+style=3D'font-size:10.0pt'>Machine Learning,</span> <span =
+style=3D'font-size:10.0pt'>Data Analytics,</span> <span =
+style=3D'font-size:10.0pt'>10G, IoT, Artificial Intelligence and many =
+More&#8230;</span><b><span =
+style=3D'font-size:10.0pt;color:black'><o:p></o:p></span></b></p><p =
+class=3DMsoNormal style=3D'text-autospace:none'><b><span =
+style=3D'font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span =
+style=3D'font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+<b><o:p></o:p></b></span></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><b><span style=3D'font-size:10.0pt'>Data =
+Contains</span></b><span style=3D'font-size:10.0pt'>: Contact Name, =
+Title, Company Name, Size, Physical Address, Opt-In Email address, Phone =
+&amp; Fax numbers and etc.<o:p></o:p></span></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><span =
+style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal style=3D'text-autospace:none'><span =
+style=3D'font-size:10.0pt'>If you&#8217;re interested, Please let me =
+know I will assist you with counts, pricing and more =
+information.<o:p></o:p></span></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><b><span =
+style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></b></p><p =
+class=3DMsoNormal style=3D'text-autospace:none'><b><span =
+style=3D'font-size:10.0pt'>Awaiting =
+Response,<o:p></o:p></span></b></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><span style=3D'font-size:10.0pt'>Jenny =
+Ouyang<o:p></o:p></span></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><span style=3D'font-size:10.0pt'>Marketing =
+Executive<o:p></o:p></span></p><p class=3DMsoNormal =
+style=3D'text-autospace:none'><span =
+style=3D'font-size:9.0pt;font-family:"Verdana","sans-serif"'><o:p>&nbsp;<=
+/o:p></span></p><p class=3DMsoNormal style=3D'text-autospace:none'><span =
+style=3D'font-size:9.0pt;font-family:"Verdana","sans-serif"'>&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+<o:p></o:p></span></p><p class=3DMsoNormal align=3Dcenter =
+style=3D'margin-left:.5in;text-align:center;text-indent:.5in'><span =
+style=3D'font-size:9.0pt'>If you do not wish to hear from us again, =
+please respond back with <b>&#8220;Abolish&#8221;</b> and we will honour =
+your request.<o:p></o:p></span></p></div></body></html>
+------=_NextPart_000_7265_01D54D1D.BD1A1090--
 
 
 
---===============0938081424112829060==
+--===============7057450625046628527==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -180,6 +324,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0938081424112829060==--
+--===============7057450625046628527==--
 
 

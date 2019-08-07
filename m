@@ -2,81 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED82F85438
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 22:01:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EE9B85445
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 22:07:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N3vvN2vQOLLsemEXUf+ooy4VFeAZOk2H1iEHCbNLTP4=; b=EjmU85CbqqNjo2
-	nMVfFI0TZS5fsz4YI1yYp5QV6Loa64VtUgvwS6oM2nkrC1LDln1t55h0CD58lnHtDOsaeEC1tk1Zq
-	1htf7OIWkrEgT1XHInbgDpH1YHCX8qH5Q2PqQTtX3/9PmvM5Q+aCM7G9yyPdxXb6CwedH2TNwvlQd
-	o+LGm4Z8WpcZjay/LHcU7/WXF38Ak+H5yqWEVZ4DWx4KSQAU/xrF+/7FwWnCan4eFUYxxlOcnZSmA
-	cR61tAHXluOURoDgGS2sGL15f3WSkq6W+jV3i5TDclt+wFnCCL3c8UUMCqrp5Nyh7pX242N2wsO4D
-	IT4mRzEWALebFoS88IrQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5HkVVanWnSW62Pmj5LTQpqefuWcCifuDUM6RgXwfGis=; b=b//lXeFh0IgTP9
+	wrJNKEby+RRSO1bVTnlL2GsMFyuyUksz4xnLikPDAa+h+jbP126mV2PBZsN2W3rBHjBftzu1/h/Nt
+	et6w9fLrXDZdAVyuUtf/xfb4gM2np8blvb2Pbpq9BVs/O/gJgU3IJJnZ3Hp2StMplCMXDPqpfZOKP
+	u9S3/bFZYZPGGypb+dQo4yyhcBUneToH0bcg0QbDV54r0Dty2i/UwtU06kTGbyDp3fcNLiaIY0ULH
+	ZijF4QLOsCLkiAJ/7y2LtC/4KrDq4DAdeSa8NeIiyT2eVxO8wox+oUkgtpXzwvzzWDeeftByCXHg9
+	K9UUsx9bGVmYacE01ygA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvS7x-0001Qd-JU; Wed, 07 Aug 2019 20:01:41 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hvSDz-0003Bc-Fi; Wed, 07 Aug 2019 20:07:55 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvS7o-0001QH-KN
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 20:01:33 +0000
-Received: by mail-ot1-x344.google.com with SMTP id r21so103264857otq.6
- for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 13:01:31 -0700 (PDT)
+ id 1hvSDq-0003BG-Ir
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 20:07:47 +0000
+Received: by mail-lf1-x141.google.com with SMTP id p197so64932193lfa.2
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 13:07:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=vvcInt0irlhUdNoQz07q+EUhXNGP6sVe+vHcb2IwPUU=;
- b=vYPdiQo7TeNds94Pb4CkIk6yZYHQoD5zJ6btpiflEmgbcysBP1/fDOMQNJ2b+VQij0
- M4NQGqZ04Qf1JOBTz2mv/PEiASJiMJhu7vYR+/OC/IxXrNkLLxPhP4JQK14y30H4kgTk
- eqwpuP4NGgj4FJ0fan+zODiLO1wctlgm0EvXetAj/wOeq79v7rHWmihKlQOyBGth8mLb
- BoL/eKMYvgvWcUYHpWMZCvq3MvSO3ENTZ/eDTWiShSYdCFsaAUPZcjkURa4iKTK0zunP
- OZIgu3PygnMzfOIgClUT06uNE5rTfFbF/7xqWjfHRYGwwX7uOKIn08cSEeHG4h2NnZRp
- VS/A==
+ h=from:to:cc:subject:date:message-id;
+ bh=Px1rty98vwcXwk3ciqdkeQ85ET7EaN2p9xcr8zquYqg=;
+ b=B6Cyv1JcGATLP2N1J6JDWADdELd3EIWJc5xmXEMt1B+YhCnxFUa5O142nfwz5Sm5y1
+ k0CTflIxdq9QNKCtl37VYU+x0uQayKTy3HIA/txz6PgNc62yWYQL1PrQutc2LP9BJsvB
+ CEVooPNxkymwP67oV3P18TSUcL1+BqVkR55EDy/zcUyIMRYKKiwtXZuaPw4g5zQNU43I
+ IPHYqLnnvygm4qL2YFzj0cvLWd0/3al3S0foUaJVDWVZXlkVJzSRsFRxLLjOgC7IWQHA
+ 2+Tp2M+FpkqBjIEHdjfCIvaOG7Wugv9ONFOJ2ewphchmhIMCiq98QNT6OP01x4F+RWPv
+ p6rg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=vvcInt0irlhUdNoQz07q+EUhXNGP6sVe+vHcb2IwPUU=;
- b=DdXWra9afbqUiqm8ZdITokiJnE+KpN2tAGtdTkb97UDm7zBDU85YHb8VdRxbE29MJd
- 7vriHn8Duok9e2gaVn7R0ml4bnMo2hQb5ImdMLVYgWsPDVM2aDsY8GcNgk2JsDUp/bmm
- amGPwLYBgo9HJJPeX3lAYIohBO0HLQQLGk0XtQ4SI6xlIgfr6GQ45TOECxoiUh1LLbTt
- hvWkg+64Sk0hIsmd5VplP10MLRu0oHglu12ytlr5dpjXy3ybm/uviG+4pn/qGuvybb3z
- ee/v9xwvGioY8sQtH/kFqXTVIEWlBP6ZoxIb6YlbtoBjiv/fXKyom8a7VGiDAnTeSHFl
- aXrg==
-X-Gm-Message-State: APjAAAWl9kgQVC/iDij2h8cvjN/VgWI6FGX3ZgIATMWQTZ39OscZ/x+w
- exzU6l34qJyCaZB9I8y+YnrtzqWSw9ZKs9Mx1yw=
-X-Google-Smtp-Source: APXvYqzZj2Jx3kBbSdgp2g5MwaX0/zU+Qd4rFJusYXVmbyTk4iKGwwXNJUmFg6WEaUxPkasr++KSohViBzFsgr9NhQI=
-X-Received: by 2002:a02:ce35:: with SMTP id v21mr11777098jar.108.1565208091372; 
- Wed, 07 Aug 2019 13:01:31 -0700 (PDT)
-MIME-Version: 1.0
-References: <1565200503-4224-1-git-send-email-hanipouspilot@gmail.com>
- <028601d54d4e$5456f330$fd04d990$@adrianschmutzler.de>
- <CANoib0Gj6L=H=-hadUMgmCXk_mbU631==RZuG8P6KmfT0dJhgw@mail.gmail.com>
- <CANoib0GUUxSHCp5cRkjyiQykuRookSNdiVyJr4Bf0yE62fYSpw@mail.gmail.com>
- <02a201d54d51$4a49add0$dedd0970$@adrianschmutzler.de>
- <CANoib0Hk6buOR9tJ5F+3EXd2c-MCGiE0X=M+Yg7_R_+fP5zWdw@mail.gmail.com>
- <02d001d54d53$6218e280$264aa780$@adrianschmutzler.de>
- <CANoib0HHTDNcBTUTK91s7fef5m8s=TnVUhb2Jg8UELbBKNGeRw@mail.gmail.com>
- <CANoib0Eyc3hcLg6M54M=Srax-Q0M=vJ5Hczz9_kZG3807UcnbA@mail.gmail.com>
- <011f01d54d5a$2e2ec4b0$8a8c4e10$@adrianschmutzler.de>
- <CANoib0EFR0N3xYT-P1yneWMrmka7wAzLFA1Bk35wS4bLx5gj-g@mail.gmail.com>
-In-Reply-To: <CANoib0EFR0N3xYT-P1yneWMrmka7wAzLFA1Bk35wS4bLx5gj-g@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Px1rty98vwcXwk3ciqdkeQ85ET7EaN2p9xcr8zquYqg=;
+ b=KIQBvPoq2XuOwEciMFCbRVp1gObGe7Whp9B97/wwzCMykAEtpoe0v5mj4LngeJ41jb
+ tysRvTSelBM4O/eXmZiPvSuEPpdvBl9x7vyhccqCkE7Il6rlPDJ+H6rpv+hKzptPLp5Y
+ wdi/qN0EQCZ7fyc1pohiMZcN0oYFwMOx6f48ncml041rasJfU885GRLKTJ2F3hYm/9FP
+ jI9BT2h8RS/4NkBxoL2QY8yTZRcPilB7xuAScdwvzhewYeijDIJ+PHvSGBFvFwFBChlc
+ GLWpU9m+TETEFcB36UtSxRdPjrnnWr/MNbomV70JA3Hgsv3UUqFTWUAm3EdDh6YMsKzm
+ AfDg==
+X-Gm-Message-State: APjAAAVnR1B16Jbm9fR1g/ykJIoF/J7zMh+dsBAhFuIARq2u4ntPVhgM
+ Pvwk6nxiCU+O22ePPGUITe0dqplB6gY=
+X-Google-Smtp-Source: APXvYqxTfnMm8VyHGKGLxUjXfVnwRRdzsAkVcPPUmDTfty9dfBebyD0BxYXKtrrvlyTttM1OVRU42A==
+X-Received: by 2002:a19:5218:: with SMTP id m24mr7104000lfb.164.1565208463388; 
+ Wed, 07 Aug 2019 13:07:43 -0700 (PDT)
+Received: from localhost.localdomain ([2001:470:dc6e:0:4de0:5f73:d0ad:c4d3])
+ by smtp.gmail.com with ESMTPSA id u24sm4338325lfc.35.2019.08.07.13.07.42
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 07 Aug 2019 13:07:42 -0700 (PDT)
 From: Dmitry Tunin <hanipouspilot@gmail.com>
-Date: Wed, 7 Aug 2019 23:01:20 +0300
-Message-ID: <CANoib0H-2r2ypzLWc2Td+H=j1FcaXe+qf2nwP8sKgHLu+_-irw@mail.gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed,  7 Aug 2019 23:07:33 +0300
+Message-Id: <1565208453-17770-1-git-send-email-hanipouspilot@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_130132_673522_CF0B4B8D 
-X-CRM114-Status: UNSURE (   6.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190807_130746_647367_912B4264 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (hanipouspilot[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -88,11 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support of Netgear WNR3800
- (Ch)
+Subject: [OpenWrt-Devel] [PATCH v6] ath79: add support of Netgear WNDR3800CH
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,17 +92,132 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Dmitry Tunin <hanipouspilot@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T29wcyBhZ2Fpbi4gSSBkaWRuJ3QgcHVsbCBtYXN0ZXIgZm9yIGEgd2hpbGUsIGJlY2F1c2Ugd2Fz
-IHBsYXlpbmcgd2l0aCAxOS4wNy4KCtGB0YAsIDcg0LDQstCzLiAyMDE5INCzLiDQsiAyMjo1OCwg
-RG1pdHJ5IFR1bmluIDxoYW5pcG91c3BpbG90QGdtYWlsLmNvbT46Cj4KPiA+IEFyZSB5b3UgdXNp
-bmcgcmVjZW50IG1hc3Rlcj8KPiA+Cj4gPiBERVZJQ0VfTU9ERUwgaXMgdGhlIHdheSB0byBnbyBu
-b3cuCj4gWWVzLCBJIGRvLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5v
-cGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Bl
-bndydC1kZXZlbAo=
+Add support for the ar71xx supported Netgear WNDR3800CH to ath79.
+The device is identical to WNDR3800 except NETGEAR_BOARD_ID.
+
+Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+---
+ .../linux/ath79/base-files/etc/board.d/02_network  |  3 +-
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom         |  6 ++--
+ .../linux/ath79/dts/ar7161_netgear_wndr3800ch.dts  | 36 ++++++++++++++++++++++
+ target/linux/ath79/image/generic.mk                | 11 +++++++
+ 4 files changed, 53 insertions(+), 3 deletions(-)
+ create mode 100644 target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
+
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+index 9c64299..dc3018d 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/base-files/etc/board.d/02_network
+@@ -177,7 +177,8 @@ ath79_setup_interfaces()
+ 		;;
+ 	netgear,wndr3700|\
+ 	netgear,wndr3700v2|\
+-	netgear,wndr3800)
++	netgear,wndr3800|\
++	netgear,wndr3800ch)
+ 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "5u@eth0"
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index a7d4825..29da5c9 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -206,7 +206,8 @@ case "$FIRMWARE" in
+ 	buffalo,wzr-hp-ag300h|\
+ 	netgear,wndr3700|\
+ 	netgear,wndr3700v2|\
+-	netgear,wndr3800)
++	netgear,wndr3800|\
++	netgear,wndr3800ch)
+ 		ath9k_eeprom_extract "art" 4096 3768
+ 		;;
+ 	dlink,dir-825-b1)
+@@ -223,7 +224,8 @@ case "$FIRMWARE" in
+ 	buffalo,wzr-hp-ag300h|\
+ 	netgear,wndr3700|\
+ 	netgear,wndr3700v2|\
+-	netgear,wndr3800)
++	netgear,wndr3800|\
++	netgear,wndr3800ch)
+ 		ath9k_eeprom_extract "art" 20480 3768
+ 		;;
+ 	dlink,dir-825-b1)
+diff --git a/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts b/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
+new file mode 100644
+index 0000000..84a859b
+--- /dev/null
++++ b/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
+@@ -0,0 +1,36 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "ar7161_netgear_wndr3700.dtsi"
++
++/ {
++	compatible = "netgear,wndr3800ch", "qca,ar7161";
++	model = "Netgear WNDR3800CH";
++};
++
++&partitions {
++	partition@0 {
++		label = "u-boot";
++		reg = <0x000000 0x050000>;
++		read-only;
++	};
++
++	partition@50000 {
++		label = "u-boot-env";
++		reg = <0x050000 0x020000>;
++		read-only;
++	};
++
++	partition@70000 {
++		label = "firmware";
++		reg = <0x070000 0xf80000>;
++		compatible = "netgear,uimage";
++	};
++
++	art: partition@ff0000 {
++		label = "art";
++		reg = <0xff0000 0x010000>;
++		read-only;
++	};
++};
++
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index 8009582..538be46 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -789,6 +789,17 @@ define Device/netgear_wndr3800
+ endef
+ TARGET_DEVICES += netgear_wndr3800
+ 
++define Device/netgear_wndr3800ch
++  $(Device/netgear_wndr3x00)
++  DEVICE_MODEL := WNDR3800CH
++  NETGEAR_KERNEL_MAGIC := 0x33373031
++  NETGEAR_BOARD_ID := WNDR3800CH
++  NETGEAR_HW_ID := 29763654+16+128
++  IMAGE_SIZE := 15872k
++  SUPPORTED_DEVICES += wndr3800ch
++endef
++TARGET_DEVICES += netgear_wndr3800ch
++
+ define Device/phicomm_k2t
+   ATH_SOC := qca9563
+   DEVICE_VENDOR := Phicomm
+-- 
+2.7.4
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

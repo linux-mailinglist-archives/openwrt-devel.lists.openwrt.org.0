@@ -2,87 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 669C98507A
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 17:59:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 906E3850DB
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 18:17:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2hDfASb9NcESPCQ3WdDftxnM3cZSFy1PhVo0MGbSSYY=; b=MOTH/Gvhe90F0+
-	dnvECl42aVINzpRrYvqf7ZnBJH7NUBuZpk1xebobu4rPPnpWzKFHyYQ0+zB1gZRatfAFxbNMFN8ME
-	OT3wae0e0s4RwDSlNSqWzTH6NTEPk/DMDuTgo256aWMemIUeFFEL3dgQl3giVbt3EjPuIY7FHF5wY
-	a6UlGoXi7+9Mo4Xox8pGCyOtAeXeCb6zCIrMrlFBYV7MFx89Fa8kjYwQYzRB0DGBzb8GtF+q1cFCk
-	kuDDf2tL0XaMUJD0TjHbKXhcQD1bT3eralSZenGnRHAPm2udncfF0jB/p5+rBUE6GpNF6LV7wgydD
-	0vf+fkA0Tnvh+w4gQI1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+aIAYzGxwZJFOGWkp7niDgalx0lxBIsqDSMiPbvo0po=; b=RK6pHR+AyHXAdNxsaepTOumn4
+	AAPuwSv6UUXn9looEf32WDu7rjPS/rx0JLadKYqBk+VvRoUSnHEq4KbTHWtHWWKc5spz3peMHfheG
+	3P7oTgiv9I1tqTu3hbRgkbOv14xJ9ynjZM9TXNoblYNl4QKx8DnPmqs7MoCtSu3VtTKQlUMPegc5u
+	co4F+jX0/dODl3IjknXp3U9mfGulBqND+OAsv9MHfMxqZWxa7rAQLKN1jXQ+1pjOnS0JOccizAzBJ
+	BLTdZULabyP5inpmqX27M594WWSc/g3FdI86vq5lD/wFTjELiSIXEIgQkNhS9DXu0pHKmLxUX9yNs
+	f6QSU2XPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvOLj-0001Dx-57; Wed, 07 Aug 2019 15:59:39 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hvOct-00035v-0L; Wed, 07 Aug 2019 16:17:23 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvOK1-0008E0-Tj
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 15:57:55 +0000
-Received: by mail-ot1-x342.google.com with SMTP id r21so100286523otq.6
- for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 08:57:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to
- :cc; bh=LuoWSUbOJA5BcAeo4W6/tB3iHz8dcOnQufMEiK5Z6FE=;
- b=ba4scPR1HyL7mQP92a1HozkZicwAU58JaQo02ku6zgP8Nz9XJ9JYXZHTc/e7qTO/1o
- tWuPEnzbHPtRrRbPPq/+LeC2i0C0vuqahh8cr4JjfV0zStYMVWBiymPkc+o4nerdv2fH
- ybJn2okIHwYc2uufUrx5ONWnDnk6KBUt+GdMUh6TKFkrTjap+CORw863wtilMqUirpma
- We6vt4cD1lBz1bUmz4UN0u9MAWSJCAe8qW71vADXwC1jtBHsLRXdx7TkgugSLFgOLqbB
- e9qcMC5RRsLWj5/v6RcDv8IpoUIrwiO37PhRJ+r1Jp86Ldg+FoQNFlqEZOmc9gKiSm1J
- usxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:in-reply-to:references:from:date
- :message-id:subject:to:cc;
- bh=LuoWSUbOJA5BcAeo4W6/tB3iHz8dcOnQufMEiK5Z6FE=;
- b=ITLBmMTLl976WsqXA2DnkoNvHM5ZkJvV6L3X6WybR6tz22YPp35Y6Ga8mmgbZdWMYo
- Z0NTGeuvXcquJ32J7tuJ3DP5ExFPIlifRn03iB2xI5YWupKnupdEg5/U0+qUPNGSD3C2
- PF3m9DEsjKV50tlNdEtgPgbl1HUDNzQpiYcIft6aAeMY5bEe9YS5im2LcE5QxQRUu6Zt
- UJTXSbPGWBbjYRNkqAZjbYT8InDyIZLTUxR++LQ55uDsU+KqPPrSnobjW8ZKKPENmIjw
- ln4E5JPMYcpqUNc4eipYf/9QeZFA4Gkw5CZLBM6wVyDQ4RTa2Z8x/XMrzP90lhfV1CzB
- KMbw==
-X-Gm-Message-State: APjAAAWJdqPVTIAv3C/uhEzr1mRVraWrUvy8g8SOMXWv4uGxiJsUCs+7
- VgyHx2piAhNHaunOVSapNeO4I10z/u+7n2QBPg/oLA==
-X-Google-Smtp-Source: APXvYqzZvpOghS8nyz9Ei2WMU+NL/k86g0cU0PdEWMh4zsdv3OsNgmlCmXXd/CPayiZQP+9OVvZkVy7GfwedOBp+wGc=
-X-Received: by 2002:a05:6808:b02:: with SMTP id
- s2mr417629oij.155.1565193472534; 
- Wed, 07 Aug 2019 08:57:52 -0700 (PDT)
-MIME-Version: 1.0
-Received: by 2002:a05:6830:2015:0:0:0:0 with HTTP; Wed, 7 Aug 2019 08:57:51
- -0700 (PDT)
-In-Reply-To: <20190806131039.51484-2-freifunk@adrianschmutzler.de>
+ id 1hvOck-00035W-Gh
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 16:17:16 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1Mw9Dg-1iDtPW2Ipo-00s3eW; Wed, 07
+ Aug 2019 18:17:10 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Tom Psyborg'" <pozega.tomislav@gmail.com>
 References: <20190806131039.51484-1-freifunk@adrianschmutzler.de>
  <20190806131039.51484-2-freifunk@adrianschmutzler.de>
-From: Tom Psyborg <pozega.tomislav@gmail.com>
-Date: Wed, 7 Aug 2019 17:57:51 +0200
-Message-ID: <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
+In-Reply-To: <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
+Date: Wed, 7 Aug 2019 18:17:10 +0200
+Message-ID: <022201d54d3b$90d19080$b274b180$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+MIME-Version: 1.0
+Thread-Index: AQEB+24oOP0+hQ7HGqEJP9eZ0+GFFAFVG5ecAak0eYuofoyPMA==
+Content-Language: de
+X-Provags-ID: V03:K1:tFupblRLjinDvFLV9VlZLywBrKdmHCCo+txAdmQON/Styostyl4
+ cnw7+TXxOLRZazSrWgl1xMfJAp5k78XOB5Nqz3spXZWhbuj77PkxjsZ/ZoybxShvSRO1q4M
+ LMnNfR6rMUtcbAXwRXfmkntDt8/sUvVA6zUwmc347BH9cAH0hJZOMIdKrwofQslkwebwoIV
+ OZE2dWA2BtmNZ2I1gx58w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:z9ctRVbnDRA=:NCGEA3pruXzE5EhtfePd8v
+ 7tNmUA5zAKb7Dp2nEzWCDMKAkTGKASaL0sCoo41hb6RmsTCEGeEciGe9ewtEAxq0DCEIFztNA
+ SbG9q23KFrrLO3lyAbIV/qKpSMJfbPAdw5nhlpvY2pn4gqeGNe0KlvMxnq2L0oz5x5VkiTs6z
+ D/f8QtByoHlhRRYtzPf5Ic6dhRcx2DuMms/ORF8dd9XAUCAIAbk9cXyIgh5mD4Xem2X+3Q5gx
+ RqVukRcklVRiCEWg2lWIl9TMqT9gfr0ual/BdANE3ilav/H/b0FeO5FT9hM9ArZ3eYbs8PJjs
+ Ge3hvbgTM36nt+gqQQipReOVNTY6yoxRltHZV8l1CHu0OGsW6/IsUKGaj7f3l8FCYsoS4U0/i
+ TqR+kzvrDGyBu2nN0rKuX2PnSgdHoyfyytl/+JxU6N3c/55ks5w7Omjonjq3qZveHrZaYWKI7
+ Q23pTJ/xETlE2w8oXKcoLocgRXcCw4C3iCcMBm87/iiiD73pYUD8HMIWOlIRNjlu/s1qUEru0
+ voVrpGLPIkApnn4k7pT4ztMswVKjqhkr1jvq9zMGlxRIdA/xR6mA/Q7skQrWsuTqcKKjniwjP
+ PmhQySoSNeBFOK3eCZBvzCbk/Cjpb4jS8yvT23yRkNsxfxEEw85789XtpwJtj60IGwQctsIiV
+ ISTVikpUsYpK0OSHi44bz5BBwBNinxd1EznjFEWT4fkqTN6uL2YYBCjc1bWi7JrLiMlkWaqzm
+ q424Zb+E5BM3qkqUCImprt/+95W0VLY2z88ogx7lElzXUxH4zvd6/EY0vTw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_085753_975017_B2AC2C42 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190807_091714_845746_7E235B8E 
+X-CRM114-Status: GOOD (  10.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pozega.tomislav[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common
  TP-Link definitions
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -97,91 +83,103 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0938081424112829060=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi
+This is a multipart message in MIME format.
 
-Looks like there were many doubts about image size over the years.
+--===============0938081424112829060==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=6fAd65kbAmhdSl=-="
 
-One thing that should be considered is use of OEM firmware, either in
-case of just a single revert after OpenWrt flashing, or multiple
-reverts/switching between OEM/OpenWrt firmwares.
+This is a multipart message in MIME format.
 
-Relevant in this case is config partition within OEM fw, and by
-specifying OpenWrt image size to occupy all available flash space
-between u-boot and art partitions destroys config contents which may
-turn up very impractical for those that do frequent switching between
-the two.
+--=-=6fAd65kbAmhdSl=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-Further, config partition size also varies from device to device, some
-have it 64KB others 128KB in size, at least what I observed with my
-devices.
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
+ehalf Of Tom Psyborg
+> Sent: Mittwoch, 7. August 2019 17:58
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> Cc: openwrt-devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common=
+ TP-Link definitions
+>=20
+> Hi
+>=20
+> Looks like there were many doubts about image size over the years.
+>=20
+> One thing that should be considered is use of OEM firmware, either in
+> case of just a single revert after OpenWrt flashing, or multiple
+> reverts/switching between OEM/OpenWrt firmwares.
+>=20
+> Relevant in this case is config partition within OEM fw, and by
+> specifying OpenWrt image size to occupy all available flash space
+> between u-boot and art partitions destroys config contents which may
+> turn up very impractical for those that do frequent switching between
+> the two.
+>=20
+> Further, config partition size also varies from device to device, some
+> have it 64KB others 128KB in size, at least what I observed with my
+> devices.
+>=20
+> So, the correct image size for Archer C7 v1 turned out to be 0x7b0000
 
-So, the correct image size for Archer C7 v1 turned out to be 0x7b0000
+But wouldn't this call for introducing a config partition for the C7 v1?
+I'm not sure how your analysis is affecting the IMAGE_SIZE discussion (unle=
+ss you say TP-Link devices generally have this config partition with differ=
+ent sizes, and thus the whole concept of including IMAGE_SIZE in common def=
+initions is "wrong")...
 
-On 06/08/2019, Adrian Schmutzler <freifunk@adrianschmutzler.de> wrote:
-> So far, IMAGE_SIZE is set as follows:
-> tplink-4m*   3904k  0x3d0000
-> tplink-8m*   7936k  0x7c0000
-> tplink-16m* 15872k  0xf80000
->
-> However, based on the size of firmware partitions in DTS it should
-> be:
-> tplink-4m*   3904k  0x3d0000
-> tplink-8m*   8000k  0x7d0000
-> tplink-16m* 16192k  0xfd0000
->
-> All (!) 8m*/16m* devices actually follow the latter scheme, which
-> is also consistent in terms of left free space for other
-> partitions. Thus, fix it.
->
-> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> ---
->  target/linux/ath79/image/common-tp-link.mk | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
->
-> diff --git a/target/linux/ath79/image/common-tp-link.mk
-> b/target/linux/ath79/image/common-tp-link.mk
-> index da4616482a..d05ac028c7 100644
-> --- a/target/linux/ath79/image/common-tp-link.mk
-> +++ b/target/linux/ath79/image/common-tp-link.mk
-> @@ -83,19 +83,19 @@ endef
->  define Device/tplink-8m
->    $(Device/tplink-nolzma)
->    TPLINK_FLASHLAYOUT := 8M
-> -  IMAGE_SIZE := 7936k
-> +  IMAGE_SIZE := 8000k
->  endef
->
->  define Device/tplink-8mlzma
->    $(Device/tplink)
->    TPLINK_FLASHLAYOUT := 8Mlzma
-> -  IMAGE_SIZE := 7936k
-> +  IMAGE_SIZE := 8000k
->  endef
->
->  define Device/tplink-16mlzma
->    $(Device/tplink)
->    TPLINK_FLASHLAYOUT := 16Mlzma
-> -  IMAGE_SIZE := 15872k
-> +  IMAGE_SIZE := 16192k
->  endef
->
->  define Device/tplink-safeloader
-> --
-> 2.20.1
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
+Best
+
+Adrian
+
+--=-=6fAd65kbAmhdSl=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1K+YMACgkQoNyKO7qx
+AnAjnw/+L+nXLylmB9Neq1+EaWb5MxI9TAhHoVDbJjAlL7oE2tagQ+kmTIzixFxP
+oki1Sd5RYell1ADJ1cL3r6rYREi+wLlb3H6gVjsSlNm1CpxvoVhd6bmeDoqRxIxn
+ODJ2cT2b7aBCGzjo4+t5cotInbLnQMjR4h02002IGiwDWzOXaWOiPDoPF+sgD6ND
+st7F88Pw6IqF2quWYo+E+oJaSI0SD/ineFKuZzw81s9zoJVjOYP3Q4lovnYVXI43
+pdayjlt1Ql+EqerC3Xz96GJ6Knz92Qr/c9SoAMPgu0plqsQp9LpyJGh5k6452B2r
+YyRErj+9N8jf1qFHg4v8/RoU6qL/VdYasYmdioLlWcUkJW+2RYQtE/gzaxymc9pE
+mI/Dfsi8CDN4jgeUL67PDVUthNdCfbc27nOofFyL24l66U8sPxqJe6n0AiAo+HZw
+WS6JjQCqIcAfUVXR8wL2KPaCZB2xnUD/R4CG9tY5epd+zv1rvjLWmYAdlpTUowD5
+YQ7BJO2IsX76F9a8g/AfdBWOcvOwBZrWKDLlsDfZg8NpqWzWJBkaIN2uGk+IxNa9
+Sew8IEZJqzOLfYal4eLmz2llqai9UPmOiGBrlxTQqPrUaMhVUECHCehM2KcEZOmK
+pzB3YH3uD7eNEy0GL13gr9u1G+ZjX92wKGESgCtK7vIb0xbT+9I=
+=iim+
+-----END PGP SIGNATURE-----
+
+
+--=-=6fAd65kbAmhdSl=-=--
+
+
+
+--===============0938081424112829060==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0938081424112829060==--
+
+

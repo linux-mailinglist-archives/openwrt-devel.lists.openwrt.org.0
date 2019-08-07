@@ -2,81 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4456D8466B
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 09:54:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB88F846DB
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 10:08:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W4M6v+Kwl7Tu24Q9qBVSZg+V0N7cUeesaX6WeX9+Fko=; b=QFYdo8EYiwAfKS
-	1OpNJVXJPbaJuQqtRMIPv9IATI6qZkcx3/gTLq1cBju2UFpQVctcnl2f5xMRylKZo6/rOLRU+n1da
-	Ov7/wwvgbSUndwonlzYLxSa3fO7fiUf5lB5uxjoQ688pId7adb5bWYYVUx80YFwlnU5FcvUF183p1
-	YpsJLRJzefrxb1NmzBbsqySlir6OySR4gu25nfcy7ufGArtL9xY115RNUMVINJ6tTInNjU1XNTvBX
-	0blnWkkuiCNLEAhz/UYtsuE9VaqRWCP3i2co+IeT358P2T+J73gQhIU3FvltER+2ODatAlisvkcvv
-	4u3/43vX8X4YYnj8Dl0A==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H/Ngi9O7d0iS2BEZDCFi0u7oGAi+THGlKp1XJToF6XA=; b=VsDsJ+LxG9aHSF
+	COsoWDPCEpiMk6J0rxTE/6iVUMToRM11UZLo4cKcOOecMD1SocMmTUK8eZXSx/hsoQI4aqBx9caUK
+	L7f/ODrRk5IXBXAySw+MVH5meHb/f0SCUWhaoaGk7m6QY6kJwFE9N0fUilg06aHD0Gr7IljM4SNKY
+	f1Mbgf9/LBiuokgd6+Sie3oty0sp7s9AbuZXfohhDxKxKQItb0tLaySdujlIUUrAO2kREcymZkGH7
+	VMjjkue3piPMB17XsR/85+5k5xWB6K+IvjgiJ60UmZibtRPLoKvHBWY9zYOBmy7KRjmY3+64s7ioL
+	xnaD0CFwjIljr8AhQfeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvGmT-00089v-8e; Wed, 07 Aug 2019 07:54:45 +0000
-Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
+	id 1hvH09-0004IG-JW; Wed, 07 Aug 2019 08:08:53 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvGl9-0007Ro-0n
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 07:53:25 +0000
-Received: by mail-pl1-x635.google.com with SMTP id 4so32514646pld.10
- for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 00:53:22 -0700 (PDT)
+ id 1hvGzx-0004HX-3e
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 08:08:44 +0000
+Received: by mail-qt1-x843.google.com with SMTP id d17so8511880qtj.8
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 01:08:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CR099KoIVSFntlUEzo+lGxk+W7ST8OnRmiWSCMXMoxs=;
- b=mgLJQssTy+srPLaLCj/rdzPyIJ5yTpYP8HwenrafQwa6vksmma2h0HT2ZSYTfsxVX3
- 5mkxDJW+NdKeMbEIwSKaQK+dN3PBVrZEbKFO4KhwaapunbtZlLxjVCxU3/K0wxTZ4qit
- SWB7k/E7JzYvKw5JpGZWE3uli0+TwNhSPdQPFq1fvP9+QxDq2bFTBOM2xLlRG0IWRc8k
- J2TnYAjr9Rizsf0PZEU0ahtvmtxXZbkwAyd32LUhsUgk34Pxbkl8XCdQZwTElHVlhSRc
- azN+eRBhkouJT4JClAdWfzEiVpZUc1iYb67/Rv1O/eYPk5r4QF9eVLcgGLxKlEQVB8kq
- KVVA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=Z9+5qxXSA+P+i6+dm/0T3J6ITfT0I6ZyUk5q38WdTWE=;
+ b=aSwJ0hNI5H+bc1wEBtL4PM/PAoHtr7x1f2DtlG/yTPQNCnWztNOyy0s0mnx2Bg1dGW
+ k+fZvxZJw/DdSGpyYkPolhZzpUGsctX9DeI4pKTLgn1WHnXn+0wPERa3IN7euV3SQDjr
+ fMh53zn3utVqf0Ud3OuB5y7Fw9YPaS5DINpeBEvX8JNUX975LLtrSFX4sbjCsAXti2G5
+ hYCVtlkG9ER/NmXQj9EnqrUu/UeDmXNn+rKJShoCN7TQHLwA9MAdVy59S2xJ0WMYtmBR
+ zDCS9u0l/BjaN8qXlnJQFJiA4w/lNcr5m+r4EtjdM5pmaXra/ubbJRN9RrRkS6tJ1nYL
+ pvmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CR099KoIVSFntlUEzo+lGxk+W7ST8OnRmiWSCMXMoxs=;
- b=Fg27z8hVHouC236gTh7t3vv/0h/6Do2F/pLmoCtZlqM0V7WwkOMwk1v9s6VVIf6F8E
- fNFYHm3FnI4MYJUaXdvLrRn5zkTbKXHo1a0YNBNczLBWid+HkMkHvkWLdgtFOJFrhb06
- xtzGeC3EZCR5x+0GMpFzASlH/LWs5Sq+OCykXyVlPq+UarAwayOBVVxTXjPzWwyVgU2f
- zu9qyzPXXErhzaowymVz1eYT50x66RvD4AnPCDzRE6+JwUlrZKbAPNrDPXHAPrTdJIaN
- VmmzkcgRPnKt+1gNkmDdozJggQeph3toxKYAPgptaJWcVxwkAt+WZpxk75x4963CiszJ
- /orQ==
-X-Gm-Message-State: APjAAAV1wBNQYXAVRhiCtyVRaK2ziJ+2XUCcBHadJZMVMdguah5YwPX6
- z8ogtJXEzSGkkH78ydDDaR8SJN7R
-X-Google-Smtp-Source: APXvYqyDgWCHXiln8hf01U7eCAFLL4EIfYI617q05EQLyPAhqDqAIduFz0gDyW0isdVtK0akxtPswQ==
-X-Received: by 2002:a63:460c:: with SMTP id t12mr6540536pga.69.1565164400562; 
- Wed, 07 Aug 2019 00:53:20 -0700 (PDT)
-Received: from echampetier.lab1.anevia.com
- ([2601:646:8200:acf4:805e:e3db:4a5a:9ad7])
- by smtp.gmail.com with ESMTPSA id l25sm109548744pff.143.2019.08.07.00.53.19
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 07 Aug 2019 00:53:19 -0700 (PDT)
-From: Etienne Champetier <champetier.etienne@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  7 Aug 2019 00:52:52 -0700
-Message-Id: <20190807075252.863-1-champetier.etienne@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=Z9+5qxXSA+P+i6+dm/0T3J6ITfT0I6ZyUk5q38WdTWE=;
+ b=PqUWanBFODWxjOf1w60REcyfOXDVf3t8p3dGGYIQJIW4z/RnLdLRKVyKPVC/N23rRn
+ YM62iFJcd9eRQklF7wuYshLVN13tb/i9kxFJhun3uOoLZXh1fPnJs4UOnSSY6JwUI/62
+ In50Mzv//sKWty5YMs4J2Q650v07BqVPoKaQVWpDpNWDDBQVozyt516PFN8V6/0wxkx/
+ hNBWCppljCSQW4BzKWK4Dt/HbB3UzaL/5vBo1z8jXe1e89u6ydLHGisnwbckdc5KQIBM
+ +spZXWpacjrkNbi1nWZrmBbLj/WGrOeLUg+Erx6+mVNYu+kgTxCRNi62bAyTChAMOF+b
+ Bhpg==
+X-Gm-Message-State: APjAAAW2lciykYj+Xms7f/W3YBNGEwr4oddhIHQBFM+q/4MyAf2WWMjq
+ 9sEEhS+0j3/BJd6EtzL6aVrB5KfLDziP3yaiuYE=
+X-Google-Smtp-Source: APXvYqyjbUTjHzQrfWBLxIU9jmzMMJNBNKwN7ri441IYm8r/X0ltJubDRTCPvOd68fPGVMRlcgkaTCPATpJAEQ66qjo=
+X-Received: by 2002:aed:23ac:: with SMTP id j41mr6775896qtc.200.1565165319505; 
+ Wed, 07 Aug 2019 01:08:39 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190805160745.4269-1-mail@aparcar.org>
+In-Reply-To: <20190805160745.4269-1-mail@aparcar.org>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Wed, 7 Aug 2019 10:08:28 +0200
+Message-ID: <CAJLcKsH-wxhtZEXgujratOr-C+fHcTx93jzM0KZro+iVXmdmeg@mail.gmail.com>
+To: Paul Spooren <mail@aparcar.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_005323_201768_E6B72C6F 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20190807_010841_177221_7F0D54AE 
+X-CRM114-Status: GOOD (  16.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:635 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (champetier.etienne[at]gmail.com)
+ provider (dedeckeh[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,8 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] [RFCv2] kernel: add disable_eap_hack sysfs
- attribute
+Subject: Re: [OpenWrt-Devel] [PATCH] procd: fix shutdown when running in a
+ container
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,286 +93,60 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Etienne Champetier <champetier.etienne@gmail.com>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>, Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mikael Magnusson <mikma@users.sourceforge.net>,
+ =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-We are not sure if 640-bridge-only-accept-EAP-locally.patch is still needed
-as a first step, add disable_eap_hack sysfs config to allow to disable it
-
-Signed-off-by: Etienne Champetier <champetier.etienne@gmail.com>
----
- .../640-bridge-only-accept-EAP-locally.patch  | 59 +++++++++++++++++--
- .../640-bridge-only-accept-EAP-locally.patch  | 59 +++++++++++++++++--
- .../640-bridge-only-accept-EAP-locally.patch  | 59 +++++++++++++++++--
- 3 files changed, 165 insertions(+), 12 deletions(-)
-
-diff --git a/target/linux/generic/hack-4.14/640-bridge-only-accept-EAP-locally.patch b/target/linux/generic/hack-4.14/640-bridge-only-accept-EAP-locally.patch
-index 0dbb8ee3c0..7b026642a6 100644
---- a/target/linux/generic/hack-4.14/640-bridge-only-accept-EAP-locally.patch
-+++ b/target/linux/generic/hack-4.14/640-bridge-only-accept-EAP-locally.patch
-@@ -1,4 +1,3 @@
--From c6905cfdeb31a5c049db3da434b10fa0d3e83569 Mon Sep 17 00:00:00 2001
- From: Felix Fietkau <nbd@nbd.name>
- Date: Fri, 7 Jul 2017 17:18:54 +0200
- Subject: bridge: only accept EAP locally
-@@ -7,9 +6,9 @@ When bridging, do not forward EAP frames to other ports, only deliver
- them locally, regardless of the state.
- 
- Signed-off-by: Felix Fietkau <nbd@nbd.name>
-+[add disable_eap_hack sysfs attribute]
-+Signed-off-by: Etienne Champetier <champetier.etienne@gmail.com>
- ---
-- net/bridge/br_input.c | 7 +++++--
-- 1 file changed, 5 insertions(+), 2 deletions(-)
- 
- --- a/net/bridge/br_input.c
- +++ b/net/bridge/br_input.c
-@@ -19,7 +18,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
-  
- +	BR_INPUT_SKB_CB(skb)->brdev = br->dev;
- +
--+	if (skb->protocol == htons(ETH_P_PAE))
-++	if (skb->protocol == htons(ETH_P_PAE) && !br->disable_eap_hack)
- +		return br_pass_frame_up(skb);
- +
-  	if (p->state == BR_STATE_LEARNING)
-@@ -29,3 +28,55 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
-  	BR_INPUT_SKB_CB(skb)->src_port_isolated = !!(p->flags & BR_ISOLATED);
-  
-  	if (IS_ENABLED(CONFIG_INET) && skb->protocol == htons(ETH_P_ARP))
-+--- a/net/bridge/br_private.h
-++++ b/net/bridge/br_private.h
-+@@ -320,6 +320,8 @@ struct net_bridge {
-+ 	u16				group_fwd_mask;
-+ 	u16				group_fwd_mask_required;
-+ 
-++	bool				disable_eap_hack;
-++
-+ 	/* STP */
-+ 	bridge_id			designated_root;
-+ 	bridge_id			bridge_id;
-+--- a/net/bridge/br_sysfs_br.c
-++++ b/net/bridge/br_sysfs_br.c
-+@@ -170,6 +170,30 @@ static ssize_t group_fwd_mask_store(stru
-+ }
-+ static DEVICE_ATTR_RW(group_fwd_mask);
-+ 
-++static ssize_t disable_eap_hack_show(struct device *d,
-++				   struct device_attribute *attr,
-++				   char *buf)
-++{
-++	struct net_bridge *br = to_bridge(d);
-++	return sprintf(buf, "%u\n", br->disable_eap_hack);
-++}
-++
-++static int set_disable_eap_hack(struct net_bridge *br, unsigned long val)
-++{
-++	br->disable_eap_hack = val ? true : false;
-++
-++	return 0;
-++}
-++
-++static ssize_t disable_eap_hack_store(struct device *d,
-++				    struct device_attribute *attr,
-++				    const char *buf,
-++				    size_t len)
-++{
-++	return store_bridge_parm(d, buf, len, set_disable_eap_hack);
-++}
-++static DEVICE_ATTR_RW(disable_eap_hack);
-++
-+ static ssize_t priority_show(struct device *d, struct device_attribute *attr,
-+ 			     char *buf)
-+ {
-+@@ -817,6 +841,7 @@ static struct attribute *bridge_attrs[]
-+ 	&dev_attr_ageing_time.attr,
-+ 	&dev_attr_stp_state.attr,
-+ 	&dev_attr_group_fwd_mask.attr,
-++	&dev_attr_disable_eap_hack.attr,
-+ 	&dev_attr_priority.attr,
-+ 	&dev_attr_bridge_id.attr,
-+ 	&dev_attr_root_id.attr,
-diff --git a/target/linux/generic/hack-4.19/640-bridge-only-accept-EAP-locally.patch b/target/linux/generic/hack-4.19/640-bridge-only-accept-EAP-locally.patch
-index 3de4048074..dfe64cb5af 100644
---- a/target/linux/generic/hack-4.19/640-bridge-only-accept-EAP-locally.patch
-+++ b/target/linux/generic/hack-4.19/640-bridge-only-accept-EAP-locally.patch
-@@ -1,4 +1,3 @@
--From c6905cfdeb31a5c049db3da434b10fa0d3e83569 Mon Sep 17 00:00:00 2001
- From: Felix Fietkau <nbd@nbd.name>
- Date: Fri, 7 Jul 2017 17:18:54 +0200
- Subject: bridge: only accept EAP locally
-@@ -7,9 +6,9 @@ When bridging, do not forward EAP frames to other ports, only deliver
- them locally, regardless of the state.
- 
- Signed-off-by: Felix Fietkau <nbd@nbd.name>
-+[add disable_eap_hack sysfs attribute]
-+Signed-off-by: Etienne Champetier <champetier.etienne@gmail.com>
- ---
-- net/bridge/br_input.c | 7 +++++--
-- 1 file changed, 5 insertions(+), 2 deletions(-)
- 
- --- a/net/bridge/br_input.c
- +++ b/net/bridge/br_input.c
-@@ -19,7 +18,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
-  
- +	BR_INPUT_SKB_CB(skb)->brdev = br->dev;
- +
--+	if (skb->protocol == htons(ETH_P_PAE))
-++	if (skb->protocol == htons(ETH_P_PAE) && !br->disable_eap_hack)
- +		return br_pass_frame_up(skb);
- +
-  	if (p->state == BR_STATE_LEARNING)
-@@ -29,3 +28,55 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
-  	BR_INPUT_SKB_CB(skb)->src_port_isolated = !!(p->flags & BR_ISOLATED);
-  
-  	if (IS_ENABLED(CONFIG_INET) &&
-+--- a/net/bridge/br_private.h
-++++ b/net/bridge/br_private.h
-+@@ -337,6 +337,8 @@ struct net_bridge {
-+ 	u16				group_fwd_mask;
-+ 	u16				group_fwd_mask_required;
-+ 
-++	bool				disable_eap_hack;
-++
-+ 	/* STP */
-+ 	bridge_id			designated_root;
-+ 	bridge_id			bridge_id;
-+--- a/net/bridge/br_sysfs_br.c
-++++ b/net/bridge/br_sysfs_br.c
-+@@ -170,6 +170,30 @@ static ssize_t group_fwd_mask_store(stru
-+ }
-+ static DEVICE_ATTR_RW(group_fwd_mask);
-+ 
-++static ssize_t disable_eap_hack_show(struct device *d,
-++				   struct device_attribute *attr,
-++				   char *buf)
-++{
-++	struct net_bridge *br = to_bridge(d);
-++	return sprintf(buf, "%u\n", br->disable_eap_hack);
-++}
-++
-++static int set_disable_eap_hack(struct net_bridge *br, unsigned long val)
-++{
-++	br->disable_eap_hack = val ? true : false;
-++
-++	return 0;
-++}
-++
-++static ssize_t disable_eap_hack_store(struct device *d,
-++				    struct device_attribute *attr,
-++				    const char *buf,
-++				    size_t len)
-++{
-++	return store_bridge_parm(d, buf, len, set_disable_eap_hack);
-++}
-++static DEVICE_ATTR_RW(disable_eap_hack);
-++
-+ static ssize_t priority_show(struct device *d, struct device_attribute *attr,
-+ 			     char *buf)
-+ {
-+@@ -810,6 +834,7 @@ static struct attribute *bridge_attrs[]
-+ 	&dev_attr_ageing_time.attr,
-+ 	&dev_attr_stp_state.attr,
-+ 	&dev_attr_group_fwd_mask.attr,
-++	&dev_attr_disable_eap_hack.attr,
-+ 	&dev_attr_priority.attr,
-+ 	&dev_attr_bridge_id.attr,
-+ 	&dev_attr_root_id.attr,
-diff --git a/target/linux/generic/hack-4.9/640-bridge-only-accept-EAP-locally.patch b/target/linux/generic/hack-4.9/640-bridge-only-accept-EAP-locally.patch
-index ba87420b32..04e139f0e4 100644
---- a/target/linux/generic/hack-4.9/640-bridge-only-accept-EAP-locally.patch
-+++ b/target/linux/generic/hack-4.9/640-bridge-only-accept-EAP-locally.patch
-@@ -1,4 +1,3 @@
--From c6905cfdeb31a5c049db3da434b10fa0d3e83569 Mon Sep 17 00:00:00 2001
- From: Felix Fietkau <nbd@nbd.name>
- Date: Fri, 7 Jul 2017 17:18:54 +0200
- Subject: bridge: only accept EAP locally
-@@ -7,9 +6,9 @@ When bridging, do not forward EAP frames to other ports, only deliver
- them locally, regardless of the state.
- 
- Signed-off-by: Felix Fietkau <nbd@nbd.name>
-+[add disable_eap_hack sysfs attribute]
-+Signed-off-by: Etienne Champetier <champetier.etienne@gmail.com>
- ---
-- net/bridge/br_input.c | 7 +++++--
-- 1 file changed, 5 insertions(+), 2 deletions(-)
- 
- --- a/net/bridge/br_input.c
- +++ b/net/bridge/br_input.c
-@@ -19,7 +18,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
-  
- +	BR_INPUT_SKB_CB(skb)->brdev = br->dev;
- +
--+	if (skb->protocol == htons(ETH_P_PAE))
-++	if (skb->protocol == htons(ETH_P_PAE) && !br->disable_eap_hack)
- +		return br_pass_frame_up(skb);
- +
-  	if (p->state == BR_STATE_LEARNING)
-@@ -30,3 +29,55 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
-  	if (IS_ENABLED(CONFIG_INET) && skb->protocol == htons(ETH_P_ARP))
-  		br_do_proxy_arp(skb, br, vid, p);
-  
-+--- a/net/bridge/br_private.h
-++++ b/net/bridge/br_private.h
-+@@ -295,6 +295,8 @@ struct net_bridge
-+ 	u16				group_fwd_mask;
-+ 	u16				group_fwd_mask_required;
-+ 
-++	bool				disable_eap_hack;
-++
-+ 	/* STP */
-+ 	bridge_id			designated_root;
-+ 	bridge_id			bridge_id;
-+--- a/net/bridge/br_sysfs_br.c
-++++ b/net/bridge/br_sysfs_br.c
-+@@ -169,6 +169,30 @@ static ssize_t group_fwd_mask_store(stru
-+ }
-+ static DEVICE_ATTR_RW(group_fwd_mask);
-+ 
-++static ssize_t disable_eap_hack_show(struct device *d,
-++				   struct device_attribute *attr,
-++				   char *buf)
-++{
-++	struct net_bridge *br = to_bridge(d);
-++	return sprintf(buf, "%u\n", br->disable_eap_hack);
-++}
-++
-++static int set_disable_eap_hack(struct net_bridge *br, unsigned long val)
-++{
-++	br->disable_eap_hack = val ? true : false;
-++
-++	return 0;
-++}
-++
-++static ssize_t disable_eap_hack_store(struct device *d,
-++				    struct device_attribute *attr,
-++				    const char *buf,
-++				    size_t len)
-++{
-++	return store_bridge_parm(d, buf, len, set_disable_eap_hack);
-++}
-++static DEVICE_ATTR_RW(disable_eap_hack);
-++
-+ static ssize_t priority_show(struct device *d, struct device_attribute *attr,
-+ 			     char *buf)
-+ {
-+@@ -780,6 +804,7 @@ static struct attribute *bridge_attrs[]
-+ 	&dev_attr_ageing_time.attr,
-+ 	&dev_attr_stp_state.attr,
-+ 	&dev_attr_group_fwd_mask.attr,
-++	&dev_attr_disable_eap_hack.attr,
-+ 	&dev_attr_priority.attr,
-+ 	&dev_attr_bridge_id.attr,
-+ 	&dev_attr_root_id.attr,
--- 
-2.21.0
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gTW9uLCBBdWcgNSwgMjAxOSBhdCA2OjA5IFBNIFBhdWwgU3Bvb3JlbiA8bWFpbEBhcGFyY2Fy
+Lm9yZz4gd3JvdGU6Cj4KPiBBcHBsaWVzIHBhdGNoIGZyb20gQG1pa21hIFswXSB0byBmaXggRG9j
+a2VyIHNodXRkb3duLiBBZGRlZCBkZXRlY3Rpb24gdG8KPiBzdGF0ZS5jIGlmIHJ1bm5pbmcgaW4g
+YSBjb250YWlucmUgb3Igbm90Lgo+Cj4gVGVzdGVkIHdpdGggYSB4ODYvNjQgRG9ja2VyIGltYWdl
+Lgo+Cj4gRml4ZXMgRlMjMjQyNQo+Cj4gQ0M6IE1pa2FlbCBNYWdudXNzb24gPG1pa21hQHVzZXJz
+LnNvdXJjZWZvcmdlLm5ldD4KPiBDQzogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4KPgo+
+IFswXTogaHR0cHM6Ly9naXRodWIuY29tL21pa21hL2x4ZC1vcGVud3J0L2Jsb2IvbWFzdGVyL3Bh
+dGNoZXMvcHJvY2QtbWFzdGVyLzAwMDMtZG9ja2VyLWZpeC1wcm9ibGVtLXN0b3BwaW5nLWNvbnRh
+aW5lci5wYXRjaAo+Cj4gU2lnbmVkLW9mZi1ieTogUGF1bCBTcG9vcmVuIDxtYWlsQGFwYXJjYXIu
+b3JnPgpQYXRjaCBhcHBsaWVkIHdpdGggc29tZSBzdHlsZSBjaGFuZ2VzCgpIYW5zCj4gLS0tCj4g
+IHN0YXRlLmMgfCAyNSArKysrKysrKysrKysrKystLS0tLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2Vk
+LCAxNSBpbnNlcnRpb25zKCspLCAxMCBkZWxldGlvbnMoLSkKPgo+IGRpZmYgLS1naXQgYS9zdGF0
+ZS5jIGIvc3RhdGUuYwo+IGluZGV4IGNjZjQxMDQuLmI3Y2JhODggMTAwNjQ0Cj4gLS0tIGEvc3Rh
+dGUuYwo+ICsrKyBiL3N0YXRlLmMKPiBAQCAtMjAsNiArMjAsNyBAQAo+ICAjaW5jbHVkZSA8c3lz
+L3R5cGVzLmg+Cj4gICNpbmNsdWRlIDxzaWduYWwuaD4KPgo+ICsjaW5jbHVkZSAiY29udGFpbmVy
+LmgiCj4gICNpbmNsdWRlICJwcm9jZC5oIgo+ICAjaW5jbHVkZSAic3lzbG9nLmgiCj4gICNpbmNs
+dWRlICJwbHVnL2hvdHBsdWcuaCIKPiBAQCAtMTU3LDE4ICsxNTgsMjIgQEAgc3RhdGljIHZvaWQg
+c3RhdGVfZW50ZXIodm9pZCkKPiAgICAgICAgICAgICAgICAgZWxzZQo+ICAgICAgICAgICAgICAg
+ICAgICAgICAgIExPRygiLSByZWJvb3QgLVxuIik7Cj4KPiAtICAgICAgICAgICAgICAgLyogQWxs
+b3cgdGltZSBmb3IgbGFzdCBtZXNzYWdlIHRvIHJlYWNoIHNlcmlhbCBjb25zb2xlLCBldGMgKi8K
+PiAtICAgICAgICAgICAgICAgc2xlZXAoMSk7Cj4gKyAgICAgICAgICAgICAgIGlmKCFpc19jb250
+YWluZXIoKSkgewo+ICsgICAgICAgICAgICAgICAgICAgICAgIC8qIEFsbG93IHRpbWUgZm9yIGxh
+c3QgbWVzc2FnZSB0byByZWFjaCBzZXJpYWwgY29uc29sZSwgZXRjICovCj4gKyAgICAgICAgICAg
+ICAgICAgICAgICAgc2xlZXAoMSk7Cj4KPiAtICAgICAgICAgICAgICAgLyogV2UgaGF2ZSB0byBm
+b3JrIGhlcmUsIHNpbmNlIHRoZSBrZXJuZWwgY2FsbHMgZG9fZXhpdChFWElUX1NVQ0NFU1MpCj4g
+LSAgICAgICAgICAgICAgICAqIGluIGxpbnV4L2tlcm5lbC9zeXMuYywgd2hpY2ggY2FuIGNhdXNl
+IHRoZSBtYWNoaW5lIHRvIHBhbmljIHdoZW4KPiAtICAgICAgICAgICAgICAgICogdGhlIGluaXQg
+cHJvY2VzcyBleGl0cy4uLiAqLwo+IC0gICAgICAgICAgICAgICBpZiAoIXZmb3JrKCApKSB7IC8q
+IGNoaWxkICovCj4gLSAgICAgICAgICAgICAgICAgICAgICAgcmVib290KHJlYm9vdF9ldmVudCk7
+Cj4gLSAgICAgICAgICAgICAgICAgICAgICAgX2V4aXQoRVhJVF9TVUNDRVNTKTsKPiArICAgICAg
+ICAgICAgICAgICAgICAgICAvKiBXZSBoYXZlIHRvIGZvcmsgaGVyZSwgc2luY2UgdGhlIGtlcm5l
+bCBjYWxscyBkb19leGl0KEVYSVRfU1VDQ0VTUykKPiArICAgICAgICAgICAgICAgICAgICAgICAg
+KiBpbiBsaW51eC9rZXJuZWwvc3lzLmMsIHdoaWNoIGNhbiBjYXVzZSB0aGUgbWFjaGluZSB0byBw
+YW5pYyB3aGVuCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICogdGhlIGluaXQgcHJvY2VzcyBl
+eGl0cy4uLiAqLwo+ICsgICAgICAgICAgICAgICAgICAgICAgIGlmICghdmZvcmsoICkpIHsgLyog
+Y2hpbGQgKi8KPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlYm9vdChyZWJvb3Rf
+ZXZlbnQpOwo+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgX2V4aXQoRVhJVF9TVUND
+RVNTKTsKPiArICAgICAgICAgICAgICAgICAgICAgICB9Cj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgd2hpbGUgKDEpCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzbGVlcCgxKTsK
+PiArICAgICAgICAgICAgICAgfSBlbHNlIHsKPiArICAgICAgICAgICAgICAgICAgICAgICBleGl0
+KDApOwo+ICAgICAgICAgICAgICAgICB9Cj4gLSAgICAgICAgICAgICAgIHdoaWxlICgxKQo+IC0g
+ICAgICAgICAgICAgICAgICAgICAgIHNsZWVwKDEpOwo+ICAjZWxzZQo+ICAgICAgICAgICAgICAg
+ICBleGl0KDApOwo+ICAjZW5kaWYKPiAtLQo+IDIuMjAuMQo+Cj4KPiBfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBs
+aXN0Cj4gb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwo+IGh0dHBzOi8vbGlzdHMub3Bl
+bndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlz
+dApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

@@ -2,98 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBDB08524B
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 19:43:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D6CE85278
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 19:55:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qfPJoBfdR4UGyx/2PXqHkaHa5mV6nkE5FTleJ2La/Cc=; b=CLw6ikXve/A97M4OvBTQuUM8S
-	BfjfY+BJ/COBl4BiU/vrnvTkwTg+jQSIx1MIgJsI6hgvZEzfe1LVUif061dDe32DG0hnbSe0Q56Pq
-	4oDTR6/1JJ/kECHXY+zrr7dyGnFYDDFM4ooAXULzifBG3LFJ3u6X2iQ7NLQqkFbWnWJDCPydzny9P
-	tGitUHKS3YxeJA2RIT1ZFhz/J3QjoUomJbM9dlxh/ioOweRYjDw4dcKok+YngkYHwyHGiIaATRuQn
-	M4S/NKHRVmNhsvSe51Ir66HBLm3pg/icNC9t1TlEpVU9uIIk39V38VXNrxBzB9fyL0RiLBkgGZdPF
-	R6uc4BiXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nrMkwVC/A7gIbxO3E+kfeiuZn639AW9F0T0zos63kp8=; b=PDM5YOtcSxPPw6
+	Fuk8J78KsBRGp/SaVzxuG6SI1Z192g+kk4aFIEL+5yLacU2ofrPjHEfBVezcMnLGa46S5uhNQowwF
+	MejWTxfNPTFQKyiXEwzWPKAv1A3zHEwA7dvqVZnxva3k1pVBQurww7ohiEpjHiLKyKUCbvXNmdR5t
+	U49wd/iVvgKmFyiokRKXPYF0xLey8SCYGCBKnrSZTEd8FBiSALr6pbErljJkWGiqH/YyQBD8bSxLN
+	yywh5g+AZOS3KZSHVxiw3d3aVw4jztVw2K2pB4IRIASLIqkgh9MFaem0Nb7BZvZIi3YOHn0PUWTlR
+	WwfFQ7RjYWK5JtKJ1zqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvPyY-0004Uc-0Y; Wed, 07 Aug 2019 17:43:50 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hvQ9q-0000T5-RX; Wed, 07 Aug 2019 17:55:30 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvPyP-0004UC-GK
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 17:43:43 +0000
-Received: by mail-pl1-x642.google.com with SMTP id b7so41923693pls.6
- for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 10:43:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=accuratebizleads-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:references:in-reply-to:subject:date:message-id:mime-version
- :thread-index:content-language:importance;
- bh=ikL7pL4VBmqT/D6PkLX3qyz38XSKtDiy0luID2fiYZQ=;
- b=QYuHXjtS5NJsbZri+jfkosc9xpPCLzGeYS7oaDdGjgZScVZ+oBqwBo5emX63i6an3A
- zKPIhEsJ2ov/CYoVBFFGQsGqu2sg5Pcc12aw9Cy+Li2GsZSJwV1Pgt2Je/4BTWTQgZgK
- FXLDQBzK2rCnSvFUmbbHwQINAYZLSd6DChc5+gtl+oHQq1hWFemEg9TDr2vMuKmzC3LG
- h2SL0KL+8dZiJLiBn3e1yfoVxQZBcolc1XZDmrZ8hvETTfH0QqcYeTj1P2QDkeQNfmtD
- oEbSLKybvIyO/Qu8I1n0b9jctDd4qlPRfR5DVOwFHyWSXdM8hvWmk+YmN713Qyu8loR1
- ewIQ==
+ id 1hvQ9h-0000Sj-OI
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 17:55:23 +0000
+Received: by mail-lj1-x244.google.com with SMTP id k18so86284902ljc.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 10:55:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=Ax1R0g9/vhKXOapdwCgcj4n+4k9mNQFeIGhfJP8oqzs=;
+ b=Vwmp4KHTHnAJ/bXKMpCypyQZgMZN0FJmX3gy+BL9QdJs345khlfq4QaklJS4/ufj12
+ dkyxur/Z0Hf4UjV/B62aQd/IvskWLJzvdSQuwm2U7LUfZdFteLjDKXpUyMx0o83EMHh6
+ 9Kl2vEg9BIHWbZNZ1s6VvwSLSdiNi/QmLCsOUXrqvFguRoWK0JdTXfQfOV97mm+l7/ok
+ z3AxeJNp+imTRh5TxCsEqj+9J6gyEwz9ed9uagLaI2GB42Z1ifQbpvXvLZpP9rSbRrSp
+ 9lzp4aT0wbWe4RFtX0SX27BFIK/suSSNQmuDpaDjCDEeNuxiD9CRwlVE+81XerIma7NN
+ JF0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:references:in-reply-to:subject:date
- :message-id:mime-version:thread-index:content-language:importance;
- bh=ikL7pL4VBmqT/D6PkLX3qyz38XSKtDiy0luID2fiYZQ=;
- b=FGCaCQBX7L3k8wjy/nvAQ6712691ONmq+uFlJ1SzujjcrySRGOc6F/U5aTCNl/iqLi
- V/m1swnrZEVm7WZixt7Rar5dzCl+zTD/DJCAx1eegHdVkpO3AHqeCaYmXcC4+m0IFeyd
- vepVYZCWgTRLokRuaM4KGEmeE5nx9oE6rA2JustwdHjsL6rgRql+Gkt3bpYJyTXjY+ek
- +n/6ROR7ircrYxZGtbeLSUE3yIT3FESxAqhlaIycxfHhGQYYE7WZEimIanKGs6TSW7I3
- lMmNL6NUwB62SJQ6KfDbhNQu1OgtCLbNFekrGKzCMCA/WIkTOnxXjrM5LfhWGXUSJiqe
- iAcQ==
-X-Gm-Message-State: APjAAAWkLIbzI05QCwluBVBMN1Hl8wKu03oz49lnZfDno3P73tbtMjxT
- GgCmdW/RXUf1RUIcxUEKD3PDIPV7Bog=
-X-Google-Smtp-Source: APXvYqwicy9soep8GWoY14NgjdljPqXaJud2nCrUJs9DxB8fA/f/eWtLnKGlW0KnRMpV+13KakbIyg==
-X-Received: by 2002:a17:902:2889:: with SMTP id
- f9mr8730944plb.230.1565199819861; 
- Wed, 07 Aug 2019 10:43:39 -0700 (PDT)
-Received: from adminPC ([49.207.52.136])
- by smtp.gmail.com with ESMTPSA id f12sm76986792pgq.52.2019.08.07.10.43.38
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 07 Aug 2019 10:43:38 -0700 (PDT)
-From: Jenny Ouyang <jenny.ouyang@accuratebizleads.com>
-X-Google-Original-From: "Jenny Ouyang" <Jenny.Ouyang@accuratebizleads.com>
-To: <openwrt-devel@lists.openwrt.org>
-References: 
-In-Reply-To: 
-Date: Wed, 7 Aug 2019 12:43:10 -0500
-Message-ID: <726401d54d47$a5f01890$f1d049b0$@accuratebizleads.com>
-MIME-Version: 1.0
-X-Priority: 1 (Highest)
-X-MSMail-Priority: High
-X-Mailer: Microsoft Outlook 14.0
-Thread-Index: AdVNNih/dT8+WxDtTQO2LS0tJXPPigAETy0wAAAAFMAAAAAE8AAAAAMgAAAABFAAAAAEgAAAAAOwAAAABCAAAAAEUAAAAASAAAAAA+AAAAAEEAAAAARwAAAABKAAAAAEEAAAAANAAAAABaAAAAAE0AAAAARwAAAABKAAAAAEAAAAAARgAAAABdAAAAAEMAAAAASQ
-Content-Language: en-us
-Importance: High
-X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Ax1R0g9/vhKXOapdwCgcj4n+4k9mNQFeIGhfJP8oqzs=;
+ b=E1S0z+1ZYdaFtnPQW6SSuYqI9uBKD49sNsJjKnINC+ms5r8qYxU6ToUq41NlN/0IBI
+ CO94Le2OzJjLD7DrQD4paQTdXsQV59Q6h9SHlxL67Ft/zBs/yqdVSKanZsqknZeWjbyS
+ +2rdSj3pM0UoiigDP5Uej14XZoC3J20nt1LRgxdx77BVhcJsem6iSOWKPeHd7B3yIGZH
+ luNvk+Om7KcRiZ3DFBKThRpcvw/tDuyJll3OYWO5VLui8HUNx/dbppQ+yrG9IjkUapi3
+ YVp855M5Y9TiC3ED7Pwww/qogkC4VR0KRuOP1eqG256yXLpjM2oQs5dsi2INLGAv3YEP
+ cXow==
+X-Gm-Message-State: APjAAAWrwK1kZBFWPDbjO6jMKHvI+l4J63VFZXfUtq70uo3Zv/j9qRtr
+ ihW20x72Y9Dw1GX/HM3tG8NrlWFOCDw=
+X-Google-Smtp-Source: APXvYqxeybzFLQiejaP6eMsIR6anN+PTe7g43CVOkDhMINKRWhOmm5zD9hCdNLexQsDAhX4ERAJTIA==
+X-Received: by 2002:a2e:9a58:: with SMTP id k24mr5628453ljj.165.1565200519194; 
+ Wed, 07 Aug 2019 10:55:19 -0700 (PDT)
+Received: from localhost.localdomain ([2001:470:dc6e:0:4de0:5f73:d0ad:c4d3])
+ by smtp.gmail.com with ESMTPSA id p87sm18388897ljp.50.2019.08.07.10.55.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 07 Aug 2019 10:55:18 -0700 (PDT)
+From: Dmitry Tunin <hanipouspilot@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed,  7 Aug 2019 20:55:03 +0300
+Message-Id: <1565200503-4224-1-git-send-email-hanipouspilot@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_104341_749392_CEEBA7AD 
-X-CRM114-Status: UNSURE (  -4.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_105521_795779_756E1EDE 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hanipouspilot[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
-Subject: [OpenWrt-Devel] Attendees Database Of Cable-Tec Expo 2019
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support of Netgear WNR3800 (Ch)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,225 +92,129 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7057450625046628527=="
+Cc: Dmitry Tunin <hanipouspilot@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Add support for the ar71xx supported Netgear WNR3800 (Ch) to ath79.
+The device is identical to WNR3800 except NETGEAR_BOARD_ID.
 
---===============7057450625046628527==
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_7265_01D54D1D.BD1A1090"
-Content-Language: en-us
+Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+---
+ .../linux/ath79/base-files/etc/board.d/02_network  |  3 +-
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom         |  6 ++--
+ .../linux/ath79/dts/ar7161_netgear_wndr3800ch.dts  | 36 ++++++++++++++++++++++
+ target/linux/ath79/image/generic.mk                |  8 +++++
+ 4 files changed, 50 insertions(+), 3 deletions(-)
+ create mode 100644 target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
 
-This is a multipart message in MIME format.
-
-------=_NextPart_000_7265_01D54D1D.BD1A1090
-Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-
-Hi, 
-
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+index 84c83ff..fd66602 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/base-files/etc/board.d/02_network
+@@ -157,7 +157,8 @@ ath79_setup_interfaces()
+ 		;;
+ 	netgear,wndr3700|\
+ 	netgear,wndr3700v2|\
+-	netgear,wndr3800)
++	netgear,wndr3800|\
++	netgear,wndr3800ch)
+ 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "5u@eth0"
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index e6b6d2f..2e5f455 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -200,7 +200,8 @@ case "$FIRMWARE" in
+ 	buffalo,wzr-hp-ag300h|\
+ 	netgear,wndr3700|\
+ 	netgear,wndr3700v2|\
+-	netgear,wndr3800)
++	netgear,wndr3800|\
++	netgear,wndr3800ch)
+ 		ath9k_eeprom_extract "art" 4096 3768
+ 		;;
+ 	dlink,dir-825-b1)
+@@ -217,7 +218,8 @@ case "$FIRMWARE" in
+ 	buffalo,wzr-hp-ag300h|\
+ 	netgear,wndr3700|\
+ 	netgear,wndr3700v2|\
+-	netgear,wndr3800)
++	netgear,wndr3800|\
++	netgear,wndr3800ch)
+ 		ath9k_eeprom_extract "art" 20480 3768
+ 		;;
+ 	dlink,dir-825-b1)
+diff --git a/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts b/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
+new file mode 100644
+index 0000000..693b897
+--- /dev/null
++++ b/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
+@@ -0,0 +1,36 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "ar7161_netgear_wndr3700.dtsi"
++
++/ {
++	compatible = "netgear,wndr3800ch", "qca,ar7161";
++	model = "Netgear WNDR3800 (Ch)";
++};
++
++&partitions {
++	partition@0 {
++		label = "u-boot";
++		reg = <0x000000 0x050000>;
++		read-only;
++	};
++
++	partition@50000 {
++		label = "u-boot-env";
++		reg = <0x050000 0x020000>;
++		read-only;
++	};
++
++	partition@70000 {
++		label = "firmware";
++		reg = <0x070000 0xf80000>;
++		compatible = "netgear,uimage";
++	};
++
++	art: partition@ff0000 {
++		label = "art";
++		reg = <0xff0000 0x010000>;
++		read-only;
++	};
++};
++
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index d5f67b8..e163151 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -647,6 +647,14 @@ define Device/netgear_wndr3800
+ endef
+ TARGET_DEVICES += netgear_wndr3800
  
++define Device/netgear_wndr3800ch
++  $(Device/netgear_wndr3800)
++  DEVICE_TITLE := NETGEAR WNDR3800 (Ch)
++  NETGEAR_BOARD_ID := WNDR3800CH
++  SUPPORTED_DEVICES += wndr3800ch
++endef
++TARGET_DEVICES += netgear_wndr3800ch
++
+ define Device/phicomm_k2t
+   ATH_SOC := qca9563
+   DEVICE_TITLE := Phicomm K2T
+-- 
+2.7.4
 
-Would you be interested in procuring an Attendees Database Cable-Tec Expo
-2019 and there will be a cost associated with the contacts.
-
- 
-
-
-Attendees: SCTE's International Brand, International Society of Broadband
-Experts (ISBE), Industry Leaders, Cable ROI, Machine Learning, Data
-Analytics, 10G, IoT, Artificial Intelligence and many More.
-
- 
-
-
-Data Contains: Contact Name, Title, Company Name, Size, Physical Address,
-Opt-In Email address, Phone & Fax numbers and etc.
-
- 
-
-If you're interested, Please let me know I will assist you with counts,
-pricing and more information.
-
- 
-
-Awaiting Response,
-
-Jenny Ouyang
-
-Marketing Executive
-
- 
-
-                                    
-
-If you do not wish to hear from us again, please respond back with "Abolish"
-and we will honour your request.
-
-
-------=_NextPart_000_7265_01D54D1D.BD1A1090
-Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:x=3D"urn:schemas-microsoft-com:office:excel" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta =
-http-equiv=3DContent-Type content=3D"text/html; =
-charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =
-(filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Verdana;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	margin-bottom:.0001pt;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	font-family:"Times New Roman","serif";
-	color:blue;
-	text-decoration:underline;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-priority:99;
-	font-family:"Times New Roman","serif";
-	color:purple;
-	text-decoration:underline;}
-span.EmailStyle17
-	{mso-style-type:personal-compose;
-	font-family:"Verdana","sans-serif";}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-size:10.0pt;
-	font-family:"Calibri","sans-serif";}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
-	{page:WordSection1;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =
-vlink=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal =
-style=3D'text-autospace:none'><span style=3D'font-size:10.0pt'>Hi, =
-<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><span =
-style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal style=3D'text-autospace:none'><span =
-style=3D'font-size:10.0pt'>Would you be interested in procuring an =
-Attendees Database <b>Cable-Tec Expo 2019 </b>and there will be a cost =
-associated with the contacts.<o:p></o:p></span></p><p =
-class=3DMsoNormal><span =
-style=3D'font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p; <o:p></o:p></span></p><p class=3DMsoNormal><b><span =
-style=3D'font-size:10.0pt'>Attendees:</span></b><span =
-style=3D'font-size:10.0pt'> </span><span =
-style=3D'font-size:10.0pt'>SCTE&#8217;s International Brand,</span><span =
-style=3D'font-size:10.0pt'> International Society of Broadband Experts =
-(ISBE),</span><span style=3D'font-size:10.0pt'> </span><span =
-style=3D'font-size:10.0pt'>Industry Leaders,</span> <span =
-style=3D'font-size:10.0pt'>Cable ROI,</span> <span =
-style=3D'font-size:10.0pt'>Machine Learning,</span> <span =
-style=3D'font-size:10.0pt'>Data Analytics,</span> <span =
-style=3D'font-size:10.0pt'>10G, IoT, Artificial Intelligence and many =
-More&#8230;</span><b><span =
-style=3D'font-size:10.0pt;color:black'><o:p></o:p></span></b></p><p =
-class=3DMsoNormal style=3D'text-autospace:none'><b><span =
-style=3D'font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b><span =
-style=3D'font-size:10.0pt'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
-<b><o:p></o:p></b></span></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><b><span style=3D'font-size:10.0pt'>Data =
-Contains</span></b><span style=3D'font-size:10.0pt'>: Contact Name, =
-Title, Company Name, Size, Physical Address, Opt-In Email address, Phone =
-&amp; Fax numbers and etc.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><span =
-style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal style=3D'text-autospace:none'><span =
-style=3D'font-size:10.0pt'>If you&#8217;re interested, Please let me =
-know I will assist you with counts, pricing and more =
-information.<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><b><span =
-style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></b></p><p =
-class=3DMsoNormal style=3D'text-autospace:none'><b><span =
-style=3D'font-size:10.0pt'>Awaiting =
-Response,<o:p></o:p></span></b></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><span style=3D'font-size:10.0pt'>Jenny =
-Ouyang<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><span style=3D'font-size:10.0pt'>Marketing =
-Executive<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'text-autospace:none'><span =
-style=3D'font-size:9.0pt;font-family:"Verdana","sans-serif"'><o:p>&nbsp;<=
-/o:p></span></p><p class=3DMsoNormal style=3D'text-autospace:none'><span =
-style=3D'font-size:9.0pt;font-family:"Verdana","sans-serif"'>&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
-<o:p></o:p></span></p><p class=3DMsoNormal align=3Dcenter =
-style=3D'margin-left:.5in;text-align:center;text-indent:.5in'><span =
-style=3D'font-size:9.0pt'>If you do not wish to hear from us again, =
-please respond back with <b>&#8220;Abolish&#8221;</b> and we will honour =
-your request.<o:p></o:p></span></p></div></body></html>
-------=_NextPart_000_7265_01D54D1D.BD1A1090--
-
-
-
---===============7057450625046628527==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7057450625046628527==--
-
-

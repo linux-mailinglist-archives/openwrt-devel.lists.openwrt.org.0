@@ -2,62 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE61985335
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 20:48:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DA5A85344
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 20:52:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=93BnTVHy7xB2Q1EqFYe8mVKZZgPwlHGbD1gFE52A4ps=; b=IW1lO3gqhPgHIUPV+hz8ueAzX
-	fT4l/K/XkXBvEgI/SoQkWNtHoeJikBggSgzHps0j4t3hPuMTvfe2QdzaTImo8FMLe/2sMWMAamFfc
-	Be3/yOrTf4XbD6Yk9UzymZCqKzqtnywbtT3yKTuCiDESRGJd2SDVVB2JpX6AucN8NpreyKNl/escJ
-	MjsprdHStI2VWZ6/k7dO7RDKZEcArw/hSmgCAPahtX3VFtYHT4/3/z2F25I5ylcs2qMoNqDIakNOU
-	nXkPHvpu08VtenIwmD9Zn8p5+Ejsh9hlkzKK8k8lmGozkzniT0uwBrQJMPeWfh8DXR+XdTi+3gDQW
-	UeulIbmZQ==;
+	 bh=1hyCLGHDxnNO/LLhD+5nM7NK6gg9QpamqopsWpsK+Yk=; b=DSyoT2W8IqXtZ4N6H7MSlDi71
+	Z9QNZ24VYY232KlUP478ZWzZzDuk6Q2806zNTDbTa4jMI4T2B5Jd5H19LiX6JUV9jEf87ooO0X6Rr
+	F8W+dI0pzWKlhRN3wMeTWKq+wLVCnKNYXPbnE780a2kIx2Xx1anOTPCt4zyAIHJrcHP0lyuuMHDgH
+	pt5ek9rmYnfTeZ7RfvyjkzZ5uHMsL+cwnNgL4TLv+/mfs5MI4i6rWtpZhIZAnm8BRSmwWJ7NYOS6A
+	YTfA6B3CcnicS/CZjPBHbh/FF011lDJllUGl7OB/yFii8eh0q8F3tLTvKBmoKWM0wbUg+udG/I2ty
+	xmUZUAG4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvQys-0001C3-Dt; Wed, 07 Aug 2019 18:48:14 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1hvR3O-0002uD-9w; Wed, 07 Aug 2019 18:52:54 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvQyg-0001Bi-Ed
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 18:48:03 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue009
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MY60L-1hpjWt48th-00YTYH; Wed, 07
- Aug 2019 20:47:59 +0200
+ id 1hvR3D-0002tw-Tk
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 18:52:45 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue012
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1N7QM9-1iP4Cq0WpZ-017lhE; Wed, 07
+ Aug 2019 20:52:41 +0200
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
 To: "'Dmitry Tunin'" <hanipouspilot@gmail.com>
 References: <1565200503-4224-1-git-send-email-hanipouspilot@gmail.com>
  <028601d54d4e$5456f330$fd04d990$@adrianschmutzler.de>
  <CANoib0Gj6L=H=-hadUMgmCXk_mbU631==RZuG8P6KmfT0dJhgw@mail.gmail.com>
-In-Reply-To: <CANoib0Gj6L=H=-hadUMgmCXk_mbU631==RZuG8P6KmfT0dJhgw@mail.gmail.com>
-Date: Wed, 7 Aug 2019 20:47:58 +0200
-Message-ID: <029701d54d50$a21e6100$e65b2300$@adrianschmutzler.de>
+ <CANoib0GUUxSHCp5cRkjyiQykuRookSNdiVyJr4Bf0yE62fYSpw@mail.gmail.com>
+In-Reply-To: <CANoib0GUUxSHCp5cRkjyiQykuRookSNdiVyJr4Bf0yE62fYSpw@mail.gmail.com>
+Date: Wed, 7 Aug 2019 20:52:40 +0200
+Message-ID: <02a201d54d51$4a49add0$dedd0970$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Thread-Index: AQJfXR1+bkvErjfcpfU8tI79uGyNTQIaUNJQAh4I0tCluiJyUA==
+Thread-Index: AQJfXR1+bkvErjfcpfU8tI79uGyNTQIaUNJQAh4I0tABy6WucKWrxyHg
 Content-Language: de
-X-Provags-ID: V03:K1:VTXDtNEfaY0xR3bcpIyWGxJYX2M78c7RT0jg/MiMXoE0cqYQsyj
- PZHxsudYe2EXM6pPSOje9UsTwKC4Jb+ovqT7gA2FAOq9fd8FCszDY81L6rYXkX+oopKUGEu
- YNOhDitfvAyk3nH9d2uro0N6wlPBK35j5TzHPJcPNZF++F6B0DFcmzhbr9E4JbRF9kk4ZiO
- XYKz42cZ1MCk2l3xNGXSQ==
+X-Provags-ID: V03:K1:3iFlvb7D5R/kAKlpCDlUDaLZ2w1RD6YHs4BK7N0Qb1NU5sCBEGU
+ 06PdVBH1P5beGhCnAsgqLZOtCIMIhjh2IxwFx/ntLaXjatpXjomHlc2VKyNHqMxC3Jovbmz
+ WjzFMNVSCI/yWr6Isapr8nqX/4URx0OaVDPUG3xYNqn+UsSMss7Vx/Y5apCyt31IXimy2MO
+ /agGpvoaIwQBURKLcHlWQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:dMTsVKSPlmo=:PRfGV1usBDQsZDuMXVKx3K
- MLRWeyVmFAprCqXNjZm8w3luePijujMDvI9VFexhqOUAUGQllvqs4UXKMJvgW33ogszPIJWw2
- bVBGnqY2536X74LFjV4TDWSJggc35Dgfdg9LUCF8VZiCErYkaXYAe0XpBxj1QbN3+jZEB3PQa
- DB9lvJZ+ed0XUvqRltW+64O4Gz58ePfDrUPC1xsDO6NMhv0qNNeBwG88FuUCR85MTrj2HLclo
- Fp3M0TSArX7DkCQlf7lhmEmLRiLbV+5SW/3wjKWLeYO1AZz35Rd9+YLTDhjoXu9c5z75Owo0a
- vCLR7Pb7q2J/QZLwj0mtUIvAQqyVTpAKYGKrqwK8EsjdZ3U2ncPRWMXxj/nWz5Wq+iszF8UMg
- fn2D1hI3DpYeq3AFXUcKJrOTtyjIorw3XbKaMnVrnr8sPKEJ/AFnt2yeWLyXrBFOtZ92FI6mN
- YKFVM8nDj15auJYfBrOZ+CRJ1XEDAwDddoLD9drGezUT6lpMZk8YlKHnCO1O9VS11KAvxNpQn
- Y4LsF3ZYlcPsZ7AP9LLrbKApWfXSk0kh1SsY+ilCQkguP1OOO9/cs4BKPJ3Lg1yDJ7PxluEqH
- cVLmMEJsKYPDyYQOxd+jQ+kmW4d52SnRFYiW61Dy3TK68pAi6dD26pmgDqznzWE89mIqaBt56
- 333/LtDE+7/3vCHxwS+JYrTWJMQhZ9MFMIHTbIeX2IZWBHHPWT8K3h+4/crfVk5sex19vex7v
- Q8QkHN37WBSQV6INeDobujlR5Ya/jc0UhHsa8Yg9nD5+yRPIxzYGgbdXl4A=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:UU+fAZBZcT4=:aB8njqc6zznjkbwgc357vA
+ i9dXgGPB3nktwo0rp8x4MgVN5OhoZgdXUjxYJZZovzkF0YKSA5Gq/WyCuWnMdak2iAVp/p8GD
+ 1WQMWvXeuHtpoVV6GRoe4hcV+LRj40htTx/+X/h8eFIJC1iqpB1b4Zfzb2zaXKPmdNHJMtZ/I
+ pqYJaGybUqeIvL/LQo5yPR1OOdJlKS81aQKQ0IQFZW+jC2YuP4T4eyAm6vz73HbAWV7T5mu47
+ FRDhaxKYqQBN0e7CkynFFBOLETViPuNWidkPLJboCl/0mk6mYp0B9VEGIE421oUoFuYAxcOLL
+ ZVYZ6m6OkLh6ZGnaN2sB9br8+k32UWph7wP4usHMxTvGZGHcHxRQII4JomPng0I0tqCHySwmr
+ +W0EZfXYuPWfT43IU6ATNcwIf9DYtk1v8h4W3l5/afnFkioIFx6fJk0Tkp3Dncm0fsVbIdRU2
+ xlfkhRJ++l0ITJKEoWwmEYAg3YfyTHubz0NuJ9ESKwMNS57r/XiOvQm6nL2drHCUitDF4QJQL
+ Vl7R/JwjaZYep57LR8+TRIkT2GlWG1XWe6GKKDZz85IK80zkL6NIQftoS7kf1HbmvV4j1fdFE
+ KxDYfW9bsO0EBOaBKYGa1fDvZCVGFlGS0qWvMOTAzKeMKj7OHGCvAdJ6uAhzLVJCrQOvJj9yt
+ F+cEWQ1wl5e66lUltatfaJchh4+zixUW2jtFwV/J1MlNMFZT9hj/uP+tT0ZQrbcUsPyzDi56C
+ qnhnYdnNGvT45ymtgRgWC60bxZ3mp6AjJ4QUXDDxjJiYXJCQS17u8YQCiCI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_114802_790588_E68335C2 
-X-CRM114-Status: UNSURE (   7.22  )
+X-CRM114-CacheID: sfid-20190807_115244_258175_00CBA89B 
+X-CRM114-Status: UNSURE (   5.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -65,11 +66,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support of Netgear WNR3800
  (Ch)
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -84,84 +83,72 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============8543124704018971139=="
+Content-Type: multipart/mixed; boundary="===============1687980530576945398=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============8543124704018971139==
+--===============1687980530576945398==
 Content-Language: de
 Content-Type: multipart/signed;
 	micalg=pgp-sha256;
 	protocol="application/pgp-signature";
-	boundary="=-=NHKf0qaDLZwa7r=-="
+	boundary="=-=exChDOJ1HA8+CL=-="
 
 This is a multipart message in MIME format.
 
---=-=NHKf0qaDLZwa7r=-=
+--=-=exChDOJ1HA8+CL=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-> > Note that you also have to update to DEVICE_VENDOR/DEVICE_MODEL syntax =
-...
-> I don't quite get it. Where is this syntax?
+> Maybe DEVICE_VARIANT :=3D CH is a better choice, since it is the same dev=
+ice.
 
-Here:
+Well, is it a variant? If yes, CH implies Switzerland to me, which most pro=
+bably is wrong.
+Despite, if you decide to use CH as variant, you would have to introduce hy=
+phens to device definition name and compatible, i.e. "netgear,wndr3800-ch".
 
-> +define Device/netgear_wndr3800ch
-> +  $(Device/netgear_wndr3800)
-> +  DEVICE_TITLE :=3D NETGEAR WNDR3800 (Ch)
-> +  NETGEAR_BOARD_ID :=3D WNDR3800CH
-> +  SUPPORTED_DEVICES +=3D wndr3800ch
-> +endef
-> +TARGET_DEVICES +=3D netgear_wndr3800ch
-
-Instead of DEVICE_TITLE, use DEVICE_VENDOR/DEVICE_MODEL.
-In this particular case, DEVICE_VENDOR is already inherited from a parent d=
-efinition, so you only need DEVICE_MODEL.
-
-However, having looked at this another time:
-
-Please do not inherit one device from another. Use common definitions to in=
-herit from.
-In this particular case, it will be easiest to just copy the definitions fr=
-om wndr3800 (and thus inherit from wndr3x00). I don't think it's worth crea=
-ting another shared definition because of the remaining 3 duplicate lines.
+If the CH stands for China, as I've also read when googleing, I would prefe=
+r having CN here. This will then very much depend upon whether the CH is us=
+ed officially somewhere or whether it's just an invention of previous OpenW=
+rt versions ... (Where in the latter case I'd actually change to CN as we d=
+id for other devices ...).
 
 Best
 
 Adrian
 
---=-=NHKf0qaDLZwa7r=-=
+--=-=exChDOJ1HA8+CL=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1LHNsACgkQoNyKO7qx
-AnB2BBAAyed04NHy/sVtD7GM8d2EzEG0mIvaLGnhA1GbwwH7BROlwvoGFoiKiwMP
-tJ+0zEtYtuSAXkwsNoToS6GDfe5d9vFxL/D8IdX6t3244SzT3VEMQpGB1ELhlNdO
-H74zJYN9SipkGhHnjO3WTx+FkeSTsKLrVhwjH+bshV3tSHiPKRTotr+7IesRznMu
-0K2ai7mqyTQS0um3yj54vY9FLJj/hRhklW+EI5Z25snjivPEaoKs4nRkNXZ4q29H
-o46kfRQSAb6AsgzcbbM2llpJGNXeXvBKrIObJ9JuwZ+psL0ja0flmjOnat4LlVrw
-ufs0bp7gC/MLoxXANG8z2uuazyfCUtJIFuQRniz2PnuU7We+zuJp7ftQOUdyuq8L
-3asZvnbEbGRjxfbm4W8epaN65/gfjCK8ASSUD0oT7VaoPBeUgPSaXReFEdJuViFr
-BXW9a4hZrCPNJ2KjZ/JFGYjq/zQF8ra94dIMlVcfRMTEfyVt3nc5sPRwwYXjgFit
-7RUvFzb7zlg22dNdzJsOKhwkAjE6gc6aLRzaKuCK67aHGkWI9SHju4AlJGBaDsgd
-TMr8EdiydsFz2PqQUlM9iMrFglm+8MIe9XSy73iXjpGyA9/TOf2I/uFemQ6J+Nuy
-N0J0rMP6lwYVyFsFdEKTz1yi6P/ZHVx057cD1a7orLp+7CfDnQ8=
-=WCji
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1LHfgACgkQoNyKO7qx
+AnBdsRAAiRgY9Oq3wfdhY1+ivUMM8xe0BDPHfcZ4YJj+3oGEmpUpMW6Fyix1GFE1
+d01q7fXOfhQ0SaYjmImKSe429q2TExmx0BaYwEliDawA0BUqQV1gtZ2snq25VGzd
+zFmgzYBXfUu83wJdPlr/0wQ1hPYMqF/gW6z2xZYqk5QFlopzFiv7cB0Tn0ZA3vWU
+cm//hINA6Ztk+9BlG2nwrDZU2PD/RX7FDiiYyxr+tQTl4HDxoyGJ79NB85wWiWu9
+XxCy0tTBB5gQwBn4uBKoMqCks94xvVuKwsD0/fAugM5/6O/O0NA/OWviRfFIQ52V
+c/KkP8Z9ThAsnhqoNulMaqZKiz9oSFDPo1/HrSmQbLm7drfZPlyiLF/qHWeqrxqJ
+t9vYE1Ob8bhA1KHPnEdULRtHvYsBmqf8Ho+jcsEwp3I4qPycaM2WGp2UZNyXkLlK
+foeto9J7vC+it9S5gk3a3JLxL1MqAABxQbxwV/ro6rbNQX9Jz7gzOLvNxtKeHy/5
+ME9e9ggpjFTEcFcoqwvSB009QOIxScjfgJo41i+5WJdsy2CWiM4GCvhq7pUx9LbR
++QJiaV8EzyY/FLLEkN/epzo9yAyh8H54QHber11SUeG/avEWu/+mvguPET40qrjj
+60m9JGdOpd0nIYACKwTNOBrUS3P6+J3zKPIUIEDWQUKrcIdfmP0=
+=fQAX
 -----END PGP SIGNATURE-----
 
 
---=-=NHKf0qaDLZwa7r=-=--
+--=-=exChDOJ1HA8+CL=-=--
 
 
 
---===============8543124704018971139==
+--===============1687980530576945398==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -172,6 +159,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8543124704018971139==--
+--===============1687980530576945398==--
 
 

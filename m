@@ -2,132 +2,527 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46895835B1
-	for <lists+openwrt-devel@lfdr.de>; Tue,  6 Aug 2019 17:51:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26D5A83EC7
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 03:31:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n1JNBR3K57VGDmbyMK92loaNJ9Yb+SeK9qln3duJrcg=; b=suJcJT0sW3jt1W
-	qri4ZJpPWY9RZuvZeVpXQ0sydpckddQWYLb5gj/etOK77DCoS869FYyyxgHIED1alliP3x/YPhtpL
-	raQHGEyr952nFa+d5ji1vVFKV5gIaGkC+C+on28F9Q9WHjpxLUMFytNECy78aRdDfR2DBFAzLfVGT
-	QwtL1aXjDGj9l0Nr3OfvfRFSsVtvIelX2G1GEXC7U/uRGLlDw9J5mwxYRoVsXm+TvHLxS/6nOw1Lc
-	6li9L0DpAN2H7zmYdGNqEGjY/AnaAaTfDJRFV+hOrqpcRJTBUBSFynLJUMMUbss/2p7XISro/CgWY
-	yBYeHix3ZbxcSK5f00yw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:To:Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=g7nqHcOhYSaF9wU39iiMfzmixl4svm6uKTmxYL4c6I4=; b=DNVYQMZKXPu5eZ1U8CFUdflFt
+	Ngwuj2PNz+rrrSmZUMr/gTxDgIU8aiaYZPadrjJnaoDSgRI+8l8Y7YU0FVwxoZoumReGOYHfJaV+R
+	bWSzkEcv64yDI7lSMSAfUIzzzuNKwCuONrs69oKO3kRlVwqE66iiyQKGrsE2aCroCs/GCmuzNPVQh
+	0q9kt1+iVo2ObAKHijPHbAmEA9qGutfN03yKK563qyuDTlcN0ILUj2Rgpd+/HgK06uQrxlC+SizHa
+	DaQhPMzx/r4PIXY4KDCtBdGzjuELhIvfya8KSgrbYVWWtCKx6QlczupqTrgrbtlUdAJjSfx7pq3JD
+	PrMAEzDGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hv1k4-00028m-IM; Tue, 06 Aug 2019 15:51:16 +0000
-Received: from mx4.wp.pl ([212.77.101.12])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hv1jv-00026K-6e
- for openwrt-devel@lists.openwrt.org; Tue, 06 Aug 2019 15:51:08 +0000
-Received: (wp-smtpd smtp.wp.pl 28233 invoked from network);
- 6 Aug 2019 17:51:05 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1565106665; bh=rnkzxnc6gqyiv0cMC4lyfNtLRHbaXQq23V5Au8oTkjo=;
- h=From:To:Cc:Subject;
- b=YkeWukUQBazPO3JE4E2OBdvby5MHWOBwwomPw5am/uYJIzidQVBWuJpzh/ybrCHU5
- jjdQfbc/d7b+0ICei5rxhnBs6VsLTLngTsDv6AxVQRY/jLfwIZw+gDthkELSdB/9A2
- a/D76jt5/BGVX64UIOMOqDSBy4o3g6lnFNQ7qW9A=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <mail@adrianschmutzler.de>; 6 Aug 2019 17:51:05 +0200
-Date: Tue, 6 Aug 2019 17:50:59 +0200
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-Message-ID: <20190806175059.7e0a18e7@kosmio.komorska>
-In-Reply-To: <013301d54c63$6d47c130$47d74390$@adrianschmutzler.de>
-References: <20190806155540.4e27407b@kosmio.komorska>
- <20190806160600.5f04e40e@kosmio.komorska>
- <013301d54c63$6d47c130$47d74390$@adrianschmutzler.de>
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+	id 1hvAmm-00017x-9h; Wed, 07 Aug 2019 01:30:40 +0000
+Date: Wed, 07 Aug 2019 09:30:15 +0800
+To: Rosen Penev <rosenp@gmail.com>
+In-Reply-To: <3b4d7396132017a9253bedb2cc3862b2@grosjo.net>
+References: <mailman.13754.1564703810.19300.openwrt-devel@lists.openwrt.org>
+ <20190802103653.GP74752@meh.true.cz>
+ <2a6780799fb7077e5d731337bcfadbe0@grosjo.net>
+ <b13b66b94fb80ac49631e0e2dc971c60@grosjo.net>
+ <2cec2c33f72eb4cc8d33e0a18289d099@grosjo.net>
+ <mailman.14120.1564793695.19300.openwrt-devel@lists.openwrt.org>
+ <CAKxU2N9hwSx3w0SLfJQBH_GMyJUwKLNU-k7sgjCCnB1ZgHy0Gw@mail.gmail.com>
+ <5ec256e502e0298841b973a58ba9a3d2@grosjo.net>
+ <3b4d7396132017a9253bedb2cc3862b2@grosjo.net>
 MIME-Version: 1.0
-X-WP-MailID: f8277199b1424cb422862e8a6b8470db
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 0000000 [8XME]                               
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_085107_536125_909C858F 
-X-CRM114-Status: UNSURE (   6.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.12 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michal.cieslakiewicz[at]wp.pl)
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH v2 4/5] ath79: add support for Netgear
- WNR1000 v2
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.14995.1565141427.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Joan Moreau <jom@grosjo.net>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: Re: [OpenWrt-Devel] package mt76 fails to compile under certain
+ configuration [Was: Compilation error on master / mt7620]
+Content-Type: multipart/mixed; boundary="===============3854673329092888275=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+--===============3854673329092888275==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-On Tue, 6 Aug 2019 16:29:59 +0200
-"Adrian Schmutzler" <mail@adrianschmutzler.de> wrote:
-> 
-> In general, it looks to me like you can exploit wnr612-v2.dtsi here.
-> LEDs will require some care, but almost everything else is shared.
-> In that context, one might think whether there is a better name for
-> the shared DTSI then ...
-> 
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-Agreed. Now it's better to unify definitions. WNR1000v2 and WNR612v2 are
-indeed very similar. The same is for WNR2000v3 and WNR2200 (the latter
-is just bigger memory plus USB wiring). 
-It's just that for development phase I preferred separate dts files...
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============3854673329092888275==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-Cheers
-Michal
------BEGIN PGP SIGNATURE-----
+Received: from grosjo.net ([94.130.37.163])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1hvAmU-0000wm-UQ
+	for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 01:30:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=grosjo.net;
+	 s=dkim; h=Message-ID:References:In-Reply-To:Subject:Cc:To:From:Date:
+	Content-Type:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=YWUZzuGleDT1+phgzZ18PQyA2PVKc7LKa8i+9O55GNg=; b=aP7awKHozyDGavkeSBHRjrf8rL
+	IB7lZmutPzOfSyJQcvNAhx+uUbW1sRqwRGg88kzc/IaKsWiR5oyRl+aD17KWiII/Y9LtJ5OowrF7/
+	k0C5q3bz0KMU8fezJDzcAESgqb7HimNI830xS/NrTQRz8R637T0BUbouSnAto//rccwI=;
+Received: from localhost ([127.0.0.1] helo=grosjo.net)
+	by grosjo.net with esmtp (Exim 4.92.1)
+	(envelope-from <jom@grosjo.net>)
+	id 1hvAmN-0004tA-Jp; Wed, 07 Aug 2019 01:30:17 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="=_a1baf04542b4a10d8cfc4f4dc061965e"
+Date: Wed, 07 Aug 2019 09:30:15 +0800
+From: Joan Moreau <jom@grosjo.net>
+To: Rosen Penev <rosenp@gmail.com>
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>, OpenWrt Development List
+ <openwrt-devel@lists.openwrt.org>
+Subject: Re: [OpenWrt-Devel] package mt76 fails to compile under certain
+ configuration [Was: Compilation error on master / mt7620]
+In-Reply-To: <3b4d7396132017a9253bedb2cc3862b2@grosjo.net>
+References: <mailman.13754.1564703810.19300.openwrt-devel@lists.openwrt.org>
+ <20190802103653.GP74752@meh.true.cz>
+ <2a6780799fb7077e5d731337bcfadbe0@grosjo.net>
+ <b13b66b94fb80ac49631e0e2dc971c60@grosjo.net>
+ <2cec2c33f72eb4cc8d33e0a18289d099@grosjo.net>
+ <mailman.14120.1564793695.19300.openwrt-devel@lists.openwrt.org>
+ <CAKxU2N9hwSx3w0SLfJQBH_GMyJUwKLNU-k7sgjCCnB1ZgHy0Gw@mail.gmail.com>
+ <5ec256e502e0298841b973a58ba9a3d2@grosjo.net>
+ <3b4d7396132017a9253bedb2cc3862b2@grosjo.net>
+User-Agent: Roundcube Webmail/1.4-git
+Message-ID: <1e49744bc6d328ed0fa8284789d16aea@grosjo.net>
+X-Sender: jom@grosjo.net
+X-GJ: Sent from localhost
+X-Spam-Score: -2.9 (--)
+X-Spam-Report: Spam detection software, running on the system "gjserver",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ admin@grosjo.net for details.
+ 
+ Content preview:  Hello How to solve this ? Thank you so much 
+ 
+ Content analysis details:   (-2.9 points, 3.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+                             [score: 0.0000]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-GJ-SMTP: h_FROM = Joan Moreau <jom@grosjo.net> RPATH=jom@grosjo.net SENDERADR= jom@grosjo.net:
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190806_183023_435697_2B83C6A6 
+X-CRM114-Status: GOOD (  13.38  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [94.130.37.163 listed in list.dnswl.org]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
 
-iQIzBAEBCAAdFiEEi7ylFMzTSbpOuOZIHU8//LdGKWsFAl1JoeMACgkQHU8//LdG
-KWu2EQ/+Kf6AU6W6ROnZs5Joj9ay1XMZSkxKiPAYp3qmj5+U18s5DceBEHV2YYYs
-gk0F5B7Eo/LOtHmWDGrl6yl0+MM1eY3wSBDVcO08koCxQqdiY+HCOjGZjeS0ACMM
-dXYIV7QouyOYF634lI7S+ESDIbQ8d5+NfSPPK8Jtd44doKZPQ+Vf+8sIHzJujeJb
-TK73nvLvEWiiZtKuH7Sk/OFK4r3Kc/eFQ/PS3psEu58iKx8wcZMabF6e0eEqG+ZP
-r4V4u9O+65uYPZJptHbKFOLtlcU9Rnvxcnx1vCST34GYc8Bdem2f25HaO0Lv5Nm2
-9hoN7XReKN2ZgJhisXSTgVDvWD4IlslecZEmXvfmscVCUSdE6We1gjgeNIFTF5pr
-rprySvHUGOZbKNSF+x0mPbxvobmBdZKJj+Dmb58KSxGDFsZWrNDG2JYPZsqCr5Pn
-w1UAa5g++P5ARrHo2fpZ5Den7wT2Xy1i+esR1tsiLSF2uHUd50JKL3vaGyzmhQg5
-jcnEz7JAyQxp9xj0odrA+utLvReOSeUK+C0xiG+T2bEa/n/jgw2h7w0J+yIpzKIx
-Qf0DYjcngM6K6MOtAdB18QzEeX6HACdCbCc9taBtfnIpWgJw5wWv9Q3LPTFlVC8A
-zoNEDVziVMyELJe/6ulJ2snCuSCGrfw7OHq4Zoz7F+/iFxwX36w=
-=gCBE
------END PGP SIGNATURE-----
+--=_a1baf04542b4a10d8cfc4f4dc061965e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
+
+Hello=20
+
+How to solve this ?=20
+
+Thank you so much=20
+
+On 2019-08-03 20:58, Joan Moreau wrote:
+
+> To narrow down the problem, my mt76 device (zbt826) runs fines on OpenWrt=
+ 19.07-SNAPSHOT r10233-4a7a8d93fa (including DebugFS and JFFS)=20
+>=20
+> On current 19.07, DebugFS makes the compilation fails, and here the detai=
+ls of JFFS2 dmesg=20
+>=20
+> dmesg | grep -i jffs=20
+>=20
+> [ 0.000000] Kernel command line: console=3DttyS0,115200 rootfstype=3Dsqua=
+shfs,jffs2
+> [ 0.753768] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRI=
+ORITY) (c) 2001-2006 Red Hat, Inc.
+> [ 9.720839] jffs2: Error: unknown compressor "zlib"
+> [ 9.726302] mount_root: failed to mount -t jffs2 /dev/mtdblock6 /tmp/over=
+lay: Invalid argument
+> [ 9.743698] mount_root: switching to jffs2 overlay
+> [ 9.748830] mount_root: switching to jffs2 failed - fallback to ramoverla=
+y
+>=20
+> On 2019-08-03 10:18, Joan Moreau wrote:=20
+>=20
+> well maybe=20
+>=20
+> Bottom line : mt76 is not usable in master or 19.07.=20
+>=20
+> So far=20
+>=20
+> - DebugFS creates compilation error=20
+>=20
+> - SquashFS does not include LZO and creates compilation errors=20
+>=20
+> On 2019-08-03 09:57, Rosen Penev wrote:=20
+> On Fri, Aug 2, 2019 at 5:55 PM Joan Moreau via openwrt-devel
+> <openwrt-devel@lists.openwrt.org> wrote:=20
+> The sender domain has a DMARC Reject/Quarantine policy which disallows
+> sending mailing list messages using the original "From" header.
+>=20
+> To mitigate this problem, the original message has been wrapped
+> automatically by the mailing list software.
+>=20
+> ---------- Forwarded message ----------
+> From: Joan Moreau <jom@grosjo.net>
+> To: "Petr =C5=A0tetiar" <ynezz@true.cz>
+> Cc: openwrt-devel@lists.openwrt.org
+> Bcc:
+> Date: Sat, 03 Aug 2019 08:54:45 +0800
+> Subject: Re: [OpenWrt-Devel] package mt76 fails to compile under certain =
+configuration [Was: Compilation error on master / mt7620]
+>=20
+> In an attempt to force LZO with JFFS2, I clicked on "mksquash" in menucon=
+fig.
+>=20
+> I reach the follwoing error
+>=20
+> mipsel-openwrt-linux-musl-gcc -Os -pipe -mno-branch-likely -mips32r2 -mtu=
+ne=3D24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=3Dunused-but=
+-set-variable -Wno-error=3Dunused-result -msoft-float -mips16 -minterlink-m=
+ips16 -iremap/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/squashfs=
+-tools-4.3:squashfs-tools-4.3 -Wformat -Werror=3Dformat-security -fstack-pr=
+otector -D_FORTIFY_SOURCE=3D1 -Wl,-z,now -Wl,-z,relro -I/usr/src/openwrt/4g=
+/staging_dir/target-mipsel_24kc_musl/usr/include -I/usr/src/openwrt/4g/stag=
+ing_dir/target-mipsel_24kc_musl/include -I/usr/src/openwrt/4g/staging_dir/t=
+oolchain-mipsel_24kc_gcc-7.4.0_musl/usr/include -I/usr/src/openwrt/4g/stagi=
+ng_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/include/fortify -I/usr/src/open=
+wrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/include -I. -D_FILE=
+_OFFSET_BITS=3D64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE -DCOMP_DEFAULT=3D\"gzip=
+\" -Wall -DGZIP_SUPPORT -DXZ_SUPPORT -DLZO_SUPPORT -DLZ4_SUPPORT -c -o mksq=
+uashfs.o mksquashfs.c
+> mksquashfs.c: In function 'create_inode':
+> mksquashfs.c:996:24: error: called object 'major' is not a function or fu=
+nction pointer
+> unsigned int major =3D major(buf->st_rdev);
+> ^~~~~
+> mksquashfs.c:996:16: note: declared here
+> unsigned int major =3D major(buf->st_rdev);
+> ^~~~~
+>=20
+> Something is very broken in mt76 That error is related to squashfs-tools,=
+ not mt76:
+> https://downloads.openwrt.org/snapshots/faillogs/mips_24kc/packages/squas=
+hfs-tools/compile.txt=20
+>=20
+> On 2019-08-02 23:12, Joan Moreau wrote:
+>=20
+> Additionally, I get the following error in the image generated (master) w=
+ithout the debugfs option then to allow compilation
+>=20
+> [ 8.936247] jffs2: Error: unknown compressor "zlib"
+> [ 8.941939] mount_root: failed to mount -t jffs2 /dev/mtdblock6 /tmp/over=
+lay: Invalid argument
+> [ 8.951033] mount_root: overlay filesystem has not been fully initialized=
+ yet
+> [ 8.958979] mount_root: switching to jffs2 overlay
+> [ 8.964114] mount_root: switching to jffs2 failed - fallback to ramoverla=
+y
+>=20
+> On 2019-08-02 21:37, Joan Moreau wrote:
+>=20
+> Removing "debug fs" in compilation options removes the problem.
+>=20
+> So there is something very awkward in the Makefile
+>=20
+> On 2019-08-02 20:28, Joan Moreau wrote:
+>=20
+> attached
+>=20
+> On 2019-08-02 18:36, Petr =C5=A0tetiar wrote:
+>=20
+> Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org> [2019-08-=
+02 07:56:41]:
+>=20
+> Hello,
+>=20
+> I reach the following error while compiling my MT7620/ZBT826-16M on
+> master (no error on 18.06) :
+>=20
+> CC [M]
+> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
+/mt76-2019-07-22-75656a45/mt7603/pci.o
+> <command-line>:0:37: error: redeclaration of enumerator
+> 'IEEE80211_HW_REPORTS_TX_ACK_STATUS'
+> <command-line>:0:37: note: in definition of macro
+> 'IEEE80211_HW_TX_STATUS_NO_AMPDU_LEN'
+> In file included from
+> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
+/mt76-2019-07-22-75656a45/mt7603/../mt76.h:27:0,
+> from
+> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
+/mt76-2019-07-22-75656a45/mt7603/mt7603.h:8,
+> from
+> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
+/mt76-2019-07-22-75656a45/mt7603/pci.c:7:
+> /usr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/usr/include/mac80=
+211/net/mac80211.h:2293:2:
+> note: previous definition of 'IEEE80211_HW_REPORTS_TX_ACK_STATUS' was
+> here
+> IEEE80211_HW_REPORTS_TX_ACK_STATUS,
+> ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> make[6]: *** [scripts/Makefile.build:327:
+> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
+/mt76-2019-07-22-75656a45/mt7603/pci.o]
+> Error 1
+> make[5]: *** [scripts/Makefile.build:585:
+> /usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620=
+/mt76-2019-07-22-75656a45/mt7603]
+> Error 2
+> make[4]: *** [Makefile:1532:
+> _module_/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramip=
+s_mt7620/mt76-2019-07-22-75656a45]
+> Error 2
+>=20
+> Can you help ?
+>=20
+> the problem is probably in this compile check[1], so please do following:
+>=20
+> make package/mt76/{clean,prepare}
+> sed -i 's;TMP";TMP" 2> $(TOPDIR)/meh.log;' build_dir/target-mipsel_24kc_m=
+usl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/Makefile
+> make package/mt76/compile
+> scripts/diffconfig.sh >> meh.log; gzip meh.log
+>=20
+> and send meh.log.gz file as attachment.
+>=20
+> 1. https://github.com/openwrt/mt76/blob/master/mt7603/Makefile#L7
+>=20
+> -- ynezz
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+--=_a1baf04542b4a10d8cfc4f4dc061965e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 9pt; font-family: Verdana,Gene=
+va,sans-serif'>
+<p>Hello</p>
+<p>How to solve this ?</p>
+<p>Thank you so much</p>
+<p><br /></p>
+<div id=3D"signature">&nbsp;</div>
+<p><br /></p>
+<p id=3D"reply-intro">On 2019-08-03 20:58, Joan Moreau wrote:</p>
+<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
+px solid; margin: 0">
+<div id=3D"replybody1">
+<div style=3D"font-size: 9pt; font-family: Verdana,Geneva,sans-serif;">
+<p>To narrow down the problem, my mt76 device (zbt826) runs fines on OpenWr=
+t 19.07-SNAPSHOT r10233-4a7a8d93fa (including DebugFS and JFFS)</p>
+<p>On current 19.07, DebugFS makes the compilation fails, and here the deta=
+ils of JFFS2 dmesg</p>
+<p>dmesg | grep -i jffs</p>
+<p>[ 0.000000] Kernel command line: console=3DttyS0,115200 rootfstype=3Dsqu=
+ashfs,jffs2<br />[ 0.753768] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RT=
+IME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.<br />[ 9.720839] jffs2: E=
+rror: unknown compressor "zlib"<br />[ 9.726302] mount_root: failed to moun=
+t -t jffs2 /dev/mtdblock6 /tmp/overlay: Invalid argument<br />[ 9.743698] m=
+ount_root: switching to jffs2 overlay<br />[ 9.748830] mount_root: switchin=
+g to jffs2 failed - fallback to ramoverlay</p>
+<div id=3D"v1signature">&nbsp;</div>
+<p><br /></p>
+<p id=3D"v1reply-intro">On 2019-08-03 10:18, Joan Moreau wrote:</p>
+<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
+in: 0;">
+<div id=3D"v1replybody1">
+<div style=3D"font-size: 9pt; font-family: Verdana,Geneva,sans-serif;">
+<p>well maybe</p>
+<p><br /></p>
+<p>Bottom line : mt76 is not usable in master or 19.07.</p>
+<p>So far</p>
+<p>- DebugFS creates compilation error</p>
+<p>- SquashFS does not include LZO and creates compilation errors</p>
+<p><br /></p>
+<div id=3D"v1v1signature">&nbsp;</div>
+<p><br /></p>
+<p id=3D"v1v1reply-intro">On 2019-08-03 09:57, Rosen Penev wrote:</p>
+<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
+in: 0;">
+<div class=3D"v1v1pre" style=3D"margin: 0; padding: 0; font-family: monospa=
+ce;">On Fri, Aug 2, 2019 at 5:55 PM Joan Moreau via openwrt-devel<br />&lt;=
+<a href=3D"mailto:openwrt-devel@lists.openwrt.org" rel=3D"noreferrer">openw=
+rt-devel@lists.openwrt.org</a>&gt; wrote:
+<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
+in: 0;"><br />The sender domain has a DMARC Reject/Quarantine policy which =
+disallows<br />sending mailing list messages using the original "From" head=
+er.<br /><br />To mitigate this problem, the original message has been wrap=
+ped<br />automatically by the mailing list software.<br /><br /><br />-----=
+----- Forwarded message ----------<br />From: Joan Moreau &lt;<a href=3D"ma=
+ilto:jom@grosjo.net" rel=3D"noreferrer">jom@grosjo.net</a>&gt;<br />To: "Pe=
+tr &Scaron;tetiar" &lt;<a href=3D"mailto:ynezz@true.cz" rel=3D"noreferrer">=
+ynezz@true.cz</a>&gt;<br />Cc: <a href=3D"mailto:openwrt-devel@lists.openwr=
+t.org" rel=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br />Bcc:<br =
+/>Date: Sat, 03 Aug 2019 08:54:45 +0800<br />Subject: Re: [OpenWrt-Devel] p=
+ackage mt76 fails to compile under certain configuration [Was: Compilation =
+error on master / mt7620]<br /><br />In an attempt to force LZO with JFFS2,=
+ I clicked on "mksquash" in menuconfig.<br /><br /><br />I reach the follwo=
+ing error<br /><br />mipsel-openwrt-linux-musl-gcc -Os -pipe -mno-branch-li=
+kely -mips32r2 -mtune=3D24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno=
+-error=3Dunused-but-set-variable -Wno-error=3Dunused-result -msoft-float -m=
+ips16 -minterlink-mips16 -iremap/usr/src/openwrt/4g/build_dir/target-mipsel=
+_24kc_musl/squashfs-tools-4.3:squashfs-tools-4.3 -Wformat -Werror=3Dformat-=
+security -fstack-protector -D_FORTIFY_SOURCE=3D1 -Wl,-z,now -Wl,-z,relro -I=
+/usr/src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/usr/include -I/usr/=
+src/openwrt/4g/staging_dir/target-mipsel_24kc_musl/include -I/usr/src/openw=
+rt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/usr/include -I/usr/s=
+rc/openwrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/include/fort=
+ify -I/usr/src/openwrt/4g/staging_dir/toolchain-mipsel_24kc_gcc-7.4.0_musl/=
+include -I. -D_FILE_OFFSET_BITS=3D64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE -DCO=
+MP_DEFAULT=3D\"gzip\" -Wall -DGZIP_SUPPORT -DXZ_SUPPORT -DLZO_SUPPORT -DLZ4=
+_SUPPORT -c -o mksquashfs.o mksquashfs.c<br />mksquashfs.c: In function 'cr=
+eate_inode':<br />mksquashfs.c:996:24: error: called object 'major' is not =
+a function or function pointer<br />unsigned int major =3D major(buf-&gt;st=
+_rdev);<br />^~~~~<br />mksquashfs.c:996:16: note: declared here<br />unsig=
+ned int major =3D major(buf-&gt;st_rdev);<br />^~~~~<br /><br /><br />Somet=
+hing is very broken in mt76</blockquote>
+That error is related to squashfs-tools, not mt76:<br /><a href=3D"https://=
+downloads.openwrt.org/snapshots/faillogs/mips_24kc/packages/squashfs-tools/=
+compile.txt" target=3D"_blank" rel=3D"noopener noreferrer">https://download=
+s.openwrt.org/snapshots/faillogs/mips_24kc/packages/squashfs-tools/compile=
+=2Etxt</a>
+<blockquote style=3D"padding: 0 0.4em; border-left: #1010ff 2px solid; marg=
+in: 0;"><br /><br /><br /><br /><br /><br />On 2019-08-02 23:12, Joan Morea=
+u wrote:<br /><br />Additionally, I get the following error in the image ge=
+nerated (master) without the debugfs option then to allow compilation<br />=
+<br /><br />[ 8.936247] jffs2: Error: unknown compressor "zlib"<br />[ 8.94=
+1939] mount_root: failed to mount -t jffs2 /dev/mtdblock6 /tmp/overlay: Inv=
+alid argument<br />[ 8.951033] mount_root: overlay filesystem has not been =
+fully initialized yet<br />[ 8.958979] mount_root: switching to jffs2 overl=
+ay<br />[ 8.964114] mount_root: switching to jffs2 failed - fallback to ram=
+overlay<br /><br /><br /><br /><br />On 2019-08-02 21:37, Joan Moreau wrote=
+:<br /><br />Removing "debug fs" in compilation options removes the problem=
+=2E<br /><br />So there is something very awkward in the Makefile<br /><br =
+/><br /><br /><br /><br />On 2019-08-02 20:28, Joan Moreau wrote:<br /><br =
+/>attached<br /><br /><br /><br /><br />On 2019-08-02 18:36, Petr &Scaron;t=
+etiar wrote:<br /><br />Joan Moreau via openwrt-devel &lt;<a href=3D"mailto=
+:openwrt-devel@lists.openwrt.org" rel=3D"noreferrer">openwrt-devel@lists.op=
+enwrt.org</a>&gt; [2019-08-02 07:56:41]:<br /><br />Hello,<br /><br />I rea=
+ch the following error while compiling my MT7620/ZBT826-16M on<br />master =
+(no error on 18.06) :<br /><br />CC [M]<br />/usr/src/openwrt/4g/build_dir/=
+target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603=
+/pci.o<br />&lt;command-line&gt;:0:37: error: redeclaration of enumerator<b=
+r />'IEEE80211_HW_REPORTS_TX_ACK_STATUS'<br />&lt;command-line&gt;:0:37: no=
+te: in definition of macro<br />'IEEE80211_HW_TX_STATUS_NO_AMPDU_LEN'<br />=
+In file included from<br />/usr/src/openwrt/4g/build_dir/target-mipsel_24kc=
+_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7603/../mt76.h:27:0,<b=
+r />from<br />/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-r=
+amips_mt7620/mt76-2019-07-22-75656a45/mt7603/mt7603.h:8,<br />from<br />/us=
+r/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76=
+-2019-07-22-75656a45/mt7603/pci.c:7:<br />/usr/src/openwrt/4g/staging_dir/t=
+arget-mipsel_24kc_musl/usr/include/mac80211/net/mac80211.h:2293:2:<br />not=
+e: previous definition of 'IEEE80211_HW_REPORTS_TX_ACK_STATUS' was<br />her=
+e<br />IEEE80211_HW_REPORTS_TX_ACK_STATUS,<br />^~~~~~~~~~~~~~~~~~~~~~~~~~~=
+~~~~~~~<br />make[6]: *** [scripts/Makefile.build:327:<br />/usr/src/openwr=
+t/4g/build_dir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-=
+75656a45/mt7603/pci.o]<br />Error 1<br />make[5]: *** [scripts/Makefile.bui=
+ld:585:<br />/usr/src/openwrt/4g/build_dir/target-mipsel_24kc_musl/linux-ra=
+mips_mt7620/mt76-2019-07-22-75656a45/mt7603]<br />Error 2<br />make[4]: ***=
+ [Makefile:1532:<br />_module_/usr/src/openwrt/4g/build_dir/target-mipsel_2=
+4kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45]<br />Error 2<br /><b=
+r />Can you help ?<br /><br /><br />the problem is probably in this compile=
+ check[1], so please do following:<br /><br />&nbsp;make package/mt76/{clea=
+n,prepare}<br />&nbsp;sed -i 's;TMP";TMP" 2&gt; $(TOPDIR)/meh.log;' build_d=
+ir/target-mipsel_24kc_musl/linux-ramips_mt7620/mt76-2019-07-22-75656a45/mt7=
+603/Makefile<br />&nbsp;make package/mt76/compile<br />&nbsp;scripts/diffco=
+nfig.sh &gt;&gt; meh.log; gzip meh.log<br /><br />and send meh.log.gz file =
+as attachment.<br /><br />1. <a href=3D"https://github.com/openwrt/mt76/blo=
+b/master/mt7603/Makefile#L7" target=3D"_blank" rel=3D"noopener noreferrer">=
+https://github.com/openwrt/mt76/blob/master/mt7603/Makefile#L7</a><br /><br=
+ />-- ynezz<br /><br />_______________________________________________<br /=
+>openwrt-devel mailing list<br /><a href=3D"mailto:openwrt-devel@lists.open=
+wrt.org" rel=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br /><a hre=
+f=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" target=3D"_b=
+lank" rel=3D"noopener noreferrer">https://lists.openwrt.org/mailman/listinf=
+o/openwrt-devel</a><br /><br />____________________________________________=
+___<br />openwrt-devel mailing list<br /><a href=3D"mailto:openwrt-devel@li=
+sts.openwrt.org" rel=3D"noreferrer">openwrt-devel@lists.openwrt.org</a><br =
+/><a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" targ=
+et=3D"_blank" rel=3D"noopener noreferrer">https://lists.openwrt.org/mailman=
+/listinfo/openwrt-devel</a></blockquote>
+<br />_______________________________________________<br />openwrt-devel ma=
+iling list<br /><a href=3D"mailto:openwrt-devel@lists.openwrt.org" rel=3D"n=
+oreferrer">openwrt-devel@lists.openwrt.org</a><br /><a href=3D"https://list=
+s.openwrt.org/mailman/listinfo/openwrt-devel" target=3D"_blank" rel=3D"noop=
+ener noreferrer">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</=
+a></div>
+</blockquote>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</blockquote>
+</body></html>
+
+--=_a1baf04542b4a10d8cfc4f4dc061965e--
+
+
+--===============3854673329092888275==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3854673329092888275==--
+

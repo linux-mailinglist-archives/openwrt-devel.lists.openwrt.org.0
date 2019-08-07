@@ -2,68 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D168D85358
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 21:00:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3A0385360
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 21:01:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Exfid98HOAguP2hIXLjq5Hsf9gUzsZ3gAGhaATj14BQ=; b=SZogxdUEHZkOlk
-	BmVT8ZrXAKSH0IsNUpiPkkrym7u1cru9YI4Ej8zI1smPQ9Oc6CO6R0euLZUagq65K1aEZLDkzNhYG
-	cjb9PP71N/tzz7jqODGzrn09dmePVsbK0WbPt/9Hps9FIgB1iSFa46CwtGQUrfEjiMrApgPm4oGDk
-	vjxch+d4Vv4GsA4MBc0fGYHQ9rnuNMwXjEpO805RW1lAAKdYtxV/8v2QcI5mynolobTx5lJBqOOXO
-	aC3gmG9A5mVxrsfseTeai1hSz1e2FfvVgW31PJjUTVh5dv1JTe5y7LDEWDBmF8WTbGoV93ZhHwVx0
-	OcqwaGif6VS8X/rbf3vQ==;
+	List-Owner; bh=XO5nEkaY56Tqy+ZlyXr3wLQMRhDN/d7/uvJhkc1CHZo=; b=AbnQ4CFLkwhTqd
+	WG/FvbDcbuj4kyHLeZS5A41lamZVA5bSant/8bkyaJaeO/WZMV/MY/m27aYRgPjncKmPpDZxfQz73
+	J5mOAK3WGB2gCN40beXQ5CTm+sY1MVLs6CoIMw2t0MW3v+Z/wzZWa4Z4mmpZe2etwUWWdyFIvYe1w
+	7M+FbNMWDwI1umeQdX2h9xG9j7a5mccV6GLhfCjD9fE1CdrIfgSyArwnpwN/RHKNHiIRCAn3H3J9K
+	lrYWD4+n7HfZ+/rgdfpRrGBUVV+ZVC87s3at6SeAPNCoQNXyX96j3diu/2mrZ7DzM3Kzq/0GQ/0n/
+	rwFQHufcQkiqqfaQB7gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvRAP-00055D-9D; Wed, 07 Aug 2019 19:00:09 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hvRBx-0006tG-LN; Wed, 07 Aug 2019 19:01:45 +0000
+Received: from mail-ot1-x330.google.com ([2607:f8b0:4864:20::330])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvRAC-00054f-Cz
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 18:59:57 +0000
-Received: by mail-ot1-x341.google.com with SMTP id l15so51303188oth.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 11:59:56 -0700 (PDT)
+ id 1hvRBn-0006sn-05
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 19:01:36 +0000
+Received: by mail-ot1-x330.google.com with SMTP id q20so108454138otl.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 12:01:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
  :cc:content-transfer-encoding;
- bh=Um0MJ09l+Ldenjgoss4ZMH19PShvr5YjJeXlu/vU78I=;
- b=WHTkPlund8mYfqx9dM9SzKbeJZOFI5oMfexxfD1H59Nyr4AdhlNBJj3yheDg1Gn3JU
- lihyXtGw7mASByib8AViVjnHyLOiXSFMcOwjDnt3XWqlEviSAWb3TbqjulmYI1IwJ04v
- 4jh+97Bx/M6+yU9lrunOKYyq2xLqSDUz5Op0DB8M+pN3eyHonfmMbWhpVUq0JyF5/rJQ
- VhzLiOHgfwvh+GAZsbVP/+YfgNShd96lQMXgUga+eU1AJKZfuZ8wAHot0GUsyc8sr57L
- dJvpvts7lR+hVHpq4ncdjugX/ED9M/W61XaXwp/tLOE3/NF/dq6rgFcrkKG2vG8qq+KQ
- xCnQ==
+ bh=H3gY4Fs0FcB8fCg3zQJIn5SQA/Jhn8pIli0EP0KhMhY=;
+ b=VniBkOepJf1Q6RgzQTvRkL6PwOdzpTb1OcUSB/xDvPtfxGhyNLYmOLfv4+mNbbs71/
+ u4qpI8lKjOEyHCQkf4mK+JNZEACu5hdQ/2q5Ms+R/nWvwRUG83LvbtJVpVr9o0agodpS
+ ixiznpMTK44VIkyktyE4eNpchf7pb9kYqLelCSCsmnDdh8hTG2vUSdcHv81YNie2d22p
+ A4deINXWXFhixLC0R1xAFXYxx9aYvZz7As5nDbfkvVCTLFQvKWf2INmosd/s4+hPAagQ
+ 6ULlXGM22I2JsRRoOjZ2y8BiqRoZyQ8AHiSjXFcfaZp4gVPMIWGz+jpTZGJWWl0PtYcx
+ mjWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc:content-transfer-encoding;
- bh=Um0MJ09l+Ldenjgoss4ZMH19PShvr5YjJeXlu/vU78I=;
- b=uEYmp8Xg7WkNREVsecF28KdFjTtQ8K3XW57LI0Lm/lGBPYQ2L9Xe6MMspTvHEVtXMJ
- Rimig6psI5wU4S33PE2lbWjPC1gLnhjJ/AajgFg3GzYxng6AR8EEsSxnis3m7NxrN/Uj
- YnH5umiI3I+8MUx8tkU43sBq7VuZMfGh4dqEKArFg4VUj/LbrIW0pMgVAlZEl6jSd5KI
- +38yEpPKZDs69hKs9+N7Wa+qw7jbLt/8ZR0zIh8X9vG6XQz/rdsn9dXNS8ugnvhzpZTw
- G95sfix5SdiL6rTjxyhZdpBYnptQF+HnnKIi38hcUK2oNP8WMudGVnB/uQlGenSTBZYf
- Fxlw==
-X-Gm-Message-State: APjAAAWkhShb2AZsZBN1/84cljxCr6c9c/c57PiZHA7xjpGPCaxzbfqn
- 14S6jsiv/KySdTyH2PiEJ7uGyaym4qrRlzdumR0=
-X-Google-Smtp-Source: APXvYqwB2yFsJmok1n4m5k9Vq20d4aGNHH2wB5Ezme4L8B1ig05soYlAb8yufOMewq/tjoXtBGmrsGm3La+I3HpVAjs=
-X-Received: by 2002:a6b:b556:: with SMTP id e83mr10404347iof.94.1565204395771; 
- Wed, 07 Aug 2019 11:59:55 -0700 (PDT)
+ bh=H3gY4Fs0FcB8fCg3zQJIn5SQA/Jhn8pIli0EP0KhMhY=;
+ b=LB0rMO0KG22+gzbrrfdwHGg70R7Eb6G4U17bPgC1OGS4MW4NtcAXagJgZaEQzXXOUr
+ Poeq2Nv25JmzzuihwLgjqR1G3BPbUVWDhXCII6o2YNDha1c/Pz6eFGQs6rnUkntQiFTN
+ VC1Slt5wx+7APYiJuZPKox0UMpApN2Rq8/+RT1PJTwcxe50ZITzW43Yq3T8iSg+da9iG
+ fwW6QOt+AJ6WUFfI5FY9dpnMZyK5OzmRBj5FJTyiqWbGZ8gBkRz8Mt74hraChYL2xKpw
+ wtRSY6JeB6QEedOs6MSsuZZs5bcH0FH6yHa0ZrQNL2tWoFyrknMvbkuVRKbaKlrNPqu3
+ LYdQ==
+X-Gm-Message-State: APjAAAXIN0ibYl9Quva+zuxEezcYxyAXeVRkSjIDxt/L7TlECfdSdhf2
+ TD9ZzG4CeJ0Q5bykydGliAFeEMtrtuj+UEGQeXA=
+X-Google-Smtp-Source: APXvYqxOoRusFlIwMJHEJWyS7Iwrbl9BijKOoe6R1IvBmseoeCgWdPvzMGdp9PfxueILlMYCkMtqgJLlGYHKELr3iEE=
+X-Received: by 2002:a5d:9dc7:: with SMTP id 7mr10924173ioo.237.1565204494140; 
+ Wed, 07 Aug 2019 12:01:34 -0700 (PDT)
 MIME-Version: 1.0
 References: <1565200503-4224-1-git-send-email-hanipouspilot@gmail.com>
  <028601d54d4e$5456f330$fd04d990$@adrianschmutzler.de>
  <CANoib0Gj6L=H=-hadUMgmCXk_mbU631==RZuG8P6KmfT0dJhgw@mail.gmail.com>
- <029701d54d50$a21e6100$e65b2300$@adrianschmutzler.de>
-In-Reply-To: <029701d54d50$a21e6100$e65b2300$@adrianschmutzler.de>
+ <CANoib0GUUxSHCp5cRkjyiQykuRookSNdiVyJr4Bf0yE62fYSpw@mail.gmail.com>
+ <02a201d54d51$4a49add0$dedd0970$@adrianschmutzler.de>
+In-Reply-To: <02a201d54d51$4a49add0$dedd0970$@adrianschmutzler.de>
 From: Dmitry Tunin <hanipouspilot@gmail.com>
-Date: Wed, 7 Aug 2019 21:59:44 +0300
-Message-ID: <CANoib0G2vm8uvcbhA3CzwvUhac2AAZrERM_etDHYVJO0m05iqw@mail.gmail.com>
+Date: Wed, 7 Aug 2019 22:01:23 +0300
+Message-ID: <CANoib0Hk6buOR9tJ5F+3EXd2c-MCGiE0X=M+Yg7_R_+fP5zWdw@mail.gmail.com>
 To: Adrian Schmutzler <mail@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_115956_451566_AC1C162A 
-X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-CacheID: sfid-20190807_120135_039152_920756A3 
+X-CRM114-Status: UNSURE (   6.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:330 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (hanipouspilot[at]gmail.com)
@@ -98,30 +99,16 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-U2VudCB2Mi4KCtGB0YAsIDcg0LDQstCzLiAyMDE5INCzLiDQsiAyMTo0OCwgQWRyaWFuIFNjaG11
-dHpsZXIgPG1haWxAYWRyaWFuc2NobXV0emxlci5kZT46Cj4KPiA+ID4gTm90ZSB0aGF0IHlvdSBh
-bHNvIGhhdmUgdG8gdXBkYXRlIHRvIERFVklDRV9WRU5ET1IvREVWSUNFX01PREVMIHN5bnRheCAu
-Li4KPiA+IEkgZG9uJ3QgcXVpdGUgZ2V0IGl0LiBXaGVyZSBpcyB0aGlzIHN5bnRheD8KPgo+IEhl
-cmU6Cj4KPiA+ICtkZWZpbmUgRGV2aWNlL25ldGdlYXJfd25kcjM4MDBjaAo+ID4gKyAgJChEZXZp
-Y2UvbmV0Z2Vhcl93bmRyMzgwMCkKPiA+ICsgIERFVklDRV9USVRMRSA6PSBORVRHRUFSIFdORFIz
-ODAwIChDaCkKPiA+ICsgIE5FVEdFQVJfQk9BUkRfSUQgOj0gV05EUjM4MDBDSAo+ID4gKyAgU1VQ
-UE9SVEVEX0RFVklDRVMgKz0gd25kcjM4MDBjaAo+ID4gK2VuZGVmCj4gPiArVEFSR0VUX0RFVklD
-RVMgKz0gbmV0Z2Vhcl93bmRyMzgwMGNoCj4KPiBJbnN0ZWFkIG9mIERFVklDRV9USVRMRSwgdXNl
-IERFVklDRV9WRU5ET1IvREVWSUNFX01PREVMLgo+IEluIHRoaXMgcGFydGljdWxhciBjYXNlLCBE
-RVZJQ0VfVkVORE9SIGlzIGFscmVhZHkgaW5oZXJpdGVkIGZyb20gYSBwYXJlbnQgZGVmaW5pdGlv
-biwgc28geW91IG9ubHkgbmVlZCBERVZJQ0VfTU9ERUwuCj4KPiBIb3dldmVyLCBoYXZpbmcgbG9v
-a2VkIGF0IHRoaXMgYW5vdGhlciB0aW1lOgo+Cj4gUGxlYXNlIGRvIG5vdCBpbmhlcml0IG9uZSBk
-ZXZpY2UgZnJvbSBhbm90aGVyLiBVc2UgY29tbW9uIGRlZmluaXRpb25zIHRvIGluaGVyaXQgZnJv
-bS4KPiBJbiB0aGlzIHBhcnRpY3VsYXIgY2FzZSwgaXQgd2lsbCBiZSBlYXNpZXN0IHRvIGp1c3Qg
-Y29weSB0aGUgZGVmaW5pdGlvbnMgZnJvbSB3bmRyMzgwMCAoYW5kIHRodXMgaW5oZXJpdCBmcm9t
-IHduZHIzeDAwKS4gSSBkb24ndCB0aGluayBpdCdzIHdvcnRoIGNyZWF0aW5nIGFub3RoZXIgc2hh
-cmVkIGRlZmluaXRpb24gYmVjYXVzZSBvZiB0aGUgcmVtYWluaW5nIDMgZHVwbGljYXRlIGxpbmVz
-Lgo+Cj4gQmVzdAo+Cj4gQWRyaWFuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxp
-c3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9vcGVud3J0LWRldmVsCg==
+> If the CH stands for China, as I've also read when googleing, I would prefer having CN here. This will then very much depend upon whether the CH is used officially somewhere or whether it's just an invention of previous OpenWrt versions ... (Where in the latter case I'd actually change to CN as we did for other devices ...).
+
+CH is used in BOARD_ID.
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

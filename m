@@ -2,32 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7253385423
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 21:56:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CE858542F
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 21:59:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yuYwzdC8EHCgpR2PCmKPU4Snevrg1VYUElBYuYfNmeM=; b=AIHMInvFWHfhmXNrS+tOsKLSk
-	nQOL1NUvLilkyrOLYZigpQaC4eXGqSGzqtJrkHoAo6kaZPa6e1v1PX2XjUKU+AgNmQE4BxOwu9Bkm
-	mAbr6SXou1OxMDovBJCjdtczMy8UnajDZ592FFbkKVXaG5dUEEcRkShOtwQme3Fvkoes11PxEi8Pz
-	SM+jimT2DfpA25tO3HDpMXfJlzMDtAUGJhwrvH/iRCF9bYPWOMLSnARCtMIinyWutw7kt700+YOBq
-	dhCId7llT70tR4OaypWGGLCFpfwg4BJ/n0FVV+rWWp/KdwSh34nbtIaRK6QgOTYVSrShmX7Brj2vB
-	ZHGu/JaZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KAETVGoSInZvZDbKP0y79wO3sQ3lx4d8hOyhGZN3Rp8=; b=XNpeXVLhyCB5Qf
+	AAQ+1UC/T8dt1fTQPB6q+ySigQAumfz9Zb+VaCj8iXHsZ5nfTEL/yip3W/Nq/oiMRzID9DYrHOClY
+	/avevgKw87xkJ9IiduOiwGHRB9m8icNwi/GTkGD8I5kDEZf+7oswYzwnBYo1Y3pSI+Ht+tfBWBekz
+	sPulshCnJ+DWhmWN9TVmJ0BLkpFZ1BBlml4HO1zqlrpr+gBGL5VDVvKZsf6MY+A0kn840nn6okxHM
+	0GBaoxb4bVutuM4h2wTabMG+gRfwNhEK1Cs2l5RLnsBICUmh+Rtig2iaGb7wliZunHD3Lk8Z7JGOv
+	NzYNqo/94YGn7HYYxthg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvS2v-0007y8-H3; Wed, 07 Aug 2019 19:56:29 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1hvS5d-0008K9-S4; Wed, 07 Aug 2019 19:59:18 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvS2n-0007xi-KV
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 19:56:23 +0000
-Received: from desktop ([188.193.174.123]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MXop2-1hpzRf1mBQ-00Y7dN; Wed, 07 Aug 2019 21:56:19 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Dmitry Tunin'" <hanipouspilot@gmail.com>
+ id 1hvS5T-0008Jk-VM
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 19:59:09 +0000
+Received: by mail-ot1-x341.google.com with SMTP id b7so59022988otl.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 12:59:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YO0saUxvYk0SPiSDtUeywhfbncqkmKWvkD5bBpjK4Rw=;
+ b=KnO5YbRVrL/9+l8LkOqHbge+i2O3WIlrFFBoC3T0x0h4af2ZtBVwIechLu1D+m2UO8
+ ncmJGf1G7HGqodgBFm0R5dDYygexCsjEeT+zac5hvWstQ0XODBaAcc5x5TLgLX/8a7K0
+ jyHwRr5Sojp2MA53Tqdoefgl1zjpFssRFhbvQO0dMStGMkDARV0DidG03g7dNyjf8vDt
+ 9L3YBYDbFL26E1iocBZaK2jWKhkvRF9VGqN2BfiOaU2aNydAHKal0c/AN0HZmQlaspYY
+ UFU65zOGMIyryRHX75YWnKHzHRZH3+jDFWagxzNnyNV/CaQb0AJQOXNoM67vYZ1XCXcH
+ NB9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YO0saUxvYk0SPiSDtUeywhfbncqkmKWvkD5bBpjK4Rw=;
+ b=ZwpYD8FA51iqhz+uK/CBDGLJ/38EtMXPSB2xWqtfyT89qpoDDS+Q8DJn041RihIVv3
+ TPVWd9jE0zSA4XJQXULyWluveeSkMs5ZAvWIIIpUe5DR+wuy5+D++nTqpkBpuV5zDofM
+ GnhErq5pxCSBWSXQkszUJBQLb9kPkyIpmjg1neM1ZHlVhvgh8YavlBze6FtAC+d/hWVQ
+ 1hLaVH/5x0azCLKM8vNA6av5A6s70V2ESDzG5V5BIparDJgRSRKFWmmQXb9ZfJU1L5Uf
+ Veq5v4ClY2lct6LW4dzNc0BttYDxEjqMfJRE7F3UTLBRUpRtNP8Xtt3XQHu5OnDINRr5
+ jWtg==
+X-Gm-Message-State: APjAAAVZNH0dzi/S8E2P8FijPYFK7GcR8mdqNM7/UvUSVYZJGhqT9USt
+ Wp1t59vBXavLt0Ga6iZryI23dHb1m6SVxFiRHcU=
+X-Google-Smtp-Source: APXvYqwR0NYALwofWe3+tBlPSI7dTy3mU2Bss8OQUBhRwPJgZCgCeevXW5Yeo5qvvhXKnOblaGCevQ/N0H6Lua6NxAA=
+X-Received: by 2002:a6b:c081:: with SMTP id
+ q123mr10946524iof.210.1565207942276; 
+ Wed, 07 Aug 2019 12:59:02 -0700 (PDT)
+MIME-Version: 1.0
 References: <1565200503-4224-1-git-send-email-hanipouspilot@gmail.com>
  <028601d54d4e$5456f330$fd04d990$@adrianschmutzler.de>
  <CANoib0Gj6L=H=-hadUMgmCXk_mbU631==RZuG8P6KmfT0dJhgw@mail.gmail.com>
@@ -37,44 +61,35 @@ References: <1565200503-4224-1-git-send-email-hanipouspilot@gmail.com>
  <02d001d54d53$6218e280$264aa780$@adrianschmutzler.de>
  <CANoib0HHTDNcBTUTK91s7fef5m8s=TnVUhb2Jg8UELbBKNGeRw@mail.gmail.com>
  <CANoib0Eyc3hcLg6M54M=Srax-Q0M=vJ5Hczz9_kZG3807UcnbA@mail.gmail.com>
-In-Reply-To: <CANoib0Eyc3hcLg6M54M=Srax-Q0M=vJ5Hczz9_kZG3807UcnbA@mail.gmail.com>
-Date: Wed, 7 Aug 2019 21:56:18 +0200
-Message-ID: <011f01d54d5a$2e2ec4b0$8a8c4e10$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQJfXR1+bkvErjfcpfU8tI79uGyNTQIaUNJQAh4I0tABy6WucAEWAwE3AjwCVLYBcqghOwHGsGmDAfk1ZeelZ7U7MA==
-X-Provags-ID: V03:K1:TU4YaconCFj0O4qlYo4+jwhN5nzZS1ylkmiS1q3VKg/CoVfpPXc
- WzXSe+Fbg6HI+rUH3t1QBZHbhm9/7Dxpj2B3X+mPxy199k6DlnZvJZxCd/equS/U2Dn7zdm
- O64ixjESjvRXDNV+6b+oqscm6Rd/sNNSEu8Wj+GoYOYBzilzX0CNnl9y3g+h/m6SJ8dCjRc
- M3RMvAoXDTBnG0TmTIv2Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:J75uqoj+x9I=:os1qQxfdEhH37KnRbVebkh
- Ho1UhQ1enVREWRT98l4wIAQ8qdzpHOAhEwEIjJ7CIhoel2pkt4kjxV0a1vZQmEHN64gFUUbLh
- HO7BCFQwXcBEpskiHiyR0NAKFyhAXGBIwwJmTrMo2gckLJuE51ECMHrkgYNbwMLRI7eB6MWKn
- Dp61ToxAhWcA74HGobP/VW5Tc172olPsMV/IHU0HRJv0Rb9bzGBdBqhPuPGBOrkjXfNhNmd0a
- xA/5ydOUxoaMv18jeoPDMGicb60GWa3GNd9hIJI6pcqhanXx18ruQP0VZLavv5VmftzkJZpPr
- XS4YDwuL0uvlrFvtzzKjrnaEiyNol5mXaA3gwWMHexaYj/FaAIeq+jj4STwIo7FarBc73Cm80
- UoqXvblw0BgkBdYZwmetPTnM7rkeKNNXW9Ky6DEWV5U7H0lZ50+DQCPn2VdDzyCAl+1agDGRW
- 9LxYtKVvaprTQiZukx5ssbLKM586j38AL+C+WmbVS5AMYhswiKdOAZxMZJHfvu9uCDIFktHiR
- W21B4Hw1/yfgy+A4GZAfPez8pbnA5nDwgd/bId9q9x7+zYhd+QOrFQCWlVtpfFLEoS8T0U/XZ
- PeRqhB8nOc4UHdo2C+usH1ZoWa0XdCvlAJcrfJvHQWqw+LsBa6TM0KCJp9LssdpiLUq3OKwXP
- dqq4+gmk71z12INMyF9x27iyyB7/EtYeXDeOAyr8MzRgIiMzb5MjH/jpD9cxM/tJHoNYQnCru
- yj5+5RiNXZJrW0lReJfByMDo7uV8y+USidHixx5oqMkmO8N5u/lDjBt2VZo=
+ <011f01d54d5a$2e2ec4b0$8a8c4e10$@adrianschmutzler.de>
+In-Reply-To: <011f01d54d5a$2e2ec4b0$8a8c4e10$@adrianschmutzler.de>
+From: Dmitry Tunin <hanipouspilot@gmail.com>
+Date: Wed, 7 Aug 2019 22:58:51 +0300
+Message-ID: <CANoib0EFR0N3xYT-P1yneWMrmka7wAzLFA1Bk35wS4bLx5gj-g@mail.gmail.com>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_125621_968849_B774CED3 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190807_125908_012719_9C5D87D7 
+X-CRM114-Status: UNSURE (   5.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hanipouspilot[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support of Netgear WNR3800
  (Ch)
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -88,88 +103,18 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============8247753135274709480=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============8247753135274709480==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=cbuygaQuA429SJ=-="
-
-This is a multipart message in MIME format.
-
---=-=cbuygaQuA429SJ=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Are you using recent master?
-
-DEVICE_MODEL is the way to go now.
-
-> -----Original Message-----
-> From: Dmitry Tunin [mailto:hanipouspilot@gmail.com]
-> Sent: Mittwoch, 7. August 2019 21:27
-> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support of Netgear
-> WNR3800 (Ch)
->=20
-> With VENDOR/MODEL it doesn't appear in menuconfig.
-> So v1 with WNDR fix should work.
->=20
-> =D1=81=D1=80, 7 =D0=B0=D0=B2=D0=B3. 2019 =D0=B3. =D0=B2 22:11, Dmitry Tun=
-in <hanipouspilot@gmail.com>:
-> >
-> > > You still have one WNR in the commit description and you can remove
-> the DEVICE_VENDOR, as it is still inherited.
-> > It looks like all the file should be changed to VENDOR/MODEL, but you
-> > are correct.
-
---=-=cbuygaQuA429SJ=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1LLN4ACgkQoNyKO7qx
-AnCgDg//RAVkX7ztO/NE9L3PuWiZRqtou/JbZpfiHUvprdY8UGPQ86vyMqsdAxEO
-+ZWlzqoiEEl08uD8Lf+Cahj3gIMtGGrgpsAplJZ8kI2aEvSWalCUL78fNKq80kqu
-aB+5qf5Gz8PNOv2Gp7qWf206iFxQm6xnJMLS9pqy+s6Eu9HYbvP79Ivij2gWsALb
-Z629yra4c9+1uTubNiIhscD+4h3Qqlm+PdJsGmcYcQBk9UpDOy8A6pkAslzFbeWt
-2ASCNX7osJ82mLJYtlWxKjQzDjEhyEomEPaD2nvCV1kkRLbF2pzwS+7yjjsqAc/Q
-7B9hn1izqVfp8nHH2YH/l1jgf+390Pg+/DAcbPMcoUTAghrL0C3u4ZoK7XVj5TT4
-w3wF97LYx8o9Zo4q3NWcrdaRA6yERB4YHLv7NzsyWMD4vNCt3A2H1SF759kgt6Fy
-6ecA2vAvqhyT2anKVbDsNp6KroHKRpDXVSlyEFTpwYSHogrK4JC8pbq7zpuPnc3F
-CvGJSszSSJ8IoF1FOugjiwXG4SeUU+GEDOpzAn77mlVgwdbBBdHkvfRy2OGPuogc
-zsyMNxMeVM6sRRM9LOc438fk6KmXm81Rz3NDV3XcK5zL+8TNgxMyCL4LYaFGCkQp
-pxodsABJlZFDA+noQcpbX/pRn/QjYhd0Lc+ZiF0S+WkZjtinGa4=
-=5x1c
------END PGP SIGNATURE-----
-
-
---=-=cbuygaQuA429SJ=-=--
-
-
-
---===============8247753135274709480==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Are you using recent master?
+>
+> DEVICE_MODEL is the way to go now.
+Yes, I do.
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8247753135274709480==--
-
-

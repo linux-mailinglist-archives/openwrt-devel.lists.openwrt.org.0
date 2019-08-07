@@ -2,63 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5021884413
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 07:59:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DA1F8444D
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 08:10:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=iRyTSQdHatw/KIR5dNaQkist7RU8inAIHbhXpxaawQI=; b=hnNSGwqgbE0Sm567jpZitzdq3C
-	8uWCPgpc5sMhGTdgadGJv+47qNLuUCmI/G9dtEY2pqU64dY9aT7AzjRek8tJx5dnQDh42q4u5N0xc
-	oLdudy0ysNQ/qqfKKq63Tu1Iu5CjzJA//1jhX6egdNeOeAbvgctSCHViQk1f7jLfR/MOFXTEbSzve
-	evJw7GjATDckS5NRbAG/Oj/Zpbxu3y3djDVE/9Hdc+H6QHUreFsxMUSqlU9sG+3Zpp6X9Rg9BGDg5
-	U3jhVEhv04sIpGCX8fJP4++1DlLEVs2WvQfbzdWeV1SctGYx2ghb15JubM+L4dvc0eUsPcWUjrE+4
-	l9q2xM7w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:Date:To:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=McjcsHOjv/89aNzAkI9sIDwvbe0SqXafAMM4X9oxb+c=; b=qzk
+	ZKmkmUeGO7mSHwKOfYtILKvZWPB678XG9l/3vuoFE6qQbOHBgnKleO0B+G6c07OkZyR0dQwX8XTDf
+	xRN1/ny9kcAPOw/fAk4LbFfv5Fv4qdZoECxg00rets478ZM9MbAGk0komt/VofiKT1SG5vgP4Eakl
+	+4FDLt8x/i9fwvgMwEAl0Ex2b7e5v2aBjwP16EWE9FE0j4a+7ZZlxvzc0As+aWRur9iqj57imatbw
+	anl+chIdBWAbFhtgbNtSNLj5IvXOqxDZlJbpLDHDnjNok5ptWrsWb86gbGzxTtptdLtu0sZ88xvUj
+	5uyaL1rC/SaARUjripAeolgTgsJ+LXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvEyr-0007Gb-Mg; Wed, 07 Aug 2019 05:59:25 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1hvF9L-0005T2-5M; Wed, 07 Aug 2019 06:10:15 +0000
+Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvEyj-0007GE-FO
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 05:59:19 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 267D54E81;
- Wed,  7 Aug 2019 07:59:14 +0200 (CEST)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 25a5c3c0;
- Wed, 7 Aug 2019 07:59:06 +0200 (CEST)
-Date: Wed, 7 Aug 2019 07:59:06 +0200
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Thomas Albers <thomas.gameiro@googlemail.com>
-Message-ID: <20190807055906.GF12735@meh.true.cz>
-References: <mailman.15111.1565142502.19300.openwrt-devel@lists.openwrt.org>
+ id 1hvF9D-0004Yb-Q5
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 06:10:09 +0000
+Received: from bilbo.ozlabs.org (localhost [IPv6:::1])
+ by ozlabs.org (Postfix) with ESMTP id 463LhB0Vx6z9sDB
+ for <openwrt-devel@lists.openwrt.org>; Wed,  7 Aug 2019 16:10:02 +1000 (AEST)
+Authentication-Results: ozlabs.org; dmarc=none (p=none dis=none)
+ header.from=patchwork.ozlabs.org
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <mailman.15111.1565142502.19300.openwrt-devel@lists.openwrt.org>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+From: Patchwork <patchwork@patchwork.ozlabs.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 07 Aug 2019 06:10:02 -0000
+Message-ID: <20190807061002.22024.9185@bilbo.ozlabs.org>
+Precedence: bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_225917_669765_94383A62 
-X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-CacheID: sfid-20190806_231008_064362_C46D8C77 
+X-CRM114-Status: UNSURE (   3.84  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] fix make kernel_menuconfig
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Subject: [OpenWrt-Devel] [openwrt] Patch notification: 1 patch updated
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
@@ -67,53 +58,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Thomas Albers via openwrt-devel <openwrt-devel@lists.openwrt.org> [2019-08-06 20:48:07]:
+Hello,
 
-Hi,
+The following patch (submitted by you) has been updated in Patchwork:
 
-> The sender domain has a DMARC Reject/Quarantine policy which disallows
-> sending mailing list messages using the original "From" header.
-> 
-> To mitigate this problem, the original message has been wrapped
-> automatically by the mailing list software.
+ * openwrt: [OpenWrt-Devel,1/2] fix make kernel_menuconfig
+     - http://patchwork.ozlabs.org/patch/1143192/
+     - for: OpenWrt development
+    was: New
+    now: Changes Requested
 
-FYI patchwork has issue parsing this wrapped emails so this patch wouldn't
-apply. Also patch 2/2 didn't hit the mailing list and patchwork as well.
+This email is a notification only - you do not need to respond.
 
-> Date: Tue, 6 Aug 2019 20:48:07 -0500
-> From: Thomas Albers <thomas.gameiro@googlemail.com>
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [PATCH 1/2] fix make kernel_menuconfig
-> Message-ID: <CALYGOBU51HmRrwJGmYUxhcYJCg8OOSEUOo+7=T-nuJLk9XnSmQ@mail.gmail.com>
-> 
-> This fixes pkg-config in the toolchain.
+Happy patchworking.
 
-maybe, but it's probably breaking other stuff as well.
+--
 
->  Previously, pkg-config would expand an environment variable
->  $STAGING_PREFIX, which is not defined,
-
-It is defined:
-
- include/host-build.mk:  $(1) : export STAGING_PREFIX=$$(HOST_BUILD_PREFIX)
- include/package.mk:  $(1) : export STAGING_PREFIX=$$(STAGING_DIR)/usr
-
-and as you can see the values are different for host/target.
-
-> Right now, anything relying on pkg-config works only because of sensible
-> defaults and good fortune.
-
-I don't think so, you probably need to dig into it once more and find out the
-real reason for the failure and fix it at the proper place.
-
--- ynezz
+This is an automated mail sent by the Patchwork system at
+patchwork.ozlabs.org. To stop receiving these notifications, edit
+your mail settings at:
+  http://patchwork.ozlabs.org/mail/
 
 _______________________________________________
 openwrt-devel mailing list

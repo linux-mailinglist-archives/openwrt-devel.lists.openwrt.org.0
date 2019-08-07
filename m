@@ -2,75 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EE9B85445
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 22:07:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE39885509
+	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 23:19:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5HkVVanWnSW62Pmj5LTQpqefuWcCifuDUM6RgXwfGis=; b=b//lXeFh0IgTP9
-	wrJNKEby+RRSO1bVTnlL2GsMFyuyUksz4xnLikPDAa+h+jbP126mV2PBZsN2W3rBHjBftzu1/h/Nt
-	et6w9fLrXDZdAVyuUtf/xfb4gM2np8blvb2Pbpq9BVs/O/gJgU3IJJnZ3Hp2StMplCMXDPqpfZOKP
-	u9S3/bFZYZPGGypb+dQo4yyhcBUneToH0bcg0QbDV54r0Dty2i/UwtU06kTGbyDp3fcNLiaIY0ULH
-	ZijF4QLOsCLkiAJ/7y2LtC/4KrDq4DAdeSa8NeIiyT2eVxO8wox+oUkgtpXzwvzzWDeeftByCXHg9
-	K9UUsx9bGVmYacE01ygA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qFimJsIDvpLcWHXOhEKYDukZ+fa+ZzRLMjSFap8AjMs=; b=aMyyFIa1j/R/w0
+	wSLfByrjYC1L7YxNWTZcamBF0OBSZS/HE8IDeLv0M5ONh4kPAY5mHVa0iuRx2oFs0UmIxOMt9/nJy
+	Fr5EFSZ40Yxsr7WQpb0JmaUCn75rtlr+YD7mMS3JkAx/nTkXrRGycrA/9ENTm6wJJtcGRqXw9afEu
+	8blSjaIfmpi3M6Oln1PyVQQz8hPxdvzQpoW7i3RgQqbmXCQcObbwzpIqrKgLNMdPA1K8uUy9gClcs
+	sEzuT/GhNafBYum1UNfagoEeRXDzjSOAvv5FAZKwaPyBQ12oGvu3BHNv+2+WTK/HX9OVU2Ab7ODhl
+	UTy9QLjxpjx8fHdeSzPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvSDz-0003Bc-Fi; Wed, 07 Aug 2019 20:07:55 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1hvTL1-0007U2-1T; Wed, 07 Aug 2019 21:19:15 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvSDq-0003BG-Ir
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 20:07:47 +0000
-Received: by mail-lf1-x141.google.com with SMTP id p197so64932193lfa.2
- for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 13:07:45 -0700 (PDT)
+ id 1hvTKs-0007Ti-O9
+ for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 21:19:08 +0000
+Received: by mail-ot1-x344.google.com with SMTP id z23so1853208ote.13
+ for <openwrt-devel@lists.openwrt.org>; Wed, 07 Aug 2019 14:19:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Px1rty98vwcXwk3ciqdkeQ85ET7EaN2p9xcr8zquYqg=;
- b=B6Cyv1JcGATLP2N1J6JDWADdELd3EIWJc5xmXEMt1B+YhCnxFUa5O142nfwz5Sm5y1
- k0CTflIxdq9QNKCtl37VYU+x0uQayKTy3HIA/txz6PgNc62yWYQL1PrQutc2LP9BJsvB
- CEVooPNxkymwP67oV3P18TSUcL1+BqVkR55EDy/zcUyIMRYKKiwtXZuaPw4g5zQNU43I
- IPHYqLnnvygm4qL2YFzj0cvLWd0/3al3S0foUaJVDWVZXlkVJzSRsFRxLLjOgC7IWQHA
- 2+Tp2M+FpkqBjIEHdjfCIvaOG7Wugv9ONFOJ2ewphchmhIMCiq98QNT6OP01x4F+RWPv
- p6rg==
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+ :cc; bh=Nohi04j+X5yFYm82fSP35BbwRkjKhA+I8StOBPOFlpg=;
+ b=JJu4g3YncTqWrP+4Kb7y674nASciyHMyPKOKPxlxABs5DiF9LFW/307Q/cbYuG64FZ
+ +efThtfwwfrJh8jhyEHq0SsspBUBgIgbTFoG5lRmdPSOk3bc6heVJkq2OwhPf6IDaH2L
+ 6VEU5Ts1f+ALBYOglLTH1Doj4vn0BziKr7k4SSF8RhksM8F+RDMQRiZkMMw4cPgRmPnq
+ HOkxhm7opc8LVGFbD7WhIhvydK7oHMfPhTYlwfloOKjDLafWLQ8fS+FhHmv00Abc8ype
+ iiCuAm835Pdip2qI6+xXNk5dJy0mVyQNbPx3HgxRRQsz3QSeJv8hDZPmFHULp/73YkD0
+ 5CrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Px1rty98vwcXwk3ciqdkeQ85ET7EaN2p9xcr8zquYqg=;
- b=KIQBvPoq2XuOwEciMFCbRVp1gObGe7Whp9B97/wwzCMykAEtpoe0v5mj4LngeJ41jb
- tysRvTSelBM4O/eXmZiPvSuEPpdvBl9x7vyhccqCkE7Il6rlPDJ+H6rpv+hKzptPLp5Y
- wdi/qN0EQCZ7fyc1pohiMZcN0oYFwMOx6f48ncml041rasJfU885GRLKTJ2F3hYm/9FP
- jI9BT2h8RS/4NkBxoL2QY8yTZRcPilB7xuAScdwvzhewYeijDIJ+PHvSGBFvFwFBChlc
- GLWpU9m+TETEFcB36UtSxRdPjrnnWr/MNbomV70JA3Hgsv3UUqFTWUAm3EdDh6YMsKzm
- AfDg==
-X-Gm-Message-State: APjAAAVnR1B16Jbm9fR1g/ykJIoF/J7zMh+dsBAhFuIARq2u4ntPVhgM
- Pvwk6nxiCU+O22ePPGUITe0dqplB6gY=
-X-Google-Smtp-Source: APXvYqxTfnMm8VyHGKGLxUjXfVnwRRdzsAkVcPPUmDTfty9dfBebyD0BxYXKtrrvlyTttM1OVRU42A==
-X-Received: by 2002:a19:5218:: with SMTP id m24mr7104000lfb.164.1565208463388; 
- Wed, 07 Aug 2019 13:07:43 -0700 (PDT)
-Received: from localhost.localdomain ([2001:470:dc6e:0:4de0:5f73:d0ad:c4d3])
- by smtp.gmail.com with ESMTPSA id u24sm4338325lfc.35.2019.08.07.13.07.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 07 Aug 2019 13:07:42 -0700 (PDT)
-From: Dmitry Tunin <hanipouspilot@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  7 Aug 2019 23:07:33 +0300
-Message-Id: <1565208453-17770-1-git-send-email-hanipouspilot@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+ :message-id:subject:to:cc;
+ bh=Nohi04j+X5yFYm82fSP35BbwRkjKhA+I8StOBPOFlpg=;
+ b=pB1LNnyZzzaMOXat5KPyas2AsRMRFVfGoE4kaPtu6DHPRYnq0ADWhessz9VU2N8eBv
+ W5OnOGAT5f4hj06wgouGuDjP/Y0oZbkHX5+gOY2JUypS90wTU8b9nyWwf9713LXObELk
+ 1oOL2acU+CJUtQ759UwHuF+p/LLIipuJmpIyXRpuj4xLun00EZQ33PzYW2Ph+ZZsRLKd
+ WKNCQ2kYD8kRjpr+d8VY/V2CZ61cdrtyvmxZXMSEhZU/YOIR+wRi/UEvo7mrOnY7k5/K
+ MZcx40ZmMbQLt+wEtGfZIycYR8BZj9Bs/hb2s1o6DaFYBaFXCffiCoRmjry0r7HvTHVP
+ vQWA==
+X-Gm-Message-State: APjAAAUJvvJ0k3t0ra8yCeP5MG21D1vaWRelSPX5OJ/xX/SV3Wot/lwK
+ GSokx4i50vJjbMeDhwZkZzHdGUSOKOho++hK7uYLZw==
+X-Google-Smtp-Source: APXvYqzlBybRSGrJd+hcUv3Dn2qRzCzT0B+L+feikE4UP74EaajmftHPw8UUCFpXsdwVhewYD21SjERedikLdD2zC7M=
+X-Received: by 2002:a9d:5510:: with SMTP id l16mr9938398oth.63.1565212745445; 
+ Wed, 07 Aug 2019 14:19:05 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 2002:a05:6830:2015:0:0:0:0 with HTTP; Wed, 7 Aug 2019 14:19:04
+ -0700 (PDT)
+In-Reply-To: <022201d54d3b$90d19080$b274b180$@adrianschmutzler.de>
+References: <20190806131039.51484-1-freifunk@adrianschmutzler.de>
+ <20190806131039.51484-2-freifunk@adrianschmutzler.de>
+ <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
+ <022201d54d3b$90d19080$b274b180$@adrianschmutzler.de>
+From: Tom Psyborg <pozega.tomislav@gmail.com>
+Date: Wed, 7 Aug 2019 23:19:04 +0200
+Message-ID: <CAKR_QVJbDBvNhon0UgHLMO+SkG5zu5iFsLcY-iD=aaJcFme2Tg@mail.gmail.com>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_130746_647367_912B4264 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20190807_141906_813806_F5656B75 
+X-CRM114-Status: GOOD (  12.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hanipouspilot[at]gmail.com)
+ provider (pozega.tomislav[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v6] ath79: add support of Netgear WNDR3800CH
+Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common
+ TP-Link definitions
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,130 +97,63 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Dmitry Tunin <hanipouspilot@gmail.com>
-MIME-Version: 1.0
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Add support for the ar71xx supported Netgear WNDR3800CH to ath79.
-The device is identical to WNDR3800 except NETGEAR_BOARD_ID.
+Correct me if I'm wrong but I thought all the data beyond IMAGE_SIZE
+remain intact by OpenWrt on firstboot. Experimenting with Archer C7 v1
+recently I was able to flash OpenWrt image (ar71xx) and after
+reflashing tplink fw previous settings were still valid indicating
+config partition hasn't been overwritten.
+At least TL-MR22U has config partition of 64KB and Archer C7 has 128KB
+- I've gone through GPL sources of Archer and it seems between two
+firmware versions this partition was increased from 64 to 128KB,
+actually I discovered this by hexdiff-ing u-boot versions from each
+firmware version
 
-Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
----
- .../linux/ath79/base-files/etc/board.d/02_network  |  3 +-
- .../etc/hotplug.d/firmware/10-ath9k-eeprom         |  6 ++--
- .../linux/ath79/dts/ar7161_netgear_wndr3800ch.dts  | 36 ++++++++++++++++++++++
- target/linux/ath79/image/generic.mk                | 11 +++++++
- 4 files changed, 53 insertions(+), 3 deletions(-)
- create mode 100644 target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
-
-diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-index 9c64299..dc3018d 100755
---- a/target/linux/ath79/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/base-files/etc/board.d/02_network
-@@ -177,7 +177,8 @@ ath79_setup_interfaces()
- 		;;
- 	netgear,wndr3700|\
- 	netgear,wndr3700v2|\
--	netgear,wndr3800)
-+	netgear,wndr3800|\
-+	netgear,wndr3800ch)
- 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
- 		ucidef_add_switch "switch0" \
- 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "5u@eth0"
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index a7d4825..29da5c9 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -206,7 +206,8 @@ case "$FIRMWARE" in
- 	buffalo,wzr-hp-ag300h|\
- 	netgear,wndr3700|\
- 	netgear,wndr3700v2|\
--	netgear,wndr3800)
-+	netgear,wndr3800|\
-+	netgear,wndr3800ch)
- 		ath9k_eeprom_extract "art" 4096 3768
- 		;;
- 	dlink,dir-825-b1)
-@@ -223,7 +224,8 @@ case "$FIRMWARE" in
- 	buffalo,wzr-hp-ag300h|\
- 	netgear,wndr3700|\
- 	netgear,wndr3700v2|\
--	netgear,wndr3800)
-+	netgear,wndr3800|\
-+	netgear,wndr3800ch)
- 		ath9k_eeprom_extract "art" 20480 3768
- 		;;
- 	dlink,dir-825-b1)
-diff --git a/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts b/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
-new file mode 100644
-index 0000000..84a859b
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7161_netgear_wndr3800ch.dts
-@@ -0,0 +1,36 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "ar7161_netgear_wndr3700.dtsi"
-+
-+/ {
-+	compatible = "netgear,wndr3800ch", "qca,ar7161";
-+	model = "Netgear WNDR3800CH";
-+};
-+
-+&partitions {
-+	partition@0 {
-+		label = "u-boot";
-+		reg = <0x000000 0x050000>;
-+		read-only;
-+	};
-+
-+	partition@50000 {
-+		label = "u-boot-env";
-+		reg = <0x050000 0x020000>;
-+		read-only;
-+	};
-+
-+	partition@70000 {
-+		label = "firmware";
-+		reg = <0x070000 0xf80000>;
-+		compatible = "netgear,uimage";
-+	};
-+
-+	art: partition@ff0000 {
-+		label = "art";
-+		reg = <0xff0000 0x010000>;
-+		read-only;
-+	};
-+};
-+
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 8009582..538be46 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -789,6 +789,17 @@ define Device/netgear_wndr3800
- endef
- TARGET_DEVICES += netgear_wndr3800
- 
-+define Device/netgear_wndr3800ch
-+  $(Device/netgear_wndr3x00)
-+  DEVICE_MODEL := WNDR3800CH
-+  NETGEAR_KERNEL_MAGIC := 0x33373031
-+  NETGEAR_BOARD_ID := WNDR3800CH
-+  NETGEAR_HW_ID := 29763654+16+128
-+  IMAGE_SIZE := 15872k
-+  SUPPORTED_DEVICES += wndr3800ch
-+endef
-+TARGET_DEVICES += netgear_wndr3800ch
-+
- define Device/phicomm_k2t
-   ATH_SOC := qca9563
-   DEVICE_VENDOR := Phicomm
--- 
-2.7.4
-
+On 07/08/2019, Adrian Schmutzler <mail@adrianschmutzler.de> wrote:
+>> -----Original Message-----
+>> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+>> Behalf Of Tom Psyborg
+>> Sent: Mittwoch, 7. August 2019 17:58
+>> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+>> Cc: openwrt-devel@lists.openwrt.org
+>> Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common
+>> TP-Link definitions
+>>
+>> Hi
+>>
+>> Looks like there were many doubts about image size over the years.
+>>
+>> One thing that should be considered is use of OEM firmware, either in
+>> case of just a single revert after OpenWrt flashing, or multiple
+>> reverts/switching between OEM/OpenWrt firmwares.
+>>
+>> Relevant in this case is config partition within OEM fw, and by
+>> specifying OpenWrt image size to occupy all available flash space
+>> between u-boot and art partitions destroys config contents which may
+>> turn up very impractical for those that do frequent switching between
+>> the two.
+>>
+>> Further, config partition size also varies from device to device, some
+>> have it 64KB others 128KB in size, at least what I observed with my
+>> devices.
+>>
+>> So, the correct image size for Archer C7 v1 turned out to be 0x7b0000
+>
+> But wouldn't this call for introducing a config partition for the C7 v1?
+> I'm not sure how your analysis is affecting the IMAGE_SIZE discussion
+> (unless you say TP-Link devices generally have this config partition with
+> different sizes, and thus the whole concept of including IMAGE_SIZE in
+> common definitions is "wrong")...
+>
+> Best
+>
+> Adrian
+>
 
 _______________________________________________
 openwrt-devel mailing list

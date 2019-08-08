@@ -2,76 +2,106 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C6F78552E
-	for <lists+openwrt-devel@lfdr.de>; Wed,  7 Aug 2019 23:31:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5625585A19
+	for <lists+openwrt-devel@lfdr.de>; Thu,  8 Aug 2019 07:54:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Subject:Message-ID:Date:Mime-Version:To:From:References:In-Reply-To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+M295gyraPd5+6dOCSkgi0+TCuZFrc4rmvB2RP9v2ZQ=; b=pYiQNFUegOC4GIwlwzlsrQ6kE
-	rr+SprLJVtxvl43Fmud8e2KkkSghf41Dvhk24+0ZvAsWcwXL7JgLJO3ylKCUGbYcLK6dNZyN7WJsc
-	QFIF+hxuaMyZpj+CYQTB3i5mtViqfugWa7h3w6RCEE6+Fn6UnQ9W6jsD20c5kqg0pUaVF/nubtN8N
-	9cBksmZGeoIEvMKss0we8XJ3pMS5XYIjCgWESXKmtro2DxCruUnKzYXH8iIUiazK+DPRdeaXVLmPS
-	Qu8idhda7jI2pAS+hJtlXTfy6xHw3A2rt4U8gU7blc1V9MSLOKAH8Zp5qdj7vXrUt7XRuA6A3ZNiG
-	XXqENiGlw==;
+	 bh=8Jw/OgpKvBHBDDeSgTnuJZPZKOKS79ykHwBJHUCE5lk=; b=UoYBNGzkNN+zfEHxwakdqnlPo
+	EgwpPhBz0JL45QARSdbv3ic2L1R88q+h/OCocXsmLKLlVcnQwFuxvoVmAKbuskBvkRXsG6m9fZGWw
+	8zTyusn/xiGMvhH91M+oz86zzXec6QRkH5h8TxtE4CQyijUPf0kpC7z74W0zYDAu47AR2RWH1m2fE
+	LLzk5sxnOEnF3PS+ZuWaxeMzIUcoXLoJRN2Cho5SkC4/XpnVCiPArFotVqCEbjrD6GBwXDG7/836I
+	DlVbzqVAu5BBdMfC9d4hhez5Q32tzjZITpmvDawT2QsrRliofxnJeeg/MzrrWh/Cot4GIZeMwjgq2
+	jRwo0ZX/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvTWY-0004aR-GL; Wed, 07 Aug 2019 21:31:10 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1hvbNF-0002px-Bo; Thu, 08 Aug 2019 05:54:05 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvTWO-0004a1-OF
- for openwrt-devel@lists.openwrt.org; Wed, 07 Aug 2019 21:31:02 +0000
-Received: from desktop ([188.193.174.123]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MmDVA-1ide2j1Gcq-00iDGM; Wed, 07 Aug 2019 23:30:57 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Tom Psyborg'" <pozega.tomislav@gmail.com>
-References: <20190806131039.51484-1-freifunk@adrianschmutzler.de>
- <20190806131039.51484-2-freifunk@adrianschmutzler.de>
- <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
- <022201d54d3b$90d19080$b274b180$@adrianschmutzler.de>
- <CAKR_QVJbDBvNhon0UgHLMO+SkG5zu5iFsLcY-iD=aaJcFme2Tg@mail.gmail.com>
-In-Reply-To: <CAKR_QVJbDBvNhon0UgHLMO+SkG5zu5iFsLcY-iD=aaJcFme2Tg@mail.gmail.com>
-Date: Wed, 7 Aug 2019 23:30:56 +0200
-Message-ID: <016e01d54d67$667520a0$335f61e0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQEB+24oOP0+hQ7HGqEJP9eZ0+GFFAFVG5ecAak0eYsCYVWdfQFjdvzRqGC98lA=
-X-Provags-ID: V03:K1:kHFJLrbgtrFcLpsgvZXlNKNEMgFxlz3DTqC2ye45CgfFWOEUB90
- E7V2cFjGVEJKncme0XJNmGAoqr70D9ZwFNjPZlBNosQOWcWwfYKi7mHUxODustjc7KbepOp
- kRnaR8KJF4cZzfne6TAvF6vZedM+MfnmtQQYNf/OMRm8ZsWJt7nfwpTUh5esc03MTEeJwmL
- NeKyQxOttO5kWOarYnE7w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ZFLeB2t2WJs=:KM/+zOejlxMtxd0GFfKltI
- QfpXQ/+VtKYS1KbnQaQnAgonyAbh66gOZ8wnAgixcvRM2EQIjMU0NtCcDwq90wrnWEoFjR82f
- 8oV6Ikf8KP5dGpYGBtu4JIME2oxdL4e3vYgJoqs4kHFL4MbLENXFsksVzIdL/T2MWxus2hbcn
- 712vtYZ6CYXES+swzf0vou5rcS3w14CdPZ6oF0NVSY9VIRo1mBYYVLAASJqZRV1/Ci3rr2tu9
- VFjUX+HJ9xAC+HLx7CvrLMXqWjiRE9CI91ZLRj/532EswOYz4CujbuglfhhrSOx+hBHWg9Lne
- mVSA4UJJdqmJl4ySOWaqwFM6EEtO0c5q3QX8B4LXurgMo8DEMCTzlA+MaAx803dFXL/p4fpZA
- ZhySVSlAwY4GdJlaaksyJnqSmjj4k/dG2/awBI/R6dDmT/zAbDx9G9k0Efyzw3qTGLhtfw3fA
- n7eFM0GUn2h1cGHATuq3+bEHNUKxEwp/w65X1HrznLtTOmUWulxr6fU56HmwO5QezDNksSYDZ
- cgHJI+rg8Q77Vsmvb8vvbwLYF/RZLLMlO4Ccp+zKvt3KACyQBqiar1WXENh24jM771fsiCCe+
- L0vc+RwsHZmdxpJqpLJZ9UKu/EBQgRT2/zyl/FaYGxCzaxOYbGY1nbTOhSQ4WJBMSSI+hPb0n
- 5KuPmrZPaEZilmi/GYT6ioLZ7hBmtQ2wAWnBlWwJspE+lLGtALBGuBKQF9w6b0BGKxyIHao9+
- Le39dYwF1Exfv645921Iu3/BgPBbzjHpyR77ZiExP/6BGf34CR2OsSZtMf8=
+ id 1hvbMy-0002ph-P4
+ for openwrt-devel@bombadil.infradead.org; Thu, 08 Aug 2019 05:53:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-ID:Date:
+ Content-Transfer-Encoding:Content-Type:Mime-Version:Subject:Cc:To:From:
+ References:In-Reply-To:Sender:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=IELVC3s9pMFGC2nw9jgABhL+arVAKD8W2T/IB8r0s1Q=; b=BrwyNglxP2b8
+ TCfGo0+9YFHXl9i7gFnfCNM/nvumxRELnpU/RWVqdT1wte3K6/78We7FuviwmNxsBtV5a2o8wqmgt
+ 65XFgFmlAK0S8e/hfmUEmoxzmRHrVtL0hBaYiR39FQ3EaW52cslcNJPky7YGBjCDTQjziI+TG1/hj
+ EezuLmJx2AEY+GOmuAGueQ76VlvqEXq1PMeY+A7kgHSdWpPuppEhapYDvDt24tAmusM2SucrwTgXZ
+ IhGtI+AJiH57bHA9hadOPiSZQcwRbRe6ByUcxvibD6uj+DdD/rhtHPG5pDJ43N87s3AFUkuwCbl0a
+ YFtbuIPOJg4pcGh8Bnv5VA==;
+Received: from smtpbgeu1.qq.com ([52.59.177.22])
+ by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hvbMy-0006r1-8t
+ for openwrt-devel@lists.openwrt.org; Thu, 08 Aug 2019 05:53:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1565243579; bh=IELVC3s9pMFGC2nw9jgABhL+arVAKD8W2T/IB8r0s1Q=;
+ h=From:To:Subject:Mime-Version:Date:Message-ID;
+ b=vgsvKeIFdww1z1Z/VDwykqy/I9IBDgpJYlyU5i8RjKyyh685+jMi7yW9KyDsdlkSN
+ 5+1oE/GiMP1Te79PdPRY1VxiJj92n8t9YI69/XNSb+Z8IO/mMNyBuUh7Oq7qGoaW1c
+ crs8PUsYpzuZaLPiAwy4dPgrLnYGPEpoSnDL82Yk=
+X-QQ-FEAT: 322/xMGPkyputU7Quo8WyXqKKmCMs1XVBAFum8fGeZ2lU3y9xV9RMDtqNh0a2
+ n12V8dzOU1W66M10IbVPZyGr92npZkawfQCzWYo0ZhyxQGLfNnAR7C6fTR48hJVFY71GFrd
+ +wJJIvHfSc05NPfktBWXb0ozWIr4XAVZMiZldHXfMQtjDCJE5MddbCxYOVSeIkRPiqNOOVH
+ uhjF9+Wl3sn0vfaxq+2bFTZP2FhdMvQJFi85jy6XqwfBJEk+KlhH3wfDNccV4wQNTceNqcT
+ ciA18vIlEBqQP82LCuBqBo2xC+3mgLZ4kCPxdZ6ZJ5IN6e
+X-QQ-SSF: 00000000000000F000000000000000Z
+X-HAS-ATTACH: no
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 115.205.16.30
+In-Reply-To: <008301d54d15$9274ae70$b75e0b50$@adrianschmutzler.de>
+References: <1564114882-63441-1-git-send-email-wurobinson@qq.com>	<00a901d5461b$c893d310$59bb7930$@adrianschmutzler.de>
+ <tencent_599CEF7667E63EBDE4896D3CC7EBA9D68A05@qq.com>	<00ac01d546cc$1359c2a0$3a0d47e0$@adrianschmutzler.de>	<tencent_CC467618EF234A1AD97E72589FEEAC58F909@qq.com>
+ <tencent_75E229CDEA804F6D87F6FEAEA4924D232705@qq.com>
+ <008301d54d15$9274ae70$b75e0b50$@adrianschmutzler.de>
+X-QQ-STYLE: 
+X-QQ-mid: webmail438t1565243578t858784
+From: "=?ISO-8859-1?B?Um9iaW5zb24gV3U=?=" <wurobinson@qq.com>
+To: "=?ISO-8859-1?B?QWRyaWFuIFNjaG11dHpsZXI=?=" <mail@adrianschmutzler.de>
+Mime-Version: 1.0
+Date: Thu, 8 Aug 2019 13:52:58 +0800
+X-Priority: 3
+Message-ID: <tencent_379EAC54F830766EEF454BDED9AE72269E09@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-ReplyHash: 855046772
+X-QQ-SENDSIZE: 520
+Received: from qq.com (unknown [127.0.0.1]) by smtp.qq.com (ESMTP) with SMTP
+ id ; Thu, 08 Aug 2019 13:52:59 +0800 (CST)
+Feedback-ID: webmail:qq.com:bgforeign:bgforeign4
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_143101_081289_BCE383B1 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20190808_065348_470381_2433EA5A 
+X-CRM114-Status: GOOD (  11.06  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common
- TP-Link definitions
+ no trust [52.59.177.22 listed in list.dnswl.org]
+ 0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
+ 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wurobinson[at]qq.com)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support to JS7628
+ development board
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,86 +113,50 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============4788782102039681811=="
+Cc: =?ISO-8859-1?B?b3BlbndydC1kZXZlbA==?= <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============0684838595226111044=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+This is a multi-part message in MIME format.
 
---===============4788782102039681811==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=TzLLhQeMsDMzmF=-="
+--===============0684838595226111044==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_5D4BB8BA_0CEE6C08_39EA0BEB"
+Content-Transfer-Encoding: 8Bit
 
-This is a multipart message in MIME format.
+This is a multi-part message in MIME format.
 
---=-=TzLLhQeMsDMzmF=-=
+------=_NextPart_5D4BB8BA_0CEE6C08_39EA0BEB
 Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
 
-> -----Original Message-----
-> From: Tom Psyborg [mailto:pozega.tomislav@gmail.com]
-> Sent: Mittwoch, 7. August 2019 23:19
-> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Cc: openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for
-> common TP-Link definitions
->=20
-> Correct me if I'm wrong but I thought all the data beyond IMAGE_SIZE
-> remain intact by OpenWrt on firstboot. Experimenting with Archer C7 v1
-> recently I was able to flash OpenWrt image (ar71xx) and after reflashing
-> tplink fw previous settings were still valid indicating config partition =
-hasn't
-> been overwritten.
-> At least TL-MR22U has config partition of 64KB and Archer C7 has 128KB
-> - I've gone through GPL sources of Archer and it seems between two
-> firmware versions this partition was increased from 64 to 128KB, actually=
- I
-> discovered this by hexdiff-ing u-boot versions from each firmware version
+SGksDQpUaGFuayB5b3UgZm9yIHlvdXIgYWR2aWNlcy4gIEkgd2lsbCBzdWJtaXQgcGF0Y2gg
+YWdhaW4uIA0KDQoNCkJlc3Qgd2lzaGVzDQoNCg0KUm9iaW5zb24gV3U=
 
-Nevertheless, addressing this with IMAGE_SIZE would still be just a hack.
+------=_NextPart_5D4BB8BA_0CEE6C08_39EA0BEB
+Content-Type: text/html;
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
 
-If there is config data to be preserved, one should add a partition for it.=
- Then IMAGE_SIZE would just shrink according to the (then correct) firmware=
- partition. Now that we have DTS files with individual partition schemes, t=
-his would be even easier than for ar71xx.
+PGRpdj5IaSw8L2Rpdj48ZGl2PlRoYW5rIHlvdSBmb3IgeW91ciBhZHZpY2VzLiAmbmJzcDtJ
+IHdpbGwgc3VibWl0IHBhdGNoIGFnYWluLiZuYnNwOzwvZGl2PjxkaXY+PGJyPjwvZGl2Pjxk
+aXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6ICZxdW90O2x1Y2lkYSBHcmFuZGUmcXVvdDss
+IFZlcmRhbmEsICZxdW90O01pY3Jvc29mdCBZYUhlaSZxdW90OzsiPkJlc3Qgd2lzaGVzPC9k
+aXY+PGRpdiBzdHlsZT0iZm9udC1mYW1pbHk6ICZxdW90O2x1Y2lkYSBHcmFuZGUmcXVvdDss
+IFZlcmRhbmEsICZxdW90O01pY3Jvc29mdCBZYUhlaSZxdW90OzsiPjxicj48L2Rpdj48ZGl2
+IHN0eWxlPSJmb250LWZhbWlseTogJnF1b3Q7bHVjaWRhIEdyYW5kZSZxdW90OywgVmVyZGFu
+YSwgJnF1b3Q7TWljcm9zb2Z0IFlhSGVpJnF1b3Q7OyI+Um9iaW5zb24gV3U8L2Rpdj48L2Rp
+dj4=
 
-Best
-
-Adrian
-
---=-=TzLLhQeMsDMzmF=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1LQw0ACgkQoNyKO7qx
-AnAcNw/9GCWDDp0bHTvp/QbifDl5iuXyOLl7IdwrIbt/ICqCxNu8hRqAcQClfFuf
-27eprKJEzk+8PZHMEJNvhDLp5hHPIqyhAgMuG6O4ai4Jaxtvr9GiHESHA7d8YUZC
-ds7vLftI8SS3BXy7kosqE8Sc56gPRPqMFtoM8Kkm6prfqQGwTHsIFGiddUKIvgMf
-530rX5q+JlqVwSkGjU2ntTn0If1zfG5OHWuJ4CUN2KAwEIufb7a5nGMZmPFbb9ki
-eL7Z51wjqalHgvbNIeuyxpN+OKbM3ItzYqWg95hoAjEYS4OPQfeyrQ+xOd8fGPlm
-BxtqGlSHo3PN0t47DTUlxurcQg8CVBXSQ4qpiAyq7AaUgaIW3tfThD3VNrBl3czC
-0KiA93mXOS77wfAC2nYfb0hdIB+x6CPipGEDANbmz5zUYVQFccfzxzwEwAX6E4AP
-gl1NNdjUgpX5iqgu92Gap7umZjQAErKpS2HVoGwjIaQRY/UgmhaLR1+pptANH0V1
-nSHrUwN2un3ZqybppuUho9tzrOGSo/YXmfPsJ83pYwzuXgH3tMIRl2Bhtzm47HLw
-2W47z7aUv4Tu8X5eojRzv6V6P5XWxb9mJGTZ0uZb/5GQeDeCD49OIx/MxHOEt7dx
-mJ74j7J2udOouBRz+pvjqRtfEQ5Lf+EuLRCvAMQqayddc0dLh9U=
-=XLE1
------END PGP SIGNATURE-----
-
-
---=-=TzLLhQeMsDMzmF=-=--
+------=_NextPart_5D4BB8BA_0CEE6C08_39EA0BEB--
 
 
 
---===============4788782102039681811==
+
+
+--===============0684838595226111044==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -173,6 +167,8 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4788782102039681811==--
+--===============0684838595226111044==--
+
+
 
 

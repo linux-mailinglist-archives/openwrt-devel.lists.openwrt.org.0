@@ -2,93 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2205786266
-	for <lists+openwrt-devel@lfdr.de>; Thu,  8 Aug 2019 14:55:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 249B38693F
+	for <lists+openwrt-devel@lfdr.de>; Thu,  8 Aug 2019 21:01:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HxQ9M+0zUNXfkaTjvIGgb4dsYW4aQ5Xmi7+59Ox7RgY=; b=WqsmFL0rJvBmI5
-	AKlDcXYPmFaXl4KGrlPG1kGcHwgOJXDEaQFMR2FOVee7AAp2cOeFkFY5oZxiwy7u5ezpJVa3CbfBM
-	mjXmR5h61Nox6pbPdHPTRajCtaGjcvoM/E0zeMgeJ+ucoXYQ5/7GNXd7D2xeZE4NzbWE4lUxQrZG/
-	EyCsZmKG5n5FHc/WNAOL+ABUX5w4OF/5WCzXuwh5S6RwV0/6wLD8R6q4vFp6/8A6yqNpJgFLVu+fE
-	OVpzFJdh8ydVFMm8rS4AVmkAh8ydL6XH7/AXxKGAjHyJhVEdb7vdBVaDJIi6vyUfp5n2V0Hbd9pp8
-	N+6GlGQGA/9QAYlETD0Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bvbFWXwCRAs6mdIp2r3GWJVLifAyZ2UjGCJq1pZnQLI=; b=WXih3IlwODNhMj
+	m5GIyyo360IQy95N1pJ2Q1yDLkZJ+OV1T+yyU4JhCZqca8UoopCWjduLKObkWAgFBTY7OeiAo//MM
+	IGyqg55QDl8EisifIesQ4j2BeQmcQ1DWOxyz3BIo2Qi/6JiR3I3W6GUAN2qfr+RKJrXo4omSfWeHs
+	Ni75MQoIIHgmMQUEYP2UyKyA0d6jgoa4Z3bjc0mxR3hsE4s7Fi1ojBzj2sGnSgo/c3cBx9r/6uZIS
+	+ulK15mEjV81h1MLfaDRVQQYH4j/YUFIvQrsMD1ojngOtwgfVev69fvfGWAlYhnLu81nhQ3KFFVeB
+	qlsmbBAgl73prD90xfAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvhxD-0005TV-JT; Thu, 08 Aug 2019 12:55:39 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1hvnfI-0004Mx-F1; Thu, 08 Aug 2019 19:01:32 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvhwN-0003d6-7z
- for openwrt-devel@bombadil.infradead.org; Thu, 08 Aug 2019 12:54:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WpTjLVXEMpZm5vsfrIwygXVisxk3cZ8hjy1vKXx5lzg=; b=VQPCuWaz3FmDW/qQ7LOGqkJ4y
- 4DNS9becP44ofBoqGdUzYXlddQUN6fQuBda2jYWj72uRcELijhuoBb0PCjf07qv6iKpsnTNWwU0O5
- 33YCDV8BbbxLPYdEAmjh9Tq+WQuOMmOBlaOBMzZbSDQ4KHG8lK7F0gMUMZUqU+WZ3pFxdI7erR4PH
- N3QVREQfxmnpAhgPqQZs0lsOKmqK1Tw1mWMsb0GWrEohL/TolyE8bWRRDC9t+zzyTjl9qfXFM28PF
- kRRWpvnv2ql7VD6VSdsTjM+rX80c4ixAN5uzbal1cQ3atMwT8y+9lqTZ3hQ+mGFuLXkWkJA6tX9Pl
- 9xOu/YZ4g==;
-Received: from smtpbgsg2.qq.com ([54.254.200.128])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvhwZ-00032D-8I
- for openwrt-devel@lists.openwrt.org; Thu, 08 Aug 2019 12:55:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
- t=1565268856; bh=WpTjLVXEMpZm5vsfrIwygXVisxk3cZ8hjy1vKXx5lzg=;
- h=From:To:Subject:Date:Message-Id;
- b=vYMER/xtMNWri2UDjiTYjngIbAVLo5h/M+HvB/nsyVSvI/YSyyNOGGBcweXmUMkaq
- 0H/FZGwtfWWOYqyGqbj1xbqrKwiThsztPSL365AUFyMsQsXxpCgwLSwjWFY7wGlLF+
- AQ9HClQUXQR3BKgU8XJCFFsFr1vgC1HyTWLcjzmo=
-X-QQ-mid: esmtp7t1565268856tv4oux2go
-Received: from localhost.localdomain (unknown [115.205.159.17])
- by esmtp4.qq.com (ESMTP) with 
- id ; Thu, 08 Aug 2019 20:54:11 +0800 (CST)
-X-QQ-SSF: B1000000000000B0RH100500000000Z
-X-QQ-FEAT: EUGmOqWjSYLZj5W2+JD2Qg7JfNUemvGx1ayKbxPeFEzUTi778EYtoIQA/X5E3
- x2o3wDdroJ8h6cVAsoz1ErcGVfIvDZKVPWI805EBClINPbwiITjr1pU9uPjJkamDXcMfi6G
- BSgG4MgN4aB3iqnzWwtiCvWOl3h4ctUTg7uDbL+/FDHt/mQthVLgDaFPx5+3mtBJJnb1jXI
- ARUc1Wb9p+8d2jnnqiZMhgVJpcEPUjwJLBgJhnz19Jy098E87tuW0SlgXsVDz9py9nXlDk+
- HruUcQZxVkxxPhbZVnwRL901miSe1q0hq80pPtwvrRC2S2CMyv/rY3nh6sG6DfNUkllQ==
-X-QQ-GoodBg: 0
-From: Robinson Wu <wurobinson@qq.com>
+ id 1hvnfA-0004L0-8q
+ for openwrt-devel@lists.openwrt.org; Thu, 08 Aug 2019 19:01:26 +0000
+Received: by mail-pl1-x642.google.com with SMTP id ay6so43960711plb.9
+ for <openwrt-devel@lists.openwrt.org>; Thu, 08 Aug 2019 12:01:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=njE0bT90ySlcj1lkZJXoGBt5oFtxfqbOTnBprJtKmYc=;
+ b=WsCxNg/iKOZRA0R/JgdZisa6Y2VLGBv3fcmAYrYUD5SAUEvsUAWENIghoISwxwV4S2
+ PidOSmVQFErXM0p+ZCF8rAah+IsD1qHjxovrWaA692v5Tp9EigfpHZchydTv65wmQWMq
+ 9D/MAOyDck2Su9RXlwOEzGszzJNOF12HyRLotsVq2nKNN6ptxQsYMuvl2T/DneM15hgp
+ 9QtKiK6BQhQEzGkMG3vVrIlMdpTxlQl0cnEQxW//7P7PukfU0BSenLCsSCAWNcvXw/JK
+ /gdHncHqWlGps4tM241qAsbUHSB8ztzWJomf+gJVLhOacaSYc51XcFdJRPGuZ63vrDVo
+ 1XbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=njE0bT90ySlcj1lkZJXoGBt5oFtxfqbOTnBprJtKmYc=;
+ b=sHbuvzYX83JOolIAP/bguQebZF/yEgXL3SfU3ReUzbAv6wn7QchHUo2NrUBRHMPzFC
+ S1EbKTp+KXBXXOym50uAE/xvwmVpYdu54HtCWfteNbNHBwZ1rc73mhCSNe9GCt0aKhnx
+ dmLFk8IyRIH75yZxFX16nb4R1y9mXpLAlFY1DbK03H3P/yMDhn/K74x1FYubZOzZzaC8
+ qzdBr0egDa85sG06uoqaQHnvE0vAMzCzexJDxIc37oFdhObvGRVKtcFkrrRdNBcJSy5l
+ QwHto0O95cFHL4daKf3Hm0UKI5kzhmJBCE+zOi8igzMakJuZtoB5kcCUprXJbWdboOoQ
+ Z0Ug==
+X-Gm-Message-State: APjAAAV3b3aW1zPaTqOqfAjipsrwLawNv16u+ZDwLGC2LhddW0G5exEJ
+ D/uhHwF0ZnbtTv87Z+M5hORrw2x14c4=
+X-Google-Smtp-Source: APXvYqwRpkSCbHZeKq/J1t+G0V20jgGxnxFScWr7Fa6m24ytsithZeoDHKDQNZb32ufxhagokb/dCg==
+X-Received: by 2002:a17:902:684f:: with SMTP id
+ f15mr15321961pln.332.1565290883074; 
+ Thu, 08 Aug 2019 12:01:23 -0700 (PDT)
+Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
+ [76.14.106.55])
+ by smtp.gmail.com with ESMTPSA id s11sm100631602pgv.13.2019.08.08.12.01.22
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Thu, 08 Aug 2019 12:01:22 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  8 Aug 2019 20:53:16 +0800
-Message-Id: <1565268796-2766-3-git-send-email-wurobinson@qq.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1565268796-2766-1-git-send-email-wurobinson@qq.com>
-References: <1565268796-2766-1-git-send-email-wurobinson@qq.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: esmtp:qq.com:bgforeign:bgforeign4
-X-QQ-Bgrelay: 1
+Date: Thu,  8 Aug 2019 12:01:21 -0700
+Message-Id: <20190808190121.10128-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_135459_992001_917A42E9 
-X-CRM114-Status: GOOD (  15.54  )
+X-CRM114-CacheID: sfid-20190808_120124_344649_C1277C0C 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.254.200.128 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wurobinson[at]qq.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider (rosenp[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH v2 3/3] ramips: add support to ZTK7628P
- development board
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH] bzip2: Update to 1.0.8
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,360 +95,121 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robinson Wu <wurobinson@qq.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit adds support for the ZhuoTK ZTK7628P development board,
-The device has the following specifications:
+It seems bzip2 was abandoned by the author and adopted by the sourceware
+people. The last release of bzip2 was from 2010.
 
-- SOC:MT7628DAN
-- RAM:64 MB (DDR2)
-- FLASH:8/16/32 MB (SPI NOR)
-- Ethernet:3x 10/100 Mbps ethernet ports (MT7628DAN built-in switch)
-- WIFI:1x 2T2R 2.4 GHz Wi-Fi
-- LEDs:1x system status green LED, 1x wifi green LED,
-       3x ethernet green LED
-- Buttons:1x reset button, 2x user defined button
-- 1x microSD slot
-- 4x USB 2.0 port
-- 1x mini-usb debug UART
-- 1x DC jack for main power (DC 5V)
-- 1x TTL/RS232 UART
-- 1x TTL/RS485 UART
-- 13x GPIO header
-- 1x audio codec(wm8960)
+Several security bugs were fixed as well as others.
 
-Installation via OpenWrt:
+Fixed up PKG_LICENSE to be compatible with SPDX.
 
-The original firmware is OpenWrt, so both LuCI or sysupgrade can be used.
+Changed URLs to point to the new home.
 
-Installation via U-boot web:
+Added patch that gets rid of deprecated utime function and switches it to
+utimensat.
 
-1. Power on board with reset button or key1 button pressed, release it
-   after wifi led start blinking.
-2. Setup static IP 192.168.1.123/4 on your PC.
-3. Go to 192.168.1.8 in browser and upload "sysupgrade" image.
-
-Installation via U-boot tftp:
-1. Connect to serial console at the mini usb, which has been connected to UART0
-   on board (115200 8N1)
-2. Setup static IP 192.168.1.123/4 on your PC.
-3. Place openwrt-firmware.bin on your PC tftp server (192.168.1.123).
-3. Connect one of LAN ports on board to your PC.
-4. Start terminal software (e.g. screen /dev/ttyUSB0 115200) on PC.
-5. Apply power to board.
-6. Interrupt U-boot with keypress of "2".
-7. At u-boot prompts:
-   Warning!! Erase Linux in Flash then burn new one. Are you sure?(Y/N) Y
-   Input device IP (192.168.1.8) ==:192.168.1.8
-   Input server IP (192.168.1.123) ==:192.168.1.123
-   Input Linux Kernel filename (root_uImage) ==:openwrt-firmware.bin
-8. board will download file from tftp server, write it to flash and reboot.
-
-Other notes:
-
-1. This board is available with three types of RAM with flash
-   configuration. Chose one of the right "Target Profile" in
-   "make menuconfig" as listed below:
-
-   "ZhuoTK ZTK7628P 8M flash"
-   "ZhuoTK ZTK7628P 16M flash"
-   "ZhuoTK ZTK7628P 32M flash"
-
-   to fit the board you have.
-
-Vist www.zhuotk.com for further information.
-
-Signed-off-by: Robinson Wu <wurobinson@qq.com>
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- target/linux/ramips/base-files/etc/board.d/01_leds |  5 +-
- .../linux/ramips/base-files/etc/board.d/02_network |  3 ++
- .../ramips/dts/mt7628an_zhuotk_ztk7628p-16m.dts    | 60 ++++++++++++++++++++++
- .../ramips/dts/mt7628an_zhuotk_ztk7628p-32m.dts    | 60 ++++++++++++++++++++++
- .../ramips/dts/mt7628an_zhuotk_ztk7628p-8m.dts     | 60 ++++++++++++++++++++++
- target/linux/ramips/image/mt76x8.mk                | 30 +++++++++++
- 6 files changed, 217 insertions(+), 1 deletion(-)
- create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-16m.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-32m.dts
- create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-8m.dts
+ package/utils/bzip2/Makefile                  | 15 +++++------
+ .../bzip2/patches/010-CVE-2016-3189.patch     | 11 --------
+ .../utils/bzip2/patches/020-no-utime.patch    | 27 +++++++++++++++++++
+ 3 files changed, 34 insertions(+), 19 deletions(-)
+ delete mode 100644 package/utils/bzip2/patches/010-CVE-2016-3189.patch
+ create mode 100644 package/utils/bzip2/patches/020-no-utime.patch
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
-index d1a56ee..be8f60b 100755
---- a/target/linux/ramips/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/base-files/etc/board.d/01_leds
-@@ -463,7 +463,10 @@ zhuotk,js7628-16m|\
- zhuotk,js7628-32m|\
- zhuotk,js7688-8m|\
- zhuotk,js7688-16m|\
--zhuotk,js7688-32m)
-+zhuotk,js7688-32m|\
-+zhuotk,ztk7628p-8m|\
-+zhuotk,ztk7628p-16m|\
-+zhuotk,ztk7628p-32m)
- 	ucidef_set_led_timer "system" "system" "js76x8:green:system" "1000" "1000"
- 	set_wifi_led "js76x8:green:wifi"
- 	;;
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index bd74b4a..a0a9734 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -109,6 +109,9 @@ ramips_setup_interfaces()
- 	zhuotk,js7688-8m|\
- 	zhuotk,js7688-16m|\
- 	zhuotk,js7688-32m|\
-+	zhuotk,ztk7628p-8m|\
-+	zhuotk,ztk7628p-16m|\
-+	zhuotk,ztk7628p-32m|\
- 	zyxel,keenetic|\
- 	zyxel,keenetic-omni)
- 		ucidef_add_switch "switch0" \
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-16m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-16m.dts
-new file mode 100644
-index 0000000..f84dda9
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-16m.dts
-@@ -0,0 +1,60 @@
-+/dts-v1/;
-+
-+#include "mt7628an_zhuotk_js76x8.dtsi"
-+
-+/ {
-+	compatible = "zhuotk,ztk7628p-16m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
-+	model = "ZhuoTK ZTK7628P (16M flash)";
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
-+
-+	m25p80@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		m25p,chunked-io = <32>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0xfb0000>;
-+			};
-+		};
-+	};
-+
-+	spidev@1 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "linux,spidev";
-+		reg = <1>;
-+		spi-max-frequency = <40000000>;
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-32m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-32m.dts
-new file mode 100644
-index 0000000..00f7865
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-32m.dts
-@@ -0,0 +1,60 @@
-+/dts-v1/;
-+
-+#include "mt7628an_zhuotk_js76x8.dtsi"
-+
-+/ {
-+	compatible = "zhuotk,ztk7628p-32m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
-+	model = "ZhuoTK ZTK7628P (32M flash)";
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
-+
-+	m25p80@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		m25p,chunked-io = <32>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0x1fb0000>;
-+			};
-+		};
-+	};
-+
-+	spidev@1 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "linux,spidev";
-+		reg = <1>;
-+		spi-max-frequency = <40000000>;
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-8m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-8m.dts
-new file mode 100644
-index 0000000..01c7e5d
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_ztk7628p-8m.dts
-@@ -0,0 +1,60 @@
-+/dts-v1/;
-+
-+#include "mt7628an_zhuotk_js76x8.dtsi"
-+
-+/ {
-+	compatible = "zhuotk,ztk7628p-8m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
-+	model = "ZhuoTK ZTK7628P (8M flash)";
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
-+
-+	m25p80@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		m25p,chunked-io = <32>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0x7b0000>;
-+			};
-+		};
-+	};
-+
-+	spidev@1 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "linux,spidev";
-+		reg = <1>;
-+		spi-max-frequency = <40000000>;
-+	};
-+};
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 60d84b3..deb6742 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -613,6 +613,36 @@ define Device/zhuotk_js7688-32m
- endef
- TARGET_DEVICES += zhuotk_js7688-32m
+diff --git a/package/utils/bzip2/Makefile b/package/utils/bzip2/Makefile
+index 9c64d2264a..7ae089f4f4 100644
+--- a/package/utils/bzip2/Makefile
++++ b/package/utils/bzip2/Makefile
+@@ -8,16 +8,15 @@
+ include $(TOPDIR)/rules.mk
  
-+define Device/zhuotk_ztk7628p-8m
-+  MTK_SOC := mt7628an
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := ZhuoTK
-+  DEVICE_MODEL := ZTK7628P
-+  DEVICE_VARIANT := 8M flash
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
-+endef
-+TARGET_DEVICES += zhuotk_ztk7628p-8m
-+
-+define Device/zhuotk_ztk7628p-16m
-+  MTK_SOC := mt7628an
-+  IMAGE_SIZE := 16064k
-+  DEVICE_VENDOR := ZhuoTK
-+  DEVICE_MODEL := ZTK7628P
-+  DEVICE_VARIANT := 16M flash
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
-+endef
-+TARGET_DEVICES += zhuotk_ztk7628p-16m
-+
-+define Device/zhuotk_ztk7628p-32m
-+  MTK_SOC := mt7628an
-+  IMAGE_SIZE := 32448k
-+  DEVICE_VENDOR := ZhuoTK
-+  DEVICE_MODEL := ZTK7628P
-+  DEVICE_VARIANT := 32M flash
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
-+endef
-+TARGET_DEVICES += zhuotk_ztk7628p-32m
-+
- define Device/zyxel_keenetic-extra-ii
-   MTK_SOC := mt7628an
-   IMAGE_SIZE := 14912k
+ PKG_NAME:=bzip2
+-PKG_VERSION:=1.0.6
+-PKG_RELEASE:=5
++PKG_VERSION:=1.0.8
++PKG_RELEASE:=1
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+-PKG_SOURCE_URL:=http://distfiles.gentoo.org/distfiles/ \
+-	http://distcache.freebsd.org/ports-distfiles/
+-PKG_HASH:=a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd
+-PKG_MAINTAINER:=Steven Barth <cyrus@openwrt.org>
++PKG_SOURCE_URL:=https://sourceware.org/pub/bzip2
++PKG_HASH:=ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+ 
+-PKG_LICENSE:=BZIP2
++PKG_MAINTAINER:=Steven Barth <cyrus@openwrt.org>
++PKG_LICENSE:=bzip2-1.0.8
+ PKG_LICENSE_FILES:=LICENSE
+ PKG_CPE_ID:=cpe:/a:bzip:bzip2
+ 
+@@ -26,7 +25,7 @@ include $(INCLUDE_DIR)/package.mk
+ 
+ define Package/bzip2/Default
+   SUBMENU:=Compression
+-  URL:=http://www.bzip.org/
++  URL:=https://sourceware.org/bzip2/
+ endef
+ 
+ define Package/libbz2
+diff --git a/package/utils/bzip2/patches/010-CVE-2016-3189.patch b/package/utils/bzip2/patches/010-CVE-2016-3189.patch
+deleted file mode 100644
+index 064f982c48..0000000000
+--- a/package/utils/bzip2/patches/010-CVE-2016-3189.patch
++++ /dev/null
+@@ -1,11 +0,0 @@
+-diff -up ./bzip2recover.c.old ./bzip2recover.c
+---- ./bzip2recover.c.old	2016-03-22 08:49:38.855620000 +0100
+-+++ ./bzip2recover.c	2016-03-30 10:22:27.341430099 +0200
+-@@ -457,6 +457,7 @@ Int32 main ( Int32 argc, Char** argv )
+-             bsPutUChar ( bsWr, 0x50 ); bsPutUChar ( bsWr, 0x90 );
+-             bsPutUInt32 ( bsWr, blockCRC );
+-             bsClose ( bsWr );
+-+            outFile = NULL;
+-          }
+-          if (wrBlock >= rbCtr) break;
+-          wrBlock++;
+diff --git a/package/utils/bzip2/patches/020-no-utime.patch b/package/utils/bzip2/patches/020-no-utime.patch
+new file mode 100644
+index 0000000000..9eea15554e
+--- /dev/null
++++ b/package/utils/bzip2/patches/020-no-utime.patch
+@@ -0,0 +1,27 @@
++--- a/bzip2.c
+++++ b/bzip2.c
++@@ -69,7 +69,6 @@
++ #if BZ_UNIX
++ #   include <fcntl.h>
++ #   include <sys/types.h>
++-#   include <utime.h>
++ #   include <unistd.h>
++ #   include <sys/stat.h>
++ #   include <sys/times.h>
++@@ -1051,12 +1050,12 @@ void applySavedTimeInfoToOutputFile ( Char *dstName )
++ {
++ #  if BZ_UNIX
++    IntNative      retVal;
++-   struct utimbuf uTimBuf;
+++   struct timespec uTimBuf[2] = {};
++ 
++-   uTimBuf.actime = fileMetaInfo.st_atime;
++-   uTimBuf.modtime = fileMetaInfo.st_mtime;
+++   uTimBuf[0].tv_sec = fileMetaInfo.st_atime;
+++   uTimBuf[1].tv_sec = fileMetaInfo.st_mtime;
++ 
++-   retVal = utime ( dstName, &uTimBuf );
+++   retVal = utimensat ( AT_FDCWD, dstName, uTimBuf , 0 );
++    ERROR_IF_NOT_ZERO ( retVal );
++ #  endif
++ }
 -- 
-2.7.4
-
-
+2.17.1
 
 
 _______________________________________________

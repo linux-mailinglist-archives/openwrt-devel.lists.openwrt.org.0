@@ -2,76 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A446C8609E
-	for <lists+openwrt-devel@lfdr.de>; Thu,  8 Aug 2019 13:12:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34DC2860A9
+	for <lists+openwrt-devel@lfdr.de>; Thu,  8 Aug 2019 13:14:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JXr2rSrFriGD39yG3DFSJA5EFxsjtcB9tikdwgm/RWk=; b=JaXUytC4agESTb9Wzx6zXLIou
-	uWZ5FUle0dqAfJMsXHSVFbDWy6vKcB2VCWM3CLnHJAP3DPIUnrpbJu7p8xetnQtLnraCBSn2/VExb
-	vcRfjn9j58v1gZPIfSmrplO7B1KJmZoZfvHYVsKd7rQQssY9QjZpymnb1tUd5ZQ70tseHqiX2gglZ
-	20lvxEaRTZdMQqyREB+JI72hVk8XZ0899he3gcQbGtY/SHzS0y33Gazz2jFnqf2Tl2yH7sEi/IfUz
-	H+3/m2WHLX9zjsvfnlt7COIEny1OQHhSvkloWOLKgN8q7Iw3ja7kWa9zKmJZxEvkYhvfg9YhByd70
-	+64gX8DIg==;
+	 bh=vecxq+sWcGYID0xa5MChnvOnszZ+bicLmwEZnsjuUa4=; b=uqLz0WBwK+WASuiwpX9C44/os
+	WVt0sbQuGYeJPqwX3OyKBnyr7eg8i25KWHyuGy9+D3m+YhjpEuC+cc+PJZpC7FbLD4RisbDBqKwtU
+	qQtqQ/mGQ09S47YzXYWwvwuMxbXpGxor+dzYxPSsNt+00CsbZsaJNWD6iXl2GKTzlGI++0hKCPWyi
+	F/RjQ5r3D/Pg1sRFFgzZZhnVzZP12+9SdUXirvGchi+c8GIYvyc387O597EBHpkAtkLaIsV/Lg3a9
+	7mkz7Chv5vChKdpehy2GjDsNqt65rk0jKLDeTNaH03Rdfow8FMwR7vncSNZt8kKwywMLDho7ur2XR
+	LDzLP9d/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvgLT-0000Yb-Ii; Thu, 08 Aug 2019 11:12:35 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1hvgNP-0001RJ-Fw; Thu, 08 Aug 2019 11:14:35 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvgLC-0000VG-8K
- for openwrt-devel@lists.openwrt.org; Thu, 08 Aug 2019 11:12:19 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue012
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1Movrq-1ifWp23Q5u-00qW4f; Thu, 08
- Aug 2019 13:12:10 +0200
+ id 1hvgNC-0001Ql-UI
+ for openwrt-devel@lists.openwrt.org; Thu, 08 Aug 2019 11:14:25 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1MBll6-1i1Dkr0VuW-00CECr; Thu, 08
+ Aug 2019 13:14:17 +0200
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Tom Psyborg'" <pozega.tomislav@gmail.com>
-References: <20190806131039.51484-1-freifunk@adrianschmutzler.de>
- <20190806131039.51484-2-freifunk@adrianschmutzler.de>
- <CAKR_QVJo-ooRvEi=ODftEsrr0avW3_5TUcMO9eSud5EpOTtfZA@mail.gmail.com>
- <022201d54d3b$90d19080$b274b180$@adrianschmutzler.de>
- <CAKR_QVJbDBvNhon0UgHLMO+SkG5zu5iFsLcY-iD=aaJcFme2Tg@mail.gmail.com>
- <017001d54d67$676f8630$364e9290$@adrianschmutzler.de>
-In-Reply-To: <017001d54d67$676f8630$364e9290$@adrianschmutzler.de>
-Date: Thu, 8 Aug 2019 13:12:10 +0200
-Message-ID: <00e401d54dda$1fc01930$5f404b90$@adrianschmutzler.de>
+To: "'Alexander Couzens'" <lynxis@fe80.eu>
+References: <20190805134817.1942-1-freifunk@adrianschmutzler.de>
+ <20190805232334.72808226@lazus.yip>
+In-Reply-To: <20190805232334.72808226@lazus.yip>
+Date: Thu, 8 Aug 2019 13:14:15 +0200
+Message-ID: <00e901d54dda$6b092b70$411b8250$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Thread-Index: AQEB+24oOP0+hQ7HGqEJP9eZ0+GFFAFVG5ecAak0eYsCYVWdfQFjdvzRAV3LKzyoVrWpIA==
+Thread-Index: AQHg+oOHKkyoEmu+yvtA4KQzd48NuAGnWCKqpsyErhA=
 Content-Language: de
-X-Provags-ID: V03:K1:k4uKY8pp3TNmN8IHMjdYx/JTOEIcPEEjXruYKO5EdEkC5mRo+Fo
- NA16QG3qpuXVwKGfgM191M95DOenV19XDLnUFZ+YOvYKqkMInUGmjvyjVW7LK2JYzpnFMRZ
- PXTzx8EVJDYl3UeKbLSUO+JaFPwwNZHXq00G73HzGX/1ywcY1IZDdNfHRIMglFyFmJaq/+l
- 9gnaiYtc5Wd8YQkzz6lcw==
+X-Provags-ID: V03:K1:YwGhYFjyw5FybiZ5Ru/Eye9yxUL/Y4940oimI/qzaUGTGfCROWP
+ VIjYEeIk5gSZtr/Iy5DNP5Uo7+lhO2PiIRIdkIjkgs12tmyeyEFL7uUMOcTsuwKJOadS8Bk
+ rWPuJsxAgG+IkamTZTiJeuqjFkTRuMgGbbIs3RK0uvVo9ZiL749eTmSwkeMcDBf4jRD3zmE
+ 6oQkw/0rQKnIi5UjpmEgg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:nw2TI7/g4Cc=:2ynz7BHcaquc8jW3T0D+Vr
- DQeotQOWoiMF8OLFbXY0+gNNgwO81v+KvP/jV+et4zdiGV+j8b8sC0H1jTDCL+nuFlGsWZDl5
- jsJc4AYYgNmeO9C1Kn/4T0Jfs6bNf/NGwn5x93jT4QI3lCILtCDYZwSrF6TI75LAs6yaBpc7B
- qdY8PhJYBmI970JfWufEBPiA0EEV9i8RBTbhjyso0sGkS2Pp+9eB5zNQjUBCtnrTHbMEauNx8
- xMzvuGIlnkZjxaUoqtOFU0jYkHQZ+HnpWEvLfWSDIBx4jMbp2G1IjbgC70J4Bmj7Tbohe5ugu
- QivjUCaU8UYJVd9ZXmFUUs27P6gGKQEnZwatfdzfB4Ug4WNUaK4AvybcC+ljyVByVDW4WwhaA
- na9UGb4t680o4tQg0gp98yJSmmlKE11FdAYWaFlA7TQl2z8LV6xILpvj00Sg2hR75MWFP8Zub
- +wGM8l3Hdj9xlwcogGatrSpinBT5AZeNcCfj2HLQAGAEozTuLmkp7U+AtrUIRsfuAoAac/ynF
- cV23I8c6Q5sOKgpKCoy28euLo77ygSdVD+28YLgoN6E7Uoe+02f11PUDhbQ7Bwc8L6bzyj1Ht
- KyZ8xhoEcryUnV/plQVezWDBBiT/Vzmm0Tw7+Om3EaC+Mb7DL434RkT+W+2RxHufiqZ4lzz9O
- YVAGriP4KBO7Cz5NM4pq4PB/MVeTDsf1+oi29VuteVjHgkYXJqN6TX7zppUtyaSI9gDAEcCUP
- rTuuVrQGkjmD3+mgn7bemUY4EYcFFESVB8Jf0VH27CzifN6gjlV6CIDxnEE=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:wDwHOXQC9zU=:ZHpDoh/1afmUr27X5T7b3c
+ UUZz82Mhu733TMlEH1JYY4E9Y/YIi8pVEU0uk9tDh0mtm0G4w2NVdDTqT/EVhNcn+Dyg6ZRmT
+ sa0EizomhmlWAyzjNm+TObhMdgY5XTu1yjY0hNcyro+4VYj20DV3BG258CcH44aIUa0Tp8tAZ
+ vn8TV1yBvLHuz7HOJ12PsK4m3cwt+exSxiMV4C3MFq8gTx93fTaje1sg/QDj9D+atVJ891frD
+ VMFh2nH2j8rRrwY1GQN1kplJ/U8qurtVNneYdVgnQ1AR/4+Ues4oiBf5U+sS30oJw5erwqSqa
+ O2mpWvhCByGsiqnMuBDMgYkjhsj6BJmseM8FNGhg7Jzc3hhOCch0FD4zpdrnNxWPlXjY/rqeo
+ 8ysFIiY3uBPYxfeP83QddJGEeA6OORCBn9orhfi9oAv65MCw4XGLedRTiz6saZ5nTzsmbiS3t
+ +SCp7FThRVtGPSUCdBSuvaHtyymrjt1btOWKy/qM1lVUrZfJ15MYeFIW8YPdx22RU0fPYSOe6
+ kbI4gZoArYDKP5oUoUQ5btznymyzaQjd9KzClGEaw/nBQHAiD8M1FZi/33hvgCWphNFmvydJo
+ wuejo5HXLHO8aubRyRkhKCUj/1fVBxfeuqs4308c2WmQPwZoh60kebAbKvpzMf1HjhdewMVfc
+ oL0FV9Ob6OCPxoG/0nS+vQ89/m3T6RjXsCg2YQOU8ARMYqlGyqqY3BwONJYcCems495P44eml
+ As2RE61RGOw+uEp8swzwSnnYeygPJ2TtUJOyG/lGgt7rZMmT9Q/ZNlMvErE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_041218_592805_779B32A7 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20190808_041423_268514_33072B98 
+X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: fix IMAGE_SIZE for common
- TP-Link definitions
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] treewide: convert MAC address
+ location offsets to hexadecimal
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,88 +83,70 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============8415363005005394794=="
+Content-Type: multipart/mixed; boundary="===============2217868267642836140=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============8415363005005394794==
+--===============2217868267642836140==
 Content-Language: de
 Content-Type: multipart/signed;
 	micalg=pgp-sha256;
 	protocol="application/pgp-signature";
-	boundary="=-=lIhAUx7qlRoBMW=-="
+	boundary="=-=+igWS0/5m/Jext=-="
 
 This is a multipart message in MIME format.
 
---=-=lIhAUx7qlRoBMW=-=
+--=-=+igWS0/5m/Jext=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-> > Correct me if I'm wrong but I thought all the data beyond IMAGE_SIZE=20
-> > remain intact by OpenWrt on firstboot. Experimenting with Archer C7 v1=
-=20
-> > recently I was able to flash OpenWrt image (ar71xx) and after reflashin=
-g=20
-> > tplink fw previous settings were still valid indicating config partitio=
-n hasn't=20
-> > been overwritten.=20
-> > At least TL-MR22U has config partition of 64KB and Archer C7 has 128KB=
-=20
-> > - I've gone through GPL sources of Archer and it seems between two=20
-> > firmware versions this partition was increased from 64 to 128KB, actual=
-ly I=20
-> > discovered this by hexdiff-ing u-boot versions from each firmware versi=
-on=20
-> Nevertheless, addressing this with IMAGE_SIZE would still be just a hack.=
-=20
-> If there is config data to be preserved, one should add a partition for i=
-t. Then IMAGE_SIZE would just shrink according to the (then correct) firmwa=
-re partition. Now that we have DTS files with individual partition > scheme=
-s, this would be even easier than for ar71xx.
-> Best=20
-> Adrian=20
+> From: Alexander Couzens [mailto:lynxis@fe80.eu]=20
+> Sent: Montag, 5. August 2019 23:24
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> Cc: openwrt-devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH 1/2] treewide: convert MAC address lo=
+cation offsets to hexadecimal
+>
+> On Mon,=C2=A0 5 Aug 2019 15:48:16 +0200=20
+> Adrian Schmutzler <freifunk@adrianschmutzler.de> wrote:=20
+> > This changes the offsets for the MAC address location in=20
+> > mtd_get_mac_binary* and mtd_get_mac_text to hexadecimal notation.=20
+> Acked-by: Alexander Couzens <lynxis@fe80.eu>=20
 
-To put this in a more positive frame:
+Would be nice if someone merged this patchset while it still might apply to=
+ master =E2=80=A6
 
-If you think that there is a config partition on C7v1 or other devices and =
-you know where it is, please send a patch adding it as read-only partition =
-in DTS.
-
-Best
-
-Adrian
-
---=-=lIhAUx7qlRoBMW=-=
+--=-=+igWS0/5m/Jext=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1MA4YACgkQoNyKO7qx
-AnA+zQ/8CtKlfyDNm0yQJcv8ZfV+JcE/Jf25fojS8FXOM+1djeROGX2VjgLioey3
-wHC0gNmfkIhddP0kyAe8RNiuKA6q9sxFxOkSFTOFSr/TZ3FXJVYiRDy6CRsrzv3e
-V40ncQSRCKO1Xb5s5MglYthpnrf7+2oNMLuXrw7xOLnqpZs7ifMM3JW6SBtjKc0W
-O1Tl/0e5D1Rp+BmM4whbjhaDZcpVPaWkWQ/wzTHJK3Gzp6Kt9MiA3CnN73CDVKnn
-DqiHs4tUSMKsrQnL4MkFoCR803tzHR62sQzggy03qKAJ3T629DY3Dgz8P1H2SwaZ
-OinSL3jODOuapPDirJlE7sVwrkIPu3ZcuC9WiIq/McKkN8qu6l2yQkkzIa9mQ+J0
-cyP2akxZNryIUPimx5YE30jtyLGIpIHHuEsfuO3rA3BU4vEHg8z8ttKEBcbKdlB5
-qA5+6WMjVvqBZpDIbcNwfI3cSaxo3XnkKWDZziz0QwazJAlPTfz2CSk+FV0A3o6x
-j+jp7ac1pKC+NhwB11nWd8/CLGE4YVQDqRoIqxutgAW7VavQQflNoABfuvPwRvIU
-dinJqmDmYNDoFJF0fGjNeUXLQU1M/qN2YRA9S+cyFpNUrmamylMcDIyy77QW4s2C
-mJp7/fssHM6T1DthaunGELurTtKCcdntYtNbd9xbsTbv6ar2Mi8=
-=2Q2f
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1MBAcACgkQoNyKO7qx
+AnAnOw/7BMhtNom/cz19IQasGx1djzUrMSeVKS9puCciLZORm4UEnJgkWcEQiDmg
+aglEDJjn0sk63ku1/H0D+U/6HynOmynsahzwQml5TQ9rii5n6JFCRw/mLYBMUwk3
+IPRPCqoGgVs4tsOsR6rH/fKgc7M/HjhQuKerItMrclGD57MJ+2449sH/CcHqimN5
+jh0L5r8yMzrCz2DSUGh0vE11/UtkfWMGzoHh6pOf10nzTYpXD6c/vaAFzdAv94Hm
+boAhzXe4T30iyPphYmDRoEL3+1D6zKxPSY4TVCnpTBpymPfgU26B+aopVLOsfZLG
+S0lIPCdrROgZkR2n3qlccG7dyvCifsogHnI2akd9vechY6iG49GgO/E1t4hmjZFS
+SxLOtIAKgYIRGMrYS+0MYtK7+JuwT1iasOnS+yooSn6XCIIjlxlNfj9q82TPtjaD
+/kS0J9OZ/gx6RWCI2AeACHUpTGkRxbCsvUPhQnC1dW9+MUMIlj4PcgUQUTGY79TA
+m95bnlL+MaMD+XdpnSR/bY4T6GCaGHJHtloTlZLmi/FP9H0aAx8/AZi7VvtmoftO
+75UkirNQPqGuUZ9xQZjPYa+T8g9Va0zUaDCSNCRTjGsmt3mKzXwIMyOSU40kjEOm
+Etth4VDpYDomZyYm6ob62NWO9IB9MENAk//cy0rxWAxdGgd8FJU=
+=PYmi
 -----END PGP SIGNATURE-----
 
 
---=-=lIhAUx7qlRoBMW=-=--
+--=-=+igWS0/5m/Jext=-=--
 
 
 
---===============8415363005005394794==
+--===============2217868267642836140==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -176,6 +157,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8415363005005394794==--
+--===============2217868267642836140==--
 
 

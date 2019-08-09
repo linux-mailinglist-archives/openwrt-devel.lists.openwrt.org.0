@@ -2,120 +2,104 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE29F87C11
-	for <lists+openwrt-devel@lfdr.de>; Fri,  9 Aug 2019 15:50:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 310AE87C68
+	for <lists+openwrt-devel@lfdr.de>; Fri,  9 Aug 2019 16:14:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	References:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=o8be67VmFlFgoNKhaPoiTy8e4StG2SpPAvRbpE4xeW4=; b=BcIydwouDYvvjkqSw2SzxCkaN
-	hHBXzSK7iwa58mjuM0yXRntv/pMllodhfQiH0t57yJSMoJTy92indIvRJXn8EoIrPB73puGecKu99
-	sffZu2erAa2foVUiGBfFsIv2CYvJfxpTGcr6KjEiNWSXW7pLB5PSsjG3H4Sx19XYzFKex8mDqeMSK
-	hRh6i4Yqa8DpZAiRvzmrVSqWtFGePGVXvvN13j42atPgKRUHzz1ORMl8wZYHlIcmovKt3rmHMJk7P
-	u5luE7LsSLcleKXaZXXFb4BIHkjNj6yhGU/F7pM25zNA/OIXjaNUPCEbewQpwwI5JKcs9hjjFhhQj
-	AtnBthArQ==;
+	 bh=S9F7TZiPESaJ3MROaiR8dgo6VJNqkmHmYO+eLenWyEs=; b=uRPmdFAo9IcXJ1CMbsPm5O7WK
+	LuS1LohdPmcmFlIvcVawhsbExl70ssvDARcIuvX7BQcG+TgwlQkVWPhI2zPpsfrqxtVoDyBoRUzfC
+	2bC1nT9S8Bl4MG/RX0zC4qvGIAVSkyp/2BVXS9pyUSvxsEO6G6siDQ1rhtDPXm7X6NmT7gIhRdWu1
+	B6IzlPGAxo4WASY+SEUIudm1NCl8HriBTDe7ieXREePmneLTOcWAfUuXUucE+0c3M1pP5aZbJngsO
+	1IuS6oNE34lM1tTnmEyjBT+eUOkqrsyetUF1t3HoEknNsv0s4vjBsE/AmpEYKHVjWApCrV/GuWkNG
+	CDcLddrdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw5HX-0000rH-5Z; Fri, 09 Aug 2019 13:50:11 +0000
-Received: from mail.nic.cz ([2001:1488:800:400::400])
+	id 1hw5er-0001bT-Et; Fri, 09 Aug 2019 14:14:17 +0000
+Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw5HI-0000q9-TU
- for openwrt-devel@lists.openwrt.org; Fri, 09 Aug 2019 13:49:59 +0000
-Received: from [192.168.100.149] (unknown [172.20.6.13])
- by mail.nic.cz (Postfix) with ESMTPSA id E9443140C52;
- Fri,  9 Aug 2019 15:49:51 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=nic.cz; s=default;
- t=1565358592; bh=7pnIB/l2S8LJ+HonPeVnlOFkozs6wxG23xe9JocmOOk=;
- h=To:From:Date;
- b=k4wa3RZlMGt/Sc8xAMyMMO3iwZ9GoCVnYOA0g0020z53Qebzn887uYbdtUBbASwX/
- 2Cd7F4RDvFM4NSSAjlEPlV5/lcc5f4326i1YZ1BgV/J+G3seQxsQuFBQKkLZVh/ZG1
- lCa6+ZxSU3qfqpGM9wHAr0cciFDMS6VkjhBLAUGM=
-To: Jo-Philipp Wich <jo@mein.io>, openwrt-devel@lists.openwrt.org
-References: <20190316175254.GA7505@imp.flyn.org>
- <96baf362-b7e7-0b9e-b984-baf15a60542c@wwsnet.net>
- <ee7f6b01-3d2a-4798-f169-9923550ecc84@nic.cz>
- <65835557-3efc-d598-c85a-e23cd62b0bd7@wwsnet.net>
-From: Jan Pavlinec <jan.pavlinec@nic.cz>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jan.pavlinec@nic.cz; keydata=
- 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
- rj0rIUg4FQ==
-Message-ID: <7ce72273-acd6-accc-021d-bd6c8c8ee6ba@nic.cz>
-Date: Fri, 9 Aug 2019 15:49:51 +0200
+ id 1hw5ej-0001b7-Pn
+ for openwrt-devel@lists.openwrt.org; Fri, 09 Aug 2019 14:14:11 +0000
+Received: by mail-ed1-x52b.google.com with SMTP id h8so6975937edv.7
+ for <openwrt-devel@lists.openwrt.org>; Fri, 09 Aug 2019 07:14:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ncentric-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:from:to:references:message-id:date:user-agent:mime-version
+ :in-reply-to:content-transfer-encoding:content-language;
+ bh=hctECnlgAlIrfzZlBw/+J+AzdENF0jIuNbMs82/IHlw=;
+ b=MzK+2RawiiqgPk2OuK6hffhct2o/gjCp37F3wj9pTOIbVfE+uOTl0yVj7PcGvDGTBC
+ JDAFuE944S0wO8vqRfSP/GfsiEtmmpXrTfJGvJ2pP5QM7shQ1BrszoXW4CT7WjAldloS
+ jXy3o9PQysZVMQsQiTOHWmSc1ns9OtUA2T7vtaBrpenagS4TB8pbo7EzJFkqHCqa3sxL
+ XQ7E8WXRoYeLE9c3k+kb+l8ewkJT8hnr7ED8gwrLEJrFfUeWs/T56vj4wk+6x/NZa2z1
+ iEQGTJBADchYZDGa67aIvFpujZwnfQwaUNjVU2CDr9NVU8HXLzC6vFDXnksjq4ysuPr/
+ K3hw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=hctECnlgAlIrfzZlBw/+J+AzdENF0jIuNbMs82/IHlw=;
+ b=t+9q+LXc1Y8fnuierfTC3Z4Bb/adgNKqyjKtiFfFjuTzZ1gLv5CSMHxeqlnyGufd+J
+ psbAZQiF5/fMIJp3OZ9RaugGVh+KWHD2inbHFh8RXtKdVccpABWdURk3+msf3PmGIHkB
+ oNdiH7i0V6C1n+IkbL9z4TcTdx8CQ2GPT7fc4Jn9piOvh0ARPBKTUuHJMvEEIBtqgAbj
+ 7YbrkXYXc2zpCp0lVGuNmGRBg6HQ02PjAh545ldIUxY0tZvSK1xUUyXbmoOJsBNpAVhP
+ 54cktO/1vAOhjvwhBumyG6dgT/C8qlPFcTn7FAe0C4WuCGtAZp0ml24XXADoYBvoRe2d
+ iSjw==
+X-Gm-Message-State: APjAAAW99tOq1LHxHTiKjvW0vKQ+dt0mm1avpGorg/GmgyOxqm3qQYpY
+ Wkk163ubsOvHPHUEO6aD7yqqzTiEAis=
+X-Google-Smtp-Source: APXvYqyBeHtaz2NZVeyNG3+g1PTGiE6sgVzHa+F3w4C1dKQhBWPWcImNenv/RiMGET1JhPUVTHOgWQ==
+X-Received: by 2002:a17:906:7681:: with SMTP id
+ o1mr17764707ejm.207.1565360048105; 
+ Fri, 09 Aug 2019 07:14:08 -0700 (PDT)
+Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
+ by smtp.gmail.com with ESMTPSA id o11sm16112777ejd.68.2019.08.09.07.14.06
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 09 Aug 2019 07:14:07 -0700 (PDT)
+From: Koen Vandeputte <koen.vandeputte@ncentric.com>
+To: Ben Greear <greearb@candelatech.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+References: <abe6feb7-80a9-4587-db0b-7f3a37a792d8@ncentric.com>
+ <7a68db11-1026-e576-2c26-425ea85ef609@candelatech.com>
+ <93bc6089-e313-f51f-06e9-4c0b8f36f7e7@ncentric.com>
+ <3d95432a-db21-d4ef-24c4-fc3659fee0a1@candelatech.com>
+ <4248b808-d8a5-1972-f423-ba34e222abc2@ncentric.com>
+ <a5605840-8a4b-21a5-1e48-86971bec6108@candelatech.com>
+ <06abfe46-1815-fc36-db01-2cf24bdb734e@ncentric.com>
+ <4ca7aa93-1960-1373-7590-1d39c41d8768@candelatech.com>
+ <efe239e4-a6dc-1328-d66e-29047290fca1@ncentric.com>
+ <f51ea660-d382-7d31-3ecb-f4beddfb997f@candelatech.com>
+ <834cede9-27ca-9987-d86e-54335518857b@ncentric.com>
+ <44148c8c-2077-1558-83f1-dd59bc483d3f@ncentric.com>
+ <9c9445b3-be50-9f2b-5344-9d34ab6bcad4@ncentric.com>
+ <5f7fb09e-0113-1cc5-f137-e1ae04ea31d2@candelatech.com>
+ <aaf2075a-43bc-d85a-3184-adec7af4226d@ncentric.com>
+Message-ID: <4e49082d-91f6-ce30-cba5-cbb80edebccb@ncentric.com>
+Date: Fri, 9 Aug 2019 16:14:06 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <65835557-3efc-d598-c85a-e23cd62b0bd7@wwsnet.net>
+In-Reply-To: <aaf2075a-43bc-d85a-3184-adec7af4226d@ncentric.com>
 Content-Language: en-US
-X-Virus-Scanned: clamav-milter 0.100.3 at mail.nic.cz
-X-Virus-Status: Clean
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
- shortcircuit=ham autolearn=disabled version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.nic.cz
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_064957_393795_091F58E4 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190809_071409_841751_C19FE134 
+X-CRM114-Status: GOOD (  17.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [2001:1488:800:400:0:0:0:400 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:52b listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] Meson/Ninja build system
+Subject: Re: [OpenWrt-Devel] ath10k-ct 4.19 and IBSS
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,133 +111,65 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5766099130649919586=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============5766099130649919586==
-Content-Type: multipart/alternative;
- boundary="------------4A5603BFF4CE5994AA099974"
-Content-Language: en-US
-
-This is a multi-part message in MIME format.
---------------4A5603BFF4CE5994AA099974
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 7bit
-
-Hi,
-
-just for the record, I just created PR with Ninja and Meson
-tools/packages and will be glad for comments
-https://github.com/openwrt/openwrt/pull/2312
-
-Jan Pavlinec
-
-
-Dne 18. 03. 19 v 13:41 Jo-Philipp Wich napsal(a):
-> Hi Jan,
->
->> I'm trying to add ninja and meson to packages feed. The reason for that
->> is described here https://github.com/openwrt/openwrt/pull/1871 and
->> https://github.com/openwrt/packages/issues/8315 .
-> great to hear that! I think eventually there should be a
-> "tools/meson/Makefile" along with an "include/meson.mk" similar to how
-> Cmake is handled in Buildroot.
->
-> I don't think it is necessary to actually add a Python 3 host build as
-> well since the Buildroot already build-depends on a system Python, but
-> only on 2.x while Meson requires 3.
->
->> If you want to look at that, my test repo is here
->> https://github.com/ja-pa/meson-turris but it's not ready for primetime
->> yet...
-> Allright. Will check it out, thanks!
->
-> ~ Jo
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---------------4A5603BFF4CE5994AA099974
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 7bit
-
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <p>Hi,</p>
-    <p>just for the record, I just created PR with Ninja and Meson
-      tools/packages and will be glad for comments
-      <a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/pull/2312">https://github.com/openwrt/openwrt/pull/2312</a></p>
-    <p>Jan Pavlinec</p>
-    <p><br>
-    </p>
-    <div class="moz-cite-prefix">Dne 18. 03. 19 v 13:41 Jo-Philipp Wich
-      napsal(a):<br>
-    </div>
-    <blockquote type="cite"
-      cite="mid:65835557-3efc-d598-c85a-e23cd62b0bd7@wwsnet.net">
-      <pre class="moz-quote-pre" wrap="">Hi Jan,
-
-</pre>
-      <blockquote type="cite">
-        <pre class="moz-quote-pre" wrap="">I'm trying to add ninja and meson to packages feed. The reason for that
-is described here <a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/pull/1871">https://github.com/openwrt/openwrt/pull/1871</a> and
-<a class="moz-txt-link-freetext" href="https://github.com/openwrt/packages/issues/8315">https://github.com/openwrt/packages/issues/8315</a> .
-</pre>
-      </blockquote>
-      <pre class="moz-quote-pre" wrap="">
-great to hear that! I think eventually there should be a
-"tools/meson/Makefile" along with an "include/meson.mk" similar to how
-Cmake is handled in Buildroot.
-
-I don't think it is necessary to actually add a Python 3 host build as
-well since the Buildroot already build-depends on a system Python, but
-only on 2.x while Meson requires 3.
-
-</pre>
-      <blockquote type="cite">
-        <pre class="moz-quote-pre" wrap="">If you want to look at that, my test repo is here
-<a class="moz-txt-link-freetext" href="https://github.com/ja-pa/meson-turris">https://github.com/ja-pa/meson-turris</a> but it's not ready for primetime
-yet...
-</pre>
-      </blockquote>
-      <pre class="moz-quote-pre" wrap="">
-Allright. Will check it out, thanks!
-
-~ Jo
-
-</pre>
-      <br>
-      <fieldset class="mimeAttachmentHeader"></fieldset>
-      <pre class="moz-quote-pre" wrap="">_______________________________________________
-openwrt-devel mailing list
-<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
-<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
-</pre>
-    </blockquote>
-  </body>
-</html>
-
---------------4A5603BFF4CE5994AA099974--
-
-
---===============5766099130649919586==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5766099130649919586==--
-
+Ck9uIDA5LjA4LjE5IDE1OjMxLCBLb2VuIFZhbmRlcHV0dGUgd3JvdGU6Cj4KPiBPbiAwOS4wOC4x
+OSAxNDo0OCwgQmVuIEdyZWVhciB3cm90ZToKPj4gT24gOC82LzE5IDI6MjYgQU0sIEtvZW4gVmFu
+ZGVwdXR0ZSB3cm90ZToKPj4KPj4+Pj4gSGkgQmVuLAo+Pj4+Pgo+Pj4+PiBJIGZpbmFsbHkgbWFu
+YWdlZCB0byBnZXQgdG8gc29tZSB0aW1lIHRvIHByb3Blcmx5IHRha2UgYSBsb29rIAo+Pj4+PiB1
+c2luZyBhIHNpbXBsZSBzZXR1cC4KPj4+Pj4KPj4+Pj4gQXR0YWNoZWQgYWxsIHJlcXVpcmVkIGZp
+bGVzIHRvIHNpbXVsYXRlIHRoZSBpc3N1ZS4KPj4+Pj4KPj4+Pj4gSSBjb21waWxlZCB0aGUgbGF0
+ZXN0IE9wZW5XcnQgbWFzdGVyIHN0YXRlLCAoaW5jbHVkZWQgYSBmdWxsIAo+Pj4+PiB3cGFfc3Vw
+cGxpY2FudCBhbmQgaXBlcmYgdG9vbHMpIGFuZCByYW4gdGhlIDIgc3RhcnRzLgo+Pj4+Pgo+Pj4+
+PiBBdHRhY2hlZCBhbHNvIGxvZ3MgYXMgc2VlbiBmcm9tIGJvdGggYm9hcmRzIHNpbXVsdGFuZW91
+c2x5Lgo+Pj4+Pgo+Pj4+Pgo+Pj4+PiBiYXNpY2FsbHk6Cj4+Pj4+Cj4+Pj4+IC0gSWYgdGhlIGJv
+YXJkcyBmaW5hbGx5IGRvIGxpbmsgYWZ0ZXIgbG90cyBvZiB0cmllcywgaXQgd2lsbCBoYXZlIAo+
+Pj4+PiBhID4yMDBtcyBsYXRlbmN5IGFuZCBtYXggc3BlZWQgb2YgYWJvdXQgM01iaXQuCj4+Pj4+
+Cj4+Pj4+IC0gVGhlIHdwYV9zdXAgY29uZmlnIGZpbGUgaXMgdGhlIG1vc3QgYmFzaWMgUlNOIGVu
+YWJsZWQgY29uZmlnLgo+Pj4+Pgo+Pj4+PiAtIEkgYWxzbyB0cmllZCB0aGUgY3VycmVudCBNYXN0
+ZXIgc3RhdGUgd2l0aC93aXRob3V0IGFsbCBjdXN0b20gCj4+Pj4+IHBhdGhlcywgYnV0IHRoZSBy
+ZXN1bHQgaXMgdGhlIHNhbWUuCj4+Pj4+Cj4+Pj4+IC0gd3BhX3N1cHAgYWxzbyBuYWdzIGFib3V0
+IHNvbWUgbWlzc2luZyBJRSdzCj4+Pj4+Cj4+Pj4+Cj4+Pj4+IEh3IHVzZWQ6Cj4+Pj4+Cj4+Pj4+
+IC0gMnggUkItOTIyVUFHUyBjb250YWluaW5nIGEgb24tYm9hcmQgYXI5ODh4LCBjYXBhYmxlIG9m
+IDMwZEJtLgo+Pj4+Pgo+Pj4+PiAtIDJ4IHN0YW5kYXJkIDVHSHogb21uaSBhbnRlbm5hZQo+Pj4+
+Pgo+Pj4+PiAtIGJvYXJkIHNlcGVyYXRpb24gZGlzdGFuY2UgY2EgNmZ0Cj4+Cj4+IENhbiB5b3Ug
+cmVwcm9kdWNlIHdpdGhvdXQgZW5jcnlwdGlvbiBlbmFibGVkP8KgIFRoYXQgbWFrZXMgaXQgZWFz
+aWVyIAo+PiB0byBkZWJ1Zwo+PiBwYWNrZXQgc25pZmZzLgo+Pgo+PiBJZiB5b3UganVzdCBydW4g
+cGluZyB0cmFmZmljIChvciB2ZXJ5IHNsb3cgc3BlZWQgdGNwL3VkcCksIGRvIHlvdSAKPj4gc3Rp
+bGwgc2VlIHRoZSBpc3N1ZXMgKGxpa2UgaGlnaAo+PiBsYXRlbmN5LCBwYWNrZXQgbG9zcywgcG9v
+ciBvbi1haXIgZW5jb2RpbmcgcmF0ZXMsIGV0Yyk/Cj4+Cj4gY3VycmVudGx5IHJlYnVpbGRpbmcg
+dGhlIHNldHVwLiB3aWxsIGdldCBiYWNrIG9uIHRoaXMgYXNhcC4KPj4gSWYgSSBidWlsZCB5b3Ug
+YSBkZWJ1Z2dpbmcgZmlybXdhcmUsIGFyZSB5b3UgYWJsZSBhbmQgd2lsbGluZyB0byAKPj4gcmVw
+cm9kdWNlIHRoZSBwcm9ibGVtIGFuZAo+PiBzZW5kIG1lIGRtZXNnIG91dHB1dCBhcyB3ZWxsIGFz
+IG9uLWFpciBwYWNrZXQgc25pZmY/Cj4gVmVyeSBzdXJlIQo+Pgo+PiBQcmVmZXJhYmx5LCB3aXRo
+IGdlbmVyYXRlZCB0cmFmZmljIHdpdGggdW5pcXVlIHBhY2tldCBzaXplcyAoaWUsIGV2ZXIgCj4+
+IGluY3JlYXNpbmcsIHJhbmRvbSwgb3Igc29tZXRoaW5nIGxpa2UKPj4gdGhhdCwgc28gSSBjYW4g
+bW9yZSBlYXNpbHkgbWF0Y2ggdXAgb24tYWlyIGZyYW1lcyB3aXRoIHRoZSBkZWJ1Z2dpbmcgCj4+
+IG91dHB1dC4KPj4KPj4KPj4gSSBiZWxpZXZlIHRoYXQgdGhlIGJlYWNvbiBpc3N1ZXMgYXJlIHBy
+b2JhYmx5IGEgc3ltcHRvbSBvZiBzb21lIG90aGVyIAo+PiBmYWlsdXJlIGluIHRoZSB0cmFuc21p
+dCBhbmQvb3IKPj4gcmVjZWl2ZSBwYXRoLgo+Pgo+PiBUaGFua3MsCj4+IEJlbgo+Pgo+IExldHMg
+Z2V0IHRoaXMgZml4ZWQhIDotKQo+Cj4gS29lbgo+CgpKdXN0IHRlc3RlZCB3aXRoIGVuY3J5cHRp
+b24gZGlzYWJsZWQ6CgpzdW1tYXJ5OgoKLSBzcGVlZCBpcyBsb29raW5nIGdvb2QuICh+MTMwTWJp
+dC9zKSBhbHNvIGxpbmsgc3BlZWQgaXMgODY2TWJpdCAoMngyIHJhZGlvKQoKLSBpdyB3bGFuMCBj
+b25maXJtcyA4ME1IeiBjaGFubmVsCgotIE9ubHkgYSBzaW5nbGUgc3BsYXQgc2Vlbiwgbm8gYmVh
+Y29uIGVycm9ycwoKLSBub24taHR0IGZpcm13YXJlCgoKZG1lc2c6wqAgaHR0cHM6Ly9wYXN0ZWJp
+bi5jb20vWUxiSkNESmMKCgpjb25maWdzOgoKbmV0d29yaz17CiDCoMKgwqDCoMKgwqDCoCBzc2lk
+PSJpYnNza29lbiIKIMKgwqDCoMKgwqDCoMKgIGtleV9tZ210PU5PTkUKIMKgwqDCoMKgwqDCoMKg
+IG1vZGU9MQogwqDCoMKgwqDCoMKgwqAgZnJlcXVlbmN5PTU3NDUKfQoKaXdpbmZvOgoKd2xhbjDC
+oMKgwqDCoCBFU1NJRDogImlic3Nrb2VuIgogwqDCoMKgwqDCoMKgwqDCoMKgIEFjY2VzcyBQb2lu
+dDogQjg6Njk6RjQ6Q0Y6QzY6MDUKIMKgwqDCoMKgwqDCoMKgwqDCoCBNb2RlOiBBZC1Ib2PCoCBD
+aGFubmVsOiAxNDkgKDUuNzQ1IEdIeikKIMKgwqDCoMKgwqDCoMKgwqDCoCBUeC1Qb3dlcjogMzAg
+ZEJtwqAgTGluayBRdWFsaXR5OiA3MC83MAogwqDCoMKgwqDCoMKgwqDCoMKgIFNpZ25hbDogLTUg
+ZEJtwqAgTm9pc2U6IC0xMDIgZEJtCiDCoMKgwqDCoMKgwqDCoMKgwqAgQml0IFJhdGU6IDg2Ni43
+IE1CaXQvcwogwqDCoMKgwqDCoMKgwqDCoMKgIEVuY3J5cHRpb246IHVua25vd24KIMKgwqDCoMKg
+wqDCoMKgwqDCoCBUeXBlOiBubDgwMjExwqAgSFcgTW9kZShzKTogODAyLjExbmFjCiDCoMKgwqDC
+oMKgwqDCoMKgwqAgSGFyZHdhcmU6IDE2OEM6MDAzQyAxOUI2OkQwNDIgW0dlbmVyaWMgTUFDODAy
+MTFdCiDCoMKgwqDCoMKgwqDCoMKgwqAgVFggcG93ZXIgb2Zmc2V0OiB1bmtub3duCiDCoMKgwqDC
+oMKgwqDCoMKgwqAgRnJlcXVlbmN5IG9mZnNldDogdW5rbm93bgogwqDCoMKgwqDCoMKgwqDCoMKg
+IFN1cHBvcnRzIFZBUHM6IHllc8KgIFBIWSBuYW1lOiBwaHkwCgoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
+Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

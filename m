@@ -2,103 +2,120 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D61EF87B2A
-	for <lists+openwrt-devel@lfdr.de>; Fri,  9 Aug 2019 15:31:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE29F87C11
+	for <lists+openwrt-devel@lfdr.de>; Fri,  9 Aug 2019 15:50:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QVliRN01mz9mFiJOtiacSq4uGZHl5xuL4rHNOKhPJAI=; b=rgTIOkLLE8BTG2RtGGsWa1fAe
-	6+eakBw0H5k/NoVzMgp/UhxSvU3DUg8FKEg43yrcXwrLcJVWDXh0CCoJCY5SOBaC02z8N6Mqbnltb
-	TgWuBhGcD+Pa74ZJch2L60sj4Ci1BohariItIfeAGj2hlMCwLAUSO2CrFE1IY+TnWH+crVzOMr8sR
-	yPlvspvOtDogl3rO8LlGKjd+3lSjWkHBzD6FPwKwhfrfr58u4MvNL356X0tqJkcuORw+NF8HZPmA1
-	4ku6rpmL1eEjpuVBXfGvjjTJNDtLMMQ7qPwx/aQSPnfEk7wFbzoZBy9viZAPowg0CK/oXAF/kSSt9
-	aZHoyCHIA==;
+	 bh=o8be67VmFlFgoNKhaPoiTy8e4StG2SpPAvRbpE4xeW4=; b=BcIydwouDYvvjkqSw2SzxCkaN
+	hHBXzSK7iwa58mjuM0yXRntv/pMllodhfQiH0t57yJSMoJTy92indIvRJXn8EoIrPB73puGecKu99
+	sffZu2erAa2foVUiGBfFsIv2CYvJfxpTGcr6KjEiNWSXW7pLB5PSsjG3H4Sx19XYzFKex8mDqeMSK
+	hRh6i4Yqa8DpZAiRvzmrVSqWtFGePGVXvvN13j42atPgKRUHzz1ORMl8wZYHlIcmovKt3rmHMJk7P
+	u5luE7LsSLcleKXaZXXFb4BIHkjNj6yhGU/F7pM25zNA/OIXjaNUPCEbewQpwwI5JKcs9hjjFhhQj
+	AtnBthArQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hw4zc-0005Ul-4d; Fri, 09 Aug 2019 13:31:40 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1hw5HX-0000rH-5Z; Fri, 09 Aug 2019 13:50:11 +0000
+Received: from mail.nic.cz ([2001:1488:800:400::400])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hw4zT-0005UJ-OV
- for openwrt-devel@lists.openwrt.org; Fri, 09 Aug 2019 13:31:33 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id w5so6390250edl.8
- for <openwrt-devel@lists.openwrt.org>; Fri, 09 Aug 2019 06:31:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ncentric-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=10NdH9hOiVO3cGdpxbJph3iRQXQ+YxU0lUpxB1bqej4=;
- b=pipUA/DnDESH8RpI0lIwxUKQ2hOGOu8As1bltTRU+5yCRDJX1ab4hD4/TuL+iIkY93
- fu7d6bzlm2nwqXs75qFk/KMZWuIlO2gR3wslx5w8xp3XKhsT4JMa0Np93Ib/bDGSruI/
- 2VpISoEwD8D8ZL80144ntCcjXgUiS3LPqxD25BXQ3DaFv4fIk2m6UYSk2R1omHp+8J0h
- rF/kK5lAerMY0G/F4yAV27SsYMfGNckzcllbSwnD9pM36C0BEcAa2E4jpSdbMhrSTojQ
- XI+D51m5No56Znk0UjeFDPyc5RVAo7rBAduZJFkT5oiSZf21fX8id5v5gDMwR71B7/iK
- opcQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=10NdH9hOiVO3cGdpxbJph3iRQXQ+YxU0lUpxB1bqej4=;
- b=cj7MhfmSqHLAHXtzYy4nOFFr5b3tWIokDZ9V32GKfl+lxP38PAAm91AG06MQK7jEi+
- koxZ1pvYRpmEsTAG/AeK+bAOoyGJXhAFCBmX8rz6iGr1UdvwKR0SrncN2onzUHPnzrdN
- coRfQOoJahe3Evs/gmPFRJa4r7GY0bdbon7dCfN5HrErTHXEObfno4QOrPLxwmMqgIkJ
- LIkgms5sn0kbN4tLSxpAt8rB5gF6RYYge3OTerezET39x0YCakeMHjC/odjJ/QTQ+CQG
- sGfjX779+V57stLF7aingpZG1u5/0ioN8JYmTOcwEiOR/O/n5DF6f2ZBQOVu/FhhFKsx
- REjA==
-X-Gm-Message-State: APjAAAXd1pJbFBjMWXs5CXelyo+2m2/8Za2gR2cAAxH5F01jZWigVP8M
- 8Xt780gHpfORpR85W76VEkuwNSyMrrk=
-X-Google-Smtp-Source: APXvYqxt4jyLrjbTvWtRpgS5TiEqjsvl4jpEhKfGpwiBN6Yyz8KbBsVzk+FAdgBZlqSQ5Ie9IeKyDQ==
-X-Received: by 2002:a17:906:3f87:: with SMTP id
- b7mr17853052ejj.164.1565357489453; 
- Fri, 09 Aug 2019 06:31:29 -0700 (PDT)
-Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
- by smtp.gmail.com with ESMTPSA id f35sm1072093edb.85.2019.08.09.06.31.28
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 09 Aug 2019 06:31:28 -0700 (PDT)
-To: Ben Greear <greearb@candelatech.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <abe6feb7-80a9-4587-db0b-7f3a37a792d8@ncentric.com>
- <7a68db11-1026-e576-2c26-425ea85ef609@candelatech.com>
- <93bc6089-e313-f51f-06e9-4c0b8f36f7e7@ncentric.com>
- <3d95432a-db21-d4ef-24c4-fc3659fee0a1@candelatech.com>
- <4248b808-d8a5-1972-f423-ba34e222abc2@ncentric.com>
- <a5605840-8a4b-21a5-1e48-86971bec6108@candelatech.com>
- <06abfe46-1815-fc36-db01-2cf24bdb734e@ncentric.com>
- <4ca7aa93-1960-1373-7590-1d39c41d8768@candelatech.com>
- <efe239e4-a6dc-1328-d66e-29047290fca1@ncentric.com>
- <f51ea660-d382-7d31-3ecb-f4beddfb997f@candelatech.com>
- <834cede9-27ca-9987-d86e-54335518857b@ncentric.com>
- <44148c8c-2077-1558-83f1-dd59bc483d3f@ncentric.com>
- <9c9445b3-be50-9f2b-5344-9d34ab6bcad4@ncentric.com>
- <5f7fb09e-0113-1cc5-f137-e1ae04ea31d2@candelatech.com>
-From: Koen Vandeputte <koen.vandeputte@ncentric.com>
-Message-ID: <aaf2075a-43bc-d85a-3184-adec7af4226d@ncentric.com>
-Date: Fri, 9 Aug 2019 15:31:28 +0200
+ id 1hw5HI-0000q9-TU
+ for openwrt-devel@lists.openwrt.org; Fri, 09 Aug 2019 13:49:59 +0000
+Received: from [192.168.100.149] (unknown [172.20.6.13])
+ by mail.nic.cz (Postfix) with ESMTPSA id E9443140C52;
+ Fri,  9 Aug 2019 15:49:51 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=nic.cz; s=default;
+ t=1565358592; bh=7pnIB/l2S8LJ+HonPeVnlOFkozs6wxG23xe9JocmOOk=;
+ h=To:From:Date;
+ b=k4wa3RZlMGt/Sc8xAMyMMO3iwZ9GoCVnYOA0g0020z53Qebzn887uYbdtUBbASwX/
+ 2Cd7F4RDvFM4NSSAjlEPlV5/lcc5f4326i1YZ1BgV/J+G3seQxsQuFBQKkLZVh/ZG1
+ lCa6+ZxSU3qfqpGM9wHAr0cciFDMS6VkjhBLAUGM=
+To: Jo-Philipp Wich <jo@mein.io>, openwrt-devel@lists.openwrt.org
+References: <20190316175254.GA7505@imp.flyn.org>
+ <96baf362-b7e7-0b9e-b984-baf15a60542c@wwsnet.net>
+ <ee7f6b01-3d2a-4798-f169-9923550ecc84@nic.cz>
+ <65835557-3efc-d598-c85a-e23cd62b0bd7@wwsnet.net>
+From: Jan Pavlinec <jan.pavlinec@nic.cz>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jan.pavlinec@nic.cz; keydata=
+ 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
+ rj0rIUg4FQ==
+Message-ID: <7ce72273-acd6-accc-021d-bd6c8c8ee6ba@nic.cz>
+Date: Fri, 9 Aug 2019 15:49:51 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-In-Reply-To: <5f7fb09e-0113-1cc5-f137-e1ae04ea31d2@candelatech.com>
+In-Reply-To: <65835557-3efc-d598-c85a-e23cd62b0bd7@wwsnet.net>
 Content-Language: en-US
+X-Virus-Scanned: clamav-milter 0.100.3 at mail.nic.cz
+X-Virus-Status: Clean
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
+ shortcircuit=ham autolearn=disabled version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.nic.cz
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_063131_825470_24A11D92 
-X-CRM114-Status: GOOD (  18.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190809_064957_393795_091F58E4 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:52b listed in]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [2001:1488:800:400:0:0:0:400 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] ath10k-ct 4.19 and IBSS
+Subject: Re: [OpenWrt-Devel] Meson/Ninja build system
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,45 +127,133 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============5766099130649919586=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDA5LjA4LjE5IDE0OjQ4LCBCZW4gR3JlZWFyIHdyb3RlOgo+IE9uIDgvNi8xOSAyOjI2IEFN
-LCBLb2VuIFZhbmRlcHV0dGUgd3JvdGU6Cj4KPj4+PiBIaSBCZW4sCj4+Pj4KPj4+PiBJIGZpbmFs
-bHkgbWFuYWdlZCB0byBnZXQgdG8gc29tZSB0aW1lIHRvIHByb3Blcmx5IHRha2UgYSBsb29rIHVz
-aW5nIAo+Pj4+IGEgc2ltcGxlIHNldHVwLgo+Pj4+Cj4+Pj4gQXR0YWNoZWQgYWxsIHJlcXVpcmVk
-IGZpbGVzIHRvIHNpbXVsYXRlIHRoZSBpc3N1ZS4KPj4+Pgo+Pj4+IEkgY29tcGlsZWQgdGhlIGxh
-dGVzdCBPcGVuV3J0IG1hc3RlciBzdGF0ZSwgKGluY2x1ZGVkIGEgZnVsbCAKPj4+PiB3cGFfc3Vw
-cGxpY2FudCBhbmQgaXBlcmYgdG9vbHMpIGFuZCByYW4gdGhlIDIgc3RhcnRzLgo+Pj4+Cj4+Pj4g
-QXR0YWNoZWQgYWxzbyBsb2dzIGFzIHNlZW4gZnJvbSBib3RoIGJvYXJkcyBzaW11bHRhbmVvdXNs
-eS4KPj4+Pgo+Pj4+Cj4+Pj4gYmFzaWNhbGx5Ogo+Pj4+Cj4+Pj4gLSBJZiB0aGUgYm9hcmRzIGZp
-bmFsbHkgZG8gbGluayBhZnRlciBsb3RzIG9mIHRyaWVzLCBpdCB3aWxsIGhhdmUgYSAKPj4+PiA+
-MjAwbXMgbGF0ZW5jeSBhbmQgbWF4IHNwZWVkIG9mIGFib3V0IDNNYml0Lgo+Pj4+Cj4+Pj4gLSBU
-aGUgd3BhX3N1cCBjb25maWcgZmlsZSBpcyB0aGUgbW9zdCBiYXNpYyBSU04gZW5hYmxlZCBjb25m
-aWcuCj4+Pj4KPj4+PiAtIEkgYWxzbyB0cmllZCB0aGUgY3VycmVudCBNYXN0ZXIgc3RhdGUgd2l0
-aC93aXRob3V0IGFsbCBjdXN0b20gCj4+Pj4gcGF0aGVzLCBidXQgdGhlIHJlc3VsdCBpcyB0aGUg
-c2FtZS4KPj4+Pgo+Pj4+IC0gd3BhX3N1cHAgYWxzbyBuYWdzIGFib3V0IHNvbWUgbWlzc2luZyBJ
-RSdzCj4+Pj4KPj4+Pgo+Pj4+IEh3IHVzZWQ6Cj4+Pj4KPj4+PiAtIDJ4IFJCLTkyMlVBR1MgY29u
-dGFpbmluZyBhIG9uLWJvYXJkIGFyOTg4eCwgY2FwYWJsZSBvZiAzMGRCbS4KPj4+Pgo+Pj4+IC0g
-Mnggc3RhbmRhcmQgNUdIeiBvbW5pIGFudGVubmFlCj4+Pj4KPj4+PiAtIGJvYXJkIHNlcGVyYXRp
-b24gZGlzdGFuY2UgY2EgNmZ0Cj4KPiBDYW4geW91IHJlcHJvZHVjZSB3aXRob3V0IGVuY3J5cHRp
-b24gZW5hYmxlZD/CoCBUaGF0IG1ha2VzIGl0IGVhc2llciB0byAKPiBkZWJ1Zwo+IHBhY2tldCBz
-bmlmZnMuCj4KPiBJZiB5b3UganVzdCBydW4gcGluZyB0cmFmZmljIChvciB2ZXJ5IHNsb3cgc3Bl
-ZWQgdGNwL3VkcCksIGRvIHlvdSAKPiBzdGlsbCBzZWUgdGhlIGlzc3VlcyAobGlrZSBoaWdoCj4g
-bGF0ZW5jeSwgcGFja2V0IGxvc3MsIHBvb3Igb24tYWlyIGVuY29kaW5nIHJhdGVzLCBldGMpPwo+
-CmN1cnJlbnRseSByZWJ1aWxkaW5nIHRoZSBzZXR1cC4gd2lsbCBnZXQgYmFjayBvbiB0aGlzIGFz
-YXAuCj4gSWYgSSBidWlsZCB5b3UgYSBkZWJ1Z2dpbmcgZmlybXdhcmUsIGFyZSB5b3UgYWJsZSBh
-bmQgd2lsbGluZyB0byAKPiByZXByb2R1Y2UgdGhlIHByb2JsZW0gYW5kCj4gc2VuZCBtZSBkbWVz
-ZyBvdXRwdXQgYXMgd2VsbCBhcyBvbi1haXIgcGFja2V0IHNuaWZmPwpWZXJ5IHN1cmUhCj4KPiBQ
-cmVmZXJhYmx5LCB3aXRoIGdlbmVyYXRlZCB0cmFmZmljIHdpdGggdW5pcXVlIHBhY2tldCBzaXpl
-cyAoaWUsIGV2ZXIgCj4gaW5jcmVhc2luZywgcmFuZG9tLCBvciBzb21ldGhpbmcgbGlrZQo+IHRo
-YXQsIHNvIEkgY2FuIG1vcmUgZWFzaWx5IG1hdGNoIHVwIG9uLWFpciBmcmFtZXMgd2l0aCB0aGUg
-ZGVidWdnaW5nIAo+IG91dHB1dC4KPgo+Cj4gSSBiZWxpZXZlIHRoYXQgdGhlIGJlYWNvbiBpc3N1
-ZXMgYXJlIHByb2JhYmx5IGEgc3ltcHRvbSBvZiBzb21lIG90aGVyIAo+IGZhaWx1cmUgaW4gdGhl
-IHRyYW5zbWl0IGFuZC9vcgo+IHJlY2VpdmUgcGF0aC4KPgo+IFRoYW5rcywKPiBCZW4KPgpMZXRz
-IGdldCB0aGlzIGZpeGVkISA6LSkKCktvZW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRl
-dmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9vcGVud3J0LWRldmVsCg==
+This is a multi-part message in MIME format.
+--===============5766099130649919586==
+Content-Type: multipart/alternative;
+ boundary="------------4A5603BFF4CE5994AA099974"
+Content-Language: en-US
+
+This is a multi-part message in MIME format.
+--------------4A5603BFF4CE5994AA099974
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Hi,
+
+just for the record, I just created PR with Ninja and Meson
+tools/packages and will be glad for comments
+https://github.com/openwrt/openwrt/pull/2312
+
+Jan Pavlinec
+
+
+Dne 18. 03. 19 v 13:41 Jo-Philipp Wich napsal(a):
+> Hi Jan,
+>
+>> I'm trying to add ninja and meson to packages feed. The reason for that
+>> is described here https://github.com/openwrt/openwrt/pull/1871 and
+>> https://github.com/openwrt/packages/issues/8315 .
+> great to hear that! I think eventually there should be a
+> "tools/meson/Makefile" along with an "include/meson.mk" similar to how
+> Cmake is handled in Buildroot.
+>
+> I don't think it is necessary to actually add a Python 3 host build as
+> well since the Buildroot already build-depends on a system Python, but
+> only on 2.x while Meson requires 3.
+>
+>> If you want to look at that, my test repo is here
+>> https://github.com/ja-pa/meson-turris but it's not ready for primetime
+>> yet...
+> Allright. Will check it out, thanks!
+>
+> ~ Jo
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--------------4A5603BFF4CE5994AA099974
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <p>Hi,</p>
+    <p>just for the record, I just created PR with Ninja and Meson
+      tools/packages and will be glad for comments
+      <a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/pull/2312">https://github.com/openwrt/openwrt/pull/2312</a></p>
+    <p>Jan Pavlinec</p>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">Dne 18. 03. 19 v 13:41 Jo-Philipp Wich
+      napsal(a):<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:65835557-3efc-d598-c85a-e23cd62b0bd7@wwsnet.net">
+      <pre class="moz-quote-pre" wrap="">Hi Jan,
+
+</pre>
+      <blockquote type="cite">
+        <pre class="moz-quote-pre" wrap="">I'm trying to add ninja and meson to packages feed. The reason for that
+is described here <a class="moz-txt-link-freetext" href="https://github.com/openwrt/openwrt/pull/1871">https://github.com/openwrt/openwrt/pull/1871</a> and
+<a class="moz-txt-link-freetext" href="https://github.com/openwrt/packages/issues/8315">https://github.com/openwrt/packages/issues/8315</a> .
+</pre>
+      </blockquote>
+      <pre class="moz-quote-pre" wrap="">
+great to hear that! I think eventually there should be a
+"tools/meson/Makefile" along with an "include/meson.mk" similar to how
+Cmake is handled in Buildroot.
+
+I don't think it is necessary to actually add a Python 3 host build as
+well since the Buildroot already build-depends on a system Python, but
+only on 2.x while Meson requires 3.
+
+</pre>
+      <blockquote type="cite">
+        <pre class="moz-quote-pre" wrap="">If you want to look at that, my test repo is here
+<a class="moz-txt-link-freetext" href="https://github.com/ja-pa/meson-turris">https://github.com/ja-pa/meson-turris</a> but it's not ready for primetime
+yet...
+</pre>
+      </blockquote>
+      <pre class="moz-quote-pre" wrap="">
+Allright. Will check it out, thanks!
+
+~ Jo
+
+</pre>
+      <br>
+      <fieldset class="mimeAttachmentHeader"></fieldset>
+      <pre class="moz-quote-pre" wrap="">_______________________________________________
+openwrt-devel mailing list
+<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
+<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
+</pre>
+    </blockquote>
+  </body>
+</html>
+
+--------------4A5603BFF4CE5994AA099974--
+
+
+--===============5766099130649919586==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5766099130649919586==--
+

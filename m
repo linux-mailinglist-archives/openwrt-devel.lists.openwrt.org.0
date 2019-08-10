@@ -2,226 +2,163 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56DEA88B2C
-	for <lists+openwrt-devel@lfdr.de>; Sat, 10 Aug 2019 13:59:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 783D988B81
+	for <lists+openwrt-devel@lfdr.de>; Sat, 10 Aug 2019 15:14:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d/2UPqgJKBudcLjS/1ohdxCQgPJ/hA82TNM1A319PXo=; b=AyZXRUSv7swrlE
-	JnnfUepoZmPPRT1sS9ioH8P+zN6pViA/Kns2E56VOQLRXykC+v1kCC9kNJo5oZQtfF0Wcekxwdci8
-	faJqquqiTvkXqZoZwZrfJtaC7BQjAVbaQN8yrHcheB7/hfrTJxCo1a6W2RgJ+Od0hxc93q2eKyKd+
-	ixiGJyAW+EakoGoFBxefc0o5tI+FOAuMCHPkM5TaS2uk7Jtf466SNQNwU397Sd8EJK/gFhtLCSyN5
-	JCsr0I9lxIaXHKJtgTD7xk7c8PXf8ItHI0yfvkcLLQKmlmFAWL62aObLOPw7wxiZhh29ZPTmVJZY7
-	699WXFRQiPTbRYmQvprw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9SvoD5USC2OmdwY3z9VstwYtk5isoQnJyzn95XAGbUg=; b=F5m
+	YHxhEGHuUpp42TuXPMqoCLNS5PHZWEpGe/W/7Mc86R2CSX7OIOb8DXU2s1ZBSz+hqS4ES/VABoMv6
+	j5DcSvvCR9Wu5K7kIxdprPohTlot9wzXSjcTWJUYpqGnMCZtepyRfbvfAvlMaNpGI+Nq4CgySvQEv
+	OYD7OakS30dyLh6VZtfDIJd1MC5VXh26Dx/82M/u+xwvN4FlIgHB925yKfQGJXgtvxpdnM2YVunBj
+	UoxZYNWbGACcyj1PF5Ym3Rx4OpDDlJNm0DEOxgq1kqFfThxuzeCQXXAJ2lDyJtzRCHnXpUbNq/G0E
+	NsK8gIcm/WHcmu26UqP3ucG2xox6IPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwQ2H-0006j3-LI; Sat, 10 Aug 2019 11:59:50 +0000
-Received: from mail-pf1-x429.google.com ([2607:f8b0:4864:20::429])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwQ1o-0006ej-OK
- for openwrt-devel@lists.openwrt.org; Sat, 10 Aug 2019 11:59:23 +0000
-Received: by mail-pf1-x429.google.com with SMTP id f17so43425585pfn.6
- for <openwrt-devel@lists.openwrt.org>; Sat, 10 Aug 2019 04:59:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=l4jylEA9wEdap51bEIBnyyc3bhl+aJ9dl5JyAOY08gU=;
- b=vVpFbtST+h2cfdCzuNGWgGsnqJ7Ltm6cnz09b69+smxCwfsQY2zm7EJeJFyJuIgmb0
- +Mr6SuDk3T0MsXHqSixdaiBm2VoL/SSSVNQtkugOtNg2pDmSXrvud0e2Y/60yyxjBPuv
- ZD8WMVEsKSTqpW6xrJgYT5aDG5CUAGf8VwKthAdakheZLyL7QUPId1HqwPMAhuE1+j6w
- sDf1OFJeMnBk8FKQYw5cl4mwmWeE+V/DIKDlfbcoxEgy62qN01XL+K089P6yeTV535U2
- zilHrwowJ7FSAZzvK3zDgo9qxOIBItKY9wvj/L7ALdYBse0JMpWuFivimQ0Q3WG0ipMi
- bdGQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=l4jylEA9wEdap51bEIBnyyc3bhl+aJ9dl5JyAOY08gU=;
- b=O59+CbtsRv8at4tztXcsFua9/aX2MRjIvpw0evCPZkGgQaW+yRo0TbqvfakoIaKyPa
- pftpksRFNKWEmIhNK0iJNsRDzQTBOECyclwXRJJaxM+nrP9xh0BL62M5H8U1GXW7f56h
- /yeJBJFXfai1vpISGvs9ilYbOEwZou8IqndqXf8Cj+gYkQf4IhTxG7nesoxlz3anKZkY
- J7V/k6Ir1qVm6O6t8UrLrGgkFy4eZ5h9fAxs4iDtcLIULbG1exFEa9Vygt8pm46WKR3Z
- CCiKN67nYDv7F0jotCIQvcXIcvCP1YFjM+KxyNvF3Tqe168dH3A9c2vmV29y54xrA6BM
- /zUw==
-X-Gm-Message-State: APjAAAXP+V4etQa1uSAAUzJQvtaIFCJsFAsbuNPyB5hScIkDGrO5S5Z+
- xhPfs/giUZ067ypaRmNe9u+qJpgV
-X-Google-Smtp-Source: APXvYqxekC878Dvh9BfQtfChXyEHa/QJmiKKBNEBCqRMU3SxVtkk7jqefnbpSRN/wZxZfPUxJvqggA==
-X-Received: by 2002:a62:64d4:: with SMTP id y203mr26454677pfb.91.1565438356034; 
- Sat, 10 Aug 2019 04:59:16 -0700 (PDT)
-Received: from guoguo-omen-lan.lan ([107.151.139.128])
- by smtp.gmail.com with ESMTPSA id 131sm123016167pfx.57.2019.08.10.04.59.13
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Sat, 10 Aug 2019 04:59:15 -0700 (PDT)
-From: Chuanhong Guo <gch981213@gmail.com>
+	id 1hwRC8-0003td-1m; Sat, 10 Aug 2019 13:14:04 +0000
+Date: Sat, 10 Aug 2019 21:13:46 +0800
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 10 Aug 2019 19:59:03 +0800
-Message-Id: <20190810115903.1482-1-gch981213@gmail.com>
-X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190810_045921_300171_9E200639 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (gch981213[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gch981213[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:429 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] treewide: sync bootcount scripts across
- targets
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.16115.1565442835.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Joan Moreau <jom@grosjo.net>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Chuanhong Guo <gch981213@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] Has OpenWrt suport for Powerline devices
+Content-Type: multipart/mixed; boundary="===============6446906005810380539=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit made the following changes to sync all bootcount scripts:
+--===============6446906005810380539==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-1. use boot() instead of start()
-    This script only needs to be executed once when boot is complete.
-    use boot() to make this explicit.
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-2. drop sourcing of /lib/functions.sh
-    This is aready done in /etc/rc.common.
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============6446906005810380539==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-3. ramips: replace board name checking with a case
+Received: from grosjo.net ([94.130.37.163])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1hwRBw-0003qD-IL
+	for openwrt-devel@lists.openwrt.org; Sat, 10 Aug 2019 13:13:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=grosjo.net;
+	 s=dkim; h=Message-ID:Subject:To:From:Date:Content-Type:MIME-Version:Sender:
+	Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=Ix3cqkT+7GCPPba0zMVbrsCsj2tOT0JZDmdr3c6fYyU=; b=ZF+i+Y2gAUDvnPKbdtvaluB2Tq
+	0KAkdhcJ/00zbaUS9c9wrPyCu2CxG1nN07EjSs7T+1WJCbVbHkXgnZCUUiiWexQjnOM6S2Ydqnndw
+	k1zyO5Ti9M5qIWlE3KHedXkPGcRPIoBB2nOEOPrr2ZUP+p3mQl7FUZcTvSyQcm1hFujU=;
+Received: from localhost ([127.0.0.1] helo=grosjo.net)
+	by grosjo.net with esmtp (Exim 4.92.1)
+	(envelope-from <jom@grosjo.net>)
+	id 1hwRBq-0003TX-Vh
+	for openwrt-devel@lists.openwrt.org; Sat, 10 Aug 2019 13:13:47 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="=_0c9ca03ef7b385c4cdd91903911e4046"
+Date: Sat, 10 Aug 2019 21:13:46 +0800
+From: Joan Moreau <jom@grosjo.net>
+To: openwrt-devel@lists.openwrt.org
+Subject: Has OpenWrt suport for Powerline devices
+User-Agent: Roundcube Webmail/1.4-git
+Message-ID: <d75edc05434b3c25a1629b579da2e58b@grosjo.net>
+X-Sender: jom@grosjo.net
+X-GJ: Sent from localhost
+X-Spam-Score: -2.9 (--)
+X-Spam-Report: Spam detection software, running on the system "gjserver",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ admin@grosjo.net for details.
+ 
+ Content preview:  like TPLink AV2000 or other (with or without Wifi) ? like
+   TPLink AV2000 or other (with or without Wifi) ? 
+ 
+ Content analysis details:   (-2.9 points, 3.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+                             [score: 0.0000]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-GJ-SMTP: h_FROM = Joan Moreau <jom@grosjo.net> RPATH=jom@grosjo.net SENDERADR= jom@grosjo.net:
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190810_061352_757279_8491B752 
+X-CRM114-Status: UNSURE (  -3.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [94.130.37.163 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
 
-Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
----
- target/linux/ath79/base-files/etc/init.d/bootcount    |  1 +
- target/linux/ipq40xx/base-files/etc/init.d/bootcount  |  4 +---
- target/linux/ipq806x/base-files/etc/init.d/bootcount  |  4 +---
- target/linux/kirkwood/base-files/etc/init.d/bootcount |  4 +---
- target/linux/mvebu/base-files/etc/init.d/bootcount    |  4 +---
- target/linux/ramips/base-files/etc/init.d/bootcount   | 11 +++++------
- 6 files changed, 10 insertions(+), 18 deletions(-)
+--=_0c9ca03ef7b385c4cdd91903911e4046
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
 
-diff --git a/target/linux/ath79/base-files/etc/init.d/bootcount b/target/linux/ath79/base-files/etc/init.d/bootcount
-index b71fbf9a69..c734fd9d33 100755
---- a/target/linux/ath79/base-files/etc/init.d/bootcount
-+++ b/target/linux/ath79/base-files/etc/init.d/bootcount
-@@ -1,4 +1,5 @@
- #!/bin/sh /etc/rc.common
-+
- START=99
- 
- boot() {
-diff --git a/target/linux/ipq40xx/base-files/etc/init.d/bootcount b/target/linux/ipq40xx/base-files/etc/init.d/bootcount
-index f2d76f125f..b9d625e296 100755
---- a/target/linux/ipq40xx/base-files/etc/init.d/bootcount
-+++ b/target/linux/ipq40xx/base-files/etc/init.d/bootcount
-@@ -2,9 +2,7 @@
- 
- START=99
- 
--start() {
--	. /lib/functions.sh
--
-+boot() {
- 	case $(board_name) in
- 	alfa-network,ap120c-ac)
- 		[ -n "$(fw_printenv bootcount changed 2>/dev/null)" ] &&\
-diff --git a/target/linux/ipq806x/base-files/etc/init.d/bootcount b/target/linux/ipq806x/base-files/etc/init.d/bootcount
-index 6a5a6d52ad..d0bf708e66 100755
---- a/target/linux/ipq806x/base-files/etc/init.d/bootcount
-+++ b/target/linux/ipq806x/base-files/etc/init.d/bootcount
-@@ -2,9 +2,7 @@
- 
- START=99
- 
--start() {
--	. /lib/functions.sh
--
-+boot() {
- 	case $(board_name) in
- 	linksys,ea8500)
- 		mtd resetbc s_env || true
-diff --git a/target/linux/kirkwood/base-files/etc/init.d/bootcount b/target/linux/kirkwood/base-files/etc/init.d/bootcount
-index 20fb3a425c..478f3d0134 100755
---- a/target/linux/kirkwood/base-files/etc/init.d/bootcount
-+++ b/target/linux/kirkwood/base-files/etc/init.d/bootcount
-@@ -2,9 +2,7 @@
- 
- START=99
- 
--start() {
--	. /lib/functions.sh
--
-+boot() {
- 	case $(board_name) in
- 	linksys,audi|\
- 	linksys,viper)
-diff --git a/target/linux/mvebu/base-files/etc/init.d/bootcount b/target/linux/mvebu/base-files/etc/init.d/bootcount
-index 6e8e310849..dd2266bdc8 100755
---- a/target/linux/mvebu/base-files/etc/init.d/bootcount
-+++ b/target/linux/mvebu/base-files/etc/init.d/bootcount
-@@ -2,9 +2,7 @@
- 
- START=99
- 
--start() {
--	. /lib/functions.sh
--
-+boot() {
- 	case $(board_name) in
- 	linksys,caiman |\
- 	linksys,cobra |\
-diff --git a/target/linux/ramips/base-files/etc/init.d/bootcount b/target/linux/ramips/base-files/etc/init.d/bootcount
-index 60b93f72b3..807801a34f 100755
---- a/target/linux/ramips/base-files/etc/init.d/bootcount
-+++ b/target/linux/ramips/base-files/etc/init.d/bootcount
-@@ -2,11 +2,10 @@
- 
- START=99
- 
--start() {
--	. /lib/functions.sh
--
--	local board=$(board_name)
--	if [ $board = "samknows,whitebox-v8" ]; then
-+boot() {
-+	case $(board_name) in
-+	samknows,whitebox-v8)
- 		fw_setenv bootcount 0
--	fi
-+		;;
-+	esac
- }
--- 
-2.21.0
+like TPLink AV2000 or other (with or without Wifi) ?
+--=_0c9ca03ef7b385c4cdd91903911e4046
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
 
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 9pt; font-family: Verdana,Gene=
+va,sans-serif'>
+<p>like TPLink AV2000 or other (with or without Wifi) ?</p>
+
+</body></html>
+
+--=_0c9ca03ef7b385c4cdd91903911e4046--
+
+
+--===============6446906005810380539==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============6446906005810380539==--
+

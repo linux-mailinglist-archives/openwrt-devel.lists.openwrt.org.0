@@ -2,95 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E310688D15
-	for <lists+openwrt-devel@lfdr.de>; Sat, 10 Aug 2019 21:48:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA37D88D25
+	for <lists+openwrt-devel@lfdr.de>; Sat, 10 Aug 2019 22:21:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bfKulTJ6TIcpyexGWvi+8aYFMJcYbFjNBMcDCV+sUa4=; b=lAl51kol5Tf5J86DwD3g25QXX
-	AVUHFrbzp9ijswl3GGTmbHI5BwXHNrix3IrytLWsZowvJouEL+KiK/Hn2siG3px2mTWnUbr5mrnPY
-	d9HEky8vmuCoSQao5P4gmi8BT54PQFdOYYtjotx2Qx0hoAaAcAgq6tns/2caGf587Zy/XaJ4qb/eP
-	FAFyWPqs3awktZAgv1owpMjJxMAU9n9olm6jxeUEN1XRC5+p5TWKaKr1saLyj6rAFIv+j3uhlvcyq
-	+LQ6SHKvcOMg0ss7LDAGBmz8mViKhrL0EzQLDvSmxmTvWy2zEEMFFYHkRde0nvhMGHkqaSOzZvlhe
-	FTrF+wKRg==;
+	 bh=ofDuy7NGNzsBLfGRlb9yRK8TpnrnW9xwAuQQOvi9GG4=; b=o8jscQcl6SCo97rO1IRg85lDf
+	ZosNJcyaBkK8QJsqOz8pUkMiu0tmxCQA9JDCF6jNxDTBXGJ3GGjDFlVU2uVG1CP9/vNcQ1m8MbIdJ
+	RH+WXr+0LRYgAJ1Lwx66oIUbYnSDOJ8PMRXNsAj0yjRzsO+iweU6bsjMgfcvqCDX/5VOaybFEI5sV
+	9hXxsRD9cSSHIQlPejpr6tKq3zI5tGFXkW3ezyC/+AuMHo+N1FzGgFhSbyOQmSbbg9NMmYjL0fJGW
+	/05cNIvvGiRXdRmq29YZqGdilc2bN78BPxiKeC9y6ptT3KcPzp574klQj8CY3b87EbT/bZBEqZ+/G
+	jetpWgZlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwXLc-0007OD-1H; Sat, 10 Aug 2019 19:48:16 +0000
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+	id 1hwXrF-0000Zz-Db; Sat, 10 Aug 2019 20:20:57 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwXLS-0007No-9z
- for openwrt-devel@lists.openwrt.org; Sat, 10 Aug 2019 19:48:07 +0000
-Received: by mail-lj1-x229.google.com with SMTP id p17so95088556ljg.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 10 Aug 2019 12:48:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language;
- bh=V5P9WJAp/SQrRcwL/kp8kVpKbw9sOY/v63Ua+2DRLzs=;
- b=vPmrlUVCkBczHj0+PMOxSlxAS0bmQcj0GE2s/sqGRss0NRYQGC8djtKkK5J75WMmi2
- PSC+WYpcAYa99QClKMapHO0hVDUGhG8hq29gxgPBfbaoTLd+VdkZS9rNp/5haabgn9qv
- lvmfjrvf4jcIjclOmiksmk5pKQo8ETjSEXrR2Y18PHMmP0JEmVxqltBHbo1B5TqBIkQb
- 0WU7np/fBxPZigmuOj1MEN+qVHgbjkUShDwywgVk/kCN8ESXy1katWrSaBSKCvZe8buo
- D5CPnMUNGc633oADluaQeAAWFEw6swO1Uzev79RoBrVUJFD9kfg9txrLW44jNL8e9Zu2
- ZkIw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language;
- bh=V5P9WJAp/SQrRcwL/kp8kVpKbw9sOY/v63Ua+2DRLzs=;
- b=LcCZyAJFiOF6v/sr92MwxAg9CrPEk0D+QNaF/V7TOl/pvrRwNev0MRIe0yyOyK78ZD
- 5VnTed2c2/e7zdAcUzDK3cOk6EkKkqt8XQ4T6MTyvrLx3ZhQFyb8XijoiUG5WwzuHy05
- pHuozfUYwMRoV5X/ywP2iYT7dExxbsde0JDLBTObDpCvYjguNYIldNwjsGKIyQdJOMvE
- rJrwY2Vj44ffZPPCM+jCCMgNUD3p6ICLYafM+hCzqQdR28lRyr/A2mvvo4Q1KmCAA4Ox
- snBOdfRtZX3rD68rb0EO0jX9sw3oVLJo+IcrrQAMM84Whrz9xzp1Fhoi0TaHNZ/YhQ7L
- YrMw==
-X-Gm-Message-State: APjAAAVb3sZzOdzVOvM01r6Z6ktU6GDEwH6yT0WxIl2E5BBw/IDEs4fh
- PmEQCF51CB5iHuAnmDb4i6F14cWh
-X-Google-Smtp-Source: APXvYqx5gTgVM6of0Gizdotqp1W3HjjnHTmEUoaUiA4AWoeXc/qa3v733FWFe5xVCi35mIPUC2yZZw==
-X-Received: by 2002:a2e:4e12:: with SMTP id c18mr14933131ljb.211.1565466483289; 
- Sat, 10 Aug 2019 12:48:03 -0700 (PDT)
-Received: from [10.0.0.11] (user-5-173-228-18.play-internet.pl. [5.173.228.18])
- by smtp.googlemail.com with ESMTPSA id e26sm20106664ljl.33.2019.08.10.12.48.02
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 10 Aug 2019 12:48:02 -0700 (PDT)
-To: openwrt-devel@lists.openwrt.org
-References: <mailman.16115.1565442835.19300.openwrt-devel@lists.openwrt.org>
- <alpine.LNX.2.21.99999.352.1908101628250.23494@localhost.localdomain>
-From: Lech Perczak <lech.perczak@gmail.com>
-Message-ID: <4fc1072b-22ae-3cd6-d592-dd8c757a6dd9@gmail.com>
-Date: Sat, 10 Aug 2019 21:47:56 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hwXqu-0000Zc-7C
+ for openwrt-devel@lists.openwrt.org; Sat, 10 Aug 2019 20:20:38 +0000
+Received: from desktop ([188.193.174.123]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1N1gWU-1iKvOo0at6-0123KE; Sat, 10 Aug 2019 22:20:30 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Birger Koblitz'" <mail@birger-koblitz.de>
+References: <1d85f1b0-7cdb-68d6-3535-72666de254c3@birger-koblitz.de>
+In-Reply-To: <1d85f1b0-7cdb-68d6-3535-72666de254c3@birger-koblitz.de>
+Date: Sat, 10 Aug 2019 22:20:29 +0200
+Message-ID: <01e901d54fb9$0e1c56e0$2a5504a0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-In-Reply-To: <alpine.LNX.2.21.99999.352.1908101628250.23494@localhost.localdomain>
-Content-Language: pl
+Content-Language: de
+Thread-Index: AQJIImTgqpVld/JhqOEe/G1Y6hA9nKYPJAqg
+X-Provags-ID: V03:K1:scdOOrpzXyRq8VcdgCiqUPP7rEYM2BhVS1KhRxQJ8IrSuAkpIaQ
+ fJrcsMl+b0dZ6C7pVxt19O/t0duRm/yemAcwAIkwFieBX5A0X72e/doSvhmB6iIpyhxlVLE
+ +HGi3zxRUI8xevx8z2LFRlmnvwUJjtQ55N0dTgsPEbJBfznOI/u+PqL8xSX280RFjev9uGk
+ g0SIAKjbZC9Avi4jVAL1A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:aFB6EfUqD64=:j6ytjiq1kLl+899lYyTLu3
+ jwmJc43v7JxjDTJuoA7WV9SeXIQjkCuOp4evJHMG9myQduDCJVx7uoBIBmA1q06nH7nlmm/99
+ R/gzhu7ve8yznhKorZ0/jIHbe6r0fF100a7UvhwQfNbEOI/j32S7FT0W8/PMsS+SkyWUGHMNz
+ xyMSb42gE6dpVu7NAXyPe4QTpu6lmWUxMP3BLnZ7MqC/C4WjJjjjx40ALXiNBpBpL4/CKfH5w
+ vXHHKKYCzucp/7nKb4O9nw/NaIPEf7A4FSxhckLEYPuIkd/PDirKewfIfBUdSfxYOg/iUPAnW
+ Y6tNbTdnXuQHHpRLcdJyGualONYRVzRJBsETLeaFJpg3z1AevQJw37Akxa/MVpQJvFBxiP4zU
+ Y9UAqBZ56Sd1ZLEE9hRlW6MKY7JludD5mhsUpMMMGi1QDZbzcQ8H98aDMkyNS/6+5QboPQCUM
+ 328YxwM5mRf2jwdA766v57DZoEO8LNXkQodQHOCCHHDzSQE4ewOLKNQqTJbSUJj9f9W8XvaQf
+ KWgVVNrJhBArlWhCsX3q2ga/NLJIhmhE0ycZqaxUTWthrUqd+eyhkWR5H+cU+jWGLG37rPHFR
+ eLcrS/Fvlz5ysOkM1EGNKeZvX7MCI0Ttde0JiFMGfhy97CeljKLdgbTxtHNdJKZvGRDnmxWNY
+ i/VdTi3EycW4HB9XDiWxL5Ii5nDspHedtvjoOfBxDXr+JOcoK2ISR6FboNalaC7zs7jMR+bGe
+ XhT63nh4ROwN5lip9L3J4KZ3N0nVzlFe4LQMUNRrK9UDromnpC04rRyfdw4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190810_124806_348941_5109EEAB 
-X-CRM114-Status: GOOD (  10.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190810_132036_559678_DBE1731C 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:229 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (lech.perczak[at]gmail.com)
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] Has OpenWrt suport for Powerline devices
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.75 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: use gpio_hog instead of
+ gpio-export
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,115 +79,138 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8371738395125669929=="
+Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============6250451828036202695=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============8371738395125669929==
-Content-Type: multipart/alternative;
- boundary="------------9135C26CC5AE244D64823564"
-Content-Language: pl
+This is a multipart message in MIME format.
 
-This is a multi-part message in MIME format.
---------------9135C26CC5AE244D64823564
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
+--===============6250451828036202695==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=othqVyydKlacp3=-="
 
-W dniu 2019-08-10 o 16:30, Enrico Mioso pisze:
-> Hello!
-> I guess this is in a case-by-case basis - I have a TP-Link RE450 which 
-> is supported.
-> I know there are also Wi-Fi-only devices, but don't think OpenWRt 
-> supports any of them.
->
-> I guess this happens also due to the amount of flash and RAM memory 
-> those devices have.
->
-> And - if you're going for the RE450, keep in mind it's u-boot doesn't 
-> seem to have any recovery method, so soldering an UART right away 
-> maybe a good option.
->
-> Enrico
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
-RE450 is Wifi-only.
-There is actually one supported:
+This is a multipart message in MIME format.
 
-https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wpa8630
+--=-=othqVyydKlacp3=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
 
--- 
-Pozdrawiam,
-Lech Perczak
+SGksDQoNCj4gK8KgwqDCoCB1c2Igew0KPiArwqDCoMKgIMKgwqDCoCBncGlvLWhv
+ZzsNCj4gK8KgwqDCoCDCoMKgwqAgbGluZS1uYW1lID0gInRwLWxpbms6cG93ZXI6
+dXNiIjsNCj4gK8KgwqDCoCDCoMKgwqAgZ3Bpb3MgPSA8NiBHUElPX0FDVElWRV9I
+SUdIPjsNCj4gK8KgwqDCoCDCoMKgwqAgb3V0cHV0LWhpZ2g7DQo+IMKgwqDCoMKg
+IH07DQo+IMKgfTsNCg0KQXMgc3RhdGVkIGVhcmxpZXIsIEkgd291bGQgcHJlZmVy
+IGNhbGxpbmcgdGhvc2UgYmxvY2tzIHVzYi1wb3dlciwgdXNiMS1wb3dlciwgZXRj
+Li4NCg0KPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9xY2E5
+NTMxX3l1bmNvcmVfYTc3MC5kdHMNCj4gYi90YXJnZXQvbGludXgvYXRoNzkvZHRz
+L3FjYTk1MzFfeXVuY29yZV9hNzcwLmR0cw0KPiBpbmRleCBkYTViNmRjN2RiLi4x
+OGFkNjMwN2ExIDEwMDY0NA0KPiAtLS0gYS90YXJnZXQvbGludXgvYXRoNzkvZHRz
+L3FjYTk1MzFfeXVuY29yZV9hNzcwLmR0cw0KPiArKysgYi90YXJnZXQvbGludXgv
+YXRoNzkvZHRzL3FjYTk1MzFfeXVuY29yZV9hNzcwLmR0cw0KPiBAQCAtOCw3ICs4
+LDcgQEANCj4gDQo+IMKgLyB7DQo+IMKgwqDCoMKgIG1vZGVsID0gIll1bkNvcmUg
+QTc3MCI7DQo+IC3CoMKgwqAgY29tcGF0aWJsZSA9ICJ5dW5jb3JlLGE3NzAiLCAi
+cWNhLHFjYTk1MzEiOw0KPiArwqDCoMKgIGNvbXBhdGlibGUgPSAieXVuY29yZSxh
+NzcwIiwgInFjYSxxY2E5NTMzIjsNCg0KVGhpcyBzaG91bGQgYmUgcmVtb3ZlZC4N
+Cg0KPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9xY2E5NTYx
+X3RwbGlua19hcmNoZXItYzV4LmR0c2kNCj4gYi90YXJnZXQvbGludXgvYXRoNzkv
+ZHRzL3FjYTk1NjFfdHBsaW5rX2FyY2hlci1jNXguZHRzaQ0KPiBpbmRleCA2ZDMy
+ZmEzZmM0Li4zNzhjODdjOWVlIDEwMDY0NA0KPiAtLS0gYS90YXJnZXQvbGludXgv
+YXRoNzkvZHRzL3FjYTk1NjFfdHBsaW5rX2FyY2hlci1jNXguZHRzaQ0KPiArKysg
+Yi90YXJnZXQvbGludXgvYXRoNzkvZHRzL3FjYTk1NjFfdHBsaW5rX2FyY2hlci1j
+NXguZHRzaQ0KPiBAQCAtNTQsMjIgKzU0LDIzIEBADQo+IMKgwqDCoMKgIMKgwqDC
+oCDCoMKgwqAgZ3Bpb3MgPSA8JmdwaW8gMjEgR1BJT19BQ1RJVkVfTE9XPjsNCj4g
+wqDCoMKgwqAgwqDCoMKgIH07DQo+IMKgwqDCoMKgIH07DQo+ICt9Ow0KPiANCj4g
+LcKgwqDCoCBncGlvLWV4cG9ydCB7DQo+IC3CoMKgwqAgwqDCoMKgIGNvbXBhdGli
+bGUgPSAiZ3Bpby1leHBvcnQiOw0KPiAtDQo+IC3CoMKgwqAgwqDCoMKgIGdwaW9f
+c2hpZnRfcmVnaXN0ZXJfb2Ugew0KPiAtwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ3Bp
+by1leHBvcnQsbmFtZSA9ICJ0cC1saW5rOm9lOnNyIjsNCj4gLcKgwqDCoCDCoMKg
+wqAgwqDCoMKgIGdwaW8tZXhwb3J0LG91dHB1dCA9IDwwPjsNCj4gLcKgwqDCoCDC
+oMKgwqAgwqDCoMKgIGdwaW9zID0gPCZncGlvIDE2IEdQSU9fQUNUSVZFX0hJR0g+
+Ow0KPiAtwqDCoMKgIMKgwqDCoCB9Ow0KPiArJmdwaW8gew0KPiArwqDCoMKgIHN0
+YXR1cyA9ICJva2F5IjsNCj4gDQo+IC3CoMKgwqAgwqDCoMKgIGdwaW9fc2hpZnRf
+cmVnaXN0ZXJfcmVzZXQgew0KPiAtwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ3Bpby1l
+eHBvcnQsbmFtZSA9ICJ0cC1saW5rOnJlc2V0OnNyIjsNCj4gLcKgwqDCoCDCoMKg
+wqAgwqDCoMKgIGdwaW8tZXhwb3J0LG91dHB1dCA9IDwxPjsNCj4gLcKgwqDCoCDC
+oMKgwqAgwqDCoMKgIGdwaW9zID0gPCZncGlvIDE5IEdQSU9fQUNUSVZFX0hJR0g+
+Ow0KPiAtwqDCoMKgIMKgwqDCoCB9Ow0KPiArwqDCoMKgIHNyIHsNCj4gK8KgwqDC
+oCDCoMKgwqAgZ3Bpby1ob2c7DQo+ICvCoMKgwqAgwqDCoMKgIGxpbmUtbmFtZSA9
+ICJ0cC1saW5rOm9lOnNyIjsNCj4gK8KgwqDCoCDCoMKgwqAgZ3Bpb3MgPSA8MTYg
+R1BJT19BQ1RJVkVfSElHSD47DQo+ICvCoMKgwqAgwqDCoMKgIG91dHB1dC1sb3c7
+DQo+ICvCoMKgwqAgfTsNCj4gDQo+ICvCoMKgwqAgc3Igew0KPiArwqDCoMKgIMKg
+wqDCoCBncGlvLWhvZzsNCj4gK8KgwqDCoCDCoMKgwqAgbGluZS1uYW1lID0gInRw
+LWxpbms6cmVzZXQ6c3IiOw0KPiArwqDCoMKgIMKgwqDCoCBncGlvcyA9IDwxOSBH
+UElPX0FDVElWRV9ISUdIPjsNCj4gK8KgwqDCoCDCoMKgwqAgb3V0cHV0LWhpZ2g7
+DQo+IMKgwqDCoMKgIH07DQoNClRob3NlIHR3byBzaG91bGQgaGF2ZSBkaWZmZXJl
+bnQgbm9kZSBuYW1lcy4NCg0KPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0
+aDc5L2R0cy9xY2E5NTYzX3RwbGlua19hcmNoZXItYzctdjQuZHRzDQo+IGIvdGFy
+Z2V0L2xpbnV4L2F0aDc5L2R0cy9xY2E5NTYzX3RwbGlua19hcmNoZXItYzctdjQu
+ZHRzDQo+IGluZGV4IGY0YWRkMmZlMzEuLmQ4OTJkMGU5NjAgMTAwNjQ0DQo+IC0t
+LSBhL3RhcmdldC9saW51eC9hdGg3OS9kdHMvcWNhOTU2M190cGxpbmtfYXJjaGVy
+LWM3LXY0LmR0cw0KPiArKysgYi90YXJnZXQvbGludXgvYXRoNzkvZHRzL3FjYTk1
+NjNfdHBsaW5rX2FyY2hlci1jNy12NC5kdHMNCj4gQEAgLTQxLDIyICs0MSw2IEBA
+DQo+IMKgwqDCoMKgIMKgwqDCoCB9Ow0KPiDCoMKgwqDCoCB9Ow0KPiANCj4gLcKg
+wqDCoCBncGlvLWV4cG9ydCB7DQo+IC3CoMKgwqAgwqDCoMKgIGNvbXBhdGlibGUg
+PSAiZ3Bpby1leHBvcnQiOw0KPiAtDQo+IC3CoMKgwqAgwqDCoMKgIGdwaW9fc2hp
+ZnRfcmVnaXN0ZXJfb2Ugew0KPiAtwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ3Bpby1l
+eHBvcnQsbmFtZSA9ICJ0cC1saW5rOm9lOnNyIjsNCj4gLcKgwqDCoCDCoMKgwqAg
+wqDCoMKgIGdwaW8tZXhwb3J0LG91dHB1dCA9IDwwPjsNCj4gLcKgwqDCoCDCoMKg
+wqAgwqDCoMKgIGdwaW9zID0gPCZncGlvIDEgR1BJT19BQ1RJVkVfTE9XPjvCoMKg
+wqAgLy8gNzRIQzU5NSAvT0UgKE91dHB1dA0KPiBFbmFibGUpDQo+IC3CoMKgwqAg
+wqDCoMKgIH07DQo+IC0NCj4gLcKgwqDCoCDCoMKgwqAgZ3Bpb19zaGlmdF9yZWdp
+c3Rlcl9yZXNldCB7DQo+IC3CoMKgwqAgwqDCoMKgIMKgwqDCoCBncGlvLWV4cG9y
+dCxuYW1lID0gInRwLWxpbms6cmVzZXQ6c3IiOw0KPiAtwqDCoMKgIMKgwqDCoCDC
+oMKgwqAgZ3Bpby1leHBvcnQsb3V0cHV0ID0gPDE+Ow0KPiAtwqDCoMKgIMKgwqDC
+oCDCoMKgwqAgZ3Bpb3MgPSA8JmdwaW8gMjEgR1BJT19BQ1RJVkVfTE9XPjvCoMKg
+wqAgLy8gNzRIQzU5NSAvU1JDTFIgKFNlcmlhbA0KPiBDbGVhcikNCj4gLcKgwqDC
+oCDCoMKgwqAgfTsNCj4gLcKgwqDCoCB9Ow0KPiAtDQo+IMKgwqDCoMKgIGxlZHMg
+ew0KPiDCoMKgwqDCoCDCoMKgwqAgY29tcGF0aWJsZSA9ICJncGlvLWxlZHMiOw0K
+PiANCj4gQEAgLTE0OCwxNSArMTMyLDI5IEBADQo+IA0KPiDCoH07DQo+IA0KPiAt
+JnBjaWUgew0KPiArJmdwaW8gew0KPiDCoMKgwqDCoCBzdGF0dXMgPSAib2theSI7
+DQo+ICsNCj4gK8KgwqDCoCBzciB7DQo+ICvCoMKgwqAgwqDCoMKgIGdwaW8taG9n
+Ow0KPiArwqDCoMKgIMKgwqDCoCBsaW5lLW5hbWUgPSAidHAtbGluazpvZTpzciI7
+DQo+ICvCoMKgwqAgwqDCoMKgIGdwaW9zID0gPDEgR1BJT19BQ1RJVkVfTE9XPjsN
+Cj4gK8KgwqDCoCDCoMKgwqAgb3V0cHV0LWxvdzsNCj4gK8KgwqDCoCB9Ow0KPiAr
+DQo+ICvCoMKgwqAgc3Igew0KPiArwqDCoMKgIMKgwqDCoCBncGlvLWhvZzsNCj4g
+K8KgwqDCoCDCoMKgwqAgbGluZS1uYW1lID0gInRwLWxpbms6cmVzZXQ6c3IiOw0K
+PiArwqDCoMKgIMKgwqDCoCBncGlvcyA9IDwyMSBHUElPX0FDVElWRV9MT1c+Ow0K
+PiArwqDCoMKgIMKgwqDCoCBvdXRwdXQtaGlnaDsNCj4gK8KgwqDCoCB9Ow0KPiDC
+oH07DQoNClNhbWUgaGVyZS4NCg0KUmVzdCBsb29rcyBnb29kLCBJIGhhdmVuJ3Qg
+Y2hlY2tlZCBmb3IgZHVwbGljYXRlICZncGlvIGRlZmluaXRpb25zICh5b3Ugc2Vl
+bSB0byBoYXZlIGFkZHJlc3NlZCBzb21lKS4NCg0KQmVzdA0KDQpBZHJpYW4=
+
+--=-=othqVyydKlacp3=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1PJwkACgkQoNyKO7qx
+AnAdExAApwlaCce/lk4YDS2NhXH0gFji8Xfhu/tIyx8XT40q7jwAi9teuDVYDC6F
+U1Ax/d/s5/6ZOkLoEPahwbIk2mZ2ViaXytePsC7l14dIHwRtpJf12wzvWwkowNHr
+bmlYkhMoCwC/i6OLPS2IY0NaUCr6DAaQmGdimqjHB/Kb3tT4RwAqyp3TDxQtkvyI
++HFB2DvBRpyyESOBYobx2d9V/UcSlT1tQ6Bjn8DsQe2cHCEwb0MfvUiNCEHPayBo
+a/l9j5DgF0Y5hUi1OCZeNxL+CI7s5iOILLhupn87/H7XeBgROB7uvxC7goIWaqfq
+8oLB1fUDiKkJZ6mO/EIhiDuvTPPWvp0Tu0FCSRTSVfDYkdrnFKsermMIIIDdAfuP
+0E/kRHXhgcCVmZh53Whz8Qc1LYqa3v0KKOW3o3XKRxLulqtQXuo5N9E3DIBGfziv
+k9dWQxhTnzeZsRW5tHZZ3Xy0/ZuMMPxeVMrAJ3FoPt+SCpnNvoXxRyOmiOMRCr2K
+RS4q5Yeb84Gk9xN+hjciP8g4ODAtL+JtR3peGlnbWgDngRBRc0lJQywXjEvYMpUe
+Xzx/bHwZXtP4AYKmcUrHFKRtmBesikalOjZbnVlyDsH5nECYUnAe3hyZy0GyaiVa
+H6QkPW4Dfr0lMjKReYH6xuJc+kvALv2pUNPAZp5LFz4rbNhWsVA=
+=VUIv
+-----END PGP SIGNATURE-----
 
 
---------------9135C26CC5AE244D64823564
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 8bit
-
-<html>
-  <head>
-
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <div class="moz-cite-prefix">W dniu 2019-08-10 o 16:30, Enrico Mioso
-      pisze:<br>
-    </div>
-    <blockquote type="cite"
-cite="mid:alpine.LNX.2.21.99999.352.1908101628250.23494@localhost.localdomain"
-id="mid_alpine_LNX_2_21_99999_352_1908101628250_23494_localhost_localdomain"
-      class=" cite">Hello!
-      <br>
-      I guess this is in a case-by-case basis - I have a TP-Link RE450
-      which is supported.
-      <br>
-      I know there are also Wi-Fi-only devices, but don't think OpenWRt
-      supports any of them.
-      <br>
-      <br>
-      I guess this happens also due to the amount of flash and RAM
-      memory those devices have.
-      <br>
-      <br>
-      And - if you're going for the RE450, keep in mind it's u-boot
-      doesn't seem to have any recovery method, so soldering an UART
-      right away maybe a good option.
-      <br>
-      <br>
-      Enrico
-      <br>
-      <br>
-      _______________________________________________
-      <br>
-      openwrt-devel mailing list
-      <br>
-      <a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
-      <br>
-      <a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
-      <br>
-      <br>
-    </blockquote>
-    <p>RE450 is Wifi-only.<br>
-      There is actually one supported:<br>
-    </p>
-    <p><a class="moz-txt-link-freetext" href="https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wpa8630">https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wpa8630</a><br>
-    </p>
-    <pre class="moz-signature" cols="72">-- 
-Pozdrawiam,
-Lech Perczak
-</pre>
-  </body>
-</html>
-
---------------9135C26CC5AE244D64823564--
+--=-=othqVyydKlacp3=-=--
 
 
---===============8371738395125669929==
+
+--===============6250451828036202695==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -221,5 +221,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8371738395125669929==--
+--===============6250451828036202695==--
+
 

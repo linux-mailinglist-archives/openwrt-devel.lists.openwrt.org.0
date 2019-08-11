@@ -2,76 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2408A89344
-	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 21:15:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D23989356
+	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 21:29:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8sCJiUv80qzNFiOtLKNpzqD/lyTBKfNPBM46yfwtp7I=; b=g3ioomLb9MyM9/ZXm2Gy+fkg4
-	ouTKEzmL9Ot97VIq8kfFogPILB0Fx151L14iNkBIgKtxAETC8rVvOV2cG8Gfsr6YM36FjLK/ZijiO
-	T3lUOE6BeEyKs3Ej7+1i1pK5qc1WuRLdOuYCfhfm6FVuLYjlVE/fiBNhWtEGkiUXGCUQGFbV44Qd/
-	i7nF+fpl6GAVeuwrRJ6NQj431TaZzlJAhu8kt/LKB11t7xCn19qyRNpbvo2rKdjvYSXW1hU5Jai2A
-	bC/JRW32IcxHqQ5Lp650CC3sPg+yYh9z5TBau/WlOA3UtvHK2cPO1vI+rS/ddpAr7xs/H2Ihyl4My
-	diPDDq1QQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z0hWcr4b+ZChEDGRjQy48dPIiNFk1NvNP9rL27B2jgI=; b=AupN0gIW77+FKr
+	JXnk27WuEpxhMdXry7/ciN4mTXPRkmBzPyXZo1vFtzfRFPCOd07sddQh338LqfxNfhR4a3B+p1jAO
+	xPFonCj/s97Vry0l7jqrlq/WhsjRD+JdVfRmr5J4UXEv4SiC8Q4jtC4JFPZjYeeTMMk0+P/P9syek
+	mkqpUxSZkBac54NaWhzX/alYovsM3OM+AeRxjYzzFW2dEllAMheIffE5drobWpT6y6dLSR40yEVEX
+	AaKPIuRcN2Wx68+VbFrrUyz9HpkfXJA0q+YwL8Iw0EfRnZGEeiVo55a5FAaludpotAJCekbSogfx0
+	1nOeYhaUjJRNu6ZE3u2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwtJb-00020U-0C; Sun, 11 Aug 2019 19:15:39 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1hwtWi-0000gW-LU; Sun, 11 Aug 2019 19:29:12 +0000
+Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwtJU-0001om-J4
- for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 19:15:34 +0000
-Received: from desktop ([188.193.174.123]) by mrelayeu.kundenserver.de
- (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1N0Fh1-1iC6gL41CB-00xGQ4; Sun, 11 Aug 2019 21:15:27 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Birger Koblitz'" <mail@birger-koblitz.de>,
- "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
-References: <1d85f1b0-7cdb-68d6-3535-72666de254c3@birger-koblitz.de>
- <01e901d54fb9$0e1c56e0$2a5504a0$@adrianschmutzler.de>
- <e8a33d3a-3994-676f-5b47-bfe2e91e75ef@birger-koblitz.de>
-In-Reply-To: <e8a33d3a-3994-676f-5b47-bfe2e91e75ef@birger-koblitz.de>
-Date: Sun, 11 Aug 2019 21:15:26 +0200
-Message-ID: <009d01d55079$220d4ea0$6627ebe0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1hwtWa-0000gB-NA
+ for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 19:29:06 +0000
+Received: from p4fcf952c.dip0.t-ipconnect.de ([79.207.149.44]
+ helo=[192.168.2.103]); authenticated
+ by wp175.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ id 1hwtWY-0001KO-8Q; Sun, 11 Aug 2019 21:29:02 +0200
+To: openwrt-devel@lists.openwrt.org
+References: <2f56d90d-39bf-7f63-0676-e0856e6d9f15@birger-koblitz.de>
+ <75e48acf-8bfa-5101-3f9a-02ae2cc43c0a@kresin.me>
+ <de6aa12b-8e9d-413c-7577-16b4d400f725@gmail.com>
+ <eb294211-eeea-c830-ddf5-77ee9a279626@birger-koblitz.de>
+ <CAFBinCBE1XYixKzCmzm6e3Pe06sW6K-iR8-6gBSc6VXJwdncQw@mail.gmail.com>
+From: Birger Koblitz <mail@birger-koblitz.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mail@birger-koblitz.de; prefer-encrypt=mutual; keydata=
+ mQGiBELb9iURBAD7URWZY2HQ38IvWh1pUBiOJMoMi3/qImwhh2hWCgfVPP2FsKD+84zNqJgi
+ bIgCWeiHeyQ5fcUnpnn2aPNwMznRxmwjCfb4a6AUPKjZIETGREaWathA9kVAkIlnrZI16QpY
+ cz9gWXenVe2bPTny723pQNhLKNhmTQySjQikSMiSAwCgvLxjtDu3gckDzjmA8qs25c6nxRsE
+ ANZI7xZqR7wcvzs5/UxNd43UsAN8NYLaOd7E5jgjfaDUu6fxUgmZmWdM+F1Xkp91a4ZHQpMC
+ NSAF+vPWiGEGJLhpNYDME/UhqQMDx95v6VvOiH2n4MC0ReW2YkhSCCP1uXVt2/Z7d7jmNtD9
+ G8oRE1e/fdRmDMYsdcqN6DmkoJdGBADrr4sVPd6mywEL8kZVfwwPw1i3xMXk5GiAEHj+awo+
+ eFTkS6F0K7IAuixm/qizf8zsUob0TRn4VCmFoyT3fkNLxjbi94g9koVQ2cUTCwmkRZkH3fUR
+ /jX5ybnKUKO+jyAL2loVnYcC1I3EVzt0NFNx4siG3uzgfAdBF0bNEXjwOrQxQmlyZ2VyIEtv
+ YmxpdHogKHByaXZhdGUpIDxtYWlsQGJpcmdlci1rb2JsaXR6LmRlPohaBBMRAgAaBQJMo3rM
+ ApsPBosJCAcDAgSVAggDBJYCAwEACgkQ0SJkb/ufpr4lRQCgukvkUqWZ6FbRa6bPdutUcW08
+ PacAn0rBrMyYzdUo/cvD7LTjOBH8eW6RuQENBELb9igQBAD//o2rYN5fVDYLPTWyRJj9di9e
+ Cwp3T9s+AnY9R7s6U6MDaLfFSzCwpJZTeYkN8V/n5C2iTIQomUkhrc8v4YMlI71XHs+qoSsu
+ lvzjlu9eRHysSWbtmeNjGPRKrJHfQCywifrSgY3xJzteY1Ks9JAnW4QKhZQvgHi920f3KL63
+ 5wADBQP6AuAqbvBdXAoxLuJmiCojzsqF+J4ZBMFvuXd8md2EYtQV74ZqxbAcDo9ELNh+2VNd
+ vnsn05NswHNBpaSnhTNzr0TkNkRRQAhZ8rwNbNh0iVuT4PADlyDkEWdNfBl1MUfs8OyCj1tB
+ l2UGeJ+DNp1+X8AiNyGmdEicozb90I7UBVyISQQYEQIACQUCTKN6zAKbDAAKCRDRImRv+5+m
+ vg64AJwISUIlauuw6sMaWhGtqGzBc96pAACeKH15f9ssxrnwYSzk1spOsw8ejpM=
+Message-ID: <81a50327-a181-2497-204a-5ed4655aa7d6@birger-koblitz.de>
+Date: Sun, 11 Aug 2019 21:29:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Thread-Index: AQJIImTgqpVld/JhqOEe/G1Y6hA9nAEcUHgqAmyz/y2l9GSO4A==
-Content-Language: de
-X-Provags-ID: V03:K1:jozm7gUdkZpQUJU31dNOuLDQgUh/qTxeP5UMJbuKYxpCXwJktj/
- OSuxcyCCLnTtJUQ4CGWwNh/r+jFnwNIH0zDuH0wfMhk0Xt1jQzzdRYdqum4sN9Klcm6EXS7
- T0MSDTPH5CHM/n/WuViQSErQLQ1P7q1uLmitbtL3PdGsO6c93HyqPRu8loYOHHBkZKIWnke
- /3/jssvwdcq/XZucmKkxQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:FC59E7wowIM=:U/ySss3Lb+FGQ8vtPuEPWw
- Rto2sIEp41LQfv91XgC4pnoQHGFtRMvYCvIteL0E1VT5H60fjOSR2UVYcYi/JQYUZR1OYRfzS
- PSsMOnkxPUPZIYZWX24kzYetogupZeLetiUw12H4OoxdUPtSrNnmkQN7E6NymSQXz5RJmBmes
- ha2znXX/86Pn3SaMP/P36ZUhkwOicXDqj+QJiXKcb0H5mUi/kExOPkqYVtGSlCeoqFPXBPfer
- iUqz5hBRNcLXukgtMJZVDc1PbPJ7D9TYi5ZoA++taS2PzGt5FNkSd35Uqm+rcZGq2I9QRdV24
- hZF4cqL43zJPUxsbQxq38FPCRuS2Hq8//1kMY7My+P5FoyGbyH9fPY+ZO9tPu6dFRFYVVSF4d
- irJQX+j2j8RkuLYshdsMdylKHJojP2puSYch1L01EZ6pwXIqZT5QvXJ4iyizzArlBaj3tevsU
- S1+O2cULj9Ccd6wS9SIHRtH9JYnh1dFTWTrkZekIgAQrZoJo70auxWNE+ijZWOlejWTg9tlPi
- GNFAbseESo8HpXzdI+jYYKsU2g0N7/XdoacmkNlZh8ct+BNQDrQ/P0YAlxV/JoD0GwYkq9s1L
- O2sSJker86oIWjtF2iA9PYDbZMc81KJQ8/t8M0L2U3WbE5YnWPdecIk6oz2lSPlwQPlVoNYQX
- xScPcywhHwvaXaltQ6zszXjdAFoCBfnaKqci2wkPuVdVaHS7kq0i8OcqF4Snncl09CXpTsVSd
- uQMLEtVoM6Gs7TdVnKMO0Sx3fPNZ+xH2wDL64sLcc2jAi1KmeqOPR+2QMVg=
+In-Reply-To: <CAFBinCBE1XYixKzCmzm6e3Pe06sW6K-iR8-6gBSc6VXJwdncQw@mail.gmail.com>
+Content-Language: en-US
+X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1565551744;
+ cf776b3c; 
+X-HE-SMSGID: 1hwtWY-0001KO-8Q
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_121532_925882_39F89D99 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190811_122904_903170_6C5AC6E8 
+X-CRM114-Status: GOOD (  15.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: use gpio_hog instead of
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: use gpio_hog instead of
  gpio-export
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -84,99 +87,41 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8706787651900258292=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============8706787651900258292==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=pAyqJMT/nW/UW+=-="
-
-This is a multipart message in MIME format.
-
---=-=pAyqJMT/nW/UW+=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Birger Koblitz
-> Sent: Sonntag, 11. August 2019 13:11
-> To: mail@adrianschmutzler.de
-> Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: use gpio_hog instead of gpio-
-> export
->=20
-> Dear Adrian,
->=20
-> I'll resubmit a patch taking your comments into account. I am using a scr=
-ipt
-> that parses the DTS ...
-
-So that means that duplicate &gpio is also treated with automatically (as I=
-'ve seen with some devices)?
-
-> This should also prevent the double naming of the nodes. I am actually
-> surprised the DTS compiler did not complain... Things like
->=20
-> -=C2=A0=C2=A0=C2=A0 compatible =3D "yuncore,a770", "qca,qca9531";
-> +=C2=A0=C2=A0=C2=A0 compatible =3D "yuncore,a770", "qca,qca9533";
->=20
-> are probably due to trailing white-space in the original, I'll stop the s=
-cript from
-> touching that.
-
-Well, in this particular case it was not only whitespace, but the qca chang=
-ing from 9531 to 9533...
-
-Best
-
-Adrian
-
---=-=pAyqJMT/nW/UW+=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1QaUoACgkQoNyKO7qx
-AnCwUxAAmdfofHecr41uFDc4GR7/yPKLsuYHXKf/te2DVPqJwdZB9jwIUSgW/1Hf
-owY9YaeUGYnjb3lZ3Ju5o59Pa91t0NeL/w59wq9CxuGm2tiiF+eAxVB1qsHhzO9O
-z7V7FODXQA9EDKlLXARV8jrPwJ34t503aMPqo1cgZkvLJ9p2v7IJZ58mhT4x76tz
-26JjSaenv5Jm3iWuayPMBEIYxT057EheNUg6MZyKtK4sWw1zK4oBdItM36E83vzX
-sRLnPaMFpr5lCsddGNB4ZtQ9V9e3/c+X3CRjV/PN1DXGcAASZxICn7sJoNVz6gai
-FfVdK+lnNbB8TfikxdV6JzSidx4khSpWpvlnBKdWUe4oSupVIxBt1DIs24P5wesS
-/IpjtSSgKLPpeRNTnxB1J27RvV8A8hnDIJwagkjOJ57YtBE5ocCMY0byQje0BWYy
-i+AKwAWBBswyfuGEOGB3YmYFQsBWPgblztvsyhIdXOUrgwBdx391kPk6i1MCuRPU
-1hB3m0VLMmfzXoP8dEMYm9yMtUu20tKgCDyZxBzeMMo+40P02QpJ9Igh2LYSO+nX
-Yjc/cWYh6afDfwmBbRxKIibw08FgMP5ScewqZUID1qLu0joB8oLcEr+swzkm+X0o
-A06QZiYuzOPuwGt8ygtiQkRND26aY36libPIhCDfrFkfmpD/1yE=
-=ZZEq
------END PGP SIGNATURE-----
-
-
---=-=pAyqJMT/nW/UW+=-=--
-
-
-
---===============8706787651900258292==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8706787651900258292==--
-
-
+RGVhciBNYXJ0aW4gYW5kIEVucmljbywKCnRoYW5rcyBmb3IgeW91ciBjb21tZW50cy4KCk9uIDEx
+LjA4LjE5IDEzOjM4LCBNYXJ0aW4gQmx1bWVuc3RpbmdsIHdyb3RlOgo+IE9uIFN1biwgQXVnIDEx
+LCAyMDE5IGF0IDE6MDAgUE0gQmlyZ2VyIEtvYmxpdHogPG1haWxAYmlyZ2VyLWtvYmxpdHouZGU+
+IHdyb3RlOgo+PiBJJ2xsIGdvIHRocm91Z2ggdGhlIHBhdGNoZXMgYW5kIHJlbW92ZSBhbnl0aGlu
+ZyB0aGF0IHNvdW5kcyBsaWtlIGl0Cj4+IG1pZ2h0IG5lZWQgdXNlciBzcGFjZSBjb25maWd1cmF0
+aW9uIChpLmUuIG5vdCBwb3dlciB0aGUgVVNCIGJ1cyBvciB0aGUKPj4gbGlrZSkuCj4gdXBzdHJl
+YW0gR1BJTyBtYWludGFpbmVycyBwcmVmZXIgZGVkaWNhdGVkIHByb3BlcnRpZXMgaW5zdGVhZCBv
+ZiBhIEdQSU8gaG9nLgo+Cj4gc29tZSBVU0IgY29udHJvbGxlciBkcml2ZXJzIHN1cHBvcnQgYSAi
+dmJ1cy1zdXBwbHkiIHByb3BlcnR5LCB3aGljaAo+IGNhbiBiZSB1c2VkIHRvZ2V0aGVyIHdpdGgg
+YSBHUElPIHJlZ3VsYXRvcgo+IGluIGNhc2Ugb2YgdGhlIFZCVVMgc3VwcGx5IGl0IG1lYW5zIHRo
+ZSBHUElPIHdpbGwgYmUgdHVybmVkIG9mZiBpZiB0aGUKPiBVU0IgcG9ydCBpcyAiZGlzYWJsZWQi
+IChmb3IgZXhhbXBsZSBieSB1bmxvYWRpbmcgdGhlIGtlcm5lbCBVU0IKPiBjb250cm9sbGVyIGRy
+aXZlcikuCj4KPiBJJ20gbm90IHNheWluZyB0aGF0IHlvdSBoYXZlIHRvIHN3aXRjaCBvdmVyIHRv
+IHNvbWV0aGluZyBvdGhlciB0aGFuIEdQSU8gaG9ncy4KPiBzd2l0Y2hpbmcgdG8gYW4gdXBzdHJl
+YW0gc29sdXRpb24gaXMgYSBnb29kIHN0YXJ0aW5nIHBvaW50IQo+IGp1c3QgYmUgYXdhcmUgdGhh
+dCB0aGlzIG1heSBub3QgYmUgdGhlIGZpbmFsIHNvbHV0aW9uCgp0aGlzIGlzIHVuZGVyc3Rvb2Qu
+IGdwaW8taG9nIGlzIG9ubHkgdGhlIHNlY29uZCBiZXN0IHNvbHV0aW9uLCB3aGVyZQpncGlvLWV4
+cG9ydCBpcyBvbmx5IHRoZSB0aGlyZCBiZXN0IHNvbHV0aW9uIGZvciB0aGUgZ2VuZXJhbCBjYXNl
+IGJ1dCBpbgpzb21lIGNhc2VzIGF0IHRoZSBtb21lbnQgdGhlIG9ubHkgcmVhc29uYWJsZSBvbmUu
+CgoKPgo+PiBJcyBhbnlvbmUgd29ya2luZyBvbiBjb252ZXJ0aW5nIHRoZSB1c2UtY2FzZXMgd2hp
+Y2ggcmVxdWlyZSB1c2VyIHNwYWNlCj4+IHN3aXRjaGluZyB0byBsaWJncGlvZCBvciBhbnkgb3Ro
+ZXIgc29sdXRpb24/Cj4gaG93IGRvIHlvdSBpZGVudGlmeSB0aGUgInVzZS1jYXNlcyB3aGljaCBy
+ZXF1aXJlIHVzZSBzcGFjZSBzd2l0Y2hpbmciPwoKSSBiZWxpZXZlIHRoaXMgZGlzY3Vzc2lvbiBo
+YXMgaGFwcGVuZWQgYWxyZWFkeSwgZS5nLiBoZXJlOgoKaHR0cHM6Ly9naXRodWIuY29tL29wZW53
+cnQvb3BlbndydC9wdWxsLzEzNjYKCmFuZCBJIGRvbid0IHRoaW5rIHlvdSBuZWVkIGEgZmluYWwg
+YW5zd2VyIHRvIHRoaXMgcXVlc3Rpb24gaW4gb3JkZXIgdG8Kc3RhcnQgbWlncmF0aW5nIHRvIGdw
+aW9faG9nIHdoZXJlIGl0IGlzIGVhc2lseSBwb3NzaWJsZS4KCkBFbnJpY286IEl0IGlzIGNsZWFy
+IHRoYXQgaW4gc29tZSBjYXNlcyBkZWZpbml0ZWx5IHdlIG5lZWQgdG8gaGF2ZSBhCnBvc3NpYmls
+aXR5IHRvIG1hbmlwdWxhdGUgZ3Bpb3MgZnJvbSB1c2VyLXNwYWNlLgoKCkNoZWVycwoKwqDCoCBC
+aXJnZXIKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
+ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
+bAo=

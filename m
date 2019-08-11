@@ -2,175 +2,172 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D0ED8917F
-	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 13:11:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C8E68918D
+	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 13:38:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZzWedc9M7RNrHtj7qbwIqELOmL9OsMYWn94QXlNx1Z0=; b=tVzJANsb01maxE
-	D5QtbBDZvDfIBD9ZlPHBKRkUKwHzTcuVHOPTkm0u693NWrIRgOuVm6ZnwRUHRx55cRpdtWbJE6NWW
-	4aoXFPkU+N3lx37a84QhpmOQsy/bitO7XP0HUR0O6Zr/jnGiYQNoCko+wFSw8xPeRK9/xWPBYsbCC
-	gvgMW81zQYCQzxeUPkytsXaEYZo3KQd6ZXaw01g7XjTnYpnb3Arz98O7GsM9pcOo5H8CnWkb6vYmi
-	qWvGIeGdgTq8gl2kVGqAoK/mvFhgh7OvIJTMo93r+nXlhgeWU833J+Co1u0tHLeYBddc5nqW1+IHo
-	V/eLyd1AIZxBpBoVC2qA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=p9RUOGfLdq8K1aD0fqI/UtoWespBtR8XJ6VTXL62Jm8=; b=FetXYj+CoO34g07K7Cy3CC0TE
+	z/NudHES4Q5vRzf25PyAIQ6WCidhnosm1CWymn2tv4cIt7F6A4eK73YSn8ltKdVBdqRl4nQ5293+r
+	ccZdaJGiAjxOwvh5ikQxt4BXaYrpP1PuAfsYZLVRaDCm6Wjm5sXVpl2OkOCn9vSrAJ4iFrBNouOlD
+	N+GYt0p64aWTxM0ge934/mN4Ha2Gdyd1PbVpOCPPotkZMbY8kzPpp3zdcnIPF2AfvK9lID1e36Pf8
+	kNA1VWq5i/MH1H9tsvcV46cek6xNFnzRYTwE7xQXK8+6ONlkMU33PZoyrW+Ui7MUgA0SAiGYqe7Lo
+	Y39jFb8KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwllJ-0005IP-1L; Sun, 11 Aug 2019 11:11:45 +0000
-Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwllC-0005I2-Rk
- for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 11:11:40 +0000
-Received: from p4fcf952c.dip0.t-ipconnect.de ([79.207.149.44]
- helo=[192.168.2.103]); authenticated
- by wp175.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- id 1hwllA-0000vK-LF; Sun, 11 Aug 2019 13:11:36 +0200
-To: mail@adrianschmutzler.de
-References: <1d85f1b0-7cdb-68d6-3535-72666de254c3@birger-koblitz.de>
- <01e901d54fb9$0e1c56e0$2a5504a0$@adrianschmutzler.de>
-From: Birger Koblitz <mail@birger-koblitz.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mail@birger-koblitz.de; prefer-encrypt=mutual; keydata=
- mQGiBELb9iURBAD7URWZY2HQ38IvWh1pUBiOJMoMi3/qImwhh2hWCgfVPP2FsKD+84zNqJgi
- bIgCWeiHeyQ5fcUnpnn2aPNwMznRxmwjCfb4a6AUPKjZIETGREaWathA9kVAkIlnrZI16QpY
- cz9gWXenVe2bPTny723pQNhLKNhmTQySjQikSMiSAwCgvLxjtDu3gckDzjmA8qs25c6nxRsE
- ANZI7xZqR7wcvzs5/UxNd43UsAN8NYLaOd7E5jgjfaDUu6fxUgmZmWdM+F1Xkp91a4ZHQpMC
- NSAF+vPWiGEGJLhpNYDME/UhqQMDx95v6VvOiH2n4MC0ReW2YkhSCCP1uXVt2/Z7d7jmNtD9
- G8oRE1e/fdRmDMYsdcqN6DmkoJdGBADrr4sVPd6mywEL8kZVfwwPw1i3xMXk5GiAEHj+awo+
- eFTkS6F0K7IAuixm/qizf8zsUob0TRn4VCmFoyT3fkNLxjbi94g9koVQ2cUTCwmkRZkH3fUR
- /jX5ybnKUKO+jyAL2loVnYcC1I3EVzt0NFNx4siG3uzgfAdBF0bNEXjwOrQxQmlyZ2VyIEtv
- YmxpdHogKHByaXZhdGUpIDxtYWlsQGJpcmdlci1rb2JsaXR6LmRlPohaBBMRAgAaBQJMo3rM
- ApsPBosJCAcDAgSVAggDBJYCAwEACgkQ0SJkb/ufpr4lRQCgukvkUqWZ6FbRa6bPdutUcW08
- PacAn0rBrMyYzdUo/cvD7LTjOBH8eW6RuQENBELb9igQBAD//o2rYN5fVDYLPTWyRJj9di9e
- Cwp3T9s+AnY9R7s6U6MDaLfFSzCwpJZTeYkN8V/n5C2iTIQomUkhrc8v4YMlI71XHs+qoSsu
- lvzjlu9eRHysSWbtmeNjGPRKrJHfQCywifrSgY3xJzteY1Ks9JAnW4QKhZQvgHi920f3KL63
- 5wADBQP6AuAqbvBdXAoxLuJmiCojzsqF+J4ZBMFvuXd8md2EYtQV74ZqxbAcDo9ELNh+2VNd
- vnsn05NswHNBpaSnhTNzr0TkNkRRQAhZ8rwNbNh0iVuT4PADlyDkEWdNfBl1MUfs8OyCj1tB
- l2UGeJ+DNp1+X8AiNyGmdEicozb90I7UBVyISQQYEQIACQUCTKN6zAKbDAAKCRDRImRv+5+m
- vg64AJwISUIlauuw6sMaWhGtqGzBc96pAACeKH15f9ssxrnwYSzk1spOsw8ejpM=
-Message-ID: <e8a33d3a-3994-676f-5b47-bfe2e91e75ef@birger-koblitz.de>
-Date: Sun, 11 Aug 2019 13:11:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hwmBI-0003lv-0r; Sun, 11 Aug 2019 11:38:36 +0000
+References: <2f56d90d-39bf-7f63-0676-e0856e6d9f15@birger-koblitz.de>
+ <75e48acf-8bfa-5101-3f9a-02ae2cc43c0a@kresin.me>
+ <de6aa12b-8e9d-413c-7577-16b4d400f725@gmail.com>
+ <eb294211-eeea-c830-ddf5-77ee9a279626@birger-koblitz.de>
+In-Reply-To: <eb294211-eeea-c830-ddf5-77ee9a279626@birger-koblitz.de>
+Date: Sun, 11 Aug 2019 13:38:16 +0200
+To: Birger Koblitz <mail@birger-koblitz.de>
 MIME-Version: 1.0
-In-Reply-To: <01e901d54fb9$0e1c56e0$2a5504a0$@adrianschmutzler.de>
-Content-Language: en-US
-X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1565521898;
- 7d4bd720; 
-X-HE-SMSGID: 1hwllA-0000vK-LF
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_041139_047068_BE9B6F75 
-X-CRM114-Status: GOOD (  11.59  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: use gpio_hog instead of
- gpio-export
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.16176.1565523511.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Martin Blumenstingl via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: use gpio_hog instead of
+ gpio-export
+Content-Type: multipart/mixed; boundary="===============2168390480868146217=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-RGVhciBBZHJpYW4sCgpJJ2xsIHJlc3VibWl0IGEgcGF0Y2ggdGFraW5nIHlvdXIgY29tbWVudHMg
-aW50byBhY2NvdW50LiBJIGFtIHVzaW5nIGEKc2NyaXB0IHRoYXQgcGFyc2VzIHRoZSBEVFMgYW5k
-IEkgd2lsbCB1c2UgbW9yZSBvZiB0aGUgb3JpZ2luYWwgbGluZS1uYW1lCnRvIG5hbWUgdGhlIG5v
-ZGUsIGkuZS4KCiJ0cC1saW5rOnBvd2VyOnVzYiIgLT4gcG93ZXItdXNiCiJ0cC1saW5rOnJlc2V0
-OnNyIiAgLT4gcmVzZXQtc3IKClRoaXMgc2hvdWxkIGFsc28gcHJldmVudCB0aGUgZG91YmxlIG5h
-bWluZyBvZiB0aGUgbm9kZXMuIEkgYW0gYWN0dWFsbHkKc3VycHJpc2VkIHRoZSBEVFMgY29tcGls
-ZXIgZGlkIG5vdCBjb21wbGFpbi4uLiBUaGluZ3MgbGlrZQoKLcKgwqDCoCBjb21wYXRpYmxlID0g
-Inl1bmNvcmUsYTc3MCIsICJxY2EscWNhOTUzMSI7CivCoMKgwqAgY29tcGF0aWJsZSA9ICJ5dW5j
-b3JlLGE3NzAiLCAicWNhLHFjYTk1MzMiOwoKYXJlIHByb2JhYmx5IGR1ZSB0byB0cmFpbGluZyB3
-aGl0ZS1zcGFjZSBpbiB0aGUgb3JpZ2luYWwsIEknbGwgc3RvcCB0aGUKc2NyaXB0IGZyb20gdG91
-Y2hpbmcgdGhhdC4KCkNoZWVycywKCsKgIEJpcmdlcgoKCk9uIDEwLjA4LjE5IDIyOjIwLCBtYWls
-QGFkcmlhbnNjaG11dHpsZXIuZGUgd3JvdGU6Cj4gSGksCj4KPj4gK8KgwqDCoCB1c2Igewo+PiAr
-wqDCoMKgIMKgwqDCoCBncGlvLWhvZzsKPj4gK8KgwqDCoCDCoMKgwqAgbGluZS1uYW1lID0gInRw
-LWxpbms6cG93ZXI6dXNiIjsKPj4gK8KgwqDCoCDCoMKgwqAgZ3Bpb3MgPSA8NiBHUElPX0FDVElW
-RV9ISUdIPjsKPj4gK8KgwqDCoCDCoMKgwqAgb3V0cHV0LWhpZ2g7Cj4+IMKgwqDCoMKgIH07Cj4+
-IMKgfTsKPiBBcyBzdGF0ZWQgZWFybGllciwgSSB3b3VsZCBwcmVmZXIgY2FsbGluZyB0aG9zZSBi
-bG9ja3MgdXNiLXBvd2VyLCB1c2IxLXBvd2VyLCBldGMuLgo+Cj4+IGRpZmYgLS1naXQgYS90YXJn
-ZXQvbGludXgvYXRoNzkvZHRzL3FjYTk1MzFfeXVuY29yZV9hNzcwLmR0cwo+PiBiL3RhcmdldC9s
-aW51eC9hdGg3OS9kdHMvcWNhOTUzMV95dW5jb3JlX2E3NzAuZHRzCj4+IGluZGV4IGRhNWI2ZGM3
-ZGIuLjE4YWQ2MzA3YTEgMTAwNjQ0Cj4+IC0tLSBhL3RhcmdldC9saW51eC9hdGg3OS9kdHMvcWNh
-OTUzMV95dW5jb3JlX2E3NzAuZHRzCj4+ICsrKyBiL3RhcmdldC9saW51eC9hdGg3OS9kdHMvcWNh
-OTUzMV95dW5jb3JlX2E3NzAuZHRzCj4+IEBAIC04LDcgKzgsNyBAQAo+Pgo+PiDCoC8gewo+PiDC
-oMKgwqDCoCBtb2RlbCA9ICJZdW5Db3JlIEE3NzAiOwo+PiAtwqDCoMKgIGNvbXBhdGlibGUgPSAi
-eXVuY29yZSxhNzcwIiwgInFjYSxxY2E5NTMxIjsKPj4gK8KgwqDCoCBjb21wYXRpYmxlID0gInl1
-bmNvcmUsYTc3MCIsICJxY2EscWNhOTUzMyI7Cj4gVGhpcyBzaG91bGQgYmUgcmVtb3ZlZC4KPgo+
-PiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9xY2E5NTYxX3RwbGlua19hcmNo
-ZXItYzV4LmR0c2kKPj4gYi90YXJnZXQvbGludXgvYXRoNzkvZHRzL3FjYTk1NjFfdHBsaW5rX2Fy
-Y2hlci1jNXguZHRzaQo+PiBpbmRleCA2ZDMyZmEzZmM0Li4zNzhjODdjOWVlIDEwMDY0NAo+PiAt
-LS0gYS90YXJnZXQvbGludXgvYXRoNzkvZHRzL3FjYTk1NjFfdHBsaW5rX2FyY2hlci1jNXguZHRz
-aQo+PiArKysgYi90YXJnZXQvbGludXgvYXRoNzkvZHRzL3FjYTk1NjFfdHBsaW5rX2FyY2hlci1j
-NXguZHRzaQo+PiBAQCAtNTQsMjIgKzU0LDIzIEBACj4+IMKgwqDCoMKgIMKgwqDCoCDCoMKgwqAg
-Z3Bpb3MgPSA8JmdwaW8gMjEgR1BJT19BQ1RJVkVfTE9XPjsKPj4gwqDCoMKgwqAgwqDCoMKgIH07
-Cj4+IMKgwqDCoMKgIH07Cj4+ICt9Owo+Pgo+PiAtwqDCoMKgIGdwaW8tZXhwb3J0IHsKPj4gLcKg
-wqDCoCDCoMKgwqAgY29tcGF0aWJsZSA9ICJncGlvLWV4cG9ydCI7Cj4+IC0KPj4gLcKgwqDCoCDC
-oMKgwqAgZ3Bpb19zaGlmdF9yZWdpc3Rlcl9vZSB7Cj4+IC3CoMKgwqAgwqDCoMKgIMKgwqDCoCBn
-cGlvLWV4cG9ydCxuYW1lID0gInRwLWxpbms6b2U6c3IiOwo+PiAtwqDCoMKgIMKgwqDCoCDCoMKg
-wqAgZ3Bpby1leHBvcnQsb3V0cHV0ID0gPDA+Owo+PiAtwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ3Bp
-b3MgPSA8JmdwaW8gMTYgR1BJT19BQ1RJVkVfSElHSD47Cj4+IC3CoMKgwqAgwqDCoMKgIH07Cj4+
-ICsmZ3BpbyB7Cj4+ICvCoMKgwqAgc3RhdHVzID0gIm9rYXkiOwo+Pgo+PiAtwqDCoMKgIMKgwqDC
-oCBncGlvX3NoaWZ0X3JlZ2lzdGVyX3Jlc2V0IHsKPj4gLcKgwqDCoCDCoMKgwqAgwqDCoMKgIGdw
-aW8tZXhwb3J0LG5hbWUgPSAidHAtbGluazpyZXNldDpzciI7Cj4+IC3CoMKgwqAgwqDCoMKgIMKg
-wqDCoCBncGlvLWV4cG9ydCxvdXRwdXQgPSA8MT47Cj4+IC3CoMKgwqAgwqDCoMKgIMKgwqDCoCBn
-cGlvcyA9IDwmZ3BpbyAxOSBHUElPX0FDVElWRV9ISUdIPjsKPj4gLcKgwqDCoCDCoMKgwqAgfTsK
-Pj4gK8KgwqDCoCBzciB7Cj4+ICvCoMKgwqAgwqDCoMKgIGdwaW8taG9nOwo+PiArwqDCoMKgIMKg
-wqDCoCBsaW5lLW5hbWUgPSAidHAtbGluazpvZTpzciI7Cj4+ICvCoMKgwqAgwqDCoMKgIGdwaW9z
-ID0gPDE2IEdQSU9fQUNUSVZFX0hJR0g+Owo+PiArwqDCoMKgIMKgwqDCoCBvdXRwdXQtbG93Owo+
-PiArwqDCoMKgIH07Cj4+Cj4+ICvCoMKgwqAgc3Igewo+PiArwqDCoMKgIMKgwqDCoCBncGlvLWhv
-ZzsKPj4gK8KgwqDCoCDCoMKgwqAgbGluZS1uYW1lID0gInRwLWxpbms6cmVzZXQ6c3IiOwo+PiAr
-wqDCoMKgIMKgwqDCoCBncGlvcyA9IDwxOSBHUElPX0FDVElWRV9ISUdIPjsKPj4gK8KgwqDCoCDC
-oMKgwqAgb3V0cHV0LWhpZ2g7Cj4+IMKgwqDCoMKgIH07Cj4gVGhvc2UgdHdvIHNob3VsZCBoYXZl
-IGRpZmZlcmVudCBub2RlIG5hbWVzLgo+Cj4+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvYXRo
-NzkvZHRzL3FjYTk1NjNfdHBsaW5rX2FyY2hlci1jNy12NC5kdHMKPj4gYi90YXJnZXQvbGludXgv
-YXRoNzkvZHRzL3FjYTk1NjNfdHBsaW5rX2FyY2hlci1jNy12NC5kdHMKPj4gaW5kZXggZjRhZGQy
-ZmUzMS4uZDg5MmQwZTk2MCAxMDA2NDQKPj4gLS0tIGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9x
-Y2E5NTYzX3RwbGlua19hcmNoZXItYzctdjQuZHRzCj4+ICsrKyBiL3RhcmdldC9saW51eC9hdGg3
-OS9kdHMvcWNhOTU2M190cGxpbmtfYXJjaGVyLWM3LXY0LmR0cwo+PiBAQCAtNDEsMjIgKzQxLDYg
-QEAKPj4gwqDCoMKgwqAgwqDCoMKgIH07Cj4+IMKgwqDCoMKgIH07Cj4+Cj4+IC3CoMKgwqAgZ3Bp
-by1leHBvcnQgewo+PiAtwqDCoMKgIMKgwqDCoCBjb21wYXRpYmxlID0gImdwaW8tZXhwb3J0IjsK
-Pj4gLQo+PiAtwqDCoMKgIMKgwqDCoCBncGlvX3NoaWZ0X3JlZ2lzdGVyX29lIHsKPj4gLcKgwqDC
-oCDCoMKgwqAgwqDCoMKgIGdwaW8tZXhwb3J0LG5hbWUgPSAidHAtbGluazpvZTpzciI7Cj4+IC3C
-oMKgwqAgwqDCoMKgIMKgwqDCoCBncGlvLWV4cG9ydCxvdXRwdXQgPSA8MD47Cj4+IC3CoMKgwqAg
-wqDCoMKgIMKgwqDCoCBncGlvcyA9IDwmZ3BpbyAxIEdQSU9fQUNUSVZFX0xPVz47wqDCoMKgIC8v
-IDc0SEM1OTUgL09FIChPdXRwdXQKPj4gRW5hYmxlKQo+PiAtwqDCoMKgIMKgwqDCoCB9Owo+PiAt
-Cj4+IC3CoMKgwqAgwqDCoMKgIGdwaW9fc2hpZnRfcmVnaXN0ZXJfcmVzZXQgewo+PiAtwqDCoMKg
-IMKgwqDCoCDCoMKgwqAgZ3Bpby1leHBvcnQsbmFtZSA9ICJ0cC1saW5rOnJlc2V0OnNyIjsKPj4g
-LcKgwqDCoCDCoMKgwqAgwqDCoMKgIGdwaW8tZXhwb3J0LG91dHB1dCA9IDwxPjsKPj4gLcKgwqDC
-oCDCoMKgwqAgwqDCoMKgIGdwaW9zID0gPCZncGlvIDIxIEdQSU9fQUNUSVZFX0xPVz47wqDCoMKg
-IC8vIDc0SEM1OTUgL1NSQ0xSIChTZXJpYWwKPj4gQ2xlYXIpCj4+IC3CoMKgwqAgwqDCoMKgIH07
-Cj4+IC3CoMKgwqAgfTsKPj4gLQo+PiDCoMKgwqDCoCBsZWRzIHsKPj4gwqDCoMKgwqAgwqDCoMKg
-IGNvbXBhdGlibGUgPSAiZ3Bpby1sZWRzIjsKPj4KPj4gQEAgLTE0OCwxNSArMTMyLDI5IEBACj4+
-Cj4+IMKgfTsKPj4KPj4gLSZwY2llIHsKPj4gKyZncGlvIHsKPj4gwqDCoMKgwqAgc3RhdHVzID0g
-Im9rYXkiOwo+PiArCj4+ICvCoMKgwqAgc3Igewo+PiArwqDCoMKgIMKgwqDCoCBncGlvLWhvZzsK
-Pj4gK8KgwqDCoCDCoMKgwqAgbGluZS1uYW1lID0gInRwLWxpbms6b2U6c3IiOwo+PiArwqDCoMKg
-IMKgwqDCoCBncGlvcyA9IDwxIEdQSU9fQUNUSVZFX0xPVz47Cj4+ICvCoMKgwqAgwqDCoMKgIG91
-dHB1dC1sb3c7Cj4+ICvCoMKgwqAgfTsKPj4gKwo+PiArwqDCoMKgIHNyIHsKPj4gK8KgwqDCoCDC
-oMKgwqAgZ3Bpby1ob2c7Cj4+ICvCoMKgwqAgwqDCoMKgIGxpbmUtbmFtZSA9ICJ0cC1saW5rOnJl
-c2V0OnNyIjsKPj4gK8KgwqDCoCDCoMKgwqAgZ3Bpb3MgPSA8MjEgR1BJT19BQ1RJVkVfTE9XPjsK
-Pj4gK8KgwqDCoCDCoMKgwqAgb3V0cHV0LWhpZ2g7Cj4+ICvCoMKgwqAgfTsKPj4gwqB9Owo+IFNh
-bWUgaGVyZS4KPgo+IFJlc3QgbG9va3MgZ29vZCwgSSBoYXZlbid0IGNoZWNrZWQgZm9yIGR1cGxp
-Y2F0ZSAmZ3BpbyBkZWZpbml0aW9ucyAoeW91IHNlZW0gdG8gaGF2ZSBhZGRyZXNzZWQgc29tZSku
-Cj4KPiBCZXN0Cj4KPiBBZHJpYW4KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0
-cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8v
-b3BlbndydC1kZXZlbAo=
+--===============2168390480868146217==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============2168390480868146217==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1hwmBB-0003la-SI
+	for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 11:38:31 +0000
+Received: by mail-ot1-x341.google.com with SMTP id o101so14496828ota.8
+        for <openwrt-devel@lists.openwrt.org>; Sun, 11 Aug 2019 04:38:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=LgR/l3UibPoE78koXcBgjctpKfKyG6oYmzUmIhzKIGc=;
+        b=rp/MKG6pNlUqtLicn/pPpzqHzWBZYoXL1ld2Z4h3hvilri7mJibwlHrXrIZz0z5dep
+         A8rA30KC/1fnHDGJ47NZ4ECB1vBtzs5oyrz9LO8BCnZOLFrQUWdeum9YqwfFBO8y1yX2
+         7bCV1PTQAwdT1o9ctIAkUrNb8lW0zakQQXQ8u+qAcDJ7L/AWVScZ3HcEwdY8v32BNxP+
+         mla05GDA0ll9sXfEdlWfM/DvgXxFQY1/kc8u5ZVMKvFLXEama+RivDyXoALimYC1AwbH
+         +l2BVmtS6wjXE157q4cRJn0iD8DXOkZK8wiLiXENCvHGjZuDBMc0rFBUaIUFXGUAv36J
+         l7kg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=LgR/l3UibPoE78koXcBgjctpKfKyG6oYmzUmIhzKIGc=;
+        b=maLzk9o8ANBbl7uJpgR/WTxK4h0K6ZnWjST16POd+rN61Tf6v2Ve1w3oJP4OGSE6OS
+         pbzoksl33vWF4Max0iu9U2gVjCoAY5kr8NC29m+OwejW4Blc8OSPPshmRsihdndSfYy+
+         fS4HLQROje0bhNjLGFNH6Kgr2eJHl8nxP+6Dk054IR3BVIvOmTQihGljZpem+6I2WS4i
+         xHEujv5mvL5qVJGcYqa1zYp99R/jH2O3y8uJYpyqbCQAYgRPp8MZWb4JRWWgmQJ8iQU1
+         f6gc1jP9fBgDxZtMlFKlQ852n5v52bcnhutdLS4PMKLRxuITeQoZwbcALkTzCSohA6LR
+         tHjQ==
+X-Gm-Message-State: APjAAAUNaZMi7opG7JQ14c6Tm4kmakpM5u3bO+AOgcZdWunIJcy6bm7U
+	h273xP/07DDZaGEzp/ZMAxl37IzUMnu0Tt5TKfix/Q46
+X-Google-Smtp-Source: APXvYqz2Wd2+h7+54bdZkyCROlWSunWOI2AucReHZPcvqiFkp7Y3pvO+XftS3W3fdhxoX0yIsnrwtu/I6vqrWjICwqk=
+X-Received: by 2002:a05:6830:1e5a:: with SMTP id e26mr11223483otj.96.1565523508005;
+ Sun, 11 Aug 2019 04:38:28 -0700 (PDT)
+MIME-Version: 1.0
+References: <2f56d90d-39bf-7f63-0676-e0856e6d9f15@birger-koblitz.de>
+ <75e48acf-8bfa-5101-3f9a-02ae2cc43c0a@kresin.me> <de6aa12b-8e9d-413c-7577-16b4d400f725@gmail.com>
+ <eb294211-eeea-c830-ddf5-77ee9a279626@birger-koblitz.de>
+In-Reply-To: <eb294211-eeea-c830-ddf5-77ee9a279626@birger-koblitz.de>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sun, 11 Aug 2019 13:38:16 +0200
+Message-ID: <CAFBinCBE1XYixKzCmzm6e3Pe06sW6K-iR8-6gBSc6VXJwdncQw@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: use gpio_hog instead of gpio-export
+To: Birger Koblitz <mail@birger-koblitz.de>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190811_043829_944357_4D495485 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2607:f8b0:4864:20:0:0:0:341 listed in]
+                             [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             (martin.blumenstingl[at]googlemail.com)
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+
+On Sun, Aug 11, 2019 at 1:00 PM Birger Koblitz <mail@birger-koblitz.de> wrote:
+> I'll go through the patches and remove anything that sounds like it
+> might need user space configuration (i.e. not power the USB bus or the
+> like).
+upstream GPIO maintainers prefer dedicated properties instead of a GPIO hog.
+
+some USB controller drivers support a "vbus-supply" property, which
+can be used together with a GPIO regulator
+in case of the VBUS supply it means the GPIO will be turned off if the
+USB port is "disabled" (for example by unloading the kernel USB
+controller driver).
+
+I'm not saying that you have to switch over to something other than GPIO hogs.
+switching to an upstream solution is a good starting point!
+just be aware that this may not be the final solution
+
+> Is anyone working on converting the use-cases which require user space
+> switching to libgpiod or any other solution?
+how do you identify the "use-cases which require use space switching"?
+
+
+Martin
+
+
+--===============2168390480868146217==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2168390480868146217==--

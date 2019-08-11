@@ -2,52 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27CC7893C7
-	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 22:53:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 014AD893CB
+	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 22:54:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EkPTt/RCvf+3VthbovRCzCPbMVr16ncFkNW+RfV+xIY=; b=B1ly5vAL1ECfNZ
-	LMWSLCJvs2TQ4A5Ly60uFfQxMoabZX/4MCR4CPbUmENcjEa0YXKZNB7Zyyo6FZQlNgh8wfNhBtjwf
-	bXF+fbdLjNEXIV+clMoOgm2kUHiznoESTBZkbI4zCWEi+9dlTtUcGzPJDS8XYT/UPaMml7WCR6IYx
-	lUnWKpT0Y+SlusAYg3VXrsGFPO1kqh8rIuOR4gV9NuULSS9CJcPfoLEuzVreJwX78B+3DUvbuug1W
-	BsXRG3iPkhgz69g+WXoIuOBow305Jn6IHyyncDD4cEdX0+FDuY5dtAMp4OFTFpEykXqQQAdqB1J0I
-	62ksfSLemEIRBiGsAGoA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YYKz7HwrasHm/Jm0B1cELcZjh4tzzu/uAIc86NQDAkY=; b=qRiMa3D1CMBnwV
+	KaqNW6ppgAL3ziX9ba3TMhDBd5PCBgI885zrXMLJqv1pRSJVJKCgsT+w6F+/c7k6htop73nMOJNsX
+	RzyGuvHUJHoAinbJVK4RmCCBBP45ejxKaqSqFKFeorFD4WQ9fZeMc6Lxop8EjnZg9eb9l6yw+dlE/
+	5pUUJGCN+avuid5SlouiAl/WKXU1rzzIYzIiM418/UayH7gmc/HPihXmZ/DEwHAkpLFqFnNt3Pxsd
+	UlrZiPwjhem7MAz44C4vysZJb1wU7MCBAngpxjrAupwbg/JaX1tGr/KYcjk/7iVhx4UzqMfD7xNJI
+	BmLJdwRil/Pb/OC1KFtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwuqc-0007w9-Ga; Sun, 11 Aug 2019 20:53:50 +0000
+	id 1hwur4-0000Gb-Fo; Sun, 11 Aug 2019 20:54:18 +0000
 Received: from mx4.wp.pl ([212.77.101.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwuqD-0007Ve-5W
- for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 20:53:27 +0000
-Received: (wp-smtpd smtp.wp.pl 32084 invoked from network);
- 11 Aug 2019 22:53:21 +0200
+ id 1hwuqH-0007Wg-B8
+ for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 20:53:30 +0000
+Received: (wp-smtpd smtp.wp.pl 35071 invoked from network);
+ 11 Aug 2019 22:53:27 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1565556801; bh=LuKes5DkNvpH5a+M2Aqj1eJkUJQFaybP/2ld9gsO1UE=;
+ t=1565556807; bh=FDUbme/j1pUwteODZ1eL5ScI5wAq5BruuqqokIAOVDI=;
  h=From:To:Cc:Subject;
- b=Ck06M6uev8x3yPe0JB991r9o7aw0Wb9utf9FbwTwJqYb1CopuwFpmB6EXMdQYtC80
- zn8K7dUREBqF1g/UrxLEEmpJJUEV4lWUf3VvchjN1JQMexIzDVhUmFtBqtrvhRQTL5
- 46deWHXfAfiwhtMN93zHar1A3dnDYFpUaWkrxVjk=
+ b=XTbv6xo6dPcMEzBR7LwsMjee1yaaBJ7w3MleiCfNFBMCLSOCYX97druqf6tdwhKlK
+ HFWqhIPpKlrLerVCv2v7yh6gf4HSoI1SJpELsV5LDFP5+julVjn9/zNwqFz6dEmCw1
+ QJQHjcQGxi+vo+qtOW+R0yVG3qVu3YqxsXGauZ9M=
 Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
  (michal.cieslakiewicz@wp.pl@[89.79.49.72])
  (envelope-sender <michal.cieslakiewicz@wp.pl>)
  by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 11 Aug 2019 22:53:21 +0200
-Date: Sun, 11 Aug 2019 22:39:21 +0200
+ for <openwrt-devel@lists.openwrt.org>; 11 Aug 2019 22:53:27 +0200
+Date: Sun, 11 Aug 2019 22:40:40 +0200
 From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Message-ID: <20190811223921.572cda5b@kosmio.komorska>
+Message-ID: <20190811224040.7171c4a6@kosmio.komorska>
+In-Reply-To: <20190811223921.572cda5b@kosmio.komorska>
+References: <20190811223921.572cda5b@kosmio.komorska>
 X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-X-WP-MailID: d7fc17918d78e43fd752cdafeec66f5a
+X-WP-MailID: 5f57841fbcc62899facb953427119cb5
 X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [saPU]                               
+X-WP-SPAM: NO 000000A [IQMU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_135325_387752_AF4B2AC3 
-X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-CacheID: sfid-20190811_135329_569988_048B25DF 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,8 +69,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v3 0/5] ath79: add support for some Netgear
- WNR routers
+Subject: [OpenWrt-Devel] [PATCH v3 1/5] ath79: add LAN LEDs control bits for
+ AR724x GPIO function pinmux
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,60 +88,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patchset enables ath79 target for following Netgear ar724x-based
-routers currently supported by ar71xx:
-* Netgear WNR1000v2 (tiny, 4_32)
-* Netgear WNR2000v3 (tiny, 4_32)
-* Netgear WNR2200 (generic, 8_64 + USB)
+Currently AR724x pinmux for register 0x18040028 controls only JTAG disable bit.
+This patch adds new DTS settings to control LAN LEDs and CLKs that allow
+full software control over these diodes - exactly the same is done by ar71xx
+target in device setup phase for many routers (WNR2000v3 for example).
 
-and improves existing support for:
-* Netgear WNR612v2 (tiny, 4_32)
+'switch_led_disable_pins' clears AR724X_GPIO_FUNC_ETH_SWITCH_LED[0-4]_EN bits.
+'clks_disable_pins' clears AR724X_GPIO_FUNC_CLK_OBS[1-5]_EN and
+AR724X_GPIO_FUNC_GE0_MII_CLK_EN bits. These all should be used together, along
+with 'jtag_disable_pins', to allow OS to control all GPIO-connected LEDs and
+buttons on device.
 
-For all above routers, MAC address printed on device label is for
-LAN interface (eth1, ART offset 0x6).
+Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+---
+ target/linux/ath79/dts/ar724x.dtsi | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
 
-The goal was to provide full functionality in ath79, on a par with
-ar71xx target. The only minor change is renaming 'netgear:amber:test'
-LED to 'netgear:amber:power' where applicable (apparently no one
-defines them as 'test' nowadays).
-Patched images were successfully flashed to respective devices and
-are confirmed to work.
-
-Patch #1 is a prerequisite. It adds DT flags to control network LEDs
-and clocks - in ar71xx these get disabled at setup phase in mach-*.c
-files. Now ath79 target can do this as well and provide sysfs access
-to LAN/WAN amber and green diodes.
-
-Changes from v2:
-* source DT files reformatted ('compatible' before 'model', hex
-  numbers simplified, gpio hog renamed etc)
-* target makefiles updated (redundant variables removed)
-* startup scripts updated (do not define triggers already set by DTS)
-
-Patch list (5):
-  ath79: add LAN LEDs control bits for AR724x GPIO function pinmux
-  ath79: WNR612v2: improve device support
-  ath79: add support for Netgear WNR2000 v3
-  ath79: add support for Netgear WNR1000 v2
-  ath79: add support for Netgear WNR2200
-
- .../ath79/base-files/etc/board.d/01_leds      |  14 ++
- .../ath79/base-files/etc/board.d/02_network   |   3 +
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   3 +
- .../ath79/dts/ar7240_netgear_wnr1000-v2.dts   | 207 +++++++++++++++
- .../ath79/dts/ar7240_netgear_wnr612-v2.dts    |   2 +-
- .../ath79/dts/ar7240_netgear_wnr612-v2.dtsi   |  20 +-
- target/linux/ath79/dts/ar7240_on_n150r.dts    |   2 +-
- .../ath79/dts/ar7241_netgear_wnr2000-v3.dts   | 212 ++++++++++++++++
- .../ath79/dts/ar7241_netgear_wnr2200.dts      | 237 ++++++++++++++++++
- target/linux/ath79/dts/ar724x.dtsi            |  10 +-
- target/linux/ath79/image/generic.mk           |  14 ++
- target/linux/ath79/image/tiny-netgear.mk      |  30 ++-
- 12 files changed, 744 insertions(+), 10 deletions(-)
- create mode 100644 target/linux/ath79/dts/ar7240_netgear_wnr1000-v2.dts
- create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2000-v3.dts
- create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
-
+diff --git a/target/linux/ath79/dts/ar724x.dtsi b/target/linux/ath79/dts/ar724x.dtsi
+index b2844bf179..95832d998a 100644
+--- a/target/linux/ath79/dts/ar724x.dtsi
++++ b/target/linux/ath79/dts/ar724x.dtsi
+@@ -75,7 +75,15 @@
+ 				#pinctrl-cells = <2>;
+ 
+ 				jtag_disable_pins: pinmux_jtag_disable_pins {
+-				pinctrl-single,bits = <0x0 0x1 0x1>;
++					pinctrl-single,bits = <0x0 0x1 0x1>;
++				};
++
++				switch_led_disable_pins: pinmux_switch_led_disable_pins {
++					pinctrl-single,bits = <0x0 0x0 0xf8>;
++				};
++
++				clks_disable_pins: pinmux_clks_disable_pins {
++					pinctrl-single,bits = <0x0 0x0 0x81f00>;
+ 				};
+ 			};
+ 
 -- 
 2.22.0
 

@@ -2,154 +2,244 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D942588D28
-	for <lists+openwrt-devel@lfdr.de>; Sat, 10 Aug 2019 22:22:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E1F388EDF
+	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 02:08:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:To:Date:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BLePhZ/P+/ADsF/bi03A/Oh6MgY/fZSCnbmqkU+4mDE=; b=T4aT45F5fNjGZHMJt2iQkUdlM
-	vOX3yKuhYWlIwIXP5QLCGiarA/de3xP7mcjAjBFM1GkJ5UxVHl+kR+IHV+A+f2sQON0TSaFNsX0rS
-	RHqbQd5Y75EIPDviKczwDh2AGDXQOGFhkHLy0hD1Q0CvD47+KBacL3lgSBf8J7LIgnEnDrzWXIcQ5
-	LiUKTByXlQ1a7sjgWPdIioHgM5hPmsjl8QtBoT77duN53vXlgheJp0WABv7jHKxaY7Q/wj3H9ByEm
-	OMrkdRVpNd4gapyCT10b/i0lvHwV2lL+0YrD+Lnn5IBeVisdJ12hEaUXBndN/zDd0bg8yMMH0s3w7
-	h7iqqZPMA==;
+	 bh=bkO9PjWCcwGeOMto9cpBfTTlch/n9xcJvCr23UdMaC0=; b=W9rpZvoPcHfu+nq4M2wm+5nDq
+	N9P+XrJxMYcr4/3V6Ibpiz3np2IzQhGc+R74VxeYRKWbqHakwuZQZ5SMv1TDtgXiyfqy6i6z1nq9w
+	O0/x0uGeuIMG0aoz4IGrauq+c22wIY87mQTamQN/p5aj/aZQWX5A/WnDEwX/vl3XOKgyd6Z1GuwBg
+	bHZiIUCE0C2+CfBEBEA4z5MWd9wEqmacuBmHAhuV94qPtYhqmQUW4VnNcjU2qZa0ENFs4YrjULcED
+	T1DSehDwF1WS4wOOVo8PE8V7haWmCP+cUlIKj+FdSqfViqYCY+mGN1gnLbmPtpUqhtpb0Gu2uMbVN
+	lsZNKUVvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwXtA-0000rp-JG; Sat, 10 Aug 2019 20:22:56 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwXsy-0000rW-5E
- for openwrt-devel@lists.openwrt.org; Sat, 10 Aug 2019 20:22:46 +0000
-Received: from desktop ([188.193.174.123]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1N8XLj-1iRFxn3KmP-014XXU; Sat, 10 Aug 2019 22:22:38 +0200
-From: <mail@adrianschmutzler.de>
-To: "'Dmitry Tunin'" <hanipouspilot@gmail.com>
-References: <20190810172240.2903-1-freifunk@adrianschmutzler.de>
- <CANoib0H_+Li=KdWdj8jK+e8Pg1o=TYseb_111GUTKEDP26LVfA@mail.gmail.com>
-In-Reply-To: <CANoib0H_+Li=KdWdj8jK+e8Pg1o=TYseb_111GUTKEDP26LVfA@mail.gmail.com>
-Date: Sat, 10 Aug 2019 22:22:34 +0200
-Message-ID: <01f401d54fb9$5acbd6f0$106384d0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+	id 1hwbPf-00017L-KS; Sun, 11 Aug 2019 00:08:44 +0000
+Date: Sun, 11 Aug 2019 08:08:23 +0800
+To: Lech Perczak <lech.perczak@gmail.com>
+In-Reply-To: <4fc1072b-22ae-3cd6-d592-dd8c757a6dd9@gmail.com>
+References: <mailman.16115.1565442835.19300.openwrt-devel@lists.openwrt.org>
+ <alpine.LNX.2.21.99999.352.1908101628250.23494@localhost.localdomain>
+ <4fc1072b-22ae-3cd6-d592-dd8c757a6dd9@gmail.com>
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQE5P2+0oAK0jTojIebbwWFCKb/0NAIYOqQdqBwxf+A=
-X-Provags-ID: V03:K1:lZ41DRajbC+C4JqkAV/QwJMA4ml4y6Azyu5YIh6fqT+1WDmX5Dc
- DZCCGfKwYzHIB55JrQ3LfS6Nz7yIrewenOPlx08MshHNZDwPBLviaBu693RfoLUeB1dQXJP
- r7Ghizq5jVWRnusFMT+X4PLtOpMbyzisZG2WSK912K8HDghn5Du7v7c72z9+iIfiTCMN+/K
- w3TZe2BB1r3wX7e87H9ow==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Aq6iNRb9His=:fJ3AoqLK/TBrvKhreb/xeA
- XfWDqpnVF5NvrAZ0j4NlD+GLZVw4z2U5LHlwZY5gAKyfo28GYAwV0MoZ75cMDON7rN515gAIE
- BpEv3ivBfLPoAniiYM9K/4/zQivMhV8lLPEhaVBbcHgCAV+1jaqGLRlJkTPIG5aUmfIN5aClS
- SCiVbTie5yKQ5uYCFbuRVIF9lE3/3RkvJmKtAeC2E+dB/IV+SrQIXR6gywVTW2/FHWdYOXcR0
- 7hNJAe2pNAl4IsIoAHhslTkqJqQE9l5LSpYAg5blybAn6MyZHLkxbshZk2gQf57egWcWnz3Wj
- AqTRhXWqiwvVpgc6Qi1KS4IFwG/6Op+Xq3MhD1CZs6Mf1L6ENAQpejqCGcAEbwDeiSM3Lj44u
- tnjkHqFXflkrPFaG4qPe82w53wlLds/yAtzYrrW6kYrxdCNWt7O6H+wKsej0Unon5jvOc7S4X
- jl/itO6A1JiwgQ8zPFNnE2QrFwZu1P4kVlXB9hBsI3pcztBUrB2YdDXeTYkGHdYlQVrjTexzD
- nfYAn0szc7iS/CA68VE5ue7Uj7/h4A5rUoL7axBz4W1/eZEIpb6ww4oVhKE7m451R7BF6htlL
- 2ydLgH0Vmtd1UoCnTfsBdCXkOhSNv3PkTMFxzGBBpEkcawm+w+W3xY/LuYlNQxUccJOXAJhb0
- Loe8e4fCkvMJY+2Tc+fOoe9bd8P2Xr2kcwSQtRu/oGjH8ECA8/XN4hEPuqKAoJ7rObRPrNoci
- U0OB6bDlDbdMUAnaDbz/7CaLqQ9yOvYCPMHOH24gchfzfb6OFE3Mzrigthg=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190810_132244_643988_64FDC745 
-X-CRM114-Status: UNSURE (   6.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
-Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: convert devices to
- interrupt-driven gpio-keys
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.16138.1565482112.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Joan Moreau via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Joan Moreau <jom@grosjo.net>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============2958964664509884134=="
+Subject: Re: [OpenWrt-Devel] Has OpenWrt suport for Powerline devices
+Content-Type: multipart/mixed; boundary="===============0315019478278376970=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============2958964664509884134==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=UERBYNu7zcgKgP=-="
-
-This is a multipart message in MIME format.
-
---=-=UERBYNu7zcgKgP=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Dmitry Tunin
-> Sent: Samstag, 10. August 2019 19:47
-> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-> Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: convert devices to
-> interrupt-driven gpio-keys
->=20
-> As I mentioned before with 'gpio-keys' debounce-interval is not needed.
-
-In your other e-mail, you said without them it would work better.
-Now you are telling that they are not needed.
-
-In the latter case, I'd remove them. In the former case, it would be a matt=
-er of separate testing.
-
-Best
-
-Adrian=20
-
---=-=UERBYNu7zcgKgP=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
+--===============0315019478278376970==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
------BEGIN PGP SIGNATURE-----
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1PJ4oACgkQoNyKO7qx
-AnBqJg//SvCoqvtRibfoqxd5/EgyoC/wUBCONttY2nIbrO4VAR3jFE5sCTGggz1G
-u+dShdzHeIkHGIvzGqavQr9OptFdt3jtDQbK3rS9nfTJv1tVJgX5J4O4m0DixNrS
-ivh8T3+/Xc3KtAthlkZnvkt07e/hjC8GIoYuAcXBOEbNkrnyqzEAvRcko61ZaSMW
-d13tl73AehEBcsU2O2iQ20tEBvJ5MOJDeEh1RIyXjL2N29Swg5WpZjeG31pp8Ijk
-JUrR9t1IrPx62EOzMOsDO7XXK0+6piYy1AWv9ayEj+PJ0zlMUeEvWn9NQJ2EWEHR
-UHX0/z1w9iGodCLN5z+3Ekzvyeuz1a3vQJehnj3SIaFolN8zl3jpS6c7Zwji4LnC
-jur/SFHyYRL4U7HO3DOcCDNuv2qB2yx3/eCp5NVDA5VOmVTflChArc1WxMG70Yf6
-aNHndA1VFyvFaGLVQwqi6Xlhgeibj3RibD/CgRV+FYC27IrOK0wlcG0QJ1f2LIhg
-nFtt4A2b/QA2oagmKRroCsev17iTeLSxZUF7MI5cvSSkt4WJ3ypt5jPlSpYgC6o3
-K7O9Ugiv5+Y7TZMm+aFQhb0xEM55VI+jYqXRR/945qwwXrXxJ7WQcsx4zoyo81Gp
-BDmBXqx7Rg/1hOee9WFqy6P6BecR4BUresWapfJmi+Iu+++UJi8=
-=D1Ww
------END PGP SIGNATURE-----
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============0315019478278376970==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from grosjo.net ([94.130.37.163])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1hwbPS-00016x-79
+	for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 00:08:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=grosjo.net;
+	 s=dkim; h=Message-ID:References:In-Reply-To:Subject:Cc:To:From:Date:
+	Content-Type:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=RJirig7jsOJXo352SjNYcIckudzxGA5aDsalu/7Pr8k=; b=bo9/7lQUrTTLwXCHJF1lrAJLGx
+	KpoXKYObpNJHAJMmCq3wVXj18jPxy2GP2ME6PkVwVlWKQo8XVyuaG3hWjcR+kEWjKUPflAQFiVKuH
+	lQMO4gr4InCK92Su6ly/XxfRUQnjE1GVPHR4itpTuc0vRe7jhR9dmtuK3YSvgw7ak4LY=;
+Received: from localhost ([127.0.0.1] helo=grosjo.net)
+	by grosjo.net with esmtp (Exim 4.92.1)
+	(envelope-from <jom@grosjo.net>)
+	id 1hwbPL-0000fi-Bw; Sun, 11 Aug 2019 00:08:24 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="=_c8986d6f2b8bd786ed73dde266b422b6"
+Date: Sun, 11 Aug 2019 08:08:23 +0800
+From: Joan Moreau <jom@grosjo.net>
+To: Lech Perczak <lech.perczak@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org
+Subject: Re: [OpenWrt-Devel] Has OpenWrt suport for Powerline devices
+In-Reply-To: <4fc1072b-22ae-3cd6-d592-dd8c757a6dd9@gmail.com>
+References: <mailman.16115.1565442835.19300.openwrt-devel@lists.openwrt.org>
+ <alpine.LNX.2.21.99999.352.1908101628250.23494@localhost.localdomain>
+ <4fc1072b-22ae-3cd6-d592-dd8c757a6dd9@gmail.com>
+User-Agent: Roundcube Webmail/1.4-git
+Message-ID: <621c052c16c1875113be1fae2f7c32a3@grosjo.net>
+X-Sender: jom@grosjo.net
+X-GJ: Sent from localhost
+X-Spam-Score: -2.9 (--)
+X-Spam-Report: Spam detection software, running on the system "gjserver",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ admin@grosjo.net for details.
+ 
+ Content preview:  The Powerline system needs a "Lan name" in order to synchronize
+    teh devices. How this is translated in OpenWrt ? On 2019-08-11 03:47, Lech
+    Perczak wrote: 
+ 
+ Content analysis details:   (-2.9 points, 3.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+                             [score: 0.0000]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-GJ-SMTP: h_FROM = Joan Moreau <jom@grosjo.net> RPATH=jom@grosjo.net SENDERADR= jom@grosjo.net:
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190810_170830_263206_9D6A22A4 
+X-CRM114-Status: UNSURE (   1.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [94.130.37.163 listed in list.dnswl.org]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+
+--=_c8986d6f2b8bd786ed73dde266b422b6
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
+
+The Powerline system needs a "Lan name" in order to synchronize teh
+devices. 
+
+How this is translated in OpenWrt ? 
+
+On 2019-08-11 03:47, Lech Perczak wrote:
+
+> W dniu 2019-08-10 o 16:30, Enrico Mioso pisze: 
+> 
+>> Hello! 
+>> I guess this is in a case-by-case basis - I have a TP-Link RE450 which is supported. 
+>> I know there are also Wi-Fi-only devices, but don't think OpenWRt supports any of them. 
+>> 
+>> I guess this happens also due to the amount of flash and RAM memory those devices have. 
+>> 
+>> And - if you're going for the RE450, keep in mind it's u-boot doesn't seem to have any recovery method, so soldering an UART right away maybe a good option. 
+>> 
+>> Enrico 
+>> 
+>> _______________________________________________ 
+>> openwrt-devel mailing list 
+>> openwrt-devel@lists.openwrt.org 
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> 
+> RE450 is Wifi-only.
+> There is actually one supported: 
+> 
+> https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wpa8630
+> 
+> -- 
+> Pozdrawiam,
+> Lech Perczak
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+--=_c8986d6f2b8bd786ed73dde266b422b6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 9pt; font-family: Verdana,Gene=
+va,sans-serif'>
+<p>The Powerline system needs a "Lan name" in order to synchronize teh devi=
+ces. </p>
+<p>How this is translated in OpenWrt ?</p>
+<p><br /></p>
+<div id=3D"signature">&nbsp;</div>
+<p><br /></p>
+<p id=3D"reply-intro">On 2019-08-11 03:47, Lech Perczak wrote:</p>
+<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
+px solid; margin: 0">
+<div id=3D"replybody1">
+<div>
+<div class=3D"v1moz-cite-prefix">W dniu 2019-08-10 o&nbsp;16:30, Enrico Mio=
+so pisze:</div>
+<blockquote id=3D"v1mid_alpine_LNX_2_21_99999_352_1908101628250_23494_local=
+host_localdomain" class=3D"v1cite">Hello! <br />I guess this is in a case-b=
+y-case basis - I have a TP-Link RE450 which is supported. <br />I know ther=
+e are also Wi-Fi-only devices, but don't think OpenWRt supports any of them=
+=2E <br /><br />I guess this happens also due to the amount of flash and RA=
+M memory those devices have. <br /><br />And - if you're going for the RE45=
+0, keep in mind it's u-boot doesn't seem to have any recovery method, so so=
+ldering an UART right away maybe a good option. <br /><br />Enrico <br /><b=
+r />_______________________________________________ <br />openwrt-devel mai=
+ling list <br /><a class=3D"v1moz-txt-link-abbreviated" href=3D"mailto:open=
+wrt-devel@lists.openwrt.org" rel=3D"noreferrer">openwrt-devel@lists.openwrt=
+=2Eorg</a> <br /><a class=3D"v1moz-txt-link-freetext" href=3D"https://lists=
+=2Eopenwrt.org/mailman/listinfo/openwrt-devel" target=3D"_blank" rel=3D"noo=
+pener noreferrer">https://lists.openwrt.org/mailman/listinfo/openwrt-devel<=
+/a> <br /><br /></blockquote>
+<p>RE450 is Wifi-only.<br />There is actually one supported:</p>
+<p><a class=3D"v1moz-txt-link-freetext" href=3D"https://openwrt.org/toh/hwd=
+ata/tp-link/tp-link_tl-wpa8630" target=3D"_blank" rel=3D"noopener noreferre=
+r">https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wpa8630</a></p>
+<pre class=3D"v1moz-signature">--=20
+Pozdrawiam,
+Lech Perczak
+</pre>
+</div>
+</div>
+<br />
+<div class=3D"pre" style=3D"margin: 0; padding: 0; font-family: monospace">=
+_______________________________________________<br />openwrt-devel mailing =
+list<br /><a href=3D"mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@=
+lists.openwrt.org</a><br /><a href=3D"https://lists.openwrt.org/mailman/lis=
+tinfo/openwrt-devel" target=3D"_blank" rel=3D"noopener noreferrer">https://=
+lists.openwrt.org/mailman/listinfo/openwrt-devel</a></div>
+</blockquote>
+</body></html>
+
+--=_c8986d6f2b8bd786ed73dde266b422b6--
 
 
---=-=UERBYNu7zcgKgP=-=--
-
-
-
---===============2958964664509884134==
+--===============0315019478278376970==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -160,6 +250,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2958964664509884134==--
-
+--===============0315019478278376970==--
 

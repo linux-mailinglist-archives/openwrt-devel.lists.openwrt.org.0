@@ -2,74 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A27B893C6
-	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 22:53:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F16B4893CC
+	for <lists+openwrt-devel@lfdr.de>; Sun, 11 Aug 2019 22:57:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ioqUyKROfH/ApfzdKq26httEMOgn/oXCLx2/zEu5gCQ=; b=W8uo8PXiFq5XAH
-	sbMf9YHONgcwhU51Fd8ufGy/0k8AW559DT5oX37No5pGksczuy5/jRJk1LIY4nTPW2D5lX3JKryEk
-	1ZhknfrymSWOuR93PQlAKYU21T1safmI9ViM1+pYOPyTUYF4ZoU22FmDkcqiYP10qUhRejN9rfFsp
-	2LTikC8oJUggdkB97OWp1I4q1IMc8KrSlntTVVfwi7ABgaRzHLysFwPQ7dbqbIRAbGtgR8Rf7YAPC
-	MDEsfDBFO4xbgVqN9D7jBGRcpZHl6wFAfwwHBqoeRYrclb3143+aROxYUZ3Whn5wU4qqKF1utqSzj
-	ip2gLGB203Niydd5s1qg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WW/kipr2ONiJD4YoBYGB49dp5x9gNNiUGZ+PtHn22fs=; b=YEF76RBgIsQ2dj
+	/3eFMdEKCbllQIOxKj3nLqzGcg1OFJMvfKp5PHkBDBBOA4WAdc9J6UeVytkpkqvy7viQfDOkr9I4B
+	JpseK2gtBVukOtxuRfSJokYRQpRxuAqXhuR4QtPBpLGcs56U16NT8FJd1nFXbzlStFk8urLx18bDT
+	PXyeOL1cwhdZuqMZr0Efrm1D+kuuAtEcCQdJMAkE4UYbrNSFFuypJhuk6JwMQ1ASBQ6tctRXQcZf/
+	gjEAtLu4Ns+Hihaj+hAfp4U4tzbvyhbDeR2yXEOQf93vmVxuCEZ4ks6fknggHMacAjeJWkVZR3U88
+	nCNzSlsehfykKnIXS3VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hwuqT-0007gl-PA; Sun, 11 Aug 2019 20:53:41 +0000
-Received: from mx4.wp.pl ([212.77.101.12])
+	id 1hwuu1-0001td-HK; Sun, 11 Aug 2019 20:57:21 +0000
+Received: from mail.klickitat.com ([54.70.207.208])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hwuqC-0007Vd-OQ
- for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 20:53:26 +0000
-Received: (wp-smtpd smtp.wp.pl 31155 invoked from network);
- 11 Aug 2019 22:53:20 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1565556800; bh=wb/MJm+Z3AJSxwAtBED5ZEsVnjtis0n0KRmGwdMb53E=;
- h=From:To:Cc:Subject;
- b=peUahaSu7zFCohpEwlzBrOJRpuI12NgNyhEihIa8WGnsKX7KksvX/RdJQvtVMRY0R
- nws6ZRIwJ6gRdVfYW9VaWf63NxHdLEtm8iw0ZKF/0lnSsD4MT1/6fW7ct0DPgeVRxO
- Wzl51cnSnT98hs643yWHebBD3RCa/JJdYxrWqCMU=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 11 Aug 2019 22:53:20 +0200
-Date: Sun, 11 Aug 2019 22:48:28 +0200
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Message-ID: <20190811224828.70d51721@kosmio.komorska>
-In-Reply-To: <20190811223921.572cda5b@kosmio.komorska>
-References: <20190811223921.572cda5b@kosmio.komorska>
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+ id 1hwutv-0001tI-C0
+ for openwrt-devel@lists.openwrt.org; Sun, 11 Aug 2019 20:57:17 +0000
+Received: by mail.klickitat.com (Postfix, from userid 182)
+ id CE4BDA611BE; Sun, 11 Aug 2019 13:57:13 -0700 (PDT)
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dodson.localdomain
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=unavailable autolearn_force=no version=3.4.2
+Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
+ by mail.klickitat.com (Postfix) with ESMTP id 85065A60D97;
+ Sun, 11 Aug 2019 13:57:08 -0700 (PDT)
+From: Russell Senior <russell@personaltelco.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun, 11 Aug 2019 13:57:08 -0700
+Message-ID: <87mugfe7yz.fsf@husum.klickitat.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
 MIME-Version: 1.0
-X-WP-MailID: 7b46581c4c7f168f7511797943dbd18f
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [8VO0]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_135324_979858_ADD9FCF4 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190811_135715_453654_AFF9BF6A 
+X-CRM114-Status: GOOD (  15.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michal.cieslakiewicz[at]wp.pl)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v3 5/5] ath79: add support for Netgear
- WNR2200
+Subject: [OpenWrt-Devel] [PATCH] tools/patch: apply upstream patch for
+ cve-2019-13638
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,382 +61,91 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patch adds ath79 support for Netgear WNR2200.
-Router was previously supported by ar71xx target only.
 
-Specification
-=============
-  * Description: Netgear WNR2200
-  * Loader: U-boot
-  * SOC: Atheros AR7241 (360 MHz)
-  * RAM: 64 MiB
-  * Flash: 8 MiB (SPI NOR)
-	- U-boot binary: 256 KiB
-	- U-boot environment: 64 KiB
-	- Firmware: 7808 KiB
-	- ART: 64 KiB
-  * Ethernet: 4 x 10/100 LAN + 1 x 10/100 WAN
-  * Wireless: 2.4 GHz b/g/n (Atheros AR9287)
-  * USB: yes, 1 x USB 2.0
-  * Buttons:
-	- Reset
-	- WiFi (rfkill)
-	- WPS
-  * LEDs:
-	- Power (amber/green)
-	- WAN (amber/green)
-	- WLAN (blue)
-	- 4 x LAN (amber/green)
-	- WPS (green)
-  * UART: 4-pin connector JP1, 3.3V (Vcc, TX, RX, GND), 115200 8N1
-  * Power supply: DC 12V 1.5A
-  * MAC addresses: LAN on case label, WAN +1, WLAN +2
+GNU patch through 2.7.6 is vulnerable to OS shell command injection that
+can be exploited by opening a crafted patch file that contains an ed style
+diff payload with shell metacharacters. The ed editor does not need to be
+present on the vulnerable system. This is different from CVE-2018-1000156.
 
-Installation
-============
-  * TFTP recovery
-  * TFTP via U-boot prompt
-  * sysupgrade
-  * Web interface
+https://nvd.nist.gov/vuln/detail/CVE-2019-13638
 
-Test build configuration
-========================
-CONFIG_TARGET_ath79=y
-CONFIG_TARGET_ath79_generic=y
-CONFIG_TARGET_ath79_generic_DEVICE_netgear_wnr2200=y
-CONFIG_ALL_KMODS=y
-CONFIG_DEVEL=y
-CONFIG_CCACHE=y
-CONFIG_COLLECT_KERNEL_DEBUG=y
-CONFIG_IMAGEOPT=y
-CONFIG_KERNEL_DEBUG_INFO=y
-CONFIG_KERNEL_DEBUG_KERNEL=y
-
-Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+Signed-off-by: Russell Senior <russell@personaltelco.net>
 ---
- .../ath79/base-files/etc/board.d/01_leds      |   3 +-
- .../ath79/base-files/etc/board.d/02_network   |   1 +
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   1 +
- .../ath79/dts/ar7241_netgear_wnr2200.dts      | 237 ++++++++++++++++++
- target/linux/ath79/image/generic.mk           |  14 ++
- 5 files changed, 255 insertions(+), 1 deletion(-)
- create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
+ tools/patch/Makefile                         |  2 +-
+ tools/patch/patches/060-CVE-2019-13638.patch | 38 ++++++++++++++++++++
+ 2 files changed, 39 insertions(+), 1 deletion(-)
+ create mode 100644 tools/patch/patches/060-CVE-2019-13638.patch
 
-diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
-index 7eca103a9e..82006efb6b 100755
---- a/target/linux/ath79/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/base-files/etc/board.d/01_leds
-@@ -104,7 +104,8 @@ glinet,gl-x750)
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
- 	;;
- netgear,wnr1000-v2|\
--netgear,wnr2000-v3)
-+netgear,wnr2000-v3|\
-+netgear,wnr2200)
- 	ucidef_set_led_netdev "wan-amber" "WAN (amber)" "netgear:amber:wan" "eth0"
- 	ucidef_set_led_default "wan-green" "WAN (green)" "netgear:green:wan" "0"
- 	ucidef_set_led_switch "lan1green" "LAN1 (green)" "netgear:green:lan1" "switch0" "0x02" "0x04"
-diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-index fe491d1c26..7d53f0a2fb 100755
---- a/target/linux/ath79/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/base-files/etc/board.d/02_network
-@@ -197,6 +197,7 @@ ath79_setup_interfaces()
- 		;;
- 	netgear,wnr1000-v2|\
- 	netgear,wnr2000-v3|\
-+	netgear,wnr2200|\
- 	netgear,wnr612-v2|\
- 	on,n150r|\
- 	tplink,tl-wr740n-v1|\
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index dbe53b6f64..044e6c0afd 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -167,6 +167,7 @@ case "$FIRMWARE" in
- 		;;
- 	netgear,wnr1000-v2|\
- 	netgear,wnr2000-v3|\
-+	netgear,wnr2200|\
- 	netgear,wnr612-v2|\
- 	on,n150r|\
- 	pcs,cap324|\
-diff --git a/target/linux/ath79/dts/ar7241_netgear_wnr2200.dts b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
-new file mode 100644
-index 0000000000..9c439be6f8
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dts
-@@ -0,0 +1,237 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "ar7241.dtsi"
-+
-+/ {
-+	compatible = "netgear,wnr2200", "qca,ar7241";
-+	model = "Netgear WNR2200";
-+
-+	chosen {
-+		bootargs = "console=ttyS0,115200n8";
-+	};
-+
-+	aliases {
-+		led-boot = &power_amber;
-+		led-failsafe = &power_amber;
-+		led-running = &power_green;
-+		led-upgrade = &power_amber;
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <20>;
-+
-+		wps {
-+			label = "wps";
-+			linux,code = <KEY_WPS_BUTTON>;
-+			gpios = <&ath9k 5 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+
-+		reset {
-+			label = "reset";
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&ath9k 6 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+
-+		rfkill {
-+			label = "rfkill";
-+			linux,code = <KEY_RFKILL>;
-+			gpios = <&ath9k 3 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&jtag_disable_pins &switch_led_disable_pins &clks_disable_pins>;
-+
-+		wan_green {
-+			label = "netgear:green:wan";
-+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wan_amber {
-+			label = "netgear:amber:wan";
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan1_green {
-+			label = "netgear:green:lan1";
-+			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan1_amber {
-+			label = "netgear:amber:lan1";
-+			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan2_green {
-+			label = "netgear:green:lan2";
-+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan2_amber {
-+			label = "netgear:amber:lan2";
-+			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan3_green {
-+			label = "netgear:green:lan3";
-+			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan3_amber {
-+			label = "netgear:amber:lan3";
-+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan4_green {
-+			label = "netgear:green:lan4";
-+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan4_amber {
-+			label = "netgear:amber:lan4";
-+			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wps_green {
-+			label = "netgear:green:wps";
-+			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		usb_green {
-+			label = "netgear:green:usb";
-+			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
-+			trigger-sources = <&hub_port>;
-+			linux,default-trigger = "usbport";
-+		};
-+	};
-+
-+	ath9k-leds {
-+		compatible = "gpio-leds";
-+
-+		power_green: power_green {
-+			label = "netgear:green:power";
-+			gpios = <&ath9k 2 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		power_amber: power_amber {
-+			label = "netgear:amber:power";
-+			gpios = <&ath9k 1 GPIO_ACTIVE_LOW>;
-+			default-state = "keep";
-+		};
-+
-+		wlan_blue {
-+			label = "netgear:blue:wlan";
-+			gpios = <&ath9k 0 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+	};
-+};
-+
-+&spi {
-+	status = "okay";
-+	num-cs = <1>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x40000>;
-+				read-only;
-+			};
-+
-+			partition@40000 {
-+				label = "u-boot-env";
-+				reg = <0x40000 0x10000>;
-+			};
-+
-+			partition@50000 {
-+				label = "firmware";
-+				reg = <0x50000 0x7a0000>;
-+				compatible = "netgear,uimage";
-+			};
-+
-+			art: partition@7f0000 {
-+				label = "art";
-+				reg = <0x7f0000 0x10000>;
-+				read-only;
-+			};
-+		};
-+	};
-+};
-+
-+&eth0 {
-+	status = "okay";
-+
-+	mtd-mac-address = <&art 0x0>;
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	compatible = "qca,ar7241-eth", "syscon", "simple-mfd";
-+	mtd-mac-address = <&art 0x6>;
-+};
-+
-+&pcie {
-+	status = "okay";
-+
-+	ath9k: wifi@0,0 {
-+		compatible = "pci168c,002e";
-+		reg = <0x0000 0 0 0 0>;
-+		mtd-mac-address = <&art 0x0>;
-+		mtd-mac-address-increment = <1>;
-+		mtd-cal-data = <&art 0x1000>;
-+		qca,no-eeprom;
-+		#gpio-cells = <2>;
-+		gpio-controller;
-+
-+		usb-power {
-+			gpio-hog;
-+			line-name = "netgear:power:usb";
-+			gpios = <4 GPIO_ACTIVE_HIGH>;
-+			output-high;
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+};
-+
-+&gpio {
-+        status = "okay";
-+};
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&usb {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	hub_port: port@1 {
-+		reg = <1>;
-+		#trigger-source-cells = <0>;
-+	};
-+};
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 5c8826b927..cd8300eada 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -855,6 +855,20 @@ define Device/netgear_wndr3800
- endef
- TARGET_DEVICES += netgear_wndr3800
+diff --git a/tools/patch/Makefile b/tools/patch/Makefile
+index 3bcf668b04..e0481204f7 100644
+--- a/tools/patch/Makefile
++++ b/tools/patch/Makefile
+@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
  
-+define Device/netgear_wnr2200
-+  ATH_SOC := ar7241
-+  DEVICE_MODEL := WNR2200
-+  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport
-+  NETGEAR_KERNEL_MAGIC := 0x32323030
-+  IMAGE_SIZE := 7808k
-+  IMAGE/default := append-kernel | pad-to $$$$(BLOCKSIZE) | netgear-squashfs | append-rootfs | pad-rootfs
-+  IMAGES += factory-NA.img
-+  IMAGE/factory-NA.img := $$(IMAGE/default) | netgear-dni NA | check-size $$$$(IMAGE_SIZE)
-+  SUPPORTED_DEVICES += wnr2200
-+  $(Device/netgear_ath79)
-+endef
-+TARGET_DEVICES += netgear_wnr2200
+ PKG_NAME:=patch
+ PKG_VERSION:=2.7.6
+-PKG_RELEASE:=5
++PKG_RELEASE:=6
+ PKG_CPE_ID:=cpe:/a:gnu:patch
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+diff --git a/tools/patch/patches/060-CVE-2019-13638.patch b/tools/patch/patches/060-CVE-2019-13638.patch
+new file mode 100644
+index 0000000000..38caff628a
+--- /dev/null
++++ b/tools/patch/patches/060-CVE-2019-13638.patch
+@@ -0,0 +1,38 @@
++From 3fcd042d26d70856e826a42b5f93dc4854d80bf0 Mon Sep 17 00:00:00 2001
++From: Andreas Gruenbacher <agruen@gnu.org>
++Date: Fri, 6 Apr 2018 19:36:15 +0200
++Subject: Invoke ed directly instead of using the shell
 +
- define Device/phicomm_k2t
-   ATH_SOC := qca9563
-   DEVICE_VENDOR := Phicomm
++* src/pch.c (do_ed_script): Invoke ed directly instead of using a shell
++command to avoid quoting vulnerabilities.
++---
++ src/pch.c | 6 ++----
++ 1 file changed, 2 insertions(+), 4 deletions(-)
++
++diff --git a/src/pch.c b/src/pch.c
++index 4fd5a05..16e001a 100644
++--- a/src/pch.c
+++++ b/src/pch.c
++@@ -2459,9 +2459,6 @@ do_ed_script (char const *inname, char const *outname,
++ 	    *outname_needs_removal = true;
++ 	    copy_file (inname, outname, 0, exclusive, instat.st_mode, true);
++ 	  }
++-	sprintf (buf, "%s %s%s", editor_program,
++-		 verbosity == VERBOSE ? "" : "- ",
++-		 outname);
++ 	fflush (stdout);
++ 
++ 	pid = fork();
++@@ -2470,7 +2467,8 @@ do_ed_script (char const *inname, char const *outname,
++ 	else if (pid == 0)
++ 	  {
++ 	    dup2 (tmpfd, 0);
++-	    execl ("/bin/sh", "sh", "-c", buf, (char *) 0);
+++	    assert (outname[0] != '!' && outname[0] != '-');
+++	    execlp (editor_program, editor_program, "-", outname, (char  *) NULL);
++ 	    _exit (2);
++ 	  }
++ 	else
++-- 
++cgit v1.0-41-gc330
++
 -- 
 2.22.0
 
+
+
+-- 
+Russell Senior, President
+russell@personaltelco.net
 
 _______________________________________________
 openwrt-devel mailing list

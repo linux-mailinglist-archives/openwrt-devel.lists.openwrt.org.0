@@ -2,62 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EDDD895DB
-	for <lists+openwrt-devel@lfdr.de>; Mon, 12 Aug 2019 05:48:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3C9E89969
+	for <lists+openwrt-devel@lfdr.de>; Mon, 12 Aug 2019 11:06:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:Message-ID:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BnLBI9pqRvmNi39C2idYzvdI6RSJsi+nmnHEJr32TqY=; b=dPSliYnmpqhXAu
-	cykGyYA0sSL71MPmRaUPFDIgxnz4kKBWnjIXezyNMEGRNJ6mvPAW9Z1NOgvOGpmtoQGifsG19RSAi
-	GqEX8qo30qOMCR7PFj99rHuO2A6cXkdkSsOgooYCWhgoOFnre0MkH+8TGB8RmEUkvvAydqduFK4Of
-	fUd0ZoCMt9ys4bTMn1F1Eb3UP67BQD2kyJ+u4IrfDGdeRlI/tDUwjjEtxRg0KiRRmaLJ50p9h/xnc
-	gukpkHSkxhdhYVpec5LjGtrWBQ9ZN8Bdum0Fn5rDFoqTQAzLkjbj9gBxAXQIFkKV3mNtWr83JDs06
-	BthaVmo5jvwuByI1xyvA==;
+	List-Owner; bh=QD4JOn15Hiaq/jOpei0VQ1/Chhryx8g5Pc+2fI8BraA=; b=jy3x5GUZf/61eg
+	j0obwTWTie25jpcMmdz1fRgCcXf+vieZPaZy0kjfjcGuSccTRHrC1RUWp+acnZ0LwgTUEEIWb5hRr
+	d6ek6W/wZwtForv66o1TxKm6wHHfO7m1MICNaStMN/3nSP+qs5dhUOB6uhrYvk7lyIsggcvyq2oRB
+	TZ3J1KaHPbi75xRykT1DPSnzgT8j0T20MNzKvC8rKtYyb/0F8cy9VTGKa1HqyJUD0GbOe5/tEEI0s
+	y7mJnnne5vKHVo2zTNvRuhs8xDH6m8dzDLTPSXwdFcmKs28x/sX9PZKhMP1dAecRXs4upryC2EekL
+	l0pqWkV+YPkS+Z6cUM/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hx1JR-0002En-MH; Mon, 12 Aug 2019 03:48:02 +0000
-Received: from out-24.smtp.github.com ([192.30.252.207])
+	id 1hx6Hi-0003hf-UN; Mon, 12 Aug 2019 09:06:34 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hx1JC-0002EG-2i
- for lede-dev@lists.infradead.org; Mon, 12 Aug 2019 03:47:47 +0000
-Date: Sun, 11 Aug 2019 20:47:43 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
- s=pf2014; t=1565581663;
- bh=RUSKVo1D+Oy3ORSabpGoGaI4geJVOywjt7d8BvSCtuI=;
- h=Date:From:To:Subject:From;
- b=HAiXoAxZDbeAVb/klLn0stRsImtqH4RvGUMQfSdxq2LF7FOtEdeo6Lz6t0RVijFzj
- SnEL/kVFChqEu3Q2hXA0xIb5iHjOuYdZLlMURDnlcy7XCjR6Xlh8NiwoU8A2dnnprL
- qKvOvq0Jye1Z+QLEsZOJYusS0JZoHduRoH26o94o=
-From: Stephen Walker <noreply@github.com>
-To: stephendwalker+github@gmail.com, 
- openwrt-devel@lists.openwrt.org
-Message-ID: <sdwalker/sdwalker.github.io/push/refs/heads/master/5c698c-75e9cb@github.com>
-Mime-Version: 1.0
-X-GitHub-Recipient-Address: stephendwalker+github@gmail.com,
- lede-dev@lists.infradead.org
-X-Auto-Response-Suppress: All
+ id 1hx6HR-0003fx-Db
+ for openwrt-devel@lists.openwrt.org; Mon, 12 Aug 2019 09:06:19 +0000
+X-Originating-IP: 98.151.65.6
+Received: from localhost.localdomain (cpe-98-151-65-6.hawaii.res.rr.com
+ [98.151.65.6]) (Authenticated sender: mail@aparcar.org)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 2070440009;
+ Mon, 12 Aug 2019 09:06:00 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun, 11 Aug 2019 23:05:36 -1000
+Message-Id: <20190812090535.29978-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190811_204746_189416_1ABC6775 
-X-CRM114-Status: UNSURE (   1.80  )
+X-CRM114-CacheID: sfid-20190812_020617_605286_A55DEBD4 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.5 HEADER_SPAM            Bulk email fingerprint (header-based) found
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.30.252.207 listed in list.dnswl.org]
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 75e9cb: This week's
- update
+Subject: [OpenWrt-Devel] [PATCH] image.mk: remove device_ from manifest
+ filename
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,21 +65,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-  Branch: refs/heads/master
-  Home:   https://github.com/sdwalker/sdwalker.github.io
-  Commit: 75e9cb4d27fc659d27ccfa6f47f802dd922a0552
-      https://github.com/sdwalker/sdwalker.github.io/commit/75e9cb4d27fc659d27ccfa6f47f802dd922a0552
-  Author: Stephen Walker <stephendwalker+github@gmail.com>
-  Date:   2019-08-11 (Sun, 11 Aug 2019)
+The manifest file is based on IMG_PREFIX and PROFILE_SANITIZED, whereas
+the latter takes a string like DEVICE_8dev_carambola2 and sanitizes it.
+This behaviour results in a useless "device_" profile-prefix in the
+device manifest filename. Now uses *subst* to remove that.
 
-  Changed paths:
-    M uscan/index-18.06.html
-    M uscan/index.html
+Therefore this patch results more consistent device file names:
 
-  Log Message:
-  -----------
-  This week's update
+openwrt-ath79-generic-8dev_carambola2-initramfs-kernel.bin
+openwrt-ath79-generic-8dev-carambola2.manifest
+openwrt-ath79-generic-8dev_carambola2-squashfs-sysupgrade.bin
 
+instead of a single file being called
+
+openwrt-ath79-generic-device_8dev-carambola2.manifest
+
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+ include/image.mk | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/include/image.mk b/include/image.mk
+index e55ac22d0d..cc333052a2 100644
+--- a/include/image.mk
++++ b/include/image.mk
+@@ -106,7 +106,7 @@ define add_jffs2_mark
+ 	echo -ne '\xde\xad\xc0\xde' >> $(1)
+ endef
+ 
+-PROFILE_SANITIZED := $(call sanitize,$(PROFILE))
++PROFILE_SANITIZED := $(call sanitize,$(subst DEVICE_,,$(PROFILE)))
+ 
+ define split_args
+ $(foreach data, \
+@@ -298,6 +298,7 @@ endef
+ define Image/Manifest
+ 	$(call opkg,$(TARGET_DIR_ORIG)) list-installed > \
+ 		$(BIN_DIR)/$(IMG_PREFIX)$(if $(PROFILE_SANITIZED),-$(PROFILE_SANITIZED)).manifest
++
+ endef
+ 
+ define Image/gzip-ext4-padded-squashfs
+-- 
+2.20.1
 
 
 _______________________________________________

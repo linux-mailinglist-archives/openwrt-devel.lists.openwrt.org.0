@@ -2,73 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 148A48B6EE
-	for <lists+openwrt-devel@lfdr.de>; Tue, 13 Aug 2019 13:32:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 722B68B79F
+	for <lists+openwrt-devel@lfdr.de>; Tue, 13 Aug 2019 13:54:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HjSvwjFbPvgyOBBvAba4CtAZqpqDiPIYXziQvR4lkWs=; b=lv4wBjSoqYW7k+jQEL59O5k6O
-	On0YKEkFHWYZY+pFxls4ku6ljKsvbm8tnuM4gmR/OnQYemPPuBZMnjIWLsztJDj3tn3U0N4EGN7TO
-	v6lhUR9Ktz/v0kftj3BoPDaWi/g8VGbqYDv97HUIB5CtgbEUUEzs7DD+8NSkXfS+qH4eufRqc3rZ1
-	SHRXPnl/9rTPhvPW0VMt9r/Sar3mdYkkunT2uLNx+CZ7k3D39G2VGKZVnWm8GrgcpA17HN9PgLMYM
-	ZFlM5fzqiJR2g18m35p5zitkx2V4Rt7GFNiJpfOxXWaSfxMbPrRbArjTHbtNVYY7pJlDbo5+4A1GR
-	60TZUh2Xg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eH8VqFUgIaux6lxca53VihjShsG0hAGIsG9+QJbMAYY=; b=Oh3dlawWJG95Pm
+	Aj0y/w/ZoknGTOMnOzIJlrDkGQyrAQfsY9Z9NCE53IBQbCW+Us+4El1awRCrhGhWRqcFH5pG0mQlV
+	g/lO4fPkP/WOp9waMPDUyLa+dmD8nAP3s6/8pX6xK4arbzey0MrnE+xlpxDbKlc8DkmfXG76hqGnM
+	6sxHQXRZLd3FC7wXq2EX/PpdR8B0oKth8LKk/fRW1c/6xHLjiGtpfKOmAGdupc9YDaFgBW4hhArMn
+	ReWqvj20BIFIXd307R3+W1iHmQn2Cx66N08lHsEsG1KIBHt5XW9UasRpx7ONesZkFEpDCdLiRuPNO
+	7N09+rAgLwcbnB3UMpng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxV26-0005XG-4I; Tue, 13 Aug 2019 11:32:06 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1hxVNh-0001Px-8O; Tue, 13 Aug 2019 11:54:25 +0000
+Received: from mx3.wp.pl ([212.77.101.9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxUyq-0001Ss-Q4
- for openwrt-devel@lists.openwrt.org; Tue, 13 Aug 2019 11:28:46 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MoNu2-1idANm1hbU-00onk4; Tue, 13
- Aug 2019 13:28:42 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Dmitry Tunin'" <hanipouspilot@gmail.com>,
- <openwrt-devel@lists.openwrt.org>
-References: <1565208453-17770-1-git-send-email-hanipouspilot@gmail.com>
-In-Reply-To: <1565208453-17770-1-git-send-email-hanipouspilot@gmail.com>
-Date: Tue, 13 Aug 2019 13:28:41 +0200
-Message-ID: <00f101d551ca$42db9c70$c892d550$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1hxVNY-0001PW-S4
+ for openwrt-devel@lists.openwrt.org; Tue, 13 Aug 2019 11:54:18 +0000
+Received: (wp-smtpd smtp.wp.pl 11943 invoked from network);
+ 13 Aug 2019 13:54:13 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1565697253; bh=rHF2Jo9Qj2KRanOzB2jndUhjVJp9Nft18QK++6WVBAo=;
+ h=From:To:Cc:Subject;
+ b=mzquQ4zxzpnIoxnJzG73UEVE7IJ5G1GPcMmoWNC+nu4ImbjSrZzXosyYYdMmZqFdG
+ ElrXn7+plHkwnOheDbcK2C/GYYp9mr9QGVJtEm/yP7uYBkGzHbzK4vW9loOZMYxszg
+ t8dktIiFiiDDosqgaCa/aGbfv8MRkoS9Y7fuuY90=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <mail@adrianschmutzler.de>; 13 Aug 2019 13:54:13 +0200
+Date: Tue, 13 Aug 2019 13:54:09 +0200
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+Message-ID: <20190813135409.7ee0062e@kosmio.komorska>
+In-Reply-To: <00c101d551c6$cce609e0$66b21da0$@adrianschmutzler.de>
+References: <20190813104658.17f88b71@kosmio.komorska>
+ <20190813105207.2ebe4fed@kosmio.komorska>
+ <00c101d551c6$cce609e0$66b21da0$@adrianschmutzler.de>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-Thread-Index: AQF6qyK9QgC4T+6EmBjPvauaG77lBaeuPXYA
-Content-Language: de
-X-Provags-ID: V03:K1:gmAGdrXsa2Lae21xnM5qDiALjDrAER4S9v3jeYs21V274EpZ4CF
- Eb1owQe33rcK0MlfSu1ermQVQhZdg4mG7ngZyVFTxJDPei00fFHojFURPubqFtZzggrJNmc
- brCKrL5jwL5dkl7UFcNFiCtasXupCGWE4sCeOeNretB6LE9Uyx9fvjx7PtAJ++Ac5LvTiUm
- RtTg2SOPaUPMdPnadbcSg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3i1nDID5upc=:AldKDRMwKnuBTJDpG1u/AO
- TDmVHzYKYAn3QzzSubPSrR4h0Uod0NApE2lBKLWh5H3Y1ax5zaKaxHiA7+/FgiRXL2CZoRcQF
- GHCFvkEEIMICoVsg4QEDUWNPOy6xfeii4vMphztlnaXd5IdiHy9FrV150AheJ6wHCnb+gnQnq
- Y+0Zz8Ys/3SNQpN7/dNkf8cYhK33HCaxnfhQDq8LrbLyxY/EaP+xBS8+PWmpDpT2W6h6nSlZf
- cwPJ5gjEXYwWMAQ85pqEoPoRKjKz7jYT1d92fpVE+S0l/bW+HMzVjM1hJnFHeKlLzKh/zWjmo
- dRMZ0QvlP0hF0tvC5BpMoDcnI4/hdd+J0t6Z6chSM6M2kP2PQgSHNNK48n9w5VaBLPlVN6UW8
- fU67JSlgdXZjdQPWWAiVlaDBYgIrt1RGXNRqp9oDWPc1PqbYbdw1n8b7ACYdYWsD7WtJjKNPN
- +/etbN381S0wArhCpBLECSSCeVuSGifpue8eF0cdHYEISU4XX9btAUzcTAw2SpSeWtS+tDgCi
- PRstBBYxbbGiaHUc08G6yvCS/2UZmab88uelWdqyZdZ/1i6+PB4CJsmfSqpZxme5Qt9NSoSaL
- D4mQZaN5AxCXV4HkJyh/SnMZbwE9jdGO8P7Ds0c/9XiYhTMBr1cFD93XgPcxPgm9GSsFYYeIL
- LNbOnfmxVK1a7JeW5G2fC+AAXN1w/iUGExs35JF008/gQBJLqYSC+V9U4QTCcPH0iKd0tal98
- 1jZxUGIVabt2OAtXwhvq8j+ZPf/k/pjauIgEUM1+F85B/8++j89Thcxadqg=
+X-WP-MailID: 02c5ee43de24a86e825cee35b46771fe
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [EWNk]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_042845_166066_8F053751 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190813_045417_093592_97A34DCE 
+X-CRM114-Status: GOOD (  12.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [212.77.101.9 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (michal.cieslakiewicz[at]wp.pl)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v6] ath79: add support of Netgear
- WNDR3800CH
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH v4 3/5] ath79: add support for Netgear
+ WNR2000 v3
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,89 +85,80 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1348165561193805474=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
 
---===============1348165561193805474==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=JApy0JsNBPXWGb=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+On Tue, 13 Aug 2019 13:03:55 +0200
+"Adrian Schmutzler" <mail@adrianschmutzler.de> wrote:
 
-This is a multipart message in MIME format.
+> > -----Original Message-----
+> > From: openwrt-devel
+> > [mailto:openwrt-devel-bounces@lists.openwrt.org] On Behalf Of
+> > Michal Cieslakiewicz Sent: Dienstag, 13. August 2019 10:52 To:
+> > openwrt-devel@lists.openwrt.org Cc: Adrian Schmutzler
+> > <mail@adrianschmutzler.de> Subject: [OpenWrt-Devel] [PATCH v4 3/5]
+> > ath79: add support for Netgear WNR2000 v3
+> > 
+> > This patch adds ath79 support for Netgear WNR2000v3.
+> > Router was previously supported by ar71xx target only.
+> > Note: this is a 4_32 device with limited upgrade capabilities.  
+> 
+> Sorry, found two things again.
+> 
+> > +	ucidef_set_led_default "wan-green" "WAN (green)"
+> > "netgear:green:wan" "0"  
+> 
+> Can this be done with default-state = off in DTS?
+> 
 
---=-=JApy0JsNBPXWGb=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Probably copy-paste from ar71xx files. Tested on WNR2000v3, setting
+state to off is not needed at all, so another one line less in v5. 
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
-ehalf Of Dmitry Tunin
-> Sent: Mittwoch, 7. August 2019 22:08
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Dmitry Tunin <hanipouspilot@gmail.com>
-> Subject: [OpenWrt-Devel] [PATCH v6] ath79: add support of Netgear WNDR380=
-0CH
->=20
-> Add support for the ar71xx supported Netgear WNDR3800CH to ath79.
-> The device is identical to WNDR3800 except NETGEAR_BOARD_ID.
->=20
-> Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+> > +&gpio {
+> > +	status = "okay";
+> > +};  
+> 
+> I think this is not required as gpio is not disabled. But please test.
+> 
 
-Reviewed-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Again, WNR2000v3 confirms what you suggest, gpio is enabled by default.
+Marked fo removal in v5.
 
-Simple patch, no need to have this lying around forever.
+> As those changes are minor, maybe wait with a v5 until you receive
+> feedback from someone else, then ...
+> 
+> Best
+> 
+> Adrian
 
-I cannot check SUPPORTED_DEVICES as the value is retrieved by wndr3700_boar=
-d_detect in ar71xx.
+Fair enough, in the meantime I will proceed gradually with testing
+pre-v5 on all 4 router models...
 
-Best
-
-Adrian
-
---=-=JApy0JsNBPXWGb=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
+Cheers
+Michal
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1SnugACgkQoNyKO7qx
-AnCW+w/+LLgg+8K0r1RYoOteqQP9eS6BBAqVFOA8zcy3ty10bqUj+sXUI9XAMF+e
-FZxYVaMyAPNZSJyvDRvu0WiKwqZDGirMQ7ZtdQm63kt1RT3ck/zCqMFS9xhLfC4C
-UEReqFL4cWhbXQqqct2v/LFPhlHrnQVkHIb6B/TKxE4t1AiQ4Sz9zRoSb9SwIJe/
-jwZFqyQbwNujn4eHCOK13aiOCyY/eQHirduaV7FnyYfAD0CkOCBh5Ihz8LDsAtgm
-o3dZC2ycHSuXu9rqDwX+pzP0Wzjh8rPoTrYfUQs5j5IKp+jk9XMs2At9KIwmH5dr
-aCVkaQ62Um+Gew5YtKCtIGKHDBV3eIHVv6/+6g9uorHxXNq+Epq0sUZwfj6tg27L
-khwH0mIVH4M13WKv/0xlwXuFsQv5QIrOPibNS5PnOtWH6ZIxNsxGWo2u0k14V+bk
-lr+qwMzoX9bdQNjRKkCtuaGPqt0txzWV7LYKvWT8uSddSvHH5HbX1br7aalWtVc0
-vs9c6V0KGe5R6iSUCLkwXEU3JJlgjrx4wkEpzq5VKAMCs3NX7y83XOPtS/UokRT1
-9P33Q3vVErUoGNzDt2H4+um+uhbLbvE6Kpeq2WB2cpGBOXgxJWmNpzqKQEgIJ3qL
-zf4b1NthK05sLwTIhThFiqvLDk5YpOFy8zUng2swAWPZzbHABHc=
-=if7n
+iQIzBAEBCAAdFiEEi7ylFMzTSbpOuOZIHU8//LdGKWsFAl1SpOEACgkQHU8//LdG
+KWsRMhAAj8xLox2VKzcJ+MLoDShgnL56tAEqzm9sLDIuhFxWfbnM5CsKtB4Q+fRS
+K/9Da3JIe8LqNmom3KYPX4l8mXJYLw1fUbqte2miZVC8IfIZYlPp048JsYQvIuCi
+kksH8shFigNxUz6u5pazhyOeY7zjR9f5mb/6CAMLigjt5lEwrL3NbL1iCveFaRFF
+rlEYeEWoK+GLHFXCKCMAZIo3QL25OG+pkuIV2RgPuXBzmeQnClWbGKhbuzrqoF7Y
+wW4GMdLgj/HG3v5HbzWiPXVjZElI1ZPjaUSTKE4625wA6V5AQ6vbTmhSL5BxjPky
+j3Fb/4klOUv0bea9JcfOe0IX9sCs+VNFbE9yeI8FCmcEN4h48qbtihQFCwfcqT7E
+VpH6pIWBXBJ8K1ZxYlnBLW6X5nQy++coi7O7K3BsPEimd8hHr/DIeAMJC4zprwbE
+n05Yqr3gk9kJ6D/YQW1gUxzAKREV30YYD/xx3lML9ypnb226zdxPrnhj+0+hp0zj
+tXY3GfXM48yWivhGNBn8PX5Pb6PPBaJYyOKGox06y8PXjgyUFSITJymn9ZvjK5my
+1Zv68gR5TIaJf9LZ0+dsA8zXCle0PxkImsS902/pJfIG7QgqtI7OYaW7ZrCM0D4I
+keg9WKtuA95cdZrsLIozHJItGNLh1gOmY1fWPeGZsCq2jltbngw=
+=ouzk
 -----END PGP SIGNATURE-----
-
-
---=-=JApy0JsNBPXWGb=-=--
-
-
-
---===============1348165561193805474==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1348165561193805474==--
-
-

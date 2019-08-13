@@ -2,96 +2,93 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE0ED8BA65
-	for <lists+openwrt-devel@lfdr.de>; Tue, 13 Aug 2019 15:34:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34C508BF17
+	for <lists+openwrt-devel@lfdr.de>; Tue, 13 Aug 2019 18:59:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wJS+WnQ6U08mj+RkZxQ21DVp/zGaB1YDnDoL47zzGa8=; b=UerVHufhIQtEcwf2noM4QUvF0
-	XHAu7+oJhiKu85iuG3PAD1YJtlD/z+o9Vc4xq3ak+lpsFEcLF5VA7EWd/OzpJedpYsIG1fM+GUpQn
-	uaWzzt7iOI+PmStdgkMDVbfUr4cJ/9ta63Ahps3erjtIi2YjG2kEmVoDWts2ES47/DHx9djgXvpnj
-	7yYDK0JuMa24qmeeJ7u0IoF6Qy/S1DVo8r59BtkKc6wLXZCH1+sRxWyqU5HpxpDY3/q/+bsQ+M8LV
-	7DziPFwZi6QjLPCFdrrMQ/NcrpqDCllZxV+QsornFDZkHLk8tiinBWKT22Is78qrO2FJuKp+fJv1G
-	5wrIHH2Rw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gEtvlHscfJ93NRe3U4IQqOKSc0sgZFBfEGZpjajGhfQ=; b=Us9DYS8p76iIdQ
+	f14jvFQCuwRmk1zLvtXNhQVQl4U6z2xehtkle/NwOFar/KV6MidlgXdIaowHf4rMliedVj5J/v+5X
+	wae6U3gquNmwm1sDPlJWtYRh17OqyBSztf4DvkPDL1QTokarCuw1drc6cTX7kIy81GN8F8bj6WKTR
+	2asfHopNQZ5ZjxImfL/MAV1fYDtygPCUIXW7R1I9UrTt1jS2rdwIh5xqRbqCOJ+j8GeC8155MQub5
+	WVzqiaggNuWItSu1TkSG7myUgMBlT+AWupna+Dz36Le0faaW5mEo5YALPQMamxZGgfdH5hlvlDndI
+	LIElHNYS/bZ7oQqwPx2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxWwe-0006dp-KY; Tue, 13 Aug 2019 13:34:36 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hxa94-0006db-El; Tue, 13 Aug 2019 16:59:38 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxWvW-0005ZG-6r
- for openwrt-devel@lists.openwrt.org; Tue, 13 Aug 2019 13:33:28 +0000
-Received: by mail-pf1-x442.google.com with SMTP id w26so6357805pfq.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 13 Aug 2019 06:33:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=fortune4leads-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:references:in-reply-to:subject:date:message-id:mime-version
- :importance:thread-index:content-language
- :disposition-notification-to;
- bh=5heAwwKxsJB5z8pvuTjvPHDv9thAataXTNUGen58SPs=;
- b=FZqRdSMr8Rl+rOVQIr28B5gG75ejcl5UDhmLmt69BAAAY3tQOO0wug7ujncq90TyFj
- irgauH9SZRrvWKJbdpSOweKFytIxxoqTooLOpR6FCpfGBTph2IYTR6dszr919pVg5XkG
- ZwNdLC2hjH0WDlH+SiadHRA49QF9cvXilAo9XZWEBtGBwFVNilCHf10oUVQx8NzK3Nxr
- JvUnQvdLhKIONyJrW9DFnMY5OnRWBOy3nnzr/4CwyOjRKIImHcoXSAxDs7igzF50e3ID
- fIpCKLrIuosCpmU6jwJHWEJKsO69cUc0hATbd3C3SAmuP6yVAgrnwfb66IlBGfatn7e8
- peHQ==
+ id 1hxa8k-0006ct-W4
+ for openwrt-devel@lists.openwrt.org; Tue, 13 Aug 2019 16:59:20 +0000
+Received: by mail-lf1-x142.google.com with SMTP id c9so77199093lfh.4
+ for <openwrt-devel@lists.openwrt.org>; Tue, 13 Aug 2019 09:59:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=Xu5jqD6m6BhCJFS5o78lOK1/LyYT3dRhTYhA6iTfRME=;
+ b=U/XXHhUSyC3HlGHaMTwY3VAfKS0hqxNJb6nQpNvfSbz2/iq+Z9nPXsrXdnr0uv54X7
+ jnN0Bmfw8Lm0MZXe1h2L8Gs2Tf2VMvWMkwkkbgQjDvrVatC1Vp9KN0d2E8G65WNNEV/R
+ O6lnUe4Q7FeU3RxV8qjGVI33544MloF7XcdUnp7CrQbWH9NrW16Q8RpagUTzBEaAWaD2
+ aEWFiAswSC7+8QANjxkwI+OQO0o+04av3u1u+pscwzqNdDujL/4CGx8638fD9Vir/z4S
+ MCUsBksWu8UJj4vzepmXJoD+zdixliW4DE4uQ/uVqzg4J9jrDcP8/Jdd0UB6CCF0xZve
+ QsFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:references:in-reply-to:subject:date
- :message-id:mime-version:importance:thread-index:content-language
- :disposition-notification-to;
- bh=5heAwwKxsJB5z8pvuTjvPHDv9thAataXTNUGen58SPs=;
- b=M7emJRjs0f6XZRNT2LzJiNTiTU6sldLAEmempIVd+Oa3/8sDqdZ86ZjFuj5GeRPAqu
- O0Cx5ykPQd+IHVLa6bk1kaicqloxiyvwL3+0KSuPLhZkxqkoik52BppDDKsRKgke8B4d
- +NCHP1C7QU7QHezmYdiFqxlN+TJy7/MNKvjLevaGEskTpp1zzp2JVTWy21dWE4EyjIRt
- hAdjwcCXIXyxjC80ohr6YgWxyjssVI2mx5KTHR3NUJlzj8RE0bseRylbJ0lkrhTIq3RV
- VwXHqnU7UlRjUb/wSFxjj3b9f69b7Haih/IYCzEXH/zymjaCQynjP9B6HUastwiRudya
- WhhA==
-X-Gm-Message-State: APjAAAXr/jibgJ41S60pdVE4HrYxIK2sq8pNu8K2BpWQ8mSQUIxJqZm9
- 42fNWceTKEm00vHlJGxDtWuPrsWB4mQ=
-X-Google-Smtp-Source: APXvYqzSII/nF5uQhujmunNamc82VmM3lITXmravkn+kGaG6nKREJUvDxebawOkZCdaaFPKhZoa3ow==
-X-Received: by 2002:aa7:9e9a:: with SMTP id p26mr41864828pfq.25.1565703204115; 
- Tue, 13 Aug 2019 06:33:24 -0700 (PDT)
-Received: from Bharath ([27.7.13.94])
- by smtp.gmail.com with ESMTPSA id w11sm5547221pfi.105.2019.08.13.06.33.22
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 13 Aug 2019 06:33:23 -0700 (PDT)
-From: Julie Davidson <julie.davidson@fortune4leads.com>
-X-Google-Original-From: "Julie Davidson" <Julie.Davidson@fortune4leads.com>
-To: <openwrt-devel@lists.openwrt.org>
-References: 
-In-Reply-To: 
-Date: Tue, 13 Aug 2019 08:32:50 -0500
-Message-ID: <!&!AAAAAAAAAAAYAAAAAAAAADb8eTLKTGtHjTqjgfSGhE7CgAAAEAAAAJ+xYEenUTpKtWY3epvM3AEBAAAAAA==@fortune4leads.com>
-MIME-Version: 1.0
-X-Priority: 1 (Highest)
-X-MSMail-Priority: High
-X-Mailer: Microsoft Outlook 14.0
-Importance: High
-Thread-Index: AdVOHAssW3/d2F7uQWuAd7/mfQJ1YwAAAyXAAAAAFFAAAAAB8AAAAARQAAAABIAAAAADsAAAAATgAAAABFAAAAAEsAAAAATgAAAABBAAAAADgAAAAAWwAAAAAxAAAAAEQAAAAASwAAAABRAAAAAEoAAAAAXgAAAABKAAAAAFEAAAAAWgAAAABEAAAAAF0AAAAAQwAAAABNAAAAAFMAAAAAWgAAAABDAAAAAF0AAAAARgAAAABcAAAAAFYAAAAATwAAAABZAAAAAFIAAAAAXAAAAABVAAAAAFIAAAAATAAAAABVAAAAAF8AAAAAWAAAAABlAAAAAE8AAAAAaAAAAABFAAAAAG4AAAAAXgAAAABbAAAAAFQAAAAAXgAAAABrAAAAAFcAAAAAZAAAAABUAAAAAF0AAAAAWgAAAABnAAAAAFMAAAAAUAAAAABqAAAAAFkAAAAAVgAAAABTAAAAAGwAAAAAWQAAAABWAAAAAGYAAAAAYgAAAABiAAAAAG8AAAAAbwAAAABiAAAAAF8AAAAAYgAAAABiAAAAAG4AAAAAawAAAABuAAAAAG4AAAAAawAAAABuAAAAAGEAAAAAYQAAAABuAAAAAGEAAAAAUAAAAABtAAAAAG0AAAAAfQAAAABzAAAAAGYAAAAAdgAAAABZAAAAAGYAAAAAZgAAAABmAAAAAGkAAAAAaQAAAAC5AAAAAHIADv2Yog
-Content-Language: en-in
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Xu5jqD6m6BhCJFS5o78lOK1/LyYT3dRhTYhA6iTfRME=;
+ b=txOj6hODAYBgchONKi2kfWu4JDMaSX0vmC1bjl2nldz6y1hoahyAaPlV9lsllxOHNm
+ pJZo+w14xgq7OkMopyuPmp4bmpjUCs3IGxYk98ZY/ns2DhnLEFNOBQct2z1YF/RCcHIv
+ hZItmkGOfTfZTVUopvgb7SBiD8RKamLs9R9QoEzlj5ItMHUJg3PxCmy8Edak0zqbz/r5
+ yQcmf7agNYPMfDtArLuzOK/Q0tuS/FP1GS67ti6LqfnDSWmO08UtEeiQzNGr44EE43ny
+ L5fHaLOYTUndk3B0JWqRK3UWYt8EU+I7ygHIkL2d5ickT2vbyk+fHJUeFvAVWBbgoz0R
+ gFqQ==
+X-Gm-Message-State: APjAAAXysd7KmVv5rWxP+my1lpj8wn1miwoRckjMcMNq7qlhWr35G02S
+ o40uwqoNItG20cb52Hg7RWc=
+X-Google-Smtp-Source: APXvYqwnOvYR81d/siL1wbiSWNYBxueXemelG80lGmN77VAotczu6zjDXS652A0nIVGcaQa8FCOOCg==
+X-Received: by 2002:a19:6d02:: with SMTP id i2mr22449757lfc.191.1565715556031; 
+ Tue, 13 Aug 2019 09:59:16 -0700 (PDT)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id c17sm1183525lfj.65.2019.08.13.09.59.14
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 13 Aug 2019 09:59:15 -0700 (PDT)
+Received: from home.paul.comp (localhost [127.0.0.1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-8) with ESMTP id x7DGxDto002029;
+ Tue, 13 Aug 2019 19:59:13 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.14.4/Submit) id x7DGxCu6002028;
+ Tue, 13 Aug 2019 19:59:12 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: John Crispin <john@phrozen.org>
+Date: Tue, 13 Aug 2019 19:59:04 +0300
+Message-Id: <20190813165904.1988-1-fercerpav@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_063326_508210_6BC51BF8 
-X-CRM114-Status: UNSURE (  -3.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190813_095919_039423_2C65F544 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (fercerpav[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] Attendees Data Base Of SCTE Cable-Tec Expo 2019
+Subject: [OpenWrt-Devel] [PATCH] ramips: add support for Xiaomi Mi Wi-Fi
+ Router 3G v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,354 +100,242 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6347832760850938864=="
+Cc: Paul Fertser <fercerpav@gmail.com>, openwrt-devel@lists.openwrt.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+- CMIIT ID: 2019AP2581
+- SoC:      MediaTek MT7621
+- Flash:    16MiB NOR SPI (GigaDevice GD25Q128B)
+- RAM:      128MiB DDR3 (ESMT M15T1G1664A)
+- Serial:   As marked on PCB, 3V3 logic, baudrate is 115200, 8n1
+- Ethernet: 3x 10/100/1000 Mbps (switched, 2xLAN + WAN)
+- WIFI0:    MT7603E 2.4GHz 802.11b/g/n
+- WIFI1:    MT7612E 5GHz 802.11ac
+- Antennas: 4x external (2 per radio), non-detachable
+- LEDs:     Programmable "power" LED (two-coloured, yellow/blue)
+            Non-programmable "internet" LED (shows WAN activity)
+- Buttons:  Reset
 
---===============6347832760850938864==
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_0A00_01D551B1.C5824D90"
-Content-Language: en-in
+INSTALLATION:
 
-This is a multipart message in MIME format.
+Bootloader won't accept any serial input unless "boot_wait" u-boot
+environment variable is changed to "on". Vendor firmware (looks like
+an illegal OpenWrt fork) won't accept any serial input unless
+"uart_en" is set to "1". Tricks to force u-boot to use default
+environment do not help as it's restricted in the same way.
 
-------=_NextPart_000_0A00_01D551B1.C5824D90
-Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+With bootloader unlocked the easiest way would be to TFTP the
+sysupgrade image or to sysupgrade after loading an initramfs one.
 
+For porting the flash contents were changed externally with an SPI
+programmer (after lifting Vcc flash IC pin away from the PCB).
+
+Signed-off-by: Paul Fertser <fercerpav@gmail.com>
+---
+ .../linux/ramips/base-files/etc/board.d/02_network |   4 +
+ target/linux/ramips/dts/mt7621_xiaomi_mir3gv2.dts  | 147 +++++++++++++++++++++
+ target/linux/ramips/image/mt7621.mk                |  10 ++
+ 3 files changed, 161 insertions(+)
+ create mode 100644 target/linux/ramips/dts/mt7621_xiaomi_mir3gv2.dts
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index ca111c9d4c..7280da50fc 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -464,6 +464,10 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"2:lan:2" "3:lan:1" "1:wan" "6t@eth0"
+ 		;;
++	xiaomi,mir3gv2)
++		ucidef_add_switch "switch0" \
++			"2:lan:2" "3:lan:1" "4:wan" "6t@eth0"
++		;;
+ 	xiaomi,mir3p)
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan:3" "2:lan:2" "3:lan:1" "4:wan" "6@eth0"
+diff --git a/target/linux/ramips/dts/mt7621_xiaomi_mir3gv2.dts b/target/linux/ramips/dts/mt7621_xiaomi_mir3gv2.dts
+new file mode 100644
+index 0000000000..81f6d20ae8
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_xiaomi_mir3gv2.dts
+@@ -0,0 +1,147 @@
++/dts-v1/;
++
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "xiaomi,mir3gv2", "mediatek,mt7621-soc";
++	model = "Xiaomi Mi Router 3G v2";
++
++	aliases {
++		led-boot = &led_status_yellow;
++		led-failsafe = &led_status_yellow;
++		led-running = &led_status_blue;
++		led-upgrade = &led_status_yellow;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,115200n8";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_status_blue: status_blue {
++			label = "mir3gv2:blue:status";
++			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
++		};
++
++		led_status_yellow: status_yellow {
++			label = "mir3gv2:yellow:status";
++			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	button {
++		compatible = "gpio-keys-polled";
++		poll-interval = <20>;
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	m25p80@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <80000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "Bdata";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@50000 {
++				label = "factory";
++				reg = <0x50000 0x10000>;
++				read-only;
++			};
++
++			partition@60000 {
++				label = "crash";
++				reg = <0x60000 0x10000>;
++				read-only;
++			};
++
++			partition@70000 {
++				label = "cfg_bak";
++				reg = <0x70000 0x10000>;
++				read-only;
++			};
++
++			partition@80000 {
++				label = "overlay";
++				reg = <0x80000 0x100000>;
++				read-only;
++			};
++
++			firmware: partition@180000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x180000 0xe80000>;
++			};
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi@0,0 {
++		compatible = "pci14c3,7662";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++	};
++};
++
++&pcie1 {
++	wifi@0,0 {
++		compatible = "pci14c3,7603";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0000>;
++		ieee80211-freq-limit = <2400000 2500000>;
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++	mediatek,portmap = "lllwl";
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "jtag", "uart2", "uart3", "wdt";
++			ralink,function = "gpio";
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index d32feb7eab..a0c37f0bfe 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -656,6 +656,16 @@ define Device/xiaomi_mir3g
+ endef
+ TARGET_DEVICES += xiaomi_mir3g
  
++define Device/xiaomi_mir3gv2
++  MTK_SOC := mt7621
++  IMAGE_SIZE := 14848k
++  DEVICE_VENDOR := Xiaomi
++  DEVICE_MODEL := Mi router 3G v2
++  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-basic
++  SUPPORTED_DEVICES += mir3gv2
++endef
++TARGET_DEVICES += xiaomi_mir3gv2
++
+ define Device/xiaomi_mir3p
+   MTK_SOC := mt7621
+   BLOCKSIZE := 128k
+-- 
+2.11.0
 
- 
-
-Hi,
-
- 
-
-We are in the process of closing files for the month. Typically when I
-haven't heard back from someone it means they're either really busy or
-aren't interested.
-
- 
-
-If you aren't interested, do I have your permission to take off your email?
-
- 
-
-If you're still interested, I would highly appreciate if you would share
-your thoughts, so that we can assist you best solution along with affordable
-cost.
-
- 
-
-Looking forward to hearing from you.
-
-Julie Devidson
-
- 
-
-From: Julie Davidson [mailto:Julie.Davidson@fortune4leads.com] 
-Sent: 08 August 2019 14:05
-To: 'openwrt-devel@lists.openwrt.org'
-Subject: Attendees Data Base Of SCTE Cable-Tec Expo 2019
-
- 
-
-Hi,
-
- 
-
-I think you might be interested in obtaining Database of  SCTE Cable-Tec
-Expo 2019.and there will be a Pricing associated with the Data Base.
-
- 
-
-Attendees Data:  Fiber and broadband experts,PPC Broadband were among
-hundreds of industry leaders,,industry professionals,technology to many
-different decision makers and professionals and many more
-
- 
-
-Data Contains: Contact Name, Title, Company Name, Size, Physical Address,
-Email address, Contact Number& Fax numbers and etc.
-
- 
-
-If you're interested, Please let me know I will assist you with counts,
-pricing and more information?
-
- 
-
-
-Looking forward for your honourable response.
-
-Regards,
-
-Julie Davidson
-
-Marketing Executive
-
- 
-
- 
-
- 
-If you do not wish to hear from us again, please respond back with and we
-will honour your request.
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-
-------=_NextPart_000_0A00_01D551B1.C5824D90
-Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
-HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
-charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =
-(filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-@font-face
-	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-@font-face
-	{font-family:Verdana;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0cm;
-	margin-bottom:.0001pt;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";
-	mso-fareast-language:EN-US;}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	color:blue;
-	text-decoration:underline;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-priority:99;
-	color:purple;
-	text-decoration:underline;}
-span.EmailStyle17
-	{mso-style-type:personal;
-	font-family:"Calibri","sans-serif";
-	color:windowtext;}
-span.text--large
-	{mso-style-name:text--large;}
-span.EmailStyle19
-	{mso-style-type:personal-reply;
-	font-family:"Calibri","sans-serif";
-	color:#1F497D;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-size:10.0pt;}
-@page WordSection1
-	{size:612.0pt 792.0pt;
-	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
-div.WordSection1
-	{page:WordSection1;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DEN-IN link=3Dblue =
-vlink=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span =
-style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal><span =
-style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><div><p =
-class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'>Hi,<o:p></o:p></span><=
-/p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></spa=
-n></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'>We are in the process =
-of closing files for the month. Typically when I haven&#8217;t heard =
-back from someone it means they&#8217;re either really busy or =
-aren&#8217;t interested.<o:p></o:p></span></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></spa=
-n></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'>If you aren&#8217;t =
-interested, do I have your permission to take off your =
-email?<o:p></o:p></span></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></spa=
-n></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'>If you&#8217;re still =
-interested, I would highly appreciate if you would share your thoughts, =
-so that we can assist you best solution along with affordable =
-cost.<o:p></o:p></span></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'><o:p>&nbsp;</o:p></spa=
-n></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'>Looking forward to =
-hearing from you.<o:p></o:p></span></p><p class=3DMsoNormal><span =
-style=3D'color:#1F497D;mso-fareast-language:EN-IN'>Julie =
-Devidson<o:p></o:p></span></p></div><p class=3DMsoNormal><span =
-style=3D'color:#1F497D'><o:p>&nbsp;</o:p></span></p><div><div =
-style=3D'border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm =
-0cm 0cm'><p class=3DMsoNormal><b><span lang=3DEN-US =
-style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif";mso-fareast-l=
-anguage:EN-IN'>From:</span></b><span lang=3DEN-US =
-style=3D'font-size:10.0pt;font-family:"Tahoma","sans-serif";mso-fareast-l=
-anguage:EN-IN'> Julie Davidson [mailto:Julie.Davidson@fortune4leads.com] =
-<br><b>Sent:</b> 08 August 2019 14:05<br><b>To:</b> =
-'openwrt-devel@lists.openwrt.org'<br><b>Subject:</b> Attendees Data Base =
-Of SCTE Cable-Tec Expo 2019<o:p></o:p></span></p></div></div><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Hi,<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>I think you =
-might be interested in obtaining Database of<b><span =
-style=3D'color:black'>&nbsp; SCTE Cable-Tec Expo 2019.</span></b>and =
-there will be a Pricing associated with the Data Base.<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><b>Attendees =
-Data:</b><span style=3D'color:black;mso-fareast-language:EN-IN'> =
-</span>&nbsp;<span style=3D'color:black'>Fiber and broadband experts,PPC =
-Broadband were among hundreds of industry leaders,,industry =
-professionals,technology to many different decision makers and =
-professionals and many more<o:p></o:p></span></p><p =
-class=3DMsoNormal><span =
-style=3D'color:black'><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal><b>Data Contains: </b>Contact Name, Title, Company =
-Name, Size, Physical Address, Email address, Contact Number&amp; Fax =
-numbers and etc&#8230;<b><o:p></o:p></b></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>If =
-you&#8217;re interested, Please let me know I will assist you with =
-counts, pricing and more information?<o:p></o:p></p><p =
-class=3DMsoNormal>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></p><p =
-class=3DMsoNormal>Looking forward for your honourable =
-response.<o:p></o:p></p><p =
-class=3DMsoNormal><b>Regards,<o:p></o:p></b></p><p =
-class=3DMsoNormal>Julie Davidson<o:p></o:p></p><p =
-class=3DMsoNormal>Marketing Executive<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><span =
-style=3D'font-size:10.0pt'><o:p>&nbsp;</o:p></span></p><p =
-class=3DMsoNormal style=3D'text-autospace:none'><span =
-style=3D'font-size:7.0pt;font-family:"Verdana","sans-serif";color:#7F7F7F=
-'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
-;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp; =
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
-bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;If you do not wish to hear from us again, please respond back with =
-and we will honour your request.</span><span =
-style=3D'font-size:8.0pt;font-family:"Verdana","sans-serif";color:#7F7F7F=
-'><o:p></o:p></span></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><b><o:p>&nbsp;</o:p></b></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p></div></body></html>
-------=_NextPart_000_0A00_01D551B1.C5824D90--
-
-
-
---===============6347832760850938864==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============6347832760850938864==--
-
-

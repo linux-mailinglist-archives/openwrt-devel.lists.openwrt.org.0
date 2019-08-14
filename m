@@ -2,69 +2,152 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51EC98DEE3
-	for <lists+openwrt-devel@lfdr.de>; Wed, 14 Aug 2019 22:33:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 729328DF96
+	for <lists+openwrt-devel@lfdr.de>; Wed, 14 Aug 2019 23:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7qvb+gOusgdhGegQeqA52tROpnrLnZPhqDfAsE976p4=; b=CBqRGHFIT7iCql
-	DMtrGKm8TZMkfnB70yZo9iHsUM5jWmUP7mdG9tIqA32elu1eoroQGP0jWOTIbDwRr97FLEHwN9G0t
-	Hrf0Y1qqkCxZ9jwOHm277sE7RZLkNMHpWJo4riTo/3B1FrI5xgDs1+ndVipxbIIRrcvmXbZSheli+
-	X7nirXNSeiq52ojofpOZ3dcmb5hz7kHJFnTByHtCWM5njDyIrhv+ibuTaBiTwF29IdSttQAusZIAH
-	76wTSM0R7QCaXk2lsHO+ur8L1I0sLdksT5mOqI2t3XkiS3HkpzmaEma1yy6AhE4snbRQ47K6+m6HJ
-	d2geKKDJu7ntDdm1/+Mg==;
+	List-Owner; bh=VXNzIR7z1s98W/qLsABBtpaM8FRGpDFG2wUPIJxAFwM=; b=Sfi9hytBamzyob
+	LjsIE7awUPLzpLDJj1Dd2bcXSz673V4fSIepFAcFtQtnf+OW9Xh0QpwzpC1SeQhU8z0tybbHQVesA
+	eG+2yiGIFkpI9I4ERjsDNfyV6B86vAz1ygQq7jIZpkrORz0Pmgp1P3FDrjC9JqIiCp8Js5gd99GSx
+	eKp5j/4QZtNaPN3lfLc0Fo7IaoswyiWCAXsi/8EuF6jOTdtbm7kBL/P3LjD1C2wb0H4N+8Bb8FhMi
+	CP0xa4OakANU2Mpe3slhmd43DtHeewioqLnUDCeT7cAu/ZL+zNvte6RjUEmbuxqi0ASzD8XsaRZR6
+	MyaA0DkNsTRDaNVl9++Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxzxb-00066o-SG; Wed, 14 Aug 2019 20:33:31 +0000
-Received: from mail2.candelatech.com ([208.74.158.173]
- helo=mail3.candelatech.com)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hxzxH-00066R-5D
- for openwrt-devel@lists.openwrt.org; Wed, 14 Aug 2019 20:33:13 +0000
-Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
- [50.251.239.81])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail3.candelatech.com (Postfix) with ESMTPSA id 192C513C283
- for <openwrt-devel@lists.openwrt.org>; Wed, 14 Aug 2019 13:33:10 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 192C513C283
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
- s=default; t=1565814790;
- bh=c8DrLbEHbJif8DAq4D481v5N1tK3ud5DfEVw9CDLimI=;
- h=To:From:Subject:Date:From;
- b=gg/25GflvXmE0pvpE2GtDoPC3L0yzCrIpYU4f6PaSKU4hzhq8yJt5gF2MiVS2k4ld
- i/nWlHOhW0fqRzb4IybRXFjwEvPhBDj0YFPhVk/llhuylDBNGCIMW5X0l0dXpO277j
- nmcS9HWxMpFMhq3zHrcSuG3ksE4utRJKIXnzbJ7s=
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Ben Greear <greearb@candelatech.com>
-Organization: Candela Technologies
-Message-ID: <6d9b9daf-99f7-a26b-b09c-6a1d4fea77b7@candelatech.com>
-Date: Wed, 14 Aug 2019 13:33:09 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
-MIME-Version: 1.0
+	id 1hy0Pv-0000F1-Hn; Wed, 14 Aug 2019 21:02:47 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hy0Pk-0000EU-Gf
+ for openwrt-devel@lists.openwrt.org; Wed, 14 Aug 2019 21:02:38 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Sandeep.Sheriker@microchip.com";
+ x-sender="Sandeep.Sheriker@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Sandeep.Sheriker@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: MiZMNMdK9hhqRSM2nHvun5WtCixp6WX8RgPillyc/ZmdgzTcHfEUVypp4cSxdYEnf/VnFsQ8Ja
+ /XjaspfuGKzbIInZ2zWG/oGTrbdIaNewEbJOtPXkvcLlvLfdrPleyvt+dmOi/kugLx9y3aSNls
+ juolfDi5swqZhNBOZQXie13AqTjjvFD24aaJeMKdOVaYPu5UZq4WjXo6qMTvzVY6rUAeY1Da6w
+ ckz4zUICKICkWG3PLuYcKguQEfgKzgG82QwwHrs7/hQUtQcugQ+VnwMPNaOmrXqKKqI1kMsF0y
+ tdE=
+X-IronPort-AV: E=Sophos;i="5.64,386,1559545200"; d="scan'208";a="46579583"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 14 Aug 2019 14:02:28 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 14 Aug 2019 14:02:28 -0700
+Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
+ via Frontend Transport; Wed, 14 Aug 2019 14:02:27 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=VbXj1N4H/mOZSQ4achW+MpH4L6MLHd5j+UuNZ92E+mQwuxEHnDmmzxN9O+hyaUchOVWglCNGt0fV9/s/Dlf8ZsXQ5ikYQmKBNGWPqNQaoM+nNu7yLGnmqX9L7LKv2IvH2v90jB7Z0/QLeoKhiG7QmC1aEetXAvhQT8Ld9fyjeOeBPPloi4WgjZGJuh+XuDm/IOyQ0TlAvDl3w7XfQk5k2Kn4h2GXilGxhPKAwzhOW5lwbdyPO1VmZ/liuFi5uIsfV5O1eOJAiimm5K29gqX7JkVile9GI2CWAbE30iwLB1vZl1sbUtUla2JM0oM/rUu3dgAFJusFwfYQzO7iqv7xuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=78mWlcCdfxmc9wsW557B5gEcIjYd934EcmSyRoj78SA=;
+ b=Zjk+X6IVO0LIDsqeXvD4xDgAsxiOYyNvfNsNNn7Nm19/Jj4UARVd/hQ4EcGZqiNFYjbgHICoPLlQ0TyoUmApNi3sL7jJr9MBP18caqoMTYjngHgryZtM8kA6gtQIpsOtWz2v6brJpEge2xCSPLRkTuDPSFTSvH0KzXefQYN1DfAyA2P3Mt1w/PWO5zh4hNXRVAa83dtJ7wJUoCmOHMaFBrO4ujMLWZnu5tauauf4YCqAhqyMsauXM1fmpv601h7/oUwbt1gr/UG9MTWl3ba2k6i71AnoWCMubc5/7x4anxg7AQnPSYR0zDUVUgEAWlQKkB72A1tu4i40oVvY49Vofw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=78mWlcCdfxmc9wsW557B5gEcIjYd934EcmSyRoj78SA=;
+ b=YBRjb0dupYUsA/aZUy4PtaipGtoCMrOXK/kfotTH//TwtO18Hk6187fRk7TxM3kMRSne1sGzc4ZLb6VyvKgA9ILYZxOoyJI9KzBtyWbKCUUNch6cM0C5LCwZ0Z7COzXXzx134j+0V4J5HwR4GH2fi2O71M8xD/DsAuOxu7dBOk0=
+Received: from BYAPR11MB3157.namprd11.prod.outlook.com (20.177.126.222) by
+ BYAPR11MB2614.namprd11.prod.outlook.com (52.135.227.23) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.18; Wed, 14 Aug 2019 21:02:16 +0000
+Received: from BYAPR11MB3157.namprd11.prod.outlook.com
+ ([fe80::90b:673b:26ef:3980]) by BYAPR11MB3157.namprd11.prod.outlook.com
+ ([fe80::90b:673b:26ef:3980%7]) with mapi id 15.20.2157.022; Wed, 14 Aug 2019
+ 21:02:16 +0000
+From: <Sandeep.Sheriker@microchip.com>
+To: <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [at91][patch v3 12/13] at91: remove Build/at91-sdcard command
+Thread-Index: AQHVUuON4wl1jufGakStKN7dhlp8/g==
+Date: Wed, 14 Aug 2019 21:02:16 +0000
+Message-ID: <1565816443-10924-1-git-send-email-sandeep.sheriker@microchip.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: MW2PR16CA0022.namprd16.prod.outlook.com (2603:10b6:907::35)
+ To BYAPR11MB3157.namprd11.prod.outlook.com
+ (2603:10b6:a03:75::30)
+x-mailer: git-send-email 2.7.4
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [198.175.253.81]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e59bfb94-da17-4f1f-c598-08d720fab014
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR11MB2614; 
+x-ms-traffictypediagnostic: BYAPR11MB2614:
+x-microsoft-antispam-prvs: <BYAPR11MB261425B75499F1FC739042A682AD0@BYAPR11MB2614.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:38;
+x-forefront-prvs: 01294F875B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(366004)(376002)(346002)(39860400002)(136003)(199004)(189003)(386003)(6916009)(66476007)(8936002)(52116002)(476003)(5660300002)(316002)(66066001)(486006)(2616005)(6436002)(6486002)(256004)(7736002)(99286004)(102836004)(6506007)(305945005)(186003)(71190400001)(71200400001)(36756003)(26005)(53936002)(2906002)(2501003)(6512007)(25786009)(50226002)(66556008)(86362001)(81166006)(81156014)(14454004)(478600001)(2351001)(8676002)(66446008)(64756008)(6116002)(3846002)(5640700003)(66946007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR11MB2614;
+ H:BYAPR11MB3157.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 8CwkKuHvOiSCD0+BI0CqChLb7ZDwQ01eZXFPUkGVyvxO6C6KXCq7EsBfnlsFNqGlv8M3P2kQf09INerOd0jSfHdJwXKRrpoZKakbhRYyIljYdJy4nxSVnjUVQ4ximvqToI8n0H6T/uHJIPzUtsfHZkUNXHYp6LpI78nWAkpzMv10O3i4Ki4VLTlIsrIVvpOlPYGFjc05XAOGO97shNYdg+2MwOrZMOEBGQPEqTL3PNz3ssVzTPRb+o14HBR1HA8nABGsAp0CKMZ0GuPGCRZxiC2aj9XoSOnJgR+2vuQHPmdxZYmDV3RwYfZ+b2mSkbssoZIYGCJjl9H6zq7a3YzSRwC9xJdHCNMcOsWtXoM35mrKNIZkJczwnvGchmHzP9BFCz1THx4dV46s0i/wT6q37xSAu487iprJv4jLp/7PXa8=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: e59bfb94-da17-4f1f-c598-08d720fab014
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Aug 2019 21:02:16.7177 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 0oLAWE0ln/SqVQ2016FwwI43+XxLxjQlAwngOYnQd5i1j+26PQnC61LNIo7iFEnrCeJ89J1aF8xH1pY8W1JMIXzO54Fvrx4ICVSjwfW38QK6vpduppEyJ7jYMSRxQj8W15TeRIg5OvcbDreC+mBAVQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB2614
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_133311_313794_DB75A96D 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190814_140236_717928_248E812A 
+X-CRM114-Status: UNSURE (   3.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] New ath10k ct driver and firmware available.
+Subject: [OpenWrt-Devel] [at91][patch v3 12/13] at91: remove
+ Build/at91-sdcard command
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,73 +159,67 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The driver commit is:  9e5ab25027e0971fa24ccf93373324c08c4e992d
+remove at91-sdcard build command from Makefile as this is moved to
+respective subtarget Makefile.
 
-This should fix a problem with 1560 MTU, 160Mhz on DFS channels,
-some other small issues on < 5.2 kernels, and for 5.2 driver,
-it pulls in some upstream stable fixes.
+Signed-off-by: Sandeep Sheriker M <sandeep.sheriker@microchip.com>
+---
+ target/linux/at91/image/Makefile | 35 -----------------------------------
+ 1 file changed, 35 deletions(-)
 
-wave-1 firmware changes since last update:
-
-   *  June 24, 2019: Try allocating low-priority WMI msgs if high-prio are not available.
-
-   *  June 24, 2019: Init rate-ctrl to start at lowest rate instead of in the middle.  Hoping
-                     this helps DHCP when station connects from a long distance.
-
-wave-2:
-
-   *  June 24, 2019  Start rate-ctrl at minimal values to help DHCP work better for far-away peers.
-
-   *  July 24, 2019  Fix old regression that made /a (and probably /b/g) perform poorly, at least on
-                     diet-compiled images.
-
-   *  Aug 8, 2019  Improve a/b/g rate-ctrl by damping the PER swings caused by the all-or-nothing logic
-                   of transmitting non-block-ack frames one at a time.
-
-
-I would not be surprised if wave-1 could use similar /a/b/g rate ctrl changes that I put into wave-2,
-I'm curious to hear of how it works for you if you test it.
-
-
-Firmware checksums for updating OpenWRT:
-
-
-988x
-5872fe046d90d844a6d3e232e47a6865bac551d7043b2874147c077e356b35d8  firmware-2-ct-full-community-22.bin.lede.010
-4568c3895a101ad28363491ea935f56a48bddea4c1be1889a6ba8d151902062a  firmware-2-ct-full-htt-mgt-community-22.bin.lede.010
-/home/greearb/candela_html/downloads
-9887
-2c64ab22159d04cd345b8caffdd76ac95c0409729121a7a4095c5192f46013b2  firmware-2-ct-full-community-22.bin.lede.010
-c806b8894faf3bbb11004f77196c6d711b9a6c187b1512d84e05fa98a5aba2ab  firmware-2-ct-full-htt-mgt-community-22.bin.lede.010
-/home/greearb/candela_html/downloads
-9980
-b5ccd56807763bccddf661cfc7dc6aab55215961f70f0e7bd42520c2dca30801  firmware-5-ct-full-community-12.bin-lede.010
-2cde201ebaa9e996822aeccaf46633bd6e1dd07c61ecba962519f532e5f92509  firmware-5-ct-full-htt-mgt-community-12.bin-lede.010
-/home/greearb/candela_html/downloads
-9984
-d7e360a220d90eadd67f5c9b5adf7b73d9611127e791e931d4f4890a417060d2  firmware-5-ct-full-community-12.bin-lede.010
-411cbdf5f52aac701a79ef5e43bfa57b4d8216c78eb83e48f25e8c11e17f71ff  firmware-5-ct-full-htt-mgt-community-12.bin-lede.010
-/home/greearb/candela_html/downloads
-4019
-276f6d4048759f99626dd000c1de64322cbed8a63f5aeb94dfea3127732fefc6  firmware-5-ct-full-community-12.bin-lede.010
-53d4bdb6a0fd5a88cbcc04cbed41a36c0a601b912af0f3376c661d7a639a4a58  firmware-5-ct-full-htt-mgt-community-12.bin-lede.010
-/home/greearb/candela_html/downloads
-9888
-268c8c3e771522b5e335328d331c20cea30e44b773656df2d613e76ce8777c1e  firmware-5-ct-full-community-12.bin-lede.010
-bde9bdcb3ecad94b4f6ab679fb2e266c46bb11b2ef279c2458a98a1e8808542d  firmware-5-ct-full-htt-mgt-community-12.bin-lede.010
-/home/greearb/candela_html/downloads
-
-Thanks,
-Ben
-
+diff --git a/target/linux/at91/image/Makefile b/target/linux/at91/image/Makefile
+index 03a3104..adb7c6d 100644
+--- a/target/linux/at91/image/Makefile
++++ b/target/linux/at91/image/Makefile
+@@ -40,41 +40,6 @@ define Device/dtb
+   KERNEL := kernel-bin | lzma | uImage lzma
+ endef
+ 
+-define Build/at91-sdcard
+-  $(if $(findstring ext4,$@), \
+-  rm -f $@.boot
+-  mkfs.fat -C $@.boot $(FAT32_BLOCKS)
+-
+-  mcopy -i $@.boot $(KDIR)/zImage ::zImage
+-
+-  $(foreach dts,$(DEVICE_DTS), \
+-     mcopy -i $@.boot $(DTS_DIR)/$(dts).dtb \
+-        ::$(dts).dtb)
+-
+-  mcopy -i $@.boot \
+-    $(BIN_DIR)/u-boot-$(DEVICE_NAME:at91-%=%)_mmc/u-boot.bin \
+-    ::u-boot.bin
+-
+-  $(if $(findstring at91-sama5d27_som1_ek,$@), \
+-      mcopy -i $@.boot \
+-          $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd1_uboot/at91bootstrap.bin \
+-          ::BOOT.bin,
+-      mcopy -i $@.boot \
+-          $(BIN_DIR)/at91bootstrap-$(DEVICE_NAME:at91-%=%)sd_uboot/at91bootstrap.bin \
+-          ::BOOT.bin)
+-
+-  ./gen_at91_sdcard_img.sh \
+-      $@.img \
+-      $@.boot \
+-      $(KDIR)/root.ext4 \
+-      $(AT91_SD_BOOT_PARTSIZE) \
+-      $(CONFIG_TARGET_ROOTFS_PARTSIZE)
+-
+-  gzip -nc9 $@.img > $@
+-
+-  rm -f $@.img $@.boot )
+-endef
+-
+ define Device/evaluation-sdimage
+   IMAGES += sdcard.img.gz
+   IMAGE/sdcard.img.gz := at91-sdcard
 -- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
+2.7.4
 
 
 _______________________________________________

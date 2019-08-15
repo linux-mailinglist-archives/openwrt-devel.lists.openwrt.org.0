@@ -2,171 +2,203 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 843928ECD3
-	for <lists+openwrt-devel@lfdr.de>; Thu, 15 Aug 2019 15:29:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CC558F734
+	for <lists+openwrt-devel@lfdr.de>; Fri, 16 Aug 2019 00:50:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XfohsrAsV1K3QqiRX7iKCPt1AS5TpcBosG/V2xtfW8U=; b=NdA82CEYsQu+bZ
-	2aJcIXDjE02/RcDzeDDiHYQ9emvP64HAm+5LqdOSUnbciUX/FgTqrWEExXOmkQks9VXBDLcnLc6y5
-	Kh/R542Z/Ld7wFgKycXhPN/E6PMflgrt+qr8GwBpRR4+taeiS/Lc86opOoN7EgDIm6eevBpTGBg2A
-	N3xu3morCk6tmKAE9/b/j9bjb/yjJX1hYR4IQcNY8UOuc50AsjYnF6A8pMd5x7mKTwLnQpP7dvmJk
-	a6H+7c+1H04bEmPxw6Lb1Tb8zBwZW2TRLRVVKaM0bUt/1CBBfaBdtiwuq+i+i6nE7oCeU3Sd2Kxod
-	+IvP8TLSuVSeDPZmNr4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vUJHmAu8+gpSzCPO0BMrSToPhFKlvbnr7gQG4a6jSco=; b=ICdRfyeqpNxGWfP9Nl6COug7c
+	h3x0LakALcwPNMDZfGfUtVj/NPVgdYMLCzf8XQDStavA0gH73xcENoXB1CPwr72SZsBZ7hmAFvaZI
+	/fgUnW7CaYo6J+XJq3X8Ti4QqOXJchVvk/sWTwmtD3ela8iWCxeqiFPW0xt6jVa9QEB/Q+x0MYj1l
+	xzCwr51FGNgrFCJZrnWBjUrDCzcbwOzwzWpiypvlejBFns6VHJG344oHU+r04Ow29eqby7sv2UzQu
+	56kyhwoZw0qcNiWaQefpox7eWs83rNZ/Z56N8Ow8GUN6P7HSaEeozyVzISG03NqY+Fm6dRjIcszye
+	NZM0m0+KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyFoy-0003bJ-U2; Thu, 15 Aug 2019 13:29:41 +0000
-Received: from mx2.mailbox.org ([80.241.60.215])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyFon-0003b1-AR
- for openwrt-devel@lists.openwrt.org; Thu, 15 Aug 2019 13:29:32 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 16E6DA1474
- for <openwrt-devel@lists.openwrt.org>; Thu, 15 Aug 2019 15:29:28 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id WuUfKfQOL13r for <openwrt-devel@lists.openwrt.org>;
- Thu, 15 Aug 2019 15:29:19 +0200 (CEST)
-To: openwrt-devel@lists.openwrt.org
-References: <20190815132438.16279-1-hauke@hauke-m.de>
- <20190815132438.16279-2-hauke@hauke-m.de>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <8fb000ce-d4ef-d76d-3c15-599e2ceaa497@hauke-m.de>
-Date: Thu, 15 Aug 2019 15:29:19 +0200
+	id 1hyOYx-0002EM-Mk; Thu, 15 Aug 2019 22:49:43 +0000
+References: <20190811223921.572cda5b@kosmio.komorska>
+ <20190811224446.3334b7e6@kosmio.komorska>
+ <000b01d55108$a98631f0$fc9295d0$@adrianschmutzler.de>
+ <20190814105922.1c713789@kosmio.komorska>
+In-Reply-To: <20190814105922.1c713789@kosmio.komorska>
+Date: Fri, 16 Aug 2019 00:49:15 +0200
+To: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 MIME-Version: 1.0
-In-Reply-To: <20190815132438.16279-2-hauke@hauke-m.de>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190815_062929_673033_B0E40D62 
-X-CRM114-Status: UNSURE (   9.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.215 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 2/2] mac80211: Update to version
- 4.19.66-1
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.17359.1565909370.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Martin Blumenstingl via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: Re: [OpenWrt-Devel] ath9k: mtd-cal-data vs firmware bin file
+Content-Type: multipart/mixed; boundary="===============1521199200147568774=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 8/15/19 3:24 PM, Hauke Mehrtens wrote:
-> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
-> ---
->  package/kernel/mac80211/Makefile                          | 6 +++---
->  .../350-ath9k_hw-reset-AHB-WMAC-interface-on-AR91xx.patch | 2 +-
->  .../351-ath9k_hw-issue-external-reset-for-QCA955x.patch   | 4 ++--
->  ...rt-ath9k-interpret-requested-txpower-in-EIRP-dom.patch | 4 ++--
->  ...k-adjust-tx-power-reduction-for-US-regulatory-do.patch | 2 +-
->  .../patches/ath/510-ath9k_intr_mitigation_tweak.patch     | 2 +-
->  .../mac80211/patches/ath/513-ath9k_add_pci_ids.patch      | 2 +-
->  .../mac80211/patches/ath/542-ath9k_debugfs_diag.patch     | 4 ++--
->  .../ath/544-ath9k-ar933x-usb-hang-workaround.patch        | 8 ++++----
->  .../patches/ath/930-ath10k_add_tpt_led_trigger.patch      | 4 ++--
->  ...ong-handling-of-peer_bw_rxnss_override-parameter.patch | 6 +++---
->  ...ter_freq-handling-for-VHT160-in-recent-firmwares.patch | 2 +-
->  .../ath/975-ath10k-use-tpt-trigger-by-default.patch       | 2 +-
->  ...0k-Limit-available-channels-via-DT-ieee80211-fre.patch | 2 +-
->  ...0k-add-support-for-configuring-management-packet.patch | 4 ++--
->  ...0k-fix-possible-out-of-bound-access-of-ath10k_ra.patch | 2 +-
->  ...0k-fix-incorrect-multicast-broadcast-rate-settin.patch | 4 ++--
->  .../ath/980-ath10k-fix-max-antenna-gain-unit.patch        | 2 +-
->  ...0k-adjust-tx-power-reduction-for-US-regulatory-d.patch | 2 +-
->  ...-mac80211-add-stop-start-logic-for-software-TXQs.patch | 2 +-
->  20 files changed, 33 insertions(+), 33 deletions(-)
-> 
+--===============1521199200147568774==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-These two patches are for the openwrt-19.07 branch.
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-Hauke
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============1521199200147568774==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1hyOYi-0002E1-BA
+	for openwrt-devel@lists.openwrt.org; Thu, 15 Aug 2019 22:49:30 +0000
+Received: by mail-oi1-x234.google.com with SMTP id o6so3437884oic.9
+        for <openwrt-devel@lists.openwrt.org>; Thu, 15 Aug 2019 15:49:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=oiUEqDO0j9SfymophpQ5NDhwchzMBSE/wd/ZSJquIgk=;
+        b=JTwU+Cdmi6Ixi6hs5B/OUrvgUkPPvk+ZlwU64iJ6Gtyh0co9uBWppVtQLwVaUde7tz
+         hsDNkiKjJ9F0qJjNU5MeIl3wuQ+dUJieqROQI+nTWQ+n3cJWGu4HNxNgcPsf+thlZko/
+         /ZcdSgf1d5o/O/G1KdzrVcGsTw8KhEeahA+V+jFw98lSEIClV+iz2gYvtPtjhVDJmla/
+         293uIHIkOMbbrA2kzjkW38unS4Pzv5eWLgPtHmn7YXqng0xw4Ltj44dpk3szmPRCZWBg
+         OAqwke0oXRoVA2qCXRoi5hDr72SL9UVKGrwtgyZ26Hh+7bWzymNq9qv/kK/1OdGoU3OI
+         j+EA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=oiUEqDO0j9SfymophpQ5NDhwchzMBSE/wd/ZSJquIgk=;
+        b=SEB8XT/R/NDsDfLFnbgKKBjcboBbVnXBszxPUgW85H2UTLmJkz7l7g0YQZo55bzy41
+         BQKvUlgGaO8vzBH6BAxayogXvxH8nDYmtSlBopReHMGv4vMZJrFwdR7b0Kwk1YeiW6Dr
+         IF/z3Zlko5uYVGyxneS3QXdz60JQIC+lGRvWQ0YIWwf+hBK995ctkvNFqNrrvQpUrq5c
+         +4Pdt/mM5tQkToF5v1fyTJe9IQl0wKzuJeFT1z1+SIl0vkBKP209IrujOgFwDEJiNC/9
+         2a3bzw0FQN9L67NmyOGQ/3j3RLYdGi7bEhwSw4js/t01jRwn9efS9F3xQj8V0FagZVKf
+         eT7A==
+X-Gm-Message-State: APjAAAXTm8skp62Bgz+C6dKFDtZLXU+7DjIfdKRL0BziRGRDthFKBVwq
+	ocOqgyhvV4rtfprEYT8w04/MaEiSljyQHBsW3pA=
+X-Google-Smtp-Source: APXvYqyLap55B4/EHPpK39MHAlgLw3DX6IiyHUhCkjJ6d/Uxp0adn8KWYVNCI+WixfRq6DoVa8Jj5WD/CmS6uhH1I3o=
+X-Received: by 2002:aca:d650:: with SMTP id n77mr3342725oig.129.1565909366558;
+ Thu, 15 Aug 2019 15:49:26 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190811223921.572cda5b@kosmio.komorska> <20190811224446.3334b7e6@kosmio.komorska>
+ <000b01d55108$a98631f0$fc9295d0$@adrianschmutzler.de> <20190814105922.1c713789@kosmio.komorska>
+In-Reply-To: <20190814105922.1c713789@kosmio.komorska>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Fri, 16 Aug 2019 00:49:15 +0200
+Message-ID: <CAFBinCAJax9XE+NE4A25qkuWXSJnxog6JtnSK2FfjDkcEZU=Hg@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] ath9k: mtd-cal-data vs firmware bin file
+To: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>, openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190815_154928_410324_1603811D 
+X-CRM114-Status: GOOD (  14.61  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2607:f8b0:4864:20:0:0:0:234 listed in]
+                             [list.dnswl.org]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             (martin.blumenstingl[at]googlemail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+
+Hi Michal,
+
+On Wed, Aug 14, 2019 at 10:59 AM Michal Cieslakiewicz
+<michal.cieslakiewicz@wp.pl> wrote:
+>
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA256
+>
+> Hello Adrian,
+>
+> Thanks for helping me with WNR patchset, one question came to my mind
+> in the process of developing it and after reading one of your emails.
+> Sorry if it has been answered elsewhere...
+>
+> /etc/hotplug.d/firmware/10-ath9k-eeprom for these routers just extracts
+> 4k of calibration data from ART to bin file in /lib/firmware. I
+> compared bin file to mtd area and they are identical. Why ath9k cannot
+> use this data directly accessing /dev/mtd6? Is that 'mtd-cal-data' dts
+> option for? If so, why does it not work in this case? (tested, ath9k
+> initialization ends with error)
+> I recall there was no such operation in ar71xx target and older
+> kernels...
+(I am the one who brought the /lib/firmware based caldata upstream -
+these are my thoughts on this topic)
+
+upstream ath9k has support for retrieving the caldata through the
+request_firmware mechanism (which requires copying it to
+/lib/firmware).
+some out-of-tree patches have/had a special mtd-cal-data property to
+achieve a similar goal (passing the caldata to devices without a
+physical EEPROM).
+
+while I upstreamed the ath9k patches for request_firmware support
+there was a bit of a discussion.
+the discussion was whether the NVMEM subsystem should be used instead
+of relying on request_firmware.
+my primary target was the BT HomeHub 5A which stores the calibration
+data inside a UBI volume which cannot be referenced from devicetree
+(yet - or at least at the time I upstreamed the patches it could not
+be referenced) so I still chose to push the request_firmware part
+forward.
+
+most devices have the caldata at a fixed location on the flash, so the
+NVMEM subsystem can be used for this.
+if someone wants to get rid of the caldata copy in /lib/firmware then
+support for reading the caldata using the NVMEM framework could be
+implemented in ath9k (and owl-loader).
+the result would be close to what the mtd-cal-data provides, assuming
+that the NVMEM subsystem can read the underlying data structures on
+flash (AFAIK this currently excludes NAND with UBI, which is used by
+the minority of the boards with an ath9k chip).
+
+
+Martin
+
+
+--===============1521199200147568774==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1521199200147568774==--

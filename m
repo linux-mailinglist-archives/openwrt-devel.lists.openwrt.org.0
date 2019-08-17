@@ -2,89 +2,104 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C71A90BEE
-	for <lists+openwrt-devel@lfdr.de>; Sat, 17 Aug 2019 03:38:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63BE891002
+	for <lists+openwrt-devel@lfdr.de>; Sat, 17 Aug 2019 12:31:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EdP7knn1as+e5TxOpVyTECb3Nda0EQHM1/P6vASSh+g=; b=EyUJ7zBBahkL76
-	nxxRLzUzPPAjEMF5++LJDzqWX9KHl7GaJt34E0eXFIEP2HGd9O1hm07h4q84dzRck/YZTs6JrAFCY
-	Z2RMTPwWFRWawpipOsC3mL6VnDszJ43avdbbyDBJLH+7Evq9V4TRmFeGkZZLB8nqgEx1qymkvK1gE
-	y7L0H2ipnOP3RXhdubUbAcIHBwPO3GKsjR2X8cHz2mVxabO6AJiKSIt9iLaVsOVdk9aP594cHBRUd
-	L7lvfvvFFjR6Z+EQHjysJmHDpu7Ewhk1aw67UBME4qx8vP9AKDQG9p7C7OjwRlxWBNiToKQFefWRS
-	zpNvkvOTr/0b2ePog3bw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=F/l/rhaQv8+iNF6B+5WVLWgzh5SOXpEF3akdXZmQbm0=; b=GeS7XL4tZ0N3lMEtV3UlG/TV7
+	fsmgCjkXI75g7gNP4TFeMgRI9b+g9C+pzBOds0bb9VKAkln8EDCqnQ5TGpf2LqWrjReLV6Avf1ndf
+	KaIyYTEMNHop8JSR2YtAWYxS/nZ35KpU3lJRgTsm09ev3Gy3Pdp39r+/ax7H80E/J8J25I0zZsl8+
+	U6WUUypIZ53G//PnVZtmtAH6VvBrQhL6d0SBhsOuRQyXGvRLe2chBxu4a6+Rjf6TMk+1o5vAKH+gM
+	5tPxVceJaffZbFGTRnYEIacXJovwnQCxrx0uX7Icu985Aj5J9t6Jet2mdDgXdKkbIQ1SMwSe2lSZ9
+	ZA+TByEtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hynfc-0008OO-4t; Sat, 17 Aug 2019 01:38:16 +0000
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
+	id 1hyvzd-0003lU-B3; Sat, 17 Aug 2019 10:31:29 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hynfP-0008NZ-1i
- for openwrt-devel@lists.openwrt.org; Sat, 17 Aug 2019 01:38:06 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id z3so3139375pln.6
- for <openwrt-devel@lists.openwrt.org>; Fri, 16 Aug 2019 18:38:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=zG48mq29f9zshhPBzWDipdLaVKDeZj+0ZTqFbPiZcXk=;
- b=nfXMgvGYEHXaeORDaEaoXSCnjqv2aaU6NwpvWB46GCTSlMKDI6xfgEs00YGUBvGN1l
- 8+mqIMyuTM2vFDEf+0hm/BnuYJ6yJeU9fMUEAmXLrr81w+YBA1KyyxKZuv4wbtGr36JI
- FjKfL6RA2gwcx+WESs1XMgNDkYpoM9gbBsi2tZ86AgXw5gZ+nM+uctFoptqvT9kG7fmB
- oy73BRZOs4GQAynwBU+dvIYxtj6rMdqPDotGzc25h0aMSwQIS4Sl264VHwe30CchW+Lk
- RTC/cNwCmRPb0SEMwwCnd44BiN6/VgWI69KyVwPtVyeGVO1deAyQzxZdCareXBnjN3Rs
- Oy3g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=zG48mq29f9zshhPBzWDipdLaVKDeZj+0ZTqFbPiZcXk=;
- b=gk0bpLAqj7ihOkizIF6g8nwqgko9iaPmarYUG6dph/348dmeazmZlQL68Tf2Lb6Zfa
- VThA4irlcHXZNMyjshl8t1v9VUXtEk6BNUEhk2bbpzE1hy3P+KFH3dMy4tDLOW53hNpO
- 8uDDPBiqf8fvS895UuxBXBXu8C6+7V2XSZJTuSkMdtFUpqugsdYCw4U6lxeGeKVZ0vf+
- SgTO/eKkok7g3ILiqucrv9o3y2ugtPHKne9TzKPuWg8MLSLu7b2LIotF7ktCwOfMe+3s
- ewGZxELpKX1D+roAFcUZiCwn88JZMtoRzVloUMaGjAMXyv+v01GvUJt73N7XunovH/ne
- V/Eg==
-X-Gm-Message-State: APjAAAVAvulp0UYrNCt5ZzjYuZfgc8yH9wmGNpDgS/PtZMTnsGWwgk0Y
- n8N2dPN53Y3yZEphbHzDq97G89TV
-X-Google-Smtp-Source: APXvYqw5h05aC+41EN3SocqapXU0uwqNOjsEzZGjp9X/JvMqYp9WhBlW/XG1ih/SJq9b/hNs8DY5pg==
-X-Received: by 2002:a17:902:524:: with SMTP id
- 33mr12137943plf.27.1566005879033; 
- Fri, 16 Aug 2019 18:37:59 -0700 (PDT)
-Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
- [76.14.106.55])
- by smtp.gmail.com with ESMTPSA id g2sm14209387pfq.88.2019.08.16.18.37.57
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 16 Aug 2019 18:37:58 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1hyvzG-0003jc-U8
+ for openwrt-devel@lists.openwrt.org; Sat, 17 Aug 2019 10:31:08 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 262B550949; Sat, 17 Aug 2019 12:31:02 +0200 (CEST)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id E165A50947
+ for <openwrt-devel@lists.openwrt.org>; Sat, 17 Aug 2019 12:31:01 +0200 (CEST)
+Received: (qmail 21818 invoked from network); 17 Aug 2019 12:31:01 +0200
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.22.126)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 17 Aug 2019 12:31:01 +0200
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 16 Aug 2019 18:37:57 -0700
-Message-Id: <20190817013757.7017-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
+References: <20190816142848.14412-1-zajec5@gmail.com>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
+ 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
+ yxsOKc06fSVm
+Message-ID: <93bb5faa-0505-5948-c990-4b88d7ff95e0@wwsnet.net>
+Date: Sat, 17 Aug 2019 12:30:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190816142848.14412-1-zajec5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_183803_130999_ABFD75F5 
-X-CRM114-Status: GOOD (  20.15  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190817_033107_276831_1AD3698F 
+X-CRM114-Status: GOOD (  12.22  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:62f listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.0 FREEMAIL_REPLY         From and body contain different freemails
-Subject: [OpenWrt-Devel] [PATCHv2] mdadm: revised mdadm config & init logic
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH procd] system: support passing "options"
+ to the "sysupgrade" ubus method
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,859 +111,154 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1867378679756588156=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Joseph Tingiris <joseph.tingiris@gmail.com>
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============1867378679756588156==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="ZG2Fg0bAGtBylvwWXEyQwMb1vQHv3H1ID"
 
-This is a significant revision of /etc/init.d/mdadm.  It adds new
-features, support for new configuration options, safer error
-handling, (configurable) verbose output, and contains multiple bug
-fixes.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--ZG2Fg0bAGtBylvwWXEyQwMb1vQHv3H1ID
+Content-Type: multipart/mixed; boundary="MEI1JUDWMivKjUqjQmjmZStw0T4Cgrtfd";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <93bb5faa-0505-5948-c990-4b88d7ff95e0@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH procd] system: support passing "options"
+ to the "sysupgrade" ubus method
+References: <20190816142848.14412-1-zajec5@gmail.com>
+In-Reply-To: <20190816142848.14412-1-zajec5@gmail.com>
 
-Most notably, mdadm was being started with the --config flag and
-that prevented it from using its built in Auto Assembly features.
-Users were required to put a correct uuid in /etc/config/mdadm.
+--MEI1JUDWMivKjUqjQmjmZStw0T4Cgrtfd
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-The new default startup mode is now to automatically assemble all
-RAID arrays attached to the machine using device scans, rather than
-configuation options.
+Hi,
 
-A new UCI section, config mdadm global, was added with new options that
-are supported by the accompanying /etc/init.d/mdadm. Documentation for all
-new (and previous) options was added as well.  See the
-/etc/config/mdadmin or mdadm.init file itself for more details.
+> [...]
+> +
+> +	blobmsg_for_each_attr(option, options, rem) {
+> +		const char *prefix =3D "UPGRADE_OPT_";
+> +		char *name =3D malloc(strlen(prefix) + strlen(blobmsg_name(option)))=
+;
+> +		char value[11];
+> +		char *c;
+> +		int tmp;
+> +
+> +		if (!name) {
+> +			continue;
+> +		}
+> +		sprintf(name, "%s%s", prefix, blobmsg_name(option));
+> +		for (c =3D name + strlen(prefix); *c; c++) {
 
-Additionally, a new stateful 'auto' feature was added that functions
-similarly to the stateless Auto Assembly feature.  The benefits of
-stateful auto assembly are to support features that mdadm 4.0 will only
-read from a configuration file, such as setting the MAILFROM value.  The
-new mdadm_conf_auto() function will also aid users in troubleshooting.
-When verbose is turned on it provides tips and better visibility for what's
-actually happening.
+I'd propose some more sanity checking here:
+                     if (isalnum(*c) || *c =3D=3D '_') {
+> +			*c =3D toupper(*c);
 
-Backward compatibility was retained.  Stateful UCI only configurations are
-supported.  All previously existing configurations will work in this mode.
-However, these users will now have to explicitly turn it on.
+                     }
+                     else {
+                        c =3D NULL;
+                        break;
+                     }
+> +		}
 
-A new reload_service() function was added to prevent reloads from
-stopping mdadm.  Reloads will now be ignored, though the stage is set for
-reloads to trigger scans for new devices.  Explicit restarts still work as
-expected.
+                if (!c) {
+                     fprintf(stderr, "Option \"%s\" contains invalid
+characters\n", blobmsg_name(option));
+                     free(name);
+                     continue;
+                }
 
-The start_service() function was enhanced to query new UCI mdadm.global
-options: alert_program, config, email, email_from, monitor_frequency,
-and verbose.  Each option is documented in /etc/mdadm/config (config.init) and
-some additional code comments were added.
+> +
+> +		switch (blobmsg_type(option)) {
+> +		case BLOBMSG_TYPE_INT32:
+> +			tmp =3D blobmsg_get_u32(option);
+> +			break;
+> +		case BLOBMSG_TYPE_INT16:
+> +			tmp =3D blobmsg_get_u16(option);
+> +			break;
+> +		case BLOBMSG_TYPE_INT8:
+> +			tmp =3D blobmsg_get_u8(option);
+> +			break;
+> +		default:
+> +			fprintf(stderr, "Option \"%s\" has unsupported type: %d\n",
+> +				blobmsg_name(option), blobmsg_type(option));
+> +			free(name);
+> +			continue;
+> +		}
+> +		snprintf(value, sizeof(value), "%u", tmp);
+> +
+> +		setenv(name, value, 1);
+> +
+> +		free(name);
+> +	}
+> +
+>  	execvp(argv[0], argv);
+> =20
+>  	/* Cleanup on failure */
+> diff --git a/sysupgrade.h b/sysupgrade.h
+> index 8c09fc9..c84e494 100644
+> --- a/sysupgrade.h
+> +++ b/sysupgrade.h
+> @@ -14,8 +14,10 @@
+>  #ifndef __PROCD_SYSUPGRADE_H
+>  #define __PROCD_SYSUPGRADE_H
+> =20
+> +struct blob_attr;
+> =20
+> -void sysupgrade_exec_upgraded(const char *prefix, char *path, char *co=
+mmand);
+> +void sysupgrade_exec_upgraded(const char *prefix, char *path, char *co=
+mmand,
+> +			      struct blob_attr *options);
+> =20
+> =20
+>  #endif
+>=20
 
-Finally, error handling and verbose output was enhanced.  Users will
-know what's going on (if verbose is turned on).
 
-Strict reliance on a shell global ($CONF) was removed and replaced with a
-single global ($TMP_FILE) that's for development convenience.  When/if a config
-file is not specified in the UCI config, it will fall back to using $TMP_FILE as the
-configuration file.
+--MEI1JUDWMivKjUqjQmjmZStw0T4Cgrtfd--
 
-Incremented PKG_RELEASE from 1 to 2
+--ZG2Fg0bAGtBylvwWXEyQwMb1vQHv3H1ID
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-Signed-off-by: Joseph Tingiris <joseph.tingiris@gmail.com>
-(rebased and ran through shellcheck)
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- v2: Rebased after sysmacro patches
- package/utils/mdadm/Makefile           |   2 +-
- package/utils/mdadm/files/mdadm.config | 162 ++++++-
- package/utils/mdadm/files/mdadm.init   | 556 ++++++++++++++++++++++---
- 3 files changed, 647 insertions(+), 73 deletions(-)
+-----BEGIN PGP SIGNATURE-----
 
-diff --git a/package/utils/mdadm/Makefile b/package/utils/mdadm/Makefile
-index f20a58b704..d5ea91eeed 100644
---- a/package/utils/mdadm/Makefile
-+++ b/package/utils/mdadm/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=mdadm
- PKG_VERSION:=4.1
--PKG_RELEASE:=2
-+PKG_RELEASE:=3
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=@KERNEL/linux/utils/raid/mdadm
-diff --git a/package/utils/mdadm/files/mdadm.config b/package/utils/mdadm/files/mdadm.config
-index 50afbc2ab6..0c78c964a8 100644
---- a/package/utils/mdadm/files/mdadm.config
-+++ b/package/utils/mdadm/files/mdadm.config
-@@ -1,18 +1,154 @@
--config mdadm
-+#
-+# The mdadm 'global' section is for options that apply to all sections.
-+#
-+
-+config mdadm global
-+
-+	#
-+	# option 'alert_program' values may be a path to a valid, executable binary.
-+	#
-+	# The default 'alert_program' is not set.
-+	#
-+	# When mdadm detects an event it will execute this program with 3 arguments, see https://linux.die.net/man/8/mdadm
-+	# $1 = will be the event
-+	# $2 = will be the meta device
-+	# $3 = may be a related component (if one exists)
-+	#
-+	# * alert_program runs independently from sendmail.
-+	# * If both options alert_program and email are set, and both work, then an email and a
-+	#   custom alert will be generated.
-+	# * no alert program is included in mdadm 4.0-4.
-+	#
-+	# Lots of possibilities exist, i.e. scripts for netdata, slack, etc.
-+	#
-+	#option alert_program /usr/sbin/mdadm_alerts
-+
-+
-+	#
-+	# option 'config' values may be one of the following.
-+	#
-+	# The default 'config' is none (stateless auto assembly).
-+	#
-+	# auto		- stateful, dynamically generated mdadm.conf via block info,
-+	#		  stored in /var/etc/mdadm.conf
-+	# containers	- stateless, mdadm --assemble --scan --config=containers; see https://linux.die.net/man/8/mdadm
-+	# none		- stateless, mdadm --assemble --scan --config=none; aka 'Auto Assembly',
-+	#		  see https://linux.die.net/man/8/mdadm
-+	# partition	- stateless, mdadm --assemble --scan --config=partition; see https://linux.die.net/man/8/mdadm
-+	# uci		- stateful, dynamically generated mdadm.conf via uci array values (below),
-+	#		  stored in /var/etc/mdadm.conf
-+	# file		- stateful, manually generated mdadm.conf file(s),
-+	#		  'file' must be preceded by a / and may be a readable filename
-+	#		  or directory with multiple .conf files
-+	#
-+	# Try uncommenting this and using 'auto' if there are issues.  It provides more comprehensive
-+	# diagnostics via verbose messages & the ability to set an email from address.
-+	#
-+	#option config auto
-+
-+
-+	#
-+	# option 'email' values may be a valid (to) email address, or empty.
-+	#
-+	# The default 'email' to send to is root (monitor email will be sent to the local root user).
-+	#
-+	# * Sending mail will only work if /usr/lib/sendmail or /usr/sbin/sendmail is available. Install postfix.
-+	# * Comment, or unset, the email value causes mail to be disabled.  With no email value, mdadm wont even try.
-+	# * A single word name must be a valid user on the system, or it will bounce back to root.
-+	#   Unless user 'mdadm' exists (it doesn't by default), this will bounce:
-+	#   option email mdadm
-+	# * A full email address does not need quoting and will deliver if tcp port 25 (SMTP) is allowed outbound, i.e.
-+	#   option email joseph.tingiris@gmail.com
-+	# * mdadm only supports one email address (MAILADDR) for all arrays. see mdadm.conf(5)
-+	#
-+	# mail will be to 'root@$HOSTNAME', i.e. root@OpenWrt
-+	#
- 	option email root
--	# list devices /dev/hd*
--	# list devices /dev/sd*
--	# list devices partitions
- 
--config array
--	option uuid 52c5c44a:d2162820:f75d3464:799750f8
--	option device /dev/md0
--	# option name raid:0
--	# option super_minor 0
--	# list devices /dev/sda1
--	# list devices /dev/sdb1
--	# option spares 0
--	# option spare_group spares
-+
-+	#
-+	# option 'email_from' values may be a valid (from) email address, or empty.
-+	#
-+	# The default 'email_from' is 'OpenWrt RAID Monitoring <mdadm@$HOSTNAME>', i.e. mdadm@OpenWrt
-+	#
-+	# * Sending mail will only work if /usr/lib/sendmail or /usr/sbin/sendmail is available. Install postfix.
-+	# * Comment, or unset, the email_from value causes mdadm to send mail from
-+	#   root@$HOSTNAME, e.g. root@OpenWrt
-+	# * A complete from envelope can be specified within quotes, i.e.
-+	#   option email_from 'mdadm monitoring <this_is_not_spam@example.com>'
-+	# * mdadm only supports setting a from address (MAILFROM) with a stateful config,
-+	#   e.g. 'auto' or 'uci'. see mdadm.conf(5)
-+	#
-+	# mail will be from 'OpenWrt RAID Monitoring <mdadm@$HOSTNAME>', i.e. mdadm@OpenWrt
-+	#
-+	option email_from 'OpenWrt RAID Monitoring <mdadm>'
-+
-+
-+	#
-+	# option 'monitor_frequency' values may be a valid integer, or empty.
-+	#
-+	# The default monitor frequency (delayed poll) is 120 seconds.
-+	#
-+	# * This is the polling interval, frequency, or delay.  It's the value for mdadm --delay.  see https://linux.die.net/man/8/mdadm
-+	#
-+	option monitor_frequency 300
-+
-+	#
-+	# option 'verbose' values may be '1', 'on', or 'true', everything else is false.
-+	#
-+	# The default verbosity is false (quiet).
-+	#
-+	# * Standard errors will be sent to console and syslog regardless of this setting.
-+	# * When verbose is false mdadm will run in --quiet mode and generate very little log
-+	#   or standard output.
-+	#
-+	# Turn this on if you're having problems, or want more detail.  With SSH_TTY set output will
-+	# be to that TTY, otherwise it will go to syslog via logger.
-+	#
-+	#option verbose on
-+
-+
-+#
-+# The mdadm 'array' section(s) are for stateful, manual configurations. Experts only.  Use with caution.
-+#
-+#
-+# The use of multiple 'array' sections is supported by /etc/init.d/mdadm.
-+# They must all be named 'array'.
-+#
-+# As of this writing unnamed 'mdadm' sections are still allowed, but deprecated. Do not use.
-+#
-+
-+#config array
-+	#
-+	# example 'array' options may be a valid mix of:
-+	#
-+	# bitmap
-+	# container
-+	# device
-+	# devices
-+	# member
-+	# name
-+	# spare_group
-+	# spares
-+	# super_minor
-+	# uuid
-+	#
- 	# option bitmap /bitmap.md
- 	# option container 00000000:00000000:00000000:00000000
-+	# option device /dev/md0
-+	# -and/or a devices list-
-+	# list devices /dev/hd* # mdadm allows glob, see glob(7)
-+	# list devices /dev/sd*
-+	# list devices /dev/sda1
-+	# list devices /dev/sdb1
-+	# list devices containers
-+	# list devices partitions
- 	# option member 1
-+	# option name raid:0
-+	# option spare_group spares
-+	# option spares 0
-+	# option super_minor 0
-+	# use uuid from block info (preferred), or mdadm --misc --detail /dev/md0
-+	# option uuid 2084de11-70c4-4521-8f95-6113e75f1fe9
-+	#
-+	# These options directly translate to mdadm -- options, see https://linux.die.net/man/8/mdadm
-diff --git a/package/utils/mdadm/files/mdadm.init b/package/utils/mdadm/files/mdadm.init
-index 64a50b35de..257075c75e 100644
---- a/package/utils/mdadm/files/mdadm.init
-+++ b/package/utils/mdadm/files/mdadm.init
-@@ -1,93 +1,531 @@
- #!/bin/sh /etc/rc.common
- 
--START=13
--STOP=98
-+START=12
-+STOP=99
- 
- USE_PROCD=1
- PROG=/sbin/mdadm
- NAME=mdadm
- 
--CONF="/var/etc/mdadm.conf"
-+LOGGER=0 # off
-+VERBOSE=1 # off
-+
-+TMP_FILE="/var/etc/mdadm.conf" # /var/etc is on /tmp; used for temporary state, to enable stateful only mdadm features
-+
-+[ ! -x "$PROG" ] && exit 1
- 
- append_list_item() {
--	append "$2" "$1" "$3"
-+    append "$2" "$1" "$3"
- }
- 
- append_option() {
--	local var="$1"
--	local cfg="$2"
--	local opt="$3"
--	local name="$4"
--	local sep="$5"
--	local str
--
--	if [ -n "$sep" ]; then
--		config_list_foreach "$cfg" "$opt" append_list_item str "$sep"
--	else
--		config_get str "$cfg" "$opt"
--	fi
--
--	[ -n "$str" ] && append "$var" $(printf "%s=%s" "${name:-${opt//_/-}}" "$str")
-+    local var="$1"
-+    local cfg="$2"
-+    local opt="$3"
-+    local name="$4"
-+    local sep="$5"
-+    local str
-+
-+    if [ -n "$sep" ]; then
-+        config_list_foreach "$cfg" "$opt" append_list_item str "$sep"
-+    else
-+        config_get str "$cfg" "$opt"
-+    fi
-+
-+    [ -n "$str" ] && append "$var" $(printf "%s=%s" "${name:-${opt//_/-}}" "$str")
- }
- 
--mdadm_common() {
--	local cfg="$1"
--	local email devices
-+verbose() {
-+    local msg="$1"
-+    local level="$2"
- 
--	if [ -x /usr/sbin/sendmail ]; then
--		config_get email "$cfg" email
--		[ -n "$email" ] && printf "MAILADDR %s\n" "$email" >> $CONF
--	fi
-+    [ -z "$level" ] && level="INFO"
- 
--	config_list_foreach "$cfg" devices append_list_item devices " "
--	[ -n "$devices" ] && printf "DEVICE %s\n" "$devices" >> $CONF
-+    if [ "$VERBOSE" = "1" ]; then
-+        if [ ${#SSH_TTY} -gt 0 ]; then
-+            printf "$NAME: init %7s - %b\n" "$level" "$msg"
-+        else
-+            # no SSH_TTY goes to logger
-+            printf "$NAME: init %7s - %b\n" "$level" "$msg" | logger -t mdadm
-+        fi
-+    fi
- }
- 
--mdadm_array() {
--	local cfg="$1"
--	local uuid device devices name array
-+mdadm_conf_auto() {
-+    local mdadm_conf="$1"
-+
-+    if [ ! -w "$mdadm_conf" ]; then
-+        if [ -z "$mdadm_conf" ]; then
-+            verbose "mdadm_conf value is empty" ERROR
-+        else
-+            verbose "'$mdadm_conf' file not found writable" ERROR
-+        fi
-+        return 1
-+    fi
-+
-+    local block_md block_uuid mdadm_md mdadm_md_rc mdadm_uuid
-+
-+    # Check block info for active linux_raid_members, if necessary then compare with mdadm, & dynamically update $mdadm_conf
-+
-+    block_md=0 # counter
-+    for block_uuid in $(block info 2> /dev/null | sed -nEe 's#^.* UUID="([^"]*)".*TYPE="linux_raid_member"#\1#p'); do
-+        mdadm_md=""
-+        mdadm_md_rc=0
-+
-+        while [ -z "$mdadm_md" ]; do
-+            if [ -b "/dev/md$block_md" ]; then
-+                # handle mdadm restart, service reload, multiple starts without stops, physical unplug, etc.
-+
-+                verbose "/dev/md$block_md block device already exists" NOTICE
- 
--	config_get uuid "$cfg" uuid
--	config_get name "$cfg" name
--	config_get device "$cfg" device
-+                # active arrays will promptly respond; first check
-+                mdadm_uuid=$($PROG --detail --test --brief "/dev/md$block_md" 2> /dev/null | sed -nEe '1s#^.*UUID=((.){35})#\1#p')
- 
--	if [ -z "$device" ] || [ -z "$uuid$name" ]; then
--		echo "Skipping array without device, uuid or name" >&2
--		return
--	fi
-+                if [ -z "$mdadm_uuid" ]; then
-+                    # When an array is unplugged and then plugged in again (without rebooting) then it becomes an INACTIVE-ARRAY
-+                    # however the device file persists, e.g. /dev/md0, and should be reused, rather than a new device assigned.
-+                    if $PROG --detail --test --scan "/dev/md$block_md" 2> /dev/null | grep -E "^(INACTIVE-ARRAY(\ |\t)(.*)/dev/md(|/)$block_md(\ |\t)metadata)" > /dev/null 2>&1; then
-+                        verbose "attempting to revive INACTIVE-ARRAY on /dev/md$block_md" NOTICE
-+                        if $PROG --examine --scan 2> /dev/null | grep -qE "^(ARRAY(\ |\t)(.*)/dev/md(|/)$block_md(\ |\t))"; then
-+                            # this is relatively safe with the above regex validation
-+                            mdadm_md="/dev/md$block_md"
-+                        fi
-+                    else
-+                        # This is an unsafe condition to handle with a shell, mdadm sees an inactive device with a different /dev.
-+                        # Err to the side of caution;--assemble --scan shoud know what to do ... it will abandon the block device.
-+                        # If these are happening, suggest stateless & sacrifice some minor functionality, e.g. MAILFROM
-+                        # May be an mdadm or kernel bug with this hardware setup.
-+                        verbose "bug? unsafe to revive INACTIVE-ARRAY on /dev/md$block_md" WARNING
-+                        block_md=$((block_md+1))
-+                        continue
-+                    fi
-+                fi
- 
--	[ -n "$uuid" ] && append array "uuid=$uuid"
--	[ -n "$name" ] && append array "name=$name"
-+                if [ "${block_uuid//-/}" = "${mdadm_uuid//:/}" ]; then
-+                    # block info & mdadm concur all's well; the meta device is active; reuse
-+                    mdadm_md="/dev/md$block_md"
-+                    verbose "auto conf found active RAID member block_uuid=$block_uuid and will reused device '$mdadm_md'" OK
-+                else
-+                    if [ ! -e "/dev/md$block_md" ]; then
-+                        # this block device was never assembled previously; new
-+                        mdadm_md="/dev/md$block_md"
-+                        verbose "auto conf found new RAID member block_uuid=$block_uuid and will assign device '$mdadm_md'" OK
-+                    else
-+                        block_md=$((block_md+1))
-+                        continue
-+                    fi
-+                fi
- 
--	append_option array "$cfg" super_minor
--	append_option array "$cfg" spares
--	append_option array "$cfg" spare_group
--	append_option array "$cfg" bitmap
--	append_option array "$cfg" container
--	append_option array "$cfg" member
--	append_option array "$cfg" devices devices ","
-+            else
-+                if [ ! -e "/dev/md$block_md" ]; then
-+                    # best scenario; no device or file (yet), safest
-+                    mdadm_md="/dev/md$block_md"
-+                    verbose "auto conf found missing RAID member block_uuid=$block_uuid and will assign device '$mdadm_md'" OK
-+                else
-+                    # a file exists, but it's not a block device? It's possible (touch), albeit a corner case; discretely say
-+                    # we know & pass over it.
-+                    verbose "/dev/md$block_md file found, not a block device" WARNING
-+                    block_md=$((block_md+1))
-+                    continue
-+                fi
-+            fi
- 
--	printf "ARRAY %s %s\n" "$device" "$array" >> $CONF
-+            $PROG --detail --test --brief $mdadm_md > /dev/null 2>&1 # rc 1=ok, 1=degrade, 2=dead, 4=missing
-+            mdadm_md_rc=$?
-+
-+            # todo: annouce degraded arrays in the logs? mdadmin monitor will do it but not on demand, only per frequency.
-+            #       nice to have for hot plugs ...
-+
-+            verbose "block_md=$block_md, block_uuid=$block_uuid, mdadm_md=$mdadm_md, mdadm_uuid=$mdadm_uuid, rc=$mdadm_md_rc" INFO
-+
-+            if [ $mdadm_md_rc -lt 4 ]; then
-+                $PROG --detail --test --brief $mdadm_md 2> /dev/null >> $mdadm_conf
-+            else
-+                # there's a device with no header.  maybe it's to replace a failed device ...
-+                echo "ARRAY $mdadm_md uuid=$block_uuid" >> $mdadm_conf
-+            fi
-+
-+        done
-+
-+    done
-+
-+    if [ -n "$mdadm_md" ]; then
-+        return 0
-+    else
-+        return 1
-+    fi
-+}
-+
-+mdadm_conf_uci() {
-+    local cfg="$1"
-+    local mdadm_conf="$2"
-+
-+    if [ -z "$cfg" ]; then
-+        verbose "cfg is empty" WARNING
-+        return 1
-+    fi
-+
-+    local cfg_name
-+    cfg_name=$(uci_get mdadm.$cfg 2> /dev/null)
-+
-+    if [ -z "$cfg_name" ]; then
-+        verbose "($cfg) mdadm config name is empty" NOTICE
-+    fi
-+
-+    if [ -z "$mdadm_conf" ]; then
-+        verbose "($cfg) skipping mdadm.$cfg_name array; config file is empty" WARNING
-+        return 1
-+    fi
-+
-+    if ! touch "$mdadm_conf" 2> /dev/null; then
-+        verbose "($cfg) skipping mdadm.$cfg_name array; can't touch '$mdadm_conf'" ERROR
-+        return 1
-+    fi
-+
-+    local array device devices name uuid
-+
-+    config_get name "$cfg" name
-+    config_get device "$cfg" device
-+    config_get uuid "$cfg" uuid
-+
-+    config_list_foreach "$cfg" devices append_list_item devices " "
-+    [ -n "$devices" ] && printf "DEVICE %s\n" "$devices" >> $mdadm_conf
-+
-+    if [ -z "$device" ] || [ -z "$uuid$name" ]; then
-+        verbose "($cfg) skipping mdadm.$cfg_name array; no device, uuid, or name" WARNING
-+        return 1
-+    fi
-+
-+    [ -n "$uuid" ] && append array "uuid=$uuid"
-+    [ -n "$name" ] && append array "name=$name"
-+
-+    append_option array "$cfg" super_minor
-+    append_option array "$cfg" spares
-+    append_option array "$cfg" spare_group
-+    append_option array "$cfg" bitmap
-+    append_option array "$cfg" container
-+    append_option array "$cfg" member
-+    append_option array "$cfg" devices devices ","
-+
-+    printf "ARRAY %s %s\n" "$device" "$array" >> $mdadm_conf
-+}
-+
-+reload_service() {
-+    while read -r line; do echo $line; done
-+    # running start_service() on reload should be OK in all modes, except manual configs.
-+    # for auto & none, start_service() already rescans for hotplugged devices, add new arrays, etc.
-+    # could check for the configured mode & call appropriately?  doing nothing is safer; todo: test & resolve
-+    verbose "reload_service called, ignoring" NOTICE
-+    return 0
- }
- 
- start_service() {
--	local email
-+    local config config_detail config_file config_level config_mode config_rc config_state config_verbose mdadm_conf
-+
-+    # mdadm.global specific locals
-+    local alert_program email email_from mail_program mdadm_args monitor_frequency
-+
-+    config_verbose=$(uci_get mdadm.global.verbose 2> /dev/null | awk '{print tolower($1)}')
-+    if [ "$config_verbose" = "1" ] || [ "$config_verbose" = "on" ] || [ "$config_verbose" = "true" ]; then
-+        VERBOSE=1 # turn verbose on globally
-+        config_verbose=1
-+        mdadm_args="--verbose"
-+    else
-+        unset -v config_verbose
-+        mdadm_args="--quiet"
-+    fi
-+
-+    verbose "start_service $*" INFO
-+
-+    config_rc=0
-+    config_detail="start"
-+    config_level="INFO"
-+    config_mode="service"
-+
-+    config=$(uci_get mdadm.global.config 2> /dev/null)
-+    if [ -z "$config" ]; then
-+        # per PR1713 discussion; this works very well for the majority of use cases; let mdadm do the heavy lifting.
-+        # none is (Auto Assemble; or no --config); see mdadm(8), default
-+        config='none'
-+        config_detail="mdadm.global.config value is empty"
-+        config_state='stateless'
-+        config_mode="default"
-+        config_level='OK'
-+    else
-+        # experts only
- 
--	mkdir -p "${CONF%/*}"
--	printf "# Autogenerated from /etc/config/mdadm, do not edit!\n" > $CONF
-+        config_mode="manual"
- 
--	config_load mdadm
--	config_foreach mdadm_common mdadm
--	config_foreach mdadm_array array
-+        # check file values first, to preserve case of file name values
-+        if [ "${config:0:1}" = "/" ]; then
-+            config_state='stateful' # all types of file configs are stateful
- 
--	$PROG --assemble --scan --config="$CONF"
-+            if [ -d "$config" ] && [ -r "$config" ]; then
-+                local config_file_count=0
-+                for config_file in ${config}/*.conf; do
-+                    if [ -r "$config_file" ]; then
-+                        config_file_count=$((config_file_count+1))
-+                    fi
-+                done
-+                if [ $config_file_count -eq 0 ]; then
-+                    config_level="WARNING"
-+                else
-+                    config_level="OK"
-+                fi
-+                config_detail="directory found with $config_file_count readable .conf files"
-+            else
-+                if [ -w "$config" ]; then
-+                    if [ -s "$config" ]; then
-+                        # regardless, this will rely on mdadm for final validation; for informational purposes ...
-+                        grep -E '^((DEVICE){1}(\ |\t)(.*)(/dev/|containers|partitions))' "$config" > /dev/null 2>&1 # pattern per mdadm(8)
-+                        if [ $? -eq 0 ]; then
-+                            config_detail="file found, readable with a ^DEVICE"
-+                            config_level="OK"
-+                        else
-+                            config_detail="file found, readable without a ^DEVICE"
-+                            config_level="WARNING"
-+                        fi
-+                    else
-+                        config_detail="file found, writable and empty"
-+                        config_level="OK"
-+                    fi
-+                else
-+                    config_detail="file not found, unwritable"
-+                    config_level="FATAL"
-+                    config_rc=1
-+                fi
-+            fi
-+        else
-+            config_mode="dynamic"
- 
--	procd_open_instance
--	procd_set_param command "$PROG" --monitor --syslog --scan --config="$CONF"
--	procd_close_instance
-+            # allow static values in mixed case; convert to lower
-+            config="$(awk -v config="$config" 'BEGIN{print tolower(config)}')"
-+            if [ "$config" = "containers" ] || [ "$config" = "none" ] || [ "$config" = "partition" ]; then
-+                # pass through to mdadm --config=
-+                config_detail="dynamic; uci static key value"
-+                config_level="OK"
-+                config_state='stateless'
-+            else
-+                if [ "$config" = "auto" ] || [ "$config" = "uci" ]; then
-+                    config_detail="dynamic; $config config"
-+                    config_level="OK"
-+                    config_state='stateful'
-+                    mdadm_conf="$TMP_FILE"
-+                else
-+                    config_detail="invalid; unsupported uci config key value"
-+                    config_level="FATAL"
-+                    config_state='stateful'
-+                    config_rc=1
-+                fi
-+            fi
-+        fi
-+    fi
-+
-+    # final safety & functional checks
-+
-+    # check for fatality
-+    if [ -z "$config" ]; then
-+        config="${config}?"
-+        config_detail="$config_detail (sorry, something went wrong; check the config settings)"
-+        config_level="FATAL"
-+        config_mode="${config_mode}?"
-+        config_state="${config_state}?"
-+        config_rc=1
-+    fi
-+
-+    # Prefer mdadm.global.email; only one is allowed and can be an --email argument per mdadm.conf(5)
-+    email=$(uci_get mdadm.global.email 2> /dev/null)
-+
-+    # mdadm (or postfix?) bug; workaround.  mdadm 4.0 for 18.06.1 has a compiled in default of '/usr/lib/sendmail -t'.
-+    # There's no configurable way to change it and mdadm must be recompiled differently for Openwrt, or posfix should
-+    # add the link. In 18.06.1, postfix 3.3.0-1 installs sendmail in /usr/sbin; mdadm complains & no mail is delivered.
-+    # Other distro's postfix pkg typically installs this link ... or one in /etc/alternatives.
-+    # Since mdadm needs it, I'm adding it here to be sure mdadm can send email if there's a /usr/sbin/sendmail.
-+
-+    # There's really no point in making mdadm's compiled in sendmail configurable via uci.
-+    mail_program="/usr/lib/sendmail"
-+    if [ -x /usr/sbin/sendmail ] && [ ! -e "$mail_program" ]; then
-+        # a sym link will suffice
-+        if ! ln -s /usr/sbin/sendmail "$mail_program"; then
-+            verbose "ln -s /usr/bin/sendmail /usr/lib/sendmail failed" WARNING
-+        fi
-+    fi
-+
-+    if [ ! -x "$mail_program" ]; then
-+        verbose "disabling email; mail program '/usr/lib/sendmail' not found executable (install postfix)" WARNING
-+        email=""
-+    fi
-+
-+    if [ "$config_state" = "stateful" ] && [ -n "$mdadm_conf" ]; then
-+        if mkdir -p "${mdadm_conf%/*}" > /dev/null 2>&1; then
-+            printf "# Autogenerated from /etc/init.d/mdadm, do not edit!\n" > $mdadm_conf
-+
-+            # Use mdadm.global.email_from only if there's a valid mta; only one is allowed per mdadm.conf(5)
-+            # todo: see what other mtas Openwrt has in their opkg repos & maybe support others
-+            if [ -x "$mail_program" ]; then
-+                email_from=$(uci_get mdadm.global.email_from 2> /dev/null)
-+            fi
-+
-+            if [ "$config" = "auto" ]; then
-+                # stateful mdadm.conf auto configuration
-+                if ! mdadm_conf_auto "$mdadm_conf"; then
-+                    #there's quite a bit of logic & error handling in mdadm_conf_auto; if it doesn't return 0 then it's a fatality
-+                    config_detail="$config_detail (couldn't find any meta devices; check connections, or try stateless autoconfig)"
-+                    config_level="FATAL"
-+                    config_rc=1
-+                fi
-+            else
-+                # stateful mdadm.conf uci configuration
-+
-+                # load uci config from /etc/config/mdadm
-+                config_load mdadm
-+
-+                # This is how mdadm uci mdadm config sections should be named, like fstab does with 'mount'.
-+                # The included uci /etc/config/mdadm provides more documentation & direction.
-+                config_foreach mdadm_conf_uci array "$mdadm_conf"
-+
-+                # The unlabled mdadm.@mdadm[0] section should be (is now) deprecated.
-+                # It's more difficult to document how to use, redundant, and over complicated this init configuration.
-+
-+                # Confused; originally config_foreach?
-+                # It's possible to specify multiple mdadm sections with array options in all sections.
-+                # Thus multiple option emails which could result in multiple MAILADDR being appended to mdadm.conf.
-+                # That confuses mdadm.
-+
-+                # The following code is here to prevent regressions.
-+
-+                config_foreach mdadm_conf_uci mdadm "$mdadm_conf"
-+
-+                # For backward compatibility; this will allow an mdadm.@mdadm[0] section's option email.
-+                # (only if mdadm.global.email is not set; again, prefer mdadm.global.email)
-+                #
-+                # bug fixed. The first legacy mdadm section option email will be used.
-+                # a better fix would be to *only* support array sections.
-+                #
-+                [ -z "$email" ] && [ -x "$mail_program" ] && email=$(uci_get mdadm.@mdadm[0].email 2> /dev/null)
-+                # email_from is a new feature; was not previously handled; no need to and please don't backport
-+
-+            fi
-+
-+            # This is nice feature to have to get mdadm mails through spam filters, etc.
-+            # Too bad mdadm (4.0) doesn't have an argument for it.
-+            # Maybe mdadm 4.1 will ... todo: revisit when making mdadm 4.1 & it's in Openwrt mainline.
-+            # This tests successfully with the postfix workaround above & mdadm 4.0.
-+            if [ -x "$mail_program" ]; then
-+                printf "MAILFROM %s\n" "$email_from" >> $mdadm_conf # only supported via stateful configs; see mdadm.conf(5)
-+            fi
-+
-+            if [ -n "$config_verbose" ] && [ -r "$mdadm_conf" ]; then
-+                verbose "mdadm_conf = $mdadm_conf (config_verbose=$config_verbose)" INFO
-+                verbose "---cut $mdadm_conf cut---" INFO
-+                while read -r line; do
-+                    verbose "$line" INFO
-+                done < "$mdadm_conf"
-+                unset -v line
-+                verbose "---cut $mdadm_conf cut---" INFO
-+            fi
-+
-+        else
-+            config_detail="$config_detail (mkdir failed; check permissions)"
-+            config_level="FATAL"
-+            config_rc=1
-+        fi
-+    fi
-+
-+    if [ $config_rc -ne 0 ]; then
-+        # FATAL
-+        verbose "$config_state,$config_mode config='$config', $config_detail" "$config_level" INFO
-+        [ -n "$mdadm_conf" ] && [ -w "$mdadm_conf" ] && rm -f "$mdadm_conf"
-+        exit $config_rc
-+    fi
-+
-+    # Good to go, no more fatal exits, finish getting global & setting local values ... they're all optional.
-+
-+    mdadm_args="$mdadm_args --scan"
-+
-+    if [ -n "$mdadm_conf" ]; then
-+        # mdadm.global.config </file>
-+        mdadm_args="$mdadm_args --config=$mdadm_conf"
-+    else
-+        # mdadm.global.config all (containers, partitions, etc), except none
-+        [ -n "$config" ] && [ "$config" != 'none' ] && mdadm_args="$mdadm_args --config=$config"
-+    fi
-+
-+    local assemble_count assemble_rc
-+
-+    assemble_count=$($PROG --detail --brief --scan 2> /dev/null | wc -l)
-+    verbose "$assemble_count arrays are currently assembled" INFO
-+
-+    # setup assembly mode
-+
-+    verbose "(assemble) '$PROG --assemble $mdadm_args'" INFO
-+    $PROG --assemble $mdadm_args > /dev/null 2>&1
-+    assemble_rc=$?
-+
-+    if [ $assemble_rc -eq 0 ]; then
-+        verbose "all arrays assembled successfully" OK
-+        if [ -n "$config_verbose" ]; then
-+            true > /var/log/mdadm.detail
-+            local assemble_dev assemble_devs
-+            assemble_devs=$($PROG --detail --brief --scan | awk '{print $2}')
-+            for assemble_dev in $assemble_devs; do
-+             {
-+                printf "\n"
-+                $PROG --verbose --detail $assemble_dev
-+                printf "\n"
-+             } >> /var/log/mdadm.detail
-+            done
-+            unset -v assemble_dev
-+            while read -r line; do
-+                verbose "$line" INFO
-+            done < "/var/log/mdadm.detail"
-+            unset -v line
-+        fi
-+    else
-+        if [ $assemble_count -eq 0 ]; then
-+            verbose "no arrays assembled successfully" ERROR
-+        else
-+            verbose "no new arrays need assembly" NOTICE
-+        fi
-+    fi
-+
-+    # setup monitor mode
-+
-+    alert_program=$(uci_get mdadm.global.alert_program 2> /dev/null)
-+    if [ -n "$alert_program" ]; then
-+        if [ -x "$alert_program" ]; then
-+            mdadm_args="$mdadm_args --alert=$alert_program"
-+        else
-+            verbose "disabling alerts; alert_progam '$alert_program' not found executable" WARNING
-+        fi
-+    fi
-+
-+    [ -n "$email" ] && mdadm_args="$mdadm_args --mail=$email"
-+
-+    monitor_frequency=$(uci_get mdadm.global.monitor_frequency 2> /dev/null | sed -e 's/[^0-9]*//g')
-+    if [ -n "$monitor_frequency" ]; then
-+        mdadm_args="$mdadm_args --delay=$monitor_frequency"
-+        verbose "setting monitor frequency to '$monitor_frequency' seconds"
-+    fi
-+
-+    verbose "(monitor) '$PROG --monitor --syslog $mdadm_args'" INFO
-+
-+    # /etc/rc.common doesn't like valid sh constructs like while read line; do echo $line; done <<< "$(echo hello; echo world)" # 8|
-+    # Taking the time machine back to sh is rough enough as it is ... I need to better understand its purpose. I spent too much time
-+    # in /lib/functions.  It's all circa 2006-2013.  Yikes.  Where's the man pages?  Or even code comments?  It would've been way
-+    # easier just to do *everything* the good ol' sysvinit fashioned way, or use systemd.  Just a gripe, I really do like OpenWrt.
-+    procd_open_instance
-+    procd_set_param command "$PROG" --monitor --syslog $mdadm_args
-+    procd_close_instance
-+
-+    verbose "$config_state,$config_mode config=$config, $config_detail complete" "$config_level"
- }
- 
- stop_service() {
--	$PROG --stop --scan
-+    $PROG --stop --scan
-+    if echo "here VERBOSE=$VERBOSE"; then
-+        verbose "'$PROG --stop --scan' stop_service succeeded" OK
-+    else
-+        verbose "'$PROG --stop --scan' stop_service failed" ERROR
-+    fi
- }
--
--- 
-2.17.1
+iQIzBAEBCAAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl1X12QACgkQQuLLvzou
+ZtM3tRAAkVDfBgr8YXdOxDmJGXpHcTcU/lWXQ7iPW1rCIopZdFssQGwF3F7QH3g6
+6xOckwbsUv0LNmX7QZCzX6UzEweuEjxjl0xVSHVJefXIW1pz8gAFvSnbuopu0LDm
+yeejbNJHy/2mk52x3e3zyhUFtj8LS5KWeH4vdnirFo32hJiv1EwTjGTdAYRwNJZF
+MPGifKRTrebMu4xGdzyS/sCO3IlLnlVGTrsJ7i8EB8nP21pnCUj3+f4qFxyfIU2x
+FPfXzLjVYQqi+32tiADtKSxykBFNJNHcq18osSh8D0mxjLnN0mLY05QQGNEMvJnA
+CrV/ArCFwqwa1uC/gFKkLJ3I430wb8ncLgujaog/sN5aWaaGR42avZ8AE7AksdjE
+rFk5GuKW9giO+XEvOLI2y0rM+8wnArBgv/1hqln/BXBPy3DDKielsuC+ZblSuwxj
+D4FUdkTL3b8V3FBn1DF3CWZ209GJQMNX6fMzd5GpzNt69hUMZDXDx0wBYUqdihUD
+FUhzZ3ZjEb5PfLg/qCtv1s9UylOwNurxWdWbEOfVz0pH+yHuAQuCe+AM2PONZ7F9
++xWT8f6FsKNfM+7PW1TOAjj+j2UegD+eCM4fbYh3W8qS3fbkqSLkuKG8BHgsZBEt
+L5stvSLF7zK2aZ3uQre2oxBa3lKloEhvONBx/hRLcydgG44npQQ=
+=eb34
+-----END PGP SIGNATURE-----
 
+--ZG2Fg0bAGtBylvwWXEyQwMb1vQHv3H1ID--
+
+
+--===============1867378679756588156==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1867378679756588156==--
+

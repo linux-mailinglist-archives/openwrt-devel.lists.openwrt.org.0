@@ -2,90 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 689A49176D
-	for <lists+openwrt-devel@lfdr.de>; Sun, 18 Aug 2019 17:01:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EA2091781
+	for <lists+openwrt-devel@lfdr.de>; Sun, 18 Aug 2019 17:39:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/1Xp5tqMKbjDalTUpLKtk5Qu5CuiHhNmiD3mCt5ung4=; b=FMcJ1zXtC/OQNA
-	Mi6SVESkABZAr19t1G1+3MDu2h8PRU3/7lR8V7o2SX0+jRr5VTgFlT7sdz9BoWlmbzZFzdRfnUCCP
-	QVwGKmyH9CqYCaZUtWWgd7IntJfuCce/e+RcpQWJHWQIP1BYMnK3Sf8HN4U1k8Xry9SPfVZx1z9qc
-	DIIJ6eX/Yd+nSVhb9TeITpd/zMUT8UmhbRBmi490C/0F4bOLVA0fOlpxU0SOsLs3ZcS6z1jEvtf9p
-	1Cs2xnFFkxtafSQqLT1J3eA9Mgyxr3Bc5dKYXhaIa+WWElOJiFSz1Vi+sY8hhlfShVXCTthJ9L7n8
-	ueZqnaz14NJnNeMBiMww==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rIZQGVqjv6DzFls5wf2L/kYwohCAdBxwYv795PoDffM=; b=bPZZhuOY3BZ6hJ
+	DPFdEjAEQNYIoB3MLc4hdXUj5nh34D7EsbqZ4TX3e/XKhvYBRUp3CNT4CviA+cccKaxX5w8yYx8Ag
+	gzqFowWaEUqABAfTGnJxlllBWG8Q+cEpfnAyBtAT1aMY4qXOM4S5YrYRFBa4oFNGHKgVCQ7OSjaYh
+	wz5L1DNhBz3JwM7NhrLdBaNjCM/X6h3rQHLPx0+4UH3uj5ctXGjhA8OsLdRlz3O0t4sDwA3R4Quur
+	3/Dxoh0Mm+Q2jHGP2bMf+HTb6QKz4pged8iEMSjinexr10JtGNLdS8zj/92Ufl9nsgJCAjsTq8ayf
+	f+Bt5oHF9NoDjBe0rTMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzMga-00042O-4A; Sun, 18 Aug 2019 15:01:36 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1hzNHH-0005jB-FZ; Sun, 18 Aug 2019 15:39:31 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzMfT-00040V-Pr
- for openwrt-devel@lists.openwrt.org; Sun, 18 Aug 2019 15:00:29 +0000
-Received: by mail-qt1-x842.google.com with SMTP id 44so11383144qtg.11
- for <openwrt-devel@lists.openwrt.org>; Sun, 18 Aug 2019 08:00:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5eTVtFT1JF/tBiYTutbdicFw3+PSmWbvAJW9pH+ons8=;
- b=FaG4vx2whRjlvsJwYJpgZyPx3VT36H3zJYfR515b1ocstpMw7fGgEfJ90wSgQLQBR2
- psQ8Pa3+dZm9BvXlOxOv54gsgALRDNDuXUg2pezJeovAnL0CdsGbu05C1b/Tyv4gORgs
- /fG21hFc1/kXFXA5daM+bP5C3ncMNUDztIhWLpCDOhrJlQD+7s132E/IGokACt7+QOW9
- E/+r2YjYHr0vxCPw9P1Ogc7Pj0zJZCQqj9TOJPS6cI4zFMklTuyHubEEefDb8liawbba
- XpunLvaC4G8bPw14dihHBDICih5887U3GihHA/fGpsix24nJwu4bV7nlgcOqld48Uc5S
- NRRg==
+ id 1hzNH8-0005iq-Ng
+ for openwrt-devel@lists.openwrt.org; Sun, 18 Aug 2019 15:39:24 +0000
+Received: from mail-io1-f70.google.com (mail-io1-f70.google.com
+ [209.85.166.70])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 50F723D96B
+ for <openwrt-devel@lists.openwrt.org>; Sun, 18 Aug 2019 15:39:21 +0000 (UTC)
+Received: by mail-io1-f70.google.com with SMTP id a13so1292634ioh.18
+ for <openwrt-devel@lists.openwrt.org>; Sun, 18 Aug 2019 08:39:21 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5eTVtFT1JF/tBiYTutbdicFw3+PSmWbvAJW9pH+ons8=;
- b=unt3GSOYPvz6faUiivBgIDuTU7KS3vdbGaA0oBDwG2JcSRQHddQmOPpu5t4Yji5wTF
- 1xHqu0n5K9/2S7Im2yHH/MxxwM5w8rYUC6705N9YQt3Hz71xRNBJGyMlx+CRkZLt1UtM
- bk+FivDLM4/hgeH/l7doJAg3ptBn/htIHs/g/NHod3ZiKLpsaQ+eEG35q0kWBrhCKzrU
- r8YtywYIFtPRzFdGkjakFHE+3IeVs9B+tS9hkDebOxM3XK8wl9FQfcQIHQ5SBVtKgQaO
- CjnLvfjMKRb67/7U5FcAJPtvYSaeJH1oBX5IwXxTeyDkI1qVYHeyLm+H057+xi2QTW1H
- Nzuw==
-X-Gm-Message-State: APjAAAXH6V/l17Q9fQ5oRbUXQ9sqngQzwplcMXtjcaioK5yRU43jluCU
- C6Yvqrj43FX1FEmcWUeIvwObWTrY
-X-Google-Smtp-Source: APXvYqywc6AYopjzBq3Exb7Cw6GAYOlOpgrCA+4ZaFgajQ1uNkeEeETQ87PrDPKAaCBXWZ+WTdUzbg==
-X-Received: by 2002:ac8:549:: with SMTP id c9mr17249173qth.223.1566140426007; 
- Sun, 18 Aug 2019 08:00:26 -0700 (PDT)
-Received: from asus-S451LA.lan ([190.22.43.184])
- by smtp.gmail.com with ESMTPSA id g24sm7187319qtc.38.2019.08.18.08.00.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 18 Aug 2019 08:00:25 -0700 (PDT)
-From: Luis Araneda <luaraneda@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 18 Aug 2019 10:59:11 -0400
-Message-Id: <20190818145911.28891-1-luaraneda@gmail.com>
-X-Mailer: git-send-email 2.22.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=GmW9qv78eBRSmC4QJOdC0Qk8zCoQN0rDUFLe8fr8Z74=;
+ b=Jtc1UXn299JJ7JL4nDl/FNRxSPIFEbmc/Cbm1s00y14rIybyZyKRe/k9qtHxdMbGxB
+ Hha186GI9Bq/gv15ptnsCcuzu+wlyV0LJMeenLQxpGvgOd6QFMG1f2p6Y3I0zkFQGJbu
+ ELekB+uTNHUvrfygP1WGCaiSNMDMXmOZ2m/LPFJojwW0kL89Bf0QtUqy5qTGtgvogtrM
+ 2YtYEW1NUnmCEKf+hmQqsALNMObzLHvZaPu+gsXSjqPhHOB9u1bK9xF0o031Ujwgiigc
+ 349H2Ww/H2ktvCE/q5PNdhZ6n49ZmmgjOFUg3c4i9jFaczwyt/NCQk6Q4cpyBjj3RENA
+ tmJw==
+X-Gm-Message-State: APjAAAXmoBe1NZWIIw3/hlO2crpyv4UsLjemTfW0lXG/yySDCVc+ryJQ
+ ce8UoOzvRgaBeZMpnx/qyOvPwKL9rcrhOQChEBUrw+ljQLQJcD8JNUxtOG5psqOwSp4JQQWrJTY
+ ImFxA/8ReEBTG8I08CK8aIescmq1OA15NYy9VjE61aIe7
+X-Received: by 2002:a02:2243:: with SMTP id o64mr20122631jao.100.1566142760708; 
+ Sun, 18 Aug 2019 08:39:20 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyxMj724/bUlwjPV9Z4CXSfuJu12nHUtBPCexHnjVnoZinewHnaZkE67eO8FL2Zv7riN47Rl5yr1FUSpwghKAE=
+X-Received: by 2002:a02:2243:: with SMTP id o64mr20122600jao.100.1566142760324; 
+ Sun, 18 Aug 2019 08:39:20 -0700 (PDT)
 MIME-Version: 1.0
+References: <CAJ0CqmXJj9tnN65b9MjeEtTBcYkPnQFcWXSHaPPLOP4dE=FsQg@mail.gmail.com>
+ <CAALvt2Pb+is9LZzSqv5BmbH6G6A+_LxvpP16==2OsNwk5LT50w@mail.gmail.com>
+ <CAJ0CqmXvn23AZy+ONQsvV-bDuLE1pr_=jcOsgcOc++hZ8jMuuw@mail.gmail.com>
+ <CAALvt2MVpMh_899tPSTw96=MaZtaehXd3Of3HOEfSWuoQgDkAA@mail.gmail.com>
+ <CAJ0CqmWwu-W=AaSrjhe+MNsMBpPj-pWxy0ua-jm=m85XtiEn9g@mail.gmail.com>
+ <CAALvt2Pje6Vk3zPRi-o0JCHXf51Eo2YBPmjhMo7HdwQhDgeFUQ@mail.gmail.com>
+ <CAJ0CqmUaeWXbFz0_0Jg0m+NGOPGm66WEGA_mHsSRb1dV3+PL_A@mail.gmail.com>
+ <CAALvt2MHTuEt8Y_Uwxh6TS1M0y4AD2-iSSccNS1WTfdr1zjQ0g@mail.gmail.com>
+ <20190404072034.GA4265@localhost.localdomain>
+ <CAALvt2PtubH=5i_Q3afHaATm7HNK16=jH06yivf3tDdmftQ=YQ@mail.gmail.com>
+ <20190604101827.GA6510@localhost.localdomain>
+ <CAALvt2O8GYDkx9bTEq6D705B6gSD9Q2hC6BoS7BPqF10WacRPw@mail.gmail.com>
+ <574d666f-5bb0-1205-caf0-97f37c3e9a9f@ncentric.com>
+In-Reply-To: <574d666f-5bb0-1205-caf0-97f37c3e9a9f@ncentric.com>
+From: Lorenzo Bianconi <lorenzo.bianconi@redhat.com>
+Date: Sun, 18 Aug 2019 17:39:08 +0200
+Message-ID: <CAJ0CqmXq60aq0_q6OWUnrBaTpwrxiQrzJP8XGZtZg7nWdYZvfA@mail.gmail.com>
+To: Koen Vandeputte <koen.vandeputte@ncentric.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190818_080027_864126_438C9210 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190818_083922_818794_65E6EF27 
+X-CRM114-Status: GOOD (  24.31  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (luaraneda[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] u-boot.mk: use openwrt url instead of lede
- project
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] ath9k: fix dynack in IBSS mode
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,38 +93,101 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Luis Araneda <luaraneda@gmail.com>
+Cc: Joe Ayers <joe@ayerscasa.com>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The LEDE URL is automatically redirected to the OpenWRT one,
-returning an HTTP 301 code (Moved Permanently).
+>
+>
+> >> Hi Joe,
+> >>
+> >>> Lorenzo,  I deployed an ath9k auto distance solution in April that is
+> >>> working for the AREDN community http://www.arednmesh.org .
+> >>>
+> >>> https://github.com/aredn/aredn_ar71xx/blob/develop/patches/712-auto-distance-settings.patch
+> >>>
+> >>> Summary of solution:
+> >>>
+> >>> * no dependency on wpa_supplicant
+> >>> * initial ack_to is set to max,  to not enter late ack conditions
+> >>> * User level trigger to flip distance setting to static and back to
+> >>> auto when new 802.11 adhoc neighbor joins. (we archive and chart SNR
+> >>> values for neighbors and natural to hook in this trigger).
+> >> Have you initialized the ackto to the max value to remove wpa_supplicant
+> >> dependency or because the system is not able to trigger the 'late ack'?
+> >> I did not get why you need to flip the algo off/on when new 802.11 adhoc
+> >> neighbor joins
+> >>
+> >> Regards,
+> >> Lorenzo
+> >>
+> > initialized the ackto to max:
+> >
+> > A) avoidance of late-ack state
+> > B) not require wpa_supplicant  -- not in use by our community today
+> > C) Suspect some conditions, e.g. low SNR Neighbors, do not trigger
+> > "late ack" (consistent, with observation of low SNR Neighbors sticking
+> > at max ack_to with my changes )
+> >
+> > flip the algo off/on when new neighbor joins:
+> >
+> > Intended technique to reset ack_to to max.  If ack_to is set to 20km
+> > and then a new adhoc neighbor joins at 30km, this would be a late ack
+> > state, and unable to detect.    My early testing results showed the
+> > algo off/on would restart the ack_to to max and start the process over
+> > with the new neighbor.   I trust I got it right?
+> >
+> > There are 10s to 100s of users testing this bleeding edge change from
+> > nightly builds, and so far, I've not found a failure case.
+> > Although, the findings are showing the cases where static setting has
+> > better throughput.
+> >
+> > Joe AE6XE
+> >
+> >>>
+>
+> <snip>
+>
+> Lorenzo,
+>
 
-Also, use https, as indicated by the redirect.
+Hi Koen,
 
-Signed-off-by: Luis Araneda <luaraneda@gmail.com>
----
- include/u-boot.mk | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> It's been a while regarding the above.
+>
+> I can confirm the issue that if the algorithm misses the late ack's due
+> to low initial snr, the initial ack_to is too low to recover afterwards.
+>
 
-diff --git a/include/u-boot.mk b/include/u-boot.mk
-index 26e1685b8e..02e37d0f4c 100644
---- a/include/u-boot.mk
-+++ b/include/u-boot.mk
-@@ -3,7 +3,7 @@ PKG_NAME ?= u-boot
- ifndef PKG_SOURCE_PROTO
- PKG_SOURCE = $(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL = \
--	http://sources.lede-project.org \
-+	https://sources.openwrt.org \
- 	ftp://ftp.denx.de/pub/u-boot
- endif
- 
--- 
-2.22.0
+are you referring to tx side or rx side? are you able to reproduce the
+issue with debug enable?
+I guess the system will resend the assoc request/response packets so
+eventually we should be able tack the 'late ack'
 
+> Do you think it would be useful to start at high ack_to and let it
+> estimate/drop afterwards?
+>
+
+I think we can add more logic to take care of this issue but first I
+would have a clearer idea of the problem
+
+> Ps.
+>
+> I've got my 24km link back if required to do some additional testing.
+>
+
+cool :)
+
+Regards,
+Lorenzo
+
+>
+> Thanks,
+>
+> Koen
+>
 
 _______________________________________________
 openwrt-devel mailing list

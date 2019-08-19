@@ -2,82 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A789791F3D
-	for <lists+openwrt-devel@lfdr.de>; Mon, 19 Aug 2019 10:44:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50F0E923BE
+	for <lists+openwrt-devel@lfdr.de>; Mon, 19 Aug 2019 14:46:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HDyMGYP+zyir94fIrdxYBuzyw+3Zp/npe77NZIN1tow=; b=dBT3IazhBa6pTj
-	TSHMDgDUof0ONvKCcgdZFkN8w7sniAV9fKIE+1KJfeSzjfraBNkU18EtboUsySlE8NANMkxvBbTRo
-	1mgQUiuPelX1xIG1coadA3IsKrGhmdJkjDliEC1StTz0RNrj1WUeTC0Jn5zcUOkyzvKqVaHaOShTX
-	+XlERHdJJmdzu8PwU5EUFK7mVgf4vqWfQ+KZo/p/FGuLWpiyo5cu4CkJjLsIfCq+oLqbR+LVTe0HZ
-	McMuRovdWzYK0k2eAJniH/nI/GDSIpnEGaTGrMyEWdDBjGXMeKBwz0X+A4Z+uYw6nweCxmt2ROOKJ
-	umO+lyVdWjFQB16Il+Lg==;
+	List-Owner; bh=34PTcnUKRQ+KMWWbbLxOBkZOnqYLFiZqrMetdzzHnmc=; b=jjya+gy91zleDF
+	714rdsr0Dvj0cZcQgQtUarGEe+hezfOelBbaO3lEJYbyp8hXV8B+hi1iPYRAJhDNiUZm2IG/OEz7W
+	qGqbIuYDvIeMIdntTuFuIYlNeDA6nA+0NKgrAeBIq/1pbdFwhPXRV+qZjwuI3ILQfKCTqvqvsbhxJ
+	9XSQtppqq6rqX97DdKB2GofsaaTT9pVlhu/ed1ADqKZnRnH+w+Pnt464Nlk1VfERKu+EKxKQitRUk
+	+yfzYSd4V+FIDj3dRm8ZHhcYCEQYJgbg93T5GM1S457pihMxjYEvENaGA1yt2WiuTuehlFuce5xHH
+	fsouNUOayPGOfeqvXIGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzdGn-0004qT-BL; Mon, 19 Aug 2019 08:44:05 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1hzh3A-000221-CE; Mon, 19 Aug 2019 12:46:16 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hzdFo-0004El-Ll
- for openwrt-devel@lists.openwrt.org; Mon, 19 Aug 2019 08:43:06 +0000
-Received: by mail-lj1-x243.google.com with SMTP id x18so969818ljh.1
- for <openwrt-devel@lists.openwrt.org>; Mon, 19 Aug 2019 01:43:03 -0700 (PDT)
+ id 1hzh33-00021L-6o
+ for openwrt-devel@lists.openwrt.org; Mon, 19 Aug 2019 12:46:10 +0000
+Received: by mail-lf1-x144.google.com with SMTP id x3so1297101lfn.6
+ for <openwrt-devel@lists.openwrt.org>; Mon, 19 Aug 2019 05:46:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=xXoVWCL3ZqaQ4FlfmIB9ZW+JRkt1a3+Y/F/qFyvFB3o=;
- b=S9x/f88o3GYZTvQa4u7aSfej1k/VGIieIHh/wynCINntMUg91PbVaD0vZG03VvXeiR
- SpZ4Mhu5jwShqgABdk0oV2Z95zDHvkb5jRkTxd53Qj6qyvlMRr4ZehLu66YLafeqS5XY
- jYs0hRNYAoq24fjzBS9qD9u/mil5SrAhr8K0PiQsbXwFa4g5aOgsHHQFUqO4zawigb7Y
- GGmP/o5EgcyTbOIdsLeLGDQu39r+uj44dzxjcB2PMfWscIvUEWP4165tVi/+LqL+y8aR
- 9ZROGTsxEIvNKFFXZ+iSf1BgAT5VoA9NLRhNSOycf8n0P+Ot6PFpeQItcJ0scamxP7qr
- +9fQ==
+ bh=8pyQCJ8onnOlrpogJZA0EO1ndnCs0VEln95UiTOKhmo=;
+ b=eKz4Wf+8e04LRUOcUA6EJ5mgNi2P9g3ENMwavJzgQOIo8tVDPM4Cqsq+djMWbI0EWF
+ 0qutIiVjX1Gr9xtH1FEQpf+EdXI0LJeFxjXeSqT3wC4vlQlXWSNK+DZ6ytqgWuVLHgpA
+ ZO39LPCydrNgSeK/LDxlAVV1KY6G85uIVYC6pE0ICYDBSAWiT2lCPcntFWJmpy04P1hc
+ 5fxXUZqkdoYNw5AXVaRL04hoBr78GRHDmdYdGadZit99xg7YdFH15LOJP7Ir9baYMb1P
+ 75yrII2sAnIsB5AECt3xemEkTyjOQeFCdXs6br5uUKVvtnUN4Fcy76WQXfzoBaxCFq9B
+ rIsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=xXoVWCL3ZqaQ4FlfmIB9ZW+JRkt1a3+Y/F/qFyvFB3o=;
- b=bauIOAMivsG6p8Bq+bQO8M5NktpDzLYoeoeOXitJNqf1vL1etnKlBUIjSHyWATr+0t
- 89sVyDdh1CzpGrWjAqCEW9+uSjGCazL+ANKuq4Az9V+xNDp8ukb/dc7+BLLnMI9H/P5Y
- Xr57laBdsXWi6zk7ltyC83dFlHzJ4U0RpYpr9xr3FBnVCQcDvERnT94nWoCQyDM/NABi
- nSwOhwU7KLr68sa//3tkwvgwJLFVY7+RO2QQQu/hCDvxmXAEKHfq6MEn2KQWWO5P2nwZ
- qLSnI2CVLbnV3ShvFbnOjeLq+NLNNU6EXPIpeLnfchx6tYHZ+joLvrX27qSugqV0M//j
- 5qfg==
-X-Gm-Message-State: APjAAAU1MTkepCK4/XCrHULI735TTXotJQxS7swlsGri4Q0MCp41Kb2n
- zjjmXDgw0w0kGe/U3k8ahRFradER
-X-Google-Smtp-Source: APXvYqzbiAH5b+oRTNOz5x8b17Jc4UgLdpcv64hnOIko1sXDpz2Cq5rIkv4pTcOaLkRYSELtYcj6dw==
-X-Received: by 2002:a2e:969a:: with SMTP id q26mr10282274lji.227.1566204181241; 
- Mon, 19 Aug 2019 01:43:01 -0700 (PDT)
-Received: from localhost.localdomain
- (ip-194-187-74-233.konfederacka.maverick.com.pl. [194.187.74.233])
- by smtp.gmail.com with ESMTPSA id n24sm2110060ljj.87.2019.08.19.01.43.00
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 19 Aug 2019 01:43:00 -0700 (PDT)
-From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 19 Aug 2019 10:40:40 +0200
-Message-Id: <20190819084040.9377-1-zajec5@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ bh=8pyQCJ8onnOlrpogJZA0EO1ndnCs0VEln95UiTOKhmo=;
+ b=WLyfq2t22yyfjCSSt5wyqLc64kVanBCc6fRwsSu2T72S4W0Ukhw1/D8K3ADd8uU3fE
+ V4XY8ygBXe/MYwbnWegbz5cA+mZ9pCD55WkYnwVvHBc6ajsp/yDiQNAQPaihFZWq584z
+ bqS8aEZbx4E4pAl0sGAHDs+dI54eVGcKbq++2tFC1Mt8tvfeEvvk/P3/R54PH9+ILO82
+ dYGhNObYT6G3gpzeZcf7CoB+DpFR0U2P5IcdrwwMPFTOrpduS3eX7MuS8b7wyk8T8S1k
+ UgF4an78j+8LUrgGBreO/Fn+pHP6GJwEHbcv3x/z+YDZHccrgRlmMXrGB2nWxlkrKXUf
+ CrYw==
+X-Gm-Message-State: APjAAAU4CQlgHBOeP93Hb2TFH9lfQrZhDTkOw+ObgxWyfXCzukeziYrl
+ pDeimFI4IrjSDvOw/a/BbGsmKWIFQQU=
+X-Google-Smtp-Source: APXvYqz+Rp6u0C8FekYDW/28j3y1Q5EA0E7pdY7F8AP5f4AtsfhThXDF7kjz9N9GiYKh7eckg/W+eQ==
+X-Received: by 2002:ac2:55a9:: with SMTP id y9mr12654277lfg.28.1566218766451; 
+ Mon, 19 Aug 2019 05:46:06 -0700 (PDT)
+Received: from kristrev-XPS-15-9570.home (178-37-95-46.adsl.inetia.pl.
+ [178.37.95.46])
+ by smtp.gmail.com with ESMTPSA id e23sm2303428lfn.43.2019.08.19.05.46.03
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 19 Aug 2019 05:46:05 -0700 (PDT)
+From: Kristian Evensen <kristian.evensen@gmail.com>
+To: openwrt-devel@lists.openwrt.org,
+	ldir@darbyshire-bryant.me.uk
+Date: Mon, 19 Aug 2019 14:45:57 +0200
+Message-Id: <20190819124557.17329-1-kristian.evensen@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_014304_758949_5850B372 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190819_054609_278219_9835D38A 
+X-CRM114-Status: GOOD (  17.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (zajec5[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (zajec5[at]gmail.com)
+ provider (kristian.evensen[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH RFC] base-files: add /sbin/check_image
+Subject: [OpenWrt-Devel] [PATCH] firewall3: ipset: Handle reload_set properly
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,84 +97,170 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
- Jo-Philipp Wich <jo@mein.io>, John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Kristian Evensen <kristian.evensen@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKVGhpcyBuZXcgZXhlY3V0
-YWJsZSBhbGxvd3MgdmFsaWRhdGluZyBmaXJtd2FyZSBmaWxlLiBJdHMgbWFpbiBhZHZhbnRhZ2UK
-aXMgSlNPTiBvdXRwdXQgd2hpY2ggc2hvdWxkIGFsbG93IGFsbCBraW5kIG9mIFVJcyB0byBwcm92
-aWRlIGEKbWVhbmluZ2Z1bCBmZWVkYmFjayBvbiBwb3NzaWJsZSB2YWxpZGF0aW9uIGlzc3Vlcy4g
-VXNlZCBkZXNpZ24gYWxsb3dzCmNoZWNraW5nIGZ1bmN0aW9ucyB0byBtYXJrIGZpcm13YXJlIGFz
-IHRvdGFsbHkgdW5zdXBwb3J0ZWQgKEZPUkNFQUJMRT0wKQphbmQgcHJldmVudCB1c2VyIGZyb20g
-Zm9yY2luZyBpdHMgaW5zdGFsbGF0aW9uLgoKVGhpcyBjb21taXQgdXBkYXRlcyAvc2Jpbi9zeXN1
-cGdyYWRlIHRvIHVzZSB0aGF0IG5ldyB2YWxpZGF0aW9uIG1ldGhvZApzbyBubyBjb2RlIGlzIGR1
-cGxpY2F0ZWQuIEZ1cnRoZXIgcGxhbnMgZm9yIHRoaXMgZmVhdHVyZSBhcmU6CjEpIEFkZCB1YnVz
-IG1ldGhvZCBjYWxsaW5nIC9zYmluL2NoZWNrX2ltYWdlCjIpIEludHJvZHVjZSBwbGF0Zm9ybSBj
-aGVja3MgZXh0ZW5kaW5nIG91dHB1dCBKU09OCjMpIEV4dGVuZCAic3lzdXBncmFkZSIgdWJ1cyBt
-ZXRob2QgdG8gdXNlIGNoZWNrX2ltYWdlIHNvIGl0J3MgcG9zc2libGUKICAgYW5kIHNhZmUgdG8g
-dXBncmFkZSB3aXRob3V0IHVzaW5nIC9zYmluL3N5c3VwZ3JhZGUKCk91dHB1dCBleGFtcGxlOgp7
-CiAgICAgICAgInRlc3RzIjogewogICAgICAgICAgICAgICAgImZ3dG9vbF9zaWduYXR1cmUiOiB0
-cnVlLAogICAgICAgICAgICAgICAgImZ3dG9vbF9kZXZpY2VfbWF0Y2giOiB0cnVlCiAgICAgICAg
-fSwKICAgICAgICAidmFsaWQiOiB0cnVlLAogICAgICAgICJmb3JjZWFibGUiOiB0cnVlCn0KClNp
-Z25lZC1vZmYtYnk6IFJhZmHFgiBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KLS0tCkknbSBu
-b3Qgc3VyZSBob3cgdG8gaW1wbGVtZW50IHBsYXRmb3JtIGNoZWNrcyB0aGF0IG1heSBzZXQgZXh0
-cmEgSlNPTgpvYmplY3QgZmllbGRzLiBJJ2QgZS5nLiBCcm9hZGNvbSB0YXJnZXRzIHRvIGFsbG93
-IHNvbWV0aGluZyBsaWtlOgoidGVzdHMiOiB7CgkidHJ4X2NoZWNrc3VtIjogdHJ1ZSwKCSJwbGF0
-Zm9ybV9kZXZpY2VfbWF0Y2giOiB0cnVlLAoJImZ3dG9vbF9zaWduYXR1cmUiOiB0cnVlLAoJImZ3
-dG9vbF9kZXZpY2VfbWF0Y2giOiB0cnVlCn0KCkFueSBpZGVhcz8KLS0tCiBwYWNrYWdlL2Jhc2Ut
-ZmlsZXMvZmlsZXMvc2Jpbi9jaGVja19pbWFnZSB8IDM1ICsrKysrKysrKysrKysrKysrKysrKysr
-CiBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi9zeXN1cGdyYWRlICB8IDI0ICsrKysrKysr
-KystLS0tLS0KIDIgZmlsZXMgY2hhbmdlZCwgNTAgaW5zZXJ0aW9ucygrKSwgOSBkZWxldGlvbnMo
-LSkKIGNyZWF0ZSBtb2RlIDEwMDc1NSBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi9jaGVj
-a19pbWFnZQoKZGlmZiAtLWdpdCBhL3BhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9zYmluL2NoZWNr
-X2ltYWdlIGIvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4vY2hlY2tfaW1hZ2UKbmV3IGZp
-bGUgbW9kZSAxMDA3NTUKaW5kZXggMDAwMDAwMDAwMC4uODFjM2U1NjYxZgotLS0gL2Rldi9udWxs
-CisrKyBiL3BhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9zYmluL2NoZWNrX2ltYWdlCkBAIC0wLDAg
-KzEsMzUgQEAKKyMhL2Jpbi9zaAorCisuIC9saWIvZnVuY3Rpb25zLnNoCisuIC9saWIvZnVuY3Rp
-b25zL3N5c3RlbS5zaAorLiAvdXNyL3NoYXJlL2xpYnVib3gvanNobi5zaAorCitpbmNsdWRlIC9s
-aWIvdXBncmFkZQorCitWQUxJRD0xCitGT1JDRUFCTEU9MQorCitlcnJfdG9fYm9vbCgpIHsKKwlb
-ICIkMSIgLW5lIDAgXSAmJiBlY2hvIDAgfHwgZWNobyAxCit9CisKK2Z3dG9vbF9jaGVja19zaWdu
-YXR1cmUgIiQxIiA+JjIKK0ZXVE9PTF9TSUdOQVRVUkU9JD8KK1sgIiRGV1RPT0xfU0lHTkFUVVJF
-IiAtbmUgMCBdICYmIFZBTElEPTAKKworZnd0b29sX2NoZWNrX2ltYWdlICIkMSIgPiYyCitGV1RP
-T0xfREVWSUNFX01BVENIPSQ/CitbICIkRldUT09MX0RFVklDRV9NQVRDSCIgLW5lIDAgXSAmJiBW
-QUxJRD0wCisKK3BsYXRmb3JtX2NoZWNrX2ltYWdlICIkMSIgPiYyCitQTEFURk9STV9DSEVDSz0k
-PworWyAiJFBMQVRGT1JNX0NIRUNLIiAtbmUgMCBdICYmIFZBTElEPTAKKworanNvbl9pbml0CisJ
-anNvbl9hZGRfb2JqZWN0ICJ0ZXN0cyIKKwkJanNvbl9hZGRfYm9vbGVhbiBmd3Rvb2xfc2lnbmF0
-dXJlICIkKGVycl90b19ib29sICRGV1RPT0xfU0lHTkFUVVJFKSIKKwkJanNvbl9hZGRfYm9vbGVh
-biBmd3Rvb2xfZGV2aWNlX21hdGNoICIkKGVycl90b19ib29sICRGV1RPT0xfREVWSUNFX01BVENI
-KSIKKwlqc29uX2Nsb3NlX29iamVjdAorCWpzb25fYWRkX2Jvb2xlYW4gdmFsaWQgIiRWQUxJRCIK
-Kwlqc29uX2FkZF9ib29sZWFuIGZvcmNlYWJsZSAiJEZPUkNFQUJMRSIKK2pzb25fZHVtcCAtaQpk
-aWZmIC0tZ2l0IGEvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4vc3lzdXBncmFkZSBiL3Bh
-Y2thZ2UvYmFzZS1maWxlcy9maWxlcy9zYmluL3N5c3VwZ3JhZGUKaW5kZXggYzI3YzFmYmM0Ny4u
-ZTIyODRhNDUwOSAxMDA3NTUKLS0tIGEvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4vc3lz
-dXBncmFkZQorKysgYi9wYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi9zeXN1cGdyYWRlCkBA
-IC0yLDYgKzIsNyBAQAogCiAuIC9saWIvZnVuY3Rpb25zLnNoCiAuIC9saWIvZnVuY3Rpb25zL3N5
-c3RlbS5zaAorLiAvdXNyL3NoYXJlL2xpYnVib3gvanNobi5zaAogCiAjIGluaXRpYWxpemUgZGVm
-YXVsdHMKIGV4cG9ydCBNVERfQVJHUz0iIgpAQCAtMTkxLDkgKzE5Miw2IEBAIGFkZF9vdmVybGF5
-ZmlsZXMoKSB7CiAJcmV0dXJuIDAKIH0KIAotIyBob29rcwotc3lzdXBncmFkZV9pbWFnZV9jaGVj
-az0iZnd0b29sX2NoZWNrX3NpZ25hdHVyZSBmd3Rvb2xfY2hlY2tfaW1hZ2UgcGxhdGZvcm1fY2hl
-Y2tfaW1hZ2UiCi0KIGlmIFsgJFNBVkVfT1ZFUkxBWSA9IDEgXTsgdGhlbgogCVsgISAtZCAvb3Zl
-cmxheS91cHBlci9ldGMgXSAmJiB7CiAJCWVjaG8gIkNhbm5vdCBmaW5kICcvb3ZlcmxheS91cHBl
-ci9ldGMnLCByZXF1aXJlZCBmb3IgJy1jJyIgPiYyCkBAIC0zMTYsMTcgKzMxNCwyNSBAQCBjYXNl
-ICIkSU1BR0UiIGluCiAJCTs7CiBlc2FjCiAKLWZvciBjaGVjayBpbiAkc3lzdXBncmFkZV9pbWFn
-ZV9jaGVjazsgZG8KLQkoICRjaGVjayAiJElNQUdFIiApIHx8IHsKK2pzb25fbG9hZCAiJCgvc2Jp
-bi9jaGVja19pbWFnZSAiJElNQUdFIikiIHx8IHsKKwllY2hvICJGYWlsZWQgdG8gY2hlY2sgaW1h
-Z2UiCisJZXhpdCAxCit9Citqc29uX2dldF92YXIgdmFsaWQgInZhbGlkIgoranNvbl9nZXRfdmFy
-IGZvcmNlYWJsZSAiZm9yY2VhYmxlIgorWyAiJHZhbGlkIiAtZXEgMCBdICYmIHsKKwlbICIkZm9y
-Y2VhYmxlIiAtZXEgMSBdICYmIHsKIAkJaWYgWyAkRk9SQ0UgLWVxIDEgXTsgdGhlbgotCQkJZWNo
-byAiSW1hZ2UgY2hlY2sgJyRjaGVjaycgZmFpbGVkIGJ1dCAtLWZvcmNlIGdpdmVuIC0gd2lsbCB1
-cGRhdGUgYW55d2F5ISIgPiYyCi0JCQlicmVhaworCQkJZWNobyAiSW1hZ2UgY2hlY2sgZmFpbGVk
-IGJ1dCAtLWZvcmNlIGdpdmVuIC0gd2lsbCB1cGRhdGUgYW55d2F5ISIgPiYyCiAJCWVsc2UKLQkJ
-CWVjaG8gIkltYWdlIGNoZWNrICckY2hlY2snIGZhaWxlZC4iID4mMgorCQkJZWNobyAiSW1hZ2Ug
-Y2hlY2sgZmFpbGVkLiBVc2UgLS1mb3JjZSBpZiBuZWVkZWQuIiA+JjIKIAkJCWV4aXQgMQogCQlm
-aQorCX0gfHwgeworCQllY2hvICJJbWFnZSBjaGVjayBmYWlsZWQuIFRoaXMgZmlybXdhcmUgY2Fu
-J3QgYmUgaW5zdGFsbGVkLiIgPiYyCisJCWV4aXQgMQogCX0KLWRvbmUKK30KIAogaWYgWyAtbiAi
-JENPTkZfSU1BR0UiIF07IHRoZW4KIAljYXNlICIkKGdldF9tYWdpY193b3JkICRDT05GX0lNQUdF
-IGNhdCkiIGluCi0tIAoyLjIxLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxp
-c3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9vcGVud3J0LWRldmVsCg==
+The reload_set option was added in commit 509e673dab01 ("firewall3:
+Improve ipset support"), and the purpose of the option is to control if
+a set should be flushed or not on a firewall reload.
+
+In some cases, the option unfortunately does not work properly. I had
+fixed the errors locally, but failed to submit a v2 of "Improve ipset
+support". This patch contains my local fixes, and after the following
+changes are applied then the option (as well as ipset support) works as
+at least I expect.
+
+The following errors have been fixed:
+
+* "family" was not written to the state file, causing all sets read from
+this file was considered as ipv4. Save family to ensure that sets are
+handled correctly on firewall reload.
+
+* The default value of "reload_set" is false, meaning that the
+reload-check in "fw3_create_ipsets()" is always true (on reload). A
+consequence of this is that new sets are never created on firewall
+reload. In order to ensure that new sets are created, only consider
+"reload_set" if the set exists. If a set (from configuration) does not
+exist, we always want to create it.
+
+* On reload and before "fw3_destroy_ipsets()" are called, we need to
+update run_state to ensure that sets are updated correctly. We need to
+check if the sets in run_state is found in cfg_state, if not the set
+should be destroyed (done by forcing reload_set to true). If the set is
+found, then we copy the value of reload_set to the set in run_state so
+that the elements are updated as the user expects.
+
+Since we now always copy the value of reload_set from cfg_state, there
+is no need to write reload_set to run_state.
+
+Signed-off-by: Kristian Evensen <kristian.evensen@gmail.com>
+---
+ ipsets.c | 47 +++++++++++++++++++++++++++++++++++++++++++++--
+ ipsets.h |  4 ++++
+ main.c   |  1 +
+ utils.c  |  7 +++++--
+ 4 files changed, 55 insertions(+), 4 deletions(-)
+
+diff --git a/ipsets.c b/ipsets.c
+index 93bde0d..280845b 100644
+--- a/ipsets.c
++++ b/ipsets.c
+@@ -427,13 +427,16 @@ fw3_create_ipsets(struct fw3_state *state, enum fw3_family family,
+ 	/* spawn ipsets */
+ 	list_for_each_entry(ipset, &state->ipsets, list)
+ 	{
+-		if (ipset->family != family ||
+-		    (reload_set && !ipset->reload_set))
++		if (ipset->family != family)
+ 			continue;
+ 
+ 		if (ipset->external)
+ 			continue;
+ 
++		if (fw3_check_ipset(ipset) &&
++		    (reload_set && !ipset->reload_set))
++			continue;
++
+ 		if (!exec)
+ 		{
+ 			exec = fw3_command_pipe(false, "ipset", "-exist", "-");
+@@ -568,3 +571,43 @@ out:
+ 
+ 	return rv;
+ }
++
++void
++fw3_ipsets_update_run_state(enum fw3_family family, struct fw3_state *run_state,
++			    struct fw3_state *cfg_state)
++{
++	struct fw3_ipset *ipset_run, *ipset_cfg;
++	bool in_cfg;
++
++	list_for_each_entry(ipset_run, &run_state->ipsets, list) {
++		if (ipset_run->family != family)
++			continue;
++
++		in_cfg = false;
++
++		list_for_each_entry(ipset_cfg, &cfg_state->ipsets, list) {
++			if (ipset_cfg->family != family)
++				continue;
++
++			if (strlen(ipset_run->name) ==
++			    strlen(ipset_cfg->name) &&
++			    !strcmp(ipset_run->name, ipset_cfg->name)) {
++				in_cfg = true;
++				break;
++			}
++		}
++
++		/* If a set is found in run_state, but not in cfg_state then the
++		 * set has been deleted/renamed. Set reload_set to true to force
++		 * the old set to be destroyed in the "stop" fase of the reload.
++		 * If the set is found, then copy the reload_set value from the
++		 * configuration state. This ensures that the elements are
++		 * always updated according to the configuration, and not the
++		 * runtime state (which the user might have forgotten).
++		 */
++		if (!in_cfg)
++			ipset_run->reload_set = true;
++		else
++			ipset_run->reload_set = ipset_cfg->reload_set;
++	}
++}
+diff --git a/ipsets.h b/ipsets.h
+index fec79f8..76078d4 100644
+--- a/ipsets.h
++++ b/ipsets.h
+@@ -37,6 +37,10 @@ struct fw3_ipset * fw3_lookup_ipset(struct fw3_state *state, const char *name);
+ 
+ bool fw3_check_ipset(struct fw3_ipset *set);
+ 
++void
++fw3_ipsets_update_run_state(enum fw3_family family, struct fw3_state *run_state,
++			    struct fw3_state *cfg_state);
++
+ static inline void fw3_free_ipset(struct fw3_ipset *ipset)
+ {
+ 	list_del(&ipset->list);
+diff --git a/main.c b/main.c
+index 8d9a2e8..7ad00b4 100644
+--- a/main.c
++++ b/main.c
+@@ -354,6 +354,7 @@ reload(void)
+ 			fw3_ipt_close(handle);
+ 		}
+ 
++		fw3_ipsets_update_run_state(family, run_state, cfg_state);
+ 		fw3_destroy_ipsets(run_state, family, true);
+ 
+ 		family_set(run_state, family, false);
+diff --git a/utils.c b/utils.c
+index 147acf8..b465878 100644
+--- a/utils.c
++++ b/utils.c
+@@ -586,8 +586,11 @@ write_ipset_uci(struct uci_context *ctx, struct fw3_ipset *s,
+ 	uci_set(ctx, &ptr);
+ 
+ 	ptr.o      = NULL;
+-	ptr.option = "reload_set";
+-	ptr.value  = s->reload_set ? "true" : "false";
++	ptr.option = "family";
++	if (s->family == FW3_FAMILY_V4)
++		ptr.value = "ipv4";
++	else
++		ptr.value = "ipv6";
+ 	uci_set(ctx, &ptr);
+ 
+ 	ptr.o      = NULL;
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

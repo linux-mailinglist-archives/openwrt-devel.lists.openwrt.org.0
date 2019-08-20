@@ -2,75 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14275965B7
-	for <lists+openwrt-devel@lfdr.de>; Tue, 20 Aug 2019 17:58:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68679965C1
+	for <lists+openwrt-devel@lfdr.de>; Tue, 20 Aug 2019 17:59:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o9ZsTeIJ5muJkf5dVlte8ht3HPwbWD5gZFcI49KtZhg=; b=kI2tuvTrNKEoUR
-	eH4STFvsDvoG54LR5dTkYExURQsNWQvDchRu2vxu5rD5HmwrNVE0iN6Syvi2m09yf5W8jKaEp2zQ9
-	JEaCIGoLN0/QxdaqR0RLnUJmbabZwnNwZvEOZwgwa4kvU1N9wpk5A6sOnEu4J4nySbWxK9PdK+MX/
-	h8m+anIkDl2Cpiz619QuI2/RJZ6aUO6sHOScXKerKH60rtU39nuDADXbwHTUFulBl73NrxMdB1eUm
-	JQE000UuD1/C4nscNt7uoew+b+3EYND7Ih2WiXUk1QBJm1Bm50pGJkN6ZOoD+uxpP4znlsoUhRszd
-	EbSaonDXdCfa+657S/zw==;
+	List-Owner; bh=4YrFcKJnT/TrhVwwuID8JBps6njDnEZc4UAIQMtclcg=; b=ZltUImdXeaTbCr
+	zudYK4qFbtkD8k0R9V+Y/KeCZ0RML/9O0XHEUQaA+vhs2eOVodj3H4nun686UMHZdmSYtpshoN8Mz
+	xXRWvGuEI6732+O0uddHIRQl2d1A6ygEHcxkhHi3VrjEKTT8qoCos+6tZgOGr0mD/wvNQU3TtCtLM
+	XvumUOV3BRiZgXpiw4zDqA573yR4kvl86RSE6aaQaLcRgtN+zMiw5ujcIcE5kXcNH/32tBKcGtiHb
+	ujxpH1G2KtQXpRUCV8H/6c2r8LQ35auRX9DgRG3wlqSITDz6zbPFRUr+3Jvr0tuieelumImTC4u7f
+	Vj9c/6fs2/+jTPgleIGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i06WN-0007mb-K1; Tue, 20 Aug 2019 15:58:07 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1i06XT-0000b5-BI; Tue, 20 Aug 2019 15:59:15 +0000
+Received: from mail-io1-xd2d.google.com ([2607:f8b0:4864:20::d2d])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i06WC-0007ha-KM
- for openwrt-devel@lists.openwrt.org; Tue, 20 Aug 2019 15:57:58 +0000
-Received: by mail-lj1-x243.google.com with SMTP id l1so5594282lji.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 20 Aug 2019 08:57:55 -0700 (PDT)
+ id 1i06XK-0000aZ-9Y
+ for openwrt-devel@lists.openwrt.org; Tue, 20 Aug 2019 15:59:07 +0000
+Received: by mail-io1-xd2d.google.com with SMTP id i22so13250890ioh.2
+ for <openwrt-devel@lists.openwrt.org>; Tue, 20 Aug 2019 08:59:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=anHoEqIZvhAMNXS4PjkVo8n17KmLBMz3GEeeDCGTRvw=;
- b=nTmjGDFlYKw0085J73Si1m7rFxHWPTeYat0ClQclUA/rbY2vUnn+pPNsCTBlP0xNaJ
- pXzhMRAZJb9LfdkW15rq7zmlZd/TbCkKiUMVBeviuWXXmI5Hqk7CzKAQv0/YtbSXslWC
- l1XYawOOvNK2FB7U3o5dK4m/nVXe653jkk7MEm7cidXXLMwJV5/7B06wiU/jcWNJxT9p
- KYEKmAMz5KWF8CBzxPExNCnB8Tx8KaO9d8zzBFv8LRKMkX6MZB7n0vnu6xyMFkJNAeDo
- LD+zX64LjTSMhWFbb4z5JSchGsDJHKK/H9yGmZ681Re8TiHjRYp8g9q+WhulfuY+tjYs
- CfrA==
+ :cc:content-transfer-encoding;
+ bh=780kQJX5ytDLRZo2j4fc/+kAAqOKhcPaQJRuR6/eqak=;
+ b=rmn86d/tx3t4hY1mVCZDzMZ/BJoTQ0+LOoZZH+OPEGSMXXslIZjsKOno8Rx9Jlo7hc
+ HPMojcUuKPMuagS/ozKBejTGTQOVr1kwaWweyikuxDhisPvYlKhIQ1g5unFeqaH6wuJy
+ aZuxbGSIvFxoiuAyWaZj8JjE+V2TxDI7AM1ObU5kuSYSTE4qKCWFqIAUJbE0fq4TR0Qn
+ P/gn+vkMnh5oQfeKt7wR0QlB9vameF4QyewhJujasZ/RNZSeZM4j2I+XYCJxwmwBHToI
+ YwdO5Pw2hdQSwTO7il/bhjl+NflPmEw7sihr1tggQKeZzAeYqD2uUGBVgmZZ01UgbulE
+ FnwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=anHoEqIZvhAMNXS4PjkVo8n17KmLBMz3GEeeDCGTRvw=;
- b=tEZESHyCFGuwKdb144J6R9cJ6O9fiv7jObeaflkR2pf92ETSxgrq9PW1MMyfO5FoSi
- 7XsGUWOwxykvILGtX84tXjcaGcsOKFeM/hxopI6KLAyNdq7B4WH3oZwr3qWfr0Ot8FCz
- H8P3sR5vswfJno1INIMylodNgmCA27YAvQkP4pKcBRjOH3J0Pxxfu4wOaYIVDtpQg9fr
- NZWrcJxdrabbnTZPo4iRfmPK4d7SuYQOC37Qng3q/HnsWD7s3/fIZmPTdJOOhF+CsX2D
- lz2eNWAtElFJYeboafAx3zQgHh46ED+LkctqHinv7/zjhU+4JiQGIdNxsuDJ8ad0Rk4J
- prHw==
-X-Gm-Message-State: APjAAAVaoScsfjh+kD/zFdHIyE6P2NCmXQlPEAkho0EDBcvRBmi+V5E/
- kfyNs3cDkDJyn1Oi00UylojEDmEw6Ha7wgIm94Q=
-X-Google-Smtp-Source: APXvYqxAxbhLTUY/jecfweda2NuxsoJloDYqsbDVy71Fo8hvZGNO9AqlZs8tQpGsFFOSd0mdQ18bvzkyUeCFytKCi84=
-X-Received: by 2002:a2e:8658:: with SMTP id i24mr12741151ljj.188.1566316674339; 
- Tue, 20 Aug 2019 08:57:54 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=780kQJX5ytDLRZo2j4fc/+kAAqOKhcPaQJRuR6/eqak=;
+ b=cdtDQbLLwdQshshkSBkBfkPB7DVgvz3WlYALwZn3xIXy7mCG91RTFg402OkiQvuydA
+ im4ONt7tdUzA6u1LzX+6ZfH+lKhFys6wT47E6DflnnqpUy8pwR9XYN+95SdH4H4x1ymW
+ zRF3UhS6PjwdpI9Ap1yLfnI7wc1Hb/4YEroRZnBjEYCYjOQihmv/ntInGa3mh+AtNCAy
+ Nx4PhtzGNCIOGKqFOQc/cNtG5wZwluboEhesTVVAOzvHMEjCXT12OLDp9ljmPJsP8w4Y
+ 6z/e83aprcmWuZeAIhsIoflOrNQm+GH6/PhJDcwa67BOp6ETNzu7xL98eNP6hlH+wqjW
+ YbrQ==
+X-Gm-Message-State: APjAAAUHvMmUCjnq+66BJLP0nAQIi86F/uQKJXJSAnfvTZdIRNqPhBoz
+ vYp8KlDw2Ka3rFGeiSSWl5h/3lRDblyABkx5QMU=
+X-Google-Smtp-Source: APXvYqwHNKqanv5ro/MDjeBvgrRqF/UbrqB9g8N3ic1tLDg4Y1FVpA8IuODOCvTv0mep9u6UvMKw4PkRHEze3ZOSXyQ=
+X-Received: by 2002:a02:4005:: with SMTP id n5mr4516157jaa.73.1566316744547;
+ Tue, 20 Aug 2019 08:59:04 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190820135159.15632-1-yszhou4tech@gmail.com>
- <000201d5576d$520b4620$f621d260$@adrianschmutzler.de>
-In-Reply-To: <000201d5576d$520b4620$f621d260$@adrianschmutzler.de>
-From: Yousong Zhou <yszhou4tech@gmail.com>
-Date: Tue, 20 Aug 2019 23:57:42 +0800
-Message-ID: <CAECwjAj-5omvfG9zBcdhbOXDzbWjdrrG6DJJzgGfwW60vn40Pw@mail.gmail.com>
-To: mail@adrianschmutzler.de
+References: <859F4E11-840B-4BDE-AA3E-0BA3FD461620@gmail.com>
+ <5db7f548-9eca-d798-5a18-229259507025@ironai.com>
+ <2D0AD814-FD6E-45BE-9B6E-7389ABB7DB4A@gmail.com>
+In-Reply-To: <2D0AD814-FD6E-45BE-9B6E-7389ABB7DB4A@gmail.com>
+From: Dmitry Tunin <hanipouspilot@gmail.com>
+Date: Tue, 20 Aug 2019 18:58:53 +0300
+Message-ID: <CANoib0FaZNd4eBQY65P0nuUzOmpv7RKkGLmU+SXO4NEmSn0SBw@mail.gmail.com>
+To: Rich Brown <richb.hanover@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_085756_673680_C28563E1 
-X-CRM114-Status: GOOD (  23.05  )
+X-CRM114-CacheID: sfid-20190820_085906_332862_666AF18A 
+X-CRM114-Status: GOOD (  15.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (yszhou4tech[at]gmail.com)
+ provider (hanipouspilot[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d2d listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,8 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for Northbound
- Networks Zodiac GX
+Subject: Re: [OpenWrt-Devel] Did they check security of OpenWrt?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,235 +94,58 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Paul Zanna <paul@northboundnetworks.com>, John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vincent Wiemann <vincent.wiemann@ironai.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, 20 Aug 2019 at 23:38, <mail@adrianschmutzler.de> wrote:
->
-> Hi,
->
-> > -----Original Message-----
-> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> > On Behalf Of Yousong Zhou
-> > Sent: Dienstag, 20. August 2019 15:52
-> > To: john@phrozen.org
-> > Cc: Yousong Zhou <yszhou4tech@gmail.com>; openwrt-
-> > devel@lists.openwrt.org; paul@northboundnetworks.com
-> > Subject: [OpenWrt-Devel] [PATCH] ramips: add support for Northbound
-> > Networks Zodiac GX
-> >
-> > Hardware spec
-> >
-> >  - MT7621A dual-core 880MHz
-> >  - 16MB Flash
-> >  - 256MB RAM
-> >  - 5 GbE ports
-> >
-> > Vendor device page: https://northboundnetworks.com/products/zodiac-gx
-> >
-> > Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
-> > ---
-> >  .../ramips/base-files/etc/board.d/02_network  |  1 +
-> >  .../dts/mt7621_northbound_zodiac-gx.dts       | 97 +++++++++++++++++++
-> >  target/linux/ramips/image/mt7621.mk           |  9 ++
-> >  3 files changed, 107 insertions(+)
-> >  create mode 100644 target/linux/ramips/dts/mt7621_northbound_zodiac-
-> > gx.dts
-> >
-> > diff --git a/target/linux/ramips/base-files/etc/board.d/02_network
-> > b/target/linux/ramips/base-files/etc/board.d/02_network
-> > index c0de9d4e50..2e3e5fbba7 100755
-> > --- a/target/linux/ramips/base-files/etc/board.d/02_network
-> > +++ b/target/linux/ramips/base-files/etc/board.d/02_network
-> > @@ -392,6 +392,7 @@ ramips_setup_interfaces()
-> >                       "0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
-> >               ;;
-> >       linksys,re6500)
->
-> should be "|\" instead of ")" here?
-
-Good catch.
-
->
-> > +     northbound,zodiac-gx)
-> >               ucidef_add_switch "switch0" \
-> >                       "0:lan:1" "1:lan:2" "2:lan:3" "3:lan:4" "6@eth0"
-> >               ;;
->
-> Above you say "5 ports", these are only four ...?
-
-Indeed.  Will dig deeper to find better fit.
-
-The device was designed to be used as a switch.  So I was searching
-for the line containing only "lan"
-
->
-> > diff --git a/target/linux/ramips/dts/mt7621_northbound_zodiac-gx.dts
-> > b/target/linux/ramips/dts/mt7621_northbound_zodiac-gx.dts
-> > new file mode 100644
-> > index 0000000000..51f2298d06
-> > --- /dev/null
-> > +++ b/target/linux/ramips/dts/mt7621_northbound_zodiac-gx.dts
-> > @@ -0,0 +1,97 @@
-> > +/dts-v1/;
-> > +
-> > +#include "mt7621.dtsi"
-> > +
-> > +#include <dt-bindings/gpio/gpio.h>
-> > +#include <dt-bindings/input/input.h>
-> > +
-> > +/ {
-> > +     compatible = "northbound,zodiac-gx", "mediatek,mt7621-soc";
-> > +     model = "Zodiac GX";
->
-> Maybe include "Northbound" here, too.
-
-Maybe I should just use the full name "Northbound Networks".  It's a
-bit long but should be fine.
-
->
-> > +
-> > +     aliases {
-> > +             led-boot = &led_status;
-> > +             led-failsafe = &led_status;
-> > +             led-running = &led_status;
-> > +             led-upgrade = &led_status;
-> > +     };
-> > +
-> > +     chosen {
-> > +             bootargs = "console=ttyS0,57600";
-> > +     };
-> > +
-> > +     leds {
-> > +             compatible = "gpio-leds";
-> > +
-> > +             led_status: status {
-> > +                     label = "zodiac:green:status";
-> > +                     gpios = <&gpio0 15 1>;
-> > +             };
-> > +     };
-> > +
-> > +     gpio-keys-polled {
-> > +             compatible = "gpio-keys-polled";
-> > +             #address-cells = <1>;
-> > +             #size-cells = <0>;
-> > +             poll-interval = <20>;
->
-> Maybe try "gpio-keys" here, or is there a reason for the polled keys?
-
-This line I just copied from other dts files.  Will change and test.
-
->
-> > +
-> > +             reset {
-> > +                     label = "reset";
-> > +                     gpios = <&gpio0 18 1>;
-> > +                     linux,code = <KEY_RESTART>;
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&spi0 {
-> > +     status = "okay";
-> > +
-> > +     m25p80@0 {
-> > +             compatible = "jedec,spi-nor";
-> > +             reg = <0>;
-> > +             spi-max-frequency = <10000000>;
->
-> Maybe try to increase frequency here.
-
-Ditto.  Can you share some instructions on how to decide a higher
-value?  Or which high values are available and safe to try?
-
->
-> > +
-> > +             partitions {
-> > +                     compatible = "fixed-partitions";
-> > +                     #address-cells = <1>;
-> > +                     #size-cells = <1>;
-> > +
-> > +                     partition@0 {
-> > +                             label = "u-boot";
-> > +                             reg = <0x0 0x30000>;
-> > +                             read-only;
-> > +                     };
-> > +
-> > +                     partition@30000 {
-> > +                             label = "u-boot-env";
-> > +                             reg = <0x30000 0x10000>;
-> > +                             read-only;
-> > +                     };
-> > +
-> > +                     factory: partition@40000 {
-> > +                             label = "factory";
-> > +                             reg = <0x40000 0x10000>;
-> > +                             read-only;
-> > +                     };
-> > +
-> > +                     partition@50000 {
-> > +                             compatible = "denx,uimage";
-> > +                             label = "firmware";
-> > +                             reg = <0x50000 0xfb0000>;
-> > +                     };
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&ethernet {
-> > +     mtd-mac-address = <&factory 0xe000>;
->
-> If this really is a five port device, it would be nice to check for a WAN MAC address in 0xe006 and then read it from flash in 02_network (there should a node for that already).
-
-All ports are supposed to be ordinary switch ports.  No wan/lan
-distinction by default.
-
->
-> > +};
-> > +
-> > +&pinctrl {
-> > +     state_default: pinctrl0 {
-> > +             gpio {
-> > +                     ralink,group = "wdt", "rgmii2", "jtag", "mdio";
-> > +                     ralink,function = "gpio";
-> > +             };
-> > +     };
-> > +};
-> > diff --git a/target/linux/ramips/image/mt7621.mk
-> > b/target/linux/ramips/image/mt7621.mk
-> > index d32feb7eab..e52b1eba19 100644
-> > --- a/target/linux/ramips/image/mt7621.mk
-> > +++ b/target/linux/ramips/image/mt7621.mk
-> > @@ -464,6 +464,15 @@ define Device/netis_wf-2881  endef
-> > TARGET_DEVICES += netis_wf-2881
-> >
-> > +define Device/northbound_zodiac-gx
-> > +  MTK_SOC := mt7621
-> > +  IMAGE_SIZE := 16064k
-> > +  DEVICE_VENDOR := Northbound Networks
-> > +  DEVICE_MODEL := Zodiac GX
-> > +  SUPPORTED_DEVICES += zodiac-gx
->
-> SUPPORTED_DEVICES can be dropped.
-
-I remembered OEM firmware sysupgrade checks for "zodiac-gx" and erred
-when this line was absent.
-
->
-> Best
->
-> Adrian
-
-Thanks for the review, Adrian
-
-Regards,
-                yousong
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+UmljaCwKCk9wZW5XcnQgaXMgYSBMaW51eCBkaXN0cm8uIEl0IGhhcyBhbGwgc2VjdXJpdHkgYXMg
+YW55IG90aGVyIG9uZS4gQWxsCkNWRSBhcmUgdGltZWx5IGFkZHJlc3NlZC4KVGhlcmUgaXMgbm8g
+bmVlZCBmb3Igc3BlY2lhbCB0ZXN0cy4KCtCy0YIsIDIwINCw0LLQsy4gMjAxOSDQsy4g0LIgMTg6
+MzQsIFJpY2ggQnJvd24gPHJpY2hiLmhhbm92ZXJAZ21haWwuY29tPjoKPgo+IEhpIFZpbmNlbnQs
+Cj4KPiBJIGRvbid0IGtub3cgd2hldGhlciB0aGUgYXJ0aWNsZSwgb3IgaXRzIHVuZGVybHlpbmcg
+cmVwb3J0IGZyb20gQ3liZXIgSW5kZXBlbmRlbnQgVGVzdGluZyBMYWIgLSBDSVRMLCBpcyBhIGpv
+a2Ugb3Igbm90LiAoQWx0aG91Z2gsIEknbGwgYWdyZWUgdGhhdCBhbnkgZmlybXdhcmUgdXNpbmcg
+MTgteWVhciBvbGQga2VybmVscyBpcyBvbiBpdHMgZmFjZSBhIHNlY3VyaXR5IGpva2UuKQo+Cj4g
+TXkgcXVlc3Rpb25zIHdlcmUgbW9yZSBhYm91dCBPcGVuV3J0LiBIb3cgd291bGQgb3VyIGN1cnJl
+bnQgYnVpbGRzIHN0YWNrIHVwIHVuZGVyIHRoZSBjcml0ZXJpYSB1c2VkIGluIHRoZSByZXBvcnQn
+cyB0YWJsZT8gSXQgbGlzdGVkOgo+Cj4gLSBTdGFjayBHdWFyZHMKPiAtIEFTTFIKPiAtIFJFTFJP
+Cj4gLSBGb3J0aWZ5IFNSQwo+IC0gTm9uLUV4ZWMgU3RhY2sKPgo+IEFuZCBhcmUgdGhlcmUgb3Ro
+ZXIgc2VjdXJpdHkgcHJhY3RpY2VzIHRoYXQgd2UgZW5mb3JjZSB0aGF0IHdvdWxkIG1ha2UgYW4g
+T3BlbldydCBzeXN0ZW0gbW9yZSBzZWN1cmU/Cj4KPiBJZiBPcGVuV3J0IGNvbXBhcmVzIGZhdm9y
+YWJseSwgaXQgb2NjdXJzIHRvIG1lIHRoYXQgd2UgY291bGQgaW52aXRlIENJVEwgdG8gcmV2aWV3
+IE9wZW5XcnQgYnVpbGRzIChvbiBodW5kcmVkcyBvZiByb3V0ZXJzKSBhbmQgdXBkYXRlIHRoZWly
+IHJlcG9ydC4uLgo+Cj4gVGhhbmtzLgo+Cj4gUmljaAo+Cj4gPiBPbiBBdWcgMjAsIDIwMTksIGF0
+IDk6NDMgQU0sIFZpbmNlbnQgV2llbWFubiA8dmluY2VudC53aWVtYW5uQGlyb25haS5jb20+IHdy
+b3RlOgo+ID4KPiA+IEhpIFJpY2gsCj4gPgo+ID4gdGhlIGFydGljbGUgaXMgYSBqb2tlLiBJJ20g
+bm90IHRhbGtpbmcgYWJvdXQgdGhlIHJlc2VhcmNoZXJzLCBidXQgYWJvdXQgY2l0aW5nIGEgc3Rh
+dGVtZW50IGxpa2U6Cj4gPiDigJ5Ib3dldmVyLCB0aG9zZSBzYW1lIGZpcm13YXJlIGJpbmFyaWVz
+IGRpZCBub3QgZW1wbG95IG90aGVyIGNvbW1vbiBzZWN1cml0eQo+ID4gZmVhdHVyZXMgbGlrZSBB
+U0xSIG9yIHN0YWNrIGd1YXJkcywgb3IgZGlkIHNvIG9ubHkgcmFyZWx5LOKAnAo+ID4KPiA+IExv
+b2sgYXQgdGhlIHNvdXJjZS1jb2RlIG9mIHRoZSBtZW50aW9uZWQgdmVuZG9ycy4gVGhleSBwYXJ0
+aWFsbHkgdXNlIDE4IHllYXJzIG9sZCBrZXJuZWwgY29kZSBhbmQKPiA+IFRlbG5ldC1saWtlIG1h
+bmFnZW1lbnQgaW50ZXJmYWNlcy4KPiA+Cj4gPiBSZWdhcmRzLAo+ID4KPiA+IFZpbmNlbnQKPiA+
+Cj4gPgo+ID4gT24gMjAuMDguMTkgMTM6MjEsIFJpY2ggQnJvd24gd3JvdGU6Cj4gPj4gSGkgZm9s
+a3MsCj4gPj4KPiA+PiBZb3UndmUgcHJvYmFibHkgc2VlbiB0aGUgU2xhc2hkb3QgYXJ0aWNsZSBh
+Ym91dCAobGFjayBvZikgc2VjdXJpdHkgZ2FpbnMgaW4gcm91dGVyIGZpcm13YXJlLiBodHRwczov
+L3lyby5zbGFzaGRvdC5vcmcvc3RvcnkvMTkvMDgvMTYvMjA1MDIxOS9odWdlLXN1cnZleS1vZi1m
+aXJtd2FyZS1maW5kcy1uby1zZWN1cml0eS1nYWlucy1pbi0xNS15ZWFycyBUaGUgb3JpZ2luYWwg
+YXJ0aWNsZSBvbiBTZWN1cml0eSBMZWRnZXIgaXMgYXQ6IGh0dHBzOi8vc2VjdXJpdHlsZWRnZXIu
+Y29tLzIwMTkvMDgvaHVnZS1zdXJ2ZXktb2YtZmlybXdhcmUtZmluZHMtbm8tc2VjdXJpdHktZ2Fp
+bnMtaW4tMTUteWVhcnMvCj4gPj4KPiA+PiBUd28gcXVlc3Rpb25zOgo+ID4+Cj4gPj4gMSkgRG9l
+cyBhbnlvbmUga25vdyBpZiB0aGUgcmVzZWFyY2hlcnMgbG9va2VkIGF0IE9wZW5XcnQ/Cj4gPj4K
+PiA+PiAyKSBJZiBub3QsIGhvdyB3b3VsZCBPcGVuV3J0IHN0YWJsZSBvciBzbmFwc2hvdCBoYXZl
+IGZhcmVkIGluIHRoZSBhbmFseXNpcz8gRG8gd2UgZW5hYmxlIHN0YWNrIGd1YXJkcywgQVNMUiwg
+ZXRjLiBvbiBhbGwgYnVpbGRzPwo+ID4+Cj4gPj4gVGhhbmtzLgo+ID4+Cj4gPj4gUmljaAo+ID4+
+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPj4gb3Bl
+bndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiA+PiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQu
+b3JnCj4gPj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53
+cnQtZGV2ZWwKPiA+Pgo+Cj4KPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwo+IG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gb3BlbndydC1kZXZlbEBs
+aXN0cy5vcGVud3J0Lm9yZwo+IGh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9vcGVud3J0LWRldmVsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3Rz
+Lm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9v
+cGVud3J0LWRldmVsCg==

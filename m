@@ -2,67 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBC859753B
-	for <lists+openwrt-devel@lfdr.de>; Wed, 21 Aug 2019 10:44:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B327D9832F
+	for <lists+openwrt-devel@lfdr.de>; Wed, 21 Aug 2019 20:38:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
+	Subject:MIME-Version:References:In-Reply-To:Message-ID:Date:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mkJjb2Ux3yUY+QfbfkBU0CMzVvvkLAPvwzDEWbTUB60=; b=guR
-	j+WLs+bogxLiAT/SK8PUDl83KnHy8a5mDoMFKmgov7eLUr4oaSgbJy3EBLm6K2Zl6d9pnGvA43i6w
-	Nu1Ai4VFz1Ct/Oy3s54V7MXYvoHyxYgq/GZYYsPD4ozHPexMr2raz/ioHIfTCwiNDwgp3Ny6mzOoC
-	zIJcmi/c4+vWLIaE/Oyqmuhm4HPn/3WxmBsfm43RxJ6PqK0SP0xm8dxTJV+6hfuO3DgD1gbfhNjS7
-	OJpFR4R3M1noFN98Gb6WplUj4/nn7fptCF8FeqcLKATWyTmc0AJqX+AtVRZ5v8c8MZzYRBdtLp6ah
-	WVNzRRb/poAyIAsxm1abxCl1vc7JtMw==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MSCDd3pfhOBtkQTs7ln/tCAkiVtkmZ7XIFjAJwzkpNI=; b=JvA77W2vVAhKW6RUkrXONrR7j
+	QeRBtGdHIsDsj6KRU5kAGU1R851RLiyuLiw74sURScTmPfVxm6sDiPaR9n6eF9wjCDuTSonMFL5wL
+	dv5Czw3nQvfNOPwh3NJ3VVGMSOtVulTw0Iz47W/tuoplg2xrfH/O8/05IDXXleiG3oHvBhQ9GJMHw
+	l3Knkl74fx4xZK+VGoitAO62E4guhjc314vMFp5lyvh06opsN04qROVzdaYafA82BGRem7r3qfRj0
+	ln4p1iwugRIVI6zJlwZQAaEVQFb6U/rkqpgfnvQ9+vgS0IYInPb2aac0zHNjUcr6IrCrzDaQyePzg
+	hwLOufHOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0MDW-00043A-2a; Wed, 21 Aug 2019 08:43:42 +0000
-Received: from server.marketingcompanylondon.com ([209.97.137.72])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i0MDA-00041E-Rq
- for openwrt-devel@lists.openwrt.org; Wed, 21 Aug 2019 08:43:22 +0000
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=asdzxcv;
- d=marketingcompanylondon.com; 
- h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
- bh=GCAuRRKCa0wWqKF8xNiVlHULo+Q=;
- b=bYND7jD7R6qYn2IqvyRlQlE+jTeEOYmiR1Zo8M7LNPE59NsabI8vwI4SlXjPov6GViZAjTZfROuQ
- 4AEkiDvRFNQTlKqIONbIoaQZeLjyRweYa0SXwcRsmCAk1EiwQxUR0LCA8vVJrWR1MfcaSOPhvBFd
- d30tyHevJQQVjiymH1k=
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=asdzxcv;
- d=marketingcompanylondon.com; 
- h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
- i=darren.byrne@marketingcompanylondon.com; 
- bh=GCAuRRKCa0wWqKF8xNiVlHULo+Q=;
- b=F0dw+9hsNBEbsRj9z8BpeEV/96fPWBWCCqgmzxhvsi8eBhW0M8pbickz+Ere9EIzkMJt8je7FuIv
- 3+DbBjwy2W/EsnnDUc5q06O10QqJgthuamjcIIUiNyTOFmlWrUyBIciIRnWiLHpgdoZMHcG1Z9Qe
- owSgzsvaEKa8jdQirI0=
-DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=asdzxcv;
- d=marketingcompanylondon.com; 
- b=TUBHvbbwxOxTx65IAdXDs2FI5heVY78oUuBUQ1Omqshu6NnuFDyceA0IJkb3IcHvk5yTEfqJ6EiA
- MD0Z6p35A/32AlE0TRmCVeqEWmGmeMlzIxfK6XH88nlZ0UOJrlDJHJQ8BwjMIEfh/VhnuJ9yGw+b
- 4FND56ChA8+jz/kSIs4=;
-From: "Darren Byrne" <darren.byrne@marketingcompanylondon.com>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Wed, 21 Aug 2019 13:56:41 +0530
-Message-ID: <1a2201d557fb$191c71c0$4b555540$@marketingcompanylondon.com>
+	id 1i0VUn-0002yw-NW; Wed, 21 Aug 2019 18:38:09 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::8])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0VRr-0006td-2y
+ for openwrt-devel@lists.openwrt.org; Wed, 21 Aug 2019 18:35:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1566412500;
+ s=strato-dkim-0002; d=heimpold.de;
+ h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=ZaNlJlLkaekCxkCjK8JTLB/BYMD8gmt0ou1A3aVRfPo=;
+ b=ki80BGdE2l92RS2v7CSryv6iVeht1F2hfhlVBavQaM8TFjhAKbiaAoCmMK5mmUfidN
+ l2CZclI9ziTj5zopJKIpc5K71uP6SfNwxOkSgKmj+9Y2+2u8oCQvlfsyvSt+Zp6fhzyh
+ kDArw0vWRntaj/Kr/zEjpUyj95g9u82PsdbxSdHuA3XLbk281IupbsDp9J/eTtIvDThz
+ 58V/hmsTCA+5JwO5nSeq+f9OUzEZVAzS49+nKaaBiejtklMnptPWrzf3Z6LmUH2UKzg/
+ WpLX4yV2JAoJ1ZTZr+SrUlfm0q0YqdfUQ6b7zB0ClwBAPnJVVQlO1iR61z7gLSqiMdf2
+ nrkw==
+X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGbO3oK8Gj1q7zlYITk"
+X-RZG-CLASS-ID: mo00
+Received: from tonne.mhei.heimpold.itr
+ by smtp.strato.de (RZmta 44.26.1 DYNA|AUTH)
+ with ESMTPSA id g06df7v7LIYwzmc
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Wed, 21 Aug 2019 20:34:58 +0200 (CEST)
+Received: from kerker.localnet (kerker.mhei.heimpold.itr [192.168.8.1])
+ by tonne.mhei.heimpold.itr (Postfix) with ESMTP id CB51F1537AE;
+ Wed, 21 Aug 2019 20:34:57 +0200 (CEST)
+From: Michael Heimpold <mhei@heimpold.de>
+To: wigyori@uid0.hu
+Date: Wed, 21 Aug 2019 20:34:28 +0200
+Message-ID: <2371323.9LdJS25nyt@kerker>
+In-Reply-To: <20190731214247.11683-1-mhei@heimpold.de>
+References: <20190731214247.11683-1-mhei@heimpold.de>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AdVX9xOyP5BNxy65ThCJlWWtIBSWmA==
-Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_014321_039160_811E2846 
-X-CRM114-Status: UNSURE (  -2.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20190821_113507_755106_4E4D37D7 
+X-CRM114-Status: GOOD (  16.24  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5300:0:0:8 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -70,8 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.4 DOS_OUTLOOK_TO_MX      Delivered direct to MX with Outlook headers
-Subject: [OpenWrt-Devel] SEO Audit Report
+Subject: Re: [OpenWrt-Devel] [PATCH] uboot-mxs: bump to v2019.07
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,256 +85,138 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2875214993252031869=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============5890379087617762335=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+--===============5890379087617762335==
+Content-Type: multipart/signed; boundary="nextPart23752875.L1GZ3gWKhO"; micalg="pgp-sha512"; protocol="application/pgp-signature"
 
---===============2875214993252031869==
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_1A23_01D55829.32D59820"
-Content-Language: en-us
+--nextPart23752875.L1GZ3gWKhO
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
 
-This is a multipart message in MIME format.
+Hi wigyori,
 
-------=_NextPart_000_1A23_01D55829.32D59820
-Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Am Mittwoch, 31. Juli 2019, 23:42:45 CEST schrieb Michael Heimpold:
+> Also update the U-Boot BSP patch for I2SE Duckbill devices.
+> 
+> Run tested on I2SE Duckbill and Olimex OLinuXino Maxi boards.
 
-Hi,
+any objections on this patch?
 
- 
+Regards,
+mhei
 
-Hope you are fine,
+> 
+> Signed-off-by: Michael Heimpold <mhei@heimpold.de>
+> ---
+>  package/boot/uboot-mxs/Makefile                     |  4 ++--
+>  .../uboot-mxs/patches/001-add-i2se-duckbill.patch   | 13 +++++++------
+>  2 files changed, 9 insertions(+), 8 deletions(-)
+> 
+> diff --git a/package/boot/uboot-mxs/Makefile
+> b/package/boot/uboot-mxs/Makefile index c4485f5b3d..da98496895 100644
+> --- a/package/boot/uboot-mxs/Makefile
+> +++ b/package/boot/uboot-mxs/Makefile
+> @@ -8,10 +8,10 @@
+>  include $(TOPDIR)/rules.mk
+>  include $(INCLUDE_DIR)/kernel.mk
+> 
+> -PKG_VERSION:=2019.01
+> +PKG_VERSION:=2019.07
+>  PKG_RELEASE:=1
+> 
+> -PKG_HASH:=50bd7e5a466ab828914d080d5f6a432345b500e8fba1ad3b7b61e95e60d51c22
+> +PKG_HASH:=bff4fa77e8da17521c030ca4c5b947a056c1b1be4d3e6ee8637020b8d50251d0
+> 
+>  include $(INCLUDE_DIR)/u-boot.mk
+>  include $(INCLUDE_DIR)/package.mk
+> diff --git a/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
+> b/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch index
+> 9acb6a508d..e0ac283827 100644
+> --- a/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
+> +++ b/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
+> @@ -1,4 +1,4 @@
+> -From 6af0148a38b23ba761905f98a7211fab986033ce Mon Sep 17 00:00:00 2001
+> +From 85d7689cbd3a8162153f445a0656d57122c58d90 Mon Sep 17 00:00:00 2001
+>  From: Michael Heimpold <mhei@heimpold.de>
+>  Date: Thu, 13 Sep 2018 21:40:19 +0200
+>  Subject: [PATCH] arm: mxs: add support for I2SE's Duckbill boards
+> @@ -32,9 +32,9 @@ Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
+>   board/i2se/duckbill/Makefile    |  10 ++
+>   board/i2se/duckbill/duckbill.c  | 186 ++++++++++++++++++++++++++++++++
+>   board/i2se/duckbill/iomux.c     | 156 +++++++++++++++++++++++++++
+> - configs/duckbill_defconfig      |  38 +++++++
+> + configs/duckbill_defconfig      |  39 +++++++
+>   include/configs/duckbill.h      | 179 ++++++++++++++++++++++++++++++
+> - 8 files changed, 595 insertions(+)
+> + 8 files changed, 596 insertions(+)
+>   create mode 100644 board/i2se/duckbill/Kconfig
+>   create mode 100644 board/i2se/duckbill/MAINTAINERS
+>   create mode 100644 board/i2se/duckbill/Makefile
+> @@ -471,10 +471,10 @@ index 0000000000..1db3c52c34
+>  +}
+>  diff --git a/configs/duckbill_defconfig b/configs/duckbill_defconfig
+>  new file mode 100644
+> -index 0000000000..f92a67d53d
+> +index 0000000000..9dea20a87d
+>  --- /dev/null
+>  +++ b/configs/duckbill_defconfig
+> -@@ -0,0 +1,38 @@
+> +@@ -0,0 +1,39 @@
+>  +CONFIG_ARM=y
+>  +CONFIG_ARCH_MX28=y
+>  +CONFIG_SYS_TEXT_BASE=0x40002000
+> @@ -483,14 +483,15 @@ index 0000000000..f92a67d53d
+>  +CONFIG_SPL_LIBGENERIC_SUPPORT=y
+>  +CONFIG_TARGET_DUCKBILL=y
+>  +CONFIG_SPL_SERIAL_SUPPORT=y
+> -+CONFIG_SPL=y
+>  +CONFIG_NR_DRAM_BANKS=1
+> ++CONFIG_SPL=y
+>  +CONFIG_BOOTDELAY=1
+>  +CONFIG_SYS_CONSOLE_IS_IN_ENV=y
+>  +CONFIG_VERSION_VARIABLE=y
+>  +# CONFIG_DISPLAY_BOARDINFO is not set
+>  +CONFIG_ARCH_MISC_INIT=y
+>  +# CONFIG_SPL_FRAMEWORK is not set
+> ++CONFIG_SPL_TEXT_BASE=0x00001000
+>  +CONFIG_HUSH_PARSER=y
+>  +CONFIG_CMD_BOOTZ=y
+>  +# CONFIG_CMD_ELF is not set
 
- 
 
-We'd like to inform you a very important issue regarding your website which
-is the reason why you are losing lots of traffic.
+--nextPart23752875.L1GZ3gWKhO
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
 
- 
+-----BEGIN PGP SIGNATURE-----
 
-Your website is great in terms of design and content. However, it doesn't
-follow Search Engine Guidelines. So, it has a very low visibility in search
-results.
+iQIzBAABCgAdFiEEuqZVIsj+7B0PnIAhlIIjA3pZHn8FAl1djrQACgkQlIIjA3pZ
+Hn91WBAAlJg8WkFnS+uvIrkFiXLuuTY9oS6xrHxBaGud4zAr/mT0nt0fVguj0A72
+mKC9qi6BJcCVV8QLFo99dm5MybwrYGejqvNalwvhJ49oIjR8reoqEktdm5HEqRKF
+bEDDiolQMA8zb8JPZrSq5cGWLW42POntFiweym60ngH2V+od28gQ5Of8Kk+tXdhx
+7uXHqyhx2txYEMDZxAHjfdXjq/2wELA6PNhyqZiKvI2FY/YkhlFqE7io+bqWs6ii
+vMSH5Z9t5n4FjgkrjWBM1iFXF+ytqv2bZV8o04i/F0/wO+zkAoaz8fQXgjqwJUUg
+XejdDmiYOEDkd5db2sTWzrVPZD3OE5HKsQR2vkRK4hLV2ZfhYDgpQXZQYnu2anL3
+syJMXpTCk6X4YoV+4k1shqQVuBbCL+zFIGiNVNWxTtu/4cuQ60Ut1ND3WPMkSTRI
+9EFRL+czYodUJACu6vr+wF3KWmLCgY6cG1dFURrEamWilzzm+Pw3Z2iWMVfmatqM
+h43+aGC6IQ+qmXlSlPCrv5h7UF8pGYjM4V+tzePL4xoc6EJFBu+PWobfcTD1+tno
+YxLr0oCymo56qvRkOab4Ye3XrsYSJSwhamSmbnULpRXTTrO/0oG/kPiZiJfHsbz6
+6NJYjVhF55KGew7lzP9PvRyM4LUalT+GDV3vb5Ru27rmFdV6G3c=
+=TgPT
+-----END PGP SIGNATURE-----
 
- 
-
-We've done a thorough SEO audit of your website, and found that it has a big
-potential to generate more revenue than what it might be earning at the
-present. And yes, we have generated a report for the same as well.
-
- 
-
-We'd be glad to share the SEO audit report with you so that you can check it
-yourself and find out what should be done to make it SEO friendly.
-
- 
-
-Let me know if you are interested, I will send you a free of cost and no
-obligations audit and keywords recommendation report for your website?
-
- 
-
-I'd be happy to share our past work and client testimonials and Client
-testimonials.
-
- 
-
-Thanks & Regards,
-
-Darren Byrne
-
-Business Development Manager
-
-Contact No:- +44-2035146905
-
- 
-
-PS: I have studied your website, prepared seo audit report and believe I can
-help with your business promotion. If you still want us to not contact you,
-ask to remove and I will not contact again.
-
- 
-
- 
-
-
-------=_NextPart_000_1A23_01D55829.32D59820
-Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
-HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
-charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
-(filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	margin-bottom:.0001pt;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";}
-p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
-	{mso-style-priority:34;
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:10.0pt;
-	margin-left:.5in;
-	line-height:115%;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-family:"Calibri","sans-serif";}
-.MsoPapDefault
-	{mso-style-type:export-only;
-	margin-bottom:8.0pt;
-	line-height:107%;}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
-	{page:WordSection1;}
-/* List Definitions */
-@list l0
-	{mso-list-id:2050718847;
-	mso-list-type:hybrid;
-	mso-list-template-ids:509895926 67698689 67698691 67698693 67698689 =
-67698691 67698693 67698689 67698691 67698693;}
-@list l0:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l0:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l0:level3
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l0:level4
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l0:level5
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l0:level6
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-@list l0:level7
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l0:level8
-	{mso-level-number-format:bullet;
-	mso-level-text:o;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:"Courier New";}
-@list l0:level9
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0A7;
-	mso-level-tab-stop:none;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Wingdings;}
-ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US><div =
-class=3DWordSection1><p class=3DMsoNormal =
-style=3D'line-height:13.8pt;background:white'><span =
-style=3D'color:black'>Hi,<o:p></o:p></span></p><p class=3DMsoNormal =
-style=3D'line-height:13.8pt;background:white'><span =
-style=3D'color:black'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal =
-style=3D'line-height:13.8pt;background:white'><span =
-style=3D'color:black'>Hope you are fine</span><b><span =
-style=3D'font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>,=
-<o:p></o:p></span></b></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>We&#8217;d like to inform you a very important issue =
-regarding your website which is the reason why you are losing lots of =
-traffic.</p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Your website is great in terms of design and content. =
-However, it doesn&#8217;t follow Search Engine Guidelines. So, it has a =
-very low visibility in search results.</p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>We&#8217;ve =
-done a thorough SEO audit of your website, and found that it has a big =
-potential to generate more revenue than what it might be earning at the =
-present. And yes, we have generated a report for the same as well.</p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>We&#8217;d =
-be glad to share the SEO audit report with you so that you can check it =
-yourself and find out what should be done to make it SEO friendly.</p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><b>Let me =
-know if you are interested, I will send you a free of cost and no =
-obligations audit and keywords recommendation report for your =
-website?<o:p></o:p></b></p><p =
-class=3DMsoNormal><b><o:p>&nbsp;</o:p></b></p><p class=3DMsoNormal>I'd =
-be happy to share our past work and client testimonials and Client =
-testimonials.</p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Thanks &amp; Regards,</p><p class=3DMsoNormal>Darren =
-Byrne</p><p class=3DMsoNormal>Business Development Manager</p><p =
-class=3DMsoNormal>Contact No:- <span lang=3DEN-IN =
-style=3D'font-size:10.0pt;font-family:"Arial","sans-serif"'>+44-203514690=
-5</span></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>PS: I have studied your website, prepared seo audit =
-report and believe I can help with your business promotion. If you still =
-want us to not contact you, ask to remove and I will not contact =
-again.</p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p></div></body></html>
-------=_NextPart_000_1A23_01D55829.32D59820--
+--nextPart23752875.L1GZ3gWKhO--
 
 
 
---===============2875214993252031869==
+
+
+--===============5890379087617762335==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -343,6 +227,8 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2875214993252031869==--
+--===============5890379087617762335==--
+
+
 
 

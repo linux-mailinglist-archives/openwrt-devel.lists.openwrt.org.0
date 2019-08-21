@@ -2,91 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9293E983C6
-	for <lists+openwrt-devel@lfdr.de>; Wed, 21 Aug 2019 20:57:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50B9F986B7
+	for <lists+openwrt-devel@lfdr.de>; Wed, 21 Aug 2019 23:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hL30WXFaqjQvUkngvh55hIuY71WZs7UHU9ws6LtzOY0=; b=MZSQOHaJ/kT6GS
-	RPaP3j6ivbOXF7CmDBHZr9Yg+Y3Mp/fCNdZCNt79wi+ubJBkmxTSNp9fy0FmUqdwf1EiKP6zyLUlx
-	lLHb0W3J4Uq/Me56x/aBmSL+nQFhhh5xc7HTwjyk58n1u4dO7bgeCu4mpyILPtEmewjKB27+MGFh9
-	PIQ15Z1otRm9IyGiLt8tq79+6Pd9o2ev22X3+Vk0Q6ntJ37WPGmDIW/fhT5apKQ0nj5E316w1eVCG
-	LuWIGpSMDkLT1NW6EIpQDXUI4hyrJrJ6wuk+O+3dc9X00pqlMxMgiFPy1VCoIEYUzTgEhgRjQ+pfK
-	1NuwaY5cA0XWJacjbEvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9Bp+cACzU7lFrNJe0nWq2zpS/UFiTWj5PlS6YBd6wOY=; b=W/xLgmm7OCgI3ng4IVwKjrSCQ
+	rVDifnLZj9JBzxElIe1Rzb0G3oLvUTZYwP+xdH8/d5XyfvuXlCm8EQ9HLfuQyasVyZdmWXSZfQLD2
+	uXdVAnO0nP3zJmfPz9BA5DzrWvNfX3hzcy7VIf1bePWjAxL1iEt9wUP016wHShyzC9jEqptBH2U7Y
+	RrFWBrJr5Rth1R/oGU+3V2wtpPgCdtkHLN5MdJ2rCPKuVkXMCGpNUmTpYrerkK2QHvXUGm91yy7fX
+	fkkwG09VgsHJAE/nPo6dH+LWxnsCinNgMmC+RK533xoD9S7GAU2vrq0hCQ6vT8dDaZA2b104XNhFZ
+	aV3gCZbXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0VnZ-0003Nt-Ef; Wed, 21 Aug 2019 18:57:33 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1i0YNA-0001sw-Lh; Wed, 21 Aug 2019 21:42:28 +0000
+Received: from tunnel231050-pt.tunnel.tserv1.bud1.ipv6.he.net
+ ([2001:470:1f1a:93::2] helo=trabant.uid0.hu)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0VnS-0003Lr-8T
- for openwrt-devel@lists.openwrt.org; Wed, 21 Aug 2019 18:57:27 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 10so3179916wmp.3
- for <openwrt-devel@lists.openwrt.org>; Wed, 21 Aug 2019 11:57:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=xiVPXZ82d/sFvosOVpYOnD7JmgqWSEUrspbBMNVmHa0=;
- b=daSi/qZOkfN1PwigdZexIDDJP/INzwcD3P1a5dEvr51fK1jlrMP6EYIQaTk4HsUBNj
- /gPcITYEpJ6QoVDdlR+b9bzxsrw1A48lqrLsdJbLvHQ9Oc3c8e+je8QAE17xkAxEpbHD
- lxEJQdM8TVpNVS9OanHmK/G67Ib9u9Y8H03h9u1T2nPm0CyltpJmEM7X9hLjj4IVBZly
- VnMVgral7PhN4YfOutlHlh/3IF2DeqW6DcDyandvg1tBxXbm8qzpasBGKU0EpwnrKtRP
- CLEVmNOgefQg6frNA3c2hYyv1E47yxS2/vrMCfSyakAgX5joefxA0lGETXnoH++5BYI+
- EcYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=xiVPXZ82d/sFvosOVpYOnD7JmgqWSEUrspbBMNVmHa0=;
- b=Inc/QDhrO44t15ihupUk11mxQ4L1We5YDXySDzxbOCuQoRjs7/71dE5W0b2JBFFruC
- Zy+pELbllKqnncI0pNw+M3q6AYF48OrRkk6VhcgLYqCkKZztKt5qdjYs3EakT7BzmIoK
- 6WwFpOtzEh8mZTpb0iXxgy2Xuj9zbkeSSNi762L6QhtX0DoMpDcQwxj0OFq9Kmsvr7M/
- Lzfa7p+DEetJMA5BG8JYvcpI0zWRVW5vGY9Ce0lSJElhjPMcAScVxH7/T4UAwgAqRSXw
- lBOGfFgEbSJ2VcNQ92f1fdLVs9Hzn2fEYXhVEn10Bcj7pV4fwLQb+FN5pSnyRY/FqZvX
- 8+2g==
-X-Gm-Message-State: APjAAAXIJwCGaYII56FhSOYInl6kmPYS9xqFe3oNx7x7/EHSPNCTKDet
- fhC+5moo0cHn3DgkJyc7w6FCtiKv
-X-Google-Smtp-Source: APXvYqy+IIHOW9W2msEnX/oN8/3sgY3Cu9cwTyORoKJVVlmdJ6NxuEwywUoMPAoCdGcoQ6Ndji4QfA==
-X-Received: by 2002:a7b:c3d0:: with SMTP id t16mr1803792wmj.25.1566413844763; 
- Wed, 21 Aug 2019 11:57:24 -0700 (PDT)
-Received: from tool.localnet (180.151.117.91.dynamic.reverse-mundo-r.com.
- [91.117.151.180])
- by smtp.googlemail.com with ESMTPSA id l62sm871575wml.13.2019.08.21.11.57.23
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 21 Aug 2019 11:57:24 -0700 (PDT)
-From: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 21 Aug 2019 20:57:22 +0200
-Message-ID: <2306678.c9ocJjGFzm@tool>
+ id 1i0YMw-0001cV-OV
+ for openwrt-devel@lists.openwrt.org; Wed, 21 Aug 2019 21:42:22 +0000
+Received: from [178.48.144.69] (port=61646 helo=[10.1.1.1])
+ by trabant.uid0.hu with esmtpsa (Exim 4.89 #1 (Debian))
+ id 1i0YMq-0000En-Ge
+ from <wigyori@uid0.hu>; Wed, 21 Aug 2019 23:42:08 +0200
+To: Michael Heimpold <mhei@heimpold.de>
+References: <20190731214247.11683-1-mhei@heimpold.de>
+ <2371323.9LdJS25nyt@kerker>
+From: Zoltan HERPAI <wigyori@uid0.hu>
+Message-ID: <01a39139-52c4-bd9f-4694-2a2eb237f888@uid0.hu>
+Date: Wed, 21 Aug 2019 23:42:06 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <2371323.9LdJS25nyt@kerker>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_115726_328132_41576B68 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190821_144214_954386_400FE851 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32b listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dgcbueu[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v2] brcm63xx: R5010UNv2: fix flash
- partitions for 16MB flash
+Subject: Re: [OpenWrt-Devel] [PATCH] uboot-mxs: bump to v2019.07
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,48 +61,104 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The router Nucom R5010UN v2 has the partitions defined for a 8MB flash, but the 
-flash chip is 16MB size. Fix it
+Hi Michael,
 
-Fixes: 474cde61234c ("brcm63xx: probe SPI flash through DT")
----
-Changes in v2: 
-- the mail client truncated the patch header, fixed
+On 8/21/2019 20:34, Michael Heimpold wrote:
+> Hi wigyori,
+>
+> Am Mittwoch, 31. Juli 2019, 23:42:45 CEST schrieb Michael Heimpold:
+>> Also update the U-Boot BSP patch for I2SE Duckbill devices.
+>>
+>> Run tested on I2SE Duckbill and Olimex OLinuXino Maxi boards.
+> any objections on this patch?
+No objections on either patch, I did a test build for my Olinuxino Maxi, 
+but haven't got to push to trunk - will do in the next few days.
 
- target/linux/brcm63xx/dts/r5010unv2.dts | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+Thanks,
+Zoltan H
 
-diff --git a/target/linux/brcm63xx/dts/r5010unv2.dts b/target/linux/brcm63xx/dts/r5010unv2.dts
-index a782126300..89d9b763bd 100644
---- a/target/linux/brcm63xx/dts/r5010unv2.dts
-+++ b/target/linux/brcm63xx/dts/r5010unv2.dts
-@@ -95,13 +95,13 @@
- 			};
- 
- 			linux@10000 {
--				reg = <0x010000 0x7e0000>;
-+				reg = <0x010000 0xfe0000>;
- 				label = "linux";
- 				compatible = "brcm,bcm963xx-imagetag";
- 			};
- 
--			nvram@7f0000 {
--				reg = <0x7f0000 0x010000>;
-+			nvram@ff0000 {
-+				reg = <0xff0000 0x010000>;
- 				label = "nvram";
- 			};
- 		};
--- 
-2.23.0
-
-
-
+>> Signed-off-by: Michael Heimpold <mhei@heimpold.de>
+>> ---
+>>   package/boot/uboot-mxs/Makefile                     |  4 ++--
+>>   .../uboot-mxs/patches/001-add-i2se-duckbill.patch   | 13 +++++++------
+>>   2 files changed, 9 insertions(+), 8 deletions(-)
+>>
+>> diff --git a/package/boot/uboot-mxs/Makefile
+>> b/package/boot/uboot-mxs/Makefile index c4485f5b3d..da98496895 100644
+>> --- a/package/boot/uboot-mxs/Makefile
+>> +++ b/package/boot/uboot-mxs/Makefile
+>> @@ -8,10 +8,10 @@
+>>   include $(TOPDIR)/rules.mk
+>>   include $(INCLUDE_DIR)/kernel.mk
+>>
+>> -PKG_VERSION:=2019.01
+>> +PKG_VERSION:=2019.07
+>>   PKG_RELEASE:=1
+>>
+>> -PKG_HASH:=50bd7e5a466ab828914d080d5f6a432345b500e8fba1ad3b7b61e95e60d51c22
+>> +PKG_HASH:=bff4fa77e8da17521c030ca4c5b947a056c1b1be4d3e6ee8637020b8d50251d0
+>>
+>>   include $(INCLUDE_DIR)/u-boot.mk
+>>   include $(INCLUDE_DIR)/package.mk
+>> diff --git a/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
+>> b/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch index
+>> 9acb6a508d..e0ac283827 100644
+>> --- a/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
+>> +++ b/package/boot/uboot-mxs/patches/001-add-i2se-duckbill.patch
+>> @@ -1,4 +1,4 @@
+>> -From 6af0148a38b23ba761905f98a7211fab986033ce Mon Sep 17 00:00:00 2001
+>> +From 85d7689cbd3a8162153f445a0656d57122c58d90 Mon Sep 17 00:00:00 2001
+>>   From: Michael Heimpold <mhei@heimpold.de>
+>>   Date: Thu, 13 Sep 2018 21:40:19 +0200
+>>   Subject: [PATCH] arm: mxs: add support for I2SE's Duckbill boards
+>> @@ -32,9 +32,9 @@ Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
+>>    board/i2se/duckbill/Makefile    |  10 ++
+>>    board/i2se/duckbill/duckbill.c  | 186 ++++++++++++++++++++++++++++++++
+>>    board/i2se/duckbill/iomux.c     | 156 +++++++++++++++++++++++++++
+>> - configs/duckbill_defconfig      |  38 +++++++
+>> + configs/duckbill_defconfig      |  39 +++++++
+>>    include/configs/duckbill.h      | 179 ++++++++++++++++++++++++++++++
+>> - 8 files changed, 595 insertions(+)
+>> + 8 files changed, 596 insertions(+)
+>>    create mode 100644 board/i2se/duckbill/Kconfig
+>>    create mode 100644 board/i2se/duckbill/MAINTAINERS
+>>    create mode 100644 board/i2se/duckbill/Makefile
+>> @@ -471,10 +471,10 @@ index 0000000000..1db3c52c34
+>>   +}
+>>   diff --git a/configs/duckbill_defconfig b/configs/duckbill_defconfig
+>>   new file mode 100644
+>> -index 0000000000..f92a67d53d
+>> +index 0000000000..9dea20a87d
+>>   --- /dev/null
+>>   +++ b/configs/duckbill_defconfig
+>> -@@ -0,0 +1,38 @@
+>> +@@ -0,0 +1,39 @@
+>>   +CONFIG_ARM=y
+>>   +CONFIG_ARCH_MX28=y
+>>   +CONFIG_SYS_TEXT_BASE=0x40002000
+>> @@ -483,14 +483,15 @@ index 0000000000..f92a67d53d
+>>   +CONFIG_SPL_LIBGENERIC_SUPPORT=y
+>>   +CONFIG_TARGET_DUCKBILL=y
+>>   +CONFIG_SPL_SERIAL_SUPPORT=y
+>> -+CONFIG_SPL=y
+>>   +CONFIG_NR_DRAM_BANKS=1
+>> ++CONFIG_SPL=y
+>>   +CONFIG_BOOTDELAY=1
+>>   +CONFIG_SYS_CONSOLE_IS_IN_ENV=y
+>>   +CONFIG_VERSION_VARIABLE=y
+>>   +# CONFIG_DISPLAY_BOARDINFO is not set
+>>   +CONFIG_ARCH_MISC_INIT=y
+>>   +# CONFIG_SPL_FRAMEWORK is not set
+>> ++CONFIG_SPL_TEXT_BASE=0x00001000
+>>   +CONFIG_HUSH_PARSER=y
+>>   +CONFIG_CMD_BOOTZ=y
+>>   +# CONFIG_CMD_ELF is not set
 
 
 _______________________________________________

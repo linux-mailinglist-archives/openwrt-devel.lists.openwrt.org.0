@@ -2,61 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E2DE99E6D
-	for <lists+openwrt-devel@lfdr.de>; Thu, 22 Aug 2019 20:07:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5824999E82
+	for <lists+openwrt-devel@lfdr.de>; Thu, 22 Aug 2019 20:16:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=kaVpotVshWoHidWNXBfsxEwq9JbT1ck0grjQPQwNqH0=; b=uOyc1XcNcWqt+A9YfWvnx0Mw6Q
-	2GCeODiZ/Ul8sjrtPi7opzk68MwUon5hUDzLr0eiw/vcH9gKW7ubZqvfzhyQ3as4kOv+rLL5eXv1t
-	3hpfxtsS+1/g8wkDsntLVBamfjiyRHHU7A0BEMe05n2MhbB5Wlxpc0p0qeKWa5+ZejNDWM50fopSf
-	956BYI68mD+cmodoNhJ2gw7RnDKSCdLC1OBSjQo1VP60JdA3efC61FSpcy45jeRL+RtKTmJzCCXzt
-	Gpngykrw4Qn60GaLeJAzsTaLqkF4e3FzdWD/sHjSvLjC7UVAZQWAt8dTl4CC2mAZVQ5+FXJ/zqyNR
-	zmPW135A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hMfV4BZD/LiUTuVc1GHoPEXHPd6Rms0YAQc4zagtKAA=; b=K21nwYccJoplnFynVruNVM8Zj
+	NWGG3Lzms5VnwVszBgjY7NwtbpEXH7ZLlFHRVwCJtq3qEBp/urQk+3856flc/9cpa+L+T6+RjL17c
+	yd5JmPm2ladpOSQofoS2ykNrhxeLsCBkTwJTHZOJUpF+VOLme+j0xWRFDJIw7RaUqVVsgWFt+5aqO
+	li14QnzLFOoejBlZQH72ns0zQVGFV4l9M1NS9WZGcPGuPaSDnxQdk+Skyx/HdwGCj6veQcWFC+aqK
+	R2GTM68XdcAOGUR/W4X5BdZ3lsRuzSdJlbNACZnD+yD+f0WeoQntc5ejTi+snqpuXiNVpBZPNhh/N
+	jM59ngXPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0rU6-0000Si-93; Thu, 22 Aug 2019 18:06:54 +0000
-Received: from forward103j.mail.yandex.net ([2a02:6b8:0:801:2::106])
+	id 1i0rcv-00049K-Nc; Thu, 22 Aug 2019 18:16:01 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0rTt-0000SI-Si
- for openwrt-devel@lists.openwrt.org; Thu, 22 Aug 2019 18:06:46 +0000
-Received: from mxback10g.mail.yandex.net (mxback10g.mail.yandex.net
- [IPv6:2a02:6b8:0:1472:2741:0:8b7:171])
- by forward103j.mail.yandex.net (Yandex) with ESMTP id B6B4B674027D;
- Thu, 22 Aug 2019 21:06:31 +0300 (MSK)
-Received: from smtp2o.mail.yandex.net (smtp2o.mail.yandex.net
- [2a02:6b8:0:1a2d::26])
- by mxback10g.mail.yandex.net (nwsmtp/Yandex) with ESMTP id PCEjy7e3sv-6VqiBHRY;
- Thu, 22 Aug 2019 21:06:31 +0300
-Received: by smtp2o.mail.yandex.net (nwsmtp/Yandex) with ESMTPSA id
- bfEi8x7UQf-6T9O55FG; Thu, 22 Aug 2019 21:06:30 +0300
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (Client certificate not present)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Yaroslav Petrov <info@lank.me>
-Message-ID: <068afc56-4da4-36af-0b11-ece86740d428@lank.me>
-Date: Thu, 22 Aug 2019 20:06:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:69.0) Gecko/20100101
- Thunderbird/69.0
+ id 1i0rcl-00048z-Go
+ for openwrt-devel@lists.openwrt.org; Thu, 22 Aug 2019 18:15:54 +0000
+Received: by mail-ot1-x344.google.com with SMTP id o101so6316984ota.8
+ for <openwrt-devel@lists.openwrt.org>; Thu, 22 Aug 2019 11:15:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=iS2fuHBm2bhGqM0uM2XMwX8LP6L+OWMIUwEl0XNf1cw=;
+ b=AZPOoQwhFb6pQrdO0cTTMCOUzdBPH+UVHkMetrZ9pZfzWj/LP3dV0g8R96VgI23hNL
+ Slvv/hDF+gcJuYqcT5vZDFzvd4kgkDkjAcUUDP48w/u4zz40HIaanzXgmjCkglELPbrC
+ QBTY6e2mk+1qmBEypSIqsegQixB3m4fU2l7VehmvFuWPLpdB0a3uaY7WFcAGvt72nW3V
+ nC4gwEY1qAHDD+ecRL+7p+NAlQ9lgz8DiMyt4pyrxqIIfPMC++A/syUIHvdMenOM8KRM
+ ABe69wH/7zVg1xtWQyTgx+wJXUtgtrk6laf9wNtNwsZUMw2+MqpGmGkXLhDKgpmaK0oI
+ RE6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=iS2fuHBm2bhGqM0uM2XMwX8LP6L+OWMIUwEl0XNf1cw=;
+ b=Qhr35RPXC/KtSbxd3hyJzmlK5MamdeRr3kGZIN6YGsjWqSdVjc/OUpvJbSLTRVI1mA
+ 9cjZ64WroVa7hvYCnwZF7H6Sl2U/VQK0RYgfH2OZ8RfUNJVH6ydmnI6+NvHbqj+XoERA
+ HXKl+MrJbSlqL4dgVVXKyn5Qrb71X6lYMFxYB7/7eekF/bJtLbxOUo63TumD/+FcgxPp
+ zzqXlVI9TtZ7xwsXn8Y4/ebnkIA3+INymhx20J3ds1fJaxZR4byVFa8LQ2JU20eKsLjX
+ +Myfr1432x6kfV/mo27auquMWeOpPWfUSqc+Ib7lQq5y9Oyaak3sjMnk1pYZRM3E6g3A
+ BfPw==
+X-Gm-Message-State: APjAAAUsr8U0Q6Ey6kLH3ztQA6OXpnm9mRzEmAPgFgewG2Pzy84qdswf
+ IDkhTq/QHVXZh2P5MmhFZ3SBQsF5KFAUkW3C4ds=
+X-Google-Smtp-Source: APXvYqzb73rMahx+LmxBAPah2jw+S1LkE1dTLaCFcR3knBmdizQYE8q+3ZgXorv0ImNihwQ+8jh7COqdyagKY/2SyPo=
+X-Received: by 2002:a9d:624b:: with SMTP id i11mr787372otk.322.1566497749999; 
+ Thu, 22 Aug 2019 11:15:49 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+References: <068afc56-4da4-36af-0b11-ece86740d428@lank.me>
+In-Reply-To: <068afc56-4da4-36af-0b11-ece86740d428@lank.me>
+From: =?UTF-8?B?0JrQuNGA0LjQu9C7INCb0YPQutC+0L3QuNC9?= <klukonin@gmail.com>
+Date: Thu, 22 Aug 2019 23:15:22 +0500
+Message-ID: <CALYz8yqOMcmGpJ_L9fUSeHJD-W6GL-RESKwGEDZwpn8Oe0SLcQ@mail.gmail.com>
+To: Yaroslav Petrov <info@lank.me>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_110642_287931_EAB33A86 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190822_111551_569654_1E0CCD1E 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:6b8:0:801:2:0:0:106 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (klukonin[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0,
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+Subject: Re: [OpenWrt-Devel] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0,
  skipped old beacon
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -69,235 +94,775 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: greearb@candelatech.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Ben Greear <greearb@candelatech.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============9173607127117780539=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVsbG8gYWxsLAoKCkkgdXNlIE9wZW5XcnQgMTkuMDcgb24gQlQgSG9tZSBIdWIgNUEsIGJ1dCBp
-dCBzZWFtcyBhdGgxMGstY3QgZHJpdmVyIGlzIApyZWFsbHkgdW5zdGFibGUgKGl0IHdvcmsgb25s
-eSBmaXJzdCAyLTEwIG1pbnV0ZXMpLiBUaGUgYXRoMTBrIGRyaXZlciAKd29yayB3aXRob3V0IHBy
-b2JsZW0uIENhbiBzb21lYm9keSBoZWxwIG1lIHdpdGggdGhpcyBpc3N1ZSA/CgoKLS0tLSBPcGVu
-V3J0IDE5LjA3LVNOQVBTSE9ULCByMTAzMjMtN2QzMDAzMjZlZSAtLS0tCgpkbWVzZzoKLi4uClvC
-oMKgIDE2LjUyMzY2OV0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IHFjYTk4OHggaHcyLjAgdGFy
-Z2V0IDB4NDEwMDAxNmMgCmNoaXBfaWQgMHgwNDMyMDJmZiBzdWIgMDAwMDowMDAwClvCoMKgIDE2
-LjUzMTU4NV0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IGtjb25maWcgZGVidWcgMCBkZWJ1Z2Zz
-IDEgCnRyYWNpbmcgMCBkZnMgMSB0ZXN0bW9kZSAwClvCoMKgIDE2LjU0ODUyOF0gYXRoMTBrX3Bj
-aSAwMDAwOjAyOjAwLjA6IGZpcm13YXJlIHZlciAKMTAuMS1jdC04eC1fX2ZXLTAyMi1mZGRkMDQx
-YiBhcGkgMiBmZWF0dXJlcyAKd21pLTEwLngsaGFzLXdtaS1tZ210LXR4LGFkYXB0aXZlLWNjYSxt
-ZnAsdHhzdGF0dXMtbm9hY2ssd21pLTEwLngtQ1QscmF0ZW1hc2stQ1QsdHhyYXRlLUNULGdldC10
-ZW1wLUNULHR4LXJjLUNULGN1c3Qtc3RhdHMtQ1QscmV0cnktZ3QyLUNULHR4cmF0ZTItQ1QsYmVh
-Y29uLWNiLUNULHdtaS1ibG9jay1hY2stQ1QgCmNyYzMyIDAxZDFmMTNlClvCoMKgIDE2LjYwMDUy
-N10gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IERpcmVjdCBmaXJtd2FyZSBsb2FkIGZvciAKYXRo
-MTBrL1FDQTk4OFgvaHcyLjAvYm9hcmQtMi5iaW4gZmFpbGVkIHdpdGggZXJyb3IgLTIKW8KgwqAg
-MTYuNjA5NjU0XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogRmFsbGluZyBiYWNrIHRvIHVzZXIg
-aGVscGVyClvCoMKgIDE2Ljg2NTkyNl0gZmlybXdhcmUgYXRoMTBrIVFDQTk4OFghaHcyLjAhYm9h
-cmQtMi5iaW46IApmaXJtd2FyZV9sb2FkaW5nX3N0b3JlOiBtYXAgcGFnZXMgZmFpbGVkClvCoMKg
-IDE2Ljg3NDE3Nl0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IGJvYXJkX2ZpbGUgYXBpIDEgYm1p
-X2lkIE4vQSAKY3JjMzIgYmViYzdjMDgKW8KgwqAgMTcuNzU0NTk3XSBhdGgxMGtfcGNpIDAwMDA6
-MDI6MDAuMDogMTAuMSB3bWkgaW5pdDogdmRldnM6IDE2IHBlZXJzOiAKMTI3wqAgdGlkOiAyNTYK
-W8KgwqAgMTcuNzY5OTEwXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogd21pIHByaW50ICdQIDEy
-OCBWIDggVCA0MTAnClvCoMKgIDE3Ljc3NDkwOF0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IHdt
-aSBwcmludCAnbXNkdS1kZXNjOiAxNDI0wqAgCnN3LWNyeXB0OiAwIGN0LXN0YTogMCcKW8KgwqAg
-MTcuNzgyNTQ4XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogd21pIHByaW50ICdhbGxvYyByZW06
-IDI0NjQ4IAppcmFtOiAyNjE2OCcKW8KgwqAgMTcuODQ2NzAwXSBhdGgxMGtfcGNpIDAwMDA6MDI6
-MDAuMDogaHR0LXZlciAyLjEgd21pLW9wIDIgaHR0LW9wIDIgCmNhbCBmaWxlIG1heC1zdGEgMTI4
-IHJhdyAwIGh3Y3J5cHRvIDEKW8KgwqAgMTcuODU4MTcyXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAu
-MDogTk9URTrCoCBGaXJtd2FyZSBEQkdMT0cgb3V0cHV0IApkaXNhYmxlZCBpbiBkZWJ1Z19tYXNr
-OiAweDEwMDAwMDAwCi4uLgpbIDkzOTcuMDUyMzY2XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDog
-U1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTcuMTU0Nzcz
-XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBl
-ZCAKb2xkIGJlYWNvbgpbIDkzOTcuMjU3MTc0XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dC
-QSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTcuMzU5NTk2XSBh
-dGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAK
-b2xkIGJlYWNvbgpbIDkzOTcuNDYxOTkyXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBv
-dmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTcuNTY0Mzk2XSBhdGgx
-MGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xk
-IGJlYWNvbgpbIDkzOTcuNjY2ODA1XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVy
-cnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTcuNzY5MjE0XSBhdGgxMGtf
-cGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJl
-YWNvbgpbIDkzOTcuODcxNjQ2XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVu
-IG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTcuOTc0MDM2XSBhdGgxMGtfcGNp
-IDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNv
-bgpbIDkzOTguMDc2NDQ1XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9u
-IHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTguMTc4ODQ0XSBhdGgxMGtfcGNpIDAw
-MDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpb
-IDkzOTguMjgxMjU5XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZk
-ZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTguMzgzNjc1XSBhdGgxMGtfcGNpIDAwMDA6
-MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkz
-OTguNDg2MDcxXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYg
-MCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTguNTg4NDc4XSBhdGgxMGtfcGNpIDAwMDA6MDI6
-MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTgu
-NjkwODgzXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwg
-c2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTguNzkzMzAxXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAu
-MDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTguODk1
-NzA4XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tp
-cHBlZCAKb2xkIGJlYWNvbgpbIDkzOTguOTk4MTEyXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDog
-U1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTkuMTAwNTEy
-XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBl
-ZCAKb2xkIGJlYWNvbgpbIDkzOTkuMjAyOTE4XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dC
-QSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTkuMzA1MzI4XSBh
-dGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAK
-b2xkIGJlYWNvbgpbIDkzOTkuNDA3NzQwXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBv
-dmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTkuNTEwMTQ5XSBhdGgx
-MGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xk
-IGJlYWNvbgpbIDkzOTkuNjEyNTQzXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVy
-cnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTkuNzE0OTU5XSBhdGgxMGtf
-cGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJl
-YWNvbgpbIDkzOTkuODE3MzY2XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVu
-IG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDkzOTkuOTE5NzgwXSBhdGgxMGtfcGNp
-IDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNv
-bgpbIDk0MDAuMDIyMTc3XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9u
-IHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDAuMTI0NTkwXSBhdGgxMGtfcGNpIDAw
-MDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpb
-IDk0MDAuMTg0NDE3XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogd21pIGNvbW1hbmQgMzY4OTMg
-dGltZW91dCwgCnJlc3RhcnRpbmcgaGFyZHdhcmUKWyA5NDAwLjE5MTA5Nl0gYXRoMTBrX3BjaSAw
-MDAwOjAyOjAwLjA6IGZhaWxlZCB0byBkZWxldGUgcGVlciAKOTk6OTk6OTk6OTk6OTk6OTkgZm9y
-IHZkZXYgMDogLTExClsgOTQwMC4xOTk1MjddIGF0aDEwa19wY2kgMDAwMDowMjowMC4wOiBmb3Vu
-ZCBzdGEgcGVlciA5OTo5OTo5OTo5OTo5OTo5OSAKKHB0ciA4Njk4YTYwMCBpZCAzNjEpIGVudHJ5
-IG9uIHZkZXYgMCBhZnRlciBpdCB3YXMgc3VwcG9zZWRseSByZW1vdmVkClsgOTQwMC4yMTIxMDld
-IC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQpbIDk0MDAuMjE2NzkxXSBXQVJO
-SU5HOiBDUFU6IDEgUElEOiAzNTk5IGF0IApiYWNrcG9ydHMtNC4xOS42Ni0xL25ldC9tYWM4MDIx
-MS9zdGFfaW5mby5jOjEwMDQgCnN0YV9zZXRfc2luZm8rMHhjZGMvMHhkODggW21hYzgwMjExXQpb
-IDk0MDAuMjI3ODI1XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZk
-ZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDAuMjM1MTUzXSBNb2R1bGVzIGxpbmtlZCBp
-bjogYXRoOWsgYXRoOWtfY29tbW9uIGF0aDlrX2h3IGF0aDEwa19wY2kgCmF0aDEwa19jb3JlIGF0
-aCBwcHBvZSBuZl9jb25udHJhY2tfaXB2NiBtYWM4MDIxMSBpcHRhYmxlX25hdCBpcHRfUkVKRUNU
-IAppcHRfTUFTUVVFUkFERSBjZmc4MDIxMSB4dF90aW1lIHh0X3RjcHVkcCB4dF9zdGF0ZSB4dF9u
-YXQgeHRfbXVsdGlwb3J0IAp4dF9tYXJrIHh0X21hYyB4dF9saW1pdCB4dF9jb25udHJhY2sgeHRf
-Y29tbWVudCB4dF9UQ1BNU1MgeHRfUkVESVJFQ1QgCnh0X0xPRyB4dF9GTE9XT0ZGTE9BRCB3aXJl
-Z3VhcmQgdW1zX3VzYmF0IHVtc19zZGRyNTUgdW1zX3NkZHIwOSAKdW1zX2thcm1hIHVtc19qdW1w
-c2hvdCB1bXNfaXNkMjAwIHVtc19mcmVlY29tIHVtc19kYXRhZmFiIHVtc19jeXByZXNzIAp1bXNf
-YWxhdWRhIHBwcG94IHBwcF9hc3luYyBvd2xfbG9hZGVyIG5mX3JlamVjdF9pcHY0IG5mX25hdF9y
-ZWRpcmVjdCAKbmZfbmF0X21hc3F1ZXJhZGVfaXB2NCBuZl9jb25udHJhY2tfaXB2NCBuZl9uYXRf
-aXB2NCBuZl9uYXQgbmZfbG9nX2lwdjQgCm5mX2Zsb3dfdGFibGVfaHcgbmZfZmxvd190YWJsZSBu
-Zl9kZWZyYWdfaXB2NiBuZl9kZWZyYWdfaXB2NCAKbmZfY29ubnRyYWNrX3J0Y2FjaGUgbmZfY29u
-bnRyYWNrIGx0cV9kZXVfdnI5IGlwdGFibGVfbWFuZ2xlIAppcHRhYmxlX2ZpbHRlciBpcF90YWJs
-ZXMgY3JjX2NjaXR0IGNvbXBhdCBkcnZfZHNsX2NwZV9hcGkgZHJ2X21laV9jcGUgCmxlZHRyaWdf
-b25lc2hvdCBsZWR0cmlnX2dwaW8geHRfc2V0IGlwX3NldF9saXN0X3NldCBpcF9zZXRfaGFzaF9u
-ZXRwb3J0bmV0ClsgOTQwMC4zMDc5OTFdwqAgaXBfc2V0X2hhc2hfbmV0cG9ydCBpcF9zZXRfaGFz
-aF9uZXRuZXQgCmlwX3NldF9oYXNoX25ldGlmYWNlIGlwX3NldF9oYXNoX25ldCBpcF9zZXRfaGFz
-aF9tYWMgCmlwX3NldF9oYXNoX2lwcG9ydG5ldCBpcF9zZXRfaGFzaF9pcHBvcnRpcCBpcF9zZXRf
-aGFzaF9pcHBvcnQgCmlwX3NldF9oYXNoX2lwbWFyayBpcF9zZXRfaGFzaF9pcCBpcF9zZXRfYml0
-bWFwX3BvcnQgaXBfc2V0X2JpdG1hcF9pcG1hYyAKaXBfc2V0X2JpdG1hcF9pcCBpcF9zZXQgbmZu
-ZXRsaW5rIG5mX2xvZ19pcHY2IG5mX2xvZ19jb21tb24gCmlwNnRhYmxlX21hbmdsZSBpcDZ0YWJs
-ZV9maWx0ZXIgaXA2X3RhYmxlcyBpcDZ0X1JFSkVDVCB4X3RhYmxlcyAKbmZfcmVqZWN0X2lwdjYg
-cHBwb2F0bSBwcHBfZ2VuZXJpYyBzbGhjIGlwNl91ZHBfdHVubmVsIHVkcF90dW5uZWwgYnIyNjg0
-IAphdG0gbmxzX3V0ZjggZHJ2X2lmeG9zIHVzYl9zdG9yYWdlIGR3YzIgbGVkdHJpZ190cmFuc2ll
-bnQgc2RfbW9kIApzY3NpX21vZCBncGlvX2J1dHRvbl9ob3RwbHVnIGV4dDQgbWJjYWNoZSBqYmQy
-IGNyYzMyY19nZW5lcmljClsgOTQwMC4zNTY3MjJdIGF0aDEwa19wY2kgMDAwMDowMjowMC4wOiBT
-V0JBIG92ZXJydW4gb24gdmRldiAwLCBza2lwcGVkIApvbGQgYmVhY29uClsgOTQwMC4zNjQzMDNd
-IENQVTogMSBQSUQ6IDM1OTkgQ29tbTogaG9zdGFwZCBOb3QgdGFpbnRlZCA0LjE0LjEzOCAjMApb
-IDk0MDAuMzcwMDI0XSBTdGFjayA6IDAwMDAwMDAwIDg3N2UzMDAwIDAwMDAwMDI4IDgwMDgxNWE4
-IDgwNjcwMDAwIAo4MDYxNTkwYyAwMDAwMDAwMCAwMDAwMDAwMApbIDk0MDAuMzc4Mzc2XcKgwqDC
-oMKgwqDCoMKgwqAgODA1ZGJkYzQgODUxZDNhZTQgODdkYTU5MmMgODA2NTA2YTcgODA1ZDZjNTQg
-CjAwMDAwMDAxIDg1MWQzYTg4IDc0YWIzYzk3ClsgOTQwMC4zODY3MzNdwqDCoMKgwqDCoMKgwqDC
-oCAwMDAwMDAwMCAwMDAwMDAwMCA4MDdiMDAwMCAwMDAxMDAwMCA4MDdhODhiMCAKMDAwMDAwMDAg
-MDAwMDAwMDcgMDAwMDAwMDAKWyA5NDAwLjM5NTA4N13CoMKgwqDCoMKgwqDCoMKgIDAwMDAwMWQz
-IGQ1MDAwMDAwIDAwMDAwMWQyIDAwMDAwMDAwIDgwMDAwMDAwIAo4MDY3MDAwMCAwMDAwMDAwMCAw
-MDAwMDAwOQpbIDk0MDAuNDAzNDQzXcKgwqDCoMKgwqDCoMKgwqAgODY4MDhlOWMgMDAwMDAzZWMg
-ODUxZDNjYWMgODc3ZTMwMDAgMDAwMDAwMDEgCjAwMDAwMDAwIDAwMDAwMDA0IDgwN2EwMDA0Clsg
-OTQwMC40MTE3OTldwqDCoMKgwqDCoMKgwqDCoCAuLi4KWyA5NDAwLjQxNDI0MF0gQ2FsbCBUcmFj
-ZToKWyA5NDAwLjQxNjY5M10gWzw4MDAxMTY2ND5dIHNob3dfc3RhY2srMHg1OC8weDEwMApbIDk0
-MDAuNDIxMTU1XSBbPDgwNGM4ODI0Pl0gZHVtcF9zdGFjaysweGU0LzB4MTIwClsgOTQwMC40MjU1
-ODhdIFs8ODAwMzcwMTA+XSBfX3dhcm4rMHhlMC8weDE4MApbIDk0MDAuNDI5NjczXSBbPDgwMDM3
-MTQwPl0gd2Fybl9zbG93cGF0aF9udWxsKzB4MWMvMHgyYwpbIDk0MDAuNDM0ODMyXSBbPDg2ODA4
-ZTljPl0gc3RhX3NldF9zaW5mbysweGNkYy8weGQ4OCBbbWFjODAyMTFdClsgOTQwMC40NDA5NzRd
-IGF0aDEwa19wY2kgMDAwMDowMjowMC4wOiBTV0JBIG92ZXJydW4gb24gdmRldiAwLCBza2lwcGVk
-IApvbGQgYmVhY29uClsgOTQwMC40NDg2NThdIC0tLVsgZW5kIHRyYWNlIDIxNGFhYTQ5YmQ3Zjlk
-ZTcgXS0tLQpbIDk0MDAuNTM0MjI4XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVy
-cnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDAuNjM2NjIwXSBhdGgxMGtf
-cGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJl
-YWNvbgpbIDk0MDAuNzM5MDMzXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVu
-IG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDAuODQxNDMyXSBhdGgxMGtfcGNp
-IDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNv
-bgpbIDk0MDAuOTQzODQ1XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9u
-IHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuMDQ2MjU3XSBhdGgxMGtfcGNpIDAw
-MDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpb
-IDk0MDEuMTQ4NjYwXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZk
-ZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuMjUxMDc5XSBhdGgxMGtfcGNpIDAwMDA6
-MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0
-MDEuMzUzNDc1XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYg
-MCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuNDU1ODg1XSBhdGgxMGtfcGNpIDAwMDA6MDI6
-MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEu
-NTU4MjgxXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwg
-c2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuNjYwNjg1XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAu
-MDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuNzYz
-MDkyXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tp
-cHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuODY1NTA2XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDog
-U1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDEuOTY3OTE2
-XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBl
-ZCAKb2xkIGJlYWNvbgpbIDk0MDIuMDcwMzE3XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dC
-QSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDIuMTcyNzI2XSBh
-dGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAK
-b2xkIGJlYWNvbgpbIDk0MDIuMjc1MTMwXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBv
-dmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDIuMzc3NTM4XSBhdGgx
-MGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xk
-IGJlYWNvbgpbIDk0MDIuNDc5OTQwXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVy
-cnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDIuNTgyMzQ5XSBhdGgxMGtf
-cGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJl
-YWNvbgpbIDk0MDIuNjg0NzU2XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVu
-IG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDIuNzg3MTY3XSBhdGgxMGtfcGNp
-IDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNv
-bgpbIDk0MDIuODg5NTY5XSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9u
-IHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDIuOTkxOTY5XSBhdGgxMGtfcGNpIDAw
-MDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZkZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpb
-IDk0MDMuMDk0MzcyXSBhdGgxMGtfcGNpIDAwMDA6MDI6MDAuMDogU1dCQSBvdmVycnVuIG9uIHZk
-ZXYgMCwgc2tpcHBlZCAKb2xkIGJlYWNvbgpbIDk0MDMuMTg5NzE4XSBhdGgxMGtfcGNpIDAwMDA6
-MDI6MDAuMDogcmVtb3ZpbmcgcGVlciwgY2xlYW51cC1hbGwsIApkZWxldGluZzogcGVlciA4Njk4
-YjYwMCB2ZGV2OiAwIGFkZHI6IDU0OjY0OjAwOjAwOjAwOjAwClsgOTQwMy4zMDY3MzBdIGllZWU4
-MDIxMSBwaHkwOiBIYXJkd2FyZSByZXN0YXJ0IHdhcyByZXF1ZXN0ZWQKWyA5NDAzLjMxMDk5Ml0g
-YXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IGZhaWxlZCB0byBzZXQgY3RzIHByb3RlY3Rpb24gZm9y
-IAp2ZGV2IDA6IC0xNDMKWyA5NDAzLjMxODUwM10gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IGZh
-aWxlZCB0byBzZXQgcHJlYW1ibGUgZm9yIHZkZXYgCjA6IC0xNDMKWyA5NDAzLjMyNTU0Ml0gYXRo
-MTBrX3BjaSAwMDAwOjAyOjAwLjA6IGZhaWxlZCB0byBzZXQgbWdtdCB0eCByYXRlIC0xNDMKWyA5
-NDA0LjMzNjc3Ml0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IDEwLjEgd21pIGluaXQ6IHZkZXZz
-OiAxNiBwZWVyczogCjEyN8KgIHRpZDogMjU2ClsgOTQwNC4zNTIxMjJdIGF0aDEwa19wY2kgMDAw
-MDowMjowMC4wOiB3bWkgcHJpbnQgJ1AgMTI4IFYgOCBUIDQxMCcKWyA5NDA0LjM1NjgwMF0gYXRo
-MTBrX3BjaSAwMDAwOjAyOjAwLjA6IHdtaSBwcmludCAnbXNkdS1kZXNjOiAxNDI0wqAgCnN3LWNy
-eXB0OiAwIGN0LXN0YTogMCcKWyA5NDA0LjM2NTE5OV0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6
-IHdtaSBwcmludCAnYWxsb2MgcmVtOiAyNDY0OCAKaXJhbTogMjYxNjgnClsgOTQwNC40MzE0NTNd
-IGF0aDEwa19wY2kgMDAwMDowMjowMC4wOiBwZGV2IHBhcmFtIDAgbm90IHN1cHBvcnRlZCBieSAK
-ZmlybXdhcmUKWyA5NDA0LjQ1NDQ4NF0gYXRoMTBrX3BjaSAwMDAwOjAyOjAwLjA6IGRldmljZSBz
-dWNjZXNzZnVsbHkgcmVjb3ZlcmVkCgoKb3BrZyBsaXN0IHwgZ3JlcCAtZSBob3N0IC1lIHdwYSAt
-ZSBhdGgKCmF0aDEway1maXJtd2FyZS1xY2E5ODh4LWN0IC0gMjAxOC0xMC0xMC1kMzY2YjgwZC0x
-Cmhvc3RhcGQtY29tbW9uIC0gMjAxOC0xMi0wMi1jMmM2YzAxYi02Cmhvc3RhcGQtb3BlbnNzbCAt
-IDIwMTgtMTItMDItYzJjNmMwMWItNgpob3N0YXBkLXV0aWxzIC0gMjAxOC0xMi0wMi1jMmM2YzAx
-Yi02Cmttb2QtYXRoIC0gNC4xNC4xMzgrNC4xOS42Ni0xLTEKa21vZC1hdGgxMGstY3QgLSA0LjE0
-LjEzOCsyMDE5LTA1LTA4LWY5OGI2ZGM0LTEKa21vZC1hdGg5ayAtIDQuMTQuMTM4KzQuMTkuNjYt
-MS0xCmttb2QtYXRoOWstY29tbW9uIC0gNC4xNC4xMzgrNC4xOS42Ni0xLTEKd3BhLWNsaSAtIDIw
-MTgtMTItMDItYzJjNmMwMWItNgp3cGEtc3VwcGxpY2FudC1tZXNoLW9wZW5zc2wgLSAyMDE4LTEy
-LTAyLWMyYzZjMDFiLTYKCgpjYXQgL2V0Yy9jb25maWcvd2lyZWxlc3MKCmNvbmZpZyB3aWZpLWRl
-dmljZSAncmFkaW8wJwogwqDCoMKgIG9wdGlvbiB0eXBlICdtYWM4MDIxMScKIMKgwqDCoCBvcHRp
-b24gY2hhbm5lbCAnMzYnCiDCoMKgwqAgb3B0aW9uIGh3bW9kZSAnMTFhJwogwqDCoMKgIG9wdGlv
-biBwYXRoICdwY2kwMDAwOjAxLzAwMDA6MDE6MDAuMC8wMDAwOjAyOjAwLjAnCiDCoMKgwqAgb3B0
-aW9uIGh0bW9kZSAnVkhUODAnCiDCoMKgwqAgb3B0aW9uIHR4cG93ZXIgJzE3JwogwqDCoMKgIG9w
-dGlvbiBjb3VudHJ5ICdERScKIMKgwqDCoCBvcHRpb24gbGVnYWN5X3JhdGVzICcwJwogwqDCoMKg
-IG9wdGlvbiBkaXN0YW5jZSAnMjAnCgpjb25maWcgd2lmaS1pZmFjZSAnZGVmYXVsdF9yYWRpbzAn
-CiDCoMKgwqAgb3B0aW9uIGRldmljZSAncmFkaW8wJwogwqDCoMKgIG9wdGlvbiBuZXR3b3JrICds
-YW4nCiDCoMKgwqAgb3B0aW9uIG1vZGUgJ2FwJwogwqDCoMKgIG9wdGlvbiBzc2lkICdXSUZJMScK
-IMKgwqDCoCBvcHRpb24gZW5jcnlwdGlvbiAnc2FlJwogwqDCoMKgIG9wdGlvbiBrZXkgJzExMTEx
-MTExMTExMTExMTEnCgpjb25maWcgd2lmaS1kZXZpY2UgJ3JhZGlvMScKIMKgwqDCoCBvcHRpb24g
-dHlwZSAnbWFjODAyMTEnCiDCoMKgwqAgb3B0aW9uIGNoYW5uZWwgJzExJwogwqDCoMKgIG9wdGlv
-biBod21vZGUgJzExZycKIMKgwqDCoCBvcHRpb24gcGF0aCAncGNpMDAwMDowMC8wMDAwOjAwOjBl
-LjAnCiDCoMKgwqAgb3B0aW9uIGh0bW9kZSAnSFQyMCcKIMKgwqDCoCBvcHRpb24gY291bnRyeSAn
-REUnCiDCoMKgwqAgb3B0aW9uIGxlZ2FjeV9yYXRlcyAnMCcKIMKgwqDCoCBvcHRpb24gZGlzdGFu
-Y2UgJzMwJwogwqDCoMKgIG9wdGlvbiB0eHBvd2VyICcxNCcKCmNvbmZpZyB3aWZpLWlmYWNlICdk
-ZWZhdWx0X3JhZGlvMScKIMKgwqDCoCBvcHRpb24gZGV2aWNlICdyYWRpbzEnCiDCoMKgwqAgb3B0
-aW9uIG5ldHdvcmsgJ2xhbicKIMKgwqDCoCBvcHRpb24gbW9kZSAnYXAnCiDCoMKgwqAgb3B0aW9u
-IHNzaWQgJ1dJRkkyJwogwqDCoMKgIG9wdGlvbiBlbmNyeXB0aW9uICdzYWUtbWl4ZWQnCiDCoMKg
-wqAgb3B0aW9uIGtleSAnMTExMTExMTExMTExMTExMScKIMKgwqDCoCBvcHRpb24gaWVlZTgwMjEx
-ciAnMScKIMKgwqDCoCBvcHRpb24gbmFzaWQgJzExMTExMTExMTExMScKIMKgwqDCoCBvcHRpb24g
-bW9iaWxpdHlfZG9tYWluICcyMzQ1JwogwqDCoMKgIG9wdGlvbiBmdF9vdmVyX2RzICcxJwogwqDC
-oMKgIG9wdGlvbiBmdF9wc2tfZ2VuZXJhdGVfbG9jYWwgJzEnCiDCoMKgwqAgb3B0aW9uIHIxX2tl
-eV9ob2xkZXIgJzU0NjREOTAxQ0UyNCcKIMKgwqDCoCBsaXN0IHIwa2ggCicxMToxMToxMToxMTox
-MToxMSwxMTExMTExMTExMTEsMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAnCiDCoMKg
-wqAgbGlzdCByMGtoIAonMjI6MjI6MjI6MjI6MjI6MjIsMjIyMjIyMjIyMjIyLDAwMDAwMDAwMDAw
-MDAwMDAwMDAwMDAwMDAwMDAwMDAwJwogwqDCoMKgIGxpc3QgcjFraCAKJzExOjExOjExOjExOjEx
-OjExLDExOjExOjExOjExOjExOjExLDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwJwog
-wqDCoMKgIGxpc3QgcjFraCAKJzIyOjIyOjIyOjIyOjIyOjIyLDIyOjIyOjIyOjIyOjIyOjIyLDAw
-MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwJwoKQmVzdCByZWdhcmRzCllhcm9zbGF2CgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1k
-ZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczov
-L2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+--===============9173607127117780539==
+Content-Type: multipart/alternative; boundary="000000000000ee25a00590b8ad53"
+
+--000000000000ee25a00590b8ad53
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello.
+
+
+This bug was fixed in the master branch.
+Please try latest snapshot.
+
+Best Regards,
+Lukonin Kirill
+
+
+=D1=87=D1=82, 22 =D0=B0=D0=B2=D0=B3. 2019 =D0=B3. =D0=B2 23:06, Yaroslav Pe=
+trov <info@lank.me>:
+
+> Hello all,
+>
+>
+> I use OpenWrt 19.07 on BT Home Hub 5A, but it seams ath10k-ct driver is
+> really unstable (it work only first 2-10 minutes). The ath10k driver
+> work without problem. Can somebody help me with this issue ?
+>
+>
+> ---- OpenWrt 19.07-SNAPSHOT, r10323-7d300326ee ----
+>
+> dmesg:
+> ...
+> [   16.523669] ath10k_pci 0000:02:00.0: qca988x hw2.0 target 0x4100016c
+> chip_id 0x043202ff sub 0000:0000
+> [   16.531585] ath10k_pci 0000:02:00.0: kconfig debug 0 debugfs 1
+> tracing 0 dfs 1 testmode 0
+> [   16.548528] ath10k_pci 0000:02:00.0: firmware ver
+> 10.1-ct-8x-__fW-022-fddd041b api 2 features
+> wmi-10.x,has-wmi-mgmt-tx,adaptive-cca,mfp,txstatus-noack,wmi-10.x-CT,rate=
+mask-CT,txrate-CT,get-temp-CT,tx-rc-CT,cust-stats-CT,retry-gt2-CT,txrate2-C=
+T,beacon-cb-CT,wmi-block-ack-CT
+>
+> crc32 01d1f13e
+> [   16.600527] ath10k_pci 0000:02:00.0: Direct firmware load for
+> ath10k/QCA988X/hw2.0/board-2.bin failed with error -2
+> [   16.609654] ath10k_pci 0000:02:00.0: Falling back to user helper
+> [   16.865926] firmware ath10k!QCA988X!hw2.0!board-2.bin:
+> firmware_loading_store: map pages failed
+> [   16.874176] ath10k_pci 0000:02:00.0: board_file api 1 bmi_id N/A
+> crc32 bebc7c08
+> [   17.754597] ath10k_pci 0000:02:00.0: 10.1 wmi init: vdevs: 16 peers:
+> 127  tid: 256
+> [   17.769910] ath10k_pci 0000:02:00.0: wmi print 'P 128 V 8 T 410'
+> [   17.774908] ath10k_pci 0000:02:00.0: wmi print 'msdu-desc: 1424
+> sw-crypt: 0 ct-sta: 0'
+> [   17.782548] ath10k_pci 0000:02:00.0: wmi print 'alloc rem: 24648
+> iram: 26168'
+> [   17.846700] ath10k_pci 0000:02:00.0: htt-ver 2.1 wmi-op 2 htt-op 2
+> cal file max-sta 128 raw 0 hwcrypto 1
+> [   17.858172] ath10k_pci 0000:02:00.0: NOTE:  Firmware DBGLOG output
+> disabled in debug_mask: 0x10000000
+> ...
+> [ 9397.052366] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.154773] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.257174] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.359596] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.461992] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.564396] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.666805] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.769214] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.871646] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9397.974036] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.076445] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.178844] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.281259] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.383675] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.486071] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.588478] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.690883] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.793301] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.895708] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9398.998112] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.100512] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.202918] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.305328] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.407740] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.510149] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.612543] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.714959] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.817366] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9399.919780] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.022177] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.124590] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.184417] ath10k_pci 0000:02:00.0: wmi command 36893 timeout,
+> restarting hardware
+> [ 9400.191096] ath10k_pci 0000:02:00.0: failed to delete peer
+> 99:99:99:99:99:99 for vdev 0: -11
+> [ 9400.199527] ath10k_pci 0000:02:00.0: found sta peer 99:99:99:99:99:99
+> (ptr 8698a600 id 361) entry on vdev 0 after it was supposedly removed
+> [ 9400.212109] ------------[ cut here ]------------
+> [ 9400.216791] WARNING: CPU: 1 PID: 3599 at
+> backports-4.19.66-1/net/mac80211/sta_info.c:1004
+> sta_set_sinfo+0xcdc/0xd88 [mac80211]
+> [ 9400.227825] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.235153] Modules linked in: ath9k ath9k_common ath9k_hw ath10k_pci
+> ath10k_core ath pppoe nf_conntrack_ipv6 mac80211 iptable_nat ipt_REJECT
+> ipt_MASQUERADE cfg80211 xt_time xt_tcpudp xt_state xt_nat xt_multiport
+> xt_mark xt_mac xt_limit xt_conntrack xt_comment xt_TCPMSS xt_REDIRECT
+> xt_LOG xt_FLOWOFFLOAD wireguard ums_usbat ums_sddr55 ums_sddr09
+> ums_karma ums_jumpshot ums_isd200 ums_freecom ums_datafab ums_cypress
+> ums_alauda pppox ppp_async owl_loader nf_reject_ipv4 nf_nat_redirect
+> nf_nat_masquerade_ipv4 nf_conntrack_ipv4 nf_nat_ipv4 nf_nat nf_log_ipv4
+> nf_flow_table_hw nf_flow_table nf_defrag_ipv6 nf_defrag_ipv4
+> nf_conntrack_rtcache nf_conntrack ltq_deu_vr9 iptable_mangle
+> iptable_filter ip_tables crc_ccitt compat drv_dsl_cpe_api drv_mei_cpe
+> ledtrig_oneshot ledtrig_gpio xt_set ip_set_list_set ip_set_hash_netportne=
+t
+> [ 9400.307991]  ip_set_hash_netport ip_set_hash_netnet
+> ip_set_hash_netiface ip_set_hash_net ip_set_hash_mac
+> ip_set_hash_ipportnet ip_set_hash_ipportip ip_set_hash_ipport
+> ip_set_hash_ipmark ip_set_hash_ip ip_set_bitmap_port ip_set_bitmap_ipmac
+> ip_set_bitmap_ip ip_set nfnetlink nf_log_ipv6 nf_log_common
+> ip6table_mangle ip6table_filter ip6_tables ip6t_REJECT x_tables
+> nf_reject_ipv6 pppoatm ppp_generic slhc ip6_udp_tunnel udp_tunnel br2684
+> atm nls_utf8 drv_ifxos usb_storage dwc2 ledtrig_transient sd_mod
+> scsi_mod gpio_button_hotplug ext4 mbcache jbd2 crc32c_generic
+> [ 9400.356722] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.364303] CPU: 1 PID: 3599 Comm: hostapd Not tainted 4.14.138 #0
+> [ 9400.370024] Stack : 00000000 877e3000 00000028 800815a8 80670000
+> 8061590c 00000000 00000000
+> [ 9400.378376]         805dbdc4 851d3ae4 87da592c 806506a7 805d6c54
+> 00000001 851d3a88 74ab3c97
+> [ 9400.386733]         00000000 00000000 807b0000 00010000 807a88b0
+> 00000000 00000007 00000000
+> [ 9400.395087]         000001d3 d5000000 000001d2 00000000 80000000
+> 80670000 00000000 00000009
+> [ 9400.403443]         86808e9c 000003ec 851d3cac 877e3000 00000001
+> 00000000 00000004 807a0004
+> [ 9400.411799]         ...
+> [ 9400.414240] Call Trace:
+> [ 9400.416693] [<80011664>] show_stack+0x58/0x100
+> [ 9400.421155] [<804c8824>] dump_stack+0xe4/0x120
+> [ 9400.425588] [<80037010>] __warn+0xe0/0x180
+> [ 9400.429673] [<80037140>] warn_slowpath_null+0x1c/0x2c
+> [ 9400.434832] [<86808e9c>] sta_set_sinfo+0xcdc/0xd88 [mac80211]
+> [ 9400.440974] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.448658] ---[ end trace 214aaa49bd7f9de7 ]---
+> [ 9400.534228] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.636620] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.739033] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.841432] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9400.943845] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.046257] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.148660] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.251079] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.353475] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.455885] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.558281] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.660685] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.763092] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.865506] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9401.967916] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.070317] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.172726] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.275130] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.377538] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.479940] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.582349] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.684756] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.787167] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.889569] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9402.991969] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9403.094372] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped
+> old beacon
+> [ 9403.189718] ath10k_pci 0000:02:00.0: removing peer, cleanup-all,
+> deleting: peer 8698b600 vdev: 0 addr: 54:64:00:00:00:00
+> [ 9403.306730] ieee80211 phy0: Hardware restart was requested
+> [ 9403.310992] ath10k_pci 0000:02:00.0: failed to set cts protection for
+> vdev 0: -143
+> [ 9403.318503] ath10k_pci 0000:02:00.0: failed to set preamble for vdev
+> 0: -143
+> [ 9403.325542] ath10k_pci 0000:02:00.0: failed to set mgmt tx rate -143
+> [ 9404.336772] ath10k_pci 0000:02:00.0: 10.1 wmi init: vdevs: 16 peers:
+> 127  tid: 256
+> [ 9404.352122] ath10k_pci 0000:02:00.0: wmi print 'P 128 V 8 T 410'
+> [ 9404.356800] ath10k_pci 0000:02:00.0: wmi print 'msdu-desc: 1424
+> sw-crypt: 0 ct-sta: 0'
+> [ 9404.365199] ath10k_pci 0000:02:00.0: wmi print 'alloc rem: 24648
+> iram: 26168'
+> [ 9404.431453] ath10k_pci 0000:02:00.0: pdev param 0 not supported by
+> firmware
+> [ 9404.454484] ath10k_pci 0000:02:00.0: device successfully recovered
+>
+>
+> opkg list | grep -e host -e wpa -e ath
+>
+> ath10k-firmware-qca988x-ct - 2018-10-10-d366b80d-1
+> hostapd-common - 2018-12-02-c2c6c01b-6
+> hostapd-openssl - 2018-12-02-c2c6c01b-6
+> hostapd-utils - 2018-12-02-c2c6c01b-6
+> kmod-ath - 4.14.138+4.19.66-1-1
+> kmod-ath10k-ct - 4.14.138+2019-05-08-f98b6dc4-1
+> kmod-ath9k - 4.14.138+4.19.66-1-1
+> kmod-ath9k-common - 4.14.138+4.19.66-1-1
+> wpa-cli - 2018-12-02-c2c6c01b-6
+> wpa-supplicant-mesh-openssl - 2018-12-02-c2c6c01b-6
+>
+>
+> cat /etc/config/wireless
+>
+> config wifi-device 'radio0'
+>      option type 'mac80211'
+>      option channel '36'
+>      option hwmode '11a'
+>      option path 'pci0000:01/0000:01:00.0/0000:02:00.0'
+>      option htmode 'VHT80'
+>      option txpower '17'
+>      option country 'DE'
+>      option legacy_rates '0'
+>      option distance '20'
+>
+> config wifi-iface 'default_radio0'
+>      option device 'radio0'
+>      option network 'lan'
+>      option mode 'ap'
+>      option ssid 'WIFI1'
+>      option encryption 'sae'
+>      option key '1111111111111111'
+>
+> config wifi-device 'radio1'
+>      option type 'mac80211'
+>      option channel '11'
+>      option hwmode '11g'
+>      option path 'pci0000:00/0000:00:0e.0'
+>      option htmode 'HT20'
+>      option country 'DE'
+>      option legacy_rates '0'
+>      option distance '30'
+>      option txpower '14'
+>
+> config wifi-iface 'default_radio1'
+>      option device 'radio1'
+>      option network 'lan'
+>      option mode 'ap'
+>      option ssid 'WIFI2'
+>      option encryption 'sae-mixed'
+>      option key '1111111111111111'
+>      option ieee80211r '1'
+>      option nasid '111111111111'
+>      option mobility_domain '2345'
+>      option ft_over_ds '1'
+>      option ft_psk_generate_local '1'
+>      option r1_key_holder '5464D901CE24'
+>      list r0kh
+> '11:11:11:11:11:11,111111111111,00000000000000000000000000000000'
+>      list r0kh
+> '22:22:22:22:22:22,222222222222,00000000000000000000000000000000'
+>      list r1kh
+> '11:11:11:11:11:11,11:11:11:11:11:11,00000000000000000000000000000000'
+>      list r1kh
+> '22:22:22:22:22:22,22:22:22:22:22:22,00000000000000000000000000000000'
+>
+> Best regards
+> Yaroslav
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
+
+--000000000000ee25a00590b8ad53
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><div>Hello.<br><br><br></div>This bug was fixed in th=
+e master branch.<br></div>Please try latest snapshot.<br><div><br clear=3D"=
+all"><div><div><div><div><div dir=3D"ltr" class=3D"gmail_signature" data-sm=
+artmail=3D"gmail_signature">Best Regards,<br>Lukonin Kirill<br></div></div>=
+<br></div></div></div></div></div><br><div class=3D"gmail_quote"><div dir=
+=3D"ltr" class=3D"gmail_attr">=D1=87=D1=82, 22 =D0=B0=D0=B2=D0=B3. 2019 =D0=
+=B3. =D0=B2 23:06, Yaroslav Petrov &lt;<a href=3D"mailto:info@lank.me">info=
+@lank.me</a>&gt;:<br></div><blockquote class=3D"gmail_quote" style=3D"margi=
+n:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex=
+">Hello all,<br>
+<br>
+<br>
+I use OpenWrt 19.07 on BT Home Hub 5A, but it seams ath10k-ct driver is <br=
+>
+really unstable (it work only first 2-10 minutes). The ath10k driver <br>
+work without problem. Can somebody help me with this issue ?<br>
+<br>
+<br>
+---- OpenWrt 19.07-SNAPSHOT, r10323-7d300326ee ----<br>
+<br>
+dmesg:<br>
+...<br>
+[=C2=A0=C2=A0 16.523669] ath10k_pci 0000:02:00.0: qca988x hw2.0 target 0x41=
+00016c <br>
+chip_id 0x043202ff sub 0000:0000<br>
+[=C2=A0=C2=A0 16.531585] ath10k_pci 0000:02:00.0: kconfig debug 0 debugfs 1=
+ <br>
+tracing 0 dfs 1 testmode 0<br>
+[=C2=A0=C2=A0 16.548528] ath10k_pci 0000:02:00.0: firmware ver <br>
+10.1-ct-8x-__fW-022-fddd041b api 2 features <br>
+wmi-10.x,has-wmi-mgmt-tx,adaptive-cca,mfp,txstatus-noack,wmi-10.x-CT,ratema=
+sk-CT,txrate-CT,get-temp-CT,tx-rc-CT,cust-stats-CT,retry-gt2-CT,txrate2-CT,=
+beacon-cb-CT,wmi-block-ack-CT <br>
+crc32 01d1f13e<br>
+[=C2=A0=C2=A0 16.600527] ath10k_pci 0000:02:00.0: Direct firmware load for =
+<br>
+ath10k/QCA988X/hw2.0/board-2.bin failed with error -2<br>
+[=C2=A0=C2=A0 16.609654] ath10k_pci 0000:02:00.0: Falling back to user help=
+er<br>
+[=C2=A0=C2=A0 16.865926] firmware ath10k!QCA988X!hw2.0!board-2.bin: <br>
+firmware_loading_store: map pages failed<br>
+[=C2=A0=C2=A0 16.874176] ath10k_pci 0000:02:00.0: board_file api 1 bmi_id N=
+/A <br>
+crc32 bebc7c08<br>
+[=C2=A0=C2=A0 17.754597] ath10k_pci 0000:02:00.0: 10.1 wmi init: vdevs: 16 =
+peers: <br>
+127=C2=A0 tid: 256<br>
+[=C2=A0=C2=A0 17.769910] ath10k_pci 0000:02:00.0: wmi print &#39;P 128 V 8 =
+T 410&#39;<br>
+[=C2=A0=C2=A0 17.774908] ath10k_pci 0000:02:00.0: wmi print &#39;msdu-desc:=
+ 1424=C2=A0 <br>
+sw-crypt: 0 ct-sta: 0&#39;<br>
+[=C2=A0=C2=A0 17.782548] ath10k_pci 0000:02:00.0: wmi print &#39;alloc rem:=
+ 24648 <br>
+iram: 26168&#39;<br>
+[=C2=A0=C2=A0 17.846700] ath10k_pci 0000:02:00.0: htt-ver 2.1 wmi-op 2 htt-=
+op 2 <br>
+cal file max-sta 128 raw 0 hwcrypto 1<br>
+[=C2=A0=C2=A0 17.858172] ath10k_pci 0000:02:00.0: NOTE:=C2=A0 Firmware DBGL=
+OG output <br>
+disabled in debug_mask: 0x10000000<br>
+...<br>
+[ 9397.052366] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.154773] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.257174] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.359596] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.461992] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.564396] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.666805] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.769214] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.871646] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9397.974036] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.076445] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.178844] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.281259] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.383675] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.486071] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.588478] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.690883] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.793301] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.895708] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9398.998112] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.100512] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.202918] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.305328] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.407740] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.510149] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.612543] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.714959] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.817366] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9399.919780] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.022177] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.124590] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.184417] ath10k_pci 0000:02:00.0: wmi command 36893 timeout, <br>
+restarting hardware<br>
+[ 9400.191096] ath10k_pci 0000:02:00.0: failed to delete peer <br>
+99:99:99:99:99:99 for vdev 0: -11<br>
+[ 9400.199527] ath10k_pci 0000:02:00.0: found sta peer 99:99:99:99:99:99 <b=
+r>
+(ptr 8698a600 id 361) entry on vdev 0 after it was supposedly removed<br>
+[ 9400.212109] ------------[ cut here ]------------<br>
+[ 9400.216791] WARNING: CPU: 1 PID: 3599 at <br>
+backports-4.19.66-1/net/mac80211/sta_info.c:1004 <br>
+sta_set_sinfo+0xcdc/0xd88 [mac80211]<br>
+[ 9400.227825] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.235153] Modules linked in: ath9k ath9k_common ath9k_hw ath10k_pci <b=
+r>
+ath10k_core ath pppoe nf_conntrack_ipv6 mac80211 iptable_nat ipt_REJECT <br=
+>
+ipt_MASQUERADE cfg80211 xt_time xt_tcpudp xt_state xt_nat xt_multiport <br>
+xt_mark xt_mac xt_limit xt_conntrack xt_comment xt_TCPMSS xt_REDIRECT <br>
+xt_LOG xt_FLOWOFFLOAD wireguard ums_usbat ums_sddr55 ums_sddr09 <br>
+ums_karma ums_jumpshot ums_isd200 ums_freecom ums_datafab ums_cypress <br>
+ums_alauda pppox ppp_async owl_loader nf_reject_ipv4 nf_nat_redirect <br>
+nf_nat_masquerade_ipv4 nf_conntrack_ipv4 nf_nat_ipv4 nf_nat nf_log_ipv4 <br=
+>
+nf_flow_table_hw nf_flow_table nf_defrag_ipv6 nf_defrag_ipv4 <br>
+nf_conntrack_rtcache nf_conntrack ltq_deu_vr9 iptable_mangle <br>
+iptable_filter ip_tables crc_ccitt compat drv_dsl_cpe_api drv_mei_cpe <br>
+ledtrig_oneshot ledtrig_gpio xt_set ip_set_list_set ip_set_hash_netportnet<=
+br>
+[ 9400.307991]=C2=A0 ip_set_hash_netport ip_set_hash_netnet <br>
+ip_set_hash_netiface ip_set_hash_net ip_set_hash_mac <br>
+ip_set_hash_ipportnet ip_set_hash_ipportip ip_set_hash_ipport <br>
+ip_set_hash_ipmark ip_set_hash_ip ip_set_bitmap_port ip_set_bitmap_ipmac <b=
+r>
+ip_set_bitmap_ip ip_set nfnetlink nf_log_ipv6 nf_log_common <br>
+ip6table_mangle ip6table_filter ip6_tables ip6t_REJECT x_tables <br>
+nf_reject_ipv6 pppoatm ppp_generic slhc ip6_udp_tunnel udp_tunnel br2684 <b=
+r>
+atm nls_utf8 drv_ifxos usb_storage dwc2 ledtrig_transient sd_mod <br>
+scsi_mod gpio_button_hotplug ext4 mbcache jbd2 crc32c_generic<br>
+[ 9400.356722] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.364303] CPU: 1 PID: 3599 Comm: hostapd Not tainted 4.14.138 #0<br>
+[ 9400.370024] Stack : 00000000 877e3000 00000028 800815a8 80670000 <br>
+8061590c 00000000 00000000<br>
+[ 9400.378376]=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 805dbdc4 851=
+d3ae4 87da592c 806506a7 805d6c54 <br>
+00000001 851d3a88 74ab3c97<br>
+[ 9400.386733]=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 00000000 000=
+00000 807b0000 00010000 807a88b0 <br>
+00000000 00000007 00000000<br>
+[ 9400.395087]=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 000001d3 d50=
+00000 000001d2 00000000 80000000 <br>
+80670000 00000000 00000009<br>
+[ 9400.403443]=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 86808e9c 000=
+003ec 851d3cac 877e3000 00000001 <br>
+00000000 00000004 807a0004<br>
+[ 9400.411799]=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 ...<br>
+[ 9400.414240] Call Trace:<br>
+[ 9400.416693] [&lt;80011664&gt;] show_stack+0x58/0x100<br>
+[ 9400.421155] [&lt;804c8824&gt;] dump_stack+0xe4/0x120<br>
+[ 9400.425588] [&lt;80037010&gt;] __warn+0xe0/0x180<br>
+[ 9400.429673] [&lt;80037140&gt;] warn_slowpath_null+0x1c/0x2c<br>
+[ 9400.434832] [&lt;86808e9c&gt;] sta_set_sinfo+0xcdc/0xd88 [mac80211]<br>
+[ 9400.440974] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.448658] ---[ end trace 214aaa49bd7f9de7 ]---<br>
+[ 9400.534228] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.636620] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.739033] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.841432] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9400.943845] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.046257] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.148660] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.251079] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.353475] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.455885] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.558281] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.660685] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.763092] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.865506] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9401.967916] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.070317] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.172726] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.275130] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.377538] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.479940] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.582349] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.684756] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.787167] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.889569] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9402.991969] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9403.094372] ath10k_pci 0000:02:00.0: SWBA overrun on vdev 0, skipped <br=
+>
+old beacon<br>
+[ 9403.189718] ath10k_pci 0000:02:00.0: removing peer, cleanup-all, <br>
+deleting: peer 8698b600 vdev: 0 addr: 54:64:00:00:00:00<br>
+[ 9403.306730] ieee80211 phy0: Hardware restart was requested<br>
+[ 9403.310992] ath10k_pci 0000:02:00.0: failed to set cts protection for <b=
+r>
+vdev 0: -143<br>
+[ 9403.318503] ath10k_pci 0000:02:00.0: failed to set preamble for vdev <br=
+>
+0: -143<br>
+[ 9403.325542] ath10k_pci 0000:02:00.0: failed to set mgmt tx rate -143<br>
+[ 9404.336772] ath10k_pci 0000:02:00.0: 10.1 wmi init: vdevs: 16 peers: <br=
+>
+127=C2=A0 tid: 256<br>
+[ 9404.352122] ath10k_pci 0000:02:00.0: wmi print &#39;P 128 V 8 T 410&#39;=
+<br>
+[ 9404.356800] ath10k_pci 0000:02:00.0: wmi print &#39;msdu-desc: 1424=C2=
+=A0 <br>
+sw-crypt: 0 ct-sta: 0&#39;<br>
+[ 9404.365199] ath10k_pci 0000:02:00.0: wmi print &#39;alloc rem: 24648 <br=
+>
+iram: 26168&#39;<br>
+[ 9404.431453] ath10k_pci 0000:02:00.0: pdev param 0 not supported by <br>
+firmware<br>
+[ 9404.454484] ath10k_pci 0000:02:00.0: device successfully recovered<br>
+<br>
+<br>
+opkg list | grep -e host -e wpa -e ath<br>
+<br>
+ath10k-firmware-qca988x-ct - 2018-10-10-d366b80d-1<br>
+hostapd-common - 2018-12-02-c2c6c01b-6<br>
+hostapd-openssl - 2018-12-02-c2c6c01b-6<br>
+hostapd-utils - 2018-12-02-c2c6c01b-6<br>
+kmod-ath - 4.14.138+4.19.66-1-1<br>
+kmod-ath10k-ct - 4.14.138+2019-05-08-f98b6dc4-1<br>
+kmod-ath9k - 4.14.138+4.19.66-1-1<br>
+kmod-ath9k-common - 4.14.138+4.19.66-1-1<br>
+wpa-cli - 2018-12-02-c2c6c01b-6<br>
+wpa-supplicant-mesh-openssl - 2018-12-02-c2c6c01b-6<br>
+<br>
+<br>
+cat /etc/config/wireless<br>
+<br>
+config wifi-device &#39;radio0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option type &#39;mac80211&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option channel &#39;36&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option hwmode &#39;11a&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option path &#39;pci0000:01/0000:01:00.0/0000:02:0=
+0.0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option htmode &#39;VHT80&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option txpower &#39;17&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option country &#39;DE&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option legacy_rates &#39;0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option distance &#39;20&#39;<br>
+<br>
+config wifi-iface &#39;default_radio0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option device &#39;radio0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option network &#39;lan&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option mode &#39;ap&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option ssid &#39;WIFI1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option encryption &#39;sae&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option key &#39;1111111111111111&#39;<br>
+<br>
+config wifi-device &#39;radio1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option type &#39;mac80211&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option channel &#39;11&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option hwmode &#39;11g&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option path &#39;pci0000:00/0000:00:0e.0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option htmode &#39;HT20&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option country &#39;DE&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option legacy_rates &#39;0&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option distance &#39;30&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option txpower &#39;14&#39;<br>
+<br>
+config wifi-iface &#39;default_radio1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option device &#39;radio1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option network &#39;lan&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option mode &#39;ap&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option ssid &#39;WIFI2&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option encryption &#39;sae-mixed&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option key &#39;1111111111111111&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option ieee80211r &#39;1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option nasid &#39;111111111111&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option mobility_domain &#39;2345&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option ft_over_ds &#39;1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option ft_psk_generate_local &#39;1&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 option r1_key_holder &#39;5464D901CE24&#39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 list r0kh <br>
+&#39;11:11:11:11:11:11,111111111111,00000000000000000000000000000000&#39;<b=
+r>
+=C2=A0=C2=A0=C2=A0=C2=A0 list r0kh <br>
+&#39;22:22:22:22:22:22,222222222222,00000000000000000000000000000000&#39;<b=
+r>
+=C2=A0=C2=A0=C2=A0=C2=A0 list r1kh <br>
+&#39;11:11:11:11:11:11,11:11:11:11:11:11,00000000000000000000000000000000&#=
+39;<br>
+=C2=A0=C2=A0=C2=A0=C2=A0 list r1kh <br>
+&#39;22:22:22:22:22:22,22:22:22:22:22:22,00000000000000000000000000000000&#=
+39;<br>
+<br>
+Best regards<br>
+Yaroslav<br>
+<br>
+<br>
+_______________________________________________<br>
+openwrt-devel mailing list<br>
+<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
+t-devel@lists.openwrt.org</a><br>
+<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
+"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
+penwrt-devel</a><br>
+</blockquote></div>
+
+--000000000000ee25a00590b8ad53--
+
+
+--===============9173607127117780539==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============9173607127117780539==--
+

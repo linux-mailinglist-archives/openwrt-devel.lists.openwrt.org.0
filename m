@@ -2,51 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2216A99F47
-	for <lists+openwrt-devel@lfdr.de>; Thu, 22 Aug 2019 20:59:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B7E299F49
+	for <lists+openwrt-devel@lfdr.de>; Thu, 22 Aug 2019 21:00:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1K1ZONLLJueWV86C/uxKsSwAapCWpcD1KaF3sO0gYbg=; b=eNB5PzB018IztO
-	qn1Y2yA/2nJKocrIEFLaHSuvLWZ9TaXMuxc7jcrwePZDE7L2VPg7lK97Rok1TLZTA22elP8ef6egI
-	lce2wFYTkCsEiyXvJLZVceyvHI8HNT4yeFdZQBmLgiBzPaeXVhz1j9/IYlt1PQgL/GDfcYlvtXz28
-	lmL4CVPCMlTvEJ6qguV06JKHzZ/olPD58ksMH3FjI/tC6DzEJXdJXiPOuXSViCHldVF5/LPa8cgv8
-	ZMFtkNus+KSecJkUhqhll53GRoMqoe9SwcSMcW11He1D/J0pwKfjvZ3OpzcYM2vo/2o3ozxGUNLZR
-	lh0/EMUHcBgoaXHCkwsg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=x8EfHaoXiGyKl+tf12DI77uGBsrHudo2EFVIqnxVTDk=; b=tHKcPL7SoA0l1l3yH8OyliJkiv
+	GNkAKgvkUkmFnvvYf5pXYMJFTzsEhwlQsvz7wEsRc49NBwq4YINitizaI7od/ulNYbjnm9qh4l+HJ
+	9AOXQ4JlnEDyR5PnJEAUpaWu3PFLTC0eDoeqHryV9cVP1F4bQBoRaOjVFpC3letqNIqVh4QzqZ6oX
+	8mg2Ti6cqQrb+wCeJlhRAF1T3KTyr3zn7U3OuwRH9Lv5N1og3DHLCut1q+HU03G04fIPYhHUoqYAx
+	aTmepm8t8Ektt+uFB1KfwMrfHfC+pdWp9pW1KZUySO7mRQOlx4XmrP/aaV3e59MTn0kGeiwUdV1MY
+	cNy/TwUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0sJF-0001l9-2T; Thu, 22 Aug 2019 18:59:45 +0000
+	id 1i0sJT-00020P-1i; Thu, 22 Aug 2019 18:59:59 +0000
 Received: from mx-out.tlen.pl ([193.222.135.148])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0sIt-0001Xn-BR
- for openwrt-devel@lists.openwrt.org; Thu, 22 Aug 2019 18:59:25 +0000
-Received: (wp-smtpd smtp.tlen.pl 23240 invoked from network);
- 22 Aug 2019 20:59:18 +0200
+ id 1i0sIt-0001Xo-BU
+ for openwrt-devel@lists.openwrt.org; Thu, 22 Aug 2019 18:59:26 +0000
+Received: (wp-smtpd smtp.tlen.pl 24156 invoked from network);
+ 22 Aug 2019 20:59:19 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1566500358; bh=1lZixjVohgJrPwOz+ytNod/yezG9zfHw7M67o6lkXsE=;
+ t=1566500359; bh=+KfB8ZtyJDfU+nItn+usHiflkqAfQWST/gZbmX/3hc0=;
  h=From:To:Subject;
- b=r8d8yjLfmiM24Z9lLoiTK9a4mFDRApIzuQtT/UcjOSuKOUmeYoG1fpz1/fgYtfaJO
- Ypr9SCaKTwS/d9buVFK8L5z0ide+zZlpeiKaGrzMqDP0owc8061eRkLbmpIivtlBqb
- 7nuHXorqYEjXaPEhAQxlzjWimQ7T8sWbTzrFoBoM=
+ b=ujgu7Td87kNshXZlWYAnHPOWxqzLeldLei91Z07vfRB67ARlalOaJlf6kvuH3NGqF
+ o4U7uQRRds42XpjLO3k569YTWwUKM2lJXguDFlnpSQW2ZkTVtHjB85EXxWqXko8wgM
+ xcGm70T49HCLy+7BME+1R9eqsRcGxK0H9kvW0O8I=
 Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 22 Aug 2019 20:59:18 +0200
+ for <openwrt-devel@lists.openwrt.org>; 22 Aug 2019 20:59:19 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 22 Aug 2019 20:59:04 +0200
-Message-Id: <20190822185911.12336-1-tomek_n@o2.pl>
+Date: Thu, 22 Aug 2019 20:59:05 +0200
+Message-Id: <20190822185911.12336-2-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20190822185911.12336-1-tomek_n@o2.pl>
+References: <20190822185911.12336-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: 9ef417fe7eaf87c40d6a8c4bf5027449
+X-WP-MailID: ad0bc731d1d950cf483ca817cb64ec8a
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000001 [gTK8]                               
+X-WP-SPAM: NO 0000000 [8TPE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_115924_168550_6C467B20 
-X-CRM114-Status: UNSURE (   5.28  )
+X-CRM114-CacheID: sfid-20190822_115924_168538_87790D94 
+X-CRM114-Status: UNSURE (   9.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -64,8 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 0/7] ath79: fixes for devices with RedBoot
- bootloader
+Subject: [OpenWrt-Devel] [PATCH 1/7] ath79: dts: fix ja76pf2 spi frequency
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,32 +84,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Few fixes with common denominator being RedBoot bootloader, mostly
-related to images generation. Some of these will need a cherry-pick to
-19.07 branch - I'll prepare the patches if theese will be commited.
-I would like to also put some focus on FS#2428 [1] bug, which will
-disable sysupgrade for few devices and which I don't have knowledge to
-tackle. Hope someone will help.
+The frequency was filled acording the information from datasheet for
+particular chip (Winbond 25Q128BVFG). Unfortunately this led to
+coruption and introduced bad blocks on the chip. Reducing the frequency
+to commonly used in ath79, made the board more stable and no new bad
+blocks were spoted.
 
-1. https://bugs.openwrt.org/index.php?do=details&task_id=2428
+Fixes: b3a0c97 ("ath79: add support for jjPlus JA76PF2")
+Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
+---
+ target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Tomasz Maciej Nowak (7):
-  ath79: dts: fix ja76pf2 spi frequency
-  ath79: image: retire combined-image for Adtran/Bluesocket devices
-  ar71xx: sysupgrade: accept ath79 combined-image
-  ath79: image: append metadata to routerstations and ja76pf2 images
-  ath79: image: add supported string for routerstations and ja76pf2
-  ath79: fix FIS partition detection for 4.19 kernel
-  ath79: image: disable sysupgrade images for routerstations and ja76pf2
-
- .../ar71xx/base-files/lib/upgrade/platform.sh |  2 +-
- .../linux/ath79/dts/ar7161_jjplus_ja76pf2.dts |  2 +-
- target/linux/ath79/image/generic-ubnt.mk      |  6 ++-
- target/linux/ath79/image/generic.mk           |  8 +++-
- .../408-mtd-redboot_partition_scan.patch      | 44 +++++++++++++++++++
- 5 files changed, 56 insertions(+), 6 deletions(-)
- create mode 100644 target/linux/ath79/patches-4.19/408-mtd-redboot_partition_scan.patch
-
+diff --git a/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts b/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts
+index 76f140fa55..b983d1b994 100644
+--- a/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts
++++ b/target/linux/ath79/dts/ar7161_jjplus_ja76pf2.dts
+@@ -111,7 +111,7 @@
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
+ 		reg = <0>;
+-		spi-max-frequency = <104000000>;
++		spi-max-frequency = <25000000>;
+ 
+ 		partitions {
+ 			#address-cells = <1>;
 -- 
 2.23.0
 

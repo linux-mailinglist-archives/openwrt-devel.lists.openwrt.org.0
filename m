@@ -2,53 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10AF99B156
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 15:51:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B6E09B157
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 15:52:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TYTsfC8zO7cZKgpav12BS1kkBvuyVX9YxHKdUeHB3eI=; b=omntAwRPF06i1Y
-	KjRi+15Vf4hKKYiBYaJXQXP0TMe9vosTQMzXIeQbDM/WCoUSWPlF0tYJ4IwUqxvpIkTZi3bbiyFCJ
-	TpfAc9vLqWW1Ijy8smDLYb/qtxPIEF74TjALrBw6B04UHi9N5FiXuQ8Kex0Jy3Er2WLGkkIB5kRIO
-	ZVlul9ApiWtefJd+4twsuV5xslcMoFkRYfL7p6gD7r849hvhDiN9XI0F4Hq3i4Ok/SRIy4Xlg+H5Q
-	uFgh+NFV6dp81lLkkrcejNh139mrMs+or3AsZQAkT5bN1kOJcOViPpIk2IB8W3LXFc3Z+ETODi7xK
-	Ivg61CRaFu+e/6E9xrIw==;
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=An0bdxEzFt5XQ1IMYGPBvUu9nKDwHMuw+KbzTOFf2i8=; b=ROE92MEwGp0dDetx5w6WepzHJG
+	/SLKBUZ9/etQl6o0nQZ93Cr+k+rmky+0PFe2ZPlAeYLIDPBTkTujB3vsWd2lAX87hsu4gWlmnbx2+
+	0ruhbYi9mIurQbEkakrby7KBffdpretnuCvg9/FYWccBv9bOfi0p3mnADfdtqr1TVyBrzshTBV01b
+	SKKkGb6pX/PctRltaaezi2Fu6mMxBw5l/zuC63HTZc6ou54Vp0ZflGZXMShYnvtXXk5i4PwM0YTB7
+	O5bJjhCd4FwkM/ttUi5N9jzID4VwUVGeA5E9puk8CQjiwn1jV/YYDV3ikOSfvUJIzhcYrtGwsmm+x
+	9jiSYPJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i19ym-0007XD-LG; Fri, 23 Aug 2019 13:51:48 +0000
+	id 1i19yv-0007oO-QR; Fri, 23 Aug 2019 13:51:57 +0000
 Received: from mx-out.tlen.pl ([193.222.135.158])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i19y3-0006bN-S9
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 13:51:05 +0000
-Received: (wp-smtpd smtp.tlen.pl 15390 invoked from network);
- 23 Aug 2019 15:51:00 +0200
+ id 1i19y5-0006cQ-KA
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 13:51:07 +0000
+Received: (wp-smtpd smtp.tlen.pl 17411 invoked from network);
+ 23 Aug 2019 15:51:02 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1566568261; bh=pUVDW1+4GlMVL8RBYkIPEF2a9jTfwZZgrvtdCkU09co=;
- h=From:To:Cc:Subject;
- b=LYW1PFt9ibDN1jMwrLRn0N4CWoTDyRr/Fshxlcoya4PkigP22KiC0TPVlvRBLDfKJ
- j9uFMpfJFWv2N9jdGSFbUu48AXMJDUfmxyEBrqa+dB1ZzRL1qAHh8Us+q9312r2FrI
- EBfrOjeNf/e2Y482J/khPAQa0cQB0tUjUsKIsIs8=
+ t=1566568262; bh=scqOTPX4o71PPGJUEStnnTRwkPQFxTEnJFMR/YBtkjc=;
+ h=From:To:Subject;
+ b=xfU/N1hjG6CZLa4AtxLA+M9DzcuwiPiJgousnr1KDDR+SjApvr2lrlvNZhG+2ckvD
+ VQzNTyY9j4MmUiDU4mxJF5a6ErR3OOnzdzaV4q0y+yGObQ7MenfPrCcdU73NWPA22t
+ 7qInd1X5jWE7q2dWzAZ9VwlFHhyY4Y5+ajMlsq28=
 Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 23 Aug 2019 15:51:00 +0200
+ for <openwrt-devel@lists.openwrt.org>; 23 Aug 2019 15:51:02 +0200
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 23 Aug 2019 15:50:47 +0200
-Message-Id: <20190823135052.2305-3-tomek_n@o2.pl>
+Date: Fri, 23 Aug 2019 15:50:48 +0200
+Message-Id: <20190823135052.2305-4-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190823135052.2305-1-tomek_n@o2.pl>
 References: <20190823135052.2305-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: 79a79e29dedd11e4982573f297584f11
+X-WP-MailID: d18edd3b9a4c4b2915adeed84580fb8e
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [0ROl]                               
+X-WP-SPAM: NO 0000000 [AZPU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_065104_080019_FC728186 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20190823_065105_848255_9EF0134E 
+X-CRM114-Status: UNSURE (   8.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,8 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v2 2/7] ath79: image: retire combined-image
- for Adtran/Bluesocket devices
+Subject: [OpenWrt-Devel] [PATCH v2 3/7] ar71xx: sysupgrade: accept ath79
+ combined-image
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,39 +80,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Brian Gonyer <bgonyer@gmail.com>,
- Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-During review it slipped by that these devices use combined-image which
-should never be used for newly added ones. Therefore switch to
-sysupgrade-tar generated images introduced in 8f6f260 ("ath79:
-routerstation: prepare to use sysupgrade-tar format image"). The
-sysupgrade accepts both images for now so no reression should occur.
+There is md5 sum of whole image embedded in combined-image header which
+is checked on sysupgrade. The check will fail for ath79 images which
+may have embedded metadata. This is because metadata are appended after
+the combined image is created. To allow smooth transition from ar71xx to
+ath79, strip metadata before calculating md5 sum for whole image.
 
-Cc: Brian Gonyer <bgonyer@gmail.com>
-Cc: Daniel Gimpelevich <daniel@gimpelevich.san-francisco.ca.us>
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- target/linux/ath79/image/generic.mk | 2 +-
+ target/linux/ar71xx/base-files/lib/upgrade/platform.sh | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 6f1ad5b708..45a1baa632 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -108,7 +108,7 @@ define Device/adtran_bsap1880
-   IMAGES += kernel.bin rootfs.bin
-   IMAGE/kernel.bin := append-kernel | pad-to $$$$(BLOCKSIZE)
-   IMAGE/rootfs.bin := append-rootfs | pad-rootfs
--  IMAGE/sysupgrade.bin := append-rootfs | pad-rootfs | combined-image | append-metadata | check-size $$$$(IMAGE_SIZE)
-+  IMAGE/sysupgrade.bin := append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | sysupgrade-tar rootfs=$$$$@ | append-metadata
- endef
+diff --git a/target/linux/ar71xx/base-files/lib/upgrade/platform.sh b/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+index 6898c0e0c2..3853140702 100755
+--- a/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+@@ -394,7 +394,7 @@ platform_check_image() {
+ 		}
  
- define Device/adtran_bsap1800-v2
+ 		local md5_img=$(dd if="$1" bs=2 skip=9 count=16 2>/dev/null)
+-		local md5_chk=$(dd if="$1" bs=$CI_BLKSZ skip=1 2>/dev/null | md5sum -); md5_chk="${md5_chk%% *}"
++		local md5_chk=$(fwtool -q -t -i /dev/null "$1"; dd if="$1" bs=$CI_BLKSZ skip=1 2>/dev/null | md5sum -); md5_chk="${md5_chk%% *}"
+ 
+ 		if [ -n "$md5_img" -a -n "$md5_chk" ] && [ "$md5_img" = "$md5_chk" ]; then
+ 			return 0
 -- 
 2.23.0
 

@@ -2,32 +2,32 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBBC69AE43
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 13:40:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA4969AE53
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 13:47:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
 	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Vec17H+wailzyIQF+cB3kc8h8EJ1MFjPsqUxQAam0Hs=; b=P0H76aHmvNls85
-	EO0yj4nadZvtC5Ka3KPU4pHyJt8LQVeF/hWPQYpxwTgGpoC/6xVkd1N6r/9uJNudIhfkGk749aDfo
-	NAiKt6B37fBeEjdFTd8LpeXR+AhBLuKiy1AEJTJL3A34qfF1MNNFHsAV1wvXNMwa7gMRps8spZNbz
-	M2Asc17MKuXmIWJ4zZWce7JGGhg92fMTW1k5BAm/By2sIkM6Vq54nf8y7pMwLymdXFqyvJqMFpUjC
-	bZjtyfCyQCW9v98mk++vlIl1w2URuDbjCCelwMbXSbywhQYEU9riNQuX3FSPVqGsn6lDG4KCzsprJ
-	nxWAmUE7AnmemF0s3ebQ==;
+	List-Owner; bh=M1myOFJP+qd27HMwii5cZi2zboYTVMQmqnjeSOnYAeI=; b=hqxZM6QF4NMHcc
+	9aru29vJM64KCGCpQG0q5we2oBC74IY6345ugd1KQytM93h7utzi/qqeVFJJGAHVnz/3R8dYKheYq
+	tTvv6I5/+the+hA+ayb4yNOvro9G+7XZRh52hzec52YpXrQGSgodcmHgO3N1V5Wu0ePJzhse8bm0S
+	QMFxESs08Uhe0RclhYbtjenUDFaEXIWPMjOgPUL5QtAvRgepgY4q0K5nOtQC02LhsxDif2WqHMNvG
+	SyLXrMhzXqVwvJICUJ/Hl1QixMQ/CY79tAcYIxDC+eFsClVayHXuCC2RCScGwUjHL9WI65p0XK7S7
+	9ygMbzCn4Qft9+hzpMPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i17vD-0001a2-Ql; Fri, 23 Aug 2019 11:39:59 +0000
+	id 1i182P-0005It-9O; Fri, 23 Aug 2019 11:47:25 +0000
 Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i17v5-0001ZH-Bp
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 11:39:54 +0000
+ id 1i182H-0005IX-VH
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 11:47:19 +0000
 Received: from p4fcf952c.dip0.t-ipconnect.de ([79.207.149.44]
  helo=[192.168.2.103]); authenticated
  by wp175.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- id 1i17v2-0006tJ-95; Fri, 23 Aug 2019 13:39:48 +0200
+ id 1i182G-0006Fr-7Z; Fri, 23 Aug 2019 13:47:16 +0200
 To: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
 From: Birger Koblitz <mail@birger-koblitz.de>
 Openpgp: preference=signencrypt
@@ -49,19 +49,18 @@ Autocrypt: addr=mail@birger-koblitz.de; prefer-encrypt=mutual; keydata=
  vnsn05NswHNBpaSnhTNzr0TkNkRRQAhZ8rwNbNh0iVuT4PADlyDkEWdNfBl1MUfs8OyCj1tB
  l2UGeJ+DNp1+X8AiNyGmdEicozb90I7UBVyISQQYEQIACQUCTKN6zAKbDAAKCRDRImRv+5+m
  vg64AJwISUIlauuw6sMaWhGtqGzBc96pAACeKH15f9ssxrnwYSzk1spOsw8ejpM=
-Message-ID: <6772c2c9-89ca-bac0-01a9-148e8505a5c3@birger-koblitz.de>
-Date: Fri, 23 Aug 2019 13:39:46 +0200
+Message-ID: <c409bd37-403e-761e-6571-479390de887b@birger-koblitz.de>
+Date: Fri, 23 Aug 2019 13:47:15 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
 Content-Language: en-US
-X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1566560391;
- bb3a00e1; 
-X-HE-SMSGID: 1i17v2-0006tJ-95
+X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1566560838;
+ 85656cca; 
+X-HE-SMSGID: 1i182G-0006Fr-7Z
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_043951_706536_EAF34809 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190823_044718_154208_F2816697 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,7 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2] ramips: use gpio_hog instead of gpio-exp
+Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for Asus RT-AC85P
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,1279 +85,362 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-ramips: use gpio_hog instead of gpio-export
+ramips: add support for Asus RT-AC85P
 
-The `gpio-export` functionality is a hack for
-missing kernel functionality, which was rejected in upstream kernel long
-time
-ago, for details see this email
-http://lists.infradead.org/pipermail/openwrt-devel/2019-February/015772.html,
-discussion in PR#1366 or
-https://github.com/openwrt/openwrt/pull/1814#issuecomment-462942022.
+SoC:	MediaTek MT7621AT dual-core @ 880MHz
+RAM:	256M (Winbond W632GG6KB-1)
+FLASH:	128MB (Macronix MX30LF1G18AC-TI)
+WiFi:	- 2.4GHz MediaTek MT7615N bgn
+	- 5GHz MediaTek MT7615N nac
+Switch: SoC integrated Gigabit Switch (4 x LAN, 1 x WAN)
+USB:	1 x USB 3.1 (Gen 1)
+BTN:	Reset, WPS
+LED:	- Power (blue)
+	- 5Ghz (blue)
+	- 2.4GHz (blue)
+	- Internet (blue)
+	- 4x LAN (blue)
+	(LAN/WAN leds are not controllable by GPIOs)
+UART: 	UART is present as Pads marked J4 on the PCB.
+	3.3V - TX - RX - GND / 57600-8N1
+	3.3V is the square pad
+MAC:	The MAC address on the router-label matches the MAC of
+	the 2.4 GHz WiFi.
+	LAN and WAN MAC are identical: MAC_LABEL+4
+	5 GHz WiFi MAC: also MAC_LABEL+4
+	
 
-This patch converts all ramips .dts(i) files which were
-using export-gpio for powering USB/SATA ports to using gpio_hog instead
+Installation
+------------
+Via U-Boot tftpd:
+Switch on device, within 2s press reset button and keep pressed
+until power LED starts blinking slowly.
+Upload factory image via tftp put, the router's ip is 192.168.1.1
+and expects the client on 192.168.1.75.
+
+The images also work on the Asus RT-AC65P models as tested by Gabor.
 
 Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
+Tested-by: Gabor Varga <vargagab@gmail.com>
 
 ---
 
-v2: Limited conversion to only usb ports/hubs and sata
+v2: Corrected sorting of entries in 02_network
+    Model name corrected in .dts
+    Whitespace fixes in .dts
+    wifi0/1 labels added to wifi nodes in .dts
+    Device name capitalized in mt7621.mk
 
-diff --git a/target/linux/ramips/dts/mt7620a_asus_rt-ac51u.dts
-b/target/linux/ramips/dts/mt7620a_asus_rt-ac51u.dts
-index 3e54ffdad2..c573b38284 100644
---- a/target/linux/ramips/dts/mt7620a_asus_rt-ac51u.dts
-+++ b/target/linux/ramips/dts/mt7620a_asus_rt-ac51u.dts
-@@ -53,16 +53,16 @@
- 			linux,code = <KEY_WPS_BUTTON>;
- 		};
- 	};
-+};
+v3: Added firmware backup to firmware2 partition before sysupgrade
+    Corrected modules included in image
 
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
+v4: Corrected MT7615N PCI IDs
 
--		enable-leds {
--			gpio-export,name = "enable-leds";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
--		};
-+	enable-leds {
-+		gpio-hog;
-+		line-name = "enable-leds";
-+		gpios = <10 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
+v5: Fixed indentation in platform.sh
 
-diff --git a/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a1.dts
-b/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a1.dts
-index 707bc1c3d3..7af90c6908 100644
---- a/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a1.dts
-+++ b/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a1.dts
-@@ -63,21 +63,17 @@
- 			linux,default-trigger = "usbport";
- 		};
- 	};
--
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <0>;
--			gpios = <&gpio1 14 GPIO_ACTIVE_LOW>;
--		};
--	};
- };
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network
+b/target/linux/ramips/base-files/etc/board.d/02_network
+index 2f9a02256e..ab90041d92 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -231,6 +231,17 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan" "1:wan" "6@eth0"
+ 		;;
++	asus,rt-ac85p|\
++	dlink,dir-860l-b1|\
++	elecom,wrc-1167ghbk2-s|\
++	elecom,wrc-1900gst|\
++	elecom,wrc-2533gst|\
++	huawei,hg255d|\
++	iodata,wn-ax1167gr|\
++	iodata,wn-gx300gr)
++		ucidef_add_switch "switch0" \
++			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
++		;;
+ 	asus,rt-n15|\
+ 	belkin,f9k1109v1|\
+ 	sitecom,wl-351)
+@@ -298,16 +309,6 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
+ 		;;
+-	dlink,dir-860l-b1|\
+-	elecom,wrc-1167ghbk2-s|\
+-	elecom,wrc-1900gst|\
+-	elecom,wrc-2533gst|\
+-	huawei,hg255d|\
+-	iodata,wn-ax1167gr|\
+-	iodata,wn-gx300gr)
+-		ucidef_add_switch "switch0" \
+-			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
+-		;;
+ 	dlink,dwr-118-a1)
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan:2" "2:lan:3" "3:lan:1" "4:lan:0" "5:wan" "6@eth0"
+@@ -531,6 +532,9 @@ ramips_setup_macs()
+ 		lan_mac=$(mtd_get_mac_binary factory 57344)
+ 		wan_mac=$(mtd_get_mac_binary factory 57350)
+ 		;;
++	asus,rt-ac85p)
++		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
++		;;
+ 	asus,rt-n56u)
+ 		lan_mac=$(macaddr_setbit_la "$(cat /sys/class/net/eth0/address)")
+ 		wan_mac=$(mtd_get_mac_binary factory 32772)
+diff --git a/target/linux/ramips/base-files/lib/upgrade/platform.sh
+b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+index a65492a309..cd9d8ae650 100755
+--- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+@@ -18,9 +18,16 @@ platform_do_upgrade() {
+ 	mikrotik,rbm33g)
+ 		[ -z "$(rootfs_type)" ] && mtd erase firmware
+ 		;;
++	asus,rt-ac85p)
++		echo "Backing up firmware"
++		dd if=/dev/mtd4 bs=1024 count=4096  > /tmp/backup_firmware.bin
++		dd if=/dev/mtd5 bs=1024 count=52224 >> /tmp/backup_firmware.bin
++		mtd -e firmware2 write /tmp/backup_firmware.bin firmware2
++		;;
+ 	esac
 
- &gpio1 {
- 	status = "okay";
+ 	case "$board" in
++	asus,rt-ac85p|\
+ 	hiwifi,hc5962|\
+ 	netgear,r6220|\
+ 	netgear,r6350|\
+diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+new file mode 100644
+index 0000000000..7aea207fad
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+@@ -0,0 +1,164 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
 +
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <14 GPIO_ACTIVE_LOW>;
-+		output-low;
-+	};
- };
-
- &gpio2 {
-diff --git a/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a2.dts
-b/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a2.dts
-index 26b23aa6d1..17ec47b9d5 100644
---- a/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a2.dts
-+++ b/target/linux/ramips/dts/mt7620a_dlink_dwr-118-a2.dts
-@@ -61,21 +61,17 @@
- 			linux,default-trigger = "usbport";
- 		};
- 	};
--
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
--		};
--	};
- };
-
- &gpio1 {
- 	status = "okay";
++#include "mt7621.dtsi"
 +
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <14 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
- };
-
- &gpio2 {
-diff --git a/target/linux/ramips/dts/mt7620a_dovado_tiny-ac.dts
-b/target/linux/ramips/dts/mt7620a_dovado_tiny-ac.dts
-index e36af1dc7f..acb3524e3d 100644
---- a/target/linux/ramips/dts/mt7620a_dovado_tiny-ac.dts
-+++ b/target/linux/ramips/dts/mt7620a_dovado_tiny-ac.dts
-@@ -39,16 +39,16 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio2 {
-+	status = "okay";
-
--		usbpower {
--			gpio-export,name = "usbpower";
--			gpio-export,output = <1>;
--			gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
--		};
-+	usbpower {
-+		gpio-hog;
-+		line-name = "usbpower";
-+		gpios = <5 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-@@ -56,10 +56,6 @@
- 	status = "okay";
- };
-
--&gpio2 {
--	status = "okay";
--};
--
- &gpio3 {
- 	status = "okay";
- };
-diff --git a/target/linux/ramips/dts/mt7620a_edimax_br-6478ac-v2.dts
-b/target/linux/ramips/dts/mt7620a_edimax_br-6478ac-v2.dts
-index 5c90aa1549..d329c3380c 100644
---- a/target/linux/ramips/dts/mt7620a_edimax_br-6478ac-v2.dts
-+++ b/target/linux/ramips/dts/mt7620a_edimax_br-6478ac-v2.dts
-@@ -66,22 +66,17 @@
- 			linux,default-trigger = "usbport";
- 		};
- 	};
--
--
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--		usb-power {
--			gpio-export,name="usb-power";
--			gpio-export,output=<1>;
--			gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
--		};
--	};
- };
-
--
- &gpio2 {
- 	status = "okay";
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
 +
-+	usb-power {
-+		gpio-hog;
-+		line-name = "usb-power";
-+		gpios = <5 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
- };
-
- &spi0 {
-diff --git a/target/linux/ramips/dts/mt7620a_hiwifi_hc5861.dts
-b/target/linux/ramips/dts/mt7620a_hiwifi_hc5861.dts
-index 73f1a4079a..b3af562e5d 100644
---- a/target/linux/ramips/dts/mt7620a_hiwifi_hc5861.dts
-+++ b/target/linux/ramips/dts/mt7620a_hiwifi_hc5861.dts
-@@ -41,22 +41,23 @@
- 			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usbpower {
--			gpio-export,name = "usbpower";
--			gpio-export,output = <0>;
--			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
--		};
-+	usbpower {
-+		gpio-hog;
-+		line-name = "usbpower";
-+		gpios = <13 GPIO_ACTIVE_LOW>;
-+		output-low;
-+	};
-
--		sdpower {
--			gpio-export,name = "sdpower";
--			gpio-export,output = <0>;
--			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
--		};
-+	sdpower {
-+		gpio-hog;
-+		line-name = "sdpower";
-+		gpios = <8 GPIO_ACTIVE_LOW>;
-+		output-low;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7620a_hiwifi_hc5x61.dtsi
-b/target/linux/ramips/dts/mt7620a_hiwifi_hc5x61.dtsi
-index 09b303fd33..85dc521722 100644
---- a/target/linux/ramips/dts/mt7620a_hiwifi_hc5x61.dtsi
-+++ b/target/linux/ramips/dts/mt7620a_hiwifi_hc5x61.dtsi
-@@ -20,16 +20,16 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usbpower {
--			gpio-export,name = "usbpower";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
--		};
-+	usbpower {
-+		gpio-hog;
-+		line-name = "usbpower";
-+		gpios = <13 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-@@ -39,10 +39,6 @@
- 	ralink,wdtmux = <1>;
- };
-
--&gpio0 {
--	status = "okay";
--};
--
- &gpio2 {
- 	status = "okay";
- };
-diff --git a/target/linux/ramips/dts/mt7620a_lava_lr-25g001.dts
-b/target/linux/ramips/dts/mt7620a_lava_lr-25g001.dts
-index 20974c93e2..261103d307 100644
---- a/target/linux/ramips/dts/mt7620a_lava_lr-25g001.dts
-+++ b/target/linux/ramips/dts/mt7620a_lava_lr-25g001.dts
-@@ -51,21 +51,17 @@
- 			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
- 		};
- 	};
--
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usbpower {
--			gpio-export,name = "usbpower";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
--	};
- };
-
- &gpio0 {
- 	status = "okay";
++/ {
++	compatible = "asus,rt-ac85p", "mediatek,mt7621-soc";
++	model = "Asus RT-AC85P";
 +
-+	usbpower {
-+		gpio-hog;
-+		line-name = "usbpower";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
- };
-
- &spi0 {
-diff --git a/target/linux/ramips/dts/mt7620a_lenovo_newifi-y1s.dts
-b/target/linux/ramips/dts/mt7620a_lenovo_newifi-y1s.dts
-index 007e0e69e8..4fb0479f23 100644
---- a/target/linux/ramips/dts/mt7620a_lenovo_newifi-y1s.dts
-+++ b/target/linux/ramips/dts/mt7620a_lenovo_newifi-y1s.dts
-@@ -13,27 +13,6 @@
- 		led-upgrade = &led_power_blue;
- 	};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usb0 {
--			gpio-export,name = "usb0";
--			gpio-export,output = <1>;
--			gpios = <&gpio2 14 GPIO_ACTIVE_HIGH>;
--		};
--		usb1 {
--			gpio-export,name = "usb1";
--			gpio-export,output = <1>;
--			gpios = <&gpio2 15 GPIO_ACTIVE_HIGH>;
--		};
--		usb2 {
--			gpio-export,name = "usb2";
--			gpio-export,output = <1>;
--			gpios = <&gpio2 16 GPIO_ACTIVE_HIGH>;
--		};
--	};
--
- 	leds {
- 		compatible = "gpio-leds";
-
-@@ -76,6 +55,31 @@
- 	};
- };
-
-+&gpio2 {
-+	status = "okay";
-+
-+	usb0 {
-+		gpio-hog;
-+		line-name = "usb0";
-+		gpios = <14 GPIO_ACTIVE_HIGH>;
-+		output-high;
++	aliases {
++		led-boot = &led_power;
++		led-failsafe = &led_power;
++		led-running = &led_power;
++		led-upgrade = &led_power;
 +	};
 +
-+	usb1 {
-+		gpio-hog;
-+		line-name = "usb1";
-+		gpios = <15 GPIO_ACTIVE_HIGH>;
-+		output-high;
++	chosen {
++		bootargs = "console=ttyS0,57600";
 +	};
 +
-+	usb2 {
-+		gpio-hog;
-+		line-name = "usb2";
-+		gpios = <16 GPIO_ACTIVE_HIGH>;
-+		output-high;
++	palmbus: palmbus@1E000000 {
++		i2c@900 {
++			status = "okay";
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		wps {
++			label = "wps";
++			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_WPS_BUTTON>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "rt-ac85p:blue:power";
++			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++		wlan2g {
++			label = "rt-ac85p:blue:wlan2g";
++			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0radio";
++		};
++
++		wlan5g {
++			label = "rt-ac85p:blue:wlan5g";
++			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1radio";
++		};
 +	};
 +};
 +
- &ethernet {
- 	status = "okay";
- 	mtd-mac-address = <&factory 0x4>;
-diff --git a/target/linux/ramips/dts/mt7620a_sanlinking_d240.dts
-b/target/linux/ramips/dts/mt7620a_sanlinking_d240.dts
-index 2110959ee8..1a45803b8e 100644
---- a/target/linux/ramips/dts/mt7620a_sanlinking_d240.dts
-+++ b/target/linux/ramips/dts/mt7620a_sanlinking_d240.dts
-@@ -53,23 +53,6 @@
- 		bootargs = "console=ttyS0,115200";
- 	};
-
--	gpio-export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		power_mpcie2 {
--			gpio-export,name = "power_mpcie2";
--			gpio-export,output = <1>;
--			gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
--		};
--
--		power_mpcie1 {
--			gpio-export,name = "power_mpcie1";
--			gpio-export,output = <1>;
--			gpios = <&gpio2 6 GPIO_ACTIVE_HIGH>;
--		};
--	};
--
- 	leds {
- 		compatible = "gpio-leds";
-
-@@ -103,11 +86,25 @@
- 	};
- };
-
--&gpio1 {
-+&gpio2 {
- 	status = "okay";
-+
-+	power_mpcie2 {
-+		gpio-hog;
-+		line-name = "power_mpcie2";
-+		gpios = <5 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-+
-+	power_mpcie1 {
-+		gpio-hog;
-+		line-name = "power_mpcie1";
-+		gpios = <6 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
- };
-
--&gpio2 {
-+&gpio1 {
- 	status = "okay";
- };
-
-diff --git a/target/linux/ramips/dts/mt7620a_sercomm_na930.dts
-b/target/linux/ramips/dts/mt7620a_sercomm_na930.dts
-index 6d85914265..95f49c24a3 100644
---- a/target/linux/ramips/dts/mt7620a_sercomm_na930.dts
-+++ b/target/linux/ramips/dts/mt7620a_sercomm_na930.dts
-@@ -102,16 +102,16 @@
- 			gpios = <&gpio2 29 GPIO_ACTIVE_LOW>;
- 		};
- 	};
++&sdhci {
++	status = "okay";
 +};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		telit {
--			gpio-export,name = "telit";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
--		};
-+	telit {
-+		gpio-hog;
-+		line-name = "telit";
-+		gpios = <13 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7620a_tplink_archer-mr200.dts
-b/target/linux/ramips/dts/mt7620a_tplink_archer-mr200.dts
-index 4beb737606..b2d146bab8 100644
---- a/target/linux/ramips/dts/mt7620a_tplink_archer-mr200.dts
-+++ b/target/linux/ramips/dts/mt7620a_tplink_archer-mr200.dts
-@@ -89,16 +89,16 @@
- 			linux,code = <KEY_RFKILL>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		power_usb {
--			gpio-export,name = "power_usb1";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
--		};
-+	power_usb1 {
-+		gpio-hog;
-+		line-name = "power_usb1";
-+		gpios = <11 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7620a_zyxel_keenetic-viva.dts
-b/target/linux/ramips/dts/mt7620a_zyxel_keenetic-viva.dts
-index 725339e77a..49a1dcb337 100644
---- a/target/linux/ramips/dts/mt7620a_zyxel_keenetic-viva.dts
-+++ b/target/linux/ramips/dts/mt7620a_zyxel_keenetic-viva.dts
-@@ -70,17 +70,6 @@
- 		};
- 	};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usb_power {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
--	};
--
- 	rtl8367rb {
- 		compatible = "realtek,rtl8367b";
- 		cpu_port = <7>;
-@@ -89,6 +78,17 @@
- 	};
- };
-
-+&gpio0 {
++
++&nand {
 +	status = "okay";
 +
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
++	partitions {
++		compatible = "fixed-partitions";
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		partition@0 {
++			label = "u-boot";
++			reg = <0x0 0xe0000>;
++			read-only;
++		};
++
++		partition@e0000 {
++			label = "u-boot-env";
++			reg = <0xe0000 0x100000>;
++			read-only;
++		};
++
++		factory: partition@1e0000 {
++			label = "factory";
++			reg = <0x1e0000 0x100000>;
++			read-only;
++		};
++
++		factory2: partition@2e0000 {
++			label = "factory2";
++			reg = <0x2e0000 0x100000>;
++			read-only;
++		};
++
++		partition@3e0000 {
++			label = "kernel";
++			reg = <0x3e0000 0x400000>;
++		};
++
++		partition@7e0000 {
++			label = "ubi";
++			reg = <0x7e0000 0x2e00000>;
++		};
++
++		partition@35e0000 {
++			label = "firmware2";
++			reg = <0x35e0000 0x3200000>;
++		};
 +	};
 +};
 +
- &spi0 {
- 	status = "okay";
-
-diff --git a/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni-ii.dts
-b/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni-ii.dts
-index b57c008ef3..c3f4dd6935 100644
---- a/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni-ii.dts
-+++ b/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni-ii.dts
-@@ -64,16 +64,16 @@
- 			linux,code = <BTN_0>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
++&pcie {
 +	status = "okay";
-
--		usb_power {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 21 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <21 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni.dts
-b/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni.dts
-index 2d7d3e8386..77d08546c2 100644
---- a/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni.dts
-+++ b/target/linux/ramips/dts/mt7620n_zyxel_keenetic-omni.dts
-@@ -64,16 +64,16 @@
- 			linux,code = <BTN_0>;
- 		};
- 	};
 +};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb_power {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 21 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <21 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7621_d-team_newifi-d2.dts
-b/target/linux/ramips/dts/mt7621_d-team_newifi-d2.dts
-index d51eb29600..95db962ae4 100644
---- a/target/linux/ramips/dts/mt7621_d-team_newifi-d2.dts
-+++ b/target/linux/ramips/dts/mt7621_d-team_newifi-d2.dts
-@@ -77,16 +77,16 @@
- 			linux,code = <KEY_WPS_BUTTON>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		power_usb3 {
--			gpio-export,name = "power_usb3";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
--		};
-+	power_usb3 {
-+		gpio-hog;
-+		line-name = "power_usb3";
-+		gpios = <11 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
-b/target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
-index 3eb0fac46e..2c1b050240 100644
---- a/target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
-+++ b/target/linux/ramips/dts/mt7621_d-team_pbr-m1.dts
-@@ -73,32 +73,34 @@
- 		};
- 	};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		power_usb2 {
--			gpio-export,name = "power_usb2";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>;
--		};
-+	beeper: beeper {
-+		compatible = "gpio-beeper";
-+		gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
-+	};
-+};
-
--		power_usb3 {
--			gpio-export,name = "power_usb3";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 25 GPIO_ACTIVE_HIGH>;
--		};
-+&gpio0 {
-+	status = "okay";
-
--		power_sata {
--			gpio-export,name = "power_sata";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 27 GPIO_ACTIVE_HIGH>;
--		};
-+	power_usb2 {
-+		gpio-hog;
-+		line-name = "power_usb2";
-+		gpios = <22 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
-
--	beeper: beeper {
--		compatible = "gpio-beeper";
--		gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
-+	power_usb3 {
-+		gpio-hog;
-+		line-name = "power_usb3";
-+		gpios = <25 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
 +
-+	power_sata {
-+		gpio-hog;
-+		line-name = "power_sata";
-+		gpios = <27 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7621_lenovo_newifi-d1.dts
-b/target/linux/ramips/dts/mt7621_lenovo_newifi-d1.dts
-index e681e1a0c9..45963b7333 100644
---- a/target/linux/ramips/dts/mt7621_lenovo_newifi-d1.dts
-+++ b/target/linux/ramips/dts/mt7621_lenovo_newifi-d1.dts
-@@ -50,22 +50,23 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb2power {
--			gpio-export,name = "usb2power";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
--		};
-+	usb2power {
-+		gpio-hog;
-+		line-name = "usb2power";
-+		gpios = <9 GPIO_ACTIVE_HIGH>;
-+		output-high;
++&pcie0 {
++	wifi0: wifi@0,0 {
++		compatible = "pci14c3,7615";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0000>;
++		ieee80211-freq-limit = <2400000 2500000>;
++		mtd-mac-address = <&factory 0x4>;
 +	};
-
--		usb3power {
--			gpio-export,name = "usb3power";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
--		};
-+	usb3power {
-+		gpio-hog;
-+		line-name = "usb3power";
-+		gpios = <11 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
-b/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
-index 0b39fa240a..80d3864205 100644
---- a/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
-+++ b/target/linux/ramips/dts/mt7621_mikrotik_rb750gr3.dts
-@@ -57,16 +57,16 @@
- 		compatible = "gpio-beeper";
- 		gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
- 	};
 +};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb_power {
--			gpio-export,name = "usb_power";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
-+	usb_power {
-+		gpio-hog;
-+		line-name = "usb_power";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7621_netgear_r6350.dts
-b/target/linux/ramips/dts/mt7621_netgear_r6350.dts
-index 403fc91d54..8cfd161248 100644
---- a/target/linux/ramips/dts/mt7621_netgear_r6350.dts
-+++ b/target/linux/ramips/dts/mt7621_netgear_r6350.dts
-@@ -63,16 +63,16 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usbpower {
--			gpio-export,name = "usbpower";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
--		};
-+	usbpower {
-+		gpio-hog;
-+		line-name = "usbpower";
-+		gpios = <10 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7621_xzwifi_creativebox-v1.dts
-b/target/linux/ramips/dts/mt7621_xzwifi_creativebox-v1.dts
-index 73bfd6a4f0..4b61f631c7 100644
---- a/target/linux/ramips/dts/mt7621_xzwifi_creativebox-v1.dts
-+++ b/target/linux/ramips/dts/mt7621_xzwifi_creativebox-v1.dts
-@@ -63,28 +63,30 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		power_usb2 {
--			gpio-export,name = "power_usb2";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>;
--		};
-+	power_usb2 {
-+		gpio-hog;
-+		line-name = "power_usb2";
-+		gpios = <22 GPIO_ACTIVE_HIGH>;
-+		output-high;
++
++&pcie1 {
++	wifi1: wifi@0,0 {
++		compatible = "pci14c3,7615";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++		mtd-mac-address = <&factory 0x8004>;
 +	};
-
--		power_usb3 {
--			gpio-export,name = "power_usb3";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 25 GPIO_ACTIVE_HIGH>;
--		};
-+	power_usb3 {
-+		gpio-hog;
-+		line-name = "power_usb3";
-+		gpios = <25 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-
--		power_sata {
--			gpio-export,name = "power_sata";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 27 GPIO_ACTIVE_HIGH>;
--		};
-+	power_sata {
-+		gpio-hog;
-+		line-name = "power_sata";
-+		gpios = <27 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/mt7628an_glinet_gl-mt300n-v2.dts
-b/target/linux/ramips/dts/mt7628an_glinet_gl-mt300n-v2.dts
-index 6222cfe345..0944ee5221 100644
---- a/target/linux/ramips/dts/mt7628an_glinet_gl-mt300n-v2.dts
-+++ b/target/linux/ramips/dts/mt7628an_glinet_gl-mt300n-v2.dts
-@@ -62,16 +62,16 @@
- 			linux,code = <BTN_1>;
- 		};
- 	};
 +};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++	mediatek,portmap = "wllll";
++	port@5 {
++		status = "disabled";
++	};
++};
++
++&i2c {
++    status = "disabled";
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "uart2", "uart3", "i2c";
++			ralink,function = "gpio";
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk
+b/target/linux/ramips/image/mt7621.mk
+index d86eb8cc34..c036a1c308 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -115,6 +115,22 @@ define Device/asus_rt-ac57u
+ endef
+ TARGET_DEVICES += asus_rt-ac57u
 
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <11 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
++define Device/asus_rt-ac85p
++  MTK_SOC := mt7621
++  DEVICE_VENDOR := ASUS
++  DEVICE_MODEL := RT-AC85P
++  IMAGE_SIZE := 51200k
++  UBINIZE_OPTS := -E 5
++  BLOCKSIZE := 128k
++  PAGESIZE := 2048
++  KERNEL_SIZE := 4096k
++  IMAGES += factory.bin
++  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
++  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) |
+append-ubi | check-size $$$$(IMAGE_SIZE)
++  DEVICE_PACKAGES := kmod-usb3 kmod-mt7615e wpad-basic uboot-envtools
++endef
++TARGET_DEVICES += asus_rt-ac85p
++
+ define Device/buffalo_wsr-1166dhp
+   MTK_SOC := mt7621
+   IMAGE/sysupgrade.bin := trx | pad-rootfs | append-metadata
 diff --git
-a/target/linux/ramips/dts/mt7628an_zyxel_keenetic-extra-ii.dts
-b/target/linux/ramips/dts/mt7628an_zyxel_keenetic-extra-ii.dts
-index 1d083ed8bb..2893466409 100644
---- a/target/linux/ramips/dts/mt7628an_zyxel_keenetic-extra-ii.dts
-+++ b/target/linux/ramips/dts/mt7628an_zyxel_keenetic-extra-ii.dts
-@@ -69,16 +69,16 @@
- 			linux,default-trigger = "usbport";
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usbpower {
--			gpio-export,name = "usbpower";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
--		};
-+	usbpower {
-+		gpio-hog;
-+		line-name = "usbpower";
-+		gpios = <6 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt3052_accton_wr6202.dts
-b/target/linux/ramips/dts/rt3052_accton_wr6202.dts
-index 1caec41a4b..d30c028be9 100644
---- a/target/linux/ramips/dts/rt3052_accton_wr6202.dts
-+++ b/target/linux/ramips/dts/rt3052_accton_wr6202.dts
-@@ -80,16 +80,16 @@
- 			};
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <0>;
--			gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <11 GPIO_ACTIVE_LOW>;
-+		output-low;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt3883_dlink_dir-645.dts
-b/target/linux/ramips/dts/rt3883_dlink_dir-645.dts
-index 35d011ebba..7e5e079cd2 100644
---- a/target/linux/ramips/dts/rt3883_dlink_dir-645.dts
-+++ b/target/linux/ramips/dts/rt3883_dlink_dir-645.dts
-@@ -53,21 +53,17 @@
- 			gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
- 		};
- 	};
--
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
--		};
--	};
- };
-
- &gpio1 {
- 	status = "okay";
-+
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <6 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
- };
-
- &spi0 {
-diff --git a/target/linux/ramips/dts/rt3883_edimax_br-6475nd.dts
-b/target/linux/ramips/dts/rt3883_edimax_br-6475nd.dts
-index f7fb8b5c40..6950535edd 100644
---- a/target/linux/ramips/dts/rt3883_edimax_br-6475nd.dts
-+++ b/target/linux/ramips/dts/rt3883_edimax_br-6475nd.dts
-@@ -108,19 +108,20 @@
- 	 * and the headers are there.
- 	 */
- 	/*
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--
--		usb {
--			gpio-export,name="usb";
--			gpio-export,output=<0>;
--			gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
--		};
--	};
- 	*/
- };
-
-+&gpio0 {
-+	status = "okay";
-+
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <19 GPIO_ACTIVE_LOW>;
-+		output-low;
-+	};
-+};
-+
- &pinctrl {
- 	state_default: pinctrl0 {
- 		gpio {
-diff --git a/target/linux/ramips/dts/rt3883_omnima_hpm.dts
-b/target/linux/ramips/dts/rt3883_omnima_hpm.dts
-index 7ccd078144..bcc0b1ba82 100644
---- a/target/linux/ramips/dts/rt3883_omnima_hpm.dts
-+++ b/target/linux/ramips/dts/rt3883_omnima_hpm.dts
-@@ -66,23 +66,23 @@
- 			gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
--		/* gpio 12 and 13 handle the OC input */
-+&gpio0 {
-+	status = "okay";
-
--		usb0 {
--			gpio-export,name = "usb0";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
--		};
-+	usb0 {
-+		gpio-hog;
-+		line-name = "usb0";
-+		gpios = <2 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-
--		usb1 {
--			gpio-export,name = "usb1";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 1 GPIO_ACTIVE_HIGH>;
--		};
-+	usb1 {
-+		gpio-hog;
-+		line-name = "usb1";
-+		gpios = <1 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt3883_sitecom_wlr-6000.dts
-b/target/linux/ramips/dts/rt3883_sitecom_wlr-6000.dts
-index 2b1f707658..22634e8819 100644
---- a/target/linux/ramips/dts/rt3883_sitecom_wlr-6000.dts
-+++ b/target/linux/ramips/dts/rt3883_sitecom_wlr-6000.dts
-@@ -40,16 +40,16 @@
- 			gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <9 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt5350_dlink_dir-320-b1.dts
-b/target/linux/ramips/dts/rt5350_dlink_dir-320-b1.dts
-index 040a223986..abbcf6392d 100644
---- a/target/linux/ramips/dts/rt5350_dlink_dir-320-b1.dts
-+++ b/target/linux/ramips/dts/rt5350_dlink_dir-320-b1.dts
-@@ -51,22 +51,23 @@
- 			linux,code = <KEY_WPS_BUTTON>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <7 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-
--		root_hub {
--			gpio-export,name = "root_hub";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
-+	root_hub {
-+		gpio-hog;
-+		line-name = "root_hub";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt5350_hame_mpr-a1.dts
-b/target/linux/ramips/dts/rt5350_hame_mpr-a1.dts
-index 328351a550..c15de48f5e 100644
---- a/target/linux/ramips/dts/rt5350_hame_mpr-a1.dts
-+++ b/target/linux/ramips/dts/rt5350_hame_mpr-a1.dts
-@@ -40,22 +40,23 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <7 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-
--		root_hub {
--			gpio-export,name = "root_hub";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
-+	root_hub {
-+		gpio-hog;
-+		line-name = "root_hub";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt5350_hame_mpr-a2.dts
-b/target/linux/ramips/dts/rt5350_hame_mpr-a2.dts
-index fedb5b061e..5481d6d6ab 100644
---- a/target/linux/ramips/dts/rt5350_hame_mpr-a2.dts
-+++ b/target/linux/ramips/dts/rt5350_hame_mpr-a2.dts
-@@ -40,22 +40,23 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <7 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-
--		root_hub {
--			gpio-export,name = "root_hub";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
-+	root_hub {
-+		gpio-hog;
-+		line-name = "root_hub";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt5350_tenda_3g150b.dts
-b/target/linux/ramips/dts/rt5350_tenda_3g150b.dts
-index 9d13625516..c924b7e5d1 100644
---- a/target/linux/ramips/dts/rt5350_tenda_3g150b.dts
-+++ b/target/linux/ramips/dts/rt5350_tenda_3g150b.dts
-@@ -42,16 +42,16 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <13 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
-diff --git a/target/linux/ramips/dts/rt5350_unbranded_a5-v11.dts
-b/target/linux/ramips/dts/rt5350_unbranded_a5-v11.dts
-index 707963d691..2192e7fba8 100644
---- a/target/linux/ramips/dts/rt5350_unbranded_a5-v11.dts
-+++ b/target/linux/ramips/dts/rt5350_unbranded_a5-v11.dts
-@@ -40,22 +40,23 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+};
-
--	gpio_export {
--		compatible = "gpio-export";
--		#size-cells = <0>;
-+&gpio0 {
-+	status = "okay";
-
--		usb {
--			gpio-export,name = "usb";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
--		};
-+	usb {
-+		gpio-hog;
-+		line-name = "usb";
-+		gpios = <7 GPIO_ACTIVE_HIGH>;
-+		output-high;
-+	};
-
--		root_hub {
--			gpio-export,name = "root_hub";
--			gpio-export,output = <1>;
--			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
--		};
-+	root_hub {
-+		gpio-hog;
-+		line-name = "root_hub";
-+		gpios = <12 GPIO_ACTIVE_HIGH>;
-+		output-high;
- 	};
- };
-
+a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+index d50e689110..d2d69b4ff4 100644
+---
+a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
++++
+b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+@@ -4256,7 +4256,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
+ +#endif /* __NAND_DEF_H__ */
+ --- /dev/null
+ +++ b/drivers/mtd/nand/nand_device_list.h
+-@@ -0,0 +1,59 @@
++@@ -0,0 +1,60 @@
+ +/* Copyright Statement:
+ + *
+ + * This software/firmware and related documentation ("MediaTek
+Software") are
+@@ -4308,6 +4308,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
+ +	{0xC8DC, 0x909554, 5, 8, 512, 128, 2048, 64, 0x30C77fff, "F59L4G81A", 0},
+ +	{0xECD3, 0x519558, 5, 8, 1024, 128, 2048, 64, 0x44333, "K9K8G8000", 0},
+ +    {0xC2F1, 0x801DC2, 4, 8, 128, 128, 2048, 64, 0x30C77fff,
+"MX30LF1G08AA", 0},
+++    {0xC2F1, 0x809502, 4, 8, 128, 128, 2048, 64, 0x30C77fff,
+"MX30LF1G18AC", 0},
+ +    {0x98D3, 0x902676, 5, 8, 1024, 256, 4096, 224, 0x00C25332,
+"TC58NVG3S0F", 0},
+ +    {0x01DA, 0x909546, 5, 8, 256, 128, 2048, 128, 0x30C77fff,
+"S34ML02G200TF", 0},
+ +    {0x01DC, 0x909556, 5, 8, 512, 128, 2048, 128, 0x30C77fff,
+"S34ML04G200TF", 0},
 
 _______________________________________________
 openwrt-devel mailing list

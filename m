@@ -2,52 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 332BB9A90A
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 09:40:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71F319AA5B
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 10:30:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jjmO6cQlO/XShuC/ToR5PG+Y5WV+a5K+356HDuR+Yp0=; b=l3/QQbXYoCiUHH
-	yvn3NFFM3d1EiUxrrfvI7W0EBP+EaBUWVAEriS+9ZBo8hhplSeHPg/ko9QDOQQre0gYiK4zNIID9j
-	WzF/mlkiVkjnVlpH86BeJzbceLZyQqrijVzlCWCxCVyYUS1bBXZdxp3IY3K6BIjcOhfx2R4pMYgn2
-	VslsFDLzrGKyLYlhSYosU9zaduxb86VsuOCXSVLxOoKXnCBsvOq4SKwnqm9s/YLvuUMgwhRGjV4d5
-	SFbDVNiHdsBL/ku/mlNxobyAY2OmCnCKrD5KUWvTcAJDoosJcATpgTAPyQ5UbRzvkJwPD3QaR3Npq
-	Pn9Jw1nXSpYc9rk3hM8g==;
+	List-Owner; bh=ejHMUM5AlQ7d4EkktG1mbx7/zxhHqn74ohuFulqifeI=; b=PeexYl9ZMGzQ1p
+	vcUB5V3eAqvYOiFXEvHHjO3JxwO+k4pAoYC6RddNezVBN8YsM+L3/M1y5bKChwm+iNuRdXlzGYTg1
+	IB8g6RWeVNnp0d2IintTC79VrSFuVwv0+HOJRsOOGUvVhjSVPNdGYwfqs6A2rc43gucFa6YUknlKr
+	+bL+SjSCUQfgGlRKBtY97zYZzi/Qc1hes7mcFeWed/g0sLAlp28n5i+yM/aoc02VEUQWp6NA+ZnmB
+	c+v1ySDRuJCnAtofMnqq1OCaxHUI9TCZIi541XK+zL/fIyP/gp/jeohW3SuOntiB9yiUqRqcLHhkz
+	dvoHu63lBaH7+kL49n3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i14BJ-0008Jh-3s; Fri, 23 Aug 2019 07:40:21 +0000
-Received: from groat.dascon.de ([195.225.198.185])
+	id 1i14yD-00036B-0z; Fri, 23 Aug 2019 08:30:53 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i14B3-0007WQ-FO
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 07:40:09 +0000
-Received: by groat.dascon.de (Postfix, from userid 10)
- id 86D8E2A28E05; Fri, 23 Aug 2019 09:40:03 +0200 (CEST)
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- by a-tuin.dascon.de (Postfix) with ESMTP id E18E9AA0620
- for <openwrt-devel@lists.openwrt.org>; Fri, 23 Aug 2019 09:35:08 +0200 (CEST)
-To: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-From: Michael Schwingen <michael@schwingen.org>
-X-Clacks-Overhead: GNU Terry Pratchett
-Message-ID: <950e5682-94b5-f3f8-2181-e1a0c363bc45@schwingen.org>
-Date: Fri, 23 Aug 2019 09:35:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i14y5-00035h-A2
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 08:30:46 +0000
+X-Originating-IP: 98.151.65.6
+Received: from localhost.localdomain (cpe-98-151-65-6.hawaii.res.rr.com
+ [98.151.65.6]) (Authenticated sender: mail@aparcar.org)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id ABBE8FF80B;
+ Fri, 23 Aug 2019 08:30:33 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 22 Aug 2019 22:30:10 -1000
+Message-Id: <20190823083009.10602-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.23.0.rc1
 MIME-Version: 1.0
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_004005_751572_BC4F9D9D 
-X-CRM114-Status: GOOD (  10.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_013045_501438_4EA503DD 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] need help regarding flash layout for new device
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] bcm53xx: add generic subtarget
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,48 +59,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Same game as for 853e4dd3062df7cb5704b15d6af6730e3194b571. Add generic
+to the filenames.
 
+CC: Hauke Mehrtens <hauke@hauke-m.de>
 
-I am in the process of getting OpenWRT running on a new device (Lancom 
-LN-1702: NXP T1013).
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+ target/linux/bcm53xx/Makefile          | 1 +
+ target/linux/bcm53xx/generic/target.mk | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 target/linux/bcm53xx/generic/target.mk
 
-I have a working u-boot and kernel 4.19, and now I am a bit lost 
-regarding what flash/partition layout to use to get OpenWRT running with 
-minimal modifications.
-
-I have: NAND flash on T1013 IFC bus, with 4 MTD partitions, and UBI on 
-the last one. UBI has 3 volumes: kernel, dts and rootfs.
-
-If I tftpboot and start kernel/initramfs, I get a running system without 
-any r/w filesystem. ubi0 on mtd4 is auto-detected, and I can manually 
-mount the rootfs_data volume - but this does not happen automatically on 
-boot.
-
-When I boot the kernel from flash, with root=ubi0:rootfs_data, it finds 
-init but hangs when trying to mount an overlay.
-
-I am looking for some guidance how this is supposed to work - since this 
-device never had Linux on it, I don't have an "original" layout, and 
-https://openwrt.org/docs/techref/flash.layout is a bit thin regardings 
-NAND/UBI.
-
-Do I need special volume names? How is the boot process supposed to work 
-on a NAND/UBI setup (with or without initramfs, and what is mounted 
-where by whom)?
-
-Sorry for being vague about error messages - I can provide exact 
-bootlogs in the evening, but I am more looking for pointers to the 
-general concept from where I can find what I am doing wrong.
-
-best regards,
-
-Michael
+diff --git a/target/linux/bcm53xx/Makefile b/target/linux/bcm53xx/Makefile
+index 4171a04ee4..6c19263fdf 100644
+--- a/target/linux/bcm53xx/Makefile
++++ b/target/linux/bcm53xx/Makefile
+@@ -12,6 +12,7 @@ BOARDNAME:=Broadcom BCM47xx/53xx (ARM)
+ FEATURES:=squashfs nand usb pci pcie gpio
+ MAINTAINER:=Hauke Mehrtens <hauke@hauke-m.de>
+ CPU_TYPE:=cortex-a9
++SUBTARGETS:=generic
+ 
+ KERNEL_PATCHVER:=4.14
+ KERNEL_TESTING_PATCHVER := 4.19
+diff --git a/target/linux/bcm53xx/generic/target.mk b/target/linux/bcm53xx/generic/target.mk
+new file mode 100644
+index 0000000000..f5cb1fb19b
+--- /dev/null
++++ b/target/linux/bcm53xx/generic/target.mk
+@@ -0,0 +1 @@
++BOARDNAME:=Generic
+-- 
+2.23.0.rc1
 
 
 _______________________________________________

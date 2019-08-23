@@ -2,84 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3310F9B15F
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 15:54:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B55E39B184
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 16:02:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wLfYowci0a1gPZzu8MEWEYMRmwps51JmTE9bydiTMXo=; b=LTF+AzBRCFzAyN
-	P3y4S5TM2vFYk+I+AeDKtkUFAk3H/Fnc372YgtPW9UiFHKqy88MYoGVdAPUYTG4Snde7GUTDeLxLR
-	V7a0aGBgyUyWr2KSDO6WiCzSUluPyljoXtRSRYwySdUCfqEPYFxfOLDMDbsvMuBK41239k1HuSGpN
-	44KogrmP8f5Wv774XLzQyft1pOMA28dWl2+TM2g8NyAOvZBl6zYw5mfCcjKyRu9GJQqdMFj1LNJhK
-	r1vJweBu9BFqlPM19aj1I1tLi1Ep0Z50MUvW01rnop+27rYfMSbwsyqvotonIByVxvPF+PgVf3KUu
-	XSkU36Cy5871pMtdi++w==;
+	List-Owner; bh=u5mD7ehzhjZ8Q74TqZKeEcwSaxljQS0Lucjo3AAn4TA=; b=dP9cQ7ukjLBvzC
+	ebz15Ma2gL8xlVLB9Otw3dYV8+87h/VmJ6RaRbzS2zAuvOe42O+Dy/yg28al8D7G+T7oZpY+jopGy
+	7ECmZxwyXUDDlLKO7DUUj3K6l9IJQOjF7ImrKvB9P6EFY5ya5uuPlZry6gEp3ZKLulsCYTEWkP6iK
+	YL27OyD+OHpez/1vVj09ieN0QhmF9n4Sf7H1SFaJNxLAv9n31zK+MZF5VKjnwaXONvKYw//MH98if
+	GKcMmFUYw2hUXzcZYMiomPkRZzgY+laEnW9wWNxDV8809HQ3VacdVFVlCVoF8s7LoIQ0WvFdRqG8o
+	GWnwRpTKs9gqZxwIsvmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1A1G-0000qz-Sj; Fri, 23 Aug 2019 13:54:22 +0000
-Received: from mail-qk1-x734.google.com ([2607:f8b0:4864:20::734])
+	id 1i1A8z-0006C5-0h; Fri, 23 Aug 2019 14:02:21 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1A19-0000qh-K4
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 13:54:17 +0000
-Received: by mail-qk1-x734.google.com with SMTP id d23so8252421qko.3
- for <openwrt-devel@lists.openwrt.org>; Fri, 23 Aug 2019 06:54:14 -0700 (PDT)
+ id 1i1A8t-0006Bb-Cr
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 14:02:16 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b17so7224462lff.7
+ for <openwrt-devel@lists.openwrt.org>; Fri, 23 Aug 2019 07:02:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:from:subject:message-id:date:user-agent:mime-version
- :content-transfer-encoding:content-language;
- bh=5lHRmFMISb1HM4QSedEBDxjvkiwfb0UxM+SNXg0rkfo=;
- b=KI38rjtC7TuTYc7dLgh9U2N1v+4LH0YFr4muJ18uHOmg5++8ol9/U8CWG3mar8LLNU
- 8NirTG9gSOKcrzXRLPIFAEBefeL4SyX/Cgafr9adLi/y4BcZtNE3AqOHbYtvRpRZ5a3x
- 4KjuoH8RgXYD4DlJx3WIOtAhguqs+isIc6lxghk93k8iJQVnYwRQsns/zCWl01iAQqpG
- ussejykHhBvPfVbvPafcuX3TPmwlqUZuiU4zYuVvlt2jAjoClDQuldAuPjowvZ3+ppwu
- eGfSkxgHEnktYM0aEfb9hh0rLE0k2/ZsnH12nbdbdqq15Yn3QlrLLGkRoDXKNhTwI7lb
- /L5g==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=V1Y+bkWo5D3GlvqzjH/Z83uekas3f6VyFAi0l2ejRus=;
+ b=nWN/0qn+MfebmJwqpbv/fwJgBFc4/CoF2VCfR696/9FGCNI0ieZYNg2O4gaGH2f4X+
+ k4OlLSPzafrsRZQ6VyO9bbPWxRTe/ya4LRwkBD3D4CNektdhAW3HMcoDqo33nISAcdZo
+ eimKHl0nrvr92jKMdczBF0c5pbE/GPn+Xj57Ap7D0mRRo08FlwQJaI4+DLQChp+B8LEs
+ KhAddVL/ZWR27Smw0VznkaKeQRdWCpq7/bQVvXasfG218cnzdw/ncjMmywmiCkANaE3j
+ L2SFrk61ng3xOoL4NMCFQcdItAiUAr0qEBVXbJcACgFr3nf3fJbsL8p9b/lZ7HIXS196
+ DcOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:subject:message-id:date:user-agent
- :mime-version:content-transfer-encoding:content-language;
- bh=5lHRmFMISb1HM4QSedEBDxjvkiwfb0UxM+SNXg0rkfo=;
- b=sMUN/Vy87QzQzolnfMMAxt9j+QdwEl0GKO/atfhMYusBIRwgxNd3PIhsbWR4L2Bwy7
- pYF7N4Pjvga4J9eloOG2QVr1W+vL7l67LF5OLWMuQC12sCe24GEykdXy1s1k1RUtl3bg
- K2MDKL6Jht9VU+Cx2VqRO9tBqX1P6+lNWh1buzrHSk+3g+rd+Yr4xEk2AdIVMG4SlG2S
- ET+1AY7RWVE6F8B+D0C63m2QIDCtVSfvvrUj0NJMML/JZZmd6aLUZBoX0isqu/q6osmF
- RR1DDgYZD5GkmmPW33leURzkgZ+c+JKGCpmrDuOqahMWwWiErgk1hXw5N87HNHFR6ItQ
- hh3w==
-X-Gm-Message-State: APjAAAVivnCGbRph+Md8jUKUzUAPUjoSyRWOBItUTSuou4s17GTrQ2BL
- d6LrhE2IEsLC9JRrGFgqI7XmCQZl
-X-Google-Smtp-Source: APXvYqyzgl2ih4+26T2T54Vy5BY1+AQG0kdx+jY0SZxmp4dZVqrMJqCWdHIn4q+MHKTbKjX2cuv4tQ==
-X-Received: by 2002:a37:9281:: with SMTP id u123mr4110022qkd.270.1566568453849; 
- Fri, 23 Aug 2019 06:54:13 -0700 (PDT)
-Received: from ?IPv6:2804:368:9:8000:d097:f72d:e565:d900?
- ([2804:368:9:8000:d097:f72d:e565:d900])
- by smtp.gmail.com with ESMTPSA id b202sm1486777qkg.83.2019.08.23.06.54.12
- for <openwrt-devel@lists.openwrt.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=V1Y+bkWo5D3GlvqzjH/Z83uekas3f6VyFAi0l2ejRus=;
+ b=gRL4EWSi+4w7fWgKeE1dIzgvrqyxcXe/8Ek/0z2ef+cOTG1wZBKMbfb1xk9l+Gpxs5
+ jt8jfvuInlulEE+LjyxdPZEFVQxzneoTIJm4KlLEX/OySaKEAJwgz4v/6ZLBlur1eXCc
+ LQfcD+0bwaE50Z/ZBD7iS+lsi9nwQA5qwudSqmUVymA69PVIJFLk8ck0oIpGEhEJ5a4W
+ W7CQzZ515MNyLbbdxicqEpRGCNg33xJau3bSowodl7fmihJoE86ciZwoCvn0dZWIXFDG
+ CKwyJYibzts86hvdyICnQaGcJ9Df9G3wmSO3yKP0DNkyE6ux8VjZV7/aB2nr6VcyjUfv
+ 3QCQ==
+X-Gm-Message-State: APjAAAWM/NjL5AdQMS67X7TBTamzTUm7zuHfSPKtl0mmJ+IUrCbyGJRg
+ xvPIrPGx4UjCtSVdk2YenkM=
+X-Google-Smtp-Source: APXvYqzTQaeGcGBcFHQelxP7bVvMJd5UhZhzhW4ZgtbrpzjPfZcBsr4HRcCyS5AU7r+y/WxEXzp22w==
+X-Received: by 2002:a19:6f09:: with SMTP id k9mr3035176lfc.102.1566568933067; 
+ Fri, 23 Aug 2019 07:02:13 -0700 (PDT)
+Received: from dk.user.kdf.lan ([176.59.66.109])
+ by smtp.gmail.com with ESMTPSA id k4sm639009ljb.20.2019.08.23.07.02.10
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 23 Aug 2019 06:54:13 -0700 (PDT)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Fernando Frediani <fhfrediani@gmail.com>
-Message-ID: <ac4491d7-adc2-f818-7b64-403140bc2d5b@gmail.com>
-Date: Fri, 23 Aug 2019 10:54:10 -0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Fri, 23 Aug 2019 07:02:11 -0700 (PDT)
+From: Denis Kalashnikov <denis281089@gmail.com>
+To: Matti Laakso <malaakso@elisanet.fi>
+Date: Fri, 23 Aug 2019 16:57:49 +0300
+Message-Id: <20190823135749.32764-1-denis281089@gmail.com>
+X-Mailer: git-send-email 2.19.2
 MIME-Version: 1.0
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_065415_687633_C902B0AC 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190823_070215_464112_89055D3E 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:734 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (denis281089[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (fhfrediani[at]gmail.com)
+ provider (denis281089[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,7 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] Questions about IPv6 and NDP-Proxy
+Subject: [OpenWrt-Devel] [PATCH] uqmi: separate into libuqmi library and
+ uqmi util itself
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,36 +98,131 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel@lists.openwrt.org, Denis Kalashnikov <denis281089@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello
+It is needed to reuse qmi code, e.g. in a modem manager util
+which is useful on routers with several cell modems.
 
-I have seen on some old OpenWrt documentation 
-(https://openwrt.org/docs/guide-user/network/ipv6/start#router_advertisement_dhcpv6) 
-that by default when the router cannot receive a IPv6 Prefix Delegation 
-(IPv6-PD) but only an IPv6 in the WAN it can automatically detect it and 
-act as a NDP-Proxy so the clients in the LAN interface have IPv6 
-connectivity.
+Signed-off-by: Denis Kalashnikov <denis281089@gmail.com>
 
-I have tested it and was unable to observe this behavior without 
-changing any configurations. If however I configured both the LAN and 
-WAN6 interfaces as DHCPv6, RA and NDP in Relay mode plus WAN6 with 
-'option master 1' then it works as expected.
+---
+ package/network/utils/uqmi/Makefile           | 25 +++++++++-
+ .../utils/uqmi/patches/10000-libuqmi.patch    | 46 +++++++++++++++++++
+ 2 files changed, 70 insertions(+), 1 deletion(-)
+ create mode 100644 package/network/utils/uqmi/patches/10000-libuqmi.patch
 
-Does anyone know if this automated behavior is expected or if in these 
-cases it is always necessary to configured the interfaces in such way to 
-make that work ?
-
-This is useful as many people inadvertently connects the LAN port of a 
-home router to a WAN port of a second router in order to extend signal 
-and by using this technique allows that users connected to the secondary 
-routers to keep IPv6 connectivity.
-
-Thanks
-Fernando
+diff --git a/package/network/utils/uqmi/Makefile b/package/network/utils/uqmi/Makefile
+index dee4bd051e..49386c9f7a 100644
+--- a/package/network/utils/uqmi/Makefile
++++ b/package/network/utils/uqmi/Makefile
+@@ -24,7 +24,7 @@ define Package/uqmi
+   SECTION:=net
+   CATEGORY:=Network
+   SUBMENU:=WWAN
+-  DEPENDS:=+libubox +libblobmsg-json +kmod-usb-net +kmod-usb-net-qmi-wwan +wwan
++  DEPENDS:=+libubox +libblobmsg-json +kmod-usb-net +kmod-usb-net-qmi-wwan +wwan +libuqmi
+   TITLE:=Control utility for mobile broadband modems
+ endef
+ 
+@@ -33,6 +33,17 @@ define Package/uqmi/description
+   the QMI-protocol.
+ endef
+ 
++define Package/libuqmi
++  SECTION:=libs
++  CATEGORY:=Libraries
++  DEPENDS:=+libubox +kmod-usb-net +kmod-usb-net-qmi-wwan +wwan
++  TITLE:=Control library for mobile broadband modems
++endef
++
++define Package/libuqmi/description
++ Shared library for controlling mobile broadband modems using the QMI-protocol.
++endef
++
+ TARGET_CFLAGS += \
+ 	-I$(STAGING_DIR)/usr/include -ffunction-sections -fdata-sections
+ 
+@@ -41,10 +52,22 @@ TARGET_LDFLAGS += -Wl,--gc-sections
+ CMAKE_OPTIONS += \
+ 	-DDEBUG=1
+ 
++define Build/InstallDev
++	$(INSTALL_DIR) $(STAGING_DIR)/usr/include/libuqmi
++	$(CP) $(PKG_BUILD_DIR)/*.h $(STAGING_DIR)/usr/include/libuqmi
++	$(CP) $(PKG_BUILD_DIR)/libuqmi.so $(STAGING_DIR)/usr/lib
++endef
++
+ define Package/uqmi/install
+ 	$(INSTALL_DIR) $(1)/sbin
+ 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/uqmi $(1)/sbin/
+ 	$(CP) ./files/* $(1)/
+ endef
+ 
++define Package/libuqmi/install
++	$(INSTALL_DIR) $(1)/usr/lib
++	$(CP) $(PKG_BUILD_DIR)/libuqmi.so $(1)/usr/lib
++endef
++
+ $(eval $(call BuildPackage,uqmi))
++$(eval $(call BuildPackage,libuqmi))
+diff --git a/package/network/utils/uqmi/patches/10000-libuqmi.patch b/package/network/utils/uqmi/patches/10000-libuqmi.patch
+new file mode 100644
+index 0000000000..b17aecb078
+--- /dev/null
++++ b/package/network/utils/uqmi/patches/10000-libuqmi.patch
+@@ -0,0 +1,46 @@
++Index: uqmi-2019-06-27-1965c713/CMakeLists.txt
++===================================================================
++--- uqmi-2019-06-27-1965c713.orig/CMakeLists.txt
+++++ uqmi-2019-06-27-1965c713/CMakeLists.txt
++@@ -8,7 +8,8 @@ ADD_DEFINITIONS(-Os -ggdb -Wall -Werror
++ 
++ SET(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "")
++ 
++-SET(SOURCES main.c dev.c commands.c qmi-message.c mbim.c)
+++SET(SOURCES main.c commands.c)
+++SET(LIB_SOURCES dev.c qmi-message.c mbim.c)
++ 
++ FIND_PATH(ubox_include_dir libubox/usock.h)
++ FIND_PATH(blobmsg_json_include_dir libubox/blobmsg_json.h)
++@@ -61,11 +62,15 @@ ADD_CUSTOM_COMMAND(
++ ADD_CUSTOM_TARGET(gen-errors DEPENDS qmi-errors.c)
++ ADD_CUSTOM_TARGET(gen-headers DEPENDS ${service_headers})
++ 
++-ADD_EXECUTABLE(uqmi ${SOURCES} ${service_sources})
+++ADD_LIBRARY(uqmi SHARED ${LIB_SOURCES} ${service_sources})
++ ADD_DEPENDENCIES(uqmi gen-headers gen-errors)
++ 
++-TARGET_LINK_LIBRARIES(uqmi ${LIBS})
+++ADD_EXECUTABLE(uqmi_bin ${SOURCES})
+++TARGET_LINK_LIBRARIES(uqmi_bin ${LIBS} uqmi)
+++SET_TARGET_PROPERTIES(uqmi_bin PROPERTIES OUTPUT_NAME uqmi)
++ 
++-INSTALL(TARGETS uqmi
+++INSTALL(TARGETS uqmi_bin
++ 	RUNTIME DESTINATION sbin
++ )
+++
+++INSTALL(TARGETS uqmi LIBRARY DESTINATION /usr/lib)
++Index: uqmi-2019-06-27-1965c713/dev.c
++===================================================================
++--- uqmi-2019-06-27-1965c713.orig/dev.c
+++++ uqmi-2019-06-27-1965c713/dev.c
++@@ -353,8 +353,6 @@ int qmi_device_open(struct qmi_dev *qmi,
++ 	struct ustream *us = &qmi->sf.stream;
++ 	int fd;
++ 
++-	uloop_init();
++-
++ 	fd = open(path, O_RDWR | O_EXCL | O_NONBLOCK | O_NOCTTY);
++ 	if (fd < 0)
++ 		return -1;
+-- 
+2.19.2
 
 
 _______________________________________________

@@ -2,32 +2,32 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BD969A8BD
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 09:25:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 786F09A8C5
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 09:30:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
 	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7Nz0QPeAKq/wBt5NSN8HIKuMapJH2b2BqyTagISeN14=; b=rXUdujGre8BKcB
-	NXmEMEt2zmMes/l0C66/uWalM0dXu8/3ZNpJsQYCzHmSd/6Gx2+KM5kcBRjL0fHcTm/PuhyxTI+p7
-	/T1akxEv4JRT9+v8H6aEDmsUAaXOn/jDwrbiKa0qUbpe1Wopf5qn/bOUbaj63s3vc/yEoOp1agwCw
-	HZV5KxF3jCrv1s/OCvFNSFKDskAOvn/8sLDA1YHpvYwA0BPBApMCu9THo8LyCRoATDDwzamTqUpBl
-	g2wVpnTQ7paC22yAL8Dt0nMVdje4NVisvqPu5fu0PNZeaGBk2NOH4cvb1mDKvhx2PIs6ujfjwPrOl
-	yZZj3q/nuaLZMoh9o6VA==;
+	List-Owner; bh=kXwsu3dCuBW60q7iNj689XVzYBroNW3tkjdKI0Uxou4=; b=Bxul3Hmq81EuAZ
+	IhMfoYxfjtbxLcpeD6k8h6g0bo6sDArFo9Ce0KGU3gJaO1BqZxZ/YUHgn69a9Y9jBse2xeIzr/itd
+	ql1DjZE/Ai5rNg8IQxlKFMC9TjTLiHvL8ACiw6+IROO9trmHW4v3ki6n4MXIyupHm+FEmbNUPkv0d
+	w/THL9CBb47lpjLf/g3WFr0X3QI+MFVxz4XcYmJx43rhwoQhW7oCHjjK6cYccdU+JQiHx51S5FP4K
+	osLYUeTYVyxejxZFvguenLQ+HJ08OziXSUmcdWek+zSNheTXhBTmShn9wMLdXPphjKR90o7MFG1CM
+	FUo7dvoX6c41IjR+4jDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i13xF-0001F5-QC; Fri, 23 Aug 2019 07:25:49 +0000
+	id 1i141t-0003Ko-ST; Fri, 23 Aug 2019 07:30:38 +0000
 Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i13wy-0001Ap-7G
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 07:25:34 +0000
+ id 1i141Y-0003J2-P5
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 07:30:18 +0000
 Received: from p4fcf952c.dip0.t-ipconnect.de ([79.207.149.44]
  helo=[192.168.2.103]); authenticated
  by wp175.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- id 1i13ww-0004Mb-Bs; Fri, 23 Aug 2019 09:25:30 +0200
+ id 1i141W-0007h2-Tm; Fri, 23 Aug 2019 09:30:15 +0200
 To: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
 From: Birger Koblitz <mail@birger-koblitz.de>
 Openpgp: preference=signencrypt
@@ -49,18 +49,18 @@ Autocrypt: addr=mail@birger-koblitz.de; prefer-encrypt=mutual; keydata=
  vnsn05NswHNBpaSnhTNzr0TkNkRRQAhZ8rwNbNh0iVuT4PADlyDkEWdNfBl1MUfs8OyCj1tB
  l2UGeJ+DNp1+X8AiNyGmdEicozb90I7UBVyISQQYEQIACQUCTKN6zAKbDAAKCRDRImRv+5+m
  vg64AJwISUIlauuw6sMaWhGtqGzBc96pAACeKH15f9ssxrnwYSzk1spOsw8ejpM=
-Message-ID: <80ef48ed-3410-a980-ded4-0cb1df970c03@birger-koblitz.de>
-Date: Fri, 23 Aug 2019 09:25:29 +0200
+Message-ID: <d7d21d0b-6c82-3c87-c41b-de01862fab47@birger-koblitz.de>
+Date: Fri, 23 Aug 2019 09:30:13 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
 Content-Language: en-US
-X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1566545132;
- f0b9f05d; 
-X-HE-SMSGID: 1i13ww-0004Mb-Bs
+X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1566545416;
+ ffeba28b; 
+X-HE-SMSGID: 1i141W-0007h2-Tm
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_002532_439670_EB818EDE 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20190823_003016_994684_62D437B3 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
 Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for Edimax RG21S
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -85,56 +86,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-ramips: add support for Asus RT-AC85P
+ramips: add support for Edimax RG21S
 
 SoC:	MediaTek MT7621AT dual-core @ 880MHz
-RAM:	256M (Winbond W632GG6KB-1)
-FLASH:	128MB (Macronix MX30LF1G18AC-TI)
+RAM:	256M (Nanya NT5CC128M)
+FLASH:	16MB (Macronix MX25L12835F)
 WiFi:	- 2.4GHz MediaTek MT7615N bgn
 	- 5GHz MediaTek MT7615N nac
 Switch: SoC integrated Gigabit Switch (4 x LAN, 1 x WAN)
-USB:	1 x USB 3.1 (Gen 1)
+USB:	No
 BTN:	Reset, WPS
-LED:	- Power (blue)
-	- 5Ghz (blue)
-	- 2.4GHz (blue)
-	- Internet (blue)
-	- 4x LAN (blue)
-	(LAN/WAN leds are not controllable by GPIOs)
-UART: 	UART is present as Pads marked J4 on the PCB.
-	3.3V - TX - RX - GND / 57600-8N1
+LED:	4 red LEDs, indistinguishable when casing closed
+UART: 	UART is present as Pads marked J1 on the PCB.
+	3.3V - RX - GND - TX / 57600-8N1
 	3.3V is the square pad
-MAC:	The MAC address on the router-label matches the MAC of
-	the 2.4 GHz WiFi.
-	LAN and WAN MAC are identical: MAC_LABEL+4
-	5 GHz WiFi MAC: also MAC_LABEL+4
-	
 
 Installation
 ------------
-Via U-Boot tftpd:
-Switch on device, within 2s press reset button and keep pressed
-until power LED starts blinking slowly.
-Upload factory image via tftp put, the router's ip is 192.168.1.1
-and expects the client on 192.168.1.75.
-
-The images also work on the Asus RT-AC65P models as tested by Gabor.
+Update the factory image via the OEM web-interface
+(by default:http://192.168.1.1)
+The sysupgrade image can be installed via TFTP from
+the U-Boot bootloader. Connect ethernet port 2.
 
 Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
-Tested-by: Gabor Varga <vargagab@gmail.com>
 
 ---
 
-v2: Corrected sorting of entries in 02_network
-    Model name corrected in .dts
-    Whitespace fixes in .dts
-    wifi0/1 labels added to wifi nodes in .dts
-    Device name capitalized in mt7621.mk
-
-v3: Added firmware backup to firmware2 partition before sysupgrade
-    Corrected modules included in image
-
-v4: Corrected MT7615N PCI IDs
+v3: Update to DEVICE_VENDOR / DEVICE_MODEL in mt7621.mk
+    renamed .dts according to new conventions
+    Removed memory node from .dts
+    Correct image size
+    Whitespace fixes
+v4: Added wifi0/1 labels to wifi nodes
+    Model name corrected in dts
+    Comments removed from .dts
+v5: Corrected MT7615N PCI IDs
+    Unnecessary kernel-modules removed from image
 
 diff --git a/target/linux/ramips/base-files/etc/board.d/02_network
 b/target/linux/ramips/base-files/etc/board.d/02_network

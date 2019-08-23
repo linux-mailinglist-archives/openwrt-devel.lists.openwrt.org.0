@@ -2,32 +2,32 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6628A9A860
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 09:14:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 194789A8BC
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 09:25:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
 	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QgvUkW4I/CS9MuzDfwGzAvIV+e6bnb9CICsOqJXeBfE=; b=gQH1do8NQSsHpl
-	s83V7/3/0a3Z5BRkNtdqO7b2Vf292rtN0cxrviwOMOlGbAg5PqRELCOZkMoBjo0jpSgO0F4/mm1Jf
-	RY9HsgTpfiw8RCZfBmzQXFn9GkNhCG+QkPJv+B7rArSyV3ZH/Jz2GGqAW73px+Eh1wiAiLvSOZ/pU
-	tmzR0KCQumV/jVLFmn9KKTJY3mTya6f/eGaxAnz/ztmIP+iuB5tBFBHEgdas4HhWKyjvZ/SyKMKpr
-	pyOUuFEGeCYJWQLsI5PgMaEFAG1CCbMNzQbjuRlrg7ysWRISx/XKpJLU0WcwdzpWrehPEDYesy9+x
-	e+ZUhpaC6xqGtzqCvD9A==;
+	List-Owner; bh=0p0rDDuwq/rUO1ua9i325/rbC3LGhHSbm1G2vvDSR3o=; b=F1RES01G5KDl2k
+	q2YekDTZ3hYILKKxX2M3+8cuxboYXIsDv8YDRoOcee9XRW9OyAy/QH8OrEfuKH42X4Nj6K+UASdHA
+	L/8QxvO4P7EUnd9Lpq5JgJe79WYAEL6WWcqM+TNQpfLimyrvVCmXPwbTvU48qZ1Q/8EXyKJXaXSeR
+	2D+jk6xjXHY68oTYH2ER0ilIY/EZ84wxXmx7rQCc3N4hFxbUTxRZLCSa+lL/qhiVghQGarczCmiHS
+	USnTTVjkAgGNdJpWUDhh8do3cJsQseLjTO83+GwTkwlxAAQRe+ZtQ9irqq7Fu/Gqdrj0dkigmDeYN
+	rX+yoe4469gRhrF1LBPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i13lv-0006oD-Vi; Fri, 23 Aug 2019 07:14:08 +0000
+	id 1i13wx-000107-MP; Fri, 23 Aug 2019 07:25:31 +0000
 Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i13ZA-0000O5-11
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 07:00:59 +0000
+ id 1i13v4-0006nO-5R
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 07:23:36 +0000
 Received: from p4fcf952c.dip0.t-ipconnect.de ([79.207.149.44]
  helo=[192.168.2.103]); authenticated
  by wp175.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- id 1i13Z4-0003Yx-1F; Fri, 23 Aug 2019 09:00:50 +0200
+ id 1i13v2-0001ah-HY; Fri, 23 Aug 2019 09:23:32 +0200
 To: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
 From: Birger Koblitz <mail@birger-koblitz.de>
 Openpgp: preference=signencrypt
@@ -49,18 +49,18 @@ Autocrypt: addr=mail@birger-koblitz.de; prefer-encrypt=mutual; keydata=
  vnsn05NswHNBpaSnhTNzr0TkNkRRQAhZ8rwNbNh0iVuT4PADlyDkEWdNfBl1MUfs8OyCj1tB
  l2UGeJ+DNp1+X8AiNyGmdEicozb90I7UBVyISQQYEQIACQUCTKN6zAKbDAAKCRDRImRv+5+m
  vg64AJwISUIlauuw6sMaWhGtqGzBc96pAACeKH15f9ssxrnwYSzk1spOsw8ejpM=
-Message-ID: <accaa4b6-3420-5765-ae80-126ff3db0efd@birger-koblitz.de>
-Date: Fri, 23 Aug 2019 09:00:36 +0200
+Message-ID: <4c93e4ac-c8ca-fb41-eb96-d5cfeed5f1d6@birger-koblitz.de>
+Date: Fri, 23 Aug 2019 09:23:32 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
 Content-Language: en-US
-X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1566543656;
- 84039423; 
-X-HE-SMSGID: 1i13Z4-0003Yx-1F
+X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1566545014;
+ 141efa01; 
+X-HE-SMSGID: 1i13v2-0001ah-HY
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_000056_411942_ECA4BFA2 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20190823_002334_376281_3BE26390 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,8 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
-Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for Edimax RG21S
+Subject: [OpenWrt-Devel] [PATCH v4] ramips: add support for Asus RT-AC85P
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,160 +80,367 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-cmFtaXBzOiBhZGQgRWRpbWF4IFJHMjFTCgpTb0M6wqDCoMKgIE1lZGlhVGVrIE1UNzYyMUFUIGR1
-YWwtY29yZSBAIDg4ME1IegpSQU06wqDCoMKgIDI1Nk0gKE5hbnlhIE5UNUNDMTI4TSkKRkxBU0g6
-wqDCoMKgIDE2TUIgKE1hY3Jvbml4IE1YMjVMMTI4MzVGKQpXaUZpOsKgwqDCoCAtIDIuNEdIeiBN
-ZWRpYVRlayBNVDc2MTVOIGJnbgrCoMKgwqAgLSA1R0h6IE1lZGlhVGVrIE1UNzYxNU4gbmFjClN3
-aXRjaDogU29DIGludGVncmF0ZWQgR2lnYWJpdCBTd2l0Y2ggKDQgeCBMQU4sIDEgeCBXQU4pClVT
-QjrCoMKgwqAgTm8KQlROOsKgwqDCoCBSZXNldCwgV1BTCkxFRDrCoMKgwqAgNCByZWQgTEVEcywg
-aW5kaXN0aW5ndWlzaGFibGUgd2hlbiBjYXNpbmcgY2xvc2VkClVBUlQ6IMKgwqDCoCBVQVJUIGlz
-IHByZXNlbnQgYXMgUGFkcyBtYXJrZWQgSjEgb24gdGhlIFBDQi4KwqDCoMKgIDMuM1YgLSBSWCAt
-IEdORCAtIFRYIC8gNTc2MDAtOE4xCsKgwqDCoCAzLjNWIGlzIHRoZSBzcXVhcmUgcGFkCgpJbnN0
-YWxsYXRpb24KLS0tLS0tLS0tLS0tClVwZGF0ZSB0aGUgZmFjdG9yeSBpbWFnZSB2aWEgdGhlIE9F
-TSB3ZWItaW50ZXJmYWNlCihieSBkZWZhdWx0Omh0dHA6Ly8xOTIuMTY4LjEuMSkKVGhlIHN5c3Vw
-Z3JhZGUgaW1hZ2UgY2FuIGJlIGluc3RhbGxlZCB2aWEgVEZUUCBmcm9tCnRoZSBVLUJvb3QgYm9v
-dGxvYWRlci4gQ29ubmVjdCBldGhlcm5ldCBwb3J0IDIuCgpTaWduZWQtb2ZmLWJ5OiBCaXJnZXIg
-S29ibGl0eiA8bWFpbEBiaXJnZXIta29ibGl0ei5kZT4KCi0tLQoKdjM6IFVwZGF0ZSB0byBERVZJ
-Q0VfVkVORE9SIC8gREVWSUNFX01PREVMIGluIG10NzYyMS5tawrCoMKgwqAgcmVuYW1lZCAuZHRz
-IGFjY29yZGluZyB0byBuZXcgY29udmVudGlvbnMKwqDCoMKgIFJlbW92ZWQgbWVtb3J5IG5vZGUg
-ZnJvbSAuZHRzCsKgwqDCoCBDb3JyZWN0IGltYWdlIHNpemUKwqDCoMKgIFdoaXRlc3BhY2UgZml4
-ZXMKdjQ6IEFkZGVkIHdpZmkwLzEgbGFiZWxzIHRvIHdpZmkgbm9kZXMKwqDCoMKgIE1vZGVsIG5h
-bWUgY29ycmVjdGVkIGluIGR0cwrCoMKgwqAgQ29tbWVudHMgcmVtb3ZlZCBmcm9tIC5kdHMKdjU6
-IENvcnJlY3RlZCBNVDc2MTVOIFBDSSBJRHMKwqDCoMKgIFVubmVjZXNzYXJ5IGtlcm5lbC1tb2R1
-bGVzIHJlbW92ZWQgZnJvbSBpbWFnZQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMv
-YmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrCmIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9i
-YXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKaW5kZXggYzBkZTlkNGU1MC4uOTE2ODU1
-MDhkYiAxMDA3NTUKLS0tIGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2Fy
-ZC5kLzAyX25ldHdvcmsKKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9i
-b2FyZC5kLzAyX25ldHdvcmsKQEAgLTMzNiw2ICszMzYsMTAgQEAgcmFtaXBzX3NldHVwX2ludGVy
-ZmFjZXMoKQrCoMKgwqDCoCDCoMKgwqAgdWNpZGVmX2FkZF9zd2l0Y2ggInN3aXRjaDAiIFwKwqDC
-oMKgwqAgwqDCoMKgIMKgwqDCoCAiMDpsYW4iICI0OndhbiIgIjZAZXRoMCIKwqDCoMKgwqAgwqDC
-oMKgIDs7CivCoMKgwqAgZWRpbWF4LHJnMjFzKQorwqDCoMKgIMKgwqDCoCB1Y2lkZWZfYWRkX3N3
-aXRjaCAic3dpdGNoMCIgXAorwqDCoMKgIMKgwqDCoCDCoMKgwqAgIjE6bGFuOjQiICIyOmxhbjoz
-IiAiMzpsYW46MiIgIjQ6bGFuOjEiICIwOndhbiIgIjZAZXRoMCIKK8KgwqDCoCDCoMKgwqAgOzsK
-wqDCoMKgwqAgZ2VodWEsZ2hsLXItMDAxKQrCoMKgwqDCoCDCoMKgwqAgdWNpZGVmX2FkZF9zd2l0
-Y2ggInN3aXRjaDAiIFwKwqDCoMKgwqAgwqDCoMKgIMKgwqDCoCAiMDpsYW4iICIxOmxhbiIgIjI6
-bGFuIiAiNDp3YW4iICI2QGV0aDAiCkBAIC01OTQsNiArNTk4LDEwIEBAIHJhbWlwc19zZXR1cF9t
-YWNzKCkKwqDCoMKgwqAgZWRpbWF4LGJyLTY0NzhhYy12MikKwqDCoMKgwqAgwqDCoMKgIHdhbl9t
-YWM9JChtYWNhZGRyX2FkZCAiJChjYXQgL3N5cy9jbGFzcy9uZXQvZXRoMC9hZGRyZXNzKSIgMikK
-wqDCoMKgwqAgwqDCoMKgIDs7CivCoMKgwqAgZWRpbWF4LHJnMjFzKQorwqDCoMKgIMKgwqDCoCBs
-YW5fbWFjPSQobXRkX2dldF9tYWNfYXNjaWkgdS1ib290LWVudiBldGhhZGRyKQorwqDCoMKgIMKg
-wqDCoCB3YW5fbWFjPSQobXRkX2dldF9tYWNfYXNjaWkgdS1ib290LWVudiB3YW5hZGRyKQorwqDC
-oMKgIMKgwqDCoCA7OwrCoMKgwqDCoCBlbGVjb20sd3JjLTExNjdnaGJrMi1zfFwKwqDCoMKgwqAg
-ZWxlY29tLHdyYy0xOTAwZ3N0fFwKwqDCoMKgwqAgZWxlY29tLHdyYy0yNTMzZ3N0fFwKZGlmZiAt
-LWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMvZHRzL210NzYyMV9lZGltYXhfcmcyMXMuZHRzCmIv
-dGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3NjIxX2VkaW1heF9yZzIxcy5kdHMKbmV3IGZpbGUg
-bW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMC4uZGZjY2FlMTAyYgotLS0gL2Rldi9udWxsCisr
-KyBiL3RhcmdldC9saW51eC9yYW1pcHMvZHRzL210NzYyMV9lZGltYXhfcmcyMXMuZHRzCkBAIC0w
-LDAgKzEsMTU3IEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vci1sYXRl
-ciBPUiBNSVQKKy9kdHMtdjEvOworCisjaW5jbHVkZSAibXQ3NjIxLmR0c2kiCisKKyNpbmNsdWRl
-IDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnB1dC9p
-bnB1dC5oPgorCisvIHsKK8KgwqDCoCBjb21wYXRpYmxlID0gImVkaW1heCxyZzIxcyIsICJtZWRp
-YXRlayxtdDc2MjEtc29jIjsKK8KgwqDCoCBtb2RlbCA9ICJFZGltYXggUkcyMVMiOworCivCoMKg
-wqAgYWxpYXNlcyB7CivCoMKgwqAgwqDCoMKgIGxlZC1ib290ID0gJmxlZF9wb3dlcjsKK8KgwqDC
-oCDCoMKgwqAgbGVkLWZhaWxzYWZlID0gJmxlZF9wb3dlcjsKK8KgwqDCoCDCoMKgwqAgbGVkLXJ1
-bm5pbmcgPSAmbGVkX3Bvd2VyOworwqDCoMKgIMKgwqDCoCBsZWQtdXBncmFkZSA9ICZsZWRfcG93
-ZXI7CivCoMKgwqAgfTsKKworwqDCoMKgIGNob3NlbiB7CivCoMKgwqAgwqDCoMKgIGJvb3Rhcmdz
-ID0gImNvbnNvbGU9dHR5UzAsNTc2MDAiOworwqDCoMKgIH07CisKK8KgwqDCoCBwYWxtYnVzOiBw
-YWxtYnVzQDFFMDAwMDAwIHsKK8KgwqDCoCDCoMKgwqAgaTJjQDkwMCB7CivCoMKgwqAgwqDCoMKg
-IMKgwqDCoCBzdGF0dXMgPSAib2theSI7CivCoMKgwqAgwqDCoMKgIH07CivCoMKgwqAgfTsKKwor
-wqDCoMKgIGtleXMgeworwqDCoMKgIMKgwqDCoCBjb21wYXRpYmxlID0gImdwaW8ta2V5cyI7CisK
-K8KgwqDCoCDCoMKgwqAgcmVzZXQgeworwqDCoMKgIMKgwqDCoCDCoMKgwqAgbGFiZWwgPSAicmVz
-ZXQiOworwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ3Bpb3MgPSA8JmdwaW8wIDE2IEdQSU9fQUNUSVZF
-X0xPVz47CivCoMKgwqAgwqDCoMKgIMKgwqDCoCBsaW51eCxjb2RlID0gPEtFWV9SRVNUQVJUPjsK
-K8KgwqDCoCDCoMKgwqAgfTsKKworwqDCoMKgIMKgwqDCoCB3cHMgeworwqDCoMKgIMKgwqDCoCDC
-oMKgwqAgbGFiZWwgPSAid3BzIjsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIGdwaW9zID0gPCZncGlv
-MCAxOCBHUElPX0FDVElWRV9MT1c+OworwqDCoMKgIMKgwqDCoCDCoMKgwqAgbGludXgsY29kZSA9
-IDxLRVlfUkVTVEFSVD47CivCoMKgwqAgwqDCoMKgIH07CivCoMKgwqAgfTsKKworwqDCoMKgIGxl
-ZHMgeworwqDCoMKgIMKgwqDCoCBjb21wYXRpYmxlID0gImdwaW8tbGVkcyI7CisKK8KgwqDCoCDC
-oMKgwqAgbGVkX3Bvd2VyOiBsZWRfMSB7CivCoMKgwqAgwqDCoMKgIMKgwqDCoCBsYWJlbCA9ICJy
-ZzIxczpyZWQ6bGVkMSI7CivCoMKgwqAgwqDCoMKgIMKgwqDCoCBncGlvcyA9IDwmZ3BpbzAgNyBH
-UElPX0FDVElWRV9ISUdIPjsKK8KgwqDCoCDCoMKgwqAgfTsKKworwqDCoMKgIMKgwqDCoCBsZWRf
-MiB7CivCoMKgwqAgwqDCoMKgIMKgwqDCoCBsYWJlbCA9ICJyZzIxczpyZWQ6bGVkMiI7CivCoMKg
-wqAgwqDCoMKgIMKgwqDCoCBncGlvcyA9IDwmZ3BpbzAgMTIgR1BJT19BQ1RJVkVfSElHSD47CivC
-oMKgwqAgwqDCoMKgIH07CisKK8KgwqDCoCDCoMKgwqAgbGVkXzMgeworwqDCoMKgIMKgwqDCoCDC
-oMKgwqAgbGFiZWwgPSAicmcyMXM6cmVkOmxlZDMiOworwqDCoMKgIMKgwqDCoCDCoMKgwqAgZ3Bp
-b3MgPSA8JmdwaW8wIDE0IEdQSU9fQUNUSVZFX0hJR0g+OworwqDCoMKgIMKgwqDCoCB9OworCivC
-oMKgwqAgwqDCoMKgIGxlZF80IHsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIGxhYmVsID0gInJnMjFz
-OnJlZDpsZWQ0IjsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIGdwaW9zID0gPCZncGlvMCAxNSBHUElP
-X0FDVElWRV9ISUdIPjsKK8KgwqDCoCDCoMKgwqAgfTsKK8KgwqDCoCB9OworfTsKKworJnNkaGNp
-IHsKK8KgwqDCoCBzdGF0dXMgPSAib2theSI7Cit9OworCismc3BpMCB7CivCoMKgwqAgc3RhdHVz
-ID0gIm9rYXkiOworCivCoMKgwqAgbTI1cDgwQDAgeworwqDCoMKgIMKgwqDCoCBjb21wYXRpYmxl
-ID0gImplZGVjLHNwaS1ub3IiOworwqDCoMKgIMKgwqDCoCByZWcgPSA8MD47CivCoMKgwqAgwqDC
-oMKgIHNwaS1tYXgtZnJlcXVlbmN5ID0gPDEwMDAwMDAwPjsKKworwqDCoMKgIMKgwqDCoCBwYXJ0
-aXRpb25zIHsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIGNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0
-aW9ucyI7CivCoMKgwqAgwqDCoMKgIMKgwqDCoCAjYWRkcmVzcy1jZWxscyA9IDwxPjsKK8KgwqDC
-oCDCoMKgwqAgwqDCoMKgICNzaXplLWNlbGxzID0gPDE+OworCivCoMKgwqAgwqDCoMKgIMKgwqDC
-oCBwYXJ0aXRpb25AMCB7CivCoMKgwqAgwqDCoMKgIMKgwqDCoCDCoMKgwqAgbGFiZWwgPSAidS1i
-b290IjsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIMKgwqDCoCByZWcgPSA8MHgwIDB4MzAwMDA+Owor
-wqDCoMKgIMKgwqDCoCDCoMKgwqAgwqDCoMKgIHJlYWQtb25seTsKK8KgwqDCoCDCoMKgwqAgwqDC
-oMKgIH07CisKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIHBhcnRpdGlvbkAzMDAwMCB7CivCoMKgwqAg
-wqDCoMKgIMKgwqDCoCDCoMKgwqAgbGFiZWwgPSAidS1ib290LWVudiI7CivCoMKgwqAgwqDCoMKg
-IMKgwqDCoCDCoMKgwqAgcmVnID0gPDB4MzAwMDAgMHgxMDAwMD47CivCoMKgwqAgwqDCoMKgIMKg
-wqDCoCDCoMKgwqAgcmVhZC1vbmx5OworwqDCoMKgIMKgwqDCoCDCoMKgwqAgfTsKKworwqDCoMKg
-IMKgwqDCoCDCoMKgwqAgZmFjdG9yeTogcGFydGl0aW9uQDQwMDAwIHsKK8KgwqDCoCDCoMKgwqAg
-wqDCoMKgIMKgwqDCoCBsYWJlbCA9ICJmYWN0b3J5IjsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIMKg
-wqDCoCByZWcgPSA8MHg0MDAwMCAweDEwMDAwPjsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIMKgwqDC
-oCByZWFkLW9ubHk7CivCoMKgwqAgwqDCoMKgIMKgwqDCoCB9OworCivCoMKgwqAgwqDCoMKgIMKg
-wqDCoCBwYXJ0aXRpb25ANTAwMDAgeworwqDCoMKgIMKgwqDCoCDCoMKgwqAgwqDCoMKgIGNvbXBh
-dGlibGUgPSAiZGVueCx1aW1hZ2UiOworwqDCoMKgIMKgwqDCoCDCoMKgwqAgwqDCoMKgIGxhYmVs
-ID0gImZpcm13YXJlIjsKK8KgwqDCoCDCoMKgwqAgwqDCoMKgIMKgwqDCoCByZWcgPSA8MHg1MDAw
-MCAweGZiMDAwMD47CivCoMKgwqAgwqDCoMKgIMKgwqDCoCB9OworwqDCoMKgIMKgwqDCoCB9Owor
-wqDCoMKgIH07Cit9OworCismcGNpZSB7CivCoMKgwqAgc3RhdHVzID0gIm9rYXkiOworfTsKKwor
-JnBjaWUwIHsKK8KgwqDCoCB3aWZpMDogd2lmaUAwLDAgeworwqDCoMKgIMKgwqDCoCBjb21wYXRp
-YmxlID0gInBjaTE0YzMsNzYxNSI7CivCoMKgwqAgwqDCoMKgIHJlZyA9IDwweDAwMDAgMCAwIDAg
-MD47CivCoMKgwqAgwqDCoMKgIG1lZGlhdGVrLG10ZC1lZXByb20gPSA8JmZhY3RvcnkgMHgwMDAw
-PjsKK8KgwqDCoCDCoMKgwqAgaWVlZTgwMjExLWZyZXEtbGltaXQgPSA8MjQwMDAwMCAyNTAwMDAw
-PjsKK8KgwqDCoCDCoMKgwqAgbXRkLW1hYy1hZGRyZXNzID0gPCZmYWN0b3J5IDB4ND47CivCoMKg
-wqAgfTsKK307CisKKyZwY2llMSB7CivCoMKgwqAgd2lmaTE6IHdpZmlAMCwwIHsKK8KgwqDCoCDC
-oMKgwqAgY29tcGF0aWJsZSA9ICJwY2kxNGMzLDc2MTUiOworwqDCoMKgIMKgwqDCoCByZWcgPSA8
-MHgwMDAwIDAgMCAwIDA+OworwqDCoMKgIMKgwqDCoCBtZWRpYXRlayxtdGQtZWVwcm9tID0gPCZm
-YWN0b3J5IDB4ODAwMD47CivCoMKgwqAgwqDCoMKgIGllZWU4MDIxMS1mcmVxLWxpbWl0ID0gPDUw
-MDAwMDAgNjAwMDAwMD47CivCoMKgwqAgwqDCoMKgIG10ZC1tYWMtYWRkcmVzcyA9IDwmZmFjdG9y
-eSAweDgwMDQ+OworwqDCoMKgIH07Cit9OworCismZXRoZXJuZXQgeworwqDCoMKgIG1lZGlhdGVr
-LHBvcnRtYXAgPSAid2xsbGwiOworwqDCoMKgIHBvcnRANSB7CivCoMKgwqAgwqDCoMKgIHN0YXR1
-cyA9ICJkaXNhYmxlZCI7CivCoMKgwqAgfTsKK307CisKKyZwaW5jdHJsIHsKK8KgwqDCoCBzdGF0
-ZV9kZWZhdWx0OiBwaW5jdHJsMCB7CivCoMKgwqAgwqDCoMKgIGdwaW8geworwqDCoMKgIMKgwqDC
-oCDCoMKgwqAgcmFsaW5rLGdyb3VwID0gIndkdCIsICJyZ21paTIiLCAianRhZyIsICJtZGlvIjsK
-K8KgwqDCoCDCoMKgwqAgwqDCoMKgIHJhbGluayxmdW5jdGlvbiA9ICJncGlvIjsKK8KgwqDCoCDC
-oMKgwqAgfTsKK8KgwqDCoCB9OworfTsKKworJnhoY2kgeworwqDCoMKgIHN0YXR1cyA9ICJkaXNh
-YmxlZCI7Cit9OwpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9pbWFnZS9tdDc2MjEu
-bWsKYi90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMS5tawppbmRleCBkMzJmZWI3ZWFi
-Li4wNmM1MzY5NTE0IDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYy
-MS5taworKysgYi90YXJnZXQvbGludXgvcmFtaXBzL2ltYWdlL210NzYyMS5tawpAQCAtMzAsNiAr
-MzAsMjUgQEAgZGVmaW5lIEJ1aWxkL2VsZWNvbS13cmMtZmFjdG9yeQrCoMKgIG12ICRALm5ldyAk
-QArCoGVuZGVmCsKgCitkZWZpbmUgQnVpbGQvZWx4LWhlYWRlcgorwqAgJChldmFsIGh3X2lkPSQo
-d29yZCAxLCQoMSkpKQorwqAgJChldmFsIHhvcl9wYXR0ZXJuPSQod29yZCAyLCQoMSkpKQorwqAg
-KCBcCivCoMKgwqAgZWNobyAtbmUgIlx4MDBceDAwXHgwMFx4MDBceDAwXHgwMFx4MDBceDAzIiB8
-IFwKK8KgwqDCoMKgwqAgZGQgYnM9NDIgY291bnQ9MSBjb252PXN5bmM7IFwKK8KgwqDCoCBod19p
-ZD0iJChod19pZCkiOyBcCivCoMKgwqAgZWNobyAtbmUKIlx4JCR7aHdfaWQ6MDoyfVx4JCR7aHdf
-aWQ6MjoyfVx4JCR7aHdfaWQ6NDoyfVx4JCR7aHdfaWQ6NjoyfSIgfCBcCivCoMKgwqDCoMKgIGRk
-IGJzPTIwIGNvdW50PTEgY29udj1zeW5jOyBcCivCoMKgwqAgZWNobyAtbmUgIiQkKHByaW50ZiAn
-JTA4eCcgJCQoc3RhdCAtYyVzICRAKSB8IGZvbGQgLXMyIHwgeGFyZ3MgLUkKe30gZWNobyBcXHh7
-fSB8IHRyIC1kICdcbicpIiB8IFwKK8KgwqDCoMKgwqAgZGQgYnM9OCBjb3VudD0xIGNvbnY9c3lu
-YzsgXAorwqDCoMKgIGVjaG8gLW5lICIkJCgkKFNUQUdJTkdfRElSX0hPU1QpL2Jpbi9ta2hhc2gg
-bWQ1ICRAIHwgZm9sZCAtczIgfAp4YXJncyAtSSB7fSBlY2hvIFxceHt9IHwgdHIgLWQgJ1xuJyki
-IHwgXAorwqDCoMKgwqDCoCBkZCBicz01OCBjb3VudD0xIGNvbnY9c3luYzsgXAorwqAgKSA+ICQo
-S0RJUikvdG1wLyQoREVWSUNFX05BTUUpLmhlYWRlcgorwqAgJChjYWxsIEJ1aWxkL3hvci1pbWFn
-ZSwtcCAkKHhvcl9wYXR0ZXJuKSAteCkKK8KgIGNhdCAkKEtESVIpL3RtcC8kKERFVklDRV9OQU1F
-KS5oZWFkZXIgJEAgPiAkQC5uZXcKK8KgIG12ICRALm5ldyAkQAorZW5kZWYKKwrCoGRlZmluZSBC
-dWlsZC9pb2RhdGEtZmFjdG9yeQrCoMKgICQoZXZhbCBmd19zaXplPSQod29yZCAxLCQoMSkpKQrC
-oMKgICQoZXZhbCBmd190eXBlPSQod29yZCAyLCQoMSkpKQpAQCAtMTczLDYgKzE5MiwyMCBAQCBk
-ZWZpbmUgRGV2aWNlL2QtdGVhbV9wYnItbTEKwqBlbmRlZgrCoFRBUkdFVF9ERVZJQ0VTICs9IGQt
-dGVhbV9wYnItbTEKwqAKK2RlZmluZSBEZXZpY2UvZWRpbWF4X3JnMjFzCivCoCBNVEtfU09DIDo9
-IG10NzYyMQorwqAgSU1BR0VfU0laRSA6PSAxNjA2NGsKK8KgIERFVklDRV9WRU5ET1IgOj0gRURJ
-TUFYCivCoCBERVZJQ0VfTU9ERUwgOj0gUkcyMVMKK8KgIElNQUdFUyArPSBmYWN0b3J5LmJpbgor
-wqAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gXAorwqDCoMKgICQkKHN5c3VwZ3JhZGVfYmluKSB8IGNo
-ZWNrLXNpemUgJCQkJChJTUFHRV9TSVpFKSB8IFwKK8KgwqDCoCBlbHgtaGVhZGVyIDAyMDIwMDM4
-IDg4NDRBMkQxNjhCNDVBMkQKK8KgIERFVklDRV9QQUNLQUdFUyA6PSBcCivCoMKgwqDCoMKgwqDC
-oCBrbW9kLW10NzYxNWUgd3BhZC1iYXNpYworZW5kZWYKK1RBUkdFVF9ERVZJQ0VTICs9IGVkaW1h
-eF9yZzIxcworCsKgZGVmaW5lIERldmljZS9lbGVjb21fd3JjLTExNjdnaGJrMi1zCsKgwqAgTVRL
-X1NPQyA6PSBtdDc2MjEKwqDCoCBJTUFHRV9TSVpFIDo9IDE1NDg4awoKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBs
-aXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+ramips: add support for Asus RT-AC85P
+
+SoC:	MediaTek MT7621AT dual-core @ 880MHz
+RAM:	256M (Winbond W632GG6KB-1)
+FLASH:	128MB (Macronix MX30LF1G18AC-TI)
+WiFi:	- 2.4GHz MediaTek MT7615N bgn
+	- 5GHz MediaTek MT7615N nac
+Switch: SoC integrated Gigabit Switch (4 x LAN, 1 x WAN)
+USB:	1 x USB 3.1 (Gen 1)
+BTN:	Reset, WPS
+LED:	- Power (blue)
+	- 5Ghz (blue)
+	- 2.4GHz (blue)
+	- Internet (blue)
+	- 4x LAN (blue)
+	(LAN/WAN leds are not controllable by GPIOs)
+UART: 	UART is present as Pads marked J4 on the PCB.
+	3.3V - TX - RX - GND / 57600-8N1
+	3.3V is the square pad
+MAC:	The MAC address on the router-label matches the MAC of
+	the 2.4 GHz WiFi.
+	LAN and WAN MAC are identical: MAC_LABEL+4
+	5 GHz WiFi MAC: also MAC_LABEL+4
+	
+
+Installation
+------------
+Via U-Boot tftpd:
+Switch on device, within 2s press reset button and keep pressed
+until power LED starts blinking slowly.
+Upload factory image via tftp put, the router's ip is 192.168.1.1
+and expects the client on 192.168.1.75.
+
+The images also work on the Asus RT-AC65P models as tested by Gabor.
+
+Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
+Tested-by: Gabor Varga <vargagab@gmail.com>
+
+---
+
+v2: Corrected sorting of entries in 02_network
+    Model name corrected in .dts
+    Whitespace fixes in .dts
+    wifi0/1 labels added to wifi nodes in .dts
+    Device name capitalized in mt7621.mk
+
+v3: Added firmware backup to firmware2 partition before sysupgrade
+    Corrected modules included in image
+
+v4: Corrected MT7615N PCI IDs
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network
+b/target/linux/ramips/base-files/etc/board.d/02_network
+index 2f9a02256e..ab90041d92 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -231,6 +231,17 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan" "1:wan" "6@eth0"
+ 		;;
++	asus,rt-ac85p|\
++	dlink,dir-860l-b1|\
++	elecom,wrc-1167ghbk2-s|\
++	elecom,wrc-1900gst|\
++	elecom,wrc-2533gst|\
++	huawei,hg255d|\
++	iodata,wn-ax1167gr|\
++	iodata,wn-gx300gr)
++		ucidef_add_switch "switch0" \
++			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
++		;;
+ 	asus,rt-n15|\
+ 	belkin,f9k1109v1|\
+ 	sitecom,wl-351)
+@@ -298,16 +309,6 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
+ 		;;
+-	dlink,dir-860l-b1|\
+-	elecom,wrc-1167ghbk2-s|\
+-	elecom,wrc-1900gst|\
+-	elecom,wrc-2533gst|\
+-	huawei,hg255d|\
+-	iodata,wn-ax1167gr|\
+-	iodata,wn-gx300gr)
+-		ucidef_add_switch "switch0" \
+-			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
+-		;;
+ 	dlink,dwr-118-a1)
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan:2" "2:lan:3" "3:lan:1" "4:lan:0" "5:wan" "6@eth0"
+@@ -531,6 +532,9 @@ ramips_setup_macs()
+ 		lan_mac=$(mtd_get_mac_binary factory 57344)
+ 		wan_mac=$(mtd_get_mac_binary factory 57350)
+ 		;;
++	asus,rt-ac85p)
++		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
++		;;
+ 	asus,rt-n56u)
+ 		lan_mac=$(macaddr_setbit_la "$(cat /sys/class/net/eth0/address)")
+ 		wan_mac=$(mtd_get_mac_binary factory 32772)
+diff --git a/target/linux/ramips/base-files/lib/upgrade/platform.sh
+b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+index a65492a309..cd9d8ae650 100755
+--- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+@@ -18,9 +18,16 @@ platform_do_upgrade() {
+ 	mikrotik,rbm33g)
+ 		[ -z "$(rootfs_type)" ] && mtd erase firmware
+ 		;;
++       asus,rt-ac85p)
++		echo "Backing up firmware"
++		dd if=/dev/mtd4 bs=1024 count=4096  > /tmp/backup_firmware.bin
++		dd if=/dev/mtd5 bs=1024 count=52224 >> /tmp/backup_firmware.bin
++		mtd -e firmware2 write /tmp/backup_firmware.bin firmware2
++		;;
+ 	esac
+
+ 	case "$board" in
++	asus,rt-ac85p|\
+ 	hiwifi,hc5962|\
+ 	netgear,r6220|\
+ 	netgear,r6350|\
+diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+new file mode 100644
+index 0000000000..7aea207fad
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+@@ -0,0 +1,164 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "asus,rt-ac85p", "mediatek,mt7621-soc";
++	model = "Asus RT-AC85P";
++
++	aliases {
++		led-boot = &led_power;
++		led-failsafe = &led_power;
++		led-running = &led_power;
++		led-upgrade = &led_power;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,57600";
++	};
++
++	palmbus: palmbus@1E000000 {
++		i2c@900 {
++			status = "okay";
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		wps {
++			label = "wps";
++			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_WPS_BUTTON>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "rt-ac85p:blue:power";
++			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++		wlan2g {
++			label = "rt-ac85p:blue:wlan2g";
++			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0radio";
++		};
++
++		wlan5g {
++			label = "rt-ac85p:blue:wlan5g";
++			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1radio";
++		};
++	};
++};
++
++&sdhci {
++	status = "okay";
++};
++
++&nand {
++	status = "okay";
++
++	partitions {
++		compatible = "fixed-partitions";
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		partition@0 {
++			label = "u-boot";
++			reg = <0x0 0xe0000>;
++			read-only;
++		};
++
++		partition@e0000 {
++			label = "u-boot-env";
++			reg = <0xe0000 0x100000>;
++			read-only;
++		};
++
++		factory: partition@1e0000 {
++			label = "factory";
++			reg = <0x1e0000 0x100000>;
++			read-only;
++		};
++
++		factory2: partition@2e0000 {
++			label = "factory2";
++			reg = <0x2e0000 0x100000>;
++			read-only;
++		};
++
++		partition@3e0000 {
++			label = "kernel";
++			reg = <0x3e0000 0x400000>;
++		};
++
++		partition@7e0000 {
++			label = "ubi";
++			reg = <0x7e0000 0x2e00000>;
++		};
++
++		partition@35e0000 {
++			label = "firmware2";
++			reg = <0x35e0000 0x3200000>;
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi0: wifi@0,0 {
++		compatible = "pci14c3,7615";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0000>;
++		ieee80211-freq-limit = <2400000 2500000>;
++		mtd-mac-address = <&factory 0x4>;
++	};
++};
++
++&pcie1 {
++	wifi1: wifi@0,0 {
++		compatible = "pci14c3,7615";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++		mtd-mac-address = <&factory 0x8004>;
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++	mediatek,portmap = "wllll";
++	port@5 {
++		status = "disabled";
++	};
++};
++
++&i2c {
++    status = "disabled";
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "uart2", "uart3", "i2c";
++			ralink,function = "gpio";
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk
+b/target/linux/ramips/image/mt7621.mk
+index d86eb8cc34..c036a1c308 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -115,6 +115,22 @@ define Device/asus_rt-ac57u
+ endef
+ TARGET_DEVICES += asus_rt-ac57u
+
++define Device/asus_rt-ac85p
++  MTK_SOC := mt7621
++  DEVICE_VENDOR := ASUS
++  DEVICE_MODEL := RT-AC85P
++  IMAGE_SIZE := 51200k
++  UBINIZE_OPTS := -E 5
++  BLOCKSIZE := 128k
++  PAGESIZE := 2048
++  KERNEL_SIZE := 4096k
++  IMAGES += factory.bin
++  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
++  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) |
+append-ubi | check-size $$$$(IMAGE_SIZE)
++  DEVICE_PACKAGES := kmod-usb3 kmod-mt7615e wpad-basic uboot-envtools
++endef
++TARGET_DEVICES += asus_rt-ac85p
++
+ define Device/buffalo_wsr-1166dhp
+   MTK_SOC := mt7621
+   IMAGE/sysupgrade.bin := trx | pad-rootfs | append-metadata
+diff --git
+a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+index d50e689110..d2d69b4ff4 100644
+---
+a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
++++
+b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+@@ -4256,7 +4256,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
+ +#endif /* __NAND_DEF_H__ */
+ --- /dev/null
+ +++ b/drivers/mtd/nand/nand_device_list.h
+-@@ -0,0 +1,59 @@
++@@ -0,0 +1,60 @@
+ +/* Copyright Statement:
+ + *
+ + * This software/firmware and related documentation ("MediaTek
+Software") are
+@@ -4308,6 +4308,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
+ +	{0xC8DC, 0x909554, 5, 8, 512, 128, 2048, 64, 0x30C77fff, "F59L4G81A", 0},
+ +	{0xECD3, 0x519558, 5, 8, 1024, 128, 2048, 64, 0x44333, "K9K8G8000", 0},
+ +    {0xC2F1, 0x801DC2, 4, 8, 128, 128, 2048, 64, 0x30C77fff,
+"MX30LF1G08AA", 0},
+++    {0xC2F1, 0x809502, 4, 8, 128, 128, 2048, 64, 0x30C77fff,
+"MX30LF1G18AC", 0},
+ +    {0x98D3, 0x902676, 5, 8, 1024, 256, 4096, 224, 0x00C25332,
+"TC58NVG3S0F", 0},
+ +    {0x01DA, 0x909546, 5, 8, 256, 128, 2048, 128, 0x30C77fff,
+"S34ML02G200TF", 0},
+ +    {0x01DC, 0x909556, 5, 8, 512, 128, 2048, 128, 0x30C77fff,
+"S34ML04G200TF", 0},
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

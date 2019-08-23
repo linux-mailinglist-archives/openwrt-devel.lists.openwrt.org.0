@@ -2,89 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D20F9AD96
-	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 12:48:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 558599ADEB
+	for <lists+openwrt-devel@lfdr.de>; Fri, 23 Aug 2019 13:13:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FyMzYqsmuekp9c8tUt5sy+68f+OCjDINbBGRu7n3TKo=; b=GnEvsvNbMTTVJy40aEQrm5ISn
-	erGvyi2Yhq32gGe0DU5MwcCmGsiRisidKExteuoW+fKrSWLtCqk+9EA5U0D2PVrM9fQU7g8dbXaT0
-	TacN766kqKyvKrCA029QsuXvJrYUKOWB1hgXm3C78uR+KBAf7bx/Ysavb32YSQOn/z6Kd8KDgbOBZ
-	N6Kz+YlLYdYUhdEOZ93EDD3r/saP9k4WMDcSK8FxeNhzeeupCdz8idvvvpVdH25R5QM7ybZT/EO/D
-	6MvciamdnuC/4XS8CkThGXPFjZjmT0yQuBPrCd+1mJdcfUMskbnuquPMslgB5CUEQz/K8fDM2mL0F
-	7lnf2cDtA==;
+	 bh=LUhFNW20pYQW/l9BFyfboEJZPJ5s6/K3UHI6NoMY5ZE=; b=cwpf6jqakSnfwHqaY+XUEKgfd
+	ZIl8j+w0RrbNfT8e3WTGz7b4L8Vchgos4vcnXAL1fG08x42axStQIDh54Ou4SfyK7gxdOPKiIfuBD
+	CsN1wdHwi7Sfx4FoQcEdydZUEd+1w5ZcnTAa1VWJMHJTzOVlncW+5wXvEoc1qUW8Bpo6OMtmwtuV2
+	FI7XDqurhrzJH8ejOasrUxOrtH41CB6YP0RcH2MpVGGbcccrnZm36Yx7Kz2S7Yzwxlqzl0IhWkiVF
+	79ujY7DH2Vicg9KF34c0M2F3YhgI9wILJH5jOhKzUfNsSAQdWq0aadHbGge8Z7Z50kMxzM3skNxXj
+	XYB1Fuliw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i176t-0005Po-Lc; Fri, 23 Aug 2019 10:47:59 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i17VK-0008Mg-Fy; Fri, 23 Aug 2019 11:13:14 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i176j-0005PM-VV
- for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 10:47:51 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w11so4905477plp.5
- for <openwrt-devel@lists.openwrt.org>; Fri, 23 Aug 2019 03:47:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tv2T1i3KqXd6RkM4yf7pDTvIVoizZv7dT3+NQ6knSYA=;
- b=M1qkDO/sXzQOXOqf6NXSsDIF218gw1pqw4smcK4M2tTJgIzpQAgyJOBAh5Jq3cIckW
- MjCU/Acf0p5H1ItXV0Vrv9bf09+gw16xWXC6U2LQMZKxDuGOK1NOeej3wpaPnWCE3Faa
- 01UTI9Z37T7zpRQFQ9N7ePXTWv6kyIFdx8zPgBEQh/ZOucTtuGunA7bYhbltlM0l7qlQ
- ppVxo45op3eddK0twxKRsw0PtdDjERiRHc3sbSGvmypn233ys3EvPMPLpmHVpgt7PAaR
- WaQW63HJm78lOc35ugpHpaf4iQqRT5sASy/jvZ0W0lPWEUX/db/NAJ9y8VsMVfFVaLV4
- QiZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tv2T1i3KqXd6RkM4yf7pDTvIVoizZv7dT3+NQ6knSYA=;
- b=fV6QUPHu1FOZBk4G6mtCtXQoYBaZHkxhn2qN286hbbLKGUMj9euT0N9AGWYJ2FdN5R
- WyMBgIv0yCgpiK/3eLiM/dHSIkCuOG/3GwMR6/DY0Fnm4ILLV8BaW65alnRWarOm+KHu
- 3LLq/i/K1320igwXesx4fL4V71rhev0egLEgWrBm/sxYZ78wRuUfl9bUzke5+hsTzEDB
- 2aT4+J/RgFD6bwWIUbvPJ0NXwkpenyGRCvsQjyvZV3rcaroHiJgMe9Be8mb8Nc/E9SmW
- bQ2maLCH/DRT7S0yXu3gozWeU0Tt6XzP705bytONIoUuMIsOtXKiFi4YymljPYFJrt90
- lUpg==
-X-Gm-Message-State: APjAAAUUCZHXflAyvb1sxmoMrxJpl4RCw8SDMeCZqzg3fsq36PAl5RfK
- Kyx4bBCox8T85HtcgOw6ehBqH3c58aAelsXKK2A=
-X-Google-Smtp-Source: APXvYqyZZ6ZjWfdwULt9iFgzImcteXpupBFe66ep7+pdaG1Pu0iuCMSquM4WlyDJzE341s2m1UM/ieBBqHP4CWQwUwE=
-X-Received: by 2002:a17:902:bcc2:: with SMTP id
- o2mr4048544pls.127.1566557268315; 
- Fri, 23 Aug 2019 03:47:48 -0700 (PDT)
+ id 1i17VE-0008MH-BH
+ for openwrt-devel@lists.openwrt.org; Fri, 23 Aug 2019 11:13:09 +0000
+Received: from desktop ([188.193.174.123]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MCsLu-1i9xBl2ViC-008t00; Fri, 23 Aug 2019 13:13:01 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Birger Koblitz'" <mail@birger-koblitz.de>,
+ "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
+References: <4c93e4ac-c8ca-fb41-eb96-d5cfeed5f1d6@birger-koblitz.de>
+In-Reply-To: <4c93e4ac-c8ca-fb41-eb96-d5cfeed5f1d6@birger-koblitz.de>
+Date: Fri, 23 Aug 2019 13:13:01 +0200
+Message-ID: <004401d559a3$ba3cdd70$2eb69850$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQKs46HRfBsVmMrzwrX1GmHhUaaxjKVZf/rw
+Content-Language: de
 MIME-Version: 1.0
-References: <3f82a09f-916b-3ba0-c595-b1d5fc7226cc@birger-koblitz.de>
- <CADQ6-wscaDh7H84CrkpXbW=HfHSLtxvjSERzLf-GjpCBq7nbZA@mail.gmail.com>
- <0ffbe647-e111-e405-e949-062a3b2bb981@birger-koblitz.de>
-In-Reply-To: <0ffbe647-e111-e405-e949-062a3b2bb981@birger-koblitz.de>
-From: =?UTF-8?B?R8OhYm9yIFZhcmdh?= <vargagab@gmail.com>
-Date: Fri, 23 Aug 2019 12:47:37 +0200
-Message-ID: <CADQ6-wtu_8SzB4PSJ4eX=0qrSMAp5btFwiTPnuge7OcfDq4Pbg@mail.gmail.com>
-To: Birger Koblitz <mail@birger-koblitz.de>
+X-Provags-ID: V03:K1:Js8NciGX6ha8tt+mFI3kmQZDqI0vCmoOJbhVbfwpXH3gBRsCyh5
+ ds6epFT6tg2J1iR0GeGR5pUsNV8Ds4K0J7zN/mRK5Cmho87YYmiCO8lBuTir8VufYKcotWL
+ 62Qu2CbfG4MHDhqMtBMKPuzHyZRKCtDc9vSDcB2d9AYNTjuinplI5kK4TaJndIHNRZoQOOQ
+ 3AFzb4znEnLpTH5z7ftYw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:nWv9gMFMPCM=:JZ0ml6ye3toCxfiIcCvQg+
+ aTclJwqaFEvQ2ls2SLafg5xc8c2BM+dBbH0YTp2lWbbA46w57cn0ZSn999DsV9/s57F0+fzay
+ ZDIsjzUyLgu4aYPaf8SdxfIrpTWsZKCYjLuUQ1TFYS0NR3e7qYNPg78ysP/YpYZ6BhhA4LUCq
+ fNLF4YN4OVNTh9N01tbB6BnVEo4lwBfE9LOZuDi6oVPnsJJef7O9PewB9oip9LDC0czj/0Uw1
+ ZSfd+vSFZMVq6dC0A3RV4vpenM71VvRqABzQCjvygOqbrD9EItzHMDE6nuoNv1h/s5AcdGwa9
+ n8/ko6MrCrBK39nQ8S0spnsjtLW8HqyxubT56RZLe20kHAfhZCQ6q0Qn/MD7yh+zWl5VtnJG4
+ M21JntbWVBvw3L1MWw+OyGyvMR2BIpug8Yckz9/5sUuHjzAwDQ9ExNDLAseVe3swMam+XQ/ID
+ 9tAmoS43WF6OyffzaPfZAHSZ5lo6La8qwJFf76LV3NQM1vVccEf6DKCZp1hYVqyLyopp7JHLS
+ wsdZjsqcyhsahVpJx5KXSwd6i1BrpJWskCX/SVVXfmQwX+4MgnDBYqmOMUvuqqggmeG99IV7k
+ 2YFuJGySYVG1Yoeap6Qk9zBKuztWJoK6cpicy3mdIe3ghE+/8dPAn+nDk+Agr2WAw2G8y+SxQ
+ wGKpmX+XZ8EUvCArp2vHyDWGlRWCMzn1pcb6BZYCi43DgPa3d3KKfitKkukResVNRN/3xXaBf
+ 6DzscVJXR8DxQCqWCvt9NEuODXPRjAPTwsmgEdUlsiQGZA0+7bynS9D8d+o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_034750_014540_220B75F9 
-X-CRM114-Status: GOOD (  18.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190823_041308_680099_DA6B9A8C 
+X-CRM114-Status: UNSURE (   7.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vargagab[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
-Subject: Re: [OpenWrt-Devel] [PATCH v3] ramips: add Asus RT-AC85P
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH v4] ramips: add support for Asus RT-AC85P
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,212 +79,73 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============7949463107416795790=="
+Content-Type: multipart/mixed; boundary="===============1231178066654972406=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7949463107416795790==
-Content-Type: multipart/alternative; boundary="0000000000007f93680590c689a0"
+This is a multipart message in MIME format.
 
---0000000000007f93680590c689a0
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+--===============1231178066654972406==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=wKZC5ydJsA+FZV=-="
 
-Hi!
+This is a multipart message in MIME format.
 
-Birger Koblitz <mail@birger-koblitz.de> ezt =C3=ADrta (id=C5=91pont: 2019. =
-aug. 23.,
-P, 11:56):
+--=-=wKZC5ydJsA+FZV=-=
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 
-> Hi,
->
-> On 23.08.19 11:04, G=C3=A1bor Varga wrote:
-> > Hi!
-> >
-> > Although it looks like the Asus RT-AC85P and the Asus RT-AC65P models
-> > are identical, but I have separated them into two dts and have
-> > introduced the HW version into the names (for the new versions in the
-> > future).
->
-> Are you sure that is necessary? AFAIK there are no different versions of
-> the routers around and Asus seems to have a policy of constantly
-> churning out new router models without upgrading existing routers to new
-> revisions.
+Hi,
 
+> a/target/linux/ramips/base-files/lib/upgrade/platform.sh
+> b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+> index a65492a309..cd9d8ae650 100755
+> --- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
+> +++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+> @@ -18,9 +18,16 @@ platform_do_upgrade() {
+>  	mikrotik,rbm33g)
+>  		[ -z "$(rootfs_type)" ] && mtd erase firmware
+>  		;;
+> +       asus,rt-ac85p)
 
-I introduced the HW revision because according to the Asus specification
-the two routers should be different at least at the radio hardware. Maybe
-Asus can't buy only temporarily MT7615S and MT7615B radios, and fix this in
-the next hardware release. Otherwise the Asus has more routers with same
-name and different HW version with fully different hardware. For example:
-RT-N10 rev A1 has a BroadCom SoC, the rev. C1 has a RaLink SoC.
-Or you mean, why have I separated the two models? I have made this, because
-with only one dts the model of the router under OpenWrt would be in both
-case Asus RT-AC85P.
+Wrong indent here.
 
+Best
 
-> >
-> > I have an alternative installation method via SSH:
-> >
-> > Note: The user/password for SSH is identical with the one used in the
-> > Web-interface.
-> >
-> > 1. Complete the initial setup wizard.
-> > 2. Activate SSH under "Administration" -> "System".
-> > 3. Transfer the OpenWrt factory image via scp:
-> >  > scp openwrt-ramips-mt7621-asus_rt-ac65p-r01-squashfs-factory.bin
-> > admin@192.168.50.1:/tmp
-> > 4. Connect via SSH to the router.
-> >  > ssh admin@192.168.50.1 <mailto:admin@192.168.50.1>
-> > 5. Write the OpenWrt image to flash.
-> >  > mtd-write -i
-> > /tmp/openwrt-ramips-mt7621-asus_rt-ac65p-r01-squashfs-factory.bin -d
-> linux
-> > 6. Reboot the router
-> >  > reboot
-> >
-> > Another thing: I don't know, if it's good method to replace the second
-> > firmware partition with OpenWrt image during sysupgrade. When we don't
-> > do that, than we have always a factory firmware on the secondary
-> > firmware partition, so the back to the factory firmware would be much
-> > easier.
->
-> I don't have a strong opinion on this. Both ways have their advantages.
-> If during sysupgrade both copies of the FW are written, then this is
-> consistent with the original software's behavior and additionally, the
-> outcome is independent of the OpenWRT initial installation method. When
-> using tftp (or the Web-GUI should someone figure out the exact format)
-> both copies are written, only ssh and serial port allow to install only
-> one copy. Not copying over the previous OpenWRT image to the second
-> partition during sysupgrade allows having a copy of the factory firmware
-> around (but which needs to be written to the first partition again to be
-> booted).
->
+Adrian 
 
-I don't know what is the best option. But, when we leave the second
-partition untouched, than the user go back to the factory firmware, when he
-write only one block to the firmware partition (and the checksum will be
-wrong, so the bootloader overwrites the first partition with the second
-one.
+--=-=wKZC5ydJsA+FZV=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
 
-Cheers,
+-----BEGIN PGP SIGNATURE-----
 
-Gabor Varga
-
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
-
---0000000000007f93680590c689a0
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div>Hi!</div><br><div class=3D"gmail_quote"><div dir=3D"l=
-tr" class=3D"gmail_attr">Birger Koblitz &lt;<a href=3D"mailto:mail@birger-k=
-oblitz.de">mail@birger-koblitz.de</a>&gt; ezt =C3=ADrta (id=C5=91pont: 2019=
-. aug. 23., P, 11:56):<br></div><blockquote class=3D"gmail_quote" style=3D"=
-margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-lef=
-t:1ex">Hi,<br>
-<br>
-On 23.08.19 11:04, G=C3=A1bor Varga wrote:<br>
-&gt; Hi!<br>
-&gt;<br>
-&gt; Although it looks like the Asus RT-AC85P and the Asus RT-AC65P models<=
-br>
-&gt; are identical, but I have separated them into two dts and have<br>
-&gt; introduced the HW version into the names (for the new versions in the<=
-br>
-&gt; future).<br>
-<br>
-Are you sure that is necessary? AFAIK there are no different versions of<br=
->
-the routers around and Asus seems to have a policy of constantly<br>
-churning out new router models without upgrading existing routers to new<br=
->
-revisions.</blockquote><div>=C2=A0</div><div>I introduced the HW revision b=
-ecause according to the Asus specification the two routers should be differ=
-ent at least at the radio hardware. Maybe Asus can&#39;t buy only temporari=
-ly MT7615S and MT7615B radios, and fix this in the next hardware release. O=
-therwise the Asus has more routers with same name and different HW version =
-with fully different hardware. For example: RT-N10 rev A1 has a BroadCom So=
-C, the rev. C1 has a RaLink SoC.</div><div>Or you mean, why have I separate=
-d the two models? I have made this, because with only one dts the model of =
-the router under OpenWrt would be in both case Asus RT-AC85P.</div><div><br=
-></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;=
-border-left:1px solid rgb(204,204,204);padding-left:1ex"><br>
-&gt;<br>
-&gt; I have an alternative installation method via SSH:<br>
-&gt;<br>
-&gt; Note: The user/password for SSH is identical with the one used in the<=
-br>
-&gt; Web-interface.<br>
-&gt;<br>
-&gt; 1. Complete the initial setup wizard.<br>
-&gt; 2. Activate SSH under &quot;Administration&quot; -&gt; &quot;System&qu=
-ot;.<br>
-&gt; 3. Transfer the OpenWrt factory image via scp:<br>
-&gt; =C2=A0&gt; scp openwrt-ramips-mt7621-asus_rt-ac65p-r01-squashfs-factor=
-y.bin<br>
-&gt; admin@192.168.50.1:/tmp<br>
-&gt; 4. Connect via SSH to the router.<br>
-&gt; =C2=A0&gt; ssh <a href=3D"mailto:admin@192.168.50.1" target=3D"_blank"=
->admin@192.168.50.1</a> &lt;mailto:<a href=3D"mailto:admin@192.168.50.1" ta=
-rget=3D"_blank">admin@192.168.50.1</a>&gt;<br>
-&gt; 5. Write the OpenWrt image to flash.<br>
-&gt; =C2=A0&gt; mtd-write -i<br>
-&gt; /tmp/openwrt-ramips-mt7621-asus_rt-ac65p-r01-squashfs-factory.bin -d l=
-inux<br>
-&gt; 6. Reboot the router<br>
-&gt; =C2=A0&gt; reboot<br>
-&gt;<br>
-&gt; Another thing: I don&#39;t know, if it&#39;s good method to replace th=
-e second<br>
-&gt; firmware partition with OpenWrt image during sysupgrade. When we don&#=
-39;t<br>
-&gt; do that, than we have always a factory firmware on the secondary<br>
-&gt; firmware partition, so the back to the factory firmware would be much<=
-br>
-&gt; easier.<br>
-<br>
-I don&#39;t have a strong opinion on this. Both ways have their advantages.=
-<br>
-If during sysupgrade both copies of the FW are written, then this is<br>
-consistent with the original software&#39;s behavior and additionally, the<=
-br>
-outcome is independent of the OpenWRT initial installation method. When<br>
-using tftp (or the Web-GUI should someone figure out the exact format)<br>
-both copies are written, only ssh and serial port allow to install only<br>
-one copy. Not copying over the previous OpenWRT image to the second<br>
-partition during sysupgrade allows having a copy of the factory firmware<br=
->
-around (but which needs to be written to the first partition again to be<br=
->
-booted).<br></blockquote><div><br></div><div>I don&#39;t know what is the b=
-est option. But, when we leave the second partition untouched, than the use=
-r go back to the factory firmware, when he write only one block to the firm=
-ware partition (and the checksum will be wrong, so the bootloader overwrite=
-s the first partition with the second one.=C2=A0</div><div><br></div><div>C=
-heers,</div><div><br></div><div>Gabor Varga</div><blockquote class=3D"gmail=
-_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204=
-,204);padding-left:1ex">
-<br>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div></div>
-
---0000000000007f93680590c689a0--
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1fyjgACgkQoNyKO7qx
+AnClwBAAjywWDy01YzMtqT4bqPq03UO3C3Fymj374yzxI9XOtwuxEjGhuIpd5b3F
+Ah+Yiu875dKbWuBavgtEM5uACqJVHWu9Vho5rLA49T6F64Sp7BEqe4Mrcl/681IP
+YpjYBojKl4FZdqDrZTlf7W8u/kVA7NyzEgG2f5LYHeU8aEx0pScvlZtJxRGFz1CY
+gh+xUKU6DmvH6GQPYMS2YikQVe1iPBK+4dQpRDR5TuZWOG78Rm0ah9GKt2WfqfYP
+2ZDc92LCJElpUJxc6tVDWAO0pLLl9YQzZOWgoJX1jtgBiDV0jKUTSSYbpDUF8tX8
+gcxUPMyoECerJWNR/PCRucN+nBKi07s/xiu6x5jBxm+55ZzEyIdgSCuPYtYlq5Mm
+9GmJCI197wD6xR9b5+CoTAa5e7EwxWqkdgQJrQwt1wDJC2Ixk4I6puxBCGsoTJFC
+ouCjKe0z0C85UrhjvXp7Zzyfw7hkBwbj+gsKVQCcQ4Gp4m2SedubetGTyhHDZjHu
+qozyAUiN1TFJQQ38wL/vH5n17wNO/W6pyNn68rfce1epEr1/O5Y7dnMiCa3u9Sb/
+Q7U/tZutN0YkKqh6tvtUE2hvlCWRlUDnMG93ibREYmPIQKat5M50s8l5gHocytUp
+dix5kRLaSP2SQSY8DHf3a6B7Tf5ZR4BoI7MA4Efs3kY4hMAMl38=
+=mIVG
+-----END PGP SIGNATURE-----
 
 
---===============7949463107416795790==
+--=-=wKZC5ydJsA+FZV=-=--
+
+
+
+--===============1231178066654972406==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -312,5 +156,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7949463107416795790==--
+--===============1231178066654972406==--
+
 

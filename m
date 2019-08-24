@@ -2,340 +2,204 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 824F39BEB4
-	for <lists+openwrt-devel@lfdr.de>; Sat, 24 Aug 2019 18:10:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3F489BEE8
+	for <lists+openwrt-devel@lfdr.de>; Sat, 24 Aug 2019 18:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ner6PLhWILKhliXlQb+tsyPY91jpxy0wC3Gl2gsta7A=; b=hMtGnCw6NP0Foz
-	uU59fukPmmwjEhi3P0GWhA+tMg5QDiUENUbXsDii49wdKb0dVuXRPDGBhSOClZNF6S32pq1QZ5HIE
-	uwD0GdP2xbzLyRRtTl4++jsbKuNeE6osmkqg3P0MebqALIJnr0fORH0WbudSffKZ5Ofk5eYSpth+h
-	TRH1QiJRQHcfdGi5wo0qwF9nwzscrWmRJxtQ0WQuR4FXv+atto9cvwqO1qtsmcsaWH0tfFM72L/tu
-	3COFHmPNcBF8cBH1D+FgPQrtnK9MZV3m4NX4LxVfwZwaxcbBRL6orBp4kJsKcbBEx6HhG3LXlA3MW
-	0E9mlwpXUsnQ6MQENOqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IIjvSIFdF5JQEnmaees0KJdtrhFWbEy5mIgkD0vGX3c=; b=UTg2W8DlWYH3DbOe4XcVLnzW9
+	vdTVr2GJlbQOUN29WGhqbicdQWxfP1lidOtSU9PzCIMXF5VnALe7Pr3gHMUpoUgyc2TcBX5aaO/dl
+	r50y5CfYvBl1+1XAB9h4s4ts17JeYIRHQuHo1gumB6MYVqVa7TS886xPew1PvzvwBukbzDKGbMBe4
+	MrcZ4MC0/s2WDp9zx3TbJzBBOKUXlbzBNDxfsRPqZpo5BqkbYr4dfrZfa2QxWU7DIISKugtMcENHX
+	FFhqz1YEfV8ugK6VCxQ6ZZu8JYZvbjP6E+q+sBIQlYINJAFu0xJ8SQOXk0gYBH2H6Ne7ouZ9IFpk6
+	KiwhV/pXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1YcP-0000Zs-88; Sat, 24 Aug 2019 16:10:21 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1Yc4-0000D2-BO
- for openwrt-devel@lists.openwrt.org; Sat, 24 Aug 2019 16:10:02 +0000
-Received: by mail-wm1-x343.google.com with SMTP id k1so11581826wmi.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 24 Aug 2019 09:10:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=ggaS+ha6flx1LTHjND03BkbwKa/CosCAI2Aq1P1dEsg=;
- b=lVEy9e5ZEB3i1O7P8GL81YnX6DC6PnqRk4ZK154AnpezOU2l0gI+ybu3l6Llb8y36p
- lLC/SX/RsOuZej5slwbu8R2PxHU7t/So+AE2198RXSZZHxug/deyJfwHqcrUll/rt17Q
- wawCh+/jaxOPdPYUY8Rjlu44OWO51E08KXLvyHtp2pTyoxGOY2baYHdZvlykPuLw6xer
- hW3bBLGQMnM60hl3Fqn3FCOJaP1+M8F8IXH2kEU+UAU3FojQOPsQCCGVzbnl/wLqExik
- g5iamvjpdHhpOWMlQFyacG3tueWlw00H+h0RZ6BjzaMpVsSIVdGhbELXGunPEsuXTE4w
- PoFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=ggaS+ha6flx1LTHjND03BkbwKa/CosCAI2Aq1P1dEsg=;
- b=Tr9W1UV9EZviGvru3rQUL6K6uRX9VgCUt1hg6NRVcvGCHJoxE6ghcBhrEYt3ip89rR
- J47DarbHERSkc496BECL/P+I8jhvd9Vz69w3xNi6v+lqvMxHgx1sk5ERLki3cas4F2p0
- gj53lcHUYKGBUhzZhAaO9ZjPpaYal12Gr1g205poSa8vehQbnKnvLtcVr1Q+eR8oN7c/
- 8bh4Rlwe5cP+Nlg8VX/DGwyG8ls3nHcUSaMxYnsRfdFGZ1K1RD6ZNCC05uSBhLJILHk3
- RzBcqxBGBY5YSXDLj+kARnGha5DtbSWP+5O3E5VL9YZSDV0ktMuBd6bTNOGwk32dRVw8
- 45zg==
-X-Gm-Message-State: APjAAAUlTzPDTwMipNc/uRp0gm7JYb1afdf+pfuv+i1kHeexVPV8ZSyQ
- CCiLUz46bufJcA15/zrv4y8=
-X-Google-Smtp-Source: APXvYqwErzAzedIJUHU1qAXGxNtVSSLjYBzOAEZ6HtFnVOKKeyDG2gFwt0n3dMkytaPEizhtzkfJVA==
-X-Received: by 2002:a1c:a101:: with SMTP id k1mr11953604wme.98.1566662998676; 
- Sat, 24 Aug 2019 09:09:58 -0700 (PDT)
-Received: from debian64.daheim (p4FD09634.dip0.t-ipconnect.de. [79.208.150.52])
- by smtp.gmail.com with ESMTPSA id n14sm22121786wra.75.2019.08.24.09.09.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 24 Aug 2019 09:09:58 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.92.1)
- (envelope-from <chunkeey@gmail.com>)
- id 1i1Yc1-00043y-Hp; Sat, 24 Aug 2019 18:09:57 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
-To: Russell Senior <russell@personaltelco.net>, dev@mkresin.me, ynezz@true.cz,
- mail@adrianschmutzler.de
-Date: Sat, 24 Aug 2019 18:09:57 +0200
-Message-ID: <1619788.jSZVMTGyYI@debian64>
-In-Reply-To: <87blwfmn4g.fsf@husum.klickitat.com>
-References: <87a7c1qxl2.fsf@husum.klickitat.com>
- <30131992.Ho3CJ5cCL4@debian64> <87blwfmn4g.fsf@husum.klickitat.com>
+	id 1i1ZNf-0006dW-5l; Sat, 24 Aug 2019 16:59:11 +0000
+References: <alpine.LNX.2.21.99999.352.1908240114240.6377@localhost.localdomain>
+In-Reply-To: <alpine.LNX.2.21.99999.352.1908240114240.6377@localhost.localdomain>
+Date: Sat, 24 Aug 2019 18:58:46 +0200
+To: Enrico Mioso <mrkiko.rs@gmail.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_091000_414378_365BE4C0 
-X-CRM114-Status: GOOD (  37.75  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Squashfs breakage lottery with UBI WAS: [PATCH
- RFC 2/2] amp821xx: use newly added pad-squashfs for Meraki MR24
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.19633.1566665943.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Martin Blumenstingl via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org,
+ Petr Cvek <petrcvekcz@gmail.com>, john@phrozen.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, jonas.gorski@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: Re: [OpenWrt-Devel] [lantiq] help in supporting FRITZ!BOX 3272
+ (Fritz_Box_HW198))
+Content-Type: multipart/mixed; boundary="===============0225540331285017081=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Saturday, August 24, 2019 2:18:55 AM CEST Russell Senior wrote:
-> >>>>> "Christian" == Christian Lamparter <chunkeey@gmail.com> writes:
-> 
-> > I've posted a similar message to the bugreport:
-> > <https://bugs.openwrt.org/index.php?do=details&task_id=2460>
-> 
-> I should have filed the bug first and linked it in my patch.
-I think it's fine. It depends on whenever there will be a
-discussion and where it will take place... But yeah, nobody
-can tell in advance how this will go.
+--===============0225540331285017081==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-On Saturday, August 24, 2019 2:59:31 AM CEST Russell Senior wrote:
-> >>>>> "Russell" == Russell Senior <russell@personaltelco.net> writes:
-> 
-> >>>>> "Christian" == Christian Lamparter <chunkeey@gmail.com> writes:
-> 
-> Russell> It's mostly inferred from the fact that I saw the error and
-> Russell> kernel panic, and glancing at the kernel squashfs code. I am
-> Russell> not pretending to understand completely how the squashfs kernel
-> Russell> code works, but the position of the error relative to the size
-> Russell> of the rootfs in my panic case strongly suggests it was trying
-> Russell> to read past the end of the ubi volume.
-> 
-> Oh, and I got important help finding this from Jonas Gorski. I was
-> remiss in not mentioning that.
-> 
-Ok, Let's add him to the CC then. As well as some of the 
-"ramips: Fix and tidy up IMAGE_SIZE #2226" and 
-"[RFC] Use DTS firmware partition to obsolete IMAGE_SIZE #2310"
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-https://github.com/openwrt/openwrt/pull/2226
-https://github.com/openwrt/openwrt/pull/2310
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============0225540331285017081==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-crowd. Because this will likely affect them as well... 
-But they might not know it. In any case: "Welcome everyone! :-D".
-
-> > What's happening here is that mksquashfs4 is being told
-> > through the "-nopad" option to "do not pad filesystem to a
-> > multiple of 4K" [0].
-> 
-> > |define Image/mkfs/squashfs |
-> > $(STAGING_DIR_HOST)/bin/mksquashfs4 $(call
-> > mkfs_target_dir,$(1)) $@ \ | -nopad -noappend -root-owned \ |
-> > -comp $(SQUASHFSCOMP) $(SQUASHFSOPT) \ | -processors 1 |endef
-> 
-> > My guess is that this affects more than just the MR24 (I'm
-> > looking at you too: pad2jffs and various pad-to $value)
-> > . I've tried tracking down the change that added the "-nopad"
-> > and found it in a commit from 2005 titled: "add some changes
-> > from whiterussian to head" [1] [2]:
-> 
-> I agree that other devices where rootfs is squashfs and lives on a ubi
-> volume are probaby also vulnerable to this problem. Regrettably, I haven't
-> thought of any other of those devices that I have on hand to test. 
-> 
-> > | $(KDIR)/root.squashfs: | @mkdir -p $(KDIR)/root/jffs |-
-> > $(STAGING_DIR)/bin/mksquashfs-lzma $(KDIR)/root $@ -noappend
-> > -root-owned -le |+ $(STAGING_DIR)/bin/mksquashfs-lzma
-> > $(KDIR)/root $@ -nopad -noappend -root-owned -le
-> 
-> 
-> > So, this is really old...
-> 
-> > Question is, should we just drop the -nopad? Since as you
-> > established, in the described corner-case (see above)
-> > squashfs needs this 4k padding and the generated squashfs
-> > could be considered broken otherwise?
-> 
-> I'm under the impression that the -nopad makes sense for NOR flash where
-> the kernel and rootfs are glued together, padding the isolated rootfs
-> would cause alignment problems or wasted space in the combined blobs.
-
-Yes, that's the nod to padjffs2. That said,
-<https://sourceforge.net/p/squashfs/mailman/message/28307755/> makes
-it sound like that apart from the BLOCKSIZE, we also need to PAGE_SIZE?
-
-(I think the APM821XX is a special case, since it can do 64KiB Pages
-as well as it's 32MiB SLC NAND that uses 16 KiB erase-blocks. So a
-PAGE can span up to 4 pages.
-
-> 
-> > (Judging from your
-> > message, you went through the kernel code. Can you please
-> > share the place where the lack of the padding is breaking the
-> > fs?)
-> 
-> It's mostly inferred from the fact that I saw the error and kernel
-> panic, and glancing at the kernel squashfs code. I am not pretending to
-> understand completely how the squashfs kernel code works, but the
-> position of the error relative to the size of the rootfs in my panic
-> case strongly suggests it was trying to read past the end of the ubi
-> volume.
-> 
-> The error comes in the kernel's fs/squashfs/block.c in the
-> squashfs_read_data() function. There are a bunch of conditions (at least
-> 5) within the function (see "goto read_failure;") that will lead to that
-> message being printed.
-> 
-Well, that's a pity this could have saved a lot of time.
-
-I've cobbered together a patch that deals with some of the
-padding issues at "ubimkvol" and "ubinize" time. The idea
-is that ideally we want to do the padding when we know
-PAGE_SIZE and the BLOCKSIZE/Erasesize (MR24 blocksize in
-image/Makefile seems wrong as well...).
-
-But for now, it's set to 64KiB. If this is the way forward
-we add enable getconf and get the PAGESIZE at runtime. If not,
-we need to come up with something else.
-(It's also possible to do some changes in  ubi's block code or
-squashfs kernel code to mitigate the padding, but I don't think
-the maintainers will even look at it).
-
-
-Regards,
-Christian
----
-From 803cab7d585ebb85362357d008067caf645a7f17 Mon Sep 17 00:00:00 2001
-From: Christian Lamparter <chunkeey@gmail.com>
-Date: Sat, 24 Aug 2019 12:55:40 +0200
-Subject: [PATCH] base-files: pad root.squashfs to 64KiB in ubi volumes
-
-SquashFS's HOWTO states in the section "Using mksquashfs"
-<https://elinux.org/Squash_FS_Howto#Using_mksquashfs>
-that a padding is necessary "for the filesystem to be used
-on block devices."
-
-OpenWrt's mksquashfs for the rootfs (which is usually
-squashfs) is instructed to skip the padding via the nopad
-option because the rootfs will be padded by functions like
-pad-rootfs to the eraseblocksize which is usually much
-bigger at somewhere 64KiB.
-
-But this is a problem for squashfs as rootfs in ubi
-partitions. Currently no explicit padding is being
-set and it currently works for the most time because
-ubi volumes are always aligned to LEBs which could
-be close enough for 4KiB paddings...
-
-Digging down deeper revealed that squashfs excepts blocks
-to be up to PAGE_SIZE. This is explained in this bug report
-that states that the 4k padding for ARCHs with 64KiB pages
-resulted in "attempt access beyond end of device" errors:
-<https://sourceforge.net/p/squashfs/mailman/message/28307755/>
-
-This patch changes sysupgrade to follow fstools with its
-ROOTDEV_OVERLAY_ALIGN (=64KiB) and aligns squashfs rootfs
-filesystem to the same amount, while also changing the
-ubinize script to apply the alignment in the same manner.
-(More additions would be welcome. Note: ubinize and
-ubimkvol don't support alignment values that are bigger
-than a LEB!)
-
-Reported-by: Russell Senior <russell@personaltelco.net>
-Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
----
- package/base-files/files/lib/upgrade/nand.sh | 12 +++++++++---
- scripts/ubinize-image.sh                     | 12 +++++++++++-
- 2 files changed, 20 insertions(+), 4 deletions(-)
-
-diff --git a/package/base-files/files/lib/upgrade/nand.sh b/package/base-files/files/lib/upgrade/nand.sh
-index fbc2b5c19a..7eb9632a06 100644
---- a/package/base-files/files/lib/upgrade/nand.sh
-+++ b/package/base-files/files/lib/upgrade/nand.sh
-@@ -174,11 +174,17 @@ nand_upgrade_prepare_ubi() {
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1i1ZNV-0006d5-8N
+	for openwrt-devel@lists.openwrt.org; Sat, 24 Aug 2019 16:59:02 +0000
+Received: by mail-oi1-x242.google.com with SMTP id k22so9269289oiw.11
+        for <openwrt-devel@lists.openwrt.org>; Sat, 24 Aug 2019 09:58:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=vqg7toEY6+e2L6bRNbaYDJyEaNi0xcS4JbmlTyhU86w=;
+        b=SvOkIOZgFNF8CtqYCxkWuYmBPqkXRP9cCMaVU8Z4GNZxWmBMRo/NBxS2FEapnxaRxL
+         Pb3iL4MWIdwZ/JCo2hQGj9LmihFdYW3eNDW7JsjhryGMHf/8RQowSvDBbJVljWqNvAiL
+         FICmzcbfMRAwY5AAAcHstYEFl45SNTZYM9GDYexWf7XDy0CFMJVNqs8iWoj0mGu9eAAT
+         KRAPGGYSDZa0luciQX3f98ZUuraMpNM+fNb/uupRP6x/vwfrmq48i0PCkEwtdizP43Eb
+         +QG3fju5RmKbOsvuZGVJqNsIQX+8P88MHWbb5LAi5DbkEGrrnnT25WtUvwRXhc50JSYU
+         58lQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=vqg7toEY6+e2L6bRNbaYDJyEaNi0xcS4JbmlTyhU86w=;
+        b=jMSxQFyO/f7ahdO/X5YaycDFs+n+e8WsrKWK10wmRlEW47Zjlju//I/Ffw/muacOTh
+         /C5GfEp64Ai8AKQ0+Q/rA2lR1AaBmVzYhx3IWy5FRIuKvZI+ID/CeB8mxxzE8Do/yAW2
+         XtUc+cu8nCE4xbI52GE1IxnyxsAN8BhyyMXuth2b1ktBeCDjZp5EBzYaywDnUyr34zfL
+         CDm5nrpJR5mM29qVrqSYhx7oJyG1DIoy7k1OX+PtmUWipH4Q88cygfHabrwIwJ+lZWZY
+         wFXeJRjfl4ZjMjy/IWzBFBhD1+KW2QlVOUJL2BYAvQU9YbC1NMExgPracLdDGJugAGFO
+         ekdg==
+X-Gm-Message-State: APjAAAUJYm8VuzeB4Fjk51uisjwm3OzdlqYm0L3j8hPtQzMtterMi/n2
+	MxO9StjB/QpbRfYALG13KAfNvTC12UvDppR36mQ=
+X-Google-Smtp-Source: APXvYqwqhVVAO7PVCEmrNoBFTbACWZuBP+8mrsPSLYUJHxVUEvuCRFAgiOF3AEK/FPTw834Npxpf0xmiiKv+9890Uhw=
+X-Received: by 2002:a05:6808:8e2:: with SMTP id d2mr7248316oic.47.1566665938118;
+ Sat, 24 Aug 2019 09:58:58 -0700 (PDT)
+MIME-Version: 1.0
+References: <alpine.LNX.2.21.99999.352.1908240114240.6377@localhost.localdomain>
+In-Reply-To: <alpine.LNX.2.21.99999.352.1908240114240.6377@localhost.localdomain>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sat, 24 Aug 2019 18:58:46 +0200
+Message-ID: <CAFBinCDbyb0mWeBt738XtMoWVHHi6sOep5DY5f6ddS0a5GKT3g@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] [lantiq] help in supporting FRITZ!BOX 3272 (Fritz_Box_HW198))
+To: Enrico Mioso <mrkiko.rs@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org, Hauke Mehrtens <hauke@hauke-m.de>, 
+	Petr Cvek <petrcvekcz@gmail.com>, john@phrozen.org
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190824_095901_325353_7D4E48D6 
+X-CRM114-Status: GOOD (  15.60  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  
- 	# update rootfs
- 	local root_size_param
--	if [ "$rootfs_type" = "ubifs" ]; then
-+	case "$rootfs_type" in
-+	"squashfs")
-+		root_size_param="-s $(( ($rootfs_length + 65535) & ~65535))"
-+		;;
-+	"ubifs")
- 		root_size_param="-m"
--	else
-+		;;
-+	*)
- 		root_size_param="-s $rootfs_length"
--	fi
-+		;;
-+	esac
- 	if ! ubimkvol /dev/$ubidev -N $CI_ROOTPART $root_size_param; then
- 		echo "cannot create rootfs volume"
- 		return 1;
-diff --git a/scripts/ubinize-image.sh b/scripts/ubinize-image.sh
-index a18d6dc428..06f4a3b995 100755
---- a/scripts/ubinize-image.sh
-+++ b/scripts/ubinize-image.sh
-@@ -18,6 +18,12 @@ is_ubifs() {
- 	fi
- }
- 
-+is_squashfs() {
-+	if [ "$( get_magic_word "$1" )" = "6873" ]; then
-+		echo "1"
-+	fi
-+}
-+
- ubivol() {
- 	volid=$1
- 	name=$2
-@@ -69,7 +75,11 @@ ubilayout() {
- 		ubivol $vol_id kernel "$3"
- 		vol_id=$(( $vol_id + 1 ))
- 	fi
--	ubivol $vol_id rootfs "$2" $root_is_ubifs
-+	size=""
-+	if [ -n "$( is_squashfs "$2" )" ]; then
-+		size=$(( ($(wc -c < "$2") + 65535) & ~65535))
-+	fi
-+	ubivol $vol_id rootfs "$2" "$root_is_ubifs" "$size"
- 	vol_id=$(( $vol_id + 1 ))
- 	[ "$root_is_ubifs" ] || ubivol $vol_id rootfs_data "" 1
- }
--- 
-2.23.0
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2607:f8b0:4864:20:0:0:0:242 listed in]
+                             [list.dnswl.org]
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             (martin.blumenstingl[at]googlemail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+
+Hi Enrico,
+
+On Sat, Aug 24, 2019 at 1:15 AM Enrico Mioso <mrkiko.rs@gmail.com> wrote:
+>
+> Sat, 24 Aug 2019 01:14:40 +0200 (CEST)ear OpenWRt list,
+> I was looking at trying to add support to the FRITZ!BOX 3272 to OpenWRt.
+> It is based on the Lantiq AR10 platform - for which I wasn't able to find any informations, even tought I see kernel code to support it is already available.
+> From where may I start ?
+from what I know AND if I remember correctly:
+* the Ethernet controller is the same as on the VRX200 SoCs, only the
+clocks are slightly different (the clock code may already account for
+that, I don't know)
+* the NAND controller got hardware ECC support (the upstream driver
+doesn't support that yet and the upstream driver needs a rework
+anyways because it's using the legacy NAND API)
+* it has two PCIe controllers (VRX200 has one, our current PCIe
+controller driver will not work with two controllers enabled - but
+there's an ongoing effort in upstreaming the PCIe driver [0] which
+will solve that problem)
+* it has three built-in GPHY IP cores (VRX200 has only two, that means
+it supports 2x Gbit ports - each using one GPHY - and 2x 10/100 Mbit/s
+- using the third GPHY - Ethernet ports)
+* upstream Linux should already have support for the clocks (there may
+be bugs, but basic support is probably there)
+* upstream Linux should already have support for GPIO and pin controllers
+* the CPU cores are the same as on VRX200 so the whole CPU tree,
+interrupt controller, etc. should all be the same (and thus supported
+by upstream Linux)
+
+Hauke is working on an upstream Ethernet driver, so if I were to touch
+anything Ethernet related I would ask him about his plans fist.
+upstream PCIe support is ongoing [0], I am following that discussion
+instead of duplicating work.
+Hardware ECC support for the NAND controller (as well as rewriting the
+NAND controller driver to match the new upstream NAND driver API) is
+something that nobody is working on (as far as I know).
+
+> E.g.: is there any similar devices or places I might start looking?
+the BT Home Hub 4A uses an ARX368 (= also "AR10")
+
+adding support for any ARX300 based device ("AR10", such as the
+FRITZ!Box 3272) then you I suggest to start very simple. if I would do
+it then would use the following steps:
+- create a bare minimum arx300.dtsi (I would start with one CPU,
+memory and UART)
+- add more devices, one-by-one to that .dtsi validating that each of them works
+- find the ones that don't work and find out why that is (trying to
+understand the out-of-tree drivers from the Lantiq "UGW" helps me here
+- as well as feedback from Hauke and John)
+- make it work (this typically involves sending kernel patches early
+to upstream and getting feedback)
 
 
+Martin
 
 
----
+[0] https://lkml.org/lkml/2019/8/20/256
 
 
-
+--===============0225540331285017081==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0225540331285017081==--

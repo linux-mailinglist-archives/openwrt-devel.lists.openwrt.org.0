@@ -2,146 +2,250 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C61CC9D2D9
-	for <lists+openwrt-devel@lfdr.de>; Mon, 26 Aug 2019 17:34:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D386F9D64B
+	for <lists+openwrt-devel@lfdr.de>; Mon, 26 Aug 2019 21:14:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LFa8cn3VCocVWzgOb7wZgs1qtrjPqMZZrJgt6ZXEaRU=; b=MwgdD3USckxxJt
-	IPed9ZuGH34tB4sh9PAMbXhBT1MMYO2qIj4OpA7J+OS6OeDOP+EOyk2vKj2399i4l2UbIKKu8A09b
-	yJPn2ZkaTR3l9Dcnl3HBhNtYCQQLsgGmve6n74F/Sog0xCrxm5bQy2hoSn5gjEF1mrDtn56bJpG8S
-	Cc5zAB3FIlkIZDFgrBL6lFR9laHFlHyt1BVBVetCrB8lmLqBGqCSNuM6NF3d39kxn9xPq5TyNxh2F
-	2Ml/haRb34eGab5NtV5ThXPXNNWwY2xkoXVFcBq1qnA1Bvssm6ixkcY4hrgC5Uxb6wij7UFj1Qymm
-	Tgva1XuCA4cwJoI6LFKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AeSHh8vmDIhuX/gZaV4+y8eVJLXPM6VKW1qfvdolBrI=; b=SliQ33/Uu6oqiFI3v+RhL7qU1
+	uYnDLBeegcouLzG+qsHNywjM5Pf6fe8kxKkgVaQbjICxA16xxK1xGxenCy1IgaUbcFdwwJNPr+PaS
+	P+6TA8vfyfRZAAdSU8k7+B6tJGj931TrYyL/QBI/M7Jhgg7z9jmUfO6zgBrAxgINcEO+9ZB8TBClw
+	04/T5ni766oLy+oSmfZrQSaYVtdvFvJ4GPol/6mJzmViMeeb+OX6CRgoAESWaI1gQzxPjOL4Q52Uy
+	+xCTQojyVDTCFUpKCXPwLAZDd/m8t8djUUuBT3rsmCQzbIF1wjsCXF4az6NJgVPeJdryGDAvJjoYF
+	D9XTpGWfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2H0H-0000KW-63; Mon, 26 Aug 2019 15:33:57 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Gzx-0000Jy-La
- for openwrt-devel@lists.openwrt.org; Mon, 26 Aug 2019 15:33:39 +0000
-Received: by mail-lj1-x243.google.com with SMTP id t14so15531262lji.4
- for <openwrt-devel@lists.openwrt.org>; Mon, 26 Aug 2019 08:33:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:from:subject:message-id:date:user-agent:mime-version
- :content-language:content-transfer-encoding;
- bh=CiXvAkHiOebKkf7bgo4anui2YiLYizaoqTzsxNLSVXw=;
- b=JEFqDmeZ2bw4HvNmBi4YAghWIQM6hD4eYKK3cfA1jYhi8lF7Ek+KFOn+MqgZxMB6Tu
- ChWT+AVY1/b1XkDPN1f2ji2UrJW2+gThk7D+6GinPVSppb7XwgfyA3Wn8nAchgvWYrX/
- ccauPTF1Y0oLvD/qKsUeTWWgrd8ykS1ruxnf/Ys2id3/8sGghS1Oa+r3K4X0nV1Nd6ol
- K+8jxGA5+G4jCWEfE5W2co9ZljR0Ur4cRYrUTJwYMEEtz+Ckc2keksx7trYC5Z7QfW/W
- X2YRalkXtJYzKr/mgg413R+3ca4KC7TKMHpfwgXUE3NxaOgpyQVTCppZfhHbswAYvwLT
- qySw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:subject:message-id:date:user-agent
- :mime-version:content-language:content-transfer-encoding;
- bh=CiXvAkHiOebKkf7bgo4anui2YiLYizaoqTzsxNLSVXw=;
- b=sIM/JIK7wvymspO3powvWBkgDCGmrAVAvPtB2karWWTGb9rx2UaBfGEIU31cCJla6U
- R22niZ64QmHwH2CkikO2eZuckIpQEyAqtRocpFfvBV1Rpb+yZ6WyzOb3bkQnESNCD0Vn
- VvkWqeo8BNQ9tflWTuCQT/VqbKlNukMlEyOuY4Vvv8GxWotDOMDW4nwHlnRhphCYqS9m
- FRyMLUVZw2vi06/HgzZRPhlGTFw81kBDzLk0GTzGFRZ5E60yrfzyC+Sy6EP5u/KQNA3R
- CrO+gvcaey77PVfTVbJlfkXUokSgGOmkHQ2vojmqhH8S3ML93Mpm3wgntqEOS1vWZ55g
- ogzQ==
-X-Gm-Message-State: APjAAAWtWWHgSC3Bqh40Ew5oJRzf/VoiC/W+iQ9YhZnF/ie9dq7Nx6nm
- bj9yPxFk182GoJnDlCRj4xY=
-X-Google-Smtp-Source: APXvYqzu76yIB8wKaXgK0wabYmfAtI1uIgUH5zwFgcgtRVmzXLfLTrkHXpSHU6syj5TcgvvFNm+YGw==
-X-Received: by 2002:a2e:8658:: with SMTP id i24mr10858972ljj.188.1566833615809; 
- Mon, 26 Aug 2019 08:33:35 -0700 (PDT)
-Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
- [194.187.74.233])
- by smtp.googlemail.com with ESMTPSA id x15sm933675lff.54.2019.08.26.08.33.34
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 26 Aug 2019 08:33:35 -0700 (PDT)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- John Crispin <john@phrozen.org>
-From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Message-ID: <94e6f04d-19c5-3818-0748-db4ec0d481ad@gmail.com>
-Date: Mon, 26 Aug 2019 17:33:34 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.5.2
+	id 1i2KRA-0004At-JM; Mon, 26 Aug 2019 19:13:56 +0000
+References: <20190704113537.22078-1-ms@dev.tdt.de>
+ <4454fadb211809fbcceab6dc465a1b7a@dev.tdt.de>
+In-Reply-To: <4454fadb211809fbcceab6dc465a1b7a@dev.tdt.de>
+Date: Mon, 26 Aug 2019 22:12:58 +0300
+To: openwrt-devel <openwrt-devel@lists.openwrt.org>
 MIME-Version: 1.0
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_083337_751598_4878FEE1 
-X-CRM114-Status: GOOD (  10.53  )
-X-Spam-Score: 0.1 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (zajec5[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (zajec5[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
-Subject: [OpenWrt-Devel] libblkid-tiny: bugged buffer management
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.19959.1566846805.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Sami Olmari via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Sami Olmari <sami@olmari.fi>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Subject: Re: [OpenWrt-Devel] [PATCH uqmi] nas: add --get-plmn
+Content-Type: multipart/mixed; boundary="===============8592772112712047552=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SSBub3RpY2VkIGEgYnVnIGluICJibG9jayIgdG9vbCBiZWhhdmlvci4gSXQgd2FzIHByb3ZpZGlu
-ZyBpbmNvbnNpc3RlbnQKVVVJRHMgZm9yIG15IGRpc2tzIHdpdGggTlRGUyBwYXJ0aXRpb25zLgoK
-UGxlYXNlIGNoZWNrIFVVSUQgb2YgL2Rldi9zZGExIGluIGZvbGxvd2luZyBleGFtcGxlczoKCnJv
-b3RAT3BlbldydDovIyBibG9jayBpbmZvCi9kZXYvbXRkYmxvY2s0OiBVVUlEPSI4NDYzYTQwMy05
-OWIzY2Y5Mi1kMmI3OTk2Zi1jNGVkZTRmNCIgVkVSU0lPTj0iNC4wIiBNT1VOVD0iL3JvbSIgVFlQ
-RT0ic3F1YXNoZnMiCi9kZXYvbXRkYmxvY2s1OiBNT1VOVD0iL292ZXJsYXkiIFRZUEU9ImpmZnMy
-IgovZGV2L3NkYTE6IFVVSUQ9IjZBQTk4NzM2MzZDQTU0MDkiIFRZUEU9Im50ZnMiCi9kZXYvc2Rh
-MjogVVVJRD0iMDAwMDAwMTgwMDAwMDAzMCIgVFlQRT0ibnRmcyIKL2Rldi9zZGIxOiBVVUlEPSIw
-MDAwMDAxODAwMDAwMDMwIiBUWVBFPSJudGZzIgoKcm9vdEBPcGVuV3J0Oi8jIGJsb2NrIGRldGVj
-dApjb25maWcgJ2dsb2JhbCcKICAgICAgICBvcHRpb24gIGFub25fc3dhcCAgICAgICAnMCcKICAg
-ICAgICBvcHRpb24gIGFub25fbW91bnQgICAgICAnMCcKICAgICAgICBvcHRpb24gIGF1dG9fc3dh
-cCAgICAgICAnMScKICAgICAgICBvcHRpb24gIGF1dG9fbW91bnQgICAgICAnMScKICAgICAgICBv
-cHRpb24gIGRlbGF5X3Jvb3QgICAgICAnNScKICAgICAgICBvcHRpb24gIGNoZWNrX2ZzICAgICAg
-ICAnMCcKCmNvbmZpZyAnbW91bnQnCiAgICAgICAgb3B0aW9uICB0YXJnZXQgICcvbW50L3NkYTEn
-CiAgICAgICAgb3B0aW9uICB1dWlkICAgICcwMDAwMDAxODAwMDAwMDMwJwogICAgICAgIG9wdGlv
-biAgZW5hYmxlZCAnMCcKCmNvbmZpZyAnbW91bnQnCiAgICAgICAgb3B0aW9uICB0YXJnZXQgICcv
-bW50L3NkYTInCiAgICAgICAgb3B0aW9uICB1dWlkICAgICcwMDAwMDAxODAwMDAwMDMwJwogICAg
-ICAgIG9wdGlvbiAgZW5hYmxlZCAnMCcKCmNvbmZpZyAnbW91bnQnCiAgICAgICAgb3B0aW9uICB0
-YXJnZXQgICcvbW50L3NkYjEnCiAgICAgICAgb3B0aW9uICB1dWlkICAgICcwMDAwMDAxODAwMDAw
-MDMwJwogICAgICAgIG9wdGlvbiAgZW5hYmxlZCAnMCcKClRoYXQgYnVnIHdhcyBleHBvc2VkIGJ5
-IGNhY2hlX2xvYWQoMCkgdnMuIGNhY2hlX2xvYWQoMSkuIFRob3NlIGNhbGxzCnJlc3VsdCBpbiBk
-aWZmZXJlbnQgb3JkZXIgb2YgYnVmZmVyIGFsbG9jYXRpb24gaW4gdGhlCmJsa2lkX3Byb2JlX2dl
-dF9idWZmZXIoKS4KClRoaXMgcHJvYmxlbSBpcyBjYXVzZWQgYnk6CjEpIGJsa2lkX3Byb2JlX2dl
-dF9idWZmZXIoKSByZXN1aW5nIGJ1ZmZlciB3aGVuIHBvc3NpYmxlCjIpIF9fcHJvYmVfbnRmcygp
-IHJlYWRpbmcgbXVsdGlwbGUgYmxvY2tzCgpBcyB5b3UgY2FuIHByb2JhYmx5IGd1ZXNzIGFueSBz
-dWJzZXF1ZW50IGJsb2NrIHJlYWR5IGNhbiBvdmVyd3JpdGUgYQpjb250ZW50IG9mIHByZXZpb3Vz
-bHkgcmV0dXJuZWQgYmxvY2sgY29udGVudCBidWZmZXIuIEluIF9fcHJvYmVfbnRmcygpCmNhc2Ug
-aXQncyBzb21ldGhpbmcgbGlrZToKCm5zID0gYmxraWRfcHJvYmVfZ2V0X3NiKC4uLik7CmJ1Zl9t
-ZnQgPSBibGtpZF9wcm9iZV9nZXRfYnVmZmVyKC4uLik7CmJ1Zl9tZnQgPSBibGtpZF9wcm9iZV9n
-ZXRfYnVmZmVyKC4uLik7Cm5zLT52b2x1bWVfc2VyaWFsCgpJZiB5b3UgdGFrZSBhIGxvb2sgYXQg
-YmxraWRfcHJvYmVfZ2V0X2J1ZmZlcigpIGluIHRoZSBvcmlnaW5hbCBwcm9qZWN0Cih1dGlsLWxp
-bnV4J3MgbGliYmxraWQpIGl0J3MgYSBiaXQgbW9yZSBjb21wbGljYXRlZDoKaHR0cHM6Ly9naXQu
-a2VybmVsLm9yZy9wdWIvc2NtL3V0aWxzL3V0aWwtbGludXgvdXRpbC1saW51eC5naXQvdHJlZS9s
-aWJibGtpZC9zcmMvcHJvYmUuYyNuNjQwCgpBbnkgaWRlYS9oaW50IGhvdyB0byByZXNvbHZlIGl0
-IGluIHNvbWUgc2ltcGxlIHdheT8KCi0tIApSYWZhxYIKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53
-cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWls
-bWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+--===============8592772112712047552==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============8592772112712047552==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+	id 1i2KQc-0003u5-Aq
+	for openwrt-devel@lists.openwrt.org; Mon, 26 Aug 2019 19:13:24 +0000
+Received: by mail-lf1-x144.google.com with SMTP id v16so13106957lfg.11
+        for <openwrt-devel@lists.openwrt.org>; Mon, 26 Aug 2019 12:13:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=olmari.fi; s=google;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=dTb6adBMV4NZA6rIAfqky+D6Y55Uu1jaMcgAGO/r/XM=;
+        b=V2z/zZfOWJm+Iv5Yn5dq7st7lQeiGQrFvZKptzqg3xTEMCX+ApDUcWizwKFsdIep13
+         MEpowLR0EBhK3Ig6Kq2MUUc8FxbSANS8Y5GpmQOsKG08xUtNBAKCvQITJctdbWzgIB9f
+         4uGVu4wJpxUWcy3kVvrKtfnDvk5Ph6HMK+rPGJKoAQsrY2aqrrWKV1TmIFFgATUY8wg/
+         ZFsKzI5xsef2KXDqWfq/7neRNcKcu5BOmYpWUgtDQKO0ppw6SX/vdbPiLPstzjrLMhNB
+         7KnuPGKvvtS8uUijRNNI70QwJuqgbVr2l4sIaXkow/b8eMpaFLj61GDSPBW1ds9sI0PT
+         XMxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=dTb6adBMV4NZA6rIAfqky+D6Y55Uu1jaMcgAGO/r/XM=;
+        b=ZeSkzmRv87mFGu4nnYJ9V6K7d5+zUE843a9ozGkvevNNA1LLFBpF7U+1ffJcAi5jO9
+         0UWOy30afGOEMvoWqHiqdeC46y6Aa7kKbrxceWLhEsxTTf6vxCLvlrtap7fx4qIs8M0w
+         xfJTm3qm2D6/45ME1/6C1cQpN/4+bT9+YKFHiPS/fjuYoyApRrqgzKtsvMwGyis1KT8L
+         4HueiEbcFzjQQJvwX0Pn9cpGa3tEApL7KR0Ol244PTbndzM2HWVVxIAKD5CVuDvv5k2J
+         GJ2mBT/YYOsZ6QBFmjrToIYhfiuRQILROatl3T6JJV9iVc+Bt4V3REPE7H+XhhXASZTt
+         zSMg==
+X-Gm-Message-State: APjAAAX0ItecMNKWdaftacQbUmiZFQA/69Hzt46h+p0bQv/Frsr2IfLe
+	r4gsazo9srlt5z99E8E0pBtaS6w1wGt3P3hQPxW57x8qA5CGeA==
+X-Google-Smtp-Source: APXvYqyi5Q+aglnvDgU6DKxRRwRQ6MljSsdJ3exscwdqz7LzGBl3F2kI/YI6z22mcFPX0oxm1Ya+1rVW9jHmIQh3fTM=
+X-Received: by 2002:a19:4347:: with SMTP id m7mr5079703lfj.146.1566846789027;
+ Mon, 26 Aug 2019 12:13:09 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190704113537.22078-1-ms@dev.tdt.de> <4454fadb211809fbcceab6dc465a1b7a@dev.tdt.de>
+In-Reply-To: <4454fadb211809fbcceab6dc465a1b7a@dev.tdt.de>
+From: Sami Olmari <sami@olmari.fi>
+Date: Mon, 26 Aug 2019 22:12:58 +0300
+Message-ID: <CAENOc+xxGFFSh+K-EC1o5Kog8LsPJDGiHG26b0d-YC0ed079XQ@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] [PATCH uqmi] nas: add --get-plmn
+To: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190826_121322_865148_10572085 
+X-CRM114-Status: GOOD (  17.26  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2a00:1450:4864:20:0:0:0:144 listed in]
+                             [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+
+I think the ideology behind proto handler there is to "do whatever
+told" despite of what the state is currently,
+maybe there is a reason for such behaviour (searches some stuff from
+network etc).
+
+-- 
+ Sami Olmari
+
+On Mon, Aug 26, 2019 at 1:48 PM Martin Schiller <ms@dev.tdt.de> wrote:
+>
+> Can somebody please take a look at this patch.
+>
+> It's really necessary to fix the problem in the qmi proto handler.
+>
+> Thanks,
+> Martin
+>
+> On 2019-07-04 13:35, Martin Schiller wrote:
+> > This command is needed in the qmi proto handler to check if the plmn
+> > is already set to 'auto'.
+> >
+> > The reason for this is, that setting the plmn to 'auto' will implicitly
+> > lead to a (delayed) network re-registration, which could further lead
+> > to some timing related issues in the qmi proto handler.
+> >
+> > Signed-off-by: Martin Schiller <ms@dev.tdt.de>
+> > ---
+> >  commands-nas.c | 31 +++++++++++++++++++++++++++++++
+> >  commands-nas.h |  2 ++
+> >  2 files changed, 33 insertions(+)
+> >
+> > diff --git a/commands-nas.c b/commands-nas.c
+> > index 5874bfb..1f7445d 100644
+> > --- a/commands-nas.c
+> > +++ b/commands-nas.c
+> > @@ -293,6 +293,37 @@ cmd_nas_get_serving_system_prepare(struct qmi_dev
+> > *qmi, struct qmi_request *req,
+> >  }
+> >
+> >  static void
+> > +cmd_nas_get_plmn_cb(struct qmi_dev *qmi, struct qmi_request *req,
+> > struct qmi_msg *msg)
+> > +{
+> > +     struct qmi_nas_get_system_selection_preference_response res;
+> > +     static const char *modes[] = {
+> > +             [QMI_NAS_NETWORK_SELECTION_PREFERENCE_AUTOMATIC] = "automatic",
+> > +             [QMI_NAS_NETWORK_SELECTION_PREFERENCE_MANUAL] = "manual",
+> > +     };
+> > +     void *c;
+> > +
+> > +     qmi_parse_nas_get_system_selection_preference_response(msg, &res);
+> > +
+> > +     c = blobmsg_open_table(&status, NULL);
+> > +     if (res.set.network_selection_preference) {
+> > +             blobmsg_add_string(&status, "mode",
+> > modes[res.data.network_selection_preference]);
+> > +     }
+> > +     if (res.set.manual_network_selection) {
+> > +             blobmsg_add_u32(&status, "mcc",
+> > res.data.manual_network_selection.mcc);
+> > +             blobmsg_add_u32(&status, "mnc",
+> > res.data.manual_network_selection.mnc);
+> > +     }
+> > +
+> > +     blobmsg_close_table(&status, c);
+> > +}
+> > +
+> > +static enum qmi_cmd_result
+> > +cmd_nas_get_plmn_prepare(struct qmi_dev *qmi, struct qmi_request
+> > *req, struct qmi_msg *msg, char *arg)
+> > +{
+> > +     qmi_set_nas_get_system_selection_preference_request(msg);
+> > +     return QMI_CMD_REQUEST;
+> > +}
+> > +
+> > +static void
+> >  cmd_nas_network_scan_cb(struct qmi_dev *qmi, struct qmi_request *req,
+> > struct qmi_msg *msg)
+> >  {
+> >       static struct qmi_nas_network_scan_response res;
+> > diff --git a/commands-nas.h b/commands-nas.h
+> > index 9ebfa00..4b175f9 100644
+> > --- a/commands-nas.h
+> > +++ b/commands-nas.h
+> > @@ -24,6 +24,7 @@
+> >       __uqmi_command(nas_set_network_modes, set-network-modes, required,
+> > CMD_TYPE_OPTION), \
+> >       __uqmi_command(nas_initiate_network_register, network-register, no,
+> > QMI_SERVICE_NAS), \
+> >       __uqmi_command(nas_set_plmn, set-plmn, no, QMI_SERVICE_NAS), \
+> > +     __uqmi_command(nas_get_plmn, get-plmn, no, QMI_SERVICE_NAS), \
+> >       __uqmi_command(nas_set_mcc, mcc, required, CMD_TYPE_OPTION), \
+> >       __uqmi_command(nas_set_mnc, mnc, required, CMD_TYPE_OPTION), \
+> >       __uqmi_command(nas_network_scan, network-scan, no, QMI_SERVICE_NAS),
+> > \
+> > @@ -44,6 +45,7 @@
+> >               "  --set-plmn:                       Register at specified
+> > network\n" \
+> >               "    --mcc <mcc>:                    Mobile Country Code (0 -
+> > auto)\n" \
+> >               "    --mnc <mnc>:                    Mobile Network Code\n" \
+> > +             "  --get-plmn:                       Get preferred network
+> > selection info\n" \
+> >               "  --get-signal-info:                Get signal strength info\n" \
+> >               "  --get-serving-system:             Get serving system info\n" \
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+
+--===============8592772112712047552==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8592772112712047552==--

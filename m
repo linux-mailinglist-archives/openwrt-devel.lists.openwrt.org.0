@@ -2,83 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47D319F618
-	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 00:25:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC95D9F663
+	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 00:49:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
-	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/SekItDnp3MjSYUDhlCUUBE14YGaPqMHhhVHA1S4aJo=; b=ZoYWvnMSrKIyGzDs4GGuCo4Hz
-	X8hGI/ObiKclFEmW46/Kk1bUeQgwl6UTlMgo27nOvFP3Wbm5FA7Wv9xrdFk3Tr6xjgwNscytv9r1K
-	2IPiFnwC5211bSRRWJeaJIkA/PWR3fj8xdIuKys115dqSHnYXtB/ATD4ovN39QyWMN7PhVZo3KVH0
-	E2m3RfpeXn5n6N2UQgCH2EJk004+NekGpWrisx7fBfdJMEZf9kFi724BwDxtg+PFXGWZyG6yw8P3Q
-	3IMXcS9jfFel0A+p689vZxuMKI0y3OPpLKnzNC5zZcQ+sGcVVzhw1gdap1lE5tas4X5R1ICDV3Zpt
-	IUiI32oTQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p9tsuXpWacA2ycbYpH8d1QizeGlMPhomAe0k/qmdgL4=; b=l43aVEqBdpdMyi
+	PwJ71IK0d+BOM1Q2By501k1n9fto8g3ZYHAjhOBxyqVZCvNt99QeyYyRmqAeqNu/6iTpX0GQfyb3q
+	wzrZ3Yr/MBVW8Ja0KbqGtSi0beGcJ/SJz3e+a/uMxn/NFpOfoK5EmmolbW+ZX0FWwTHZY77WD4kkW
+	zEK6f6FL+COtKAQ6hg3IVslI3XHhohCapgZ03x7DhZyPoGI6vsWbnE+8pY+uRQBbkIXy7g78St5QR
+	nnRB7wB0X1XMFMjLHkQSg8tWVQz7MQJrb60ozQXg9moY9Q4pfHM1Uc2SzrL1Z8plmaPyEYw8342vV
+	jce4jh5IyEhKyYfkMvtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2juB-0001iB-RT; Tue, 27 Aug 2019 22:25:35 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i2kHQ-0001wv-Iu; Tue, 27 Aug 2019 22:49:36 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2ju0-0001hn-RZ
- for openwrt-devel@lists.openwrt.org; Tue, 27 Aug 2019 22:25:26 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z11so396010wrt.4
- for <openwrt-devel@lists.openwrt.org>; Tue, 27 Aug 2019 15:25:24 -0700 (PDT)
+ id 1i2kHH-0001wG-Mj
+ for openwrt-devel@lists.openwrt.org; Tue, 27 Aug 2019 22:49:28 +0000
+Received: by mail-pl1-x641.google.com with SMTP id d3so255802plr.1
+ for <openwrt-devel@lists.openwrt.org>; Tue, 27 Aug 2019 15:49:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :mime-version; bh=OT/6lQI2/zH0AzyRpoLMa0tiU7e2sMTeU4KdW092LuQ=;
- b=UMbcZiiVayxWOwNuavjSL3PTQL8orPGn44ZFQqcni5PM2IJr7X6hPXoloTCLs9TLEf
- xVOYS86ubAdWYG9Lub3S0GaCcsP+Awv2aKnA9xiwWmX1sV3Ycy49ONefpQXod+XX4BtS
- UlSTt+wvO7yoTCTdPT/s/dXHnKsvDBkHk6J8RCREJHVxHAvv2NPLGpKT1Tl9zOcGwnNw
- FmtIxuU92UuSaBsC7WEHcbGjl1EAcCvZDsok0WjBSoeO1SRdOoZvVHtN/OBTRv4LhDPu
- HH/soRclZjfu+8Icsi34tpgUWVnntikLOWNQ97XqkfKnh9uZAG7FTHF/ywCY+JG6jNYt
- 28qA==
+ h=from:to:subject:date:message-id;
+ bh=ZIfUumzqdF2BI8SQOLiQaiSuFaagnI1uaMUzhLH64V0=;
+ b=qy2qh1UQ9P4qkd+vvf6kZkurOH30nVJbSqszVTmiScbrO3omQ4xg8jj9qf8zJdGbEo
+ UZLRopGgwEXZ0U/n0WzhfaIuW/rlAGO8TzuTk3AdAAAKlxOvsQ8rj88IJejZWaiiQSOH
+ c8ihLjdrPb2OfJCd6k7It1KcmUBJMQXfn9511oxQgSo/uLzSTTPYb89RRW+4zbBbHWZ4
+ vw+IE6dbC9o/OcHw6iLnSp69om00l3jqPlX9AgGswznspeHufikUKdkCIYYvRhJ5aMwo
+ sfUzK5QniXofsprkJdNWt2UAulkVKum93brn3lmy385aN/NSVupUdudAvcfuEzNaN0Ff
+ GtdA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:mime-version;
- bh=OT/6lQI2/zH0AzyRpoLMa0tiU7e2sMTeU4KdW092LuQ=;
- b=Au227Z9ESdfcoIdbOtgGpxqoYED+AiVhY/Gsx2uEsvk/5hSSgegUozEwXkjwAK57hF
- xANPyqiwsL6HyBB7pM8KrEH2FRM7rD6Kmy/FOU0CoZzTaam04E5iHnKioVeIDiFEP3vz
- sCCf7GeYXDEOgk2BwQajDhnB327sUa+UugATyUMNo01Oud1ABQEiN/yM2Pq0FxkTNZ3d
- s2Yyhpj8r1SHswQVbcG+7dY94oUoSiDO0bJqMfekxo9bqhC61mKMjZLnfwjptiDn8Wjs
- FqGbS82Evyx5uJiDpfJYAEEZrc9ieUAQBaQh+vRmExufXZO7zV4qYLN5kZfQjuWruImT
- n7Dg==
-X-Gm-Message-State: APjAAAX8K77+OnKQYsNQ6iXBR/b/nN4BeFioyZOdTcAtBJOsZ8TUqd9u
- kAvMoiUHAVvpehiDaXD4LQUSfnht
-X-Google-Smtp-Source: APXvYqxJuzRzDfrw9wcZrL2+YSP1EsgP+1aoCHe7mYzmrnLofHHYH5B18tnX26gcurVgLBGo1KX9ng==
-X-Received: by 2002:a5d:5343:: with SMTP id t3mr408037wrv.156.1566944722688;
- Tue, 27 Aug 2019 15:25:22 -0700 (PDT)
-Received: from localhost.localdomain
- (host111-46-dynamic.5-87-r.retail.telecomitalia.it. [87.5.46.111])
- by smtp.gmail.com with ESMTPSA id e13sm344473wmh.44.2019.08.27.15.25.21
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 27 Aug 2019 15:25:22 -0700 (PDT)
-Received: from localhost (localhost [127.0.0.1])
- by localhost.localdomain (OpenSMTPD) with ESMTP id 0a7349a0;
- Tue, 27 Aug 2019 22:25:20 +0000 (UTC)
-Date: Wed, 28 Aug 2019 00:25:20 +0200 (CEST)
-From: Enrico Mioso <mrkiko.rs@gmail.com>
-X-X-Sender: mrkiko@localhost.localdomain
-To: David Bauer <mail@david-bauer.net>
-In-Reply-To: <20190827215711.14113-1-mail@david-bauer.net>
-Message-ID: <alpine.LNX.2.21.99999.352.1908280024490.2253@localhost.localdomain>
-References: <20190827215711.14113-1-mail@david-bauer.net>
-MIME-Version: 1.0
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=ZIfUumzqdF2BI8SQOLiQaiSuFaagnI1uaMUzhLH64V0=;
+ b=br1YgtxcLPPbMAzZYfOGPL4/KrVD+3OJOrWTkC0P1xktP9vi1npzlVzhmXDxKsbQaG
+ XT/e1LMrgfJWx4i+apwz061oOdgRODjyzPoReBe2hxgEXbLnUBGZVaE04HCpySzM/ugZ
+ Gu2Fuzjl+JjRWz+aGqUDzhU1THDur/bQr9PzRujVerl++X0HqlODBE/VNF/dp3VT2G//
+ oaRwuds/rTc1KdWOrSsj2A15Rg595bfJW3Z1vKxLAXB/oBDRHAXdQ6inMGz+jiJ/Ih8V
+ Hv8oqEwKr7vkjAysLYGFgL5vR+aZIcz/MNHVRyLAMv8Wv7aoDUdpCWSnwsDs25ffPHoT
+ L9OA==
+X-Gm-Message-State: APjAAAX4OVYm+lv8uYxxfhJ/xF8Yik56ySJQrchZ/n8PAC54ThaCxa6S
+ DWvWdcN6xm9/tkAYTdBCZTfxa8PxrM8=
+X-Google-Smtp-Source: APXvYqycjXzOt3TQs2KyD942VWFowFU7qArvSZ7J1kXMZL+0CoxfjPtaj0pbyHCFBshpx7UVz2Pa5Q==
+X-Received: by 2002:a17:902:6a8c:: with SMTP id
+ n12mr1246784plk.159.1566946164252; 
+ Tue, 27 Aug 2019 15:49:24 -0700 (PDT)
+Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
+ [76.14.106.55])
+ by smtp.gmail.com with ESMTPSA id d2sm218733pjg.19.2019.08.27.15.49.23
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 15:49:23 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 27 Aug 2019 15:49:21 -0700
+Message-Id: <20190827224922.31226-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_152524_889853_72A02A8D 
-X-CRM114-Status: GOOD (  14.51  )
+X-CRM114-CacheID: sfid-20190827_154927_768956_E3D5A748 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mrkiko.rs[at]gmail.com)
+ provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,8 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add factory image for NETGEAR
- R6220
+Subject: [OpenWrt-Devel] [PATCH 1/2] ncurses: Do not pass both -fPIC and
+ -fpic
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,61 +97,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, dev@andreas-ziegler.de
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VERY apreciated! Thanks to all!!
+The configure scripts matches Linux with -fPIC, which is not exactly what
+is desired. Since we are already passing $(FPIC), added a CONFIGURE_VAR to
+avoid passing -fPIC.
 
+Removed PKG_BUILD_DIR as it is already the default value.
 
-On Tue, 27 Aug 2019, David Bauer wrote:
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ package/libs/ncurses/Makefile | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-> Date: Tue, 27 Aug 2019 23:57:11
-> From: David Bauer <mail@david-bauer.net>
-> To: openwrt-devel@lists.openwrt.org
-> Cc: dev@andreas-ziegler.de
-> Subject: [OpenWrt-Devel] [PATCH] ramips: add factory image for NETGEAR R6220
-> 
-> This adds an easy-installation factory image for the NETGEAR R6220
-> router. The factory image can either be flashed via the vendor Web-UI or
-> the bootloader using nmrpflash.
->
-> Tested with NETGEAR V1.1.0.86 firmware.
->
-> Signed-off-by: David Bauer <mail@david-bauer.net>
-> ---
-> target/linux/ramips/image/mt7621.mk | 7 ++++++-
-> 1 file changed, 6 insertions(+), 1 deletion(-)
->
-> diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-> index 5dc8efe7c5..a00e6280c7 100644
-> --- a/target/linux/ramips/image/mt7621.mk
-> +++ b/target/linux/ramips/image/mt7621.mk
-> @@ -397,7 +397,12 @@ define Device/netgear_r6220
->   KERNEL_SIZE := 4096k
->   IMAGE_SIZE := 28672k
->   UBINIZE_OPTS := -E 5
-> -  IMAGES += kernel.bin rootfs.bin
-> +  SERCOMM_HWID := AYA
-> +  SERCOMM_HWVER := A001
-> +  SERCOMM_SWVER := 0x0086
-> +  IMAGES += factory.img kernel.bin rootfs.bin
-> +  IMAGE/factory.img := pad-extra 2048k | append-kernel | pad-to 6144k | append-ubi | \
-> +	pad-to $$$$(BLOCKSIZE) | sercom-footer | pad-to 128 | zip R6220.bin | sercom-seal
->   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
->   IMAGE/kernel.bin := append-kernel
->   IMAGE/rootfs.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
-> -- 
-> 2.23.0
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
+diff --git a/package/libs/ncurses/Makefile b/package/libs/ncurses/Makefile
+index 8c961f30b2..e22eb2b893 100644
+--- a/package/libs/ncurses/Makefile
++++ b/package/libs/ncurses/Makefile
+@@ -9,9 +9,8 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=ncurses
+ PKG_VERSION:=6.1
+-PKG_RELEASE:=4
++PKG_RELEASE:=5
+ 
+-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+ PKG_SOURCE_URL:=@GNU/$(PKG_NAME)
+ PKG_HASH:=aa057eeeb4a14d470101eff4597d5833dcef5965331be3528c08d99cebaa0d17
+@@ -76,6 +75,9 @@ CONFIGURE_ARGS += \
+ 	--enable-widec \
+ 	--with-build-cppflags=-D_GNU_SOURCE
+ 
++CONFIGURE_VARS += \
++	cf_try_fPIC=no
++
+ HOST_CFLAGS += $(HOST_FPIC)
+ 
+ HOST_CONFIGURE_ARGS += \
+-- 
+2.17.1
+
 
 _______________________________________________
 openwrt-devel mailing list

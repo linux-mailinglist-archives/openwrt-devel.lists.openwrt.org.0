@@ -2,83 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC0ECA0136
-	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 14:01:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9AC6A04F7
+	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 16:28:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RIWq3w707z5uiK1uUuOAr4usJsK+eTVYEA6o4YbIHog=; b=Xxv
-	QRTbBhkM55SL/NZb22eF8nrtW9gUpzf7j/vWM7QoHUk22ZY+j4AwmVNPOlk2eIPJ3AKj7j8qG96lW
-	5SN+LMcbXpBaifgdIdVinkLbdEVZZHisy9PaCm5zbQiu+zqODNpUrcLtQBHPHe3ehtquj6NUYyO+b
-	KSzJd5D+GC6tQfzUzW1GMhmIgFih8wSZoVvwzxYVNweN8CNeHZ7hRPIjlSLxiylxC18lqjCDJgq7I
-	eCK7ZmESv1Im7O3aq/khjkTFRMEea/s3Aex56dEtcwhsV3cuVirrRX67oNEehH4HzGevWCydYPCYP
-	MJ1Tw89xFoowAu2WwaepFUipMi32U1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:From:To:MIME-Version
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4+9A2m9Uv50wEvQRnnZhSz+9y/r7hhCFtfk8Et28yHo=; b=L6kxizucPtyRye
+	wkrS20TVwZI21sCu+N75l9ust7rFyrXhsK6rqYDCnWG5fkq6BqFKS3S6A7vchowAvR/X7yO5nQ0Mu
+	Fmit2o8DXJVZ8sQL4IMspTduIFL19Bz1EPcROyLmTE2kK57oGCo7O52n8760BuICf2MGUy7qXAkZb
+	qAAeXWN8QHK9scCQp1+kVMf7Yyf1BCrZm8GBgDHax6m44g9CwNt0SO07v9I8e5ZxwH/yGzNlCd0ix
+	gnnqaSA/ZJivi/ZincYRlEwCWYuSe3O9aLMZN4UIwqTEfAaBYSdauwHvoEeYTMa7yDw45Vk5Ly/fJ
+	c1x9Tx3Gq2ixenZxSMrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2wdo-000823-Ad; Wed, 28 Aug 2019 12:01:32 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1i2yvj-0007XU-0V; Wed, 28 Aug 2019 14:28:11 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2wc4-0005YS-4p
- for openwrt-devel@lists.openwrt.org; Wed, 28 Aug 2019 11:59:46 +0000
-Received: by mail-wr1-x433.google.com with SMTP id b16so2200811wrq.9
- for <openwrt-devel@lists.openwrt.org>; Wed, 28 Aug 2019 04:59:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=h5kLqdLjbJQFzfYObepMa5KeTshU1uIfKsn7NkJKE8w=;
- b=cvnbNWhlnN2YT1iWyyOmFWzR3KepLIHgDT/Exh3DGFhG8d5V6OpmNLu5ruMqJnIauH
- g9HuwVMWQj4dihm3mjYW0t8HCwT48pIerz8oHYzMqt74yNbq7Wualz0fqRiP5fIFgq/X
- ubvBvwxHi0AyimL+s3q12ndY/J0g0wXn4HZnKfngCxXoHVaKEErTDe5r+08opO8sEATM
- HJEt3kUP8KNRw5dlLSsX0AnJofYcMg4rzwo4jVQqSEASsIHYVxHkZfRSrg91ZQJFJsgL
- OC3yWj8IWg4a+gFvHUpagws2Xd/QH1BZHaPakwNz7HMkUeACjBU3eyMEz+ftYdGnO7lc
- t/Ug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=h5kLqdLjbJQFzfYObepMa5KeTshU1uIfKsn7NkJKE8w=;
- b=BB6NUCPKELfQdc364Butr6Lcrlsr+IrSxsqWQ+EgOEHadbTS+f/mlYan6LBYKXKP3p
- 0h8rhmKXnIWZr/1eQfbbIFrASupttBRedR/OnNJ06eQnNcs8sICO8gzZ2qOAsc66VoeG
- k6n36X+5pD6m7VhdS+ObOS4s/kXZvGxk4jUmWehi0mROZcAbt8A/IRmNYJU8Fk0QGvHl
- Dy4yAuMjBU0TU4V/Fh1Jnu5LM7oNCHQ5n7nAtzytI66n7LoIZK2vYGSttOqtRjnpBxs6
- 2ewXGzS6H1Qnr2Oc0ND/SWAkxS3GUH6vtvRKgfkUcEPb2zWbOqY8BqRH52S/DxnK27Yx
- hIOg==
-X-Gm-Message-State: APjAAAXjkdjPiPZUEVm6s9Lh03BrEggMxqXAbsfK/hCPJOMvVMXo8tmX
- xNMki9AaxRaXc8E9wDf6/kFfr9ieX6X4S7iBzjdUMw==
-X-Google-Smtp-Source: APXvYqz3eyQf5/PconS+9TRJLY2gPiqsoSEqu9KSN311s9a79oKkc4WVvGjjJ71ILOxThECYWk4mv0k9ufvcqNCceUc=
-X-Received: by 2002:adf:8444:: with SMTP id 62mr1001970wrf.202.1566993580995; 
- Wed, 28 Aug 2019 04:59:40 -0700 (PDT)
+ id 1i2yvc-0007XN-Sh
+ for openwrt-devel@bombadil.infradead.org; Wed, 28 Aug 2019 14:28:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-ID:From:Content-Type:
+ Content-Transfer-Encoding:To:MIME-Version:Subject:Date:Sender:Reply-To:Cc:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=L7H3+M2AKw/gMce133m4Ryo05zKBpH/g/CBq/+iuu1Y=; b=NV7oLWr95a1b2EMeq2zYVpiMD
+ drmVdROPeiFpJy5gnLFhXKhJ9DBhNga7RK+dWPqXxYBE2pjjsP3TkxFS2Esmk5xYAT1hOlnCZJ6br
+ ixDClJXziSBQT3FL607GPHDsIbW+c8rTDwE2clvmr+LZsxp0qISuVaCMaL/8taDDG0kovPdnhfPjD
+ ImJLTGB6z7n6GJ3hSbDnyp4Tktp5davbg11Lg1bQN32cnU1+8BiwjlmXyFotPYC3son4+wf/z2JRl
+ Ql9amngZath8vUEuMq7/juXYUgLE9MUnBFkAnPrHCQk6PUhlUDixi8PyWaqK3zeO392NZPIHTtHzJ
+ ku/cEOLIA==;
+Received: from oogw1137.ocn.ad.jp ([153.149.140.167])
+ by casper.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2yvq-0002ND-RE
+ for openwrt-devel@lists.openwrt.org; Wed, 28 Aug 2019 14:28:21 +0000
+Received: from cmn-spm-mts-007c1.ocn.ad.jp (cmn-spm-mts-007c1.ocn.ad.jp
+ [153.153.67.163])
+ by oogw1137.ocn.ad.jp (Postfix) with ESMTP id 94D88122052E
+ for <openwrt-devel@lists.openwrt.org>; Wed, 28 Aug 2019 23:27:48 +0900 (JST)
+Received: from mwb-vc-mts-004c1.ocn.ad.jp ([153.153.67.75])
+ by cmn-spm-mts-007c1.ocn.ad.jp with ESMTP
+ id 2ytXiGg4Ixayi2yvMi1l0s; Wed, 28 Aug 2019 23:27:48 +0900
+X-BIZ-RELAY: yes
+Received: from sgs-vcgw117.ocn.ad.jp ([153.149.141.227])
+ by mwb-vc-mts-004c1.ocn.ad.jp with ESMTP
+ id 2yvMiLYDvg1Yk2yvMiDopb; Wed, 28 Aug 2019 23:27:48 +0900
+Received: from fujisyouji.co.jp (fujisyouji.co.jp [61.126.4.240])
+ by sgs-vcgw117.ocn.ad.jp (Postfix) with ESMTP id 7568F24019A
+ for <openwrt-devel@lists.openwrt.org>; Wed, 28 Aug 2019 23:27:48 +0900 (JST)
+Received: from [127.0.0.1] (unknown [177.11.251.36])
+ (using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ by fujisyouji.co.jp (Postfix) with ESMTPSA id C39E5149050A6
+ for <openwrt-devel@lists.openwrt.org>; Wed, 28 Aug 2019 23:27:46 +0900 (JST)
+Date: Wed, 28 Aug 2019 17:27:49 +0300
 MIME-Version: 1.0
-From: Bahram Sadooq <q0462q@gmail.com>
-Date: Wed, 28 Aug 2019 16:29:33 +0430
-Message-ID: <CAE61QTkvVcdYoNGMSp8XuuC86F3VL6pZZ5JZhLenLH6t9HXnyA@mail.gmail.com>
 To: openwrt-devel@lists.openwrt.org
+From: Yamileth Hardin <t.mitunusi@fujisyouji.co.jp>
+Message-ID: <Hardin775925713.588973.3974167669710.JavaMail.support@fujisyouji.co.jp>
+X-EMarSys-Identify: 7::1::40161671::7905467998
+X-Report-Abuse: abuse@fujisyouji.co.jp
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_045944_471986_8827504C 
-X-CRM114-Status: UNSURE (   2.24  )
+X-CRM114-CacheID: sfid-20190828_152819_122897_2C49C081 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-Spam-Score: 4.3 (++++)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (4.3 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:433 listed in]
- [list.dnswl.org]
+ 1.3 RCVD_IN_RP_RNBL        RBL: Relay in RNBL,
+ https://senderscore.org/blacklistlookup/
+ [153.149.140.167 listed in bl.score.senderscore.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (q0462q[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] (no subject)
+ 0.0 GB_BITCOIN_NH          Localized Bitcoin scam
+ 3.0 BITCOIN_DEADLINE       BitCoin with a deadline
+Subject: [OpenWrt-Devel] Security Alert. Your accounts were compromised. You
+ need to change password!
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,38 +94,49 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4694296280697874746=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4694296280697874746==
-Content-Type: multipart/alternative; boundary="000000000000c2b85a05912c1f25"
+Hello!
 
---000000000000c2b85a05912c1f25
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: base64
+I am a hacker who has access to your operating system.
+I also have full access to your account.
 
-2LLYqNin2YYg2obbjNmG24wg2LHYp9io2Ycg2KfZhtqv2YTbjNiz24wg2KrYutuM24zYsdiv2Yfb
-jNivDQo=
---000000000000c2b85a05912c1f25
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: base64
+I've been watching you for a few months now.
+The fact is that you were infected with malware through an adult site that you visited.
 
-PGRpdiBkaXI9ImF1dG8iPtiy2KjYp9mGINqG24zZhtuMINix2KfYqNmHINin2Ybar9mE24zYs9uM
-INiq2LrbjNuM2LHYr9mH24zYrzwvZGl2Pg0K
---000000000000c2b85a05912c1f25--
+If you are not familiar with this, I will explain.
+Trojan Virus gives me full access and control over a computer or other device.
+This means that I can see everything on your screen, turn on the camera and microphone, but you do not know about it.
 
+I also have access to all your contacts and all your correspondence.
 
---===============4694296280697874746==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Why your antivirus did not detect malware?
+Answer: My malware uses the driver, I update its signatures every 4 hours so that your antivirus is silent.
+
+I made a video showing how you satisfy yourself in the left half of the screen, and in the right half you see the video that you watched.
+With one click of the mouse, I can send this video to all your emails and contacts on social networks.
+I can also post access to all your e-mail correspondence and messengers that you use.
+
+If you want to prevent this,
+transfer the amount of $500 to my bitcoin address (if you do not know how to do this, write to Google: "Buy Bitcoin").
+
+My bitcoin address (BTC Wallet) is:  3QWsN25bwmC3zaHtPCkLaUXJTsmgqojpCP
+
+After receiving the payment, I will delete the video and you will never hear me again.
+I give you 50 hours (more than 2 days) to pay.
+I have a notice reading this letter, and the timer will work when you see this letter.
+
+Filing a complaint somewhere does not make sense because this email cannot be tracked like my bitcoin address.
+I do not make any mistakes.
+
+If I find that you have shared this message with someone else, the video will be immediately distributed.
+
+Best regards!
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4694296280697874746==--
-

@@ -2,94 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C54309F664
-	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 00:49:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54E419FDFA
+	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 11:11:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ASp0skQ09xgQDej2iXk13nd5SIzTy6cT9DN3kvK7Z8A=; b=QDq3aiC5c/93Zsr+JVTpnLWUR9
-	avv7Hy2svIlToZM0MDuMib25cbdlhnGbncuBzGN+cOFVfcdTX36tRPU8OzQd8y/IWDIqjofrqza9k
-	F97qF16dH5arJjj1Hyk+vmm+vGs/ZZKzGedNqStr5eKrd//F/tY+ouvrsH5uuRufXRT2aY2VMWWHV
-	YmwrKMuSa/iXZiSl1pCaGDwedMjDgyGvnCsSlEaYMsveWJ2+vZlSdVx/LX6xNLYBQ7aHs8pwUROp5
-	WGdAJ95MNVXuP+M4rBgMx/W9Yd2QUm/gfv/v3y4cPyuJ0ioK/3YOtHBby/AACxPybokLAS7UdWMhm
-	Fi/k2kYg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fLuQtaM/Su/DyqMivjbQaDB1TkIbaAyQN79TId1V7cM=; b=KfLGPvq2CBPmMG
+	cNtARBCUd5Kqg4pcQmAbh9TMAFDmja02rp+Xu8s5ojpQav+D7R68JlMKPTV35sSo/lGunoQRiVq5J
+	LtAos1n1qqExtMTLWVIBp4Hkkdua3wGwglb5A/iK6ON/tx0tG4bu08qMKItyEOx7aLD3Xt8o1rQUK
+	LjISEjC+9T/9oNanIDpGAjx9aC+4m530exo9Tc1ObU/TDRSKZ4rT+v1hWblF+XhPZDU4rR7XkIBk4
+	KYb5IIocw3g4iNQQ64IIpD7cx6pW94ybjLhj7phtTp0XmOHUb1P4hCvy5y9KydSYFZXZ2d/8g7q+e
+	XsAmzrVRi9q2pXfDsjNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2kHf-00027b-JZ; Tue, 27 Aug 2019 22:49:51 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1i2tz5-00029B-1j; Wed, 28 Aug 2019 09:11:19 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2kHI-0001wI-1G
- for openwrt-devel@lists.openwrt.org; Tue, 27 Aug 2019 22:49:29 +0000
-Received: by mail-pg1-x541.google.com with SMTP id m3so249134pgv.13
- for <openwrt-devel@lists.openwrt.org>; Tue, 27 Aug 2019 15:49:25 -0700 (PDT)
+ id 1i2tyY-00025l-Bm
+ for openwrt-devel@lists.openwrt.org; Wed, 28 Aug 2019 09:10:48 +0000
+Received: by mail-lf1-x142.google.com with SMTP id q27so1487847lfo.10
+ for <openwrt-devel@lists.openwrt.org>; Wed, 28 Aug 2019 02:10:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references;
- bh=1iahf8kQTF5jklP7RMYVUDWo4c1hbg5QDpkDIKR5PTU=;
- b=FggKRKYZ3AhsbTJm9U5vdFuGkO6RXYjVkrC50z+MKGz3kE+QIrGg+UVY6kfP5ukB5/
- /m0+IwxJXjpMxWTp9R6vEkeD7hY8S6HLoqnT8ObfT64XuviS5l4G9ZZptYUGNkzkeOM8
- +whD1igaElGR949674JO7FBxXhP2QsUoTm8xw9OtrD6iElJNXQr6yC6vmv8gm1YCQV8E
- 5AsJZUOCzmuidyZ9V9x15iuJ8ImP37CcJ05BQKMkLRssva2U5iBDGkmfh5F4xaESswe9
- HB1U4I3p58fDfSUp9I7lo6a0SBri6TYqrMZb34zD66c2cUsvl0DVK9zgLwLg/2obWqw8
- i2Iw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=sPOzhXHFikZwJcheCx0ogfzS/HvJjQlVbgbe5nNLlQk=;
+ b=aGehB7jKSIrG11BFmm1eVyg4O8eYD3CwoxnThVdFsx09uyWsgBYYDWZmh2CITHL28v
+ jTQs640TlH6M/YZCCFhM2JQBfCtv3O0hat//cZSRcXd6QEtdR2+A7CW8tfj3A4kOEthe
+ VvGH8RntJld2Nt7SAtoMPa049SsUoBvCaTvBA5/zoxzfsmn2OCgYuViC374cOuIKfQjn
+ wvteOQR2DHD7nfksMpEQEtGKR4dCrrHXTI3RX1mT6gFVYTqhaa6UaPx2nXT3vzu4Bdva
+ RfGTsYNa7azzCp0GhFKKTj3VOcv/k1TlKsCRYCUxhfy0PrkYXHZsBTb1915Jgu+98EeW
+ qebA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=1iahf8kQTF5jklP7RMYVUDWo4c1hbg5QDpkDIKR5PTU=;
- b=IfFry+/4tFcCO9efxxDfWk3wZvA9nhSrfESLSM5k4dg7ktuzW/ISmSR7J0jEVHbcax
- 8a+oWZ09x8oHkAbzohgDhPCXp1fXswpq1hjsQ60kwgElb5xdZWKMlNPj43LbylqEm9HS
- MEy3CLFGljziZHh9qVZ/irDfKrXLjdItQN6Cec9Z/4n3rM3EWXC0nSGVVPAyKBGs0z97
- d2QZZITYLVs6/BOxs3Gd0MPPwAXi4juy2Vv0/r5TE8ItXSn06JhPis0yuDIUvMkBaKth
- d4of3iDYHFwNHBi1z3T6wagODPMY00YZLo6XGtHkTjpsQvUZUl65XwFKJ0+dP0ynVVPQ
- jshw==
-X-Gm-Message-State: APjAAAUf5/1R7BpQvniRmqq7rLsNlmElJ7FdhKUoc+ovamDvtmiVibdO
- wW7t7nvHsJO/UQ1Eoh25OZLRysyKGKw=
-X-Google-Smtp-Source: APXvYqznG9Hx1dKmA4hdgeXqmGvKolavwMTZSo5SgvLSluvcN6byPvYgk4uvdEHz9ddsvgCHLUhw/g==
-X-Received: by 2002:a17:90a:858a:: with SMTP id
- m10mr1082750pjn.129.1566946164977; 
- Tue, 27 Aug 2019 15:49:24 -0700 (PDT)
-Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
- [76.14.106.55])
- by smtp.gmail.com with ESMTPSA id d2sm218733pjg.19.2019.08.27.15.49.24
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 15:49:24 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 27 Aug 2019 15:49:22 -0700
-Message-Id: <20190827224922.31226-2-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190827224922.31226-1-rosenp@gmail.com>
-References: <20190827224922.31226-1-rosenp@gmail.com>
+ bh=sPOzhXHFikZwJcheCx0ogfzS/HvJjQlVbgbe5nNLlQk=;
+ b=Z0cDbHDA5oGbACjgWi6qY+KE0Bbejl0+IgWo9xNhreLlEl+4Z0GcfDBhfpr9WZ7ddy
+ L76oI/Vf6Jchk41Q+SXhZD8SOARM6TpTU9lasWVyZnQT3eHULsk8sQv8WTNZ6wDGYnXw
+ CsTzjRZjgfEwLC6lYqnNYcuYzSrrFVfA6BvGP55KDyxih9ePDmRgsgqyXqykmPf94IkS
+ FKkMb8p5eJfgDSJEnwavp8eCXx18em1IyGNX98E6/Z0Z+tffTqjD/Fsjm2m3d3qkMDjy
+ kJLP4NneDpSikI6jF5deZrJInmdh/wrq8SQvpvCbsM7iEduwrLw6FJI1zXaSu52W/A4Y
+ biWA==
+X-Gm-Message-State: APjAAAWiDakVcgZ5gxR2WTJmm/p3D6hdfOnzs/5qo/Cg8glCuZm3Gjd7
+ SFSme0Zpli9IoLslve56Q7Y=
+X-Google-Smtp-Source: APXvYqyQNU0jjZwbXd2toZbiL5Oev8vEtI+GWt3hP8+F7Wvpzi3Fw+orUXbYseWoFi9O9DpG/NVkQg==
+X-Received: by 2002:a19:cbc4:: with SMTP id b187mr1914123lfg.27.1566983444192; 
+ Wed, 28 Aug 2019 02:10:44 -0700 (PDT)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id b7sm802824lfp.27.2019.08.28.02.10.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 28 Aug 2019 02:10:43 -0700 (PDT)
+Received: from home.paul.comp (localhost [127.0.0.1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-8) with ESMTP id x7S9AfOT014737;
+ Wed, 28 Aug 2019 12:10:41 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.14.4/Submit) id x7S9AeNV014736;
+ Wed, 28 Aug 2019 12:10:40 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: John Crispin <john@phrozen.org>
+Date: Wed, 28 Aug 2019 12:09:24 +0300
+Message-Id: <20190828090924.14695-1-fercerpav@gmail.com>
+X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20190813182540.w4ee64he6hkteahc@home.paul.comp>
+References: <20190813182540.w4ee64he6hkteahc@home.paul.comp>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_154928_074675_E26066D8 
-X-CRM114-Status: UNSURE (   8.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190828_021046_412519_3572CDF7 
+X-CRM114-Status: GOOD (  17.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (fercerpav[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 2/2] libnfnetlink: Avoid passing both -fPIC
- and -fpic
+Subject: [OpenWrt-Devel] [PATCH v3] ramips: add support for Xiaomi Mi Wi-Fi
+ Router 3G v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,52 +103,267 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Paul Fertser <fercerpav@gmail.com>, openwrt-devel@lists.openwrt.org,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Instead, instruct the configure script to use $(FPIC) only.
+- CMIIT ID: 2019AP2581
+- SoC:      MediaTek MT7621
+- Flash:    16MiB NOR SPI (GigaDevice GD25Q128B)
+- RAM:      128MiB DDR3 (ESMT M15T1G1664A)
+- Serial:   As marked on PCB, 3V3 logic, baudrate is 115200, 8n1
+- Ethernet: 3x 10/100/1000 Mbps (switched, 2xLAN + WAN)
+- WIFI0:    MT7603E 2.4GHz 802.11b/g/n
+- WIFI1:    MT7612E 5GHz 802.11ac
+- Antennas: 4x external (2 per radio), non-detachable
+- LEDs:     Programmable "power" LED (two-coloured, yellow/blue)
+            Non-programmable "internet" LED (shows WAN activity)
+- Buttons:  Reset
 
-Mixing -fPIC and -fpic can cause issues on some platforms like PPC.
+INSTALLATION:
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
+Bootloader won't accept any serial input unless "boot_wait" u-boot
+environment variable is changed to "on". Vendor firmware (looks like
+an illegal OpenWrt fork) won't accept any serial input unless
+"uart_en" is set to "1". Tricks to force u-boot to use default
+environment do not help as it's restricted in the same way.
+
+With bootloader unlocked the easiest way would be to TFTP the
+sysupgrade image or to sysupgrade after loading an initramfs one.
+
+For porting the flash contents were changed externally with an SPI
+programmer (after lifting Vcc flash IC pin away from the PCB).
+
+Forum thread [0] indicates that this device is identical to "Xiaomi Mi
+Router 4A Gigabit Edition".
+
+[0] https://forum.openwrt.org/t/xiaomi-mi-router-4a-gigabit-edition-r4ag-r4a-gigabit-fully-supported-but-requires-overwriting-spi-flash-with-programmer/36685
+
+Signed-off-by: Paul Fertser <fercerpav@gmail.com>
 ---
- package/libs/libnfnetlink/Makefile | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+Changes for v2:                                                                                         
+                                                                                                          
+    - Addressed all Adrian Schmutzl's comments
 
-diff --git a/package/libs/libnfnetlink/Makefile b/package/libs/libnfnetlink/Makefile
-index cc797e6e2d..7d65d63857 100644
---- a/package/libs/libnfnetlink/Makefile
-+++ b/package/libs/libnfnetlink/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+Changes for v3:
+
+    - Add SPDX license header
+    - Use new ALT variables to support R4AG model name
+
  
- PKG_NAME:=libnfnetlink
- PKG_VERSION:=1.0.1
--PKG_RELEASE:=2
-+PKG_RELEASE:=3
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
- PKG_SOURCE_URL:= \
-@@ -40,12 +40,13 @@ define Package/libnfnetlink/description
-  and/or management tools in userspace.
- endef
- 
--TARGET_CFLAGS += $(FPIC)
--
- CONFIGURE_ARGS += \
- 	--enable-static \
- 	--enable-shared
- 
-+CONFIGURE_VARS += \
-+	lt_prog_compiler_pic=$(FPIC)
+ .../linux/ramips/base-files/etc/board.d/02_network |   7 +
+ target/linux/ramips/dts/mt7621_xiaomi_mir3g-v2.dts | 147 +++++++++++++++++++++
+ target/linux/ramips/image/mt7621.mk                |  12 ++
+ 3 files changed, 166 insertions(+)
+ create mode 100644 target/linux/ramips/dts/mt7621_xiaomi_mir3g-v2.dts
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index 27f85d7458..2b166dd944 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -469,6 +469,10 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"2:lan:2" "3:lan:1" "1:wan" "6t@eth0"
+ 		;;
++	xiaomi,mir3g-v2)
++		ucidef_add_switch "switch0" \
++			"2:lan:2" "3:lan:1" "4:wan" "6t@eth0"
++		;;
+ 	xiaomi,mir3p)
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan:3" "2:lan:2" "3:lan:1" "4:wan" "6@eth0"
+@@ -683,6 +687,9 @@ ramips_setup_macs()
+ 	xiaomi,mir3p)
+ 		lan_mac=$(mtd_get_mac_binary factory 0xe006)
+ 		;;
++	xiaomi,mir3g-v2)
++		wan_mac=$(mtd_get_mac_binary factory 0xe006)
++		;;
+ 	xiaomi,miwifi-mini)
+ 		lan_mac=$(macaddr_setbit_la "$(cat /sys/class/net/eth0/address)")
+ 		;;
+diff --git a/target/linux/ramips/dts/mt7621_xiaomi_mir3g-v2.dts b/target/linux/ramips/dts/mt7621_xiaomi_mir3g-v2.dts
+new file mode 100644
+index 0000000000..58da88a862
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_xiaomi_mir3g-v2.dts
+@@ -0,0 +1,147 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
 +
- define Build/InstallDev
- 	$(INSTALL_DIR) $(1)/usr/include/libnfnetlink
- 	$(CP) \
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "xiaomi,mir3g-v2", "mediatek,mt7621-soc";
++	model = "Xiaomi Mi Router 3G v2";
++
++	aliases {
++		led-boot = &led_status_yellow;
++		led-failsafe = &led_status_yellow;
++		led-running = &led_status_blue;
++		led-upgrade = &led_status_yellow;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,115200n8";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_status_blue: status_blue {
++			label = "mir3gv2:blue:status";
++			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
++		};
++
++		led_status_yellow: status_yellow {
++			label = "mir3gv2:yellow:status";
++			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	button {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	m25p80@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <80000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "Bdata";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@50000 {
++				label = "factory";
++				reg = <0x50000 0x10000>;
++				read-only;
++			};
++
++			partition@60000 {
++				label = "crash";
++				reg = <0x60000 0x10000>;
++				read-only;
++			};
++
++			partition@70000 {
++				label = "cfg_bak";
++				reg = <0x70000 0x10000>;
++				read-only;
++			};
++
++			partition@80000 {
++				label = "overlay";
++				reg = <0x80000 0x100000>;
++				read-only;
++			};
++
++			firmware: partition@180000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x180000 0xe80000>;
++			};
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi@0,0 {
++		compatible = "pci14c3,7662";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++	};
++};
++
++&pcie1 {
++	wifi@0,0 {
++		compatible = "pci14c3,7603";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0000>;
++		ieee80211-freq-limit = <2400000 2500000>;
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++	mediatek,portmap = "lllwl";
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "jtag", "uart2", "uart3", "wdt";
++			ralink,function = "gpio";
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 5dc8efe7c5..10aa92a88c 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -665,6 +665,18 @@ define Device/xiaomi_mir3g
+ endef
+ TARGET_DEVICES += xiaomi_mir3g
+ 
++define Device/xiaomi_mir3g-v2
++  MTK_SOC := mt7621
++  IMAGE_SIZE := 14848k
++  DEVICE_VENDOR := Xiaomi
++  DEVICE_MODEL := Mi Router 3G
++  DEVICE_VARIANT := v2
++  DEVICE_ALT0_VENDOR := Xiaomi
++  DEVICE_ALT0_MODEL := Mi Router 4A Gigabit Edition
++  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-basic
++endef
++TARGET_DEVICES += xiaomi_mir3g-v2
++
+ define Device/xiaomi_mir3p
+   MTK_SOC := mt7621
+   BLOCKSIZE := 128k
 -- 
-2.17.1
+2.11.0
 
 
 _______________________________________________

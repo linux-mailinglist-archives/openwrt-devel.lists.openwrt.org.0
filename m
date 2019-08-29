@@ -2,76 +2,101 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF08CA13DB
-	for <lists+openwrt-devel@lfdr.de>; Thu, 29 Aug 2019 10:35:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38B1FA13E6
+	for <lists+openwrt-devel@lfdr.de>; Thu, 29 Aug 2019 10:38:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2EDMpGzA6Gik0CCIZrSSEFMhic8itD+TxSEC7OA6eFc=; b=HjXwQwC5+LYYiO
-	LGICGZ0voPF5fZJeBZHPI7MOVeRqgq2mibd0Q4T8KG72qiNOUwSuFBPsHXSBZgPr6xcMIVKruMpL/
-	t+E/Z5ElNE229Qx2YoQlXca+hwmJAbKBrt0FKpSNpTpviEzr7CAs0q858UXMHQuQcbFvIK1m9jhBd
-	4zjCjD5eo2CGVmPOKXkRFtWtUeb6R97WrCF49+k9+gifYUx4VAkZ8qLu+0Vln71WqZbiiz4aabvPD
-	mgH00PCuzIOw8bi8isOOEoXymOVMapKimdis72KpNQj/Tbl42TehtIOF2ZGiQEEislZ8dLJIubxC1
-	YduWon7wHKOA46Kl33Fg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wZeze4pm9qAoDDjYWbtnPs+rPR6BeVtRNN9dMSVI/hw=; b=FH6o3CfNPj1ebBaQtrDnV40tv
+	l0u2S9Qy/2dbvGxEEidVwC6OaDSZ+GPMkOnXF4JH9UiRnHx2OwSfdluF1gzDxnFKYBlTzX30iiENV
+	J9wFwuqxWYOCjgn+BPdw/C1hp86PsfF2Xkz4qxQJFVSYMTzdZ+XCbkrwLnw84ltJIrDOYGhTBU0yL
+	i0FA63k97XgyrcplxQ/GhSrv7qtkw1/5F5EXKojLLeqFv9TVGOI6ODXM9j54Z3cQG6lUK3ZFV4RhA
+	kB6tNqJ4UiX35ds5T2G4IiaykAwtRJbTp5pGLUjpCyFAoAJnBiy4uH6q9WKoGoM1Hbxa8uKl5j/Te
+	QHEz5hPoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Fu2-00017N-J1; Thu, 29 Aug 2019 08:35:34 +0000
-Received: from canardo.mork.no ([2001:4641::1])
+	id 1i3Fwt-0001nE-Ht; Thu, 29 Aug 2019 08:38:31 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ftt-000172-0m
- for openwrt-devel@lists.openwrt.org; Thu, 29 Aug 2019 08:35:26 +0000
-Received: from miraculix.mork.no
- ([IPv6:2a02:2121:303:dc7b:2886:93ff:fe90:318c])
- (authenticated bits=0)
- by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id x7T8ZKrE026125
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
- Thu, 29 Aug 2019 10:35:20 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
- t=1567067721; bh=qCz6pY06rjuTlbHXl19w5QDARVYl6kFLewsWHZ5PpFg=;
- h=From:To:Cc:Subject:References:Date:Message-ID:From;
- b=g046epH0HgEpJojM7tqD06Bxpz+N0NRHSfKb0+sAMxAmDUJHDsxPBttpuDSnGiqoQ
- zbI8KHtAp5tsG/XxlKuFnqoTjhAbpw+Dbyl4Qw0+Y2Uypo/xhfLn7WnJ5eSt0Hrli5
- zM+Qg4DbKUztaW+pNR8+Yut+E/FBYEsK3Mwa+Mds=
-Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
- (envelope-from <bjorn@mork.no>)
- id 1i3Ftn-0000uF-Lv; Thu, 29 Aug 2019 10:35:19 +0200
-From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-To: Martin Schiller <ms@dev.tdt.de>
-Organization: m
-References: <20190704113537.22078-1-ms@dev.tdt.de>
- <4454fadb211809fbcceab6dc465a1b7a@dev.tdt.de>
- <3a1da3051d2e1736423f7e4ada4acdfc@dev.tdt.de>
-Date: Thu, 29 Aug 2019 10:35:19 +0200
-In-Reply-To: <3a1da3051d2e1736423f7e4ada4acdfc@dev.tdt.de> (Martin Schiller's
- message of "Thu, 29 Aug 2019 09:29:57 +0200")
-Message-ID: <875zmgnzco.fsf@miraculix.mork.no>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1i3Fwi-0001mV-75
+ for openwrt-devel@lists.openwrt.org; Thu, 29 Aug 2019 08:38:21 +0000
+Received: by mail-ed1-x534.google.com with SMTP id s49so3164606edb.1
+ for <openwrt-devel@lists.openwrt.org>; Thu, 29 Aug 2019 01:38:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ncentric-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=kENfvaXfmDhSEN7YRqsydqaDuGyMB6Suv19ZucZsSns=;
+ b=Vp9ipJYPQpt/5JJZGmm6Y7BUaQQ6t+Nl9cSiz4HoM37WBQZ7+WCSzgxyxJR0cEr8cU
+ yUIvGfdVRjFMfFodpXxv3W9fUJZBU7XeJKXPT9H6GGFhb6UJSF3fOeEKPUHgl5NHHAuK
+ //qMLevENLgghM2YrrX4w2yPmJs/xNsgqy9ujFIyUnB9yNd2KEwxEvpMteQ3k+elXP38
+ ApBaRfHmWowxtXW07R3w9f+luQZ61/Og724p0FpBUHmNs+UaAk2V4b5kycrMwdP92q5q
+ wx/yOHgcio2RsaN/uDiNAfpsJ5xyssq8klhJBIkcsXMuon6NrG+p5t1soKmRqLwhXNSD
+ ak0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=kENfvaXfmDhSEN7YRqsydqaDuGyMB6Suv19ZucZsSns=;
+ b=Z06G5/OyEWOY8I9/bKHGVUXpDwjX1h5nSlE/gkgiFoVldtF4Ub3xmNKiFmqT1vqY87
+ BAIiW8MrmhvSgms299muP6xK2HDvzjTBplXgZZU9xRuS3GjiMRV38pVGNw8wGDN0qMkh
+ 0Klmh7Bc4x9jC03vDQQaqIG0OtNAAGAIjocWSsoiGnZUYGtqnR7BoF2Top5v8DziOSbK
+ gayiebrSmj425x4dwVfM9ldRdrAC9I8eqH51s2Fsi8UAD2J+BmzMG4ZK+K6V56zRhJxq
+ 6TQAU06JAe7H4QSyITNVyUqboqdFORd6EYXGgPAeSPGEsoke5F/LOrsEnRInJeeCiz5K
+ Vb6A==
+X-Gm-Message-State: APjAAAUGOJI/FC8dGniPXoOfVLbLMU9fapnzTnGaQKyLTxbYeKd9ZcqQ
+ JLQjUpNBlyiFaD2Wkg/DIXmMZA==
+X-Google-Smtp-Source: APXvYqxxvB5caLIZ69a9na52aQqooNVbB0WgwBZETKi1N1r6uaJit0TZH+rRSYHZbErJmOrjQxNh4Q==
+X-Received: by 2002:a50:ba57:: with SMTP id 23mr8532207eds.196.1567067898440; 
+ Thu, 29 Aug 2019 01:38:18 -0700 (PDT)
+Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
+ by smtp.gmail.com with ESMTPSA id p20sm278746eja.59.2019.08.29.01.38.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 29 Aug 2019 01:38:18 -0700 (PDT)
+To: Joe Ayers <joe@ayerscasa.com>
+References: <CAJ0CqmXJj9tnN65b9MjeEtTBcYkPnQFcWXSHaPPLOP4dE=FsQg@mail.gmail.com>
+ <CAALvt2Pb+is9LZzSqv5BmbH6G6A+_LxvpP16==2OsNwk5LT50w@mail.gmail.com>
+ <CAJ0CqmXvn23AZy+ONQsvV-bDuLE1pr_=jcOsgcOc++hZ8jMuuw@mail.gmail.com>
+ <CAALvt2MVpMh_899tPSTw96=MaZtaehXd3Of3HOEfSWuoQgDkAA@mail.gmail.com>
+ <CAJ0CqmWwu-W=AaSrjhe+MNsMBpPj-pWxy0ua-jm=m85XtiEn9g@mail.gmail.com>
+ <CAALvt2Pje6Vk3zPRi-o0JCHXf51Eo2YBPmjhMo7HdwQhDgeFUQ@mail.gmail.com>
+ <CAJ0CqmUaeWXbFz0_0Jg0m+NGOPGm66WEGA_mHsSRb1dV3+PL_A@mail.gmail.com>
+ <CAALvt2MHTuEt8Y_Uwxh6TS1M0y4AD2-iSSccNS1WTfdr1zjQ0g@mail.gmail.com>
+ <20190404072034.GA4265@localhost.localdomain>
+ <CAALvt2PtubH=5i_Q3afHaATm7HNK16=jH06yivf3tDdmftQ=YQ@mail.gmail.com>
+ <20190604101827.GA6510@localhost.localdomain>
+ <CAALvt2O8GYDkx9bTEq6D705B6gSD9Q2hC6BoS7BPqF10WacRPw@mail.gmail.com>
+ <ddc36b74-f982-33ba-8aff-fbd67a80c738@ncentric.com>
+ <CAALvt2M1VQsHEahxp-jT8UMyxhQQy95xH3-YTBv1-4cppzmXWA@mail.gmail.com>
+From: Koen Vandeputte <koen.vandeputte@ncentric.com>
+Message-ID: <4a6a3b6e-c025-3826-6fea-8f3ae13a7645@ncentric.com>
+Date: Thu, 29 Aug 2019 10:38:17 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Virus-Scanned: clamav-milter 0.101.2 at canardo
-X-Virus-Status: Clean
+In-Reply-To: <CAALvt2M1VQsHEahxp-jT8UMyxhQQy95xH3-YTBv1-4cppzmXWA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_013525_403342_BF15ACE5 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190829_013820_321348_597C8FC4 
+X-CRM114-Status: GOOD (  23.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:534 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH uqmi] nas: add --get-plmn
+Subject: Re: [OpenWrt-Devel] ath9k: fix dynack in IBSS mode
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,53 +108,102 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, sami@olmari.fi, nbd@nbd.name
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Lorenzo Bianconi <lorenzo.bianconi@redhat.com>,
+ openwrt-devel@lists.openwrt.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-TWFydGluIFNjaGlsbGVyIDxtc0BkZXYudGR0LmRlPiB3cml0ZXM6Cgo+IE9uIDIwMTktMDgtMjYg
-MjE6MTIsIFNhbWkgT2xtYXJpIHdyb3RlOgo+PiBJIHRoaW5rIHRoZSBpZGVvbG9neSBiZWhpbmQg
-cHJvdG8gaGFuZGxlciB0aGVyZSBpcyB0byAiZG8gd2hhdGV2ZXIKPj4gdG9sZCIgZGVzcGl0ZSBv
-ZiB3aGF0IHRoZSBzdGF0ZSBpcyBjdXJyZW50bHksCj4+IG1heWJlIHRoZXJlIGlzIGEgcmVhc29u
-IGZvciBzdWNoIGJlaGF2aW91ciAoc2VhcmNoZXMgc29tZSBzdHVmZiBmcm9tCj4+IG5ldHdvcmsg
-ZXRjKS4KPgo+IFRoZXJlIGV4aXN0IDIgcHJvYmxlbXMgaW4gdGhlIHFtaSBwcm90byBoYW5kbGVy
-Ogo+Cj4gMS4gU2V0dGluZyB0aGUgcGxtbiB0byAnYXV0bycgd2lsbCBpbXBsaWNpdGx5IGxlYWQg
-dG8gYSAoZGVsYXllZCkKPiBuZXR3b3JrIHJlLXJlZ2lzdHJhdGlvbiwgd2hpY2ggY291bGQgZnVy
-dGhlciBsZWFkIHRvIHNvbWUgdGltaW5nCj4gcmVsYXRlZCBpc3N1ZXMgaW4gdGhlIHFtaSBwcm90
-byBoYW5kbGVyLgo+IExldCBtZSBleHBsYWluIHRoaXMgaW4gbW9yZSBkZXRhaWw6Cj4gQWZ0ZXIg
-c3VjY2Vzc2Z1bGx5IGNhbGxpbmcgdGhlIHVxbWkgLS1zZXQtcGxtbiAoYXV0bykgY29tbWFuZCBp
-dCB0YWtlcwo+IHVwIHRvIDUgKG9yIG1heWJlIGV2ZW4gbW9yZSkgc2Vjb25kcyB1bnRpbCB0aGUg
-bW9kZW0gZGV0YWNoZXMgZnJvbQo+IG5ldHdvcmsKPiBhbmQgc3RhcnQgc2VhcmNoaW5nIGZvciBu
-ZXcgcmVnaXN0cmF0aW9uLgo+Cj4gSW4gdGhlIG1lYW50aW1lIHRoZSBwcm90byBoYW5kbGVyIGdv
-ZXMgdGhyb3VnaCB0aGUgbmV4dCBzdGVwcwo+ICgiV2FpdGluZyBmb3IKPiBuZXR3b3JrIHJlZ2lz
-dHJhdGlvbiIsICJTdGFydCBuZXR3b3JrICRpbnRlcmZhY2UiIGV0Yy4pLgo+Cj4gSSBob3BlIHlv
-dSBjYW4gc2VlIHdlcmUgdGhpcyBsZWFkcyB0by4KPgo+IFRoaXMgaXMgcmVhbGx5IGEgcHJvYmxl
-bSBpbiBSb2FtaW5nIHNjZW5hcmlvcywgd2hlcmUgdG8gcHJvdmlkZXIgbWF5YmUKPiBpcwo+IHN3
-aXRjaGVkIGFmdGVyIHRoZSByZS1yZWdpc3RyYXRpb24uCgoKRldJVywgSSBhbHNvIGJlbGlldmUg
-dGhpcyBpcyBhIHJlYWwgcHJvYmxlbS4KClRoZSBtb2RlbSBmaXJtd2FyZSBpc24ndCBhbHdheXMg
-c21hcnQuICBJdCB3aWxsICJkbyB3aGF0ZXZlciB0b2xkIiwgZXZlbgppZiBpdCBpcyBhIGNvbXBs
-ZXRlbHkgdW5uZWNlc3NhcnkgZGUtcmVnaXN0cmF0aW9uLCBuZXR3b3JrIHNjYW4gYW5kCnJlLXJl
-Z2lzdHJhdGlvbi4KCldlIGNhbiBiZSBzbWFydGVyIHRoYW4gdGhhdC4gIFdlIHNob3VsZCBhdm9p
-ZCBjaGFuZ2luZyBhbnkgcGVyc2lzdGVudAooaW4gbW9kZW0gbnZyYW0pIHNldHRpbmcgcmVsYXRl
-ZCB0byBuZXR3b3JrIHJlZ2lzdHJhdGlvbiwgdW5sZXNzCmFic29sdXRlbHkgbmVjZXNzYXJ5LgoK
-PiAyLiBUaGUgcGxtbiBzZXR0aW5nIGlzIHBlcm1hbmVudGx5IHNhdmVkIGluIHRoZSB3d2FuIG1v
-ZGVtOgo+IFRoaXMgbGVhZHMgdG8gdGhlIHByb2JsZW0sIHRoYXQgaWYgeW91IHN3aXRjaCBiYWNr
-IGZyb20gbWFudWFsIHBsbW4KPiBzZWxlY3Rpb24KPiB0byBhdXRvIG1vZGUgeW91IGhhdmUgdG8g
-c2V0IGl0IGV4cGxpY2l0bHkgdG8gJ2F1dG8nLgoKWWVzLCB0aGUgY3VycmVudCBoYW5kbGVyIHdp
-bGwgdXNlIHdoYXRldmVyIGlzIHN0b3JlZCBpbiB0aGUgbW9kZW0gdW5sZXNzCidwbG1uJyBpcyBl
-eHBsaWN0bHkgc2V0LiAgVGhpcyBpcyB2ZXJ5IGNvbmZ1c2luZyBpZiB5b3Ugc2V0ICdwbG1uJwp0
-ZW1wb3JhcmlseSwgd2hldGhlciBpdCBpcyBmb3Igcm9hbWluZyBvciBqdXN0IGV4cGVyaW1lbnRp
-bmcuIFVzZXJzIHdpbGwKcmlnaHRmdWxseSBhc3N1bWUgdGhhdCBhZGRpbmcgYW5kIHRoZW4gcmVt
-b3ZpbmcgJ3BsbW4nIG1lYW5zICdubwpjaGFuZ2UnLgoKRXZlcnl0aGluZyBpbiB0aGUgcW1pIHBy
-b3RvIGhhbmRsZXIgc2hvdWxkIHRha2UgaW50byBhY2NvdW50IHRoYXQKc2V0dGluZ3MgbWlnaHQg
-YmUgc3RvcmVkIGluIHRoZSBtb2RlbSBudnJhbS4gIE9wdGlvbmFsIHNldHRpbmdzIG5lZWQgYW4K
-ZXhwbGljaXQgZGVmYXVsdCwgYW5kIHNob3VsZCBhbHdheXMgYmUgdmVyaWZpZWQgYWdhaW5zdCB0
-aGUgdmFsdWUgc3RvcmVkCmluIHRoZSBtb2RlbS4KCkkgYmVsaWV2ZSB0aGUgJ3BsbW4nIGRlZmF1
-bHQgc2hvdWxkIGJlICdhdXRvJy4gQnV0IHdlIGNhbiBvbmx5IGRvIHRoYXQKaWYgd2UgZmlyc3Qg
-YWRkIHRoZSBsb2dpYyB0byB2ZXJpZnkgdGhlIGN1cnJlbnQgc2V0dGluZyBhbmQgYXZvaWQgYW55
-CnVubmVjZXNzYXJ5ICd1cW1pIC0tc2V0LXBsbW4nIGNvbW1hbmRzLgoKCgpCasO4cm4KCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwg
-bWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0
-cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+
+On 28.08.19 19:34, Joe Ayers wrote:
+>>> initialized the ackto to max:
+>>>
+>>> A) avoidance of late-ack state
+>>> B) not require wpa_supplicant  -- not in use by our community today
+>>> C) Suspect some conditions, e.g. low SNR Neighbors, do not trigger
+>>> "late ack" (consistent, with observation of low SNR Neighbors sticking
+>>> at max ack_to with my changes )
+>>>
+>>> flip the algo off/on when new neighbor joins:
+>>>
+>>> Intended technique to reset ack_to to max.  If ack_to is set to 20km
+>>> and then a new adhoc neighbor joins at 30km, this would be a late ack
+>>> state, and unable to detect.    My early testing results showed the
+>>> algo off/on would restart the ack_to to max and start the process over
+>>> with the new neighbor.   I trust I got it right?
+>>>
+>>> There are 10s to 100s of users testing this bleeding edge change from
+>>> nightly builds, and so far, I've not found a failure case.
+>>> Although, the findings are showing the cases where static setting has
+>>> better throughput.
+>>>
+>>> Joe AE6XE
+>>>
+>> Hi Joe,
+>>
+>> Purely fyi
+>>
+>> I just pushed dynack improvements to all openwrt branches.
+>>
+>> I also noticed the issues you addressed above, and these patches fix
+>> them for me.
+>>
+>> Regards,
+>>
+>> Koen
+>>
+> Thanks for update.   Updates on performance observations, I've been
+> recommending usage of auto settings to the AREDN community as follows:
+>
+> * best performance gain on Point-to-Point longer distance links (back
+> bone links).  I saw ~30% iperf improvement results on a 60km 5GHz link
+> -- ack-to floats up under load.   This was about the difference I
+> measured on a similar 3GHz  60km link head-to-head comparison between
+> AirOS auto distance with TDMA and openwrt static distance with CSMA.
+> (3GHz because it takes wifi noise out of the picture.)  I want to do a
+> head-to-head comparison again to confirm, but it appears a P2P w/ auto
+> setting CSMA in openwrt will compare similar thoughput as AirOS auto
+> distance TDMA.
+
+> * good/poor performance for Point-to-Multipoint long distance
+> settings, up to 20km  range (cell coverage).   If weak SNR stations, a
+> static setting is optimal.  If quality signal, auto works good.
+Will try to verify this one
+> * Poor performance for short distances, e.g. in the house.   auto
+> calculated ack_to settings are several km.  Performance is much poorer
+> than a static setting of <1km.
+Ack on this one.
+Tested on links ranging from ~500m up to 3.5km
+
+static seems to win in terms of performance until the distance goes 
+beyond ~6km here
+
+
+> There seems to be something going on with calculation when 'on the
+> bench' testing with short distances.   Maybe a bias needs to be
+> applied?
+
+I notice that ack_to never drops below 64 on short distance links. 
+(static sets it to 31 on selecting 500m)
+
+I wonder if processing delay/time and thread context switching is coming 
+into play here on the slower ar71xx socs
+
+Will check it.
+
+The main focus of this series was to have working links and avoid 
+breaking existing ones.
+
+I think the next round will be regarding these performance "issues" 
+compared to static
+
+Koen
+
+>
+> Joe AE6XE
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

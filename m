@@ -2,83 +2,95 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17C6EA0C43
-	for <lists+openwrt-devel@lfdr.de>; Wed, 28 Aug 2019 23:18:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 110A8A0EA5
+	for <lists+openwrt-devel@lfdr.de>; Thu, 29 Aug 2019 02:35:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4CB4O2GuiQO7I4ANyJaAHTuohy427i8FwewJG8+vSew=; b=udFe7V1V0A+IxJ
-	9uMVAUlaQgADm2CvHM8RrJtv9AMGFIm0xI78pYBP+fGRulw8kwcECIB5ulj8VM01bPlGXaYAA2Oi9
-	hd+AId3ZAmmfOFdPVPv4o/zun1T28WHG78gYJMdp1Dpte96GxSUK3h2hhPAwP73bpdjZ7++7q21lF
-	FT6K6KHfQ0pOlWWpjn6Bd3XxJBzvWhtimAcmbD1bAiw8HoLBifGBYk6M/W+sYpsujFlpV5HdyQ6L7
-	+DmLRYMpO1uJZdOo+PvjKItxYPpSADauCvfQ5xj5v3ElHC862g6kNoB6Kwj0KzWfx6xwPPkYwSrXm
-	se266n/Orls68rYJgXCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
+	Content-Type:MIME-Version:References:Message-ID:In-Reply-To:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=phZbHluS4fsu4xsNXkxqey7vrdIs448UXIxE8z+8Zsc=; b=E8rkIkymUe9bRO+Y/v/Dsbt3L
+	ErIA15XuDu9zhGN/zFrqxanYaMD4gCsSLcwulT0nRQ1Z1K1l1SxkN8Gh4nHY4ayYEsERYZnKkPPIF
+	AelGHwvr4WCZdjgFA2jCAekWSo7Xn+eNsMbKOhozSmFqWj6/A8LMGFhIf1mHHWeAswlwW8v8D+9zV
+	BfmSv3GmF9yTy2ohH7m+sMasK/bFhHKnuLYQ+NjIbki3oNoTKhAXdG0W9BYTEDpXpJbVf/6MGp3OL
+	AfbW7TKen4vSX/CjcvGjSZeIsbw7pllLgLeujXMdHNRUXdCniPMAPNdsc2l6n/44PalFtc8MAHjSp
+	pz1EMIOAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i35KK-0000Zl-VS; Wed, 28 Aug 2019 21:18:00 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
+	id 1i38P8-0002GB-Jv; Thu, 29 Aug 2019 00:35:10 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i35KB-0000ZP-Mc
- for openwrt-devel@lists.openwrt.org; Wed, 28 Aug 2019 21:17:54 +0000
-Received: from [IPv6:2003:e5:3f06:3c00:9c50:6b83:5a54:82a1]
- (p200300E53F063C009C506B835A5482A1.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f06:3c00:9c50:6b83:5a54:82a1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 5AAE4229A5;
- Wed, 28 Aug 2019 23:17:49 +0200 (CEST)
-To: Karl Palsson <karlp@tweak.net.au>
-References: <20190828204224.6786-1-mail@david-bauer.net>
- <dK9VkDspReYsAS9HCUL9ToXZtLxqYKAW9ePiswE2236c@mailpile>
-From: David Bauer <mail@david-bauer.net>
-Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <86f1796a-f734-5329-ad44-6adfd48efaff@david-bauer.net>
-Date: Wed, 28 Aug 2019 23:17:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i38Oy-0001r9-7K
+ for openwrt-devel@lists.openwrt.org; Thu, 29 Aug 2019 00:35:02 +0000
+Received: by mail-wr1-x443.google.com with SMTP id u16so1614591wrr.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 28 Aug 2019 17:34:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=XUaictErWwqefuZ91YgCBzTEVppKoPJJMXE/7stTxf8=;
+ b=Sn5F1dEqYCi0d4TJBAW55Eurk7S0631OXRSewIZlzXxwA6r6a3JbC25vyqeU75lXpd
+ 8OjM9LMbdzXvw66fZAzNmcS5XrZDlRp6hRNsCUS5qMQI6UTELGhFZkykcr99VLh2FIiN
+ f/8TwzOqdlpA4k1tZN/UlPgAMWSd6Iy9P0NB2bKGvsxmC3/CHvIC8+fO3MQ7MOLyfeRM
+ FF8SMBF8yueaUJCJLZuk6ayFUZmJMVsQoCwRKnxu4tmja5wzj3WwGLpw0lLmmTH3Cm5h
+ l4kbI/xcJsppQ+nzK6W+daUjj71h1HLx3789/AiXixO8VY9h2x0+UKntF+nIj4hWclmr
+ Uz3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=XUaictErWwqefuZ91YgCBzTEVppKoPJJMXE/7stTxf8=;
+ b=RF2Z7s49E+jHO8R9FC/Upck5erhKOs6RdfE75oPjKW8ZDecm9CxAl7hEfvycfH96RZ
+ IH+KuwjWPFeyhQKaztud/lQOLaAL1AeBpn99CfLhpHF23H8elM7SHIEmSHJL9g5s3A2X
+ jskeCD5dH+TSd0veNZnIIu5U5JsmSCMSv+rdQX626wlBbz9+8+H0wjHzz95EuxlelOao
+ FvzPod3YHocZYDNqduW5TqgTw8jNEY/UExYAkyUQ9UjvD3bPMWpQbimFhu08/bCiffQU
+ qyh2LWdUDzMpHoScZZDH6UEtPiJjQjY94kBQPMwbwPQXdVh2Mrt11cLPUJr9c42ncFS2
+ y84Q==
+X-Gm-Message-State: APjAAAXbFhonB6V/mX0j8dFPSHYJ1xKrZxuVLxuglubCSCcPhuyXQSlH
+ ZAw1K6zkITPXCHxEKgZ813I=
+X-Google-Smtp-Source: APXvYqzN1KPdWm4Ug5j9oXYg4vZu60NTQiK/NvTGUIm5XrQpGMkLshuglEvjL22pV4HDNXaDSOkbkQ==
+X-Received: by 2002:adf:c613:: with SMTP id n19mr7551650wrg.109.1567038898466; 
+ Wed, 28 Aug 2019 17:34:58 -0700 (PDT)
+Received: from gatosaldo (host111-46-dynamic.5-87-r.retail.telecomitalia.it.
+ [87.5.46.111])
+ by smtp.gmail.com with ESMTPSA id b15sm613697wrt.77.2019.08.28.17.34.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 28 Aug 2019 17:34:57 -0700 (PDT)
+Date: Thu, 29 Aug 2019 02:34:55 +0200 (CEST)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@localhost.localdomain
+To: =?ISO-8859-15?Q?Bj=F8rn_Mork?= <bjorn@mork.no>
+In-Reply-To: <878srdp6zt.fsf@miraculix.mork.no>
+Message-ID: <alpine.LNX.2.21.99999.352.1908290226520.4679@localhost.localdomain>
+References: <alpine.LNX.2.21.99999.352.1908240114240.6377@localhost.localdomain>
+ <CAFBinCDbyb0mWeBt738XtMoWVHHi6sOep5DY5f6ddS0a5GKT3g@mail.gmail.com>
+ <alpine.LNX.2.21.99999.352.1908281820530.3996@localhost.localdomain>
+ <878srdp6zt.fsf@miraculix.mork.no>
 MIME-Version: 1.0
-In-Reply-To: <dK9VkDspReYsAS9HCUL9ToXZtLxqYKAW9ePiswE2236c@mailpile>
-Content-Language: en-US
+Content-Type: multipart/mixed; boundary="8323328-1138987938-1567038897=:4679"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_141752_038857_49DE5F73 
-X-CRM114-Status: GOOD (  15.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_173500_295048_2217F5EF 
+X-CRM114-Status: GOOD (  18.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mrkiko.rs[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] lua: create lua symlink for host
- installation
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [lantiq] help in supporting FRITZ!BOX 3272
+ (Fritz_Box_HW198))
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,105 +102,117 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Karl,
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
-the version built last is the one which will have the symlink set.
-However, i think this is not the ideal solution in terms of
-reproducibility, so we should probably only symlink lua5.1 for
-the Host installation?
+--8323328-1138987938-1567038897=:4679
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8BIT
 
-A bit more background on this topic (as I've forgotten to add this
-to the commit message): LuaSrcDiet currently fails silently as it
-expects a "lua" named binary in it's path. I suspect there could be
-more silent breakage because of this currently.
+Dear Bjorn,
+Thank you very very much! You've been always helpful tome... :)
 
-Best wishes
-David
+thank you for pointing me at your work - it has been very useful. I was using as references sources from the TP-Link Archer D2.
 
-On 8/28/19 10:53 PM, Karl Palsson wrote:
+thanks to your hints and work, I arrived to some of the conclusions you did. Your device was booting, instead in my case I am not able to get it past the PMU issue.
+And even ignoring this error I end up having issues with the GPTU.
+
+I guess the FRITZ!BOX3272 is maybe of another family of devices. don't know, running out of ideas.
+Any hint of what I might try next?
+I didn't find GPL code for this device from AVM - but maybe it's just me. Any help would be really apreciated.
+
+BTW - PMU activation fails in sysctrl.c, in function
+static int pmu_enable(struct clk *clk) ...
+
+Enrico
+
+On Wed, 28 Aug 2019, Bjørn Mork wrote:
+
+> Date: Wed, 28 Aug 2019 18:52:38
+> From: Bjørn Mork <bjorn@mork.no>
+> To: Enrico Mioso <mrkiko.rs@gmail.com>
+> Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+>     Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [lantiq] help in supporting FRITZ!BOX 3272
+>     (Fritz_Box_HW198))
 > 
-> How is this meant to work when you have both?
-> 
-> David Bauer <mail@david-bauer.net> wrote:
->> Since the binaries for both lua as well as lua5.3 contain the
->> version number, invocations of the "lua" binary are failing, as
->> it's not created anymore for the host package.
+> Enrico Mioso <mrkiko.rs@gmail.com> writes:
+>
+>> I am still trying to port a FRITZ!BOX3272 device to OpenWRt.
+>> I tried to grab as much informations as I could, but I am arriving to the conclusion I hould be doing something really wrong.
 >>
->> Fixes: fe59b46 ("lua: include version number in installed
->> files") Signed-off-by: David Bauer <mail@david-bauer.net>
->> ---
->>  package/utils/lua/Makefile    | 4 +++-
->>  package/utils/lua5.3/Makefile | 4 +++-
->>  2 files changed, 6 insertions(+), 2 deletions(-)
+>> First of all, the kernel panics due to a data abort at
+>> linux-4.19.66/arch/mips/lantiq/xway/sysctrl.c, line 478
+>> /* make sure to unprotect the memory region where flash is located */
+>> ltq_ebu_w32(ltq_ebu_r32(LTQ_EBU_BUSCON0) & ~EBU_WRDIS, LTQ_EBU_BUSCON0);
+> ..
+>> [SYSTEM:] AR10 on 500MHz/250MHz/250MHz
 >>
->> diff --git a/package/utils/lua/Makefile
->> b/package/utils/lua/Makefile index a2870448bd..e376e8c472
->> 100644
->> --- a/package/utils/lua/Makefile
->> +++ b/package/utils/lua/Makefile
->> @@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
->>  
->>  PKG_NAME:=lua
->>  PKG_VERSION:=5.1.5
->> -PKG_RELEASE:=5
->> +PKG_RELEASE:=6
->>  
->>  PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
->>  PKG_SOURCE_URL:=http://www.lua.org/ftp/ \
->> @@ -133,6 +133,8 @@ define Host/Install
->>  	$(MAKE) -C $(HOST_BUILD_DIR) \
->>  		INSTALL_TOP="$(STAGING_DIR_HOSTPKG)" \
->>  		install
->> +
->> +	$(LN) $(STAGING_DIR_HOSTPKG)/bin/lua5.1 $(STAGING_DIR_HOSTPKG)/bin/lua
->>  endef
->>  
->>  define Build/InstallDev
->> diff --git a/package/utils/lua5.3/Makefile
->> b/package/utils/lua5.3/Makefile index c9e9bebb1a..7f835dd41f
->> 100644
->> --- a/package/utils/lua5.3/Makefile
->> +++ b/package/utils/lua5.3/Makefile
->> @@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
->>  
->>  PKG_NAME:=lua
->>  PKG_VERSION:=5.3.5
->> -PKG_RELEASE:=4
->> +PKG_RELEASE:=5
->>  
->>  PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
->>  PKG_SOURCE_URL:=http://www.lua.org/ftp/ \
->> @@ -118,6 +118,8 @@ define Host/Install
->>  	$(MAKE) -C $(HOST_BUILD_DIR) \
->>  		INSTALL_TOP="$(STAGING_DIR_HOSTPKG)" \
->>  		install
->> +
->> +	$(LN) $(STAGING_DIR_HOSTPKG)/bin/lua5.3 $(STAGING_DIR_HOSTPKG)/bin/lua
->>  endef
->>  
->>  define Build/InstallDev
->> -- 
->> 2.23.0
+>> ..
+>> Eva_AVM >
 >>
 >>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 >>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>>
+>>
+>>
+>>
+>> ......................................................................................[    0.000000] Linux version 4.19.66 (mrkiko@mStation) (gcc version 7.4.0 (OpenWrt GCC 7.4.0 r10863-e1dcfe02b2)) #0 SMP Mon Aug 26 16:21:13 2019
+>> [    0.000000] SoC: xRX300 rev 1.2
+>
+>
+> Right, so this is AR10/xRX300. Been there, trying to get a D-Link
+> DWR-956 running, and gave up without getting the T-Shirt ;-)
+>
+> I believe the problem you are hitting right now is caused by wrong
+> address for the EBU.  It is not at 0x1E105300 like for the VR9 etc, but
+> at 0x16000000 on the AR10.
+>
+> So change this:
+>
+> 		ebu0: ebu@e105300 {
+> 			compatible = "lantiq,ebu-xway";
+> 			reg = <0xe105300 0x100>;
+> 		};
+>
+> into
+>
+> 		ebu0: ebu@6000000 {
+> 			compatible = "lantiq,ebu-xway";
+> 			reg = <0x6000000 0x100>;
+> 		};
+>
+>
+> I was stuck the same place for quite some time....
+>
+> I pushed my abandoned DWR-956 branch here now:
+> https://github.com/bmork/OpenWrt/tree/dwr-956-wip
+> in case it is of any use to you.
+>
+> Note that this branch is a terrible mess of Work-in-Progress, meant for
+> my eyes only.  And even I can't make much sense out of it anymore.  So
+> you might be better off just ignoring it.  Your call.
+>
+>
+>
+>
+> Bjørn
+>
+--8323328-1138987938-1567038897=:4679
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--8323328-1138987938-1567038897=:4679--
+

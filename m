@@ -2,91 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07036A4415
-	for <lists+openwrt-devel@lfdr.de>; Sat, 31 Aug 2019 12:37:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C320A4459
+	for <lists+openwrt-devel@lfdr.de>; Sat, 31 Aug 2019 14:10:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
-	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xdQqNbBn74LcQhBkAmhD5q4JsUUjeDve/5TwsIAQup0=; b=ZB0/RbbNFCcLvlSySBzxAD7PX
-	0SLh/TaFj35iKTBocpSYca179PLZnZTcUnZ2c2KkJM+YU8dD5jQAzyMuHEhvL7xQC58zxshp6KTof
-	5EDDnL1SLgU9mA1qAsWDNSZm8JB27hFK9Ab0skLWnZJKImjfUqFNrIgPc3gKXR42r0r5idKJXX+e2
-	BsMk9a2swUvKNl9WLvvsVUH5mnTOhNhVugzBRr+xQF9j31tbXppVvpHmiJXpiC8d+TZKfutGvlAHh
-	ksM8N8+EIP3JiWf4zZhnm12MGYQwhBt3Qw/2EpyDNKjQtN+ktxsM62R9U30TPAtkUHCTyMfEI5YnI
-	ghZZzJ+Wg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=14alCExYWQzo3ri7WtsV1zXWCROEoDCLbSr/Itz4a68=; b=GDFyElGbd0DHCH
+	HS+HTtPlxID3+OFzoE+tZoCHI0OUmvVPWXGyd2R6wxOr2YxTBT2bJrKrexWIu7lJ/eRzsw/ArRuEW
+	2DOjImAeLu2ox9XKZZhlkXs7jrf+P7wFDykl40vLvDj9YhzBGhvKqpQybWf+xTAWJopCwujOmpj3l
+	avclZgzgqlRccDpeBCL/1lJvgLtpAQbwM9BR7IkPja60GuYzkx5E/z7M6WQyGvEULGT1PbZVPdWk5
+	ChXHCHqNerJEGQ0Zt/3fTGaVigOFNnIO9/x4JJsInRsjMJc8iiLLLD+eas/aW9ck6LjCcIEPjfs2Z
+	J7fxICxG1hEYPAMR5HFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i40lH-0000VJ-Er; Sat, 31 Aug 2019 10:37:39 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1i42Cq-0002lB-Nf; Sat, 31 Aug 2019 12:10:12 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i40ky-0000Ut-FP
- for openwrt-devel@lists.openwrt.org; Sat, 31 Aug 2019 10:37:22 +0000
-Received: by mail-wr1-x433.google.com with SMTP id b16so9295047wrq.9
- for <openwrt-devel@lists.openwrt.org>; Sat, 31 Aug 2019 03:37:19 -0700 (PDT)
+ id 1i42Cf-0001zf-U0
+ for openwrt-devel@lists.openwrt.org; Sat, 31 Aug 2019 12:10:04 +0000
+Received: by mail-wm1-x343.google.com with SMTP id k2so8536813wmj.4
+ for <openwrt-devel@lists.openwrt.org>; Sat, 31 Aug 2019 05:09:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :mime-version; bh=sylmEXDU72qG2bkmI+8qnB7fhoYun3S5xvZYdrMSunk=;
- b=m/5s9u/bssaw8LvZ1VNbrZMZ1MxP60BmsLRVhCsjB3k+F+CFckmVATjtsBQZu7T6M2
- NnGMpMoFSYuFo+iVRSfOyWa69zm5CJFateadhDZheTh8wcDtVXBOv3lR8MOfrTbUmsdf
- jLeA10BoiT/PPSlP1EAdnmLNuu+pkGXW1IsLBY3r25Ci9LqswS+Gp0TonSWPWYzi0o1Z
- msj6RLbNPrGQ2QApgFb82Ft/zT8QRSDWSdA03lHEB3kfAQ8baeSKtiLBmNvuLZ8lVDlh
- vz0jPfPlkTJitH9T+3ScCYP2h9NINWm7jn3hVMZ5Qpwe1Thq206I0F7FZ9kPJtt7t9ip
- X3DQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=N91r1KHfrxXI6AdqnsqusMq0XbgOfTkqym9kmD7fGD4=;
+ b=Ad6J6kwVLicNACWwoY7UIpfiyE6p9U20eE3JGrGJF1JYJ41JXQul01u/SCg7nKJNQw
+ CYdnihAwmMJb7frbnJJqlgFeCDmco/XHqlHCuNuPWqlgaJQFbJ6vFV4JPzrtA3RQh++v
+ GYxn66dPHQZAoWS0pBry4fyE2SVR/Pe9OfzOFJQNKjWofPgeACnLUcuc9pC8pmWhuFoa
+ JuXUmSB4AokHzPCloS2H/6Z2EMh1jQN3eSP1tEA+IftnCjr7Iv79ilFzWRSrhvF4NitM
+ 6PVHISwBWSEdeS4GzEWE2CR0XLkpnasWg28aXe5VeqVo9DH2AVjX2jJNlvLAr+Ii4/XL
+ MxMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:mime-version;
- bh=sylmEXDU72qG2bkmI+8qnB7fhoYun3S5xvZYdrMSunk=;
- b=PUy7b6wE3aZKF3Vkqv8PhKVObk7KFOk6yQQUcbtFWJBXBmSv+ymdIkKAYv7ZGlDitG
- 6k+hHSEXSmVlTuze/Lj+luluQxHOLV4xgBMzk2tUovyBjJiKBC0YA7VSIqremFFtiMmC
- piDpbriE0A+IhD7S3cz7/yv8he44MuGo1c2l9qU4Sie9Y0f4KEMBDAilSzT1UaVR+SwU
- MeIHozuQUtWhVqi/jDY/6Ugh70uneL5AZOHcG6vy3ZHWfsgL7eY9PnZmu6hdjOdsg+xA
- CgQph5RwUJ3QagoyLrlLtF3qBKS2zw0WAPUFdUrNQd7ao35+lTy1OE9Pq/6g3wNrevXv
- Ow3w==
-X-Gm-Message-State: APjAAAVu6e3aY+sdLIcoXyXHyhpDT6hmhedTaClCIIDWiWt71selFZcb
- qJqS77YvpDjgdVywzxs8LwY=
-X-Google-Smtp-Source: APXvYqxBu83ZpaYos7Xa1AG1cDYWoVKfxYh4S4YA+Q8owyJWQGgsIMF27tIX5MAmOPC1RIJyjsTxVw==
-X-Received: by 2002:adf:f507:: with SMTP id q7mr24129338wro.210.1567247838490; 
- Sat, 31 Aug 2019 03:37:18 -0700 (PDT)
-Received: from localhost.localdomain
- (host111-46-dynamic.5-87-r.retail.telecomitalia.it. [87.5.46.111])
- by smtp.gmail.com with ESMTPSA id b1sm1545418wmj.4.2019.08.31.03.37.17
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 31 Aug 2019 03:37:17 -0700 (PDT)
-Received: from localhost (localhost [127.0.0.1])
- by localhost.localdomain (OpenSMTPD) with ESMTP id c00cb32a;
- Sat, 31 Aug 2019 10:37:16 +0000 (UTC)
-Date: Sat, 31 Aug 2019 12:37:16 +0200 (CEST)
-From: Enrico Mioso <mrkiko.rs@gmail.com>
-X-X-Sender: mrkiko@localhost.localdomain
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-In-Reply-To: <CAOX2RU6=KFmP+LwWF23xUa3LVN3vD8a-Q6sw1_S7PC+DeWSATw@mail.gmail.com>
-Message-ID: <alpine.LNX.2.21.99999.352.1908311230150.7205@localhost.localdomain>
-References: <alpine.LNX.2.21.99999.352.1908240114240.6377@localhost.localdomain>
- <CAFBinCDbyb0mWeBt738XtMoWVHHi6sOep5DY5f6ddS0a5GKT3g@mail.gmail.com>
- <alpine.LNX.2.21.99999.352.1908281820530.3996@localhost.localdomain>
- <878srdp6zt.fsf@miraculix.mork.no>
- <alpine.LNX.2.21.99999.352.1908290226520.4679@localhost.localdomain>
- <CAOX2RU6=KFmP+LwWF23xUa3LVN3vD8a-Q6sw1_S7PC+DeWSATw@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=N91r1KHfrxXI6AdqnsqusMq0XbgOfTkqym9kmD7fGD4=;
+ b=l12IHWorARrmGwW1YHMwizcIBjziEIpxx2Xn9A7+mBrwUw9160vy0iRqiZ06IPR76e
+ RaWsd2WIVJDHvc2dvuUfN1Cj+NGFuzO7eSgVQu7aN04h5H4+L8+hsPz8mnaMDm4hjIwq
+ lvdgtT0wo8fq3e++5LmoLDveLdHwB2MfRYX+iclHb5GrPvW2hrTSEeAyIQ6Yl/pi81U1
+ Ir9AhhVoBU+0+H1YdpQAV2uCHmNhGQxCQW1WBSIduCpvXTViP2g/zXezdylxFB5OvuJd
+ d3g0Qf7ppGMURJAvhKfAmvq+ZWPwve9L0fUhDkfxcIDiOCCe8GmBxPnnhiJYKG7mWRim
+ wjbA==
+X-Gm-Message-State: APjAAAW73dj0KDXrvuiyatz5+5q0hbdEsvcQLAtAGtdJsU9sxkz4h6kt
+ ahjPYUebV3TN/FVMbtXekeOMQAw6vtc1E8KJazk=
+X-Google-Smtp-Source: APXvYqxPmtKS+fwlJ9yiMHE0N57zPsrmpfY2O2Qk9DtQSykFZwR0Kcj+4M7YLR0s823lMlYza/6hnhUHw0xKo9QlRds=
+X-Received: by 2002:a1c:9648:: with SMTP id y69mr22814164wmd.122.1567253396803; 
+ Sat, 31 Aug 2019 05:09:56 -0700 (PDT)
 MIME-Version: 1.0
+References: <87a7c1qxl2.fsf@husum.klickitat.com> <3012831.exOcdT49RB@debian64>
+ <87mufqnyu9.fsf@husum.klickitat.com> <5317353.KyzfXZn0lP@debian64>
+In-Reply-To: <5317353.KyzfXZn0lP@debian64>
+From: Jonas Gorski <jonas.gorski@gmail.com>
+Date: Sat, 31 Aug 2019 14:09:55 +0200
+Message-ID: <CAOiHx=kQjciZq1WQXit4K3hDkcgoWkG02pki+SoAosw9ANpt6w@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_033720_553808_D96631D2 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190831_051002_014399_000BDC5C 
+X-CRM114-Status: GOOD (  16.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:433 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mrkiko.rs[at]gmail.com)
+ provider (jonas.gorski[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,11 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- 0.0 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
-Subject: Re: [OpenWrt-Devel] [lantiq] help in supporting FRITZ!BOX 3272
- (Fritz_Box_HW198))
+Subject: Re: [OpenWrt-Devel] Squashfs breakage lottery with UBI WAS: [PATCH
+ RFC 2/2] amp821xx: use newly added pad-squashfs for Meraki MR24
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,67 +93,117 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ mail@adrianschmutzler.de, Russell Senior <russell@personaltelco.net>,
+ Mathias Kresin <dev@kresin.me>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Dear all,
+Hi,
 
-So I looked at the GPL code from AVM.
-I still can't understand why communications with PMU are actually failing: addresses seem right.
-Still, I noticed AVM did some changes in arch/mips/setup.c, regarding memory init: currently I don't understand the impatct of those changes.
+On Sat, 31 Aug 2019 at 01:19, Christian Lamparter <chunkeey@gmail.com> wrote:
+>
+> On Friday, August 30, 2019 11:10:54 PM CEST Russell Senior wrote:
+> > >>>>> "Christian" == Christian Lamparter <chunkeey@gmail.com> writes:
+> >
+> > Christian> Ok.
+> >
+> > Christian> I did push a patch titled: "build: remove harmful -nopad
+> > Christian> option from mksquashfs"
+> > Christian> <https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c0290c5cc6258c48b8ba46b4f9c85a21de4f875>
+> >
+> > Christian> so, let's see if this triggers more undefined behaviour and
+> > Christian> exposes more hidden broken code.
+> >
+> > Just to re-iterate my earlier worry, if for example:
+> >
+> >   kernel_size + rootfs_with_padding_size
+> >
+> > crosses an erase block boundary that:
+> >
+> >   kernel_size + rootfs_without_padding_size
+> >
+> > does not, then we'll be wasting an erase block of flash space on NOR.
+> Not to worry. I guess that part of the magic is also explained in the wiki:
+> <https://openwrt.org/docs/techref/flash.layout#example_flash_partitioning>
+> <https://openwrt.org/docs/techref/flash.layout#explanations>
+> In case my attempt now gets too confusing :-/.
+>
+> The "rootfs" partition also contains the rootfs_data inside. It should
+> be possible to verify this with any of the routers that use the "firmware"
+> parition label.
+>
+> Please check /proc/mtd. For example on my WNDR3700v2 (which is very similar
+> to your WNDR3800). It looks like this
+>
+> |# cat /proc/mtd
+> |dev:    size   erasesize  name
+> |mtd0: 00050000 00010000 "u-boot"
+> |mtd1: 00020000 00010000 "u-boot-env"
+> |mtd2: 00f80000 00010000 "firmware"
+> |mtd3: 0018c440 00010000 "kernel"
+> |mtd4: 00df3bc0 00010000 "rootfs"
+> |mtd5: 00620000 00010000 "rootfs_data"
+> |mtd6: 00010000 00010000 "art
+>
+> The rootfs is 14629824 Bytes = 13.95 MiB. (The kernel + uboot + env + art
+> fills out the remaining ~2MiB to a total of 16 MiB). So the padding we both
+> are talking about already has to exists between the squashfs portion and the
+> jffs2/overlay portion inside the "rootfs" partition and it's a full erase-size
+> block. Sadly, OpenWrt does not readily print the "end" of just the squashfs
+> partition (as it does with the kernel partition above) and your message from
+> earlier with the three routers didn't include the "squashfs-split" and its
+> results. (I think that maybe this is the missing information that got lost?)
 
-just in case it may reveal something, I am reporting here the list of pins and module ids of various pieces as reported in the
-AVM hw config 198.
-Sorry for possible erors.
+After a bit more investigation, those devices that use padjffs2 (or
+have the rootfs
+start at an at least 4k aligned offset) will be fine.
 
-Enrico
+The issue are those devices with an unaligned rootfs start, which put their own
+EOF marker in the image by the firmware util (e.g. brcm63xx or tp-link devices).
+
+There it can happen that e.g. we get
+
+0x18fff2  <squashfs end> 00 00 00 00
+0x19000 00 00 00 00 ... <end of padding> FF FF
+0x19010 FF FF FF ...
+*
+0x20000 DE AD C0 DE
+
+The 0xff are only a guess, I haven't checked what the different
+firmware utils use for padding the end of the rootfs - but mksquashfs
+definitely uses 0x00.
+
+which leads to:
+
+1. squashfs-split will put the roofs_data partition start at 0x19000
+because that's the first aligned erase block after the end of the
+rootfs start + squashfs length
+2. jffs2 will see that the first block is neither a valid jff2 node,
+an EOF marker, nor all 0xff
+3. jffs2 will refuse to erase/mount the filesystem (AFAIU the code) [1]
+
+So removing the -nopad might actually break those devices.
+
+We could fix this case by making sure that mksquashfs and all firmware
+utils use 0xff's to pad (so the erase block will then be treated as
+empty/all 0xff). But then there is the question how jffs2 reacts if
+the first block is 0xff, and the second block is a valid jffs2 node,
+which happens when we sysupgrade with keeping config on NOR devices.
+The jffs2 code isn't the most readable code ... .
 
 
-gpio_avm_led_power: pin=5 id=25 param=avm_hw_param_gpio_out_active_low, config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OUTPUT_SET
-gpio_avm_led_lan_all: pin=4 id=25 param=avm_hw_param_gpio_out_active_low, config= IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OUTPUT_SET
-gpio_avm_led_wlan: pin=11 id=25 params=active_low config=as_previous
-gpio_avm_led_pppoe: pin=27 id=25 param=active_low config=as_previous
-gpio_avm_led_info: pin=25 id=25 param=active_low config=as_previous
-gpio_avm_led_info_red: pin=26 param=active_low config=as_previous
-/* external interrupts 0 */
-gpio_avm_button_wps: pin=0 id=25 param=active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_IN | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR
-/* external interrupts 1 */
-gpio_avm_button_wlan: pin=1 id=25 param=active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_IN | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR  | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_SET
-gpio_avm_spi_clk: pin=18 id=4 param=avm_hw_param_no_param config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_spi_do: pin=17, id=4 param=no config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_spi_di: pin=16, id=4 param=no config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_IN | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR
-gpio_avm_spi_flash_cs: pin=15 id=22 param=avm_hw_param_gpio_out_active_high config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_ale: pin=13 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_cle: pin=24 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_rd_by: pin=48 id=12 param=avm_hw_param_gpio_in_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_IN | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_CLEAR
-gpio_avm_nand_rd: pin=49 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_wr: pin=59 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_wp: pin=60 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_cs1: pin=23 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d0: pin=51 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d1: pin=50 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d2: pin=52 id=12 param=avm_hw_param_gpio_out_active_low IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d3: pin=57 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d4: pin=56 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d5: pin=55 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d6: pin=54 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_nand_d7: pin=53 id=12 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
+Regards
+Jonas
 
-/* USB land: they here use USB module ID = 8 | early regs = 0x08000000 (IFX_GPIO_MODULE_EARLY_REGISTER) */
-gpio_avm_usb_pwr_en0: pin=10 id=8 config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
+[1]  https://elixir.bootlin.com/linux/latest/source/fs/jffs2/scan.c#L263
 
-/* ethernet */
-gpio_avm_mii_mdio: pin=42 id=37 param=avm_hw_param_no_param config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET   | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR
-gpio_avm_mii_mdc: pin=43 id=37 param=avm_hw_param_no_param config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_SET   | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR
-
-/* they say it's PCIE / WLAN / Ext. WASP */
-gpio_avm_pcie_reset0: pin=36 id=11 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-gpio_avm_pcie_chip_reset0: pin=61 id=11 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
-pcie_disable_interface_1: pin=1 /* dummy */
-gpio_avm_arc_jtag_overwrite: value=14 id=35 param=avm_hw_param_gpio_out_active_low config=IFX_GPIO_IOCTL_PIN_CONFIG_DIR_OUT | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL0_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_ALTSEL1_CLEAR | IFX_GPIO_IOCTL_PIN_CONFIG_OD_SET
+all dirty nodes will increase neither c->nr_free_blocks nor
+empty_blocks nor badblocks, so the sum will be different from
+c->nr_blocks, so jffs2 will refuse to mount
 
 _______________________________________________
 openwrt-devel mailing list

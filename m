@@ -2,60 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E66DA4BB9
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Sep 2019 22:14:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88CB0A4BC1
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Sep 2019 22:27:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vsr8ypZ1FyW3IBl+3xPz64nLcKMLOxkfl3rGncJNIao=; b=ja8nHEub0LI2o1
-	7XuIwHNPxQrkLHZVS9ENZ9BYfePVRejan6WBC/5hk/2JwzVKeQ9RiGYiwZ54jOIvbkG+1aX8In9on
-	L+g8PvvBfhyjh9qJ6kbHKVCocNUN4+fPwWMHSGnVE+TAqmBNXuhUaIKftAbQhCMGdFJ2ObPo9KXxM
-	vbDsiiV/p12s4iWAkqbnkLtvdPC0J/F4GxJVKaYTfDTP9OuWUdnGvnubE6ZIEYfmbBcpxT4pCxi/w
-	ybiIO6/zkngr8NHw7JuSVlyS4c8EUZ6HkctJjA1sh6TD1RK9m+fR55bCa4f2bNnCz1Xx6VtiBDe47
-	WeO3KTMOzL+02Ed5QUMw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kCEqkHbDvBAnhdlzEeql1uqm+nQh2YB+ojOMTmeTEkc=; b=JYxsd0FrYJU/5q
+	NnlV4Z8gmSjo1iKWAKTzpjPXOaqNYA2k3xXZeVm17H2OsfN2mMlVU57iZNmR4Lq/Z4Boigus11Yn3
+	Shm2UgeqJfZ4W6ZPi/45HbfcFn920hoR7UM4+KEEzmuKRzfdE138H+1S5IHUQS1izJU8/+D0IjkX0
+	yawH4zdszgc0tNQ2iQdGse2cN7Ib/+JQvTROobKW+O98TQP8t+Ty3JuwIwGOXBFLKECubIOR2F8Tp
+	eDvj8OHUeLJXqFeflx2Sj7vn2DPJUxrV7em2Z6ydTQe9zqjlRSU88Eyk7m8083XlpuPu2spENvJbW
+	ZMKWRmVXq7wteB76elxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4WEs-00029S-R2; Sun, 01 Sep 2019 20:14:18 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
- helo=mx2.mailbox.org)
+	id 1i4WR5-0007Ho-MJ; Sun, 01 Sep 2019 20:26:55 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4WEj-00028Z-LY
- for openwrt-devel@lists.openwrt.org; Sun, 01 Sep 2019 20:14:11 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 669BAA1539;
- Sun,  1 Sep 2019 22:14:04 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id savzCgT7nP8V; Sun,  1 Sep 2019 22:14:01 +0200 (CEST)
-From: Hauke Mehrtens <hauke@hauke-m.de>
+ id 1i4WQw-0007HG-Bm
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Sep 2019 20:26:47 +0000
+Received: by mail-pf1-x441.google.com with SMTP id b24so7713373pfp.1
+ for <openwrt-devel@lists.openwrt.org>; Sun, 01 Sep 2019 13:26:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=0TIJCm+pLJ1udV8M2nq4ZcKQK4d4S+YBfNAH5VGiik4=;
+ b=hxleYoBCv8n6QmXey2FJqTFPU6gdtqVHKCvsoFYDOz//kI5grNnFif3Pp99mg48Pdn
+ hLcqlGdnguakGHB1OXa3L/w3Eta0jVf7xlF0mHIdc33OkC8HJQ1ZwIgyZ3gSPKStkktP
+ 1L2qmK8O5UGAXpDArfQ7aiL3GBFqY+OURAnuKzyta83NC5MJb/Ztk9RYoOAyH0jGg24+
+ Pl9FVqNEz5y2ef7r7dhpBOkWl0/p9feBnxDD8p/V8Zz9WbH/1Y+CQMld7ncvN1qKK8ys
+ INQ7/1ce+0Kaci8VKM80pOvk6TMZCBv930Hx15Fk3kpA6wjMujHg94s6shoRF46nfbOZ
+ hb0A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=0TIJCm+pLJ1udV8M2nq4ZcKQK4d4S+YBfNAH5VGiik4=;
+ b=bsKsfmBepWARcz72WID6cA8QVcjkr4WQWXXpp43sVa6/NC9ryT65UrcK6i8rN7xjIN
+ ifH2pnlqqD8AJG05kv55tDIh/UESEbvW1feWQu8u3N7DQZyejXTUkh9ymM4W+a8YuRZa
+ z+bgMXDhjp9heyNJBkFFW27rKcnzqcsjKcINux1NB6PrtrIV1ZH5HMTiLap6AylWqPYE
+ DDIEc0RoAerkucIIW3Rlw4U4qaL8Uk5Lk+HlX3BQ7k4ioT6QqttLXjJfdolYVmYdo7L7
+ e9wpL2JErsDgMe17ERG6WcTEVaqrxit3i9IKGpoNhOGBW0f691tbRj3q243f4yDHDGz7
+ ZMDg==
+X-Gm-Message-State: APjAAAV4owPlUze0Ez3ffCam/ZbBYH1Il1rqckYSl9wUFNyIY1pissLg
+ 3VynOWIKylwK+YZ4NwHF9sSFEJjMbrc=
+X-Google-Smtp-Source: APXvYqzGRIWDKG/X7dSohb7Vvrxpta17cHXaZx3UDmkg+vgDyDp+WMU0OI8Db2gOTZS7ZG2ya0J/yA==
+X-Received: by 2002:a17:90a:248c:: with SMTP id
+ i12mr3828701pje.130.1567369604779; 
+ Sun, 01 Sep 2019 13:26:44 -0700 (PDT)
+Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
+ [76.14.106.55])
+ by smtp.gmail.com with ESMTPSA id c35sm11762094pgl.72.2019.09.01.13.26.44
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 01 Sep 2019 13:26:44 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  1 Sep 2019 22:13:43 +0200
-Message-Id: <20190901201343.15960-2-hauke@hauke-m.de>
-In-Reply-To: <20190901201343.15960-1-hauke@hauke-m.de>
-References: <20190901201343.15960-1-hauke@hauke-m.de>
-MIME-Version: 1.0
+Date: Sun,  1 Sep 2019 13:26:43 -0700
+Message-Id: <20190901202643.3011-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_131409_852724_9D53FD2A 
-X-CRM114-Status: GOOD (  12.41  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190901_132646_431864_00F0C1A7 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 2/2] uboot-envtools: Update to U-Boot
- version 2019.07
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCHv2] procd: Switch to nanosleep
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,65 +96,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
----
- package/boot/uboot-envtools/Makefile                  | 8 ++++----
- package/boot/uboot-envtools/patches/001-compile.patch | 6 +++---
- 2 files changed, 7 insertions(+), 7 deletions(-)
+usleep has been deprecated by POSIX.1-2001 and removed in POSIX.1-2008.
+Fixes compilation when libc does not include usleep (optional with
+uClibc-ng).
 
-diff --git a/package/boot/uboot-envtools/Makefile b/package/boot/uboot-envtools/Makefile
-index 71b842b96e..4be043dcab 100644
---- a/package/boot/uboot-envtools/Makefile
-+++ b/package/boot/uboot-envtools/Makefile
-@@ -9,16 +9,16 @@ include $(TOPDIR)/rules.mk
+nanosleep also has the advantage of being more accurate.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ v2: Add missing semicolon
+ initd/init.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/initd/init.c b/initd/init.c
+index 29eee50..b253fb6 100644
+--- a/initd/init.c
++++ b/initd/init.c
+@@ -97,12 +97,13 @@ main(int argc, char **argv)
+ 	if (pid <= 0) {
+ 		ERROR("Failed to start kmodloader instance: %m\n");
+ 	} else {
++		const struct timespec req = {0, 10 * 1000 * 1000};
+ 		int i;
  
- PKG_NAME:=uboot-envtools
- PKG_DISTNAME:=u-boot
--PKG_VERSION:=2018.03
--PKG_RELEASE:=3
-+PKG_VERSION:=2019.07
-+PKG_RELEASE:=1
- 
- PKG_SOURCE_PROTO:=git
- PKG_SOURCE:=$(PKG_DISTNAME)-$(PKG_VERSION).tar.xz
- PKG_SOURCE_SUBDIR:=$(PKG_DISTNAME)-$(PKG_VERSION)
- PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_DISTNAME)-$(PKG_VERSION)
- PKG_SOURCE_URL:=https://git.denx.de/u-boot.git
--PKG_SOURCE_VERSION:=f95ab1fb6e37f0601f397091bb011edf7a98b890
--PKG_MIRROR_HASH:=b50d8b6fe0d90b92c8c147457b1b4c2ed1cdb03191085cfc57fdad77c0bfffab
-+PKG_SOURCE_VERSION:=e5aee22e4be75e75a854ab64503fc80598bc2004
-+PKG_MIRROR_HASH:=58c1ecaf901b6bf65c5e872b5449b642694ae5acebf61f91f0d4bc20b4c654b7
- 
- PKG_BUILD_DEPENDS:=fstools
- 
-diff --git a/package/boot/uboot-envtools/patches/001-compile.patch b/package/boot/uboot-envtools/patches/001-compile.patch
-index f7ec9130d6..34072f309d 100644
---- a/package/boot/uboot-envtools/patches/001-compile.patch
-+++ b/package/boot/uboot-envtools/patches/001-compile.patch
-@@ -1,6 +1,6 @@
- --- a/tools/env/Makefile
- +++ b/tools/env/Makefile
--@@ -10,6 +10,10 @@
-+@@ -8,6 +8,10 @@
-  # with "CC" here for the maximum code reuse of scripts/Makefile.host.
-  override HOSTCC = $(CC)
-  
-@@ -9,5 +9,5 @@
- +endif
- +
-  # Compile for a hosted environment on the target
-- HOST_EXTRACFLAGS  = $(patsubst -I%,-idirafter%, $(filter -I%, $(UBOOTINCLUDE))) \
-- 		-idirafter $(srctree)/tools/env \
-+ HOST_EXTRACFLAGS  = -I$(srctree)/tools \
-+ 		$(patsubst -I%,-idirafter%, $(filter -I%, $(UBOOTINCLUDE))) \
+ 		for (i = 0; i < 1200; i++) {
+ 			if (waitpid(pid, NULL, WNOHANG) > 0)
+ 				break;
+-			usleep(10 * 1000);
++			nanosleep(&req, NULL);
+ 			watchdog_ping();
+ 		}
+ 	}
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________

@@ -2,89 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8DB5A49F8
-	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Sep 2019 17:16:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 255A5A4B2B
+	for <lists+openwrt-devel@lfdr.de>; Sun,  1 Sep 2019 20:34:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3eNtSbiUaXPUy0Q117vl+TT3yltJWdb8mmG1ylDHWwQ=; b=ugxzYhcJ1XdKu0
-	xgHnCkXinZRrOkDA0NPOHGYazuv+/GFCkJBdyTkxmsKOtDkusBCovXnETq/neguEQ9L8y5wwVEeqy
-	ahVLUHhvPZSJyzl0dOwTYLBlhJh0VpAcbdZFZAk7uuDHFVUuuwPlm2WS17pLoQfnRRauFuDgVDz/F
-	eQ/uoWH3DGWA9Hp0H56Q06u94g5ecDIQTldb8k6UPaMmDf9DuMbVQm/QoeFIQZUw53T4DSTmFp8E1
-	BgiwzVNfPCL0m7trZXGxlD6al1Ns9qfnrKoQgZDtMcCgXu2sxSi8acbn1SlG652j9Ehum4nIpdA3k
-	X3cR7XRP0ar1GLdGR2bg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yrEKFwxRfJpF5W1vTu1iMJG9hbIwLzyF/JF+F8hEuGo=; b=dZpPi1wTiwF7mf
+	meef2gDtSTbt6jdqKTXl7TzIJXjzi3pFjKqqBWZgI4oeZhDVEdl4+Q5U5crG2oy/H+Vp0V/HDZ8KE
+	9Bb76FztYHED1rvs4J3Lp6jBr7VfCo7ORguIA6tJE+ZuT68uShBC+nsafjxEZlNPtiMFg+4IocDns
+	fHXZCZy4AELWqaVPL8gGQAADFMULAcetEnDH8i4Cwcr4vM3+1zhU8AuVB5fvsH+CAl70MgDhF5WcA
+	LSq6Fi4cEi/OSMYFmYBeMnYFIG96LFNer3szmztz1Y+RsTmDsxCZd2z3vycyy4oCOrUAumpx584Nh
+	Ur5S0zDA360UrZIg9R3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4RaY-0006DM-F0; Sun, 01 Sep 2019 15:16:22 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1i4Ug7-0005p3-Eb; Sun, 01 Sep 2019 18:34:19 +0000
+Received: from mail.nic.cz ([217.31.204.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4RaJ-0006D3-5P
- for openwrt-devel@lists.openwrt.org; Sun, 01 Sep 2019 15:16:08 +0000
-Received: by mail-wm1-x344.google.com with SMTP id n10so1443295wmj.0
- for <openwrt-devel@lists.openwrt.org>; Sun, 01 Sep 2019 08:16:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UsasC+SGKqM37pjKZJo99NHsmkux9NIRkDd62FEcVck=;
- b=PRfjeInY0yk35FixpomWCAqv+2Y6WJIjbKvcWJBWQqzunzrFUOkryQxFMkczjP6cKG
- Wdoh+mEdpgSSQ2PyflwDfHD2fpY7oIbl2fDMj9ek3+FmJDed/e+SWzzujyQyyCtwzUbC
- 9CNZv/UVPuUT1NgJuvNw8+t0t5zqwyI1Vgh6VPI6xyUR0ZjsHrJN5cxyD0EC3MtutSjB
- o/HGM6R2iiguvlOzLE3Rfv8UvksPhQk2Sli/6SAEAn5gFYDfkc9fiFhr/7WtW6JPHlKR
- L/Bc7bo0SZ/oOxQJPgSN+USUTQ7oTDisTp+V5NhqSBGqE5aPIV5FYsjjD5m6ppy6FslR
- KfUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UsasC+SGKqM37pjKZJo99NHsmkux9NIRkDd62FEcVck=;
- b=ZA5KZ/tx443lOiIMdb626ZYw520rUHxoULCngpDXIKtg1+V2BEvikDt6q1gbkBkEXX
- M2ofc79F6EWZprUG4doYGtnOQ0tkvBb+MNh0d6+Y8UGLnkDzQnzy8mcVA+rlo9FVSuFA
- k2fzNj3JhPnI33Pj4x6S6EWwpglLBB1j0U0QEhiEIY79v35droYP2+XH15Dn1Zl7+PRR
- qlRcefh+gPLB88kh6PWIyuK13G1MNPiI97DcrEcc0t5mSwP7UkLgff0gYovkyz9luTqM
- MvyiGIN30OAhS8kgW9vyz21ljiTDkpCvsOxeo3DxmokWOiKYxCACrrHvbE7OgFBhkZcl
- zdYw==
-X-Gm-Message-State: APjAAAXd6elKEoIdAIvrvbHJVARVbT85isjg7jLvgd1BtxhbwbJI4Sz9
- o2R8QgkL8BmFvTTqaUt0lX4zTOHauTJCk5QNS3A=
-X-Google-Smtp-Source: APXvYqyaNAk6PMkd6HQ5GS/BpqlFkYvMuBFWS+MAq8ZkSHfWJ9cM+qpLqpQZGy1Re5er0InJU75MIA9/jgvmSu/0oVY=
-X-Received: by 2002:a7b:c651:: with SMTP id q17mr11189874wmk.136.1567350965142; 
- Sun, 01 Sep 2019 08:16:05 -0700 (PDT)
+ id 1i4Ufx-0005od-Nq
+ for openwrt-devel@lists.openwrt.org; Sun, 01 Sep 2019 18:34:12 +0000
+Received: from localhost.localdomain (ip-78-102-138-110.net.upcbroadband.cz
+ [78.102.138.110])
+ by mail.nic.cz (Postfix) with ESMTPSA id 231C9140836
+ for <openwrt-devel@lists.openwrt.org>; Sun,  1 Sep 2019 20:34:05 +0200 (CEST)
+From: Josef Schlehofer <pepe.schlehofer@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun,  1 Sep 2019 20:34:01 +0200
+Message-Id: <20190901183401.29040-1-pepe.schlehofer@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <87a7c1qxl2.fsf@husum.klickitat.com> <5317353.KyzfXZn0lP@debian64>
- <CAOiHx=kQjciZq1WQXit4K3hDkcgoWkG02pki+SoAosw9ANpt6w@mail.gmail.com>
- <3922788.WSA6FCIlZt@debian64>
- <CAOiHx=nhCKCEDCUXN86YsceqLridmGO=8ODwkxcJf9w-6z-c_A@mail.gmail.com>
- <87mufomdwz.fsf@husum.klickitat.com>
-In-Reply-To: <87mufomdwz.fsf@husum.klickitat.com>
-From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Sun, 1 Sep 2019 17:16:06 +0200
-Message-ID: <CAOiHx=mLJSsj-u6JEVUUyyTK9+DZ+ERRZ2vRH4sN+nxrUWEC2Q@mail.gmail.com>
-To: Russell Senior <russell@personaltelco.net>
+X-Virus-Scanned: clamav-milter 0.100.3 at mail.nic.cz
+X-Virus-Status: Clean
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
+ shortcircuit=ham autolearn=disabled version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.nic.cz
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_081607_232710_63350897 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190901_113410_083864_4D6311EB 
+X-CRM114-Status: GOOD (  13.59  )
+X-Spam-Score: -1.8 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.31.204.67 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jonas.gorski[at]gmail.com)
+ provider (pepe.schlehofer[at]gmail.com)
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Squashfs breakage lottery with UBI WAS: [PATCH
- RFC 2/2] amp821xx: use newly added pad-squashfs for Meraki MR24
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
+Subject: [OpenWrt-Devel] [PATCH] bzip2: Fix CVE-2019-12900
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,64 +70,108 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- mail@adrianschmutzler.de, Mathias Kresin <dev@kresin.me>,
- Christian Lamparter <chunkeey@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sun, 1 Sep 2019 at 13:52, Russell Senior <russell@personaltelco.net> wrote:
->
-> >>>>> "Jonas" == Jonas Gorski <jonas.gorski@gmail.com> writes:
->
-> >> It contains a patch at the end titled: "[PATCH] base-files: pad
-> >> root.squashfs to 64KiB in ubi volumes" This is another approach that
-> >> just deals with the UBI+squashfs issue but works with
-> >> "-nopad". Soooooo.... do we all agree there?
->
-> Jonas> a) 64k is excessive, we only need 4k (actually 1k would be
-> Jonas> enough, since we don't enable CONFIG_SQUASHFS_4K_DEVBLK_SIZE).
->
-> Jonas> The referenced issue with 64k page size happens when
-> Jonas> loop-mounting a squashfs, since loop defaults to PAGE_SIZE as its
-> Jonas> block size. But we never do that in OpenWrt, and we don't support
-> Jonas> any targets with that huge PAGE_SIZE - biggest is ARC with 8k.
->
-> Jonas> b) it misses the squashfs's in generic sysupgrade images itself -
-> Jonas> we need to pad their length as well, to avoid breaking devices
-> Jonas> with a sysupgrade image hitting the corner case being flashed
-> Jonas> from an unfixed firmware with the old nand.sh.
->
-> Jonas> Also IMHO "1c0290c5cc6258c48b8ba46b4f9c85a21de4f875" should be
-> Jonas> reverted, for the previously mentioned issues.
->
-> Afaict, only devices with LEB sizes of non-integer kilobytes (like the
-> MR24 with its 15.5k LEBs) need any intervention at all. Because
-> squashfs's are read in 1k blocks, there is a 1 in 62 chance of creating
-> a rootfs that is an inopportune size on 15.5k LEBs.  I have a PogoPlug
-> v3 with LEBs of 126k, and a MikroTik RouterBOARD 493G with LEBs of
-> 124k. Neither of those is affected.
->
-> I still kind of like my solution where we explicitly ask for padding for
-> devices that need it.
+More details about this CVE:
+https://nvd.nist.gov/vuln/detail/CVE-2019-12900
 
-The PogoPlug would also be affected if we enabled
-SQUASHFS_4K_DEVBLK_SIZE - the 493G wouldn't be. In that case we would
-need to pad to 4k.
+Signed-off-by: Josef Schlehofer <pepe.schlehofer@gmail.com>
+---
+ package/utils/bzip2/Makefile                  |  2 +-
+ .../bzip2/patches/020-CVE-2019-12900.patch    | 65 +++++++++++++++++++
+ 2 files changed, 66 insertions(+), 1 deletion(-)
+ create mode 100644 package/utils/bzip2/patches/020-CVE-2019-12900.patch
 
-But in the current situation, If we just pad to 1k, neither one would
-see an increase in LEBs used. At worst will the padding make the
-squashfs image fit exactly, but it will not cause it to overspill into
-a new LEB.
+diff --git a/package/utils/bzip2/Makefile b/package/utils/bzip2/Makefile
+index ea2fc76833..0bf168c229 100644
+--- a/package/utils/bzip2/Makefile
++++ b/package/utils/bzip2/Makefile
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=bzip2
+ PKG_VERSION:=1.0.6
+-PKG_RELEASE:=4
++PKG_RELEASE:=5
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+ PKG_SOURCE_URL:=http://www.bzip.org/$(PKG_VERSION)
+diff --git a/package/utils/bzip2/patches/020-CVE-2019-12900.patch b/package/utils/bzip2/patches/020-CVE-2019-12900.patch
+new file mode 100644
+index 0000000000..3f08c789ea
+--- /dev/null
++++ b/package/utils/bzip2/patches/020-CVE-2019-12900.patch
+@@ -0,0 +1,65 @@
++From 812a898b7622de90e98f103ff7fed0984e4548e4 Mon Sep 17 00:00:00 2001
++From: Mark Wielaard <mark@klomp.org>
++Date: Wed, 3 Jul 2019 01:28:11 +0200
++Subject: [PATCH] Accept as many selectors as the file format allows.
++
++But ignore any larger than the theoretical maximum, BZ_MAX_SELECTORS.
++
++The theoretical maximum number of selectors depends on the maximum
++blocksize (900000 bytes) and the number of symbols (50) that can be
++encoded with a different Huffman tree. BZ_MAX_SELECTORS is 18002.
++
++But the bzip2 file format allows the number of selectors to be encoded
++with 15 bits (because 18002 isn't a factor of 2 and doesn't fit in
++14 bits). So the file format maximum is 32767 selectors.
++
++Some bzip2 encoders might actually have written out more selectors
++than the theoretical maximum because they rounded up the number of
++selectors to some convenient factor of 8.
++
++The extra 14766 selectors can never be validly used by the decompression
++algorithm. So we can read them, but then discard them.
++
++This is effectively what was done (by accident) before we added a
++check for nSelectors to be at most BZ_MAX_SELECTORS to mitigate
++CVE-2019-12900.
++
++The extra selectors were written out after the array inside the
++EState struct. But the struct has extra space allocated after the
++selector arrays of 18060 bytes (which is larger than 14766).
++All of which will be initialized later (so the overwrite of that
++space with extra selector values would have been harmless).
++---
++ compress.c   |  2 +-
++ decompress.c | 10 +++++++-
++ 2 files changed, 8 insertions(+), 2 deletions(-)
++
++--- a/compress.c
+++++ b/compress.c
++@@ -454,7 +454,7 @@ void sendMTFValues ( EState* s )
++
++    AssertH( nGroups < 8, 3002 );
++    AssertH( nSelectors < 32768 &&
++-            nSelectors <= (2 + (900000 / BZ_G_SIZE)),
+++            nSelectors <= BZ_MAX_SELECTORS,
++             3003 );
++
++
++--- a/decompress.c
+++++ b/decompress.c
++@@ -296,8 +296,14 @@ Int32 BZ2_decompress ( DState* s )
++             j++;
++             if (j >= nGroups) RETURN(BZ_DATA_ERROR);
++          }
++-         s->selectorMtf[i] = j;
+++         /* Having more than BZ_MAX_SELECTORS doesn't make much sense
+++            since they will never be used, but some implementations might
+++            "round up" the number of selectors, so just ignore those. */
+++         if (i < BZ_MAX_SELECTORS)
+++           s->selectorMtf[i] = j;
++       }
+++      if (nSelectors > BZ_MAX_SELECTORS)
+++        nSelectors = BZ_MAX_SELECTORS;
++
++       /*--- Undo the MTF values for the selectors. ---*/
++       {
+-- 
+2.20.1
 
-So padding to 1k is harmless for devices with LEBs of a multiple of
-1k, and fixes devices with LEBs that have an odd .5k size.
-
-
-Jonas
 
 _______________________________________________
 openwrt-devel mailing list

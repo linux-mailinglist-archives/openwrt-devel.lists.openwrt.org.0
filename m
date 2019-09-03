@@ -2,47 +2,47 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B73CFA6514
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Sep 2019 11:24:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81F0FA6522
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Sep 2019 11:27:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lAcdykH2v91XvF4BcH1AMJoMYUIN5zxkuO4rVC7hyd0=; b=YUhPedHzw2+Bj8
-	TTOuYV0cAOWJxJLmlqWHByVZQy1D/0ebQBSgWCq6w9lfA957MkF9LqBaGfulTEXwfsWXWRXwVBHEZ
-	skz33g2zQYY/11Z9YuEvihl44qLGeA/qTuARF9E0/aSVHAvbjvokefpp99VqrgnFV4H30u5gegFA3
-	Jo81D1FSF6Eu8p3if4Jr3A3M+AkdtTy3ZbZxJBfOhHPOvHKvwA8l00GFf/NDanoK88CFiLZZdK8fb
-	8xnbhssXYrg9n9SxIkQv05aWDjRPYMTN5d4e4lQMVqaIjLMK7LxuvG4waEvCYW3ywrWGzWsb7s5Be
-	AyLHav+E2bplJpK83UIw==;
+	List-Owner; bh=8duZr8wfheWUGybo6Zf3q/sPdRtcP9EbTwmL/AAJAjk=; b=LzQEewDerBZU0r
+	D6vJ3BOkpZpsNjKwuFMvlKpH2dCSYnFeRRktHZkixSH0rJwhTaLEUY+PWmovqf+5Tm+EvwgeWXRPs
+	P6IIGJ1+NS6LGxL5LjSQRkrJWDs/Q4p58flGjHexeAZF/dMeSvGRqu7Aja48GImmV32/hsig3Zmc+
+	KA0/fDq63jjwP3iCF8PCmUgnmJPNDZn1IrSmthWLjNh/Uhkg6Emtu8IanJJ2i2Pj2pusadsN6diAj
+	OLdaDRndLPzqq8u1jSkP1rBZraYeJjeGz6hJqXEl0kjoZrrbxqqGZhuBEPZlPX/BCEg55JPUD4+49
+	RrJTnjDnRS4Kkb5AqcTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i552p-000802-5W; Tue, 03 Sep 2019 09:24:11 +0000
+	id 1i555H-0001Lr-SZ; Tue, 03 Sep 2019 09:26:44 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i552M-0007uQ-Or
- for openwrt-devel@lists.openwrt.org; Tue, 03 Sep 2019 09:23:44 +0000
+ id 1i554u-0001LN-Cb
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Sep 2019 09:26:21 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 8A8AA57AE2; Tue,  3 Sep 2019 11:23:41 +0200 (CEST)
+ id BC35357C18; Tue,  3 Sep 2019 11:26:18 +0200 (CEST)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 6538A57ADD
- for <openwrt-devel@lists.openwrt.org>; Tue,  3 Sep 2019 11:23:41 +0200 (CEST)
-Received: (qmail 74805 invoked from network); 3 Sep 2019 11:23:41 +0200
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 944F757C13
+ for <openwrt-devel@lists.openwrt.org>; Tue,  3 Sep 2019 11:26:18 +0200 (CEST)
+Received: (qmail 84453 invoked from network); 3 Sep 2019 11:26:18 +0200
 Received: from unknown (HELO j460.lan) (jo%wwsnet.net@24.134.185.161)
  by mail.bytecamp.net with ESMTPS (DHE-RSA-AES128-GCM-SHA256 encrypted);
- 3 Sep 2019 11:23:41 +0200
+ 3 Sep 2019 11:26:18 +0200
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue,  3 Sep 2019 11:23:40 +0200
-Message-Id: <20190903092340.30036-1-jo@mein.io>
+Date: Tue,  3 Sep 2019 11:26:17 +0200
+Message-Id: <20190903092617.30329-1-jo@mein.io>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190616170050.27126-4-ansuelsmth@gmail.com>
-References: <20190616170050.27126-4-ansuelsmth@gmail.com>
+In-Reply-To: <20190718175444.475-1-rosenp@gmail.com>
+References: <20190718175444.475-1-rosenp@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_022343_311970_D6FC05EC 
-X-CRM114-Status: UNSURE (   2.79  )
+X-CRM114-CacheID: sfid-20190903_022620_579633_A5EAFC4E 
+X-CRM114-Status: UNSURE (   2.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -53,8 +53,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] Merged: libblkid-tiny: useblkid_probe_set_utf8label
- for label set
+Subject: [OpenWrt-Devel] Merged: rpcd: Switch to nanosleep
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,13 +65,13 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jo@mein.io>, Ansuel Smith <ansuelsmth@gmail.com>
+Cc: Jo-Philipp Wich <jo@mein.io>, Rosen Penev <rosenp@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Merged into project/fstools.git, branch master.
+Merged into project/rpcd.git, branch master.
 Thank you!
 
 

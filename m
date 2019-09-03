@@ -2,53 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90BF3A7132
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Sep 2019 18:58:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64FDAA712F
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Sep 2019 18:58:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Date:Message-Id:References:In-Reply-To:To:From:MIME-Version:Reply-To:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KSpJ1n6HqlYH7yFeggDNSfuSjl850GhIisYYzCHAvno=; b=H+t/I2VX+2I6Gzbis9l1SShn2
-	7ndAd52VFgOAkwTya0SkLkXFPmuo5FlrXP9C2MUf64+9b1r93UiTnPBEnxC0a/3yPJHVsWUHaZvL8
-	rLTOYbtPaJbB+JNTbQWVuqJUQGuk8+/5div2pbb5DstC1nVHlMlmkT5vyIBrMxTUR2+r1NQvlh8iK
-	AHFsQlfOvsfJF3N1g7f/a3s+DS554NIHqx1KyTXyRbrchMDYpUbMv1gjCL5e2h0UKN22mAVEH3Skm
-	JN3wcvBQkzAPLmjyrXfud5NfRHQtxjdOE6Wsj9+ZrxhTVqfK7jsZlFI5w/PlMeKRm3ihaKa9x0n8R
-	IJWHnPXjw==;
+	 bh=7NzMkEfToWNpwzUPudms8WPLs0mHCzGZugY0Y1IacPU=; b=WY2Cp6Ysn084nzIAmxy46szYQ
+	K85NxRaVxa2HUzNfc8efGTYffS/3Oawj9CfSG9AHNret3u61M8o12xGZGk9QVrmsLcRwDE4lDuGkm
+	4l500tJMMyfhvC1TJHI6/RUlnpoB2hKOL+PuJGbuapvkyF6Tuf/N+UuUHD79KIEph2Y9PqoQD8PyR
+	pBjSotG0JmmmKq7lacck3jmJLy7wfYoKM6PYd1iyj69P99AjZTmYl/KgHdlhdtOsEUatNVynv8lQH
+	A2ugbOFKJ5n1L4+cXxfHVs4GjOeOCSJadSLhNRLZr4r0+TdhmlGUcll9IRWBz8hZWqb8Bxi72z2q8
+	yfNr3RqzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5C8n-0005V8-A6; Tue, 03 Sep 2019 16:58:49 +0000
-Received: from palmtree.beeroclock.net ([178.79.160.154])
+	id 1i5C7v-00053R-2i; Tue, 03 Sep 2019 16:57:55 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5C8K-0005OT-UZ
- for openwrt-devel@lists.openwrt.org; Tue, 03 Sep 2019 16:58:23 +0000
-Received: from mailpile.local (palmtree.beeroclock.net
- [IPv6:2a01:7e00::f03c:91ff:fe93:f66c])
- by palmtree.beeroclock.net (Postfix) with ESMTPSA id 65A211F729;
- Tue,  3 Sep 2019 16:58:17 +0000 (UTC)
+ id 1i5C7d-00052H-4R
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Sep 2019 16:57:38 +0000
+Received: by mail-qt1-x841.google.com with SMTP id k10so10533186qth.2
+ for <openwrt-devel@lists.openwrt.org>; Tue, 03 Sep 2019 09:57:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JEiuAMjbT+wsWUIrM+3GtNhoa1EAjp46H9is3iU3hiY=;
+ b=HdwDkzqk/2wRXeXTt/vIdTW0E5Vr/pj5N2afGLerCgXK2uBDgOnhOP3DbB+fTXzVfr
+ 6QrcjcZKaycZl8UPby2IyLAjgVKL19aG8am6qLnnBOehp+eIO1/hB4/u95hgvzj+kF3Q
+ C5Djvlh/AtmMfIPAyd4uj3Z3/Ttrn/y/D2UoaaAz8cJfAsG0gG2NZUf1fxF+2SR7UPlU
+ H9co9AVlDrQ8Bp6FtX9IHKynDyFMbk7ZjDDrN6W8Lbu6k5Mdbw5xDuYXoXeY/Fom4QPz
+ Cojb1MFygyTKVKh7JT6cpUbhFdEzMnd15amQIExA26zRy44iS7vG0CN0cwbTShRJYdYm
+ X3LA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JEiuAMjbT+wsWUIrM+3GtNhoa1EAjp46H9is3iU3hiY=;
+ b=NNKoU37afQdtw+JxTcQU8ViLglSaoH+cp1i/nIUdldEGt9sQngW9Pqu9UIkbGMSu4V
+ eYkp1uO1AYJT4l0q5t7TVMIwmEF605N4EBWg5T7ji0y7ntvLPg1v14qEW5F1+oYuAGpI
+ p0jACl3UJEYLKcd9NtgWIF3beeUBRPIBF0HGVazq3SR80b8KTquPOxewH6zNcTZyGvuW
+ W1S3TLaTE9V71O3fGs/y9ehXWsTqjGeyB0LS/41z4sgn4C+09//r3rdN4BGawjY1Q/Bu
+ XV9ZJp24T6MUrwK38Tb1Wss/Be0ukOm26dwn4UUK8T6rFhCSo7XlI3RheNEGwwIZvuyw
+ 6HoQ==
+X-Gm-Message-State: APjAAAUgD/vfNUVVmt0H1zAzbsWx2UF5PVUff7SNj+24WwWI1po57LC0
+ mkg2OeZpX2xAINa4pEchrMYcriCYHeuONEpUtmg=
+X-Google-Smtp-Source: APXvYqymw03GjR4P+rahNyY8CkVOcU5t4Ezj/Xz0fwchToQaCHa57AY7LBvINmmpOIcgbZr17/jj6NNmkV6G/0VrDeo=
+X-Received: by 2002:ac8:75d2:: with SMTP id z18mr6659297qtq.46.1567529855539; 
+ Tue, 03 Sep 2019 09:57:35 -0700 (PDT)
 MIME-Version: 1.0
-From: Karl Palsson <karlp@tweak.net.au>
-To: karlp <karlp@etactica.com>
-In-Reply-To: <20190903162450.740-1-karlp@etactica.com>
-References: <20190903162450.740-1-karlp@etactica.com>
-User-Agent: Mailpile
-Message-Id: <bYDkJ5tuvGfQbaKw5b6JCsihiixQvLITddtcVqSj236f@mailpile>
-Date: Tue, 03 Sep 2019 16:57:21 -0000
-OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
+References: <20190830154607.6463-1-zajec5@gmail.com>
+ <vg58MWhCCD22S7ItxInBzDdSa5ZSoM9zRuh5sFsP236d@mailpile>
+ <1efc1c7c-d87e-753a-92d0-3fa5911805b9@softart-ge.com>
+ <CACna6rz+O7gFLEMOykqtvUcp8git0rUGxKqc-+sqo7VTXSQwzw@mail.gmail.com>
+In-Reply-To: <CACna6rz+O7gFLEMOykqtvUcp8git0rUGxKqc-+sqo7VTXSQwzw@mail.gmail.com>
+From: Luis Araneda <luaraneda@gmail.com>
+Date: Tue, 3 Sep 2019 12:57:23 -0400
+Message-ID: <CAHbBuxpC-_nwuUAgVRdFd_9cydLwRT3sVJroLrEYrv2Qwh9_zw@mail.gmail.com>
+To: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_095821_815865_BB9B10EC 
-X-CRM114-Status: UNSURE (   5.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190903_095737_208219_6EEF8B22 
+X-CRM114-Status: GOOD (  21.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 T_HTML_ATTACH          HTML attachment to bypass scanning?
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: eg200: enable status led usage
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (luaraneda[at]gmail.com)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH procd] system: reject sysupgrade of
+ broken firmware images
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,81 +96,169 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============7090021649847297076=="
+Cc: openwrt-devel@lists.openwrt.org,
+ Reiner Karlsberg <karlsberg@softart-ge.com>
+Content-Type: multipart/mixed; boundary="===============1202299577531022381=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7090021649847297076==
-Content-Type: multipart/signed; boundary="==tI7CWk9gP52XuXTKG8w74sAe9yLfXj==";
- micalg="pgp-sha512"; protocol="application/pgp-signature"
+--===============1202299577531022381==
+Content-Type: multipart/alternative; boundary="00000000000036ddb10591a8fcaa"
 
---==tI7CWk9gP52XuXTKG8w74sAe9yLfXj==
-Content-Type: multipart/mixed; boundary="==IJV6id6vgPSHA9sMBQZokZBqasJQ2I=="
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: eg200: enable status led usage
-From: Karl Palsson <karlp@tweak.net.au>
-To: karlp <karlp@etactica.com>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-In-Reply-To: <20190903162450.740-1-karlp@etactica.com>
-References: <20190903162450.740-1-karlp@etactica.com>
-User-Agent: Mailpile
-Date: Tue, 03 Sep 2019 16:57:21 -0000
-OpenPGP: id=9F020B9C40DA5E6F2CAF63B319A8B50FD4D5CAF6; preference=signencrypt
+--00000000000036ddb10591a8fcaa
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
---==IJV6id6vgPSHA9sMBQZokZBqasJQ2I==
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Hi Rafa=C5=82,
 
-CgpLYXJsIFDDoWxzc29uICA8a2FybHBAZXRhY3RpY2EuY29tPiB3cm90ZToKPiAKPiBTaWduZWQt
-b2ZmLWJ5OiBLYXJsIFBhbHNzb24gPGthcmxwQGV0YWN0aWNhLmNvbT4KPiAtLS0KCkl0J3MgbWlu
-b3IsIGJ1dCBpZiBzb21lb25lIHBpY2tzIHRoaXMsIHBsZWFzZSBfZG9uJ3RfIGNoYW5nZSBteQpT
-b0IgdG8gbWF0Y2ggdGhlIGVtYWlsLiBUaGUgb3JpZ2luYWwgc291cmNlIGNvbW1pdHMgYW5kIGFs
-bCBnaXQKY29uZmlnIG5hbWVzIGFyZSB1bmFjY2VudGVkLCBhbmQgaXQncyBob3cgSSB1c2UgbXkg
-bmFtZSwgaXQncwpqdXN0IHRoZSBvZmZpY2UzNjUgbWFpbCBzZXJ2ZXIgdGhhdCBpcyAibWFuZ2xp
-bmciIG15IG5hbWUsIGFuZAppdCdzIG5vdCB0byBiZSB0cnVzdGVkLiAocmVmOgpodHRwczovL2dp
-dC5vcGVud3J0Lm9yZy8/cD1vcGVud3J0L29wZW53cnQuZ2l0O2E9Y29tbWl0O2g9MDc1YzU3MGNk
-ZTA4YzJhMjdmN2UyYTY0OTk1Y2M3NGFlNTJiNTcwNAp3aGVyZSBpdCBhY3R1YWxseSB3YXMgIm1h
-dGNoZWQgU29CIHRvIGVtYWlsIiB1bmxpa2UgdGhlIGNvbW1lbnQpCgpTaW5jZXJlbHksCkthcmwg
-UGFsc3Nvbg==
+On Sun, Sep 1, 2019 at 5:09 AM Rafa=C5=82 Mi=C5=82ecki <zajec5@gmail.com> w=
+rote:
+> On Sun, 1 Sep 2019 at 06:13, Reiner Karlsberg <karlsberg@softart-ge.com>
+wrote:
+> > This needs to be handled very carefully, not to break
+> > actual usage of -F.
+> > I had to use -F couple of times, usually when downgrading
+> > installed firmware, but with change of name over time.
+> > Typical example: Change of image name for the zbt-we826.
+> > Never any problem with usage of -F, though.
+> >
+> > But I had several problems with non-completion of
+> > valid sysupgrade, which even left the system in inconsistent state,
+> > as the "-f keep.tar.gz" was applied, but not the new image itself.
+> > Or (silently ?) no sysupgrade done, because of mounted block device
+> > or active swap file on block device, or active wifi (?).
+> > Which was a PITA on remote installations.
+> >
+> > Question: How are sysupgrade-errors reported/to be handled, as usually
+also a failed sysupgrade
+> > triggered a reboot ?
+> > documentation very unclear here, as it looks like, behaviour in case of
+errro changed during versions of openwrt.
+> >
+> > Best would be "atomic sysupgrade", with standard error-code (+1) on
+exit instead of expected reboot after success.
+> >
+> > I appreciate the new work on sysupgrade, but I am a bit afraid of
+regressions.
+>
+> No behavior will change until you explicitly modify your target's
+> /lib/upgrade/platform.sh to start calling notify_firmware_broken() for
+> whatever reason (e.g. unrecognized firmware image format).
+>
+> I'm planning to implement more verbose sysupgrade results later. I was
+> thinking about ubus method replying with a JSON containing error code
+> and message. I should prepare some patch for that in a next week or
+> two.
 
---==IJV6id6vgPSHA9sMBQZokZBqasJQ2I==--
+Since you're improving sysupgrade to reject some images, I'm throwing an
+idea I had some time ago (no code, sorry).
 
---==tI7CWk9gP52XuXTKG8w74sAe9yLfXj==
-Content-Type: application/pgp-signature; name="OpenPGP-digital-signature.html"
-Content-Description: OpenPGP Digital Signature
-Content-Disposition: attachment; filename="OpenPGP-digital-signature.html"
+I would be great if there is support for certain sysupgrade images to
+require a settings reset (without preserving them).
+The idea is to support some use cases were preserving the settings might
+leave the device in a sofbrick / misconfigured state. So a reset to
+defaults is mandatory, like the recent situation when migrating a
+configuration from swconfig to DSA.
+Sure, it could be done by migrations scripts, but they might not be 100%
+reliable (cover all possible variations).
 
-<html><body><h1>Digital Signature</h1><p>
+On the implementation side, it could be done using image metadata to store
+an integer with the minimum version required, which could be used by
+sysupgrade to compare the locally stored value and check if a reset is
+mandatory or not.
+(this is just one possible implementation)
 
-This is a digital signature, which can be used to verify
-the authenticity of this message. You can safely discard
-or ignore this file if your e-mail software does not
-support digital signatures.
+Of course, an implementation would not be useful for the current issue of
+swconfig->DSA, but it might be useful in the future (who knows what might
+break).
 
-</p><pre>
------BEGIN PGP SIGNATURE-----
+Regards,
+Luis Araneda.
 
-iQIzBAABCgAdFiEEnwILnEDaXm8sr2OzGai1D9TVyvYFAl1um3UACgkQGai1D9TV
-yvZwBw//Qjc5EaM+eAPrYuC8lyL47ALxBRHlRX2iUz/NAtJIztZPXyH88xYXUFbw
-1dzNz2uC2jJ/khmkfiJebBT9t/vMbVBoVh1cEo/1PU0+jBpGVwuW5jBAUW5Yez0A
-SrFaYql45fqXGKNJBa1pimY/8GmqLNwZbWEdcldLcVtQjcLQ0lsABROYDp5o5fb8
-JcKZCQFBGMkUv15fj6oeV8g9bwk53+DdX8rwCNGfih3zvCphCw2DswtfkgEJICfm
-m86LGlGL7PmA3FNDqpvdWs3jqPzqLx47Eb1UynTPaEFTHs+8um8MJ97gBaRiLOzd
-+KCyzvFPPfpSWpefGmvJyKZTvPdr1ke08nJicuqjc03mc0g1Py6ODGitwTAuMICG
-c3ki85QdZ3XbJX708aEhcpNEK06aN25QAeMHsI1tqfiCR8Yqf7cPJBdtyePIpdDz
-H+yr38bd/MiDU50d7trBC5dlXP5QozwnpgTpQI9U0PYumvEOvjI2PBk0br9eta0u
-eaV3J3FPIsBj6p3jjJ0HcKrDmOBNGRrAaIpgyOP8pZHODpNMo4776JBQs+aAZC7D
-lh137K942UF00/gQ2ac0gLtt4DpLlv+a31olaciyKnCVOwS21C7B7Yxma9cmLCDB
-MmEl/WGdyG7p5bwrIAYcFx1nF6w7v/R59eW6NtD/e8OHPnWXt4U=
-=u4xM
------END PGP SIGNATURE-----
+--00000000000036ddb10591a8fcaa
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-</pre><hr><i><a href='https://www.mailpile.is/'>Generated by Mailpile</a>.</i></body></html>
---==tI7CWk9gP52XuXTKG8w74sAe9yLfXj==--
+<div dir=3D"auto">Hi Rafa=C5=82,<br>
+<br>
+On Sun, Sep 1, 2019 at 5:09 AM Rafa=C5=82 Mi=C5=82ecki &lt;<a href=3D"mailt=
+o:zajec5@gmail.com" rel=3D"noreferrer noreferrer" target=3D"_blank">zajec5@=
+gmail.com</a>&gt; wrote:<br>
+&gt; On Sun, 1 Sep 2019 at 06:13, Reiner Karlsberg &lt;<a href=3D"mailto:ka=
+rlsberg@softart-ge.com" rel=3D"noreferrer noreferrer" target=3D"_blank">kar=
+lsberg@softart-ge.com</a>&gt; wrote:<br>
+&gt; &gt; This needs to be handled very carefully, not to break<br>
+&gt; &gt; actual usage of -F.<br>
+&gt; &gt; I had to use -F couple of times, usually when downgrading<br>
+&gt; &gt; installed firmware, but with change of name over time.<br>
+&gt; &gt; Typical example: Change of image name for the zbt-we826.<br>
+&gt; &gt; Never any problem with usage of -F, though.<br>
+&gt; &gt;<br>
+&gt; &gt; But I had several problems with non-completion of<br>
+&gt; &gt; valid sysupgrade, which even left the system in inconsistent stat=
+e,<br>
+&gt; &gt; as the &quot;-f keep.tar.gz&quot; was applied, but not the new im=
+age itself.<br>
+&gt; &gt; Or (silently ?) no sysupgrade done, because of mounted block devi=
+ce<br>
+&gt; &gt; or active swap file on block device, or active wifi (?).<br>
+&gt; &gt; Which was a PITA on remote installations.<br>
+&gt; &gt;<br>
+&gt; &gt; Question: How are sysupgrade-errors reported/to be handled, as us=
+ually also a failed sysupgrade<br>
+&gt; &gt; triggered a reboot ?<br>
+&gt; &gt; documentation very unclear here, as it looks like, behaviour in c=
+ase of errro changed during versions of openwrt.<br>
+&gt; &gt;<br>
+&gt; &gt; Best would be &quot;atomic sysupgrade&quot;, with standard error-=
+code (+1) on exit instead of expected reboot after success.<br>
+&gt; &gt;<br>
+&gt; &gt; I appreciate the new work on sysupgrade, but I am a bit afraid of=
+ regressions.<br>
+&gt;<br>
+&gt; No behavior will change until you explicitly modify your target&#39;s<=
+br>
+&gt; /lib/upgrade/platform.sh to start calling notify_firmware_broken() for=
+<br>
+&gt; whatever reason (e.g. unrecognized firmware image format).<br>
+&gt;<br>
+&gt; I&#39;m planning to implement more verbose sysupgrade results later. I=
+ was<br>
+&gt; thinking about ubus method replying with a JSON containing error code<=
+br>
+&gt; and message. I should prepare some patch for that in a next week or<br=
+>
+&gt; two.<br>
+<br>
+Since you&#39;re improving sysupgrade to reject some images, I&#39;m throwi=
+ng an idea I had some time ago (no code, sorry).<br>
+<br>
+I would be great if there is support for certain sysupgrade images to requi=
+re a settings reset (without preserving them).<br>
+The idea is to support some use cases were preserving the settings might le=
+ave the device in a sofbrick / misconfigured state. So a reset to defaults =
+is mandatory, like the recent situation when migrating a configuration from=
+ swconfig to DSA.<br>
+Sure, it could be done by migrations scripts, but they might not be 100% re=
+liable (cover all possible variations).<br>
+<br>
+On the implementation side, it could be done using image metadata to store =
+an integer with the minimum version required, which could be used by sysupg=
+rade to compare the locally stored value and check if a reset is mandatory =
+or not.<br>
+(this is just one possible implementation)<br>
+<br>
+Of course, an implementation would not be useful for the current issue of s=
+wconfig-&gt;DSA, but it might be useful in the future (who knows what might=
+ break).<br>
+<br>
+Regards,<br>
+Luis Araneda.<br></div>
+
+--00000000000036ddb10591a8fcaa--
 
 
-
---===============7090021649847297076==
+--===============1202299577531022381==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -145,6 +269,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7090021649847297076==--
-
+--===============1202299577531022381==--
 

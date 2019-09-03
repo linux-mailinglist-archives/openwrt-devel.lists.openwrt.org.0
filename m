@@ -2,84 +2,103 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 015C0A68D2
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Sep 2019 14:45:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67624A6D6E
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Sep 2019 18:01:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ekn4Y/7/wXQDkViEVV2MtycU3504av7iPY9h6PemUzc=; b=dySKX4kf+JgCHi
-	QpB6n/24HCY/1miOmWZBMD3jgoVV6S/g0Bld8jAJtcAYktgchHIPfjqW9GTmADGuvqUtQr4qVrAXV
-	wfpNncZv7vZrUyoHbyBwFQkbPdWOQJ5SMBDFi6W2aQgoTezGFAGWP5Eubdvaxd84J7/IFwUJk3Jcp
-	Jf+sRQvR4KUzh5NgDuqBjgtRK3Or5bNRG0UVPHK03yGurcpkhBDb6XFa1QAa8nYRm2002SfRK1PR+
-	XDnul8HMPWL3SY1ADi+zwqSdc7n+0+Qn+8vWbjCf39otCtaqycsgQdhGwqtvI0R6XiZLzrP/IhfjG
-	L3p76ctaqtBuZQa6wQUQ==;
+	List-Owner; bh=YEn/Org2eJwbcz9BTIrf8nOwfzGduX/Q9+xTD+t/3OM=; b=oOu55thqEhBfh1
+	AP+NVDGEK3wsKF2A9JYAzfiFo60BXHuJ8WwKyKFL+mhJupzQviba2mDJyp/2j3Uluy8eZ/ZMPLuNc
+	C2JGs6JFcgwObH+aTpDeyNWv4sZBIlPLJB6RUp+0UlpWlEVOFpvFCY4cRYcwbj8lfUbPy6YFXNxuN
+	byjQFrdAD09TxCovOwY3Ckmn1oBXw6DoLT4V+UnczeHpQbzxrN20uE7Kj+cGWzQXSJo3SUjKf9NxP
+	qMLyvI6sgbUhVi2rf9ESh+5ULscWd80skC8ecWo3yxRItLe/LtMVS5S77YhyNzpupm7it/BCctLPQ
+	NFcBAUM+Sg0s/UKuqHww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i58B8-0005vX-Th; Tue, 03 Sep 2019 12:44:58 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1i5BEV-0000gv-9p; Tue, 03 Sep 2019 16:00:39 +0000
+Received: from mail-oln040092253050.outbound.protection.outlook.com
+ ([40.92.253.50] helo=APC01-SG2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i58Az-0005v9-DX
- for openwrt-devel@lists.openwrt.org; Tue, 03 Sep 2019 12:44:50 +0000
-Received: by mail-lf1-x142.google.com with SMTP id w67so12765222lff.4
- for <openwrt-devel@lists.openwrt.org>; Tue, 03 Sep 2019 05:44:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6whDCLbClohU+JVFPTPDNVHANtD2gb1aHpAtR5laffE=;
- b=KXGWC3EXrB39FakAjprODdV1Iyc/cpb6+0X69D6gYsJuD5LZcE5iBJi/GYKyCxeD5H
- P6AsnpzcD9Zb6c21isr2tgDLBrm2WjcA4YQZ5SlddY+oT4yoZfiiFBoCbsPvGpfc9C3t
- Dxqu0C5Aiy0KQP6KG2odUonTFyRR4O2tkmxq339vr4CT7NuqaaPPYywkcgs4to+oC3lO
- 9I4ruX1We0PG5AssQv/SZQYK5WVNURNlG5BCPAWqjiPLzwHSPS+hXfu7/SvXzaU55FIr
- Z210k0eFSF6pEB/r7LR5doAuts1+ASlNXiQl1QtCFdrF+Uy6TGL9U6T7Rq9sFRrHArMf
- +E2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6whDCLbClohU+JVFPTPDNVHANtD2gb1aHpAtR5laffE=;
- b=Ntrt8SrmFNQb6B4FBoDaQSXguqn4Kl0GxwFuMI4Bcifo/hxHCafOfQrAPhaKFDG9B1
- 1007AB4u1ZgDRRFWsCNTRQHBeBZpSMhrNqfqjNj1+qeb4qr513oZK/fyz+HTCgJJqlVb
- gpTu5fb5u7HjyPqqZ7mn8a9koiS64MCunJI7uFsna28oiLm33PKF499qUi2HNVlnOu5c
- xbqGA8YnH1QyztOZP8pN3c3eJSva4vbi+LddyykHyF9gy0GquU6hQMMJBrsQ8MjAmugb
- kJIpXTJbZqfP3ntMuQKG6DPSa+TZsDKbiEcwe6HRLS64RcLF2nEupObVCCOa12lRSLO2
- 8O9w==
-X-Gm-Message-State: APjAAAXqTW+0ODHGhzLe4MAXERqwDMx1fQHF9E3CpPYx3e1YUf5FPDA1
- XtZ5PQfqDTkF7DCYwHTLHQYKgvcu
-X-Google-Smtp-Source: APXvYqyDYJXbPKkn3MFiwI8aYSWvjiKtDWHSEKqQ3cqWV/O6IA6LYYwqV1sznfTgNX3GrKxIgQD0DQ==
-X-Received: by 2002:a19:f819:: with SMTP id a25mr8582085lff.45.1567514687000; 
- Tue, 03 Sep 2019 05:44:47 -0700 (PDT)
-Received: from localhost.localdomain
- (ip-194-187-74-233.konfederacka.maverick.com.pl. [194.187.74.233])
- by smtp.gmail.com with ESMTPSA id r16sm1197603lfi.77.2019.09.03.05.44.45
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 03 Sep 2019 05:44:46 -0700 (PDT)
-From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue,  3 Sep 2019 14:44:40 +0200
-Message-Id: <20190903124440.11277-1-zajec5@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ id 1i5BEA-0000gI-V8
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Sep 2019 16:00:20 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dbeRPtNNRF2CbnERX9OkerIEqfgx06TBxzDGxmYLmzZBdD7cLZ6NaiqxB3jSTFn4Bsijd1czJtyuD00dyJw57xPGc1IX3ZJF06K+/Jnq/9puQ6PpFQNVDMyJ02ozMVJzqBif1pYkTmhAPrD6QeKEIiYLp6k5vA5olhHPkpCgLWSAp90AzVTG+IEasH/59hSeg9fHtJbfVoPBRgbW7/HDLlV0IZ3YY2ohhdWBtYGCbTXSOw4u96gcO36n8lpGeJEqVRVPzFzawD0eSHGi7Mk1wYDyVM3kgpbScMXE8MZf2O1VbCXwtLiJPkMW3v3cyZOTqtHdJfJ725UtALd3w0sjmg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vQkM11ild5XZyV1ERtbt30m/S6/J9+4OxgUSlzjvplc=;
+ b=EuBnEBwM+x0yZXWvGC34uJro9Pi2y29jFkyO7kYEu0brQAt5raf7mTiisT/xUT3TsF85jsz/D0gEpEaBiSOGGY1sHWwm6jfBgY+cry1UkEMkLrot+ED3OXwQYC1WuySlKlFWW1XtnNwL05EB1DJRydOjm7ZrjkcODJ52dftMKijvytPreWSRlitGqbHW+RhXjXdk/CUmhcr4Q6i584TSkrn5zHuSl3nk2HuxGRfPF2ykmfoOdqcF6QelPNAzHl2/SJ+ysYY4CiCuLSdi6HQ9QM0IhdIN8rZbzIJo+DAFYOQYSN4ezip0TtYhCGshIob90qygVV1gAqwlE8ZQMY//QQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=msn.com; s=selector1; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vQkM11ild5XZyV1ERtbt30m/S6/J9+4OxgUSlzjvplc=;
+ b=rEn4SmvIpIFjQ4x/JENGzRDiagaXaeaFZkfGZkJNM4coHRN5ZZy05urGSCL7s8gTev7bn7zlMNQh1igQ0UqnnnasVSglzuGZB4QefJfvLB6Y+56SfgeUroTsb3x8B+HAmb04ibQ81eN7ucroJ5h9gPJQOw6XdQfiv8DFLH3DUef+r6TljrhD8/tyRcLCr5JG2s7WuB2hwSnZjpt811V2AH2tPz0lr0CFx2aC7uJCgDdf0M5fP0EETxxeThugYZxw89HnNfHd7chHf/1W1AwQMEpUa6ZSnSprzjFHmIw3xIspo2+Wk0t4HDtKxai3tZyoPfSh83mIjakSYkJgBa+9yQ==
+Received: from HK2APC01FT036.eop-APC01.prod.protection.outlook.com
+ (10.152.248.60) by HK2APC01HT158.eop-APC01.prod.protection.outlook.com
+ (10.152.249.39) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Tue, 3 Sep
+ 2019 16:00:10 +0000
+Received: from HK0PR02MB3153.apcprd02.prod.outlook.com (10.152.248.57) by
+ HK2APC01FT036.mail.protection.outlook.com (10.152.249.85) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2220.16 via Frontend Transport; Tue, 3 Sep 2019 16:00:10 +0000
+Received: from HK0PR02MB3153.apcprd02.prod.outlook.com
+ ([fe80::dda1:fda6:327f:273c]) by HK0PR02MB3153.apcprd02.prod.outlook.com
+ ([fe80::dda1:fda6:327f:273c%3]) with mapi id 15.20.2220.022; Tue, 3 Sep 2019
+ 16:00:10 +0000
+From: "z @" <haig8@msn.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [PATCH] fstools: fix libblkid-tiny ntfs uuid detection
+Thread-Index: AQHVYnB3n5uuznxHCEGF3sSaW0AMtg==
+Date: Tue, 3 Sep 2019 16:00:09 +0000
+Message-ID: <HK0PR02MB3153A515077098D6209D1F4FEEB90@HK0PR02MB3153.apcprd02.prod.outlook.com>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-incomingtopheadermarker: OriginalChecksum:C71B98771BDB3AD0D434B5550A8994C6E5B1AAA4E7AC81BB430A2294C6F171C6;
+ UpperCasedChecksum:BA8BB325B3471C34735376DD203DD702EDB17185AE0B58064157B2663BDF6CFF;
+ SizeAsReceived:6621; Count:41
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [p0aLjXBN9m1X9yxokS3jv0wSnOKss16mVL+hYEf9Yzg=]
+x-ms-publictraffictype: Email
+x-incomingheadercount: 41
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:HK2APC01HT158; 
+x-ms-traffictypediagnostic: HK2APC01HT158:
+x-microsoft-antispam-message-info: nL8gRvm2PjBILjd63UKfls7V1jEiWky/qdcI1c5NwfZyK5jt8O1eejbNrfoCgHPysflqnI/ynaypns2iVBZ61RjwgZl9bTU67smChvFCIoWWatXiHK9D3HwnQ4Nj9bGmQU5/6KDePjyrd7ytj7pOrCKZWYNDo7Sm9HV4TZuK/nA3kDYA/Qw5p1CuzTISW8gg
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 27daf193-3869-47f0-ab62-08d73087cc3b
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2019 16:00:09.9876 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK2APC01HT158
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_054449_486246_84D788A2 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190903_090019_096829_D1DF9C73 
+X-CRM114-Status: GOOD (  10.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ no trust [40.92.253.50 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (zajec5[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ in digit (haig8[at]msn.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (zajec5[at]gmail.com)
+ provider (haig8[at]msn.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -87,8 +106,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH] base-files: pass "force" parameter to the
- "sysupgrade" call
+Subject: [OpenWrt-Devel] [PATCH] fstools: fix libblkid-tiny ntfs uuid
+ detection
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,30 +119,49 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
- Jo-Philipp Wich <jo@mein.io>, John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKVGhpcyBtYWtlcyBzeXN1
-cGdyYWRlIHdvcmsgd2l0aCB0aGUgbW9zdCByZWNlbnQgcHJvY2QgdGhhdCB2YWxpZGF0ZXMKZmly
-bXdhcmUgYmVmb3JlIHByb2NlZWRpbmcuCgpTaWduZWQtb2ZmLWJ5OiBSYWZhxYIgTWnFgmVja2kg
-PHJhZmFsQG1pbGVja2kucGw+Ci0tLQogcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4vc3lz
-dXBncmFkZSB8IDMgKysrCiAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspCgpkaWZmIC0t
-Z2l0IGEvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4vc3lzdXBncmFkZSBiL3BhY2thZ2Uv
-YmFzZS1maWxlcy9maWxlcy9zYmluL3N5c3VwZ3JhZGUKaW5kZXggNDJmMGY2YmQyMi4uZjEwNmMz
-Yzk4MSAxMDA3NTUKLS0tIGEvcGFja2FnZS9iYXNlLWZpbGVzL2ZpbGVzL3NiaW4vc3lzdXBncmFk
-ZQorKysgYi9wYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvc2Jpbi9zeXN1cGdyYWRlCkBAIC0zNjAs
-OSArMzYwLDEyIEBAIGlmIFsgLW4gIiRGQUlMU0FGRSIgXTsgdGhlbgogCXByaW50ZiAnJXNceDAw
-JXNceDAwJXMnICIkUkFNX1JPT1QiICIkSU1BR0UiICIkQ09NTUFORCIgPi90bXAvc3lzdXBncmFk
-ZQogCWxvY2sgLXUgL3RtcC8uZmFpbHNhZmUKIGVsc2UKKwlmb3JjZV9hdHRyPSIiCisJWyAkRk9S
-Q0UgLWVxIDEgXSAmJiBmb3JjZV9hdHRyPSJcImZvcmNlXCI6IHRydWUsIgogCXVidXMgY2FsbCBz
-eXN0ZW0gc3lzdXBncmFkZSAiewogCQlcInByZWZpeFwiOiAkKGpzb25fc3RyaW5nICIkUkFNX1JP
-T1QiKSwKIAkJXCJwYXRoXCI6ICQoanNvbl9zdHJpbmcgIiRJTUFHRSIpLAorCQkkZm9yY2VfYXR0
-cgogCQlcImNvbW1hbmRcIjogJChqc29uX3N0cmluZyAiJENPTU1BTkQiKSwKIAkJXCJvcHRpb25z
-XCI6IHsKIAkJCVwic2F2ZV9jb25maWdcIjogJFNBVkVfQ09ORklHLAotLSAKMi4yMS4wCgoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZl
-bCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xp
-c3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+detect ntfs uuid fails because blkid_probe_get_buffer override memory of buf,
+so move blkid_probe_sprintf_uuid to before blkid_probe_get_buffer
+
+Signed-off-by: Haiqiang Xu <haig8@msn.com>
+---
+ libblkid-tiny/ntfs.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/libblkid-tiny/ntfs.c b/libblkid-tiny/ntfs.c
+index 93c1d88..51252ea 100644
+--- a/libblkid-tiny/ntfs.c
++++ b/libblkid-tiny/ntfs.c
+@@ -158,6 +158,11 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
+ 			sectors_per_cluster, nr_clusters,
+ 			off));
+ 
++	blkid_probe_sprintf_uuid(pr,
++			(unsigned char *) &ns->volume_serial,
++			sizeof(ns->volume_serial),
++			"%016" PRIX64, le64_to_cpu(ns->volume_serial));
++
+ 	buf_mft = blkid_probe_get_buffer(pr, off, mft_record_size);
+ 	if (!buf_mft)
+ 		return errno ? -errno : 1;
+@@ -206,10 +211,6 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
+ 	}
+ #endif
+ 
+-	blkid_probe_sprintf_uuid(pr,
+-			(unsigned char *) &ns->volume_serial,
+-			sizeof(ns->volume_serial),
+-			"%016" PRIX64, le64_to_cpu(ns->volume_serial));
+ 	return 0;
+ }
+ 
+-- 
+2.22.0
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

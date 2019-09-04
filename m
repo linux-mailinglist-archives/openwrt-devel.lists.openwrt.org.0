@@ -2,72 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57765A92CE
-	for <lists+openwrt-devel@lfdr.de>; Wed,  4 Sep 2019 22:08:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98C1BA947B
+	for <lists+openwrt-devel@lfdr.de>; Wed,  4 Sep 2019 23:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p/Q6k9XxZ5ppklNBh+am0XzE9Q6ly8wlLC2GLdrkHHw=; b=GkWdG7DV3VZ5JLTXhY4siET1Z
-	QCx3Zh4T59JDPckuEyvkXLqytNnhNB5P04VADgOenMdPSDjz7lUSEwkYIVzJ838PQpstDzQSrFdMM
-	263AzJuQg2lp3g7JJsA8/Cb/tXLUPhCBeRA6Ulb+SqFEIZSWcE9GbNZcuqCmTDtnBOdVjHobOVcQn
-	bnFgUgT0AscrmvrmNuj+RMdHvI0tt7ZPx/2ElaIF5x6xnIFGo3x3nBeQkveseG38gt4ZlaU70UGP1
-	rvQa4BgcZ6eFZ3cnMtm4qcAmxstA8o3DLYBRS9/H+1ERbW8N/FRYWi3jHOw1PrCWA7NbvwTKzB4ae
-	nwEDNZDlQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mhz5e9WF0nx9+2crbZmDzsa0R6Y135URuvqerqyxdrc=; b=GEtseqjkxwYfYM
+	8ooDiR4kzyTYUWchO/TCHc4TZ58Jr/Dg+B2aLvezkF1QLYjaats7ZgBsbYi0pr5zeze9z+dzhKvdH
+	eyC4r8CzcEqZEockgf7QQ0OrWF9OPXMEG7LnyHpgvogFIXoBEQRqMyyNoTD+qpTkBw2XTr6GIm4DQ
+	or8w5PqzQ3pId/q7+EWeUsvxBznHjWCJtKghKY1WW1guTSPAm2D6BVrs3USZSEgF36W8LdbLT5IzU
+	tQuWqpa7HHv3+RNI4c0F6hSEegLV4Sz9FjRNek2+J1erJo28ui3FJ4oqhEcK3BYeawK+tVQXKViEE
+	0YbsZjxmeBhkFdUzX5uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5bZm-0004br-BB; Wed, 04 Sep 2019 20:08:22 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1i5cUb-0004eW-6k; Wed, 04 Sep 2019 21:07:05 +0000
+Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5bZd-0004bX-Ch
- for openwrt-devel@lists.openwrt.org; Wed, 04 Sep 2019 20:08:15 +0000
-Received: from desktop ([188.193.187.204]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MkW10-1ia1Qs3oGU-00m69T; Wed, 04 Sep 2019 22:08:08 +0200
-From: <mail@adrianschmutzler.de>
-To: "'David Bauer'" <mail@david-bauer.net>, <openwrt-devel@lists.openwrt.org>
+ id 1i5cUT-0004eE-Rl
+ for openwrt-devel@lists.openwrt.org; Wed, 04 Sep 2019 21:06:59 +0000
+Received: from [IPv6:2003:e5:3f07:ab00:2755:9ac9:762a:b514]
+ (p200300E53F07AB0027559AC9762AB514.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f07:ab00:2755:9ac9:762a:b514])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 4423C1E3D6;
+ Wed,  4 Sep 2019 23:06:53 +0200 (CEST)
+To: mail@adrianschmutzler.de
 References: <20190904191929.14455-1-mail@david-bauer.net>
-In-Reply-To: <20190904191929.14455-1-mail@david-bauer.net>
-Date: Wed, 4 Sep 2019 22:08:08 +0200
-Message-ID: <000401d5635c$78985d50$69c917f0$@adrianschmutzler.de>
+ <000401d5635c$78985d50$69c917f0$@adrianschmutzler.de>
+From: David Bauer <mail@david-bauer.net>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <5ef2bbcb-0a9d-8e4e-6bc5-cfdc4adfdc7d@david-bauer.net>
+Date: Wed, 4 Sep 2019 23:06:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQHSNXhwc9B9YvESjIfuYG2fDqlvMqciS64Q
-X-Provags-ID: V03:K1:RfZOcPs050YoeGUSVuOiPRN7hqXItVP7tZs0JMQVbVluGA5Oghu
- vVS8laAsojvNgFe3Yq/2QpwgibGBtNSsAxXIxHM+hyqxni9hKGh3ccbs0cKmjVbaHeF/3Ue
- AzwyKPYarrvrw8Xu1du4EwfZzNO4wEAfniFLaV9iY+yuqWKmD6yjkAGKObFrqWWmXMt8r5M
- Q6zr8ENgfddvWIBo1qR7w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:f17L+/Rx1zw=:502zfOGjRIx9sZQCwdsjnH
- x9Pa5WWhxJjCw6Ykj1jHD4Pk/TGvE58g4VaNTEqs2wM2mk+97fXSYYH3XHujLVh1sh4JzdwEl
- Ind9E5+jwjYgvVXxpF1VwPjL04vyxo9o+PakZqUyzRFhHhOGVI67WxHtFy80NTU7tti/6Ujqr
- 8pVzfcmHz3HLfRYOBhLGUE7U6YzhWffckwJP2ni27yzgNZMyhqGo0BwX1u6BKT9tHP6M/hDIE
- eQtKp0whZjiawzJITsPr+k5rgUX+lY+zNaH4/jG0zOzDxxM5S2sxYVX1zDVFUx6dQI60t5sPO
- R/zsMdDZRi1GlHsS8aom6tJ631r3lW8H+Bv8Ibtijx0rfcgwBvjrBOSC1vZNiiUte/ASJ70zj
- 1vmwZnE3SF9jqftIHCg9He5f8sTa7+RJRfUb7MEAbl+oH8up0CgI1ykjHQp0c1DzFj21exEGV
- K/AwxkJvRPaLYiZM9Gj3OxbntVF/4H/Xo0yn2LwupyoVkGvRr+mSiN478nMQkQb8s/W5QsNfF
- TPvLMaTRgsBWvDQQkyIIR8shGiei+GU2bRtlHe94Q4mqzfj3GIGnHkkDawSGuOs+eHkWQZk63
- 1DVxbpn/Hdoyuq9jtm7PLgrOtfjYcTmDctOKm5BH7/ZJf1CAy4cMbusZSD7+PiaCoqKmvxsHh
- oEibt/nYMh/fnSWRMwlF4y0Z1IQkul1jYo8r+FpSSSvr87Ey5tX47PSd9uYaL9RKisih7XGMW
- VoZtwR1VJmHM0HT1RRCfVWtkVF46pgMpCW13enNOzQfCs9CxHLNJVxSYAoosbxP2gDAQN4AZo
- dLhQ4wOf6WQMLxq8X7SEK9dL1xbziSor09RkzIKUrRhfSuG0ZrcVS/LJpOzTaPvwYSOf0zz
+In-Reply-To: <000401d5635c$78985d50$69c917f0$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_130814_096735_907B52BA 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20190904_140658_054964_6F29AA0B 
+X-CRM114-Status: UNSURE (   9.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: Re: [OpenWrt-Devel] [PATCH] base-files: fix get_mac_address not
  accepting hex offsets
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -81,192 +91,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0529726238543509082=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hello Adrian,
 
---===============0529726238543509082==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=9J4lfdUL8W1F7T=-="
+On 9/4/19 10:08 PM, mail@adrianschmutzler.de wrote:
+> when I tested it then, the hexdump offset did accept hexadecimal values intrinsically.
+> I remember that because I was quite surprised that offset accepted hexadecimal values and size didn't.
 
-This is a multipart message in MIME format.
+This might be the case for hexdump, however dd does not accept hexadecimal values.
 
---=-=9J4lfdUL8W1F7T=-=
-Content-Type: multipart/alternative;
-	boundary="=-=3HezSNID7LmfDa=-="
+The commit message is indeed not correct in that regard. However I've changed the
+evaluation there too, as originally it was provided decimal numbers, keeping the
+underlying call stable.
 
-
---=-=3HezSNID7LmfDa=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,=20
-
-> -----Original Message-----=20
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]=20
-> On Behalf Of David Bauer=20
-> Sent: Mittwoch, 4. September 2019 21:19=20
-> To: openwrt-devel@lists.openwrt.org=20
-> Cc: mail@adrianschmutzler.de=20
-> Subject: [OpenWrt-Devel] [PATCH] base-files: fix get_mac_address not=20
-> accepting hex offsets=20
->=20
-> The get_mac_address helper methods did not support hexadecimal offset=20
-> values, resulting them to break after 75bfc393ba6c ("treewide:=20
-> convert MAC address location offsets to hexadecimal")=20
-
-when I tested it then, the hexdump offset did accept hexadecimal values int=
-rinsically.=20
-I remember that because I was quite surprised that offset accepted hexadeci=
-mal values and size didn't.=20
-
-In particular I've always been using get_mac_binary with hexadecimal values=
- as second argument.=20
-Or am I misunderstanding you somewhere?=20
-
-However, converting it as in this patch doesn't hurt, especially if the beh=
-avior of hexdump changes in the future.=20
-
-Best=20
-
-Adrian=20
-
---=-=3HezSNID7LmfDa=-=
-Content-Type: text/html;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
-osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
-//www.w3.org/TR/REC-html40"><head><meta name=3DGenerator content=3D"Microso=
-ft Word 15 (filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0cm;
-	margin-bottom:.0001pt;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	color:blue;
-	text-decoration:underline;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-priority:99;
-	color:purple;
-	text-decoration:underline;}
-p
-	{mso-style-priority:99;
-	mso-margin-top-alt:auto;
-	margin-right:0cm;
-	mso-margin-bottom-alt:auto;
-	margin-left:0cm;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;}
-span.EmailStyle18
-	{mso-style-type:personal-compose;
-	font-family:"Calibri",sans-serif;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-size:10.0pt;}
-@page WordSection1
-	{size:612.0pt 792.0pt;
-	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
-div.WordSection1
-	{page:WordSection1;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DDE link=3Dblue vlink=
-=3Dpurple><div class=3DWordSection1><p><span style=3D'font-family:"Calibri"=
-,sans-serif'>Hi,</span> <o:p></o:p></p><p><span style=3D'font-family:"Calib=
-ri",sans-serif'>&gt; -----Original Message-----</span> <br><span style=3D'f=
-ont-family:"Calibri",sans-serif'>&gt; From: openwrt-devel [<a href=3D"mailt=
-o:openwrt-devel-bounces@lists.openwrt.org">mailto:openwrt-devel-bounces@lis=
-ts.openwrt.org</a>]</span> <br><span style=3D'font-family:"Calibri",sans-se=
-rif'>&gt; On Behalf Of David Bauer</span> <br><span style=3D'font-family:"C=
-alibri",sans-serif'>&gt; Sent: Mittwoch, 4. September 2019 21:19</span> <br=
-><span style=3D'font-family:"Calibri",sans-serif'>&gt; To: openwrt-devel@li=
-sts.openwrt.org</span> <br><span style=3D'font-family:"Calibri",sans-serif'=
->&gt; Cc: mail@adrianschmutzler.de</span> <br><span style=3D'font-family:"C=
-alibri",sans-serif'>&gt; Subject: [OpenWrt-Devel] [PATCH] base-files: fix g=
-et_mac_address not</span> <br><span style=3D'font-family:"Calibri",sans-ser=
-if'>&gt; accepting hex offsets</span> <br><span style=3D'font-family:"Calib=
-ri",sans-serif'>&gt; </span><br><span style=3D'font-family:"Calibri",sans-s=
-erif'>&gt; The get_mac_address helper methods did not support hexadecimal o=
-ffset</span> <br><span style=3D'font-family:"Calibri",sans-serif'>&gt; valu=
-es, resulting them to break after 75bfc393ba6c (&quot;treewide:</span> <br>=
-<span style=3D'font-family:"Calibri",sans-serif'>&gt; convert MAC address l=
-ocation offsets to hexadecimal&quot;)</span> <o:p></o:p></p><p><span style=
-=3D'font-family:"Calibri",sans-serif'>when I tested it then, the hexdump of=
-fset did accept hexadecimal values intrinsically.</span> <br><span style=3D=
-'font-family:"Calibri",sans-serif'>I remember that because I was quite surp=
-rised that offset accepted hexadecimal values and size didn't.</span> <o:p>=
-</o:p></p><p><span style=3D'font-family:"Calibri",sans-serif'>In particular=
- I've always been using get_mac_binary with hexadecimal values as second ar=
-gument.</span> <br><span style=3D'font-family:"Calibri",sans-serif'>Or am I=
- misunderstanding you somewhere?</span> <o:p></o:p></p><p><span style=3D'fo=
-nt-family:"Calibri",sans-serif'>However, converting it as in this patch doe=
-sn't hurt, especially if the behavior of hexdump changes in the future.</sp=
-an> <o:p></o:p></p><p><span style=3D'font-family:"Calibri",sans-serif'>Best=
-</span> <o:p></o:p></p><p><span style=3D'font-family:"Calibri",sans-serif'>=
-Adrian</span> <o:p></o:p></p></div></body></html>
-
---=-=3HezSNID7LmfDa=-=--
-
---=-=9J4lfdUL8W1F7T=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1wGacACgkQoNyKO7qx
-AnC+YxAAryLv0zX3urrKk8uPV8Snbr9lqJ6jCbsiyL2UIfvVBVIM5jGfwE67Gio5
-qqaZWqhAQdDZt4arQ3W9KLW+yi4a3yZUWpndYiqg+yGb0j7q6I/5hdENw94WKR4j
-9qTzpJy3Liw64sg/2pbEG+zWlO/zEQGqESfmmKgJhmXuZqIt34fiGJ5JQIzIdK1s
-M6ZkSenAhGJxCMaDK43wKySO8kqPnGzwUlS01c4hP+eh9nuZ8Dk1m5KrxsKD9ffk
-CMkcM2WxFLfj6TwIkBg6ovPuoIYiC5WjT7lDNlb5XRFKRBb3FD9lcPgSdPWmlZTy
-i9glJ2BymdMurR2ZoZa7OX2j7XajvAxjNNNAEEIfMxKIKdznPsPA6kYn0Rz2kAJi
-DAbeHa8Jb05kJGynk979sNsiG1fAabAFKooJ91Wv2qN7n2Q4CcHLjfBGsIUIxQC8
-TXn84V9dtY1C+Np2VMjE+EubqGwA3iQynaHD/dOUn40Mk/z6sj97douzguV7GzzX
-2AqByOAZdozWmOra/QaWxsukD3BpkUofYMXQx2o6B0sjAV/3Pd++s+SubNcn0DKs
-VnSLcxQC5T3XXopbVGnDXqhPPeZFVKB+xjzhTXujfR/3DmePdYqjcqWXRdeaEJYm
-BlhM0GFzGb1VLf5jJ3EBtwdWax3JVW+SM+73PMcQXLpEinmc52Y=
-=WOAN
------END PGP SIGNATURE-----
-
-
---=-=9J4lfdUL8W1F7T=-=--
-
-
-
---===============0529726238543509082==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best wishes
+David
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0529726238543509082==--
-
-

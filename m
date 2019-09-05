@@ -2,94 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D0D8A9A61
-	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Sep 2019 08:11:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D0CFA9B50
+	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Sep 2019 09:12:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cwjPUCABHWoDNSSz0QbBLXyjJLegR/sINAT45pe3Wdk=; b=EY7Xz8D7AvdthO7IS/1+bXhQX
-	sFK4662EUQR8w1Ur7kVtQjlZnuGg7Zwkebb4jELDFmoYZzTQ32Xww7a6Mn6wPqfVIMexghWigfrBs
-	KwIo7yVz9qZvk8Pgzcl5JEfQYpjqVY0kREz9OBQ+mplmMKHN9etF+y4ccT+KJOvMbX1QI/IYlHcSH
-	WQPupB2sbNVaAqxqvuZghonCm18ajSgYw1YIk3jkTe8s90Eahr95XMqXeq6YNJza+40bOItn/f8Yg
-	lK/HRX+cnRv4GS8VbTSc5yfcsRkCh2S7hqdvOxg0XdVTiyQwCpCul7mR1tA7LPDsdVXvJKKNR3MJa
-	fXAFXdK/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YfC+PuFkZ6/a3U9vfW0sjDKhuMn8ZXciLbgiKG+bsiM=; b=Q8Z1nOT+cLBzR2
+	iCO9FN/mpRq3D/wcWC1MwIC+cadVJ91DE2b49UGTL6M3e+B0OO+7GBL6YVQEsYVLniI8ENhdKagL+
+	VjZOofJu0wIMkPEhWdTla1XUg5rqSwKFYAWlpfu3Bi5rncXlT3h6EofUx+/gIMGFSuinA/kB/AXvq
+	ktBIS3sQIgsAdtkWN6gN3UlJoxbXBkyxbVIKOy5hSJ/aIUyPiBmIRzYCWTbItXZIFH4mNbR7h8h8H
+	cnX6/17DD61kKKfPexpn3MYik7CdHf8NWVj/AXck5B5fo1fOg+ukLZkALG1VtsqLgGZS3mnWc8Ubc
+	kUWmzcLHkUVA/JvWmKpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5kz6-0006Yg-Av; Thu, 05 Sep 2019 06:11:08 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1i5lwA-0005tJ-SA; Thu, 05 Sep 2019 07:12:10 +0000
+Received: from n1nlsmtp01.shr.prod.ams1.secureserver.net ([188.121.43.201])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5kyp-0006YK-L2
- for openwrt-devel@lists.openwrt.org; Thu, 05 Sep 2019 06:10:53 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id s18so1187414wrn.1
- for <openwrt-devel@lists.openwrt.org>; Wed, 04 Sep 2019 23:10:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kresin-me.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=tzkbHnVu20LTsdonvyTUArl3hOV8wpG5awxDajn/riM=;
- b=G4XTNVT33X9KZk6tlXU8Kl8nsLgthLa1urH5JBVTYI2nI/dyGHeL8FuZxYqusmV9ZP
- LseceZCFyWTs0Zamavx0Qo5uEI3d2G1W40aWEW+1veUvuZ79RYXIf9hdiHGGpkidZEMk
- ossbEzcXl1WJvZ3hQrViH1wrUuw4Uafr9cZ/rhn5kPUeeVaC9DlbhWHpq4mA6wITIwj5
- VsUv69lXfx9pIJHgY+IWXFc6D4WtaVddpogaCse183L6xXeMiVE7bRUcn758HgTV8Mo0
- PirpNdF/USWK2AaklbnqwaOrM4O9VKEAG3sYL2i6Qw/R6EXPye8PkVIAm7sQ/4q4AJDa
- UcDw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=tzkbHnVu20LTsdonvyTUArl3hOV8wpG5awxDajn/riM=;
- b=Y4q7XjGFO5BjkrAcH4inM7vLqRrTjqLw0dCxsw1aR9o63YA0YEEbMGmOwnwNlzbgkv
- 89OajvfSSI6QyR+Y6iNzWZjlNCVqyx/g5v99YDn5LkkUWkZw24brUxZh8PkCwmlwt2Ic
- IP+1vy63nEhQAI9ADTYsWz2Z8METCrn0zNweW7gr0vIYGMBRl3xjpbvdH3cAk+9fNNqE
- xYpmyJs9Gnev5VFzPegbiZskix8u0dB/w8l0qOUchnwhmaLT03y0hiH/czCzhR38bQ7T
- yvJLepiU4cm8k7An8yZ5wwuhdrxgGAnhNNLTM+zVPHp+ELlJmjzdLJojDD7xMkYTpBnT
- ZKLQ==
-X-Gm-Message-State: APjAAAXFxfdgbyNK9R0dE2xGWrSDKiqDt4CHWxFT41ol1mVG7uZCRncg
- glXcGRXFOIWVCR4PfEXMeMmLWDDwyI0=
-X-Google-Smtp-Source: APXvYqxj+dmsVBNOF8z6ZaCZHmfbCS1deIcyK9fsXsWey+aq2kXCqrbAl3W97zN5LddHeJQIiCpWdw==
-X-Received: by 2002:adf:eb4b:: with SMTP id u11mr1059408wrn.121.1567663848917; 
- Wed, 04 Sep 2019 23:10:48 -0700 (PDT)
-Received: from ?IPv6:2003:ec:2f0d:4a00:2487:26b9:aa1c:a0b0?
- (p200300EC2F0D4A00248726B9AA1CA0B0.dip0.t-ipconnect.de.
- [2003:ec:2f0d:4a00:2487:26b9:aa1c:a0b0])
- by smtp.gmail.com with ESMTPSA id y14sm1395773wrd.84.2019.09.04.23.10.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Sep 2019 23:10:48 -0700 (PDT)
-To: Enrico Mioso <mrkiko.rs@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>
-References: <alpine.LNX.2.21.99999.352.1909020530360.2689@localhost.localdomain>
- <alpine.LNX.2.21.99999.352.1909020624220.2925@localhost.localdomain>
- <919fe9ff-bdf6-e3a4-1dfc-ca53284b5986@hauke-m.de>
- <alpine.LNX.2.21.99999.352.1909041159540.3532@localhost.localdomain>
-From: Mathias Kresin <dev@kresin.me>
-Message-ID: <0d225f83-97ae-d3b3-4f56-9803f9b4f80f@kresin.me>
-Date: Thu, 5 Sep 2019 08:10:46 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5lvr-0005dg-UI
+ for openwrt-devel@lists.openwrt.org; Thu, 05 Sep 2019 07:11:53 +0000
+Received: from n3plcpnl0116.prod.ams3.secureserver.net ([160.153.154.141])
+ by : HOSTING RELAY : with ESMTP
+ id 5lu9iSB7L23ui5lu9ibZHL; Thu, 05 Sep 2019 00:10:05 -0700
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=globalwebdata.com; s=default; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=uVRbrxa7QRFYDAodCfCRmz8mC7s2yboaQ0SnO9dA2WA=; b=lcccCa8L6+QVmFVIhcXmiXsgES
+ a+iuYX/dBja0IcITzuBigMsbhbia9H4317Y3wXRtOxpsImCGAnqqqdF0+IcoPseCWTUkFHhNOMteO
+ maO2dfFKoP/RwiXYtBNs/owqtsVvvU84WF5k99beTV1gheyoz+laNAIyndSkCVHJWxcYrJLzXTa7N
+ duK0JyBBxIVWl1NfIgwcUkS8xOAIC4oji3WIX5poJ6vRYdCWEIalqH+eRaKmP+SULMFHNu7L1WP6C
+ FxJE/sx5RgJ2FYEdt4g/4gAMpt6hkCCamrje90DluIgt5+eRXEwBeBRbcOmoZhScp3y939BJ5TeRm
+ pNtZJM4Q==;
+Received: from [106.51.19.105] (port=20761 helo=RAJESH)
+ by n3plcpnl0116.prod.ams3.secureserver.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92)
+ (envelope-from <lisa.williams@globalwebdata.com>) id 1i5lu9-005W1S-I8
+ for openwrt-devel@lists.openwrt.org; Thu, 05 Sep 2019 00:10:05 -0700
+From: <lisa.williams@globalwebdata.com>
+To: <openwrt-devel@lists.openwrt.org>
+Date: Thu, 5 Sep 2019 15:09:58 +0800
+Message-ID: <062b01d563b8$f02904d0$d07b0e70$@globalwebdata.com>
 MIME-Version: 1.0
-In-Reply-To: <alpine.LNX.2.21.99999.352.1909041159540.3532@localhost.localdomain>
-Content-Language: en-GB
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AdVjuOgoeWfFz9ndTRGtQ2AdqJQvxA==
+Content-Language: en-us
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - n3plcpnl0116.prod.ams3.secureserver.net
+X-AntiAbuse: Original Domain - lists.openwrt.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - globalwebdata.com
+X-Get-Message-Sender-Via: n3plcpnl0116.prod.ams3.secureserver.net: authenticated_id:
+ lisa.williams@globalwebdata.com
+X-Authenticated-Sender: n3plcpnl0116.prod.ams3.secureserver.net: lisa.williams@globalwebdata.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-CMAE-Envelope: MS4wfNVPItnb2UmmrzffQJypp07qEhxURR/mcD2KtbSKL1jbpAOocIrRuwQKnfJzfbE+nU209y2WcnNNpIY8tDHZ/9O2tMabMhq4wTM1HEY58zPwP53yEMIa
+ 3EgqvAxHvfKDKLYmhfhWIghdL39a0JpeBH3l3XXqAtlquG/idgfSZeA8v2OVjpPqpRD4mUItRnYKOWq+iXNfsA5iWSi74V5j/YDvUQGg0uVkMaO9HzcIB2Nw
+ YtGN5t2hwTw8v+ByelhtKw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_231051_718894_05CD9B82 
-X-CRM114-Status: GOOD (  10.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_001152_128260_7D687701 
+X-CRM114-Status: UNSURE (  -2.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42d listed in]
- [list.dnswl.org]
+ no trust [188.121.43.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [106.51.19.105 listed in dnsbl.sorbs.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] AR10 GPHYs (WAS: Re: [lantiq] general help on
- AR10 platform)
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: [OpenWrt-Devel] 2019 IBC
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,46 +96,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-MDQvMDkvMjAxOSAxMjowNywgRW5yaWNvIE1pb3NvOgo+IEhpIHRoZXJlIQo+IAo+IFNvIEkgYW0g
-dHJ5aW5nIHRvIGdldCBldGhlcm5ldCB3b3JraW5nIG9uIHRoaXMgQVIxMCBkZXZpY2UuCj4gSXQg
-aGFzIDMgR1BIWXM6Cj4gCj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ3BoeTA6IGdwaHlAMjAg
-ewo+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJsYW50aXEs
-eHJ4MzAwLWdwaHkiOwo+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4
-MjAgMHg0PjsKPiAKPiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlc2V0cyA9IDwm
-cmVzZXQwIDMxIDMwPiwgPCZyZXNldDEgNyA3PjsKPiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIHJlc2V0LW5hbWVzID0gImdwaHkiLCAiZ3BoeTIiOwo+ICDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIH07Cj4gCj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ3BoeTE6IGdwaHlANTggewo+
-ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJsYW50aXEseHJ4
-MzAwLWdwaHkiOwo+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4NTgg
-MHg0PjsKPiAKPiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlc2V0cyA9IDwmcmVz
-ZXQwIDI5IDI4PiwgPCZyZXNldDEgNiA2PjsKPiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHJlc2V0LW5hbWVzID0gImdwaHkiLCAiZ3BoeTIiOwo+ICDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIH07Cj4gCj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ3BoeTI6IGdwaHlAYWMgewo+ICDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJsYW50aXEseHJ4MzAw
-LWdwaHkiOwo+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4YWMgMHg0
-PjsKPiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlc2V0cyA9IDwmcmVzZXQwIDI3
-IDI2PiwgPCZyZXNldDEgNSA1PjsKPiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJl
-c2V0LW5hbWVzID0gImdwaHkiLCAiZ3BoeTIiOwo+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH07
-Cj4gCj4gQW5kIGZpcm13YXJlIGxvYWQgYWRkcmVzc2VzIGZvciBHUEhZcyBhcmUgY29ycmVjdCBh
-cyBwZXIgdGhlIHZlbmRvciBjb2RlOgo+ICNkZWZpbmUgSUZYX1JDVV9HUEhZMF9GV19BRERSwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICgodm9sYXRpbGUgdTMyKikoSUZYX1JD
-VSAKPiArIDB4MDAyMCkpCj4gI2RlZmluZSBJRlhfUkNVX0dQSFkxX0ZXX0FERFLCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKCh2b2xhdGlsZSB1MzIqKShJRlhfUkNVIAo+ICsg
-MHgwMDU4KSkKPiAjZGVmaW5lIElGWF9SQ1VfR1BIWTJfRldfQUREUsKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCAoKHZvbGF0aWxlIHUzMiopKElGWF9SQ1UgCj4gKyAweDAwQUMp
-KQo+IAo+IEJ1dCBkcml2ZXIgd2FzIGZhaWxpbmcgdG8gaW5pdGlhbGl6ZSBkdWUgdG8gbWlzc2lu
-ZyBjbG9jayBnYXRlcy4KPiBJbiBzeXNjdHJsLmMsIHdlIGhhdmU6Cj4gY2xrZGV2X2FkZF9wbXUo
-IjFmMjAzMDIwLmdwaHkiLCBOVUxMLCAxLCAwLCBQTVVfR1BIWSk7IC8vIE9LIGZvciBHUEhZMAo+
-IGNsa2Rldl9hZGRfcG11KCIxZjIwMzA2OC5ncGh5IiwgTlVMTCwgMSwgMCwgUE1VX0dQSFkpOyAv
-L3Byb2JsZW0gZm9yIEdQSFkxCgpUaGUgZmlyc3QgcGFyYW1ldGVyIG9mIGNsa2Rldl9hZGRfcG11
-IGRvZXNuJ3QgbWF0Y2ggeW91ciBkdHMuIEl0IGhhcyB0byAKYmUgIjFmMjAzMDU4LmdwaHkiCgpS
-ZWdhcmRzCk1hdGhpYXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Bl
-bndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53
-cnQtZGV2ZWwK
+Hi,
+ 
+I understand that you were exhibited at IBC 2019 (International Trade Show
+for Media, Entertainment & Technology Show) and was wondering if you would
+be Interested in acquiring the
+Attendee Companies List.
+ 
+We have the most updated records of attendee companies who are participating
+In this event. 
+ 
+Information Provided: - Company name, URL, Contact name, Job title, Phone
+Number, fax number, physical address, Company size, Email address etc.
+ 
+Our lists is the best source for awareness and can be used for Booth Invites
+- Marketing initiatives - Product launch - Brand awareness - increase in
+Revenue etc.
+ 
+Let me know if you are interested so that I would ask our sales to provide
+counts and cost accordingly.
+			
+Regards,
+Lisa Williams	
+B2B Marketing & Tradeshow Specialist
+
+If you do not wish to receive the attendees list, please reply as 'Opt-out'.
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

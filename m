@@ -2,58 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AC88AA166
-	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Sep 2019 13:29:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EC59AA458
+	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Sep 2019 15:25:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xpoEmqBxE1aNtd/8psC8pRJ4UiegCJgGuQ/8Ax+8eK0=; b=hmXEF6l9dUdZro
-	gNKLGSdfY35xhAcZ8d3Uvyyjkc2fH9gxnj8GWAASrUPe33h776LOiL9+mS5UNvLECFmrE/p/sTAsJ
-	Q+EfieUw1hPuUeGbwKguXESDDf/fFgvOcuvfjXMHmUAHLFgLpYSfiTp5vYWBdRNcudeUbOBjycxqI
-	QWyrW/uyoxLj/YZJUiXvbyQ50hI0jDDY+I5t/q4KpsaCSGFeBCxooT+4uX1cOUokSS+2qMmkxyPsL
-	y1G8CkSu3XLOaSIqoHB+CoF5Kkt/K0HFyDS2Lvtjs34WLjCGfVHHm620aspwcmrQqt0NM40d9Niz7
-	jzxu9aiFrvi+8GNC7zJQ==;
+	List-Owner; bh=6Tl068YOkSi7j9IygbIueCLLDnX888j/h8fjgyeSkO8=; b=STquFpe8JTrYIs
+	AkWKR0VGhxaoIwagL1yRNF+ea1kXXyTKblnYXvWibnIErCw+0A4J3UAgNSO9voNO6yqE1CaRYKQjs
+	sfA9H8Z64+wGqsDRLgagX8FSIgs/62uNQox7v/HzHU5wfW1Pa7heQ57epeqCyg3lNOSaD/Eojg6bI
+	8+BWTLHATHE3hE0+k2E7hU8iQJSDBvdhjksiImXCy3MyuhUV+bG2qSOG2b+5buNNbscLx1OB7c4Ou
+	VtCFyKK+JAKGOgGBykps5uF8zqzLlAavhSjeOT785y0jHhXiq0qqB3rWq4LOVjx7DKWjIiDJpzTCg
+	+fqSYdWEOr/37aU7j5dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5pxZ-0006Tk-OE; Thu, 05 Sep 2019 11:29:53 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1i5rld-0007ba-Tn; Thu, 05 Sep 2019 13:25:41 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5pxP-0006TK-GB
- for openwrt-devel@lists.openwrt.org; Thu, 05 Sep 2019 11:29:45 +0000
+ id 1i5rlV-0007aH-9M
+ for openwrt-devel@lists.openwrt.org; Thu, 05 Sep 2019 13:25:34 +0000
 Received: from buildfff.adridolf.com ([188.193.187.204]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1N1whr-1iGsUH3d5l-012KGR for <openwrt-devel@lists.openwrt.org>; Thu, 05
- Sep 2019 13:29:40 +0200
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MY60J-1heCXs3FDp-00YOK2 for <openwrt-devel@lists.openwrt.org>; Thu, 05
+ Sep 2019 15:25:29 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu,  5 Sep 2019 13:29:37 +0200
-Message-Id: <20190905112937.1341-1-freifunk@adrianschmutzler.de>
+Date: Thu,  5 Sep 2019 15:25:24 +0200
+Message-Id: <20190905132526.2376-1-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:2VP4XjHUjULQ1hKjZyHwZBDPRACgjyydYthPTQOJXPjJUCGg4Fa
- XZK9SG2KJQMsQyYNdV7ShXl0FDkpmWK1olN2WP/7usxPvkt8qJTj4O0ubHVFImgUm3ZTh34
- +zy89E+HDd4+oKmnjPPx0M31ZuTOBAaFyW/EigDJ7gJEQ0M1pIB8vC6F+ezqXD3+vYDoGpL
- CcLcgaDZe6ew7QnUr3L8Q==
+X-Provags-ID: V03:K1:3x6W9VmxZazBM8B+pZVM7af0SJvT6PFco3Q5hZFnoLN9D8/J3N2
+ ZyRod5OQsTBmLkrLT+8oKjO5WI+zXbPi/FfJnvcE8wP2UhJd1r7jj7yEsS+cmxRNsSE+Sc4
+ xF2pxnC0ge3zwdvl1wzfWxbZrVx6i3Jy1CUF+MmdTb4vLVVQonBtjaA0DUfBKmRJJLNsrJe
+ RlDMhNwmzVGjpuwQNxHQw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:2omKUlKqVSM=:khuOvBP0zEU7I4JPLGM5KH
- +hoTYrluEJ0dRD+/uBTBoLnnNiYADU4g9hhLL8sLEirFYI1xUt+ZErIYI4SaqohBUbfyHSiT2
- uGvlrmAHVB11g1stEkV1qrozr2Yzb04KLPi+bUhic31shbYMQHGJOBP+va2kQi9ttd4BqYoBn
- HSWKWcEWn653uNw8RYAG+1u8sYz0eAAsrfCAvVITkWfPRmi7DudHSy4zYbEIUA3HPr9cjFhHl
- 0bUNB2NtE+pXySIeBhk3PiCGtZzncKgPf9qRoJZMx7gqq9nY98UiVPTSYqgTeyG7zaG60Hxfw
- APGQocZO8aoY6t1ZznglO4wyGZgayDvWzU9df5erhAb0rui5mSmh/tqWQyRvMPb2pZq8P/tZQ
- R1UEt+RLzlFV1jGIeUx9rJ3AUM6ahrPDeAETnDgh9t6Z4LjZixp3L+cVFZ0U3EiBD4gJy6UnY
- ut9VlW6i5QsOYP/Y0aJXF33koNAZGiLUbkYt1YHz+1V89LdktsQGY/kBHwlj8SFruuuHg5k+R
- /YXdQnU+c+PUFRDee3si2PxeCqrEsJ4lGvzUbKesB8eEVugr8ugt4Ybbb/fXL8SOiaM9OFVt0
- G1rGjvc5utlaNAT+1g69t1wyARgpOJN/VkkOgWvG+374uCrNlrob4r6MunJ457TIgtxMpLiKt
- +/n29LBbjT9bXQGJH8K5ZnMezpTacc519Au+izwb4AaZePJSaMGed4PMrW2wbx8cXkLEqkR5P
- wFwDcuiXLL9G3h1SlwDj/4HhCy/a51/Jw6skzIHcDx1XYdgNC3D+Y35QP3LY+AniT0t8+QMGw
- 4DojsELPZh/j7i0bswkJkZ/RG0FdbF7v+gOOfA9zm+6fSWLGPEsK9mRW+VNhQeQFcQGgoig
+X-UI-Out-Filterresults: notjunk:1;V03:K0:njeYnnS7Q3w=:742ARcQHjcBzeg5VS9Pu2k
+ 9cYQU/crZwmCgdleDAmCtxtzN97zp3jNwxMVr9OV082efYzAPPmCirQF0tIiWzm4MyzxXF3p/
+ Lje0JpYqjoxShN2eJf4mUXSPf6tOZbCPIec8rDHjNlmRLrAbFyyHXCPggpSxLePc7Ci8IaIZ4
+ QNLIl+EzjKwe0IiFnctuMjgXzE6TFkQUpz6mYSRDA1aam+lHBZVSONdhN/YYf7MfPbxR/hBbj
+ UbwDhSWRaSfli7LLYSWMU/hO8+R6QA0TYXUIcGtTHy4kqPI+pcDVPyBQrPtR0MAI9QWFaSGoC
+ CF+M631mlLOQ7aJZIQ5Tyk6QcyIzfzFdq+dwoUMLA/GkwY48cwPs1IHIwP5En3oPG36bmA/gW
+ iCG6dRy/Q7nWpbshdEdl8P+8Mgs8/v9KRd1M4rgoWODHtujcLwx55sEWqkr5W6ExDIVEZTZeB
+ srXkJbmHnKEGuh/sLXgiLcSSYoit8e+Ys3ZC0//TJSyzlHI9QJGt2J5Fja8G0qZAQ23BWjvAu
+ 26aUg1L3pWEUz6u95sHnViiHfoQpD/6WP0Oi8Ped67YRA8+eYwgpoHlrHU/bH2PNh4ODyvUMx
+ bfD0pc4ppEGL88bcdEus32XzJbfwmp7UK427ca5SB4LprmuMmzvVYcwbBVmMMIA3JxTbbIRPb
+ D0yQnkYI8Z8eSuwmoai4xH80pgtCNIzwzYLtRVdjmjvL7DcrzjE1U/HHGiavKqUVEdSBY15Vu
+ SarTN9O9tTGIuo6XLkMvrGAKC6K2e1TXhInZWnERob7Ze6QWC9j1SAuXQ+4/AE/BrCRdX0M/B
+ 0MNbvhqMi24cmgzAwNaDsjW0wJlXM5gM5hFudnofkFw9wLHjw8Mx2lwNUQQyPKHYFFVUcKa
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_042943_834193_4ADB2123 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20190905_062533_623848_FF383FC5 
+X-CRM114-Status: UNSURE (   8.93  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -61,11 +61,13 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] base-files: use get_mac_binary() in
- mtd_get_mac_binary_ubi()
+Subject: [OpenWrt-Devel] [PATCH 1/3] ath79: fix whitespaces in
+ 10_fix_wifi_mac
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,41 +84,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The actual retrieval of the MAC address in mtd_get_mac_binary_ubi()
-is the same as in get_mac_binary(). Thus, use the latter function
-in the former to reduce duplicate code.
-
-This will also allow to benefit from the enhanced path check there
-and bring mtd_get_mac_binary_ubi() more in line with the similar
-mtd_get_mac_binary().
+This converts leading whitespaces to tabs and removes a double
+newline at the end of the file.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
 ---
+ .../etc/hotplug.d/ieee80211/10_fix_wifi_mac       | 15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
 
-This is not tested at all, since I do not own an ubi device myself!
----
- package/base-files/files/lib/functions/system.sh | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
-
-diff --git a/package/base-files/files/lib/functions/system.sh b/package/base-files/files/lib/functions/system.sh
-index 9b9d03df7b..dceb66a851 100644
---- a/package/base-files/files/lib/functions/system.sh
-+++ b/package/base-files/files/lib/functions/system.sh
-@@ -79,12 +79,7 @@ mtd_get_mac_binary_ubi() {
- 	local ubidev=$(nand_find_ubi $CI_UBIPART)
- 	local part=$(nand_find_volume $ubidev $1)
- 
--	if [ -z "$part" ]; then
--		echo "mtd_get_mac_binary: ubi volume $mtdname not found!" >&2
--		return
--	fi
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac b/target/linux/ath79/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
+index 3e1cfda84d..2e2179aee3 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
++++ b/target/linux/ath79/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
+@@ -35,14 +35,13 @@ case "$board" in
+ 			k2t_get_mac "lan_mac" > /sys${DEVPATH}/macaddress
+ 		;;
+ 	trendnet,tew-823dru)
+-	        # set the 2.4G interface mac address to LAN MAC
+-	        [ "$PHYNBR" -eq 1 ] && \
+-		        mtd_get_mac_text mac 4 > /sys${DEVPATH}/macaddress
+-	        # set the 5G interface mac address to WAN MAC + 1
+-	        [ "$PHYNBR" -eq 0 ] && \
+-		        macaddr_add "$(mtd_get_mac_text mac 0x18)" 1 > /sys${DEVPATH}/macaddress
+-                ;;
++		# set the 2.4G interface mac address to LAN MAC
++		[ "$PHYNBR" -eq 1 ] && \
++			mtd_get_mac_text mac 4 > /sys${DEVPATH}/macaddress
++		# set the 5G interface mac address to WAN MAC + 1
++		[ "$PHYNBR" -eq 0 ] && \
++			macaddr_add "$(mtd_get_mac_text mac 0x18)" 1 > /sys${DEVPATH}/macaddress
++		;;
+ 	*)
+ 		;;
+ esac
 -
--	hexdump -v -n 6 -s $offset -e '5/1 "%02x:" 1/1 "%02x"' /dev/$part 2>/dev/null
-+	get_mac_binary "/dev/$part" "$offset"
- }
- 
- mtd_get_part_size() {
 -- 
 2.20.1
 

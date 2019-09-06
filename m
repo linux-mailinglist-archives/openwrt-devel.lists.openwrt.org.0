@@ -2,66 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1DC0AB6F7
-	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Sep 2019 13:15:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AB8FAB8DB
+	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Sep 2019 15:05:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4ZpPX50YLGmY2biXCiS0Z0CYmRLWWecTinRi7u0yja4=; b=YVkBRkm0vWhmgb
-	s1OtWNa8o6R6vWZzKUx7oyqJROoiWkR2jp3Nn0pfQY6MFGvijK1cEtpJvmwu8jnsCmK9uUCn+QrLB
-	wyeTRTmgdYwwsCredU0WMIZbA7ZmP01hvNHerZeNi11cfpc0r49QhkTHjZW/nphkp6gwqjr7jAZpL
-	Dt7JvaERK91XwFRkCAcDP/1b9JRZUiy3xXcHCczHQKwkrj1+lnzZVJwmYX1blmar9mryAs40R5u+y
-	ecOgzuBDnPxkRC+s2oVthESAKhvs9t5UorjoOBkaEk1ORGpRQmxqiGq54LclXq2m2WPr/d24LQ72a
-	dQqkQfsKkkS6LsXkJDXQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=d0vvKglJLW8itGKi0GyQTrovHIPVcy58VkBgGfKI7jQ=; b=P5+JAqa362SLQyBmy2L2ag1lr
+	O7aTe0cbCi+OjcB3qsQUzL4gBlOL4iiY0LyjFzyndD6h7j2L85hN0BGL23fpIN0SYYu1Y4qcMgBF9
+	eIi24nd1RibKralGJCElOwD55gZpXhNtpFzRhxlEjZMJCAXW6YwH11AkZdd1ZOWPSwsPb31xDsGx/
+	jbCKJbDCtM+phhPiA0KLasNcAE3QWjsOk2MF3HhX6wQaPge9lldTBQHtWdWDKYKbjVthvDVZcq31l
+	Cg6hNRlX0UyINL/TtciIKzZkO5zmMZWACw5sjjjm0skJr9FAQO3Rld6G0J6iOheTO19fQkp24mcvT
+	xkhSkPe1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6CCk-0006UE-98; Fri, 06 Sep 2019 11:15:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i6DvY-0006az-3x; Fri, 06 Sep 2019 13:05:24 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6CCa-0006PC-Na
- for openwrt-devel@lists.openwrt.org; Fri, 06 Sep 2019 11:14:53 +0000
-Received: from localhost.localdomain (unknown [151.66.4.139])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 74B8E206BB
- for <openwrt-devel@lists.openwrt.org>; Fri,  6 Sep 2019 11:14:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567768492;
- bh=rfdKuT8+ZBrD3/Ahasr8fHbhT+1H5498ngJvvr8UxZE=;
- h=From:To:Subject:Date:From;
- b=wT2QywgQy5wj0/0FL6TnlN7cvqnFA3crav5rxO3qyCIEPySnHfa1xwQxJoUkEUj2e
- z0FTja9fgq6wtujbE4XFRVKPVTPkPvvRFiHLrEs1vpb6Fk6wCSJV6GXUKgP0m847O6
- t3a1TsgxAaJq0Lu8E7XoIoaxCgKInny8GDBbmY6A=
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri,  6 Sep 2019 13:14:39 +0200
-Message-Id: <5b53144b824a2514da2dac7eee3427e62ab865af.1567768333.git.lorenzo@kernel.org>
-X-Mailer: git-send-email 2.21.0
+ id 1i6DvR-0006ah-Ef
+ for openwrt-devel@lists.openwrt.org; Fri, 06 Sep 2019 13:05:19 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1N0Fl9-1iKIvy2mLH-00xK6n; Fri, 06
+ Sep 2019 15:05:09 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: =?utf-8?Q?'Rafa=C5=82_Mi=C5=82ecki'?= <zajec5@gmail.com>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20190906051054.18311-1-zajec5@gmail.com>
+ <20190906051054.18311-4-zajec5@gmail.com>
+In-Reply-To: <20190906051054.18311-4-zajec5@gmail.com>
+Date: Fri, 6 Sep 2019 15:05:07 +0200
+Message-ID: <007d01d564b3$b63ea4e0$22bbeea0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
+Content-Language: de
+Thread-Index: AQECTHRMTCLlI68ZA+Iqs4F85izFNQF8ofV5qLjo6IA=
+X-Provags-ID: V03:K1:3xTW2QBPtQ+ryuZ/b091QboAjubE61vHkdT67qjqGLRh+Xokf+p
+ m0ZIAf/3nawrj86DukNttq8geIoMEISxcTKngnsoFppL3WBQsTneSQya8xqvj/8l8eIzHjb
+ CbLVCx7lW7uGRC6H7RwKaudrmZJulnHSn3OR8LK3/t+DrOeIpfsOcD5rPeex16812PWfUyv
+ GTOXgXoogdxj2exQfX8DA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:MlytP6kDePs=:D0b3FYCHFOWtN8d+0fo1iR
+ THXORps/ntteqQH3efBkVVTsYSZ0pipOsQjssT42R4UcqMto565xcTXyF7WxTEwzK05wNSFum
+ NIrkiW7QVFYGTzZXpQkxRWa8QooZmNiNMekJbnkOImJ2EwLnfSqCXGWxhyZKxiUYN+NzuL7AA
+ +2PmshDiSWlqsNxa4KQrCwny+EaNRQmy4eyPG80PfI8YApONsYyGIjJw6czXu/uGK6nwC26nd
+ MhxvZGAMXfPCRCTO/B4rsnk4fDITNhQQVlR4KBi27Qlh19TSGRpHOH6e2fNm45ZPChru40SES
+ Q9rKgRwFTylW3QvG20QrSjVG2Pwc0OT8euxdJHqNyTt9Nb8HoLbGuv7EsH2EierQTm44DjQCk
+ DALkGB1mUI7zvCCplBlO3iyoIL5n4U7WKkBAE22stxumGilkxWmT+GP/woKA/OnR5vOn4816k
+ NqAbzbm9WhL/yC00LRtnd0j67CwRE+FWn0tsM/X5PVndheb4I803VDrtb+L+zqh3P4MJcIHQ+
+ 4TILLdMeNOR3zrd4uYk9w27CdFdYwgQtfcNtBvvCJzMnEC5zHsXjYBlXj+lGoe3nouUw9h5uD
+ w6432/RmIcufjFYa/6XEqfjmBz2LmuUbmpTh29TDMk4JP0Ok9wSUs6KQgj1mESX4ogzpkoKcY
+ Y/7rvMKpwum2bW2X2e1F36MXuzKyyICAKmKGu1bMIQV8+wKXUwWbcgcpKLjtRHVffjn+fIn6M
+ MN3pOE6mA24lrQDjygciB2Hkq9Pmwe/8IRbbhFFcFBGOsr6vmxnpRkzwSFfVebvAoqjtJGKyw
+ kYlinmQHp+vU1zrWQfrdJdXYaTxF+Vv7RQ9m3JluqhgM6smgjs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_041452_801341_C7EDE138 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190906_060518_391710_F92FF7F6 
+X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-Subject: [OpenWrt-Devel] [PATCH] mediatek: enable mtk_efuse by default
+Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: sysupgrade: use
+ $UPGRADE_BACKUP to check for backup
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,37 +82,93 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?utf-8?Q?'Rafa=C5=82_Mi=C5=82ecki'?= <rafal@milecki.pl>,
+ 'John Crispin' <john@phrozen.org>, 'Jo-Philipp Wich' <jo@mein.io>,
+ 'Jonas Gorski' <jonas.gorski@gmail.com>
+Content-Type: multipart/mixed; boundary="===============1168337452205209163=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Enable by default mtk_efuse driver since it needed by mtk_thermal driver
-to read sensor calibration data
+This is a multipart message in MIME format.
 
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
----
- target/linux/mediatek/mt7622/config-4.19 | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+--===============1168337452205209163==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=wE60mmTzLLhQeM=-="
 
-diff --git a/target/linux/mediatek/mt7622/config-4.19 b/target/linux/mediatek/mt7622/config-4.19
-index 5e3ceb3574..8f5e3bcaef 100755
---- a/target/linux/mediatek/mt7622/config-4.19
-+++ b/target/linux/mediatek/mt7622/config-4.19
-@@ -401,7 +401,7 @@ CONFIG_MTD_SPLIT_UIMAGE_FW=y
- CONFIG_MTK_DISP_PLATFORM=""
- # CONFIG_MTK_DRE30_SUPPORT is not set
- # CONFIG_MTK_DVFSRC is not set
--# CONFIG_MTK_EFUSE is not set
-+CONFIG_MTK_EFUSE=y
- # CONFIG_MTK_GED_SUPPORT is not set
- # CONFIG_MTK_GPS_SUPPORT is not set
- # CONFIG_MTK_GPU_COMMON_DVFS_SUPPORT is not set
--- 
-2.21.0
+This is a multipart message in MIME format.
 
+--=-=wE60mmTzLLhQeM=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+just a nitpick:
+
+> diff --git a/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh b/ta=
+rget/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
+> index e313562017..8e02186eb8 100644
+> --- a/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
+> +++ b/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
+> @@ -74,7 +74,7 @@ platform_do_upgrade_openmesh() {
+>  	#
+>=20
+>  	# take care of restoring a saved config
+> -	[ "$UPGRADE_OPT_SAVE_CONFIG" -eq 1 ] && restore_backup=3D"${MTD_CONFIG_=
+ARGS} -j ${UPGRADE_BACKUP}"
+> +	[ -n "$UPGRADE_BACKUP" ] && restore_backup=3D"${MTD_CONFIG_ARGS} -j ${U=
+PGRADE_BACKUP}"
+
+Any reason for the curly braces here?
+
+If not, I'd consider removing them with this patch ...
+
+Best
+
+Adrian
+
+--=-=wE60mmTzLLhQeM=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1yWXwACgkQoNyKO7qx
+AnD8bxAArKPtymPVJLuCNvxyEO5qYYat+wUL8HmLNiDZyliO0Ba4rHPChMxkAMmv
+SKIXTT8r9sp2kDGztQgFTQL5vQoyYktGt6prRk7okvyVr9Q3cRvS6U+RIyXTEaIS
+2Zs1qEhNdmHasR4kx98w7HDwhiWP7OExr5l48GL94YUsAWzg1AfVadG79NaYSI42
+GOGRq83BvVlatgVOEtBl/DqWQSzz5Wopi/3dNKWNPajM3NOuo0BJbq7yGkr1ARde
+mpBMgCRVktIs4wLWG/0+fHU00HO72YllcaGUISUdPTmqY0BUa5OY9H8o3Hxv3Xvr
+LsaVPbJ1mtDeMvkQg/IWn/AGTwAvW8R2XEXxL1ZRmKpu8lqqs/SP16sRPexI2t0n
+n4FlTlmnDJCaLqaF/heBxs6l/AQO0dfnm/jkUvulcFBQY1qn+RAaKr8TOBcCVDPA
+I4Kh/DyHeH3usip9RvpnSBdyK4u0+/tb6NTnMaaYQMxiGf29TnqKUFgdlQCQethv
+7nnmoY8ldP0UpO82dnHLuYzcL5Q0tih3Da6Z9i1YFE1mC/+820Q5APtT/GU8SvUz
+N7l96Yz1sqygouAR3wXij0GsSGNVZitleLAr1VJu3BST7HGBf0QNZt8qMtMS1xQz
+ut5gF16YdnN9v6Ftiwt1DpUKhlTfnKxvgnmDPdqvDAwnvF+eYjY=
+=MwWw
+-----END PGP SIGNATURE-----
+
+
+--=-=wE60mmTzLLhQeM=-=--
+
+
+
+--===============1168337452205209163==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1168337452205209163==--
+
+

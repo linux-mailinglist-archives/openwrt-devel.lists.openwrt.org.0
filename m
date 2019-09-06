@@ -2,75 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5693AB917
-	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Sep 2019 15:17:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DDABAB92E
+	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Sep 2019 15:23:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aySq9b6kpeHAkxrTm9RygEeebYdFdu6rshL0Ec834q8=; b=qHLBpl7eHr0Y8Tlj6NGfLRJWe
-	XOAMqEuyfoX6FOZm7qS9XXK70XPZIzv904lwP8KGDy/WRseknbmLVDZ7yRUlE47kB4LD9hpA0kpL9
-	c0uczqHNV+V2W8ulo4vDl5UyxHPD0wf8ugMz85U4IriQR9l/aunsR57plfReaBcW0AhprM6wokE7a
-	CSXogxa0vlR9luJoLgqIB9Jej9Iph/4iQyO5dn2XAWIe9L7oda88hf3aG9PgRdJIdl+gi0jrU63+/
-	DHTiDYYMLwSaWre4nA6UfTCjdt/8gDs8QRnq0F3PWloFK53Ydfqg/KsQ9RnTmDmum2Fm4Fo2PCo97
-	OMfkykgcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fQ7OqT23MIqvPkLjp2goUJUwadtm2vwHnwO3BzSk+LI=; b=P7u82+uP7r6LIz
+	snQ6gI/abngjRwR+ZyWObKrDzM1uLaQ/jj1YgIDIOaqUR3TOf1Zu5jejXDe262KJB9HhSoG1py3az
+	K1wd/CJFH2uuTAYCimP5eVJ2HOYklcHt+97SUdqjh79dQrOL35if7rDwp+PxHtVgN6fKwnmC4omAw
+	bMmkVeH4BwfxcdkQ3nSF9JR68W964jC0ZH65toMttoBQ+DAPNEaL4GQJ0TXyJ0TTcIemMnRj3BBOo
+	EW9f6iElXBqDcEt5SVOojF0m4VLsrTyDqpvIodbjawX/wKsRfqyLOcMUXKSFBpeflh6aZyxHrHN8W
+	rXWUjbI4RDeWLIMbCFlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6E6p-0002W0-7o; Fri, 06 Sep 2019 13:17:03 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1i6EDG-00056b-D2; Fri, 06 Sep 2019 13:23:42 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6E6i-0002VM-Vm
- for openwrt-devel@lists.openwrt.org; Fri, 06 Sep 2019 13:16:58 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MKsSj-1hs7bQ0zoz-00LCUp; Fri, 06
- Sep 2019 15:16:49 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: =?utf-8?Q?'Rafa=C5=82_Mi=C5=82ecki'?= <rafal@milecki.pl>
-References: <20190906051054.18311-1-zajec5@gmail.com>
- <20190906051054.18311-4-zajec5@gmail.com>
- <007d01d564b3$b63ea4e0$22bbeea0$@adrianschmutzler.de>
- <3dc6bcbd6132c0c470be5116de8512f1@milecki.pl>
-In-Reply-To: <3dc6bcbd6132c0c470be5116de8512f1@milecki.pl>
-Date: Fri, 6 Sep 2019 15:16:48 +0200
-Message-ID: <009d01d564b5$5739c680$05ad5380$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1i6ED8-00055v-Vp
+ for openwrt-devel@lists.openwrt.org; Fri, 06 Sep 2019 13:23:36 +0000
+Received: from buildfff.adridolf.com ([188.193.187.204]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1N9doJ-1iC5Bf3okX-015e1D for <openwrt-devel@lists.openwrt.org>; Fri, 06
+ Sep 2019 15:23:30 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  6 Sep 2019 15:23:28 +0200
+Message-Id: <20190906132328.3736-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQECTHRMTCLlI68ZA+Iqs4F85izFNQF8ofV5Ag+KBkQBSVDGdqieJPIg
-X-Provags-ID: V03:K1:f/R3jYcKupXao7jWiEs9/UsD/tWL7kUr6lH4hOhOEbW5CdDgeCp
- Z0yINZe3a3CKLWKSVj2a8ZDz+3t0uBAgmHjLfcXZFrcVmttxGBRC6qhSLJxrRredbRqVm3D
- MBEeSBfZbU9Y7hPfI+4LFGnzS3FQiY5ZXi6gEqWnRwz1FXRNoY14Blmt5r5Gse5hw0zw7pK
- GAUIohUhXSgJma1ry9f2Q==
+X-Provags-ID: V03:K1:isgQbGOTGglJqmYxonvZN4ovh1Txo9NKsBMo7QW2lJWIukx1y/I
+ xk9xB57YR1echIaDAl/VEtqX6S3xLFU41QLOjyicKl2S3HOGsGhY+9d6myO4haqmdn0Eo0W
+ SSLbsZbJwZHKvNRY+JMdr77dqUKYxxxxcWQMxki0BibCG+q39aR3RXkamX4RBveXn8peEzn
+ oYjrzao0cXQXg/KSQxx9Q==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ks4n7grYvfw=:ZM8YK7ghPcxKiC2nqGAZUy
- StYg4IWUeJudDmzGWsawYT0kHHWUmnHXThqnpqfa/WNA2W8PqywugPXRXMPwLmk6DiU/GVTZt
- rT/towtV1mrhuY3XtIeUtBniwVtaAAgQXTlZqXkiUreh2T2ayBko9mzkA9TsRYf2aOcgag6nE
- W1lKIDQUtrP4C/+1XJerr6QNJdDjOfaCUWHQ1BbEOlEFw/YVsuer0pZd/cEype+cCLPjXOr/R
- gk1shNXQ1ue60wtA8cNtzqiLHHqOc0pZ5Hl4+25XINL7jaJgmO2QZeB76vDBelNf1qvizcQmB
- FjszHG/yBDBA6jzAi8+FZ9kLBTisGsbyfz38R9oOLxM7NdID7ncBIbO+Ud8Tpee1mnl0qL6vY
- zy37W/oReoQenBgqPJwhh8H6Yp83sXaekmvXsWhayRGm6H+3qQCkPr5wi6vBYJqKUDqsvNJUH
- aXj/5K95OKN2xMO0iE4sIpK6budF6XHiw5P3hFX4KMwwKDGDEQRjCEF0vsl16ej/V1lxQwFnh
- wrgzIsYNnP1ckzASuQ9mBPsg58i2IGOWXqzn90giWgMR7TELZGPieL442z4B3S2nmv8qFuCxx
- r8ACEOWC7I+v53JYEjuTPQLGQq2sLgSXVlwZWoR2mZckV0bvVOLHKdKH3PZX+/+l3IUG/8K5m
- hyMy3LR+AMU/uWxsm45xr1FVL1DJDQyf955weKlmTyNeYnOJzOTr/IXBfyVWFWm3aMM++BgHW
- IBEkYJmjdeEXprf80OD+UksH7eIiwtkgp7aHnSTbM8UiKqEiSgfyZ9TX8/xEIYeK19pd3lQx2
- 1QO4Akb3Tr0Td5UFm1Ldx2nBvHS+pSv++xP7QjARXr7+mLObcDjM2661dq+WFbCsjWPHH4U
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BOssCdGWnLs=:B0m8aaISJIaZIPxCHRbaeN
+ CswN3ux/Umu84c19noEwYYfYuNriZpLWto3Am+Nryd72JjLW3C+b+Qm/1doFqc49DGvJSsYgt
+ 6WsYygI+ccvRN1/Yh5yNoevxlRMPi6OzEldiExk+FBuNUfFjmYuCqXm4+HJCh+U8JsQpdm5jF
+ VBerePGfbGa3r7ZVLQeodXHjYCoLZfc1iEuzG0Mb2YpvsbaRYrNha76GthLAbm72hkZQn5dJL
+ /dISPQTaAHB9d10yp823cArDS0afjT5LnYqOLVtlDC8eAPk43+bhDNTRVDdCcS5hoJP+We7/E
+ JEOJG2NA2nY8CQiK54xtUfPBqj3B4IW8jLxowMQwLqsnNywp7QspjBdtUFixkUhF02P8jUyEQ
+ UI7E1io+/9V1dEKbqp+oLBQFqHlrPvxbj/FqoEzTJ+YrVu5a5/ifs55vOm3gJJeoKREdhS8lU
+ qYO4tBNMCkPE3dYcv1c9fyPdXWT9NfMXQSL6mTBloUmNNiBpSCcCI56+dQV7qgKMsOLjNsTNU
+ OyQqgV6T7pg0ZRp+3o7a4k3LREZX4e8yfM1Q91Ps1FCBWlzluSCcCxHPVSXTQhFajXjT83+3c
+ 5GTdxLQrz4o0SNJ0yqE2rTs3XC9o8f9pZmAQnRyC++sgiL7n5CWskDhIsGoYMyo/t1W2pVJ+H
+ 1u6aq6I2WDhsb9pKjIz/qsbQd5gI82DhQrQLMR6uiQr9nUDARi8cAgjhKnKm93PJqh29Vgonp
+ AzahfQHALOZtZ3vCthMv6KzU6CAa/O7DlrL3EudNj4VHwNZOxHY8vLJ69tsKOicGcnzr7sc2j
+ Y0Bdi3+7W8yvGj3psLwaKkzcykgRWOVvZhvm9brznnDM+WA160mkl+C7JHFKMr88VvUmgBx
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_061657_312997_25C419AC 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20190906_062335_321049_386A342B 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: sysupgrade: use
- $UPGRADE_BACKUP to check for backup
+Subject: [OpenWrt-Devel] [PATCH 19.07] base-files: use get_mac_binary() in
+ mtd_get_mac_binary_ubi()
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,105 +77,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'John Crispin' <john@phrozen.org>,
- =?utf-8?Q?'Rafa=C5=82_Mi=C5=82ecki'?= <zajec5@gmail.com>,
- 'Jo-Philipp Wich' <jo@mein.io>, openwrt-devel@lists.openwrt.org,
- 'Jonas Gorski' <jonas.gorski@gmail.com>
-Content-Type: multipart/mixed; boundary="===============0486690089041995636=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+The actual retrieval of the MAC address in mtd_get_mac_binary_ubi()
+is the same as in get_mac_binary(). Thus, use the latter function
+in the former to reduce duplicate code.
 
---===============0486690089041995636==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=eCYCyNr2Us74vz=-="
+This will also allow to benefit from the enhanced path check there
+and bring mtd_get_mac_binary_ubi() more in line with the similar
+mtd_get_mac_binary().
 
-This is a multipart message in MIME format.
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+(cherry picked from commit 45600124fcbd14ece6e289cb59b318ea44c598fe)
 
---=-=eCYCyNr2Us74vz=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+---
 
-> -----Original Message-----
-> From: Rafa=C5=82 Mi=C5=82ecki [mailto:rafal@milecki.pl]
-> Sent: Freitag, 6. September 2019 15:13
-> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Cc: 'Rafa=C5=82 Mi=C5=82ecki' <zajec5@gmail.com>; openwrt-devel@lists.ope=
-nwrt.org; 'Jonas Gorski' <jonas.gorski@gmail.com>; 'Jo-Philipp Wich'
-> <jo@mein.io>; 'John Crispin' <john@phrozen.org>
-> Subject: Re: [OpenWrt-Devel] [PATCH 3/3] treewide: sysupgrade: use $UPGRA=
-DE_BACKUP to check for backup
->=20
-> On 2019-09-06 15:05, Adrian Schmutzler wrote:
-> >> diff --git a/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
-> >> b/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
-> >> index e313562017..8e02186eb8 100644
-> >> --- a/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
-> >> +++ b/target/linux/ipq40xx/base-files/lib/upgrade/openmesh.sh
-> >> @@ -74,7 +74,7 @@ platform_do_upgrade_openmesh() {
-> >>  	#
-> >>
-> >>  	# take care of restoring a saved config
-> >> -	[ "$UPGRADE_OPT_SAVE_CONFIG" -eq 1 ] &&
-> >> restore_backup=3D"${MTD_CONFIG_ARGS} -j ${UPGRADE_BACKUP}"
-> >> +	[ -n "$UPGRADE_BACKUP" ] && restore_backup=3D"${MTD_CONFIG_ARGS} -j
-> >> ${UPGRADE_BACKUP}"
-> >
-> > Any reason for the curly braces here?
-> >
-> > If not, I'd consider removing them with this patch ...
->=20
-> I just left existing coding style
+The enhanced path check in get_mac_binary has been backported a while
+ago. Enable mtd_get_mac_binary_ubi to use it also on 19.07.
+---
+ package/base-files/files/lib/functions/system.sh | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
 
-I'm aware of that, I just saw that from all changed lines/files this is the=
- only one using the curly braces (without necessity).
+diff --git a/package/base-files/files/lib/functions/system.sh b/package/base-files/files/lib/functions/system.sh
+index 9b9d03df7b..dceb66a851 100644
+--- a/package/base-files/files/lib/functions/system.sh
++++ b/package/base-files/files/lib/functions/system.sh
+@@ -79,12 +79,7 @@ mtd_get_mac_binary_ubi() {
+ 	local ubidev=$(nand_find_ubi $CI_UBIPART)
+ 	local part=$(nand_find_volume $ubidev $1)
+ 
+-	if [ -z "$part" ]; then
+-		echo "mtd_get_mac_binary: ubi volume $mtdname not found!" >&2
+-		return
+-	fi
+-
+-	hexdump -v -n 6 -s $offset -e '5/1 "%02x:" 1/1 "%02x"' /dev/$part 2>/dev/null
++	get_mac_binary "/dev/$part" "$offset"
+ }
+ 
+ mtd_get_part_size() {
+-- 
+2.20.1
 
-However, this was just a suggestion and it is purely cosmetical, so feel fr=
-ee to ignore it :-)
-
---=-=eCYCyNr2Us74vz=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl1yXEAACgkQoNyKO7qx
-AnBmgBAAvc4Au0GHQBBlQASHR0NWrS0f8kMMgzJ7nB8sN+qFTVetvoVe6PVEnLKf
-EEjFYfOqVbrzuhzPLb3BqjcVQ+waIfc8g4P/yvx2FsJ4taYolT8g4/OMKAvI7pPl
-NKnGhKon+Jp6qyLxnRCAk5Nz9q2gKdvd2mRhdH/Nn5suIDE+7SItEqzG+IULIr/c
-kLb8BrP9+hfQSCg80aBwHAzBEj3N6ssAWprNHGcA0rKegyiWkiW4tdnB63Wt1kMj
-IMpY5jc2fWL7cFW5HWMj+dwQ8BWVkZ0WccrbWUCj0MPGVatrGUJM+TBOtsZDTxZK
-5vqKvyW5A3wSdDiQka+PDcRx8g1DCPrO3IjDwfPEGCkaODC3dvzjoSbg0i71LD58
-5DnURWzQz34bVS6dTW1Y83RiMrkymalDLskxhUELkA5ezylXFFgj9mZ8sWhUvxnY
-BouRnqkjrm04KD79gdyG0b5Kc85GcZSLAoxhswj3NBr68HUQKOg0UypJycxI0hQW
-oz+BzFSJqwyHaMY9LVSqmGi+khIaDu+dp9yjGrOSB4bC0nUQRaxAgSokfzjrto9O
-mYRDXLSTymOBMzYhUZHB7MgiOTc4RKr/cSLCl6gIrC/GmrOFoKs7UAHcQWpcpf6N
-bHpDbQh5pxsmzR3m4WfDn5c7OzD5ul88kUaDD+HN1Yg+lN+HjmM=
-=Ka/G
------END PGP SIGNATURE-----
-
-
---=-=eCYCyNr2Us74vz=-=--
-
-
-
---===============0486690089041995636==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0486690089041995636==--
-
-

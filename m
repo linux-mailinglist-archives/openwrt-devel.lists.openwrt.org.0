@@ -2,72 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8EAFACF28
-	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Sep 2019 16:11:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91E53ACF27
+	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Sep 2019 16:11:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=q/MXw104PfSXPiQu7Ex0nIWnktF98g8NLKhPgevvNVc=; b=pT7fx/VLZq80Pr
-	CTpLb1i1jpnV6GnSXTJpa5vkHlYHQDnS5zk8gV1/qPyn4OfmTWDfVZ2/Ei9Jo06Em0wfk+IBnIkog
-	4SIUwI/JTbbLfEfwAab3+WaI73HHfRALLSCU7GHn7o/eZmeYMrkf1qDci5Ux8gvUlgipcPDmdv58a
-	CB/DD2d5v0QHcGPFinz+C+8/0yJP3NR9AlJNAWwR30K31jsCKcoGW1ZVBBeUwI1rJT59a0W3qiDEu
-	lOY41Ox6oDk0Vznow0+AJGx4JtJC16Rj0nohW4ylrqY18ATUGtDRbC1V/G9YZTWtpa4zJka3zeHhj
-	iF3T/T0ka/Jpt4zsyH9A==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UmrIHP7m4gsf6poR9Xmr8J2P0u4/jmFyxIHMfCTR9hg=; b=s//Vq4KKVpJo5vGJBm9eqPv1uz
+	tBttaEKTGzXSnQiVabo0CXuWPOfCfyScsIUysAChiV91eptGKrNdcYvFum6upxYQN+7i+R1Ht05Fx
+	1TRMI1fq/rdq1yLM0uzhuNqxXFy3ecpGFwBhlqQ+mGY3f/aKTVmg3lyeiuVSDsCodMuKZcy5jNX91
+	/yE7h7h3zAm0TXCMLYtIhKbKDgDlIrKHaR1LqRNphlxVDFJl1XKb4XpGRk/WMJIJ3xPkoPP1uGsFb
+	HIwIpRnYdmYXpLjVCXGjRanzgW3Qhka37NXIjrPIkwvVjhSDMIGA9LzBnWWcQWEwK8xSPytO051xW
+	EYCIUh+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6xuF-0007MW-SU; Sun, 08 Sep 2019 14:11:07 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1i6xuW-0007kg-Vp; Sun, 08 Sep 2019 14:11:25 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6xu7-000728-O2
- for openwrt-devel@lists.openwrt.org; Sun, 08 Sep 2019 14:11:01 +0000
+ id 1i6xu8-00072A-1z
+ for openwrt-devel@lists.openwrt.org; Sun, 08 Sep 2019 14:11:03 +0000
 Received: from buildfff.adridolf.com ([188.193.187.204]) by
  mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MRBWU-1hjxMy1KCa-00NByU for <openwrt-devel@lists.openwrt.org>; Sun, 08
+ id 1MFspV-1hvBWR1zQ7-00HNVR for <openwrt-devel@lists.openwrt.org>; Sun, 08
  Sep 2019 16:10:56 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  8 Sep 2019 16:10:48 +0200
-Message-Id: <20190908141052.17443-1-freifunk@adrianschmutzler.de>
+Date: Sun,  8 Sep 2019 16:10:49 +0200
+Message-Id: <20190908141052.17443-2-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190908141052.17443-1-freifunk@adrianschmutzler.de>
+References: <20190908141052.17443-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:hG4YndiX9AfnQXNlVAZibEb/VHGENhDsC3RhLOWGxGiGnwMhEqt
- dY5LAauWhUd5TGx2Zh7bfn4DBXoFo74JE3aayJFVhAGBQEcjnMWSYgqaQxIQw7GQO3W0KUT
- MDzZyVNqstwjKBKz28yJPm9yrrGZpMtUf6ADrwJOZRCOCQi2ytPDxZ4ehkkGyPBxMnp2jU1
- su5N1QRWjLwUHMnunXuLQ==
+X-Provags-ID: V03:K1:dkeNhAE3Qi+L+/y/5Ha9CtgSbk2eAZjGEaPh6/9w0Js08QvzYge
+ E017V7dAZmHzM0hTb7ybaMGihPeC6xPdLhCAhbYJnwkIl1+WyhQ0ZWaXzgAu0TIS+s40g0L
+ xU1CcMiRMW1WT9K9Y6Y1nGzDqgdSkaFZbD3xw5suFZqdrJqZOGXFxIXotxx/F2Z7IuvV7qB
+ 7dEhZkgqrWzBqNOKfQ68A==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:mEXzSnXUKjc=:4qmn8FQ/aD/8+DOPBezEN8
- DQvVrUYpvgbPW56+oDhmH3S9wGThL8QcCmFeH2x2+LN+1FAV6N5TlSAFYTIp/g620pRzMhv2m
- jYaD4kaj4omJTw/H//69PwWdHQZtWZoPTUfDz+Na8PYJ86fOb+c7LucKcRrgeF91zXVA70psc
- jPM/yk2yuFmMb6IR7nwsXPsey1nFQlXpgoic8aEh8Mi3Oea+VeH2EJSicv1Ru0hWDqCVd/1ui
- W/e+pncnOM1NM5QuWSzp9wDvganIdz0qFgtIHWpbhMj3nz3tmSF+fJGX3mSdRy41lyojmadAy
- s2mcfJFyhbfMT+GOjvOC1ZBg6wU4yebtJGR02Dq3TzReoLmdQhBzoeR9/qAgLsiddEfKN2IKN
- i9riy2M97kJrGmCKOYP0xi0sYcrSn4ZRTT6UE6knsBqDOjGo1OyJlSHU7cb2S8KJlFYtZ6v95
- X7568JHNed3/Qog8kFsTWZs3mgswn/vpSTU16p2vHdZTmz2PI8XS/pdqmSSzDzvVl5bKv0Qkm
- rGwD2hZauDaWF1pF5USuBV1AIzgRET/jXKL2GuPyyGtdlQY+QV1rvdKc7Bf86sek2Ugfb+Vui
- YrEr0XAt8TI2IxhlfIHw8Pj8p+Az4L8OMhrgIX43vETcJld/W3sfD2lC6sRTOINIYYL+ixD+N
- EysZUdqtao3MAMei8E9v2DGhkgP419MHaIlsY/b6ZHmXxbKCeGBYFKqO6sTmx1jXFYo9/KOG/
- F2Z+UotzNVvflKDF6I1nMwtRFgcckCwSAmA0OsnZaIoQh0RkQ6DDvvzmXYCDjQPNbHMsV289H
- AvFAQMXgDG+i76aBtdDySMV9cElsPdNnydhkyvrv0BhR3Tfvr6lHOxxD4a3X++rwlT+TkHo
+X-UI-Out-Filterresults: notjunk:1;V03:K0:OlLOiY56RiM=:vr+MPcCQUaZHBOunwtQQoh
+ i9jd1qvqDJdpXxxUB2EF9ZIPVGgz7r6c6HHgLcrLqJ5retdz7xDus8bhHNU43DPtyGD5hDPx1
+ TfndNFeX/0dXZUZUK9/Zdrba7d7WyancCCEKAs/qzG2rbTnE/uefOy8LdLELOEobOQJ8rD6iG
+ oSr1aL53fNl1WMBx6zkc8O4Wrx+vMxRSSGdRfUXBI5f4wP+gdwLJFVYGk1lfKMhDqE73MOM2B
+ TTsJWXolwBiI4GhCWMJUZoCtbNNt+xOIBYM2gM7RgpOOOyYJKN0QyBoiTrXnxBU1r9QMNncgo
+ tKCL0ne8i33HUI/35o8qEe+RuxyD9EK6RPxNHQOBJ65QryblzNjke9zoBRUlUawpeagcuP0Ga
+ Qa7of8YauiEpkUSWwTCAtY7hGv5loTDxsR5gRhT/lKB8w8ogjJ3AGY6dosiM4+H1TNLWeADR4
+ /S0TW0c/dNrsKR8oP24QB+By+TAzwbU9BAiOEH+K1NZ2cvUGmiZD4TF2KGs5GDvCwpFk9k2g3
+ JSGEYeyOpb6aMwyMVQ0QMmm+pgTqBPG+sGdhIzbUij7AHYc2R6vTBJ1we6ghoYmI8jZcq6OkQ
+ PvndIxhzyU2wM7c+OsyhroA4Qbpc/zwGrjnG1aSr31RP3hNXCW6g5Sd1tVboBC6hm+Eq0Eluj
+ p0Y+gyKjpBW2ZRj/npoBHgJab0NmiAG3OoHXwkGaOBh+RuAVMnN4A2PxxO5erdITZTn9MPV2A
+ pgaDkt//wYrmjhr7j7QC2ubKpfYUjaN2fpxas6NNVA2xB4OHbH9Xx5BVBGM/u5L5nbZr7IFv+
+ RfxAAXc18H90kjBlPFn3/rFT+/3RfFic0Pji36XwkEdeiHfMniJIwxf4oLixl9XxlEMLUhg
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_071100_091454_406C098A 
-X-CRM114-Status: UNSURE (   6.63  )
+X-CRM114-CacheID: sfid-20190908_071100_432518_EDA66EFC 
+X-CRM114-Status: UNSURE (   8.35  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [217.72.192.75 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [PATCH 0/4] Move caldata extraction and MAC
- patching to common file
+Subject: [OpenWrt-Devel] [PATCH 1/4] base-files: move xor() from caldata
+ extraction to functions.sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,40 +85,205 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is another attempt to unify caldata extraction and MAC patching.
+The xor() function is defined in each of the caldata extraction
+scripts for several targets. Move it to functions.sh to reduce
+duplicate code.
 
-Compared to my first attempt half a year ago, this includes more targets
-and does more code cleanup, particularly by merging several differently
-implemented function spread across the code which effectively do the
-same.
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ package/base-files/files/lib/functions.sh      | 16 ++++++++++++++++
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom     | 15 ---------------
+ .../etc/hotplug.d/firmware/11-ath10k-caldata   | 18 +-----------------
+ .../etc/hotplug.d/firmware/11-ath10k-caldata   | 17 +----------------
+ .../etc/hotplug.d/firmware/11-ath10k-caldata   | 17 +----------------
+ .../etc/hotplug.d/firmware/12-ath9k-eeprom     | 16 ----------------
+ 6 files changed, 19 insertions(+), 80 deletions(-)
 
-I also plan to address the special situation in lantiq when a find some
-additional time.
-
-Note that the current state is only slightly above RFC quality. It has
-not been tested so far on any target.
-
-Adrian Schmutzler (4):
-  base-files: move xor() from caldata extraction to functions.sh
-  treewide: move calibration data extraction function to library
-  treewide: move MAC address patch functions to common library
-  base-files: fix hex2dec conversion for checksum offset
-
- package/base-files/files/lib/functions.sh     |  16 ++
- .../base-files/files/lib/functions/caldata.sh | 122 +++++++++++++
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  61 +------
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    | 162 ++++--------------
- .../etc/hotplug.d/firmware/11-ath10k-caldata  | 129 +++-----------
- .../etc/hotplug.d/firmware/10-rt2x00-eeprom   |  27 +--
- .../etc/hotplug.d/firmware/11-ath10k-caldata  | 139 +++------------
- .../etc/hotplug.d/firmware/11-ath10k-caldata  | 100 ++---------
- .../etc/hotplug.d/firmware/11-ath10k-caldata  |  37 +---
- .../etc/hotplug.d/firmware/12-ath9k-eeprom    |  95 ++--------
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  25 +--
- .../etc/hotplug.d/firmware/10-rt2x00-eeprom   |  48 +-----
- 12 files changed, 285 insertions(+), 676 deletions(-)
- create mode 100644 package/base-files/files/lib/functions/caldata.sh
-
+diff --git a/package/base-files/files/lib/functions.sh b/package/base-files/files/lib/functions.sh
+index 860fc04510..81176431d1 100755
+--- a/package/base-files/files/lib/functions.sh
++++ b/package/base-files/files/lib/functions.sh
+@@ -17,6 +17,22 @@ NO_EXPORT=1
+ LOAD_STATE=1
+ LIST_SEP=" "
+ 
++# xor multiple hex values of the same length
++xor() {
++	local val
++	local ret="0x$1"
++	local retlen=${#1}
++
++	shift
++	while [ -n "$1" ]; do
++		val="0x$1"
++		ret=$((ret ^ val))
++		shift
++	done
++
++	printf "%0${retlen}x" "$ret"
++}
++
+ append() {
+ 	local var="$1"
+ 	local value="$2"
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index f07dbf83c4..450f85b0fe 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -42,21 +42,6 @@ ath9k_eeprom_extract_reverse() {
+ 	printf "%b" "$caldata" > /lib/firmware/$FIRMWARE
+ }
+ 
+-xor() {
+-	local val
+-	local ret="0x$1"
+-	local retlen=${#1}
+-
+-	shift
+-	while [ -n "$1" ]; do
+-		val="0x$1"
+-		ret=$((ret ^ val))
+-		shift
+-	done
+-
+-	printf "%0${retlen}x" "$ret"
+-}
+-
+ ath9k_patch_fw_mac() {
+ 	local mac=$1
+ 	local mac_offset=$(($2))
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index ed3432273c..6e79094e0c 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -1,23 +1,8 @@
+ #!/bin/sh
+ 
++. /lib/functions.sh
+ . /lib/functions/k2t.sh
+ 
+-# xor multiple hex values of the same length
+-xor() {
+-	local val
+-	local ret="0x$1"
+-	local retlen=${#1}
+-
+-	shift
+-	while [ -n "$1" ]; do
+-		val="0x$1"
+-		ret=$((ret ^ val))
+-		shift
+-	done
+-
+-	printf "%0${retlen}x" "$ret"
+-}
+-
+ ath10kcal_die() {
+ 	echo "ath10cal: " "$*"
+ 	exit 1
+@@ -79,7 +64,6 @@ ath10kcal_patch_mac_crc() {
+ 
+ [ -e /lib/firmware/$FIRMWARE ] && exit 0
+ 
+-. /lib/functions.sh
+ . /lib/functions/system.sh
+ 
+ board=$(board_name)
+diff --git a/target/linux/ipq40xx/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ipq40xx/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index be57646128..dfb0a0cf76 100644
+--- a/target/linux/ipq40xx/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ipq40xx/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -1,20 +1,6 @@
+ #!/bin/sh
+ 
+-# xor multiple hex values of the same length
+-xor() {
+-	local val
+-	local ret="0x$1"
+-	local retlen=${#1}
+-
+-	shift
+-	while [ -n "$1" ]; do
+-		val="0x$1"
+-		ret=$((ret ^ val))
+-		shift
+-	done
+-
+-	printf "%0${retlen}x" "$ret"
+-}
++. /lib/functions.sh
+ 
+ ath10kcal_die() {
+ 	echo "ath10cal: " "$*"
+@@ -88,7 +74,6 @@ ath10kcal_is_caldata_valid() {
+ 
+ [ -e /lib/firmware/$FIRMWARE ] && exit 0
+ 
+-. /lib/functions.sh
+ . /lib/functions/system.sh
+ 
+ board=$(board_name)
+diff --git a/target/linux/ipq806x/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ipq806x/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index bdc36070f2..c0fb1db16d 100644
+--- a/target/linux/ipq806x/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ipq806x/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -1,20 +1,6 @@
+ #!/bin/sh
+ 
+-# xor multiple hex values of the same length
+-xor() {
+-	local val
+-	local ret="0x$1"
+-	local retlen=${#1}
+-
+-	shift
+-	while [ -n "$1" ]; do
+-		val="0x$1"
+-		ret=$((ret ^ val))
+-		shift
+-	done
+-
+-	printf "%0${retlen}x" "$ret"
+-}
++. /lib/functions.sh
+ 
+ ath10kcal_die() {
+ 	echo "ath10cal: " "$*"
+@@ -71,7 +57,6 @@ ath10kcal_patch_mac_crc() {
+ 
+ [ -e /lib/firmware/$FIRMWARE ] && exit 0
+ 
+-. /lib/functions.sh
+ . /lib/functions/system.sh
+ 
+ board=$(board_name)
+diff --git a/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom b/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom
+index 82f6885221..5f3eb0cfe3 100644
+--- a/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom
++++ b/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom
+@@ -7,22 +7,6 @@
+ . /lib/functions/system.sh
+ . /lib/upgrade/nand.sh
+ 
+-# xor multiple hex values of the same length
+-xor() {
+-	local val
+-	local ret="0x$1"
+-	local retlen=${#1}
+-
+-	shift
+-	while [ -n "$1" ]; do
+-		val="0x$1"
+-		ret=$((ret ^ val))
+-		shift
+-	done
+-
+-	printf "%0${retlen}x" "$ret"
+-}
+-
+ ath9k_eeprom_die() {
+ 	echo "ath9k eeprom: $*"
+ 	exit 1
 -- 
 2.20.1
 

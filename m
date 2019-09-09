@@ -2,79 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E541EAD9D0
-	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Sep 2019 15:17:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF73BADCDD
+	for <lists+openwrt-devel@lfdr.de>; Mon,  9 Sep 2019 18:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U6o3ZnCFOVcnuBAxoQGfY6ux+Lozo3P2RTU5e23BBUI=; b=WPk2Tmb5cIVNR1
-	gpDwNt/0nHk4nLsqYxScb69qUKPcEUICgTVxS7snPMdyxKwKlJSWIh1tw62D12qiG0jk3Ty3rQcMR
-	wPuGPm89aRuI9LQixVpg+wUUxletJzMHdmQfI948/BYbEwcl0Sk/WCudfWO2OBLS5bK2+PBuinii/
-	jkKu7l8wKpJd5Brrf/IBDF7u+orLRa2lL51glG1gasMlzZbUyJGnXcCebNldllszOds1fCTjOiJp1
-	a9HmY6T5eSWAjkuZdFTht8Qe3Z87WZfH7Vw1N/+IAmTKiR35dBDygMOLFIBsNfw+PUmr3FFJujR7u
-	QK98Xlwkcn6zfswyFPwQ==;
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=QOWuHa+LnYBurVrY9ZhN06I+3qIxFcOLTjJ3kx2hga4=; b=l/T
+	f65xUDmSWQql8j0IDGJG3ylxMQCjnLEW2Ky5X0n1/2oTFf3kUFAsvQSmwspuR3DFEJ8Xy/SUXPapw
+	C3wwb3FdSnIuXQF+4KdWhjxJJdSYY2zbwCXyE+4YJpv7obVSw1CWpuveN1PWU3SGhf3Y47YWdeWn2
+	VARPJX7bSyApK4AZzI1kI9CrpD1bUc5xHMiWVTFzbeBCcEUg++rqd0clYT6L88yUC6xUmCKdiVHe/
+	eunn0skbwU7tCywLGx12BpPYfPw0wb2Ce2ZJEXO10/F/pdEmCPNy0pF4URSX0f15ImV7qbk861HaB
+	GHtgLldoz/p26jwHruP+GT8OyN9lO2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7JX9-0004uz-0N; Mon, 09 Sep 2019 13:16:43 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1i7MJY-0004rU-3a; Mon, 09 Sep 2019 16:14:52 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7JWu-0004uB-Fo
- for openwrt-devel@lists.openwrt.org; Mon, 09 Sep 2019 13:16:29 +0000
-Received: by mail-ot1-x343.google.com with SMTP id g19so12321475otg.13
- for <openwrt-devel@lists.openwrt.org>; Mon, 09 Sep 2019 06:16:27 -0700 (PDT)
+ id 1i7MJM-0004qu-M3
+ for openwrt-devel@lists.openwrt.org; Mon, 09 Sep 2019 16:14:41 +0000
+Received: by mail-lj1-x234.google.com with SMTP id u14so13319451ljj.11
+ for <openwrt-devel@lists.openwrt.org>; Mon, 09 Sep 2019 09:14:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1mi/cmd4oY1mZE51HPf2Ix1HyUrUytit7K+Q0j30PMY=;
- b=LcCWBYUwsvMaVsOkEpxCSjqIghWKZSlERtjoZNiAE6hJ0lNSI4+dAmjf1kwo34demP
- XkD6eJV9fQzDgplxHCK2z57rCYL2S2D+e2DVHxPUINRfwkRW4r7VRylpeCtKzHjUdHJ6
- 4MchkUJv4GELM3/xffGCPzC5IiW3NG7F62iXh6cMOfdB5Nh1lLcusBRwonnnLbUhVjK4
- +4zLq188pOUrINkaXegffKBWnAfaIMgvWXGMN197BoakKDTJsf1M4mPKAx4HsKqODcbb
- 3ID1dus8YkIbpsjxXeyFFiMxeV+xN/Wp0i4LhGcpzDt2NE1nN0Roh1R4EvR9AS/y48z3
- F08Q==
+ h=mime-version:from:date:message-id:subject:to;
+ bh=LR+ho0ncI8/f5v2tWfHx9vf40gReioRHcK2l3cUv/o4=;
+ b=JAyWcU3WWktXTazRp/livkBalQBQQJ8ae0wG6oqkZd+7IT8y4JkHKQd+Z7/X/AhBlj
+ qx1UcsaoYtNFolYGYVuFbODO7lgrGarTTHJhwsUwp3BkzfMcf0qLOaE7uNMnV3cDGVxp
+ pCGYxh01c5W+vMvQZlDf6JOiGQC93FoOIMMXpADz4MlK6LMcsEOkvWZei34P+USQIAH4
+ qCQZZAAzY/gW7NYOF0Ufscw/9dIeDq/TfZrsg5iKWMRalEDSWJaCIJlrHlt5uRmq9TnI
+ CcSGuRNguWSSH/SGq73lyyJ1rtapd755o1ECUhIM7rVP1sZ9ie64IjzwZDwleEtigQMS
+ pepQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1mi/cmd4oY1mZE51HPf2Ix1HyUrUytit7K+Q0j30PMY=;
- b=GiBiW9mZl1QzknBL1ViXJqEhDBsKfCdBfD/lf2ZDNq39eZb8lX2tRQVNuL+rKl8Ql7
- FzI6uXrvpj0wPO4mPi6cp6AcTCDgLnWRVdEkPAahCH9wQ/1Gc+NwVW9hcrHLVO8QOQxo
- u1I8lFqw8dft7Y8C9ZG7b0YNwLlMbAf+XYl0Kj4c/4Ul/+u7dugJs10m97H6Vf3f83Px
- ddeZq+7XOLYiCwelshKgABBDKnrLh0ADq6yalBNg7dG5yDGvDy10ZD81Ui4+QbGMqBIk
- QhIn4/h+kTcYn6NOZN6kU2DoMPwysc+xM2kUMVbcTf+A+Ad95GWJAVxjwMiCrViSr2MO
- eNCw==
-X-Gm-Message-State: APjAAAVK1303BZQ9h0oFbiADimme3IpKm8hn9Pb+4P9bFkjpF9xJSPgR
- FiYxtS6OsGvXEnmDIG7HkYWLA/KMmgujY16EH4k=
-X-Google-Smtp-Source: APXvYqxnaPUHBEKb7XAabVuyRoYtKT4iYBcQgh4TM05l6iLJy1kI6WzUm39D3Yio73/1GJrW5rN6EDUkG5+/VCjZ5sw=
-X-Received: by 2002:a9d:75c6:: with SMTP id c6mr10669381otl.84.1568034986724; 
- Mon, 09 Sep 2019 06:16:26 -0700 (PDT)
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=LR+ho0ncI8/f5v2tWfHx9vf40gReioRHcK2l3cUv/o4=;
+ b=hV8PYC/hxkA1uAnLtcVk0+nVvftsYP3Abp/kr0boOFiitWPF+VhktguTzG8oGVLLWJ
+ VuOJ2UPgiM6yp/yVbyC9AClg2v5Vr5zOZUj0POxWbGuLtMLXJ1vr/aP9pOSIW1nNQ7eP
+ NrPHlJqkjavSuuv692SCMd11rJG2B4Cny9KloQoD3lXlS8beE9iZDIfjtmSOhOkRpjaY
+ Qkef+nWHb0Xwje5ghc1K9nauT+oxCz3S4j1ag3jxXDdd/ur/SujXgxdAanNqy3wu9EOX
+ tSClwxsJzYNN/1vCQ7Cq/EMPx8vdToy5l3QROuVi9GUaOXMpGGeVXo7ZyWVw/WFF2mNs
+ FIzA==
+X-Gm-Message-State: APjAAAUQ/qmDwkRsw9ookrFhu8d86f0AIsz9sVKnvMIr1NHRc0qInyZY
+ z9S1SsqcgRtQ/e8GISS90j8usLSz1WjbSnCBYJ79/mCi
+X-Google-Smtp-Source: APXvYqwq8XFEVFQON3JreRgheD7lJFkApDiB4unJ1XJsyf0YXeony/mYgqVDrSOxNiq3IG3SR8XhCmQh07y+NOnLrPc=
+X-Received: by 2002:a2e:86c5:: with SMTP id n5mr9960070ljj.153.1568045678278; 
+ Mon, 09 Sep 2019 09:14:38 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190907150651.3513-1-freifunk@adrianschmutzler.de>
-In-Reply-To: <20190907150651.3513-1-freifunk@adrianschmutzler.de>
-From: Chuanhong Guo <gch981213@gmail.com>
-Date: Mon, 9 Sep 2019 21:16:15 +0800
-Message-ID: <CAJsYDVJwx0BfPQ2tpL5S1tM+gSfcevuWhW0AVyO-r0v00vTcEQ@mail.gmail.com>
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+From: sven falempin <sven.falempin@gmail.com>
+Date: Mon, 9 Sep 2019 12:14:10 -0400
+Message-ID: <CA++fYEgurMzJW8BX=ebpyG9jg9iW7kaJ2rd9RMxv3-RCE9ku+Q@mail.gmail.com>
+To: openwrt-devel <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_061628_547273_50765F8D 
-X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-CacheID: sfid-20190909_091440_748023_122768A2 
+X-CRM114-Status: UNSURE (   4.35  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:234 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (gch981213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gch981213[at]gmail.com)
+ provider (sven.falempin[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -82,8 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH 18.06 1/3] ramips: remove duplicate case
- for MAC setup of freestation5
+Subject: [OpenWrt-Devel] Mouting rootfs overlay help
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,35 +89,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi!
+Dear reader ,
 
-On Sat, Sep 7, 2019 at 11:07 PM Adrian Schmutzler
-<freifunk@adrianschmutzler.de> wrote:
->
-> ARC FreeStation5 is present twice in MAC address setup.
->
-> From older commits/changes, it is not possible to reconstruct
-> the correct choice only by reading the annotations.
->
-> Thus, remove the second case and keep the first one, so behavior
-> stays the same (as nobody seems to have complained about it).
->
-> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> (cherry picked from commit ad4eb2241b33b05b0942a3fa7ed2e53fb6e84386)
-> ---
->  target/linux/ramips/base-files/etc/board.d/02_network | 1 -
->  1 file changed, 1 deletion(-)
->
-Both patchset applied to corresponding branches. Thanks!
+My Updated image cannot auto mount the overlay for some reason.
+[   10.587382] mount_root: no usable overlay filesystem found, using
+tmpfs overlay
 
-Regards,
-Chuanhong Guo
+Nevertheless the overall detection seems fine :
+
+[    1.728207] mtd: device 9 (rootfs) set to be root filesystem
+[    1.732987] 1 squashfs-split partitions found on MTD device rootfs
+[    1.738420] 0x000000c00000-0x000001b80000 : "rootfs_data"
+
+# tail -1 /proc/mtd
+mtd10: 00f80000 00010000 "rootfs_data"
+
+
+I probably did not initiliaze the rootfs_data partition.
+
+Can someone point out where it is explained or how to test that ?
+
+Best.
+
+--
+--
+---------------------------------------------------------------------------------------------------------------------
+Knowing is not enough; we must apply. Willing is not enough; we must do
 
 _______________________________________________
 openwrt-devel mailing list

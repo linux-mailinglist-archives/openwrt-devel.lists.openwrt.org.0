@@ -2,73 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39DD2AE07C
-	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Sep 2019 00:01:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B30D9AE7F5
+	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Sep 2019 12:23:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xw09B2X2hFd6275VrR+0J7cJtpRU9tUGGXUCz3fX4Ls=; b=fZUYLT3HWzU7sZ+NTL9C+/wTc
-	b2i+Hn64MTPfrH662syydixZUJcDHOWc1lMXPRvI+vzBxkC1/KB2/TaR34KEnol8X0CTLIsRnIluR
-	RriQElG1uco6p/1gEF1Ff3e7+YbGQc7BPqPa0JuMHLiTDZrxl7voB7S6aYWrs5O7CUsS2qM0BlFNw
-	DRJ3EO/RFCF0ekzfiJKrWyhk5FkrgxBazDh2dF0PsupWPaHbIRT1UUcJH2+YcKk2yJimJW3bdTr2K
-	COyp9q/To7rd/4REXaheSTiaAKc4kOgucSBZ1Ru5aY3HSjRw3lmCaOfoZpVZKKtvkkiwVREAJrIv4
-	yzW5C+uTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lFBEBrixXDzXrwwrppy/HyTMwELEAJfdaKzvcfVnOJU=; b=eQetZWQAoKyApO
+	A/L0oTpWJuzq4N497jwKFhByvyWSdWnp/L9/Ai0Uqx035Cjd81gve2nNz/Kw3k+KiZzItwoppSrIE
+	Xq/6IQtcs7BoC09K2aWmlfnIFC0KJf5tkPdkyWG3M356iKCsumPmdvBt/fuJLhnA9L4FYjvfqVbpi
+	ZIYeEixZvdB3JEwSsdmqK4m5DqpxVHTtr9n8EU4HVMaRw+UGR3gNmhYPFEAjDRB8ViS55GywDql3x
+	7XU+nfyRO4nJpyE4ZW7Jn/iCryNHh3HuKUZvD5o+T9qk8bPi6O+x9NOCbvjpswQLJmQL+xtBzwyjM
+	YnRLJfxZd5/sMUmuQjXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7RiR-0005tf-Td; Mon, 09 Sep 2019 22:00:55 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1i7dIH-0007m8-9R; Tue, 10 Sep 2019 10:22:41 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7RiL-0005tI-A3
- for openwrt-devel@lists.openwrt.org; Mon, 09 Sep 2019 22:00:50 +0000
-Received: from desktop ([188.192.136.169]) by mrelayeu.kundenserver.de
- (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MF39S-1hwUQw1aB6-00FUNy for <openwrt-devel@lists.openwrt.org>; Tue, 10 Sep
- 2019 00:00:38 +0200
-From: <mail@adrianschmutzler.de>
-To: <openwrt-devel@lists.openwrt.org>
-References: <20190908141052.17443-1-freifunk@adrianschmutzler.de>
-In-Reply-To: <20190908141052.17443-1-freifunk@adrianschmutzler.de>
-Date: Tue, 10 Sep 2019 00:00:37 +0200
-Message-ID: <005f01d5675a$03b2ba60$0b182f20$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
+ id 1i7dIA-0007jX-CU
+ for openwrt-devel@lists.openwrt.org; Tue, 10 Sep 2019 10:22:35 +0000
+Received: by mail-pg1-x544.google.com with SMTP id i18so9540354pgl.11
+ for <openwrt-devel@lists.openwrt.org>; Tue, 10 Sep 2019 03:22:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HAuUZs+9Qli1l8Bc0eGReAiMJpI6Lq/uLDhFHp+j5cM=;
+ b=nuLD2X8gww8UgmHylgDmKY0wEkNBN6A/Ut3ZqtdVDqCpk4JUyNCqQi5gjl2cZ0BXUa
+ MQ4U+OS0mwoxaJna5xE65YKtwS57kaTiHfNZKpHeqzINJn0iqPMWNw+EEDXMQj56lqfN
+ /Gq86v7Om5wxh1rQ5O233PCBuw/HPn2c0iNBNZCfjWWt/goLKJNAJWmyLzoLIrKedaQp
+ 1lLL44CS9MW9EceTBSiYlj+MpIXM8vCws4B+FEnyQgJEZQmxcFOISiTS0kIwWS1AoTfd
+ vb7cJBT9ap3fkbSnbrN3pEf5VkuocDT6zuBpKXrcW4U9N2pjEuVQ1CStafp1l2Jq9ECw
+ SqWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=HAuUZs+9Qli1l8Bc0eGReAiMJpI6Lq/uLDhFHp+j5cM=;
+ b=AUGb6ANgg5aall7o4ra0B6j5QPxBsijr3GzZrKm0a4KfcaLcnAgdaWWfgbVIYxwaQd
+ pSh1073XIW0ASJ2dXwA9hAJAy09xj15V+qBHi7ohDiXq2rCAS3cZkBE8LrXR02wkGHwX
+ iYh9pT5CUKVodod3pJx7enGuZ/KxTvAeWY/XKSsXDcbtFTVha7rEj65PB+kXzWseDANG
+ N1aTARRtLdQ5gsIkAeaPV87gFjmWxYB28hNMnpknZVPoRhlhQ8qG3hMeKvGm23w00Djc
+ I1IFJC6o8HvFsdqKXfKFAUB4Pw8BReTgxD/Qch8qMoOPIbYc01NI6zbg326k7kzjh9Ql
+ xxLw==
+X-Gm-Message-State: APjAAAXk8fCP+e4/oRElnZH5PdeMQEBibG5vFAsC4AQcDaCEGugTEq2s
+ sICnJVq5Q1TFwvV2c8vFy5Q=
+X-Google-Smtp-Source: APXvYqwrv7ojTOnNF2Kf8kucCoJSuSvdd2JziOFh9yRG6T8aly49wSvCf9NpJLCSJDRm3tpTgmecAA==
+X-Received: by 2002:a62:61c5:: with SMTP id
+ v188mr34475839pfb.194.1568110953145; 
+ Tue, 10 Sep 2019 03:22:33 -0700 (PDT)
+Received: from titan.hq.cloud.yunionyun.com ([47.244.19.249])
+ by smtp.gmail.com with ESMTPSA id h186sm30439125pfb.63.2019.09.10.03.22.30
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 10 Sep 2019 03:22:32 -0700 (PDT)
+From: Yousong Zhou <yszhou4tech@gmail.com>
+To: linus.walleij@linaro.org
+Date: Tue, 10 Sep 2019 10:22:21 +0000
+Message-Id: <20190910102221.125803-1-yszhou4tech@gmail.com>
 MIME-Version: 1.0
-Thread-Index: AQEK1d2fWDlkXu4EV+r5wcwARMnkWai5B3OQ
-X-Provags-ID: V03:K1:NVrmSJY/fzCZfHNJncIx/jxDsiYb/5y9fUMFc5RN9vtRsNBICTv
- o6pj9RGjYVnPVO44hCClhyoFvVIppSJqVQL20VdoCE10lTXKpTuq30TnHAf5RIgs40bMRHe
- 42fkXE60+YbHVpEZgQvcdMEtVGdxdO9EUvto9I0Zi1MRbLAXljN2sTONSFDZgUO2R9+rJWC
- qdLUT4RiURlONHkShGjlQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:xPWyyOIsZ30=:PM2jMtTs1mg/L1DV8e2kqU
- EtxFiCFufb1Fr931U+j9iUYrACIU+M+1XgnkmtQyb09yUUQ/O/sgGm4dW0nZxUCST9IWFwkc3
- Ub5ifdMzosn10Tm5NAffgAkd17FtJQkJ5VXwT8Nr6wj/bwW7wh7+7MDVuE2e1Z3WaRlW1v29n
- 0j1hi2nWTJgk68wXGMqYj3fvg7+ueJ/+eBI5jwenMg5QkELUN0aky5sj5pmX20XK4cHEfCxqS
- cd/zIuUdsd5YYGTHr3fhjyD+xnMh8PCIfCtCZCi6FEg7qJJbEzCzWfZZYUsRnRqktpH1FNEM/
- Twsz5TYVLQzPmPdX/fqhWhTb2N0IP/kFekT5ru2CdX3qzlSKg7YX7HJH25Seu3q5CtGIsJMA9
- 3QV6eV1+7w6Zqt+QnzTKuq7UmbEvLed55sqjO5ZxBJlzQsQpagx3r+zMbqH2MS1JEfI7f5zZ0
- 1ptiY16qCv3jHxjaaUtmIBViHvYbghmADqUEcpoVEy5OtSkY7a6cWVOrqOYwsbSWuNmoXBEy8
- X/cR9v7eHBwunf8koP67KTuEod+C/QI2PrmL/LoznQrGSsWtTrX4sk1gDSHQIENf305wNUgrG
- wSaU7nJ6q20I2EijZDnO768UHcj+rgfeUQyiZ+4OysOHbY8KFzqzbIx0yZbhXIh1FVNVuEU/J
- 21A7/eegiRsZJ/g+e3drtEwRkfiQvC+3vxEIsyQnpcMwqE0A22GjeWSaJ9SDrun8stACaCkLL
- CMiEZs5ZwWaEhg0aMPIw/iwnppp5piJMjfTp7EDQ8BB6PzB6G/7csQajKqCUwfj9a0RMUSxjt
- BLzW5vrQoAid1RvUBF4MvOVfIlaWoNU6MS0PKq447lN/uSHe2fvU59bk5mMsokQpjNvhj9P
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_150049_646453_6B916D2B 
-X-CRM114-Status: GOOD (  12.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190910_032234_424436_A4C99DB8 
+X-CRM114-Status: GOOD (  10.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 0/4] Move caldata extraction and MAC
- patching to common file
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (yszhou4tech[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] gemini: image: fix race condition when
+ building copy-kernel.bin
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,99 +96,114 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5151223478325254895=="
+Cc: roman@advem.lv, Yousong Zhou <yszhou4tech@gmail.com>,
+ openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Make treat copy-kernel.o as intermediate and delete it when it's no
+longer needed.  This can fail when the same submake was triggered
+multiple times for different devices.
 
---===============5151223478325254895==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=QtITP1mZdqlA3r=-="
+	arm-openwrt-linux-muslgnueabi-as  -k -o copy-kernel.o copy-kernel.S
+	export MAKEFLAGS= ;make -w -C copy-kernel CROSS_COMPILE=arm-openwrt-linux-muslgnueabi-
+	arm-openwrt-linux-muslgnueabi-objcopy -O binary -S copy-kernel.o copy-kernel.bin
+	make[5]: Entering directory '/builder/shared-workdir/build/target/linux/gemini/image/copy-kernel'
+	arm-openwrt-linux-muslgnueabi-objcopy -O binary -S copy-kernel.o copy-kernel.bin
+	rm copy-kernel.o
+	make[5]: Leaving directory '/builder/shared-workdir/build/target/linux/gemini/image/copy-kernel'
+	# "App" partition is the rootfs
+	arm-openwrt-linux-muslgnueabi-objcopy: 'copy-kernel.o': No such file
+	Makefile:27: recipe for target 'copy-kernel.bin' failed
+	make[5]: Leaving directory '/builder/shared-workdir/build/target/linux/gemini/image/copy-kernel'
+	make[5]: *** [copy-kernel.bin] Error 1
+	Makefile:244: recipe for target '/builder/shared-workdir/build/build_dir/target-arm_fa526_musl_eabi/linux-gemini/tmp/openwrt-gemini-storlink_sl93512r-ext4-factory.bin' failed
+	make[4]: *** [/builder/shared-workdir/build/build_dir/target-arm_fa526_musl_eabi/linux-gemini/tmp/openwrt-gemini-storlink_sl93512r-ext4-factory.bin] Error 2
 
-This is a multipart message in MIME format.
+With this change, output files are directed to $(KDIR)
 
---=-=QtITP1mZdqlA3r=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
+---
+ target/linux/gemini/image/Makefile             |  9 +++++----
+ target/linux/gemini/image/copy-kernel/Makefile | 14 ++++++++++----
+ 2 files changed, 15 insertions(+), 8 deletions(-)
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Adrian Schmutzler
-> Sent: Sonntag, 8. September 2019 16:11
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] [PATCH 0/4] Move caldata extraction and MAC
-> patching to common file
->=20
-> This is another attempt to unify caldata extraction and MAC patching.
->=20
-> Compared to my first attempt half a year ago, this includes more targets =
-and
-> does more code cleanup, particularly by merging several differently
-> implemented function spread across the code which effectively do the same.
->=20
-> I also plan to address the special situation in lantiq when a find some
-> additional time.
->=20
-> Note that the current state is only slightly above RFC quality. It has no=
-t been
-> tested so far on any target.
-
-Checked the code a second time and tested successfully on
-ath79/ath9k: WDR4300 v1
-ath79/ath10k: Archer C60 v2
-
-I would be happy if someone could test some of the other targets.
-
-Note that I do not touch ar71xx in this series and do not plan to do so (I =
-didn't explicitly mention this before).
-
-Best
-
-Adrian
-
---=-=QtITP1mZdqlA3r=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl12y4EACgkQoNyKO7qx
-AnA0bg//Y6S9gn1a0Y817qTet4N9kovOyI1BQHqnc20M7HSlNDbvwIJs3msiPc9f
-06leg2Bed+89GKVfSY0+GtQgsn5ChaULI9XVXDfQ5aM33V9PsqlBzwpMriU6nx5X
-EjDOigt4ZfhowVIBeVN+SaglwcXhuNBicRWB9e/Pz3CGOwWW+GJa9isr93/x2ESg
-/zKR8DKpi3e37gi9jg4MzZsqe+2KAWyP96e8lFPAWfy0cnuEXbtimH9BKWl2rVlt
-i4YEvC46Ec53uo/t84g2e+ch1LV44CPONncTEUL2XxFKZU5O+H51h6tXBZZUoZDg
-qkNGjLhmkUvlsxdUPDSJMSyRDr3Mn0BJ86/LEYeCs7JWnGEc/t+A58m9My7hfa4t
-pNayXhV/4j/+0g1IFRmovulTh+/1YXPFkmBkP512WkcWkAAjER0/1qW+JmgJxfpt
-wEVI3+K9GrqIgh6W5UhKqxqJ/O2eDCF9lDY/E2l0wTfMxXhqXqw+maRTdS1khC3n
-G6OZ9iOTAvNbavRYUJnK63s8ZkMV6YEd8WQ2WIooWSNO6aRhtqPH3aa/hRJdVCoK
-dugmj+c2m0qYQHiDyYg6SysmV9AhjbV/hSEXDlk4Y3nFxHz+twmdGlT20IW3/5ZB
-rFy1kxUzHeNN9WRPBwN3DeiQzxrli87/QVUE/UvajqVnHOYvnfY=
-=MYdC
------END PGP SIGNATURE-----
-
-
---=-=QtITP1mZdqlA3r=-=--
-
-
-
---===============5151223478325254895==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+diff --git a/target/linux/gemini/image/Makefile b/target/linux/gemini/image/Makefile
+index 24402f6a9b..b4daa92670 100644
+--- a/target/linux/gemini/image/Makefile
++++ b/target/linux/gemini/image/Makefile
+@@ -7,8 +7,8 @@
+ include $(TOPDIR)/rules.mk
+ include $(INCLUDE_DIR)/image.mk
+ 
+-define Build/copy-kernel
+-	$(MAKE) -C copy-kernel CROSS_COMPILE=$(TARGET_CROSS)
++define Build/copy-kernel.bin
++	$(call locked,$(MAKE) -C copy-kernel CROSS_COMPILE=$(TARGET_CROSS) O=$(KDIR),gemini-copy-kernel.bin)
+ endef
+ 
+ # Cook a "WRGG" image, this board is apparently one in the D-Link
+@@ -93,11 +93,10 @@ endef
+ define Build/storlink-default-images
+ 	mkdir -p $@.tmp
+ 
+-	$(call Build/copy-kernel)
+ 	# "App" partition is the rootfs
+ 	mv $@ $@.tmp/hddapp.tgz
+ 	# 256 bytes copy routine
+-	dd if=copy-kernel/copy-kernel.bin of=$@.tmp/zImage
++	dd if=$(KDIR)/copy-kernel.bin of=$@.tmp/zImage
+ 	$(call Image/pad-to,$@.tmp/zImage,512)
+ 	# Copy first part of the kernel into zImage
+ 	dd if=$(IMAGE_KERNEL) of=$@.tmp/zImage bs=1 seek=512 count=2096640
+@@ -182,6 +181,8 @@ TARGET_DEVICES += dlink_dns-313
+ 
+ # Default images setup used by the StorLink reference designs
+ define Device/storlink-reference
++	COMPILE := copy-kernel-$(1).bin
++	COMPILE/copy-kernel-$(1).bin := copy-kernel.bin
+ 	IMAGES := factory.bin
+ 	IMAGE/factory.bin := append-rootfs | pad-rootfs | pad-to 6144k | \
+ 		storlink-default-images $(1)
+diff --git a/target/linux/gemini/image/copy-kernel/Makefile b/target/linux/gemini/image/copy-kernel/Makefile
+index 155c35968c..9ba283bb01 100644
+--- a/target/linux/gemini/image/copy-kernel/Makefile
++++ b/target/linux/gemini/image/copy-kernel/Makefile
+@@ -13,20 +13,26 @@ OBJCOPY		:= $(CROSS_COMPILE)objcopy
+ 
+ BIN_FLAGS	:= -O binary -S
+ 
+-all: copy-kernel.bin
++SRC_DIR		:= $(CURDIR)/
++OUT_DIR		:= $(if $(O),$(if $(patsubst %/,,$(O)),$(O)/,$(O)),$(SRC_DIR))
++
++all: $(OUT_DIR)copy-kernel.bin
+ 
+ # Don't build dependencies, this may die if $(CC) isn't gcc
+ dep:
+ 
+ install:
+ 
+-%.o : %.S
++$(OUT_DIR):
++	mkdir -p $(OUT_DIR)
++
++$(OUT_DIR)%.o : $(SRC_DIR)%.S | $(OUT_DIR)
+ 	$(AS) $(ASFLAGS) -k -o $@ $<
+ 
+-%.bin: %.o
++$(OUT_DIR)%.bin: $(OUT_DIR)%.o
+ 	$(OBJCOPY) $(BIN_FLAGS) $< $@
+ 
+ mrproper: clean
+ 
+ clean:
+-	rm -f copy-kernel.bin copy-kernel.o
++	rm -f $(OUT_DIR)copy-kernel.bin $(OUT_DIR)copy-kernel.o
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5151223478325254895==--
-
-

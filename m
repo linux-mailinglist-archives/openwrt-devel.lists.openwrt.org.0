@@ -2,81 +2,81 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCFA0AE87E
-	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Sep 2019 12:40:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8385EAECBE
+	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Sep 2019 16:15:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SbRUz4xy4IMi0Yk499vgHfgOdbDdoRXwzPIq0+RBTiA=; b=gyfsgL3b+6JCGE
-	KzXeEeJE88eYtf30Okw7OZUancYtwNBVC4QwLIV64v+uTv/QC9Ew7ppeHni0QKU5z+cQKiEDoveLN
-	bPrjvsCm6PIMfl2JdJCz+pl2olkoTZPSwTMN5y3zarMZD+p9kE1TBrztIkBNCBfwaRsSS+r3wMKMr
-	JJBFJl4l/xXI1OLzxHZfmGKhrYWloB7AuTOgK0wl5KdXDt8beuR/EgvwKlwRcvOH4RCw1pDVu8H+i
-	n7wq+NGNkVtvLdhkbvVlYvoi0nAZFd/NJkR2uC1YvgBkricjBSKsJphDtFsxNExI6M093H5LzBjy/
-	V5zVZFIh7XlVvKjwsOlQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sNC3/WsaybKslJLg54u9Wc6CE4XaIPzgmg+dfBn+TAU=; b=tGgdlfVOWUXhdX
+	fDQ1sLvMyEesp32zrvMkonHigPlQI5NGfvLT6SSLLgglanxDeyNj4A0KC9PY5kCJWqRnHH/fZT5Hj
+	xwa/03BxpPpk1Ng2LK1llTnomvtqHx2ugZ++I1qkNtEkJ2kjLUz00cPoSNX/LbdgPD35HO/2q4LJF
+	eIQ2LcPx+Dqk5dtFg2zrmQ51ilq6BvTS3y1p+qP+jCOe6xIXAZIw/CTIr/52Yqp1pluuI0p9EG2Nu
+	6WtshH0NqjQFTyj59PYYeVdxCeeKG3gACWubsMQFlwzzxO4J1OvFmx0V5f33fS5Q7uF1QLPcM9azi
+	F9ECQolSKMk6ZCELgKVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7dYz-0005VP-U9; Tue, 10 Sep 2019 10:39:57 +0000
-Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
+	id 1i7gvn-0000gN-Gl; Tue, 10 Sep 2019 14:15:43 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7dYn-0005Lx-H1
- for openwrt-devel@lists.openwrt.org; Tue, 10 Sep 2019 10:39:47 +0000
-Received: by mail-pf1-x436.google.com with SMTP id y5so8547018pfo.4
- for <openwrt-devel@lists.openwrt.org>; Tue, 10 Sep 2019 03:39:42 -0700 (PDT)
+ id 1i7gvY-0000g0-6S
+ for openwrt-devel@lists.openwrt.org; Tue, 10 Sep 2019 14:15:29 +0000
+Received: by mail-wr1-x443.google.com with SMTP id a11so10850567wrx.1
+ for <openwrt-devel@lists.openwrt.org>; Tue, 10 Sep 2019 07:15:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=k5XCtSKTB2N+7wu5+xyO3XjYbQ38eU18vXOA34txsaw=;
- b=GuXCIFsRh2zXv+KdOtojJOxe1D5aJEHEOB8W8FsooBjnpVR6XwGJQ9vuPnDOVALO0Y
- ru2h1lVKvC8IcTh/n7z9cpaY8U8+VK2iVjQOis5gjZddEmrnGCbQ5pHrNtqdxDymLTBm
- zKg+ZxCC0510hY6cQh2fc7XilO0qYIrDJ0EBkw5RtE+x6ArKCob5Otmh8IHlRhT/gCux
- NjC4IINAWVdtnaQp3kyhfPP41uaukdesTNzxfJnwwoxe4FD0QUFKmBB3mOv95pFFtuBh
- oKY3O8vnFlKUzVtjR1VtN2O+NF6Q3DK5U4K4lRkl200+3Lplvx6QTL02iIyRpaIaEMb6
- +gxA==
+ h=from:to:subject:date:message-id;
+ bh=iDIk1dNag1yEup5CRKeaPAH/F9gq0wsdYyNmnECvbM0=;
+ b=BVFY6G5W3AUDzeXgqyAqRPwwEVoZrQuVtd3a78aJH5guZXvZKojVfm7TQDN1gpyLGy
+ tbIKCgyGUpYIIsxtumMC9R8Df0P9g7x9/W7e77ZW3wpldZ+Mr9RnkyWsy+H4Ii/aowwS
+ dMOx0dpuIUYSQzlrV/BSRGtlgeF3fw8YjbbwLI2D/paOa0CcgmdP1/RzI0B6BIF41KiJ
+ eJhI/QEFz852LIQbqgpgRkQAge18dENtFqaAanC0PU5oG5ZK6eN7FPX6bYZKQdabujat
+ gmbe87g5xHLzwOMLroctp0afjEQkiZMPwBc7Ov2xwflO0W4siPYAWLl1LI2cWAWPxgwI
+ Xzqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=k5XCtSKTB2N+7wu5+xyO3XjYbQ38eU18vXOA34txsaw=;
- b=QKxbfoUWMBUUUPoeZy2zo8g0TMl2ftmpR8MtZqkAdeYP39xpxKLLinj8979EANu4Uw
- i9fQjXHN5hJ6gUuX+DK4Zz9pDcnEcb/Y4cTDuKe4DbPyc1zf5/e+SG4zNADg8LjE9oz7
- trGR5LECfZc5UFQi1okFwdAUd8InFlwRtX65eMGv1GdO1TyPzhc1I4RmAhLedAWIDgLe
- TbA0exZNMU1dOnh8mIBasqYCqVS+mE5BZkoodc4eiImtbyQoZL3as09biPQDHwzWGRw8
- rMIbnn0EiqTcxaGKSiDP687fhNsU1SoL3pak0tCZwpxdbxDxbk3jxry08oSCnPXm/MLL
- qG3w==
-X-Gm-Message-State: APjAAAXq16T7YEathCowfgNq3tQJRTjRRsKs5goKQS0sz1piBdHY1I82
- ZY8unktsfvXWCdnI9a30TqE=
-X-Google-Smtp-Source: APXvYqwD3srWXtPhp40BDW6MZMncmwgQhWgXF115N5F9gGe4bMcHIbHLy+koXM7y7fAlnmKvSQ0b8g==
-X-Received: by 2002:a63:1c22:: with SMTP id c34mr26988255pgc.56.1568111982097; 
- Tue, 10 Sep 2019 03:39:42 -0700 (PDT)
-Received: from titan.hq.cloud.yunionyun.com ([47.244.19.249])
- by smtp.gmail.com with ESMTPSA id i9sm35278482pgo.46.2019.09.10.03.39.40
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 10 Sep 2019 03:39:41 -0700 (PDT)
-From: Yousong Zhou <yszhou4tech@gmail.com>
-To: luka@openwrt.org
-Date: Tue, 10 Sep 2019 10:39:24 +0000
-Message-Id: <20190910103924.1215-2-yszhou4tech@gmail.com>
-In-Reply-To: <20190910103924.1215-1-yszhou4tech@gmail.com>
-References: <20190910103924.1215-1-yszhou4tech@gmail.com>
-MIME-Version: 1.0
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=iDIk1dNag1yEup5CRKeaPAH/F9gq0wsdYyNmnECvbM0=;
+ b=ZtfXVYPLzpF3/KFdQGRR64bOk6Tct5s9cyjE9AVX8U1no/XH1Dnw3FgciD1KWqpMyD
+ 5G7idf3r6fxUQ6epdjtuOW02wypZxyKvZU2JgC1c4pm8Snt9XJpbqva89MpmQIv2lQ46
+ hRSkKcjUFFwf4Q849+MpbBZYuYF2c2HKVio/lW5hAAVX+cmQT1Xi/QnLN59OIlaP7b+Y
+ TUX4J3VsVp3zVuyM3x83EnSreexL3uvJRQwp/3LkWIHeFG4BVNZXOBmHullTiZXsLQys
+ I9rCprOlEShk6mAhbyFHp1jN45xyMrTJ6xbtN3GIkXBCmgw2wvma7vGAyGUCBXXvOloo
+ xgGw==
+X-Gm-Message-State: APjAAAV+JFGwdrRF1AnEZ0dNcv2K1atED1JysbVRAROSmJ9EGtMdqS95
+ suGv5Ks9AoFn2v8Sg+j2mRM=
+X-Google-Smtp-Source: APXvYqwCtUZCubVbyeqMTWqDpglW5EeRD2Ly6KW05xq1e7yo98UmpF3usV8H+u25+wM0iVPUJe29dA==
+X-Received: by 2002:adf:ed05:: with SMTP id a5mr18090287wro.35.1568124926240; 
+ Tue, 10 Sep 2019 07:15:26 -0700 (PDT)
+Received: from cplx1037.edegem.eu.thmulti.com
+ ([2001:4158:f012:830:2a10:7bff:fec5:6f08])
+ by smtp.gmail.com with ESMTPSA id b15sm3755760wmb.28.2019.09.10.07.15.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 10 Sep 2019 07:15:25 -0700 (PDT)
+From: Alin Nastac <alin.nastac@gmail.com>
+X-Google-Original-From: Alin Nastac <alin.nastac@technicolor.com>
+To: Jo-Philipp Wich <jo@mein.io>, Hans Dedecker <dedeckeh@gmail.com>,
+ openwrt-devel@lists.openwrt.org
+Date: Tue, 10 Sep 2019 16:15:13 +0200
+Message-Id: <1568124913-1173-1-git-send-email-alin.nastac@technicolor.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_033945_561435_186F71D3 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20190910_071528_241239_DF5EC565 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:436 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (yszhou4tech[at]gmail.com)
+ provider (alin.nastac[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,7 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 2/2] config: kernel: remove KERNEL_LXC_MISC
+Subject: [OpenWrt-Devel] [PATCH] firewall3: fix typo that affects ICMPv6
+ rules with numeric icmp_type
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,95 +97,43 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Yousong Zhou <yszhou4tech@gmail.com>, openwrt-devel@lists.openwrt.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Kernel features are neutral.  The two cascaded features can also be
-useful for other container related tools
+From: Alin Nastac <alin.nastac@gmail.com>
 
-It's also less error-prone if only kconfig symbols from the kernel are
-prefixed KERNEL_
+Problem can be reproduced with a rule like this:
+   option src 'wan'
+   option family 'ipv6'
+   option proto 'icmp'
+   option icmp_type '128'
+   option target 'DROP'
+The resulted rule will set --icmpv6-type to 128/255.
 
-Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
+Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
 ---
-Changes will also need to be applied to packages feed, see [1]
+ options.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
- [1] https://github.com/openwrt/packages/pull/9958
+diff --git a/options.c b/options.c
+index c763d9e..7870143 100644
+--- a/options.c
++++ b/options.c
+@@ -568,7 +568,7 @@ fw3_parse_icmptype(void *ptr, const char *val, bool is_list)
+ 		}
+ 
+ 		icmp.type6     = icmp.type;
+-		icmp.code6_min = icmp.code_max;
++		icmp.code6_min = icmp.code_min;
+ 		icmp.code6_max = icmp.code_max;
+ 
+ 		v4 = true;
+-- 
+2.7.4
 
- config/Config-kernel.in | 55 +++++++++++++++++------------------------
- 1 file changed, 22 insertions(+), 33 deletions(-)
-
-diff --git a/config/Config-kernel.in b/config/Config-kernel.in
-index d9a9fe687f..310c6dfd07 100644
---- a/config/Config-kernel.in
-+++ b/config/Config-kernel.in
-@@ -623,41 +623,30 @@ if KERNEL_NAMESPACES
- 
- endif
- 
--#
--# LXC related symbols
--#
--
--config KERNEL_LXC_MISC
--	bool "Enable miscellaneous LXC related options"
--	default y if !SMALL_FLASH
--
--if KERNEL_LXC_MISC
--
--	config KERNEL_DEVPTS_MULTIPLE_INSTANCES
--		bool "Support multiple instances of devpts"
--		default y
--		help
--		  Enable support for multiple instances of devpts filesystem.
--		  If you want to have isolated PTY namespaces (eg: in containers),
--		  say Y here. Otherwise, say N. If enabled, each mount of devpts
--		  filesystem with the '-o newinstance' option will create an
--		  independent PTY namespace.
--
--	config KERNEL_POSIX_MQUEUE
--		bool "POSIX Message Queues"
--		default y
--		help
--		  POSIX variant of message queues is a part of IPC. In POSIX message
--		  queues every message has a priority which decides about succession
--		  of receiving it by a process. If you want to compile and run
--		  programs written e.g. for Solaris with use of its POSIX message
--		  queues (functions mq_*) say Y here.
-+config KERNEL_DEVPTS_MULTIPLE_INSTANCES
-+	bool "Support multiple instances of devpts"
-+	default y
-+	help
-+	  Enable support for multiple instances of devpts filesystem.
-+	  If you want to have isolated PTY namespaces (eg: in containers),
-+	  say Y here. Otherwise, say N. If enabled, each mount of devpts
-+	  filesystem with the '-o newinstance' option will create an
-+	  independent PTY namespace.
-+
-+config KERNEL_POSIX_MQUEUE
-+	bool "POSIX Message Queues"
-+	default y
-+	help
-+	  POSIX variant of message queues is a part of IPC. In POSIX message
-+	  queues every message has a priority which decides about succession
-+	  of receiving it by a process. If you want to compile and run
-+	  programs written e.g. for Solaris with use of its POSIX message
-+	  queues (functions mq_*) say Y here.
- 
--		  POSIX message queues are visible as a filesystem called 'mqueue'
--		  and can be mounted somewhere if you want to do filesystem
--		  operations on message queues.
-+	  POSIX message queues are visible as a filesystem called 'mqueue'
-+	  and can be mounted somewhere if you want to do filesystem
-+	  operations on message queues.
- 
--endif
- 
- config KERNEL_SECCOMP_FILTER
- 	bool
 
 _______________________________________________
 openwrt-devel mailing list

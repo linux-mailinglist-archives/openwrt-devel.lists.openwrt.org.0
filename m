@@ -2,78 +2,64 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 800F1B04E0
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 22:30:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93792B04E3
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 22:32:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1FSCnCfZJm6/vMrUELeLPyjBZ83kaG3AUUzNkJGrMDQ=; b=U+4C2o8LV1fwTnblQCCFRfUjF
-	W1+YDqJ90heDPJedHRXHqzIGO4MxhDFqHho6I+qJ7PDIb7qbSY4F7XC1P8A3IWH1uZ1tKJrYrK+9X
-	J6zkwTdmbglNwh57SmSyptOhtlIegZN7e1wHxp47iIKHg9nEH/iWMI+SQd/JaCfQsXXix3ye2/VDZ
-	QkmtdoUkQIa68ck8INBcQSnFNfN//6JijVZT+nfieVhAEdqpDBtpV3lhkNMmAfZ1n5mGYv1x8coQU
-	5epMGzV2WuEpPe7XbhVwOR+T776EylfpFwusGUD3XQVO+dY4FYEa7OOWXbsrRawQUWS3cGdGYNaMf
-	Fuhar4mjA==;
+	 bh=mOdH6CnuegUNjoT57jdeRgJ/exz72Q0MJ72zNtre1CI=; b=BCN4sj4nRS0QMgNMI0YLrqDsk
+	1D2/2sqlIuFH1Pc5W6DRxxK9d6VfuiU00mvI6rl4ErQRkpv7JtnGpvuN1DqQH09PKu8ZEywc6BnM3
+	Z1Pz1CA018HUZ8bQiAT9MSD289pyru/FaiGGH6ygjxaXqrKpoELf1R4PNRJSjEsuvN4fQuSJxLRhA
+	Em4+EndUokHHyLB8/2W9YKRjKTW9dLcF8v+lW6T8L8H+LyRmV68MSvTyPWzG8x7kfLT3VoYTm+35M
+	vAqkr5KeI3bhzScHUrSjM7SWIBaeeWs00qM8+9qPdtzCQ6k8SpUPyITiZQaSJQxbntTTh+Q2Wje10
+	vlbUPCs+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i89G9-0008I6-GT; Wed, 11 Sep 2019 20:30:37 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i89Fx-0008Hl-2f
- for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 20:30:26 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id g207so4975914wmg.5
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Sep 2019 13:30:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CslPJhWgphBo0v3SIAyRs8KZJONvM2iD06X1Sj3Rejs=;
- b=mIzuq/wX2tFM6WGafbiWEI5PzngqJ7xoHD5sGZr3EWAhWGxSqyDDshn2eFkAoJqOi6
- 1vnlkrI1Sy6+7lJMc6d3lAC/Gs2dmGdF58mTGbRNoOy7ClZCvu63AVs8RQ97hkUAtgHi
- pkon2XbXRZcsErKpaxGz/janmh6l7WKDz7ZdY36UwheY6t+mUzTQkFVZOWpKywIf44/K
- 3mIS0QSQzjXOkdJSDKPUzXEAcTSSo/S22QZt5czOHvOY/+YEV/SmZX1i0dpUolRZ1Jh6
- rdXmX6ETsd81t7grL3rpkqTcawAFS/xEMjsRIkpsk0dxLD7nH/ZCLfEAt02OOfSmPW32
- yPnw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CslPJhWgphBo0v3SIAyRs8KZJONvM2iD06X1Sj3Rejs=;
- b=V941KYEfqJwrs2UzFTBjWGT03G9rMAvBH+10OqObSEVM2d7vZVa/Bnd8pbO8kfFePj
- D6+LUWCuvbe1xO0l4UZL8P7aAHE3oH/wpjh7eIfhenPgyaaj+U3Od7kDW3erCBiQ5NEm
- kYZ4b/7f+yjegeJB5hcRhNZTdAmxVckV1ARkaMcdXLKjDau2i7aV/iCW6vngbW2UHeGj
- pNsogzSTqvPan9EECe+IAEsvgPJW3DK1IPE7LA340CJ3nk+6heE9wQiViarRSuPWSYgY
- LdRSv5r/6EItis4nJVhx6NbBhUiKe1PgpCKHDttckDGEneC0ZrSIlB3LXrx1QC+yXWQD
- 4UHQ==
-X-Gm-Message-State: APjAAAUA2S7x/zQPxoWE/zPSVWoPSEEksnZySkQNoUxn0mhIh8GrYD+K
- 98W1MxEw0uPn82mXgfHW823WzyJSuK1stMfGC8svhg==
-X-Google-Smtp-Source: APXvYqz7RaVxuu8a7pOj56ayLkhqRN8oVTj0gy5JuNGyxWfAd0ZgcgmVvHCPpXIsysd3RNtE8hJPxGiO5fctG/hlAC8=
-X-Received: by 2002:a05:600c:34d:: with SMTP id
- u13mr5261460wmd.97.1568233822512; 
- Wed, 11 Sep 2019 13:30:22 -0700 (PDT)
-MIME-Version: 1.0
+	id 1i89HR-00007E-BD; Wed, 11 Sep 2019 20:31:57 +0000
+Received: from mail2.candelatech.com ([208.74.158.173]
+ helo=mail3.candelatech.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i89HB-00006r-9L
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 20:31:42 +0000
+Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
+ [50.251.239.81])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail3.candelatech.com (Postfix) with ESMTPSA id 4602CD949;
+ Wed, 11 Sep 2019 13:31:40 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 4602CD949
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+ s=default; t=1568233900;
+ bh=YBIyU2i5ygiNNWez+1brQ858aK8tjY1f/KGv14e6TNo=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=SQiw3dmOhahJPeuOpjVo81ZiEN5fGI2sCzXaTUfc4QlasAYGNx0sBfT1Ioy5W0CuM
+ nQ015Ru5KVl+pLiNNq/27p49zN8ULvW4HsnisxT9W4kymrePjHVy3vVZBFrhpQCPk6
+ 04rmLG+zcdetC7cdGY223FN9lsNt5N/n/I2TSef0=
+To: Carlito Nueno <carlitonueno@gmail.com>
 References: <f5bcb39a-bcc3-58c7-0b9a-622b0c386fff@candelatech.com>
-In-Reply-To: <f5bcb39a-bcc3-58c7-0b9a-622b0c386fff@candelatech.com>
-From: Carlito Nueno <carlitonueno@gmail.com>
-Date: Wed, 11 Sep 2019 13:30:11 -0700
-Message-ID: <CAEUausqebPVXzSgSBwgovzTBSWSO1dvF+G0LgqMOB8ry7hXGiA@mail.gmail.com>
-To: Ben Greear <greearb@candelatech.com>
+ <CAEUausqebPVXzSgSBwgovzTBSWSO1dvF+G0LgqMOB8ry7hXGiA@mail.gmail.com>
+From: Ben Greear <greearb@candelatech.com>
+Organization: Candela Technologies
+Message-ID: <329d1c22-ca3e-9675-6d4b-7ab8d1e38b79@candelatech.com>
+Date: Wed, 11 Sep 2019 13:31:39 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <CAEUausqebPVXzSgSBwgovzTBSWSO1dvF+G0LgqMOB8ry7hXGiA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_133025_124037_15A09D92 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20190911_133141_417958_A80137D1 
+X-CRM114-Status: GOOD (  17.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32a listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (carlitonueno[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -94,185 +80,68 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============2743089325794970961=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============2743089325794970961==
-Content-Type: multipart/alternative; boundary="000000000000ea6bbc05924ce37f"
-
---000000000000ea6bbc05924ce37f
-Content-Type: text/plain; charset="UTF-8"
-
-Hi Ben,
-
-I was wondering if AP-VLAN is same as dynamic VLAN.
-If so, will this feature work with ar71xx board - QCA9984
-
-I can test it and let you know if I see any issues.
-
-Thank you making ath10-ct!
-
-
-On Mon, Sep 9, 2019 at 12:55 PM Ben Greear <greearb@candelatech.com> wrote:
-
-> This enables a feature flag in the wave-2 firmware wmi-services indicating
-> it can send
-> software-encrypted raw frames.  This should in turn allow the AP-VLAN
-> feature to work.
->
-> For those that know how to use AP-VLANs, please try this wave-2 FW and the
-> latest ath10k-ct
-> driver(commit:  5e8cd86f90dac966d12df6ece84ac41458d0e95f) and let me know
-> if it works as expected
-> or not.
->
-> 988x
-> 5872fe046d90d844a6d3e232e47a6865bac551d7043b2874147c077e356b35d8
-> firmware-2-ct-full-community-22.bin.lede.011
-> 4568c3895a101ad28363491ea935f56a48bddea4c1be1889a6ba8d151902062a
-> firmware-2-ct-full-htt-mgt-community-22.bin.lede.011
-> /home/greearb/candela_html/downloads
-> 9887
-> 2c64ab22159d04cd345b8caffdd76ac95c0409729121a7a4095c5192f46013b2
-> firmware-2-ct-full-community-22.bin.lede.011
-> c806b8894faf3bbb11004f77196c6d711b9a6c187b1512d84e05fa98a5aba2ab
-> firmware-2-ct-full-htt-mgt-community-22.bin.lede.011
-> /home/greearb/candela_html/downloads
-> 9980
-> 4ed106dbe8431945afc6a995765f245f574713095b567df35f1397bba5f6fa2e
-> firmware-5-ct-full-community-12.bin-lede.011
-> 7434c84c501e00a24cbca338569ba150a9ec137ee2b9fa52d13484794300924c
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> /home/greearb/candela_html/downloads
-> 9984
-> 9af817e65dc9f195517f05ad25f0eca693632ea03b55739a2e0f0fc82e810405
-> firmware-5-ct-full-community-12.bin-lede.011
-> 11e116631555550185e712f70bd29ac41b495bf0ecbfc3334cada8a8c10a42f0
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> /home/greearb/candela_html/downloads
-> 4019
-> 21a6b5b69e3c1591cb9fe6077971ddadb003cac698f2962d4d8d73bc04038bbf
-> firmware-5-ct-full-community-12.bin-lede.011
-> 87111717ec5279125d397bea45386707684ee707a91f6c58298818fd02bf567f
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> /home/greearb/candela_html/downloads
-> 9888
-> 3c9f2e914d2a5eb3a413872239045dfcca105483ba83dd9b293e6b8855fda883
-> firmware-5-ct-full-community-12.bin-lede.011
-> dcb1bd826e5e1ef266fd7ee04410b44d4474d59f6eca0cc634e6432aaf326426
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> /home/greearb/candela_html/downloads
->
->
-> Thanks,
-> Ben
->
-> --
-> Ben Greear <greearb@candelatech.com>
-> Candela Technologies Inc  http://www.candelatech.com
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
-
---000000000000ea6bbc05924ce37f
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div>Hi Ben,</div><div><br></div><div>I was wondering if A=
-P-VLAN is same as dynamic VLAN.</div><div>If so, will this feature work wit=
-h ar71xx board - QCA9984</div><div><br></div><div>I can test it and let you=
- know if I see any issues.</div><div><br></div><div>Thank you making ath10-=
-ct!<br></div><div><br></div></div><br><div class=3D"gmail_quote"><div dir=
-=3D"ltr" class=3D"gmail_attr">On Mon, Sep 9, 2019 at 12:55 PM Ben Greear &l=
-t;<a href=3D"mailto:greearb@candelatech.com">greearb@candelatech.com</a>&gt=
-; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px=
- 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">This en=
-ables a feature flag in the wave-2 firmware wmi-services indicating it can =
-send<br>
-software-encrypted raw frames.=C2=A0 This should in turn allow the AP-VLAN =
-feature to work.<br>
-<br>
-For those that know how to use AP-VLANs, please try this wave-2 FW and the =
-latest ath10k-ct<br>
-driver(commit:=C2=A0 5e8cd86f90dac966d12df6ece84ac41458d0e95f) and let me k=
-now if it works as expected<br>
-or not.<br>
-<br>
-988x<br>
-5872fe046d90d844a6d3e232e47a6865bac551d7043b2874147c077e356b35d8=C2=A0 firm=
-ware-2-ct-full-community-22.bin.lede.011<br>
-4568c3895a101ad28363491ea935f56a48bddea4c1be1889a6ba8d151902062a=C2=A0 firm=
-ware-2-ct-full-htt-mgt-community-22.bin.lede.011<br>
-/home/greearb/candela_html/downloads<br>
-9887<br>
-2c64ab22159d04cd345b8caffdd76ac95c0409729121a7a4095c5192f46013b2=C2=A0 firm=
-ware-2-ct-full-community-22.bin.lede.011<br>
-c806b8894faf3bbb11004f77196c6d711b9a6c187b1512d84e05fa98a5aba2ab=C2=A0 firm=
-ware-2-ct-full-htt-mgt-community-22.bin.lede.011<br>
-/home/greearb/candela_html/downloads<br>
-9980<br>
-4ed106dbe8431945afc6a995765f245f574713095b567df35f1397bba5f6fa2e=C2=A0 firm=
-ware-5-ct-full-community-12.bin-lede.011<br>
-7434c84c501e00a24cbca338569ba150a9ec137ee2b9fa52d13484794300924c=C2=A0 firm=
-ware-5-ct-full-htt-mgt-community-12.bin-lede.011<br>
-/home/greearb/candela_html/downloads<br>
-9984<br>
-9af817e65dc9f195517f05ad25f0eca693632ea03b55739a2e0f0fc82e810405=C2=A0 firm=
-ware-5-ct-full-community-12.bin-lede.011<br>
-11e116631555550185e712f70bd29ac41b495bf0ecbfc3334cada8a8c10a42f0=C2=A0 firm=
-ware-5-ct-full-htt-mgt-community-12.bin-lede.011<br>
-/home/greearb/candela_html/downloads<br>
-4019<br>
-21a6b5b69e3c1591cb9fe6077971ddadb003cac698f2962d4d8d73bc04038bbf=C2=A0 firm=
-ware-5-ct-full-community-12.bin-lede.011<br>
-87111717ec5279125d397bea45386707684ee707a91f6c58298818fd02bf567f=C2=A0 firm=
-ware-5-ct-full-htt-mgt-community-12.bin-lede.011<br>
-/home/greearb/candela_html/downloads<br>
-9888<br>
-3c9f2e914d2a5eb3a413872239045dfcca105483ba83dd9b293e6b8855fda883=C2=A0 firm=
-ware-5-ct-full-community-12.bin-lede.011<br>
-dcb1bd826e5e1ef266fd7ee04410b44d4474d59f6eca0cc634e6432aaf326426=C2=A0 firm=
-ware-5-ct-full-htt-mgt-community-12.bin-lede.011<br>
-/home/greearb/candela_html/downloads<br>
-<br>
-<br>
-Thanks,<br>
-Ben<br>
-<br>
--- <br>
-Ben Greear &lt;<a href=3D"mailto:greearb@candelatech.com" target=3D"_blank"=
->greearb@candelatech.com</a>&gt;<br>
-Candela Technologies Inc=C2=A0 <a href=3D"http://www.candelatech.com" rel=
-=3D"noreferrer" target=3D"_blank">http://www.candelatech.com</a><br>
-<br>
-<br>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
-
---000000000000ea6bbc05924ce37f--
-
-
---===============2743089325794970961==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2743089325794970961==--
-
+WWVzLCBJIHRoaW5rIGl0IGlzIHByb2JhYmx5IGR5bmFtaWMgVkxBTnMuICBBbmQgaXQgc2hvdWxk
+IHdvcmsgd2l0aCBhbnkgd2F2ZQoyIGF0aDEwayBjaGlwc2V0IGluY2x1ZGluZyA5OTg0LgoKSSdt
+IGludGVyZXN0ZWQgdG8ga25vdyBpZiBpdCB3b3JrcyBvciBub3QuCgpUaGFua3MsCkJlbgoKT24g
+OS8xMS8xOSAxOjMwIFBNLCBDYXJsaXRvIE51ZW5vIHdyb3RlOgo+IEhpIEJlbiwKPiAKPiBJIHdh
+cyB3b25kZXJpbmcgaWYgQVAtVkxBTiBpcyBzYW1lIGFzIGR5bmFtaWMgVkxBTi4KPiBJZiBzbywg
+d2lsbCB0aGlzIGZlYXR1cmUgd29yayB3aXRoIGFyNzF4eCBib2FyZCAtIFFDQTk5ODQKPiAKPiBJ
+IGNhbiB0ZXN0IGl0IGFuZCBsZXQgeW91IGtub3cgaWYgSSBzZWUgYW55IGlzc3Vlcy4KPiAKPiBU
+aGFuayB5b3UgbWFraW5nIGF0aDEwLWN0IQo+IAo+IAo+IE9uIE1vbiwgU2VwIDksIDIwMTkgYXQg
+MTI6NTUgUE0gQmVuIEdyZWVhciA8Z3JlZWFyYkBjYW5kZWxhdGVjaC5jb20gPG1haWx0bzpncmVl
+YXJiQGNhbmRlbGF0ZWNoLmNvbT4+IHdyb3RlOgo+IAo+ICAgICBUaGlzIGVuYWJsZXMgYSBmZWF0
+dXJlIGZsYWcgaW4gdGhlIHdhdmUtMiBmaXJtd2FyZSB3bWktc2VydmljZXMgaW5kaWNhdGluZyBp
+dCBjYW4gc2VuZAo+ICAgICBzb2Z0d2FyZS1lbmNyeXB0ZWQgcmF3IGZyYW1lcy7CoCBUaGlzIHNo
+b3VsZCBpbiB0dXJuIGFsbG93IHRoZSBBUC1WTEFOIGZlYXR1cmUgdG8gd29yay4KPiAKPiAgICAg
+Rm9yIHRob3NlIHRoYXQga25vdyBob3cgdG8gdXNlIEFQLVZMQU5zLCBwbGVhc2UgdHJ5IHRoaXMg
+d2F2ZS0yIEZXIGFuZCB0aGUgbGF0ZXN0IGF0aDEway1jdAo+ICAgICBkcml2ZXIoY29tbWl0OsKg
+IDVlOGNkODZmOTBkYWM5NjZkMTJkZjZlY2U4NGFjNDE0NThkMGU5NWYpIGFuZCBsZXQgbWUga25v
+dyBpZiBpdCB3b3JrcyBhcyBleHBlY3RlZAo+ICAgICBvciBub3QuCj4gCj4gICAgIDk4OHgKPiAg
+ICAgNTg3MmZlMDQ2ZDkwZDg0NGE2ZDNlMjMyZTQ3YTY4NjViYWM1NTFkNzA0M2IyODc0MTQ3YzA3
+N2UzNTZiMzVkOMKgIGZpcm13YXJlLTItY3QtZnVsbC1jb21tdW5pdHktMjIuYmluLmxlZGUuMDEx
+Cj4gICAgIDQ1NjhjMzg5NWExMDFhZDI4MzYzNDkxZWE5MzVmNTZhNDhiZGRlYTRjMWJlMTg4OWE2
+YmE4ZDE1MTkwMjA2MmHCoCBmaXJtd2FyZS0yLWN0LWZ1bGwtaHR0LW1ndC1jb21tdW5pdHktMjIu
+YmluLmxlZGUuMDExCj4gICAgIC9ob21lL2dyZWVhcmIvY2FuZGVsYV9odG1sL2Rvd25sb2Fkcwo+
+ICAgICA5ODg3Cj4gICAgIDJjNjRhYjIyMTU5ZDA0Y2QzNDViOGNhZmZkZDc2YWM5NWMwNDA5NzI5
+MTIxYTdhNDA5NWM1MTkyZjQ2MDEzYjLCoCBmaXJtd2FyZS0yLWN0LWZ1bGwtY29tbXVuaXR5LTIy
+LmJpbi5sZWRlLjAxMQo+ICAgICBjODA2Yjg4OTRmYWYzYmJiMTEwMDRmNzcxOTZjNmQ3MTFiOWE2
+YzE4N2IxNTEyZDg0ZTA1ZmE5OGE1YWJhMmFiwqAgZmlybXdhcmUtMi1jdC1mdWxsLWh0dC1tZ3Qt
+Y29tbXVuaXR5LTIyLmJpbi5sZWRlLjAxMQo+ICAgICAvaG9tZS9ncmVlYXJiL2NhbmRlbGFfaHRt
+bC9kb3dubG9hZHMKPiAgICAgOTk4MAo+ICAgICA0ZWQxMDZkYmU4NDMxOTQ1YWZjNmE5OTU3NjVm
+MjQ1ZjU3NDcxMzA5NWI1NjdkZjM1ZjEzOTdiYmE1ZjZmYTJlwqAgZmlybXdhcmUtNS1jdC1mdWxs
+LWNvbW11bml0eS0xMi5iaW4tbGVkZS4wMTEKPiAgICAgNzQzNGM4NGM1MDFlMDBhMjRjYmNhMzM4
+NTY5YmExNTBhOWVjMTM3ZWUyYjlmYTUyZDEzNDg0Nzk0MzAwOTI0Y8KgIGZpcm13YXJlLTUtY3Qt
+ZnVsbC1odHQtbWd0LWNvbW11bml0eS0xMi5iaW4tbGVkZS4wMTEKPiAgICAgL2hvbWUvZ3JlZWFy
+Yi9jYW5kZWxhX2h0bWwvZG93bmxvYWRzCj4gICAgIDk5ODQKPiAgICAgOWFmODE3ZTY1ZGM5ZjE5
+NTUxN2YwNWFkMjVmMGVjYTY5MzYzMmVhMDNiNTU3MzlhMmUwZjBmYzgyZTgxMDQwNcKgIGZpcm13
+YXJlLTUtY3QtZnVsbC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDExCj4gICAgIDExZTExNjYzMTU1
+NTU1MDE4NWU3MTJmNzBiZDI5YWM0MWI0OTViZjBlY2JmYzMzMzRjYWRhOGE4YzEwYTQyZjDCoCBm
+aXJtd2FyZS01LWN0LWZ1bGwtaHR0LW1ndC1jb21tdW5pdHktMTIuYmluLWxlZGUuMDExCj4gICAg
+IC9ob21lL2dyZWVhcmIvY2FuZGVsYV9odG1sL2Rvd25sb2Fkcwo+ICAgICA0MDE5Cj4gICAgIDIx
+YTZiNWI2OWUzYzE1OTFjYjlmZTYwNzc5NzFkZGFkYjAwM2NhYzY5OGYyOTYyZDRkOGQ3M2JjMDQw
+MzhiYmbCoCBmaXJtd2FyZS01LWN0LWZ1bGwtY29tbXVuaXR5LTEyLmJpbi1sZWRlLjAxMQo+ICAg
+ICA4NzExMTcxN2VjNTI3OTEyNWQzOTdiZWE0NTM4NjcwNzY4NGVlNzA3YTkxZjZjNTgyOTg4MThm
+ZDAyYmY1NjdmwqAgZmlybXdhcmUtNS1jdC1mdWxsLWh0dC1tZ3QtY29tbXVuaXR5LTEyLmJpbi1s
+ZWRlLjAxMQo+ICAgICAvaG9tZS9ncmVlYXJiL2NhbmRlbGFfaHRtbC9kb3dubG9hZHMKPiAgICAg
+OTg4OAo+ICAgICAzYzlmMmU5MTRkMmE1ZWIzYTQxMzg3MjIzOTA0NWRmY2NhMTA1NDgzYmE4M2Rk
+OWIyOTNlNmI4ODU1ZmRhODgzwqAgZmlybXdhcmUtNS1jdC1mdWxsLWNvbW11bml0eS0xMi5iaW4t
+bGVkZS4wMTEKPiAgICAgZGNiMWJkODI2ZTVlMWVmMjY2ZmQ3ZWUwNDQxMGI0NGQ0NDc0ZDU5ZjZl
+Y2EwY2M2MzRlNjQzMmFhZjMyNjQyNsKgIGZpcm13YXJlLTUtY3QtZnVsbC1odHQtbWd0LWNvbW11
+bml0eS0xMi5iaW4tbGVkZS4wMTEKPiAgICAgL2hvbWUvZ3JlZWFyYi9jYW5kZWxhX2h0bWwvZG93
+bmxvYWRzCj4gCj4gCj4gICAgIFRoYW5rcywKPiAgICAgQmVuCj4gCj4gICAgIC0tIAo+ICAgICBC
+ZW4gR3JlZWFyIDxncmVlYXJiQGNhbmRlbGF0ZWNoLmNvbSA8bWFpbHRvOmdyZWVhcmJAY2FuZGVs
+YXRlY2guY29tPj4KPiAgICAgQ2FuZGVsYSBUZWNobm9sb2dpZXMgSW5jIGh0dHA6Ly93d3cuY2Fu
+ZGVsYXRlY2guY29tCj4gCj4gCj4gICAgIF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCj4gICAgIG9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cj4gICAgIG9w
+ZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcgPG1haWx0bzpvcGVud3J0LWRldmVsQGxpc3Rz
+Lm9wZW53cnQub3JnPgo+ICAgICBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlz
+dGluZm8vb3BlbndydC1kZXZlbAo+IAoKCi0tIApCZW4gR3JlZWFyIDxncmVlYXJiQGNhbmRlbGF0
+ZWNoLmNvbT4KQ2FuZGVsYSBUZWNobm9sb2dpZXMgSW5jICBodHRwOi8vd3d3LmNhbmRlbGF0ZWNo
+LmNvbQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
+ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
+aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

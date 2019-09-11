@@ -2,100 +2,152 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D285DB0215
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 18:51:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09886B03B8
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 20:36:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NdPLc62SMPDNp6ZCe37Mo4yRRL1668LIGJaWKGSzcd4=; b=MUWv2AGNFSqzCj
-	RuSU9IT9L6CrEQyACRrIw1QebGdRpgwtH4kfj4Q2ZcGwjsB2bQlvjopnkF1LNxywrW78pEHsX+8AW
-	zV8sO4hF51i7H+XC3EA/Ws7OHH2YZplqKw53hTDeoTqkEi1xzD3cynPZyEdKVjMUQERrLpRtxeHDA
-	yKdwq6zffBucjB/Yzr4Z5LK5yQ6qEOjKMwdbAb+spDFKRHq3DCT/8ZnIMrijMQuiXGqC6jV6jpcDh
-	hvvHhLE3x1NynfsT+748s/ZGDvvf2mCqco4u5jEc72qrddcuEdzqmPkt4Qczjlf7ShDOp3m8z8m2Z
-	iYwNIzdZbfsv83l5PGSA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xLuvY7y28dk0PGLnPcOj18KUS++p4OJi6X4t757fCaM=; b=cdVa0FEgXhgsDG
+	WPUfS4urzfUEqlCjjF5Q4pPOLXlLO6dkMH8OftSmyeKobER3AB9MyioTirzKo+XwEJx4qpv+gVq7K
+	9JWmHP+iQOvtCFxh3LPajjugm8nZkzFRP5Ztl9+dy+ot9KRwHENtwanxFe+MH21P1jeh7q5+L+3xx
+	cZHkm9Fld61v2DjTFx/57fqNV9GVAG/Oav/HFvWOB86IJBSZxYLj0go94fvxkYDpettfpKx7Jnz0d
+	il6MsVGc6FEWlcLrrhZLdiX+s6zwjxprqiYSTGhPIFSczyWCDOzEMzzc6UY6aeGHZwyM2SCUHPHJK
+	VLE/ZIepij4FwMSRBCrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i85q1-0002hs-9e; Wed, 11 Sep 2019 16:51:25 +0000
-Received: from achernar.uberspace.de ([95.143.172.237])
+	id 1i87Tb-0000sL-6p; Wed, 11 Sep 2019 18:36:23 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i85pp-0002hO-31
- for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 16:51:15 +0000
-Received: (qmail 24917 invoked from network); 11 Sep 2019 16:51:08 -0000
-Received: from localhost (HELO ?IPv6:2a02:790:ff:1021:602:8f59:5bf5:7488?)
- (127.0.0.1)
- by achernar.uberspace.de with SMTP; 11 Sep 2019 16:51:08 -0000
-To: Salvatore Mesoraca <salvatore@samknows.com>,
- openwrt-devel@lists.openwrt.org
-References: <CA+OT2oE7MRfmzKjeyc=rFhWL-9ui-U+ttY+67j8sX2GPFmoibQ@mail.gmail.com>
- <CA+OT2oF8x4__f=byjD7asueU9mAzmjP8xdQ3aQH19fhh22MVJQ@mail.gmail.com>
-From: Vincent Wiemann <vincent.wiemann@ironai.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vincent.wiemann@ironai.com; prefer-encrypt=mutual; keydata=
- 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
- sFWRrW2QGIhjT+Y4XMq8yZQ=
-Message-ID: <949557de-63f0-7f5e-04b4-b00d3d782828@ironai.com>
-Date: Wed, 11 Sep 2019 18:51:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <CA+OT2oF8x4__f=byjD7asueU9mAzmjP8xdQ3aQH19fhh22MVJQ@mail.gmail.com>
+ id 1i87TF-0000rC-IG
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 18:36:04 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Sandeep.Sheriker@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Sandeep.Sheriker@microchip.com";
+ x-sender="Sandeep.Sheriker@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Sandeep.Sheriker@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Sandeep.Sheriker@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: O154aQd7u1vaVFv0NtsTWJZQHAhMRycytdfzzt6vi1c5s6zsS5AcfNpTqtdyXJFUnEd4YSO/6O
+ LVnjfNj4J+qaAUmoybIHS2HuCUoBpWYRrUe5VsQS7zwgV3Fs5lzl1bmIaAVi9mucJ8jrwBN5Q3
+ lCzUHaKsLV8JmHs3RuSh33/0Omnt8HbI4KzaXH6nv1bLXJsC9ed40ix38G4t6EQ7o6VbzN7Whg
+ LcgP7LRSyq7kSjV5u5ysCmPuHAL5gO0uji1Mh4RXUN+1/TszAM0S+ub8viMu2MQnWc6fdlPnLb
+ JgY=
+X-IronPort-AV: E=Sophos;i="5.64,494,1559545200"; d="scan'208";a="50109685"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 11 Sep 2019 11:35:59 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 11 Sep 2019 11:35:59 -0700
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 11 Sep 2019 11:35:59 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DbgcubGWB+l/j/JbPneF4v3FmWHGsSaOpxDGt+sIy4azCjIC/Qw1z9mKcFR34LR5FL2Opo4ODslSahf6e78V8m5p44fll6A1paQfmvgsbppH6QDw2PqLNm0m8jqeneqLyyYzZdyZ+CKivYPE6DypHBV+nUCVPsNV3+BE9xubZ/G1Y55/zI5xc8Tx+JjqSgUb34MOL55nTP/mznW+BtOV2VUkFnx2sLl0R0s3VG6Tpt+zyecCzd6yJXD84dNNLYLJPYR1CKsPeKv676Yv9lkabQaHa2Qvure86DkmAtaKqOdiubDkr2k2PSdtJ/s4xqIpAzl5IsLW6bIf4mLFpHhqTA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wuIsWQLu5ZDP3yt6pfp3FDO3gWGqiFMchnlb5q8/Pg4=;
+ b=XMGrNme76/wQhLFoS0BckGXwcsroUELFG3wLkXqsBHKXihyFB8yGtYYhidTvdKkzeST+70at3irriT6hqvUhgLy/Zdbo4VWWKcJh747bhUK7XHB0K5p/CU32ZiKmW5mhr56mRfYmh5kZSvOeoH+NxIRBw6Eu8jihrjPrGy3sVIeoTAHPYYxkYkyKXKqd8C3aDbqkfJIj4HU+G+6jkh/OGF6y5NOEnhXmfRgI/FV1jRJ+o1l1bxYKQPiMumD5QHKkGegC+mRPqtiulzMfGF14gS3HTsjEl5kz6pE/ngPXUiq511UZBDkqVmy87Lnzzrm39Tnj610Bkd5erbrECdY5UA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wuIsWQLu5ZDP3yt6pfp3FDO3gWGqiFMchnlb5q8/Pg4=;
+ b=FaIsNVs0glErq3W7p90mxP5Q4DgaC9rQzJ1OXCNh3OFUI02rTg9GtpiMpoblO716CZFeck2Tv55Olj8e9ZJkAT9dFvBDsxs1yEIqp2tI+W8TSc1Dp2oUXLg1y6yZTmj8syGvnNIjjkolpri4a/E4ciemhzUT5FosxSxFb3vKQq8=
+Received: from BYAPR11MB3157.namprd11.prod.outlook.com (20.177.126.222) by
+ BYAPR11MB3749.namprd11.prod.outlook.com (20.178.238.142) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.17; Wed, 11 Sep 2019 18:35:55 +0000
+Received: from BYAPR11MB3157.namprd11.prod.outlook.com
+ ([fe80::56f:70b3:cd63:6b30]) by BYAPR11MB3157.namprd11.prod.outlook.com
+ ([fe80::56f:70b3:cd63:6b30%7]) with mapi id 15.20.2241.018; Wed, 11 Sep 2019
+ 18:35:55 +0000
+From: <Sandeep.Sheriker@microchip.com>
+To: <openwrt-devel@lists.openwrt.org>
+Thread-Topic: [at91 patches 0/2] at91 patches
+Thread-Index: AQHVaM++aR6T8dRvc0ihUGEn8PSPMQ==
+Date: Wed, 11 Sep 2019 18:35:54 +0000
+Message-ID: <1568226855-29385-1-git-send-email-sandeep.sheriker@microchip.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: BY5PR16CA0019.namprd16.prod.outlook.com
+ (2603:10b6:a03:1a0::32) To BYAPR11MB3157.namprd11.prod.outlook.com
+ (2603:10b6:a03:75::30)
+x-mailer: git-send-email 2.7.4
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [198.175.253.81]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 63285c5e-956d-49ad-49c5-08d736e6e129
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:BYAPR11MB3749; 
+x-ms-traffictypediagnostic: BYAPR11MB3749:
+x-microsoft-antispam-prvs: <BYAPR11MB374963D3FA8EC53C7CFF069582B10@BYAPR11MB3749.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-forefront-prvs: 0157DEB61B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(376002)(39860400002)(136003)(396003)(366004)(199004)(189003)(86362001)(6116002)(3846002)(4744005)(6486002)(6916009)(2501003)(2616005)(476003)(486006)(6512007)(5660300002)(478600001)(50226002)(25786009)(2351001)(316002)(2906002)(66446008)(99286004)(36756003)(52116002)(64756008)(102836004)(66476007)(66946007)(66556008)(53936002)(26005)(186003)(14454004)(256004)(71190400001)(7736002)(305945005)(81166006)(66066001)(6436002)(81156014)(5640700003)(8936002)(71200400001)(6506007)(8676002)(386003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR11MB3749;
+ H:BYAPR11MB3157.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: peTz8vyIx2WaffqOdMLAZ7CkPVbqUtbXFYLMIuWID0nNbzd8ak1mlArL5pNSokWpZH3RarOB+gTv2t2eiVf23nrU1EKpZavPwQOs9hyxV523s859ndR//PYXimQ1yAZ+DRBMdgnxCZA2ObKfeGcVFiIVCGRuGkrUEHgCAyOaPHD8QrQo8ky+yQR79fBFM3tdlxQrb8Q2SnlGIawaNz8vhH+kpU2NEyq5kirQoM9cINLmZ8Fjg/t7XbLOGsV1cNUowAXxVlie/JdYP9U+MgiAX3BanJ9aOUbiCoPpm2tVfO2xSTeNiNDS4RYHQPIPhk5cdaHsA7dzMbDeBejGVEdl09OokBsCsLV/R+43phFtQMqOhKrVBLVhnIkECeDT/ELAhGvQkzcvPHQTOXT9USDKHvIHpYabRDKkw565CCjFSfQ=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 63285c5e-956d-49ad-49c5-08d736e6e129
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2019 18:35:55.0868 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: PrgtNV9Vlm1Q3xrlGLSdJixxi5X6ugm2Z+tEIAft3bRJ4jeGG245Qn/IUOGNIr8PZqXwOGbtTh0imPWP/6WvPaE4Khf7I/Ll5t6BpkjN5dK5An8KLiOPEixe7Wje4/+gmjCXlPuCCTVXBZgYEWom9Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB3749
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_095113_418460_6E6BDAC4 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190911_113601_646117_95E49C90 
+X-CRM114-Status: UNSURE (   3.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [95.143.172.237 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] nftables: named counters broken on 18.06.4
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [at91 patches 0/2] at91 patches
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,77 +164,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+This patch series is to create a fit images and add it in sdcard image
+for at91 targets.  
 
+Sandeep Sheriker M (2):
+  at91:sama5: create fit image
+  at91:sam9x: create sdcard images
 
-On 11.09.19 16:25, Salvatore Mesoraca wrote:
-> On Tue, 10 Sep 2019 at 16:20, Salvatore Mesoraca <salvatore@samknows.com> wrote:
->>
->> Hi,
->>
->> I'm experiencing a problem with nftables' named counters with OpenWrt 18.06.4 on a NetGear R7800.
->> This is an example of what I get:
->>
->> # uname -a
->> Linux OpenWrt 4.14.131 #0 SMP Thu Jun 27 12:18:52 2019 armv7l GNU/Linux
->> # nft flush ruleset
->> # nft add table inet filter
->> # nft add counter inet filter mycounter
->> # nft add chain inet filter output { type filter hook output priority 0 \; }
->> # nft add rule inet filter output counter name mycounter
->> Error: Could not process rule: No such file or directory
->> add rule inet filter output counter name mycounter
->> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
->> # nft list ruleset
->> table inet filter {
->>         counter mycounter {
->>                 packets 0 bytes 0
->>         }
->>
->>         chain output {
->>                 type filter hook output priority 0; policy accept;
->>         }
->> }
->>
->> Running the failing command using strace I can tell that the ENOENT error is received from the kernel via Netlink.
->> It's similar to what I get if I try to reference a non-existent counter, but "mycounter" exists.
->> If I remove "name mycounter" from the command line, it works. Of course it creates an anonymous counter.
->> The message sent via Netlink looks correct, so I think that the problem resides in kernel.
->>
->>
->> On a PC with 4.15 the same command sequence works flawlessly:
->>
->> # nft flush ruleset
->> # nft add table inet filter
->> # nft add counter inet filter mycounter
->> # nft add chain inet filter output { type filter hook output priority 0 \; }
->> # nft add rule inet filter output counter name mycounter
->> # nft list ruleset
->> table inet filter {
->>         counter mycounter {
->>                 packets 0 bytes 0
->>         }
->>
->>         chain output {
->>                 type filter hook output priority 0; policy accept;
->>                 counter name "mycounter"
->>         }
->> }
->>
->> Any ideas?
-> 
-> Solved.
-> For future reference:
-> The kernel was missing CONFIG_NFT_OBJREF, without this option you can
-> create named counters, but you can't actually use them.
+ target/linux/at91/image/Makefile |  2 ++
+ target/linux/at91/image/sam9x.mk | 44 ++++++++++++++++++++++++++++++++++++++--
+ target/linux/at91/image/sama5.mk |  4 +++-
+ 3 files changed, 47 insertions(+), 3 deletions(-)
 
+-- 
+2.7.4
 
-This sounds like a bug/unexpected behavior.It should not be possible to create named references without the kernel supporting
-it or at least it should give a clear error message.
-It would be nice if you could report this to the netfilter mailing list.
-
-Best,
-
-Vincent
 
 _______________________________________________
 openwrt-devel mailing list

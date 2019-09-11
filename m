@@ -2,79 +2,93 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78ECFAFEB3
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 16:26:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB1E2AFEB4
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 16:26:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3VIz93Dd4gOGszXqjuBnWBsmAdDMZiepz2GFKlGnt7M=; b=I59almxhhpZcFa
-	3ZI6awadw3E9CFljYUTV73DnJNvrkx6ac/bmsOW2fJjbu/yDKlTwdHSUUnyAYYMAyZkiS2X/l3ZC+
-	wUsIGU38Ych/kD7LKgc62ymJym4Ofqv6iVU27Mp+/fa2j6255HDbSVzD8wnjK4IPCXb81TgvAdhuG
-	v8frvuScO5rR0n/g6C0H9EYRytp84fevidU/SnfVVn6GzNUu2hhMMZB9dPFuhj9NK01GnyODB2u85
-	H/2kdADFo3liBsvTwrmjEUciuUMOR4Y679YaKxR138x0fPNDladVYCTRt5GW+vkjcwoesnrRHFtFN
-	ZODmeEICbLia7GEewPLA==;
+	List-Owner; bh=pywY78P/0mMe1WDFmmDPtwCbwvKHnfFKbuttjW7DLug=; b=i7sHOqhledLY+p
+	KUvLCl0lLs578oaFhka8zzPPVWEyhAwxSVE5n0pSL/k1AUbiD+uuDlHZs83vOSII4N0lTOpl4bfNP
+	oBX5TWbhRr5OvWc+4p46PeUvLT8vQBKfdJ0roRnC4KLXbEEPj714PgXlLyWaVDcnuYqtyiWz1xyFW
+	c5C5BxCDrpnBueESyf22F+kJC/MTEZ2hfNK8KY33CRVfX10b7o+CvyB8zqIfwsalsPH4++hRZ2yp9
+	CpvsCdp7ZwsPjTi9Fczfnvu7FnbyJIhwIIXJrC0UaZElijaEJBzDzx6oG327A4P7dfZFYpHDa9lkd
+	8N63TfNIX9zTMctOSxRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i83Zc-0005CW-KG; Wed, 11 Sep 2019 14:26:20 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1i83aD-0005SW-Bv; Wed, 11 Sep 2019 14:26:57 +0000
+Received: from mail-yw1-xc2a.google.com ([2607:f8b0:4864:20::c2a])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i83ZJ-0005C0-Nx
- for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 14:26:03 +0000
-Received: by mail-lj1-x243.google.com with SMTP id q64so9667564ljb.12
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Sep 2019 07:25:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=samknows-com.20150623.gappssmtp.com; s=20150623;
+ id 1i83a3-0005Ry-21
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 14:26:48 +0000
+Received: by mail-yw1-xc2a.google.com with SMTP id d19so6005377ywa.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Sep 2019 07:26:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wy5XF4dCTpdM5kUoxDOre4iXfekNLXhtPb6D/jW1o/Q=;
- b=sUQRNI6tfc3QfYYf9/guWyx+dPoAfQL8rDcwpfiqZ/esjH4pOGh6wrFxPfm1BxkM+R
- I0402ru2T6l1OXbkjIG2a8H1lUU6IIhKWD65Z858iUgKqdDkZN0auplFUiho2Xog5ue7
- a8N7XIjcDXpBktL9QT2RY/3Af+bk4aMkvUY3BPeG2jHfHemHrUlhb4oJsY4a1GA4LnJO
- WKgca6eUaYrb3F5BYcSlnucRmDGUVxTdQvuh7iq773kPL3GuA5iAPHLzLjJ24FQLtT+2
- k2cr8Sv2azQQpgAhn113XPc91SmhcYkClIeB6Xdf+EdjRHdhKH7uoZKcaD8noCuUiNx2
- p1RQ==
+ :cc:content-transfer-encoding;
+ bh=XEn0dvzMavFFdK7lv6q86lkMNIXLmp0SXBGlgh1WvrI=;
+ b=iuCH4FycjJ1pJfQaJgkbvjxSnKQM4O7RW0uY8lheZey4Y1184O8J4pgQAmbYsJdOhM
+ xpVYXPZwzhqmEsji69skf27IczVpUVpqaJn0beHpoMu8++slmsiZ+aFt99YLe4i/z2y8
+ X0Y61813Bho2zE9PGzlboyoMl1J9xmIZHazxRvnjQTlEzGhmlRPQQ84ES+6sW1oeeAGp
+ /dwnWNz1YFm8fbyBzPf1Na+8CXyt6MsvxXRkrSMpcfzuFLExwYqKRzfuSgo7MnQt4+pM
+ 8YGqQVU0tAKyTpDyOo+1+3fj4mmAqK9jlV4KjZMOtv04qyv1HsGU0dXpU7kcwLIVG59J
+ cgEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wy5XF4dCTpdM5kUoxDOre4iXfekNLXhtPb6D/jW1o/Q=;
- b=lIyBqjn124ItyCuIo1j/YG7+FIwH+ogw8fKfA0el9STDvrMLh/T6DPBx+mUTaS7HKB
- uSyTFrKcex75Tw1MjzijZ4XyG2FA99AwZwuINeCurpkj4k3LgisPr46cACAP+rMsQR2x
- b0L07c+LIYSMJ7Y2LL3eBQ3SAy2beDm//F3O1iL/ux/Wlc9uM/4y+tMPjGQxg9pViUKg
- QY1xp9elwNujoyPuryE7WniQFteHodLaDFAZcZgwLrvd57Q8non3kfHY2Z0uFcqauY3p
- v5LK6zAkNgjHOW2Y8yIyMx+/3UrSfhVmRCwS3Mrii4i1nKrvDWHAkmln3iZHAO4Z6E30
- 3YGA==
-X-Gm-Message-State: APjAAAVk42tQnu3N4FrNWgSwoJKuaN2syjpE6/0xsMEBmXTrG7HVLpqI
- wxxD66TT8W3OIzC/bqY5JnEGyPFtpqj/rRkh6xFMkGWJa2A=
-X-Google-Smtp-Source: APXvYqyfTkXSUKdh1kPQYJ8KKsBYtFlJrnb2ezX1/qQpBsuHhDUdlAQZjyv73v4VoAvrU6wN28Py51Tvoxhjg11dNN0=
-X-Received: by 2002:a2e:8542:: with SMTP id u2mr1366998ljj.149.1568211958053; 
- Wed, 11 Sep 2019 07:25:58 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XEn0dvzMavFFdK7lv6q86lkMNIXLmp0SXBGlgh1WvrI=;
+ b=Zm17+A0KYGOtJZA33ja96/hdOH0b8GgtbkxokPkkGSeRgSxPpvzr0PkGNyGuTSQVSR
+ sxuIe3ArZT2cOiU64SsJ6MBAaJEqr/3dO2NRblYL8hLw9kcf1Rm0yWNcmgN/HtNifZ0K
+ Ie0BsdLFttVhGv3AM4+tEKoIlpB4uSLUhY4xYYWrmhVCFbljVuLDCLfApMifTYy0YrbH
+ h5xqczrMySvmJzFEJ/s81rBvXxEMfXItJ65ChaGiuh0JkpiPjkf32vRqU9P8SIL4eeYB
+ 9aBDf/9uJhfIvZ0GnjpIAFGyb7mFei51h/DwQQxywfICxQjsYmm8AbKk2q/mdvCTqY47
+ M7aA==
+X-Gm-Message-State: APjAAAVaxVVdu8YjlWvvmj5r33hrM38WGgcH51VtonnqufwXunl00uJY
+ n/nHVpNTW8QQVytmWqjTZ415GxJC9kQKiFKkFH0xGZL/
+X-Google-Smtp-Source: APXvYqwT5usb68s1MpICgG8oQcy9jWB76FOFA9YJkQS4pAvcLqey/YB8zFeDlWLfWw4fAkNkeUrDyvKOm+uOqIsOckQ=
+X-Received: by 2002:a81:af21:: with SMTP id n33mr24859658ywh.131.1568212004724; 
+ Wed, 11 Sep 2019 07:26:44 -0700 (PDT)
 MIME-Version: 1.0
-References: <CA+OT2oE7MRfmzKjeyc=rFhWL-9ui-U+ttY+67j8sX2GPFmoibQ@mail.gmail.com>
-In-Reply-To: <CA+OT2oE7MRfmzKjeyc=rFhWL-9ui-U+ttY+67j8sX2GPFmoibQ@mail.gmail.com>
-From: Salvatore Mesoraca <salvatore@samknows.com>
-Date: Wed, 11 Sep 2019 15:25:47 +0100
-Message-ID: <CA+OT2oF8x4__f=byjD7asueU9mAzmjP8xdQ3aQH19fhh22MVJQ@mail.gmail.com>
-To: openwrt-devel@lists.openwrt.org
+References: <CACna6ryNB2PN2qwyctK7aTVnvhB+F6zTjGUMs=6vZ4XDeAyF6A@mail.gmail.com>
+ <CACna6rzL6guvd-MGOUqXRP_nCeFxmOwjqxtcNoGhV0vNC701Wg@mail.gmail.com>
+ <f72f164d-ef33-41be-2c17-c1d9e84b51a3@ironai.com>
+ <CACna6ry6O1Y=mZzVncWiTjTXeX9fu3wDuBnFrboQJpgwOcyL-A@mail.gmail.com>
+ <33f6f043-79ac-d6a4-8c44-a63c46d3c0d3@ironai.com>
+In-Reply-To: <33f6f043-79ac-d6a4-8c44-a63c46d3c0d3@ironai.com>
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+Date: Wed, 11 Sep 2019 16:26:33 +0200
+Message-ID: <CACna6rwqiG9QHzK=2N43fPgUe56W-NnkWd14UuCLQEW_qK949Q@mail.gmail.com>
+To: Vincent Wiemann <vincent.wiemann@ironai.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_072601_826232_AD54C6B5 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_072647_101829_32169B71 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c2a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zajec5[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] nftables: named counters broken on 18.06.4
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+Subject: Re: [OpenWrt-Devel] sysupgrade: extending firmware validation
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,74 +100,26 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Salvatore Mesoraca <salvatore@samknows.com>,
- Vincent Wiemann <vincent.wiemann@ironai.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, 10 Sep 2019 at 16:20, Salvatore Mesoraca <salvatore@samknows.com> wrote:
->
-> Hi,
->
-> I'm experiencing a problem with nftables' named counters with OpenWrt 18.06.4 on a NetGear R7800.
-> This is an example of what I get:
->
-> # uname -a
-> Linux OpenWrt 4.14.131 #0 SMP Thu Jun 27 12:18:52 2019 armv7l GNU/Linux
-> # nft flush ruleset
-> # nft add table inet filter
-> # nft add counter inet filter mycounter
-> # nft add chain inet filter output { type filter hook output priority 0 \; }
-> # nft add rule inet filter output counter name mycounter
-> Error: Could not process rule: No such file or directory
-> add rule inet filter output counter name mycounter
-> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> # nft list ruleset
-> table inet filter {
->         counter mycounter {
->                 packets 0 bytes 0
->         }
->
->         chain output {
->                 type filter hook output priority 0; policy accept;
->         }
-> }
->
-> Running the failing command using strace I can tell that the ENOENT error is received from the kernel via Netlink.
-> It's similar to what I get if I try to reference a non-existent counter, but "mycounter" exists.
-> If I remove "name mycounter" from the command line, it works. Of course it creates an anonymous counter.
-> The message sent via Netlink looks correct, so I think that the problem resides in kernel.
->
->
-> On a PC with 4.15 the same command sequence works flawlessly:
->
-> # nft flush ruleset
-> # nft add table inet filter
-> # nft add counter inet filter mycounter
-> # nft add chain inet filter output { type filter hook output priority 0 \; }
-> # nft add rule inet filter output counter name mycounter
-> # nft list ruleset
-> table inet filter {
->         counter mycounter {
->                 packets 0 bytes 0
->         }
->
->         chain output {
->                 type filter hook output priority 0; policy accept;
->                 counter name "mycounter"
->         }
-> }
->
-> Any ideas?
-
-Solved.
-For future reference:
-The kernel was missing CONFIG_NFT_OBJREF, without this option you can
-create named counters, but you can't actually use them.
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gV2VkLCAxMSBTZXAgMjAxOSBhdCAxNDo0NSwgVmluY2VudCBXaWVtYW5uCjx2aW5jZW50Lndp
+ZW1hbm5AaXJvbmFpLmNvbT4gd3JvdGU6Cj4gT24gMTEuMDkuMTkgMTM6MDAsIFJhZmHFgiBNacWC
+ZWNraSB3cm90ZToKPiA+IE9uIFdlZCwgMTEgU2VwIDIwMTkgYXQgMTI6MTksIFZpbmNlbnQgV2ll
+bWFubgo+ID4gPHZpbmNlbnQud2llbWFubkBpcm9uYWkuY29tPiB3cm90ZToKPiA+PiBIaSBSYWZh
+bCwKPiA+Pgo+ID4+IGJldHRlciBlcnJvciBtZXNzYWdlcyBmb3Igc3lzdXBncmFkZSBpcyBhIGdv
+b2QgaWRlYS4KPiA+Cj4gPiBIaSAmIGxldCBtZSBhc2sgc2hvcnRseS4gRGlkIHlvdSBmb2xsb3cg
+dGhlIHJlY2VudCBkZXZlbG9wbWVudD8gU2F3IG15Cj4gPiBpbXByb3ZlbWVudHMgJiBwZW5kaW5n
+IHBhdGNoZXM/Cj4gPgo+Cj4gU29ycnksIEkgc2VlLi4uIFlvdXIgY2hhbmdlcyBsb29rIGdvb2Qu
+Cj4gV2h5IGRpZCB5b3UgcmVwbHkgdG8geW91ciBvd24gIm91dGRhdGVkIiBlbWFpbD8KCkJlY2F1
+c2UgdGhhdCB3YXMgb2J2aW91c2x5IHJlbGF0ZWQhCgoKPiBQbGVhc2UgcG9zdCBhbiB1cGRhdGUg
+Zm9yIGtub3dpbmcgdGhlIGN1cnJlbnQgc3RhdGUgbmV4dCB0aW1lIHdoZW4KPiB5b3UgYnJlYWsg
+dGhlIHRocmVhZCBjaGFpbi4gSXQgd2FzIG5vdCBjbGVhciB0aGF0IHlvdSd2ZSBhbHJlYWR5Cj4g
+aW1wbGVtZW50ZWQgbW9zdCBvZiBpdC4KClJlYWRpbmcgdGhlIGZpcnN0IHNlbnRlbmNlIG9mIG15
+IGUtbWFpbCB3b3VsZCBoZWxwLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0
+cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8v
+b3BlbndydC1kZXZlbAo=

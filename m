@@ -2,87 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BB86B04E5
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Sep 2019 22:36:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07F7BB0958
+	for <lists+openwrt-devel@lfdr.de>; Thu, 12 Sep 2019 09:19:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=R8/M9M3BFeylVT141qK7wqyAAX3HnvWdatFGCuko4f0=; b=ZlWi0vKXgV13wd+rxg5g3VD4i
-	N/a2RjGxK5LBI4FQWgYkpY+gjAO4YvjqII2mcM8p8kXQNgSCcEskKWlKoxGuKQNzMbukM3AVeHTEF
-	A7+zcMIAPCd+Xps1fRFaVLnPdCeBeIRaVfyuRDuYGMjefcpbBocYyN8onaLbM0P9JoS9W9dagJX2H
-	eAcbELyHoqDWPXXkliinnewR9hPbscHe6qMn6VkqxfAYq7WpGXwOXwRWrF2aEuZUX6GoNU2bfMpDm
-	3rp9ZcLgIXPCeCbV+UMGNmROFzp71QrAqsNN49V7pQLxiTa1HHDHIv2Glv6Hy5F5O49mLf83MWyc3
-	a71MoAUOQ==;
+	 bh=tq3o4iqmRy/+4R4fQCzIaNaagsSXrronwUyq3n6Wzdk=; b=B2Tchx9nUc2W7GGFCnWro5NEv
+	fd9IBXLW65lch6bAOgmFoYHZclX4bWuVJhdL4k6UoYHly7fTiEZ1EE2CFnyDiZsJxYxFF+dIFShS0
+	/UdXsrLJGMnXy4fhrYxdrYGjS7HFckcLYGMIF4TtjfBvFUVva9HrbwisD4R3N6/08Et0aQw4gH9gk
+	DsaS8L3SnbUN6inVLe6GwpfgdUdQbTd+hMmGJiPKHBGeY/W5sDcENNaYajbi9Sk83B9hWYaTvadLq
+	IDrktHGqm/pHjEW3DcywCpFQOQ7nfqVXUTe/bbWOsFNZTAPnCrNWJb6f+JxkpBTz/1AsUIsCZh33+
+	ph2xvQdTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i89M7-0001mQ-1a; Wed, 11 Sep 2019 20:36:47 +0000
-Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
+	id 1i8JNm-00040d-Rh; Thu, 12 Sep 2019 07:19:10 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i89Lv-0001m4-U6
- for openwrt-devel@lists.openwrt.org; Wed, 11 Sep 2019 20:36:37 +0000
-Received: by mail-wr1-x434.google.com with SMTP id y19so26063483wrd.3
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Sep 2019 13:36:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HinL1LIIRxlar9YDEuwamdfPNqgyj3dXKOEASVWgcDU=;
- b=iPabmIZsOY4tnWYhxZ/BGAj1LFBmE4NJusf4vsh1fgk0HLSxdxOPMRqyPoJwUaz2EA
- 4JMrpYhFVllDsbbyxRfxmjQsphkiOFPSWqbWiPtFh1kSJChws9GngPJXGfATZCLur5iN
- k7/wRBp416o3qCyepI6/udnbyzpDuJIJcCJV6Bh6Fy9MOtCyDVtOyUVU8/jT3QH/Gci2
- 4gDWfUEn4Bu+joBGoE4ibwvZgVrPvBG+lVFiXH08XTvI00bjb2UPUeR/WpCRsu79P+Rt
- RGUcocy0KXmRnbAF2HlbEFwUHgDzbk5NVk9xAddzzrwFX5Pg3v8wjhncsqfYoWh6EPpD
- bung==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HinL1LIIRxlar9YDEuwamdfPNqgyj3dXKOEASVWgcDU=;
- b=cq44k1uEeSZdcQ2g/eGPau5diVhvKvjqo4bcFz4jjqg2lnXhIfxB043VVqiu3USXWp
- uynpMHbQqm4rl8Ly/sOkI1Edm/lO5bCXFtLvt0E1JxnpUwwkolsvxjvwkLr52HYh1SWd
- +HpIE0omXN4tp0g242gO+FU5s8lTups/7nrKV2aM/D7bk4ALm5x0xDBrauDlZpuVdXMA
- 1TpMqhOXKa/UrKPm4qLAraNXAu9/lnGArzxfScUbcmzf87uczV03p4fVwUCiYZHOoKVf
- 5qKWbnGfDD7bzcY+ZkD6HMVYYYfPgmQMRvXzWv4nUnO5fthzk1Pl780OWIsGlI+o3hRA
- d3OA==
-X-Gm-Message-State: APjAAAVA3vPDHlMKA0r23kAf28cjw4qfg5W6BcmAjmTH+yBuOpvBbBEE
- J/eJPlWd/iNMZkZCFZvDx9bEiUzPxpJ4+jAm+G7wbg==
-X-Google-Smtp-Source: APXvYqwXBTIPXi8MiIhYlnHRkrFFusv3IZgxuk+fBNwP9ZvaJijpYvGUJIt68Qv6pDF9EwQyKKmJhd55HfTUUt7NFUY=
-X-Received: by 2002:adf:ec0a:: with SMTP id x10mr3212074wrn.292.1568234194295; 
- Wed, 11 Sep 2019 13:36:34 -0700 (PDT)
+ id 1i8JNT-00040C-9E
+ for openwrt-devel@lists.openwrt.org; Thu, 12 Sep 2019 07:18:54 +0000
+X-Originating-IP: 166.171.121.208
+Received: from [192.168.42.115] (mobile-166-171-121-208.mycingular.net
+ [166.171.121.208]) (Authenticated sender: mail@aparcar.org)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id CA3B41C0012
+ for <openwrt-devel@lists.openwrt.org>; Thu, 12 Sep 2019 07:18:40 +0000 (UTC)
+To: openwrt-devel@lists.openwrt.org
+References: <20190823090237.9471-1-mail@aparcar.org>
+From: Paul Spooren <mail@aparcar.org>
+Message-ID: <32cb0e61-f2c7-9359-197b-61b1d46c82a6@aparcar.org>
+Date: Wed, 11 Sep 2019 21:18:36 -1000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <f5bcb39a-bcc3-58c7-0b9a-622b0c386fff@candelatech.com>
- <CAEUausqebPVXzSgSBwgovzTBSWSO1dvF+G0LgqMOB8ry7hXGiA@mail.gmail.com>
- <329d1c22-ca3e-9675-6d4b-7ab8d1e38b79@candelatech.com>
-In-Reply-To: <329d1c22-ca3e-9675-6d4b-7ab8d1e38b79@candelatech.com>
-From: Carlito Nueno <carlitonueno@gmail.com>
-Date: Wed, 11 Sep 2019 13:36:23 -0700
-Message-ID: <CAEUauspe6GWRTe-3uokay_8KpxKWEQkBS4rfMbmozBP-0a--AQ@mail.gmail.com>
-To: Ben Greear <greearb@candelatech.com>
+In-Reply-To: <20190823090237.9471-1-mail@aparcar.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_133635_998677_58CF8460 
-X-CRM114-Status: GOOD (  16.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190912_001851_626010_8CB68527 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:434 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (carlitonueno[at]gmail.com)
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] New ath10k-ct firmware available.
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCH] treewide: add Generic subtarget if
+ missing
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,256 +63,298 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============4803768316395045202=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4803768316395045202==
-Content-Type: multipart/alternative; boundary="0000000000001360dd05924cfae8"
+I posted this a while ago could somebody please apply this?
 
---0000000000001360dd05924cfae8
-Content-Type: text/plain; charset="UTF-8"
-
-Awesome!
-
-I will test it and let you know.
-
-Thanks
-
-On Wed, Sep 11, 2019 at 1:31 PM Ben Greear <greearb@candelatech.com> wrote:
-
-> Yes, I think it is probably dynamic VLANs.  And it should work with any
-> wave
-> 2 ath10k chipset including 9984.
+On 22.08.19 23:02, Paul Spooren wrote:
+> As in 853e4dd OpenWrt should follow a unified structure, where every
+> device has a target/subtarget combination, if there is only one
+> subtarget, call it "Generic". This introduces predictable filenames.
 >
-> I'm interested to know if it works or not.
+> CC: Alexander Couzens <lynxis@fe80.eu>
+> CC: Felix Fietkau <nbd@nbd.name>
+> CC: Jason Wu <jason.wu.misc@gmail.com>
+> CC: John Crispin <john@phrozen.org>
+> CC: Luka Perkov <luka@openwrt.org>
+> CC: Roman Yeryomin <roman@advem.lv>
+> CC: Sergey Ryazanov <ryazanov.s.a@gmail.com>
+> CC: Tim Harvey <tharvey@gateworks.com>
+> CC: Tomasz Maciej Nowak <tomek_n@o2.pl>
 >
-> Thanks,
-> Ben
+> Signed-off-by: Paul Spooren <mail@aparcar.org>
+> ---
+>   target/linux/ath25/Makefile              | 1 +
+>   target/linux/ath25/generic/target.mk     | 1 +
+>   target/linux/cns3xxx/Makefile            | 1 +
+>   target/linux/cns3xxx/generic/target.mk   | 1 +
+>   target/linux/gemini/Makefile             | 1 +
+>   target/linux/gemini/generic/target.mk    | 1 +
+>   target/linux/imx6/Makefile               | 1 +
+>   target/linux/imx6/generic/target.mk      | 1 +
+>   target/linux/kirkwood/Makefile           | 1 +
+>   target/linux/kirkwood/generic/target.mk  | 1 +
+>   target/linux/octeon/Makefile             | 1 +
+>   target/linux/octeon/generic/target.mk    | 1 +
+>   target/linux/octeontx/Makefile           | 1 +
+>   target/linux/octeontx/generic/target.mk  | 1 +
+>   target/linux/omap/Makefile               | 1 +
+>   target/linux/omap/generic/target.mk      | 1 +
+>   target/linux/pistachio/Makefile          | 1 +
+>   target/linux/pistachio/generic/target.mk | 1 +
+>   target/linux/rb532/Makefile              | 1 +
+>   target/linux/rb532/generic/target.mk     | 1 +
+>   target/linux/tegra/Makefile              | 1 +
+>   target/linux/tegra/generic/target.mk     | 1 +
+>   target/linux/zynq/Makefile               | 1 +
+>   target/linux/zynq/generic/target.mk      | 1 +
+>   24 files changed, 24 insertions(+)
+>   create mode 100644 target/linux/ath25/generic/target.mk
+>   create mode 100644 target/linux/cns3xxx/generic/target.mk
+>   create mode 100644 target/linux/gemini/generic/target.mk
+>   create mode 100644 target/linux/imx6/generic/target.mk
+>   create mode 100644 target/linux/kirkwood/generic/target.mk
+>   create mode 100644 target/linux/octeon/generic/target.mk
+>   create mode 100644 target/linux/octeontx/generic/target.mk
+>   create mode 100644 target/linux/omap/generic/target.mk
+>   create mode 100644 target/linux/pistachio/generic/target.mk
+>   create mode 100644 target/linux/rb532/generic/target.mk
+>   create mode 100644 target/linux/tegra/generic/target.mk
+>   create mode 100644 target/linux/zynq/generic/target.mk
 >
-> On 9/11/19 1:30 PM, Carlito Nueno wrote:
-> > Hi Ben,
-> >
-> > I was wondering if AP-VLAN is same as dynamic VLAN.
-> > If so, will this feature work with ar71xx board - QCA9984
-> >
-> > I can test it and let you know if I see any issues.
-> >
-> > Thank you making ath10-ct!
-> >
-> >
-> > On Mon, Sep 9, 2019 at 12:55 PM Ben Greear <greearb@candelatech.com
-> <mailto:greearb@candelatech.com>> wrote:
-> >
-> >     This enables a feature flag in the wave-2 firmware wmi-services
-> indicating it can send
-> >     software-encrypted raw frames.  This should in turn allow the
-> AP-VLAN feature to work.
-> >
-> >     For those that know how to use AP-VLANs, please try this wave-2 FW
-> and the latest ath10k-ct
-> >     driver(commit:  5e8cd86f90dac966d12df6ece84ac41458d0e95f) and let me
-> know if it works as expected
-> >     or not.
-> >
-> >     988x
-> >     5872fe046d90d844a6d3e232e47a6865bac551d7043b2874147c077e356b35d8
-> firmware-2-ct-full-community-22.bin.lede.011
-> >     4568c3895a101ad28363491ea935f56a48bddea4c1be1889a6ba8d151902062a
-> firmware-2-ct-full-htt-mgt-community-22.bin.lede.011
-> >     /home/greearb/candela_html/downloads
-> >     9887
-> >     2c64ab22159d04cd345b8caffdd76ac95c0409729121a7a4095c5192f46013b2
-> firmware-2-ct-full-community-22.bin.lede.011
-> >     c806b8894faf3bbb11004f77196c6d711b9a6c187b1512d84e05fa98a5aba2ab
-> firmware-2-ct-full-htt-mgt-community-22.bin.lede.011
-> >     /home/greearb/candela_html/downloads
-> >     9980
-> >     4ed106dbe8431945afc6a995765f245f574713095b567df35f1397bba5f6fa2e
-> firmware-5-ct-full-community-12.bin-lede.011
-> >     7434c84c501e00a24cbca338569ba150a9ec137ee2b9fa52d13484794300924c
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> >     /home/greearb/candela_html/downloads
-> >     9984
-> >     9af817e65dc9f195517f05ad25f0eca693632ea03b55739a2e0f0fc82e810405
-> firmware-5-ct-full-community-12.bin-lede.011
-> >     11e116631555550185e712f70bd29ac41b495bf0ecbfc3334cada8a8c10a42f0
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> >     /home/greearb/candela_html/downloads
-> >     4019
-> >     21a6b5b69e3c1591cb9fe6077971ddadb003cac698f2962d4d8d73bc04038bbf
-> firmware-5-ct-full-community-12.bin-lede.011
-> >     87111717ec5279125d397bea45386707684ee707a91f6c58298818fd02bf567f
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> >     /home/greearb/candela_html/downloads
-> >     9888
-> >     3c9f2e914d2a5eb3a413872239045dfcca105483ba83dd9b293e6b8855fda883
-> firmware-5-ct-full-community-12.bin-lede.011
-> >     dcb1bd826e5e1ef266fd7ee04410b44d4474d59f6eca0cc634e6432aaf326426
-> firmware-5-ct-full-htt-mgt-community-12.bin-lede.011
-> >     /home/greearb/candela_html/downloads
-> >
-> >
-> >     Thanks,
-> >     Ben
-> >
-> >     --
-> >     Ben Greear <greearb@candelatech.com <mailto:greearb@candelatech.com
-> >>
-> >     Candela Technologies Inc http://www.candelatech.com
-> >
-> >
-> >     _______________________________________________
-> >     openwrt-devel mailing list
-> >     openwrt-devel@lists.openwrt.org <mailto:
-> openwrt-devel@lists.openwrt.org>
-> >     https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> >
->
->
-> --
-> Ben Greear <greearb@candelatech.com>
-> Candela Technologies Inc  http://www.candelatech.com
->
->
-
---0000000000001360dd05924cfae8
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div>Awesome!</div><div><br></div><div>I will test it and =
-let you know.</div><div><br></div><div>Thanks<br></div></div><br><div class=
-=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Sep 11, 2019=
- at 1:31 PM Ben Greear &lt;<a href=3D"mailto:greearb@candelatech.com">greea=
-rb@candelatech.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote=
-" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);=
-padding-left:1ex">Yes, I think it is probably dynamic VLANs.=C2=A0 And it s=
-hould work with any wave<br>
-2 ath10k chipset including 9984.<br>
-<br>
-I&#39;m interested to know if it works or not.<br>
-<br>
-Thanks,<br>
-Ben<br>
-<br>
-On 9/11/19 1:30 PM, Carlito Nueno wrote:<br>
-&gt; Hi Ben,<br>
-&gt; <br>
-&gt; I was wondering if AP-VLAN is same as dynamic VLAN.<br>
-&gt; If so, will this feature work with ar71xx board - QCA9984<br>
-&gt; <br>
-&gt; I can test it and let you know if I see any issues.<br>
-&gt; <br>
-&gt; Thank you making ath10-ct!<br>
-&gt; <br>
-&gt; <br>
-&gt; On Mon, Sep 9, 2019 at 12:55 PM Ben Greear &lt;<a href=3D"mailto:greea=
-rb@candelatech.com" target=3D"_blank">greearb@candelatech.com</a> &lt;mailt=
-o:<a href=3D"mailto:greearb@candelatech.com" target=3D"_blank">greearb@cand=
-elatech.com</a>&gt;&gt; wrote:<br>
-&gt; <br>
-&gt;=C2=A0 =C2=A0 =C2=A0This enables a feature flag in the wave-2 firmware =
-wmi-services indicating it can send<br>
-&gt;=C2=A0 =C2=A0 =C2=A0software-encrypted raw frames.=C2=A0 This should in=
- turn allow the AP-VLAN feature to work.<br>
-&gt; <br>
-&gt;=C2=A0 =C2=A0 =C2=A0For those that know how to use AP-VLANs, please try=
- this wave-2 FW and the latest ath10k-ct<br>
-&gt;=C2=A0 =C2=A0 =C2=A0driver(commit:=C2=A0 5e8cd86f90dac966d12df6ece84ac4=
-1458d0e95f) and let me know if it works as expected<br>
-&gt;=C2=A0 =C2=A0 =C2=A0or not.<br>
-&gt; <br>
-&gt;=C2=A0 =C2=A0 =C2=A0988x<br>
-&gt;=C2=A0 =C2=A0 =C2=A05872fe046d90d844a6d3e232e47a6865bac551d7043b2874147=
-c077e356b35d8=C2=A0 firmware-2-ct-full-community-22.bin.lede.011<br>
-&gt;=C2=A0 =C2=A0 =C2=A04568c3895a101ad28363491ea935f56a48bddea4c1be1889a6b=
-a8d151902062a=C2=A0 firmware-2-ct-full-htt-mgt-community-22.bin.lede.011<br=
->
-&gt;=C2=A0 =C2=A0 =C2=A0/home/greearb/candela_html/downloads<br>
-&gt;=C2=A0 =C2=A0 =C2=A09887<br>
-&gt;=C2=A0 =C2=A0 =C2=A02c64ab22159d04cd345b8caffdd76ac95c0409729121a7a4095=
-c5192f46013b2=C2=A0 firmware-2-ct-full-community-22.bin.lede.011<br>
-&gt;=C2=A0 =C2=A0 =C2=A0c806b8894faf3bbb11004f77196c6d711b9a6c187b1512d84e0=
-5fa98a5aba2ab=C2=A0 firmware-2-ct-full-htt-mgt-community-22.bin.lede.011<br=
->
-&gt;=C2=A0 =C2=A0 =C2=A0/home/greearb/candela_html/downloads<br>
-&gt;=C2=A0 =C2=A0 =C2=A09980<br>
-&gt;=C2=A0 =C2=A0 =C2=A04ed106dbe8431945afc6a995765f245f574713095b567df35f1=
-397bba5f6fa2e=C2=A0 firmware-5-ct-full-community-12.bin-lede.011<br>
-&gt;=C2=A0 =C2=A0 =C2=A07434c84c501e00a24cbca338569ba150a9ec137ee2b9fa52d13=
-484794300924c=C2=A0 firmware-5-ct-full-htt-mgt-community-12.bin-lede.011<br=
->
-&gt;=C2=A0 =C2=A0 =C2=A0/home/greearb/candela_html/downloads<br>
-&gt;=C2=A0 =C2=A0 =C2=A09984<br>
-&gt;=C2=A0 =C2=A0 =C2=A09af817e65dc9f195517f05ad25f0eca693632ea03b55739a2e0=
-f0fc82e810405=C2=A0 firmware-5-ct-full-community-12.bin-lede.011<br>
-&gt;=C2=A0 =C2=A0 =C2=A011e116631555550185e712f70bd29ac41b495bf0ecbfc3334ca=
-da8a8c10a42f0=C2=A0 firmware-5-ct-full-htt-mgt-community-12.bin-lede.011<br=
->
-&gt;=C2=A0 =C2=A0 =C2=A0/home/greearb/candela_html/downloads<br>
-&gt;=C2=A0 =C2=A0 =C2=A04019<br>
-&gt;=C2=A0 =C2=A0 =C2=A021a6b5b69e3c1591cb9fe6077971ddadb003cac698f2962d4d8=
-d73bc04038bbf=C2=A0 firmware-5-ct-full-community-12.bin-lede.011<br>
-&gt;=C2=A0 =C2=A0 =C2=A087111717ec5279125d397bea45386707684ee707a91f6c58298=
-818fd02bf567f=C2=A0 firmware-5-ct-full-htt-mgt-community-12.bin-lede.011<br=
->
-&gt;=C2=A0 =C2=A0 =C2=A0/home/greearb/candela_html/downloads<br>
-&gt;=C2=A0 =C2=A0 =C2=A09888<br>
-&gt;=C2=A0 =C2=A0 =C2=A03c9f2e914d2a5eb3a413872239045dfcca105483ba83dd9b293=
-e6b8855fda883=C2=A0 firmware-5-ct-full-community-12.bin-lede.011<br>
-&gt;=C2=A0 =C2=A0 =C2=A0dcb1bd826e5e1ef266fd7ee04410b44d4474d59f6eca0cc634e=
-6432aaf326426=C2=A0 firmware-5-ct-full-htt-mgt-community-12.bin-lede.011<br=
->
-&gt;=C2=A0 =C2=A0 =C2=A0/home/greearb/candela_html/downloads<br>
-&gt; <br>
-&gt; <br>
-&gt;=C2=A0 =C2=A0 =C2=A0Thanks,<br>
-&gt;=C2=A0 =C2=A0 =C2=A0Ben<br>
-&gt; <br>
-&gt;=C2=A0 =C2=A0 =C2=A0-- <br>
-&gt;=C2=A0 =C2=A0 =C2=A0Ben Greear &lt;<a href=3D"mailto:greearb@candelatec=
-h.com" target=3D"_blank">greearb@candelatech.com</a> &lt;mailto:<a href=3D"=
-mailto:greearb@candelatech.com" target=3D"_blank">greearb@candelatech.com</=
-a>&gt;&gt;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0Candela Technologies Inc <a href=3D"http://www.cand=
-elatech.com" rel=3D"noreferrer" target=3D"_blank">http://www.candelatech.co=
-m</a><br>
-&gt; <br>
-&gt; <br>
-&gt;=C2=A0 =C2=A0 =C2=A0_______________________________________________<br>
-&gt;=C2=A0 =C2=A0 =C2=A0openwrt-devel mailing list<br>
-&gt;=C2=A0 =C2=A0 =C2=A0<a href=3D"mailto:openwrt-devel@lists.openwrt.org" =
-target=3D"_blank">openwrt-devel@lists.openwrt.org</a> &lt;mailto:<a href=3D=
-"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwrt-devel@li=
-sts.openwrt.org</a>&gt;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0<a href=3D"https://lists.openwrt.org/mailman/listin=
-fo/openwrt-devel" rel=3D"noreferrer" target=3D"_blank">https://lists.openwr=
-t.org/mailman/listinfo/openwrt-devel</a><br>
-&gt; <br>
-<br>
-<br>
--- <br>
-Ben Greear &lt;<a href=3D"mailto:greearb@candelatech.com" target=3D"_blank"=
->greearb@candelatech.com</a>&gt;<br>
-Candela Technologies Inc=C2=A0 <a href=3D"http://www.candelatech.com" rel=
-=3D"noreferrer" target=3D"_blank">http://www.candelatech.com</a><br>
-<br>
-</blockquote></div>
-
---0000000000001360dd05924cfae8--
-
-
---===============4803768316395045202==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> diff --git a/target/linux/ath25/Makefile b/target/linux/ath25/Makefile
+> index cb8b7ec1be..a253b4ceb3 100644
+> --- a/target/linux/ath25/Makefile
+> +++ b/target/linux/ath25/Makefile
+> @@ -10,6 +10,7 @@ ARCH:=mips
+>   BOARD:=ath25
+>   BOARDNAME:=Atheros AR231x/AR5312
+>   FEATURES:=squashfs low_mem small_flash
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Sergey Ryazanov <ryazanov.s.a@gmail.com>
+>   
+>   KERNEL_PATCHVER:=4.14
+> diff --git a/target/linux/ath25/generic/target.mk b/target/linux/ath25/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/ath25/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/cns3xxx/Makefile b/target/linux/cns3xxx/Makefile
+> index f21ad06248..7930b959b6 100644
+> --- a/target/linux/cns3xxx/Makefile
+> +++ b/target/linux/cns3xxx/Makefile
+> @@ -12,6 +12,7 @@ BOARDNAME:=Cavium Networks Econa CNS3xxx
+>   FEATURES:=squashfs fpu gpio pcie usb usbgadget
+>   CPU_TYPE:=mpcore
+>   CPU_SUBTYPE:=vfp
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Felix Fietkau <nbd@nbd.name>, \
+>   	    Koen Vandeputte <koen.vandeputte@ncentric.com>
+>   KERNEL_PATCHVER:=4.19
+> diff --git a/target/linux/cns3xxx/generic/target.mk b/target/linux/cns3xxx/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/cns3xxx/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/gemini/Makefile b/target/linux/gemini/Makefile
+> index 3afc643023..1f1486f0c5 100644
+> --- a/target/linux/gemini/Makefile
+> +++ b/target/linux/gemini/Makefile
+> @@ -11,6 +11,7 @@ BOARD:=gemini
+>   BOARDNAME:=Cortina Systems CS351x
+>   FEATURES:=squashfs pci rtc usb dt gpio display ext4 rootfs-part boot-part
+>   CPU_TYPE:=fa526
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Roman Yeryomin <roman@advem.lv>
+>   
+>   KERNEL_PATCHVER:=4.19
+> diff --git a/target/linux/gemini/generic/target.mk b/target/linux/gemini/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/gemini/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/imx6/Makefile b/target/linux/imx6/Makefile
+> index ac4300f7eb..570898cb9c 100644
+> --- a/target/linux/imx6/Makefile
+> +++ b/target/linux/imx6/Makefile
+> @@ -12,6 +12,7 @@ BOARDNAME:=Freescale i.MX 6
+>   FEATURES:=audio display fpu gpio pcie rtc usb usbgadget squashfs targz nand ubifs boot-part rootfs-part
+>   CPU_TYPE:=cortex-a9
+>   CPU_SUBTYPE:=neon
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Luka Perkov <luka@openwrt.org>
+>   
+>   KERNEL_PATCHVER:=4.19
+> diff --git a/target/linux/imx6/generic/target.mk b/target/linux/imx6/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/imx6/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/kirkwood/Makefile b/target/linux/kirkwood/Makefile
+> index adc7a496e1..e185eca093 100644
+> --- a/target/linux/kirkwood/Makefile
+> +++ b/target/linux/kirkwood/Makefile
+> @@ -11,6 +11,7 @@ BOARD:=kirkwood
+>   BOARDNAME:=Marvell Kirkwood
+>   FEATURES:=usb nand squashfs ramdisk
+>   CPU_TYPE:=xscale
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Luka Perkov <luka@openwrt.org>
+>   
+>   KERNEL_PATCHVER:=4.14
+> diff --git a/target/linux/kirkwood/generic/target.mk b/target/linux/kirkwood/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/kirkwood/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/octeon/Makefile b/target/linux/octeon/Makefile
+> index aa73b0e5c0..e965cb83fd 100644
+> --- a/target/linux/octeon/Makefile
+> +++ b/target/linux/octeon/Makefile
+> @@ -11,6 +11,7 @@ BOARD:=octeon
+>   BOARDNAME:=Cavium Networks Octeon
+>   FEATURES:=squashfs ramdisk pci usb
+>   CPU_TYPE:=octeonplus
+> +SUBTARGETS:=generic
+>   MAINTAINER:=John Crispin <john@phrozen.org>
+>   
+>   KERNEL_PATCHVER:=4.19
+> diff --git a/target/linux/octeon/generic/target.mk b/target/linux/octeon/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/octeon/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/octeontx/Makefile b/target/linux/octeontx/Makefile
+> index e7f6b2d3c4..dee0f9ec54 100644
+> --- a/target/linux/octeontx/Makefile
+> +++ b/target/linux/octeontx/Makefile
+> @@ -10,6 +10,7 @@ ARCH:=aarch64
+>   BOARD:=octeontx
+>   BOARDNAME:=Octeon-TX
+>   FEATURES:=targz pcie gpio rtc usb fpu
+> +SUBTARGETS:=generic
+>   
+>   MAINTAINER:=Tim Harvey <tharvey@gateworks.com>
+>   
+> diff --git a/target/linux/octeontx/generic/target.mk b/target/linux/octeontx/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/octeontx/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/omap/Makefile b/target/linux/omap/Makefile
+> index 3e5c921d61..fadc312892 100644
+> --- a/target/linux/omap/Makefile
+> +++ b/target/linux/omap/Makefile
+> @@ -13,6 +13,7 @@ BOARDNAME:=TI OMAP3/4/AM33xx
+>   FEATURES:=usb usbgadget ext4 targz fpu audio display nand squashfs
+>   CPU_TYPE:=cortex-a8
+>   CPU_SUBTYPE:=vfpv3
+> +SUBTARGETS:=generic
+>   
+>   KERNEL_PATCHVER:=4.14
+>   
+> diff --git a/target/linux/omap/generic/target.mk b/target/linux/omap/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/omap/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/pistachio/Makefile b/target/linux/pistachio/Makefile
+> index dab7f0d62b..0920036982 100644
+> --- a/target/linux/pistachio/Makefile
+> +++ b/target/linux/pistachio/Makefile
+> @@ -12,6 +12,7 @@ BOARDNAME:=MIPS pistachio
+>   FEATURES:=fpu usb usbgadget squashfs targz nand
+>   CPU_TYPE:=24kc
+>   CPU_SUBTYPE:=24kf
+> +SUBTARGETS:=generic
+>   MAINTAINER:=
+>   
+>   KERNEL_PATCHVER:=4.14
+> diff --git a/target/linux/pistachio/generic/target.mk b/target/linux/pistachio/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/pistachio/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/rb532/Makefile b/target/linux/rb532/Makefile
+> index 5aa8a6dc55..2b65b9bcd3 100644
+> --- a/target/linux/rb532/Makefile
+> +++ b/target/linux/rb532/Makefile
+> @@ -10,6 +10,7 @@ ARCH:=mipsel
+>   BOARD:=rb532
+>   BOARDNAME:=Mikrotik RouterBoard 532
+>   FEATURES:=pci targz squashfs minor nand
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Roman Yeryomin <roman@advem.lv>
+>   
+>   KERNEL_PATCHVER:=4.14
+> diff --git a/target/linux/rb532/generic/target.mk b/target/linux/rb532/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/rb532/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/tegra/Makefile b/target/linux/tegra/Makefile
+> index db58bf53d1..a5b533af25 100644
+> --- a/target/linux/tegra/Makefile
+> +++ b/target/linux/tegra/Makefile
+> @@ -12,6 +12,7 @@ BOARDNAME := NVIDIA Tegra
+>   FEATURES := audio boot-part display ext4 fpu gpio pci pcie rootfs-part rtc squashfs usb
+>   CPU_TYPE := cortex-a9
+>   CPU_SUBTYPE := vfpv3
+> +SUBTARGETS:=generic
+>   MAINTAINER := Tomasz Maciej Nowak <tomek_n@o2.pl>
+>   
+>   KERNEL_PATCHVER := 4.19
+> diff --git a/target/linux/tegra/generic/target.mk b/target/linux/tegra/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/tegra/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
+> diff --git a/target/linux/zynq/Makefile b/target/linux/zynq/Makefile
+> index bcd36ffe2c..3566464450 100644
+> --- a/target/linux/zynq/Makefile
+> +++ b/target/linux/zynq/Makefile
+> @@ -12,6 +12,7 @@ BOARDNAME:=Xilinx Zynq 7000 SoCs
+>   FEATURES:=fpu gpio rtc usb usbgadget boot-part rootfs-part squashfs
+>   CPU_TYPE:=cortex-a9
+>   CPU_SUBTYPE:=neon
+> +SUBTARGETS:=generic
+>   MAINTAINER:=Jason Wu <jason.wu.misc@gmail.com>
+>   
+>   # future support SUBTARGETS: for both zynq and zynqmp
+> diff --git a/target/linux/zynq/generic/target.mk b/target/linux/zynq/generic/target.mk
+> new file mode 100644
+> index 0000000000..f5cb1fb19b
+> --- /dev/null
+> +++ b/target/linux/zynq/generic/target.mk
+> @@ -0,0 +1 @@
+> +BOARDNAME:=Generic
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4803768316395045202==--
-

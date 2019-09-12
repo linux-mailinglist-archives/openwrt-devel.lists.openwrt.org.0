@@ -2,90 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 377CFB14FE
-	for <lists+openwrt-devel@lfdr.de>; Thu, 12 Sep 2019 22:00:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69349B166A
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Sep 2019 00:46:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NXFRMxYAOAks5Pne/CXc7QxxZkj/a2EIXxR8hVHC1T8=; b=cn00FakvYuNb/p
-	CgmzjUoNaTR2QpLi8pxQaOR9WmWAOjHsuXdqjo6kolVMPTKAcVTgN7DK5igW1IE/Ym5EIfsCT5kyF
-	3YpBN/0t87JWk+NYDzPzI94klP6YQgwHZOUF6HU8Za2m35i/1EgqvvwZ34Xujb2tg5CAkTQag/JYP
-	G2wBVo/TW7el5vgJof1/igN1TxEWCPTH++9CZWaKGTJ87HFI/bmrdrP4gPJXoR8OLlkgMyMbXD7IA
-	8BF5uObE4Xpr4PFQe+t2V5jaxblgTQTqb/baubMfoYN3fSppNmE/kFkLlykYwBq8nZZq4hEHRGbZz
-	V+z6VQTN6s5hoEbcW2Ow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Message-ID:MIME-Version:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3416Pc065aTKdulXiCNwwBHWUjSyarb549vvP1X3hd4=; b=Wwb1CBNjSqAl7z671NXSJpD1W
+	2Lfb41lyGgfamZn9I5ig4eqPM8sUd0fYzo9qYW7BV3XLMtQ2hF0G9XvtRNqOTH2GT7kXcwvpPUrPK
+	qVeBA3hsbe++T0UVR+sIj2LFchNsqelE0ewnotMcvBECP8ZV5DcdeI78D1lwl8ebKknYwne227W98
+	eH7g9kvu+X1d7ABb+vfSMuJSdhoc3c5on48E65BexrriyBSSjUKkJNW4xJ0mzMjOkIZwu1A1dGDxy
+	3gz1XxC/zEJLg+WLZot8HADiBRNl7c2uq9DYelr4sCAXVnAZEEHg6mCGfzuiVfC59UQHBQhZs0GKx
+	Dpx1w8HTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8VGn-00077R-Jr; Thu, 12 Sep 2019 20:00:45 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1i8Xqd-0007s4-L9; Thu, 12 Sep 2019 22:45:55 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8VGH-0006u1-1x
- for openwrt-devel@lists.openwrt.org; Thu, 12 Sep 2019 20:00:17 +0000
-Received: by mail-qt1-x842.google.com with SMTP id g13so30725573qtj.4
- for <openwrt-devel@lists.openwrt.org>; Thu, 12 Sep 2019 13:00:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5xIiHlsgijB+eV2XDWQrMmqGeO+EYeFLto1r6CHOBA4=;
- b=NuV0wYqlslMUO+gFMyLjdZqR1eXqFPqXi3NsNZVCLgDjn2D9WATLP7uM/LwHBLqfOt
- ecprHHcgT2b3KWezHfnbkwOUrZu0lDt8mlMA8kEIvAYAt2Jsw4eJ/p9rxN7JhdJeUzt0
- 2tc5Z33mHr1EN0varedQOdphpSz4jQr5jBf5FQwd9c0lUBPXB3hjTw+o0aDHbB9DyYXb
- iBLRXnYdVc7O1Oz7Q3IAROCD1yDn7+jF/i4xIFt3lcWe1BaWzltji2novGWn/4a7qbPj
- nwiLaN1eTW3Aa4gcW5PMIho3CvV8mC3riZ0PbwIn/eFjRoN2Oj9fh1EKU0GWCrvdm2bc
- EtrQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5xIiHlsgijB+eV2XDWQrMmqGeO+EYeFLto1r6CHOBA4=;
- b=NAmv5kLOkJeJDfeHImuceog078RUDlv5trJnpV6DtgcROROy3+7PViSn8D3VrBcriE
- L7Vbqn3ubk1KYaGAqOrmB3lWEJv0YSSo8cjrIuank0uE8fGUGZFrsUM121MV7SOTUTzc
- ts+UyHyRNmWMe2AS1YWYXIlHyvGGKlRFXVeIdSrIzNy2v28uadodGojpFyozZmDAbO2B
- /9YQ5GZKbD19n6H7YRKdvFp827hj5hJ6krIww6Z16awIgN/tGlNpRBzNpwu/wksxmzxg
- BpIwkUokG1V8CawTN31ul8//Q7a1QwGVWLNBzsz2EaPduxM4WQzzdPgIRKlbdSs4iPqC
- ScPQ==
-X-Gm-Message-State: APjAAAUWSYYU39wt/YG62hGN9o2TXb966AQipetLltCE46yTAaC0glrx
- eni6Kso6x7C1SpKta6LIjXgSY/hY
-X-Google-Smtp-Source: APXvYqysLk7Q1b/9LO3Ql8kqapT+Jj+q/VzQDxsDCtkIUlDD4QywDJW3Dz5IAf+OnBZyfdCbQOuEjw==
-X-Received: by 2002:a0c:ec11:: with SMTP id y17mr263635qvo.159.1568318407064; 
- Thu, 12 Sep 2019 13:00:07 -0700 (PDT)
-Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
- [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id l185sm7103140qkd.20.2019.09.12.13.00.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Sep 2019 13:00:06 -0700 (PDT)
-From: Eneas U de Queiroz <cotequeiroz@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 12 Sep 2019 17:00:00 -0300
-Message-Id: <20190912200000.12440-1-cotequeiroz@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ id 1i8XqO-0007ri-Oa
+ for openwrt-devel@lists.openwrt.org; Thu, 12 Sep 2019 22:45:42 +0000
+Received: from desktop ([188.192.136.78]) by mrelayeu.kundenserver.de
+ (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MHoZS-1hvwvw20og-00EwoG for <openwrt-devel@lists.openwrt.org>; Fri, 13 Sep
+ 2019 00:45:34 +0200
+From: <mail@adrianschmutzler.de>
+To: <openwrt-devel@lists.openwrt.org>
+References: <20190908141052.17443-1-freifunk@adrianschmutzler.de>
+ <005f01d5675a$03b2ba60$0b182f20$@adrianschmutzler.de>
+In-Reply-To: <005f01d5675a$03b2ba60$0b182f20$@adrianschmutzler.de>
+Date: Fri, 13 Sep 2019 00:45:33 +0200
 MIME-Version: 1.0
+Message-ID: <000001d569bb$c9efe280$5dcfa780$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQEK1d2fWDlkXu4EV+r5wcwARMnkWQIerCDlqKzWUmA=
+Content-Language: de
+X-Provags-ID: V03:K1:ay54Mt+hWpmD8rAvq4crvi6zMzX9YqRJTZ9ykESIsR3wT+Zak/m
+ Y5sO8fzMy3qUlxO4VITdao+83EQPttOyQKQPQDgjcYRHGEWQkSImgJukokJsYOqjGyT/sx5
+ Tyna75PHrSfIPAAmSHcT8s4eEBdoc2Xyw8ha2X0ekeK2gZcbBA3EOxLcpeflVPVUQOTyNwD
+ UWyiMmDazC9rrc/L3WJIQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:HE4z9JQUzg4=:XnKHpHUS/9uSbBWt6FbFNj
+ djnx2d1CdUoZWpPi9AiA8EpCrOrHDJjJqj6Gb0ORyH5RfQU9Gz85DH07myciWHyZcJVsB5qmN
+ mslsEsO1Lpelu972BESWkD58QFDavwo0Od3SoQWtfCE2NLo97lzOU+fSAVFqLdHvFZS6QlaQ+
+ HLRXZgEM6agINNC3RnrFA4SsXydKqDDztL804sM0RvwMmoqAfWhWAkD/1YhHTwWyJdQQLEru5
+ edO81Jvu9TYAf2VLQkAyNmrcPCmrR8Br6zlNd6s0F/MmTK0WTd6uatfEW7NuowFVUJ7ZAebz0
+ X5QQKC87zL4U9LgpTH2DgT+jhWycni4wI6chVZsPhcTKZqb0Mq/cuKeHV3vHDfS/cuU32QvyA
+ CYi6UwwisMrcQE4/OSjInkbDwqjMiqOTYlVKFZ6ckvOW00PyisRRiMc2gYGk0Vjhhu+3z6g3I
+ U09SznNwS2fA8MQSyaX8OAhU2WqvxUYze4HvhUkWhda4gcMytf8A1YW/DvL2l1y9o3F1rTQuB
+ qw8rhyl0BoAs0SkFbRIJH93BUgcM1ZR2wZalJgFNS8rz5L6BPyeX751grir2e3ALxnfds8gyz
+ QBZwsJhPXF9ymvsQQPht+vaTfhIjQ34hufSrOc9+OQbotabSK8if5P4N941721B12fzH1NgT6
+ alBWfh8BHkRvRQL9zuMWPc4/CwatIjfaLwxAUy+gm6lVcAU4JHqzw4DC7KxrM/vi8NrJYOz2U
+ fWXewb9cVo/U3NNlfknrlF3Y0wSpmNW0onjKQMPgnIHXNG5SGFGcaKUJ++/aqLo6QHRHj6Qpg
+ gqkwgIGpWVkFcbUJbtytd1cQ5n3fyl5v8Schh5nCMh+qqt5vu8UxNHCeU8e+z1EGVMlG3mFJ9
+ W5qK0VTNsmRW1RsUpZ9Eb1aMyGztuxgj7XDkiP3Qg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_130013_256061_B5FC3FA3 
-X-CRM114-Status: GOOD (  10.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190912_154541_095821_319ECE75 
+X-CRM114-Status: GOOD (  12.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cotequeiroz[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] wolfssl: allow building with hw-crytpo and
- AES-CCM
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.134 listed in wl.mailspike.net]
+Subject: Re: [OpenWrt-Devel] [PATCH 0/4] Move caldata extraction and MAC
+ patching to common file
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,253 +84,100 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6220210497869552477=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hardware acceleration was disabled when AES-CCM was selected as a
-workaround for a build failure.  This applies a couple of upstream
-patches fixing this.
+This is a multipart message in MIME format.
 
-Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
----
-This is the result of this upstream issue:
-https://github.com/wolfSSL/wolfssl/issues/2392
+--===============6220210497869552477==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=aQuA429SJy2e9J=-="
 
-It was tested on WRT3200ACM (mvebu) running openwrt master, using
-uhttpd, curl, and uclient-fetch (with ustream-ssl fixes applied).
+This is a multipart message in MIME format.
 
-This should be cherry-picked to 19.07 as well.
+--=-=aQuA429SJy2e9J=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/package/libs/wolfssl/Config.in b/package/libs/wolfssl/Config.in
-index a729f73a1d..4ac69f821a 100644
---- a/package/libs/wolfssl/Config.in
-+++ b/package/libs/wolfssl/Config.in
-@@ -50,28 +50,27 @@ config WOLFSSL_HAS_ECC25519
- config WOLFSSL_HAS_DEVCRYPTO
- 	bool
- 
--if WOLFSSL_HAS_AES_CCM
--	comment "! Hardware Acceleration does not build with AES-CCM enabled"
--endif
--if !WOLFSSL_HAS_AES_CCM
--	choice
--		prompt "Hardware Acceleration"
--		default WOLFSSL_HAS_NO_HW
-+choice
-+	prompt "Hardware Acceleration"
-+	default WOLFSSL_HAS_NO_HW
- 
--		config WOLFSSL_HAS_NO_HW
--			bool "None"
-+	config WOLFSSL_HAS_NO_HW
-+		bool "None"
- 
--		config WOLFSSL_HAS_AFALG
--			bool "AF_ALG"
-+	config WOLFSSL_HAS_AFALG
-+		bool "AF_ALG"
- 
--		config WOLFSSL_HAS_DEVCRYPTO_AES
--			bool "/dev/crypto - AES-only"
--			select WOLFSSL_HAS_DEVCRYPTO
-+	config WOLFSSL_HAS_DEVCRYPTO_CBC
-+		bool "/dev/crytpo - AES-CBC-only"
-+		select WOLFSSL_HAS_DEVCRYPTO
- 
--		config WOLFSSL_HAS_DEVCRYPTO_FULL
--			bool "/dev/crypto - full"
--			select WOLFSSL_HAS_DEVCRYPTO
--	endchoice
--endif
-+	config WOLFSSL_HAS_DEVCRYPTO_AES
-+		bool "/dev/crypto - AES-only (all supported modes)"
-+		select WOLFSSL_HAS_DEVCRYPTO
-+
-+	config WOLFSSL_HAS_DEVCRYPTO_FULL
-+		bool "/dev/crypto - full"
-+		select WOLFSSL_HAS_DEVCRYPTO
-+endchoice
- 
- endif
-diff --git a/package/libs/wolfssl/Makefile b/package/libs/wolfssl/Makefile
-index 2ad03a5aca..778754ffdc 100644
---- a/package/libs/wolfssl/Makefile
-+++ b/package/libs/wolfssl/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=wolfssl
- PKG_VERSION:=4.1.0-stable
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- 
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
- PKG_SOURCE_URL:=https://github.com/wolfSSL/wolfssl/archive/v$(PKG_VERSION)
-@@ -77,7 +77,9 @@ CONFIGURE_ARGS += \
- 	--$(if $(CONFIG_WOLFSSL_HAS_DTLS),enable,disable)-dtls \
- 	--$(if $(CONFIG_WOLFSSL_HAS_ECC25519),enable,disable)-curve25519 \
- 	--$(if $(CONFIG_WOLFSSL_HAS_AFALG),enable,disable)-afalg \
--	--enable-devcrypto=$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_AES),aes,$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_FULL),yes,no))
-+	--enable-devcrypto=$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_CBC),cbc\
-+			  ,$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_AES),aes\
-+			  ,$(if $(CONFIG_WOLFSSL_HAS_DEVCRYPTO_FULL),yes,no)))
- 
- ifeq ($(CONFIG_WOLFSSL_HAS_OCSP),y)
- CONFIGURE_ARGS += \
-diff --git a/package/libs/wolfssl/patches/010-build-with-devcrypto-and-aesccm.patch b/package/libs/wolfssl/patches/010-build-with-devcrypto-and-aesccm.patch
-new file mode 100644
-index 0000000000..a9b8aee918
---- /dev/null
-+++ b/package/libs/wolfssl/patches/010-build-with-devcrypto-and-aesccm.patch
-@@ -0,0 +1,74 @@
-+From e8e1d35744c68b165e172a687e870a549438bdf0 Mon Sep 17 00:00:00 2001
-+From: Jacob Barthelmeh <jacob@wolfssl.com>
-+Date: Tue, 13 Aug 2019 14:12:45 -0600
-+Subject: [PATCH] build with devcrypto and aesccm
-+
-+
-+diff --git a/configure.ac b/configure.ac
-+index f943cc6ef..cf03e7f52 100644
-+--- a/configure.ac
-++++ b/configure.ac
-+@@ -1096,6 +1096,10 @@ then
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO"
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO_CBC"
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO_AES"
-++    if test "$ENABLED_AESCCM" = "yes"
-++    then
-++        AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_AES_DIRECT"
-++    fi
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO_HASH"
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_NO_HASH_RAW"
-+     ENABLED_DEVCRYPTO=yes
-+@@ -1106,6 +1110,10 @@ then
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO"
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO_AES"
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_DEVCRYPTO_CBC"
-++    if test "$ENABLED_AESCCM" = "yes"
-++    then
-++        AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_AES_DIRECT"
-++    fi
-+     ENABLED_DEVCRYPTO=yes
-+ fi
-+ if test "$ENABLED_DEVCRYPTO" = "cbc"
-+diff --git a/wolfcrypt/src/aes.c b/wolfcrypt/src/aes.c
-+index beeae72a6..b583d03e9 100644
-+--- a/wolfcrypt/src/aes.c
-++++ b/wolfcrypt/src/aes.c
-+@@ -760,6 +760,14 @@
-+ #elif defined(WOLFSSL_DEVCRYPTO_AES)
-+     /* if all AES is enabled with devcrypto then tables are not needed */
-+ 
-++    #if defined(HAVE_AESCCM)
-++    static int wc_AesEncrypt(Aes* aes, const byte* inBlock, byte* outBlock)
-++    {
-++        wc_AesEncryptDirect(aes, outBlock, inBlock);
-++        return 0;
-++    }
-++    #endif
-++
-+ #else
-+ 
-+     /* using wolfCrypt software implementation */
-+@@ -1314,7 +1322,8 @@ static const word32 Td[4][256] = {
-+ };
-+ 
-+ 
-+-#if defined(HAVE_AES_CBC) || defined(WOLFSSL_AES_DIRECT)
-++#if (defined(HAVE_AES_CBC) && !defined(WOLFSSL_DEVCRYPTO_CBC)) \
-++			|| defined(WOLFSSL_AES_DIRECT)
-+ static const byte Td4[256] =
-+ {
-+     0x52U, 0x09U, 0x6aU, 0xd5U, 0x30U, 0x36U, 0xa5U, 0x38U,
-+diff --git a/wolfcrypt/src/port/devcrypto/devcrypto_aes.c b/wolfcrypt/src/port/devcrypto/devcrypto_aes.c
-+index 5c63421e2..d5061f364 100644
-+--- a/wolfcrypt/src/port/devcrypto/devcrypto_aes.c
-++++ b/wolfcrypt/src/port/devcrypto/devcrypto_aes.c
-+@@ -168,7 +168,7 @@ static int wc_DevCrypto_AesDirect(Aes* aes, byte* out, const byte* in,
-+ #endif
-+ 
-+ 
-+-#if defined(WOLFSSL_AES_DIRECT)
-++#if defined(WOLFSSL_AES_DIRECT) || defined(HAVE_AESCCM)
-+ void wc_AesEncryptDirect(Aes* aes, byte* out, const byte* in)
-+ {
-+     wc_DevCrypto_AesDirect(aes, out, in, AES_BLOCK_SIZE, COP_ENCRYPT);
-diff --git a/package/libs/wolfssl/patches/020-build-fix-for-aesccm-devcrypto-cbc-wpas-and-afalg.patch b/package/libs/wolfssl/patches/020-build-fix-for-aesccm-devcrypto-cbc-wpas-and-afalg.patch
-new file mode 100644
-index 0000000000..bb4c6fd04b
---- /dev/null
-+++ b/package/libs/wolfssl/patches/020-build-fix-for-aesccm-devcrypto-cbc-wpas-and-afalg.patch
-@@ -0,0 +1,64 @@
-+From 9fd38dc340c38dee6e5935da174f90270a63bfbf Mon Sep 17 00:00:00 2001
-+From: Jacob Barthelmeh <jacob@wolfssl.com>
-+Date: Fri, 30 Aug 2019 16:15:48 -0600
-+Subject: [PATCH] build fix for aesccm + devcrypto=cbc + wpas and afalg
-+
-+
-+diff --git a/configure.ac b/configure.ac
-+index 61fad39dd..30731eb52 100644
-+--- a/configure.ac
-++++ b/configure.ac
-+@@ -1045,6 +1045,10 @@ AC_ARG_ENABLE([afalg],
-+ 
-+ if test "$ENABLED_AFALG" = "yes"
-+ then
-++    if test "$ENABLED_AESCCM" = "yes"
-++    then
-++        AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_AES_DIRECT"
-++    fi
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_AFALG"
-+     AM_CFLAGS="$AM_CFLAGS -DWOLFSSL_AFALG_HASH"
-+ fi
-+diff --git a/wolfcrypt/src/aes.c b/wolfcrypt/src/aes.c
-+index fef2f9c74..d294f6236 100644
-+--- a/wolfcrypt/src/aes.c
-++++ b/wolfcrypt/src/aes.c
-+@@ -759,7 +759,9 @@
-+         }
-+     #endif /* HAVE_AES_DECRYPT */
-+ 
-+-#elif defined(WOLFSSL_IMX6_CAAM) && !defined(NO_IMX6_CAAM_AES)
-++#elif (defined(WOLFSSL_IMX6_CAAM) && !defined(NO_IMX6_CAAM_AES)) || \
-++      ((defined(WOLFSSL_AFALG) || defined(WOLFSSL_DEVCRYPTO_AES)) && \
-++        defined(HAVE_AESCCM))
-+         static int wc_AesEncrypt(Aes* aes, const byte* inBlock, byte* outBlock)
-+         {
-+             wc_AesEncryptDirect(aes, outBlock, inBlock);
-+@@ -768,16 +770,6 @@
-+ 
-+ #elif defined(WOLFSSL_AFALG)
-+ #elif defined(WOLFSSL_DEVCRYPTO_AES)
-+-    /* if all AES is enabled with devcrypto then tables are not needed */
-+-
-+-    #if defined(HAVE_AESCCM)
-+-    static int wc_AesEncrypt(Aes* aes, const byte* inBlock, byte* outBlock)
-+-    {
-+-        wc_AesEncryptDirect(aes, outBlock, inBlock);
-+-        return 0;
-+-    }
-+-    #endif
-+-
-+ #else
-+ 
-+     /* using wolfCrypt software implementation */
-+@@ -1593,8 +1585,8 @@ static void wc_AesEncrypt(Aes* aes, const byte* inBlock, byte* outBlock)
-+ #endif /* HAVE_AES_CBC || WOLFSSL_AES_DIRECT || HAVE_AESGCM */
-+ 
-+ #if defined(HAVE_AES_DECRYPT)
-+-#if (defined(HAVE_AES_CBC) || defined(WOLFSSL_AES_DIRECT)) && \
-+-    !defined(WOLFSSL_DEVCRYPTO_CBC)
-++#if (defined(HAVE_AES_CBC) && !defined(WOLFSSL_DEVCRYPTO_CBC)) || \
-++     defined(WOLFSSL_AES_DIRECT)
-+ 
-+ /* load 4 Td Tables into cache by cache line stride */
-+ static WC_INLINE word32 PreFetchTd(void)
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of mail@adrianschmutzler.de
+> Sent: Dienstag, 10. September 2019 00:01
+> To: openwrt-devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH 0/4] Move caldata extraction and MAC
+> patching to common file
+>=20
+> > -----Original Message-----
+> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> > On Behalf Of Adrian Schmutzler
+> > Sent: Sonntag, 8. September 2019 16:11
+> > To: openwrt-devel@lists.openwrt.org
+> > Subject: [OpenWrt-Devel] [PATCH 0/4] Move caldata extraction and MAC
+> > patching to common file
+> >
+> > This is another attempt to unify caldata extraction and MAC patching.
+> >
+> > Compared to my first attempt half a year ago, this includes more
+> > targets and does more code cleanup, particularly by merging several
+> > differently implemented function spread across the code which effective=
+ly
+> do the same.
+> >
+> > I also plan to address the special situation in lantiq when a find
+> > some additional time.
+> >
+> > Note that the current state is only slightly above RFC quality. It has
+> > not been tested so far on any target.
+>=20
+> Checked the code a second time and tested successfully on
+> ath79/ath9k: WDR4300 v1
+> ath79/ath10k: Archer C60 v2
+
+Tested on TP-Link C2600 (ipq806x).
+
+--=-=aQuA429SJy2e9J=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl16yokACgkQoNyKO7qx
+AnDPbBAAno67404QIwXD1JgeU1JL4RvHzEf/4dPwTB6hH1xmhgEOFCAaMzG5fFZz
+QPV5FqE+2ng0WuTrInkxV6df+VX5PTeAMmgu7p0Bje6xMjIPOT4K+e6tGvj/c6sb
+xW0hAI5jVbP6U1NUWPzm6deMcj3PwCAPkE9SxNG9QoNFIH9HECO4McfMXlfk7g3e
+EaTDH24pelkCzjm/qfBCysdnOuN7Xeae84o5zNVU3uqOf5NJvnvVOu/D8fJJ4FBR
+J7VTdZUHnyvxqNnE5O/wzgtODrPybKtzk3zGrkPVPtdvXSr3a5huB5XAlf5ZNZte
+DaHKYjNu2aCX0TJSM93FcpQZyWGwG9XJXXfJsnBPlk+VwX1QtPURAq/pHUIptmBh
+Tsi+PXvky9uTi+fdb8+cv2dr/u1ZOm3pjrPs13sZEJtElzF1iB2XjSI9qECcZOxh
+ySX6qI0pnejJdyCgKDxa/zjfS6lCcXDlzN9NBn7VVwYLVFUv3XVbCgEC/B7D1QWj
+qZTzkQau0XGOi6vM409EP7WJSqvNU5TBegNqSmROmxBanMmuHcHEFt6O9ag2y82R
+0/O30jU936EP706Qpxina3uiVkIsvT/5XwFEbm9JZQX9fvXIiDo+AQZHkS+vml5e
+EXwkHAsvvyndYTMNAEk0SZh1pbGxXZ/zPgLLEWxbUIbvAF/MaWU=
+=vs47
+-----END PGP SIGNATURE-----
+
+
+--=-=aQuA429SJy2e9J=-=--
+
+
+
+--===============6220210497869552477==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============6220210497869552477==--
+
+

@@ -2,81 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E665B1B74
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Sep 2019 12:17:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC496B1B9F
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Sep 2019 12:39:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+9gNMAOe3eCBhfnqbWwBcBbUlQdPgGKWFOkR5SL2kkc=; b=TNQppNmak6tSOZ
-	17MGb8e6lDzAc2tQihZCVbxr3EMfAvx3Wr3fs3Qd/cBB64FL2QRCs7YvnDp9W9gcrgqyfXxrVcDnT
-	DWd8Pn2AotP8NwLjL9uYqMHF6coDDYdagniQAYjvB1ZXfZUl8RTZXpTifzYhWaB70LQgS6u2CdHNU
-	QjRYPE6SkgfIHNXMdtgI3K45qaFTxOO3Z5ICltyz1/JzL7BSjINCLLkauYuq0Htf306mM0gscDwg8
-	/EQp5DYuOsSyzo7INonkTfKL11CgqEQgZRn6xH8sFvkPmZioKTHfwphSaT7drhXT9QgSZwcnt7ShQ
-	pmOjTkcy6HU02DpWKp2w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QjB468Zi1K/DKzIlgdH7wwqbjFW0JyxND7spfQ+KpFQ=; b=sD5ofOHqd8/CJT
+	AiXLkXYzN5dHSUTzLSPs+l0k6C6/V9nsh3HfwNOOa+otZANrU2HdgfXMnJgouBkMQPKl7JxSnf4Dt
+	JrOPPgL0RdW2TsCtRhbhHRVVZhB9temVI6g20svYy//xqMQvjGD4unf3o3sGsmMttBYFuUeQHa+8y
+	JI4F8iy9ZHfyFl6rjr5+LF4mOql6CSMQ3xEkj76ffopyVfwp7hPV7oDu47mauo5gD5r1jFcn+OJAe
+	ppL1JlHxFz5ucahvq1YCtNhilyluKJbGpKD9klwNwOPdTjbC9RsBvj0aq1FWKVxwTy3w3iG3ywoyO
+	F1IqB6+Sa9WpT8k8QNQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8idY-0003Gh-0v; Fri, 13 Sep 2019 10:17:08 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1i8izD-0001Tc-QE; Fri, 13 Sep 2019 10:39:32 +0000
+Received: from hosting.emcodev.net ([2a02:348:60:5ca2::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8idL-0003Du-2g
- for openwrt-devel@lists.openwrt.org; Fri, 13 Sep 2019 10:16:57 +0000
-Received: by mail-wr1-x443.google.com with SMTP id q14so31479806wrm.9
- for <openwrt-devel@lists.openwrt.org>; Fri, 13 Sep 2019 03:16:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=oX7TsM5mZqj81Qw+vNazfT/rIjjATFxNQxjQM2zaNgQ=;
- b=Ayk7a2CcF3Izl3YawT6WKutbOqvf8IBF5ccCry0he7Njt/shZfCYOmWtKGZKAr6m5U
- 0Q/jUMhMZoldkJ8+J8wFEHr42TlXbhPNyHYLeWa6Og8FJs7oDINDz09T8lsRRDSC11Ko
- qAQMt4aju1R42HlSXcxfgJ4Fjs0VmG5QMYtf84nsdIss35PsCWlzcwJSGDzuyB7Z9FAh
- ulPpJnYqsHVTMI/0VODTt1a4ZRqs0MXXWDhZ2O0tYh0EdQn9r7HmVlPFri/KzDw/3EYy
- prARpJR5ZtrCubJfsIhDWSLQGLbP20U02BNSxDzJm/f0/BmXiruCZEAjgRJYqlPgdIeY
- NQgg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=oX7TsM5mZqj81Qw+vNazfT/rIjjATFxNQxjQM2zaNgQ=;
- b=URNy8/ORQ9OA+pr5H1tljUX5Am/LB2DIoJh3JT7gtq9dPF07JrQmxa3/szY7HBA8h8
- H4s4XUt3hgz2jpv/MR+a5nRxFZ+naEaWHHiGmLoi57pdRSOA5qCCGkZg1A8WqrlWrhVx
- bTElT8W0+qzpnwMBfXoluXTvzt/j0PrLHVCsTWPWuUDowrxvTOZeBbwEopNB9nLBoiqU
- TOcC8fEloWGdzQ6TmoplruAAvysnL4XEi62Km1A93qx4SmBC7rHg6NhMlelUE5fYsyjU
- IashXp84IvQd1qrK1LarnZfrwh+2Sl9iGIr6TjNBuztqQU/WuyjG4uRuixnbFC3ulLW+
- mkkg==
-X-Gm-Message-State: APjAAAVzAnl4mxYtqizCf7G9hxqAPpB1QAC4PGGAKmXku5Qy77dLV0yc
- YYPS4Vw7NQ6GdMauNdQtOr5dH+Om
-X-Google-Smtp-Source: APXvYqw1hWhWSHyXDx6FQyjWa80zKjzwnl7TqGemWdAC/9rSUY4NbE+sEqok4Loth91ahPkucZIi0A==
-X-Received: by 2002:adf:dd0b:: with SMTP id a11mr41646224wrm.42.1568369808729; 
- Fri, 13 Sep 2019 03:16:48 -0700 (PDT)
-Received: from localhost.localdomain (93-143-190-12.adsl.net.t-com.hr.
- [93.143.190.12])
- by smtp.gmail.com with ESMTPSA id y3sm2489604wmg.2.2019.09.13.03.16.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Sep 2019 03:16:48 -0700 (PDT)
-From: Robert Marko <robimarko@gmail.com>
+ id 1i8iyq-0001TF-0j
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Sep 2019 10:39:10 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by hosting.emcodev.net (Postfix) with ESMTP id 4F638212002
+ for <openwrt-devel@lists.openwrt.org>; Fri, 13 Sep 2019 12:39:03 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=basmevissen.nl;
+ h=content-transfer-encoding:content-language:content-type
+ :content-type:mime-version:user-agent:date:date:message-id
+ :subject:subject:from:from; s=default; t=1568371142; x=
+ 1570185543; bh=oAKJa3XMrLpou2PE1ZZtJOL4DavBtRE+WKPxpR5DGUI=; b=j
+ 4El3hgVNqdvSa2tlm1Ms1FwkzILrtjfAZapyQnS6vYWILS4f2JSsaDWNK8NacFiz
+ jmcG+w1drXTvIUgp5xn8r88sOUDv2cVyt7fs7dmX5pdOUk4M1s5AeFuu6yXypPjs
+ 62zWnUz0nvUrRvQ96MsbNHyT6K5DiKnpvjKwC90xHCJLk4fO6zsLgSMYi/ZM5bcG
+ fVrH4uWdDoTgkzTEWOXXkxfPg4R0c6Sdnei413VhQwhMxuFZc7Lykft+FGAOWHvl
+ Ab8rpo2trz43sUCpSGtk43wvEj8QGfu2UUCbFBAN1hTRZ2j1nFSDMIcg4sGdXm21
+ PqOImByuGSulRmarMLcn710C0tUENuUVZBzMac08SIGGLLzYOLMU1zE13GhCGmbp
+ 6/kVRVNDAho7XgiJwu7ASAh58TWRGp89nJMoGu87T+H4bqh0iQwVbBaSHsjKtuW0
+ DYOFOWIknyfO61uyKKoHpI6NuZg0FCq39TTUwcoYFz7RmZPDwh4d8lvDKNdvrJfj
+ LNQm4WsPUjYxtnqUE7fVx4Vffgji1/4ttQN1IZLZbMeoozK110xwlA2+RZvc5H0Y
+ I/6vEbXGZ9GMW7fnBCV0QU8RoPlIDpBbBwcaL836J9YfQujPB58wbTUa5J1l4Cdv
+ umugT6qXrOze55w74ReQmulglxuQ4ynXkSPiwBdlBA=
+Received: from hosting.emcodev.net ([127.0.0.1])
+ by localhost (hosting.emcodev.net [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id N5JnBmULVPUf for <openwrt-devel@lists.openwrt.org>;
+ Fri, 13 Sep 2019 12:39:02 +0200 (CEST)
+Received: from [192.168.18.127] (unknown [149.6.134.59])
+ (Authenticated sender: bas@emcodev.nl)
+ by hosting.emcodev.net (Postfix) with ESMTPSA id 93A5A212001
+ for <openwrt-devel@lists.openwrt.org>; Fri, 13 Sep 2019 12:39:02 +0200 (CEST)
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 13 Sep 2019 12:15:39 +0200
-Message-Id: <20190913101537.18812-2-robimarko@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190913101537.18812-1-robimarko@gmail.com>
-References: <20190913101537.18812-1-robimarko@gmail.com>
+From: Bas Mevissen <abuse@basmevissen.nl>
+Message-ID: <0d4db010-5c0e-3019-3839-527fc92470ba@basmevissen.nl>
+Date: Fri, 13 Sep 2019 12:39:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_031655_190271_6539FBB0 
-X-CRM114-Status: GOOD (  13.09  )
+X-CRM114-CacheID: sfid-20190913_033908_496578_B49326A8 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robimarko[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,8 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v2 2/2] ath10k-ct: update to version
- 2019-09-09
+Subject: [OpenWrt-Devel] Errors running make xconfig
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,218 +87,185 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robert Marko <robimarko@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Update the ath10k-ct driver version to 5e8cd86f90dac966d12df6ece84ac41458d0e95f
-to enable dynamic VLANs to work.
-Packages refreshed while bump.
+Hi all,
 
-Signed-off-by: Robert Marko <robimarko@gmail.com>
+I'm trying to configure my openwrt project with xconfig. This fails with 
+the errors pasted to https://pastebin.com/LJvsAhab (too long to add, 
+summary below).
 
-Changes from v1:
-	* Fixed wrong mirror hash
----
- package/kernel/ath10k-ct/Makefile                           | 6 +++---
- ...h10k-add-support-for-configuring-management-packet.patch | 4 ++--
- ...h10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch | 2 +-
- ...h10k-fix-incorrect-multicast-broadcast-rate-settin.patch | 4 ++--
- .../patches/164-ath10k-commit-rates-from-mac80211.patch     | 6 +++---
- ...-and-GPIO-controlling-support-for-various-chipsets.patch | 6 +++---
- .../202-ath10k-4.16-use-tpt-trigger-by-default.patch        | 4 ++--
- ...h10k-Limit-available-channels-via-DT-ieee80211-fre.patch | 2 +-
- ...h10k-Check-if-station-exists-before-forwarding-tx-.patch | 2 +-
- 9 files changed, 18 insertions(+), 18 deletions(-)
+System is Mint 9.2 (Ubuntu Bionic based) with relevant Qt5 stuff 
+installed, including libqt5* (I installed all of them...) and qtbase5-dev.
 
-diff --git a/package/kernel/ath10k-ct/Makefile b/package/kernel/ath10k-ct/Makefile
-index 05d30891f5..dbf75fe174 100644
---- a/package/kernel/ath10k-ct/Makefile
-+++ b/package/kernel/ath10k-ct/Makefile
-@@ -8,9 +8,9 @@ PKG_LICENSE_FILES:=
- 
- PKG_SOURCE_URL:=https://github.com/greearb/ath10k-ct.git
- PKG_SOURCE_PROTO:=git
--PKG_SOURCE_DATE:=2019-08-14
--PKG_SOURCE_VERSION:=9e5ab25027e0971fa24ccf93373324c08c4e992d
--PKG_MIRROR_HASH:=95dc42a5615f80528223859b4f9618feafb5a0a29a9eb4c4bc983f76c74fb535
-+PKG_SOURCE_DATE:=2019-09-09
-+PKG_SOURCE_VERSION:=5e8cd86f90dac966d12df6ece84ac41458d0e95f
-+PKG_MIRROR_HASH:=dc1097f3a7b4b7e346918f206746d00a0b7df07ae3be9b89be55dfaef3cbbe45
- 
- # Build the 5.2 ath10k-ct driver version.  Other option is "-4.19".
- # Probably this should match as closely as
-diff --git a/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch b/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
-index d62a1cfcf5..e67003c5a7 100644
---- a/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
-+++ b/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
-@@ -43,7 +43,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
-  static int ath10k_mac_get_max_vht_mcs_map(u16 mcs_map, int nss)
-  {
-  	switch ((mcs_map >> (2 * nss)) & 0x3) {
--@@ -6388,9 +6404,10 @@ static void ath10k_bss_info_changed(stru
-+@@ -6405,9 +6421,10 @@ static void ath10k_bss_info_changed(stru
-  	struct cfg80211_chan_def def;
-  	u32 vdev_param, pdev_param, slottime, preamble;
-  	u16 bitrate, hw_value;
-@@ -56,7 +56,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
-  
-  	mutex_lock(&ar->conf_mutex);
-  
--@@ -6596,6 +6613,30 @@ static void ath10k_bss_info_changed(stru
-+@@ -6613,6 +6630,30 @@ static void ath10k_bss_info_changed(stru
-  				    arvif->vdev_id,  ret);
-  	}
-  
-diff --git a/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch b/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
-index ab360b7261..a24029983c 100644
---- a/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
-+++ b/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
-@@ -26,7 +26,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
-  		if (ath10k_rates[i].bitrate == bitrate)
-  			return hw_value_prefix | ath10k_rates[i].hw_value;
-  	}
--@@ -6619,22 +6619,22 @@ static void ath10k_bss_info_changed(stru
-+@@ -6636,22 +6636,22 @@ static void ath10k_bss_info_changed(stru
-  			return;
-  		}
-  
-diff --git a/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch b/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
-index 2b550e76df..f6fd75b7e5 100644
---- a/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
-+++ b/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
-@@ -17,7 +17,7 @@ Origin: other, https://patchwork.kernel.org/patch/10723033/
- 
- --- a/ath10k-4.19/mac.c
- +++ b/ath10k-4.19/mac.c
--@@ -6404,8 +6404,8 @@ static void ath10k_bss_info_changed(stru
-+@@ -6421,8 +6421,8 @@ static void ath10k_bss_info_changed(stru
-  	struct cfg80211_chan_def def;
-  	u32 vdev_param, pdev_param, slottime, preamble;
-  	u16 bitrate, hw_value;
-@@ -28,7 +28,7 @@ Origin: other, https://patchwork.kernel.org/patch/10723033/
-  	enum nl80211_band band;
-  	const struct ieee80211_supported_band *sband;
-  
--@@ -6578,7 +6578,11 @@ static void ath10k_bss_info_changed(stru
-+@@ -6595,7 +6595,11 @@ static void ath10k_bss_info_changed(stru
-  	if (changed & BSS_CHANGED_MCAST_RATE &&
-  	    !WARN_ON(ath10k_mac_vif_chan(arvif->vif, &def))) {
-  		band = def.chan->band;
-diff --git a/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch b/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
-index b67ad2c3c4..aab435bccd 100644
---- a/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
-+++ b/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
-@@ -11,7 +11,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
- 
- --- a/ath10k-4.19/mac.c
- +++ b/ath10k-4.19/mac.c
--@@ -6600,6 +6600,7 @@ static void ath10k_bss_info_changed(stru
-+@@ -6617,6 +6617,7 @@ static void ath10k_bss_info_changed(stru
-  			   "mac vdev %d mcast_rate %x\n",
-  			   arvif->vdev_id, rate);
-  
-@@ -19,7 +19,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
-  		vdev_param = ar->wmi.vdev_param->mcast_data_rate;
-  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
-  						vdev_param, rate);
--@@ -6608,6 +6609,7 @@ static void ath10k_bss_info_changed(stru
-+@@ -6625,6 +6626,7 @@ static void ath10k_bss_info_changed(stru
-  				    "failed to set mcast rate on vdev %i: %d\n",
-  				    arvif->vdev_id,  ret);
-  
-@@ -27,7 +27,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
-  		vdev_param = ar->wmi.vdev_param->bcast_data_rate;
-  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
-  						vdev_param, rate);
--@@ -6634,6 +6636,7 @@ static void ath10k_bss_info_changed(stru
-+@@ -6651,6 +6653,7 @@ static void ath10k_bss_info_changed(stru
-  			return;
-  		}
-  
-diff --git a/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch b/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
-index 38ec21f52f..ba42fc1d2d 100644
---- a/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
-+++ b/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
-@@ -210,7 +210,7 @@ v13:
-  
-  #include "htt.h"
-  #include "htc.h"
--@@ -1137,7 +1138,6 @@ struct ath10k {
-+@@ -1138,7 +1139,6 @@ struct ath10k {
-  	u32 low_5ghz_chan;
-  	u32 high_5ghz_chan;
-  	bool ani_enabled;
-@@ -218,7 +218,7 @@ v13:
-  	bool p2p;
-  	bool ct_all_pkts_htt; /* CT firmware only: native-wifi for all pkts */
-  
--@@ -1388,6 +1388,13 @@ struct ath10k {
-+@@ -1389,6 +1389,13 @@ struct ath10k {
-  	} testmode;
-  
-  	struct {
-@@ -562,7 +562,7 @@ v13:
-  int ath10k_wmi_attach(struct ath10k *ar)
- --- a/ath10k-4.19/wmi.h
- +++ b/ath10k-4.19/wmi.h
--@@ -3044,6 +3044,41 @@ enum wmi_10_4_feature_mask {
-+@@ -3084,6 +3084,41 @@ enum wmi_10_4_feature_mask {
-  
-  };
-  
-diff --git a/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch b/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
-index e5dd967a26..0e7a03ef6d 100644
---- a/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
-+++ b/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
-@@ -16,7 +16,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
- 
- --- a/ath10k-4.19/core.h
- +++ b/ath10k-4.19/core.h
--@@ -1487,6 +1487,10 @@ struct ath10k {
-+@@ -1488,6 +1488,10 @@ struct ath10k {
-  	u8 csi_data[4096];
-  	u16 csi_data_len;
-  
-@@ -42,7 +42,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
-  	if (ret)
- --- a/ath10k-4.19/mac.c
- +++ b/ath10k-4.19/mac.c
--@@ -9965,7 +9965,7 @@ int ath10k_mac_register(struct ath10k *a
-+@@ -9982,7 +9982,7 @@ int ath10k_mac_register(struct ath10k *a
-  	wiphy_ext_feature_set(ar->hw->wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
-  
-  #ifdef CPTCFG_MAC80211_LEDS
-diff --git a/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch b/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
-index 3a22fc74cb..d770948f79 100644
---- a/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
-+++ b/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
-@@ -29,7 +29,7 @@ Forwarded: https://patchwork.kernel.org/patch/10549245/
-  #include <net/mac80211.h>
-  #include <linux/etherdevice.h>
-  #include <linux/acpi.h>
--@@ -9689,6 +9690,7 @@ int ath10k_mac_register(struct ath10k *a
-+@@ -9706,6 +9707,7 @@ int ath10k_mac_register(struct ath10k *a
-  		ar->hw->wiphy->bands[NL80211_BAND_5GHZ] = band;
-  	}
-  
-diff --git a/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch b/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch
-index a2f3a3f41a..cd8967cb93 100644
---- a/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch
-+++ b/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch
-@@ -70,7 +70,7 @@ Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
- 
- --- a/ath10k-5.2/htt_rx.c
- +++ b/ath10k-5.2/htt_rx.c
--@@ -2497,7 +2497,7 @@ do_generic:
-+@@ -2507,7 +2507,7 @@ do_generic:
-  		spin_lock_bh(&ar->data_lock);
-  
-  		peer = ath10k_peer_find_by_id(ar, peer_id);
--- 
-2.21.0
+I used OpenWrt latest master, head of openwrt_19.07 branch and v18.06.4 
+with the same result. I tried to figure out whether the configuration 
+did function as designed:
+
+(from scripts/config/Makefile)
+
+$ pkg-config --exists Qt5Core && echo Ok
+Ok
+
+$ pkg-config --cflags Qt5Core Qt5Gui Qt5Widgets
+-I/usr/include/x86_64-linux-gnu/qt5/QtWidgets 
+-I/usr/include/x86_64-linux-gnu/qt5 
+-I/usr/include/x86_64-linux-gnu/qt5/QtGui 
+-I/usr/include/x86_64-linux-gnu/qt5 
+-I/usr/include/x86_64-linux-gnu/qt5/QtCore 
+-I/usr/include/x86_64-linux-gnu/qt5
+
+$ pkg-config --libs Qt5Core Qt5Gui Qt5Widgets
+-lQt5Widgets -lQt5Gui -lQt5Core
+
+$ pkg-config --variable=host_bins Qt5Core
+/usr/lib/qt5/bin
+
+So it selects Qt5 and finds the required stuff:
+
+$ cat scripts/config/.tmp_qtcheck
+KC_QT_CFLAGS=-std=c++11 -fPIC 
+-I/usr/include/x86_64-linux-gnu/qt5/QtWidgets 
+-I/usr/include/x86_64-linux-gnu/qt5 
+-I/usr/include/x86_64-linux-gnu/qt5/QtGui 
+-I/usr/include/x86_64-linux-gnu/qt5 
+-I/usr/include/x86_64-linux-gnu/qt5/QtCore 
+-I/usr/include/x86_64-linux-gnu/qt5
+KC_QT_LIBS=-lQt5Widgets -lQt5Gui -lQt5Core
+KC_QT_MOC=/usr/lib/qt5/bin/moc
+
+$ gcc --version
+gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is 
+NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+PURPOSE.
+
+So it seems the configuration goes fine and everything should be available.
+
+Shortened version of the error:
+
+make[1]: Entering directory 
+'/home/bas/Workspace/playground/openwrt/scripts/config'
+   CHECK   qt
+qconf.o: In function `ConfigList::metaObject() const':
+qconf.cc:(.text+0x3ed): undefined reference to 
+`QObjectData::dynamicMetaObject() const'
+qconf.o: In function `ConfigList::qt_metacast(char const*)':
+qconf.cc:(.text+0x446): undefined reference to 
+`QTreeWidget::qt_metacast(char const*)'
+qconf.o: In function `ConfigList::qt_metacall(QMetaObject::Call, int, 
+void**)':
+qconf.cc:(.text+0x474): undefined reference to 
+`QTreeWidget::qt_metacall(QMetaObject::Call, int, void**)'
+qconf.o: In function `ConfigList::menuChanged(menu*)':
+qconf.cc:(.text+0x522): undefined reference to 
+`QMetaObject::activate(QObject*, QMetaObject const*, int, void**)'
+qconf.o: In function `ConfigList::menuSelected(menu*)':
+qconf.cc:(.text+0x590): undefined reference to 
+`QMetaObject::activate(QObject*, QMetaObject const*, int, void**)'
+qconf.o: In function `ConfigList::parentSelected()':
+qconf.cc:(.text+0x5d1): undefined reference to 
+`QMetaObject::activate(QObject*, QMetaObject const*, int, void**)'
+qconf.o: In function `ConfigList::gotFocus(menu*)':
+qconf.cc:(.text+0x62a): undefined reference to 
+`QMetaObject::activate(QObject*, QMetaObject const*, int, void**)'
+qconf.o: In function `ConfigLineEdit::metaObject() const':
+qconf.cc:(.text+0x695): undefined reference to 
+`QObjectData::dynamicMetaObject() const'
+qconf.o: In function `ConfigLineEdit::qt_metacast(char const*)':
+qconf.cc:(.text+0x6ee): undefined reference to 
+`QLineEdit::qt_metacast(char const*)'
+qconf.o: In function `ConfigLineEdit::qt_metacall(QMetaObject::Call, 
+int, void**)':
+qconf.cc:(.text+0x71c): undefined reference to 
+`QLineEdit::qt_metacall(QMetaObject::Call, int, void**)'
+qconf.o: In function `ConfigView::metaObject() const':
+qconf.cc:(.text+0x9f7): undefined reference to 
+`QObjectData::dynamicMetaObject() const'
+qconf.o: In function `ConfigView::qt_metacast(char const*)':
+qconf.cc:(.text+0xa50): undefined reference to 
+`QWidget::qt_metacast(char const*)'
+(...)
+qconf.o: In function `ConfigList::~ConfigList()':
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0x42): 
+undefined reference to `QPalette::~QPalette()'
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0x54): 
+undefined reference to `QPalette::~QPalette()'
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0x66): 
+undefined reference to `QPixmap::~QPixmap()'
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0x78): 
+undefined reference to `QPixmap::~QPixmap()'
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0x8a): 
+undefined reference to `QPixmap::~QPixmap()'
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0x9c): 
+undefined reference to `QPixmap::~QPixmap()'
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0xae): 
+undefined reference to `QPixmap::~QPixmap()'
+qconf.o:qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0xc0): 
+more undefined references to `QPixmap::~QPixmap()' follow
+qconf.o: In function `ConfigList::~ConfigList()':
+qconf.cc:(.text._ZN10ConfigListD2Ev[_ZN10ConfigListD5Ev]+0xfc): 
+undefined reference to `QTreeWidget::~QTreeWidget()'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x10): 
+undefined reference to `QSettings::metaObject() const'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x18): 
+undefined reference to `QSettings::qt_metacast(char const*)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x20): 
+undefined reference to `QSettings::qt_metacall(QMetaObject::Call, int, 
+void**)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x38): 
+undefined reference to `QSettings::event(QEvent*)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x40): 
+undefined reference to `QObject::eventFilter(QObject*, QEvent*)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x48): 
+undefined reference to `QObject::timerEvent(QTimerEvent*)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x50): 
+undefined reference to `QObject::childEvent(QChildEvent*)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x58): 
+undefined reference to `QObject::customEvent(QEvent*)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x60): 
+undefined reference to `QObject::connectNotify(QMetaMethod const&)'
+qconf.o:(.data.rel.ro._ZTV14ConfigSettings[_ZTV14ConfigSettings]+0x68): 
+undefined reference to `QObject::disconnectNotify(QMetaMethod const&)'
+qconf.o: In function `ConfigSettings::~ConfigSettings()':
+qconf.cc:(.text._ZN14ConfigSettingsD2Ev[_ZN14ConfigSettingsD5Ev]+0x26): 
+undefined reference to `QSettings::~QSettings()'
+qconf.o:(.data.rel.ro._ZTI16ConfigMainWindow[_ZTI16ConfigMainWindow]+0x10): 
+undefined reference to `typeinfo for QMainWindow'
+qconf.o:(.data.rel.ro._ZTI18ConfigSearchWindow[_ZTI18ConfigSearchWindow]+0x10): 
+undefined reference to `typeinfo for QDialog'
+qconf.o:(.data.rel.ro._ZTI14ConfigInfoView[_ZTI14ConfigInfoView]+0x10): 
+undefined reference to `typeinfo for QTextBrowser'
+qconf.o:(.data.rel.ro._ZTI10ConfigView[_ZTI10ConfigView]+0x10): 
+undefined reference to `typeinfo for QWidget'
+qconf.o:(.data.rel.ro._ZTI14ConfigLineEdit[_ZTI14ConfigLineEdit]+0x10): 
+undefined reference to `typeinfo for QLineEdit'
+qconf.o:(.data.rel.ro._ZTI10ConfigItem[_ZTI10ConfigItem]+0x10): 
+undefined reference to `typeinfo for QTreeWidgetItem'
+qconf.o:(.data.rel.ro._ZTI10ConfigList[_ZTI10ConfigList]+0x10): 
+undefined reference to `typeinfo for QTreeWidget'
+qconf.o:(.data.rel.ro._ZTI14ConfigSettings[_ZTI14ConfigSettings]+0x10): 
+undefined reference to `typeinfo for QSettings'
+collect2: error: ld returned 1 exit status
+Makefile:45: recipe for target 'qconf' failed
+make[1]: *** [qconf] Error 1
+make[1]: Leaving directory 
+'/home/bas/Workspace/playground/openwrt/scripts/config'
+/home/bas/Workspace/playground/openwrt/include/toplevel.mk:108: recipe 
+for target 'scripts/config/qconf' failed
+make: *** [scripts/config/qconf] Error 2
+
+Any help would be welcome.
+
+Regards,
+
+Bas.
+
+
 
 
 _______________________________________________

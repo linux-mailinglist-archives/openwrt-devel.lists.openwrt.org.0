@@ -2,64 +2,64 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DBC1B2AE0
-	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Sep 2019 11:54:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6DD2B2AE1
+	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Sep 2019 11:55:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/T7pu61oZq6uHGOpnS1SAQyDCswBJEsUi94QT4zJHDY=; b=sGTxiymmmfF6Su
-	/istNyKpoDat1V5Q9dm3Nk9i4SZwAc5RSAlvpKTf+y35/pnwdcTGIHlLkjXBjoHeeiNLEw3f1AbQZ
-	3800fHdRcoB0aP+JbCQJqW59607qW7Uxm7lzezE0WkBaB4V9xN62HwEc50JjApnCP5izEIbgAIbzj
-	o9YH7xX+zpdrfV7ViuRXJVOc/8dxIIbAKHVBUBe7usGs8Bbw4sLWErA0LlQk2vcKn7GBqVPCZuMrQ
-	3P7bZGw+oDNkpCFoYv0jNbi8a+aOOQleHpr0PvTl6iUbMQweI2qvJp1FgkulR/VtRequz5EWQTJTc
-	aZhK6c8AsK36RAYW8vgA==;
+	List-Owner; bh=MxAkluht4QfQwA4suxkaRZKpWX583mrOiBQZNoYtgV0=; b=CDGrOMoEKxPhdr
+	GyZCS9989tEjynm2ThXVqgdaA3/sTT5yw00O/cGVtiIbGM28X8LS0624oqNkG6lLRUKGB1epGY9YF
+	rpjLX7Oii3raK3DNQPa1EtA9p54yorEinsv497Dhka5uP0oo5GTqyFYWRqRw7GWgbQULofv1jChuP
+	xFAnvGchxfWa86cBckE/n5ZAYG3AHm9DIy3lGZK2s5BLq79rBzusCkrnv+x4msbK8yeEpdHff+bME
+	0IYfxtsQunHCmaDLo005AsC1nlf/DuYJ6vUGGGINEI8At6dV1vMQRT94mNJMSKsOANTrId8hQ61gI
+	LtWGj+U6biAK8jXGwi/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i94kx-00061C-7l; Sat, 14 Sep 2019 09:54:15 +0000
+	id 1i94m0-0007XZ-Hb; Sat, 14 Sep 2019 09:55:20 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i94kk-00060o-Pe
- for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 09:54:04 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r5so312406wrm.12
- for <openwrt-devel@lists.openwrt.org>; Sat, 14 Sep 2019 02:54:01 -0700 (PDT)
+ id 1i94ln-0007Mw-I7
+ for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 09:55:08 +0000
+Received: by mail-wr1-x442.google.com with SMTP id r5so313906wrm.12
+ for <openwrt-devel@lists.openwrt.org>; Sat, 14 Sep 2019 02:55:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Vcj/8FJiwdQPaphzF2ruVqPU6R71CVN+Hf+asPa80do=;
- b=YzuT/FjYJDUtx9hlEoslBk3LEOKtADv5MA2dPj+Eo3UV3GXgLGaHo4RgbBw+oDCLvw
- pAFGO5SOdIYekaQCYM8MD2w9OMd0NEyDQ+3C8G027p1KeC1Jq1/fRHYBD6yXC5c+WJEp
- 1W22cUXurcV8vVH0xtB3Fk+hwT3H5ENB9M31dK7jl3yctqTKvscz7PsDvJirLvsHlGjy
- K7esLCnP1ocAyZhnJkfp472f4Eip4KrgrbR/BgCRACLUm8e+AP66RyOGMiYS43E2/8uU
- FGceHvG8kb/b5TPhynQTs1LSnyiBgReTT0OLPkF4YL5qxI7I/pTqN7zozWVOuOGR+UKB
- YlZg==
+ :cc; bh=HvxjdmJJ7nUU/HkoM8YQRJ1Ao2UMSAiFCx+zAxgFzLI=;
+ b=sTjMjZybu2a6uEk3HbBLaWAOujk0Yvqnua7xEqlmO+KGMyhKmKufmfEkrdh9179eam
+ ekh7TAn9EYCbI8u6IWhb4sUww0dqCLD23jWntfvZKPGELqjIkl6hAzoTqRaRNH21NzLt
+ onFda2/iNFE4vQ0GjdzfpdCpRpEiyB806eY6dMwjUkO0mO9gQ3scpWyWf1TemdsjRwNu
+ 7r7RTee+jxMnipmbQ3y2S0Qe0viZjxrxfQDrYLSKRSdjrnQfsCPc3mfplS0pjOcsN9YV
+ G5QRRA8BnQPJ3ohxHUy6NYlNQiZyfrV8AqMULVHnUzgU8it9hYe9mc5M5TZo8SsgA94V
+ RbWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Vcj/8FJiwdQPaphzF2ruVqPU6R71CVN+Hf+asPa80do=;
- b=qW2GMHX9ZlFzMuKhPoNSxkAVo+nP/mh4A7msQXDhhCdhGEr6y5fp1+GwqzPXiQA9zj
- SaX03z+WFKKwB6gbSvWOsdXcQovuYrRxMxBnx+a+6Ga1SzBRXERH6y5XhE/sgRW6AYEs
- 3Q2vwb3YELYExFsE4na6b1ZfHUdSukO2kvEVp22znah7DQrxv+YuuHCSKCDlRsYaU7M/
- cCfaMwEBO3NZYoL0AL47rV2v3z5IHG2jwBrDaYF0fiD5VFEpJz6/FUyKDCsSjkTp2naL
- bZYZoWsJheHxE88N5sligpVrXtHyrd/OEBpUNELVVtXq9i5eunOQZhPYjVJndQaDzriI
- yyoA==
-X-Gm-Message-State: APjAAAXidhmHYFqTxwerijvoOa/FFElPiMsOIFejSyzRH+DOqC2e0GqM
- Pl9G4F+u9aAAnVjRa7fBbjxpQcnLHDaqYqlICI0=
-X-Google-Smtp-Source: APXvYqxGW1CLdQGKJapd3QDNx1M72KS/x0zH9YAyUAt1rqGhz0gt6zPjyli9MGysimbdEQXL0GqwSmUpsLkcUx55byk=
-X-Received: by 2002:a5d:66ce:: with SMTP id k14mr19817972wrw.258.1568454840269; 
- Sat, 14 Sep 2019 02:54:00 -0700 (PDT)
+ bh=HvxjdmJJ7nUU/HkoM8YQRJ1Ao2UMSAiFCx+zAxgFzLI=;
+ b=uBNJ4oWbkHxmx+MMk2ZLqNGNu7kt8Z6OTufu43yjT4tkx1c2baKapRXbaerkChBKK8
+ z+qS7nKV/Ee++EghB6nUNRxJNaEBSX8y8NLYi/WL8vF6upZNtIxmcGi0vCfbOTlxv63b
+ FsXBTXeq4cR+tq+nRzJpJxuQHn2nquJS1W7QEeclFfujoOSiDhRQKvVyHM+UqiPztqO4
+ v+l5pkMVaxganRLHavhWh4OSZIsCg8RwWX4Pqgp1o0161qOaRok6Gsy1+hY0rLR/zUfg
+ D5OH6+kIiMSc/eaUIku1l2lcxS7jHdqtba+3a4lS9cq/85XZ9G/IMNbDJHYhhrOwGBb2
+ sjhA==
+X-Gm-Message-State: APjAAAWta7UCoZNFnWknmXgi91575YooL5qRTlP9auHe6sm5s5iXg2gK
+ RO3JujoazzJWQFVaH2vmHxlMKzA3ttSf6oFM93X1Wg==
+X-Google-Smtp-Source: APXvYqzXthVWtMnZ8E+R2DiW2k01mJL6xrWK9HMtE7zjI2PqRPBB3Ghdt+qzx4/n1IUv/DfejpoOTfDH0QEqFa2SOts=
+X-Received: by 2002:adf:dbce:: with SMTP id e14mr13821703wrj.56.1568454906427; 
+ Sat, 14 Sep 2019 02:55:06 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190823090237.9471-1-mail@aparcar.org>
-In-Reply-To: <20190823090237.9471-1-mail@aparcar.org>
+References: <2306678.c9ocJjGFzm@tool>
+In-Reply-To: <2306678.c9ocJjGFzm@tool>
 From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Sat, 14 Sep 2019 11:54:03 +0200
-Message-ID: <CAOiHx=mT7i73+=B-_OXQD4SUHpd3goAsGJoaFncOKcFFqKgrbw@mail.gmail.com>
-To: Paul Spooren <mail@aparcar.org>
+Date: Sat, 14 Sep 2019 11:55:06 +0200
+Message-ID: <CAOiHx=m98-4uncufWudBifWXJqXQ_fiSwcnK_dHq6VrG3M0AWA@mail.gmail.com>
+To: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_025402_858887_40E37512 
-X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-CacheID: sfid-20190914_025507_666228_F8A0CBDA 
+X-CRM114-Status: UNSURE (   6.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,8 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] treewide: add Generic subtarget if
- missing
+Subject: Re: [OpenWrt-Devel] [PATCH v2] brcm63xx: R5010UNv2: fix flash
+ partitions for 16MB flash
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,28 +93,22 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Sergey Ryazanov <ryazanov.s.a@gmail.com>,
- Tomasz Maciej Nowak <tomek_n@o2.pl>, Roman Yeryomin <roman@advem.lv>,
- Tim Harvey <tharvey@gateworks.com>, Luka Perkov <luka@openwrt.org>,
- Jason Wu <jason.wu.misc@gmail.com>, Alexander Couzens <lynxis@fe80.eu>,
- John Crispin <john@phrozen.org>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Felix Fietkau <nbd@nbd.name>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Fri, 23 Aug 2019 at 11:04, Paul Spooren <mail@aparcar.org> wrote:
-> As in 853e4dd OpenWrt should follow a unified structure, where every
-> device has a target/subtarget combination, if there is only one
-> subtarget, call it "Generic". This introduces predictable filenames.
+On Wed, 21 Aug 2019 at 20:57, Daniel Gonzalez Cabanelas
+<dgcbueu@gmail.com> wrote:
+>
+> The router Nucom R5010UN v2 has the partitions defined for a 8MB flash, but the
+> flash chip is 16MB size. Fix it
+>
+> Fixes: 474cde61234c ("brcm63xx: probe SPI flash through DT")
+> ---
 
-If it's about (I assume generated) filenames, wouldn't it be easier to
-just use "Generic" for the subtarget part of the filename if there are
-no subtargets? I'm not really a fan of unnecessary code fluff without
-any real function, especially if it means additional, mainly empty
-files.
+You are missing a SOB.
 
 Regards
 Jonas

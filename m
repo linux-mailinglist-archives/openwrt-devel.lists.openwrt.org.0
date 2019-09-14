@@ -2,54 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 774CAB2A8D
-	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Sep 2019 10:52:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DBC1B2AE0
+	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Sep 2019 11:54:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KeVckIoBF+pQnGfIBgbixQR3PkO6MmwVquw37ajua4Q=; b=UiieTfynZH4j9d
-	xqQpIlSkh/fh22Noa1WlrgUU5NXMzx+BelyhSfHnAEMxnv0nmtbc5XtzjJKy+enGREqjIB13EwNY0
-	Ub2PtZ5ZCBJavTsBCX/pWZVZTXlnsGipfv0j2glBPcbBMGyZOmlkl9WhiMR4LqkENrnmMATsM5IK2
-	cfsfMV4Pfc5nL+Lp0aT0sQjDZkAbgGTrgNSVc/JQmtAU6YeFMgAfzXHepcMQLM7mkwell9YciPEQM
-	Xx1xSRjOWM2fooxwxgIPS7IDS9xuxL0i+8nGGnhVT+2lQQs/6qwtH/ZcAJfdzs1S6nAj6rwS/GtHj
-	gpi4qa65t913OMe1DPUQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/T7pu61oZq6uHGOpnS1SAQyDCswBJEsUi94QT4zJHDY=; b=sGTxiymmmfF6Su
+	/istNyKpoDat1V5Q9dm3Nk9i4SZwAc5RSAlvpKTf+y35/pnwdcTGIHlLkjXBjoHeeiNLEw3f1AbQZ
+	3800fHdRcoB0aP+JbCQJqW59607qW7Uxm7lzezE0WkBaB4V9xN62HwEc50JjApnCP5izEIbgAIbzj
+	o9YH7xX+zpdrfV7ViuRXJVOc/8dxIIbAKHVBUBe7usGs8Bbw4sLWErA0LlQk2vcKn7GBqVPCZuMrQ
+	3P7bZGw+oDNkpCFoYv0jNbi8a+aOOQleHpr0PvTl6iUbMQweI2qvJp1FgkulR/VtRequz5EWQTJTc
+	aZhK6c8AsK36RAYW8vgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i93nH-0005lO-Uc; Sat, 14 Sep 2019 08:52:36 +0000
-Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
+	id 1i94kx-00061C-7l; Sat, 14 Sep 2019 09:54:15 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i93n6-0005kz-8a
- for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 08:52:26 +0000
-Received: from p200300c587154500f087ce24c69ce2c9.dip0.t-ipconnect.de
- ([2003:c5:8715:4500:f087:ce24:c69c:e2c9]); authenticated
- by wp175.webpack.hosteurope.de running ExIM with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- id 1i93mz-00035E-CK; Sat, 14 Sep 2019 10:52:17 +0200
-To: openwrt-devel@lists.openwrt.org
-From: Birger Koblitz <mail@birger-koblitz.de>
-Message-ID: <dc2bbddc-93d4-7fa0-7853-87dde39b4b30@birger-koblitz.de>
-Date: Sat, 14 Sep 2019 10:52:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i94kk-00060o-Pe
+ for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 09:54:04 +0000
+Received: by mail-wr1-x442.google.com with SMTP id r5so312406wrm.12
+ for <openwrt-devel@lists.openwrt.org>; Sat, 14 Sep 2019 02:54:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Vcj/8FJiwdQPaphzF2ruVqPU6R71CVN+Hf+asPa80do=;
+ b=YzuT/FjYJDUtx9hlEoslBk3LEOKtADv5MA2dPj+Eo3UV3GXgLGaHo4RgbBw+oDCLvw
+ pAFGO5SOdIYekaQCYM8MD2w9OMd0NEyDQ+3C8G027p1KeC1Jq1/fRHYBD6yXC5c+WJEp
+ 1W22cUXurcV8vVH0xtB3Fk+hwT3H5ENB9M31dK7jl3yctqTKvscz7PsDvJirLvsHlGjy
+ K7esLCnP1ocAyZhnJkfp472f4Eip4KrgrbR/BgCRACLUm8e+AP66RyOGMiYS43E2/8uU
+ FGceHvG8kb/b5TPhynQTs1LSnyiBgReTT0OLPkF4YL5qxI7I/pTqN7zozWVOuOGR+UKB
+ YlZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Vcj/8FJiwdQPaphzF2ruVqPU6R71CVN+Hf+asPa80do=;
+ b=qW2GMHX9ZlFzMuKhPoNSxkAVo+nP/mh4A7msQXDhhCdhGEr6y5fp1+GwqzPXiQA9zj
+ SaX03z+WFKKwB6gbSvWOsdXcQovuYrRxMxBnx+a+6Ga1SzBRXERH6y5XhE/sgRW6AYEs
+ 3Q2vwb3YELYExFsE4na6b1ZfHUdSukO2kvEVp22znah7DQrxv+YuuHCSKCDlRsYaU7M/
+ cCfaMwEBO3NZYoL0AL47rV2v3z5IHG2jwBrDaYF0fiD5VFEpJz6/FUyKDCsSjkTp2naL
+ bZYZoWsJheHxE88N5sligpVrXtHyrd/OEBpUNELVVtXq9i5eunOQZhPYjVJndQaDzriI
+ yyoA==
+X-Gm-Message-State: APjAAAXidhmHYFqTxwerijvoOa/FFElPiMsOIFejSyzRH+DOqC2e0GqM
+ Pl9G4F+u9aAAnVjRa7fBbjxpQcnLHDaqYqlICI0=
+X-Google-Smtp-Source: APXvYqxGW1CLdQGKJapd3QDNx1M72KS/x0zH9YAyUAt1rqGhz0gt6zPjyli9MGysimbdEQXL0GqwSmUpsLkcUx55byk=
+X-Received: by 2002:a5d:66ce:: with SMTP id k14mr19817972wrw.258.1568454840269; 
+ Sat, 14 Sep 2019 02:54:00 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
-X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1568451144;
- 9bd19878; 
-X-HE-SMSGID: 1i93mz-00035E-CK
+References: <20190823090237.9471-1-mail@aparcar.org>
+In-Reply-To: <20190823090237.9471-1-mail@aparcar.org>
+From: Jonas Gorski <jonas.gorski@gmail.com>
+Date: Sat, 14 Sep 2019 11:54:03 +0200
+Message-ID: <CAOiHx=mT7i73+=B-_OXQD4SUHpd3goAsGJoaFncOKcFFqKgrbw@mail.gmail.com>
+To: Paul Spooren <mail@aparcar.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_015224_448836_2417FAD2 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190914_025402_858887_40E37512 
+X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jonas.gorski[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v6] ramips: add support for Asus RT-AC85P
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH] treewide: add Generic subtarget if
+ missing
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,357 +93,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Sergey Ryazanov <ryazanov.s.a@gmail.com>,
+ Tomasz Maciej Nowak <tomek_n@o2.pl>, Roman Yeryomin <roman@advem.lv>,
+ Tim Harvey <tharvey@gateworks.com>, Luka Perkov <luka@openwrt.org>,
+ Jason Wu <jason.wu.misc@gmail.com>, Alexander Couzens <lynxis@fe80.eu>,
+ John Crispin <john@phrozen.org>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-ramips: add support for Asus RT-AC85P
+On Fri, 23 Aug 2019 at 11:04, Paul Spooren <mail@aparcar.org> wrote:
+> As in 853e4dd OpenWrt should follow a unified structure, where every
+> device has a target/subtarget combination, if there is only one
+> subtarget, call it "Generic". This introduces predictable filenames.
 
-SoC:	MediaTek MT7621AT dual-core @ 880MHz
-RAM:	256M (Winbond W632GG6KB-1)
-FLASH:	128MB (Macronix MX30LF1G18AC-TI)
-WiFi:	- 2.4GHz MediaTek MT7615N bgn
-	- 5GHz MediaTek MT7615N nac
-Switch: SoC integrated Gigabit Switch (4 x LAN, 1 x WAN)
-USB:	1 x USB 3.1 (Gen 1)
-BTN:	Reset, WPS
-LED:	- Power (blue)
-	- 5Ghz (blue)
-	- 2.4GHz (blue)
-	- Internet (blue)
-	- 4x LAN (blue)
-	(LAN/WAN leds are not controllable by GPIOs)
-UART: 	UART is present as Pads marked J4 on the PCB.
-	3.3V - TX - RX - GND / 57600-8N1
-	3.3V is the square pad
-MAC:	The MAC address on the router-label matches the MAC of
-	the 2.4 GHz WiFi.
-	LAN and WAN MAC are identical: MAC_LABEL+4
-	5 GHz WiFi MAC: also MAC_LABEL+4
-	
+If it's about (I assume generated) filenames, wouldn't it be easier to
+just use "Generic" for the subtarget part of the filename if there are
+no subtargets? I'm not really a fan of unnecessary code fluff without
+any real function, especially if it means additional, mainly empty
+files.
 
-Installation
-------------
-Via U-Boot tftpd:
-Switch on device, within 2s press reset button and keep pressed
-until power LED starts blinking slowly.
-Upload factory image via tftp put, the router's ip is 192.168.1.1
-and expects the client on 192.168.1.75.
-
-The images also work on the Asus RT-AC65P models as tested by Gabor.
-
-Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
-Tested-by: Gabor Varga <vargagab@gmail.com>
-
----
-
-v2: Corrected sorting of entries in 02_network
-    Model name corrected in .dts
-    Whitespace fixes in .dts
-    wifi0/1 labels added to wifi nodes in .dts
-    Device name capitalized in mt7621.mk
-
-v3: Added firmware backup to firmware2 partition before sysupgrade
-    Corrected modules included in image
-
-v4: Corrected MT7615N PCI IDs
-
-v5: Fixed indentation in platform.sh
-
-v6: Rebased to latest master
-
-
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index b4634e0928..80e6a91c88 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -230,6 +230,18 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"0:lan" "1:wan" "6@eth0"
- 		;;
-+	asus,rt-ac85p|\
-+	dlink,dir-860l-b1|\
-+	elecom,wrc-1167ghbk2-s|\
-+	elecom,wrc-1900gst|\
-+	elecom,wrc-2533gst|\
-+	huawei,hg255d|\
-+	iodata,wn-ax1167gr|\
-+	iodata,wn-gx300gr|\
-+	iptime,a604m)
-+		ucidef_add_switch "switch0" \
-+			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
-+		;;
- 	asus,rt-n15|\
- 	belkin,f9k1109v1|\
- 	sitecom,wl-351)
-@@ -297,17 +309,6 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
- 		;;
--	dlink,dir-860l-b1|\
--	elecom,wrc-1167ghbk2-s|\
--	elecom,wrc-1900gst|\
--	elecom,wrc-2533gst|\
--	huawei,hg255d|\
--	iodata,wn-ax1167gr|\
--	iodata,wn-gx300gr|\
--	iptime,a604m)
--		ucidef_add_switch "switch0" \
--			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
--		;;
- 	dlink,dwr-118-a1)
- 		ucidef_add_switch "switch0" \
- 			"1:lan:2" "2:lan:3" "3:lan:1" "4:lan:0" "5:wan" "6@eth0"
-@@ -551,6 +552,9 @@ ramips_setup_macs()
- 	zbtlink,zbt-we3526)
- 		wan_mac=$(mtd_get_mac_binary factory 0xe006)
- 		;;
-+	asus,rt-ac85p)
-+		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
-+		;;
- 	asus,rt-n56u)
- 		lan_mac=$(macaddr_setbit_la "$(cat /sys/class/net/eth0/address)")
- 		wan_mac=$(mtd_get_mac_binary factory 0x8004)
-diff --git a/target/linux/ramips/base-files/lib/upgrade/platform.sh b/target/linux/ramips/base-files/lib/upgrade/platform.sh
-index 9889079db9..a62ded4b9d 100755
---- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
-@@ -18,9 +18,16 @@ platform_do_upgrade() {
- 	mikrotik,rbm33g)
- 		[ -z "$(rootfs_type)" ] && mtd erase firmware
- 		;;
-+	asus,rt-ac85p)
-+		echo "Backing up firmware"
-+		dd if=/dev/mtd4 bs=1024 count=4096  > /tmp/backup_firmware.bin
-+		dd if=/dev/mtd5 bs=1024 count=52224 >> /tmp/backup_firmware.bin
-+		mtd -e firmware2 write /tmp/backup_firmware.bin firmware2
-+		;;
- 	esac
-
- 	case "$board" in
-+	asus,rt-ac85p|\
- 	hiwifi,hc5962|\
- 	netgear,r6220|\
- 	netgear,r6260|\
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-new file mode 100644
-index 0000000000..94e26ea408
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-@@ -0,0 +1,164 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7621.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	compatible = "asus,rt-ac85p", "mediatek,mt7621-soc";
-+	model = "Asus RT-AC85P";
-+
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	palmbus: palmbus@1E000000 {
-+		i2c@900 {
-+			status = "okay";
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+
-+		wps {
-+			label = "wps";
-+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-ac85p:blue:power";
-+			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+		wlan2g {
-+			label = "rt-ac85p:blue:wlan2g";
-+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0radio";
-+		};
-+
-+		wlan5g {
-+			label = "rt-ac85p:blue:wlan5g";
-+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy1radio";
-+		};
-+	};
-+};
-+
-+&sdhci {
-+	status = "okay";
-+};
-+
-+&nand {
-+	status = "okay";
-+
-+	partitions {
-+		compatible = "fixed-partitions";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		partition@0 {
-+			label = "u-boot";
-+			reg = <0x0 0xe0000>;
-+			read-only;
-+		};
-+
-+		partition@e0000 {
-+			label = "u-boot-env";
-+			reg = <0xe0000 0x100000>;
-+			read-only;
-+		};
-+
-+		factory: partition@1e0000 {
-+			label = "factory";
-+			reg = <0x1e0000 0x100000>;
-+			read-only;
-+		};
-+
-+		factory2: partition@2e0000 {
-+			label = "factory2";
-+			reg = <0x2e0000 0x100000>;
-+			read-only;
-+		};
-+
-+		partition@3e0000 {
-+			label = "kernel";
-+			reg = <0x3e0000 0x400000>;
-+		};
-+
-+		partition@7e0000 {
-+			label = "ubi";
-+			reg = <0x7e0000 0x2e00000>;
-+		};
-+
-+		partition@35e0000 {
-+			label = "firmware2";
-+			reg = <0x35e0000 0x3200000>;
-+		};
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	wifi0: wifi@0,0 {
-+		compatible = "pci14c3,7615";
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x0000>;
-+		ieee80211-freq-limit = <2400000 2500000>;
-+		mtd-mac-address = <&factory 0x4>;
-+	};
-+};
-+
-+&pcie1 {
-+	wifi1: wifi@0,0 {
-+		compatible = "pci14c3,7615";
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		ieee80211-freq-limit = <5000000 6000000>;
-+		mtd-mac-address = <&factory 0x8004>;
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0xe000>;
-+	mediatek,portmap = "wllll";
-+	port@5 {
-+		status = "disabled";
-+	};
-+};
-+
-+&i2c {
-+    status = "disabled";
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "uart2", "uart3", "i2c";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index 986fe5e2f8..79d14a5954 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -115,6 +115,22 @@ define Device/asus_rt-ac57u
- endef
- TARGET_DEVICES += asus_rt-ac57u
-
-+define Device/asus_rt-ac85p
-+  MTK_SOC := mt7621
-+  DEVICE_VENDOR := ASUS
-+  DEVICE_MODEL := RT-AC85P
-+  IMAGE_SIZE := 51200k
-+  UBINIZE_OPTS := -E 5
-+  BLOCKSIZE := 128k
-+  PAGESIZE := 2048
-+  KERNEL_SIZE := 4096k
-+  IMAGES += factory.bin
-+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
-+  DEVICE_PACKAGES := kmod-usb3 kmod-mt7615e wpad-basic uboot-envtools
-+endef
-+TARGET_DEVICES += asus_rt-ac85p
-+
- define Device/buffalo_wsr-1166dhp
-   MTK_SOC := mt7621
-   IMAGE/sysupgrade.bin := trx | pad-rootfs | append-metadata
-diff --git a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
-index 03b2b36db9..3c6a59b863 100644
---- a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
-+++ b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
-@@ -4256,7 +4256,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +#endif /* __NAND_DEF_H__ */
- --- /dev/null
- +++ b/drivers/mtd/nand/nand_device_list.h
--@@ -0,0 +1,59 @@
-+@@ -0,0 +1,60 @@
- +/* Copyright Statement:
- + *
- + * This software/firmware and related documentation ("MediaTek Software") are
-@@ -4308,6 +4308,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
- +	{0xC8DC, 0x909554, 5, 8, 512, 128, 2048, 64, 0x30C77fff, "F59L4G81A", 0},
- +	{0xECD3, 0x519558, 5, 8, 1024, 128, 2048, 64, 0x44333, "K9K8G8000", 0},
- +    {0xC2F1, 0x801DC2, 4, 8, 128, 128, 2048, 64, 0x30C77fff, "MX30LF1G08AA", 0},
-++    {0xC2F1, 0x809502, 4, 8, 128, 128, 2048, 64, 0x30C77fff, "MX30LF1G18AC", 0},
- +    {0x98D3, 0x902676, 5, 8, 1024, 256, 4096, 224, 0x00C25332, "TC58NVG3S0F", 0},
- +    {0x01DA, 0x909546, 5, 8, 256, 128, 2048, 128, 0x30C77fff, "S34ML02G200TF", 0},
- +    {0x01DC, 0x909556, 5, 8, 512, 128, 2048, 128, 0x30C77fff, "S34ML04G200TF", 0},
+Regards
+Jonas
 
 _______________________________________________
 openwrt-devel mailing list

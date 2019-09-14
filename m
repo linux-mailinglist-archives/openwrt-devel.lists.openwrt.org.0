@@ -2,55 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35337B2A89
-	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Sep 2019 10:50:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 774CAB2A8D
+	for <lists+openwrt-devel@lfdr.de>; Sat, 14 Sep 2019 10:52:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tIU4/7869sV/YDVvqSRPpCdzyPomLKATor0rGYbMJPU=; b=le/
-	FgAkcdEbzaetzaKehI1EsC6SE2qK6DYGp5cT+v18lQelOtjXeHPSW2XzAUrqYsOEDkxnYrm45niH0
-	YKLNAcYVoDisOAh+g5m70exSLvNg7SSAf1Gj3CZ6zxuQldiu1X3pRoVMHWPdME+ZyYNMsjUd6STCS
-	LH8Lx0sdiDyHneYOQBG1ZlLfnQfkIfqUxzTBqnlMZwsuEhvxCgQioaNCZdlYpsJThXtsCTbHtMHvf
-	KPTh7iVa9xhPBFS7P9+eVUMVsI2aDphDaOT1hwRvdV64aRvnr4UFniKV5nJyJuQ69ClElwVMipHYd
-	3ZvPgcmb4fa6AqIEgJmNu77j2akJtWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
+	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KeVckIoBF+pQnGfIBgbixQR3PkO6MmwVquw37ajua4Q=; b=UiieTfynZH4j9d
+	xqQpIlSkh/fh22Noa1WlrgUU5NXMzx+BelyhSfHnAEMxnv0nmtbc5XtzjJKy+enGREqjIB13EwNY0
+	Ub2PtZ5ZCBJavTsBCX/pWZVZTXlnsGipfv0j2glBPcbBMGyZOmlkl9WhiMR4LqkENrnmMATsM5IK2
+	cfsfMV4Pfc5nL+Lp0aT0sQjDZkAbgGTrgNSVc/JQmtAU6YeFMgAfzXHepcMQLM7mkwell9YciPEQM
+	Xx1xSRjOWM2fooxwxgIPS7IDS9xuxL0i+8nGGnhVT+2lQQs/6qwtH/ZcAJfdzs1S6nAj6rwS/GtHj
+	gpi4qa65t913OMe1DPUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i93kR-0003s9-J0; Sat, 14 Sep 2019 08:49:40 +0000
-Received: from mail3.marcant.net ([217.14.160.188])
+	id 1i93nH-0005lO-Uc; Sat, 14 Sep 2019 08:52:36 +0000
+Received: from wp175.webpack.hosteurope.de ([2a01:488:42:1000:50ed:84b6::])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i93k9-0003rR-Sm
- for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 08:49:24 +0000
-Received: from [192.168.180.1] (port=54440 helo=admins.marcant.net)
- by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
- (envelope-from <avalentin@marcant.net>) id 1i93jw-0001O9-01
- for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 10:49:08 +0200
-Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
- by admins.marcant.net (Postfix) with ESMTPA id CAF452802BF
- for <openwrt-devel@lists.openwrt.org>; Sat, 14 Sep 2019 10:49:07 +0200 (CEST)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Andre Valentin <avalentin@marcant.net>
-Message-ID: <d62ee559-e78e-24e2-5753-ab473c91de23@marcant.net>
-Date: Sat, 14 Sep 2019 10:49:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+ id 1i93n6-0005kz-8a
+ for openwrt-devel@lists.openwrt.org; Sat, 14 Sep 2019 08:52:26 +0000
+Received: from p200300c587154500f087ce24c69ce2c9.dip0.t-ipconnect.de
+ ([2003:c5:8715:4500:f087:ce24:c69c:e2c9]); authenticated
+ by wp175.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ id 1i93mz-00035E-CK; Sat, 14 Sep 2019 10:52:17 +0200
+To: openwrt-devel@lists.openwrt.org
+From: Birger Koblitz <mail@birger-koblitz.de>
+Message-ID: <dc2bbddc-93d4-7fa0-7853-87dde39b4b30@birger-koblitz.de>
+Date: Sat, 14 Sep 2019 10:52:17 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+Content-Language: en-US
+X-bounce-key: webpack.hosteurope.de; mail@birger-koblitz.de; 1568451144;
+ 9bd19878; 
+X-HE-SMSGID: 1i93mz-00035E-CK
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_014922_085278_C02C59B4 
-X-CRM114-Status: UNSURE (   8.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190914_015224_448836_2417FAD2 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.14.160.188 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] kernel: bump 4.19 to 4.19.72 broke ath79
+Subject: [OpenWrt-Devel] [PATCH v6] ramips: add support for Asus RT-AC85P
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,130 +61,359 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2806292142672970639=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a cryptographically signed message in MIME format.
+ramips: add support for Asus RT-AC85P
 
---===============2806292142672970639==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms070606070704030409070309"
+SoC:	MediaTek MT7621AT dual-core @ 880MHz
+RAM:	256M (Winbond W632GG6KB-1)
+FLASH:	128MB (Macronix MX30LF1G18AC-TI)
+WiFi:	- 2.4GHz MediaTek MT7615N bgn
+	- 5GHz MediaTek MT7615N nac
+Switch: SoC integrated Gigabit Switch (4 x LAN, 1 x WAN)
+USB:	1 x USB 3.1 (Gen 1)
+BTN:	Reset, WPS
+LED:	- Power (blue)
+	- 5Ghz (blue)
+	- 2.4GHz (blue)
+	- Internet (blue)
+	- 4x LAN (blue)
+	(LAN/WAN leds are not controllable by GPIOs)
+UART: 	UART is present as Pads marked J4 on the PCB.
+	3.3V - TX - RX - GND / 57600-8N1
+	3.3V is the square pad
+MAC:	The MAC address on the router-label matches the MAC of
+	the 2.4 GHz WiFi.
+	LAN and WAN MAC are identical: MAC_LABEL+4
+	5 GHz WiFi MAC: also MAC_LABEL+4
+	
 
-This is a cryptographically signed message in MIME format.
+Installation
+------------
+Via U-Boot tftpd:
+Switch on device, within 2s press reset button and keep pressed
+until power LED starts blinking slowly.
+Upload factory image via tftp put, the router's ip is 192.168.1.1
+and expects the client on 192.168.1.75.
 
---------------ms070606070704030409070309
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+The images also work on the Asus RT-AC65P models as tested by Gabor.
 
-Hi!
+Signed-off-by: Birger Koblitz <mail@birger-koblitz.de>
+Tested-by: Gabor Varga <vargagab@gmail.com>
 
-It seems the kernel bump broke ath79 compilation. The problem lies in
-target/linux/ath79/patches-4.19/0028-MIPS-ath79-drop-machfiles.patch
+---
 
-It cannot be applied anymore. I tried a quick fix, but there seems to be =
-a bigger change.
+v2: Corrected sorting of entries in 02_network
+    Model name corrected in .dts
+    Whitespace fixes in .dts
+    wifi0/1 labels added to wifi nodes in .dts
+    Device name capitalized in mt7621.mk
 
-Kind regards,
+v3: Added firmware backup to firmware2 partition before sysupgrade
+    Corrected modules included in image
 
-Andr=C3=A9
+v4: Corrected MT7615N PCI IDs
 
+v5: Fixed indentation in platform.sh
 
---------------ms070606070704030409070309
-Content-Type: application/pkcs7-signature; name="smime.p7s"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
-
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
-C6IwggVTMIIEO6ADAgECAhB+YQhLRWb/6UCa4sHjgGB7MA0GCSqGSIb3DQEBCwUAMIGCMQsw
-CQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoM
-GkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBB
-dXRoZW50aWNhdGlvbiBDQSBHMTAeFw0xOTAzMjkxMDA5NTlaFw0yMDAzMjkwOTA5NTlaMCAx
-HjAcBgNVBAMMFWF2YWxlbnRpbkBtYXJjYW50Lm5ldDCCASIwDQYJKoZIhvcNAQEBBQADggEP
-ADCCAQoCggEBAJcCHX/1+jgsbWlaJ6wFap2kdliLBq0HeTyjDmKThw3IEaRnADoNzNuEkrcg
-1gesoOXULL92Qjde+35aSVOrlOEaB7bKZLIloA2cq5YbVlGHW7AbrhjwhwJwP/DLAvhUZ9K3
-jt3L5KLkeeA3fyX6SyUnuk2blXU7zT+WZdNrXBE3vGhGqWXmfVvaeKiWBEGU/yh9NoQyBj7r
-ufRlRwVcLB1U/g0UxfUGCM2f3SOJ8SQfKskq/cLt+GVx3wJKfRn6zKqlGXgkrzgBAwinhkNB
-YapdF49zDVvawv7mgFcUoGtNqqzFFHC4eYBM5XO7GcuBf+yO1XYXHSKcvCX/4sxEGBsCAwEA
-AaOCAiQwggIgMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUfmD8+GynPT3XrpOheQKPs3Qp
-O/UwSwYIKwYBBQUHAQEEPzA9MDsGCCsGAQUFBzAChi9odHRwOi8vY2FjZXJ0LmFjdGFsaXMu
-aXQvY2VydHMvYWN0YWxpcy1hdXRjbGlnMTAgBgNVHREEGTAXgRVhdmFsZW50aW5AbWFyY2Fu
-dC5uZXQwRwYDVR0gBEAwPjA8BgYrgR8BGAEwMjAwBggrBgEFBQcCARYkaHR0cHM6Ly93d3cu
-YWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
-BDCB6AYDVR0fBIHgMIHdMIGboIGYoIGVhoGSbGRhcDovL2xkYXAwNS5hY3RhbGlzLml0L2Nu
-JTNkQWN0YWxpcyUyMENsaWVudCUyMEF1dGhlbnRpY2F0aW9uJTIwQ0ElMjBHMSxvJTNkQWN0
-YWxpcyUyMFMucC5BLi8wMzM1ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9u
-TGlzdDtiaW5hcnkwPaA7oDmGN2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkv
-QVVUSENMLUcxL2dldExhc3RDUkwwHQYDVR0OBBYEFMojrOmK2PN+bO+vAvSFH10XzXmtMA4G
-A1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQsFAAOCAQEAp6+QqVi+3pAreJTDH3/gUS96AmOI
-dSr2XgwkOTLB3a3ONyfoXtcRnxD80HqBFuMa4e66cYm4iGpUSLJZjhxsKrtwmU9pb2lQIJCG
-T854lcbwhUDEu2By7hL/W4VXC+sejhUeYH3q5+6KcVNT5sydM5mhHgK1JfVW6Ml7t9ZRk4Op
-GKDuTt2viAVDerTvLiKbAXY9jwKXLNGeT0IUlfCVGzG+p4I0PSKsSRiRAmvEWTdZBCnhka0Y
-JGwIF3ZFUGdqPo7AskjLR70n78GGxpINWquCgH09GkrOu4eBWM4G+b4GQ+qZs8YHHTPd78ps
-2+n7iVsRX7066chFUo+O6rZRsTCCBkcwggQvoAMCAQICCCzUitOxHg+JMA0GCSqGSIb3DQEB
-CwUAMGsxCzAJBgNVBAYTAklUMQ4wDAYDVQQHDAVNaWxhbjEjMCEGA1UECgwaQWN0YWxpcyBT
-LnAuQS4vMDMzNTg1MjA5NjcxJzAlBgNVBAMMHkFjdGFsaXMgQXV0aGVudGljYXRpb24gUm9v
-dCBDQTAeFw0xNTA1MTQwNzE0MTVaFw0zMDA1MTQwNzE0MTVaMIGCMQswCQYDVQQGEwJJVDEP
-MA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5w
-LkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlv
-biBDQSBHMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMD8wYlW2Yji9ARlv80J
-NasoKTD+DMr3J6scEe6GPV3k9WxEtgxXM5WX3oiKjS2p25Mqk8cnV2fpMaEvdO9alrGes0vq
-cUqly7PkU753RGlseYXR2XCjVhs4cuRYjuBmbxpRSJxRImmPnThKY41r0nl6b3A6Z2MOjPQF
-7h6OCYYwtz/ziv/+UBV587U2uIlOukaS7Xjk4ArYkQsGTSsfBBXqqn06WL3xG+B/dRO5/mOt
-Y5tHdhPHydsBk2kksI3PJ0yNgKV7o6HM7pG9pB6sGhj96uVLnnVnJ0WXOuV1ISv2eit9ir60
-LjT99hf+TMZLxA5yaVJ57fYjBMbxM599cw0CAwEAAaOCAdUwggHRMEEGCCsGAQUFBwEBBDUw
-MzAxBggrBgEFBQcwAYYlaHR0cDovL29jc3AwNS5hY3RhbGlzLml0L1ZBL0FVVEgtUk9PVDAd
-BgNVHQ4EFgQUfmD8+GynPT3XrpOheQKPs3QpO/UwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSME
-GDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DBFBgNVHSAEPjA8MDoGBFUdIAAwMjAwBggrBgEF
-BQcCARYkaHR0cHM6Ly93d3cuYWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMIHjBgNVHR8Egdsw
-gdgwgZaggZOggZCGgY1sZGFwOi8vbGRhcDA1LmFjdGFsaXMuaXQvY24lM2RBY3RhbGlzJTIw
-QXV0aGVudGljYXRpb24lMjBSb290JTIwQ0EsbyUzZEFjdGFsaXMlMjBTLnAuQS4lMmYwMzM1
-ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdDtiaW5hcnkwPaA7oDmG
-N2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkvQVVUSC1ST09UL2dldExhc3RD
-UkwwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQBNk87VJL5BG0oWWHNfZYny
-2Xo+WIy8y8QP5VsWZ7LBS6Qz8kn8zJp3c9xdOkudZbcA3vm5U8HKXc1JdzNmpSh92zq/OeZL
-vUa+rnncmvhxkFE9Doag6NitggBPZwXHwDcYn430/F8wqAt3LX/bsd6INVrhPFk3C2SoAjLj
-UQZibXvQuFINMN4l6j86vCrkUaGzSqnXT45NxIivkAPhBQgpGtcTi4f+3DxkyTDbWtf9LuaC
-4l2jgB3gC7f56nmdpGfpYsyvKE7+Ip+WryH93pWt6C+r68KU3Gu02cU1/dHvNOXWUDeKkVT3
-T26wZVrTaMx+0nS3i63KDfJdhFzutfdBgCWHcp03NhOhMqy1RnAylF/dVZgkka6hKaWe1tOU
-21kS4uvsD4wM5k6tl0pin2o6u47kyoJJMOxRSQcosWtDXUmaLHUG91ZC6hvBDmDmpmS6h/r+
-7mtPrpYOxTr4hW3me2EfXkTvNTvBQtbi4LrZchg9vhi44EJ7L53g7GzQFn5KK8vqqgMb1c1+
-T0mkKdqSedgGiB9TDdYtv4HkUj/N00TKxZMLiDMw4V8ShUL6bKTXNfb3E68s47cD+MatFjUu
-GFj0uFPvZlvlNAoJ7IMfXzIiTWy35X+akm+d49wBh54yv6icz2t/cBU1y1weuPBd8NUH/Ue3
-mXk0SXwkGP3yVDGCA/YwggPyAgEBMIGXMIGCMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWls
-YW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIw
-OTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEI
-S0Vm/+lAmuLB44BgezANBglghkgBZQMEAgEFAKCCAi8wGAYJKoZIhvcNAQkDMQsGCSqGSIb3
-DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkwOTE0MDg0OTA3WjAvBgkqhkiG9w0BCQQxIgQgy4xs
-pz91JhMtf9nhbeXSKB2wy7zI2USdQb5tmzfjrOgwbAYJKoZIhvcNAQkPMV8wXTALBglghkgB
-ZQMEASowCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG
-9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG9w0DAgIBKDCBqAYJKwYBBAGCNxAEMYGaMIGXMIGC
-MQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNV
-BAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVu
-dCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEIS0Vm/+lAmuLB44BgezCBqgYLKoZIhvcNAQkQ
-AgsxgZqggZcwgYIxCzAJBgNVBAYTAklUMQ8wDQYDVQQIDAZNaWxhbm8xDzANBgNVBAcMBk1p
-bGFubzEjMCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0Fj
-dGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcxAhB+YQhLRWb/6UCa4sHjgGB7MA0G
-CSqGSIb3DQEBAQUABIIBADQLsgj5MIlKrbPQChgeBYJ6+F2ExlAqtE0vIlX9Fpkv4Q2api/K
-1/yAQFl+OAwgMDjAcxjeIBOA9cnKhlRWY0cVtAadoUQPcnAlF48pSSXkhM5BfvhGcsaXQWk8
-lqa85aYcYMLTi1nAijzarlFIh8HhKLLKu3fhDmcJnCfDq6zd0Ew8hlYD6AAOX0Inj4aJLqre
-HOJ187hel7IztvhdiHcjN8wtGAm/6PfEZuVDn7ZK6moXX/9imOAdj/+nqOTSeQU7ANJxr/R1
-lAI/ETxiIS9Q1APztVZRS9JBVU3CJRLOoHIv5FjlZOtUiz3YZLwrHNQyNwdTbg5w+oOQxz46
-rNMAAAAAAAA=
---------------ms070606070704030409070309--
+v6: Rebased to latest master
 
 
---===============2806292142672970639==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index b4634e0928..80e6a91c88 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -230,6 +230,18 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan" "1:wan" "6@eth0"
+ 		;;
++	asus,rt-ac85p|\
++	dlink,dir-860l-b1|\
++	elecom,wrc-1167ghbk2-s|\
++	elecom,wrc-1900gst|\
++	elecom,wrc-2533gst|\
++	huawei,hg255d|\
++	iodata,wn-ax1167gr|\
++	iodata,wn-gx300gr|\
++	iptime,a604m)
++		ucidef_add_switch "switch0" \
++			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
++		;;
+ 	asus,rt-n15|\
+ 	belkin,f9k1109v1|\
+ 	sitecom,wl-351)
+@@ -297,17 +309,6 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "4:wan:5" "6@eth0"
+ 		;;
+-	dlink,dir-860l-b1|\
+-	elecom,wrc-1167ghbk2-s|\
+-	elecom,wrc-1900gst|\
+-	elecom,wrc-2533gst|\
+-	huawei,hg255d|\
+-	iodata,wn-ax1167gr|\
+-	iodata,wn-gx300gr|\
+-	iptime,a604m)
+-		ucidef_add_switch "switch0" \
+-			"1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "0:wan" "6@eth0"
+-		;;
+ 	dlink,dwr-118-a1)
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan:2" "2:lan:3" "3:lan:1" "4:lan:0" "5:wan" "6@eth0"
+@@ -551,6 +552,9 @@ ramips_setup_macs()
+ 	zbtlink,zbt-we3526)
+ 		wan_mac=$(mtd_get_mac_binary factory 0xe006)
+ 		;;
++	asus,rt-ac85p)
++		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
++		;;
+ 	asus,rt-n56u)
+ 		lan_mac=$(macaddr_setbit_la "$(cat /sys/class/net/eth0/address)")
+ 		wan_mac=$(mtd_get_mac_binary factory 0x8004)
+diff --git a/target/linux/ramips/base-files/lib/upgrade/platform.sh b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+index 9889079db9..a62ded4b9d 100755
+--- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
+@@ -18,9 +18,16 @@ platform_do_upgrade() {
+ 	mikrotik,rbm33g)
+ 		[ -z "$(rootfs_type)" ] && mtd erase firmware
+ 		;;
++	asus,rt-ac85p)
++		echo "Backing up firmware"
++		dd if=/dev/mtd4 bs=1024 count=4096  > /tmp/backup_firmware.bin
++		dd if=/dev/mtd5 bs=1024 count=52224 >> /tmp/backup_firmware.bin
++		mtd -e firmware2 write /tmp/backup_firmware.bin firmware2
++		;;
+ 	esac
+
+ 	case "$board" in
++	asus,rt-ac85p|\
+ 	hiwifi,hc5962|\
+ 	netgear,r6220|\
+ 	netgear,r6260|\
+diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+new file mode 100644
+index 0000000000..94e26ea408
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
+@@ -0,0 +1,164 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "asus,rt-ac85p", "mediatek,mt7621-soc";
++	model = "Asus RT-AC85P";
++
++	aliases {
++		led-boot = &led_power;
++		led-failsafe = &led_power;
++		led-running = &led_power;
++		led-upgrade = &led_power;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,57600";
++	};
++
++	palmbus: palmbus@1E000000 {
++		i2c@900 {
++			status = "okay";
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		wps {
++			label = "wps";
++			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_WPS_BUTTON>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: power {
++			label = "rt-ac85p:blue:power";
++			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++		wlan2g {
++			label = "rt-ac85p:blue:wlan2g";
++			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0radio";
++		};
++
++		wlan5g {
++			label = "rt-ac85p:blue:wlan5g";
++			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1radio";
++		};
++	};
++};
++
++&sdhci {
++	status = "okay";
++};
++
++&nand {
++	status = "okay";
++
++	partitions {
++		compatible = "fixed-partitions";
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		partition@0 {
++			label = "u-boot";
++			reg = <0x0 0xe0000>;
++			read-only;
++		};
++
++		partition@e0000 {
++			label = "u-boot-env";
++			reg = <0xe0000 0x100000>;
++			read-only;
++		};
++
++		factory: partition@1e0000 {
++			label = "factory";
++			reg = <0x1e0000 0x100000>;
++			read-only;
++		};
++
++		factory2: partition@2e0000 {
++			label = "factory2";
++			reg = <0x2e0000 0x100000>;
++			read-only;
++		};
++
++		partition@3e0000 {
++			label = "kernel";
++			reg = <0x3e0000 0x400000>;
++		};
++
++		partition@7e0000 {
++			label = "ubi";
++			reg = <0x7e0000 0x2e00000>;
++		};
++
++		partition@35e0000 {
++			label = "firmware2";
++			reg = <0x35e0000 0x3200000>;
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi0: wifi@0,0 {
++		compatible = "pci14c3,7615";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0000>;
++		ieee80211-freq-limit = <2400000 2500000>;
++		mtd-mac-address = <&factory 0x4>;
++	};
++};
++
++&pcie1 {
++	wifi1: wifi@0,0 {
++		compatible = "pci14c3,7615";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++		mtd-mac-address = <&factory 0x8004>;
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++	mediatek,portmap = "wllll";
++	port@5 {
++		status = "disabled";
++	};
++};
++
++&i2c {
++    status = "disabled";
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "uart2", "uart3", "i2c";
++			ralink,function = "gpio";
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 986fe5e2f8..79d14a5954 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -115,6 +115,22 @@ define Device/asus_rt-ac57u
+ endef
+ TARGET_DEVICES += asus_rt-ac57u
+
++define Device/asus_rt-ac85p
++  MTK_SOC := mt7621
++  DEVICE_VENDOR := ASUS
++  DEVICE_MODEL := RT-AC85P
++  IMAGE_SIZE := 51200k
++  UBINIZE_OPTS := -E 5
++  BLOCKSIZE := 128k
++  PAGESIZE := 2048
++  KERNEL_SIZE := 4096k
++  IMAGES += factory.bin
++  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
++  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
++  DEVICE_PACKAGES := kmod-usb3 kmod-mt7615e wpad-basic uboot-envtools
++endef
++TARGET_DEVICES += asus_rt-ac85p
++
+ define Device/buffalo_wsr-1166dhp
+   MTK_SOC := mt7621
+   IMAGE/sysupgrade.bin := trx | pad-rootfs | append-metadata
+diff --git a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+index 03b2b36db9..3c6a59b863 100644
+--- a/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
++++ b/target/linux/ramips/patches-4.14/0039-mtd-add-mt7621-nand-support.patch
+@@ -4256,7 +4256,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
+ +#endif /* __NAND_DEF_H__ */
+ --- /dev/null
+ +++ b/drivers/mtd/nand/nand_device_list.h
+-@@ -0,0 +1,59 @@
++@@ -0,0 +1,60 @@
+ +/* Copyright Statement:
+ + *
+ + * This software/firmware and related documentation ("MediaTek Software") are
+@@ -4308,6 +4308,7 @@ Signed-off-by: John Crispin <blogic@openwrt.org>
+ +	{0xC8DC, 0x909554, 5, 8, 512, 128, 2048, 64, 0x30C77fff, "F59L4G81A", 0},
+ +	{0xECD3, 0x519558, 5, 8, 1024, 128, 2048, 64, 0x44333, "K9K8G8000", 0},
+ +    {0xC2F1, 0x801DC2, 4, 8, 128, 128, 2048, 64, 0x30C77fff, "MX30LF1G08AA", 0},
+++    {0xC2F1, 0x809502, 4, 8, 128, 128, 2048, 64, 0x30C77fff, "MX30LF1G18AC", 0},
+ +    {0x98D3, 0x902676, 5, 8, 1024, 256, 4096, 224, 0x00C25332, "TC58NVG3S0F", 0},
+ +    {0x01DA, 0x909546, 5, 8, 256, 128, 2048, 128, 0x30C77fff, "S34ML02G200TF", 0},
+ +    {0x01DC, 0x909556, 5, 8, 512, 128, 2048, 128, 0x30C77fff, "S34ML04G200TF", 0},
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2806292142672970639==--
-

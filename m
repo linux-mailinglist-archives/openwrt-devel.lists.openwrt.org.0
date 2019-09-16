@@ -2,122 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 521ACB4219
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Sep 2019 22:44:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2DFCB4301
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Sep 2019 23:25:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=u+hoWTraRHF0dYe2XMdB5WdXLMgGqS8sCFmHmulMpLU=; b=m3k6n0s2ZglFIe3k4k6RjbUFO
-	VgBKUUdBez5JI81o69h9lLXzZgVEFAlQ6FBrMLeBT2ssTuL7OdllikHqUSU3Y3sHXaK3T7e2UuIBD
-	/dNmQA1T9GYxmyjUrDc0geXjwLQottgBXlnVGVstXbvhNhHVe5yPKP4eoMWXvEur6QMS9NFha5UrA
-	5U0rj/tXAZbTpJYJAq8wKqZL5NytmJI3BiUmf2CEK0yRfWpvOgb/MRv3ffJZSI6KNxLXHzQ5+40Vx
-	cwrNXXb9MxLZTFGv1maF6AbrBCIMmGwwUzHeCbI/DVavOCssxePXt3DwGZeqziOrk7QteBeHGlFHF
-	h87yc13vg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OHBzpFxLFK0IfI/TjqFB6tJnOM2pvgQmHHHSsC59bXE=; b=qTjFtlZoWTSuaU
+	qWX551ajRQOBPKBOrxfkQ2NU4fOVs8NU+Q9AI/ywxPItN84LwTj3vDbwxoYOkdEtJdOLVzaX2wUs4
+	t2xFu+whdtoVvuNvLCG+in7j0EGeCLenH0X1tIMvlugcHJO/Kg9bTFcUuoNxqbmMMt/rAVAmLmCL9
+	L8GRlHPHjwsxSMSY2CutPq9pAGFoROx0xWd7q6gIJc3nETCXXM+g+3NyzTEe3Pl+XBHgZvgnF0/B3
+	rdZTnHbOjK1lxkUfqfW6m/a9OEq1s2lKbvmYK0f0cb0Jr54Yd9B3ubhwaJWhbNxlW896V1wlXzxiL
+	7IXFwRk6zyPczZIqJI1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9xqy-0004Nz-N4; Mon, 16 Sep 2019 20:44:08 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2])
+	id 1i9yUr-0001tA-5O; Mon, 16 Sep 2019 21:25:21 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9xqn-0004NO-El
- for openwrt-devel@lists.openwrt.org; Mon, 16 Sep 2019 20:43:59 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 184B5A0AB0;
- Mon, 16 Sep 2019 22:43:54 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id tCEJNdMPvR6K; Mon, 16 Sep 2019 22:43:47 +0200 (CEST)
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Martin Schiller <ms@dev.tdt.de>
-References: <26a9b03930d8b13ab11d66f654976619@dev.tdt.de>
- <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <d630be45-4151-05bf-970e-049795ff58d6@hauke-m.de>
-Date: Mon, 16 Sep 2019 22:43:42 +0200
-MIME-Version: 1.0
-In-Reply-To: <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
+ id 1i9yUi-0001sh-JH
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Sep 2019 21:25:14 +0000
+Received: by mail-pl1-x643.google.com with SMTP id f19so476438plr.3
+ for <openwrt-devel@lists.openwrt.org>; Mon, 16 Sep 2019 14:25:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=sVG48jSPJPcYfeUG8Qvdosn4ByDGVB8ChlsGFvmlykg=;
+ b=fnl+VVP4HWoteuR06Jr2YEnOX+nb7D7sccwtc0K1W0cGjHaEmVQe14muxiESs91sYY
+ ljUJg6e8AZ3pY/lLDwH/TVTfNG+r/otasDev/NukP3c+NoyaFFQ/S5hXPR7cumbm4r7W
+ oKzqAqJtxuJ3/SvE8IvK1IctvpJlClHTMiXLoaVYLCk7beJLN31IuRmaTmeR2wIyBw5y
+ nKPDE2w2W/arxlUyLuTjSTVoIFHrXGNoSf7cSQ+AqEXLQZM6jbgtJPJOVrl5MH2bYBHQ
+ CB1kGXigt3Rwc7SDhs/ZIx3IdFlIZ6hiO3Klfk/3BTc220XUsalXuSCk+OTpqPXkBlJ0
+ UAsg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=sVG48jSPJPcYfeUG8Qvdosn4ByDGVB8ChlsGFvmlykg=;
+ b=fNCiroqfkiHqmyJmhWGfEA4KiNTiujkf5S7bePQ2UYruzn/iZ/8QP6gdCnfugibw6r
+ VNCipC3Ko8xg1oZxF94HkUOF5qTnMnKqPjSpEFuakaODlxxDHieaBTv/8OEAEUiIiJDK
+ jYBkOlGjGAbxxiBJfsqtnVhwU11CbSQHoNfWdXGPNkNtcv+9ZSyNnurg/duBNMqwdJB9
+ Ft9psk5sHTtjpCu3XI3CAGiFT/I9AKmgYFqfmBIfwdLtGHu34wvzniU8WN0+onaPxHbx
+ vyFbklHSms/B8dUllm4LZ5GuQDUJdgJP+ARyAZU+XZsduggAKPbZ5sQ9+N0SVNOUj2TW
+ bXJQ==
+X-Gm-Message-State: APjAAAVFLrDuDuT2bTebH6xSeUa/UefJlZlF5keTwwuvUyZvEMG1gavA
+ gR2zRJcM7KQH1A4o3ghElc14YY7aJ/E=
+X-Google-Smtp-Source: APXvYqzd9Qjcvyu34LnJdXcKXXznPg4ZjlbNtGmXm8UvHmj+t8gAhVxOFNQIzk9dsEb4NQA6A1D66g==
+X-Received: by 2002:a17:902:7485:: with SMTP id
+ h5mr195968pll.240.1568669110934; 
+ Mon, 16 Sep 2019 14:25:10 -0700 (PDT)
+Received: from localhost.localdomain (76-14-106-55.rk.wavecable.com.
+ [76.14.106.55])
+ by smtp.gmail.com with ESMTPSA id 196sm22536pfz.99.2019.09.16.14.25.09
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Sep 2019 14:25:09 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 16 Sep 2019 14:25:08 -0700
+Message-Id: <20190916212508.29943-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_134357_799030_294829EE 
-X-CRM114-Status: GOOD (  16.06  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190916_142512_637038_1AAD7B9C 
+X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Lantiq xrx200: Access to ethernet phy registers
- (MDIO) from userspace
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] uClibc++: Remove faulty patch
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,112 +96,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, john@phrozen.org
-Content-Type: multipart/mixed; boundary="===============1680227550987112367=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============1680227550987112367==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s"
+This patch was originally added to fix compilation with v4l2rtspserver.
+Turns out it was v4l2rtspserver that was broken, not uClibc++. This now
+causes issues with a different package where the arguments are being
+split.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s
-Content-Type: multipart/mixed; boundary="E0QxmFKC3D4Dghm4HwkujHLnmXY9NJpkf";
- protected-headers="v1"
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Martin Schiller <ms@dev.tdt.de>
-Cc: john@phrozen.org, openwrt-devel@lists.openwrt.org
-Message-ID: <d630be45-4151-05bf-970e-049795ff58d6@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] Lantiq xrx200: Access to ethernet phy registers
- (MDIO) from userspace
-References: <26a9b03930d8b13ab11d66f654976619@dev.tdt.de>
- <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
-In-Reply-To: <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
+Note that with this patch, shellcheck throws an error:
 
---E0QxmFKC3D4Dghm4HwkujHLnmXY9NJpkf
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+SC2068: Double quote array expansions to avoid re-splitting elements.
 
-On 9/16/19 7:09 PM, Martin Blumenstingl wrote:
-> Hi Martin,
->=20
-> On Mon, Sep 16, 2019 at 12:54 PM Martin Schiller <ms@dev.tdt.de> wrote:=
+More: https://github.com/openwrt/packages/pull/9972#discussion_r324878373
 
->>
->> Hi!
->>
->> I am searching for a possibility to disable Auto Negotiation of an
->> PEF7072 which is attached to MAC1 of the Lantiq xrx200 switch.
->>
->> The xrx200-net driver does not seem to have support for that.
-> I don't know about xrx200-net, but ...
->=20
->> Accessing the STD_CRTL register on the mdio bus from uboot with the md=
-io
->> command works like expected.
->>
->> Any suggestions how to do that from linux userspace?
-> ... my (limited) understanding is that this is one of the benefits of D=
-SA:
-> you get one interface per port - with that you can use for example
-> ethtool to disable auto negotiation for one port
-> kernel source reference: [0]
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ package/libs/uclibc++/patches/002-quote-fix.patch | 13 -------------
+ 1 file changed, 13 deletions(-)
+ delete mode 100644 package/libs/uclibc++/patches/002-quote-fix.patch
 
-I also do not know if xrx200-net supports that or if it is possible with
-swconfig at all. There is also a DSA driver for this switch in the
-mainline kernel:
-https://elixir.bootlin.com/linux/latest/source/drivers/net/dsa/lantiq_gsw=
-ip.c
+diff --git a/package/libs/uclibc++/patches/002-quote-fix.patch b/package/libs/uclibc++/patches/002-quote-fix.patch
+deleted file mode 100644
+index 49e7ac3d14..0000000000
+--- a/package/libs/uclibc++/patches/002-quote-fix.patch
++++ /dev/null
+@@ -1,13 +0,0 @@
+---- a/bin/Makefile.in
+-+++ b/bin/Makefile.in
+-@@ -44,8 +44,8 @@ define do_wrapper
+- 	$(Q)echo '	WRAPPER_OPTIONS="$$WRAPPER_OPTIONS -nodefaultlibs $$WRAPPER_LIBDIR -l$(LNAME) $$WRAPPER_LIBS"' >> $@.tmp
+- 	$(Q)echo 'fi' >> $@.tmp
+- 	$(Q)echo '' >> $@.tmp
+--	$(Q)echo '[ -n "$$V" ] && [ $$V -gt 1 ] && echo $(CXX) $(GEN_CFLAGS) $(GEN_CXXFLAGS) $(EH_CXXFLAGS) $$WRAPPER_INCLUDEDIR "$$@" $$WRAPPER_OPTIONS' >> $@.tmp
+--	$(Q)echo 'exec $(CXX) $(GEN_CFLAGS) $(GEN_CXXFLAGS) $(EH_CXXFLAGS) $$WRAPPER_INCLUDEDIR "$$@" $$WRAPPER_OPTIONS' >> $@.tmp
+-+	$(Q)echo '[ -n "$$V" ] && [ $$V -gt 1 ] && echo $(CXX) $(GEN_CFLAGS) $(GEN_CXXFLAGS) $(EH_CXXFLAGS) $$WRAPPER_INCLUDEDIR $$@ $$WRAPPER_OPTIONS' >> $@.tmp
+-+	$(Q)echo 'exec $(CXX) $(GEN_CFLAGS) $(GEN_CXXFLAGS) $(EH_CXXFLAGS) $$WRAPPER_INCLUDEDIR $$@ $$WRAPPER_OPTIONS' >> $@.tmp
+- 	$(Q)echo '' >> $@.tmp
+- 	$(Q)chmod 0755 $@.tmp
+- 	$(Q)mv $@.tmp $@
+-- 
+2.17.1
 
-This driver should support everything the xrx200-net driver supports
-plus some extras.
-I would prefer to use the DSA driver also in OpenWrt, but we need a way
-to migrate the existing configurations which are based on swconfig to DSA=
-=2E
-
-You could try the fixed-link attribute in device tree to model this with
-DSA.
-
-Hauke
-
-
---E0QxmFKC3D4Dghm4HwkujHLnmXY9NJpkf--
-
---0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl1/8/4ACgkQ8bdnhZyy
-68cW2gf9EY7U8bXKPeZbQLrQuDNqCDT2qw2jQwzqU2YvFgp2VjYj/MfMtHrmagdD
-KGAHEeA/In34FvMuq/I9Y8TXYQcMM3+ZczM3+g1uHdncJ815HgVwJ2+lVZr3otAI
-YhobvlIDNkk5CjvyZkgscUxD7mPs5At/EIHvDzthpbqEcwzMmpD1lGY5tkBWsKn3
-Rp+RD9MNFad7/UdRc0z0CYpD2897d/qDy5YeHfj1wATEwGj0vP0wegflq2NmDL+F
-7C2KtqBEqlMkqPc7b1BI2vAPNN0QpYb3b0yuphzakBr3htNQ3/CP9rD291bE8Tgu
-jSHgcUXw8Zx2Wlh64wOl6ooaA1ghgw==
-=/wQA
------END PGP SIGNATURE-----
-
---0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s--
-
-
---===============1680227550987112367==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1680227550987112367==--
-

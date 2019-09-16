@@ -2,40 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4DCCB41E3
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Sep 2019 22:32:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 521ACB4219
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Sep 2019 22:44:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BtgckkI3bVfvSa0CduKkzwNl4tqCZ+ANwaLwJCik0us=; b=pUZ1WguBBctM1k14tjZl5bVxw
-	e2udq+pUbyxs7glHBzh6kD+/IucuQf/sK2QejdHKD7A66HJbQB9TNzBp3qMPvb8VLuw2r8huhwRBW
-	EC30LqISH2w92Bu+PKmY8Y/gXwCzSD6ZcZiN4xiKAiKUCNBdtxV8SgSNyw91/WbtIxGTYi2DIWneJ
-	tzkN94XhKg7GJsd3G+W0aegRhBuM5Nwyf8iS31DTNFRImTElf3zsObiPkpui81rlQTedfzsKxGn/k
-	1JyNZALdMUHIan7TOQ8+xtFrgZfEEoY9vtK/+IIp1jTrlJ2KB0m5LO5CI7OZ1KPL2NtNfu+Y2H5xv
-	9XyFJb9Qg==;
+	 bh=u+hoWTraRHF0dYe2XMdB5WdXLMgGqS8sCFmHmulMpLU=; b=m3k6n0s2ZglFIe3k4k6RjbUFO
+	VgBKUUdBez5JI81o69h9lLXzZgVEFAlQ6FBrMLeBT2ssTuL7OdllikHqUSU3Y3sHXaK3T7e2UuIBD
+	/dNmQA1T9GYxmyjUrDc0geXjwLQottgBXlnVGVstXbvhNhHVe5yPKP4eoMWXvEur6QMS9NFha5UrA
+	5U0rj/tXAZbTpJYJAq8wKqZL5NytmJI3BiUmf2CEK0yRfWpvOgb/MRv3ffJZSI6KNxLXHzQ5+40Vx
+	cwrNXXb9MxLZTFGv1maF6AbrBCIMmGwwUzHeCbI/DVavOCssxePXt3DwGZeqziOrk7QteBeHGlFHF
+	h87yc13vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9xf4-0000wM-Iz; Mon, 16 Sep 2019 20:31:50 +0000
-Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
+	id 1i9xqy-0004Nz-N4; Mon, 16 Sep 2019 20:44:08 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9xen-0000vn-0z
- for openwrt-devel@lists.openwrt.org; Mon, 16 Sep 2019 20:31:36 +0000
+ id 1i9xqn-0004NO-El
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Sep 2019 20:43:59 +0000
 Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 6736241AF8;
- Mon, 16 Sep 2019 22:31:22 +0200 (CEST)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 184B5A0AB0;
+ Mon, 16 Sep 2019 22:43:54 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id MRI4KDTreMGu; Mon, 16 Sep 2019 22:31:18 +0200 (CEST)
-To: sven falempin <sven.falempin@gmail.com>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-References: <CA++fYEimKPE60_2EJzU_D1ekuqzVw3jOfONHZW+CDqTAfKCESw@mail.gmail.com>
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id tCEJNdMPvR6K; Mon, 16 Sep 2019 22:43:47 +0200 (CEST)
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Martin Schiller <ms@dev.tdt.de>
+References: <26a9b03930d8b13ab11d66f654976619@dev.tdt.de>
+ <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -98,26 +99,25 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <afb867f3-b134-2e33-be4f-67ac22f76a6a@hauke-m.de>
-Date: Mon, 16 Sep 2019 22:30:53 +0200
+Message-ID: <d630be45-4151-05bf-970e-049795ff58d6@hauke-m.de>
+Date: Mon, 16 Sep 2019 22:43:42 +0200
 MIME-Version: 1.0
-In-Reply-To: <CA++fYEimKPE60_2EJzU_D1ekuqzVw3jOfONHZW+CDqTAfKCESw@mail.gmail.com>
+In-Reply-To: <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_133133_375430_E8816C8A 
-X-CRM114-Status: GOOD (  22.25  )
-X-Spam-Score: -0.6 (/)
+X-CRM114-CacheID: sfid-20190916_134357_799030_294829EE 
+X-CRM114-Status: GOOD (  16.06  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.6 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:1:25:1 listed in]
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 PLING_QUERY            Subject has exclamation mark and question mark
-Subject: Re: [OpenWrt-Devel] Bumping net/wireless it s buggy ! 5.3-rc4-1 =>
- 5.3 ( rc9) ?
+Subject: Re: [OpenWrt-Devel] Lantiq xrx200: Access to ethernet phy registers
+ (MDIO) from userspace
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,209 +129,103 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4398348570611037543=="
+Cc: openwrt-devel@lists.openwrt.org, john@phrozen.org
+Content-Type: multipart/mixed; boundary="===============1680227550987112367=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4398348570611037543==
+--===============1680227550987112367==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="6pEnzj6FuXyfBZ42XnzJYkv9QrpOWAyuU"
+ boundary="0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---6pEnzj6FuXyfBZ42XnzJYkv9QrpOWAyuU
-Content-Type: multipart/mixed; boundary="5DPdfFPR41eUK695iJDQSBfMVbyFUIUGp";
+--0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s
+Content-Type: multipart/mixed; boundary="E0QxmFKC3D4Dghm4HwkujHLnmXY9NJpkf";
  protected-headers="v1"
 From: Hauke Mehrtens <hauke@hauke-m.de>
-To: sven falempin <sven.falempin@gmail.com>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-Message-ID: <afb867f3-b134-2e33-be4f-67ac22f76a6a@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] Bumping net/wireless it s buggy ! 5.3-rc4-1 =>
- 5.3 ( rc9) ?
-References: <CA++fYEimKPE60_2EJzU_D1ekuqzVw3jOfONHZW+CDqTAfKCESw@mail.gmail.com>
-In-Reply-To: <CA++fYEimKPE60_2EJzU_D1ekuqzVw3jOfONHZW+CDqTAfKCESw@mail.gmail.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Martin Schiller <ms@dev.tdt.de>
+Cc: john@phrozen.org, openwrt-devel@lists.openwrt.org
+Message-ID: <d630be45-4151-05bf-970e-049795ff58d6@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] Lantiq xrx200: Access to ethernet phy registers
+ (MDIO) from userspace
+References: <26a9b03930d8b13ab11d66f654976619@dev.tdt.de>
+ <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
+In-Reply-To: <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
 
---5DPdfFPR41eUK695iJDQSBfMVbyFUIUGp
+--E0QxmFKC3D4Dghm4HwkujHLnmXY9NJpkf
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi Sven,
-
-On 9/16/19 8:10 PM, sven falempin wrote:
-> Dear openWRT gurus,
+On 9/16/19 7:09 PM, Martin Blumenstingl wrote:
+> Hi Martin,
 >=20
-> the patch : https://github.com/torvalds/linux/commit/b67fd72e84a88cae64=
-cea8ab47ccdaab3bb3094d#diff-35454f3f0395271a0e34581e160bea5f
+> On Mon, Sep 16, 2019 at 12:54 PM Martin Schiller <ms@dev.tdt.de> wrote:=
+
+>>
+>> Hi!
+>>
+>> I am searching for a possibility to disable Auto Negotiation of an
+>> PEF7072 which is attached to MAC1 of the Lantiq xrx200 switch.
+>>
+>> The xrx200-net driver does not seem to have support for that.
+> I don't know about xrx200-net, but ...
 >=20
-> Is missing from my build :
-> ./build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_gen=
-eric/backports-5.3-rc4-1
->=20
-> # cat  /etc/openwrt_release
-> DISTRIB_ID=3D'OpenWrt'
-> DISTRIB_RELEASE=3D'SNAPSHOT'
-> DISTRIB_REVISION=3D'r10985-4364dd244c'
-> DISTRIB_TARGET=3D'ipq40xx/generic'
-> DISTRIB_ARCH=3D'arm_cortex-a7_neon-vfpv4'
-> DISTRIB_DESCRIPTION=3D'OpenWrt SNAPSHOT r10985-4364dd244c'
-> DISTRIB_TAINTS=3D'no-all busybox'
->=20
-> I tried to catch up the last commits, but it breaks my release.
-> Moreover, util.c exploded ( trace below)
->=20
-> I do not know where backports-5.3-rc4-1 is inserted in linux-ipq, so I
-> cannot check if it was updated on your side with my missing commit to
-> be current.
+>> Accessing the STD_CRTL register on the mdio bus from uboot with the md=
+io
+>> command works like expected.
+>>
+>> Any suggestions how to do that from linux userspace?
+> ... my (limited) understanding is that this is one of the benefits of D=
+SA:
+> you get one interface per port - with that you can use for example
+> ethtool to disable auto negotiation for one port
+> kernel source reference: [0]
 
-The Package Makefile for backports is located here:
-package/kernel/mac80211/Makefile
+I also do not know if xrx200-net supports that or if it is possible with
+swconfig at all. There is also a DSA driver for this switch in the
+mainline kernel:
+https://elixir.bootlin.com/linux/latest/source/drivers/net/dsa/lantiq_gsw=
+ip.c
 
-We backported some patches from more recent version, but the one you
-linked is missing as far as I know. Please send a patch if you need it
-so we can add it.
+This driver should support everything the xrx200-net driver supports
+plus some extras.
+I would prefer to use the DSA driver also in OpenWrt, but we need a way
+to migrate the existing configurations which are based on swconfig to DSA=
+=2E
 
-> Moreover I am not sure if this bug should be reported upstream on
-> linux ASM or some nl80211 mailing list.
-
-I think I also saw this once or twice, please report this upstream. Are
-you using ath10k-ct driver which is still based on Linux 4.19 or do you
-use the normal ath10k driver?
-
-> Would it be possible to backport 5.3 that was release 22 hours ago
-> over the 4.19 ? how to test it ? ( IE where is this backport copied /
-> used )
-
-My plan is to update the wireless subsystem to the one from Linux 5.4 in
-about 4 weeks in OpenWrt master. Kernel 5.4 should be a LTS kernel so we
-can follow that one and get security and other updates for the next few
-years. OpenWrt 19.07 will stay at the wireless subsystem of Linux 4.19
-and will get updated to the most recent 4.19 stable version every few
-months.
+You could try the fixed-link attribute in device tree to model this with
+DSA.
 
 Hauke
 
->=20
-> Please advise.
->=20
->=20
-> # [ 6872.302513] ------------[ cut here ]------------
-> [ 6872.302926] WARNING: CPU: 0 PID: 0 at
-> backports-5.3-rc4-1/net/wireless/util.c:1171
-> cfg80211_calculate_bitrate+0x1d8/0x24c [cfg80211]
-> [ 6872.306319] invalid rate bw=3D4, mcs=3D15, nss=3D4
-> [ 6872.318171] Modules linked in: pppoe ppp_async iptable_nat
-> ipt_MASQUERADE ath10k_pci ath10k_core ath xt_state xt_nat xt_conntrack
-> xt_REDIRECT xt_FLOWOFFLOAD pppox ppp_generic nf_nat_ipv4 nf_nat
-> nf_flow_table_hw nf_flow_table nf_conntrack_rtcache
-> nf_conntrack_netlink nf_conntrack mac80211 ipt_REJECT cfg80211 xt_time
-> xt_tcpudp xt_multiport xt_mark
-> xt_mac xt_limit xt_comment xt_TCPMSS xt_LOG slhc nf_reject_ipv4
-> nf_log_ipv4 nf_defrag_ipv6 nf_defrag_ipv4 iptable_mangle
-> iptable_filter ip_tables hwmon crc_ccitt compat xt_set ip_set_list_set
-> ip_set_hash_netportnet ip_set_hash_netport ip_set_hash_netnet
-> ip_set_hash_netiface ip_set_hash_net ip_set_hash_mac
-> ip_set_hash_ipportnet ip_set_hash_ipportip ip_set_hash_ipport
-> ip_set_hash_ipmark ip_set_hash_ip ip_set_bitmap_port
-> ip_set_bitmap_ipmac ip_set_bitmap_ip
-> [ 6872.370738]  ip_set nfnetlink nf_log_ipv6 nf_log_common
-> ip6table_mangle ip6table_filter ip6_tables ip6t_REJECT x_tables
-> nf_reject_ipv6 ip_tunnel tun vxlan udp_tunnel ip6_udp_tunnel leds_gpio
-> xhci_plat_hcd xhci_pci xhci_hcd dwc3 dwc3_qcom gpio_button_hotplug
-> [ 6872.393242] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W
->   4.19.69 #0
-> [ 6872.415448] Hardware name: Generic DT based system
-> [ 6872.422962] [<c030e2c4>] (unwind_backtrace) from [<c030ad20>]
-> (show_stack+0x10/0x14)
-> [ 6872.427552] [<c030ad20>] (show_stack) from [<c0782d50>]
-> (dump_stack+0x88/0x9c)
-> [ 6872.435646] [<c0782d50>] (dump_stack) from [<c031b898>] (__warn+0xd4=
-/0xf0)
-> [ 6872.442671] [<c031b898>] (__warn) from [<c031b8ec>]
-> (warn_slowpath_fmt+0x38/0x48)
-> [ 6872.450470] [<c031b8ec>] (warn_slowpath_fmt) from [<bf235fbc>]
-> (cfg80211_calculate_bitrate+0x1d8/0x24c [cfg80211])
-> [ 6872.459339] [<bf235fbc>] (cfg80211_calculate_bitrate [cfg80211])
-> from [<bf2d58e8>] (ieee80211s_update_metric+0x78/0x9c [mac80211])
-> [ 6872.469580] [<bf2d58e8>] (ieee80211s_update_metric [mac80211]) from
-> [<bf288954>] (ieee80211_tx_monitor+0x768/0xb4c [mac80211])
-> [ 6872.481163] [<bf288954>] (ieee80211_tx_monitor [mac80211]) from
-> [<bf288dc0>] (ieee80211_tx_status+0x88/0x90 [mac80211])
-> [ 6872.492320] [<bf288dc0>] (ieee80211_tx_status [mac80211]) from
-> [<bf3cd6e4>] (ath10k_txrx_tx_unref+0x540/0x58c [ath10k_core])
-> [ 6872.502657] [<bf3cd6e4>] (ath10k_txrx_tx_unref [ath10k_core]) from
-> [<bf3c6dd0>] (ath10k_htt_t2h_msg_handler+0x610/0x1fb8 [ath10k_core])
-> [ 6872.513377] [<bf3c6dd0>] (ath10k_htt_t2h_msg_handler [ath10k_core])
-> from [<bf417fb4>] (ath10k_pci_htt_rx_cb+0x1c8/0x218 [ath10k_pci])
-> [ 6872.525404] [<bf417fb4>] (ath10k_pci_htt_rx_cb [ath10k_pci]) from
-> [<bf3e3bb8>] (ath10k_ce_per_engine_service+0x80/0xd8 [ath10k_core])
-> [ 6872.537968] [<bf3e3bb8>] (ath10k_ce_per_engine_service
-> [ath10k_core]) from [<bf3e3c7c>]
-> (ath10k_ce_per_engine_service_any+0x6c/0x98 [ath10k_core])
-> [ 6872.549388] [<bf3e3c7c>] (ath10k_ce_per_engine_service_any
-> [ath10k_core]) from [<bf419cac>] (ath10k_pci_napi_poll+0x64/0x100
-> [ath10k_pci])
-> [ 6872.561741] [<bf419cac>] (ath10k_pci_napi_poll [ath10k_pci]) from
-> [<c067f978>] (net_rx_action+0x138/0x2fc)
-> [ 6872.574009] [<c067f978>] (net_rx_action) from [<c03021c8>]
-> (__do_softirq+0xe0/0x268)
-> [ 6872.583626] [<c03021c8>] (__do_softirq) from [<c031f9e4>]
-> (irq_exit+0x9c/0xfc)
-> [ 6872.591537] [<c031f9e4>] (irq_exit) from [<c035f130>]
-> (__handle_domain_irq+0x9c/0xac)
-> [ 6872.598579] [<c035f130>] (__handle_domain_irq) from [<c0537378>]
-> (gic_handle_irq+0x5c/0x90)
-> [ 6872.606451] [<c0537378>] (gic_handle_irq) from [<c0301a0c>]
-> (__irq_svc+0x6c/0x90)
-> [ 6872.614508] Exception stack(0xc0b01f30 to 0xc0b01f78)
-> [ 6872.622180] 1f20:                                     00000000
-> 01a07230 dfb352c4 c0313a40
-> [ 6872.627274] 1f40: ffffe000 c0b04c6c 00000001 c0b04cac c0a3bda8
-> 00000000 00000000 00000000
-> [ 6872.635411] 1f60: 1f0fb000 c0b01f80 c03082f4 c03082f8 60000013 fffff=
-fff
-> [ 6872.643622] [<c0301a0c>] (__irq_svc) from [<c03082f8>]
-> (arch_cpu_idle+0x34/0x38)
-> [ 6872.650074] [<c03082f8>] (arch_cpu_idle) from [<c0341ad4>]
-> (do_idle+0xf8/0x208)
-> [ 6872.657704] [<c0341ad4>] (do_idle) from [<c0341e40>]
-> (cpu_startup_entry+0x18/0x20)
-> [ 6872.664727] [<c0341e40>] (cpu_startup_entry) from [<c0a00d1c>]
-> (start_kernel+0x428/0x438)
-> [ 6872.672406] ---[ end trace 0eec939763ac67c4 ]---
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->=20
 
+--E0QxmFKC3D4Dghm4HwkujHLnmXY9NJpkf--
 
-
---5DPdfFPR41eUK695iJDQSBfMVbyFUIUGp--
-
---6pEnzj6FuXyfBZ42XnzJYkv9QrpOWAyuU
+--0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl1/8REACgkQ8bdnhZyy
-68cOdwf8CHhTP9EameZnULdA0wAKnvGt6tExnU52D6uj7Ne4W30SOAlvwXJLB0WE
-WYUvu43PeSF8iSXlIYPy13FhFLuPuYBylv3tFqDug4ANyZsApp3MrJr8Okk27k50
-AnE+1txtL0E4+T8hCkyyJRDfrMmx163lqy71XFEGAqIdoeFTzDhqk010MhYFGgc4
-BZqW80AYmx+Mx/fpoqmWs+iJNdraBSFy4YhwnJANa5dOf92tvk8qTFJ0Z96dJIzG
-1z6LJZ+TdENmeUD4jsIM404Equo7SOOFzDk+muLHVTA5A+xqskWHUBUQH4pPWI0F
-JM13Jbe6HTN0C7uPcls4yNnlYptuQw==
-=4xVx
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl1/8/4ACgkQ8bdnhZyy
+68cW2gf9EY7U8bXKPeZbQLrQuDNqCDT2qw2jQwzqU2YvFgp2VjYj/MfMtHrmagdD
+KGAHEeA/In34FvMuq/I9Y8TXYQcMM3+ZczM3+g1uHdncJ815HgVwJ2+lVZr3otAI
+YhobvlIDNkk5CjvyZkgscUxD7mPs5At/EIHvDzthpbqEcwzMmpD1lGY5tkBWsKn3
+Rp+RD9MNFad7/UdRc0z0CYpD2897d/qDy5YeHfj1wATEwGj0vP0wegflq2NmDL+F
+7C2KtqBEqlMkqPc7b1BI2vAPNN0QpYb3b0yuphzakBr3htNQ3/CP9rD291bE8Tgu
+jSHgcUXw8Zx2Wlh64wOl6ooaA1ghgw==
+=/wQA
 -----END PGP SIGNATURE-----
 
---6pEnzj6FuXyfBZ42XnzJYkv9QrpOWAyuU--
+--0uqHCiVi0eGxKU6PlZvMDdPovjYL7Bt1s--
 
 
---===============4398348570611037543==
+--===============1680227550987112367==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -342,5 +236,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4398348570611037543==--
+--===============1680227550987112367==--
 

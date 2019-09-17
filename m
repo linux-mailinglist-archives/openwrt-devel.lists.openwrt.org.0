@@ -2,93 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 255B2B5377
-	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 18:57:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F337FB5388
+	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 19:02:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
-	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Qavb4Jgpe7JI6SwPT479ev0l86uIj5sHUclUUysuqnc=; b=qDxCqcxSzw8FJnWDspN9p1ulT
-	cAEJ5LBhHdYwM5BKxiX6SOZL7vyYvxY1vXuOh2BWeD0JpNMTC7ADGR8W87qXHNT+afwjrHyRc08H6
-	LOukMA7XtuQIivFvujItvwhJfunIMgliQAaf2rrehMjfD0nD2W048MbmSe3bTtCA17BmNlGOLxJfh
-	I6LEDsWj1mih+TrJrihMYtaObnNlFmhJZtuidWL3OCT4afZTzMYdfdAISCkxFvyJc4+bhN2GQ85Io
-	ynav28/X/gKJswmGRL1vlmmaKkCnlFR0KOtChKBHveItZiEio9FKFg2sxyP2ByS/2F52r+82G6dID
-	WaEv6luCA==;
+	 bh=TFd0yz5bJ9mrlHsjk+g0V55TPPz8COvrj6j9MJTszo4=; b=CXNknDbXxuUx/EjDjEMfmyMwl
+	svaQtX1hODcnyFNJXFM8Nu2wirXyesuHKGszEAQrJ5SvtSEpRis8lqVoZmFnh2Bmv7/kAzpCczSfu
+	OFeVJmWDno+rnqlNy5NEF9joqUnMmv4VVwZT19u+DLJEJJpSDzoCLjL51KTBcVf7yJRlIhrWSBZKi
+	xvCd58sAZSwieVM/7aGbVzyIo5gJ4wxRzxZU/pq7/xrKiAts7wsb4G2Je51EuPzBiCk8Y50pHizFm
+	zwyoGinmjewFPCnbn/NhYyq0hlx9sex8ZhJ9oRFAjFL8aDS91YZrO+y94kG2UJ45UyGknCUBLD/Tu
+	b1Dyhr3hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAGnN-0000WI-Bh; Tue, 17 Sep 2019 16:57:41 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iAGs8-0002Sh-97; Tue, 17 Sep 2019 17:02:36 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAGn6-0000VV-Vp
- for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 16:57:26 +0000
-Received: by mail-wr1-x441.google.com with SMTP id h7so3937191wrw.8
- for <openwrt-devel@lists.openwrt.org>; Tue, 17 Sep 2019 09:57:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :mime-version; bh=TWfHPt5wKGu4cQzIMMnucRb11k8vgOEcbWQA4sD7KHo=;
- b=Yx4t5svXx/IquI79TInvveEN+vsolt2a9tq7y+c4eBbjxuyWyrr/Tas9dwlF+/S8aD
- cwkFakxnlgSs9pqnPGB7YdrR0ffzzvgg0lZBnwrqVrd8/5ZnXwPpXi1/5iaKXo2LiWPY
- tkB3b71MIE65Ff38V17oogIMjJo7grp1yP+iYjDxcY7fNDlqyY6L2Hye4vINkkm/jVZK
- myJ5HjJJ9xBLr4pV+K14pu+kaA6O7Ef950uJy67tz+s7tiO1j1U1O1hOZyLl3Oyja0h4
- aAHEYFRLmS0BSqfpS53YEcZ5ztmKltmz7kQ0/QJ6wANb5Q4QRyOWpkWf2gZRh71EQOat
- NW0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:mime-version;
- bh=TWfHPt5wKGu4cQzIMMnucRb11k8vgOEcbWQA4sD7KHo=;
- b=LBoRvoVO5qR7cQJbfGJfJ4jCigQgztWeqOYzoa4Fn0HhXlwe7Lk+yxRFHhDEV7v14K
- 9xjwPt87lff/zLWbiOKZKhDfUvpYMcvECKUGrclPyTSUQHV4ywS+RUVV2tDL1M1CKVnp
- p8TBnSQqsq6xBqGXoBfzHywY+3VWAzAIeshMeX+rdDDICMKm1WzsRhhPOgfgYMrbKZyw
- OjEIjdALFjVG4PkPt3cl+DC3RPIIlq+UuuzxfZYpwv5u8iL1b90IPhk2Bdyi1RsWlGSI
- OhO7ukP0DJNXChfxF+LeCeqBh7uZjHhg28KcLp33gy14ZlErZ0T5FYjLRgoOTDHnuxyt
- 0i5Q==
-X-Gm-Message-State: APjAAAUiaOrciasnf2tYHk2X+U3tQ+3zN+Ltb/byc3khfvx7fHqbW9Yl
- hRRn7mcv+AS8biodXIlKt83eqm2C
-X-Google-Smtp-Source: APXvYqzqEGr3E1Pj2yG9oVwTtpr228erkuntDnko/XFOUpbvGR26GA8n5FddOp1zvGV1RpmY/Wwgjw==
-X-Received: by 2002:adf:f5cc:: with SMTP id k12mr3469878wrp.278.1568739443323; 
- Tue, 17 Sep 2019 09:57:23 -0700 (PDT)
-Received: from mStation (host111-46-dynamic.5-87-r.retail.telecomitalia.it.
- [87.5.46.111])
- by smtp.gmail.com with ESMTPSA id z189sm4662656wmc.25.2019.09.17.09.57.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Sep 2019 09:57:22 -0700 (PDT)
-Date: Tue, 17 Sep 2019 18:57:20 +0200 (CEST)
-From: Enrico Mioso <mrkiko.rs@gmail.com>
-X-X-Sender: mrkiko@mStation.localdomain
-To: Filip Moc <lede@moc6.cz>
-In-Reply-To: <mailman.25352.1568730047.19300.openwrt-devel@lists.openwrt.org>
-Message-ID: <alpine.LNX.2.21.99999.353.1909171854080.1267560@mStation.localdomain>
+ id 1iAGry-0002SA-QB
+ for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 17:02:28 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1N1wdj-1i3e1N3j1F-012I74; Tue, 17
+ Sep 2019 19:02:12 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Enrico Mioso'" <mrkiko.rs@gmail.com>,
+	"'Filip Moc'" <lede@moc6.cz>
 References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
  <003c01d56d3f$b216bee0$16443ca0$@adrianschmutzler.de>
  <20190917111452.GA9795@moc6.cz>
  <mailman.25352.1568730047.19300.openwrt-devel@lists.openwrt.org>
+ <alpine.LNX.2.21.99999.353.1909171854080.1267560@mStation.localdomain>
+In-Reply-To: <alpine.LNX.2.21.99999.353.1909171854080.1267560@mStation.localdomain>
+Date: Tue, 17 Sep 2019 19:02:12 +0200
+Message-ID: <012e01d56d79$a67cba00$f3762e00$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQHPCZHinJawK2ESMIjVbhdD0BHTvgENk/fbAjCsNHICNRzL5QEz+4ZZpweksSA=
+Content-Language: de
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:tWY4IuCcTBrWlKE4XKP8cy/EKUFEW5dyLm8Bn67HtyyEmbWezGR
+ lBKtRYx8+ZreK0i2U0C+tS8Ajb++hl8yUlZzTnJAhXkfUb2UX/reok24EUCIRksc+8b19/a
+ MdEJrUiVRRjwisROBDKw/aoWYLOlbvB9F6yTlgNGfsBLgGEsiEx7NOJmZscDwuc4b3iq5yb
+ pu72arBcE92jerQfx2hWA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:5hAhY743wBA=:5aWW/nLG8IXtUKmUWyiDWf
+ wH11kHYDqdwDzSZH++Hny1DhbEYkR/mfQW1F19/yzXK6Ka49vxvkrdPSEmr+NmPbsz7fGI2ay
+ AQ1j7s6Jnr9TiqnjXwV6oyhvpam/xI2DbvbW8WjpMhLOFDUcPyZgUAgPqFMBTpWhDDo1S2cTP
+ sLYvmsrhqwkSrkoKjchnKUG0+N3HBQvJnWWboQMGndUG1mjzPiupeOVuB3CiDpz0Y7C7fz0ef
+ EWLipkO4lpfQglOdFqtcTqthsqdq5AvDUn88a3u76bG2xllTkpDGpGnrQv41J3gHlODrrl3nm
+ 32uhs3+X0Qrf7TjGYAM2HjJWEB39Oquzof9nOiXqK15XiFOFsJQoS3nUxYkkX/C3qf4HC4w6z
+ GR/E1BM05MqrKPvxFaurPzJPFCl9YsaiAJu6wmGH78Z/2dZVHvkiXlxZaMFQk9UObOxartZ/P
+ TYpMLoubnbxP99VgktDxag2aUDB5QVcHvF3DHiLbLr1rGpa4zTO8n9CJfVZNUvHwdC3juzTMR
+ IvPbWjb/bee/25cTYyOoDkik/aeSmtW0HyRGHPxohgPPqJl1SiRwst3jvmcisHXu66IEFvloF
+ X+S1v0JYBnWPcjmwouMmNN9TdAHFmAO65JBtpIkiEaWqnGc/eXFIC1762hKN6vlsmKB8Q+UpJ
+ hk9vMHT7WTLwKUYoAF9mA7C2E82KMOT+UzMgpZPEw377WNXa46zIip2D4cT6CwMnq4OzlrA3T
+ 2RLtMipCDkIVg45WtUsELMO0m+rXeHijApTGw/YV4vkujYnOjfY11dHnP34hPqTRG4bYdRe5D
+ MlZ7kWs7rinELMue1C4qJE2du8o/bLdjRpvsefbla6kPoi1XwTc4tiLuHgtComDKyqSOFI5jb
+ Wbd5CN1iGgIS5WS1ONMcF7eO6lVRKkkUtaSYgE16o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_095725_031104_333932F7 
-X-CRM114-Status: UNSURE (   6.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190917_100227_150923_3E850DC1 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mrkiko.rs[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -101,46 +86,122 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org,
- Adrian Schmutzler <mail@adrianschmutzler.de>, Piotr Dymacz <pepe2k@gmail.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: openwrt-devel@lists.openwrt.org, 'Piotr Dymacz' <pepe2k@gmail.com>
+Content-Type: multipart/mixed; boundary="===============6616700084989734000=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-BTW I can see the code for setting up network interfaces in mach-tl-mr6400.c is identical to the one in mach-fritz4020.c for which we have ath79 support.
-Hence, I copied the setup from there:
+This is a multipart message in MIME format.
 
-&eth0 {
-   status = "okay";
-   phy-mode = "mii";
-   phy-handle = <&swphy0>;
+--===============6616700084989734000==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=Ent/JZUR/4yIoR=-="
 
-   mtd-mac-address = <&uboot 0x1fc00>;
-   mtd-mac-address-increment = <1>;
+This is a multipart message in MIME format.
 
-   gmac-config {
-     device = <&gmac>;
-     switch-phy-addr-swap = <1>;
-     switch-phy-swap = <1>;
-   };
-};
+--=-=Ent/JZUR/4yIoR=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-&eth1 {
-   status = "okay";
-   mtd-mac-address = <&uboot 0x1fc00>;
-   mtd-mac-address-increment = <(-1)>;
-};
+Hi,
 
-yeah, here I am using spaces but the original code has tabs. :)
+> -----Original Message-----
+> From: Enrico Mioso [mailto:mrkiko.rs@gmail.com]
+> Sent: Dienstag, 17. September 2019 18:57
+> To: Filip Moc <lede@moc6.cz>
+> Cc: Adrian Schmutzler <mail@adrianschmutzler.de>; openwrt-devel@lists.ope=
+nwrt.org; Piotr Dymacz <pepe2k@gmail.com>
+> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR=
+6400
+>=20
+> BTW I can see the code for setting up network interfaces in mach-tl-mr640=
+0.c is identical to the one in mach-fritz4020.c for which we
+> have ath79 support.
+> Hence, I copied the setup from there:
+>=20
+> &eth0 {
+>    status =3D "okay";
+>    phy-mode =3D "mii";
+>    phy-handle =3D <&swphy0>;
+>=20
+>    mtd-mac-address =3D <&uboot 0x1fc00>;
+>    mtd-mac-address-increment =3D <1>;
+>=20
+>    gmac-config {
+>      device =3D <&gmac>;
+>      switch-phy-addr-swap =3D <1>;
+>      switch-phy-swap =3D <1>;
 
-Am I overlooking something?
+That's the phy-swap I was referring to in the other mail.
+Using that will change the ports in 02_network, so you will have to re-eval=
+uate the connection status with swconfig.
 
-Second question - I got the LTe module working with gpio-hog. How can now I turn off the LTE module, writing a value to the GPIO?
-Thanks!!
-Enrico
+I do not remember what switch-phy-addr-swap does.
+
+Best
+
+Adrian
+
+>    };
+> };
+>=20
+> &eth1 {
+>    status =3D "okay";
+>    mtd-mac-address =3D <&uboot 0x1fc00>;
+>    mtd-mac-address-increment =3D <(-1)>;
+> };
+>=20
+> yeah, here I am using spaces but the original code has tabs. :)
+>=20
+> Am I overlooking something?
+>=20
+> Second question - I got the LTe module working with gpio-hog. How can now=
+ I turn off the LTE module, writing a value to the GPIO?
+> Thanks!!
+> Enrico
+
+--=-=Ent/JZUR/4yIoR=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2BEZAACgkQoNyKO7qx
+AnB5yRAAp4CAmb7iBfMz0KBs548jC9uDk5NX895jFHiGY2uG4WIHgiVrEsFixcqe
+UXZuzkUhV8w+9c4gR64wYPafF9EMUR+o75kzESzwqUcudGZzt08Wz1bXWeJ0C1uW
+rJvnzJMJAVKwfQbAd8364KVOTesEvajmyAE5PqrNht2H08hgn71z30ZuMDW3aYnZ
+NlLFXeBtFE8BRbJWa4Uw6VlL4OLqmfFCU/JMrhwzfzo+rMaMZ+9lOhwXoJasEOPB
+vAfiYhXHU5exUXGhVEtTvqGy2v4G971jpJnrLAJhYfjcR9rJ/Eea2Fer3a6EaO6j
+spmuxESy51FuJjhCxTwyhjmFnB1vknymJbHhUqOoftDiWHuI8TnEHn8lBb60PPeU
+CDWo6w0eCfVIa1FYLepP2Q1TIwzOR2pHhT4TCuAeuUKlDQY26BFfAx1+yJSsWALZ
+e5BR/iqc+ZcAmkCoNYd6pe7CZjv/X3/Ikx3MYNuHtxP+Iff2f4nzWtbDRQInuMpx
+BFRqNAy0vTOKrZ/Vng4kqaFAAhjaPm9XBLROiV6rpus5xCIudyWqtNGuKTyQdid4
+uLYiZPndg9vw6cVik48YBpetDDHslxS/Yt8gb4jALP5QZGFft12C9KzN2EWw8jBr
+SMW9/f2qDmYyPQ4fdincF2s3gvQdN+2ww/SGNJa2t7W3ma43Kck=
+=CHsU
+-----END PGP SIGNATURE-----
+
+
+--=-=Ent/JZUR/4yIoR=-=--
+
+
+
+--===============6616700084989734000==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============6616700084989734000==--
+
+

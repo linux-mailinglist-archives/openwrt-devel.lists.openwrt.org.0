@@ -2,54 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B015B46AD
-	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 07:00:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29C92B47B3
+	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 08:52:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NU1TKnOO7zQTZf5JzgnY5U+0LLHBCVX1BpYRZNN4+3g=; b=qMK27nEgK6wC1i
-	vmpv7+aNDNOJ8zVS1f9K8J5LKDfccu0QPtOrkV39sLSQbFEmy2ye2qYGoPMf6y7bP+NIFIg4dPBXj
-	Gjgz5/MNFQ0xuQj8/0f1gdICMXNGJBMcaAmrZMkURuVNkr0rStRNqeQ5qBIzwT/gVDs0KJ2GPkEsi
-	2+Kl1hUi7kE8Jqr17FeUrqcMABFax6VHGLI9ZEanUuECIxf1sXpTMS8E1KyDsL4VhsZO6rFofSrr9
-	wavwqFd9bzaDra57DGn1VQv4Xq+DZO0eADxn3FaRLPVz0XnGobnsvzEiV1HsP9uT8v4jfkjdRWxiB
-	NciZ7L4KbWow3TmNaGqg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=exqyIYnvXFp9e6AlmNeTi9KplK9jG/hzqpjo4hWc7+M=; b=izXNpxKRKlVSlb3Nf0p4WpFbp
+	bN1EngyfXkfRm2yudyO0A2xRdpvSNp2elmn8zzYsbF2pNCjmotfc4lOp3p9JlXUVG2v8jQ89lC/6B
+	FujEVnECyqPZ+SPrLhsbdQXXmasXoY/gspEXihEvQTkAJrw9EN+LgOTXZKhYB5ZuhjCPIFSdWR2eI
+	RvaY9ZPNhZHoLZjkdeDV0r2e//PUhTXESiX215wrDhurTXN+zgfOQNPB4gli+3kzehpiQab1/BQ5b
+	/SjeHbdlFvC8r/qdV50MJBrOaxgcqiMSP1hgqyMnacsd74fTsVBTDeAfJgW0h9aJwp4FtbYmkak/d
+	gZUVhd6Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA5ag-0005sx-Dr; Tue, 17 Sep 2019 04:59:50 +0000
-Received: from mail.klickitat.com ([54.70.207.208])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA5aP-0005sc-1L
- for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 04:59:34 +0000
-Received: by mail.klickitat.com (Postfix, from userid 182)
- id 0521CA61156; Mon, 16 Sep 2019 21:59:29 -0700 (PDT)
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dodson.localdomain
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=ham autolearn_force=no version=3.4.2
-Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
- by mail.klickitat.com (Postfix) with ESMTP id 63D5AA6114C;
- Mon, 16 Sep 2019 21:59:28 -0700 (PDT)
-From: Russell Senior <russell@personaltelco.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 16 Sep 2019 21:59:28 -0700
-Message-ID: <87imprcybz.fsf@husum.klickitat.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+	id 1iA7LF-00022k-16; Tue, 17 Sep 2019 06:52:01 +0000
+Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
+ helo=mail.dev.tdt.de)
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iA7Kz-00022O-Md
+ for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 06:51:47 +0000
+Received: from mail.dev.tdt.de (localhost [IPv6:::1])
+ by mail.dev.tdt.de (Postfix) with ESMTP id 8FFB52040E;
+ Tue, 17 Sep 2019 06:51:39 +0000 (UTC)
 MIME-Version: 1.0
+Date: Tue, 17 Sep 2019 08:51:39 +0200
+From: Martin Schiller <ms@dev.tdt.de>
+To: Hauke Mehrtens <hauke@hauke-m.de>
+Organization: TDT AG
+In-Reply-To: <d630be45-4151-05bf-970e-049795ff58d6@hauke-m.de>
+References: <26a9b03930d8b13ab11d66f654976619@dev.tdt.de>
+ <CAFBinCCEveoA3nFyZEqg4XLoe_pzC9Fz=OTfugOyMQoKmqBetQ@mail.gmail.com>
+ <d630be45-4151-05bf-970e-049795ff58d6@hauke-m.de>
+Message-ID: <12bbb7d0ba2039812cd9fa154a8080d5@dev.tdt.de>
+X-Sender: ms@dev.tdt.de
+User-Agent: Roundcube Webmail/1.1.5
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
+ autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_215933_117423_D0E7CDF5 
-X-CRM114-Status: GOOD (  11.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190916_235145_897761_E565321B 
+X-CRM114-Status: GOOD (  17.95  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] apm821xx: for Meraki MR24 modify BLOCKSIZE
- to reduce LEB over-allocation
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+Subject: Re: [OpenWrt-Devel] Lantiq xrx200: Access to ethernet phy registers
+ (MDIO) from userspace
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,43 +68,73 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ openwrt-devel@lists.openwrt.org, john@phrozen.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+On 2019-09-16 22:43, Hauke Mehrtens wrote:
+> On 9/16/19 7:09 PM, Martin Blumenstingl wrote:
+>> Hi Martin,
+>> 
+>> On Mon, Sep 16, 2019 at 12:54 PM Martin Schiller <ms@dev.tdt.de> 
+>> wrote:
+>>> 
+>>> Hi!
+>>> 
+>>> I am searching for a possibility to disable Auto Negotiation of an
+>>> PEF7072 which is attached to MAC1 of the Lantiq xrx200 switch.
+>>> 
+>>> The xrx200-net driver does not seem to have support for that.
+>> I don't know about xrx200-net, but ...
+>> 
+>>> Accessing the STD_CRTL register on the mdio bus from uboot with the 
+>>> mdio
+>>> command works like expected.
+>>> 
+>>> Any suggestions how to do that from linux userspace?
+>> ... my (limited) understanding is that this is one of the benefits of 
+>> DSA:
+>> you get one interface per port - with that you can use for example
+>> ethtool to disable auto negotiation for one port
+>> kernel source reference: [0]
+> 
+> I also do not know if xrx200-net supports that or if it is possible 
+> with
+> swconfig at all. There is also a DSA driver for this switch in the
+> mainline kernel:
+> https://elixir.bootlin.com/linux/latest/source/drivers/net/dsa/lantiq_gswip.c
+> 
+> This driver should support everything the xrx200-net driver supports
+> plus some extras.
+> I would prefer to use the DSA driver also in OpenWrt, but we need a way
+> to migrate the existing configurations which are based on swconfig to 
+> DSA.
+> 
+> You could try the fixed-link attribute in device tree to model this 
+> with
+> DSA.
 
-On Meraki MR24, the BLOCKSIZE variable is used to allocate space for the
-kernel blob. The LEB size on MR24 is 15.5k (15872 bytes). In the
-particular instance observed, it was found that reducing blocksize to
-512 bytes resulted in 3 fewer LEBs being allocated to the kernel ubi
-volume, with no ill effects.
+Thanks for your answers.
 
-Signed-off-by: Russell Senior <russell@personaltelco.net>
----
- target/linux/apm821xx/image/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Switching to DSA would be nice, but it's too much work I can't afford 
+right now.
 
-diff --git a/target/linux/apm821xx/image/Makefile b/target/linux/apm821xx/image/Makefile
-index 8203de39c5..1aa4e0dad3 100644
---- a/target/linux/apm821xx/image/Makefile
-+++ b/target/linux/apm821xx/image/Makefile
-@@ -127,7 +127,7 @@ define Device/meraki_mr24
-   DEVICE_PACKAGES := kmod-spi-gpio -swconfig
-   BOARD_NAME := mr24
-   DEVICE_DTS := meraki-mr24
--  BLOCKSIZE := 63k
-+  BLOCKSIZE := 512
-   IMAGES := sysupgrade.bin
-   DTB_SIZE := 64512
-   IMAGE_SIZE := 8191k
--- 
-2.23.0
+Disabling ANEG in the DTS is not enough, because I also need a way to 
+turn
+ANEG on and off at runtime.
 
+Meanwhile I found out that there is a mechanism with swconfig to 
+configure
+the link attributes:
 
--- 
-Russell Senior, President
-russell@personaltelco.net
+https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=6219b3deae1c8dfbf405f5a701d3f3b00ebacce1
+
+I will try to integrate this into the "old" xrx200-net driver.
+
+Martin
 
 _______________________________________________
 openwrt-devel mailing list

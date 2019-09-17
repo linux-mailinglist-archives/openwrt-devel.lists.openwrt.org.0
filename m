@@ -2,80 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAB63B4BEC
-	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 12:25:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD641B4C13
+	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 12:38:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qAC/zs66QrS1zbB2K0xScH0feSw3lZwS2JuTuvJtbEI=; b=EFYIUXENHMEmPS
-	PwWS1OLIkBhLK6vQftuYykbb1YJgcYT634lfzYLr20UznqpDHnuXnvkWBGmOQo2T/ouxBrh/G7BvO
-	WAaLZa8lmbR7tzI7geEhOO2fsvVWKBxbZjoQjBCpX/wFJKgCO8d/hMVaAPHThqT+kxxEt70p40PZZ
-	JA1LOkRxS8+TE//JMIwHA5q7keeeEc2VcgJ8ej5uUeHtw0QJjglMWwQdWsX0Hp8zBiET7AtuwzwV+
-	xQO9gaOVAS6YNeLRG8pMZbxJ6bIjRalUOlGo9Et+AbJ+vXtmYiLE7UAQjGvvWZ9NWMgR7GwORm+ad
-	Tpe7WoQ/TJXXbFPXSiVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HGKOfT4BV7p8kKKVixjqHKenMZSSBOynsf1X6B9MCSk=; b=U58
+	gDtZDjorbQWsiN4mQe6bYv7L3rHFrUM+//hWr/Zbfr9GyObBQGUAQfAUvH0Qz5V/dZMDbu7qxwcGi
+	kJ8202pZQ+g2w/aPoGvvIfSHfGWUWCL7GGT8C5LF6+oh+1s3wMkY2KT9g8rjrO8rh3u8fQ+aVFks3
+	Famzzz7D9Z3Wnw4NJsVENa4/fo7xoXPtI7MMOaZR/GlocGRs66Wju1tnS69fPk6R7OCGsdeM3jB1n
+	Lw5TTlKBP05RcZH+Firc7Pw77+uvVUxQoQkG8AmB635HhlUAEjhlrY5d6G0MSBzJGyHgW3B62qtxV
+	eMR7NPlu98/FUdKo0S+LB59zYPJmaGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAAfv-0001Dn-M7; Tue, 17 Sep 2019 10:25:35 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAAfp-0001DE-6Z
- for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 10:25:30 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r5so2481559wrm.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 17 Sep 2019 03:25:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=a7Lg9Pnw2fsOXX9fiJYV4HuTcFZR3rInB6cQVfnlK8k=;
- b=X56nrTjeMYzkTFNsW6TQYhJN35NrQhSCVasGx7zC/wYWJOutkBpmut760086qtrsbr
- VMU99M7CfukkTzINyqRrMlzlh1BR/Mrau5hdMvGIPjdww4Yd+m5OmgtLgkvsviQRKCCK
- uKKu/EhTlNhb/ihejdH0HqvIBRwBQAVnPOdIz3fyqh4/0ycDghASwLUQKWF//5/yxihs
- sQ8HtI5k1XRuZ12pHdV87okV4oysZspnZ5roxcKwIJjnRmqvWCZzO+OL5QErwhPGdQNQ
- OrG4p3dB16LWHoUDUnRgjEAUyVbdIAqZg5eccLFZgxmKgYxfJio6NI0qi/6BpXgtKfvm
- yC1w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=a7Lg9Pnw2fsOXX9fiJYV4HuTcFZR3rInB6cQVfnlK8k=;
- b=cQStI2DhIg7DP/uOXNG2KfibO36fhsRJwa+PDSdpD/V36ZRF31+T3xUMSAwP/EEllL
- oCmwyplJH7l9fQtXoxJJxBtsZOuHPBkYh4QQGj7yYQtD9GhTgSNwkzoiWFwu0I8XY4hg
- F0VGnZwQlmK63Kp+hKuwgYYQWg+uxHltCDfL430SGMRAeGxEFAnQv/va1ZspwCy/nxi0
- jyXfYqISMxOwfU0dEI/2k+qlhA0hDHSkvCtlH1lPaMZH/Fx6aBkCcGQscKfFPacUGw1y
- IawtKnT05CFb3Kz3l+mbYAvxmcIsXbgJlHF5VKluK5oiFE2tP4n6jDoVgayt9r1WhkeG
- jXoQ==
-X-Gm-Message-State: APjAAAViv7qKthIryzumwn0mmE+hi/ZPhQbPeeeRGCNQd7QKqfCZtQuA
- tyf1sRPoyLK6S5ueS038habQ74HS4TbrIsYeREs=
-X-Google-Smtp-Source: APXvYqxF+PFPTSDFdwgK9joTAKMWejjymArNEJrNmq9pua1hJBi8LsZz9C+WvHLp3vHGc86anFQ4l4ju85ZedCimMJ4=
-X-Received: by 2002:adf:db47:: with SMTP id f7mr2306951wrj.1.1568715925082;
- Tue, 17 Sep 2019 03:25:25 -0700 (PDT)
+	id 1iAAsF-0005Xd-Uw; Tue, 17 Sep 2019 10:38:20 +0000
+Received: from server25.navernew.site ([165.227.43.210])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iAAs5-0005XJ-Iw
+ for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 10:38:11 +0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=asdzxcv;
+ d=seocompanysg.com; 
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
+ bh=z66sA79rbm+jI1PaUhi0JsjSOAY=;
+ b=iz5YEcvjjWxkeWP/ds7N3ssKHh7avkKl10CGVeuCFSFrt6TOUHH0ybPpB1LL+xWFxqfe1e7xyAMr
+ MFspqj/mDKDAvOvriYlLaOngPbnE8CfIT2DL+pBs8UbiMMVTN1GOysVK6jHGP6GkTN3G4uljLKeE
+ xFBtegnAy6GlRrCEutk=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=asdzxcv;
+ d=marketingcompanylondon.com; 
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
+ i=michael@marketingcompanylondon.com; 
+ bh=z66sA79rbm+jI1PaUhi0JsjSOAY=;
+ b=Jleso9CW6h0sYQmUDVzu5uecAsOmUWZ4uIhFtnm3LXN7VXLY7sd8Qn0ps+pm339JC2aAyxJNcs+e
+ c3rab7YKhR7EVQX+n57mH9BI7UZ/ltqaDwvUboQUAIuUhEVDQKs8gW3lu0TzlHhkfsLHJscUUNYO
+ YR3nDg4NS9HlUsUsNxM=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=asdzxcv;
+ d=marketingcompanylondon.com; 
+ b=Zwqz8GQZi5x7RvUgv3W2VPjQCtRZCH+5+InXLb/7yEWmZDKOqEiInA3fGmcywenEMkCGSmYdbiDT
+ +PE4SYyqhYWyLY3vvbOsauZM3iQGrkKHFHoffV18wR71qIKFMOPRQFrEg9AfxG/bdBMfwDMB4Fzb
+ hQjIFOfGF2SkmpRKwug=;
+From: "Michael Wilson" <michael@marketingcompanylondon.com>
+To: <openwrt-devel@lists.openwrt.org>
+Date: Tue, 17 Sep 2019 15:52:12 +0530
+Message-ID: <9f2f01d56d42$993d05c0$cbb71140$@marketingcompanylondon.com>
 MIME-Version: 1.0
-References: <20190823090237.9471-1-mail@aparcar.org>
- <CAOiHx=mT7i73+=B-_OXQD4SUHpd3goAsGJoaFncOKcFFqKgrbw@mail.gmail.com>
- <006601d56bb2$09c12020$1d436060$@adrianschmutzler.de>
- <a1f113cb-2c53-d49a-a4f6-0780678851ed@aparcar.org>
-In-Reply-To: <a1f113cb-2c53-d49a-a4f6-0780678851ed@aparcar.org>
-From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Tue, 17 Sep 2019 12:25:17 +0200
-Message-ID: <CAOiHx=mpf8VL6J9_T29kE7JGKNZ_N4Sd0qbxfCU08ga6O0pqHA@mail.gmail.com>
-To: Paul Spooren <mail@aparcar.org>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AdVtNk7Kk++XPZCgRMqq0uZD3Mg4VA==
+Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_032529_272873_FF5F1A7B 
-X-CRM114-Status: GOOD (  12.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190917_033809_691873_CC2A9532 
+X-CRM114-Status: UNSURE (  -3.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 4.2 (++++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (4.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.7 URIBL_BLACK            Contains an URL listed in the URIBL blacklist
+ [URIs: seocompanysg.com]
+ 1.2 RCVD_IN_BL_SPAMCOP_NET RBL: Received via a relay in
+ bl.spamcop.net
+ [Blocked - see <https://www.spamcop.net/bl.shtml?165.227.43.210>]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jonas.gorski[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,8 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] treewide: add Generic subtarget if
- missing
+ 1.4 DOS_OUTLOOK_TO_MX      Delivered direct to MX with Outlook headers
+Subject: [OpenWrt-Devel] SEO Campaign
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,42 +88,267 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Sergey Ryazanov <ryazanov.s.a@gmail.com>,
- Tomasz Maciej Nowak <tomek_n@o2.pl>, Roman Yeryomin <roman@advem.lv>,
- Tim Harvey <tharvey@gateworks.com>, Jason Wu <jason.wu.misc@gmail.com>,
- mail@adrianschmutzler.de, John Crispin <john@phrozen.org>,
- Alexander Couzens <lynxis@fe80.eu>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2132999375387352031=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sun, 15 Sep 2019 at 12:49, Paul Spooren <mail@aparcar.org> wrote:
-> > What you suggest is about what we have right now. This kind of creates a misleading situation where for some targets subtargets are present, while for others paths and image names are "fixed" in several places to include a "generic". The reason for Paul's patch was to get rid of the fixes at individual places (which was/is applied somewhat inconsistently) by just making all targets apply to the same logic (i.e. that there is at least one subtarget).
-> > So, the empty files are introduced to make the process of building and creating images afterwards simpler (to follow/understand).
-> >
-> > I was suffering from the same problem when I dealt with OpenWrt-derived firmware, where I suddenly encountered a target without subtargets and had to implement extra code to work around that.
-> >
-> > However, I also wondered whether one couldn't code around the necessity of the empty file, and just add the SUBTARGET/SUBTARGETS variables here...
->
-> Thanks for commenting, that's very much my point!
->
-> Maybe the easiest solution is to add `SUBTARGET ?= generic` to
-> include/image.mk instead of introducing empty files. Will try that tomorrow.
+This is a multipart message in MIME format.
 
-Thanks, this is what I meant, providing some sensible default value(s).
+--===============2132999375387352031==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_9F30_01D56D70.B2F65330"
+Content-Language: en-us
 
-I have to admit, even after reading your changelog and Adrian's email
-twice, I still don't quite grasp what issue this change is trying to
-fix. An example might be nice in the changelog.
+This is a multipart message in MIME format.
+
+------=_NextPart_000_9F30_01D56D70.B2F65330
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Hi,
+
+ 
+
+Hope you are fine,
+
+ 
+
+We'd like to inform you a very important issue regarding your website which
+is the reason why you are losing lots of traffic.
+
+ 
+
+Your website is great in terms of design and content. However, it doesn't
+follow Search Engine Guidelines. So, it has a very low visibility in search
+results.
+
+ 
+
+We've done a thorough SEO audit of your website, and found that it has a big
+potential to generate more revenue than what it might be earning at the
+present. And yes, we have generated a report for the same as well.
+
+ 
+
+We'd be glad to share the SEO audit report with you so that you can check it
+yourself and find out what should be done to make it SEO friendly.
+
+ 
+
+Let me know if you are interested, I will send you a free of cost and no
+obligations audit and keywords recommendation report for your website?
+
+ 
+
+I'd be happy to share our past work and client testimonials and Client
+testimonials.
+
+ 
+
+Thanks & Regards,
+
+Michael Wilson
+
+Business Development Manager
+
+Contact No:- +65-315  816 72
+
+ 
+
+PS: I have studied your website, prepared seo audit report and believe I can
+help with your business promotion. If you still want us to not contact you,
+ask to remove and I will not contact again.
+
+ 
+
+ 
 
 
-Regards
-Jonas
+------=_NextPart_000_9F30_01D56D70.B2F65330
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
+HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:2050718847;
+	mso-list-type:hybrid;
+	mso-list-template-ids:509895926 67698689 67698691 67698693 67698689 =
+67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US><div =
+class=3DWordSection1><p class=3DMsoNormal =
+style=3D'line-height:13.8pt;background:white'><span =
+style=3D'color:black'>Hi,<o:p></o:p></span></p><p class=3DMsoNormal =
+style=3D'line-height:13.8pt;background:white'><span =
+style=3D'color:black'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal =
+style=3D'line-height:13.8pt;background:white'><span =
+style=3D'color:black'>Hope you are fine</span><b><span =
+style=3D'font-size:10.0pt;font-family:"Arial","sans-serif";color:black'>,=
+<o:p></o:p></span></b></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>We&#8217;d like to inform you a very important issue =
+regarding your website which is the reason why you are losing lots of =
+traffic.</p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Your website is great in terms of design and content. =
+However, it doesn&#8217;t follow Search Engine Guidelines. So, it has a =
+very low visibility in search results.</p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>We&#8217;ve =
+done a thorough SEO audit of your website, and found that it has a big =
+potential to generate more revenue than what it might be earning at the =
+present. And yes, we have generated a report for the same as well.</p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>We&#8217;d =
+be glad to share the SEO audit report with you so that you can check it =
+yourself and find out what should be done to make it SEO friendly.</p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal><b>Let me =
+know if you are interested, I will send you a free of cost and no =
+obligations audit and keywords recommendation report for your =
+website?<o:p></o:p></b></p><p =
+class=3DMsoNormal><b><o:p>&nbsp;</o:p></b></p><p class=3DMsoNormal>I'd =
+be happy to share our past work and client testimonials and Client =
+testimonials.</p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal>Thanks &amp; Regards,</p><p class=3DMsoNormal>Michael =
+Wilson</p><p class=3DMsoNormal>Business Development Manager</p><p =
+class=3DMsoNormal>Contact No:- <span lang=3DEN-IN =
+style=3D'font-size:10.0pt;font-family:"Arial","sans-serif"'>+65-315&nbsp;=
+ 816 72<o:p></o:p></span></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>PS: I have =
+studied your website, prepared seo audit report and believe I can help =
+with your business promotion. If you still want us to not contact you, =
+ask to remove and I will not contact again.</p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p></div></body></html>
+------=_NextPart_000_9F30_01D56D70.B2F65330--
+
+
+
+--===============2132999375387352031==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2132999375387352031==--
+
+

@@ -2,178 +2,479 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB9F3B4E53
-	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 14:46:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75A65B4FAF
+	for <lists+openwrt-devel@lfdr.de>; Tue, 17 Sep 2019 15:52:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:References:To:Date:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=T5SV4jxXMOmSb+JHhmCBOjzuJMDpqSuErHWcnCGEYgw=; b=Qg7AQBKJuAmhZDAAZOzjhybsx
-	LG/YQ+lfbGHkMf+js59xOnyu9vyN19HCb61SOMx9ulhahmzWpco50NFm6X77Ts6drLLAwgcH8jHCy
-	vWtnpXr9LUNKUWw9+rtVvYwTiISG9UL6paJUXfCP3oU2lamyqoTHS7EqImJ0+cE8UwNuHGJnxigWm
-	TYUowJDT/My7ZFQ+/9zJAmwZylicnyyxlui6XuhJbUl0NU22GL9erXWKzWN3yVoBY1y0/DBJZ48sh
-	HFPzf+UVOMofdTAQTAVNAIzGrAM3J1wYePK8ExjNLr2FMN5atFybfKN03O/5//EERwyZeF/R79L6M
-	rkVx2ZC3A==;
+	 bh=QU/m26VCi4nwIvlJKtbJfkdj5n+iFtoJYHSa11+UFOo=; b=TUFU15Zpk92tQXXVTD5S8yhcw
+	W+bwBw0lvNeB+k470MSQWywSmfyHCefBywvY0zS5R/l5NWkjX5If+8lgbtTSM3M568dCFnwkzUVb1
+	AiGqmrHyQVid9978iV9PVE51Z9M6HguxSK+MS5SmLYwHFZmoi3jC1/8EM4i1nEeoqOqDkOXrIidYs
+	rxX3UUHMgN6Af3kNl+5pQdW6wxfbjnmnZHx77Z9aNyUxL2m5bZvoN2YD1uWJ7PEOruYI0qio+OoLf
+	4pBr5VAVRICZFsoSpDHVSt1JTGnqsiL/w7Rj82jOsAkLSajNOBK6c/mnDyQSEgpsU29soEnQAc1QZ
+	bYuxZdYmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iACrd-0007r3-Nv; Tue, 17 Sep 2019 12:45:49 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iACrH-0007qT-Eg
- for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 12:45:28 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1N8XDT-1i5tLg1c9p-014VZY; Tue, 17
- Sep 2019 14:45:25 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'David Bauer'" <mail@david-bauer.net>
-References: <20190902091021.1083-1-freifunk@adrianschmutzler.de>
- <8c47337b-6bf4-55f2-a82c-0ddde517a1ed@david-bauer.net>
-In-Reply-To: <8c47337b-6bf4-55f2-a82c-0ddde517a1ed@david-bauer.net>
-Date: Tue, 17 Sep 2019 14:45:24 +0200
-Message-ID: <00b501d56d55$c6e7deb0$54b79c10$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQGJtGq8YkHx0GkkPLPCwFdyBk9neAH2Tawsp7eP/zA=
-Content-Language: de
+	id 1iADtq-0003oG-2B; Tue, 17 Sep 2019 13:52:10 +0000
+Date: Tue, 17 Sep 2019 15:51:38 +0200
+To: Enrico Mioso <mrkiko.rs@gmail.com>
+References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
+ <003c01d56d3f$b216bee0$16443ca0$@adrianschmutzler.de>
+ <alpine.LNX.2.21.99999.353.1909171243340.1098807@mStation.localdomain>
+In-Reply-To: <alpine.LNX.2.21.99999.353.1909171243340.1098807@mStation.localdomain>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:P/Ii93NK62mWPD+Gr7F5C+w2b73hCSE9SR544gn4OJ5UGnetFGt
- cOr6epGMCz2LgGL5j7av8K6b71mHVJ3/4H+ufufgd46Chp/0sLbXCROqSZzBfO3IsAdqjn4
- w0Ov/Hzi8k4rTKeUPskUJH9HTCV8y94lN0K2liQ0ImnwBF6NJ+N8Rb3kRrdxxO03ojx7Qp9
- oTGnTi2CiZoUalJay1FIg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:gBuYdPRsTo0=:kj8Q3roBvTrxKv3qdGx7E+
- YqpfrVTZYpVI0cZmn1VgGfcOKxS7XxtYXbBQjdoRYRq3Fv6NznvCkBJ071vwfIA4U7mhZ9Uci
- oe5i/W2p+4vxJ2TA3xf4B5VMiAMke9eVN9wSH970XTprKgG3ubE6yl6kz5WiwObkhxA5AwRYY
- YqnW4YtLecGzz6w4QyoFHCbinEdfrOAdLBptirb6LbUTkQjIfXA/wIoKKkd7ks3HSGfbKBnD6
- LXHZQH5eMcsTrU3DdidjGp3Yjtb63wj1Jxi+UMh2eHVov/5UKDdN4505w70MfHwysl5ipDEQJ
- ANNgX826pNkUHPH3b01hh9KgUAGWAhEAASRzocS4ouNyCPOueiRyikzHvtPTGUjMblSYjnHKx
- ZjXHEioedKXMqhOKaRfRbuOfje0B5QB/MKjaetwhUQYc3O7nGIGFf9d9YPMtSQWfW93VHqpkA
- +n3tWkzOLUtiNlQNFmRakc6DBu7R7TrvlNgEiUZwntrwMRDIUADIMRZg9/MHhFkpoIcfeveHe
- 9eayC4xSVu4GgCud0JVaWvD2bh0btNcpN2NnJcVEUFNLc5J8cFRKcRj2+aU4a0ViWNts0ERLP
- O026XAN27S4hU1pCVKWIga8bGExlHn/fxnSeucjfh6NTV/sCM6MhKp4h+upp3YD0gPk1q/ZTQ
- HvOldOKwvAqxIUyhpJabkAOJWUPpO2VCl2ubIIxuMZtWqoLczvy0I9WG0qXxnfI6NDXSpA/XQ
- 9AWHlTxQ4xh0UksQ0a1LRI9NMgoq13Zy6zEwFXn8JtCypopHoRkh69B/HbTIVZzUdYS69o4SJ
- CeWJZaqEvLsO+nWiHZoYOZ/2czzu1cSOD7mAMSLM3w70OcFUPEG4KB/8eUuUQWJd3JlgApzyn
- Ms17WKMmWlabYTGcsj6/GLhxKwdj7RY7qxaeNDqKM=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_054527_787236_23CB1E52 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: Add LED migration for several
- Archer Cxx devices
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.25339.1568728310.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Filip Moc via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org,
+ Adrian Schmutzler <mail@adrianschmutzler.de>, Piotr Dymacz <pepe2k@gmail.com>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Filip Moc <lede@moc6.cz>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============4375794665891510275=="
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
+Content-Type: multipart/mixed; boundary="===============2945158560751623050=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============4375794665891510275==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=wKn/YdUN05nZC8=-="
-
-This is a multipart message in MIME format.
-
---=-=wKn/YdUN05nZC8=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi David,
-
-since C59v2 had to be added anyway, I've sent a v2 patchset with a differen=
-t approach.
-
-Just wanted to notify you also in this thread, as you have marked this as U=
-nder Review.
-
-Best
-
-Adrian
-
-> -----Original Message-----
-> From: David Bauer [mailto:mail@david-bauer.net]
-> Sent: Dienstag, 3. September 2019 01:09
-> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> Cc: openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: Add LED migration for several=
- Archer Cxx devices
->=20
-> Hello Adrian
->=20
-> On 9/2/19 11:10 AM, Adrian Schmutzler wrote:
-> > Several Archer Cxx devices were using board-specific LED names in
-> > ar71xx, which were changed to "tp-link:*" in ath79.
-> >
-> > This patch adds migration for them.
->=20
-> Have you run-tested this patch? For me i ran into the issue of the device
-> not being reachable via Ethernet, as the Ethernet MACs were swapped.
->=20
-> Has anyone yet tried to find an migration approach for this? I assume this
-> could be tricky, as we might need to update the board.json also in this r=
-un.
->=20
-> Regarding the actual patch: I assume the LEDs were migrated (as the WAN E=
-thernet
-> got illuminated), but i want to hear your opinion on how we should procee=
-d with
-> the Ethernet migration. :)
->=20
-> Best wishes
-> David
-
---=-=wKn/YdUN05nZC8=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
+--===============2945158560751623050==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
------BEGIN PGP SIGNATURE-----
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2A1WAACgkQoNyKO7qx
-AnAVdA//cH+63rLeHKNG2bagckSrELkSpYFCUWCS61I6ullfWnapDLi6O2FOBDfZ
-9zKpT8HQJ4seUZ3TPGoXKx+W9bFe62IZMnZ42hceWXNhqCfqoB22xfJ9BS98QxsI
-+rEuxIvE/LRhFAIlc7lga0zfo6RIclH32ovNQXRVJwsK0xF8qzPPhGxPbcqMyh1M
-COvQjASeAz2q6aw86k6njT5OJKxkuZFGdrFz0HNFwcOlw1BC3baG6xZPX240nM0t
-BTuxgQBURJHRtH41on9YVodZehO03cdtZmccnr2cQ1Ug1wg5ve8Mcc6Y4WFuva5d
-e4d2z73WIetFpM+tnx6SUa0IdRncHWPdFvtEijtHNKQUflO4vDEoxKs0Gfp6PgTG
-Hw045ZG3AnOrh64stPdGGsaTRO2MM+MhHpg6mxIwE7a6OO01zP1Ag6P8a8G/g3Iz
-GO5/M2tlEEJFpvcBukbgzUAxlxxgVPzv5VfecuKvf6mSswHgBhKMk3+FO3INn2oy
-KAOvafLBl8ihPeMjgNTGhQEywplPqx7uHv7v+7eWAdlULpSROGwaCTUKIxU3bhYG
-uitXq7+aOjBIFxCmX5GxCrAEAnDBcm/HvJNLgZ0r7s93lhFdNKNSJhbxHo1ki39g
-Xzy/WVTAizR6XiHMPBGJMamuofPrKMHB8y9O8GX96Oi7H2ElbI8=
-=lRWt
------END PGP SIGNATURE-----
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============2945158560751623050==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from hosting.moc6.cz ([2a02:c60:c70:8900::1] helo=moc6.cz)
+	by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+	id 1iADtS-0003nT-0Z
+	for openwrt-devel@lists.openwrt.org; Tue, 17 Sep 2019 13:51:48 +0000
+Received: by moc6.cz (Postfix, from userid 1025)
+	id 6F1EA2320022; Tue, 17 Sep 2019 15:51:38 +0200 (CEST)
+Date: Tue, 17 Sep 2019 15:51:38 +0200
+From: Filip Moc <lede@moc6.cz>
+To: Enrico Mioso <mrkiko.rs@gmail.com>
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>,
+	openwrt-devel@lists.openwrt.org, Piotr Dymacz <pepe2k@gmail.com>
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
+Message-ID: <20190917135138.GA24389@moc6.cz>
+References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
+ <003c01d56d3f$b216bee0$16443ca0$@adrianschmutzler.de>
+ <alpine.LNX.2.21.99999.353.1909171243340.1098807@mStation.localdomain>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <alpine.LNX.2.21.99999.353.1909171243340.1098807@mStation.localdomain>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190917_065146_367554_BAB34C93 
+X-CRM114-Status: GOOD (  36.20  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+
+Hi,
+
+> Where - eth1 works correctly (e.g.: detects cable plugging / unplugging), eth0 does not.
+I faintly remember I had to tweak ethernet ports on MR6400 somehow. I think it
+had to be somehow put into swap mode or something to separate the WAN port,
+otherwise some other port (LAN1 I think) was separated. And I also remember I
+had to experiment a bit to group phys and miis right so that right port
+connection controls up status of the right ethernet interface.
+Check if you have this setup correctly.
+When you face MR6400's ethernet ports to you the port order is from left to right:
+- LAN1 (the one right next to power button)
+- LAN2
+- LAN3
+- LAN4/WAN (the one right next to reset button)
+
+I can check your code when I get near to my MR6400 which will be sometime in next week.
+
+Filip
 
 
---=-=wKn/YdUN05nZC8=-=--
+On Tue, Sep 17, 2019 at 12:48:55PM +0200, Enrico Mioso wrote:
+> thank you very very much Adrian!! I'll address all of the comments hopefully, and send a new version. In the meantime I am trying to configure the switch correctly, which is not the case.
+> My current snippet is:
+> &eth0 {
+> 	status = "okay";
+> 	phy-handle = <&swphy0>;
+> 
+> 	mtd-mac-address = <&uboot 0x1fc00>;
+> 	mtd-mac-address-increment = <1>;
+> };
+> 
+> &eth1 {
+> 	mtd-mac-address = <&uboot 0x1fc00>;
+> 	mtd-mac-address-increment = <(-1)>;
+> };
+> 
+> Where - eth1 works correctly (e.g.: detects cable plugging / unplugging), eth0 does not.
+> Can you help me translate the C code in the mach- file to the DTS equivalent?
+> The most similar device is TP-Link 942N but it seems not supported.
+> 
+> BTW - fixing eth1 issue helped mitigate LTE init problem...
+> As per leds, I was trying to keep things the ar71xx way, what do you think?
+> 
+> Enrico
+> 
+> On Tue, 17 Sep 2019, Adrian Schmutzler wrote:
+> 
+> > Date: Tue, 17 Sep 2019 12:07:20
+> > From: Adrian Schmutzler <mail@adrianschmutzler.de>
+> > To: Enrico Mioso <mrkiko.rs@gmail.com>, openwrt-devel@lists.openwrt.org
+> > Cc: Filip Moc <lede@moc6.cz>, Piotr Dymacz <pepe2k@gmail.com>
+> > Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
+> > 
+> > Hi,
+> > 
+> > > -----Original Message-----
+> > > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On Behalf Of Enrico Mioso
+> > > Sent: Dienstag, 17. September 2019 02:21
+> > > To: openwrt-devel@lists.openwrt.org
+> > > Cc: Filip Moc <lede@moc6.cz>; Piotr Dymacz <pepe2k@gmail.com>; Enrico Mioso <mrkiko.rs@gmail.com>
+> > > Subject: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
+> > > 
+> > > This adds support to the ath79 target for the TP-Link MR6400 router.
+> > > 
+> > > As per original commit, hardware specifications (v1.0 EU):
+> > > - SoC: QCA9531
+> > > - Flash: Winbond W25Q64FV (8MiB)
+> > > - RAM: EtronTech EM6AB160TSE-5G (64MiB)
+> > > - Wireless: SoC platform only (2.4GHz b/g/n, 2x internal antenna)
+> > > - Ethernet: 2NIC (3x100M + 1x100M)
+> > > - WWAN: TP-LINK LTE MODULE (2x external detachable antenna)
+> > > - Power: DC 12V 1A
+> > > 
+> > > Flashing instructions:
+> > > You can flash via tftp recovery (serve factory image as /mr6400_tp_recovery.bin
+> > > on 192.168.0.66/24, connect to any ethernet port and power on device while
+> > > holding the reset button). Flashing via OEM web interface does not work.
+> > > 
+> > > Working:
+> > > - Wi-Fi
+> > > - TP-Link LTE module does it's thing (but see Notes)
+> > > - reset/rfkill keys
+> > > Untested:
+> > > - recovery via factory
+> > > - leds
+> > > 
+> > > Issues for which I need help:
+> > > eth1 detects link when infact it's not there, and occasionally causes kernel traces due to tx timeouts.
+> > > I promise I'll test untested items as well in final version
+> > > 
+> > > Note: as it happened occasionally in ar71xx, during bursty flash activity, LTE module init will fail, with USB enumeration errors.
+> > > 
+> > > Signed-off-by: Enrico Mioso <mrkiko.rs@gmail.com>
+> > > CC: Filip Moc <lede@moc6.cz>
+> > > CC: Piotr Dymacz <pepe2k@gmail.com>
+> > > ---
+> > >  .../ath79/base-files/etc/board.d/01_leds      |   6 +
+> > >  .../ath79/base-files/etc/board.d/02_network   |   5 +
+> > >  .../ath79/dts/qca9531_tplink_tl-mr6400-v1.dts | 165 ++++++++++++++++++
+> > >  target/linux/ath79/image/generic-tp-link.mk   |  10 ++
+> > >  4 files changed, 186 insertions(+)
+> > >  create mode 100644 target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
+> > > 
+> > > diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
+> > > index 778316e450..5728aeb491 100755
+> > > --- a/target/linux/ath79/base-files/etc/board.d/01_leds
+> > > +++ b/target/linux/ath79/base-files/etc/board.d/01_leds
+> > > @@ -130,6 +130,12 @@ tplink,archer-c7-v5)
+> > >  	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x10"
+> > >  	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x20"
+> > >  	;;
+> > > +tplink,tl-mr6400-v1)
+> > > +	ucidef_set_led_netdev "lan" "LAN" "tp-link:white:lan" "eth0"
+> > > +	ucidef_set_led_netdev "wan" "WAN" "tp-link:white:wan" "eth1"
+> > 
+> > Here, you assign eth1 to the "wan" LED, but in 02_network you assign eth1 to "lan".
+> > Either change 02_network or this LED shouldn't be called WAN.
+> > 
+> > > +	ucidef_set_led_netdev "4g" "4G" "tp-link:white:4g" "usb0"
+> > > +	ucidef_set_led_wlan "wlan" "WLAN" "tp-link:white:wlan" "phy0tpt"
+> > 
+> > phy0tpt trigger can be moved to DTS, just have a look at other devices recently added to ath79.
+> > 
+> > > +	;;
+> > >  tplink,archer-c2-v3|\
+> > >  tplink,tl-wr1043nd-v4|\
+> > >  tplink,tl-wr1043n-v5)
+> > > diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+> > > index 5b47af8ef7..2b0e1ce400 100755
+> > > --- a/target/linux/ath79/base-files/etc/board.d/02_network
+> > > +++ b/target/linux/ath79/base-files/etc/board.d/02_network
+> > > @@ -56,6 +56,11 @@ ath79_setup_interfaces()
+> > >  	winchannel,wb2000)
+> > >  		ucidef_set_interface_lan "eth0"
+> > >  		;;
+> > > +	tplink,tl-mr6400-v1)
+> > > +		ucidef_set_interfaces_lan_wan "eth0.1 eth1" "usb0"
+> > 
+> > As stated above, this will make eth1 part of "lan" ...
+> > 
+> > > +		ucidef_add_switch "switch0" \
+> > > +			"0@eth0" "1:lan" "2:lan" "3:lan"
+> > > +		;;
+> > >  	avm,fritz4020|\
+> > >  	pcs,cr3000|\
+> > >  	tplink,archer-c58-v1|\
+> > > diff --git a/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
+> > > new file mode 100644
+> > > index 0000000000..4acb1a02a4
+> > > --- /dev/null
+> > > +++ b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
+> > > @@ -0,0 +1,165 @@
+> > > +// SPDX-License-Identifier: GPL-2.0-or-later
+> > > +/dts-v1/;
+> > > +
+> > > +#include <dt-bindings/gpio/gpio.h>
+> > > +#include <dt-bindings/input/input.h>
+> > > +
+> > > +#include "qca953x.dtsi"
+> > > +
+> > > +/ {
+> > > +	compatible = "tplink,tl-mr6400-v1", "qca,qca9531";
+> > > +	model = "TP-Link TL-MR6400 v1.0";
+> > 
+> > I would remove the ".0" here, as with TP-Link the sub-revisions typically refer only to their firmware. So just "v1" should be better.
+> > 
+> > > +
+> > > +	aliases {
+> > > +		led-boot = &led_power;
+> > > +		led-failsafe = &led_power;
+> > > +		led-running = &led_power;
+> > > +		led-upgrade = &led_power;
+> > > +	};
+> > > +
+> > > +	gpio_leds: leds {
+> > > +		compatible = "gpio-leds";
+> > > +
+> > > +		/* D12 */
+> > 
+> > What's that?
+> > 
+> > > +		led_wan: wan {
+> > > +			label = "tp-link:white:wan";
+> > > +			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+> > > +		};
+> > 
+> > IMO those labels only make sense if you use them, as for led_power. I would remove all of the other ones, i.e. only "wan {" here instead of "led_wan: wan {" ...
+> > 
+> > > +
+> > > +		/* D11 */
+> > > +		led_4g: 4g {
+> > > +			label = "tp-link:white:4g";
+> > > +			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
+> > > +		};
+> > > +
+> > > +		/* D5 */
+> > > +		led_wps: wps {
+> > > +			label = "tp-link:white:wps";
+> > > +			gpios = <&gpio 3 GPIO_ACTIVE_HIGH>;
+> > > +		};
+> > > +
+> > > +		/* D3 */
+> > > +		led_wlan: wlan {
+> > > +			label = "tp-link:white:wlan";
+> > > +			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
+> > > +		};
+> > > +
+> > > +		/* D2 */
+> > > +		led_power: power {
+> > > +			label = "tp-link:white:power";
+> > > +			gpios = <&gpio 13 GPIO_ACTIVE_HIGH>;
+> > > +		};
+> > > +
+> > > +		/* D4 */
+> > > +		led_lan: lan {
+> > > +			label = "tp-link:white:lan";
+> > > +			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
+> > > +		};
+> > > +	};
+> > > +
+> > > +	gpio-export {
+> > > +		compatible = "gpio-export";
+> > > +		#size-cells = <0>;
+> > > +
+> > > +		gpio_usb_power {
+> > > +			gpio-export,name = "tp-link:power:LTE";
+> > > +			gpio-export,output = <0>;
+> > 
+> > Sure about the 0?
+> > 
+> > > +			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+> > > +		};
+> > > +	};
+> > 
+> > Please replace gpio-export by a gpio-hog. Either look at recently added devices or at https://patchwork.ozlabs.org/patch/1141057/
+> > 
+> > Note that in this case I would call the node "lte_power" or "power_lte" instead of referring to the USB, but that's a matter of taste.
+> > 
+> > > +
+> > > +	keys {
+> > > +		compatible = "gpio-keys";
+> > > +
+> > > +		/* SW2 */
+> > > +		reset {
+> > > +			label = "Reset button";
+> > > +			linux,code = <KEY_RESTART>;
+> > > +			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+> > > +			debounce-interval = <60>;
+> > > +		};
+> > > +
+> > > +		/* SW3 */
+> > > +		rfkill {
+> > > +			label = "RFKill button";
+> > > +			linux,code = <KEY_RFKILL>;
+> > > +			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
+> > > +			debounce-interval = <60>;
+> > > +		};
+> > > +	};
+> > > +};
+> > > +
+> > > +&uart {
+> > > +	status = "okay";
+> > > +};
+> > > +
+> > > +&spi {
+> > > +	status = "okay";
+> > > +	num-cs = <1>;
+> > > +
+> > > +	flash@0 {
+> > > +		#address-cells = <1>;
+> > > +		#size-cells = <1>;
+> > > +		compatible = "jedec,spi-nor";
+> > > +		reg = <0>;
+> > > +		spi-max-frequency = <10000000>;
+> > > +
+> > > +		partitions {
+> > > +			compatible = "fixed-partitions";
+> > > +			#address-cells = <1>;
+> > > +			#size-cells = <1>;
+> > > +
+> > > +			uboot:	partition@0 {
+> > 
+> > There is a tab between uboot and partition. Replace by space ...
+> > 
+> > > +				label = "u-boot";
+> > > +				reg = <0x000000 0x020000>;
+> > > +				read-only;
+> > > +			};
+> > > +
+> > > +			partition@20000 {
+> > > +				compatible = "tplink,firmware";
+> > > +				label = "firmware";
+> > > +				reg = <0x020000 0x7d0000>;
+> > > +			};
+> > > +
+> > > +			art: partition@7f0000 {
+> > > +				label = "art";
+> > > +				reg = <0x7f0000 0x010000>;
+> > > +				read-only;
+> > > +			};
+> > > +		};
+> > > +	};
+> > > +};
+> > > +
+> > > +&eth1 {
+> > > +	mtd-mac-address = <&uboot 0x1fc00>;
+> > > +	mtd-mac-address-increment = <(-1)>;
+> > > +};
+> > > +
+> > > +&eth0 {
+> > > +	status = "okay";
+> > > +	phy-handle = <&swphy4>;
+> > > +
+> > > +	mtd-mac-address = <&uboot 0x1fc00>;
+> > > +	mtd-mac-address-increment = <1>;
+> > > +};
+> > > +
+> > > +&wmac {
+> > > +	status = "okay";
+> > > +	mtd-cal-data = <&art 0x1000>;
+> > > +	mtd-mac-address = <&uboot 0x1fc00>;
+> > > +};
+> > > +
+> > > +&usb0 {
+> > > +	#address-cells = <1>;
+> > > +	#size-cells = <0>;
+> > > +	status = "okay";
+> > > +
+> > > +	hub_port: port@1 {
+> > > +		reg = <1>;
+> > > +		#trigger-source-cells = <0>;
+> > > +	};
+> > > +};
+> > > +
+> > > +&usb_phy {
+> > > +	status = "okay";
+> > > +};
+> > > diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
+> > > index 5519e9c960..78d7810f29 100644
+> > > --- a/target/linux/ath79/image/generic-tp-link.mk
+> > > +++ b/target/linux/ath79/image/generic-tp-link.mk
+> > > @@ -393,6 +393,16 @@ define Device/tplink_tl-wr810n-v1
+> > >  endef
+> > >  TARGET_DEVICES += tplink_tl-wr810n-v1
+> > > 
+> > > +define Device/tplink_tl-mr6400-v1
+> > > +  $(Device/tplink-8mlzma)
+> > > +  ATH_SOC := qca9531
+> > > +  DEVICE_MODEL := TL-MR6400
+> > > +  DEVICE_VARIANT := v1
+> > > +  TPLINK_HWID := 0x64000001
+> > > +  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-net kmod-usb-net-rndis kmod-usb-serial kmod-usb-serial-option adb
+> > 
+> > You can remove kmod-usb-core, kmod-usb-net and kmod-usb-serial, as those are dependencies of the other packages.
+> > 
+> > Since this is a port from ar71xx, you should add a SUPPORTED_DEVICES entry.
+> > 
+> > Best
+> > 
+> > Adrian
+> > 
+> > > +endef
+> > > +TARGET_DEVICES += tplink_tl-mr6400-v1
+> > > +
+> > >  define Device/tplink_tl-wr810n-v2
+> > >    $(Device/tplink-8mlzma)
+> > >    ATH_SOC := qca9533
+> > > --
+> > > 2.23.0
+> > > 
+> > > 
+> > > _______________________________________________
+> > > openwrt-devel mailing list
+> > > openwrt-devel@lists.openwrt.org
+> > > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> > 
 
 
-
---===============4375794665891510275==
+--===============2945158560751623050==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -184,6 +485,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4375794665891510275==--
-
-
+--===============2945158560751623050==--

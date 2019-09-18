@@ -2,75 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22115B6671
-	for <lists+openwrt-devel@lfdr.de>; Wed, 18 Sep 2019 16:54:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 670B1B66A8
+	for <lists+openwrt-devel@lfdr.de>; Wed, 18 Sep 2019 17:04:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Zsm7mrzrQETTStd6dFxCG1ZtbPQ07XPvkOql0+KTKxU=; b=uu6H3O2Xm26yX/wOCNNu/Vm/P
-	pKhIeRZPILv3wGUki2DvBBe1+xaURMh96LDoPFQuXnV32aLQEoHYP84VBB8YJH+k9Jw1PNhSxy1yI
-	a0LuGU+zFBwkZ1OMR4LKidz/GHGo50ks/CZGXe1UyJNU/6lFs5Qh9XNcOzDankTZhWnHrzlecLKdQ
-	EhEOzw3LqmJZ8CPPOg/TA5lE6p0XGTp1j9JYtJ2TlNBAkwIxwz1/8lSjnXFh/7utFGxqQlWk/UhFz
-	/BWUAlwD9emGXFNmyuZAegJ+nQVxUngqHiDjNMp27GKySLypjP6YT1BSgWnK2VYT47HVrJO2LBnJt
-	cU+tKjAag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OCLZEa67mXRu6yjeEEzIgxV1bOo4DVu7eYec9tNQCiw=; b=EbQ1Juqw5/SBro
+	VB7hGUxvc+0F+FVwtEc3cAW1mbaJUv68TUYdfk66V78fp47Ff0VcX3kXHAyv5auLTWpSAnVVb+sfB
+	Olnx9wYAj66n2Z087QynSJ/pvbNKkHW6SM79CIrXyqIa49Tsncy1uE5VUm848XEeY4ecTeUooEMyG
+	9O+M3lWlqPMeSFI18DK7S+UcT8D8jd5jt5ssNwFXkuVjcWCFpps4UVpN7Q0gR08fPl21m15o1MzGV
+	EGY2DPv9A48S1wRT6WRsCGLnFv4yJ9PlK41gn6RnnbzVb2FkHp0InknDLaJOBb/7c2XyavOSPcT+4
+	Po1JCxPciG0gS4PEGFoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAbLd-00044L-DB; Wed, 18 Sep 2019 14:54:25 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iAbUv-0000A8-Va; Wed, 18 Sep 2019 15:04:02 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAbLM-00043x-Kb
- for openwrt-devel@lists.openwrt.org; Wed, 18 Sep 2019 14:54:10 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MAxPb-1iLux30mYj-00BIqu; Wed, 18
- Sep 2019 16:54:04 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Chuanhong Guo'" <gch981213@gmail.com>
+ id 1iAbUk-00009k-8w
+ for openwrt-devel@lists.openwrt.org; Wed, 18 Sep 2019 15:03:52 +0000
+Received: from [IPv6:2001:67c:2ed8:100e:bd8c:b4fd:ed5c:1003] (unknown
+ [IPv6:2001:67c:2ed8:100e:bd8c:b4fd:ed5c:1003])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 98E04220ED;
+ Wed, 18 Sep 2019 17:03:44 +0200 (CEST)
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
 References: <008301d56e1b$214f38b0$63edaa10$@adrianschmutzler.de>
  <CAJsYDVJ8nr7Dk8gHR63=CT=tv8h6TYpfqky9guKfGFn2_RapkQ@mail.gmail.com>
-In-Reply-To: <CAJsYDVJ8nr7Dk8gHR63=CT=tv8h6TYpfqky9guKfGFn2_RapkQ@mail.gmail.com>
-Date: Wed, 18 Sep 2019 16:54:03 +0200
-Message-ID: <01ec01d56e30$ea157ce0$be4076a0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ <01ec01d56e30$ea157ce0$be4076a0$@adrianschmutzler.de>
+From: David Bauer <mail@david-bauer.net>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <4e97a46f-00b8-cf23-6f61-76c86e2cfb9f@david-bauer.net>
+Date: Wed, 18 Sep 2019 17:03:43 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Thread-Index: AQIFtGz3UDpzIYogMio5pneSfcnX8AHGj2WLpsLC77A=
-Content-Language: de
-X-Provags-ID: V03:K1:4YI4Xi1fYBcMSZxASf9L6JeddGENqrMd4FuDifb41saGz4WYxKL
- /Im7chbLNdXycZ3M3pMI7nC5Sh2nUDRJ+Bi9VJmn/tEmQHhCLldmyox/zCiyalJ4eP0TkmG
- ykU3ZYKCtd1liNnGVUWXfumAfaH222mR0Jy2Eg24ZpEGMi2ae80AYhISKUXdh8UNdYfELiZ
- C7SAK58tleDkS719d5VRA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:V2ogszO3qyg=:hE/OeWOASeZ9PVaihOpr+Z
- +EhgRSHz5fObSqQgfXiIFOfZzj4/Hrmxa/Y1ME3xCJWEQ0QxGVr7o7wtZPucSfz/oJm3kU5ng
- zseO0+Lcbud+mKVkCuMYyMT/8EkyP66HGQai+5wH9lAv2B4d0ukUvHRWM7onxla1HklrMvYXM
- 86GbFcup/S6XVyyI5cHDLp6yfdgF5orHe8YfPyrGEEJEnjw7IKNjeRwIPFYdrz6K1Uow8Wl1+
- XyalIhOQRgZCR6wl15Sc9pX+SxjqDU0ojdA2ftTPqpf0BHqi5q75fLjZWrZ4VL/ZDR49Ubap4
- GZGOZmAqjtk6CRkXnyNeutT/NjBZm6EMaGKJ/BHXyfgzOpV7/glMJRU2E5qJoB3/fMWTbP1se
- dG+oLWyLztS6cD90Ek9Ae4UvQw7b5Wdyx5/3YKjZx1JFXZqQ/j9lTuZssG/T9TGNl9isJpfzn
- 5/sG0TSsz1yiin3uRnOIvzj9S+WH+coQ5Ett8+LALiSIF6txVIPUHZEmMAVJc3Lv+CM+nB9hi
- WVij1hRsU9QsPLrXCjIVK/JKrvw8rzwRs7hTYnHf7j11b3i/7wOLkvGgZ68/rtMTH+yNxSiTw
- r2txffPRTpSawMTxjt8HMf5fUoUoI4Fb+6lBo/kPcOmLlFdxO6LhJKGw0frlZgS9OCPJL2aMM
- NRCdmZmZVBSHBcL9cu3O1tTEcU1iE4rHbTRM/Ag940BsDtgGxX0ZzSdnSqE1TSnljwEZekPeW
- yoxYbwa+LUqsJqz+nr3SvD5WDGBGn6uANVD/X3eOBU9SnDO6ZNWy8HUQkRQIeX15k+aocxchz
- FGv/QS0+Wbe9eNaQd0vBVi6E83iX1xoRZ8QaytFa86uVsG34ENrRVUB934/9g8tjrDiuavggh
- PWp3+SduTwrb08pbYWbJClJHNveBB3CXbBcD1Tmmg=
+In-Reply-To: <01ec01d56e30$ea157ce0$be4076a0$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_075408_972096_96B7A5D6 
-X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-CacheID: sfid-20190918_080350_464989_DAE6B361 
+X-CRM114-Status: UNSURE (   8.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: Re: [OpenWrt-Devel] Negative offset for checksum in ath79's
  10-ath9k-eeprom
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -84,101 +92,26 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, 'Sebastian Kemper' <sebastian_ml@gmx.net>,
+Cc: openwrt-devel@lists.openwrt.org, 'Chuanhong Guo' <gch981213@gmail.com>,
+ 'Sebastian Kemper' <sebastian_ml@gmx.net>,
  'Christian Lamparter' <chunkeey@gmail.com>
-Content-Type: multipart/mixed; boundary="===============3413529664557470052=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hello Adrian,
 
---===============3413529664557470052==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=QYGaybBg/cLd2p=-="
+On 9/18/19 4:54 PM, Adrian Schmutzler wrote:
+> From a practical perspective, it does not matter which function is used, because the checksum is not evaluated. So one could use either ath10kcal_patch_mac or ath10kcal_patch_mac_crc in all cases and would get the same result (in terms of functionality).
 
-This is a multipart message in MIME format.
+ath10kcal_patch_mac_crc is not nearly as old as ath10kcal_patch_mac. ath10kcal_patch_mac_crc is a requirement for 2nd generation
+802.11ac chips which require a bdf in addition to the eeprom-caldata. First generation chips do not have this requirement.
 
---=-=QYGaybBg/cLd2p=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-that's interesting.
-
-> BTW there's another misuse in ath10k-caldata: All ath10k eeproms have
-> checksum fields and should use ath10k_patch_mac_crc, ath10k_patch_mac
-> exists only because ath10k firmware doesn't verify it.
-
-So, let me repeat this to check whether I understood it:
-
-=46rom a technical perspective, it would be correct to change all ath10kcal=
-_patch_mac to ath10kcal_patch_mac_crc (on all targets with ath10k exists). =
-This would ensure the correct checksum in the firmware file.
-
-=46rom a practical perspective, it does not matter which function is used, =
-because the checksum is not evaluated. So one could use either ath10kcal_pa=
-tch_mac or ath10kcal_patch_mac_crc in all cases and would get the same resu=
-lt (in terms of functionality).
-
-?
-
-Best
-
-Adrian
-
-
->=20
-> Regards,
-> Chuanhong Guo
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=QYGaybBg/cLd2p=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2CRQgACgkQoNyKO7qx
-AnCswg//VralNG/nO/ILURRjzRJGIVaBXeXWVNb0ily7X0e8gkLZDd6D4ffyKOEY
-R+jq3QJQ2E79xnCPf69V20/D35j+mLt8qS2N5BsO6R40FDWWiC3KsE9teElUqDjl
-ISlbrD/3xrGEd2QtIRVq8lxCyRbPSPfzfTuHQZ9vWRJ3noLy0ciPIJq5CAUS+wou
-T5Xczy9NkoP5A5465FqIpBcldusYxXL6qkSL/kG2u5lU67752WWUoD14fyCEgcwn
-nabdHg092Da3obDQ9J+Q9W9kLEtN452c0Zh+OTpUMug93dsXf1D/RzG7lF/iRLdP
-c35wdq1mST+BiAKaHl2miAhZJbleqfh5K3ktXmvQx2omI2RGBFhqkQW5jmcMFJHq
-cy5k5NwQW/zFRu9JQXHO4EAeIDx5u3EZMqzf8Rii0DqO2vKYCiHC20iN6otl31Mt
-qPDo/DXiGniVUqtEFApSycUXbb8LJs1oPtJmFL4gdkrlsd/g0H97Dllg58QkfjSr
-kMFSZxyIKuZWoq4MgQhWNW80x/otsylfuSL+sQnWIGtuD0+VT04Gz/se0WZ4mHHf
-jX0E7CEnNJ0J+fcRK2ly2otnpZn4Odw2i6bvgtrVn56qk1KZmP105QqWbsfhsA3s
-8faOj7ZTW1pZnUyOre79abwvQhxyzbx/9BbzyYsa95fue8aZrK4=
-=U+Tv
------END PGP SIGNATURE-----
-
-
---=-=QYGaybBg/cLd2p=-=--
-
-
-
---===============3413529664557470052==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best wishes
+David
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3413529664557470052==--
-
-

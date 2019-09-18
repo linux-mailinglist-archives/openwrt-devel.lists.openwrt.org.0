@@ -2,71 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75600B6292
-	for <lists+openwrt-devel@lfdr.de>; Wed, 18 Sep 2019 13:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC1DBB62F6
+	for <lists+openwrt-devel@lfdr.de>; Wed, 18 Sep 2019 14:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kUj4IDV2DBFYYyFFcqtE50swthr/3Zk1voI/5EDrlIU=; b=orTs4FTU7ii51y
-	XAch9gQMByT8ZN0wr983aeoedkoknbc9mu7/o2CxvLVRkSU1U+mihJ6C3J4KC4GPnG8LCuE3Pug8I
-	e6zneSdIti6QsIfAOB3wUih3jamGQci6TmQDHSTgDnlUuVRlW6IjUou8hKudskdAAdjUXBcQNuvP3
-	OEYoR9UowCTVJdrmejqrBzjEtnC9rQ/oCBK83Ahpi1q0ckUKNyEQ/NJ5VbtpH1z91UkVhbIOrJEhA
-	R/JIAFJwK/QYJcsl5fPltfORkYFwDhuzVrQfQjtmeE9LiF56Iy5mYQuiRn2IfHFweurHmn9pWH0jt
-	fpAkrMD7QvyScv3qiT4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=tf+ahm1/IHeztWBAP6vCG/50yd9UbFRCf3pI1JCGg48=; b=O2M
+	tY2p+NWjQqZFuQ+Yv8DNwMz4QcyZdhmfBYX0gprR4tQ9M5zG5uaN6xZAA0PbJBymur2eeLJXBWt1h
+	mrW3b4Q1jtgB7uluhabTsOCB8jEgPUFzuKL5T6jE2HJTMEIQilyBjIH/tQdZbGMFePX0lZkA6A0ej
+	i+LSX3sy3rZD0mirYEagaGQ2+ilzbJUJyfIIKUNdg8nE4dlSaQJqB0ztyAoLMBHInisYhsURA20YI
+	VFeKb+qCkRmAQXqkHJlVu3HLoIfaIBa90IJm9U0vWUOwHZiir66s1y1EwmG0ndlB49BW+E6Tn+jv8
+	UgeHsvK3eefpPEt+JQKqqOBa2caKk/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAYZT-0002y6-5Q; Wed, 18 Sep 2019 11:56:31 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1iAYun-0002dH-3w; Wed, 18 Sep 2019 12:18:33 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAYZH-0002xi-Vu
- for openwrt-devel@lists.openwrt.org; Wed, 18 Sep 2019 11:56:21 +0000
-Received: from buildfff.adridolf.com ([188.192.136.78]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1Mv3I0-1htAEy2NQe-00r0H8 for <openwrt-devel@lists.openwrt.org>; Wed, 18
- Sep 2019 13:56:16 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 18 Sep 2019 13:56:13 +0200
-Message-Id: <20190918115613.1732-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+ id 1iAYuU-0002cx-GC
+ for openwrt-devel@lists.openwrt.org; Wed, 18 Sep 2019 12:18:16 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MCayD-1iJ3U43lxr-009j3L; Wed, 18
+ Sep 2019 14:18:07 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: <openwrt-devel@lists.openwrt.org>
+Date: Wed, 18 Sep 2019 14:18:07 +0200
+Message-ID: <008301d56e1b$214f38b0$63edaa10$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:H4sDHWr1IdG3kyiP/fal5xACWzIU/zi3zOPxEhOysTI81/EAcP7
- mlSzrrFuIMm+U7M5gZKzlAh+V5duA7PohYAMArKm/LYh65ZjQUcP+O+xtS7vOUSTpYPhkkP
- Tl9PpBceVN1vmquTXcdpBSuk+imD670NNe4JbkcAOF9d43URN0oOQtbZKqdtfNr+lHYF9k1
- BWMYZU4jW2GVPlE3veiHQ==
+Thread-Index: AdVuGMYs5Q/A6MKYQ3mzdPNChgpiQA==
+Content-Language: de
+X-Provags-ID: V03:K1:HW5R5OWBFRylUCctohn2GTVNOI27O/2q49LA8UifQT8Xz+G8bmH
+ Qs/wJnOuHLF5PJPzYM1ATbibj2w5eZZl0GQNiPNBNW3bk/varCii+Bcwkd5eeAelVBS1f2u
+ W8CcU0WZmMkAmYRf1WsZGilkuxOi3OYWI/XDiVQqDWgyLp8BY47PaOx6DrB0gCZM9KCTflF
+ f8PtF1Q+gweviDMSmX3DA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:INEOgS6mjRQ=:nXoUQvEEYHXpzjzX5u6r5o
- JgpEyph3y3mOb91j3gnjIWDgRHjtwkzM3LDvLCuCTUvcf0H9PLOejI0VG3ER/DY3AsapYI7Ph
- ryD0fko3pkXvsMpuP8n5UwtjQixvB+98r4crGSPKgZXKD4JPu9QtYsYCAu5FiYNT3vdZlmwmY
- nPW4xPY0bV30mxifLNB7lhTX3Vr6mvLacWYUghIYwDN8XlKvNF2Udc3QxFzrUfWRl+DjGiTjj
- XAg2PslZdvmv/GlLosuoYdfyhq6zLcfUzE9lrP/EKCx8++PJCvaRIxhCwS3ZMS7XmxMk0xwQY
- aTxK5ALI6mDEmBiL4mPcpA16ysBUsfO9UwQYcxplVNeiehqleYqtw7mkM9N3CDy6menzTQP6Q
- 9BDXFFw3EqPmgacK2GuHFXRQ/gxfBL/B6dlFGK/PN7Uxy1T45nhN18MNxLVa9e58QP2CB00+n
- zo/5XGpgP75jGfzfBR7mObFtczIbq3FNMw0uiZNTaT2iv9GWL4Gn7f+iU+HHYayhDHiixHOTO
- Xrz3zmIEnY0dVRGL4Vbs+FIRYs/50NSx0JzqXjSit4GUtrbnAHJuB3r7Tc2+kf3sNZm1W30Tj
- rH7jFuuzfD/st6G1g0+sE0Zv/+nwImVe0Vgj9DWxqIcdZJLpd+g+YSos+ohypAoJXPajRDPGh
- FA+VaEAoEJPryelGO3p/qR112z1GJ9/5kcD1gWkNtjBxgJbkRRnHbopfmgqhcqkM1Cv4Dijpx
- o4McoPCXNHUlYb7BJYjui4SKjFISSuXNZA4VKxHVYpjnGIDbq4ccJaXL7oFHUKJIgm7H1kU5+
- YpLKcLiFVKVI7glE1UE2C9tP8M4o3AgHMyHF8FOKaTGJ1YqT0/AlJ35FT7rR2Y2TRnpwqYn0D
- HJlZ4az1va6EGYNTkbAM4LA4oCXBkq04/cX0OAows=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:EXpE+yV6/I4=:xQkS9NUk9TEuT2d69i6tj3
+ IoXO/2rdP/yJhr15Zgcrt8+BdhZiZ8F/VC2g7eU6IWxGwSGPmPd7ky7k4MS89WLEpbFK9/0la
+ 0OYnDjVng+xdY972KYc1PPiYKzRRRajdDAm1zct4StNSQcqKcULZwOhZywwLLCC8TwWuD0PqT
+ JJLvhcYIVUls8jcn2mU6k+PRK6uLZKZhmGUcaVg9g+c4M5pQGpvgAPnjsJz6gSPdLKrXOB2aI
+ 6Q0115DHq161yZ+Mk3gmIB/gb3BDUImgb6AER6YQXkwPKVcDEMqD3MiHMWG3WVb9fY9zLReFq
+ NXD3fS0OXBQ15zS8ihQmlg8o3X4tA+Z1T59EV8O3KWjVSQ91GbH53wCX9NN5k6AKDaFVCbtXG
+ hNKbFdPG9RfMtB0j0/WnMUcip27F4/VKTqbtL7Nc6ftzZz7JsF4N4QM9RuhL8ifxBU0EgqF4T
+ b9ibegyvhX95rFp0bO5CHT8+2+fFWdjPycLHarTAR6P501zhr82D/f4awsWuJmsttBS3kFJVw
+ nckJl/mYaLcUzz8j6+Y+MVHJKSa8VPcQXKrZmhBAQJmry24VIANkNIphHU/zVML1JhxW/9k8/
+ L3JK7vPafpl9O2vsTs9bU3E5oRQBVbYLsek6/mPWfgCRCsrbFZzwYfAGThP32JNSAyyBxGdVu
+ xPDpZDG2i8WaArsObLvbf57xRqGsHN55/fdKBzAeJhuCtOADGJcIzv1FtRfMus9aaIXSeG/BZ
+ s4W+/RKL93Ik3plHRR64dxCU5NxPq8PezZhmpCmTvzjiru4sqX21LXBmBNUV9RFza7JNGD/YS
+ Qda+cwEP/cQ0K7dZ/w+60I4V2hiNd+3hlbiO/snt9yFkXCwP4YK0LPl0ifOwEpubnq3e8Cc+w
+ C5ujIeM5HC0YpT2gAoUMLyNXWvj/gXH07ldE0eqMo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_045620_320451_86C5C110 
-X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-CacheID: sfid-20190918_051814_837949_52DBE184 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] treewide: fix hex2dec conversion for MAC
- address checksum offset
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.75 listed in list.dnswl.org]
+Subject: [OpenWrt-Devel] Negative offset for checksum in ath79's
+ 10-ath9k-eeprom
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,78 +79,108 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: sebastian_ml@gmx.net, chunkeey@gmail.com
+Content-Type: multipart/mixed; boundary="===============0158138768365275531=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-If chksum_offset is converted by $(($...)) at the beginning, the
-check [ -n "$chksum_offset" ] will always return true, as the
-conversion yields "0" for an empty argument, and [ -n "0" ] is
-true.
+This is a multipart message in MIME format.
 
-With this patch, the variable is not converted before the check,
-but only when it's used in dd.
+--===============0158138768365275531==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=gaQuA429SJy2e9=-="
 
-No conversion is done for use in hexdump, as this can deal with
-hex value offsets.
+This is a multipart message in MIME format.
 
-Fixes: b133e466b08e ("treewide: convert WiFi caldata size and offset to hexadecimal")
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- .../ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom   | 4 ++--
- .../lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom  | 4 ++--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+--=-=gaQuA429SJy2e9=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index f07dbf83c4..da3e3bea77 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -60,7 +60,7 @@ xor() {
- ath9k_patch_fw_mac() {
- 	local mac=$1
- 	local mac_offset=$(($2))
--	local chksum_offset=$(($3))
-+	local chksum_offset=$3
- 	local xor_mac
- 	local xor_fw_mac
- 	local xor_fw_chksum
-@@ -78,7 +78,7 @@ ath9k_patch_fw_mac() {
- 		xor_fw_chksum=$(xor $xor_fw_chksum $xor_fw_mac $xor_mac)
- 
- 		printf "%b" "\x${xor_fw_chksum:0:2}\x${xor_fw_chksum:2:2}" | \
--			dd of=/lib/firmware/$FIRMWARE conv=notrunc bs=1 seek=$chksum_offset count=2
-+			dd of=/lib/firmware/$FIRMWARE conv=notrunc bs=1 seek=$(($chksum_offset)) count=2
- 	}
- 
- 	macaddr_2bin $mac | dd of=/lib/firmware/$FIRMWARE conv=notrunc oflag=seek_bytes bs=6 seek=$mac_offset count=1
-diff --git a/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom b/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom
-index 82f6885221..6f133c82a7 100644
---- a/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom
-+++ b/target/linux/lantiq/base-files/etc/hotplug.d/firmware/12-ath9k-eeprom
-@@ -103,7 +103,7 @@ ath9k_patch_fw_mac_crc() {
- ath9k_patch_fw_mac() {
- 	local mac=$1
- 	local mac_offset=$(($2))
--	local chksum_offset=$(($3))
-+	local chksum_offset=$3
- 	local xor_mac
- 	local xor_fw_mac
- 	local xor_fw_chksum
-@@ -121,7 +121,7 @@ ath9k_patch_fw_mac() {
- 		xor_fw_chksum=$(xor $xor_fw_chksum $xor_fw_mac $xor_mac)
- 
- 		printf "%b" "\x${xor_fw_chksum:0:2}\x${xor_fw_chksum:2:2}" | \
--			dd of=/lib/firmware/$FIRMWARE conv=notrunc bs=1 seek=$chksum_offset count=2
-+			dd of=/lib/firmware/$FIRMWARE conv=notrunc bs=1 seek=$(($chksum_offset)) count=2
- 	}
- 
- 	macaddr_2bin $mac | dd of=/lib/firmware/$FIRMWARE conv=notrunc bs=1 seek=$mac_offset count=6
--- 
-2.20.1
+Hi,
 
+I've encountered the following issue, for which I would like a second opini=
+on.
+
+In ath79's 10-ath9k-eeprom, in addition to patching the firmware MAC addres=
+s, some devices also need a checksum adjustment:
+https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/base-file=
+s/etc/hotplug.d/firmware/10-ath9k-eeprom#L60
+
+For this purpose, the function ath9k_patch_fw_mac_crc is used (below ath9k_=
+patch_fw_mac), where the chksum_offset is calculated by subtracting 10 from=
+ the mac_offset.
+(For ath10k chksum_offset value is hardcoded to 2).
+
+However, in ath79's 10-ath9k-eeprom, some devices call this function with a=
+ mac_offset of 0x2, e.g.
+
+dlink,dir-825-c1|\
+dlink,dir-835-a1)
+	ath9k_eeprom_extract "art" 0x1000 0x440
+	ath9k_patch_fw_mac_crc $(mtd_get_mac_text "mac" 0x4) 0x2
+
+This would result in a negative chksum_offset.
+
+To me this looks like a misuse of ath9k_patch_fw_mac_crc where ath9k_patch_=
+fw_mac should have been used.
+Or does anyone see a reason for this?
+(I've added the device support authors in Cc)
+
+If not, I would send the following fixes:
+- Change ath9k_patch_fw_mac_crc to ath9k_patch_fw_mac for the relevant cases
+- Add a check for negative values of chksum_offset and display a warning
+
+List of affected devices:
+dlink,dir-825-c1
+dlink,dir-835-a1
+wd,mynet-wifi-rangeextender
+
+Best
+
+Adrian
+
+--=-=gaQuA429SJy2e9=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2CIHgACgkQoNyKO7qx
+AnDCLg//X0QCGkQAL8UZhC9Dd/q2giDDQC2r5QnmPWQS1n/1ErmNhKTgsxlQEAqX
+cbxfEt5ox0WqwZ5kJ4efK11YqFwcWNMBtdulIeRf4h1tXCdziapDXcXd3FI5QxzH
+ipQomBd9cZoA9RHuh7IL5vUK2JA6p2eOVDnK6GHGYqA5iPOI3doDXY3OVR1AI+5g
+wKo53AJYdV57Fy6rRfXCzQZTqDvWzsoq3iC2AwQhqBBGyK3/WgZTVT6fztI6I3Zr
+oBa9QuWwM0JZRL9xLdospY5gLtPYV0ZwhPll8DEH+8EAsKGXw+mcz8gFfcSJtPe+
+/b5h88tfb30OfA5fIQqQzC9xMgOTv27u5b848wSxZvAsLTj1kJttoR7Bz6HjwnAG
+xgDa6+egC+pcj7Xxh20T71cBL8pc04XYSBgUeEL/hkJVJzBQsK0AzqXZRjFT6zoO
+Qo7PHbSKVlw8H2byKlIBNzNlLIG4plnIx6CqZ4wFJ4BURDrx+CO3FfxIgS1NZPeJ
+Hnv9QcfVx7kpXUxme9oa16PBudXubM9v3DzsLdgw+nBgFSXMtkW6NkhaV1KipM+I
+SIJXmC4LCbMwz+WYhIJi3ukkLJzxA8M8asDNPaI/lnHbmUqzyFB5AF7XDMb8Mlmt
+yGm3cjJKjA+cQOGGFROamSYBEQp+1KRQcgeDxoUi9k7MQMbE+eI=
+=x4im
+-----END PGP SIGNATURE-----
+
+
+--=-=gaQuA429SJy2e9=-=--
+
+
+
+--===============0158138768365275531==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0158138768365275531==--
+
+

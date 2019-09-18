@@ -2,77 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61796B6BD5
-	for <lists+openwrt-devel@lfdr.de>; Wed, 18 Sep 2019 21:14:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59ED3B6C49
+	for <lists+openwrt-devel@lfdr.de>; Wed, 18 Sep 2019 21:22:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pQusegxOz5BhmGGs6KkPkC/CLQT1lBEssClZIbru+sE=; b=p3rQA/ekVFdUh0
-	UVRPFjS+U+s6Mht1d4SlDx4hW+tmMt6pd/h+kDDUgmEqhHpWPHobqiP9huyeqdA+f8sDoM/7i8mNK
-	n+K44YlVEOsdEi4/Pz2KnSNh9DHoaQLas2HKZewrteuGc9TTuQF9i2M/jtPn3/+x+v8yN5fWxrm5m
-	ydgisehA+TLBjeuEmndZVxHuTLkma+lIX2trMevVVd/LkStxQ2MzyxYJyRTKTOW/cJGDRaWi8INFZ
-	nvviHyEdpLr6DOMRCNRxuRdFfW6d8X6WpT5Sb4obC/MtMt/nQKKdo/HVa6lCYbHdSfyCY2ZEtrXVu
-	txcgYXaP1dhW2L1B7PSQ==;
+	List-Owner; bh=RJNvQOkjn8ypLwv0dxkrYpTC1rSrJyOqonx5kG6xbX8=; b=sDvzqEvjwsxfhA
+	Apqzt7VHNLdS3YWN+XsEYnMrhM2pJAVrSt7t4Hl41DokhDWKzSh3oNlnVXbk/3tEQd20kgOGHGp8I
+	m9SIyxHeYU9cbalxqx//cAVXGe9CenyH9IKIvI38CMP+jahTlYOPEhXiOjYNyTKYhv2hJXNpGdKQh
+	4bU+8dppPIY4cTLJBZnukAbTa/eCkUEceTZBn104wKttoItPxgc5t83APdRQQAuXg07xB2S3Ngp5R
+	pc9XnKwjIv5MjsZDRdbWjTbksVHjbnL9/UJfaX6x2D33++7oZadGBdIaLoDM+MenMH/5ybk+Vclpz
+	id/QnHvH5r0Z/QahnmBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAfPL-00046C-Ez; Wed, 18 Sep 2019 19:14:31 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iAfX3-0007PD-Kd; Wed, 18 Sep 2019 19:22:29 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAfPD-00045m-NJ
- for openwrt-devel@lists.openwrt.org; Wed, 18 Sep 2019 19:14:25 +0000
-Received: by mail-wr1-x442.google.com with SMTP id i18so526527wru.11
- for <openwrt-devel@lists.openwrt.org>; Wed, 18 Sep 2019 12:14:21 -0700 (PDT)
+ id 1iAfWv-0007Oq-AX
+ for openwrt-devel@lists.openwrt.org; Wed, 18 Sep 2019 19:22:23 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n14so560385wrw.9
+ for <openwrt-devel@lists.openwrt.org>; Wed, 18 Sep 2019 12:22:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=468DrJOqkTvpNefnHclmeORggP7XwGRjJL4LODFn5xE=;
- b=PVqZrmjYgx43RcaCaHpXMTUE7axRe/LleMnWbK3Ax9GbvVIfCS9S2zDz9D2duFqOhF
- hJHgtK7lYZ48JIEzRI+KKYVHNRxC9LT2tu+rhaTNA5esopnWfD14UGLbe0lCgl1Xi1eK
- KCfqxFeWz2ARoF8RPaqP/xfCYLcdfuJGPHB+z+MMU5YKz/gtVyZI2a+dB5XuREY3y2/S
- TvqXoRotjoLagzG3FW7uekX/iDtmJn3rEPUfucoA+3uUVlkv25z9O25BFMLl1q0NfvGj
- mcI82xNC0pRe0kVuiGb9dM9mQ8PuM6aNx5hgenjAaVzl1/pnOZTzx+1t27jL0T2041O7
- SkTA==
+ bh=ZhGFMwk4ob4e4FtnySocRgsvhFgDDGhao2trjYL61QE=;
+ b=cXpAg/Y2WTVSdvBjuRuj/SCpbOL1DsYj4tLXZ1oEzE5c3s4PjFzjFcWbw5t1bAGBWP
+ CSTsUiICefX0Ayi+BJ5Lno3wjoXuwxAfcJhKyAgPWy2sHVuQmMpupP3D4yqFFV41bC8k
+ le1y89M7j3TuQonU6HH+SC8onJ5HXO67i5cPahU/zNeijQjdfXA02caCOPNsrcDO3PF6
+ Qi05eKs0d0fsx/+acemEiaiT7vMB+H0fh7wmyAQeesuAcK5LqI1a5pQzcVC6q/4KvEmN
+ 7utcY+BtmHuysNpWKBzyuaHXADaZXgrbd+NK7+bitpnpa5JRKwGSlopGQQ3DXbV2uBl6
+ SnOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=468DrJOqkTvpNefnHclmeORggP7XwGRjJL4LODFn5xE=;
- b=Uq7Hl14v/fSjBazns3dHab9Tc4EuShKFYygmGmjgIYNurgzwW2/nFAc29TH2o4nAGk
- xD7U0BuhLVMdpPMaCllyyn/vd5UZ1qWdJeuUW/GTCBaV2vO57vMLycFeYw1KQrsya0nT
- epsLnPfjugAdZx5SZpr+ZmFXvKpgl5xXCldFYp2D1dBS5nqHXzSWOgyv+60we5BJg+Xe
- cpzireMW74ZqwoLB2ZLjvPoFtt44CpBjT08VMCYAm0VLSIsVQT7LvHYQ6VdVTgq/tYJi
- fujwZsfVe6OKtjg4Q4w3dj4fisUwDj+QKx/AW0HWuvGJbxKHm5wgD29GpFNGxhdPy3wb
- KavA==
-X-Gm-Message-State: APjAAAUmunBHIjAT7H0SsTiKzmNtdcMHyz6qYLnSFWgDo07V0x7WHcDb
- 3GiA1dbAkMwAnaoSmkGo9CE1gwBo
-X-Google-Smtp-Source: APXvYqyWLRNVT8P2VHwPwFOak2SjiYJTJPmtotvzioTb2U2weZC3TwibzumV98U68xAv1XX0i/QI5g==
-X-Received: by 2002:adf:f151:: with SMTP id y17mr4141847wro.244.1568834060212; 
- Wed, 18 Sep 2019 12:14:20 -0700 (PDT)
+ bh=ZhGFMwk4ob4e4FtnySocRgsvhFgDDGhao2trjYL61QE=;
+ b=VaTYXCLJ9mkPKho2cn/QBwj62Y8kCGPozJZePnABpdsE1r8RC5qQqVBCVJ+i21jyPj
+ zvLKFgsLNWpDBx57+L2kSly9WLDI5bxDYkXiLhhVhenyModxlU4IMNqHi553DfZXkmxX
+ MZRORvP7VdqjQR4nwXT+1RX4Zvz9VCrpYjBbOojB9u0GWXhLDYqScWhpTiLKTPjmXeFf
+ 28jNKJe5/k1HhvhmMCsl2aI0LfgliHFtpMJWfInFR8zqUYZQ0ilUmRry+abv5lDh1f5X
+ NeudIrwQ7dtpoPycj762NpRqlEv+74dRnX3/xP5M+t5svgAH4K9+n8m6YtC6ZAKV+CEw
+ tbJg==
+X-Gm-Message-State: APjAAAXsemXJzmPx8wBVU7+lhOV1DBYV/OCGNH5yrqqPeLUlV5pBLzX1
+ p2iFJi3pZ8tHLxJDL4xcvLhdVkQK
+X-Google-Smtp-Source: APXvYqz1OqWvYihgEDt+JyTte6Q2Q7Yu28SEP3QzkAD769D/iddlYPhaloOu5d7CNM8G21tLjJjFgA==
+X-Received: by 2002:adf:9d87:: with SMTP id p7mr220087wre.245.1568834538228;
+ Wed, 18 Sep 2019 12:22:18 -0700 (PDT)
 Received: from localhost.localdomain (232.90-149-217.nextgentel.com.
  [90.149.217.232])
- by smtp.gmail.com with ESMTPSA id g73sm4809822wme.10.2019.09.18.12.14.19
+ by smtp.gmail.com with ESMTPSA id 26sm3592094wmf.20.2019.09.18.12.22.17
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 12:14:19 -0700 (PDT)
+ Wed, 18 Sep 2019 12:22:17 -0700 (PDT)
 From: Magnus Kroken <mkroken@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 18 Sep 2019 21:14:18 +0200
-Message-Id: <20190918191418.22707-1-mkroken@gmail.com>
+Date: Wed, 18 Sep 2019 21:22:16 +0200
+Message-Id: <20190918192216.23117-1-mkroken@gmail.com>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_121423_790747_1259CB93 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20190918_122221_369274_B52BCB57 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -85,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH] mbedtls: update to 2.16.3
+Subject: [OpenWrt-Devel] [PATCH 19.07] mbedtls: update to 2.16.3
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,8 +107,6 @@ the issue has been fixed upstream.
 
 Signed-off-by: Magnus Kroken <mkroken@gmail.com>
 ---
-Runtime-tested on: ath79
-
  package/libs/mbedtls/Makefile                 |  4 +-
  package/libs/mbedtls/patches/200-config.patch | 46 +++++++++----------
  ...optimized-MULADDC-code-only-on-ARM-6.patch | 27 -----------

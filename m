@@ -2,79 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6EF8B701D
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 02:32:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44A19B717E
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 04:18:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2PK5LQwXtoV/ORfJiGu9MriP0VOdU/yUsUzoG/N9AVM=; b=eYk1URmgPc2xHnjqoLHZREagx
-	SJGi66NH8AIA2yUySk0vIsWvLEODk8DhGqwM22k4pqHmkwQtsr8jAww3K3mJhOZK/IA7zGFJSpag+
-	xTQHSVSFpJAstdqC5Xj4OtVtL20YoK1a3Hgs/muUhJBehz5cmCXT36CPFmyg81i3w0AyIxDMojcKr
-	C2VXldAfNtMj+YYghj/hqgC2VpJ2/GWxivQVa6PcKgz5Sj9MAlhhgTVgTwtACrVyzHpop3YrkBSai
-	Yj35/sdI+kBQ17UMazC/6qwE4LfQq3suHxlcsXQSe19hCAFxev0Ox9C2T0v4it2LrlfhXOFrL8gcQ
-	GFi1aBA0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6KtnttlTsOzt5jl30Ku8hGoySx4VXiE2Joslmy7Dv28=; b=gyZXnuBHbd3Wuv
+	/k77CABGnzLuWUcE72uJTcdK+vVran3TSHKuSA2oDr8ssjzkm39eho92Zp/StXGGAPQ1K0dC6byeg
+	DKatYAszPskdED1M2+kOl/TiLnU1XU/lafaXBnx2tSJ1TygcxcC4cdcMYGW9bx0LgQ+rta8O2DY6y
+	peh+K+Xzky8zcO/gwAs4z9lmNbqClRoUldgK2KGcIb10VNVxRav2CR5DaU9DuSePQWrIgcRKFwsIt
+	TqWxm2l4Muf0Y9DgfzGC0JxN4mSbXhfjT24dtUsXz29TpUfYnqun5Zb+zOxvM90Li2UjyzU/jHbAp
+	xhrYDIoxBdUpvNrHoSvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAkN6-0005Zn-T2; Thu, 19 Sep 2019 00:32:33 +0000
-Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
+	id 1iAm1l-00081o-OS; Thu, 19 Sep 2019 02:18:37 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAkMp-0005ZM-Pm
- for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 00:32:17 +0000
-Received: by mail-pg1-x52e.google.com with SMTP id a3so789586pgm.13
- for <openwrt-devel@lists.openwrt.org>; Wed, 18 Sep 2019 17:32:14 -0700 (PDT)
+ id 1iAm1N-00080x-2O
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 02:18:14 +0000
+Received: by mail-qk1-x741.google.com with SMTP id f16so1684298qkl.9
+ for <openwrt-devel@lists.openwrt.org>; Wed, 18 Sep 2019 19:18:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=S50YAsT/UtDv9W3oK9QufLWUvb82nXrszIJkwIGn+M8=;
- b=nEm5x+zznYAgH9RIYg13y3QxbBglNoX/kH4aRJ9a73sIjvukIoPLmXPL8eNdbt4BzB
- cd9wgzVwSa6F84YV7MAw2KK3HaWNhPr0q25pIc8VUkjk5Y0T148F84XI/uQRLRV0hn6O
- tT72FTz31OSFJ+mGrmvlSebyYAgCIF2xu2z9ji95BCA/+rFM8Xr4RqbT0xJsyE4BlOuB
- cPUFC79GUbu/qDRtzJaxdaW6WknSQO1f6M38X9fM9HMCtndI6dsULAzq/83U9FY6S1U+
- Z36Nrp8ibmJdmTZxkhe4+bLKMRX2IGNoflL0cIkZhJ3NaagvM8+7YUThmzOhkbD+Mt7y
- vTFQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=W/xOrVz6uK7w4LieyyIjZI+A/A4RymSR0/IQ+I+sQsg=;
+ b=s9GSaK/YZ/CBTLUoCJbxYmqSM/6M8EdVCqNflYvn4JBdzdXwuZ1ChPwW9/6FipSGt/
+ 6TCgY4H4wufA+DqwfbzaKNSGvPuBmfpM3+D3YsFx932PQQPWOG1Lk+a8lCzictuSYmvw
+ WpM+hMcI0rXmdPIG5fX32w/JYwSEskqWLa8/acLeIR1iO/0DWGPobpX9rWorAUZe18lh
+ bo+C2XoaRcHi4u3z0CQ+Za+eI63XaMvwoIimt0yM4JCHU1CRmeZCFvxDMz534F/Vpjn6
+ OC0tMQRJdCurP96oYYRRdIC0Fi2Cip/0bPWmR2VtaGM45BGag8zPkYra7GmUsBv2ylX0
+ rh2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=S50YAsT/UtDv9W3oK9QufLWUvb82nXrszIJkwIGn+M8=;
- b=YweE8F4OCTlo7a6VNRIgXlAJUQ9rHM6STbRnzPjm0JEfZCwrGmScU5gZD3y6EbuGYZ
- RKk4zlSZd7f05ATo/Y9Kxw2LWdx6kF88D64/9bl/9GVXb+lOuYPbB6+M9UW+XGzb7alV
- /wy81yJu2kp87SXGmzNnfWtolnB+TIVgJ6t7sg/G6ANps99SI5ATwESRJYbMxsDv70fT
- kUaSfTKuRiI+HsufRnErhoyhUtNS4tFqhNfH3Ryd46RnpZf9J7rqHQ+RjIXn7VGluRZ8
- sAoVz8wgk/zWfJvcCaOK9RE9N1TmoM6PDsXlmHLGOqVc+IsDEI6V+8mukA66039mXoXC
- CUbQ==
-X-Gm-Message-State: APjAAAUaVPikSAkI3aP/nBhu4jP7YpITcWfKf1jlpapnczW3I2ZjVW1W
- b2bTCfLHSlUDpL0rKxdWa2rPsL/n6wAwzZE2hD40nB4K
-X-Google-Smtp-Source: APXvYqwZ+4Jq44LltGCTOc28RYqgJD5gugUITyIDE6NEdNT/4qybV4nc2fJ0A+R/CIOomRNykBD4FedIZrSLgSxwBGA=
-X-Received: by 2002:a65:6802:: with SMTP id l2mr6463689pgt.33.1568853133968;
- Wed, 18 Sep 2019 17:32:13 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=W/xOrVz6uK7w4LieyyIjZI+A/A4RymSR0/IQ+I+sQsg=;
+ b=Hs9fMJhncZnw46fTaQWz3GWzbohIEObypFj6jgHBckREHtVsT8488Doyj9uQRE+zaI
+ EYdCtPgvhKfQa9UReluj47p0WyvtjyVOhE1xU2M5N5V4ZgV8ZvySVPnpf5K06mKfPHq7
+ iHsfp3Dvmzhv5XkcvWhYgBA2KmGdilIbw2aOXhl8tsHiWieUkI+72NdLEDfKzXPx2j2w
+ S8kcwfGU4iu+4d2SRctt42CUKCN+5KIAmBN41dr0duxVyQVx8IEVaC7ZIgiscfMTpTU4
+ T9nB7fLI1mkLnKx0rMJwICzSa73DBpxJWBIzHXjLeXEhjY2MQtHPJBHWzRfgd9yeUdfc
+ I25w==
+X-Gm-Message-State: APjAAAVbTZc33TICTHKiYoao20Y6ckqwGZjjDsRsjWXJrxtgaEg+yOWJ
+ 4l/Gkk4+V/nX34x//f+p5IK8dJfU
+X-Google-Smtp-Source: APXvYqysSo/YuDSEOaVC8cfDiZXABh/Jdg3XXLuHv17nC/Ldo3au8zRDxQU/ifBNQvfzKgSN0eMpzA==
+X-Received: by 2002:a37:6250:: with SMTP id w77mr559093qkb.153.1568859491281; 
+ Wed, 18 Sep 2019 19:18:11 -0700 (PDT)
+Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
+ [2804:688:21:4::2])
+ by smtp.gmail.com with ESMTPSA id i30sm3984496qte.27.2019.09.18.19.18.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Sep 2019 19:18:10 -0700 (PDT)
+From: Eneas U de Queiroz <cotequeiroz@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 18 Sep 2019 23:18:00 -0300
+Message-Id: <20190919021803.31271-1-cotequeiroz@gmail.com>
+X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190912195558.11513-1-cotequeiroz@gmail.com>
+References: <20190912195558.11513-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
-References: <sdwalker/sdwalker.github.io/push/refs/heads/master/fced31-4b1ac0@github.com>
- <310e24f5-e674-f48a-0231-4a20a158ae6b@nic.cz>
-In-Reply-To: <310e24f5-e674-f48a-0231-4a20a158ae6b@nic.cz>
-From: Stephen Walker <stephendwalker@gmail.com>
-Date: Wed, 18 Sep 2019 20:32:01 -0400
-Message-ID: <CAH7PtXxmSjwZ6Cda-9RrOiRZ=EmnmUabZhgp+HwmGPKRCrLEQA@mail.gmail.com>
-To: Jan Pavlinec <jan.pavlinec@nic.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_173215_864697_35B1C1BA 
-X-CRM114-Status: UNSURE (   7.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20190918_191813_110528_4CEB00F8 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:52e listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (stephendwalker[at]gmail.com)
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ provider (cotequeiroz[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -82,9 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 1.0 FREEMAIL_REPLY         From and body contain different freemails
-Subject: Re: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 4b1ac0: This
- week's update
+Subject: [OpenWrt-Devel] [PATCH ustream-ssl v2 0/3] wolfssl updates
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,122 +98,72 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============4853462500704712360=="
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4853462500704712360==
-Content-Type: multipart/alternative; boundary="000000000000c149b00592dd150d"
+ustream-ssl does not currently work with client apps.  They fail to
+connect immediately.  uclient-fetch, for example, just show a
+'Connection failed' message.  This was due to a change in the SSL
+session struct.
 
---000000000000c149b00592dd150d
-Content-Type: text/plain; charset="UTF-8"
+While making small changes to my first attempt, I realized my testing
+was not completely flawed.
 
-No, they've always just been sitting in a local source tree. Do you have
-any specific packages in mind? I just created watch files for the
-measurement-kit, python-cachetools, python-cryptodomex, python-pyrsistent,
-tessdata and tesseract packages.
+Because of that, I failed to realize that while the struct change
+happened in in v3.13.2, but the API to change it at the SSL struct was
+only created in v4.1.0.
 
-On Wed, Sep 18, 2019 at 7:31 AM Jan Pavlinec <jan.pavlinec@nic.cz> wrote:
+Keeping some of the calls using CyaSSL, but then having to add new
+calls, only available as wolfSSL would become messy.  So, I started
+by cleaning up the code, removing old CyaSSL remnants.
 
-> Hi,
->
-> is there any source of watch files for uscan where I can push missing
-> package watch files?
->
-> J.P.
->
-> Dne 16. 09. 19 v 0:03 Stephen Walker napsal(a):
-> >   Branch: refs/heads/master
-> >   Home:   https://github.com/sdwalker/sdwalker.github.io
-> >   Commit: 4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102
-> >
-> https://github.com/sdwalker/sdwalker.github.io/commit/4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102
-> >   Author: Stephen Walker <stephendwalker+github@gmail.com>
-> >   Date:   2019-09-15 (Sun, 15 Sep 2019)
-> >
-> >   Changed paths:
-> >     M uscan/index-18.06.html
-> >     M uscan/index.html
-> >
-> >   Log Message:
-> >   -----------
-> >   This week's update
-> >
-> >
-> >
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
+After fixing that, uclient-fetch failed to run unless
+--no-check-certificate is used, which is not ideal.  So I added the
+calls to perform CN validation. r
 
---000000000000c149b00592dd150d
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Note that even wolfssl has a X509_check_host function, which could
+be used for openssl and wolfssl, they are  not 100% compatible, and its
+definition is not really consistent from version to version.
 
-<div dir=3D"ltr"><div>No, they&#39;ve always just been sitting in a local s=
-ource tree. Do you have any specific packages in mind? I just created watch=
- files for the measurement-kit, python-cachetools, python-cryptodomex, pyth=
-on-pyrsistent, tessdata and tesseract packages.</div><br><div class=3D"gmai=
-l_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Sep 18, 2019 at 7:31=
- AM Jan Pavlinec &lt;<a href=3D"mailto:jan.pavlinec@nic.cz">jan.pavlinec@ni=
-c.cz</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"mar=
-gin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1=
-ex">Hi,<br>
-<br>
-is there any source of watch files for uscan where I can push missing<br>
-package watch files?<br>
-<br>
-J.P.<br>
-<br>
-Dne 16. 09. 19 v 0:03 Stephen Walker napsal(a):<br>
-&gt;=C2=A0 =C2=A0Branch: refs/heads/master<br>
-&gt;=C2=A0 =C2=A0Home:=C2=A0 =C2=A0<a href=3D"https://github.com/sdwalker/s=
-dwalker.github.io" rel=3D"noreferrer" target=3D"_blank">https://github.com/=
-sdwalker/sdwalker.github.io</a><br>
-&gt;=C2=A0 =C2=A0Commit: 4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0<a href=3D"https://github.com/sdwalker/sdwal=
-ker.github.io/commit/4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102" rel=3D"noref=
-errer" target=3D"_blank">https://github.com/sdwalker/sdwalker.github.io/com=
-mit/4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102</a><br>
-&gt;=C2=A0 =C2=A0Author: Stephen Walker &lt;<a href=3D"mailto:stephendwalke=
-r%2Bgithub@gmail.com" target=3D"_blank">stephendwalker+github@gmail.com</a>=
-&gt;<br>
-&gt;=C2=A0 =C2=A0Date:=C2=A0 =C2=A02019-09-15 (Sun, 15 Sep 2019)<br>
-&gt;<br>
-&gt;=C2=A0 =C2=A0Changed paths:<br>
-&gt;=C2=A0 =C2=A0 =C2=A0M uscan/index-18.06.html<br>
-&gt;=C2=A0 =C2=A0 =C2=A0M uscan/index.html<br>
-&gt;<br>
-&gt;=C2=A0 =C2=A0Log Message:<br>
-&gt;=C2=A0 =C2=A0-----------<br>
-&gt;=C2=A0 =C2=A0This week&#39;s update<br>
-&gt;<br>
-&gt;<br>
-&gt;<br>
-&gt; _______________________________________________<br>
-&gt; openwrt-devel mailing list<br>
-&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">o=
-penwrt-devel@lists.openwrt.org</a><br>
-&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
-el=3D"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listi=
-nfo/openwrt-devel</a><br>
-</blockquote></div></div>
+X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS is not defined, and even though
+wolfSSL_X509_check_host apparently only exists to implement the openssl
+function, they are not both enabled by --enable-opensslextra.
+The wolfSSL function is, but the openssl isn't.  So I'm using the
+wolfssl call.
 
---000000000000c149b00592dd150d--
+As for testing, I run-tested each commit with wolfssl versions 3.10.4,
+3.12.2, 3.15.3, and 4.1.0.  Since the fist commit does not fix
+client-mode, I tested it using the example client/server apps (using a
+client built with a different version).  Version 3.15.3 did not work
+with the server app, so I checked the current HEAD, and it does not work
+either, so it is not somehting I introduced.  It works after the next
+fix is applied.
 
+Everything works as expected from the next commit on.
 
---===============4853462500704712360==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Eneas
+
+--
+
+Eneas U de Queiroz (3):
+  Remove CyaSSL, WolfSSL < 3.10.4 support
+  ustream-io-cyassl.c: fix client-mode connections
+  wolfssl: enable CN validation
+
+ CMakeLists.txt                              | 25 +++++++----
+ ustream-internal.h                          |  3 --
+ ustream-io-cyassl.c => ustream-io-wolfssl.c | 47 +++++----------------
+ ustream-openssl.c                           | 14 +++---
+ ustream-openssl.h                           |  4 ++
+ ustream-ssl.c                               |  3 ++
+ 6 files changed, 43 insertions(+), 53 deletions(-)
+ rename ustream-io-cyassl.c => ustream-io-wolfssl.c (62%)
+
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4853462500704712360==--
-

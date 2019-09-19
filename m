@@ -2,70 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FF8DB7A3C
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 15:14:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78C5BB80BE
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 20:24:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SGQeZRD5fHeyOA+g+HyUVWzKWEY0l0lqldr3qxEeayo=; b=YtmRBmJhF8CrxG
-	3MsEdJ+Ls3i+c1Q4I8CcYZLowntqeV3XsQXAGtlsrnUDS19hUdQISp3DiDw4GN8WoVPxjpgshOUZB
-	rT0TWQA+s290iKnD7w1mXQ+gji/l6vpffcXJbM2YSiW0pjexxumNLLFTCMTA9cVU8ebJKsg3T6/xA
-	AlvhdBSaML0ogudcuP3T6G42Cox0CKPDaLCNAVooSGWhkCHpgZ4gjJrEEmEEgZ/XqU9DcHEcHJCVc
-	TeAg37L1CEqWL/NhK4N1i9Mpk1/I46rMDg2WOM23oVM9/6r5ecmiMwXwEL6VOrDuLvyQwPPEM5FES
-	KJ/5GPSshqrgv65IbKbw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:References:To:In-Reply-To:Date:Mime-Version:Message-Id:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NBpPHQHkKlY0uwlOLmu41Bi3FsVoaHGtM0Ces0VivpU=; b=jihde1HXKKAeS/qaUd8/RBQWx
+	L78HyQNcqIPF2d1cck5lHpGZIuf8Jvqi87LdNQeghant3AXM6YpgVlbdooDQF7XfeMi/WyOULSGb0
+	1DbiQ86hTEPxNAnGF9igvmxTIs/Z7st8iKO5f1yR7VU1LiAZ+udOP1zfyTC5Qyu2iAeS/RY5ytIPl
+	Xgk2CWZcFTi8Gn8JRAJPvXd5vN2EnZ/fVm6xfzf3hWyIH2Cyc2Yz0+LsrWUm2E5EaXNw/7j4jpYAk
+	pX0Imji7oNGgS8x0tJyS9n+aFGUI6UKdu97hHXQ0Ch6I3WPu5vNnwzLKbw38ypRHMFMN5tucLqipW
+	CDsAmMN/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAwFo-00017k-3o; Thu, 19 Sep 2019 13:13:48 +0000
-Received: from mail-qt1-x832.google.com ([2607:f8b0:4864:20::832])
+	id 1iB15s-0002BN-Tn; Thu, 19 Sep 2019 18:23:53 +0000
+Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAwFK-00016x-Qj
- for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 13:13:20 +0000
-Received: by mail-qt1-x832.google.com with SMTP id c3so4079634qtv.10
- for <openwrt-devel@lists.openwrt.org>; Thu, 19 Sep 2019 06:13:18 -0700 (PDT)
+ id 1iB111-0000Zm-HT
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 18:18:56 +0000
+Received: by mail-ed1-x531.google.com with SMTP id p10so4076788edq.1
+ for <openwrt-devel@lists.openwrt.org>; Thu, 19 Sep 2019 11:18:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=BFaLkpt7P/dho6rPFV4qzjLLkMuZY1IZLNnrCA0EviU=;
- b=ZseMkRIw5UC69SbRp6KU1g9QOFMG197nfdkXO+eraK89eO+UTmBJfdDqU9bmHqTCFl
- VpdqOhXD6MfQS0S/0Ou1ji2d+kmhHrMCh0VmgGOcUiyiLo3qBhFioXFzSSkV/2yBROPT
- JJgJyabeqG94Jt2ne2F7eREPZLtwnARgEdgOqyiOHnNvu5lZ+O8amBFo9LM/u85yS/do
- YyxCEP/qvzuyZerPclqJpv1BApe26e5SNRCI1wxF9lQ994s2LCaMDPFCCNtZnsTR+OGA
- iZ1IHMlkwbzKP/163aToIH1snyaKbV1+GxQa5PpH+dGwldk8//hsCpEgSz3xvJoaA8bP
- EuDg==
+ h=from:message-id:mime-version:subject:date:in-reply-to:cc:to
+ :references; bh=u3u3N811V4xb9XFocN3utCc4fyRtWC843PhHCqCdN+Y=;
+ b=W3HSBtvgtxXkFKldRezNyMfjj38uTyTUpLKSKmToiCT54eMmn1HLzutb+1VDBz7k1T
+ sc+tOHYsIyrh/bjLZ7Ne73uP8gndcOwk4arbvtYkfDof1ned7/u96IMEgTuF+ZRhviiY
+ QviIkB7fL71IRLQbmDzq/zJwyFbDByp1yRhu+48FGLnaUqHRKd53idzO2WIP9nUCQDjp
+ tAI7Q/FPHXC0ZT1D8176rrwzrr7P9I1+DbEKwo/wiAapf+6hynj1qdOeDFlmQ6U3ZvR0
+ JHj0ahTc6lSI3Vljqb4Wu6DZ2QM8PMbjAgh0c1bCrLatB934+V8ouPtg2jQosvzifq4R
+ h7Vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=BFaLkpt7P/dho6rPFV4qzjLLkMuZY1IZLNnrCA0EviU=;
- b=FPZ9660Q1Y/ptXGn8t6VanfVbE1LAf/iSVLi6QoiOB4pMbeILufWRlFk3wQaBoM+GM
- jol+j/eNWfh4Cwo2AjwgQMk+UQs9XIpjXDC2gzS6jgd0XMLJKsI7tsoLuikYjeTFpXV6
- bO39VP//I45O5IR5EzGwsQFfOJmy4smtpumdQ8Alh0+qVQ8CO4VHXw9XW/Vz5Fk7R8cV
- J15BFIAIJ4OtT0nIbI5XGjVpkxv2+BVWwBBGxvOH34QeNmUB6WHRgc2kjuwz1DsTADHI
- vdQijqdfqMx+lMOnL7IHEAOCK7fWEFGxxqyIu89FZk+suGrC7qAGYdgx0RGf5jEeBVVi
- Cf9g==
-X-Gm-Message-State: APjAAAUD5awfI9CgI84/TlrM0ta3FLhXS1kK+KSspj2Ed0/iVbx4RKVR
- /E9njIDH51pbMo5FLzSBimsoONHI
-X-Google-Smtp-Source: APXvYqzXklzyPRII8c71WPWdjhAjhCG2cCGsT6Iy5tnW/fobyDvE5bTAQ0wNOYHXyBbCcm6CvrJ9xg==
-X-Received: by 2002:a05:6214:2e4:: with SMTP id
- h4mr7584174qvu.127.1568898795107; 
- Thu, 19 Sep 2019 06:13:15 -0700 (PDT)
-Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
- [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id y17sm5000083qtb.82.2019.09.19.06.13.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Sep 2019 06:13:14 -0700 (PDT)
-From: Eneas U de Queiroz <cotequeiroz@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 19 Sep 2019 10:13:01 -0300
-Message-Id: <20190919131301.25065-1-cotequeiroz@gmail.com>
-X-Mailer: git-send-email 2.21.0
-MIME-Version: 1.0
+ h=x-gm-message-state:from:message-id:mime-version:subject:date
+ :in-reply-to:cc:to:references;
+ bh=u3u3N811V4xb9XFocN3utCc4fyRtWC843PhHCqCdN+Y=;
+ b=aLIDxNZIUt4JvbNEb2NxQEwQdT7Yj1zhOaNl3u7rdYhYRx/ItKEbLUpVqwBglgnvuf
+ /JWV4WerOgrND4ou50yN6uLHDoq1h93qygpkoPjSe+wbzpEPlpwY7Qwj6IpEaepIK/e6
+ BloOITiw4ghU3VyeOt9Bk4L/NUypesGawMoieI1zJtZYYxReq19GtDukxzV6Ey/HEnsc
+ sT4SOz4bZ3bt7wfEcDMmQLKTnYP0uoAmHy7G44XHFIdW1FSuRHDU2uMpzfCc4grTSfsY
+ uiF557H6nlZROIArKFUdLxTOP4ivUXhw/COWNkTGtYkDC0DnR9g7IXT6zdpfYxysa8lM
+ 7r9w==
+X-Gm-Message-State: APjAAAVa0qN+NApPbEMXANVCaLAGSG0SJC+IhBqSXDk71IGc3v8MCU/d
+ VWv7XJrG+113VzeDsh6D5ak=
+X-Google-Smtp-Source: APXvYqx18VUwq4ZzGfzozh1aB5Mu6sivSeXe2eXf6WreYxC3W1wcnwVZpw07MmhDmJ+SJQ96zrejRQ==
+X-Received: by 2002:a17:906:53da:: with SMTP id
+ p26mr4684781ejo.66.1568917128366; 
+ Thu, 19 Sep 2019 11:18:48 -0700 (PDT)
+Received: from aarau.fritz.box ([81.221.232.148])
+ by smtp.gmail.com with ESMTPSA id i7sm1756784edk.42.2019.09.19.11.18.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 19 Sep 2019 11:18:47 -0700 (PDT)
+From: =?utf-8?Q?Ivan_H=C3=B6rler?= <ivanhoerler@gmail.com>
+Message-Id: <7782BA0C-B382-4FD7-AF93-F1A593A03DE0@gmail.com>
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Date: Thu, 19 Sep 2019 20:18:46 +0200
+In-Reply-To: <28C6B2C7-E05E-4894-AA5C-6751E4FE75A9@gmail.com>
+To: blogic@openwrt.org
+References: <E13870CE-5B7E-4D77-A9AB-C566D6FCA7FF@gmail.com>
+ <20190915204615.GB1338@makrotopia.org>
+ <28C6B2C7-E05E-4894-AA5C-6751E4FE75A9@gmail.com>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_061318_887594_742E5875 
-X-CRM114-Status: UNSURE (   6.04  )
+X-CRM114-CacheID: sfid-20190919_111853_498392_822E2C42 
+X-CRM114-Status: UNSURE (   5.26  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,12 +75,13 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:832 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:531 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cotequeiroz[at]gmail.com)
+ provider (ivanhoerler[at]gmail.com)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,8 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH ustream-ssl] Update example certificate &
- key, fix typo
+Subject: Re: [OpenWrt-Devel] [ramips] Linkit Smart 7688
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,126 +101,175 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org, Daniel Golle <daniel@makrotopia.org>
+Content-Type: multipart/mixed; boundary="===============1049029989711037593=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The current crypto libraries will fail to load small RSA keys, so a new
-certificate was generated with a 2048-bit RSA key.
 
-Also fixed a typo in ustream-example-client.c
+--===============1049029989711037593==
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_19591B9B-8B33-451B-A23D-17B98E2736B0"
 
-Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
---
-This is the output of 'openssl x509 -noout -text -in example.crt', with
-the public key & signature binary blobs omitted:
-Certificate:
-    Data:
-        Version: 3 (0x2)
-        Serial Number:
-            15:bc:7e:f4:04:bd:f3:b4:79:e7:cb:57:d3:99:86:39:7c:d2:a8:df
-        Signature Algorithm: sha256WithRSAEncryption
-        Issuer: CN = foo@bar.com
-        Validity
-            Not Before: Sep 18 17:31:27 2019 GMT
-            Not After : Sep 19 17:31:27 2119 GMT
-        Subject: CN = foo@bar.com
-        Subject Public Key Info:
-            Public Key Algorithm: rsaEncryption
-                RSA Public-Key: (2048 bit)
-                Modulus: (omitted)
-                Exponent: 65537 (0x10001)
-    Signature Algorithm: sha256WithRSAEncryption
+--Apple-Mail=_19591B9B-8B33-451B-A23D-17B98E2736B0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
 
-diff --git a/example.crt b/example.crt
-index 9ac235f..815565f 100644
---- a/example.crt
-+++ b/example.crt
-@@ -1,9 +1,17 @@
- -----BEGIN CERTIFICATE-----
--MIIBHTCByKADAgECAgRo1CQZMA0GCSqGSIb3DQEBBQUAMBYxFDASBgNVBAMTC2Zv
--b0BiYXIuY29tMB4XDTEyMTAyMjIyNDg1NFoXDTc2MDgyMjE2MjAzOFowFjEUMBIG
--A1UEAxMLZm9vQGJhci5jb20wXDANBgkqhkiG9w0BAQEFAANLADBIAkEAqU6orvsW
--TP0Q/bV3m41+HSaSA5YhggSSx/w8OYR0/owDz2vhpUfVHKaRGpg+H+Q2M7uPVxms
--LyUQNTaA8mNxKwIDAQABMA0GCSqGSIb3DQEBBQUAA0EAKcXv7EsiNYV/5dakVvic
--Rg2Rme5PFK2jkLFOhm/jnhNfNiXcMHx5hhtmrLnTugqyAzIkV14r9n63xYErj59M
--lQ==
-+MIICujCCAaKgAwIBAgIUFbx+9AS987R558tX05mGOXzSqN8wDQYJKoZIhvcNAQEL
-+BQAwFjEUMBIGA1UEAwwLZm9vQGJhci5jb20wIBcNMTkwOTE4MTczMTI3WhgPMjEx
-+OTA5MTkxNzMxMjdaMBYxFDASBgNVBAMMC2Zvb0BiYXIuY29tMIIBIjANBgkqhkiG
-+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnvZT9GbaEiwcDFNl7cNSSvzK2cvQr1QmtpmF
-+VEMeLPwXRxnvEJNvRMFXGWCYhmKMakdOdgcqKM8c6j5TbphYtGAXQRXGV3y0+1wW
-+StTTaAkIIaarhZpmwgrT6agPYXUzXqhtOk8VmSwlUif/nQFYnOezgd9MR8Fo+Min
-+YZJPAMWs7yUzQzCgq0S2YguVPUQ/NiXeNzRpxrl42Gh5kotd2RlJ8Ue7oxPOZs4W
-+L7UH8hBZeRQj3CzWpI5fqOwmozl1LW8GUd91E4+YR+Hm043huhNjvwbA2asIduqd
-+wXHcVDvKQXwuSojwC9Uo4eN/dMNSZd7q4k0gu3QmgNJZIMbO7QIDAQABMA0GCSqG
-+SIb3DQEBCwUAA4IBAQAzNar5A+k6fHh3aGw3KB5/4jE7UxRAvTk9mp69/uc4V+qj
-+oWEtGqP4nPmfL4+nFwoJJ5hvSWzRFvXRr2AtURMV/1anQk41gcMb3G7lNDC+X/zf
-+t+xPx75O4heIALW84gdHZ7MY7guEFiLfprnX1l65uJeYvrKeG3cHY0YlDd2WFZGF
-+DLPK61P/wGfOL4U1oDQF2rb09Wwx3rV8IfyPYu6ZTS+u6P43kF/4w+EJHexKhNyX
-+Utym2sK05eMUWnraZouTeoRri2wvvjmIPZyldNsJ5HI6hU7fhT0B/BjJMrDXWRRS
-+w72acdYB9pcu+2ABAKIwn07keYntiE4TjG9vBYqJ
- -----END CERTIFICATE-----
-diff --git a/example.key b/example.key
-index da69d0c..e4b3ba7 100644
---- a/example.key
-+++ b/example.key
-@@ -1,9 +1,28 @@
-------BEGIN RSA PRIVATE KEY-----
--MIIBOQIBAAJBAKlOqK77Fkz9EP21d5uNfh0mkgOWIYIEksf8PDmEdP6MA89r4aVH
--1RymkRqYPh/kNjO7j1cZrC8lEDU2gPJjcSsCAwEAAQJAAiwxO/Wa5qgEtMzEWSmq
--qaMaEpO1oF6Ap7JT74UEn1OVOgnCZVdzUDu0vgWKc16vKfS+vIWU24A1VvHCqOyZ
--aQIhAPXuu2zAY1e1C0L8DWXl2BjPiz3Qr0nIMWsd4kE48WidAiEAsDztNFSnaRsy
--S3Zten+2uHCyZAMfYvxkUj96uUabomcCIAbAOebfVRrIPnnlP1zntUnhEJpuyxEE
--bM7a8CYIMSBFAiAcmrbxUHAfmh9uqhkY0dPJWdlKbEtS2J47zzvPCIvILwIgbtEL
--g29/1Fs/KyVa/sE9/oKpIBwux8UHQxg6epUKeuw=
-------END RSA PRIVATE KEY-----
-+-----BEGIN PRIVATE KEY-----
-+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCe9lP0ZtoSLBwM
-+U2Xtw1JK/MrZy9CvVCa2mYVUQx4s/BdHGe8Qk29EwVcZYJiGYoxqR052Byoozxzq
-+PlNumFi0YBdBFcZXfLT7XBZK1NNoCQghpquFmmbCCtPpqA9hdTNeqG06TxWZLCVS
-+J/+dAVic57OB30xHwWj4yKdhkk8AxazvJTNDMKCrRLZiC5U9RD82Jd43NGnGuXjY
-+aHmSi13ZGUnxR7ujE85mzhYvtQfyEFl5FCPcLNakjl+o7CajOXUtbwZR33UTj5hH
-+4ebTjeG6E2O/BsDZqwh26p3BcdxUO8pBfC5KiPAL1Sjh4390w1Jl3uriTSC7dCaA
-+0lkgxs7tAgMBAAECggEAFPk9VIbpiPJG9R1f2oIl7nzyKtBohWmd/gO9gsOkTJ0q
-+WRhD4bUCPlkgK9oB5eFE05T69jm1x1KkZwe4LGRvd8Uh7FV6KPrsSin5SwBPsG9Y
-+olACW4tmuX2CPlcNSHeVQo0IdGQQ3nfjqLZcVJPj5DfyCFW1E9aiCgk3hHkwcVJu
-+ZJIqYyHfnRzVsTZrZZjYoeYWg1+oNozW3nlzs0CWi9hRGq9I1fASm1LMRDITgFpW
-+8zXSrvKY4WALCaqCX1vFBfo/f3pmm0SIom4apTvyH+U+tHFmJofP0Y49cDc/ngHe
-+fbug/Od5ScfDTu111Fqb5NWz8ju6B7odhBj1RFvWIQKBgQDMzXOOZ969AjEyRsaH
-+1aG+MNEwU32fSHhiDr7vGTgeAf2Zn2b0/NLxxn5l7dF6t0bvo5hNCIa4q0YTuv62
-+grtssbOvKFGb+xdQufYH6gRMFjjGs83QYXoDpDNHjdscBjaTy9aEoo1wUQbYfAaF
-+4zZqLKQB0Crfaj28lwXqDaCMdQKBgQDGs0cnWX3NTwCpu+CF7czkeUZWgnRWq3Xk
-+oGHrcPAx4hiNU2+E2+5dR9ZvmU3f4DpSA8ObPMUtsfb1KfOYRq3se98tyB/6nnX5
-+IU5WPhpvL+CxxutLt1doMsjknuspbUT/hfTOjwLddCK/KWpRxO7OPwt1hZsCPmie
-+IZ7rUf/JmQKBgHhlgzxBRcj5Q/CZeNabuST0z9VID76WvOZwYsBuo/XIF8y6z6zQ
-+ADZQCThksVQh8FqqYrtOetyPG3g34stqWUJRyR78ZdV7q74yRDds1C/ilGgDhcet
-+tivz2I2FED0OTgFewHJimSFhENQtPSxyYSfTrGrAdKO4ciiu47QvZKWNAoGAKqld
-+UpaFSyp2Mvsypq66+icLshFKVz1zD4Zb38gc2ij4KofKftUVpZOB9+4LaVDkVK2Y
-+NuFiWIBITLUYJw6t0wN5lIPOUenp3HaJMj0dQdgevyy9YkFYE/grZ+KzDO74DIC/
-+YgYUkGWZ/D8xI6NLvp6MoEvyTxYFMkZ3r4CokakCgYBRma6oAv94NOyAPgqshY8d
-+vxouqB07N8Km6Helfi5cnuihBejS5q1MJ15IOHdJXTW1mKpTNDT4y5ARzEcBXKNV
-+3DmOQ4bKhOameOCyG3RCWLOdjXxy4siIfMFkVC29/vlr+O6qZq1sSh355Qzx62Kw
-+FC1yIKb5d4EfoAejMuKWAA==
-+-----END PRIVATE KEY-----
-diff --git a/ustream-example-client.c b/ustream-example-client.c
-index 6527362..4fc99f0 100644
---- a/ustream-example-client.c
-+++ b/ustream-example-client.c
-@@ -80,7 +80,7 @@ static void client_notify_state(struct ustream *us)
- 
- static void example_connect_ssl(int fd)
- {
--	fprintf(stderr, "Starting SSL negnotiation\n");
-+	fprintf(stderr, "Starting SSL negotiation\n");
- 
- 	ssl.notify_error = client_notify_error;
- 	ssl.notify_verify_error = client_notify_verify_error;
+Hi
+I have problems makeing libmraa working on Linkit Smart 7688.
+The installation worked without problems and i tested with a python =
+script. See details below:
+
+what i did:=20
+- Compiled a openWRT 18.6
+- opkg update=20
+- opkg install libmraa
+- opkg install python3-light
+- opkg install libmraa-python3
+
+- copied this skript to /root:=20
+
+import mraa
+import time
+
+try:
+    print (mraa.getVersion())
+except:
+    print("no mraa available")
+
+# Refer to the pin-out digram for the GPIO number to silk print mapping
+# in this example the number 44 maps to Wi-Fi LED.
+pin =3D mraa.Gpio(2)
+pin.dir(mraa.DIR_OUT)
+while True:
+    pin.write(1)
+    time.sleep(1)
+    pin.write(0)
+    time.sleep(1)
+
+- and executed:
+root@OpenWrt:~# python3 mraa-test-simple.py=20
+v2.0.0
+Traceback (most recent call last):
+  File "mraa-test-simple.py", line 11, in <module>
+    pin =3D mraa.Gpio(2)
+  File "/usr/lib/python3.7/site-packages/mraa.py", line 391, in __init__
+    _mraa.Gpio_swiginit(self, _mraa.new_Gpio(pin, owner, raw))
+ValueError: Invalid GPIO pin specified
+
+
+- checked with a LED on pin2 like this if GPIO2 works:
+root@OpenWrt:~# cd /sys/class/gpio/
+root@OpenWrt:/sys/class/gpio# ls
+export      gpiochip0   gpiochip32  gpiochip64  unexport
+root@OpenWrt:/sys/class/gpio# echo 2 > export
+root@OpenWrt:/sys/class/gpio# ls
+export      gpio2       gpiochip0   gpiochip32  gpiochip64  unexport
+root@OpenWrt:/sys/class/gpio# cd gpio2
+=
+root@OpenWrt:/sys/devices/platform/10000000.palmbus/10000600.gpio/gpiochip=
+0/gpio/gpio2# echo "out" > direction
+=
+root@OpenWrt:/sys/devices/platform/10000000.palmbus/10000600.gpio/gpiochip=
+0/gpio/gpio2# cat value
+0
+=
+root@OpenWrt:/sys/devices/platform/10000000.palmbus/10000600.gpio/gpiochip=
+0/gpio/gpio2# echo 1 > value
+
+- redone previous step with no changes in error output.
+
+what am i missing?
+
+Thanks for comments, Ivan H=C3=B6rler=
+
+--Apple-Mail=_19591B9B-8B33-451B-A23D-17B98E2736B0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;" =
+class=3D""><div>Hi</div><div>I have problems makeing libmraa working on =
+Linkit Smart 7688.</div><div>The installation worked without problems =
+and i tested with a python script. See details below:</div><div><br =
+class=3D""></div><div>what i did:&nbsp;</div><div>- Compiled a openWRT =
+18.6</div><div>- opkg update&nbsp;</div><div>- opkg install =
+libmraa</div><div>- opkg install python3-light</div><div>- opkg install =
+libmraa-python3</div><br class=3D""><div class=3D"">- copied this skript =
+to /root:&nbsp;</div><div class=3D""><br class=3D""></div><blockquote =
+style=3D"margin: 0 0 0 40px; border: none; padding: 0px;" class=3D""><div =
+class=3D""><div class=3D"">import mraa</div></div><div class=3D""><div =
+class=3D"">import time</div></div><div class=3D""><div class=3D""><br =
+class=3D""></div></div><div class=3D""><div =
+class=3D"">try:</div></div><div class=3D""><div class=3D"">&nbsp; &nbsp; =
+print (mraa.getVersion())</div></div><div class=3D""><div =
+class=3D"">except:</div></div><div class=3D""><div class=3D"">&nbsp; =
+&nbsp; print("no mraa available")</div></div><div class=3D""><div =
+class=3D""><br class=3D""></div></div><div class=3D""><div class=3D""># =
+Refer to the pin-out digram for the GPIO number to silk print =
+mapping</div></div><div class=3D""><div class=3D""># in this example the =
+number 44 maps to Wi-Fi LED.</div></div><div class=3D""><div =
+class=3D"">pin =3D mraa.Gpio(2)</div></div><div class=3D""><div =
+class=3D"">pin.dir(mraa.DIR_OUT)</div></div><div class=3D""><div =
+class=3D"">while True:</div></div><div class=3D""><div class=3D"">&nbsp; =
+&nbsp; pin.write(1)</div></div><div class=3D""><div class=3D"">&nbsp; =
+&nbsp; time.sleep(1)</div></div><div class=3D""><div class=3D"">&nbsp; =
+&nbsp; pin.write(0)</div></div><div class=3D""><div class=3D"">&nbsp; =
+&nbsp; time.sleep(1)</div></div></blockquote><div class=3D""><br =
+class=3D""></div><div class=3D"">- and executed:</div><blockquote =
+style=3D"margin: 0 0 0 40px; border: none; padding: 0px;" class=3D""><div =
+class=3D""><div class=3D"">root@OpenWrt:~# python3 =
+mraa-test-simple.py&nbsp;</div></div><div class=3D""><div =
+class=3D"">v2.0.0</div></div><div class=3D""><div class=3D"">Traceback =
+(most recent call last):</div></div><div class=3D""><div class=3D"">&nbsp;=
+ File "mraa-test-simple.py", line 11, in &lt;module&gt;</div></div><div =
+class=3D""><div class=3D"">&nbsp; &nbsp; pin =3D =
+mraa.Gpio(2)</div></div><div class=3D""><div class=3D"">&nbsp; File =
+"/usr/lib/python3.7/site-packages/mraa.py", line 391, in =
+__init__</div></div><div class=3D""><div class=3D"">&nbsp; &nbsp; =
+_mraa.Gpio_swiginit(self, _mraa.new_Gpio(pin, owner, =
+raw))</div></div><div class=3D""><div class=3D"">ValueError: Invalid =
+GPIO pin specified</div></div><div class=3D""><br =
+class=3D""></div></blockquote><br class=3D""><div class=3D"">- checked =
+with a LED on pin2 like this if GPIO2 works:</div><blockquote =
+style=3D"margin: 0 0 0 40px; border: none; padding: 0px;" class=3D""><div =
+class=3D""><div class=3D"">root@OpenWrt:~# cd /sys/class/gpio/</div><div =
+class=3D"">root@OpenWrt:/sys/class/gpio# ls</div><div class=3D"">export =
+&nbsp; &nbsp; &nbsp;gpiochip0 &nbsp; gpiochip32 &nbsp;gpiochip64 =
+&nbsp;unexport</div><div class=3D"">root@OpenWrt:/sys/class/gpio# echo 2 =
+&gt; export</div><div class=3D"">root@OpenWrt:/sys/class/gpio# =
+ls</div><div class=3D"">export &nbsp; &nbsp; &nbsp;gpio2 &nbsp; &nbsp; =
+&nbsp; gpiochip0 &nbsp; gpiochip32 &nbsp;gpiochip64 =
+&nbsp;unexport</div><div class=3D"">root@OpenWrt:/sys/class/gpio# cd =
+gpio2</div><div =
+class=3D"">root@OpenWrt:/sys/devices/platform/10000000.palmbus/10000600.gp=
+io/gpiochip0/gpio/gpio2# echo "out" &gt; direction</div><div =
+class=3D"">root@OpenWrt:/sys/devices/platform/10000000.palmbus/10000600.gp=
+io/gpiochip0/gpio/gpio2# cat value</div><div class=3D"">0</div><div =
+class=3D"">root@OpenWrt:/sys/devices/platform/10000000.palmbus/10000600.gp=
+io/gpiochip0/gpio/gpio2# echo 1 &gt; value</div></div><div class=3D""><br =
+class=3D""></div></blockquote>- redone previous step with no changes in =
+error output.<div class=3D""><br class=3D""></div><div class=3D"">what =
+am i missing?</div><div class=3D""><br class=3D""></div><div =
+class=3D"">Thanks for comments, Ivan H=C3=B6rler</div></body></html>=
+
+--Apple-Mail=_19591B9B-8B33-451B-A23D-17B98E2736B0--
+
+
+--===============1049029989711037593==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1049029989711037593==--
+

@@ -2,78 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44A19B717E
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 04:18:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95601B7189
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 04:19:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6KtnttlTsOzt5jl30Ku8hGoySx4VXiE2Joslmy7Dv28=; b=gyZXnuBHbd3Wuv
-	/k77CABGnzLuWUcE72uJTcdK+vVran3TSHKuSA2oDr8ssjzkm39eho92Zp/StXGGAPQ1K0dC6byeg
-	DKatYAszPskdED1M2+kOl/TiLnU1XU/lafaXBnx2tSJ1TygcxcC4cdcMYGW9bx0LgQ+rta8O2DY6y
-	peh+K+Xzky8zcO/gwAs4z9lmNbqClRoUldgK2KGcIb10VNVxRav2CR5DaU9DuSePQWrIgcRKFwsIt
-	TqWxm2l4Muf0Y9DgfzGC0JxN4mSbXhfjT24dtUsXz29TpUfYnqun5Zb+zOxvM90Li2UjyzU/jHbAp
-	xhrYDIoxBdUpvNrHoSvA==;
+	List-Owner; bh=qIOF/n93Q155X36mVjynmu2oD1rWmNPmVwFWPrSXv6Q=; b=kqYJrkzizaqHVo
+	Hs4COZ0SEm3riIwOzBKUj9R99VnRVt+pPcu4ky9KU9KnDMDvgluXR+JHJ0VZXxi3IJYYUHkD4Q6wv
+	jYvHymv/dtg+MsTkwjQO0HZ97JSDLkB3tSY/I0WQOTuvSYdatQH4semq7+u/SvpD2rQP3Yevor8Gl
+	0HgvCuw43KgOwrlRe5x9Ok1BO2qQ2UJqeLgSwuhqPNzH3GREFFKfXC6e6aFWjKGUtABGKaLOwSuib
+	dqgnzIfPDK1a+2H8yHvPO/+tzAwZcyovnIh1tS7u/+iLo3EDX1IklzCZSCEGh0uJAigRBoxtorM3P
+	BgLjOqYBrElWF75LAdbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAm1l-00081o-OS; Thu, 19 Sep 2019 02:18:37 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iAm28-0008G3-8p; Thu, 19 Sep 2019 02:19:00 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAm1N-00080x-2O
- for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 02:18:14 +0000
-Received: by mail-qk1-x741.google.com with SMTP id f16so1684298qkl.9
- for <openwrt-devel@lists.openwrt.org>; Wed, 18 Sep 2019 19:18:12 -0700 (PDT)
+ id 1iAm1O-00081E-4N
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 02:18:15 +0000
+Received: by mail-qt1-x844.google.com with SMTP id o12so2339461qtf.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 18 Sep 2019 19:18:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=W/xOrVz6uK7w4LieyyIjZI+A/A4RymSR0/IQ+I+sQsg=;
- b=s9GSaK/YZ/CBTLUoCJbxYmqSM/6M8EdVCqNflYvn4JBdzdXwuZ1ChPwW9/6FipSGt/
- 6TCgY4H4wufA+DqwfbzaKNSGvPuBmfpM3+D3YsFx932PQQPWOG1Lk+a8lCzictuSYmvw
- WpM+hMcI0rXmdPIG5fX32w/JYwSEskqWLa8/acLeIR1iO/0DWGPobpX9rWorAUZe18lh
- bo+C2XoaRcHi4u3z0CQ+Za+eI63XaMvwoIimt0yM4JCHU1CRmeZCFvxDMz534F/Vpjn6
- OC0tMQRJdCurP96oYYRRdIC0Fi2Cip/0bPWmR2VtaGM45BGag8zPkYra7GmUsBv2ylX0
- rh2Q==
+ bh=cwh2hNlmSOnYm8+2Qw5qQpuaOuxhfb9jDehNzv4hlqM=;
+ b=pvuvi9FZnfgcAZf/cO6STvG8rSWqqlUVWJ78uhzmwTghim8yN3t5iSl+1gEzbDDb6Y
+ VlYvE5p9Rtk06avi5TToWZqj734A5bxlAtXP5vJtShUPORK4yuDyQuZDRI0PnDcbqs1u
+ Gux95dTV4tHzNTh1VPtlRZjxaq2DSP0PkljiXpKKYDz2E2B26EzYxrgbQ3XUS1kpUJpt
+ Z8dOdPbWReLTZyoo8RqRM24TFZyvv5aNWUK5f3V2S/If5jDkfSThac42GTVPJkUCcaFn
+ x+Rf8K71hM7urDt9ocAFAhyMX1kIEK4xoE72kBUycGvvUfDmPDdd7RZ/tmNHtTRQId9X
+ gosg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=W/xOrVz6uK7w4LieyyIjZI+A/A4RymSR0/IQ+I+sQsg=;
- b=Hs9fMJhncZnw46fTaQWz3GWzbohIEObypFj6jgHBckREHtVsT8488Doyj9uQRE+zaI
- EYdCtPgvhKfQa9UReluj47p0WyvtjyVOhE1xU2M5N5V4ZgV8ZvySVPnpf5K06mKfPHq7
- iHsfp3Dvmzhv5XkcvWhYgBA2KmGdilIbw2aOXhl8tsHiWieUkI+72NdLEDfKzXPx2j2w
- S8kcwfGU4iu+4d2SRctt42CUKCN+5KIAmBN41dr0duxVyQVx8IEVaC7ZIgiscfMTpTU4
- T9nB7fLI1mkLnKx0rMJwICzSa73DBpxJWBIzHXjLeXEhjY2MQtHPJBHWzRfgd9yeUdfc
- I25w==
-X-Gm-Message-State: APjAAAVbTZc33TICTHKiYoao20Y6ckqwGZjjDsRsjWXJrxtgaEg+yOWJ
- 4l/Gkk4+V/nX34x//f+p5IK8dJfU
-X-Google-Smtp-Source: APXvYqysSo/YuDSEOaVC8cfDiZXABh/Jdg3XXLuHv17nC/Ldo3au8zRDxQU/ifBNQvfzKgSN0eMpzA==
-X-Received: by 2002:a37:6250:: with SMTP id w77mr559093qkb.153.1568859491281; 
- Wed, 18 Sep 2019 19:18:11 -0700 (PDT)
+ bh=cwh2hNlmSOnYm8+2Qw5qQpuaOuxhfb9jDehNzv4hlqM=;
+ b=jfbKwN8ipCEApZQ8fx+VzeH5k4AYNDiHeALcV+/PDlJFgb8YLVqkpieQNA3Ojrq0xf
+ IGfNy+59ze98A/t0LmboDlT27gbccYjImgZvZfckXKznzmmrvRyhW+qRLp+nTtLonXdQ
+ WsdFNt0aVrjZW17DUN8ObXsP4L5N0zUxXjmWNBqZF6+PUCtsjCDYRdPOhWL09iHv/WAU
+ HJwLVGl8f3dCMxg0ZgtwzgLXmBKqbs6NUvWcwSLIHkzos8feSDku0yjsZTFfcOC2c4O4
+ m1UC+Ts7jf24l4lXTSkzkkIAm1RQtxW96HAX1NQwSbP1TOg7Hc/c3TbWY6fJ2SdFug5M
+ alNg==
+X-Gm-Message-State: APjAAAUc+igVEsXNSn3rIGDNxm287eEjasBChWqzauX1vfArx9i+7nz4
+ xLMevj1otKLNjcoUxXUxZhk+pDIf
+X-Google-Smtp-Source: APXvYqxKjFCvMvetsNCdQE70/IpJ2lCSHngDWQgRfN3sZFX7PvyP5x/bRo05mCKe2JwG9vNEtxRfSg==
+X-Received: by 2002:ad4:5483:: with SMTP id q3mr6053986qvy.238.1568859492709; 
+ Wed, 18 Sep 2019 19:18:12 -0700 (PDT)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id i30sm3984496qte.27.2019.09.18.19.18.09
+ by smtp.gmail.com with ESMTPSA id i30sm3984496qte.27.2019.09.18.19.18.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Sep 2019 19:18:10 -0700 (PDT)
+ Wed, 18 Sep 2019 19:18:12 -0700 (PDT)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 18 Sep 2019 23:18:00 -0300
-Message-Id: <20190919021803.31271-1-cotequeiroz@gmail.com>
+Date: Wed, 18 Sep 2019 23:18:01 -0300
+Message-Id: <20190919021803.31271-2-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190912195558.11513-1-cotequeiroz@gmail.com>
 References: <20190912195558.11513-1-cotequeiroz@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190918_191813_110528_4CEB00F8 
-X-CRM114-Status: GOOD (  13.31  )
+X-CRM114-CacheID: sfid-20190918_191814_173345_BDF36A03 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -86,7 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH ustream-ssl v2 0/3] wolfssl updates
+Subject: [OpenWrt-Devel] [PATCH ustream-ssl v2 1/3] Remove CyaSSL,
+ WolfSSL < 3.10.4 support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,64 +106,177 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-ustream-ssl does not currently work with client apps.  They fail to
-connect immediately.  uclient-fetch, for example, just show a
-'Connection failed' message.  This was due to a change in the SSL
-session struct.
+This updates the CyaSSL names to wolfSSL, and removes obsolete code to
+support old versions of the library < v3.10.4.
 
-While making small changes to my first attempt, I realized my testing
-was not completely flawed.
+Some #include statements were moved around, so that wolfssl/options.h is
+loaded before any other wolfssl/openssl header.
 
-Because of that, I failed to realize that while the struct change
-happened in in v3.13.2, but the API to change it at the SSL struct was
-only created in v4.1.0.
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 
-Keeping some of the calls using CyaSSL, but then having to add new
-calls, only available as wolfSSL would become messy.  So, I started
-by cleaning up the code, removing old CyaSSL remnants.
-
-After fixing that, uclient-fetch failed to run unless
---no-check-certificate is used, which is not ideal.  So I added the
-calls to perform CN validation. r
-
-Note that even wolfssl has a X509_check_host function, which could
-be used for openssl and wolfssl, they are  not 100% compatible, and its
-definition is not really consistent from version to version.
-
-X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS is not defined, and even though
-wolfSSL_X509_check_host apparently only exists to implement the openssl
-function, they are not both enabled by --enable-opensslextra.
-The wolfSSL function is, but the openssl isn't.  So I'm using the
-wolfssl call.
-
-As for testing, I run-tested each commit with wolfssl versions 3.10.4,
-3.12.2, 3.15.3, and 4.1.0.  Since the fist commit does not fix
-client-mode, I tested it using the example client/server apps (using a
-client built with a different version).  Version 3.15.3 did not work
-with the server app, so I checked the current HEAD, and it does not work
-either, so it is not somehting I introduced.  It works after the next
-fix is applied.
-
-Everything works as expected from the next commit on.
-
-Eneas
-
---
-
-Eneas U de Queiroz (3):
-  Remove CyaSSL, WolfSSL < 3.10.4 support
-  ustream-io-cyassl.c: fix client-mode connections
-  wolfssl: enable CN validation
-
- CMakeLists.txt                              | 25 +++++++----
- ustream-internal.h                          |  3 --
- ustream-io-cyassl.c => ustream-io-wolfssl.c | 47 +++++----------------
- ustream-openssl.c                           | 14 +++---
- ustream-openssl.h                           |  4 ++
- ustream-ssl.c                               |  3 ++
- 6 files changed, 43 insertions(+), 53 deletions(-)
- rename ustream-io-cyassl.c => ustream-io-wolfssl.c (62%)
-
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c4a3c44..3b557c3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,7 +1,5 @@
+ cmake_minimum_required(VERSION 2.6)
+ 
+-INCLUDE(CheckIncludeFiles)
+-
+ PROJECT(ustream-ssl C)
+ ADD_DEFINITIONS(-Os -Wall -Werror --std=gnu99 -g3 -Wmissing-declarations)
+ 
+@@ -11,15 +9,10 @@ IF(MBEDTLS)
+   ADD_DEFINITIONS(-DHAVE_MBEDTLS)
+   SET(SSL_SRC ustream-mbedtls.c)
+   SET(SSL_LIB mbedtls mbedcrypto mbedx509 m)
+-ELSEIF(CYASSL)
+-  CHECK_INCLUDE_FILES (cyassl/version.h HAVE_CYASSL_VERSION_H)
+-  SET(CMAKE_EXTRA_INCLUDE_FILES cyassl/ssl.h)
+-  IF (HAVE_CYASSL_VERSION_H)
+-    ADD_DEFINITIONS(-DHAVE_CYASSL_VERSION_H)
+-  ENDIF()
+-  ADD_DEFINITIONS(-DHAVE_CYASSL)
+-  SET(SSL_SRC ustream-io-cyassl.c ustream-openssl.c)
+-  SET(SSL_LIB cyassl m)
++ELSEIF(WOLFSSL)
++  ADD_DEFINITIONS(-DHAVE_WOLFSSL)
++  SET(SSL_SRC ustream-io-wolfssl.c ustream-openssl.c)
++  SET(SSL_LIB wolfssl m)
+ ELSE()
+   SET(SSL_SRC ustream-io-openssl.c ustream-openssl.c)
+   SET(SSL_LIB crypto ssl)
+diff --git a/ustream-internal.h b/ustream-internal.h
+index a8c534f..8d5d0db 100644
+--- a/ustream-internal.h
++++ b/ustream-internal.h
+@@ -24,9 +24,6 @@
+ #if defined(HAVE_MBEDTLS)
+ #include "ustream-mbedtls.h"
+ #else
+-#if defined(HAVE_CYASSL)
+-#include <wolfssl/options.h>
+-#endif
+ #include "ustream-openssl.h"
+ #endif
+ 
+diff --git a/ustream-io-cyassl.c b/ustream-io-wolfssl.c
+similarity index 61%
+rename from ustream-io-cyassl.c
+rename to ustream-io-wolfssl.c
+index d97d55e..052518a 100644
+--- a/ustream-io-cyassl.c
++++ b/ustream-io-wolfssl.c
+@@ -23,12 +23,6 @@
+ #include "ustream-ssl.h"
+ #include "ustream-internal.h"
+ 
+-#ifdef HAVE_CYASSL_VERSION_H
+-#include <cyassl/version.h>
+-#else
+-#define LIBCYASSL_VERSION_HEX 0
+-#endif
+-
+ static int s_ustream_read(char *buf, int len, void *ctx)
+ {
+ 	struct ustream *s = ctx;
+@@ -61,7 +55,6 @@ static int s_ustream_write(char *buf, int len, void *ctx)
+ 	return ustream_write(s, buf, len, false);
+ }
+ 
+-#if (LIBCYASSL_VERSION_HEX > 0)
+ static int io_recv_cb(SSL* ssl, char *buf, int sz, void *ctx)
+ {
+ 	return s_ustream_read(buf, sz, ctx);
+@@ -71,36 +64,11 @@ static int io_send_cb(SSL* ssl, char *buf, int sz, void *ctx)
+ {
+ 	return s_ustream_write(buf, sz, ctx);
+ }
+-#else
+-/* not defined in the header file */
+-typedef int (*CallbackIORecv)(char *buf, int sz, void *ctx);
+-typedef int (*CallbackIOSend)(char *buf, int sz, void *ctx);
+-
+-void SetCallbackIORecv_Ctx(SSL_CTX*, CallbackIORecv);
+-void SetCallbackIOSend_Ctx(SSL_CTX*, CallbackIOSend);
+-void SetCallbackIO_ReadCtx(SSL* ssl, void *rctx);
+-void SetCallbackIO_WriteCtx(SSL* ssl, void *wctx);
+-
+-#define CyaSSL_SetIOReadCtx SetCallbackIO_ReadCtx
+-#define CyaSSL_SetIOWriteCtx SetCallbackIO_WriteCtx
+-#define CyaSSL_SetIORecv SetCallbackIORecv_Ctx
+-#define CyaSSL_SetIOSend SetCallbackIOSend_Ctx
+-
+-static int io_recv_cb(char *buf, int sz, void *ctx)
+-{
+-	return s_ustream_read(buf, sz, ctx);
+-}
+-
+-static int io_send_cb(char *buf, int sz, void *ctx)
+-{
+-	return s_ustream_write(buf, sz, ctx);
+-}
+-#endif
+ 
+ __hidden void ustream_set_io(struct ustream_ssl_ctx *ctx, void *ssl, struct ustream *conn)
+ {
+-	CyaSSL_SetIOReadCtx(ssl, conn);
+-	CyaSSL_SetIOWriteCtx(ssl, conn);
+-	CyaSSL_SetIORecv((void *) ctx, io_recv_cb);
+-	CyaSSL_SetIOSend((void *) ctx, io_send_cb);
++	wolfSSL_SetIOReadCtx(ssl, conn);
++	wolfSSL_SetIOWriteCtx(ssl, conn);
++	wolfSSL_SetIORecv((void *) ctx, io_recv_cb);
++	wolfSSL_SetIOSend((void *) ctx, io_send_cb);
+ }
+diff --git a/ustream-openssl.c b/ustream-openssl.c
+index b2df362..21abf61 100644
+--- a/ustream-openssl.c
++++ b/ustream-openssl.c
+@@ -18,9 +18,9 @@
+ 
+ #include <string.h>
+ #include <ctype.h>
+-#include <openssl/x509v3.h>
+ #include "ustream-ssl.h"
+ #include "ustream-internal.h"
++#include <openssl/x509v3.h>
+ 
+ /* Ciphersuite preference:
+  * - for server, no weak ciphers are used if you use an ECDSA key.
+@@ -203,7 +203,7 @@ static void ustream_ssl_error(struct ustream_ssl *us, int ret)
+ 	uloop_timeout_set(&us->error_timer, 0);
+ }
+ 
+-#ifndef CYASSL_OPENSSL_H_
++#ifndef WOLFSSL_OPENSSL_H_
+ 
+ static bool ustream_ssl_verify_cn(struct ustream_ssl *us, X509 *cert)
+ {
+@@ -252,7 +252,7 @@ __hidden enum ssl_conn_status __ustream_ssl_connect(struct ustream_ssl *us)
+ 		r = SSL_connect(ssl);
+ 
+ 	if (r == 1) {
+-#ifndef CYASSL_OPENSSL_H_
++#ifndef WOLFSSL_OPENSSL_H_
+ 		ustream_ssl_verify_cert(us);
+ #endif
+ 		return U_SSL_OK;
+diff --git a/ustream-openssl.h b/ustream-openssl.h
+index afff22b..0a6ca91 100644
+--- a/ustream-openssl.h
++++ b/ustream-openssl.h
+@@ -19,6 +19,10 @@
+ #ifndef __USTREAM_OPENSSL_H
+ #define __USTREAM_OPENSSL_H
+ 
++#if defined(HAVE_WOLFSSL)
++#include <wolfssl/options.h>
++#endif
++
+ #include <openssl/ssl.h>
+ #include <openssl/err.h>
+ #include <stdbool.h>
 
 _______________________________________________
 openwrt-devel mailing list

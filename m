@@ -2,46 +2,46 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04AFBB820F
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 22:00:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C889FB82E9
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Sep 2019 22:49:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wXQnUPaxypc2dyak3BCWsFoG1ppL3ydXV8gqXsVgMKU=; b=jvBljireQuqfy2
-	t8mCr5VWpTncnWp+KiAHQIc0P5V6qho410n3NWjPyT4qdYt1FsBk89EVSWKJKAuFZp31ytz3jYbfM
-	HEr/75pkpHZQ32zfMeCvzRHzKENVWU5ybjYtiwOZBdcXQZi5YhIbt1nm2eZBl72bnEk0Xl6EruuFr
-	cB12P4OdEuDVDUEsOrEs9rT0Fhmt5g46bFybeypU85efCD3IADalTpLL4bLhcinGbsxvVN5C89241
-	n8rwWCrzseu0Xj1rPNMipGNztLSe4miHwHodFNCFxDDXv8t7bjF9B47AMgou3YeYON4BW9YwhLkJY
-	fiQarwloZDudGoiWeo+g==;
+	List-Owner; bh=IDqwqFlBl+GFSIFLH5eD39e5HrCq4BSDAhYwc6wYcNk=; b=T6h7eCH/1+D0YH
+	QwGiwqfO7F0EdYVUjh6iWRYxfezLELMlw09AzUBXLIMSRmhGMRFCRHey289n6wjVZU6GvDB3en1HZ
+	hUErzQ1OTmG77N3L089zBjCPCdVMJnG7s9wCnuduheG8pxk+YqSmkPSFMCpMBHLNzfrMQ5Yloke0U
+	yQx9TzecWkPDxRLqG8rivh61wz5B5pzjoacHev++WquAGzpao1LEbs/03k5NuykvGxiOYPTINEiE+
+	15/Pc9PkD8AVsqm63XtJn0jP2vNMKzGwOSsXTMqhFW7gMmb8jIwp0K+jWanLXjNy0I0C+bixNPA+b
+	UZ1Hf0Vd5fhqEN5NT9Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iB2bM-00069C-IY; Thu, 19 Sep 2019 20:00:28 +0000
+	id 1iB3Mb-0003rL-Uf; Thu, 19 Sep 2019 20:49:18 +0000
 Received: from mx1.mailbox.org ([2001:67c:2050:104:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iB2Qc-0000c6-CW
- for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 19:49:24 +0000
+ id 1iB3MR-0003qu-Re
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Sep 2019 20:49:09 +0000
 Received: from smtp2.mailbox.org (smtp2.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx1.mailbox.org (Postfix) with ESMTPS id 1299D53F0E;
- Thu, 19 Sep 2019 21:49:15 +0200 (CEST)
+ by mx1.mailbox.org (Postfix) with ESMTPS id D0CB653039;
+ Thu, 19 Sep 2019 22:49:03 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id kMkCBuKuc4IE; Thu, 19 Sep 2019 21:49:12 +0200 (CEST)
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id Goe_f-CSN7Wz; Thu, 19 Sep 2019 22:49:01 +0200 (CEST)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 19 Sep 2019 21:49:10 +0200
-Message-Id: <20190919194910.3857-1-hauke@hauke-m.de>
+Date: Thu, 19 Sep 2019 22:48:50 +0200
+Message-Id: <20190919204850.27113-1-hauke@hauke-m.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190919_124922_643688_22A24672 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20190919_134908_051236_ABC0FBCF 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -52,7 +52,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] gcc: Fix ICE in GCC 9.2.0
+Subject: [OpenWrt-Devel] [PATCH procd] system: Fix possible integer overflows
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,77 +70,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This backports a fix from GCC master to fix a internal compiler
-exception seen when compiling libjson-c with mips16 activated.
+This multiplication was done on 32 bit integers before, explicitly cast
+them to 64 bit values before to make sure the multiplication is done on
+64 bit numbers.
 
-Fixes: FS#2455
+Coverity: #1412417, #1412410, #1412409, #1412411, #1412424, #1412407
 Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
 ---
- ...uninitialised_use_in_mips_split_move.patch | 55 +++++++++++++++++++
- 1 file changed, 55 insertions(+)
- create mode 100644 toolchain/gcc/patches/9.2.0/100-Fix_uninitialised_use_in_mips_split_move.patch
+ system.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
 
-diff --git a/toolchain/gcc/patches/9.2.0/100-Fix_uninitialised_use_in_mips_split_move.patch b/toolchain/gcc/patches/9.2.0/100-Fix_uninitialised_use_in_mips_split_move.patch
-new file mode 100644
-index 0000000000..3529a19d8c
---- /dev/null
-+++ b/toolchain/gcc/patches/9.2.0/100-Fix_uninitialised_use_in_mips_split_move.patch
-@@ -0,0 +1,55 @@
-+From d57faea9337ad595d005687247c3322252f70ba1 Mon Sep 17 00:00:00 2001
-+From: rsandifo <rsandifo@138bc75d-0d04-0410-961f-82ee72b054a4>
-+Date: Sun, 7 Jul 2019 09:49:14 +0000
-+Subject: [PATCH] Fix uninitialised use in mips_split_move
-+
-+While testing the fix for PR91068, I hit an rtl checking failure
-+while building newlib.  mips_split_move was decomposing an address that
-+happened to be symbolic and then tried to access the REGNO of the base
-+register field, which wasn't initialised but which by chance pointed to
-+valid memory.
-+
-+2019-07-07  Richard Sandiford  <richard.sandiford@arm.com>
-+
-+gcc/
-+	* config/mips/mips.c (mips_split_move): Zero-initialize addr
-+	and check whether addr.reg is nonnull before using it.
-+
-+
-+git-svn-id: svn+ssh://gcc.gnu.org/svn/gcc/trunk@273174 138bc75d-0d04-0410-961f-82ee72b054a4
-+---
-+ gcc/ChangeLog          | 5 +++++
-+ gcc/config/mips/mips.c | 4 ++--
-+ 2 files changed, 7 insertions(+), 2 deletions(-)
-+
-+--- a/gcc/ChangeLog
-++++ b/gcc/ChangeLog
-+@@ -1,3 +1,8 @@
-++2019-07-07  Richard Sandiford  <richard.sandiford@arm.com>
-++
-++	* config/mips/mips.c (mips_split_move): Zero-initialize addr
-++	and check whether addr.reg is nonnull before using it.
-++
-+ 2019-08-12  Release Manager
-+ 
-+ 	* GCC 9.2.0 released.
-+--- a/gcc/config/mips/mips.c
-++++ b/gcc/config/mips/mips.c
-+@@ -4849,7 +4849,7 @@ mips_split_move (rtx dest, rtx src, enum
-+      can forward SRC for DEST.  This is most useful if the next insn is a
-+      simple store.   */
-+   rtx_insn *insn = (rtx_insn *)insn_;
-+-  struct mips_address_info addr;
-++  struct mips_address_info addr = {};
-+   if (insn)
-+     {
-+       rtx_insn *next = next_nonnote_nondebug_insn_bb (insn);
-+@@ -4862,7 +4862,7 @@ mips_split_move (rtx dest, rtx src, enum
-+ 		{
-+ 		  rtx tmp = XEXP (src, 0);
-+ 		  mips_classify_address (&addr, tmp, GET_MODE (tmp), true);
-+-		  if (REGNO (addr.reg) != REGNO (dest))
-++		  if (addr.reg && REGNO (addr.reg) != REGNO (dest))
-+ 		    validate_change (next, &SET_SRC (set), src, false);
-+ 		}
-+ 	      else
+diff --git a/system.c b/system.c
+index 4068e64..751a016 100644
+--- a/system.c
++++ b/system.c
+@@ -254,15 +254,21 @@ static int system_info(struct ubus_context *ctx, struct ubus_object *obj,
+ 	blobmsg_close_array(&b, c);
+ 
+ 	c = blobmsg_open_table(&b, "memory");
+-	blobmsg_add_u64(&b, "total",    info.mem_unit * info.totalram);
+-	blobmsg_add_u64(&b, "free",     info.mem_unit * info.freeram);
+-	blobmsg_add_u64(&b, "shared",   info.mem_unit * info.sharedram);
+-	blobmsg_add_u64(&b, "buffered", info.mem_unit * info.bufferram);
++	blobmsg_add_u64(&b, "total",
++			(uint64_t)info.mem_unit * (uint64_t)info.totalram);
++	blobmsg_add_u64(&b, "free",
++			(uint64_t)info.mem_unit * (uint64_t)info.freeram);
++	blobmsg_add_u64(&b, "shared",
++			(uint64_t)info.mem_unit * (uint64_t)info.sharedram);
++	blobmsg_add_u64(&b, "buffered",
++			(uint64_t)info.mem_unit * (uint64_t)info.bufferram);
+ 	blobmsg_close_table(&b, c);
+ 
+ 	c = blobmsg_open_table(&b, "swap");
+-	blobmsg_add_u64(&b, "total",    info.mem_unit * info.totalswap);
+-	blobmsg_add_u64(&b, "free",     info.mem_unit * info.freeswap);
++	blobmsg_add_u64(&b, "total",
++			(uint64_t)info.mem_unit * (uint64_t)info.totalswap);
++	blobmsg_add_u64(&b, "free",
++			(uint64_t)info.mem_unit * (uint64_t)info.freeswap);
+ 	blobmsg_close_table(&b, c);
+ #endif
+ 
 -- 
 2.20.1
 

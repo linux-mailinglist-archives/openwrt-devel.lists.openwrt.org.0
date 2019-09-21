@@ -2,210 +2,153 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E07EB9F5D
-	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Sep 2019 20:17:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D36CB9FE2
+	for <lists+openwrt-devel@lfdr.de>; Sun, 22 Sep 2019 00:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Yl44VN1R8/cDHL317yc7YuzkVSOOFQpneldfTgOdQrc=; b=mo9
-	qn2AUVrIQRUsPY7MC2i/e1wVL4/UoZfWa0+4GEhHGFZsyiso8mxJy+VyG9IOq29xdVRIvyKd0Drno
-	Lq1vhxg1gkXqGkEIelGygXuwM3qEeYXPPV73ZVl02OX2JlRnppCn2P2SpIrGEC2NOX9f/5GoW+4g7
-	fSO7BHn7GPtUcCegpqmcjEhI0SzdwsHK4MJ+UG9eILNVRWcSSCm5yw641h20zmJfhckh6JZnhJMtg
-	xHfUIpwdZCroFyj/L6g3VywrEad4sLu3V7ytOMENZahwoe9ty02AK9M5+cCskxyLJwf4BfHHfks5v
-	jk2L9zHW9HsuVYkzil4sel+ly0F//zg==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QZNxAFlc7OXWg7P2wu2ZFP5T5/GixRQyaKhq+tI5ZDU=; b=bTzkxzq9HyS0wJMy6Q4ABtNob
+	1rDO52S3tqwkBEjlTYCahOIev46vB151hHeHGd/y4cC6C2wbxkb2sT4fIoMc8fjx5vF2RW5U7bkna
+	/js5wK3qJg3x6vfeeNpXMAucGy89cg5Ub7Qlgkbjcj7KIn0Ggf7XK0ELWy3VZIRh5aR4KSP8fkR7r
+	GdvcCtgpVhskmwHIzDESfUMiLQ5p96zaENTxAZtSfB2vxZC+Z5yazBrqYqKPoja/9fnlzutwKswpU
+	tQWNc1WyPB7aEj6WGQZKWdq9EcFF5nqCl8DwVom42MkkkUy1K+qDMTSy8Xtub14hwsSS/hKA/YueC
+	KbjmjK0Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBjwg-0002y3-H1; Sat, 21 Sep 2019 18:17:22 +0000
-Received: from mail3.marcant.net ([217.14.160.188])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBjwI-0002x9-Up
- for openwrt-devel@lists.openwrt.org; Sat, 21 Sep 2019 18:17:01 +0000
-Received: from [192.168.180.1] (port=59620 helo=admins.marcant.net)
- by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
- (envelope-from <avalentin@marcant.net>)
- id 1iBjw4-0002Rl-1l; Sat, 21 Sep 2019 20:16:44 +0200
-Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
- by admins.marcant.net (Postfix) with ESMTPA id 54942280415;
- Sat, 21 Sep 2019 20:16:44 +0200 (CEST)
-To: openwrt-devel@lists.openwrt.org
-From: Andre Valentin <avalentin@marcant.net>
-Message-ID: <6e8a1f4d-7649-e80e-64f0-83a5b0e9d8a1@marcant.net>
-Date: Sat, 21 Sep 2019 20:16:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+	id 1iBo0G-0002Ns-M5; Sat, 21 Sep 2019 22:37:20 +0000
+References: <mailman.25186.1568674551.19300.openwrt-devel@lists.openwrt.org>
+ <20190920191550.GA40628@meh.true.cz>
+In-Reply-To: <20190920191550.GA40628@meh.true.cz>
+Date: Sat, 21 Sep 2019 17:36:52 -0500
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_111659_146313_EA0A3439 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.14.160.188 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] rpcd: file: add path based read/write/exec ACL
- checks
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.26325.1569105427.19300.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Thomas Albers via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Thomas Albers <thomas.gameiro@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: jo@mein.io
-Content-Type: multipart/mixed; boundary="===============4599747775918680432=="
+Subject: Re: [OpenWrt-Devel] [PATCH] build: fix make kernel_menuconfig
+Content-Type: multipart/mixed; boundary="===============9005974915693449411=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a cryptographically signed message in MIME format.
+--===============9005974915693449411==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
---===============4599747775918680432==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms040909010607000502030800"
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-This is a cryptographically signed message in MIME format.
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============9005974915693449411==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
---------------ms040909010607000502030800
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+	id 1iBo00-0002NW-OQ
+	for openwrt-devel@lists.openwrt.org; Sat, 21 Sep 2019 22:37:06 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id p13so7083183vsr.4
+        for <openwrt-devel@lists.openwrt.org>; Sat, 21 Sep 2019 15:37:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=XLl0sgCaTw/vwOwFRsNIuYc8aHn/syr9BSG54w5YgnI=;
+        b=AG6Fa0zGwn9bxWA3BziNsuWJcdvW/jf36Obuk2/ixsUvIm2fY5ReXiY+E1rWbOKmqn
+         y1SmZsStJyaE2yLM0hP+puPQbnxyFl3Cnm8gNMul8XKW0GZT23/olPNLswLGcBSH4Js2
+         tuqwRlopdWzpBLzc2Y4KC5XZz19aIwqw4Rrb0WzlHnWsgC4bMto9UymNruT8hoJ0YasG
+         W5w0AdfLmzpWg7DeLaTyR93ZwHUy1Qulkzl2riDGn/LQn+gkAy7IL1jzgtQCIJ5VgEFT
+         UJD9HcT1CfxkSp2km/FqJW6vXimnPfY621m1KGfr2DCHZZ0YxcMv0LMuwQq2J4Lw8Vnv
+         Tb5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=XLl0sgCaTw/vwOwFRsNIuYc8aHn/syr9BSG54w5YgnI=;
+        b=uRDSshTCqzTCE7qopA1hcsIkbKjQILGgTI+EfUzPSH7cfVhI9HrKssRURvnYDprCWA
+         /bPMkz/3SDVXqTcke1ZEgtBMOaCYP7+Z39HyfWIypj+Zs7U27j89yZnPukl6Y1LJSyuo
+         xe178N8kpwiCKgvXupeE1yliyQ6M8Q43I1WIb0Jgi03NrB4JSIr64jBHHz0uPFzpTe/g
+         my5jB14OGGAycAmdBUaaAJr6MDHFOgifnwqFRmsgi1Z/H3uzT8wMl4iIm6sBTxeSDo3z
+         wS7LnVFnVbqE96WN6M9pbSz5kx709EO4nKl3Dkp2lgOC+wslmxZ5NweKG3Y4uhssYGMo
+         9v7g==
+X-Gm-Message-State: APjAAAWO0eTKl6uV9FJBm0Jxe5ONXfTvk2tYheCHHCNZN5F+FH9CJ45v
+	ySRncXh7utvAnziFUReo9Jnb8SfsUK1gCsGvTWw/s+yV
+X-Google-Smtp-Source: APXvYqxIGE/lYx9VMZ+y229da0CpyyDEm81lXv7bQGnEPBN0sjUHjfLC9QujNL6QwF2EshNJY7of/0o2c7gYaZ0CGG8=
+X-Received: by 2002:a67:f08d:: with SMTP id i13mr6638893vsl.193.1569105422984;
+ Sat, 21 Sep 2019 15:37:02 -0700 (PDT)
+MIME-Version: 1.0
+References: <mailman.25186.1568674551.19300.openwrt-devel@lists.openwrt.org> <20190920191550.GA40628@meh.true.cz>
+In-Reply-To: <20190920191550.GA40628@meh.true.cz>
+From: Thomas Albers <thomas.gameiro@googlemail.com>
+Date: Sat, 21 Sep 2019 17:36:52 -0500
+Message-ID: <CALYGOBUcJBgubAZnLr0jYjQfWMFeECKW2ah_qsqvTip8WbieSA@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] [PATCH] build: fix make kernel_menuconfig
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190921_153704_831446_29CDF1A0 
+X-CRM114-Status: UNSURE (   4.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2607:f8b0:4864:20:0:0:0:e42 listed in]
+                             [list.dnswl.org]
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             (thomas.gameiro[at]googlemail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
 
-Hi!
+This patch is working for me.
 
-Im using file extension to get extra status from my device. But after the=
- change above, the calls over uhttpd are rejected with permission denied.=
+Minor issue: currently make kernel_nconfig is failing for the same
+reason (target calling pkg-config from the toolchain/host), so we
+might fix that target as well now.
 
+Around line 157 in file include/toplevel.mk the patch should read
 
-Currently I have this ACL:
-# cat /usr/share/rpcd/acl.d/superuser.json
-{
-        "superuser": {
-                "description": "Super user access role",
-                "read": {
-                        "ubus": {
-                                "*": [ "*" ]
-                        },
-                        "uci": [ "*" ],
-                        "file": [ "*" ]
-                },
-                "write": {
-                        "ubus": {
-                                "*": [ "*" ]
-                        },
-                        "uci": [ "*" ],
-                        "file": [ "*" ]
-                },
-                "exec": {
-                        "file": [ "*" ]
-                }
-        }
-}
++ifneq ($(DISTRO_PKG_CONFIG),)
++kernel_menuconfig: export PATH:=$(dir $(DISTRO_PKG_CONFIG)):$(PATH)
++kernel_nconfig: export PATH:=$(dir $(DISTRO_PKG_CONFIG)):$(PATH)
++endif
 
-What do I have to do to enable access again, without calling ubus session=
- grant like in the commit?
-Thank you!
-
-Kind regards,
-
-Andr=C3=A9
-
-
---------------ms040909010607000502030800
-Content-Type: application/pkcs7-signature; name="smime.p7s"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
-
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
-C6IwggVTMIIEO6ADAgECAhB+YQhLRWb/6UCa4sHjgGB7MA0GCSqGSIb3DQEBCwUAMIGCMQsw
-CQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoM
-GkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBB
-dXRoZW50aWNhdGlvbiBDQSBHMTAeFw0xOTAzMjkxMDA5NTlaFw0yMDAzMjkwOTA5NTlaMCAx
-HjAcBgNVBAMMFWF2YWxlbnRpbkBtYXJjYW50Lm5ldDCCASIwDQYJKoZIhvcNAQEBBQADggEP
-ADCCAQoCggEBAJcCHX/1+jgsbWlaJ6wFap2kdliLBq0HeTyjDmKThw3IEaRnADoNzNuEkrcg
-1gesoOXULL92Qjde+35aSVOrlOEaB7bKZLIloA2cq5YbVlGHW7AbrhjwhwJwP/DLAvhUZ9K3
-jt3L5KLkeeA3fyX6SyUnuk2blXU7zT+WZdNrXBE3vGhGqWXmfVvaeKiWBEGU/yh9NoQyBj7r
-ufRlRwVcLB1U/g0UxfUGCM2f3SOJ8SQfKskq/cLt+GVx3wJKfRn6zKqlGXgkrzgBAwinhkNB
-YapdF49zDVvawv7mgFcUoGtNqqzFFHC4eYBM5XO7GcuBf+yO1XYXHSKcvCX/4sxEGBsCAwEA
-AaOCAiQwggIgMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUfmD8+GynPT3XrpOheQKPs3Qp
-O/UwSwYIKwYBBQUHAQEEPzA9MDsGCCsGAQUFBzAChi9odHRwOi8vY2FjZXJ0LmFjdGFsaXMu
-aXQvY2VydHMvYWN0YWxpcy1hdXRjbGlnMTAgBgNVHREEGTAXgRVhdmFsZW50aW5AbWFyY2Fu
-dC5uZXQwRwYDVR0gBEAwPjA8BgYrgR8BGAEwMjAwBggrBgEFBQcCARYkaHR0cHM6Ly93d3cu
-YWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
-BDCB6AYDVR0fBIHgMIHdMIGboIGYoIGVhoGSbGRhcDovL2xkYXAwNS5hY3RhbGlzLml0L2Nu
-JTNkQWN0YWxpcyUyMENsaWVudCUyMEF1dGhlbnRpY2F0aW9uJTIwQ0ElMjBHMSxvJTNkQWN0
-YWxpcyUyMFMucC5BLi8wMzM1ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9u
-TGlzdDtiaW5hcnkwPaA7oDmGN2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkv
-QVVUSENMLUcxL2dldExhc3RDUkwwHQYDVR0OBBYEFMojrOmK2PN+bO+vAvSFH10XzXmtMA4G
-A1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQsFAAOCAQEAp6+QqVi+3pAreJTDH3/gUS96AmOI
-dSr2XgwkOTLB3a3ONyfoXtcRnxD80HqBFuMa4e66cYm4iGpUSLJZjhxsKrtwmU9pb2lQIJCG
-T854lcbwhUDEu2By7hL/W4VXC+sejhUeYH3q5+6KcVNT5sydM5mhHgK1JfVW6Ml7t9ZRk4Op
-GKDuTt2viAVDerTvLiKbAXY9jwKXLNGeT0IUlfCVGzG+p4I0PSKsSRiRAmvEWTdZBCnhka0Y
-JGwIF3ZFUGdqPo7AskjLR70n78GGxpINWquCgH09GkrOu4eBWM4G+b4GQ+qZs8YHHTPd78ps
-2+n7iVsRX7066chFUo+O6rZRsTCCBkcwggQvoAMCAQICCCzUitOxHg+JMA0GCSqGSIb3DQEB
-CwUAMGsxCzAJBgNVBAYTAklUMQ4wDAYDVQQHDAVNaWxhbjEjMCEGA1UECgwaQWN0YWxpcyBT
-LnAuQS4vMDMzNTg1MjA5NjcxJzAlBgNVBAMMHkFjdGFsaXMgQXV0aGVudGljYXRpb24gUm9v
-dCBDQTAeFw0xNTA1MTQwNzE0MTVaFw0zMDA1MTQwNzE0MTVaMIGCMQswCQYDVQQGEwJJVDEP
-MA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5w
-LkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlv
-biBDQSBHMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMD8wYlW2Yji9ARlv80J
-NasoKTD+DMr3J6scEe6GPV3k9WxEtgxXM5WX3oiKjS2p25Mqk8cnV2fpMaEvdO9alrGes0vq
-cUqly7PkU753RGlseYXR2XCjVhs4cuRYjuBmbxpRSJxRImmPnThKY41r0nl6b3A6Z2MOjPQF
-7h6OCYYwtz/ziv/+UBV587U2uIlOukaS7Xjk4ArYkQsGTSsfBBXqqn06WL3xG+B/dRO5/mOt
-Y5tHdhPHydsBk2kksI3PJ0yNgKV7o6HM7pG9pB6sGhj96uVLnnVnJ0WXOuV1ISv2eit9ir60
-LjT99hf+TMZLxA5yaVJ57fYjBMbxM599cw0CAwEAAaOCAdUwggHRMEEGCCsGAQUFBwEBBDUw
-MzAxBggrBgEFBQcwAYYlaHR0cDovL29jc3AwNS5hY3RhbGlzLml0L1ZBL0FVVEgtUk9PVDAd
-BgNVHQ4EFgQUfmD8+GynPT3XrpOheQKPs3QpO/UwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSME
-GDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DBFBgNVHSAEPjA8MDoGBFUdIAAwMjAwBggrBgEF
-BQcCARYkaHR0cHM6Ly93d3cuYWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMIHjBgNVHR8Egdsw
-gdgwgZaggZOggZCGgY1sZGFwOi8vbGRhcDA1LmFjdGFsaXMuaXQvY24lM2RBY3RhbGlzJTIw
-QXV0aGVudGljYXRpb24lMjBSb290JTIwQ0EsbyUzZEFjdGFsaXMlMjBTLnAuQS4lMmYwMzM1
-ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdDtiaW5hcnkwPaA7oDmG
-N2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkvQVVUSC1ST09UL2dldExhc3RD
-UkwwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQBNk87VJL5BG0oWWHNfZYny
-2Xo+WIy8y8QP5VsWZ7LBS6Qz8kn8zJp3c9xdOkudZbcA3vm5U8HKXc1JdzNmpSh92zq/OeZL
-vUa+rnncmvhxkFE9Doag6NitggBPZwXHwDcYn430/F8wqAt3LX/bsd6INVrhPFk3C2SoAjLj
-UQZibXvQuFINMN4l6j86vCrkUaGzSqnXT45NxIivkAPhBQgpGtcTi4f+3DxkyTDbWtf9LuaC
-4l2jgB3gC7f56nmdpGfpYsyvKE7+Ip+WryH93pWt6C+r68KU3Gu02cU1/dHvNOXWUDeKkVT3
-T26wZVrTaMx+0nS3i63KDfJdhFzutfdBgCWHcp03NhOhMqy1RnAylF/dVZgkka6hKaWe1tOU
-21kS4uvsD4wM5k6tl0pin2o6u47kyoJJMOxRSQcosWtDXUmaLHUG91ZC6hvBDmDmpmS6h/r+
-7mtPrpYOxTr4hW3me2EfXkTvNTvBQtbi4LrZchg9vhi44EJ7L53g7GzQFn5KK8vqqgMb1c1+
-T0mkKdqSedgGiB9TDdYtv4HkUj/N00TKxZMLiDMw4V8ShUL6bKTXNfb3E68s47cD+MatFjUu
-GFj0uFPvZlvlNAoJ7IMfXzIiTWy35X+akm+d49wBh54yv6icz2t/cBU1y1weuPBd8NUH/Ue3
-mXk0SXwkGP3yVDGCA/YwggPyAgEBMIGXMIGCMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWls
-YW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIw
-OTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEI
-S0Vm/+lAmuLB44BgezANBglghkgBZQMEAgEFAKCCAi8wGAYJKoZIhvcNAQkDMQsGCSqGSIb3
-DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkwOTIxMTgxNjQ0WjAvBgkqhkiG9w0BCQQxIgQga6ae
-6YTE5kXbvKc+IObVqnqil0c9d1bLZk+rxcrkV04wbAYJKoZIhvcNAQkPMV8wXTALBglghkgB
-ZQMEASowCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG
-9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG9w0DAgIBKDCBqAYJKwYBBAGCNxAEMYGaMIGXMIGC
-MQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNV
-BAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVu
-dCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEIS0Vm/+lAmuLB44BgezCBqgYLKoZIhvcNAQkQ
-AgsxgZqggZcwgYIxCzAJBgNVBAYTAklUMQ8wDQYDVQQIDAZNaWxhbm8xDzANBgNVBAcMBk1p
-bGFubzEjMCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0Fj
-dGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcxAhB+YQhLRWb/6UCa4sHjgGB7MA0G
-CSqGSIb3DQEBAQUABIIBAHGB4JIK/SChcLLmjF5umLH1NYnExKin0uzeesSjXxZo2c30CYb4
-Xo9il8UV6ZaZAti28uNDqcwm0c4J0y8DpOTePpXSeyDkLeZa3eyvzXtBDg6LjrgZ+8jsuaPD
-IkjEdCWM7ACw9IoVZWDPKXNKaHW+vMMq6ljiprghrTNSW78RwWZS+L2b0usZnGJhV/YFujLI
-UZVUvAyDRU/xPua1oCrqYTgB2P45AydBPPUI++YGR/k9O+Mg6dFQihHpIBLsYEBjVKIZSl4K
-2yT8zIKkm5ehcdIaq3ah5MWyXGLolX81x9/s92S0Wgfto/kpLriePZhNhPjsioQ1F3JTzPh+
-01EAAAAAAAA=
---------------ms040909010607000502030800--
+Regards,
+Thomas
 
 
---===============4599747775918680432==
+--===============9005974915693449411==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -216,5 +159,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4599747775918680432==--
-
+--===============9005974915693449411==--

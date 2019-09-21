@@ -2,71 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B7FCB9CE3
-	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Sep 2019 09:17:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3564B9D16
+	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Sep 2019 10:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:To:From:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=OYBzv0uuujlUNhyC/9ijcfCRcFxGYuUvJLw63TrnM3Q=; b=OBH
-	dxbB7dH1oXq8SSCHV2FXrGjcqXyHSUCud1PVJ5lD7sgjb/aEcBLSkECCtTEd27yvRcQxRsw6MlUrt
-	ycNIh0pVf718KpDBZpW8SeidO6sLIRVyyHdA3I2SJqurJ28WwhBiBdJAyppXcO79vAeCnvxzti2aZ
-	Eu3TAwSiyPEzZQ1/566LFa/hBE1j343yM1dnDY8Bo2b5eqQrE04T1X2336h75vGog6KAyKVHZlHA1
-	DZAmEKSd4zD/uasrOtmxn6+w3g4s4dmVO2uqZOaetI14Jym/P3Rsv4UvObCLQ7NC05ZY2saX11g1u
-	6jXPpcLEWwAuwdp1E/cFb+U3UcIIDCQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pSb1zvlu7k20WfUw+tDKSUgwQM+Q4hKuAcb8BFATPss=; b=sB1/P+Hc/yF2Uh
+	ooIWY2DHyIysRF4GpK9f/pKyrKCGzfh1aD5uSEdAHSWwk9HfjRzeWbbMRUACOxjZ1pvjk1zAALXom
+	j/M5mH7Fq0KakSTImMWBrFFJFJTogKdqJeUxfeg1KZnT3u1lrrTLWufJ6sIE70l+3ZbX8xsKbxWkY
+	ifSyRaN1ikQoEXjPuqaDVYCQC1NjM3+hqGZ3+tpOtYkh7AMUMRcpCaO27lXT8PCGz1ckk5QJFaE3I
+	lXU1VPYohB68cvmt9wsrKvwP4tjb1y+6lnxvKeMavuqG2YkXtOx018LdqZn4vuWTZU8wz6KG9CeId
+	BUenF2q2x4LTh+VDnoYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBZdp-0000yO-Or; Sat, 21 Sep 2019 07:17:13 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1iBbDo-0004Fo-DW; Sat, 21 Sep 2019 08:58:28 +0000
+Received: from mail.klickitat.com ([54.70.207.208])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBZcv-0000wy-1D
- for openwrt-devel@lists.openwrt.org; Sat, 21 Sep 2019 07:16:29 +0000
-Received: from t480s.lan ([217.63.79.33]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1M3Eqr-1iCO2W0ngT-003dIc for <openwrt-devel@lists.openwrt.org>; Sat, 21 Sep
- 2019 09:16:01 +0200
-Message-ID: <33816ee341ddf7d59aea750de63a57d5dc7ee355.camel@brenken.org>
-From: Dirk Brenken <dev@brenken.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 21 Sep 2019 09:15:56 +0200
-User-Agent: Evolution 3.30.5-1.1 
+ id 1iBbDf-0004FQ-1g
+ for openwrt-devel@lists.openwrt.org; Sat, 21 Sep 2019 08:58:20 +0000
+Received: by mail.klickitat.com (Postfix, from userid 182)
+ id EB1C4A61125; Sat, 21 Sep 2019 01:58:12 -0700 (PDT)
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dodson.localdomain
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=unavailable autolearn_force=no version=3.4.2
+Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
+ by mail.klickitat.com (Postfix) with ESMTP id 05CEAA60E97;
+ Sat, 21 Sep 2019 01:58:08 -0700 (PDT)
+From: Russell Senior <russell@personaltelco.net>
+To: Christian Lamparter <chunkeey@gmail.com>
+References: <87imprcybz.fsf@husum.klickitat.com> <1650711.Cc8WsVpOxL@debian64>
+ <CAHP3WfPEfwWQDM0_Lc1GowbQXN3m5RKEEWuXi_vxoVxguk1fNw@mail.gmail.com>
+Date: Sat, 21 Sep 2019 01:58:07 -0700
+In-Reply-To: <CAHP3WfPEfwWQDM0_Lc1GowbQXN3m5RKEEWuXi_vxoVxguk1fNw@mail.gmail.com>
+ (Russell Senior's message of "Fri, 20 Sep 2019 18:57:29 -0700")
+Message-ID: <875zlm58m8.fsf_-_@husum.klickitat.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:n8OF4C7+LlOWJWqZDrVAJygGOqoWBI+dE4UZF7je5Zx816z76M4
- NuQm/sDp0kXRAdLwRb92naDj78W3h6RLPc84ECs25mYbVpbZkHhd3M+eUrlnaggM+IQQizA
- h7qcV8Z1iJJ/yjYjYtWnnIye2zglzNEBROGlmYbpO96QEFD4/spgoLaUVSQ1L+i8DqfIVGZ
- WD0oIqFCC+uLQJgRczJxw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:c4CgG58SqG8=:wQDhV2tAoOgwKmrtnPFf0g
- Idmk5r9Wb+7IUiCHN6mhRMxZ3dEOQ85ylY4tuiccSaYbvOkZRYfzi66aEo81oJeOT4njBHM5w
- cauNqz32d09Vvtar16xA8wgYvA8/Xc0Ug8Q6YNWwgEHj3qyM1BOCxdUrug+ppw5M+9a5Xfz7L
- 8RCN6ivdas/M6xrU/A0Ap7gwE3bPT2RjbmskJfVbC7tHGyEea87g357tlaeH9ylO2m7nfne9R
- wjuKlOeIofUa56Q1PmYjClZMP0eAyW/+7cMKDHimu8c77OraasbUxaQQjRUDH+Y4pxpcGNWM5
- TudUUklHo9fDIbUPz2JPLLNFEA4diyCtM9o2gL/jRZxisyz8917JdgL0rJBEPJddSAcw1ep9F
- 5jBSy/CXHOaE+GZIkyr4VNUxATx95Gzc7667dOkiIQYdI1Sgey328bYkM3hY66+eu8bK4j56l
- 8mBVk1yz1oE+87/MDNmmqsg6OyeaA24YeIMHlibFeu4SRoOfYoF7X9IKsHfXo7l30Oso+CBBJ
- fIMEL2b/0pqBbJ4lt8wexkhIlM7tnKek9fJglu757hv4Cu8qmd2qDCu4t+E1AVjOZjTzUHTxI
- zA/NjFwqUHdyVlmbypJgi8ltNJHrhNyP45WsQNiie7k0xAsMY80hN1CFNUFHPXEQxGVv4VNYK
- 5waoTBHtXRzWkfhOALYDA9oha7mERE5ZDiIdycRPvGQSvOWs65on68xMcLrJ57lP2zkbN9GPF
- dxrGFhFMAhwGfxgdI7YJwzu74cSqmghkFlMI3sCWdGevIlVMacbZuH6IFt98bl3QZ9+YrcSnU
- x3vpJzfTWU7IRKQMr0BEgfanEAyAAOsoTKg3Jr3FJQEwyjopoi4APV9NmWXejoPld7dNyD9FN
- CFyalgAV+4wEkJ2NxPhQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190921_001618_062387_4FC23ED1 
-X-CRM114-Status: UNSURE (   3.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190921_015819_140071_7A086A2F 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
-Subject: [OpenWrt-Devel] the change 'base-files,
- procd: add generic service status' breaks several packages
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCHv2] apm821xx: remove unnecessary kernel
+ padding
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,75 +65,66 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7022892472145568798=="
+Cc: openwrt-devel@lists.openwrt.org, Chris Blake <chrisrblake93@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 
---===============7022892472145568798==
-Content-Type: multipart/signed; micalg="pgp-sha512";
-	protocol="application/pgp-signature"; boundary="=-jsm5CEbkTxFz4BRsnE0M"
+The allocation of LEBs to ubi volumes is handled by the sysupgrade script:
 
+  package/base-files/files/lib/upgrade/nand.sh
 
---=-jsm5CEbkTxFz4BRsnE0M
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+and the ubimkvol and or ubirsvol command. Therefore, padding of the
+kernel blob is not needed at all, so use cat instead of dd. The
+BLOCKSIZE variable was only used in the dd command.  In any case, 63k
+made no sense for the way BLOCKSIZE was being used.
 
-Hi,
+63k (64512) does make sense for DTB_SIZE because of the offsets expected
+by u-boot given extant u-boot-env variables.
 
-the above change breaks several standard packages, which already
-implemented a 'status' function in their init, e.g.:
+Tested on Meraki MR24.
 
-- simple-adblock
-- wifidog
-- adblock
-- banIP
-- travelmate
-- postgresql
-- [...]
+Signed-off-by: Russell Senior <russell@personaltelco.net>
+---
 
-How to proceed?
+v2: got rid of blocking the kernel blob altogether
 
-Thanks!
-Dirk
+ target/linux/apm821xx/image/Makefile | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
---=-jsm5CEbkTxFz4BRsnE0M
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEvk9F2uJ4OsaK+T5unXHNVHv65oQFAl2FziwACgkQnXHNVHv6
-5oTzgg//Yad9J/0Xc/7SCFZ2/Y69+JtGk+ocnSir5zeZxUout13ZqM7mZUg0Bqsu
-fprIvNCsf3kgJpxz/+lNags1w3FEDqh/JeguWlwJtBaEfvpfHdM0GE/9fxRYCY6j
-oS17FZJArPk7mCebabkBh91qfgpo4u1bIZZGmzDbciwceTf/kZ7OYS6u92Url5HA
-tSlkzWby5D8/lZzRpmsWOjaKNK0kbhqzoQDr35sDaqhkpfHeKg4Nk9h0Ogq8oBRA
-kjhhzo5s5QpISEKRJETbgwzeNNDkVPqqKnOZSEseVc5uhUGnQhyvMVn7FbHbkvxE
-s84JdOg58biPAT+T2ZQRQT7cwYwc04VdDK9gWPzwbCaznEe6vpKxdA79+GSUveRl
-Ph7kcNlsOILS3oeJL07uzaqxrzUFFAOAVPkGLo1Gkwf0OiL+1/EsFY1Bi6gvMO76
-Q5SJhbIplZVPQPxGFsI8oaoIXYhQbW9hGazmYcY8E6zhytvbThLn3XjOS5kdExb6
-Lsie7FvEt3x0GDHrkdst6nRZhyZ3DfF6f+kk8TgosfMlaJtJdOJsEEqNLwL+cEIo
-rN67T+XraHeLQGaTGmBhx531M8qgnX3w4JvfekuMLHNXjnLkymmjNLU5qf+ipLOR
-CQJyW8vxyJ3RDpcGjLtRePFXmoiPlFO+NwoHrZlIAzFRP83MEyg=
-=CvOJ
------END PGP SIGNATURE-----
-
---=-jsm5CEbkTxFz4BRsnE0M--
+diff --git a/target/linux/apm821xx/image/Makefile b/target/linux/apm821xx/image/Makefile
+index 8203de39c5..108f63cb7a 100644
+--- a/target/linux/apm821xx/image/Makefile
++++ b/target/linux/apm821xx/image/Makefile
+@@ -58,7 +58,7 @@ define Build/MerakiAdd-dtb
+ 	$(call Image/BuildDTB,../dts/$(DEVICE_DTS).dts,$@.dtb)
+ 	( \
+ 		dd if=$@.dtb bs=$(DTB_SIZE) conv=sync; \
+-		dd if=$@ bs=$(BLOCKSIZE) conv=sync; \
++		cat $@ ; \
+ 	) > $@.new
+ 	@mv $@.new $@
+ endef
+@@ -127,7 +127,6 @@ define Device/meraki_mr24
+   DEVICE_PACKAGES := kmod-spi-gpio -swconfig
+   BOARD_NAME := mr24
+   DEVICE_DTS := meraki-mr24
+-  BLOCKSIZE := 63k
+   IMAGES := sysupgrade.bin
+   DTB_SIZE := 64512
+   IMAGE_SIZE := 8191k
+-- 
+2.23.0
 
 
 
---===============7022892472145568798==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Russell Senior, President
+russell@personaltelco.net
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7022892472145568798==--
-
-

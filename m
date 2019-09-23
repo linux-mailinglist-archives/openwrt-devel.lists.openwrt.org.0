@@ -2,114 +2,58 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00277BBA3A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 19:16:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55C69BBBA4
+	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 20:33:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=zmj8j2ILO9ByZj9nWlYD10ZJeXuucKF26vYwue3j4W4=; b=qwl
-	DRn78YUfFFczxrIHoj1aXo4RRtGzC8REc8aiq7w/gi5YPd4cYVM9Er5DrWilVxvj8o4a7W0d47/IL
-	+vv/Dp/SpvWyPUMNYcck27Ni206HyNflmk/kQwUnQ1JHEA5ZHhvZjTzijGd20NHMUvlOSDLX1diJj
-	WPTAiQc8BJAjrojEtAibIpoKKqCX4Gc2dlOhGtHVBwIktBed6BmylAz6bzikdaaxQ9GWGyifFNtty
-	3yTy/HbDZS6hp1PlQpVAPOLZaR8Ct9IgEhuKHiTEFDtCo3d0GpDmWrPTbhxl6OksxgGOrT27DPnKI
-	HmnDF5qJQ46oiqPgPlXMzae3JnPp+nA==;
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+p3VhkZM9fY6D0cmZlczLHN/iAMnUeWwabKK7heSZHU=; b=X9UCzqlpXplMMyBzOh4NpEDMJ
+	fwCJ2isDmLbWP3oz3f8+BbSll/XD9KXuO12tHrO5gAdWfHeWefFwQEvrDuxchRKLo0RC6gW0yY3QM
+	NDLECR4KKjmzmQ7Yc9lsQBl2j+DtKa/cYkQ6ES91hktFkn58jq6UTVwpLXLFj3QbgoL98li4xUESV
+	pUBesXtzFCAQmZ+i3KUd2BZgAdzRnrbnv5QxvyfxvTdcx0v9H1yvW/Q9KPt0TDmcophEs2MCVo/1Y
+	pC3zPfqR7F8ZxebSDMMK6f7bUE2IhXjjKVSLh36XweIpFicqzdbNonIBBWo0mcLIXfJBeTtfW0HVR
+	7LLkyNDiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCRx2-00037k-7E; Mon, 23 Sep 2019 17:16:40 +0000
-Received: from mail-eopbgr810072.outbound.protection.outlook.com
- ([40.107.81.72] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
+	id 1iCT9R-0004Qb-Ou; Mon, 23 Sep 2019 18:33:33 +0000
+Received: from mail3.marcant.net ([217.14.160.188])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCRwt-00037P-Ak
- for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 17:16:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mzWCPPXsJshGN0Wi9eZaMuYELgDnOenO7PrhMHMBbLOCBY27rvOJfRwU08vtM4pEekm8dY7TfnlMu++5gWgZlN69STbyPRMA2kO7z0xtjNKug43G59hytJQp0i4pgLyKmQ1SmJyc/CcyAk093odCIpv5rqTEGrXOmM/aoBa/Fsyp4Wxpwu4Fi7BrqwUeYv2Q3WScf2gUC6ZtcK2IAR0GUggyBFaxNk38b/nMokPS5uFE4Y+9K+EoKP8fK8SXwLrZRudl9RRGGqb799qzelBScF6+oPVhX3V/Nn0aEXXKi+AjvJBXgH+tegUHvp6LI7uCVBGq4H4ep2dfBqGyIBF6YA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=v0l8udjT92rrQv1Ku0198ANZeVCe2uC/ERsRZCqkRb0=;
- b=XIWvJHi5gzKaYrwVkl97DtDF/iGVx33QtKc9KjD4pNF5SeZej5Gu0uE0cc8RjZKml9DHz/xmIWdclNsK9vs3jlmMPVg3o/UN6aFUyaV/IaTj29lDID0dwkU01LOWd5fpXa+p7JnAwrXpdCKGzv0VWUUkBlcND9p9TG1JTGy6TXIU15BrxSYue2LQRVBlGtty07lV+DJAApp/C0a00GmoCpgsDT6lP8Y572iEb9mf63Hik/SjduG//H377r/TsCVEezu4oASoQQjylrAOOqT8L32ZdnmtMu5D0RH7CzpVQ0q2u7HywpvL16c68Nj90RJA3FyUkxPf1lQsUVN4Ulrc2A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=dataspeedinc.com; dmarc=pass action=none
- header.from=dataspeedinc.com; dkim=pass header.d=dataspeedinc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dataspeedinc.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=v0l8udjT92rrQv1Ku0198ANZeVCe2uC/ERsRZCqkRb0=;
- b=ZNkH/+3fiPfyI8eDnyqvNTAUXEvPj1r+9H1tmNjgN112Ue/kFYiz1izoPP//MBqYg4obE+l4k7zfKySWY9hQbx/hlSDBCd9pTkI/YQAr6cdQIIRh+nbxn9hdsPjo/XgMjCsaSvrZRZlsI2TbcDE6RFBJ+BHfbnd5PP7+YQu2tgE=
-Received: from DM5PR2001MB1740.namprd20.prod.outlook.com (10.172.47.146) by
- DM5PR2001MB1883.namprd20.prod.outlook.com (10.174.177.12) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2284.25; Mon, 23 Sep 2019 17:16:28 +0000
-Received: from DM5PR2001MB1740.namprd20.prod.outlook.com
- ([fe80::8da9:c43c:a062:10e5]) by DM5PR2001MB1740.namprd20.prod.outlook.com
- ([fe80::8da9:c43c:a062:10e5%11]) with mapi id 15.20.2284.023; Mon, 23 Sep
- 2019 17:16:28 +0000
-From: Shannon Barber <sbarber@dataspeedinc.com>
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Thread-Topic: QMI data mode cannot set raw-ip due to active device
-Thread-Index: AQHVci71XnJlZwocak2EHbhxuFQQcw==
-Date: Mon, 23 Sep 2019 17:16:28 +0000
-Message-ID: <DM5PR2001MB17402BC28B751FE130CF4B8FD1850@DM5PR2001MB1740.namprd20.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=sbarber@dataspeedinc.com; 
-x-originating-ip: [69.14.38.20]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 77d0a098-7cac-4fbb-fc43-08d74049c560
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(7021145)(8989299)(4534185)(7022145)(4603075)(4627221)(201702281549075)(8990200)(7048125)(7024125)(7027125)(7023125)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM5PR2001MB1883; 
-x-ms-traffictypediagnostic: DM5PR2001MB1883:
-x-microsoft-antispam-prvs: <DM5PR2001MB1883E621FCDD489621E322D0D1850@DM5PR2001MB1883.namprd20.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0169092318
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(346002)(376002)(39830400003)(396003)(136003)(199004)(189003)(6436002)(81166006)(81156014)(8676002)(66556008)(8936002)(74316002)(6506007)(316002)(102836004)(186003)(26005)(7736002)(508600001)(86362001)(19627405001)(66066001)(2351001)(9686003)(5660300002)(5640700003)(2906002)(52536014)(3846002)(6116002)(54896002)(256004)(55016002)(14454004)(33656002)(71200400001)(71190400001)(486006)(476003)(105004)(99286004)(7696005)(2501003)(6916009)(66476007)(25786009)(76116006)(64756008)(66446008)(66946007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR2001MB1883;
- H:DM5PR2001MB1740.namprd20.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: dataspeedinc.com does not
- designate permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: pu334PeaV7H3D5agBiM5IvkC0/1mj/eyzO7yv2OMJkfgrbp/sxDbkoJKiO0arfxj07tDpcbl7q0+nyKg/LjpZgKonK2GwBDzWA+7qgUvqAcR8x5pb7r2JJQrjQ0I/UFqvmAqLOEZFT6MgKeLDpaRvaxQZAiU3LFRzmyD/ZRbtg31xTVbV71TJhp9V0fww33SG9Tcgmpo5fkB6WMBY0EUDfU3z9jZwsTyD+5ONrK6JCWFNPLP3Y2CbHWD+HK+FogHoQrjWfQfJCH9NGUCe5fUpLq9xJmnxADafqYDXYHAtObpb0Mmm3hx+1dI+mlyqf2984M8ceHfNJ3ZkMr8eF3HUSjY8WDCG6cFcAr1SOAhAX8VMknp8I0H0twFpV45nTwUpUP9HwidjSk+fkNCN/qfzhA9S3k+63G/YxHcfvzYK0o=
-x-ms-exchange-transport-forked: True
+ id 1iCT9I-0004QB-Pr
+ for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 18:33:27 +0000
+Received: from [192.168.180.1] (port=45214 helo=admins.marcant.net)
+ by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
+ (envelope-from <avalentin@marcant.net>)
+ id 1iCT97-0008Jo-2C; Mon, 23 Sep 2019 20:33:13 +0200
+Received: from vmh.kalnet.hooya.de (unknown [192.168.203.15])
+ by admins.marcant.net (Postfix) with ESMTPA id 841572801E2;
+ Mon, 23 Sep 2019 20:33:13 +0200 (CEST)
+To: Shannon Barber <sbarber@dataspeedinc.com>,
+ "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+References: <DM5PR2001MB17402BC28B751FE130CF4B8FD1850@DM5PR2001MB1740.namprd20.prod.outlook.com>
+From: Andre Valentin <avalentin@marcant.net>
+Message-ID: <9d104317-b812-0eda-55c2-0974b4aee8ec@marcant.net>
+Date: Mon, 23 Sep 2019 20:33:13 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-X-OriginatorOrg: dataspeedinc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 77d0a098-7cac-4fbb-fc43-08d74049c560
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Sep 2019 17:16:28.1093 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ce47be4-4692-4099-b579-8e16cc2b4dfb
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: fkH//D3Qmp5KKUuYL61LPuEZwUgAzY2g8AOBrDOsxbT25gDRYo3QaVIwRBe9x2ZN4wq3GcQ+3NxZPYcLe6wPfkgaBvfWyuIXQIL/SwUkKS8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR2001MB1883
+In-Reply-To: <DM5PR2001MB17402BC28B751FE130CF4B8FD1850@DM5PR2001MB1740.namprd20.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_101631_518171_9FBD5277 
-X-CRM114-Status: UNSURE (   2.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190923_113324_994501_BFCC3D10 
+X-CRM114-Status: GOOD (  14.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.81.72 listed in list.dnswl.org]
+ no trust [217.14.160.188 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] QMI data mode cannot set raw-ip due to active device
+Subject: Re: [OpenWrt-Devel] QMI data mode cannot set raw-ip due to active
+ device
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,164 +65,165 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7497408965777558579=="
+Content-Type: multipart/mixed; boundary="===============1048400993667575525=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7497408965777558579==
+This is a cryptographically signed message in MIME format.
+
+--===============1048400993667575525==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms090300070201000801060302"
+
+This is a cryptographically signed message in MIME format.
+
+--------------ms090300070201000801060302
+Content-Type: text/plain; charset=windows-1252
 Content-Language: en-US
-Content-Type: multipart/alternative;
-	boundary="_000_DM5PR2001MB17402BC28B751FE130CF4B8FD1850DM5PR2001MB1740_"
-
---_000_DM5PR2001MB17402BC28B751FE130CF4B8FD1850DM5PR2001MB1740_
-Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 
-I'm doing several builds and testing different devices and this issue is pe=
-rsistent on the x86_64 build for the PC Engine APU hardware.
-(I did not encounter it on the Espressobin v7 hardware.)
+Hi Shannon,
 
-I have several modems but I am testing with a Sierra Wireless MC7455 which =
-seems to be a popular one that is also raw-ip only.
-As a quick-fix bringing the interface down and back up where the /lib/netif=
-d/proto/qmi.sh script attempts to change-over to raw-ip seems to work but I=
-'m not certain if its "the right way" to fix this issue. It seems to take a=
- while so I think it's retrying later and working the second time.
+I use a hotplug script to change the driver to raw-ip. This works fine fo=
+r me.
 
+Kind regars,
 
-                echo "Device does not support 802.3 mode. Informing driver =
-of raw-ip only for $ifname .."
-                ifconfig $ifname down
-                echo "Y" > /sys/class/net/$ifname/qmi/raw_ip
-                ifconfig $ifname up
+Andr=E9
 
-
-Some snippets from the kernel log:
-
-[    8.744638] qmi_wwan 1-1.3:1.8: cdc-wdm0: USB WDM device
-[    8.751778] qmi_wwan 1-1.3:1.8 wwan0: register 'qmi_wwan' at usb-0000:00=
-:13.0-1.3, WWAN/QMI device, fa:8c:eb:d2:d5:df
-[    8.765196] qmi_wwan 1-1.3:1.10: cdc-wdm1: USB WDM device
-[    8.772501] qmi_wwan 1-1.3:1.10 wwan1: register 'qmi_wwan' at usb-0000:0=
-0:13.0-1.3, WWAN/QMI device, fa:8c:eb:d2:d5:df
-[    8.784460] usbcore: registered new interface driver qmi_wwan
-[    8.793076] usbcore: registered new interface driver rndis_host
-[    8.800987] usbcore: registered new interface driver sierra
-[    8.806989] usbserial: USB Serial support registered for Sierra USB mode=
-m
-...
-[   13.569617] qmi_wwan 1-1.3:1.8 wwan0: Cannot change a running device
-
-
-
---_000_DM5PR2001MB17402BC28B751FE130CF4B8FD1850DM5PR2001MB1740_
-Content-Type: text/html; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<html>
-<head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
-1">
-<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
-ttom:0;} </style>
-</head>
-<body dir=3D"ltr">
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-I'm doing several builds and testing different devices and this issue is pe=
-rsistent on the x86_64 build for the PC Engine APU hardware.<br>
-(I did not encounter it on the Espressobin v7 hardware.)<br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-I have several modems but I am testing with a Sierra Wireless MC7455 which =
-seems to be a popular one that is also raw-ip only.<br>
-As a quick-fix bringing the interface down and back up where the /lib/netif=
-d/proto/qmi.sh script attempts to change-over to raw-ip seems to work but I=
-'m not certain if its &quot;the right way&quot; to fix this issue. It seems=
- to take a while so I think it's retrying
- later and working the second time.<br>
-<br>
-<br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo &quot;De=
-vice does not support 802.3 mode. Informing driver of raw-ip only for $ifna=
-me ..&quot;<br>
-</span>
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ifconfig $ifna=
-me down<br>
-</div>
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo &quot;Y&q=
-uot; &gt; /sys/class/net/$ifname/qmi/raw_ip<br>
-</div>
-<span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ifconfig $ifn=
-ame up</span><br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-Some snippets from the kernel log:</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<span>[ &nbsp; &nbsp;8.744638] qmi_wwan 1-1.3:1.8: cdc-wdm0: USB WDM device=
-<br>
-</span>
-<div>[ &nbsp; &nbsp;8.751778] qmi_wwan 1-1.3:1.8 wwan0: register 'qmi_wwan'=
- at usb-0000:00:13.0-1.3, WWAN/QMI device, fa:8c:eb:d2:d5:df<br>
-</div>
-<div>[ &nbsp; &nbsp;8.765196] qmi_wwan 1-1.3:1.10: cdc-wdm1: USB WDM device=
-<br>
-</div>
-<div>[ &nbsp; &nbsp;8.772501] qmi_wwan 1-1.3:1.10 wwan1: register 'qmi_wwan=
-' at usb-0000:00:13.0-1.3, WWAN/QMI device, fa:8c:eb:d2:d5:df<br>
-</div>
-<div>[ &nbsp; &nbsp;8.784460] usbcore: registered new interface driver qmi_=
-wwan<br>
-</div>
-<div>[ &nbsp; &nbsp;8.793076] usbcore: registered new interface driver rndi=
-s_host<br>
-</div>
-<div>[ &nbsp; &nbsp;8.800987] usbcore: registered new interface driver sier=
-ra<br>
-</div>
-<span>[ &nbsp; &nbsp;8.806989] usbserial: USB Serial support registered for=
- Sierra USB modem</span></div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-...</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-[ &nbsp; 13.569617] qmi_wwan 1-1.3:1.8 wwan0: Cannot change a running devic=
-e</div>
-<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
-: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<br>
-</body>
-</html>
-
---_000_DM5PR2001MB17402BC28B751FE130CF4B8FD1850DM5PR2001MB1740_--
+On 23.09.19 19:16, Shannon Barber wrote:
+> I'm doing several builds and testing different devices and this issue i=
+s persistent on the x86_64 build for the PC Engine APU hardware.
+> (I did not encounter it on the Espressobin v7 hardware.)
+>=20
+> I have several modems but I am testing with a Sierra Wireless MC7455 wh=
+ich seems to be a popular one that is also raw-ip only.
+> As a quick-fix bringing the interface down and back up where the /lib/n=
+etifd/proto/qmi.sh script attempts to change-over to raw-ip seems to work=
+ but I'm not certain if its "the right way" to fix this
+> issue. It seems to take a while so I think it's retrying later and work=
+ing the second time.
+>=20
+>=20
+> =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 echo "Device does not support 802.3 mod=
+e. Informing driver of raw-ip only for $ifname .."
+> =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 ifconfig $ifname down
+> =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 echo "Y" > /sys/class/net/$ifname/qmi/r=
+aw_ip
+> =A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0 ifconfig $ifname up
+>=20
+>=20
+> Some snippets from the kernel log:
+>=20
+> [ =A0 =A08.744638] qmi_wwan 1-1.3:1.8: cdc-wdm0: USB WDM device
+> [ =A0 =A08.751778] qmi_wwan 1-1.3:1.8 wwan0: register 'qmi_wwan' at usb=
+-0000:00:13.0-1.3, WWAN/QMI device, fa:8c:eb:d2:d5:df
+> [ =A0 =A08.765196] qmi_wwan 1-1.3:1.10: cdc-wdm1: USB WDM device
+> [ =A0 =A08.772501] qmi_wwan 1-1.3:1.10 wwan1: register 'qmi_wwan' at us=
+b-0000:00:13.0-1.3, WWAN/QMI device, fa:8c:eb:d2:d5:df
+> [ =A0 =A08.784460] usbcore: registered new interface driver qmi_wwan
+> [ =A0 =A08.793076] usbcore: registered new interface driver rndis_host
+> [ =A0 =A08.800987] usbcore: registered new interface driver sierra
+> [ =A0 =A08.806989] usbserial: USB Serial support registered for Sierra =
+USB modem
+> ...
+> [ =A0 13.569617] qmi_wwan 1-1.3:1.8 wwan0: Cannot change a running devi=
+ce
+>=20
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>=20
 
 
---===============7497408965777558579==
+--------------ms090300070201000801060302
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
+C6IwggVTMIIEO6ADAgECAhB+YQhLRWb/6UCa4sHjgGB7MA0GCSqGSIb3DQEBCwUAMIGCMQsw
+CQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoM
+GkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBB
+dXRoZW50aWNhdGlvbiBDQSBHMTAeFw0xOTAzMjkxMDA5NTlaFw0yMDAzMjkwOTA5NTlaMCAx
+HjAcBgNVBAMMFWF2YWxlbnRpbkBtYXJjYW50Lm5ldDCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBAJcCHX/1+jgsbWlaJ6wFap2kdliLBq0HeTyjDmKThw3IEaRnADoNzNuEkrcg
+1gesoOXULL92Qjde+35aSVOrlOEaB7bKZLIloA2cq5YbVlGHW7AbrhjwhwJwP/DLAvhUZ9K3
+jt3L5KLkeeA3fyX6SyUnuk2blXU7zT+WZdNrXBE3vGhGqWXmfVvaeKiWBEGU/yh9NoQyBj7r
+ufRlRwVcLB1U/g0UxfUGCM2f3SOJ8SQfKskq/cLt+GVx3wJKfRn6zKqlGXgkrzgBAwinhkNB
+YapdF49zDVvawv7mgFcUoGtNqqzFFHC4eYBM5XO7GcuBf+yO1XYXHSKcvCX/4sxEGBsCAwEA
+AaOCAiQwggIgMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUfmD8+GynPT3XrpOheQKPs3Qp
+O/UwSwYIKwYBBQUHAQEEPzA9MDsGCCsGAQUFBzAChi9odHRwOi8vY2FjZXJ0LmFjdGFsaXMu
+aXQvY2VydHMvYWN0YWxpcy1hdXRjbGlnMTAgBgNVHREEGTAXgRVhdmFsZW50aW5AbWFyY2Fu
+dC5uZXQwRwYDVR0gBEAwPjA8BgYrgR8BGAEwMjAwBggrBgEFBQcCARYkaHR0cHM6Ly93d3cu
+YWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
+BDCB6AYDVR0fBIHgMIHdMIGboIGYoIGVhoGSbGRhcDovL2xkYXAwNS5hY3RhbGlzLml0L2Nu
+JTNkQWN0YWxpcyUyMENsaWVudCUyMEF1dGhlbnRpY2F0aW9uJTIwQ0ElMjBHMSxvJTNkQWN0
+YWxpcyUyMFMucC5BLi8wMzM1ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9u
+TGlzdDtiaW5hcnkwPaA7oDmGN2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkv
+QVVUSENMLUcxL2dldExhc3RDUkwwHQYDVR0OBBYEFMojrOmK2PN+bO+vAvSFH10XzXmtMA4G
+A1UdDwEB/wQEAwIFoDANBgkqhkiG9w0BAQsFAAOCAQEAp6+QqVi+3pAreJTDH3/gUS96AmOI
+dSr2XgwkOTLB3a3ONyfoXtcRnxD80HqBFuMa4e66cYm4iGpUSLJZjhxsKrtwmU9pb2lQIJCG
+T854lcbwhUDEu2By7hL/W4VXC+sejhUeYH3q5+6KcVNT5sydM5mhHgK1JfVW6Ml7t9ZRk4Op
+GKDuTt2viAVDerTvLiKbAXY9jwKXLNGeT0IUlfCVGzG+p4I0PSKsSRiRAmvEWTdZBCnhka0Y
+JGwIF3ZFUGdqPo7AskjLR70n78GGxpINWquCgH09GkrOu4eBWM4G+b4GQ+qZs8YHHTPd78ps
+2+n7iVsRX7066chFUo+O6rZRsTCCBkcwggQvoAMCAQICCCzUitOxHg+JMA0GCSqGSIb3DQEB
+CwUAMGsxCzAJBgNVBAYTAklUMQ4wDAYDVQQHDAVNaWxhbjEjMCEGA1UECgwaQWN0YWxpcyBT
+LnAuQS4vMDMzNTg1MjA5NjcxJzAlBgNVBAMMHkFjdGFsaXMgQXV0aGVudGljYXRpb24gUm9v
+dCBDQTAeFw0xNTA1MTQwNzE0MTVaFw0zMDA1MTQwNzE0MTVaMIGCMQswCQYDVQQGEwJJVDEP
+MA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5w
+LkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlv
+biBDQSBHMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMD8wYlW2Yji9ARlv80J
+NasoKTD+DMr3J6scEe6GPV3k9WxEtgxXM5WX3oiKjS2p25Mqk8cnV2fpMaEvdO9alrGes0vq
+cUqly7PkU753RGlseYXR2XCjVhs4cuRYjuBmbxpRSJxRImmPnThKY41r0nl6b3A6Z2MOjPQF
+7h6OCYYwtz/ziv/+UBV587U2uIlOukaS7Xjk4ArYkQsGTSsfBBXqqn06WL3xG+B/dRO5/mOt
+Y5tHdhPHydsBk2kksI3PJ0yNgKV7o6HM7pG9pB6sGhj96uVLnnVnJ0WXOuV1ISv2eit9ir60
+LjT99hf+TMZLxA5yaVJ57fYjBMbxM599cw0CAwEAAaOCAdUwggHRMEEGCCsGAQUFBwEBBDUw
+MzAxBggrBgEFBQcwAYYlaHR0cDovL29jc3AwNS5hY3RhbGlzLml0L1ZBL0FVVEgtUk9PVDAd
+BgNVHQ4EFgQUfmD8+GynPT3XrpOheQKPs3QpO/UwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSME
+GDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DBFBgNVHSAEPjA8MDoGBFUdIAAwMjAwBggrBgEF
+BQcCARYkaHR0cHM6Ly93d3cuYWN0YWxpcy5pdC9hcmVhLWRvd25sb2FkMIHjBgNVHR8Egdsw
+gdgwgZaggZOggZCGgY1sZGFwOi8vbGRhcDA1LmFjdGFsaXMuaXQvY24lM2RBY3RhbGlzJTIw
+QXV0aGVudGljYXRpb24lMjBSb290JTIwQ0EsbyUzZEFjdGFsaXMlMjBTLnAuQS4lMmYwMzM1
+ODUyMDk2NyxjJTNkSVQ/Y2VydGlmaWNhdGVSZXZvY2F0aW9uTGlzdDtiaW5hcnkwPaA7oDmG
+N2h0dHA6Ly9jcmwwNS5hY3RhbGlzLml0L1JlcG9zaXRvcnkvQVVUSC1ST09UL2dldExhc3RD
+UkwwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQBNk87VJL5BG0oWWHNfZYny
+2Xo+WIy8y8QP5VsWZ7LBS6Qz8kn8zJp3c9xdOkudZbcA3vm5U8HKXc1JdzNmpSh92zq/OeZL
+vUa+rnncmvhxkFE9Doag6NitggBPZwXHwDcYn430/F8wqAt3LX/bsd6INVrhPFk3C2SoAjLj
+UQZibXvQuFINMN4l6j86vCrkUaGzSqnXT45NxIivkAPhBQgpGtcTi4f+3DxkyTDbWtf9LuaC
+4l2jgB3gC7f56nmdpGfpYsyvKE7+Ip+WryH93pWt6C+r68KU3Gu02cU1/dHvNOXWUDeKkVT3
+T26wZVrTaMx+0nS3i63KDfJdhFzutfdBgCWHcp03NhOhMqy1RnAylF/dVZgkka6hKaWe1tOU
+21kS4uvsD4wM5k6tl0pin2o6u47kyoJJMOxRSQcosWtDXUmaLHUG91ZC6hvBDmDmpmS6h/r+
+7mtPrpYOxTr4hW3me2EfXkTvNTvBQtbi4LrZchg9vhi44EJ7L53g7GzQFn5KK8vqqgMb1c1+
+T0mkKdqSedgGiB9TDdYtv4HkUj/N00TKxZMLiDMw4V8ShUL6bKTXNfb3E68s47cD+MatFjUu
+GFj0uFPvZlvlNAoJ7IMfXzIiTWy35X+akm+d49wBh54yv6icz2t/cBU1y1weuPBd8NUH/Ue3
+mXk0SXwkGP3yVDGCA/YwggPyAgEBMIGXMIGCMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWls
+YW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIw
+OTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEI
+S0Vm/+lAmuLB44BgezANBglghkgBZQMEAgEFAKCCAi8wGAYJKoZIhvcNAQkDMQsGCSqGSIb3
+DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkwOTIzMTgzMzEzWjAvBgkqhkiG9w0BCQQxIgQgBx69
+C5/L2Ztt+39mqUgkEJqOy9DeQ5ijCkPkRZhOAbMwbAYJKoZIhvcNAQkPMV8wXTALBglghkgB
+ZQMEASowCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG
+9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG9w0DAgIBKDCBqAYJKwYBBAGCNxAEMYGaMIGXMIGC
+MQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNV
+BAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIwOTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVu
+dCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEIS0Vm/+lAmuLB44BgezCBqgYLKoZIhvcNAQkQ
+AgsxgZqggZcwgYIxCzAJBgNVBAYTAklUMQ8wDQYDVQQIDAZNaWxhbm8xDzANBgNVBAcMBk1p
+bGFubzEjMCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0Fj
+dGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcxAhB+YQhLRWb/6UCa4sHjgGB7MA0G
+CSqGSIb3DQEBAQUABIIBAGp80vjbEGgtVJh2G6+I+gK2psLBVSdyHW2Nqs2F4qbsv+CWF74k
+C8vttVWxupSjZshxhr+qmFmB9mc14quu0TpaoOnImAth5PoCD2XSKWbBN4yGCeeCxkp2NUem
+3y+KhiojueK1+8nYx1tdzUlgTIc2c749pTHdnFNDcjlJe2Q/b1+T8Nj0ros88C7gy62bcpVo
+CdRqB7JOz9k+hKsma3qp824S5hv6lTRMUPIY3K7RW/sjHIBg9VWsTmVsb9g7PDObZm6K2wza
+BjVBT4eD8C4HrnWIG8xvDrz1gdPf98BQTY68u0XsgviT24z7kVKu6Tfwh38ebqrlL5o/R7+f
+AuUAAAAAAAA=
+--------------ms090300070201000801060302--
+
+
+--===============1048400993667575525==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -289,5 +234,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7497408965777558579==--
+--===============1048400993667575525==--
 

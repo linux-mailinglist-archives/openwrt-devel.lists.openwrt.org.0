@@ -2,71 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06FA5BB569
-	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 15:35:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BE6EBB616
+	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 16:01:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PGbLhcGqD0aVUomZz3hWx2mL4O8BuUak40dP0gDMKuk=; b=PZZTBLQYrRoaPo
-	qu+OE2pHdtCzFW1cHB0VIRY9Iu86kc6fHX/Q//HyYOnbeoEM5Z2QBUkYT7vOgXF84dOqclN+NOzDf
-	GiX+te8vIevPz1nKoLqRAs8a0vo7VLeAOWH2OP7hHyuQTy7gMVsNYVmB+pxHLZAQwdEdk13oh//hb
-	cRaMnmpzh7FJVRE9QRUs04OfMGZqvwXub40UcoCiZ9wiO+oJiZy3lmEwyi0+Zyap01m/8IhYA3U2i
-	PjzdkIeQlNMD0dnxBx7yt1XMkReCdXehA/Ij2OQkAZ1/pH7zLIrtpq2urBpMzlaZy0TuhcC9Y15Dt
-	reIdh5qrKJ9Qrn3P0Oyw==;
+	List-Owner; bh=0piMOMZOAAU4TWhVgomOu3MVp+nQmXbpb6FaPEp8Wos=; b=MTaDPJttb64T9B
+	3TxHd13x2JHnDYXyLtANpHZNpzRsJxdNAnGWIAyN7jb2His8c0d6STX0K5y8oxJep4OUECMizY5Tq
+	wiDrpcP2lrk3kal9D8bq/q49xCWocmUcIYxsNOt3Gx5NtfL+tvY+sCCFnilq41pJHsy6BLtQIqGvR
+	7vtHvDHJCJUGBed0ObFn+5lB7wTI0Isy9GfTBzs/VUR9SCjLol4+oi2n2Ly07fTUqq3R2wvf8bYlZ
+	5cVy7Aza4hOGp96TKaAoMKkVJA9ZzF79+InFJPqyy9xzjp04spqat6zhwM+EYPqMIjNDEQqY9FF2V
+	xpw7OdG+YIBmuIsUv99A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCOUS-0005so-Io; Mon, 23 Sep 2019 13:34:56 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1iCOu5-00016l-1x; Mon, 23 Sep 2019 14:01:25 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCOUI-0005qE-Dl
- for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 13:34:47 +0000
-Received: from buildfff.adridolf.com ([188.192.136.78]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MlwJv-1hmiZI3tvH-00j1zs for <openwrt-devel@lists.openwrt.org>; Mon, 23
- Sep 2019 15:34:40 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ id 1iCOtr-00011u-2s
+ for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 14:01:12 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 3so9440682wmi.3
+ for <openwrt-devel@lists.openwrt.org>; Mon, 23 Sep 2019 07:01:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sGVyQTLpk2JCPLbijWk5eKOO73e2N2rwms4EKH6zpPU=;
+ b=s2giXOQYAciM3ZQrcKkur1svQyQUrH7f42YxtzLLsRWJH49RwRlDFaEGlHHr0pINZP
+ 7C2J1g0Ni7xvzqVMzd4FDpt06y2Jcyb08zR5vFvbGCCByJOxdyp2t5m8fyHLlYBfcn0m
+ TwaFsTzpDC4On2QfqKFSj3GapsY9xx7/EjNkjFcoljEipW/9aKP5JEq2Z8+I0Nc9bJPw
+ bu0+D9wN+RvH3z52+PeKQUlSPPDx2UpWQx1zr6+Ispr0kwPc4H/7Tw0k9yfjOM+bLADw
+ comQUEiKZLlae9H2/Fk3wLGszLCY0fqfm2+3em0i/h6FVb4KmQGK7UrTF/E767H1EadL
+ yDMQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sGVyQTLpk2JCPLbijWk5eKOO73e2N2rwms4EKH6zpPU=;
+ b=LBW2hsELnKduNfqINgU3nQ4eVFQJ3uaTKl9AouBkLTjqOxxooM63bLPnufQqaYcU0H
+ 9FarzNPqJ3wIIiUY0bShrsNAW0a9xU+Impjl0nPmjjQ5BVQMmd7pTanDolbRbQbZwuMJ
+ FQGlU0um1O9MeiE5Wl5SYS2SNPGsaUU5SC/ziyT5z1u2cKI2IAgiEKUdCsQXrYLmNYm2
+ 4UpYoSXm7TKO57L9rx+SAietcylnwYZA6azEcrvqoQLjTcvYaLuliJMbTEHVz2Rp651o
+ EyVR/XQ2X9zqQWEHPOonAAuyEr41C34ych0w4DcDQZk1i3QS/Jn20TY47vSSa4yIfN/z
+ 15bw==
+X-Gm-Message-State: APjAAAVlFYTq9pW2ndo+bY/arAjk/lT0Gt66nZGnuXByBw2sVm73LX0m
+ lUwadAy8d2lKF8nM99YGBk9azk2n
+X-Google-Smtp-Source: APXvYqwWc44jPqw8RLWWaVkCw/OGzqIU8GfsOJdgYQ5HYRU4sC7rhBO7bveOXnH6m3Zl/GmHrDLLmw==
+X-Received: by 2002:a1c:2d85:: with SMTP id t127mr14873877wmt.81.1569247269031; 
+ Mon, 23 Sep 2019 07:01:09 -0700 (PDT)
+Received: from localhost.localdomain (a89-182-65-88.net-htp.de. [89.182.65.88])
+ by smtp.gmail.com with ESMTPSA id h7sm10570705wrt.17.2019.09.23.07.01.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 23 Sep 2019 07:01:08 -0700 (PDT)
+From: Andre Heider <a.heider@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 23 Sep 2019 15:34:34 +0200
-Message-Id: <20190923133434.2651-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+Date: Mon, 23 Sep 2019 16:00:52 +0200
+Message-Id: <20190923140053.14738-1-a.heider@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:6KZjW/AN6Tc3w+xSYLM6BlrAMHvVi1JTZ0UjCia9D/5t/7TNwFJ
- JeYx9ujzEeUgw+AdFxtM32AI4bB1T4TZMhODa/IfqkYXNqDddQ+toXovML1fucjTNj7F5No
- ac3E9PlLsmN6JUTzh/HJpmftzbg+Q2pLMaUWVVPMSBztlj9fQdTUAlGvU4/w9NBJFu7iY3u
- WqE9vqSJCmgUqvqoKd5Dw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:eXKNRXZzvz4=:ovl+UoNNJctuadeS227K5g
- MpfdKm3qVB9J1DqE4zDpNpguIIKnJPvSMN3+AY4yd7LuyeI84kuJMMTxdYnaAR9755QcoCYya
- +I2N2v7kkis4/4KE2/FMKufavDnHSt9JjugCquJxPBZ+K90P+PPxQGc+ItxxtM7jlMs9Vcufb
- Nek5vwrjwvfEPEpLU2GdGKue/CiWuBtFK1tMSZGG16N/4XySeoqogL+de0gkP6LLO9sPLTalh
- RU3l0J56wpR4KR8oNMLpLT5aPQtWpNP/YowZoUrctPnzCRwv6375ZSA2VCGGqQFSTkkKiDk1H
- kMouL3GUSuKCfhKna2kzbf58/zQc3W9zRABcwEFc2O5lqhWv70q0OYBos6/kS0hECE7afcc6q
- dm+9SlM0tjTwPWzAC+2NwXGdc22xOWGaGXRDadtwlqHe+yHf8rPelLN4tSC7Df+xkEajbCne3
- lD0TJwxD4Qkq5/iUsHZl8zdPSii+8O1FZ8ozGaDohmedcEcdq5GE7oza5acRtM8iHeL9p+IAS
- gbsO85WKqMJ7TaPfeWnZlh23G4BR+W+FmH0b43P2/hmyxy33Er9rHyw/bKTol0XbVUeeabdVZ
- SDesJ+TsGa4qIQZ1ObWT4vV2o2qZhAPctcB8xgXzTWL7EuHxegLU66bDurwUeccVFGnfUpZIk
- lZ38EWN5SCbdSVy7xNsDfrKsAnMZK1/dFPMEOuJ5PLTSPNwAIB2+OdSKq/hPZ7kaGf/P8WtPg
- dVrkW85KGAQPeDb4XIbHFfIhV/N2MJQoCzZ4+CnsdW7/axq6oyJOiY8+KXBf2Byqj/RKK880D
- uLYD0bJhsvIoMOg+Zu/2WpkahPBZWzQMgybtwOADOWLjellH6FyjulUxk0CbncWxckrrNxRF0
- r1vfiQ2C+QoOu69CX5gVWW+qJ9TD+CPrwQtYEIZ7A=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_063446_764337_D8018506 
-X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-CacheID: sfid-20190923_070111_210942_607B7251 
+X-CRM114-Status: UNSURE (   8.85  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ath79: remove redundant
- ucidef_set_interfaces_* calls in 02_network
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (a.heider[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+Subject: [OpenWrt-Devel] [PATCH 1/2] sunxi: update kernel config
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,53 +97,66 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: wigyori@uid0.hu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-If already included in ucidef_add_switch, you do not have to
-additionally set the interface mode in ucidef_set_interfaces_*
-functions.
+This is just a `make kernel_oldconfig` run without further changes.
 
-This patch removes/adjusts such redundant cases.
-
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
+Signed-off-by: Andre Heider <a.heider@gmail.com>
 ---
+ target/linux/sunxi/config-4.19 | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-This is not tested on the affected devices.
-
-However, since network setup is essentially device-independent,
-the other cases which are already set up the same way should be
-sufficient as "test".
----
- target/linux/ath79/base-files/etc/board.d/02_network | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-index 0608a1fc43..15371a1dd9 100755
---- a/target/linux/ath79/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/base-files/etc/board.d/02_network
-@@ -116,7 +116,6 @@ ath79_setup_interfaces()
- 		;;
- 	comfast,cf-wr650ac-v1|\
- 	comfast,cf-wr650ac-v2)
--		ucidef_set_interfaces_lan_wan "eth0" "eth1"
- 		ucidef_add_switch "switch0" \
- 			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan" "6@eth1"
- 		;;
-@@ -196,7 +195,7 @@ ath79_setup_interfaces()
- 	netgear,wndr3700v2|\
- 	netgear,wndr3800|\
- 	netgear,wndr3800ch)
--		ucidef_set_interfaces_lan_wan "eth0" "eth1"
-+		ucidef_set_interface_wan "eth1"
- 		ucidef_add_switch "switch0" \
- 			"0:lan:4" "1:lan:3" "2:lan:2" "3:lan:1" "5u@eth0"
- 		ucidef_add_switch_attr "switch0" "blinkrate" 2
+diff --git a/target/linux/sunxi/config-4.19 b/target/linux/sunxi/config-4.19
+index ef5e1b28d3..b1a9d7342c 100644
+--- a/target/linux/sunxi/config-4.19
++++ b/target/linux/sunxi/config-4.19
+@@ -79,6 +79,7 @@ CONFIG_BLK_SCSI_REQUEST=y
+ CONFIG_BOUNCE=y
+ CONFIG_CACHE_L2X0=y
+ CONFIG_CAN=y
++CONFIG_CC_HAS_ASM_GOTO=y
+ CONFIG_CLKDEV_LOOKUP=y
+ CONFIG_CLKSRC_MMIO=y
+ CONFIG_CLONE_BACKWARDS=y
+@@ -210,6 +211,7 @@ CONFIG_GENERIC_EARLY_IOREMAP=y
+ CONFIG_GENERIC_IDLE_POLL_SETUP=y
+ CONFIG_GENERIC_IRQ_CHIP=y
+ CONFIG_GENERIC_IRQ_EFFECTIVE_AFF_MASK=y
++CONFIG_GENERIC_IRQ_MIGRATION=y
+ CONFIG_GENERIC_IRQ_MULTI_HANDLER=y
+ CONFIG_GENERIC_IRQ_SHOW=y
+ CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
+@@ -370,14 +372,11 @@ CONFIG_MMC_SUNXI=y
+ CONFIG_MMU_NOTIFIER=y
+ CONFIG_MODULES_TREE_LOOKUP=y
+ CONFIG_MODULES_USE_ELF_REL=y
+-CONFIG_MTD=y
+-CONFIG_MTD_SPLIT_SUPPORT=y
+-CONFIG_MTD_SPLIT_FIT_FW=y
+-CONFIG_MTD_OF_PARTS=y
+-CONFIG_MTD_JEDECPROBE=y
+ # CONFIG_MTD_IMPA7 is not set
++CONFIG_MTD_JEDECPROBE=y
+ CONFIG_MTD_M25P80=y
+ CONFIG_MTD_SPI_NOR=y
++CONFIG_MTD_SPLIT_FIT_FW=y
+ CONFIG_MUTEX_SPIN_ON_OWNER=y
+ CONFIG_NEED_DMA_MAP_STATE=y
+ CONFIG_NEON=y
+@@ -517,6 +516,7 @@ CONFIG_SOUND_OSS_CORE=y
+ CONFIG_SPARSE_IRQ=y
+ CONFIG_SPI=y
+ CONFIG_SPI_MASTER=y
++CONFIG_SPI_MEM=y
+ CONFIG_SPI_SUN4I=y
+ CONFIG_SPI_SUN6I=y
+ CONFIG_SRCU=y
 -- 
-2.20.1
+2.23.0
 
 
 _______________________________________________

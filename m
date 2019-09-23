@@ -2,64 +2,65 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E17F9BAEE0
-	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 10:06:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBD20BAF2A
+	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 10:18:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ibfFdgMAzLPp3fDa+uN/W8pe394DQp0K6m/44UjjhQg=; b=B8wnLF/LtVCkdD
-	/lyq33DT044be4tUifEGgWsoUBMWw1Tdovg+VD3w53LVqH66CSCJANAnv0Mrf5TX4u1KP+p2RWy93
-	2MH6Sm6Au6a6EYYM6XWc832Gt87VyUcbbLYwHXfrC+gMMFByg4okj57tDEs4IvyrtpVIPMb7WXFgj
-	laYF0IS0DM4MZUPr4Uw8gfZrgZAjRoZOV6GDjnRbuoxx2rWKqUrF7uwAjTh3HEkWUMHVeRGr4uMLk
-	Rds63AsJ6TdHycG6mAASYxsSL6J7XKraEMHHmdemlGXobJbjJr+js3NBh4eGqgKg/m35+8ZbyWavy
-	6tbPVk7WNU2iEtHttu+g==;
+	List-Owner; bh=ZfuPQz0EDLPrqg/zBQxiul/CDIXjV24jBc8ozyZGZBs=; b=WbMvo6PybFQNIP
+	UPNOqSuwloacLxF+qMLWb3koqf7yhEz+L5Ox+peQea3CxNkgW9B6sELWBTtvE/Q9pgXVv2AVqafN8
+	aUuHztZTpK9Ka/qfdEq2ouTKtK4llGdpYAtAmFfzAh/Vgx5UfJZUKwstXcUgODEUBR7e8Spdl+Jty
+	KmshN6ZXLTDypT0vv28kSgpW5McC06SuAyKN0fNED+P0B0yg68L1xal+hN9f4qIvRvqGvb0mYT3Q1
+	ZjNUK+sfxKQ8MDrjMocc7/IGBNE+MIGw/Z6+dYqE6xL4Z5ydycMSX1GgSWm365Hl6BZRFgF1J5AQc
+	QiT5GnmMQMvb1qWDUNKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCJMF-0003JP-8D; Mon, 23 Sep 2019 08:06:07 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1iCJY3-0000ED-E8; Mon, 23 Sep 2019 08:18:19 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCJM1-0003Ep-Sc
- for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 08:05:56 +0000
-Received: by mail-oi1-x243.google.com with SMTP id 83so6828885oii.1
- for <openwrt-devel@lists.openwrt.org>; Mon, 23 Sep 2019 01:05:52 -0700 (PDT)
+ id 1iCJXj-0000Bg-Lw
+ for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 08:18:01 +0000
+Received: by mail-oi1-x244.google.com with SMTP id t84so6808049oih.10
+ for <openwrt-devel@lists.openwrt.org>; Mon, 23 Sep 2019 01:17:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PMk7+d4w/DGm+0ju9pWFdKtYyKdJ8X0ffmRz6EvobQw=;
- b=c3Lne7tceCu1BTqEcODTNOLNxN51sfUE2Zh2tHVV0bj+y5DA2R+bcBzEO3J3XnmK1e
- k/MRkyOYGZLc9XL4jv1d+VBGJKocwYGmR1mYYIxMIBC2id1GOBopaDmOD0v4kSOasZnu
- cZyIgAOEGJfuVxk7slLgRc/J8DFdXI0wc1u8Tk6TMXy38DgnGjFtEBTEb2Gg9PiYg9C1
- zb2HMJ7N4b7jToGBUYf4xOwQuo0DxKsrgaOPkuMTarBQc41yzgxAY7UWnI2ZUtH5G4L9
- kXdD1taSCitjbE49xxpE3UI66YOPqazy1cmebCimuhrTZitpHDzRhSzcnHbk5otPLa1m
- JFFQ==
+ :cc; bh=Pe8mcM5IG+iLl+fA1sJOZiPlTrmFo6O1cmSRw9RlT2s=;
+ b=LYsqW3el7U24u7gbziNUrLJo4qJVZthdkIBDQiKExwze+1JnLWaXk5oIPt1mLwur8O
+ /DP6KEuP91AQx4Txin53XQ9D+ZqYd/QuDptRTC/ghqJYHnoB1QBm5D5C8gxf9XZK4/X9
+ d4D4CXq73URnxtaxi9ru8JpRhj9qZNJGik8Io3SEpmQYJA/8CT89KJqszOgGojX2n37k
+ UrU3EPojC60IUoO0SDitCx9Kw62rWttxWEWiGF0QOeRO9Cv7okjUyzfnZdMqMmwbho79
+ e9O79pzHA2JIVW5aAr2S3MwVG3Fu3PUU0cDxQPuJoOJ6ejxkRBMyUWQnwHQPip4ePKRU
+ eLfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=PMk7+d4w/DGm+0ju9pWFdKtYyKdJ8X0ffmRz6EvobQw=;
- b=TZAWDVoe+RFfSXJVuGyThY/4loOqQQ58p+9hG0jeQEAFZfkAh4L0EqC/xQgFZMR131
- KddtKR7meAW4qWxgQg8uTusy1oOoEhpYos/5LJ1KkxBFlwpgGvYQsTMJlxJaGkW35tCq
- 6u2DwrNxgngAy9D+MdKX2CRItEBLPz73FcrOJIti3XBIogJjWrfZFsfmZ5gzun+xFcOW
- VPQsIBrAV0SJjUq+pIr64vWkdiqlt6MiLo3GF7RCmEtyUpX/+0sP2fY4meHozz4N0PVa
- IoeEa3oXLA29LxOSCx8/c/x1zjYNuxWYQZy+uykrLxYgdk7adW4WtxyxV6klyL7jFyPq
- Rxsg==
-X-Gm-Message-State: APjAAAWKyB4J7DBHXveFpkPbRoAGRrZ90qeiKmw8cKS88ug7jGnc2S8d
- WZ/XFWKfGKygcqPiJNNjl2aKohYfKwjiUZ+kang=
-X-Google-Smtp-Source: APXvYqzNGIcSpV5jd6qEBgQwhUHyQEOd8DbDPc+7MGYAVjlcVG5EDZLnqvTaT2s5hvOJLYLyW7hTbgCyc8Q87NllWAo=
-X-Received: by 2002:aca:1a12:: with SMTP id a18mr12390001oia.30.1569225951726; 
- Mon, 23 Sep 2019 01:05:51 -0700 (PDT)
+ bh=Pe8mcM5IG+iLl+fA1sJOZiPlTrmFo6O1cmSRw9RlT2s=;
+ b=RF1aeWaztpGcDMTldYoXuVYXso/8QSlXPVMVdlVBHBYqkfnV9RF9KiqsXNPujs9p3B
+ Qsq/h5ja4el/USMW6DczT9MmMussECF6a+SkRETvCYY3ztvPdLAM10BCVYJ8P/QtwWqV
+ s71q5EpeUvnsYLTvSDw9/BXBbLab4wRX8M2yoCEfQCohFk+qbDFjJ/aZzC8g0Tpg7gg5
+ 3fT8kNJtrOgmkWHEcy3xd034DvhxB4Br5u+JABMOllsAdRFVTL7RDHwXoZxTTa5LLyQa
+ R6w7yewHvlliXkEa4LFdFCp6wggwvbgIK6H7nNXLAM2q/FM51FDShDG7d+mFMhgZarp6
+ EM5A==
+X-Gm-Message-State: APjAAAVTRLvOaijnGrUlxzrx8Vnh3BJUTPA87cl4ZO5x1k80SO4Zyi4x
+ 2OInhHFoAb12972S8ajqAMNrrFemcVyDXgHO5tFVKEcAASrJJA==
+X-Google-Smtp-Source: APXvYqz5HlZfbFw0IRBxeolMn1qZcJD0RXoWYzwcKgMDqmbjiSWErX5hk82ntRFfg5QGxrDZDUt0mU20Vho/9ImffhM=
+X-Received: by 2002:a05:6808:8e9:: with SMTP id
+ d9mr12649499oic.24.1569226678360; 
+ Mon, 23 Sep 2019 01:17:58 -0700 (PDT)
 MIME-Version: 1.0
-References: <e3820a48-cb98-0947-ee23-29169a5d4ff9@yandex.ru>
-In-Reply-To: <e3820a48-cb98-0947-ee23-29169a5d4ff9@yandex.ru>
+References: <eb8f5946-b689-2330-da45-1399fd6b7dfc@yandex.ru>
+In-Reply-To: <eb8f5946-b689-2330-da45-1399fd6b7dfc@yandex.ru>
 From: Chuanhong Guo <gch981213@gmail.com>
-Date: Mon, 23 Sep 2019 16:05:40 +0800
-Message-ID: <CAJsYDVL0TM+BAKocTxQbgNrZzOjS3jaieo2CKE2trcgjzA+q7Q@mail.gmail.com>
+Date: Mon, 23 Sep 2019 16:17:45 +0800
+Message-ID: <CAJsYDVJnmn+0Mr-WY6W4myS+a1aSQRahxs09GGP3GwRV8Cx1Kg@mail.gmail.com>
 To: Serge Vailugin <vasilugin@yandex.ru>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_010554_754011_B33AFB3F 
-X-CRM114-Status: UNSURE (   6.86  )
+X-CRM114-CacheID: sfid-20190923_011759_921589_1075452D 
+X-CRM114-Status: UNSURE (   9.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,7 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -82,8 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH v2 1/3] kernel: rtl8366_smi: explicitly
- set phy addr for switch
+Subject: Re: [OpenWrt-Devel] [PATCH v2 2/3] kernel: rtl8367b: add
+ configuration for extended interface 2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,29 +104,34 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Hi!
 
-On Tue, Aug 27, 2019 at 5:49 PM Serge Vailugin <vasilugin@yandex.ru> wrote:
-> [...]
-> @@ -1558,6 +1558,14 @@ int rtl8366_smi_probe_of(struct platform_device
-> *pdev, struct rtl8366_smi *smi)
->                 goto try_gpio;
->         }
+On Tue, Aug 27, 2019 at 5:50 PM Serge Vailugin <vasilugin@yandex.ru> wrote:
 >
-> +       of_property_read_u32(np, "phy_id", &smi->phy_id);
-> +       if(smi->phy_id < 0) {
-> +               smi->phy_id = MDC_REALTEK_PHY_ADDR;
-> +       }
-
-When of_property_read_u32 fails, it returns a negative value and leave
-destination variable unchanged. You should check return value here
-instead.
-
-> +
-> +       dev_info(&pdev->dev,
-> +               "switch phy addr=%d\n", smi->phy_id);
-> +
->         return 0;
+> Both rtl8367b and rtl8367s have two extended interface
+> rtl8367rb: 5 port + 2*RGMII/MII
+> rtl8367s:  5 port + SGMII/HSGMI + RGMII/MII
+> (?)rtl8367sb:  5 port + 2*RGMII/MII
+> These interfaces correspond to EXT1 and EXT2 (ports 6 and 7 respectivly).
+> Current driver don't support EXT2 configuration but notexisting EXT0
+> (port 5).
+> This patch allow to configure EXT2 in dts-file:
 >
->   try_gpio:
+>         rtl8367rb {
+>                 compatible = "realtek,rtl8367b";
+>                 cpu_port = <7>;
+>                 realtek,extif2 = <1 0 1 1 1 1 1 1 2>; /* configuration for EXT2 */
+>                 mii-bus = <&mdio0>;
+>                 phy_id = <29>;
+>         };
+>
+> This patch is independent of the rtl8366_smi patch (set switch phy address)
+> and may be helpful for device with rtl8367rb connected through EXT2.
+>
+> Signed-off-by: Serge Vasilugin <vasilugin@yandex.ru>
+
+This patch seems to be broken in patchwork:
+https://patchwork.ozlabs.org/patch/1153690/
+Would you mind to create patches using git format-patch and resend
+them with git send-email?
 
 Regards,
 Chuanhong Guo

@@ -2,87 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 757C0BB3BE
-	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 14:28:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC190BB564
+	for <lists+openwrt-devel@lfdr.de>; Mon, 23 Sep 2019 15:34:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h6sEGVJCaRd2R/D8/hEqsTCCHLqn9CwLOKzhPBxPRlQ=; b=acP8qN+Iz4L2Nt
-	Y3glDmwDNs6qzF4+RnFQS/93FyoV1J8t7pAxXlX5WMmQb0AVO871z7ltu8l2tjvWCqZ+ZKwbweip/
-	xkbbX2kcb6qHinmbcTlr5XJF5MkmnSBhQmWGt41/srqFVyY9AeGzLSUdOj3GaIXIV4lW+rvIhZmFw
-	pvN+d1gLPGvAoZdC2Cyi6UunnLTg9CFN/gWliZUrEYIcwMnXjZcbkif9krrQthk+XeAeevhXoYvPR
-	ANXymsX5dSeUKedIpHOLiOm0nsMA8JyQR09Sl99ui0riQcdZuxc/UZgnUFQJmeazx3jX73nAoEY5Y
-	kMHni52E0iyPCMT1ZZvg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Sm1BOh5VWmzG+/JuFJQlX2MYW8fu+lsmeyqpNX45L5Y=; b=tFZUuYyW/mtv+L
+	bpoCP8niyoZ2y9ppdzEvLKVc46h1M/Sb4dUDs1dIbQoqZ2Pn2sujLz7MgxBDa0SjFxydB3bzj+dc3
+	lZCqZIkmP4ASMpt1aabU7glfjKRX5Yr7ch4OqmXsZF+nKZ1wGOu1ofbHrqDodBgXKGZAVMggFbU0Z
+	sAMFkSlbh7RP2OH+ygXkLc7Q5lCfcPYqvoNJumt8TF5Cwbk+876gpzP8znfhFXzanUuZYIeAGjzTv
+	CRFjImmjxYhXw9wgI6Kp0JWicyWR9BpBC8Vv//2WOHhrRFIFTz7L+BmjjVxUMWTEEznHGfM3XX5jQ
+	eNvs/QPaPsrajYXPJlHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCNSK-00080e-Iv; Mon, 23 Sep 2019 12:28:40 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iCOU6-0005cu-R6; Mon, 23 Sep 2019 13:34:34 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCNS0-00080L-6W
- for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 12:28:21 +0000
-Received: by mail-qk1-x742.google.com with SMTP id f16so15123067qkl.9
- for <openwrt-devel@lists.openwrt.org>; Mon, 23 Sep 2019 05:28:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=16IPRsA39B/qLjp/RC/D+ODtOClXIAKeVLjFWk4D9Ow=;
- b=dqVzAlFJfulKgu7j79brYx2fUKC4tOk62QA7ACjUdLS8CjUsTDJnvtwEL/VoyJWoxA
- 8uyUmKzmy35y2feo25aTqB1sjVtwtME8xpqTFzyIG1WyNWWFcqauz+OGcbQDtfLrAexF
- ksgQNhJCXTdzf2P0n8hFiOuUv9QG0bKVw+lJozp31Je2dBGISLUhrjDZlbKd6TenCpML
- GKbuUSPBAdiG2Vwk5pB/5Hif8Oc54RFVfjnW2MvJarL6Zh7fUBpH5aWPyB2lF6Ca6U7a
- uTO1WzbbAGOh3N6mRkGNSgj57d+p2e0fmLliZKo1TyP2stXkUw+je+DHI6KdLwZiUGUu
- nZNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=16IPRsA39B/qLjp/RC/D+ODtOClXIAKeVLjFWk4D9Ow=;
- b=W7Tn+kY72HruJV1QbhgBSzF3gt2ytRbWdCsuiO0hEqTQ9Xd0xgMS2MCxp9OmPbTX3N
- sYywha+0qerN0x3pDhqcN79hrbnGvJhLWYZIMmJTWxTYLScmfISPHLxjJkddC+eUEkXs
- y6W4gWBRKy8vFgFW9epM53SLr033So1zVeHTjInFn/BVz4qusRqDX6hwOSDedkwCmaZ7
- wzuKM9s/QFWuvUSkI62RJuQx6D9byvCs5PtLbz+zEY4y+5KJUi+Hvqlzq2WmlFU5ayS3
- WrCUHJ/Jm7K4x34WmLXWN0Ej6lawutvzqQCxI0+mGgshG9FV1naXnJs6L4h03sr2eHBu
- 3/HA==
-X-Gm-Message-State: APjAAAV1Dw2x0wA1qYQBxtc0gf4QUQ/+6N6k+aRV/FV9tlm1QsOZwtPY
- vzo4OoHtaX6FdO84SDMcK+G0pBRJEvn0BiziPNr3jKWe
-X-Google-Smtp-Source: APXvYqz6LcCrnIcLXF1vCWvIsp42OUIdvph3EDctXV+EGnI3qZlV4UQqH3EsAczQUZ2mmqTiH/Kl8Mi51+mJAtEiDpg=
-X-Received: by 2002:a37:dcc1:: with SMTP id
- v184mr17162160qki.258.1569241697900; 
- Mon, 23 Sep 2019 05:28:17 -0700 (PDT)
+ id 1iCOTx-0005cK-M8
+ for openwrt-devel@lists.openwrt.org; Mon, 23 Sep 2019 13:34:27 +0000
+Received: from buildfff.adridolf.com ([188.192.136.78]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1N9d4t-1i9DVW3DO9-015Y0e for <openwrt-devel@lists.openwrt.org>; Mon, 23
+ Sep 2019 15:34:19 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 23 Sep 2019 15:34:17 +0200
+Message-Id: <20190923133417.2546-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20190920204804.10183-1-cotequeiroz@gmail.com>
-In-Reply-To: <20190920204804.10183-1-cotequeiroz@gmail.com>
-From: Eneas Queiroz <cotequeiroz@gmail.com>
-Date: Mon, 23 Sep 2019 09:28:06 -0300
-Message-ID: <CAPxccB13Fjqbob=cLYnJS8UbJUOFtqoFOJQif0jvAy1qUMhyCA@mail.gmail.com>
-To: openwrt-devel@lists.openwrt.org, Christian Lamparter <chunkeey@gmail.com>
+X-Provags-ID: V03:K1:zj9HjwwltSfFL8GvJ+XVgLNK0DBhXcHg6/kDEiF8rIRKAXtBRGD
+ xAMT11MpY0uyXi8FP3TlvwWkFFlRVYWWTtO6bA8WDZURxYPRhSAeuVw/kTMrf33+LQyDUit
+ 5bHKpjNnZrqhMeiEQupX/V8vBTdd/UTfYZNdha/WMi9UhX7PiDGXlxO6J9KHvmK+Lxi7RHR
+ +QcvQD/Jfe0dEytk/gBog==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+P6U7XoxEbw=:Uvf0J2thszkA3utd6teDsj
+ y18UyV0sRe+H93n12Nr3ivJv/Fo/g1UvFseFbUu2SsoPyeLfN8PCyWUYM3G51kK8T7NF79ePG
+ qYOea0h33d8jN6KAmQWMDfGEHWlN7Tg7+vNUrW1FwoBCQgoDGEM7S1xMnTlWMUjcGB3eGuoST
+ Fl8+LA2z0/p6B9j6iwa57ufl1XVXnzYPKBAmP0HF+coPDx8+R9hGi0NhsDbg3Y1RfwNqUyAhr
+ 4B9MSUFEhmNWA06uof73/UnhG7z45ghjlB8pchEy6ej2YI5e7JfTq4SGTuVTXPSYIOUI1qP4m
+ smiP/mVEpgodP/ZEMY6dFdQ4APBBDzlMvIDZeihVfhHKk/IMC8J3YSco9GiIWRxSo+t2Pcyqk
+ Z1yG72U0uUYX37fjIpBou8D+bO0FtVvnHwtsvlwFowZpZy2PCs0u09Y0sdKobfHBQgCFdUFLj
+ mzFhEFNhr/6TI+qGnvv2VdPQvMUnZMBcqJVFmpgQD1tNzgT0cAbApg22R9Uvm++vSh2Uqtnf0
+ SCsxdXI9QmqfdEjGC4waHoaSHNc7+CCIEtEJjGPQeN6uoHmqpJ5XbrBGu29H56HtctVw3q7I/
+ vQYxR0hvYPr2d4M36PJ5UGG/RmoaB/BnllL2/Hlp9n05UbVWZIOUvR3O9OjybNwJNnW2PQNsY
+ P9QK07IxDZn7J89dw5L/y8c98UoOE6wdp0uxSutGTBw+h3KLhfqQVPIakms4RzI8agvD2b5sU
+ euuMyLio4h+ZqyGZWWUl8iONZ0iIiLLLXuE1LrSTOBCo2rFurwm4qmEoFMion+SmaN6Mc+ngO
+ YG2C707pMPDqjYIj2i3+UDpBZZqa5/Jw3O5Jpy29t0Fl/NRv4Yd8KrWUde9ewpQkONni3iXzg
+ O0yO6cVHvEOiH54VmYWagiNMInWF4Q1+64DcxANJ0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_052820_246118_47D7D646 
-X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-CacheID: sfid-20190923_063426_017030_D0415A3B 
+X-CRM114-Status: UNSURE (   7.89  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cotequeiroz[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: fix hw-crypto detection of qce
- driver
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [217.72.192.74 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: [OpenWrt-Devel] [PATCH] ipq40xx: remove redundant
+ ucidef_set_interfaces_* in 02_network
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,33 +81,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: John Crispin <john@phrozen.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Fri, Sep 20, 2019 at 5:48 PM Eneas U de Queiroz
-<cotequeiroz@gmail.com> wrote:
->
-> This adds the CRYPTO_ALG_KERN_DRIVER_ONLY flag to Qualcomm crypto engine
-> driver algorithms, so that openssl devcrypto can recognize them as
-> hardware-accelerated.
->
-> Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+If already included in ucidef_add_switch, you do not have to
+additionally set the interface mode in ucidef_set_interfaces_*
+functions.
 
-I noticed this was moved to ipq40xx, but ipq806x is also enabling the
-qce driver:
-https://git.openwrt.org/?p=openwrt/openwrt.git;a=blob;f=target/linux/ipq806x/config-4.14#l119
+This patch removes/adjusts such redundant cases.
 
-So I imagine we need to either copy the patch to ipq806x, or disable
-the qce driver in ipq806x/config-4.14.  I don't have enough knowledge
-to decide what to do, so can someone more knowledgeable, please,
-either do it or point me to the right direction.
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 
-Cheers,
+---
 
-Eneas
+This is not tested on the affected devices.
+
+However, the same approach is taken for other targets, and
+network setup is essentially device-independent concerning the
+changes done here.
+---
+ target/linux/ipq40xx/base-files/etc/board.d/02_network | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/target/linux/ipq40xx/base-files/etc/board.d/02_network b/target/linux/ipq40xx/base-files/etc/board.d/02_network
+index e5ba7260f3..b7631a301c 100755
+--- a/target/linux/ipq40xx/base-files/etc/board.d/02_network
++++ b/target/linux/ipq40xx/base-files/etc/board.d/02_network
+@@ -24,14 +24,14 @@ ipq40xx_setup_interfaces()
+ 		;;
+ 	asus,rt-ac58u|\
+ 	zyxel,nbg6617)
+-		ucidef_set_interfaces_lan_wan "eth0" "eth1"
++		ucidef_set_interface_wan "eth1"
+ 		ucidef_add_switch "switch0" \
+ 			"0u@eth0" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
+ 		;;
+ 	avm,fritzbox-4040|\
+ 	linksys,ea6350v3|\
+ 	linksys,ea8300)
+-		ucidef_set_interfaces_lan_wan "eth0" "eth1"
++		ucidef_set_interface_wan "eth1"
+ 		ucidef_add_switch "switch0" \
+ 			"0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan"
+ 		;;
+@@ -51,13 +51,12 @@ ipq40xx_setup_interfaces()
+ 		ucidef_set_interface_lan "eth0"
+ 		;;
+ 	glinet,gl-b1300)
+-		ucidef_set_interfaces_lan_wan "eth0" "eth1"
++		ucidef_set_interface_wan "eth1"
+ 		ucidef_add_switch "switch0" \
+ 			"0u@eth0" "3:lan" "4:lan"
+ 		;;
+ 	qxwlan,e2600ac-c1 |\
+ 	qxwlan,e2600ac-c2)
+-		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+ 		ucidef_add_switch "switch0" \
+ 			"0u@eth0" "3:lan" "4:lan" "0u@eth1" "5:wan"
+ 		;;
+-- 
+2.20.1
+
 
 _______________________________________________
 openwrt-devel mailing list

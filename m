@@ -2,152 +2,157 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFD98BBFEE
-	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Sep 2019 04:15:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E766FBC151
+	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Sep 2019 07:21:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:To:Date:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=bkkug3saEEeHiJNzMmFH4W3uFRHe3FqsCvgxaq8yr4o=; b=eEp
-	0muW5RfqxkjlrzNdGlmrvCiCcg1dDkbF5+jA1w7UrpWAba3WgA+TGr/5vEZOA+nc9Pf/Wll5DxGWg
-	0qD6CjgQ4QQPCmOgsSy6Hy046s3buUV58S0UGEh6ImUZ2D1MJD45zR2l8chpvhhnktnYMV8e/CvRw
-	R1OxRCfKiJ1eskU1aiWxNeqa/PvTpfh3RTJqVGIDoCNn/XQNdjzrDkQPruSmumK7zk+iszWeXBOKH
-	tIGMUqG8d5d25Yh9U95xg1maCeT84jkxtk6MOJXhiibHT5DGk3orYR2ULWWjk68kslUUMKSmuiwR4
-	7iboSlRiIvMrNuloB0tNXPiKObiTjPQ==;
+	References:List-Owner; bh=Jsuuewo14Opvr3De8Ygd3kgoc/PtZCmrUN/gquhweqk=; b=Dn/
+	QAXQhd3R6PSnNnlBpSq5eFBnJvpgfQEoRoLUQQUXEgDjwj9VSRKQLerGHBPRL8h8TLNS6opaUjgE3
+	cyGXA9W9EZ/tTcWRL75kSpSGzpnmKtgw1vzoGC1TAT5Itv+BvkCAHxId0lYFqs67PxxS3H9VaCTIx
+	V8TPBFkymgRK9982nHIIZp7Ne11SFw60zcF+LWsKDmf7Xqs4Lre5DZi1YFCZ1NAmIP0nSZlUO0BIF
+	8MIvdk1P+Y02oOyL9uTJ9UfTap18SxSTrtpbReiN6ML9B86Gu6hwPiEXK/CmW3P5AqYVSkkRj6m91
+	bgdiBOpeKTSghXmmp4JB+R3y/Bvf/nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCaMd-0007Ol-6C; Tue, 24 Sep 2019 02:15:39 +0000
-Date: Tue, 24 Sep 2019 02:15:20 +0000
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+	id 1iCdGS-0002RE-5s; Tue, 24 Sep 2019 05:21:28 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCdGL-0002Qc-Ow
+ for openwrt-devel@lists.openwrt.org; Tue, 24 Sep 2019 05:21:23 +0000
+Received: from desktop ([188.192.136.78]) by mrelayeu.kundenserver.de
+ (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MDhpf-1iMlTt0SqV-00Aloj; Tue, 24 Sep 2019 07:21:18 +0200
+From: <mail@adrianschmutzler.de>
+To: "'Karl Palsson'" <karlp@tweak.net.au>
+Date: Tue, 24 Sep 2019 07:21:17 +0200
+Message-ID: <002101d57297$e4c98d60$ae5ca820$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Message-ID: <mailman.26691.1569291335.19300.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Scott via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-X-Mailman-Version: 2.1.29
+Thread-Index: AdVyl0kwFPSu4l86TwG9NjRGfHMl6gAADIbg
+Content-Language: de
+X-Provags-ID: V03:K1:aCpW78blU6ZwJtdgeabN0g+vDZDUj2Lqm7U6u2TLtoda2nv930D
+ dWM4avKp0qVXEDXKvLMeJqpBUB/yNhipJoSBJGrz9iqq+2GghrOHBOyR0UTkeOhsA/UG4IH
+ I2UbHcc+Y37iC0jdIsC0ly3THNRaf7StwCRnuPgLuOSPpNVr88OGe/E7lCdnqyQMUkG5IhJ
+ gVsVVx9O6QQoAGen/gbag==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:YlupeZK4wNU=:t+qBKtOn6Xkhh+UXdQAgU+
+ itBrPjm2hCAWrqkgju/Yo5G/CwU/29XF+czIz3GABlHeRJKwxC1/Mj5jupbiylKG7wk/bdkTf
+ LSkc3oqUDJR3fNWQa2iMlaZrnIxVQlnWAI68orsGn7NSXUxAHWg2+xEbeC7ubNEkRzffMLPmt
+ IY1ufgB3aT9oa2AFgbEOsxP/w0+H6dBUer6MgJew1V+49Rh1jyJeV+RZHKYzX2w6qvOMF2/P3
+ gl6uP+yo02U+3093DT53PrgHTzjEfHxhtqxEiOC0wLxzdwgHbaZDpe6xSdmBGqd263pFz6Dis
+ bl+jcZlrGjaEJERn5p1DFQd4Eu+evxDz0QgZgX4T5SCR3TLu4DDvSulMyShNX/BTdQUtpx+oA
+ 72q9EqAC69lU7hlHpyXGjOln3rCQ5+SdHHdsQM1L40NS6qBS70Us5K2L/9WsZ9qxWCROd63Pq
+ zgJJegaX8A/9y91C+xfxKBg2Lh2BXA0KkMvYx8P9PDu4emAINPq5bH8dI6Hoq4pI/eFLaeBtr
+ x89P5xOekJnpR4+QnSzhIWEyAodSWXTobawv5EeFojMOe7GOuQNMU7uOTgZ+DFMVZ6DR8zV1u
+ Cx2Tq10DtA3mMaHEhroPupAP4GHQ7vhQUZJOJ1z9kj7K9CzK+YJfaYTlohO/hpRm4tf3bePSr
+ Wj0/OJNFiY4/aLNmG8Un5a/JXuJKATI8vekDTWMxiAZE91P1QNbsbVM8jjV9FycnGS8411jqz
+ gZKMaemmgaYCOPmyuZMYksmIhIZNMln56dW4OE+/0fm3bPdZvlC27lF3b54z0kRkBq+FHtFAN
+ DLcqYmamtSjbNE8JQ771NXsMt0vGz1apgw0iDQ5G9qTNTyc/YhQa5LFfep6qMLGIABXhnOX+o
+ gIv16ylc/gbvPS/ZpxVlrVE76OM2AKX5zXfcUeI1Y=
+X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190923_222122_115502_A688B4AC 
+X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH v2 5/7] ath79: set checksum when
+ patching MAC address on ath10k
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Scott <xmrscott@protonmail.com>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] [Suggestions] Streamline localization by using
- Weblate for the project,
- use LiberaPay or OpenCollective to enable people to donate
-Content-Type: multipart/mixed; boundary="===============1636253023718460857=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============8243008026222824734=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============1636253023718460857==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+This is a multipart message in MIME format.
 
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
+--===============8243008026222824734==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=JctPUyEAmQrEw3=-="
 
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============1636253023718460857==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
+This is a multipart message in MIME format.
 
-Received: from mail-40132.protonmail.ch ([185.70.40.132])
-	by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCaMW-0007OC-AC
-	for openwrt-devel@lists.openwrt.org; Tue, 24 Sep 2019 02:15:34 +0000
-Date: Tue, 24 Sep 2019 02:15:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=protonmail.com;
-	s=default; t=1569291321;
-	bh=y1Kn/yIpgEZN5WueYxDymKvDKNqZ5Fz/80dfpTcZlq0=;
-	h=Date:To:From:Reply-To:Subject:Feedback-ID:From;
-	b=otJwNm5pIYwk6yboyBaYtYQbhv9o6Y4G6jlp4k4lpaUwxYqVW8HeF78O83zdV/Jyl
-	 66d9TfCjQXb6vqUZlsLiC69xWTQ67aZmlqeqdqLIvo2V/atmh998/sn/3FnG9pgIJn
-	 y42TYUoIylgICoAP3PPYpws4D1ji1MhF5M/0+p+4=
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-From: Scott <xmrscott@protonmail.com>
-Reply-To: Scott <xmrscott@protonmail.com>
-Subject: [Suggestions] Streamline localization by using Weblate for the project, use LiberaPay or OpenCollective to enable people to donate
-Message-ID: <BZOF0Dz1SeXuQjVhtPU_YKqPxtbOegb2YEM_4NGNr0CsfrebtWwxVVY-26CUnClw5faHnwvzP6Af-S6A4MowhquVBtxoMrQOooYBf-2xXpY=@protonmail.com>
-Feedback-ID: ZrTxtHCXzMzONvFUwaPWt8Wy727WH0mSWOjNTyiuYAeVqzelo3P71EF-FM1DOPdaf9nqgULTnQtBn6I-cq7CUg==:Ext:ProtonMail
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
+--=-=JctPUyEAmQrEw3=-=
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
-X-Spam-Status: No, score=-1.2 required=7.0 tests=ALL_TRUSTED,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM autolearn=ham
-	autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.protonmail.ch
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_191532_978248_5BB583F9 
-X-CRM114-Status: UNSURE (   5.07  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
-                             low trust
-                             [185.70.40.132 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider (xmrscott[at]protonmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
 
-First and foremost, as a user of OpenWrt and LuCI by way of TurrisOS thanks=
- for everyone who has contributed to OpenWrt. As someone who's seeking to g=
-ive back to the project via localization I noticed that while OpenWrt has r=
-elatively straightforward documentation on contributing localization (https=
-://github.com/openwrt/luci/wiki/i18n), the process could be streamlined a g=
-reat deal more. In particular by using Weblate thus making easier it for th=
-ose who don't know Git and providing significant quality of life improvemen=
-ts even for those who do know Git. Those who want to do offline localizatio=
-n could continue to do so w/o issue.
+> From: Karl Palsson [mailto:karlp@tweak.net.au]=20
+> Sent: Montag, 23. September 2019 16:50
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+> Subject: Re: [OpenWrt-Devel] [PATCH v2 5/7] ath79: set checksum when patc=
+hing MAC address on ath10k
+>
+>
+> Adrian Schmutzler <freifunk@adrianschmutzler.de> wrote:=20
+> > Several devices use ath10kcal_patch_mac, although all ath10k=20
+> > eeproms have a checksum field and should use=20
+> > ath10kcal_patch_mac_crc. This might be because the field is not=20
+> > evaluated by the firmware at the moment.=20
+> Are you sure it's not because some of them have broken CRC? Have=20
+> you tested it on any of the devices in question?=20
+> Sincerely,=20
+> Karl Palsson=20
 
-For those who aren't familiar with localization, Weblate is basically a web=
- based tool that allows to contribute by simply entering in a localized str=
-ing and hitting 'suggest' rather than having to Git clone, download an offl=
-ine client like Lokalize, and then make a PR. There's also a good number of=
- nice things to improve localization. It's easy to visually see what langua=
-ges need localization work, you can be notified when there's new strings or=
- a few other trigger events, and you can utilize not only the 'translation =
-memory' of OpenWrt itself, but other FOSS such as related routing projects =
-like Foris. The great thing is that while you can self host your own Weblat=
-e server, because OpenWrt is FOSS, the folk behind Weblate would likely off=
-er free hosting given their Gratis for libre projects pricing. To better se=
-e what I'm talking about in action please check out: https://hosted.weblate=
-.org/projects/
+It does work on my TP-Link Archer C7 v5.
 
-As a secondary note in what sounds like was written in late 2016, there wer=
-e private discussions about public crowdfunding to help pay for servers (ht=
-tps://openwrt.org/infrastructure). Talking with tmomas on the forums it sou=
-nds like the current bottleneck is people power. Any surplus donations beyo=
-nd infrastructure could be used to pay for part or full time development or=
- for bounties. Between the LiberaPay and OpenCollective, OpenCollective may=
- be preferable because it is designed to allow both reoccurring and one off=
- donations.
+Best
 
-Thanks for your time and efforts,
-Scott
+Adrian Schmutzler
+
+--=-=JctPUyEAmQrEw3=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2Jp8gACgkQoNyKO7qx
+AnCTChAAq3/PJgOX0DUr9c5YA/npyFQ8V2giq4nnM4TqDjPHlu5v0mz335lsYdE9
+AXTNJm5dAOyCrPrJuUwXa6fwp1cGa1IwWERcR/Y9ADzuEY8tmxDHAOtStN1Z0Ssz
+xuPE7PwZ2p13svprlJQzdOaiGdqcE4QJMWRLwwRCYCd7F2+f2VkstdBt1Uy98edc
+Fvpj0JND5OLasAkN08JYdbGEmLAHKcxIiHOjRfq2AhrMzMYDVZNIQpS4t1szD53f
+xO+Cl3ei8nAhJVGGBU8S0MFoFCX42RohIWg67/IPnABe5jnzWCULPACv5lVu8T+Q
+PEv7M37aelzaVvu+8/ctihe8L5iuNkCWXI4+XsKTPaA03Eca4dug8OdnItCOY0b9
+Xwup5uwVfQsfqO+vwQL0cHnHrWoQS6IdnklEAvZN0Df2D7Mm8SA4lzKk8K/8ZhuJ
+/OVHzHd1mbGqJhh9vJxVuiCJDenP1uJ+c1gjzcubQFBZ7s6dWvmZFniwwhFkXSkj
+n6/c+M9/6JWyNynDDQDo1QGz9bNaWYBg5pl50L/xjcPKFCs5ZLMw/O6JCcBUe6ok
+XvnyHeYKkE1oUG5f3ePzYGzv8VNxKSn1WkU1RdBLtkjB+1yNZSBrzYM0K0BUPZGk
+q+hDDaLvoGzTkAZOcvyEBfPgyJnoAVoHOWWJJvZlMXNaDkv6ohM=
+=GKp3
+-----END PGP SIGNATURE-----
+
+
+--=-=JctPUyEAmQrEw3=-=--
 
 
 
---===============1636253023718460857==
+--===============8243008026222824734==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -158,4 +163,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============1636253023718460857==--
+--===============8243008026222824734==--
+
+

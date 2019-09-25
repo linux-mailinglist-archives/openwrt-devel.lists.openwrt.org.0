@@ -2,120 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE233BDE76
-	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Sep 2019 15:02:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49102BDF72
+	for <lists+openwrt-devel@lfdr.de>; Wed, 25 Sep 2019 15:52:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Subject:MIME-Version:References:In-Reply-To:Message-ID:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8IZgenpBRg7VcMGxaRTuaEmbN6Yns4OJmp/K/H+a32Y=; b=fyGYxj0iLdD8QPNf2cN2aN0wN
-	L8L34sk3NtJCbxPUEruDSZtM+6JwjGX4wx+oyQz2EIOLVknCrQ2bP8KMp2uyS8XhSBada4AwF1v+0
-	TwzuQnVA86/2SP059w5EXRfAoi1JggSvKFu9x822GpuPOr6xhKI+2jzOsXA7Rrufz1hXP7npVVxhn
-	7lxqwxt0HvqIL8XDQir9us4dj2CyjOngBAhgh4LOqztCVUzhNWYI1FpXqHVhtPDrkYV6b73NoOi8C
-	GzROsKx7PVJg618q3Rv+qNEhQcdr49oYTapEGBbliNLfjUnpNZqPrZuc6rBTcc1qtIkWi3ijgfYwv
-	If8Oa0Vyg==;
+	 bh=zenHXvSzjNf2h86pP/UjiuXEbbuiKC6YEqQeueMWU6o=; b=ghNSx6i17gAa6Hjffh5mFAPJk
+	EDx4P71+3xxKtrAJciAJ4NTtIFQnoA/MmdyG7tNDB1eDIhGbwNTiAZ0/DP9ZG1kSdPRdscOR21aMK
+	Z4qD/5NhxYbxCUpAPknehVP+vp1fr4nLM2fhsj2YzdratuRxmXjUWEXqV2yHn8sYSpnrmZbLn6u3P
+	/i5mumx2oTfKHVZOFp4/u45hBiD9TShLVB+2U/foo/JIa6plC6PaFCvlnypGphOmvHGq+ShETwfcR
+	BCGfxauXKRDtU1mMTwyPiS4mOMSmPfRsp0TecpdEoS+9ym265eibeZb+brmlOGEbugQ7pf6sNynVg
+	VImRAjI/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD6w9-0008TC-4o; Wed, 25 Sep 2019 13:02:29 +0000
-Received: from mail.nic.cz ([217.31.204.67])
+	id 1iD7hx-0001Rc-D4; Wed, 25 Sep 2019 13:51:53 +0000
+Received: from n1nlsmtp01.shr.prod.ams1.secureserver.net ([188.121.43.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD6vd-0008Sh-MW
- for openwrt-devel@lists.openwrt.org; Wed, 25 Sep 2019 13:02:00 +0000
-Received: from [192.168.1.122] (dhcpz157.fit.vutbr.cz [147.229.14.157])
- by mail.nic.cz (Postfix) with ESMTPSA id 6DD20140B95;
- Wed, 25 Sep 2019 15:01:48 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=nic.cz; s=default;
- t=1569416508; bh=fget6Kz6QjSiQOKIpKcfdY9UX8mK8woVfe6cV8ZgMss=;
- h=To:From:Date;
- b=vHggLC4co+TnlKoRwTEyc+VjXk3X/CP8d/NkxCncmsqvS/Jj6OKOv88GhEkrlgmAY
- ou7sqEGv8Y8liqfkRPUFwTOlbiNPB+9vG0TRBpL11y/K7VNoh+8X9FDEn4CnBCPUsH
- mLvNL+AwLTevJMMWhdZBPGsvYZDJ/grMZnU1zxFQ=
-To: Stephen Walker <stephendwalker@gmail.com>
-References: <sdwalker/sdwalker.github.io/push/refs/heads/master/fced31-4b1ac0@github.com>
- <310e24f5-e674-f48a-0231-4a20a158ae6b@nic.cz>
- <CAH7PtXxmSjwZ6Cda-9RrOiRZ=EmnmUabZhgp+HwmGPKRCrLEQA@mail.gmail.com>
-From: Jan Pavlinec <jan.pavlinec@nic.cz>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jan.pavlinec@nic.cz; keydata=
- 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
- rj0rIUg4FQ==
-Message-ID: <14b2ef47-a818-d220-38bd-e46066805897@nic.cz>
-Date: Wed, 25 Sep 2019 15:01:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ id 1iD7hZ-0001Li-Sx
+ for openwrt-devel@lists.openwrt.org; Wed, 25 Sep 2019 13:51:32 +0000
+Received: from n3plcpnl0065.prod.ams3.secureserver.net ([160.153.153.132])
+ by : HOSTING RELAY : with ESMTP
+ id D7fsiLWiqOUUvD7fsigqA2; Wed, 25 Sep 2019 06:49:44 -0700
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=maxnet.al; 
+ s=default;
+ h=Content-Type:MIME-Version:Subject:References:In-Reply-To:
+ Message-ID:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=lJ+QTo++7vlCUNofS6NSEAhVi0upt0N7qlejiUi4Cb0=; b=j8LgusWLemmUeD0OX29bJs+gwg
+ BNqkkF4J46M1da9Lcj4OpPjnloY4iB2GiL2SMkWadBop+bu1H8Jyv7xA64oz5dfyaNt7uiWAS7Fo+
+ vdK9YVk9vDoeoucCrUquXt7+9LeAcmxpRbmq5yL4OHmJFxl23O1EkiPBvAoQDI6HUbCcHodza/xEu
+ w/Yym6ok5ifacEiXsmkeu6S5t0SYQ+FcSH7Nm3aBUATRLiUyP+DnIl0cPnGLSVEXEWN9zulfE92h8
+ p15SYAeWk1AdfocbkV20U1knWgvmEjXU1EjeP8zZlzi/OfCpYvdzJmD2A8NWuCa0W9xg2BJDrcE1J
+ ftJKDFIw==;
+Received: from [52.125.138.56] (port=54610 helo=mail.outlook.com)
+ by n3plcpnl0065.prod.ams3.secureserver.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92)
+ (envelope-from <support@maxnet.al>)
+ id 1iD7fs-00HDdI-K5; Wed, 25 Sep 2019 06:49:44 -0700
+Date: Wed, 25 Sep 2019 13:49:39 +0000 (UTC)
+From: support@maxnet.al
+To: Ben Greear <greearb@candelatech.com>
+Message-ID: <E35DD50A54031C50.f6a00d5e-317f-456b-b3e4-15891dc232b5@mail.outlook.com>
+In-Reply-To: <767b2c5a-1a91-b694-7d79-8ed02860ec23@candelatech.com>
+References: <E35DD50A54031C50.92928df6-9b31-4ba8-b86b-7037754522f2@mail.outlook.com>
+ <e2a51e07-7730-6b89-172c-4836e9168a27@ironai.com>
+ <8fa864c2-99ca-1a08-c2f1-b53288201079@candelatech.com>
+ <ce97ab8de243a3b9d9e08b466ccf76d2@maxnet.al>
+ <767b2c5a-1a91-b694-7d79-8ed02860ec23@candelatech.com>
 MIME-Version: 1.0
-In-Reply-To: <CAH7PtXxmSjwZ6Cda-9RrOiRZ=EmnmUabZhgp+HwmGPKRCrLEQA@mail.gmail.com>
-Content-Language: en-US
-X-Virus-Scanned: clamav-milter 0.100.3 at mail.nic.cz
-X-Virus-Status: Clean
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
- shortcircuit=ham autolearn=disabled version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.nic.cz
+X-Mailer: Outlook for iOS and Android
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - n3plcpnl0065.prod.ams3.secureserver.net
+X-AntiAbuse: Original Domain - lists.openwrt.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - maxnet.al
+X-Get-Message-Sender-Via: n3plcpnl0065.prod.ams3.secureserver.net: authenticated_id:
+ support@maxnet.al
+X-Authenticated-Sender: n3plcpnl0065.prod.ams3.secureserver.net: support@maxnet.al
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-CMAE-Envelope: MS4wfKYFwKpwVomydE9ASP4C8zvczja1KLeEA4f3NOr0w+bBiKU6agOpeNOjtgmckO4RB4do2lh2VbrF3jQlKkIXlPZ//MFTAfOYl0PJBnR/yDHXEvG7R6TG
+ KO17MrhkXFp5b+qvnUj9MhzCzWmjd4eDBwI+o6iOnXMBv4/9HOD3cSfETEQxc5WHo79YSfnfAkDxSUZm5RQ12YPageC5Av1A2YnxVjG+lOJScJXFuODnPv1G
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_060158_181200_1CC7DDC1 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190925_065130_233277_592DCE4F 
+X-CRM114-Status: GOOD (  10.83  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [217.31.204.67 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [188.121.43.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 4b1ac0: This
- week's update
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: Re: [OpenWrt-Devel] QCA9994 outdoor 13km link
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,156 +98,285 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============4701778733308908924=="
+Cc: Vincent Wiemann <vincent.wiemann@ironai.com>,
+ openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============6289510871395857555=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---===============4701778733308908924==
-Content-Type: multipart/alternative;
- boundary="------------CC8C652C7CE19CDB8C727868"
-Content-Language: en-US
+--===============6289510871395857555==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3062_10323692.1569419379045"
 
-This is a multi-part message in MIME format.
---------------CC8C652C7CE19CDB8C727868
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 8bit
+------=_Part_3062_10323692.1569419379045
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
 
-It would be nice to have watch file for mariadb and domoticz ?
+Hello,
+Today i managed to connect the station wds at 80MHz channel. Signal is -56 =
+and i have very low datarates. I have attached a photo.
+=C2=A0When station was ddwrt and AP openwrt the datarates were 866/433. TX =
+won't do more than VHT-NSS 1 although RX it's not good either because it's =
+a 4 chain radio and it should do VHT-NSS4.
+Thank you,Klevis
 
-Little off-topic question, is there any plan to create uscan page for
-19.07 ?
 
-J.P.
 
-Dne 19. 09. 19 v 2:32 Stephen Walker napsal(a):
-> No, they've always just been sitting in a local source tree. Do you
-> have any specific packages in mind? I just created watch files for the
-> measurement-kit, python-cachetools, python-cryptodomex,
-> python-pyrsistent, tessdata and tesseract packages.
->
-> On Wed, Sep 18, 2019 at 7:31 AM Jan Pavlinec <jan.pavlinec@nic.cz
-> <mailto:jan.pavlinec@nic.cz>> wrote:
->
->     Hi,
->
->     is there any source of watch files for uscan where I can push missing
->     package watch files?
->
->     J.P.
->
->     Dne 16. 09. 19 v 0:03 Stephen Walker napsal(a):
->     >   Branch: refs/heads/master
->     >   Home:   https://github.com/sdwalker/sdwalker.github.io
->     >   Commit: 4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102
->     >     
->      https://github.com/sdwalker/sdwalker.github.io/commit/4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102
->     >   Author: Stephen Walker <stephendwalker+github@gmail.com
->     <mailto:stephendwalker%2Bgithub@gmail.com>>
->     >   Date:   2019-09-15 (Sun, 15 Sep 2019)
->     >
->     >   Changed paths:
->     >     M uscan/index-18.06.html
->     >     M uscan/index.html
->     >
->     >   Log Message:
->     >   -----------
->     >   This week's update
->     >
->     >
->     >
->     > _______________________________________________
->     > openwrt-devel mailing list
->     > openwrt-devel@lists.openwrt.org
->     <mailto:openwrt-devel@lists.openwrt.org>
->     > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
 
---------------CC8C652C7CE19CDB8C727868
+On Mon, Sep 23, 2019 at 6:36 PM +0200, "Ben Greear" <greearb@candelatech.co=
+m> wrote:
+
+
+
+
+
+
+
+
+
+
+Weeks or months or whenever I have time, and maybe sooner if someone
+wants to sponsor it.  Please understand I, and probably everyone else worki=
+ng
+on OpenWRT, am busy with lots of other projects and community work often
+gets pushed to the back burner.
+
+Thanks,
+Ben
+
+On 9/23/19 8:18 AM, support@maxnet.al wrote:
+> Hi Ben,
+>=20
+> When do you think you might be able to make those changes to your driver?
+>=20
+> Thanks,
+> Klevis.
+>=20
+>=20
+>=20
+> On 2019-09-20 13:00, Ben Greear wrote:
+>> On 9/20/19 12:55 PM, Vincent Wiemann wrote:
+>>> Hi Klevis,
+>>>
+>>> have you tried it with a short distance?
+>>> If you did you should better ask Ben Greear directly.
+>>
+>> I asked him to post publicly so that others can help answer and that
+>> my own answers might
+>> help someone else.
+>>
+>> I have some patches that should enable coverage class settings for
+>> wave-2, but I am too busy
+>> with other things right now to port them to my ath10k-ct driver/firmware=
+.
+>>
+>> Thanks,
+>> Ben
+>>
+>>>
+>>> By the way ath10k gen 2 chipsets don't work very well with long distanc=
+e links without a
+>>> special feature which implementation is only available to companies lik=
+e Ubiquiti and very few
+>>> people who have an own reverse-engineered implementation.
+>>> It works on IPQ401X, QCA9886 and QCA9888 based chips only.
+>>>
+>>> And it is not possible to set a coverage class for gen 2 devices, yet a=
+s far as I know due to missing
+>>> documentation and implementation (correct me if that information is out=
+dated).
+>>> Furthermore a high channel width often results in problems
+>>> due to lower receiver sensibility.
+>>> We have better experiences with lower channel widths and sometimes get =
+more throughput with that.
+>>>
+>>> Actually I think this does not explain your connection issues as 13 km =
+is not that much.
+>>>
+>>> Regards,
+>>>
+>>> Vincent Wiemann
+>>>
+>>> On 20.09.19 18:30, support@maxnet.al wrote:
+>>>> Hello everyone,
+>>>>
+>>>> I am trying to setup a custom made outdoor link with Apu2d2 board devi=
+ces and QCA9994 cards from compex. After i installed openwrt and ath10k ct =
+driver,=20
+>>>> kmod ath10k and board-2.bin the device can run a 80MHz channel in WDS =
+AP. The problem is that it won't run as station or station wds. It can scan
+>>>> the SSIDs but won't connect them.
+>>>>
+>>>> Any suggestion?
+>>>>
+>>>> Thank you!
+>>>> Klevis
+>>>>
+>>>
+>>> _______________________________________________
+>>> openwrt-devel mailing list
+>>> openwrt-devel@lists.openwrt.org
+>>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>>>
+>=20
+
+
+--=20
+Ben Greear=20
+Candela Technologies Inc  http://www.candelatech.com
+
+
+
+
+
+
+
+------=_Part_3062_10323692.1569419379045
 Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: quoted-printable
 
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body text="#000000" bgcolor="#FFFFFF">
-    <p>It would be nice to have watch file for mariadb and domoticz ?</p>
-    <p>Little off-topic question, is there any plan to create uscan page
-      for 19.07 ?</p>
-    <p>J.P.<br>
-    </p>
-    <div class="moz-cite-prefix">Dne 19. 09. 19 v 2:32 Stephen Walker
-      napsal(a):<br>
-    </div>
-    <blockquote type="cite"
-cite="mid:CAH7PtXxmSjwZ6Cda-9RrOiRZ=EmnmUabZhgp+HwmGPKRCrLEQA@mail.gmail.com">
-      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <div dir="ltr">
-        <div>No, they've always just been sitting in a local source
-          tree. Do you have any specific packages in mind? I just
-          created watch files for the measurement-kit,
-          python-cachetools, python-cryptodomex, python-pyrsistent,
-          tessdata and tesseract packages.</div>
-        <br>
-        <div class="gmail_quote">
-          <div dir="ltr" class="gmail_attr">On Wed, Sep 18, 2019 at 7:31
-            AM Jan Pavlinec &lt;<a href="mailto:jan.pavlinec@nic.cz"
-              moz-do-not-send="true">jan.pavlinec@nic.cz</a>&gt; wrote:<br>
-          </div>
-          <blockquote class="gmail_quote" style="margin:0px 0px 0px
-            0.8ex;border-left:1px solid
-            rgb(204,204,204);padding-left:1ex">Hi,<br>
-            <br>
-            is there any source of watch files for uscan where I can
-            push missing<br>
-            package watch files?<br>
-            <br>
-            J.P.<br>
-            <br>
-            Dne 16. 09. 19 v 0:03 Stephen Walker napsal(a):<br>
-            &gt;   Branch: refs/heads/master<br>
-            &gt;   Home:   <a
-              href="https://github.com/sdwalker/sdwalker.github.io"
-              rel="noreferrer" target="_blank" moz-do-not-send="true">https://github.com/sdwalker/sdwalker.github.io</a><br>
-            &gt;   Commit: 4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102<br>
-            &gt;       <a
-href="https://github.com/sdwalker/sdwalker.github.io/commit/4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102"
-              rel="noreferrer" target="_blank" moz-do-not-send="true">https://github.com/sdwalker/sdwalker.github.io/commit/4b1ac0e52c1d0f0bac5b464e6a01d2bda1b97102</a><br>
-            &gt;   Author: Stephen Walker &lt;<a
-              href="mailto:stephendwalker%2Bgithub@gmail.com"
-              target="_blank" moz-do-not-send="true">stephendwalker+github@gmail.com</a>&gt;<br>
-            &gt;   Date:   2019-09-15 (Sun, 15 Sep 2019)<br>
-            &gt;<br>
-            &gt;   Changed paths:<br>
-            &gt;     M uscan/index-18.06.html<br>
-            &gt;     M uscan/index.html<br>
-            &gt;<br>
-            &gt;   Log Message:<br>
-            &gt;   -----------<br>
-            &gt;   This week's update<br>
-            &gt;<br>
-            &gt;<br>
-            &gt;<br>
-            &gt; _______________________________________________<br>
-            &gt; openwrt-devel mailing list<br>
-            &gt; <a href="mailto:openwrt-devel@lists.openwrt.org"
-              target="_blank" moz-do-not-send="true">openwrt-devel@lists.openwrt.org</a><br>
-            &gt; <a
-              href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel"
-              rel="noreferrer" target="_blank" moz-do-not-send="true">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a><br>
-          </blockquote>
-        </div>
-      </div>
-    </blockquote>
-  </body>
-</html>
+<html><head></head><body><div dir=3D"ltr" text-align=3D"left"><div style=3D=
+"font-family: Helvetica, Arial, sans-serif; font-size: 12pt; color: rgb(33,=
+ 33, 33); background-color: rgb(255, 255, 255); text-align: left;" dir=3D"l=
+tr">Hello,</div><div style=3D"font-family: Helvetica, Arial, sans-serif; fo=
+nt-size: 12pt; color: rgb(33, 33, 33); background-color: rgb(255, 255, 255)=
+; text-align: left;" dir=3D"ltr"><br></div><div style=3D"font-family: Helve=
+tica, Arial, sans-serif; font-size: 12pt; color: rgb(33, 33, 33); backgroun=
+d-color: rgb(255, 255, 255); text-align: left;" dir=3D"ltr">Today i managed=
+ to connect the station wds at 80MHz channel. Signal is -56 and i have very=
+ low datarates. I have attached a photo.</div><div style=3D"font-family: He=
+lvetica, Arial, sans-serif; font-size: 12pt; color: rgb(33, 33, 33); backgr=
+ound-color: rgb(255, 255, 255); text-align: left;" dir=3D"ltr"><br></div><d=
+iv style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 12pt; col=
+or: rgb(33, 33, 33); background-color: rgb(255, 255, 255); text-align: left=
+;" dir=3D"ltr">&nbsp;When station was ddwrt and AP openwrt the datarates we=
+re 866/433. TX won't do more than VHT-NSS 1 although RX it's not good eithe=
+r because it's a 4 chain radio and it should do VHT-NSS4.</div><div style=
+=3D"font-family: Helvetica, Arial, sans-serif; font-size: 12pt; color: rgb(=
+33, 33, 33); background-color: rgb(255, 255, 255); text-align: left;" dir=
+=3D"ltr"><br></div><div style=3D"font-family: Helvetica, Arial, sans-serif;=
+ font-size: 12pt; color: rgb(33, 33, 33); background-color: rgb(255, 255, 2=
+55); text-align: left;" dir=3D"ltr">Thank you,</div><div style=3D"font-fami=
+ly: Helvetica, Arial, sans-serif; font-size: 12pt; color: rgb(33, 33, 33); =
+background-color: rgb(255, 255, 255); text-align: left;" dir=3D"ltr">Klevis=
+</div><div style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 1=
+2pt; color: rgb(33, 33, 33); background-color: rgb(255, 255, 255); text-ali=
+gn: left;" dir=3D"ltr"><br></div></div><br><br><br>
+<div class=3D"gmail_quote">On Mon, Sep 23, 2019 at 6:36 PM +0200, "Ben Gree=
+ar" <span dir=3D"ltr">&lt;<a href=3D"mailto:greearb@candelatech.com" target=
+=3D"_blank">greearb@candelatech.com</a>&gt;</span> wrote:<br>
+<br>
 
---------------CC8C652C7CE19CDB8C727868--
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
 
 
---===============4701778733308908924==
+
+
+<div dir=3D"3D&quot;ltr&quot;">
+<pre>Weeks or months or whenever I have time, and maybe sooner if someone
+wants to sponsor it.  Please understand I, and probably everyone else worki=
+ng
+on OpenWRT, am busy with lots of other projects and community work often
+gets pushed to the back burner.
+
+Thanks,
+Ben
+
+On 9/23/19 8:18 AM, support@maxnet.al wrote:
+&gt; Hi Ben,
+&gt;=20
+&gt; When do you think you might be able to make those changes to your driv=
+er?
+&gt;=20
+&gt; Thanks,
+&gt; Klevis.
+&gt;=20
+&gt;=20
+&gt;=20
+&gt; On 2019-09-20 13:00, Ben Greear wrote:
+&gt;&gt; On 9/20/19 12:55 PM, Vincent Wiemann wrote:
+&gt;&gt;&gt; Hi Klevis,
+&gt;&gt;&gt;
+&gt;&gt;&gt; have you tried it with a short distance?
+&gt;&gt;&gt; If you did you should better ask Ben Greear directly.
+&gt;&gt;
+&gt;&gt; I asked him to post publicly so that others can help answer and th=
+at
+&gt;&gt; my own answers might
+&gt;&gt; help someone else.
+&gt;&gt;
+&gt;&gt; I have some patches that should enable coverage class settings for
+&gt;&gt; wave-2, but I am too busy
+&gt;&gt; with other things right now to port them to my ath10k-ct driver/fi=
+rmware.
+&gt;&gt;
+&gt;&gt; Thanks,
+&gt;&gt; Ben
+&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; By the way ath10k gen 2 chipsets don't work very well with lon=
+g distance links without a
+&gt;&gt;&gt; special feature which implementation is only available to comp=
+anies like Ubiquiti and very few
+&gt;&gt;&gt; people who have an own reverse-engineered implementation.
+&gt;&gt;&gt; It works on IPQ401X, QCA9886 and QCA9888 based chips only.
+&gt;&gt;&gt;
+&gt;&gt;&gt; And it is not possible to set a coverage class for gen 2 devic=
+es, yet as far as I know due to missing
+&gt;&gt;&gt; documentation and implementation (correct me if that informati=
+on is outdated).
+&gt;&gt;&gt; Furthermore a high channel width often results in problems
+&gt;&gt;&gt; due to lower receiver sensibility.
+&gt;&gt;&gt; We have better experiences with lower channel widths and somet=
+imes get more throughput with that.
+&gt;&gt;&gt;
+&gt;&gt;&gt; Actually I think this does not explain your connection issues =
+as 13 km is not that much.
+&gt;&gt;&gt;
+&gt;&gt;&gt; Regards,
+&gt;&gt;&gt;
+&gt;&gt;&gt; Vincent Wiemann
+&gt;&gt;&gt;
+&gt;&gt;&gt; On 20.09.19 18:30, support@maxnet.al wrote:
+&gt;&gt;&gt;&gt; Hello everyone,
+&gt;&gt;&gt;&gt;
+&gt;&gt;&gt;&gt; I am trying to setup a custom made outdoor link with Apu2d=
+2 board devices and QCA9994 cards from compex. After i installed openwrt an=
+d ath10k ct driver,=20
+&gt;&gt;&gt;&gt; kmod ath10k and board-2.bin the device can run a 80MHz cha=
+nnel in WDS AP. The problem is that it won't run as station or station wds.=
+ It can scan
+&gt;&gt;&gt;&gt; the SSIDs but won't connect them.
+&gt;&gt;&gt;&gt;
+&gt;&gt;&gt;&gt; Any suggestion?
+&gt;&gt;&gt;&gt;
+&gt;&gt;&gt;&gt; Thank you!
+&gt;&gt;&gt;&gt; Klevis
+&gt;&gt;&gt;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; _______________________________________________
+&gt;&gt;&gt; openwrt-devel mailing list
+&gt;&gt;&gt; openwrt-devel@lists.openwrt.org
+&gt;&gt;&gt; https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+&gt;&gt;&gt;
+&gt;=20
+
+
+--=20
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
+
+</greearb@candelatech.com></pre>
+</div>
+
+</blockquote>
+</div>
+</body></html>
+------=_Part_3062_10323692.1569419379045--
+
+
+--===============6289510871395857555==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -287,5 +387,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4701778733308908924==--
+--===============6289510871395857555==--
 

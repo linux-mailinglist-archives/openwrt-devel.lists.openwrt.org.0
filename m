@@ -2,170 +2,132 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57ADBBEA10
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Sep 2019 03:25:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26DC2BEB52
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Sep 2019 06:27:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:To:Date:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	References:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SezSSmGiN4XbMKoGjxsWzaSyDfApq47Kk4+T8LJ3K4w=; b=U9+wSPHTVSADCZkQx8lyFkz/M
-	cqWIOTTedMnMKNfnmghjC1CwYdxUmqWkyqVOw2G4gNrJ8wdDU1um9uHd980X8rhit3dNBSLgn0S3K
-	FlY8lwU8iL+6cO/zDcHKDJTk3+V/KrHbpyPBpmZGkLa2j/hK79dLRHuWU3gqA67MVMRYsY328/bdZ
-	Nqbbk1hN2D53FaXeZBCoGxWhjudVhw1rn6qhXIww15KeP3aTjX8hc2tgf2yauKXX7FSCZJpQO6aXA
-	ryYPIO+XNplHTEmQcXVr7eq2cgoZSTpm8KQVRTreXROQufMjvmnVtWSQ9ny05/kJ8n1KYir49zaBH
-	s8zLae2Qg==;
+	 bh=W4riG1ceu0qO6Prmd617mM4JLBNoDFCFD2jcs+IRzaA=; b=X/gBIwqpmpuwa281n4oF0uOW7
+	yB/2o687UUzjU79hQDLHa0Uw0XK5exAoUSKDwyV0+JFhyW/dFd/YlLzOhSIrfdRPsRy40fYWZuk3k
+	oaBaIJgnkrZkSPsKGxyQIjKCAft7avm40Kb/FXmIDurMlqkWLwkOYPEbIRaToHQ771brHLLvCFY+G
+	ZWw1FCyhJoBAl1g5qTjLhAnAqs5Mq9OG8gT8x+kfOOg2zH8TRtVV+FMg+gf75lPXE3gQ8ipMl8iBG
+	rAlkw/eUlf92pNrjWFnjgD34O2aH5+1QpYrhGt9NrulA+V3c4hUu+Os+KtiMo/DwVvwt0eTXTpJwy
+	yS/iAo2ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDIX8-0001bw-IJ; Thu, 26 Sep 2019 01:25:26 +0000
-Date: Thu, 26 Sep 2019 01:24:52 +0000
-To: Paul Spooren <mail@aparcar.org>
-In-Reply-To: <8204ec6c-5485-3e8b-6763-e0daa20a7549@aparcar.org>
-References: <mailman.26691.1569291335.19300.openwrt-devel@lists.openwrt.org>
- <8204ec6c-5485-3e8b-6763-e0daa20a7549@aparcar.org>
+	id 1iDLNU-00071Z-KM; Thu, 26 Sep 2019 04:27:40 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iDLNE-00071C-6N
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Sep 2019 04:27:25 +0000
+Received: by mail-lj1-x244.google.com with SMTP id y3so647788ljj.6
+ for <openwrt-devel@lists.openwrt.org>; Wed, 25 Sep 2019 21:27:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=NK7kIuSdZ8y2/qSZbFtp9mv6k1XvQ3hNVNpfRNZ8PuQ=;
+ b=f3HY+F3piGGg1X0/sd/rfJfBplq8AgZVoo8edBy1Ajs29QpAQgRpPoT8Re6zWWZdB4
+ Jnp5Xars2HwKIm2fKQ+/ETRpOpNgP1Jfri57tBzZ9FVi1LaNtHSl/Jj80XVGKT78SFGw
+ 3Tmvdy31+49ArGeE6u7wLPrkO1azwYwgNh7qu7bZYYF8moqC5UVyIl7rwLTNbLOZqyw3
+ 1rvFjO3HahLdbZwOdcinEJfK7p7bBYS9gIz1q+Syhg0eJ80AOPBEMXiXAO0DNK9XZppp
+ XkMNGtsdCahVHU4S6CPyhZZVQu6aVBTjodeSUKu8rME+M8JVDxBxBBmZG7s58tx5gPox
+ EXUQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=NK7kIuSdZ8y2/qSZbFtp9mv6k1XvQ3hNVNpfRNZ8PuQ=;
+ b=Be2A750qNhzKfKeYW6KpYa9U9dNIvB6NRN1dDN6fDV5kNqdkjNHE02xe55wBSXI6U1
+ 3+eAOYpO5DaersaonTvUMDME8AEwiTWXxPikZYZ4y4tq04YpE3hVb8uMBvH0rRBCbxjl
+ jTJ21lBL1ZknSzhvP7GLH1sIMaBusE9QCm4dtn52nnG6+y3MGDdMWHf9Tz519FzcfHHh
+ di8ALlB9pdxIh287KME98qDm6rDA/xvKWvKNS7D5uMqDAteJpSFY+eOHrSTXRw5NxqwV
+ J0fzGuxmSyvyqqT0y9hNh+UOCCi8DQY2X4Z9JeFpIh16MuE1F1ojQM4Mjz1YGYQMb0t7
+ Fh9A==
+X-Gm-Message-State: APjAAAUzW9UZXC8rLQ/eSextZmjkad2JYxAtg5C9uwVWfYDw43kpV1KQ
+ Ta6hfXJiHOfXF7Ao+FGQcdI=
+X-Google-Smtp-Source: APXvYqyuo4qk91IioExnITg61c1hmigzSXeRYsBQf8rQa+w2RoTIcUArLEnoRt0HxhsFjPEBZy3DgQ==
+X-Received: by 2002:a2e:a0c5:: with SMTP id f5mr1086471ljm.114.1569472041724; 
+ Wed, 25 Sep 2019 21:27:21 -0700 (PDT)
+Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.googlemail.com with ESMTPSA id 14sm205875ljs.71.2019.09.25.21.27.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 25 Sep 2019 21:27:20 -0700 (PDT)
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+To: openwrt-devel@lists.openwrt.org, Jo-Philipp Wich <jo@mein.io>
+References: <20190925145138.6185-1-zajec5@gmail.com>
+Message-ID: <c1f5a2a5-9e84-0ef7-4503-45d16ab53d0c@gmail.com>
+Date: Thu, 26 Sep 2019 06:27:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.5.2
 MIME-Version: 1.0
-Message-ID: <mailman.27257.1569461109.19300.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Scott via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: Jo-Philipp Wich <jow@openwrt.org>,
- "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-X-Mailman-Version: 2.1.29
+In-Reply-To: <20190925145138.6185-1-zajec5@gmail.com>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190925_212724_262310_5CFD7FBB 
+X-CRM114-Status: GOOD (  10.38  )
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.1 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zajec5[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+Subject: Re: [OpenWrt-Devel] [PATCH luci 1/2] luci-mod-system: use "system"
+ new "validate_firmware_image" ubus method
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Scott <xmrscott@protonmail.com>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] [Suggestions] Streamline localization by using
- Weblate for the project,
- use LiberaPay or OpenCollective to enable people to donate
-Content-Type: multipart/mixed; boundary="===============3313861443095453234=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============3313861443095453234==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
-
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============3313861443095453234==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from mail4.protonmail.ch ([185.70.40.27])
-	by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iDIWn-0000KF-RL
-	for openwrt-devel@lists.openwrt.org; Thu, 26 Sep 2019 01:25:08 +0000
-Date: Thu, 26 Sep 2019 01:24:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=protonmail.com;
-	s=default; t=1569461100;
-	bh=sKj6MKN4eGcdhJ+/E4VuB51QSv/vDCVd73RpY9xNCAE=;
-	h=Date:To:From:Cc:Reply-To:Subject:In-Reply-To:References:
-	 Feedback-ID:From;
-	b=Fwq3XKfDGPvZgfprjvUtfptkNJqez9Fy+Dyolr+5ugPx7MOxK7tNoQvE3gxIKroNt
-	 iH7wsg4KIL3ypZTWlWWSGEwApiMqfm8rz5JTaICFg5CyYfXoAo46wDsNY64vRakxJm
-	 P3HOA7hzsj9GT5aofMNuZbQfuUed2QiDlOcDEu0g=
-To: Paul Spooren <mail@aparcar.org>
-From: Scott <xmrscott@protonmail.com>
-Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>, Jo-Philipp Wich <jow@openwrt.org>
-Reply-To: Scott <xmrscott@protonmail.com>
-Subject: Re: [OpenWrt-Devel] [Suggestions] Streamline localization by using Weblate for the project, use LiberaPay or OpenCollective to enable people to donate
-Message-ID: <DWSuFMxlBr3Lxx2fe7jtlU34cB4CtVDmCNSU-yFJj8hMYNoA5CbXACBGsjqppgas-sFuF6xMJi3g_VTfEDrAKrpa9-lpu6xN90ZMS8DCNL0=@protonmail.com>
-In-Reply-To: <8204ec6c-5485-3e8b-6763-e0daa20a7549@aparcar.org>
-References: <mailman.26691.1569291335.19300.openwrt-devel@lists.openwrt.org>
- <8204ec6c-5485-3e8b-6763-e0daa20a7549@aparcar.org>
-Feedback-ID: ZrTxtHCXzMzONvFUwaPWt8Wy727WH0mSWOjNTyiuYAeVqzelo3P71EF-FM1DOPdaf9nqgULTnQtBn6I-cq7CUg==:Ext:ProtonMail
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: quoted-printable
-X-Spam-Status: No, score=-1.2 required=7.0 tests=ALL_TRUSTED,DKIM_SIGNED,
-	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM autolearn=ham
-	autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.protonmail.ch
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_182506_514454_D6C74224 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
-                             low trust
-                             [185.70.40.27 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
-                             [185.70.40.27 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider (xmrscott[at]protonmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-
-=E2=80=90=E2=80=90=E2=80=90=E2=80=90=E2=80=90=E2=80=90=E2=80=90 Original Me=
-ssage =E2=80=90=E2=80=90=E2=80=90=E2=80=90=E2=80=90=E2=80=90=E2=80=90
-On Tuesday, September 24, 2019 1:13 AM, Paul Spooren <mail@aparcar.org> wro=
-te:
-
-
->
-> I think that's a good idea! As it doesn't need to be directly integrated
-> in any existing workflow nor requires privileges on any Git, it's
-> basically just a fancy front-end with translation suggestions for .po
-> files right?
->
-> Out of curiosity I requested a libre account for a quick evaluation, if
-> anyone is in serious doubt on evaluation it I'll instantly cancel the
-> request. However I think this is in line with
-> https://openwrt.org/meetings/hamburg2019/start#luci_translations
->
-
-Correct, it needs no privileges to update Weblate's .po copy from the repos=
-itory and if you want to commit the localization that has been made by cont=
-ributors you can opt to have the Weblate commit automatically if you're fee=
-ling daring, or you can just opt to have manually triggered PR where someon=
-e with merge permission can review per usual contribution workflow. The Con=
-tinuous Localization documentation documents the workflow and possibilities=
- pretty well: https://docs.weblate.org/en/latest/admin/continuous.html
-
-Yep, Weblate is largely a browser based localization tool frontend with a p=
-inch of middleware components to update Weblate's copy, send out notificati=
-ons, and make commits or PR's.
-
-Thanks again for your time. If I can help pilot any, etc let me know!
-
--Scott
-
-
-
---===============3313861443095453234==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3313861443095453234==--
+T24gMjUuMDkuMjAxOSAxNjo1MSwgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgo+IEZyb206IFJhZmHF
+giBNacWCZWNraSA8cmFmYWxAbWlsZWNraS5wbD4KPiAKPiBUaGlzIG5ldyB1YnVzIG1ldGhvZCBw
+cm92aWRlcyBtb3JlIHByb3Blcmx5LWZvcm1hdHRlZCBkZXRhaWxzIGFib3V0Cj4gZmlybXdhcmUg
+ZmlsZS4gVXNlIGl0IHRvIGNoZWNrIGlmIHVwbG9hZGVkIGltYWdlIGlzIHZhbGlkLgo+IAo+IFRo
+ZSBvbGQgInN5c3VwZ3JhZGUgLS10ZXN0IiBtZXRob2QgaXMgbGVmdCBmb3Igbm93IHRvIHByb3Zp
+ZGUgc3RkZXJyCj4gb3V0cHV0Lgo+IAo+IFNpZ25lZC1vZmYtYnk6IFJhZmHFgiBNacWCZWNraSA8
+cmFmYWxAbWlsZWNraS5wbD4KCk1pc3NlZCBwYXJ0OgoKZGlmZiAtLWdpdCBhL21vZHVsZXMvbHVj
+aS1iYXNlL3Jvb3QvdXNyL3NoYXJlL3JwY2QvYWNsLmQvbHVjaS1iYXNlLmpzb24gYi9tb2R1bGVz
+L2x1Y2ktYmFzZS9yb290L3Vzci9zaGFyZS9ycGNkL2FjbC5kL2x1Y2ktYmFzZS5qc29uCmluZGV4
+IDMxYzE1NGNiYy4uMTgyZjI0OTg4IDEwMDY0NAotLS0gYS9tb2R1bGVzL2x1Y2ktYmFzZS9yb290
+L3Vzci9zaGFyZS9ycGNkL2FjbC5kL2x1Y2ktYmFzZS5qc29uCisrKyBiL21vZHVsZXMvbHVjaS1i
+YXNlL3Jvb3QvdXNyL3NoYXJlL3JwY2QvYWNsLmQvbHVjaS1iYXNlLmpzb24KQEAgLTQ0LDYgKzQ0
+LDcgQEAKICAJCQkJIm5ldHdvcmsuZGV2aWNlIjogWyAic3RhdHVzIiBdLAogIAkJCQkibmV0d29y
+ay5pbnRlcmZhY2UiOiBbICJkdW1wIiBdLAogIAkJCQkibmV0d29yayI6IFsgImdldF9wcm90b19o
+YW5kbGVycyIgXSwKKwkJCQkic3lzdGVtIjogWyAidmFsaWRhdGVfZmlybXdhcmVfaW1hZ2UiIF0s
+CiAgCQkJCSJ1Y2kiOiBbICJjaGFuZ2VzIiwgImdldCIgXQogIAkJCX0sCiAgCQkJInVjaSI6IFsg
+IioiIF0KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
+cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
+Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
+Cg==

@@ -2,95 +2,50 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2BACC114E
-	for <lists+openwrt-devel@lfdr.de>; Sat, 28 Sep 2019 18:36:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD914C1198
+	for <lists+openwrt-devel@lfdr.de>; Sat, 28 Sep 2019 19:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nr/1XOZuDCbMGCRFArrDEU05IGtr8ocIu5Zz4xIryPI=; b=QhKINZCrviiqKl
-	OMP2+upALtQPPaYeXVN6BnvrK/0oLfaEOz1CemcVLXdYrEabus6Xd21nJQmZgxS6KIedybYgiuhc3
-	bQRH7xkAys9vPEN/gzWjhnI2d69pA+Lnz9eturHNmLB48O9wrwEpsM535ATIOWAvS8kPm+7tgw51U
-	q0lAqcQcPcnth5j6vqNWe+5/j59SxZtiNvUhX4QqR9Zu+HXfFD5ecWHr0ibdJgxok/jyIkyy760O6
-	+CBPH/lr/jhJXxoNPxyzcEjAxmpePR6PhUsomhJvorZlEiZzYA01ej0M8QxJYp2Eqfibb3lhIIDdk
-	7zUTDAfz/bTXOoGDWxkw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ogc8tJ6SasZ1EvyV0N0w7dviiF8fzzL/cX73RECmtEo=; b=B1OUey9Ok35kCJ
+	bAC6EwF1evXGYNR5NFTpBO2WiG6s2f9OKvzD/mL4mygZvnSbcM3m+VBHS7bzUs/rz+XaO7VyDSj5K
+	OINHwtqDneAnDlfio7aO/FL9yDk+nxfa8HitjYz43mjN3ctiuSUcND3RXxOobE6EkEQmn95uMW82n
+	DIWAUyxHAR3U1aSfkw1nXs/MHpMB3klz2xbSQe/K2obzeFvDWSyvqpw0XRVLgDaxuImEo+B9+gmX2
+	5PdzViLYFyg5AXmHYrX10tkoIfveWepAQkXagYq2SHUUT7q0SbSQMbALvMx6lW6TERtY6EmR1uH80
+	SaK4vQebfIogUATeKWCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iEFi8-0002sS-5K; Sat, 28 Sep 2019 16:36:44 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iEGhe-0006Jz-Kb; Sat, 28 Sep 2019 17:40:18 +0000
+Received: from mx.allycomm.com ([138.68.30.55])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iEFi0-0002s1-B2
- for openwrt-devel@lists.openwrt.org; Sat, 28 Sep 2019 16:36:38 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w12so6395466wro.5
- for <openwrt-devel@lists.openwrt.org>; Sat, 28 Sep 2019 09:36:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=CXojr5C1OBZob2J7aUh58vE3oGuNgyJaC0XAmz4nmWs=;
- b=i17r/wL3rYeQrx7vu/kIXa1x4RJgbgyH7quCxQPCt8+g2db/xflAQQgAZuxOSZxN0C
- 4MQ9lfNk62D+IhKh6zUneYgZ1xFnrUqWWbB6R4QKQgTtE/Qm5xAjmQwaifz0fPnzQv1T
- DHWLagncRrW2+vyntPNgu6WabGBrKujAMHczo2R+0mTRVKSe/ly5MuE4YCOT/rrVjlCI
- Gq3195KfE1lQSF2EXeQsiiwwbjsdwfCNdJXQBeQ0eObB8BDaEYObEvHujCj7sTP0a7d4
- S6ZAQMb8rQQtQwVjObgVWzDRhheE1CDjGPwYZ2KOvtWNwuzXsiVCO+eNiXMtMN25jMBk
- RaMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=CXojr5C1OBZob2J7aUh58vE3oGuNgyJaC0XAmz4nmWs=;
- b=c6vHTMgE29k2lKxcPKeHCgODLcETEbx5AcXbTonP1WQSnmF8vD7sWmiR61fXoDio07
- 4Rg2ttJo15Dq85a71b8mQ7kb53yqC85iu4ISEYqzLomzTHU6j2Nq3+/XrBnNsjUV4HBb
- X1zneBRvb1QXqvSLE2m9AYq7ttzO2qXxPhMVV0bCraQ2NBbRCGQpfRNdHT+9AGAiotXJ
- AeCOuYJbVI89qFjGaywYlm16TeoXtzFVcacjVgkia3fdP/mgola4hXl5UaMneEknvtZr
- sWsqX77T+sYtZUOu8Cav52EwCLPKaM9cmTFY9qDa8PiL4J3NxfxthNCekTKsuy7PLMpk
- sTmw==
-X-Gm-Message-State: APjAAAW7ioD8kVO8H0b2V24YSZLDWflXfdrV2biJtuDr4cfqupGX5ruG
- NL+a1YIIzXwofVSg88nZLIYJPNir
-X-Google-Smtp-Source: APXvYqxGriuJ2iHmZAilLYaNKXVIVxx9pOhBHn4hEfvlu+fkThOF9nnPSI+B1xaMHeCF3FZb5CNZTw==
-X-Received: by 2002:a5d:430f:: with SMTP id h15mr7381698wrq.177.1569688593596; 
- Sat, 28 Sep 2019 09:36:33 -0700 (PDT)
-Received: from debian64.daheim (p5B0D7F22.dip0.t-ipconnect.de. [91.13.127.34])
- by smtp.gmail.com with ESMTPSA id
- b186sm25438619wmd.16.2019.09.28.09.36.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 28 Sep 2019 09:36:32 -0700 (PDT)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.92.2)
- (envelope-from <chunkeey@gmail.com>)
- id 1iEFhv-0005JT-Vc; Sat, 28 Sep 2019 18:36:31 +0200
-From: Christian Lamparter <chunkeey@gmail.com>
+ id 1iEGhV-0006Jd-Vj
+ for openwrt-devel@lists.openwrt.org; Sat, 28 Sep 2019 17:40:11 +0000
+Received: from allycomm.com (unknown [IPv6:2601:647:5401:2210::49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.allycomm.com (Postfix) with ESMTPSA id 02B963DEE3;
+ Sat, 28 Sep 2019 10:40:07 -0700 (PDT)
+From: Jeff Kletsky <lede@allycomm.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 28 Sep 2019 18:36:31 +0200
-Message-ID: <2787752.gk3AGoonP1@debian64>
-In-Reply-To: <20190923143138.2976-1-freifunk@adrianschmutzler.de>
-References: <20190923143138.2976-1-freifunk@adrianschmutzler.de>
+Date: Sat, 28 Sep 2019 10:39:57 -0700
+Message-Id: <20190928173958.20199-1-lede@allycomm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190928_093636_380277_F0739C61 
-X-CRM114-Status: GOOD (  14.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190928_104010_020638_FACB1174 
+X-CRM114-Status: GOOD (  10.15  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] [PATCH] ipq40xx: add label MAC address for
- FritzBox 4040
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH v2 1/2] ath79: Correct glinet,
+ gl-ar300m-lite in 02_network
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,84 +57,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Cc: Jeff Kletsky <git-commits@allycomm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Monday, September 23, 2019 4:31:38 PM CEST Adrian Schmutzler wrote:
-> This adds label MAC address for the AVM FritzBox 4040, the first
-> device in ipq40xx target.
+From: Jeff Kletsky <git-commits@allycomm.com>
 
-I had to look this up a bit more, since my (broken) retail-unit
-Fritz!Box 4040 does not have the MAC-Address on the sticker labeled
-as "MAC Address" (or something like that).
-Instead there is a "CWMP-Account" String/Number which displays the
-Address as a "part" of it.
+Previously, the board name for the GL-AR300M-Lite was incorrect
+in 02_network, resulting in an unintended, fall-through condition
+when initializing the network configuration.
 
-Wouldn't it be better to just go with the "serial number" of the device 
-in this case then?
+While builds prior to commit 8dde11d521 (merged June 5, 2019)
+    ath79: dts: drop "simple-mfd" for gmacs in SoC dtsi
+functioned properly, the error was noted in resolving first-boot
+connectivity issues related to the single-phy nature of the device
+and the "swap" of eth0 and eth1 related to that commit.
 
-Going deeper: The patch that introduced ucidef_set_label_macaddr describes it as
+Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
+---
+ target/linux/ath79/base-files/etc/board.d/02_network | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-|commit 469e347f19ce9eefdc16f421b8e1f18ed60c310c
-|Author: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-|Date:   Thu Aug 15 15:13:27 2019 +0200
-|
-|    base-files: provide option to specify label MAC address in board.d
-|    
-|    For many devices, MAC addresses cannot be retrieved via the
-|    device tree alias.
-| [...]
-
-... This is somewhat strange in the context of the Fritz!Box 4040.
-This is because the extra u-boot we use for the Fritz!Box 4040 makes
-a real effort to patch the real mac-address into the device tree
-before handing it off to the kernel.
-
-https://github.com/chunkeey/FritzBox-4040-UBOOT/blob/master/board/qcom/ipq40xx_cdp/ipq40xx_cdp.c#L455
-
-So, everything should just "click" with this alias added.
-
-	label-mac-device = &gmac0;
-
-Or does it not?
-
-Cheers,
-Christian
-
-> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> ---
->  target/linux/ipq40xx/base-files/etc/board.d/02_network | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/target/linux/ipq40xx/base-files/etc/board.d/02_network b/target/linux/ipq40xx/base-files/etc/board.d/02_network
-> index e5ba7260f3..082724ebfc 100755
-> --- a/target/linux/ipq40xx/base-files/etc/board.d/02_network
-> +++ b/target/linux/ipq40xx/base-files/etc/board.d/02_network
-> @@ -77,6 +77,9 @@ ipq40xx_setup_macs()
->  		wan_mac=$(mtd_get_mac_binary_ubi Factory 0x5006)
->  		lan_mac=$(mtd_get_mac_binary_ubi Factory 0x1006)
->  		;;
-> +	avm,fritzbox-4040)
-> +		label_mac=$(cat /sys/class/net/eth0/address)
-> +		;;
->  	engenius,ens620ext)
->  		wan_mac=$(mtd_get_mac_ascii u-boot-env ethaddr)
->  		lan_mac=$(macaddr_add "$wan_mac" 1)
-> @@ -89,6 +92,7 @@ ipq40xx_setup_macs()
->  
->  	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac
->  	[ -n "$wan_mac" ] && ucidef_set_interface_macaddr "wan" $wan_mac
-> +	[ -n "$label_mac" ] && ucidef_set_label_macaddr $label_mac
->  }
->  
->  board_config_update
-> 
-
-
-
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+index 15371a1dd9..0de17adb9d 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/base-files/etc/board.d/02_network
+@@ -19,7 +19,7 @@ ath79_setup_interfaces()
+ 	devolo,dvl1750i|\
+ 	devolo,dvl1750x|\
+ 	engenius,ecb1750|\
+-	glinet,ar300m-lite|\
++	glinet,gl-ar300m-lite|\
+ 	netgear,ex6400|\
+ 	netgear,ex7300|\
+ 	ocedo,koala|\
+-- 
+2.20.1
 
 
 _______________________________________________

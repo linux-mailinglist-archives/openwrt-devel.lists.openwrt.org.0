@@ -2,83 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4FADC943B
-	for <lists+openwrt-devel@lfdr.de>; Thu,  3 Oct 2019 00:22:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ABCBC944A
+	for <lists+openwrt-devel@lfdr.de>; Thu,  3 Oct 2019 00:24:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W1iCdGp1h4tT7/mXMpL6LDRIaRx9dOyF+wIPFLyRyT0=; b=iypxNAQ+BfsPD8
-	vP/OAROMR8tjgk/JQJpJHFx9Wv7nqNvTNznwwHwrEC+YdmGbgjYuDgvrximQNs2YV+S04lhaUYAot
-	Iif96Ye1JW/9MzyPlHvWdOU335cqNAKZXNF+NYxDdCKanM8gFq+WcEuqP4W56uSr8AYASSB86Hsmu
-	tav+Osh+kRwZNj+zQXdzzEZMzza3WuZjBHv/heGTKAPOrDeXzbaz4nxqRBb/Hpxb5GN+H6Qd9NMEJ
-	wYe3yMEtx2Fr9P4WvKtrBIKRgKmjL7GXIZcLYmo0kbnwZ1GXiE0z03kNTYvXO+aYyC+anjb98/AHE
-	t5g09MDqVaKhx2f/dusA==;
+	List-Owner; bh=IWRWkz8fmiRVpqnwVIZai2wtixZYMBljc5n0tGGogdQ=; b=o1cK0s2cydSeu/
+	0jDjctRTDXBhD81RLpj3RUA7V5/gSv48JOY20d0zTqxhv1tu3HLYcnPX0KsRtP5rqKU/NowKh4hmI
+	5v+aFdrrSP6AkNLi0dnLmLCW5jFQtoZnCrHkEmJdkU06UguYpLQqjADmTTkoZZMFpb2Wowq+OUnel
+	teHq35eWeGbJ9PJKsYTqa0GIfiD7RI3lXrpSF6DMSVTMRmU3NYglmbRqnvHKLPNlgbQsGX6aMJTbD
+	/7LUQBo48s9Vj9dhKBXcAlj28yN26b8Jy2Y1Gs14A/cXuVV36Hoz21U27bRbvmbq3A55CTrmC09Jh
+	L977mYWUBathiHR/b/Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFn0a-0005uT-42; Wed, 02 Oct 2019 22:22:08 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iFn37-00077S-Gd; Wed, 02 Oct 2019 22:24:45 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFn0O-0005t6-9e
- for openwrt-devel@lists.openwrt.org; Wed, 02 Oct 2019 22:21:57 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y10so519519plp.2
- for <openwrt-devel@lists.openwrt.org>; Wed, 02 Oct 2019 15:21:56 -0700 (PDT)
+ id 1iFn2z-00076y-HZ
+ for openwrt-devel@lists.openwrt.org; Wed, 02 Oct 2019 22:24:38 +0000
+Received: by mail-pg1-x542.google.com with SMTP id v27so444457pgk.10
+ for <openwrt-devel@lists.openwrt.org>; Wed, 02 Oct 2019 15:24:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=gateworks-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id;
- bh=RkaQ7x80/6ZHUAxrk2SotQcEzvtpvGDOlvnE4zwW+eU=;
- b=tH81USNpd/Cm5k544ub9/FFPKfIaJQusi2JHp5kx4XjBQ7VvQ82yVs90qLoiHNZRL/
- JAErchphkv0xVvcjSpVoO82xhTTdD3Z+v76UJX2z/osPPs2A8jPNVXFU1DeUCRcGawmF
- CjzA9v+lqnsy8iZKga4VhUq6W9pEFU9nQ157RBs5CwoCMFSDJlLJ3L0TPvdGYj9UWfIq
- zn1Q+nu4yJ17Jf4SC7xXn2qJZRdRGdtlJIqOxYSBrX9SzErPw4JFPxb/BQ38nLO9mZl4
- hNV4DFCMIRHHo+G572ZeUwZYzxbRRCRuORsZaX7A5pIwr54zpKF4ndqST8XNZ1yKbQun
- EKwg==
+ bh=aRH9vA8UQWhpyxkIHKdWyDddh9UaRH3gf70vqjVdlso=;
+ b=Z8I+D+mIA9tQCHVl8MqHPT/Qg7BwxaqEfFbtmie7xVjcQLMB5QeAUkNdlancRwZnjM
+ gCpJMtnRZAswRfZRz5Fc8wpu/mzFHuKWJyf5XY0tKa31WS9zF1Cj/OQx0cyW8LxKi5GU
+ d4eC0AjctwYl5XjDV4jr5wPcEuWt4It9eFG+bYQbYABeVBGBg9LiQCdhLqIscYRiieps
+ 6vyj/NanjrLbijW9lZntrv7/BeAXoF1dXl+8WyCFEzNPqxrpAtf8ufOJCJoZexwFpZSZ
+ Z7K2gTFCR7EKaboYy6+Q1gFchfiD6N/U3+RKW7r3XIq86RPTmAVmhYpfL08OnltCiNYV
+ lK4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=RkaQ7x80/6ZHUAxrk2SotQcEzvtpvGDOlvnE4zwW+eU=;
- b=BXE39pE9pcadOre7QRcOIforocYiElu019IAJLfQzyRG14Z7ij9B2obymMXzvb5S31
- 2wKZ+gh4LSwy/dRhiPDH2AwPFZMmK6gxN1uV8GoYnDHFQa+Z3E+1pzjLDLClPZVrEx53
- H8PFPyyMzjpr6w2DF4ZpYqt+UOUh5D2MVjubtuyoQara/DeuW5nb/cEHMQPDrd2g0//A
- Et9O1v/HS8z+Lhj/QwAYkmbNSGlfHgOPtk6at/bhIVvb4Wu8sTn6kdz2XqUMHN2+Crbe
- nx9QAUckVGKwMeksjxp64a+nRb5LxQQr/B4W5c2P9PgiaZ0kwXiIrmymWpQsuD3S+bEb
- zGwg==
-X-Gm-Message-State: APjAAAVeGcCgHeZ8ta7KxYOBqUakWe9emjl17J5tf4SVM+x6TJNk79+T
- Fp7q+WTzNv9S+fhnEpnb36mqkDYrL4U=
-X-Google-Smtp-Source: APXvYqy56WF1LEMjuYOpaMldS4AVTtf7dbYrrjk+IFem5Sr8Kpo/IWuUa4LCr6cDvhf8uCJ+KBTXJA==
-X-Received: by 2002:a17:902:6b05:: with SMTP id
- o5mr6155057plk.33.1570054915298; 
- Wed, 02 Oct 2019 15:21:55 -0700 (PDT)
+ bh=aRH9vA8UQWhpyxkIHKdWyDddh9UaRH3gf70vqjVdlso=;
+ b=Am2CUbpPgSCm4s9HrXafrSUsSGtmYCK52pM7bFi0LaXSYNL9zolYWHZhvD38BqdPnU
+ ynxLVWeMcn+AlKodGxz/Qz9o4ziJtnv7qc27wYIfrruQUONJijqpAvkQ8c27gPdMud5U
+ QjiUISPOSdH+XCNQxUna7pdWkF1QYxDsJB1Cm1hpH9xTZSEFz8FbrsuVXr7buv1vOuq0
+ qgui5lzr3/T4llGAiVup85XFNW6wHMOzg6HD7i8wbsMCsLxACWVVKuTHqydghzQFGHI9
+ ygZdkDOFowC4dwuBsQbfTOjHv+QwuzM7DR9zbAmUUXg8W9VLNbZDnua3CS6aT6CnHU9E
+ eWTg==
+X-Gm-Message-State: APjAAAU/yBdujpobmnxIuu5586+G26fdydc5KsnMbYGUpDJsVqcNb27X
+ RJ/u94uDM82yF4AXL12I0SKhFJggyBs=
+X-Google-Smtp-Source: APXvYqw90G0uUI2qs+1OqsJXoyRPWiaav3KZcP5IjhYBZqczhmg4wdh+c1b7tRxUIEV5s6BLRLIEgQ==
+X-Received: by 2002:a17:90a:cb18:: with SMTP id
+ z24mr6736101pjt.108.1570055076542; 
+ Wed, 02 Oct 2019 15:24:36 -0700 (PDT)
 Received: from tharvey.pdc.gateworks.com
  (68-189-91-139.static.snlo.ca.charter.com. [68.189.91.139])
- by smtp.gmail.com with ESMTPSA id k66sm256554pjb.11.2019.10.02.15.21.54
+ by smtp.gmail.com with ESMTPSA id 7sm340166pgj.35.2019.10.02.15.24.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 02 Oct 2019 15:21:54 -0700 (PDT)
+ Wed, 02 Oct 2019 15:24:35 -0700 (PDT)
 From: Tim Harvey <tharvey@gateworks.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed,  2 Oct 2019 15:21:47 -0700
-Message-Id: <1570054907-11762-1-git-send-email-tharvey@gateworks.com>
+Date: Wed,  2 Oct 2019 15:24:29 -0700
+Message-Id: <1570055069-11863-1-git-send-email-tharvey@gateworks.com>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191002_152156_337131_8791ED90 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20191002_152437_581004_018C9FCE 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 2/2] imx6: bootscript: use partition UUID
- for rootfs if possible
+Subject: [OpenWrt-Devel] [PATCH] uboot-envtools: remove erasesize from MMC
+ config
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,85 +98,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Specifying root filesystem by device is non-deterministic for several reasons:
- - USB device unmeration order is not garunteeed for USB storage devs
- - MMC devs ordering is determined by the instance of the MMC host controller
-   including non-storage SDIO devices which can throw off numbering depending
-   on kernel versions.
-
-It is recommended to use partition UUID
+Erasesize doesn't belong in the u-boot env config for block devices as it is
+known to be 512 byte aligned.
 
 Signed-off-by: Tim Harvey <tharvey@gateworks.com>
 ---
- target/linux/imx6/image/bootscript-ventana | 34 ++++++++++++++++++------------
- 1 file changed, 20 insertions(+), 14 deletions(-)
+ package/boot/uboot-envtools/files/imx6 | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/target/linux/imx6/image/bootscript-ventana b/target/linux/imx6/image/bootscript-ventana
-index 8451caf..06e2015 100644
---- a/target/linux/imx6/image/bootscript-ventana
-+++ b/target/linux/imx6/image/bootscript-ventana
-@@ -1,4 +1,4 @@
--echo "Gateworks Ventana OpenWrt Boot script v1.02"
-+echo "Gateworks Ventana OpenWrt Boot script v1.03"
- 
- # set some defaults
- # set some defaults
-@@ -9,7 +9,7 @@ setenv bootargs console=${console},${baudrate}
- setenv loadaddr 10800000
- setenv fdt_addr 18000000
- 
--# detect dtype and bootdev by looking for kernel on media the bootloader
-+# detect dtype by looking for kernel on media the bootloader
- # has mounted (in order of preference: usb/mmc/sata)
- #
- # This assumes the bootloader has already started the respective subsystem
-@@ -31,18 +31,9 @@ else
+diff --git a/package/boot/uboot-envtools/files/imx6 b/package/boot/uboot-envtools/files/imx6
+index fb05f13..330efb2 100644
+--- a/package/boot/uboot-envtools/files/imx6
++++ b/package/boot/uboot-envtools/files/imx6
+@@ -24,8 +24,8 @@ apalis*)
+ 		ubootenv_add_uci_config /dev/mtd1 0x80000 0x20000 0x40000
+ 	else
+ 		# board boots from microSD
+-		ubootenv_add_uci_config /dev/mmcblk0 0xb1400 0x20000 0x20000
+-		ubootenv_add_uci_config /dev/mmcblk0 0xd1400 0x20000 0x20000
++		ubootenv_add_uci_config /dev/mmcblk0 0xb1400 0x20000
++		ubootenv_add_uci_config /dev/mmcblk0 0xd1400 0x20000
  	fi
- 	echo "detected dtype:$dtype"
- fi
--if test -n "$bootdev" ; then
--	echo "Using bootdev from env: $bootdev"
--else
--	if itest.s "x${dtype}" == "xmmc" ; then
--		bootdev=mmcblk0p1
--	else
--		bootdev=sda1
--	fi
--fi
- 
-+echo "Booting from ${dtype}..."
- if itest.s "x${dtype}" == "xnand" ; then
--	echo "Booting from NAND..."
- 	# fix partition name
- 	#  OpenWrt kernel bug prevents partition name of 'rootfs' from booting
- 	#  instead name the partition ubi which is what is looked for by
-@@ -54,9 +45,24 @@ if itest.s "x${dtype}" == "xnand" ; then
- 	# enable UBI fastmap support
- 	setenv bootargs "${bootargs} ubi.fm_autoconvert=1"
- else
--	echo "Booting from block device ${bootdev}..."
- 	setenv fsload "${fs}load ${dtype} ${disk}:1"
--	setenv root "root=/dev/${bootdev} rootfstype=${fs} rootwait rw"
-+	part uuid ${dtype} ${disk}:1 uuid
-+	if test -z "${uuid}"; then
-+		# fallback to bootdev
-+		if test -n "$bootdev" ; then
-+			echo "Using bootdev from env: $bootdev"
-+		else
-+			if itest.s "x${dtype}" == "xmmc" ; then
-+				bootdev=mmcblk0p1
-+			else
-+				bootdev=sda1
-+			fi
-+		fi
-+		setenv root "root=/dev/${bootdev}"
-+	else
-+		setenv root "root=PARTUUID=${uuid}"
-+	fi
-+	setenv root "$root rootfstype=${fs} rootwait rw"
- fi
- 
- setenv bootargs "${bootargs}" "${root}" "${video}" "${extra}"
+ 	;;
+ wandboard)
 -- 
 2.7.4
 

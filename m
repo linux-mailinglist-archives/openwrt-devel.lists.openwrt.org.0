@@ -2,86 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45470CB393
-	for <lists+openwrt-devel@lfdr.de>; Fri,  4 Oct 2019 05:47:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 062D4CBA75
+	for <lists+openwrt-devel@lfdr.de>; Fri,  4 Oct 2019 14:31:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5rUHXndGOnuIB6XWgMy+iKMJBj21/CmsHa7o5sKxzS0=; b=pv26Jg49tD3rBF
-	caiz/dsGApbHs/HyJ+luLPA9U8cKsDfdO4KasQJbl4oCR4Qgh9BiezWx2GXvPoXA3NvTQtP7Kr0Ls
-	3Lz0Ouo8NsrcROJ9fOQqs9oOcE18MbL63juq9YPKM+2Ao9ChfRwy2hnuX4kEEBkRsYKOcPK5SW9l+
-	zDM+w+vDLEVUqtNLdn4UpyoJpVsa8qb1VZq0vmpSvPKO0/AZ+CO0MlVXrwbiVLnpWOBvifsXfj7Bq
-	F7F7XogvtiAPMjP/rKdykVLOCs+Ig6MjtB6wGglmA1/uVCfiFykpDSTblwlIW7zpK8//in7qyNOQh
-	rCX9xK/UKg3X5VMgcYfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WgqxDvnFfq8a/ajggx51s4Ok6a9OWYMpxTbJxZefTvQ=; b=BHjpTdsjsZsQ4OOCkO3Z1ApEI
+	WTupI2Tbc2c958tKf4unyQgLMKsysV4YMmXJglkqE1QRTNiYTr/rVPnQT3tLy1TTHff26qKygYH/u
+	4zFmmO1CSetYW3UkoMKq3hiH0DieJjrx/ttcf05zZXSRDNTc7JIkwIBn2pws02lFOxAPS0gyGhFXG
+	jCUktcSP6L4fNeg2XrGHfwd1Bt1zrOnh3JA+OOy9Z6r6wAbtFsaI5dvja/j53fUWIvnRW0NDMrm8X
+	Jn3SBq9AXz1BbhGAu3uPLwtIo0nNB8+rqUMXNLsmEyNW99bT2qCoxOvqVSAKsjzQdJzsiOfCrNEVg
+	83Dbq8qBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGEYr-0005Yx-MO; Fri, 04 Oct 2019 03:47:21 +0000
-Received: from mail-pf1-x431.google.com ([2607:f8b0:4864:20::431])
+	id 1iGMjY-0003we-A2; Fri, 04 Oct 2019 12:30:56 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGEYl-0005QL-L5
- for openwrt-devel@lists.openwrt.org; Fri, 04 Oct 2019 03:47:17 +0000
-Received: by mail-pf1-x431.google.com with SMTP id q21so3011064pfn.11
- for <openwrt-devel@lists.openwrt.org>; Thu, 03 Oct 2019 20:47:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=UaotZKZQ4MYjmTzwm7h6zuVubSQrT7Dr+dZnV/8gxvc=;
- b=Ex2q1qbKrvuM6mEaRghUyofNRQyA3mIInYthKUrLqgE/Trkxzu2Lpyz30fS32URpNn
- T1FxgmxEfrJT9rVku2fv0HhGVHsb57cODKtJY9G1i7dunt9usqFvawCGcvpYFRpPQofa
- nbJya87FytUzVUGSr+QE3KzgA8imL2ONOyZPy1jvG64gDbdfqWmuGIhn2/Uo21PbLN5I
- 9wSi852DgeBYfZFTOO3lGbPI4kcQGD0PC9W9yA+0MLAUeCt9ftgQgThyn2lgmXgoJLTE
- xS9JgP2D7sRiixmHvA1STm1YKUecPaD/+foj0mm4j3lu9RO2LLGPCtYyV+vc54yn6GC/
- SK4Q==
+ id 1iGMjM-0003w6-Pb
+ for openwrt-devel@lists.openwrt.org; Fri, 04 Oct 2019 12:30:46 +0000
+Received: by mail-ed1-x543.google.com with SMTP id v38so5638243edm.7
+ for <openwrt-devel@lists.openwrt.org>; Fri, 04 Oct 2019 05:30:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ncentric-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=A3KYSmBSW4hzCIi5OaGx78blYDfS14zGS0dLjn7btQA=;
+ b=ureStbdOxxtazwurzhNAIVjQl86r4o841ooZEXzz1lwKMnwdA85QgRj6DlmjVVoewT
+ earqwV5NtwkcX+VJmiUQA2hG8bTb7hyE3izJLF28Z8UthtXcwX1cTes86aIO3GnLLSiu
+ tRl3KsD6Vdulp9lkFsj1zfco2Ro5sOJDgKSFirf1CUzc+k33XdsKDnXnbA6l0fUUyia1
+ tW2cwYil+m/B+ZQmq89xbfB7ub0wZkwXFy9dZYz6sQeBmEznzjCesjKEUJJg3DSNuLqZ
+ Nxsxv53c86bpE2aoKMLhEhNNeUgjnMpxO7IP2zbOaRn0l+euS8ez9ZCcszkUxEmBzE3J
+ p4eg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=UaotZKZQ4MYjmTzwm7h6zuVubSQrT7Dr+dZnV/8gxvc=;
- b=AbqMOwtFxYrkJ5JOMfitNF6cBSwid8nrZ/f6qHLu6bfhc9JgiH0+2mF3Yb15X+Xg81
- vfTYD37v51pgmn2LOMGWJwy+d6xT8cdGvMeaF+onxbQYsfv3LYFe4Nfm5UCkUQo/fHmJ
- xyuLEF6KjyCkMnyG7t5x4h8ifHKxxJBvv9ni9eJ8rgFVH8VKaDxfaGbytYJwMBAaW63s
- tu5GXDoIIZe3Vyj2KV3afm6qwcyKlNd42A9k39MyiUl6lopOn0m/OjODrGtUOHXgAsBe
- P8MoK7H0qqsARzY+7jy5swPjtcwMeR99CtVNNykthLM7YGJzcUvB3M/WfAktsisXYhMR
- PFxQ==
-X-Gm-Message-State: APjAAAV9fg5AVbdwiZr6rvs0/KQwGHjHpdUGscjz0QGhdrX7sMpKILkb
- rqu7LFT5SCKtdT01pCZ7isR0qXIC
-X-Google-Smtp-Source: APXvYqy8V5XhRBAyM1YiAIepHkf8gR1HE5D03ciy0bnBnV3bDn22VbNGUmpqfxFwYoacStaToiYk4w==
-X-Received: by 2002:a63:4d61:: with SMTP id n33mr13044064pgl.158.1570160833448; 
- Thu, 03 Oct 2019 20:47:13 -0700 (PDT)
-Received: from mangix-pc.lan ([69.42.0.147])
- by smtp.gmail.com with ESMTPSA id x125sm4821995pfb.93.2019.10.03.20.47.12
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 03 Oct 2019 20:47:12 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu,  3 Oct 2019 20:47:09 -0700
-Message-Id: <20191004034709.14177-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=A3KYSmBSW4hzCIi5OaGx78blYDfS14zGS0dLjn7btQA=;
+ b=DBgFJxD7y9WFBrK4y1kK7HTjkp/b51K5KL1QwGUa6hYh+P564wUTh6ht8wyLteyiqs
+ 3Tzovsfg9QohBOYPA5+MLTp77C2nP9iZ+rODr7tk4F+HzOnlP0GNXx0jZojbqIkXH93Q
+ gwmjd87EapP53NkUsEc5LXiWRhaEePIdukp32eKEtsopRsY3eILFxBA5fSnNKFt2ojNa
+ npIjWRVxR8xfxap8KZCMx/F5W88TT+Bqx/F2Ok/ERCQkjevkjEqpfsFf7UXSeLlMJzP9
+ 3VFT7+K3XfPiI+YzhAcBeHbOmqScUTsTdb816xPjjJP1T0ZN4R3vrSD3AJXyx6anwGGD
+ /eXQ==
+X-Gm-Message-State: APjAAAWtOKB/229TO8oBA9kvo6wpBQlF+TsL9F+C8vyblbQEF4Mc7A69
+ lFkujctxb4LMyLO7P5MJWaRncg==
+X-Google-Smtp-Source: APXvYqxLfzGas6+7xyxunE7mjafzDLGudxtFZeDz4BIy69ud9szbbzh+jw9WMixP7DFriqryptNMyQ==
+X-Received: by 2002:a50:8933:: with SMTP id e48mr14745537ede.51.1570192242323; 
+ Fri, 04 Oct 2019 05:30:42 -0700 (PDT)
+Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
+ by smtp.gmail.com with ESMTPSA id f4sm1087909edf.47.2019.10.04.05.30.41
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 04 Oct 2019 05:30:41 -0700 (PDT)
+To: Tim Harvey <tharvey@gateworks.com>, openwrt-devel@lists.openwrt.org
+References: <1570054885-11705-1-git-send-email-tharvey@gateworks.com>
+From: Koen Vandeputte <koen.vandeputte@ncentric.com>
+Message-ID: <5022641f-0bdc-d055-c232-18bb3da486af@ncentric.com>
+Date: Fri, 4 Oct 2019 14:30:41 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <1570054885-11705-1-git-send-email-tharvey@gateworks.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191003_204715_723818_D5EFDA22 
-X-CRM114-Status: GOOD (  14.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191004_053044_949020_9062DFA1 
+X-CRM114-Status: GOOD (  17.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:431 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH] uClibc++: Fix two bugs
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] imx6: bootscript: enable UBI
+ fastmap support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,307 +96,40 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: richard@nod.at
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The first allows usage of several functions in the std namespace, which
-broke compilation of gddrescue specifically with uClibc-ng and uClibc++.
-
-The second allows usage of long long with normal C++11, which is part of
-the standard. Before, std=gnu++11 needed to be passsed to work around it.
-
-As a result of the second patch, the pedantic patch can safely be removed.
-
-Both patches have been sent upstream.
-
-Added -std=c++11 to CFLAGS to guarentee proper inclusion of long long.
-
-Fixed up license information according to SPDX.
-
-Small cleanups for consistency.
-
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- package/libs/uclibc++/Makefile                |  11 +-
- .../patches/002-undef-functions.patch         |  40 +++++
- .../uclibc++/patches/004-no-pedantic.patch    |  13 --
- ...ibc-Make-long-long-available-to-C-11.patch | 156 ++++++++++++++++++
- 4 files changed, 201 insertions(+), 19 deletions(-)
- create mode 100644 package/libs/uclibc++/patches/002-undef-functions.patch
- delete mode 100644 package/libs/uclibc++/patches/004-no-pedantic.patch
- create mode 100644 package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
-
-diff --git a/package/libs/uclibc++/Makefile b/package/libs/uclibc++/Makefile
-index 3adf70b360..7a0d9094ff 100644
---- a/package/libs/uclibc++/Makefile
-+++ b/package/libs/uclibc++/Makefile
-@@ -10,18 +10,17 @@ include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=uclibc++
- PKG_VERSION:=0.2.5
--PKG_RELEASE:=2
-+PKG_RELEASE:=3
- 
- PKG_SOURCE:=uClibc++-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=https://cxx.uclibc.org/src/
- PKG_HASH:=596fb9ed7295564ce4c70ae6076a18f92e72f70310d70c98520bbca85c77895a
--
- PKG_BUILD_DIR:=$(BUILD_DIR)/uClibc++-$(PKG_VERSION)
--PKG_BUILD_PARALLEL:=1
--PKG_USE_MIPS16:=0
--PKG_LICENSE:=LGPL-2.1+
- 
-+PKG_LICENSE:=LGPL-2.1-or-later
- PKG_INSTALL:=1
-+PKG_BUILD_PARALLEL:=1
-+PKG_USE_MIPS16:=0
- 
- include $(INCLUDE_DIR)/package.mk
- 
-@@ -45,7 +44,7 @@ UCLIBC_TARGET_ARCH:=$(shell echo $(ARCH) | sed -e s'/-.*//' \
- 	-e 's/mipsel.*/mips/' \
- )
- 
--TARGET_CFLAGS += $(FPIC) -nostdinc++
-+TARGET_CFLAGS += $(FPIC) -nostdinc++ -std=c++11
- TARGET_LDFLAGS += -Wl,--gc-sections
- 
- ifneq ($(CONFIG_CCACHE),)
-diff --git a/package/libs/uclibc++/patches/002-undef-functions.patch b/package/libs/uclibc++/patches/002-undef-functions.patch
-new file mode 100644
-index 0000000000..008a8232db
---- /dev/null
-+++ b/package/libs/uclibc++/patches/002-undef-functions.patch
-@@ -0,0 +1,40 @@
-+From 8245f62c1e7aba150f666b3c3a1dda646dee6d4b Mon Sep 17 00:00:00 2001
-+From: Rosen Penev <rosenp@gmail.com>
-+Date: Fri, 27 Sep 2019 13:12:44 -0700
-+Subject: [PATCH] cstdio: Add undef for four functions
-+
-+When compiling with uClibc-ng, these functions get defined as macros and
-+become unavailable for std.
-+
-+Fixes programs that use the std versions of these functions.
-+
-+This matches libstdcpp behavior.
-+
-+Signed-off-by: Rosen Penev <rosenp@gmail.com>
-+---
-+ include/cstdio | 9 +++++++++
-+ 1 file changed, 9 insertions(+)
-+
-+diff --git a/include/cstdio b/include/cstdio
-+index f959ff5..0a42458 100644
-+--- a/include/cstdio
-++++ b/include/cstdio
-+@@ -21,6 +21,15 @@
-+ #ifndef __HEADER_CSTDIO
-+ #define __HEADER_CSTDIO 1
-+ 
-++#undef clearerr
-++#undef feof
-++#undef ferror
-++#undef fgetc
-++#undef fputc
-++#undef getc
-++#undef getchar
-++#undef putc
-++#undef putchar
-+ 
-+ namespace std{
-+ 	using ::FILE;
-+-- 
-+2.17.1
-+
-diff --git a/package/libs/uclibc++/patches/004-no-pedantic.patch b/package/libs/uclibc++/patches/004-no-pedantic.patch
-deleted file mode 100644
-index 5128ca3f83..0000000000
---- a/package/libs/uclibc++/patches/004-no-pedantic.patch
-+++ /dev/null
-@@ -1,13 +0,0 @@
----- a/Rules.mak
--+++ b/Rules.mak
--@@ -200,10 +200,6 @@ $(eval $(call check-gxx-var,-std=gnu++14))
-- $(eval $(call check-gxx-var,-Wno-sized-deallocation))
-- $(eval $(call check-gxx-var,-Wno-tautological-compare))
-- 
---# Add a bunch of extra pedantic annoyingly strict checks
---XWARNINGS=$(call qstrip,$(UCLIBCXX_WARNINGS)) -Wno-trigraphs -pedantic
---CPU_CFLAGS=$(call qstrip,$(CPU_CFLAGS-y))
---
-- # Some nice CFLAGS to work with
-- GEN_CFLAGS:=-fno-builtin
-- CFLAGS:=$(XWARNINGS) $(CPU_CFLAGS)
-diff --git a/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch b/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
-new file mode 100644
-index 0000000000..ba99689e40
---- /dev/null
-+++ b/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
-@@ -0,0 +1,156 @@
-+From 8151579eb36d9366632242415ff3f5177fa5e1e2 Mon Sep 17 00:00:00 2001
-+From: Rosen Penev <rosenp@gmail.com>
-+Date: Thu, 3 Oct 2019 18:58:43 -0700
-+Subject: [PATCH] uClibc++: Make long long available to C++11
-+
-+C++11 makes long long available. It is no longer a GNU extension.
-+
-+Signed-off-by: Rosen Penev <rosenp@gmail.com>
-+---
-+ include/istream         | 4 ++--
-+ include/istream_helpers | 2 +-
-+ include/ostream         | 8 ++++----
-+ include/ostream_helpers | 8 ++++----
-+ tests/sstreamtest.cpp   | 4 ++--
-+ 5 files changed, 13 insertions(+), 13 deletions(-)
-+
-+diff --git a/include/istream b/include/istream
-+index 72a8834..2d58abd 100644
-+--- a/include/istream
-++++ b/include/istream
-+@@ -72,7 +72,7 @@ namespace std{
-+ 		basic_istream<charT,traits>& operator>>(void*& p);
-+ 		basic_istream<charT,traits>& operator>>(basic_streambuf<char_type,traits>* sb);
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 		basic_istream<charT,traits>& operator>>(long long& n);
-+ 		basic_istream<charT,traits>& operator>>(unsigned long long& n);
-+ #endif
-+@@ -455,7 +455,7 @@ namespace std{
-+ 		return *this;
-+ 	}
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 	template <class charT, class traits> _UCXXEXPORT basic_istream<charT,traits>&
-+ 		basic_istream<charT,traits>::operator>>(long long& n)
-+ 	{
-+diff --git a/include/istream_helpers b/include/istream_helpers
-+index d87e0c7..f2c793f 100644
-+--- a/include/istream_helpers
-++++ b/include/istream_helpers
-+@@ -301,7 +301,7 @@ namespace std{
-+ 	};
-+ 
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 	template <class traits> class _UCXXEXPORT __istream_readin<traits, char, long long>{
-+ 	public:
-+ 		inline static void readin(basic_istream<char, traits >& stream, long long & var)
-+diff --git a/include/ostream b/include/ostream
-+index 289514c..3072589 100644
-+--- a/include/ostream
-++++ b/include/ostream
-+@@ -85,7 +85,7 @@ namespace std {
-+ 		basic_ostream<charT,traits>& operator<<(long double f);
-+ 		basic_ostream<charT,traits>& operator<<(void* p);
-+ 		basic_ostream<charT,traits>& operator<<(basic_streambuf<char_type,traits>* sb);
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 		basic_ostream<charT,traits>& operator<<(long long n);
-+ 		basic_ostream<charT,traits>& operator<<(unsigned long long n);
-+ #endif
-+@@ -221,7 +221,7 @@ namespace std {
-+ 		return *this;
-+ 	}
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(long long n)
-+ 	{
-+ 		sentry s(*this);
-+@@ -487,7 +487,7 @@ namespace std {
-+ #endif
-+ 
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 
-+ //Support for output of long long data types
-+ 
-+@@ -509,7 +509,7 @@ template<class Ch, class Tr> _UCXXEXPORT basic_ostream<Ch, Tr>&
-+ }
-+ 
-+ 
-+-#endif	//__STRICT_ANSI__
-++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 
-+ 
-+ 
-+diff --git a/include/ostream_helpers b/include/ostream_helpers
-+index fa50407..f4d33f9 100644
-+--- a/include/ostream_helpers
-++++ b/include/ostream_helpers
-+@@ -142,7 +142,7 @@ namespace std{
-+ 		}
-+ 	};
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 
-+ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, signed long long int>{
-+ 	public:
-+@@ -237,7 +237,7 @@ namespace std{
-+ 	};
-+ 
-+ 
-+-#endif	//__STRICT_ANSI__
-++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 
-+ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, double>{
-+ 	public:
-+@@ -357,7 +357,7 @@ namespace std{
-+ 		}
-+ 	};
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 
-+ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, signed long long int>{
-+ 	public:
-+@@ -428,7 +428,7 @@ namespace std{
-+ 	};
-+ 
-+ 
-+-#endif	//__STRICT_ANSI__
-++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 
-+ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, double>{
-+ 	public:
-+diff --git a/tests/sstreamtest.cpp b/tests/sstreamtest.cpp
-+index 36b3470..ea946a9 100644
-+--- a/tests/sstreamtest.cpp
-++++ b/tests/sstreamtest.cpp
-+@@ -9,7 +9,7 @@ int main(){
-+ 	int i;
-+ 	std::string s;
-+ 	char c;
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 	long long ll;
-+ 	unsigned long long ull;
-+ #endif
-+@@ -32,7 +32,7 @@ int main(){
-+ 
-+ 
-+ 
-+-#ifndef __STRICT_ANSI__
-++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
-+ 	a.str("678 76 54");
-+ 	a >> ll >> ull >> s;
-+ 	std::cout << "ll (should be 678): " << ll << std::endl;
-+-- 
-+2.17.1
-+
--- 
-2.17.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+Ck9uIDAzLjEwLjE5IDAwOjIxLCBUaW0gSGFydmV5IHdyb3RlOgo+IFVCSSBGYXN0bWFwIHN1cHBv
+cnQgaXMgc3RhYmxlIGluIHRoZSA0LjQga2VybmVsIHNvIGxldHMgdGFrZQo+IGFkdmFudGFnZSBv
+ZiBpdCB0byBzaGF2ZSBvZmYgNS0xMCBzZWNvbmRzIG9mIGJvb3QgdGltZS4KPgo+IFNpZ25lZC1v
+ZmYtYnk6IFRpbSBIYXJ2ZXkgPHRoYXJ2ZXlAZ2F0ZXdvcmtzLmNvbT4KPiAtLS0KPiAgIHRhcmdl
+dC9saW51eC9pbXg2L2ltYWdlL2Jvb3RzY3JpcHQtdmVudGFuYSB8IDQgKysrLQo+ICAgMSBmaWxl
+IGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Cj4gZGlmZiAtLWdpdCBh
+L3RhcmdldC9saW51eC9pbXg2L2ltYWdlL2Jvb3RzY3JpcHQtdmVudGFuYSBiL3RhcmdldC9saW51
+eC9pbXg2L2ltYWdlL2Jvb3RzY3JpcHQtdmVudGFuYQo+IGluZGV4IDk0MWFmYjUuLjg0NTFjYWYg
+MTAwNjQ0Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L2lteDYvaW1hZ2UvYm9vdHNjcmlwdC12ZW50YW5h
+Cj4gKysrIGIvdGFyZ2V0L2xpbnV4L2lteDYvaW1hZ2UvYm9vdHNjcmlwdC12ZW50YW5hCj4gQEAg
+LTEsNCArMSw0IEBACj4gLWVjaG8gIkdhdGV3b3JrcyBWZW50YW5hIE9wZW5XcnQgQm9vdCBzY3Jp
+cHQgdjEuMDEiCj4gK2VjaG8gIkdhdGV3b3JrcyBWZW50YW5hIE9wZW5XcnQgQm9vdCBzY3JpcHQg
+djEuMDIiCj4gICAKPiAgICMgc2V0IHNvbWUgZGVmYXVsdHMKPiAgICMgc2V0IHNvbWUgZGVmYXVs
+dHMKPiBAQCAtNTEsNiArNTEsOCBAQCBpZiBpdGVzdC5zICJ4JHtkdHlwZX0iID09ICJ4bmFuZCIg
+OyB0aGVuCj4gICAJZWNobyAibXRkcGFydHM6JHttdGRwYXJ0c30iCj4gICAJc2V0ZW52IGZzbG9h
+ZCB1Ymlmc2xvYWQKPiAgIAlzZXRlbnYgcm9vdCAidWJpMDp1YmkgdWJpLm10ZD0yIHJvb3Rmc3R5
+cGU9c3F1YXNoZnMsdWJpZnMiCj4gKwkjIGVuYWJsZSBVQkkgZmFzdG1hcCBzdXBwb3J0Cj4gKwlz
+ZXRlbnYgYm9vdGFyZ3MgIiR7Ym9vdGFyZ3N9IHViaS5mbV9hdXRvY29udmVydD0xIgo+ICAgZWxz
+ZQo+ICAgCWVjaG8gIkJvb3RpbmcgZnJvbSBibG9jayBkZXZpY2UgJHtib290ZGV2fS4uLiIKPiAg
+IAlzZXRlbnYgZnNsb2FkICIke2ZzfWxvYWQgJHtkdHlwZX0gJHtkaXNrfToxIgoKSGkgVGltLAoK
+U2hvdWxkbid0IHRoaXMgcGF0Y2ggYWxzbyBlbmFibGUgdGhlIHJlcXVpcmVkIGtlcm5lbCBzeW1i
+b2w/IAooTVREX1VCSV9GQVNUTUFQKQoKTmV4dCB0byB0aGF0LCBldmVuIGluIGtlcm5lbCA0LjE5
+IEknbSByZWFkaW5nIGZvbGxvd2luZyByZWdhcmRpbmcgdGhpcyAKZmVhdHVyZToKCkltcG9ydGFu
+dDogdGhpcyBmZWF0dXJlIGlzIGV4cGVyaW1lbnRhbCBzbyBmYXIgYW5kIHRoZSBvbi1mbGFzaCDi
+lIIKZm9ybWF0IGZvciBmYXN0bWFwIG1heSBjaGFuZ2UgaW4gdGhlIG5leHQga2VybmVsIHZlcnNp
+b25zCgoKSGkgUmljaGFyZCwKCkFwb2xvZ2llcyBmb3IgZHJhZ2dpbmcgeW91IGluIGhlcmUuCgpI
+b3cgc3RhYmxlIGlzIHRoaXMgZmFzdG1hcCBmb3JtYXQ/CgpXaWxsIGl0IGxlYXZlIEV4cGVyaW1l
+bnRhbCBzdGF0ZSBpbiB0aGUgbmVhciBmdXR1cmU/CgoKVGhhbmtzLAoKS29lbgoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFp
+bGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5v
+cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

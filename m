@@ -2,407 +2,453 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFC92CEE81
-	for <lists+openwrt-devel@lfdr.de>; Mon,  7 Oct 2019 23:41:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3687CCEF52
+	for <lists+openwrt-devel@lfdr.de>; Tue,  8 Oct 2019 01:00:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:References:To:Date:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yyHEe1j3NiOC4lHBGm3Nys5UUROEXJEpH+z4YM+PI1A=; b=Wwf3EQDDfkNmZlnMvKJ/KEbdk
-	Li5m3yuTXSBSsuuq/e8MCvbhKwpxShD3HoJbdOG6Q1bC4BerXXDKssMD+qZj1l7CXxtqjlatM6e9x
-	QDOOqLT/SnFTyWIgGL+wpeE+SPDrr6Z7M35B2Ql4UAneTCYcMmJOIigFko8LXa2ntbBXn3PuBNOAR
-	9n+j4SBHEjr0+hX5BBc+oGk5MGzru99XLVfWPU26707bN6Bjl4SBS3eCUPF5/JFOUZ/OHe+Q9rSFh
-	/Px745GSVXl/rb43PntS1A8n61GEzig74IQlStoew8pp28YctZzbbJV9L1q5XpZiOAte7fyOytwhX
-	7kUkozcgA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CZAf6vQmEvdDhdinK0S40BGF8uHck9AfrDSx8EqxQe0=; b=kzlnpXFFec63Y2
+	ewnZYzX9iIeDWYStaLOTbaPkiAqn6P/SE0z66LMMGxb8EmgAbhNXvM8pnep22ZP4gfvBy4IZTcuiS
+	VbZaJGeRlvLSC4dpEPo4g6YHwzbiZujfIwwM2UErfjunzBWymD/B/ZmQ/aWzU6kTmgBjw7Z8YHqjj
+	c0dTARaSBfQPzqFpGu/0CVFDl+VDg9EHrZpqVa+WfRV/wwpqTr0fkQtp2wgwYfV2UOI688INC/qiK
+	C1cLQJt2RyqyQ+5BRscrBN9+4/DQBn8+K76ljlI0VmIp6zXYDFzxrxvZAodDHfSGsvKDpPDOEjm0G
+	RjuqkH5qJwC0k3pdchEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHakn-0006hj-NL; Mon, 07 Oct 2019 21:41:17 +0000
-Date: Mon, 7 Oct 2019 23:40:54 +0200
-To: Enrico Mioso <mrkiko.rs@gmail.com>
-References: <20190917193029.1336491-1-mrkiko.rs@gmail.com>
-In-Reply-To: <20190917193029.1336491-1-mrkiko.rs@gmail.com>
-MIME-Version: 1.0
-Message-ID: <mailman.1821.1570484470.2486.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Filip Moc via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
+	id 1iHbz7-0006ne-VE; Mon, 07 Oct 2019 23:00:10 +0000
+Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHbyt-0006nJ-ES
+ for openwrt-devel@lists.openwrt.org; Mon, 07 Oct 2019 22:59:57 +0000
+Received: by mail-pg1-x52b.google.com with SMTP id x10so9112823pgi.5
+ for <openwrt-devel@lists.openwrt.org>; Mon, 07 Oct 2019 15:59:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=cXxEOZnmc5WSrGnq1XFDW3i4jz75iZLlpPtFbEwa1OI=;
+ b=XwFxyML7VOf/+Y9Q63729iLEHoYkYjkw7u0hqev90yQ7R5sz/gmo94dpXXEO7aMBgH
+ 0JT16krqXdP3a2wRf6VoAvZuFqHMeH742vaJ0szLk9xFdcqDqknirkrTlLCDBJWYCV5R
+ RjtLaCvIZKw2Y3ItsOwK7UsG1dEPnY2+STsF5egFK3Hyzyb3bGPaTgRu/Et23ZnjlnTA
+ snGNklENQnbUuJ00bWw9tx25q2tS7cFFM+f1YyTyU8whOCWBwa+JXigPCPGxGILu/JZv
+ pX3ntJlJ7zAqOZCBW1eBAsmdY1NqodfNhyZ9yZ69MVbvtUqlgTZBfnOhdW+EKcNFOMCx
+ s+xg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=cXxEOZnmc5WSrGnq1XFDW3i4jz75iZLlpPtFbEwa1OI=;
+ b=t1i/PZfFImK+t4rDSOH7QvTUmGcOB3b8nLyRGlWosrIUUvPwcECdZgjH50IAGTCzYP
+ 7iTNTADr3y0QTsOa05lSGIFhoL0N8zFP8g1IYJoxA2epsQ9ylMUqVVThfhsLyKRdMBGd
+ ZN6YohWnX/4VUrBbA437vWQCQqfqFlV6NAedmy+XWwabG48fXwHUWUG2KOFHFsnAM3QD
+ D9TaZnEVUf65c9oPmfiQ6XaW9FIBjXG38u9KPhu6Qnh5Launbk6W1zN19YOO97yZvHDR
+ 9aHtF0jJmmFEODU4wLeKYtBykHB07/NfWKAI8JeobOtfa9gMGzwxiUlPU+lh5elBKcDI
+ 4Zhw==
+X-Gm-Message-State: APjAAAXfWNsZ4dW8FiF32acWotrbQVfKapvzEfjZchAXrRuSXaxonYzj
+ S4ajrWSvjNj4F/4eyioXjszMflBp
+X-Google-Smtp-Source: APXvYqwR/wAHzNUPeO5s/mwj6uERGdwEUkNRhs7iW0cHtFXUR5YlW4GesUZ4TlvO0j0qKLixI4riCQ==
+X-Received: by 2002:a62:754a:: with SMTP id q71mr35438127pfc.70.1570489193839; 
+ Mon, 07 Oct 2019 15:59:53 -0700 (PDT)
+Received: from localhost.localdomain ([69.42.0.147])
+ by smtp.gmail.com with ESMTPSA id v19sm17273097pff.46.2019.10.07.15.59.53
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 07 Oct 2019 15:59:53 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon,  7 Oct 2019 15:59:52 -0700
+Message-Id: <20191007225952.12818-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191007_155955_515366_5943D376 
+X-CRM114-Status: GOOD (  15.86  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:52b listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCHv2] uClibc++: Fix three bugs
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Filip Moc <lede@moc6.cz>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] [PATCH V2] ath79: add support for TP-Link
- TL-MR6400
-Content-Type: multipart/mixed; boundary="===============7190166873203152795=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7190166873203152795==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+The first allows usage of several functions in the std namespace, which
+broke compilation of gddrescue specifically with uClibc-ng and uClibc++.
 
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
+The second allows usage of long long with normal C++11, which is part of
+the standard. Before, std=gnu++11 needed to be passsed to work around it.
 
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============7190166873203152795==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
+As a result of the second patch, the pedantic patch can safely be removed.
 
-Received: from hosting.moc6.cz ([2a02:c60:c70:8900::1] helo=moc6.cz)
-	by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHakd-0006gp-B2
-	for openwrt-devel@lists.openwrt.org; Mon, 07 Oct 2019 21:41:09 +0000
-Received: by moc6.cz (Postfix, from userid 1025)
-	id B51012320030; Mon,  7 Oct 2019 23:40:54 +0200 (CEST)
-Date: Mon, 7 Oct 2019 23:40:54 +0200
-From: Filip Moc <lede@moc6.cz>
-To: Enrico Mioso <mrkiko.rs@gmail.com>
-Cc: openwrt-devel@lists.openwrt.org
-Subject: Re: [PATCH V2] ath79: add support for TP-Link TL-MR6400
-Message-ID: <20191007214054.GA14886@moc6.cz>
-References: <20190917193029.1336491-1-mrkiko.rs@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20190917193029.1336491-1-mrkiko.rs@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_144107_694137_AE83E8CB 
-X-CRM114-Status: GOOD (  21.05  )
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+Both patches are upstream backports.
+
+Added -std=c++11 to CFLAGS to guarentee proper inclusion of long long.
+
+Added another patch that fixes a typo with the long long support. Sent to
+upstream.
+
+Fixed up license information according to SPDX.
+
+Small cleanups for consistency.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ v2: Added an extra patch that fixes two minor bugs.
+ Updated commit message as the first two patches were upstreamed.
+ package/libs/uclibc++/Makefile                |  11 +-
+ .../patches/002-undef-functions.patch         |  40 +++++
+ .../uclibc++/patches/004-no-pedantic.patch    |  13 --
+ ...ibc-Make-long-long-available-to-C-11.patch | 156 ++++++++++++++++++
+ .../005-istream_helpers-Fix-sscanf-typo.patch |  42 +++++
+ 5 files changed, 243 insertions(+), 19 deletions(-)
+ create mode 100644 package/libs/uclibc++/patches/002-undef-functions.patch
+ delete mode 100644 package/libs/uclibc++/patches/004-no-pedantic.patch
+ create mode 100644 package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
+ create mode 100644 package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch
+
+diff --git a/package/libs/uclibc++/Makefile b/package/libs/uclibc++/Makefile
+index 3adf70b360..7a0d9094ff 100644
+--- a/package/libs/uclibc++/Makefile
++++ b/package/libs/uclibc++/Makefile
+@@ -10,18 +10,17 @@ include $(TOPDIR)/rules.mk
  
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ PKG_NAME:=uclibc++
+ PKG_VERSION:=0.2.5
+-PKG_RELEASE:=2
++PKG_RELEASE:=3
+ 
+ PKG_SOURCE:=uClibc++-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://cxx.uclibc.org/src/
+ PKG_HASH:=596fb9ed7295564ce4c70ae6076a18f92e72f70310d70c98520bbca85c77895a
+-
+ PKG_BUILD_DIR:=$(BUILD_DIR)/uClibc++-$(PKG_VERSION)
+-PKG_BUILD_PARALLEL:=1
+-PKG_USE_MIPS16:=0
+-PKG_LICENSE:=LGPL-2.1+
+ 
++PKG_LICENSE:=LGPL-2.1-or-later
+ PKG_INSTALL:=1
++PKG_BUILD_PARALLEL:=1
++PKG_USE_MIPS16:=0
+ 
+ include $(INCLUDE_DIR)/package.mk
+ 
+@@ -45,7 +44,7 @@ UCLIBC_TARGET_ARCH:=$(shell echo $(ARCH) | sed -e s'/-.*//' \
+ 	-e 's/mipsel.*/mips/' \
+ )
+ 
+-TARGET_CFLAGS += $(FPIC) -nostdinc++
++TARGET_CFLAGS += $(FPIC) -nostdinc++ -std=c++11
+ TARGET_LDFLAGS += -Wl,--gc-sections
+ 
+ ifneq ($(CONFIG_CCACHE),)
+diff --git a/package/libs/uclibc++/patches/002-undef-functions.patch b/package/libs/uclibc++/patches/002-undef-functions.patch
+new file mode 100644
+index 0000000000..008a8232db
+--- /dev/null
++++ b/package/libs/uclibc++/patches/002-undef-functions.patch
+@@ -0,0 +1,40 @@
++From 8245f62c1e7aba150f666b3c3a1dda646dee6d4b Mon Sep 17 00:00:00 2001
++From: Rosen Penev <rosenp@gmail.com>
++Date: Fri, 27 Sep 2019 13:12:44 -0700
++Subject: [PATCH] cstdio: Add undef for four functions
++
++When compiling with uClibc-ng, these functions get defined as macros and
++become unavailable for std.
++
++Fixes programs that use the std versions of these functions.
++
++This matches libstdcpp behavior.
++
++Signed-off-by: Rosen Penev <rosenp@gmail.com>
++---
++ include/cstdio | 9 +++++++++
++ 1 file changed, 9 insertions(+)
++
++diff --git a/include/cstdio b/include/cstdio
++index f959ff5..0a42458 100644
++--- a/include/cstdio
+++++ b/include/cstdio
++@@ -21,6 +21,15 @@
++ #ifndef __HEADER_CSTDIO
++ #define __HEADER_CSTDIO 1
++ 
+++#undef clearerr
+++#undef feof
+++#undef ferror
+++#undef fgetc
+++#undef fputc
+++#undef getc
+++#undef getchar
+++#undef putc
+++#undef putchar
++ 
++ namespace std{
++ 	using ::FILE;
++-- 
++2.17.1
++
+diff --git a/package/libs/uclibc++/patches/004-no-pedantic.patch b/package/libs/uclibc++/patches/004-no-pedantic.patch
+deleted file mode 100644
+index 5128ca3f83..0000000000
+--- a/package/libs/uclibc++/patches/004-no-pedantic.patch
++++ /dev/null
+@@ -1,13 +0,0 @@
+---- a/Rules.mak
+-+++ b/Rules.mak
+-@@ -200,10 +200,6 @@ $(eval $(call check-gxx-var,-std=gnu++14))
+- $(eval $(call check-gxx-var,-Wno-sized-deallocation))
+- $(eval $(call check-gxx-var,-Wno-tautological-compare))
+- 
+--# Add a bunch of extra pedantic annoyingly strict checks
+--XWARNINGS=$(call qstrip,$(UCLIBCXX_WARNINGS)) -Wno-trigraphs -pedantic
+--CPU_CFLAGS=$(call qstrip,$(CPU_CFLAGS-y))
+--
+- # Some nice CFLAGS to work with
+- GEN_CFLAGS:=-fno-builtin
+- CFLAGS:=$(XWARNINGS) $(CPU_CFLAGS)
+diff --git a/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch b/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
+new file mode 100644
+index 0000000000..ba99689e40
+--- /dev/null
++++ b/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
+@@ -0,0 +1,156 @@
++From 8151579eb36d9366632242415ff3f5177fa5e1e2 Mon Sep 17 00:00:00 2001
++From: Rosen Penev <rosenp@gmail.com>
++Date: Thu, 3 Oct 2019 18:58:43 -0700
++Subject: [PATCH] uClibc++: Make long long available to C++11
++
++C++11 makes long long available. It is no longer a GNU extension.
++
++Signed-off-by: Rosen Penev <rosenp@gmail.com>
++---
++ include/istream         | 4 ++--
++ include/istream_helpers | 2 +-
++ include/ostream         | 8 ++++----
++ include/ostream_helpers | 8 ++++----
++ tests/sstreamtest.cpp   | 4 ++--
++ 5 files changed, 13 insertions(+), 13 deletions(-)
++
++diff --git a/include/istream b/include/istream
++index 72a8834..2d58abd 100644
++--- a/include/istream
+++++ b/include/istream
++@@ -72,7 +72,7 @@ namespace std{
++ 		basic_istream<charT,traits>& operator>>(void*& p);
++ 		basic_istream<charT,traits>& operator>>(basic_streambuf<char_type,traits>* sb);
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 		basic_istream<charT,traits>& operator>>(long long& n);
++ 		basic_istream<charT,traits>& operator>>(unsigned long long& n);
++ #endif
++@@ -455,7 +455,7 @@ namespace std{
++ 		return *this;
++ 	}
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	template <class charT, class traits> _UCXXEXPORT basic_istream<charT,traits>&
++ 		basic_istream<charT,traits>::operator>>(long long& n)
++ 	{
++diff --git a/include/istream_helpers b/include/istream_helpers
++index d87e0c7..f2c793f 100644
++--- a/include/istream_helpers
+++++ b/include/istream_helpers
++@@ -301,7 +301,7 @@ namespace std{
++ 	};
++ 
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	template <class traits> class _UCXXEXPORT __istream_readin<traits, char, long long>{
++ 	public:
++ 		inline static void readin(basic_istream<char, traits >& stream, long long & var)
++diff --git a/include/ostream b/include/ostream
++index 289514c..3072589 100644
++--- a/include/ostream
+++++ b/include/ostream
++@@ -85,7 +85,7 @@ namespace std {
++ 		basic_ostream<charT,traits>& operator<<(long double f);
++ 		basic_ostream<charT,traits>& operator<<(void* p);
++ 		basic_ostream<charT,traits>& operator<<(basic_streambuf<char_type,traits>* sb);
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 		basic_ostream<charT,traits>& operator<<(long long n);
++ 		basic_ostream<charT,traits>& operator<<(unsigned long long n);
++ #endif
++@@ -221,7 +221,7 @@ namespace std {
++ 		return *this;
++ 	}
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(long long n)
++ 	{
++ 		sentry s(*this);
++@@ -487,7 +487,7 @@ namespace std {
++ #endif
++ 
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ //Support for output of long long data types
++ 
++@@ -509,7 +509,7 @@ template<class Ch, class Tr> _UCXXEXPORT basic_ostream<Ch, Tr>&
++ }
++ 
++ 
++-#endif	//__STRICT_ANSI__
+++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 
++ 
++diff --git a/include/ostream_helpers b/include/ostream_helpers
++index fa50407..f4d33f9 100644
++--- a/include/ostream_helpers
+++++ b/include/ostream_helpers
++@@ -142,7 +142,7 @@ namespace std{
++ 		}
++ 	};
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, signed long long int>{
++ 	public:
++@@ -237,7 +237,7 @@ namespace std{
++ 	};
++ 
++ 
++-#endif	//__STRICT_ANSI__
+++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, double>{
++ 	public:
++@@ -357,7 +357,7 @@ namespace std{
++ 		}
++ 	};
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, signed long long int>{
++ 	public:
++@@ -428,7 +428,7 @@ namespace std{
++ 	};
++ 
++ 
++-#endif	//__STRICT_ANSI__
+++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, double>{
++ 	public:
++diff --git a/tests/sstreamtest.cpp b/tests/sstreamtest.cpp
++index 36b3470..ea946a9 100644
++--- a/tests/sstreamtest.cpp
+++++ b/tests/sstreamtest.cpp
++@@ -9,7 +9,7 @@ int main(){
++ 	int i;
++ 	std::string s;
++ 	char c;
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	long long ll;
++ 	unsigned long long ull;
++ #endif
++@@ -32,7 +32,7 @@ int main(){
++ 
++ 
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	a.str("678 76 54");
++ 	a >> ll >> ull >> s;
++ 	std::cout << "ll (should be 678): " << ll << std::endl;
++-- 
++2.17.1
++
+diff --git a/package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch b/package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch
+new file mode 100644
+index 0000000000..1de8711b7e
+--- /dev/null
++++ b/package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch
+@@ -0,0 +1,42 @@
++From 7f6dd860818512c0eb313320308b22ba7e2c7205 Mon Sep 17 00:00:00 2001
++From: Rosen Penev <rosenp@gmail.com>
++Date: Fri, 4 Oct 2019 20:06:53 -0700
++Subject: [PATCH] istream_helpers: Fix sscanf typo
++
++This caused readin not to work properly with long long types.
++
++Found accidentally through a glibc warning
++(declared with warn_unused_result).
++
++Tested with gptfdisk on OpenWrt.
++
++Signed-off-by: Rosen Penev <rosenp@gmail.com>
++---
++ include/istream_helpers | 4 ++--
++ 1 file changed, 2 insertions(+), 2 deletions(-)
++
++diff --git a/include/istream_helpers b/include/istream_helpers
++index f2c793f..f8db903 100644
++--- a/include/istream_helpers
+++++ b/include/istream_helpers
++@@ -317,7 +317,7 @@ namespace std{
++ 					sscanf(temp.c_str(), "%llo", (unsigned long long *)&var );
++ 				}else if(stream.flags() & ios_base::hex){
++ 					if(stream.flags() & ios_base::uppercase){
++-						scanf(temp.c_str(), "%llX", (unsigned long long *)&var );
+++						sscanf(temp.c_str(), "%llX", (unsigned long long *)&var );
++ 					}else{
++ 						sscanf(temp.c_str(), "%llx", (unsigned long long *)&var);
++ 					}
++@@ -344,7 +344,7 @@ namespace std{
++ 					sscanf(temp.c_str(), "%llo", &var );
++ 				}else if(stream.flags() & ios_base::hex){
++ 					if(stream.flags() & ios_base::uppercase){
++-						scanf(temp.c_str(), "%llX", &var );
+++						sscanf(temp.c_str(), "%llX", &var );
++ 					}else{
++ 						sscanf(temp.c_str(), "%llx", &var);
++ 					}
++-- 
++2.17.1
++
+-- 
+2.17.1
 
-Hi,
-
-I tested your v2 patch. It's working but I found some issues.
-
-There is no adb-enablemodem so httpd on LTE module won't start.
-I understand it's hardly an issue for you but most users may find it a serious
-drawback when compared to ar71xx version.
-
-There is some problem with kernel detecting that eth0 is disconnected.
-It is always shown as up (with carrier) and LAN LED won't ever turn off.
-
-If you need help to fix this let me know.
-
-Filip
-
-
-On Tue, Sep 17, 2019 at 09:30:29PM +0200, Enrico Mioso wrote:
-> This device is an LTE router supported in ar71xx.
-> As per original commit, hardware specifications (v1.0 EU):
-> - SoC: QCA9531
-> - Flash: Winbond W25Q64FV (8MiB)
-> - RAM: EtronTech EM6AB160TSE-5G (64MiB)
-> - Wireless: SoC platform only (2.4GHz b/g/n, 2x internal antenna)
-> - Ethernet: 2NIC (3x100M + 1x100M)
-> - WWAN: TP-LINK LTE MODULE (2x external detachable antenna)
-> - Power: DC 12V 1A
-> 
-> Flashing instructions:
-> You can flash via tftp recovery (serve factory image as /mr6400_tp_recovery.bin
-> on 192.168.0.66/24, connect to any ethernet port and power on device while
-> holding the reset button). Flashing via OEM web interface does not work.
-> 
-> Working:
-> - Wi-Fi
-> - TP-Link LTE module does it's thing (but see Notes)
-> - reset/rfkill keys
-> 
-> Untested:
-> - recovery via factory
-> - leds
-> 
-> (I promise I'll test untested items as well in final version.)
-> 
-> Issues:
-> switch configuration currently broken (port 2 on device is seen as port 3, port 3 as port 2).
-> 
-> Note: as it happened occasionally in ar71xx, during bursty flash activity, LTE module init will fail, with USB enumeration errors.
-> 
-> V1->V2:
-> - addressed most comments, except for SUPPORTED_DEVICES
-> 
-> Signed-off-by: Enrico Mioso <mrkiko.rs@gmail.com>
-> CC: Filip Moc <lede@moc6.cz>
-> CC: Piotr Dymacz <pepe2k@gmail.com>
-> ---
-> {
-> This version is not meant to be definite nor merged. I'll be laving tomorrow, and will be back sunday, so I wanted to post this version so in case you have visibility over last changes.
-> Thanks!
-> Enrico
-> }
->  .../ath79/base-files/etc/board.d/01_leds      |   5 +
->  .../ath79/base-files/etc/board.d/02_network   |   5 +
->  .../ath79/dts/qca9531_tplink_tl-mr6400-v1.dts | 172 ++++++++++++++++++
->  target/linux/ath79/image/generic-tp-link.mk   |  10 +
->  4 files changed, 192 insertions(+)
->  create mode 100644 target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
-> 
-> diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
-> index 778316e450..385ac8d9ca 100755
-> --- a/target/linux/ath79/base-files/etc/board.d/01_leds
-> +++ b/target/linux/ath79/base-files/etc/board.d/01_leds
-> @@ -130,6 +130,11 @@ tplink,archer-c7-v5)
->  	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x10"
->  	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x20"
->  	;;
-> +tplink,tl-mr6400-v1)
-> +	ucidef_set_led_netdev "lan" "LAN" "tp-link:white:lan" "eth0"
-> +	ucidef_set_led_netdev "wan" "WAN" "tp-link:white:wan" "eth1"
-> +	ucidef_set_led_netdev "4g" "4G" "tp-link:white:4g" "usb0"
-> +	;;
->  tplink,archer-c2-v3|\
->  tplink,tl-wr1043nd-v4|\
->  tplink,tl-wr1043n-v5)
-> diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-> index 5b47af8ef7..2b0e1ce400 100755
-> --- a/target/linux/ath79/base-files/etc/board.d/02_network
-> +++ b/target/linux/ath79/base-files/etc/board.d/02_network
-> @@ -56,6 +56,11 @@ ath79_setup_interfaces()
->  	winchannel,wb2000)
->  		ucidef_set_interface_lan "eth0"
->  		;;
-> +	tplink,tl-mr6400-v1)
-> +		ucidef_set_interfaces_lan_wan "eth0.1 eth1" "usb0"
-> +		ucidef_add_switch "switch0" \
-> +			"0@eth0" "1:lan" "2:lan" "3:lan"
-> +		;;
->  	avm,fritz4020|\
->  	pcs,cr3000|\
->  	tplink,archer-c58-v1|\
-> diff --git a/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
-> new file mode 100644
-> index 0000000000..a2c006f05e
-> --- /dev/null
-> +++ b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
-> @@ -0,0 +1,172 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later
-> +/dts-v1/;
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +
-> +#include "qca953x.dtsi"
-> +
-> +/ {
-> +	compatible = "tplink,tl-mr6400-v1", "qca,qca9531";
-> +	model = "TP-Link TL-MR6400 v1";
-> +
-> +	aliases {
-> +		led-boot = &led_power;
-> +		led-failsafe = &led_power;
-> +		led-running = &led_power;
-> +		led-upgrade = &led_power;
-> +	};
-> +
-> +	gpio_leds: leds {
-> +		compatible = "gpio-leds";
-> +
-> +		/* D12 */
-> +		wan {
-> +			label = "tp-link:white:wan";
-> +			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
-> +		};
-> +
-> +		/* D11 */
-> +		4g {
-> +			label = "tp-link:white:4g";
-> +			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
-> +		};
-> +
-> +		/* D5 */
-> +		wps {
-> +			label = "tp-link:white:wps";
-> +			gpios = <&gpio 3 GPIO_ACTIVE_HIGH>;
-> +		};
-> +
-> +		/* D3 */
-> +		wlan {
-> +			label = "tp-link:white:wlan";
-> +			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
-> +			linux,default-trigger = "phy0tpt";
-> +		};
-> +
-> +		/* D2 */
-> +		led_power: power {
-> +			label = "tp-link:white:power";
-> +			gpios = <&gpio 13 GPIO_ACTIVE_HIGH>;
-> +		};
-> +
-> +		/* D4 */
-> +		lan {
-> +			label = "tp-link:white:lan";
-> +			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
-> +		};
-> +	};
-> +
-> +	keys {
-> +		compatible = "gpio-keys";
-> +
-> +		/* SW2 */
-> +		reset {
-> +			label = "Reset button";
-> +			linux,code = <KEY_RESTART>;
-> +			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-> +			debounce-interval = <60>;
-> +		};
-> +
-> +		/* SW3 */
-> +		rfkill {
-> +			label = "RFKill button";
-> +			linux,code = <KEY_RFKILL>;
-> +			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-> +			debounce-interval = <60>;
-> +		};
-> +	};
-> +};
-> +
-> +&uart {
-> +	status = "okay";
-> +};
-> +
-> +&spi {
-> +	status = "okay";
-> +	num-cs = <1>;
-> +
-> +	flash@0 {
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		compatible = "jedec,spi-nor";
-> +		reg = <0>;
-> +		spi-max-frequency = <10000000>;
-> +
-> +		partitions {
-> +			compatible = "fixed-partitions";
-> +			#address-cells = <1>;
-> +			#size-cells = <1>;
-> +
-> +			uboot: partition@0 {
-> +				label = "u-boot";
-> +				reg = <0x000000 0x020000>;
-> +				read-only;
-> +			};
-> +
-> +			partition@20000 {
-> +				compatible = "tplink,firmware";
-> +				label = "firmware";
-> +				reg = <0x020000 0x7d0000>;
-> +			};
-> +
-> +			art: partition@7f0000 {
-> +				label = "art";
-> +				reg = <0x7f0000 0x010000>;
-> +				read-only;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&eth0 {
-> +	status = "okay";
-> +	phy-mode = "mii";
-> +	phy-handle = <&swphy0>;
-> +
-> +	mtd-mac-address = <&uboot 0x1fc00>;
-> +	mtd-mac-address-increment = <1>;
-> +
-> +	gmac-config {
-> +		device = <&gmac>;
-> +		switch-phy-swap = <1>;
-> +		switch-phy-addr-swap = <1>;
-> +	};
-> +};
-> +
-> +&eth1 {
-> +	status = "okay";
-> +	mtd-mac-address = <&uboot 0x1fc00>;
-> +	mtd-mac-address-increment = <(-1)>;
-> +};
-> +
-> +&wmac {
-> +	status = "okay";
-> +	mtd-cal-data = <&art 0x1000>;
-> +	mtd-mac-address = <&uboot 0x1fc00>;
-> +};
-> +
-> +&usb0 {
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-> +	status = "okay";
-> +
-> +	hub_port: port@1 {
-> +		reg = <1>;
-> +		#trigger-source-cells = <0>;
-> +	};
-> +};
-> +
-> +&usb_phy {
-> +	status = "okay";
-> +};
-> +
-> +&gpio {
-> +	lte_power {
-> +		gpio-hog;
-> +		gpios = <4 GPIO_ACTIVE_HIGH>;
-> +		output-low;
-> +		line-name = "tp-link:power:LTE";
-> +	};
-> +};
-> diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
-> index 5519e9c960..78d7810f29 100644
-> --- a/target/linux/ath79/image/generic-tp-link.mk
-> +++ b/target/linux/ath79/image/generic-tp-link.mk
-> @@ -393,6 +393,16 @@ define Device/tplink_tl-wr810n-v1
->  endef
->  TARGET_DEVICES += tplink_tl-wr810n-v1
->  
-> +define Device/tplink_tl-mr6400-v1
-> +  $(Device/tplink-8mlzma)
-> +  ATH_SOC := qca9531
-> +  DEVICE_MODEL := TL-MR6400
-> +  DEVICE_VARIANT := v1
-> +  TPLINK_HWID := 0x64000001
-> +  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-net kmod-usb-net-rndis kmod-usb-serial kmod-usb-serial-option adb
-> +endef
-> +TARGET_DEVICES += tplink_tl-mr6400-v1
-> +
->  define Device/tplink_tl-wr810n-v2
->    $(Device/tplink-8mlzma)
->    ATH_SOC := qca9533
-> -- 
-> 2.23.0
-> 
-
-
---===============7190166873203152795==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7190166873203152795==--

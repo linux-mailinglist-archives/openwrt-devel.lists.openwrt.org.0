@@ -2,56 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41464CECFF
-	for <lists+openwrt-devel@lfdr.de>; Mon,  7 Oct 2019 21:52:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34CE4CEE22
+	for <lists+openwrt-devel@lfdr.de>; Mon,  7 Oct 2019 23:03:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=t9qenzxUvMSR6a1emNZhzY4OMQzQKoVPIBoARMXG8rM=; b=ht1XiheoaxuCWJC8Y5N350KBK
-	TFkz9ttMm8tZtyqYicqXey8L8mYjY2hmx+xasPDKcFuoETAGmjMeYA5IV01mXgLnL8JupxvCsgxkJ
-	FeW+frfLkVCiXxL8nOgzjCmbnYYV9lwNIW7zJy875rbU5Zt7UFF8o5Rl9ZtvXeFm8Inv1juS3/kz2
-	D28P4pxwcBtyXiYDRSjzPaBbNv9Az0/vEIAuvtDECMl42kkRz1sZ6b0R/wNgtXLQTbSJRq/NmXG1n
-	nps/F9OC0ejg820uLB9hk8bOkRp8Ng+8/Slenk5DIPNYfP7vsiaFnvS/oj31bIU0o/iFcQKSwVB+Z
-	KkCROvYTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QST/q9TnBMBCeFK6nLAyDYOsDEn4g+AlLgsN2M0jTZE=; b=WyrfM6AsHLQ392
+	3TudpUdjtEQblQRHAtY9bjYbHxfl3vou2BgL9+xp1y0Doz1FCfkTaW2qPH9dylzj8dVFkXjb4Homj
+	YwmVpWwRMfpSf/vMOXH9JkLmS0hTXOyfBriRBx9PPC/gYzAeFh8CtYCDrd5Vs6/doovHG3wR4AH4s
+	HjebAaBbhJzcf6nwB2UlwQGtka5qinHHUTWFVBoVjwcTKforQIO6ZZUhjE/7KqmSQWRT5p9DnocUq
+	lGwy204uh9t4EjxWzBAEGGwNqAGAfV71SyghexGK7UZGuFhpeguN4fyCQ380Xsn4CA+6iI7tcdztR
+	HVCE2pI8WJpdaC/1uDEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHZ3j-00088g-KO; Mon, 07 Oct 2019 19:52:43 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
+	id 1iHa9s-0000gI-U9; Mon, 07 Oct 2019 21:03:08 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHZ3Y-00088A-Vd
- for openwrt-devel@lists.openwrt.org; Mon, 07 Oct 2019 19:52:34 +0000
-Received: from [128.171.10.79] (dhcp-grp2-01.ics.hawaii.edu [128.171.10.79])
- (Authenticated sender: mail@aparcar.org)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 438C7240004;
- Mon,  7 Oct 2019 19:52:25 +0000 (UTC)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-References: <20191007082204.30380-1-ynezz@true.cz>
-From: Paul Spooren <mail@aparcar.org>
-Message-ID: <8b3eaf1e-cad3-743f-4b7d-0bb503e9e981@aparcar.org>
-Date: Mon, 7 Oct 2019 09:52:23 -1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iHa9m-0000fQ-E0
+ for openwrt-devel@lists.openwrt.org; Mon, 07 Oct 2019 21:03:04 +0000
+Received: by mail-qt1-x842.google.com with SMTP id u40so21308808qth.11
+ for <openwrt-devel@lists.openwrt.org>; Mon, 07 Oct 2019 14:02:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4XbC4tbCXuBzwPIJEjUiFduVq9+2rZ/RiOnQiBUXLd8=;
+ b=LItPfO+aChgl4J9rCHPHBGhSkFo7kmcj5Hc+VCh9W7RPPAzWDxswLVQCYrnI+trrm2
+ LWaNC2Gg/bJBVel3M9wEMg8E6Tfks1+5k6SzqwsrS7hUGykSBs9umy5uDnzW74hSv7bp
+ NVVI1Oz91Uehf6Q95v63W5u+aFJPGpoJz7jChZnWPhsMSBc9CaW/3XIwPwjgianiXhcg
+ HhruhAh28e0RFpB05wf/fVujlGAYRhFjV+B4CSk7qDWf21tf3MgMsDi3efyMZIHi1nhe
+ 7w7J2H6t4iYLUDH0TjO6ygydF9A4hR7EX/yDmA2bkWPzb9xlT5SMTbKiByL9O33llbOh
+ 0+9Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4XbC4tbCXuBzwPIJEjUiFduVq9+2rZ/RiOnQiBUXLd8=;
+ b=bsWCC7jES9Z2cgCqaFDbiBvafk2nVEhZbBO4oeDyprQY8hi0OFG9ABxu6bpu/ReLog
+ CVdFzFr0YLHEX0iXxBnJIVt4bmJPxGuZi75jslx/DqTfAeI4HN4UItaIDHrHGLD/hZs2
+ IgkbEYQVTD6PMCnn+zYHjncPZpTQHAcaRyhSVnXI0bHYZgbMzIQgrGiPauqAgR/bZGu/
+ QEX+lC8HJlA7oqYcjt8RzkQBacFQAO96oUXlpcD53t3PmmlQC7/EO8hYPVlJdRUJZWB6
+ hu/Ojkl7guMLXYC6SMD3vyCSltHbw8lVCsJPEIjvZjL3ICuBUn6LdseeyX7hFIMboB7x
+ +yOQ==
+X-Gm-Message-State: APjAAAVBFJ65AWTpFLLcY4MCXdLzXmHhoHEO3b01Lt+MZ6MN9vvKujFT
+ RmMQn3yjMbVN9ZeiDg6qBsEqXVsB
+X-Google-Smtp-Source: APXvYqxwlhLjHqyeywfZJIjKO8+y5frBZVGu9QHqw19KdP2xoxIGxTxpXwB+Qj5T2du6ck91+lO5Sw==
+X-Received: by 2002:a0c:ea87:: with SMTP id d7mr28581511qvp.173.1570482178633; 
+ Mon, 07 Oct 2019 14:02:58 -0700 (PDT)
+Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
+ [2804:688:21:4::2])
+ by smtp.gmail.com with ESMTPSA id a36sm8576709qtk.21.2019.10.07.14.02.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 07 Oct 2019 14:02:58 -0700 (PDT)
+From: Eneas U de Queiroz <cotequeiroz@gmail.com>
+To: openwrt-devel@lists.openwrt.org,
+	Felix Fietkau <nbd@nbd.name>
+Date: Mon,  7 Oct 2019 18:02:38 -0300
+Message-Id: <20191007210238.23216-1-cotequeiroz@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20191007082204.30380-1-ynezz@true.cz>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_125233_154137_D09122E6 
-X-CRM114-Status: GOOD (  11.56  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191007_140302_469460_73E03051 
+X-CRM114-Status: UNSURE (   4.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: make UBNT Nano/Loco AC factory
- images reproducible
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (cotequeiroz[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] hostapd: adjust to removal of
+ WOLFSSL_HAS_AES_GCM
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,65 +99,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhlIGlzc3VlIGFwcGVhciBmb3IgYW1pcHMtbXQ3NjIwLXp5eGVsX2tlZW5ldGljLW9tbmktaWlb
-MF0gYXMgd2VsbC4KClswXTogCmh0dHBzOi8vcmVidWlsZC5hcGFyY2FyLm9yZy9TTkFQU0hPVC9y
-YW1pcHMvbXQ3NjIwL29wZW53cnQtcmFtaXBzLW10NzYyMC16eXhlbF9rZWVuZXRpYy1vbW5pLWlp
-LXNxdWFzaGZzLWZhY3RvcnkuYmluLmh0bWwKCk9uIDEwLzYvMTkgMTA6MjIgUE0sIFBldHIgxaB0
-ZXRpYXIgd3JvdGU6Cj4gQ3VycmVudCBmYWN0b3J5IGltYWdlcyBhcmUgYnVpbHQgb24gdG9wIG9m
-IHN5c3VwZ3JhZGUgaW1hZ2VzIHdoaWNoCj4gY29udGFpbnMgbWV0YWRhdGEgd2hpY2ggYXJlIGNh
-dXNpbmcgaW1hZ2UgcmVwcm9kdWNpYmlsaXR5IGlzc3Vlcywgc28KPiBsZXQncyBidWlsZCBmYWN0
-b3J5IGltYWdlcyBmcm9tIHRoZSBzY3JhdGNoLiBXaGlsZSBhdCBpdCwgcmVmYWN0b3IgdGhlCj4g
-c2hhcmVkIHZhcnMgaW50byBjb21tb24gYmFzZSBhcyB3ZWxsLgo+Cj4gUmVmOiBodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9waXBlcm1haWwvb3BlbndydC1kZXZlbC8yMDE5LU9jdG9iZXIvMDE5
-MjA1Lmh0bWwKPiBSZXBvcnRlZC1ieTogUGF1bCBTcG9vcmVuIDxtYWlsQGFwYXJjYXIub3JnPgo+
-IFNpZ25lZC1vZmYtYnk6IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+Cj4gLS0tCj4gICB0
-YXJnZXQvbGludXgvYXRoNzkvaW1hZ2UvZ2VuZXJpYy11Ym50Lm1rIHwgMjQgKysrKysrKysrKysr
-LS0tLS0tLS0tLS0tCj4gICAxIGZpbGUgY2hhbmdlZCwgMTIgaW5zZXJ0aW9ucygrKSwgMTIgZGVs
-ZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2F0aDc5L2ltYWdlL2dlbmVy
-aWMtdWJudC5tayBiL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9nZW5lcmljLXVibnQubWsKPiBp
-bmRleCA2YWU3NjZlMjkzMzEuLjlhYjExMzI0YjQxMSAxMDA2NDQKPiAtLS0gYS90YXJnZXQvbGlu
-dXgvYXRoNzkvaW1hZ2UvZ2VuZXJpYy11Ym50Lm1rCj4gKysrIGIvdGFyZ2V0L2xpbnV4L2F0aDc5
-L2ltYWdlL2dlbmVyaWMtdWJudC5tawo+IEBAIC0xMTQsNDAgKzExNCw0MCBAQCBkZWZpbmUgRGV2
-aWNlL3VibnRfYnVsbGV0LW0teHcKPiAgIGVuZGVmCj4gICBUQVJHRVRfREVWSUNFUyArPSB1Ym50
-X2J1bGxldC1tLXh3Cj4gICAKPiArZGVmaW5lIERldmljZS91Ym50LW5hbm8tYWMKPiArICBERVZJ
-Q0VfUEFDS0FHRVMgKz0ga21vZC1hdGgxMGstY3QgYXRoMTBrLWZpcm13YXJlLXFjYTk4OHgtY3QK
-PiArICBJTUFHRV9TSVpFIDo9IDE1NzQ0awo+ICsgIElNQUdFL2ZhY3RvcnkuYmluIDo9IGFwcGVu
-ZC1rZXJuZWwgfCBwYWQtdG8gJCQkJChCTE9DS1NJWkUpIHwgXAo+ICsJYXBwZW5kLXJvb3RmcyB8
-IHBhZC1yb290ZnMgfCBta3VibnRpbWFnZS1zcGxpdCB8IFwKPiArCWNoZWNrLXNpemUgJCQkJChJ
-TUFHRV9TSVpFKQo+ICtlbmRlZgo+ICsKPiAgIGRlZmluZSBEZXZpY2UvdWJudF9sYXAtMTIwCj4g
-ICAgICQoRGV2aWNlL3VibnQtd2EpCj4gICAgIERFVklDRV9NT0RFTCA6PSBMaXRlQVAgYWMKPiAg
-ICAgREVWSUNFX1ZBUklBTlQgOj0gTEFQLTEyMAo+IC0gIERFVklDRV9QQUNLQUdFUyArPSBrbW9k
-LWF0aDEway1jdCBhdGgxMGstZmlybXdhcmUtcWNhOTg4eC1jdAo+IC0gIElNQUdFX1NJWkUgOj0g
-MTU3NDRrCj4gLSAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gJCQoSU1BR0Uvc3lzdXBncmFkZS5iaW4p
-IHwgbWt1Ym50aW1hZ2Utc3BsaXQKPiArICAkKERldmljZS91Ym50LW5hbm8tYWMpCj4gICBlbmRl
-Zgo+ICAgVEFSR0VUX0RFVklDRVMgKz0gdWJudF9sYXAtMTIwCj4gICAKPiAgIGRlZmluZSBEZXZp
-Y2UvdWJudF9uYW5vYmVhbS1hYwo+ICAgICAkKERldmljZS91Ym50LXdhKQo+ICAgICBERVZJQ0Vf
-TU9ERUwgOj0gTmFub0JlYW0gQUMKPiAtICBERVZJQ0VfUEFDS0FHRVMgKz0ga21vZC1hdGgxMGst
-Y3QgYXRoMTBrLWZpcm13YXJlLXFjYTk4OHgtY3QKPiAtICBJTUFHRV9TSVpFIDo9IDE1NzQ0awo+
-IC0gIElNQUdFL2ZhY3RvcnkuYmluIDo9ICQkKElNQUdFL3N5c3VwZ3JhZGUuYmluKSB8IG1rdWJu
-dGltYWdlLXNwbGl0Cj4gKyAgJChEZXZpY2UvdWJudC1uYW5vLWFjKQo+ICAgZW5kZWYKPiAgIFRB
-UkdFVF9ERVZJQ0VTICs9IHVibnRfbmFub2JlYW0tYWMKPiAgIAo+ICAgZGVmaW5lIERldmljZS91
-Ym50X25hbm9zdGF0aW9uLWFjCj4gICAgICQoRGV2aWNlL3VibnQtd2EpCj4gICAgIERFVklDRV9N
-T0RFTCA6PSBOYW5vc3RhdGlvbiBBQwo+IC0gIERFVklDRV9QQUNLQUdFUyArPSBrbW9kLWF0aDEw
-ay1jdCBhdGgxMGstZmlybXdhcmUtcWNhOTg4eC1jdAo+IC0gIElNQUdFX1NJWkUgOj0gMTU3NDRr
-Cj4gLSAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gJCQoSU1BR0Uvc3lzdXBncmFkZS5iaW4pIHwgbWt1
-Ym50aW1hZ2Utc3BsaXQKPiArICAkKERldmljZS91Ym50LW5hbm8tYWMpCj4gICBlbmRlZgo+ICAg
-VEFSR0VUX0RFVklDRVMgKz0gdWJudF9uYW5vc3RhdGlvbi1hYwo+ICAgCj4gICBkZWZpbmUgRGV2
-aWNlL3VibnRfbmFub3N0YXRpb24tYWMtbG9jbwo+ICAgICAkKERldmljZS91Ym50LXdhKQo+ICAg
-ICBERVZJQ0VfTU9ERUwgOj0gTmFub3N0YXRpb24gQUMgbG9jbwo+IC0gIERFVklDRV9QQUNLQUdF
-UyArPSBrbW9kLWF0aDEway1jdCBhdGgxMGstZmlybXdhcmUtcWNhOTg4eC1jdAo+IC0gIElNQUdF
-X1NJWkUgOj0gMTU3NDRrCj4gLSAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gJCQoSU1BR0Uvc3lzdXBn
-cmFkZS5iaW4pIHwgbWt1Ym50aW1hZ2Utc3BsaXQKPiArICAkKERldmljZS91Ym50LW5hbm8tYWMp
-Cj4gICBlbmRlZgo+ICAgVEFSR0VUX0RFVklDRVMgKz0gdWJudF9uYW5vc3RhdGlvbi1hYy1sb2Nv
-Cj4gICAKPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-Cj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53
-cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53
-cnQtZGV2ZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-Cm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
-cmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2
-ZWwK
+WolfSSL is always built with AES-GCM support now.
+
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+
+---
+As for 19.07, it needs 94d131332b5adbcf885a92608c40a22b79b3c708
+(hostapd: adjust removed wolfssl options) cherry-picked first, then this
+as well, since the wolfssl options were all removed in 19.07 too.
+
+diff --git a/package/network/services/hostapd/Config.in b/package/network/services/hostapd/Config.in
+index 9ce4b243cc..9dfa44e313 100644
+--- a/package/network/services/hostapd/Config.in
++++ b/package/network/services/hostapd/Config.in
+@@ -52,7 +52,6 @@ config WPA_WOLFSSL
+ 	        PACKAGE_wpad-mesh-wolfssl ||\
+ 	        PACKAGE_eapol-test-wolfssl
+ 	select WOLFSSL_HAS_AES_CCM
+-	select WOLFSSL_HAS_AES_GCM
+ 	select WOLFSSL_HAS_ARC4
+ 	select WOLFSSL_HAS_DH
+ 	select WOLFSSL_HAS_OCSP
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

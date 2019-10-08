@@ -2,96 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95BF9CFABC
-	for <lists+openwrt-devel@lfdr.de>; Tue,  8 Oct 2019 14:59:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B1BCFD6F
+	for <lists+openwrt-devel@lfdr.de>; Tue,  8 Oct 2019 17:19:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=94DJ1DO3OYJiIydEigWc29vboTNtDMLsdACU8kmaBrQ=; b=MKE67v1x25Pf7FTy73lZSsy0k
-	feThVJiGPZC16rThiFLiKgCLT6t9qANVbnRXGi0JXPXszNylfkMn0nhawboDG815edgEzQLFEFUue
-	53885Dzd/NS3Z/NMpck8HUBsM6fjfxkUvg/tUIwJrRSJicglzxcRXE91210OU2YkeXhTu9wYOFYKB
-	Xm4X+5ht6kHRfQ4xpdo/9YU7uUl72ucPXxvqFa9ySGfXs4rMXuCn9pEYgsDdfY2KEepnQrHWo88O3
-	DBwjIdUo0QpbTPFcFKPf2SzfsOMWWalZG1/i+fm1saysa7uBZNmzZvuTS+MgLcnjIBCEtEFQCGK9o
-	0VIRwiHEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yeqPal41x6196eg1Hqo1oA5NPyeYTkaz9cj1Ot45/w4=; b=MXP5X5wuw4FjsK
+	BRhSUlrq0uZOJk1DywYMPBB7/RbCI2WXr0nRVdnY6wwWDVKeyh+vEfdTDnWZoXeNklyq++vjBfIsT
+	8FLHUJ/VO1RCfC0vwbj9qfsUXkN4JUI002KA50NjYE9jsRehXhfcjSwh737W+/MbH8LA5Gy0BdPuH
+	SwiSdLBhZK50x4qbUwvjs4v5r26Hm7RTqmg2AaJrNt7YSsuhO2TZe2LenWVzxw2/YOsFzLj70X08L
+	FkeO530XYmbWuOk/7h5iacHjJh6qRVwFPVnC6odABW7SoV/sJHLzE+M522g8MKRXyjPftC0ZilBJL
+	3t96j8tyLRiuD7ValxKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHp4u-0007rn-4t; Tue, 08 Oct 2019 12:59:00 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iHrGG-0006Zu-6z; Tue, 08 Oct 2019 15:18:52 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHp2Q-0005eo-52
- for openwrt-devel@lists.openwrt.org; Tue, 08 Oct 2019 12:56:28 +0000
-Received: by mail-wm1-x342.google.com with SMTP id r17so2327282wme.0
- for <openwrt-devel@lists.openwrt.org>; Tue, 08 Oct 2019 05:56:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=di+T+o0uRxc/ZQ04HzVghnH+M5r4IWJCdKeF8dVU9wE=;
- b=OALuGqwI7Azug4uqwE1vcnjL0z/vJPe4JGSPqM4R6/F+3+fVha+8Vv2X4MDZnQCyIN
- +6QXHT7uk8F8FYYfc0ebpXgjp8AOaPGnjbISOBGwXgRUQYPUrlF4dyxi6/bMZabo9ML+
- akroIUcF6pxXVCtwyZbVxRXQjRKeFOag60QQ/xsL6S5Sdhw8uF7relXn9tvv99RQj8ZD
- 03TcEyM3KZCEYLcZa7/3AUNWqGSwscghd9SWvMjIxG9h25UclJkWF/2edy3qurfWFERe
- EWIa8z2JwBvq6Ts5TEfaAm1IGaCo6jm9/pgoJQkTAnjFeK8ZAvdp+5Qc2AU/lcCx7nxf
- b09Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=di+T+o0uRxc/ZQ04HzVghnH+M5r4IWJCdKeF8dVU9wE=;
- b=oZAvsn+5CGJhpUQiTg3uNJv5pt9mGY7YLasGwY9fE5NPGzlyDuNHrnVA9MEpNpOjSj
- MuTlU7pxge3536VXkeEpaqfaq5KflkzhXvG0OxnrGl34X0a8WtCiak/LBJjrYICCc12F
- Uiv0/k1g5c2mnMKYcMPq2Va3ejdbpi80NQ4Oi2IKMWwlBrNgOXgZJmR0EZK0qHn5Vksa
- 5sMXaL3uHMt8N866Q2l+ntLK6GY/CumBAaXGtYT3SBsb6v1Jbm9ZgomL/RC0l3E/kY0C
- znlhszV1zelyxF6wHmj9tc1kMYZbTgclI9Jo9X/D7cDAUS2AFSSNi92rPKJdy4HlF5/F
- U4VA==
-X-Gm-Message-State: APjAAAU274afClUg4NRIVb5dXrXYKoc8Jr2d2er2TTvDK8O4in5ADPdo
- 2to6ZlxetLhcItH7Wp2krwzQoesH
-X-Google-Smtp-Source: APXvYqwjvg6PcA0od8Q/vMrc3Rhg0v4dI7KYSi0cLAEeZ5WzvfNp4pEOxN7KunSeFegVbOSVVBSadw==
-X-Received: by 2002:a1c:6a06:: with SMTP id f6mr3934825wmc.113.1570539383301; 
- Tue, 08 Oct 2019 05:56:23 -0700 (PDT)
-Received: from [192.168.43.29] (mi-18-57-118.service.infuturo.it.
- [151.18.57.118])
- by smtp.gmail.com with ESMTPSA id l11sm3039871wmh.34.2019.10.08.05.56.22
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 08 Oct 2019 05:56:22 -0700 (PDT)
+ id 1iHrG9-0006ZE-9A
+ for openwrt-devel@lists.openwrt.org; Tue, 08 Oct 2019 15:18:46 +0000
+Received: from buildfff.adridolf.com ([188.192.135.195]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1M9npV-1iCejL3HzZ-005nl6; Tue, 08 Oct 2019 17:18:38 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-References: <20191008010225.8822-1-rosenp@gmail.com>
- <944A6623-FEF1-4AC9-9A1E-B7D3566CF8A9@oranjevos.nl>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <080086a1-b4dc-1ef3-2bc5-cafea5640421@gmail.com>
-Date: Tue, 8 Oct 2019 14:57:04 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+Date: Tue,  8 Oct 2019 17:18:35 +0200
+Message-Id: <20191008151835.1856-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <944A6623-FEF1-4AC9-9A1E-B7D3566CF8A9@oranjevos.nl>
-Content-Language: en-US
+X-Provags-ID: V03:K1:dV2wQP7IKUS7D3PmNb04semka0gCH9Yz4kWi3xTFNmjF7Aa6qKR
+ SYttZ56reEIEdvejD42Huxp1iVa/pDpLAWrElJ3MX3Zk7jEseByqViKuI+64BfViz1JLQXW
+ mn+6uW3F8X8kAbyrHyh5m7ktcUijyjpS4d9s0U3e3Ev78OtmoSozfena21MP552qb5FccbQ
+ gucsTdqzN7V+h7Hji/2Bw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+tsta6Dihc4=:UI2g2rp6ISRfbmAiKAf95F
+ fIdAlGaELULvkp+CD4UujY2WXUMDvs9c4C36qcgR7Oa7nDDohtB/4aIgKYWXsZwTKlAGm7K4e
+ 0m20IYoIC/a9QxrSM67V/JdiefYJQpCQ1v3QOld49sbARh9KD5PquAKJm/suQD1gNTldgFRhH
+ Y4sDMFch3o6J9PQKcu4yxE/X3ZZh2gjPrynO7QM9gac5BC8TJ1Gmak8S61C5alHZ5gzXYu+VZ
+ MUG74/HwLF0xpw5aOLAjYUTiAESUflvx9SvgTwlVC9Z4RiNuOwHFcfEDmf2+Ig+F+qEeetF0O
+ /LrRpnYL4cXE+jx2i/vBhqecLd/4/MtOp3GHbRB8Ix0mKDAVWdAq5ZE7GamRiRxazBwIQN2oQ
+ Xo/Db5Gc/WtS2o76xS/foxmxZmHcnSa7G9Ot82CDGCTTfXxN7GLjJ/t+Qim84FGC+UVmAKEcD
+ Am3Wt9nM3+4yKC5UmuTmz2fq/jwWlCFyrBMLFb/AFe+nd2xIhoTbkmICg9ve3uGmlyx2bX51d
+ rsL5p617LPKvLuZn9qVRFsq7dVaMGwxjHRARaAUNxm2ya9FyLuXDhCPzdbuCdz+Y9PCYN5OEd
+ dUbs4nXn/TrXQtnQi548WmUA9A/qXnMpUwgqjzb3oVW9dOrlVHd3H48d3dsC3v+bkCzoI53fu
+ WXhtJLuTmigcztVtfaKHUge/iV/oVsYejz12JnIl8hQuNQpN/TeOr7EskpXJqeiRj2vaIYDL8
+ UOXzN8W0dhBc1eS1qUL8HVlbQnNRxTULLSpDBF8NKNTlH5paQ/D1MHN6o7IZxfprH/RmgP03/
+ a1j590DSydD8pt4IO5px7sP+43PayZS+WjP5mVasoUX2OYKPcqTz6WjSgXHsWsH/VKZGypCAF
+ DBdUVCT4Gpv+wHj24YwHykYE7t4JWYvxcPA8SNLpw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_055626_255816_01404337 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191008_081845_615379_844D0741 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bobafetthotmail[at]gmail.com)
+ no trust [212.227.126.131 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: Re: [OpenWrt-Devel] [PATCH 1/8] ncurses: add cygwin compatibility
+Subject: [OpenWrt-Devel] [PATCH] ath79: fix patching ath9k MAC address for
+ MyNet WiFi Range Extender
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,40 +77,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Christian Lamparter <chunkeey@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+The code line patching ath9k MAC address for this device contains
+a wrong number of arguments including an unset "$mac", which
+looks like a typo or copy/paste mistake.
 
-On 08/10/19 12:14, Paul Oranje wrote:
-> Hi,
->
->> Op 8 okt. 2019, om 03:02 heeft Rosen Penev <rosenp@gmail.com> het volgende geschreven:
->>
->> From: Alexey Loukianov <lx2@lexa2.ru>
->>
->> * Properly handle ".exe" suffix for cygwin.
->>
->> Signed-off-by: Alexey Loukianov <lx2@lexa2.ru>
->> (bumped PKG_RELEASE)
->> Signed-off-by: Rosen Penev <rosenp@gmail.com>
-> Two questions:
-> Is there any cover to this series of 8 patches that seemingly aim to add cygwin compatibility ?
-> And why would this project ever need cygwin compatibility, which will likely require quite some maintenance efforts ?
->
-> Any effort to make .exe files callable senses like getting into troubled waters, even if more analysis would prove such fears aren't warranted.
->
-> In short: to what purpose, what use-case ?
->
-> Regards,
-> Paul
->
->
-Yeah it seems these patches are for using the build system with cygwin. 
-I think there should be more explanation on why you want that.
+This has been introduced already in the device support commit
+745dee11ac78 ("ath79: add support for WD My Net Wi-Fi Range
+Extender").
 
--Alberto
+This patch just removes the "$mac" argument, leaving a formally
+valid line. (No on-device test has been performed.)
+
+Cc: Christian Lamparter <chunkeey@gmail.com>
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ .../ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom     | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index 7911d0aa1e..91663896df 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -196,7 +196,7 @@ case "$FIRMWARE" in
+ 		;;
+ 	wd,mynet-wifi-rangeextender)
+ 		ath9k_eeprom_extract "art" 0x1000 0x1000
+-		ath9k_patch_fw_mac $(nvram get wl0_hwaddr) "$mac" 0x2
++		ath9k_patch_fw_mac $(nvram get wl0_hwaddr) 0x2
+ 		;;
+ 	*)
+ 		ath9k_eeprom_die "board $board is not supported yet"
+-- 
+2.20.1
 
 
 _______________________________________________

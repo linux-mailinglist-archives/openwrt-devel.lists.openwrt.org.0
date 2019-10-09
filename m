@@ -2,77 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F10ED0DF8
-	for <lists+openwrt-devel@lfdr.de>; Wed,  9 Oct 2019 13:50:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19E35D0EFE
+	for <lists+openwrt-devel@lfdr.de>; Wed,  9 Oct 2019 14:41:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ro+8IudKZohrvJt8M3L7DfPuawYzA1DI9BeXYGVli68=; b=ubS+GqqKMachWNrXhSFObPRO2
-	yjv3c9POG/bDFCyCvBrlQcv3jGHLS/DC/BIV/cEp4pfBhOO0L5m22hWUaQkqe11DQ3xqi1emBqobc
-	/MjjpLAYyxu71OPBmSG3SBn+viCqS93LI42wOIcWWA/vDVxJqivfZtpWNgZrS7nMRHkI87dr3/aQo
-	6zaAoyUuQlLHGeE/sRPKs2sq2V4+DoJcEOOP6TY9UVzTONJDPeanwl8NM65v8bNgX9Iz4M87k48jk
-	X52W2A+QGuK1xn/q8MTmV4XpcTpRFuZTlAlZ03bGuHfxl1UxoDXhu48lli9XIUchot+SHL3Lmbdg6
-	SEs1r+Dig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sazAGvFN+wdZA3fx3cfr+ivM9k+Mfz+Vsct5BGULcPo=; b=nWXur+jlMJsg63
+	kPrIKVVzcsqwfv+TNUR6uHgWk/F7HtNTS17J5rTAijR5YJu9pC/raYqHisb0J7GOhaWkrCXn6IdrX
+	nSfKZenmNSpl3JpoBRJlzmxPLyjQ3ZsbJ1Rn0PaA7t9lDSbsGxOPqOYRyF6ct+4s1E8vLrh+o8+XO
+	6zSy9DQtJ4AgO6iQiDH2mgcKiCw5bPjimiLoJlxjWa9J0GZwtWQHquuFSrbs4hlGSdG8oSkslKs1E
+	WK14jt67Os0uBn/uab5cTtMtW5ZYs6MlEwlZoGlqDf7xp4WYFH1solGjNpYBH+TO/grU/IdQXUhjd
+	MUuv1UEZ+hoJVbE8icXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIAUI-0000wK-16; Wed, 09 Oct 2019 11:50:38 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1iIBHu-0006z9-7u; Wed, 09 Oct 2019 12:41:54 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIAU6-0000vj-EP
- for openwrt-devel@lists.openwrt.org; Wed, 09 Oct 2019 11:50:29 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MbS0X-1hgLgp3irR-00bu7u; Wed, 09
- Oct 2019 13:50:18 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: =?UTF-8?B?J+S4lOWQrOmjjuWQnyc=?= <wurobinson@qq.com>
-References: <1570526416-4180-1-git-send-email-wurobinson@qq.com>	<007b01d57dd7$3c9228f0$b5b67ad0$@adrianschmutzler.de>	<tencent_B5943D7D59BDF02DEDECDDCF96F8B195E40A@qq.com>
- <tencent_9FE34BB6D83E73909E2AAD98F8D27710EF09@qq.com>
- <00e801d57e97$6b6dff30$4249fd90$@adrianschmutzler.de>
-In-Reply-To: <00e801d57e97$6b6dff30$4249fd90$@adrianschmutzler.de>
-Date: Wed, 9 Oct 2019 13:50:18 +0200
-Message-ID: <00f301d57e97$b9202230$2b606690$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQIor5UgF8SBG3V7TBwz+nbhV6RX4wGufM2HAhlo0c0CLmuKSANxPja3pmCTjAA=
-Content-Language: de
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:Y9bNw1lSdyVlnZpT1xyS/Zqb/pZBoeAKwoYAZTQg7fEn3MFnVdZ
- urALFNNpsZ6HzHV+IX5VXDIhh+u7TTI+rRZJVSzltcJZ0tQvfZorIkir4AyS+ysW/STdMmq
- M+9N4PpZX0C0SNUk19ywUvRUkYFWAbpGYHFhNRkBILRubDn2RtkDfwaJ20bw3Ze9FjIMzKP
- J5pi9GrnA0PsufBY2+f/A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:traY9DTtfoU=:avuadimVjbAT3dnx4rDnXW
- 26m9J0yRNoDHb1RDWypceGfcuxtkAwpwmjrDnjcu6PVZpg64VVCWFmJL9rNLd/37/y5ZNmW5M
- t3rRHlbYALIWrN0adGoG3M8iNHRiz/vSSVaI6RXQv2RfswDWHH7qP0GHF9RmmUh90oHF40Xkt
- jYkZLAIZCnXlgOHinj84itgJ+7dRKpzUD0rhYbgKhcl8aUv+LmVvIMDIOI4XXUgZPQ+6Ts12Y
- R+tVNot1nNT1ZVYmqY7hP/WYqcNlGebwkalJDsxKy2oNhQ3FjL6mOrVUBolZhHIhvsrp+NUQl
- WC1KkTEoKpUjP+UOTDLflKsYyBYD0RJF1A6zFRPXwCV645DyKYd977xjfFwiRveKoIDs+1PUz
- Naffgx7dAJZPnLaEruo45sGCbhGXYrqJkHHGqcjQBmaM2r+L1gr0vSTajrKZk5Mx7T7T9T4hk
- g3Bp3RBIWqB2SnPmyPYTxSBrr1Sudm+RF8i+C9brsIL6EJ7erWhEaNgZxQoAL1ST3+iRyGZgs
- 5fzTTyoU3R2QmqPobYNQAp7SxxirE4D7/0Nx28xrC9w+JCe8B5lOcfkcUHeczfamhk6Igwg5Q
- KxoPwLlySj7edUsJV4sLVsv5V7KDohaclqoSvlQbQXYUaeGVrO8O02fZ0tcmIhS5VJiYAopTR
- 9C1QMmsNkgYkwSboAx/ol0eb95h14xu0Sd1O2swY7BUT6aMIGKeUHyEyZ5MtldH6GK8sEijXs
- i0uKAAKK0Rbab51NnGNhsDHagzp139oxrd6jeGzjjXhxGvjzbUc4qDMf/J8wEOxm137YazF5H
- Kxm2z1RsnfIZDaWmEATH0EdU3ALzAwkdqZzBaZLqgaF3CRaVSrm20iHXMZ23mfr1+I0Mt9thh
- REGSEry3vdad1gzrzOjCRatsS6v2FGJx+0haLB2Gs=
+ id 1iIBHn-0006yZ-VH
+ for openwrt-devel@lists.openwrt.org; Wed, 09 Oct 2019 12:41:49 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b9so2831518wrs.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 09 Oct 2019 05:41:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=uifWa4BW1/NyrKeymmb+aC8mVZsLRgwupjcW1Nb1K7g=;
+ b=Ezb8NlOi4lph7EW3pBc9I41LL4Wkyn5skWVSIocVbBNNZculh0ymkjPbegeR1uIPRb
+ FrMNFFLw7EwGxulx0goxTzkEM3clQ0mGdW2kT3pypGeNQpQulTo4EAK6mEmoaZcLdEQ1
+ 49Nrxy4hAAI69YEIHrCceFjXGNRlKjfp/zLfo7ReXWOf61ROQSkgXBnDLR9cqXZOizkp
+ DHeMZlQKOd29U8EjiG3bMw2D2h4tdnsrBS3xTIq0FvXbFA0w0KR0ZFK8eafyGRWeWfER
+ QKCXMhHNBlipvj5FSsXru+LCs3Ij75nlTJkhiif6s69AeDzGnIBvxezGhu3bIerSf83c
+ o1AQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=uifWa4BW1/NyrKeymmb+aC8mVZsLRgwupjcW1Nb1K7g=;
+ b=n7W5Ln+xydn2Oz3osOh86Qk93+4t7c8OeAvsq9j4shayXTNuX2g9L6zypSnnnsE1K2
+ jUOh28vfNggsgOWMiOIv9eNgF+ld4UzS56hvzR3lJNQdp1fmTRLziPNPxw7Fk96ZcA6V
+ +15FIjDHNxzdRSazviKt5+M1WS+5su8s1SJ33jOCgBnkLid1/9EH/4OH1cAVpWTS0b6h
+ 3sx+WCQwiLn9uV2LAerMN1Yy+ubjoAyAh8mvyc6h8DvmCLhz8KP8TDhCIdsU4XuQYMJe
+ O0PBPtSqbrm2o270MfFoNG5HluEpYRheIsHyLDVa/78T1FfRTc5anHQbzxOFfgcOuNnC
+ jt4g==
+X-Gm-Message-State: APjAAAXWMlABX8+yhAXKeFRvnBvfyAFOOWL+53ZhJic17BCfzii9m6Fn
+ uELSMfhnrw7ilFF7vq4pOd4d0FmL
+X-Google-Smtp-Source: APXvYqwRWSSjWBdSz5cq4F+LA729evR4lCwG0FiY7XocCnXnblQi6jkxyrnSLbBRGTlf86IT25+PGg==
+X-Received: by 2002:a05:6000:11cc:: with SMTP id
+ i12mr2843579wrx.241.1570624904747; 
+ Wed, 09 Oct 2019 05:41:44 -0700 (PDT)
+Received: from cplx1037.edegem.eu.thmulti.com
+ ([2001:4158:f013:0:2a10:7bff:fec5:6f08])
+ by smtp.gmail.com with ESMTPSA id a13sm5078099wrf.73.2019.10.09.05.41.43
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 09 Oct 2019 05:41:43 -0700 (PDT)
+From: Alin Nastac <alin.nastac@gmail.com>
+To: John Crispin <john@phrozen.org>,
+	openwrt-devel@lists.openwrt.org
+Date: Wed,  9 Oct 2019 14:41:37 +0200
+Message-Id: <1570624897-16993-1-git-send-email-alin.nastac@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_045026_782442_0F297ED4 
-X-CRM114-Status: GOOD (  11.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_054148_033440_0B7A05C4 
+X-CRM114-Status: GOOD (  13.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
- 0.0 BAD_ENC_HEADER         Message has bad MIME encoding in the header
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alin.nastac[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] 
-	=?utf-8?b?UkXvvJpSRTogIFtQQVRDSCB2NCAxLzNdIHJh?=
-	=?utf-8?q?mips=3A_add_support_for_JS7628_development_board?=
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] fstools: add a hook before mounting the
+ overlay
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,113 +96,105 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============2501948758492603865=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Scripts located in the directory /lib/mount_root will be executed
+before mounting the overlay.
 
---===============2501948758492603865==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=mF0xOqtPVwKn/Y=-="
+Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
+---
+ libfstools/hook.h    | 51 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ libfstools/overlay.c |  3 ++-
+ 2 files changed, 53 insertions(+), 1 deletion(-)
+ create mode 100644 libfstools/hook.h
 
-This is a multipart message in MIME format.
+diff --git a/libfstools/hook.h b/libfstools/hook.h
+new file mode 100644
+index 0000000..76ee9d0
+--- /dev/null
++++ b/libfstools/hook.h
+@@ -0,0 +1,51 @@
++#ifndef _HOOK_H
++#define _HOOK_H
++
++#include <sys/types.h>
++#include <sys/wait.h>
++
++static inline int hook_execute(const char *path)
++{
++	DIR *dir;
++	struct dirent *dent;
++	char script[256];
++	pid_t pid;
++
++	ULOG_INFO("executing script in %s\n", path);
++
++	if ((dir = opendir(path)) == NULL) {
++		ULOG_INFO("cannot open %s (%s)\n", path, strerror(errno));
++		return 0;
++	}
++
++	while ((dent = readdir(dir)) != NULL) {
++		struct stat st;
++		int wstatus;
++
++		snprintf(script, sizeof(script), "%s/%s", path, dent->d_name);
++		if (stat(script, &st))
++			continue;
++		if (!S_ISREG(st.st_mode))
++			continue;
++		ULOG_INFO("%s\n", script);
++		pid = fork();
++		if (!pid) {
++			char *cmd[] = {script, NULL};
++
++			execvp(cmd[0], cmd);
++			ULOG_ERR("Failed to execute %s\n", script);
++			exit(-1);
++		}
++		if (pid <= 0) {
++			ULOG_INFO("Failed to fork() for %s\n", script);
++			continue;
++		}
++		waitpid(pid, &wstatus, 0);
++	}
++
++	closedir(dir);
++
++	return 0;
++}
++
++#endif
+diff --git a/libfstools/overlay.c b/libfstools/overlay.c
+index 14214a3..10a16b5 100644
+--- a/libfstools/overlay.c
++++ b/libfstools/overlay.c
+@@ -29,6 +29,7 @@
+ 
+ #include "libfstools.h"
+ #include "volume.h"
++#include "hook.h"
+ 
+ #define SWITCH_JFFS2 "/tmp/.switch_jffs2"
+ 
+@@ -439,7 +440,7 @@ int mount_overlay(struct volume *v)
+ 
+ 	fs_name = overlay_fs_name(volume_identify(v));
+ 	ULOG_INFO("switching to %s overlay\n", fs_name);
+-	if (mount_move("/tmp", "", "/overlay") || fopivot("/overlay", "/rom")) {
++	if (mount_move("/tmp", "", "/overlay") || hook_execute("/lib/mount_root") || fopivot("/overlay", "/rom")) {
+ 		ULOG_ERR("switching to %s failed - fallback to ramoverlay\n", fs_name);
+ 		return ramoverlay();
+ 	}
+-- 
+2.7.4
 
---=-=mF0xOqtPVwKn/Y=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Ah, sorry, too late. Didn't realize you already sent a patch as you started=
- with v1 again ...
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
-ehalf Of Adrian Schmutzler
-> Sent: Mittwoch, 9. Oktober 2019 13:48
-> To: '=E4=B8=94=E5=90=AC=E9=A3=8E=E5=90=9F' <wurobinson@qq.com>
-> Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
-> Subject: Re: [OpenWrt-Devel] RE=EF=BC=9ARE: [PATCH v4 1/3] ramips: add su=
-pport for JS7628 development board
->=20
-> Hi,
->=20
-> before you resend you patches, two other comments:
->=20
-> 1. When we introduced DEVICE_VARIANT, we typically removed the "flash" re=
-ference formerly present in the DEVICE_TITLE.
->=20
-> So you might update your DEVICE_VARIANT entries for consistency, e.g.
->=20
-> DEVICE_VARIANT :=3D 32M flash
->=20
-> to
->=20
-> DEVICE_VARIANT :=3D 32M
->=20
-> 2. Currently, you set up wan MAC address to eth0 + 1 with the default cas=
-e in 02_network (line 731).
->=20
-> Do the boards have a wan MAC address on flash (0x2e or somewhere else)? I=
-f yes, please add it to the ramips_setup_macs() section
-> (starting line 516) explicitly.
->=20
-> Same would be necessary if the wan address is _not_ different from the la=
-n/eth0 address. In this case add your boards to the "empty
-> case" starting in line 584.
->=20
-> As those are development boards, they most probably won't have a label wi=
-th a MAC address on them?
->=20
-> Despite, I do not have commit access, so expect comments from other peopl=
-e or further waiting.
->=20
-> Best
->=20
-> Adrian Schmutzler
-
---=-=mF0xOqtPVwKn/Y=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2dyXkACgkQoNyKO7qx
-AnBwThAAgYQsDgsP+1t4slVkn9xt2zqfkacH1Y8M6njsrPDmJAdju1dThXeE2bDe
-eGgXM/629vmSNL5PknEaytJ9HkbJQRu9aazCdDp+8BR6ooXti7tQRAmPfI9gIDsc
-0itnzqipp9ca9fQfflY1RZ1LmeIzN6TwRxHX58P8Mp2qsBk78Gm4S9uN+sJ4Q8ha
-JReDQmgfQavETA1BUlOSblBpE0LppgI3B0ANfFQToBAsVvQkxkSPwkzDs4DKNcNT
-JNJam7t2tBi+NObfDMseCKO8G2cyUJ6KYIOBuL9m+gUj523K/PfRBUwHpYygdcPo
-pG55EFhXjug5aejgbjhb062eVvo0U7zIXRM7bk9xsWK9B2CE/U4yE5fvF+ehSIlU
-Uxdp8OHBZm0OyP2rg6xIYqRtWPOw2iNw7PoBdCBwzLjd9Vr/PVcYOkDweSfYZ7cN
-dn4cRgjtDJ5qCOkZKJxUjvW03ZVNAXKq1sHsp4cuPEpiVGDXfUvh7wfPbe3oXN43
-3riLJ753U0SdDCdFSRpdlTCxDsvpk4Z+Tmt/tpYmuuudV75p3EliFvTPh01YdefH
-/w9e4kvd8nbw75fbXuCK5kqq11PBROnoAj3zNpCGGFVG7ZYNRN7hgbfybUPqR921
-Pa/DLaAERfo+s8iSabbfHO9hIv6RBvWkdljoDYhz4PqzcfuDcPE=
-=rsB/
------END PGP SIGNATURE-----
-
-
---=-=mF0xOqtPVwKn/Y=-=--
-
-
-
---===============2501948758492603865==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2501948758492603865==--
-
-

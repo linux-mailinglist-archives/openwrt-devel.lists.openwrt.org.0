@@ -2,80 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E020D0A56
-	for <lists+openwrt-devel@lfdr.de>; Wed,  9 Oct 2019 10:56:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2FA0D0D85
+	for <lists+openwrt-devel@lfdr.de>; Wed,  9 Oct 2019 13:18:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=viCxcDEL/k/iFJ6WQrI28wFGnKVmg98M0MCld1PjLj8=; b=IYz
-	ubqn4sM4xz0iQwFvBUMYuI7WnLMbmK4YPbAxj9aXbxcAxEL5wrNY+jFIUmZc4HeAmmOPeY75SueQ4
-	jIBz1um7bjHEfsX75j00V4x6GJU/pSn+zV2/u2vRWWGdjqTN3DwnpBgCgaqlrz7X8aLI7xRmcQ0Yh
-	XwNpIpdOhx1MJZT6N8PAcXbC/I06RletbZzX5wlYM1r59bbmu1sd/4BqSk2XKN49HCN91B9kmKPYM
-	TUK0aSrvDPXee5OcF0mW8UE1rp1B2TR++D2KrF0ml4JRQ5r+z4acWm6uhiH3LzkUN/01PGf9zhA0N
-	Y5JxHRNeDywoqh/8tS2l2iTEkiNm+WQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Vsjd4yokM+mowrEIrS/BAZmShmMMbVGAJ9MRkb6lyvI=; b=VsjpgNPbZTZaV9
+	1sObnsqxQ4jD6Zzl4E3SthZnTtoyCmc9pqo5zl8B1NmRoLkQkTaMyc0L8jY2nt6fvefrle+6JLNcH
+	IlZ9euUF2lVAwdyMd57M7TWPwHbD0p/2yd5mgxBb85dNKdwLh9424aYwGVyTKdA6JXVPsB/dE9iTe
+	c8Vi4mUR13iUuO+SPDA10ZMSI3rhy6asfCKL7k53mN1qtxjuZVKLmx2h+uU1IBdu9enDJxMcLU2cV
+	PIi+gsZuw3SmK/HgBbfyeCQM2f20rszriCnNvW/O3su3YZZ5C6yOjdfjuCnIR0w7fcXMoojrccpHU
+	iTkmaYRAh+R1YobhOjGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI7l3-0002TD-NO; Wed, 09 Oct 2019 08:55:45 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1iI9yz-0005aA-AX; Wed, 09 Oct 2019 11:18:17 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI7kx-0002Sk-1p
- for openwrt-devel@lists.openwrt.org; Wed, 09 Oct 2019 08:55:41 +0000
-Received: by mail-ed1-x533.google.com with SMTP id v8so1311917eds.2
- for <openwrt-devel@lists.openwrt.org>; Wed, 09 Oct 2019 01:55:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kindows-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to;
- bh=w/fniTUMEgFcr4jWiNDRYyPUBbWrrJaojIhTOTCN694=;
- b=Hhuq7EWmbUaWYOy1NdOM9REGz6wLlW9dg33X+WJD4QX0hl8ZD1/VN/CEbUBoxsrrpC
- BCMHw8RKlWRBBlRVj9s5NomsKYXyIeaJlKamQ5iJcPA2UjtqUSMrchxPYchm33Bb/gHS
- +uDoItDy/fnGUkMKgZIIoo1EJIxlEBdFluRbuv0ZOp1dBCYSkLQJFcTx26C5HIhoN9xq
- WqtM+hspzGUz1SA36ZGkNL1eFUeQO5km3vd4ML9wLieu2oxH2nA3uAY23m8ZaDCfUXps
- Ks75v7yuSHkkrniCREa4OAqLlKYy7+Gx0NdJIzjnOF7XAEqzzBAyhAkIqMoJxIL/brgN
- Rdcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=w/fniTUMEgFcr4jWiNDRYyPUBbWrrJaojIhTOTCN694=;
- b=lTYkPJveIo/x/GBRHySPZJXa+xLGE02vUq0MxV7+LrpVu20CfmmMyqYwN3rLellVkW
- hEEr7fbiJCI6dJbfrjxp9AmNU7CiWoWdU4jyS5qfLJDPhB9MCd5+aYAWZ+Dh25myKcZB
- 7r3lDf96Jjh/EAAqX32EvXWKDiwwyIaAF7pVE+sMQRN1wnQVWZZRzBrKER7eBzdcnyb8
- skNE6ygCG4i6HSaTy+DVyd2YC6JkCNDkzzGF7yrO30xlKZi6HlJSIbkwROjA1eZX13p4
- xOabi9yi6uHUD1bYsQoHoFU13T7p20rXody+R6gWnFuY8gR92em4oMSxScxZTO1lm3q3
- zWFg==
-X-Gm-Message-State: APjAAAXvL7EzKTG8Du7NS5JdpL8/t819Yk7b1TF0do0R2KXqL6KZcEry
- 2NY+buBXq4Ra4krRbhMHVHp/f3Ml2zy6L893xC/DlzBgTg1jVA==
-X-Google-Smtp-Source: APXvYqxi9SxGmB6WJ0VEo4ExJlEomgTmVY+1hDj/QHMErZSi3bhnH+b9QM7SBMmMXCmprDX1aVRoJeAz3BLvPoJ5ULY=
-X-Received: by 2002:a05:6402:8cf:: with SMTP id
- d15mr1803935edz.225.1570611332262; 
- Wed, 09 Oct 2019 01:55:32 -0700 (PDT)
-MIME-Version: 1.0
-From: Dost Muhammad Shah <dost.mhd@kindows.net>
-Date: Wed, 9 Oct 2019 12:55:06 +0400
-Message-ID: <CAMug1CFU04SqRGC6oeyRMDR01hEV5drhJuPHN2GLF8woX5a=nw@mail.gmail.com>
+ id 1iI9yr-0005Zs-I2
+ for openwrt-devel@bombadil.infradead.org; Wed, 09 Oct 2019 11:18:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Ef8IYJdVhfpiUa3iaX6iPqyjBojhy8WMmBgP4/3/aVk=; b=KlKRKXFFiFGTmFup77AJha38c
+ bKxYWGBedATDXw17bO8mleDFjhu1lhc8LpMO1v4mYnMoVXLxdb99qnAK+Dzm0WFMyWsHhbMDE/z7m
+ jWL+6vsI8lhrKQYqShYJq2HxmyIoNRzagCW6ZYfNg7QKCw4T6dkj4uTuMM4yJrRYranOUDvhEIRvO
+ 4JLIM7zJTKmVmS66ou2zHpEFZ38TEJF/ky26V/SxITFWg3FY0t/Ze+zxtLDhYiLy0I1jlw11XCZPA
+ sTgfzBNo8xm5g/n4ySZIUPmThPrz44srYzbttC8FfR1G/zVy7IHOmifNfUq2RosR/Mr0V3pFfs0Tc
+ nzJLT9/gg==;
+Received: from smtpbgau1.qq.com ([54.206.16.166])
+ by casper.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iI9z7-0002Nt-1X
+ for openwrt-devel@lists.openwrt.org; Wed, 09 Oct 2019 11:18:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1570619853; bh=Ef8IYJdVhfpiUa3iaX6iPqyjBojhy8WMmBgP4/3/aVk=;
+ h=From:To:Subject:Date:Message-Id;
+ b=iaIjCNMxZmuwl56qIfjg6DIY3OJ54iNJ2XTfNM3kLoejmr1EtP3jfzld060wCBJM6
+ BSIr75JSKq2LHbkS2fmdJcZQHE9ssKqL2JWo9BxrTMt8S3omOvH+5qM2x5DDoHCMDl
+ ENDuAk8JDINslnXIJpCWJKVdBh3FhCKX0lHVuEXE=
+X-QQ-mid: esmtp5t1570619852t079nwgkl
+Received: from localhost.localdomain (unknown [125.121.21.83])
+ by esmtp4.qq.com (ESMTP) with 
+ id ; Wed, 09 Oct 2019 19:17:31 +0800 (CST)
+X-QQ-SSF: B1000000000000C0TH100F00000000Z
+X-QQ-FEAT: ECcPpPTfzVBTOZsPYH6VZLB8pdUctAQZNHFOJ6b5j8+DJwWQNHZtlI2scPCmd
+ mMWtQL14hfzbDo6586TqDbZ+HKyQNnqwGX3hlkcyG8oOrs+gm3T3HILfWHfxfQY7ljBTY3f
+ UVo7AJUVuaQCg+yGt8UHuZD54kf/elhzmtYGLQXF0C6H3f/AoeFP0aPT1nB+ssgRsmTtK34
+ XfM8M7d9uTnh9pDwUZ9suWg4dIg2gQy2v+fFVpYWCl9ytF7sIAgqa8TVWXYUOnE+m0ic6+C
+ xI0lQld4o9iGGQ6trq8rMEJbxXoSVVYgEMJEwyZMcUHwdvc+9a74/wy4c=
+X-QQ-GoodBg: 0
+From: Robinson Wu <wurobinson@qq.com>
 To: openwrt-devel@lists.openwrt.org
+Date: Wed,  9 Oct 2019 19:17:22 +0800
+Message-Id: <1570619842-35235-1-git-send-email-wurobinson@qq.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtp:qq.com:bgforeign:bgforeign2
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_015539_244184_7B7A13CE 
-X-CRM114-Status: UNSURE (   5.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+X-CRM114-CacheID: sfid-20191009_121825_850532_59A2435D 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:533 listed in]
- [list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ no trust [54.206.16.166 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wurobinson[at]qq.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] Olimex Micro A20 Certain GPIO wont function on
- 18.0.06 but they worked on 17.0.1
+Subject: [OpenWrt-Devel] [PATCH] ramips: add support for JS76x8 series
+ development boards
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,323 +98,464 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8985769465184331962=="
+Cc: Robinson Wu <wurobinson@qq.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8985769465184331962==
-Content-Type: multipart/alternative; boundary="0000000000008a439d05947672bb"
+This commit adds support for the ZhuoTK JS76x8 series development boards.
+The devices has the following specifications:
 
---0000000000008a439d05947672bb
-Content-Type: text/plain; charset="UTF-8"
+- SOC: MT7628AN/NN, MT7688AN, MT7628DAN
+- RAM of MT7628AN/NN and MT7688AN: 64/128/256 MB (DDR2)
+- RAM of MT7628DAN: 64 MB (DDR2)
+- FLASH:8/16/32 MB (SPI NOR)
+- Ethernet:3x 10/100 Mbps ethernet ports (MT76x8 built-in switch)
+- WIFI:1x 2T2R 2.4 GHz Wi-Fi
+- LEDs:1x system status green LED, 1x wifi green LED,
+       3x ethernet green LED
+- Buttons:1x reset button, 2x user defined button
+- 1x microSD slot
+- 4x USB 2.0 port
+- 1x mini-usb debug UART
+- 1x DC jack for main power (DC 5V)
+- 1x TTL/RS232 UART
+- 1x TTL/RS485 UART
+- 13x GPIO header
+- 1x audio codec(wm8960)
 
-I am using a A20 based *Olimex Micro A20* as a development board with *openwrt
-18.0.6*. I face a strange issue that some of GPIO works perfectly others
-will accept the commands to set as out put and set value *High* or *Low* but
-physically the output will not change. I have a previous built image based
-on lede17.0.1 and in that all these GPIOs work fine.
+Installation via OpenWrt:
 
-when I issue cat /sys/kernel/debug/gpio
+The original firmware is OpenWrt, so both LuCI or sysupgrade can be used.
 
-This is the result
+Installation via U-boot web:
 
-gpiochip0: GPIOs 0-287, parent: platform/1c20800.pinctrl, 1c20800.pinctrl:
- gpio-35  (                    |sysfs               ) in  lo
- gpio-36  (                    |sysfs               ) in  lo
- gpio-40  (                    |ahci-5v             ) out lo
- gpio-41  (                    |usb0-vbus           ) out hi
- gpio-80  (                    |sysfs               ) out lo
- gpio-81  (                    |sysfs               ) out lo
- gpio-82  (                    |sysfs               ) out lo
- gpio-87  (                    |sysfs               ) out lo
- gpio-96  (                    |sysfs               ) in  hi
- gpio-97  (                    |sysfs               ) in  hi
- gpio-98  (                    |sysfs               ) in  hi
- gpio-99  (                    |sysfs               ) in  hi
- gpio-100 (                    |sysfs               ) in  hi
- gpio-101 (                    |sysfs               ) in  hi
- gpio-102 (                    |sysfs               ) in  hi
- gpio-103 (                    |sysfs               ) in  hi
- gpio-104 (                    |sysfs               ) in  hi
- gpio-105 (                    |sysfs               ) in  hi
- gpio-106 (                    |sysfs               ) in  hi
- gpio-107 (                    |sysfs               ) in  hi
- gpio-108 (                    |sysfs               ) in  hi
- gpio-109 (                    |sysfs               ) in  hi
- gpio-110 (                    |sysfs               ) in  hi
- gpio-111 (                    |sysfs               ) in  hi
- gpio-113 (                    |sysfs               ) out hi
- gpio-114 (                    |sysfs               ) out lo
- gpio-115 (                    |sysfs               ) out hi
- gpio-117 (                    |sysfs               ) out lo
- gpio-128 (                    |sysfs               ) out lo
- gpio-129 (                    |sysfs               ) out hi
- gpio-130 (                    |sysfs               ) out lo
- gpio-132 (                    |sysfs               ) out lo
- gpio-133 (                    |sysfs               ) out lo
- gpio-134 (                    |sysfs               ) out lo
- gpio-135 (                    |sysfs               ) out lo
- gpio-136 (                    |sysfs               ) out lo
- gpio-137 (                    |sysfs               ) out lo
- gpio-138 (                    |sysfs               ) out lo
- gpio-139 (                    |sysfs               ) out lo
- gpio-202 (                    |sysfs               ) in  hi
- gpio-203 (                    |sysfs               ) in  hi
- gpio-225 (                    |cd                  ) in  lo IRQ
- gpio-226 (                    |a20-olinuxino-micro:) out lo
- gpio-227 (                    |usb2-vbus           ) out hi
- gpio-230 (                    |usb1-vbus           ) out hi
- gpio-231 (                    |sysfs               ) out lo
- gpio-235 (                    |cd                  ) in  hi IRQ
- gpio-256 (                    |sysfs               ) out hi
- gpio-257 (                    |sysfs               ) out lo
- gpio-258 (                    |sysfs               ) out hi
- gpio-259 (                    |sysfs               ) out hi
- gpio-266 (                    |sysfs               ) out lo
- gpio-267 (                    |sysfs               ) out lo
- gpio-270 (                    |sysfs               ) out hi
- gpio-271 (                    |sysfs               ) out hi
- gpio-273 (                    |sysfs               ) out hi
- gpio-275 (                    |sysfs               ) out hi
+1. Power on board with reset button pressed, release it
+   after wifi led start blinking.
+2. Setup static IP 192.168.1.123/4 on your PC.
+3. Go to 192.168.1.8 in browser and upload "sysupgrade" image.
 
-In this case *gpio257* for example would work properly while *gpio138* will
-accept all the commands but physically the output will be same
+Installation via U-boot tftp:
+1. Connect to serial console at the mini usb, which has been connected to UART0
+   on board (115200 8N1)
+2. Setup static IP 192.168.1.123/4 on your PC.
+3. Place openwrt-firmware.bin on your PC tftp server (192.168.1.123).
+3. Connect one of LAN ports on board to your PC.
+4. Start terminal software (e.g. screen /dev/ttyUSB0 115200) on PC.
+5. Apply power to board.
+6. Interrupt U-boot with keypress of "2".
+7. At u-boot prompts:
+   Warning!! Erase Linux in Flash then burn new one. Are you sure?(Y/N) Y
+   Input device IP (192.168.1.8) ==:192.168.1.8
+   Input server IP (192.168.1.123) ==:192.168.1.123
+   Input Linux Kernel filename (root_uImage) ==:openwrt-firmware.bin
+8. board will download file from tftp server, write it to flash and reboot.
 
-ls /sys/class/gpio/
-export        gpio109/      gpio128/      gpio139/      gpio270/      gpio96/
-gpio100/      gpio110/      gpio129/      gpio202/      gpio271/      gpio97/
-gpio101/      gpio111/      gpio130/      gpio203/      gpio273/      gpio98/
-gpio102/      gpio113/      gpio132/      gpio231/      gpio275/      gpio99/
-gpio103/      gpio114/      gpio133/      gpio256/      gpio35/       gpiochip0/
-gpio104/      gpio115/      gpio134/      gpio257/      gpio36/
-gpiochip413/
-gpio105/      gpio116/      gpio135/      gpio258/      gpio80/       unexport
-gpio106/      gpio117/      gpio136/      gpio259/      gpio81/
-gpio107/      gpio118/      gpio137/      gpio266/      gpio82/
-gpio108/      gpio119/      gpio138/      gpio267/      gpio87/
+Other notes:
 
-How can I solve this issue .
+Vist www.zhuotk.com for further information.
 
-There are several such GPIO at least 8 -9 that I have encountered
-I see that all the pins that have 130 -139 numbers wont work . Those with
-250+ will work
+Signed-off-by: Robinson Wu <wurobinson@qq.com>
+---
+ target/linux/ramips/base-files/etc/board.d/01_leds     |   6 ++
+ target/linux/ramips/base-files/etc/board.d/02_network  |   3 +
+ target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts |  60 +++++++++++++++
+ target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts |  60 +++++++++++++++
+ target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts  |  60 +++++++++++++++
+ target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi    | 105 +++++++++++++++++++++++++++
+ target/linux/ramips/image/mt76x8.mk                    |  30 ++++++++
+ 7 files changed, 324 insertions(+)
 
-The following are the pins I am interested in and all the pins in 200
-series work as expected. The ones in 130-139 range wont work in the new
-image but they were working in previous image
+diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
+index f8a270b..c742dbd 100755
+--- a/target/linux/ramips/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/base-files/etc/board.d/01_leds
+@@ -467,6 +467,12 @@ zbtlink,zbt-we1226)
+ 	ucidef_set_led_switch "lan2" "LAN2" "$boardname:green:lan2" "switch0" "0x02"
+ 	ucidef_set_led_switch "wan" "WAN" "$boardname:green:wan" "switch0" "0x10"
+ 	;;
++zhuotk,js76x8-16m|\
++zhuotk,js76x8-32m|\
++zhuotk,js76x8-8m)
++	ucidef_set_led_timer "system" "system" "js76x8:green:system" "1000" "1000"
++	set_wifi_led "js76x8:green:wifi"
++	;;
+ zorlik,zl5900v2)
+ 	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" eth0
+ 	;;
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index 25aa075..c21bbaf 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -102,6 +102,9 @@ ramips_setup_interfaces()
+ 	zbtlink,zbt-wg3526-16m|\
+ 	zbtlink,zbt-wg3526-32m|\
+ 	zbtlink,zbt-wr8305rt|\
++	zhuotk,js76x8-16m|\
++	zhuotk,js76x8-32m|\
++	zhuotk,js76x8-8m|\
+ 	zyxel,keenetic|\
+ 	zyxel,keenetic-omni)
+ 		ucidef_add_switch "switch0" \
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
+new file mode 100644
+index 0000000..dd821ce
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
+@@ -0,0 +1,60 @@
++/dts-v1/;
++
++#include "mt7628an_zhuotk_js76x8.dtsi"
++
++/ {
++	compatible = "zhuotk,js76x8-16m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
++	model = "ZhuoTK JS76x8 (16M flash)";
++};
++
++&spi0 {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <40000000>;
++		m25p,chunked-io = <32>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x50000 0xfb0000>;
++			};
++		};
++	};
++
++	spidev@1 {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "linux,spidev";
++		reg = <1>;
++		spi-max-frequency = <40000000>;
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
+new file mode 100644
+index 0000000..74463d5
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
+@@ -0,0 +1,60 @@
++/dts-v1/;
++
++#include "mt7628an_zhuotk_js76x8.dtsi"
++
++/ {
++	compatible = "zhuotk,js76x8-32m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
++	model = "ZhuoTK JS76x8 (32M flash)";
++};
++
++&spi0 {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
++
++	flash0@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <40000000>;
++		m25p,chunked-io = <32>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x50000 0x1fb0000>;
++			};
++		};
++	};
++
++	spidev@1 {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "linux,spidev";
++		reg = <1>;
++		spi-max-frequency = <40000000>;
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
+new file mode 100644
+index 0000000..4f1f355
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
+@@ -0,0 +1,60 @@
++/dts-v1/;
++
++#include "mt7628an_zhuotk_js76x8.dtsi"
++
++/ {
++	compatible = "zhuotk,js76x8-8m", "mediatek,mt7628an-soc";
++	model = "ZhuoTK JS76x8 (8M flash)";
++};
++
++&spi0 {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <40000000>;
++		m25p,chunked-io = <32>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x50000 0x7b0000>;
++			};
++		};
++	};
++
++	spidev@1 {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "linux,spidev";
++		reg = <1>;
++		spi-max-frequency = <40000000>;
++	};
++};
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
+new file mode 100644
+index 0000000..4fbf7f6
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
+@@ -0,0 +1,105 @@
++#include "mt7628an.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "zhuotk,js76x8", "mediatek,mt7628an-soc";
++
++	aliases {
++		led-boot = &led_system;
++		led-failsafe = &led_system;
++		led-running = &led_system;
++		led-upgrade = &led_system;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,115200";
++	};
++
++	gpio-leds {
++		compatible = "gpio-leds";
++
++		led_system: system {
++			label = "js76x8:green:system";
++			gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
++		};
++
++		wifi {
++			label = "js76x8:green:wifi";
++			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "gpio","p3led_an","p4led_an",
++				"pwm0","pwm1","refclk","wdt","wled_an";
++			ralink,function = "gpio";
++		};
++
++		p0led {
++			ralink,group = "p0led_an";
++			ralink,function = "p0led_an";
++		};
++
++		p1led {
++			ralink,group = "p1led_an";
++			ralink,function = "p1led_an";
++		};
++
++		p2led {
++			ralink,group = "p2led_an";
++			ralink,function = "p2led_an";
++		};
++
++		pwm_2_3 {
++			ralink,group = "uart2";
++			ralink,function = "pwm";
++		};
++	};
++
++	uart2 {
++		uart2 {
++			ralink,group = "spis";
++			ralink,function = "pwm_uart2";
++		};
++	};
++};
++
++&i2c {
++	status = "okay";
++};
++
++&uart1 {
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0x28>;
++};
++
++&sdhci {
++	status = "okay";
++	mediatek,cd-low;
++};
++
++&wmac {
++	status = "okay";
++};
+diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
+index 9ab16db..3bdc27b 100644
+--- a/target/linux/ramips/image/mt76x8.mk
++++ b/target/linux/ramips/image/mt76x8.mk
+@@ -583,6 +583,36 @@ define Device/zbtlink_zbt-we1226
+ endef
+ TARGET_DEVICES += zbtlink_zbt-we1226
+ 
++define Device/zhuotk_js76x8-16m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 16064k
++  DEVICE_VENDOR := ZhuoTK
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 16M flash
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += zhuotk_js76x8-16m
++
++define Device/zhuotk_js76x8-32m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 32448k
++  DEVICE_VENDOR := ZhuoTK
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 32M flash
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += zhuotk_js76x8-32m
++
++define Device/zhuotk_js76x8-8m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 7872k
++  DEVICE_VENDOR := ZhuoTK
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 8M flash
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += zhuotk_js76x8-8m
++
+ define Device/zyxel_keenetic-extra-ii
+   MTK_SOC := mt7628an
+   IMAGE_SIZE := 14912k
+-- 
+2.7.4
 
-/bin/echo 0 > /sys/class/gpio/gpio257/value
-/bin/echo 0 > /sys/class/gpio/gpio258/value
-/bin/echo 0 > /sys/class/gpio/gpio259/value
-/bin/echo 0 > /sys/class/gpio/gpio271/value
-/bin/echo 0 > /sys/class/gpio/gpio270/value
-/bin/echo 0 > /sys/class/gpio/gpio256/value
-/bin/echo 0 > /sys/class/gpio/gpio138/value
-/bin/echo 0 > /sys/class/gpio/gpio139/value
-/bin/echo 0 > /sys/class/gpio/gpio135/value
-/bin/echo 0 > /sys/class/gpio/gpio137/value
-/bin/echo 0 > /sys/class/gpio/gpio134/value
-/bin/echo 0 > /sys/class/gpio/gpio136/value
-/bin/echo 0 > /sys/class/gpio/gpio133/value
-/bin/echo 0 > /sys/class/gpio/gpio266/value
-/bin/echo 0 > /sys/class/gpio/gpio267/value
-
-/bin/echo 0 > /sys/class/gpio/gpio132/value
-
-BEST REGARDS,
 
 
-              <http://kindows.net/>
-
-Dost Muhammad Shah /
-dost.mhd@kindows.net /
-
---0000000000008a439d05947672bb
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:tahoma,s=
-ans-serif"><p style=3D"margin-top:0px;font-family:Helvetica,Arial,sans-seri=
-f;font-size:15px">I am using a A20 based=C2=A0<strong>Olimex Micro A20</str=
-ong>=C2=A0as a development board with=C2=A0<strong>openwrt 18.0.6</strong>.=
- I face a strange issue that some of GPIO works perfectly others will accep=
-t the commands to set as out put and set value=C2=A0<strong>High</strong>=
-=C2=A0or=C2=A0<strong>Low</strong>=C2=A0but physically the output will not =
-change. I have a previous built image based on lede17.0.1 and in that all t=
-hese GPIOs work fine.</p><p style=3D"font-family:Helvetica,Arial,sans-serif=
-;font-size:15px">when I issue=C2=A0<code style=3D"font-family:Consolas,Menl=
-o,Monaco,&quot;Lucida Console&quot;,&quot;Liberation Mono&quot;,&quot;DejaV=
-u Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,&quot;Courier New&qu=
-ot;,monospace;font-size:1em;color:rgb(51,51,51);background:rgb(248,248,248)=
-">cat /sys/kernel/debug/gpio</code></p><p style=3D"font-family:Helvetica,Ar=
-ial,sans-serif;font-size:15px">This is the result</p><pre style=3D"overflow=
-:auto;font-family:Consolas,Menlo,Monaco,&quot;Lucida Console&quot;,&quot;Li=
-beration Mono&quot;,&quot;DejaVu Sans Mono&quot;,&quot;Bitstream Vera Sans =
-Mono&quot;,&quot;Courier New&quot;,monospace;font-size:15px"><code style=3D=
-"font-family:Consolas,Menlo,Monaco,&quot;Lucida Console&quot;,&quot;Liberat=
-ion Mono&quot;,&quot;DejaVu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&=
-quot;,&quot;Courier New&quot;,monospace;font-size:1em;overflow:auto;display=
-:block;padding:0.5em;color:rgb(51,51,51);background:rgb(248,248,248);max-he=
-ight:500px">gpiochip0: GPIOs 0-287, parent: platform/1c20800.pinctrl, 1c208=
-00.pinctrl:
- gpio-35  (                    |sysfs               ) in  lo
- gpio-36  (                    |sysfs               ) in  lo
- gpio-40  (                    |ahci-5v             ) out lo
- gpio-41  (                    |usb0-vbus           ) out hi
- gpio-80  (                    |sysfs               ) out lo
- gpio-81  (                    |sysfs               ) out lo
- gpio-82  (                    |sysfs               ) out lo
- gpio-87  (                    |sysfs               ) out lo
- gpio-96  (                    |sysfs               ) in  hi
- gpio-97  (                    |sysfs               ) in  hi
- gpio-98  (                    |sysfs               ) in  hi
- gpio-99  (                    |sysfs               ) in  hi
- gpio-100 (                    |sysfs               ) in  hi
- gpio-101 (                    |sysfs               ) in  hi
- gpio-102 (                    |sysfs               ) in  hi
- gpio-103 (                    |sysfs               ) in  hi
- gpio-104 (                    |sysfs               ) in  hi
- gpio-105 (                    |sysfs               ) in  hi
- gpio-106 (                    |sysfs               ) in  hi
- gpio-107 (                    |sysfs               ) in  hi
- gpio-108 (                    |sysfs               ) in  hi
- gpio-109 (                    |sysfs               ) in  hi
- gpio-110 (                    |sysfs               ) in  hi
- gpio-111 (                    |sysfs               ) in  hi
- gpio-113 (                    |sysfs               ) out hi
- gpio-114 (                    |sysfs               ) out lo
- gpio-115 (                    |sysfs               ) out hi
- gpio-117 (                    |sysfs               ) out lo
- gpio-128 (                    |sysfs               ) out lo
- gpio-129 (                    |sysfs               ) out hi
- gpio-130 (                    |sysfs               ) out lo
- gpio-132 (                    |sysfs               ) out lo
- gpio-133 (                    |sysfs               ) out lo
- gpio-134 (                    |sysfs               ) out lo
- gpio-135 (                    |sysfs               ) out lo
- gpio-136 (                    |sysfs               ) out lo
- gpio-137 (                    |sysfs               ) out lo
- gpio-138 (                    |sysfs               ) out lo
- gpio-139 (                    |sysfs               ) out lo
- gpio-202 (                    |sysfs               ) in  hi
- gpio-203 (                    |sysfs               ) in  hi
- gpio-225 (                    |cd                  ) in  lo IRQ
- gpio-226 (                    |a20-olinuxino-micro:) out lo
- gpio-227 (                    |usb2-vbus           ) out hi
- gpio-230 (                    |usb1-vbus           ) out hi
- gpio-231 (                    |sysfs               ) out lo
- gpio-235 (                    |cd                  ) in  hi IRQ
- gpio-256 (                    |sysfs               ) out hi
- gpio-257 (                    |sysfs               ) out lo
- gpio-258 (                    |sysfs               ) out hi
- gpio-259 (                    |sysfs               ) out hi
- gpio-266 (                    |sysfs               ) out lo
- gpio-267 (                    |sysfs               ) out lo
- gpio-270 (                    |sysfs               ) out hi
- gpio-271 (                    |sysfs               ) out hi
- gpio-273 (                    |sysfs               ) out hi
- gpio-275 (                    |sysfs               ) out hi
-</code></pre><p style=3D"font-family:Helvetica,Arial,sans-serif;font-size:1=
-5px">In this case=C2=A0<strong>gpio257</strong>=C2=A0for example would work=
- properly while=C2=A0<strong>gpio138</strong>=C2=A0will accept all the comm=
-ands but physically the output will be same</p><pre style=3D"overflow:auto;=
-font-family:Consolas,Menlo,Monaco,&quot;Lucida Console&quot;,&quot;Liberati=
-on Mono&quot;,&quot;DejaVu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&q=
-uot;,&quot;Courier New&quot;,monospace;font-size:15px"><code style=3D"font-=
-family:Consolas,Menlo,Monaco,&quot;Lucida Console&quot;,&quot;Liberation Mo=
-no&quot;,&quot;DejaVu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,=
-&quot;Courier New&quot;,monospace;font-size:1em;overflow:auto;display:block=
-;padding:0.5em;color:rgb(51,51,51);background:rgb(248,248,248);max-height:5=
-00px">ls /sys/class/gpio/
-export        gpio109/      gpio128/      gpio139/      gpio270/      gpio9=
-6/
-gpio100/      gpio110/      gpio129/      gpio202/      gpio271/      gpio9=
-7/
-gpio101/      gpio111/      gpio130/      gpio203/      gpio273/      gpio9=
-8/
-gpio102/      gpio113/      gpio132/      gpio231/      gpio275/      gpio9=
-9/
-gpio103/      gpio114/      gpio133/      gpio256/      gpio35/       gpioc=
-hip0/
-gpio104/      gpio115/      gpio134/      gpio257/      gpio36/       gpioc=
-hip413/      =20
-gpio105/      gpio116/      gpio135/      gpio258/      gpio80/       unexp=
-ort
-gpio106/      gpio117/      gpio136/      gpio259/      gpio81/
-gpio107/      gpio118/      gpio137/      gpio266/      gpio82/
-gpio108/      gpio119/      gpio138/      gpio267/      gpio87/
-</code></pre><p style=3D"font-family:Helvetica,Arial,sans-serif;font-size:1=
-5px">How can I solve this issue .</p><p style=3D"font-family:Helvetica,Aria=
-l,sans-serif;font-size:15px">There are several such GPIO at least 8 -9 that=
- I have encountered</p></div><div><div dir=3D"ltr" class=3D"gmail_signature=
-" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=3D"ltr"><div=
- dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div class=3D"gmail_default"=
- style=3D"font-family:tahoma,sans-serif"><span style=3D"font-family:Helveti=
-ca,Arial,sans-serif;font-size:15px">I see that all the pins that have 130 -=
-139 numbers wont work . Those with 250+ will work</span></div><p style=3D"f=
-ont-family:Helvetica,Arial,sans-serif;font-size:15px">The following are the=
- pins I am interested in and all the pins in 200 series work as expected. T=
-he ones in 130-139 range wont work in the new image but they were working i=
-n previous image</p><pre style=3D"overflow:auto;font-family:Consolas,Menlo,=
-Monaco,&quot;Lucida Console&quot;,&quot;Liberation Mono&quot;,&quot;DejaVu =
-Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,&quot;Courier New&quot=
-;,monospace;font-size:15px"><code style=3D"font-family:Consolas,Menlo,Monac=
-o,&quot;Lucida Console&quot;,&quot;Liberation Mono&quot;,&quot;DejaVu Sans =
-Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,&quot;Courier New&quot;,mon=
-ospace;font-size:1em;overflow:auto;display:block;padding:0.5em;color:rgb(51=
-,51,51);background:rgb(248,248,248);max-height:500px">/bin/echo 0 &gt; /sys=
-/class/gpio/gpio257/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio258/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio259/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio271/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio270/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio256/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio138/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio139/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio135/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio137/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio134/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio136/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio133/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio266/value
-/bin/echo 0 &gt; /sys/class/gpio/gpio267/value=C2=A0</code></pre><div class=
-=3D"gmail_default" style=3D"font-family:tahoma,sans-serif"><span style=3D"b=
-ackground-color:rgb(248,248,248);color:rgb(51,51,51);font-family:Consolas,M=
-enlo,Monaco,&quot;Lucida Console&quot;,&quot;Liberation Mono&quot;,&quot;De=
-jaVu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,&quot;Courier New=
-&quot;,monospace;font-size:1em">/bin/echo 0 &gt; /sys/class/gpio/gpio132/va=
-lue</span></div><br><font size=3D"2" face=3D"tahoma, sans-serif">BEST REGAR=
-DS,</font></div><div dir=3D"ltr"><font size=3D"2" face=3D"tahoma, sans-seri=
-f"><br></font></div><div dir=3D"ltr"><br></div><div dir=3D"ltr"><table widt=
-h=3D"450" style=3D"table-layout:fixed" border=3D"0" cellpadding=3D"0"><tbod=
-y><tr><td width=3D"90" align=3D"left" valign=3D"top"><p style=3D"margin-rig=
-ht:10px;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1=
-4px;margin-bottom:10px"><a style=3D"text-decoration:none" href=3D"http://ki=
-ndows.net/" target=3D"_blank">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0</a>           </p></td><td width=3D"370" align=3D"left" nowrap><p style=
-=3D"font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:14px;=
-color:rgb(33,33,33);margin-bottom:10px"><span style=3D"font-weight:bold;dis=
-play:inline">Dost Muhammad Shah</span>     <span style=3D"display:inline">/=
-</span><span style=3D"display:inline"><br></span>       <a style=3D"color:r=
-gb(71,124,204);text-decoration:none;display:inline" href=3D"mailto:dost.mhd=
-@kindows.net" target=3D"_blank">dost.mhd@kindows.net</a><span style=3D"disp=
-lay:inline"> /<br></span></p></td></tr></tbody></table></div><div dir=3D"lt=
-r"><br></div><div dir=3D"ltr"><div><div><br><br></div></div></div></div></d=
-iv></div></div></div></div></div>
-
---0000000000008a439d05947672bb--
-
-
---===============8985769465184331962==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8985769465184331962==--
-

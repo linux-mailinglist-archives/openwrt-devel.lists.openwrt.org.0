@@ -2,91 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2FA0D0D85
-	for <lists+openwrt-devel@lfdr.de>; Wed,  9 Oct 2019 13:18:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1383BD0D94
+	for <lists+openwrt-devel@lfdr.de>; Wed,  9 Oct 2019 13:24:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Vsjd4yokM+mowrEIrS/BAZmShmMMbVGAJ9MRkb6lyvI=; b=VsjpgNPbZTZaV9
-	1sObnsqxQ4jD6Zzl4E3SthZnTtoyCmc9pqo5zl8B1NmRoLkQkTaMyc0L8jY2nt6fvefrle+6JLNcH
-	IlZ9euUF2lVAwdyMd57M7TWPwHbD0p/2yd5mgxBb85dNKdwLh9424aYwGVyTKdA6JXVPsB/dE9iTe
-	c8Vi4mUR13iUuO+SPDA10ZMSI3rhy6asfCKL7k53mN1qtxjuZVKLmx2h+uU1IBdu9enDJxMcLU2cV
-	PIi+gsZuw3SmK/HgBbfyeCQM2f20rszriCnNvW/O3su3YZZ5C6yOjdfjuCnIR0w7fcXMoojrccpHU
-	iTkmaYRAh+R1YobhOjGw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Message-ID:Date:Mime-Version:To:From:References:In-Reply-To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KaaiMErOIC/hL4aYXQHkUZR2gh9dCrqtPiAgZcQXl7A=; b=WW8vuZMmwIk05Eue9GFH2liiY
+	2ww7I4vpkAzzKFHS5WywLOXhKlS7MasPDiFA2gssBpugR9xKRY8Wr2EYZusmPvomIpKXv80zMyvLY
+	aI84UG4XtqG6VVpBcIaW4fPmOwqvFP0I8zqru2gsM1LE9hDOLxwxaRlPbXDB4SUMY3Zg/IVf4WCzt
+	yma0lokU/cqWCu6Y22mkmPWO86Slx4/NW6dra1juKttRUSbS7Bk6XtVv8VMlZj104ZhtEhnf54QxV
+	5gfzv6e+R96YVJQRge24eCNxXSRpy7VQncGtsRFTWVCQDIIkNnuBoYGvKunRRGOh4GoZZTwTLyEjH
+	afTHFn2IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iI9yz-0005aA-AX; Wed, 09 Oct 2019 11:18:17 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1iIA4d-0007hC-VQ; Wed, 09 Oct 2019 11:24:07 +0000
+Received: from smtpbguseast2.qq.com ([54.204.34.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI9yr-0005Zs-I2
- for openwrt-devel@bombadil.infradead.org; Wed, 09 Oct 2019 11:18:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Message-Id:Date:Subject:Cc:To:From:
- Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Ef8IYJdVhfpiUa3iaX6iPqyjBojhy8WMmBgP4/3/aVk=; b=KlKRKXFFiFGTmFup77AJha38c
- bKxYWGBedATDXw17bO8mleDFjhu1lhc8LpMO1v4mYnMoVXLxdb99qnAK+Dzm0WFMyWsHhbMDE/z7m
- jWL+6vsI8lhrKQYqShYJq2HxmyIoNRzagCW6ZYfNg7QKCw4T6dkj4uTuMM4yJrRYranOUDvhEIRvO
- 4JLIM7zJTKmVmS66ou2zHpEFZ38TEJF/ky26V/SxITFWg3FY0t/Ze+zxtLDhYiLy0I1jlw11XCZPA
- sTgfzBNo8xm5g/n4ySZIUPmThPrz44srYzbttC8FfR1G/zVy7IHOmifNfUq2RosR/Mr0V3pFfs0Tc
- nzJLT9/gg==;
-Received: from smtpbgau1.qq.com ([54.206.16.166])
- by casper.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iI9z7-0002Nt-1X
- for openwrt-devel@lists.openwrt.org; Wed, 09 Oct 2019 11:18:28 +0000
+ id 1iIA4U-0007gE-3s
+ for openwrt-devel@lists.openwrt.org; Wed, 09 Oct 2019 11:24:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
- t=1570619853; bh=Ef8IYJdVhfpiUa3iaX6iPqyjBojhy8WMmBgP4/3/aVk=;
- h=From:To:Subject:Date:Message-Id;
- b=iaIjCNMxZmuwl56qIfjg6DIY3OJ54iNJ2XTfNM3kLoejmr1EtP3jfzld060wCBJM6
- BSIr75JSKq2LHbkS2fmdJcZQHE9ssKqL2JWo9BxrTMt8S3omOvH+5qM2x5DDoHCMDl
- ENDuAk8JDINslnXIJpCWJKVdBh3FhCKX0lHVuEXE=
-X-QQ-mid: esmtp5t1570619852t079nwgkl
-Received: from localhost.localdomain (unknown [125.121.21.83])
- by esmtp4.qq.com (ESMTP) with 
- id ; Wed, 09 Oct 2019 19:17:31 +0800 (CST)
-X-QQ-SSF: B1000000000000C0TH100F00000000Z
-X-QQ-FEAT: ECcPpPTfzVBTOZsPYH6VZLB8pdUctAQZNHFOJ6b5j8+DJwWQNHZtlI2scPCmd
- mMWtQL14hfzbDo6586TqDbZ+HKyQNnqwGX3hlkcyG8oOrs+gm3T3HILfWHfxfQY7ljBTY3f
- UVo7AJUVuaQCg+yGt8UHuZD54kf/elhzmtYGLQXF0C6H3f/AoeFP0aPT1nB+ssgRsmTtK34
- XfM8M7d9uTnh9pDwUZ9suWg4dIg2gQy2v+fFVpYWCl9ytF7sIAgqa8TVWXYUOnE+m0ic6+C
- xI0lQld4o9iGGQ6trq8rMEJbxXoSVVYgEMJEwyZMcUHwdvc+9a74/wy4c=
-X-QQ-GoodBg: 0
-From: Robinson Wu <wurobinson@qq.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  9 Oct 2019 19:17:22 +0800
-Message-Id: <1570619842-35235-1-git-send-email-wurobinson@qq.com>
-X-Mailer: git-send-email 2.7.4
+ t=1570620181; bh=mf2U3jq+q2Z1HJf1+Mc6K3yZ4H0Ra09qkdoPH6ATHNA=;
+ h=From:To:Subject:Mime-Version:Date:Message-ID;
+ b=LahDqVCUnK98CTHxcLJhxAjsM6ES46kxez7lSlqLZpXhKdqlhNkTq6NFo6Ha2P1bI
+ yPJZ7XQRzLlpJbMiBWsBx8+A3CPVodM3t7i7TmGgRzhHziueH+6AKzJbZAtgn1exkS
+ KnNrB1ioR6pZBvQA/Ke4m8iPcUryiiOIKcDa6rRA=
+X-QQ-FEAT: 2qHYTc5/T5O0fZVoiazRTUbRKb5DeF82uzVcD6HocrdEmBwxVkFSj0iw9hnl/
+ +O4F7D8JwMnplzmRnc4+ZpalH9IMfuB9rBGGo3pwq8TVDaHPcTXh3NG9ryNoryQfsr1HdeY
+ 0Vs8Dozs6CeRAl0hgl2Oy6IOcZb8NFKF6HFF7KgNEcATVmnWhD+KzZ7xiuSIaiXrf8/I89l
+ 2a7nhJOTMV+ZcLODCGF4JLLqhLLWXbJSUmk3E2EgzQ57NhWzu3R3n8qYlYG3cpFBDsC8nPX
+ 98aqaXeyZ6CQCKwfPeZXxH6ux6W7gbS405oA==
+X-QQ-SSF: 00000000000000F000000000000000Z
+X-HAS-ATTACH: no
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 125.121.83.254
+In-Reply-To: <tencent_B5943D7D59BDF02DEDECDDCF96F8B195E40A@qq.com>
+References: <1570526416-4180-1-git-send-email-wurobinson@qq.com>
+ <007b01d57dd7$3c9228f0$b5b67ad0$@adrianschmutzler.de>
+ <tencent_B5943D7D59BDF02DEDECDDCF96F8B195E40A@qq.com>
+X-QQ-STYLE: 
+X-QQ-mid: webmail438t1570620180t324574
+From: "=?gb18030?B?x9LM/bfn0vc=?=" <wurobinson@qq.com>
+To: "=?gb18030?B?QWRyaWFuIFNjaG11dHpsZXI=?=" <mail@adrianschmutzler.de>
+Mime-Version: 1.0
+Date: Wed, 9 Oct 2019 19:23:00 +0800
+X-Priority: 3
+Message-ID: <tencent_9FE34BB6D83E73909E2AAD98F8D27710EF09@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-ReplyHash: 35771110
 X-QQ-SENDSIZE: 520
-Feedback-ID: esmtp:qq.com:bgforeign:bgforeign2
+Received: from qq.com (unknown [127.0.0.1]) by smtp.qq.com (ESMTP) with SMTP
+ id ; Wed, 09 Oct 2019 19:23:01 +0800 (CST)
+Feedback-ID: webmail:qq.com:bgforeign:bgforeign4
 X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_121825_850532_59A2435D 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20191009_042358_286699_90115B69 
+X-CRM114-Status: GOOD (  10.17  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.206.16.166 listed in list.dnswl.org]
+ no trust [54.204.34.130 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wurobinson[at]qq.com)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH] ramips: add support for JS76x8 series
- development boards
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+Subject: [OpenWrt-Devel] =?gb18030?b?UkWjulJFOiAgW1BBVENIIHY0IDEvM10gcmFt?=
+ =?gb18030?q?ips=3A_add_support_for_JS7628_development_board?=
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,464 +95,59 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robinson Wu <wurobinson@qq.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?gb18030?B?b3BlbndydC1kZXZlbA==?= <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============0463536382956071433=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit adds support for the ZhuoTK JS76x8 series development boards.
-The devices has the following specifications:
+This is a multi-part message in MIME format.
 
-- SOC: MT7628AN/NN, MT7688AN, MT7628DAN
-- RAM of MT7628AN/NN and MT7688AN: 64/128/256 MB (DDR2)
-- RAM of MT7628DAN: 64 MB (DDR2)
-- FLASH:8/16/32 MB (SPI NOR)
-- Ethernet:3x 10/100 Mbps ethernet ports (MT76x8 built-in switch)
-- WIFI:1x 2T2R 2.4 GHz Wi-Fi
-- LEDs:1x system status green LED, 1x wifi green LED,
-       3x ethernet green LED
-- Buttons:1x reset button, 2x user defined button
-- 1x microSD slot
-- 4x USB 2.0 port
-- 1x mini-usb debug UART
-- 1x DC jack for main power (DC 5V)
-- 1x TTL/RS232 UART
-- 1x TTL/RS485 UART
-- 13x GPIO header
-- 1x audio codec(wm8960)
+--===============0463536382956071433==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_5D9DC314_0980F258_4B333236"
+Content-Transfer-Encoding: 8Bit
 
-Installation via OpenWrt:
+This is a multi-part message in MIME format.
 
-The original firmware is OpenWrt, so both LuCI or sysupgrade can be used.
+------=_NextPart_5D9DC314_0980F258_4B333236
+Content-Type: text/plain;
+	charset="gb18030"
+Content-Transfer-Encoding: base64
 
-Installation via U-boot web:
+SGksDQogSSBzZW5kIGEgbmV3IHBhdGNoIGZvciB0aGUgSlM3Nng4IGJvYXJkcywgYXMgeW91
+ciBhZHZpY2VzLiBIb3BlIGl0IHdpbGwgYmUgYWNjZXB0ZWQgc29vbi4gVGhhbmsgeW91Lg0K
+ICANCiBCZXN0DQogIA0KIFJvYmluc29uIFd1
 
-1. Power on board with reset button pressed, release it
-   after wifi led start blinking.
-2. Setup static IP 192.168.1.123/4 on your PC.
-3. Go to 192.168.1.8 in browser and upload "sysupgrade" image.
+------=_NextPart_5D9DC314_0980F258_4B333236
+Content-Type: text/html;
+	charset="gb18030"
+Content-Transfer-Encoding: base64
 
-Installation via U-boot tftp:
-1. Connect to serial console at the mini usb, which has been connected to UART0
-   on board (115200 8N1)
-2. Setup static IP 192.168.1.123/4 on your PC.
-3. Place openwrt-firmware.bin on your PC tftp server (192.168.1.123).
-3. Connect one of LAN ports on board to your PC.
-4. Start terminal software (e.g. screen /dev/ttyUSB0 115200) on PC.
-5. Apply power to board.
-6. Interrupt U-boot with keypress of "2".
-7. At u-boot prompts:
-   Warning!! Erase Linux in Flash then burn new one. Are you sure?(Y/N) Y
-   Input device IP (192.168.1.8) ==:192.168.1.8
-   Input server IP (192.168.1.123) ==:192.168.1.123
-   Input Linux Kernel filename (root_uImage) ==:openwrt-firmware.bin
-8. board will download file from tftp server, write it to flash and reboot.
+PERJVj5IaSw8L0RJVj4NCjxESVY+SSBzZW5kIGEgbmV3IHBhdGNoIGZvciB0aGUmbmJzcDtK
+Uzc2eDggYm9hcmRzLCBhcyB5b3VyIGFkdmljZXMuIEhvcGUgaXQgd2lsbCBiZSBhY2NlcHRl
+ZCBzb29uLiBUaGFuayB5b3UuPC9ESVY+DQo8RElWPiZuYnNwOzwvRElWPg0KPERJVj5CZXN0
+PC9ESVY+DQo8RElWPiZuYnNwOzwvRElWPg0KPERJVj5Sb2JpbnNvbiBXdTwvRElWPg0KPERJ
+Vj48L0RJVj4NCjxESVY+Jm5ic3A7PC9ESVY+
 
-Other notes:
-
-Vist www.zhuotk.com for further information.
-
-Signed-off-by: Robinson Wu <wurobinson@qq.com>
----
- target/linux/ramips/base-files/etc/board.d/01_leds     |   6 ++
- target/linux/ramips/base-files/etc/board.d/02_network  |   3 +
- target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts |  60 +++++++++++++++
- target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts |  60 +++++++++++++++
- target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts  |  60 +++++++++++++++
- target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi    | 105 +++++++++++++++++++++++++++
- target/linux/ramips/image/mt76x8.mk                    |  30 ++++++++
- 7 files changed, 324 insertions(+)
-
-diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
-index f8a270b..c742dbd 100755
---- a/target/linux/ramips/base-files/etc/board.d/01_leds
-+++ b/target/linux/ramips/base-files/etc/board.d/01_leds
-@@ -467,6 +467,12 @@ zbtlink,zbt-we1226)
- 	ucidef_set_led_switch "lan2" "LAN2" "$boardname:green:lan2" "switch0" "0x02"
- 	ucidef_set_led_switch "wan" "WAN" "$boardname:green:wan" "switch0" "0x10"
- 	;;
-+zhuotk,js76x8-16m|\
-+zhuotk,js76x8-32m|\
-+zhuotk,js76x8-8m)
-+	ucidef_set_led_timer "system" "system" "js76x8:green:system" "1000" "1000"
-+	set_wifi_led "js76x8:green:wifi"
-+	;;
- zorlik,zl5900v2)
- 	ucidef_set_led_netdev "lan" "lan" "$boardname:green:lan" eth0
- 	;;
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index 25aa075..c21bbaf 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -102,6 +102,9 @@ ramips_setup_interfaces()
- 	zbtlink,zbt-wg3526-16m|\
- 	zbtlink,zbt-wg3526-32m|\
- 	zbtlink,zbt-wr8305rt|\
-+	zhuotk,js76x8-16m|\
-+	zhuotk,js76x8-32m|\
-+	zhuotk,js76x8-8m|\
- 	zyxel,keenetic|\
- 	zyxel,keenetic-omni)
- 		ucidef_add_switch "switch0" \
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
-new file mode 100644
-index 0000000..dd821ce
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
-@@ -0,0 +1,60 @@
-+/dts-v1/;
-+
-+#include "mt7628an_zhuotk_js76x8.dtsi"
-+
-+/ {
-+	compatible = "zhuotk,js76x8-16m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
-+	model = "ZhuoTK JS76x8 (16M flash)";
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		m25p,chunked-io = <32>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0xfb0000>;
-+			};
-+		};
-+	};
-+
-+	spidev@1 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "linux,spidev";
-+		reg = <1>;
-+		spi-max-frequency = <40000000>;
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
-new file mode 100644
-index 0000000..74463d5
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
-@@ -0,0 +1,60 @@
-+/dts-v1/;
-+
-+#include "mt7628an_zhuotk_js76x8.dtsi"
-+
-+/ {
-+	compatible = "zhuotk,js76x8-32m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
-+	model = "ZhuoTK JS76x8 (32M flash)";
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
-+
-+	flash0@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		m25p,chunked-io = <32>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0x1fb0000>;
-+			};
-+		};
-+	};
-+
-+	spidev@1 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "linux,spidev";
-+		reg = <1>;
-+		spi-max-frequency = <40000000>;
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
-new file mode 100644
-index 0000000..4f1f355
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
-@@ -0,0 +1,60 @@
-+/dts-v1/;
-+
-+#include "mt7628an_zhuotk_js76x8.dtsi"
-+
-+/ {
-+	compatible = "zhuotk,js76x8-8m", "mediatek,mt7628an-soc";
-+	model = "ZhuoTK JS76x8 (8M flash)";
-+};
-+
-+&spi0 {
-+	status = "okay";
-+
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		m25p,chunked-io = <32>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x30000>;
-+				read-only;
-+			};
-+
-+			partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			factory: partition@40000 {
-+				label = "factory";
-+				reg = <0x40000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@50000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x50000 0x7b0000>;
-+			};
-+		};
-+	};
-+
-+	spidev@1 {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "linux,spidev";
-+		reg = <1>;
-+		spi-max-frequency = <40000000>;
-+	};
-+};
-diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
-new file mode 100644
-index 0000000..4fbf7f6
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
-@@ -0,0 +1,105 @@
-+#include "mt7628an.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	compatible = "zhuotk,js76x8", "mediatek,mt7628an-soc";
-+
-+	aliases {
-+		led-boot = &led_system;
-+		led-failsafe = &led_system;
-+		led-running = &led_system;
-+		led-upgrade = &led_system;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,115200";
-+	};
-+
-+	gpio-leds {
-+		compatible = "gpio-leds";
-+
-+		led_system: system {
-+			label = "js76x8:green:system";
-+			gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wifi {
-+			label = "js76x8:green:wifi";
-+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "gpio","p3led_an","p4led_an",
-+				"pwm0","pwm1","refclk","wdt","wled_an";
-+			ralink,function = "gpio";
-+		};
-+
-+		p0led {
-+			ralink,group = "p0led_an";
-+			ralink,function = "p0led_an";
-+		};
-+
-+		p1led {
-+			ralink,group = "p1led_an";
-+			ralink,function = "p1led_an";
-+		};
-+
-+		p2led {
-+			ralink,group = "p2led_an";
-+			ralink,function = "p2led_an";
-+		};
-+
-+		pwm_2_3 {
-+			ralink,group = "uart2";
-+			ralink,function = "pwm";
-+		};
-+	};
-+
-+	uart2 {
-+		uart2 {
-+			ralink,group = "spis";
-+			ralink,function = "pwm_uart2";
-+		};
-+	};
-+};
-+
-+&i2c {
-+	status = "okay";
-+};
-+
-+&uart1 {
-+	status = "okay";
-+};
-+
-+&uart2 {
-+	status = "okay";
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x28>;
-+};
-+
-+&sdhci {
-+	status = "okay";
-+	mediatek,cd-low;
-+};
-+
-+&wmac {
-+	status = "okay";
-+};
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 9ab16db..3bdc27b 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -583,6 +583,36 @@ define Device/zbtlink_zbt-we1226
- endef
- TARGET_DEVICES += zbtlink_zbt-we1226
- 
-+define Device/zhuotk_js76x8-16m
-+  MTK_SOC := mt7628an
-+  IMAGE_SIZE := 16064k
-+  DEVICE_VENDOR := ZhuoTK
-+  DEVICE_MODEL := JS76x8
-+  DEVICE_VARIANT := 16M flash
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
-+endef
-+TARGET_DEVICES += zhuotk_js76x8-16m
-+
-+define Device/zhuotk_js76x8-32m
-+  MTK_SOC := mt7628an
-+  IMAGE_SIZE := 32448k
-+  DEVICE_VENDOR := ZhuoTK
-+  DEVICE_MODEL := JS76x8
-+  DEVICE_VARIANT := 32M flash
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
-+endef
-+TARGET_DEVICES += zhuotk_js76x8-32m
-+
-+define Device/zhuotk_js76x8-8m
-+  MTK_SOC := mt7628an
-+  IMAGE_SIZE := 7872k
-+  DEVICE_VENDOR := ZhuoTK
-+  DEVICE_MODEL := JS76x8
-+  DEVICE_VARIANT := 8M flash
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
-+endef
-+TARGET_DEVICES += zhuotk_js76x8-8m
-+
- define Device/zyxel_keenetic-extra-ii
-   MTK_SOC := mt7628an
-   IMAGE_SIZE := 14912k
--- 
-2.7.4
+------=_NextPart_5D9DC314_0980F258_4B333236--
 
 
 
+
+
+--===============0463536382956071433==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0463536382956071433==--
+
+
+
+

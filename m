@@ -2,81 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00E2BD27D3
-	for <lists+openwrt-devel@lfdr.de>; Thu, 10 Oct 2019 13:15:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C003D2D68
+	for <lists+openwrt-devel@lfdr.de>; Thu, 10 Oct 2019 17:16:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VuiBJTP3WY66nWOHhE7wIrK6M6FE78LlTCBK0XJ8ryY=; b=sTaToNo3Jo62rQ
-	IV8F4qnrKLGs1Tj0ed6jkWHCg/AILFVSqOyrc7MM8W+coTGSUaaQkTJozjgMGBswYkkzwKJPO+YG5
-	/TdFHM53Vs+vbHBZRw99goNxkAE7jb3f3T5Srj5K28AdS1Zlk8EGmeNoQ7ATXxEpFdje2tUVXxtR/
-	UAX9gq+P0DRLcTCuMdCmppe6MX4whwPd8PpAabB20FxwKy0y/POdLQ/2MsIX49PXabE9eZAEq8fil
-	QpgZgubEpg71OFBYcSPD5kWEtUlCS+n+9A1Kzxb+G/XxDMQlP3MJ69tKg49Qkj5z6s0BdJZ4GlN5a
-	0uPQRkVp9IWB33GR70VA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Reply-To:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Mime-Version:Message-ID:To:From:Date:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=cND+RAx5CsaDy9lsZNbftG7lzU3H6MfMFZW30kZOrmQ=; b=L3iX0s002yDzehK1dleRNc7vuu
+	jQcxT/Qcwk4blpqVVyIDA1tsVygrIK61vtBg8dNM0iYfvuL0VI2aUq9hZLrp+OeBZK0pdyVOPW1wt
+	399R3xC7HWN2g0bp2VheK2yNR0EpW0SIqe4QGobDVXd9BAyIJeIZl0xxCgOLs9FvgsGvZwYNAJOz7
+	ZDD23iXIJDeVo1FRW6rJ/XP0r4CUbqztj6PmP8NxAljzL7w/K7Tl7gvGLOAffBrjtAMDZDDfza3LK
+	v7W0lCYJvgE5hh9j7Nv8iLq0MnONpeVzOQkEBAF4x/WL0s1vDv0aGZPOah2y2a4vvs6I/U9UOx7C0
+	9nvF4sFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIWQ5-0002ox-3M; Thu, 10 Oct 2019 11:15:45 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iIaAd-0000Rr-Uk; Thu, 10 Oct 2019 15:16:03 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIWPv-0002oX-CT
- for openwrt-devel@lists.openwrt.org; Thu, 10 Oct 2019 11:15:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v8so7386659wrt.2
- for <openwrt-devel@lists.openwrt.org>; Thu, 10 Oct 2019 04:15:34 -0700 (PDT)
+ id 1iIaAV-0000P5-DP
+ for openwrt-devel@lists.openwrt.org; Thu, 10 Oct 2019 15:15:57 +0000
+Received: by mail-qk1-x742.google.com with SMTP id f16so5917347qkl.9
+ for <openwrt-devel@lists.openwrt.org>; Thu, 10 Oct 2019 08:15:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
+ h=date:from:reply-to:to:message-id:subject:mime-version
  :content-transfer-encoding;
- bh=l+KHTcGpUfb4wIcS2jket4CchVxDdfQHCVpmMm7eNUM=;
- b=H7O0w/5JRGtegitoFyjtWrLhYGrsyEFopysZzBDu6u6u6448ga6u/A1hYE2dteOWlm
- 1biRngc/DhbVqKTVulumukmAOMYwK81QcNrd48742MYwKuNZPLbn3LJXWSDunavOu+17
- aPmWK+oatfEU/IE5vBf5wb7VEUqLHi4BNCkOONOVX7TtD/p70Z81BjRc1EjIedNC2sQq
- MwgJQ0Hv4gEQ1brF24rt3fnCyI5nMYS0MZYfQXch/kKeNhuyLyi9ZTB2Objaj21f3jfT
- 5XUeEcx0kYEJDWae00lH9GR77Qyc1HKTgbZTonX+bWme3DLMOFCaOVJvbzGYv68ww5W/
- Exww==
+ bh=0usqfXf2VEaPEKW1PEneSk4VpI8iWs1d5EPwXuY2d0I=;
+ b=R73FNkFM/oxilASH0yqCAwk9j+axer2FFjVDDJfUp2XIcEHsTb94Whdor2f6kUEU66
+ z1m56Vyqnnan3fKTJgyubiQQ2nH903BtAtTH54wTId07Zs8J9QyemSM0hQrXrpl47wpG
+ N6TpO5LE93k/8IwC7zEA3iSSO5vD4Jo2kCWJsiW1hsRkSY5DLjyxwzIqlGLCVVNcgAn1
+ fbHT5USydLCXYoJ8QT3k4PIjTSStm08JyMJO35YdvlMnfN8i+46JdDgb6wBYkCaTKaYw
+ 7fC1f9qSR0Zj3abwNcp5+KWu7pNr4tf+5wHKCWa+8/YEHuuP+bi8wVlo8/XsKRSmog7A
+ /BMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=l+KHTcGpUfb4wIcS2jket4CchVxDdfQHCVpmMm7eNUM=;
- b=qInZzg4Hykd6p8lkh0B4orCkPP6jUFNfKDPuAzEYhfrRIaTi03GGnOoL6UPT0LiKis
- 2couR8eb7iN7VyxtS7XEXhOp3uI9n5WK2P60sdi6GWQ6jZyv+6nZhOIj4olrOpQ28vNF
- sD1qC+1AEzI7nvST1GaC/hRrsL3G61MqHNbrNBqMpDcpPqoAFUzSX7d5UkHMNqkAJByx
- +GdCZ755vxzBUamQqsnyO7FIH9ZGuB9RI6rQiwMRXTpMkfjEjEqGvsl3MOzsKAfQP9h9
- 1tW8ATsSgSigTIQ5xpbpv3fHz9ohQm+80gXsA2rR5RlfhAKq8QDTX40Kpe70F1XUReRC
- 52qQ==
-X-Gm-Message-State: APjAAAVuAJoMDn/ph7Wj7efKiiUbFTc4IIPd89XkyR8kJL7rBgahOh0m
- 4dz2g+tUoj1aCYpnzkv+PXTBmkWq
-X-Google-Smtp-Source: APXvYqwVljsIzS5End9x4qmw21+CSvX1TADzfqXCdFqi6W3etDhPCmNsH+Lxq6976mc+xTnPwp3Yvw==
-X-Received: by 2002:a5d:6a49:: with SMTP id t9mr7417076wrw.58.1570706132844;
- Thu, 10 Oct 2019 04:15:32 -0700 (PDT)
-Received: from localhost.localdomain (catv-80-98-151-242.catv.broadband.hu.
- [80.98.151.242])
- by smtp.gmail.com with ESMTPSA id c4sm6741095wru.31.2019.10.10.04.15.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 10 Oct 2019 04:15:31 -0700 (PDT)
-From: vargagab@gmail.com
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 10 Oct 2019 13:15:25 +0200
-Message-Id: <20191010111525.596862-1-vargagab@gmail.com>
-X-Mailer: git-send-email 2.23.0
-MIME-Version: 1.0
+ h=x-gm-message-state:date:from:reply-to:to:message-id:subject
+ :mime-version:content-transfer-encoding;
+ bh=0usqfXf2VEaPEKW1PEneSk4VpI8iWs1d5EPwXuY2d0I=;
+ b=N6/zjaG21DFEuNU+/L4OmlSZ11QkRiXqjy1eHsDSOYFIQKT7hex7arcGHm43GSkrGp
+ PdmE6XbPnHPZkiyakhjtDKpEKLEtaslYUZsHDD5/SoHMD72vBySc9PK572U/Q6AvclXJ
+ OGzf9zRyYdbOKmBmUp4tsPm/eBtOml5DGZVVNCfLGeWoXFmze3HNNFN/61PQ/syoTBT+
+ T0QRXLN+tOWodGDNPxC6nCmBke8dR4klXhHDunE4Zf+8JMHQ1FCbU+WUenfya8nDPWnH
+ 9KKTJBhRg6K1rv8lyRr3DHDZsrE9wULkpXn0KNiUlDhdceNpK0KSbNCSZvUwhio7Y3fZ
+ KOuA==
+X-Gm-Message-State: APjAAAWsmcGkfN1eNuj5Zs8Rlwk5sCspQWEVEOEbm+KsdvG2liZfNBCL
+ tJRtX6iGA6+eMxJfcw4ZeGmEYWtg7tocBg==
+X-Google-Smtp-Source: APXvYqzQeu0aTWdWAefBXj/YvEA387lUn2P9JsyrSfnvBGQWMpf6aAphEllfyblitD964Bbn6R61mg==
+X-Received: by 2002:a37:f90e:: with SMTP id l14mr10623232qkj.40.1570720553204; 
+ Thu, 10 Oct 2019 08:15:53 -0700 (PDT)
+Received: from gmail.com (ec2-52-4-214-143.compute-1.amazonaws.com.
+ [52.4.214.143])
+ by smtp.gmail.com with ESMTPSA id b22sm2628101qkc.58.2019.10.10.08.15.50
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 10 Oct 2019 08:15:51 -0700 (PDT)
+Date: Thu, 10 Oct 2019 15:15:50 +0000
+From: Alex Bill <alexbill944@gmail.com>
+To: Openwrt <openwrt-devel@lists.openwrt.org>
+Message-ID: <SalesSequence.9000000961.27448.2187f3bb9.smtp@amsofttech.freshsales.io>
+Mime-Version: 1.0
+X-FS-DELETE: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_041535_448819_0B38EA1E 
-X-CRM114-Status: GOOD (  14.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191010_081555_483671_A5E37879 
+X-CRM114-Status: UNSURE (   3.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.1 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
+ 1.8 FSL_HELO_FAKE          No description available.
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vargagab[at]gmail.com)
+ provider (alexbill944[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
+ digit (alexbill944[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (alexbill944[at]gmail.com)
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.0 T_KAM_HTML_FONT_INVALID BODY: Test for Invalidly Named or
+ Formatted Colors in HTML
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,7 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH v2] ramips: add support for Asus RT-AC65P
+Subject: [OpenWrt-Devel] Donation for GitHub Openwrt
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,473 +106,184 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: ynezz@true.cz, gch981213@gmail.com, Gabor Varga <vargagab@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: Alex Bill <alexbill944@gmail.com>
+Content-Type: multipart/mixed; boundary="===============5970589914398510707=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Gabor Varga <vargagab@gmail.com>
 
-The Asus RT-AC65P router is identical with the RT-AC85P, but better to make separate images for it.
+--===============5970589914398510707==
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5d9f4b26cfbaf_172abb230d01047182";
+ charset=utf-8
+Content-Transfer-Encoding: 7bit
 
-On both routers the installation can be done also via SSH:
 
-Note: The user/password for SSH is identical with the one used in the
-Web-interface.
+----==_mimepart_5d9f4b26cfbaf_172abb230d01047182
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 
-1. Complete the initial setup wizard.
-2. Activate SSH under "Administration" -> "System".
-3. Transfer the OpenWrt factory image via scp:
- > scp openwrt-ramips-mt7621-asus_rt-ac65p-squashfs-factory.bin admin@192.168.50.1:/tmp
-4. Connect via SSH to the router.
- > ssh admin@192.168.50.1
-5. Write the OpenWrt image to flash.
- > mtd-write -i
-/tmp/openwrt-ramips-mt7621-asus_rt-ac65p-squashfs-factory.bin -d linux
-6. Reboot the router
- > reboot
 
-Changelog:
+Hello Openwrt,
 
-v2: Rebased to latest master
-v1: Initial release
+We are a small business impressed by your open source initiative on https=
+://github.com/openwrt. Our management support different open-source proje=
+cts under a limited budget on a regular basis. You have made the final li=
+st.We are looking forward to supporting you for the year ahead-either thr=
+ough monthly or quarterly donations. Depending on what you prefer.Please =
+let us know the payment mode that will work for you, so we may proceed. W=
+e are hoping you will accept our humble gesture.=C2=A0  =
 
-Signed-off-by: Gabor Varga <vargagab@gmail.com>
----
- .../ramips/base-files/etc/board.d/02_network  |   2 +
- .../ramips/base-files/lib/upgrade/platform.sh |   2 +
- .../linux/ramips/dts/mt7621_asus_rt-ac65p.dts |   9 +
- .../linux/ramips/dts/mt7621_asus_rt-ac85p.dts | 157 +----------------
- .../ramips/dts/mt7621_asus_rt-ac[68]5p.dtsi   | 159 ++++++++++++++++++
- target/linux/ramips/image/mt7621.mk           |  16 ++
- 6 files changed, 190 insertions(+), 155 deletions(-)
- create mode 100644 target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts
- create mode 100644 target/linux/ramips/dts/mt7621_asus_rt-ac[68]5p.dtsi
+Alex Bill
+Blogger=C2=A0|=C2=A0Internet Marketing
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index 25aa075093..f5b030c908 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -234,6 +234,7 @@ ramips_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"0:lan" "1:wan" "6@eth0"
- 		;;
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p|\
- 	dlink,dir-860l-b1|\
- 	elecom,wrc-1167ghbk2-s|\
-@@ -562,6 +563,7 @@ ramips_setup_macs()
- 	zbtlink,zbt-we3526)
- 		wan_mac=$(mtd_get_mac_binary factory 0xe006)
- 		;;
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p)
- 		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
- 		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
-diff --git a/target/linux/ramips/base-files/lib/upgrade/platform.sh b/target/linux/ramips/base-files/lib/upgrade/platform.sh
-index a62ded4b9d..03e994dfa4 100755
---- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
-@@ -18,6 +18,7 @@ platform_do_upgrade() {
- 	mikrotik,rbm33g)
- 		[ -z "$(rootfs_type)" ] && mtd erase firmware
- 		;;
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p)
- 		echo "Backing up firmware"
- 		dd if=/dev/mtd4 bs=1024 count=4096  > /tmp/backup_firmware.bin
-@@ -27,6 +28,7 @@ platform_do_upgrade() {
- 	esac
- 
- 	case "$board" in
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p|\
- 	hiwifi,hc5962|\
- 	netgear,r6220|\
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts b/target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts
-new file mode 100644
-index 0000000000..261839a6ea
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts
-@@ -0,0 +1,9 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7621_asus_rt-ac[68]5p.dtsi"
-+
-+/ {
-+	compatible = "asus,rt-ac65p", "mediatek,mt7621-soc";
-+	model = "ASUS RT-AC65P";
-+};
-\ No newline at end of file
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-index 3ddbfcfb7c..35103a0c24 100644
---- a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-@@ -1,162 +1,9 @@
- // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
- /dts-v1/;
- 
--#include "mt7621.dtsi"
--
--#include <dt-bindings/gpio/gpio.h>
--#include <dt-bindings/input/input.h>
-+#include "mt7621_asus_rt-ac[68]5p.dtsi"
- 
- / {
- 	compatible = "asus,rt-ac85p", "mediatek,mt7621-soc";
- 	model = "ASUS RT-AC85P";
--
--	aliases {
--		led-boot = &led_power;
--		led-failsafe = &led_power;
--		led-running = &led_power;
--		led-upgrade = &led_power;
--	};
--
--	chosen {
--		bootargs = "console=ttyS0,57600";
--	};
--
--	palmbus: palmbus@1E000000 {
--		i2c@900 {
--			status = "okay";
--		};
--	};
--
--	keys {
--		compatible = "gpio-keys";
--
--		reset {
--			label = "reset";
--			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_RESTART>;
--		};
--
--		wps {
--			label = "wps";
--			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_WPS_BUTTON>;
--		};
--	};
--
--	leds {
--		compatible = "gpio-leds";
--
--		led_power: power {
--			label = "rt-ac85p:blue:power";
--			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
--			linux,default-trigger = "phy0tpt";
--		};
--		wlan2g {
--			label = "rt-ac85p:blue:wlan2g";
--			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
--			linux,default-trigger = "phy0radio";
--		};
--
--		wlan5g {
--			label = "rt-ac85p:blue:wlan5g";
--			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
--			linux,default-trigger = "phy1radio";
--		};
--	};
--};
--
--&sdhci {
--	status = "okay";
--};
--
--&nand {
--	status = "okay";
--
--	partitions {
--		compatible = "fixed-partitions";
--		#address-cells = <1>;
--		#size-cells = <1>;
--
--		partition@0 {
--			label = "u-boot";
--			reg = <0x0 0xe0000>;
--			read-only;
--		};
--
--		partition@e0000 {
--			label = "u-boot-env";
--			reg = <0xe0000 0x100000>;
--			read-only;
--		};
--
--		factory: partition@1e0000 {
--			label = "factory";
--			reg = <0x1e0000 0x100000>;
--			read-only;
--		};
--
--		factory2: partition@2e0000 {
--			label = "factory2";
--			reg = <0x2e0000 0x100000>;
--			read-only;
--		};
--
--		partition@3e0000 {
--			label = "kernel";
--			reg = <0x3e0000 0x400000>;
--		};
--
--		partition@7e0000 {
--			label = "ubi";
--			reg = <0x7e0000 0x2e00000>;
--		};
--
--		partition@35e0000 {
--			label = "firmware2";
--			reg = <0x35e0000 0x3200000>;
--		};
--	};
--};
--
--&pcie {
--	status = "okay";
--};
--
--&pcie0 {
--	wifi0: wifi@0,0 {
--		compatible = "pci14c3,7615";
--		reg = <0x0000 0 0 0 0>;
--		mediatek,mtd-eeprom = <&factory 0x0000>;
--		ieee80211-freq-limit = <2400000 2500000>;
--	};
--};
--
--&pcie1 {
--	wifi1: wifi@0,0 {
--		compatible = "pci14c3,7615";
--		reg = <0x0000 0 0 0 0>;
--		mediatek,mtd-eeprom = <&factory 0x8000>;
--		ieee80211-freq-limit = <5000000 6000000>;
--	};
--};
--
--&ethernet {
--	mtd-mac-address = <&factory 0xe000>;
--	mediatek,portmap = "wllll";
--	port@5 {
--		status = "disabled";
--	};
--};
--
--&i2c {
--	status = "disabled";
--};
--
--&pinctrl {
--	state_default: pinctrl0 {
--		gpio {
--			ralink,group = "uart2", "uart3", "i2c";
--			ralink,function = "gpio";
--		};
--	};
--};
-+};
-\ No newline at end of file
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac[68]5p.dtsi b/target/linux/ramips/dts/mt7621_asus_rt-ac[68]5p.dtsi
-new file mode 100644
-index 0000000000..d0f8a4b3ca
---- /dev/null
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-ac[68]5p.dtsi
-@@ -0,0 +1,159 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "mt7621.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	palmbus: palmbus@1E000000 {
-+		i2c@900 {
-+			status = "okay";
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+
-+		wps {
-+			label = "wps";
-+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			label = "rt-ac85p:blue:power";
-+			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+		wlan2g {
-+			label = "rt-ac85p:blue:wlan2g";
-+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0radio";
-+		};
-+
-+		wlan5g {
-+			label = "rt-ac85p:blue:wlan5g";
-+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy1radio";
-+		};
-+	};
-+};
-+
-+&sdhci {
-+	status = "okay";
-+};
-+
-+&nand {
-+	status = "okay";
-+
-+	partitions {
-+		compatible = "fixed-partitions";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		partition@0 {
-+			label = "u-boot";
-+			reg = <0x0 0xe0000>;
-+			read-only;
-+		};
-+
-+		partition@e0000 {
-+			label = "u-boot-env";
-+			reg = <0xe0000 0x100000>;
-+			read-only;
-+		};
-+
-+		factory: partition@1e0000 {
-+			label = "factory";
-+			reg = <0x1e0000 0x100000>;
-+			read-only;
-+		};
-+
-+		factory2: partition@2e0000 {
-+			label = "factory2";
-+			reg = <0x2e0000 0x100000>;
-+			read-only;
-+		};
-+
-+		partition@3e0000 {
-+			label = "kernel";
-+			reg = <0x3e0000 0x400000>;
-+		};
-+
-+		partition@7e0000 {
-+			label = "ubi";
-+			reg = <0x7e0000 0x2e00000>;
-+		};
-+
-+		partition@35e0000 {
-+			label = "firmware2";
-+			reg = <0x35e0000 0x3200000>;
-+		};
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	wifi0: wifi@0,0 {
-+		compatible = "pci14c3,7615";
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x0000>;
-+		ieee80211-freq-limit = <2400000 2500000>;
-+	};
-+};
-+
-+&pcie1 {
-+	wifi1: wifi@0,0 {
-+		compatible = "pci14c3,7615";
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		ieee80211-freq-limit = <5000000 6000000>;
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0xe000>;
-+	mediatek,portmap = "wllll";
-+	port@5 {
-+		status = "disabled";
-+	};
-+};
-+
-+&i2c {
-+	status = "disabled";
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "uart2", "uart3", "i2c";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index 582fe3284e..669ed0a69a 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -125,6 +125,22 @@ define Device/asus_rt-ac57u
- endef
- TARGET_DEVICES += asus_rt-ac57u
- 
-+define Device/asus_rt-ac65p
-+  MTK_SOC := mt7621
-+  DEVICE_VENDOR := ASUS
-+  DEVICE_MODEL := RT-AC65P
-+  IMAGE_SIZE := 51200k
-+  UBINIZE_OPTS := -E 5
-+  BLOCKSIZE := 128k
-+  PAGESIZE := 2048
-+  KERNEL_SIZE := 4096k
-+  IMAGES += factory.bin
-+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
-+  DEVICE_PACKAGES := kmod-usb3 kmod-mt7615e wpad-basic uboot-envtools
-+endef
-+TARGET_DEVICES += asus_rt-ac65p
-+
- define Device/asus_rt-ac85p
-   MTK_SOC := mt7621
-   DEVICE_VENDOR := ASUS
--- 
-2.23.0
+e:=C2=A0 [http://amsofttech.fstracker.io/email/track/click?hash=3DeyJ0eXA=
+iOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7Im11c3RoIjoiaHR0cDovL2FwcHJveGV=
+uLmZzdHJhY2tlci5pby9lbWFpbC90cmFjay9jbGljaz9oYXNoPWV5SjBlWEFpT2lKS1YxUWlM=
+Q0poYkdjaU9pSklVekkxTmlKOS5leUprWVhSaElqcDdJbTExYzNSb0lqb2liV0ZwYkhSdk9tR=
+nNaWGhpYVd4c09UUTBRR2R0WVdsc0xtTnZiU0lzSW14cGIyNGlPaUl5TlRBelppSXNJbWR2Y2=
+1sc2JHRWlPaUl5TVRnM05XRTBPV1lpTENKa1pXVnlJam9pTWpFNE56Y3haVFpoSW4wc0ltbGh=
+kQ0k2TVRVMk56WXdPVFE0TVgwLm0zYlZhelhCMUEyTUFtT0NaN2pxOFdCNjVHcHFYX3hrX1VI=
+ZjZLRzVNa01-ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SmtZWFJoS=
+WpwN0ltaHZjbk5sSWpvaWRHOWphSFZyZDNWdWQyRjZiM0pBWjIxaGFXd3VZMjl0SWl3aVkyRn=
+RaV3dpT2lJeU1UZzNaV0V6WkRraWZTd2lhV0YwSWpveE5UWTNOakE1TkRneGZRLm11TEJQNmg=
+zZnR6bzdDU21qMThvT3hYbmJ2VGxlYWZGMTAtMFB2S3RkbVkiLCJsaW9uIjoiMjc0NDgiLCJn=
+b3JpbGxhIjoiMjE4N2YzYmI5IiwiZGVlciI6IjIxODhhZjM0MCJ9LCJpYXQiOjE1NzA3MjA1N=
+TB9.l8S_KPyr8UTRgMH3lpfoS_f5z8qjT7A0ZsDjSUogzNQ~eyJ0eXAiOiJKV1QiLCJhbGciO=
+iJIUzI1NiJ9.eyJkYXRhIjp7ImhvcnNlIjoib3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0L=
+m9yZyIsImNhbWVsIjoiMjE4OWQ3YWEzIn0sImlhdCI6MTU3MDcyMDU1MH0.0f2wcfKXZOrNyX=
+GryLYvl1xkxzh4YvvBS_DmAN87w9I]alexbill944@gmail.com [http://amsofttech.fs=
+tracker.io/email/track/click?hash=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.=
+eyJkYXRhIjp7Im11c3RoIjoibWFpbHRvOmFsZXhiaWxsOTQ0QGdtYWlsLmNvbSIsImxpb24iO=
+iIyNzQ0OCIsImdvcmlsbGEiOiIyMTg3ZjNiYjkiLCJkZWVyIjoiMjE4OGFmMzQxIn0sImlhdC=
+I6MTU3MDcyMDU1MH0.ClPKac2VCLvkUKwjNEiOlrRM42EeWB-6dR4j6g9hL9w~eyJ0eXAiOiJ=
+KV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImhvcnNlIjoib3BlbndydC1kZXZlbEBsaXN=
+0cy5vcGVud3J0Lm9yZyIsImNhbWVsIjoiMjE4OWQ3YWEzIn0sImlhdCI6MTU3MDcyMDU1MH0.=
+0f2wcfKXZOrNyXGryLYvl1xkxzh4YvvBS_DmAN87w9I]
 
+
+w:=C2=A0NamoBOT.com
+
+
+
+ Unsubscribe [http://amsofttech.fstracker.io/email/track/unsubscribe?hash=
+=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7Imxpb24iOiIyNzQ0OCIsI=
+mdvcmlsbGEiOiIyMTg3ZjNiYjkiLCJob3JzZSI6Im9wZW53cnQtZGV2ZWxAbGlzdHMub3Blbn=
+dydC5vcmciLCJjYW1lbCI6IjIxODlkN2FhMyJ9LCJpYXQiOjE1NzA3MjA1NTB9.hO30N7BI2z=
+OvbQWvhZAULiBn0QIoyAUhh0RpCtO0zyc]
+
+ =
+
+
+
+----==_mimepart_5d9f4b26cfbaf_172abb230d01047182
+Content-Type: text/html;
+ charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www=
+.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div>Hello Openwrt,</div>
+<div><br></div>
+<div>We are a small business impressed by your open source initiative on =
+https://github.com/openwrt. <br><br>Our management support different open=
+-source projects under a limited budget on a regular basis. You have made=
+ the final list.<br><br>We are looking forward to supporting you for the =
+year ahead-either through monthly or quarterly donations. Depending on wh=
+at you prefer.<br><br>Please let us know the payment mode that will work =
+for you, so we may proceed. <br><br>We are hoping you will accept our hum=
+ble gesture.=C2=A0</div> <br> <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-style: normal; font-weight: 400; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; whi=
+te-space: normal; word-spacing: 0px; background-color: transparent; text-=
+decoration-style: initial; text-decoration-color: initial; border-collaps=
+e: collapse; line-height: 1.4; font-family: Verdana, Geneva, sans-serif; =
+font-size: 11.7px; color: rgb(0, 0, 1);"><tbody>
+<tr><td style=3D"font-family: Roboto, RobotoDraft, Helvetica, Arial, sans=
+-serif; margin: 0px; padding: 0px;"><font color=3D"#ff9a31"><span style=3D=
+"font-size: 14.04px;">Alex Bill</span></font></td></tr>
+<tr><td style=3D"font-family: Roboto, RobotoDraft, Helvetica, Arial, sans=
+-serif; margin: 0px; padding: 5px 0px;">Blogger=C2=A0|=C2=A0Internet Mark=
+eting</td></tr>
+<tr><td style=3D"font-family: Roboto, RobotoDraft, Helvetica, Arial, sans=
+-serif; margin: 0px; padding: 0px;">
+<span style=3D"color: rgb(255, 154, 49);">e:=C2=A0</span><a href=3D"http:=
+//amsofttech.fstracker.io/email/track/click?hash=3DeyJ0eXAiOiJKV1QiLCJhbG=
+ciOiJIUzI1NiJ9.eyJkYXRhIjp7Im11c3RoIjoiaHR0cDovL2FwcHJveGVuLmZzdHJhY2tlci=
+5pby9lbWFpbC90cmFjay9jbGljaz9oYXNoPWV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSkl=
+VekkxTmlKOS5leUprWVhSaElqcDdJbTExYzNSb0lqb2liV0ZwYkhSdk9tRnNaWGhpYVd4c09U=
+UTBRR2R0WVdsc0xtTnZiU0lzSW14cGIyNGlPaUl5TlRBelppSXNJbWR2Y21sc2JHRWlPaUl5T=
+VRnM05XRTBPV1lpTENKa1pXVnlJam9pTWpFNE56Y3haVFpoSW4wc0ltbGhkQ0k2TVRVMk56WX=
+dPVFE0TVgwLm0zYlZhelhCMUEyTUFtT0NaN2pxOFdCNjVHcHFYX3hrX1VIZjZLRzVNa01-ZXl=
+KMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUo5LmV5SmtZWFJoSWpwN0ltaHZjbk5s=
+SWpvaWRHOWphSFZyZDNWdWQyRjZiM0pBWjIxaGFXd3VZMjl0SWl3aVkyRnRaV3dpT2lJeU1UZ=
+zNaV0V6WkRraWZTd2lhV0YwSWpveE5UWTNOakE1TkRneGZRLm11TEJQNmgzZnR6bzdDU21qMT=
+hvT3hYbmJ2VGxlYWZGMTAtMFB2S3RkbVkiLCJsaW9uIjoiMjc0NDgiLCJnb3JpbGxhIjoiMjE=
+4N2YzYmI5IiwiZGVlciI6IjIxODhhZjM0MCJ9LCJpYXQiOjE1NzA3MjA1NTB9.l8S_KPyr8UT=
+RgMH3lpfoS_f5z8qjT7A0ZsDjSUogzNQ~eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ=
+kYXRhIjp7ImhvcnNlIjoib3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZyIsImNhbWVs=
+IjoiMjE4OWQ3YWEzIn0sImlhdCI6MTU3MDcyMDU1MH0.0f2wcfKXZOrNyXGryLYvl1xkxzh4Y=
+vvBS_DmAN87w9I" rel=3D"noopener noreferrer noreferrer" style=3D"color: rg=
+b(17, 85, 204);" target=3D"_blank" title=3D"http://approxen.fstracker.io/=
+email/track/click?hash=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp=
+7Im11c3RoIjoibWFpbHRvOmFsZXhiaWxsOTQ0QGdtYWlsLmNvbSIsImxpb24iOiIyNTAzZiIs=
+ImdvcmlsbGEiOiIyMTg3NWE0OWYiLCJkZWVyIjoiMjE4NzcxZTZhIn0sImlhdCI6MTU2NzYwO=
+TQ4MX0.m3bVazXB1A2MAmOCZ7jq8WB65GpqX_xk_UHf6KG5MkM~eyJ0eXAiOiJKV1QiLCJhbG=
+ciOiJIUzI1NiJ9.eyJkYXRhIjp7ImhvcnNlIjoidG9jaHVrd3Vud2F6b3JAZ21haWwuY29tIi=
+wiY2FtZWwiOiIyMTg3ZWEzZDkifSwiaWF0IjoxNTY3NjA5NDgxfQ.muLBP6h3ftzo7CSmj18o=
+OxXnbvTleafF10-0PvKtdmY"></a><a href=3D"http://amsofttech.fstracker.io/em=
+ail/track/click?hash=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7I=
+m11c3RoIjoibWFpbHRvOmFsZXhiaWxsOTQ0QGdtYWlsLmNvbSIsImxpb24iOiIyNzQ0OCIsIm=
+dvcmlsbGEiOiIyMTg3ZjNiYjkiLCJkZWVyIjoiMjE4OGFmMzQxIn0sImlhdCI6MTU3MDcyMDU=
+1MH0.ClPKac2VCLvkUKwjNEiOlrRM42EeWB-6dR4j6g9hL9w~eyJ0eXAiOiJKV1QiLCJhbGci=
+OiJIUzI1NiJ9.eyJkYXRhIjp7ImhvcnNlIjoib3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0=
+Lm9yZyIsImNhbWVsIjoiMjE4OWQ3YWEzIn0sImlhdCI6MTU3MDcyMDU1MH0.0f2wcfKXZOrNy=
+XGryLYvl1xkxzh4YvvBS_DmAN87w9I" rel=3D"noopener noreferrer" target=3D"_bl=
+ank" title=3D"mailto:alexbill944@gmail.com">alexbill944@gmail.com</a>
+</td></tr>
+<tr><td style=3D"font-family: Roboto, RobotoDraft, Helvetica, Arial, sans=
+-serif; margin: 0px; padding: 0px;">
+<span style=3D"color: rgb(255, 154, 49);">w:=C2=A0</span><font color=3D"#=
+000000">NamoBOT.com</font>
+</td></tr>
+</tbody></table>
+<div><br></div>
+<p><a clicktracking=3D"off" href=3D"http://amsofttech.fstracker.io/email/=
+track/unsubscribe?hash=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp=
+7Imxpb24iOiIyNzQ0OCIsImdvcmlsbGEiOiIyMTg3ZjNiYjkiLCJob3JzZSI6Im9wZW53cnQt=
+ZGV2ZWxAbGlzdHMub3BlbndydC5vcmciLCJjYW1lbCI6IjIxODlkN2FhMyJ9LCJpYXQiOjE1N=
+zA3MjA1NTB9.hO30N7BI2zOvbQWvhZAULiBn0QIoyAUhh0RpCtO0zyc" target=3D"_blank=
+"> Unsubscribe</a></p>
+
+<span title=3D"fs_association_identifier.2187b04e4.2187f3bb9.27448.1.1" s=
+tyle=3D"font-size:0px; min-height:0px; height:0px; opacity:0; max-height:=
+0px; line-height:0px; color:#ffffff"> </span>
+<img src=3D"http://amsofttech.fstracker.io/email/track/open/eyJ0eXAiOiJKV=
+1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7Imxpb24iOiIyNzQ0OCIsImdvcmlsbGEiOiIyM=
+Tg3ZjNiYjkiLCJob3JzZSI6Im9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmciLCJjYW=
+1lbCI6IjIxODlkN2FhMyJ9LCJpYXQiOjE1NzA3MjA1NTB9.hO30N7BI2zOvbQWvhZAULiBn0Q=
+IoyAUhh0RpCtO0zyc.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" sty=
+le=3D"height:1px !important;width:1px !important;border-width:0 !importan=
+t;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !impo=
+rtant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 =
+!important;padding-right:0 !important;padding-left:0 !important;">
+</body></html>
+
+----==_mimepart_5d9f4b26cfbaf_172abb230d01047182--
+
+
+--===============5970589914398510707==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5970589914398510707==--
+

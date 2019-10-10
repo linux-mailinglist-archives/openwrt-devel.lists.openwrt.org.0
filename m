@@ -2,73 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C46E7D221F
-	for <lists+openwrt-devel@lfdr.de>; Thu, 10 Oct 2019 09:51:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDD21D2230
+	for <lists+openwrt-devel@lfdr.de>; Thu, 10 Oct 2019 09:58:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
 	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lSoRFTUFMHu1E3IWsHaaesLgUxCR4uzVmb3mGcX3tUk=; b=VB9ZZpnyyzxfHv
-	DVEp/JBXlC+ibJ70TGXlwF3ruwSC1WpA2RDs/ZNyb0U5jyIP3qLFc5bwkF17BWwd4o0X5Dv48LK6i
-	zctrTdlRIbZfK6UjUDxTPr+Nd0p4a1Yaz4zTS56pIe+UfUxaNfC0aCFzyRbZTL5YnxK2bhtreWgsv
-	qp/xAKxZoBUNsYD/QAD405wb9y5cC0O/jNkNOz81hBXMW4RWyBHtAyuyXHS8jeyHXkNHf132lAtkK
-	YcejH5cCl2IdHKMwu58MOTrVqGJJ4tjkyMvkERZFverql29Hp1trP5F6UBJGI4kRy/+U8lKVIkPD1
-	gEgualWMXX82KC3I0ZpQ==;
+	List-Owner; bh=l+DCrPAWZBjVwlBDeFJKX/zexkR+ndsX5PGVWQZCruY=; b=cP8E2r6vtE5ZUm
+	nh0N1O4QY8kqDggBxG8HpYX9cU3D4yahcTNjGCDP0iRYsLjR+d76Idf1L1totxs+ua9pRQYPWh0hX
+	yM54rrw2mgBKIjaXgY6JRJ+SugOymkfX+/soRfz98p0wKTqYP/Sqoy/QaX0wMa9whPunuq3/UWEpd
+	f0wJFuUkH9vy2l4hbvoMn1l3jhlnxpOAXN2VzR0czudPHMchJvipRjkszx/Du7qQaSF6UJZouZ0lB
+	Xd9mSgBquf8vepT+fd4SsKmcFPEwG4syURwgu4UJOR3IeXfy5vJhWLM8ALG7Z7wouM67DXFDTd8ps
+	JB736vqnPBS7m0hcVkTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iITDw-00029o-HS; Thu, 10 Oct 2019 07:51:00 +0000
-Received: from smtpbg512.qq.com ([203.205.250.48] helo=smtpbg.qq.com)
+	id 1iITKv-0004N1-Be; Thu, 10 Oct 2019 07:58:13 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iITDo-00027q-7N
- for openwrt-devel@lists.openwrt.org; Thu, 10 Oct 2019 07:50:55 +0000
+ id 1iITKp-0004Mv-N4
+ for openwrt-devel@bombadil.infradead.org; Thu, 10 Oct 2019 07:58:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=h1JZeDSobpDjoFtr3T0LVT55z+6r5CzY9S8jXnk/Tco=; b=Alr49OKAJ46yP5AzlRr/yYBP9
+ qgV+nu1igOL2BieDkvNqYSv7DHt+aNUe6eDiP+dYK8cA9DZLziBhCycH1ljLwqVhhph9tVTxK57ma
+ KzjadiYLeEM9wNx6G1nlM7QU7KXNqTm2h0Lp2j7VNvfLxVIP8nmRneQM4a4430lKNVIP8kjpcz/os
+ lT1PRjuH04G5RXEMXHryFGtbkLT9o/z4jgzul+MyZ+gU5UTiBD1CZbSTN9ZzvVDNeOEznf+at9HPm
+ b/AGRFpGnCjtO7Y8Qp70kDWNNEk7SbE9gfvlpiihacYqoV0uMhIo/RqnIM0/UwfkNSrb+62zJkXr1
+ CL95fIyIA==;
+Received: from smtpbguseast2.qq.com ([54.204.34.130])
+ by merlin.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iITKk-0007hz-CR
+ for openwrt-devel@lists.openwrt.org; Thu, 10 Oct 2019 07:58:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
- t=1570693835; bh=M5vajjQbnNP3nqqHEMafuIQcCFcEopP8gUrUdyDMK7g=;
+ t=1570694152; bh=h1JZeDSobpDjoFtr3T0LVT55z+6r5CzY9S8jXnk/Tco=;
  h=From:To:Subject:Date:Message-Id;
- b=iC/NicBaMfmhU3mbF5WldL9MVQHZV8y8WsM2W/3p5QNYiKHSVRt84DHue58U3/V34
- FrNYBAdA+BKxr0ZRNpmJD4h9nC0SzlXIt8c57RCGIb7h43+KQfIzG7GKkuEAO5dgJL
- sDcLCpVkGI4IaYsgvK65uDZNH61tCG7ciq9eTa2I=
-X-QQ-mid: esmtp6t1570693833thn6ad0dy
+ b=EfquLeNTBnJxZ3eF+JvvdPu1ErMTjk2ea435guivjgKUbggd2wE/cfMTFXFbIYAkI
+ SXcnIF40qxgkwGlyy1ZG7LKydMZ565Z+fXYl7lYivK5KWzbdatX4fRKyPNWIgxNgEi
+ yFjsICRRMvt9ZSr6Xg0fhofaRxlDhAJ/dmcg6474=
+X-QQ-mid: esmtp5t1570694150txq0y7jbf
 Received: from localhost.localdomain (unknown [125.121.21.83])
  by esmtp4.qq.com (ESMTP) with 
- id ; Thu, 10 Oct 2019 15:50:32 +0800 (CST)
+ id ; Thu, 10 Oct 2019 15:55:49 +0800 (CST)
 X-QQ-SSF: B1000000000000C0TH100F00000000Z
-X-QQ-FEAT: 0LprORWXD59lNNWOK1rb8wkf+Q5aguSoE/maze05MJUcwctdjjpQZOcN98Ptp
- 4vWMazl/2yMvRUN6fBo8rxegbk30yuhqYIIGHzptHrZVIbhTlrVEca6Aks/rHIurhsUP2Gl
- 5q00k3KEz4FP4DwiAcHskwGsjRejNj26XAQP5LmMDON67el5pukBj0C9K16T/Oz+yoclByC
- M3s/Vnc3+2YOOLGPW99MVSuwY9+LuUfyD90PGtaxIuKEI7p5YASl15FiafkNU/lM6c99JkM
- EGUInBdtXlngukDEIgV6KhTkul58WU46Y68+7mP1hH3wGLeaZyTjgx8uc=
+X-QQ-FEAT: Tubeh+4qKFRNGh+k4mvuUQONTMU4kI5VeyCWYTvcjuYATdGDCybnpcnTldlEh
+ G21UcIUSDfTULUQtl5OH3bJ44Nj0b9KKgHv18NeonezXX6dAgR3CUUTR3MdYiDfMKqLdft0
+ PfSgj3d6gWQaSe/nUoHzRMPbWEg17cxzKbSooZreFjFZnknjC3udiMhcCk/zjwIGRLcT1En
+ POhlYuLbFYw7eZ4O7e0ymb3CAE+J8dz8PSJ/vtlloBRSxU4Nl+0aUtMPZ8eB6ta4l6dybGt
+ rsxWNMkE7qZltbdxsqHCAwLEs1zTrkRCAmWFygVm0aZp7zAsymN7CcSQ8=
 X-QQ-GoodBg: 0
 From: Robinson Wu <wurobinson@qq.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 10 Oct 2019 15:49:55 +0800
-Message-Id: <1570693795-21593-1-git-send-email-wurobinson@qq.com>
+Date: Thu, 10 Oct 2019 15:55:47 +0800
+Message-Id: <1570694147-22320-1-git-send-email-wurobinson@qq.com>
 X-Mailer: git-send-email 2.7.4
 X-QQ-SENDSIZE: 520
-Feedback-ID: esmtp:qq.com:bgweb:bgweb4
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_005052_719722_133EA737 
-X-CRM114-Status: GOOD (  11.12  )
+Feedback-ID: esmtp:qq.com:bgforeign:bgforeign2
+X-QQ-Bgrelay: 1
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [203.205.250.48 listed in list.dnswl.org]
+ no trust [54.204.34.130 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wurobinson[at]qq.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v2] ramips: add support for JS76x8 series
+Subject: [OpenWrt-Devel] [PATCH v3] ramips: add support for JS76x8 series
  DEV boards
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -89,7 +104,7 @@ Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This commit adds support for the ZhuoTK JS76x8 series development boards.
-These devices has the following specifications:
+These devices have the following specifications:
 
 - SOC: MT7628AN/NN, MT7688AN, MT7628DAN
 - RAM of MT7628AN/NN and MT7688AN: 64/128/256 MB (DDR2)
@@ -550,6 +565,8 @@ index 9ab16db..62f3eee 100644
    IMAGE_SIZE := 14912k
 -- 
 2.7.4
+
+
 
 
 _______________________________________________

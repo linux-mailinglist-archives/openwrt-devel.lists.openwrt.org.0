@@ -2,58 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DB74D39A7
-	for <lists+openwrt-devel@lfdr.de>; Fri, 11 Oct 2019 08:51:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14E14D3A7E
+	for <lists+openwrt-devel@lfdr.de>; Fri, 11 Oct 2019 10:01:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uIj5W2fYHbj4CbbKWb/5ho8HVUJNnz0iwUxH8vuP47c=; b=e4n/aRpwNiBh4+eB6w+BGHW0x
-	cBONw/uFa2WJ5xhMpNMRoGFjy5Ksd+5ODnS7uWcbg0iE+Sf6lEkN7uS2MDZ66Iz9KdTVOM0o+jsng
-	21brnJsFgv9WRd8l2O8DrFWLdkYOJ24MfANGC6kyx5yNhQn55kgZO6AceNXQJOAS+Lfpn4wT5B80U
-	Mj76EMJemf7IYszFtVOAdP/h/fQ9pb/Zw0Wllt3UlNIc3hAe7/zmc57J1KDkZ7m5YnVnbTjTU4PVR
-	kc4DYVIcpWbVToZ8vZwkz0fJB8bO4T3gArQEQXgUP4JI4m05DEmeawG88mRpsNP8genkGNL8Uf00i
-	li8lizO4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zsdTsum6ISqsYuXOBV9gqHwypNfx1uNuYSEPDWZFJ/c=; b=dH3appNYsxAww/
+	vBFGXzDBVLoh5zUnUuqmLffKeUwriXIYf/epBhCPIuX2jLTC05PkopWyaqPYS/GnxRgmoPGDJMB1J
+	vu0DTZ1yaK8QhJlR9izZ6dv58UXzg3+e3I9IvbXuAHP8YhHyD6kGrs9K3JTRh2WeU7xkVNhhQGVti
+	+hFSmp4qm5/7sJIJWAZLeTQ5S51HIeorBezdIAY3f8GMEDLLJYJxZSBUomGrjkcx+VypqksE+LZnb
+	wJDreBW9jGO4+ls2bSLTsLjylZPJ/0H/V7oS2CWab+WTOwRXJdOhU1/tJnHc86p2kuuxXxkRWRQDI
+	uAcl5I507clxsJjMqgkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIolq-0002lC-1c; Fri, 11 Oct 2019 06:51:26 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1iIpro-0004Sm-UP; Fri, 11 Oct 2019 08:01:40 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIolf-0002kd-JD
- for openwrt-devel@lists.openwrt.org; Fri, 11 Oct 2019 06:51:17 +0000
-Received: from p5dcfbc71.dip0.t-ipconnect.de ([93.207.188.113]
- helo=[192.168.45.104])
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <john@phrozen.org>)
- id 1iIolb-0005sX-Kw; Fri, 11 Oct 2019 08:51:11 +0200
-To: =?UTF-8?Q?Alin_N=c4=83stac?= <alin.nastac@gmail.com>
-References: <1570624897-16993-1-git-send-email-alin.nastac@gmail.com>
- <f67728d2-88d6-433d-74f4-671ca22599d5@phrozen.org>
- <CAF1oqRD6fe0Aif=1AFhTO-ccW-sVFPcgCdou2ksN9vEKFduqCg@mail.gmail.com>
- <00a2f245-2a85-e597-e6a8-74269d0f31ae@phrozen.org>
- <CAF1oqRBz8sNObj42A59AC24HwgFGS0RGiyEQdspnk=Kq+CGHtQ@mail.gmail.com>
- <CAF1oqRBGqB6EbDx4P0ravefuYG1wpefGN4wGw296JcGCeXUAAw@mail.gmail.com>
-From: John Crispin <john@phrozen.org>
-Message-ID: <963d59e8-f6e8-ddc0-6a17-5f849ff3d50f@phrozen.org>
-Date: Fri, 11 Oct 2019 08:51:10 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <CAF1oqRBGqB6EbDx4P0ravefuYG1wpefGN4wGw296JcGCeXUAAw@mail.gmail.com>
-Content-Language: en-US
+ id 1iIpre-0004S8-Rf
+ for openwrt-devel@lists.openwrt.org; Fri, 11 Oct 2019 08:01:32 +0000
+Received: by mail-wm1-x344.google.com with SMTP id y135so8826350wmc.1
+ for <openwrt-devel@lists.openwrt.org>; Fri, 11 Oct 2019 01:01:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=tR6xxu0aQN8Ve5DyM/qu+T0Cz0JLBENQYd5uMa5vK6Y=;
+ b=C4vtS/gLKePTVwPeq22Ra8841COISm2RjqWdlYxknhIUeOk/iNx9aEqNPabPfpnVsN
+ Phkp8HHDhhE5/UmH6lNOTT4gZC7lzcZttuEDqWbGCDWNX7QpsyJ5YaR4NYEuP2J7aPvS
+ w2xyees6VoWecSzpmA+WC9aOx/ZFk5XFrnd2sK/rN0E2AmehtQxXg4ZhIV+fUQB6UV89
+ ZvZ123DgJDi0hpSwuNNJ5RIr9rrvXjw1IvRE2uUtiKsOF8xLXSj3s6m+GzsvDwAa2dZe
+ krShGAMwK7lpOI1UNaVfsp+IMBBq9RAJJCNmKTgsF60F+fYbHrye9kdK7hF6JnvbfHN0
+ l60w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=tR6xxu0aQN8Ve5DyM/qu+T0Cz0JLBENQYd5uMa5vK6Y=;
+ b=LaUU5NQKTMy03jQSSY5yo8ePexlUNiJ6IvazTFxw0Ky5jTklmJeA683QTWeiTGTJdG
+ zf2Y5sEal5LN7anCyxe4aU9DB2KHT7iXjeAXMyV6Rt04ko1FXtOcu1Af3gi2OJWNVVnY
+ Me1JLZxA7DvgHfKO0xIrevM9zmdBKS4KQ66jCLdTsSk2pynvHQVU/Ogmm4gosB1bFV6/
+ llE0ydLZo4nbHh0N00MdMgXR1tSyzg+d0fdZJtos8N50gnCEKoCy4UEe4wMSTxT3MZdP
+ 1y2UvXYV7ycFp1qgfmpAGRCob53XjnB25Z/UWSq9Vm+GB+VVyE6b7wjxjPoDeErvNJGm
+ cP7Q==
+X-Gm-Message-State: APjAAAU5mz1lUn54iJUh1gx/OwhO97G0XWjf0Fi96W9GO4GCdCsz5A5r
+ Es42ApWsax2bgYbX9/WNV40=
+X-Google-Smtp-Source: APXvYqzIB1BDGL+JcAeJ7jK3r1S9oH3b9JiKDqfyCvemVuCDvwinM1EJjjWWsd6RxPKJCS1o4vDP8g==
+X-Received: by 2002:a1c:48d6:: with SMTP id v205mr2003082wma.35.1570780887713; 
+ Fri, 11 Oct 2019 01:01:27 -0700 (PDT)
+Received: from cplx1037.edegem.eu.thmulti.com
+ ([2001:4158:f013:0:2a10:7bff:fec5:6f08])
+ by smtp.gmail.com with ESMTPSA id q22sm7359295wmj.5.2019.10.11.01.01.25
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 11 Oct 2019 01:01:25 -0700 (PDT)
+From: Alin Nastac <alin.nastac@gmail.com>
+X-Google-Original-From: Alin Nastac <alin.nastac@technicolor.com>
+To: John Crispin <john@phrozen.org>,
+	openwrt-devel@lists.openwrt.org
+Date: Fri, 11 Oct 2019 10:01:20 +0200
+Message-Id: <1570780880-11992-1-git-send-email-alin.nastac@technicolor.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191010_235115_790809_5FE5B03B 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191011_010130_924342_CBB35D44 
+X-CRM114-Status: GOOD (  12.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alin.nastac[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] fstools: add a hook before mounting the
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH v2] fstools: add a hook before mounting the
  overlay
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -66,49 +96,99 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDEwLzEwLzIwMTkgMTM6MDIsIEFsaW4gTsSDc3RhYyB3cm90ZToKPiBPbiBXZWQsIE9jdCA5
-LCAyMDE5IGF0IDQ6NTIgUE0gQWxpbiBOxINzdGFjIDxhbGluLm5hc3RhY0BnbWFpbC5jb20+IHdy
-b3RlOgo+PiBPbiBXZWQsIE9jdCA5LCAyMDE5IGF0IDQ6NDEgUE0gSm9obiBDcmlzcGluIDxqb2hu
-QHBocm96ZW4ub3JnPiB3cm90ZToKPj4+Cj4+PiBPbiAwOS8xMC8yMDE5IDE2OjM0LCBBbGluIE7E
-g3N0YWMgd3JvdGU6Cj4+Pj4gT24gV2VkLCBPY3QgOSwgMjAxOSBhdCAyOjU5IFBNIEpvaG4gQ3Jp
-c3BpbiA8am9obkBwaHJvemVuLm9yZz4gd3JvdGU6Cj4+Pj4+IE9uIDA5LzEwLzIwMTkgMTQ6NDEs
-IEFsaW4gTmFzdGFjIHdyb3RlOgo+Pj4+Pj4gU2NyaXB0cyBsb2NhdGVkIGluIHRoZSBkaXJlY3Rv
-cnkgL2xpYi9tb3VudF9yb290IHdpbGwgYmUgZXhlY3V0ZWQKPj4+Pj4+IGJlZm9yZSBtb3VudGlu
-ZyB0aGUgb3ZlcmxheS4KPj4+Pj4+Cj4+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBBbGluIE5hc3RhYyA8
-YWxpbi5uYXN0YWNAZ21haWwuY29tPgo+Pj4+PiBIaSwKPj4+Pj4KPj4+Pj4gc2hvdWxkIGl0IG5v
-dCBiZSAvZXRjL21vdW50X3Jvb3QuZC8gPyB3aGF0IGRvIHlvdSBuZWVkIHRoaXMgZm9yIGlmIEkg
-bWF5Cj4+Pj4+IGFzayA/Cj4+Pj4+Cj4+Pj4+IGZ1cnRoZXIgY29tbWVudHMgaW5saW5lIC4uLgo+
-Pj4+Pgo+Pj4+PiAgICAgICAgSm9obgo+Pj4+Pgo+Pj4+IEhpIEpvaG4sCj4+Pj4KPj4+PiBNeSB0
-YXJnZXQgaXMgZHVhbCBiYW5rIGFuZCBJIG5lZWQgdG8gY29weSBwYXJ0cyBvZiB0aGUgY3VzdG9t
-aXphdGlvbgo+Pj4+IGZyb20gdGhlIG9sZCBiYW5rIGFmdGVyIHVwZ3JhZGUuCj4+PiBwbGVhc2Ug
-ZG9udCByZW1vdmUgdGhlIENDIHRvdCBoZSBtYWlsaW5nIGxpc3QKPj4gU29ycnksIEkgcHVzaGVk
-IHRoZSB3cm9uZyByZXBseSBidXR0b24uCj4+Cj4+PiBJIGRvbnQgdW5kZXJzdGFtZCB0aGlzIHBh
-cnQsIHNob3VsZCBzeXN1cGdyYWRlIG5vdCBiZSBhYmxlIHRvIGhhbmRsZQo+Pj4gdGhpcyBmb3Ig
-eW91ID8KPj4gV2VsbCwgaXQgaXMgbm90IHRoYXQgc3RyYWlnaHRmb3J3YXJkIGFzIHNhdmluZyAm
-IHJlc3RvcmluZyB0aGUgb2xkCj4+IGNvbmZpZ3VyYXRpb24gZmlsZXMuIE9ubHkgcGFydHMgb2Yg
-dGhlIFVDSSBjb25maWd1cmF0aW9uIG11c3QgYmUKPj4gbWlncmF0ZWQuIEZvciBpbnN0YW5jZSwg
-VUNJIG9wdGlvbiBhLmIuYyBtdXN0IGJlIGNvcGllZCBmcm9tIHRoZSBvbGQKPj4gaW1hZ2UsIGJ1
-dCBhLmIuZCBtdXN0IGJlIHJlc2V0IHRvIHRoZSB2YWx1ZSBmb3VuZCBpbiB0aGUgbmV3IGltYWdl
-Lgo+Pgo+IElzIHRoaXMgdXNlIGNhc2UgYSBnb29kIGVub3VnaCByZWFzb24gdG8gaW1wbGVtZW50
-IHRoaXMgZmVhdHVyZT8KPgo+Pj4+IFRvIHJlc3VtZSB5b3VyIG9ic2VydmF0aW9uczoKPj4+PiAg
-ICAtIHNjcmlwdHMgbXVzdCBiZSByZWxvY2F0ZWQgdG8gL2V0Yy9tb3VudF9yb290LmQvCj4+Pj4g
-ICAgLSB1c2UgcnVucXVldWUgQVBJCj4+Pj4gICAgLSBpbXBsZW1lbnQgdGhlIG5lY2Vzc2FyeSBm
-dW5jdGlvbnMgaW4gb3ZlcmxheS5jCj4+Pj4gV291bGQgdGhhdCBiZSBPSz8gSWYgc28sIEkgd2ls
-bCBiZSBiYWNrIHdpdGggYSAybmQgdmVyc2lvbiBvZiB0aGlzIHBhdGNoLgo+Pj4gSSB3b3VsZCBm
-aXJzdCBsaWtlIHRvIHVuZGVyc3RhbmQgdGhlIHVzZS1jYXNlCj4+Pgo+Pj4gICAgICAgSm9obgo+
-IEkndmUgdHJpZWQgdG8gdXNlIHJ1bnF1ZXVlIEFQSS4uLiBUaGlzIEFQSSBpcyBkZXNpZ25lZCB0
-byBiZSB1c2VkIGluCj4gY29uanVuY3Rpb24gd2l0aCB1bG9vcCwgd2hpY2ggaXMgZGVzaWduZWQg
-dG8gYmUgdXNlZCB3aXRoaW4gZGFlbW9ucy4KPiBtb3VudF9yb290IGlzIG5vdCBhIGRhZW1vbiBh
-bmQgaXQgZG9lcyBub3QgaGF2ZSBhIG1haW4gbG9vcCwgc28gSU1ITwo+IGl0IGRvZXMgbm90IGZp
-dCB3ZWxsIGluIHRoaXMgcGxhY2UuCgpPZiBjb3Vyc2UgeW91IGFyZSByaWdodCBhYm91dCBydW5x
-dWV1ZSwgSSBkb250IHF1aXRlIGZvbGxvdyB0aGUgYWN0dWFsIAp1c2UgY2FzZSBidXQgdGhlIGZl
-YXR1cmUgd29udCBoYXJtIGkgZ3Vlc3MKCiDCoMKgwqAgSm9obgoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
-Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+From: Alin Nastac <alin.nastac@gmail.com>
+
+Scripts located in the directory /etc/mount_root.d will be executed
+before mounting the overlay. It can be used to implement
+configuration merges between old & new setup after doing sysupgrade.
+
+Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
+---
+ libfstools/overlay.c | 46 +++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 45 insertions(+), 1 deletion(-)
+
+diff --git a/libfstools/overlay.c b/libfstools/overlay.c
+index 14214a3..46c87c9 100644
+--- a/libfstools/overlay.c
++++ b/libfstools/overlay.c
+@@ -14,6 +14,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <sys/mount.h>
++#include <sys/wait.h>
+ 
+ #include <asm/byteorder.h>
+ 
+@@ -400,6 +401,49 @@ int fs_state_set(const char *dir, enum fs_state state)
+ 	return symlink(valstr, path);
+ }
+ 
++static inline int hook_execute(const char *path)
++{
++	DIR *dir;
++	struct dirent *dent;
++	char script[256];
++	pid_t pid;
++
++	ULOG_INFO("executing scripts in %s\n", path);
++
++	if ((dir = opendir(path)) == NULL) {
++		ULOG_INFO("cannot open %s (%s)\n", path, strerror(errno));
++		return 0;
++	}
++
++	while ((dent = readdir(dir)) != NULL) {
++		struct stat st;
++		int wstatus;
++
++		snprintf(script, sizeof(script), "%s/%s", path, dent->d_name);
++		if (stat(script, &st))
++			continue;
++		if (!S_ISREG(st.st_mode))
++			continue;
++		ULOG_INFO("%s\n", script);
++		pid = fork();
++		if (!pid) {
++			char *cmd[] = {script, NULL};
++
++			execvp(cmd[0], cmd);
++			ULOG_ERR("Failed to execute %s\n", script);
++			exit(-1);
++		}
++		if (pid <= 0) {
++			ULOG_INFO("Failed to fork() for %s\n", script);
++			continue;
++		}
++		waitpid(pid, &wstatus, 0);
++	}
++
++	closedir(dir);
++
++	return 0;
++}
+ 
+ int mount_overlay(struct volume *v)
+ {
+@@ -439,7 +483,7 @@ int mount_overlay(struct volume *v)
+ 
+ 	fs_name = overlay_fs_name(volume_identify(v));
+ 	ULOG_INFO("switching to %s overlay\n", fs_name);
+-	if (mount_move("/tmp", "", "/overlay") || fopivot("/overlay", "/rom")) {
++	if (mount_move("/tmp", "", "/overlay") || hook_execute("/etc/mount_root.d") || fopivot("/overlay", "/rom")) {
+ 		ULOG_ERR("switching to %s failed - fallback to ramoverlay\n", fs_name);
+ 		return ramoverlay();
+ 	}
+-- 
+2.7.4
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

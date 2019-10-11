@@ -2,61 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC423D3FD0
-	for <lists+openwrt-devel@lfdr.de>; Fri, 11 Oct 2019 14:43:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3897D3FF3
+	for <lists+openwrt-devel@lfdr.de>; Fri, 11 Oct 2019 14:52:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-ID:References:In-Reply-To:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7+T7qsWEj40xOGK5y0QJhUNr++U2Xlv6q6WmFrRU7Rc=; b=QdfszcAa0U9NuTb6oj9ArchjL
-	XiNovq1Ip5VUQ0cNLRV74O7+qMaycpbariDsaix3iRTxejFHkKa5C+ADO04v6CbP9g5Op2KlTXR5T
-	At3UvHSAUQzt94shMN6+vO2Vm7u515K5roXR1ckc+xqpch98leoNS/Z6Bp5AROzxo8n8V7vSl0ZIh
-	i11NCM7TpM4tnNMvVI1l28gnLiDHjz1x4uKYnDfXw/BQpl5yexKEe7xFTfBycSdt1oOAnC5FQgQRS
-	WekyqEQMNORPRuGPbZIHSHmlmCMmYBL/RUSN54YkRCbQdQmZpQZK+f74emp5v7tNTaA045Q+N3r9b
-	YEvrwMThg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=76DucHMVFe/Jd2d2+WJJEO/UA6lrFxp6AKbR0BF+sDo=; b=aS8v+VYTGJKT3Q
+	yVOavpY4ZR/sFpYeiIXMKw0nlxPAhqEiWhs8YqRFnDfDmTVNe3wZuu/S7XIzBUeD1+C9+rJlQbYkN
+	OQ1r836DQQXYZK8JzY+9hlFxB4lydA42kpgiE9/Nk3Dix3p2jQOaXj+trmsj5YE+Q/fEnG9gVnKb2
+	1mCEEvgBiSRTuZfWGpMXDIN/MYuS/1w/sh2tGjgTpVtPFgNWnq6FHFfRnXoKObvuqmEsgJdH0p2XT
+	zsGZx2nuWfm0XbxtXXl/qdSFaigLZeUbBaYESwj8GelTxfeuglWtY7tJw4tWPi/puzLjESl8ZOQuU
+	jjsoZoFeoUB8UU0K/bsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIuG9-0000VX-EB; Fri, 11 Oct 2019 12:43:05 +0000
-Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
- helo=mail.dev.tdt.de)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIuG3-0000Ug-4L
- for openwrt-devel@lists.openwrt.org; Fri, 11 Oct 2019 12:43:00 +0000
-Received: from mail.dev.tdt.de (localhost [IPv6:::1])
- by mail.dev.tdt.de (Postfix) with ESMTP id D9E3F204BB;
- Fri, 11 Oct 2019 12:42:49 +0000 (UTC)
+	id 1iIuPE-00024D-3Q; Fri, 11 Oct 2019 12:52:28 +0000
+Received: from mx3.wp.pl ([212.77.101.9])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iIuOk-0001eZ-1I
+ for openwrt-devel@lists.openwrt.org; Fri, 11 Oct 2019 12:52:03 +0000
+Received: (wp-smtpd smtp.wp.pl 15424 invoked from network);
+ 11 Oct 2019 14:51:53 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1570798313; bh=Lw+hso29qbetEsmOes2TAWnsFyZiol6MfM2cjeEWvXw=;
+ h=From:To:Cc:Subject;
+ b=WzypxY+tgyIsnHjmfW4EGNvaGVULB7B3bSQDdugnIMRON3PbP/agmEHTdCGw0dmiQ
+ z1qPVqpPO4/p2FLfVK4c3WTkgl05mA5IM02qzFdHVi1sGTg7HMUNZWr8ioMOC/OvwT
+ NP1kJYTYNRbyLVwE6b44kqaQ32FtEW69j8q09HIo=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <mail@adrianschmutzler.de>; 11 Oct 2019 14:51:53 +0200
+Date: Fri, 11 Oct 2019 14:51:50 +0200
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+Message-ID: <20191011145141.7a5848e6@kosmio.komorska>
+In-Reply-To: <001e01d5801d$73318610$59949230$@adrianschmutzler.de>
+References: <20191011111446.77a86e7b@kosmio.komorska>
+ <20191011111709.344d3667@kosmio.komorska>
+ <001e01d5801d$73318610$59949230$@adrianschmutzler.de>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-Date: Fri, 11 Oct 2019 14:42:49 +0200
-From: Florian Eckert <fe@dev.tdt.de>
-To: Sebastian Moeller <moeller0@gmx.de>
-In-Reply-To: <B5610083-3E74-48CB-930E-F4074FAB6475@gmx.de>
-References: <fca7f10e-0792-91f9-e37e-db6241a861be@welho.com>
- <87v9svtvrl.fsf@miraculix.mork.no>
- <fc77391e-68d8-1e3b-b86c-b01750cd183f@mein.io>
- <B5610083-3E74-48CB-930E-F4074FAB6475@gmx.de>
-Message-ID: <9acb357ce08a81639859c3f449aaa8f4@dev.tdt.de>
-X-Sender: fe@dev.tdt.de
-User-Agent: Roundcube Webmail/1.1.5
-X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
- autolearn_force=no version=3.4.2
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
+X-WP-MailID: fd1ac493a1ef6489808b8ec954621795
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 000000A [wTMk]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_054259_330162_855D7089 
-X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-CacheID: sfid-20191011_055158_661276_73441580 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.9 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.77.101.9 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 release schedule ?
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (michal.cieslakiewicz[at]wp.pl)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] ath79: add support for Netgear
+ WNDR4300
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,64 +86,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Jo-Philipp Wich <jo@mein.io>
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-I'm not sure if my opinion is helpful, but that's how I see it.
+On Fri, 11 Oct 2019 12:20:04 +0200
+"Adrian Schmutzler" <mail@adrianschmutzler.de> wrote:
 
->>> Or: Start discussing the release blockers here and now.  Thanks.
->> 
->> 1) Blocker: LuCI master needs to be backported to 19.07
->>   Time estimate: 2-3 weeks
+Hello Adrian,
 
-I think it's good that LuCI has now outsourced more work to the client.
-Thanks to Jo-Philipp to do this work (great job) but I think it needs 
-more testing time.
-So it should go into next release maybe 20.03?
+> Hi,
+> 
+> just some MAC related comments below:
+> 
+> > @@ -403,6 +404,10 @@ ath79_setup_macs()
+> >  	netgear,wndr3800)
+> >  		lan_mac=$(macaddr_setbit_la "$(mtd_get_mac_binary
+> > art 0x0)") ;;
+> > +	netgear,wndr4300)
+> > +		lan_mac=$(mtd_get_mac_binary caldata 0x0)
+> > +		wan_mac=$(mtd_get_mac_binary caldata 0x6)
+> > +		;;  
+> 
+> lan_mac should be removed here. You already set mtd-mac-address in
+> dts.
+> 
+Thanks, I'll fix it.
 
->> 2) Blocker: All relevant sub-components for WPA-3 + GUI support, such
->> as
->>   hostapd, iwinfo etc. need to be backported to 19.07
->>   Time estimate: 2 weeks
+> > +&wmac {
+> > +	status = "okay";
+> > +
+> > +	mtd-mac-address = <&art 0x0>;
+> > +	qca,no-eeprom;
+> > +};
+> > +
+> > +&pcie {
+> > +	status = "okay";
+> > +
+> > +	ath9k: wifi@0,0 {
+> > +		compatible = "pci168c,0033";
+> > +		reg = <0x0000 0 0 0 0>;
+> > +		mtd-mac-address = <&art 0xc>;  
+> 
+> This order of addresses looks a litte uncommon. Have you verified it
+> against stock firmware?
+> 
+> lan art 0x0
+> wan art 0x6
+> 2.4 GHz art 0x0
+> 5 GHz art 0xc
+> 
+I can confirm this layout is identical to both stock firmware and
+ar71xx version.
 
-should go into next release maybe 20.03 because this is neede by LuCI
+> Have you checked that there are no usable addresses in 0x1002 and
+> 0x5006?
+> 
+Yes, there are wireless addresses inside calibration data at offsets you
+provided, and they are both equal to LAN MAC.
 
->> 3) Blocker: Some weaknesses in libustream-ssl client certificate
->>   handling need to  be addressed, which can only be solved by an API
->>   redesign. Band-aid fixes available but not merged, nobody worked
->>   on API redesign yet
->>   Time estimate: 1 week
-
-should be done before 19.07 release
-
-
->> 4) Blocker: Need to assert the state of the Dragonblood WPA3
->>   vulnerabilities in 19.07's hostapd
->>   Time estimate: a few days I guess
-
-should go into next release maybe 20.03 maks only sense in master.
-
-> Question: How long would it take to stabilize/test a fresh fork from
-> today's Master branch instead? I assume none of these issues apply to
-> master or need to be solved in master as well?
-
-There are always changes in the master that may need to be backported to 
-a stable branch.
-But since the master is constantly evolving a stable will never be 
-released if we keep going like this.
-I think the release will delayed even more.
-
-It is clear to me that there is more effort in the LuCI to fix the bugs, 
-that there were big change in the master -> switching to Javascript.
-There is always advantage and disadvantage.
-How to do it may be wrong. This is life.
-
-Kind regards
-
-Florian
+Best regards
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

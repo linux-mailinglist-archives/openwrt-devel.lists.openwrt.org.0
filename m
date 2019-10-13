@@ -2,52 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1C5ED5894
-	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 00:15:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EC7AD5898
+	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 00:22:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lIDC9XDw+qhjsLA66nDRCiBigufBzmdWD6uPOjxlXqI=; b=cADg1AE2ck3Zj6
-	+8KhgDF2+qnw2E+0+gEkedvtlsmG+p6q5arEBtuWWYUUfJiaUw/D36gSPsG30kbyiXykjGs2G0jLa
-	qAm4b45LaPR/+ZLRGwX1OHsn+C6KCv1y5V2Da8GnxZmMPTDAV8crCGQMd6d4wusxFJH3yOlDJIlG3
-	zOIlgTmzQZiPU43wvr4ofR/Bnsvp5I8R4YlrZG3CZlOzvcdMh1tZwEkAbcPkvSkrL5D6IIT1d+siI
-	APlDiUUxvdgVc9w5ZVNrUmsa9WQY61Hn6RjBOsks1uVJ03y8pvftXVitsUvda/+dMMEgNK4vvl4Uo
-	9CsxizQpxAr9XucY/7Cw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mWmwHfeeTGnWKmRtsijMY39GmaiHVJlM1XPuAzeo5T0=; b=D4uAFtZJiLLjwH
+	RFYki2ItRAGbClkJzNCJZuzHfg8P0JwKGs3lAstl6KgeVkGfduvU450KeNlqLdFNkgjmfdIsK94Px
+	hADlC4J0+Zr4/xhlq/5NjbZvbagPjjBCCcSiO8hD+RZOsWKcAWWKkplMB4oA3L/lt70ZbKkSo3agx
+	kSBlnvxINVQwgOWxRksi6S7hBqEfh2reJn1xyxNzMdDSRtZUTH8KnScvAljAm2IUDrwRcvHTvdYQo
+	GTHGT7ITbMD28Zu0+vJnb+yzJbvBjGcL+Ys2IaQJEcmpZfCwg4AiuvDrknRzkF2t/aByuN8mhXoJb
+	wbVgmjV4ydOE/Gug7NEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJm9F-0007ks-7l; Sun, 13 Oct 2019 22:15:33 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iJm7o-0006Tn-B4
- for openwrt-devel@lists.openwrt.org; Sun, 13 Oct 2019 22:14:06 +0000
-Received: from dbauer-t470.home.david-bauer.net
- (p200300E53F3D8800FA467A9013EC5C89.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f3d:8800:fa46:7a90:13ec:5c89])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id CFFEB22BA2
- for <openwrt-devel@lists.openwrt.org>; Mon, 14 Oct 2019 00:14:00 +0200 (CEST)
-From: David Bauer <mail@david-bauer.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 14 Oct 2019 00:13:53 +0200
-Message-Id: <20191013221353.186756-1-mail@david-bauer.net>
-X-Mailer: git-send-email 2.23.0
+	id 1iJmFm-0002Wc-06; Sun, 13 Oct 2019 22:22:18 +0000
+Received: from mx3.wp.pl ([212.77.101.10])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iJmFd-0002Vu-Mv
+ for openwrt-devel@lists.openwrt.org; Sun, 13 Oct 2019 22:22:11 +0000
+Received: (wp-smtpd smtp.wp.pl 14657 invoked from network);
+ 14 Oct 2019 00:22:02 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1571005322; bh=46oa6gj7Qg5aZrk80v/V2UXBXoqSWoNpKbBOCnOSKc4=;
+ h=From:To:Cc:Subject;
+ b=KxHXD5amw3fzQRV4HW1XJdWH/BSbevQvoMSGwLJt3GkKmBK/BWqrUvjNiRhYaQxIf
+ NnM4CER1RLajrmMMY60YXe9Zq1vJ610Ri3gs4MmyglkaRIdK0thg1szpyeBuCGgyBk
+ EOC8IB3YrMn0V3OQ9ejIw+LRZITnLfhEWeyQrpGc=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <mail@david-bauer.net>; 14 Oct 2019 00:22:02 +0200
+Date: Mon, 14 Oct 2019 00:22:00 +0200
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: David Bauer <mail@david-bauer.net>
+Message-ID: <20191014002200.1265b24b@kosmio.komorska>
+In-Reply-To: <501cff5b-efac-8bcf-b895-ce6d8c9b219c@david-bauer.net>
+References: <20191011105011.05efbcda@kosmio.komorska>
+ <501cff5b-efac-8bcf-b895-ce6d8c9b219c@david-bauer.net>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
+X-WP-MailID: d4fec53c938e839db460bdf6325e113e
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 000000A [saN0]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191013_151404_549449_548B9568 
-X-CRM114-Status: GOOD (  10.40  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191013_152210_261451_4DD11727 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.10 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (michal.cieslakiewicz[at]wp.pl)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] mpc85xx: correct TP-LINK TL-WDR4900 MAC
- addresses
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add AR934x NAND Flash Controller
+ driver
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,73 +83,60 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit fixes TP-Link TL-WDR4900 v1 MAC address assignment.
-Previously, the MAC addrss was read for the ethernet from the "config"
-partition. However, the content of this partition is dependent on the
-firmware which was previously installed on the device.
+On Sun, 13 Oct 2019 21:12:28 +0200
+David Bauer <mail@david-bauer.net> wrote:
 
-Switch the MAC address source to the U-Boot partition, where the MAC
-address is always present at a fixed partition. The partition was
-previously already used for the WiFi MAC-addresses.
+> Hello Michal,
+> 
+> I've tested your patch on my Aerohive HiveAP-121 (patch to follow).
+> While it worked most of the times, in around 1 out of 5 boot
+> attempts, the driver will fail to probe:
+> 
+> [    3.885899] nand: device found, Manufacturer ID: 0xad, Chip ID:
+> 0xf1 [    3.961915] nand: Hynix NAND 128MiB 3,3V 8-bit
+> [    4.015027] nand: 128 MiB, SLC, erase size: 128 KiB, page size:
+> 2048, OOB size: 64 [    4.105743] Scanning device for bad blocks
+> [    4.654817] random: fast init done
+> [    5.604831] ar934x-nand 1b000200.nand: read operation failed on
+> page 1664 [    5.685985] nand_bbt: can't scan flash and build the
+> RAM-based BBT [    5.759938] ar934x-nand 1b000200.nand: nand_scan
+> failed, err:-145 [    5.832877] ar934x-nand: probe of 1b000200.nand
+> failed with error -145
+> 
+> I've noticed the reset sequence in ar934x_nfc_hw_init is missing
+> compared to the ar71xx implementation. Adding this back in, the NAND
+> probes flawlessly (sample size 10).
+> 
+> See my staging tree for my alteration. If you are good with it, i
+> would squash it on your commit. [0] [1]
+> 
+> Best wishes
+> David
+> 
+> [0]
+> https://git.openwrt.org/?p=openwrt/staging/blocktrron.git;a=shortlog;h=refs/heads/ath79-nfc
+> [1]
+> https://git.openwrt.org/?p=openwrt/staging/blocktrron.git;a=commitdiff;h=3621acfec49a40fe115598367d2db92855b98d4f
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
----
- target/linux/mpc85xx/base-files/etc/board.d/02_network      | 2 +-
- .../mpc85xx/files/arch/powerpc/boot/dts/tl-wdr4900-v1.dts   | 6 +++---
- 2 files changed, 4 insertions(+), 4 deletions(-)
+Hello David,
 
-diff --git a/target/linux/mpc85xx/base-files/etc/board.d/02_network b/target/linux/mpc85xx/base-files/etc/board.d/02_network
-index f907fd2edb..aa33a4af96 100755
---- a/target/linux/mpc85xx/base-files/etc/board.d/02_network
-+++ b/target/linux/mpc85xx/base-files/etc/board.d/02_network
-@@ -21,7 +21,7 @@ ocedo,panda)
- tplink,tl-wdr4900-v1)
- 	ucidef_add_switch "switch0" \
- 		"0@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "5:lan:4" "1:wan"
--	ucidef_set_interface_macaddr "wan" "$(mtd_get_mac_binary config 0x14c)"
-+	ucidef_set_interface_macaddr "wan" "$(macaddr_add $(mtd_get_mac_binary u-boot 0x4fc00) 1)"
- 	;;
- *)
- 	ucidef_set_interfaces_lan_wan "eth0" "eth1"
-diff --git a/target/linux/mpc85xx/files/arch/powerpc/boot/dts/tl-wdr4900-v1.dts b/target/linux/mpc85xx/files/arch/powerpc/boot/dts/tl-wdr4900-v1.dts
-index 0e0d74c0d8..0998a4933a 100644
---- a/target/linux/mpc85xx/files/arch/powerpc/boot/dts/tl-wdr4900-v1.dts
-+++ b/target/linux/mpc85xx/files/arch/powerpc/boot/dts/tl-wdr4900-v1.dts
-@@ -49,7 +49,7 @@
- 					#address-cells = <1>;
- 					#size-cells = <1>;
- 
--					partition@0 {
-+					uboot: partition@0 {
- 						reg = <0x0 0x0050000>;
- 						label = "u-boot";
- 						read-only;
-@@ -67,7 +67,7 @@
- 						label = "firmware";
- 					};
- 
--					config: partition@fe0000 {
-+					partition@fe0000 {
- 						reg = <0x00fe0000 0x00010000>;
- 						label = "config";
- 						read-only;
-@@ -119,7 +119,7 @@
- 		enet0: ethernet@b0000 {
- 			phy-handle = <&phy0>;
- 			phy-connection-type = "rgmii-id";
--			mtd-mac-address = <&config 0x144>;
-+			mtd-mac-address = <&uboot 0x4fc00>;
- 		};
- 
- 		enet1: ethernet@b1000 {
--- 
-2.23.0
+Yes, please update my commit.
 
+Thank you for your feedback, review and tests. Indeed I (wrongly)
+assumed minimalistic approach and delegated ar71xx reset procedure to
+a simple DT property. I have only WNDR4300 to test the driver - this
+router interestingly has no problems whatsoever (I've booted it tens of
+times). ar934x-nand is my first DT driver port ever, and I thanks to
+your patch now I know more about implementing reset features :-) 
+
+Again, thanks and best regards
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,59 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F50BD501A
-	for <lists+openwrt-devel@lfdr.de>; Sat, 12 Oct 2019 15:35:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4070FD539D
+	for <lists+openwrt-devel@lfdr.de>; Sun, 13 Oct 2019 02:48:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tSDSK4k+rILuCHEmi6arXTPxvgqCkU0S2+oJ/f4JSsk=; b=XsG69QD3rbfp7T
-	/IkiSJlfb6thIuT9DSP/BEwa3/wI+j0QnuT6D+HoqjVImYB5uUdDmFeT4WAUbYGgYO3ikSsksffr7
-	W1cuggCpT5SfnD+5Usneagy3g5F/WVJFyNgUsICHx78bt6j6EYrD/+G4+r99VkySnBq+K4GQAiuWo
-	ox5KrGdp0nFh5MNEXUUW8eRGAshZBlVwwF9tdY1KBpg0pZvzQnEeA/OUlDbakeSqAPSHUVr80cOF3
-	6sxWsRBji+6j8u/B8nJetu2EP6NBj1DD+i8+tYzUK5rFTnvNqG+YOaUdDJXgZPg3Km+a2fey2Z8UQ
-	WVjGqO7EylcO4xZsQTNA==;
+	List-Owner; bh=mqVH1GihkZtu7RzbYdQsnyBoiVs9KC9n51BdVmVjcfw=; b=EVYV2ckrze2kiV
+	ySYmjIYT582RG5DFPyA8hp9f/Magn75Is0Cv601D+NVo9eMbkb8i7MPKP4WYcUqNWPrS875SBhSqD
+	TaCW6B1lQS05Fkzeb+zV+fc4MLve6O4pYNmLAmctilBkhO2gf1nIexzhoJrbTvlcdl6vK2KUEWzOU
+	BJkagOBZjKdIMu+HySztCceebci7EOQvu2aiYBF67StkqiBex3bCNpKQPwMtAJH//FPNMEDaIFZcQ
+	0Rwlt0OwrfKkPGJEy0oKqIvWzOpI+FKHqzANUVZmWZw1+H4w7HyUmTKoYEZrXyPgjHowzjnRX6A2S
+	2SXH54Nl8Cvda3duiVQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJHXu-0004IA-VK; Sat, 12 Oct 2019 13:34:58 +0000
-Received: from mx-out.tlen.pl ([193.222.135.142])
+	id 1iJS3h-0002BG-7H; Sun, 13 Oct 2019 00:48:29 +0000
+Received: from mail-pf1-x429.google.com ([2607:f8b0:4864:20::429])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJHXn-0004HA-8h
- for openwrt-devel@lists.openwrt.org; Sat, 12 Oct 2019 13:34:53 +0000
-Received: (wp-smtpd smtp.tlen.pl 32440 invoked from network);
- 12 Oct 2019 15:34:46 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1570887286; bh=rAxChJjO2vJLA4cpvnJ/CUJXiEMn5aR+CqMYpLurz3g=;
- h=From:To:Subject;
- b=K9dh9wjLP9t8gWiYjn3eaxglgwz87KXqwtwUSNO/m6TV7BfWukuMAT1F4LYD/elpQ
- nPNjC9m5KAOcyP5WyfXOkEXNx39Dp6btehS91A00kqkMGTOhDm2qRJ3Wh9ckvC9uNb
- VF9rqMjma7/n83AAGC3yaBUXYTVouTbkYOo2OwWU=
-Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
- (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 12 Oct 2019 15:34:46 +0200
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
+ id 1iJS3U-0002Ai-AI
+ for openwrt-devel@lists.openwrt.org; Sun, 13 Oct 2019 00:48:18 +0000
+Received: by mail-pf1-x429.google.com with SMTP id x127so8284883pfb.7
+ for <openwrt-devel@lists.openwrt.org>; Sat, 12 Oct 2019 17:48:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id;
+ bh=OKVKXOR2yDe4PSNmkLviySLUjONHB730brtHu6bKMuU=;
+ b=CrXXqubH87RQchgj0RagAux0uO3koXpzM5lyBOmekkF9NqhO/nTLKLBoR9nxt8w+Ey
+ eDPwEpB7pjeikEffAjRofw0N/sYn9iU0wxrska8pBElppmFOQZKn0x7+eA2BAhkq5QGG
+ uDGYbi+Vm82GiAV9WuT3h1uyizwTojRaF1KgMyy8aQDlu4BkrbTzlzsOCS7+ISMeCCA3
+ IDrkcy8ZB9inEiQrGpMhojA9WS7WT5GKbST0GfPv88SyI0qDJT+4BmPFnfiIItRWQ2ZG
+ 4AlWL6AenzQbLwfkHycztYSHzTwhIOboDok+lNnsex4LWBj1rTz9+4WhDxDnVTTDvW/N
+ 5LUQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=OKVKXOR2yDe4PSNmkLviySLUjONHB730brtHu6bKMuU=;
+ b=pzSA8Dfyn4tL4511D9UMzfOBwCshbdGI7/7F5I2OPjcFXKedD00S8dAnOAv2/KSN0w
+ BKvqXLaisCFyYWS4Fvr+q2W3T7oZosFiz4XPMhnZsVQeJYZ5r1FFGZlKOt6j7PxEgD0r
+ TOUvhPOtCjpd91aDkjDAzrC1LBdmeq8cpTEwzSxdVbrXLOQ6wQ5fjyU1LXkzepnC4NcK
+ J5i8qHaZ4xRpIwYxvdFIe5Nqye2cCD91IBwJfYhwrvI0AGGgj2ncchCObLw4xE9bPV6/
+ uezuKPB8Y95b/0ieX1y+cFTx8ZroBZhBBGl/VHYw3ZWFtFXt91ohn2sdflOB7HHKizKT
+ r7Dw==
+X-Gm-Message-State: APjAAAXfegyj7Vat54Wjz/o7mPrCrQTo1v90yeedb5NpCSVCSFD9ACJi
+ OrqOTkAsDNkGrdm9aXKcPtSpAPlv
+X-Google-Smtp-Source: APXvYqwYWAsr3tcRPKkMknmddFHpnj5cgX01RmhRsRNCmoOWg0NYdIc7Ibgr8FwTJTz39wHHtqWrbQ==
+X-Received: by 2002:a63:1e04:: with SMTP id e4mr4448468pge.4.1570927692866;
+ Sat, 12 Oct 2019 17:48:12 -0700 (PDT)
+Received: from DESKTOP-VIRSTQA.lan ([69.42.0.147])
+ by smtp.gmail.com with ESMTPSA id i190sm15543556pgc.93.2019.10.12.17.48.11
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 12 Oct 2019 17:48:11 -0700 (PDT)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 12 Oct 2019 15:34:38 +0200
-Message-Id: <20191012133438.4041-1-tomek_n@o2.pl>
-X-Mailer: git-send-email 2.23.0
-MIME-Version: 1.0
-X-WP-MailID: 582ac4942aa8fc91a3a428ccedb7909a
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000003 [AUBs]                               
+Date: Sat, 12 Oct 2019 17:48:10 -0700
+Message-Id: <20191013004810.667-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191012_063451_631883_071317A0 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20191012_174816_385679_13A362FE 
+X-CRM114-Status: GOOD (  15.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:429 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tomek_n[at]o2.pl)
+ provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -63,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] ath79: add support for Sitecom WLR-7100
+Subject: [OpenWrt-Devel] [PATCH-19.07] uClibc++: Fix three bugs
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,314 +93,349 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Sitecom WLR-7100 v1 002 (marketed as X7 AC1200) is a dual band wireless
-router.
+The first allows usage of several functions in the std namespace, which
+broke compilation of gddrescue specifically with uClibc-ng and uClibc++.
 
-Specification
-SoC: Atheros AR1022
-RAM: 64 MB DDR2
-Flash: 8 MB SPI NOR
-WIFI: 2.4 GHz 2T2R integrated
-      5 GHz 2T2R QCA9882 integrated (connected to PCIe lane)
-Ethernet: 5x 10/100/1000 Mbps QCA8337N
-USB: 1x 2.0
-LEDS: 4x GPIO controlled, 5x switch
-Buttons: 2x GPIO controlled
-UART: 4 unpopulated holes near USB port, starting count from white
-      triangle on PCB
-      1. VCC 3.3V, 2. GND, 3. TX, 4. RX
-      baud: 115200, parity: none, flow control: none
+The second allows usage of long long with normal C++11, which is part of
+the standard. Before, std=gnu++11 needed to be passsed to work around it.
 
-Installation
-1. Connect to one of LAN (yellow) ethernet ports,
-2. Open router configuration interface,
-3. Go to Toolbox > Firmware,
-4. Browse for OpenWrt factory image with dlf extension and hit Apply,
-5. Wait few minutes, after the Power LED will stop blinking, the router
-   is ready for configuration.
+As a result of the second patch, the pedantic patch can safely be removed.
 
-Known issues
-5GHz LED doesn't work
+Both patches are upstream backports.
 
-Additional information
-When TX line on UART is connected, and board is switched on from power
-off state, the DDR memory training may fail.
-If connected to UART, when prompted for number on boot, one can enter
-number 4 to open bootloader (U-Boot) command line.
-OEM firmware shell password is: SitecomSenao
-useful for creating backup of original firmware.
+Added -std=c++11 to CFLAGS to guarentee proper inclusion of long long.
 
-Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
+Added another patch that fixes a typo with the long long support. Sent to
+upstream.
+
+Fixed up license information according to SPDX.
+
+Small cleanups for consistency.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- .../ath79/base-files/etc/board.d/02_network   |   6 +
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   3 +-
- .../etc/hotplug.d/firmware/11-ath10k-caldata  |   3 +-
- .../ath79/dts/ar1022_sitecom_wlr-7100.dts     | 171 ++++++++++++++++++
- target/linux/ath79/image/generic.mk           |  14 ++
- 5 files changed, 195 insertions(+), 2 deletions(-)
- create mode 100644 target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts
+ This is a backport of 6ab386c9bc23420816fbcefc84b62cf5438b2c66
+ designed for 19.07. Saves ~200 bytes.
+ package/libs/uclibc++/Makefile                |  11 +-
+ .../patches/002-undef-functions.patch         |  35 +++++
+ .../libs/uclibc++/patches/003-no-fPIC.patch   |   2 +-
+ .../uclibc++/patches/004-no-pedantic.patch    |  13 --
+ ...ibc-Make-long-long-available-to-C-11.patch | 143 ++++++++++++++++++
+ .../005-istream_helpers-Fix-sscanf-typo.patch |  37 +++++
+ 6 files changed, 221 insertions(+), 20 deletions(-)
+ create mode 100644 package/libs/uclibc++/patches/002-undef-functions.patch
+ delete mode 100644 package/libs/uclibc++/patches/004-no-pedantic.patch
+ create mode 100644 package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
+ create mode 100644 package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch
 
-diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-index 0de17adb9d..4d7cd3e366 100755
---- a/target/linux/ath79/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/base-files/etc/board.d/02_network
-@@ -172,6 +172,7 @@ ath79_setup_interfaces()
- 	iodata,wn-ac1600dgr2|\
- 	iodata,wn-ag300dgr|\
- 	pcs,cr5000|\
-+	sitecom,wlr-7100|\
- 	wd,mynet-n750)
- 		ucidef_add_switch "switch0" \
- 			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan"
-@@ -408,6 +409,11 @@ ath79_setup_macs()
- 		wan_mac=$(mtd_get_mac_binary factory 0x0)
- 		lan_mac=$(macaddr_setbit_la "$wan_mac")
- 		;;
-+	sitecom,wlr-7100)
-+		lan_mac=$(mtd_get_mac_ascii u-boot-env ethaddr)
-+		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
-+		label_mac=$lan_mac
-+		;;
- 	tplink,archer-a7-v5|\
- 	tplink,archer-c7-v4|\
- 	tplink,archer-c7-v5|\
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index 7911d0aa1e..1db571432b 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -122,7 +122,8 @@ case "$FIRMWARE" in
- 	iodata,wn-ac1167dgr|\
- 	iodata,wn-ac1600dgr|\
- 	iodata,wn-ac1600dgr2|\
--	iodata,wn-ag300dgr)
-+	iodata,wn-ag300dgr|\
-+	sitecom,wlr-7100)
- 		ath9k_eeprom_extract "art" 0x1000 0x440
- 		ath9k_patch_fw_mac $(mtd_get_mac_ascii u-boot-env ethaddr) 0x2
- 		;;
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-index 446b729a2b..75f78b1532 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-@@ -114,7 +114,8 @@ case "$FIRMWARE" in
- 		;;
- 	engenius,epg5000|\
- 	iodata,wn-ac1167dgr|\
--	iodata,wn-ac1600dgr2)
-+	iodata,wn-ac1600dgr2|\
-+	sitecom,wlr-7100)
- 		ath10kcal_extract "art" 0x5000 0x844
- 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +1)
- 		;;
-diff --git a/target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts b/target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts
-new file mode 100644
-index 0000000000..8a70b597b0
---- /dev/null
-+++ b/target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts
-@@ -0,0 +1,171 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "ar9344.dtsi"
-+
-+/ {
-+	model = "Sitecom WLR-7100 v1 002 (X7 AC1200)";
-+	compatible = "sitecom,wlr-7100", "qca,ar9344";
-+
-+	aliases {
-+		led-boot = &power;
-+		led-failsafe = &power;
-+		led-running = &power;
-+		led-upgrade = &power;
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		wlan2g {
-+			label = "2.4GHz";
-+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+
-+		wlan5g {
-+			label = "5GHz";
-+			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		ops {
-+			label = "wlr-7100:white:ops";
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		power: power {
-+			label = "wlr-7100:amber:power";
-+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
-+			default-state = "on";
-+		};
-+
-+		wlan2g {
-+			label = "wlr-7100:blue:wlan2g";
-+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy1tpt";
-+		};
-+	};
-+};
-+
-+&eth0 {
-+	status = "okay";
-+
-+	pll-data = <0x06000000 0x00000101 0x00001616>;
-+
-+	phy-mode = "rgmii";
-+	phy-handle = <&phy0>;
-+
-+	gmac-config {
-+		device = <&gmac>;
-+		rgmii-gmac0 = <1>;
-+	};
-+};
-+
-+&mdio0 {
-+	status = "okay";
-+
-+	phy0: ethernet-phy@0 {
-+		reg = <0>;
-+		phy-mode = "rgmii";
-+
-+		qca,ar8327-initvals = <
-+			0x04 0x87a00000 /* PORT0 PAD Mode */
-+			0x0c 0x01000000 /* PORT6 PAD Mode */
-+			0x10 0x80000000 /* PWS_REG_VALUE */
-+			0x7c 0x000000fe /* PORT0_STATUS */
-+			0x94 0x000000fe /* PORT6_STATUS */
-+		>;
-+	};
-+};
-+
-+&pcie {
-+	status = "okay";
-+
-+	wifi@0,0 {
-+		compatible = "qcom,ath10k";
-+		reg = <0x0000 0 0 0 0>;
-+	};
-+};
-+
-+&ref {
-+	clock-frequency = <25000000>;
-+};
-+
-+&spi {
-+	num-cs = <1>;
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x000000 0x030000>;
-+				read-only;
-+			};
-+
-+			uenv: partition@30000 {
-+				label = "u-boot-env";
-+				reg = <0x030000 0x010000>;
-+				read-only;
-+			};
-+
-+			partition@40000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x040000 0x750000>;
-+			};
-+
-+			partition@790000 {
-+				label = "backup";
-+				reg = <0x790000 0x010000>;
-+				read-only;
-+			};
-+
-+			partition@7a0000 {
-+				label = "storage";
-+				reg = <0x7a0000 0x050000>;
-+				read-only;
-+			};
-+
-+			art: partition@7f0000 {
-+				label = "art";
-+				reg = <0x7f0000 0x010000>;
-+				read-only;
-+			};
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+};
-+
-+&usb {
-+	status = "okay";
-+};
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&wmac {
-+	status = "okay";
-+
-+	qca,no-eeprom;
-+};
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index cb6a38126a..78093b1d49 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -921,6 +921,20 @@ define Device/rosinson_wr818
- endef
- TARGET_DEVICES += rosinson_wr818
+diff --git a/package/libs/uclibc++/Makefile b/package/libs/uclibc++/Makefile
+index 3adf70b360..7a0d9094ff 100644
+--- a/package/libs/uclibc++/Makefile
++++ b/package/libs/uclibc++/Makefile
+@@ -10,18 +10,17 @@ include $(TOPDIR)/rules.mk
  
-+define Device/sitecom_wlr-7100
-+  ATH_SOC := ar1022
-+  DEVICE_VENDOR := Sitecom
-+  DEVICE_MODEL := WLR-7100
-+  DEVICE_VARIANT := v1 002
-+  DEVICE_PACKAGES := ath10k-firmware-qca988x kmod-ath10k kmod-usb2
-+  IMAGES += factory.dlf
-+  IMAGE/factory.dlf := append-kernel | pad-to $$$$(BLOCKSIZE) | \
-+	append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | \
-+	senao-header -r 0x222 -p 0x53 -t 2
-+  IMAGE_SIZE := 7488k
-+endef
-+TARGET_DEVICES += sitecom_wlr-7100
+ PKG_NAME:=uclibc++
+ PKG_VERSION:=0.2.5
+-PKG_RELEASE:=2
++PKG_RELEASE:=3
+ 
+ PKG_SOURCE:=uClibc++-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://cxx.uclibc.org/src/
+ PKG_HASH:=596fb9ed7295564ce4c70ae6076a18f92e72f70310d70c98520bbca85c77895a
+-
+ PKG_BUILD_DIR:=$(BUILD_DIR)/uClibc++-$(PKG_VERSION)
+-PKG_BUILD_PARALLEL:=1
+-PKG_USE_MIPS16:=0
+-PKG_LICENSE:=LGPL-2.1+
+ 
++PKG_LICENSE:=LGPL-2.1-or-later
+ PKG_INSTALL:=1
++PKG_BUILD_PARALLEL:=1
++PKG_USE_MIPS16:=0
+ 
+ include $(INCLUDE_DIR)/package.mk
+ 
+@@ -45,7 +44,7 @@ UCLIBC_TARGET_ARCH:=$(shell echo $(ARCH) | sed -e s'/-.*//' \
+ 	-e 's/mipsel.*/mips/' \
+ )
+ 
+-TARGET_CFLAGS += $(FPIC) -nostdinc++
++TARGET_CFLAGS += $(FPIC) -nostdinc++ -std=c++11
+ TARGET_LDFLAGS += -Wl,--gc-sections
+ 
+ ifneq ($(CONFIG_CCACHE),)
+diff --git a/package/libs/uclibc++/patches/002-undef-functions.patch b/package/libs/uclibc++/patches/002-undef-functions.patch
+new file mode 100644
+index 0000000000..47fa1580f2
+--- /dev/null
++++ b/package/libs/uclibc++/patches/002-undef-functions.patch
+@@ -0,0 +1,35 @@
++From 8245f62c1e7aba150f666b3c3a1dda646dee6d4b Mon Sep 17 00:00:00 2001
++From: Rosen Penev <rosenp@gmail.com>
++Date: Fri, 27 Sep 2019 13:12:44 -0700
++Subject: [PATCH] cstdio: Add undef for four functions
 +
- define Device/trendnet_tew-823dru
-   ATH_SOC := qca9558
-   DEVICE_VENDOR := Trendnet
++When compiling with uClibc-ng, these functions get defined as macros and
++become unavailable for std.
++
++Fixes programs that use the std versions of these functions.
++
++This matches libstdcpp behavior.
++
++Signed-off-by: Rosen Penev <rosenp@gmail.com>
++---
++ include/cstdio | 9 +++++++++
++ 1 file changed, 9 insertions(+)
++
++--- a/include/cstdio
+++++ b/include/cstdio
++@@ -21,6 +21,15 @@
++ #ifndef __HEADER_CSTDIO
++ #define __HEADER_CSTDIO 1
++ 
+++#undef clearerr
+++#undef feof
+++#undef ferror
+++#undef fgetc
+++#undef fputc
+++#undef getc
+++#undef getchar
+++#undef putc
+++#undef putchar
++ 
++ namespace std{
++ 	using ::FILE;
+diff --git a/package/libs/uclibc++/patches/003-no-fPIC.patch b/package/libs/uclibc++/patches/003-no-fPIC.patch
+index 206a00de32..dfd8833ae4 100644
+--- a/package/libs/uclibc++/patches/003-no-fPIC.patch
++++ b/package/libs/uclibc++/patches/003-no-fPIC.patch
+@@ -1,6 +1,6 @@
+ --- a/Rules.mak
+ +++ b/Rules.mak
+-@@ -185,7 +185,6 @@ export UCLIBCXX_RUNTIME_PREFIX UCLIBCXX_RUNTIME_LIBDIR UCLIBCXX_RUNTIME_BINDIR U
++@@ -185,7 +185,6 @@ export UCLIBCXX_RUNTIME_PREFIX UCLIBCXX_
+  
+  WRAPPER = $(top_builddir)bin/g++-uc
+  OPTIMIZATION:=
+diff --git a/package/libs/uclibc++/patches/004-no-pedantic.patch b/package/libs/uclibc++/patches/004-no-pedantic.patch
+deleted file mode 100644
+index 5128ca3f83..0000000000
+--- a/package/libs/uclibc++/patches/004-no-pedantic.patch
++++ /dev/null
+@@ -1,13 +0,0 @@
+---- a/Rules.mak
+-+++ b/Rules.mak
+-@@ -200,10 +200,6 @@ $(eval $(call check-gxx-var,-std=gnu++14))
+- $(eval $(call check-gxx-var,-Wno-sized-deallocation))
+- $(eval $(call check-gxx-var,-Wno-tautological-compare))
+- 
+--# Add a bunch of extra pedantic annoyingly strict checks
+--XWARNINGS=$(call qstrip,$(UCLIBCXX_WARNINGS)) -Wno-trigraphs -pedantic
+--CPU_CFLAGS=$(call qstrip,$(CPU_CFLAGS-y))
+--
+- # Some nice CFLAGS to work with
+- GEN_CFLAGS:=-fno-builtin
+- CFLAGS:=$(XWARNINGS) $(CPU_CFLAGS)
+diff --git a/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch b/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
+new file mode 100644
+index 0000000000..6e13f22c8a
+--- /dev/null
++++ b/package/libs/uclibc++/patches/004-uClibc-Make-long-long-available-to-C-11.patch
+@@ -0,0 +1,143 @@
++From 8151579eb36d9366632242415ff3f5177fa5e1e2 Mon Sep 17 00:00:00 2001
++From: Rosen Penev <rosenp@gmail.com>
++Date: Thu, 3 Oct 2019 18:58:43 -0700
++Subject: [PATCH] uClibc++: Make long long available to C++11
++
++C++11 makes long long available. It is no longer a GNU extension.
++
++Signed-off-by: Rosen Penev <rosenp@gmail.com>
++---
++ include/istream         | 4 ++--
++ include/istream_helpers | 2 +-
++ include/ostream         | 8 ++++----
++ include/ostream_helpers | 8 ++++----
++ tests/sstreamtest.cpp   | 4 ++--
++ 5 files changed, 13 insertions(+), 13 deletions(-)
++
++--- a/include/istream
+++++ b/include/istream
++@@ -72,7 +72,7 @@ namespace std{
++ 		basic_istream<charT,traits>& operator>>(void*& p);
++ 		basic_istream<charT,traits>& operator>>(basic_streambuf<char_type,traits>* sb);
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 		basic_istream<charT,traits>& operator>>(long long& n);
++ 		basic_istream<charT,traits>& operator>>(unsigned long long& n);
++ #endif
++@@ -455,7 +455,7 @@ namespace std{
++ 		return *this;
++ 	}
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	template <class charT, class traits> _UCXXEXPORT basic_istream<charT,traits>&
++ 		basic_istream<charT,traits>::operator>>(long long& n)
++ 	{
++--- a/include/istream_helpers
+++++ b/include/istream_helpers
++@@ -301,7 +301,7 @@ namespace std{
++ 	};
++ 
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	template <class traits> class _UCXXEXPORT __istream_readin<traits, char, long long>{
++ 	public:
++ 		inline static void readin(basic_istream<char, traits >& stream, long long & var)
++--- a/include/ostream
+++++ b/include/ostream
++@@ -85,7 +85,7 @@ namespace std {
++ 		basic_ostream<charT,traits>& operator<<(long double f);
++ 		basic_ostream<charT,traits>& operator<<(void* p);
++ 		basic_ostream<charT,traits>& operator<<(basic_streambuf<char_type,traits>* sb);
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 		basic_ostream<charT,traits>& operator<<(long long n);
++ 		basic_ostream<charT,traits>& operator<<(unsigned long long n);
++ #endif
++@@ -221,7 +221,7 @@ namespace std {
++ 		return *this;
++ 	}
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	template <class charT, class traits> _UCXXEXPORT basic_ostream<charT,traits>& basic_ostream<charT, traits>::operator<<(long long n)
++ 	{
++ 		sentry s(*this);
++@@ -487,7 +487,7 @@ namespace std {
++ #endif
++ 
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ //Support for output of long long data types
++ 
++@@ -509,7 +509,7 @@ template<class Ch, class Tr> _UCXXEXPORT
++ }
++ 
++ 
++-#endif	//__STRICT_ANSI__
+++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 
++ 
++--- a/include/ostream_helpers
+++++ b/include/ostream_helpers
++@@ -142,7 +142,7 @@ namespace std{
++ 		}
++ 	};
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, signed long long int>{
++ 	public:
++@@ -237,7 +237,7 @@ namespace std{
++ 	};
++ 
++ 
++-#endif	//__STRICT_ANSI__
+++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, char, double>{
++ 	public:
++@@ -357,7 +357,7 @@ namespace std{
++ 		}
++ 	};
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, signed long long int>{
++ 	public:
++@@ -428,7 +428,7 @@ namespace std{
++ 	};
++ 
++ 
++-#endif	//__STRICT_ANSI__
+++#endif // !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 
++ 	template <class traits> class _UCXXEXPORT __ostream_printout<traits, wchar_t, double>{
++ 	public:
++--- a/tests/sstreamtest.cpp
+++++ b/tests/sstreamtest.cpp
++@@ -9,7 +9,7 @@ int main(){
++ 	int i;
++ 	std::string s;
++ 	char c;
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	long long ll;
++ 	unsigned long long ull;
++ #endif
++@@ -32,7 +32,7 @@ int main(){
++ 
++ 
++ 
++-#ifndef __STRICT_ANSI__
+++#if !defined(__STRICT_ANSI__) || (__cplusplus >= 201103L)
++ 	a.str("678 76 54");
++ 	a >> ll >> ull >> s;
++ 	std::cout << "ll (should be 678): " << ll << std::endl;
+diff --git a/package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch b/package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch
+new file mode 100644
+index 0000000000..66b62c197c
+--- /dev/null
++++ b/package/libs/uclibc++/patches/005-istream_helpers-Fix-sscanf-typo.patch
+@@ -0,0 +1,37 @@
++From 7f6dd860818512c0eb313320308b22ba7e2c7205 Mon Sep 17 00:00:00 2001
++From: Rosen Penev <rosenp@gmail.com>
++Date: Fri, 4 Oct 2019 20:06:53 -0700
++Subject: [PATCH] istream_helpers: Fix sscanf typo
++
++This caused readin not to work properly with long long types.
++
++Found accidentally through a glibc warning
++(declared with warn_unused_result).
++
++Tested with gptfdisk on OpenWrt.
++
++Signed-off-by: Rosen Penev <rosenp@gmail.com>
++---
++ include/istream_helpers | 4 ++--
++ 1 file changed, 2 insertions(+), 2 deletions(-)
++
++--- a/include/istream_helpers
+++++ b/include/istream_helpers
++@@ -317,7 +317,7 @@ namespace std{
++ 					sscanf(temp.c_str(), "%llo", (unsigned long long *)&var );
++ 				}else if(stream.flags() & ios_base::hex){
++ 					if(stream.flags() & ios_base::uppercase){
++-						scanf(temp.c_str(), "%llX", (unsigned long long *)&var );
+++						sscanf(temp.c_str(), "%llX", (unsigned long long *)&var );
++ 					}else{
++ 						sscanf(temp.c_str(), "%llx", (unsigned long long *)&var);
++ 					}
++@@ -344,7 +344,7 @@ namespace std{
++ 					sscanf(temp.c_str(), "%llo", &var );
++ 				}else if(stream.flags() & ios_base::hex){
++ 					if(stream.flags() & ios_base::uppercase){
++-						scanf(temp.c_str(), "%llX", &var );
+++						sscanf(temp.c_str(), "%llX", &var );
++ 					}else{
++ 						sscanf(temp.c_str(), "%llx", &var);
++ 					}
 -- 
-2.23.0
+2.17.1
 
 
 _______________________________________________

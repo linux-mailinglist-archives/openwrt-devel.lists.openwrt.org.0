@@ -2,79 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06970D62D5
-	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 14:42:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 473DFD62DE
+	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 14:45:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:To:References:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oxs3/ZyDe0g8woN1zGqNTZ1mUcSiUEbRdJDGNHq7JW0=; b=GyDnL+It7rhMDo
-	FNtZ8G3SF+sawkP9+KuO9TYp7ug1NuiXRdDfud9yc2H5CnvRnzBn59FhtzEoQOWKEIpY/kMb0xp/+
-	bnhmGhcJIxHE3KYB9Gao7z5LOCJs72NtykxLEgPelNIt+8htMK9V/XrQg6nmf2/EEVvJWCdr1/bgx
-	S5vEBg63IvxTqDPsceN04McO6eUiQngSakjWWq80DGni+csBwvwGhkSH9QrMt55/vUhdleaogoD3b
-	yAXaioWBk2UZZVkJzvfbIL33Y2z7d3RX3eSFMEnY5R7dSWfy5i3bNWcndE3DtkJrSMPH0e5AtvCL3
-	Pzf9sETy8eM4I9/GIovw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jvQMbZ3KzOiS4sqAXJsQA3CJmvbt6NAqoDGxu8C05lc=; b=ekSFU/ig+V3ZCmXxuFI1hCx/v
+	cAzrwEUKM1lADPnCqPxrO64RjZJagOzshi10KeIpEYsZe7haVsuEQ1uEqhSxhaVxdCdjzNOO9y0w4
+	E25Vm2blfqwa+e5TJy7L34hao8c1MzYQ2LLbB+e5s+pm7/6/KuwzUmWsUSFXkklrQWcMBI+FCKZ6t
+	/ouaQChGRlR8zF80tujdCNyOrk+OxuMafGJXYqYt6wqr4h81DCfv/dvSY1hIrQIc+7dV53+nPJ/l3
+	JwzfivEd1fC++vl43fvl3UVDbpWsfWuB0bPzQwWWe9mkW09Q8/FXH0xxCmVGIEV1YT81B3quQVQBw
+	NWoA6hOQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJzg2-0003gQ-Sb; Mon, 14 Oct 2019 12:42:18 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iJzd3-0008T6-K8
- for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 12:39:17 +0000
-Received: from [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505] (unknown
- [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 6CB7B22BAC;
- Mon, 14 Oct 2019 14:39:10 +0200 (CEST)
+	id 1iJzjQ-0005yC-8X; Mon, 14 Oct 2019 12:45:48 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iJzjH-0005xf-Jp
+ for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 12:45:41 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1N6sWd-1hzxZ11MJL-018J5O; Mon, 14
+ Oct 2019 14:45:36 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'David Bauer'" <mail@david-bauer.net>,
+ "'Adrian Schmutzler'" <freifunk@adrianschmutzler.de>
 References: <20191006174834.3398181-1-dev@andreas-ziegler.de>
  <00b001d58289$846fd670$8d4f8350$@adrianschmutzler.de>
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <089a96db-880b-e058-068b-9f77170c01ce@david-bauer.net>
-Date: Mon, 14 Oct 2019 14:39:10 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ <089a96db-880b-e058-068b-9f77170c01ce@david-bauer.net>
+In-Reply-To: <089a96db-880b-e058-068b-9f77170c01ce@david-bauer.net>
+Date: Mon, 14 Oct 2019 14:45:34 +0200
+Message-ID: <00cb01d5828d$4691d660$d3b58320$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQK+Iv4yziDpX0/ONY/jHl28IqYV/gKgQX1eAbHEz1GlZkMkEA==
+Content-Language: de
 MIME-Version: 1.0
-In-Reply-To: <00b001d58289$846fd670$8d4f8350$@adrianschmutzler.de>
-Content-Language: en-US
+X-Provags-ID: V03:K1:J1VwgeTuvKqkYtCW5gzsz+RU1yDvHdGhU4XXS1eA0LTiIiel2Pq
+ 0ecSFh9WMs08nRxKjaMEM7var+dgmmVjiEwjUei4Q1MilKzdbgXHdwaayozLvMb4+cixWw3
+ wqb+SISmE+JcBu5+N3N12Gof3oYVNl8CBmDoGxaFKx6CpzFXq/nHIvk0GXaJ6b33r0c3bS7
+ d1G1JXh6DTS/5d8ycs7hQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ZTei8P1T27g=:eafEdPYe4Cls1YxfpZEMK+
+ t1dgiWT2oQyU/7hIrZVUY0/VoPv08uWq/wDBZ1c4W5x0mgwM7bO+UbStJD51sn6ZI6KcYjeaM
+ z8jwUC/xeR7dlBiLQ+Y4p3YxgGf5S0Bq++2WsfUpdYvVUqvEX/yT4nFwzORo297K20LeBhIT5
+ XUMe8BZzgTPJbo02gHrzKS0kxKWCeZzz8Lq07dRRX2XVm77R7oZ/XTHcV8x66J5mLOPiNnhgB
+ hXM/Rw6bOaMr4HkaFljsOnVNo52FFuqxLIfo0lul4v5KNvUkm33vlReVOy06U8Ek80/tw8BKW
+ R/d9h/CN3fr7QL7xu1mqJ7Tgp4taOvqCsG0P+2R2YpavUsc5yp4i8XaPDxoK8FC1WDZ/xEnOh
+ t2NurWzhfyrV7Fp4P2joemPQIqlQ7m8bEsxezJ568jlrVqDUkgRFA3A30ZKkgVmKdfY9rtjxK
+ 1LpZ1Tf9by+J7aJ9J2iVzizl1ogygFsGdrtrE/vjfY/gHPR8V9ftkDlSUAuYcys5lT1PEQbG0
+ lxWWu3FdivEBILbeTrgIqM3pkGe6pG5zMo1e6yuTSajBFAgIsKOkrOhsiiC+e3gGK9ausqc8l
+ ZEB6ivXSe1c+txnEDhzzVt22ncgy0E+Uwr6tjuBOGW7qvQO5KglCMZEOAgoKLxd4UafKeD7TZ
+ kEGScO5BjlykIHiuzol/9/EeDabRn0gl7j88dYUHy2nKbEQYZutxbTKvbWEYwcZlompme3ntZ
+ 6egrTdHhUw8uYBRgOiJq/lDUxu+aHD2tZe0VOXPTxHb8JElubN5B/f81eb/QWL51nQxH/nh6x
+ GcM2HCb6B5usPIVm9mx7Q+/s1rkRK8mvk2gjzv+4ei9J5Q/GXvW30vQ0LDdaePYo6yRpRO8E7
+ 78afaEXMdtGP/WT6gGtnzBNjmgbZVh1q1fppYmH90=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_053914_014220_144B12F7 
-X-CRM114-Status: GOOD (  22.75  )
+X-CRM114-CacheID: sfid-20191014_054539_950257_A1551712 
+X-CRM114-Status: GOOD (  28.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for UniFi AC-LR
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -87,137 +82,230 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>, dev@andreas-ziegler.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>, dev@andreas-ziegler.de
+Content-Type: multipart/mixed; boundary="===============2608329449897296043=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Adrian,
+This is a multipart message in MIME format.
 
-On 10/14/19 2:18 PM, Adrian Schmutzler wrote:
-> Hi,
-> 
-> the device name is inconsistent in model string and DEVICE_MODEL (hyphens...).
-> 
-> However, as this is only the friendly name, it is not really important.
-> 
-> On their homepage, Ubiquiti never uses hyphens on product names, only for the abbreviations:
-> UniFi AC Pro vs. UAP-AC-PRO-5
-> UniFi AC Lite vs. UAP-AC-LITE
-> 
-> Since we are using a lot of hyphens for other Ubiquiti devices, too, I wouldn't bother for this commit.
-> But it might make sense to "correct" the friendly names for all Ubiquiti devices at some point in the future.
+--===============2608329449897296043==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=cp3dr1pF6sTYNX=-="
 
-I've looked into the naming Ubiquiti uses for their devices and sadly, they have for
-each of their devices multiple namings on their Website.
+This is a multipart message in MIME format.
 
-> UniFi AC Pro
-> UniFi AP AC Pro
-> UAP-AC-PRO
+--=-=cp3dr1pF6sTYNX=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-And don't get started on their Mesh series, things only get more confusing there.
+Hi David,
 
-If we want to be 100% consistent, we probably have to use the product-ids (UAP-AC-PRO for example),
-however i think having the marketing name is nicer.
+> -----Original Message-----
+> From: David Bauer [mailto:mail@david-bauer.net]
+> Sent: Montag, 14. Oktober 2019 14:39
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> Cc: dev@andreas-ziegler.de; openwrt-devel <openwrt-devel@lists.openwrt.or=
+g>
+> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for UniFi AC-LR
+>=20
+> Hello Adrian,
+>=20
+> On 10/14/19 2:18 PM, Adrian Schmutzler wrote:
+> > Hi,
+> >
+> > the device name is inconsistent in model string and DEVICE_MODEL (hyphe=
+ns...).
+> >
+> > However, as this is only the friendly name, it is not really important.
+> >
+> > On their homepage, Ubiquiti never uses hyphens on product names, only f=
+or the abbreviations:
+> > UniFi AC Pro vs. UAP-AC-PRO-5
+> > UniFi AC Lite vs. UAP-AC-LITE
+> >
+> > Since we are using a lot of hyphens for other Ubiquiti devices, too, I =
+wouldn't bother for this commit.
+> > But it might make sense to "correct" the friendly names for all Ubiquit=
+i devices at some point in the future.
+>=20
+> I've looked into the naming Ubiquiti uses for their devices and sadly, th=
+ey have for
+> each of their devices multiple namings on their Website.
+>=20
+> > UniFi AC Pro
+> > UniFi AP AC Pro
+> > UAP-AC-PRO
 
-Best wishes
-David
+Since we have the alternate names now, one could actually provide at least =
+two, e.g.
+DEVICE_MODEL :=3D UniFi AC Pro
+DEVICE_ALT0_MODEL :=3D UAP-AC-PRO
 
-> 
-> Best
-> 
-> Adrian
-> 
->> -----Original Message-----
->> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On Behalf Of Andreas Ziegler
->> Sent: Sonntag, 6. Oktober 2019 19:49
->> To: openwrt-devel@lists.openwrt.org
->> Subject: [OpenWrt-Devel] [PATCH] ath79: add support for UniFi AC-LR
->>
->> The Unifi AC-LR has identical hardware to the Unifi AC-Lite.
->> The antenna setup is different according to the vendor,
->> which explains the thicker enclosure.
->> Therefore, it is helpful to know the exact device variant,
->> instead of having "Ubiquiti UniFi-AC-LITE/MESH".
->>
->> Signed-off-by: Andreas Ziegler <dev@andreas-ziegler.de>
->> ---
->>  target/linux/ath79/base-files/etc/board.d/02_network     | 1 +
->>  .../base-files/etc/hotplug.d/firmware/11-ath10k-caldata  | 1 +
->>  target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts       | 9 +++++++++
->>  target/linux/ath79/image/generic-ubnt.mk                 | 7 +++++++
->>  4 files changed, 18 insertions(+)
->>  create mode 100644 target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts
->>
->> diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
->> index 0de17adb9d..fe74bddbf1 100755
->> --- a/target/linux/ath79/base-files/etc/board.d/02_network
->> +++ b/target/linux/ath79/base-files/etc/board.d/02_network
->> @@ -50,6 +50,7 @@ ath79_setup_interfaces()
->>  	ubnt,nanostation-ac-loco|\
->>  	ubnt,rocket-m|\
->>  	ubnt,unifiac-lite|\
->> +	ubnt,unifiac-lr|\
->>  	ubnt,unifiac-mesh|\
->>  	ubnt,unifi|\
->>  	wd,mynet-wifi-rangeextender|\
->> diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-
->> files/etc/hotplug.d/firmware/11-ath10k-caldata
->> index 446b729a2b..ba39cb3981 100644
->> --- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
->> +++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
->> @@ -179,6 +179,7 @@ case "$FIRMWARE" in
->>  		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary info 0x8) +1)
->>  		;;
->>  	ubnt,unifiac-lite|\
->> +	ubnt,unifiac-lr|\
->>  	ubnt,unifiac-mesh|\
->>  	ubnt,unifiac-mesh-pro|\
->>  	ubnt,lap-120|\
->> diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts
->> new file mode 100644
->> index 0000000000..a1e542ada6
->> --- /dev/null
->> +++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts
->> @@ -0,0 +1,9 @@
->> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
->> +/dts-v1/;
->> +
->> +#include "qca9563_ubnt_unifiac-lite.dtsi"
->> +
->> +/ {
->> +	compatible = "ubnt,unifiac-lr", "qca,qca9563";
->> +	model = "Ubiquiti UniFi-AC-LR";
->> +};
->> diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
->> index 4b2cee215c..13af092ee3 100644
->> --- a/target/linux/ath79/image/generic-ubnt.mk
->> +++ b/target/linux/ath79/image/generic-ubnt.mk
->> @@ -225,6 +225,13 @@ define Device/ubnt_unifiac-lite
->>  endef
->>  TARGET_DEVICES += ubnt_unifiac-lite
->>
->> +define Device/ubnt_unifiac-lr
->> +  $(Device/ubnt_unifiac)
->> +  DEVICE_MODEL := UniFi AC-LR
->> +  SUPPORTED_DEVICES += unifiac-lite
->> +endef
->> +TARGET_DEVICES += ubnt_unifiac-lr
->> +
->>  define Device/ubnt_unifiac-mesh
->>    $(Device/ubnt_unifiac)
->>    DEVICE_MODEL := UniFi AC-Mesh
->> --
->> 2.23.0
->>
->>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+I was mainly focusing on that we are using the names without hyphens origin=
+ally and then add hyphens to them.
+
+Nevertheless, I do not believe this is terribly important or blocks the LR =
+support patch.
+It's more like an objective for a boring, rainy afternoon.
+
+Best
+
+Adrian
+
+>=20
+> And don't get started on their Mesh series, things only get more confusin=
+g there.
+>=20
+> If we want to be 100% consistent, we probably have to use the product-ids=
+ (UAP-AC-PRO for example),
+> however i think having the marketing name is nicer.
+>=20
+> Best wishes
+> David
+>=20
+> >
+> > Best
+> >
+> > Adrian
+> >
+> >> -----Original Message-----
+> >> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] O=
+n Behalf Of Andreas Ziegler
+> >> Sent: Sonntag, 6. Oktober 2019 19:49
+> >> To: openwrt-devel@lists.openwrt.org
+> >> Subject: [OpenWrt-Devel] [PATCH] ath79: add support for UniFi AC-LR
+> >>
+> >> The Unifi AC-LR has identical hardware to the Unifi AC-Lite.
+> >> The antenna setup is different according to the vendor,
+> >> which explains the thicker enclosure.
+> >> Therefore, it is helpful to know the exact device variant,
+> >> instead of having "Ubiquiti UniFi-AC-LITE/MESH".
+> >>
+> >> Signed-off-by: Andreas Ziegler <dev@andreas-ziegler.de>
+> >> ---
+> >>  target/linux/ath79/base-files/etc/board.d/02_network     | 1 +
+> >>  .../base-files/etc/hotplug.d/firmware/11-ath10k-caldata  | 1 +
+> >>  target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts       | 9 +++++++++
+> >>  target/linux/ath79/image/generic-ubnt.mk                 | 7 +++++++
+> >>  4 files changed, 18 insertions(+)
+> >>  create mode 100644 target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts
+> >>
+> >> diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/ta=
+rget/linux/ath79/base-files/etc/board.d/02_network
+> >> index 0de17adb9d..fe74bddbf1 100755
+> >> --- a/target/linux/ath79/base-files/etc/board.d/02_network
+> >> +++ b/target/linux/ath79/base-files/etc/board.d/02_network
+> >> @@ -50,6 +50,7 @@ ath79_setup_interfaces()
+> >>  	ubnt,nanostation-ac-loco|\
+> >>  	ubnt,rocket-m|\
+> >>  	ubnt,unifiac-lite|\
+> >> +	ubnt,unifiac-lr|\
+> >>  	ubnt,unifiac-mesh|\
+> >>  	ubnt,unifi|\
+> >>  	wd,mynet-wifi-rangeextender|\
+> >> diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-a=
+th10k-caldata b/target/linux/ath79/base-
+> >> files/etc/hotplug.d/firmware/11-ath10k-caldata
+> >> index 446b729a2b..ba39cb3981 100644
+> >> --- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-c=
+aldata
+> >> +++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-c=
+aldata
+> >> @@ -179,6 +179,7 @@ case "$FIRMWARE" in
+> >>  		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary info 0x8) +1)
+> >>  		;;
+> >>  	ubnt,unifiac-lite|\
+> >> +	ubnt,unifiac-lr|\
+> >>  	ubnt,unifiac-mesh|\
+> >>  	ubnt,unifiac-mesh-pro|\
+> >>  	ubnt,lap-120|\
+> >> diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts b/targ=
+et/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts
+> >> new file mode 100644
+> >> index 0000000000..a1e542ada6
+> >> --- /dev/null
+> >> +++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lr.dts
+> >> @@ -0,0 +1,9 @@
+> >> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> >> +/dts-v1/;
+> >> +
+> >> +#include "qca9563_ubnt_unifiac-lite.dtsi"
+> >> +
+> >> +/ {
+> >> +	compatible =3D "ubnt,unifiac-lr", "qca,qca9563";
+> >> +	model =3D "Ubiquiti UniFi-AC-LR";
+> >> +};
+> >> diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/a=
+th79/image/generic-ubnt.mk
+> >> index 4b2cee215c..13af092ee3 100644
+> >> --- a/target/linux/ath79/image/generic-ubnt.mk
+> >> +++ b/target/linux/ath79/image/generic-ubnt.mk
+> >> @@ -225,6 +225,13 @@ define Device/ubnt_unifiac-lite
+> >>  endef
+> >>  TARGET_DEVICES +=3D ubnt_unifiac-lite
+> >>
+> >> +define Device/ubnt_unifiac-lr
+> >> +  $(Device/ubnt_unifiac)
+> >> +  DEVICE_MODEL :=3D UniFi AC-LR
+> >> +  SUPPORTED_DEVICES +=3D unifiac-lite
+> >> +endef
+> >> +TARGET_DEVICES +=3D ubnt_unifiac-lr
+> >> +
+> >>  define Device/ubnt_unifiac-mesh
+> >>    $(Device/ubnt_unifiac)
+> >>    DEVICE_MODEL :=3D UniFi AC-Mesh
+> >> --
+> >> 2.23.0
+> >>
+> >>
+> >> _______________________________________________
+> >> openwrt-devel mailing list
+> >> openwrt-devel@lists.openwrt.org
+> >> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=cp3dr1pF6sTYNX=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2kbe4ACgkQoNyKO7qx
+AnAXLQ//Q9dW92NQFYkOnasNFAsGt11jECRZTHosvYec/URHM3nYMC0TR+JIIWAH
+Q8hoZriliOAkMNUgj+SwX+YamngnekI+9HtTIY89Z1ajpvGQyBbKbrM4aeFTNcFs
+tpYcl5AhwP/v3odFEB+YvCKUoaxEhXgXxCUG0CC8Ycz3so2PvPkctT033dCUqfh4
+7vorIGCZhajPa5Ba4sEwzPHsAVueWGaXuPtOM3hACpBKkLX5Fa232BO7xVy/uo0y
+e7KGwrhukbqqwf+jaCbDexjAQqthnbM7PzHz5VGf+7ZpoWNZbnL1onyZ3PouJybI
+zKFgY+rzbV+qnF4LxVxmvVVjyV/EhGZeU32x7nzS72JJBrBsYvMCufAVX04n099X
+bul5Epxx5QmwolxpK2KcGAS7A+lGwwEwDcOMzIhMPzF9fz3CC6dmXKiuF7wDLkWH
+9ILBWH26noQPNf/eNw/Pq6p8t1Cmbmwk9/Nxm2ADBn4FR97RDQYbZXhuILuQxYDL
+ZOXFPg+INAyr8nQcmBnd/oTNZYA6v3oFe8MT0ZfprfJqSfv6Gp6H6SxdJzetryTV
+IHtd8hIHg8z8BdwtmicORvuMjKO1qsDDKSVcAMh1FdrQO1XK2cUR31DiiuXNv4e9
+zNPYODXqSdHF8zQMBEsQGwS6dWHgrVYknz9VAT+upTs0gSh6CRA=
+=ZhdL
+-----END PGP SIGNATURE-----
+
+
+--=-=cp3dr1pF6sTYNX=-=--
+
+
+
+--===============2608329449897296043==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2608329449897296043==--
+
+

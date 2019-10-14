@@ -2,58 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44850D61FC
-	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 14:05:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24E0FD621A
+	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 14:11:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hiC4X1PlPLkQifYkGFIx3hzmHrWNJ0t7ph7TsZyW5/U=; b=fn9EdITlUDbbcU
-	z00gRJvQRwze0sFZEc5BzMboTCUavR7/wH5Fjse0GLBYmUHJETDZw5MtiBSpJbBG/RdciGFZ4Lk1x
-	enCbGyVm85B0L4bCsCV6w914gfkqU5yzRNnIir95G22oUuHMLhhMDZPSl1Trm9UeNNVUulHQBcZIg
-	LinNmEUe8oiDpxOWbeIyGp3pQdNwzIfdPBz/evXTQE0irCfdiAT77Pma+mjb7oU9nC6MrHLdnBxeL
-	DTT1W8RPrV/PiVgpnim6SHXHAhke9orchTbLDn6nFjTgXG7EvuwHJ3KtBIsEQ2J2pvr+Abje0LNLZ
-	knAFRqQeACTbYydFpPRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WnaI/5UlaAychhYgSpSUxjOKS99BdobIOSk/7E+G0dI=; b=VNtK3anvZnRTY17BHftKOVwul
+	EGKQodYedBtQ5sa6ZZ9nR8ynEWgsBe5greE1RIm1WsZcWIvUJ8jegq+Dlhzia39pIfQBnfLFR0MAL
+	haKVZHppu+dE6iktqrTnWXJd+pqfhyRjg//yovD/sZfttdOuepE72g/buKVdn5B3z0MEUI+mFb0dV
+	yLQ0Xdf93GBD46FJfG8vyeuHtWCNPX+R17HAXaQC0NPzi2HfWi7uEKbXlokA8grltbMUW9FTY2InG
+	UP6CDMI9DLRkzIAI4qxh7Kdqz2KVBmsk26NoxCECTkm2GShXfem4/rlcLQB9Md/Fkyy8JIQS1IOgI
+	6eI6DUNSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJz6i-0005tu-Uq; Mon, 14 Oct 2019 12:05:48 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iJzCd-0008T8-3s; Mon, 14 Oct 2019 12:11:55 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJz6W-0005sW-NX
- for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 12:05:38 +0000
-Received: from buildfff.adridolf.com ([188.192.135.195]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1M1Yl9-1iN1N83UJH-0031vg; Mon, 14 Oct 2019 14:05:33 +0200
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 14 Oct 2019 14:05:31 +0200
-Message-Id: <20191014120531.2878-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+ id 1iJzCV-0008Sd-7D
+ for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 12:11:48 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1M42zo-1iJzCQ3A80-0005VL; Mon, 14
+ Oct 2019 14:11:42 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'David Bauer'" <mail@david-bauer.net>, <openwrt-devel@lists.openwrt.org>
+References: <20191014104701.207324-1-mail@david-bauer.net>
+In-Reply-To: <20191014104701.207324-1-mail@david-bauer.net>
+Date: Mon, 14 Oct 2019 14:11:42 +0200
+Message-ID: <00a001d58288$8a7d7aa0$9f786fe0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQHvpjY86j1/DP94kfwinZ8alhrMWKclxHWw
+Content-Language: de
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:3NUlUcLMDYlHF54RCF+VE68yNTKAPV+sUj7WHR8pssZVIUE4ED4
- bZv25CZUcXzv76i/4Yxm3diaeZLcg0V+VumEAgUlVRKmBeVehCbqduhrntLEeGRcTR6X5nz
- bPaAaIG82VqFgyAIIXppsW27d7+UvSj+YwvS8u9jc9TrFawRdjB8w4ymZI5ZTpv/X4FpRWY
- h5cC/7/tKluRt2PuucoQg==
+X-Provags-ID: V03:K1:LUJ+jo3nxlFiWCp19TMEZ9bjlu/a0+FnQth8+LAQ4n4BIphoLPX
+ 0xthr4p/Owx4Fd0ht0V0nzHlZIGUZaFDu6RhASqm2VNt/EtlhwYeEAhV9ip7OKUQWzNSy7v
+ 6yisYu7ws6ByLokl5fC9RDRfOY03PDg6CE9jCJ3W+a/uXmgDeeCcUv99U1OY1X3G7VvYVAU
+ kv3Ua5q9Upx5BR2fM4QRw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:56g4L4Y0Xvk=:HGKxAC9K0EuYz/yo0+i5t7
- +g8/9O/V6CMe6tzX8ufztkp+Clb4DgZTvhqkqa1tCdas5HH3qWVbtaL1lkIQ1qtWYZl+UjIim
- Cg2bRdrVWjnXmVy/T0aZ0kvQA8ivfaQA/DIopr9lxCYTezP0DajayX4k5We/YcgHZ04H9JS5m
- RwtgujPrbFYH4Nq263gO8TmirWhig2lXi1fhGhqcIajFDrjmCat/Cv7H7Y5cDx7uGsxZMvSq4
- cqOdhDG7kWDdAGRBaUc0r/9sy6VSTjgOpkwhbaSxoJk1FQy9JaKkXfQiv0Kku/5C4VbOOrxYZ
- Dcsok3mBTo5tHEwVMSFyONWZ8a+y3hFch0RrXOVYnXiIGj4LuN06p/HEhE8vDmomYLH5z6tx5
- fkSN0Qs2A1pCCGStnrUtqPIpObETkRg2a5hp3PtG3x55P02hRRB1XCZWlPINLSZVYs5gYp1ED
- 458NxuLL/WiTws64bT5Kn6LDNqrG2jghjonC5kMdxfouZV2t5fQtrZX183MiMLmQzgNOOFjbv
- RfuOK19DQqyr+B6omOCHHhTjmTIEYKiA/zjRicbXFTETeMm/iSkW0jj8qE7aUBFPVvIz8XX11
- 6nwenlEsi0JykbvehlXaQfghU93cI4/3fT0IXdbOZtvLTXRDH2uHdWAC2J2kzQNZwjv4Jupqo
- Trq+UFBou4Ctf85rHcgcU4jIcA26l3Nmb9OcsEkImn7+U5BViNBsxcBmRtFln0ah+0Oi1btoP
- SzQBJIu5Z6uSW2+pvgKL57K+098fbSEZFB4EvzI+qKA1kBbtOIURtHtNXcmV5gf62dCVXMjGE
- lO7EdzVcMLc3hrcuf23TooX2/22nE5YxiDgncicUq9KUSEXqKxBGPBGPt9KreASAuPJS3OgR4
- gTKb+bYMh6rbN0We5TOUf+tw5k0FhcjaMPX1gMGCQ=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:MWxQEy0ZjTc=:SPsfvcOPNj1QsjpPEXiY5H
+ kHizBD7/2uG20kVBBxiNxVSpKQkXFQybVv8mjEQvw37FdIA3KDALfe9O59DmxsLBRsf18JnCn
+ Uoemo1PmKVIMf7BCL4wQPaFM5OknH26sULUsTCHyjEvoHZ+5n8fcMg04ENuzBRRePy5pUhkUp
+ 30YfWEtEGgA7tTLXYsO73ECuO2pbzmtdWMyQDbmbY1cJEh2EBVDhObqL3RsEneKFT8TGVvuhs
+ WDAmAZUCHViTAirsT6DLsjIAN9wIza/eULtQQ3iraIL1wCMilMfgkgn5nwJIHCSv/2IB8m2rZ
+ RlafcoxtK6G7RNZQrGP6IfILnfaloTiKqFFvhyQ2aZipXAYH3nXDwGB8UiGHsKMRUq3LaD17E
+ qLbIhZzoc5pDt+YTde8FYJzXH0aeUAC9Tsv3orT5yXXLfBGkLYAmK8l6krFvlwXsgGbWi7xol
+ sum/53xFJGUzu/sDIv3pCOag8GyrCURWFEaz5Sn0MeiLMRnMfXPfuC0PzZtxEEWK+VtCkc+k/
+ BgkVYr+byCXrBiBIv2g+1lyDCMnIBNDLvYh5XxHVJSerlu+HHD6qZuw747v1eVDxLB2z08flw
+ Sm2+KkN9wUGyVyn2/jl99uCsm0fe2wWwqOtJjBdP8YqrvDYqzCLJvg9ARt4kdc13YYTj13AX0
+ V9w8OyNuZfMXxLM8Rq9AzQIPIfGHeIosnn0jrhy0HA7zGUcQTKMtfBX/PEvs7hDlCtDB5h/2Y
+ bRpSpP0bUAebPEM/7Mf7cQBTrnasDo7DTRKHLJsG1/nncDX6sZYI5dUjuk51FH7Scet2iJyoi
+ B4rU5u4P6LRojiY04J4Gqd6iUeNi0f94ZD/4gQ0rHHBn2FUlxyCWajkatyVK6aGIVIGaxmr9q
+ W9wX9WzXEG0SE6xRT/on4XeiOHtCxnTKReLGEA+Is=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_050537_061040_7013AF4B 
-X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-CacheID: sfid-20191014_051147_557403_9E99CFCC 
+X-CRM114-Status: UNSURE (   6.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -61,13 +65,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] [PATCH v2] ath79: fix patching ath9k MAC address
- for MyNet WiFi Range Extender
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: correct ar71xx boardname for
+ UniFi AC Lite
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,52 +81,86 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Christian Lamparter <chunkeey@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0075508949036288433=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The code line patching ath9k MAC address for this device contains
-a wrong number of arguments including an unset "$mac", which
-looks like a typo or copy/paste mistake.
+This is a multipart message in MIME format.
 
-This has been introduced already in the device support commit
-745dee11ac78 ("ath79: add support for WD My Net Wi-Fi Range
-Extender").
+--===============0075508949036288433==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=PUFlbohJFnsOG2=-="
 
-This patch just removes the "$mac" argument, leaving a formally
-valid line. (No on-device test has been performed.)
+This is a multipart message in MIME format.
 
-Cc: Christian Lamparter <chunkeey@gmail.com>
+--=-=PUFlbohJFnsOG2=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Hi,
 
----
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
+ehalf Of David Bauer
+> Sent: Montag, 14. Oktober 2019 12:47
+> To: openwrt-devel@lists.openwrt.org
+> Subject: [OpenWrt-Devel] [PATCH] ath79: correct ar71xx boardname for UniF=
+i AC Lite
+>=20
+> This corrects the additional boardname for the image metadata to the one
+> used in ar71xx. The previously present additional entry was never used
+> on a running system.
+>=20
+> Signed-off-by: David Bauer <mail@david-bauer.net>
 
-v2: Rebased on master (due to caldata patchset)
----
- .../ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom     | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Reviewed-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index 3240026aec..69d36383d5 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -108,7 +108,7 @@ case "$FIRMWARE" in
- 		;;
- 	wd,mynet-wifi-rangeextender)
- 		caldata_extract "art" 0x1000 0x1000
--		ath9k_patch_mac $(nvram get wl0_hwaddr) "$mac"
-+		ath9k_patch_mac $(nvram get wl0_hwaddr)
- 		;;
- 	*)
- 		caldata_die "board $board is not supported yet"
--- 
-2.20.1
+Best
 
+Adrian
+
+--=-=PUFlbohJFnsOG2=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2kZfoACgkQoNyKO7qx
+AnB5ERAAvJ7u0dx0Vs3yP2/jyzcl+1XeY5LTCDrRbJZmdxr6GRropyxngffMlr9n
+uu+HjTTtQh8LcXZxz0Andq2qyTJ3DZC7rr9aSpHySKXGCNwFn9fofgBN6N/I8WXV
+zq26f77MbvXtMCBT1QTpyuclZQZ3GC3nFGg10scbg09QDB2X36h1Xk1DBYsLiz03
+ralP6gJB0KGjIXDi/OB0lQS2of8tf28rMVtJY8AWSW0MKQSsXNh73v3J2Ga/E83A
+Il7Hb7VU8ohfivX5/GPn8cV2lnF68SbC0yZTl15WXkjMIEXoHdVn4se/MTTXSK/6
+Hdef1v2kDFpl5ObREARsDhv/TjygOPuhjhNWgaBHNDLyFdnIqQqbbyPIOQSZPPgY
+fuWD1SYVgepacUmi4Yqtkb62mbqnXYAk5Km2wmWfpH55VJROW4VlBK+kIhqxr4o+
+POtmYWI7MZbLOoZ7LCx+g8J/zC5f1ISMM71l+E8sLv1LAt0lP70UKXorWVVyHGt9
+TGhJOIu30sZuJJ0l8hR8qKQXubfOxtV5KfB14Q7KudUtCWnck+TiBiNmHv8w1Xrh
+BZio2mWn7NH6zZpl0qcG6quWc2DIKV5WUf8qe+Eg7ucX5uQkgRDfi6AZ6PnKZgSn
+E0R/ejFgtB5Riky01gMTisappb3BD0/PUBkh4VYGMV7luCjZgCQ=
+=QOX+
+-----END PGP SIGNATURE-----
+
+
+--=-=PUFlbohJFnsOG2=-=--
+
+
+
+--===============0075508949036288433==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0075508949036288433==--
+
+

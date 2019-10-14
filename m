@@ -2,77 +2,94 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E310D6683
-	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 17:51:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8375FD68AC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 14 Oct 2019 19:40:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=A+aOwfsa+8jjJQL6p4kkTPTjuADTe6vJuR+nOEw6GJM=; b=c/S5NypkWQpzyk2QLTp7UMSDR
-	EvxH8cfxA2PusQ+xmxGmPOeh5YHmCkMEqM592fMBIEG1ibLi5lI/UivzmH/rU9TK1Z+gC/BYfbAt3
-	oKhekjaQ518BT9tTGP7oGMWvlL3xoqFT9PjfFa5+e+/ZdZjY2ubagJurIvuzncjSeNd1gMgkz9z0Y
-	JCdz8Sts9520TdzuYj58VIUGyX8SLSrCkAm+YKdOXENpac1ZuYXUoChPfpjbIB1tFuLjGSolMuPV4
-	SzxQm0FUD2l9Zg8xASnKD0flbN59xS7i0Dit0wVppRoTAHyES2qBtEb9xdjbQwIp7KMCppTbkAPjg
-	Pvqe3NAmA==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BuE3KuO/8z8sy4N/NFKmcsWf5SsYLyy/cbKQsZmYjXM=; b=Zyg
+	Z+a8jqB08YDVyG5aGguYK9RASBUPgavzgqM0druZilKoSYnlIlzfgRl/Me8rIih0Zn8OV4dqpqAPe
+	ULEGip4RyR2JvqqpndZI4flsQfJPmDtQv4wk1QXh2YkGAIUytbURmhPRJtDJW1XVJGOo6fuGKZQ8s
+	L2oj1/HpZCf+yv7uLVpdfa8G/32QSkMpklBAMzmXwQMnLNY9tc20l/crpwVFkMkptEHg9+vJ8tx6A
+	r5VJ/B2GAS7prq8SP73Z28FlVHT8mmjme8/JvRS+nw/WhhHh9fpvWwtDoNcPmyu2GEs+dw+OSvLwK
+	yH/BkKcQEUElMA270EKH71XkbyZTx1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK2cm-0001dm-F3; Mon, 14 Oct 2019 15:51:08 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1iK4KM-0002DN-Ez; Mon, 14 Oct 2019 17:40:14 +0000
+Received: from a2nlsmtp01-02.prod.iad2.secureserver.net ([198.71.225.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK2ce-0001cr-LT
- for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 15:51:02 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue011
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1Myb09-1i87rm3FJV-00yuLg; Mon, 14
- Oct 2019 17:50:55 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Enrico Mioso'" <mrkiko.rs@gmail.com>,
-	"'Filip Moc'" <lede@moc6.cz>
-References: <20190917193029.1336491-1-mrkiko.rs@gmail.com>
- <20191007214054.GA14886@moc6.cz>
- <alpine.LNX.2.21.99999.353.1910080711190.3029597@mStation.localdomain>
-In-Reply-To: <alpine.LNX.2.21.99999.353.1910080711190.3029597@mStation.localdomain>
-Date: Mon, 14 Oct 2019 17:50:55 +0200
-Message-ID: <01d001d582a7$2a3edd90$7ebc98b0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQJPfRHoBS5s4jhu9uUuLKJkakDH7gGolpkGAXzctd2mTSUpcA==
-Content-Language: de
+ id 1iK4KB-0001MJ-2K
+ for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 17:40:04 +0000
+Received: from a2plcpnl0716.prod.iad2.secureserver.net ([198.71.240.37])
+ by : HOSTING RELAY : with ESMTP
+ id K4ITiAup3mRyiK4ITiSXK2; Mon, 14 Oct 2019 10:38:17 -0700
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=aptaexpoleads.com; s=default; h=Content-Type:MIME-Version:Message-ID:Date:
+ Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=oD1XOv5cSydajGYT/exTJfvvuuftvuvaMAJi5cdXzd8=; b=t3NT71WGOIXmpaqFf6S51btJtv
+ eIh+8Ya9/TggatU/VqaCgF2Mtb1nHfx682RV5+OshttvbvwOsQKYWdPHstBGuZsEiwJQKbHLemLUr
+ pxMbnvTBKmRBtLd/iQg/mWDKS60Hpj/cps6kVdWlDVtK8v+Gq51HI7KByjcHKEaKMUggpFt4N5uQW
+ ipCO5uTqg9o9kcwHVsL05BO5OeIMAe1PQVu0cwbrkwXL8SZxpVyiJiHxWN3NXYPC2j89n0d6I+AHj
+ b8utOdXWc20rhvX76dWbuGnJIBALFoiAxGJqyy9T0H54S6u1zf4AUGBHAgqqujEFYdbAVdW1vFodf
+ fCFXI6JA==;
+Received: from [117.99.87.90] (port=50423 helo=AdminPC)
+ by a2plcpnl0716.prod.iad2.secureserver.net with esmtpsa (TLSv1:AES128-SHA:128)
+ (Exim 4.92) (envelope-from <elizabeth.finney@aptaexpoleads.com>)
+ id 1iK3T5-00FxAk-9q
+ for openwrt-devel@lists.openwrt.org; Mon, 14 Oct 2019 09:45:11 -0700
+From: "Elizabeth Finney" <elizabeth.finney@aptaexpoleads.com>
+To: <openwrt-devel@lists.openwrt.org>
+Date: Mon, 14 Oct 2019 12:44:49 -0400
+Message-ID: <b09e01d582ae$be56af10$3b040d30$@finney@aptaexpoleads.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:ugpDg4sUPhH0VM7FlWs4AQC4DfLvBUkTQ8nQ8T3oecn1an4YNFK
- e/5VgvODMu62iCF10gZURVhL2iMCG4e+Vt5c4egAggDQjEHpCQmCXFFG1N7Qphx1VsXr9zz
- tGYXwgZ3TCw/RYURO+GND5dikGkL9q7PHoNJmojIj4BOZtxqxG6moDvgls8SJ6zVi9e6jEJ
- KPxECZhyFtbdaXrJFRhHw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:8iJOB6HEbuw=:3ZZO9SDwB7pEJJ6+fBBlYG
- e+4+w9IovwiC9H9ohmx+RtCwh8zYEh9lsgUqWxEqeLXLrZ8kby3PgHZ5HAlnKx3F2VRbCinwi
- RDSMD1X7cKjAsN3jq8nFbgb+q/DT15py7Cu0lIRw/L/ON3pn+RwBSIakkTZySFIreJ7nTpmrh
- AckdFbgvKfIn54fwd57n+C3/+syQgbLf3ccPKLbRFxEfQAZGuNKKJwGviEtxyBMq8ZbHXCHox
- pKmUj8XJbXS1L4sWVYxo7vAQL9FZ75BmOkR/GZw3TxTz1suUzzrfNueRu0/7vC5sa9dSQ6b2Q
- 4i2iZ/havCWdnw2P1KZ5kz0XW1zYWAJI6QL9lTf3FKP9QrXJT/l0N/XQqW0UKqyVasUvetYJD
- QvWcBTMVdQwSqN3u1PBssl86LBlclWy0NRGVUuTgblxKCEm7CXR66XRRn5YI6W5Dy23P8e2au
- oJ4D9Op4X0lTpJw5dpHxwOzEoFSaen/sXu+6hb1To/BJVt0C5ciFdptLTbbXUz/xTu8MCI2Mi
- 8CcdbKXl/siFNGPY26rKr4XVrjK38AGpnuXb7W6dG4uia1NWThN0dNZ48cquK9Di4AAXDG+d2
- EBqtWmV7a/yEZfSceUwkA/voX7t7589xTq47O3A2JeYRZ3jNTmG37D3z71J5onikQGo6cVz59
- PQ1ceXw2xQaGtCTyraH5/pwuPm4P6PjA5qkSZO694gZuczh9bgURD7BzcaO8Rw6ItoZQYQezy
- cOwxTc53kkik00EebxSZRNF5Q3rNwZMqvQrewipDUO4/Qcg+EQI++2UmINT80axkoXt2XMpuS
- sdLoYeFXnApkM4a1vlkn8W7lrjAyTnPvI9JCREgsauP1jyZNAwcebmwY8NDSX5an2FPAKXO/L
- Ak8Rf9Hw25x7fhcl2AWSPDPCdCesG8D8GrnMyx5TU=
+X-Mailer: Microsoft Office Outlook 12.0
+Thread-Index: AdWCrjPExtbzH4FGRweCfIBkyTX6Iw==
+Content-Language: en-us
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - a2plcpnl0716.prod.iad2.secureserver.net
+X-AntiAbuse: Original Domain - lists.openwrt.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - aptaexpoleads.com
+X-Get-Message-Sender-Via: a2plcpnl0716.prod.iad2.secureserver.net: authenticated_id:
+ elizabeth.finney@aptaexpoleads.com
+X-Authenticated-Sender: a2plcpnl0716.prod.iad2.secureserver.net: elizabeth.finney@aptaexpoleads.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-CMAE-Envelope: MS4wfH8I/cr9oP/Aet3cHuk6oPIGhfwzD7F8VMBYs5veW83pL/2IPgxYa9ns8Yt2vichOGbhNceKelgf97tQERz1aTk5gm2n1C9N0xldP8ybIfEPiGi196Xy
+ zYjgIXawLjDd44o1bdBqiHs/vZ7U5R+LfmJkS26xFD+tFcuOhxNT7CQi++Gu+237C81elUwyGtSWuVFBJ3G2ZBwd/7XQO2OyNqI89uareMperlQAiwJwFK9j
+ jHR9nXJ+H7x8BGSSHz1V0Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_085100_996606_EB359A62 
-X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-CacheID: sfid-20191014_104003_292673_D85B9C3F 
+X-CRM114-Status: UNSURE (  -3.76  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [198.71.225.36 listed in list.dnswl.org]
+ 1.0 MSGID_MULTIPLE_AT      Message-ID contains multiple '@' characters
+ 0.0 RCVD_IN_MSPIKE_L4      RBL: Bad reputation (-4)
+ [198.71.225.36 listed in bl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH V2] ath79: add support for TP-Link
- TL-MR6400
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
+Subject: [OpenWrt-Devel] CES Unveiled New York - 2019 Business Emails
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,106 +101,230 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============1904985679003389196=="
+Content-Type: multipart/mixed; boundary="===============6521824306326742856=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============1904985679003389196==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=m/su8FB0Xtfan1=-="
+--===============6521824306326742856==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_B09F_01D5828D.37450F10"
+Content-Language: en-us
 
 This is a multipart message in MIME format.
 
---=-=m/su8FB0Xtfan1=-=
+------=_NextPart_000_B09F_01D5828D.37450F10
 Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 
 Hi,
 
-> -----Original Message-----
-> From: Enrico Mioso [mailto:mrkiko.rs@gmail.com]
-> Sent: Dienstag, 8. Oktober 2019 07:14
-> To: Filip Moc <lede@moc6.cz>
-> Cc: mail@adrianschmutzler.de; openwrt-devel@lists.openwrt.org
-> Subject: Re: [PATCH V2] ath79: add support for TP-Link TL-MR6400
->=20
-> Hi Filip, hello all!
->=20
-> Thank you very very much for your help and sorry for me not ansering to y=
-our previous mail. I tought I would re-check this all when I
-> went back home to report with precise informations, but in the end I didn=
-'t.
-> Your help is very very much apreciated.
->=20
-> As you found out, I would need help in exactly that: setting port numbers=
- correctly in the UI and fixing the fact eth0 doesn't receive
-> connection status events.
+I am following up to check if you are interested in acquiring the attendees
+List.
 
-What exactly are you referring to when you say "connection status events"?
+CES Unveiled New York - 2019
 
-This has two aspects: One is the LED status which needs to be set with swit=
-ch0 (I commented on that in my previous e-mail reviewing your v2 patch agai=
-n).
+Location: Metropolitan Pavilion, New York, USA
 
-The other one is that switch-phy-swap has an effect on which ports can dete=
-ct link status changes. This setting will affect several things:
-1. Which port gets link detection
-2. The port numbers will change
-3. The order in which gmacs are set up will change: If you change that, eth=
-0 will become eth1 and vice versa (on running system). This will require ad=
-justment of setup in 02_network/01_leds, where ethX then needs to be swappe=
-d, too. Note that for several devices eth0/eth1 are swapped compared to ar7=
-1xx.
+Date: NOV 07 - NOV07- 2019
 
-So, you really have a lot to play around with and to make wrong ;-)
+List Include Details Like: 
 
-For further reading on the effects of switch-phy-swap, you might have a loo=
-k at this Pull Request (starting at the comment):
+Company Name, Contact Name, First Name, Middle Name, Last Name, Job Title,
+Website, Address, Phone Number, Fax Number, SIC Codes and Most importantly
+verified Email Address.
 
-https://github.com/openwrt/openwrt/pull/1942#issuecomment-529078064
+Please let me know your interest to send you the number of Attendees and
+cost.
 
-Note that the situation in the PR is even more complicated as the vendor di=
-d a dumbass setup in the first place.
+ 
 
-Best
+Waiting for your response.
 
-Adrian
+Thanks & Regards,
 
---=-=m/su8FB0Xtfan1=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
+Elizabeth Finney- Business Analyst
 
------BEGIN PGP SIGNATURE-----
+ 
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2kmVsACgkQoNyKO7qx
-AnBhww//a4MzaZaJ1dOuoUJJBDrGK2mexFr3H6UXUF6Nw+YkkM1H3vLb3CIJxazj
-kJ1P86JmL1XX94sGAzoIttCVl9uWANKGDC5g15cur7RqLHnkf53yqFkNXnH00wpi
-WFVOxlztAWGsgzo+t+OGB6zwn4EBYYf8lNVEv5L0+fBmpl9Q0niBzPDf/c9UnXcD
-bSRPQAKNvHmXVnQeR4N6kuiLCDlkpSOrohzFcBnjRGqnaqVvG4YzwpXUjsfOSJ3j
-tJpFAtMtxTVnS2srndy9Ivf+T9a1babNEDmbMu5lTv8uqtFEurrC3r2oDJQtRk0o
-cwK42yQQFhryiGYXbDSf0zQlGRI9nrTDwPaWNCAc8r/HCg56jyVQmom59Zj9a/8h
-TrBfbA7kLImxhuTs5kE9sMFv4h8r6tni5b5R5I6h4SwyPPm5sC/b8uC32EjE3410
-ViO96oqcBtawfWbv1BnERhduYFie/CloonYXOoC0eTPZ01AeTbsEGcYuJpWOifoy
-YsiHz2gag1u9tvXUbNKAp0yXiNpWOX4l3sxHl49B07uaOPuVAW2D5VDzn0o0WrV7
-9bqY0hS6UApTp4u0xPCXlfSX4rzFel5hfv2mu39iQyZJ1onA0S4hEj7xwkROWua0
-h2rhJnDM8VFGWI/8tDFkFExlZOl0eLVXebY+UoF8Gp9HqXfc98E=
-=O7np
------END PGP SIGNATURE-----
+ 
+
+ 
 
 
---=-=m/su8FB0Xtfan1=-=--
+------=_NextPart_000_B09F_01D5828D.37450F10
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii">
+<meta name=3DGenerator content=3D"Microsoft Word 12 (filtered medium)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.xmsonormal, li.xmsonormal, div.xmsonormal
+	{mso-style-name:x_msonormal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+.MsoChpDefault
+	{mso-style-type:export-only;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;
+	line-height:115%;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext=3D"edit">
+  <o:idmap v:ext=3D"edit" data=3D"1" />
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=3DEN-US>
+
+<div class=3DSection1>
+
+<p class=3Dxmsonormal style=3D'background:white'><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#0F243E'>Hi,<o:p></o:p></span></i></p>
+
+<p class=3Dxmsonormal style=3D'background:white'><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#0F243E'>I am following up to check if you are
+interested in acquiring the attendees List.<o:p></o:p></span></i></p>
+
+<p class=3Dxmsonormal style=3D'background:white'><b><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#548DD4'>CES Unveiled New York - =
+2019</span></i></b><i><span
+style=3D'font-size:12.0pt;line-height:115%;color:#548DD4'><o:p></o:p></sp=
+an></i></p>
+
+<p class=3Dxmsonormal><b><i><span =
+style=3D'font-size:12.0pt;line-height:115%;
+color:#548DD4'>Location:</span></i></b><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#548DD4'>&nbsp;<b>Metropolitan Pavilion, New =
+York, USA<o:p></o:p></b></span></i></p>
+
+<p class=3Dxmsonormal><b><i><span =
+style=3D'font-size:12.0pt;line-height:115%;
+color:#548DD4'>Date: NOV 07 &#8211; NOV07- 2019</span></i></b><i><span
+style=3D'font-size:12.0pt;line-height:115%;color:#548DD4'><o:p></o:p></sp=
+an></i></p>
+
+<p class=3Dxmsonormal><b><i><u><span =
+style=3D'font-size:12.0pt;line-height:115%;
+color:#548DD4'>List Include Details Like: </span></u></i></b><i><span
+style=3D'font-size:12.0pt;line-height:115%;color:#548DD4'><o:p></o:p></sp=
+an></i></p>
+
+<p class=3Dxmsonormal><i><span =
+style=3D'font-size:12.0pt;line-height:115%;
+font-family:"Cambria","serif";color:#0F243E'>Company Name, Contact Name, =
+First
+Name, Middle Name, Last Name, Job Title, Website, Address, Phone Number, =
+Fax
+Number, SIC Codes and Most importantly verified Email =
+Address.</span></i><i><span
+style=3D'font-size:12.0pt;line-height:115%;color:#0F243E'><o:p></o:p></sp=
+an></i></p>
+
+<p class=3Dxmsonormal =
+style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;background:white'><i><span =
+style=3D'font-size:12.0pt;font-family:"Cambria","serif";
+color:#0F243E'>Please let me know your interest to send you the number =
+of <b>Attendees
+and cost.</b></span></i><i><span =
+style=3D'font-size:12.0pt;color:#0F243E'><o:p></o:p></span></i></p>
+
+<p class=3Dxmsonormal =
+style=3D'margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal;background:white'><i><span =
+style=3D'font-size:12.0pt;font-family:"Cambria","serif";
+color:#0F243E'>&nbsp;</span></i><i><span =
+style=3D'font-size:12.0pt;color:#0F243E'><o:p></o:p></span></i></p>
+
+<p class=3Dxmsonormal style=3D'background:white'><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#0F243E'>Waiting for your =
+response.<o:p></o:p></span></i></p>
+
+<p class=3Dxmsonormal style=3D'background:white'><b><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#548DD4'>Thanks &amp; =
+Regards,</span></i></b><i><span
+style=3D'font-size:12.0pt;line-height:115%;color:#548DD4'><o:p></o:p></sp=
+an></i></p>
+
+<p class=3Dxmsonormal style=3D'background:white'><b><i><span =
+style=3D'font-size:12.0pt;
+line-height:115%;color:#548DD4'>Elizabeth Finney&#8211; Business =
+Analyst</span></i></b><i><span
+style=3D'font-size:12.0pt;line-height:115%;color:#548DD4'><o:p></o:p></sp=
+an></i></p>
+
+<p class=3Dxmsonormal><i><span =
+style=3D'font-size:12.0pt;line-height:115%;
+color:#0F243E'>&nbsp;<o:p></o:p></span></i></p>
+
+<p class=3DMsoNormal><span =
+style=3D'color:#0F243E'><o:p>&nbsp;</o:p></span></p>
+
+<p class=3DMsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
+
+------=_NextPart_000_B09F_01D5828D.37450F10--
 
 
 
---===============1904985679003389196==
+--===============6521824306326742856==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -194,6 +335,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============1904985679003389196==--
+--===============6521824306326742856==--
 
 

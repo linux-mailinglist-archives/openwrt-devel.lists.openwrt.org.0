@@ -2,76 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCE4AD7BD0
-	for <lists+openwrt-devel@lfdr.de>; Tue, 15 Oct 2019 18:37:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F74BD7E21
+	for <lists+openwrt-devel@lfdr.de>; Tue, 15 Oct 2019 19:52:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RMEJoiVsEh/6LjeihfP2NJmnk2WUac45L+GjNPCO46I=; b=YykYs1dqj4+rianakG8Btifpg
-	+++8bs9ED8dIp7bb9oiwO/3axS94Cv8xqJcl5YSNmlKVFqFhvP1cMflUf9RF4EY7agLhxWW+xpmuK
-	6V7xIClWrJaGsWdJX80dkGJCbp32iWWN7FU+d/dp4qwCXH5w2QY+MoOpF0ZuiBdmrrZwSD8PvcmWs
-	iRbkm/7nvEx8ejo88SmjsFE6ToCTwHQimUfpWiZxEMkFUh9ZutgtU3jb6weRb0jRniweTtsPqrKu8
-	1kJfspPuDsTwonC4oP+4Mn3CcapDlWbWXsk2KCUFuEtHAfFD1F3d9muAZ7fXZxf2O28C3qxSqgM7L
-	9P32IZ4Vw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TZ/e8OkFR78PZTe0buw2khfXHRGrqLx1IG501VIOYzg=; b=V405Ft3HKYep5d
+	X7IzNvvveEnRxiU0U9zNdqGnZpup+EgzkgIJLfJBGEdv4nj9dPs1ruQKg+1djFYWb9UwOdSAOzgEU
+	P5F98fJk4a2eAHZtCg8JW3ETa9XkAOXLzIviu/Tp4jo5mRApnI0F+UCrqk9xX7TrXbXtw4eQGXf1f
+	1x4uQqgaEU/QzD/juS6kqADg4Tj6qmP/DI+Z5VycHxP7Qx/PCqHige5jbok9ZgF5WFrCDkLJKgX9u
+	SyXPi9PGiAWFFM8r1WhynpfeANUuDAUUWqMngkTvULINFp+0X1LvY49dtgD04Ci0aHeo45Y6t5iuY
+	9XqbYxK2YUKq+6ZE1CVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKPp0-0002EZ-W2; Tue, 15 Oct 2019 16:37:18 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iKQzM-0007LS-Dm; Tue, 15 Oct 2019 17:52:04 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKPor-0002Dv-GJ
- for openwrt-devel@lists.openwrt.org; Tue, 15 Oct 2019 16:37:11 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1N79dk-1hzGMJ0w8a-017U0n; Tue, 15
- Oct 2019 18:37:07 +0200
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'David Bauer'" <mail@david-bauer.net>, <openwrt-devel@lists.openwrt.org>
-References: <20191014104701.207324-1-mail@david-bauer.net>
-In-Reply-To: <20191014104701.207324-1-mail@david-bauer.net>
-Date: Tue, 15 Oct 2019 18:37:06 +0200
-Message-ID: <00f501d58376$c89e1300$59da3900$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQHvpjY86j1/DP94kfwinZ8alhrMWKcnoQVw
+ id 1iKQzE-0007L0-9a
+ for openwrt-devel@lists.openwrt.org; Tue, 15 Oct 2019 17:51:57 +0000
+Received: by mail-io1-xd43.google.com with SMTP id c25so47901975iot.12
+ for <openwrt-devel@lists.openwrt.org>; Tue, 15 Oct 2019 10:51:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=H7vIvDJdJOjr8ZlKEIjq824F1jg8GnoXguNb7Esd4ks=;
+ b=Ir3yPAH0+1hO8lKk2dJlPqIqsBlLVUIDYsZuvO1LNn6d1pOAqS/4yw/xvZqT37bMow
+ ++pryHxpoj8E82V3ebJ0BiF67KVpeR1Bz6GSQ4Iz5BHVmGe58nhyRQkGlyn3MKV6oUrg
+ b2N2m2oMYYm1o11zbuA9k0TIXwMv96aEBsqhAEO+Nm/eXxFqsdEpcpQR2G1crnQ70u+v
+ 6a0gdAStP2XHxdxJRMY1D7SbMebVOgJ2N7SRAOzAQClk8z8rm1vyqci5ZN36UjXu/aqb
+ 1WZPp29LNEayzXFYe0r9UtfWa3LmZb9a4jZ/sChwH7KOI6h5KEJPPJWL7OedF4iHHbTq
+ ZixA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=H7vIvDJdJOjr8ZlKEIjq824F1jg8GnoXguNb7Esd4ks=;
+ b=lrgZQYz9cKQFT51P6neGtvnsM4jvRNG7QH2Z8w/iEsqc1q5ZSuXs9p/myYjHtIrE3b
+ oU1D29hEP29qkfcLAXjZQ4X5wLr/k4B4HPNNPcfmNtKmLFcwotyDSdVGkJjF0NZfvakx
+ Ba/vWg8ngyYkBWbVRisfv9jAsedOv+V5xo2Csa9PO+qokkyZBeCurLWlG+7/yoxpjsvh
+ 4LbtXtmm+WA20AKmcYuw8iNQCLc6yW+MD9rTW8USxnXV7K2274vXYB/sGOzpyZ9dV/vI
+ AdbfCZ0PgHKiw2YrvtaECPSQoKCBFsJupC5BTE8ziLJ2rEJm7d9hmtwq6oYR9vghMryu
+ GnLw==
+X-Gm-Message-State: APjAAAUIOjBHWxP5LicoBtRZ7uyx5MaAJdSQVuqoiRVpUzAkh9mNhU0n
+ ON2YcvtSplHL0/eQ/h5LAX1+poK1XTgTBaNjJjwHqm8EnBU=
+X-Google-Smtp-Source: APXvYqyLsjvkThr7z803E4rLdt+i8NL5//HywbM7MH+rd/4YFhpixbgRhKgoAYHO0Z4ms6J9WHQ8qhUmIrGc6my2fGQ=
+X-Received: by 2002:a02:7f16:: with SMTP id r22mr26469966jac.83.1571161914859; 
+ Tue, 15 Oct 2019 10:51:54 -0700 (PDT)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:E2oc6Qxe32tyOTaPCbJeKNZemgHn+qYC1MY9DYfi5J4bGaxM+cZ
- AACBbSQbjnmoY0Q/Bo/LNrIZYKlAc8a4Ory6omwril2gL47H2uRBiDHs8ZANMeQ/2+Rjbmn
- bTg4dWJr9wT0HaQrlNUuFLapbQLaHf2rcJYwqPZimLcI1jEgRvlIjK0wh9nbobEs/6rUnEQ
- fiZLdnQXFZVeh2e/n58hw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:2+9mcvpl1Fk=:Bhir5RmXSJBiCafrHNoJA9
- PbMetztWtJV7hDb9KGGJDOIB0YJ/DlZpbj6LsDtzG4zr8NZHuPc11BdQKuB/Oz/f5HWvu1P53
- n+VLbIB5hwSzCF3UwYz5B8Os6ecpj064Ragao0gF+oDeNeexzve8SU1eZ8MwW2jfBIC3HcHR/
- 8Si4VVodi/MuWaPjQA6SkAfy8yIhcy3BrQ3uS1MdSi8L9lYwQT1jjXSqf7g9Qf0C5q/YnTuuv
- bn16kP5I/XJOVspTQka5GUEiyHH27O/OyUZafHcyi5AuazuFsDb1BIhvnZ9mWW2REg0V/OEqt
- 4LIhknmrVvL8Hjg8ixbi8HRoiIUvyYqZgHxUBNGUtjFU3xrO2lMevVwLNHcDKetzJcbQfwj3A
- dBovMzNQjMjveObaI0VsXBsB4F0VndFK4fVV+kX+DNaSQ77p5mqBNjI4x3/9CaOG65AT1wGaj
- tsAR5irZhKGZSPluHMQxseNwm5s9gOQt1SPSV/qM3Ldc53JwfWyfpJ0ziTrg+1kpc5aQe8nlx
- tsHTssqJ7Jy8jEGUw7A3SCMblioLDjJpL5C6gP3Y3bFrT4RTRu3LiVeDthtFvfp7+s1adNDX4
- Yb5Xew5Y+/Fv/2rhrOycB96ahRC9AedPu58Z3or5L1wCg0Rm3F+FFXBRvX4/1vMNO/AXLkdNu
- qtQCrfL8b/qL9NgKbkPKnvDeORA8UoEVcfX+XFtqZJLIMf2Y4KyJa9sYIVIfHyUHl9+5UIZAF
- 9ivbxww0a7CW/CpREl8JhWHDrCUEJq4gJOB8+4xYhNhDEC96gCHY/tR/k/STMCzCxY5tMTt2N
- 08n2nYThDxLg9p0flP6L+TTEBipcLDogvqW5KROArsbBVR0Tzanbgr+4jdwjoyJNk0dJtQ5qH
- o/3E5/m91sfrKGVrup2KRgIACvq6o2frzZo+Eu44U=
+References: <1571153708-22316-1-git-send-email-dan.haab@luxul.com>
+In-Reply-To: <1571153708-22316-1-git-send-email-dan.haab@luxul.com>
+From: Rip Route <riproute@gmail.com>
+Date: Tue, 15 Oct 2019 11:51:42 -0600
+Message-ID: <CALZrXO=0aqsJC75Bf5o3SGVpw217CmpkFTwVoirdD-qxssPsvw@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_093709_839138_A564004E 
-X-CRM114-Status: UNSURE (   7.06  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_105156_364550_73F981BA 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: correct ar71xx boardname for
- UniFi AC Lite
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (riproute[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] bcm53xx: sysupgrade: support Luxul NAND
+ devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,84 +92,41 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7839907023282428934=="
+Cc: Dan Haab <dan.haab@legrand.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+On Tue, Oct 15, 2019 at 9:35 AM Dan Haab <riproute@gmail.com> wrote:
+>
+> From: Dan Haab <dan.haab@legrand.com>
+>
+> This adds support for UBI-aware sysupgrade using Luxul formats.
+> ---
+>  target/linux/bcm53xx/base-files/lib/upgrade/platform.sh | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh b/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh
+> index 6b12c84..1686462 100644
+> --- a/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh
+> +++ b/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh
+> @@ -402,6 +402,8 @@ platform_do_upgrade() {
+>                 case "$file_type" in
+>                         "chk")          platform_do_upgrade_nand_trx "$1" $((0x$(get_magic_long_at "$1" 4)));;
+>                         "cybertan")     platform_do_upgrade_nand_trx "$1" 32;;
+> +                       "lxl")          platform_do_upgrade_nand_trx "$1" $(get_le_long_at "$1" 8);;
+> +                       "lxlold")       platform_do_upgrade_nand_trx "$1" 64;;
+>                         "seama")        platform_do_upgrade_nand_seama "$1";;
+>                         "trx")          platform_do_upgrade_nand_trx "$1";;
+>                 esac
+> --
+> 1.9.1
+>
 
---===============7839907023282428934==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=xoM4eZOv6/wU0d=-="
-
-This is a multipart message in MIME format.
-
---=-=xoM4eZOv6/wU0d=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
-ehalf Of David Bauer
-> Sent: Montag, 14. Oktober 2019 12:47
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] [PATCH] ath79: correct ar71xx boardname for UniF=
-i AC Lite
->=20
-> This corrects the additional boardname for the image metadata to the one
-> used in ar71xx. The previously present additional entry was never used
-> on a running system.
->=20
-> Signed-off-by: David Bauer <mail@david-bauer.net>
-
-This should be backported to 19.07.
-
-Best
-
-Adrian=20
-
---=-=xoM4eZOv6/wU0d=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2l9bIACgkQoNyKO7qx
-AnCToxAAvsH4de/quYY2iGjd68xQ5SXvk8T1p/I8a5dhy+V7VW2fSkkH1IFnKkQW
-Jg5B3nCo3vWIPSsGRdUzNz6QG5fGF1Q18zLCt7knyAkP/9RkCBUhfx4QutLVl5Hv
-VzbBPrDEzspF3sjixVPuaAjFmpoAscrz4iuho0gHGYWC8nlN2X34grREvurIzbeA
-VekEXacnGEnxu044934LQcXJ9RnKSj3gIEByaN1gQ/PsN3YoRjDgZ48DthjE8uXW
-crhCYTxTuu4wr3jUTGIDoMcknggOR8MRlUx229fxcn7xNxkGcPdCRHstYe3nlf65
-tD6JlbbkyWD9Pf9OlZQxeYa9Tr/6QdHyd6hfzWDBJ2/5Dzrxvl9WmRCFTjZPbliN
-ySoy+lWpYJgqQ3PWatffxS0hSPIm8aCdjFApVG5nLKJzwF02POSJ5bbUzql4AvqW
-27ZtIyTia5ujeM3CbRBUMro3XjW9n6xBko0ZMMpZ3osGOEULtlKnH9hrgRMuKvSZ
-3XASugTKi/die3sSChYx7XecS17UTlWTsBa/Y/sAqXFDBQ1Uom2LStqI7bHZcI7K
-TxmTcbYVzlydk51eF4EbiVAyF+LIvzim0Lr68cpM6MqoTTtaY4y88sXp+lG+84k+
-zJeZqIUDab+37a03XaFUWIaU5XW8mvKgdxo1zexOrZQAYmwT2ZU=
-=Wj5x
------END PGP SIGNATURE-----
-
-
---=-=xoM4eZOv6/wU0d=-=--
-
-
-
---===============7839907023282428934==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Signed-off-by: Dan Haab <dan.haab@legrand.com>
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7839907023282428934==--
-
-

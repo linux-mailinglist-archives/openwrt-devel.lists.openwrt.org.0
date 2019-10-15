@@ -2,78 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20FEED77A9
-	for <lists+openwrt-devel@lfdr.de>; Tue, 15 Oct 2019 15:47:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01E96D79E2
+	for <lists+openwrt-devel@lfdr.de>; Tue, 15 Oct 2019 17:35:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=G/3uyfnuyqWxpx/CAC+o3e5IzFckZnP7LmnYa/lVxL0=; b=Kl0AW6a2/u/NYa17G/FzjEfBp6
-	pCrdjPkUDtgy5AnXuYTeBnrRmecjWRPxoLx30k6hlAXD1Tt2xBFbejgFRpgJSff39fLYpOEQf3kZ1
-	yE2KJukruIvYDe8FD0h5YXpYuEst6FBLApXr/F1myq/7R+AOJeNu1OB6mPyXoIhyIvI32/FMidfD9
-	KOf5arfu84of21FFRPQncV8A6B/Enr0zFFTKwg8ZhbmhOVIUTINwPD8pkzfPQY1TK7oeIjzWBP78R
-	5Yfg72bWEITuy1CyEXBoT+HXZpg6b9hKSYej7c224eO17eQvekQg2VV0RuLdblUOuKi9xIguinUmg
-	2ce9qzaw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AivusGfiaNRXegT9+HEEwLEY3rWdUVWsrOskvbo0A4g=; b=NZbGNrv3ePNdmj
+	iZKV6InoWl/mpFDfaVTtxrOzNmBILOLcLhDPCy6DvkAEFVpWsWsLQRF9xvjp/sLzJdCYGO53Vp0/B
+	A2rp44XfI6HM8B0lW2FI+JTpwM45Kw6RP+pcFaAlPlsOY8wyq5ChmzXoUQloluvChuu02BHs/zQLI
+	vYhekHTLZ7qglaMc7CjwmjaUzRCB2wZvhC/Z+jEmVLecrx/6IwXmkwS+nekGttcMLcFzwZay3dDT0
+	KIJVJBV5g/Sqs73N8z/VjaaKoqis90o9ICGxubGr6K+/aYtKMQp184kINtTG/CLNkzXvkS0m1giPr
+	nTAjgiNQ+mh7GEzL5h1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKNAT-00084y-Mm; Tue, 15 Oct 2019 13:47:17 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iKOr3-00050x-4H; Tue, 15 Oct 2019 15:35:21 +0000
+Received: from mail-pg1-x52d.google.com ([2607:f8b0:4864:20::52d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKNAN-00084W-NA
- for openwrt-devel@lists.openwrt.org; Tue, 15 Oct 2019 13:47:13 +0000
-Received: by mail-lj1-x244.google.com with SMTP id y3so20343790ljj.6
- for <openwrt-devel@lists.openwrt.org>; Tue, 15 Oct 2019 06:47:09 -0700 (PDT)
+ id 1iKOqw-00050M-6K
+ for openwrt-devel@lists.openwrt.org; Tue, 15 Oct 2019 15:35:15 +0000
+Received: by mail-pg1-x52d.google.com with SMTP id i76so12381954pgc.0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 15 Oct 2019 08:35:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=vep6ARD1EgwC0t5q8r/uzrTzr7rQp/5hJKLJ57+xGsY=;
- b=LuvpW5fAFWrbaeJvqc4QLMVrHkXGqLtIc92RJ1Pao6v6p60MVH2dMikfysyiI3118D
- oQWmxKUTknVghoDIiT0KKmIddkoprhKcTIGbvQIdHmvYluVL4JLF1IDwvHcSfNjst22k
- FBENRYl5pk/HR6LTW3RSbInb+ygcRhi/48wHL+tZ8ixP7Lwy41YFFDS8shpY8W7S9b0s
- q0TMjs8+o9rJ9R0d8mMdveBIkRT30gi4lS0DD10uVrqeF5n9ePyPYzd6Vf0h0wK3NRx0
- 4SkZRH1KRfbg1gtUWRRF3QuitJI51Wtqhek/tYMC5S/G8V8gMSoXUOvHrVTNcX1CXDCK
- T6vg==
+ h=from:to:cc:subject:date:message-id;
+ bh=cytuFNInk+T/uWEDasd6c6LkXrrBjJqan6bNC+xGanM=;
+ b=L0yiOLlCvPh8f38waiFj2oEtbmxnTvOdN/VbGFc8rATiBucQZbOTbutgQUq7a3zWCT
+ JLKFbqAc7We8t5LjlaCoi0nGYeEuyAY3Aeq0ElrM/SPAFE3hj1YDHSU0Cq76sr4f1Qxu
+ AawtkWofQfxMI8o7b7AvgM2KHAvYNi3IhoULdMh6C0ve2i1WXlqG9JTqGxuRLpjeqfKv
+ C2TQGGbogSoj+SBECTxxakNepz9QyYuARgAdDNhdm1jgh9VMJ8mPZnGCvNl2jCDwdjdd
+ mgd7eNZioyp9ZlAdm43XFxDq0uP0sYkTsUhaQP7nWuGmr+cn1z9KE263NswijfrCyCcS
+ P3eQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=vep6ARD1EgwC0t5q8r/uzrTzr7rQp/5hJKLJ57+xGsY=;
- b=XxJw9/XyADfCzZJlLyJOABL0Dr0wYr/da0ao+kSbsW4ib7QC4jZc+cYu+Y0v7O0dMk
- 7L3sgdGij9nHMSCgg19bjMg94f8imhsgXYlnOcadDrvbkxy2y73CfaUJM4qH+qaKTnTA
- We+SEH8UvxZwFh3qGM8DxhWeBtQdO95x5q/FohJ0juUzC6isSoWkLQ8Z5zj6Ir9Fe3se
- IttprFgsuAtfX9jto/moe5pxgl478bv5YyejlHcT5x2DJgnGm2pjCAZyxOct4f5PJplJ
- IH1Itig/bK9yv6DEoA9t6h6VzvpoQgBcaSxHqP6MsAP0Gf+7fR2Dwv3rlRjqg5iL5EhQ
- i+Rg==
-X-Gm-Message-State: APjAAAWzkuBwIRB1l+QbxSjVSRW3sTchoDO700yZF0FeWHXnDf+jVc0e
- 4KPSFfgNpB/ptifPivkiDI1vFcq5HH5S6P+tJLJFICNNzas=
-X-Google-Smtp-Source: APXvYqwasIJFrunMecaEqRktJY18GzvHRczn9UGlC54H9IHNzFdRp0ba7XHSDUKH+X3JTi15PvIh8YndyDSkY72c9cQ=
-X-Received: by 2002:a2e:9d56:: with SMTP id y22mr22817031ljj.37.1571147227760; 
- Tue, 15 Oct 2019 06:47:07 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190409180839.1815-1-ken@miller.ec>
-In-Reply-To: <20190409180839.1815-1-ken@miller.ec>
-From: Val Kulkov <val.kulkov@gmail.com>
-Date: Tue, 15 Oct 2019 09:46:56 -0400
-Message-ID: <CABFXWOCbVw1KNSpXPNOCRBDS2x+q694npnz-wnGJPLeOWLD9rw@mail.gmail.com>
-To: OpenWrt-devel <openwrt-devel@lists.openwrt.org>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=cytuFNInk+T/uWEDasd6c6LkXrrBjJqan6bNC+xGanM=;
+ b=hW4rnU/A0BBOGQPszH+ndDCa6HeFZaLv9+SilcbYnh2KW9lsqHrZl8xbyQmt+b5iKc
+ vNP5M1Ui/t6XOv8UBSCeG5YKaNASiJL6GKz0nNT+e6gLmZndU4l/ILNP9fMIvRF6gfgx
+ T5jFvL0IQUXasnvk8ry/wWpmzydteiHdi+4t84PzZJ4DGAe2MKcIfMKOejF3CbVPkZ/t
+ Q/DSbI0EKQiOo1bd90MBimhK2xQjaC5k2XfjyirYU68NjvF7+ZFbMz4NJnIBjno2k4rl
+ IPADjilihrZ5oVyGkj2dpgdXNLIrlEu+zsiLSn7oL+0zoTFIgODIgKBgN7NokZrDswPS
+ Nnbw==
+X-Gm-Message-State: APjAAAUhIl4NtLsdpXYBYNYSIBQUXMSk+BSd+7ytb0g0SGPgK1Ua1/wG
+ egtwr6IKNtihd/npGcOCrgGHE9G51CE=
+X-Google-Smtp-Source: APXvYqzb+8u6zhBiVcmijQ/ZEctiqSRHrRj6h+Sqy3ayM4ax/mtfOzyjcFW6Xiv/NPenj/fc2BbwYw==
+X-Received: by 2002:a63:364b:: with SMTP id d72mr37173235pga.346.1571153709829; 
+ Tue, 15 Oct 2019 08:35:09 -0700 (PDT)
+Received: from localhost.localdomain ([67.139.187.132])
+ by smtp.gmail.com with ESMTPSA id o42sm37644741pjo.32.2019.10.15.08.35.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Tue, 15 Oct 2019 08:35:09 -0700 (PDT)
+From: Dan Haab <riproute@gmail.com>
+X-Google-Original-From: Dan Haab <dan.haab@luxul.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 15 Oct 2019 09:35:08 -0600
+Message-Id: <1571153708-22316-1-git-send-email-dan.haab@luxul.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_064711_755405_CAB8F827 
-X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-CacheID: sfid-20191015_083514_257783_A12D4EF2 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (val.kulkov[at]gmail.com)
+ provider (riproute[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:52d listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -81,8 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] fstools: block: make extroot mount
- preparation more robust
+Subject: [OpenWrt-Devel] [PATCH] bcm53xx: sysupgrade: support Luxul NAND
+ devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,42 +95,36 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Dan Haab <dan.haab@legrand.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, 9 Apr 2019 at 14:08, Kenneth J. Miller <ken@miller.ec> wrote:
->
-> The extroot mount preparation code for r/w rootfs overlay discovery, and
-> determining the user-defined /etc/config/fstab location within, would only
-> discover overlays residing on JFFS2 or UBIFS MTD storage.
->
-> This led to attempts at loading the uci fstab configuration without the
-> required /tmp/overlay directory prefix on devices with a non-MTD r/w
-> rootfs overlay, and thus failure to find any custom fstab /overlay extroot
-> entries on PREINIT.
-> (example: the default openwrt eMMC partition layout on the zyxel nbg6817)
->
-> Futher, with UBIFS_EXTROOT enabled (fstools package default), and no MTD
-> rootfs partitions present, check_extroot would not attempt rootfs
-> discovery on block devices, such as the ext4 mmcblk rootfs overlay on the
-> nbg6817.
->
-> With this patch:
-> 1) main_extroot now attempts to load uci fstab configuration from an
->    already mounted overlay, before defaulting to the prefix-less uci
->    config dir when no MTD rootfs partitions are detected.
-> 2) check_extroot now also attempts to find rootfs partitions on block
->    devices when no MTD rootfs partitions are detected.
->
-> Fixes: FS#2231
-> Ref: https://bugs.openwrt.org/index.php?do=details&task_id=2231
-> Signed-off-by: Kenneth J. Miller <ken@miller.ec>
+From: Dan Haab <dan.haab@legrand.com>
 
-This patch makes it possible to mount extroot overlay on x86_64.
+This adds support for UBI-aware sysupgrade using Luxul formats.
+---
+ target/linux/bcm53xx/base-files/lib/upgrade/platform.sh | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Tested-by: Val Kulkov <val.kulkov@gmail.com>
+diff --git a/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh b/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh
+index 6b12c84..1686462 100644
+--- a/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh
++++ b/target/linux/bcm53xx/base-files/lib/upgrade/platform.sh
+@@ -402,6 +402,8 @@ platform_do_upgrade() {
+ 		case "$file_type" in
+ 			"chk")		platform_do_upgrade_nand_trx "$1" $((0x$(get_magic_long_at "$1" 4)));;
+ 			"cybertan")	platform_do_upgrade_nand_trx "$1" 32;;
++			"lxl")		platform_do_upgrade_nand_trx "$1" $(get_le_long_at "$1" 8);;
++			"lxlold")	platform_do_upgrade_nand_trx "$1" 64;;
+ 			"seama")	platform_do_upgrade_nand_seama "$1";;
+ 			"trx")		platform_do_upgrade_nand_trx "$1";;
+ 		esac
+-- 
+1.9.1
+
 
 _______________________________________________
 openwrt-devel mailing list

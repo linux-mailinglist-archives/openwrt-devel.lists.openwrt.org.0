@@ -2,78 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64BA9D73F0
-	for <lists+openwrt-devel@lfdr.de>; Tue, 15 Oct 2019 12:53:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62DAED76E7
+	for <lists+openwrt-devel@lfdr.de>; Tue, 15 Oct 2019 14:56:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2NdT//wuXAyIs64JVpVPMLhZLMW6/aSLP7kYuT62tUo=; b=bp0Gh382i8mSuQ
-	l+n6dOD8+LITI4SHrfkMwidbAD1ULSceww1lMG6bigOuGP6bBHf4xSzH3LKqiclATRZIYCLjPPoak
-	LC90rQXZjZxnicV3hYWvch+FZfxFqSwEDffVCUfPkDRYhraNSdfa9D05YJ2HwC0YzDoY0MUjDblLw
-	Lo1aNxoIXkuYo/wBfyA+tmx/2pcymhnZpheEgy0FfB1mauUGCl9rsCtFv3FDsLNmQJGXrRAhw3Mbw
-	OJnOYTbU61FQM17zM0VfB6vCbm+AhAAvOGZKT1Pb3bnBOCjOkKsoMC21Z+QVKUTIS9w3T/BSAzSky
-	nGgiAD4vRSrqRcDeNMAA==;
+	List-Owner; bh=P6+X8XraG+f/nJO3OD7ewt0msqTCFUDftr9P2nJVx8A=; b=A2+tuTwTJQGkoc
+	z4u3SWjaNC3jbX2+9ZTLDll1eki629Gab77xIcbg+FDsdj+Ictq+Is+ROWcw3w86z0Vb/ocnJx+Kd
+	cVXkab0x7lhbM4pw25PO+bJDEugQdbLwolpT3Yp4738oJQ2/PCW+KmG7FSIx3ZLrhUqOgGAvjlUuT
+	ig1G83nNg1WDOP250rnFCv18mUOWCba7XMx2NOaVsdFH/4jnBDhUtwO0RYv2ly6+uLejttW45D8Q9
+	ZY3nZkYotcvIHWf+ZQDL+wkAsiXpBgiIFxa9DatLK/hN+km/K44kmQBxU914U9cJ/OZW6N8MV1Lpa
+	lVL+NEY3tj2/r+9xBHkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKKS5-0008BG-Id; Tue, 15 Oct 2019 10:53:17 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iKMNN-0005Sq-GI; Tue, 15 Oct 2019 12:56:33 +0000
+Received: from mx-out.tlen.pl ([193.222.135.145])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKRy-0008Aq-BS
- for openwrt-devel@bombadil.infradead.org; Tue, 15 Oct 2019 10:53:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
- Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DvJfq6FjSpewb6FhRywFsNsH1gwaFOVbMe2vhqfr9EU=; b=f5pcbJG8bSGV6jHtMTJh3iGKE
- RJa8lRfZcSLMfEwDC3bQoATXOpki3yDY6WXFRIJWGGAwBpTOkCmE0/+60SeljF2NKpRfdc6BGnTgU
- vQeUunNCY/LpnTvC1yADbkCDEnMYG4Lo1jepFXYMspHVvOR8mXtUFyyuBoZwfRg2wKs2PJibSddsP
- vzIwt2JjMjV/mBxJNR0TivP4huAp55GAEHZ7PoSByRay4kh2mEFxhfqU5vkYlkw5txQQj1uFF7NRx
- hsq7icTxqRpiGRi100vKj6UhQ1jrObfkYSqZxj9vbJxcMBzrBNLBrzHjBHLKF0SYyxM51WVR+LaCw
- kuvAK7YuQ==;
-Received: from smtpbgau1.qq.com ([54.206.16.166])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKKRt-00029z-Lg
- for openwrt-devel@lists.openwrt.org; Tue, 15 Oct 2019 10:53:08 +0000
-X-QQ-mid: bizesmtp12t1571136747tiobacqz
-Received: from localhost.localdomain (unknown [114.248.152.18])
- by esmtp6.qq.com (ESMTP) with 
- id ; Tue, 15 Oct 2019 18:52:26 +0800 (CST)
-X-QQ-SSF: 01400000000000S0IH40000B0000000
-X-QQ-FEAT: fJ1l0xwTBHoZNOR6nB9niltWp6OaFKUjZEWdCxKYQjY956GZDkneMfZ1D7S0t
- dR5/w8zUQPELKP0SwYer3zpkmwLL3HjpNNPApshEqD+1FytpMKY4J0AS8qf+75gr2ZpjnBg
- axaA3nPGaKCFpENn3AbhvZRNZmAtfvNO3KAf2M+lw9nqTSM6OqfuV80Qy9iICTQoA89Eejt
- aZrWs8PMC1D7AGEfn70ppNC91IwZ0kkeDPu+rQ/oHEvZ1eYfJYbfBvwOLnboEtHwluOfhrC
- MmkswzhZuepwXLx57nhb0JTfaSXDKA1zHUjPGD66p8Xwebh16ueWhmRSLh3Q4AIwNJf+HIY
- a6aW7CL
-X-QQ-GoodBg: 2
-From: daxiong <lxliu@ikuai8.com>
+ id 1iKMNF-0005SD-RZ
+ for openwrt-devel@lists.openwrt.org; Tue, 15 Oct 2019 12:56:28 +0000
+Received: (wp-smtpd smtp.tlen.pl 10495 invoked from network);
+ 15 Oct 2019 14:56:18 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
+ t=1571144178; bh=fL4lRA/GTjpbbMPgb1Vls7ASLdpE39g+eGgrU+do4ik=;
+ h=From:To:Subject;
+ b=CXnNQwZkX4xx9/QJrD0EU4S+RrYFsGaLyQwNQqLQ65LZ2bWb+zWln52AQtxW5G4JU
+ dES0Xkpa5gcvFVCfIUx9NYE5FNKg/B2T/3p9oyf+qAgj9PY/SqNWSH7t3iqeEOHOZn
+ m9/VorrhcJSeQ9VhxVcEhheKEX1UIh6J+Ls4iU1M=
+Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
+ (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
+ by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 15 Oct 2019 14:56:18 +0200
+From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 15 Oct 2019 18:52:23 +0800
-Message-Id: <1571136743-95375-1-git-send-email-lxliu@ikuai8.com>
-X-Mailer: git-send-email 1.9.1
-X-QQ-SENDSIZE: 520
-Feedback-ID: bizesmtp:ikuai8.com:qybgforeign:qybgforeign4
-X-QQ-Bgrelay: 1
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: 0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (0.7 points)
+Date: Tue, 15 Oct 2019 14:56:12 +0200
+Message-Id: <20191015125612.3726-1-tomek_n@o2.pl>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
+X-WP-MailID: ad47c77146a80f91408367f28859ded2
+X-WP-AV: skaner antywirusowy Poczty o2
+X-WP-SPAM: NO 0000002 [ISH0]                               
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191015_055626_217203_AFCE96C8 
+X-CRM114-Status: GOOD (  12.84  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.206.16.166 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: ikuai8.com]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: ikuai8.com]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 1/1] build: fix select uClibc
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tomek_n[at]o2.pl)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH v2] ath79: add support for Sitecom WLR-7100
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,36 +75,321 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: daxiong <lxliu@ikuai8.com>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: daxiong <lxliu@ikuai8.com>
+Sitecom WLR-7100 v1 002 (marketed as X7 AC1200) is a dual band wireless
+router.
+
+Specification
+SoC: Atheros AR1022
+RAM: 64 MB DDR2
+Flash: 8 MB SPI NOR
+WIFI: 2.4 GHz 2T2R integrated
+      5 GHz 2T2R QCA9882 integrated (connected to PCIe lane)
+Ethernet: 5x 10/100/1000 Mbps QCA8337N
+USB: 1x 2.0
+LEDS: 4x GPIO controlled, 5x switch
+Buttons: 2x GPIO controlled
+UART: row of 4 unpopulated holes near USB port, starting count from
+      white triangle on PCB
+      1. VCC 3.3V, 2. GND, 3. TX, 4. RX
+      baud: 115200, parity: none, flow control: none
+
+Installation
+1. Connect to one of LAN (yellow) ethernet ports,
+2. Open router configuration interface,
+3. Go to Toolbox > Firmware,
+4. Browse for OpenWrt factory image with dlf extension and hit Apply,
+5. Wait few minutes, after the Power LED will stop blinking, the router
+   is ready for configuration.
+
+Known issues
+5GHz LED doesn't work
+
+Additional information
+When TX line on UART is connected, and board is switched on from power
+off state, the DDR memory training may fail.
+If connected to UART, when prompted for number on boot, one can enter
+number 4 to open bootloader (U-Boot) command line.
+OEM firmware shell password is: SitecomSenao
+useful for creating backup of original firmware.
+There is also another revision of this device (v1 001), which may or may
+not work with introduced images.
+
+Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- toolchain/Config.in | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/toolchain/Config.in b/toolchain/Config.in
-index 95087b7..0d288aa 100644
---- a/toolchain/Config.in
-+++ b/toolchain/Config.in
-@@ -252,7 +252,7 @@ choice
- 		select USE_UCLIBC
- 		bool "Use uClibc"
- 		depends on !(aarch64 || aarch64_be || powerpc64)
--		depends on BROKEN || !(arm || armeb || i386 || x86_64 || mips || mipsel || mips64 || mips64el || powerpc)
-+		depends on BROKEN || (arm || armeb || i386 || x86_64 || mips || mipsel || mips64 || mips64el || powerpc)
+v1 -> v2
+- rebase on top of master
+- metion about another revision in commit message
+
+ .../ath79/base-files/etc/board.d/02_network   |   6 +
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   3 +-
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  |   3 +-
+ .../ath79/dts/ar1022_sitecom_wlr-7100.dts     | 171 ++++++++++++++++++
+ target/linux/ath79/image/generic.mk           |  14 ++
+ 5 files changed, 195 insertions(+), 2 deletions(-)
+ create mode 100644 target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts
+
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+index 0de17adb9d..4d7cd3e366 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/base-files/etc/board.d/02_network
+@@ -172,6 +172,7 @@ ath79_setup_interfaces()
+ 	iodata,wn-ac1600dgr2|\
+ 	iodata,wn-ag300dgr|\
+ 	pcs,cr5000|\
++	sitecom,wlr-7100|\
+ 	wd,mynet-n750)
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan"
+@@ -408,6 +409,11 @@ ath79_setup_macs()
+ 		wan_mac=$(mtd_get_mac_binary factory 0x0)
+ 		lan_mac=$(macaddr_setbit_la "$wan_mac")
+ 		;;
++	sitecom,wlr-7100)
++		lan_mac=$(mtd_get_mac_ascii u-boot-env ethaddr)
++		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
++		label_mac=$lan_mac
++		;;
+ 	tplink,archer-a7-v5|\
+ 	tplink,archer-c7-v4|\
+ 	tplink,archer-c7-v5|\
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index 3240026aec..1caba14bf0 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -34,7 +34,8 @@ case "$FIRMWARE" in
+ 	iodata,wn-ac1167dgr|\
+ 	iodata,wn-ac1600dgr|\
+ 	iodata,wn-ac1600dgr2|\
+-	iodata,wn-ag300dgr)
++	iodata,wn-ag300dgr|\
++	sitecom,wlr-7100)
+ 		caldata_extract "art" 0x1000 0x440
+ 		ath9k_patch_mac $(mtd_get_mac_ascii u-boot-env ethaddr)
+ 		;;
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index ebc1fc24d0..03d9d54a00 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -37,7 +37,8 @@ case "$FIRMWARE" in
+ 		;;
+ 	engenius,epg5000|\
+ 	iodata,wn-ac1167dgr|\
+-	iodata,wn-ac1600dgr2)
++	iodata,wn-ac1600dgr2|\
++	sitecom,wlr-7100)
+ 		caldata_extract "art" 0x5000 0x844
+ 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +1)
+ 		;;
+diff --git a/target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts b/target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts
+new file mode 100644
+index 0000000000..8a70b597b0
+--- /dev/null
++++ b/target/linux/ath79/dts/ar1022_sitecom_wlr-7100.dts
+@@ -0,0 +1,171 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "ar9344.dtsi"
++
++/ {
++	model = "Sitecom WLR-7100 v1 002 (X7 AC1200)";
++	compatible = "sitecom,wlr-7100", "qca,ar9344";
++
++	aliases {
++		led-boot = &power;
++		led-failsafe = &power;
++		led-running = &power;
++		led-upgrade = &power;
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		wlan2g {
++			label = "2.4GHz";
++			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		wlan5g {
++			label = "5GHz";
++			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_WPS_BUTTON>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		ops {
++			label = "wlr-7100:white:ops";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++		};
++
++		power: power {
++			label = "wlr-7100:amber:power";
++			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
++			default-state = "on";
++		};
++
++		wlan2g {
++			label = "wlr-7100:blue:wlan2g";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++
++	pll-data = <0x06000000 0x00000101 0x00001616>;
++
++	phy-mode = "rgmii";
++	phy-handle = <&phy0>;
++
++	gmac-config {
++		device = <&gmac>;
++		rgmii-gmac0 = <1>;
++	};
++};
++
++&mdio0 {
++	status = "okay";
++
++	phy0: ethernet-phy@0 {
++		reg = <0>;
++		phy-mode = "rgmii";
++
++		qca,ar8327-initvals = <
++			0x04 0x87a00000 /* PORT0 PAD Mode */
++			0x0c 0x01000000 /* PORT6 PAD Mode */
++			0x10 0x80000000 /* PWS_REG_VALUE */
++			0x7c 0x000000fe /* PORT0_STATUS */
++			0x94 0x000000fe /* PORT6_STATUS */
++		>;
++	};
++};
++
++&pcie {
++	status = "okay";
++
++	wifi@0,0 {
++		compatible = "qcom,ath10k";
++		reg = <0x0000 0 0 0 0>;
++	};
++};
++
++&ref {
++	clock-frequency = <25000000>;
++};
++
++&spi {
++	num-cs = <1>;
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x030000>;
++				read-only;
++			};
++
++			uenv: partition@30000 {
++				label = "u-boot-env";
++				reg = <0x030000 0x010000>;
++				read-only;
++			};
++
++			partition@40000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x040000 0x750000>;
++			};
++
++			partition@790000 {
++				label = "backup";
++				reg = <0x790000 0x010000>;
++				read-only;
++			};
++
++			partition@7a0000 {
++				label = "storage";
++				reg = <0x7a0000 0x050000>;
++				read-only;
++			};
++
++			art: partition@7f0000 {
++				label = "art";
++				reg = <0x7f0000 0x010000>;
++				read-only;
++			};
++		};
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb {
++	status = "okay";
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&wmac {
++	status = "okay";
++
++	qca,no-eeprom;
++};
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index acb1ab4b0b..e82e125166 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -931,6 +931,20 @@ define Device/rosinson_wr818
+ endef
+ TARGET_DEVICES += rosinson_wr818
  
- 	config LIBC_USE_MUSL
- 		select USE_MUSL
++define Device/sitecom_wlr-7100
++  ATH_SOC := ar1022
++  DEVICE_VENDOR := Sitecom
++  DEVICE_MODEL := WLR-7100
++  DEVICE_VARIANT := v1 002
++  DEVICE_PACKAGES := ath10k-firmware-qca988x kmod-ath10k kmod-usb2
++  IMAGES += factory.dlf
++  IMAGE/factory.dlf := append-kernel | pad-to $$$$(BLOCKSIZE) | \
++	append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | \
++	senao-header -r 0x222 -p 0x53 -t 2
++  IMAGE_SIZE := 7488k
++endef
++TARGET_DEVICES += sitecom_wlr-7100
++
+ define Device/trendnet_tew-823dru
+   ATH_SOC := qca9558
+   DEVICE_VENDOR := Trendnet
 -- 
-1.9.1
-
-
-
+2.23.0
 
 
 _______________________________________________

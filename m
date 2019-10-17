@@ -2,80 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99E6FDAFF5
-	for <lists+openwrt-devel@lfdr.de>; Thu, 17 Oct 2019 16:23:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C7C5DB180
+	for <lists+openwrt-devel@lfdr.de>; Thu, 17 Oct 2019 17:49:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
-	Content-Type:MIME-Version:Message-ID:In-Reply-To:Date:References:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YDBJvShg74Ozgt3neLX5Lq46xnuAZ37R+zMWLmaOxTg=; b=kj5kOG0kBfoTJ8qoxLjqH5+8A
-	/+MdvTDkWX4SNvI2FIf/3Q7zeaxsVvfK3S2Zag+8SBOefu/oEePb5sU2Tsn5HGpj+82L9SZjZvUv1
-	Uz+ouaQapGp6s0F2fX9K+S5DG4k3J/ys/MVGe13/pfc+/dx+jFxuV6MR7iScV30cNOWGj+taKNjg5
-	VC8OFAqu6rRWb7Je4G6B7kzNqBN7SpdaWFizzf65IQC2M6FfvcQe+2oVG5uhj1OqvUA3267kEgCGl
-	C0563tuOQw/pxx2sM54BEv6zGGgh4mtHVsLKAJdR9CLIvvL9fEMaPF1WY5eHSg22lUrQno/h2/0IY
-	bjeMFPq0Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DO1o46TrN3Ehb/s/JOCnTqKBAH/ymm7f0ZmJU9uXit8=; b=g7Pn67qwG9TclD
+	02s7seC/8ByuMM3JqpriDiwdLGkNXSLTPNm7Mus6ycfWepLXf4B/AtaBmmOGa/Y906cPVIpcvblbG
+	SH78+jxgRPdEV2Fwr0gFU+KH28X3NQV1VW4LpDT9VddFUOoRVpyqCVRD9H9rvah4wBBY19PR/v3bq
+	hCrbMHkiQ5o/sR00KMQqKMJp6eQStNYK9SKr+y2pshyoMOuJYg+I+f/SUqo/5GqypmhRuhMIv4VJH
+	1ZByJrupRtxYHj13Wg9s0pbIJZKj4KrkuGLeQby8lbTc3V8a1Qk+RuVJcDJQ3QdCsqpH0eJcPyD0I
+	BGx9SFo3FJUIKNNR/9rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iL6gb-0005fZ-99; Thu, 17 Oct 2019 14:23:29 +0000
-Received: from canardo.mork.no ([2001:4641::1])
+	id 1iL81r-0008Ab-H8; Thu, 17 Oct 2019 15:49:31 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iL6gJ-0005ST-5x
- for openwrt-devel@lists.openwrt.org; Thu, 17 Oct 2019 14:23:13 +0000
-Received: from miraculix.mork.no
- ([IPv6:2a02:2121:2c5:cbce:c09a:74ff:fe7f:b715])
- (authenticated bits=0)
- by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id x9HEN05c005273
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
- Thu, 17 Oct 2019 16:23:01 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
- t=1571322181; bh=xmKx33V3UI2NVD+0l+wQOlvRvu7xCOsEt5GjQ3yXJlY=;
- h=From:To:Cc:Subject:References:Date:Message-ID:From;
- b=S4brLBouTlZl8Np8sJpSW3p+a51SOmyr3FoOS65GdXnL/xvQdEyGStqU4oTCkHUjs
- 1uaZvoCcykxQk0gIuGB1Kx3wx6UFzGNZvC7zV08WYQKzld5V3dGEv+1dCkXFNseDuM
- gPAWv6qBvcUem0RbI2cLflVodQ90nxoRaa7ceVHI=
-Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
- (envelope-from <bjorn@mork.no>)
- id 1iL6g3-0006VK-LF; Thu, 17 Oct 2019 16:22:55 +0200
-From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-To: Jo-Philipp Wich <jo@mein.io>
-Organization: m
-References: <fca7f10e-0792-91f9-e37e-db6241a861be@welho.com>
- <87v9svtvrl.fsf@miraculix.mork.no>
- <fc77391e-68d8-1e3b-b86c-b01750cd183f@mein.io>
- <bff0c30a-023f-c1b0-ede9-efe46152ddc5@wwsnet.net>
- <CAOdf3gpLvNFJd4iQpsaTg+-C16KuOjteLgCH1bNGyPj3Eq09_w@mail.gmail.com>
- <f1a294f8-34bc-87c8-6af2-ba46f8f4169f@wwsnet.net>
-Date: Thu, 17 Oct 2019 16:22:55 +0200
-In-Reply-To: <f1a294f8-34bc-87c8-6af2-ba46f8f4169f@wwsnet.net> (Jo-Philipp
- Wich's message of "Wed, 16 Oct 2019 21:54:10 +0200")
-Message-ID: <87a79zpi2o.fsf@miraculix.mork.no>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1iL81j-00089x-Fw
+ for openwrt-devel@lists.openwrt.org; Thu, 17 Oct 2019 15:49:25 +0000
+Received: from [192.168.43.216] (ip-109-42-1-243.web.vodafone.de
+ [109.42.1.243])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 6AE451E3EE;
+ Thu, 17 Oct 2019 17:49:13 +0200 (CEST)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+References: <20191007173827.63607-1-freifunk@adrianschmutzler.de>
+From: David Bauer <mail@david-bauer.net>
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <696244f7-33ae-0888-b933-5bca8ed6c02c@david-bauer.net>
+Date: Thu, 17 Oct 2019 17:49:03 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="=-=-="
-X-Virus-Scanned: clamav-milter 0.101.4 at canardo
-X-Virus-Status: Clean
+In-Reply-To: <20191007173827.63607-1-freifunk@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191017_072311_583669_CB0FB637 
-X-CRM114-Status: GOOD (  20.68  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191017_084923_828376_D88ED356 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: 3.6 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (3.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 release schedule ?
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [109.42.1.243 listed in zen.spamhaus.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCH] ipq40xx: add label MAC address for
+ Netgear EX6150v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,266 +91,55 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---=-=-=
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
+Hello Adrian,
 
-Jo-Philipp Wich <jo@mein.io> writes:
+On 10/7/19 7:38 PM, Adrian Schmutzler wrote:
+> The device bears two MAC addresses ("MAC 1" and "MAC 2") that
+> correspond to phy0 and phy1.
+> 
+> The ethernet MAC address (gmac0) is the same as phy0.
+> As this one is accessible via local-mac-address in gmac0, the
+> latter is used for label-mac-device.
 
-> Hi,
->
->> Does it impact OpenWrt ? or just some OpenWrt based distributions ?
->> (might influence who need to fix this ;) )
->
-> it impacts the usage of the kmod compatibility repositories - apparently
-> they're completely ignored by opkg.
->
-> This problem was reported in the forum by a user who was unable to
-> install openvpn-openssl on a 19.07 snapshot, due to the dependency on
-> kmod-tun.
->
-> I was able to confirm the problem locally here as well.
-> While this might not strictly affect tagged builds, I still wouldn't
-> like to ship 19.07 with a known broken version of opkg.
+You can define the property in the common DTSI for the EX6100v2 / EX6150v2,
+as they are identical.
 
-I am not sure I understand the problem correctly...
+Best wishes
+David
 
-But if it is the fact that opkg doesn't try to resolve dependencies when
-selecting the "best" version of a package, then maybe the attached big
-hammer approach will solve it?  At least it works for me...
-
-Without patch:
-
-root@wrt1900ac-1:~# opkg install -V2 --noaction kmod-usb-net
-opkg_conf_parse_file: Loading conf file /etc/opkg.conf.
-opkg_conf_parse_file: Loading conf file /etc/opkg/customfeeds.conf.
-opkg_conf_parse_file: Loading conf file /etc/opkg/distfeeds.conf.
-pkg_hash_load_feeds:=20
-pkg_hash_load_feeds:=20
-pkg_hash_load_status_files:=20
-pkg_info_preinstall_check: Updating file owner list.
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--usb-net:
-pkg_hash_fetch_best_installation_candidate: kmod-usb-net 4.19.62 arm_cortex=
--a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-net 4.19.78 arm_cortex=
--a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-net 4.19.79 arm_cortex=
--a9_vfpv3
-Installing kmod-usb-net (4.19.79-1) to root...
-Downloading http://owrt.mork.no/lede/r11240+1-9d5e266cb1f1/targets/mvebu/co=
-rtexa9/packages/kmod-usb-net_4.19.79-1_arm_cortex-a9_vfpv3.ipk
-pkg_hash_fetch_best_installation_candidate: Using latest version of install=
-ed package kernel.
-pkg_hash_fetch_best_installation_candidate: Using latest version of install=
-ed package kernel.
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--mii:
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.62 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.78 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.79 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: No matching pkg out of 3 matchi=
-ng_apkgs.
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--mii:
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.62 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.78 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.79 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: Using latest version of install=
-ed package kernel.
-pkg_hash_fetch_best_installation_candidate: Using latest version of install=
-ed package kernel.
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--usb-core:
-pkg_hash_fetch_best_installation_candidate: kmod-usb-core 4.19.62 arm_corte=
-x-a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-core 4.19.78 arm_corte=
-x-a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-core 4.19.79 arm_corte=
-x-a9_vfpv3
-satisfy_dependencies_for: This could mean that your package list is out of =
-date or that the packages
-mentioned above do not yet exist (try 'opkg update'). To proceed in spite
-of this problem try again with the '-force-depends' option.
-opkg_configure_packages: Configuring unpacked packages.
-opkg_configure_packages: Reordering packages before configuring them...
-Collected errors:
- * satisfy_dependencies_for: Cannot satisfy the following dependencies for =
-kmod-usb-net:
- *      kernel (=3D 4.19.79-1-cddfa99a50fa71aee7f2b3bb433cac45)
- * opkg_install_cmd: Cannot install package kmod-usb-net.
-
-
-With patch:
-
-root@wrt1900ac-1:~# opkg install -V2 --noaction kmod-usb-net
-opkg_conf_parse_file: Loading conf file /etc/opkg.conf.
-opkg_conf_parse_file: Loading conf file /etc/opkg/customfeeds.conf.
-opkg_conf_parse_file: Loading conf file /etc/opkg/distfeeds.conf.
-pkg_hash_load_feeds:=20
-pkg_hash_load_feeds:=20
-pkg_hash_load_status_files:=20
-pkg_info_preinstall_check: Updating file owner list.
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--usb-net:
-pkg_hash_fetch_best_installation_candidate: kmod-usb-net 4.19.62 arm_cortex=
--a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-net 4.19.79 arm_cortex=
--a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-net 4.19.78 arm_cortex=
--a9_vfpv3
-Installing kmod-usb-net (4.19.78-1) to root...
-Downloading http://owrt.mork.no/lede/r11173-8184429b7b15/targets/mvebu/cort=
-exa9/packages/kmod-usb-net_4.19.78-1_arm_cortex-a9_vfpv3.ipk
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--mii:
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.62 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.79 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.78 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: No matching pkg out of 3 matchi=
-ng_apkgs.
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--mii:
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.62 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.79 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-mii 4.19.78 arm_cortex-a9_=
-vfpv3
-pkg_hash_fetch_best_installation_candidate: 3 matching pkgs for apkg=3Dkmod=
--usb-core:
-pkg_hash_fetch_best_installation_candidate: kmod-usb-core 4.19.62 arm_corte=
-x-a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-core 4.19.79 arm_corte=
-x-a9_vfpv3
-pkg_hash_fetch_best_installation_candidate: kmod-usb-core 4.19.78 arm_corte=
-x-a9_vfpv3
-Installing kmod-mii (4.19.78-1) to root...
-Downloading http://owrt.mork.no/lede/r11173-8184429b7b15/targets/mvebu/cort=
-exa9/packages/kmod-mii_4.19.78-1_arm_cortex-a9_vfpv3.ipk
-opkg_configure_packages: Configuring unpacked packages.
-opkg_configure_packages: Reordering packages before configuring them...
-
-
-
-
-Bj=C3=B8rn
-
-
---=-=-=
-Content-Type: text/x-diff; charset=utf-8
-Content-Disposition: attachment;
- filename=0001-libopkg-prefer-installable-packages.patch
-Content-Transfer-Encoding: quoted-printable
-
-From 45921c3914a48c2e57787e3ba64add8701217336 Mon Sep 17 00:00:00 2001
-From: =3D?UTF-8?q?Bj=3DC3=3DB8rn=3D20Mork?=3D <bjorn@mork.no>
-Date: Thu, 17 Oct 2019 13:44:38 +0200
-Subject: [PATCH] libopkg: prefer installable packages
-MIME-Version: 1.0
-Content-Type: text/plain; charset=3DUTF-8
-Content-Transfer-Encoding: 8bit
-
-Give packages with unresolvable dependencies a lower priority
-when selecting the best candidate.  This makes it possible
-to have multiple kmod package repos with higher versions
-than the installed kernel, and still be able to install
-the matching versions.
-
-Signed-off-by: Bj=C3=B8rn Mork <bjorn@mork.no>
----
- libopkg/pkg.c | 24 ++++++++++++++++++++++++
- libopkg/pkg.h |  1 +
- 2 files changed, 25 insertions(+)
-
-diff --git a/libopkg/pkg.c b/libopkg/pkg.c
-index e5bfe6f61b67..e9261e45019e 100644
---- a/libopkg/pkg.c
-+++ b/libopkg/pkg.c
-@@ -1084,10 +1084,31 @@ int pkg_version_satisfied(pkg_t * it, pkg_t * ref, =
-const char *op)
- 	return 0;
- }
-=20
-+int pkg_is_installable(const pkg_t *pkg)
-+{
-+	compound_depend_t *dep =3D pkg_get_depends((pkg_t *)pkg, DEPEND);
-+
-+	for (; dep && dep->type; dep++) {
-+		int i, ok =3D 0;
-+		if (dep->type !=3D DEPEND)
-+			continue;
-+		for (i =3D 0; i < dep->possibility_count; i++) {
-+			if (pkg_dependence_satisfiable(dep->possibilities[i])) {
-+				ok =3D 1;
-+				break;
-+			}
-+		}
-+		if (!ok)
-+			return 0;
-+	}
-+	return 1;
-+}
-+
- int pkg_name_version_and_architecture_compare(const void *p1, const void *=
-p2)
- {
- 	const pkg_t * a =3D *(const pkg_t **)p1;
- 	const pkg_t * b =3D *(const pkg_t **)p2;
-+	int installcmp;
- 	int namecmp;
- 	int vercmp;
- 	int arch_prio1, arch_prio2;
-@@ -1097,6 +1118,9 @@ int pkg_name_version_and_architecture_compare(const v=
-oid *p1, const void *p2)
- 		return 0;
- 	}
-=20
-+	installcmp =3D pkg_is_installable(a) - pkg_is_installable(b);
-+	if (installcmp)
-+		return installcmp;
- 	namecmp =3D strcmp(a->name, b->name);
- 	if (namecmp)
- 		return namecmp;
-diff --git a/libopkg/pkg.h b/libopkg/pkg.h
-index 600fc9eaa25c..3ab48cae3813 100644
---- a/libopkg/pkg.h
-+++ b/libopkg/pkg.h
-@@ -248,6 +248,7 @@ int pkg_merge(pkg_t * oldpkg, pkg_t * newpkg);
- char *pkg_version_str_alloc(pkg_t * pkg);
-=20
- int pkg_compare_versions(const pkg_t *pkg, const pkg_t *ref_pkg);
-+int pkg_is_installable(const pkg_t * pkg);
- int pkg_name_version_and_architecture_compare(const void *a, const void *b=
-);
- int abstract_pkg_name_compare(const void *a, const void *b);
-=20
---=20
-2.20.1
-
-
---=-=-=
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> (Although this is a one-port, gmac1 also has a local-mac-address
+> assigned. This has the same vendor part as the other addresses,
+> but completely different data for the device part.)
+> 
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
+>  .../files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts    | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts b/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+> index f1c44c1ae8..9724894e7f 100644
+> --- a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+> +++ b/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4018-ex6150v2.dts
+> @@ -22,6 +22,10 @@
+>  / {
+>  	model = "Netgear EX6150v2";
+>  	compatible = "netgear,ex6150v2";
+> +
+> +	aliases {
+> +		label-mac-device = &gmac0;
+> +	};
+>  };
+>  
+>  &wifi0 {
+> 
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=-=--
-

@@ -2,71 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7E88DCFD5
-	for <lists+openwrt-devel@lfdr.de>; Fri, 18 Oct 2019 22:15:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1B76DCFEA
+	for <lists+openwrt-devel@lfdr.de>; Fri, 18 Oct 2019 22:21:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K9ZpT5YrP7wEywCBH4/Qk0o6/WI5I/KcUypfAQuHM0Q=; b=rNaSFNnmJ8GuMJ
-	b9gCk0tFRCObyBTgivoFHrLKuRhf3LZ+RSys4C0iX0XCi7tu30gVpAf9qyQgdHYzRcvhb/wKUoaOS
-	xfrGxomJQHk9V+KnJhQtNck0t9Gay6MVXDhk1pDbRuxTbsln3NijTAv+108ISnOgdEn10Gc4Z68mc
-	HkpD5yFttYjoJbJcd5+pyz3ze5YgCdsQK3J/GzgJpqophnxp1ffKd9Lhj3wqJqDzP5mP9FOgnP/de
-	llSr+sa6dJhdIynplbaw9HQMRU1pzkx9wHPFPTzjNMX2enLw+A307Ii6cmWv4E3owvj4ITKhky4NR
-	OgGqbkh2rW0R82N2YZaQ==;
+	List-Owner; bh=A8/bPhpTBPBxCnZICF+8r+3JVTTQL273yL8lRAl9l50=; b=eMLcEQor2fnM1Q
+	jwLYiqG0tUOI0r8Vk5KmC3avQoMUhNEDZihWY4/tEgi6XtB/sB001ALHgSu3DQoA9SI3f+M7AQBhC
+	ejuud09LhvZkWEFz6dDc2yMYM5If5gO7LSif0s6Q4o6TbGudqx2ta13rkCPhtjq4h2b6/5CbDzHFO
+	Uvd5G5CvBxqnWZOsoKTuET4ZrE2TuCTSEuk4GIdPcn1MxLgL5gVuEla0Av6A4UdpmK+1MnkpG8fxw
+	09V9VkUNYIhmAxqP0uf0EbcagGCOMczfHh0R4Ar7K1xHITvM4kG1xLTw33ScknqtPwCXuF/AY9vM1
+	hVbFAvE6eekRQug/cwKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLYeg-0001Bs-Vj; Fri, 18 Oct 2019 20:15:23 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1iLYkv-0003LU-DJ; Fri, 18 Oct 2019 20:21:49 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLYeX-0001B7-U8
- for openwrt-devel@lists.openwrt.org; Fri, 18 Oct 2019 20:15:16 +0000
-Received: by mail-oi1-x244.google.com with SMTP id x3so6293388oig.2
- for <openwrt-devel@lists.openwrt.org>; Fri, 18 Oct 2019 13:15:11 -0700 (PDT)
+ id 1iLYki-0003KZ-KH
+ for openwrt-devel@lists.openwrt.org; Fri, 18 Oct 2019 20:21:39 +0000
+Received: by mail-oi1-x243.google.com with SMTP id i16so6293893oie.4
+ for <openwrt-devel@lists.openwrt.org>; Fri, 18 Oct 2019 13:21:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dg61BjCAbcuzqsy7onU2XQvpfOh74BzNqpokrV1Hfis=;
- b=MNATrzrP+GuFc0YNeBJDozSDK9Im9WOPbGYWdFIavthYW6CudWEenz5QiqOqpfUX7N
- OiRpc0UUFmmT0Oxf7JjqhYesvvXA+7C4/Na7nmTvYbBzBjCLBhQbu5JcrE/evHjXzr0u
- S1q+rEX6MKURNAT5OxCSvgpjNK0u7L8xu9zCbr9A6aXBeBPypPuY30hFNaxJVVbbvkca
- n9rY5l7mo1T27vtZOoDjmdMLbZFXEkzMRV/ro5+JElKrG/AQFUG4TPOS+v53xn+xnLf6
- K6mFs833czY2FiXa7/ZNHHDSFM89XhJVcZ/FDHOJnZc7TFor20VLyP3ubj6qsxQ2+V5Q
- t/5Q==
+ :cc; bh=uXfx2bFrIaPVqEI8nqq9TfI5oZc2Z/5PDOx50h8TTiM=;
+ b=XC6cneQXh/bSb3Sa3BERd76h2Ps3btCaUHvDOrcH9S/bUrUFbBldP+EdwsrJzJeDLo
+ c+9tSdBhyiB4hc7CZjLy/46RazTYdF09KPEz5SZojuz6DEeZFshinwcq9dv6CvYsA4Os
+ iGoQwlroDykjDj+kXbU6rGlEQZUURFsRb5shDmHpX8b2oLNIkffgfAPUOgWSLvUvJy7d
+ sKONBvsOCk8a/C8WvorxmDtxEB5cV/Ui5pEKWXGxu5yOIOVKvjdyt72MoKQKAQMGODGX
+ ylbhtRPNqTEW/0g72FFVVnlr8Q3phUd0WiUMyVMbQQDGNeQvnyNBU2PCTlRhHYIWQUj0
+ ibHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=dg61BjCAbcuzqsy7onU2XQvpfOh74BzNqpokrV1Hfis=;
- b=YbuD3Y1cpkKvx+uHumCqQYvCZQEVcrdUHUIVP+upbTFRnM5bX0gvr2WzQBKFfloQtp
- 8kpDpj26QfDBkZh/83ojcarvo+I+IQNn16xeR435DhlIv9cq9OmBlB1Jmt6HHZNdcj1a
- fCcKk7qbKQyRZG5kVD20/V334bfw/HiDa/HuOKXQ6Y1riaf3fI2yBeIcqJlUiDno1Wad
- R/NCyxFi7ZRwMyKKaD5LfVElF94dNDvkoQmkFxwVqKfeTUvqYeS+p/mVe9/xuWFrOH2d
- D9TdCFQXlN0XqijqgJbDvR/2R/8/YFW5StCmfpqUIl6xopTgtvAU/TmbAtvGF2dRSqSO
- pRdA==
-X-Gm-Message-State: APjAAAVR5ZBA15T/2JbNL38a2ttjRPjM7RXtJSnvxiQL5N664GyXUz7i
- wvdGkFudWMjZ2rjRdKfHRrN4fyjVvc7Xkl1PvSE=
-X-Google-Smtp-Source: APXvYqyUlSXYBzd0IpfcqYAExfZyc4GkNSjgohRkRi0ng9KC8w02tDixprt6YBzbOjBt9DlC6Yz2SibHJ2LEhZ/oYnY=
-X-Received: by 2002:aca:4c56:: with SMTP id z83mr9768856oia.113.1571429710854; 
- Fri, 18 Oct 2019 13:15:10 -0700 (PDT)
+ bh=uXfx2bFrIaPVqEI8nqq9TfI5oZc2Z/5PDOx50h8TTiM=;
+ b=lpFYRSOH2lpYirdDzwaREmZeP4pHwvcfNM8Wo0CqchGr0LTcJQzq7hIRZ67vtT1vwc
+ NKlnXRbxgstvF4efDKIIMJh7r+AGzm+oXnRPToS6QEWnzXoBn15/v6K1Izv03nbQpTMt
+ l+jO62kXaj2C2ArRB6n9A0nBEM01nZM4gupYNtLCBLlbSzbsngOwm4nCkxqJMh9hOl5H
+ R3j7N3oyFCm9cC3ASBlYMZ0PFOF6tLTQbdzDjDCN+bUJCnTb/mjOgAbKNomAT6lYYGkt
+ /pG/DHC568BshrwdqXM7y2JlIXq9t6e4mZJJF5jxNvn3Y31rHviKNdknWDOyKuw37XFj
+ kjLQ==
+X-Gm-Message-State: APjAAAUqXE7EfiX7rhdfy9XiwOTp261xs4L6haLvHPp+Ox0iJNdBXxLc
+ 6paos8wzDNMePJ6wXP4KAbvqmDOo1G77O4+FMwU=
+X-Google-Smtp-Source: APXvYqw1XnXAXr5IdM8OZ7sMXgJbOw99k8Y5grCXR+2S8Du2bVGQdk4LnQf2DAzykTRo78JfUlMeFpNnDy8sscyajNA=
+X-Received: by 2002:a54:438f:: with SMTP id u15mr9980241oiv.40.1571430094555; 
+ Fri, 18 Oct 2019 13:21:34 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191018130733.8419-1-yszhou4tech@gmail.com>
 In-Reply-To: <20191018130733.8419-1-yszhou4tech@gmail.com>
 From: Rosen Penev <rosenp@gmail.com>
-Date: Fri, 18 Oct 2019 13:14:58 -0700
-Message-ID: <CAKxU2N9C8uCvGkWM85g_qqkyjn-ywkf7fSk8DYUW=FK6gv+1Zw@mail.gmail.com>
+Date: Fri, 18 Oct 2019 13:21:22 -0700
+Message-ID: <CAKxU2N-u3qQFXD89t6y8NvtOVC50JsFbxqugwycSc=dPZBSaxA@mail.gmail.com>
 To: Yousong Zhou <yszhou4tech@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191018_131514_006749_6346A480 
-X-CRM114-Status: GOOD (  19.06  )
+X-CRM114-CacheID: sfid-20191018_132136_674609_557FFBFE 
+X-CRM114-Status: GOOD (  18.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -151,6 +151,7 @@ On Fri, Oct 18, 2019 at 6:08 AM Yousong Zhou <yszhou4tech@gmail.com> wrote:
 > -PKG_FIXUP:=patch-libtool
 >
 >  PKG_MAINTAINER:=Felix Fietkau <nbd@nbd.name>
+PKG_LICENSE and PKG_LICENSE_FILES should be added here.
 >
 > -PKG_INSTALL:=1
 > +CMAKE_INSTALL:=1
@@ -206,7 +207,6 @@ On Fri, Oct 18, 2019 at 6:08 AM Yousong Zhou <yszhou4tech@gmail.com> wrote:
 > -endef
 > +CMAKE_OPTIONS += \
 > +       -DBUILD_SHARED_LIBS=on \
-Usually ON and OFF are capitalized.
 > +       -DBUILD_WITH_LIBNL=off \
 > +
 > +# grep 'option(DISABLE_' CMakeLists.txt | cut -f2 -d'(' | cut -f1 -d' ' | sort --unique
@@ -231,8 +231,6 @@ Usually ON and OFF are capitalized.
 > +CMAKE_OPTIONS += $(if $(CONFIG_IPV6),-DINET6=on,-DINET6=off)
 >
 >  define Build/InstallDev
-This whole section can be removed because of CMAKE_INSTALL. See:
-https://github.com/openwrt/openwrt/blob/master/include/cmake.mk#L79
 >         $(INSTALL_DIR) $(1)/usr/include
 >         $(CP) $(PKG_INSTALL_DIR)/usr/include/pcap* $(1)/usr/include/
 >
@@ -241,20 +239,6 @@ https://github.com/openwrt/openwrt/blob/master/include/cmake.mk#L79
 > +       $(CP) $(PKG_INSTALL_DIR)/usr/lib/libpcap.so* $(1)/usr/lib/
 > +       $(INSTALL_DIR) $(1)/usr/lib/pkgconfig
 > +       $(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libpcap.pc $(1)/usr/lib/pkgconfig/
-I would check the generated pkgconfig file to see if the file paths
-are correct. Example of correct:
-
-prefix=/usr
-exec_prefix=/usr
-libdir=${exec_prefix}/lib
-includedir=${prefix}/include
-
-Example of incorrect:
-
-prefix=/usr
-exec_prefix=/usr
-libdir=/usr/lib
-includedir=/usr/include
 >  endef
 >
 >  define Package/libpcap/install

@@ -2,39 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 932E7DD7BC
-	for <lists+openwrt-devel@lfdr.de>; Sat, 19 Oct 2019 11:44:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D86FDD7C3
+	for <lists+openwrt-devel@lfdr.de>; Sat, 19 Oct 2019 11:49:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S9iiUvpSPXITXqEHwZo0rwBZOOBVeX11Bzrwujf1jTM=; b=rlcxPISgDwZ3L6xjyAZNjR62W
-	8Oy2vkpagqaZYFq/K69aMx9FWthBL01rsI7bPYSx07yljZD+A+NShXzjZm8pJBYclc1zf6/7suI1O
-	lCkhFaF3Ku167LG2U1cyCNdPtCzRNDK1LZ317/RANVnOJd8K+yjeNouZq6j/rVTUbP4ufXl6zj9Oc
-	kJ533CXuLRhfZ6KkxwuKt1ftcZtmj6CXgByR3B17Xf+T5BXs4RVnrEOnMHlfzaX02SVjbZXY949Yi
-	JwXJ23tENU5+Ij6yMzpxxgdIX4bw2qdwnYBBWoX+cLbMmXkBDwZee0qh4oKKnp5bIyiGF/YLG2KWL
-	DF/qeRjyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mQ/panu2DhCh6fwksaOdoJ4TZwONSZwmaG+V8d2DVXA=; b=E3yCvNW6+zgzxZ
+	M+q9yNhB/g91kUC357vd55dgLX4Q16RWb6lLpkNi6BeDa4fn4jX0HCRONm7nPeBv69g740OeArQJ3
+	+1iRjiSpwUIswO4iocut2z4OZR/WOp2Aa3T8RxeXS8PhIqnlAfDkIPcm8pIB5qdmCW3ZccciB2sW2
+	N+C8XePy8ZePEfXxOR4pntyFWcbxSIIf8AYXtHbf/U18rgw6IjiF/lVm5C2TYxNPqbshHV+e924f0
+	ItFhXDEJ6LTF9E3pn3+LdK6EnFqjOYK9AFsjwfV4VTSqQ0F6GS45O7K6hLqfXdZaojWIs3sZk3PfO
+	3jGtXyKVbAcVTRnBHtwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iLlHI-00051w-7C; Sat, 19 Oct 2019 09:44:04 +0000
+	id 1iLlMQ-0007Er-Uu; Sat, 19 Oct 2019 09:49:22 +0000
 Received: from mx2a.mailbox.org ([80.241.60.219])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iLlH7-000518-TT
- for openwrt-devel@lists.openwrt.org; Sat, 19 Oct 2019 09:43:56 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1iLlMH-0007EH-Eq
+ for openwrt-devel@lists.openwrt.org; Sat, 19 Oct 2019 09:49:15 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2a.mailbox.org (Postfix) with ESMTPS id B5BA0A3373;
- Sat, 19 Oct 2019 11:43:49 +0200 (CEST)
+ by mx2a.mailbox.org (Postfix) with ESMTPS id 36241A358C;
+ Sat, 19 Oct 2019 11:49:12 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id f2IS1oi_FAow; Sat, 19 Oct 2019 11:43:43 +0200 (CEST)
-To: daxiong <lxliu@ikuai8.com>, openwrt-devel@lists.openwrt.org
-References: <1571136743-95375-1-git-send-email-lxliu@ikuai8.com>
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id ilhfH5MSDRaH; Sat, 19 Oct 2019 11:49:08 +0200 (CEST)
+To: Gerard Ryan <g.m0n3y.2503@gmail.com>, openwrt-devel@lists.openwrt.org
+References: <20191013040315.9498-1-G.M0N3Y.2503@gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -97,27 +98,25 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <803c0ee5-a268-7738-7883-515d37939159@hauke-m.de>
-Date: Sat, 19 Oct 2019 11:43:22 +0200
+Message-ID: <32ec2705-09fb-d0f1-00e7-ea880529d509@hauke-m.de>
+Date: Sat, 19 Oct 2019 11:49:08 +0200
 MIME-Version: 1.0
-In-Reply-To: <1571136743-95375-1-git-send-email-lxliu@ikuai8.com>
+In-Reply-To: <20191013040315.9498-1-G.M0N3Y.2503@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191019_024354_269006_A0396C23 
-X-CRM114-Status: GOOD (  15.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191019_024913_807058_91A0EB70 
+X-CRM114-Status: GOOD (  22.05  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [80.241.60.219 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: ikuai8.com]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: ikuai8.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] build: fix select uClibc
+Subject: Re: [OpenWrt-Devel] [PATCH] kmodloader: added -v and -a args to
+ modeprobe
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,93 +128,164 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7943540638715338531=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7943540638715338531==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="qVymHZoUlHVxWaU3SroYZmWkQ72JO0le9"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---qVymHZoUlHVxWaU3SroYZmWkQ72JO0le9
-Content-Type: multipart/mixed; boundary="JaZ0qa6wXgnttRmV1SR6Mb2VXw3U1GCrU";
- protected-headers="v1"
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: daxiong <lxliu@ikuai8.com>, openwrt-devel@lists.openwrt.org
-Message-ID: <803c0ee5-a268-7738-7883-515d37939159@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] [PATCH 1/1] build: fix select uClibc
-References: <1571136743-95375-1-git-send-email-lxliu@ikuai8.com>
-In-Reply-To: <1571136743-95375-1-git-send-email-lxliu@ikuai8.com>
-
---JaZ0qa6wXgnttRmV1SR6Mb2VXw3U1GCrU
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-
-On 10/15/19 12:52 PM, daxiong wrote:
-> Signed-off-by: daxiong <lxliu@ikuai8.com>
+On 10/13/19 6:03 AM, Gerard Ryan wrote:
+> This is primarily to satiate the usage by docker/libnetwork.
+> Behaviour mirrors /tools/modprobe.c from https://git.kernel.org
+> 
+> Signed-off-by: Gerard Ryan <G.M0N3Y.2503@gmail.com>
 > ---
->  toolchain/Config.in | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->=20
-> diff --git a/toolchain/Config.in b/toolchain/Config.in
-> index 95087b7..0d288aa 100644
-> --- a/toolchain/Config.in
-> +++ b/toolchain/Config.in
-> @@ -252,7 +252,7 @@ choice
->  		select USE_UCLIBC
->  		bool "Use uClibc"
->  		depends on !(aarch64 || aarch64_be || powerpc64)
-> -		depends on BROKEN || !(arm || armeb || i386 || x86_64 || mips || mip=
-sel || mips64 || mips64el || powerpc)
-> +		depends on BROKEN || (arm || armeb || i386 || x86_64 || mips || mips=
-el || mips64 || mips64el || powerpc)
-> =20
->  	config LIBC_USE_MUSL
->  		select USE_MUSL
->=20
+> Compile tested: x86_x64, Hyper-V, OpenWrt Master
+> Run tested: x86_x64, Hyper-V, OpenWrt Master
+> 
+> You can also find this patch on GitHub if you prefer.
+> https://github.com/G-M0N3Y-2503/openwrt-ubox-mirror/tree/feature_extend_modprobe_options
+> 
+>  kmodloader.c | 76 +++++++++++++++++++++++++++++++---------------------
+>  1 file changed, 46 insertions(+), 30 deletions(-)
 
-I think this is intentional. uClibc should only be available on targets
-which are not supported by musl libc, which is currently only arc.
+Could you please split this into two patches, that would make it easier
+to review these changes.
 
 Hauke
 
+> 
+> diff --git a/kmodloader.c b/kmodloader.c
+> index 422c895..a437509 100644
+> --- a/kmodloader.c
+> +++ b/kmodloader.c
+> @@ -678,7 +678,9 @@ static int print_insmod_usage(void)
+> 
+>  static int print_modprobe_usage(void)
+>  {
+> -	ULOG_INFO("Usage:\n\tmodprobe [-q] filename\n");
+> +	ULOG_INFO("Usage:\n"
+> +			  "\tmodprobe [-q] [-v] filename\n"
+> +			  "\tmodprobe -a [-q] [-v] filename [filename...]\n");
+> 
+>  	return -1;
+>  }
+> @@ -851,18 +853,26 @@ static int main_modinfo(int argc, char **argv)
+> 
+>  static int main_modprobe(int argc, char **argv)
+>  {
+> +	int exit_code = EXIT_SUCCESS;
+>  	struct module_node *mn;
+>  	struct module *m;
+> -	char *name;
+> -	char *mod = NULL;
+> +	int load_fail;
+> +	int log_level = LOG_WARNING;
+>  	int opt;
+>  	bool quiet = false;
+> +	bool use_all = false;
+> 
+> -	while ((opt = getopt(argc, argv, "q")) != -1 ) {
+> +	while ((opt = getopt(argc, argv, "aqv")) != -1 ) {
+>  		switch (opt) {
+> +			case 'a':
+> +				use_all = true;
+> +				break;
+>  			case 'q': /* shhhh! */
+>  				quiet = true;
+>  				break;
+> +			case 'v':
+> +				log_level = LOG_DEBUG;
+> +				break;
+>  			default: /* '?' */
+>  				return print_modprobe_usage();
+>  				break;
+> @@ -872,7 +882,8 @@ static int main_modprobe(int argc, char **argv)
+>  	if (optind >= argc)
+>  		return print_modprobe_usage(); /* expected module after options */
+> 
+> -	mod = argv[optind];
+> +	/* after print_modprobe_usage() so it won't be filtered out */
+> +	ulog_threshold(log_level);
+> 
+>  	if (scan_module_folders())
+>  		return -1;
+> @@ -880,40 +891,45 @@ static int main_modprobe(int argc, char **argv)
+>  	if (scan_loaded_modules())
+>  		return -1;
+> 
+> -	name = get_module_name(mod);
+> -	m = find_module(name);
+> -	if (m && m->state == LOADED) {
+> -		if (!quiet)
+> -			ULOG_ERR("%s is already loaded\n", name);
+> -		return 0;
+> -	} else if (!m) {
+> -		if (!quiet)
+> -			ULOG_ERR("failed to find a module named %s\n", name);
+> -		return -1;
+> -	} else {
+> -		int fail;
+> +	do {
+> +		char *name;
+> 
+> -		m->state = PROBE;
+> +		name = get_module_name(argv[optind]);
+> +		m = find_module(name);
+> 
+> -		fail = load_modprobe(true);
+> +		if (m && m->state == LOADED) {
+> +			if (!quiet)
+> +				ULOG_INFO("%s is already loaded\n", name);
+> +		} else if (!m) {
+> +			if (!quiet)
+> +				ULOG_ERR("failed to find a module named %s\n", name);
+> +			exit_code = EXIT_FAILURE;
+> +		} else {
+> +			m->state = PROBE;
+> +		}
+> 
+> -		if (fail) {
+> -			ULOG_ERR("%d module%s could not be probed\n",
+> -			         fail, (fail == 1) ? ("") : ("s"));
+> +		optind++;
+> +	} while (use_all && optind < argc);
+> 
+> -			avl_for_each_element(&modules, mn, avl) {
+> -				if (mn->is_alias)
+> -					continue;
+> -				m = mn->m;
+> -				if ((m->state == PROBE) || m->error)
+> -					ULOG_ERR("- %s\n", m->name);
+> -			}
+> +	load_fail = load_modprobe(true);
+> +	if (load_fail) {
+> +		ULOG_ERR("%d module%s could not be probed\n",
+> +					load_fail, (load_fail == 1) ? ("") : ("s"));
+> +
+> +		avl_for_each_element(&modules, mn, avl) {
+> +			if (mn->is_alias)
+> +				continue;
+> +			m = mn->m;
+> +			if ((m->state == PROBE) || m->error)
+> +				ULOG_ERR("- %s\n", m->name);
+>  		}
+> +
+> +		exit_code = EXIT_FAILURE;
+>  	}
+> 
+>  	free_modules();
+> 
+> -	return 0;
+> +	return exit_code;
+>  }
+> 
+>  static int main_loader(int argc, char **argv)
+> --
+> 2.17.1
 
---JaZ0qa6wXgnttRmV1SR6Mb2VXw3U1GCrU--
 
---qVymHZoUlHVxWaU3SroYZmWkQ72JO0le9
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl2q2skACgkQ8bdnhZyy
-68ckjwgAzH0z171ybO8SEKnYdrHh/MNdTFpvzoV3xrrFf0blNo5/+SlC64gl2yNr
-i/cBh1dmhz0NIZJC5wHI2jm9HE0cZM2vm1S9utwQoJd54OJq4cZ6F1cYrgt3tpIq
-Ivg2It1g0S5qQyW9g7PGMX/bPGYlDPjbRSYarhHTytKw7wwlqyrOonsU54CTeGVN
-wd6ZQQF+rhiukDk3vjYAYwDYJiljpa1zU5GQxET8X7Kh/xI1bE3t1xusMdMt+wxM
-VPQjO78c/UIudZqwhmBWRaZt6qm6STV0peXK0AAyJNIolnggFWnul7+gcU8Uhj9a
-dXvC0q8rxwW5e+Om0kDBszLqg4uYQQ==
-=S1in
------END PGP SIGNATURE-----
-
---qVymHZoUlHVxWaU3SroYZmWkQ72JO0le9--
-
-
---===============7943540638715338531==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7943540638715338531==--
-

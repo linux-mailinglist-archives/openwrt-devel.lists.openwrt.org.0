@@ -2,55 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80841DEAA8
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 13:18:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE3A2DEAB3
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 13:20:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b3X2BTPf8fbtM4E4fesHxFXiM5ws5pSfBEhb8OruPGM=; b=HtoKh6CRsn0kKwK+xeoTCFbZT
-	5f8TFSxhYlugcHumi4znIkHEnR5/bfDuT/WbcXqvvl/eqhQEvO4TnFdBbLN4JNY5hbDSzT8+ZShMa
-	pHCjBYM6MXX9a3w2HedMHw1Wu6wGM87XI7ShC4oocUyaP1sIg6WVhruh7U6WZcxNjY+n632x7sesL
-	tfiyXSdT16c3CHpLxKcp5NK2gBoOooZZ/AxmMg36qEbTfmUMwvurB7VjM+V9MOIpPwI4IjZ2PRny/
-	ks4SYiI97G5kUjCvx/oSnj1/6PScTzjo6PXOuYMLBSncQX4gQWpiRNBcU9qXk/ftTXVqhwcsySRUw
-	QdU4oxSRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ujoKRHK7wKN0shHvx7b3R1xyXK3LKun5DFOzz0EHeW8=; b=bCAgWnn+VEeGNu
+	l+A7+cBip9gCvo34JKgt9KCYrhFxY5sh5mfLQFJHtyFE6WRSXIzf4DsO1s74LdcrGfmyXAEnXPkut
+	nUESmQbZCZOvxXzcN7m2iiZBTU+/AkXja/ouOTlE0ulekXO5Um4/DH6yBAtGod6dgQxtKvQ/TF40m
+	cthFiwuhbCuJ8tDF/o20Mc+aGKOm84bmow+EP30e1HTTiGttknPgQJ2+e3J1u2qHaW7uc3OZZ2chd
+	mqkkGGa6LMdYcEV3weh3uzBejjRLt6p9E3+U9JY+DXKv3rAGoGz+b7u7eGsuG77MkOdxZSTGZvSMy
+	y/DJs+fr8MeSReIWewqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMVhJ-0003cR-8e; Mon, 21 Oct 2019 11:18:01 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1iMVjj-0005IH-US; Mon, 21 Oct 2019 11:20:31 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMVh7-0003bU-8v
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 11:17:51 +0000
-Received: from p5dcfba1e.dip0.t-ipconnect.de ([93.207.186.30]
- helo=[10.255.231.27])
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <john@phrozen.org>)
- id 1iMVh3-0000vU-Ed; Mon, 21 Oct 2019 13:17:45 +0200
-To: Gerard Ryan <g.m0n3y.2503@gmail.com>, openwrt-devel@lists.openwrt.org
-References: <20191020060112.25323-1-G.M0N3Y.2503@gmail.com>
- <20191020060112.25323-2-G.M0N3Y.2503@gmail.com>
-From: John Crispin <john@phrozen.org>
-Message-ID: <7339f8a3-d31e-5253-49b0-cbf15755dc55@phrozen.org>
-Date: Mon, 21 Oct 2019 13:17:44 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1iMVjc-0005Hf-Ee
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 11:20:26 +0000
+Received: from buildfff.adridolf.com ([188.192.135.195]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1N0Fh1-1i8OrE1Ntn-00xMwZ for <openwrt-devel@lists.openwrt.org>; Mon, 21
+ Oct 2019 13:20:19 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 21 Oct 2019 13:20:15 +0200
+Message-Id: <20191021112015.1515-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20191020060112.25323-2-G.M0N3Y.2503@gmail.com>
-Content-Language: en-US
+X-Provags-ID: V03:K1:O+NixvdTMp81WP7ML9SCr6i3WoOWD/CTFHYRg6DcTMGx7EJITWj
+ 6o5/motWsQC4Z7ZPAu5UpC9pdPVlsYlGCqB5gCx9ZZbVOXtBMQuH1o61cBJsvxYOp67OKDu
+ GDeFQvqKaBc5aCxDPsNcF2Szym1Zzy4S8AECOSSmS00/F/x+QzIE8fIsnaJU9SqfQthlhLy
+ ei+lETIdFFqIg2BMsvN7A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:53hs6F501p8=:sUDCmJF5hfxnGygkaRgyg3
+ Exn0QAl4d7flawPqsR0dbe+snaf2ftp9k7vAajlLb4NixGUUUYHQfy/xoL4hhqb88fkkY+WAE
+ L9vBaJAtacyB+OEOoeJD8eq9MpqFAdYEVGDzscyzcQxEkrZfzxrnTZqIbPay3qd29e1R09Atb
+ OFEjwxNOBjkREFPsgbMHIahsTRhJGtd2g7qegSHp81ULjW4PaIGm15cm+aiGylj7untRYNTXh
+ oRIf8w/ih9KZZ1GYb1q7tUArqwdE39QJ3fpSE2IcRRS9omRyhL1poQmteihlWLoaEUrcdqEZI
+ HsyX2frWhKLwf8o2GLYetGWy7110OyWIrJ4e27GjltlT19wEBuYzgwwebqo9KhQxrzMHAShvG
+ 0N9HkhrCw8BSLS8XZ98FqKl/7FzPECIRU5dt4a1q/Cag74AQbsJSPpPYMCQngTpH7W4tmjU/8
+ JZjHM/Vb87HBObw+xChsXvtbNXbEoD4PCU49LVIvFig3HeHRcTlHh1N5A8QP3gwbvM9jPp6Ep
+ IkuSo2JOFIIdlTRS9WdsflzYEdzpiIskdO2lyhEbvk1gchsemFdUG/AX0ImdxnJ7BKUUS6VyJ
+ 8RZZWpgK+dZynkhCz0JITmaPaR/bE9vsihrdNv+yhYmWGe3JXGUWWH9wbEcWfwz7uodkww1+j
+ ooK20sexgmWxo4iMKSeznTwrlVpwftlnfJw1dL35DF3EE8vSJ4gkaoUtpymj2NyYSXH2Cw0/6
+ aP/Yd7ivnk9s3d7lRE72OW1ChTdoFrlwbeADEz+esu29xP40UE9VODuAUJofQVSUs2CE+5w4m
+ IH56cuLrD70t7h8DQxoSnNbVSpOTmwcgBYGZb8MtheMUWrkJssBP52WdO+Ei5iJQH2Azt6g30
+ h7YK0wNmXzYVRBa6XsZ2uzDObbkh6IbwGE+Uqc0VY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_041749_469645_F3543F4C 
-X-CRM114-Status: GOOD (  22.57  )
+X-CRM114-CacheID: sfid-20191021_042024_783437_194EDA7E 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [OpenWrt-Devel V2 2/2] kmodloader: added -a arg
- to modeprobe
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH] ipq40xx: use DEVICE_VARIANT for Unielec
+ U4019 flash size
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,157 +78,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 20/10/2019 08:01, Gerard Ryan wrote:
-> This is primarily to satiate the usage by docker/libnetwork.
-> Behaviour mirrors /tools/modprobe.c from https://git.kernel.org
-Hi,
-you should describe here what the -a flag actually does.
-I have manually fixed it for 1/2 but please rework 2/2 and send that one
-	John
+If flash size is used as part of a device's title, it should be
+specified as DEVICE_VARIANT like for the other devices so far.
 
-> 
-> Signed-off-by: Gerard Ryan <G.M0N3Y.2503@gmail.com>
-> ---
-> Compile tested: x86_x64, Hyper-V, OpenWrt Master
-> Run tested: x86_x64, Hyper-V, OpenWrt Master
-> 
-> You can also find this patch on GitHub if you prefer.
-> https://github.com/G-M0N3Y-2503/openwrt-ubox-mirror/tree/feature_extend_modprobe_options
-> 
-> Since https://patchwork.ozlabs.org/patch/1175792/ I adjusted some whitespace to indent more consistently and split the patch by the args they implement.
-> 
->   kmodloader.c | 68 +++++++++++++++++++++++++++++-----------------------
->   1 file changed, 38 insertions(+), 30 deletions(-)
-> 
-> diff --git a/kmodloader.c b/kmodloader.c
-> index 07b6700..838bc8c 100644
-> --- a/kmodloader.c
-> +++ b/kmodloader.c
-> @@ -681,6 +681,7 @@ static int print_modprobe_usage(void)
->   	ULOG_INFO(
->   		"Usage:\n"
->   		"\tmodprobe [-q] [-v] filename\n"
-> +		"\tmodprobe -a [-q] [-v] filename [filename...]\n"
->   	);
-> 
->   	return -1;
-> @@ -854,16 +855,20 @@ static int main_modinfo(int argc, char **argv)
-> 
->   static int main_modprobe(int argc, char **argv)
->   {
-> +	int exit_code = EXIT_SUCCESS;
->   	struct module_node *mn;
->   	struct module *m;
-> -	char *name;
-> -	char *mod = NULL;
-> +	int load_fail;
->   	int log_level = LOG_WARNING;
->   	int opt;
->   	bool quiet = false;
-> +	bool use_all = false;
-> 
-> -	while ((opt = getopt(argc, argv, "qv")) != -1 ) {
-> +	while ((opt = getopt(argc, argv, "aqv")) != -1 ) {
->   		switch (opt) {
-> +			case 'a':
-> +				use_all = true;
-> +				break;
->   			case 'q': /* shhhh! */
->   				quiet = true;
->   				break;
-> @@ -882,48 +887,51 @@ static int main_modprobe(int argc, char **argv)
->   	/* after print_modprobe_usage() so it won't be filtered out */
->   	ulog_threshold(log_level);
-> 
-> -	mod = argv[optind];
-> -
->   	if (scan_module_folders())
->   		return -1;
-> 
->   	if (scan_loaded_modules())
->   		return -1;
-> 
-> -	name = get_module_name(mod);
-> -	m = find_module(name);
-> -	if (m && m->state == LOADED) {
-> -		if (!quiet)
-> -			ULOG_ERR("%s is already loaded\n", name);
-> -		return 0;
-> -	} else if (!m) {
-> -		if (!quiet)
-> -			ULOG_ERR("failed to find a module named %s\n", name);
-> -		return -1;
-> -	} else {
-> -		int fail;
-> +	do {
-> +		char *name;
-> 
-> -		m->state = PROBE;
-> +		name = get_module_name(argv[optind]);
-> +		m = find_module(name);
-> 
-> -		fail = load_modprobe(true);
-> +		if (m && m->state == LOADED) {
-> +			if (!quiet)
-> +				ULOG_INFO("%s is already loaded\n", name);
-> +		} else if (!m) {
-> +			if (!quiet)
-> +				ULOG_ERR("failed to find a module named %s\n", name);
-> +			exit_code = EXIT_FAILURE;
-> +		} else {
-> +			m->state = PROBE;
-> +		}
-> 
-> -		if (fail) {
-> -			ULOG_ERR("%d module%s could not be probed\n",
-> -			         fail, (fail == 1) ? ("") : ("s"));
-> +		optind++;
-> +	} while (use_all && optind < argc);
-> 
-> -			avl_for_each_element(&modules, mn, avl) {
-> -				if (mn->is_alias)
-> -					continue;
-> -				m = mn->m;
-> -				if ((m->state == PROBE) || m->error)
-> -					ULOG_ERR("- %s\n", m->name);
-> -			}
-> +	load_fail = load_modprobe(true);
-> +	if (load_fail) {
-> +		ULOG_ERR("%d module%s could not be probed\n",
-> +		         load_fail, (load_fail == 1) ? ("") : ("s"));
-> +
-> +		avl_for_each_element(&modules, mn, avl) {
-> +			if (mn->is_alias)
-> +				continue;
-> +			m = mn->m;
-> +			if ((m->state == PROBE) || m->error)
-> +				ULOG_ERR("- %s\n", m->name);
->   		}
-> +
-> +		exit_code = EXIT_FAILURE;
->   	}
-> 
->   	free_modules();
-> 
-> -	return 0;
-> +	return exit_code;
->   }
-> 
->   static int main_loader(int argc, char **argv)
-> --
-> 2.17.1
-> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/ipq40xx/image/Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/target/linux/ipq40xx/image/Makefile b/target/linux/ipq40xx/image/Makefile
+index 8907eb756b..cdca130ebd 100644
+--- a/target/linux/ipq40xx/image/Makefile
++++ b/target/linux/ipq40xx/image/Makefile
+@@ -407,7 +407,8 @@ TARGET_DEVICES += qxwlan_e2600ac-c2
+ define Device/unielec_u4019-32m
+ 	$(call Device/FitImage)
+ 	DEVICE_VENDOR := Unielec
+-	DEVICE_MODEL := U4019 (32M)
++	DEVICE_MODEL := U4019
++	DEVICE_VARIANT := 32M
+ 	BOARD_NAME := u4019-32m
+ 	DEVICE_DTS := qcom-ipq4019-unielec-u4019-32m
+ 	KERNEL_SIZE := 4096k
+-- 
+2.20.1
 
 
 _______________________________________________

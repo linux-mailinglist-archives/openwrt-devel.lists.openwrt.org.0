@@ -2,59 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83C8BDEF99
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 16:31:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C9BCDEF9B
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 16:31:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vhqBnXbKniW28w+2FmuK3a+YgGNgSgw3FYCZnnu2jI4=; b=FAXqc2ogTAfbkM
-	G0fBU6nHznsIGev9mBkzQ0EfK8SSgKSwoEbNwBP5tqLegWUR8b+dYCOGCNg+SfY5Y4NzcU9PBbfeE
-	yMeNqSvzVStEsJ9I0X9LVeYl7utD6JW/MlAAA1J0vomnl7jN2fjHWIyY6gzXIloIOcFghhQ620/aO
-	HxexS3G2lmDqbffegqqT4tBmeBiC6rN03tWrHfdlLWCIwyVpKwkqG9HHYh/fHOYLBVh24Ebg32W+h
-	u3D1Tf8Xot1CEMjt1OV05lflduJTCuh8w3/venMd9m08RPGveJDIO18zv0PlcdriMWjm+SSgihOhj
-	ciVIuLkUbW4up4m5Q0IQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Hviva32RRVdOXpas+HJcCh1ajbtPY2lsb+raN4MLULE=; b=VXrrGqOFQWEicOXExCBYG+f/lm
+	34LMA+H4SeydWdmVvTMJZqbLsD+ZKJ5p6iey4AJQfqsI9+DILjCRFa1vJf17VLys/1V5Bisk9ylnC
+	8p2QQHnluqBy1DF7r5jpi1kUMcDa2vUS1SJEf1mUpBDu28ono8fO8NhbkU7MkdWwTy7V97sZwAF3T
+	tBJzhWp5tYGsf1TyUMT0t4+7Z34qtnx314u+zfTgGon6fHEXVB48715c7At4Z1eqvm2q+lP05kIo0
+	Ht32X3NsJw1zbEatVXMzRY1b6rrUxiN4gnMxKgHix7LqWalpqz7hRoIU2/1j2aTSZ1lPU/gAC0+Og
+	tmKAeDpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMYiP-0001Zv-5K; Mon, 21 Oct 2019 14:31:21 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1iMYiY-0001rS-Hb; Mon, 21 Oct 2019 14:31:30 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMYgo-0007Vi-SO
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 14:29:44 +0000
+ id 1iMYgo-0007Vm-Rp
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 14:29:45 +0000
 Received: from buildfff.adridolf.com ([188.192.135.195]) by
  mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MqJuN-1hj9XM2hbX-00nMcW for <openwrt-devel@lists.openwrt.org>; Mon, 21
+ id 1N6bsM-1hxfaP3QNS-0183lh for <openwrt-devel@lists.openwrt.org>; Mon, 21
  Oct 2019 16:29:39 +0200
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 21 Oct 2019 16:29:35 +0200
-Message-Id: <20191021142936.17352-1-freifunk@adrianschmutzler.de>
+Date: Mon, 21 Oct 2019 16:29:36 +0200
+Message-Id: <20191021142936.17352-2-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191021142936.17352-1-freifunk@adrianschmutzler.de>
+References: <20191021142936.17352-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:v9q9iadn2QFgDxrxSxSJ+564yU/q8W6BQWhVgc0ZKZtPsrIIKaq
- B2ZEspuapSQKiVdqlIOn9HOy0QsaIEigFExxww0s1K6NLLX8AOxqgWIIGH1rCte4MAO1ZHq
- fh/XVvascByQt8KEmaEuaYKGLZ7WSW2o0nPrfnKglxjTEW3a+U+MsXiWHdjOsAHBFgl56+p
- Z1l91Y4iuns1vs9IAg9PA==
+X-Provags-ID: V03:K1:1Kbs7Rw4aEGQxJrcw0axXNJJt783HMbYnjXMhGeIF2ETSnNpVIR
+ QNUqKyY0naT559RJhm1cEJcwVwtryAIcly2lVANiM9PV+MxrR088O32RE6GahrsqmoXotj7
+ Yltpc8QVUvt9HULGkKSgjhmgeoUF2d4WM5cO0ACrgZwCc25fvC4fBb8DES5s3WH9v8mTmNG
+ PMZv+w1cjRoIE3pjWjWLg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:z1uW4337dzo=:HSELUr/irmFdZc+HSOWhPn
- CHSPBYn5hrINMz7g5LF+WnOZlavd/P8JVbn9DYA61BrRNL8nQuXApYTx6NkAHq2baTnsEA36D
- TUYqY1u9saFeO2gszH/E/sZzuQcIC8csOsxgyreaym8u2ZYtK/m4t05LJKAUpJAxkal4rtfr0
- fn45sWShBQLZROvsBpLv7lpZCXIQEgPBU/DlT9SXHDvXBdCtKtQN3bFbMT4eEbTGEo1ffHd62
- S1StcpPeqbKv4WPSOw30yxnEmx9PSdM1UyZCVXpo9jmFxZkYuMWCvNaKOsT8CiZviLFRSE4ax
- Uir2KQWEvTYadkDUYffQ+dQpMm0xh+n7VUFbglCKGcx7PbqkVRIlwgK/eONgUxpFPH/5WhEpZ
- 6SXAXzPUEYr+ZJk6aDKmKplkt/DsF/szYjFVP40o0QTKTJ1aWJVZJuqqNx9bWtEvN3PS+/pdZ
- Gdn2OfGTmoWpeMEdfRRQGHy0YsqJ/LxOBTZnvJQz7XhDlEecoF28kipiipDqh/uwNGmDFMOS4
- AS3DW1KW7+HcWx9u1iSMBPkDCksdb8SQWO7jBJ7dJumBvJdtp3nfayHFkSP04IRX8mhb1N3Ae
- xQeqqVtFZIUIFYkIuh7qzAL3WIEBxWBuTdOSJehtd8A0bjny6U43wNbkKbOw2Yx84dmIgpHKk
- Mr5DrTfCLpHFGu8HgPPp+RhXkeKnKMrEQufq9TYh1h1Tbi7JEHJhGs2MUZhXuk79KyGoAFuU1
- cxB6afqTvVAUqI8MxnYf34f7psyr9LK20n7xk6FEj8+DeiyGZKBilBas+gMvjs0gSPosQ9emm
- IeEM6D7v6Ac7h9OvWVAXg2qFgFNg4ap0tl8jUx1eqzEMUTUQ9YruUtJ/sGpKLhtue6tgF0aeI
- HOAHP96jIzZWv3vphLVhkpx+v5MZyCotUIPpvIrwU=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:SVDS3VM7bXQ=:DAL6N2GUNp0E+qq9lUhT50
+ HEHRG6QprBJst3H43Pvx18HBV6wbRXZD1cFRLUhTtw5YAd8uNCbZywQTxmpT+2DdOVRCsqEpn
+ dtCUZpq2+d2AtziCa7jYQXbHLViRiIjMcEqDz0r0MBaWa/YFYaaqpT/+BoY58R6OIOXi1dxX7
+ w72x9K+OwiBLWT27EP6gXK9wTKyFGnKt6iu2NCgS10VG5JPddSju53lxdRS+FMolSAUoE+zd8
+ Dx8KTZQz8GVHLU3+lwMIFnJ5nUg6RbeSVoUPvBC9J1fKgGyr1+/LxNYk4GV+J2ZUqBSjdI+mi
+ Byj5cBpQ17iFCvOIwMFBStaxQA9oubYqJ65H1sGemlnMS+HxhL870DTDEU/5xU3soP5oC5kt4
+ M8jTyoyUm3GhAn8CuxYRxXPLJGLDQJCqn6gdfuba71Rq96cxP/YQuqn0TWcFTBo6W3CVoDwsA
+ B/WDgA66hs5ZZ90T14ND9kOEZJmIiY2XZJ9h3zY1TzJGhvj/46ZFJU2t+XlUhb8prkkaUaRFY
+ BHx6XWuFwwLF3hQ1lhnWzcZ3YgMH39CVArEExvWrOxDBGrphbcMvBdBijxkvSf5esVwUsEnZ8
+ 1ZHh6/e/SvXqCNGgQ/lNCe5gAL28iwkI0szCPQxeTU/2i3yOU8PBlXeKDjU0oX+WvfAgthNbQ
+ qaUNeKx00w02WewKF442pRaIIsV9fLnjgNWlVSyxQyk5/MRZRbDf8UfVHWDCJaoRmuPErTNUz
+ NUiI4BxXLTzfRES2NLc2YVhNatl15PfhOrLmqlm/G3OuJZPPJKT7fxC/np3eabSgb3uqXSs3x
+ HhNlBwmjyUzzIZj4mFAhLsQapOo6l1dOin9rs7GAWvW46bS1OVUcCvdBdbrs/JuTskgnBrssJ
+ q/mqwHvmkrZqXqMHEYVnxBYEkoxysGzz6iylZwnjQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_072943_236123_BC05E48D 
-X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-CacheID: sfid-20191021_072943_241437_3F1A464E 
+X-CRM114-Status: UNSURE (   7.79  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,11 +65,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 19.07 1/2] ath79: use board name in LED
- migrations
+Subject: [OpenWrt-Devel] [PATCH 19.07 2/2] ath79: add LED migration for
+ several Archer Cxx devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,47 +86,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Several devices added to LED migration script will just have their
-(old) board name converted to tp-link.
+Several Archer Cxx devices were using board-specific LED names in
+ar71xx, which were changed to "tp-link:*" in ath79.
 
-By using a variable for this, the amount of code in the migration
-script can be reduced and the chance for typos is reduced.
-
-This patch also introduces the marker for beginning of a pattern
-"^" to the regex, so the match is more specific.
+This patch adds migration for them.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-(cherry picked from commit 6b0eb84336edc995f4723f0a005507f158d3e895)
+(cherry picked from commit 53e6cc7a81175728f64f978c2363a18c1fa66d64)
 ---
- .../ath79/base-files/etc/uci-defaults/04_led_migration     | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
+ .../ath79/base-files/etc/uci-defaults/04_led_migration   | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/target/linux/ath79/base-files/etc/uci-defaults/04_led_migration b/target/linux/ath79/base-files/etc/uci-defaults/04_led_migration
-index bc40d22c09..a512225523 100644
+index a512225523..a291bf8c7f 100644
 --- a/target/linux/ath79/base-files/etc/uci-defaults/04_led_migration
 +++ b/target/linux/ath79/base-files/etc/uci-defaults/04_led_migration
-@@ -4,6 +4,7 @@
- . /lib/functions/migrations.sh
- 
- board=$(board_name)
-+boardonly="${board##*,}"
- 
- case "$board" in
+@@ -10,13 +10,16 @@ case "$board" in
  engenius,epg5000)
-@@ -12,11 +13,9 @@ engenius,epg5000)
- tplink,archer-c7-v2)
- 	migrate_leds ":blue:=:green:"
+ 	migrate_leds ":wlan-2g=:wlan2g" ":wlan-5g=:wlan5g"
  	;;
--tplink,archer-c7-v4)
--	migrate_leds "archer-c7-v4:=tp-link:"
+-tplink,archer-c7-v2)
+-	migrate_leds ":blue:=:green:"
 -	;;
-+tplink,archer-c7-v4|\
++tplink,archer-c25-v1|\
++tplink,archer-c58-v1|\
++tplink,archer-c59-v1|\
+ tplink,archer-c7-v4|\
  tplink,archer-c7-v5)
--	migrate_leds "archer-c7-v5:=tp-link:"
-+	migrate_leds "^$boardonly:=tp-link:"
+ 	migrate_leds "^$boardonly:=tp-link:"
  	;;
++tplink,archer-c7-v2)
++	migrate_leds ":blue:=:green:"
++	;;
  wd,mynet-n750)
  	migrate_leds "wd:=mynet-n750:"
+ 	;;
 -- 
 2.20.1
 

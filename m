@@ -2,39 +2,38 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74885DED30
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 15:14:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27A9FDED43
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 15:15:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=t7YuGKuYu7zWvdJJ4Vzxwm3tQscxqdvGHtv4K7RTpjg=; b=ep/R2EnYdPaTq+IwOJbIjPd8E
-	B20Lbyf9lQPfd1k7PI6vizI7neZxh9JNcGLFe3T7aRLScM6W8kMijNbCx28FJkQalYZiu+k6AgLAz
-	YVcqVyp7+Pib9tUiaGEhNOu1RspK/+dHHuwtrPIxc2RiNDdCCcfxB3uMfBqjuHBzuvUlj6HWnIrNO
-	MQebQUsLc8QiasvwHQpnISnqu0g1xOCI3dB31zynwyCQSffYkl5yFhkIhsWNeqTuFBheIDn3QGrq1
-	j6PcAP4N9J8KFmXeu2y6WPFIzUDfm9eKMBEwM39w8kHq1tp9bTXhcHzZmRKHiE8yx0AlfTMhv6BPT
-	HnumpTcuw==;
+	 bh=QOfhER9jQuwN03tHI+KWCxU7h5j/kx2QinkvbrrfTkU=; b=IK/tO8v73wP2Ljv1fyiwDN6G3
+	RiGKK0pBUUKU/gkqHrt912AVQPU2eXqXCSgrxOVkqkSFLKO2x4OXW85g+whKc09BOKeCBJzpNO6gx
+	5fALMFgMX4qE55iNNHkXnaqOoy64WFtidp7DXmIaIfT8pO2vSpOu2ILXCkEfWnPYVIyaDOMmhaUQn
+	jwrbQebQjRcuQ4d1vGkZQE7zNUZPxh+P+a2A3eD1HzFrc26GQm6q3gNc2+wARjHTnMEw1F2hEDG1e
+	khFtCQyvVyAlpx7eBQWC3bXUh1DB5vXJvYb2dwWO9RndCjZYzI+4Lm0roITz/QaPuTHc2u2RVFNk/
+	54Fm9lDsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMXVk-0002AJ-17; Mon, 21 Oct 2019 13:14:12 +0000
+	id 1iMXWk-00041S-Gq; Mon, 21 Oct 2019 13:15:14 +0000
 Received: from mail3.marcant.net ([217.14.160.188])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMXVX-00029C-PN
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 13:14:01 +0000
-Received: from [192.168.180.1] (port=54726 helo=admins.marcant.net)
+ id 1iMXWc-0003TH-2F
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 13:15:07 +0000
+Received: from [192.168.180.1] (port=54742 helo=admins.marcant.net)
  by mail3.marcant.net with esmtp (Exim 4.82_1-5b7a7c0-XX)
  (envelope-from <avalentin@marcant.net>)
- id 1iMXVU-0003ES-0Q; Mon, 21 Oct 2019 15:13:56 +0200
+ id 1iMXWY-0003KY-2B; Mon, 21 Oct 2019 15:15:02 +0200
 Received: from [192.168.3.44] (unknown [192.168.3.44])
- by admins.marcant.net (Postfix) with ESMTP id EBB5F28026F;
- Mon, 21 Oct 2019 15:13:55 +0200 (CEST)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
+ by admins.marcant.net (Postfix) with ESMTP id 7A6EF2802BA;
+ Mon, 21 Oct 2019 15:15:02 +0200 (CEST)
+To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
 References: <20191021123214.2252-1-avalentin@marcant.net>
- <20191021123214.2252-5-avalentin@marcant.net>
- <20191021130209.GD52694@meh.true.cz>
+ <20191021123214.2252-2-avalentin@marcant.net>
+ <20191021130532.GF52694@meh.true.cz>
 From: =?UTF-8?Q?Andr=c3=a9_Valentin?= <avalentin@marcant.net>
 Autocrypt: addr=avalentin@marcant.net; prefer-encrypt=mutual; keydata=
  mQGiBD0cWuMRBAColkNajBIWPDHBP9p1lNWkyc5zO7EOywGqJX3beEFplGzJDgBBPZoIzNB2
@@ -60,15 +59,15 @@ Autocrypt: addr=avalentin@marcant.net; prefer-encrypt=mutual; keydata=
  naipiEYEGBECAAYFAj0cW5cACgkQSZoWh3g1Nl0UtQCcDAHtRR4R4UeleYr7ARXSrnAZ0IsA
  n1zVHHxU2yalWPKywjLmFKB5J7Zq
 Organization: MarcanT AG
-Message-ID: <c3b0281b-d890-3afb-9a65-c5222c831ee0@marcant.net>
-Date: Mon, 21 Oct 2019 15:13:55 +0200
+Message-ID: <a4a02def-56f9-d2e1-058d-a43c9e51aaed@marcant.net>
+Date: Mon, 21 Oct 2019 15:15:02 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.2
 MIME-Version: 1.0
-In-Reply-To: <20191021130209.GD52694@meh.true.cz>
+In-Reply-To: <20191021130532.GF52694@meh.true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_061359_979228_86839B04 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20191021_061506_266161_E69E69B9 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,8 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  no trust [217.14.160.188 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 4/5] target/generic: add ascii search
- option to mtd-mac-address helper
+Subject: Re: [OpenWrt-Devel] [PATCH 1/5] tools/mkrasimage: Add support for
+ 128k header size
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,55 +90,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1887651460597564682=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============8507622152167337737=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a cryptographically signed message in MIME format.
 
---===============1887651460597564682==
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms020506070505080408010308"
+--===============8507622152167337737==
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms030705020209030500080205"
 
 This is a cryptographically signed message in MIME format.
 
---------------ms020506070505080408010308
+--------------ms030705020209030500080205
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi Petr!
+Hi Petr,
 
-Am 21.10.19 um 15:02 schrieb Petr =C5=A0tetiar:
-> Andr=C3=A9 Valentin <avalentin@marcant.net> [2019-10-21 14:32:13]:
+thanks, I will remove the constant. It is not needed anymore.
+
+
+Am 21.10.19 um 15:05 schrieb Petr =C5=A0tetiar:
+> Andr=C3=A9 Valentin <avalentin@marcant.net> [2019-10-21 14:32:10]:
 >=20
 > Hi,
 >=20
->> This improves the function of_get_mac_address_mtd...
+>>  #define HEADER_PARTITION_CALC_LENGTH 2048
+>> -#define HEADER_PARTITION_LENGTH 0x10000
+>> =20
+>>  struct file_info {
+>>      char *name;    /* name of the file */
+>> @@ -70,6 +69,7 @@ static char *progname;
+>>  static char *board_name =3D 0;
+>>  static char *version_name =3D 0;
+>>  static unsigned int rootfs_size =3D 0;
+>> +static unsigned int header_length =3D 0x10000;
 >=20
-> but on the other hand its also introducing something which would never =
-be
-> accepted upstream, for details see my other comment[1].
-
-I also saw that. I could move it into a separate "driver"? I also noticed=
- the nvmem provider, but that is a bit to tricky for me.
-
-
->=20
->> Code has been taken from ar71xx.
->=20
-> It makes me wonder from where exactly as I can't seem to find it.
->=20
-> 1. http://patchwork.ozlabs.org/patch/1112495/#2189030
+> you've perhaps forget to use that define HEADER_PARTITION_LENGTH above =
+?
 >=20
 > -- ynezz
 >=20
-
-Kind regards,
-
 Andr=C3=A9
 
 
---------------ms020506070505080408010308
+--------------ms030705020209030500080205
 Content-Type: application/pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
@@ -205,8 +202,8 @@ mXk0SXwkGP3yVDGCA/YwggPyAgEBMIGXMIGCMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWls
 YW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNVBAoMGkFjdGFsaXMgUy5wLkEuLzAzMzU4NTIw
 OTY3MSwwKgYDVQQDDCNBY3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEI
 S0Vm/+lAmuLB44BgezANBglghkgBZQMEAgEFAKCCAi8wGAYJKoZIhvcNAQkDMQsGCSqGSIb3
-DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkxMDIxMTMxMzU1WjAvBgkqhkiG9w0BCQQxIgQgm1Oj
-j3kk6H+A4HZDvzMTz/QF/vWAa1Wl2YCppmpinrAwbAYJKoZIhvcNAQkPMV8wXTALBglghkgB
+DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkxMDIxMTMxNTAyWjAvBgkqhkiG9w0BCQQxIgQgPsy4
+bmFDqPWiUla8xbx0CafsLW7pfgyPDAq01nNxtOUwbAYJKoZIhvcNAQkPMV8wXTALBglghkgB
 ZQMEASowCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMHMA4GCCqGSIb3DQMCAgIAgDANBggqhkiG
 9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG9w0DAgIBKDCBqAYJKwYBBAGCNxAEMYGaMIGXMIGC
 MQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xIzAhBgNV
@@ -215,16 +212,16 @@ dCBBdXRoZW50aWNhdGlvbiBDQSBHMQIQfmEIS0Vm/+lAmuLB44BgezCBqgYLKoZIhvcNAQkQ
 AgsxgZqggZcwgYIxCzAJBgNVBAYTAklUMQ8wDQYDVQQIDAZNaWxhbm8xDzANBgNVBAcMBk1p
 bGFubzEjMCEGA1UECgwaQWN0YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxLDAqBgNVBAMMI0Fj
 dGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcxAhB+YQhLRWb/6UCa4sHjgGB7MA0G
-CSqGSIb3DQEBAQUABIIBABKBMgmhl68hogMwIdq4vvU233JhklmN14oUnqjlIBNWydiw9WbN
-Il6Ma3/XEqwnvU1VulTrOqqAhJUHGVVHq19lOfbVVjtZSOWg7fXoF3McLIF0Z3+Cvy5r1OvW
-Pn/eiFi2E/iIak9Oh8LgkFriIgfGd9V/mDeHJN1KXQ1tkbIuGDjbnSpTSCQgTnOctmN+4Gk+
-v1SYNEF/CgvJcxdTdeYj3tpAlT6q7NMzWRJaLrU4mRE9q2GCtxG/Dfby/H8DMmbb3wEVMRm3
-DKoYNmtK8LyEjzJZHcj0XdRUbfnbJElfFdOKr6Y+eAH27XzhnrSEyLxhjT2KgjY28SaljdjW
-NwEAAAAAAAA=
---------------ms020506070505080408010308--
+CSqGSIb3DQEBAQUABIIBADmhb1L2b5YUkYMZEEk6JEyE76/1vrosVNUD4g/1VAZXkOcm8VsG
+F7o7742nvUP7cWB3u3B0ZtA4kSUgTP9R/ivTizFF5dpVvPJ6XMqy8UVRM784c/0y/UkYV7mf
+lmaewO4zXWLkS77dr0imigG91EcMIEmeuLAuzFjLopkvkHvOsdRQHY6q7fphCKIjD5dNMKja
+AWD/5fKXGVJXRU+eJxmEcZo1fCXU4mTroo/ZkVfmq1tE52dzd2231h4EFtJrEpuzngOrJBHS
+5UsQy1rbXJIO249mlF5Lr6eUk/uqObKztN2T/jG94jYkfxB+5DXXMyqXWOZAKYn+N594n/oR
+C88AAAAAAAA=
+--------------ms030705020209030500080205--
 
 
---===============1887651460597564682==
+--===============8507622152167337737==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -235,5 +232,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============1887651460597564682==--
+--===============8507622152167337737==--
 

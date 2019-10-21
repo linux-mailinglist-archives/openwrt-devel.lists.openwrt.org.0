@@ -2,103 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BC0DDF0EA
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 17:09:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17431DF0F1
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 17:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jeF0Pqm+5eo3j6KgObFI7OkpB1xv/lWTaTxa9IVUwOg=; b=sEZsReOgWBrw2M
-	MD5UJsU7HnH5jQmY0oIdslGqM2tQ9AweWDsM2ivK8IsO6Xkdp+l546fZ2LwMRCFCpZgSOkCLGh+w6
-	J4v2WWVusmbF4onV/ZGx63zcJLngsIbudSDfxbaxu9/VlsAkygPZbsGn7CtJaGveIMq+FrR+uRnlO
-	N2dClHctmA8LRIpSAM+iw44QATV7aCxEIH6uTpCVHzPKlr8cFxZzCw8QwNL1W2AzehjEl3eSQThfX
-	BuoP/t9Aq/4oaT3clBWJHg1eAu1kbV6hrIb/Z9mS5Eypi1yIRq3JBmZG8L099NxN3Qcv3nKZJe0NI
-	dIWv8BxAL6r0n8H6EaEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ETz5nWosqP7ZZn0mpNpyVtnZeMtgyBqRUNxuqgbFU8U=; b=O7ehtcYS2ofRBlSwrjAKt+qvI
+	A3Kzkmb/u7yGh4U6TOGgNShY/Tj+ciY3wUlShugAjXdKEHG7iHAogKqRKEdvAmlRWs63i6L3hCiUg
+	bJGy4Y+bGjVvwnGBoEvBb+8HuXU1XBdZPbW9YXf9kz0UcTKtMj/QiR4XLnnvvbnZry03FpswS9ijZ
+	FcdlZxTQb1QbskritpYMoGQKB+zy7pqcGEbZJp3/sk/V/76UL9TJpd/BvyK/nC+TyDaR6+IWX8M49
+	CN34y2czmPH+tgxOU3KcT3DPIS7wv9EzhBoWYWMtWprVWsWMpiuV9yMcNsfTEPBhnBvCMTKKU0TWh
+	vPbGP6rPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMZJg-0003o3-3h; Mon, 21 Oct 2019 15:09:52 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1iMZKF-0005Pa-Nh; Mon, 21 Oct 2019 15:10:27 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMZJX-0003mu-KH
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 15:09:45 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id CEAC853DC5; Mon, 21 Oct 2019 17:09:39 +0200 (CEST)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 940A553DC3
- for <openwrt-devel@lists.openwrt.org>; Mon, 21 Oct 2019 17:09:39 +0200 (CEST)
-Received: (qmail 24987 invoked from network); 21 Oct 2019 17:09:39 +0200
-Received: from unknown (HELO ?172.18.107.183?) (jo%wwsnet.net@46.183.103.8)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 21 Oct 2019 17:09:39 +0200
-To: openwrt-devel@lists.openwrt.org
+ id 1iMZK6-0005Nd-Uj
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 15:10:20 +0000
+Received: by mail-wr1-x433.google.com with SMTP id p4so14420036wrm.8
+ for <openwrt-devel@lists.openwrt.org>; Mon, 21 Oct 2019 08:10:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ncentric-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-transfer-encoding:content-language;
+ bh=u/z6fkFAJtZwDHdLS1eErpjxjtzKaqwmIZZIwpsglfw=;
+ b=K8fKVDDPj3kQzGZdvP+Xip1ZF3QRkt+/sBNmQBN8jVEsEYqaBeK7kDbIFfQvOyqo09
+ eIa6aTI+P/E4LKCMrbpc8GV6gyp103fpKMpFzlkvxDsEGQfWykQWFWSEhsNoiN2JVpkb
+ BLv+POec/paiBrAx3L6YxGCtGS7ZlzDGfWTBC7HVqZvmDcDzWe+LtyY2SHete9zVknkP
+ 2f0BJhhGFEPM9tYU6s6XZ7XXfErBEaHcPihJxnOD5vlTWhU51lelnWgUbf0jm5EjVWpv
+ shpv2SA0ezLh9eG4XgbUzo1REpvKNdD48sPEeUB1h30s1jbgZ59rrX0YqTn5/5Nyipo5
+ /7vQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=u/z6fkFAJtZwDHdLS1eErpjxjtzKaqwmIZZIwpsglfw=;
+ b=jQPhw7ojBS4FWObPwPn53/z4F4qALOH6WhvNE0cXo15NHhvU3qRjxiXK5WQewaRdGR
+ 8bafN3hxf0tyQwFrokpB1kANvpGvuVjmmDVlOk4uvckD4sgs/P7oyiv/aJ/vCtq1zNhl
+ eTpa3j6yKnGXCuRCfF+SWgx5ZuEKg8uQ0qogDYXTnY8WzvWpW9nMElJudBkspt1qJF6k
+ oSQRCVjrEBBrOEo3I0ZJPxBlB0ff28EuR4LaG58YBbuZSrcsEOeCGmljgThV3yHCL5At
+ KB5bRpQQxzVHljlaeModgYGikiZ7s6OxNfsQpNma9BHxcF3yedyMenOrFWMdro7BrQ7y
+ 993Q==
+X-Gm-Message-State: APjAAAXKPg/O6h1Jg6yG0Lclhq5uHylnEKfLT15nWxCpfZzfAV5If/Gu
+ 8LTDBk9ZFirvUxHWFihyak36+gd6G7A=
+X-Google-Smtp-Source: APXvYqybubyV1qseoABq/JBwjPNgXwOqE8pXs+n9T4f2xNy8YYrDX/SCXMbpNQnoiSuqwW8IuwJRjg==
+X-Received: by 2002:a5d:44c5:: with SMTP id z5mr19420907wrr.252.1571670616802; 
+ Mon, 21 Oct 2019 08:10:16 -0700 (PDT)
+Received: from [192.168.3.176] (d515300d8.static.telenet.be. [81.83.0.216])
+ by smtp.gmail.com with ESMTPSA id p20sm10429759wmc.23.2019.10.21.08.10.16
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 21 Oct 2019 08:10:16 -0700 (PDT)
+To: Martin Tippmann <martin.tippmann@gmail.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 References: <CABL_Pd-PQmWjkA9Zhtgv6VYq0DLbKu04JXwWgXywR8br_sffnA@mail.gmail.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
- 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
- Xx5IapIyoA==
-Message-ID: <40b1f02b-4b7d-e1da-95f5-2b8daa127970@mein.io>
-Date: Mon, 21 Oct 2019 17:09:37 +0200
+From: Koen Vandeputte <koen.vandeputte@ncentric.com>
+Message-ID: <7411452c-baa6-8e28-fe42-cf9b54a4acee@ncentric.com>
+Date: Mon, 21 Oct 2019 17:10:15 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
 In-Reply-To: <CABL_Pd-PQmWjkA9Zhtgv6VYq0DLbKu04JXwWgXywR8br_sffnA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_080943_981105_F95F18BD 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191021_081019_015481_96CFC59B 
+X-CRM114-Status: GOOD (  18.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:433 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 Subject: Re: [OpenWrt-Devel] Hang on setting $PROMPT in master
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -111,18 +96,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
 
-might be related to this:
-http://lists.busybox.net/pipermail/busybox/2019-October/087535.html
+On 21.10.19 17:04, Martin Tippmann wrote:
+> We are using a shell-function to set the prompt based on return code -
+> it works fine in 17.01 / 18.06 / 19.07, however in current master when
+> the function is run the terminal/ssh session hangs.
+>
+> how to reproduce:
+>
+>
+>
+> <--- hang.sh:
+> #!/bin/sh
 
-Regards,
-Jo
+You could add following line here to check where it hangs:
+
+set -x
+
+> prompt_set() {
+>     face() {
+>      local rc=$?
+>      case "$rc" in
+>         0) printf '%s' "$1" ;;
+>         *) printf '%s' "$2" ; return $rc ;;
+>        esac
+>     }
+>
+>     local e='\[\e' # start escape-sequence
+>     local c='\]' # close escape-sequence
+>
+>     local user='\u'
+>     local wdir='\w' # workdir
+>     local host='\h' # short form
+>
+>      local reset="${e}[0m${c}" # all attributes
+>      local white="${e}[37m${c}"
+>      local cyan="${e}[36m${c}"
+>      local yellow="${e}[33;1m${c}" # bold
+>      local green="${e}[32m${c}"
+>      local red="${e}[31m${c}"
+>
+>      local ok="${green}:)"
+>      local bad="${red}8("
+>
+>     # e.g. user@hostname:~ :)
+>     export PS1="${cyan}${user}$white@${green}$host:${yellow}$wdir \$(
+> face '$ok' '$bad' ) $reset"
+> }
+>
+> prompt_set
+> -->
+>
+> now source the file:
+>
+> . ./hang.sh
+>
+> shellcheck does not complain - I'm writing because I'm not sure wether
+> this invalid sh that happened to work anyway or is this a
+> bug/regression in ash?
+>
+> regards
+> Martin
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

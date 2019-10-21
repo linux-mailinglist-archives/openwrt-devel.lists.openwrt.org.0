@@ -2,58 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE609DECDC
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 14:55:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24200DECF2
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 14:59:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2vZSaX4n9mJG/T/ZTBLD80SIR01RRSWlCvV1PybdYIY=; b=uhKF55gy32TD1u7jJSBp6f3x9
-	QPsVXmqTQfLB6vYsdkA3f9jkkgQUcxKCXrSrestLEFhbrWaZEbwh8wKr8WQQi6BTZVtHPAQcUXOEc
-	ZcHhao0XP3I4HqmPfV6ZVxTUnRJOW9dsW5Ln/3bpsbe9SkNClZvYRvTCKasH7d8mp1rKeItPvU+0K
-	/kc0twQIvQcIbQXc4YCd/LfUW93Q6x4g/LY2GFdoHpFiTo8FLktiKMIDhNqYRP0yrbUNf4ufR++Vp
-	WPBzy1Pr7akBSjhUV8PtzOHBa3UrAkFvcCYAlD0Xe1yhEkhRw9s8sKHpuwZJ1I7ulaYsaI87FRX1J
-	jXsObB7PA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jKrItd23Wsl85FwGdc7DlMCKPRTIH/VWpQFD4cYssrg=; b=pD7s+a80HDY5EK
+	xFbn4X609D6kWM4xVyaO6ikTZKn2G7RI5A6k7WP69O8R9Fwrq40RDpxExNjTPUISVUGt2hn+KWooK
+	E3qfap7ZUSN58NiZg6GB+LbG0A49FXfRbTZXC7bf1+us4UHcs3J9ZBVxrJbdd0dmtDGJ2hFDLHjP/
+	/zqzXYIswD8r/Ttgvvj73AgINap9BmZwDAW8FfbfGuGHUYEV9+cqMBcvOJYasc/2fe3YwocPoCWlM
+	VvacRt9pLArClPtXdxgGE/yONxSu0KZpHkAQI1yS3NK1iR5Mj9QAnvsmNYmlotLhAK/hXanGRJaiQ
+	CoCecFwotwz8V5VKSoBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMXDA-0000MI-Pg; Mon, 21 Oct 2019 12:55:00 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1iMXHu-0003Bj-4W; Mon, 21 Oct 2019 12:59:54 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMXD1-0000LN-Jr
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 12:54:53 +0000
-Received: from p5dcfba1e.dip0.t-ipconnect.de ([93.207.186.30]
- helo=[10.255.231.27])
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <john@phrozen.org>)
- id 1iMXD0-00032c-7B; Mon, 21 Oct 2019 14:54:50 +0200
-To: Adrian Schmutzler <mail@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-References: <20190920120303.3295-1-freifunk@adrianschmutzler.de>
- <85fe384e-cf49-a1a7-da6f-dd26f239c6bb@phrozen.org>
- <36a7b598-319a-b70a-0c1e-8279cc5fd37e@phrozen.org>
- <010201d5880b$63c0b890$2b4229b0$@adrianschmutzler.de>
-From: John Crispin <john@phrozen.org>
-Message-ID: <de0cc8f5-f361-6131-c4ab-38eb35649aec@phrozen.org>
-Date: Mon, 21 Oct 2019 14:54:49 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1iMXHi-0003B0-Gf
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 12:59:43 +0000
+Received: by mail-pg1-x544.google.com with SMTP id p1so7790709pgi.4
+ for <openwrt-devel@lists.openwrt.org>; Mon, 21 Oct 2019 05:59:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Q9hdKeZbSFvbKqGiUnL/KlVn+J1eBFMLqvPvJIrTN9I=;
+ b=GhPt+99kkK30jjTpJGInn3P1gg42eZOa8l+6+uxLJVfnTUkDrWGLV0kpoLcULIpr8g
+ iPDARMmAX4zdb2f+0gzR2z5TIllsPxxXmDcHf7Ib6T2TX6/me0XHIMVxvAnDOB/3kdCI
+ MnFp+5aYXLQsrJrOqrL0iflOSp3bb+Wve/a/flDkho0IBgHBgltLFoe527jyZLkleCQH
+ u0qGN37qg4cz98C6UqyLXpzjpqiS2Wbi2fqZYkAzInKuVKvyEZcYw0Vov5N0ftF+ud+B
+ 0/dR7pvyclna73ms49mOpMXi5p9XoqcxpnkdPSiy9ICYkmWOwcXcKB5ywC8QSKGx35t2
+ ZKKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Q9hdKeZbSFvbKqGiUnL/KlVn+J1eBFMLqvPvJIrTN9I=;
+ b=bVHdX6gCk3GHO0dvo6YBiMMqkQt32fo+SqLC/poN5FEKoGbE2NH8rS0WzKsRsvzWja
+ TMb2VjozREMzeqTFsyB6G1ahkbrYSVYGO2pT2sfQuV+YiVMW0YzbOgmjctNxB1Mw2f4Z
+ wiVYz+c2vDooD3hU/GFdRIUylj6+5o5deQ9uD+0jBEIHsF8KtY7qfHM3sMPD/CXgxPyM
+ kP+puqx3LAeUjDl3kW2GnhguUhHm8sMitdz212mJ6ws34fOSROyx9iSl9w0Xr8mjdiYU
+ A+eKZ1pHDj7dCTho3RLDNhhLDquSUCOmwcBuUHImqFPegrQb9MwdmPhQPdtpMVDelKM1
+ LBHw==
+X-Gm-Message-State: APjAAAXfs4S4Ut8oG8icRsNwVbVnwzoUyVKm9vOWTKatATMfKcKiAbdy
+ uf8kxM3UuQzmnjB+2bnUA0c=
+X-Google-Smtp-Source: APXvYqw5fAu5aAd2OhqUWkZ19+Ps5wkOqJUjdkkzaDkNTW9AHZv6o+GyE2ptfSfNLs2V7RfZjJCmhg==
+X-Received: by 2002:a17:90a:c382:: with SMTP id
+ h2mr27791806pjt.110.1571662781409; 
+ Mon, 21 Oct 2019 05:59:41 -0700 (PDT)
+Received: from titan.hq.cloud.yunionyun.com ([161.117.5.46])
+ by smtp.gmail.com with ESMTPSA id 20sm15880813pfp.153.2019.10.21.05.59.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 21 Oct 2019 05:59:40 -0700 (PDT)
+From: Yousong Zhou <yszhou4tech@gmail.com>
+To: jo@mein.io
+Date: Mon, 21 Oct 2019 12:59:23 +0000
+Message-Id: <20191021125924.37223-1-yszhou4tech@gmail.com>
+In-Reply-To: <20191021061031.81230-1-yszhou4tech@gmail.com>
+References: <20191021061031.81230-1-yszhou4tech@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <010201d5880b$63c0b890$2b4229b0$@adrianschmutzler.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_055451_818879_7CDB9CD3 
-X-CRM114-Status: GOOD (  13.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191021_055942_571225_D939B56D 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (yszhou4tech[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 1/2] ramips/mt762x: convert devices
- to interrupt-driven gpio-keys
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH rpcd v2 5/6] file: exec: properly free
+ memory on error
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,38 +99,60 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Yousong Zhou <yszhou4tech@gmail.com>, ynezz@true.cz,
+ openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gMjEvMTAvMjAxOSAxNDozMCwgQWRyaWFuIFNjaG11dHpsZXIgd3JvdGU6Cj4gSGkgSm9obiwK
-PiAKPj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4gRnJvbTogSm9obiBDcmlzcGluIFtt
-YWlsdG86am9obkBwaHJvemVuLm9yZ10KPj4gU2VudDogTW9udGFnLCAyMS4gT2t0b2JlciAyMDE5
-IDE0OjE5Cj4+IFRvOiBBZHJpYW4gU2NobXV0emxlciA8ZnJlaWZ1bmtAYWRyaWFuc2NobXV0emxl
-ci5kZT47IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKPj4gU3ViamVjdDogUmU6IFtP
-cGVuV3J0LURldmVsXSBbUEFUQ0ggdjIgMS8yXSByYW1pcHMvbXQ3NjJ4OiBjb252ZXJ0IGRldmlj
-ZXMgdG8gaW50ZXJydXB0LWRyaXZlbiBncGlvLWtleXMKPj4KPj4KPj4gT24gMjEvMTAvMjAxOSAx
-NDoxNywgSm9obiBDcmlzcGluIHdyb3RlOgo+Pj4gT24gMjAvMDkvMjAxOSAxNDowMywgQWRyaWFu
-IFNjaG11dHpsZXIgd3JvdGU6Cj4+Pj4gVGhpcyBjb252ZXJ0cyBhbGwgcmVtYWluaW5nIGRldmlj
-ZXMgdG8gdXNlIGludGVycnVwdC1kcml2ZW4KPj4+PiBncGlvLWtleXMgY29tcGF0aWJsZSBpbnN0
-ZWFkIG9mIGdwaW8ta2V5cy1wb2xsZWQuCj4+Pj4gVGhlIHBvbGwtaW50ZXJ2YWwgaXMgcmVtb3Zl
-ZC4KPj4+Pgo+Pj4+IFdoaWxlIGF0IGl0LCBhZGQvcmVtb3ZlIG5ld2xpbmVzIGluIGtleXMgYW5k
-IGxlZHMgbm9kZSB3aGVyZQo+Pj4+IG5lY2Vzc2FyeS4KPj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6
-IEFkcmlhbiBTY2htdXR6bGVyIDxmcmVpZnVua0BhZHJpYW5zY2htdXR6bGVyLmRlPgo+Pj4KPj4+
-IEhpLAo+Pj4gd2FzIHRoZXJlIG5vdCBhbiBpc3N1ZSBvbiBzb21lIG9mIHRoZSBvbGRlciByYWxp
-bmsgc2lsaWNvbiB2ZXJzaW9ucyB0aGF0Cj4+PiBtYWRlIGlycSB1bnJlbGlhYmxlLCB3aGljaCBp
-cyB3aHkgd2UgbmV2ZXIgY2hhbmdlZCB0aGlzID8KPj4+ICAgwqDCoMKgwqBKb2huCj4+IHRoaXMg
-b25seSB0b3VjaGVzIHRoZSBtdGsgc2lsaWNvbiAuLi4KPiAKPiBJIG9idmlvdXNseSBjYW5ub3Qg
-cHJvdmUgdGhhdCB0aGlzIHdpbGwgd29yayBvbiBhbGwgZGV2aWNlcywgYnV0IEkgaGF2ZSBzZWVu
-IHNldmVyYWwgZGV2aWNlIHN1cHBvcnQgUFJzIGZvciBtdDc2MjAvbXQ3NjIxL210NzYyOCB3aXRo
-IGdwaW8ta2V5cyB3b3JraW5nICg9dGVzdGVkKSBvdmVyIHRoZSBsYXN0IGhhbGYgeWVhci4KPiBJ
-IGludGVudGlvbmFsbHkgb25seSBpbmNsdWRlZCBtdDc2eHggaGVyZSwgYXMgSSBoYXZlIG5vIGlk
-ZWEgd2hldGhlciB0aGlzIHdpbGwgd29yayBvbiBydHh4eHgsIGFuZCBpZiBJIHJlbWVtYmVyIGNv
-cnJlY3RseSAxMDAgJSBvZiB0aGVtIHN0aWxsIGhhdmUgZ3Bpby1rZXlzLXBvbGxlZCBzZXQuCj4g
-Cj4gQmVzdAo+IAo+IEFkcmlhbgo+IAp0aGUgY29kZSB3b3JrcyByZWxpYWJseSBvbiBtdDc2eHgg
-c2lsaWNvbiwgc29tZSBvZiB0aGUgb2xkZXIgc2lsaWNvbiBkaWQgCm5vdCBoYXZlIGZ1bmN0aW9u
-YWwgaXJxIG9uIGFsbCBwaW5zCglKb2huCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
-QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9vcGVud3J0LWRldmVsCg==
+Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
+---
+ file.c | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+
+diff --git a/file.c b/file.c
+index b1adcb7..47fcd9a 100644
+--- a/file.c
++++ b/file.c
+@@ -823,13 +823,15 @@ rpc_file_exec_run(const char *cmd, const struct blob_attr *sid,
+ 	if (!c)
+ 		return UBUS_STATUS_UNKNOWN_ERROR;
+ 
+-	if (pipe(opipe) || pipe(epipe))
+-		return rpc_errno_status();
++	if (pipe(opipe))
++		goto fail_opipe;
++	if (pipe(epipe))
++		goto fail_epipe;
+ 
+ 	switch ((pid = fork()))
+ 	{
+ 	case -1:
+-		return rpc_errno_status();
++		goto fail_fork;
+ 
+ 	case 0:
+ 		uloop_done();
+@@ -921,6 +923,16 @@ rpc_file_exec_run(const char *cmd, const struct blob_attr *sid,
+ 	}
+ 
+ 	return UBUS_STATUS_OK;
++
++fail_fork:
++	close(epipe[0]);
++	close(epipe[1]);
++fail_epipe:
++	close(opipe[0]);
++	close(opipe[1]);
++fail_opipe:
++	free(c);
++	return rpc_errno_status();
+ }
+ 
+ static int
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,47 +2,48 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E04CDF5C5
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 21:13:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D869FDF5C7
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 21:14:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ghKsU43P2arGRb7RsuD32dIAlEkdksntaKC2CBG1EC8=; b=BGGYQakOWil85K0Du3CStHqYI5
-	4OKCqPIeDwWqjE5BDRHx1U8EE2DZ4DeDkqfVZv6ZYwISKgwu+RKi8oVatHtq8FFF5Qtg3478pROm3
-	DFKu9kEREmIMAUYzfNp87UUTLCySzPYK1/8vEqySAL2y/qRpVONU2XBlo8P657otxd8gfZHmoUxFt
-	J3vn9oct2bnC1k6EeFKQOIX46PtWaANYcrFnwroyAskvqzghiF2cvXlRWsfg9mzg1FIg00gOYFS0E
-	PHaEkZo+L1uXrHaQfnqWRJgEGOWkXDPMVLR/1dwdOSUy+7QGegAPkHZV3ScZ1KAHKLqTOzxyXZOfy
-	bGoRLArA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LRN96mk5eH22+s7EsE8QnFwPSmmvL/viMPDocpKJ0Zs=; b=NZ/tXf3OHsIz6elp4DGv24ofs
+	pzbkMj53nqTfTsi+q9bQ/YnOnmboOvcpAs4JbEJfbXcW63a5x6hx5oQqe9Zgm2vfBHbbLeBpzRaCY
+	soHvtgONGHeLX9rYDBlK9tPIXOhoWzKAdt3L6GiYC4bb8rzMxo6Cl1NozwPNQstPOuoZbjllSwvr9
+	qI7ihyB4Cqepc7cFDwOQfLZ0OlT5/++TQ5QqVxoUeSze7NQMF3LMC1R/N5PW6D0J1Wsq2xU1XgBuG
+	uAkz8gEJUiJclwAID1xMU56iZCrZi31YoIIYxO89ZocTo+iBdi806ECZ6/uxmZRMw7h3w8rITwSgG
+	OzfBcdjTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMd7T-0006Fc-HR; Mon, 21 Oct 2019 19:13:31 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iMd7M-0006Es-Df
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 19:13:26 +0000
-Received: from dbauer-t470.home.david-bauer.net
- (p200300E53F06A500D386FEAACE2D188F.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f06:a500:d386:feaa:ce2d:188f])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 316D1225E4
- for <openwrt-devel@lists.openwrt.org>; Mon, 21 Oct 2019 21:13:19 +0200 (CEST)
-From: David Bauer <mail@david-bauer.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 21 Oct 2019 21:13:08 +0200
-Message-Id: <20191021191308.16311-2-mail@david-bauer.net>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191021191308.16311-1-mail@david-bauer.net>
-References: <20191021191308.16311-1-mail@david-bauer.net>
+	id 1iMd7x-0006ns-Ka; Mon, 21 Oct 2019 19:14:01 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iMd7l-0006fj-EO
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 19:13:51 +0000
+Received: from p5dcfba1e.dip0.t-ipconnect.de ([93.207.186.30]
+ helo=[10.255.231.27])
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>)
+ id 1iMd7i-0003hY-04; Mon, 21 Oct 2019 21:13:46 +0200
+To: Kristian Evensen <kristian.evensen@gmail.com>,
+ Robert Marko <robimarko@gmail.com>
+References: <20190831093936.20621-1-kristian.evensen@gmail.com>
+ <CAOX2RU6__MtzhWT5XRcjAXHaLqxb+u4970y8Pf9UjGUAdkdp+Q@mail.gmail.com>
+ <CAKfDRXi=cm5ZrhHa7fELDqjCXhB=GNorViqmMy0zB3SM+ZLqYQ@mail.gmail.com>
+From: John Crispin <john@phrozen.org>
+Message-ID: <c112f44c-a060-b24b-0feb-7c03b3577203@phrozen.org>
+Date: Mon, 21 Oct 2019 21:13:44 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <CAKfDRXi=cm5ZrhHa7fELDqjCXhB=GNorViqmMy0zB3SM+ZLqYQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_121324_609930_CAA2EA3C 
-X-CRM114-Status: UNSURE (   8.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191021_121349_724179_BACD6C64 
+X-CRM114-Status: GOOD (  13.71  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -50,8 +51,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 2/2] firmware: add Realtek
- RTL8822BE/RTL8822CE firmware
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ipq40xx: Add support for Unielec
+ U4019
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,45 +64,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This commit adds packages for the Realtek RTl8822BE/RTL8822CE firmware
-to be used with the rtw88 driver.
+On 21/10/2019 20:09, Kristian Evensen wrote:
+> Hi,
+> 
+> On Mon, Oct 21, 2019 at 6:07 PM Robert Marko <robimarko@gmail.com> wrote:
+>>
+>> Merging this today has caused a regression in ipq40xx.
+>> PHY reset patch was is the issue, it now forces devices to have GPIO
+>> for PHY reset which most devices don't have and if it's missing it
+>> will make the driver panic and probing will fail.
+>> So please revert this until its properly resolved.
+> 
+> I am very sorry for this mistake, making phy-reset optional completely
+> slipped my mind. I will not have access to an ipq40xx device before
+> some time next week, so I am fine with reverting for now (unless
+> someone else can take a look).
+> 
+> BR,
+> Kristian
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
----
- package/firmware/linux-firmware/realtek.mk | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
-
-diff --git a/package/firmware/linux-firmware/realtek.mk b/package/firmware/linux-firmware/realtek.mk
-index 3c0476e039..87a11c0779 100644
---- a/package/firmware/linux-firmware/realtek.mk
-+++ b/package/firmware/linux-firmware/realtek.mk
-@@ -86,3 +86,18 @@ define Package/rtl8821ae-firmware/install
- 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/rtlwifi/rtl8821aefw_wowlan.bin $(1)/lib/firmware/rtlwifi
- endef
- $(eval $(call BuildPackage,rtl8821ae-firmware))
-+
-+Package/rtl8822be-firmware = $(call Package/firmware-default,RealTek RTL8822BE firmware)
-+define Package/rtl8822be-firmware/install
-+	$(INSTALL_DIR) $(1)/lib/firmware/rtw88
-+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/rtw88/rtw8822b_fw.bin $(1)/lib/firmware/rtw88
-+endef
-+$(eval $(call BuildPackage,rtl8822be-firmware))
-+
-+Package/rtl8822ce-firmware = $(call Package/firmware-default,RealTek RTL8822CE firmware)
-+define Package/rtl8822ce-firmware/install
-+	$(INSTALL_DIR) $(1)/lib/firmware/rtw88
-+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/rtw88/rtw8822c_fw.bin $(1)/lib/firmware/rtw88
-+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/rtw88/rtw8822c_wow_fw.bin $(1)/lib/firmware/rtw88
-+endef
-+$(eval $(call BuildPackage,rtl8822ce-firmware))
--- 
-2.23.0
-
+I have started a build of an ioq40xx tree and will cook up a patch for 
+testing
+	John
 
 _______________________________________________
 openwrt-devel mailing list

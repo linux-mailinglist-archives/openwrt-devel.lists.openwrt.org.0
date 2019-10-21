@@ -2,47 +2,45 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46331DF6E4
-	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 22:42:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94327DF6FC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 21 Oct 2019 22:47:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uNuoBO1f/dSZRptYoVLV4l8RaxduBGP3WqSHR6K8iEI=; b=T5eqH+QZfPK2iLBFJnIVTJC5m
-	4pZC/bQZ0ccghrXcnwkbmx7K/o5MlHcvH9AN1vKGJv5Tw7deoNUn9bnZE+bk5tqMATE1GByfPqFz9
-	W5fYTrJnGUU9yDcWYeTuPUMgmLRpDeY+pyAT9lkBCpLsc8u7xTdZhXJ/fENLe/5mWNn9axGAKb4NU
-	zqWNmpY2SWaNEgIGkkgwKdzLk5idsJbWbMNW4UZ2AmKrpFALo5PavFDSlLRoctmQA8LfrgJfAmZRl
-	1j1JxjmGZM1Q5AyyZKTpwcSgBIKqau+kS+oJV57KDgqe6OVF6ByPOUq7irJ1FFeznsc5ADFUiKfgG
-	7pxdtxifg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v+kIRawND71GOnODST8EkCXnnaPaT2+uQ/gLXnKSiLQ=; b=TJFAf8Qd4/i58u
+	zgFPfn4wLrA36mMWyIKq/psNVFBP0qiRlXwH27tNLIrweb2EyuMZoovocHzE91jwxuKXBjZGsPcK2
+	dOJVnoj9QiqdUL8c5di65PFnKw4QyQFlTEs0pW30Q1svGWbbxuefJRmx6hJmdZ3MBCiF1SZI+zqQv
+	23MSBSScvG68OWZG60VTfhUtdG19V1SaftUp0XoWmD0feTzu7/yD80NM1t3pSnfiNORJJ9+aXVK7x
+	+Nb4M1dquYNd5Akqc5Xj616UchC5JU8I4531k5/KrhtTJ5HNbhFiGWq1Tx7a0j4RnKdjfSrai/l49
+	qn8L2a1uPWe2JFYZLdIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMeVU-0000qu-3v; Mon, 21 Oct 2019 20:42:24 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1iMeaT-0003Qt-Ja; Mon, 21 Oct 2019 20:47:33 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMeVL-0000qZ-O1
- for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 20:42:17 +0000
-Received: from p5dcfba1e.dip0.t-ipconnect.de ([93.207.186.30]
- helo=[10.255.231.27])
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <john@phrozen.org>)
- id 1iMeVJ-00014Z-QQ; Mon, 21 Oct 2019 22:42:13 +0200
-To: David Bauer <mail@david-bauer.net>
-References: <20191021191308.16311-1-mail@david-bauer.net>
- <d3756443-be9b-d090-03ef-b478e62ed002@phrozen.org>
- <3ee87f2d-68f6-1dc7-f0df-ddc4b225efc2@david-bauer.net>
-From: John Crispin <john@phrozen.org>
-Message-ID: <4e0a3acf-f266-34ad-600d-bf82e19f263d@phrozen.org>
-Date: Mon, 21 Oct 2019 22:42:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1iMeaJ-0003QO-Sz
+ for openwrt-devel@lists.openwrt.org; Mon, 21 Oct 2019 20:47:26 +0000
+Received: from dbauer-t470.home.david-bauer.net
+ (p200300E53F06A500D386FEAACE2D188F.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f06:a500:d386:feaa:ce2d:188f])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 0577A1E13A
+ for <openwrt-devel@lists.openwrt.org>; Mon, 21 Oct 2019 22:47:20 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 21 Oct 2019 22:47:12 +0200
+Message-Id: <20191021204712.30307-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <3ee87f2d-68f6-1dc7-f0df-ddc4b225efc2@david-bauer.net>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191021_134215_944212_B9FF4EEC 
-X-CRM114-Status: GOOD (  14.91  )
+X-CRM114-CacheID: sfid-20191021_134724_080478_BE9245A1 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -50,7 +48,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] mac80211: add rtw88 driver
+Subject: [OpenWrt-Devel] [PATCH v2] mac80211: add rtw88 driver
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,32 +60,58 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 21/10/2019 21:31, David Bauer wrote:
-> Hello John
-> 
-> On 10/21/19 9:22 PM, John Crispin wrote:
->> On 21/10/2019 21:13, David Bauer wrote:
->>> +config-$(call config_package,rtw88) += RTW88
->>> +config-y += RTW88_CORE RTW88_PCI RTW88_8822BE RTW88_8822CE
->>> +
->>
->> why not put it all behind config-$(call config_package,rtw88) ? of course kbuild will "is not set it" if the prior is not selected but you could be explicit here. its bikeshedding but I was wondering if I am missing the obvious here.
-> 
-> Good point, i will adjust this here. It's a leftover from when i thought building seperate packages
-> for each WiFi card is a good idea (which i don't think still is).
-> 
-> Best wishes
-> David
-> 
+This commits adds packaging for the new RTW88 driver from Realtek.
+It supports the Realtek 8822BE/8822CE PCIe wireless chips.
 
-can you resend a V2 please, i'll mark this one as superseeded in that case
-	John
+For operation, the complementary firmware has to be loaded.
+
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ package/kernel/mac80211/realtek.mk | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/package/kernel/mac80211/realtek.mk b/package/kernel/mac80211/realtek.mk
+index e7eb9e3117..c14b0bd8f7 100644
+--- a/package/kernel/mac80211/realtek.mk
++++ b/package/kernel/mac80211/realtek.mk
+@@ -2,7 +2,7 @@ PKG_DRIVERS += \
+ 	rtl8180 rtl8187 \
+ 	rtlwifi rtlwifi-pci rtlwifi-btcoexist rtlwifi-usb rtl8192c-common \
+ 	rtl8192ce rtl8192se rtl8192de rtl8192cu rtl8821ae \
+-	rtl8xxxu
++	rtl8xxxu rtw88
+ 
+ config-$(call config_package,rtl8180) += RTL8180
+ config-$(call config_package,rtl8187) += RTL8187
+@@ -22,6 +22,8 @@ config-$(CONFIG_PACKAGE_RTLWIFI_DEBUG) += RTLWIFI_DEBUG
+ config-$(call config_package,rtl8xxxu) += RTL8XXXU
+ config-y += RTL8XXXU_UNTESTED
+ 
++config-$(call config_package,rtw88) += RTW88 RTW88_CORE RTW88_PCI RTW88_8822BE RTW88_8822CE
++
+ define KernelPackage/rtl818x/Default
+   $(call KernelPackage/mac80211/Default)
+   TITLE:=Realtek Drivers for RTL818x devices
+@@ -168,3 +170,12 @@ define KernelPackage/rtl8xxxu/description
+ 
+   Please report your results!
+ endef
++
++define KernelPackage/rtw88
++  $(call KernelPackage/mac80211/Default)
++  TITLE:=Realtek RTL8822BE/RTL8822CE
++  DEPENDS+= @(PCI_SUPPORT) +kmod-mac80211 +@DRIVER_11N_SUPPORT +@DRIVER_11W_SUPPORT
++  FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/realtek/rtw88/rtw88.ko	\
++	$(PKG_BUILD_DIR)/drivers/net/wireless/realtek/rtw88/rtwpci.ko
++  AUTOLOAD:=$(call AutoProbe,rtwpci)
++endef
+-- 
+2.23.0
 
 
 _______________________________________________

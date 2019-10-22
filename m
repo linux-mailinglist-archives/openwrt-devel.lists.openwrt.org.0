@@ -2,71 +2,120 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB8B4E057C
-	for <lists+openwrt-devel@lfdr.de>; Tue, 22 Oct 2019 15:50:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92852E05B1
+	for <lists+openwrt-devel@lfdr.de>; Tue, 22 Oct 2019 16:00:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CwzpdJx2Vab0hZ/gh1WLokMcHlvuRvabX8p7bdq7JQs=; b=nv54YR2iS5QmV1
-	aznILiZ5hj0HRJgaGPGRpFbTzaWt4+ppvTlzc8Gr8a40VFHZO3hNB+tjn1R7NVmOShpwzapfmJPbx
-	SVBqsNutMmK+bGAhUnCl5WlhOiHPnfqN8nnSnf4iWnrBe+yD3c4MsB324Tt5FrlDImVRR3ddD/S+i
-	5ra8DtywxxAopxNvgqziZrwX7Brb1JkyflVSJc5NHNSoTq1eDV50Ga8tCs94qD4ggibTsOEE6gwUH
-	cZhCgmbZJ2SXIn6Qw9x7XjuOaM0ws2Qzp/QAcmFq3dv8k/pUmo1H7uCQdBfTs9Vt7LbmGuk3pHjpX
-	CfT58y968bIOiFndNXdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MhRc2b4HPBWgwT3AaMQUkEwVNj6dbgNadmLNw7U57Vw=; b=SizGHEBlVyyUkywexilGkzghI
+	SB4LX9e/dRrHTenvrS1jFZGMcc9tGZkO8UL8VHF8iGenLy7OayUcPhXPtn4Uwwc36Vcs6EudAlQBk
+	ezTt1u5UBG0sPD8/uZRLRe5efxCzPcHfDEH58y0jHYnVU+bFTggVE0S2aj+CEFkdDiNd4ulRYiL9p
+	v5dkkdCrvPL4y9IxQcWoDQAp4h5zIoYBZeS8XqersE6ttH+0Ss0LOWfFvyc//urd1QFMFFb3OELw/
+	X6iO4oUd8pexKyiBbtSw3RivGrusOr7H2XEDXoNVI8R1HUM/LYMcxwLaVoSdj2VtPt6f7xSYqiloa
+	aDz89MwYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iMuYO-0001Cg-Mz; Tue, 22 Oct 2019 13:50:28 +0000
-Received: from mx4.wp.pl ([212.77.101.12])
+	id 1iMuhs-0005bp-Ha; Tue, 22 Oct 2019 14:00:16 +0000
+Received: from mx2a.mailbox.org ([80.241.60.219])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iMuY3-0008JY-Hp
- for openwrt-devel@lists.openwrt.org; Tue, 22 Oct 2019 13:50:10 +0000
-Received: (wp-smtpd smtp.wp.pl 18980 invoked from network);
- 22 Oct 2019 15:49:59 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1571752199; bh=IhtEHrQwwLCTb78tFJlHZQq/PUbb3PoiBk7lDXF4LJA=;
- h=From:To:Cc:Subject;
- b=AUDDGcSxRmdNdzDQ6YwPB5jMq/ma5QudD+VhXVBWst31HzN40lO3HctOYMfD6hbxD
- dAJobDXs2VC/lxG0m9HG+a0I17cRzoqm3a8m0fA+RhEe8ZjL1KqLClL0MF6uScQWD4
- MejkyjQvgFdFraGFmYA0wBKenFt9E06Kg6pd1s8Y=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 22 Oct 2019 15:49:59 +0200
-Date: Tue, 22 Oct 2019 15:44:45 +0200
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Message-ID: <20191022154445.6e8ec810@kosmio.komorska>
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+ id 1iMuhi-0004Nd-5W
+ for openwrt-devel@lists.openwrt.org; Tue, 22 Oct 2019 14:00:10 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2a.mailbox.org (Postfix) with ESMTPS id E49A4A3469;
+ Tue, 22 Oct 2019 15:59:59 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id kQ8Rt4f217Yy; Tue, 22 Oct 2019 15:59:53 +0200 (CEST)
+To: Jo-Philipp Wich <jo@mein.io>, openwrt-devel@lists.openwrt.org
+References: <fca7f10e-0792-91f9-e37e-db6241a861be@welho.com>
+ <87v9svtvrl.fsf@miraculix.mork.no>
+ <fc77391e-68d8-1e3b-b86c-b01750cd183f@mein.io>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <6b2c76de-3a81-aae2-2175-e9a1aa238302@hauke-m.de>
+Date: Tue, 22 Oct 2019 15:59:04 +0200
 MIME-Version: 1.0
-X-WP-MailID: 55f8663488a673a72bc1fc96b7edda8c
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 0000000 [oZNh]                               
+In-Reply-To: <fc77391e-68d8-1e3b-b86c-b01750cd183f@mein.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_065008_129394_EE71FB1D 
-X-CRM114-Status: GOOD (  11.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_070007_531113_AB73A46A 
+X-CRM114-Status: GOOD (  10.57  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.12 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.219 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michal.cieslakiewicz[at]wp.pl)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH] ath79: add support for Netgear WNR2200
+Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 release schedule ?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,464 +127,104 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4736208947038620604=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patch adds ath79 support for Netgear WNR2200.
-Router was previously supported by ar71xx target only (8 MiB variant).
-Netgear WNR2200 has two flash versions - 8MiB sold in EU, US etc. and
-16 MiB for Russia and China markets. Apart from flash size both variants
-share the same hardware specification.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4736208947038620604==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="sRMC3wKO6ToYunPrP00FU1JRtVABnuu5D"
 
-Specification
-=============
-  * Description: Netgear WNR2200
-  * Loader: U-boot
-  * SOC: Atheros AR7241 (360 MHz)
-  * RAM: 64 MiB
-  * Flash: 8 MiB or 16 MiB (SPI NOR)
-	- U-boot binary: 256 KiB
-	- U-boot environment: 64 KiB
-	- Firmware: 7808 KiB or 16000 KiB
-	- ART: 64 KiB
-  * Ethernet: 4 x 10/100 LAN + 1 x 10/100 WAN
-  * Wireless: 2.4 GHz b/g/n (Atheros AR9287)
-  * USB: yes, 1 x USB 2.0
-  * Buttons:
-	- Reset
-	- WiFi (rfkill)
-	- WPS
-  * LEDs:
-	- Power (amber/green)
-	- WAN (amber/green)
-	- WLAN (blue)
-	- 4 x LAN (amber/green)
-	- WPS (green)
-  * UART: 4-pin connector JP1, 3.3V (Vcc, TX, RX, GND), 115200 8N1
-  * Power supply: DC 12V 1.5A
-  * MAC addresses: LAN on case label, WAN +1, WLAN +2
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--sRMC3wKO6ToYunPrP00FU1JRtVABnuu5D
+Content-Type: multipart/mixed; boundary="Eh5V6fHhJHqpOLChYh9oGLbMismbuUQGE";
+ protected-headers="v1"
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: Jo-Philipp Wich <jo@mein.io>, openwrt-devel@lists.openwrt.org
+Message-ID: <6b2c76de-3a81-aae2-2175-e9a1aa238302@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 release schedule ?
+References: <fca7f10e-0792-91f9-e37e-db6241a861be@welho.com>
+ <87v9svtvrl.fsf@miraculix.mork.no>
+ <fc77391e-68d8-1e3b-b86c-b01750cd183f@mein.io>
+In-Reply-To: <fc77391e-68d8-1e3b-b86c-b01750cd183f@mein.io>
 
-Installation
-============
-  * TFTP recovery
-  * TFTP via U-boot prompt
-  * sysupgrade
-  * Web interface
+--Eh5V6fHhJHqpOLChYh9oGLbMismbuUQGE
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-Test build configuration
-========================
-CONFIG_TARGET_ath79=y
-CONFIG_TARGET_ath79_generic=y
-CONFIG_TARGET_ath79_generic_DEVICE_netgear_wnr2200-8m=y
-CONFIG_ALL_KMODS=y
-CONFIG_DEVEL=y
-CONFIG_CCACHE=y
-CONFIG_COLLECT_KERNEL_DEBUG=y
-CONFIG_IMAGEOPT=y
-CONFIG_KERNEL_DEBUG_INFO=y
-CONFIG_KERNEL_DEBUG_KERNEL=y
+On 10/11/19 12:59 PM, Jo-Philipp Wich wrote:
+> Hi Bj=C3=B8rn,
+>=20
+>> Or: Start discussing the release blockers here and now.  Thanks.
+>=20
+> 1) Blocker: LuCI master needs to be backported to 19.07
+>    Time estimate: 2-3 weeks
+>=20
+> 2) Blocker: All relevant sub-components for WPA-3 + GUI support, such a=
+s
+>    hostapd, iwinfo etc. need to be backported to 19.07
+>    Time estimate: 2 weeks
 
-Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
----
- .../ath79/base-files/etc/board.d/01_leds      |   4 +-
- .../ath79/base-files/etc/board.d/02_network   |   2 +
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   2 +
- .../ath79/dts/ar7241_netgear_wnr2200-16m.dts  |  34 +++
- .../ath79/dts/ar7241_netgear_wnr2200-8m.dts   |  34 +++
- .../ath79/dts/ar7241_netgear_wnr2200.dtsi     | 207 ++++++++++++++++++
- target/linux/ath79/image/generic.mk           |  34 +++
- 7 files changed, 316 insertions(+), 1 deletion(-)
- create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2200-16m.dts
- create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2200-8m.dts
- create mode 100644 target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi
+ynezz has a branch here and I am fine with also backporting hostapd from
+master to 19.07, the security fixes are already in.
+https://git.openwrt.org/?p=3Dopenwrt/staging/ynezz.git;a=3Dshortlog;h=3Dr=
+efs/heads/upstream/19.07/hostapd-backports
 
-diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/base-files/etc/board.d/01_leds
-index 499fe0031c..0d78008182 100755
---- a/target/linux/ath79/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/base-files/etc/board.d/01_leds
-@@ -112,7 +112,9 @@ glinet,gl-x750)
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
- 	;;
- netgear,wnr1000-v2|\
--netgear,wnr2000-v3)
-+netgear,wnr2000-v3|\
-+netgear,wnr2200-8m|\
-+netgear,wnr2200-16m)
- 	ucidef_set_led_netdev "wan-amber" "WAN (amber)" "netgear:amber:wan" "eth0"
- 	ucidef_set_led_switch "lan1green" "LAN1 (green)" "netgear:green:lan1" "switch0" "0x02" "0x04"
- 	ucidef_set_led_switch "lan2green" "LAN2 (green)" "netgear:green:lan2" "switch0" "0x04" "0x04"
-diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
-index c40c07a906..bc88eee109 100755
---- a/target/linux/ath79/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/base-files/etc/board.d/02_network
-@@ -207,6 +207,8 @@ ath79_setup_interfaces()
- 		;;
- 	netgear,wnr1000-v2|\
- 	netgear,wnr2000-v3|\
-+	netgear,wnr2200-8m|\
-+	netgear,wnr2200-16m|\
- 	netgear,wnr612-v2|\
- 	on,n150r|\
- 	tplink,tl-wr740n-v1|\
-diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index 2cd46f8c28..9e4c5c04c8 100644
---- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -81,6 +81,8 @@ case "$FIRMWARE" in
- 		;;
- 	netgear,wnr1000-v2|\
- 	netgear,wnr2000-v3|\
-+	netgear,wnr2200-8m|\
-+	netgear,wnr2200-16m|\
- 	netgear,wnr612-v2|\
- 	on,n150r|\
- 	pcs,cap324|\
-diff --git a/target/linux/ath79/dts/ar7241_netgear_wnr2200-16m.dts b/target/linux/ath79/dts/ar7241_netgear_wnr2200-16m.dts
-new file mode 100644
-index 0000000000..d182b58c05
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7241_netgear_wnr2200-16m.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "ar7241_netgear_wnr2200.dtsi"
-+
-+/ {
-+	compatible = "netgear,wnr2200-16m", "qca,ar7241";
-+	model = "Netgear WNR2200 (16M)";
-+};
-+
-+&partitions {
-+	partition@0 {
-+		label = "u-boot";
-+		reg = <0x0 0x40000>;
-+		read-only;
-+	};
-+
-+	partition@40000 {
-+		label = "u-boot-env";
-+		reg = <0x40000 0x10000>;
-+	};
-+
-+	partition@50000 {
-+		label = "firmware";
-+		reg = <0x50000 0xfa0000>;
-+		compatible = "netgear,uimage";
-+	};
-+
-+	art: partition@ff0000 {
-+		label = "art";
-+		reg = <0xff0000 0x10000>;
-+		read-only;
-+	};
-+};
-diff --git a/target/linux/ath79/dts/ar7241_netgear_wnr2200-8m.dts b/target/linux/ath79/dts/ar7241_netgear_wnr2200-8m.dts
-new file mode 100644
-index 0000000000..e926c17893
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7241_netgear_wnr2200-8m.dts
-@@ -0,0 +1,34 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include "ar7241_netgear_wnr2200.dtsi"
-+
-+/ {
-+	compatible = "netgear,wnr2200-8m", "qca,ar7241";
-+	model = "Netgear WNR2200 (8M)";
-+};
-+
-+&partitions {
-+	partition@0 {
-+		label = "u-boot";
-+		reg = <0x0 0x40000>;
-+		read-only;
-+	};
-+
-+	partition@40000 {
-+		label = "u-boot-env";
-+		reg = <0x40000 0x10000>;
-+	};
-+
-+	partition@50000 {
-+		label = "firmware";
-+		reg = <0x50000 0x7a0000>;
-+		compatible = "netgear,uimage";
-+	};
-+
-+	art: partition@7f0000 {
-+		label = "art";
-+		reg = <0x7f0000 0x10000>;
-+		read-only;
-+	};
-+};
-diff --git a/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi
-new file mode 100644
-index 0000000000..1ce4d11835
---- /dev/null
-+++ b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi
-@@ -0,0 +1,207 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "ar7241.dtsi"
-+
-+/ {
-+	chosen {
-+		bootargs = "console=ttyS0,115200n8";
-+	};
-+
-+	aliases {
-+		led-boot = &power_amber;
-+		led-failsafe = &power_amber;
-+		led-running = &power_green;
-+		led-upgrade = &power_amber;
-+		label-mac-device = &eth1;
-+	};
-+
-+	ath9k-keys {
-+		compatible = "gpio-keys-polled";
-+		poll-interval = <20>;
-+
-+		wps {
-+			label = "wps";
-+			linux,code = <KEY_WPS_BUTTON>;
-+			gpios = <&ath9k 5 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+
-+		reset {
-+			label = "reset";
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&ath9k 6 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+
-+		rfkill {
-+			label = "rfkill";
-+			linux,code = <KEY_RFKILL>;
-+			gpios = <&ath9k 3 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&jtag_disable_pins &switch_led_disable_pins &clks_disable_pins>;
-+
-+		wan_green {
-+			label = "netgear:green:wan";
-+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wan_amber {
-+			label = "netgear:amber:wan";
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan1_green {
-+			label = "netgear:green:lan1";
-+			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan1_amber {
-+			label = "netgear:amber:lan1";
-+			gpios = <&gpio 6 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan2_green {
-+			label = "netgear:green:lan2";
-+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan2_amber {
-+			label = "netgear:amber:lan2";
-+			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan3_green {
-+			label = "netgear:green:lan3";
-+			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan3_amber {
-+			label = "netgear:amber:lan3";
-+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan4_green {
-+			label = "netgear:green:lan4";
-+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		lan4_amber {
-+			label = "netgear:amber:lan4";
-+			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		wps_green {
-+			label = "netgear:green:wps";
-+			gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		usb_green {
-+			label = "netgear:green:usb";
-+			gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
-+			trigger-sources = <&hub_port>;
-+			linux,default-trigger = "usbport";
-+		};
-+	};
-+
-+	ath9k-leds {
-+		compatible = "gpio-leds";
-+
-+		power_green: power_green {
-+			label = "netgear:green:power";
-+			gpios = <&ath9k 2 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		power_amber: power_amber {
-+			label = "netgear:amber:power";
-+			gpios = <&ath9k 1 GPIO_ACTIVE_LOW>;
-+			default-state = "keep";
-+		};
-+
-+		wlan_blue {
-+			label = "netgear:blue:wlan";
-+			gpios = <&ath9k 0 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+	};
-+};
-+
-+&spi {
-+	status = "okay";
-+	num-cs = <1>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions: partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+		};
-+	};
-+};
-+
-+&eth0 {
-+	status = "okay";
-+
-+	mtd-mac-address = <&art 0x0>;
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	compatible = "qca,ar7241-eth", "syscon", "simple-mfd";
-+	mtd-mac-address = <&art 0x6>;
-+};
-+
-+&pcie {
-+	status = "okay";
-+
-+	ath9k: wifi@0,0 {
-+		compatible = "pci168c,002e";
-+		reg = <0x0000 0 0 0 0>;
-+		mtd-mac-address = <&art 0x0>;
-+		mtd-mac-address-increment = <1>;
-+		qca,no-eeprom;
-+		#gpio-cells = <2>;
-+		gpio-controller;
-+
-+		usb_power {
-+			gpio-hog;
-+			line-name = "netgear:power:usb";
-+			gpios = <4 GPIO_ACTIVE_HIGH>;
-+			output-high;
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+};
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&usb {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	hub_port: port@1 {
-+		reg = <1>;
-+		#trigger-source-cells = <0>;
-+	};
-+};
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index e82e125166..e156dcdb03 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -794,6 +794,40 @@ define Device/netgear_wndr3800ch
- endef
- TARGET_DEVICES += netgear_wndr3800ch
- 
-+define Device/netgear_wnr2200_common
-+  ATH_SOC := ar7241
-+  DEVICE_MODEL := WNR2200
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ledtrig-usbport
-+  NETGEAR_KERNEL_MAGIC := 0x32323030
-+  NETGEAR_BOARD_ID := WNR2200
-+  IMAGE/default := append-kernel | pad-to $$$$(BLOCKSIZE) | netgear-squashfs | \
-+	append-rootfs | pad-rootfs
-+  $(Device/netgear_ath79)
-+endef
-+
-+define Device/netgear_wnr2200-8m
-+  $(Device/netgear_wnr2200_common)
-+  DEVICE_VARIANT := 8M
-+  NETGEAR_HW_ID := 29763600+08+64
-+  IMAGE_SIZE := 7808k
-+  IMAGES += factory-NA.img
-+  IMAGE/factory-NA.img := $$(IMAGE/default) | netgear-dni NA | \
-+	check-size $$$$(IMAGE_SIZE)
-+  SUPPORTED_DEVICES += wnr2200
-+endef
-+TARGET_DEVICES += netgear_wnr2200-8m
-+
-+define Device/netgear_wnr2200-16m
-+  $(Device/netgear_wnr2200_common)
-+  DEVICE_VARIANT := 16M
-+  DEVICE_ALT0_VENDOR := NETGEAR
-+  DEVICE_ALT0_MODEL := WNR2200
-+  DEVICE_ALT0_VARIANT := CN/RU
-+  NETGEAR_HW_ID :=
-+  IMAGE_SIZE := 16000k
-+endef
-+TARGET_DEVICES += netgear_wnr2200-16m
-+
- define Device/ocedo_koala
-   ATH_SOC := qca9558
-   DEVICE_VENDOR := Ocedo
--- 
-2.23.0
+> 3) Blocker: Some weaknesses in libustream-ssl client certificate
+>    handling need to  be addressed, which can only be solved by an API
+>    redesign. Band-aid fixes available but not merged, nobody worked
+>    on API redesign yet
+>    Time estimate: 1 week
+>=20
+> 4) Blocker: Need to assert the state of the Dragonblood WPA3
+>    vulnerabilities in 19.07's hostapd
+>    Time estimate: a few days I guess
 
+All the patches listed here are already backported to hostapd 2.7 from
+openwrt 19.07:
+https://w1.fi/security/
+As hostapd on master seams to work, I have no problem with backporting
+hostapd 2.9 to openwrt 19.07, this should make it easier for us to
+handle later security problems.
+
+Hauke
+
+
+--Eh5V6fHhJHqpOLChYh9oGLbMismbuUQGE--
+
+--sRMC3wKO6ToYunPrP00FU1JRtVABnuu5D
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl2vCygACgkQ8bdnhZyy
+68e9tQf+MuFoqwC75xWXBJcj3XYP+16W54eVMQWhDAUo7Mb0XotTc071tzPogxeQ
+Uuy8sV75P5lna/E0DkN8Boa8UIvL98RePg4BmlkIwjrrSVsysY9CAUPUljC7tovB
+vC1qdbubewJrhzVq7yhbdLOqo/+hVuIKuEK9E+B4JZVspyhJNIGIgN0bevndzBOu
+kfQRy3BXCa1rC+WSVNktXicd4NuUmsS3OP8Nd8uhgugCTyCh8cPYW7Av2wwqJKg5
+95ArKebDXpNzd6EEYc+FyGKij4SZGF1e72cfa69w8Tb1P952p+/Kj6c3K6KIiXJy
+A63DwVonPVpTj8wPuwsF5gY1IttKXA==
+=8CD+
+-----END PGP SIGNATURE-----
+
+--sRMC3wKO6ToYunPrP00FU1JRtVABnuu5D--
+
+
+--===============4736208947038620604==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4736208947038620604==--
+

@@ -2,89 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9E4E0CBB
-	for <lists+openwrt-devel@lfdr.de>; Tue, 22 Oct 2019 21:44:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69D8FE0CC0
+	for <lists+openwrt-devel@lfdr.de>; Tue, 22 Oct 2019 21:47:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w9NfwfaBNzIAOUyVoCd0Vnra8s/sqljacCwBYYUDJ6I=; b=YdrIZ3kqxtS71v
-	Q7c8vuwrcMxPaP+DIyLnRYsNqVjR3cPiii5VSbJqOclQSCMhnWRcVdLNAlW3BYySNRzWiftXEYmSh
-	rviUYCB3fCaKx3qSGC8UNJtOVMbwkK9lhtoQdcM4RXyao2DiAbZDEo0c5Xj69gYJnfi362ZDJ00rk
-	turVXzWHJfbZofwY31F4URwtMzqqoXDfh39lj5FQH6ZjcKSqQg1avxQjb385iO8BXKreC/98JCnwY
-	SgvqZLQPyRiMGxSh3q+X+/yqnDL3Vm7eus26UdDJbi1nstWxGBodEmW3sMzuc6M35sIDdfici3yRz
-	N3idjU4WxNz72jX2vwgg==;
+	List-Owner; bh=LmaKdU9GrkhovdsSK/eT+Ihl+r2+aQwwp7e1eQCCLN8=; b=NyYEw6T+04LKcl
+	sR4fuayekzDoVVL2KIRxoEbJo3p45QcBbL862/9jktFytTZz56XME3bz/Bt2Nfij15A6oav1hCpWA
+	a40ze4DNIuPQYm05NKshjCR4MMDwINzIzhxeX9UrcbCsDpIwF9lvMT7WEiVH0uTQgIkJSB8YGn1/B
+	y6esIYa2c2PyFqgAn+uQQxEsQnUuleezD0uE6UM1hFCDox2Ge6YCF1HM17h+qFyDRS2Likip9njLT
+	0ScRNqioN0IM2Pe2R6I2GACOpDEJWLBcU76j6cnR53EE5fWgkLYwbUCAERmpxUJyiS0TiwxgUOrED
+	A5KDBr55CW45NyfqOM4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN04v-0006vo-To; Tue, 22 Oct 2019 19:44:26 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iN07f-00008t-8A; Tue, 22 Oct 2019 19:47:15 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN04o-0006vO-W6
- for openwrt-devel@lists.openwrt.org; Tue, 22 Oct 2019 19:44:20 +0000
-Received: by mail-wr1-x444.google.com with SMTP id q13so14421964wrs.12
- for <openwrt-devel@lists.openwrt.org>; Tue, 22 Oct 2019 12:44:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=945NkLOakfvJ7y4NtJofUbMKQUbD3vbSwxauV8T7Y0Y=;
- b=kROYGMVv8JnHWue37pL9/9hOHfPhQPPobeiS49D8oHUvCHiEag5n6Q6EpWtIaWavYU
- q4dwjupwxIr8qBl5pfzbwXUtwF6dFSbx9cJAVu70UWPzEnzPq+99CFbdPVFoxFhVX43L
- 0ACvqnkQzhUSqStqWhyhsRbor+J1PUVpv3o7sX/kM34VTq5HYsrPkfjhjVqNe7mZAh6u
- XI4wVy1YAVawC4avzbn+ZXc/xitZHU3q45VV32DDry4D5Xs1+qUjxyiF+OIhRSPvhq8V
- AVxwN/FTwMyI0D2sWSRcEAt56v/71joNI0/XuQY/WrOIGZSoP6OL1trYWads/8Z5fDrQ
- eUtg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=945NkLOakfvJ7y4NtJofUbMKQUbD3vbSwxauV8T7Y0Y=;
- b=Z2rtjxsF9B+Bb8NOGDMeIshVcwSFqPH82IONVzU584dKWxTgi8Ego0tQjjiQQVwv3o
- FgFg6WZWuLSeWfW5c1KLlE6kUgHEIGN2BO/50DiyHFdCF6laIjeLo39ckHOpsMO2/UiL
- wER0L++ftT5MpLJidaoUrcdpiYlVtCpCjufwrGkydbsfW0lzBXUTwtoNenVbL0z3xR9N
- 3AhFMKkFxhYtvI+vkkI4G9ymGMdMhken5cBle+SZdafsLa9UgjDJQSKVyITODBro8Jsd
- HQxCMa1eOprhPEJQFgyl1CtEGlbzaI5oQ+i7fuKCeHegisTzSxwOAr5wnL+IHmF0SsA8
- 6sIQ==
-X-Gm-Message-State: APjAAAXKG8Mj3g/lJWcz+Tjddg1ompHYEyM73zyWXVbS7PPvY7BUzfU4
- Fp4IDQD8qf7CmArBhvudnFHMJJHd9eI=
-X-Google-Smtp-Source: APXvYqyY3IJNcKUe1aJUWodQa2kqPkgtYVIL6J0cNE9tmfUXLKh5Lzug9AFJ1RPcXBVM3e+s6du8Ig==
-X-Received: by 2002:adf:9101:: with SMTP id j1mr4727885wrj.71.1571773456597;
- Tue, 22 Oct 2019 12:44:16 -0700 (PDT)
-Received: from localhost.localdomain (catv-80-98-143-226.catv.broadband.hu.
- [80.98.143.226])
- by smtp.gmail.com with ESMTPSA id y13sm28940996wrg.8.2019.10.22.12.44.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 22 Oct 2019 12:44:15 -0700 (PDT)
-From: vargagab@gmail.com
+ id 1iN07V-00008D-Nt
+ for openwrt-devel@lists.openwrt.org; Tue, 22 Oct 2019 19:47:08 +0000
+Received: from buildfff.adridolf.com ([188.192.135.195]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1MhDN4-1hrm6A3Hco-00eLn8 for <openwrt-devel@lists.openwrt.org>; Tue, 22
+ Oct 2019 21:47:00 +0200
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 22 Oct 2019 21:44:09 +0200
-Message-Id: <20191022194409.565852-1-vargagab@gmail.com>
-X-Mailer: git-send-email 2.23.0
+Date: Tue, 22 Oct 2019 21:46:57 +0200
+Message-Id: <20191022194657.54433-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:Du91lA3tEsrsM2s8mKZytpU5PZU16/c+PRhON7NcGdsgNBBAxnU
+ CkCEpVlyTuIGOu6HgenEoYFaOzPlcaYYjeRKuTimQP2blVgxS9pqBwqpjndE7EPvrYuWDlX
+ QGqGUz8e3ratGDSmCqdjdSqsFw1P/xg9ovSc8OB7nBCa5ajvQdRivNvQY0nOASGuLeiLTSf
+ FL3iGLyR8JIZmXYspe4uw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:e6mziBJa9fc=:PIZggo7gU+LQyFcM1oOx1j
+ uR996j9yXRhIvv23tDbRBnEnFZphpcq3QeklJ5NZl6uNMcUAPpojvVZjvvvDHv3MkVmH4xQ9t
+ c8TZGz/tkqklCpB3Yv7Mh8TQYQLVJ/ktJWM3JynOdOanAsEQb7aADqrR8muJb3AVk9X2qnnc9
+ LmlAukv39ll8gFgqS+hefYLPy/3Ked6U0A7oFrkyVWmD7rfcHffC3ananYyBX4qQEMnlxfClm
+ g1iDklzhbYvcEUZzLvaiNjnu7d35kUGUjHG5r8VdcEiAcEZ/A22APa48f2wcQVeLaKE9zYXyl
+ /Ip9Z9vZGYqXm4KU6Z0WApjOEVgGb8exo++aevEbwzTaTAIKDPHINopQ9KDqf4/IAzGaXJSBt
+ pbT6E9aCtE9RWTXMzobdtJ1qkMn8ys1WHj+yZz7cBkjzjXNWpQwrCqN0MJp+X2wKDPjd5vP/v
+ JKM8ch3zIKeJYjXHIQycvXzhS2FhVszYnh9bwwnKqkg1mg9lxx0eDO4sybt1phdVcvqK9fzJ6
+ b7UdtEFNK1Vns/af2PTbMZcR3wqF7hIRtVlOwKKh17DKzztcwd7n8GeIkSaDrfYb8YmS/SahI
+ ZPgN7+e030qeKiX1xQYSO4g6bCSdvFZ4bTweR8K/6p3tejfKWhBz1eyKNqBtiRSo+d9zCeRz8
+ vFSWqDfnN7WQbFdE4HShRYOGNqtjO9V7sS6aWSHJSuikrypwU30IOESvAC0QNGSUDp0A913lB
+ PcM0czHpiBzz4Y5MKT2Mo4oTWHtDF10K8XjhBzBsvCNys4IkjblN8ZFuv6XQkZ9Qn9PcKZytJ
+ Kj/nZLowTc62ZQ0WDoVU0saKksJqA1r5MSkstKWAbmTTcuDr8CknTZS7kngcKrTnSO/dQjeTa
+ CJdb9cVMC0gmP674/DWFRlLELGGqXSkgUfkPwQvRE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_124419_061222_C953C934 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191022_124706_231758_0F65C8F4 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vargagab[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH v3] ramips: add support for Asus RT-AC65P
+Subject: [OpenWrt-Devel] [PATCH] ath79: split base-files into subtargets
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,471 +77,742 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: ynezz@true.cz, gch981213@gmail.com, Gabor Varga <vargagab@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Gabor Varga <vargagab@gmail.com>
+While most of the target's contents are split into subtargets, the
+base-files are maintained for the target as a whole.
 
-The Asus RT-AC65P router is identical with the RT-AC85P, but better to make separate images for it.
+However, OpenWrt already implements a mechanism that will use (and
+even prefer) files in the subtargets' directories. This can be
+exploited to make several scripts subtarget-specific and thus save
+some space (especially helpful for the tiny devices).
 
-On both routers the installation can be done also via SSH:
+The only script remaining in parent base-files is
+/etc/hotplug.d/ieee80211/00-wifi-migration, everything else is
+moved/split.
 
-Note: The user/password for SSH is identical with the one used in the
-Web-interface.
+Note that this will increase overall code lines, but reduce code
+per subtarget.
 
-1. Complete the initial setup wizard.
-2. Activate SSH under "Administration" -> "System".
-3. Transfer the OpenWrt factory image via scp:
- > scp openwrt-ramips-mt7621-asus_rt-ac65p-squashfs-factory.bin admin@192.168.50.1:/tmp
-4. Connect via SSH to the router.
- > ssh admin@192.168.50.1
-5. Write the OpenWrt image to flash.
- > mtd-write -i
-/tmp/openwrt-ramips-mt7621-asus_rt-ac65p-squashfs-factory.bin -d linux
-6. Reboot the router
- > reboot
+base-files ipk size reduction:
+master (generic)   49135 B
+split (generic)    48533 B (- 0.6 kiB)
+split (tiny)       43337 B (- 5.7 kiB)
+split (nand)       44423 B (- 4.6 kiB)
 
-Changelog:
+Tested on TL-WR1043ND v4 (generic) and TL-WR841N v12 (tiny).
 
-v3: removed [] from filename, rebased to latest master
-v2: Rebased to latest master
-v1: Initial release
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 
-Signed-off-by: Gabor Varga <vargagab@gmail.com>
 ---
- .../ramips/base-files/etc/board.d/02_network  |   2 +
- .../ramips/base-files/lib/upgrade/platform.sh |   2 +
- .../linux/ramips/dts/mt7621_asus_rt-ac65p.dts |   9 +
- .../linux/ramips/dts/mt7621_asus_rt-ac85p.dts | 157 +----------------
- .../ramips/dts/mt7621_asus_rt-acx5p.dtsi      | 159 ++++++++++++++++++
- target/linux/ramips/image/mt7621.mk           |  16 ++
- 6 files changed, 190 insertions(+), 155 deletions(-)
- create mode 100644 target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts
- create mode 100644 target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi
 
-diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
-index b6c3ae42cb..3c73a63aae 100755
---- a/target/linux/ramips/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/base-files/etc/board.d/02_network
-@@ -234,6 +234,7 @@ ramips_setup_interfaces()
+A similar split patch for ramips with even more size reduction
+will be sent to GitHub (I'm looking for testers there).
+---
+ .../base-files/etc/board.d/01_leds            | 59 ------------
+ .../base-files/etc/board.d/02_network         | 50 +---------
+ .../base-files/etc/board.d/03_gpio_switches   |  0
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    | 19 +---
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  |  0
+ .../etc/hotplug.d/ieee80211/10_fix_wifi_mac   |  0
+ .../base-files/etc/init.d/bootcount           |  0
+ .../etc/uci-defaults/04_led_migration         |  0
+ .../etc/uci-defaults/09_fix-checksum          |  0
+ .../base-files/lib/functions/k2t.sh           |  0
+ .../base-files/lib/upgrade/platform.sh        |  0
+ .../ath79/nand/base-files/etc/board.d/01_leds | 18 ++++
+ .../nand/base-files/etc/board.d/02_network    | 35 +++++++
+ .../nand/base-files/lib/upgrade/platform.sh   | 20 ++++
+ .../ath79/tiny/base-files/etc/board.d/01_leds | 85 ++++++++++++++++
+ .../tiny/base-files/etc/board.d/02_network    | 96 +++++++++++++++++++
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    | 38 ++++++++
+ .../tiny/base-files/lib/upgrade/platform.sh   | 20 ++++
+ 18 files changed, 314 insertions(+), 126 deletions(-)
+ rename target/linux/ath79/{ => generic}/base-files/etc/board.d/01_leds (80%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/board.d/02_network (89%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/board.d/03_gpio_switches (100%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom (89%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/hotplug.d/firmware/11-ath10k-caldata (100%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac (100%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/init.d/bootcount (100%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/uci-defaults/04_led_migration (100%)
+ rename target/linux/ath79/{ => generic}/base-files/etc/uci-defaults/09_fix-checksum (100%)
+ rename target/linux/ath79/{ => generic}/base-files/lib/functions/k2t.sh (100%)
+ rename target/linux/ath79/{ => generic}/base-files/lib/upgrade/platform.sh (100%)
+ create mode 100755 target/linux/ath79/nand/base-files/etc/board.d/01_leds
+ create mode 100755 target/linux/ath79/nand/base-files/etc/board.d/02_network
+ create mode 100644 target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+ create mode 100755 target/linux/ath79/tiny/base-files/etc/board.d/01_leds
+ create mode 100755 target/linux/ath79/tiny/base-files/etc/board.d/02_network
+ create mode 100644 target/linux/ath79/tiny/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+ create mode 100644 target/linux/ath79/tiny/base-files/lib/upgrade/platform.sh
+
+diff --git a/target/linux/ath79/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+similarity index 80%
+rename from target/linux/ath79/base-files/etc/board.d/01_leds
+rename to target/linux/ath79/generic/base-files/etc/board.d/01_leds
+index 499fe0031c..e3575ff041 100755
+--- a/target/linux/ath79/base-files/etc/board.d/01_leds
++++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+@@ -28,13 +28,6 @@ avm,fritz4020)
+ 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
+ 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x1E"
+ 	;;
+-buffalo,whr-g301n)
+-	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth0"
+-	ucidef_set_led_switch "lan1" "LAN1" "$boardname:green:lan1" "switch0" "0x02"
+-	ucidef_set_led_switch "lan2" "LAN2" "$boardname:green:lan2" "switch0" "0x04"
+-	ucidef_set_led_switch "lan3" "LAN3" "$boardname:green:lan3" "switch0" "0x08"
+-	ucidef_set_led_switch "lan4" "LAN4" "$boardname:green:lan4" "switch0" "0x10"
+-	;;
+ comfast,cf-e110n-v2)
+ 	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth1"
+ 	ucidef_set_led_switch "wan" "WAN" "$boardname:green:wan" "switch0" "0x02"
+@@ -101,7 +94,6 @@ glinet,gl-ar150)
+ 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
+ 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x02"
+ 	;;
+-glinet,gl-ar300m-nand|\
+ glinet,gl-ar300m-nor)
+ 	ucidef_set_led_netdev "lan" "LAN" "gl-ar300m:green:lan" "eth0"
+ 	;;
+@@ -111,24 +103,6 @@ glinet,gl-ar300m-lite)
+ glinet,gl-x750)
+ 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
+ 	;;
+-netgear,wnr1000-v2|\
+-netgear,wnr2000-v3)
+-	ucidef_set_led_netdev "wan-amber" "WAN (amber)" "netgear:amber:wan" "eth0"
+-	ucidef_set_led_switch "lan1green" "LAN1 (green)" "netgear:green:lan1" "switch0" "0x02" "0x04"
+-	ucidef_set_led_switch "lan2green" "LAN2 (green)" "netgear:green:lan2" "switch0" "0x04" "0x04"
+-	ucidef_set_led_switch "lan3green" "LAN3 (green)" "netgear:green:lan3" "switch0" "0x08" "0x04"
+-	ucidef_set_led_switch "lan4green" "LAN4 (green)" "netgear:green:lan4" "switch0" "0x10" "0x04"
+-	ucidef_set_led_switch "lan1amber" "LAN1 (amber)" "netgear:amber:lan1" "switch0" "0x02" "0x02"
+-	ucidef_set_led_switch "lan2amber" "LAN2 (amber)" "netgear:amber:lan2" "switch0" "0x04" "0x02"
+-	ucidef_set_led_switch "lan3amber" "LAN3 (amber)" "netgear:amber:lan3" "switch0" "0x08" "0x02"
+-	ucidef_set_led_switch "lan4amber" "LAN4 (amber)" "netgear:amber:lan4" "switch0" "0x10" "0x02"
+-	;;
+-netgear,wnr612-v2|\
+-on,n150r)
+-	ucidef_set_led_netdev "wan" "WAN" "netgear:green:wan" "eth0"
+-	ucidef_set_led_switch "lan1" "LAN1" "netgear:green:lan1" "switch0" "0x02" "0x0f"
+-	ucidef_set_led_switch "lan2" "LAN2" "netgear:green:lan2" "switch0" "0x04" "0x0f"
+-	;;
+ pcs,cap324)
+ 	ucidef_set_led_netdev "lan" "LAN" "pcs:lan:green" "eth0"
+ 	;;
+@@ -165,10 +139,6 @@ tplink,archer-c6-v2)
+ 	ucidef_set_led_switch "wan" "WAN" "tp-link:green:wan" "switch0" "0x02"
+ 	;;
+ tplink,archer-c25-v1|\
+-tplink,tl-wr841-v9|\
+-tplink,tl-wr841-v10|\
+-tplink,tl-wr841-v11|\
+-tplink,tl-wr841-v12|\
+ tplink,tl-wr842n-v3)
+ 	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
+ 	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x10"
+@@ -227,14 +197,6 @@ tplink,re450-v2)
+ 	ucidef_set_led_netdev "lan_data" "LAN Data" "tp-link:green:lan_data" "eth0" "tx rx"
+ 	ucidef_set_led_netdev "lan_link" "LAN Link" "tp-link:green:lan_link" "eth0" "link"
+ 	;;
+-tplink,tl-mr3020-v1|\
+-tplink,tl-mr3040-v2)
+-	ucidef_set_led_netdev "lan" "LAN" "tp-link:green:lan" "eth0"
+-	;;
+-tplink,tl-mr3420-v2|\
+-tplink,tl-wr740n-v4|\
+-tplink,tl-wr741nd-v4|\
+-tplink,tl-wr841-v8|\
+ tplink,tl-wr842n-v2)
+ 	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
+ 	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x04"
+@@ -242,27 +204,6 @@ tplink,tl-wr842n-v2)
+ 	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x10"
+ 	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x02"
+ 	;;
+-tplink,tl-wr740n-v1|\
+-tplink,tl-wr740n-v3|\
+-tplink,tl-wr741-v1|\
+-tplink,tl-wr743nd-v1|\
+-tplink,tl-wr841-v5|\
+-tplink,tl-wr941-v4)
+-	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth0"
+-	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x02"
+-	ucidef_set_led_switch "lan2" "LAN2" "tp-link:green:lan2" "switch0" "0x04"
+-	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x08"
+-	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x10"
+-	;;
+-tplink,tl-wr940n-v3|\
+-tplink,tl-wr940n-v4|\
+-tplink,tl-wr941nd-v6)
+-	ucidef_set_led_netdev "wan" "WAN" "tp-link:blue:wan" "eth1"
+-	ucidef_set_led_switch "lan1" "LAN1" "tp-link:blue:lan1" "switch0" "0x10"
+-	ucidef_set_led_switch "lan2" "LAN2" "tp-link:blue:lan2" "switch0" "0x08"
+-	ucidef_set_led_switch "lan3" "LAN3" "tp-link:blue:lan3" "switch0" "0x04"
+-	ucidef_set_led_switch "lan4" "LAN4" "tp-link:blue:lan4" "switch0" "0x02"
+-	;;
+ trendnet,tew-823dru)
+ 	ucidef_set_led_netdev "wan" "WAN" "trendnet:green:planet" "eth0"
+ 	;;
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+similarity index 89%
+rename from target/linux/ath79/base-files/etc/board.d/02_network
+rename to target/linux/ath79/generic/base-files/etc/board.d/02_network
+index c40c07a906..90f622b262 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+@@ -28,7 +28,6 @@ ath79_setup_interfaces()
+ 	pisen,ts-d084|\
+ 	pisen,wmb001n|\
+ 	pisen,wmm003n|\
+-	pqi,air-pen|\
+ 	tplink,cpe210-v2|\
+ 	tplink,cpe210-v3|\
+ 	tplink,cpe510-v2|\
+@@ -38,11 +37,6 @@ ath79_setup_interfaces()
+ 	tplink,re355-v1|\
+ 	tplink,re450-v1|\
+ 	tplink,re450-v2|\
+-	tplink,tl-mr10u|\
+-	tplink,tl-mr3020-v1|\
+-	tplink,tl-mr3040-v2|\
+-	tplink,tl-wa901nd-v2|\
+-	tplink,tl-wr703n|\
+ 	ubnt,bullet-m|\
+ 	ubnt,bullet-m-xw|\
+ 	ubnt,lap-120|\
+@@ -76,26 +70,11 @@ ath79_setup_interfaces()
  		ucidef_add_switch "switch0" \
- 			"0:lan" "1:wan" "6@eth0"
+ 			"0@eth1" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan" "6@eth0"
  		;;
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p|\
- 	dlink,dir-860l-b1|\
- 	elecom,wrc-1167ghbk2-s|\
-@@ -562,6 +563,7 @@ ramips_setup_macs()
- 	zbtlink,zbt-we3526)
- 		wan_mac=$(mtd_get_mac_binary factory 0xe006)
+-	buffalo,whr-g301n)
+-		ucidef_set_interface_wan "eth0"
+-		ucidef_add_switch "switch0" \
+-			"0@eth1" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
+-		;;
+ 	buffalo,wzr-hp-ag300h|\
+ 	tplink,archer-c25-v1|\
+-	tplink,tl-mr3220-v1|\
+-	tplink,tl-mr3420-v1|\
+ 	tplink,tl-wdr3500-v1|\
+-	tplink,tl-wr841-v7|\
+-	tplink,tl-wr841-v9|\
+-	tplink,tl-wr841-v10|\
+-	tplink,tl-wr841-v11|\
+-	tplink,tl-wr841-v12|\
+ 	tplink,tl-wr842n-v1|\
+ 	tplink,tl-wr842n-v3|\
+-	tplink,tl-wr940n-v3|\
+-	tplink,tl-wr940n-v4|\
+-	tplink,tl-wr941nd-v6|\
+ 	ubnt,airrouter)
+ 		ucidef_set_interface_wan "eth1"
+ 		ucidef_add_switch "switch0" \
+@@ -205,20 +184,6 @@ ath79_setup_interfaces()
+ 		ucidef_add_switch_port_attr "switch0" 2 led 9
+ 		ucidef_add_switch_port_attr "switch0" 5 led 2
  		;;
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p)
- 		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
- 		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
-diff --git a/target/linux/ramips/base-files/lib/upgrade/platform.sh b/target/linux/ramips/base-files/lib/upgrade/platform.sh
-index a62ded4b9d..03e994dfa4 100755
---- a/target/linux/ramips/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/ramips/base-files/lib/upgrade/platform.sh
-@@ -18,6 +18,7 @@ platform_do_upgrade() {
- 	mikrotik,rbm33g)
- 		[ -z "$(rootfs_type)" ] && mtd erase firmware
+-	netgear,wnr1000-v2|\
+-	netgear,wnr2000-v3|\
+-	netgear,wnr612-v2|\
+-	on,n150r|\
+-	tplink,tl-wr740n-v1|\
+-	tplink,tl-wr740n-v3|\
+-	tplink,tl-wr741-v1|\
+-	tplink,tl-wr743nd-v1|\
+-	tplink,tl-wr841-v5|\
+-	tplink,tl-wr941-v4)
+-		ucidef_set_interface_wan "eth0"
+-		ucidef_add_switch "switch0" \
+-		"0@eth1" "1:lan" "2:lan" "3:lan" "4:lan"
+-		;;
+ 	phicomm,k2t)
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "3:lan:1" "5:lan:2" "4:wan"
+@@ -237,8 +202,7 @@ ath79_setup_interfaces()
+ 	tplink,archer-c7-v4|\
+ 	tplink,archer-c7-v5|\
+ 	tplink,tl-wdr3600-v1|\
+-	tplink,tl-wdr4300-v1|\
+-	tplink,tl-wr941n-v7-cn)
++	tplink,tl-wdr4300-v1)
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "5:lan:4" "1:wan"
  		;;
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p)
- 		echo "Backing up firmware"
- 		dd if=/dev/mtd4 bs=1024 count=4096  > /tmp/backup_firmware.bin
-@@ -27,6 +28,7 @@ platform_do_upgrade() {
- 	esac
- 
- 	case "$board" in
-+	asus,rt-ac65p|\
- 	asus,rt-ac85p|\
- 	hiwifi,hc5962|\
- 	netgear,r6220|\
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts b/target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts
-new file mode 100644
-index 0000000000..94540e08e5
+@@ -259,10 +223,6 @@ ath79_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "2:lan:3" "3:lan:2" "4:lan:1" "1:wan"
+ 		;;
+-	tplink,tl-mr3420-v2|\
+-	tplink,tl-wr740n-v4|\
+-	tplink,tl-wr741nd-v4|\
+-	tplink,tl-wr841-v8|\
+ 	tplink,tl-wr842n-v2)
+ 		ucidef_set_interface_wan "eth1"
+ 		ucidef_add_switch "switch0" \
+@@ -281,9 +241,6 @@ ath79_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "9@eth0"
+ 		;;
+-	tplink,tl-wr941-v2)
+-		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
+-		;;
+ 	ubnt,acb-isp)
+ 		ucidef_set_interface_wan "eth1"
+ 		ucidef_add_switch "switch0" \
+@@ -425,11 +382,6 @@ ath79_setup_macs()
+ 		base_mac=$(mtd_get_mac_binary info 0x8)
+ 		wan_mac=$(macaddr_add "$base_mac" 1)
+ 		;;
+-	tplink,tl-wr941-v2|\
+-	tplink,tl-wr941n-v7-cn)
+-		base_mac=$(mtd_get_mac_binary u-boot 0x1fc00)
+-		wan_mac=$(macaddr_add "$base_mac" 1)
+-		;;
+ 	trendnet,tew-823dru)
+ 		lan_mac=$(mtd_get_mac_text mac 0x4)
+ 		wan_mac=$(mtd_get_mac_text mac 0x18)
+diff --git a/target/linux/ath79/base-files/etc/board.d/03_gpio_switches b/target/linux/ath79/generic/base-files/etc/board.d/03_gpio_switches
+similarity index 100%
+rename from target/linux/ath79/base-files/etc/board.d/03_gpio_switches
+rename to target/linux/ath79/generic/base-files/etc/board.d/03_gpio_switches
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+similarity index 89%
+rename from target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+rename to target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index 2cd46f8c28..4b07660f02 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -57,10 +57,7 @@ case "$FIRMWARE" in
+ 	avm,fritz300e)
+ 		caldata_extract_reverse "urloader" 0x1541 0x440
+ 		;;
+-	buffalo,whr-g301n|\
+-	buffalo,wzr-hp-g302h-a1a0|\
+-	tplink,tl-wr841-v5|\
+-	tplink,tl-wr941-v4)
++	buffalo,wzr-hp-g302h-a1a0)
+ 		caldata_extract "art" 0x1000 0xeb8
+ 		;;
+ 	buffalo,wzr-hp-g450h)
+@@ -79,19 +76,8 @@ case "$FIRMWARE" in
+ 	winchannel,wb2000)
+ 		caldata_extract "art" 0x5000 0x440
+ 		;;
+-	netgear,wnr1000-v2|\
+-	netgear,wnr2000-v3|\
+-	netgear,wnr612-v2|\
+-	on,n150r|\
+ 	pcs,cap324|\
+-	tplink,tl-mr3220-v1|\
+-	tplink,tl-mr3420-v1|\
+ 	tplink,tl-wr2543-v1|\
+-	tplink,tl-wr740n-v1|\
+-	tplink,tl-wr740n-v3|\
+-	tplink,tl-wr741-v1|\
+-	tplink,tl-wr743nd-v1|\
+-	tplink,tl-wr841-v7|\
+ 	tplink,tl-wr842n-v1|\
+ 	ubnt,airrouter|\
+ 	ubnt,bullet-m|\
+@@ -99,9 +85,6 @@ case "$FIRMWARE" in
+ 	ubnt,rocket-m)
+ 		caldata_extract "art" 0x1000 0x1000
+ 		;;
+-	pqi,air-pen)
+-		caldata_extract "art" 0x1000 0x7d2
+-		;;
+ 	ubnt,unifi)
+ 		caldata_extract "art" 0x1000 0x800
+ 		;;
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+similarity index 100%
+rename from target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+rename to target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac b/target/linux/ath79/generic/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
+similarity index 100%
+rename from target/linux/ath79/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
+rename to target/linux/ath79/generic/base-files/etc/hotplug.d/ieee80211/10_fix_wifi_mac
+diff --git a/target/linux/ath79/base-files/etc/init.d/bootcount b/target/linux/ath79/generic/base-files/etc/init.d/bootcount
+similarity index 100%
+rename from target/linux/ath79/base-files/etc/init.d/bootcount
+rename to target/linux/ath79/generic/base-files/etc/init.d/bootcount
+diff --git a/target/linux/ath79/base-files/etc/uci-defaults/04_led_migration b/target/linux/ath79/generic/base-files/etc/uci-defaults/04_led_migration
+similarity index 100%
+rename from target/linux/ath79/base-files/etc/uci-defaults/04_led_migration
+rename to target/linux/ath79/generic/base-files/etc/uci-defaults/04_led_migration
+diff --git a/target/linux/ath79/base-files/etc/uci-defaults/09_fix-checksum b/target/linux/ath79/generic/base-files/etc/uci-defaults/09_fix-checksum
+similarity index 100%
+rename from target/linux/ath79/base-files/etc/uci-defaults/09_fix-checksum
+rename to target/linux/ath79/generic/base-files/etc/uci-defaults/09_fix-checksum
+diff --git a/target/linux/ath79/base-files/lib/functions/k2t.sh b/target/linux/ath79/generic/base-files/lib/functions/k2t.sh
+similarity index 100%
+rename from target/linux/ath79/base-files/lib/functions/k2t.sh
+rename to target/linux/ath79/generic/base-files/lib/functions/k2t.sh
+diff --git a/target/linux/ath79/base-files/lib/upgrade/platform.sh b/target/linux/ath79/generic/base-files/lib/upgrade/platform.sh
+similarity index 100%
+rename from target/linux/ath79/base-files/lib/upgrade/platform.sh
+rename to target/linux/ath79/generic/base-files/lib/upgrade/platform.sh
+diff --git a/target/linux/ath79/nand/base-files/etc/board.d/01_leds b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
+new file mode 100755
+index 0000000000..59c35ed828
 --- /dev/null
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-ac65p.dts
-@@ -0,0 +1,9 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
++++ b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
+@@ -0,0 +1,18 @@
++#!/bin/sh
 +
-+#include "mt7621_asus_rt-acx5p.dtsi"
++. /lib/functions/uci-defaults.sh
 +
-+/ {
-+	compatible = "asus,rt-ac65p", "mediatek,mt7621-soc";
-+	model = "ASUS RT-AC65P";
-+};
-\ No newline at end of file
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-index 3ddbfcfb7c..9f525d26ce 100644
---- a/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-ac85p.dts
-@@ -1,162 +1,9 @@
- // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
- /dts-v1/;
- 
--#include "mt7621.dtsi"
--
--#include <dt-bindings/gpio/gpio.h>
--#include <dt-bindings/input/input.h>
-+#include "mt7621_asus_rt-acx5p.dtsi"
- 
- / {
- 	compatible = "asus,rt-ac85p", "mediatek,mt7621-soc";
- 	model = "ASUS RT-AC85P";
--
--	aliases {
--		led-boot = &led_power;
--		led-failsafe = &led_power;
--		led-running = &led_power;
--		led-upgrade = &led_power;
--	};
--
--	chosen {
--		bootargs = "console=ttyS0,57600";
--	};
--
--	palmbus: palmbus@1E000000 {
--		i2c@900 {
--			status = "okay";
--		};
--	};
--
--	keys {
--		compatible = "gpio-keys";
--
--		reset {
--			label = "reset";
--			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_RESTART>;
--		};
--
--		wps {
--			label = "wps";
--			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_WPS_BUTTON>;
--		};
--	};
--
--	leds {
--		compatible = "gpio-leds";
--
--		led_power: power {
--			label = "rt-ac85p:blue:power";
--			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
--			linux,default-trigger = "phy0tpt";
--		};
--		wlan2g {
--			label = "rt-ac85p:blue:wlan2g";
--			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
--			linux,default-trigger = "phy0radio";
--		};
--
--		wlan5g {
--			label = "rt-ac85p:blue:wlan5g";
--			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
--			linux,default-trigger = "phy1radio";
--		};
--	};
--};
--
--&sdhci {
--	status = "okay";
--};
--
--&nand {
--	status = "okay";
--
--	partitions {
--		compatible = "fixed-partitions";
--		#address-cells = <1>;
--		#size-cells = <1>;
--
--		partition@0 {
--			label = "u-boot";
--			reg = <0x0 0xe0000>;
--			read-only;
--		};
--
--		partition@e0000 {
--			label = "u-boot-env";
--			reg = <0xe0000 0x100000>;
--			read-only;
--		};
--
--		factory: partition@1e0000 {
--			label = "factory";
--			reg = <0x1e0000 0x100000>;
--			read-only;
--		};
--
--		factory2: partition@2e0000 {
--			label = "factory2";
--			reg = <0x2e0000 0x100000>;
--			read-only;
--		};
--
--		partition@3e0000 {
--			label = "kernel";
--			reg = <0x3e0000 0x400000>;
--		};
--
--		partition@7e0000 {
--			label = "ubi";
--			reg = <0x7e0000 0x2e00000>;
--		};
--
--		partition@35e0000 {
--			label = "firmware2";
--			reg = <0x35e0000 0x3200000>;
--		};
--	};
--};
--
--&pcie {
--	status = "okay";
--};
--
--&pcie0 {
--	wifi0: wifi@0,0 {
--		compatible = "pci14c3,7615";
--		reg = <0x0000 0 0 0 0>;
--		mediatek,mtd-eeprom = <&factory 0x0000>;
--		ieee80211-freq-limit = <2400000 2500000>;
--	};
--};
--
--&pcie1 {
--	wifi1: wifi@0,0 {
--		compatible = "pci14c3,7615";
--		reg = <0x0000 0 0 0 0>;
--		mediatek,mtd-eeprom = <&factory 0x8000>;
--		ieee80211-freq-limit = <5000000 6000000>;
--	};
--};
--
--&ethernet {
--	mtd-mac-address = <&factory 0xe000>;
--	mediatek,portmap = "wllll";
--	port@5 {
--		status = "disabled";
--	};
--};
--
--&i2c {
--	status = "disabled";
--};
--
--&pinctrl {
--	state_default: pinctrl0 {
--		gpio {
--			ralink,group = "uart2", "uart3", "i2c";
--			ralink,function = "gpio";
--		};
--	};
--};
-+};
-\ No newline at end of file
-diff --git a/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi b/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi
-new file mode 100644
-index 0000000000..d0f8a4b3ca
++board_config_update
++
++board=$(board_name)
++boardname="${board##*,}"
++
++case "$board" in
++glinet,gl-ar300m-nand)
++	ucidef_set_led_netdev "lan" "LAN" "gl-ar300m:green:lan" "eth0"
++	;;
++esac
++
++board_config_flush
++
++exit 0
+diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+new file mode 100755
+index 0000000000..65ce439545
 --- /dev/null
-+++ b/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi
-@@ -0,0 +1,159 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
++++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+@@ -0,0 +1,35 @@
++#!/bin/sh
 +
-+#include "mt7621.dtsi"
++. /lib/functions/system.sh
++. /lib/functions/uci-defaults.sh
 +
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
++ath79_setup_interfaces()
++{
++	local board="$1"
 +
-+/ {
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+	};
++	case "$board" in
++	*)
++		ucidef_set_interfaces_lan_wan "eth0" "eth1"
++		;;
++	esac
++}
 +
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
++ath79_setup_macs()
++{
++	local board="$1"
 +
-+	palmbus: palmbus@1E000000 {
-+		i2c@900 {
-+			status = "okay";
-+		};
-+	};
++	case "$board" in
++	esac
 +
-+	keys {
-+		compatible = "gpio-keys";
++	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac
++	[ -n "$wan_mac" ] && ucidef_set_interface_macaddr "wan" $wan_mac
++	[ -n "$label_mac" ] && ucidef_set_label_macaddr $label_mac
++}
 +
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
++board_config_update
++board=$(board_name)
++ath79_setup_interfaces $board
++ath79_setup_macs $board
++board_config_flush
 +
-+		wps {
-+			label = "wps";
-+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+	};
++exit 0
+diff --git a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+new file mode 100644
+index 0000000000..b02ab9a080
+--- /dev/null
++++ b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+@@ -0,0 +1,20 @@
++#
++# Copyright (C) 2011 OpenWrt.org
++#
 +
-+	leds {
-+		compatible = "gpio-leds";
++PART_NAME=firmware
++REQUIRE_IMAGE_METADATA=1
 +
-+		led_power: power {
-+			label = "rt-ac85p:blue:power";
-+			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+		wlan2g {
-+			label = "rt-ac85p:blue:wlan2g";
-+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0radio";
-+		};
++platform_check_image() {
++	return 0
++}
 +
-+		wlan5g {
-+			label = "rt-ac85p:blue:wlan5g";
-+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy1radio";
-+		};
-+	};
-+};
++platform_do_upgrade() {
++	local board=$(board_name)
 +
-+&sdhci {
-+	status = "okay";
-+};
++	case "$board" in
++	*)
++		default_do_upgrade "$1"
++		;;
++	esac
++}
+diff --git a/target/linux/ath79/tiny/base-files/etc/board.d/01_leds b/target/linux/ath79/tiny/base-files/etc/board.d/01_leds
+new file mode 100755
+index 0000000000..bb1799c645
+--- /dev/null
++++ b/target/linux/ath79/tiny/base-files/etc/board.d/01_leds
+@@ -0,0 +1,85 @@
++#!/bin/sh
 +
-+&nand {
-+	status = "okay";
++. /lib/functions/uci-defaults.sh
 +
-+	partitions {
-+		compatible = "fixed-partitions";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
++board_config_update
 +
-+		partition@0 {
-+			label = "u-boot";
-+			reg = <0x0 0xe0000>;
-+			read-only;
-+		};
++board=$(board_name)
++boardname="${board##*,}"
 +
-+		partition@e0000 {
-+			label = "u-boot-env";
-+			reg = <0xe0000 0x100000>;
-+			read-only;
-+		};
++case "$board" in
++buffalo,whr-g301n)
++	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth0"
++	ucidef_set_led_switch "lan1" "LAN1" "$boardname:green:lan1" "switch0" "0x02"
++	ucidef_set_led_switch "lan2" "LAN2" "$boardname:green:lan2" "switch0" "0x04"
++	ucidef_set_led_switch "lan3" "LAN3" "$boardname:green:lan3" "switch0" "0x08"
++	ucidef_set_led_switch "lan4" "LAN4" "$boardname:green:lan4" "switch0" "0x10"
++	;;
++netgear,wnr1000-v2|\
++netgear,wnr2000-v3)
++	ucidef_set_led_netdev "wan-amber" "WAN (amber)" "netgear:amber:wan" "eth0"
++	ucidef_set_led_switch "lan1green" "LAN1 (green)" "netgear:green:lan1" "switch0" "0x02" "0x04"
++	ucidef_set_led_switch "lan2green" "LAN2 (green)" "netgear:green:lan2" "switch0" "0x04" "0x04"
++	ucidef_set_led_switch "lan3green" "LAN3 (green)" "netgear:green:lan3" "switch0" "0x08" "0x04"
++	ucidef_set_led_switch "lan4green" "LAN4 (green)" "netgear:green:lan4" "switch0" "0x10" "0x04"
++	ucidef_set_led_switch "lan1amber" "LAN1 (amber)" "netgear:amber:lan1" "switch0" "0x02" "0x02"
++	ucidef_set_led_switch "lan2amber" "LAN2 (amber)" "netgear:amber:lan2" "switch0" "0x04" "0x02"
++	ucidef_set_led_switch "lan3amber" "LAN3 (amber)" "netgear:amber:lan3" "switch0" "0x08" "0x02"
++	ucidef_set_led_switch "lan4amber" "LAN4 (amber)" "netgear:amber:lan4" "switch0" "0x10" "0x02"
++	;;
++netgear,wnr612-v2|\
++on,n150r)
++	ucidef_set_led_netdev "wan" "WAN" "netgear:green:wan" "eth0"
++	ucidef_set_led_switch "lan1" "LAN1" "netgear:green:lan1" "switch0" "0x02" "0x0f"
++	ucidef_set_led_switch "lan2" "LAN2" "netgear:green:lan2" "switch0" "0x04" "0x0f"
++	;;
++tplink,tl-wr841-v9|\
++tplink,tl-wr841-v10|\
++tplink,tl-wr841-v11|\
++tplink,tl-wr841-v12)
++	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
++	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x10"
++	ucidef_set_led_switch "lan2" "LAN2" "tp-link:green:lan2" "switch0" "0x08"
++	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x04"
++	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x02"
++	;;
++tplink,tl-mr3020-v1|\
++tplink,tl-mr3040-v2)
++	ucidef_set_led_netdev "lan" "LAN" "tp-link:green:lan" "eth0"
++	;;
++tplink,tl-mr3420-v2|\
++tplink,tl-wr740n-v4|\
++tplink,tl-wr741nd-v4|\
++tplink,tl-wr841-v8)
++	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
++	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x04"
++	ucidef_set_led_switch "lan2" "LAN2" "tp-link:green:lan2" "switch0" "0x08"
++	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x10"
++	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x02"
++	;;
++tplink,tl-wr740n-v1|\
++tplink,tl-wr740n-v3|\
++tplink,tl-wr741-v1|\
++tplink,tl-wr743nd-v1|\
++tplink,tl-wr841-v5|\
++tplink,tl-wr941-v4)
++	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth0"
++	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x02"
++	ucidef_set_led_switch "lan2" "LAN2" "tp-link:green:lan2" "switch0" "0x04"
++	ucidef_set_led_switch "lan3" "LAN3" "tp-link:green:lan3" "switch0" "0x08"
++	ucidef_set_led_switch "lan4" "LAN4" "tp-link:green:lan4" "switch0" "0x10"
++	;;
++tplink,tl-wr940n-v3|\
++tplink,tl-wr940n-v4|\
++tplink,tl-wr941nd-v6)
++	ucidef_set_led_netdev "wan" "WAN" "tp-link:blue:wan" "eth1"
++	ucidef_set_led_switch "lan1" "LAN1" "tp-link:blue:lan1" "switch0" "0x10"
++	ucidef_set_led_switch "lan2" "LAN2" "tp-link:blue:lan2" "switch0" "0x08"
++	ucidef_set_led_switch "lan3" "LAN3" "tp-link:blue:lan3" "switch0" "0x04"
++	ucidef_set_led_switch "lan4" "LAN4" "tp-link:blue:lan4" "switch0" "0x02"
++	;;
++esac
 +
-+		factory: partition@1e0000 {
-+			label = "factory";
-+			reg = <0x1e0000 0x100000>;
-+			read-only;
-+		};
++board_config_flush
 +
-+		factory2: partition@2e0000 {
-+			label = "factory2";
-+			reg = <0x2e0000 0x100000>;
-+			read-only;
-+		};
++exit 0
+diff --git a/target/linux/ath79/tiny/base-files/etc/board.d/02_network b/target/linux/ath79/tiny/base-files/etc/board.d/02_network
+new file mode 100755
+index 0000000000..49fccc0b2e
+--- /dev/null
++++ b/target/linux/ath79/tiny/base-files/etc/board.d/02_network
+@@ -0,0 +1,96 @@
++#!/bin/sh
 +
-+		partition@3e0000 {
-+			label = "kernel";
-+			reg = <0x3e0000 0x400000>;
-+		};
++. /lib/functions/system.sh
++. /lib/functions/uci-defaults.sh
 +
-+		partition@7e0000 {
-+			label = "ubi";
-+			reg = <0x7e0000 0x2e00000>;
-+		};
++ath79_setup_interfaces()
++{
++	local board="$1"
 +
-+		partition@35e0000 {
-+			label = "firmware2";
-+			reg = <0x35e0000 0x3200000>;
-+		};
-+	};
-+};
++	case "$board" in
++	pqi,air-pen|\
++	tplink,tl-mr10u|\
++	tplink,tl-mr3020-v1|\
++	tplink,tl-mr3040-v2|\
++	tplink,tl-wa901nd-v2|\
++	tplink,tl-wr703n)
++		ucidef_set_interface_lan "eth0"
++		;;
++	buffalo,whr-g301n)
++		ucidef_set_interface_wan "eth0"
++		ucidef_add_switch "switch0" \
++			"0@eth1" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
++		;;
++	tplink,tl-mr3220-v1|\
++	tplink,tl-mr3420-v1|\
++	tplink,tl-wr841-v7|\
++	tplink,tl-wr841-v9|\
++	tplink,tl-wr841-v10|\
++	tplink,tl-wr841-v11|\
++	tplink,tl-wr841-v12|\
++	tplink,tl-wr940n-v3|\
++	tplink,tl-wr940n-v4|\
++	tplink,tl-wr941nd-v6)
++		ucidef_set_interface_wan "eth1"
++		ucidef_add_switch "switch0" \
++			"0@eth0" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1"
++		;;
++	netgear,wnr1000-v2|\
++	netgear,wnr2000-v3|\
++	netgear,wnr612-v2|\
++	on,n150r|\
++	tplink,tl-wr740n-v1|\
++	tplink,tl-wr740n-v3|\
++	tplink,tl-wr741-v1|\
++	tplink,tl-wr743nd-v1|\
++	tplink,tl-wr841-v5|\
++	tplink,tl-wr941-v4)
++		ucidef_set_interface_wan "eth0"
++		ucidef_add_switch "switch0" \
++		"0@eth1" "1:lan" "2:lan" "3:lan" "4:lan"
++		;;
++	tplink,tl-wr941n-v7-cn)
++		ucidef_add_switch "switch0" \
++			"0@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "5:lan:4" "1:wan"
++		;;
++	tplink,tl-mr3420-v2|\
++	tplink,tl-wr740n-v4|\
++	tplink,tl-wr741nd-v4|\
++	tplink,tl-wr841-v8)
++		ucidef_set_interface_wan "eth1"
++		ucidef_add_switch "switch0" \
++			"0@eth0" "1:lan:4" "2:lan:1" "3:lan:2" "4:lan:3"
++		;;
++	tplink,tl-wr941-v2)
++		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
++		;;
++	*)
++		ucidef_set_interfaces_lan_wan "eth0" "eth1"
++		;;
++	esac
++}
 +
-+&pcie {
-+	status = "okay";
-+};
++ath79_setup_macs()
++{
++	local board="$1"
 +
-+&pcie0 {
-+	wifi0: wifi@0,0 {
-+		compatible = "pci14c3,7615";
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x0000>;
-+		ieee80211-freq-limit = <2400000 2500000>;
-+	};
-+};
++	case "$board" in
++	tplink,tl-wr941-v2|\
++	tplink,tl-wr941n-v7-cn)
++		base_mac=$(mtd_get_mac_binary u-boot 0x1fc00)
++		wan_mac=$(macaddr_add "$base_mac" 1)
++		;;
++	esac
 +
-+&pcie1 {
-+	wifi1: wifi@0,0 {
-+		compatible = "pci14c3,7615";
-+		reg = <0x0000 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		ieee80211-freq-limit = <5000000 6000000>;
-+	};
-+};
++	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac
++	[ -n "$wan_mac" ] && ucidef_set_interface_macaddr "wan" $wan_mac
++	[ -n "$label_mac" ] && ucidef_set_label_macaddr $label_mac
++}
 +
-+&ethernet {
-+	mtd-mac-address = <&factory 0xe000>;
-+	mediatek,portmap = "wllll";
-+	port@5 {
-+		status = "disabled";
-+	};
-+};
++board_config_update
++board=$(board_name)
++ath79_setup_interfaces $board
++ath79_setup_macs $board
++board_config_flush
 +
-+&i2c {
-+	status = "disabled";
-+};
++exit 0
+diff --git a/target/linux/ath79/tiny/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/tiny/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+new file mode 100644
+index 0000000000..3da95cc161
+--- /dev/null
++++ b/target/linux/ath79/tiny/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -0,0 +1,38 @@
++#!/bin/sh
 +
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "uart2", "uart3", "i2c";
-+			ralink,function = "gpio";
-+		};
-+	};
-+};
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index 488837c5c7..60d0131dc6 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -125,6 +125,22 @@ define Device/asus_rt-ac57u
- endef
- TARGET_DEVICES += asus_rt-ac57u
- 
-+define Device/asus_rt-ac65p
-+  MTK_SOC := mt7621
-+  DEVICE_VENDOR := ASUS
-+  DEVICE_MODEL := RT-AC65P
-+  IMAGE_SIZE := 51200k
-+  UBINIZE_OPTS := -E 5
-+  BLOCKSIZE := 128k
-+  PAGESIZE := 2048
-+  KERNEL_SIZE := 4096k
-+  IMAGES += factory.bin
-+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
-+  DEVICE_PACKAGES := kmod-usb3 kmod-mt7615e wpad-basic uboot-envtools
-+endef
-+TARGET_DEVICES += asus_rt-ac65p
++[ -e /lib/firmware/$FIRMWARE ] && exit 0
 +
- define Device/asus_rt-ac85p
-   MTK_SOC := mt7621
-   DEVICE_VENDOR := ASUS
++. /lib/functions/caldata.sh
++
++board=$(board_name)
++
++case "$FIRMWARE" in
++"ath9k-eeprom-pci-0000:00:00.0.bin")
++	case $board in
++	buffalo,whr-g301n|\
++	tplink,tl-wr841-v5|\
++	tplink,tl-wr941-v4)
++		caldata_extract "art" 0x1000 0xeb8
++		;;
++	netgear,wnr1000-v2|\
++	netgear,wnr2000-v3|\
++	netgear,wnr612-v2|\
++	on,n150r|\
++	tplink,tl-mr3220-v1|\
++	tplink,tl-mr3420-v1|\
++	tplink,tl-wr740n-v1|\
++	tplink,tl-wr740n-v3|\
++	tplink,tl-wr741-v1|\
++	tplink,tl-wr743nd-v1|\
++	tplink,tl-wr841-v7)
++		caldata_extract "art" 0x1000 0x1000
++		;;
++	pqi,air-pen)
++		caldata_extract "art" 0x1000 0x7d2
++		;;
++	*)
++		caldata_die "board $board is not supported yet"
++		;;
++	esac
++	;;
++esac
+diff --git a/target/linux/ath79/tiny/base-files/lib/upgrade/platform.sh b/target/linux/ath79/tiny/base-files/lib/upgrade/platform.sh
+new file mode 100644
+index 0000000000..b02ab9a080
+--- /dev/null
++++ b/target/linux/ath79/tiny/base-files/lib/upgrade/platform.sh
+@@ -0,0 +1,20 @@
++#
++# Copyright (C) 2011 OpenWrt.org
++#
++
++PART_NAME=firmware
++REQUIRE_IMAGE_METADATA=1
++
++platform_check_image() {
++	return 0
++}
++
++platform_do_upgrade() {
++	local board=$(board_name)
++
++	case "$board" in
++	*)
++		default_do_upgrade "$1"
++		;;
++	esac
++}
 -- 
-2.23.0
+2.20.1
 
 
 _______________________________________________

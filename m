@@ -2,119 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F40BAE0DAC
-	for <lists+openwrt-devel@lfdr.de>; Tue, 22 Oct 2019 23:09:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59544E0DAF
+	for <lists+openwrt-devel@lfdr.de>; Tue, 22 Oct 2019 23:13:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1H0cTnIl/PFZL1rssiENuv4gI1nxUm37mSploopIxAc=; b=JA19NArEOU8xpO
-	eu0w2HNn/R559fpxQ/Q270AC9RbUMKA680b98RJ/iTT4WhIaf3YFXOzHtjZvpxdpzNUq3YYb5kkVE
-	4BzUDq+uw/YhY4nx/16c1ososiw1rcTTEY1iCAO23gWpYry8XFDlzoVGSCcHAskFRKSPgBJYa2jc8
-	aFyyoAFaQ1rAC3WS42cV+VfDWIne6H/eTrk578lAtfwA893cBhLv86vMJ/+/0Y5eGQ+XCBnXtbBZj
-	YonhITtmbMJZyLARrujhE83xnBVTSQz/b0WWQFIW/uXzAJ8s5rBotLHKRWIrRGvYRTuXkmt7dupzj
-	0quWA+2kwf5OHkE+1AIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mXoBlNim2WLKbfV3RJsJqWadZZJVJ7yEpvZd6QlPYvY=; b=SFIMnWHfX6Ix/jfUrsCf3V6pD
+	5NTPkxFaFvcRIHsZNOEW3Y/Kb4ZPakaE5s61tujsnM0EgF0oauCaR1xzni6RDMb1nK5gAVUO+ZjTr
+	vtaJxNiocABRvj6LOpPrxDhKyVHgdyg2DZpmO/lxO1UoepI8KpUXYh5DzPxUw5X5/iWj+MCTh9vS2
+	HdpIYUOODZPS8qgaM7ULb6DrdPO4z0dguFeosgpLFGGutIViykuagN6+qdeEO2j+QILYfE1p+oiPn
+	GcRBNurDPJMvUYg+WHZeZSTzDde7s0tG8r1MXWHtHduywYHRrvVBpqbuRCnRjiB4gD1lJ/J3fZZpw
+	CKeKKKp8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN1PZ-0005K7-Jc; Tue, 22 Oct 2019 21:09:49 +0000
-Received: from l5m.de ([84.200.74.160])
+	id 1iN1Sn-00079c-IQ; Tue, 22 Oct 2019 21:13:09 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN1PR-0005JI-L9
- for openwrt-devel@lists.openwrt.org; Tue, 22 Oct 2019 21:09:43 +0000
-Received: from localhost (localhost [127.0.0.1])
- by l5m.de (Postfix) with ESMTP id 874AC107E43;
- Tue, 22 Oct 2019 23:09:36 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
- andreas-ziegler.de; h=content-transfer-encoding:content-language
- :content-type:content-type:in-reply-to:mime-version:date:date
- :message-id:from:from:references:subject:subject:received
- :received; s=default; t=1571778575; bh=ETSgT5tkI5Vk5cPFz7dE62K+2
- PrvaqR9hXQpIBC1w4g=; b=UB2wyk4Git2XNIiHbheQVU3/mmueS89ztG9fgGq82
- SWyHvj0hjsglEu5sJQC+fYPvb/x6A8ObcjuVL33SBkNkaTvDTxbw+L+JQzXrs9sq
- LGgBXmxOfXaaX4AOh5/ByzyENnmjGIy2tyUzfbnInx9j+sioAnPq0jkNX3rI64Mj
- p0=
-X-Virus-Scanned: Debian amavisd-new at l5m.de
-Received: from l5m.de ([127.0.0.1])
- by localhost (l5m.de [127.0.0.1]) (amavisd-new, port 10024) with ESMTP
- id qp8MbKtT8_ov; Tue, 22 Oct 2019 23:09:35 +0200 (CEST)
-Received: from [IPv6:2a01:c23:c046:9100:e100:1ba4:940e:ef6e] (unknown
- [IPv6:2a01:c23:c046:9100:e100:1ba4:940e:ef6e])
- by l5m.de (Postfix) with ESMTPSA id C75201047CA;
- Tue, 22 Oct 2019 23:09:35 +0200 (CEST)
-To: Adrian Schmutzler <mail@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
+ id 1iN1Sf-00078P-2l
+ for openwrt-devel@lists.openwrt.org; Tue, 22 Oct 2019 21:13:02 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MbizQ-1hk7wJ2ZXK-00dFis; Tue, 22
+ Oct 2019 23:12:53 +0200
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Andreas Ziegler'" <dev@andreas-ziegler.de>,
+ <openwrt-devel@lists.openwrt.org>
 References: <20191022204429.608380-1-dev@andreas-ziegler.de>
  <002e01d5891c$14b5b540$3e211fc0$@adrianschmutzler.de>
-From: Andreas Ziegler <dev@andreas-ziegler.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=dev@andreas-ziegler.de; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <ad3c46d8-2322-14f5-9b3d-7355a57d3aa6@andreas-ziegler.de>
-Date: Tue, 22 Oct 2019 23:09:35 +0200
+ <ad3c46d8-2322-14f5-9b3d-7355a57d3aa6@andreas-ziegler.de>
+In-Reply-To: <ad3c46d8-2322-14f5-9b3d-7355a57d3aa6@andreas-ziegler.de>
+Date: Tue, 22 Oct 2019 23:12:53 +0200
+Message-ID: <003e01d5891d$77ee23d0$67ca6b70$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-In-Reply-To: <002e01d5891c$14b5b540$3e211fc0$@adrianschmutzler.de>
-Content-Language: de-DE
+Content-Language: de
+Thread-Index: AQLLNwpautkagm05UpEM0GzGk7Jf9wK19eQ5AQpPyaOlXcnYsA==
+X-Provags-ID: V03:K1:aSg182NgyZXt7ICypF8KGq7Q4ocXnQYLTr5co2ap7VvKeWtQ1ZR
+ EDo8bsSt3TJFER97OO92JVX7r1OnPH+/3uFd2Q4Duvw/ZaWye8YVVjoDs+NmmDwnXgMAqdD
+ miRDwJDiIsqPZ+0n9OdfM+rC8cchz8rSdmqVWG9k/st9xn2ATIQ5HiluyeOtc3gya5tuDfC
+ Pg1y3Gg918Fo7fHT55x0w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:CPdbmboMBNY=:qRmsJH74xjoC2fTnhhj2Lm
+ kngo7jljy7FZFhsolJhRlvXGZFZxyAnj7eM+mkABdNoPsuR1TEGOcgrPlti9vLibQg6QRHwW3
+ 1GsZx9Nzm1taK512rYi96f6Lh9EDYzk9msIcBrTfXRMB+UA8nPsyyioSxZAvsSEJF4iyCFKmL
+ 0C6Ua9PQXz1wAWIs54tpjxNhtMlWquN3ri+tDE7Q5Z+wbq3Xg5kO4yAiWIeAaQAINJsPvXhoC
+ j1OmLwRRTwMejZXVoml+tEUgTlIXu2+3YYJcewISLGkXfAt432hPAzhnUgwEeSrqnsZVcPvS6
+ D1rPvCKKoXeVOSgitdDaIaIj8QpoC56845lqi85ZQ4QOHNp1IdL+ar8h84F4irqivvd01osU6
+ OwAyz+iDxfJXXyFtzuTAEA64vgOyaWUJUUrt5DB+GXXU3vLzBMls1KE2RwTf6s5b0lJn+Vnbz
+ wEvH8v0/YhF1HLBQftmpWC2YLilUuyorbbuq9+z2K6SstCw1FVkkHZ8nEg0NzQZHRwTgKhwN8
+ MvsUgmPMgnAho6GBS/leRZeNckX7b4lmlpbG0Q+N2zeKUBLGl/v4ReeYh/DbNh/FWcq3L+fYH
+ Rxh3Lm2ellAPPUZajwmB9k/6dYx8RMmGt8wYI6P66NzAiIDNuFE4RjnwZ2aJjGOQUqcJoAKWt
+ 7VqpdI975PAaUYQrqsk7ZCGDpSyDYZEo/ELpz80uqt8y44E61ZB99E/jJt84eUVj8P/182AP7
+ 5gxAmb8phEs2OWPRFJtG8FLIOrhVNtgqLvDdUTBNYSi/inmtIhvBamUy+XE0D72le8gFNUMHE
+ qVRba/lrid+pObmRXK1P/p3pCoM/Ol4QgiZbFyMvjoSLFlZPp04UEzqsqK6f8XLWwj+VxWa3q
+ 6L5Sm1lOLAB9Psz5wLzIE+3ighMSeMoMh++jzcxEo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_140941_994710_EABA8BC9 
-X-CRM114-Status: UNSURE (   3.86  )
+X-CRM114-CacheID: sfid-20191022_141301_420539_B34BBB65 
+X-CRM114-Status: UNSURE (   9.24  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 Subject: Re: [OpenWrt-Devel] [PATCH] ar71xx: add model detection for UniFi
  AC-LR
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -128,23 +84,94 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3776406543348135473=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Adrian,
+This is a multipart message in MIME format.
 
-> Since this is ar71xx, where vendor_model scheme is not used at all, I would prefer using "ubnt-unifiac-lr" for consistency.
+--===============3776406543348135473==
+Content-Language: de
+Content-Type: multipart/signed;
+	boundary="=-=C1U/anZjRVQ4oR=-=";
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature"
 
-i don't mind.
-Do i need to send a V2 for such a small change? Maybe this can be done
-if it gets merged?
+This is a multipart message in MIME format.
 
-Kr,
-Andreas
+--=-=C1U/anZjRVQ4oR=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Andreas,
+
+> -----Original Message-----
+> From: Andreas Ziegler [mailto:dev@andreas-ziegler.de]
+> Sent: Dienstag, 22. Oktober 2019 23:10
+> To: Adrian Schmutzler <mail@adrianschmutzler.de>; openwrt-devel@lists.ope=
+nwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH] ar71xx: add model detection for UniF=
+i AC-LR
+>=20
+> Hi Adrian,
+>=20
+> > Since this is ar71xx, where vendor_model scheme is not used at all, I w=
+ould prefer using "ubnt-unifiac-lr" for consistency.
+>=20
+> i don't mind.
+> Do i need to send a V2 for such a small change? Maybe this can be done
+> if it gets merged?
+
+that depends on who will merge it.
+
+But since this is ar71xx, I would make it as easy as possible for committer=
+s, so you increase the chances for the patch to be picked at all.
+
+=3D> Send a v2. :-)
+
+Best
+
+Adrian
+
+--=-=C1U/anZjRVQ4oR=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl2vcNQACgkQoNyKO7qx
+AnDBOw/+IHY0iNVF/OiBc60A/3Iyro3UpuUYjgU26GVV6gdW3P92tpd39muLgad0
+C5RPdOKxP28tdq5/TRqHssg2LpPlbJMVFY1/TPk9UnoUVXA+1FXj/2CIvAAcAroe
+LX4RT+wHIEWYy3PZXG1/xjGEGlJEKFw73UnlzrtWL5P8/nr8qd1cOfu3hElpGMHP
+arhLhEYUaOJSbbhIhAPn0W6XA4TvBdUG03Df8X6v11Tuv2V3QrvxYhrcStVvNE9j
+wTZbnO46QWE9GkFPJ/ANefqsizZA+J6VUHhjR2pSWIBT+4hDwOLmS2bvHK7yzjjM
+0OviV4iwtRH3Qakv6KnymMljbIQ4hPxGI2JB/K45li+PtnxOVBGYvsGOeDCaZ78A
+f8EdEwrAywbe66iWcWC1H/4/0dXTr2CTcmqALIlT/jLON8cCQzzGdcaKrV6QufHw
+XbS1ACpWY/q+atLgR8j5VYddPh4SgoP2ehpqC+BgoekcwLfFjOguxmIxmM7OUoC6
+MjpssRWh7j+k21hvi9WNh98OxiN3eZkns4w0SwKn59RjOi2NhBSM18mo/KIjs8Km
+cAPiEVPxQ1xEQEJN0noNmhU+TlYLxfRVG65cqnVysOO6fRmCMZJJZjW4+5hxY0y9
+6xaeY0lmw0dHOA0V1V2TqW7msGfrhljnh+d86/PBccOb6egOxbU=
+=CuiH
+-----END PGP SIGNATURE-----
+
+
+--=-=C1U/anZjRVQ4oR=-=--
+
+
+
+--===============3776406543348135473==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3776406543348135473==--
+
+

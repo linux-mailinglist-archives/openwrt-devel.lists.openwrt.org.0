@@ -2,44 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3E2DE321D
-	for <lists+openwrt-devel@lfdr.de>; Thu, 24 Oct 2019 14:19:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FD32E33A7
+	for <lists+openwrt-devel@lfdr.de>; Thu, 24 Oct 2019 15:14:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y+erMrZEToI137g+m5WTekgUw0sHyK+t7pcfx5zXsYo=; b=gdlImpcbbMVex1
-	1ZKRRxSOmFMLfRWhDRTvASFHGzQyEtR7xYtUxpbvJ/pNfYGhUAH0P8NmpBg5TdnanvaBDktANNtY5
-	s6MNyKQhz5+JeQqmyM1hsXb1Rupzdr8suSGdLyaRbb+7nuYNizrWPc0UaBdv7u/SnCh7bauboJQeW
-	FhvIRzV68BDC05oJks8oXfJI3OtLNxFDgJBBAf86YcMyWvSpLxG5D6zWfXZyV+O/iKMnFvzI3RMzg
-	/u/zG6a72PFUgwRjUh24Feqk6jhXxJuuuukvhc87mY9RnxQ7xkDxz/tjFIhZqKs14ciorMGTBOX0X
-	BxQUQlWdfj94lcwmHAIg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/rZyJoVxag+jV5m+jWMdhSfPEbo/G3r4VpC77945BSc=; b=ODDhR88gU6ZBve
+	BuztSLmccznZ/vnKOGjnQuV9Ve2kiu35puhHI9O2//ICI0YCyKPsb0NwTWQcJ7Gi7t58Mgg3KXVzK
+	xQo6SsO6UBxVA+t31YTTVRSV3jjvrJUXo1mK4snOKKyPt5pqeDZX08OodHOZSIcy4uvCrhUVeNe0z
+	r3FgAuZoDhELiaco8lao6ZWZBm31sTlN1HGgmW2OmGpnKw5ww0fhR6lOcTXOujzXThOPuX+9BsIh9
+	BDxs5q6sHymGP0ad+XqLqxbtPMkxAPI1FrLGFN6lpsmKDd0KXbUVDGQlgG5txNiNp2xBnghGebDji
+	IMChN0oIAtXj2OYpdmJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNc50-00076q-5W; Thu, 24 Oct 2019 12:19:02 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1iNcw6-0004fF-P3; Thu, 24 Oct 2019 13:13:54 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNc4s-00076B-3d
- for openwrt-devel@lists.openwrt.org; Thu, 24 Oct 2019 12:18:55 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1iNc4j-0005Yu-5V; Thu, 24 Oct 2019 14:18:47 +0200
-Date: Thu, 24 Oct 2019 14:18:31 +0200
-From: Daniel Golle <daniel@makrotopia.org>
-To: Jo-Philipp Wich <jo@mein.io>
-Message-ID: <20191024121831.GC1252@makrotopia.org>
-References: <b247e681-6f9a-5e3d-2744-ee5bdb460d1d@rapiduswireless.com>
- <5b5d8f6a-49e9-909a-4663-9ae2555a281a@mein.io>
+ id 1iNcvr-0004ea-8t
+ for openwrt-devel@lists.openwrt.org; Thu, 24 Oct 2019 13:13:41 +0000
+Received: from dbauer-t470.tu-darmstadt.de (unknown
+ [IPv6:2001:41b8:83c:fa01:5d47:84e4:b335:6505])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id 1BFBD1E3D6
+ for <openwrt-devel@lists.openwrt.org>; Thu, 24 Oct 2019 15:13:33 +0200 (CEST)
+From: David Bauer <mail@david-bauer.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 24 Oct 2019 15:13:24 +0200
+Message-Id: <20191024131324.302958-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5b5d8f6a-49e9-909a-4663-9ae2555a281a@mein.io>
-User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_051854_152126_7A8B97F6 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20191024_061339_614492_1C010DE3 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -47,7 +46,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] How to trigger wifi reload from wifi.lua
+Subject: [OpenWrt-Devel] [PATCH] ath79: disable delays on AT803X config init
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,66 +58,98 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Nick Dennis <ndennis@rapiduswireless.com>, openwrt-devel@lists.openwrt.org,
- John Crispin <john@phrozen.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Thu, Oct 24, 2019 at 01:21:56PM +0200, Jo-Philipp Wich wrote:
-> Hi,
-> 
-> > On the Luci GUI, the current behaviour of Save&Apply of changes to the
-> > items in wifi.lua and wireless_modefreq.htm is to invoke a network
-> > restart. I would like to to change this behavior to invoke wifi restart
-> > directly from wifi.lua.
-> 
-> This is not supported and will confuse the netifd wireless state
-> tracking. You should instead extend the netifd wireless handlers to
-> properly deal with updated values.
+Until upstream commit 6d4cd041f0af("net: phy: at803x: disable delay
+only for RGMII mode"), delays were not disabled on driver probe
+for the Atheros AR803x PHYs, although the RX delay is enabled on
+soft and hard reset.
 
-John and me have been working on this in the past months, I'm now doing
-a final round of rebasing and testing right now.
-Take a look at my staging tree here:
-https://git.openwrt.org/?p=openwrt/staging/dangole.git;a=summary
+In addition, the TX delay setting is retained on soft-reset.
 
-What is new here is that hostapd and wpa_supplicant are running
-permanently and offering a ubus interface to add, remove and modify
-wifi interfaces. netifd and the scripts previously wrapping around
-hostapd/wpa_supplicant have been modified to make use of that.
-You can easily test it by modifying the wireless configuration and
-calling 'wifi reconf', changes should take effect immediatly without
-affecting unmodified networks.
+This patch disables both delays on config init to align the behavior
+with kernel 5.1 and higher. It can be safely dropped with kernel 5.1.
 
-Currently, there is still one instance of each service for each
-wiphy, however, once things have been tested a bit more, we can
-reduce this and use the same service to manage interfaces accross
-radios -- this should already be supported in hostapd/wpa_supplicant
-right now, however, we intend to change things one by one to make
-debugging easier.
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ .../0038-at803x-disable-delays.patch          | 27 +++++++++++++++++++
+ .../0038-at803x-disable-delays.patch          | 27 +++++++++++++++++++
+ 2 files changed, 54 insertions(+)
+ create mode 100644 target/linux/ath79/patches-4.14/0038-at803x-disable-delays.patch
+ create mode 100644 target/linux/ath79/patches-4.19/0038-at803x-disable-delays.patch
 
-I'd highly appreciate all reviewing and testing of our changes, I'm
-planning to merge them into master at the end of next week after
-posting a comprehensive series on the mailing list tomorrow or monday.
+diff --git a/target/linux/ath79/patches-4.14/0038-at803x-disable-delays.patch b/target/linux/ath79/patches-4.14/0038-at803x-disable-delays.patch
+new file mode 100644
+index 0000000000..be291adc0b
+--- /dev/null
++++ b/target/linux/ath79/patches-4.14/0038-at803x-disable-delays.patch
+@@ -0,0 +1,27 @@
++Until upstream commit 6d4cd041f0af("net: phy: at803x: disable delay
++only for RGMII mode"), delays were not disabled on driver probe
++for the Atheros AR803x PHYs, although the RX delay is enabled on
++soft and hard reset.
++
++In addition, the TX delay setting is retained on soft-reset.
++
++This patch disables both delays on config init to align the behavior
++with kernel 5.1 and higher. It can be safely dropped with kernel 5.1.
++
++--- a/drivers/net/phy/at803x.c
+++++ b/drivers/net/phy/at803x.c
++@@ -320,6 +320,14 @@ static int at803x_config_init(struct phy
++ 	if (ret < 0)
++ 		return ret;
++ 
+++	// Disable RX delay
+++	at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_0,
+++				AT803X_DEBUG_RX_CLK_DLY_EN, 0);
+++
+++	// Disable TX delay
+++	at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_5,
+++				AT803X_DEBUG_TX_CLK_DLY_EN, 0);
+++
++ 	if (phydev->interface == PHY_INTERFACE_MODE_RGMII_RXID ||
++ 			phydev->interface == PHY_INTERFACE_MODE_RGMII_ID) {
++ 		ret = at803x_enable_rx_delay(phydev);
+diff --git a/target/linux/ath79/patches-4.19/0038-at803x-disable-delays.patch b/target/linux/ath79/patches-4.19/0038-at803x-disable-delays.patch
+new file mode 100644
+index 0000000000..083ba9bb8a
+--- /dev/null
++++ b/target/linux/ath79/patches-4.19/0038-at803x-disable-delays.patch
+@@ -0,0 +1,27 @@
++Until upstream commit 6d4cd041f0af("net: phy: at803x: disable delay
++only for RGMII mode"), delays were not disabled on driver probe
++for the Atheros AR803x PHYs, although the RX delay is enabled on
++soft and hard reset.
++
++In addition, the TX delay setting is retained on soft-reset.
++
++This patch disables both delays on config init to align the behavior
++with kernel 5.1 and higher. It can be safely dropped with kernel 5.1.
++
++--- a/drivers/net/phy/at803x.c
+++++ b/drivers/net/phy/at803x.c
++@@ -295,6 +295,14 @@ static int at803x_config_init(struct phy
++ 	if (ret < 0)
++ 		return ret;
++ 
+++	// Disable RX delay
+++	at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_0,
+++				AT803X_DEBUG_RX_CLK_DLY_EN, 0);
+++
+++	// Disable TX delay
+++	at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_5,
+++				AT803X_DEBUG_TX_CLK_DLY_EN, 0);
+++
++ 	if (phydev->interface == PHY_INTERFACE_MODE_RGMII_RXID ||
++ 			phydev->interface == PHY_INTERFACE_MODE_RGMII_ID) {
++ 		ret = at803x_enable_rx_delay(phydev);
+-- 
+2.23.0
 
-
-Cheers
-
-
-Daniel
-
-
-
-
-> 
-> 
-> ~ Jo
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

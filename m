@@ -2,66 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 755E8E31B4
-	for <lists+openwrt-devel@lfdr.de>; Thu, 24 Oct 2019 14:00:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3E2DE321D
+	for <lists+openwrt-devel@lfdr.de>; Thu, 24 Oct 2019 14:19:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DzajRD7WOhkRK/fvOf52k+qF04d4789KkaLV56pcT9I=; b=oaFLz1PQlmzaAv
-	tieB0Q6UsR0vPAJO1oZ8Vt+2htHdQnMnRxcvO8pqKOGcA0/C/zBaQ++lts14mxS07YW+65i4AZ95X
-	g4Nv/AJqZBbjds5l/l+rqZlGv+2VMErMbxPLG06xVYJAFhst4lAUZ1mh+5oAXwgFygRfaYC0kUw0O
-	Ex0dsw/+xL6+X7NIEi9mGQ1BePjbolJThCYU9t6A42fIyKm+DgxkAZ4rbpe0ltECcgGR1FydhZONo
-	T6xsBW6fob8qyBh9441579jECSz7rCcp/PWobd6D5NBgGYRBAO9YN0vgkT2wQqKg1sqAC6bLZZODp
-	FI7JnW1xSns7zpwv68Fw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y+erMrZEToI137g+m5WTekgUw0sHyK+t7pcfx5zXsYo=; b=gdlImpcbbMVex1
+	1ZKRRxSOmFMLfRWhDRTvASFHGzQyEtR7xYtUxpbvJ/pNfYGhUAH0P8NmpBg5TdnanvaBDktANNtY5
+	s6MNyKQhz5+JeQqmyM1hsXb1Rupzdr8suSGdLyaRbb+7nuYNizrWPc0UaBdv7u/SnCh7bauboJQeW
+	FhvIRzV68BDC05oJks8oXfJI3OtLNxFDgJBBAf86YcMyWvSpLxG5D6zWfXZyV+O/iKMnFvzI3RMzg
+	/u/zG6a72PFUgwRjUh24Feqk6jhXxJuuuukvhc87mY9RnxQ7xkDxz/tjFIhZqKs14ciorMGTBOX0X
+	BxQUQlWdfj94lcwmHAIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNbmw-0006sk-QD; Thu, 24 Oct 2019 12:00:22 +0000
-Received: from iapetos.krtzbrtz.org ([85.124.251.73])
+	id 1iNc50-00076q-5W; Thu, 24 Oct 2019 12:19:02 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNbmk-0006rT-Vq
- for openwrt-devel@lists.openwrt.org; Thu, 24 Oct 2019 12:00:12 +0000
-Received: from zyxel-dev.intern.krtzbrtz.org
- (194-166-119-100.hdsl.highway.telekom.at [194.166.119.100])
- by iapetos.krtzbrtz.org (Postfix) with ESMTPSA id 32DE19EDA9;
- Thu, 24 Oct 2019 13:54:40 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=krtzbrtz.org;
- s=chswiq6a; t=1571918080;
- bh=9nmA9l1gopy92BXrZYF9bqbm4zcnCJpRV80Q/2dHRwI=;
- h=From:To:Cc:Subject:Date:From;
- b=A0yt7EDzwRJBblCVz8Tb3kG+/emwuwLqK4smAHUA93nRUqeh31VVALAtgO6bY4nCC
- xA284XMwwYDu/k37NE/yLayC0lUADoafhDkF926sYo0HQruL1MO3pdtykgk84c6sot
- dSwAj5xq4aAyPs6UrX6ZKt/PMawpSDI2wsyzl8z7Cql4QoYdxIUv4tPxgpnra+dSD4
- 8tOOzwDBQDs0vUNUHpT6zaBmqjwEHtjjQPZTeAjDnIno31wD7v2HVNw2QIMkNEhx8M
- poyMX75aEIQjOFzvkTVfIcPKcVpHjYkOstcDJzRqJUG/+6NtG/B31hMpdeWnK/PGVQ
- xofMR/Ch4NvQw==
-From: Patrick Supper <openwrt.dev@krtzbrtz.org>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 24 Oct 2019 13:54:30 +0200
-Message-Id: <20191024115430.19992-1-openwrt.dev@krtzbrtz.org>
-X-Mailer: git-send-email 2.17.1
+ id 1iNc4s-00076B-3d
+ for openwrt-devel@lists.openwrt.org; Thu, 24 Oct 2019 12:18:55 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1iNc4j-0005Yu-5V; Thu, 24 Oct 2019 14:18:47 +0200
+Date: Thu, 24 Oct 2019 14:18:31 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: Jo-Philipp Wich <jo@mein.io>
+Message-ID: <20191024121831.GC1252@makrotopia.org>
+References: <b247e681-6f9a-5e3d-2744-ee5bdb460d1d@rapiduswireless.com>
+ <5b5d8f6a-49e9-909a-4663-9ae2555a281a@mein.io>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <5b5d8f6a-49e9-909a-4663-9ae2555a281a@mein.io>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_050011_359804_490E098F 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191024_051854_152126_7A8B97F6 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.5 FROM_DOMAIN_NOVOWEL    From: domain has series of non-vowel letters
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] ath79: add support for ZyXEL NWA1123-NI
+Subject: Re: [OpenWrt-Devel] How to trigger wifi reload from wifi.lua
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,118 +59,68 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Patrick Supper <openwrt.dev@krtzbrtz.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Nick Dennis <ndennis@rapiduswireless.com>, openwrt-devel@lists.openwrt.org,
+ John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-WnlYRUwgTldBMTEyMy1OSSBpcyBhIGR1YWwgYmFuZCA4MDIuMTFuIGFjY2VzcyBwb2ludC4KClRo
-ZSBmYWN0b3J5IGZpcm13YXJlIHBhcnRpdGlvbiB0YWJsZSBpcyB1c2luZyBhIHNtYWxsIGtlcm5l
-bCBwYXJ0aXRpb24KYWZ0ZXIgdGhlIHJvb3RmcyBwYXJ0aXRpb24uIFNpbmNlIGl0IGhhcyB0byBi
-ZSBmbGFzaGVkIHVzaW5nIFVBUlQgSSBhbHNvCm1lcmdlZCAzIHBhcnRpdGlvbnMgKHJvb3Rmcywg
-dUltYWdlLCByZXNlcnZlKSB0byBvbmUgZmlybXdhcmUgcGFydGl0aW9uCmFuZCBjaGFuZ2VkIHRo
-ZSBkZWZhdWx0IGxvYWQgYWRkcmVzcyBpbiBVLUJvb3QuCgoqIFNwZWNpZmljYXRpb246Ci0gU29D
-OiBBdGhlcm9zIEFSOTM0MiBANTYwTUh6Ci0gUkFNOiA2NCBNaUIKLSBGbGFzaDogMTYgTWlCIE5P
-UgotIEV0aGVybmV0OiAxMC8xMDAvMTAwMCBNYnBzIChBdGhlcm9zIEFSODAzNSBQSFkpCi0gV2lG
-aSAyLjRHSHo6IEF0aGVyb3MgQVI5MzQwIChTb0MpIDgwMi4xMWJnbiAyw5cyOjIKLSBXaUZpIDUu
-MEdIejogQXRoZXJvcyBBUjkzODIgKFBDSWUpIDgwMi4xMWFuIDLDlzI6MgotIEJ1dHRvbjogMSAo
-cmVzZXQpCi0gTEVEOiAxIChhbWJlci9ncmVlbikKLSBQb3dlcjogREMgMTJWLzFBIEJhcnJlbCwg
-UG9FIDgwMi4zYWYKLSBCb290bG9hZGVyOiBVLUJvb3QgMS4xLjQgKFF1YWxjb21tL0F0aGVyb3Mg
-U0RLKQoKU2VyaWFsIFBvcnQgaGVhZGVyIGlzIGxvY2F0ZWQgbmV4dCB0byB0aGUgT24tUENCLUFu
-dGVubmEgIkFOVDIiClBpbiAxOiBWQ0MgKzMuM1YgKHNtYWxsIGNpcmNsZSBzaWxrc2NyZWVuZWQp
-CiAgICAyOiBUWAogICAgMzogUlgKICAgIDQ6IEdORAoKKiBJbnN0YWxsIC8gRmxhc2ggaW5zdHJ1
-Y3Rpb246ClVzZSB0aGUgc3F1YXNoZnMtc3lzdXBncmFkZS5iaW4gaW1hZ2UuIFNldCB1cCBhIFRG
-VFAgc2VydmVyLCBjb25uZWN0IHRvCnNlcmlhbCBwb3J0IGFuZCBwcmVzcyBhbnkga2V5IGFmdGVy
-IHBvd2VyaW5nIHVwIHRoZSBkZXZpY2UgdG8gZW50ZXIKVS1ib290IHNoZWxsLgoKMS4gQ2hhbmdl
-IHRoZSBkZWZhdWx0IGJvb3QgY29tbWFuZCBhbmQgdW5zZXQgYm9vdGFyZ3M6CiAgICAgc2V0ZW52
-IGJvb3RjbWQgJ2Jvb3RtIDB4OWYwNTAwMDAnCiAgICAgc2V0ZW52IGJvb3RhcmdzCiAgICAgc2F2
-ZWVudgoyLiBTZXQgeW91ciByb3V0ZXIgaXBhZGRyIGFuZCBzZXJ2ZXIgaXBhZGRyLiBlLmcuOgog
-ICAgIHNldGVudiBpcGFkZHIgMTkyLjE2OC4xLjExCiAgICAgc2V0ZW52IHNlcnZlcmlwIDE5Mi4x
-NjguMS4xMjAKMy4gTG9hZCBhbmQgZmxhc2ggdGhlIGZpcm13YXJlOgogICAgIHRmdHAgMHg4MDA2
-MDAwMCBmdy5iaW4KICAgICBlcmFzZSAweDlmMDUwMDAwICskZmlsZXNpemUKICAgICBjcC5iICRm
-aWxlYWRkciAweDlmMDUwMDAwICRmaWxlc2l6ZQo0LiBSZXNldCB5b3VyIGRldmljZToKICAgICBy
-ZXNldAo1LiBXYWl0IGZvciB0aGUgTEVEIHRvIHR1cm4gZnJvbSBibGlua2luZyBhbWJlciB0byBz
-b2xpZCBncmVlbiAoY2EgMm1pbikKCiogS25vd24gSXNzdWU6Ci0gVS1Cb290IGRvZXMgTk9UIHN1
-cHBvcnQgYm9vdGluZyBsYXJnZSBpbml0cmFtZnMgaW1hZ2VzIGZyb20gUkFNLAogIHRoZXkgbmVl
-ZCB0byBiZSB3cml0dGVuIHRvIGZsYXNoIGZpcnN0LgoKU2lnbmVkLW9mZi1ieTogUGF0cmljayBT
-dXBwZXIgPG9wZW53cnQuZGV2QGtydHpicnR6Lm9yZz4KLS0tCiAuLi4vYXRoNzkvYmFzZS1maWxl
-cy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrICAgfCAgIDMgKy0KIC4uLi9hdGg3OS9kdHMvYXI5MzQy
-X3p5eGVsX253YTExMjMtbmkuZHRzICAgICB8IDE2MSArKysrKysrKysrKysrKysrKysKIHRhcmdl
-dC9saW51eC9hdGg3OS9pbWFnZS9nZW5lcmljLm1rICAgICAgICAgICB8ICAgOCArCiAzIGZpbGVz
-IGNoYW5nZWQsIDE3MSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCiBjcmVhdGUgbW9kZSAx
-MDA2NDQgdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzNDJfenl4ZWxfbndhMTEyMy1uaS5kdHMK
-CmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvYXRoNzkvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8w
-Ml9uZXR3b3JrIGIvdGFyZ2V0L2xpbnV4L2F0aDc5L2Jhc2UtZmlsZXMvZXRjL2JvYXJkLmQvMDJf
-bmV0d29yawppbmRleCBjNDBjMDdhOTA2Li42NzcwMTI5NGI0IDEwMDc1NQotLS0gYS90YXJnZXQv
-bGludXgvYXRoNzkvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrCisrKyBiL3Rhcmdl
-dC9saW51eC9hdGg3OS9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKQEAgLTU0LDcg
-KzU0LDggQEAgYXRoNzlfc2V0dXBfaW50ZXJmYWNlcygpCiAJdWJudCx1bmlmaWFjLW1lc2h8XAog
-CXVibnQsdW5pZml8XAogCXdkLG15bmV0LXdpZmktcmFuZ2VleHRlbmRlcnxcCi0Jd2luY2hhbm5l
-bCx3YjIwMDApCisJd2luY2hhbm5lbCx3YjIwMDB8XAorCXp5eGVsLG53YTExMjMtbmkpCiAJCXVj
-aWRlZl9zZXRfaW50ZXJmYWNlX2xhbiAiZXRoMCIKIAkJOzsKIAlhdm0sZnJpdHo0MDIwfFwKZGlm
-ZiAtLWdpdCBhL3RhcmdldC9saW51eC9hdGg3OS9kdHMvYXI5MzQyX3p5eGVsX253YTExMjMtbmku
-ZHRzIGIvdGFyZ2V0L2xpbnV4L2F0aDc5L2R0cy9hcjkzNDJfenl4ZWxfbndhMTEyMy1uaS5kdHMK
-bmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMC4uMzQ4YTNkNjljYwotLS0gL2Rl
-di9udWxsCisrKyBiL3RhcmdldC9saW51eC9hdGg3OS9kdHMvYXI5MzQyX3p5eGVsX253YTExMjMt
-bmkuZHRzCkBAIC0wLDAgKzEsMTYxIEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BM
-LTIuMAorL2R0cy12MS87CisKKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KKyNp
-bmNsdWRlIDxkdC1iaW5kaW5ncy9pbnB1dC9pbnB1dC5oPgorCisjaW5jbHVkZSAiYXI5MzQ0LmR0
-c2kiCisKKy8geworCWNvbXBhdGlibGUgPSAienl4ZWwsbndhMTEyMy1uaSIsICJxY2EsYXI5MzQy
-IjsKKwltb2RlbCA9ICJaeVhFTCBOV0ExMTIzLU5JIjsKKworCWFsaWFzZXMgeworCQlsZWQtYm9v
-dCA9ICZzdGF0dXNfYW1iZXI7CisJCWxlZC1mYWlsc2FmZSA9ICZzdGF0dXNfYW1iZXI7CisJCWxl
-ZC1ydW5uaW5nID0gJnN0YXR1c19ncmVlbjsKKwkJbGVkLXVwZ3JhZGUgPSAmc3RhdHVzX2FtYmVy
-OworCX07CisKKwlsZWRzIHsKKwkJY29tcGF0aWJsZSA9ICJncGlvLWxlZHMiOworCisJCXN0YXR1
-c19hbWJlcjogcG93ZXJfYW1iZXIgeworCQkJbGFiZWwgPSAienl4ZWw6YW1iZXI6cG93ZXIiOwor
-CQkJZ3Bpb3MgPSA8JmdwaW8gMTEgR1BJT19BQ1RJVkVfTE9XPjsKKwkJfTsKKworCQlzdGF0dXNf
-Z3JlZW46IHBvd2VyX2dyZWVuIHsKKwkJCWxhYmVsID0gInp5eGVsOmdyZWVuOnBvd2VyIjsKKwkJ
-CWdwaW9zID0gPCZncGlvIDEyIEdQSU9fQUNUSVZFX0xPVz47CisJCX07CisJfTsKKworCWtleXMg
-eworCQljb21wYXRpYmxlID0gImdwaW8ta2V5cyI7CisKKwkJcmVzZXQgeworCQkJbGFiZWwgPSAi
-cmVzZXQiOworCQkJbGludXgsY29kZSA9IDxLRVlfUkVTVEFSVD47CisJCQlncGlvcyA9IDwmZ3Bp
-byA0IEdQSU9fQUNUSVZFX0xPVz47CisJCQlkZWJvdW5jZS1pbnRlcnZhbCA9IDw2MD47CisJCX07
-CisJfTsKK307CisKKyZyZWYgeworCWNsb2NrLWZyZXF1ZW5jeSA9IDw0MDAwMDAwMD47Cit9Owor
-CismdWFydCB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJmdwaW8geworCXN0YXR1cyA9ICJv
-a2F5IjsKK307CisKKyZzcGkgeworCXN0YXR1cyA9ICJva2F5IjsKKwludW0tY3MgPSA8MT47CisK
-KwlmbGFzaEAwIHsKKwkJY29tcGF0aWJsZSA9ICJqZWRlYyxzcGktbm9yIjsKKwkJcmVnID0gPDA+
-OworCQlzcGktbWF4LWZyZXF1ZW5jeSA9IDwyNTAwMDAwMD47CisKKwkJcGFydGl0aW9ucyB7CisJ
-CQljb21wYXRpYmxlID0gImZpeGVkLXBhcnRpdGlvbnMiOworCQkJI2FkZHJlc3MtY2VsbHMgPSA8
-MT47CisJCQkjc2l6ZS1jZWxscyA9IDwxPjsKKworCQkJcGFydGl0aW9uQDAgeworCQkJCWxhYmVs
-ID0gInUtYm9vdCI7CisJCQkJcmVnID0gPDB4MDAwMDAwIDB4MDQwMDAwPjsKKwkJCQlyZWFkLW9u
-bHk7CisJCQl9OworCisJCQlwYXJ0aXRpb25ANDAwMDAgeworCQkJCWxhYmVsID0gInUtYm9vdC1l
-bnYiOworCQkJCXJlZyA9IDwweDA0MDAwMCAweDAxMDAwMD47CisJCQkJcmVhZC1vbmx5OworCQkJ
-fTsKKworCQkJcGFydGl0aW9uQDUwMDAwIHsKKwkJCQljb21wYXRpYmxlID0gImRlbngsdWltYWdl
-IjsKKwkJCQlsYWJlbCA9ICJmaXJtd2FyZSI7CisJCQkJcmVnID0gPDB4MDUwMDAwIDB4RjUwMDAw
-PjsKKwkJCX07CisKKwkJCXBhcnRpdGlvbkBmYTAwMDAgeworCQkJCWxhYmVsID0gImNvbmZpZyI7
-CisJCQkJcmVnID0gPDB4ZmEwMDAwIDB4MDQwMDAwPjsKKwkJCQlyZWFkLW9ubHk7CisJCQl9Owor
-CisJCQlwYXJ0aXRpb25AZmUwMDAwIHsKKwkJCQlsYWJlbCA9ICJtaWIwIjsKKwkJCQlyZWcgPSA8
-MHhmZTAwMDAgMHgwMTAwMDA+OworCQkJCXJlYWQtb25seTsKKwkJCX07CisKKwkJCWFydDogcGFy
-dGl0aW9uQGZmMDAwMCB7CisJCQkJbGFiZWwgPSAiQVJUIjsKKwkJCQlyZWcgPSA8MHhmZjAwMDAg
-MHgwMTAwMDA+OworCQkJCXJlYWQtb25seTsKKwkJCX07CisJCX07CisJfTsKK307CisKKworJnBj
-aWUgeworCXN0YXR1cyA9ICJva2F5IjsKKworCXdpZmlAMCwwIHsKKwkJY29tcGF0aWJsZSA9ICIx
-NjhjLDAwMzAiOworCQlyZWcgPSA8MHgwMDAwIDAgMCAwIDA+OworCQltdGQtbWFjLWFkZHJlc3Mg
-PSA8JmFydCAweDEwMDI+OworCQltdGQtbWFjLWFkZHJlc3MtaW5jcmVtZW50ID0gPDI+OworCQlx
-Y2EsZGlzYWJsZS0yZ2h6OworCX07Cit9OworCismd21hYyB7CisJc3RhdHVzID0gIm9rYXkiOwor
-CXFjYSxkaXNhYmxlLTVnaHo7CisJbXRkLWNhbC1kYXRhID0gPCZhcnQgMHgxMDAwPjsKKwltdGQt
-bWFjLWFkZHJlc3MgPSA8JmFydCAweDEwMDI+OworCW10ZC1tYWMtYWRkcmVzcy1pbmNyZW1lbnQg
-PSA8MT47Cit9OworCismbWRpbzAgeworCXN0YXR1cyA9ICJva2F5IjsKKworCXBoeS1tYXNrID0g
-PDA+OworCisJcGh5MDogZXRoZXJuZXQtcGh5QDAgeworCQlyZWcgPSA8MD47CisJfTsKK307CisK
-KyZldGgwIHsKKwlzdGF0dXMgPSAib2theSI7CisKKwkvKiBkZWZhdWx0IGZvciBhcjkzNHgsIGV4
-Y2VwdCBmb3IgMTAwME0gYW5kIDEwTSAqLworCXBsbC1kYXRhID0gPDB4MDYwMDAwMDAgMHgwMDAw
-MDEwMSAweDAwMDAxMzEzPjsKKworCW10ZC1tYWMtYWRkcmVzcyA9IDwmYXJ0IDB4MTAwMj47CisK
-KwlwaHktbW9kZSA9ICJyZ21paS1pZCI7CisJcGh5LWhhbmRsZSA9IDwmcGh5MD47CisKKwlnbWFj
-LWNvbmZpZyB7CisJCWRldmljZSA9IDwmZ21hYz47CisJCXJ4ZHYtZGVsYXkgPSA8Mz47CisJCXJ4
-ZC1kZWxheSA9IDwzPjsKKwkJdHhlbi1kZWxheSA9IDwzPjsKKwkJdHhkLWRlbGF5ID0gPDM+Owor
-CQlyZ21paS1nbWFjMCA9IDwxPjsKKwl9OworfTsKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9h
-dGg3OS9pbWFnZS9nZW5lcmljLm1rIGIvdGFyZ2V0L2xpbnV4L2F0aDc5L2ltYWdlL2dlbmVyaWMu
-bWsKaW5kZXggZTgyZTEyNTE2Ni4uMGYxM2ZhZDdiMiAxMDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4
-L2F0aDc5L2ltYWdlL2dlbmVyaWMubWsKKysrIGIvdGFyZ2V0L2xpbnV4L2F0aDc5L2ltYWdlL2dl
-bmVyaWMubWsKQEAgLTEwMjIsMyArMTAyMiwxMSBAQCBkZWZpbmUgRGV2aWNlL3pidGxpbmtfemJ0
-LXdkMzIzCiAJCSAgICAga21vZC11c2Itc2VyaWFsIGttb2QtdXNiLXNlcmlhbC1jcDIxMHggdXFt
-aQogZW5kZWYKIFRBUkdFVF9ERVZJQ0VTICs9IHpidGxpbmtfemJ0LXdkMzIzCisKK2RlZmluZSBE
-ZXZpY2Uvenl4ZWxfbndhMTEyMy1uaQorICBBVEhfU09DIDo9IGFyOTM0MgorICBERVZJQ0VfVkVO
-RE9SIDo9IFp5WEVMCisgIERFVklDRV9NT0RFTCA6PSBOV0ExMTIzLU5JCisgIElNQUdFX1NJWkUg
-Oj0gMTU2ODBrCitlbmRlZgorVEFSR0VUX0RFVklDRVMgKz0genl4ZWxfbndhMTEyMy1uaQotLSAK
-Mi4xNy4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
-ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
-bAo=
+On Thu, Oct 24, 2019 at 01:21:56PM +0200, Jo-Philipp Wich wrote:
+> Hi,
+> 
+> > On the Luci GUI, the current behaviour of Save&Apply of changes to the
+> > items in wifi.lua and wireless_modefreq.htm is to invoke a network
+> > restart. I would like to to change this behavior to invoke wifi restart
+> > directly from wifi.lua.
+> 
+> This is not supported and will confuse the netifd wireless state
+> tracking. You should instead extend the netifd wireless handlers to
+> properly deal with updated values.
+
+John and me have been working on this in the past months, I'm now doing
+a final round of rebasing and testing right now.
+Take a look at my staging tree here:
+https://git.openwrt.org/?p=openwrt/staging/dangole.git;a=summary
+
+What is new here is that hostapd and wpa_supplicant are running
+permanently and offering a ubus interface to add, remove and modify
+wifi interfaces. netifd and the scripts previously wrapping around
+hostapd/wpa_supplicant have been modified to make use of that.
+You can easily test it by modifying the wireless configuration and
+calling 'wifi reconf', changes should take effect immediatly without
+affecting unmodified networks.
+
+Currently, there is still one instance of each service for each
+wiphy, however, once things have been tested a bit more, we can
+reduce this and use the same service to manage interfaces accross
+radios -- this should already be supported in hostapd/wpa_supplicant
+right now, however, we intend to change things one by one to make
+debugging easier.
+
+I'd highly appreciate all reviewing and testing of our changes, I'm
+planning to merge them into master at the end of next week after
+posting a comprehensive series on the mailing list tomorrow or monday.
+
+
+Cheers
+
+
+Daniel
+
+
+
+
+> 
+> 
+> ~ Jo
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,38 +2,38 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FD31E3026
-	for <lists+openwrt-devel@lfdr.de>; Thu, 24 Oct 2019 13:19:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76F6EE303A
+	for <lists+openwrt-devel@lfdr.de>; Thu, 24 Oct 2019 13:22:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HFRGn8azg+NcmdzxCa8jTIGKvvE07QVgo2fhL9BTDfk=; b=dTGG9tMbEPTnL+
-	S2mG2FXZG+NWA4QDDHALZ4fdpMyAQKE6KSgk33ZOMNzLuAk+nLSpNY6/crhz3KUtdhfvAp5Ne9p9d
-	SKPBcQmvXChq68sUMEZtPY7W579RyDUrYjP8z4uZ0pIp0WkbHWFZ2ZzYqBZTxcljHK3mcv9gK+T8c
-	aXOajR7k9aLp9PBuSpSwkHy7cXHDL/m9FiwpnwoHkLdxrvQwwRZ39uiFgPCkJqQtJcPVb3BZHv4PC
-	noUXMio4DBTBPbaJKzMF+1F5FKeo737nFvVHMnlEX7kJH1fcCUmqbgwjYpqW/rkwKD4gTxFieHa2J
-	zPTQQ6+BiSCfTb00QGMQ==;
+	List-Owner; bh=KguBixC1dg8uMTJ3B1DZy2u9pdiMat+EuZrjCpqgbCI=; b=crPUKIz1QnUvvX
+	AnPmNLRjZnI6nNz2CTPKimlgZ/uJSew0ojJdDU1xqEPhI4bOJPkmtPsIiJUXvkImlnwpDetQ5PvGC
+	P7TuXT2kqShBF2Ib88wQ3l5OHGIJJCZ9IslJ5/poIR57zLOrbjfAHOtD2SJhSzouFUjbRUnY69MRU
+	ZkmioMM1qrMrHWZm3+Af0hTR5Ryj/9CDWn03IbFFOtp73mioOtVR4qfRWCY6j+BU/PlcdN6UiJrtl
+	U8B3DCkWINLCfAi8vVGutbo06hfQJA2hYe1+G5Txv3MnNE3pDlBizVHT1KfIkM9dO+2jcBvoRYBzj
+	HnZ2hCwS7Dx6tSMQUYDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNb98-0005Lj-I8; Thu, 24 Oct 2019 11:19:14 +0000
+	id 1iNbBz-0007Mt-PJ; Thu, 24 Oct 2019 11:22:11 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNb91-0005L3-34
- for openwrt-devel@lists.openwrt.org; Thu, 24 Oct 2019 11:19:09 +0000
+ id 1iNbBm-0007M9-AE
+ for openwrt-devel@lists.openwrt.org; Thu, 24 Oct 2019 11:21:59 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 9350F531BD; Thu, 24 Oct 2019 13:19:03 +0200 (CEST)
+ id 1E15D5335C; Thu, 24 Oct 2019 13:21:57 +0200 (CEST)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 562B6531BB
- for <openwrt-devel@lists.openwrt.org>; Thu, 24 Oct 2019 13:19:03 +0200 (CEST)
-Received: (qmail 23612 invoked from network); 24 Oct 2019 13:19:03 +0200
+ by mxout01.bytecamp.net (Postfix) with ESMTP id DB20F5335A
+ for <openwrt-devel@lists.openwrt.org>; Thu, 24 Oct 2019 13:21:56 +0200 (CEST)
+Received: (qmail 34052 invoked from network); 24 Oct 2019 13:21:56 +0200
 Received: from unknown (HELO ?10.42.0.249?) (jo%wwsnet.net@24.134.185.161)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 24 Oct 2019 13:19:03 +0200
+ 24 Oct 2019 13:21:56 +0200
 To: openwrt-devel@lists.openwrt.org
-References: <ec3161a0-7926-b514-6409-548d4947c9f1@rapiduswireless.com>
+References: <b247e681-6f9a-5e3d-2744-ee5bdb460d1d@rapiduswireless.com>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
@@ -79,16 +79,16 @@ Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
  ES2VqohUJDBMAqBjmmvCpySy6W037y1sdr8z8fXZVmb3BPsre6PGA7a1gXwPeTfUFMw0pKFh
  pPZO7XnPSgnRNDNI42Ldcoz0xI7Qg2zCsQR4YHwnu6o8pzadX6sSiW/la5oFlktj+IN1Avgq
  f5YenhKX8hj0d4uhJB4w5S+vQEySwmiZ1HWmYLcHHR9fXx5IapIyoA==
-Message-ID: <4e5d10cb-0243-5f82-3e19-32ca39922b91@mein.io>
-Date: Thu, 24 Oct 2019 13:19:02 +0200
+Message-ID: <5b5d8f6a-49e9-909a-4663-9ae2555a281a@mein.io>
+Date: Thu, 24 Oct 2019 13:21:56 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <ec3161a0-7926-b514-6409-548d4947c9f1@rapiduswireless.com>
+In-Reply-To: <b247e681-6f9a-5e3d-2744-ee5bdb460d1d@rapiduswireless.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_041907_443293_DB28F463 
-X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-CacheID: sfid-20191024_042158_660682_F074E09F 
+X-CRM114-Status: UNSURE (   8.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -99,8 +99,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] How to add items to Luci wireless_modefreq
- template
+Subject: Re: [OpenWrt-Devel] How to trigger wifi reload from wifi.lua
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,14 +118,15 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Hi,
 
-you need to extend the netifd wireless handler to recognize your
-proprietary options.
+> On the Luci GUI, the current behaviour of Save&Apply of changes to the
+> items in wifi.lua and wireless_modefreq.htm is to invoke a network
+> restart. I would like to to change this behavior to invoke wifi restart
+> directly from wifi.lua.
 
-LuCI does not perform any wireless or network restarting by itself, it
-relies on netifd doing the reloading of changed values.
+This is not supported and will confuse the netifd wireless state
+tracking. You should instead extend the netifd wireless handlers to
+properly deal with updated values.
 
-If you introduce new options not yet known to netifd, it will do nothing
-when you set these values.
 
 ~ Jo
 

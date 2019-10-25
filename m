@@ -2,88 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9A47E4885
-	for <lists+openwrt-devel@lfdr.de>; Fri, 25 Oct 2019 12:23:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE9DBE488E
+	for <lists+openwrt-devel@lfdr.de>; Fri, 25 Oct 2019 12:25:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
 	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y73NbZ6pAFcFpUbKkkGTg/QdynQWk7jYANmdGDtvBUk=; b=hWyn/RHB2Om45o
-	MonsM09af1F46zNq6fJoV7dfcHGYuHwl7dvTaaXghCGPg/BdavOoH4M4sGT9vaiule6GgsR9yiWVo
-	s/CHrWZqJEOpDa2WcPO6bBLH4J3HBahPpWqSoUtfBUGWftUQ4we+ZeEFHsx8c/prcOWog5wDxoy1z
-	kMdqZ1soBtaGh5QkAvTDqxyS84bMf7T+DamiwenKpV6Pp7mXbMcCo9MORpJchS5fmihelzIB/6CNv
-	oSRv3d0Sn2pFoYT1ykU0tDHsHrgIMEfP3FYs1nB+xyqJy/bcH/+T+0foGyHMMyaLalX/Fmhyz3fII
-	a2MvNZdFPJTEr5wvTk7w==;
+	List-Owner; bh=clDqF8q1FDr+eIQ4e3bzM2K32NrNeTNifgAlawRheN8=; b=fRWTPX4IoVyW+E
+	yeBc4DGsX7BGhtxMEAXInzlPD92SNLDI49qpA73P3VcSYedbtdRZgQS6d55eCemswSdh0rGy4khsn
+	A5DAcApVo/D/hO/wpITyjwLp9AxMMIjaUriY8VOpkl2wYW9wX8gNVndKUpdesL1To6lB325N5h9Gu
+	5D2p0Um0WZBP35Npq8ue4oVt1R048HiDZ8KAVVjTIlhto+tQESuMU3LkG0aRyqt7+Cnv6b5H25sen
+	gwWHkENz54UlR1owtnJyVU4A93iflH+JgIxM34ANpo4SmIv+jUUSxUCX4JBrZz1a4kXXyxZXxCylx
+	UzB632sfF6SOmosjAUww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNwkb-0001xz-Mq; Fri, 25 Oct 2019 10:23:21 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1iNwmx-0003q5-HU; Fri, 25 Oct 2019 10:25:47 +0000
+Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNwkU-0001wt-2R
- for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 10:23:15 +0000
-Received: by mail-lj1-x236.google.com with SMTP id k20so820028ljk.13
- for <openwrt-devel@lists.openwrt.org>; Fri, 25 Oct 2019 03:23:13 -0700 (PDT)
+ id 1iNwmb-0003eB-VU
+ for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 10:25:27 +0000
+Received: by mail-lf1-x12e.google.com with SMTP id b20so1299521lfp.4
+ for <openwrt-devel@lists.openwrt.org>; Fri, 25 Oct 2019 03:25:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=+AarUUOWmj3LCT5tTM4ap530YbVeHil2KmHVqFIbsbY=;
- b=vOFshmbk6osoGbcjZIBNsNlNiOwh2780rGpYtTVrG+oeqOwX3JQqUScQxn0Wm9wpkD
- Z0Eyi7MJ/eo4+6oeDlGh/+cDYnztymq+JW+dsL0+CqMVr4wGRZk2FI5uRxEW0xjnkT8a
- ACXAnpI2cawmQ28irYb8LOKrP6gKQm/YWyHpJrguiDX17BWz29mFf73ZIep6N8wEGtfG
- 8osbEuk+NmK5jyLjuU49++GB8iBA33zWMRnTD5n8fpnfeA8qUv14E04i3mrPkQnw4ob8
- I5NOD4Vb3sr4Mlw0FRx3nP9Lb+fcIsHiHposQjCW1VaYJ8euI3Qlk2U4wghImpNJdxha
- tc8w==
+ bh=YHfKJPVzFQ8NA7Py1vaxcc4rXn8p8MUg2Hg/0s3kgwY=;
+ b=ijtnZKe1Yn4wo7hbNN1vhoZtw+SeAUXeV+jLLJFJK82Ss2ozYHKbDUb20wTFXurlRN
+ MCABz4Z250EiB2W9QLre8THezoH18I6DJJ2e29U7Rb+pnC7BlOFgD5Ng5LrYlvR/Jc2u
+ 6PeFNNOoBzjAf4xtmx0s1hHurm1pdmVKIUv/4tvtTYHwNGra4eEOyHMZxGct6Y+1GLV2
+ AwWe2Q7k7jQBgNKPQxAgdx6Ep4GZnvzmyEEBBkwuOxxJDUnCTEl/yljg0FgLHTnFVlHq
+ oJde3HAdMNv9QXAGcNrOQEb03vx1QDiFy7y+tuXEgkIOoO3suuMCXRqxVEmFPxuo8MTF
+ ltUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+AarUUOWmj3LCT5tTM4ap530YbVeHil2KmHVqFIbsbY=;
- b=SNNHzpxsozrV0u1dtirziLB7PTJaOuIkOmOX5DGHNomXEWKIZXT8j+QcYijFjbVUPq
- T4p4urt15d83+tJ8YCsOUxy7jV+ehR14r1lox9J62+sRGJw7jx1V8ptJSIahnSZcmhRj
- OW8oecAfd09IuNE4vssyKPwnVahgElUySjSDCA7u+BJ1iXME/AGS8zIJkiJOQWB8Ij9N
- Pg5clCvHK9ex+RJQjz7QyOXSQWoMgjeJegDrUX1C+ZOmVFf/09NQrOq1N5z9hk/TR6Wv
- AO0X4c7e0Twye9D5H90I1bl35GUH38tI0Zql5NbV/4aAjzZwWTlTOWaPUUGl1+ZrAYq4
- kijA==
-X-Gm-Message-State: APjAAAWIZdfLD6kLQmf3W3lVVgnv9UlJRvWAC1830kFTrsHa2Hn/coG/
- VrpTmJPPssnTOghEtcSR6aNcyya7
-X-Google-Smtp-Source: APXvYqyH9YtA0B6zecHx1+3ARorl5Kup8f70qrxhxi/QrRomPkXb0lRoaH4FPabR94E2cR2sOPgMBg==
-X-Received: by 2002:a2e:89c9:: with SMTP id c9mr1837795ljk.108.1571998992218; 
- Fri, 25 Oct 2019 03:23:12 -0700 (PDT)
+ bh=YHfKJPVzFQ8NA7Py1vaxcc4rXn8p8MUg2Hg/0s3kgwY=;
+ b=uOBSgTfixDePEqKWphl/wEaD4oAnjPK6Zu4NwOkSlmZqvq5SGjI4NASQGp4SmTCt9H
+ 7nzWh7MN1RhROPjUzP/9hj5TLn4oE2v1r8SmgH5zMXohOga6wpLiiQWrUCKV68nePTUz
+ vInPnTi+WCvQCD1MgDbcUwI3+0B6tvs4qX709wH8IU24bv/DmM7h9NI5U+7PYshQgMrM
+ N18CJuV361OTuuDDp9y+t7Wdva1i92QGN34LsTggu4MLN9sTGWbfSH+ETLaHKo3YzHhn
+ ny4y6dVTS05fY6k6L4aIWn8OYBv8N8WVpsh4/nGCLaFWJ3NJu7VO0mnq1nvK8ZGgf2zm
+ cdnA==
+X-Gm-Message-State: APjAAAWBxMz7P3BPpaR1t18Nv6swSvF1HojS1rpRiXkEA8X6MSThxKzJ
+ MlOqSoM1/rcGC6Wqf1kUuio=
+X-Google-Smtp-Source: APXvYqyogg30cE4vnrN4P5KVZIVOMnK4pYxsF77MAMvia5aYE6f4/scBmcQbqxgB36FKO6Lk1pI4gA==
+X-Received: by 2002:a19:651b:: with SMTP id z27mr2104449lfb.117.1571999123787; 
+ Fri, 25 Oct 2019 03:25:23 -0700 (PDT)
 Received: from home.paul.comp (paulfertser.info.
  [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id 190sm651091ljj.72.2019.10.25.03.23.11
+ by smtp.gmail.com with ESMTPSA id 30sm673900lju.52.2019.10.25.03.25.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 25 Oct 2019 03:23:11 -0700 (PDT)
+ Fri, 25 Oct 2019 03:25:23 -0700 (PDT)
 Received: from home.paul.comp (localhost [127.0.0.1])
  by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- x9PAN9tx019222; Fri, 25 Oct 2019 13:23:09 +0300
+ x9PAPLGN019239; Fri, 25 Oct 2019 13:25:21 +0300
 Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id x9PAN9tt019221;
- Fri, 25 Oct 2019 13:23:09 +0300
-Date: Fri, 25 Oct 2019 13:23:09 +0300
+ by home.paul.comp (8.15.2/8.15.2/Submit) id x9PAPLTT019238;
+ Fri, 25 Oct 2019 13:25:21 +0300
+Date: Fri, 25 Oct 2019 13:25:20 +0300
 From: Paul Fertser <fercerpav@gmail.com>
-To: mail@adrianschmutzler.de
-Message-ID: <20191025102308.GD1190@home.paul.comp>
+To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
+Message-ID: <20191025102520.GE1190@home.paul.comp>
 References: <20190813182540.w4ee64he6hkteahc@home.paul.comp>
  <20190828090924.14695-1-fercerpav@gmail.com>
  <038201d56043$9a8a7c20$cf9f7460$@adrianschmutzler.de>
+ <20190901073349.ekh6zvtuovseshoq@home.paul.comp>
+ <e81da978-ed2d-d1e9-e160-879314523210@guifi.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <038201d56043$9a8a7c20$cf9f7460$@adrianschmutzler.de>
+In-Reply-To: <e81da978-ed2d-d1e9-e160-879314523210@guifi.net>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_032314_111624_B0E41AF4 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191025_032526_060938_A8A130DC 
+X-CRM114-Status: GOOD (  11.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:236 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:12e listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,33 +110,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, 'John Crispin' <john@phrozen.org>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Hi Roger,
 
-On Sat, Aug 31, 2019 at 11:32:33PM +0200, mail@adrianschmutzler.de wrote:
-> > +	xiaomi,mir3g-v2)
-> > +		ucidef_add_switch "switch0" \
-> > +			"2:lan:2" "3:lan:1" "4:wan" "6t@eth0"
-> > +		;;
+Thank you for the review!
+
+On Fri, Oct 11, 2019 at 07:14:25PM +0200, Roger Pueyo Centelles | Guifi.net wrote:
+>  +       xiaomi,mir3g-v2)
+>  +               wan_mac=$(mtd_get_mac_binary factory 0xe006)
+>  +               ;;
 > 
-> "6t@eth0" and "6@eth0" should be the same, so this can be merged with cudy,wr1000.
+> You may want to add "label_mac=$wan_mac" there, if the MAC address on the back
+> label matches the WAN interface (on the R4G it does).
+
+Indeed, done.
+
+> Also, it looks like a newline should be added at the end of the .dts file.
+
+I've checked and I see there's already a newline present at the end of
+the file.
+
+> Since there are two Xiaomi Router 4A variants, the 100m and the Gigabit Edition,
+> you may want to use:
+> 
+> +  DEVICE_ALT0_VENDOR := Xiaomi
+> +  DEVICE_ALT0_MODEL := Mi Router 4A
+> +  DEVICE_ALT0_VARIANT := Gigabit Edition
 
 Done.
 
-> > +	xiaomi,mir3g-v2)
-> > +		wan_mac=$(mtd_get_mac_binary factory 0xe006)
-> > +		;;
-> 
-> This can be merged with elecom,wrc-1167ghbk2-s|\ etc.
+> Last, I added the device to uboot-envtools. Feel free to copy it:
+> [2]https://github.com/openwrt/openwrt/pull/2486/commits/2625499ca554449e7a19bb5f6f61acdefb5a69e1
 
-I rebased to current master and added label_mac (as per Roger's
-suggestion), and since I can not be sure about all the other devices,
-I left the dedicated section for this model.
+Since the uboot partition is not writeable by default, and there's no
+way to install OpenWrt without changing it first by some other means
+(such as an external SPI flash programmer) I have a feeling adding it
+to uboot-envtools wouldn't be useful.
 
 -- 
 Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!

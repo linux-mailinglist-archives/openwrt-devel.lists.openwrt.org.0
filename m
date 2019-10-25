@@ -2,89 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B29EAE53E2
-	for <lists+openwrt-devel@lfdr.de>; Fri, 25 Oct 2019 20:48:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0785E54AA
+	for <lists+openwrt-devel@lfdr.de>; Fri, 25 Oct 2019 21:51:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=srzxHUHXtYvcCCK5hk2UHwInJCtbsVZdzHWqG28LNPE=; b=BEJ
-	DLYq88y0I6s13o3I0t/HRD+j9BITzPiVkg+6q0c3cW55vigB6m/gFhIWdsjGS6e+HWF/AhXdDi8Lr
-	q/sdmAigYaogWndz6RWWksMZ+hZl6g6F0bmiZGHj/OsKK07QTHMsN1Fjp6BLOW8Iqlg3AkWx4bOaM
-	n+8vsjJsnoae5sSMIC+U6Ch8LpSfd6kJ7eDRiviSoSnne0kFz8Tjgx0fp9mtJxIstnsMDhGVH+76e
-	N3t7jNqThXxEv7i5RaRYbdq2kH0yGFAzRZSWXpUMpa3eP6TnrXxTR9EhBO4+g5BV0T8WTEVHtetvf
-	SSuJJMHiNyHvUDTXliz9D/b7R9qtV/g==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VhvylxmY4qGlqFDBe2VeileD9scs7z/+UzWlnpikDtU=; b=S2dC6kitGv80TrlVLt3HiUNrI
+	zHVjppFHliFl27ZhRGj4qsXfg07oNX8wEmYm+ZWwD7cEcnvZjczQZMdYleOV38fMrdHAPm706t25I
+	3gimeoaGavD3QTwxBLS2S8GlDaF/a0G79rW5NuXf+ikM2AeSx7S6Uz3MArlOP1Fsy/ghQMd9v86F6
+	GFjOPqk3yvHxZPYHW9Bx78gnDS7fUPUHQVVDC2w6930VLVpDMJcNESp5hJ1tBtnlh4CbbyqsMcL2i
+	T+ZrkMp18gbFPI6JLToP96ZHM0VAx/4c79aVDHLaOrVsnQbkAYzAhsQFQPguRt1FReUe9/D+hvW9g
+	IW/JPxh3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO4dT-0003U8-K1; Fri, 25 Oct 2019 18:48:31 +0000
-Received: from n1nlsmtp03.shr.prod.ams1.secureserver.net ([188.121.43.193])
+	id 1iO5bi-0003vf-OQ; Fri, 25 Oct 2019 19:50:46 +0000
+Received: from iapetos.krtzbrtz.org ([85.124.251.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO4dJ-0003SD-0D
- for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 18:48:22 +0000
-Received: from n3plcpnl0101.prod.ams3.secureserver.net ([160.153.153.168])
- by : HOSTING RELAY : with ESMTP
- id O4bai4zCqLK4aO4bai9aXp; Fri, 25 Oct 2019 11:46:34 -0700
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=unibulkmarketingprovider.com; s=default; h=Content-Type:MIME-Version:
- Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=f0N2LI+Ir70wjw0bdxzB2yfVEnKKZBSotohgLGAEIeA=; b=ioIyNlVf/tHc7O5goS3r+2GMh
- dQwKXa49C67u0MVwQpCH3X+JyHjIGZEhcuYsJAzhPBqlmxBSiioyB7o7CEvB0OUSDhR8WbKG44V9H
- DoNZPkfeSViOrYZxxEaSYM0oS2magr2Pox8IIz2B8Ei7+Bsqsn5ksZYfYlsRnuS3SFCajqPgCW6cP
- r0/7cs0PXIodWmDJ8coYYQu7Cnk3PC+jimLWKhO0VUoEpSvcX2u5AXEVcA5OncUZnNvNCRsWEo1vJ
- su2/njFqzzDJqvCplp34pRtSy52hT68WkyWa43e2RFSCwXOZ0/nwgOwGYRMQBqzMODVUYkkvbEr1T
- U+KpUoPAA==;
-Received: from [180.151.249.166] (port=18794 helo=WS80)
- by n3plcpnl0101.prod.ams3.secureserver.net with esmtpsa
- (TLSv1:ECDHE-RSA-AES256-SHA:256) (Exim 4.92)
- (envelope-from <amber.burns@unibulkmarketingprovider.com>)
- id 1iO4bZ-00AUUf-PF
- for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 11:46:34 -0700
-From: "Amber Burns" <amber.burns@unibulkmarketingprovider.com>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Sat, 26 Oct 2019 00:16:33 +0530
-Message-ID: <!&!AAAAAAAAAAAYAAAAAAAAAPH2Tkye77dHheeOcSLWoPfCgAAAEAAAAM1owsLIA2ZOje19WYcogo8BAAAAAA==@unibulkmarketingprovider.com>
+ id 1iO5bb-0003uo-D5
+ for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 19:50:41 +0000
+Received: from [192.168.1.11] (194-166-119-100.hdsl.highway.telekom.at
+ [194.166.119.100])
+ by iapetos.krtzbrtz.org (Postfix) with ESMTPSA id 81AE49ED8F
+ for <openwrt-devel@lists.openwrt.org>; Fri, 25 Oct 2019 21:50:29 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=krtzbrtz.org;
+ s=chswiq6a; t=1572033029;
+ bh=1lvSaWIifQqT8Du0kG2feLCWHcFSgH9c9qZZGhsz428=;
+ h=Subject:To:References:From:Date:In-Reply-To:From;
+ b=X9G5ClKOeC+hKiqpfmanhj3f4SUHOqWOJVVvR99Ql+wFgn6oEK/nAcTMIKVBgH1PN
+ mzvz9ONc9VgqLuNGtCEE6epE624S5b4sSDwlad3VHl2gzumyu/738xowdsEUnB3NwR
+ RIEWWY5KFo8hZcsGTjwK+95NVmlHdxRo5NsXa7xyHbTeTVjobroxhyJ3jrLRuHbz54
+ jeVr4pcIuYqP4p4ni4wrRSmSL9fgZ7U+CdRimwKZ0foJg/scglyxoPkb+Cdp2mEDR8
+ oXmw3vborTBJ4HKfH2B0IsX8PUrNfzTEX947L0/ElMrmTFde4Z3KaKP4iPuEFexpln
+ I1CpkvOOS43mQ==
+To: openwrt-devel@lists.openwrt.org
+References: <20191024115430.19992-1-openwrt.dev@krtzbrtz.org>
+ <007d01d58b27$1a730a70$4f591f50$@adrianschmutzler.de>
+From: 'Patrick Supper' <openwrt.dev@krtzbrtz.org>
+Message-ID: <2b2cc133-5d6f-4f60-73c8-f879bfc739aa@krtzbrtz.org>
+Date: Fri, 25 Oct 2019 21:50:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Mailer: Microsoft Office Outlook 12.0
-Thread-Index: AdWLZIW1fJvAiXtTT1W1sdeBmawwYg==
-Content-Language: en-us
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - n3plcpnl0101.prod.ams3.secureserver.net
-X-AntiAbuse: Original Domain - lists.openwrt.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - unibulkmarketingprovider.com
-X-Get-Message-Sender-Via: n3plcpnl0101.prod.ams3.secureserver.net: authenticated_id:
- amber.burns@unibulkmarketingprovider.com
-X-Authenticated-Sender: n3plcpnl0101.prod.ams3.secureserver.net: amber.burns@unibulkmarketingprovider.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-CMAE-Envelope: MS4wfECELKqpoUNe3XfFzrqyvAbGDvHE2eV3zHQvzQgZr8v3rv78n6EKKHf/YacociwM/vQWSkW5K9QBSBs8SU2JrKalsDktS38c64ZFGSWrzlR1A7MCEJnJ
- r0i3Zl38KcC8QKM8cvZfv2Ha2/YLqBGWUC8/2oprN7AOxvs1i6rjcLdFz38b1liFA/F60pHhKmqAzeFZeVuP3B8Ye6PiU6fS7ElqSNAgCallkmucUuWLrHK0
- WyUsb0JiOBnse/A3DGMfug==
+In-Reply-To: <007d01d58b27$1a730a70$4f591f50$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_114821_212103_7AB491F6 
-X-CRM114-Status: UNSURE (  -1.26  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191025_125039_937485_75C0F32C 
+X-CRM114-Status: GOOD (  12.91  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [188.121.43.193 listed in list.dnswl.org]
+ 0.5 FROM_DOMAIN_NOVOWEL    From: domain has series of non-vowel letters
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: [OpenWrt-Devel] Radiologists Database.
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for ZyXEL NWA1123-NI
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,195 +78,89 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3149279407780144271=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hello,
 
---===============3149279407780144271==
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_0234_01D58B92.9FBBAAA0"
-Content-Language: en-us
+thank you for reviewing. I just changed the address and ART-Label to 
+lowercase in my source => fixed.
 
-This is a multipart message in MIME format.
+### Regarding the cal-data of the pcie-wifi (AR9382):
+It seems to me it has some kind of EEPROM, from OEM-BootLog:
+wmac-wifi: "Using Cal data from Flash 0xbfff0000"
+pcie-wifi: "Using Cal data from EEPROM 0x3ff"
 
-------=_NextPart_000_0234_01D58B92.9FBBAAA0
-Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+At least I was able to identify only one cal-data section in art, 
+starting at 0x1000. Starting from 0x1450 art is totally empty.
 
-Hi,
+On OpenWrt ath9k does not complain about missing cal-data and the 
+wifi-interface is functional.
 
- 
+Please let me know if I might be right with my assumption, and if so, 
+shall i write a comment in the dts?
+For example: /* has cal-data in eeprom */
 
-I wanted to check if you'd be interested in procuring records of
-Radiologists?
+Logfiles from OpenWrt and OEM are available on the Device-Wiki:
+https://openwrt.org/inbox/zyxel/zyxel_nwa1123-ni
 
- 
+### MAC addresses
 
-If  you are interested let me know your target geography so, that I can
-revert with counts and pricing.
+# OEM-Firmware takes them from mib0 (/etc/rc.d/rcS and 
+/etc/rc.d/rc.wlan), in short:
 
- 
+	strings /dev/mtdblock6 > /tmp/mtdblock6
+	TEMP=`cat /tmp/mtdblock6 | grep 'eth0mac' | awk '{print $3}'`
+	ETH0MAC=`expr substr $TEMP 9 17`
+	ifconfig eth0 hw ether $ETH0MAC
 
-Awaiting for your quick response.
+	TEMP=`cat /tmp/mtdblock6 | grep 'wifi0mac' | awk '{print $4}'`
+	WIFI0MAC=`expr substr $TEMP 10 17`
+	iwpriv wifi0 setHwaddr $WIFI0MAC
 
- 
+	TEMP=`cat /tmp/mtdblock6 | grep 'wifi1mac' | awk '{print $5}'`
+	WIFI1MAC=`expr substr $TEMP 10 17`
+	iwpriv wifi1 setHwaddr $WIFI1MAC
+
+# strings /dev/mtdblock6 (mib0) gives:
+serialnum=S122L12345678 countrycode=276 eth0mac=00:11:22:33:44:05 
+wifi0mac=00:11:22:33:44:06 wifi1mac=00:11:22:33:44:07
+(yes, all in one line and not usable with mtd_get_mac_ascii by default)
+
+# "strings /dev/mtd1 | grep mac" (u-boot-env) gives:
+eth0mac=00:37:ff:00:00:01
+wifi0mac=00:37:ff:00:00:02
+wifi1mac=00:37:ff:00:00:03
+
+...but those are generic and identical on all my devices => not usable 
+by default
+
+# art contains a valid MAC address at 0x1002, but it is the on of eth0
+
+I guess that explains why i decided to use the following to set the 
+mac-addresses:
+
+eth0:  <&art 0x1002>
+wifi0: <&art 0x1002> + 1
+wifi1: <&art 0x1002> + 2
+
+I have 4 of this devices and for those this is correct.
+But i have to admit that i got them all at the same time and the vendor 
+might have changed to set a valid/correct MAC address for eth0 at art 
+0x1002 before/after i got mine...
+
+How shall we proceed with this? Keep the current solution (with the risk 
+that some users maybe end up with wrong MAC-addresses)? Or extend 
+mtd_get_mac_ascii with an option for white-space as a field separator 
+(or create a new function) and set the MAC address in 
+/etc/board.d/02_network + /etc/hotplug.d/firmware/10-ath9k-eeprom?
 
 Regards,
-
-Amber Burns
-
-Marketing Manager
-
- 
-
-If you do not wish to receive future emails from us, please reply as
-'REMOVE'
-
- 
-
- 
-
-
-------=_NextPart_000_0234_01D58B92.9FBBAAA0
-Content-Type: text/html;
-	charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40">
-
-<head>
-<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
-charset=3Dus-ascii">
-<meta name=3DGenerator content=3D"Microsoft Word 12 (filtered medium)">
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	margin-bottom:.0001pt;
-	font-size:11.0pt;
-	font-family:"Calibri","sans-serif";}
-a:link, span.MsoHyperlink
-	{mso-style-priority:99;
-	color:blue;
-	text-decoration:underline;}
-a:visited, span.MsoHyperlinkFollowed
-	{mso-style-priority:99;
-	color:purple;
-	text-decoration:underline;}
-span.EmailStyle17
-	{mso-style-type:personal-compose;
-	font-family:"Calibri","sans-serif";
-	color:windowtext;}
-.MsoChpDefault
-	{mso-style-type:export-only;}
-@page Section1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.Section1
-	{page:Section1;}
--->
-</style>
-<!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <o:shapelayout v:ext=3D"edit">
-  <o:idmap v:ext=3D"edit" data=3D"1" />
- </o:shapelayout></xml><![endif]-->
-</head>
-
-<body lang=3DEN-US link=3Dblue vlink=3Dpurple>
-
-<div class=3DSection1>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'>Hi,<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'>&nbsp;<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><span style=3D'font-size:10.5pt;color:#244061'>I =
-wanted to
-check if you&#8217;d be interested in procuring records of =
-<b>Radiologists</b>?<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'><o:p>&nbsp;</o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'>If&nbsp; you are
-interested let me know your target geography<b> </b>so, that I can =
-revert with
-counts and pricing.<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'>&nbsp;<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'>Awaiting for
-your quick response.<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'><o:p>&nbsp;</o:p></span></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:#244061'>Regards,<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><b><span =
-style=3D'font-size:10.5pt;color:#244061'>Amber =
-Burns<o:p></o:p></span></b></p>
-
-<p class=3DMsoNormal><b><span =
-style=3D'font-size:10.5pt;color:#244061'>Marketing
-Manager<o:p></o:p></span></b></p>
-
-<p class=3DMsoNormal><span =
-style=3D'font-size:10.5pt;color:black'><o:p>&nbsp;</o:p></span></p>
-
-<p class=3DMsoNormal><span style=3D'font-size:8.0pt;color:gray'>If you =
-do not wish
-to receive future emails from us, please reply as =
-&#8216;REMOVE&#8217;<o:p></o:p></span></p>
-
-<p class=3DMsoNormal><o:p>&nbsp;</o:p></p>
-
-<p class=3DMsoNormal><o:p>&nbsp;</o:p></p>
-
-</div>
-
-</body>
-
-</html>
-
-------=_NextPart_000_0234_01D58B92.9FBBAAA0--
-
-
-
---===============3149279407780144271==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Patrick
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3149279407780144271==--
-
-

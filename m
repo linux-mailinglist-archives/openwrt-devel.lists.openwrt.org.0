@@ -2,68 +2,67 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85975E48D3
-	for <lists+openwrt-devel@lfdr.de>; Fri, 25 Oct 2019 12:49:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DAC8E48EE
+	for <lists+openwrt-devel@lfdr.de>; Fri, 25 Oct 2019 12:52:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8ZmNoF85euFUoGUeFF0rjpsP+fBBrM80QT75Q/AQInw=; b=N/RYiHrPbSiDBc
-	a9pAsYt+Pjqx7e397CPYksu2aHwarUjAOJ2XRIORnDm1sYTeksEOm6YWgIGrUnfaS0yOsN1QK4U6g
-	laTyrSHfAh2xQ67qvE7ds1knTpFXo2pmu0DNkDtR4yk2b2fK0X24mTMn2HHsthKiAIs90KQXQOz/r
-	H/H7cHdL5UyZ6t0u5p9VJhftHMdTH9vH4PW0ijnROI9x3mqO3qaaKI0dL53tsUgkDhsZNYps3acSV
-	GmAS3kSQgHtK4SD/zOy30s3Zs3hwppsPSEZXrzJhMkmttkjFSzIVBPcF2HRPt8qMnKnlfDeRlW4Yd
-	eH03gArPXhmj+XU6scBQ==;
+	List-Owner; bh=0MH1ii3GYPoT0PefrL04mNrxYdTv9ft0flxmYYcFPiI=; b=nL1Tt9NGFYU6b7
+	cQ0jadU9uQWRmRx/xDoTy/mOEf8jD3zcbsZL5jq34zM6giES1JKAZsy8TEJIZywl23PTuKD5fAoNe
+	UWx3/ZkBcgjS9XyOHZiqQC3UBPUeX5PvdRNUynXKs1U94b3YD9z2iDJsydKvo7hyb+9QTQk0ZNlUS
+	3HrFGMN+6gTucCy7jNB8+r6CEoTL8kb8xrN4Gg1Ylqj89wS01w1lHgjI1LrIpoz0sjU2rySAcmqQ9
+	roGQ0/kv2iNrlCk2JEQEsuquptNkIB6eWfuw9BdBVqNLQ6oBIscxOswc5vwmP8TosC9vTZljmliTH
+	QkiQH7x6i8ypqCOPzk9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNx9Z-0003io-5A; Fri, 25 Oct 2019 10:49:09 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iNxCT-0005wu-Sm; Fri, 25 Oct 2019 10:52:09 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNx9S-0003iK-2o
- for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 10:49:03 +0000
-Received: by mail-pg1-x544.google.com with SMTP id e10so1284123pgd.11
- for <openwrt-devel@lists.openwrt.org>; Fri, 25 Oct 2019 03:49:01 -0700 (PDT)
+ id 1iNxCL-0005wX-4A
+ for openwrt-devel@lists.openwrt.org; Fri, 25 Oct 2019 10:52:02 +0000
+Received: by mail-pf1-x444.google.com with SMTP id c7so150632pfo.12
+ for <openwrt-devel@lists.openwrt.org>; Fri, 25 Oct 2019 03:52:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=MdMeMdcggYj6DcCjge3BEsVexb6Rj56Nyj9LN/VBcsM=;
- b=Pys7xagnuQrjW73AKyzEyFKLhtSBCDIcaiS/pG1OhqXlC5av+BA9YNbX+VuVWCY1AE
- VPlH7x1oYNVtzaDqXAmo8/ZWBtFjuUKwBdImijTrzXKeAt88lkkjmKYtA6/RzOD83Zfq
- vllxjpDT3I4zW8BE2rNEnknhklbd6+RXk1vA6ZkyLPi0BbUgE7us8DIwalxXud4I4FSi
- iU0SYijTmpHh7AfldQEZtUgPeP26+/Dkmlosbo2C8cBr/hc4d0i50X4ncD+MODlM3QDq
- 3nh474F60TCQz/oVXeqiQ3PkAEiQhtOLsVFsJKaJc4JSsLWiCtPel0lcZA71dE94CC/J
- +P0w==
+ bh=a7n6VEWBkllglm7O7EUV3YaTDVr3Yf05VKt3eAwjqGA=;
+ b=uGTTUzgmFXiO13tdFEBD8auK57CjjCcVvtAu6GXttxU3JxQS5emyHX8rRK4tiy4ow/
+ nV/JKh8pqdvcFFtlyzqArSQ8OSgBLpR/kqLjSDCmsdJXStua1PRWWrrNL8CQBUe57+nj
+ GT9Z7ZFlxCW+KHoUVNHXI9z2Lli7F/QoDUz70qztLHyoC1jICcB76wBm9eWHvaVdZ2qo
+ sg7cYY+21KUa/6hEJMhH/K7zRrPwexcs82g/ROkf95GL1w6MpsPwZk64FYVAhqEngaQU
+ wXAqI2zBC6Ifbk7XlgxML4Esm9VvYHsw1bz+DdOcniyp8mct7noj9YLFZhd1RAcv+hg+
+ NLOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=MdMeMdcggYj6DcCjge3BEsVexb6Rj56Nyj9LN/VBcsM=;
- b=Oo0riHNnXR4JXA3wUdGrqxogT4TSDxAtXyV0qYc0vNNXRsNy6aHJHPwo68B1OH6ksl
- d39cAVVRUPoRkS4onk3hw4q046AJ4/tsrvlEBCstzzpgtNooARoY73UOZ79j9MsHR+Aw
- Dm3dx08L8jU7BQUOGP7+OXkwquXFvEcmVjeJEvbfZRZThjJMdIoIi1iqhefU/NLOtOw4
- EXZwL/oQtuhy/xQlRpa+bbrbBWYdaClAUoL7cCEwOM8QNGiKybtgzyGRbTm01IXaXeIe
- ENgTrFeH0svsoMI8C97WMxp8euS0b73I0+dAuqUtUfTydHpTopyYzN48H1pDZeijC0r1
- pEUQ==
-X-Gm-Message-State: APjAAAVAiixI9YAsFl632Fqg3E7iI5SXhiIBxXaaz3QjmEOW1MloIAsL
- PDz8fDEDRqM+kSxIIfe+Mt8=
-X-Google-Smtp-Source: APXvYqwJtyLsoU0/6IIXiLAc+79qWZLhGluGOdqPXw5YttuCWuSGsJmHIAlUI/WZFFrwrGnDgpr9Wg==
-X-Received: by 2002:a17:90a:ad0c:: with SMTP id
- r12mr3333062pjq.1.1572000540820; 
- Fri, 25 Oct 2019 03:49:00 -0700 (PDT)
+ bh=a7n6VEWBkllglm7O7EUV3YaTDVr3Yf05VKt3eAwjqGA=;
+ b=Lwx/BvlLmYumtO2KzouPaZCYVSKINLCbFtpuTGURRiiVqT/3sXTrMC2p/mgC1P44B7
+ 3uBX+8fu0jyEBM6k779UlWPiZ4cnh746qCo4+2PM/K5KAGVnGoAla5149Xq0/elzuTKE
+ 2YlY8K+JZ82SRoPtG2lE9F6c4GOljZQc23HoDVgLxUjeD9sSeLGQGNpk23sZO+t5aVy4
+ 6MBWEExdtoRj9YY55sJdRmLrxd6ficLnQTRN+UTrS7tb5A81TX3oXakj1H5719xuguv0
+ 2zPoFCT+KKbxnI5+ioeFIhKL4AKQTUv813YMpuEHelfoyA7VmYpIZ6nqj/AVmsdLYP6h
+ mgKQ==
+X-Gm-Message-State: APjAAAWO19oMsN1RaEf2bxGaHbABtxJhHTl2OuUdDhF6CeL1CCjYOqcw
+ M2Z94W2MAQMqfVAlg4RC5fOdNqirkNs=
+X-Google-Smtp-Source: APXvYqy1bLVRWsKOiHt7rmO3jskS5PBhMejaHe1c0v3TJ55On1SyII/u8NX4DyybgIrZ5aXk1kJVLg==
+X-Received: by 2002:a62:4dc1:: with SMTP id a184mr2704576pfb.136.1572000720137; 
+ Fri, 25 Oct 2019 03:52:00 -0700 (PDT)
 Received: from titan.hq.cloud.yunionyun.com ([161.117.5.46])
- by smtp.gmail.com with ESMTPSA id 129sm2303766pfg.38.2019.10.25.03.48.56
+ by smtp.gmail.com with ESMTPSA id w10sm1830721pjq.3.2019.10.25.03.51.57
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 25 Oct 2019 03:48:59 -0700 (PDT)
+ Fri, 25 Oct 2019 03:51:59 -0700 (PDT)
 From: Yousong Zhou <yszhou4tech@gmail.com>
-To: rafal@milecki.pl
-Date: Fri, 25 Oct 2019 10:48:47 +0000
-Message-Id: <20191025104847.24591-1-yszhou4tech@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 25 Oct 2019 10:51:49 +0000
+Message-Id: <20191025105149.25891-1-yszhou4tech@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_034902_150475_28555150 
-X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-CacheID: sfid-20191025_035201_171949_79372A5A 
+X-CRM114-Status: UNSURE (   8.99  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -84,8 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH fstools v2] libblkid-tiny: ntfs: fix
- use-after-free
+Subject: [OpenWrt-Devel] [PATCH fstools] block: use fsck.fat instead of
+ dosfsck
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,69 +96,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Yousong Zhou <yszhou4tech@gmail.com>, openwrt-devel@lists.openwrt.org
+Cc: Yousong Zhou <yszhou4tech@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The memory pointed to by ns can be reallocated when checking mft records
+Dosfsck is only available when --enable-compat-symlinks was given when
+configuring dosfstools.  These symlinks are not enabled in OpenWrt
+dosfstools package
 
-Fixes FS#2129
+Suggested by Reiner Otto in FS#2408
 
 Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
 ---
-v2 <- v1
+ block.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
- -Fix bad DBG() call in previous patch missing volume_serial as arg
-
- libblkid-tiny/ntfs.c | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
-
-diff --git a/libblkid-tiny/ntfs.c b/libblkid-tiny/ntfs.c
-index 3a9d5cb..2426e70 100644
---- a/libblkid-tiny/ntfs.c
-+++ b/libblkid-tiny/ntfs.c
-@@ -86,6 +86,7 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
+diff --git a/block.c b/block.c
+index 39212d2..a849500 100644
+--- a/block.c
++++ b/block.c
+@@ -708,7 +708,7 @@ static void check_filesystem(struct probe_info *pr)
+ 	struct stat statbuf;
+ 	const char *e2fsck = "/usr/sbin/e2fsck";
+ 	const char *f2fsck = "/usr/sbin/fsck.f2fs";
+-	const char *dosfsck = "/usr/sbin/dosfsck";
++	const char *fatfsck = "/usr/sbin/fsck.fat";
+ 	const char *btrfsck = "/usr/bin/btrfsck";
+ 	const char *ntfsck = "/usr/bin/ntfsfix";
+ 	const char *ckfs;
+@@ -718,7 +718,7 @@ static void check_filesystem(struct probe_info *pr)
+ 		return;
  
- 	uint32_t sectors_per_cluster, mft_record_size;
- 	uint16_t sector_size;
-+	uint64_t volume_serial;
- 	uint64_t nr_clusters, off, attr_off;
- 	unsigned char *buf_mft;
- 
-@@ -146,15 +147,16 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
- 		return 1;
- 
- 
-+	volume_serial = ns->volume_serial;
- 	off = le64_to_cpu(ns->mft_cluster_location) * sector_size *
- 		sectors_per_cluster;
- 
- 	DBG(LOWPROBE, ul_debug("NTFS: sector_size=%"PRIu16", mft_record_size=%"PRIu32", "
- 			"sectors_per_cluster=%"PRIu32", nr_clusters=%"PRIu64" "
--			"cluster_offset=%"PRIu64"",
-+			"cluster_offset=%"PRIu64", volume_serial=%"PRIu64"",
- 			sector_size, mft_record_size,
- 			sectors_per_cluster, nr_clusters,
--			off));
-+			off, volume_serial));
- 
- 	buf_mft = blkid_probe_get_buffer(pr, off, mft_record_size);
- 	if (!buf_mft)
-@@ -203,9 +205,9 @@ static int probe_ntfs(blkid_probe pr, const struct blkid_idmag *mag)
- 	}
- 
- 	blkid_probe_sprintf_uuid(pr,
--			(unsigned char *) &ns->volume_serial,
--			sizeof(ns->volume_serial),
--			"%016" PRIX64, le64_to_cpu(ns->volume_serial));
-+			(unsigned char *) &volume_serial,
-+			sizeof(volume_serial),
-+			"%016" PRIX64, le64_to_cpu(volume_serial));
- 	return 0;
- }
- 
+ 	if (!strncmp(pr->type, "vfat", 4)) {
+-		ckfs = dosfsck;
++		ckfs = fatfsck;
+ 	} else if (!strncmp(pr->type, "f2fs", 4)) {
+ 		ckfs = f2fsck;
+ 	} else if (!strncmp(pr->type, "ext", 3)) {
 
 _______________________________________________
 openwrt-devel mailing list

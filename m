@@ -2,77 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23C5FE59AF
-	for <lists+openwrt-devel@lfdr.de>; Sat, 26 Oct 2019 12:55:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C568E6288
+	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:06:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w7bjMzEWEfpHW3QoLAL3htliL75sEIslVcVvWYWnnGE=; b=f26CnL+VuojWfO
-	ytMj/YjOS6yUdifJZKMaZiwJTbqxrISj60z+ifoFGA09lJ2cPXp1ApPHxScpUlH07bq9rAZrlFZoc
-	mvRM+n3cmNESq1ZG78rvtnDisDBbkZDtp7pHgZOfyTygyEBY16Kw9qnat6IJ+OiB3rGDWiqgKt8JY
-	FT1iagy1dCzCHP7W2QlRZVAJBi0OOQZwUPv/r1vzcUwmyIlU72CXqI1cQ7XruBGQrDImiEpp0uJmO
-	1jLO0bc3cqc6QIYkpjEiSXly+8L2RM7ylWLgz2JP+ve4DT5TwR11bR6r/Q2LS6ZvjIS/QMJd+lSn5
-	j/+khq6wO/Ihbn/1NXZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8LIda7jIMtYrz9pEPWY/vFNqmCIvt0xusjZZ0OruIAY=; b=M3l78Tp17ew3Wehyhze5uAK0e
+	qmIxhb9GVxXJDankaG4B7tWcHEWuGuvEVUu2cXPBDS9IB7I1TFlh0z1Dk+L0idZ5HRKfizu3BsKkq
+	+JI2cKUS/7HbnYfA6wBsbogJMGhXn6X3nqZl9HbPe/APMJqb+w5yDuMg3JmanbkFLaFhQ1F+QVNXJ
+	xvv+Ej6dApU8E4oGrT4iajgluuVT128FcsRtarETam+8J04DGxmKgoyMrgupQ09nPqT3nQW+aPVvK
+	HaxzI69eKe5Z892HyEr0E5197PWLr8S+6zqz+OExb0I+qWAgW7m6DmDJJ5WL4au1/89PInPD2wovC
+	iOZ+WKMbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOJj1-0007Od-K2; Sat, 26 Oct 2019 10:55:15 +0000
-Received: from mx4.wp.pl ([212.77.101.12])
+	id 1iOiFK-00011r-TP; Sun, 27 Oct 2019 13:06:14 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOJit-00064I-OC
- for openwrt-devel@lists.openwrt.org; Sat, 26 Oct 2019 10:55:09 +0000
-Received: (wp-smtpd smtp.wp.pl 27731 invoked from network);
- 26 Oct 2019 12:54:54 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1572087294; bh=A2QpK5DHwSKuGJ7X2zdMRD8tLtEO51RwYWauTP3PiuE=;
- h=From:To:Cc:Subject;
- b=ogS02bmEP7wawTlMvwnMFminE9oeduy6peR8KoGdbcHGQvDVX5QMdDHYLEzI36O9Z
- ySAVUN7cqTsxpSi+GTf6gsCCeACTiDjctBxAQ70dWEDCQbcwa6EMxzoA89iWMmZLuP
- 0RInhQtLvaegAWRF4xwooizokm4EKlFDyjXkS44U=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <lede@allycomm.com>; 26 Oct 2019 12:54:54 +0200
-Date: Sat, 26 Oct 2019 12:54:52 +0200
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: Jeff Kletsky <lede@allycomm.com>, Jeff Kletsky <git-commits@allycomm.com>
-Message-ID: <20191026125452.343eb9ed@kosmio.komorska>
-In-Reply-To: <20191025035501.3063-3-lede@allycomm.com>
-References: <20191025035501.3063-1-lede@allycomm.com>
- <20191025035501.3063-3-lede@allycomm.com>
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+ id 1iOiF3-0000wa-TX
+ for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:06:00 +0000
+Received: from p5dcfb592.dip0.t-ipconnect.de ([93.207.181.146]
+ helo=[192.168.45.104])
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>)
+ id 1iOiEx-0003lo-NK; Sun, 27 Oct 2019 14:05:52 +0100
+To: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>,
+ openwrt-devel@lists.openwrt.org
+References: <3020121.uscLunan1g@tool>
+From: John Crispin <john@phrozen.org>
+Message-ID: <ba5d5df3-a26d-15a0-04d9-81bb5c79ae5f@phrozen.org>
+Date: Sun, 27 Oct 2019 14:05:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-X-WP-MailID: 5c5affaaa441ce216eead141f2daf060
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [McPk]                               
+In-Reply-To: <3020121.uscLunan1g@tool>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191026_035508_153581_44930900 
-X-CRM114-Status: UNSURE (   6.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191027_060558_114604_C675011D 
+X-CRM114-Status: GOOD (  21.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.12 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michal.cieslakiewicz[at]wp.pl)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] ath79: Prepare NAND subtarget for
- upstream support of SPI NAND
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH] Add support for Inventel DV4210
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,68 +61,278 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Thu, 24 Oct 2019 20:55:01 -0700
-Jeff Kletsky <lede@allycomm.com> wrote:
-
+On 22/09/2019 22:05, Daniel Gonzalez Cabanelas wrote:
+> Add support for the Inventel DV4210 router.
 > 
-> Cc: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+> This is an Inventel Livebox 1 board. The patch supports the board with a CFE bootloader, and
+> a RAM mod (64 MB, tested).  The board originally comes with 8 MB flash.  Under this conditions
+> this old BCM6348 based board still runs quite fine with current snapshots.
 > 
-> [...]
->
-> diff --git a/target/linux/ath79/nand/config-default
-> b/target/linux/ath79/nand/config-default index c8114a4985..695afdce88
-> 100644 --- a/target/linux/ath79/nand/config-default
-> +++ b/target/linux/ath79/nand/config-default
-> @@ -1,15 +1,26 @@
-> -CONFIG_BCH=y
-> +CONFIG_BLK_MQ_PCI=y
->  CONFIG_MTD_NAND=y
->  CONFIG_MTD_NAND_AR934X=y
-> -CONFIG_MTD_NAND_BCH=y
-> +CONFIG_MTD_NAND_CORE=y
->  CONFIG_MTD_NAND_ECC=y
-> -CONFIG_MTD_NAND_ECC_BCH=y
-> -CONFIG_MTD_SPINAND_MT29F=y
-> -CONFIG_MTD_SPINAND_ONDIEECC=y
-> +CONFIG_MTD_SPI_NAND=y
->  CONFIG_MTD_UBI=y
-> +CONFIG_MTD_UBI_BLOCK=y
-> +CONFIG_MTD_UBI_WL_THRESHOLD=4096
->  CONFIG_MTD_UBI_BEB_LIMIT=20
-> -# CONFIG_MTD_UBI_BLOCK is not set
->  # CONFIG_MTD_UBI_FASTMAP is not set
->  # CONFIG_MTD_UBI_GLUEBI is not set
-> -CONFIG_MTD_UBI_WL_THRESHOLD=4096
-> -# CONFIG_UBIFS_FS is not set
-> +CONFIG_OF_ADDRESS_PCI=y
-> +CONFIG_OF_PCI=y
-> +CONFIG_OF_PCI_IRQ=y
-> +CONFIG_PCI=y
-> +# CONFIG_PCI_AR71XX is not set
-> +CONFIG_PCI_AR724X=y
-> +CONFIG_PCI_DISABLE_COMMON_QUIRKS=y
-> +CONFIG_PCI_DOMAINS=y
-> +# CONFIG_PHY_AR7100_USB is not set
-> +CONFIG_PHY_AR7200_USB=y
-> +CONFIG_UBIFS_FS=y
-> +CONFIG_UBIFS_FS_ADVANCED_COMPR=y
-> +CONFIG_UBIFS_FS_LZO=y
-> +CONFIG_UBIFS_FS_ZLIB=y
 
-Hi Jeff,
+Hi,
+thanks for the patch, the subject line needs to start with "brcm63xx:"
+	John
 
-Kernel config supplied here works OK with my Netgear WNDR4300 ath79/nand
-support patch and provides full functionality.
-I will drop 'config-default' file from my patchset and rely on your
-version.
+> Signed-off-by: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+> ---
+>   .../brcm63xx/base-files/etc/board.d/01_leds   |   1 +
+>   .../base-files/etc/board.d/02_network         |   2 +-
+>   target/linux/brcm63xx/base-files/etc/diag.sh  |   1 +
+>   .../linux/brcm63xx/base-files/lib/brcm63xx.sh |   3 +
+>   target/linux/brcm63xx/dts/dv4210.dts          | 102 ++++++++++++++++++
+>   target/linux/brcm63xx/image/bcm63xx.mk        |  13 +++
+>   .../patches-4.14/599-board_DV4210.patch       |  50 +++++++++
+>   7 files changed, 171 insertions(+), 1 deletion(-)
+>   create mode 100644 target/linux/brcm63xx/dts/dv4210.dts
+>   create mode 100644 target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
+> 
+> diff --git a/target/linux/brcm63xx/base-files/etc/board.d/01_leds b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
+> index d25d37e847..00109ba112 100755
+> --- a/target/linux/brcm63xx/base-files/etc/board.d/01_leds
+> +++ b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
+> @@ -69,6 +69,7 @@ homehub2a)
+>   	ucidef_set_led_usbdev "usb1" "USB1" "HOMEHUB2A:blue:phone" "1-1"
+>   	ucidef_set_led_usbdev "usb2" "USB2" "HOMEHUB2A:green:phone" "2-1"
+>   	;;
+> +dv4210|\
+>   livebox1)
+>   	ucidef_set_led_netdev "lan" "LAN" "Livebox1:red:traffic" "eth0"
+>   	ucidef_set_led_netdev "wan" "WAN" "Livebox1:red:adsl" "eth1"
+> diff --git a/target/linux/brcm63xx/base-files/etc/board.d/02_network b/target/linux/brcm63xx/base-files/etc/board.d/02_network
+> index a2ca5a37b3..0e384f82f6 100755
+> --- a/target/linux/brcm63xx/base-files/etc/board.d/02_network
+> +++ b/target/linux/brcm63xx/base-files/etc/board.d/02_network
+> @@ -145,8 +145,8 @@ bcm963268bu_p300)
+>   	ucidef_add_switch "switch0" \
+>   		"0:lan" "3:lan" "4:lan" "5:lan" "6:lan" "7:lan" "8t@eth0"
+>   	;;
+> -
+>   cpva502p |\
+> +dv4210 |\
+>   livebox1)
+>   	ucidef_set_interfaces_lan_wan "eth0" "eth1"
+>   	;;
+> diff --git a/target/linux/brcm63xx/base-files/etc/diag.sh b/target/linux/brcm63xx/base-files/etc/diag.sh
+> index 34464ec44a..c673a75e40 100644
+> --- a/target/linux/brcm63xx/base-files/etc/diag.sh
+> +++ b/target/linux/brcm63xx/base-files/etc/diag.sh
+> @@ -114,6 +114,7 @@ set_state() {
+>   	hg655b)
+>   		status_led="HW65x:green:power"
+>   		;;
+> +	dv4210|\
+>   	livebox1)
+>   		status_led="Livebox1:red:adsl-fail-power"
+>   		;;
+> diff --git a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
+> index 1676ae0abb..9c0c33cc31 100755
+> --- a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
+> +++ b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
+> @@ -177,6 +177,9 @@ brcm63xx_dt_detect() {
+>   	"Inteno VG50")
+>   		board_name="vg50"
+>   		;;
+> +	"Inventel DV4210")
+> +		board_name="dv4210"
+> +		;;
+>   	"Inventel Livebox 1")
+>   		board_name="livebox1"
+>   		;;
+> diff --git a/target/linux/brcm63xx/dts/dv4210.dts b/target/linux/brcm63xx/dts/dv4210.dts
+> new file mode 100644
+> index 0000000000..02975fe3b6
+> --- /dev/null
+> +++ b/target/linux/brcm63xx/dts/dv4210.dts
+> @@ -0,0 +1,102 @@
+> +/dts-v1/;
+> +
+> +#include "bcm6348.dtsi"
+> +
+> +#include <dt-bindings/input/input.h>
+> +
+> +/ {
+> +	model = "Inventel DV4210";
+> +	compatible = "inventel,dv4210", "brcm,bcm6348";
+> +
+> +	chosen {
+> +		bootargs = "rootfstype=squashfs,jffs2 noinitrd console=ttyS0,115200";
+> +		stdout-path = "serial0:115200n8";
+> +	};
+> +
+> +	keys {
+> +		compatible = "gpio-keys-polled";
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		poll-interval = <20>;
+> +
+> +		button1 {
+> +			label = "1";
+> +			gpios = <&pinctrl 36 1>;
+> +			linux,code = <KEY_RESTART>;
+> +			debounce-interval = <60>;
+> +		};
+> +
+> +		button2 {
+> +			label = "2";
+> +			gpios = <&pinctrl 7 1>;
+> +			linux,code = <BTN_2>;
+> +			debounce-interval = <60>;
+> +		};
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +
+> +		red_adsl_fail {
+> +			label = "Livebox1:red:adsl-fail-power";
+> +			gpios = <&pinctrl 0 0>;
+> +			default-state = "on";
+> +		};
+> +
+> +		red_adsl {
+> +			label = "Livebox1:red:adsl";
+> +			gpios = <&pinctrl 1 0>;
+> +		};
+> +
+> +		red_traffic {
+> +			label = "Livebox1:red:traffic";
+> +			gpios = <&pinctrl 2 0>;
+> +		};
+> +
+> +		red_phone {
+> +			label = "Livebox1:red:phone";
+> +			gpios = <&pinctrl 3 0>;
+> +		};
+> +
+> +		red_wifi {
+> +			label = "Livebox1:red:wifi";
+> +			gpios = <&pinctrl 4 0>;
+> +		};
+> +	};
+> +};
+> +
+> +&pflash {
+> +	reg = <0x1f400000 0x800000>;
+> +	status = "ok";
+> +
+> +	partitions {
+> +		compatible = "fixed-partitions";
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +
+> +		cfe@0 {
+> +			reg = <0x000000 0x010000>;
+> +			label = "cfe";
+> +		};
+> +
+> +		linux@10000 {
+> +			reg = <0x010000 0x7e0000>;
+> +			label = "linux";
+> +			compatible = "brcm,bcm963xx-imagetag";
+> +		};
+> +
+> +		nvram@7f0000 {
+> +			reg = <0x7f0000 0x010000>;
+> +			label = "nvram";
+> +		};
+> +	};
+> +};
+> +
+> +&pinctrl {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_pci &pinctrl_ext_mii &pinctrl_mii_pccard>;
+> +};
+> +
+> +&uart0 {
+> +	status = "ok";
+> +};
+> diff --git a/target/linux/brcm63xx/image/bcm63xx.mk b/target/linux/brcm63xx/image/bcm63xx.mk
+> index 212960e972..690ffb49fa 100644
+> --- a/target/linux/brcm63xx/image/bcm63xx.mk
+> +++ b/target/linux/brcm63xx/image/bcm63xx.mk
+> @@ -769,6 +769,19 @@ define Device/livebox
+>   endef
+>   TARGET_DEVICES += livebox
+>   
+> +define Device/DV4210
+> +  $(Device/bcm63xx)
+> +  DEVICE_TITLE := Inventel DV4210
+> +  DEVICE_DESCRIPTION = Build firmware images for the Inventel DV4210. Board with CFE bootloader and >32MB RAM
+> +  DEVICE_DTS := dv4210
+> +  CFE_BOARD_ID := DV4210
+> +  CFE_CHIP_ID := 6348
+> +  DEVICE_PACKAGES := \
+> +    $(B43_PACKAGES) $(USB1_PACKAGES)
+> +  DEFAULT := y
+> +endef
+> +TARGET_DEVICES += DV4210
+> +
+>   ### Netgear ###
+>   define Device/CVG834G
+>     $(Device/bcm33xx)
+> diff --git a/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
+> new file mode 100644
+> index 0000000000..618a214d63
+> --- /dev/null
+> +++ b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
+> @@ -0,0 +1,50 @@
+> +--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c
+> ++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c
+> +@@ -1058,6 +1058,31 @@
+> + 	},
+> + };
+> +
+> ++static struct board_info __initdata board_DV4210 = {
+> ++	.name				= "DV4210",
+> ++	.expected_cpu_id		= 0x6348,
+> ++
+> ++	.has_enet0			= 1,
+> ++	.has_enet1			= 1,
+> ++	.has_pci			= 1,
+> ++
+> ++	.enet0 = {
+> ++		.has_phy		= 1,
+> ++		.use_internal_phy	= 1,
+> ++	},
+> ++
+> ++	.enet1 = {
+> ++		  .has_phy		= 1,
+> ++		  .phy_id 		= 31,
+> ++	},
+> ++
+> ++	.ephy_reset_gpio		= 6,
+> ++	.ephy_reset_gpio_flags	= GPIO_ACTIVE_LOW,
+> ++
+> ++	.has_ohci0			= 1,
+> ++	.has_pccard			= 0,
+> ++};
+> ++
+> + static struct board_info __initdata board_96348A_122 = {
+> + 	.name				= "96348A-122",
+> + 	.expected_cpu_id		= 0x6348,
+> +@@ -2746,6 +2771,7 @@
+> + 	&board_FAST2404,
+> + 	&board_FAST2604,
+> + 	&board_DV201AMR,
+> ++	&board_DV4210,
+> + 	&board_96348gw_a,
+> + 	&board_rta1025w_16,
+> + 	&board_96348_D4PW,
+> +@@ -2859,6 +2885,7 @@
+> + 	{ .compatible = "d-link,dsl-2640b-b", .data = &board_96348_D4PW, },
+> + 	{ .compatible = "davolink,dv-201amr", .data = &board_DV201AMR, },
+> + 	{ .compatible = "dynalink,rta1025w", .data = &board_rta1025w_16, },
+> ++	{ .compatible = "inventel,dv4210", .data = &board_DV4210, },
+> + 	{ .compatible = "netgear,dg834gtpn", .data = &board_96348gw_10, },
+> +  	{ .compatible = "netgear,dg834g-v4", .data = &board_96348W3, },
+> + 	{ .compatible = "sagem,f@st2404", .data = &board_FAST2404, },
+> 
 
-Tested-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 
 _______________________________________________
 openwrt-devel mailing list

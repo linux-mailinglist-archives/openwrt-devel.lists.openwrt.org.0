@@ -2,86 +2,121 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4610CE62A0
-	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:22:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1ABFE62AB
+	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:33:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sY6ngX/H4jh0VttWVclugMNsiYdZb5oDhd0HgqS/JAY=; b=QlwThPv386aeYa4UIZd51vtqX
-	NP6nhT+xfkcEs6UQZCUiVD0fsL1j+zJOj9Tye/UdcXwx6j9wA5yQG1GTcgQxh4cbJJW4XsxHu8Xpe
-	sNwvGXrBxdGXdCmAg92qtFEsK5ZU0OmnJz+uR7haXBCKo7Grdxuz22MZ/rVGfaf1yfdY0oARiJYXo
-	GJQInTWuHbw9aOk5WI2HywOPOLfQoDL3AovPeuv2/WAf5X2N5v7DrT/wLACVo87MrtX05dw2+xcXW
-	yMWLvdeURisQL6c3VTSmnUmZxseifrYSjj44o4UoymXbaD/nasD2ObzXectYiev9TBiZH/BC86vlV
-	oOdktaNZg==;
+	 bh=FV4xAAFwhnhpOQUyBa0uTNoXchZZd9n2aEFBTxwLjCo=; b=CMAzaA2LUHwbk8AhlilhYrpWL
+	x5LukvW9Wudd5po/nT2gHLL2GfsxDvcWdnVaOu7gEcIMJIlRpgC5FSn1kIpUWxY1wJsbDvjXp8imt
+	xAFYlFF+xwpSaL2pg75HFXMmj8+eKlqQjyrHn57C3p0lCV7ynsTDcKGJUfRIKy7o40U0JXHcD0iyV
+	PlPBDihkpdVLgusE3fqsWHlv7TppTAYw8Xrpn+zXKo4bf7XHbPhq/H/dEVnZqZNXZuoq5reVA0vix
+	4Y4o+lyA8N1Ma6blZ7rwbS6Z1JdQsRgMZVcoYHYvbY0ZPLWvUai6g7jWe5h9qKX7EbM6hwSyA9Z7l
+	/nkJjg1NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOiUt-0006Ep-ID; Sun, 27 Oct 2019 13:22:19 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1iOifY-0001MQ-W1; Sun, 27 Oct 2019 13:33:21 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOiUk-0006EO-F0
- for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:22:12 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id r134so2882870ywg.2
- for <openwrt-devel@lists.openwrt.org>; Sun, 27 Oct 2019 06:22:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=B/E8zNvfV5zJHEI7Csd2fWr/Y1iPJNFkxSbg14VBxHI=;
- b=JZ9w5ObF5d17pOfoeDFRlD64O149vptrxJHRvJOBqcYYfZait3hIZy5ZXPTAPi7VMi
- mMyMoMMnV6RxTSetJ356vE0dDkW1QkuwhyylDEmO9t8FXF8bK5NqhF2t7aNZTkNh0tr3
- bUDT88XBme/xlWJbWipgo5g/YD0csMPKgkqCp3WiRRUFCSSdZGk2oL7hRMdkz8FmILgX
- M/wkTno5e2fqtirXHwqJeoLqn1keYTexxF0aY1/RjisJUmN+Aqkn90/MZDwY/H/jeGjC
- 5ERoSMLYrx/00GPgs+j3HuyYP+WljuTPtAGmJTVFUs07yZfL098f+OSOfsjXxSqMWn5u
- u9QQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=B/E8zNvfV5zJHEI7Csd2fWr/Y1iPJNFkxSbg14VBxHI=;
- b=JvfNJQWeqkfeBGzIcxUeMPfIUGa0xlXtq+PsPKNpoutN+e+VjSBL5Y2YzWOYEGppgx
- wijaPs9u9D0pV7nwitx7uJ0jiOrijJeOEf9VFTpTaRFzGDZMJoyarmSK+H+ti4j/5L0U
- WBzY1WCTqpB2lPpGNBl1UecKinkVufacXRUfXqv3/ML94Ozr434vH6uRJH5nUBQTK7nf
- dsju/LU35cosmq1wti0F6zbBtMMfwdf7J9WLiJZSxGtOroxI7TSwhtu+lUX/Z5VOfKKI
- njxNO/wMHVItgg0Mo1sPM01NvAgOimYdNCAACDLvmkO2RMvibYFg21qVE0Vdqfg9pCTN
- y8cw==
-X-Gm-Message-State: APjAAAWfF1eERNxqit+pNu2niFE7y0mGncjCL2GxJE+UNJxe3BakVfVj
- muvI3MCLlFuQ6VsIA+rLupDLaFDQSiHNxHrI9zQ49Q==
-X-Google-Smtp-Source: APXvYqwzWF00nm/2BXNrCVAU61KMzI0ni1np/+dg/AH8Wkz5gaq2p7cSgfyclpBCrQnZTlwyyxuf7+ZJTPouugrm8o0=
-X-Received: by 2002:a81:4801:: with SMTP id v1mr10039344ywa.329.1572182527770; 
- Sun, 27 Oct 2019 06:22:07 -0700 (PDT)
+ id 1iOifQ-0001Lw-Us
+ for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:33:14 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2a.mailbox.org (Postfix) with ESMTPS id 121BCA25C6;
+ Sun, 27 Oct 2019 14:33:07 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id 2JNhL0YxIe0s; Sun, 27 Oct 2019 14:33:03 +0100 (CET)
+To: Tim Harvey <tharvey@gateworks.com>, openwrt-devel@lists.openwrt.org
+References: <1572038851-4029-1-git-send-email-tharvey@gateworks.com>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <855ee1da-8d63-347e-0694-6cc25c7d5e1f@hauke-m.de>
+Date: Sun, 27 Oct 2019 14:32:48 +0100
 MIME-Version: 1.0
-References: <3020121.uscLunan1g@tool>
- <ba5d5df3-a26d-15a0-04d9-81bb5c79ae5f@phrozen.org>
-In-Reply-To: <ba5d5df3-a26d-15a0-04d9-81bb5c79ae5f@phrozen.org>
-From: Daniel <dgcbueu@gmail.com>
-Date: Sun, 27 Oct 2019 14:21:56 +0100
-Message-ID: <CABwr4_sRWZbOxJHqMuV=pvqnCw5FWW2nvGs3ciWgmBrEkE+stQ@mail.gmail.com>
-To: John Crispin <john@phrozen.org>
+In-Reply-To: <1572038851-4029-1-git-send-email-tharvey@gateworks.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_062210_514871_47EFBD08 
-X-CRM114-Status: GOOD (  19.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191027_063313_306368_344133E6 
+X-CRM114-Status: GOOD (  22.91  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dgcbueu[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] Add support for Inventel DV4210
+Subject: Re: [OpenWrt-Devel] [PATCH] octeontx: fix thunderx BGX underflow
+ irq name
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,701 +128,125 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============7808839145250596803=="
+Content-Type: multipart/mixed; boundary="===============7037129374281347691=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7808839145250596803==
-Content-Type: multipart/alternative; boundary="0000000000001706020595e4451d"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============7037129374281347691==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="mvYeC9R5N7awIAkarneqMw1ccmcRATMMf"
 
---0000000000001706020595e4451d
-Content-Type: text/plain; charset="UTF-8"
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--mvYeC9R5N7awIAkarneqMw1ccmcRATMMf
+Content-Type: multipart/mixed; boundary="U6RQuGHakFThaKoQgSftWafR9De3wGzsL";
+ protected-headers="v1"
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: Tim Harvey <tharvey@gateworks.com>, openwrt-devel@lists.openwrt.org
+Message-ID: <855ee1da-8d63-347e-0694-6cc25c7d5e1f@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH] octeontx: fix thunderx BGX underflow irq
+ name
+References: <1572038851-4029-1-git-send-email-tharvey@gateworks.com>
+In-Reply-To: <1572038851-4029-1-git-send-email-tharvey@gateworks.com>
+
+--U6RQuGHakFThaKoQgSftWafR9De3wGzsL
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Sorry, I forgot to add the the target. I'll send again the patch
+On 10/25/19 11:27 PM, Tim Harvey wrote:
+> request_irq requires irq names to be static/allocated and not on the st=
+ack
 
-Thanks very much.
+It would be nice if this patch could also go to the mainline Linux
+kernel, so we do not have to maintain it any more.
 
+John already applied it to OpenWrt.
 
+>=20
+> Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> ---
+>  ...1-net-thunderx-workaround-BGX-TX-Underflow-issue.patch | 15 +++++++=
+++++----
+>  1 file changed, 11 insertions(+), 4 deletions(-)
+>=20
+> diff --git a/target/linux/octeontx/patches-4.14/0001-net-thunderx-worka=
+round-BGX-TX-Underflow-issue.patch b/target/linux/octeontx/patches-4.14/0=
+001-net-thunderx-workaround-BGX-TX-Underflow-issue.patch
+> index ef7aef3..5743745 100644
+> --- a/target/linux/octeontx/patches-4.14/0001-net-thunderx-workaround-B=
+GX-TX-Underflow-issue.patch
+> +++ b/target/linux/octeontx/patches-4.14/0001-net-thunderx-workaround-B=
+GX-TX-Underflow-issue.patch
+> @@ -15,7 +15,15 @@ Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> =20
+>  --- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+>  +++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+> -@@ -1344,6 +1344,54 @@ static int bgx_init_phy(struct bgx *bgx)
+> +@@ -56,6 +56,7 @@ struct bgx {
+> + 	bool                    is_dlm;
+> + 	bool                    is_rgx;
+> + 	int			phy_mode;
+> ++	char			irq_name[7];
+> + };
+> +=20
+> + static struct bgx *bgx_vnic[MAX_BGX_THUNDER];
+> +@@ -1344,6 +1345,53 @@ static int bgx_init_phy(struct bgx *bgx)
+>   	return bgx_init_of_phy(bgx);
+>   }
+>  =20
+> @@ -49,7 +57,6 @@ Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+>  +	struct bgx *bgx =3D pci_get_drvdata(pdev);
+>  +	struct device *dev =3D &pdev->dev;
+>  +	int num_vec, ret;
+> -+	char irq_name[32];
+>  +
+>  +	/* Enable MSI-X */
+>  +	num_vec =3D pci_msix_vec_count(pdev);
+> @@ -58,9 +65,9 @@ Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+>  +		dev_err(dev, "Req for #%d msix vectors failed\n", num_vec);
+>  +		return 1;
+>  +	}
+> -+	sprintf(irq_name, "BGX%d", bgx->bgx_id);
+> ++	sprintf(bgx->irq_name, "BGX%d", bgx->bgx_id);
 
-El dom., 27 oct. 2019 a las 14:05, John Crispin (<john@phrozen.org>)
-escribi=C3=B3:
+I would prefer a snprintf here, it should not overflow as long as gx_id
+is less than 1000, but just to be safe.
 
-> On 22/09/2019 22:05, Daniel Gonzalez Cabanelas wrote:
-> > Add support for the Inventel DV4210 router.
-> >
-> > This is an Inventel Livebox 1 board. The patch supports the board with =
-a
-> CFE bootloader, and
-> > a RAM mod (64 MB, tested).  The board originally comes with 8 MB flash.
-> Under this conditions
-> > this old BCM6348 based board still runs quite fine with current
-> snapshots.
-> >
->
-> Hi,
-> thanks for the patch, the subject line needs to start with "brcm63xx:"
->         John
->
-> > Signed-off-by: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
-> > ---
-> >   .../brcm63xx/base-files/etc/board.d/01_leds   |   1 +
-> >   .../base-files/etc/board.d/02_network         |   2 +-
-> >   target/linux/brcm63xx/base-files/etc/diag.sh  |   1 +
-> >   .../linux/brcm63xx/base-files/lib/brcm63xx.sh |   3 +
-> >   target/linux/brcm63xx/dts/dv4210.dts          | 102 +++++++++++++++++=
-+
-> >   target/linux/brcm63xx/image/bcm63xx.mk        |  13 +++
-> >   .../patches-4.14/599-board_DV4210.patch       |  50 +++++++++
-> >   7 files changed, 171 insertions(+), 1 deletion(-)
-> >   create mode 100644 target/linux/brcm63xx/dts/dv4210.dts
-> >   create mode 100644
-> target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-> >
-> > diff --git a/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> > index d25d37e847..00109ba112 100755
-> > --- a/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> > +++ b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> > @@ -69,6 +69,7 @@ homehub2a)
-> >       ucidef_set_led_usbdev "usb1" "USB1" "HOMEHUB2A:blue:phone" "1-1"
-> >       ucidef_set_led_usbdev "usb2" "USB2" "HOMEHUB2A:green:phone" "2-1"
-> >       ;;
-> > +dv4210|\
-> >   livebox1)
-> >       ucidef_set_led_netdev "lan" "LAN" "Livebox1:red:traffic" "eth0"
-> >       ucidef_set_led_netdev "wan" "WAN" "Livebox1:red:adsl" "eth1"
-> > diff --git a/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> b/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> > index a2ca5a37b3..0e384f82f6 100755
-> > --- a/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> > +++ b/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> > @@ -145,8 +145,8 @@ bcm963268bu_p300)
-> >       ucidef_add_switch "switch0" \
-> >               "0:lan" "3:lan" "4:lan" "5:lan" "6:lan" "7:lan" "8t@eth0"
-> >       ;;
-> > -
-> >   cpva502p |\
-> > +dv4210 |\
-> >   livebox1)
-> >       ucidef_set_interfaces_lan_wan "eth0" "eth1"
-> >       ;;
-> > diff --git a/target/linux/brcm63xx/base-files/etc/diag.sh
-> b/target/linux/brcm63xx/base-files/etc/diag.sh
-> > index 34464ec44a..c673a75e40 100644
-> > --- a/target/linux/brcm63xx/base-files/etc/diag.sh
-> > +++ b/target/linux/brcm63xx/base-files/etc/diag.sh
-> > @@ -114,6 +114,7 @@ set_state() {
-> >       hg655b)
-> >               status_led=3D"HW65x:green:power"
-> >               ;;
-> > +     dv4210|\
-> >       livebox1)
-> >               status_led=3D"Livebox1:red:adsl-fail-power"
-> >               ;;
-> > diff --git a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> > index 1676ae0abb..9c0c33cc31 100755
-> > --- a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> > +++ b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> > @@ -177,6 +177,9 @@ brcm63xx_dt_detect() {
-> >       "Inteno VG50")
-> >               board_name=3D"vg50"
-> >               ;;
-> > +     "Inventel DV4210")
-> > +             board_name=3D"dv4210"
-> > +             ;;
-> >       "Inventel Livebox 1")
-> >               board_name=3D"livebox1"
-> >               ;;
-> > diff --git a/target/linux/brcm63xx/dts/dv4210.dts
-> b/target/linux/brcm63xx/dts/dv4210.dts
-> > new file mode 100644
-> > index 0000000000..02975fe3b6
-> > --- /dev/null
-> > +++ b/target/linux/brcm63xx/dts/dv4210.dts
-> > @@ -0,0 +1,102 @@
-> > +/dts-v1/;
-> > +
-> > +#include "bcm6348.dtsi"
-> > +
-> > +#include <dt-bindings/input/input.h>
-> > +
-> > +/ {
-> > +     model =3D "Inventel DV4210";
-> > +     compatible =3D "inventel,dv4210", "brcm,bcm6348";
-> > +
-> > +     chosen {
-> > +             bootargs =3D "rootfstype=3Dsquashfs,jffs2 noinitrd
-> console=3DttyS0,115200";
-> > +             stdout-path =3D "serial0:115200n8";
-> > +     };
-> > +
-> > +     keys {
-> > +             compatible =3D "gpio-keys-polled";
-> > +             #address-cells =3D <1>;
-> > +             #size-cells =3D <0>;
-> > +             poll-interval =3D <20>;
-> > +
-> > +             button1 {
-> > +                     label =3D "1";
-> > +                     gpios =3D <&pinctrl 36 1>;
-> > +                     linux,code =3D <KEY_RESTART>;
-> > +                     debounce-interval =3D <60>;
-> > +             };
-> > +
-> > +             button2 {
-> > +                     label =3D "2";
-> > +                     gpios =3D <&pinctrl 7 1>;
-> > +                     linux,code =3D <BTN_2>;
-> > +                     debounce-interval =3D <60>;
-> > +             };
-> > +     };
-> > +
-> > +     leds {
-> > +             compatible =3D "gpio-leds";
-> > +
-> > +             red_adsl_fail {
-> > +                     label =3D "Livebox1:red:adsl-fail-power";
-> > +                     gpios =3D <&pinctrl 0 0>;
-> > +                     default-state =3D "on";
-> > +             };
-> > +
-> > +             red_adsl {
-> > +                     label =3D "Livebox1:red:adsl";
-> > +                     gpios =3D <&pinctrl 1 0>;
-> > +             };
-> > +
-> > +             red_traffic {
-> > +                     label =3D "Livebox1:red:traffic";
-> > +                     gpios =3D <&pinctrl 2 0>;
-> > +             };
-> > +
-> > +             red_phone {
-> > +                     label =3D "Livebox1:red:phone";
-> > +                     gpios =3D <&pinctrl 3 0>;
-> > +             };
-> > +
-> > +             red_wifi {
-> > +                     label =3D "Livebox1:red:wifi";
-> > +                     gpios =3D <&pinctrl 4 0>;
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&pflash {
-> > +     reg =3D <0x1f400000 0x800000>;
-> > +     status =3D "ok";
-> > +
-> > +     partitions {
-> > +             compatible =3D "fixed-partitions";
-> > +             #address-cells =3D <1>;
-> > +             #size-cells =3D <1>;
-> > +
-> > +             cfe@0 {
-> > +                     reg =3D <0x000000 0x010000>;
-> > +                     label =3D "cfe";
-> > +             };
-> > +
-> > +             linux@10000 {
-> > +                     reg =3D <0x010000 0x7e0000>;
-> > +                     label =3D "linux";
-> > +                     compatible =3D "brcm,bcm963xx-imagetag";
-> > +             };
-> > +
-> > +             nvram@7f0000 {
-> > +                     reg =3D <0x7f0000 0x010000>;
-> > +                     label =3D "nvram";
-> > +             };
-> > +     };
-> > +};
-> > +
-> > +&pinctrl {
-> > +     pinctrl-names =3D "default";
-> > +     pinctrl-0 =3D <&pinctrl_pci &pinctrl_ext_mii &pinctrl_mii_pccard>=
-;
-> > +};
-> > +
-> > +&uart0 {
-> > +     status =3D "ok";
-> > +};
-> > diff --git a/target/linux/brcm63xx/image/bcm63xx.mk
-> b/target/linux/brcm63xx/image/bcm63xx.mk
-> > index 212960e972..690ffb49fa 100644
-> > --- a/target/linux/brcm63xx/image/bcm63xx.mk
-> > +++ b/target/linux/brcm63xx/image/bcm63xx.mk
-> > @@ -769,6 +769,19 @@ define Device/livebox
-> >   endef
-> >   TARGET_DEVICES +=3D livebox
-> >
-> > +define Device/DV4210
-> > +  $(Device/bcm63xx)
-> > +  DEVICE_TITLE :=3D Inventel DV4210
-> > +  DEVICE_DESCRIPTION =3D Build firmware images for the Inventel DV4210=
-.
-> Board with CFE bootloader and >32MB RAM
-> > +  DEVICE_DTS :=3D dv4210
-> > +  CFE_BOARD_ID :=3D DV4210
-> > +  CFE_CHIP_ID :=3D 6348
-> > +  DEVICE_PACKAGES :=3D \
-> > +    $(B43_PACKAGES) $(USB1_PACKAGES)
-> > +  DEFAULT :=3D y
-> > +endef
-> > +TARGET_DEVICES +=3D DV4210
-> > +
-> >   ### Netgear ###
-> >   define Device/CVG834G
-> >     $(Device/bcm33xx)
-> > diff --git a/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-> b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-> > new file mode 100644
-> > index 0000000000..618a214d63
-> > --- /dev/null
-> > +++ b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-> > @@ -0,0 +1,50 @@
-> > +--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c
-> > ++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c
-> > +@@ -1058,6 +1058,31 @@
-> > +     },
-> > + };
-> > +
-> > ++static struct board_info __initdata board_DV4210 =3D {
-> > ++    .name                           =3D "DV4210",
-> > ++    .expected_cpu_id                =3D 0x6348,
-> > ++
-> > ++    .has_enet0                      =3D 1,
-> > ++    .has_enet1                      =3D 1,
-> > ++    .has_pci                        =3D 1,
-> > ++
-> > ++    .enet0 =3D {
-> > ++            .has_phy                =3D 1,
-> > ++            .use_internal_phy       =3D 1,
-> > ++    },
-> > ++
-> > ++    .enet1 =3D {
-> > ++              .has_phy              =3D 1,
-> > ++              .phy_id               =3D 31,
-> > ++    },
-> > ++
-> > ++    .ephy_reset_gpio                =3D 6,
-> > ++    .ephy_reset_gpio_flags  =3D GPIO_ACTIVE_LOW,
-> > ++
-> > ++    .has_ohci0                      =3D 1,
-> > ++    .has_pccard                     =3D 0,
-> > ++};
-> > ++
-> > + static struct board_info __initdata board_96348A_122 =3D {
-> > +     .name                           =3D "96348A-122",
-> > +     .expected_cpu_id                =3D 0x6348,
-> > +@@ -2746,6 +2771,7 @@
-> > +     &board_FAST2404,
-> > +     &board_FAST2604,
-> > +     &board_DV201AMR,
-> > ++    &board_DV4210,
-> > +     &board_96348gw_a,
-> > +     &board_rta1025w_16,
-> > +     &board_96348_D4PW,
-> > +@@ -2859,6 +2885,7 @@
-> > +     { .compatible =3D "d-link,dsl-2640b-b", .data =3D &board_96348_D4=
-PW, },
-> > +     { .compatible =3D "davolink,dv-201amr", .data =3D &board_DV201AMR=
-, },
-> > +     { .compatible =3D "dynalink,rta1025w", .data =3D &board_rta1025w_=
-16, },
-> > ++    { .compatible =3D "inventel,dv4210", .data =3D &board_DV4210, },
-> > +     { .compatible =3D "netgear,dg834gtpn", .data =3D &board_96348gw_1=
-0, },
-> > +     { .compatible =3D "netgear,dg834g-v4", .data =3D &board_96348W3, =
-},
-> > +     { .compatible =3D "sagem,f@st2404", .data =3D &board_FAST2404, },
-> >
->
->
-
---0000000000001706020595e4451d
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">Sorry, I forgot to add the the target. I&#39;ll send again=
- the patch<div><br></div><div>Thanks very much.<br><div><br></div><div><br>=
-</div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"=
-gmail_attr">El dom., 27 oct. 2019 a las 14:05, John Crispin (&lt;<a href=3D=
-"mailto:john@phrozen.org">john@phrozen.org</a>&gt;) escribi=C3=B3:<br></div=
-><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border=
--left:1px solid rgb(204,204,204);padding-left:1ex">On 22/09/2019 22:05, Dan=
-iel Gonzalez Cabanelas wrote:<br>
-&gt; Add support for the Inventel DV4210 router.<br>
-&gt; <br>
-&gt; This is an Inventel Livebox 1 board. The patch supports the board with=
- a CFE bootloader, and<br>
-&gt; a RAM mod (64 MB, tested).=C2=A0 The board originally comes with 8 MB =
-flash.=C2=A0 Under this conditions<br>
-&gt; this old BCM6348 based board still runs quite fine with current snapsh=
-ots.<br>
-&gt; <br>
-<br>
-Hi,<br>
-thanks for the patch, the subject line needs to start with &quot;brcm63xx:&=
-quot;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 John<br>
-<br>
-&gt; Signed-off-by: Daniel Gonzalez Cabanelas &lt;<a href=3D"mailto:dgcbueu=
-@gmail.com" target=3D"_blank">dgcbueu@gmail.com</a>&gt;<br>
-&gt; ---<br>
-&gt;=C2=A0 =C2=A0.../brcm63xx/base-files/etc/board.d/01_leds=C2=A0 =C2=A0|=
-=C2=A0 =C2=A01 +<br>
-&gt;=C2=A0 =C2=A0.../base-files/etc/board.d/02_network=C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0|=C2=A0 =C2=A02 +-<br>
-&gt;=C2=A0 =C2=A0target/linux/brcm63xx/base-files/etc/diag.sh=C2=A0 |=C2=A0=
- =C2=A01 +<br>
-&gt;=C2=A0 =C2=A0.../linux/brcm63xx/base-files/lib/brcm63xx.sh |=C2=A0 =C2=
-=A03 +<br>
-&gt;=C2=A0 =C2=A0target/linux/brcm63xx/dts/dv4210.dts=C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 | 102 ++++++++++++++++++<br>
-&gt;=C2=A0 =C2=A0target/linux/brcm63xx/image/<a href=3D"http://bcm63xx.mk" =
-rel=3D"noreferrer" target=3D"_blank">bcm63xx.mk</a>=C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 |=C2=A0 13 +++<br>
-&gt;=C2=A0 =C2=A0.../patches-4.14/599-board_DV4210.patch=C2=A0 =C2=A0 =C2=
-=A0 =C2=A0|=C2=A0 50 +++++++++<br>
-&gt;=C2=A0 =C2=A07 files changed, 171 insertions(+), 1 deletion(-)<br>
-&gt;=C2=A0 =C2=A0create mode 100644 target/linux/brcm63xx/dts/dv4210.dts<br=
->
-&gt;=C2=A0 =C2=A0create mode 100644 target/linux/brcm63xx/patches-4.14/599-=
-board_DV4210.patch<br>
-&gt; <br>
-&gt; diff --git a/target/linux/brcm63xx/base-files/etc/board.d/01_leds b/ta=
-rget/linux/brcm63xx/base-files/etc/board.d/01_leds<br>
-&gt; index d25d37e847..00109ba112 100755<br>
-&gt; --- a/target/linux/brcm63xx/base-files/etc/board.d/01_leds<br>
-&gt; +++ b/target/linux/brcm63xx/base-files/etc/board.d/01_leds<br>
-&gt; @@ -69,6 +69,7 @@ homehub2a)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_set_led_usbdev &quot;usb1&quot; &quot=
-;USB1&quot; &quot;HOMEHUB2A:blue:phone&quot; &quot;1-1&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_set_led_usbdev &quot;usb2&quot; &quot=
-;USB2&quot; &quot;HOMEHUB2A:green:phone&quot; &quot;2-1&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; +dv4210|\<br>
-&gt;=C2=A0 =C2=A0livebox1)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_set_led_netdev &quot;lan&quot; &quot;=
-LAN&quot; &quot;Livebox1:red:traffic&quot; &quot;eth0&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_set_led_netdev &quot;wan&quot; &quot;=
-WAN&quot; &quot;Livebox1:red:adsl&quot; &quot;eth1&quot;<br>
-&gt; diff --git a/target/linux/brcm63xx/base-files/etc/board.d/02_network b=
-/target/linux/brcm63xx/base-files/etc/board.d/02_network<br>
-&gt; index a2ca5a37b3..0e384f82f6 100755<br>
-&gt; --- a/target/linux/brcm63xx/base-files/etc/board.d/02_network<br>
-&gt; +++ b/target/linux/brcm63xx/base-files/etc/board.d/02_network<br>
-&gt; @@ -145,8 +145,8 @@ bcm963268bu_p300)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_add_switch &quot;switch0&quot; \<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0&quot;0:lan&quot=
-; &quot;3:lan&quot; &quot;4:lan&quot; &quot;5:lan&quot; &quot;6:lan&quot; &=
-quot;7:lan&quot; &quot;8t@eth0&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; -<br>
-&gt;=C2=A0 =C2=A0cpva502p |\<br>
-&gt; +dv4210 |\<br>
-&gt;=C2=A0 =C2=A0livebox1)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_set_interfaces_lan_wan &quot;eth0&quo=
-t; &quot;eth1&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; diff --git a/target/linux/brcm63xx/base-files/etc/diag.sh b/target/lin=
-ux/brcm63xx/base-files/etc/diag.sh<br>
-&gt; index 34464ec44a..c673a75e40 100644<br>
-&gt; --- a/target/linux/brcm63xx/base-files/etc/diag.sh<br>
-&gt; +++ b/target/linux/brcm63xx/base-files/etc/diag.sh<br>
-&gt; @@ -114,6 +114,7 @@ set_state() {<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0hg655b)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0status_led=3D&qu=
-ot;HW65x:green:power&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0dv4210|\<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0livebox1)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0status_led=3D&qu=
-ot;Livebox1:red:adsl-fail-power&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; diff --git a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh b/target=
-/linux/brcm63xx/base-files/lib/brcm63xx.sh<br>
-&gt; index 1676ae0abb..9c0c33cc31 100755<br>
-&gt; --- a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh<br>
-&gt; +++ b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh<br>
-&gt; @@ -177,6 +177,9 @@ brcm63xx_dt_detect() {<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0&quot;Inteno VG50&quot;)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0board_name=3D&qu=
-ot;vg50&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&quot;Inventel DV4210&quot;)<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0board_name=3D&quot;dv=
-4210&quot;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0&quot;Inventel Livebox 1&quot;)<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0board_name=3D&qu=
-ot;livebox1&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; diff --git a/target/linux/brcm63xx/dts/dv4210.dts b/target/linux/brcm6=
-3xx/dts/dv4210.dts<br>
-&gt; new file mode 100644<br>
-&gt; index 0000000000..02975fe3b6<br>
-&gt; --- /dev/null<br>
-&gt; +++ b/target/linux/brcm63xx/dts/dv4210.dts<br>
-&gt; @@ -0,0 +1,102 @@<br>
-&gt; +/dts-v1/;<br>
-&gt; +<br>
-&gt; +#include &quot;bcm6348.dtsi&quot;<br>
-&gt; +<br>
-&gt; +#include &lt;dt-bindings/input/input.h&gt;<br>
-&gt; +<br>
-&gt; +/ {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0model =3D &quot;Inventel DV4210&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0compatible =3D &quot;inventel,dv4210&quot;, &quot=
-;brcm,bcm6348&quot;;<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0chosen {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0bootargs =3D &quot;ro=
-otfstype=3Dsquashfs,jffs2 noinitrd console=3DttyS0,115200&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0stdout-path =3D &quot=
-;serial0:115200n8&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0keys {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0compatible =3D &quot;=
-gpio-keys-polled&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0#address-cells =3D &l=
-t;1&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0#size-cells =3D &lt;0=
-&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0poll-interval =3D &lt=
-;20&gt;;<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0button1 {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;1&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 36 1&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0linux,code =3D &lt;KEY_RESTART&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0debounce-interval =3D &lt;60&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0button2 {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;2&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 7 1&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0linux,code =3D &lt;BTN_2&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0debounce-interval =3D &lt;60&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0leds {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0compatible =3D &quot;=
-gpio-leds&quot;;<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0red_adsl_fail {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;Livebox1:red:adsl-fail-power&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 0 0&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0default-state =3D &quot;on&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0red_adsl {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;Livebox1:red:adsl&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 1 0&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0red_traffic {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;Livebox1:red:traffic&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 2 0&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0red_phone {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;Livebox1:red:phone&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 3 0&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0red_wifi {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;Livebox1:red:wifi&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0gpios =3D &lt;&amp;pinctrl 4 0&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +};<br>
-&gt; +<br>
-&gt; +&amp;pflash {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0reg =3D &lt;0x1f400000 0x800000&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0status =3D &quot;ok&quot;;<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0partitions {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0compatible =3D &quot;=
-fixed-partitions&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0#address-cells =3D &l=
-t;1&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0#size-cells =3D &lt;1=
-&gt;;<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0cfe@0 {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0reg =3D &lt;0x000000 0x010000&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;cfe&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0linux@10000 {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0reg =3D &lt;0x010000 0x7e0000&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;linux&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0compatible =3D &quot;brcm,bcm963xx-imagetag&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0nvram@7f0000 {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0reg =3D &lt;0x7f0000 0x010000&gt;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0label =3D &quot;nvram&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0};<br>
-&gt; +};<br>
-&gt; +<br>
-&gt; +&amp;pinctrl {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0pinctrl-names =3D &quot;default&quot;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0pinctrl-0 =3D &lt;&amp;pinctrl_pci &amp;pinctrl_e=
-xt_mii &amp;pinctrl_mii_pccard&gt;;<br>
-&gt; +};<br>
-&gt; +<br>
-&gt; +&amp;uart0 {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0status =3D &quot;ok&quot;;<br>
-&gt; +};<br>
-&gt; diff --git a/target/linux/brcm63xx/image/<a href=3D"http://bcm63xx.mk"=
- rel=3D"noreferrer" target=3D"_blank">bcm63xx.mk</a> b/target/linux/brcm63x=
-x/image/<a href=3D"http://bcm63xx.mk" rel=3D"noreferrer" target=3D"_blank">=
-bcm63xx.mk</a><br>
-&gt; index 212960e972..690ffb49fa 100644<br>
-&gt; --- a/target/linux/brcm63xx/image/<a href=3D"http://bcm63xx.mk" rel=3D=
-"noreferrer" target=3D"_blank">bcm63xx.mk</a><br>
-&gt; +++ b/target/linux/brcm63xx/image/<a href=3D"http://bcm63xx.mk" rel=3D=
-"noreferrer" target=3D"_blank">bcm63xx.mk</a><br>
-&gt; @@ -769,6 +769,19 @@ define Device/livebox<br>
-&gt;=C2=A0 =C2=A0endef<br>
-&gt;=C2=A0 =C2=A0TARGET_DEVICES +=3D livebox<br>
-&gt;=C2=A0 =C2=A0<br>
-&gt; +define Device/DV4210<br>
-&gt; +=C2=A0 $(Device/bcm63xx)<br>
-&gt; +=C2=A0 DEVICE_TITLE :=3D Inventel DV4210<br>
-&gt; +=C2=A0 DEVICE_DESCRIPTION =3D Build firmware images for the Inventel =
-DV4210. Board with CFE bootloader and &gt;32MB RAM<br>
-&gt; +=C2=A0 DEVICE_DTS :=3D dv4210<br>
-&gt; +=C2=A0 CFE_BOARD_ID :=3D DV4210<br>
-&gt; +=C2=A0 CFE_CHIP_ID :=3D 6348<br>
-&gt; +=C2=A0 DEVICE_PACKAGES :=3D \<br>
-&gt; +=C2=A0 =C2=A0 $(B43_PACKAGES) $(USB1_PACKAGES)<br>
-&gt; +=C2=A0 DEFAULT :=3D y<br>
-&gt; +endef<br>
-&gt; +TARGET_DEVICES +=3D DV4210<br>
-&gt; +<br>
-&gt;=C2=A0 =C2=A0### Netgear ###<br>
-&gt;=C2=A0 =C2=A0define Device/CVG834G<br>
-&gt;=C2=A0 =C2=A0 =C2=A0$(Device/bcm33xx)<br>
-&gt; diff --git a/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch=
- b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch<br>
-&gt; new file mode 100644<br>
-&gt; index 0000000000..618a214d63<br>
-&gt; --- /dev/null<br>
-&gt; +++ b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch<br>
-&gt; @@ -0,0 +1,50 @@<br>
-&gt; +--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c<br>
-&gt; ++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c<br>
-&gt; +@@ -1058,6 +1058,31 @@<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0},<br>
-&gt; + };<br>
-&gt; +<br>
-&gt; ++static struct board_info __initdata board_DV4210 =3D {<br>
-&gt; ++=C2=A0 =C2=A0 .name=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=3D &quot;DV4210&quot;,<br>
-&gt; ++=C2=A0 =C2=A0 .expected_cpu_id=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =3D 0x6348,<br>
-&gt; ++<br>
-&gt; ++=C2=A0 =C2=A0 .has_enet0=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =3D 1,<br>
-&gt; ++=C2=A0 =C2=A0 .has_enet1=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =3D 1,<br>
-&gt; ++=C2=A0 =C2=A0 .has_pci=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =3D 1,<br>
-&gt; ++<br>
-&gt; ++=C2=A0 =C2=A0 .enet0 =3D {<br>
-&gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 .has_phy=C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =3D 1,<br>
-&gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 .use_internal_phy=C2=A0 =
-=C2=A0 =C2=A0 =C2=A0=3D 1,<br>
-&gt; ++=C2=A0 =C2=A0 },<br>
-&gt; ++<br>
-&gt; ++=C2=A0 =C2=A0 .enet1 =3D {<br>
-&gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 .has_phy=C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =3D 1,<br>
-&gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 .phy_id=C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=3D 31,<br>
-&gt; ++=C2=A0 =C2=A0 },<br>
-&gt; ++<br>
-&gt; ++=C2=A0 =C2=A0 .ephy_reset_gpio=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =3D 6,<br>
-&gt; ++=C2=A0 =C2=A0 .ephy_reset_gpio_flags=C2=A0 =3D GPIO_ACTIVE_LOW,<br>
-&gt; ++<br>
-&gt; ++=C2=A0 =C2=A0 .has_ohci0=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =3D 1,<br>
-&gt; ++=C2=A0 =C2=A0 .has_pccard=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=3D 0,<br>
-&gt; ++};<br>
-&gt; ++<br>
-&gt; + static struct board_info __initdata board_96348A_122 =3D {<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0.name=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=3D &quot;96348A-122=
-&quot;,<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0.expected_cpu_id=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 =C2=A0 =C2=A0 =3D 0x6348,<br>
-&gt; +@@ -2746,6 +2771,7 @@<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&amp;board_FAST2404,<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&amp;board_FAST2604,<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&amp;board_DV201AMR,<br>
-&gt; ++=C2=A0 =C2=A0 &amp;board_DV4210,<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&amp;board_96348gw_a,<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&amp;board_rta1025w_16,<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0&amp;board_96348_D4PW,<br>
-&gt; +@@ -2859,6 +2885,7 @@<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0{ .compatible =3D &quot;d-link,dsl-2640b-b&quot;,=
- .data =3D &amp;board_96348_D4PW, },<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0{ .compatible =3D &quot;davolink,dv-201amr&quot;,=
- .data =3D &amp;board_DV201AMR, },<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0{ .compatible =3D &quot;dynalink,rta1025w&quot;, =
-.data =3D &amp;board_rta1025w_16, },<br>
-&gt; ++=C2=A0 =C2=A0 { .compatible =3D &quot;inventel,dv4210&quot;, .data =
-=3D &amp;board_DV4210, },<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0{ .compatible =3D &quot;netgear,dg834gtpn&quot;, =
-.data =3D &amp;board_96348gw_10, },<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0{ .compatible =3D &quot;netgear,dg834g-v4&quot;, =
-.data =3D &amp;board_96348W3, },<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0{ .compatible =3D &quot;sagem,f@st2404&quot;, .da=
-ta =3D &amp;board_FAST2404, },<br>
-&gt; <br>
-<br>
-</blockquote></div>
-
---0000000000001706020595e4451d--
+>  +	ret =3D request_irq(pci_irq_vector(pdev, GMPX_GMI_TX_INT),
+> -+		bgx_intr_handler, 0, irq_name, bgx);
+> ++		bgx_intr_handler, 0, bgx->irq_name, bgx);
+>  +	if (ret)
+>  +		return 1;
+>  +
+>=20
 
 
---===============7808839145250596803==
+
+--U6RQuGHakFThaKoQgSftWafR9De3wGzsL--
+
+--mvYeC9R5N7awIAkarneqMw1ccmcRATMMf
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl21nIAACgkQ8bdnhZyy
+68en9QgAzNxMU15EO1fyo9b7a9aU9jJN/7IjfWJdsvLNENVhISObRjQj1d7/v4XE
+7nNyYt7z5SWKn3yBOTx6NmI7w0tqeaEwmPJo/36f0cxxO+1G/G6D469y1XzpoFh9
+m1+3BVsrjBPrBEV/K/i9uDFDswBcDEiIVIfe5oBp9vmSV8E65Wjep/yg5S04bvNO
+VkjYeWRt2TirXapkRuWf96VhAVNUcJrpBWsP7zY8p+5tL7Sh9C/JnplcRKnCmi4J
+FF3l6/tpq6SFOT/nWJ0ZY5M5LUl3ussB2BtlmMEtsfGwvZ4w7vcUtsQ9qfZnwXtk
+IfjS/EP54FaRhXJjT7MaP12FGMBMwA==
+=S0fk
+-----END PGP SIGNATURE-----
+
+--mvYeC9R5N7awIAkarneqMw1ccmcRATMMf--
+
+
+--===============7037129374281347691==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -798,5 +257,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7808839145250596803==--
+--===============7037129374281347691==--
 

@@ -2,90 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02C8EE62AE
-	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:36:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97CBEE62B1
+	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:41:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YSCZe2deT0lgruNe+NbHO51kbYM12G9JUJz/JLaHiCA=; b=faZkZe+7kwMBS2
-	R0es0I/znMAlGbJYPhzi1+L9TmWMnpcj83nd79AUUVSXACLBB+bYYHEX9Uz/wLb+xQFUpqfBv82+0
-	7pDoB2reUrX6TPY6jEGzKGuGyLYcfDZ8SZRusuw/GydgccUNmjegX77xkTt5tLGwXi76QuYg/Ao02
-	5kkazO/jFhXhpvl0z2rS1T2o22fvrBmpVNoljyrckXc5UT92PKKaWD1UKprRwf6hd+WaKJ2bUhtZS
-	K++UyO4FM+vMGgWadrE3ROV5nFHHwjaQNTNx4fTG3MtF+gqBwPK8peDgmJinnSLX0KskZmHSuBdkN
-	esjUkZ06H9eCGt/4f/jA==;
+	List-Owner; bh=BCzo0g1hS0RDZLRGoNDYujVvPT0RT7WQzWiGCYbM6T8=; b=kdO85JnyvJ8tET
+	53XLDtcOdWcTmAfdksAEnGZHI48tTUz0OkElygSBCaU+rV4xCskPIUcVltJQ4DV++6h7u83vpJYlb
+	QxnBoTfAua3RUtcfY6B/DlMJeCBBK2Qflpc5JcNolKaPdqFS+aB6IDN+p93VAkZLzAl3nOn3bmEGj
+	Jix1/qYWoR6VwYsEfGG2BrCHB1Bw9tW8zyEZ3oJeK7c6iOYasG1rHhzpAEspOzIZQ8qiQye5/mfhK
+	g0PPjVCtNr1thB/ouxXpSFxc7iTpUKKp3wEO2NmwfTLp405NtEwbw8LvdR2SLgYuaYqKMB6r3oBpz
+	1GO3QdjM02uRDZXgEDow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOiiI-0003MS-Kn; Sun, 27 Oct 2019 13:36:10 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1iOimu-0005E9-4c; Sun, 27 Oct 2019 13:40:56 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOii8-0003Eb-4n
- for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:36:01 +0000
-Received: by mail-wr1-x429.google.com with SMTP id c2so7116422wrr.10
- for <openwrt-devel@lists.openwrt.org>; Sun, 27 Oct 2019 06:35:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Ttq1yYK+GK19LT0NC2Rchc0r6EaAxMPFG96+IUkqpBo=;
- b=po3wa5RVq0PDwIi1KsumYdRocSmIWfNP3rh+WDRPxOnoQSLZiXpAtxE+UTTPenZ4hh
- m3Acp99YUKlOj13LVfvGOt/oenCsHiEHKlPNRCaD/sVPELRM3KaPogN5GJJX59g1Mgnr
- cy+lW8SQ0f6nrYhX2Q41OOj75Nx09WdzFBQFdcpKQ3dsfhGRaYvaK0z/aHIBw77YEuum
- Qa1mlxjWdZ1BoTpw9k4b93Tj8QH+lp+OYm34KCPKo+d02B8voP2Kqhup/znHTfqEPz7c
- qXSp1AP2EZn+qoXxmOhntLzQkLAQULUvrXbz1uiFQ0jDmyfIZxR6cpZm00GYCNxwa9fL
- AN2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Ttq1yYK+GK19LT0NC2Rchc0r6EaAxMPFG96+IUkqpBo=;
- b=oqVquiXz+9EvkUPw/AeRKm5WtA3RSMkcsedJVZMz22LgdH64oF0BS816BrFOoLe9xn
- zVuwB8mPBdCUeh5ywCGMuZFyyWbDCB5Y0ORZ9/GB/9+cEYgVmfeu8ZwHAz1gE7M6fJkC
- mcEzE7OHRT6j6hIXj05y0sb/SjCD472pbHuG8htRS1iqC5ZUKLEgDzKUHPUWcviQFeYP
- 2mQwnq2Vf8C35Sk373ZBQoghZ9iRLLa5Wzb/DWIk64EpRid9zC8y+q/jGrhPJvx7Cly/
- EMdXRST62OxaopYvf9tBT1KZ4AnUlWq31LshHvIhMoBB/nYJf6v4vi4divMSIgw5Dg58
- DN+Q==
-X-Gm-Message-State: APjAAAXtbV9nHeoOrd2Zd8kK+LBuIW8SAesVBAlvoL3XWJJj0mZQsdMN
- MLvGZyS9LSVXVnM1sFCbmrY/MTIl
-X-Google-Smtp-Source: APXvYqxKnVNbjO8hPkrGB+oKXf3VLgLK4tZFNQCguozN0IZ76gaYDQGnpXPA9lhBkPY0hlyUuAUH0w==
-X-Received: by 2002:a5d:4047:: with SMTP id w7mr11072397wrp.270.1572183356695; 
- Sun, 27 Oct 2019 06:35:56 -0700 (PDT)
-Received: from tool.localnet (180.151.117.91.dynamic.reverse-mundo-r.com.
- [91.117.151.180])
- by smtp.googlemail.com with ESMTPSA id s12sm1040807wme.20.2019.10.27.06.35.55
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 27 Oct 2019 06:35:55 -0700 (PDT)
-From: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+ id 1iOiml-0005Ci-UQ
+ for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:40:50 +0000
+Received: from buildfff.adridolf.com ([188.192.135.195]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1MIdW9-1iAA3y3TBl-00EaTt for <openwrt-devel@lists.openwrt.org>; Sun, 27
+ Oct 2019 14:40:43 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 27 Oct 2019 14:35:54 +0100
-Message-ID: <120944314.P3RYrjzPQu@tool>
+Date: Sun, 27 Oct 2019 14:40:37 +0100
+Message-Id: <20191027134037.5476-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:p2qWPznCynCOM8D3vnZSq5kylnj6xCeoMbIPOwCjJtjRyU0L2OC
+ smUF1CbrnopnAJ/XOGHTLliSjmcm+0MwntVnQOaTA85h7M3681WCA5zMRjZZpAdwPQC1PNF
+ D05i2bu3PuO/T1ghvZEBhr27asGh8t65/KjCfx4fckixA0V54GBVmR2xuJoHtBkJ3mKBjNu
+ S8y+ojOWgmhnxhjcJcOnQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qN3qWOUJ+SY=:O6zmmThSKun8+XXcyY51ix
+ I0wiVluZ7Xorv7oqa/f7vzT+/rJ5aNYLW/O5W1I5ZfFuWaHqGOmrTHF4lHkS3y3O3ax8qXsQF
+ j3oyUWGEh59YTxey50Kx2YYqMVldIo+TPxj0zauaioOqFFcUgCgQmo6WhpXaxwkCkD+cGF1B1
+ scBc3R20Pg+MSuiwXRK6YvoLCiCsrGYZ5FKZPBkXh+SKg3BOMSFie4hn+KZY8tE6oIIBmdqGC
+ E0NevhocF6b2QMgQ5sqsZ1euzieEn5rNeLebMn5+c7lh3aCUbxTAyy4lJXVdV9pEfYcvlPm0Q
+ tnyV6gFKkW4jZNcyUI+QG93r4+vCVBEcYUrKVgeqnuEhBpD7988UBvGvaytVXEJ3g/v2MpljH
+ kmz6Cn8TL9pFobRpGmzeViQAR/roV9SJ+bjii7iWXN8Qgx0Zt1BQVxs41Hvbgkmb3DaATsR70
+ EWInRvQ40YWxoPZt8jmI3LuG+vQedrNu8FKl+4qGUaA/DhhONBbbFovsEIFGTzg9luJ3+xULE
+ ng239C1dwE3OGLiVih+bFUkp11voygngqhUHZrnKgIQIClEJBPOYcUdfSzsvpRCK4I1dRY9iC
+ FtAr0765DDFiKGBbEvEIuLNil6+AofTRgxx3ARCor5JbDPsTdiScacWRxhFDIUpzMgBI8Gbk6
+ X4rlRJqWzHCwITqB83EalaYTOrEhg/JRIrPwoufW5dFfzR4kmMbX0WltBmR/jb5HEQGRHQfaQ
+ o153XX8yO98T4XWx1v5svI+n2DzfpmMzG+oSQnOAneIAdnAqunDETrcF1SXAx2nH6beXDgPMF
+ X92yoaDpzb9fQ6CfjU9/sRD4EFcidu9kKeBplhkenlE9Rt/BCGcx5YQPoL1FKqFSO6Z0bG8dd
+ m6AiR1U1HzFeQ+ACyeudSu06Z5GZlgA2r73+HbYdI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_063600_215874_1FC5AD66 
-X-CRM114-Status: GOOD (  15.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191027_064048_276196_E7A7C9B1 
+X-CRM114-Status: GOOD (  12.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:429 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dgcbueu[at]gmail.com)
+ no trust [212.227.126.134 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH v2] brcm63xx: Add support for the Inventel
- DV4210.
+Subject: [OpenWrt-Devel] [PATCH] ath79: fix base-files for zyxel,
+ nbg6716 after split
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,272 +82,199 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Add support for the Inventel DV4210 router.
+Due to rebase of the base-files split patch after adding support
+for zyxel,nbg6716, its base-files were added to the generic
+subtarget, although the device belongs to nand.
 
-This is an Inventel Livebox 1 board. The patch supports the board with a CFE bootloader, and
-a RAM mod (64 MB, tested).  The board originally comes with 8 MB flash.  Under this conditions
-this old BCM6348 based board still runs quite fine with current snapshots.
+This moves the definitions to their proper locations.
 
-Signed-off-by: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
+Fixes: 0130022baec0 ("ath79: split base-files into subtargets")
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+
 ---
-Changes in v2: 
-- Added missing target (brcm63xx) to the subjet.
 
- .../brcm63xx/base-files/etc/board.d/01_leds   |   1 +
- .../base-files/etc/board.d/02_network         |   2 +-
- target/linux/brcm63xx/base-files/etc/diag.sh  |   1 +
- .../linux/brcm63xx/base-files/lib/brcm63xx.sh |   3 +
- target/linux/brcm63xx/dts/dv4210.dts          | 102 ++++++++++++++++++
- target/linux/brcm63xx/image/bcm63xx.mk        |  13 +++
- .../patches-4.14/599-board_DV4210.patch       |  50 +++++++++
- 7 files changed, 171 insertions(+), 1 deletion(-)
- create mode 100644 target/linux/brcm63xx/dts/dv4210.dts
- create mode 100644 target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
+This is a quick fix. Expect less care than usual.
+---
+ .../generic/base-files/etc/board.d/02_network |  8 -------
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  4 ----
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  |  4 ----
+ .../base-files/lib/upgrade/platform.sh        |  3 ---
+ .../nand/base-files/etc/board.d/02_network    |  8 +++++++
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    | 21 ++++++++++++++++++
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  | 22 +++++++++++++++++++
+ .../nand/base-files/lib/upgrade/platform.sh   |  3 +++
+ 8 files changed, 54 insertions(+), 19 deletions(-)
+ create mode 100644 target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+ create mode 100644 target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
 
-diff --git a/target/linux/brcm63xx/base-files/etc/board.d/01_leds b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-index d25d37e847..00109ba112 100755
---- a/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-+++ b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-@@ -69,6 +69,7 @@ homehub2a)
-        ucidef_set_led_usbdev "usb1" "USB1" "HOMEHUB2A:blue:phone" "1-1"
-        ucidef_set_led_usbdev "usb2" "USB2" "HOMEHUB2A:green:phone" "2-1"
-        ;;
-+dv4210|\
- livebox1)
-        ucidef_set_led_netdev "lan" "LAN" "Livebox1:red:traffic" "eth0"
-        ucidef_set_led_netdev "wan" "WAN" "Livebox1:red:adsl" "eth1"
-diff --git a/target/linux/brcm63xx/base-files/etc/board.d/02_network b/target/linux/brcm63xx/base-files/etc/board.d/02_network
-index a2ca5a37b3..0e384f82f6 100755
---- a/target/linux/brcm63xx/base-files/etc/board.d/02_network
-+++ b/target/linux/brcm63xx/base-files/etc/board.d/02_network
-@@ -145,8 +145,8 @@ bcm963268bu_p300)
-        ucidef_add_switch "switch0" \
-                "0:lan" "3:lan" "4:lan" "5:lan" "6:lan" "7:lan" "8t@eth0"
-        ;;
--
- cpva502p |\
-+dv4210 |\
- livebox1)
-        ucidef_set_interfaces_lan_wan "eth0" "eth1"
-        ;;
-diff --git a/target/linux/brcm63xx/base-files/etc/diag.sh b/target/linux/brcm63xx/base-files/etc/diag.sh
-index 34464ec44a..c673a75e40 100644
---- a/target/linux/brcm63xx/base-files/etc/diag.sh
-+++ b/target/linux/brcm63xx/base-files/etc/diag.sh
-@@ -114,6 +114,7 @@ set_state() {
-        hg655b)
-                status_led="HW65x:green:power"
-                ;;
-+       dv4210|\
-        livebox1)
-                status_led="Livebox1:red:adsl-fail-power"
-                ;;
-diff --git a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-index 1676ae0abb..9c0c33cc31 100755
---- a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-+++ b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-@@ -177,6 +177,9 @@ brcm63xx_dt_detect() {
-        "Inteno VG50")
-                board_name="vg50"
-                ;;
-+       "Inventel DV4210")
-+               board_name="dv4210"
-+               ;;
-        "Inventel Livebox 1")
-                board_name="livebox1"
-                ;;
-diff --git a/target/linux/brcm63xx/dts/dv4210.dts b/target/linux/brcm63xx/dts/dv4210.dts
-new file mode 100644
-index 0000000000..02975fe3b6
---- /dev/null
-+++ b/target/linux/brcm63xx/dts/dv4210.dts
-@@ -0,0 +1,102 @@
-+/dts-v1/;
-+
-+#include "bcm6348.dtsi"
-+
-+#include <dt-bindings/input/input.h>
-+
-+/ {
-+       model = "Inventel DV4210";
-+       compatible = "inventel,dv4210", "brcm,bcm6348";
-+
-+       chosen {
-+               bootargs = "rootfstype=squashfs,jffs2 noinitrd console=ttyS0,115200";
-+               stdout-path = "serial0:115200n8";
-+       };
-+
-+       keys {
-+               compatible = "gpio-keys-polled";
-+               #address-cells = <1>;
-+               #size-cells = <0>;
-+               poll-interval = <20>;
-+
-+               button1 {
-+                       label = "1";
-+                       gpios = <&pinctrl 36 1>;
-+                       linux,code = <KEY_RESTART>;
-+                       debounce-interval = <60>;
-+               };
-+
-+               button2 {
-+                       label = "2";
-+                       gpios = <&pinctrl 7 1>;
-+                       linux,code = <BTN_2>;
-+                       debounce-interval = <60>;
-+               };
-+       };
-+
-+       leds {
-+               compatible = "gpio-leds";
-+
-+               red_adsl_fail {
-+                       label = "Livebox1:red:adsl-fail-power";
-+                       gpios = <&pinctrl 0 0>;
-+                       default-state = "on";
-+               };
-+
-+               red_adsl {
-+                       label = "Livebox1:red:adsl";
-+                       gpios = <&pinctrl 1 0>;
-+               };
-+
-+               red_traffic {
-+                       label = "Livebox1:red:traffic";
-+                       gpios = <&pinctrl 2 0>;
-+               };
-+
-+               red_phone {
-+                       label = "Livebox1:red:phone";
-+                       gpios = <&pinctrl 3 0>;
-+               };
-+
-+               red_wifi {
-+                       label = "Livebox1:red:wifi";
-+                       gpios = <&pinctrl 4 0>;
-+               };
-+       };
-+};
-+
-+&pflash {
-+       reg = <0x1f400000 0x800000>;
-+       status = "ok";
-+
-+       partitions {
-+               compatible = "fixed-partitions";
-+               #address-cells = <1>;
-+               #size-cells = <1>;
-+
-+               cfe@0 {
-+                       reg = <0x000000 0x010000>;
-+                       label = "cfe";
-+               };
-+
-+               linux@10000 {
-+                       reg = <0x010000 0x7e0000>;
-+                       label = "linux";
-+                       compatible = "brcm,bcm963xx-imagetag";
-+               };
-+
-+               nvram@7f0000 {
-+                       reg = <0x7f0000 0x010000>;
-+                       label = "nvram";
-+               };
-+       };
-+};
-+
-+&pinctrl {
-+       pinctrl-names = "default";
-+       pinctrl-0 = <&pinctrl_pci &pinctrl_ext_mii &pinctrl_mii_pccard>;
-+};
-+
-+&uart0 {
-+       status = "ok";
-+};
-diff --git a/target/linux/brcm63xx/image/bcm63xx.mk b/target/linux/brcm63xx/image/bcm63xx.mk
-index 212960e972..690ffb49fa 100644
---- a/target/linux/brcm63xx/image/bcm63xx.mk
-+++ b/target/linux/brcm63xx/image/bcm63xx.mk
-@@ -769,6 +769,19 @@ define Device/livebox
- endef
- TARGET_DEVICES += livebox
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+index 7507c6584c..90f622b262 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+@@ -261,10 +261,6 @@ ath79_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "3:lan:1" "4:lan:2"
+ 		;;
+-	zyxel,nbg6716)
+-		ucidef_add_switch "switch0" \
+-			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan" "6@eth1"
+-		;;
+ 	*)
+ 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+ 		;;
+@@ -399,10 +395,6 @@ ath79_setup_macs()
+ 	wd,mynet-wifi-rangeextender)
+ 		lan_mac=$(nvram get et0macaddr)
+ 		;;
+-	zyxel,nbg6716)
+-		lan_mac=$(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +2)
+-		wan_mac=$(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +3)
+-		;;
+ 	esac
  
-+define Device/DV4210
-+  $(Device/bcm63xx)
-+  DEVICE_TITLE := Inventel DV4210
-+  DEVICE_DESCRIPTION = Build firmware images for the Inventel DV4210. Board with CFE bootloader and >32MB RAM
-+  DEVICE_DTS := dv4210
-+  CFE_BOARD_ID := DV4210
-+  CFE_CHIP_ID := 6348
-+  DEVICE_PACKAGES := \
-+    $(B43_PACKAGES) $(USB1_PACKAGES)
-+  DEFAULT := y
-+endef
-+TARGET_DEVICES += DV4210
-+
- ### Netgear ###
- define Device/CVG834G
-   $(Device/bcm33xx)
-diff --git a/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
+ 	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac
+diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+index f1bc6c3c22..4b07660f02 100644
+--- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
++++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -47,10 +47,6 @@ case "$FIRMWARE" in
+ 		caldata_extract "radiocfg" 0x1000 0x440
+ 		ath9k_patch_mac $(mtd_get_mac_ascii devdata "wlan24mac")
+ 		;;
+-	zyxel,nbg6716)
+-		caldata_extract "art" 0x1000 0x440
+-		ath9k_patch_mac $(mtd_get_mac_ascii u-boot-env ethaddr)
+-		;;
+ 	*)
+ 		caldata_die "board $board is not supported yet"
+ 		;;
+diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index 91e813f121..b2ec803a72 100644
+--- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -113,10 +113,6 @@ case "$FIRMWARE" in
+ 	ubnt,unifiac-pro)
+ 		caldata_extract "EEPROM" 0x5000 0x844
+ 		;;
+-	zyxel,nbg6716)
+-		caldata_extract "art" 0x5000 0x844
+-		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +1)
+-		;;
+ 	esac
+ 	;;
+ "ath10k/pre-cal-pci-0000:00:00.0.bin")
+diff --git a/target/linux/ath79/generic/base-files/lib/upgrade/platform.sh b/target/linux/ath79/generic/base-files/lib/upgrade/platform.sh
+index 83c4e78d25..10756abbaf 100644
+--- a/target/linux/ath79/generic/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ath79/generic/base-files/lib/upgrade/platform.sh
+@@ -51,9 +51,6 @@ platform_do_upgrade() {
+ 	ubnt,routerstation-pro)
+ 		echo "Sysupgrade disabled due bug FS#2428"
+ 		;;
+-	zyxel,nbg6716)
+-		nand_do_upgrade "$1"
+-		;;
+ 	*)
+ 		default_do_upgrade "$1"
+ 		;;
+diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+index 65ce439545..1e013f40d1 100755
+--- a/target/linux/ath79/nand/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
+@@ -8,6 +8,10 @@ ath79_setup_interfaces()
+ 	local board="$1"
+ 
+ 	case "$board" in
++	zyxel,nbg6716)
++		ucidef_add_switch "switch0" \
++			"0@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "5:wan" "6@eth1"
++		;;
+ 	*)
+ 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
+ 		;;
+@@ -19,6 +23,10 @@ ath79_setup_macs()
+ 	local board="$1"
+ 
+ 	case "$board" in
++	zyxel,nbg6716)
++		lan_mac=$(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +2)
++		wan_mac=$(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +3)
++		;;
+ 	esac
+ 
+ 	[ -n "$lan_mac" ] && ucidef_set_interface_macaddr "lan" $lan_mac
+diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
 new file mode 100644
-index 0000000000..618a214d63
+index 0000000000..88a40b5d41
 --- /dev/null
-+++ b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-@@ -0,0 +1,50 @@
-+--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c
-++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c
-+@@ -1058,6 +1058,31 @@
-+       },
-+ };
-+ 
-++static struct board_info __initdata board_DV4210 = {
-++      .name                           = "DV4210",
-++      .expected_cpu_id                = 0x6348,
-++
-++      .has_enet0                      = 1,
-++      .has_enet1                      = 1,
-++      .has_pci                        = 1,
-++
-++      .enet0 = {
-++              .has_phy                = 1,
-++              .use_internal_phy       = 1,
-++      },
-++
-++      .enet1 = {
-++                .has_phy              = 1,
-++                .phy_id               = 31,
-++      },
-++
-++      .ephy_reset_gpio                = 6,
-++      .ephy_reset_gpio_flags  = GPIO_ACTIVE_LOW,
-++
-++      .has_ohci0                      = 1,
-++      .has_pccard                     = 0,
-++};
-++
-+ static struct board_info __initdata board_96348A_122 = {
-+       .name                           = "96348A-122",
-+       .expected_cpu_id                = 0x6348,
-+@@ -2746,6 +2771,7 @@
-+       &board_FAST2404,
-+       &board_FAST2604,
-+       &board_DV201AMR,
-++      &board_DV4210,
-+       &board_96348gw_a,
-+       &board_rta1025w_16,
-+       &board_96348_D4PW,
-+@@ -2859,6 +2885,7 @@
-+       { .compatible = "d-link,dsl-2640b-b", .data = &board_96348_D4PW, },
-+       { .compatible = "davolink,dv-201amr", .data = &board_DV201AMR, },
-+       { .compatible = "dynalink,rta1025w", .data = &board_rta1025w_16, },
-++      { .compatible = "inventel,dv4210", .data = &board_DV4210, },
-+       { .compatible = "netgear,dg834gtpn", .data = &board_96348gw_10, },
-+       { .compatible = "netgear,dg834g-v4", .data = &board_96348W3, },
-+       { .compatible = "sagem,f@st2404", .data = &board_FAST2404, },
++++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
+@@ -0,0 +1,21 @@
++#!/bin/sh
++
++[ -e /lib/firmware/$FIRMWARE ] && exit 0
++
++. /lib/functions/caldata.sh
++
++board=$(board_name)
++
++case "$FIRMWARE" in
++"ath9k-eeprom-ahb-18100000.wmac.bin")
++	case $board in
++	zyxel,nbg6716)
++		caldata_extract "art" 0x1000 0x440
++		ath9k_patch_mac $(mtd_get_mac_ascii u-boot-env ethaddr)
++		;;
++	*)
++		caldata_die "board $board is not supported yet"
++		;;
++	esac
++	;;
++esac
+diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+new file mode 100644
+index 0000000000..75fdd42cdd
+--- /dev/null
++++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -0,0 +1,22 @@
++#!/bin/sh
++
++[ -e /lib/firmware/$FIRMWARE ] && exit 0
++
++. /lib/functions/caldata.sh
++. /lib/functions/k2t.sh
++
++board=$(board_name)
++
++case "$FIRMWARE" in
++"ath10k/cal-pci-0000:00:00.0.bin")
++	case $board in
++	zyxel,nbg6716)
++		caldata_extract "art" 0x5000 0x844
++		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_ascii u-boot-env ethaddr) +1)
++		;;
++	esac
++	;;
++*)
++	exit 1
++	;;
++esac
+diff --git a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+index b02ab9a080..6abd7dd0f1 100644
+--- a/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
++++ b/target/linux/ath79/nand/base-files/lib/upgrade/platform.sh
+@@ -13,6 +13,9 @@ platform_do_upgrade() {
+ 	local board=$(board_name)
+ 
+ 	case "$board" in
++	zyxel,nbg6716)
++		nand_do_upgrade "$1"
++		;;
+ 	*)
+ 		default_do_upgrade "$1"
+ 		;;
 -- 
-2.23.0
-
-
+2.20.1
 
 
 _______________________________________________

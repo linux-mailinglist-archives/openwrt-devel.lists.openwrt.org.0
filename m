@@ -2,48 +2,47 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09F93E64A6
-	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 18:46:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E10FE64A1
+	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 18:45:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eKRGWtR9F4oXVuLqQWwLKaWbESq3EXUrl+jJY882oDM=; b=f0/RbQYxjurcAD
-	MkTJ5EQaHXCN7+j/XL7XX0w9pmdAnv0TOpL25Uwao4StpumqdlbjOZv42RzqRS5Ln/hnxzwKeubHB
-	WUpdtSJjk30Dc/f+L7YpsAK041XmrN3WSMVaFBYVDYHPfSTbnW/deL8kiOwSHRTA6wsPxcPd90axI
-	S/9RzsOWPtfP0WOeKBzqxJQwIUpsKf7Iz3W2b7rBSnLunspa00ZYI2HoKrHOAaV5We0bh63HnfXOW
-	ZuY3Iuj+7dgubdUf7Lm8DhsRX3hZ81utmgTKIdm1B6fl/u0Rg0ZKmRg/OuX/xdDxbmhfJUycESLkV
-	cDp2//KVHDmnBO1SKbFA==;
+	List-Owner; bh=8nFMzqMNtyV+eCUWIsH/FNUYEczUPXTRWBi3sBEEkOM=; b=s3t4YpBQfW4l8u
+	8eLAF5Hp9dmZw4nUKNrRjHOz06zQll+EIj0gXD9uwHwVMVOEicZt2bYltdUAeRbYOb0GCRxFJg4rk
+	roQLhoALiAxkALB6VNqc2UC9kI4oL4Lj8YzNf575PJq3G/tJpihLx83SdinzwMDEBuErlOb3Ss9ub
+	mkITcxboP9VrqRO4O+1w3xRo0ovAhVrgkbnBpIdS3uokuRGGG33g8Hfv7BuxMT0gWkdih/+X1JRej
+	+JgslCG8jwOXmo85F8IyLhXL5Y7tOWXXMGvTtVAdVsahi3WhgkOTr262rdg0YbJOmosX8Z6ouG5uM
+	yoDT3F/MUmItZfB65mog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOmcR-00053q-7H; Sun, 27 Oct 2019 17:46:23 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2])
+	id 1iOmbz-0004X7-RG; Sun, 27 Oct 2019 17:45:55 +0000
+Received: from mx2a.mailbox.org ([80.241.60.219])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOmbM-00042p-GK
- for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 17:45:21 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1iOmbM-00041y-Fb
+ for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 17:45:18 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mx2a.mailbox.org (Postfix) with ESMTPS id 69F97A3788;
- Sun, 27 Oct 2019 18:45:09 +0100 (CET)
+ by mx2a.mailbox.org (Postfix) with ESMTPS id 3133CA3A3B;
+ Sun, 27 Oct 2019 18:45:10 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id 2SQBpB59KTp6; Sun, 27 Oct 2019 18:45:06 +0100 (CET)
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id gkZ2575fpQuw; Sun, 27 Oct 2019 18:45:07 +0100 (CET)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 27 Oct 2019 18:44:35 +0100
-Message-Id: <20191027174438.25795-4-hauke@hauke-m.de>
+Date: Sun, 27 Oct 2019 18:44:36 +0100
+Message-Id: <20191027174438.25795-5-hauke@hauke-m.de>
 In-Reply-To: <20191027174438.25795-1-hauke@hauke-m.de>
 References: <20191027174438.25795-1-hauke@hauke-m.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_104516_772071_AFB44801 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20191027_104516_692470_428F46E7 
+X-CRM114-Status: UNSURE (   9.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,11 +50,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
- [list.dnswl.org]
+ low trust [80.241.60.219 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 3/6] dropbear: Activate PIE by default
+Subject: [OpenWrt-Devel] [PATCH 4/6] hostapd: Activate PIE by default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,34 +75,34 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 This activates PIE ASLR support by default when the regular option is
 selected.
 
-This increases the binary size by 18% uncompressed and 17% compressed
+This increases the binary size by 26% uncompressed and 16% compressed
 on MIPS BE.
 
 old:
-164,261 /usr/sbin/dropbear
- 85,648 dropbear_2019.78-2_mips_24kc.ipk
+460,933 /usr/sbin/wpad
+283,891 wpad-basic_2019-08-08-ca8c2bd2-1_mips_24kc.ipk
 
 new:
-194,492 /usr/sbin/dropbear
-100,309 dropbear_2019.78-2_mips_24kc.ipk
+584,508 /usr/sbin/wpad
+330,281 wpad-basic_2019-08-08-ca8c2bd2-1_mips_24kc.ipk
 
 Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
 ---
- package/network/services/dropbear/Makefile | 1 +
+ package/network/services/hostapd/Makefile | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/package/network/services/dropbear/Makefile b/package/network/services/dropbear/Makefile
-index 63204042f7..fae1c9587d 100644
---- a/package/network/services/dropbear/Makefile
-+++ b/package/network/services/dropbear/Makefile
-@@ -22,6 +22,7 @@ PKG_LICENSE_FILES:=LICENSE libtomcrypt/LICENSE libtommath/LICENSE
- PKG_CPE_ID:=cpe:/a:matt_johnston:dropbear_ssh_server
+diff --git a/package/network/services/hostapd/Makefile b/package/network/services/hostapd/Makefile
+index 4f6420f503..2d383ac629 100644
+--- a/package/network/services/hostapd/Makefile
++++ b/package/network/services/hostapd/Makefile
+@@ -20,6 +20,7 @@ PKG_LICENSE:=BSD-3-Clause
+ PKG_CPE_ID:=cpe:/a:w1.fi:hostapd
  
  PKG_BUILD_PARALLEL:=1
 +PKG_ASLR_PIE_REGULAR:=1
- PKG_USE_MIPS16:=0
- PKG_FIXUP:=autoreconf
  
+ PKG_CONFIG_DEPENDS:= \
+ 	CONFIG_PACKAGE_kmod-ath9k \
 -- 
 2.20.1
 

@@ -2,46 +2,46 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C568E6288
-	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:06:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D0DAE6297
+	for <lists+openwrt-devel@lfdr.de>; Sun, 27 Oct 2019 14:10:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8LIda7jIMtYrz9pEPWY/vFNqmCIvt0xusjZZ0OruIAY=; b=M3l78Tp17ew3Wehyhze5uAK0e
-	qmIxhb9GVxXJDankaG4B7tWcHEWuGuvEVUu2cXPBDS9IB7I1TFlh0z1Dk+L0idZ5HRKfizu3BsKkq
-	+JI2cKUS/7HbnYfA6wBsbogJMGhXn6X3nqZl9HbPe/APMJqb+w5yDuMg3JmanbkFLaFhQ1F+QVNXJ
-	xvv+Ej6dApU8E4oGrT4iajgluuVT128FcsRtarETam+8J04DGxmKgoyMrgupQ09nPqT3nQW+aPVvK
-	HaxzI69eKe5Z892HyEr0E5197PWLr8S+6zqz+OExb0I+qWAgW7m6DmDJJ5WL4au1/89PInPD2wovC
-	iOZ+WKMbQ==;
+	 bh=KTDMpfPOMvAvMkL0O7MPB0G1UIrViDmTQU5+aK6yRBw=; b=APtirQSOYUO3fCF1TIRbqUNRZ
+	gNKDBlCRDJAmjCmwZb5HXKj5vOu/buP8IRgttGhGsTegRJxYj6hijP/2KvRrmcZul+CcB83QqsajQ
+	PBN856nedG5SUg3zNurDUOFPtrgrDOtcDB3DHaLEXzalgBIGGD3rFS/G8KVmkabzohRFBbA4yOXeZ
+	T+n8FTfYWdjzje8CviCbANKWJnYrAyIpzAyJilC9L5K6hJWsqagbCdjVUvCfBhsNUP93feToSKu3A
+	Cb9CMLwqm3fkJ4d83ebdbqpsrIWpmHNZeVqLMQeIFGqCf4+xAqt8ViggexENNumYF5ax2kRFcVO5a
+	1U5LYdMiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iOiFK-00011r-TP; Sun, 27 Oct 2019 13:06:14 +0000
+	id 1iOiJC-0002LN-Ke; Sun, 27 Oct 2019 13:10:14 +0000
 Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iOiF3-0000wa-TX
- for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:06:00 +0000
+ id 1iOiJ2-0001gy-SU
+ for openwrt-devel@lists.openwrt.org; Sun, 27 Oct 2019 13:10:06 +0000
 Received: from p5dcfb592.dip0.t-ipconnect.de ([93.207.181.146]
  helo=[192.168.45.104])
  by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <john@phrozen.org>)
- id 1iOiEx-0003lo-NK; Sun, 27 Oct 2019 14:05:52 +0100
-To: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>,
- openwrt-devel@lists.openwrt.org
-References: <3020121.uscLunan1g@tool>
+ id 1iOiJ0-00048O-4E; Sun, 27 Oct 2019 14:10:02 +0100
+To: Nylon Chen <nylon7@andestech.com>, openwrt-devel@lists.openwrt.org
+References: <20190611103042.31736-1-nylon7@andestech.com>
+ <20190611103042.31736-2-nylon7@andestech.com>
 From: John Crispin <john@phrozen.org>
-Message-ID: <ba5d5df3-a26d-15a0-04d9-81bb5c79ae5f@phrozen.org>
-Date: Sun, 27 Oct 2019 14:05:50 +0100
+Message-ID: <e4ec187c-432a-e228-ba67-729069aae1cf@phrozen.org>
+Date: Sun, 27 Oct 2019 14:10:01 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <3020121.uscLunan1g@tool>
+In-Reply-To: <20190611103042.31736-2-nylon7@andestech.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191027_060558_114604_C675011D 
-X-CRM114-Status: GOOD (  21.22  )
+X-CRM114-CacheID: sfid-20191027_061005_094959_AFB83075 
+X-CRM114-Status: GOOD (  17.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -49,7 +49,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] Add support for Inventel DV4210
+Subject: Re: [OpenWrt-Devel] [PATCH 1/4] toolchain: add support of nds32
+ architecture
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,276 +62,173 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Nylon Chen <nylon7717@gmail.com>, Che-Wei Chuang <cnoize@andestech.com>,
+ Greentime Hu <greentime@andestech.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 22/09/2019 22:05, Daniel Gonzalez Cabanelas wrote:
-> Add support for the Inventel DV4210 router.
-> 
-> This is an Inventel Livebox 1 board. The patch supports the board with a CFE bootloader, and
-> a RAM mod (64 MB, tested).  The board originally comes with 8 MB flash.  Under this conditions
-> this old BCM6348 based board still runs quite fine with current snapshots.
-> 
+On 11/06/2019 12:30, Nylon Chen wrote:
+> This commit provides basic support for the
+> Andes 32-bit (nds32) architecture.
 
 Hi,
-thanks for the patch, the subject line needs to start with "brcm63xx:"
+thanks for the patches, they have not been picked up by anyone and right 
+now I am not sure if it makes sense to merge the support, as it requires 
+a fpga test board that probably no one apart from you guys has. sorry.
 	John
 
-> Signed-off-by: Daniel Gonzalez Cabanelas <dgcbueu@gmail.com>
-> ---
->   .../brcm63xx/base-files/etc/board.d/01_leds   |   1 +
->   .../base-files/etc/board.d/02_network         |   2 +-
->   target/linux/brcm63xx/base-files/etc/diag.sh  |   1 +
->   .../linux/brcm63xx/base-files/lib/brcm63xx.sh |   3 +
->   target/linux/brcm63xx/dts/dv4210.dts          | 102 ++++++++++++++++++
->   target/linux/brcm63xx/image/bcm63xx.mk        |  13 +++
->   .../patches-4.14/599-board_DV4210.patch       |  50 +++++++++
->   7 files changed, 171 insertions(+), 1 deletion(-)
->   create mode 100644 target/linux/brcm63xx/dts/dv4210.dts
->   create mode 100644 target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
 > 
-> diff --git a/target/linux/brcm63xx/base-files/etc/board.d/01_leds b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> index d25d37e847..00109ba112 100755
-> --- a/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> +++ b/target/linux/brcm63xx/base-files/etc/board.d/01_leds
-> @@ -69,6 +69,7 @@ homehub2a)
->   	ucidef_set_led_usbdev "usb1" "USB1" "HOMEHUB2A:blue:phone" "1-1"
->   	ucidef_set_led_usbdev "usb2" "USB2" "HOMEHUB2A:green:phone" "2-1"
->   	;;
-> +dv4210|\
->   livebox1)
->   	ucidef_set_led_netdev "lan" "LAN" "Livebox1:red:traffic" "eth0"
->   	ucidef_set_led_netdev "wan" "WAN" "Livebox1:red:adsl" "eth1"
-> diff --git a/target/linux/brcm63xx/base-files/etc/board.d/02_network b/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> index a2ca5a37b3..0e384f82f6 100755
-> --- a/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> +++ b/target/linux/brcm63xx/base-files/etc/board.d/02_network
-> @@ -145,8 +145,8 @@ bcm963268bu_p300)
->   	ucidef_add_switch "switch0" \
->   		"0:lan" "3:lan" "4:lan" "5:lan" "6:lan" "7:lan" "8t@eth0"
->   	;;
-> -
->   cpva502p |\
-> +dv4210 |\
->   livebox1)
->   	ucidef_set_interfaces_lan_wan "eth0" "eth1"
->   	;;
-> diff --git a/target/linux/brcm63xx/base-files/etc/diag.sh b/target/linux/brcm63xx/base-files/etc/diag.sh
-> index 34464ec44a..c673a75e40 100644
-> --- a/target/linux/brcm63xx/base-files/etc/diag.sh
-> +++ b/target/linux/brcm63xx/base-files/etc/diag.sh
-> @@ -114,6 +114,7 @@ set_state() {
->   	hg655b)
->   		status_led="HW65x:green:power"
->   		;;
-> +	dv4210|\
->   	livebox1)
->   		status_led="Livebox1:red:adsl-fail-power"
->   		;;
-> diff --git a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> index 1676ae0abb..9c0c33cc31 100755
-> --- a/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> +++ b/target/linux/brcm63xx/base-files/lib/brcm63xx.sh
-> @@ -177,6 +177,9 @@ brcm63xx_dt_detect() {
->   	"Inteno VG50")
->   		board_name="vg50"
->   		;;
-> +	"Inventel DV4210")
-> +		board_name="dv4210"
-> +		;;
->   	"Inventel Livebox 1")
->   		board_name="livebox1"
->   		;;
-> diff --git a/target/linux/brcm63xx/dts/dv4210.dts b/target/linux/brcm63xx/dts/dv4210.dts
+> Signed-off-by: Che-Wei Chuang <cnoize@andestech.com>
+> Signed-off-by: Nylon Chen <nylon7@andestech.com>
+> ---
+>   include/kernel.mk   |  2 ++
+>   include/site/nds32  | 33 +++++++++++++++++++++++++++++++++
+>   include/target.mk   |  4 ++++
+>   target/Config.in    |  5 +++++
+>   toolchain/Config.in |  9 ++++++---
+>   5 files changed, 50 insertions(+), 3 deletions(-)
+>   create mode 100644 include/site/nds32
+> 
+> diff --git a/include/kernel.mk b/include/kernel.mk
+> index 3195090a0a..d0b5b779b9 100644
+> --- a/include/kernel.mk
+> +++ b/include/kernel.mk
+> @@ -85,6 +85,8 @@ ifneq (,$(findstring uml,$(BOARD)))
+>     LINUX_KARCH=um
+>   else ifneq (,$(findstring $(ARCH) , aarch64 aarch64_be ))
+>     LINUX_KARCH := arm64
+> +else ifneq (,$(findstring $(ARCH) , nds32 ))
+> +  LINUX_KARCH := nds32
+>   else ifneq (,$(findstring $(ARCH) , arceb ))
+>     LINUX_KARCH := arc
+>   else ifneq (,$(findstring $(ARCH) , armeb ))
+> diff --git a/include/site/nds32 b/include/site/nds32
 > new file mode 100644
-> index 0000000000..02975fe3b6
+> index 0000000000..b0a0977671
 > --- /dev/null
-> +++ b/target/linux/brcm63xx/dts/dv4210.dts
-> @@ -0,0 +1,102 @@
-> +/dts-v1/;
+> +++ b/include/site/nds32
+> @@ -0,0 +1,33 @@
+> +ac_cv_c_littleendian=${ac_cv_c_littleendian=yes}
+> +ac_cv_c_bigendian=${ac_cv_c_bigendian=no}
 > +
-> +#include "bcm6348.dtsi"
+> +ac_cv_sizeof___int64=${ac_cv_sizeof___int64=0}
+> +ac_cv_sizeof_bool=${ac_cv_sizeof_bool=1}
+> +ac_cv_sizeof_char=${ac_cv_sizeof_char=1}
+> +ac_cv_sizeof_char_p=${ac_cv_sizeof_int_p=4}
+> +ac_cv_sizeof_double=${ac_cv_sizeof_double=8}
+> +ac_cv_sizeof_float=${ac_cv_sizeof_float=4}
+> +ac_cv_sizeof_int=${ac_cv_sizeof_int=4}
+> +ac_cv_sizeof_int_p=${ac_cv_sizeof_int_p=4}
+> +ac_cv_sizeof_long=${ac_cv_sizeof_long=4}
+> +ac_cv_sizeof_long_double=${ac_cv_sizeof_long_double=8}
+> +ac_cv_sizeof_long_int=${ac_cv_sizeof_long_int=4}
+> +ac_cv_sizeof_long_long=${ac_cv_sizeof_long_long=8}
+> +ac_cv_sizeof_long_p=${ac_cv_sizeof_long_p=4}
+> +ac_cv_sizeof_off_t=${ac_cv_sizeof_off_t=4}
+> +ac_cv_sizeof_ptrdiff_t=${glib_cv_sizeof_ptrdiff_t=4}
+> +ac_cv_sizeof_short=${ac_cv_sizeof_short=2}
+> +ac_cv_sizeof_short_int=${ac_cv_sizeof_short_int=2}
+> +ac_cv_sizeof_signed_char=${ac_cv_sizeof_signed_char=1}
+> +ac_cv_sizeof_size_t=${ac_cv_sizeof_size_t=4}
+> +ac_cv_sizeof_unsigned_char=${ac_cv_sizeof_unsigned_char=1}
+> +ac_cv_sizeof_unsigned_short=${ac_cv_sizeof_unsigned_short=2}
+> +ac_cv_sizeof_unsigned=${ac_cv_sizeof_unsigned=4}
+> +ac_cv_sizeof_unsigned_int=${ac_cv_sizeof_unsigned_int=4}
+> +ac_cv_sizeof_unsigned_long=${ac_cv_sizeof_unsigned_long=4}
+> +ac_cv_sizeof_unsigned_long_long=${ac_cv_sizeof_unsigned_long_long=8}
+> +ac_cv_sizeof_void_p=${ac_cv_sizeof_void_p=4}
+> +ac_cv_sizeof_wchar_t=${ac_cv_sizeof_wchar_t=1}
 > +
-> +#include <dt-bindings/input/input.h>
-> +
-> +/ {
-> +	model = "Inventel DV4210";
-> +	compatible = "inventel,dv4210", "brcm,bcm6348";
-> +
-> +	chosen {
-> +		bootargs = "rootfstype=squashfs,jffs2 noinitrd console=ttyS0,115200";
-> +		stdout-path = "serial0:115200n8";
-> +	};
-> +
-> +	keys {
-> +		compatible = "gpio-keys-polled";
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		poll-interval = <20>;
-> +
-> +		button1 {
-> +			label = "1";
-> +			gpios = <&pinctrl 36 1>;
-> +			linux,code = <KEY_RESTART>;
-> +			debounce-interval = <60>;
-> +		};
-> +
-> +		button2 {
-> +			label = "2";
-> +			gpios = <&pinctrl 7 1>;
-> +			linux,code = <BTN_2>;
-> +			debounce-interval = <60>;
-> +		};
-> +	};
-> +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +
-> +		red_adsl_fail {
-> +			label = "Livebox1:red:adsl-fail-power";
-> +			gpios = <&pinctrl 0 0>;
-> +			default-state = "on";
-> +		};
-> +
-> +		red_adsl {
-> +			label = "Livebox1:red:adsl";
-> +			gpios = <&pinctrl 1 0>;
-> +		};
-> +
-> +		red_traffic {
-> +			label = "Livebox1:red:traffic";
-> +			gpios = <&pinctrl 2 0>;
-> +		};
-> +
-> +		red_phone {
-> +			label = "Livebox1:red:phone";
-> +			gpios = <&pinctrl 3 0>;
-> +		};
-> +
-> +		red_wifi {
-> +			label = "Livebox1:red:wifi";
-> +			gpios = <&pinctrl 4 0>;
-> +		};
-> +	};
-> +};
-> +
-> +&pflash {
-> +	reg = <0x1f400000 0x800000>;
-> +	status = "ok";
-> +
-> +	partitions {
-> +		compatible = "fixed-partitions";
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +
-> +		cfe@0 {
-> +			reg = <0x000000 0x010000>;
-> +			label = "cfe";
-> +		};
-> +
-> +		linux@10000 {
-> +			reg = <0x010000 0x7e0000>;
-> +			label = "linux";
-> +			compatible = "brcm,bcm963xx-imagetag";
-> +		};
-> +
-> +		nvram@7f0000 {
-> +			reg = <0x7f0000 0x010000>;
-> +			label = "nvram";
-> +		};
-> +	};
-> +};
-> +
-> +&pinctrl {
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_pci &pinctrl_ext_mii &pinctrl_mii_pccard>;
-> +};
-> +
-> +&uart0 {
-> +	status = "ok";
-> +};
-> diff --git a/target/linux/brcm63xx/image/bcm63xx.mk b/target/linux/brcm63xx/image/bcm63xx.mk
-> index 212960e972..690ffb49fa 100644
-> --- a/target/linux/brcm63xx/image/bcm63xx.mk
-> +++ b/target/linux/brcm63xx/image/bcm63xx.mk
-> @@ -769,6 +769,19 @@ define Device/livebox
->   endef
->   TARGET_DEVICES += livebox
+> +ac_cv_func_realloc_0_nonnull=yes
+> +ac_cv_func_malloc_0_nonnull=yes
+> diff --git a/include/target.mk b/include/target.mk
+> index 4f3bd43e6c..75e23f328f 100644
+> --- a/include/target.mk
+> +++ b/include/target.mk
+> @@ -176,6 +176,10 @@ ifeq ($(DUMP),1)
+>       CPU_CFLAGS_74kc = -mips32r2 -mtune=74kc
+>       CPU_CFLAGS_octeonplus = -march=octeon+ -mabi=64
+>     endif
+> +  ifeq ($(ARCH),nds32)
+> +    CPU_TYPE ?= nds32
+> +    CPU_CFLAGS += -march=v3
+> +  endif
+>     ifeq ($(ARCH),i386)
+>       CPU_TYPE ?= pentium
+>       CPU_CFLAGS_pentium = -march=pentium-mmx
+> diff --git a/target/Config.in b/target/Config.in
+> index 3ee23ebf7f..8d6aa8769c 100644
+> --- a/target/Config.in
+> +++ b/target/Config.in
+> @@ -192,6 +192,10 @@ config x86_64
+>   	select ARCH_64BIT
+>   	bool
 >   
-> +define Device/DV4210
-> +  $(Device/bcm63xx)
-> +  DEVICE_TITLE := Inventel DV4210
-> +  DEVICE_DESCRIPTION = Build firmware images for the Inventel DV4210. Board with CFE bootloader and >32MB RAM
-> +  DEVICE_DTS := dv4210
-> +  CFE_BOARD_ID := DV4210
-> +  CFE_CHIP_ID := 6348
-> +  DEVICE_PACKAGES := \
-> +    $(B43_PACKAGES) $(USB1_PACKAGES)
-> +  DEFAULT := y
-> +endef
-> +TARGET_DEVICES += DV4210
+> +config nds32
+> +	select LITTLE_ENDIAN
+> +	bool
 > +
->   ### Netgear ###
->   define Device/CVG834G
->     $(Device/bcm33xx)
-> diff --git a/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-> new file mode 100644
-> index 0000000000..618a214d63
-> --- /dev/null
-> +++ b/target/linux/brcm63xx/patches-4.14/599-board_DV4210.patch
-> @@ -0,0 +1,50 @@
-> +--- a/arch/mips/bcm63xx/boards/board_bcm963xx.c
-> ++++ b/arch/mips/bcm63xx/boards/board_bcm963xx.c
-> +@@ -1058,6 +1058,31 @@
-> + 	},
-> + };
-> +
-> ++static struct board_info __initdata board_DV4210 = {
-> ++	.name				= "DV4210",
-> ++	.expected_cpu_id		= 0x6348,
-> ++
-> ++	.has_enet0			= 1,
-> ++	.has_enet1			= 1,
-> ++	.has_pci			= 1,
-> ++
-> ++	.enet0 = {
-> ++		.has_phy		= 1,
-> ++		.use_internal_phy	= 1,
-> ++	},
-> ++
-> ++	.enet1 = {
-> ++		  .has_phy		= 1,
-> ++		  .phy_id 		= 31,
-> ++	},
-> ++
-> ++	.ephy_reset_gpio		= 6,
-> ++	.ephy_reset_gpio_flags	= GPIO_ACTIVE_LOW,
-> ++
-> ++	.has_ohci0			= 1,
-> ++	.has_pccard			= 0,
-> ++};
-> ++
-> + static struct board_info __initdata board_96348A_122 = {
-> + 	.name				= "96348A-122",
-> + 	.expected_cpu_id		= 0x6348,
-> +@@ -2746,6 +2771,7 @@
-> + 	&board_FAST2404,
-> + 	&board_FAST2604,
-> + 	&board_DV201AMR,
-> ++	&board_DV4210,
-> + 	&board_96348gw_a,
-> + 	&board_rta1025w_16,
-> + 	&board_96348_D4PW,
-> +@@ -2859,6 +2885,7 @@
-> + 	{ .compatible = "d-link,dsl-2640b-b", .data = &board_96348_D4PW, },
-> + 	{ .compatible = "davolink,dv-201amr", .data = &board_DV201AMR, },
-> + 	{ .compatible = "dynalink,rta1025w", .data = &board_rta1025w_16, },
-> ++	{ .compatible = "inventel,dv4210", .data = &board_DV4210, },
-> + 	{ .compatible = "netgear,dg834gtpn", .data = &board_96348gw_10, },
-> +  	{ .compatible = "netgear,dg834g-v4", .data = &board_96348W3, },
-> + 	{ .compatible = "sagem,f@st2404", .data = &board_FAST2404, },
+>   config ARCH
+>   	string
+>   	default "aarch64"   if aarch64
+> @@ -215,4 +219,5 @@ config ARCH
+>   	default "sh4eb"     if sh4eb
+>   	default "sparc"     if sparc
+>   	default "x86_64"    if x86_64
+> +	default "nds32"	    if nds32
+>   
+> diff --git a/toolchain/Config.in b/toolchain/Config.in
+> index 82dddbc209..7cb65e803e 100644
+> --- a/toolchain/Config.in
+> +++ b/toolchain/Config.in
+> @@ -67,6 +67,7 @@ menuconfig EXTERNAL_TOOLCHAIN
+>   		default "mipsel-unknown-linux-gnu"   if mipsel
+>   		default "powerpc-unknown-linux-gnu"  if powerpc
+>   		default "x86_64-unknown-linux-gnu"   if x86_64
+> +		default "nds32le-linux"              if nds32
+>   
+>   	config TOOLCHAIN_PREFIX
+>   		string
+> @@ -81,6 +82,7 @@ menuconfig EXTERNAL_TOOLCHAIN
+>   		default "mipsel-unknown-linux-gnu-"   if mipsel
+>   		default "powerpc-unknown-linux-gnu-"  if powerpc
+>   		default "x86_64-unknown-linux-gnu-"   if x86_64
+> +		default "nds32le-linux-"              if nds32
+>   
+>   	config TOOLCHAIN_ROOT
+>   		string
+> @@ -113,11 +115,12 @@ menuconfig EXTERNAL_TOOLCHAIN
+>   		config EXTERNAL_TOOLCHAIN_LIBC_USE_UCLIBC
+>   			bool "uClibc"
+>   			select USE_UCLIBC
+> -			depends on !(aarch64 || aarch64_be)
+> +			depends on !(aarch64 || aarch64_be || nds32)
+>   
+>   		config EXTERNAL_TOOLCHAIN_LIBC_USE_MUSL
+>   			bool "musl"
+>   			select USE_MUSL
+> +			depends on !nds32
+>   
+>   	endchoice
+>   
+> @@ -251,13 +254,13 @@ choice
+>   	config LIBC_USE_UCLIBC
+>   		select USE_UCLIBC
+>   		bool "Use uClibc"
+> -		depends on !(aarch64 || aarch64_be || powerpc64)
+> +		depends on !(aarch64 || aarch64_be || powerpc64 || nds32)
+>   		depends on BROKEN || !(arm || armeb || i386 || x86_64 || mips || mipsel || mips64 || mips64el || powerpc)
+>   
+>   	config LIBC_USE_MUSL
+>   		select USE_MUSL
+>   		bool "Use musl"
+> -		depends on !(arc || powerpc64)
+> +		depends on !(arc || powerpc64 || nds32)
+>   
+>   endchoice
+>   
 > 
 
 

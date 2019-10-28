@@ -2,65 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E3DEE79F0
-	for <lists+openwrt-devel@lfdr.de>; Mon, 28 Oct 2019 21:18:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15360E7B87
+	for <lists+openwrt-devel@lfdr.de>; Mon, 28 Oct 2019 22:42:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cDA5evgzMZWnilK+TGekomPPIDJVkpOypXQHfa6llg4=; b=gY4UtJOxtRMht6l9IwnTz8GEd
-	QrELn6pYuvhGZXFwKQXZU78x+Sed62SW7ICozTWBPfKTdPw8XYt8KYLJDlXRitE1kfdWbY5eqIWzs
-	eY1qo8qdMneHRbIp5VS2TbvhJKF9RSySDsmc6o3d7xB+tSnacX3ZnyOtnTaICGShobQCwovuK7lgJ
-	bRL1q2yI2kq0XV8SIaAQnR3fKzqS3WQnzfdXdAUWxw6kXc3dYR/tSBesysgvrK01oDaAp/NUon2p0
-	b29bCVsx6/NuWCqCayKrJc00F5cMQIdNEuGmA/06F64cY7hFcYUPmEhiXZoJlUdXSL0oVOimM4SVA
-	QlGMNoPiw==;
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VFHQF4i8F2Q+1cp4Xegq+6OGVLyCtUqHRI59/P5aI+k=; b=BphYrYtjCc1dkQ
+	C3L1wSymKA51ydE4qpDgQ4MNHta5Ca+VAEdPGuEGpv/B1Jejl2R8rRUe33MsuhE37mAYk/+N+lO20
+	5cnmI5KMc7utgx0yXoL4dizrolV5U1q8E9tz0khtY4zXzAppXgB1MNF+LgVqEmnk+G3RrR+jbiteb
+	d/9/ztQFh/kjduliwYs7WFrX+9IiCf3/jT9c1Gifu0hFLi8G2d8MWm4Jw+CryTDE6ZhUsMDtsjr45
+	1ctYC4lzz7wYSQ9cKa0dILDEHqlnThfxalQ6JSBz3N99QnTRNfVO2ffYke1Z1m0CQkuWN7CUDUPDd
+	U73CC/j00HSaQWjeYTqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPBSt-0003Wb-Bd; Mon, 28 Oct 2019 20:18:11 +0000
-Received: from iapetos.krtzbrtz.org ([85.124.251.73])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPBSl-0003Vp-Nm
- for openwrt-devel@lists.openwrt.org; Mon, 28 Oct 2019 20:18:05 +0000
-Received: from [192.168.1.11] (194-166-119-100.hdsl.highway.telekom.at
- [194.166.119.100])
- by iapetos.krtzbrtz.org (Postfix) with ESMTPSA id 057FD9F255
- for <openwrt-devel@lists.openwrt.org>; Mon, 28 Oct 2019 21:17:52 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=krtzbrtz.org;
- s=chswiq6a; t=1572293873;
- bh=biN8fJ2uMGyyz8fbexEnv3WMoqxVwKhrBuLCsMYbhxY=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=ERWkXFoLLRAYGuTCPrmRN41loAmY7fi7MGluys2OUfyuHmF9f/+v307pNfKs2mgnZ
- Ubfn3wSKCVJeb3PHBv/SIiFBHXKHwnEnBTk4IvUNSOa0imlQCicvyxKTJCE82i27OJ
- 43ToUixCbbqWriT6XD+fZoVmFTdGib+OZhiaPOGckKtTRFtUCiz6bczdg22c1JZwQa
- I3rc2fWw4D75i9rb3bFLzWo5AMlCyXejI4AO0WvBGhJ/wJpN0fxnOLqbo168Ejnh3X
- Mcg5Xz67BCzA0U9yhtqK7qPHFVLUVRkprto6iomt8chon+sy9j5PG78Wh1uvKFZJZA
- jHSYVRPWmFqxw==
-To: openwrt-devel@lists.openwrt.org
-References: <20191024115430.19992-1-openwrt.dev@krtzbrtz.org>
- <007d01d58b27$1a730a70$4f591f50$@adrianschmutzler.de>
- <2b2cc133-5d6f-4f60-73c8-f879bfc739aa@krtzbrtz.org>
- <02c001d58da3$9ee856b0$dcb90410$@adrianschmutzler.de>
-From: 'Patrick Supper' <openwrt.dev@krtzbrtz.org>
-Message-ID: <70a0f9c3-ab80-3317-6c4b-c9a712c8b3b5@krtzbrtz.org>
-Date: Mon, 28 Oct 2019 21:17:50 +0100
+	id 1iPCmf-0005wN-SV; Mon, 28 Oct 2019 21:42:41 +0000
+Received: from mail2.candelatech.com ([208.74.158.173]
+ helo=mail3.candelatech.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPCmZ-0005vd-1C
+ for openwrt-devel@lists.openwrt.org; Mon, 28 Oct 2019 21:42:36 +0000
+Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
+ [50.251.239.81])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail3.candelatech.com (Postfix) with ESMTPSA id 21776137562
+ for <openwrt-devel@lists.openwrt.org>; Mon, 28 Oct 2019 14:42:33 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 21776137562
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+ s=default; t=1572298953;
+ bh=+pRU9QnLc0ag6auuoboQVwiCXvIsj92UUcFH1vclbkU=;
+ h=To:From:Subject:Date:From;
+ b=m56RhpsiJL/+3lV5ZLcZGrlm93+GmuVldrxVH7F752MWuzdBXyF78f08gyH1seEAI
+ Knugnli1Gh2vEGhIrkYxwAPuBaTTSmAo6Wid5BLJDEa0iOMBtbVN9oKylhGFMkJIRs
+ GbvD+Wk/S3+XCCPPymAf8veisF0gxu06dMSoIY8w=
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+From: Ben Greear <greearb@candelatech.com>
+Organization: Candela Technologies
+Message-ID: <fa883a60-0d29-5cb9-7b54-3cab5485ec84@candelatech.com>
+Date: Mon, 28 Oct 2019 14:42:32 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <02c001d58da3$9ee856b0$dcb90410$@adrianschmutzler.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_131804_268992_1EF87E51 
-X-CRM114-Status: GOOD (  18.06  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191028_144235_095554_BA40E197 
+X-CRM114-Status: GOOD (  11.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.5 FROM_DOMAIN_NOVOWEL    From: domain has series of non-vowel letters
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -68,7 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for ZyXEL NWA1123-NI
+Subject: [OpenWrt-Devel] Any interest in a 'ct' iperf3?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,69 +81,44 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
+We added iperf3 support to our network testing tool, so we could more easily
+use generic third-party systems as remote traffic endpoints.  While doing this,
+I ended up getting iperf3 to compile for and run stable on windows, found and fixed a bunch of
+issues, and of course possibly added some new bugs.
 
->> ### Regarding the cal-data of the pcie-wifi (AR9382):
->> It seems to me it has some kind of EEPROM, from OEM-BootLog:
->> wmac-wifi: "Using Cal data from Flash 0xbfff0000"
-> 
-> Note that you are currently using art 0x1000, so 0xff1000 inside flash?!
-> 
+Is there any interest in adding an iperf3-ct option to openwrt?  If so,
+I'll cook up a patch.
 
-ART-Partition starts at 0xff0000 in flash. Cal-data starts at 0xff1000 
-if i got it right.
+Here is my change notes for what I did:
 
-OEM-Firmware uses OpenWrt but proprietary Atheros-Drivers, to be honest 
-i don't know what they really do, but i guess they use a offset of 
-0x1000 from start of art for cal-data?
+iperf 3.7-CT:  Changes from upstream iperf3
 
-# OEM-Firmware, art (MAC-Addr changed):
-/ # hexdump /dev/mtd7
-0000000 0030 ab11 20e1 ffff ffff ffff ffff ffff
-0000010 ffff ffff ffff ffff ffff ffff ffff ffff
-*
-0001000 0202 0011 2233 4455 0030 3a62 323a 6463
-0001010 ...
+   * Support SO_BINDTODEVICE.
 
+   * Make sockets non-blocking to fix various ways the client and server can hang.
 
->> How shall we proceed with this? Keep the current solution (with the risk
->> that some users maybe end up with wrong MAC-addresses)? Or extend
->> mtd_get_mac_ascii with an option for white-space as a field separator
->> (or create a new function) and set the MAC address in
->> /etc/board.d/02_network + /etc/hotplug.d/firmware/10-ath9k-eeprom?
-> 
-> Thanks for the extensive answer.
-> 
-> I'm not 100 % convinced about it, but to me using the strings seems to be the most proper solution in this context.
-> 
-> I'm a little surprised about your strings output. As I understand it, the separator is determined by the strings function, and not by the data read (I'm not an expert.)?
-> 
-> Maybe they use some special space characters in the data which can be converted by tr "X" "\n" or some other simple solution?
-> 
+   * Server will recover from client doing bad things or dying unexpectedly.
 
+   * Fix socket leaks
 
- From man-page ("normal" strings, not the BusyBox):
-"strings prints the printable character sequences that are at least 4 
-characters long (or the number given with the options below) and are 
-followed by an unprintable character."
+   * Report summary stats in all cases on both client and server.
 
-In the case of for example u-boot-env the separation between the various 
-"key=value" is 0x00, which is "Null" and not a printable character.
+   * Allow compiling for win32 using mingw cross-compiler.
 
-In the case of the mib0-partition it uses normal white space (0x20) as 
-separator (=printable), that's why mtd_get_mac_ascii does not give the 
-expected result.
+   * Add lots of optionally-enabled debugging to help understand what is going on when
+     adding new features or debugging problems.
 
-But it works with replacing the space with newline:
-tr ' ' '\n'
+Source code can be found here:
 
-What if we set the MAC-Addresses manually in the u-boot-env and take 
-them from there? (uboot-env needs to be changed anyway for setting the 
-new address for bootm; so at the moment it is just an other step for the 
-Install/Flash-Instructions)
+https://github.com/greearb/iperf
 
-Regards,
-Patrick
+Thanks,
+Ben
+
+-- 
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
+
 
 _______________________________________________
 openwrt-devel mailing list

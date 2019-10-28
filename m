@@ -2,75 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0812E7132
-	for <lists+openwrt-devel@lfdr.de>; Mon, 28 Oct 2019 13:18:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0A97E7145
+	for <lists+openwrt-devel@lfdr.de>; Mon, 28 Oct 2019 13:22:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HG28chFchK0XXsVzjExpuQwbvZ20r1p2RULKIYFeRCk=; b=Nf/KbgFgrcn9Ct7UGgcRlePj5
-	RhTSsLbzrRUI1AKIBhVnxq7cUJGoWZDLbVNXv/EO92vfmf6h7puy8zgSDauTuEqeC8GvDe44Z90BD
-	vz41p0L7TNZUWiQ1IpCz64pLYYToyZ1y0q+xnFYd54x5dFjkOIK0mwV17ADC1NJSCYj2Hysr+s/y9
-	JCbqhQczTbCjONDV2xsgKl52kF6KwBeEYrackyCzHhD2cgG0D1awfhoRDJ+JZc6YYH03HTAF0A4LQ
-	NBr7HQY44ZtdA5GnWRVTkL57sYHszHVDtB17hE28b6NHCuDskWvPvrftqgYpym0gADlIh7ZzQixmJ
-	WhvxZb3zA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KCpBntfm+UvJHiRingOYFIfn3x0aYolosaNvEAIsNiw=; b=s+t3mRzYjiUnbS
+	SAH6LvlE1t6n0W+qqiXrupIFyk/ClopgolI37q/yw1zLUy7kY7S2ANRpArT0lnm9jMUT5a4Fuhf7j
+	h9pnLRzcdwIRn7OiHOEp6sjq9hvhv+f+mILiWIZjh5jEWH8mf0ahLhgBa3ivfg3eAbe+0syDwolfE
+	aQ3cy7l2JosdUyCVOMHhaSlZR9HN3rFJ8ltVMeddgzKRg+eEOirwyaJ4U9iibY5dR7mK0X0On5ZNq
+	+/kDDG9OCXrDgN/SjQTuW728k3S0j64uFe7jHq8rzc79ICVrY3K0Crq/CZM1rFHls9CO1YLds9fnu
+	5zMl9xvqH/vM0vxJFT3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iP3yO-0001QG-PT; Mon, 28 Oct 2019 12:18:13 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1iP42U-0003TY-6q; Mon, 28 Oct 2019 12:22:26 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iP3y5-0001G9-53
- for openwrt-devel@lists.openwrt.org; Mon, 28 Oct 2019 12:17:55 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MfpGR-1hnmKd3hCT-00gJ0m; Mon, 28
- Oct 2019 13:17:34 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: =?UTF-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>,
- "'John Crispin'" <john@phrozen.org>,
- "'Tom Psyborg'" <pozega.tomislav@gmail.com>
+ id 1iP42M-0003T1-Aj
+ for openwrt-devel@lists.openwrt.org; Mon, 28 Oct 2019 12:22:19 +0000
+Received: by mail-oi1-x243.google.com with SMTP id 83so5720006oii.1
+ for <openwrt-devel@lists.openwrt.org>; Mon, 28 Oct 2019 05:22:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=hBcTsiM4d0cBHzAtCdmyFjze/WDXsjk71jv1cQWJxLc=;
+ b=MinT5i3DDZGCy+bGpEuS5m9G0G3MqOkF65kDCoRGwPjF+7zjD7iJDO1NqiH2MxetJ5
+ AfjNHOi4JR5hy41GsafWsgsCRpuHNnt56MuRhvZ/69pw288quhyISLfjmp2YTzRiUtNN
+ Ic40toINaXHKzNuhWqGZqj14kzGU97ck32rYEh+wGiYxzrk4rdddfudPQv6ivTjji2b6
+ pBTSI27QEqakaXIvekiKO5KqULBPCCIi/Sy3EcY3zNjKpxOeG3NwddaqHX9ZIQ1pz4Gl
+ jyycL/Hr3drikQ0BITEF7f4cB9Utqh9JpQyxIzQwD4F1rAgAWUd3Qc2gsHLBrisbOICt
+ BDyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=hBcTsiM4d0cBHzAtCdmyFjze/WDXsjk71jv1cQWJxLc=;
+ b=iPfUr5FFbP+0vwFYl2XcIl6O8/PWvOMQH4qr+r6Ra9829m/ucUWkCZYzsW3Qvfqt7w
+ Xid1W/kuElRQ1u/lD5E7Nep00ErZWjncJNFfSViogHHD2tToCaoWo9HNABnjaIlPgP8h
+ kd+1Y1Qy39iuixWSECyMjJV092yXxOMkpjUbUM2X4XBY5wkvoRbDsjKbIEmn3EbSfLqW
+ bgYddHblD2xoO/au1IAC5+ibvW4NZSpxuMWkDqiydm3z7kFZZK2jhmmHHz1PJuHC9rGM
+ pj4qzEGVrLI2Kng2Tw/v6W/t1IJSvmfCOYiwadnvt07sMTpDpg5llpUeRxtS1C7NtvPZ
+ qQmg==
+X-Gm-Message-State: APjAAAXFhXQFuKXE3ghQ/Se/DZtuJUfPypzUGmfnjddKYnRLSUNMJGRj
+ e0SoZFtUArlsjiMjqr2HlZKIocV4R+da9W9MQi5atBJS
+X-Google-Smtp-Source: APXvYqzMkubf6x7koe7O9ykFhv0s0q7U/qrdAjsi4nkqJIM6kAViywV27P0/WnzWgh1/lxNmezGs5xWaSkEq1PidHvg=
+X-Received: by 2002:a54:4f83:: with SMTP id g3mr3147278oiy.24.1572265337236;
+ Mon, 28 Oct 2019 05:22:17 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 2002:a9d:7511:0:0:0:0:0 with HTTP; Mon, 28 Oct 2019 05:22:16
+ -0700 (PDT)
+In-Reply-To: <20191028115743.GD22393@meh.true.cz>
 References: <CAKR_QVKpKpbDdhQTF9=H63JaxoAwjOq0qJN7RK2G1UjjKapASw@mail.gmail.com>
  <4b8917b6-5e11-bb71-3b97-5eb450daa4e2@phrozen.org>
  <20191028115743.GD22393@meh.true.cz>
-In-Reply-To: <20191028115743.GD22393@meh.true.cz>
-Date: Mon, 28 Oct 2019 13:17:34 +0100
-Message-ID: <025101d58d89$ae223110$0a669330$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQGBMxz1COnpcATFOZp2+rPVSjT7aKgYqHJA
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:ucZjsaIY8C3cXMppmiI3R2FW+ehbXXBhFoluqzsyLaDlhWaivFx
- eieQ/FbHkymot/uTnKk/w3mZPdrqHipmu1ZxXSWI1+4Yvi6i6ZH6ZblH+88F/NfU6qsrc8z
- Zrf6uNRGLnXfGQWTpM3BkU8Nx80YgRtBzu/sco2+iPV3kxqUsBYsBbyQWg0vrFIILhfbge2
- miwAHT6cdSOTMdgu4Yomg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:A/ts+d7Gcns=:OP4OEVlWc4kEap6t57iDXv
- eXViMa4NGsiY5Bfjf0idYT2SMwPQFvpsKKEtAstzaVMLnAIZcDkgPswXBQd7mGbaWuIFXqnhY
- D0TxSc+cmKGkuDgYlBpeP+OHQxDl1K86e3lEgrerF/xywAvyciyKGr61gfd1OGJY/GjSx9KvF
- O1t+Vov8XsuPKyBw+Ipjz+akQ1esDzxJwhdcKK8uk9mooOH9F2DlV3nowHzRUkj4/S1T9pcss
- TNInkg5ZJZBLcQaeV2A47c3c7slsQtH1ZylBT19wy6n5j1j1ljzVyNlQxoGKwqPPNEQn1Sif7
- lFm4pL9fCjlSznh0BVQtbhTfTDf+N7lG2H0fb+iHc5ry9DaewNvWZrC7pMKpJymobVmGPHqVk
- PY6sXl0089CDEeUmNzalXHNvEhUyvkozQ4njCCFHw/UeFkxpjdypH2lzOiTLopDN9P9w+wPz4
- pAg4HbDPOHU5XodquCTG1O9OcLWObTD5IuWbkH6eUpJmlTazWFfyLpIkr6oqVGH1G9tcy8gqV
- BvZ2A+g7tlOGZwFRFtDFhOIjGqUXnGF9BE9AYN3qidgU171JPg+JlDQghRl8XH+Ly1aTyCCSt
- 0bVE8mLMb9moUIj+puOiIAeKZhYQs37oPDpIfvhQ43Mhv8Y5vNiLidEMQAsX7j3oKie9K4FDf
- xh7uzjNwGoFpaIKdr/AMcavF9Q6JIp584zuX8ANoAJaQQyBGjg0WG4sFf6bZ1OpLvY5/EYQVu
- DGnfw5k9iCcPIMbwB0grF33pO7vjdqEDOY3ci1svX89yUrSenXW02TPT5ZP2og8hKlffXDCDH
- dxTHhkpKDcukGInP64jjXkodr59MSEP+eFxqECOshrkGcp3nqdVySabAE7W/sD+zSkFtA2JTk
- ux1whVH2hlSxIJpt6I1PECv/HXGU4jqVZ1RWW5yqc=
+From: Tom Psyborg <pozega.tomislav@gmail.com>
+Date: Mon, 28 Oct 2019 13:22:16 +0100
+Message-ID: <CAKR_QVKRropRi72rGM8F-CfX6C12Y+ToUi-_3TsFYk+jgDLT2A@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_051753_486533_CBAABEC4 
-X-CRM114-Status: GOOD (  17.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191028_052218_372309_2266B16C 
+X-CRM114-Status: GOOD (  17.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pozega.tomislav[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 Subject: Re: [OpenWrt-Devel] patches from 2018
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -83,128 +96,43 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============2285114260072316663=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============2285114260072316663==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=1IothqVyydKlac=-="
-
-This is a multipart message in MIME format.
-
---=-=1IothqVyydKlac=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On B=
-ehalf Of Petr =C5=A0tetiar
-> Sent: Montag, 28. Oktober 2019 12:58
-> To: John Crispin <john@phrozen.org>; Tom Psyborg <pozega.tomislav@gmail.c=
-om>
-> Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-> Subject: Re: [OpenWrt-Devel] patches from 2018
->=20
-> John Crispin <john@phrozen.org> [2019-10-27 14:34:04]:
->=20
-> Hi,
->=20
-> > I'd like to close all patches pending from 2018 in patchwork, there are=
- ~25
-> > and a quick try on some showed none of the apply anymore.
->=20
-> thank you for cleaning up the backlog, really appreciate the effort.
->=20
-> You're just mentioning Patchwork(PW), but I think, that the same applies =
-to
-> the GitHub PRs (GH) and bugs/issues (FS) as well.
->=20
-> Perhaps we could take this thread as an opportunity and come up with some
-> general rule, which would clearly define somewhere at the appropriate pla=
-ce on
-> the wiki, that for example any open topic on PW/GH/FS platform would auto=
-close
-> after some predefined period of time (it can always be reopened if reques=
-ted).
->=20
-> Say 6-12 months since the last activity in that particular topic?
-
-I'd personally differentiate here. Particularly on GitHub, there is two typ=
-es of stale submissions:
-1. Those where the submitter left track after (initial) feedback
-2. Those where there never was any feedback
-
-I'm all in for closing the first category after a certain timespan (and eve=
-n suggested that when I went through old GitHub PRs some months ago). Since=
- it's easy to reopen a GitHub PR, I would even choose a relatively short ti=
-me span for that (e.g. one month).
-
-However, I do not think it's fair to just close an old submission without a=
-ny developer (or others people's) feedback (category 2), just because nobod=
-y is interested in it. I'd see this differently if the old submissions woul=
-d do any harm, but since they are just lying around and making a list a lit=
-tle longer, it's not like they pose a big problem.
-
-For the patchwork, one could do a compromise:
-Instead of just closing submissions, one could provide a standardized feedb=
-ack that 1. patches do not apply anymore, 2. it seems to be that interest i=
-n the subject isn't there and 3. that resubmission of a rebased patch is po=
-ssible if the author wants that. This will remove inapplicable patches from=
- the list, but reach out for those having invested time in an enhancement t=
-o OpenWrt.
-
-Best
-
-Adrian
-
---=-=1IothqVyydKlac=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl223FsACgkQoNyKO7qx
-AnCHiRAAqx7nByDZOqWCX11xYP0Zbn7CPUWzapLpzKNu8CZQL6Xdia1U6Wo6DkEK
-AQw5H7zUg3uWvX3HL0xC4atqEWaw5yG8tnBdn40RYdnzVXY3kiMpTnubHfXJXe9b
-L6WVB7GRUCcDlij6kRFbx/j7UHGut13z2vM94qjDoYlKiFG6Yh2dVMquuPMpbMsy
-oC6VOtH6H2pSZ/Gn+5PqlLJzQnBdDKPjDMbXtUS9RNH1XGVIEkaYcJJETV51QynS
-jKNqv4oTAEKsZLRb00SPZk5nw8OrgPASy1hCLId3NzBKB26sRnz4Ayzv2n9FVaqk
-pAlth5KIUgx6Sbpd7REngbg/WaJ+Ij7aErHQIXvJexGI3YwQk1g6JRFzzPzXWJBB
-RZQKRoQ4mJqmidkitTfYQDERDe34chdad7hvSTqHrUyepzH8v+xSAFBpiFiRA8pu
-qR8S9eKQqsjNk4whiBGKp1Eca5RRT05cmVaWJ5rEpEXidI2S62N/4h525U3UlPM4
-IRhBGmprXLuBU4BQ9ou2fxpeVauptfJhOiDN9vWaeVeyv1buKRa/rc5dao/GbAu9
-J3pj04Gq0x22VaDnCUox7FfIDUJ2a2bsRIhglvADWGkZPXWlUJwkD1jCEjXYXahK
-cu553OR9G5cAMM1dUmok046t7cmzVSjkayfouY2OjbEmP2wkBjg=
-=d02q
------END PGP SIGNATURE-----
-
-
---=-=1IothqVyydKlac=-=--
-
-
-
---===============2285114260072316663==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2285114260072316663==--
-
-
+T24gMjgvMTAvMjAxOSwgUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3JvdGU6Cj4gSm9o
+biBDcmlzcGluIDxqb2huQHBocm96ZW4ub3JnPiBbMjAxOS0xMC0yNyAxNDozNDowNF06Cj4KPiBI
+aSwKPgo+PiBJJ2QgbGlrZSB0byBjbG9zZSBhbGwgcGF0Y2hlcyBwZW5kaW5nIGZyb20gMjAxOCBp
+biBwYXRjaHdvcmssIHRoZXJlIGFyZQo+PiB+MjUKPj4gYW5kIGEgcXVpY2sgdHJ5IG9uIHNvbWUg
+c2hvd2VkIG5vbmUgb2YgdGhlIGFwcGx5IGFueW1vcmUuCj4KPiB0aGFuayB5b3UgZm9yIGNsZWFu
+aW5nIHVwIHRoZSBiYWNrbG9nLCByZWFsbHkgYXBwcmVjaWF0ZSB0aGUgZWZmb3J0Lgo+Cj4gWW91
+J3JlIGp1c3QgbWVudGlvbmluZyBQYXRjaHdvcmsoUFcpLCBidXQgSSB0aGluaywgdGhhdCB0aGUg
+c2FtZSBhcHBsaWVzIHRvCj4gdGhlIEdpdEh1YiBQUnMgKEdIKSBhbmQgYnVncy9pc3N1ZXMgKEZT
+KSBhcyB3ZWxsLgo+Cj4gUGVyaGFwcyB3ZSBjb3VsZCB0YWtlIHRoaXMgdGhyZWFkIGFzIGFuIG9w
+cG9ydHVuaXR5IGFuZCBjb21lIHVwIHdpdGggc29tZQo+IGdlbmVyYWwgcnVsZSwgd2hpY2ggd291
+bGQgY2xlYXJseSBkZWZpbmUgc29tZXdoZXJlIGF0IHRoZSBhcHByb3ByaWF0ZSBwbGFjZQo+IG9u
+Cj4gdGhlIHdpa2ksIHRoYXQgZm9yIGV4YW1wbGUgYW55IG9wZW4gdG9waWMgb24gUFcvR0gvRlMg
+cGxhdGZvcm0gd291bGQKPiBhdXRvY2xvc2UKPiBhZnRlciBzb21lIHByZWRlZmluZWQgcGVyaW9k
+IG9mIHRpbWUgKGl0IGNhbiBhbHdheXMgYmUgcmVvcGVuZWQgaWYKPiByZXF1ZXN0ZWQpLgo+Cj4g
+U2F5IDYtMTIgbW9udGhzIHNpbmNlIHRoZSBsYXN0IGFjdGl2aXR5IGluIHRoYXQgcGFydGljdWxh
+ciB0b3BpYz8KPgo+IFRvbSBQc3lib3JnIDxwb3plZ2EudG9taXNsYXZAZ21haWwuY29tPiBbMjAx
+OS0xMC0yNyAxNTo1MzowMF06Cj4KPj4gQmV0dGVyIGFwcHJvYWNoIHdvdWxkIGJlIHRvIHJldmll
+dyB0aGVtCj4KPiBOb2JvZHkgcHJldmVudHMgeW91IG9yIGFueW9uZSBlbHNlIHRvIGRvIGEgcmV2
+aWV3IGFuZCBhZGQgYFJldmlld2VkLWJ5YAo+IGFuZC9vcgo+IGBUZXN0ZWQtYnlgIHRhZywgd2hp
+Y2ggd291bGQgaGVscCB3aXRoIG1lcmdpbmcgYXMgaXQgYXQgbGVhc3QgY2xlYXJseQo+IHNob3dz
+LAo+IHRoYXQgdGhlcmUncyBpbnRlcmVzdCBmb3IgdGhpcyBmZWF0dXJlL2ZpeC93aGF0ZXZlci4K
+Pgo+IC0tIHluZXp6Cj4KCkkgZG9uJ3Qgc2VlIGhvdyB0aGF0IHdvdWxkIGhlbHAsIHNpbmNlIHRo
+ZSBjb21taXRlcidzIHJlc3BvbnNpYmlsaXR5CmlzIHRvIHJldmlldyB0aGUgY29kZSBhbmQgbWFr
+ZSBzdXJlIGl0IGRvZXNuJ3QgYnJlYWsgdGhlIGJ1aWxkLiBBbmQKaGF2aW5nIHRoZSBwYXRjaCBp
+dHNlbGYgaXMgYWxyZWFkeSBhIHBvaW50ZXIgdGhlcmUgaXMgYW4gaW50ZXJlc3QgaW4KY2VydGFp
+biBmZWF0dXJlL2ZpeC93aGF0ZXZlci4gQWxzbywgYXQgbGVhc3Qgb25jZSBkdXJpbmcgdGhlIHBh
+c3QKeWVhciwgeW91IHdlcmUgbmljZWx5IGFza2VkIHRvIHRha2UgYSBsb29rIGF0IG9uZSBvZiB0
+aGUgY2hhbmdlcyB3aGljaAp5b3UgcmVmdXNlZCB0byBkbyB3aXRoIGEgY29udmVuaWVudCBleGN1
+c2UuIFNvIEkgZG9uJ3QgdGhpbmsgeW91cgpzdWdnZXN0aW9ucyBzaG91bGQgYmUgdGFrZW4gZm9y
+IGdvb2QgaGVyZS4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Blbndy
+dC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQt
+ZGV2ZWwK

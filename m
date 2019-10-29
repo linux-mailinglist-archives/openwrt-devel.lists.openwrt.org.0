@@ -2,77 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE9D4E886C
-	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 13:41:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 522F6E886D
+	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 13:41:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46eYDE4pWv/SgT1SdsVBgiB4TDSKWSHwDmeefkNiynM=; b=CJ9MW4F3f7/WEu
-	sosN3x96BQ//q7D9e0yRt/SxXDgMwmYVVGFs68/w6t/pJgvEb0xuOMt13rUnmYLlrxG9yw+r8n+9Q
-	AC5olzg0USL6yHMQVHT3YRMV/8NpprPRBOhY1zKrhVDUYP4+1N9q0XSOLaBaS2ZAnoHIsyUrHfljI
-	vSCLBK+qMWBpy3wOtCccyMLsCRCNJJpw/W9e5A8RsOHBty9OLAJvfJx8YL6O/u4AnkMlBoG7SoAIR
-	NI70nr6WwOgUZ+TInvdwj0Cgw3a4vSCnybc6SGJ8Wt9dr7Oh59gJmrYKiFcVgbQ2CMGnfC23YnLHt
-	PoSSABC+GeXdBqw5b+uw==;
+	List-Owner; bh=I7lTaaNPK4CEg/9FsC0SwQjp4v6Ps66vaRsUO+SHJZ8=; b=o4/sTmWy2zOsnS
+	OC9YOLdJGic37FK5jG9YGUgAUsF9GFSFIxFUbp1+Du1krSV29bwm4k5sWdVWL8zg66bDdebK55h8a
+	96FnIzr/YAqtm+eesvQI5h64Cb15qkcv3hrGH0u+0fv8x+5797YI/2wFoUD92luPOJDueU3pqeIFa
+	ynPHsSDy1jdgefzaD5dFjWYywjqjYMYpwtjmnoqwqiW2iEMdZZR6x7o1fM31yCQnG39LG4skwOsFR
+	MgcMBn9yEJ2zSdn0zMmHGlW3TLMRKv4Nj7mIjJwVw8fBmJ0ZKT0tW2pEvUFmtQIGiHx9zFuhFo7XM
+	NhliaNAMIuD+OFJQ4JKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPQoB-00032q-46; Tue, 29 Oct 2019 12:41:11 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1iPQoL-0003JE-H1; Tue, 29 Oct 2019 12:41:21 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPQnM-0002KB-Vs
- for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 12:40:22 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t12so2922675plo.6
- for <openwrt-devel@lists.openwrt.org>; Tue, 29 Oct 2019 05:40:20 -0700 (PDT)
+ id 1iPQnQ-0002Og-Bj
+ for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 12:40:25 +0000
+Received: by mail-pl1-x642.google.com with SMTP id v5so7542410ply.10
+ for <openwrt-devel@lists.openwrt.org>; Tue, 29 Oct 2019 05:40:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=1B81C1Dh5JGsiGhtf+ZHbXnfvfzPuWVlJzGcZdbY5SU=;
- b=DxBtpXV69IhWrLVZn2W4EToCi7y6GLDd87/M2gZAKKgmHrV5fzMPyFKEvb430GjxJw
- LezGKo98QOi+Q3u6tgGwmWK8xsZilseqcGi5aQH7QwMZvXaNaKrtCZ+0p9qxHNmQwzeC
- DDAy/OMaEQZZL2a8JTRPKS2iks+UvHlYJ7wlKQkNJnFigSPZkJ5V6ss2VYTZaUurqkwZ
- vFa2SZze+cGa9Rtp3HxGo+GolK0XcjUlYNcVmrXmVAjmU38xw2HzUtTT+ORfq2ieKNBd
- jusdbuuDtFZA8BNH5fOpBhithP5QHxSstg3EGpDBA6cVAqjxluVOuv7Aa2bhwKcMEf5X
- 5FqQ==
+ bh=7WeNwfqgMsQCrvj7+pUxr4Stsw09iaXK00TRJPTT+Vg=;
+ b=Gil2daRjVeLmK6s8R4X1xGkcxO6bE6nzltWw49vSWChDOU3b7e3rkUNDFfhr22YSyZ
+ SgRQLPUX2Ih4AeroVBZKHj0yeAW1yOgGvJNnPM5U1JAWcIvY1bd3MR63MLXherbNuMVX
+ z9U4GFCtZwj5bNeYaxD7bdSRYOd5RuslEpcOUZpJRBdLPh6zYpzR4ENbpwIGLE60XBQl
+ 71+w6hx9E9npPVXRDIwkrD3LFEO33h72jtC0da3Ev5g0tDa34RSeByQYGt7nJNQBJ2XR
+ PrUGTdQ/ERfmtcPa92LQl4jxsqIH50TMWJaVIWaW9O8+mCrFD+sxScpJfVxSm0Va6mbz
+ 77Fg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1B81C1Dh5JGsiGhtf+ZHbXnfvfzPuWVlJzGcZdbY5SU=;
- b=CKFLOAvgI+sbiga/ut1932vhZWjiKVi8LsODPWgOiWahNNnwb5UjvJFAIV7nSq2o6d
- wO7Ry2EBEl3IJvFzB93vzpWnG7176kgrpmtA2Bxypy2om1B/rdUeolnJzBx4APcJQVLg
- ZUyeEu/CBBndLP3o/5ZTqRJRGB1QsYVlYnACA3tjBouIRXnIFMGYv0eW0cHFfyaiGq3v
- 5+2cmnrKN4Z3xQNzPyEzY4Nsg57QQmxkWASNX0TF6npizjQTmgkViMR/QumBCTcxExi8
- sMSf4a3ZAJ1HF3DOC2YynJzycQC28XFK6CVBZNV2WNeDHB4uywtPPRmljlXBxGx7/yQV
- fL4A==
-X-Gm-Message-State: APjAAAWhSbxaAImZ9ew/fs8jLWUrieXM0oaKBYvVFmIOofxPOiJg2+Mj
- cFK5FMYliA2H+jO9Ate94xQ=
-X-Google-Smtp-Source: APXvYqwIAVjzTBek+fdLrzH4VDJbX6D7TqraXVLbzCOYGeFh80ghrdxoTxr0hD6hSUd03z8cVz+aOQ==
-X-Received: by 2002:a17:902:aa8a:: with SMTP id
- d10mr4025178plr.64.1572352819522; 
- Tue, 29 Oct 2019 05:40:19 -0700 (PDT)
+ bh=7WeNwfqgMsQCrvj7+pUxr4Stsw09iaXK00TRJPTT+Vg=;
+ b=iPKZbCWFKYh9zFOtFysATUHQhG6S4k7w5Rl/ddDqEC+WVudMA13cMMqb5XlRd1vBvx
+ l2rclSz9M0D1Ls5hC9LvRngjYVVSx1K3ZdjVxKBtwcJq4GTfjiSBWvPKc1gOvM4QPuyO
+ eCh7gcTrujnz081mOsG2whezzeolK1ftCEiaUGBvAzcbfWrSUnMe/9ymMCBGzPjofEDs
+ 3MdKKlzaYn63mdU1KWFaVk191FAMQUkwhZ7uTA6zlVP0wZYwdY4Vud1EDSaFNflzGSqA
+ ToE6Dd744Ioaznt+4Q5a5XTOxuqQgK/KAkN9vNLonioHyt7KV1K5AvUX/1iGP2fXnc9k
+ /dXA==
+X-Gm-Message-State: APjAAAVsuGEciy8iPNdAsZ5LfYvabYxVL4HQIJXtrNCvd+Do9lQdC/nv
+ lWB0QaNLZa3eLcR1f66JIO2h1kqr
+X-Google-Smtp-Source: APXvYqxk5hwrlOUesnR3crGGBgLiZCLcyv3isJEdf7Sm86+Eshv+qcuUQ3XI9iLyzURvZywY7caj6Q==
+X-Received: by 2002:a17:902:7289:: with SMTP id
+ d9mr3997335pll.121.1572352822837; 
+ Tue, 29 Oct 2019 05:40:22 -0700 (PDT)
 Received: from titan.hq.cloud.yunionyun.com ([161.117.5.46])
- by smtp.gmail.com with ESMTPSA id b26sm1090782pgs.93.2019.10.29.05.40.17
+ by smtp.gmail.com with ESMTPSA id b26sm1090782pgs.93.2019.10.29.05.40.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 29 Oct 2019 05:40:18 -0700 (PDT)
+ Tue, 29 Oct 2019 05:40:22 -0700 (PDT)
 From: Yousong Zhou <yszhou4tech@gmail.com>
 To: john@phrozen.org
-Date: Tue, 29 Oct 2019 12:39:49 +0000
-Message-Id: <20191029123950.40794-4-yszhou4tech@gmail.com>
+Date: Tue, 29 Oct 2019 12:39:50 +0000
+Message-Id: <20191029123950.40794-5-yszhou4tech@gmail.com>
 In-Reply-To: <20191029123950.40794-1-yszhou4tech@gmail.com>
 References: <20191029123950.40794-1-yszhou4tech@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_054021_077435_C528B46D 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20191029_054024_474705_1AD00DC6 
+X-CRM114-Status: GOOD (  10.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -85,8 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH fstools 4/5] block: mount_device: skip
- extroot earlier
+Subject: [OpenWrt-Devel] [PATCH fstools 5/5] block: mount_device: err log
+ only when mp deviates from spec
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,37 +104,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+Fixes possible memleak of mp as well
+
+Resolves FS#1523
+
 Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
 ---
- block.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ block.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
 diff --git a/block.c b/block.c
-index 15caaba..084e7fc 100644
+index 084e7fc..1972c50 100644
 --- a/block.c
 +++ b/block.c
-@@ -1087,6 +1087,10 @@ static int mount_device(struct device *dev, int type)
- 		return 0;
- 	}
- 
-+	m = dev->m;
-+	if (m && m->extroot)
-+		return -1;
-+
- 	mp = find_mount_point(pr->dev);
- 	if (mp && (type != TYPE_HOTPLUG)) {
- 		ULOG_ERR("%s is already mounted on %s\n", pr->dev, mp);
-@@ -1094,10 +1098,6 @@ static int mount_device(struct device *dev, int type)
+@@ -1092,10 +1092,14 @@ static int mount_device(struct device *dev, int type)
  		return -1;
+ 
+ 	mp = find_mount_point(pr->dev);
+-	if (mp && (type != TYPE_HOTPLUG)) {
+-		ULOG_ERR("%s is already mounted on %s\n", pr->dev, mp);
++	if (mp) {
++		if (m && m->type == TYPE_MOUNT && strcmp(m->target, mp)) {
++			ULOG_ERR("%s is already mounted on %s\n", pr->dev, mp);
++			err = -1;
++		} else
++			err = 0;
+ 		free(mp);
+-		return -1;
++		return err;
  	}
  
--	m = dev->m;
--	if (m && m->extroot)
--		return -1;
--
  	if (type == TYPE_HOTPLUG)
- 		blockd_notify(device, m, pr);
- 
 
 _______________________________________________
 openwrt-devel mailing list

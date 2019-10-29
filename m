@@ -2,53 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF08CE8FE4
-	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 20:25:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33A79E9201
+	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 22:24:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t9oycwcrlM9MSK8HNLY4ANAjUwNamUTUI4Ff0wsGx4k=; b=NaPVj8QcTRpILD
-	YruVFdCEwwJq3icwJRfE3wjUksq98ySxEGO3QdMNi9lV3lU63BdHwEOi/54nhceYq6FP+jzd6Z2Dj
-	FAdjMeibmFElwNAsFNhssWJP3wZmPJ3K2Xxv0yB4SdMJymakzqplmRjusl6b78LZ/U1T1xqfVypoq
-	UB85ZRGaCNieL+kSxi2BRADAmTqgeh89/su0JdrJ7l5wAIQ2+XAS19tgdY5r+86DbcwgUugzWjzbN
-	iIsfnhHSyi03PukZ7PBAmH2ABoe/ZC6TR1geai/79Osrgu/5nYeMBU9LBTUE/6Bcw4Ag37QgJCwOs
-	+MYwuLT+iR4QdnykUjmA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XlqElM+z82QZWL0GVK4pFCe1ykczD7n4RdKNc9gCdiw=; b=d4ftC09xzmDukp
+	UcH+dOkMdSuGt+OrV16nrDsnw3yIscfkxapMuFqJhn1KhNzeaxL48/qHh93FZVDbeg16b7iN24/YC
+	1CUE5MUwP0lUg6f9c6PyG4FghesLQ6K5awXq4gKaPJHxFJNguDCgUEfzrTVrpv4U/SCG8bCzTGvts
+	I35ydunlunB/ABBffrdgFZMc7SRKQ7Ql1mibRNhokwURZ1sbX1oI67HS5k3mIY6H7kJ8g01hVzqiW
+	FW92OTObzpmXfahR+I45JS8fpmLGyQ7n3qAUCTLhxrf2/WfgfwUUFiBNxTv73+erjCjRciJFiNaxo
+	1EsmurWMLeo51ZDFXx0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPX7b-0005pS-D4; Tue, 29 Oct 2019 19:25:39 +0000
-Received: from mx.allycomm.com ([138.68.30.55])
+	id 1iPYyk-0006sB-7q; Tue, 29 Oct 2019 21:24:38 +0000
+Received: from mail-qt1-x834.google.com ([2607:f8b0:4864:20::834])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPX7T-0005of-Ah
- for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 19:25:32 +0000
-Received: from allycomm.com (unknown [IPv6:2601:647:5401:2210::49])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id 4F4DB39D6E;
- Tue, 29 Oct 2019 12:25:30 -0700 (PDT)
-From: Jeff Kletsky <lede@allycomm.com>
+ id 1iPYya-0006qG-Ra
+ for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 21:24:30 +0000
+Received: by mail-qt1-x834.google.com with SMTP id o3so217702qtj.8
+ for <openwrt-devel@lists.openwrt.org>; Tue, 29 Oct 2019 14:24:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8yRzk6jX2RbVAinClFxdlLMvjSJ3lt1hrucaQgCQNX0=;
+ b=mo8RFD6uyEascs0OfZB24VcMsWuteOIIpypOfVnjnfYy1hV2KOTEUxuunjDq+9D1lO
+ 81HBT3m41BOJMcYkFeKvyYi2kEXgSWyCLIQN1vcS7p1QNqEhXduXalHkJB/arEsHs8mH
+ Ja2+5i5AlEZ23ryTcGhihUegAoBtULZCG9km8ZMSWB5vdGExzKIZDlJjN4NEXlbfRHPE
+ imlsRyvSZB6YSwRivpqrcrVRdojSDf+QG42RHhKQkAHFM2moPKcXJuhGx9zHNFISu7g+
+ jKP5z3uRlqyE17cmUJTqbI0k0xADR/mEAzFuVl2UfRKWup6q7YXr/SPtvx+JHJDTMhm9
+ Hd8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=8yRzk6jX2RbVAinClFxdlLMvjSJ3lt1hrucaQgCQNX0=;
+ b=bpH4BtyfrFvqYT4lTm4djUqVbwcKzvJfp5GiBged18+mME2lAYVe37hwVcNjOM1dxz
+ 5HOlPV598SqFDSa4fMqb2/dLQ0MJlt7fmnrCUagYDMuVjKEMVujU5r3TEcOfEe4bwV3U
+ I9Mt9zR9xWWzWibWgY5ZVqenq1SosjJvPBDcWoy1lHaqjcu80ccjp80qU7CEJ/8II8bx
+ MNcEQSJ0lN6M8WPU8C0Y8820Su/s+z3gv+eDtMR7t73tCB9vDSemvNusz5nRuL1BIC10
+ iToCnbuUVPo2VypCaeu0iA/jXYnxAOWZSg2VfU43NL+lualzmiYv7Ce2ftG8DZQ+D/Lq
+ YeDQ==
+X-Gm-Message-State: APjAAAUtD2T8JMKYE2j/3m41+DMS0S6sPN4quQBHTQ7x24sdWSSar7W3
+ ReQefchJfUYoxEyEAKUcgDYjeN5J
+X-Google-Smtp-Source: APXvYqz5ZuI5ROtHg1MU0f1gA3FEZkgeqVAnrr9Uvwko+c8gYGsPqTsCpixfE0le8aEJK4CCOC1Ubw==
+X-Received: by 2002:ac8:701e:: with SMTP id x30mr1352213qtm.203.1572384266802; 
+ Tue, 29 Oct 2019 14:24:26 -0700 (PDT)
+Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
+ [2804:688:21:4::2])
+ by smtp.gmail.com with ESMTPSA id x12sm115901qkh.96.2019.10.29.14.24.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 29 Oct 2019 14:24:25 -0700 (PDT)
+From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 29 Oct 2019 12:25:22 -0700
-Message-Id: <20191029192522.27268-2-lede@allycomm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191029192522.27268-1-lede@allycomm.com>
-References: <20191029192522.27268-1-lede@allycomm.com>
+Date: Tue, 29 Oct 2019 18:24:16 -0300
+Message-Id: <20191029212416.23416-1-cotequeiroz@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_122531_375078_47496024 
-X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-CacheID: sfid-20191029_142428_913855_222ABC74 
+X-CRM114-Status: UNSURE (   5.70  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:834 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2 1/1] ath79: Prepare NAND subtarget for
- upstream support of SPI NAND
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (cotequeiroz[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH ustream-ssl] wolfssl: adjust to new API in
+ v4.2.0
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,94 +98,59 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>,
- Jeff Kletsky <git-commits@allycomm.com>
+Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Jeff Kletsky <git-commits@allycomm.com>
+WolfSSL has recently added many openssl 1.1+ calls, including
+TLS_server_method & TLS_client_method, which were being redefined,
+causing compilation failure:
+ustream-openssl.c:113:0: error: "TLS_server_method" redefined [-Werror]
+ustream-openssl.c:114:0: error: "TLS_client_method" redefined [-Werror]
 
-Linux 4.19 supplies the upstream spi-nand framework,
-permitting porting and support of boards with SPI NAND.
+Only define the symbols if not previously defined.
 
-  * Adjusted nand/target.mk to provide FEATURES += squashfs nand
+Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
+--
+There are two CVEs with critical(CVSS 3.1)/high(CVSS2.0) base scores
+that have been fixed in wolfssl 4.2.0: CVE-2019-16748 & CVE-2019-15651.
 
-  * Updated config-default to provide current MTD and UBI support
+Before we can update wolfssl, this needs to be applied, along with
+https://patchwork.ozlabs.org/patch/1164316/.  It's also possible to come
+up with a shorter patch than 1164316, doing just what's necessary for
+compilation.  Let me know how I should go ahead with this.
 
-Defaults selected for:
+Here's the error after this, but without 1164316 applied:
+/ustream-openssl.h:47:2: error: implicit declaration of function
+'SSL_set_tlsext_host_name'; did you mean 'SSL_set_tlsext_debug_arg'?
+[-Werror=implicit-function-declaration]
+  SSL_set_tlsext_host_name(us->ssl, us->server_name);
 
-  CONFIG_MTD_UBI_WL_THRESHOLD=4096
-  CONFIG_MTD_UBI_BEB_LIMIT=20
-  # CONFIG_MTD_UBI_FASTMAP is not set
-  # CONFIG_MTD_UBI_GLUEBI is not set
+It's been tested on WRT3200ACM with master, using current wolfssl 4.1.0,
+and also with 4.2.0 + https://patchwork.ozlabs.org/patch/1164316/
+running uhttpd.
 
-The bad-block reservation limit technically should be 21 for Paragon
-SPI NAND but most other devices in the class are 20 blocks per Gbit.
-In Linux 5.2 this is specified on a per-chip basis through NAND_MEMORG
-
-Contents adjusted to remove declarations provided at the target level
-by commit 08a134820f5 (Oct 23, 2019) ath79: enable PCI for whole target
-
-Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
-Tested-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
----
- target/linux/ath79/nand/config-default | 15 +++++++--------
- target/linux/ath79/nand/target.mk      |  7 ++++---
- 2 files changed, 11 insertions(+), 11 deletions(-)
-
-diff --git a/target/linux/ath79/nand/config-default b/target/linux/ath79/nand/config-default
-index 84e6748a20..4742ad52d0 100644
---- a/target/linux/ath79/nand/config-default
-+++ b/target/linux/ath79/nand/config-default
-@@ -1,18 +1,17 @@
--CONFIG_AT803X_PHY=y
--CONFIG_BCH=y
- CONFIG_MTD_NAND=y
- CONFIG_MTD_NAND_AR934X=y
--CONFIG_MTD_NAND_BCH=y
-+CONFIG_MTD_NAND_CORE=y
- CONFIG_MTD_NAND_ECC=y
--CONFIG_MTD_NAND_ECC_BCH=y
--CONFIG_MTD_SPINAND_MT29F=y
--CONFIG_MTD_SPINAND_ONDIEECC=y
-+CONFIG_MTD_SPI_NAND=y
- CONFIG_MTD_UBI=y
--CONFIG_MTD_UBI_BEB_LIMIT=20
- CONFIG_MTD_UBI_BLOCK=y
-+CONFIG_MTD_UBI_WL_THRESHOLD=4096
-+CONFIG_MTD_UBI_BEB_LIMIT=20
- # CONFIG_MTD_UBI_FASTMAP is not set
- # CONFIG_MTD_UBI_GLUEBI is not set
--CONFIG_MTD_UBI_WL_THRESHOLD=4096
-+# CONFIG_PCI_AR71XX is not set
-+# CONFIG_PHY_AR7100_USB is not set
-+CONFIG_PHY_AR7200_USB=y
- CONFIG_UBIFS_FS=y
- CONFIG_UBIFS_FS_ADVANCED_COMPR=y
- CONFIG_UBIFS_FS_LZO=y
-diff --git a/target/linux/ath79/nand/target.mk b/target/linux/ath79/nand/target.mk
-index 91afe675c5..c565c9b2b8 100644
---- a/target/linux/ath79/nand/target.mk
-+++ b/target/linux/ath79/nand/target.mk
-@@ -1,9 +1,10 @@
- BOARDNAME := Generic devices with NAND flash
--FEATURES += squashfs nand rtc
-+
-+FEATURES += squashfs nand
+diff --git a/ustream-openssl.c b/ustream-openssl.c
+index b2df362..c09106f 100644
+--- a/ustream-openssl.c
++++ b/ustream-openssl.c
+@@ -110,8 +110,12 @@ __ustream_ssl_context_new(bool server)
+ 		SSL_library_init();
+ 		_init = true;
+ 	}
+-# define TLS_server_method SSLv23_server_method
+-# define TLS_client_method SSLv23_client_method
++# ifndef TLS_server_method
++#  define TLS_server_method SSLv23_server_method
++# endif
++# ifndef TLS_client_method
++#  define TLS_client_method SSLv23_client_method
++# endif
+ #endif
  
- DEFAULT_PACKAGES += wpad-basic
- 
- define Target/Description
--	Build firmware for Atheros AR71xx/AR913x based boards with
--	NAND flash, e.g. Netgear WNDR4300.
-+	Firmware for boards using Qualcomm Atheros, MIPS-based SoCs
-+	in the ar72xx and subsequent series, with support for NAND flash
- endef
--- 
-2.20.1
-
+ 	if (server) {
 
 _______________________________________________
 openwrt-devel mailing list

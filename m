@@ -2,41 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 727B2E8FE9
-	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 20:25:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF08CE8FE4
+	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 20:25:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0a31N+mJANO2onRCHUWgStfoiKCvNf7VdX63NqJgNvY=; b=ocf2KXjSt77imS
-	zAu7n6Yil4pBdEHDojF15h3DBetx01pLvYC2foI+EosztNuY+wI+cfOzK+0dAuQfPO4fGPb8dGNeH
-	8/fAPFIp2/WbQj5isTWa5dQr+7kFfRoH2wASD4s8d/ruyI4QSBQ3eBXUr0nQ1k8cci4ObrOuNfNBW
-	Byswz7OkKTDg+frqVxNHtiAgzSCF59bvqOoA06yBzgPogFJk1cYboLCaGTUk1hx2Eudz+v1044bY4
-	CSH+FHyPpMx6W4JY9qx3QR+WY8xBU0ZvjhewsxTZOigCaJhbtpuKdh/9URW/rzNVcn9Jd8vXbLYpe
-	t4hOEHkvefPCH6ssVo+g==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t9oycwcrlM9MSK8HNLY4ANAjUwNamUTUI4Ff0wsGx4k=; b=NaPVj8QcTRpILD
+	YruVFdCEwwJq3icwJRfE3wjUksq98ySxEGO3QdMNi9lV3lU63BdHwEOi/54nhceYq6FP+jzd6Z2Dj
+	FAdjMeibmFElwNAsFNhssWJP3wZmPJ3K2Xxv0yB4SdMJymakzqplmRjusl6b78LZ/U1T1xqfVypoq
+	UB85ZRGaCNieL+kSxi2BRADAmTqgeh89/su0JdrJ7l5wAIQ2+XAS19tgdY5r+86DbcwgUugzWjzbN
+	iIsfnhHSyi03PukZ7PBAmH2ABoe/ZC6TR1geai/79Osrgu/5nYeMBU9LBTUE/6Bcw4Ag37QgJCwOs
+	+MYwuLT+iR4QdnykUjmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPX7m-0005zr-QZ; Tue, 29 Oct 2019 19:25:50 +0000
+	id 1iPX7b-0005pS-D4; Tue, 29 Oct 2019 19:25:39 +0000
 Received: from mx.allycomm.com ([138.68.30.55])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPX7T-0005oX-Ag
- for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 19:25:33 +0000
+ id 1iPX7T-0005of-Ah
+ for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 19:25:32 +0000
 Received: from allycomm.com (unknown [IPv6:2601:647:5401:2210::49])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id 25D9739D6D;
+ by mx.allycomm.com (Postfix) with ESMTPSA id 4F4DB39D6E;
  Tue, 29 Oct 2019 12:25:30 -0700 (PDT)
 From: Jeff Kletsky <lede@allycomm.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 29 Oct 2019 12:25:21 -0700
-Message-Id: <20191029192522.27268-1-lede@allycomm.com>
+Date: Tue, 29 Oct 2019 12:25:22 -0700
+Message-Id: <20191029192522.27268-2-lede@allycomm.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191029192522.27268-1-lede@allycomm.com>
+References: <20191029192522.27268-1-lede@allycomm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_122531_374165_177AD7C0 
-X-CRM114-Status: GOOD (  20.62  )
+X-CRM114-CacheID: sfid-20191029_122531_375078_47496024 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -44,8 +47,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2,
- 0/1] ath79: Prepare NAND subtarget for upstream support of SPI
+Subject: [OpenWrt-Devel] [PATCH v2 1/1] ath79: Prepare NAND subtarget for
+ upstream support of SPI NAND
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,177 +60,96 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
- David Bauer <mail@david-bauer.net>, John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>,
+ Jeff Kletsky <git-commits@allycomm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-ClN1cGVyc2VkZXMgaHR0cHM6Ly9wYXRjaHdvcmsub3psYWJzLm9yZy9wcm9qZWN0L29wZW53cnQv
-bGlzdC8/c2VyaWVzPTEzODU1MwpkdWUgdG8gbmVlZCB0byByZWJhc2UKCldpdGggY29tbWl0IDc1
-OGE0ZDE3NjYgYXRoNzk6IGFkZCBBUjkzNHggTkFORCBGbGFzaCBDb250cm9sbGVyIGRyaXZlcgpj
-bGVhbmluZyB1cCB0aGUgYXRoNzkgTkFORCB0YXJnZXQgYW5kIHRoZSBwcm9ibGVtcyB3aXRoIE5B
-TkQtYmFzZWQKc3lzdXBncmFkZSwgaW5jbHVkaW5nIHRoYXQgaXQgZG9lc24ndCByZXNwZWN0IFNV
-UFBPUlRFRF9ERVZJQ0VTLApiZWNvbWVzIGV2ZW4gbW9yZSB0aW1lbHkuIChUaGUgUFIgaXMgbmVh
-cmx5IGZvdXIgbW9udGhzIG9sZCBub3cuKQoKU2VlIGZ1cnRoZXI6CgphdGg3OTogRW5hYmxlIHRh
-cmdldCBmb3IgU1BJLU5BTkQ7IFN1cHBvcnQgTkFORCBmb3IgR0wtQVIzMDBNIGFuZCBHTC1BUjc1
-MFMKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tCmh0dHBzOi8vZ2l0aHViLmNvbS9vcGVud3J0L29wZW53cnQv
-cHVsbC8yMTg0CgpvciwgaWYgeW91IGFyZSBmYW1pbGlhciB3aXRoIHN5c3VwZ3JhZGUgYW5kIHBy
-ZWZlciBQYXRjaHdvcmssCnRoZSBhZGRpdGlvbmFsIHN1YnNldCBvZiBjb21taXRzIGF0OgoKYnVp
-bGQ6IHN5c3VwZ3JhZGU6IEVuYWJsZSBSb2J1c3QgTkFORCBVcGdyYWRlcwotLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCmh0dHBzOi8vcGF0Y2h3b3JrLm96bGFi
-cy5vcmcvcHJvamVjdC9vcGVud3J0L2xpc3QvP3Nlcmllcz0xMzg1NTQKCkNjOiBEYXZpZCBCYXVl
-ciA8bWFpbEBkYXZpZC1iYXVlci5uZXQ+CkNjOiBSYWZhxYIgTWnFgmVja2kgPHJhZmFsQG1pbGVj
-a2kucGw+CkNjOiBKb2huIENyaXNwaW4gPGpvaG5AcGhyb3plbi5vcmc+CgpUaGlzIHN1Ym1pc3Np
-b24gaXMgcGFydCBvZiBhIHNlcmllcyBvZiBjb21taXRzIHRoYXQgcHJlcGFyZXMgZm9yCnVzZSBv
-ZiBTUEktTkFORCB3aXRoIHRoZSB1cHN0cmVhbSBMaW51eCBNVEQgZnJhbWV3b3JrIGZvciB0aGUg
-YXRoNzkKdGFyZ2V0LiBUaGUgZW50aXJlIHNlcmllcyBvZiBwZW5kaW5nIGNoYW5nZXMgbWF5IGJl
-IHNlZW4gb24gR2l0SHViWzFdLgoKVGhlIHNlcmllcyBhbHNvIGFkZHJlc3NlcyB1cGdyYWRlIGlz
-c3VlcyBhc3NvY2lhdGVkIHdpdGggdGFyLXN0eWxlCmZpbGVzIGFuZCBtZXRhZGF0YSwgYWxsb3dp
-bmcgImZvcmNlLWxlc3MiIHVwZ3JhZGUgcGF0aHMgZnJvbSBhcjcxeHgKdG8gYXRoNzkgYnVpbGRz
-LCBpbmNsdWRpbmcgZnJvbSBwcmV2aW91cyBOT1IgYnVpbGRzIHRvIGF0aDc5IGJ1aWxkcwp0aGF0
-IHN1cHBvcnQgTkFORC4KCkFkZHJlc3NlcyBjb21tZW50cyBpbiBwcmV2aW91cyBQUnMgYXJvdW5k
-IFNQSS1OQU5EIHN1cHBvcnQsIGluY2x1ZGluZwogICM2MTUgIGh0dHBzOi8vZ2l0aHViLmNvbS9v
-cGVud3J0L29wZW53cnQvcHVsbC82MTUKICAjMTQyOCBodHRwczovL2dpdGh1Yi5jb20vb3Blbndy
-dC9vcGVud3J0L3B1bGwvMTQyOCNpc3N1ZWNvbW1lbnQtNDQxNTk0NDAxCmluIHRoZSBtYW5uZXIg
-cmVxdWVzdGVkIGJ5IEBta3Jlc2luCgo+IFBsZWFzZSByZS1zcGluIFtQUiAxNDI4XSBhcyBzb29u
-IGFzIHdlIGhhdmUga2VybmVsIDQuMTkgc3VwcG9ydC4KClNQSS1OQU5EIHN1cHBvcnQgaW4gdGhp
-cyBQUiB1dGlsaXplcyB0aGUgdXBzdHJlYW0gTGludXggZnJhbWV3b3JrLCBhcwpyZXF1ZXN0ZWQu
-IFN1cHBvcnQgZm9yIHNwZWNpZmljIFNQSS1OQU5EIGRldmljZXMgcHJlc2VudCBpbiB0YXJnZXQK
-ZGV2aWNlcyB3YXMgY3JhZnRlZCwgdGVzdGVkLCBhbmQgY29tbWl0dGVkIHRvIHVwc3RyZWFtIExp
-bnV4IGluIEp1bmUKYW5kIGp1c3QgYmFja3BvcnRlZCB0byBPcGVuV3J0IHdpdGggY29tbWl0IGI5
-ZDU4ZjdlMDYgKG1hc3RlcikuCgpUaGUgR0wuaU5ldCBHTC1BUjMwME0gYW5kIEdMLUFSNzUwUyBk
-ZXZpY2VzIGFyZSB0aGVuIHN1cHBvcnRlZCB1c2luZwpOQU5EIHdpdGggdGhpcyBmcmFtZXdvcmsu
-CgoKVGhlIGNvbW1pdHMgaGF2ZSBiZWVuIHJlc2VxdWVuY2VkIGhlcmUgZnJvbSB0aGUgb3JkZXIg
-aW4gd2hpY2ggdGhleQp3ZXJlIGRldmVsb3BlZCB0byBwcm92aWRlIGNsZWFyZXIgcGF0Y2hlcywg
-cmF0aGVyIHRoYW4gdGhlIG9yaWdpbmFsCiJmaW5kIGEgcHJvYmxlbSBhbmQgZml4IGl0IiBvcmRl
-ci4gQXMgYSByZXN1bHQsIHRoZSByZWFzb25pbmcgYmVoaW5kCnNvbWUgb2YgdGhlIHByZWxpbWlu
-YXJ5IHNldCBvZiBjb21taXRzIG1heSBub3QgYmUgY29tcGxldGVseSBjbGVhcgp1bnRpbCB0aGUg
-ZGV2aWNlcyBhcmUgYWRkZWQgaW4gc3Vic2VxdWVudCBjb21taXRzLgoKCk9yaWdpbmFsIGRldmVs
-b3BtZW50IGRvbmUgb24gbWFzdGVyIHByaW9yIHRvIHRoZSAxOS4wNyBicmFuY2ggYW5kIHRoZQpj
-aGFuZ2UgdG8gTGludXggNC4xOSBmb3IgdGhlIGF0aDc5IHRhcmdldC4KClRoaXMgc2VyaWVzIHNo
-b3VsZCBiZSBhYmxlIHRvIGJlIGJhY2twb3J0ZWQgdG8gdjE5IGJ5IGFkZGluZwpLRVJORUxfUEFU
-Q0hWRVI6PTQuMTkgdG8gdGFyZ2V0L2xpbnV4L2F0aDc5L25hbmQvdGFyZ2V0Lm1rCgoKQm9vdCBs
-b2dzIGFuZC9vciB1cGdyYWRlIGxvZ3Mgb2YgYW55IGNvbmZpZ3VyYXRpb24gb3IgdHJhbnNpdGlv
-bgphdmFpbGFibGUgb24gcmVxdWVzdC4KCgo9PT09PT09PT09PT09PT09PT0KUm9hZG1hcCBvZiBD
-b21taXRzCj09PT09PT09PT09PT09PT09PQoKVGhlc2UgbG9naWNhbCAiY2h1bmtzIiBvZiBjb21t
-aXRzIGFyZSBkZW5vdGVkIGluIG15IEdpdEh1YiByZXBvIGFzCnRhZ3MuIFRoZSBsaW5rcyB3aXRo
-aW4gZWFjaCBjaHVuaydzIGRlc2NyaXB0aW9uIGJlbG93IHdpbGwgc2hvdyB0aGUKY29tbWl0cyBh
-bmQgY2hhbmdlcyBhc3NvY2lhdGVkIHdpdGggZWFjaCBjaHVuay4KClRoZSB0YWdzIHdpbGwgYmUg
-dXBkYXRlZCBzaG91bGQgdGhpcyBQUiBiZSByZWJhc2VkIG9yIGNoYW5nZWQgcHJpb3IgdG8KbWVy
-Z2UsIGtlZXBpbmcgdGhlIHRhZy1iYXNlZCBsaW5rcyB1c2FibGUuCgpJbiBhZGRpdGlvbiB0byB0
-aGUgc3VwcGxpZWQgbGlua3MsIHRoZSB0YWdzIGFyZSBhdmFpbGFibGUgaW4gY2xvbmVzIG9mCm15
-IHJlcG8gZm9yIGxvY2FsIGV4YW1pbmF0aW9uIGFuZCBleHBsb3JhdGlvbiBvZiB0aGUgY29tbWl0
-cyBpbiB0aGlzClBSLCB3aXRob3V0IHRoZSBuZWVkIHRvIGFwcGx5IHJlbW90ZSBwYXRjaGVzIHRv
-IGEgbG9jYWwgcmVwby4KCiogcHIyMTg0LTAwLW1lcmdlX2Jhc2UKKiBwcjIxODQtMDQtUHJlcGFy
-ZV9hdGg3OS1uYW5kX3RhcmdldAoqIHByMjE4NC0wNS1FbmFibGVfcm9idXN0X3VwZ3JhZGVzCiog
-cHIyMTg0LTA2LUdMLUFSMzAwTV9OQU5EX3N1cHBvcnQKKiBwcjIxODQtMDctQWRkX0dMLUFSMzAw
-TTE2CiogcHIyMTg0LTA4LUdMLUFSNzUwU19OQU5EX3N1cHBvcnQKCkFjY2VwdGVkIGZyb20gUGF0
-Y2h3b3JrOgoKKiBwcjIxODQtMDEtQWRkX0kyQ19zdXBwb3J0CiogcHIyMTg0LTAyLXVib290LWVu
-dnRvb2xzX3N1cHBvcnRfZm9yX0dMLUFSMzAwTS1MaXRlCgpTdXBlcnNlZGVkIGJ5IGNvbW1pdCA1
-YjZhODA5IGFuZCByZWxhdGVkOgoKKiBwcjIxODQtMDMtUmVmYWN0b3Jfb2ZfY29tbW9uX2Z1bmN0
-aW9ucwoKCgo9PT09PT09PT09PT09PT09PT09PT09PT09ClByZXBhcmUgYXRoNzktbmFuZCBUYXJn
-ZXQKPT09PT09PT09PT09PT09PT09PT09PT09PQoKCmF0aDc5OiBSZW1vdmUgbGVnYWN5IEdMLmlO
-ZXQgR0wtQVIzMDBNIE5BTkQgdGFyZ2V0Ci0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tCgpSZW1vdmFsIGZvciByZWltcGxlbWVudGF0aW9uIGNvbmZpcm1l
-ZCB3aXRoIG9yaWdpbmFsIGF1dGhvclsyXS4KCihFeGlzdGluZywgbm9uLWZ1bmN0aW9uYWwgR0wt
-QVIzMDBNIE5BTkQgdGFyZ2V0IHJldGFpbmVkIGFuZCBsYXRlcgogKnJlcGxhY2VkKiB3aXRoIGxh
-dGVyIGNvbW1pdHMgYXQgc3VnZ2VzdGlvbiBvZiBAYWRyaWFuc2NobXV0emxlcikKCgphdGg3OTog
-UHJlcGFyZSBOQU5EIHN1YnRhcmdldCBmb3IgdXBzdHJlYW0gc3VwcG9ydCBvZiBTUEkgTkFORAot
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLQoKVXNlIG9mIHN1YnRhcmdldC1zcGVjaWZpYyBuYW5kL2Jhc2UtZmlsZXMvIG1ha2VzIHRo
-aXMgYSBsb3QgY2xlYW5lcgphbmQgZG9lc24ndCBpbXBhY3QgdGhlIGdlbmVyaWMgb3IgdGlueSB0
-YXJnZXRzLgoKRXhhbWluYXRpb24gb2YgdGhlIHRpbnkgdGFyZ2V0IChhbmQgdGhlIG9uZS1ib2Fy
-ZCBuYXR1cmUgb2YKYmFzZS1maWxlcy9saWIvZnVuY3Rpb25zL2sydC5zaCkgc3VnZ2VzdCB0aGF0
-IGEgZmV3IGtCIG1pZ2h0IGJlIHNhdmVkCmZvciB0aGUgdGlueSB0YXJnZXQgYnkgc2ltaWxhcmx5
-IHNwbGl0dGluZyBvdXQgaXRzIG93biBmaWxlcyBmcm9tCnRob3NlIGZvciB0aGUgZ2VuZXJpYyB0
-YXJnZXQuIFRoaXMgcmVmYWN0b3Jpbmcgb2YgdGhlIGdlbmVyaWMgYW5kIHRpbnkKc3ViLXRhcmdl
-dHMgd2FzIG5vdCBwZXJmb3JtZWQuIChTZWUgZnVydGhlcgpodHRwczovL3BhdGNod29yay5vemxh
-YnMub3JnL3BhdGNoLzExODE2NTMvIGJ5IEBhZHJpYW5zY2htdXR6bGVyIGZvcgp0aGUgYXRoNzkg
-dGFyZ2V0IGFuZCAjMjUxMyBmb3IgdGhlIHJhbWlwcyB0YXJnZXQuKQoKCmh0dHBzOi8vZ2l0aHVi
-LmNvbS9qZWZmc2Yvb3BlbndydC9jb21wYXJlL2plZmZzZjpwcjIxODQtMDAtbWVyZ2VfYmFzZS4u
-LmplZmZzZjpwcjIxODQtMDQtUHJlcGFyZV9hdGg3OS1uYW5kX3RhcmdldAoKCgo9PT09PT09PT09
-PT09PT09PT09PT09CkVuYWJsZSBSb2J1c3QgVXBncmFkZXMKPT09PT09PT09PT09PT09PT09PT09
-PQoKCmJ1aWxkOiBzeXN1cGdyYWRlLXRhciBhbHQtYm9hcmQ9IGZvciBsZWdhY3kgdXBncmFkZXMK
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKRXhp
-c3Rpbmcgc3lzdXBncmFkZSB0b29saW5nIG9uIHRoZSBhcjcxeHggcGxhdGZvcm0gaXNuJ3QgYWJs
-ZSB0bwp1cGdyYWRlIHRvIGF0aDc5IE5BTkQgaW1hZ2VzLCBldmVuIHdpdGggdGhlIHVzZSBvZiBT
-VVBQT1JURURfREVWSUNFUy4KCgpzeXN1cGdyYWRlOiBOQU5EOiBQcmVmZXIgQ09OVFJPTCBmb3Ig
-Ym9hcmQsIGltcHJvdmUgcm9idXN0bmVzcwotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKUmF0aGVyIHRoYW4gdGFraW5nIHRoZSBm
-aXJzdCBkaXJlY3RvcnkgZm91bmQgaW4gdGhlIHRhciBhcyB0aGF0IGZyb20Kd2hpY2ggdGhlIGFz
-c2V0cyBhcmUgb2J0YWluZWQsIHRydXN0IHRoZSBjb250ZW50cyBvZiB0aGUgQ09OVFJPTCBmaWxl
-CmZvdW5kLiBUaG91Z2ggdGhlIENPTlRST0wgZmlsZSBjb3VsZCBiZSBmZWQgdG8gc2gsIHBhcnNl
-IGl0IHNvbWV3aGF0CnJvYnVzdGx5IHRvIGFsbG93IGZvciBhIHRyYW5zaXRpb24gdG8gSlNPTiBv
-ciBvdGhlciBmb3JtYXRzIGluIHRoZQpmdXR1cmUuCgogICAgZ3JlcCAtbSAxIC1vIC1FICJcYkJP
-QVJEPVteWzpzcGFjZTpdJ1wiXSsiCgpFeHBsb3JhdGlvbiBvZiBsZWdhY3kgZmxhc2hpbmcgcmV2
-ZWFsZWQgc29tZSAiaW50ZXJlc3RpbmciIGJlaGF2aW9yIG9mCnRoZSBOQU5EIHVwZ3JhZGUgcHJv
-Y2VzcyBvZmYgdGhlICJoYXBweSBwYXRoIi4gVGhlIG1vc3QgZWdyZWdpb3VzIHdlcmUKYWRkcmVz
-c2VkLgoKVW5tb2RpZmllZCwgbmFuZF9kb191cGdyYWRlX3N1Y2Nlc3MoKSBjb250aW51ZXMgdG8g
-cGVyZm9ybSBhIHJlYm9vdApyYXRoZXIgdGhhbiByZXR1cm5pbmcuIFRoaXMgY29udGludWVzIHRv
-IHByZXZlbnQgYm9hcmRzIGZyb20gY2hlY2tpbmcKdGhhdCB0aGUgZmxhc2ggd2FzIHN1Y2Nlc3Nm
-dWwgcHJpb3IgdG8gY2hhbmdpbmcgdGhlIG5leHQtYm9vdApwYXJ0aXRpb24uIERvIHRvIHRoZSBp
-bnZhc2l2ZW5lc3Mgb2YgY2hhbmdpbmcgdGhpcywgaXQgd2FzIG5vdApyZWZhY3RvcmVkIGF0IHRo
-aXMgdGltZS4gRnV0dXJlIHJlZmFjdG9yIG9mIHRoaXMgc2hvdWxkIGFsc28gY29uc2lkZXIKdXNp
-bmcgdGhlIGV4aXN0aW5nICRDT05GX1RBUiByYXRoZXIgdGhhbiB0aGUgaGFyZC1jb2RlZCBsb2Nh
-bApjb25mX3Rhcj0iL3RtcC9zeXN1cGdyYWRlLnRneiIKCkVycm9yLWNoZWNraW5nIHdhcyBleGFt
-aW5lZCwgYnV0IGJldHdlZW4gdGhlIGFib3ZlIGNvbmNlcm5zIGFuZCB0aGUKY2hhbGxlbmdlcyBv
-biBnZXR0aW5nIHJldHVybiBjb2RlcyBmcm9tIHBpcGVsaW5lZCBjb21tYW5kcyB1bmRlciBzaAoo
-bmVpdGhlciBwaXBlZmFpbCBub3IgUElQRVNUQVRVUyBhcmUgYXZhaWxhYmxlKSBpdCB3YXMgbm90
-IGZ1cnRoZXIKcHVyc3VlZC4gSW5pdGlhbCB0aG91Z2h0cyB3ZXJlIHRoYXQgbm9uLXplcm8gZXJy
-b3IgY29kZXMgbWlnaHQgYmUKc3BsaXQgaW50byB0aG9zZSB0aGF0IHdlcmUgc3RpbGwgYm9vdGFi
-bGUgKCJ3YXJuaW5ncyIpIGFuZCB0aG9zZSB0aGF0CndlcmUgbm90IGJvb3RhYmxlICgiZXJyb3Jz
-IiksIHBlcmhhcHMgYXMgcG9zaXRpdmUgYW5kIG5lZ2F0aXZlIGZvcgplYXNlIG9mIGNvbnNpc3Rl
-bnQgaW1wbGVtZW50YXRpb24uCgoKaHR0cHM6Ly9naXRodWIuY29tL2plZmZzZi9vcGVud3J0L2Nv
-bXBhcmUvamVmZnNmOnByMjE4NC0wNC1QcmVwYXJlX2F0aDc5LW5hbmRfdGFyZ2V0Li4uamVmZnNm
-OnByMjE4NC0wNS1FbmFibGVfcm9idXN0X3VwZ3JhZGVzCgoKCj09PT09PT09PT09PT09PT09PT09
-PT0KR0wtQVIzMDBNIE5BTkQgU3VwcG9ydAo9PT09PT09PT09PT09PT09PT09PT09CgoKV2l0aCB0
-aGUgcHJldmlvdXMgc3VwcG9ydCBpbiBwbGFjZSwgdGhlIGJvYXJkcyBjYW4gYmUgYWRkZWQuIEZl
-YXR1cmVzCnN1Y2ggYXMgYWNjZXNzIHRvIE5BTkQgc3RvcmFnZSB3aGlsZSBib290ZWQgdW5kZXIg
-Tk9SIChpbnRlbnRpb25hbGx5LApvciBhcyBhIHJlc3VsdCBvZiBib290LWNvdW50IGJhc2VkIGZh
-aWwgb3ZlcikgYW5kIGZsYXNoaW5nIGVpdGhlcgpOT1ItYmFzZWQgb3IgTkFORC1iYXNlZCBmaXJt
-d2FyZSBhcmUgcHJvdmlkZWQuCgpMZWdhY3kgTk9SIGJvYXJkcyBtYXkgYmUgdHJhbnNpdGlvbmVk
-IHRvIGZ1bGwgc3VwcG9ydCBvZiBOQU5EIHdpdGhvdXQKc2VyaWFsLCBVLUJvb3QgYWNjZXNzLCBv
-ciB1c2Ugb2YgImZvcmNlIiBpbiBzeXN1cGdyYWRlLiBGb3IgZXhhbXBsZQoKICAgIExlZ2FjeSBO
-T1IgPT0+IGdsaW5ldCxnbC1hcjMwMG0tbm9yID09PiBnbGluZXQsZ2wtYXIzMDBtLW5hbmQKCkRp
-cmVjdCB0cmFuc2l0aW9uIHRvIGdsaW5ldCxnbC1hcjMwMG0tbmFuZCBmcm9tIGEgTk9SIGtlcm5l
-bCBpcyBub3QKcG9zc2libGUgYW5kIGlzIHByZXZlbnRlZCBieSBjaGVja3MgYWxyZWFkeSBpbiBw
-bGFjZSB3aXRoaW4Kc3lzdXBncmFkZS4gRm9yIGV4YW1wbGU6CgogICAgTEVERV9SRUxFQVNFPSJP
-cGVuV3J0IDE4LjA2LjIgcjc2NzYtY2RkZDdiNGM3NyIKICAgIAogICAgICAgICAgICAibW9kZWwi
-OiB7CiAgICAgICAgICAgICAgICAgICAgImlkIjogImdsLWFyMzAwbSIsCiAgICAgICAgICAgICAg
-ICAgICAgIm5hbWUiOiAiR0wuaU5ldCBHTC1BUjMwME0iCiAgICAgICAgICAgIH0sCiAgICAKICAg
-IHJvb3RAT3BlbldydDovIyBzeXN1cGdyYWRlIC90bXAvT3BlbldydC0yMDE5LTA2LTI5XzA4MDct
-MDcwMC1hdGg3OS1uYW5kLWdsaW5ldF9nbC1hcjMwMG0tbmFuZC1zcXVhc2hmcy1zeXN1cGdyYWRl
-LmJpbiAKICAgIEludmFsaWQgaW1hZ2UgdHlwZS4KICAgIEltYWdlIGNoZWNrICdwbGF0Zm9ybV9j
-aGVja19pbWFnZScgZmFpbGVkLgoKCmplZmZzZi9vcGVud3J0QGplZmZzZjpwcjIxODQtMDUtRW5h
-YmxlX3JvYnVzdF91cGdyYWRlcy4uLmplZmZzZjpwcjIxODQtMDYtR0wtQVIzMDBNX05BTkRfc3Vw
-cG9ydAoKCgo9PT09PT09PT09PT09PT0KQWRkIEdMLUFSMzAwTTE2Cj09PT09PT09PT09PT09PQoK
-CkFzIHRoZSBnbGluZXQsZ2wtYXIzMDBtLW5vciBib2FyZCB3YXMgbW92ZWQgdG8gdGhlIE5BTkQg
-dGFyZ2V0IGluIHRoZQpwcmV2aW91cyBjb21taXRzLCB0aGVyZSBpcyBub3QgYSAiZ2VuZXJpYyIg
-YnVpbGQgc3VpdGFibGUgZm9yIHRoZQpkdWFsLXBvcnQsIE5BTkQtbGVzcyBHTC1BUjMwME0xNiwg
-b3IgZm9yIHVzZXJzIG9mIHRoZSBHTC1BUjMwME0gdGhhdApkbyBub3QgbmVlZCBhY2Nlc3MgdG8g
-dGhlIE5BTkQgKHdoaWNoIGFkZHMgfjMyMCBrQiBhdCB0aGlzIHRpbWUpLgoKVGhpcyBjb21taXQg
-Y2xlYXJseSBkaXNhbWJpZ3VhdGVzIHRoZSAiZ2VuZXJpYyIgKE5PUi1vbmx5KSBidWlsZCBhbmQK
-aXRzIHByaW1hcnksIGludGVuZGVkIGRldmljZSBmcm9tIHRoZSBOQU5ELWF3YXJlIGJ1aWxkLgoK
-CmplZmZzZi9vcGVud3J0QGplZmZzZjpwcjIxODQtMDYtR0wtQVIzMDBNX05BTkRfc3VwcG9ydC4u
-LmplZmZzZjpwcjIxODQtMDctQWRkX0dMLUFSMzAwTTE2CgoKCj09PT09PT09PT09PT09PT09PT09
-PT0KR0wtQVI3NTBTIE5BTkQgU3VwcG9ydAo9PT09PT09PT09PT09PT09PT09PT09CgoKVHdvIHZh
-cmlhbnRzIGFyZSBwcm92aWRlZCwgb25lIHdpdGggcm9vdCBmaWxlIHN5c3RlbSBvbiBOT1IgZmxh
-c2gsIHRoZQpvdGhlciB3aXRoIGl0IG9uIE5BTkQgZmxhc2guIENvbnNpc3RlbnQgd2l0aCB0aGUg
-T0VNIGZpcm13YXJlIGF0IHRoaXMKdGltZSwgdGhlIGtlcm5lbCBhbHdheXMgcmVzaWRlcyBvbiBO
-T1IgZmxhc2guCgpBcyBub3RlZCBpbiB0aGUgY29tbWl0IG1lc3NhZ2UsIHRoZSAiZ2xpbmV0LGds
-LWFyNzUwcy1uYW5kIiBib2FyZCBuYW1lCmlzIHJlc2VydmVkIGZvciBhIHBvdGVudGlhbCwgZnV0
-dXJlIGJ1aWxkIHRoYXQgYm9vdHMgaXRzIGtlcm5lbCBmcm9tCk5BTkQgZmxhc2guIEl0IGlzIGxp
-a2VseSB0aGF0IGNoYW5nZSB0byB0aGUgVS1Cb290IHdvdWxkIGJlIHJlcXVpcmVkCnRvIGJvb3Qg
-b2ZmIE5BTkQsIGVpdGhlciBmcm9tIHRoZSBtYW51ZmFjdHVyZXIgb3IgYSB0aGlyZCBwYXJ0eS4g
-VGhlCmN1cnJlbnQgVS1Cb290IHByb3ZpZGVzIGZvciB1cGRhdGluZyBpdHNlbGYgdGhyb3VnaCBh
-biBIVFRQIGludGVyZmFjZSwKd2l0aG91dCBzZXJpYWwgY29ubmVjdGl2aXR5IGJlaW5nIHJlcXVp
-cmVkLgoKCmplZmZzZi9vcGVud3J0QGplZmZzZjpwcjIxODQtMDctQWRkX0dMLUFSMzAwTTE2Li4u
-cHIyMTg0LTA4LUdMLUFSNzUwU19OQU5EX3N1cHBvcnQKCgoKWzFdIGh0dHBzOi8vZ2l0aHViLmNv
-bS9vcGVud3J0L29wZW53cnQvcHVsbC8yMTg0ClsyXSBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9waXBlcm1haWwvb3BlbndydC1kZXZlbC8yMDE5LU1heS8wMTcxOTAuaHRtbAoKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFp
-bGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5v
-cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+From: Jeff Kletsky <git-commits@allycomm.com>
+
+Linux 4.19 supplies the upstream spi-nand framework,
+permitting porting and support of boards with SPI NAND.
+
+  * Adjusted nand/target.mk to provide FEATURES += squashfs nand
+
+  * Updated config-default to provide current MTD and UBI support
+
+Defaults selected for:
+
+  CONFIG_MTD_UBI_WL_THRESHOLD=4096
+  CONFIG_MTD_UBI_BEB_LIMIT=20
+  # CONFIG_MTD_UBI_FASTMAP is not set
+  # CONFIG_MTD_UBI_GLUEBI is not set
+
+The bad-block reservation limit technically should be 21 for Paragon
+SPI NAND but most other devices in the class are 20 blocks per Gbit.
+In Linux 5.2 this is specified on a per-chip basis through NAND_MEMORG
+
+Contents adjusted to remove declarations provided at the target level
+by commit 08a134820f5 (Oct 23, 2019) ath79: enable PCI for whole target
+
+Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
+Tested-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+---
+ target/linux/ath79/nand/config-default | 15 +++++++--------
+ target/linux/ath79/nand/target.mk      |  7 ++++---
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/target/linux/ath79/nand/config-default b/target/linux/ath79/nand/config-default
+index 84e6748a20..4742ad52d0 100644
+--- a/target/linux/ath79/nand/config-default
++++ b/target/linux/ath79/nand/config-default
+@@ -1,18 +1,17 @@
+-CONFIG_AT803X_PHY=y
+-CONFIG_BCH=y
+ CONFIG_MTD_NAND=y
+ CONFIG_MTD_NAND_AR934X=y
+-CONFIG_MTD_NAND_BCH=y
++CONFIG_MTD_NAND_CORE=y
+ CONFIG_MTD_NAND_ECC=y
+-CONFIG_MTD_NAND_ECC_BCH=y
+-CONFIG_MTD_SPINAND_MT29F=y
+-CONFIG_MTD_SPINAND_ONDIEECC=y
++CONFIG_MTD_SPI_NAND=y
+ CONFIG_MTD_UBI=y
+-CONFIG_MTD_UBI_BEB_LIMIT=20
+ CONFIG_MTD_UBI_BLOCK=y
++CONFIG_MTD_UBI_WL_THRESHOLD=4096
++CONFIG_MTD_UBI_BEB_LIMIT=20
+ # CONFIG_MTD_UBI_FASTMAP is not set
+ # CONFIG_MTD_UBI_GLUEBI is not set
+-CONFIG_MTD_UBI_WL_THRESHOLD=4096
++# CONFIG_PCI_AR71XX is not set
++# CONFIG_PHY_AR7100_USB is not set
++CONFIG_PHY_AR7200_USB=y
+ CONFIG_UBIFS_FS=y
+ CONFIG_UBIFS_FS_ADVANCED_COMPR=y
+ CONFIG_UBIFS_FS_LZO=y
+diff --git a/target/linux/ath79/nand/target.mk b/target/linux/ath79/nand/target.mk
+index 91afe675c5..c565c9b2b8 100644
+--- a/target/linux/ath79/nand/target.mk
++++ b/target/linux/ath79/nand/target.mk
+@@ -1,9 +1,10 @@
+ BOARDNAME := Generic devices with NAND flash
+-FEATURES += squashfs nand rtc
++
++FEATURES += squashfs nand
+ 
+ DEFAULT_PACKAGES += wpad-basic
+ 
+ define Target/Description
+-	Build firmware for Atheros AR71xx/AR913x based boards with
+-	NAND flash, e.g. Netgear WNDR4300.
++	Firmware for boards using Qualcomm Atheros, MIPS-based SoCs
++	in the ar72xx and subsequent series, with support for NAND flash
+ endef
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

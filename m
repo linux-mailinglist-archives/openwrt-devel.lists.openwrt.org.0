@@ -2,69 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10388E8962
-	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 14:24:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A479E8A5E
+	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 15:13:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9av+68/mi4WU8TUqCQICddd4vp4QuS2NA5iYWN6VR4s=; b=pgaG1xE0OQZT4zIpdk6VM5H8H
-	yFQ0SSixwID30jAsnyjNW6FVUd9/2hPqosUQq5JqHggZ/tEHMMI0/imp607EQGOv+sH8RBGnniGAP
-	Dl4hC5ohqU+qkMl1DrigtSTMaHm6PrsttlZOU4PZeCQTyEZXcyzKKPVOCOnnFZkiMf67Byi06aJhd
-	7aHPv05tEk//qYgPty4xHAiILuGMuUur09Y1DwGlafhoLerCh1YGBHR6h3LCnPFWrWMBiWRqFLCwR
-	GECsZYoea0q/tAiFzyoJo3VtGN1FpidVQvoyt8/uGa9XN/07MuSJKzVhWl4lSFyb19n6UiY1t45K4
-	rSLykYPOA==;
+	 bh=kkJpXy+elia++rpfU5vtZsVEyneXnaf+ia14kUaBj7A=; b=rh25+6Iku3QCYzhctLOUvdvgG
+	Sgq13NzL17KOu9zvZt5EjwI2YB/56kJOvQ/alajhYF+dhS6ZdOhefs7/WMCxrMLKFRdRiHDl9AmAB
+	EdBESzBMYwtfLsz9tiqea0LQjlJDRs5YSdXPveAg2adLZyjBpZBk0wXudxuwWhBOZRw7TohGbXVfQ
+	AFLudhvWE6AUR5MT41hkqBfqlC4ZP0PsivlNdY/MPEZNH56GGclVv5cq2ZiuWZkCfjMrpVM+W7Ta9
+	1spNWq5rou7VgMXwiJqvDm9jp0sl8zHSutn43qvwuh2nCV5mqKzXZk7Np7CCDPRUZDlSZw14dzG3r
+	/Q2ioIYYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPRTj-0007l6-O6; Tue, 29 Oct 2019 13:24:07 +0000
-Received: from mail2.candelatech.com ([208.74.158.173]
- helo=mail3.candelatech.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPRTX-0007kA-DL
- for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 13:23:56 +0000
-Received: from [192.168.1.47] (unknown [50.34.216.97])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	id 1iPSF4-0000Sv-9Z; Tue, 29 Oct 2019 14:13:02 +0000
+Received: from mx.allycomm.com ([138.68.30.55])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPSEs-0000Rl-SL
+ for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 14:12:52 +0000
+Received: from JKLETSKY-MBP15.local (portal.bevandjeff.com [206.189.65.121])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail3.candelatech.com (Postfix) with ESMTPSA id B0329137562;
- Tue, 29 Oct 2019 06:23:53 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com B0329137562
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
- s=default; t=1572355434;
- bh=slz+swJRx4sFbhub5zid4t+p4c/7Xg4CIay7n7NJ5+U=;
- h=Subject:To:References:Cc:From:Date:In-Reply-To:From;
- b=SMGO3DUaBagcT3xPSpomfWarJznqlXrPyx43ut/P2dQcguF6fEtJO9pyyZ4EE5OVm
- g850qYTeisPGtwVxJGmGXfcJ2YbqznCGoO05SVYOCR/Ce/cySVn7cbK/lBTrWuq+gd
- 8PCNcgGNUhfnMFRbzS2BV1uVRGIGiaV7qBN2s0lM=
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-References: <fa883a60-0d29-5cb9-7b54-3cab5485ec84@candelatech.com>
- <20191029061412.GF22393@meh.true.cz>
-From: Ben Greear <greearb@candelatech.com>
-Message-ID: <7364b927-20ae-1f46-2151-4a0266cd5463@candelatech.com>
-Date: Tue, 29 Oct 2019 06:23:52 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+ by mx.allycomm.com (Postfix) with ESMTPSA id 3D2A939908;
+ Tue, 29 Oct 2019 07:12:45 -0700 (PDT)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
+ openwrt-devel@lists.openwrt.org
+References: <20191027233051.7840-1-freifunk@adrianschmutzler.de>
+From: Jeff Kletsky <lede@allycomm.com>
+Message-ID: <8da2e892-72f1-4383-35a6-8cdea112f7c8@allycomm.com>
+Date: Tue, 29 Oct 2019 07:12:42 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191029061412.GF22393@meh.true.cz>
+In-Reply-To: <20191027233051.7840-1-freifunk@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_062355_477041_A748A1CD 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191029_071250_922070_35AE87C7 
+X-CRM114-Status: GOOD (  14.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Any interest in a 'ct' iperf3?
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: fix several issues for ZyXEL
+ NBG6716
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,64 +62,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="windows-1252"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 
+On 10/27/19 4:30 PM, Adrian Schmutzler wrote:
+> This fixes several issues introduced with ZyXEL NBG6716 support:
+> - Inhomogeneous indent
+> - Wrong ath10k MAC patching function
+> - Wrong brackets for pad-to in nand.mk
+> - Add missing DEVICE_MODEL
+> - Remove k2t.sh include (copy/paste leftover)
+>
+> Fixes: 99835e09992b ("ath79: add support for ZyXEL NBG6716")
+>
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
+>   .../linux/ath79/dts/qca9558_zyxel_nbg6716.dts | 22 +++++++++----------
+>   target/linux/ath79/image/nand.mk              | 21 +++++++++---------
+>   .../etc/hotplug.d/firmware/11-ath10k-caldata  |  3 +--
+>   3 files changed, 23 insertions(+), 23 deletions(-)
+>
+> [...]
+>
+> diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
+> index c11ff6a257..049701a971 100644
+> --- a/target/linux/ath79/image/nand.mk
+> +++ b/target/linux/ath79/image/nand.mk
+> @@ -1,13 +1,13 @@
+>   # attention: only zlib compression is allowed for the boot fs
+> -define  Build/zyxel-buildkerneljffs
+> -        rm -rf  $(KDIR_TMP)/zyxelnbg6716
+> -        mkdir -p $(KDIR_TMP)/zyxelnbg6716/image/boot
+> -        cp $@ $(KDIR_TMP)/zyxelnbg6716/image/boot/vmlinux.lzma.uImage
+> -        $(STAGING_DIR_HOST)/bin/mkfs.jffs2 \
+> -                --big-endian --squash-uids -v -e 128KiB -q -f -n -x lzma -x rtime \
+> -                -o $@ \
+> -                -d $(KDIR_TMP)/zyxelnbg6716/image
+> -        rm -rf $(KDIR_TMP)/zyxelnbg6716
+> +define Build/zyxel-buildkerneljffs
+> +	rm -rf  $(KDIR_TMP)/zyxelnbg6716
+> +	mkdir -p $(KDIR_TMP)/zyxelnbg6716/image/boot
+> +	cp $@ $(KDIR_TMP)/zyxelnbg6716/image/boot/vmlinux.lzma.uImage
+> +	$(STAGING_DIR_HOST)/bin/mkfs.jffs2 \
+> +		--big-endian --squash-uids -v -e 128KiB -q -f -n -x lzma -x rtime \
+> +		-o $@ \
+> +		-d $(KDIR_TMP)/zyxelnbg6716/image
+> +	rm -rf $(KDIR_TMP)/zyxelnbg6716
+>   endef
+>   
+>   define Build/zyxel-factory
+> [...]
 
-On 10/28/2019 11:14 PM, Petr =8Atetiar wrote:
-> Ben Greear <greearb@candelatech.com> [2019-10-28 14:42:32]:
->
-> Hi Ben,
->
->> found and fixed a bunch of issues
->
-> apart from lack of time, do you've any other good reason to not upstream =
-those
-> changes? :-)
+"Build/zyxel-buildkerneljffs" looks to be a "generic", however it is
+using a device-specific name for its temp directory.
 
-The original SO_BINDTODEVICE patches were offered upstream
-and there is no interest.  My recent changes would need
-rebasing to clean them up before upstreaming, and I am not going
-to spend any serious time on that since I'd still have to run
-my own tree to get the SO_BINDTODEVICE patches and anything
-else not accepted upstream.
+At least in my opinion, the directory should either be created as a
+result of a call to mktemp(1), or generically named.
 
-Thanks,
-Ben
+Jeff Kletsky
 
->
->> and of course possibly added some new bugs.
->
-> As always, those could be probably spotted by another pair of eyes during
-> upstream review process.
->
->> Is there any interest in adding an iperf3-ct option to openwrt?
->
-> I can't speak for the rest, but from my point of view we don't need extra
-> package for that purpose.
->
->>   * Support SO_BINDTODEVICE.
->>   * Make sockets non-blocking to fix various ways the client and server =
-can hang.
->>   * Server will recover from client doing bad things or dying unexpected=
-ly.
->>   * Fix socket leaks
->>   * Allow compiling for win32 using mingw cross-compiler.
->>   * Report summary stats in all cases on both client and server.
->
-> Those changes looks like a good upstream material.
->
-> -- ynezz
->
 
--- =
-
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
 
 _______________________________________________
 openwrt-devel mailing list

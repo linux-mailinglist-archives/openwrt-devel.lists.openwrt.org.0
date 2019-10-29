@@ -2,39 +2,38 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DB27E827B
-	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 08:25:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17B80E8352
+	for <lists+openwrt-devel@lfdr.de>; Tue, 29 Oct 2019 09:38:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qbcGQ2TBlkmhuLynXmzKSnn4AsZVo1mIf/zHMJ3Z+r8=; b=KJtArhDOv5SSF+xU1YKo6lluR
-	UiGhj1hl630o5FuZZHpJSoIYxW5c8RqHYRBkcBInM2MIiIjekxLo69IwST/JfF8C3TBa4ICGwRYmT
-	8lO5MNLJzmOE2+PKG4lsmrcfK3cHTtCiYMe9jX/9ipW8xflMibhRpdhPzU+lWyiEyGdrFaHEYRG+/
-	Z9HmhAImAf4GCnlfdyr07pAJEU61Cnp/YYu+5xSgzGrQV8IzRF9c74Pv+ndrdzXEFbrAoXe8NnK7U
-	1Ar9P0I34blWkAE4f5W30XXf/eb4x6T4X5ChTuaCuIL8tU2wJlv9oq15eha4TqzzBKmHTCqVI1DYQ
-	6G0t1lgsg==;
+	 bh=kETMIRINfxxyzaGS3g1E14H93b8eAuUBUe+rRDtIzxE=; b=j/Cr3YreI8GzFa29GGk8k3pxV
+	ndVKdxar1uSUi/KJM8lxxEENgzfor357fwu6Bnnnw2JmsZ3hJC5Qi6E34tynO2D/BOdL4asK4P9pe
+	yJfbZch5Erk+KTBNv7y76Gwx+ilC3VStTGCwF8yXJwx04p6L4X8ccHQTp1utxktE8eXHNaX97NG/d
+	F+r30CCbp3NnZPKCzRnYpFlJRcdysxpx8hB0TVAkxTLfw3Do7YkG94MvtBsD8nDTmdaVBbYRlD9Kq
+	6Vz9nzshP4ZEyaGz7An23v/M924edX1cauDRtXPl8WE6CB4CLvTFT8xDucjGYQfRgdoQnnUiKeeQf
+	zca0zvqrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPLsx-0005Me-BO; Tue, 29 Oct 2019 07:25:47 +0000
+	id 1iPN1M-0007z0-WF; Tue, 29 Oct 2019 08:38:33 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPLsq-0005M3-Ux
- for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 07:25:42 +0000
+ id 1iPN1F-0007yB-6g
+ for openwrt-devel@lists.openwrt.org; Tue, 29 Oct 2019 08:38:26 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id EA40451664; Tue, 29 Oct 2019 08:25:36 +0100 (CET)
+ id 710CB53DFF; Tue, 29 Oct 2019 09:38:21 +0100 (CET)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id CBF5451662
- for <openwrt-devel@lists.openwrt.org>; Tue, 29 Oct 2019 08:25:36 +0100 (CET)
-Received: (qmail 81573 invoked from network); 29 Oct 2019 08:25:36 +0100
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 3876153DFB
+ for <openwrt-devel@lists.openwrt.org>; Tue, 29 Oct 2019 09:38:21 +0100 (CET)
+Received: (qmail 23555 invoked from network); 29 Oct 2019 09:38:21 +0100
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.41.79)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 29 Oct 2019 08:25:36 +0100
-To: openwrt-devel@lists.openwrt.org
-References: <20191028103214.28200-1-daniel@dd-wrt.com>
- <CAECwjAgpjny1TAFN1_eZbno5cN-vdJ=faSmX8VBqTAYHsUQfZA@mail.gmail.com>
+ 29 Oct 2019 09:38:21 +0100
+To: Yousong Zhou <yszhou4tech@gmail.com>
+References: <20191021061031.81230-1-yszhou4tech@gmail.com>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; keydata=
@@ -111,15 +110,15 @@ Autocrypt: addr=jo@mein.io; keydata=
  E0odeH3CEEPqpxyE7v4aaKiih4BniILMu+ZVVX++/eS9DqtZzMGVeyMYN5nFfGSfnSc/0P2W
  +Ce3rRZbH40Q3GKVn1h19BWj2kBXJBWFpYSO5ZkCjLwwXozDMKJS08h3/7Y8FW+GngDqKgmW
  y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <f5c538ce-83c8-6a72-5820-2a6a6c47bc7f@wwsnet.net>
-Date: Tue, 29 Oct 2019 08:25:31 +0100
+Message-ID: <69be88f5-186e-b7cb-24f0-59b4eab8fe8e@wwsnet.net>
+Date: Tue, 29 Oct 2019 09:38:14 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <CAECwjAgpjny1TAFN1_eZbno5cN-vdJ=faSmX8VBqTAYHsUQfZA@mail.gmail.com>
+In-Reply-To: <20191021061031.81230-1-yszhou4tech@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_002541_302717_506C8C3A 
-X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-CacheID: sfid-20191029_013825_553757_28270E67 
+X-CRM114-Status: UNSURE (   8.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -130,8 +129,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] rpcd: uci: fix segfault and double free
- on set method
+Subject: Re: [OpenWrt-Devel] [PATCH rpcd v2 0/6] memory issue fixes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,74 +141,70 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4821597623452662119=="
+Cc: ynezz@true.cz, openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============1672291432608456988=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4821597623452662119==
+--===============1672291432608456988==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="ZeFGMzqDSJiPhQ1zTuGgV88xhOxs53WOd"
+ boundary="PWvcZu9QqeoKeJR21OCn0eag0hT009XGl"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---ZeFGMzqDSJiPhQ1zTuGgV88xhOxs53WOd
-Content-Type: multipart/mixed; boundary="O8SeEwttQ0kCCUuUp8d56iiJ8wiBPwJoY";
+--PWvcZu9QqeoKeJR21OCn0eag0hT009XGl
+Content-Type: multipart/mixed; boundary="kQ1zwhfbJPiouKThv18X8PPYqxe0gBWto";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <f5c538ce-83c8-6a72-5820-2a6a6c47bc7f@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] [PATCH] rpcd: uci: fix segfault and double free
- on set method
-References: <20191028103214.28200-1-daniel@dd-wrt.com>
- <CAECwjAgpjny1TAFN1_eZbno5cN-vdJ=faSmX8VBqTAYHsUQfZA@mail.gmail.com>
-In-Reply-To: <CAECwjAgpjny1TAFN1_eZbno5cN-vdJ=faSmX8VBqTAYHsUQfZA@mail.gmail.com>
+To: Yousong Zhou <yszhou4tech@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org, ynezz@true.cz
+Message-ID: <69be88f5-186e-b7cb-24f0-59b4eab8fe8e@wwsnet.net>
+Subject: Re: [PATCH rpcd v2 0/6] memory issue fixes
+References: <20191021061031.81230-1-yszhou4tech@gmail.com>
+In-Reply-To: <20191021061031.81230-1-yszhou4tech@gmail.com>
 
---O8SeEwttQ0kCCUuUp8d56iiJ8wiBPwJoY
+--kQ1zwhfbJPiouKThv18X8PPYqxe0gBWto
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-Hi Daniel, Yousong,
+Hi Yousong,
 
-thanks for the reporting issue and the proposed patch. I'd prefer to go
-with a minimal variant which merely zeroes the flags to avoid touching
-too much code.
-
-Imho the current uci_set() behavior of freeing uci_ptr members without
-zeroing them is a bug that should be corrected as well.
+thank you for the series. I applied it with slight whitespace changes
+after some valgrind testing on-target.
 
 ~ Jo
 
 
---O8SeEwttQ0kCCUuUp8d56iiJ8wiBPwJoY--
+--kQ1zwhfbJPiouKThv18X8PPYqxe0gBWto--
 
---ZeFGMzqDSJiPhQ1zTuGgV88xhOxs53WOd
+--PWvcZu9QqeoKeJR21OCn0eag0hT009XGl
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl236W8ACgkQQuLLvzou
-ZtNbVxAAzCjwlwfHyzsU67dqbNsYpMI6E6Evxzc90B6S9O5JtxmXUOcLkmK8n+Tk
-cPOpof1+yf3EAVkzAB5E1xUor9h7ICw7YoSqd2E8Nlwl7bzCR23H1Ql88qzoJhrz
-V5TJvNbkrofspjuX4jcyqT+/qs4Ton4tIcX8ScCv5rKFVWoWRVZnkXZR2CBi7N28
-va4IAm15OtqTcD/HxiIJRzMV+9H0NCVrvMW9+e3+XH9W7oBsqG3X0a8f58LB0BIK
-gw2lR5u45p1is0Elvopwutm5A78h4wLs+NYPlorYg3AzyQjmZYNiTCLwLuvns2IS
-3dBQDj64IlJZcala5QmwTdFbAeSy64bAIynfOw+l3Ljh+3SydrSEbyhM1krIXxRR
-LiI2XjwlW7lSrZMYv69DuKlACbqE7QegMdnGhw1eHoOQ7TeBSkiXvrWo2QhxxGZM
-0Ve2SighJvVAF09IWkvfRWPu2+ZSSUV/n3n1SJ/7S7R63keOBCPA47QdslwE5VTD
-EjN8+Cv7Bbe5BkrWqeIrQ/2qpuydYoSEnyBfcAlMWba0P+NGqh3I09JoE8t/orVX
-OUt2aklMZ4XUXUecnyqepc6ndSSSD1GkY6GXiqCzD6P5aL96PuOyGCVhXon/4I9t
-5VpGQf8mXV7CfFij36QTKmDfMSNvHha8eFxAIhKJ6/mdcjUQU64=
-=EXUG
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl23+nYACgkQQuLLvzou
+ZtOqag/+IUENgDGi9F225glfGl/YkMKgQAPTNKNjGtEYa0UFVsB628FnbsMiTwpI
+3vCl12lTbbVjBUCQy+jnpVrvAohmAlroO/zzm80KtOOJbrwC0fRskIlk1bCzkogx
+QDNJ4dAbfkQH1AvKIzKMjBJFkknV9vZD0eBB+7OK4tnBFoYePbWDmNhkklnYIy0T
++Ugfft4KCqU3WHVds61hz1G0lTl5WSeOp0PDMlntZcCUDh+YAmnQyDI9BLFl9b1O
+T4MiXPdSQLL0JA+qMK+cyHhavq1oxBdo6opluG4G2ytxW6+96CMR16JKja9blPjX
+8mCFaXoB9qGUn98ICJRvCM6mcWAN8VlPdAyffSaRkUlLJLy2AZ/kvf5ynxGeABDv
+eWsos8D8eOX3NuvjSObVz8dOuLMa/D4o5uMV1IRQi9tToqDfxHcM50Cr2Mbdsp7W
+JxlvLPlibrfebcZ54dbK9SH8uc8azFK97JfIe6WAqz4UhYvszaeqx88gLFLwhkNI
+HgdnAAj4s0ESoR4ONBJ5ZL7Zyyl55q56FkO8LQ/bqxulavvcX7YydSCkiENtxCyQ
+UoZJ2ZYbWOk1n+frcsJMgCUV59aSzUltyk1JNfdTSVpRXzu1hXMf5uzgSTZe5W5P
+Yt8to4rX2alf24J5CrJIa8mQB6l68B4/hNeEWbBvrNCbxEoTBb8=
+=Bl/1
 -----END PGP SIGNATURE-----
 
---ZeFGMzqDSJiPhQ1zTuGgV88xhOxs53WOd--
+--PWvcZu9QqeoKeJR21OCn0eag0hT009XGl--
 
 
---===============4821597623452662119==
+--===============1672291432608456988==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -221,5 +215,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4821597623452662119==--
+--===============1672291432608456988==--
 

@@ -2,41 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7A70E9F15
-	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 16:32:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4AACE9FD2
+	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 16:56:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5Al70BYQndRu8uMlOGnkD8yyxt2gYEZnQxrGSs7oJRA=; b=okGzUiPu7RMaLvH8VKMc5bSGh
-	Ep1E4+rzejXhZK1ZcHVq7STt2EZ8lct6wm9renMH6gdf5tBzUYUry+FMXCgzkohKiPPllejqljJYN
-	klotjxHgGggwYSHHOkSKdkx4LHV4/3tTGoQolLP5AZxFsRhQ+lpzUh5hVqU2qN5e6PeVx65yQP0Rn
-	2z4ln9EDhZZUhWFZP4xw7jOGODmhYQPjWWv6ljwINmDGb3+urt/CPCUauQOyyJ02a3AVaC0KuXGYL
-	sQGy27d5gqsoyyMzCjSMhCmWNvfx3HXHIANaytISzJTL/UEjQyNNPFKxDmBFltjPW9oEySWgQCIvs
-	JvaP4eUEQ==;
+	 bh=bqe1MZpVx+sYKakOQgGBScgHLnoScljw8LFqlECpLQI=; b=l02lNTdNkojrhJY8txZzkYGZL
+	hcio84YJ9zJb2GeZljidVmUx57mqMVptOYZ1oVPqYogkteJ2qbIVymUjo9gpdRP3q8x5xTkoet3Hv
+	Q77l0Nw0FehU+WncQKtsbgxupnXtVMXByfkMi3C3+HyAMPreN8089Dd6dkEBcVyzqJNmd5LnDXocj
+	gOwiq8kgNNv6oBkdB/tDPn2AtHNjecSUt+5JY22pOeEjt6VAP7ulsoLqxmb0DAwSd+uKWFLDnBCHt
+	+Hv73fiedTQf8bFxTkBULsMrW7X1wn/kGflcCV5CYYo+t1txtuUgwOsvlLSgWE63QhFrppD7TbPmn
+	ZJ0HkAsXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPpxK-0002OK-Jp; Wed, 30 Oct 2019 15:32:18 +0000
-Received: from mout-u-107.mailbox.org ([2001:67c:2050:1::465:107])
+	id 1iPqL2-0005r6-V9; Wed, 30 Oct 2019 15:56:48 +0000
+Received: from mout-u-107.mailbox.org ([91.198.250.252])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPpvz-0001HX-QV
- for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 15:30:59 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1iPqKq-0005pw-8o
+ for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 15:56:38 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-u-107.mailbox.org (Postfix) with ESMTPS id 473C8S3WW0zKnHZ;
- Wed, 30 Oct 2019 16:30:48 +0100 (CET)
+ by mout-u-107.mailbox.org (Postfix) with ESMTPS id 473CWX6rTjzKn7n;
+ Wed, 30 Oct 2019 16:47:20 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id k3UtW4lVo-hW; Wed, 30 Oct 2019 16:30:43 +0100 (CET)
-To: Daniel Engberg <daniel.engberg.lists@pyret.net>
-References: <20191027174438.25795-1-hauke@hauke-m.de>
- <1fe0ec3f6f8ca7700a29ade5ca32d563@pyret.net>
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id E1_2kdiQz3ay; Wed, 30 Oct 2019 16:47:16 +0100 (CET)
+To: daxiong <lxliu@ikuai8.com>, openwrt-devel@lists.openwrt.org
+References: <1572430479-8691-1-git-send-email-lxliu@ikuai8.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -99,22 +97,25 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <7708741a-5da2-25d7-2125-e65409f79b6e@hauke-m.de>
-Date: Wed, 30 Oct 2019 16:30:12 +0100
+Message-ID: <b41d9076-a20e-8ca3-e4b4-f5f2c39d0485@hauke-m.de>
+Date: Wed, 30 Oct 2019 16:47:01 +0100
 MIME-Version: 1.0
-In-Reply-To: <1fe0ec3f6f8ca7700a29ade5ca32d563@pyret.net>
+In-Reply-To: <1572430479-8691-1-git-send-email-lxliu@ikuai8.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_083056_296828_0C941BF1 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191030_085636_624288_A917E78E 
+X-CRM114-Status: GOOD (  27.01  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 0/6] buildsystem: Activate PIE ASLR for
- some packages
+ 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
+ blocklist [URIs: ikuai8.com]
+ 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
+ blocklist [URIs: ikuai8.com]
+Subject: Re: [OpenWrt-Devel] [PATCH-19.07] build: fix module strip invalid
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,138 +127,336 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, lynxis@fe80.eu, dave@taht.net,
- nbd@nbd.name
-Content-Type: multipart/mixed; boundary="===============7913685016030183267=="
+Content-Type: multipart/mixed; boundary="===============5964028715276634524=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7913685016030183267==
+--===============5964028715276634524==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="CcWdjm87NHTYe3txU7mOXzakSFWX1TwJA"
+ boundary="b4NytTlEuW7JayvkNpiOvsGOj6DShpAGz"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---CcWdjm87NHTYe3txU7mOXzakSFWX1TwJA
-Content-Type: multipart/mixed; boundary="PWpESOxmZpQ2WUlxPnPnVbIfFxejHP2cS";
+--b4NytTlEuW7JayvkNpiOvsGOj6DShpAGz
+Content-Type: multipart/mixed; boundary="9a6cEuwL1YWq03rHAKRvzJDbdP7q3eWiv";
  protected-headers="v1"
 From: Hauke Mehrtens <hauke@hauke-m.de>
-To: Daniel Engberg <daniel.engberg.lists@pyret.net>
-Cc: openwrt-devel@lists.openwrt.org, nbd@nbd.name, dave@taht.net,
- lynxis@fe80.eu
-Message-ID: <7708741a-5da2-25d7-2125-e65409f79b6e@hauke-m.de>
-Subject: Re: [PATCH 0/6] buildsystem: Activate PIE ASLR for some packages
-References: <20191027174438.25795-1-hauke@hauke-m.de>
- <1fe0ec3f6f8ca7700a29ade5ca32d563@pyret.net>
-In-Reply-To: <1fe0ec3f6f8ca7700a29ade5ca32d563@pyret.net>
+To: daxiong <lxliu@ikuai8.com>, openwrt-devel@lists.openwrt.org
+Message-ID: <b41d9076-a20e-8ca3-e4b4-f5f2c39d0485@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH-19.07] build: fix module strip invalid
+References: <1572430479-8691-1-git-send-email-lxliu@ikuai8.com>
+In-Reply-To: <1572430479-8691-1-git-send-email-lxliu@ikuai8.com>
 
---PWpESOxmZpQ2WUlxPnPnVbIfFxejHP2cS
+--9a6cEuwL1YWq03rHAKRvzJDbdP7q3eWiv
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 10/28/19 10:14 AM, Daniel Engberg wrote:
-> On 2019-10-27 18:44, Hauke Mehrtens wrote:
->> This is a follow up patch on this discussion on the mailing list:
->> https://patchwork.ozlabs.org/patch/1041647/
->>
->> This allows to activate PIE only for some packages where we thing it i=
-s
->> necessary and not only globally for all of them.
->>
->> Hauke Mehrtens (6):
->> =C2=A0 buildsystem: Make PIE ASLR option tristate
->> =C2=A0 dnsmasq: Activate PIE by default
->> =C2=A0 dropbear: Activate PIE by default
->> =C2=A0 hostapd: Activate PIE by default
->> =C2=A0 uhttpd: Activate PIE by default
->> =C2=A0 lantiq: Allow PKG_ASLR_PIE for DSL and voice drivers
->>
->> =C2=A0config/Config-build.in=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0=C2=A0=C2=A0 | 22 ++++++++++++++++----
->> =C2=A0include/hardening.mk=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=
-=C2=A0=C2=A0=C2=A0=C2=A0 |=C2=A0 9 +++++++-
->> =C2=A0package/kernel/lantiq/ltq-adsl/Makefile=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0 |=C2=A0 1 -
->> =C2=A0package/kernel/lantiq/ltq-ifxos/Makefile=C2=A0=C2=A0=C2=A0=C2=A0=
- |=C2=A0 1 -
->> =C2=A0package/kernel/lantiq/ltq-tapi/Makefile=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0 |=C2=A0 1 -
->> =C2=A0package/kernel/lantiq/ltq-vdsl-mei/Makefile=C2=A0 |=C2=A0 2 --
->> =C2=A0package/kernel/lantiq/ltq-vdsl/Makefile=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0 |=C2=A0 1 -
->> =C2=A0package/kernel/lantiq/ltq-vmmc/Makefile=C2=A0=C2=A0=C2=A0=C2=A0=C2=
-=A0 |=C2=A0 1 -
->> =C2=A0package/network/config/ltq-vdsl-app/Makefile |=C2=A0 1 -
->> =C2=A0package/network/services/dnsmasq/Makefile=C2=A0=C2=A0=C2=A0 |=C2=
-=A0 1 +
->> =C2=A0package/network/services/dropbear/Makefile=C2=A0=C2=A0 |=C2=A0 1=
- +
->> =C2=A0package/network/services/hostapd/Makefile=C2=A0=C2=A0=C2=A0 |=C2=
-=A0 1 +
->> =C2=A0package/network/services/uhttpd/Makefile=C2=A0=C2=A0=C2=A0=C2=A0=
- |=C2=A0 1 +
->> =C2=A013 files changed, 30 insertions(+), 13 deletions(-)
+On 10/30/19 11:14 AM, daxiong wrote:
+> Current modpost cannot reduce the module size.
 >=20
-> I think ASLRs value needs to be evaluated especially due to the
-> performance penalty (hostapd mainly in that regard) and not to forget
-> size increase depending on for how long OpenWrt intends to keep 8Mbyte
-> devices around as 4Mbyte devices are more or less unsupported by now.
-> It's probably a better idea to only enable it on aarch64 and x86-64
-> where size isn't as much of a concern and where it probably(?) receives=
-
-> most exposure to avoid uncessary breakage.
+> Use $(STRIP) command to replace the modpost patch,
+> I think to be compatibility will be better.
 >=20
-> http://intx0x80.blogspot.com/2018/04/bypass-aslrnx-part-1.html
-> https://svnweb.freebsd.org/base?view=3Drevision&revision=3D343964
-> Might also be worth taking into consideration.
->=20
-> Best regards,
-> Daniel
+> Signed-off-by: daxiong <lxliu@ikuai8.com>
 
-Yes ASLR is not preventing any exploits it just makes it harder for an
-attacker like most other mechanisms too. Especially on 32 bit platforms
-like MIPS 32 bit and ARM 32 bit we only use 8 bit of the address for
-ASLR, on 64 bit platforms this feature is a lot more useful as we have a
-lot more bits.
+Please base this against master, then we can backport it to 19.07.
 
-I am wondering why the kernel takes CONFIG_ARCH_MMAP_RND_BITS_MIN as the
-default for CONFIG_ARCH_MMAP_RND_BITS and not the max value, on MIPS 32
-bit min is 8 bits and max is 16 bit.
-https://elixir.bootlin.com/linux/v4.19.79/source/arch/Kconfig#L598
+Could you please elaborate a little bit more how module-strip provides
+better results than the previous patch? It would be nice if you could
+also provide some numbers to compare the previous size and the current si=
+ze.
 
-Do you know any benchmark results measuring the performance penalty of
-ASLR and PIE?
+Would it make sense to do both together, what was done in this patch
+before and after your change?
 
 Hauke
 
+> ---
+>  .../linux/generic/hack-4.14/204-module_strip.patch | 216 +++----------=
+--------
+>  1 file changed, 24 insertions(+), 192 deletions(-)
+>=20
+> diff --git a/target/linux/generic/hack-4.14/204-module_strip.patch b/ta=
+rget/linux/generic/hack-4.14/204-module_strip.patch
+> index d847adf..c22a507 100644
+> --- a/target/linux/generic/hack-4.14/204-module_strip.patch
+> +++ b/target/linux/generic/hack-4.14/204-module_strip.patch
+> @@ -1,104 +1,8 @@
+> -From a779a482fb9b9f8fcdf8b2519c789b4b9bb5dd05 Mon Sep 17 00:00:00 2001=
 
---PWpESOxmZpQ2WUlxPnPnVbIfFxejHP2cS--
+> -From: Felix Fietkau <nbd@nbd.name>
+> -Date: Fri, 7 Jul 2017 16:56:48 +0200
+> -Subject: build: add a hack for removing non-essential module info
+> -
+> -Signed-off-by: Felix Fietkau <nbd@nbd.name>
+> ----
+> - include/linux/module.h      | 13 ++++++++-----
+> - include/linux/moduleparam.h | 15 ++++++++++++---
+> - init/Kconfig                |  7 +++++++
+> - kernel/module.c             |  5 ++++-
+> - scripts/mod/modpost.c       | 12 ++++++++++++
+> - 5 files changed, 43 insertions(+), 9 deletions(-)
+> -
+> ---- a/include/linux/module.h
+> -+++ b/include/linux/module.h
+> -@@ -158,6 +158,7 @@ extern void cleanup_module(void);
+> -=20
+> - /* Generic info of form tag =3D "info" */
+> - #define MODULE_INFO(tag, info) __MODULE_INFO(tag, tag, info)
+> -+#define MODULE_INFO_STRIP(tag, info) __MODULE_INFO_STRIP(tag, tag, in=
+fo)
+> -=20
+> - /* For userspace: you can also call me... */
+> - #define MODULE_ALIAS(_alias) MODULE_INFO(alias, _alias)
+> -@@ -201,12 +202,12 @@ extern void cleanup_module(void);
+> -  * Author(s), use "Name <email>" or just "Name", for multiple
+> -  * authors use multiple MODULE_AUTHOR() statements/lines.
+> -  */
+> --#define MODULE_AUTHOR(_author) MODULE_INFO(author, _author)
+> -+#define MODULE_AUTHOR(_author) MODULE_INFO_STRIP(author, _author)
+> -=20
+> - /* What your module does. */
+> --#define MODULE_DESCRIPTION(_description) MODULE_INFO(description, _de=
+scription)
+> -+#define MODULE_DESCRIPTION(_description) MODULE_INFO_STRIP(descriptio=
+n, _description)
+> -=20
+> --#ifdef MODULE
+> -+#if defined(MODULE) && !defined(CONFIG_MODULE_STRIPPED)
+> - /* Creates an alias so file2alias.c can find device table. */
+> - #define MODULE_DEVICE_TABLE(type, name)					\
+> - extern typeof(name) __mod_##type##__##name##_device_table		\
+> -@@ -233,7 +234,9 @@ extern typeof(name) __mod_##type##__##na
+> -  */
+> -=20
+> - #if defined(MODULE) || !defined(CONFIG_SYSFS)
+> --#define MODULE_VERSION(_version) MODULE_INFO(version, _version)
+> -+#define MODULE_VERSION(_version) MODULE_INFO_STRIP(version, _version)=
 
---CcWdjm87NHTYe3txU7mOXzakSFWX1TwJA
+> -+#elif defined(CONFIG_MODULE_STRIPPED)
+> -+#define MODULE_VERSION(_version) __MODULE_INFO_DISABLED(version)
+> - #else
+> - #define MODULE_VERSION(_version)					\
+> - 	static struct module_version_attribute ___modver_attr =3D {	\
+> -@@ -255,7 +258,7 @@ extern typeof(name) __mod_##type##__##na
+> - /* Optional firmware file (or files) needed by the module
+> -  * format is simply firmware file name.  Multiple firmware
+> -  * files require multiple MODULE_FIRMWARE() specifiers */
+> --#define MODULE_FIRMWARE(_firmware) MODULE_INFO(firmware, _firmware)
+> -+#define MODULE_FIRMWARE(_firmware) MODULE_INFO_STRIP(firmware, _firmw=
+are)
+> -=20
+> - struct notifier_block;
+> -=20
+> ---- a/include/linux/moduleparam.h
+> -+++ b/include/linux/moduleparam.h
+> -@@ -17,6 +17,16 @@
+> - /* Chosen so that structs with an unsigned long line up. */
+> - #define MAX_PARAM_PREFIX_LEN (64 - sizeof(unsigned long))
+> -=20
+> -+/* This struct is here for syntactic coherency, it is not used */
+> -+#define __MODULE_INFO_DISABLED(name)					  \
+> -+  struct __UNIQUE_ID(name) {}
+> -+
+> -+#ifdef CONFIG_MODULE_STRIPPED
+> -+#define __MODULE_INFO_STRIP(tag, name, info) __MODULE_INFO_DISABLED(n=
+ame)
+> -+#else
+> -+#define __MODULE_INFO_STRIP(tag, name, info) __MODULE_INFO(tag, name,=
+ info)
+> -+#endif
+> -+
+> - #ifdef MODULE
+> - #define __MODULE_INFO(tag, name, info)					  \
+> - static const char __UNIQUE_ID(name)[]					  \
+> -@@ -24,8 +34,7 @@ static const char __UNIQUE_ID(name)[]
+> -   =3D __stringify(tag) "=3D" info
+> - #else  /* !MODULE */
+> - /* This struct is here for syntactic coherency, it is not used */
+> --#define __MODULE_INFO(tag, name, info)					  \
+> --  struct __UNIQUE_ID(name) {}
+> -+#define __MODULE_INFO(tag, name, info) __MODULE_INFO_DISABLED(name)
+> - #endif
+> - #define __MODULE_PARM_TYPE(name, _type)					  \
+> -   __MODULE_INFO(parmtype, name##type, #name ":" _type)
+> -@@ -33,7 +42,7 @@ static const char __UNIQUE_ID(name)[]
+> - /* One for each parameter, describing how to use it.  Some files do
+> -    multiple of these per line, so can't just use MODULE_INFO. */
+> - #define MODULE_PARM_DESC(_parm, desc) \
+> --	__MODULE_INFO(parm, _parm, #_parm ":" desc)
+> -+	__MODULE_INFO_STRIP(parm, _parm, #_parm ":" desc)
+> -=20
+> - struct kernel_param;
+> -=20
+> +diff --git a/init/Kconfig b/init/Kconfig
+> +index 4607532..cba0f81 100644
+>  --- a/init/Kconfig
+>  +++ b/init/Kconfig
+> -@@ -1903,6 +1903,13 @@ config TRIM_UNUSED_KSYMS
+> +@@ -1883,6 +1883,13 @@ config TRIM_UNUSED_KSYMS
+>  =20
+>   	  If unsure, or if you need to build out-of-tree modules, say N.
+>  =20
+> @@ -112,97 +16,25 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
+>   endif # MODULES
+>  =20
+>   config MODULES_TREE_LOOKUP
+> ---- a/kernel/module.c
+> -+++ b/kernel/module.c
+> -@@ -3020,9 +3020,11 @@ static struct module *setup_load_info(st
+> -=20
+> - static int check_modinfo(struct module *mod, struct load_info *info, =
+int flags)
+> - {
+> --	const char *modmagic =3D get_modinfo(info, "vermagic");
+> - 	int err;
+> -=20
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> -+	const char *modmagic =3D get_modinfo(info, "vermagic");
+> +diff --git a/scripts/Kbuild.include b/scripts/Kbuild.include
+> +index a33fa1a..34b34e0 100644
+> +--- a/scripts/Kbuild.include
+> ++++ b/scripts/Kbuild.include
+> +@@ -260,11 +260,16 @@ make-cmd =3D $(call escsq,$(subst $(pound),$$(po=
+und),$(subst $$,$$$$,$(cmd_$(1))))
+> + # PHONY targets skipped in both cases.
+> + any-prereq =3D $(filter-out $(PHONY),$?) $(filter-out $(PHONY) $(wild=
+card $^),$^)
+> +=20
+> ++ifeq ($(CONFIG_MODULE_STRIPPED),y)
+> ++	module-strip =3D s=3D$@; if [ "$${s//*.}" =3D "ko" ];then $(STRIP) -=
+g -S -d --strip-unneeded $@ ;fi
+> ++endif
+>  +
+> - 	if (flags & MODULE_INIT_IGNORE_VERMAGIC)
+> - 		modmagic =3D NULL;
+> -=20
+> -@@ -3043,6 +3045,7 @@ static int check_modinfo(struct module *
+> - 				mod->name);
+> - 		add_taint_module(mod, TAINT_OOT_MODULE, LOCKDEP_STILL_OK);
+> - 	}
+> -+#endif
+> -=20
+> - 	check_modinfo_retpoline(mod, info);
+> -=20
+> ---- a/scripts/mod/modpost.c
+> -+++ b/scripts/mod/modpost.c
+> -@@ -1984,7 +1984,9 @@ static void read_symbols(char *modname)
+> - 		symname =3D remove_dot(info.strtab + sym->st_name);
+> -=20
+> - 		handle_modversions(mod, &info, sym, symname);
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> - 		handle_moddevtable(mod, &info, sym, symname);
+> -+#endif
+> - 	}
+> - 	if (!is_vmlinux(modname) ||
+> - 	     (is_vmlinux(modname) && vmlinux_section_warnings))
+> -@@ -2145,8 +2147,10 @@ static void add_header(struct buffer *b,
+> - 	buf_printf(b, "#include <linux/vermagic.h>\n");
+> - 	buf_printf(b, "#include <linux/compiler.h>\n");
+> - 	buf_printf(b, "\n");
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> - 	buf_printf(b, "MODULE_INFO(vermagic, VERMAGIC_STRING);\n");
+> - 	buf_printf(b, "MODULE_INFO(name, KBUILD_MODNAME);\n");
+> -+#endif
+> - 	buf_printf(b, "\n");
+> - 	buf_printf(b, "__visible struct module __this_module\n");
+> - 	buf_printf(b, "__attribute__((section(\".gnu.linkonce.this_module\")=
+)) =3D {\n");
+> -@@ -2163,8 +2167,10 @@ static void add_header(struct buffer *b,
+> -=20
+> - static void add_intree_flag(struct buffer *b, int is_intree)
+> - {
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> - 	if (is_intree)
+> - 		buf_printf(b, "\nMODULE_INFO(intree, \"Y\");\n");
+> -+#endif
+> - }
+> -=20
+> - /* Cannot check for assembler */
+> -@@ -2177,10 +2183,12 @@ static void add_retpoline(struct buffer
+> -=20
+> - static void add_staging_flag(struct buffer *b, const char *name)
+> - {
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> - 	static const char *staging_dir =3D "drivers/staging";
+> -=20
+> - 	if (strncmp(staging_dir, name, strlen(staging_dir)) =3D=3D 0)
+> - 		buf_printf(b, "\nMODULE_INFO(staging, \"Y\");\n");
+> -+#endif
+> - }
+> -=20
+> - /**
+> -@@ -2279,11 +2287,13 @@ static void add_depends(struct buffer *b
+> -=20
+> - static void add_srcversion(struct buffer *b, struct module *mod)
+> - {
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> - 	if (mod->srcversion[0]) {
+> - 		buf_printf(b, "\n");
+> - 		buf_printf(b, "MODULE_INFO(srcversion, \"%s\");\n",
+> - 			   mod->srcversion);
+> - 	}
+> -+#endif
+> - }
+> -=20
+> - static void write_if_changed(struct buffer *b, const char *fname)
+> -@@ -2520,7 +2530,9 @@ int main(int argc, char **argv)
+> - 		add_staging_flag(&buf, mod->name);
+> - 		err |=3D add_versions(&buf, mod);
+> - 		add_depends(&buf, mod, modules);
+> -+#ifndef CONFIG_MODULE_STRIPPED
+> - 		add_moddevtable(&buf, mod);
+> -+#endif
+> - 		add_srcversion(&buf, mod);
+> -=20
+> - 		sprintf(fname, "%s.mod.c", mod->name);
+> + # Execute command if command has changed or prerequisite(s) are updat=
+ed.
+> + if_changed =3D $(if $(strip $(any-prereq) $(arg-check)),             =
+          \
+> + 	@set -e;                                                            =
+ \
+> + 	$(echo-cmd) $(cmd_$(1));                                            =
+ \
+> +-	printf '%s\n' 'cmd_$@ :=3D $(make-cmd)' > $(dot-target).cmd, @:)
+> ++	printf '%s\n' 'cmd_$@ :=3D $(make-cmd)' > $(dot-target).cmd, @:);   =
+   \
+> ++	$(module-strip)
+> +=20
+> + # Execute the command and also postprocess generated .d dependencies =
+file.
+> + if_changed_dep =3D $(if $(strip $(any-prereq) $(arg-check) ),        =
+          \
+>=20
+
+
+
+--9a6cEuwL1YWq03rHAKRvzJDbdP7q3eWiv--
+
+--b4NytTlEuW7JayvkNpiOvsGOj6DShpAGz
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEyBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl25rIUACgkQ8bdnhZyy
-68fyTgf1EmHsE6Fh4peayCld6uba38di+YzqYmy+ljgft3FWwLsp67s/ESqZKPdP
-ogBh0OXiSgy3z/XrSPqvcmrlAV3HaCCJyXaSSmlz0S/yPTTqjJtK5RvP4WTV2MGJ
-00wW44zY/CxHk32UYEA2RzXOntf/rYRl2zNyfAbyCJUCz8fqxVVTOvr9Hf+hH1Kr
-YW5Z7LBRYLoCad7Fa5RI/S7fQNPsVU2OwOCVUw+FYnT1S4hNyq8OSY4BhfYjdAC1
-lhfmFcIXfJTItJ6nd70p9TIfqu8OKkVfjcPgkMJmlDfviHNjwDEH1xMhDjXvMaRd
-nsoB09ecJmHBjmqRFP5uNjJ97Ltf
-=1KzU
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl25sHUACgkQ8bdnhZyy
+68c/lAgAvMQoyW/RlvSWB7UWh/TeK+BjFxKdL80GeSI8Cnmxqse8p87BFPd6GiDZ
+ZahDbVQnbsFWeOmmZCcB5rMJiyx3XvVC98OXsGNOCddRpakwC38oJMfiR6hZf/4P
+PKkVY03qi/wY8G5trJk+gJXxfoNFPsHuzEarnpSccFqZkrXej4NjOSk7x+3ibYUu
+V5IqyOY2tpgVQUNRJGn4bDtAkIIYzshlmf9zBOcIaZO0ESVGCAMNF6nU9AAG93ER
+AvACtnpYbkEmGQfUWH/7aVYlDFMe7tD46ggXBkonY0X/azkfF7MT6jgQsItwOjt1
+98XjO0K1xa2LYmCsSg8i1J3y6WTLBA==
+=8JzY
 -----END PGP SIGNATURE-----
 
---CcWdjm87NHTYe3txU7mOXzakSFWX1TwJA--
+--b4NytTlEuW7JayvkNpiOvsGOj6DShpAGz--
 
 
---===============7913685016030183267==
+--===============5964028715276634524==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -268,5 +467,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7913685016030183267==--
+--===============5964028715276634524==--
 

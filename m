@@ -2,74 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD05BE9BD2
-	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 13:50:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 103D8E9BE3
+	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 13:57:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nXWuXuxp2O0FKZvsdngL/eM2m9yjfv+QbwWR57uXwHU=; b=uAwJ+n9vPnoI3D6gjLMFL/zwC
-	+oJL6vFxSkAPwNUQ02Lgdq7DHK2Jyvs+CFmaH39L49ZFO0ajCFTYrya99+f50+i7mfXab1dnUlov0
-	DjxXvR2mivSz8iRB+bj8mj85UrzjkvuHDSHVPVo6TaLnzIFRoxqnEF4nxYIhHHroy4uHvkx7fAW+u
-	lDvBV8gtqVCpSPtELubd/cTXVka/kzkneZiB/9cGldUBDR5jTgKyKQ5Eqygr736rODsC1TxcjxSl6
-	L/lQn+VYey695kv2Ujyta+FMOX/Tht6PV6dvw4vKESoax53vjeZ+z0Hx/yhDaaZu/bG6tJcV+g1sm
-	kOKsURq0g==;
+	 bh=kMK/DMr4G4AWIqPEp+Zr2Zl1As534Fuck+fk0AgWEYM=; b=aFKZGEr/O7YXN8TOmD+/2p3cQ
+	iD3iSv6UT4bcByzctWL3dY8IEX24sCYHinnUoopD+1XGP0beK3hwvp+Vl95blcW3KJuStzTHUElQJ
+	o6qQp2VVbQ8PNeOibjZx1gx6Qt1HLEpSVllcVa5s11W+zkUDo/WiuXEJ01YpJPdAhlj48aIN5+O8t
+	/kTRmEL4rtspjiF5LZGzCm+5G2enVVutNO//mrWHa8QNZ76hj53WumefEi+Sunp0VifjoiMZ3xBWu
+	3A7ueU6rtg1+QmKUL7crllyKzWqp2YcodIXkDL+k1HogiNicP9I0ZhbL6eFmOoQuydDslZObPIPmU
+	dUKlVFmOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPnQt-0001nc-4n; Wed, 30 Oct 2019 12:50:39 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1iPnX1-0004JI-3O; Wed, 30 Oct 2019 12:56:59 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPnQR-00016b-Aw
- for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 12:50:13 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1Mq2rM-1hdrPI14RW-00n5Hj; Wed, 30
- Oct 2019 13:50:06 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Michal Cieslakiewicz'" <michal.cieslakiewicz@wp.pl>,
- <openwrt-devel@lists.openwrt.org>
-References: <20191030123221.7a0af3ea@kosmio.komorska>
-In-Reply-To: <20191030123221.7a0af3ea@kosmio.komorska>
-Date: Wed, 30 Oct 2019 13:50:04 +0100
-Message-ID: <004f01d58f20$8e12cd60$aa386820$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1iPnWo-0004Il-R7
+ for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 12:56:48 +0000
+Received: by mail-lf1-x142.google.com with SMTP id u16so1480161lfq.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 30 Oct 2019 05:56:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:cc:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=wtNSensYdVLwPoFQhWsr1AW1lgmX0PooXHtHNi4QMmE=;
+ b=vap7S+N9SBgyF7rCQKA8uo0cQr/C81U6mC5BMsrJiSKBDmUNxnHoNkgmb9niQRJihc
+ w3nHgTys9GpQReObdLZDuJKQPm5/HEs/1z3u3Q6kl6M04dyfMOiM2HXu7wSIMwE9k320
+ 8zjkx1Ix4JNhclt9S005HfKkTUCoFrGp4vtf+0gsx1j1WUpyLUk9C1TVyr8t1tTbH9zv
+ HzKjfqnwq+BElPRBL4voqmRhiLImVuzqXfXeg7iY29FRsF3JTU2tPzlVt+VJtainBMka
+ 0W9XBZw9Hk+odcnQAZCDR3jdFvGP0HTZSZl+6bi0SNZH7WpdsxVaDvpfu2amPw/jue5y
+ 8tnQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:cc:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=wtNSensYdVLwPoFQhWsr1AW1lgmX0PooXHtHNi4QMmE=;
+ b=hG0Q0g32tT+ziwpevK4wHHWXFhnWEJ2YbczrPH0P7BkumDIOB7IpzMjBlJE7EPlyRJ
+ KtUA8j3+Zr0U+TBCJdaCRRXdzVoNBpE1Mp4gjQ4nJtSmPyl7cjulOIy5HOZLqTfzoPlY
+ yrIWKwtFGm7QkAFj/gK2i/ngaPbnKscfsyA85gxfgTZDYKocxu4C8AC7NIJ9nWznQIXh
+ KFNW6gMEwxuS28YiQKkLdCVy9r+iVvxvnsLVsXTU1C/PKxn22pqqfI04Fl1nQkXzYVfB
+ MRaBXdAtSS2hXZhroOdkfmwDEmpzFHJ3Eq0kL2E6Bx7DSZCaGMVTNHGy89jDHjUnn6JT
+ 5Cww==
+X-Gm-Message-State: APjAAAVEzFLHg5bKiXarlXkD/ZOjfjuZWIjRisBU0n0zu59MkDBacKfL
+ jR5mgK6aXJCKu8RguxaLk0k=
+X-Google-Smtp-Source: APXvYqylmDG3uzEgU/lGSrVcfnXiKx2RNbVmNhMkvJnUQuRg03Jo4YDv2uB0CcMijAwHm99sLU36rA==
+X-Received: by 2002:a19:750:: with SMTP id 77mr6047118lfh.81.1572440204824;
+ Wed, 30 Oct 2019 05:56:44 -0700 (PDT)
+Received: from [31.11.183.129] (031011183129.warszawa.vectranet.pl.
+ [31.11.183.129])
+ by smtp.gmail.com with ESMTPSA id b2sm973610ljk.64.2019.10.30.05.56.43
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 30 Oct 2019 05:56:43 -0700 (PDT)
+To: Daniel Danzberger <daniel@dd-wrt.com>, openwrt-devel@lists.openwrt.org
+References: <20191030112726.13106-1-daniel@dd-wrt.com>
+ <20191030112726.13106-3-daniel@dd-wrt.com>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <16badd28-d5a6-4c0e-8aba-be7fbee35681@gmail.com>
+Date: Wed, 30 Oct 2019 13:56:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Thread-Index: AQE4ZxIgITOci8A20peAqGYj3ww1IaitbbMg
-Content-Language: de
-X-Provags-ID: V03:K1:1NtQEQczG2Z26kjZdcb7GGXAJuG81vR8jxyc8nVe3iG3NGy6DKz
- AozrP4zjKulgwPwaAVCHLQQLHdmevyqql0e5nxa3cFFmVUomrTc1o+/oU+ByTQb/8LBt9dh
- oF/OrClOWHm/JMnexglelwklwfiJtNItZmtQ9Jn/I/vCDnai+DLkaVjArIKasDSW9YULOR7
- FxHk1axaV1Sk5++Rv1Y3w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:NS6VORwMDNw=:LLDq5aiCGAhVRLgzIriQf0
- /YAzxSZlr3hnYPqrZX6LLwrzCNa8W5VYkn/QznXn2gRUKMSMSq9vYW1xKDL/TckQKx5aG52VO
- bJb5vsislrbqYUlRnmxcGdqHJ/5IgrG4k4rK5+7B6kYP3mTHx+FDlOBMaUcLR2IKtS7eUMlaT
- /nBrBBmYIXCHzSx1OH4ZANa1RkHllreiHtaczZ6d4m4BPvvyOVI0UbWYobDUfI2azUsmYgNYV
- 8ev0urD90H8KAbsGroqxGWibLSBS1C3Kfbx6Df6ZaRjbdo8Enlj6HnzwBjCzJfEC0MCElddvo
- krKMTpqEMh8MrFbSAbIA4xP64TdiLsJgiw+/lDHoMXgkjQqu4WEyWXIgo3eC3c7fO1eLEk5xq
- P/xoYVKKlOHOkgPBci6QNUqify+UjV2uCijH4vhy1prq8j+NfxX2tmBfOa+M53x0YC7yCZWMe
- ivaAtwXs8U+e8BFiS+mXpbdT3tREEFMhnxK0U2te3ostp5CnJ39iIWIot1mhh3nK8WGLAgdEd
- Cmr46boDnG8Jq4svTEQQ8JZSPbnZlprhKddXxS6Nx2UxnFCNoK6+4sRIo1m4MG22Ub16zm6oh
- 9RXQKzAhQs8HmcgCxgJXf5Dyix37Kfd+muE/9K80m+w8PJIPHP0Y/79f+y6KxY5fgRCqqhxcK
- QMdUQRh5XGzd5VaZkrJ6RrJQ4cPNT425/yGQCzZYMtCFo+nrrBGHilXP1Zr8sv8aytM3qDfLO
- n+VbzMKtUjCFztVGtavE9+o6jKicjn2MalAygq3DPSNXm8PUd/pcZoMbaHK33j1hLFEKH5+ja
- XXh0qf1zgPB+GOcKKWfpQT44VPRAC2bGOrlfSLMgoGirUihPTjtzwypzRWv/NTCq87lN5AB1T
- NlRYleBE/AaDGuDhYbNZWvZeYOMyWhcI1X2qymm+Q=
+In-Reply-To: <20191030112726.13106-3-daniel@dd-wrt.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_055011_675530_574B371D 
-X-CRM114-Status: GOOD (  14.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191030_055646_903788_88556071 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pepe2k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: add support for Netgear
- WNDR4300
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ipq40xx: mtd m25p80: fix hang on
+ device shutdown
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,141 +103,79 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0578268579296537848=="
+Cc: mail@adrianschmutzler.de, robimarko@gmail.com,
+ Mathias Kresin <dev@kresin.me>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hi Daniel,
 
---===============0578268579296537848==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=VH7zCfYwSakUOx=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
-
-This is a multipart message in MIME format.
-
---=-=VH7zCfYwSakUOx=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-> diff --git a/target/linux/ath79/image/Makefile b/target/linux/ath79/image=
-/Makefile
-> index 24768ef5e0..b6ac83cdc1 100644
-> --- a/target/linux/ath79/image/Makefile
-> +++ b/target/linux/ath79/image/Makefile
-> @@ -77,6 +77,7 @@ include ./generic-ubnt.mk
->  endif
->  ifeq ($(SUBTARGET),nand)
->  include ./nand.mk
-> +include ./nand-netgear.mk
-
-Same question I asked on zyxel support: Do you expect several further netge=
-ar devices to be added to nand target?
-
-Up to let's say three/four devices, I'd prefer to merge stuff into nand.mk,=
- otherwise I'd say a separate file is justified, so we do get a .mk file fo=
-r every vendor.
-
-> diff --git a/target/linux/ath79/image/nand-netgear.mk b/target/linux/ath7=
-9/image/nand-netgear.mk
+On 30.10.2019 12:27, Daniel Danzberger wrote:
+> Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
+> ---
+>   .../401-mtd-m25p80-fix-shutdown-hang.patch    | 21 +++++++++++++++++++
+>   1 file changed, 21 insertions(+)
+>   create mode 100644 target/linux/ipq40xx/patches-4.19/401-mtd-m25p80-fix-shutdown-hang.patch
+> 
+> diff --git a/target/linux/ipq40xx/patches-4.19/401-mtd-m25p80-fix-shutdown-hang.patch b/target/linux/ipq40xx/patches-4.19/401-mtd-m25p80-fix-shutdown-hang.patch
 > new file mode 100644
-> index 0000000000..b25e6ec66c
+> index 0000000000..779f7ec4af
 > --- /dev/null
-> +++ b/target/linux/ath79/image/nand-netgear.mk
-> @@ -0,0 +1,34 @@
-> +include ./common-netgear.mk	# for netgear-uImage
+> +++ b/target/linux/ipq40xx/patches-4.19/401-mtd-m25p80-fix-shutdown-hang.patch
+> @@ -0,0 +1,21 @@
+> +diff --git a/drivers/mtd/devices/m25p80.c b/drivers/mtd/devices/m25p80.c
+> +index 270d3c95..39f90436 100644
+> +--- a/drivers/mtd/devices/m25p80.c
+> ++++ b/drivers/mtd/devices/m25p80.c
+> +@@ -256,9 +256,16 @@ static int m25p_remove(struct spi_mem *spimem)
+> + static void m25p_shutdown(struct spi_mem *spimem)
+> + {
+> + 	struct m25p *flash = spi_mem_get_drvdata(spimem);
+> ++	u8 command[1];
+> ++
+> ++	command[0] = 0x66;
+> ++	spi_write(spimem->spi, command, 1);
+> ++	command[0] = 0x99;
+> ++	spi_write(spimem->spi, command, 1);
+
+This is not the correct way to solve 'broken' hardware designs (I assume 
+your board has incorrect bootstrap configuration and boots from 32M SPI 
+NOR in default 3-byte addressing mode instead of 4-byte or the flash IC 
+isn't reset during SOC reset).
+
+I remember discussing this topic at least several times during reviews 
+of some MediaTek based boards back in 2018, please see great explanation 
+from Mathias here: [0].
+
+Since kernel 4.19 we have an official 'solution' for that, look for 
+'broken-flash-reset' property description in [1] documentation and 
+deeper explanation in [2].
+
+[0] https://github.com/lede-project/source/pull/620#issuecomment-295401936
+
+[1] 
+https://www.kernel.org/doc/Documentation/devicetree/bindings/mtd/jedec%2Cspi-nor.txt
+
+[2] 
+https://github.com/torvalds/linux/commit/bb276262e88dae52cc717bb636b7468f66bb234e
+
+-- 
+Cheers,
+Piotr
+
 > +
-> +# (pad-offset 129 =3D 2 * uimage_header + 0xff)
-> +define Device/netgear_ath79_nand
-> +  DEVICE_VENDOR :=3D NETGEAR
-> +  DEVICE_PACKAGES :=3D kmod-usb2 kmod-usb-ledtrig-usbport
-> +  KERNEL_SIZE :=3D 2048k
-> +  BLOCKSIZE :=3D 128k
-> +  PAGESIZE :=3D 2048
-> +  IMAGE_SIZE :=3D 25600k
-> +  KERNEL :=3D kernel-bin | append-dtb | lzma -d20 | \
-> +	pad-offset $$(KERNEL_SIZE) 129 | \
-> +	netgear-uImage lzma | append-string -e '\xff' | \
-> +	append-uImage-fakehdr filesystem $$(NETGEAR_KERNEL_MAGIC)
-> +  KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma -d20 | \
-> +	netgear-uImage lzma
-> +  IMAGES :=3D ubi-sysupgrade.bin ubi-factory.img
-> +  IMAGE/ubi-factory.img :=3D append-kernel | append-ubi | netgear-dni | \
-> +	check-size $$$$(IMAGE_SIZE)
-> +  IMAGE/ubi-sysupgrade.bin :=3D sysupgrade-tar | append-metadata | \
-> +	check-size $$$$(IMAGE_SIZE)
+> + 	spi_nor_restore(&flash->spi_nor);
+> + }
+> ++
+> + /*
+> +  * Do NOT add to this array without reading the following:
+> +  *
+> 
 
-I there a real need to deviate from the sysupgrade.bin/factory.img naming s=
-cheme here?
-I didn't find that naming scheme anywhere else in ath79 or ramips.
-
-> diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10=
--ath9k-eeprom b/target/linux/ath79/nand/base-
-> files/etc/hotplug.d/firmware/10-ath9k-eeprom
-> index 88a40b5d41..ae1d3572a8 100644
-> --- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-=
-eeprom
-> +++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-=
-eeprom
-> @@ -9,6 +9,9 @@ board=3D$(board_name)
->  case "$FIRMWARE" in
->  "ath9k-eeprom-ahb-18100000.wmac.bin")
->  	case $board in
-> +	netgear,wndr4300)
-> +		caldata_extract "caldata" 0x1000 0x440
-> +		;;
-
-I hesitated when reviewing the DTS section of your patch, but since this ca=
-n be merged with zyxel here, I'd recommend to change the partition label to=
- "art", which is frequently used for that very reason.
-
-Best
-
-Adrian
-
---=-=VH7zCfYwSakUOx=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl25hvUACgkQoNyKO7qx
-AnCZKw//U6yaJ/ipezimAS1EO36Z5RKlbjGtqf492ObKaP1VUwMIsA0NMj6bTKil
-ECxcw0Ir3K4qXkAMSLi9xuPPkCjhT1d9lF3KO4IDExXo8HrmJHz/d9Et77gPUwOG
-Sg1MZRovRFnJT7/jJGtQepaX55Mpspd1sdnO4CSAcOLEBEfWWdxf+Z2Gpz+HcOEU
-QR5L3NG1mv0r4Wuqphn8goG7mSRrNGUvWN+cZ21RPvb/2UJT2i8VnnMgH/UPkIeU
-zsZOzQUGgeGmL1XP+3q1XRsTuQWts1Miw3yWYmtoz/eT5E+dS8qUTy/DTNPdf8Pn
-au3gPFxdtdddsJ3+fqB8eLX8kRb4gkk7NizuwKrTf1oyEeGV7GAGNWvBo2J6e6aq
-130ftjKtCDnknpaGG5y4xJAG180l0y9D0nvdCH2LjVIYZgc5NxyYhuq1E+E+Dtsp
-yh72B6yVpriztWy+ab7HzFUrZWgQUB+OsnxSqZ8GPrxxdaJOCuSOjb8CIa70D6u8
-wian474uuKTmrO+4lnrlkB2sydAi7cLBkGLRRvkvmt1pZmCfmBvoRoYBFnfv0nZm
-eRZqnFC2PN0m/pug/Lp6D4V5SxUYDh3LuqfvR3ShBudQLEYn5ha97OGSyANEtIJJ
-DZNE34rPWCPW3lYD/sY5GDNz/6tLHxUb+0F4jvsKeRlNK42TRvA=
-=fPKq
------END PGP SIGNATURE-----
-
-
---=-=VH7zCfYwSakUOx=-=--
-
-
-
---===============0578268579296537848==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0578268579296537848==--
-
-

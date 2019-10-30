@@ -2,62 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50B05E98D0
-	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 10:06:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D43AFE99D4
+	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 11:16:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
 	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aBdd8f6WFuH+fxxsJMYmFX038hBjTntav2tQji9507Q=; b=Qp0B5j3N61Iwtf
-	pMSiktoGu1xQuj9eOEVPGg2mO1EJOBpLHjStUjQ2AI2lXWn8E9+MYLk+bMTxG9vzOI5hmORHO32b1
-	TZMoeGLVuf1BPa6+rEOdCiNGUZ2WMU+IETMMhZpjy2yPx/Rr69yJeGldUdzAb0RvxkvBShc8HoB8t
-	z2WLz0HZx/2qz32zsgIl8IFAsSxp9/48apw2c5dVfHTWzQbnKWA83XXrd5JxbJ7ZeJ/T8jUnV5tJU
-	evtsza9NHZIH+so1mRRM8j5iZQ37NOq0cAWQSOWu14pUS6D8+bhMJhDZ2k9w5zZTlGdEPyg8McJam
-	Iehq/DouT30+Kfu3Kpug==;
+	List-Owner; bh=ublRSrl3x1ZbpAmfZW60gpGPr5GY4s9L+b3a1tJ2KZw=; b=DtN9s6eb/+WWMs
+	IQrU9BNRspiQf/kZAlFaXYXKAKWGhYymtyVl1BWkzpEdNLUXCwfzFnnc2+D9Kequ/DEC4TzlscIUz
+	waWTDTLEmKjzAViL8UpfaPlE/XmSzA6BwyOCU2soVhPRY51R5QlxFqoDFwpnhcHOLLUmYd71PU8a7
+	j3sjHWARkbigmo6KizkIDEwuZa7ZMEK0FlVQdMQ2n/sDb78gy6KuaGMow7nn8HvxXQUYwM62dJrNU
+	GrYOMOnc6L7tMaTtZzV8nIqiU1Ibj2y9Yt3sunSzqpU2MfodXCn5EwMDzy2zCq2+b/9aOpyAM36PD
+	sqmzGck1Qmg90B3tJMUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPjvS-00075D-IP; Wed, 30 Oct 2019 09:05:58 +0000
+	id 1iPl1q-0003Xk-HZ; Wed, 30 Oct 2019 10:16:38 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPjvM-00074Z-LY
- for openwrt-devel@bombadil.infradead.org; Wed, 30 Oct 2019 09:05:52 +0000
+ id 1iPl1k-0003XS-UT
+ for openwrt-devel@bombadil.infradead.org; Wed, 30 Oct 2019 10:16:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:To:From:Sender:
  Reply-To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HhoysUW0S19v9U5eVXyiN9VUUszvM8DudQ7sZOKBAPQ=; b=yFOsSqAEv2apSW41AzeKsGCyP6
- N7o0PrjearF7EhfxRPoG6nef9tQ18DikDUl31OYEqVQWpZkPGYtvO43CGaj3T8/bj6T6k/5mOgWKH
- nCk+db+//b2sR3zKZ4jafN7060q26Tnd7E65S+IEcxZMxCCKj+trnUvmtOynrCNMQGf5klzxW9Q3Z
- S7txfgXjrOHlVj5TbovhBzo+f8lRvol5zQVVdZxymlDQ9Rt6fKzyMY3YGOunhHViluyDtLaE4a4Rs
- RMyn7YfuB5qAL6t1BUIu4oRMsu2iTlCWD5S6fOmHD7NmnM9f0Fg3+LKmStOKE5aWW6Los+bN5REpd
- YWSlb6Kw==;
-Received: from smtpbguseast3.qq.com ([54.243.244.52])
+ bh=jjQCFG/XnD601wJK13kEUvTSAYD8wMEQviaXdb7hdRA=; b=N5fLskIoNcFzhJByHQSPEpcdqE
+ p3Z2xi72ge7HgB4Ii4OzkaJ8hYtK0rC8E8UOrtkc//W15R5Zxr9mEs37h1DKJHaYcWpjTLtgqGayg
+ Kb7zY2n20XoY22CLKZBnD7cY5vz34GTC5wHXWl37ktegvEdHAh7+OXoeyEM/vTFeoysmiLzGVZ2C9
+ bt/VcVMGWCdlHiLjcvnUyc46zxhwgxijTI35Vai3/U9uBn0kclTNGL9HjE5KmwDeBKS27uJOQm2pX
+ RRM28tyy+PyLwQEVAw3cBbrXuT1aWOPo5+xc65RuQG8ivqqnKAelT9TnavABOc5iVzjUPVRgVEa49
+ TS4BDApw==;
+Received: from smtpbgsg3.qq.com ([54.179.177.220])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPjvH-00061v-Ce
- for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 09:05:51 +0000
-X-QQ-mid: bizesmtp18t1572426246t5pieswp
+ id 1iPl1h-0007YI-Sg
+ for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 10:16:31 +0000
+X-QQ-mid: bizesmtp23t1572430482t4cj9080
 Received: from localhost.localdomain (unknown [114.241.221.120])
- by esmtp6.qq.com (ESMTP) with SMTP id 0
- for <openwrt-devel@lists.openwrt.org>; Wed, 30 Oct 2019 17:04:05 +0800 (CST)
-X-QQ-SSF: 01400000000000S0II40B00A0000000
-X-QQ-FEAT: 6s0TUQ0M+4j5Co+qJ6Wa1cC9CTFw5CuoqaMH/dDTNplOvE1MDgYK7hbT9erRn
- cGHtOkVwunfzaABTzI4PKZJOeWeUOTE3hLZhaQyOEfKzqAF8/lby5v4tg9PK7uqfGFzF2gq
- 1NBw8fG60A7ZMdhoJ23p9kWXQUnZH0Olvk3XviaCqLteaFyLfgr1kIt0XV6MgAJPKmwf58H
- lg0aE97gSRGoB0Mye1YBqkMkz6nGrnBdac+7Z0jtmHIU0U+2ueVqwBMlWHMbid7AxzvmQLk
- 8BQjL5twiTFzUHcn9yChbOCcGIQ53QJ3x0ErXi7QPFlYyaT5Bg+GQgAXHmo2rqu0tHDf9pR
- rwGi0pP
+ by esmtp10.qq.com (ESMTP) with SMTP id 0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 30 Oct 2019 18:14:41 +0800 (CST)
+X-QQ-SSF: 01400000002000S0II40000A0000000
+X-QQ-FEAT: OeAA/fa3FjUgx39r6AgIw0pFwjhiHaxsKkR2EAiNeJ6UyZpyFOg5p73J1BULh
+ X4ZqLkVdbxcau1TVQUtB814NutVwidIOLg2DWdcUA8WwMY52lK9ormBsH4jiXNFNDI/cPEC
+ yNtG2dyca3GuwccZyG81S7ZiNmFYp5f2jBYNxRht4ggxsdREEDmRd/5HQy1OiOCPJCyODiO
+ e7ZUR6mjoaXUDKVmVtP8dPoCvbe9PnAph6jix9W1l59VsdwbwwwamN6OL7EVVMz7dLMPW4d
+ UIUyfTh/yLVOWmgSqBM3nvMYjHHd6b/7dY/dEpZaLcV9vALNGs59vtPFdsvb/AKqs3SHtaw
+ 6+L3bswDsWI46joRO0=
 X-QQ-GoodBg: 2
 From: daxiong <lxliu@ikuai8.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 30 Oct 2019 17:04:03 +0800
-Message-Id: <1572426243-87461-1-git-send-email-lxliu@ikuai8.com>
+Date: Wed, 30 Oct 2019 18:14:39 +0800
+Message-Id: <1572430479-8691-1-git-send-email-lxliu@ikuai8.com>
 X-Mailer: git-send-email 1.9.1
 X-QQ-SENDSIZE: 520
-Feedback-ID: bizesmtp:ikuai8.com:qybgforeign:qybgforeign6
+Feedback-ID: bizesmtp:ikuai8.com:qybgforeign:qybgforeign5
 X-QQ-Bgrelay: 1
 X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: 0.7 (/)
@@ -65,16 +65,16 @@ X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.243.244.52 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [54.243.244.52 listed in wl.mailspike.net]
  0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
  blocklist [URIs: ikuai8.com]
  0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
  blocklist [URIs: ikuai8.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.179.177.220 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [54.179.177.220 listed in list.dnswl.org]
 Subject: [OpenWrt-Devel] [PATCH-19.07] build: fix module strip invalid
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -100,11 +100,11 @@ I think to be compatibility will be better.
 
 Signed-off-by: daxiong <lxliu@ikuai8.com>
 ---
- .../linux/generic/hack-4.14/204-module_strip.patch | 220 +++------------------
- 1 file changed, 28 insertions(+), 192 deletions(-)
+ .../linux/generic/hack-4.14/204-module_strip.patch | 216 +++------------------
+ 1 file changed, 24 insertions(+), 192 deletions(-)
 
 diff --git a/target/linux/generic/hack-4.14/204-module_strip.patch b/target/linux/generic/hack-4.14/204-module_strip.patch
-index d847adf..20ac949 100644
+index d847adf..c22a507 100644
 --- a/target/linux/generic/hack-4.14/204-module_strip.patch
 +++ b/target/linux/generic/hack-4.14/204-module_strip.patch
 @@ -1,104 +1,8 @@
@@ -215,7 +215,7 @@ index d847adf..20ac949 100644
   
   	  If unsure, or if you need to build out-of-tree modules, say N.
   
-@@ -112,97 +16,29 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
+@@ -112,97 +16,25 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
   endif # MODULES
   
   config MODULES_TREE_LOOKUP
@@ -231,19 +231,15 @@ index d847adf..20ac949 100644
 -+#ifndef CONFIG_MODULE_STRIPPED
 -+	const char *modmagic = get_modinfo(info, "vermagic");
 +diff --git a/scripts/Kbuild.include b/scripts/Kbuild.include
-+index a33fa1a..2c1407b 100644
++index a33fa1a..34b34e0 100644
 +--- a/scripts/Kbuild.include
 ++++ b/scripts/Kbuild.include
-+@@ -260,11 +260,20 @@ make-cmd = $(call escsq,$(subst $(pound),$$(pound),$(subst $$,$$$$,$(cmd_$(1))))
++@@ -260,11 +260,16 @@ make-cmd = $(call escsq,$(subst $(pound),$$(pound),$(subst $$,$$$$,$(cmd_$(1))))
 + # PHONY targets skipped in both cases.
 + any-prereq = $(filter-out $(PHONY),$?) $(filter-out $(PHONY) $(wildcard $^),$^)
 + 
 ++ifeq ($(CONFIG_MODULE_STRIPPED),y)
-++ifneq ($(filter %.ko, $@),)
-++	module-strip = $(STRIP) -g -S -d --strip-unneeded $@
-++else
-++	module-strip =
-++endif
+++	module-strip = s=$@; if [ "$${s//*.}" = "ko" ];then $(STRIP) -g -S -d --strip-unneeded $@ ;fi
 ++endif
  +
 - 	if (flags & MODULE_INIT_IGNORE_VERMAGIC)

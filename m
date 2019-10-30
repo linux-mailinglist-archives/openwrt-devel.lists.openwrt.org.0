@@ -2,43 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C6CBEA40F
-	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 20:24:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41D53EA468
+	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 20:49:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4nFZptJbXZ51RIfaPWja7LQCqhS/C9+pytGzvh0Q1fE=; b=ZIqscwi2k8Z5FRGNKuG47coOq
-	GLGjRS+U5LA8h9rRU9wRm4F81nx+DLkMHXsqtwi8i4KmrzTzQfh6K2qKkAnAzuMXs68JbNDauddMp
-	N3KboFR3YpzKm1VpgECKrX0/qwoucRmKtMceA5PeSweKIUg7gnYITpyMlzXTxR5Q23YuNrdR1VmZF
-	KDXMAuePLgdW5M5Mx2zo3fubQUkclKxRN0Kqn5Y2pgnfnAJ9zCXfEACn2ItrGKH+Qk8uUpzZXCOzX
-	YxZS+6VuUBkfmZFuR+iiUQzV0QCX/C4janXenXutrXqzmLwviVUKVAMdJXaUtpCsU9fmNuPBw9GbM
-	dtKcuSrqg==;
+	 bh=hs4HJILEP6skHNtX4a3WlN2heswZrYrPLObzEueRaPQ=; b=lb8vOpB1/18Wrkezq9aTubU5j
+	sVF5IMFG4HsK5D1cOdhZ7BHNnSH/FxOQNPZHVn2T6fdH2S3RnUorMikgZB305JMJUwbice9KdE7tJ
+	7XffyVUrifAi3aJOZxJhWA0nPrqlrHJY3To9B3/TBRZHyZNPUVwawVzUL/G4KvIYlPjxYWKIKOXJw
+	ZQ8g4EgEj4eFpi45lGwPMd0jdY+M4U5ePJfXFYD9f2FLgPaBmdewzHdO2Jwc3f4mIfzykZkIM2btP
+	3abA4qDlzC4E3hzPwFLeUErFSwbPbzs4cgvY69yzAea46jC0tDwnz/Q0kHYHT5njQ0usS/lPj6KEf
+	cRkeHFwjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPtZi-0008Us-B4; Wed, 30 Oct 2019 19:24:10 +0000
-Received: from mout-u-107.mailbox.org ([2001:67c:2050:1::465:107])
+	id 1iPtyG-0008I7-Ub; Wed, 30 Oct 2019 19:49:32 +0000
+Received: from mout-u-107.mailbox.org ([91.198.250.252])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPtZZ-0008Tv-LL
- for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 19:24:03 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
+ id 1iPty3-0008Eu-KU
+ for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 19:49:21 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-u-107.mailbox.org (Postfix) with ESMTPS id 473JKW1QqCzKnpl;
- Wed, 30 Oct 2019 20:23:59 +0100 (CET)
+ by mout-u-107.mailbox.org (Postfix) with ESMTPS id 473Jtd3hQbzKnps;
+ Wed, 30 Oct 2019 20:49:13 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id gKg-EE_weE4j; Wed, 30 Oct 2019 20:23:55 +0100 (CET)
-To: Piotr Dymacz <pepe2k@gmail.com>, John Crispin <john@phrozen.org>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <772e4320-c84d-dbb0-6243-d2fb150d2401@phrozen.org>
- <b8079f7e-d50c-45a9-d2f9-984f10716cd0@hauke-m.de>
- <035968cd-2ce6-5142-f899-9ce1e5b295e1@gmail.com>
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id wOTQDBuhb0_W; Wed, 30 Oct 2019 20:49:10 +0100 (CET)
+To: David Bauer <mail@david-bauer.net>, openwrt-devel@lists.openwrt.org
+References: <20191029224203.203330-1-mail@david-bauer.net>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -101,13 +98,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <9c4986c4-00d2-400e-2337-6cb2a74492c5@hauke-m.de>
-Date: Wed, 30 Oct 2019 20:23:13 +0100
+Message-ID: <48f09086-f80f-4ba3-4f68-9b8768829dd7@hauke-m.de>
+Date: Wed, 30 Oct 2019 20:47:17 +0100
 MIME-Version: 1.0
-In-Reply-To: <035968cd-2ce6-5142-f899-9ce1e5b295e1@gmail.com>
+In-Reply-To: <20191029224203.203330-1-mail@david-bauer.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_122402_004180_F1BB8C9F 
-X-CRM114-Status: GOOD (  15.90  )
+X-CRM114-CacheID: sfid-20191030_124920_007362_DF3D85CC 
+X-CRM114-Status: GOOD (  17.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -115,7 +112,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] v5.4 as next kernel
+Subject: Re: [OpenWrt-Devel] [PATCH] hostapd: enable PMKSA and OK caching
+ for WPA3-Personal
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,106 +125,104 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
-Content-Type: multipart/mixed; boundary="===============0838450321418987710=="
+Content-Type: multipart/mixed; boundary="===============7428662490828448686=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0838450321418987710==
+--===============7428662490828448686==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="LiyTsmiM1HAa2VzhXUCcEfDZlQT2G6Fvp"
+ boundary="phGKTC5UPO2m1FLBYPz9MSqnhtcd0nbkX"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---LiyTsmiM1HAa2VzhXUCcEfDZlQT2G6Fvp
-Content-Type: multipart/mixed; boundary="6IjpBaP6TYLiORBToFFeaooU4TXhHCDYD";
+--phGKTC5UPO2m1FLBYPz9MSqnhtcd0nbkX
+Content-Type: multipart/mixed; boundary="5VGwfAbUEXnIp3JIbcOkZcDyvjZMYKRvD";
  protected-headers="v1"
 From: Hauke Mehrtens <hauke@hauke-m.de>
-To: Piotr Dymacz <pepe2k@gmail.com>, John Crispin <john@phrozen.org>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-ID: <9c4986c4-00d2-400e-2337-6cb2a74492c5@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] v5.4 as next kernel
-References: <772e4320-c84d-dbb0-6243-d2fb150d2401@phrozen.org>
- <b8079f7e-d50c-45a9-d2f9-984f10716cd0@hauke-m.de>
- <035968cd-2ce6-5142-f899-9ce1e5b295e1@gmail.com>
-In-Reply-To: <035968cd-2ce6-5142-f899-9ce1e5b295e1@gmail.com>
+To: David Bauer <mail@david-bauer.net>, openwrt-devel@lists.openwrt.org
+Message-ID: <48f09086-f80f-4ba3-4f68-9b8768829dd7@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH] hostapd: enable PMKSA and OK caching for
+ WPA3-Personal
+References: <20191029224203.203330-1-mail@david-bauer.net>
+In-Reply-To: <20191029224203.203330-1-mail@david-bauer.net>
 
---6IjpBaP6TYLiORBToFFeaooU4TXhHCDYD
+--5VGwfAbUEXnIp3JIbcOkZcDyvjZMYKRvD
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 10/30/19 6:25 PM, Piotr Dymacz wrote:
-> Hi Hauke, John,
+On 10/29/19 11:42 PM, David Bauer wrote:
+> This enables PMKSA and opportunistic key caching by default for
+> WPA2/WPA3-Personal, WPA3-Personal and OWE auth types.
+> Otherwise, Apple devices won't connect to the WPA3 network.
 >=20
-> On 30.10.2019 16:54, Hauke Mehrtens wrote:
->> On 10/29/19 6:37 AM, John Crispin wrote:
->>> Hi,
->>> should we use v5.4 as our next kernel ?
->>> =C2=A0=C2=A0=C2=A0=C2=A0John
->>
->> I also agree to have kernel 5.4 as the next kernel, it will be finally=
+> This should not degrade security, as there's no external authentication=
 
->> released in about 1 months and it is a long term kernel. If we are luc=
-ky
->> it will be supported for 6 years for Android.
->>
->> What do we want to use in the next 20.X release after 19.07?
->> If we want to go with kernel 5.4 with the release after 19.07 we can n=
-ot
->> make this release before April, I would assume. We would have generic
->> support in OpenWrt master in about 1 month and then we will port the
->> targets, probably we will have the most important targets ported about=
-
->> 2 months later (Mid January 2020) and can stabilize and port the rest =
-of
->> afterwards.
+> provider.
 >=20
-> +1 for 5.4 as next one but not as next (20.x) release base. 4.19 EOL is=
+> Tested with OCEDO Koala and iPhone 7 (iOS 13.1).
+>=20
+> Signed-off-by: David Bauer <mail@david-bauer.net>
 
-> Dec 2020, with 5.4 in master around Jan 2020 we should be able to ship
-> release with 5.4 before 4.19 gets EOL. Otherwise, I'm worried jumping t=
-o
-> 5.4 now might delay next release to the end of 2020. My 2c.
+Do you know which, PMKSA or OKC, is needed for the iPhone?
+
+I do not understand why the iPhone only works when one of these options
+is set, you should probably ask on the hostapd mailing list for help,
+this could be also a bug in hostapd.
+
+> ---
+>  package/network/services/hostapd/files/hostapd.sh | 9 ++++++++-
+>  1 file changed, 8 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/package/network/services/hostapd/files/hostapd.sh b/packag=
+e/network/services/hostapd/files/hostapd.sh
+> index 8da8539e8a..fdbce815df 100644
+> --- a/package/network/services/hostapd/files/hostapd.sh
+> +++ b/package/network/services/hostapd/files/hostapd.sh
+> @@ -540,7 +540,14 @@ hostapd_set_bss_options() {
+>  			append bss_conf "rsn_preauth=3D1" "$N"
+>  			append bss_conf "rsn_preauth_interfaces=3D$network_bridge" "$N"
+>  		else
+> -			set_default auth_cache 0
+> +			case "$auth_type" in
+> +			sae|psk-sae|owe)
+> +				set_default auth_cache 1
+> +			;;
+> +			*)
+> +				set_default auth_cache 0
+> +			;;
+> +			esac
+>  		fi
+> =20
+>  		append bss_conf "okc=3D$auth_cache" "$N"
 >=20
 
-Hi,
-
-I am pretty sure kernel 4.19 and 5.4 will get 6 years support like the
-previous versions.
-For kernel 4.9 and 4.14 kernel initially listed only 1 or 2 years
-support, but this was extended. Currently Google pays for this support,
-so that Android phones get updates and they have no plan to do major
-kernel updates.
-
-Hauke
 
 
---6IjpBaP6TYLiORBToFFeaooU4TXhHCDYD--
+--5VGwfAbUEXnIp3JIbcOkZcDyvjZMYKRvD--
 
---LiyTsmiM1HAa2VzhXUCcEfDZlQT2G6Fvp
+--phGKTC5UPO2m1FLBYPz9MSqnhtcd0nbkX
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl254yEACgkQ8bdnhZyy
-68cLUwf/TUlXhBvZYEk9sUQzffqs11tPCkYRm/vfTwW0k73RvChgirgveFg9VS8I
-nfCXsjuD7MlDFg5iEenaekDTKiTvpKTkK3ZPa280A2JNNw+T57+DziVbzlUy6i/F
-7+GFw9pVPiLNQLtz8oSms2aWVB50UAFWabhD5V/5pWhDwn+mdjjOpXGfDjAbJB8n
-ux8tTxP2m7l31LO84djotuyFxVasLfVOkFXrfqEeJrgiaPMUNE9O4vV5NOZkt1Cp
-NHVijoatH0p/7bhX+16sv1MXjBuN7Lk1Miwm8b3VeEao5jZbbpfcq4Ry9Um3cung
-yclUUGL4UDDrXHf6ik/PzF2EeKSpyA==
-=/KX3
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl256MUACgkQ8bdnhZyy
+68f8CggAlsXOX6j2/5ylTiOqY984Jy05F8VdGbL190iIWLMvX+5Xs0d0J3LWCEM4
+wbHnzagV8KkmO+joUiFPy2ZKrqnnybapzaztcyLTiq1b3eiR/aBaEQALWW1MBZ7N
+Z3Flu4rWJxcW7D1eE764vLfNVvAKmxT9VCsrBVOnhf/wY8lOBOLycTP6Dz2iz0gT
+glw8vc3LIlGSPpsIAvhjyuheOHrMpO1OdSEFIvLhUFnCoj2u3nu3+i+olEbyODGw
+RVfOMGz9xz+yXhzBtCzVkuYTmpJ4gkUfHspAtlK7TuTHje5iQgPprMvJ4OhhpZGh
+hnQ8WL7Cw6XvkNnaCLyr/gD1t9pqdA==
+=HujK
 -----END PGP SIGNATURE-----
 
---LiyTsmiM1HAa2VzhXUCcEfDZlQT2G6Fvp--
+--phGKTC5UPO2m1FLBYPz9MSqnhtcd0nbkX--
 
 
---===============0838450321418987710==
+--===============7428662490828448686==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -237,5 +233,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0838450321418987710==--
+--===============7428662490828448686==--
 

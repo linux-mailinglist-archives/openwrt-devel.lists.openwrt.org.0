@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BBDBEA0B1
-	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 17:03:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D434AEA17F
+	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 17:13:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -18,11 +18,27 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	7iHz1N98cXDZLFiaFyPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPqRf-0000eI-Oq; Wed, 30 Oct 2019 16:03:39 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1iPqar-0004s1-Uf; Wed, 30 Oct 2019 16:13:10 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPqQu-0006GN-Hz
- for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 16:03:32 +0000
+ id 1iPqag-0004rg-QK
+ for openwrt-devel@bombadil.infradead.org; Wed, 30 Oct 2019 16:12:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Type:MIME-Version:Message-ID:
+ Subject:To:From:Date:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Pdh55JxvYZiNV3a645hwvLnY5d6eCSyyYS4du+2/W60=; b=Zlwwjf7ySslEZGfCuc3TBuNHXf
+ k+AHscLKvrrDzXQO2L9Vvc/cLaBn6ab34eWIXn/hwY1es4YrKWurMg99LEt17tac3h94SrP8VWO3I
+ rI1dOMBi4/d9P183dV/dZCjpfX8W6CWJXaKCBPB7gsJ3nx7EKoXTMANXr0hb2U7YerzAnF0rEXOcn
+ LztWoW2rgREIObo9Ea2/vBC/SBgO6CORfY/cqJUe1c1oEQSn3zUfuC/PgL/9tyUPLdHr7cdmmjZyt
+ c9jvh9aS8FXnK2CtWYRd5G8VxSNmPYjF7Bhx3mPj5C+bJByOekSmWVAdAAyX0Mx9e3fzw/xyv8JzA
+ NpHRLZGw==;
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iPqb6-0003rC-7u
+ for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 16:13:27 +0000
 Received: from local
  by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
  (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
@@ -36,15 +52,15 @@ MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_090329_895501_469F92AF 
-X-CRM114-Status: GOOD (  22.36  )
+X-CRM114-CacheID: sfid-20191030_161324_574825_56B3A817 
+X-CRM114-Status: GOOD (  29.02  )
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 Subject: [OpenWrt-Devel] [PATCH 3/5] hostapd: add ubus reload
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29

@@ -2,59 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8272BEA2BA
-	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 18:46:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17D3AEA390
+	for <lists+openwrt-devel@lfdr.de>; Wed, 30 Oct 2019 19:44:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PGL0FIPa2jTs0cszH/xh2s6cCdMlPHnh6X+GIkbC8PA=; b=IK2pd1fy3RlNYaDQz9tXu+so6
-	C3Bf22EgH/fS2ivQOBEebJPcP74JnBovqpU7sw8X2jzLy5HnEZQUl62B4WyiOL3HFpWmyY7eMyV1M
-	msRIAmxJuUMReAXjQVlPvo0Mw6QsXl2JGwnbG5Yp0bIOJDOcCy/HqXW2KLWCWcds/HPF8QViFaLA9
-	TVpMwZ9hK5itjW+zIzJoqVxNnroc7IToq0JvxZJ+MU/4SZwQX4v8ZbzzklO8/8f16Y1rnQVRJLZdb
-	nUK99tcB1WF0rb3iMAlXkcFvKsidjNbqnYEb2p7KGZwaUZ3yN0fsmvc385KcooBIahB+Iq/SItnLs
-	323yMQgJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wUboxIvnrEmk3H/bJfiqzWMoRIRSt/R4Gpk1HOpLgyQ=; b=DdtN3GWuzh677C
+	13PuwqTAjuTZQmWACZXYMn4w0rork3RgldGXry2HPpj3a+iWZWKWgSk+Aoi0FBQP7J4cs7rGwhPlV
+	GKxdHTvyDPj/Idf2AmZ1cJ9ntQOihZfCh6epKJNUFZPGyGc7hOigfl/aKAQ42NemzH7Kg3aI3ar91
+	s6ccarjBH6j2ZEK914QFvBT71wCCFdXDVpo/AhH/8au4xpW3DpTzm4wnWCBGECOLeuihrWOZwipt0
+	JmSdP+nyawHi6+1e9boxTC8nQx58hi2l9L4FZnk7ACbDOi6vQpXbQGwtJRrfPWC0c3n+NwyOZ9rcv
+	6IpZ3BweS5iNW2okZ7hQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPs3Z-0000EX-Bk; Wed, 30 Oct 2019 17:46:53 +0000
-Received: from mx.allycomm.com ([138.68.30.55])
+	id 1iPsxN-0003NS-0I; Wed, 30 Oct 2019 18:44:33 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPs3R-0000ED-Ek
- for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 17:46:47 +0000
-Received: from JKLETSKY-MBP15.local (portal.bevandjeff.com [206.189.65.121])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.allycomm.com (Postfix) with ESMTPSA id D9AAA3A464;
- Wed, 30 Oct 2019 10:46:13 -0700 (PDT)
-To: Hauke Mehrtens <hauke@hauke-m.de>,
- Adrian Schmutzler <mail@adrianschmutzler.de>,
- 'John Crispin' <john@phrozen.org>,
- 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
-References: <772e4320-c84d-dbb0-6243-d2fb150d2401@phrozen.org>
- <b8079f7e-d50c-45a9-d2f9-984f10716cd0@hauke-m.de>
- <012301d58f3f$2f360a40$8da21ec0$@adrianschmutzler.de>
- <32fa0d06-0f64-0f69-fb9b-13d1185798d8@hauke-m.de>
-From: Jeff Kletsky <jmk@wagsky.com>
-Message-ID: <4f7f5d5d-c80d-545b-5fb9-50880cfbca5c@wagsky.com>
-Date: Wed, 30 Oct 2019 10:46:13 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.9.0
+ id 1iPsxF-0003Mz-Rn
+ for openwrt-devel@lists.openwrt.org; Wed, 30 Oct 2019 18:44:27 +0000
+Received: from buildfff.adridolf.com ([188.192.135.195]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1MMH2M-1ij4GQ1tUk-00JJ9H for <openwrt-devel@lists.openwrt.org>; Wed, 30
+ Oct 2019 19:44:20 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 30 Oct 2019 19:44:17 +0100
+Message-Id: <20191030184417.21897-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <32fa0d06-0f64-0f69-fb9b-13d1185798d8@hauke-m.de>
-Content-Language: en-US
+X-Provags-ID: V03:K1:79uDp470HxlXIZvZEX0ZbQXhAhqVkLFBJhRp5/MtX+6EHDw92Ug
+ ru0q8fWfFOnRPiep7h/81PwIvTsTeLRXfjkkGIsTV3Kg731FhjQogoYKQNSwhBiN+IBVR2x
+ LGpFKpW94cEcovZOUOhZc6mZAsqfiOslXroSQdN7FVu3zcji1Q7liT7OWhmlTwnsY4kS2LS
+ LCqbfTsE8D4+7S1GkcUqw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:lJnEpGrROvU=:16l+qatEYGLMvkMoB++4s0
+ YcvOQASWFVFvAzjd0+7Rgh0j3n6GzYayHPvWDXSw63Ip1AgsPxjf17hctL3wNyvBPtlCw97zl
+ Po/QuIzXQYm5F0juxRjh4ogf/cAcpBc0QdX/FRYUyRC9pJfcKwRN0pzSN/kngWaLQGy8U6VYU
+ MawO72wUQnhog+jnEH/P/yvKYQmkhdk7P5dOH/04uic8Z9r40XYhkuWySY2AySM7szq6gubJb
+ rvXQ7XmDyG7r7VoPTrYmflW4uDPq828zwl4mnUxbg0fmdFfMA1tt3cicb+PRtYuw/i5BiGx4o
+ pl63pwTGRd+IJ+11sCSqwsVf0Q+CFNdqiC/ALwtIYyMWMEut2k/EMk+QzByMBudgt3ZCDzOF9
+ sCZQhfUItkPE2w2Exuv+5PLxIqBe1oFUJT0RzNATGq+QrLS1qSrp37u9CjRvXVGn5QbPJNHAb
+ l4pTSE6wLXj9PwMdeDD6weFL9uiWkMYfvd/QqCWejS4OUNdyHZzNLikpV3qrA2rQzZjoQrkFp
+ 7MEUf0JMjwyo5qs66raLwPYzmk4BxgqsAiGfckP3umfSeXO+EDVcuPEqyoeM+XHXaC4ZYEXhE
+ FXtq2GMXrLUNEVvuXYFX9wmy5WsmL59M2W0+vp8yv3bO5DEH21PB38qt+8kx6Slk9LKGpv5Cx
+ yPmnf5/HL9D26H17af7I6q6XiFoPQfCny7D93HT0zwHZOtsiXd06tVyCLVmt0V4eS/I3eMiKu
+ vZCnnC/29mpv1doStk/qJIUqHJb1ce4at87WjlVnCJnam7MWSmQMe8WQFqls5Vyik89g1+Bnl
+ /HLDs6rrKWuC5d04Z9wwmE4cqLtK9AtIjByMBH6dQ3gaE1azzOfF0YLKrpl9+jpQWmqIE8JPX
+ /97ZnigZIIK35T09mdEtSPXMcq/62i9COAslstfkI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_104645_498609_23D6F6E6 
-X-CRM114-Status: GOOD (  25.20  )
+X-CRM114-CacheID: sfid-20191030_114426_190089_AAE8D20A 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] v5.4 as next kernel
+Subject: [OpenWrt-Devel] [PATCH] ipq40xx: convert
+ IMAGE_SIZE/KERNEL_SIZE/BLOCKSIZE to kiB
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,107 +78,73 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDEwLzMwLzE5IDk6NTAgQU0sIEhhdWtlIE1laHJ0ZW5zIHdyb3RlOgo+IE9uIDEwLzMwLzE5
-IDU6MjkgUE0sIEFkcmlhbiBTY2htdXR6bGVyIHdyb3RlOgo+PiBIaSwKPj4KPj4+IC0tLS0tT3Jp
-Z2luYWwgTWVzc2FnZS0tLS0tCj4+PiBGcm9tOiBvcGVud3J0LWRldmVsIFttYWlsdG86b3Blbndy
-dC1kZXZlbC1ib3VuY2VzQGxpc3RzLm9wZW53cnQub3JnXSBPbiBCZWhhbGYgT2YgSGF1a2UgTWVo
-cnRlbnMKPj4+IFNlbnQ6IE1pdHR3b2NoLCAzMC4gT2t0b2JlciAyMDE5IDE2OjU0Cj4+PiBUbzog
-Sm9obiBDcmlzcGluIDxqb2huQHBocm96ZW4ub3JnPjsgT3BlbldydCBEZXZlbG9wbWVudCBMaXN0
-IDxvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnPgo+Pj4gU3ViamVjdDogUmU6IFtPcGVu
-V3J0LURldmVsXSB2NS40IGFzIG5leHQga2VybmVsCj4+Pgo+Pj4gT24gMTAvMjkvMTkgNjozNyBB
-TSwgSm9obiBDcmlzcGluIHdyb3RlOgo+Pj4+IEhpLAo+Pj4+IHNob3VsZCB3ZSB1c2UgdjUuNCBh
-cyBvdXIgbmV4dCBrZXJuZWwgPwo+Pj4+ICDCoMKgwqDCoEpvaG4KPj4+IEkgYWxzbyBhZ3JlZSB0
-byBoYXZlIGtlcm5lbCA1LjQgYXMgdGhlIG5leHQga2VybmVsLCBpdCB3aWxsIGJlIGZpbmFsbHkK
-Pj4+IHJlbGVhc2VkIGluIGFib3V0IDEgbW9udGhzIGFuZCBpdCBpcyBhIGxvbmcgdGVybSBrZXJu
-ZWwuIElmIHdlIGFyZSBsdWNreQo+Pj4gaXQgd2lsbCBiZSBzdXBwb3J0ZWQgZm9yIDYgeWVhcnMg
-Zm9yIEFuZHJvaWQuCj4+Pgo+Pj4gV2hhdCBkbyB3ZSB3YW50IHRvIHVzZSBpbiB0aGUgbmV4dCAy
-MC5YIHJlbGVhc2UgYWZ0ZXIgMTkuMDc/Cj4+PiBJZiB3ZSB3YW50IHRvIGdvIHdpdGgga2VybmVs
-IDUuNCB3aXRoIHRoZSByZWxlYXNlIGFmdGVyIDE5LjA3IHdlIGNhbiBub3QKPj4+IG1ha2UgdGhp
-cyByZWxlYXNlIGJlZm9yZSBBcHJpbCwgSSB3b3VsZCBhc3N1bWUuIFdlIHdvdWxkIGhhdmUgZ2Vu
-ZXJpYwo+Pj4gc3VwcG9ydCBpbiBPcGVuV3J0IG1hc3RlciBpbiBhYm91dCAxIG1vbnRoIGFuZCB0
-aGVuIHdlIHdpbGwgcG9ydCB0aGUKPj4+IHRhcmdldHMsIHByb2JhYmx5IHdlIHdpbGwgaGF2ZSB0
-aGUgbW9zdCBpbXBvcnRhbnQgdGFyZ2V0cyBwb3J0ZWQgYWJvdXQKPj4+IDIgbW9udGhzIGxhdGVy
-IChNaWQgSmFudWFyeSAyMDIwKSBhbmQgY2FuIHN0YWJpbGl6ZSBhbmQgcG9ydCB0aGUgcmVzdCBv
-Zgo+Pj4gYWZ0ZXJ3YXJkcy4KPj4+Cj4+PiBoYXVrZQo+PiAxLiBXZSBjdXJyZW50bHkgaGF2ZSB3
-b3JrLWluLXByb2dyZXNzIDQuMTkgc3VwcG9ydCBQUnMgZm9yIHJhbWlwcywgaXBxODA2eCBhbmQg
-YmNtNjN4eCwgc3RpbGwgd2l0aCBjb25zaWRlcmFibGUgd29yayB0byBkbyBhdCBsZWFzdCBmb3Ig
-dGhlIGZpcnN0IHR3byAoSUlSQykuIFdpdGhvdXQgaW4tZGVwdGgga25vd2xlZGdlLCBJIHdvbmRl
-ciB3aGV0aGVyIGl0IHdvdWxkbid0IGJlIG1vcmUgZWZmaWNpZW50IHRvIHNraXAgNC4xOSBmb3Ig
-dGhvc2UgYW5kIGdvIGRpcmVjdGx5IHRvIDUuNCAobGVzcyBiYWNrcG9ydGluZyBldGMuLCBidXQg
-YWxzbyBtb3JlIGFkanVzdG1lbnRzIG9mIGxvY2FsIHN0dWZmKS4KPj4gMi4gT2J2aW91c2x5LCBz
-dGFydGluZyB3aXRoIDUuNCBub3cgd2lsbCBjYXVzZSBhIG1peGVkLWtlcm5lbC1yZWxlYXNlLW9y
-LW5vdCBkZWJhdGUgaW4gZWFybHkgMjAyMC4gU28sIHdoZW4gbW92aW5nIHRvIDUuNCB3ZSBzaG91
-bGQgYWxyZWFkeSBhc2sgb3Vyc2VsdmVzIHRoaXMgcXVlc3Rpb24gZWFybHkgaW4gdGhlIHByb2Nl
-c3MuIChXaGljaCBvYnZpb3VzbHkgYWxzbyBkZXBlbmRzIG9uIHRoZSBkZWNpc2lvbiBvbiBzdWJq
-ZWN0IDEuKSBJIHBlcnNvbmFsbHkgZmF2b3IgdG8gbm90IGhhdmUgYSBtaXhlZCBrZXJuZWwgcmVs
-ZWFzZSwgYnV0IGFzIEknbSBjb21tZW50aW5nIGZyb20gdGhlIHNpZGUgbXkgdm9pY2Ugc2hvdWxk
-bid0IGNvdW50IG11Y2ggaW4gdGhhdCBwcm9jZXNzLgo+PiAzLiBTaW5jZSBzdGFibGUgYnJhbmNo
-ZXMgYXJlIHR5cGljYWxseSBtYWRlIDMtNiBtb250aHMgYWZ0ZXIgd2hlbiB0aGV5IGhhdmUgYmVl
-biBzZXQsIEkgd291bGRuJ3QgY2FyZSB0b28gbXVjaCBhYm91dCBhIDMgbW9udGggZGVsYXkgaW4g
-ZXN0aW1hdGVkIHJlbGVhc2UgZGF0ZS4gOi0pCj4+Cj4+IEp1c3Qgd2FudGVkIHRvIGFkZCB0aG9z
-ZSB0aG91Z2h0cyB0byB0aGUgZGlzY3Vzc2lvbiwgc29ycnkgZm9yIG5vdCBwcm92aWRpbmcgYW5z
-d2VycyA7LSkKPj4KPj4gQmVzdAo+Pgo+PiBBZHJpYW4KPj4KPiBTdXBwb3J0aW5nIHR3byBkaWZm
-ZXJlbnQga2VybmVsIHZlcnNpb25zIGluIG9uZSByZWxlYXNlIHdhcyBub3QgYSBnb29kCj4gaWRl
-YSwgd2UgZGlkIGl0IGJlY2F1c2UgdGhlIHJlbGVhc2Ugd2FzIGRlbGF5ZWQgYW5kIHdlIGRlY2lk
-ZWQgdG8gdXNlCj4ga2VybmVsIDQuMTQgcGFydGlhbGx5IGZvciB0aGlzIHJlbGVhc2UgcHJldHR5
-IGxhdGUgaW4gdGhlIHByb2Nlc3MuCj4KPiBXZSBzaG91bGQgZGVjaWRlIGlmIHdlIHdhbnQgdG8g
-dXNlIGtlcm5lbCA1LjQgaW4gdGhlIG5leHQgcmVsZWFzZSBpbiB0aGUKPiBuZXh0IDIgdG8gNCB3
-ZWVrcywgc28gd2UgZG8gbm90IGxvc2Ugc28gbXVjaCB0aW1lLgo+Cj4gSSB3b3VsZCBzdWdnZXN0
-IHRoZSBmb2xsb3dpbmcuCj4gMS4gU2lmdCB0aGUgMjAuWCByZWxlYXNlIGFmdGVyIDE5LjA3IGZy
-b20gSmFudWFyeSB0byBBcHJpbCAyMDIwCj4gMS4xLiBXZSB3aWxsIG5vdCBnZXQga2VybmVsIDUu
-NCBzdGFibGUgdGlsbCBKYW51YXJ5Cj4gMi4gSW50ZWdyYXRlIHN1cHBvcnQgZm9yIGtlcm5lbCA1
-LjQgc29vbgo+IDIuMS4gVGhlIGdlbmVyaWMgc3VwcG9ydCB3aXRoIHRoZSBmaXJzdCB0YXJnZXRz
-IHNob3VsZCBiZSB0aGVyZSBpbiBhYm91dAo+IDEuNSBtb250aHMsIHdoaWNoIHNob3VsZCBiZSBk
-b2FibGUKPiAzLiBNaWdyYXRlIGFsbCB0aGUgdGFyZ2V0cyB0byBrZXJuZWwgNS40Cj4gMy4xLiBQ
-cm9iYWJseSBhbGwgdGhlIHRhcmdldHMgb24ga2VybmVsIDQuMTkgd2lsbCBiZSBtaWdyYXRlZCBx
-dWlja2x5LAo+IHRoZSBub3Qgc28gd2VsbCBzdXBwb3J0ZWQgdGFyZ2V0cyBjb3VsZCBjYXVzZSBw
-cm9ibGVtcywgYnV0IHdlIGhhdmUKPiBzaW1pbGFyIHByb2JsZW1zIHdpdGgga2VybmVsIDQuMTku
-Cj4gNC4gV2hlbiBubyB0YXJnZXQgaXMgdXNpbmcga2VybmVsIDQuMTkgYW55IG1vcmUsIGRyb3Ag
-c3VwcG9ydCBmb3IgaXQKPiA0LjEuIGRyb3BwaW5nIHN1cHBvcnQgZm9yIGtlcm5lbCA0LjE5IGNv
-dWxkIGNhdXNlIHByb2JsZW1zIGZvciBzb21lCj4gZG93bnN0cmVhbSB1c2VycyB3aGljaCB3b3Vs
-ZCBsaWtlIHRvIHVzZSBrZXJuZWwgNC4xOSAoZS5nLiBJbnRlbCBpbgo+IHBycGwpLCBJIGRvIG5v
-dCBrbm93IGlmIHdlIGNhcmUuCj4KPiBIYXVrZQo+CgpBdCBsZWFzdCBpbiBteSBvcGluaW9uLCBh
-bmQgZWNob2VkIGJ5IGNvbW1lbnRzIG9uIHRoZSBmb3J1bSwgT3BlbldydAppcyBzdWZmZXJpbmcg
-ZnJvbSBhIGNyZWRpYmlsaXR5IGdhcCBkdWUgdG8gdGhlIGRlbGF5cyBhc3NvY2lhdGVkIHdpdGgK
-dGhlIHJlbGVhc2Ugb2YgMTkuMDEsIGVyciwgMTkuMDcsIGFtcGxpZmllZCBieSB0aGUgc3RhdGVt
-ZW50cyBtYWRlCmFmdGVyIHRoZSBIYW1idXJnIG1lZXRpbmdbMV0uCgpUaGVyZSBhcmUgYWxzbyBz
-aWduaWZpY2FudCBnYXBzIGluIHRoZSBhdGg3OSB0YXJnZXQgd2hlbiBpdCBjb21lcyB0bwpOQU5E
-IHN1cHBvcnQuIEFsdGhvdWdoIEFSOTM0WCBzdXBwb3J0IHdhcyBqdXN0IGFkZGVkIGluIDc1OGE0
-ZDE3NjYgYW5kCmRldmljZXMgdGhhdCB1c2UgdGhhdCAiZmxhdm9yIiBvZiBOQU5EIGFyZSBhcHBl
-YXJpbmcsIHRoZXJlIHN0aWxsIGlzCm5vIFNQSS1OQU5EIHN1cHBvcnQgKGh0dHBzOi8vZ2l0aHVi
-LmNvbS9vcGVud3J0L29wZW53cnQvcHVsbC8yMTg0IGhhcwpiZWVuIGF2YWlsYWJsZSBmb3IgcmV2
-aWV3IGZvciBuZWFybHkgZm91ciBtb250aHMgbm93KSBhbmQgSSBhbSBub3QKYXdhcmUgb2Ygd29y
-ayBvbiB0aGUgTWlrcm90aWsgZGV2aWNlcy4KCkV2ZW4gdGhvdWdoIHRoZSBhcjcxeHggdGFyZ2V0
-IGhhcyBiZWVuIGRlcHJlY2F0ZWQgYW5kIGFubm91bmNlZCB0byBiZQpkcm9wcGVkIGluIHRoZSBu
-ZXh0IHJlbGVhc2UsIHRoaXMgbGFjayBvZiBzdXBwb3J0IGhhcyBkb3duc3RyZWFtCnByb2plY3Rz
-IHN0aWxsIGRldmVsb3BpbmcgYWdhaW5zdCBpdCBhcyB0aGVyZSBpcyBubyAicmVsZWFzZSIgdmVy
-c2lvbgpvbiB3aGljaCB0byBiYXNlIHRoZWlyIGRldmljZXMuIFNlZSwgZm9yIGV4YW1wbGUKCmh0
-dHBzOi8vZ2l0aHViLmNvbS9nbC1pbmV0L29wZW53cnQvY29tbWl0L2NmYzg1ZmM4MGU5MTRhMjgw
-OGY3YjE5ZDcxYzQ3ZGIyNGM0NzFjZDcKCkF0IGxlYXN0IGlmIHRoZSB3b3JrIG9uIGF0aDc5IGFy
-b3VuZCBOQU5EIGlzIGFkb3B0ZWQgYW5kIGFkZGl0aW9uYWwKd29yayAoTWlrcm90aWspIGNhbiBw
-cm9jZWVkIG9uIHRoZSAiZmFtaWxpYXIiIExpbnV4IDQuMTksIGl0IHNlZW1zCnRoYXQgaXQgd291
-bGQgaGF2ZSBhIGdyZWF0ZXIgbGlrZWxpaG9vZCBvZiBzdWNjZXNzIHRoYXQgaWYgdGhlCnRyYW5z
-aXRpb24gdG8gTGludXggNS40IHdlcmUgdGhyb3duIGludG8gdGhlIG1peC4KClRvIGFkZHJlc3Mg
-dGhlc2UgaXNzdWVzLCBJJ2Qgc3VnZ2VzdDoKCiogUmVsZWFzZSAxOS4wNyBhcyBzb29uIGFzIHBv
-c3NpYmxlCgoqIFBsYW4gZm9yIGFuZCByZWxlYXNlIDIwLjAxCiDCoCAqIE9uIHNjaGVkdWxlCiDC
-oCAqIFdpdGggTGludXggNC4xOQogwqAgKiBXaXRoIE5BTkQgc3VwcG9ydCBhcyBjb21wbGV0ZSBh
-cyBwb3NzaWJsZSBmb3IgdGhlIGF0aDc5IHRhcmdldAogwqDCoMKgICogSW5jbHVkZSBkZXZpY2Vz
-IHVzaW5nIHRoZSBBUjkzNFggZHJpdmVyCiDCoMKgwqAgKiBBZG9wdCBodHRwczovL2dpdGh1Yi5j
-b20vb3BlbndydC9vcGVud3J0L3B1bGwvMjE4NAogwqDCoMKgwqDCoCAqIEVuY291cmFnZSBwb3J0
-aW5nIG9mIHRoZSByZW1haW5pbmcgYXI3MXh4L05BTkQgZGV2aWNlcyB0byBhdGg3OQogwqDCoMKg
-ICogRW5jb3VyYWdlIGFuZCBhZG9wdCBkZXZlbG9wbWVudCBvZiBNaWtyb3RpayBzdXBwb3J0CiDC
-oCAqIERyb3BwaW5nIGFyNzF4eCwgYXMgYWdyZWVkIGF0IEhhbWJ1cmcKCiogR2l2ZSB1cCBvbiAi
-UG9pbnQgcmVsZWFzZSBjeWNsZTogRXZlcnkgMiBtb250aHMgYXV0b21hdGljIGlmIHRoZXJlCiDC
-oCBhcmUgYW55IG5ldyBjb21taXRzIHdpdGhpbiByZWxlYXNlIGJyYW5jaCIgdW50aWwgYWZ0ZXIg
-MjAuMDYKIMKgIChyZWFsaXR5IGhlcmUgb3V0d2VpZ2hzIHByb2R1Y3QtbWFuYWdlciBpbnN0aW5j
-dHMpCgoqIFBsYW4gZm9yIGFuZCByZWxlYXNlIDIwLjA3CiDCoCAqIE9uIHNjaGVkdWxlCiDCoCAq
-IFdpdGggTGludXggNS40CgoKSmVmZiBLbGV0c2t5CgoKWzFdIGh0dHBzOi8vb3BlbndydC5vcmcv
-bWVldGluZ3MvaGFtYnVyZzIwMTkvc3RhcnQjZGVjaXNpb25zCgoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
-Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+This cosmetical patch converts IMAGE_SIZE, KERNEL_SIZE and
+BLOCKSIZE definitions to kilobytes, as this is consistent and
+easier to read/type.
+
+An exception was made for asus_rt-ac58u, where the IMAGE_SIZE of
+20439364 cannot be divided by 1024 (and also does not seem to
+match anything in DTS).
+
+Build-tested for all devices.
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/ipq40xx/image/Makefile | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/target/linux/ipq40xx/image/Makefile b/target/linux/ipq40xx/image/Makefile
+index ed46bca649..8dd960bc1c 100644
+--- a/target/linux/ipq40xx/image/Makefile
++++ b/target/linux/ipq40xx/image/Makefile
+@@ -124,7 +124,7 @@ define Device/avm_fritzbox-4040
+ 	DEVICE_MODEL := FRITZ!Box 4040
+ 	DEVICE_DTS := qcom-ipq4018-fritz4040
+ 	BOARD_NAME := fritz4040
+-	IMAGE_SIZE := 29753344
++	IMAGE_SIZE := 29056k
+ 	UBOOT_PATH := $(STAGING_DIR_IMAGE)/uboot-fritz4040.bin
+ 	UBOOT_PARTITION_SIZE := 524288
+ 	IMAGES = eva.bin sysupgrade.bin
+@@ -209,7 +209,7 @@ define Device/engenius_ens620ext
+ 	FW_VER := 3.1.2
+ 	FW_VER_NEW := 3.5.6
+ 	CW_VER := 1.8.99
+-	IMAGE_SIZE := 21823488
++	IMAGE_SIZE := 21312k
+ 	KERNEL_SIZE := 5120k
+ 	FILESYSTEMS := squashfs
+ 	IMAGES := sysupgrade.bin factory_30.bin factory_35.bin
+@@ -260,8 +260,8 @@ define Device/linksys_ea6350v3
+ 	DEVICE_DTS := qcom-ipq4018-ea6350v3
+ 	BLOCKSIZE := 128k
+ 	PAGESIZE := 2048
+-	KERNEL_SIZE := 3145728
+-	IMAGE_SIZE := 38797312
++	KERNEL_SIZE := 3072k
++	IMAGE_SIZE := 37888k
+ 	UBINIZE_OPTS := -E 5
+ 	IMAGES := factory.bin sysupgrade.bin
+ 	IMAGE/factory.bin := append-kernel | append-uImage-fakehdr filesystem | pad-to $$$${KERNEL_SIZE} | append-ubi | linksys-image type=EA6350v3
+@@ -290,7 +290,7 @@ define Device/meraki_mr33
+ 	DEVICE_VENDOR := Cisco Meraki
+ 	DEVICE_MODEL := MR33
+ 	DEVICE_DTS := qcom-ipq4029-mr33
+-	BLOCKSIZE := 131072
++	BLOCKSIZE := 128k
+ 	PAGESIZE := 2048
+ 	IMAGES = sysupgrade.bin
+ 	DEVICE_PACKAGES := -swconfig ath10k-firmware-qca9887-ct
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

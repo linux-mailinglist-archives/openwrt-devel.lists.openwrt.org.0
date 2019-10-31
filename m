@@ -2,97 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDE8DEAD43
-	for <lists+openwrt-devel@lfdr.de>; Thu, 31 Oct 2019 11:17:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93FECEAD49
+	for <lists+openwrt-devel@lfdr.de>; Thu, 31 Oct 2019 11:20:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1/8tiWRqzHRo64ULxGXntBRnNMb/VCdsYaIJrf0dmho=; b=WY50lfK7IW7vgU
-	72h6Nyr5neHZa4nnWEsIkBdtCpIgsdsJyrTD7UW6oENBnkZU9FipHYScMGQRCou0hQoHC6tapyS/R
-	KdvRPc/9RerJAVU2N439SoL4vzdMB8WnJUPje8mU466pyM029CsXVu5k1xZfeAoXutDdoDXz0y0kO
-	QjcOF/r9BUcvBN0YRuq6yi31rUNuthWKt6oXUFoNCw/vERTZ87OIr9ONowy2LQY+IminFdDQ3eMZB
-	w8loHMaqOU7rDrkgINcIEBF6FYWbAyZ3sCAF3W9j4bpxUvgyeUV3lctfeNwXoT4oprjssmnGxf/DT
-	9St7umSa9y+eHLR8JVGw==;
+	List-Owner; bh=UW5MCnRKz66qjtAKy8aMTDruoP9w2GJstcwvfEDCGOw=; b=AStT/h6JnRUKVx
+	HNHH8rtvZmpnQsKRT3z1eY8jkfCuwiS5YjfdM+L3ctVIb/Yfoo/8X73Gr5D0q7IuW0oqnV1jFbSiV
+	qRVA716qGTpqMI7YvYcgDra48Vfq+c3s3CpXNnsqEneR53gcQ/385YcQtvJ3QQlIjhO2Kni+BtUOf
+	NNXvoE+Y3RrQquo6A2vI2UtE6965ehwnHbk5T6NRhLrlRxwVxtP0bkz680gxYxlFClTfG8pzyGtTt
+	Ca+TlmN6fVhyxHc4geiAmyI81D+p/hXqeyJRBBc0HYDVCdRXasP7yQJslheettRtdZUR4IwEAZ/cL
+	B7PzdIjTDDFFjTeahJpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ7WF-00075D-2i; Thu, 31 Oct 2019 10:17:31 +0000
-Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]
- helo=webmail.newmedia-net.de)
+	id 1iQ7Yo-0007jK-Gi; Thu, 31 Oct 2019 10:20:10 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ7W6-00073y-Ob
- for openwrt-devel@lists.openwrt.org; Thu, 31 Oct 2019 10:17:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com;
- s=mikd; 
- h=Subject:Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To;
- bh=I5n24EIDBtas25RprPGGk/40sMhz80HbWLPXoa9xc/w=; 
- b=lFG3nA3K29nLPDJ9VdNN63ImkTlyeYF2lzhBBqtYA/jP6Zk86CkSjNHQObfzKgzd5RLn0++nzqZmdbCL2/0hBOVxR2GatsHL34Di8Apa8btCzuuzk25A/IBLlGw9PmGfq+2dKhjxIEt1hSxH56ULCjGNQD8ITNGn1IDezdMH6uo=;
-To: Jeff Kletsky <lede@allycomm.com>, openwrt-devel@lists.openwrt.org
+ id 1iQ7YV-0007iG-E3
+ for openwrt-devel@lists.openwrt.org; Thu, 31 Oct 2019 10:19:53 +0000
+Received: by mail-qk1-x742.google.com with SMTP id 71so6431995qkl.0
+ for <openwrt-devel@lists.openwrt.org>; Thu, 31 Oct 2019 03:19:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PUKiD9w0DhtZj4fnA/JV0xbPDvUKm7+U6FWMwL9Tdew=;
+ b=rZ9FUY7tLYvZLOJ3e95mt4p7zwbDvw5r7PWdGavVoBPhLa4Z2epXY9fSWWx7+kaRqr
+ 3IAg+bjnPxFvvhTFwCkGf5aJD87kq58aOXs8SfCj4OEgJZszdGiYBx3x/SWV8S2dF42x
+ 0Z2RGC0ZJmg3l+bKM6qphvAntkcQ9y6v3nLeSL6EpqVCJcw8VauBn7BuRzohjqod9gmd
+ GZcdLYbq7mYIQEz4V2AWbncRN1P21PHOt7Tp2k3M00ughhwLwGmVrKtDMND+mq0fTSXd
+ 9xRnVt6YEr1yo1wmI/oS57yDUHrFk6MTkfFk0OEph0zQkJJ7ESC5/0jNY3ktvjD4JT/c
+ 2wHw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PUKiD9w0DhtZj4fnA/JV0xbPDvUKm7+U6FWMwL9Tdew=;
+ b=fiNv2c9Kx2gZ9F5N43D/CAues6xDtEPMAQto9cIwj9TB08C5NpGHvL4I5NpUBPMWCU
+ 4IDX0Ti9dvrfH/CqLCoYwm08+nNRTtCFPR34O+qr6xYSbDf0iMmATpu+zuRylT6xr/wT
+ D+xgHKYnAU7oH0d4YArPbSPniPrJirUUR+KjZvB/a3+4V7oYX/6chkNKYLxrkuWVJo8k
+ sYZ4Yr5tKMuYi8Dq/H3U0skgRYKDfqQSIh5E0ddhV2SCGcGprg9BgN4tcns8NmUAm8a7
+ SEvnyC2rG4t0nXCxZct86gweW/GYVna+of9Gsl1IvclVP7ukDNKk9StZykDpXL5P6c4o
+ dp9A==
+X-Gm-Message-State: APjAAAXzE7joE7VjIPQlNPBd7Xf4DjxQSzLX656ogZWqp2ml1x/aRuLi
+ 6jRiop1Jd1+KjvXVGiA9WzvwRw6lh0W0yatJknZoqw==
+X-Google-Smtp-Source: APXvYqwIx19MoB2WilO6KD2rxPstncAmTom1CnqANt65Ng2KeJyfFgvjsoBLzPtiB4s5VQAkirIAMrcAhZcRWxMbt+w=
+X-Received: by 2002:a37:497:: with SMTP id 145mr398847qke.136.1572517189870;
+ Thu, 31 Oct 2019 03:19:49 -0700 (PDT)
+MIME-Version: 1.0
 References: <20191030112726.13106-1-daniel@dd-wrt.com>
  <20191030112726.13106-4-daniel@dd-wrt.com>
  <53df2442-0106-584c-6fe0-673a75d38edb@allycomm.com>
-From: Daniel Danzberger <daniel@dd-wrt.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=daniel@dd-wrt.com; prefer-encrypt=mutual; keydata=
- mQENBFEb+wQBCAD7DgPNNCJeLdnVdMCcneGypnjJ8mtCmpjo/r7HO2Ig6im559z5IQwnGdmj
- FM+6Xws5oGBdhqh7V+uGJ0/pSVJ432OFd/2JYlEs9p9aLbth/QIaoMO4DfDS8EestMLuGYlj
- ffojt+lCwI/OVNvlsHPZczxUuLENDeCKPQKyVkSo8tf5qgOJxZmJ8ebSY2DiTD8Sr3TC7ge3
- aOMuE1YVMv8RbOEVvRcTBerCXteANRuJYA8H1Nwg1WOJjPl5SoysQqPamCkiyVFbteNtRZaV
- tBqfJNRUi4JXdZxsNoaWygJr5pAMyJ9FPMQ6meo/97Cj1E46fTH7QWDhYkwGS3sFLb1jABEB
- AAG0JURhbmllbCBEYW56YmVyZ2VyIDxkYW5pZWxAZGQtd3J0LmNvbT6JAT4EEwECACgFAlEc
- oikCGwMFCVexLAAGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEF2W1+mV7KsoZYwH/1HG
- YtcQuMVXOD1ClaDDoWumBZ089ABCeExcCjuNAqtySAD0Z1i3Dr153CDL5IF8WsLDL+hkhmRJ
- knQg31kwkFglm62HcYuVZiAEjoTgNZRfBezTQevWV6Dys8YdfJGdLifqtMQM5dBLuWtyRWK/
- gkcv0rf2iI9PLveCqb93K9qDLxzgV96kwTUabc6n4FIF324RUPlzCuGoDEUNkh/sVo8jkXl7
- v8vfxwKb1EEMlWLk7bRGqUg7mdHf9zM4Fnb9oMQLJUrFWtME2FlZLwKvMfW8/bPqHI3thIYV
- qgYvagC/1HKmlvHfo8rraKXsQKzNadlv4Vyh6iZYkdQXUTuQtDO5AQ0EURv7BAEIAL1UNRYJ
- q1hv3ggyZv9PSkaWy0t+xMoSwAd2hWdA3iuILrQXjtzJ3nTtePE9TrmLpjwmN8H/ppcNpf1W
- WZ1Zxer9e4cUmm1LjbbgNIArZqzplVh+7QwDJk0ER282k3p5s7IYLkjymwmgeuiSJgaRAmFm
- AJKjiaNZoGdZvaC8TGpgGCRidwDR/cUR1hjpA2vyidNSP5ynILqohEpIe2lvhClODSvEgcMN
- o4xOtmI+Yq2Qg2e7FUaP8pptEysDdDoUnSPxq9v0aQHe3FS90KzXGAaoCuEnnRaotzZcVI31
- vffWHoZ30yGETeTF+W52hIKe7D+MbFfyiRjNtOw6HKli7TEAEQEAAYkBJQQYAQIADwUCURv7
- BAIbDAUJV7EsAAAKCRBdltfpleyrKDikB/0SWPBPhPBpogDLF4bIwORt6Uu8UQus5jYudtMx
- j67v+R+f42sfBj+iKtz2GHlboul8tJXzcO6zVJf2gqQisCNAoS7wZ/k3axPtbgClQmsLtU7B
- KgVRYaWVlLol0hg/Sn1lju/yHhgmbdttfBmCE63wDWr1ITTFepp9aVwaoIhIRBmCBpf3Vk5I
- e6l+1iqDXNXVQVf5qPdVE0Im7IZb9kA7Wk7N6Fa+zYpK+Qz1wFOXYjmK9SPhjdf/5/V2EQGi
- JgaVyfwaMRPUDRFW2wBlScmP+82LqA6TvKKyi3O3zgnFqTGvY2+bvkr9dTfRBlx1NlX0am9t
- YMmhspz7064avRsg
-Message-ID: <fa5c8547-03a8-59f9-9ff6-5004575e2b77@dd-wrt.com>
-Date: Thu, 31 Oct 2019 11:17:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <53df2442-0106-584c-6fe0-673a75d38edb@allycomm.com>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 2a02:908:2614:35c:819:5a9a:5145:d03a
-X-SA-Exim-Mail-From: daniel@dd-wrt.com
-X-Spam-Checker-Version: SpamAssassin 3.1.9 (2007-02-13) on
- webmail.newmedia-net.de
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.9 required=4.0 tests=BAYES_00,NO_RELAYS,
- RATWARE_GECKO_BUILD autolearn=no version=3.1.9, No
-X-SA-Exim-Version: 4.2.1 (built Thu, 26 May 2011 15:22:33 +0200)
-X-SA-Exim-Scanned: Yes (on webmail.newmedia-net.de)
-X-NMN-MailScanner-Information: Please contact the ISP for more information
-X-NMN-MailScanner-ID: 1iQ7VH-0003Mm-Md
-X-NMN-MailScanner: Found to be clean
-X-NMN-MailScanner-SpamScore: s
-X-NMN-MailScanner-From: daniel@dd-wrt.com
-X-Received: from [2a02:908:2614:35c:819:5a9a:5145:d03a]
- by webmail.newmedia-net.de with esmtpsa (TLSv1:AES128-SHA:128)
- (Exim 4.72) (envelope-from <daniel@dd-wrt.com>)
- id 1iQ7VH-0003Mm-Md; Thu, 31 Oct 2019 11:16:38 +0100
+ <fa5c8547-03a8-59f9-9ff6-5004575e2b77@dd-wrt.com>
+In-Reply-To: <fa5c8547-03a8-59f9-9ff6-5004575e2b77@dd-wrt.com>
+From: Robert Marko <robimarko@gmail.com>
+Date: Thu, 31 Oct 2019 11:19:38 +0100
+Message-ID: <CAOX2RU5LyA50Wz0jqATb+1vby5+r=8PTb0qDu7m8Np3p2Sv6pg@mail.gmail.com>
+To: Daniel Danzberger <daniel@dd-wrt.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_031723_234019_FD5DCD25 
-X-CRM114-Status: GOOD (  22.75  )
+X-CRM114-CacheID: sfid-20191031_031951_496451_01FEB210 
+X-CRM114-Status: GOOD (  27.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robimarko[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -114,158 +95,242 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ Jeff Kletsky <lede@allycomm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VXNpbmcgJ2NvbXBhdGlibGUgPSAic3BpLW5hbmQiJyB3b3JrZWQgYW5kIHRoZSBkZXZpY2UgZ290
-IGRldGVjdGVkIGJ5IHRoZQpkcml2ZXIuIEhvd2V2ZXIgaXQgd29uJ3QgY3JlYXRlIGFuZCAicm9v
-dGZzIiBwYXJ0aXRpb24gbGlrZSBpdCBkaWQgYmVmb3JlLgoKLS0tClsgICAgMS45MDE5MzBdIHNw
-aS1uYW5kIHNwaTAuMTogR2lnYURldmljZSBTUEkgTkFORCB3YXMgZm91bmQuClsgICAgMS45MDUy
-NjZdIHNwaS1uYW5kIHNwaTAuMTogMTI4IE1pQiwgYmxvY2sgc2l6ZTogMTI4IEtpQiwgcGFnZSBz
-aXplOiAyMDQ4LApPT0Igc2l6ZTogMTI4ClsgICAgMS45MTEwMTVdIDEgZml4ZWQtcGFydGl0aW9u
-cyBwYXJ0aXRpb25zIGZvdW5kIG9uIE1URCBkZXZpY2Ugc3BpMC4xClsgICAgMS45MTkwMTBdIENy
-ZWF0aW5nIDEgTVREIHBhcnRpdGlvbnMgb24gInNwaTAuMSI6ClsgICAgMS45MjU0MTBdIDB4MDAw
-MDAwMDAwMDAwLTB4MDAwMDA4MDAwMDAwIDogInViaSIKLS0tCgoKT24gMTAvMzAvMTkgNDo1MSBQ
-TSwgSmVmZiBLbGV0c2t5IHdyb3RlOgo+IE9uIDEwLzMwLzE5IDQ6MjcgQU0sIERhbmllbCBEYW56
-YmVyZ2VyIHdyb3RlOgo+IAo+PiBUaGlzIGRldmljZSBjb250YWlucyAyIGZsYXNoIGRldmljZXMu
-IE9uZSBOT1IgKDMyTSkgYW5kIG9uZSBOQU5EICgxMjhNKS4KPj4gVS1ib290IGFuZCBjYWxkYXRh
-IGFyZSBvbiB0aGUgTk9SLCB0aGUgZmlybXdhcmUgb24gdGhlIE5BTkQuCj4+Cj4+IMKgwqDCoMKg
-IFNvQzrCoMKgwqAgSVBRNDAxOQo+PiDCoMKgwqDCoCBDUFU6wqDCoMKgIDR4IDcxME1IeiBBUk12
-Nwo+PiDCoMKgwqDCoCBSQU06wqDCoMKgIDI1Nk1CCj4+IMKgwqDCoMKgIEZMQVNIOsKgIE5PUjoz
-Mk1CIE5BTkQ6MTI4TUIKPj4KPj4gWy4uLl0KPj4KPj4KPiAKPiDCoC4uLi9hcmNoL2FybS9ib290
-L2R0cy9xY29tLWlwcTQwMTktYnVzLmR0c2nCoMKgIHwgMTE0MiArKysrKysrKysrKysrKysrKwo+
-IMKgLi4uL2luY2x1ZGUvZHQtYmluZGluZ3MvbXNtL21zbS1idXMtaWRzLmjCoMKgwqDCoCB8wqAg
-ODY5ICsrKysrKysrKysrKysKPiAKPiBUaGUgc3VkZGVuIGFwcGVhcmFuY2Ugb2YgYSBuZWVkIHRo
-ZSBNU00gYnVzIGFuZCBpdHMgSURzIHdvcnJpZXMgbWUuCj4gCj4gV2l0aCAyNSBkZXZpY2VzIGFs
-cmVhZHkgb24gdGhlIGlwcTQweHggcGxhdGZvcm0gd2l0aG91dCB0aGVtLCBpdCBmZWVscwo+IGxp
-a2Ugc29tZXRoaW5nIGlzIG1pc3NpbmcgaWYgdGhleSBhcmUgbmVlZGVkIGJ5IHRoaXMgb25lLgo+
-IAo+IAo+PiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L2lwcTQweHgvY29uZmlnLTQuMTkgYi90
-YXJnZXQvbGludXgvaXBxNDB4eC9jb25maWctNC4xOQo+PiBpbmRleCA4OTQ4YjczZmY3Li4zZWU5
-MjFhYmVkIDEwMDY0NAo+PiAtLS0gYS90YXJnZXQvbGludXgvaXBxNDB4eC9jb25maWctNC4xOQo+
-PiArKysgYi90YXJnZXQvbGludXgvaXBxNDB4eC9jb25maWctNC4xOQo+PiBAQCAtMzAzLDYgKzMw
-Myw5IEBAIENPTkZJR19NVERfTkFORF9FQ0M9eQo+PiDCoCBDT05GSUdfTVREX05BTkRfUUNPTT15
-Cj4+IMKgIENPTkZJR19NVERfU1BJX05BTkQ9eQo+PiDCoCBDT05GSUdfTVREX1NQSV9OT1I9eQo+
-PiArQ09ORklHX01URF9TUElOQU5EX01UMjlGPXkKPj4gK0NPTkZJR19NVERfU1BJTkFORF9HSUdB
-REVWSUNFPXkKPj4gK0NPTkZJR19NVERfU1BJTkFORF9PTkRJRUVDQz15Cj4gCj4gCj4gVGhlIENP
-TkZJR19TUElOQU5EXyogYWRkaXRpb25zIGFyZSBub3QgcmVxdWlyZWQgZm9yIHVwc3RyZWFtIFNQ
-SS1OQU5ECj4gCj4gCj4+IMKgIENPTkZJR19NVERfU1BMSVRfRklSTVdBUkU9eQo+PiDCoCBDT05G
-SUdfTVREX1NQTElUX0ZJVF9GVz15Cj4+IMKgIENPTkZJR19NVERfVUJJPXkKPj4KPj4gWy4uLl0K
-Pj4KPj4gZGlmZiAtLWdpdAo+PiBhL3RhcmdldC9saW51eC9pcHE0MHh4L2ZpbGVzLTQuMTkvYXJj
-aC9hcm0vYm9vdC9kdHMvcWNvbS1pcHE0MDE5LXdwajQxOS5kdHMKPj4gYi90YXJnZXQvbGludXgv
-aXBxNDB4eC9maWxlcy00LjE5L2FyY2gvYXJtL2Jvb3QvZHRzL3Fjb20taXBxNDAxOS13cGo0MTku
-ZHRzCj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAwMDAwMDAuLjU1NTNiYmQx
-NjYKPj4gLS0tIC9kZXYvbnVsbAo+PiArKysgYi90YXJnZXQvbGludXgvaXBxNDB4eC9maWxlcy00
-LjE5L2FyY2gvYXJtL2Jvb3QvZHRzL3Fjb20taXBxNDAxOS13cGo0MTkuZHRzCj4+IEBAIC0wLDAg
-KzEsMzcxIEBACj4+ICsvKiBDb3B5cmlnaHQgKGMpIDIwMTUsIFRoZSBMaW51eCBGb3VuZGF0aW9u
-LiBBbGwgcmlnaHRzIHJlc2VydmVkLgo+PiArICogQ29weXJpZ2h0IChjKSAyMDE5LCBOZ3V5ZW4g
-RGluaCBQaGkgPHBoaV9uZ3V5ZW5AY29tcGV4LmNvbS5zZz4KPj4gKyAqCj4+ICsgKiBQZXJtaXNz
-aW9uIHRvIHVzZSwgY29weSwgbW9kaWZ5LCBhbmQvb3IgZGlzdHJpYnV0ZSB0aGlzIHNvZnR3YXJl
-IGZvciBhbnkKPj4gKyAqIHB1cnBvc2Ugd2l0aCBvciB3aXRob3V0IGZlZSBpcyBoZXJlYnkgZ3Jh
-bnRlZCwgcHJvdmlkZWQgdGhhdCB0aGUgYWJvdmUKPj4gKyAqIGNvcHlyaWdodCBub3RpY2UgYW5k
-IHRoaXMgcGVybWlzc2lvbiBub3RpY2UgYXBwZWFyIGluIGFsbCBjb3BpZXMuCj4+ICsgKgo+PiAr
-ICogVEhFIFNPRlRXQVJFIElTIFBST1ZJREVEICJBUyBJUyIgQU5EIFRIRSBBVVRIT1IgRElTQ0xB
-SU1TIEFMTCBXQVJSQU5USUVTCj4+ICsgKiBXSVRIIFJFR0FSRCBUTyBUSElTIFNPRlRXQVJFIElO
-Q0xVRElORyBBTEwgSU1QTElFRCBXQVJSQU5USUVTIE9GCj4+ICsgKiBNRVJDSEFOVEFCSUxJVFkg
-QU5EIEZJVE5FU1MuIElOIE5PIEVWRU5UIFNIQUxMIFRIRSBBVVRIT1IgQkUgTElBQkxFIEZPUgo+
-PiArICogQU5ZIFNQRUNJQUwsIERJUkVDVCwgSU5ESVJFQ1QsIE9SIENPTlNFUVVFTlRJQUwgREFN
-QUdFUyBPUiBBTlkgREFNQUdFUwo+PiArICogV0hBVFNPRVZFUiBSRVNVTFRJTkcgRlJPTSBMT1NT
-IE9GIFVTRSwgREFUQSBPUiBQUk9GSVRTLCBXSEVUSEVSIElOIEFOCj4+ICsgKiBBQ1RJT04gT0Yg
-Q09OVFJBQ1QsIE5FR0xJR0VOQ0UgT1IgT1RIRVIgVE9SVElPVVMgQUNUSU9OLCBBUklTSU5HIE9V
-VCBPRgo+PiArICogT1IgSU4gQ09OTkVDVElPTiBXSVRIIFRIRSBVU0UgT1IgUEVSRk9STUFOQ0Ug
-T0YgVEhJUyBTT0ZUV0FSRS4KPj4gKyAqCj4+ICsgKi8KPj4gKwo+Pgo+PiBbLi4uXQo+Pgo+PiAr
-Cj4+ICvCoMKgwqDCoMKgwqDCoCBzcGlfMDogc3BpQDc4YjUwMDAgewo+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBwaW5jdHJsLTAgPSA8JnNwaV8wX3BpbnM+Owo+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCBzdGF0dXMgPSAib2theSI7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNzLWdwaW9z
-ID0gPCZ0bG1tIDEyIEdQSU9fQUNUSVZFX0hJR0g+LCA8JnRsbW0gNDEgR1BJT19BQ1RJVkVfSElH
-SD47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG51bS1jcyA9IDwyPjsKPj4gKwo+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCBtMjVwODBAMCB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgI3NpemUtY2VsbHMgPSA8MT47Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgcmVnID0gPDA+Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGxpbnV4
-LG1vZGFsaWFzID0gIm0yNXA4MCIsICJuMjVxMTI4YTExIjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBjb21wYXRpYmxlID0gImplZGVjLHNwaS1ub3IiLCAibjI1cTEyOGExMSI7
-Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3BpLW1heC1mcmVxdWVuY3kgPSA8
-MjQwMDAwMDA+Owo+IAo+IAo+IEkgZG9uJ3QgdGhpbmsgeW91IG5lZWQgbGludXgsbW9kYWxpYXMg
-aGVyZSwgbm9yIHRoZSBjaGlwIHR5cGUgaW4gdGhlIGNvbXBhdGlibGUKPiBsaW5lLgo+IEkgYmVs
-aWV2ZSB0aGF0IHRoZSBmb2xsb3dpbmcgY29tcGF0aWJsZSBsaW5lIGlzIHN1ZmZpY2llbnQKPiAK
-PiDCoMKgwqAgY29tcGF0aWJsZSA9ICJqZWRlYyxzcGktbm9yIjsKPiAKPiAKPiBZb3UgbWlnaHQg
-YWxzbyB3YW50IHRvIGNvbnNpZGVyICJmbGFzaEAwIiBvciAibm9yQDAiIG9yICJub3JfZmxhc2hA
-MCIsCj4gb3IgdGhlIGxpa2UsIHJhdGhlciB0aGFuIGEgY2hpcC1zcGVjaWZpYyBuYW1lLiAoSSdt
-IG5vdCBhIGNvbW1pdHRlci4pCj4gCj4gCj4+ICsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCBwYXJ0aXRpb25zIHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIGNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7Cj4+ICsKPj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBhcnRpdGlvbkAwIHsKPj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbGFiZWwgPSAiMDpTQkwxIjsK
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0g
-PDB4MDAwMDAwIDB4MDQwMDAwPjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgcmVhZC1vbmx5Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgfTsKPj4gKwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgcGFydGl0aW9uQDQwMDAwIHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgbGFiZWwgPSAiMDpNSUJJQiI7Cj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlZyA9IDwweDA0MDAwMCAweDAyMDAwMD47
-Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlYWQt
-b25seTsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH07Cj4+ICsK
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBhcnRpdGlvbkA2MDAw
-MCB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGxh
-YmVsID0gIjA6UVNFRSI7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIHJlZyA9IDwweDA2MDAwMCAweDA2MDAwMD47Cj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlYWQtb25seTsKPj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH07Cj4+ICsKPj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBhcnRpdGlvbkBjMDAwMCB7Cj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGxhYmVsID0gIjA6Q0RUIjsKPj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4MGMw
-MDAwIDB4MDEwMDAwPjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgcmVhZC1vbmx5Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgfTsKPiAKPiAKPiBTb21lb25lIG1heSByaXAgb24geW91IGZvciBjYXBpdGFsaXphdGlv
-biBvZiBsYWJlbHMuIChJJ20gbm90IGEgY29tbWl0dGVyLikKPiAKPiAKPj4gKwo+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcGFydGl0aW9uQGQwMDAwIHsKPj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbGFiZWwgPSAiMDpE
-RFJQQVJBTVMiOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCByZWcgPSA8MHgwZDAwMDAgMHgwMTAwMDA+Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWFkLW9ubHk7Cj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+PiArCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBwYXJ0aXRpb25AZTAwMDAgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBsYWJlbCA9ICJ1LWJvb3QtZW52IjsKPj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDB4MGUw
-MDAwIDB4MDEwMDAwPjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgcmVhZC1vbmx5Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgfTsKPiAKPiAKPiBVLUJvb3QgZW52aXJvbm1lbnQgbWF5IHdhbnQvbmVlZCB0byBiZSB3
-cml0YWJsZQo+IAo+IAo+PiArCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCBwYXJ0aXRpb25AZjAwMDAgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBsYWJlbCA9ICJ1LWJvb3QiOwo+PiArwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWcgPSA8MHgwZjAwMDAgMHgwODAwMDA+Owo+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWFkLW9u
-bHk7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+PiArCj4+
-ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwYXJ0aXRpb25AMTcwMDAw
-IHsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbGFi
-ZWwgPSAiYXJ0IjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgcmVnID0gPDB4MTcwMDAwIDB4MDEwMDAwPjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVhZC1vbmx5Owo+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoCB9Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+PiArCj4+ICvCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIG10MjlmQDEgewo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-ICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-ICNzaXplLWNlbGxzID0gPDE+Owo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJl
-ZyA9IDwxPjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdGF0dXMgPSAib2th
-eSI7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJzcGlu
-YW5kLG10MjlmIjsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzcGktbWF4LWZy
-ZXF1ZW5jeSA9IDwyNDAwMDAwMD47Cj4gCj4gCj4gU2FtZSBjb21tZW50IG9uICJtdDI5ZiIgdnMu
-IHNvbWV0aGluZyBnZW5lcmljIGFuZCBkZXNjcmlwdGl2ZS4KPiAKPiAKPiBDb252ZXJ0aW5nIHRv
-IHRoZSB1cHN0cmVhbSBTUEktTkFORCBkcml2ZXIgaGVyZSBzaG91bGQgYmUgYXMgc2ltcGxlIGFz
-Cj4gCj4gwqDCoMKgIGNvbXBhdGlibGUgPSAic3BpLW5hbmQiOwo+IAo+IAo+IAo+PiArCj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcGFydGl0aW9ucyB7Cj4+ICvCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjb21wYXRpYmxlID0gImZpeGVkLXBhcnRpdGlv
-bnMiOwo+PiArCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwYXJ0
-aXRpb25AMCB7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIGxhYmVsID0gInViaSI7Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIHJlZyA9IDwweDAwMDAwMDAgMHg4MDAwMDAwPjsKPj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH07Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgfTsKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4gK8KgwqDCoMKgwqDC
-oMKgIH07Cj4+ICsKPj4gWy4uLl0KPiAKPiAKCi0tIApSZWdhcmRzCgpEYW5pZWwgRGFuemJlcmdl
-cgplbWJlREQgR21iSCwgQWx0ZXIgUG9zdHBsYXR6IDIsIENILTYzNzAgU3RhbnMKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFp
-bGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5v
-cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+On Thu, 31 Oct 2019 at 11:17, Daniel Danzberger <daniel@dd-wrt.com> wrote:
+>
+> Using 'compatible = "spi-nand"' worked and the device got detected by the
+> driver. However it won't create and "rootfs" partition like it did before.
+>
+> ---
+> [    1.901930] spi-nand spi0.1: GigaDevice SPI NAND was found.
+> [    1.905266] spi-nand spi0.1: 128 MiB, block size: 128 KiB, page size: 2048,
+> OOB size: 128
+> [    1.911015] 1 fixed-partitions partitions found on MTD device spi0.1
+> [    1.919010] Creating 1 MTD partitions on "spi0.1":
+> [    1.925410] 0x000000000000-0x000008000000 : "ubi"
+It creates the partitions like set in DTS, ubi partition contains both
+kernel and rootfs.
+> ---
+>
+>
+> On 10/30/19 4:51 PM, Jeff Kletsky wrote:
+> > On 10/30/19 4:27 AM, Daniel Danzberger wrote:
+> >
+> >> This device contains 2 flash devices. One NOR (32M) and one NAND (128M).
+> >> U-boot and caldata are on the NOR, the firmware on the NAND.
+> >>
+> >>      SoC:    IPQ4019
+> >>      CPU:    4x 710MHz ARMv7
+> >>      RAM:    256MB
+> >>      FLASH:  NOR:32MB NAND:128MB
+> >>
+> >> [...]
+> >>
+> >>
+> >
+> >  .../arch/arm/boot/dts/qcom-ipq4019-bus.dtsi   | 1142 +++++++++++++++++
+> >  .../include/dt-bindings/msm/msm-bus-ids.h     |  869 +++++++++++++
+> >
+> > The sudden appearance of a need the MSM bus and its IDs worries me.
+> >
+> > With 25 devices already on the ipq40xx platform without them, it feels
+> > like something is missing if they are needed by this one.
+> >
+> >
+> >> diff --git a/target/linux/ipq40xx/config-4.19 b/target/linux/ipq40xx/config-4.19
+> >> index 8948b73ff7..3ee921abed 100644
+> >> --- a/target/linux/ipq40xx/config-4.19
+> >> +++ b/target/linux/ipq40xx/config-4.19
+> >> @@ -303,6 +303,9 @@ CONFIG_MTD_NAND_ECC=y
+> >>   CONFIG_MTD_NAND_QCOM=y
+> >>   CONFIG_MTD_SPI_NAND=y
+> >>   CONFIG_MTD_SPI_NOR=y
+> >> +CONFIG_MTD_SPINAND_MT29F=y
+> >> +CONFIG_MTD_SPINAND_GIGADEVICE=y
+> >> +CONFIG_MTD_SPINAND_ONDIEECC=y
+> >
+> >
+> > The CONFIG_SPINAND_* additions are not required for upstream SPI-NAND
+> >
+> >
+> >>   CONFIG_MTD_SPLIT_FIRMWARE=y
+> >>   CONFIG_MTD_SPLIT_FIT_FW=y
+> >>   CONFIG_MTD_UBI=y
+> >>
+> >> [...]
+> >>
+> >> diff --git
+> >> a/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+> >> b/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+> >> new file mode 100644
+> >> index 0000000000..5553bbd166
+> >> --- /dev/null
+> >> +++ b/target/linux/ipq40xx/files-4.19/arch/arm/boot/dts/qcom-ipq4019-wpj419.dts
+> >> @@ -0,0 +1,371 @@
+> >> +/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+> >> + * Copyright (c) 2019, Nguyen Dinh Phi <phi_nguyen@compex.com.sg>
+> >> + *
+> >> + * Permission to use, copy, modify, and/or distribute this software for any
+> >> + * purpose with or without fee is hereby granted, provided that the above
+> >> + * copyright notice and this permission notice appear in all copies.
+> >> + *
+> >> + * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+> >> + * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+> >> + * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+> >> + * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+> >> + * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+> >> + * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+> >> + * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+> >> + *
+> >> + */
+> >> +
+> >>
+> >> [...]
+> >>
+> >> +
+> >> +        spi_0: spi@78b5000 {
+> >> +            pinctrl-0 = <&spi_0_pins>;
+> >> +            pinctrl-names = "default";
+> >> +            status = "okay";
+> >> +            cs-gpios = <&tlmm 12 GPIO_ACTIVE_HIGH>, <&tlmm 41 GPIO_ACTIVE_HIGH>;
+> >> +            num-cs = <2>;
+> >> +
+> >> +            m25p80@0 {
+> >> +                #address-cells = <1>;
+> >> +                #size-cells = <1>;
+> >> +                reg = <0>;
+> >> +                linux,modalias = "m25p80", "n25q128a11";
+> >> +                compatible = "jedec,spi-nor", "n25q128a11";
+> >> +                spi-max-frequency = <24000000>;
+> >
+> >
+> > I don't think you need linux,modalias here, nor the chip type in the compatible
+> > line.
+> > I believe that the following compatible line is sufficient
+> >
+> >     compatible = "jedec,spi-nor";
+> >
+> >
+> > You might also want to consider "flash@0" or "nor@0" or "nor_flash@0",
+> > or the like, rather than a chip-specific name. (I'm not a committer.)
+> >
+> >
+> >> +
+> >> +                partitions {
+> >> +                    compatible = "fixed-partitions";
+> >> +
+> >> +                    partition@0 {
+> >> +                        label = "0:SBL1";
+> >> +                        reg = <0x000000 0x040000>;
+> >> +                        read-only;
+> >> +                    };
+> >> +
+> >> +                    partition@40000 {
+> >> +                        label = "0:MIBIB";
+> >> +                        reg = <0x040000 0x020000>;
+> >> +                        read-only;
+> >> +                    };
+> >> +
+> >> +                    partition@60000 {
+> >> +                        label = "0:QSEE";
+> >> +                        reg = <0x060000 0x060000>;
+> >> +                        read-only;
+> >> +                    };
+> >> +
+> >> +                    partition@c0000 {
+> >> +                        label = "0:CDT";
+> >> +                        reg = <0x0c0000 0x010000>;
+> >> +                        read-only;
+> >> +                    };
+> >
+> >
+> > Someone may rip on you for capitalization of labels. (I'm not a committer.)
+> >
+> >
+> >> +
+> >> +                    partition@d0000 {
+> >> +                        label = "0:DDRPARAMS";
+> >> +                        reg = <0x0d0000 0x010000>;
+> >> +                        read-only;
+> >> +                    };
+> >> +
+> >> +                    partition@e0000 {
+> >> +                        label = "u-boot-env";
+> >> +                        reg = <0x0e0000 0x010000>;
+> >> +                        read-only;
+> >> +                    };
+> >
+> >
+> > U-Boot environment may want/need to be writable
+> >
+> >
+> >> +
+> >> +                    partition@f0000 {
+> >> +                        label = "u-boot";
+> >> +                        reg = <0x0f0000 0x080000>;
+> >> +                        read-only;
+> >> +                    };
+> >> +
+> >> +                    partition@170000 {
+> >> +                        label = "art";
+> >> +                        reg = <0x170000 0x010000>;
+> >> +                        read-only;
+> >> +                    };
+> >> +                };
+> >> +            };
+> >> +
+> >> +            mt29f@1 {
+> >> +                #address-cells = <1>;
+> >> +                #size-cells = <1>;
+> >> +                reg = <1>;
+> >> +                status = "okay";
+> >> +                compatible = "spinand,mt29f";
+> >> +                spi-max-frequency = <24000000>;
+> >
+> >
+> > Same comment on "mt29f" vs. something generic and descriptive.
+> >
+> >
+> > Converting to the upstream SPI-NAND driver here should be as simple as
+> >
+> >     compatible = "spi-nand";
+> >
+> >
+> >
+> >> +
+> >> +                partitions {
+> >> +                    compatible = "fixed-partitions";
+> >> +
+> >> +                    partition@0 {
+> >> +                        label = "ubi";
+> >> +                        reg = <0x0000000 0x8000000>;
+> >> +                    };
+> >> +                };
+> >> +            };
+> >> +        };
+> >> +
+> >> [...]
+> >
+> >
+>
+> --
+> Regards
+>
+> Daniel Danzberger
+> embeDD GmbH, Alter Postplatz 2, CH-6370 Stans
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

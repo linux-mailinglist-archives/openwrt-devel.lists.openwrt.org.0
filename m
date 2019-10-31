@@ -2,74 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFE56EAC90
-	for <lists+openwrt-devel@lfdr.de>; Thu, 31 Oct 2019 10:34:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 638E1EACCC
+	for <lists+openwrt-devel@lfdr.de>; Thu, 31 Oct 2019 10:46:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LsJadbdw6EgSth6lyzOGHNMoJZiWanvvJvSi/GAjPJE=; b=VqChlxoFoql5iu
-	sCoWI6DcM/WZ1dcHgmGHeOcHgZtL8b48lbHS14dWoRbsh7q9YdIUENrj//4e3VPHNbo9O9iQmnQBF
-	HIWfj6NP3XLO82RnoZjkAgZTqvU4W8pvoaLAiki4w4Gatake28RYZLLimyc/moDZFtFOADC35C8F8
-	YTcq4rGjI2yuRTY30+YWKLwQr7LwOV8FtLofxp6g5LFQyht/YGHb1JvE867Srk9w/7U3BRz4yCeOd
-	Nsm+xx3FmgMGJ+3solLYEoTJ7eyupvWd2/WE3TxweprTQ1TuPZflPa7gE7dU9fJmB3n5OfOJeimga
-	V/8TKVbmp0zvGk1CykXw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Message-ID:Mime-Version:References:To:From:Date:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=2VYGM+b2hxEgSBDHnjmtnWa4jrpgwjaae+QaJEzdD7g=; b=NbcYQ9jvshfDhR
+	/dPjg7oNuITpJJ7VQFK9vFKVkc7dE0m6N6SOeX/39cLq8PM483HaNujDzfpQKYex5oPcBuJmKLYFM
+	Qj3qaRaHREuZruAF3I+kbj5jhZNBEgU58FSyYbix3l3yGD+ETajo9veZHv6HxnQo2q7iluSu9eont
+	c+OXnCOKs7Ud08CL2RUvgL+SgzJFycbVsBJeK8h/VlHRt2f+MzG8JfgO0P6eHkxMEmV+vHqgX+3XF
+	StOhWeMQCcqCkjMt/MZhOv10uQZVQAnz/Z8ryyBNbyDGbTuMbCoo6akvjskVJE6HWIAcVNleN1rgW
+	o/iz7ieViBh5/63AKX8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ6qB-0005zY-RF; Thu, 31 Oct 2019 09:34:03 +0000
-Received: from canardo.mork.no ([2001:4641::1])
+	id 1iQ71j-0002nl-3x; Thu, 31 Oct 2019 09:45:59 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ6q2-0005yf-Mu
- for openwrt-devel@lists.openwrt.org; Thu, 31 Oct 2019 09:33:56 +0000
-Received: from miraculix.mork.no
- ([IPv6:2a02:2121:286:4947:c09a:74ff:fe7f:b715])
- (authenticated bits=0)
- by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id x9V9XmNZ018948
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
- Thu, 31 Oct 2019 10:33:49 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
- t=1572514429; bh=FDfyotZT/Fbu2NCUUcvYfih9qvM3J+BJOOFm6KKCHvM=;
- h=From:To:Cc:Subject:References:Date:Message-ID:From;
- b=c7lVTkmj93gYXD9LuShuewKJ/nSneLfcZBcHMvxPUtZfsX8amY6uE8ZQbrBd90UHx
- Nd59A4/5+kO0Qe4rQFbhRtZzCI7t9P3FXyNe0lGzUMjh6B8+xEjP9EMMOI5PxSF0Ol
- kxtgYnS6AIxTHJr0xs/LWRK0H2sCTUoVtuNcHubc=
-Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
- (envelope-from <bjorn@mork.no>)
- id 1iQ6pr-0002CZ-Hq; Thu, 31 Oct 2019 10:33:43 +0100
-From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-To: John Crispin <john@phrozen.org>
-Organization: m
-References: <772e4320-c84d-dbb0-6243-d2fb150d2401@phrozen.org>
-Date: Thu, 31 Oct 2019 10:33:43 +0100
-In-Reply-To: <772e4320-c84d-dbb0-6243-d2fb150d2401@phrozen.org> (John
- Crispin's message of "Tue, 29 Oct 2019 06:37:24 +0100")
-Message-ID: <87tv7p5keg.fsf@miraculix.mork.no>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
-MIME-Version: 1.0
-X-Virus-Scanned: clamav-milter 0.101.4 at canardo
-X-Virus-Status: Clean
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_023355_256234_EAF07862 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ id 1iQ71a-0002n8-FI
+ for openwrt-devel@bombadil.infradead.org; Thu, 31 Oct 2019 09:45:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Type:Message-ID:Mime-Version:
+ References:Subject:To:From:Date:Sender:Reply-To:Cc:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=gtmKy471GbBrXYgsxpJhrV09gMILBtF2T4xKz5e9pI0=; b=fa7x+lnNXZvENQoxQQV2t+segD
+ +lsELkotdIcfXq4uCpQZOHRWJh0SYQbqDp19gLThqzyQWhyEa9fIf9AZ2fNZjj/aUlBmkF44Z5D1b
+ AS21ks4mQ184QQ9qDHqpZvfch9Ox3P8Ldji83VGiWK/rgeRym3CQDFfnrWDMahXZ56rY7HG6N/Lw8
+ +OJ/zMcex7/XD92Ub5tX3Kc1HrC666nVce5WLLto4QjOrS5GxaTl3mku3z3J5d/ICnUE8dbHdXGzb
+ uc8TmYrCyv+bVbaDguM1dxq+0i45SOvJm///+QrwE9ZGVl+WNOL1U1mlbo9BTWSXj1auATW/K3kon
+ KeaGXOxw==;
+Received: from smtpbgsg3.qq.com ([54.179.177.220])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iQ71S-0002jq-Bq
+ for openwrt-devel@lists.openwrt.org; Thu, 31 Oct 2019 09:45:48 +0000
+X-QQ-mid: bizesmtp26t1572515000tdsje0qw
+Received: from PC-daxiong (unknown [114.241.221.120])
+ by esmtp10.qq.com (ESMTP) with 
+ id ; Thu, 31 Oct 2019 17:43:19 +0800 (CST)
+X-QQ-SSF: 00400000002000S0II50B00B0000000
+X-QQ-FEAT: 006+cXb/z3a6S0D8nuMiqWJ8YoX59rJNWRfww9EN6MlfB/JRdcxclm6oPkIsb
+ vQMOrJiDEwSZpynZlQAHaPX8DZGFsId3KKmhRHA1gxXzVElb6ew2bDBjj1M+WOiYHZII7/O
+ +J5L7WonkqAA6jtmzxuctKEEd/ynvMkif+bKmVr4rFWJN36gNEfnHf71tqfx0PMqB97FCkn
+ 6JUhQ2SbScd6+jCkTNaUVFahNGBdMvC38HPSv38vqLK7CQteJ3r9I2aoShdS39lKPRweluc
+ gHVFNHK8ZH9gUozc1Jpuv/e8gYU7cnSIQZWFW1+4JdkmyVkcDBNWsbKJORuI8wMIn/vOgOO
+ 7vw9vg0ieTzfC5RZS2fZ+78JHDPZw==
+X-QQ-GoodBg: 2
+Date: Thu, 31 Oct 2019 17:43:15 +0800
+From: =?UTF-8?B?5aSn6ZuE?= <lxliu@ikuai8.com>
+To: nbd <nbd@nbd.name>, "Hauke Mehrtens" <hauke@hauke-m.de>, 
+ openwrt-devel <openwrt-devel@lists.openwrt.org>
+References: <1572430479-8691-1-git-send-email-lxliu@ikuai8.com>, 
+ <b41d9076-a20e-8ca3-e4b4-f5f2c39d0485@hauke-m.de>, 
+ <2019103109465717351619@ikuai8.com>, 
+ <d5ad2cb7-4542-f4a4-4024-bd6ffb93c1be@nbd.name>, 
+ <2019103116195306162923@ikuai8.com>, 
+ <2c32daa0-397d-60a2-ddd4-ce7337981031@nbd.name>
+X-Priority: 3
+X-Has-Attach: no
+X-Mailer: Foxmail 7.2.9.156[cn]
+Mime-Version: 1.0
+Message-ID: <2019103117431505877930@ikuai8.com>+425FB7275BAC4B4E
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:ikuai8.com:qybgforeign:qybgforeign6
+X-QQ-Bgrelay: 1
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 1.2 (+)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.179.177.220 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [54.179.177.220 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] v5.4 as next kernel
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or
+ identical to background
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 1.2 INVALID_MSGID          Message-Id is not valid, according to RFC 2822
+Subject: Re: [OpenWrt-Devel] [PATCH-19.07] build: fix module strip invalid
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,35 +97,101 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============5351643136661774921=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Sm9obiBDcmlzcGluIDxqb2huQHBocm96ZW4ub3JnPiB3cml0ZXM6Cgo+IEhpLAo+IHNob3VsZCB3
-ZSB1c2UgdjUuNCBhcyBvdXIgbmV4dCBrZXJuZWwgPwoKSGVsbG8gSm9obiEKCkkgYW0gc3RpbGwg
-c3RydWdnbGluZyB0byB1bmRlcnN0YW5kIGhvdyB0aGUgcHJvamVjdCBtYWtlcyByZWxlYXNlCmRl
-Y2lzaW9ucy4gIEkgZG9uJ3QgdGhpbmsgeW91ciBxdWVzdGlvbiBtYWtlcyBzZW5zZSB3aXRob3V0
-IGNvbnNpZGVyaW5nCnRhcmdldCByZWxlYXNlIGRhdGVzLCBhdCBsZWFzdCBpbiBhIHllYXJseSBy
-ZXNvbHV0aW9uLCBnaXZlbiB0aGUgbWFzc2l2ZQphbW91bnQgb2Ygd29yayBpbnZvbHZlZCB3aXRo
-IHN3aXRjaGluZyBrZXJuZWwgdmVyc2lvbnMuCgpTbyBteSBxdWVzdGlvbiBpczogSXMgaXQgcmVh
-bGlzdGljIHRvIGV4cGVjdCBhbiBPcGVuV3J0IHJlbGVhc2Ugd2l0aAp2NS40IG5leHQgeWVhcj8K
-CkJlY2F1c2UgaWYgaXQgaXNuJ3QsIHRoZW4gdjUuNCBpcyByZWFsbHkgYSB3YXN0ZSBvZiB0aW1l
-IElNSE8uIFlvdQpzaG91bGQgdGFyZ2V0IHRoZSBuZXh0IGxvbmd0ZXJtIGtlcm5lbCBhZnRlciB2
-NS40IGluc3RlYWQgZm9yIHRoZSBmaXJzdAoyMDIxIHJlbGVhc2UuCgpBbmQgb2YgY291cnNlLCBp
-ZiB5b3UgdGhpbmsgYSAyMDIwIHJlbGVhc2Ugd2l0aCB2NS40IGlzIHJlYWxpc3RpYywgdGhlbgp0
-aGVyZSdzIGFuIG9wZW4gcXVlc3Rpb24gb24gd2hhdCB0byBkbyB3aXRoIHY0LjE5LiAgQXJlIHR3
-byBPcGVuV3J0CnJlbGVhc2VzIG5leHQgeWVhciBsaWtlbHkvcG9zc2libGU/ICBJZiBub3QsIHRo
-ZW4gdjUuNCBzaG91bGQgcHJvYmFibHkKcmVwbGFjZSB2NC4xOSBhcyB0aGUgY3VycmVudCB0YXJn
-ZXQga2VybmVsIGFzIHNvb24gYXMgcG9zc2libGUuCgpZZXMsIEkga25vdyB3aGF0IHlvdXIgbWVl
-dGluZyBtaW51dGVzIHNheXMuICBCdXQgdHdvIHJlbGVhc2VzIGluIDIwMTkgaXMKb2J2aW91c2x5
-IG5vdCBnb2luZyB0byBoYXBwZW4uIEFuZCBwZXJzb25hbGx5IEkgZG9uJ3Qgc2VlIGhvdyB0aGF0
-J3MKc3VkZGVubHkgZ29pbmcgdG8gY2hhbmdlIGZvciAyMDIwIHVubGVzcyB5b3UgZG8gc29tZXRo
-aW5nIGRyYXN0aWMgdG8Kc2ltcGxpZnkgdGhlIHJlbGVhc2UgcHJvY2Vzcy4gWWVzLCB0aGF0IG1l
-YW5zIGxvd2VyaW5nIHRoZSBzdGFuZGFyZHMuCk1heWJlIG1ha2luZyByZWxlYXNlcyB0aGF0IHdv
-bid0IGJlIG1haW50YWluZWQsIGFuZCB0aGVyZWZvcmUgZG9uJ3QgbmVlZAp0byBiZSAiZnV0dXJl
-IHByb29mIj8KCgpCasO4cm4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3Rz
-Lm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9v
-cGVud3J0LWRldmVsCg==
+This is a multi-part message in MIME format.
+
+--===============5351643136661774921==
+Content-Type: multipart/alternative;
+	boundary="----=_001_NextPart628241108163_=----"
+
+This is a multi-part message in MIME format.
+
+------=_001_NextPart628241108163_=----
+Content-Type: text/plain;
+	charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+SGksDQogICAgDQogICAgQnV0IHNvbWV0aW1lcywgIC5rbyBub3QgaW4gbWVudWNvbmZpZyBvcHRp
+b24uDQogICAgSXQncyBpbiB0aGUga2VybmVsX21lbnVjb25maWcgb3B0aW9uLg0KICAgIFNvIGlz
+IG5vIHRocm91Z2ggaXBrIHByb2Nlc3NpbmcuDQogICANCiAgICBUaGVyZSBpcyBubyBzdWNoIHBy
+b2JsZW0gaW4gT3BlbldSVCAxNS4wNQ0KDQpGcm9tOiBGZWxpeCBGaWV0a2F1DQpEYXRlOiAyMDE5
+LTEwLTMxIDE3OjI0DQpUbzog5aSn6ZuEOyBIYXVrZSBNZWhydGVuczsgb3BlbndydC1kZXZlbA0K
+U3ViamVjdDogUmU6IFtPcGVuV3J0LURldmVsXSBbUEFUQ0gtMTkuMDddIGJ1aWxkOiBmaXggbW9k
+dWxlIHN0cmlwIGludmFsaWQNCk9uIDIwMTktMTAtMzEgMDk6MTksIOWkp+mbhCB3cm90ZToNCj4g
+SGksDQo+IA0KPiAgICAgSSBjb21waWxlIHRoZSBrZXJuZWwgb3B0aW9ucywgd2l0aG91dCBhbnkg
+c3BlY2lhbCBvcGVuIHRoZSBERUJVRw0KPiBvcHRpb25zLg0KPiAgICAgQnV0IHRoZSBjb21waWxl
+ZCBLTyBtb2R1bGUgc2l6ZSBpcyB2ZXJ5IGJpZy4NCmRlYnVnIHN5bWJvbHMgYXJlIGVuYWJsZWQg
+YnkgZGVmYXVsdC4gVGhlIC5rbyBpbiB0aGUga2VybmVsIHRyZWUgaXMNCnF1aXRlIGJpZywgYnV0
+IHRoZSBvbmUgdGhhdCBlbmRzIHVwIGluIHRoZSAuaXBrIG9yIG9uIHRoZSByb290DQpmaWxlc3lz
+dGVtIHNob3VsZCBiZSBzbWFsbC4NCiANCi0gRmVsaXgNCg==
+
+------=_001_NextPart628241108163_=----
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charse=
+t=3DUTF-8"><style>body { line-height: 1.5; }blockquote { margin-top: 0px; =
+margin-bottom: 0px; margin-left: 0.5em; }body { font-size: 10.5pt; font-fa=
+mily: =E5=BE=AE=E8=BD=AF=E9=9B=85=E9=BB=91; color: rgb(0, 0, 0); line-heig=
+ht: 1.5; }</style></head><body>=0A<div><span></span>Hi,</div><div><span st=
+yle=3D"color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);">&nbsp; &n=
+bsp;&nbsp;</span></div>=0A<div><span style=3D"color: rgb(0, 0, 0); backgro=
+und-color: rgba(0, 0, 0, 0);">&nbsp; &nbsp; But sometimes, &nbsp;.ko not i=
+n menuconfig option.</span></div><div><span style=3D"color: rgb(0, 0, 0); =
+background-color: rgba(0, 0, 0, 0);">&nbsp; &nbsp; It's in the kernel_menu=
+config option.</span></div><div><span style=3D"color: rgb(0, 0, 0); backgr=
+ound-color: rgba(0, 0, 0, 0);">&nbsp; &nbsp; So is no through ipk processi=
+ng.</span></div><div><span style=3D"color: rgb(0, 0, 0); background-color:=
+ rgba(0, 0, 0, 0);">&nbsp; &nbsp;</span></div><div><span style=3D"color: r=
+gb(0, 0, 0); background-color: rgba(0, 0, 0, 0);">&nbsp; &nbsp; There is n=
+o such problem in OpenWRT 15.05</span></div><div><span style=3D"color: rgb=
+(0, 0, 0); background-color: rgba(0, 0, 0, 0);"><br></span></div><blockquo=
+te style=3D"margin-Top: 0px; margin-Bottom: 0px; margin-Left: 0.5em"><div =
+style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm 0cm =
+0cm"><div style=3D"PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 12px;=
+FONT-FAMILY:tahoma;COLOR:#000000; BACKGROUND: #efefef; PADDING-BOTTOM: 8px=
+; PADDING-TOP: 8px"><div><b>From:</b>&nbsp;<a href=3D"mailto:nbd@nbd.name"=
+>Felix Fietkau</a></div><div><b>Date:</b>&nbsp;2019-10-31&nbsp;17:24</div>=
+<div><b>To:</b>&nbsp;<a href=3D"mailto:lxliu@ikuai8.com">=E5=A4=A7=E9=9B=
+=84</a>; <a href=3D"mailto:hauke@hauke-m.de">Hauke Mehrtens</a>; <a href=
+=3D"mailto:openwrt-devel@lists.openwrt.org">openwrt-devel</a></div><div><b=
+>Subject:</b>&nbsp;Re: [OpenWrt-Devel] [PATCH-19.07] build: fix module str=
+ip invalid</div></div></div><div><div>On 2019-10-31 09:19, =E5=A4=A7=E9=9B=
+=84 wrote:</div>=0A<div>&gt; Hi,</div>=0A<div>&gt; </div>=0A<div>&gt; &nbs=
+p; &nbsp; I compile the kernel options, without any special open the DEBUG=
+</div>=0A<div>&gt; options.</div>=0A<div>&gt; &nbsp; &nbsp; But the compil=
+ed KO module size is very big.</div>=0A<div>debug symbols are enabled by d=
+efault. The .ko in the kernel tree is</div>=0A<div>quite big, but the one =
+that ends up in the .ipk or on the root</div>=0A<div>filesystem should be =
+small.</div>=0A<div>&nbsp;</div>=0A<div>- Felix</div>=0A</div></blockquote=
+>=0A</body></html>
+------=_001_NextPart628241108163_=------
+
+
+
+
+
+
+
+--===============5351643136661774921==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5351643136661774921==--
+
+
+
+
+
+

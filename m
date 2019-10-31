@@ -2,76 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA30CEB1BB
-	for <lists+openwrt-devel@lfdr.de>; Thu, 31 Oct 2019 14:58:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E67EFEB21F
+	for <lists+openwrt-devel@lfdr.de>; Thu, 31 Oct 2019 15:07:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=nEJkWRC2sFOlR9CPmoVDUX/JUfYwiL5jQG862Ckqwvk=; b=jdsIrRETCAP6xH7uFzIFYrLcXj
-	LiTRd5EGUgcK+S6pIyUR1YdeyOiTtElabCF5/MedCqT0wSg8Vd2zrJLlav5z6Ji/rvIRxsSVLm0QM
-	CkOkAIrNuAJp3MxGOEx0Oy0blrDK4Oy/6qTGwyThO4JfEKGZS8egTjbGTb+5GBYdRfNCVuhTi3nzE
-	0HzyWeFYmTol6vkf1WNI6gq2SYbJ4qPXTO9OczjL1H6j+qOZA3tp3vnqHwOK6Qz6iMv7vjYRluZBS
-	kdZWeVoUaYCPMMU0X5kWnqlaaJt6ciOlIxzPFAOuvoVFJFjwpV3OxhwQIAO5jGxPwc53iOWkgN6b+
-	+NW9Nj7A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cz2mr91VMFfKROJdDE9I8n2zup2Z+6DUP4WhCdPByo0=; b=qROuueucA63n/z
+	mU2fgegAqJtIuDlC0/ILLWeBBeI8zaK/KKkb4EBs0hQK9xSbfWMbfBn/JSIlc/aYF3gICyqDt6i4o
+	1CSOXxojpopyxjLl1oRuKG47M1y8v/QZZz3FqQFg5DmtXmHfFCh2/CU9Zeu0fzXV2Lwy2mMTcRtOW
+	XVGidJduMSXLjSRKgLtE2Zs7rG8gAt2pO3plnZesaj+Xa5CdnmNYvJFQooIK+BHyp6GcfGmE4lNys
+	8kwmT2H2AJMdjybqW86XcGyQZ588M46hx2w1Mz8QaSsLG/I6Skvfsw6LKP2vUOpgDmVUYYPzLE6nH
+	Cn7CT6xKqP3LTNk3kInQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQAyB-0005qI-PC; Thu, 31 Oct 2019 13:58:35 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1iQB6c-0003SJ-As; Thu, 31 Oct 2019 14:07:18 +0000
+Received: from mx4.wp.pl ([212.77.101.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQAy4-0005pi-RU
- for openwrt-devel@lists.openwrt.org; Thu, 31 Oct 2019 13:58:30 +0000
-Received: by mail-io1-xd41.google.com with SMTP id c6so6775590ioo.13
- for <openwrt-devel@lists.openwrt.org>; Thu, 31 Oct 2019 06:58:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=swlVy/cagugYMRqZVVRIpNknbjHbp/0l9aaQXAxiYZ8=;
- b=ikyiv+hTnDsZsTCc1rSQajpiXHNLVvgNl59b7id2Az5XecOv4GKcsdsrlEeFQ100By
- ExGEPvBrcTkK4zA0ZdzCry4Drt0DkwVWbKkxvv07NxyPuAgMXIuN+zMTvf01pi1qNTjZ
- T4Re70wx6Wk+5YAQEBHPEGttYFI5VaPW407B7niUF/dXfnzgieT0iklIXKvJTinwOyOf
- Z2IkfAWa+lOVQqotqPgWtGGOKe4/7l02rLO7MfXOyTxFrRrHw+8Ele16fowZL4smg0Ak
- dcUuak21Os4C7LCTHRDDlTencPM/uAW+wAI650+njpHAXzUhPkIcaFhdKoPekJsvlg2+
- 3X/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=swlVy/cagugYMRqZVVRIpNknbjHbp/0l9aaQXAxiYZ8=;
- b=sKu2S+M0epeWzSkgbkBCmzbUBdsBS4tLdnkaBHwynbsbABkwh7IoR5LF7KzNr24EC9
- cYycKqtpjXtSq68VfkhHV6hgbBaI+QEIvg0D2SUnT88AIKYiWMpCP4nHzErRKEXwQYAw
- IXk/cpDMNtlaQcmCD6XQT4SDPRts9+rLbYXFZBO4i43xiRIBYX6YIaEMBoIZF1kgJiJV
- JqpGmjKvAJJ84Yu9IY9AJS0DRCHQ+rNPue5DdiDX9/MD2dl3xf0rSzwGH2BtCqIBHvD9
- Kc+U13ZeIIrDEPZY2Ln6H/wXKK9wOqQHMTCXsVjGKSAWApx5axTYik8qIk66DKHFBnkI
- 9cGg==
-X-Gm-Message-State: APjAAAVbUAe8clnWtZ9Nfs3AD6e0x7EDEXA0bS59jTjaBWN4JD6rrXJG
- UygXVHNBcVoD9g4lAt6Z+wJJqPN2giW6GEF+Xzu2jg==
-X-Google-Smtp-Source: APXvYqy0/gDl00dXD9hAighDO0sw2NLPgTdAaYzq7oMpv4O4fOSToCySbm+Z9bBrLwMcc6GAGGiY0IlpIxVPARi2Ytw=
-X-Received: by 2002:a02:cac5:: with SMTP id f5mr619025jap.113.1572530307391;
- Thu, 31 Oct 2019 06:58:27 -0700 (PDT)
+ id 1iQB6Q-0003RS-FG
+ for openwrt-devel@lists.openwrt.org; Thu, 31 Oct 2019 14:07:08 +0000
+Received: (wp-smtpd smtp.wp.pl 14501 invoked from network);
+ 31 Oct 2019 15:07:01 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1572530821; bh=LVztN8USmbblyXqTvZiYvMyJXyK41tQmh/V0zXn/xSE=;
+ h=From:To:Cc:Subject;
+ b=OU5NVcS5hZzbBZSPhh+yUX3DI1oZkLu1y72DoKktqOYBaXfgfMtn/B6DZeA3X2nTZ
+ 4lLRDDnew2s0Du1pcKJ+pFc+LGE4YU7ws5sm5ykJmquZxCNWuUzzI/mzu06cWX2IA/
+ ifF9aE7gkeXc3XZ7KtBsmid/husWYSMRHumgXyho=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <john@phrozen.org>; 31 Oct 2019 15:07:01 +0100
+Date: Thu, 31 Oct 2019 15:06:59 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: John Crispin <john@phrozen.org>
+Message-ID: <20191031150659.5ee834fe@kosmio.komorska>
+In-Reply-To: <6e8a123e-7f11-b260-7581-7f4a853ff6f7@phrozen.org>
+References: <20191030100727.45e6a165@kosmio.komorska>
+ <6e8a123e-7f11-b260-7581-7f4a853ff6f7@phrozen.org>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-References: <20190828173754.31387-1-kristian.evensen@gmail.com>
-In-Reply-To: <20190828173754.31387-1-kristian.evensen@gmail.com>
-From: Kristian Evensen <kristian.evensen@gmail.com>
-Date: Thu, 31 Oct 2019 14:58:16 +0100
-Message-ID: <CAKfDRXgHjS2QD6kBDOn9qRWrXn9sq6JC7HTCFN0PdnVBU3uWzQ@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+X-WP-MailID: 0e74b4ad4255f8c84096f1054f0f05cd
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 000000A [sUPU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_065828_889907_180ECFAD 
-X-CRM114-Status: GOOD (  19.98  )
+X-CRM114-CacheID: sfid-20191031_070707_032900_FA13FE87 
+X-CRM114-Status: UNSURE (   5.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ no trust [212.77.101.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kristian.evensen[at]gmail.com)
+ provider (michal.cieslakiewicz[at]wp.pl)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -80,8 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [RFC] firewall3: zones: Use ipsets instead of
- interfaces in zone rules
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: add support for Netgear
+ WNR2200
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,66 +83,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi all,
+> 
+> Hi,
+> sorry for the foo, patch fails to apply, kindly rebase/resend it
+> 	John
+> 
 
-On Wed, Aug 28, 2019 at 7:37 PM Kristian Evensen
-<kristian.evensen@gmail.com> wrote:
->
-> firewall3 currently creates one rule for each interface that is a member of a
-> zone. On for example devices with multiple interfaces, the current firewall3
-> behavior quickly leads to a lot of rules. In order to reduce the number of
-> rules, this patch replaces the per-interface rules with ipset matches (if ipset
-> is available). Since 2011, ipset has supported the set type "hash:net,iface".
-> By adding (and matching on) on pairs consiting of the v4/v6 any-address and an
-> interface name, we get the same behavior as the current interface-rules.
->
-> After applying this patch (and assuming ipset is available), the following
-> actions are performed when a zone is created:
->
-> * We creates (allocate) an ipset of type "hash:net,iface" for each zone. The
-> name follows the following format: zone_<zone name>_<4/6>_set.
-> * If creating a set fails, then we ignore the zone. This is something we can
-> change, but my reason for this behavior is to have consistent firewall rules.
-> I.e., zone-rules either match on ipset or interface names, and not a mix.
-> * Each set is populated with pairs consisting of the IPv4/IPv6 any-address and
-> an interface name, for example "0.0.0.0/0, eth0.2".
-> * Instead of one rule per device, a single rule is created matching on the
-> ipset.
-> * The check used to select the OUTPUT/PREROUTING-chain when adding rules to the
-> raw-table has been moved to print_interface_rules_{default,set}. The motivation
-> behind this move was to avoid changing print_interface_rule() too much. As far
-> as I can see (and have tested), the logic for selecting chain/creating the
-> rules is the same as before.
->
-> Because the change introduced by this patch is quite intrusive and I am sure
-> there will be comments/disagreements/suggestions, I have sent this patch as an
-> RFC. One thing that I am aware of and will fix before the final submission, is
-> to add support for printing ipsets. Right now "fw3 print" prints per-interface
-> rules.
+Hello John,
 
-I have had the chance to run this patch in production for a while, and
-thought I should share my experiences. All in all, switching to ipsets
-seems to work well and, with one exception, I have not found any
-configurations or configuration steps that break. Also, in some of my
-setups, the number of iptables rules are greatly reduced. While I
-haven't measured any performance improvements, fewer rules makes the
-rule set easier to work with. The need to reload the firewall on ifup
-is also removed (it is sufficient to update the set), which removes an
-annoying gap or interruption in traffic on some of the devices I am
-running.
+That's strange... Anyway, I rebased it again for master (fresh commit
+df60a0852caf21de6684d38107f32a4eebc4579b) but it produces exactly the
+same patch as v2. Tested and applied without problems on clean clone as
+well...
 
-What (currently) breaks is wildcard interface names, ipset currently
-has no wildcard-support. I have submitted a patch upstream adding
-support for wildcard naming, and have received positive feedback but
-no final decision.
-
-BR,
-Kristian
+Regards
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

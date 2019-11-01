@@ -2,115 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 145A1EC39C
-	for <lists+openwrt-devel@lfdr.de>; Fri,  1 Nov 2019 14:24:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB09EEC484
+	for <lists+openwrt-devel@lfdr.de>; Fri,  1 Nov 2019 15:18:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=gGt3mdneOjNWlnRdj2hpQ0a2DtL4EnAHzRS2CvGwAuk=; b=SIg
-	BPIeRWzncugfZck48MQgvTNgORzUVTB2N2TEB8SKdiAzG2Ai3sLNrp2TK4a1MPQgKe9ZO8QemTHJZ
-	JaZ7OmZeg3WYJ1iFmLMLCWuuYtKA8K42aXgR9zDuhktRxp9P4+2te0+0kh8IEXRVUn5XIXzKWayuj
-	/MNKujWhTzaAgzx9vACfdlH60ymcow0ebMJKQxR2jBHcwlNq5S0hk8/j940ZHF5ELUih8pgIqTLa/
-	8saRIQv0ZNAwmWobKzhduQ6SXxFAQF8nGxRLbK7TGHAZBwyxGk92T5Wlbul4VN5OhvYITqroDn02d
-	KkbSgxki97euSJcS8KAK1qOKZE9cdLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yBSg7LYiL4z74XAKTMAQKLy2t6RFa8jh+eFWKU7t8zU=; b=Shp7DEBbym4KhK
+	AjlG4Vf6wWBsKpvnGyQBX7AUySgpOAcMYtV1ZfdWalGuzFoBhNYXTG+DzFAknerRKqruwwWRbDkMj
+	P8ymBIQZYWs0AqNpoCESMGGABZluuLJO98joU5aFdS0atB4JRIrcEDCqQV4KPeeqAJ3HrlLhE5dTo
+	8JZmn7dS3ncbNTmW8rsrxp6xRTpcdSd2JIIEr0IW/GpYSrXU/58sLbvR3Ozj44ToKSBYbu/0k+PKN
+	QAQ2HyfSdP0A8/7fboW1qzxb4G2A9xghU0uPJjy/OLSvzbzAnnu3OqxRIuIt199/DFMrqWDLAyO9e
+	aKf7vygOugDMOEsvcsSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQWuA-0005l7-5Y; Fri, 01 Nov 2019 13:23:54 +0000
-Received: from mout-u-107.mailbox.org ([2001:67c:2050:1::465:107])
+	id 1iQXlK-0007w3-Lv; Fri, 01 Nov 2019 14:18:50 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQWu3-0005kI-0k
- for openwrt-devel@lists.openwrt.org; Fri, 01 Nov 2019 13:23:49 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-u-107.mailbox.org (Postfix) with ESMTPS id 474NDn2dwYzKnpp;
- Fri,  1 Nov 2019 14:23:37 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id cPw4VlqWk5o2; Fri,  1 Nov 2019 14:23:33 +0100 (CET)
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-To: LEDE Development List <openwrt-devel@lists.openwrt.org>
-Message-ID: <d67b436d-8bdd-e6e2-c92c-40e9c21ccd4a@hauke-m.de>
-Date: Fri, 1 Nov 2019 14:23:19 +0100
+ id 1iQXlA-0007vY-Lw
+ for openwrt-devel@lists.openwrt.org; Fri, 01 Nov 2019 14:18:41 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id q70so9488113wme.1
+ for <openwrt-devel@lists.openwrt.org>; Fri, 01 Nov 2019 07:18:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bcsDR5smmqR57A4ZLQPr2sK83/04cSntexgmDJqjhX0=;
+ b=l30La+EnDcOasWW8QuFKplxYQXf5bnJIM5llVUJQPv6NipqRcuMic7WIW/ktt5UN7y
+ 3Z2LTfRK9fR+fbev/QsO3l4Tsi1f8OfDp0dmKtIVM2BrmmfJ5kcafLUkvZs8ifaHeRVM
+ Fgn+5FXMIFW6VI5PD4urtIZpaQINZc+am3psXeDxYRAxYB1Gl6iZE2YFu4+mgWBuRvf0
+ KnPm8+vWjc5VkNbRLuTax1W+btSHLyjPDWBF8wWa5ji4vXbaMxFX+B/s3vDHt4J8cBnv
+ SOexFI/ryX6+tpDw3oPJvfD0yRkU+JXOWaR90JVQ9ylIbofybyZlsThcAx2C4IftqH2I
+ bR6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bcsDR5smmqR57A4ZLQPr2sK83/04cSntexgmDJqjhX0=;
+ b=e1oV9QT8qEo5DLn8fHLF6btCXgFYmPSrECuvsHY9pimIvkmYbRbqvG3kSfrqOg+bZA
+ aOczWLzHRAlUp0O5TB0GwOz131HpjFCY/dQVjpZB6qHwk9E1SDq2/98p2h8upej+d+D3
+ 2/DLRjJdFWHJxUl4dC/fCz5pNwWkN+HsaAXmxs75X4I7Kmon2pxWDPS2PeS3ZR1pMMNi
+ /FFaKXJ+dfI6Io0BKcGGR4XKXNsrJiTGHHW5g42ERUsDk6RLpnR/0hVU7Rel10/ORJKw
+ Yc7cTKvA40iBLrvPy6Lk7oZt9wbzH6+u0czpogvESOMNf1DLr7/5uVVFJx25V8h5MttS
+ v3kg==
+X-Gm-Message-State: APjAAAWQWMXzD4HO7loFQKLl19esv6/jz20zL/jQC/LcEuE2lLnQUYfC
+ MWzl/zo4AtmR2v8djj9TRidgCVc7KzI=
+X-Google-Smtp-Source: APXvYqyYG3kAFYpvUZw0Rz6lvyUiePQDOHSRg/IMUEuvYclNTnhpjCWoNGCKtLYbq0JNiyBfhgYfJQ==
+X-Received: by 2002:a7b:c5c9:: with SMTP id n9mr10941584wmk.94.1572617918209; 
+ Fri, 01 Nov 2019 07:18:38 -0700 (PDT)
+Received: from localhost.localdomain ([31.147.208.18])
+ by smtp.googlemail.com with ESMTPSA id s21sm10605619wrb.31.2019.11.01.07.18.37
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1 cipher=AES128-SHA bits=128/128);
+ Fri, 01 Nov 2019 07:18:37 -0700 (PDT)
+From: =?UTF-8?q?Tomislav=20Po=C5=BEega?= <pozega.tomislav@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  1 Nov 2019 15:18:35 +0100
+Message-Id: <1572617915-30768-1-git-send-email-pozega.tomislav@gmail.com>
+X-Mailer: git-send-email 1.7.0.4
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_062347_363544_9735FBA2 
-X-CRM114-Status: GOOD (  22.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191101_071840_719953_B698E204 
+X-CRM114-Status: UNSURE (   4.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:32e listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pozega.tomislav[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] CVE-2019-15513 analysis
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] iwinfo: add several QC/A device ids
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,180 +97,36 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: yszhou4tech@gmail.com, =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- teamSeri0us360@gmail.com
-Content-Type: multipart/mixed; boundary="===============2181652889289516937=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2181652889289516937==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="KAZKaHIVaLn6pqTY9OXaR2g5H2dnsMZmA"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---KAZKaHIVaLn6pqTY9OXaR2g5H2dnsMZmA
-Content-Type: multipart/mixed; boundary="lhg5MsQF4R3fzKxFRbVg32OzfAUShzHym";
- protected-headers="v1"
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: LEDE Development List <openwrt-devel@lists.openwrt.org>
-Cc: yszhou4tech@gmail.com, =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- teamSeri0us360@gmail.com
-Message-ID: <d67b436d-8bdd-e6e2-c92c-40e9c21ccd4a@hauke-m.de>
-Subject: CVE-2019-15513 analysis
-
---lhg5MsQF4R3fzKxFRbVg32OzfAUShzHym
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-At the prpl Summit 2019 I saw a slide with 4 CVEs which are filled
-against OpenWrt and there was one listed I was not aware of at that
-time, CVE-2019-15513.
-
-According to the CVE details page it was filled against OpenWrt on
-23.8.2019 and OpenWrt was not informed before or after this was filled
-against OpenWrt, we only saw this by luck.
-https://www.cvedetails.com/cve/CVE-2019-15513/
-
-The details are "described" in this pdf file which is partly in Mandarin:=
-
-https://github.com/TeamSeri0us/pocs/blob/master/iot/morouter/motorola%E8%=
-B7%AF%E7%94%B1%E5%99%A8%E6%96%87%E4%BB%B6%E8%A7%A3%E9%94%81%E6%BC%8F%E6%B=
-4%9E.pdf
-This paper only looks at the disassembled binary even when the source is
-open source.
-Petr (ynezz) tried to reproduce this, but was not able to do so with a
-recent OpenWrt. Later we found that this problem was fixed in OpenWrt
-15.05.1 and later more than 4 years ago.
-
-The problem was already reported here, but not as a security problem:
-https://github.com/openwrt/packages/issues/1231
-
-This problem was fixed by Yousong in this commits over 4 years ago:
-https://git.openwrt.org/?p=3Dproject/uci.git;a=3Dcommitdiff;h=3D19e29ffc1=
-5dbd958e8e6a648ee0982c68353516f
-
-This commit allows longer lines:
-https://git.openwrt.org/?p=3Dproject/uci.git;a=3Dcommitdiff;h=3D4b52bdbdb=
-ec3c84afeab5c3167e69f7c6012b2f3
-
-
-The problem was that uci_open_stream() opens the given filename and also
-locks it with flock() so that other processes can not use it. In this
-case the lock on the file is not released which causes a dead lock in
-uci and something hangs, no code executing or something similar
-possible, just one process hangs. This can normally only be called by roo=
-t.
-
-UCI makes use of setjmp() and longjmp() for error handling. When an
-error occurs it jumps back to the save point. This is encapsulated in
-UCI_TRAP_SAVE() and UCI_THROW(). longjmp() saves all the registers, so
-variables which are stored in memory are not restored, but variables
-stored in registers are restored to their old values.
-
-When uci_getln() is called with a string of more than 4096 bytes it runs
-into an error case and calls UCI_THROW() which jumps back to the last
-save point, in this case to uci_load_delta_file(). In this description
-it gets called in this way:
-uci_load_delta_file() -> uci_parse_delta() -> uci_getln()
-
-uci_load_delta_file() looked liked this:
----------------------------------------------------------------
-/* returns the number of changes that were successfully parsed */
-static int uci_load_delta_file(struct uci_context *ctx, struct
-uci_package *p, char *filename, FILE **f, bool flush)
-{
-	FILE *stream =3D NULL;
-	int changes =3D 0;
-
-	UCI_TRAP_SAVE(ctx, done);
-	stream =3D uci_open_stream(ctx, filename, NULL, SEEK_SET, flush, false);=
-
-	if (p)
-		changes =3D uci_parse_delta(ctx, stream, p);
-	UCI_TRAP_RESTORE(ctx);
-done:
-	if (f)
-		*f =3D stream;
-	else if (stream)
-		uci_close_stream(stream);
-	return changes;
-}
----------------------------------------------------------------
-https://git.openwrt.org/?p=3Dproject/uci.git;a=3Dblob;f=3Ddelta.c;h=3D459=
-d2c7ddfd5d4443c24c02a76952d40319bb871;hb=3D556215152a216c179fe2ca7db9b1de=
-7036ceda60#l289
-
-When uci_parse_delta() calls UCI_THROW() it jumps to done. The problem
-is that stream is stored in a register and not on the stack because the
-compiler thinks this is ok. Then stream will be restored to the original
-value which is NULL and we loose the reference to the original stream
-file pointer. uci_close_stream() will not be called and the file pointer
-is not unlocked and also not closed.
-
-
-This problem was fixed in OpenWrt 15.05.1.
-The CVE says it does not need authentication, as far as I understand
-this root permissions are needed to exploit this problem, it could also
-be possible over Luci.
-
-It could be that these Motorola CX2L MWR04L and MWR03 devices where this
-problem was found use UCI in a different way in their vendor FW which
-forked OpenWrt, but I do not have these devices, the source code or the
-binaries of these devices.
-
-If you find a security problem in OpenWrt please get in contact with us
-at contact@openwrt.org preferable before publishing it, but at least
-after you published it. I do not like it, when a CVE is just filled
-without informing us. Do not assume that some random vendor in which
-firmware you found this problem reports the problem back to us, normally
-they only fork OpenWrt and do not care about upstream OpenWrt. If you
-find a problem in OpenWrt please talk to OpenWrt!
-
-If you see a CVE against OpenWrt and there is no communication on the
-normal OpenWrt mailings about it, please ask on the public mailling list
-if someone knows about this, this is already the 2. CVE filled against
-OpenWrt where we did not got informed at all.
-
-Hauke
-
-
---lhg5MsQF4R3fzKxFRbVg32OzfAUShzHym--
-
---KAZKaHIVaLn6pqTY9OXaR2g5H2dnsMZmA
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl28MccACgkQ8bdnhZyy
-68e0Lgf/WiwUr1A4BuEYaYLYd/r6qxnAktCaSV/GsM6JNi4jYAaLxPNVKdtZ9utp
-WrDKwcNyL/x0tNRScn4CZ2TH0hxX68NmqG19D/lz8qMt2e7I7VEXnwE2fBe6c9ms
-zRJkQHrtoRZa0rF92qho316PlHxIjyMYlV6WGlTYVZEa9uw80i9g4opGezpp6FiI
-lmpo/cbDxxl4zLujwtaor8Blv0BfetOs+gxtCKuC5Yc34jfc5GZGGtJVvVAAtmWh
-QtLbPu3dsLRfaecwu2ny34/SWQUh3+z6OLglPAylBZZRXQLY4eRaYcgObyrbFhQL
-8r/jHTJbRkkbIskOxCLjWhctM4Dvow==
-=/OEu
------END PGP SIGNATURE-----
-
---KAZKaHIVaLn6pqTY9OXaR2g5H2dnsMZmA--
-
-
---===============2181652889289516937==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2181652889289516937==--
-
+QWRkIGRldmljZSBpZHMgZm9yIEFSOTQ2MiwgUUNBOTg2MiwgUUNBOTg4MCB2MSBtUENJZSBjYXJk
+cyBhbmQKVWJpcXVpdGkgYnJhbmRlZCBRQ0E5ODgwIHYyIFBDSSB3aWZpIGZvdW5kIGluIExpdGVC
+ZWFtIDVhYy4KClNpZ25lZC1vZmYtYnk6IFRvbWlzbGF2IFBvxb5lZ2EgPHBvemVnYS50b21pc2xh
+dkBnbWFpbC5jb20+Ci0tLQotLS0gYS9oYXJkd2FyZS50eHQKKysrIGIvaGFyZHdhcmUudHh0CkBA
+IC0xLDYgKzEsNyBAQAogIyBsaWJpd2luZm8gaGFyZHdhcmUgZGF0YWJhc2UKICMgdmVuZG9yIGlk
+IHwgZGV2aWNlIGlkIHwgc3Vic3lzdGVtIHZlbmRvciBpZCB8IHN1YnN5c3RlbSBkZXZpY2UgaWQg
+fAogIyB0eHBvd2VyIG9mZnNldCB8IGZyZXF1ZW5jeSBvZmZzZXQgfCAidmVuZG9yIG5hbWUiIHwg
+ImRldmljZSBuYW1lIgorMHgwNzc3IDB4MTFhYyAweDA3NzcgMHhlN2Y5ICAgIDAgICAgICAwICAi
+VWJpcXVpdGkiICJMaXRlQmVhbSA1QUMiCiAweGZmZmYgMHhmZmZmIDB4ZmZmZiAweGIxMDIgICAg
+MCAgICAgIDAgICJVYmlxdWl0aSIgIlBvd2VyU3RhdGlvbjIgKDE4VikiCiAweGZmZmYgMHhmZmZm
+IDB4ZmZmZiAweGIyMDIgICAgMCAgICAgIDAgICJVYmlxdWl0aSIgIlBvd2VyU3RhdGlvbjIgKDE2
+RCkiCiAweGZmZmYgMHhmZmZmIDB4ZmZmZiAweGIzMDIgICAgMCAgICAgIDAgICJVYmlxdWl0aSIg
+IlBvd2VyU3RhdGlvbjIgKEVYVCkiCkBAIC0xNTIsNyArMTUzLDEwIEBACiAweDE2OGMgMHgwMDMz
+IDB4MTliNiAweGQwMTQgICAgMCAgICAgIDAgICJNaWtyb1RpayIgIlIxMWUtNUhuRCIKIDB4MTY4
+YyAweDAwMzMgMHgxOWI2IDB4ZDA1NyAgICAwICAgICAgMCAgIk1pa3JvVGlrIiAiUjExZS01SG5E
+cjIiCiAweDE2OGMgMHgwMDMzIDB4MTliNiAweGQwMTYgICAgMCAgICAgIDAgICJNaWtyb1RpayIg
+IlIxMWUtMkhQbkQiCisweDE2OGMgMHgwMDM0IDB4MTdhYSAweDMyMTQgICAgMCAgICAgIDAgICJB
+dGhlcm9zIiAgIkFSOTQ2MiIKIDB4MTY4YyAweDAwM2MgMHgwMDAwIDB4MDAwMCAgICAwICAgICAg
+MCAgIlF1YWxjb21tIEF0aGVyb3MiICJRQ0E5ODgwIgorMHgxNjhjIDB4MDAzYyAweDE2OGMgMHgz
+MjIzICAgIDAgICAgICAwICAiUXVhbGNvbW0gQXRoZXJvcyIgIlFDQTk4ODAiCisweDE2OGMgMHgw
+MDNjIDB4MWE1NiAweDE0MjAgICAgMCAgICAgIDAgICJRdWFsY29tbSBBdGhlcm9zIiAiUUNBOTg2
+MiIKIDB4MTY4YyAweDAwM2MgMHgxOWI2IDB4ZDAzYyAgICAwICAgICAgMCAgIk1pa3JvdGlrIiAi
+UjExZS01SGFjVCIKIDB4MTY4YyAweDAwNDYgMHgxNjhjIDB4Y2FmZSAgICAwICAgICAgMCAgIlF1
+YWxjb21tIEF0aGVyb3MiICJRQ0E5OTg0IgogMHgxNjhjIDB4MDA1MCAweDAwMDAgMHgwMDAwICAg
+IDAgICAgICAwICAiUXVhbGNvbW0gQXRoZXJvcyIgIlFDQTk4ODciCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlz
+dApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

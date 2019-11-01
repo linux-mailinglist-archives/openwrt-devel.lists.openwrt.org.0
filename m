@@ -2,70 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E424FEBC5E
-	for <lists+openwrt-devel@lfdr.de>; Fri,  1 Nov 2019 04:29:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 027B4EBC60
+	for <lists+openwrt-devel@lfdr.de>; Fri,  1 Nov 2019 04:30:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=85VD/gW1KjMxniC7wJEGrM7C6BbKsVYyoRlBY6qnjpo=; b=b66EdmHEaAHmMd
-	jHyMJBvpIlUhrOn4VTKOEyiZZBldXcOZoT+scaNn6V+mhdVaqsdR4JYEPgj/0xV5FzaytkWsj3hBr
-	jNkEwntswz4zU1naWWK18nvqtQTcnIUIcfH9K3cCRKSNFNUEJjRSQQXvSFami8HS/2FiiKtJr6Ltf
-	3nmjbiIttUf0YIHDoD0dSQ9s9awEJH5sJthRda+boTvoY27RsqI/ZqFTwM0JlYF1uNCfSJnUOkj7r
-	ulYRYEamWPiQjt7sY029AW8zlHqU3X1vQjBGroTg/xi/rw1c/bdgFBPfccv59B3H3Ee0GEAvbGhgk
-	orfYV5Hh3FjNM8fShEfQ==;
+	List-Owner; bh=BExI+BcnuR3xbDfRMW63yO3k+DW3E6VvG3cjydCSfNk=; b=pLRLL7l1DwfFK9
+	Zgq9iGIduBw5oW3PcTHXjRzLhjA6gVyqI6w7bv1kHZp6ia7Pjb4AWBQxDR90b0UM1jXaQ/nqc4OFv
+	pdLZ3NCBR3AqXmbySthJAUPWdoLeua1CHLMcDDqIYm7uEVJgEu5OCobdwg5unLvHbCGGh1WX0Q6pO
+	I5BaLw1RcUUPG+dLs5pnjt34cS6NrcCRsMerm3MqeKkqFPAOMQGh4shPljbltfUZXLTzMRV7KtU65
+	BYrABxrWDe4nD52C6fzxBteLsDLJAbVcGWlf8JYacGH5xd914gdVMTzOcaIwCiuAVVZGhtzEurIQ/
+	jZ8rtRktTAF3RtiZeScw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQNdA-00052l-3k; Fri, 01 Nov 2019 03:29:44 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1iQNdR-0005KY-9u; Fri, 01 Nov 2019 03:30:01 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQNcl-0004v3-Nn
- for openwrt-devel@lists.openwrt.org; Fri, 01 Nov 2019 03:29:21 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z4so5430pfn.12
- for <openwrt-devel@lists.openwrt.org>; Thu, 31 Oct 2019 20:29:19 -0700 (PDT)
+ id 1iQNcu-00054r-Tn
+ for openwrt-devel@lists.openwrt.org; Fri, 01 Nov 2019 03:29:30 +0000
+Received: by mail-pf1-x441.google.com with SMTP id r4so6041396pfl.7
+ for <openwrt-devel@lists.openwrt.org>; Thu, 31 Oct 2019 20:29:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=+2+i7s22WMZbAIBwUyjrCObqPfyOeYAkpYGrrpKEmSo=;
- b=ZrV1Wm8LPrIKIgWQ1SxLSmakZxluMsV1lzG0BcLepph/zEc914IG2kTUCGD7EkYNkg
- wb33YbJXBtUDJUfBG3qRj3JFuKARFOlJEffgB/98pwXMzRvlMN8/01g6TAKCes3/MkIc
- WVTob1RhjdXUNxlS4Eoj6SFX+9ul90fVGpks2TBPC8T5GIE3Ew7knID3PvvHqqpelVu6
- bsybBhMitC5tk9+PxIEF287w3UibhzPtC9Hi6wFzSlpLPcedPmvmFYuDjB3A8/Uu2RdS
- maFFQOLIMraEzHIxt2hz/oKGDSCNEGbGZhWMayUbpKGDLFxMJEP+1mtyk2pU3RtV4Y7T
- eB2A==
+ bh=VFo+XNV1wNTbn+ryBtm7FdlIL5r2GsbkNy/GwfFu13A=;
+ b=B+HCctZXK2rL3U1mQJR0gf1mE4lukY0oN7C0KSJcdPupLRHip2uW342XzDpH4uL5QA
+ Sk5HB1LEmzCHSIAjZVxSng5weLj6nhHiUveiVlP3AItZVc7VJjI+vcPj7qjUWWUEE0D/
+ 6kQ6/wSu2eS0MrrmJAvOvX7x+Zikb85KqhGyTe3oIiflNDJeRf8gY2V6XqGGaV7QljWn
+ x860++3stCEqLXLAEBE/61Xq5Xu0JS6pLWpBO4K24Q+g2RC5/q0KhxyMhYRr028LmMPl
+ cL1B5mnxTol6+tIo+wXry4wPhyVWpsxbLytHtvd1CQlh/OajRDiJGc4b5rphla1nGhCE
+ IpIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+2+i7s22WMZbAIBwUyjrCObqPfyOeYAkpYGrrpKEmSo=;
- b=QtqCRTyZhNJTng26ZtZ6NlRNeOZo7P9bvKu17QeaHfiwXK4wZG6rwMFssZpi8YEP7Y
- eAs7L1ZXFv8A44Unup/c2+8GMlEoY/tWuCD36DUB68PDQrxtB+28U08UKeQlIJe0sHHx
- Br8bjP6ZQ1V35qpUyRBNw6OC1aAKSP/KztwwT//BaRXLC36cxRm0mZf1U8pW8IViDH6J
- ynOeIXr3C/pkHPed/jVkn6FlhPV4hB84c1dLajwCxfikKVxc1iRH2H7Xgd6Ed85rPyxA
- UdbBzUjTxq3TX5EdgQgL69kRzqt0y2ekfU8XEkUOBEEfNP5VG9M7EN8HS7Wsb5uPciOJ
- nGYQ==
-X-Gm-Message-State: APjAAAWCBnI+dVLKXVlt0BRO8bBVAyKdivsb2SJqtdTAj5iSipK/OTWQ
- jhQ/i1h2ZEsv1wvGMOUiEq81b1QdePw=
-X-Google-Smtp-Source: APXvYqzrOE18JdyrLivRBbnLzjtzF0NSOGMraY1QfriLBIkYOpAvYOM7IeG82lX3FdPn3lrb8l4leg==
-X-Received: by 2002:a63:e84f:: with SMTP id a15mr10736517pgk.309.1572578958592; 
- Thu, 31 Oct 2019 20:29:18 -0700 (PDT)
+ bh=VFo+XNV1wNTbn+ryBtm7FdlIL5r2GsbkNy/GwfFu13A=;
+ b=jXcQ2qzjnpzAW+9KSh4RoPuajLHuEwCzLlucZ6f5wgiut3A8t27ENlpoG/4ptGs0XQ
+ cPpg2m6w6zuh30f6mxi48Hoih1fBqMivm8kHaJ/xFksNtielz84glL20YQJx7sCZc48s
+ YGECNfw1vAh4UDZX6TauKM7oVureEutyoKutKimZcHOIoyw3J7s7nxleVxRrsWMYH5N4
+ DpoMl7UFGXIZlrALOOU2kxYbOSQc+wSEUhnoo3GwFlmLxz+Oe34c79ARRbSBiD9LRGnH
+ x2VuBL1xHsBtZu6Dm9t2EOcY/vBMt99PxLXN0KDYGGEniAsHz7HBkyl2+nEdbwd0fX1l
+ +0bQ==
+X-Gm-Message-State: APjAAAUmKG7JXrEFOjzsPpqojynZEIVXfUwbeHj6vLNKNkVw6EJVSPPU
+ 5VgWA1qp9kL3KdHBC2hplzhkH8sH19c=
+X-Google-Smtp-Source: APXvYqyAWY8glrsAAvh46RdlEtUwwMoxP1foudJFUqHRx3qFAwvUzghnv21zIW18TUa8Hrhf0Eu0cQ==
+X-Received: by 2002:aa7:8d88:: with SMTP id i8mr1231953pfr.88.1572578968214;
+ Thu, 31 Oct 2019 20:29:28 -0700 (PDT)
 Received: from localhost.localdomain ([2001:19f0:7001:2668:5400:1ff:fe62:2bbd])
- by smtp.gmail.com with ESMTPSA id j11sm4667485pfa.127.2019.10.31.20.29.14
+ by smtp.gmail.com with ESMTPSA id j11sm4667485pfa.127.2019.10.31.20.29.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 20:29:18 -0700 (PDT)
+ Thu, 31 Oct 2019 20:29:27 -0700 (PDT)
 From: Chuanhong Guo <gch981213@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri,  1 Nov 2019 11:28:55 +0800
-Message-Id: <20191101032858.19013-2-gch981213@gmail.com>
+Date: Fri,  1 Nov 2019 11:28:57 +0800
+Message-Id: <20191101032858.19013-4-gch981213@gmail.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191101032858.19013-1-gch981213@gmail.com>
 References: <20191101032858.19013-1-gch981213@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_202919_798992_18FC357C 
-X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-CacheID: sfid-20191031_202929_006137_B71113B6 
+X-CRM114-Status: UNSURE (   9.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (gch981213[at]gmail.com)
@@ -88,7 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 1/4] mediatek: fix Unielec U7623 dts in 4.19
+Subject: [OpenWrt-Devel] [PATCH 3/4] mediatek: cosmetic fixes for
+ mt7629-lynx-rfb
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,50 +107,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-remove duplicated pinctrl nodes.
+This patch did the following things:
+1. rename device compatible string
+2. add earlycon into cmdline
+3. add mac address location according to mt7629 eeprom layout
+4. rename mtd partitions
 
 Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
 ---
- .../0227-arm-dts-Add-Unielec-U7623-DTS.patch  | 19 +------------------
- 1 file changed, 1 insertion(+), 18 deletions(-)
+ .../files-4.19/arch/arm/boot/dts/mt7629-lynx-rfb.dts     | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
-diff --git a/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch b/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch
-index 88222908ea..6561e8d5a7 100644
---- a/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch
-+++ b/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch
-@@ -44,7 +44,7 @@ Subject: [PATCH] arm: dts: Add Unielec U7623 DTS
- +};
- --- /dev/null
- +++ b/arch/arm/boot/dts/mt7623a-unielec-u7623-02-emmc.dtsi
--@@ -0,0 +1,366 @@
-+@@ -0,0 +1,349 @@
- +/*
- + * Copyright 2018 Kristian Evensen <kristian.evensen@gmail.com>
- + *
-@@ -324,23 +324,6 @@ Subject: [PATCH] arm: dts: Add Unielec U7623 DTS
- +		};
- +	};
- +
--+	pwm_pins_a: pwm@0 {
--+		pins_pwm {
--+			pinmux = <MT7623_PIN_203_PWM0_FUNC_PWM0>,
--+				 <MT7623_PIN_204_PWM1_FUNC_PWM1>,
--+				 <MT7623_PIN_205_PWM2_FUNC_PWM2>,
--+				 <MT7623_PIN_206_PWM3_FUNC_PWM3>,
--+				 <MT7623_PIN_207_PWM4_FUNC_PWM4>;
--+		};
--+	};
--+
--+	uart2_pins_b: uart@2 {
--+		pins_dat {
--+			pinmux = <MT7623_PIN_200_URXD2_FUNC_URXD2>,
--+				 <MT7623_PIN_201_UTXD2_FUNC_UTXD2>;
--+		};
--+	};
--+
- +	pcie_default: pcie_pin_default {
- +		pins_cmd_dat {
- +			pinmux = <MT7623_PIN_208_AUD_EXT_CK1_FUNC_PCIE0_PERST_N>,
+diff --git a/target/linux/mediatek/files-4.19/arch/arm/boot/dts/mt7629-lynx-rfb.dts b/target/linux/mediatek/files-4.19/arch/arm/boot/dts/mt7629-lynx-rfb.dts
+index f3fadd301a..17ce6046da 100644
+--- a/target/linux/mediatek/files-4.19/arch/arm/boot/dts/mt7629-lynx-rfb.dts
++++ b/target/linux/mediatek/files-4.19/arch/arm/boot/dts/mt7629-lynx-rfb.dts
+@@ -10,7 +10,7 @@
+ 
+ / {
+ 	model = "MediaTek MT7629 reference board";
+-	compatible = "mediatek,mt7629-rfb", "mediatek,mt7629";
++	compatible = "mediatek,mt7629-lynx-rfb", "mediatek,mt7629";
+ 
+ 	aliases {
+ 		serial0 = &uart0;
+@@ -18,6 +18,7 @@
+ 
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
++		bootargs = "earlycon=uart8250,mmio32,0x11002000";
+ 	};
+ 
+ 	gpio-keys {
+@@ -75,6 +76,7 @@
+         gmac0: mac@0 {
+                 compatible = "mediatek,eth-mac";
+                 reg = <0>;
++				mtd-mac-address = <&factory 0x2a>;
+                 phy-mode = "sgmii";
+                 fixed-link {
+                         speed = <1000>;
+@@ -86,6 +88,7 @@
+         gmac1: mac@1 {
+                 compatible = "mediatek,eth-mac";
+                 reg = <1>;
++				mtd-mac-address = <&factory 0x24>;
+                 phy-handle = <&phy0>;
+         };
+ 
+@@ -153,13 +156,13 @@
+ 			};
+ 
+ 			factory: partition@70000 {
+-				label = "Factory";
++				label = "factory";
+ 				reg = <0x70000 0x40000>;
+ 				read-only;
+ 			};
+ 
+ 			partition@b0000 {
+-				label = "Kernel";
++				label = "firmware";
+ 				reg = <0xb0000 0xb50000>;
+ 			};
+ 		};
 -- 
 2.21.0
 

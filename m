@@ -2,68 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74160EBC5D
-	for <lists+openwrt-devel@lfdr.de>; Fri,  1 Nov 2019 04:29:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E424FEBC5E
+	for <lists+openwrt-devel@lfdr.de>; Fri,  1 Nov 2019 04:29:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S20FA4l2a8mm9+ifRduyV5TgbB6F+jPKFnCXg4SnZZk=; b=Chpjx51AiU/Bln
-	Y8mgawEdfHqvtML3Haih74T7cPZCMlhb9FYwKfWuGy7pLNxoqKw+BcYlfWW4rrGPjBLIL29ZTrf9q
-	s99c1v1JK+tK6P66ThwcGPVczX3aHM2ahTcKbC5b3qjc4XifN8kivVN78dH00+8Gta1ic3QyJbNoP
-	eta+69yRPt8oZ+i5N6Db2bmGUghf+qlqMQCsSXMAW3q+72GA6AnmRYZE4hdvly0myTS8Jbh4EOzE9
-	F4wN0j1XtafvKf25+gsaW2B6FdfjF2SFvceFzd0xaB96F0xolk8dvnVjqRGOJrrfZ1VYA9cOu6uCv
-	3PR8b38ZO1lrVc4vsn1w==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=85VD/gW1KjMxniC7wJEGrM7C6BbKsVYyoRlBY6qnjpo=; b=b66EdmHEaAHmMd
+	jHyMJBvpIlUhrOn4VTKOEyiZZBldXcOZoT+scaNn6V+mhdVaqsdR4JYEPgj/0xV5FzaytkWsj3hBr
+	jNkEwntswz4zU1naWWK18nvqtQTcnIUIcfH9K3cCRKSNFNUEJjRSQQXvSFami8HS/2FiiKtJr6Ltf
+	3nmjbiIttUf0YIHDoD0dSQ9s9awEJH5sJthRda+boTvoY27RsqI/ZqFTwM0JlYF1uNCfSJnUOkj7r
+	ulYRYEamWPiQjt7sY029AW8zlHqU3X1vQjBGroTg/xi/rw1c/bdgFBPfccv59B3H3Ee0GEAvbGhgk
+	orfYV5Hh3FjNM8fShEfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQNcp-0004sP-8Q; Fri, 01 Nov 2019 03:29:23 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iQNdA-00052l-3k; Fri, 01 Nov 2019 03:29:44 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQNcf-0004s0-FV
- for openwrt-devel@lists.openwrt.org; Fri, 01 Nov 2019 03:29:14 +0000
-Received: by mail-pg1-x541.google.com with SMTP id l3so5555151pgr.8
- for <openwrt-devel@lists.openwrt.org>; Thu, 31 Oct 2019 20:29:13 -0700 (PDT)
+ id 1iQNcl-0004v3-Nn
+ for openwrt-devel@lists.openwrt.org; Fri, 01 Nov 2019 03:29:21 +0000
+Received: by mail-pf1-x443.google.com with SMTP id z4so5430pfn.12
+ for <openwrt-devel@lists.openwrt.org>; Thu, 31 Oct 2019 20:29:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RwQ4gF9L1mt/pihoQpelVQ8YtKnyymoIecJtNa6ZBX8=;
- b=EhkleTviXk62UO75/cs2JWqu3p5ACWlOJe6YJVxZrWX3xE8ulo9sZPVFWExValLbIV
- imFep+L6m2lFQjxG02Nmg4QN9L/iQynX9Qox73O0Gjnk64LVzleAz67/UFVsjJzrKVX3
- iNHKmqMFwk+/vvA4V6QE8alfqE0iGpQQ+ez5YdwMd/eGcAVq3XQvGJsbL+Np6MFSF/21
- mTLzG/vql/h+vImlbaJU6KwTb2F1NkxXTFNTMIzDVy/jX1XbKG7M7kiOj7pLJnRYl+DT
- jVKvSCG3+nLeXdTHEP5O/yRW+QJh/lJW3dWg4Kz1EDzXJm+cfEFF0ezytzWudstGkCaA
- RwjA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=+2+i7s22WMZbAIBwUyjrCObqPfyOeYAkpYGrrpKEmSo=;
+ b=ZrV1Wm8LPrIKIgWQ1SxLSmakZxluMsV1lzG0BcLepph/zEc914IG2kTUCGD7EkYNkg
+ wb33YbJXBtUDJUfBG3qRj3JFuKARFOlJEffgB/98pwXMzRvlMN8/01g6TAKCes3/MkIc
+ WVTob1RhjdXUNxlS4Eoj6SFX+9ul90fVGpks2TBPC8T5GIE3Ew7knID3PvvHqqpelVu6
+ bsybBhMitC5tk9+PxIEF287w3UibhzPtC9Hi6wFzSlpLPcedPmvmFYuDjB3A8/Uu2RdS
+ maFFQOLIMraEzHIxt2hz/oKGDSCNEGbGZhWMayUbpKGDLFxMJEP+1mtyk2pU3RtV4Y7T
+ eB2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RwQ4gF9L1mt/pihoQpelVQ8YtKnyymoIecJtNa6ZBX8=;
- b=Q1FrOThoqQgpIeWtY24BA02iQ007Xqa4FbNCGfoqiVNHLX7AN0O7C8DmPgNq1oasmi
- nMTNykqRJQF6sBOMJzETjsca3HKS595dIrErJpDWacloBXVOSfDr3W1NbnC0ozsaiyDP
- PlBzKNufG4L5sVTrZVCNNglCtNfNKVdde1rMMvc3wiCnbhLAoubWfxaF4KCMehvFFYuh
- 9fAk/jXSB7jgWF8vFjc0eU7HH/Bk+/x5AsFbrmO2LBv3KTILp9l+lTu/YjnxPpKSAOkw
- JG/DNetctxeMvSB8nAYGy5RJCTt/Vu8Y5Z2+rNUGqiiLfVH1KiNaD7sfNDzsESnODfXI
- YkJQ==
-X-Gm-Message-State: APjAAAUI5nFVST7qdgiQatpw4G/gAqLHl73wmQ+GSvO6htVXmWtVcAZN
- 2t31KO5MC4r3TpBHdR9MaTvdZ180F4M=
-X-Google-Smtp-Source: APXvYqyws1LzLN53lvsoAoJQ1x9WMED1w4AC7DUHgqOePGze2M0dHUBrlXbaX2vh6rduxZDjvA/USw==
-X-Received: by 2002:a63:3205:: with SMTP id y5mr10760333pgy.42.1572578952316; 
- Thu, 31 Oct 2019 20:29:12 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=+2+i7s22WMZbAIBwUyjrCObqPfyOeYAkpYGrrpKEmSo=;
+ b=QtqCRTyZhNJTng26ZtZ6NlRNeOZo7P9bvKu17QeaHfiwXK4wZG6rwMFssZpi8YEP7Y
+ eAs7L1ZXFv8A44Unup/c2+8GMlEoY/tWuCD36DUB68PDQrxtB+28U08UKeQlIJe0sHHx
+ Br8bjP6ZQ1V35qpUyRBNw6OC1aAKSP/KztwwT//BaRXLC36cxRm0mZf1U8pW8IViDH6J
+ ynOeIXr3C/pkHPed/jVkn6FlhPV4hB84c1dLajwCxfikKVxc1iRH2H7Xgd6Ed85rPyxA
+ UdbBzUjTxq3TX5EdgQgL69kRzqt0y2ekfU8XEkUOBEEfNP5VG9M7EN8HS7Wsb5uPciOJ
+ nGYQ==
+X-Gm-Message-State: APjAAAWCBnI+dVLKXVlt0BRO8bBVAyKdivsb2SJqtdTAj5iSipK/OTWQ
+ jhQ/i1h2ZEsv1wvGMOUiEq81b1QdePw=
+X-Google-Smtp-Source: APXvYqzrOE18JdyrLivRBbnLzjtzF0NSOGMraY1QfriLBIkYOpAvYOM7IeG82lX3FdPn3lrb8l4leg==
+X-Received: by 2002:a63:e84f:: with SMTP id a15mr10736517pgk.309.1572578958592; 
+ Thu, 31 Oct 2019 20:29:18 -0700 (PDT)
 Received: from localhost.localdomain ([2001:19f0:7001:2668:5400:1ff:fe62:2bbd])
- by smtp.gmail.com with ESMTPSA id j11sm4667485pfa.127.2019.10.31.20.29.09
+ by smtp.gmail.com with ESMTPSA id j11sm4667485pfa.127.2019.10.31.20.29.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 31 Oct 2019 20:29:11 -0700 (PDT)
+ Thu, 31 Oct 2019 20:29:18 -0700 (PDT)
 From: Chuanhong Guo <gch981213@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri,  1 Nov 2019 11:28:54 +0800
-Message-Id: <20191101032858.19013-1-gch981213@gmail.com>
+Date: Fri,  1 Nov 2019 11:28:55 +0800
+Message-Id: <20191101032858.19013-2-gch981213@gmail.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191101032858.19013-1-gch981213@gmail.com>
+References: <20191101032858.19013-1-gch981213@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_202913_543073_9D7F805D 
-X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-CacheID: sfid-20191031_202919_798992_18FC357C 
+X-CRM114-Status: UNSURE (   9.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (gch981213[at]gmail.com)
@@ -86,7 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 0/4] mediatek: add mt7629 subtarget
+Subject: [OpenWrt-Devel] [PATCH 1/4] mediatek: fix Unielec U7623 dts in 4.19
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,45 +106,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patchset adds support for mt7629 and its rfb from mediatek.
-Currently, the secondary CPU doesn't bootup even if I backported
-the related commit, and wifi isn't available due to lack of driver.
-But beside those, everything else seems to work just fine.
+remove duplicated pinctrl nodes.
 
-Chuanhong Guo (4):
-  mediatek: fix Unielec U7623 dts in 4.19
-  mediatek: backport upstream patches related to mt7629 support
-  mediatek: cosmetic fixes for mt7629-lynx-rfb
-  mediatek: add mt7629 subtarget with rfb image
+Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+---
+ .../0227-arm-dts-Add-Unielec-U7623-DTS.patch  | 19 +------------------
+ 1 file changed, 1 insertion(+), 18 deletions(-)
 
- target/linux/mediatek/Makefile                |     2 +-
- .../arch/arm/boot/dts/mt7629-lynx-rfb.dts     |     9 +-
- target/linux/mediatek/image/Makefile          |    14 +-
- target/linux/mediatek/image/mt7629.mk         |     8 +
- .../mt7629/base-files/etc/board.d/02_network  |    34 +
- .../mt7629/base-files/lib/upgrade/platform.sh |    16 +
- target/linux/mediatek/mt7629/config-4.19      |   369 +
- .../linux/mediatek/mt7629/profiles/default.mk |    15 +
- target/linux/mediatek/mt7629/target.mk        |    17 +
- ...ediatek-add-MT7623a-smp-bringup-code.patch |    51 +
- ...ediatek-add-MT7629-smp-bring-up-code.patch |    57 +
- ...tek-add-clock-support-for-MT7629-SoC.patch |  1339 ++
- .../0005-pinctrl-mediatek-sync-with-5.3.patch | 15922 ++++++++++++++++
- ...quadspi-add-SNOR_HWCAPS_READ-to-spi_.patch |    34 +
- .../0227-arm-dts-Add-Unielec-U7623-DTS.patch  |    19 +-
- 15 files changed, 17881 insertions(+), 25 deletions(-)
- create mode 100644 target/linux/mediatek/image/mt7629.mk
- create mode 100755 target/linux/mediatek/mt7629/base-files/etc/board.d/02_network
- create mode 100755 target/linux/mediatek/mt7629/base-files/lib/upgrade/platform.sh
- create mode 100644 target/linux/mediatek/mt7629/config-4.19
- create mode 100644 target/linux/mediatek/mt7629/profiles/default.mk
- create mode 100644 target/linux/mediatek/mt7629/target.mk
- create mode 100644 target/linux/mediatek/patches-4.19/0002-Revert-ARM-mediatek-add-MT7623a-smp-bringup-code.patch
- create mode 100644 target/linux/mediatek/patches-4.19/0003-arm-mediatek-add-MT7629-smp-bring-up-code.patch
- create mode 100644 target/linux/mediatek/patches-4.19/0004-clk-mediatek-add-clock-support-for-MT7629-SoC.patch
- create mode 100644 target/linux/mediatek/patches-4.19/0005-pinctrl-mediatek-sync-with-5.3.patch
- create mode 100644 target/linux/mediatek/patches-4.19/0006-mtd-spi-nor-mtk-quadspi-add-SNOR_HWCAPS_READ-to-spi_.patch
-
+diff --git a/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch b/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch
+index 88222908ea..6561e8d5a7 100644
+--- a/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch
++++ b/target/linux/mediatek/patches-4.19/0227-arm-dts-Add-Unielec-U7623-DTS.patch
+@@ -44,7 +44,7 @@ Subject: [PATCH] arm: dts: Add Unielec U7623 DTS
+ +};
+ --- /dev/null
+ +++ b/arch/arm/boot/dts/mt7623a-unielec-u7623-02-emmc.dtsi
+-@@ -0,0 +1,366 @@
++@@ -0,0 +1,349 @@
+ +/*
+ + * Copyright 2018 Kristian Evensen <kristian.evensen@gmail.com>
+ + *
+@@ -324,23 +324,6 @@ Subject: [PATCH] arm: dts: Add Unielec U7623 DTS
+ +		};
+ +	};
+ +
+-+	pwm_pins_a: pwm@0 {
+-+		pins_pwm {
+-+			pinmux = <MT7623_PIN_203_PWM0_FUNC_PWM0>,
+-+				 <MT7623_PIN_204_PWM1_FUNC_PWM1>,
+-+				 <MT7623_PIN_205_PWM2_FUNC_PWM2>,
+-+				 <MT7623_PIN_206_PWM3_FUNC_PWM3>,
+-+				 <MT7623_PIN_207_PWM4_FUNC_PWM4>;
+-+		};
+-+	};
+-+
+-+	uart2_pins_b: uart@2 {
+-+		pins_dat {
+-+			pinmux = <MT7623_PIN_200_URXD2_FUNC_URXD2>,
+-+				 <MT7623_PIN_201_UTXD2_FUNC_UTXD2>;
+-+		};
+-+	};
+-+
+ +	pcie_default: pcie_pin_default {
+ +		pins_cmd_dat {
+ +			pinmux = <MT7623_PIN_208_AUD_EXT_CK1_FUNC_PCIE0_PERST_N>,
 -- 
 2.21.0
 

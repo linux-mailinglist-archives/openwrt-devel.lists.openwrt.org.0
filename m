@@ -2,77 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FC08ECF1E
-	for <lists+openwrt-devel@lfdr.de>; Sat,  2 Nov 2019 15:19:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC42AECF1F
+	for <lists+openwrt-devel@lfdr.de>; Sat,  2 Nov 2019 15:19:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KHBTlwWh+VTrrBhDeY+TOqQdXimsIMZxGuH56kW+gl0=; b=HtqwBlCJYPhuGw
-	D6M4/gon4ofkNMacbw2KNVTG3UDKqp+G38zcHTUVnri7KEgyzboJpxiMQhpnAQ98+hAC9SPW30pTx
-	5qIM9VbXGCUXb5PAfCIDoE3YCMG1CmwNqaS3CtLWXkj+PdPXSWo5ViTeNAYIHVmrmnyNhoaE4R/YH
-	zcqRZ/YQfEYBEwYbas6Xql32IFKgdM+aaUANCmTPeXgqwbp1BckWQWVF7MkKjGgNEX3l2IbZjpOHb
-	L/zkppksB7AKW+InTNPSLQTg6mPP/57gPkxOgVeFHYgonrrsi/zkk142tyYtXlTBXOytLhmFNl6SE
-	5Fuit9/SjVhT5E9dJsSw==;
+	List-Owner; bh=fcT93qwXnU4BFDmbzRU8VWI9hHOUI4gfsbCGJiISMVA=; b=MpsJt6Jfxod4V5
+	xoTFNOc4X2OEL2chVPT4RhhCo2/4AcHS6exCKrIwD+xRfi5zKd2MGqYl0H9nkRspsEBIJwDVdjbLS
+	E8sj3ndQAD58brv0jsrWmG4mr7RlYGAnSBd+QI0d750qzxU4lYTIWg+PuAtgByb3bKppcQTujz2pV
+	5dFxK+DRtvLVRXJlyIhsTKSoKm7+XmWY0nuU6J73L8HAVlvG81I8Xge7OSbc8KWDD2Wkin9CwsAb2
+	o5Dj8IN00vbwVjvPLyH6ny2J5KwMnuaACAnm4C7YYgjtVGnixui3QPDMB05VD9P3jQ0ZpCQsWPgCI
+	RLj0JdqUlXod0yvPIHkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQuFS-0006ev-DA; Sat, 02 Nov 2019 14:19:26 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iQuFf-0006vw-4j; Sat, 02 Nov 2019 14:19:39 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQuF2-0006Us-Pu
- for openwrt-devel@lists.openwrt.org; Sat, 02 Nov 2019 14:19:03 +0000
-Received: by mail-wr1-x442.google.com with SMTP id b3so6623135wrs.13
- for <openwrt-devel@lists.openwrt.org>; Sat, 02 Nov 2019 07:19:00 -0700 (PDT)
+ id 1iQuF3-0006V6-N4
+ for openwrt-devel@lists.openwrt.org; Sat, 02 Nov 2019 14:19:04 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m17so2939331wmi.5
+ for <openwrt-devel@lists.openwrt.org>; Sat, 02 Nov 2019 07:19:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=id3SuV3z9DUl8XxBoQ6f2JjD8FD0MU3k7DalKpzMREQ=;
- b=rqgtBqxydDvlo1GZeGax10383oUWdpM49t4jGSp9fh4OqAzJTAn0WV6Aw0isqjsG/d
- EZQu6Iuvsq5bn9Gl7Yymo4vGX+GsQnsvmn/qr07FywIfgO93780jZWBxK4GpF/vHHwaX
- h+JKy9JQqd+ZQ2ci1Ebwi2JUyUsbEN7cRRCoQM9wg3jJaSxqj8WOD75KYmxLdDB6g+Z9
- jZXEJnvOEyW4EIbGMBkS0MqIAF4V3Qmk+RFQilII+Z0VwLZxZvpg51tid/8zo5c+xrqM
- 2gIDn4jUNZ8jk4/yGRm5XF6p0ihs/tf+olBBYe5K170S+Skzd6VgXpmgEdu7vnWoa2wV
- udCg==
+ bh=B+HIrHSmmYJD4LYlvKTnLZbyA6GuvLuw19OzCHSf96w=;
+ b=CYdFP68v4u2HM6nZUP8ecjAftkdDzniOpkxCvfa4oX7WgcAtL6BZ7KAjkOPcNY4Lly
+ A+gSJ+BX23MuuaU9l6IIeMi+6ruuMo/ibgt54lRRCTtw/SwMwaNvI3plW6v9uJLmoGW4
+ Tu8/lZkl/4+3+NhWnGcf/jbW5w5EIbDz62Km9gfhGrLMUQcCY8TRyCmB9GvQaKuNILbu
+ 4NOjE5oQv+UYHrSHA7gIoEzx3S3RyqYp7P/OyNl49iyqkNIWDq1sPzwmHp6HYVUyLE+K
+ 1EIA0vt7Ckf6FDoAXSVNtKPSUd1NeposdOVA+vRMGIy/hv2c/PA9+wr4eNOy1cPAJs7O
+ vjbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=id3SuV3z9DUl8XxBoQ6f2JjD8FD0MU3k7DalKpzMREQ=;
- b=ne7kwzGkHxRZ7NBnMANgKtyDtM5Z8TZdSfOaLegrE9wHexjcGBepazAtGkFG9l2eLt
- hh4kiaY3wLIVO3o7KnA59eMuknvsWgznIsJLePhJA64FbPNYn53fpprH5hPSw4A+UNYE
- 2r5rPVSBD/64yVc8+7ZvQNrcwNcc7C2AThOpbeAr+i6j3gnfzk85f1/fCYJdANUsQLDq
- Q1soUzJTFK3eLBPjh81mftE54l1yiwisXdhxfchLTUq4IRVu4xBZdQehN8Jfb9DbBzr3
- 0Be/9e/ZgQ/KSR5/dDPRZelu830OWStLO8b0rFYnsQhCa6JO7RMGwZ1h/LNYIiX0C7Xk
- iF+g==
-X-Gm-Message-State: APjAAAU7R8YuGHnHghXPI/bclteTcjg+D7WdGbnNzhm9Vz/zUoxWacJt
- Nu6o0Bw+ezYOg9ebFkeZwqgAwEx0
-X-Google-Smtp-Source: APXvYqwqOVtZFnzmawOESg783K5lDTYfWuKQExOQd9E6ROqvB/OcNditzr+15uamghRqjme9CJHaVg==
-X-Received: by 2002:adf:dbcd:: with SMTP id e13mr4752202wrj.215.1572704338777; 
- Sat, 02 Nov 2019 07:18:58 -0700 (PDT)
+ bh=B+HIrHSmmYJD4LYlvKTnLZbyA6GuvLuw19OzCHSf96w=;
+ b=Ld+9Q0hHFHYzBA5OsQNMlMkDKdITSaZ91t2MsL/PXrnM60jC5gJyuGctsQzZJFQyBR
+ +IkMasU0nRVeYAGoqUUxO8JDXXNbqCwr/No0ejXrQhME4nLZ6xEfGdKVrl5zkPdnzdxx
+ YAwgns21QMofxu+dPz9vm67VGALLah9oTucnPUINLnKsmEPOqMLA98zmS87Otv2E43AR
+ OReCozZGu7DyNJELw6SZ75SxciqQTUw2W/PBa0MjpFYt7Mn2X0SU7OxZ+2oz/q9i/JaZ
+ 6y5gU+Poxg52pFE6H+6zNKulpsVVzRZq9sBE/HOiceivJenQkfsqFl1HArJgRRIdlWqg
+ eurQ==
+X-Gm-Message-State: APjAAAVN4EdA1+3MFLjrTvDb6qIIVQVogHgGN8r3sy6ggLvkUb8ex1oI
+ 88iP+K8pIl6RNU7rSav+oZO7YfOM
+X-Google-Smtp-Source: APXvYqx4Wxqmtzw6f+wTUxxHIObrKWIqdOviF2p58a2Y2ZHq67OtEEDNRkw9MfWVcqUrg0asGKTOUg==
+X-Received: by 2002:a1c:3c43:: with SMTP id j64mr15248387wma.13.1572704339819; 
+ Sat, 02 Nov 2019 07:18:59 -0700 (PDT)
 Received: from kristrev-XPS-15-9570.lan ([193.213.155.210])
- by smtp.gmail.com with ESMTPSA id l14sm11382010wrr.37.2019.11.02.07.18.57
+ by smtp.gmail.com with ESMTPSA id l14sm11382010wrr.37.2019.11.02.07.18.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 Nov 2019 07:18:58 -0700 (PDT)
+ Sat, 02 Nov 2019 07:18:59 -0700 (PDT)
 From: Kristian Evensen <kristian.evensen@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat,  2 Nov 2019 15:18:54 +0100
-Message-Id: <20191102141855.22192-2-kristian.evensen@gmail.com>
+Date: Sat,  2 Nov 2019 15:18:55 +0100
+Message-Id: <20191102141855.22192-3-kristian.evensen@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191102141855.22192-1-kristian.evensen@gmail.com>
 References: <20191102141855.22192-1-kristian.evensen@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_071900_839891_BDCB7BAB 
-X-CRM114-Status: GOOD (  18.88  )
+X-CRM114-CacheID: sfid-20191102_071901_748888_0B38A197 
+X-CRM114-Status: GOOD (  16.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -85,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v3 1/2] ramips: Update ZBT WE1026 DTS-files
+Subject: [OpenWrt-Devel] [PATCH v3 2/2] ramips: Add support for ZBT WE1026-H
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,186 +98,209 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: Kristian Evensen <kristian.evensen@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VGhpcyBjb21taXQgbWFrZXMgdGhlIGZvbGxvd2luZyBjaGFuZ2VzIHRvIHRoZSBXRTEwMjYgRFRT
-LWZpbGVzOgoKKiBUaGUgcGFydHMgdGhhdCBhcmUgdW5pcXVlIHRvIHRoZSAtNUctdmVyc2lvbiAo
-TEVEIGFuZCA1R0h6IHdpZmkpCmFyZSBtb3ZlZCB0byBhIHNlcGFyYXRlIGZpbGUsIHNvIHRoYXQg
-V0UxMDI2LmR0c2kgY2FuIGJlIHJlZmVyZW5jZWQgYWxzbwpieSB0aGUgRFRTIGZvciB0aGUgLUgg
-dmVyc2lvbi4KKiBDaGFuZ2VkIGJ1dHRvbiBmcm9tIHBvbGxlZCB0byBpbnRlcnJ1cHQuCiogVXNl
-IHRoZSBnZW5lcmljICJmbGFzaCItbmFtZSBmb3IgdGhlIHNwaS1ub3Igbm9kZS4KKiBBZGQgbGFi
-ZWwgTUFDLgoKQWxsIGNoYW5nZXMgaGF2ZSBiZWVuIHRlc3RlZCBvbiB0aGUgV0UxMDI2LTVHLTE2
-TSBhbmQgd29yayBmaW5lLiBJLmUuLAp0aGUgZGV2aWNlIHdvcmtzIGFzIGJlZm9yZSB0aGUgRFRT
-LWNoYW5nZXMuCgpTaWduZWQtb2ZmLWJ5OiBLcmlzdGlhbiBFdmVuc2VuIDxrcmlzdGlhbi5ldmVu
-c2VuQGdtYWlsLmNvbT4KQWNrZWQtYnk6IE1hdGhpYXMgS3Jlc2luIDxkZXZAa3Jlc2luLm1lPgpB
-Y2tlZC1ieTogQWxleCBNYWNsZWFuIDxtb25rZWhAbW9ua2VoLm5ldD4KQWNrZWQtYnk6IElOQUdB
-S0kgSGlyb3NoaSA8bXVzYXNoaW5vLm9wZW5AZ21haWwuY29tPgpBY2tlZC1ieTogUGV0ciDFoHRl
-dGlhciA8eW5lenpAdHJ1ZS5jej4KLS0tCnYzLT52MjoKKiBSZWJhc2Ugb24gdG9wIG9mIHJlY2Vu
-dCBjaGFuZ2VzLgoqIEFkZCBsYWJlbCBNQUMgKHRoYW5rcyBBZHJpYW4gU2NobXV0emxlcikKCnYx
-LT52MjoKKiBBZGRlZCBtaXNzaW5nIGFja2VkLWJ5cy4KLS0tCiAuLi4vcmFtaXBzL2Jhc2UtZmls
-ZXMvZXRjL2JvYXJkLmQvMDJfbmV0d29yayAgfCAgIDMgKwogLi4uL2R0cy9tdDc2MjBhX3pidGxp
-bmtfemJ0LXdlMTAyNi01Zy0xNm0uZHRzIHwgIDc3ICstLS0tLS0tLS0tLS0KIC4uLi9kdHMvbXQ3
-NjIwYV96YnRsaW5rX3pidC13ZTEwMjYtNWcuZHRzaSAgICB8ICA5MyArLS0tLS0tLS0tLS0tLS0t
-CiAuLi4vZHRzL210NzYyMGFfemJ0bGlua196YnQtd2UxMDI2LmR0c2kgICAgICAgfCAxMDMgKysr
-KysrKysrKysrKysrKysrCiA0IGZpbGVzIGNoYW5nZWQsIDExNSBpbnNlcnRpb25zKCspLCAxNjEg
-ZGVsZXRpb25zKC0pCiBjcmVhdGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMv
-bXQ3NjIwYV96YnRsaW5rX3pidC13ZTEwMjYuZHRzaQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51
-eC9yYW1pcHMvYmFzZS1maWxlcy9ldGMvYm9hcmQuZC8wMl9uZXR3b3JrIGIvdGFyZ2V0L2xpbnV4
-L3JhbWlwcy9iYXNlLWZpbGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKaW5kZXggNDgwNzI2YTg3
-MC4uMzczNjUxZTY0ZSAxMDA3NTUKLS0tIGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZpbGVz
-L2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKKysrIGIvdGFyZ2V0L2xpbnV4L3JhbWlwcy9iYXNlLWZp
-bGVzL2V0Yy9ib2FyZC5kLzAyX25ldHdvcmsKQEAgLTcyOSw2ICs3MjksOSBAQCByYW1pcHNfc2V0
-dXBfbWFjcygpCiAJCWxhbl9tYWM9JChtdGRfZ2V0X21hY19iaW5hcnkgZmFjdG9yeSAweGUwMDYp
-CiAJCWxhYmVsX21hYz0kbGFuX21hYwogCQk7OworCXpidGxpbmssemJ0LXdlMTAyNi01Zy0xNm0p
-CisJCWxhYmVsX21hYz0kKGNhdCAvc3lzL2NsYXNzL2llZWU4MDIxMS9waHkxL21hY2FkZHJlc3Mp
-CisJCTs7CiAJemJ0bGluayx6YnQtd2UxMzI2KQogCQl3YW5fbWFjPSQobXRkX2dldF9tYWNfYmlu
-YXJ5IGZhY3RvcnkgMHhlMDA2KQogCQlsYWJlbF9tYWM9JChjYXQgL3N5cy9jbGFzcy9pZWVlODAy
-MTEvcGh5MC9tYWNhZGRyZXNzKQpkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMv
-bXQ3NjIwYV96YnRsaW5rX3pidC13ZTEwMjYtNWctMTZtLmR0cyBiL3RhcmdldC9saW51eC9yYW1p
-cHMvZHRzL210NzYyMGFfemJ0bGlua196YnQtd2UxMDI2LTVnLTE2bS5kdHMKaW5kZXggZmViYTI5
-NzYzYi4uYzVlNjMwYjFiZSAxMDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3
-NjIwYV96YnRsaW5rX3pidC13ZTEwMjYtNWctMTZtLmR0cworKysgYi90YXJnZXQvbGludXgvcmFt
-aXBzL2R0cy9tdDc2MjBhX3pidGxpbmtfemJ0LXdlMTAyNi01Zy0xNm0uZHRzCkBAIC0xLDgxICsx
-LDE0IEBACi0vKgotICogIEJTRCBMSUNFTlNFCi0gKgotICogIENvcHlyaWdodChjKSAyMDE3IEty
-aXN0aWFuIEV2ZW5zZW4gPGtyaXN0aWFuLmV2ZW5zZW5AZ21haWwuY29tPi4KLSAqICBBbGwgcmln
-aHRzIHJlc2VydmVkLgotICoKLSAqICBSZWRpc3RyaWJ1dGlvbiBhbmQgdXNlIGluIHNvdXJjZSBh
-bmQgYmluYXJ5IGZvcm1zLCB3aXRoIG9yIHdpdGhvdXQKLSAqICBtb2RpZmljYXRpb24sIGFyZSBw
-ZXJtaXR0ZWQgcHJvdmlkZWQgdGhhdCB0aGUgZm9sbG93aW5nIGNvbmRpdGlvbnMKLSAqICBhcmUg
-bWV0OgotICoKLSAqICAgICogUmVkaXN0cmlidXRpb25zIG9mIHNvdXJjZSBjb2RlIG11c3QgcmV0
-YWluIHRoZSBhYm92ZSBjb3B5cmlnaHQKLSAqICAgICAgbm90aWNlLCB0aGlzIGxpc3Qgb2YgY29u
-ZGl0aW9ucyBhbmQgdGhlIGZvbGxvd2luZyBkaXNjbGFpbWVyLgotICogICAgKiBSZWRpc3RyaWJ1
-dGlvbnMgaW4gYmluYXJ5IGZvcm0gbXVzdCByZXByb2R1Y2UgdGhlIGFib3ZlIGNvcHlyaWdodAot
-ICogICAgICBub3RpY2UsIHRoaXMgbGlzdCBvZiBjb25kaXRpb25zIGFuZCB0aGUgZm9sbG93aW5n
-IGRpc2NsYWltZXIgaW4KLSAqICAgICAgdGhlIGRvY3VtZW50YXRpb24gYW5kL29yIG90aGVyIG1h
-dGVyaWFscyBwcm92aWRlZCB3aXRoIHRoZQotICogICAgICBkaXN0cmlidXRpb24uCi0gKiAgICAq
-IE5laXRoZXIgdGhlIG5hbWUgb2YgQnJvYWRjb20gQ29ycG9yYXRpb24gbm9yIHRoZSBuYW1lcyBv
-ZiBpdHMKLSAqICAgICAgY29udHJpYnV0b3JzIG1heSBiZSB1c2VkIHRvIGVuZG9yc2Ugb3IgcHJv
-bW90ZSBwcm9kdWN0cyBkZXJpdmVkCi0gKiAgICAgIGZyb20gdGhpcyBzb2Z0d2FyZSB3aXRob3V0
-IHNwZWNpZmljIHByaW9yIHdyaXR0ZW4gcGVybWlzc2lvbi4KLSAqCi0gKiAgVEhJUyBTT0ZUV0FS
-RSBJUyBQUk9WSURFRCBCWSBUSEUgQ09QWVJJR0hUIEhPTERFUlMgQU5EIENPTlRSSUJVVE9SUwot
-ICogICJBUyBJUyIgQU5EIEFOWSBFWFBSRVNTIE9SIElNUExJRUQgV0FSUkFOVElFUywgSU5DTFVE
-SU5HLCBCVVQgTk9UCi0gKiAgTElNSVRFRCBUTywgVEhFIElNUExJRUQgV0FSUkFOVElFUyBPRiBN
-RVJDSEFOVEFCSUxJVFkgQU5EIEZJVE5FU1MgRk9SCi0gKiAgQSBQQVJUSUNVTEFSIFBVUlBPU0Ug
-QVJFIERJU0NMQUlNRUQuIElOIE5PIEVWRU5UIFNIQUxMIFRIRSBDT1BZUklHSFQKLSAqICBPV05F
-UiBPUiBDT05UUklCVVRPUlMgQkUgTElBQkxFIEZPUiBBTlkgRElSRUNULCBJTkRJUkVDVCwgSU5D
-SURFTlRBTCwKLSAqICBTUEVDSUFMLCBFWEVNUExBUlksIE9SIENPTlNFUVVFTlRJQUwgREFNQUdF
-UyAoSU5DTFVESU5HLCBCVVQgTk9UCi0gKiAgTElNSVRFRCBUTywgUFJPQ1VSRU1FTlQgT0YgU1VC
-U1RJVFVURSBHT09EUyBPUiBTRVJWSUNFUzsgTE9TUyBPRiBVU0UsCi0gKiAgREFUQSwgT1IgUFJP
-RklUUzsgT1IgQlVTSU5FU1MgSU5URVJSVVBUSU9OKSBIT1dFVkVSIENBVVNFRCBBTkQgT04gQU5Z
-Ci0gKiAgVEhFT1JZIE9GIExJQUJJTElUWSwgV0hFVEhFUiBJTiBDT05UUkFDVCwgU1RSSUNUIExJ
-QUJJTElUWSwgT1IgVE9SVAotICogIChJTkNMVURJTkcgTkVHTElHRU5DRSBPUiBPVEhFUldJU0Up
-IEFSSVNJTkcgSU4gQU5ZIFdBWSBPVVQgT0YgVEhFIFVTRQotICogIE9GIFRISVMgU09GVFdBUkUs
-IEVWRU4gSUYgQURWSVNFRCBPRiBUSEUgUE9TU0lCSUxJVFkgT0YgU1VDSCBEQU1BR0UuCi0gKi8K
-LQorLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAtb3ItbGF0ZXIgT1IgTUlUCiAv
-ZHRzLXYxLzsKIAogI2luY2x1ZGUgIm10NzYyMGFfemJ0bGlua196YnQtd2UxMDI2LTVnLmR0c2ki
-CiAKIC8gewotCWNvbXBhdGlibGUgPSAiemJ0bGluayx6YnQtd2UxMDI2LTVnLTE2bSIsICJyYWxp
-bmssbXQ3NjIwYS1zb2MiOworCWNvbXBhdGlibGUgPSAiemJ0bGluayx6YnQtd2UxMDI2LTVnLTE2
-bSIsICJ6YnRsaW5rLHpidC13ZTEwMjYtNWciLAorCQkgICAgICJ6YnRsaW5rLHpidC13ZTEwMjYi
-LCAicmFsaW5rLG10NzYyMGEtc29jIjsKIAltb2RlbCA9ICJaYnRsaW5rIFpCVC1XRTEwMjYtNUcg
-KDE2TSkiOwogfTsKIAotJnNwaTAgewotCXN0YXR1cyA9ICJva2F5IjsKLQotCWVuMjVxMTI4QDAg
-ewotCQljb21wYXRpYmxlID0gImplZGVjLHNwaS1ub3IiOwotCQlyZWcgPSA8MD47Ci0JCXNwaS1t
-YXgtZnJlcXVlbmN5ID0gPDEwMDAwMDAwPjsKLQotCQlwYXJ0aXRpb25zIHsKLQkJCWNvbXBhdGli
-bGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7Ci0JCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKLQkJCSNz
-aXplLWNlbGxzID0gPDE+OwotCi0JCQlwYXJ0aXRpb25AMCB7Ci0JCQkJbGFiZWwgPSAidS1ib290
-IjsKLQkJCQlyZWcgPSA8MHgwIDB4MzAwMDA+OwotCQkJCXJlYWQtb25seTsKLQkJCX07Ci0KLQkJ
-CXBhcnRpdGlvbkAzMDAwMCB7Ci0JCQkJbGFiZWwgPSAidS1ib290LWVudiI7Ci0JCQkJcmVnID0g
-PDB4MzAwMDAgMHgxMDAwMD47Ci0JCQkJcmVhZC1vbmx5OwotCQkJfTsKLQotCQkJZmFjdG9yeTog
-cGFydGl0aW9uQDQwMDAwIHsKLQkJCQlsYWJlbCA9ICJmYWN0b3J5IjsKLQkJCQlyZWcgPSA8MHg0
-MDAwMCAweDEwMDAwPjsKLQkJCQlyZWFkLW9ubHk7Ci0JCQl9OwotCi0JCQlmaXJtd2FyZTogcGFy
-dGl0aW9uQDUwMDAwIHsKLQkJCQljb21wYXRpYmxlID0gImRlbngsdWltYWdlIjsKLQkJCQlsYWJl
-bCA9ICJmaXJtd2FyZSI7Ci0JCQkJcmVnID0gPDB4NTAwMDAgMHhmYjAwMDA+OwotCQkJfTsKLQkJ
-fTsKLQl9OworJmZpcm13YXJlIHsKKwlyZWcgPSA8MHg1MDAwMCAweGZiMDAwMD47CiB9OwpkaWZm
-IC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3NjIwYV96YnRsaW5rX3pidC13ZTEw
-MjYtNWcuZHRzaSBiL3RhcmdldC9saW51eC9yYW1pcHMvZHRzL210NzYyMGFfemJ0bGlua196YnQt
-d2UxMDI2LTVnLmR0c2kKaW5kZXggYzcyOGRjMWJmYS4uNTEzODMxYTk3ZSAxMDA2NDQKLS0tIGEv
-dGFyZ2V0L2xpbnV4L3JhbWlwcy9kdHMvbXQ3NjIwYV96YnRsaW5rX3pidC13ZTEwMjYtNWcuZHRz
-aQorKysgYi90YXJnZXQvbGludXgvcmFtaXBzL2R0cy9tdDc2MjBhX3pidGxpbmtfemJ0LXdlMTAy
-Ni01Zy5kdHNpCkBAIC0xLDQ3ICsxLDkgQEAKLS8qCi0gKiAgQlNEIExJQ0VOU0UKLSAqCi0gKiAg
-Q29weXJpZ2h0KGMpIDIwMTcgS3Jpc3RpYW4gRXZlbnNlbiA8a3Jpc3RpYW4uZXZlbnNlbkBnbWFp
-bC5jb20+LgotICogIEFsbCByaWdodHMgcmVzZXJ2ZWQuCi0gKgotICogIFJlZGlzdHJpYnV0aW9u
-IGFuZCB1c2UgaW4gc291cmNlIGFuZCBiaW5hcnkgZm9ybXMsIHdpdGggb3Igd2l0aG91dAotICog
-IG1vZGlmaWNhdGlvbiwgYXJlIHBlcm1pdHRlZCBwcm92aWRlZCB0aGF0IHRoZSBmb2xsb3dpbmcg
-Y29uZGl0aW9ucwotICogIGFyZSBtZXQ6Ci0gKgotICogICAgKiBSZWRpc3RyaWJ1dGlvbnMgb2Yg
-c291cmNlIGNvZGUgbXVzdCByZXRhaW4gdGhlIGFib3ZlIGNvcHlyaWdodAotICogICAgICBub3Rp
-Y2UsIHRoaXMgbGlzdCBvZiBjb25kaXRpb25zIGFuZCB0aGUgZm9sbG93aW5nIGRpc2NsYWltZXIu
-Ci0gKiAgICAqIFJlZGlzdHJpYnV0aW9ucyBpbiBiaW5hcnkgZm9ybSBtdXN0IHJlcHJvZHVjZSB0
-aGUgYWJvdmUgY29weXJpZ2h0Ci0gKiAgICAgIG5vdGljZSwgdGhpcyBsaXN0IG9mIGNvbmRpdGlv
-bnMgYW5kIHRoZSBmb2xsb3dpbmcgZGlzY2xhaW1lciBpbgotICogICAgICB0aGUgZG9jdW1lbnRh
-dGlvbiBhbmQvb3Igb3RoZXIgbWF0ZXJpYWxzIHByb3ZpZGVkIHdpdGggdGhlCi0gKiAgICAgIGRp
-c3RyaWJ1dGlvbi4KLSAqICAgICogTmVpdGhlciB0aGUgbmFtZSBvZiBCcm9hZGNvbSBDb3Jwb3Jh
-dGlvbiBub3IgdGhlIG5hbWVzIG9mIGl0cwotICogICAgICBjb250cmlidXRvcnMgbWF5IGJlIHVz
-ZWQgdG8gZW5kb3JzZSBvciBwcm9tb3RlIHByb2R1Y3RzIGRlcml2ZWQKLSAqICAgICAgZnJvbSB0
-aGlzIHNvZnR3YXJlIHdpdGhvdXQgc3BlY2lmaWMgcHJpb3Igd3JpdHRlbiBwZXJtaXNzaW9uLgot
-ICoKLSAqICBUSElTIFNPRlRXQVJFIElTIFBST1ZJREVEIEJZIFRIRSBDT1BZUklHSFQgSE9MREVS
-UyBBTkQgQ09OVFJJQlVUT1JTCi0gKiAgIkFTIElTIiBBTkQgQU5ZIEVYUFJFU1MgT1IgSU1QTElF
-RCBXQVJSQU5USUVTLCBJTkNMVURJTkcsIEJVVCBOT1QKLSAqICBMSU1JVEVEIFRPLCBUSEUgSU1Q
-TElFRCBXQVJSQU5USUVTIE9GIE1FUkNIQU5UQUJJTElUWSBBTkQgRklUTkVTUyBGT1IKLSAqICBB
-IFBBUlRJQ1VMQVIgUFVSUE9TRSBBUkUgRElTQ0xBSU1FRC4gSU4gTk8gRVZFTlQgU0hBTEwgVEhF
-IENPUFlSSUdIVAotICogIE9XTkVSIE9SIENPTlRSSUJVVE9SUyBCRSBMSUFCTEUgRk9SIEFOWSBE
-SVJFQ1QsIElORElSRUNULCBJTkNJREVOVEFMLAotICogIFNQRUNJQUwsIEVYRU1QTEFSWSwgT1Ig
-Q09OU0VRVUVOVElBTCBEQU1BR0VTIChJTkNMVURJTkcsIEJVVCBOT1QKLSAqICBMSU1JVEVEIFRP
-LCBQUk9DVVJFTUVOVCBPRiBTVUJTVElUVVRFIEdPT0RTIE9SIFNFUlZJQ0VTOyBMT1NTIE9GIFVT
-RSwKLSAqICBEQVRBLCBPUiBQUk9GSVRTOyBPUiBCVVNJTkVTUyBJTlRFUlJVUFRJT04pIEhPV0VW
-RVIgQ0FVU0VEIEFORCBPTiBBTlkKLSAqICBUSEVPUlkgT0YgTElBQklMSVRZLCBXSEVUSEVSIElO
-IENPTlRSQUNULCBTVFJJQ1QgTElBQklMSVRZLCBPUiBUT1JUCi0gKiAgKElOQ0xVRElORyBORUdM
-SUdFTkNFIE9SIE9USEVSV0lTRSkgQVJJU0lORyBJTiBBTlkgV0FZIE9VVCBPRiBUSEUgVVNFCi0g
-KiAgT0YgVEhJUyBTT0ZUV0FSRSwgRVZFTiBJRiBBRFZJU0VEIE9GIFRIRSBQT1NTSUJJTElUWSBP
-RiBTVUNIIERBTUFHRS4KLSAqLwotCi0jaW5jbHVkZSAibXQ3NjIwYS5kdHNpIgotCi0jaW5jbHVk
-ZSA8ZHQtYmluZGluZ3MvZ3Bpby9ncGlvLmg+Ci0jaW5jbHVkZSA8ZHQtYmluZGluZ3MvaW5wdXQv
-aW5wdXQuaD4KKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wLW9yLWxhdGVyIE9S
-IE1JVAorI2luY2x1ZGUgIm10NzYyMGFfemJ0bGlua196YnQtd2UxMDI2LmR0c2kiCiAKIC8gewot
-CWNvbXBhdGlibGUgPSAiemJ0bGluayx6YnQtd2UxMDI2LTVnIiwgInJhbGluayxtdDc2MjBhLXNv
-YyI7Ci0KLQljaG9zZW4gewotCQlib290YXJncyA9ICJjb25zb2xlPXR0eVMwLDExNTIwMCI7Ci0J
-fTsKKwljb21wYXRpYmxlID0gInpidGxpbmssemJ0LXdlMTAyNi01ZyIsICJ6YnRsaW5rLHpidC13
-ZTEwMjYiLAorCQkgICAgICJyYWxpbmssbXQ3NjIwYS1zb2MiOwogCiAJbGVkcyB7CiAJCWNvbXBh
-dGlibGUgPSAiZ3Bpby1sZWRzIjsKQEAgLTYzLDUzICsyNSw2IEBACiAJCQlncGlvcyA9IDwmZ3Bp
-bzMgMCBHUElPX0FDVElWRV9MT1c+OwogCQl9OwogCX07Ci0KLQlrZXlzIHsKLQkJY29tcGF0aWJs
-ZSA9ICJncGlvLWtleXMiOwotCi0JCXJlc2V0IHsKLQkJCWxhYmVsID0gInJlc2V0IjsKLQkJCWdw
-aW9zID0gPCZncGlvMCAxIEdQSU9fQUNUSVZFX0xPVz47Ci0JCQlsaW51eCxjb2RlID0gPEtFWV9S
-RVNUQVJUPjsKLQkJfTsKLQl9OwotfTsKLQotJmdwaW8yIHsKLQlzdGF0dXMgPSAib2theSI7Ci19
-OwotCi0mZ3BpbzMgewotCXN0YXR1cyA9ICJva2F5IjsKLX07Ci0KLSZzZGhjaSB7Ci0Jc3RhdHVz
-ID0gIm9rYXkiOwotfTsKLQotJmVoY2kgewotCXN0YXR1cyA9ICJva2F5IjsKLX07Ci0KLSZvaGNp
-IHsKLQlzdGF0dXMgPSAib2theSI7Ci19OwotCi0mZXRoZXJuZXQgewotCW10ZC1tYWMtYWRkcmVz
-cyA9IDwmZmFjdG9yeSAweDI4PjsKLX07Ci0KLSZ3bWFjIHsKLQlyYWxpbmssbXRkLWVlcHJvbSA9
-IDwmZmFjdG9yeSAwPjsKLX07Ci0KLSZwaW5jdHJsIHsKLQlzdGF0ZV9kZWZhdWx0OiBwaW5jdHJs
-MCB7Ci0JCWRlZmF1bHQgewotCQkJcmFsaW5rLGdyb3VwID0gImkyYyIsICJ1YXJ0ZiIsICJzcGkg
-cmVmY2xrIiwgImVwaHkiLCAid2xlZCI7Ci0JCQlyYWxpbmssZnVuY3Rpb24gPSAiZ3BpbyI7Ci0J
-CX07Ci0JfTsKIH07CiAKICZwY2llIHsKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9yYW1pcHMv
-ZHRzL210NzYyMGFfemJ0bGlua196YnQtd2UxMDI2LmR0c2kgYi90YXJnZXQvbGludXgvcmFtaXBz
-L2R0cy9tdDc2MjBhX3pidGxpbmtfemJ0LXdlMTAyNi5kdHNpCm5ldyBmaWxlIG1vZGUgMTAwNjQ0
-CmluZGV4IDAwMDAwMDAwMDAuLjI2ZTFmYTQ5NTkKLS0tIC9kZXYvbnVsbAorKysgYi90YXJnZXQv
-bGludXgvcmFtaXBzL2R0cy9tdDc2MjBhX3pidGxpbmtfemJ0LXdlMTAyNi5kdHNpCkBAIC0wLDAg
-KzEsMTAzIEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vci1sYXRlciBP
-UiBNSVQKKyNpbmNsdWRlICJtdDc2MjBhLmR0c2kiCisKKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9n
-cGlvL2dwaW8uaD4KKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnB1dC9pbnB1dC5oPgorCisvIHsK
-Kwljb21wYXRpYmxlID0gInpidGxpbmssemJ0LXdlMTAyNiIsICJyYWxpbmssbXQ3NjIwYS1zb2Mi
-OworCisJY2hvc2VuIHsKKwkJYm9vdGFyZ3MgPSAiY29uc29sZT10dHlTMCwxMTUyMDAiOworCX07
-CisKKwlrZXlzIHsKKwkJY29tcGF0aWJsZSA9ICJncGlvLWtleXMiOworCisJCXJlc2V0IHsKKwkJ
-CWxhYmVsID0gInJlc2V0IjsKKwkJCWdwaW9zID0gPCZncGlvMCAxIEdQSU9fQUNUSVZFX0xPVz47
-CisJCQlsaW51eCxjb2RlID0gPEtFWV9SRVNUQVJUPjsKKwkJfTsKKwl9OworCisJYWxpYXNlcyB7
-CisJCWxhYmVsLW1hYy1kZXZpY2UgPSAmd21hYzsKKwl9OworfTsKKworJnNwaTAgeworCXN0YXR1
-cyA9ICJva2F5IjsKKworCWZsYXNoQDAgeworCQljb21wYXRpYmxlID0gImplZGVjLHNwaS1ub3Ii
-OworCQlyZWcgPSA8MD47CisJCXNwaS1tYXgtZnJlcXVlbmN5ID0gPDEwMDAwMDAwPjsKKworCQlw
-YXJ0aXRpb25zIHsKKwkJCWNvbXBhdGlibGUgPSAiZml4ZWQtcGFydGl0aW9ucyI7CisJCQkjYWRk
-cmVzcy1jZWxscyA9IDwxPjsKKwkJCSNzaXplLWNlbGxzID0gPDE+OworCisJCQlwYXJ0aXRpb25A
-MCB7CisJCQkJbGFiZWwgPSAidS1ib290IjsKKwkJCQlyZWcgPSA8MHgwIDB4MzAwMDA+OworCQkJ
-CXJlYWQtb25seTsKKwkJCX07CisKKwkJCXBhcnRpdGlvbkAzMDAwMCB7CisJCQkJbGFiZWwgPSAi
-dS1ib290LWVudiI7CisJCQkJcmVnID0gPDB4MzAwMDAgMHgxMDAwMD47CisJCQkJcmVhZC1vbmx5
-OworCQkJfTsKKworCQkJZmFjdG9yeTogcGFydGl0aW9uQDQwMDAwIHsKKwkJCQlsYWJlbCA9ICJm
-YWN0b3J5IjsKKwkJCQlyZWcgPSA8MHg0MDAwMCAweDEwMDAwPjsKKwkJCQlyZWFkLW9ubHk7CisJ
-CQl9OworCisJCQlmaXJtd2FyZTogcGFydGl0aW9uQDUwMDAwIHsKKwkJCQljb21wYXRpYmxlID0g
-ImRlbngsdWltYWdlIjsKKwkJCQlsYWJlbCA9ICJmaXJtd2FyZSI7CisJCQl9OworCQl9OworCX07
-Cit9OworCismZ3BpbzIgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZncGlvMyB7CisJc3Rh
-dHVzID0gIm9rYXkiOworfTsKKworJnNkaGNpIHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCism
-ZWhjaSB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJm9oY2kgeworCXN0YXR1cyA9ICJva2F5
-IjsKK307CisKKyZldGhlcm5ldCB7CisJbXRkLW1hYy1hZGRyZXNzID0gPCZmYWN0b3J5IDB4Mjg+
-OworfTsKKworJndtYWMgeworCXJhbGluayxtdGQtZWVwcm9tID0gPCZmYWN0b3J5IDA+OworfTsK
-KworJnBpbmN0cmwgeworCXN0YXRlX2RlZmF1bHQ6IHBpbmN0cmwwIHsKKwkJZGVmYXVsdCB7CisJ
-CQlyYWxpbmssZ3JvdXAgPSAiaTJjIiwgInVhcnRmIiwgInNwaSByZWZjbGsiLCAiZXBoeSIsICJ3
-bGVkIjsKKwkJCXJhbGluayxmdW5jdGlvbiA9ICJncGlvIjsKKwkJfTsKKwl9OworfTsKLS0gCjIu
-MjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
-ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
-aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+This commit adds support for the ZBT WE1026-H, an outdoor AP with
+support for adding an internal LTE modem. The detailed specs are:
+
+* CPU: MT7620A
+* 2x 10/100Mbps Ethernet (LAN port has passive PoE support).
+* 16/32 MB Flash.
+* 128/256 MB RAM.
+* 1x USB 2.0 port.
+* 1x mini-PCIe slot (only USB2.0 bus).
+* 1x SIM slot (standard size).
+* 1x 2.4Ghz WIFI (rt2800).
+* 1x button.
+* 6x LEDS (4 GPIO-controlled).
+* 1x micro-SD reader.
+
+The following have been tested and working:
+- Ethernet switch
+- Wifi
+- Mini-PCIe slot + SIM slot
+- USB port
+- microSD slot
+- sysupgrade
+- reset button
+
+Installation and recovery:
+
+In order to install OpenWRT the first time or ito recover the router,
+you can use the web-based recovery system. Keep the reset button pressed
+during boot and access 192.168.1.1 in your browser when your machine
+obtains an IP address. Upload the firmware to start the recovery
+process.
+
+Notes:
+
+* The LED labeled "USB" is used as the power LED. When binding this LED
+to a usbport, the LED is switched on all the time due to the presence of
+an internal hub. Thus, it does not really signal any USB-information.
+
+* I only have the 32MB version and have only added support for this
+device. However, the files are structured so that adding support for the
+16MB version should be easy.
+
+* Only the LAN port is accessible from the outside of the casing and LEDs
+are not visible.
+
+Signed-off-by: Kristian Evensen <kristian.evensen@gmail.com>
+---
+v2->v3:
+* Rebase on top of master.
+* Added label mac (thanks Adrian Schmutzler).
+* Fix consistent naming (thanks Adrian Schmutzler).
+
+v1->v2:
+* Rebased on top of master.
+* Read correct WAN address from flash (thanks Adrian Schmutzler).
+---
+ .../ramips/base-files/etc/board.d/01_leds     |  5 +++
+ .../ramips/base-files/etc/board.d/02_network  |  6 ++-
+ .../dts/mt7620a_zbtlink_zbt-we1026-h-32m.dts  | 14 +++++++
+ .../dts/mt7620a_zbtlink_zbt-we1026-h.dtsi     | 40 +++++++++++++++++++
+ target/linux/ramips/image/mt7620.mk           | 11 +++++
+ 5 files changed, 74 insertions(+), 2 deletions(-)
+ create mode 100644 target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h-32m.dts
+ create mode 100644 target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
+index 662bf6b6cd..7b2310bc6f 100755
+--- a/target/linux/ramips/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/base-files/etc/board.d/01_leds
+@@ -461,6 +461,11 @@ zbtlink,zbt-we1026-5g-16m)
+ 	ucidef_set_led_netdev "lan" "LAN" "we1026-5g:green:lan" "eth0"
+ 	set_wifi_led "we1026-5g:green:wifi"
+ 	;;
++zbtlink,zbt-we1026-h-32m)
++	set_wifi_led "we1026-h:green:wifi"
++	ucidef_set_led_switch "lan" "lan" "we1026-h:green:lan" "switch0" "0x8"
++	ucidef_set_led_switch "wan" "wan" "we1026-h:green:wan" "switch0" "0x10"
++	;;
+ zbtlink,zbt-we1226)
+ 	set_wifi_led "$boardname:green:wlan"
+ 	ucidef_set_led_switch "lan1" "LAN1" "$boardname:green:lan1" "switch0" "0x01"
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index 373651e64e..b2bfc91ebe 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -275,7 +275,8 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "5@eth0"
+ 		;;
+-	buffalo,wcr-1166ds)
++	buffalo,wcr-1166ds|\
++	zbtlink,zbt-we1026-h-32m)
+ 		ucidef_add_switch "switch0" \
+ 			"3:lan" "4:wan" "6@eth0"
+ 		;;
+@@ -594,7 +595,8 @@ ramips_setup_macs()
+ 	zyxel,keenetic-start)
+ 		# This empty case has to be kept for devices without any MAC address adjustments
+ 		;;
+-	cudy,wr1000)
++	cudy,wr1000|\
++	zbtlink,zbt-we1026-h-32m)
+ 		wan_mac=$(mtd_get_mac_binary factory 0x2e)
+ 		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
+ 		;;
+diff --git a/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h-32m.dts b/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h-32m.dts
+new file mode 100644
+index 0000000000..87430a9a6f
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h-32m.dts
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7620a_zbtlink_zbt-we1026-h.dtsi"
++
++/ {
++	compatible = "zbtlink,zbt-we1026-h-32m", "zbtlink,zbt-we1026-h",
++		     "zbtlink,zbt-we1026","ralink,mt7620a-soc";
++	model = "Zbtlink ZBT-WE1026-H (32M)";
++};
++
++&firmware {
++	reg = <0x50000 0x1fb0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi b/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi
+new file mode 100644
+index 0000000000..0aa41dc5da
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi
+@@ -0,0 +1,40 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7620a_zbtlink_zbt-we1026.dtsi"
++
++/ {
++	compatible = "zbtlink,zbt-we1026-h", "zbtlink,zbt-we1026",
++		     "ralink,mt7620a-soc";
++
++	aliases {
++		led-boot = &led_power;
++		led-failsafe = &led_power;
++		led-running = &led_power;
++		led-upgrade = &led_power;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_power: usb {
++			label = "we1026-h:green:usb";
++			gpios = <&gpio2 2 GPIO_ACTIVE_LOW>;
++		};
++
++		lan {
++			label = "we1026-h:green:lan";
++			gpios = <&gpio2 3 GPIO_ACTIVE_LOW>;
++		};
++
++		wan {
++			label = "we1026-h:green:wan";
++			gpios = <&gpio2 4 GPIO_ACTIVE_LOW>;
++		};
++
++		wifi {
++			label = "we1026-h:green:wifi";
++			gpios = <&gpio3 0 GPIO_ACTIVE_LOW>;
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
+index 95de1c0e46..aab5f86e83 100644
+--- a/target/linux/ramips/image/mt7620.mk
++++ b/target/linux/ramips/image/mt7620.mk
+@@ -984,6 +984,17 @@ define Device/zbtlink_zbt-we1026-5g-16m
+ endef
+ TARGET_DEVICES += zbtlink_zbt-we1026-5g-16m
+ 
++define Device/zbtlink_zbt-we1026-h-32m
++  MTK_SOC := mt7620a
++  IMAGE_SIZE := 32448k
++  DEVICE_VENDOR := Zbtlink
++  DEVICE_MODEL := ZBT-WE1026-H
++  DEVICE_VARIANT := 32M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-sdhci-mt7620 \
++		     kmod-ledtrig-netdev
++endef
++TARGET_DEVICES += zbtlink_zbt-we1026-h-32m
++
+ define Device/zbtlink_zbt-we2026
+   MTK_SOC := mt7620n
+   IMAGE_SIZE := 7552k
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

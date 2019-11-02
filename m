@@ -2,97 +2,118 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C42EEECDFE
-	for <lists+openwrt-devel@lfdr.de>; Sat,  2 Nov 2019 11:34:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 938F3ECEC5
+	for <lists+openwrt-devel@lfdr.de>; Sat,  2 Nov 2019 14:03:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C0krWi+rkb8OF0cHwIsZIdpMJhtSyWhRU98+8ycHeaA=; b=SqrPK3+QAjtFCy
-	rUcc8HEP+0/2t424dKI0R7OkI1w7Xnn4P9OBt2RxjhD2/7TLc5zDmPK04FSRt0R4PRZ2aJu8B76/o
-	qZXSHvh82U3S40Yj27SMq8c+Ufz3CXC5VeKceqf3vy3HC7YuZaekksPr4sWbUtF2qkTIdmvZ1/U2f
-	KGPYbHkz1EVS3ufhMvfhtG9B7Z4+J9kOe9zabtlTXAaspYuUvWf1++Rn696JCoZBO1oyVFzNBiiMP
-	p2nr08s1tqAInjAl/AODLX1Uzm7JaHgcFDDMGP7/2ePGksVet8SFekjPok1cz5AAQvQ8veYZ9u8W7
-	VIIwTYzbjw8i+XMXUlhw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jZ3DF2PIqG4fHDDKbmhKISRrP59tMV/vJBL3Lsfr5EU=; b=n73TEAWMtWVtKnlaRfJpdAHQu
+	jfVRxwU7SL6wQnNw/vQr/AygMlVyzqizMWkl7VserrrVd42Ns0c51f7PnbAbRyS1m4piHsoD5EtHn
+	r1rk6cjcP1BJLo8DRimXIB7B1fHUWBIB0Bd/Nw21XESF6NzXnMCNU56Oy//WsNYtg1XLB6KYj5bz4
+	0F5XLbRpMvQgI5RN69HglsPM2/PBnhIXn8FkUt+dT3HooOW8DARfAnF7F1r/d106LhVOjl+m1+PjA
+	/E0DO3CIaumHIybEGZt6QpqFy8UCsxwvkEr9OYzaDEVo+lqJmCaneI04l9PlfDDl/6ZNOcBCJvB4s
+	zqnkInk1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQqjD-0008HV-45; Sat, 02 Nov 2019 10:33:55 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1iQt47-0006Ee-E2; Sat, 02 Nov 2019 13:03:39 +0000
+Received: from mout-u-107.mailbox.org ([91.198.250.252])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQqj7-0008Gm-3r
- for openwrt-devel@lists.openwrt.org; Sat, 02 Nov 2019 10:33:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1572690817;
- bh=4AicSuq6pomskzu9Pp/07xZXnyyCj+Rsp5FFtLkuFak=;
- h=X-UI-Sender-Class:Date:From:To:Cc:Subject:References:In-Reply-To;
- b=havAFkJ06g3BC59pwFsKTIGEHo7P0tkZwanrsGUlc9SHyc0WnaHVQCaBPsXmUAkON
- 7BHdRU1o7SX5K20bU9wiKtZd8vNGs4Jyxism9MBRMAOnx2ezHHwksNL+UFeZ9nezn0
- jjSFpcRKu50Od8fyXIicDB4hRSN05Yoauju+cdZY=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from darth.lan ([62.14.66.60]) by mail.gmx.com (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1Mr9Bu-1he3ip06uE-00oGep; Sat, 02
- Nov 2019 11:33:37 +0100
-Date: Sat, 2 Nov 2019 11:33:34 +0100
-From: Sebastian Kemper <sebastian_ml@gmx.net>
+ id 1iQt40-0006E4-O1
+ for openwrt-devel@lists.openwrt.org; Sat, 02 Nov 2019 13:03:35 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-u-107.mailbox.org (Postfix) with ESMTPS id 474zl32LwgzKmj3;
+ Sat,  2 Nov 2019 14:03:27 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id rhEMiTmt-bVy; Sat,  2 Nov 2019 14:03:23 +0100 (CET)
 To: Rosen Penev <rosenp@gmail.com>
-Message-ID: <20191102103333.GA3077@darth.lan>
-References: <20191101091829.GA16215@darth.lan>
- <fc2f29ad-d8ec-a28b-930e-7c2dc85d7906@wwsnet.net>
- <CAKxU2N8gc-=S6VbeOQ5pUWmXiZyB6JQsC5Hb4PHq_HTMGVzrVQ@mail.gmail.com>
- <20191101192107.GA3019@darth.lan>
- <CAKxU2N9ZPBgP+R8GzhXxx2dVezNEWi=i5+A2om2eFRS1iOpS0Q@mail.gmail.com>
+References: <20191101205416.17599-1-hauke@hauke-m.de>
+ <CAKxU2N_+bdeZVnowFr5J+T4xU-5b+NNAT6pTsCGCdVTpsgy3QQ@mail.gmail.com>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <900c4014-712d-62a8-adbc-ea796a41f7c2@hauke-m.de>
+Date: Sat, 2 Nov 2019 14:02:58 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKxU2N9ZPBgP+R8GzhXxx2dVezNEWi=i5+A2om2eFRS1iOpS0Q@mail.gmail.com>
-X-Provags-ID: V03:K1:XVwI5xQnF79DouNM2zexO8UNk0niVPKFckkQeuydpMTN8vQeA5k
- aZjWFYX4DLS1C7kpnJFlxarc6RQ4dGGXdWPy+eErrOomw6IsxlAvTo8Cx2ytVG7GNGi1eK6
- MsV/VkKM7d1yXuKBZIzV7tui2WQQZHZjY0sxLEnFp+U0jHVByzb5wCt5Cf8KXfvrbdOREmt
- /j/GWhC7grzMTFt3BzdsA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:KhnnFZ64rmw=:cONgjsv4eoSxjSKah60Qlx
- rRVLamNMuCqmXk4gkYaFaFskYyJp5/5KL1BLxwbiPWTa93R2V7Ba74pYjnGfJkysqUQEDzJ5b
- HzuxvY8/LUfsa6lC3c2v2cM6xMsHyP5Ek80EiKvL+NNyyCh3uxFay68AfCAeFu6Uf5EUTiAHA
- HA8kawnY0yh4JnKMo/0GW+Ddpr514AqwKxrsHE/BaE5Z9TTGjNeovkecaWadhGHnfK88Ka2MR
- ymdiweP7Ms1fGVR2wNJ8O9bLe+L77EwQ69joA3PRn7B9TEO5LLa1HYmCCS9sVmw6nl99CKZNn
- qC8UkCwtb49UYWe7eNnDXwsAdM8jg5namxSX4XbBvUWQUAvBDEvp0q3XwxUTdunME7/oyAVxG
- /JSFL8u5jNALZAlXFqDYKuxiG6c2oXU/i3gWx4yYP6Pz6ElORF9xxOLzWeC6KPnt/OsSCXRiI
- 12g7tLaqQVv8W3Q6nUxTMBuWnkIDIJFPN5Ia5gNLyTjVJkZ8pF9QCH9ItFA0kNM3ff5yie8yL
- nj18U7Dyu4QD+GWXb2YATx26qhTnvX2YfZpIQ2z2XxMLOB/aqABF0GihfT1TdOgulxcnGwAel
- NdgQlkegazUCzeR/y5SzL2cwcPnz3S3VVNYPxYmxMKTxNPcpPmGr0fJ5Y/RK5KXAX5qX/122J
- GFD1PI0nIgAwVCdPvVHG/ASnySLKQ1CWXXO0Qhr9bX+agTMu5cPs4wA5sDGPc+fft4f4x+oOZ
- VnhDumTBG8LatgyBP8F7jYbq2x5H34EPSRd5bWSIkdLgf6nb7tbZacnmXXa5p8wSkyjZEIP95
- wMJBOTq8Am9yKeMPsOaJCH+u/r7PKi88R25dFgghbNVkJ+Z68co+TbKVaqCdcmxwzLis0ed2s
- 28svYNL+kcJJtx/S6GGVonTkinD9nbSrb3UzoyqWNgIdPzFCPa6LXg/zZSL/g5x9Kqh/aMD2x
- 8OMLy00SLfX2GkfxyASk0lWtKyhZP0VuOCwTXA1FD6Bb+MRKnIR3oxYbxbBwmOM9C5whtk7aJ
- mypqsaYG3kx5yuuokJk0adFEryksOkTJzTbpFx/AMMy8PQkQENfjUiTOxXdgJrqgKC+CVeXPA
- 0RDRAAB7orM5AuYlt3JwYNMaOuWz7j90AKEyED/fR0HVfOa8Lt+b1ol8HWb7LMU4ZSUgJfSsO
- lGb6944g6nyrXBpAQRdLx9luQ4AX/NqbRi6lmSCIQ7q9bUqoyvrwKw5T+nHrtm1VQk7/GJ+jd
- iGw269h6bmPLRmX14QQxAwTEzYLP/snLx+ViFb03adsqoBA8pl97VEeykums=
+In-Reply-To: <CAKxU2N_+bdeZVnowFr5J+T4xU-5b+NNAT6pTsCGCdVTpsgy3QQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191102_033349_450053_9DDF37E0 
-X-CRM114-Status: GOOD (  10.98  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191102_060333_090721_5E95691C 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sebastian_ml[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
-Subject: Re: [OpenWrt-Devel] [PATCH] rules.mk: remove
- "$(STAGING_DIR)/include"
+Subject: Re: [OpenWrt-Devel] [PATCH 1/4] dnsmasq: Activate LTO
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,49 +125,129 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- Jo-Philipp Wich <jo@mein.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============3857578955044234478=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Fri, Nov 01, 2019 at 01:04:04PM -0700, Rosen Penev wrote:
-> On Fri, Nov 1, 2019 at 12:21 PM Sebastian Kemper <sebastian_ml@gmx.net> wrote:
-> >
-> > On Fri, Nov 01, 2019 at 12:06:39PM -0700, Rosen Penev wrote:
-> > > Would it also make sense to remove $(STAGING_DIR)/lib ? Locally, it
-> > > seems libpam gets installed there (probably a bug).
-> >
-> > Quoting FHS 3.0 regarding /lib's purpose: "The /lib directory contains
-> > those shared library images needed to boot the system and run the
-> > commands in the root filesystem, ie. by binaries in /bin and /sbin."
-> >
-> > I think /lib should stay.
-> OTOH, many modern distros just symlink everything to /usr.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3857578955044234478==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="rgeQa7MEAmQQ38MvH1gilOXyA4efaMBIw"
 
-Good morning Rosen,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--rgeQa7MEAmQQ38MvH1gilOXyA4efaMBIw
+Content-Type: multipart/mixed; boundary="gI15svi4HmCCSwrWhsCORFuF3umhGIQka";
+ protected-headers="v1"
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: Rosen Penev <rosenp@gmail.com>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Message-ID: <900c4014-712d-62a8-adbc-ea796a41f7c2@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH 1/4] dnsmasq: Activate LTO
+References: <20191101205416.17599-1-hauke@hauke-m.de>
+ <CAKxU2N_+bdeZVnowFr5J+T4xU-5b+NNAT6pTsCGCdVTpsgy3QQ@mail.gmail.com>
+In-Reply-To: <CAKxU2N_+bdeZVnowFr5J+T4xU-5b+NNAT6pTsCGCdVTpsgy3QQ@mail.gmail.com>
 
-I did not want to imply that OpenWrt follows FHS, I don't know about
-that. I just think having /lib and /bin around makes much more sense
-than /include.
+--gI15svi4HmCCSwrWhsCORFuF3umhGIQka
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-Kind regards,
-Seb
+On 11/1/19 10:08 PM, Rosen Penev wrote:
+> On Fri, Nov 1, 2019 at 1:55 PM Hauke Mehrtens <hauke@hauke-m.de> wrote:=
 
-> Anyway,
->
-> Acked-by: Rosen Penev <rosenp@gmail.com>
-> >
-> > Regards,
-> > Seb
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>>
+>> This decreases the binary size when PIE ASLR is activated by 8% on MIP=
+S BE.
+> A small note on LTO:
+>=20
+> These packages do not generate libraries, but sometimes, LTO messes up
+> dynamic linking (static even more so).
+>=20
+> For example: https://github.com/openwrt/packages/blob/master/libs/libwa=
+ngle/Makefile#L31
+> is missing -flto specifically because a package that depends on it
+> (openr, not in the packages feed yet) fails to link libwangle when
+> -flto is specified for libwangle (a specific function was optimized
+> out of the library).
+
+I activated LTO globally and also saw multiple link problems, but I
+think it was mostly related to static linking.
+
+If a function is optimized out it was probably not correctly declared as
+needed.
+
+>>
+>> old:
+>> 202,020 /usr/sbin/dnsmasq
+>>
+>> new:
+>> 185,676 /usr/sbin/dnsmasq
+>>
+>> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+>> ---
+>>  package/network/services/dnsmasq/Makefile | 4 ++--
+>>  1 file changed, 2 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/package/network/services/dnsmasq/Makefile b/package/netwo=
+rk/services/dnsmasq/Makefile
+>> index 5c114eb1c6..e86b031e3f 100644
+>> --- a/package/network/services/dnsmasq/Makefile
+>> +++ b/package/network/services/dnsmasq/Makefile
+>> @@ -127,8 +127,8 @@ endef
+>>  Package/dnsmasq-dhcpv6/conffiles =3D $(Package/dnsmasq/conffiles)
+>>  Package/dnsmasq-full/conffiles =3D $(Package/dnsmasq/conffiles)
+>>
+>> -TARGET_CFLAGS +=3D -ffunction-sections -fdata-sections
+>> -TARGET_LDFLAGS +=3D -Wl,--gc-sections
+> I am curious why these were removed.
+
+I saw no size differences. These options are also used to allow the
+linker to remove unused functions and data sections and with LTO the
+compiler does the same just more so this should not be needed any more.
+
+>> +TARGET_CFLAGS +=3D -flto
+>> +TARGET_LDFLAGS +=3D -flto=3Djobserver
+>>
+>>  COPTS =3D -DHAVE_UBUS \
+>>         $(if $(CONFIG_IPV6),,-DNO_IPV6)
+>> --
+>> 2.20.1
+
+
+--gI15svi4HmCCSwrWhsCORFuF3umhGIQka--
+
+--rgeQa7MEAmQQ38MvH1gilOXyA4efaMBIw
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl29foIACgkQ8bdnhZyy
+68fHtAf/cc3ISHqmx3sfJ+pEtdRo3F1jjeFFI85Q6CaweybYEc7dLleWa3cf+ccz
+owh4Ku7t7CnmOztNjb3sFYJbHDd8dW1PV5iv5Rp9GtyuznGOFkbSA1KS9kaSUuph
+5sAHU5of5ODlUxFU0GsnTQbWEDpHs+BhcoomdjokPiB5aUGvZ/mHiKlyqRKxh8kC
+hfoz2b5ZkLLiomsHBFwEWcJoZ3a8z/pjd3PZdrpBsJo+VLhvaxEqBYTICYKgyoaF
+3K1p7SO+y7baZDo08pwTku+DWXyrkc9o22hgy3NiK1cye3B3maqQclPeqGKERso2
+BWTh1Q7rsC3rBAbHZeLfBtg3iliSoQ==
+=AgKD
+-----END PGP SIGNATURE-----
+
+--rgeQa7MEAmQQ38MvH1gilOXyA4efaMBIw--
+
+
+--===============3857578955044234478==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3857578955044234478==--
+

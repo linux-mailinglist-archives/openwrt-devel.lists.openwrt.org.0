@@ -2,60 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ABC4EDCC1
-	for <lists+openwrt-devel@lfdr.de>; Mon,  4 Nov 2019 11:44:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F6A2EDD83
+	for <lists+openwrt-devel@lfdr.de>; Mon,  4 Nov 2019 12:10:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:From:To:MIME-Version
+	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3/Pws32p9l0Ldxl/W3tHbCOEnUveMn9Gxr7lZDHWN6c=; b=MGrMKhdf1axW6g
-	nbTL7ZwwLLT8b7HI0Dc8QJQ9/QhtqOcfsMfaqkYzsgNzbZTdZEK8W1jbs9+Kq4dI9f51/o5Hocaf7
-	yjj6PXaNLY6GHQwO8xaRzMsT2JPpupeyyjsAbwgajDPZIcMnRkaqI10d2mNVEAndcMyTmhgN1Yrfj
-	uNrMuguR4GndXWWNaGELJzbjKC7fCq5uo+7c1khYQ5X2jndQb6w630h6YMNYJUIe7jNG8QqQfAwYo
-	UpNont2KRGwZVihR0c00A86KAtQZq5fI0SBGbu/vdDu7CO/Pjl/73/VGRZJwDLID+E3ilsvPSRp7P
-	nTwS5GB8REImjjCYwb7A==;
+	List-Owner; bh=GyOoiyZZgFZDYG5mJaWaUT0tO7VScg6mUNndd4f5aOI=; b=qG4t0LAC1UOL08
+	1QFFi4SSih1DwFK5J+ULxKw0TuoLGM11mrNUbUgCPlko2p84R/AZQwbvS8YgphO+rL0IX8I3rmEgk
+	5EYefLTMkazTmZq7w3PKM8eKxtuclToBrCabyzHhEjGR+atjUQtsTUDUsR15YS9R0PKOsbO7J3au6
+	5spTCVxSyrKLwsi9ew3Les1GUTWZ/tci2aLYig3Yksl8ROZgOPE2cYyzIWA+fBzD+S+zynlpwOMum
+	Kl1N0DTzGe+vxC0Xx1VYKpE0tae7glNkauxyAuvOOIeFsUEDDPHssc4WnOabKqSGIKQnVQcYDmLq2
+	224fAllBy2PyyiR9gbWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRZqJ-0008PR-PC; Mon, 04 Nov 2019 10:44:15 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1iRaG3-0006DW-Ll; Mon, 04 Nov 2019 11:10:51 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRZq4-0008EH-4K
- for openwrt-devel@lists.openwrt.org; Mon, 04 Nov 2019 10:44:01 +0000
-Received: from buildfff.adridolf.com ([188.192.135.195]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1M433w-1iRZpv3N7A-0003AW; Mon, 04 Nov 2019 11:43:51 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon,  4 Nov 2019 11:43:48 +0100
-Message-Id: <20191104104348.63115-2-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191104104348.63115-1-freifunk@adrianschmutzler.de>
-References: <20191104104348.63115-1-freifunk@adrianschmutzler.de>
+ id 1iRaFv-0006CT-TZ
+ for openwrt-devel@lists.openwrt.org; Mon, 04 Nov 2019 11:10:45 +0000
+Received: from localhost (oi.rfid.io [198.211.125.99])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id CD6963FAA;
+ Mon,  4 Nov 2019 12:10:33 +0100 (CET)
+Date: Mon, 04 Nov 2019 11:10:22 +0000
+In-Reply-To: <CAECwjAjN=VeqgNMuAzGYzn5ZsXZz-672H9Tpqb27zfgBPjf9Lw@mail.gmail.com>
+References: <20191103234617.1972-1-mail@aparcar.org>
+ <CAECwjAjN=VeqgNMuAzGYzn5ZsXZz-672H9Tpqb27zfgBPjf9Lw@mail.gmail.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:mIYbt0bbDPDL85ISaOjpNG4Xs/1Ah7Kyi203pNjJQJUG9JISjnS
- epdbUQh8ygPNU5IGaknRcNVh9D9D6kMykqXWyY3FH1NFjvzeJ58fkxuH2AClrLzI9ve1MsV
- 5Nd0jG9iixSF48oQHKIkIrojFtEI8pMwdg8+vpLgnq+YyNognqImfYVuyRbCACh61lVAR6B
- yrblaDoiV9t1a55ig3BVw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:whetYo9mato=:14ALB+I81xdvKahbWyDJxH
- wcb1jypUQ6+wWqJ/KCEvjTEn9NzFKBhNcMEbwvWaU2rCSW3yMkuWQw6vIDyEcCFHVFTEUiOJO
- XCgJPADxuiWErpH6R5w/16buCWgp30NXrGjoE5oh3VqtVbdfSALu9p2ZxGVcRi2kStVOMspW3
- 1K292O744GCFdQj1EH9ySDSVu9VduWC51CL1rBdim4LoZVleiz9sU4KBwiFrH9AGyLxrDnmhf
- qyKm2MMkKtOiD+aLmlsh5ywHDOo9TKucUcQzL+A0T7zFACEXylSwIvAeoZrXkOIv4WzLIxTNH
- fZUynzk9XTWmwopVgdxH/HhbLhK6grt02lokaQ/SAtLqlrgQ/eJn8u+qu04aOVg2C5MwJnvO9
- rUy9Thl63ZXNDOjKQH3JXEA7csxPqiGbbLhDzNbN+D6PuPxAbNP3a1CAYyXQSbj0cfsC20JDO
- zaHWJIwPrHko5MQ29iHyI0EH0TW8Cbn5aUoCwPuHxc2VIt9yfnA+9/ek6RMCMLLC01E14ulI8
- 2FBvHRdBX9M1wELwgRDvylwDJxvYHSf5pmnT+naoiN1qxWvLQqYiQOk8GS3P0GyPTHonIi9o+
- tJwCNzUhNWz9p+vSu16IfCm2wxqDQ6B0u+jnIMjBVXa1crRbLnZgg6PEVA1xa1pKzYSqsIi1M
- vflDW9FwsNUEGyoOCMCshj79LO5KB1JLQGWHjWF7EGwMP5CUuzo3Lek/+Cp4PEEvpzu0blLCQ
- gHndA7EimLiLIomg7TW1A3gPsFRyfAX165BtDdPIxBt4oCJ78zSgH8jEDx6RTH+TdK1/PHoZ5
- +wusiyiXsptCez+53w1clspyXyfjMz2Z0v/cEdshmVvYMYHwg4MT+bTIban9gz3Oe09K6/3wu
- zv7jxQN3ujlLiNK9cwbuoPsGfrSTKpt2mGf4zEFAk=
+To: openwrt-devel@lists.openwrt.org, Yousong Zhou <yszhou4tech@gmail.com>,
+ Paul Spooren <mail@aparcar.org>
+From: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+Message-ID: <E40260A8-A68D-45CC-8898-04F1109A712E@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_024400_473657_020C2827 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20191104_031044_104845_50C62665 
+X-CRM114-Status: UNSURE (   4.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,11 +46,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2 2/2] base-files: rename hostname with EUI
- of mac address
+Subject: Re: [OpenWrt-Devel] [PATCH] x86: generate reproducible UUID
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,73 +61,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Rosy Song <rosysong@rosinson.com>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Rosy Song <rosysong@rosinson.com>
+On November 4, 2019 4:02:07 AM UTC, Yousong Zhou <yszhou4tech@gmail.com> wrote:
+>On Mon, 4 Nov 2019 at 07:47, Paul Spooren <mail@aparcar.org> wrote:
+>>
+>> -SIGNATURE:=$(shell perl -e 'printf("%08x", rand(0xFFFFFFFF))')
+>> +SIGNATURE:=$(shell echo "$(SOURCE_DATE_EPOCH)" | sha256sum | cut -c
+>1-8 -z)
+>
+>Maybe just unify with other targets should be enough.
 
-If a label MAC address is provided for device, system
-will rename the hostname with OpenWrt_{eui mac address}.
-This helps to distinguish between different devices.
+Or even better, provide reusable variable in some included makefile and use that instead?
 
-Signed-off-by: Rosy Song <rosysong@rosinson.com>
-[merged with commit introducing macaddr_geteui, rebased on updated
-label MAC address storage]
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- package/base-files/files/bin/config_generate     | 4 +++-
- package/base-files/files/lib/functions/system.sh | 7 +++++++
- 2 files changed, 10 insertions(+), 1 deletion(-)
+>target/linux/tegra/image/Makefile
+>10:SIGNATURE:=$(shell printf "%.8s" $(SOURCE_DATE_EPOCH))
+>
+>target/linux/x86/image/Makefile
+>43:SIGNATURE:=$(shell perl -e 'printf("%08x", rand(0xFFFFFFFF))')
+>
+>target/linux/mvebu/image/Makefile
+>16:SIGNATURE:=$(shell printf "%.8s" $(SOURCE_DATE_EPOCH))
 
-diff --git a/package/base-files/files/bin/config_generate b/package/base-files/files/bin/config_generate
-index bb6117e6dc..2c33bca09a 100755
---- a/package/base-files/files/bin/config_generate
-+++ b/package/base-files/files/bin/config_generate
-@@ -255,6 +255,7 @@ generate_static_system() {
- 	EOF
- 
- 	local label_macaddr=$(get_mac_label_dt)
-+	local hostname
- 
- 	if json_is_a system object; then
- 		json_select system
-@@ -264,11 +265,12 @@ generate_static_system() {
- 
- 	if [ -n "$label_macaddr" ]; then
- 		uci -q set "system.@system[-1].label_macaddr=$label_macaddr"
-+		hostname="OpenWrt-$(macaddr_geteui $label_macaddr)"
-+		uci -q set "system.@system[-1].hostname=$hostname"
- 	fi
- 
- 	if json_is_a system object; then
- 		json_select system
--			local hostname
- 			if json_get_var hostname hostname; then
- 				uci -q set "system.@system[-1].hostname=$hostname"
- 			fi
-diff --git a/package/base-files/files/lib/functions/system.sh b/package/base-files/files/lib/functions/system.sh
-index 5b4ced836c..f2b8f2395c 100644
---- a/package/base-files/files/lib/functions/system.sh
-+++ b/package/base-files/files/lib/functions/system.sh
-@@ -115,6 +115,13 @@ macaddr_add() {
- 	echo $oui:$nic
- }
- 
-+macaddr_geteui() {
-+	local mac=$1
-+	local sep=$2
-+
-+	echo ${mac:9:2}$sep${mac:12:2}$sep${mac:15:2}
-+}
-+
- macaddr_setbit_la() {
- 	local mac=$1
- 
--- 
-2.20.1
+
 
 
 _______________________________________________

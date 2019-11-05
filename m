@@ -2,83 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB80FF027A
-	for <lists+openwrt-devel@lfdr.de>; Tue,  5 Nov 2019 17:20:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44BD4F0327
+	for <lists+openwrt-devel@lfdr.de>; Tue,  5 Nov 2019 17:38:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RfYkAiMvfgY0Xw4x3GUyfmGudrRl3zxEjR/RR2MlnkU=; b=CmAIrqsVp9hjbn
-	2DcEUVz5R3TafJrzJJmb9CBRO0tDUEK+ALGAm3j2tOtK/0slzvhXQKadJk4tCaxK/sR2MYVbZCkna
-	oul/KCVpuZdaipEWHV/p/gxy/czUIGHJQBtWpTEkr1DBW4khCoe8UN/XXNA1iHLvm/XEaEeaNIXTI
-	kjJ8CmrhZRftLaxkbpwFDvERQ31PKkqZx3jntryPfQVCLyGPpkUnzXpeQeXzBaW8TlLETT6eOMQFu
-	sVNSv/O0MYuH8eySjn3aWtnD3LIRFKdApbHZKvtM7qF2DEpi1rLlUyU2CPqqvL2NPEGXmh7lGYNkT
-	76CpUatlSC/5ZOYSCkQA==;
+	List-Owner; bh=zuNjI8wNv7BMErD0iF0cKNyOjiI1HoxZZdtWe404jnU=; b=rj1uSUniJhoFwo
+	LTeXmUowYg15T5ae8ifp69khcRfeA7SJTPm56G/OWB+nJo4x6nQ5vDDDnXqKuAja/07cq7mjFrFEl
+	aEkS4bjbA1aGIG+rUY08GL9cXYCVYqFi5Q4gzxOALgZjdk3/f3xWsd4Ttv9LEgC6rYrlMRfU5r9gu
+	PDICdKQjn7puBfIrS2ufsx77KWlf8s3RKnYO57Q6enN0xcy4UHoBxuqzGMUrBckw8b7dggRIghhBh
+	P8zqjhMHefrlMJ/EXXhOANrXEu4p3YhpLZkhgW3d3N3InR3xkamEL/JDgZEziS94IwAeK+J32Cj/S
+	lTG5AAvWIchrP2hlyIwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS1ZO-0003Nv-3k; Tue, 05 Nov 2019 16:20:38 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1iS1qZ-0004BS-7v; Tue, 05 Nov 2019 16:38:23 +0000
+Received: from canardo.mork.no ([2001:4641::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS1ZD-0003NC-RK
- for openwrt-devel@lists.openwrt.org; Tue, 05 Nov 2019 16:20:30 +0000
-Received: from [IPv6:2001:41b8:83c:fa01:157c:afba:5cc1:a85] (unknown
- [IPv6:2001:41b8:83c:fa01:157c:afba:5cc1:a85])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 042D41E3EE;
- Tue,  5 Nov 2019 17:20:18 +0100 (CET)
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-References: <012e01d593e2$1ced66b0$56c83410$@adrianschmutzler.de>
- <25f488ab-9cc5-8393-8273-542b431a8368@david-bauer.net>
- <7389DC3B-0AFF-41EC-AD75-04370E606E7E@adrianschmutzler.de>
-From: David Bauer <mail@david-bauer.net>
-Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <e66c76ac-b2c7-076d-9231-3a71e66500d5@david-bauer.net>
-Date: Tue, 5 Nov 2019 17:20:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iS1qN-0004Ai-OI
+ for openwrt-devel@lists.openwrt.org; Tue, 05 Nov 2019 16:38:13 +0000
+Received: from miraculix.mork.no (miraculix.mork.no
+ [IPv6:2001:4641:0:2:7627:374e:db74:e353]) (authenticated bits=0)
+ by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id xA5Gc1Xp008986
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
+ Tue, 5 Nov 2019 17:38:01 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
+ t=1572971882; bh=Ghh20YsXfPicDTlOjPKfU6x6TvbJ8Qxc7bwJvS8RaDI=;
+ h=From:To:Cc:Subject:References:Date:Message-ID:From;
+ b=nEu6tApFLjbd7bNYJmACeDAWpFIDigEHnaeeoGSJifwnE/gPvVLXyTdVGzuLmNRVJ
+ 3SEOI22x4obcX8ExbZDRdWlSAnaqzpkeQnyIkW0MqqaJZUXRxqBuOlxuNlsSHTdeIZ
+ xC00+LO7LUVYraqfW3o6BfqomqpwazxfaAx0Fozg=
+Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
+ (envelope-from <bjorn@mork.no>)
+ id 1iS1qD-0004O6-1B; Tue, 05 Nov 2019 17:38:01 +0100
+From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Organization: m
+References: <20191105151202.4709-1-freifunk@adrianschmutzler.de>
+Date: Tue, 05 Nov 2019 17:38:00 +0100
+In-Reply-To: <20191105151202.4709-1-freifunk@adrianschmutzler.de> (Adrian
+ Schmutzler's message of "Tue, 5 Nov 2019 16:12:02 +0100")
+Message-ID: <87r22m1dp3.fsf@miraculix.mork.no>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <7389DC3B-0AFF-41EC-AD75-04370E606E7E@adrianschmutzler.de>
-Content-Language: en-US
+X-Virus-Scanned: clamav-milter 0.101.4 at canardo
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_082028_182381_5E2215F3 
-X-CRM114-Status: GOOD (  25.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191105_083812_125059_93645AC5 
+X-CRM114-Status: UNSURE (   6.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Broken WiFi on QCA9533 rev. 2
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: use gpio_hog instead of
+ gpio-export
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,109 +82,20 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org, Birger Koblitz <mail@birger-koblitz.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Adrian,
-
-On 11/5/19 5:14 PM, Adrian Schmutzler wrote:
-> Hi David,
-> 
-> thanks for your response.
-> 
-> To me it looks like qca953x already uses 25 MHz clock, or am I looking at the wrong value:
-
-Yes, however ath9k does not use this value but tries to determine the reference clock
-based on the bootstrap bit (see first link in my previous E-Mail), so the value
-from the device tree is never used for ath9k.
-
-Best wishes
-David
-
-> 
-> https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/dts/qca953x.dtsi#L27
-> 
-> Best
-> 
-> Adrian
-> 
-> 
-> On 5 November 2019 16:46:59 CET, David Bauer <mail@david-bauer.net> wrote:
-> 
->     Hello Adrian,
-> 
->     during the CPE210v2 bringup it was discovered that the CPE210 has the wrong bootstrap option set
->     for it's 25 MHz reference clock. Because of this, the device was originally not even booting with ar71xx.
-> 
->     On ath79, the reference clock is not detected based on the bootstrap option, but set by the DTS.
->     The twist however is the ath9k driver, whose OF patch still reads this register. [0]
-> 
->     On ar71xx, the platform data was always set to true for the QCA9533 [1]
-> 
->     So you can try to force the settings for 25MHz reference clock for all QCA953x regardless of the bootstrap
->     settings to keep the behavior in line with ar71xx.
-> 
->     I have no device to verify this, however it's a good candidate for the root cause. ;)
-> 
->     [0] https://github.com/openwrt/openwrt/blob/master/package/kernel/mac80211/patches/ath/552-ahb_of.patch#L237
->     [1] https://github.com/openwrt/openwrt/blob/master/target/linux/ar71xx/patches-4.14/620-MIPS-ath79-add-support-for-QCA953x-SoC.patch#L260
-> 
->     Best wishes
->     David
-> 
->     On 11/5/19 3:05 PM, Adrian Schmutzler wrote:
-> 
->         Hi,
-> 
->         for quite some time already we are struggling with broken WiFi on some TP-Link CPE devices having QCA9533 rev. 2 (QCA9533-BL3A SOC) in common.
-> 
->         I'd be happy on some help here, since I've exhausted my debugging capabilities.
-> 
-> 
->         1. Symptoms: WiFi looks up on the device, some TX traffic is shown in ifconfig, RX is zero. The AP cannot be found by clients. "iw dev wlan0 scan" returns nothing.
-> 
->         2. Affected devices: TP-Link CPE210 v2/v3, CPE220 v3 (all QCA9533 rev. 2?); no other QCA9533 devices known to be affected (specific to CPE or to QCA9533 rev. 2?)
-> 
->         3. For a certain model, there are devices which are working correctly and others which don't. There is no known indicator to find out whether a device works or not. The state of a device does not change as far as we know (always working or never working).
-> 
->         4. So far, only 2.4 GHZ-only devices were affected
-> 
->         5. There is no diagnostic output that indicates a WiFi problem. dmesg/logread look normal, there is no difference when compared between working and not-working devices (despite RX=0/scan as stated above)
-> 
->         6. The problem seems to be present from the beginning (device support patches), it just has been overlooked since it's not occurring on every device.
-> 
->         7. The ar71xx firmware for all devices works flawlessly, so it is an ath79-specific problem.
-> 
-> 
->         Other findings that might be connected or not:
-> 
->         a. On ath79 phy0 uses irq=11/irq=12 and on ar71xx irq=47. eth0 uses irq=4 on both targets.
-> 
->         b. The following gpio is only found on ar71xx: gpio-495 ( |ath9k-phy0 ) in lo
-> 
-> 
->         I currently own a CPE210v2 with the bug and can test suggestions (if I'm capable of implementing them).
->         There is a device support PR for the CPE220 v3 suffering from the same problem: https://github.com/openwrt/openwrt/pull/2514
-> 
->         Despite, further reading may be found in forum discussion and bug report:
->         https://bugs.openwrt.org/index.php?do=details&task_id=2333
->         https://bugs.openwrt.org/index.php?do=details&task_id=2478
->         https://forum.openwrt.org/t/ath79-tp-link-cpe210-v2-0-wifi-not-working/40666
-> 
->         Initial support for CPE210 v2/v3 was done by me and bluelineXY, both already involved in the discussion. ;-)
-> 
->         Thanks for any hints!
-> 
->         Adrian
->         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
->         openwrt-devel mailing list
->         openwrt-devel@lists.openwrt.org
->         https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+QWRyaWFuIFNjaG11dHpsZXIgPGZyZWlmdW5rQGFkcmlhbnNjaG11dHpsZXIuZGU+IHdyaXRlczoK
+Cj4gVGhpcyBwYXRjaCBjb252ZXJ0cyBhbGwgRFRTIGZpbGVzIHdpdGggc2V0dGluZ3MgdGhhdCBu
+b3JtYWxseSBkbwo+IG5vdCBuZWVkIHVzZXIgaW50ZXJhY3Rpb24sIGUuZy4gcG93ZXIgZm9yIGV4
+dGVybmFsIFVTQiBwb3J0cywgdG8KPiBncGlvX2hvZy4KCldvdWxkbid0IGl0IGJlIGJldHRlciB0
+byBtYXAgdGhlc2UgYXMgZml4ZWQgcmVndWxhdG9ycz8gIFRoZW4geW91IGNvdWxkCmV2ZW50dWFs
+bHkgbGluayB0aGVtIHRvIHRoZSBjb25uZWN0ZWQgcG9ydHMvY29udHJvbGxlcnMsIGFuZCBhbGxv
+dyB0aGVtCnRvIGJlIGF1dG9tYXRpY2FsbHkgdHVybmVkIG9mZiB3aGVuIG5vdCBuZWVkZWQuCgoK
+QmrDuHJuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpv
+cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3Jn
+Cmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVs
+Cg==

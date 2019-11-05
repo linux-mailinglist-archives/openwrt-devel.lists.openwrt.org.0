@@ -2,79 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F35BEF515
-	for <lists+openwrt-devel@lfdr.de>; Tue,  5 Nov 2019 06:43:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F098EF531
+	for <lists+openwrt-devel@lfdr.de>; Tue,  5 Nov 2019 06:54:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vzl+xs9yt8UyTX0ImlBiaDmIlA686/s2RWmoC5uFqfM=; b=F348XK9RIWvi3i
-	9jDtyitLNAjlJusbIeI0dXWy8RPwymb84quvQyas9/AeU/2SaGV1hOX69BaoUXsqIIq1KzjGGYqkW
-	c8d2zXCkPBvOshfVdp91ipbbnByIRpBdTEbLQrYSEOpDA+qGrhLtth7e9R2exspg/0UJIhEeP/LIK
-	ZiEVXEYf1KTF2431w+4EP3DOxKRCIU3RlY7Ruzo55tKPIDsggAPvl+UEmNS28hk9+jcddVCDkeF0S
-	qXOko3+xRokNuf+nhzxWNIKWyg/JQZLhyqmy4UVEURB8wD0xa+AcgREzjjnYWGjJkbYUu5m2d7ER3
-	gjp0/piHpKz+G/c5rX+w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AsiKhC8tCUJRqQtGGpR9XApkis+GCYClJocfrJ7G2xo=; b=s3bfeiM52mNIMi
+	1lRGXRoeLW6Ou8NyePjntmRA+WZc/PFr9n4+iuKgChMhRMmhrP4ctoYS+FDtUV3ox7/DgF1Ai2WYS
+	7uqQFFx9423reB8MSEz84Un9cKB2IsklPwoQCsowxT7zG6uFwuhIHw9cWguuww53l97+EDvQZqvRG
+	NbEb1hzn1PlBTYcCbkqBUbplOVlgis9WLU1EhL9Sll7qgwR9L1Lw8fuNCA6qgUnRyeXDEWjU8aC4Z
+	75FE95kqo90+jCQGP87lkXG8ZUpjAnt91XNLdF8Krofp2s8YQp11UetMLiFwUIgogv5PDhlGdAN+J
+	/F74W8SRkJ4Da92BQLRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRrcj-0006Vj-CS; Tue, 05 Nov 2019 05:43:25 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1iRrmw-0001Ft-LG; Tue, 05 Nov 2019 05:53:58 +0000
+Received: from smtpbgsg2.qq.com ([54.254.200.128])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRrcd-0006Uo-LY
- for openwrt-devel@lists.openwrt.org; Tue, 05 Nov 2019 05:43:21 +0000
-Received: by mail-ot1-x341.google.com with SMTP id c19so502617otr.11
- for <openwrt-devel@lists.openwrt.org>; Mon, 04 Nov 2019 21:43:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=x4KDVwi7e81J+2WJw1FprsOAaU9LSEK/DEwAZBsWa2E=;
- b=oSNTUgw2ssdBQ9EetYag2hoXzTv+qOARSXv/KKMJmExA9xMKFJhXGK/Ou+eTItHOGO
- VwBuliPGugKez3PhJdGrwm49l1u+X9TlCXoyxt/kcWyp36Y2nFwitp1tXQNcxb92pGKf
- k/Nn6xmqG5DUq8EuIlX4zpcvZTNtAyGjtBu2LsppFP0maCG61S1eBiBzdNlF/nPzIxrf
- XDXZ5x/PQ9YUhxP/PfpwPuaeYfe6aRQbvSpeAUXL2v0iCiUCSTve3gZ5ADR6IW8uTB0f
- FJXG9rxUfu2F/3xisiwvh6wTa6ilNtzmqB5kWB30RlABsfnBWkA57MrnQpu60R/sf2b8
- b2UA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=x4KDVwi7e81J+2WJw1FprsOAaU9LSEK/DEwAZBsWa2E=;
- b=W5zspZrxY7pWoOoyo+WB3gx3t7JSL9AuvlCQpj0g4gutmF8cg/FuVNb6+RivGbvfIq
- cOiyCEHyFbbgWKAJoWrFdhKz0UsGvQNce8J0af7OAYPwscpN9fN3s2NYStNC1uBmeYJX
- Jgkr7N2cBTkcYXcrOPb8xqaUrw5Gnd4d7Mmb2K0w64b0rKcv6qF5pN0NxPY1QWGGKuKF
- HvMLmYWpwMp/H4KN3sy/u4n6wcOFmSrfoCfmrsTjHreSKUQZrn/dGVaHPtdZXYz5bz7Q
- 0NS6ducVamrB2IikhV/mQpIncKoEragT/kna1M+x6Mqy3e8i6VZ6PeVAWoGH2Gvm6dYg
- TjFg==
-X-Gm-Message-State: APjAAAWNcJnV1HksevmMdiZQj10vJd6Qo4IfZ4gtvYcRSdxwWTadnX2O
- D6R6fyk3hWFiDm0oXmL+XzkNqIvDmGUvkPPNsP0xir7D
-X-Google-Smtp-Source: APXvYqxOgHD8dqugKkXV8x9LimRpMzEFa+igVqdFJ5zd/rnx6wISqICWX904C8Cq3UGOE2pi6AwmsnFxfhcaA5RYeIs=
-X-Received: by 2002:a05:6830:1149:: with SMTP id
- x9mr10988196otq.47.1572932594807; 
- Mon, 04 Nov 2019 21:43:14 -0800 (PST)
-MIME-Version: 1.0
-References: <20191105003657.16540-1-ynezz@true.cz>
- <20191105003657.16540-19-ynezz@true.cz>
-In-Reply-To: <20191105003657.16540-19-ynezz@true.cz>
-From: Rosen Penev <rosenp@gmail.com>
-Date: Mon, 4 Nov 2019 21:43:03 -0800
-Message-ID: <CAKxU2N-TTd6rL0yuvBFjyFjy3JvZwn8hmK0OeW5udPkdAJFfaw@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+ id 1iRrmk-0001DT-G2
+ for openwrt-devel@lists.openwrt.org; Tue, 05 Nov 2019 05:53:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1572933188; bh=/MccL+mhB32PaPF1y1L+Zvn0YyAvsQ3/0p0MXZHTX9I=;
+ h=From:To:Subject:Date:Message-Id;
+ b=PArxd45mLwjt1SnzcukOW0hwUm8zdVUnteezF4yYEqh7Gw0xo9PMN9HgK9Yc/urn5
+ 4WLhemt3vOQnZQqSj9vJxI3yrAIvNtOmOPjvBky9PHMognLt6/MUv6Bvi4XtIZKEtP
+ ERykptXubdSCeBDM7K3czM7tvU08kPAjcvrQh7xQ=
+X-QQ-mid: esmtp2t1572933186tudbyna38
+Received: from localhost.localdomain (unknown [125.121.21.106])
+ by esmtp4.qq.com (ESMTP) with 
+ id ; Tue, 05 Nov 2019 13:53:05 +0800 (CST)
+X-QQ-SSF: B1000000000000C0TH100F00000000Z
+X-QQ-FEAT: NCaj/8xwfz0+Ct2Mi3jh4miM3dZecpCwea/PYxGLwZcwxgAbM3llqISmUK1U3
+ W2BebDG6M18k/ttJ1j8dlRYiVWrw4hI1JEkiWe6B/xiY3A7O1XCaTF4TEj31mhXVyc7Zdnj
+ 268p6HNWQVLLvXPsZfct/k2txbMoZFXO6MiyZLuTqpyMivQqD30bJuyb5vgUgA5bZH2YS2a
+ 470m3sCG+PH2dIWoPgZ6uAAcVlM42lFAVel/uo6p2hwuJMBiKb23jgATRflLXD57Bahh7by
+ L4FxZCOqvpuK7XAaibxYHjTDkhwuAtbg73GGNkuH5o97Q+Y8CWG2KVAaA=
+X-QQ-GoodBg: 0
+From: Robinson Wu <wurobinson@qq.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  5 Nov 2019 13:52:39 +0800
+Message-Id: <1572933159-35581-1-git-send-email-wurobinson@qq.com>
+X-Mailer: git-send-email 2.7.4
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtp:qq.com:bgforeign:bgforeign4
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_214319_729977_912B47C6 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20191104_215347_017346_11C4C309 
+X-CRM114-Status: GOOD (  12.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [54.254.200.128 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wurobinson[at]qq.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,7 +69,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH uci 18/18] lua: fix error handling
+Subject: [OpenWrt-Devel] [PATCH v5] ramips: add support for JS76x8 series
+ DEV boards
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,98 +82,390 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Robinson Wu <wurobinson@qq.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gTW9uLCBOb3YgNCwgMjAxOSBhdCA0OjQwIFBNIFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUu
-Y3o+IHdyb3RlOgo+Cj4gc2Nhbi1idWlsZCBmcm9tIGNsYW5nIHZlcnNpb24gOSBoYXMgcmVwb3J0
-ZWQgZm9sbG93aW5nIGlzc3VlczoKTm90ZSB0aGF0IENNYWtlIGhhcyBpbnRlZ3JhdGVkIGNsYW5n
-LXRpZHkgc3VwcG9ydC4gSXQgc3VwcG9ydHMgYWxsIHRoZQpjbGFuZy1hbmFseXplciBzdHVmZiBh
-bmQgbW9yZS4KPgo+ICB1Y2kuYzozODk6Mzogd2FybmluZzogVmFsdWUgc3RvcmVkIHRvICdlcnIn
-IGlzIG5ldmVyIHJlYWQKPiAgICAgICAgICAgICAgICAgZXJyID0gVUNJX0VSUl9JTlZBTDsKPiAg
-ICAgICAgICAgICAgICAgXiAgICAgfn5+fn5+fn5+fn5+fgo+ICB1Y2kuYzozOTM6Mzogd2Fybmlu
-ZzogVmFsdWUgc3RvcmVkIHRvICdlcnInIGlzIG5ldmVyIHJlYWQKPiAgICAgICAgICAgICAgICAg
-ZXJyID0gVUNJX0VSUl9OT1RGT1VORDsKPiAgICAgICAgICAgICAgICAgXiAgICAgfn5+fn5+fn5+
-fn5+fn5+fgo+ICB1Y2kuYzo0MTc6NDogd2FybmluZzogVmFsdWUgc3RvcmVkIHRvICdlcnInIGlz
-IG5ldmVyIHJlYWQKPiAgICAgICAgICAgICAgICAgICAgICAgICBlcnIgPSBVQ0lfRVJSX0lOVkFM
-Owo+ICAgICAgICAgICAgICAgICAgICAgICAgIF4gICAgIH5+fn5+fn5+fn5+fn4KPiAgdWNpLmM6
-NTI0OjM6IHdhcm5pbmc6IFZhbHVlIHN0b3JlZCB0byAnZXJyJyBpcyBuZXZlciByZWFkCj4gICAg
-ICAgICAgICAgICAgIGVyciA9IFVDSV9FUlJfSU5WQUw7Cj4gICAgICAgICAgICAgICAgIF4gICAg
-IH5+fn5+fn5+fn5+fn4KPiAgdWNpLmM6NTMzOjM6IHdhcm5pbmc6IFZhbHVlIHN0b3JlZCB0byAn
-ZXJyJyBpcyBuZXZlciByZWFkCj4gICAgICAgICAgICAgICAgIGVyciA9IFVDSV9FUlJfSU5WQUw7
-Cj4gICAgICAgICAgICAgICAgIF4gICAgIH5+fn5+fn5+fn5+fn4KPiAgdWNpLmM6NTY1OjQ6IHdh
-cm5pbmc6IFZhbHVlIHN0b3JlZCB0byAnZXJyJyBpcyBuZXZlciByZWFkCj4gICAgICAgICAgICAg
-ICAgICAgICAgICAgZXJyID0gVUNJX0VSUl9JTlZBTDsKPiAgICAgICAgICAgICAgICAgICAgICAg
-ICBeICAgICB+fn5+fn5+fn5+fn5+Cj4gIHVjaS5jOjU3NTozOiB3YXJuaW5nOiBWYWx1ZSBzdG9y
-ZWQgdG8gJ2VycicgaXMgbmV2ZXIgcmVhZAo+ICAgICAgICAgICAgICAgICBlcnIgPSBVQ0lfRVJS
-X0lOVkFMOwo+ICAgICAgICAgICAgICAgICBeICAgICB+fn5+fn5+fn5+fn5+Cj4gIHVjaS5jOjU4
-NDozOiB3YXJuaW5nOiBWYWx1ZSBzdG9yZWQgdG8gJ2VycicgaXMgbmV2ZXIgcmVhZAo+ICAgICAg
-ICAgICAgICAgICBlcnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICAgICAgICAgICAgICAgICBeICAgICB+
-fn5+fn5+fn5+fn5+Cj4gIHVjaS5jOjY0MjozOiB3YXJuaW5nOiBWYWx1ZSBzdG9yZWQgdG8gJ2Vy
-cicgaXMgbmV2ZXIgcmVhZAo+ICAgICAgICAgICAgICAgICBlcnIgPSBVQ0lfRVJSX0lOVkFMOwo+
-ICAgICAgICAgICAgICAgICBeICAgICB+fn5+fn5+fn5+fn5+Cj4gIHVjaS5jOjY1MTozOiB3YXJu
-aW5nOiBWYWx1ZSBzdG9yZWQgdG8gJ2VycicgaXMgbmV2ZXIgcmVhZAo+ICAgICAgICAgICAgICAg
-ICBlcnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICAgICAgICAgICAgICAgICBeICAgICB+fn5+fn5+fn5+
-fn5+Cj4KPiBTaWduZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6Pgo+IC0t
-LQo+ICBsdWEvdWNpLmMgfCAyMCArKysrKysrKysrLS0tLS0tLS0tLQo+ICAxIGZpbGUgY2hhbmdl
-ZCwgMTAgaW5zZXJ0aW9ucygrKSwgMTAgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvbHVh
-L3VjaS5jIGIvbHVhL3VjaS5jCj4gaW5kZXggYTdhYWFkMzc1YzIwLi4xZWQ3M2U0ZjY3ZGMgMTAw
-NjQ0Cj4gLS0tIGEvbHVhL3VjaS5jCj4gKysrIGIvbHVhL3VjaS5jCj4gQEAgLTM4NiwxMSArMzg2
-LDExIEBAIHVjaV9sdWFfZ2V0X2FueShsdWFfU3RhdGUgKkwsIGJvb2wgYWxsKQo+Cj4gICAgICAg
-ICBsb29rdXBfcHRyKGN0eCwgJnB0ciwgTlVMTCwgdHJ1ZSk7Cj4gICAgICAgICBpZiAoIWFsbCAm
-JiAhcHRyLnMpIHsKPiAtICAgICAgICAgICAgICAgZXJyID0gVUNJX0VSUl9JTlZBTDsKPiArICAg
-ICAgICAgICAgICAgY3R4LT5lcnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICAgICAgICAgICAgICAgICBn
-b3RvIGVycm9yOwo+ICAgICAgICAgfQo+ICAgICAgICAgaWYgKCEocHRyLmZsYWdzICYgVUNJX0xP
-T0tVUF9DT01QTEVURSkpIHsKPiAtICAgICAgICAgICAgICAgZXJyID0gVUNJX0VSUl9OT1RGT1VO
-RDsKPiArICAgICAgICAgICAgICAgY3R4LT5lcnIgPSBVQ0lfRVJSX05PVEZPVU5EOwo+ICAgICAg
-ICAgICAgICAgICBnb3RvIGVycm9yOwo+ICAgICAgICAgfQo+Cj4gQEAgLTQxNCw3ICs0MTQsNyBA
-QCB1Y2lfbHVhX2dldF9hbnkobHVhX1N0YXRlICpMLCBib29sIGFsbCkKPiAgICAgICAgICAgICAg
-ICAgICAgICAgICB1Y2lfcHVzaF9vcHRpb24oTCwgcHRyLm8pOwo+ICAgICAgICAgICAgICAgICAg
-ICAgICAgIGJyZWFrOwo+ICAgICAgICAgICAgICAgICBkZWZhdWx0Ogo+IC0gICAgICAgICAgICAg
-ICAgICAgICAgIGVyciA9IFVDSV9FUlJfSU5WQUw7Cj4gKyAgICAgICAgICAgICAgICAgICAgICAg
-Y3R4LT5lcnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIGdvdG8g
-ZXJyb3I7Cj4gICAgICAgICB9Cj4gICAgICAgICBpZiAocykKPiBAQCAtNTIxLDcgKzUyMSw3IEBA
-IHVjaV9sdWFfcmVuYW1lKGx1YV9TdGF0ZSAqTCkKPiAgICAgICAgICAgICAgICAgcHRyLm9wdGlv
-biA9IE5VTEw7Cj4gICAgICAgICAgICAgICAgIGJyZWFrOwo+ICAgICAgICAgZGVmYXVsdDoKPiAt
-ICAgICAgICAgICAgICAgZXJyID0gVUNJX0VSUl9JTlZBTDsKPiArICAgICAgICAgICAgICAgY3R4
-LT5lcnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICAgICAgICAgICAgICAgICBnb3RvIGVycm9yOwo+ICAg
-ICAgICAgfQo+Cj4gQEAgLTUzMCw3ICs1MzAsNyBAQCB1Y2lfbHVhX3JlbmFtZShsdWFfU3RhdGUg
-KkwpCj4gICAgICAgICAgICAgICAgIGdvdG8gZXJyb3I7Cj4KPiAgICAgICAgIGlmICgoKHB0ci5z
-ID09IE5VTEwpICYmIChwdHIub3B0aW9uICE9IE5VTEwpKSB8fCAocHRyLnZhbHVlID09IE5VTEwp
-KSB7Cj4gLSAgICAgICAgICAgICAgIGVyciA9IFVDSV9FUlJfSU5WQUw7Cj4gKyAgICAgICAgICAg
-ICAgIGN0eC0+ZXJyID0gVUNJX0VSUl9JTlZBTDsKPiAgICAgICAgICAgICAgICAgZ290byBlcnJv
-cjsKPiAgICAgICAgIH0KPgo+IEBAIC01NjIsNyArNTYyLDcgQEAgdWNpX2x1YV9yZW9yZGVyKGx1
-YV9TdGF0ZSAqTCkKPiAgICAgICAgIGNhc2UgMToKPiAgICAgICAgICAgICAgICAgLyogRm9ybWF0
-OiB1Y2kuc2V0KCJwLnM9diIpIG9yIHVjaS5zZXQoInAucz12IikgKi8KPiAgICAgICAgICAgICAg
-ICAgaWYgKHB0ci5vcHRpb24pIHsKPiAtICAgICAgICAgICAgICAgICAgICAgICBlcnIgPSBVQ0lf
-RVJSX0lOVkFMOwo+ICsgICAgICAgICAgICAgICAgICAgICAgIGN0eC0+ZXJyID0gVUNJX0VSUl9J
-TlZBTDsKPiAgICAgICAgICAgICAgICAgICAgICAgICBnb3RvIGVycm9yOwo+ICAgICAgICAgICAg
-ICAgICB9Cj4gICAgICAgICAgICAgICAgIGJyZWFrOwo+IEBAIC01NzIsNyArNTcyLDcgQEAgdWNp
-X2x1YV9yZW9yZGVyKGx1YV9TdGF0ZSAqTCkKPiAgICAgICAgICAgICAgICAgcHRyLm9wdGlvbiA9
-IE5VTEw7Cj4gICAgICAgICAgICAgICAgIGJyZWFrOwo+ICAgICAgICAgZGVmYXVsdDoKPiAtICAg
-ICAgICAgICAgICAgZXJyID0gVUNJX0VSUl9JTlZBTDsKPiArICAgICAgICAgICAgICAgY3R4LT5l
-cnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICAgICAgICAgICAgICAgICBnb3RvIGVycm9yOwo+ICAgICAg
-ICAgfQo+Cj4gQEAgLTU4MSw3ICs1ODEsNyBAQCB1Y2lfbHVhX3Jlb3JkZXIobHVhX1N0YXRlICpM
-KQo+ICAgICAgICAgICAgICAgICBnb3RvIGVycm9yOwo+Cj4gICAgICAgICBpZiAoKHB0ci5zID09
-IE5VTEwpIHx8IChwdHIudmFsdWUgPT0gTlVMTCkpIHsKPiAtICAgICAgICAgICAgICAgZXJyID0g
-VUNJX0VSUl9JTlZBTDsKPiArICAgICAgICAgICAgICAgY3R4LT5lcnIgPSBVQ0lfRVJSX0lOVkFM
-Owo+ICAgICAgICAgICAgICAgICBnb3RvIGVycm9yOwo+ICAgICAgICAgfQo+Cj4gQEAgLTYzOSw3
-ICs2MzksNyBAQCB1Y2lfbHVhX3NldChsdWFfU3RhdGUgKkwpCj4gICAgICAgICAgICAgICAgIHB0
-ci5vcHRpb24gPSBOVUxMOwo+ICAgICAgICAgICAgICAgICBicmVhazsKPiAgICAgICAgIGRlZmF1
-bHQ6Cj4gLSAgICAgICAgICAgICAgIGVyciA9IFVDSV9FUlJfSU5WQUw7Cj4gKyAgICAgICAgICAg
-ICAgIGN0eC0+ZXJyID0gVUNJX0VSUl9JTlZBTDsKPiAgICAgICAgICAgICAgICAgZ290byBlcnJv
-cjsKPiAgICAgICAgIH0KPgo+IEBAIC02NDgsNyArNjQ4LDcgQEAgdWNpX2x1YV9zZXQobHVhX1N0
-YXRlICpMKQo+ICAgICAgICAgICAgICAgICBnb3RvIGVycm9yOwo+Cj4gICAgICAgICBpZiAoKChw
-dHIucyA9PSBOVUxMKSAmJiAocHRyLm9wdGlvbiAhPSBOVUxMKSkgfHwgKHB0ci52YWx1ZSA9PSBO
-VUxMKSkgewo+IC0gICAgICAgICAgICAgICBlcnIgPSBVQ0lfRVJSX0lOVkFMOwo+ICsgICAgICAg
-ICAgICAgICBjdHgtPmVyciA9IFVDSV9FUlJfSU5WQUw7Cj4gICAgICAgICAgICAgICAgIGdvdG8g
-ZXJyb3I7Cj4gICAgICAgICB9Cj4KPgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKPiBvcGVud3J0LWRl
-dmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxA
-bGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL29wZW53cnQtZGV2ZWwK
+This commit adds support for the ZhuoTK JS76x8 series development boards.
+These devices have the following specifications:
+
+- SOC: MT7628AN/NN, MT7688AN, MT7628DAN
+- RAM of MT7628AN/NN and MT7688AN: 64/128/256 MB (DDR2)
+- RAM of MT7628DAN: 64 MB (DDR2)
+- FLASH:8/16/32 MB (SPI NOR)
+- Ethernet:3x 10/100 Mbps ethernet ports (MT76x8 built-in switch)
+- WIFI:1x 2T2R 2.4 GHz Wi-Fi
+- LEDs:1x system status green LED, 1x wifi green LED,
+       3x ethernet green LED
+- Buttons:1x reset button, 2x user defined button
+- 1x microSD slot
+- 4x USB 2.0 port
+- 1x mini-usb debug UART
+- 1x DC jack for main power (DC 5V)
+- 1x TTL/RS232 UART
+- 1x TTL/RS485 UART
+- 13x GPIO header
+- 1x audio codec(wm8960)
+
+Installation via OpenWrt:
+
+The original firmware is OpenWrt, so both LuCI or sysupgrade can be used.
+
+Installation via U-boot web:
+
+1. Power on board with reset button pressed, release it
+   after wifi led start blinking.
+2. Setup static IP 192.168.1.123/4 on your PC.
+3. Go to 192.168.1.8 in browser and upload "sysupgrade" image.
+
+Installation via U-boot tftp:
+1. Connect to serial console at the mini usb, which has been connected to UART0
+   on board (115200 8N1)
+2. Setup static IP 192.168.1.123/4 on your PC.
+3. Place openwrt-firmware.bin on your PC tftp server (192.168.1.123).
+3. Connect one of LAN ports on board to your PC.
+4. Start terminal software (e.g. screen /dev/ttyUSB0 115200) on PC.
+5. Apply power to board.
+6. Interrupt U-boot with keypress of "2".
+7. At u-boot prompts:
+   Warning!! Erase Linux in Flash then burn new one. Are you sure?(Y/N) Y
+   Input device IP (192.168.1.8) ==:192.168.1.8
+   Input server IP (192.168.1.123) ==:192.168.1.123
+   Input Linux Kernel filename (root_uImage) ==:openwrt-firmware.bin
+8. board will download file from tftp server, write it to flash and reboot.
+
+Other notes:
+
+Vist www.zhuotk.com for further information.
+
+Signed-off-by: Robinson Wu <wurobinson@qq.com>
+---
+ .../ramips/dts/mt7628an_zhuotk_js76x8-16m.dts      |  12 ++
+ .../ramips/dts/mt7628an_zhuotk_js76x8-32m.dts      |  12 ++
+ .../linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts |  12 ++
+ .../linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi   | 156 +++++++++++++++++++++
+ target/linux/ramips/image/mt76x8.mk                |  30 ++++
+ .../ramips/mt76x8/base-files/etc/board.d/01_leds   |   6 +
+ .../mt76x8/base-files/etc/board.d/02_network       |  10 +-
+ 7 files changed, 236 insertions(+), 2 deletions(-)
+ create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
+ create mode 100644 target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
+
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
+new file mode 100644
+index 0000000..a9524fc
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-16m.dts
+@@ -0,0 +1,12 @@
++/dts-v1/;
++
++#include "mt7628an_zhuotk_js76x8.dtsi"
++
++/ {
++	compatible = "zhuotk,js76x8-16m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
++	model = "ZhuoTK JS76x8 (16M)";
++};
++
++&firmware {
++	reg = <0x50000 0xfb0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
+new file mode 100644
+index 0000000..aece3dd
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-32m.dts
+@@ -0,0 +1,12 @@
++/dts-v1/;
++
++#include "mt7628an_zhuotk_js76x8.dtsi"
++
++/ {
++	compatible = "zhuotk,js76x8-32m", "zhuotk,js76x8", "mediatek,mt7628an-soc";
++	model = "ZhuoTK JS76x8 (32M)";
++};
++
++&firmware {
++	reg = <0x50000 0x1fb0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
+new file mode 100644
+index 0000000..3902218
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8-8m.dts
+@@ -0,0 +1,12 @@
++/dts-v1/;
++
++#include "mt7628an_zhuotk_js76x8.dtsi"
++
++/ {
++	compatible = "zhuotk,js76x8-8m", "mediatek,mt7628an-soc";
++	model = "ZhuoTK JS76x8 (8M)";
++};
++
++&firmware {
++	reg = <0x50000 0x7b0000>;
++};
+diff --git a/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
+new file mode 100644
+index 0000000..cab24d9
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7628an_zhuotk_js76x8.dtsi
+@@ -0,0 +1,156 @@
++#include "mt7628an.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "zhuotk,js76x8", "mediatek,mt7628an-soc";
++
++	aliases {
++		led-boot = &led_system;
++		led-failsafe = &led_system;
++		led-running = &led_system;
++		led-upgrade = &led_system;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,115200";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		led_system: system {
++			label = "js76x8:green:system";
++			gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
++		};
++
++		wifi {
++			label = "js76x8:green:wifi";
++			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
++			linux,code = <KEY_RESTART>;
++		};
++	};
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "gpio","p3led_an","p4led_an",
++				"pwm0","pwm1","refclk","wdt","wled_an";
++			ralink,function = "gpio";
++		};
++
++		p0led {
++			ralink,group = "p0led_an";
++			ralink,function = "p0led_an";
++		};
++
++		p1led {
++			ralink,group = "p1led_an";
++			ralink,function = "p1led_an";
++		};
++
++		p2led {
++			ralink,group = "p2led_an";
++			ralink,function = "p2led_an";
++		};
++
++		pwm_2_3 {
++			ralink,group = "uart2";
++			ralink,function = "pwm";
++		};
++	};
++
++	uart2 {
++		uart2 {
++			ralink,group = "spis";
++			ralink,function = "pwm_uart2";
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&spi_pins>, <&spi_cs1_pins>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <40000000>;
++		m25p,chunked-io = <32>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			firmware: partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++			};
++		};
++	};
++
++	spidev@1 {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		compatible = "linux,spidev";
++		reg = <1>;
++		spi-max-frequency = <40000000>;
++	};
++};
++
++&i2c {
++	status = "okay";
++};
++
++&uart1 {
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0x28>;
++};
++
++&sdhci {
++	status = "okay";
++	mediatek,cd-low;
++};
++
++&wmac {
++	status = "okay";
++};
+diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
+index dbd80a6..e68286d 100644
+--- a/target/linux/ramips/image/mt76x8.mk
++++ b/target/linux/ramips/image/mt76x8.mk
+@@ -583,6 +583,36 @@ define Device/zbtlink_zbt-we1226
+ endef
+ TARGET_DEVICES += zbtlink_zbt-we1226
+ 
++define Device/zhuotk_js76x8-16m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 16064k
++  DEVICE_VENDOR := ZhuoTK
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 16M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += zhuotk_js76x8-16m
++
++define Device/zhuotk_js76x8-32m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 32448k
++  DEVICE_VENDOR := ZhuoTK
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 32M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += zhuotk_js76x8-32m
++
++define Device/zhuotk_js76x8-8m
++  MTK_SOC := mt7628an
++  IMAGE_SIZE := 7872k
++  DEVICE_VENDOR := ZhuoTK
++  DEVICE_MODEL := JS76x8
++  DEVICE_VARIANT := 8M
++  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
++endef
++TARGET_DEVICES += zhuotk_js76x8-8m
++
+ define Device/zyxel_keenetic-extra-ii
+   MTK_SOC := mt7628an
+   IMAGE_SIZE := 14912k
+diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
+index f397da1..f4c216e 100755
+--- a/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/01_leds
+@@ -127,6 +127,12 @@ zbtlink,zbt-we1226)
+ 	ucidef_set_led_switch "lan2" "LAN2" "$boardname:green:lan2" "switch0" "0x02"
+ 	ucidef_set_led_switch "wan" "WAN" "$boardname:green:wan" "switch0" "0x10"
+ 	;;
++zhuotk,js76x8-16m|\
++zhuotk,js76x8-32m|\
++zhuotk,js76x8-8m)
++	ucidef_set_led_timer "system" "system" "js76x8:green:system" "1000" "1000"
++	set_wifi_led "js76x8:green:wifi"
++	;;
+ zyxel,keenetic-extra-ii)
+ 	set_wifi_led "$boardname:green:wifi"
+ 	ucidef_set_led_switch "internet" "internet" "$boardname:green:internet" "switch0" "0x01"
+diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+index 3bb5d31..d771415 100755
+--- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+@@ -62,7 +62,10 @@ ramips_setup_interfaces()
+ 	totolink,lr1200|\
+ 	wavlink,wl-wn570ha1|\
+ 	wavlink,wl-wn575a3|\
+-	xiaomi,miwifi-nano)
++	xiaomi,miwifi-nano|\
++	zhuotk,js76x8-16m|\
++	zhuotk,js76x8-32m|\
++	zhuotk,js76x8-8m)
+ 		ucidef_add_switch "switch0" \
+ 			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
+ 		;;
+@@ -165,7 +168,10 @@ ramips_setup_macs()
+ 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory_info 0xd)" 1)
+ 		;;
+ 	skylab,skw92a|\
+-	totolink,lr1200)
++	totolink,lr1200|\
++	zhuotk,js76x8-16m|\
++	zhuotk,js76x8-32m|\
++	zhuotk,js76x8-8m)
+ 		wan_mac=$(mtd_get_mac_binary factory 0x2e)
+ 		;;
+ 	vocore,vocore2|\
+-- 
+2.7.4
+
+
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,77 +2,94 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 200FBF091A
-	for <lists+openwrt-devel@lfdr.de>; Tue,  5 Nov 2019 23:11:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82E51F0943
+	for <lists+openwrt-devel@lfdr.de>; Tue,  5 Nov 2019 23:24:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7DHVg7xPEYR51NjecGL9c1BwIz1wxtXQ4Fb2EOCmE48=; b=jRtvYQcjJ94vWshqWcL+LmoVt
-	dniRkIFxO5eqLujHXFN7qO+pOYKannr8Ky7SzHy+o716ItlrcqZlq86ugOI3EOqkNvxPA6lfy9lCQ
-	IQgtXA+rToDJcPJ6l+gBID/4Gf7imCS+GF7dzd6RV19GCG//+xkqvgf8zWQse+Hr43pC363LGDOMb
-	DIGaiRdLoO+lkPm4aF0y1PWbu+XBfBqua/y/IFsdzGzIELfkhRkBJxE7H2faZcaUAOLSwCFZMtT4F
-	8DOy0BoKbuDMpOsZjXTGZlpsRDJvH0/z6HLyVnuWOMDxW8vuoFLbzyOorQqESwV9tIllTtJ1mPC7E
-	dLwsVtLxg==;
+	 bh=Uu0M1ePJMG4L0h+uJw77WCqhW0RFUVb2+Jz1ALofzZI=; b=SJ0tLZEOBWN2Ny3qfAAXoKpGU
+	VeL6txMToYJ/YkTV+0pOyIYCm2ehC0gwjf5h6ORnSn0SOpVoiJflIUJpKthP0uuWIq/jCOI3HGvXT
+	F28+660t29HVGL+BG1a7qkgdXHmOJrEuhVEGCLTEyCqQgGYR2zmHxLxnRytXkaecYtTjt037gFJAy
+	jcx+aQ2DrTwauQXxF+yWfbM0dJAlv5pIVliYc27bje+tqqcgJ7Gph5ap5UtCMDPZOAe+R2FUdcDEU
+	b6z4ey8qziVdgKIi9kPtlFqDsTTRrVZmkk2fRMNGreF66iLCZ3kUVEqa7lLXWQYaBWYMS4e8T3S1v
+	q/xaxsP6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iS72w-000527-JC; Tue, 05 Nov 2019 22:11:30 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1iS7Fh-0001aS-SL; Tue, 05 Nov 2019 22:24:41 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iS72o-00050i-GE
- for openwrt-devel@lists.openwrt.org; Tue, 05 Nov 2019 22:11:24 +0000
-Received: from desktop ([188.192.135.195]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MGQWr-1iiIRl0Cjd-00GrWQ; Tue, 05 Nov 2019 23:11:08 +0100
-From: <mail@adrianschmutzler.de>
-To: "'Enrico Mioso'" <mrkiko.rs@gmail.com>
+ id 1iS7FU-0001Lo-Qs
+ for openwrt-devel@lists.openwrt.org; Tue, 05 Nov 2019 22:24:30 +0000
+Received: by mail-lf1-x144.google.com with SMTP id j5so16365761lfh.10
+ for <openwrt-devel@lists.openwrt.org>; Tue, 05 Nov 2019 14:24:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=aVVpCo4Rlv2eUTdIiyZFQJbUr+6LCBP8fJCOWd785Uw=;
+ b=YFqmdYgGkuVAjlL/L+aP47OHUENaDIdCVaSYGDfvQ7srTPEYlEAhIUq1n3MirFv3OL
+ fEzKGVqS14yyRf5dr57Or73Lh3d/+VPuDTck6/p8Q/PEkKQJWNV+Fdg7GNE6069XSG0+
+ Fj/9qnoREWagLQ/Dw3DM2Oo3gmvwxxWTrcsNcx0YTsVUjP1XRenaSxmSJrV6Z5pThouK
+ diPCWpQ4tuo2GS1FZk4uH6kEYdEWhIFjFZQYQ3spwp88Clb8JvmWuRcmsgHtXtCWu5rG
+ +z1UpJt3jP7QpkMYUnePrVLemWTJkKVWn24x90wc/k1MxPOLmIZaoyn8LBnDtwltMza3
+ NC2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=aVVpCo4Rlv2eUTdIiyZFQJbUr+6LCBP8fJCOWd785Uw=;
+ b=pqZ9kEuRFjl73GMexBKSM4MECo71vqT1DCat5MOt2DcIG/JzWaThD5EHKJTEHNl13t
+ 8IrMrjvPNJtGOqv1WN5uqN+l5650STxWGCNc4yLTtQIzxYEEkaQTtCL3R7/IirQHrdDh
+ aEnxA/b4FzwoaDl3R++7/JLDYt5lK7Dt/cm3MLvKGOQ+FP0XeE0VIjnUHuaeiy/f7Rkx
+ EZmj+od8CA8YHIUzgCQ0cPTVqwqFpVSvyeM/uhbZ5tVmoON3UREwmYGxD/Nl5GUMIx8W
+ u6fvXMKkvEzCqJszWUF85tJxz1jx4ciPPb7zGZ2S3d0c1o9DevcFRGICvqdPKObWd8My
+ ILxQ==
+X-Gm-Message-State: APjAAAXxgrHBfyl8G+fDz8pq2C8nEoP/WhJXtDgI4sgPMSztuI8wXPtd
+ 6Oi2pfpxJDII7iI2siSG9as=
+X-Google-Smtp-Source: APXvYqwp6Wco4IB/zpleUvk0G4rHqQqZlr+9CW60zPS9/Oh9r2ofrCDaRZfCL+ek0Sr/+iEYyFl+Zw==
+X-Received: by 2002:ac2:4564:: with SMTP id k4mr22435940lfm.20.1572992666754; 
+ Tue, 05 Nov 2019 14:24:26 -0800 (PST)
+Received: from [192.168.55.98] (095160109150.warszawa.vectranet.pl.
+ [95.160.109.150])
+ by smtp.gmail.com with ESMTPSA id a14sm8875839lff.44.2019.11.05.14.24.25
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 05 Nov 2019 14:24:26 -0800 (PST)
+To: mail@adrianschmutzler.de, openwrt-devel@lists.openwrt.org
 References: <20191105151202.4709-1-freifunk@adrianschmutzler.de>
- <87r22m1dp3.fsf@miraculix.mork.no>
- <002e01d593f8$469ca0a0$d3d5e1e0$@adrianschmutzler.de>
- <F45BEDCE-561C-497C-95A5-099BB15DFF6C@gmail.com>
-In-Reply-To: <F45BEDCE-561C-497C-95A5-099BB15DFF6C@gmail.com>
-Date: Tue, 5 Nov 2019 23:11:07 +0100
-Message-ID: <010201d59425$ec8f1b00$c5ad5100$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ <00d201d5941e$a6b5a6f0$f420f4d0$@adrianschmutzler.de>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <087b061c-d246-2eb9-7412-9a668784b4a6@gmail.com>
+Date: Tue, 5 Nov 2019 23:24:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQIj3krgsob+/zBNRWrfaNFjtbIbyAGb/ndiAaefjTcBAgsdwqa+YPEg
-X-Provags-ID: V03:K1:ds71HAfFsjl2fQtW3cCO87IpLyleuszCxZFFj6p9ttzmg/LYUwK
- ZWOUhvACTrUHtit5qHQev7oC6lixyh4DvaNj3WkCCV1F+Yhl6aOoXjOzTh+W2wJr8Z63+uC
- yVAYcgREsNnjJ/dA4jwCA+Yd3UdihysASPInPmuOvm7q+w3M4PUOOaDut8J7x0u7Gmi52x5
- MD6xAE4EmkTPNzC51ns3A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:9a8rJ74NXGU=:d+wTT3d867CX4o7JyeRoZ2
- kqPsIECy2xMdNr11qFRPVvKgQQQ8/WuezhEKOKvKrEvIUVPwZNadPwvnm07Xky3It1NHkxrPS
- IKxE1HufBOSFo9g6s+4H6QC6Tea8CjrYVT83x1S7mcAeLh+j0xQR2h69Mt7G4O/rIflr8e4nS
- asO7Pm1wD6EhsdHQdCHEYWT30u8iinunQJsMl9so/sdvnVsw+fuL0g5xIIe8m+ldX3sOzRCbJ
- ksqescv6kkSTqm95zqK2JWhYYmaYfVDbwsCZ+L7OhB+YNBvzjySWZmWCl8Jm+4FK665dCOH9R
- mIwT0oqoS6s5UmhSTxuE7Ju11IgyiLSRjDu2oi1LBa+Qv8aZvUDrq9mnjyD7QAV++Gu7xnYIq
- fUE/N8NFMWFYn6JtN9w8E7Ri34FN2I8nhBl+2RZTxTmdIUHNT/PY6ktCNMz1IKUnc/daCfb2h
- 956TwCakqNCX0bW7vLSE+Li/rUT08qcAGymeLsMQ++PxTBI+9WvEF8FXpeiQX3hK5t8L0c17C
- YbIW0FTNU8YgU2sHsfF7reLU2Ua1ckvNJw5Fzxus23x+OfGiW1pdCtePlIww6EN4pVRkytnN5
- mDj/Y2Oew5+0ceEYnrVdImjriDY+6vOZrBDuxi9/mPPhOpmVMIbw8Yoo+tCTZmW3rxhJLQcPX
- RiQ8tYxrDpgSK3KoWAPtO8dZSyFhCZW7ccCwqb0C6tiETzh8+b4d4yljrU61Ph0BERefcItbl
- xTjD7g2IzApIjJ4OM2LmRUhN9N2ORK2lSQJN9ef079aTPvQeaZ19UJikU1UN0+pBrswJSjQxR
- F8SVmnNezuAKuSwo4QTxSLUYLf5k2zbhaJldW3EYf2FV1lVr5BP0InIHvQSPd2BWGHrS5Y8w9
- UdJwT1PcpQcVceymTsXPxy23itPdRUgayESjnBIhY=
+In-Reply-To: <00d201d5941e$a6b5a6f0$f420f4d0$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_141122_838634_CE397AC9 
-X-CRM114-Status: UNSURE (   8.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191105_142428_880792_6E4A0C54 
+X-CRM114-Status: GOOD (  17.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.134 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pepe2k[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: use gpio_hog instead of
  gpio-export
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -86,95 +103,89 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, 'Birger Koblitz' <mail@birger-koblitz.de>,
- =?utf-8?Q?'Bj=C3=B8rn_Mork'?= <bjorn@mork.no>
-Content-Type: multipart/mixed; boundary="===============2513483010892661556=="
+Cc: bjorn@mork.no, Enrico Mioso <mrkiko.rs@gmail.com>,
+ 'Birger Koblitz' <mail@birger-koblitz.de>, Mathias Kresin <dev@kresin.me>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hi Adrian,
 
---===============2513483010892661556==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=Z9XnKZ2tQCJNoU=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+On 05.11.2019 22:19, mail@adrianschmutzler.de wrote:
+> Hi,
+> 
+>> -----Original Message-----
+>> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+>> On Behalf Of Adrian Schmutzler
+>> Sent: Dienstag, 5. November 2019 16:12
+>> To: openwrt-devel@lists.openwrt.org
+>> Cc: Birger Koblitz <mail@birger-koblitz.de>
+>> Subject: [OpenWrt-Devel] [PATCH v2] ath79: use gpio_hog instead of gpio-
+>> export
+>> 
+>> From: Birger Koblitz <mail@birger-koblitz.de>
+>> 
+>> The gpio-export functionality is a hack for missing kernel functionality, which
+>> was rejected in upstream kernel long time ago, for details see this email
+>> http://lists.infradead.org/pipermail/openwrt-devel/2019-
+>> February/015772.html,
+>> discussion in PR#1366 or
+>> https://github.com/openwrt/openwrt/pull/1814#issuecomment-462942022.
+>> 
+>> This patch converts all DTS files with settings that normally do not need user
+>> interaction, e.g. power for external USB ports, to gpio_hog. The only
+>> remaining gpio-export will be in qca9558_openmesh_om5p-ac-v2.dts
+>> 
+> 
+> I've just had a look at the openmesh_om5p-ac-v2, and it seems as if the gpio-exports there are just voltage changes for a power amplifier. To me this looks like those can be dealt with by a gpio-hog, too:
 
-This is a multipart message in MIME format.
+What if someone would like to lower TX power on this board? With 
+gpio-hog that wouldn't be possible anymore. I would personally consider 
+that change as a user experience limitation or even a regression.
 
---=-=Z9XnKZ2tQCJNoU=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+I had this discussion many, many... many times before with Mathias (and 
+I believe we still agree to disagree on this topic). Until there is a 
+dedicated driver for such features controlled by GPIOs (lets say, SIM 
+switching, driving relays, enabling higher power output in ext PA, 
+etc.), switching from gpio-export to gpio-hog only limits user control 
+on the hardware they own and in fact doesn't get us closer to something 
+which could make the gpio-export finally go away (libgpiod).
 
-Hi,
+I'm always on the end user side here. If the hardware is capable of 
+switching something with GPIO, user should have a way to make use of 
+that. Even if current solution was rejected in upstream.
 
-> -----Original Message-----
-> From: Enrico Mioso [mailto:mrkiko.rs@gmail.com]
-> Sent: Dienstag, 5. November 2019 23:07
-> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Cc: Bj=C3=B8rn Mork <bjorn@mork.no>; openwrt-devel@lists.openwrt.org; Bir=
-ger
-> Koblitz <mail@birger-koblitz.de>
-> Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: use gpio_hog instead of
-> gpio-export
->=20
-> BTW, being able to toggle on and off USB power is essential in some cases.
-> Can this be done with hog? Thanks!
-> E
+-- 
+Cheers,
+Piotr
 
-with hogs, you cannot enable/disable. This is the reason why this topic got=
- stuck in the first place.
+> 
+> 	/* power amplifier high power, 4.2V at RFFM4203/4503 instead of 3.3 */
+> 	ath79_gpio_function_enable(QCA955X_GPIO_FUNC_JTAG_DISABLE);
+> 	ath79_gpio_output_select(OM5PACV2_GPIO_PA_DCDC, QCA955X_GPIO_OUT_GPIO);
+> 	ath79_gpio_output_select(OM5PACV2_GPIO_PA_HIGH, QCA955X_GPIO_OUT_GPIO);
+> 	gpio_request_one(OM5PACV2_GPIO_PA_DCDC, GPIOF_OUT_INIT_HIGH,
+> 			 "PA DC/DC");
+> 	gpio_request_one(OM5PACV2_GPIO_PA_HIGH, GPIOF_OUT_INIT_HIGH, "PA HIGH");
+> 
+> https://github.com/openwrt/openwrt/blob/master/target/linux/ar71xx/files/arch/mips/ath79/mach-om5pacv2.c
+> 
+> Thus, I will also convert that device without an explicit resend of the patch unless there is protest about it.
+> 
+> Best
+> 
+> Adrian
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> 
 
-On ath79, it seems that usb_power is only used for external USB ports so fa=
-r. So I felt that the discussion led about toggling USB on ramips would not=
- apply here, and that choosing gpio_hogs over a user-space solution would b=
-e preferable for this case. With any new device support for the last 6 mont=
-hs, USB ports were set up with gpio_hogs IIRC.
-
-Best
-
-Adrian
-
---=-=Z9XnKZ2tQCJNoU=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3B83gACgkQoNyKO7qx
-AnC9eA//dDTIMdV6l9QnLaWnl9NwTh1IJr/dEgCbC0xr4lBej5OPqN9WY/DkW2nl
-ymzLnVYgRTwdqs7JFhT7wvNU45Zek3i6LPub2AIomCeFnfvPIaH3X0EpRqdT6iiC
-WAR/DjvEmVd0MPElBLAJ46aUNgVaK9asDfnGHWjwMin68vEB9t1oxPpkU1y3DOzQ
-3nymNC/AI9xB0M5wyZW85FW59OlgAps+f5uKDrmwE/1+ZnBi75swCR0OFT85h3/R
-aEPseFnkOPpm31vWGtmkisKJCDr/DCaICFR1y/YBaKC+wXSezGf6dUGT3CwjO1J0
-JfKvw+D1GqriXLEuIvMcxCsRPebLe/VLMXDQNwA8P+InIKrjxiCxTizczyDg3iLA
-4qGo/9P2IaRNLEhc6e23Jj9915u7GIcOVdAvi24qj8L+os/w9zp78rCAEVBsaH6+
-ghnGU6WCqr/GM6yve4KhExW9XtnWnzlqN8AIu+XttymTorseNojZvunNU2kuHmXM
-K87Hl0H+ZjgcEuMWtCQRt9dSNXYKJX0MEw8UUnXFMohAzZrZMkn+cxUSOxtn+At3
-2Vawxn25cTawWDIeh6ueGSUmSfIpPSTYGGubYpzEdIhnU9+feycUWHaDURctvnxq
-GkTuKLkVXcAss4YME5qFCP/bbuhq8hu/WllpSQNjN2DrOov2Gq4=
-=RHcm
------END PGP SIGNATURE-----
-
-
---=-=Z9XnKZ2tQCJNoU=-=--
-
-
-
---===============2513483010892661556==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============2513483010892661556==--
-
-

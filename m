@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0F49F0E5C
-	for <lists+openwrt-devel@lfdr.de>; Wed,  6 Nov 2019 06:27:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9011F0E6A
+	for <lists+openwrt-devel@lfdr.de>; Wed,  6 Nov 2019 06:32:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -18,11 +18,11 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	0cNrTcj+RT6p2pVCZVsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSDqx-0006iL-Cg; Wed, 06 Nov 2019 05:27:35 +0000
+	id 1iSDw8-0000SL-TX; Wed, 06 Nov 2019 05:32:56 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSDqs-0006hM-7q
- for openwrt-devel@bombadil.infradead.org; Wed, 06 Nov 2019 05:27:30 +0000
+ id 1iSDw2-0000SD-0G
+ for openwrt-devel@bombadil.infradead.org; Wed, 06 Nov 2019 05:32:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
@@ -35,10 +35,10 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  BI8inf/wJVDOy/xuTrTX1uHV4iRaEbi3tkI0AR0E+EABvqR9hg/Im/a/too1JPlalQAmCuzESDSfy
  MT7048LFLRmonY5hTSU/6SjvVkmcnz3UlQ53t9FeMKCeMUsQGCgMx94XTDsxr+pjwwtzhXVqVBisT
  aCXJ1h3Q==;
-Received: from smtpbgeu2.qq.com ([18.194.254.142])
+Received: from smtpbgbr2.qq.com ([54.207.22.56])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSDr9-0001AO-Tf
- for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 05:27:54 +0000
+ id 1iSDwU-0001Hg-4d
+ for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 05:33:20 +0000
 X-QQ-mid: bizesmtp20t1573018007tycx0app
 Received: from example.com (unknown [112.19.111.227])
  by esmtp6.qq.com (ESMTP) with SMTP id 0
@@ -60,18 +60,18 @@ X-QQ-SENDSIZE: 520
 Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign5
 X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_052748_020111_CA440815 
-X-CRM114-Status: UNSURE (   6.75  )
+X-CRM114-CacheID: sfid-20191106_053318_583213_EF90B0AD 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+ Content analysis details:   (-0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [18.194.254.142 listed in list.dnswl.org]
+ no trust [54.207.22.56 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 Subject: [OpenWrt-Devel] [PATCH] Revert "mt76: probe load mt7615 driver
  asynchronously"
 X-BeenThere: openwrt-devel@lists.openwrt.org

@@ -2,40 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F832F227A
-	for <lists+openwrt-devel@lfdr.de>; Thu,  7 Nov 2019 00:23:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FCF5F228F
+	for <lists+openwrt-devel@lfdr.de>; Thu,  7 Nov 2019 00:26:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Pj3wKQw5ikT8XxAcGbeNnosUvtFkC518UjPYK+0IukA=; b=gCOESYUd3yJ/FsQR9Mb0qaVfl
-	QmRade2tBywn1CXQnD8oReaELl7I5zFtttq4fnrV2Yjs8mbComWZA/sOBZQsAyNiG6dFbUp1l0XDz
-	CwjfQxYyrwNYHPVsPByCCIpMhLY1106DsHkgX1at9LxvTyBd5RSrZhxpsBzsyg6n/rJOMoHyJHsw7
-	479ypmJG/Z02FTLB/JsQIH7xkOfF76TjD005aLDeDRzDaoRL2xSLgyrm2KVgHt5v0lB3rHb2jv1ss
-	CNF0ZwzWUELGN3NSwzJaEWnw/pHQbeHLoknSjsgsCMwVDNJXkYd/8LQE/yItd8vnlTG4nUc9ICra+
-	spVZ829gQ==;
+	 bh=Sv8jJVU0Q/8/YMz17p3NGoxlrKWEqDlg6nw4Oh0U0Ts=; b=Vmm4pkU/eKfPsKFXFKKEpFDFd
+	EQ1eCGBfhpKs1D40EaH932EMoaNZDbw+gKiPSnyTp/aEuqgA81pSK1Vmzm7TyewrSRMGNN67vs7qL
+	jJh4Vvk88w9QtenEucwwA7YgKt/l98OWmaQwOua+FyhBqHZHq8S3+38/FV+7aAnbP9LMeKDHJLMNc
+	21OcCb4MLESw7EXoYLJ+pKJmoRhOHWp6BXt+Oen1nlt666Kvm6/DiCOgwvbJ40WgVcPXftGR8DT2W
+	X/XQGcGRSEWTGBQFK7yl/FaDTMQd/9EGtqUhn+LsIoa5S9nIAl9FWcsTX3EdrsViIVpr0wFgFjmwf
+	ifAzFO8sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSUdy-0000Gd-Bf; Wed, 06 Nov 2019 23:23:18 +0000
-Received: from mout-u-107.mailbox.org ([91.198.250.252])
+	id 1iSUhO-00029k-MT; Wed, 06 Nov 2019 23:26:50 +0000
+Received: from mout-u-204.mailbox.org ([2001:67c:2050:1::465:204])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSUdn-0000GH-R7
- for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 23:23:09 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1iSUh6-00022X-Sk
+ for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 23:26:34 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-u-107.mailbox.org (Postfix) with ESMTPS id 477jJB0yQQzKmhX;
- Thu,  7 Nov 2019 00:23:06 +0100 (CET)
+ by mout-u-204.mailbox.org (Postfix) with ESMTPS id 477jN71RWvzQlDt;
+ Thu,  7 Nov 2019 00:26:31 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id picLk-sOyA9f; Thu,  7 Nov 2019 00:22:59 +0100 (CET)
+ by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
+ [80.241.56.117]) (amavisd-new, port 10030)
+ with ESMTP id aBapU5FHcPH6; Thu,  7 Nov 2019 00:26:28 +0100 (CET)
 To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-References: <20191106133028.2350-1-ynezz@true.cz>
+ Yousong Zhou <yszhou4tech@gmail.com>
+References: <20191101160634.25559-1-hauke@hauke-m.de>
+ <20191101160634.25559-2-hauke@hauke-m.de>
+ <CAECwjAij-tXE59c2WEKEWPpofTCrmWgwwW_MYnW1cB_yXiKnVg@mail.gmail.com>
+ <20191105002707.GO22393@meh.true.cz>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -98,13 +102,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <06eff70f-40f6-80f3-b62f-1a61b1c3fc5f@hauke-m.de>
-Date: Thu, 7 Nov 2019 00:22:47 +0100
+Message-ID: <1b6c6276-e964-5ddd-990d-931ac199159c@hauke-m.de>
+Date: Thu, 7 Nov 2019 00:26:23 +0100
 MIME-Version: 1.0
-In-Reply-To: <20191106133028.2350-1-ynezz@true.cz>
+In-Reply-To: <20191105002707.GO22393@meh.true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_152308_185389_A7485CFD 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20191106_152633_236661_372187C2 
+X-CRM114-Status: GOOD (  17.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -112,8 +116,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 19.07 00/12] bump hostap to latest
- stable release
+Subject: Re: [OpenWrt-Devel] [PATCH uci 2/2] build: Add -Wclobbered to
+ detect problems with longjmp
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,96 +129,159 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3669850043687464435=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: multipart/mixed; boundary="===============1522323587814410155=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============3669850043687464435==
+--===============1522323587814410155==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2"
+ boundary="Ht1LUrLRVqate4D99vhNmhQ7AbHoF3c7y"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2
-Content-Type: multipart/mixed; boundary="jPQh8jMlQ6YGdJOhTTlI7tVgqLnlQulBv";
+--Ht1LUrLRVqate4D99vhNmhQ7AbHoF3c7y
+Content-Type: multipart/mixed; boundary="AyfsLGJnaHunLQKlyUefZLYwGWpz8xi0i";
  protected-headers="v1"
 From: Hauke Mehrtens <hauke@hauke-m.de>
 To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-Message-ID: <06eff70f-40f6-80f3-b62f-1a61b1c3fc5f@hauke-m.de>
-Subject: Re: [OpenWrt-Devel] [PATCH v2 19.07 00/12] bump hostap to latest
- stable release
-References: <20191106133028.2350-1-ynezz@true.cz>
-In-Reply-To: <20191106133028.2350-1-ynezz@true.cz>
+ Yousong Zhou <yszhou4tech@gmail.com>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Message-ID: <1b6c6276-e964-5ddd-990d-931ac199159c@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH uci 2/2] build: Add -Wclobbered to detect
+ problems with longjmp
+References: <20191101160634.25559-1-hauke@hauke-m.de>
+ <20191101160634.25559-2-hauke@hauke-m.de>
+ <CAECwjAij-tXE59c2WEKEWPpofTCrmWgwwW_MYnW1cB_yXiKnVg@mail.gmail.com>
+ <20191105002707.GO22393@meh.true.cz>
+In-Reply-To: <20191105002707.GO22393@meh.true.cz>
 
---jPQh8jMlQ6YGdJOhTTlI7tVgqLnlQulBv
+--AyfsLGJnaHunLQKlyUefZLYwGWpz8xi0i
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 11/6/19 2:30 PM, Petr =C5=A0tetiar wrote:
+On 11/5/19 1:27 AM, Petr =C5=A0tetiar wrote:
 > Hi,
 >=20
-> v1 patches were somehow screwed probably due to the rebase, so this v2 =
-series
-> is done from scratch again. Previous cover letter[1] for reference, and=
- Git
-> branch[2] with all the patches.
+> Hauke Mehrtens <hauke@hauke-m.de> [2019-11-01 17:06:34]:
 >=20
-> 1. https://patchwork.ozlabs.org/cover/1190274/
-> 2. https://git.openwrt.org/?p=3Dopenwrt/staging/ynezz.git;a=3Dshortlog;=
-h=3Drefs/heads/upstream/19.07/hostapd-backports
+>> +ADD_DEFINITIONS(-Os -Wall -Werror -Wclobbered --std=3Dgnu99 -g3 -I. -=
+DUCI_PREFIX=3D"${CMAKE_INSTALL_PREFIX}")
 >=20
-> Eneas U de Queiroz (1):
->   hostapd: adjust removed wolfssl options
+> is there any reason to not use -Wextra directly?
+
+I was looking on how we could prevent to have a similar problem as the
+one described in CVE-2019-15513 and found this warning which should have
+warned us about this problem. First I was trying to understand this CVE
+and then I wanted to learn from it to prevent such problems next time.
+
+I support adding -Wextra it is even better.
+
 >=20
-> Hauke Mehrtens (6):
->   hostapd: Update to version 2.8 (2019-04-21)
->   hostapd: Update to version 2.9 (2019-08-08)
->   hostapd: use config option CONFIG_NO_LINUX_PACKET_SOCKET_WAR
->   hostapd: Remove unneeded patch
->   hostapd: use getrandom syscall
->   hostapd: Add mesh support for wpad full
+>  list.c:140:11: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  file.c:572:51: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  file.c:850:15: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  file.c:865:15: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  delta.c:199:6: error: this statement may fall through [-Werror=3Dimpli=
+cit-fallthrough=3D]
+>  parse.c:80:12: error: this statement may fall through [-Werror=3Dimpli=
+cit-fallthrough=3D]
+>  parse.c:81:12: error: this statement may fall through [-Werror=3Dimpli=
+cit-fallthrough=3D]
+>  file.c:572:51: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  file.c:850:15: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  file.c:865:15: error: comparison between signed and unsigned integer e=
+xpressions [-Werror=3Dsign-compare]
+>  delta.c:199:6: error: this statement may fall through [-Werror=3Dimpli=
+cit-fallthrough=3D]
+>  parse.c:80:12: error: this statement may fall through [-Werror=3Dimpli=
+cit-fallthrough=3D]
+>  parse.c:81:12: error: this statement may fall through [-Werror=3Dimpli=
+cit-fallthrough=3D]
+>  ucimap.c:146:16: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:151:17: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:243:34: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:247:9: error: comparison between signed and unsigned integer =
+expressions [-Werror=3Dsign-compare]
+>  ucimap.c:254:39: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:258:9: error: comparison between signed and unsigned integer =
+expressions [-Werror=3Dsign-compare]
+>  ucimap.c:285:34: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:363:17: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:563:12: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:753:18: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
+>  ucimap.c:879:17: error: comparison between signed and unsigned integer=
+ expressions [-Werror=3Dsign-compare]
 >=20
-> Jo-Philipp Wich (2):
->   hostapd: fix OWE settings in client mode
->   hostapd: mirror ieee80211w ap mode defaults in station mode
+> Yousong Zhou <yszhou4tech@gmail.com> [2019-11-04 11:29:05]:
 >=20
-> Kyle Copperfield (1):
->   hostapd: add IEEE 802.11k support
+>> The -Wclobber check can produce false-positives right?
 >=20
-> Leon M. George (2):
->   hostapd: revert signature change in patch
->   hostapd: declare struct wpa_bss early
+> I didn't looked deeper, but GCC 6,7,8,9 on x86/64 reports following:
+>=20
+>  list.c:626:21: error: variable =E2=80=98prev=E2=80=99 might be clobber=
+ed by =E2=80=98longjmp=E2=80=99 or =E2=80=98vfork=E2=80=99 [-Werror=3Dclo=
+bbered]
+>   626 |  struct uci_option *prev =3D NULL;
+>       |                     ^~~~
+>=20
+>  list.c:627:14: error: variable =E2=80=98value2=E2=80=99 might be clobb=
+ered by =E2=80=98longjmp=E2=80=99 or =E2=80=98vfork=E2=80=99 [-Werror=3Dc=
+lobbered]
+>   627 |  const char *value2 =3D NULL;
+>       |              ^~~~~~
+
+I think I also saw these problems in my manual review, but the
+-Wclobbered did not complain about them for me with gcc 8.3 on MIPS.
+
+>=20
+> but clang 9,10 on x86/64 doesn't.
+>=20
+> -- ynezz
 >=20
 
-Acked-by: Hauke Mehrtens <hauke@hauke-m.de>
+Hauke
 
 
---jPQh8jMlQ6YGdJOhTTlI7tVgqLnlQulBv--
+--AyfsLGJnaHunLQKlyUefZLYwGWpz8xi0i--
 
---iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2
+--Ht1LUrLRVqate4D99vhNmhQ7AbHoF3c7y
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3DVccACgkQ8bdnhZyy
-68f2gAf9EJMI8LVSh+ieyqaa8Qk37zLe020lb5LacZBcSNkloCDDiweVMhIJvf9n
-v5ZQy8okxUuGm5zFlNWKCCxR7dMyJPIbZyIjmGPWd0PvTPrQ5sXYn6hi8gSZkfcF
-/3BG0hZOg7i890Lyrc5SHs/4K4ltxN7Y2KkDaGtO1JmMop+IGaoYLxzdNGVgGdrE
-ZWBPr/XkYPPVwPEXd2aOBRfcr0Qv7B4qYBIRV00gjKblSKhz5XMa54Z1/C3nImGn
-90j8pTtTAAbjVwgsO0CiQFiviUSWrCBUuvMw7Li033YByCQXzsNt/VKew+lQmj3v
-w8nzV6SwttUYYzXAF8GchvueZuNtug==
-=147n
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3DVp8ACgkQ8bdnhZyy
+68dkAwf/XwAy9l2Au6Sz6BHSY2z9XDxRmeHl5vkdGF/+IBB19uMGsIc0pBCJ+6iG
+vqMXiztKWVJUtTZ5P9T5sq0Pv+NRh3l2FL/JIbVxViOLlChFoCtvOV4jbKP/LBWe
+rlXnr6oPfY5hr4bINe7u6nuOuM4W2J/sQj5t2nYG6QHtG6GCDiRN46C1C5c4IIom
+lUhY3ofYrbhRA9oUij9svBckxHYy9XcFuhTHUSjsls0Y98YWYwMqmuC4MeGKAJc3
+faM/gKUBZdT9s9E4it6xk2ayOftzWiN1XUVJjfDg+mu1S5LtdnZ1AoPb4tq3CNQ3
+WWPWChTIb9xkGFf64BsWHAVTXzR1Jw==
+=jVZl
 -----END PGP SIGNATURE-----
 
---iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2--
+--Ht1LUrLRVqate4D99vhNmhQ7AbHoF3c7y--
 
 
---===============3669850043687464435==
+--===============1522323587814410155==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -225,5 +292,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3669850043687464435==--
+--===============1522323587814410155==--
 

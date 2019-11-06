@@ -2,71 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24D9FF21FA
-	for <lists+openwrt-devel@lfdr.de>; Wed,  6 Nov 2019 23:41:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A53DF221A
+	for <lists+openwrt-devel@lfdr.de>; Wed,  6 Nov 2019 23:48:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:To:References:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Ubra998bRVIuPi1w7AAlprWVD9TpaO76cAJsAWk84Y=; b=c6mcfT5HoZAQ/8
-	yYuuClPIM63vNCyj6JBObdPFgyd9m68LSqai7q87Yah7qMWKMp5mLrpCPXDHK4EeTg2vsHqhBv4hk
-	zapuw+bPkMGN4QofWsBCtfRPM0J5kpbhgeerszbQZ1SyqwKjohB4WaPB5SOTjw61N7rkzLbwtn6Bc
-	8E4tWpej9UFh5lrcR1iS/AWd6dP6a5E7+JCT6FIMUIx6TuteXhrx0ba7SE53127iA25T1dQ3Ozb8E
-	fGcALPk9Sh9NApfbQ0MZpKg5QR4QbfCtw64hDJuKmrHKKQfVcrqke9XjGB6tKb0qwKnWaUOOA1BMH
-	sAB3wkNOW0IcUIL74uOg==;
+	List-Owner; bh=3DXyyjMMOua35drLUSTYiBSdtM3tVrVXPGFMrd7hXfM=; b=PsizBdLpkqYznx
+	Qnbtn1bPuPoOw+flRv9Yo1pKVSoSOElTvo3yYQaSIsdoT0OReJtHINHcO8SLjMMQ6enRQODwkG3dG
+	RHMBors3P8PxjgsQ9OWJDclY3RyHNN9S08IzX2rKX/rNP0eMuxI0VYp8RclgqtlUmhMpDHLSPYGGq
+	i2JXZ96ocoyYb58qtked5aTmXR5rzEwzSvjyorm0hliTvWQ9UIWEDGjzGCyTpap8IfB+dI2MKSzv5
+	frvMfleOusZSrPgJdXEahXSrfcV5dFP8O0Zfk/mJz0Tsa4rmUxdJDsT4G4tMWtNdu5y7pVQUET34X
+	ZaSCP4sxpuOVdJ89HI+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSTzY-0002O4-Mf; Wed, 06 Nov 2019 22:41:32 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iSTzP-0002Nd-Cm
- for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 22:41:25 +0000
-Received: from [IPv6:2001:67c:2ed8:100e:10c6:9d4c:c79f:90c4] (unknown
- [IPv6:2001:67c:2ed8:100e:10c6:9d4c:c79f:90c4])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 8316D1E3EE;
- Wed,  6 Nov 2019 23:41:18 +0100 (CET)
-References: <00b001d594ef$d188b670$749a2350$@adrianschmutzler.de>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <6d42b226-3ca7-218d-0c89-969b8c18b198@david-bauer.net>
-Date: Wed, 6 Nov 2019 23:41:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+	id 1iSU6I-0004km-Rh; Wed, 06 Nov 2019 22:48:30 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iSU66-0004kH-RZ
+ for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 22:48:20 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1iSU5v-0007Ew-AM; Wed, 06 Nov 2019 23:48:08 +0100
+Date: Wed, 6 Nov 2019 23:47:48 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: Jeff Kletsky <lede@allycomm.com>
+Message-ID: <20191106224748.GA1330@makrotopia.org>
+References: <20191025035753.10050-1-lede@allycomm.com>
+ <20191025035753.10050-2-lede@allycomm.com>
 MIME-Version: 1.0
-In-Reply-To: <00b001d594ef$d188b670$749a2350$@adrianschmutzler.de>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191025035753.10050-2-lede@allycomm.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_144123_584283_4A128003 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20191106_144818_892634_6CA9A542 
+X-CRM114-Status: GOOD (  19.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,7 +47,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] ath79 QCA9563 channel 52+ device not supported
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] build: sysupgrade-tar alt-board=
+ for legacy upgrades
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,31 +60,158 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: openwrt-devel@lists.openwrt.org, Jeff Kletsky <git-commits@allycomm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Adrian,
+Hi Jeff,
 
-On 11/6/19 11:16 PM, mail@adrianschmutzler.de wrote:
-> Hi,
+On Thu, Oct 24, 2019 at 08:57:52PM -0700, Jeff Kletsky wrote:
+> From: Jeff Kletsky <git-commits@allycomm.com>
 > 
-> for the to-be-supported TP-Link Archer C6/A6 v2 US (QCA9563) there are reports that 5 GHz channels from 52 to 144 lead to "Device is not active" messages and 5 GHz WiFi disabled:
+> Targets that use nand_do_platform_check() can't use SUPPORTED_DEVICES
+> as the check requires ./sysupgrade-legacy_boardname/CONTROL to be
+> non-zero length as extracted from the tar file. Previously, only
+> ./sysupgrade-new_boardname/CONTROL was present.
 > 
-> https://github.com/openwrt/openwrt/pull/2470#issuecomment-550444362
+> This prevents upgrade without --force from, for example, ar71xx to ath79
 > 
-> Since 52 is the first DFS channel, I wonder whether this can be a DFS related problem. I have no experience with DFS at all, so I would be happy about any hints.
-This has most likely nothing to do with the QCA9563, as it only handles 2.4 GHz
-on the wireless side of things.
+> Add an optional alt-board= parameter to parsing of sysupgrade-tar that
+> creates a directory at the expected location for the alt-board name,
+> copying over the CONTROL file.
+> 
+> The contents of CONTROL are unmodified by this commit.
+> 
+> Careful ordering of the tar file is required as existing builds
+> expect the kernel and root assets to be in the first directory
+> returned by tar -tf that matches sysupgrade-*/
+> 
+> Run-tested-on: EA8300, GL-AR300M, GL-AR750S
+> 
+> Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
+> ---
+>  include/image-commands.mk |  1 +
+>  scripts/sysupgrade-tar.sh | 40 +++++++++++++++++++++++++++++++++------
+>  2 files changed, 35 insertions(+), 6 deletions(-)
+> 
+> diff --git a/include/image-commands.mk b/include/image-commands.mk
+> index 5dfd6a2c2f..011e30a7e3 100644
+> --- a/include/image-commands.mk
+> +++ b/include/image-commands.mk
+> @@ -321,6 +321,7 @@ endef
+>  define Build/sysupgrade-tar
+>  	sh $(TOPDIR)/scripts/sysupgrade-tar.sh \
+>  		--board $(if $(BOARD_NAME),$(BOARD_NAME),$(DEVICE_NAME)) \
+> +		--alt-boards "$(call param_get,alt-board,$(1))" \
+>  		--kernel $(call param_get_default,kernel,$(1),$(IMAGE_KERNEL)) \
+>  		--rootfs $(call param_get_default,rootfs,$(1),$(IMAGE_ROOTFS)) \
+>  		$@
+> diff --git a/scripts/sysupgrade-tar.sh b/scripts/sysupgrade-tar.sh
+> index b93b2584bb..5071a2f5f8 100755
+> --- a/scripts/sysupgrade-tar.sh
+> +++ b/scripts/sysupgrade-tar.sh
+> @@ -3,11 +3,17 @@
+>  . $TOPDIR/scripts/functions.sh
+>  
+>  board=""
+> +alt_boards=""
+>  kernel=""
+>  rootfs=""
+>  outfile=""
+>  err=""
+>  
+> +do_exit() {
+> +	[ -d "$tmpdir" ] && rm -rf "$tmpdir"
+> +	exit $err
+> +}
+> +
+>  while [ "$1" ]; do
+>  	case "$1" in
+>  	"--board")
+> @@ -16,6 +22,12 @@ while [ "$1" ]; do
+>  		shift
+>  		continue
+>  		;;
+> +	"--alt-boards")
+> +		alt_boards="$2"
+> +		shift
+> +		shift
+> +		continue
+> +		;;
+>  	"--kernel")
+>  		kernel="$2"
+>  		shift
+> @@ -39,7 +51,7 @@ while [ "$1" ]; do
+>  done
+>  
+>  if [ ! -n "$board" -o ! -r "$kernel" -a  ! -r "$rootfs" -o ! "$outfile" ]; then
+> -	echo "syntax: $0 [--board boardname] [--kernel kernelimage] [--rootfs rootfs] out"
+> +	echo "syntax: $0 [--board boardname] [--alt-boards 'alt board list'] [--kernel kernelimage] [--rootfs rootfs] out"
+>  	exit 1
+>  fi
+>  
+> @@ -54,6 +66,7 @@ if [ -z "$tmpdir" ]; then
+>  fi
+>  
+>  mkdir -p "${tmpdir}/sysupgrade-${board}"
+> +
+>  echo "BOARD=${board}" > "${tmpdir}/sysupgrade-${board}/CONTROL"
+>  if [ -n "${rootfs}" ]; then
+>  	case "$( get_fs_type ${rootfs} )" in
+> @@ -67,18 +80,33 @@ if [ -n "${rootfs}" ]; then
+>  fi
+>  [ -z "${kernel}" ] || cp "${kernel}" "${tmpdir}/sysupgrade-${board}/kernel"
+>  
+> -mtime=""
+> +# "Legacy" nand_upgrade_tar() finds asset directory with
+> +# $(tar tf $tar_file | grep -m 1 '^sysupgrade-.*/$')
+> +# and doesn't use CONTROL at all; add the "real" files first
+> +
+> +tar_args="--directory ${tmpdir} --sort=name --owner=0 --group=0 --numeric-owner \
+> +	 -vf ${tmpdir}/sysupgrade.tar"
+>  if [ -n "$SOURCE_DATE_EPOCH" ]; then
+> -	mtime="--mtime=@${SOURCE_DATE_EPOCH}"
+> +	tar_args="${tar_args} --mtime=@${SOURCE_DATE_EPOCH}"
+>  fi
+>  
+> -(cd "$tmpdir"; tar --sort=name --owner=0 --group=0 --numeric-owner -cvf sysupgrade.tar sysupgrade-${board} ${mtime})
+> +tar -c $tar_args $(ls -A "${tmpdir}")
+>  err="$?"
+> +[ "$err" != 0 ] && do_exit
+> +
+> +for ab in $alt_boards ; do
+> +	[ "$ab" = "$board" ] && continue
+> +	mkdir "${tmpdir}/sysupgrade-${ab}/"
+> +	cp -vp "${tmpdir}/sysupgrade-${board}/CONTROL" "${tmpdir}/sysupgrade-${ab}/"
 
-Have you set a valid regulatory domain / country for the 5GHz radio? Otherwise,
-you won't be able to activate DFS channels, as the driver will need this
-information to determine whether to use FCC or ETSI radar patterns.
+Why not just add a symlink to the tar archive instead of a copy?
+I know it doesn't matter much due to compress, jet I'd consider it a
+more clean solution.
 
-Best wishes
-David
+> +	tar -r $tar_args "sysupgrade-${ab}/CONTROL"
+> +	err="$?"
+> +	[ "$err" != 0 ] && do_exit
+> +done
+> +
+>  if [ -e "$tmpdir/sysupgrade.tar" ]; then
+>  	cp "$tmpdir/sysupgrade.tar" "$outfile"
+>  else
+>  	err=2
+>  fi
+> -rm -rf "$tmpdir"
+>  
+> -exit $err
+> +do_exit
+> -- 
+> 2.20.1
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

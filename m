@@ -2,42 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E1C6F2274
-	for <lists+openwrt-devel@lfdr.de>; Thu,  7 Nov 2019 00:18:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F832F227A
+	for <lists+openwrt-devel@lfdr.de>; Thu,  7 Nov 2019 00:23:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nxEsrgKlt3LDFs5A6A6FfQhiUsSzILQCTGt3ragz2P4=; b=Vn31yT185ahhiD
-	4i2XJP7l/+b6S2eSiTGj81dLs4OOQYUDQD8mSTbyBCoIJBFeS7ilNGkFXq7xxz76Ur8HztQsCvwmY
-	8NtaVguZdKca2h+9hDJBZDLuLKsFTZta5mhdv9zBhVYoYK0UmAe2jTWhn0Cfg9T6C7kmqiN+GtjKR
-	KPKtZ7/t7jiI6utJYyRfRxyV65kuHlMA9cWnPVu1yScMc8+SLmCtT6IImNoYu+eyrz2u2YPmVXBLb
-	yEeilfsFPHZFn8NwXS4/4BTN/4EffQBZJ5zxJsbM3iMgG33/4GjD6ZDE/fJliVJPLM6wMdg2l0q65
-	0OfKD7RU3DbtCvx11uPg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Pj3wKQw5ikT8XxAcGbeNnosUvtFkC518UjPYK+0IukA=; b=gCOESYUd3yJ/FsQR9Mb0qaVfl
+	QmRade2tBywn1CXQnD8oReaELl7I5zFtttq4fnrV2Yjs8mbComWZA/sOBZQsAyNiG6dFbUp1l0XDz
+	CwjfQxYyrwNYHPVsPByCCIpMhLY1106DsHkgX1at9LxvTyBd5RSrZhxpsBzsyg6n/rJOMoHyJHsw7
+	479ypmJG/Z02FTLB/JsQIH7xkOfF76TjD005aLDeDRzDaoRL2xSLgyrm2KVgHt5v0lB3rHb2jv1ss
+	CNF0ZwzWUELGN3NSwzJaEWnw/pHQbeHLoknSjsgsCMwVDNJXkYd/8LQE/yItd8vnlTG4nUc9ICra+
+	spVZ829gQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSUZe-00070x-3n; Wed, 06 Nov 2019 23:18:50 +0000
-Received: from mout-u-204.mailbox.org ([2001:67c:2050:1::465:204])
+	id 1iSUdy-0000Gd-Bf; Wed, 06 Nov 2019 23:23:18 +0000
+Received: from mout-u-107.mailbox.org ([91.198.250.252])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSUZV-00070P-5c
- for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 23:18:43 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1iSUdn-0000GH-R7
+ for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 23:23:09 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-u-204.mailbox.org (Postfix) with ESMTPS id 477jC12gtPzQlDl;
- Thu,  7 Nov 2019 00:18:37 +0100 (CET)
+ by mout-u-107.mailbox.org (Postfix) with ESMTPS id 477jJB0yQQzKmhX;
+ Thu,  7 Nov 2019 00:23:06 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id t4lNfymaX368; Thu,  7 Nov 2019 00:18:33 +0100 (CET)
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id picLk-sOyA9f; Thu,  7 Nov 2019 00:22:59 +0100 (CET)
 To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org
-References: <20191106110514.20413-1-ynezz@true.cz>
- <20191106110514.20413-10-ynezz@true.cz>
+References: <20191106133028.2350-1-ynezz@true.cz>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -100,14 +98,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <e8259209-2d1d-5913-fa38-d37ce8e0ef05@hauke-m.de>
-Date: Thu, 7 Nov 2019 00:18:32 +0100
+Message-ID: <06eff70f-40f6-80f3-b62f-1a61b1c3fc5f@hauke-m.de>
+Date: Thu, 7 Nov 2019 00:22:47 +0100
 MIME-Version: 1.0
-In-Reply-To: <20191106110514.20413-10-ynezz@true.cz>
-Content-Language: en-US
+In-Reply-To: <20191106133028.2350-1-ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_151841_507567_8D6CAD46 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20191106_152308_185389_A7485CFD 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -115,8 +112,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 19.07 09/14] hostapd: Update to version
- 2.8 (2019-04-21)
+Subject: Re: [OpenWrt-Devel] [PATCH v2 19.07 00/12] bump hostap to latest
+ stable release
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,40 +125,105 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============3669850043687464435=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gMTEvNi8xOSAxMjowNSBQTSwgUGV0ciDFoHRldGlhciB3cm90ZToKPiBGcm9tOiBIYXVrZSBN
-ZWhydGVucyA8aGF1a2VAaGF1a2UtbS5kZT4KPiAKPiBUaGlzIGFsc28gc3luY3MgdGhlIGNvbmZp
-Z3VyYXRpb24gZmlsZXMgd2l0aCB0aGUgZGVmYXVsdCBjb25maWd1cmF0aW9uCj4gZmlsZXMsIGJ1
-dCBubyBleHRyYSBvcHRpb25zIGFyZSBhY3RpdmF0ZWQgb3IgZGVhY3RpdmF0ZWQuCj4gCj4gVGhl
-IG1lc2ggcGF0Y2hlcyB3ZXJlIHBhcnRpYWxseSBtZXJnZWQgaW50byBob3N0YXBkIDIuOCwgdGhl
-IHJlbWFpbmluZwo+IHBhdGNoZXMgd2VyZSBleHRyYWN0ZWQgZnJvbSBwYXRjaHdvcmsgYW5kIGFy
-ZSBub3cgYXBwbGllZCBieSBPcGVuV3J0Lgo+IFRoZSBwYXRjaGVzIHN0aWxsIGhhdmUgb3BlbiBx
-dWVzdGlvbnMgd2hpY2ggYXJlIG5vdCBmaXhlZCBieSB0aGUgYXV0aG9yLgo+IFRoZXkgd2VyZSB0
-YWtlbiBmcm9tIHRoaXMgcGFnZToKPiBodHRwczovL3BhdGNod29yay5vemxhYnMub3JnL3Byb2pl
-Y3QvaG9zdGFwL2xpc3QvP3Nlcmllcz02MjcyNSZzdGF0ZT0qCj4gCj4gVGhlIGNoYW5nZXMgaW4g
-MDA3LW1lc2gtYXBwbHktY2hhbm5lbC1hdHRyaWJ1dGVzLWJlZm9yZS1ydW5uaW5nLU1lc2gucGF0
-Y2gKPiB3aGVyZSBmaXJzdCBhcHBsaWVkIHRvIGhvc3RhcGQsIGJ1dCBsYXRlciByZXZlcnRlZCBp
-biBob3N0YXBkIGNvbW1pdAo+IDNlOTQ5NjU1Y2NjNSBiZWNhdXNlIHRoZXkgY2F1c2VkIG1lbW9y
-eSBsZWFrcy4KPiAKPiBUaGUgc2l6ZSBvZiB0aGUgaXBrZ3MgaW5jcmVhc2UgYSBiaXQgKGJldHdl
-ZW4gMS4zJSBhbmQgMi4zJSk6Cj4gCj4gb2xkIDIwMTgtMTItMDIgKDIuNyk6Cj4gMjgzMzM3IHdw
-YWQtYmFzaWNfMjAxOC0xMi0wMi1jMmM2YzAxYi0xMV9taXBzZWxfMjRrYy5pcGsKPiAyNTI4NTcg
-d3BhZC1taW5pXzIwMTgtMTItMDItYzJjNmMwMWItMTFfbWlwc2VsXzI0a2MuaXBrCj4gNDE3NDcz
-IHdwYWQtb3BlbnNzbF8yMDE4LTEyLTAyLWMyYzZjMDFiLTExX21pcHNlbF8yNGtjLmlwawo+IDQx
-NTEwNSB3cGFkLXdvbGZzc2xfMjAxOC0xMi0wMi1jMmM2YzAxYi0xMV9taXBzZWxfMjRrYy5pcGsK
-PiAKPiBuZXcgMjAxOS0wNC0yMSAoMi44KToKPiAyODgyNjQgd3BhZC1iYXNpY18yMDE5LTA0LTIx
-LTYzOTYyODI0LTFfbWlwc2VsXzI0a2MuaXBrCj4gMjU2MTg4IHdwYWQtbWluaV8yMDE5LTA0LTIx
-LTYzOTYyODI0LTFfbWlwc2VsXzI0a2MuaXBrCj4gNDI3NDc1IHdwYWQtb3BlbnNzbF8yMDE5LTA0
-LTIxLTYzOTYyODI0LTFfbWlwc2VsXzI0a2MuaXBrCj4gNDIzMDcxIHdwYWQtd29sZnNzbF8yMDE5
-LTA0LTIxLTYzOTYyODI0LTFfbWlwc2VsXzI0a2MuaXBrCj4gCj4gU2lnbmVkLW9mZi1ieTogSGF1
-a2UgTWVocnRlbnMgPGhhdWtlQGhhdWtlLW0uZGU+Cj4gVGVzdGVkLWJ5OiBTdGVmYW4gTGlwcGVy
-cy1Ib2xsbWFubiA8cy5sLWhAZ214LmRlPgo+IChjaGVycnkgcGlja2VkIGZyb20gY29tbWl0IDhh
-Zjc5NTUwZTZjMjgwNzE3NjYwZjY2MDMyZDg5ZDIxMDA3YjE1ZDIpCgpQbGVhc2UgY2hlcnJ5LXBp
-Y2sgdGhlIHVwZGF0ZSB0byBob3N0YXBkIDIuOSBpbiBhZGRpdGlvbiB0byBtYXRjaCB3aGF0Cndl
-IHVzZSBpbiBtYXN0ZXIuCgpIYXVrZQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBs
-aXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vb3BlbndydC1kZXZlbAo=
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3669850043687464435==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2
+Content-Type: multipart/mixed; boundary="jPQh8jMlQ6YGdJOhTTlI7tVgqLnlQulBv";
+ protected-headers="v1"
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
+ openwrt-devel@lists.openwrt.org
+Message-ID: <06eff70f-40f6-80f3-b62f-1a61b1c3fc5f@hauke-m.de>
+Subject: Re: [OpenWrt-Devel] [PATCH v2 19.07 00/12] bump hostap to latest
+ stable release
+References: <20191106133028.2350-1-ynezz@true.cz>
+In-Reply-To: <20191106133028.2350-1-ynezz@true.cz>
+
+--jPQh8jMlQ6YGdJOhTTlI7tVgqLnlQulBv
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+On 11/6/19 2:30 PM, Petr =C5=A0tetiar wrote:
+> Hi,
+>=20
+> v1 patches were somehow screwed probably due to the rebase, so this v2 =
+series
+> is done from scratch again. Previous cover letter[1] for reference, and=
+ Git
+> branch[2] with all the patches.
+>=20
+> 1. https://patchwork.ozlabs.org/cover/1190274/
+> 2. https://git.openwrt.org/?p=3Dopenwrt/staging/ynezz.git;a=3Dshortlog;=
+h=3Drefs/heads/upstream/19.07/hostapd-backports
+>=20
+> Eneas U de Queiroz (1):
+>   hostapd: adjust removed wolfssl options
+>=20
+> Hauke Mehrtens (6):
+>   hostapd: Update to version 2.8 (2019-04-21)
+>   hostapd: Update to version 2.9 (2019-08-08)
+>   hostapd: use config option CONFIG_NO_LINUX_PACKET_SOCKET_WAR
+>   hostapd: Remove unneeded patch
+>   hostapd: use getrandom syscall
+>   hostapd: Add mesh support for wpad full
+>=20
+> Jo-Philipp Wich (2):
+>   hostapd: fix OWE settings in client mode
+>   hostapd: mirror ieee80211w ap mode defaults in station mode
+>=20
+> Kyle Copperfield (1):
+>   hostapd: add IEEE 802.11k support
+>=20
+> Leon M. George (2):
+>   hostapd: revert signature change in patch
+>   hostapd: declare struct wpa_bss early
+>=20
+
+Acked-by: Hauke Mehrtens <hauke@hauke-m.de>
+
+
+--jPQh8jMlQ6YGdJOhTTlI7tVgqLnlQulBv--
+
+--iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3DVccACgkQ8bdnhZyy
+68f2gAf9EJMI8LVSh+ieyqaa8Qk37zLe020lb5LacZBcSNkloCDDiweVMhIJvf9n
+v5ZQy8okxUuGm5zFlNWKCCxR7dMyJPIbZyIjmGPWd0PvTPrQ5sXYn6hi8gSZkfcF
+/3BG0hZOg7i890Lyrc5SHs/4K4ltxN7Y2KkDaGtO1JmMop+IGaoYLxzdNGVgGdrE
+ZWBPr/XkYPPVwPEXd2aOBRfcr0Qv7B4qYBIRV00gjKblSKhz5XMa54Z1/C3nImGn
+90j8pTtTAAbjVwgsO0CiQFiviUSWrCBUuvMw7Li033YByCQXzsNt/VKew+lQmj3v
+w8nzV6SwttUYYzXAF8GchvueZuNtug==
+=147n
+-----END PGP SIGNATURE-----
+
+--iv73ERXzukM9fjWH8YfqsX5TxqU4rK5a2--
+
+
+--===============3669850043687464435==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3669850043687464435==--
+

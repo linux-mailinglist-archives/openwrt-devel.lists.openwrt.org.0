@@ -2,63 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28B81F1563
-	for <lists+openwrt-devel@lfdr.de>; Wed,  6 Nov 2019 12:47:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08EBEF156E
+	for <lists+openwrt-devel@lfdr.de>; Wed,  6 Nov 2019 12:51:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=RuREOUocZEi4q3TROE8gs7OrVKMRnQdkJkvJl/ZDp0k=; b=Wb/GSUMrPIQdZAYmoDX+p6M5kh
-	LvIKOOBzQl3eaqQp0IYhYjBu0BHppS8Ga1Z6tkgJyuuU4EnPqiSUN24qtngTxyHpazTPPAiAMmimc
-	YtY73BAN0ckMU7i1D2L17nEDPqfT3Osi6+ry3ZwM+xpqn5btWw0lVqtE0o39Ewx6TlOMrbGvIp3lN
-	puhhmRWEyucP6GPfelCzVqTSkmNyv2Baqv2iwXh83gIOAp78xFWlPMXI0llnhVJdaoeSxyHQ7XxqQ
-	demsWub5rEqSjzmITkk5zNUKFwQI0pRno8/ICPtDF+EZZrXBa1Rm6VLjRDdlB8nV3PGBaQM+RdlTL
-	Y1ojoN9Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sIWZP2BWeKIZ/jMcrjt2Xn3gn9zvSRIXKhMJmY+QOg0=; b=l8BmhzlvCzNne+
+	2Gmsp+g/lgGmuKdg1tC6sidA3Oe4QuqGdCxYYJoZyoPhXUfAv4sw/uBVe5XXJgJSboKzoSiR4lCfI
+	cwsKBKIFemiSzclDG95GPBBojA8mATR7NYy2J4Ce7Yyh9kiNmTgGEudGB51GxKom8eM6JnYeJv3zj
+	VYAC/R6eFtJReiyTBk9kIQladzmjP8jdF4tPMtiC96IzJYzeQR5G4bPQHlQQy2AObTEivTdqpq75U
+	Xh12uJOYnCj6T6Ky6JzJuI2FJX4x4+O/nfZSFqUyZpo7ez9b9agHzNl+6fIMfOEfOmMHNyTBQZukS
+	tdomEPE3Bbh8YQHH7IfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSJmD-0003ii-L6; Wed, 06 Nov 2019 11:47:05 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1iSJqV-0005RC-Bq; Wed, 06 Nov 2019 11:51:31 +0000
+Received: from mail.tintel.eu ([2001:41d0:8:1644:0:ff:fe5c:6a54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSJm7-0003iE-5K
- for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 11:47:00 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id E01476DCB;
- Wed,  6 Nov 2019 12:46:55 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 7fe9eee6;
- Wed, 6 Nov 2019 12:46:45 +0100 (CET)
-Date: Wed, 6 Nov 2019 12:46:45 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Daniel Golle <daniel@makrotopia.org>
-Message-ID: <20191106114645.GA67608@meh.true.cz>
-References: <20191106110514.20413-1-ynezz@true.cz>
- <20191106110514.20413-3-ynezz@true.cz>
- <20191106111547.GA1410@makrotopia.org>
+ id 1iSJqM-0005QN-7q
+ for openwrt-devel@lists.openwrt.org; Wed, 06 Nov 2019 11:51:24 +0000
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id 10586455DAF0
+ for <openwrt-devel@lists.openwrt.org>; Wed,  6 Nov 2019 12:51:16 +0100 (CET)
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10032)
+ with ESMTP id V9T-xCv63SMs for <openwrt-devel@lists.openwrt.org>;
+ Wed,  6 Nov 2019 12:51:13 +0100 (CET)
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id E4841469DA83
+ for <openwrt-devel@lists.openwrt.org>; Wed,  6 Nov 2019 12:51:12 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu E4841469DA83
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
+ s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1573041073;
+ bh=eIj1W7e0OxJCoJ6XSsV3O9TlVcgzBula0X4Q6739Q3k=;
+ h=To:From:Message-ID:Date:MIME-Version;
+ b=uXuyU/C4ViC4tWv1lvZfDaPTtMkuQUK4R+oWsDjip9mCxMYGw7EUbSe7+XmJCFRNl
+ vDNlO9utTH1lAnOuCB+QtcH0uz1vuzZK9h9k4wvLXBvEHSl0eYkfbSu3wTkdZkWg2R
+ 3sa2wRNglQIf8bMs39B1J/fL9VsaVa3JF2BMpNd4=
+X-Virus-Scanned: amavisd-new at mail.tintel.eu
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10026)
+ with ESMTP id IJz3QEmMhLHj for <openwrt-devel@lists.openwrt.org>;
+ Wed,  6 Nov 2019 12:51:12 +0100 (CET)
+Received: from sylvester.nomad.adlevio.net
+ (ptr-7svjs18pj4s7xqdfrre.18120a2.ip6.access.telenet.be
+ [IPv6:2a02:1811:406:dc00:e1ef:959a:f4dd:df4a])
+ (Authenticated sender: stijn@lenio.be)
+ by mail.tintel.eu (Postfix) with ESMTPSA id C0983455DAF0
+ for <openwrt-devel@lists.openwrt.org>; Wed,  6 Nov 2019 12:51:11 +0100 (CET)
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+From: Stijn Tintel <stijn@linux-ipv6.be>
+Message-ID: <e7e7d7ce-8e9c-8bd8-5491-7e2f5f4ba74d@linux-ipv6.be>
+Date: Wed, 6 Nov 2019 12:51:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191106111547.GA1410@makrotopia.org>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191106_034659_359019_F2FE67E6 
-X-CRM114-Status: UNSURE (   5.21  )
+X-CRM114-CacheID: sfid-20191106_035122_628951_58A65929 
+X-CRM114-Status: UNSURE (   7.57  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH 19.07 02/14] hostapd: Allow
- CONFIG_IEEE80211W for all but mini variant
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: [OpenWrt-Devel] Wiki going down for maintenance
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,26 +86,18 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Daniel Golle <daniel@makrotopia.org> [2019-11-06 12:15:47]:
-
 Hi,
 
-> > Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
-> > (cherry picked from commit 1d4df52c215874a5238ddef7bccf0139f7758c24)
-> 
-> Looks like you forgot to `git add`, also in patch 3 and 4...
+As the server that is hosting the OpenWrt.org wiki is running out of 
+disk space, we will take it down to resize it.
 
-hm, thanks for spotting it, this is interesting as I've used `git
-cherry-pick -x hash`, I'll fix that.
+Stijn
 
--- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

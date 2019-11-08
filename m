@@ -2,7 +2,7 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B2ADF5356
+	by mail.lfdr.de (Postfix) with ESMTPS id E3E80F5357
 	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 19:14:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,52 +10,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZTB6DQSWewx410f8e79zXbvNLC9DViJ45mfr8+TQjBQ=; b=QIiV0McPprHZEp
-	tSW8WtrLI2GnOSJH3G7iQxnZpyKpjesNlIFzOMsimcB5yA4xy/TEeYGvmp+g3nWAIWpEpPZns4eHH
-	O108eU5i2WV7gJcfuX3KcqDqdwtZFeE5a0IBC3e7TdEOEXhXAW+tqLh9XsuECetw4poOhc4bMXNjS
-	vlv7qpC1ajHmmuZxoWFyvu/LnPzOq3iOZtnHsfufJPsLVL2QrdWl2HHSfHuPOJ530Vy4jM7sXsb1K
-	xHTkaULJ5L4NA6EZIK90nNr/DPK+05W+/ayHacAFs4WTsYem1k+7JVhQYy+OuG6t2regbJ2SVN3sy
-	V3uQsP1rI7GFyjSM1Gpg==;
+	List-Owner; bh=7K0dSjCspU735zOBAgpYDlxbDTNy3pkbkAFqYfLDRVQ=; b=jQCJk++AiQ2KXh
+	Z9ZDoJ8ADn7I5aRKRWuZhusrFnVRhr+F1Zz/JoCKSoQc2ZlgFJ53P5TOdYpAUj6Nn4NmcDyhgUih+
+	oiTqk0xJXzGHYoFFylnYgxBWTAJR1QEtvQjhpoSblAboC8XRBnoBm+yGZ1VRiKgfXeEn4iBvSz5dk
+	MeMJHIqX7Pdn73J5DKtkAIpuYtQUXL85Wyoe6qv4KNBes7ALtAvh9+qhVpvKwLkvvQ1tUkiT4oF9I
+	0D3SQxlZyMhLGwqNtssDIXSwzJobBSBmSvvyVy7Qpapy+8pPzhUI2Sj4bcLztDLMTrDU2YAWyGN4a
+	ag7ucOpuZCdMBDRIlUDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8mM-0006MR-BE; Fri, 08 Nov 2019 18:14:38 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1iT8mC-0006EU-3G; Fri, 08 Nov 2019 18:14:28 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8m2-0006Ch-Nf
- for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 18:14:20 +0000
+ id 1iT8m2-0006Cp-9L
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 18:14:19 +0000
 Received: from buildfff.adridolf.com ([188.192.135.195]) by
  mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MHndY-1ifkDC1w9e-00EuMc; Fri, 08 Nov 2019 19:14:12 +0100
+ id 1MUGNZ-1iKeYx2fJr-00RKPv; Fri, 08 Nov 2019 19:14:12 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri,  8 Nov 2019 19:14:04 +0100
-Message-Id: <20191108181408.18272-2-freifunk@adrianschmutzler.de>
+Date: Fri,  8 Nov 2019 19:14:05 +0100
+Message-Id: <20191108181408.18272-3-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191108181408.18272-1-freifunk@adrianschmutzler.de>
 References: <20191108181408.18272-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:HrURfZPd6NPinYklodVqwJWgBk/JSBYjnXkqFpOyJoFTUAqeRYZ
- 3oNynCq7l997AXk2BV8+YWDGRoyJzE2pr4o6YfnNz86v7qOLvMcIsSyYVVhfTWITLoj0JS7
- +w8i49UY+F6hDUYKkbXnzg4XbATsVHwocybAAJ2yC78KZ8gu2NtjOHSpDP8t8MYqMbeWeji
- k1T4usVXaNRuBwsdp7jEA==
+X-Provags-ID: V03:K1:Vx55jbhvxEu5mTBEjdS4aOkkaNe+r2Kk9WfYiGyYpsvwCsFf6Vy
+ gIVLweAbkpLFskEjgr3oaGw4SJpm3NAeVIohJQl0qPWjNxroHlLQWlqyeXBVI/guqPTTR8z
+ 2pOQkjW7axn0FXsPoWhPWdjxL8bXQceyd78ShlXoNruICWr8cOySDmnCRpBH/9pbdqO+Bak
+ 4VrDxPIY1v6A8AG2rVfVw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:lJJRw52eyIU=:iwaVwO6U3wuYSgfsMiA5P8
- za9nwfoeP7Q+GVLma5PvR8pfZo+NKeztspEO5QoeY5wiVx5IG2YR6IHlT1PY4s97AbGbfNJHq
- 28pkDyWrdk40nlEh1qbBAoJ2x1AGbn01C1eMQUwqCCuQphV/vcIMR2ZzS/K7rezMS9hkNj6Gk
- kLP729+CHxo4WNljAO5frTZMkcSYmfOa+HboTgIDDgEAxXUSuqi/NoRoDdMz0hIbgMVuYrvxs
- q0IID0kDTzn9jXyOGmpZVulOISTs81gl3vXqEQlL6VSxERVSqJLNZA0wMjVoq4d6E/1hXbAze
- z35YXB2vtOABYdavA+whPF6vmTtkCPq+PP4EF27QD6DnX9x0bUQywZsaJD0CXUwLPebcmc/MJ
- Pi6L0LI6fXeijb4hmE6b2e6HQHF0y/47dhlD/M+niq7hkUfPyyuVLUj+QAXvidYkwBnz+YXz8
- WFQcWuADUFl30fZn588DsS6VpPragTEgdv6MJat4TxefIoaMvPmbwNoOcRVwUXM3D/2ytybfJ
- WFlGpWmVmMo3jpYWxVzwkv0id6q04D1zAic5US7d450vSxCK7SBxQO7iDBdChwsK9X3jXkG1M
- kyXOLop3Wg2S+TpxAA7ve0xWfcXMxXQapV0gWsFauVmHk5FppoB17T+T9VqWrTEv3pjt5yIED
- Xkwwsgo3KiptMMpjeeA7vUcH7CNRQ93B6gB3Da/zjK0TxbVaItJC205MJrg9ReeTxM6g9jOZj
- wdsb/sEgUxX5ix96NwFlezmCgX2vgg3tCCnin7bIXawIV8E2A74XkIhmOOkfjbNaoDa40ugYY
- jmVSni9+Q79VRA93+mKmQOvG5OEzKHXXYpRNyV5kdFLNZ+zTQT+DDhxajcprhcTEB0h7fgP60
- s0V288YJeSbo5Lw1w7X94HiCH7atTC5e7oLbwcD3U=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:cgOGm0kxVDc=:8Gq5S9C2lfzn7Fe2TAmB4h
+ lFhvKKFEgRfSACdCojxAZpcU0mhbcIpyLohSa4SLa6DpFeD25bRtoZdh6dPljxehFydqwXHqe
+ zBgu+BP+2rjjCtXsRFmJzz6UEwB3Zi0IbrZ92Jpvmf2KE74CaHEyLehn7CkAUn8Eonq6cVpli
+ t/fukT6ajYmqscvsJB+TNVZ7ATLyTQWZhGc9pt77BtOia3qPRKvJ9pPn1/E7mp0un+aaO6pgm
+ vhwwup6IZJuECj/MzGgQBCUKYT/xcWqvsn6afco3mygqNcqqwgYaYBXPftJfZttI3siiXOYAO
+ eT+Gz9ih7AxcOX2eEcAjx5H+tOYkQMDWuyumkWkPUJ1l/MvTEQeyU3gM8SnINQbcdqBz2zSHH
+ C0hICXl+h2B6hS8CIZYY7LRPJkrN2ArAurzlDGhTFJ6XlGaH55ZI2oGFfS3Bt+ox1/gdqH7SJ
+ Bv+NIpqDM/d2UJ63g4ZysTBrPHoieAPwjlut1Tb1OFzT0QnEimmSvz5yy0xhEfuF91QdUajwK
+ 2mwIE098tqPYnkRxKIuB8iYsWTrkUC6auyskakL/4Oszd12MmgeTzQSFqc7XpzzjTB+0ahUFU
+ FXwlyucf499q1gFSUkIAzSBvNjtZsn6xoHgbzMy8YoRnmHMHD/CliqJtVgh6b5WtXYwYnqCp4
+ K+owLKfFQBN53J07bzGxBn7WNBe2TYDIkBpotRdjreKMIeVBErFRmhJoZ6Lkrpvyr+9ESNhkE
+ fVeDZSDI34kDG7KPX0Bb0HbMBaPJg+sPFDA3WlnMA2siTIJO/qvw0QDPtNamGUcV6dc4BY7uC
+ imfFJPfaxH0halRBPdyVpX5xXbpUoFmiFZK/WUecS3ZTq26+TVL/SHinMACO4tg95TDY5Akxr
+ zVtnr953f8fYLvOR9hnrSIJr+wdNtglBQb8456uyI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_101419_069734_1728F20D 
-X-CRM114-Status: UNSURE (   7.89  )
+X-CRM114-CacheID: sfid-20191108_101418_619592_7D47516A 
+X-CRM114-Status: UNSURE (   9.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,10 +63,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 1/5] linux-firmware: add wil6210 firmware
+Subject: [OpenWrt-Devel] [PATCH 2/5] mac80211: add wil6210 driver
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,33 +86,70 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 From: Robert Marko <robimarko@gmail.com>
 
-This patch adds wil6210 firmware and board files.
-Firmware version is not up to date but is only freely
-redistributable one I found.
-Board file is a generic one so most devices and especially those
-for long distance PtP links will require so in a ipq-wifi like way.
+This patch adds wil6210 driver for Wilocity/QCA based 802.11ad
+PCI cards.
+
+Driver uses cfg80211 and nl80211 but not mac80211.
+Integration for UCI and LuCI will come in other patches.
 
 Signed-off-by: Robert Marko <robimarko@gmail.com>
 ---
- package/firmware/linux-firmware/qca.mk | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ package/kernel/mac80211/ath.mk | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
 
-diff --git a/package/firmware/linux-firmware/qca.mk b/package/firmware/linux-firmware/qca.mk
-index 23fcc0905a..71b484d5c7 100644
---- a/package/firmware/linux-firmware/qca.mk
-+++ b/package/firmware/linux-firmware/qca.mk
-@@ -37,3 +37,11 @@ define Package/carl9170-firmware/install
- 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/carl9170-1.fw $(1)/lib/firmware
- endef
- $(eval $(call BuildPackage,carl9170-firmware))
+diff --git a/package/kernel/mac80211/ath.mk b/package/kernel/mac80211/ath.mk
+index 64aac41b4d..ead3c8c4b2 100644
+--- a/package/kernel/mac80211/ath.mk
++++ b/package/kernel/mac80211/ath.mk
+@@ -1,6 +1,6 @@
+ PKG_DRIVERS += \
+ 	ath ath5k ath6kl ath6kl-sdio ath6kl-usb ath9k ath9k-common ath9k-htc ath10k \
+-	carl9170
++	carl9170 wil6210
+ 
+ PKG_CONFIG_DEPENDS += \
+ 	CONFIG_PACKAGE_ATH_DEBUG \
+@@ -20,7 +20,8 @@ ifdef CONFIG_PACKAGE_MAC80211_DEBUGFS
+ 	ATH10K_DEBUGFS \
+ 	CARL9170_DEBUGFS \
+ 	ATH5K_DEBUG \
+-	ATH6KL_DEBUG
++	ATH6KL_DEBUG \
++	WIL6210_DEBUGFS
+ endif
+ 
+ ifdef CONFIG_PACKAGE_MAC80211_TRACING
+@@ -28,7 +29,8 @@ ifdef CONFIG_PACKAGE_MAC80211_TRACING
+ 	ATH10K_TRACING \
+ 	ATH6KL_TRACING \
+ 	ATH_TRACEPOINTS \
+-	ATH5K_TRACER
++	ATH5K_TRACER \
++	WIL6210_TRACING
+ endif
+ 
+ config-$(call config_package,ath) += ATH_CARDS ATH_COMMON ATH_REG_DYNAMIC_USER_REG_HINTS
+@@ -65,6 +67,8 @@ config-$(call config_package,ath6kl-usb) += ATH6KL_USB
+ 
+ config-$(call config_package,carl9170) += CARL9170
+ 
++config-$(call config_package,wil6210) += WIL6210
 +
-+Package/wil6210-firmware = $(call Package/firmware-default,wil6210 firmware)
-+define Package/wil6210-firmware/install
-+	$(INSTALL_DIR) $(1)/lib/firmware
-+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/wil6210.fw $(1)/lib/firmware
-+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/wil6210.brd $(1)/lib/firmware
+ define KernelPackage/ath/config
+   if PACKAGE_kmod-ath
+ 	config ATH_USER_REGD
+@@ -274,3 +278,11 @@ define KernelPackage/carl9170
+   FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/ath/carl9170/carl9170.ko
+   AUTOLOAD:=$(call AutoProbe,carl9170)
+ endef
++
++define KernelPackage/wil6210
++  $(call KernelPackage/mac80211/Default)
++  TITLE:=QCA/Wilocity 60g WiFi card wil6210 support
++  DEPENDS+= @PCI_SUPPORT +kmod-mac80211 +wil6210-firmware
++  FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/ath/wil6210/wil6210.ko
++  AUTOLOAD:=$(call AutoProbe,wil6210)
 +endef
-+$(eval $(call BuildPackage,wil6210-firmware))
 -- 
 2.20.1
 

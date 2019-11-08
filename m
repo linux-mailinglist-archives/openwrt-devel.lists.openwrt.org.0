@@ -2,81 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52FA7F5157
-	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 17:42:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ADA3F5180
+	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 17:48:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
 	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ozNriMpGenIQOW/akG6Puw1vAdU7Jgcao1jWjmnD58=; b=EYe93c9RQ3vRzk
-	Lfz6yLYUC8/cKCzSbx+Sq1Wabzj8ewOUs/VNnFIOnQf+3s1lhYRJfnp7IUIXlMukyuqULt4s7wpcY
-	pg842wBU/9tXQw/JDqMJKPvw1fscWlj7ZYDyEdGt6Jn7y2yXOsRGq3LQCnpDw3FqszOzAImLe2euj
-	TPXkZIwaRIVFCSzp908+2iaSTSihCsl18uPHYhuULt1mOdu+n5YlMyDAFSImk0Mqaunb6KospDi4V
-	krE23yoUXm8dDBHB4mnSLZXsU9g1tMfaNnndUX5PpMBv0QotBro4PkDRaf5Z+R117bE8lC8qH3+jW
-	3s9O913dVDFowlaQZi0Q==;
+	List-Owner; bh=3h2aBWEr+dK1IjebwA0vm2kVteNxKK6p5rhy1n0muLU=; b=e+uE1dSq1e8mPK
+	fmIdonDu2uzz0LsZNT/yaVdqW//KHlYkTCPQaS/1tdCDmseaN+C3zFyK8UPsoT+dKYEIrRph5b/LV
+	oZ7h1Gc361yynOgF3njmTpLdBxOecslHCLCFL9mr3NhpJaYzrFY6euPUa7iq530tedHsBeemMAJI9
+	s07plxxafRtNuPI0YmQzTubBiJfMr39TrFvWzI9QdZc/jo8+TQJ8luUZUZVCoJKH5pc7DaeZP27N8
+	7jMxl8vT8k6aEvNg5nlBOJjagAe/aZHq2VdfzUlSjHnwNw/4rgaQpQNIWCQ8fitaGkHn0dIrsHNPc
+	4yUKgn8u7coxowyis1rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT7KX-0003SX-2S; Fri, 08 Nov 2019 16:41:49 +0000
+	id 1iT7Qe-0007bt-3P; Fri, 08 Nov 2019 16:48:08 +0000
 Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT7KM-0003S2-LK
- for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 16:41:40 +0000
-Received: by mail-lf1-x144.google.com with SMTP id z24so2009760lfh.6
- for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 08:41:38 -0800 (PST)
+ id 1iT7QW-0007bD-HI
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 16:48:02 +0000
+Received: by mail-lf1-x144.google.com with SMTP id v8so4936188lfa.12
+ for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 08:48:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=4IwxT/e0P674V73/1pqhZb/jhfeIWTXmK6oi+6Ihkzs=;
- b=tXVRyoECtXSWINmZxKcBDm4CkKCHuPaLOiBfzHNgDM+0CyaY86O9hjAnphRjW2Z/9m
- DKPlcPqmMIFuiH4fu/wUaViutkC5QEPZ45v1KgYYDzAFfP6bEkwVQqdQlp0cPtuo8cCf
- 073+vonyJ8OBp4NarySXqdpvgNYI2XwDXLBdnQbuKo0pQi0u0KPVEN8JGnSWHubRuYok
- 8jbNSSUDNiGcHqTBBJSB27KQ3QVNfySYdRZldGghMm8nKNKxxYsaN4FjejKIPbJjrxqI
- CrTi+giltghFrtC8nbelSl2aitr3VBkNm6QHfbCwCViSvUSDsSrTxDLM3XzkW0qx/wAR
- JAHg==
+ bh=TL4lWhK61ieH6zWrgrFFO4EDEf4xsY/exiOHXXzk82g=;
+ b=VjY4sD10nRyaAy024zMrETrVs1UcZBaSDYWPCX22+jifJtzFxPpGR5y507SWg4CXqw
+ BwVrzYQJLsC4QAkvC5VjTP+s2UANJySzR9z+Q9Q4VYNAwuXTyTvi7aQfNojnf+SO553U
+ Az9daR8rkQHeeWbG67JA868gMlUGndEtnWOjqGcIaifxIc2j5/O1xaCGLhfbB7NI5yHQ
+ 8BVYdZG4b2ZqO69SGZtFCRKI11PxqTEzGeGhNc0i4n1uHZQtJgPkGYntIL3PeVy5ojkH
+ MJuiAhv6cjx9smE3+3A9qWJwMB61YQOay5MRdSw07X0TMssSsomW3O4pXFxVANBX4X0Z
+ Q6kw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=4IwxT/e0P674V73/1pqhZb/jhfeIWTXmK6oi+6Ihkzs=;
- b=p3FpEDUKEyrHj6de3JmZdlVEengbJStrIrsHvQoi7ANQFd87UFhN0XIUiB7mgRDpTp
- RCcWCXEZxIJnk/N0P2QnyUtl3w+QWRoyW//5U48VKdOMrh46v/YTqzuarlsqiRIrzP6b
- 81cr3QEtVcRaLmuVm5ov17HyTymNDTTNXD4sYr9TZHKlsqGY8V12AR8KhHK+sxiXZw2t
- kh9hd/xjaar3h3h8Q+64ujziifR6MQ13IRzkSDPKr6nDBhat4ufw5nzY9BGjKcKnjIQM
- /oCA9HCI16cYWPcLz/OHtvGU66ZMVOReqlVEDVbJJgL85g7uCeeekn3+zNQet/tV75ye
- XLgg==
-X-Gm-Message-State: APjAAAXsUvYl/SWwTb6fxVYTFqC3QhtYJxSF3JLbtfL24+5iWmFvjDOx
- nhFq79+LUuJBcbwthz6UHwM=
-X-Google-Smtp-Source: APXvYqzxjYrOTvER4fAGTiNV5cfurhzuwWNxdUgZVDdCiJ8UuGDtox+Rj6M1o/Z+CZEotdjgE1v4mw==
-X-Received: by 2002:a19:6d12:: with SMTP id i18mr7340798lfc.153.1573231297048; 
- Fri, 08 Nov 2019 08:41:37 -0800 (PST)
+ bh=TL4lWhK61ieH6zWrgrFFO4EDEf4xsY/exiOHXXzk82g=;
+ b=CW1L8nJn0/h9B2HyHQhhUsJAPdg458naAljm1Px0TUQVyx12oLDDSBCf3RJjZZVjCn
+ mQJE8PfUkI0J6EIZOPNvcEekA4l/CPw0S35z/tf3ozoAfebclaxopPuCYD7rhdQlZhbl
+ vCUfNG3X/xaRwZTonCGmYJNEz1mV5RNgeZ0e45aCdDgCNjzJTK/6VQyoM/QqyNL6eNB9
+ ASgL+/4F4Rij0NkGjd73w59VH31Bj6q0qhj/l1ugyQA129H27S0sxF7N4KrRERTm9SkI
+ kIQv2HRKeA9Xkfuuj9nh27QOGEhBcW1VpqwASCIvyon80p/LhbC1pDy+CHRpE36Q2+K7
+ SJTw==
+X-Gm-Message-State: APjAAAVMZcwUZrKBEb5gYfqArrQQP8Z36fZ6dRKi4MeBZpA0JfmZmuhp
+ 8WUUnZwSSWZAguPNtLZ1UW/5IEMx
+X-Google-Smtp-Source: APXvYqwmdJI050j5jTGiIfVrZWb5msQlUWV19r+twgAOi5HkZgyZqNN6ATiXovRIrh33uDZLVMb9/w==
+X-Received: by 2002:a19:148:: with SMTP id 69mr7739769lfb.76.1573231679208;
+ Fri, 08 Nov 2019 08:47:59 -0800 (PST)
 Received: from home.paul.comp (paulfertser.info.
  [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id t12sm2614138lfc.73.2019.11.08.08.41.35
+ by smtp.gmail.com with ESMTPSA id i30sm3163080lfp.39.2019.11.08.08.47.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 Nov 2019 08:41:36 -0800 (PST)
+ Fri, 08 Nov 2019 08:47:58 -0800 (PST)
 Received: from home.paul.comp (localhost [127.0.0.1])
  by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- xA8GfYpu023332; Fri, 8 Nov 2019 19:41:34 +0300
+ xA8Glu9g023357; Fri, 8 Nov 2019 19:47:56 +0300
 Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id xA8GfYXb023331;
- Fri, 8 Nov 2019 19:41:34 +0300
-Date: Fri, 8 Nov 2019 19:41:33 +0300
+ by home.paul.comp (8.15.2/8.15.2/Submit) id xA8GludQ023356;
+ Fri, 8 Nov 2019 19:47:56 +0300
+Date: Fri, 8 Nov 2019 19:47:56 +0300
 From: Paul Fertser <fercerpav@gmail.com>
 To: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-ID: <20191108164133.GX1190@home.paul.comp>
+Message-ID: <20191108164756.GY1190@home.paul.comp>
 References: <20191103113247.9782-1-fercerpav@gmail.com>
  <024701d5932b$2eba0f40$8c2e2dc0$@adrianschmutzler.de>
  <20191104165429.GT1190@home.paul.comp>
  <00b001d59644$5a7f1c80$0f7d5580$@adrianschmutzler.de>
+ <20191108164133.GX1190@home.paul.comp>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <00b001d59644$5a7f1c80$0f7d5580$@adrianschmutzler.de>
+In-Reply-To: <20191108164133.GX1190@home.paul.comp>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_084138_722524_2D0FCEF8 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20191108_084800_579466_383CBDD2 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,45 +116,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Adrian,
+On Fri, Nov 08, 2019 at 07:41:33PM +0300, Paul Fertser wrote:
+> "lp" might be a "language pack" which is to be downloaded and
+> flashed separately when using vendor firmware.
 
-On Fri, Nov 08, 2019 at 03:53:59PM +0100, Adrian Schmutzler wrote:
-> > With that I have 6 eraseblocks left for the rootfs_data partition (5
-> > is the absolute minimum jffs2 allows).
-> > 
-> > > Be aware that you might not find someone willing to merge this.
-> > 
-> > I do not think this device is any worse than the other 4M devices
-> > supported by ath79. [...]
-> 
-> Well, TP-Link devices have 0x3d0000, Netgear has 0x3a0000, ...
+One forum post[1] says that the only language pack the person was able
+to ever find for this device was for "taiwanese language" :D
 
-With the useless partitions concatenated with firmware it'll be
-0x3b0000, more than Netgear, same as many 4M ramips devices.
-
-My current guess is that "mac" partition initially contains MAC (but
-it is not used as D-Link specifies their own in nvram) and "lp" might
-be a "language pack" which is to be downloaded and flashed separately
-when using vendor firmware.
-
-But even with 0x370000 I showed a sensible set of software that still
-allows to have 6 eraseblocks for rootfs_data. I think the only
-possibly essential part missing is DNSSEC but that would assume one is
-using such an old and limited device as his or her border gateway
-which is unlikely; yet this old 2x2 router can still serve nicely as a
-"wireless extender" or just a "dumb AP".
-
-> Well, on the other hand the question is whether we want to deviate
-> from the principle of keeping vendor partitions to add support for a
-> 4/32 device, especially since the partition size will be still small
-> in comparison afterwards. If it might stop building anyway soon, we
-> could also keep the partitions in official repo and whoever wants to
-> use it will have to mess with the code.
-
-For my own use I'm certainly planning to self-build and to have
-firmware partition span till the beginning of "art". With regard to
-the official tree, I guess that's up to the target maintainer (and
-possibly the end-users?) to decide.
+[1] http://4pda.ru/forum/lofiversion/index.php?t446257-1580.html
 
 -- 
 Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!

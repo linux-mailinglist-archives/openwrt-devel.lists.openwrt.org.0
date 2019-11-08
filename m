@@ -2,100 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AD95F41A7
-	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 09:12:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B7FDF42DC
+	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 10:10:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
+	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oT+jvVwUsCFUjxlwZksuQ+S6H9ci53K5fIPgK8l5YUM=; b=sh2PXJ90HoMn4bQBhu6cjEYUt
-	/MWHs1uMBkvEBaqk9EYYTtydAx45As2NSCmv7Rlv792eEHUrhkzR0L8gbF7yvBV3MxUyZNDToM3Se
-	eyZbzQG7TUin1yHqx4mqQRAl30zOkaL3FdgSRINbb2NKwl16WGb7PyGs+domgPKTdy8b1X7lPQKtg
-	IZQFRHWAzSq/BP2bqpU24lWTH1JiDs2rMDFSAh8GXl6FUgCsf/wJKOndTwBwE4WqwojkrO4l14FOx
-	tgOXHHenT4lR4WXwZdwgbEb0EE8z9JKYXg0McnzJzHll1WKivUBd85G7YNCLDRcFgH7SHQcoEfiPz
-	kml7ibQRQ==;
+	 bh=CaEG5tPPb6Si1RkSNC59i+KgvOW1uE63YtLSxrX/Nto=; b=Vb0mwy/nTx1CiMWZSX61MGCO/
+	NHl3yzhUxW8ql9dNjwkmZ1k7hmsReYXeLNJfK7ECrucAujY3xn7623BqVIOWgAiIckDjS2XjC2EfR
+	40Q6OXhoVn15wqp7zhJudthNMV6I43CJumP1m7i/Pbm7RZa6ge6BZ9Usw/dlnIBFFrsQKuSjIA3Dy
+	BH74XSiB17Ba9Gkk4gp81XFJJaHbci6Ta1n+tLsvLLw2LXah5fpPa/sb6nCmydgCDyymCxdh2KouT
+	/5hmoGNNCeasXyIyepEQZ0VdRlmrtd1N42czyMYFLoKlXMZTh+X3gIx5vIHGvF2pPpN8XKpAOL2jd
+	bNUaDMNLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSzNW-0008BB-Pu; Fri, 08 Nov 2019 08:12:22 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iT0Hj-0000jc-OV; Fri, 08 Nov 2019 09:10:27 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSzNJ-0008Ac-65
- for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 08:12:13 +0000
-Received: by mail-pl1-x641.google.com with SMTP id s10so3615530plp.2
- for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 00:12:08 -0800 (PST)
+ id 1iT0Hb-0000j9-P0
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 09:10:21 +0000
+Received: by mail-wm1-x341.google.com with SMTP id z19so5382161wmk.3
+ for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 01:10:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=UbRTu7yUu5WhI3i0KxIpIE6R1OoEN+1T0OHKu6Yemng=;
- b=vCrp9R2+jrsTezDasdPomRd/5iGMp+pNofp9Ozobc8F2AFq9qsgrL5RlM0Z26FjxlJ
- drvpbhtvELY2fsinv/93aGV8JP6G2MvZybcWUblGJn9wQERC/Ky0RHlAhVzh0RLXa6cs
- 0johB1g3lcjzEvf1d3jusBL2iSY5Rnj0kxFJmM0WB9jTzO34IujrIEKREKDsd/1qz/kj
- g0vflBBfo6Ou91fLZ9qPOke77XGFu6hPhOhuUWXKg+E4QIW1Eokser1mwIjkfaiLIlg0
- PMFBDM30UcTm5iL5Lz9AFjbJU4Q3//BAmmK/HNeuE6MquL0kuRbvMXqNFV0vyA7drpLt
- zmgw==
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=pWJW5t4FmFJnKfi5VEqK2tIiKZ2yAk1SfYz24mIXxgU=;
+ b=QWBZhwguvpWrNXfFUim95AFzLYQ4GpaEJEZ6uVZxttARKlkC/znobx1H359uWgqXq0
+ R2We7AUy39CDofkYcC17yNt3h4J02VhJ29IJlnN4+pfQgeIac12eDHCUOw8aoG2ibJiB
+ wutMbDpfi0bDqpzpgmH6q3uAvl+qeQkW4xaD1IWqJRPCtfTpGZf/5RJrNxe+HrjQfSja
+ h75NYE7/c8Qw06Jyi5t10ZrYS9VokGShmGrOACQIOkJQJEEHvWVv476od+ThxvXuUiE7
+ VZTto3Er4wFe89ayCVhBVrtFVdPwaQN50mHxWE8eK57EkVX99JxrIvOkeYRGMhl+CORY
+ 0lkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=UbRTu7yUu5WhI3i0KxIpIE6R1OoEN+1T0OHKu6Yemng=;
- b=C4nwoGd2AMIfeDe4tZdpkqC96fcp45J+lpMa5M3YSxK6mvlqne2BIXFPJmQa6oFaTl
- CJjXDgC36eBig4jmzs5BUUgvp1drnBI7eYDhHVVyIxFGgnM5wBlPtqSp0bmRDS67oYqd
- xwJl10lQ++wJfXlsDEnG6DsnFdXTCaDue1zOWtMXvFEiqbdG4nGZMIaBN6i0LuoBD7e5
- 2R8SnyE/nywahHUneJUWzJ3YqjyCNtO4AWmYJxqandyN4UwP4NcMTPZB1BYsM/ygw9pW
- AlVGXTGObkBMd25XpU7AnlHll2hn2SDYt4HU8kidD8X+dXN29Rt0kNlKdjNNwMb+MzQW
- Ztdg==
-X-Gm-Message-State: APjAAAWnyIvWsY+giSmaeEGP7CQRPb9rSrf0GwMrwouYDi/Rc9ZLrRl8
- JM6oGtmtKJmd97tdqPJxIyF7sHP4zLU=
-X-Google-Smtp-Source: APXvYqwpBS7zxrQ8QRxY4VAWmktso7wHU53NUL2Vg1/V2cXMNTwdDo2paJCyaL7nT5Zqp/TntbkVjQ==
-X-Received: by 2002:a17:902:8497:: with SMTP id
- c23mr8361343plo.209.1573200727456; 
- Fri, 08 Nov 2019 00:12:07 -0800 (PST)
-Received: from [192.168.1.5] ([110.77.154.37])
- by smtp.googlemail.com with ESMTPSA id g3sm4829033pfo.82.2019.11.08.00.12.05
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 08 Nov 2019 00:12:06 -0800 (PST)
-To: openwrt-devel@lists.openwrt.org
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=pWJW5t4FmFJnKfi5VEqK2tIiKZ2yAk1SfYz24mIXxgU=;
+ b=Jpiu374X52fIwPpm4Js7RnbJGwXEr/LhtgegENk2ytN6/tdFj6NI8q6WWYaOv2inMA
+ L8hffX9FvuxmpnyXSJwVyXJ2AckWPcYoWOImw9fCBP5fyxBfS6E5qtJSEDmD0HDo+I1c
+ uyLGiynJTpVsamtQ9ZDTptMqs24zy0sUA+nmVq/ycx4bXZ/kBZbHpDsoqFj58OWAfbZ3
+ stRk1I333XsV57thxfcN1/ijeXjKQCt7K3C0V3630NwoL/cqM3UCderPede0v5fiXay8
+ TGCzEGrjCX2+mb8I6CMKwKywmhIzCUPXPj71o70OOUgLznQciwBhrewHh5ZhnhYMiOBs
+ w4VQ==
+X-Gm-Message-State: APjAAAVNmRJaQ8VEnSK8VgFRP1cO9D/wsTUWR4o6SnfFiuPZZXD3BXmV
+ vFcg0KMiuiSs5617xL/ZdDs=
+X-Google-Smtp-Source: APXvYqwP+KhDKA9r+hFBVwlU5eiJMwj9l/e2hVZI2quj/lAxoRXmfvrNj5OAa++9W4Qg7gGyVwxkZw==
+X-Received: by 2002:a05:600c:3cd:: with SMTP id
+ z13mr7187439wmd.105.1573204217797; 
+ Fri, 08 Nov 2019 01:10:17 -0800 (PST)
+Received: from mStation (host120-32-dynamic.15-87-r.retail.telecomitalia.it.
+ [87.15.32.120])
+ by smtp.gmail.com with ESMTPSA id f140sm6167428wme.21.2019.11.08.01.10.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 08 Nov 2019 01:10:16 -0800 (PST)
+Date: Fri, 8 Nov 2019 10:10:15 +0100 (CET)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@mStation.localdomain
+To: Lars Melin <larsm17@gmail.com>
+In-Reply-To: <a30b30c9-d8e2-bd70-cec3-9aaced800a84@gmail.com>
+Message-ID: <alpine.LNX.2.21.99999.353.1911081005580.2829@mStation.localdomain>
 References: <20191103113247.9782-1-fercerpav@gmail.com>
  <002b01d594f1$ebb56320$c3202960$@gmx.de>
  <20191107051927.GT1190@home.paul.comp> <20191108075039.GU1190@home.paul.comp>
-From: Lars Melin <larsm17@gmail.com>
-Message-ID: <a30b30c9-d8e2-bd70-cec3-9aaced800a84@gmail.com>
-Date: Fri, 8 Nov 2019 15:12:02 +0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ <a30b30c9-d8e2-bd70-cec3-9aaced800a84@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191108075039.GU1190@home.paul.comp>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_001211_804486_C5E798F3 
-X-CRM114-Status: GOOD (  17.67  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191108_011019_836086_C9E09D48 
+X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (larsm17[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (larsm17[at]gmail.com)
- 0.0 NUMERIC_HTTP_ADDR      URI: Uses a numeric IP address in URL
- 0.0 IP_LINK_PLUS           URI: Dotted-decimal IP address followed by CGI
+ provider (mrkiko.rs[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 1.3 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add D-Link DIR-615 rev. E4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -108,43 +104,29 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 11/8/2019 14:50, Paul Fertser wrote:
-> On Thu, Nov 07, 2019 at 08:19:27AM +0300, Paul Fertser wrote:
->> I see there's some http server mentioned in the wiki article, haven't
->> tried it yet (and I can't understand what "simple" web browser it
->> talks about, probably there should be a curl command instead?),
-> 
-> So I gave it a try but the results are not fruitful. This command
-> should work:
-> 
-> curl http://192.168.0.1/cgi/index -F Send=@built/targets/ath79/tiny/openwrt-ath79-tiny-dlink_dir-615-e4-squashfs-factory.bin
-> 
-> BUT the recovery HTTP server is using a very old uIP implementation
-> that seems to be unable to play well along with the current TCP stack
-> in Linux. The result is a very slow upload (left it overnight and it's
-> still not finished).
-> 
->  From working with uIP before on an embedded target I know that it
-> doesn't support delayed ACKs in any form, for any packet it sends it
-> waits for an ACK before sending the next, and I would guess that for
-> any packet it receives it's better to wait for its ACK before sending
-> the next (as I see plenty of duplicated ACKs from this backup server
-> all confirming just the first packet received, and then long wait
-> before retransmission). The problem is in the number of packets sent,
-> not the size (so changing MTU/MSS doesn't help much).
-> 
-> I haven't been able to find a way to trick it into behaving, sorry.
-> 
 
-Don't complicate simple things, all D-Link routers have a recovery web 
-page and you access it with your browser, not with curl.
 
-/Lars
+
+On Fri, 8 Nov 2019, Lars Melin wrote:
+>
+> Don't complicate simple things, all D-Link routers have a recovery web page 
+> and you access it with your browser, not with curl.
+>
+> /Lars
+>
+
+Some things maybe simple to you, yet complicated to me, and vice-versa. To me,using "curl" to perform recovery may prove to be much simpler than having to open a web browser.
+And if recovery is localized in a language I don't know (e.g.: Chinese), having a "curl" shortcut is really valuable. and not only because I use assistive technologies to perform those things. :)
+
+thanks to you and all for your great work,
+Enrico
+
 
 _______________________________________________
 openwrt-devel mailing list

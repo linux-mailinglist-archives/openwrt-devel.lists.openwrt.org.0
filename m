@@ -2,76 +2,97 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC3A0F4FAC
-	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 16:29:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2009BF4FC0
+	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 16:33:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
+	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gAscDGkHomQBGXTf8SAftEGQsKMJJTieM/IzZ1uCzWw=; b=PcMIze0WZSkYvfYpIv+U7E6hu
-	6T8wj3C0b/C1baK2O/lFomWCoxbbIiloMQfVi79MDzjXbXRvyGZa+I7LtHgmVPsHpGa4cXjtJ6x/1
-	yXsZA6jRhU2yMHwLO8G+RqiHtavNK3u11HRjuCvP6HioNhB3EM/0duSFX2gpU8ghj041oyyi9EeXw
-	bl2o78ImCN7tfPtzj2hdPlfYQSk5n7TuvIO20kZUUK9XjzgzxIMqN7zbOhZVSXbholVFQqIlLv7Y5
-	b0DOeRV76EAQaQQTilNfteEVef1Cd0wecVWMEnoiwdiQU1lXESeFgvlB1X0JlrroIV+Ler4SRTiOG
-	xSJxBeC9A==;
+	 bh=rEbvZIJFmra80/DnwzTH3p+g+87VBvDTXPZj53gd8Ak=; b=DG9Tq8XyJQTexlLTKaDC2u6Np
+	M8k6xPd/ydOVN8p/MOuE+CFJF/PAfUWc+8O4RegSvS80V/18vJswAFCSOpTiBIXdO9WWq2QCeMzUB
+	LjMeCyb1DRNffWhClw40+sEsAHgLOP8VWkQ3GZ2busFaTnjodEbfuYqsYtb8PGikZDQtVln2C9t8/
+	nzqsroZTGF3dkC8FmMZXShkcoF7kXclR1TwgJlw7DY8pZW41srbA8DUVWxBBvlf7zQgIkxhHXUgre
+	6t4UiF6ngLxjo2LbfDceG3uxGs80VR/0m6zximUwxKwQbt0D+J26+yaTSdZiAK/8Pn5ekmT2uyQf+
+	6njxXt98Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT6CZ-0007X7-6b; Fri, 08 Nov 2019 15:29:31 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1iT6GP-0000sP-LJ; Fri, 08 Nov 2019 15:33:29 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT6AO-0005Mw-SK
- for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 15:27:19 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue009
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1N63NQ-1hrfwV30Ku-016Puz; Fri, 08
- Nov 2019 16:27:11 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Enrico Mioso'" <mrkiko.rs@gmail.com>, <openwrt-devel@lists.openwrt.org>
+ id 1iT6GH-0000rs-2W
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 15:33:22 +0000
+Received: by mail-wm1-x329.google.com with SMTP id c22so6666654wmd.1
+ for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 07:33:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=NfftclBVtZn2d/QrKwYSe/MP2j1qRLy2oFZ5mUPkrno=;
+ b=SlH7jaXsEaInhab6ixUGJuaLwk/wMYl19SQrLkCiCsObJOdf2xt7X5Gm8XaGul9FAb
+ PXVsqlZhzRERPdLCi3RiYq6i2teim/CaWeSCiqvuWvVPxMi20p2+JJBNSPQrteGwSWzW
+ O7f1EcOvxolvO8cvoh3/QiutTp0PIIDRXDmv9lFPB2KzkA5xH+u9RUGxOh3BDEW2SVq5
+ kgKYgPgCOBQSwdjfdwyRQAUgMP/H3XNHXGt2HuCw65JXep9GC+rH671QzGRy/BnwvJdZ
+ qJNgqVK7/vM01hdb7P8FRVmEuptsMjwdlW5t8ZFMEJXoBScpI4tpaxrEtRLALAjCcKSH
+ NpuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=NfftclBVtZn2d/QrKwYSe/MP2j1qRLy2oFZ5mUPkrno=;
+ b=oUwMjAZLs7WY4DYHOdLl2dm2ryNwWwCukV5FfAhGxZXd5qTCttxQa5r9xEnwlZGvDO
+ oPlZKjuOLpAotVmolmxW2ibJdjHdjIKe42PsgRKy2GtIQ2dV++JRYhh4Aek5gR6D8fBv
+ muYAV8FC3eqALSWe5aLiUhPDdQAvg4daN8GwA+mAJJnDHaPserskitiyFrSxn8/mT2ra
+ ue1tW9ISvglh3r3OspRplx2zOWfxZoPDCL/7W5ecri7puc97rT7L3eaTOpl0rPwtd0Qt
+ iw29kLViJ+3ugBs4LjN9Ud3Rs76yR+KoFEylYBcesNZAw9MVzE+wnVfCqoGBptXOmWaw
+ rBlg==
+X-Gm-Message-State: APjAAAX4JGzlqIUaE7xpN3hkAyu5KOJevLO/6eCwRIvJCdZ1cSf1Ozj0
+ ypFLPJ+d1ezB6n0yhSC5+3c=
+X-Google-Smtp-Source: APXvYqxpJXjFlic+gPMzf2uk/eXkEjPyW2QggnxQIJnk+633MeXcDwwGKZ/xP+zTx68c4fq0mo8IIw==
+X-Received: by 2002:a05:600c:2944:: with SMTP id
+ n4mr8828837wmd.57.1573227199232; 
+ Fri, 08 Nov 2019 07:33:19 -0800 (PST)
+Received: from mStation (host120-32-dynamic.15-87-r.retail.telecomitalia.it.
+ [87.15.32.120])
+ by smtp.gmail.com with ESMTPSA id c9sm4771429wmb.42.2019.11.08.07.33.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 08 Nov 2019 07:33:18 -0800 (PST)
+Date: Fri, 8 Nov 2019 16:33:16 +0100 (CET)
+From: Enrico Mioso <mrkiko.rs@gmail.com>
+X-X-Sender: mrkiko@mStation.localdomain
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+In-Reply-To: <00cf01d59648$fdcf4a50$f96ddef0$@adrianschmutzler.de>
+Message-ID: <alpine.LNX.2.21.99999.353.1911081632290.710449@mStation.localdomain>
 References: <20190917193029.1336491-1-mrkiko.rs@gmail.com>
  <20191007214054.GA14886@moc6.cz>
  <alpine.LNX.2.21.99999.353.1910080711190.3029597@mStation.localdomain>
  <01d001d582a7$2a3edd90$7ebc98b0$@adrianschmutzler.de>
  <alpine.LNX.2.21.99999.353.1911081610340.709261@mStation.localdomain>
-In-Reply-To: <alpine.LNX.2.21.99999.353.1911081610340.709261@mStation.localdomain>
-Date: Fri, 8 Nov 2019 16:27:11 +0100
-Message-ID: <00cf01d59648$fdcf4a50$f96ddef0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ <00cf01d59648$fdcf4a50$f96ddef0$@adrianschmutzler.de>
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQJPfRHoBS5s4jhu9uUuLKJkakDH7gGolpkGAXzctd0Bg0V43gIzDe/Jpla4iuA=
-X-Provags-ID: V03:K1:RveamMaiDhowhxuTpfUgUUiQrkQCw/6oMgmZqaMyKYjeyg9CjEG
- dPraY/3PDqyK6Ue8P/zgYCdThCdT9Z12BH8D2JQKwnQbQIK2R4xsEsLHzY//xyG+fHQdKGc
- i1sSth1hRhTbxHMq5gcqrgrlcbZnhmOmAkfq9rvMpws75jkXoKBknzolMox7fHJvz94Pfey
- c3hpuEO2n113xfQ+Zqo1w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:HGLnLe+Oot4=:mq9fnPXAYnv9QhbKUZQhGA
- iMGtIdIIGBY8fhK51mosOdje3Bnvy/fig6tKffsgtmJof4PxgkUVsK7/wnOopBR8fqAv3rcbv
- Gu5XUzkcu2ikBYeRjDDSkMZfF3UmdFIgXJ4sYXu0jhEX04whylepdPQ1/OrGbIcfhSy9QdNxs
- t9kON0dI4g6NS7+Z7NesHZdbxiP6HW0osi9vFYaQjSgL7bVLNiTsHtIGa12wsz1Kv9zHn31uP
- jSqZQIvb2OOgXjuXfZis9tkqfscpbNN/VGJrSw8L5L2cZz7SeTjdFoXQcjW8Gq9+vH45ksRMi
- GFVlPxfYTBTEGLgatSzoesk6R65KPYUqCjPwF3ajLYi/KnLHW5I4El1Ys9/W7UDIe8eMCF6N9
- fy3OnHQq5xhDzjHqYxfWpvNBDCTCf4BkSBkndUnLmwNgFEiFz0jenM6ZLgNMau6K/Bi9RwZ8j
- gXtZM+ZDKcbSmhOicIYYqSv7V6f+ipQYDLBYtgJpVcjhI+6vBVMe4F++Hq6Q79derKqYctMil
- X5rODJ9pKURyoga8zzDHxnvbo18m7N1BuaxuSGrDNtvvBaY3A+ykTTduVoOTwp61KKlZaUI4E
- PoIC4EFMnE8jmvyTcS4jZtMievFlnzV+dFWybX/LEVbqwqBOKKH61C2VrtTt52OPb4+TPhgtz
- t5jqfiX5qfrdUiAw1How+U1GSvonHAbgvnxjoSju9WnRgcPfhSIn8IgmAWYZrt29MoYSg8wtM
- 1YnfmdWHIJS+DGzgcTd97jHXKF6m4+XsebdKbvY68p604HAxeDZVPMlWn7ealS5oSwpIZCDPh
- umMgmx67p+AjMNqcWtQhfMVJ2svrBE1I8LqXbKNUhCsuIdUyzffH9FakuWgmhT9VebGHkRlZE
- 7SDk1KG8i9gIqRHysPkJ/34buW/obKUMzW9JUkgxQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_072717_696855_1753768C 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_073321_138234_1D8F1A41 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:329 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mrkiko.rs[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 1.3 MALFORMED_FREEMAIL     Bad headers on message from free email
+ service
 Subject: Re: [OpenWrt-Devel] [PATCH V2] ath79: add support for TP-Link
  TL-MR6400
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -85,97 +106,61 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Filip Moc' <lede@moc6.cz>, openwrt-devel@lists.openwrt.org,
- 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
-Content-Type: multipart/mixed; boundary="===============5048477751753097577=="
+Cc: Filip Moc <lede@moc6.cz>, openwrt-devel@lists.openwrt.org,
+ Koen Vandeputte <koen.vandeputte@ncentric.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+thanks Adrian!
 
---===============5048477751753097577==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=65kbAmhdSlI84r=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+Yeah sure, I'll do this soon (e.g.: tomorrow, if all goes according to plans).
 
-This is a multipart message in MIME format.
+thanks again,
 
---=-=65kbAmhdSlI84r=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of Enrico Mioso
-> Sent: Freitag, 8. November 2019 16:14
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Filip Moc <lede@moc6.cz>; openwrt-devel@lists.openwrt.org; Koen
-> Vandeputte <koen.vandeputte@ncentric.com>
-> Subject: Re: [OpenWrt-Devel] [PATCH V2] ath79: add support for TP-Link TL-
-> MR6400
->=20
-> Hello all! I am back again on this.
-> First of all - Thank you a lot Adrian for your patience and multiple revi=
-ews. I would
-> be happy to have your signoff in the final version of the patch, of cours=
-e when all
-> of this is fixed.
-> Still - the main issue, that's stopping me from doing / fixing all the re=
-st is related
-> to the fact I am not able to understand what's goin on.
-
-Hi Enrico,
-
-maybe you can send a V3 with the other remarks being addressed and rebased =
-on the base-files split?
-
-So we have more overview to deal with the network stuff ...
-
-Best
-
-Adrian
-
---=-=65kbAmhdSlI84r=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3FiUsACgkQoNyKO7qx
-AnAschAAvTSQnpc1GyNAjD8G2EAhujBd/iGMGE7YW7h2ygl0b6LoxpV2eXmLuOkl
-H+D+BCYGbp5nQl6qARQ9iOaK1CyFxYHo20bJk/8fUk/SxsERhah25XiRtMsD2gwE
-VvK2eSaeah6l4K0O96lszU9HBpxKrhvnScgljbhsfABV2mORBJ8s+9GtUaFx6x26
-p923rxqoVOrN1kNjcdtq6WPih7zJ1GO9XORXvNkLc6cYUTPbr/jAVcq010iRf82g
-XgNDPGDmEz+aN+cLE5hxXrGGZQPSmvSuNy5/r9YXezwCjzd1Klw4KGHviSZvbCi7
-Uhtz2W+TbpFIy8nL/MHjDG3kyv5Q9IlSbWo2hzeGlz3iV9rWWQOHdabzB7bb6vcx
-xe8/07HVpNzgmw2zHFg4A0hx41J0xoFXZzoaB3NoRVqyQUErq/ueziRSf4s/7kKm
-tzuVrOf2Te2kBjh3Go2ghK679H7fcvpi5Y9H0LZkAhuy/k4EdaLlHNGea8TIpQl3
-Eg9oYEE3Evww4hFyks315lnObLhF/8PEpBfqqKRxd4YpXcbMFOhAnAGtCzJGHXLj
-O9x6c1USTAsIkVjW0tLpGV4oQxazfQzNiZrq+VHxra5e+gY7uSyfAf40dofhGVgY
-396iTyanAsAjuEfwW4hwM4s1dLMC9fsnqXu/2p3xjuggXj6tJuQ=
-=yVnR
------END PGP SIGNATURE-----
+Enrico
 
 
---=-=65kbAmhdSlI84r=-=--
+On Fri, 8 Nov 2019, Adrian Schmutzler wrote:
 
-
-
---===============5048477751753097577==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Date: Fri, 8 Nov 2019 16:27:11
+> From: Adrian Schmutzler <mail@adrianschmutzler.de>
+> To: Enrico Mioso <mrkiko.rs@gmail.com>, openwrt-devel@lists.openwrt.org
+> Cc: Filip Moc <lede@moc6.cz>, openwrt-devel@lists.openwrt.org,
+>     Koen Vandeputte <koen.vandeputte@ncentric.com>
+> Subject: RE: [OpenWrt-Devel] [PATCH V2] ath79: add support for TP-Link
+>     TL-MR6400
+> 
+>> -----Original Message-----
+>> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+>> Behalf Of Enrico Mioso
+>> Sent: Freitag, 8. November 2019 16:14
+>> To: openwrt-devel@lists.openwrt.org
+>> Cc: Filip Moc <lede@moc6.cz>; openwrt-devel@lists.openwrt.org; Koen
+>> Vandeputte <koen.vandeputte@ncentric.com>
+>> Subject: Re: [OpenWrt-Devel] [PATCH V2] ath79: add support for TP-Link TL-
+>> MR6400
+>>
+>> Hello all! I am back again on this.
+>> First of all - Thank you a lot Adrian for your patience and multiple reviews. I would
+>> be happy to have your signoff in the final version of the patch, of course when all
+>> of this is fixed.
+>> Still - the main issue, that's stopping me from doing / fixing all the rest is related
+>> to the fact I am not able to understand what's goin on.
+>
+> Hi Enrico,
+>
+> maybe you can send a V3 with the other remarks being addressed and rebased on the base-files split?
+>
+> So we have more overview to deal with the network stuff ...
+>
+> Best
+>
+> Adrian
+>
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5048477751753097577==--
-
-

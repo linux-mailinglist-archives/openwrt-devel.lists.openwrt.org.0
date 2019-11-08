@@ -2,67 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FE35F3BF5
-	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 00:08:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFFC3F4167
+	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 08:36:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ePzODtfisPjDllfdSD06gKo6jGf3JkGgZdKFcort9AE=; b=eEZkK1JYHfX5Uf2HIwyNCHcY08
-	jinNk7qjpFmCTOEUZmuKc7MEzc1DuEiA8QYFEygXALLoPXRl3ky19AHhmHcmEPpjQAkORH+mjrBjH
-	uvf5n6SmFC6JEC+LIjv9wOMp2FWBdyVpQEqg0aSKRhxa86K8QJgNDpfKyRlraF59u1EFtceZYBkW5
-	vOdvWfEsBU8HNnjXfkINtY++0MPelOAMM4kEVZ6Bc7ZBZg83zyEESA9x4YtWWKyCh+8+oF6hFLsgS
-	pi42sB1sp6pKu7ebpGpL8RMGae87/StVuzjqDM+I1l4BD6H+V1UFwKtEzW1gyIPKuUwUZccN560De
-	p5F9wqjQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
+	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O1LR2D3j9eAsUKQ2C8bvX9bnaxMXOxSDuBsSop1wpsc=; b=r9+D4Ta9+Cj7Jc
+	HvX+Zoqx9xBG3Pne50YBLjulKSFAVNW2dc7efSScLG3otmQElYBKBUB7w2nrlIIiTjPLjj7B5I7jW
+	edVa+KtJXK6+nFz1qMbT7vkX1FDjvgIyAfuLGjkdV+A9jjXUd2LX7e+D00CBoZjY199PnkpxexVBL
+	jldokqODiVVbQ1fH6W26UtsJWrUZLZjVkHZBdtqwJMPEWL6TFIqiaSXhrLhCi51Pi/woiGPg9IRsg
+	zSNLT8JwrpJolXZz4cqbar79AkDnMaFrwfA+hrxegWKnlyGUX5tpwWg9CNpNHXttjArzunMUobMeY
+	YzCrbf1TVGzRsbAvtsZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSqtB-0004Ay-4o; Thu, 07 Nov 2019 23:08:29 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1iSyoi-00028c-4Q; Fri, 08 Nov 2019 07:36:24 +0000
+Received: from smtpout-49.fbg1.glesys.net ([2a02:751:100:2::49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSqt4-0004AO-7h
- for openwrt-devel@lists.openwrt.org; Thu, 07 Nov 2019 23:08:23 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 6A8926D2D;
- Fri,  8 Nov 2019 00:08:19 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id a20f3ebf;
- Fri, 8 Nov 2019 00:08:09 +0100 (CET)
-Date: Fri, 8 Nov 2019 00:08:09 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Hauke Mehrtens <hauke@hauke-m.de>
-Message-ID: <20191107230809.GD67608@meh.true.cz>
-References: <20191101160634.25559-1-hauke@hauke-m.de>
- <20191101160634.25559-2-hauke@hauke-m.de>
- <CAECwjAij-tXE59c2WEKEWPpofTCrmWgwwW_MYnW1cB_yXiKnVg@mail.gmail.com>
- <20191105002707.GO22393@meh.true.cz>
- <1b6c6276-e964-5ddd-990d-931ac199159c@hauke-m.de>
- <20191107085108.GC67608@meh.true.cz>
- <97c156cb-5011-b6a9-b429-c32d34da5712@hauke-m.de>
+ id 1iSyoa-00027x-Tp
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 07:36:19 +0000
+Received: from [192.168.0.49] (unknown [37.123.165.95])
+ by mail-halon-02.fbg1.glesys.net (Halon) with ESMTPSA
+ id 6d8718a8-01fa-11ea-b1ec-2f60bddcfa2d;
+ Fri, 08 Nov 2019 08:36:10 +0100 (CET)
+To: openwrt-devel@lists.openwrt.org
+From: Micke Prag <micke.prag@telldus.se>
+Openpgp: preference=signencrypt
+Autocrypt: addr=micke.prag@telldus.se; prefer-encrypt=mutual; keydata=
+ mQGiBEdTEc4RBACxgkIJHHBMsH182b0B35Hb9oAksm0dtBvB866l038ivY5dLRnblqK3REiY
+ TtxykDcilXV0UmjyDQP4YhUIf0Bch79K4VHksiAFIjN8Ci6AYBDLd8rXuqfykO+YprOoGDrU
+ j1sOCHw5zNKbTDfHUtVTOrUyBtbOhJVrCjch38E9iwCgqE3psviH+k992BQxMifLZfHupOkD
+ /2QBEUvClZirB1NAL/Tgb5Q1j7CwUSud9F1KPUHzrgVBnLuTYlin/Egk0LTeEID3FYEbbyCi
+ wKsISCduVfrC3fncjyek1/5ENdaGV7W8ShmTW5oxEDRMhUeQIrQeAPCYgHmjy2G/3/QlzMYb
+ LdWi2x5YSydGnLMI6WCud+HW+FSzA/9cjbv1jGBXL9fJT3oxw8G4CdPHgM/HtPXTPPpzRATW
+ U/CpU7v06WRWRNTjC7iUrtn6ylLV+skwPbb/ri2PMXOHq0h/Zdsd3JEFNSGNvC3UhKms48Mq
+ svixshI3pVw20Qbp8JjJkF8DRRTqSUVVcxP9AIKNt94gdNLiD1SoVuPazrQiTWlja2UgUHJh
+ ZyA8bWlja2UucHJhZ0B0ZWxsZHVzLnNlPohfBBMRAgAfBQJHUxHOAhsjBgsJCAcDAgQVAggD
+ AxYCAQIeAQIXgAAKCRAma/zcU1YkGKkTAJ9Ba/04C2kvLlys+RMc3P6S5hGXhACfZL2j7CGM
+ ZYKupjfcwEb7hBB4OHu5AQ0ER1MRzhAEAKPSM7TDyxkDZY+F+2wevuFG5mJKWRSe8gu0yrx2
+ 7s/zxdyZK98+UJO7JiwmzOOEQKFrR95tSD3PbU3U9vt0OW+PSiKDNJZ2U4EuXs7JlgkZcr+K
+ lQNQ/wNBEgPostKusMJeucZSsXobP/8ucR2THv0ADTXARXv0FRduPlT4CeybAAMFA/9WcTf3
+ RzDdsfnuOMhV7jtV2GdRsdqKvVsMBT8k6hVXgTFsQ3p1/yjpri4X6Y3uEl9j0N8Oi9uAKI06
+ 72uHIu0QxadJc7LsmaL1MbNNDMBr5RHT/dV1pLoeZ/7ePm9AayzuskJ31lY5Dnd8M5wN0S7r
+ biuID/sMr8cZAkapmUFqOIhJBBgRAgAJBQJHUxHOAhsMAAoJECZr/NxTViQYOD0AoJKjZDX4
+ BChcNomPd82IkfvSJHmCAKCFBzuGSF9JhjZI6FE0GsLPDGyrSg==
+Message-ID: <94e65ceb-1d84-f28d-a423-676c4aeca605@telldus.se>
+Date: Fri, 8 Nov 2019 08:36:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <97c156cb-5011-b6a9-b429-c32d34da5712@hauke-m.de>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_150822_426249_F1E319D6 
-X-CRM114-Status: UNSURE (   3.80  )
+X-CRM114-CacheID: sfid-20191107_233617_121958_2B3F0971 
+X-CRM114-Status: UNSURE (   4.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH uci 2/2] build: Add -Wclobbered to
- detect problems with longjmp
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] ath79: Force usb host mode for ar9331
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,20 +77,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Yousong Zhou <yszhou4tech@gmail.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGF1a2UgTWVocnRlbnMgPGhhdWtlQGhhdWtlLW0uZGU+IFsyMDE5LTExLTA3IDIzOjUxOjUwXToK
-CkhpLAoKPiBIb3cgZG8gd2Ugd2FudCB0byBnbyBmb3J3YXJkIHdpdGggdGhlc2UgcGF0Y2hlcz8K
-CmFzIG5vb25lIHByb3ZpZGVkIGJldHRlciBmaXggZm9yIHRob3NlIHdhcm5pbmdzKG9yIHByb3Zl
-ZCB0aGVtIHdyb25nKSB5ZXQsCnRoZW4gSSB3b3VsZCBzaW1wbHkgbW92ZSBmb3J3YXJkLiAgWW91
-ciBjaGFuZ2VzIHBhc3MgYWxsIHVuaXQgdGVzdHMgYW5kIENJCmNvbXBpbGUgdGVzdHMgc286Cgog
-QWNrZWQtYnk6IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+CgotLSB5bmV6egoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBt
-YWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3Rz
-Lm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+In commit 00ea16557d [1] the way usb is initiated was changed. Instead
+of initiate both ehci-platform and ci_hdrc the bootstrap status register
+is checked and used to determine which platform to initiate.
+
+Unfortunately this break my board since the gpio used to determine this
+is used for other purposes.
+
+dev-usb.h only exposes one function:=A0
+void ath79_register_usb(void);
+so there is not much to alter the way usb is initiated.
+
+I tried to write to the bootstrap register but unfortunately this did
+not seem to work:
+
+u32 t;
+t =3D ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
+pr_warn("ath79: Register before %X", t);
+t |=3D AR933X_BOOTSTRAP_USB_MODE_HOST;
+ath79_reset_wr(AR933X_RESET_REG_BOOTSTRAP, t);
+pr_warn("ath79: Register after %X",
+ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP));
+
+Gives the following output:
+
+ath79: Register before 42202
+ath79: Register after 42202
+
+How can I solve this?
+
+
+[1] https://github.com/openwrt/openwrt/commit/00ea16557d
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

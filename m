@@ -2,72 +2,93 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4651DF5359
-	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 19:15:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACD31F53B3
+	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 19:46:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Wvxg3fveyfs0v0/duQ524Tsbds293wkh9+UyrePqvM=; b=pOsv1tbVjYoBci
-	K9cHFWcMPK4krMX+lkX6ErZtnM/LN6vkf+8eTkRQX2vEPPjSVTa8Vavyq/XYqWDbHcCmNZtsUOhVJ
-	OD1JRsLP8obiWDoc/1oYtHgnjtnNGSGXosa2GQ9uPydDv+adbjQxadG+cX6hth14w1yH8cjYiutJf
-	sNWA33KBQ/ijeg3LqzDYCjbppYhXbVmra2MQW1HkBOqCkI5Hx/ghzqR0IUxILWy+axXCqZ/rXiNPc
-	8wiS7ERP07ySTQmb9YNhtypqd1/WfEx1fgrzdlCCoWJYpi5g0Bn9okfVOk965jeOj/P74B0pSyfKv
-	1iIDl5lpva7mKAjuf05Q==;
+	List-Owner; bh=JTod1Scwi8HIGt2q5IZ11o7CSeZBsfNjuKUhWNC8tD0=; b=gNvam1YxXjgVZH
+	T00u0ZN6lggM/aTnSuYALaX8jiDJiH3NgDK+Aug8pwjhFJZLPLdUTFZ4S0hRqBZDKctHuvErPKo4k
+	KQvc7lmsj01YgPUdD+gFV5GqNxVzxKTIv+TPRiMUO40kG3YuAbAtYfCPY0GsB0hTDm7kdMpcB/r08
+	ch2CAZpOS5CSR/y4BieuuJPZee6xwmj8Pt5X3z09KcN+qKnESjbGWP2LncOZquxTzAM4mzu86CpVK
+	psBwiC+bzygSKKkeyPYSEj7jkQUKakP9jozEyuWg9cijKjxNfojazJOnBq0KrMwOyDsXJBD4EV9UZ
+	HadikrX/mc9tkZQOFwTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT8mw-0006w7-G8; Fri, 08 Nov 2019 18:15:14 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1iT9HI-0002kC-Mc; Fri, 08 Nov 2019 18:46:36 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT8m2-0006Cl-OP
- for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 18:14:21 +0000
-Received: from buildfff.adridolf.com ([188.192.135.195]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MCsDe-1ibuCL0j1k-008ppM; Fri, 08 Nov 2019 19:14:13 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri,  8 Nov 2019 19:14:08 +0100
-Message-Id: <20191108181408.18272-6-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191108181408.18272-1-freifunk@adrianschmutzler.de>
-References: <20191108181408.18272-1-freifunk@adrianschmutzler.de>
+ id 1iT9HB-0002jk-FM
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 18:46:30 +0000
+Received: by mail-wm1-x329.google.com with SMTP id t26so7253067wmi.4
+ for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 10:46:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=9pwwWQhb2I1kFmWaB9CH2+2dReHxIWVYfHg5gi2/7jc=;
+ b=FK03JqZ0Y+qhdSbTkCi+fsx9zu3wSPJizindUDzItgTC5Ey8aQQJ0eFLAJ1evwk96T
+ y+ksB9hKbd7KO3MU9XXpCv0px/ZH9mvrT+QyqTD/cRRWgvdGpvCNJEiAWXoRsTBicwn3
+ UgTk3NzpSe5z8dGEqHwFlUUZVkaj2wxLjbmr9kMHDQN/SDRyQRZOY7ThpW7AuONSpSuA
+ Kc1AvNPmG0++4H+vWAi1oixYqH+s3pL69ml4m9e9pOp/QZKXziOxHzlFYbUsYrS9f0Pw
+ x+OnU3JcgXnG/zH9KcaUUbWgZ84HEgCJO6IGQK+c+tgOt3+hLxe/DSivJc5S+ezj/JNU
+ 4VGg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=9pwwWQhb2I1kFmWaB9CH2+2dReHxIWVYfHg5gi2/7jc=;
+ b=aLKkQ++M+tIgsbfC5PBPXDOnRBswd2oIAQQiZrc8dhkLgX8WRWtDSjegIytiYe4dln
+ ZNsFNe8vT5hDbhKS9Z5WsZhW1ddH0FVc/RHaZnG9xHnuxLL5Lh572PXAm1ylareYFEU0
+ wc54wR/XvzPjmhw6rNkHWCQ/gmNd3xdM7HAC+g2OqinysABeh8t2n5jW8Xi4ilJZu3VK
+ SYPZWpnyDI9sIKs86T+60JT/SQGO6DJOFKdZQ8KU6bgwdoU92+EbIjbatx4TRRXzUZFc
+ Khzrgn1J9Q/7n6HAEAbOjtRE0544p5AVPVtG1bmzpE91NkYU3QZjKN2xQzWQdDNaxqRU
+ p+cA==
+X-Gm-Message-State: APjAAAWEShy0QnRz2pYu1a49QaCoHOzqGBsxcyxcIeR5GzKBCpz78szk
+ 3lbRwMpo75NO8+1FtJfwl4Y=
+X-Google-Smtp-Source: APXvYqyqBemib8lfCaKP0PRz/7+A0Gg+nS4AXtzE8nOPivy5U6dOfyttkxcT+8SXo2w9XxCPKqoAnw==
+X-Received: by 2002:a1c:1b06:: with SMTP id b6mr9349584wmb.3.1573238787043;
+ Fri, 08 Nov 2019 10:46:27 -0800 (PST)
+Received: from debian64.daheim (p5B0D779F.dip0.t-ipconnect.de. [91.13.119.159])
+ by smtp.gmail.com with ESMTPSA id u187sm8614104wme.15.2019.11.08.10.46.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 08 Nov 2019 10:46:26 -0800 (PST)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.93-RC1)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1iT9Gj-0004VJ-W3; Fri, 08 Nov 2019 19:46:01 +0100
+From: Christian Lamparter <chunkeey@gmail.com>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+Date: Fri, 08 Nov 2019 19:46:01 +0100
+Message-ID: <1823615.pomYDSgldP@debian64>
+In-Reply-To: <00ec01d5940d$2df34120$89d9c360$@adrianschmutzler.de>
+References: <00ec01d5940d$2df34120$89d9c360$@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:jc48nSo9QMfOMOA3g1t6t78Ws8/jNjrKMzygAQ7V53RSAFzERB1
- vXVoHHYAqs2S8XmaZJH834gSSbCLdOsFiPmuE5xgpZ2Rgc+fbNhjnK5zH0/dAC5dP0ElKgf
- 3ihM1gnLpXlVzZ3Mr55f3O5t971mOOuHPl1HQjCowdvyK+wQM+FCfEMywdFtZNkxq+pkWYQ
- 3XabeFQqpgwUEEums4Hrg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5OUbv6CFcao=:SL/TSU6ZnQNtSaWwXWzA6n
- c98dt5t9Qa7gV00/sc5M2tdhQ6ybWIVq0yQPEeJc82crc81b8AOtPj6dfpCftJrljostz6gwI
- FhvPwbUwdy7Td4uMonSObP60ITsd6HQr2S5yc1tyutNKGNXeGXE6f+WgnNNjwPJ7sHi98yVqw
- iAVQltgyRIDDY9G4kcpNhDxaf0At9XChnBh2Uaxh3NCci09Exm06zONDBZG1H4qle05cTPGyJ
- oMMvJcgmIKKTGsljYnJW9IbrIf35I3xpaasBrnsd1vpphGo57XsWmwLjVOIb6BwDjNARIGcbY
- GorFit3Lx5Gqd/jDQHMltCJUmTsU/Y1k1VLUc3gpwKRJiYpv7h7gxbn8vgH9jq4UcWBGNFKIp
- pWmVL4IrO34RHccc/cpZJRvAnLwic4Nn7fyJ/hXbJsZiJXaz+cCbcIsBdZkG/H5LYENCFHXUG
- CQ6Pp6jbLiGv2FeufKKlE52IHbthpfTLoXgMcRpnbvQfY7ObesNqSaf7d/dUgTrOWRFMd7J7t
- Ketv6595ELE78TH2+6hiRudXvKONnx08vAFCDhoh7Y7k3Koq4F6MS6bqtwuUlHRUgzRAb6nKn
- Ed4fAMTb+FJbODCSBaBjwfk/EnXWxVqkxPyfjLtAzZfx71R6MYcESXx9rEPc637KR6zSlmM4B
- gFgRt7hojE8CcD9YjkfIoY73rKc13uAJAtxAsQ4a1Kaxk3jo/k1tL3i3zjNlT/rT5f2ta2FH/
- MONApylg0COSpQ6ICpmd9SqPp3Cgy/ElXOynTli167ZlLuIvn2uEX9ZZpW681iAQVCTqxX3JW
- 4EKTmZ98hMcqlv9qOAjmXX0GZdoIJEwklDCYhbmIFFMJEJHrac2r9wqrmd+Pnp2sc7OmEr/WU
- 4URbV7lvsSQud/fecn6ysYFAVqNopxB034XJt0BvQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_101419_085063_9FF28A67 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_104629_515035_40625C8A 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:329 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 5/5] hostapd: wpa_supplicant: enable proper
- GCMP cipher support
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (chunkeey[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] ipq40xx: Bogus IMAGE_SIZE on asus rt-ac58u
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,46 +100,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robert Marko <robimarko@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Robert Marko <robimarko@gmail.com>
+Hello,
 
-This patch enables hostapd.sh to properly configure wpa_supplicant
-for when GCMP is used as cipher in station mode.
-Without this wpa_supplicant will be unable to connect to AP.
-This is needed for wil6210 as it does not support CCMP.
+On Tuesday, November 5, 2019 8:13:59 PM CET Adrian Schmutzler wrote:
+> as stated already in the comment of an earlier patch, the asus_rt-ac58u
+> on ipq40xx target has an IMAGE_SIZE of 20439364, which cannot be divided
+> by 1024 and also does not seem to match anything in DTS.
 
-Signed-off-by: Robert Marko <robimarko@gmail.com>
-[remove empty default case]
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
----
- package/network/services/hostapd/files/hostapd.sh | 7 +++++++
- 1 file changed, 7 insertions(+)
+This was soo long ago, but luckily I kept some notes and files in the cold
+storage... and since it's finally snowing outside, they became accessible.
 
-diff --git a/package/network/services/hostapd/files/hostapd.sh b/package/network/services/hostapd/files/hostapd.sh
-index 3c1504ca60..8c6eb3d6e9 100644
---- a/package/network/services/hostapd/files/hostapd.sh
-+++ b/package/network/services/hostapd/files/hostapd.sh
-@@ -894,6 +894,13 @@ wpa_supplicant_add_network() {
- 		;;
- 	esac
+As for the relying on the DTS: Please don't in this case. The RT-AC58U uses
+UBI. So multiple volumes are stored in that UBI_DEV (or "ubi" now) partition.
+The original u-boot from ASUS kept a failsafe volume around so does works   
+
+> 
+> I couldn't identify what should be the correct value in this case,
+> so maybe someone more familiar with the target could have a look and fix this odd value.
+
+It was the size of the original firmware back in 2016.
+
+You should be able to confirm this, just download the firmware called:
+"FW_RT_AC58U_30043806516.zip" and extract it.
+In the archive, there should be this file (ls -al ouput):
+"-rw-r--r-- 1 user user 20439364 Oct  4  2016 FW_RT-AC58U_3.0.0.4_380_6516-g6772678.trx"
+
+This is where the IMAGE_SIZE was coming from. From what I can tell,
+the firmware web upgrade had issues with the full ~48MiB image size,
+so I opted to 1:1 copy the size of that firmware file to be on the
+safe side. (The tftp method didn't have that limitation though).
+
+And finally: The RT-AC58U is in a bit of a dicy pickle (together with other
+some ath79 devices).  Reason being that due to the poor memory management of
+wifi drivers, the 128 MiB of RAM it has is not enough. When the wifis are
+activated and pushed the device runs into OOMs and regulary crashes/panics.
+So in a way, it's on the chopping block.
  
-+	case "$wpa_cipher" in
-+		GCMP)
-+			append network_data "pairwise=GCMP" "$N$T"
-+			append network_data "group=GCMP" "$N$T"
-+		;;
-+	esac
-+
- 	[ "$mode" = mesh ] || {
- 		case "$wpa" in
- 			1)
--- 
-2.20.1
+Regards,
+Christian
+
 
 
 _______________________________________________

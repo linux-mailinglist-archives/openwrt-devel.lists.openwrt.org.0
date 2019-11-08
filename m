@@ -2,71 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F168F4736
-	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 12:49:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42D58F477A
+	for <lists+openwrt-devel@lfdr.de>; Fri,  8 Nov 2019 12:50:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y+qfS6RcdvaCtXCgJCQn4Uwmt4QZPXIDHji8GNzn9N0=; b=neBSmhnUd/5nao
-	4EOCVrJ4F3raplAXkZ6h5XoOxqOLM1t7RlbX5JMWPuQ49naXv9VkdH9nzsERjSwZl9hcM5sFQqAse
-	1z+nzb4hkcy2RjbvJYvRgXynTKP72fk/jMeTIP135mqy/OfqAIs9bkIFWWgRK60LJucB5JP62axAz
-	tH4eD3c7dS15y7mBoe2a/1yi8Bgl87RZ8m3A6T8Hsj20f0iV83vkyfSlQIkLfrum9fmzkcazseK5t
-	DMI+MGn3VqpxD35wpzE3pPO4JuJNsSAY3hj5kFZ8P/RUzugRrGs7ECbQTcbS0rCbrdxCHKBvFaeTw
-	2JRwFUWgC3M2FDxm3/dQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IvH8jqXVz8Du54SuUwJg4s0SQc7rQDrKAvLXcqFQG3U=; b=TzaBRVj78UJwKj
+	Lmjr2TzZ4yTafMH9MxhI8s1uE9P9kr3tsQtWKbh8ikY+WyF2kv3sq49mEFCMqKFi9MGHPagnM9FwR
+	NkloKJmRDCB94Kc4jI4wvglF7+cI7rO1vdqksA5MEtLKk5IFJVBaf12tBdOzhf/6KvkY5CaqdHPKF
+	QHg7qqN6lLPxmtGzjYkcgj/UJo41rCBtYJz4wX16ay1JTWJIZzf9pzSZagDEk82Vu0A+r+20d+SDM
+	qbT9wDuZOaXNUPgjBiJ6VJHd7mpAtfDj/Hmj9Gfra8Tr+1ddld/KS5xfrIztmQ4x03UVzDKHaoZQM
+	ArXiP+sBElPTp3/yLTiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT2lR-0006xg-Os; Fri, 08 Nov 2019 11:49:17 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1iT2mp-0000mc-Ft; Fri, 08 Nov 2019 11:50:43 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT2l1-0006ks-O3
- for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 11:48:53 +0000
+ id 1iT2mj-0000m2-6K
+ for openwrt-devel@lists.openwrt.org; Fri, 08 Nov 2019 11:50:38 +0000
 Received: from buildfff.adridolf.com ([188.192.135.195]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MeToK-1hssaf3AUm-00aYWj; Fri, 08 Nov 2019 12:48:45 +0100
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MbjBo-1hvdRP2pSA-00dIx2 for <openwrt-devel@lists.openwrt.org>; Fri, 08
+ Nov 2019 12:50:33 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri,  8 Nov 2019 12:48:41 +0100
-Message-Id: <20191108114841.1343-3-freifunk@adrianschmutzler.de>
+Date: Fri,  8 Nov 2019 12:50:31 +0100
+Message-Id: <20191108115031.1464-1-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
-References: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:s8uh5znUMJ/B6Fg1LeU97M+w/5WX1FNPDQiWpvm9uTE0jbE/VAe
- vqYtZaFvAARGXRF9V6QvpPa1N5knw5CVMsbBbkru+nraargBq9Mi6KOdinFcOr/UPkbfV9p
- zmbxhox/WYJP6Vfa2/VuWU6XqgbCboqWgd3HP7DlwjauNfW2bmQ9qKAGzTasCEOZm880fPe
- pjOFT0gzTxujQ9QP7oZXA==
+X-Provags-ID: V03:K1:OzlH6LlCmTsbDUsD4et+L24ElmUnfALzVSKZvljPtNW67owfb0X
+ Ra8MQBWS0oWDdEGCH6Khtn0hPOqj8+udlVz+o6BvNLFePWYi/Nl328iRAKqnPqWaEik4TUP
+ qNmoHa3+b61zAlhlkwi6fSsLwTUFhc/BFsZVaob0dsIFVhkuAcSrldltwIIty29VNudbC7Y
+ a6ncSmP+b72J6w2pKmcPA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:S8KPSyiROsA=:WTVBwje7dDwQ2e73pZ1Tua
- 88Yc3UqVhG9WUo3UGGSLLEqinhG2xIe9L3ZCVrKC9dUUCaQ+/nKd9nv5UY8XVC/bZ68ECewXo
- DUhB7p6LbiNsCTlJIdlQLfnxZoG6ORPinNPLfBZT6NYxVl9XArd/9TGXO01mcu1eMWPFgnlvW
- V8B471RvvWF1k0N9LfxBUXKEa/bBUY37YVKJJEq04QE3alXn6O915Ci/5b/CJj2OwQO9UsTmL
- xhsR5Lw2AJL1Dsco+vQjrcslDUqns5W7wd9RUI/QbOMh1fdTHbdPTkq5lhzR604VyFWthPGB3
- BzowoM7f+JVKdUwO5Z245DuzeVNrXmzlDXq9vLTYiZI5kIoGc4YAy5pPI+ReDHdiCUY3rnJ2u
- oHz51pOFl3wdSiWax5WgnYBgC8oxHPy+lfXMZNS6NjMWwR17kRNrPRp+DwkDkVfRcWqL5oWVG
- 4VwXL3bgs7KjS0yI2lAgT7/uVfQ08N8J4mrgBZZ3IklzSnlx6te2PTWSpacpRJYFnO7ukIwVY
- iFe+N/T8mf2WRl4u6kdnC7Vxj5MNqV7iSGsI7iWRQZ+y65RHhYSoN/gwe644RSgRuxCwYcba0
- nKNwn/rxKGcKYJnKNui+p3JMIRhsY4ZyvoMtrXgSLO3vuqKNqdSCm2h8j+qJZJB1CWDtQfP5/
- gMxq4xJRCZvajmbJHuSps4o2n/3cXzHLawhiShB2peCs4UtxCn5JMZviJI3NLZ6t0/AfGEymU
- oighOkeJEBqeBN2Oh9LPerdsmWhnAd9frMISF/QAmWfOqSpHoa1Y5H0eDy+WaUP5bM7G1rAzo
- P75NrBgtqD5eYtUQqM1kRVaBhrOXrkm/0JgYBE+oWrAwykkNIZOXCJsrk7F/D5ggteS09QVbu
- bdybIz6S7KQacp8VQNlpbTRdO0HkXzNuWGt1o+78I=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:xO60AdCOQJY=:oyCi/Yhcd8CAtTo0BCf+Kh
+ SpfuR5cp338wzs60jAlLH5ugVBbNtyPufCnPXKJzCBqmOPuAbaE72SLmJCW1fzbHYJKzs+4sT
+ 1KDUYnT7jxusYIlvCKgyWevsWTX0DTPP2VaOHDqxVb4I8whvXbk0EpY/V0lrLS3vX52ux4/Bm
+ /1XcRj5+SNfMHK7Xml2Zeey/rg/LGJwzT+iKgSClrPxB04biRK4lb7mub++tj3BPEj48kWC3/
+ nzRgivkPt63EwfLvbk3SKAJaK7ppLA42t/AaWZui3M8XUlW5o22XKEZ7qKUYdWlxmQFGcibkK
+ fTrKQHg06XSfSPmVlAkU/O0/4WvAbrxn9HXwwGOdKU42fBNzosLn5VhUM6oHEDdquY4tUDdsw
+ N5XxV2jMo8ZETnWW0SmgWEydYN1BJeuufCyKCwz7VpnW0DejE+GN0hJ0qNiH41krr+aZd2LNZ
+ cglMTNIRxj/BMREaRNYO2i+uY7RNy4N65lnXb5UKfRC72HRAnljL4DF5/fCH/PO3xl+dPxfTK
+ wOvawP5KRMU0cRicLItfu3mu+Ixvn1CF7L3DLuSTuN5s0E+vStqZxkLGQ4g1EROc3xA8XmXjf
+ gfh7oAIsOZDlXe4vnIIc5FDSlIf6cX/9zpSMHB76C9H8oDHj4mcXQkHYjY35bpp3o/JURlLAu
+ QffBqsE8zWdjLKVFeECvF8MhSSgOxrMwV9WYwNGM5aJu7vDX0FvDJmpcOSq4IG+uKxFufqun/
+ wAhFec1U9mIjw+lsjJuGM6htSCDrgDXgI2xWleM1OXlOtllHaj7LZ3uE5j9dj0tfrH8HGEFX1
+ VRVeXUsGS1QDEbSB8S7+OS34RXb/1XsYpUAgzkRqZiOBLB377wSic6tiY/rYSntdgYD9x618+
+ moGUblcA/JRM+saijXuAOUyDm8HpK0VEgsSev+v/c=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_034852_072268_34CCC4B4 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20191108_035037_524280_3F988D37 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 2/2] base-files: rename SSID with EUI of mac
- address
+Subject: [OpenWrt-Devel] [PATCH] base-files: remove shebang from
+ uci-defaults files
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,72 +78,57 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Rosy Song <rosysong@rosinson.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-If the label MAC address is provided for a device, the default SSID
-will be set to contain the EUI of this address, e.g. OpenWrt-ddeeff.
+uci-defaults are sourced and non-executable, so they do not require
+a shebang.
 
-With multiple routers, this will help the user to identify his device
-based on the MAC address printed on the device.
+While at it, apply consistent naming scheme.
 
-If no label MAC address is specified, this will use "OpenWrt" as
-done before.
-
-Using a uci-defaults script for this is necessary as mac80211.sh is
-executed before /etc/board.json is created, so label MAC addresses
-set in 02_network would not be available there.
-
-Suggested-by: Rosy Song <rosysong@rosinson.com>
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
 ---
+ package/base-files/files/etc/uci-defaults/10_migrate-shadow     | 2 --
+ .../base-files/files/etc/uci-defaults/12_network-generate-ula   | 2 --
+ .../etc/uci-defaults/{13_fix_group_user => 13_fix-group-user}   | 2 --
+ 3 files changed, 6 deletions(-)
+ rename package/base-files/files/etc/uci-defaults/{13_fix_group_user => 13_fix-group-user} (94%)
 
-This effectively uses a workaround to prevent SSID from being reset
-after upgrade (match SSID vs. "OpenWrt"). If there is a nicer option,
-please propose it.
-
-Another option for this would be to explicitly mark the wireless uci
-config as 'default setup' by a to-be-introduced option, which is
-to be removed in a late uci-defaults script. This could then be
-exploited for several other objectives, e.g. further config-dependent
-WiFi setup tasks.
----
- .../etc/uci-defaults/15_wifi-ssid-mac-address | 22 +++++++++++++++++++
- 1 file changed, 22 insertions(+)
- create mode 100644 package/base-files/files/etc/uci-defaults/15_wifi-ssid-mac-address
-
-diff --git a/package/base-files/files/etc/uci-defaults/15_wifi-ssid-mac-address b/package/base-files/files/etc/uci-defaults/15_wifi-ssid-mac-address
-new file mode 100644
-index 0000000000..aeb46e39c0
---- /dev/null
-+++ b/package/base-files/files/etc/uci-defaults/15_wifi-ssid-mac-address
-@@ -0,0 +1,22 @@
-+. /lib/functions.sh
-+. /lib/functions/system.sh
-+
-+set_wifi_ssid() {
-+	local iface="$1"
-+
-+	[ "$(uci get "wireless.${iface}.ssid")" = "OpenWrt" ] && \
-+		uci set "wireless.${iface}.ssid=$ssid"
-+}
-+
-+label_macaddr=$(get_mac_label)
-+
-+[ -n "$label_macaddr" ] || exit 0
-+
-+ssid="OpenWrt-$(macaddr_geteui $label_macaddr)"
-+
-+config_load wireless
-+config_foreach set_wifi_ssid wifi-iface
-+
-+uci commit wireless
-+
-+exit 0
+diff --git a/package/base-files/files/etc/uci-defaults/10_migrate-shadow b/package/base-files/files/etc/uci-defaults/10_migrate-shadow
+index a354844fe4..481444f35e 100644
+--- a/package/base-files/files/etc/uci-defaults/10_migrate-shadow
++++ b/package/base-files/files/etc/uci-defaults/10_migrate-shadow
+@@ -1,5 +1,3 @@
+-#!/bin/sh
+-
+ ppwd="$(sed -ne '/^root:/s/^root:\([^:]*\):.*$/\1/p' /etc/passwd)"
+ spwd="$(sed -ne '/^root:/s/^root:\([^:]*\):.*$/\1/p' /etc/shadow)"
+ 
+diff --git a/package/base-files/files/etc/uci-defaults/12_network-generate-ula b/package/base-files/files/etc/uci-defaults/12_network-generate-ula
+index 8871427c60..19d7ed7f2e 100644
+--- a/package/base-files/files/etc/uci-defaults/12_network-generate-ula
++++ b/package/base-files/files/etc/uci-defaults/12_network-generate-ula
+@@ -1,5 +1,3 @@
+-#!/bin/sh
+-
+ [ "$(uci -q get network.globals.ula_prefix)" != "auto" ] && exit 0
+ 
+ r1=$(dd if=/dev/urandom bs=1 count=1 |hexdump -e '1/1 "%02x"')
+diff --git a/package/base-files/files/etc/uci-defaults/13_fix_group_user b/package/base-files/files/etc/uci-defaults/13_fix-group-user
+similarity index 94%
+rename from package/base-files/files/etc/uci-defaults/13_fix_group_user
+rename to package/base-files/files/etc/uci-defaults/13_fix-group-user
+index e6dae2419f..bf9febdfe4 100644
+--- a/package/base-files/files/etc/uci-defaults/13_fix_group_user
++++ b/package/base-files/files/etc/uci-defaults/13_fix-group-user
+@@ -1,5 +1,3 @@
+-#!/bin/sh
+-
+ . /lib/functions.sh
+ 
+ for file in `grep -sl Require-User /usr/lib/opkg/info/*.control`; do
 -- 
 2.20.1
 

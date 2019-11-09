@@ -2,47 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11E58F6035
-	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 17:06:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AE52F60B3
+	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 18:31:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3OfINvdYdtlZlRtdEQXVUU8T48mM91x5janK7KiOLAQ=; b=HSpVLYyBSLWdtQ
-	OLJWU6ZKekfi511dhVstC0041k+LOzdYVEM3bd1REb6XLzRG/wvrWXYmWSWjz3RE1nJ12Q0m/LDX7
-	gY7EFLiWJAGZH4QZH1B+ukI6Fe4oG2qKgjFM4mzsNFcBi/b1ob1TFVnBVd9DwigZo5ZZkh7ht6EFn
-	CfBrjok3HD5XXNLNYhDwFewEd202p+IwF/CM5SEXm0famb3nvV5g0KjPmKfwitr+5GXVkelGyaqcp
-	zhjVOvhvGbfaeuWTbsTn5Sqa51Vq7xb3CMqgEDsqo9IKa7DMnwzCOp3N0zrUEkjzwRD0UYFJa/lhv
-	RT34UCtXV+SuTncXUQlQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Cc:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LDAWRgR0iWgrEflat9kWFlCv1NFSupc0oBCfqe35o14=; b=QTpZ1qsrFj5Dn0
+	f8odeqYeBmGD8/isYXWOgq9s24u16HdNJ/mBbAnihSXmIpWRK6upv4xik+LKlOyoBXDKnH2u23QlX
+	rUOjfzx9RJw6uisEXQT/u9juuaBoaj6Nh+6wg5f8arbrxaFMnoa2gUv/0L7YzD279EbDHN9BOjxUE
+	s2+GMCyamldVbQzt69aWIaQaDHdFGkSykwLW+uFiSOUAnguuCMnZ+c0oGgA+ED4dIn0vHGI2LWCxt
+	P/Bh+gDCFUnWN637LoqmwcdgKpyJTi0hcNgdoLsekC0H9wWi9/03JvVjqpZ0FnQK3cZsDOIEW5iYs
+	CJ1x1FzvwaE6TlOMhtyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTTGG-0007pM-AT; Sat, 09 Nov 2019 16:06:52 +0000
-Received: from mout-u-204.mailbox.org ([91.198.250.253])
+	id 1iTUaC-0001jI-MU; Sat, 09 Nov 2019 17:31:32 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTTG0-0007gM-Mm
- for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 16:06:39 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-u-204.mailbox.org (Postfix) with ESMTPS id 479MT14mx6zQl9W;
- Sat,  9 Nov 2019 17:06:29 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
- [80.241.56.117]) (amavisd-new, port 10030)
- with ESMTP id rfzj2CtplH3i; Sat,  9 Nov 2019 17:06:26 +0100 (CET)
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat,  9 Nov 2019 17:06:06 +0100
-Message-Id: <20191109160606.26657-3-hauke@hauke-m.de>
-In-Reply-To: <20191109160606.26657-1-hauke@hauke-m.de>
-References: <20191109160606.26657-1-hauke@hauke-m.de>
+ id 1iTUZy-0001ih-IY
+ for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 17:31:20 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1iTUZt-0002HZ-7O; Sat, 09 Nov 2019 18:31:14 +0100
+Date: Sat, 9 Nov 2019 18:31:00 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: John Crispin <john@phrozen.org>, openwrt-devel@lists.openwrt.org
+Message-ID: <20191109173100.GA103290@makrotopia.org>
+References: <329489a2-3619-b0c6-3705-b10acbe69917@phrozen.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <329489a2-3619-b0c6-3705-b10acbe69917@phrozen.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_080636_907145_3F9EB1FF 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20191109_093118_610729_01B66D2A 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -50,7 +46,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH 3/3] ath10k-ct: Use ath10k-ct version 5.4
+Subject: [OpenWrt-Devel] [PATCH v2 netifd 1/5] wireless: add ubus method for
+ reloading configuration
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,41 +59,131 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, greearb@candelatech.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This makes ath10k-ct use the version based on kernel 5.4 by default.
+From: John Crispin <john@phrozen.org>
 
-Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
 ---
+v2: unchanged
+ ubus.c     | 23 +++++++++++++++++++++++
+ wireless.c | 18 +++++++++++++-----
+ wireless.h |  1 +
+ 3 files changed, 37 insertions(+), 5 deletions(-)
 
-This was only tested in AP mode on a IPQ4019 device so far.
-
- package/kernel/ath10k-ct/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/package/kernel/ath10k-ct/Makefile b/package/kernel/ath10k-ct/Makefile
-index b32d1923f7..4e9b0c1883 100644
---- a/package/kernel/ath10k-ct/Makefile
-+++ b/package/kernel/ath10k-ct/Makefile
-@@ -12,10 +12,10 @@ PKG_SOURCE_DATE:=2019-11-07
- PKG_SOURCE_VERSION:=080cd781e12dfc2a83f41c4de7a7257398943839
- PKG_MIRROR_HASH:=2a66e0188b699b4e240ae9d605f36a3bba072f33e6ce71e370b65dafcc5ad0db
+diff --git a/ubus.c b/ubus.c
+index 150d818..5a2a339 100644
+--- a/ubus.c
++++ b/ubus.c
+@@ -1081,6 +1081,28 @@ get_wdev(struct blob_attr *msg, int *ret)
+ 	return wdev;
+ }
  
--# Build the 5.2 ath10k-ct driver version.  Other option is "-4.19".
-+# Build the 5.4 ath10k-ct driver version.  Other option is "-4.19".
- # Probably this should match as closely as
- # possible to whatever mac80211 backports version is being used.
--CT_KVER="-4.19"
-+CT_KVER="-5.4"
++static int
++netifd_handle_wdev_reconf(struct ubus_context *ctx, struct ubus_object *obj,
++		          struct ubus_request_data *req, const char *method,
++		          struct blob_attr *msg)
++{
++	struct wireless_device *wdev;
++	int ret;
++
++	wdev = get_wdev(msg, &ret);
++	if (ret == UBUS_STATUS_NOT_FOUND)
++		return ret;
++
++	if (wdev) {
++		wireless_device_reconf(wdev);
++	} else {
++		vlist_for_each_element(&wireless_devices, wdev, node)
++			wireless_device_reconf(wdev);
++	}
++
++	return 0;
++}
++
+ static int
+ netifd_handle_wdev_up(struct ubus_context *ctx, struct ubus_object *obj,
+ 		      struct ubus_request_data *req, const char *method,
+@@ -1189,6 +1211,7 @@ netifd_handle_wdev_notify(struct ubus_context *ctx, struct ubus_object *obj,
+ static struct ubus_method wireless_object_methods[] = {
+ 	{ .name = "up", .handler = netifd_handle_wdev_up },
+ 	{ .name = "down", .handler = netifd_handle_wdev_down },
++	{ .name = "reconf", .handler = netifd_handle_wdev_reconf },
+ 	{ .name = "status", .handler = netifd_handle_wdev_status },
+ 	{ .name = "notify", .handler = netifd_handle_wdev_notify },
+ 	{ .name = "get_validate", .handler = netifd_handle_wdev_get_validate },
+diff --git a/wireless.c b/wireless.c
+index 387f4ba..9986e9a 100644
+--- a/wireless.c
++++ b/wireless.c
+@@ -282,7 +282,7 @@ wireless_device_run_handler(struct wireless_device *wdev, bool up)
+ }
  
- PKG_MAINTAINER:=Ben Greear <greearb@candelatech.com>
- PKG_BUILD_PARALLEL:=1
+ static void
+-__wireless_device_set_up(struct wireless_device *wdev)
++__wireless_device_set_up(struct wireless_device *wdev, int force)
+ {
+ 	if (wdev->disabled)
+ 		return;
+@@ -293,7 +293,7 @@ __wireless_device_set_up(struct wireless_device *wdev)
+ 	if (!wdev->autostart)
+ 		return;
+ 
+-	if (wdev->state != IFS_DOWN || config_init)
++	if (!force && (wdev->state != IFS_DOWN || config_init))
+ 		return;
+ 
+ 	free(wdev->prev_config);
+@@ -320,7 +320,7 @@ wdev_handle_config_change(struct wireless_device *wdev)
+ 	switch(state) {
+ 	case IFC_NORMAL:
+ 	case IFC_RELOAD:
+-		__wireless_device_set_up(wdev);
++		__wireless_device_set_up(wdev, 0);
+ 
+ 		wdev->config_state = IFC_NORMAL;
+ 		break;
+@@ -363,7 +363,15 @@ wireless_device_set_up(struct wireless_device *wdev)
+ {
+ 	wdev->retry = WIRELESS_SETUP_RETRY;
+ 	wdev->autostart = true;
+-	__wireless_device_set_up(wdev);
++	__wireless_device_set_up(wdev, 0);
++}
++
++void
++wireless_device_reconf(struct wireless_device *wdev)
++{
++	wdev->retry = WIRELESS_SETUP_RETRY;
++	wdev->autostart = true;
++	__wireless_device_set_up(wdev, 1);
+ }
+ 
+ static void
+@@ -1001,5 +1009,5 @@ wireless_start_pending(void)
+ 	struct wireless_device *wdev;
+ 
+ 	vlist_for_each_element(&wireless_devices, wdev, node)
+-		__wireless_device_set_up(wdev);
++		__wireless_device_set_up(wdev, 0);
+ }
+diff --git a/wireless.h b/wireless.h
+index 3498bd8..bade738 100644
+--- a/wireless.h
++++ b/wireless.h
+@@ -93,6 +93,7 @@ struct wireless_process {
+ void wireless_device_create(struct wireless_driver *drv, const char *name, struct blob_attr *data);
+ void wireless_device_set_up(struct wireless_device *wdev);
+ void wireless_device_set_down(struct wireless_device *wdev);
++void wireless_device_reconf(struct wireless_device *wdev);
+ void wireless_device_status(struct wireless_device *wdev, struct blob_buf *b);
+ void wireless_device_get_validate(struct wireless_device *wdev, struct blob_buf *b);
+ void wireless_interface_create(struct wireless_device *wdev, struct blob_attr *data, const char *section);
 -- 
-2.20.1
+2.23.0
 
 
 _______________________________________________

@@ -2,75 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E680F6136
-	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 20:42:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF73CF615D
+	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 21:24:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4onVyOHlZRSl84Fchpf8ZwqSdwJubUh+KQn7kDPDpPY=; b=S3gn0P/rNC/z/S
-	nq3gVmSVj5H5YvoUN3ycRURSBdDADGmi0pQJRdKhSjD24L3Ijn974IDa59+AhmhuXCCbZg4Fuaal5
-	1QwmfoqEWKvM5OuOWY77Y5A4p/AVth03XdoDr7a3Btkm1eEtymnLKJCgM3Pt7Mz3QQmxoO8pvGs1q
-	rZVOEz/GBA8VEmBlZ6NJPRf6u4+nbeN/jITKfZatDGxqK1PQkfCPUXQTHpmoS+xaDbjBSKgjlhUft
-	qA1MmTf4S4QDL2r37XkJ1PifjniygMdh8Rd2b8gue5xWfauSM01fqOKAk9QIPYkL6kbxxaK0IV8AA
-	Fdrqdn+4LpDHAJ7mR4Ig==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Wrwe6pp5TlSAqq2M7zQNul5tXLT/ovWgPrZQXYDaexk=; b=ALRsT26R3EkOm/
+	Mv9rcobpakx6wk/uVfFPV/TEKjQxidW1hbnf86tmuu/LalIVBf7MEq8tiHY69ysJiLfFd2/aF7xw7
+	B7S7V1hQyRK0+NKWfmVIUX3OOKUrj6zuusIilzU6nL8taKRvw1kN4foU3uHEO5GnFvF2mJltLwoUX
+	XRxZy33s7GHUKZRVAjz67ag1QnN1NR0iEVI1kSagahF+haUsKBmyZIyxIsr4xoHhwKsBFweFoCeFW
+	yHiH7X73c2aga5Dm3b2VjcXLtPplTxsz5VxiDeymiRTudeKvaEbTPIQ0uPW0soyQVlkT2GowlKTub
+	WGJYYAborTsEfBUtgyOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTWcN-000520-Ud; Sat, 09 Nov 2019 19:41:55 +0000
-Received: from mail-qt1-x82f.google.com ([2607:f8b0:4864:20::82f])
+	id 1iTXHK-0001WE-0t; Sat, 09 Nov 2019 20:24:14 +0000
+Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTWcG-00051X-JC
- for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 19:41:49 +0000
-Received: by mail-qt1-x82f.google.com with SMTP id n4so6256492qte.2
- for <openwrt-devel@lists.openwrt.org>; Sat, 09 Nov 2019 11:41:46 -0800 (PST)
+ id 1iTXHC-0001Vl-Hc
+ for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 20:24:08 +0000
+Received: by mail-lj1-x235.google.com with SMTP id v8so9721494ljh.5
+ for <openwrt-devel@lists.openwrt.org>; Sat, 09 Nov 2019 12:24:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=iek5lbcP5d3ApN+u5CKXF5euJGtS2s4S/iqFQ+MnGZs=;
- b=CFRK23phXF3swgEmKTx+RusdZ9C9+5QM+TOKXePFZo4FIV8XJ3y0Ha73TPvI5/N8My
- G4JnMTHQZFFuQnmbecR6ALgGIdumuQ5zovRyuDxdTzxW2okkx2GuGrKVogPOEKDiGv82
- mopj5kdkw9YTg92xm8rtbpM+Xvh+uPVEwh1+isIDolwoS6pUijjFy8Aan8//C22h9ctf
- UDCrMHEfhO04jqiJ7z3XWi5LiWi5hOYG7cgsLK1wj7SgeA0sK9jjsznIICeqT+PAPDPA
- PaZ4eeezZNuQsy3uQamizva+THaWd4URZJWp57Q8l3mjlUNeAxdFG96ZNK2At3fpO3tb
- 3KlA==
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=GhHNZaai373bY4J5M5iYz2F1dbiSlPtJx39Az3oVZnQ=;
+ b=LRrpF+PAiFd9YpLZVIj/7qMuj+juxf57yo0Xi2FV7x7sIQRklZV2nuSqlez32ERa9o
+ hlem96L2WqXoPr8+vsThQMhwjf891BG3YrPGKQg5qeY8hCSl6mUZRsL8b2N03vnjEgda
+ xm3WVyBLZ444XhmPbKo+dE95Nbw/y8i7l8+61p/9joSvGYYlItI+XOSOtJtju6CVSFgm
+ j82yalByZwZZi4yEDZVcrJfh6iPXW2DfQooNJPdpMbxashx1jxuDtL1hc99lA2g5JFCY
+ 751ax2A4DJS8J5BJD4iKt/DxkhI7ODfIyH4ZrW+m+aldjx26ZIsUFI+g+5cYk+K4QZVY
+ HMZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=iek5lbcP5d3ApN+u5CKXF5euJGtS2s4S/iqFQ+MnGZs=;
- b=TCNYsMp73b3CBZlCIGsCLw1HIJGwnNv5pBOKcRcaaxEp+d2SFQjdxKDnPGQ8a0U3BR
- gHcSer2s3mZbRpE6xEBiKmMaVhadrExQX61ujfDsacPhbIa2MS3t0AsCjsI+YpYPFr5Y
- gt7D1J3zjqB/6/7GA/ERRlUjDd1YTBriR4oyHbHE7XrD5ruq4GJTj9MWCcH3v6TLbsMQ
- zltFGCOhkgWqDDsKox6fbkTdRJIjD8DPGEgl/Hr1Q+t2PCqvFwrIHNsyU8HfHmwyxgre
- nrGJmJEXa5V54rGLBaYtUq0F5eMyWPZcjoBMDDVJEFI6aPMwGIKiN0NqKZojG6XpSsNU
- 4iEg==
-X-Gm-Message-State: APjAAAX304kNeeYoyAY0y9J8n73KLHTcVyCRdEdHEsU4AfJCg4KQU6l/
- NfI03DhSCO60XLFEweqDsTLomFYHMbF1OmPQj6k=
-X-Google-Smtp-Source: APXvYqyRJnWpHAIzTjuJK/KOQlTqyshJx7+Y2OcsUTarUlwGON4JJbtxp9Z1pXKk5Skc8fxqcV9ayqTNsOLqRiniJi0=
-X-Received: by 2002:aed:22c8:: with SMTP id q8mr19281361qtc.0.1573328505632;
- Sat, 09 Nov 2019 11:41:45 -0800 (PST)
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=GhHNZaai373bY4J5M5iYz2F1dbiSlPtJx39Az3oVZnQ=;
+ b=daTpAgF+IOoJUl97bH9Q9sfZo+5nilCPoBMEQWDoaqLYN49xeL7PbU1gXgQuFXjpnu
+ TVAiyEZsXunFTYOVwQgy8rNaGiVFr+UJe4RuAAeg+Uy3MAj90pIRp+VaKAr8HeVuGZwW
+ IzCPDwbIQ/3TF+KBICA89mKKyzxmAxAe9SaZ6cYQo3ueU1XA6XXh7Kj21w6iIDUxtLHN
+ 12vjkWLSfzHLb4gA/51u/AXkKOptFDpcu0ELbXjQOEPob8uCxEPYSji+hyDKUqSl+Luz
+ tHBihJLJNgr0+3mU3ExUjvRprIjcJNhMPjKPsEgePzUeOMPJeaO8OQvu53JBf/PQmmZy
+ EGcA==
+X-Gm-Message-State: APjAAAXg8KXKB+XF/9I/QpHR39OVdZMfHJgaywFlqyJZjCKdZw8NubaP
+ K/wGUQPMszecEVaShOixSDfZJrQW
+X-Google-Smtp-Source: APXvYqyRfbr5tOAbJro5IIzfAGE68Up2MQlZTXpKUfa+8QwiVg9aRc/ePNaLh8baWOgVyq1FVImXjQ==
+X-Received: by 2002:a2e:921a:: with SMTP id k26mr11410423ljg.238.1573331044258; 
+ Sat, 09 Nov 2019 12:24:04 -0800 (PST)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id g21sm4479872ljh.2.2019.11.09.12.24.03
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 09 Nov 2019 12:24:03 -0800 (PST)
+Received: from home.paul.comp (localhost [127.0.0.1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
+ xA9KO0kw025370
+ for <openwrt-devel@lists.openwrt.org>; Sat, 9 Nov 2019 23:24:00 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.15.2/Submit) id xA9KO0mf025369
+ for openwrt-devel@lists.openwrt.org; Sat, 9 Nov 2019 23:24:00 +0300
+Date: Sat, 9 Nov 2019 23:24:00 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <20191109202359.GC1190@home.paul.comp>
 MIME-Version: 1.0
-References: <0fe1f8f2-4236-cc6b-7246-20ffb6afcfa8@gmail.com>
-In-Reply-To: <0fe1f8f2-4236-cc6b-7246-20ffb6afcfa8@gmail.com>
-From: Hans Dedecker <dedeckeh@gmail.com>
-Date: Sat, 9 Nov 2019 20:41:35 +0100
-Message-ID: <CAJLcKsGAF9htce6a6i4Oc=zR8H+bwwpiH+zEcc4ZznL=OrnNkQ@mail.gmail.com>
-To: Alberto Bursi <bobafetthotmail@gmail.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_114148_656478_093DBFF9 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20191109_122406_609533_82C3EAAF 
+X-CRM114-Status: UNSURE (   5.16  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:82f listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:235 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dedeckeh[at]gmail.com)
+ provider (fercerpav[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,7 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] script hook for odhcpd
+Subject: [OpenWrt-Devel] 4K sectors on ath79-tiny
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,44 +105,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Sat, Nov 9, 2019 at 2:43 AM Alberto Bursi <bobafetthotmail@gmail.com> wrote:
->
-> I'm adding hotplug.d support to all DHCP events.
-> For now only dnsmasq triggers them, with
-> openwrt/package/network/services/dnsmasq/files/dhcp-script.sh
->
-> DHCP clients like udcpc and udcp6c are easy to add as the client calls
-> a script hook with documented arguments and environment
-> variables I can pass to scripts in hotplug.d/dhcp.
->
-> I'm not finding anything useful for odhcpd.
->
-> It does have a similar script,
-> openwrt/package/network/services/odhcpd/files/odhcpd-update
-> that is called "lease trigger", and currently just calls dnsmasq to
-> reload hosts file.
->
-> It does not seem to be called with any argument or environmental variable I
-> can use for hotplug scripts.
-That's correct; odhcpd has no hotplug script support at the moment
-triggered by DHCP(v6) lease changes.
->
-> I can also use its ubus API to get a list of ipv4 leases or ipv6 leases.
->
-> Did I miss something? Any ideas to implement DHCP hotplug in ipv6 server?
-What is your exact use case ?
+Hello,
 
-Hans
->
->
-> -Alberto
->
+What is the reason for not enabling 4K erase sectors for the 4M
+devices in ath79 target?
+
+jffs2 needs minimum 5 erase blocks so for those space-constrained
+devices this option seems to be really useful (to be able to keep
+configs when the space gets tight). 
+
+However please note that if this option is enabled then sysupgrade
+will fail to properly keep configs on upgrade, that might be a nasty
+surprise for those already using the supported boards. So what would
+be the way towards enabling this feature now? 
+
+-- 
+Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
+mailto:fercerpav@gmail.com
 
 _______________________________________________
 openwrt-devel mailing list

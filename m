@@ -2,29 +2,27 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67BA0F5D41
-	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 04:43:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F399F5D47
+	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 04:58:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
 	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:Date:To:Cc:
+	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=En7m3tpUzKQgmEzrp1nxzG7zE/4YmMZhSAaPF7s8oyE=; b=hOAsYPbUmg1iJ2wGvkzd3DXIL
-	ifIhTVK0uSE3k+nNiuY6NpeYEC+5xemP9mn4lrf6IWxpOrStNcHaiqcwVtDr8/YzQs2ZKHWbrrdv9
-	r31n4I6xdyTTDPEddx4CpUTmv4EXzXQYXme0eyO+6tZ2AEpFSh8kTlGsW0ffJLCwLMaTe3MUSsVXO
-	xHxot0funS6sZrXPTEISAvuaIb3blfGaNwdJPXMH7nga4EQH1h7b3YxO5q49SBnjC/sW7WiylgIi3
-	kMYEaLRtlYOXBK9ENyOj/eWPeclVEqnOht1J6lKdsSvSiayhpUUyuh5fFSDeuLtwrGFlp3wdsaefA
-	gXOHVf4/A==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HuXbCEWygz9WlrDmJGs31S2Q3GXGKdBY9nXKfJ/wKmY=; b=CLV
+	tSp+6Y76gB1fAYJn79rciGAo4Utc/OdWBV40JVA0i5xeJW2AGR0dXZddAgVC0nUj+hWTtoGFa531X
+	PKfXlBTKo1AgTLi7+6NubEu4VMmViXz8fZdhDtUR9On6fxLVmBI9X+AnH0QDlULzkYq11jUAdd10v
+	NGM4pemgUo4T5T+fMG7wCUrDdBqvDopiln5R7kb1+I5z5fztBPWUnOOJC5OJ/TcQTemyYXUZZf6ue
+	ltXG9Aiodllb7hrc4or2vEFoFcQVgDZkEaBPfaHiDMaRECDMWf17C4KPeG9WHRMldgarlw++JiXe0
+	iO0PVoATtduy4plpUbwx/f99FBELlVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTHfG-0000rL-GC; Sat, 09 Nov 2019 03:43:54 +0000
+	id 1iTHtb-0005ve-2Y; Sat, 09 Nov 2019 03:58:43 +0000
 To: openwrt-devel@lists.openwrt.org
-Date: Fri,  8 Nov 2019 19:42:57 -0800
-In-Reply-To: <20191109034257.44951-1-kmcopper@danwin1210.me>
-References: <20191109034257.44951-1-kmcopper@danwin1210.me>
+Date: Fri,  8 Nov 2019 19:57:07 -0800
 MIME-Version: 1.0
-Message-ID: <mailman.9967.1573271025.2486.openwrt-devel@lists.openwrt.org>
+Message-ID: <mailman.9971.1573271914.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 From: Kyle Copperfield via openwrt-devel <openwrt-devel@lists.openwrt.org>
@@ -38,12 +36,13 @@ List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>,
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
 Reply-To: Kyle Copperfield <kmcopper@danwin1210.me>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] [PATCH 2/2] hostapd: add wpa_strict_rekey support
-Content-Type: multipart/mixed; boundary="===============7587965313943127851=="
+Subject: [OpenWrt-Devel] [PATCH] dropbear: move failsafe code out of
+ base-files
+Content-Type: multipart/mixed; boundary="===============8772777519195364571=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7587965313943127851==
+--===============8772777519195364571==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -54,44 +53,42 @@ sending mailing list messages using the original "From" header.
 
 To mitigate this problem, the original message has been wrapped
 automatically by the mailing list software.
---===============7587965313943127851==
+--===============8772777519195364571==
 Content-Type: message/rfc822
 MIME-Version: 1.0
 Content-Disposition: inline
 
 Received: from danwin1210.me ([116.202.17.147])
 	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTHf5-0000qG-EH
-	for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 03:43:44 +0000
+	id 1iTHtQ-0005vG-Ps
+	for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 03:58:34 +0000
 Received: from localhost (unknown [10.8.3.3])
-	by danwin1210.me (Postfix) with ESMTPA id 1E4A01FD78
-	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:35 +0000 (UTC)
+	by danwin1210.me (Postfix) with ESMTPA id 96EA41FD77
+	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:58:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=danwin1210.me;
-	s=mail; t=1573271015;
-	bh=/a3Bhew+TYUqRKMlQOQtBqIPbY+jyyilAzMM8YwyNKI=;
-	h=From:To:Subject:Date:In-Reply-To:References:From;
-	b=j6fXrQyUGzRWmZJru3yAKb/O1cSq7hnroAvD6e6p6WYXl/EU+qdt9li8NmWhMgZIV
-	 056PWzNYml+XfRVY7f3F5TQoQPnIGyyXRfhz3IeYMpuPsG6Ew4Z5UeaV3fz6g0EGRj
-	 EQiePm1P+L1diKU5+568UvLVTINGt3/4COuzzokmrDcZPiQysqLaokISJPau3MsZkz
-	 X4JDTmgaBmqA+6qclYMMu+yhH1ngtyEmUVLdbym5FnzNm6Es29JUq4cs+oiC/oWsGI
-	 nbP2Ehm9qrKIDtBmv7qVourOXXtVvbCeanZhdsnJDPQ5KN9gDLjt/prX27GcD2fk+n
-	 HZNgB2U2l5Wi2fEErs5LwoluMprv3wc7GiakUX4xucdbXCIXBpCSz7cgR3AlQZ+8T9
-	 RjN/DdV6lnlgrtF5/+WzIRdHgk/2rVtmQGCNQQVW8wMqqgH0RNpliuk+yWchnLAwzF
-	 qAMyqi8udg8kLgcS/EW8UbpOLCYvi1+6FSHxWuL+0niCq0ekQJOP7+QGSRGUVzfl7A
-	 0rsbycF/ksTro8E8HkCIYzJHRZQBqHn4rTPAXnKIAcks6zfaLd0B2munjVmbNLxQHn
-	 IDDJ6MS/aZWv0i6yVlr4to9PgqI9qXvucLgTJyUYqG4DLErmG6FeNaLsyDoa3iLZkT
-	 RpIHSGApZLcaDDCmOH42Cfpo=
+	s=mail; t=1573271911;
+	bh=gJ3bEGTIKjxQh9lOcjSU+8Ag+Az0dbVeMU7VzNVEr9U=;
+	h=From:To:Subject:Date:From;
+	b=FYrNzA+Be56f0TagsAZtXOgSEVMVAmuFfFF4DEiYA3UJiwiy6i1Puhl1+74lNZCti
+	 tvlzUlFG6GlBRSL/61kFkyk7tFL5MijmDosw9RabmKthSIRJNyPEcUTZDYDjIyoq4T
+	 cCEtSNm9/I1ujnUbgBMv7R9nS8PRx7zW+B7xaA13emF6xoyeYpq3ZZfskZssDtr02H
+	 yRkJ5eJ0fXvEEGfoOHclFQy3LZRwPhj7+JbyV4gSdZW4PtO7uwWmPvRYHtHZGLByfv
+	 eP7exUgdwnUKe4ic8BxcxMJGyUFYKfhg+9JpKjLY3rmoNdAm1SaroswopOecHRRx7c
+	 wq72JO2GN/ErlCV6sRM5Fr6pbupRL5t/S/8jXzO9lv4j3NRq8+5c8uYObKfbRRgZx4
+	 EdjyAUheNXxsbSN2l9bHg0cgiD+3p7LG67JyAngQU98W5/U9fbLOIjt6hmFZpR2gse
+	 Jq6XZRX5itzHi7YG150hoZkW3P5DhNg5GQHnt+v0vwXumm+GlTtJiFrxGQUpYk0pTa
+	 /y+tmfN+W48BNaJVanyJgWA/LVcN07SD7KVSJpdwwxe0UX0UYalLXdF2e5x6/VcIZu
+	 8Q+5dIUUJw52RYBP394C7oUBoRcXL/O9cWfTOJrwX7rLRMy9llaC846Ki1L0ZgxNXs
+	 sqrYSXfJNpCVTm6CrZ63AmYE=
 Received: from danwin1210.me (localhost [127.0.0.1])
-	by localhost (Postfix) with ESMTP id CFD8510484E
-	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:34 +0000 (UTC)
+	by localhost (Postfix) with ESMTP id C4A0910484E
+	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:58:22 +0000 (UTC)
 From: Kyle Copperfield <kmcopper@danwin1210.me>
 X-OPENPGPKEY: Message passed unmodified
 To: openwrt-devel@lists.openwrt.org
-Subject: [PATCH 2/2] hostapd: add wpa_strict_rekey support
-Date: Fri,  8 Nov 2019 19:42:57 -0800
-Message-Id: <20191109034257.44951-2-kmcopper@danwin1210.me>
-In-Reply-To: <20191109034257.44951-1-kmcopper@danwin1210.me>
-References: <20191109034257.44951-1-kmcopper@danwin1210.me>
+Subject: [PATCH] dropbear: move failsafe code out of base-files
+Date: Fri,  8 Nov 2019 19:57:07 -0800
+Message-Id: <20191109035707.45458-1-kmcopper@danwin1210.me>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-Virus-Scanned: clamav-milter 0.101.4 at proxy
@@ -100,8 +97,8 @@ X-Spam-Status: No, score=0.0 required=2.0 tests=none autolearn=ham
 	autolearn_force=no version=3.4.2
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on proxy
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_194343_626581_EA2C7963 
-X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-CacheID: sfid-20191108_195832_991916_FD3020A9 
+X-CRM114-Status: UNSURE (   8.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -122,48 +119,71 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
   0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
                              valid
 
-Rekey GTK on STA disassociate
+Move dropbear failsafe code out of base-files and into dropbear where
+it should be.
 
 Signed-off-by: Kyle Copperfield <kmcopper@danwin1210.me>
 ---
- package/network/services/hostapd/files/hostapd.sh | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ package/base-files/files/lib/preinit/99_10_failsafe_login | 6 ------
+ package/network/services/dropbear/Makefile                | 1 +
+ package/network/services/dropbear/files/dropbear.failsafe | 8 ++++++++
+ 3 files changed, 9 insertions(+), 6 deletions(-)
+ create mode 100755 package/network/services/dropbear/files/dropbear.failsafe
 
-diff --git a/package/network/services/hostapd/files/hostapd.sh b/package/network/services/hostapd/files/hostapd.sh
-index 86b9932301..9378d5afd9 100644
---- a/package/network/services/hostapd/files/hostapd.sh
-+++ b/package/network/services/hostapd/files/hostapd.sh
-@@ -185,6 +185,7 @@ hostapd_common_add_bss_config() {
- 	config_add_int \
- 		wep_rekey eap_reauth_period \
- 		wpa_group_rekey wpa_pair_rekey wpa_master_rekey
-+	config_add_boolean wpa_strict_rekey
- 	config_add_boolean wpa_disable_eapol_key_retries
+diff --git a/package/base-files/files/lib/preinit/99_10_failsafe_login b/package/base-files/files/lib/preinit/99_10_failsafe_login
+index 728c63b2e8..16ad84f4ba 100644
+--- a/package/base-files/files/lib/preinit/99_10_failsafe_login
++++ b/package/base-files/files/lib/preinit/99_10_failsafe_login
+@@ -2,11 +2,6 @@
+ # Copyright (C) 2006-2015 OpenWrt.org
+ # Copyright (C) 2010 Vertical Communications
  
- 	config_add_boolean tdls_prohibit
-@@ -267,7 +268,7 @@ hostapd_set_bss_options() {
- 	local wep_rekey wpa_group_rekey wpa_pair_rekey wpa_master_rekey wpa_key_mgmt
+-failsafe_netlogin () {
+-	dropbearkey -t rsa -s 1024 -f /tmp/dropbear_failsafe_host_key
+-	dropbear -r /tmp/dropbear_failsafe_host_key <> /dev/null 2>&1
+-}
+-
+ failsafe_shell() {
+ 	local console="$(sed -e 's/ /\n/g' /proc/cmdline | grep '^console=' | head -1 | sed -e 's/^console=//' -e 's/,.*//')"
+ 	[ -n "$console" ] || console=console
+@@ -17,5 +12,4 @@ failsafe_shell() {
+ 	done &
+ }
  
- 	json_get_vars \
--		wep_rekey wpa_group_rekey wpa_pair_rekey wpa_master_rekey \
-+		wep_rekey wpa_group_rekey wpa_pair_rekey wpa_master_rekey wpa_strict_rekey \
- 		wpa_disable_eapol_key_retries tdls_prohibit \
- 		maxassoc max_inactivity disassoc_low_ack isolate auth_cache \
- 		wps_pushbutton wps_label ext_registrar wps_pbc_in_m1 wps_ap_setup_locked \
-@@ -322,6 +323,7 @@ hostapd_set_bss_options() {
- 		[ -n "$wpa_group_rekey"  ] && append bss_conf "wpa_group_rekey=$wpa_group_rekey" "$N"
- 		[ -n "$wpa_pair_rekey"   ] && append bss_conf "wpa_ptk_rekey=$wpa_pair_rekey"    "$N"
- 		[ -n "$wpa_master_rekey" ] && append bss_conf "wpa_gmk_rekey=$wpa_master_rekey"  "$N"
-+		[ -n "$wpa_strict_rekey" ] && append bss_conf "wpa_strict_rekey=$wpa_strict_rekey" "$N"
- 	}
- 
- 	[ -n "$nasid" ] && append bss_conf "nas_identifier=$nasid" "$N"
+-boot_hook_add failsafe failsafe_netlogin
+ boot_hook_add failsafe failsafe_shell
+diff --git a/package/network/services/dropbear/Makefile b/package/network/services/dropbear/Makefile
+index 75a3264ebb..8c2918e8ab 100644
+--- a/package/network/services/dropbear/Makefile
++++ b/package/network/services/dropbear/Makefile
+@@ -156,6 +156,7 @@ define Package/dropbear/install
+ 	$(INSTALL_BIN) ./files/dropbear.init $(1)/etc/init.d/dropbear
+ 	$(INSTALL_DIR) $(1)/usr/lib/opkg/info
+ 	$(INSTALL_DIR) $(1)/etc/dropbear
++	$(INSTALL_DIR) ./files/dropbear.failsafe $(1)/lib/preinit/99_10_failsafe_dropbear
+ 	$(if $(CONFIG_DROPBEAR_ECC),touch $(1)/etc/dropbear/dropbear_ecdsa_host_key)
+ 	touch $(1)/etc/dropbear/dropbear_rsa_host_key
+ endef
+diff --git a/package/network/services/dropbear/files/dropbear.failsafe b/package/network/services/dropbear/files/dropbear.failsafe
+new file mode 100755
+index 0000000000..a98ede459a
+--- /dev/null
++++ b/package/network/services/dropbear/files/dropbear.failsafe
+@@ -0,0 +1,8 @@
++#!/bin/sh
++
++failsafe_dropbear () {
++	dropbearkey -t rsa -s 1024 -f /tmp/dropbear_failsafe_host_key
++	dropbear -r /tmp/dropbear_failsafe_host_key <> /dev/null 2>&1
++}
++
++boot_hook_add failsafe failsafe_dropbear
 -- 
 2.24.0
 
 
 
---===============7587965313943127851==
+--===============8772777519195364571==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,4 +194,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7587965313943127851==--
+--===============8772777519195364571==--

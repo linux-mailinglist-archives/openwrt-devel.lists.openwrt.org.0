@@ -2,27 +2,29 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27135F5D42
-	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 04:44:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67BA0F5D41
+	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 04:43:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
 	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
+	List-Post:List-Id:Message-ID:MIME-Version:References:In-Reply-To:Date:To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4MfWgliWXk0V1LRLWxa61fclOqtoIbrcOw2z3F7qzL4=; b=n5N
-	KQV4syvktI+nWTHTgEfX8Kp6Ft3mpAS8Csx9uYFmRbXk1HIBVac45x/5IGpcqXIWdYprELV3AigmG
-	m60/8jMQVy7CdHnArOSD6kUIU2ds0MEiZ5eTivHfH2s/qTM5VJGvrU8qF982W1iNrAEwaBMY/NTYU
-	I8SRK4GINL50USDilgxGE7oPW3MB+iBM7lbRwEdYhvcF17PfO5C7DGTOcgYRwyGvAU+m53HZnOaKI
-	gIGcgg9ZPllRkckOKpFIHCYadO2q2R4lW1D5Kkg3ZWXKx0nx+U2vDnwIyjvauWP+3PSba0VQiYXT/
-	u7siiqtj/TvgL4DTvwDR5wg1xNSWhmQ==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=En7m3tpUzKQgmEzrp1nxzG7zE/4YmMZhSAaPF7s8oyE=; b=hOAsYPbUmg1iJ2wGvkzd3DXIL
+	ifIhTVK0uSE3k+nNiuY6NpeYEC+5xemP9mn4lrf6IWxpOrStNcHaiqcwVtDr8/YzQs2ZKHWbrrdv9
+	r31n4I6xdyTTDPEddx4CpUTmv4EXzXQYXme0eyO+6tZ2AEpFSh8kTlGsW0ffJLCwLMaTe3MUSsVXO
+	xHxot0funS6sZrXPTEISAvuaIb3blfGaNwdJPXMH7nga4EQH1h7b3YxO5q49SBnjC/sW7WiylgIi3
+	kMYEaLRtlYOXBK9ENyOj/eWPeclVEqnOht1J6lKdsSvSiayhpUUyuh5fFSDeuLtwrGFlp3wdsaefA
+	gXOHVf4/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTHfX-00011k-0b; Sat, 09 Nov 2019 03:44:11 +0000
+	id 1iTHfG-0000rL-GC; Sat, 09 Nov 2019 03:43:54 +0000
 To: openwrt-devel@lists.openwrt.org
-Date: Fri,  8 Nov 2019 19:42:56 -0800
+Date: Fri,  8 Nov 2019 19:42:57 -0800
+In-Reply-To: <20191109034257.44951-1-kmcopper@danwin1210.me>
+References: <20191109034257.44951-1-kmcopper@danwin1210.me>
 MIME-Version: 1.0
-Message-ID: <mailman.9968.1573271025.2486.openwrt-devel@lists.openwrt.org>
+Message-ID: <mailman.9967.1573271025.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
 List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 From: Kyle Copperfield via openwrt-devel <openwrt-devel@lists.openwrt.org>
@@ -36,13 +38,12 @@ List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>,
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
 Reply-To: Kyle Copperfield <kmcopper@danwin1210.me>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] [PATCH 1/2] hostapd: add dtim_period,
- local_pwr_constraint, spectrum_mgmt_required
-Content-Type: multipart/mixed; boundary="===============0888373231870533997=="
+Subject: [OpenWrt-Devel] [PATCH 2/2] hostapd: add wpa_strict_rekey support
+Content-Type: multipart/mixed; boundary="===============7587965313943127851=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0888373231870533997==
+--===============7587965313943127851==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -53,42 +54,44 @@ sending mailing list messages using the original "From" header.
 
 To mitigate this problem, the original message has been wrapped
 automatically by the mailing list software.
---===============0888373231870533997==
+--===============7587965313943127851==
 Content-Type: message/rfc822
 MIME-Version: 1.0
 Content-Disposition: inline
 
 Received: from danwin1210.me ([116.202.17.147])
 	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTHf5-0000qF-81
-	for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 03:43:45 +0000
+	id 1iTHf5-0000qG-EH
+	for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 03:43:44 +0000
 Received: from localhost (unknown [10.8.3.3])
-	by danwin1210.me (Postfix) with ESMTPA id 24BE51FD77
-	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:31 +0000 (UTC)
+	by danwin1210.me (Postfix) with ESMTPA id 1E4A01FD78
+	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=danwin1210.me;
-	s=mail; t=1573271014;
-	bh=xSjnP8RdCHMk8hmzMcUQkzyha87os/SRZXmGvBWnZTs=;
-	h=From:To:Subject:Date:From;
-	b=eTO/uyWwrTxJ3Kj0I479Xn3TG6SNtk6oa/Q1oWxAQN46b5KiYrUPRcc/qTL/JlwVm
-	 KhWvIjC1prnRabok8507OygDNqz8OQI2FehATzf2hGeidb/wp0jSKhReEo2Je9yA1v
-	 WEM+kxTHX4BW/jVmoZzS9C4ByvH848jGY6U2Ex8pEvZVKsFJeXQ6oqDs4e9q6RpIjF
-	 NgnTFC8G1iLNkxYfzKJvYPGmN5eMl399g0P+JVWMUVunIRrfVQqn0Kru064sqs7PZW
-	 PE+ZsQuFeqxQHJApFBejEdGu8CisMicTjuzRFZhLWu+kApeE1XzbZGkjOyjbFqRmGn
-	 zjgsKefrXsoFEyOvQ6dfd0gc3Hbba3iHUe+Td+RwUhTKKycnxIL9iOSQQ85R7l8Y2q
-	 aRXTMTbQUXBkTuJQbZV/HG7aTM/PSlSvhzzVBCeFmzYp9+A/PiD+waWCPdcJTafQ7T
-	 rFS7UjtjiC2IYEj/2fax6iD9yu2REYl/NTXMiir2wghWp7iJ5LM1Q8sEUw0FpjCzlK
-	 A20lB7jteUpo/zX7e5zdvviKKihmWP49BIp9gyRVPjQccnU0y6XfrXCOiy2Vx5rzn+
-	 H41PzSzHLPMagrbHSh+92V2IxwyGatubiTgycIg/GNSN4AxMyVUerUnFuOhsFQqfK1
-	 jXDf7DhskteDQxrAcJTzWtqY=
+	s=mail; t=1573271015;
+	bh=/a3Bhew+TYUqRKMlQOQtBqIPbY+jyyilAzMM8YwyNKI=;
+	h=From:To:Subject:Date:In-Reply-To:References:From;
+	b=j6fXrQyUGzRWmZJru3yAKb/O1cSq7hnroAvD6e6p6WYXl/EU+qdt9li8NmWhMgZIV
+	 056PWzNYml+XfRVY7f3F5TQoQPnIGyyXRfhz3IeYMpuPsG6Ew4Z5UeaV3fz6g0EGRj
+	 EQiePm1P+L1diKU5+568UvLVTINGt3/4COuzzokmrDcZPiQysqLaokISJPau3MsZkz
+	 X4JDTmgaBmqA+6qclYMMu+yhH1ngtyEmUVLdbym5FnzNm6Es29JUq4cs+oiC/oWsGI
+	 nbP2Ehm9qrKIDtBmv7qVourOXXtVvbCeanZhdsnJDPQ5KN9gDLjt/prX27GcD2fk+n
+	 HZNgB2U2l5Wi2fEErs5LwoluMprv3wc7GiakUX4xucdbXCIXBpCSz7cgR3AlQZ+8T9
+	 RjN/DdV6lnlgrtF5/+WzIRdHgk/2rVtmQGCNQQVW8wMqqgH0RNpliuk+yWchnLAwzF
+	 qAMyqi8udg8kLgcS/EW8UbpOLCYvi1+6FSHxWuL+0niCq0ekQJOP7+QGSRGUVzfl7A
+	 0rsbycF/ksTro8E8HkCIYzJHRZQBqHn4rTPAXnKIAcks6zfaLd0B2munjVmbNLxQHn
+	 IDDJ6MS/aZWv0i6yVlr4to9PgqI9qXvucLgTJyUYqG4DLErmG6FeNaLsyDoa3iLZkT
+	 RpIHSGApZLcaDDCmOH42Cfpo=
 Received: from danwin1210.me (localhost [127.0.0.1])
-	by localhost (Postfix) with ESMTP id CBD0410484E
-	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:30 +0000 (UTC)
+	by localhost (Postfix) with ESMTP id CFD8510484E
+	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:34 +0000 (UTC)
 From: Kyle Copperfield <kmcopper@danwin1210.me>
 X-OPENPGPKEY: Message passed unmodified
 To: openwrt-devel@lists.openwrt.org
-Subject: [PATCH 1/2] hostapd: add dtim_period, local_pwr_constraint, spectrum_mgmt_required
-Date: Fri,  8 Nov 2019 19:42:56 -0800
-Message-Id: <20191109034257.44951-1-kmcopper@danwin1210.me>
+Subject: [PATCH 2/2] hostapd: add wpa_strict_rekey support
+Date: Fri,  8 Nov 2019 19:42:57 -0800
+Message-Id: <20191109034257.44951-2-kmcopper@danwin1210.me>
+In-Reply-To: <20191109034257.44951-1-kmcopper@danwin1210.me>
+References: <20191109034257.44951-1-kmcopper@danwin1210.me>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-Virus-Scanned: clamav-milter 0.101.4 at proxy
@@ -97,8 +100,8 @@ X-Spam-Status: No, score=0.0 required=2.0 tests=none autolearn=ham
 	autolearn_force=no version=3.4.2
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on proxy
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_194343_589611_33351E61 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20191108_194343_626581_EA2C7963 
+X-CRM114-Status: UNSURE (   7.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -119,84 +122,48 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
   0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
                              valid
 
-Allows dtim_period to be configurable, the default is from hostapd.
-Adds additional regulatory tunables for power constraint and spectrum
-managment.
+Rekey GTK on STA disassociate
 
 Signed-off-by: Kyle Copperfield <kmcopper@danwin1210.me>
 ---
- package/network/services/hostapd/Makefile         |  2 +-
- package/network/services/hostapd/files/hostapd.sh | 13 +++++++++++--
- 2 files changed, 12 insertions(+), 3 deletions(-)
+ package/network/services/hostapd/files/hostapd.sh | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/package/network/services/hostapd/Makefile b/package/network/services/hostapd/Makefile
-index 4f6420f503..86534054b8 100644
---- a/package/network/services/hostapd/Makefile
-+++ b/package/network/services/hostapd/Makefile
-@@ -7,7 +7,7 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=hostapd
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- 
- PKG_SOURCE_URL:=http://w1.fi/hostap.git
- PKG_SOURCE_PROTO:=git
 diff --git a/package/network/services/hostapd/files/hostapd.sh b/package/network/services/hostapd/files/hostapd.sh
-index 3c1504ca60..86b9932301 100644
+index 86b9932301..9378d5afd9 100644
 --- a/package/network/services/hostapd/files/hostapd.sh
 +++ b/package/network/services/hostapd/files/hostapd.sh
-@@ -90,6 +90,8 @@ hostapd_common_add_device_config() {
+@@ -185,6 +185,7 @@ hostapd_common_add_bss_config() {
+ 	config_add_int \
+ 		wep_rekey eap_reauth_period \
+ 		wpa_group_rekey wpa_pair_rekey wpa_master_rekey
++	config_add_boolean wpa_strict_rekey
+ 	config_add_boolean wpa_disable_eapol_key_retries
  
- 	config_add_string country
- 	config_add_boolean country_ie doth
-+	config_add_boolean spectrum_mgmt_required
-+	config_add_int local_pwr_constraint
- 	config_add_string require_mode
- 	config_add_boolean legacy_rates
+ 	config_add_boolean tdls_prohibit
+@@ -267,7 +268,7 @@ hostapd_set_bss_options() {
+ 	local wep_rekey wpa_group_rekey wpa_pair_rekey wpa_master_rekey wpa_key_mgmt
  
-@@ -106,11 +108,13 @@ hostapd_prepare_device_config() {
- 	local base="${config%%.conf}"
- 	local base_cfg=
- 
--	json_get_vars country country_ie beacon_int:100 doth require_mode legacy_rates acs_chan_bias
-+	json_get_vars country country_ie beacon_int:100 dtim_period:2 doth require_mode legacy_rates \
-+		acs_chan_bias local_pwr_constraint spectrum_mgmt_required
- 
- 	hostapd_set_log_options base_cfg
- 
- 	set_default country_ie 1
-+	set_default spectrum_mgmt_required 0
- 	set_default doth 1
- 	set_default legacy_rates 1
- 
-@@ -119,7 +123,11 @@ hostapd_prepare_device_config() {
- 	[ -n "$country" ] && {
- 		append base_cfg "country_code=$country" "$N"
- 
--		[ "$country_ie" -gt 0 ] && append base_cfg "ieee80211d=1" "$N"
-+		[ "$country_ie" -gt 0 ] && { 
-+			append base_cfg "ieee80211d=1" "$N"
-+			[ -n "$local_pwr_constraint" ] && append base_cfg "local_pwr_constraint=$local_pwr_constraint" "$N"
-+			[ "$spectrum_mgmt_required" -gt 0 ] && append base_cfg "spectrum_mgmt_required=$spectrum_mgmt_required" "$N"
-+		}
- 		[ "$hwmode" = "a" -a "$doth" -gt 0 ] && append base_cfg "ieee80211h=1" "$N"
+ 	json_get_vars \
+-		wep_rekey wpa_group_rekey wpa_pair_rekey wpa_master_rekey \
++		wep_rekey wpa_group_rekey wpa_pair_rekey wpa_master_rekey wpa_strict_rekey \
+ 		wpa_disable_eapol_key_retries tdls_prohibit \
+ 		maxassoc max_inactivity disassoc_low_ack isolate auth_cache \
+ 		wps_pushbutton wps_label ext_registrar wps_pbc_in_m1 wps_ap_setup_locked \
+@@ -322,6 +323,7 @@ hostapd_set_bss_options() {
+ 		[ -n "$wpa_group_rekey"  ] && append bss_conf "wpa_group_rekey=$wpa_group_rekey" "$N"
+ 		[ -n "$wpa_pair_rekey"   ] && append bss_conf "wpa_ptk_rekey=$wpa_pair_rekey"    "$N"
+ 		[ -n "$wpa_master_rekey" ] && append bss_conf "wpa_gmk_rekey=$wpa_master_rekey"  "$N"
++		[ -n "$wpa_strict_rekey" ] && append bss_conf "wpa_strict_rekey=$wpa_strict_rekey" "$N"
  	}
  
-@@ -154,6 +162,7 @@ hostapd_prepare_device_config() {
- 	[ -n "$rlist" ] && append base_cfg "supported_rates=$rlist" "$N"
- 	[ -n "$brlist" ] && append base_cfg "basic_rates=$brlist" "$N"
- 	append base_cfg "beacon_int=$beacon_int" "$N"
-+	append base_cfg "dtim_period=$dtim_period" "$N"
- 
- 	json_get_values opts hostapd_options
- 	for val in $opts; do
+ 	[ -n "$nasid" ] && append bss_conf "nas_identifier=$nasid" "$N"
 -- 
 2.24.0
 
 
 
---===============0888373231870533997==
+--===============7587965313943127851==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -207,4 +174,4 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0888373231870533997==--
+--===============7587965313943127851==--

@@ -2,134 +2,209 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 576ABF5CCE
-	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 02:44:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27135F5D42
+	for <lists+openwrt-devel@lfdr.de>; Sat,  9 Nov 2019 04:44:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ki28MtaoahaywDw8NcRNzyRvBgIBXEiWWvNK4C2hhHY=; b=jnUch480S1G9kJ
-	QwolgNG57QbSqieZBE260KA2oXiN9i8vzN/GDdAXxRhowjcXItSak6iv1tszGNJyY9eMyhomL4ZsQ
-	Yb/1JtiWeV4TxmAr6PECnyq86bjch9SwUc782edsfd2kw+TCwWe/PidM2C4milweAW0kI/MWw3x1t
-	LK2lUbbmvBVxo+nWScBSIS+IZW+Hugdcj1CPbIP5VkNy0uQWPOg+brr0Os8LdB4+U0BVorZDjvc53
-	JREj6qki19oBRGAS7TbIxig9etGGyfs82Dixl98aeAVfcGebeqAbZRysihypzJ0KUxnTlkQh3cU3m
-	4pf95klMPqZvsVh6x3wQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4MfWgliWXk0V1LRLWxa61fclOqtoIbrcOw2z3F7qzL4=; b=n5N
+	KQV4syvktI+nWTHTgEfX8Kp6Ft3mpAS8Csx9uYFmRbXk1HIBVac45x/5IGpcqXIWdYprELV3AigmG
+	m60/8jMQVy7CdHnArOSD6kUIU2ds0MEiZ5eTivHfH2s/qTM5VJGvrU8qF982W1iNrAEwaBMY/NTYU
+	I8SRK4GINL50USDilgxGE7oPW3MB+iBM7lbRwEdYhvcF17PfO5C7DGTOcgYRwyGvAU+m53HZnOaKI
+	gIGcgg9ZPllRkckOKpFIHCYadO2q2R4lW1D5Kkg3ZWXKx0nx+U2vDnwIyjvauWP+3PSba0VQiYXT/
+	u7siiqtj/TvgL4DTvwDR5wg1xNSWhmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTFmr-0003YH-JE; Sat, 09 Nov 2019 01:43:37 +0000
-Received: from mail-qt1-x82e.google.com ([2607:f8b0:4864:20::82e])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTFmi-0003XH-5g
- for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 01:43:29 +0000
-Received: by mail-qt1-x82e.google.com with SMTP id l24so8805865qtp.10
- for <openwrt-devel@lists.openwrt.org>; Fri, 08 Nov 2019 17:43:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:from:subject:message-id:date:user-agent:mime-version
- :content-transfer-encoding:content-language;
- bh=pEBKdOEdqmD3vYrvkMHEmyC1+L+w3oziR5Lqx/0xg60=;
- b=XY8uQaDJXK1tpmu6kURhnN1H/m3Z8b9tHSWy1JqTdTGgQjso/8Yu1fJCyzG9taS9Uh
- l6mAuUaVioOixs7lhsHmVxr5DEoP6KRiqJucZs8vVUDaagTE2tqllhERLMWb9yCoG/LG
- FpO8/BJCwDrT23zNkrFfGbpGT0g1tCZCJbWofPnAnj2/TYrLYucW/DgBVqRoR9q3TJ/F
- YC7Ryr9nvhwbMWUCoSvZopShkzk4AtDaL3kNeMe9tN1BeXHeaDz0wgaHtFQCA/PbiWXw
- OSjkRbZ9WWV1B4ZQyIv1wj2KJfDkPfuTjkYoq6olFGoHkhuy0S7cZeWeKBVhQz7/Aq4D
- CC/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:subject:message-id:date:user-agent
- :mime-version:content-transfer-encoding:content-language;
- bh=pEBKdOEdqmD3vYrvkMHEmyC1+L+w3oziR5Lqx/0xg60=;
- b=RdMNbZJgYlD0gggmUqNIaTB94JLdIZ5ySq04VIObwvNc1sxUM6c7F252tywHiOFfb5
- H4t2XwDnQLE9PRgvAzQa+6ItKlX1U84EqpBELDLtRA/CeO1yv1BLqLsYcR0hQsa6Wgrx
- e+Y7brxDzTvHgUk9X6DEpeOpgPeBO4UwF2TxfZcmBW4Feo3Mba2rLRIFJ6Mkmi744crb
- E1kqxYEuXMWrnndAqRkNPmHXHjjkA7ybmXhZP//eT6Y9LeclD0L8k7VqdKpqWQBJbkBj
- BIHDt/AHJunZllEsMBKE8+E9Me/u+NkuP9ucwYz0k34bdndILFBhic6TiG2IV0tUZEih
- B++Q==
-X-Gm-Message-State: APjAAAXzBD8p49cqqec0Z+ZsyaZlRzR9g8Qzcok7UCYQ9EboHmwlOpKi
- wmKMTVcZ9SQ8tBuj1QjrybE=
-X-Google-Smtp-Source: APXvYqwjySP7/IdkVoq+QNFfp0ueTG0cy1Z2Gbp04Z/Xi3570Ahqcc4/HjVcK5UJ42Z6ZvGASQcvFQ==
-X-Received: by 2002:ac8:19db:: with SMTP id s27mr14826306qtk.347.1573263806376; 
- Fri, 08 Nov 2019 17:43:26 -0800 (PST)
-Received: from [192.168.8.121] ([184.75.221.35])
- by smtp.gmail.com with ESMTPSA id g25sm4007355qtc.90.2019.11.08.17.43.24
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 08 Nov 2019 17:43:25 -0800 (PST)
-To: openwrt-devel <openwrt-devel@lists.openwrt.org>, dedeckeh@gmail.com
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <0fe1f8f2-4236-cc6b-7246-20ffb6afcfa8@gmail.com>
-Date: Sat, 9 Nov 2019 09:43:11 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+	id 1iTHfX-00011k-0b; Sat, 09 Nov 2019 03:44:11 +0000
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  8 Nov 2019 19:42:56 -0800
 MIME-Version: 1.0
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_174328_237715_23003AC0 
-X-CRM114-Status: UNSURE (   8.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:82e listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bobafetthotmail[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] script hook for odhcpd
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.9968.1573271025.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Kyle Copperfield via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Kyle Copperfield <kmcopper@danwin1210.me>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Subject: [OpenWrt-Devel] [PATCH 1/2] hostapd: add dtim_period,
+ local_pwr_constraint, spectrum_mgmt_required
+Content-Type: multipart/mixed; boundary="===============0888373231870533997=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-I'm adding hotplug.d support to all DHCP events.
-For now only dnsmasq triggers them, with
-openwrt/package/network/services/dnsmasq/files/dhcp-script.sh
+--===============0888373231870533997==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-DHCP clients like udcpc and udcp6c are easy to add as the client calls
-a script hook with documented arguments and environment
-variables I can pass to scripts in hotplug.d/dhcp.
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-I'm not finding anything useful for odhcpd.
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============0888373231870533997==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-It does have a similar script, 
-openwrt/package/network/services/odhcpd/files/odhcpd-update
-that is called "lease trigger", and currently just calls dnsmasq to 
-reload hosts file.
+Received: from danwin1210.me ([116.202.17.147])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1iTHf5-0000qF-81
+	for openwrt-devel@lists.openwrt.org; Sat, 09 Nov 2019 03:43:45 +0000
+Received: from localhost (unknown [10.8.3.3])
+	by danwin1210.me (Postfix) with ESMTPA id 24BE51FD77
+	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=danwin1210.me;
+	s=mail; t=1573271014;
+	bh=xSjnP8RdCHMk8hmzMcUQkzyha87os/SRZXmGvBWnZTs=;
+	h=From:To:Subject:Date:From;
+	b=eTO/uyWwrTxJ3Kj0I479Xn3TG6SNtk6oa/Q1oWxAQN46b5KiYrUPRcc/qTL/JlwVm
+	 KhWvIjC1prnRabok8507OygDNqz8OQI2FehATzf2hGeidb/wp0jSKhReEo2Je9yA1v
+	 WEM+kxTHX4BW/jVmoZzS9C4ByvH848jGY6U2Ex8pEvZVKsFJeXQ6oqDs4e9q6RpIjF
+	 NgnTFC8G1iLNkxYfzKJvYPGmN5eMl399g0P+JVWMUVunIRrfVQqn0Kru064sqs7PZW
+	 PE+ZsQuFeqxQHJApFBejEdGu8CisMicTjuzRFZhLWu+kApeE1XzbZGkjOyjbFqRmGn
+	 zjgsKefrXsoFEyOvQ6dfd0gc3Hbba3iHUe+Td+RwUhTKKycnxIL9iOSQQ85R7l8Y2q
+	 aRXTMTbQUXBkTuJQbZV/HG7aTM/PSlSvhzzVBCeFmzYp9+A/PiD+waWCPdcJTafQ7T
+	 rFS7UjtjiC2IYEj/2fax6iD9yu2REYl/NTXMiir2wghWp7iJ5LM1Q8sEUw0FpjCzlK
+	 A20lB7jteUpo/zX7e5zdvviKKihmWP49BIp9gyRVPjQccnU0y6XfrXCOiy2Vx5rzn+
+	 H41PzSzHLPMagrbHSh+92V2IxwyGatubiTgycIg/GNSN4AxMyVUerUnFuOhsFQqfK1
+	 jXDf7DhskteDQxrAcJTzWtqY=
+Received: from danwin1210.me (localhost [127.0.0.1])
+	by localhost (Postfix) with ESMTP id CBD0410484E
+	for <openwrt-devel@lists.openwrt.org>; Sat,  9 Nov 2019 03:43:30 +0000 (UTC)
+From: Kyle Copperfield <kmcopper@danwin1210.me>
+X-OPENPGPKEY: Message passed unmodified
+To: openwrt-devel@lists.openwrt.org
+Subject: [PATCH 1/2] hostapd: add dtim_period, local_pwr_constraint, spectrum_mgmt_required
+Date: Fri,  8 Nov 2019 19:42:56 -0800
+Message-Id: <20191109034257.44951-1-kmcopper@danwin1210.me>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Virus-Scanned: clamav-milter 0.101.4 at proxy
+X-Virus-Status: Clean
+X-Spam-Status: No, score=0.0 required=2.0 tests=none autolearn=ham
+	autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on proxy
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191108_194343_589611_33351E61 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+                             medium trust
+                             [116.202.17.147 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
 
-It does not seem to be called with any argument or environmental variable I
-can use for hotplug scripts.
+Allows dtim_period to be configurable, the default is from hostapd.
+Adds additional regulatory tunables for power constraint and spectrum
+managment.
 
-I can also use its ubus API to get a list of ipv4 leases or ipv6 leases.
+Signed-off-by: Kyle Copperfield <kmcopper@danwin1210.me>
+---
+ package/network/services/hostapd/Makefile         |  2 +-
+ package/network/services/hostapd/files/hostapd.sh | 13 +++++++++++--
+ 2 files changed, 12 insertions(+), 3 deletions(-)
 
-Did I miss something? Any ideas to implement DHCP hotplug in ipv6 server?
+diff --git a/package/network/services/hostapd/Makefile b/package/network/services/hostapd/Makefile
+index 4f6420f503..86534054b8 100644
+--- a/package/network/services/hostapd/Makefile
++++ b/package/network/services/hostapd/Makefile
+@@ -7,7 +7,7 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=hostapd
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
+ 
+ PKG_SOURCE_URL:=http://w1.fi/hostap.git
+ PKG_SOURCE_PROTO:=git
+diff --git a/package/network/services/hostapd/files/hostapd.sh b/package/network/services/hostapd/files/hostapd.sh
+index 3c1504ca60..86b9932301 100644
+--- a/package/network/services/hostapd/files/hostapd.sh
++++ b/package/network/services/hostapd/files/hostapd.sh
+@@ -90,6 +90,8 @@ hostapd_common_add_device_config() {
+ 
+ 	config_add_string country
+ 	config_add_boolean country_ie doth
++	config_add_boolean spectrum_mgmt_required
++	config_add_int local_pwr_constraint
+ 	config_add_string require_mode
+ 	config_add_boolean legacy_rates
+ 
+@@ -106,11 +108,13 @@ hostapd_prepare_device_config() {
+ 	local base="${config%%.conf}"
+ 	local base_cfg=
+ 
+-	json_get_vars country country_ie beacon_int:100 doth require_mode legacy_rates acs_chan_bias
++	json_get_vars country country_ie beacon_int:100 dtim_period:2 doth require_mode legacy_rates \
++		acs_chan_bias local_pwr_constraint spectrum_mgmt_required
+ 
+ 	hostapd_set_log_options base_cfg
+ 
+ 	set_default country_ie 1
++	set_default spectrum_mgmt_required 0
+ 	set_default doth 1
+ 	set_default legacy_rates 1
+ 
+@@ -119,7 +123,11 @@ hostapd_prepare_device_config() {
+ 	[ -n "$country" ] && {
+ 		append base_cfg "country_code=$country" "$N"
+ 
+-		[ "$country_ie" -gt 0 ] && append base_cfg "ieee80211d=1" "$N"
++		[ "$country_ie" -gt 0 ] && { 
++			append base_cfg "ieee80211d=1" "$N"
++			[ -n "$local_pwr_constraint" ] && append base_cfg "local_pwr_constraint=$local_pwr_constraint" "$N"
++			[ "$spectrum_mgmt_required" -gt 0 ] && append base_cfg "spectrum_mgmt_required=$spectrum_mgmt_required" "$N"
++		}
+ 		[ "$hwmode" = "a" -a "$doth" -gt 0 ] && append base_cfg "ieee80211h=1" "$N"
+ 	}
+ 
+@@ -154,6 +162,7 @@ hostapd_prepare_device_config() {
+ 	[ -n "$rlist" ] && append base_cfg "supported_rates=$rlist" "$N"
+ 	[ -n "$brlist" ] && append base_cfg "basic_rates=$brlist" "$N"
+ 	append base_cfg "beacon_int=$beacon_int" "$N"
++	append base_cfg "dtim_period=$dtim_period" "$N"
+ 
+ 	json_get_values opts hostapd_options
+ 	for val in $opts; do
+-- 
+2.24.0
 
 
--Alberto
 
+--===============0888373231870533997==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0888373231870533997==--

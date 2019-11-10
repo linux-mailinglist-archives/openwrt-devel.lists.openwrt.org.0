@@ -2,86 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA43EF61E4
-	for <lists+openwrt-devel@lfdr.de>; Sun, 10 Nov 2019 01:11:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EED7FF62B3
+	for <lists+openwrt-devel@lfdr.de>; Sun, 10 Nov 2019 03:45:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D5heDFTXxf3EvAD3uBTlo8C2xOszPTEtAbkWpnm4MQo=; b=RNMRMOb6OnwqWa
-	QXxZ/y2tDaWHrTmNfCSUCm1hrlBsqo5rTPq4gaZ02smZQQYkKgRJS38sNoVTEdbJqwuxNcqvGaWuB
-	1d5HHEcxItfZucbZAgjF+6+IyMEw0yFXOIdhE/8uvoPYtugnuLS0K+aKRcEkWfQhGH8FyEG/wHrYJ
-	KVJwP34HujsfNGPSJxMpcmY8NWq8zeOf4YVk9EIAbP+2sZLYN0pR/qJ16/KuEledNw4d0JoSWxIpf
-	MOomLbA12XB6w8N2hTDUGRmpo/RdEisrmDhkxqRYTNj/wPxaGsC4oOjw26v3Pn+ssMY17rbs+Gss3
-	4EkISq3WrF8r7bnFW98Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=eAXEZP7pvLjFxGyxUAYp6eprRmlRMh7f40jnpeBm7z4=; b=qEloOQ2yJhHtT+BdsMYS7WOw4
+	BB904xZxuF4jyuQuq8VZEWBbMVu0u46faKhtjfltH+eeBTvMs8mwEQH90FdfH4OHPxLaOsPvMyGqi
+	hJdZ2StpSIHB7X+g3ij8QKMhXKgsUN4bvMVxkph1QhNTeURdk6PrDdV60RnInIHvLksTjmx31VvrO
+	6cKtZCTdOqGdivi0dm7ZyoN1iqZLJrFGQkpHvTeT7W6mymoQdhKew4JMCeJ7IV2OvR7QmxshrtrEe
+	1jHGIy1TeIFhLmFwpLxU3vhB2EBX6qf1BIMOsHG1I1oF7s/VofuxltV+9/NHxEiFVcWabpj2NVjvr
+	83y8dLyNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTap1-0004wR-1C; Sun, 10 Nov 2019 00:11:15 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iTdE2-0001mL-GV; Sun, 10 Nov 2019 02:45:14 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTaor-0004v2-FC
- for openwrt-devel@lists.openwrt.org; Sun, 10 Nov 2019 00:11:07 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c22so9815863wmd.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 09 Nov 2019 16:11:01 -0800 (PST)
+ id 1iTdDo-0001km-76
+ for openwrt-devel@lists.openwrt.org; Sun, 10 Nov 2019 02:45:01 +0000
+Received: by mail-pf1-x443.google.com with SMTP id p24so7806387pfn.4
+ for <openwrt-devel@lists.openwrt.org>; Sat, 09 Nov 2019 18:44:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=3P/rLyIOa+c8gy9WXCtyrfs4CZvodN3Sw4tJGL+EjTU=;
- b=vWjyKZGhXJ17MKpk83kvlm8+hyuoC6pMvNq3VG4qf7srX4uiU6sMr4VPolJOj3dXO2
- kUjZOlpIqdhf/stanpEHHZF1Am4p93xDd6eFmJ8K5y7GwyQKuDQtYbI2BtCTU4R6tkEE
- WNzglvCC8TyLNDe4Ah0hQBfQFEQLh2PKikA+GCHaqewTOBTWRpGVRzqN3exQG07cVoJQ
- APe7fpg9ELGI/c7DGacYaH0pjKXJIE9HWtDsV+Z85L5SfkVChYGNXUDgBnSu6cbeW+AO
- emvXVZmUWkoNRv+Z5H33MiZQaAM2tl1aPe6NZJFpG1aoxqRDzArKn+btGtWOvLeocLIz
- VejA==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=m/ciowkMGLoHnHGSrjaEXdYVlmVHyzs6t4bOhTEGaZA=;
+ b=k1NZzcO9saPxqLLJ4pfoH7evqGP1uQiFFKnT/c8UBkDMQExVISqIucmnB/aumWg1BG
+ GgV4F58nhXQSMfTB+agoldbbu22oCOga40KcIxVHlvAqExmwC5Nn1PLd5X1uI2o8PhZY
+ ulMQ0fk3xTG+xN3xaljmABa0PjEvv78uOiWuFyL+s37NVPGfmjpJMpzSMk3DaRCwyyOE
+ Go404ArMRqncMDIa8hP3xn2oRzLdCn7Ti/N2LJBnHA8/VUuEehYRQsI/6x8jjsui1DQS
+ CzF7SU7eLiRUS0gvrX/lpTyz7xG8/Ql1Tokw0yOUI1rt7wTH2cYpRDPd9msvf4L8rHdC
+ /r1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=3P/rLyIOa+c8gy9WXCtyrfs4CZvodN3Sw4tJGL+EjTU=;
- b=Kw3P2tqfg+cAkj45a/XufY4HS03KN8HwofdMgY6RlghL19OcwDpYdbAPcb05fXRC9h
- FaKtmIiINpHHLCVnviQESJP++q09WKul8HCCcA37njOU50mfobLzVy6e4fmsaYODSA11
- SsVMppwSG1n7okLiOw8Mu0ok84sE3OyKPI0cjAdOrDXuDS8vUEtPN5hOeB++6+fzuYbb
- yKZLdLrVuATp25YxCTqvE4DGS4w5Jv+8/ktfJrD6e61rMoaOce0bUmpJ6LQoHqwXRhcL
- wv5hYLikFn6ZsDF5bybYiH2BpNyUqoF3IDhijzdjgl/pQs62YfyrHRwmu3ts3g0mMnMn
- Nxsg==
-X-Gm-Message-State: APjAAAUIVoLNdCMspo1IIZp7fSKOSCyqMsEtHgncdCE8Ss3W52cp+UL4
- WM4eswqMLQ+BqkDIIxEFGIgQPhGx
-X-Google-Smtp-Source: APXvYqzz4j+5/BbXQLPdWxCmzY7AGucilsXX0zZRvWu2RV3nuwOy3ChpU3rwrIgfp/UYxfoOIrKv/Q==
-X-Received: by 2002:a05:600c:22cb:: with SMTP id
- 11mr14636691wmg.117.1573344658957; 
- Sat, 09 Nov 2019 16:10:58 -0800 (PST)
-Received: from debian64.daheim (pD9E29CD4.dip0.t-ipconnect.de.
- [217.226.156.212])
- by smtp.gmail.com with ESMTPSA id d20sm21334861wra.4.2019.11.09.16.10.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 09 Nov 2019 16:10:57 -0800 (PST)
-Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
- by debian64.daheim with esmtp (Exim 4.93-RC1)
- (envelope-from <chunkeey@gmail.com>)
- id 1iTaoL-0005BO-NM; Sun, 10 Nov 2019 01:10:33 +0100
-From: Christian Lamparter <chunkeey@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 10 Nov 2019 01:10:33 +0100
-Message-ID: <1966605.zbIeRJutgP@debian64>
-In-Reply-To: <20191109225217.19505-1-devel-sven@geroedel.de>
-References: <20191109225217.19505-1-devel-sven@geroedel.de>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=m/ciowkMGLoHnHGSrjaEXdYVlmVHyzs6t4bOhTEGaZA=;
+ b=hotUWQ/+Vv6fYd+u7wAFORw+a62m4J0oZLF5wmeFHbbsHeOwz8emHfX9cS01xIBChj
+ 42cLouIPdF3DQvlufZ60XmYZX5EYoyKWAwRmz640ZX7eb2MZyQx81kHoCGBJVevJCMYj
+ 6JwaZAFbVfusVBNKboQo/xUocY0FStJd2aliv+5H5Tn9eezAoORwrX4zAgLrDO58uyCF
+ SCD3XiNUlNZ2F8RdLyEcxX3uqTZs8LQkLrXGc0nDHDvRvU/2BH44RR2SnUjqcafAQqbd
+ gPeKws1q1TYlpQssQVwjKTUT8MahjsLECkZA1cahtRDwp5zrpk7NBKiI1b8E4tJjE/Bq
+ WkrQ==
+X-Gm-Message-State: APjAAAWKz0T6AzpYCuFJcDeehT7MIn5nglGe6ruTSXweehGaM1GO+uj1
+ FdmAUWflBUNxfVJ5zAkKRxeiX+d1WDY=
+X-Google-Smtp-Source: APXvYqzME8KzAjjiJfXD3tnVmWFYT/2JANY/pns27oAihoiUHz2AeyV5t1CFkHZNUe3ydPd0pDuWFg==
+X-Received: by 2002:a63:e145:: with SMTP id h5mr21321791pgk.447.1573353897649; 
+ Sat, 09 Nov 2019 18:44:57 -0800 (PST)
+Received: from [192.168.8.125] ([103.84.137.195])
+ by smtp.gmail.com with ESMTPSA id 137sm11731701pfu.173.2019.11.09.18.44.56
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 09 Nov 2019 18:44:57 -0800 (PST)
+To: Hans Dedecker <dedeckeh@gmail.com>
+References: <0fe1f8f2-4236-cc6b-7246-20ffb6afcfa8@gmail.com>
+ <CAJLcKsGAF9htce6a6i4Oc=zR8H+bwwpiH+zEcc4ZznL=OrnNkQ@mail.gmail.com>
+From: Alberto Bursi <bobafetthotmail@gmail.com>
+Message-ID: <41bfed4b-62a6-0551-79d4-1a5e9e47a6ad@gmail.com>
+Date: Sun, 10 Nov 2019 10:44:45 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
+In-Reply-To: <CAJLcKsGAF9htce6a6i4Oc=zR8H+bwwpiH+zEcc4ZznL=OrnNkQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191109_161105_530221_E45BF35F 
-X-CRM114-Status: GOOD (  16.33  )
+X-CRM114-CacheID: sfid-20191109_184500_284950_39E78A3B 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
+ provider (bobafetthotmail[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,8 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ipq40xx: fritz4040 depends on
- uboot-fritz4040
+Subject: Re: [OpenWrt-Devel] script hook for odhcpd
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,56 +101,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: mail@david-bauer.net, Sven Roederer <devel-sven@geroedel.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Saturday, 9 November 2019 23:52:17 CET Sven Roederer wrote:
-> The "append-uboot" macro is looking for the file "$(STAGING_DIR_IMAGE)/uboot-fritz4040.bin"
-> which is provided by the u-boot-fritz4040 package. If this is not build, image creation
-> will fail with "file not found".
 
-The FRITZ!Box 4040 is a special case as the "eva.bin" image file needs the
-u-boot binary to work as intended.
+On 10/11/19 03:41, Hans Dedecker wrote:
+> On Sat, Nov 9, 2019 at 2:43 AM Alberto Bursi <bobafetthotmail@gmail.com> wrote:
+>> I'm adding hotplug.d support to all DHCP events.
+>> For now only dnsmasq triggers them, with
+>> openwrt/package/network/services/dnsmasq/files/dhcp-script.sh
+>>
+>> DHCP clients like udcpc and udcp6c are easy to add as the client calls
+>> a script hook with documented arguments and environment
+>> variables I can pass to scripts in hotplug.d/dhcp.
+>>
+>> I'm not finding anything useful for odhcpd.
+>>
+>> It does have a similar script,
+>> openwrt/package/network/services/odhcpd/files/odhcpd-update
+>> that is called "lease trigger", and currently just calls dnsmasq to
+>> reload hosts file.
+>>
+>> It does not seem to be called with any argument or environmental variable I
+>> can use for hotplug scripts.
+> That's correct; odhcpd has no hotplug script support at the moment
+> triggered by DHCP(v6) lease changes.
+>> I can also use its ubus API to get a list of ipv4 leases or ipv6 leases.
+>>
+>> Did I miss something? Any ideas to implement DHCP hotplug in ipv6 server?
+> What is your exact use case ?
+>
+> Hans
 
-In OpenWrt's u-boot.mk, the u-boots for a target are usually get built/enabled
-because <https://github.com/openwrt/openwrt/blob/master/include/u-boot.mk#L63>
-adds something like this to the u-boot packages:
-|Default: y if (TARGET_ipq40xx_generic_Default || TARGET_ipq40xx_generic_DEVICE_avm_fritzbox-4040 || TARGET_DEVICE_ipq40xx_generic_DEVICE_avm_fritzbox-4040)
 
-This causes the needed u-boot package to be included automatically.
-Unless the package is either deselected actively, or accidentally.
-(This can happen when a existing .config in which the device was
-previously disabled, is grandfathered in. Because the existing
-"not set" will take preference [the diffconfig.pl will catch this]).
+I don't have an usecase for DHCP server lease events, so it's fine for me.
 
-Technically, the eva.bin isn't necessary. It allows for an easier
-installation, but nobody apart from the 4040 uses the append-uboot
-and there have been issues in the past with this as well.
+I started looking into this to have a working hotplug for DHCP client 
+events on IPv4
 
-Question is: should we add that dependency, ditch the eva.bin image
-(or make it so that it's optional - this requires some changes to
-the builtsystem) or decide that "this is a bug elsewhere"?
+(for a custom dynamic-DNS-like setup without having to poll WAN IP on a 
+loop).
 
-Cheers,
-Christian
-> ---
->  target/linux/ipq40xx/image/Makefile | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/target/linux/ipq40xx/image/Makefile b/target/linux/ipq40xx/image/Makefile
-> index a9c5e625af..7ae6f36baa 100644
-> --- a/target/linux/ipq40xx/image/Makefile
-> +++ b/target/linux/ipq40xx/image/Makefile
-> @@ -130,7 +130,7 @@ define Device/avm_fritzbox-4040
->  	IMAGES = eva.bin sysupgrade.bin
->  	IMAGE/eva.bin := append-uboot | pad-to $$$$(UBOOT_PARTITION_SIZE) | append-kernel | append-rootfs | pad-rootfs
->  	IMAGE/sysupgrade.bin := append-kernel | append-rootfs | pad-rootfs | append-metadata
-> -	DEVICE_PACKAGES := fritz-tffs fritz-caldata
-> +	DEVICE_PACKAGES := fritz-tffs fritz-caldata u-boot-fritz4040
+I've though that if someone has added hotplug to DHCP server in ipv4 
+then it might make sense for IPv6 too
 
+-Alberto
 
 
 _______________________________________________

@@ -2,141 +2,162 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65622F67FB
-	for <lists+openwrt-devel@lfdr.de>; Sun, 10 Nov 2019 09:25:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A991DF6819
+	for <lists+openwrt-devel@lfdr.de>; Sun, 10 Nov 2019 10:17:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hJuoYSk4TnXaD8GaPGrQDXiaEvvoFk1vaOXvVvPnOXY=; b=NfBPPBfCZt8Rnx
-	Jjd505LD3IdslY4gsxppVuxFZjwGsOwki2y/mz5IB7SUtQMBeLj7O7km+1wZQSWshkccQ0j61ilbC
-	vIU522SOblzvXZI14OkFou/3zwdhXVyBt1kxBIiKIBLVa4ROwyPRx0ktsFxT8Lk6Rzqh4RSTASqRd
-	aIDecHN4G679w7UTkUnkCKhUdLrKS1nOg6siuhVMViBXem/zs9be96QWKgfqA8I5L7syAn22g/5Ii
-	RTV4FwYB723jjTT1gw0exJP3dkSluqy7zUWDwhBUI53o5EC23DF4Qq0gNxMbSCJcGpADjZfQPe7ID
-	NLCmgmP3fsfSPjOfjeLQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/vQCB/bESBsvNWKmvWt1uAbNWl1/lrxnncuOIZJg1y4=; b=qQV
+	qUCPWhy9YUrKlGGyvQJG4aTfq1M23uRtUfPRmjSWLNKhXIbTXV12d8jngNgZ216UN5d55Yh6F7wgM
+	9vv2QZTzDmyjTvorsIztnFK6k46lH58+LArQGTznF25ByBU8RsWsQWNHbG9Jx83/L6idgxg+me1Tc
+	km7razGIuHNGAQk6vQ0FFTchyBHBSB7XG6YmUylQoV4RAIiVbJ1MHZminFjtycTvmJ8oQDjcShWDt
+	bfgEF42Er6nRqLN/2MJM9Vkujnopu5apGIPizhSM9rtZZgm06OsbRNYqvOth31ji9EH8Z6W7R+kOs
+	/cyJe62lLrhO9XETptH6NPqQz8KpY9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTiXR-0002qr-7p; Sun, 10 Nov 2019 08:25:37 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iTiXJ-0002qH-J7
- for openwrt-devel@lists.openwrt.org; Sun, 10 Nov 2019 08:25:31 +0000
-Received: from [IPv6:2003:e5:3f40:5600:b859:2c1a:f4ff:5970]
- (p200300E53F405600B8592C1AF4FF5970.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f40:5600:b859:2c1a:f4ff:5970])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id ED152222D7;
- Sun, 10 Nov 2019 09:25:20 +0100 (CET)
-To: Christian Lamparter <chunkeey@gmail.com>,
- Sven Roederer <devel-sven@geroedel.de>
-References: <20191109225217.19505-1-devel-sven@geroedel.de>
- <1966605.zbIeRJutgP@debian64>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <dccb8c97-db31-bcdb-66e5-1648993a9d1e@david-bauer.net>
-Date: Sun, 10 Nov 2019 09:25:20 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+	id 1iTjLE-0001uO-90; Sun, 10 Nov 2019 09:17:04 +0000
+Date: Sun, 10 Nov 2019 09:16:09 +0800
+To: <openwrt-devel@lists.openwrt.org>
 MIME-Version: 1.0
-In-Reply-To: <1966605.zbIeRJutgP@debian64>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_002529_927614_BA922EED 
-X-CRM114-Status: GOOD (  17.73  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] ipq40xx: fritz4040 depends on
- uboot-fritz4040
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.10100.1573377419.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: =?utf-8?b?5LiT5Lia5YWR5o2iIHZpYSBvcGVud3J0LWRldmVs?=
+ <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: 776371401@qq.com
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] v7yllvny3
+Content-Type: multipart/mixed; boundary="===============1296856318749963368=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Christian,
+This is a multi-part message in MIME format.
 
-On 11/10/19 1:10 AM, Christian Lamparter wrote:
-> Technically, the eva.bin isn't necessary. It allows for an easier
-> installation, but nobody apart from the 4040 uses the append-uboot
-> and there have been issues in the past with this as well.
-> 
-> Question is: should we add that dependency, ditch the eva.bin image
-> (or make it so that it's optional - this requires some changes to
-> the builtsystem) or decide that "this is a bug elsewhere"?
+--===============1296856318749963368==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-I definitely wouldn't ditch it, as the installation process is greatly
-simplified with it. Regarding the dependency of the U-Boot on the device -
-I'm not quite sure if this is the way to take, as we originally moved it
-from there to the bootloader itself. But maybe Sven can give us a hint how
-he stumbled upon this issue ;)
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-Best wishes
-David
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============1296856318749963368==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-> 
-> Cheers,
-> Christian
->> ---
->>  target/linux/ipq40xx/image/Makefile | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/target/linux/ipq40xx/image/Makefile b/target/linux/ipq40xx/image/Makefile
->> index a9c5e625af..7ae6f36baa 100644
->> --- a/target/linux/ipq40xx/image/Makefile
->> +++ b/target/linux/ipq40xx/image/Makefile
->> @@ -130,7 +130,7 @@ define Device/avm_fritzbox-4040
->>  	IMAGES = eva.bin sysupgrade.bin
->>  	IMAGE/eva.bin := append-uboot | pad-to $$$$(UBOOT_PARTITION_SIZE) | append-kernel | append-rootfs | pad-rootfs
->>  	IMAGE/sysupgrade.bin := append-kernel | append-rootfs | pad-rootfs | append-metadata
->> -	DEVICE_PACKAGES := fritz-tffs fritz-caldata
->> +	DEVICE_PACKAGES := fritz-tffs fritz-caldata u-boot-fritz4040
-> 
-> 
+Received: from vsmtp300.cm01.cloud-mail.jp ([27.120.129.17] helo=vsmtp302.cm01.cloud-mail.jp)
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1iTjKz-0001tq-1G
+	for openwrt-devel@lists.openwrt.org; Sun, 10 Nov 2019 09:16:54 +0000
+Received: from ail.co ([45.117.102.50]) by vsmtp302.cm01.cloud-mail.jp (3.11v) with ESMTP AUTH id xAA9GbJf029145 for <openwrt-devel@lists.openwrt.org>; Sun, 10 Nov 2019 18:16:37 +0900 (JST)
+Reply-To: <776371401@qq.com>
+Sender: kuto@ttv.ne.jp
+Date: Sun, 10 Nov 2019 09:16:09 +0800
+From: =?utf-8?B?5LiT5Lia5YWR5o2i?= <776371401@qq.com>
+To: <openwrt-devel@lists.openwrt.org>
+Subject: v7yllvny3
+Message-ID: <20191110091623628560@ttv.ne.jp>
+X-mailer: Foxmail 6, 13, 102, 15 [cn]
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="=====003_Dragon054630228111_====="
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191110_011649_297759_66E27822 
+X-CRM114-Status: UNSURE (  -4.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.9 (++)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (2.9 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [27.120.129.17 listed in list.dnswl.org]
+  1.2 RCVD_IN_BL_SPAMCOP_NET RBL: Received via a relay in
+                             bl.spamcop.net
+               [Blocked - see <https://www.spamcop.net/bl.shtml?45.117.102.50>]
+  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+                             mail domains are different
+  1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
+  0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
+                             digit (776371401[at]qq.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider (776371401[at]qq.com)
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+                             EnvelopeFrom freemail headers are
+                             different
+
+This is a multi-part message in MIME format.
+
+--=====003_Dragon054630228111_=====
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+5L2g5aW9IOaIkeWFrOWPuOmcgOimgei0uOaYk+asviDjgIHnvo7ph5Eg5qyn5YWDIOa4r+W4gSAg
+IOetieWFtuS7lui0p+W4gSAg5oiR5YWs5Y+45Y+v5YWI5LuY5Lq65rCR5biBICAg5Y+v5Y676LS1
+5YWs5Y+46KeB6Z2iICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgDQrlhajnkIPnu5PmsYcgIOaNouaxhyDlpJbmsYfkubDlhaXljZblh7ogLuWbveWGheWklueU
+teaxhyBf6aaZ5riv5rGH5LiwIOaBkueUnyDkuK3pk7Yg5bmz5a6JIOmmmea4r+WQhOWkp+mTtuih
+jCDnprvlsrjpk7booYwg6ZyA6KaB5LqG6KejIOivt+WKoFFRIOaIluiAhVZYDQpDb250YWN0IChR
+USkgOiA3NzYzNzE0MDENCkNvbnRhY3QgV2VDaGF0IDogbXJmMDgxOA==
+
+--=====003_Dragon054630228111_=====
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIEhUTUwgUFVCTElDICItLy9XM0MvL0RURCBIVE1MIDQuMCBUcmFuc2l0aW9uYWwv
+L0VOIj4NCjxIVE1MPjxIRUFEPg0KPE1FVEEgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PXV0
+Zi04IiBodHRwLWVxdWl2PUNvbnRlbnQtVHlwZT4NCjxNRVRBIG5hbWU9R0VORVJBVE9SIGNvbnRl
+bnQ9Ik1TSFRNTCA4LjAwLjc2MDAuMTYzODUiPjwvSEVBRD4NCjxCT0RZPg0KPFA+5L2g5aW9IOaI
+keWFrOWPuOmcgOimgei0uOaYk+asviDjgIHnvo7ph5Eg5qyn5YWDIOa4r+W4gSZuYnNwOyZuYnNw
+OyDnrYnlhbbku5botKfluIEmbmJzcDsg5oiR5YWs5Y+45Y+v5YWI5LuY5Lq65rCR5biBJm5ic3A7
+Jm5ic3A7IA0K5Y+v5Y676LS15YWs5Y+46KeB6Z2iJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7
+Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5i
+c3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7IA0KPC9QPg0KPFA+5YWo55CD57uT5rGHJm5ic3A7
+IOaNouaxhyDlpJbmsYfkubDlhaXljZblh7ogLuWbveWGheWklueUteaxhyBf6aaZ5riv5rGH5Liw
+IOaBkueUnyDkuK3pk7Yg5bmz5a6JIOmmmea4r+WQhOWkp+mTtuihjCDnprvlsrjpk7booYwg6ZyA
+6KaB5LqG6KejIOivt+WKoFFRIA0K5oiW6ICFVlg8QlI+Q29udGFjdCAoUVEpIDogNzc2MzcxNDAx
+PEJSPkNvbnRhY3QgV2VDaGF0IDogbXJmMDgxODwvUD48L0JPRFk+PC9IVE1MPg0K
+
+--=====003_Dragon054630228111_=====--
+
+
+
+--===============1296856318749963368==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1296856318749963368==--
+
+

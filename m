@@ -2,73 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9093F6BDF
-	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 00:33:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93078F6BE8
+	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 01:04:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=wvpxTZ0iJRCQr7h2qorp2EaXD8JnMFLaUTBY3Jeg9Xg=; b=YGTuakj55KqcHgX6/VrfKXX4Yi
-	o7ptA7JyWlUR7eEnGyVB/5x2UOJ68oj/ZB+W4NPs66lhqI+BUuW57qZNict1jlVMdbzk52oAWTBq2
-	+i956LLwnbJRBxH/K0YKve93+ggqd5Qke6E2Jm0hv/pU8x1RAbSzCEOss6LmlX+CnEn9Cx388ejdB
-	0G5RkdSJ871ynmDF6KslW1+0yO9K4Ieh5+fxlbLvDsnXIBrkVcklFf0ZIyHiPhOTZTWQiVx78SYfY
-	de4WP7UGQ7n5labotVKOYSDQr8BA041e90JADrWx+lAZIfz9NmQBnpa1sUtXDIY2DeRcLzKbA4HE+
-	dI6ypJ/w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pS+T/oLfi0gxrCc7iWhSRNpB5MjjCZs/dcRHXXw4gbE=; b=lV9ZB8iMlA1gn44zUPylzqvv8
+	YZmEgKcbQmiFLjup7rDE1/psvAGc/9Nlpr2L2LuNzglbs8uIZQeuWIlFenNfOzjxMsxeskFkNVadx
+	T9nnUIAG6E72Sm3KJC6lcssNfi3fgIf6w/7G+mMDrxOjccAQ/f6i5FwDJ16Gd91VNm1TDmHp76108
+	CvrDDMOgJf7t3GnW6SIE+xWQJNB4Rvqkaayo9DJqlZplHEFkEVEyK6KfQ6hz1+tcZTVj8cLIIe51u
+	1UF/0r222IncQbVREqazEHlxpxFrTWUkkFvb7LCU280R3E29/JV0T+FOwt3FZf3VX5/JQH8jdS938
+	H46kYySQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTwh9-0001Cu-SS; Sun, 10 Nov 2019 23:32:35 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1iTxCL-0001wr-GO; Mon, 11 Nov 2019 00:04:49 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTwh0-0001Bu-7F
- for openwrt-devel@lists.openwrt.org; Sun, 10 Nov 2019 23:32:27 +0000
-Received: from buildfff.adridolf.com ([188.192.135.195]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MvryJ-1hf0672Hhf-00svMV for <openwrt-devel@lists.openwrt.org>; Mon, 11
- Nov 2019 00:32:20 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 11 Nov 2019 00:32:17 +0100
-Message-Id: <20191110233217.2656-3-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191110233217.2656-1-freifunk@adrianschmutzler.de>
+ id 1iTxCG-0001wU-Av
+ for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 00:04:45 +0000
+Received: from desktop ([188.192.135.195]) by mrelayeu.kundenserver.de
+ (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1Mgvev-1hyDH83tBl-00hQLc for <openwrt-devel@lists.openwrt.org>; Mon, 11 Nov
+ 2019 01:04:40 +0100
+From: <mail@adrianschmutzler.de>
+To: <openwrt-devel@lists.openwrt.org>
 References: <20191110233217.2656-1-freifunk@adrianschmutzler.de>
+ <20191110233217.2656-2-freifunk@adrianschmutzler.de>
+In-Reply-To: <20191110233217.2656-2-freifunk@adrianschmutzler.de>
+Date: Mon, 11 Nov 2019 01:04:39 +0100
+Message-ID: <024c01d59823$9cd01ea0$d6705be0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:gqwu/yTyMIf6izDr5ccFBqcwpjl377EnROn2DlIWeEt2M/Bx7dK
- rE9U+daUpdbFE7cLeE7rtX4Q8ED8fPn7mtUdoqINj2/kVeKISJuN/dz94wCAfmaT1gzpCex
- oFzFSF3RKbUcfLdYHm6FEOWyUcHRgssUHQC/obmBUctuOiSHc+4yhor4HEMHDSYe1fyFPh4
- c3liE6NLsQGM3A8ulN+tw==
+Content-Language: de
+Thread-Index: AQMJquHU3m22B2z5eodzWmXHYWRQ6QGm3UQdpQ+6SlA=
+X-Provags-ID: V03:K1:ofjtN5xeSb+u/n8a3qpk0/ZHGDQFDBfKnLftpb8h0/IBeAeD0ea
+ uFSsAyh8lNAcg+3huxTFkqx9LP8WDjgvoJ4J32YVU5utFdHIJi28mIl/NsfcSiriE7Q61H5
+ T+SlgqJB3erwAPCMtZZwv/Zp+lil+JZEtRj1DntgqNwAyzz0UYaC1d49vH7QP4FhQPSxLlh
+ 16Bna3vwKs+5zreX8WwmQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:D1U5RpVkpmU=:EiFAZxctPAdbyR1eTYMUsA
- wTwM3K4EluJjww40YWpSdnJ2mps0PDEdFhntFBz0YMh+350XD0GcCyrrUuRlWWwWmuFvoQOrz
- EaGJyp+YjeJY689GYeRetrw/XJJ4SmW6IYP9twXIThwS3YfN2ntjyChLNlZGwBnIosuM92az7
- PppDVm4yYAfJsgO4UiIXOGl4x2R7q62RCZwmeVNOcLYuOpIfIeEZt+R9N+RllepjX1SgB9oBH
- sogFBtoc7PU5MyCE1yqx8Tt0Di55uJ7kF2wZFI/pJiaSZaccIKHEwF/+4pH+sF6OHz4wbL3Tp
- 3mPiHvNFBsgo61au1zTpUu6S018S/MZ+OKZZ7/BAK0ZBOplCHE4Bcb81mCtzx5DbsFTUDxgPy
- TQtjABBx3aApWvcU18b8LHstwjYlXzqar799XJTo1vlhAwWYUGaFIoHlh/1VPcnFNZ9WVX7KM
- USh1y7WnOONgk+JIg+8dr8RUgHoBgziN+E0Wl+2pQhpAj6vhc/QNiao5QWfS1LUofHWoSsRrj
- zQugRR0Ee6B5tgXp3Fq1OVf1nHT9Rb6UovalL4Vsi+92xg6OGs4YdcJySJ6UO9MeipiimvXG7
- CfajD+fbEW88v+R9F1QcXDRBO9m8a6OkAIEhCq8aj7ute3y32TIu5HlGP1XBSxY4HpMoaqrFI
- nTjS43xSVSDMwke3zwC7DQ8vdHo8NFbOkb1MFiuRYCIm3cUrH+0wIT54eaoeHkBhoN7wnI7YE
- 15KqEff26nC+9KuChXtuUqEo5rxDwMM2aclBk7vuimlM1nwFn9QqDjL9cVL9RW5X/r4rCRlDg
- ZHvQqEhoOgN0EXvjdGqx7sgOCQrHovJzq1dSRzuKwJn9H8pJRyeRJMM9F1k+tve+/RHMcYjLR
- iZZtonYNM3jKQC+in6dYrAhFtJ6IQg6qaAbwdm0j8=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:0jOOmcHkwD4=:D3nFkfucIiU1rmCjOclU4z
+ 9YAAke7pspzd7ebLDYDG4IL1jyAcD79Wq4/y+8mbkJb+jxbeQxAWhr+CdlbUGz/g0O1sPJhrt
+ JXk/tZ1ghKsbRu1ydrcnOwg/Qx6Z8YdAw+lPVzZZtUpWQpTIanJTf731iY8m8HGrXK4XYo+ER
+ PlFA50wUWVj3O2Qmbs8hHsx/59ScKxwls0bhDgGBRkgh2HtRBvg7DS/9R0sXY8EbJsQKvpGE5
+ yNnIoqPyFOLwDzMtPFYPeCefDDA/0yv3nPoklNQJg/vQfGUeYHqlwnMEIyJzFjT7RcH7eFDRf
+ 2/jTdNhPQtZzgddPraWRzA0V13MFaQMVtuzGJkGq+rMGqWkg1OKq7mNDpxxg/2oRype/MF2+7
+ pqO3SfKmplX8tuwjnVz1CHdVMy367ZMczpxDE+WgIx/4Y+OLVpYtZxEEb9haO8dUMjnzEUlxS
+ Zth3t+ckB6z+4RP5CBNCJtdYEz4CIVJNZCsB2tuavmXIhbwWyNjrbGPY1cs/5vgdVVgy4ap5k
+ Kb9ZzRRehebkY4NIU2w7hqPOzvnXlkPmWyYZQ3yDWwhh9VN8PPf3aUi72mn4ruvVcP8R8RT8S
+ aFjUVwbyDTJuImqh81wCVrtGe2bj+alZPTwB4ETZ0yPH4Dr0ipHSfBx5Mk5ytBInpNZ9CiGbL
+ IHbkf8hUiQoaPqHprHhF0E+5Xzx4U4yLAwDyKfTslJpnaQcJHfyxRscZM6xb7GDaKK9NX3QSZ
+ Ng98BfOAP06FAN//01RxQ+n+J0A7Ot4mhL2h5TXn7Cf4DTkKtYmeLh1/2Yqmtc6q6H7eiRZqS
+ ooIT1Tkbg531MdcJBC2Xv4BwB6cLnC5bGuL8rIZcPcC+uLXj7C4DJry/bEuO2OJ+UO6BzCywg
+ TRzh7XAhm0Cixt4RIEqThyJfQEVdFPEqkkuwSCeU4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_153226_555361_0B64DC08 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20191110_160444_672244_AB530977 
+X-CRM114-Status: UNSURE (   6.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
-Subject: [OpenWrt-Devel] [PATCH 2/2] ath79: read label MAC address from
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] ramips: read label MAC address from
  flash instead of using phy0/phy1
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -81,52 +85,78 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8659914380577447957=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This replaces all uses of $(cat /sys/class/ieee80211/phyX/macaddress)
-by retrieval from the proper flash locations. This will make
-02_network independent of WiFi setup again.
+This is a multipart message in MIME format.
 
-For the AVM FRITZ!WLAN Repeater 300E this replacement is non-trivial.
-As it would be the only device in the whole trunk to keep the old
-mechanism, this drops label MAC address for this device for now.
+--===============8659914380577447957==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=2mMncb0c+3druT=-="
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+This is a multipart message in MIME format.
 
----
+--=-=2mMncb0c+3druT=-=
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 
-Is there an easy way to retrieve phy0 MAC address from fritz-300e?
-Can it by deduced from the caldata extraction by assuming the
-standard MAC offset after reverse?
----
- target/linux/ath79/generic/base-files/etc/board.d/02_network | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+> diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> index ae03dc71b1..0de3804cdb 100755
+> --- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> +++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> @@ -188,7 +188,7 @@ ramips_setup_macs()
+>  	asus,rt-ac65p|\
+>  	asus,rt-ac85p)
+>  		wan_mac=$(mtd_get_mac_ascii u-boot-env et1macaddr)
+> -		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
+> +		label_mac=$(mtd_get_mac_binary factory 0x4)
 
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index 34f6e31047..a8ab07aef5 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -292,11 +292,10 @@ ath79_setup_macs()
- 	ubnt,nanostation-m|\
- 	ubnt,rocket-m|\
- 	ubnt,unifi)
--		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
-+		label_mac=$(mtd_get_mac_binary art 0x1002)
- 		;;
- 	avm,fritz300e)
- 		lan_mac=$(fritz_tffs -n maca -i $(find_mtd_part "tffs (1)"))
--		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
- 		;;
- 	avm,fritz4020)
- 		lan_mac=$(fritz_tffs -n maca -i $(find_mtd_part "tffs (1)"))
--- 
-2.20.1
+This one will have to be mtd_get_mac_binary_ubi ?
 
+--=-=2mMncb0c+3druT=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3IpZMACgkQoNyKO7qx
+AnBTEhAAgW1B2XaI+5zfiBnEetS0DOgg8J4YtJyg0EZ5O8HI+5jwaHHiCOdyeqOB
+eFVrmLZCNNOnbWaFjs6S2tZB68PTSUfuZRp06z3+tJi25E1izaAWrV7VMsVHO0yL
+yY/Ol0mH1jyctCRGtQlweMgDxzKvZBwHPmGmGI9pk0i0Q1qPCY1gHs1Tb8h56F2X
+A2sY+npECzIRoc4NiVGQLGmEoDF3R9bujZnCCVzJEOXAGIklZJ02AwEUUA6UAeti
+dL5Hr9EI2c9lzdjM9B33H4nYVjDsrT81dtMgSvMFaxH82kqzJr5doZwB3NnZEoEh
+xsZ8ZM09CVKC5RpwCicQyMuwRDnV7KmuJ9KnvtKoKKIDRlWuJtUcMyflxNT1OVf/
+Ldt8grBU4Z1Rpuv716Av1AVrrKF3b4qQnSv3R4ezrAzFsQQSTOJx8kB2+kAfBmak
+KA0UerPIIuj3gvg8kFN7S1/y/lXTj2KuITXNdrU8qYmNatjioM7Z2MHKSKyGze+y
+RXXDN2ErAiUb+CGIh/oDKCM7ECUIzcEvTsIo34zijD037OpTLJ3tS+80FAhkiQ5o
+CsF3u9Y1AmjaAjTszTuPpbRuMI0H0NvC5xykbYXoJiKqzghEAKO/E8KNU4FpYTfF
+GHohOBfhGWsG9KWvGNH3XEzK2e7IpGaiKFV8pr86xdGC4jeaXe0=
+=ree9
+-----END PGP SIGNATURE-----
+
+
+--=-=2mMncb0c+3druT=-=--
+
+
+
+--===============8659914380577447957==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8659914380577447957==--
+
+

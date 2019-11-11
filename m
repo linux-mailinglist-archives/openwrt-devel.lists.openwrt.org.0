@@ -2,99 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6771F73AA
-	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 13:15:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0DBDF7458
+	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 13:53:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q+ry863Flw8hOhXhoajCFbQFfX2e/2Wmn7yi9rygTZ0=; b=iPt9WMzFyrymLe
-	EnFowlt9KXqUPdUNqBMZEF6FWfWCJRhkGYoVnnXbdP6WCf4QwBAYsEBLRgdk90C+iaM2fjcACqvQt
-	/Fr++cKr/8CEJj260YulUpJyRLdHaCKAeoit04om0Yor1sCYUl3uIX81SAcg5i7AEEPyrxGymxqga
-	OPSboi0pvx3Y+pLrcMWg8sOu+WNEq8K88mDBOYU35ws0OYh6J5SIMNwvxtXKErAiAkMRjX1mA33fX
-	ge9+2jZv9+NSdAEsm+4mE/Pw5O6XaCM4dQM42up/8V/WwCEXAsgPEzwS8KpDOTFXoyNlbXLVu7l/v
-	ZzZ+7HWVIlWbZIdbwdRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5zUt3wjKa8VN56nP22gU1kiyvrUuG8NExlYG0spMHtw=; b=SinuOKRMgr6mUxWB1RpOctd7m
+	hbdKGReuBVUJBQ0RlbhRpCVmtChduvG21hjF4SDeyhanGlrTLJR+Q+HHEELlCEaEu+H07vmiXraaA
+	FwGKMtPsaGjQt1tvalYBEDzGN9rmGI34KgoUOYCDEW8PVMmcojmqB256DMCA1Yu3cNBN6F6zx/TqH
+	AL8gzQlRjS2wAKI6j/9q6XVnenPmZ7VH5w45VRzegt0plp0b44QDgUojwIpjlYdKsD2AJUJH8B4Zo
+	4X3igVoADdgaXS0nKaQqOwSBhdetcTCgHmLy5qop7JSenq8gmrz7H0S4BXgcmpujbuGtzfWiKgvzZ
+	GGebYKIXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU8ar-00040j-Dc; Mon, 11 Nov 2019 12:14:53 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iU9C6-0002n1-Nr; Mon, 11 Nov 2019 12:53:22 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU8aI-0003a5-P8
- for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 12:14:20 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k15so13534011lja.3
- for <openwrt-devel@lists.openwrt.org>; Mon, 11 Nov 2019 04:14:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Lp+s4MlNrW/Eo2/vM9LoZ1mVyBDuQ+Hi9fBbxAg4a60=;
- b=ujO5RcpCNMY/ntG5dKkj9Df2tyAgSXBf6GzyJz+x03DKcPDt3w2ku2j06/4g0uAO/a
- r7VV9FZZaUk4+14gjaB2oCFBUCx3gTuITEwBA5+vpFZ1jBGcJELBj1NAkECopLaqOYvI
- cMiymX/eC2Omo3IvHtxKJ5viHI/s4GOr/QLXQBtFdBI/cKfxx1kC7wg7Rbs4KSJvSU4X
- wKY8Z3ofSVSyrR10/YULQEnf9CzyOR2eBZqzc0j7tS8g3rXKNSsT07/gNxlCFyqz90rH
- PQllmnWYRcnWWq+LSxkiW7ka2JInxxCSp5baonVZCBI0Lf9nNr3qOh3FPlgEGDqWTVAW
- wHXw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Lp+s4MlNrW/Eo2/vM9LoZ1mVyBDuQ+Hi9fBbxAg4a60=;
- b=GxiCkSqzxn2+ectrg9Zgvmn8/Kg3TSyDJNw1cZsjXZtIHRej1z060krSFbiLxcM4JD
- QPeoKuevnt4/mM9z2+IgqP3ayZ/UFOJ5y3MkLQqm0ONaxG/qDFb0vmitrBOwGs2tIpdu
- 2xk6VpyPqbgWLNJpg4RlVFYYLKOmsywhVMeSaUZ/Wmmbume9mtx9Jqaojoi1vyKYeK1U
- umJLeYrsRJvlJHF9OzPFsqXnACiFxnGo9d57zS80i+wmKjT7PVX//mQb26EOIWoknOYT
- zLP/x8a5KLb/lom1rGj4pPXGVA++lZtqxZKNO2u5rw3EdpD/9dC4SJpE+rSurjguLEtt
- DzJQ==
-X-Gm-Message-State: APjAAAUiZdtP4QtH3LTyA7DF+duyFHVr2PCMELHrTE5OLUVlsWN3oFyr
- y621INu6LYT0IQ5rQN9ygZY=
-X-Google-Smtp-Source: APXvYqzaB7/AXorvJlCT0PafxJ6xZ1ZJ/pBfu1U1mN/dKAY6vhmw2XpCO9J37O6avPLUCgevJWQ/IQ==
-X-Received: by 2002:a2e:3311:: with SMTP id d17mr16448605ljc.237.1573474455814; 
- Mon, 11 Nov 2019 04:14:15 -0800 (PST)
-Received: from home.paul.comp (paulfertser.info.
- [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id h16sm8241515ljb.10.2019.11.11.04.14.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 Nov 2019 04:14:15 -0800 (PST)
-Received: from home.paul.comp (localhost [127.0.0.1])
- by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- xABCEDLi031809; Mon, 11 Nov 2019 15:14:13 +0300
-Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id xABCEDDc031808;
- Mon, 11 Nov 2019 15:14:13 +0300
-Date: Mon, 11 Nov 2019 15:14:12 +0300
-From: Paul Fertser <fercerpav@gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-ID: <20191111121412.GV1190@home.paul.comp>
+ id 1iU9By-0002mN-OP
+ for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 12:53:16 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MmU5P-1i3dzi0H5d-00iSAJ; Mon, 11
+ Nov 2019 13:53:11 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Paul Fertser'" <fercerpav@gmail.com>
 References: <20191103113247.9782-1-fercerpav@gmail.com>
  <20191109135320.25020-1-fercerpav@gmail.com>
  <010d01d59880$f2d30850$d87918f0$@adrianschmutzler.de>
+ <20191111121412.GV1190@home.paul.comp>
+In-Reply-To: <20191111121412.GV1190@home.paul.comp>
+Date: Mon, 11 Nov 2019 13:53:10 +0100
+Message-ID: <020301d5988e$f92ea7a0$eb8bf6e0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <010d01d59880$f2d30850$d87918f0$@adrianschmutzler.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Language: de
+Thread-Index: AQFlRFxqn6fDMSD1VqGll6s+n+BPMAHHmw79AYYwApYC66GG76g0w8RA
+X-Provags-ID: V03:K1:nhUqWD/YYL02Pwwx265HyNzM9VcPCO/wBbgn+Y1KVmLPnMnuxEp
+ p8ecxNV+tlKVAhfeIVc3HCSR+GdDvhwBRKl86gD6IooSdmPVhKBSkmOXbvus/GHiOUjNM0z
+ wJLn+v7pNZN7bdKxB+wONnIc/80R/l1gGRcw87ckeFWAvXx9XROi1LD4hhr6k7ZWxizA/A/
+ Wu3rR03+qZCe2uTlammTw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:YIhf2pbHJCk=:2nCF+l9JJ95fxn0DMLfsbA
+ 1rJ4mlnJmN6utFDgGXFZYHTYwg7yS7DsWOwILM1QXaJy7cPSAT/kliMbSw531DBfm8HBOJe9O
+ Rpxc1ymsDTQ+7w2UgjD1T7G4nDI6dvDFM7qfLO7710k8PGxVH3jTvNqlLGesE6MNCVf4Sc2Tj
+ nEYFyC5/T+R4k66LvbV4u+IvPNDcnwbhyo6ieL3i0CT1vVxz6AlDUrErpyUhhEIZmf1jMSacX
+ rEFzbhvuTzUUqWt/6RiKks+9RpnfkjEetTVrOgjxvI+aUYA8Yji+IP1Fm1P4X+0Ifl7ZSE8mw
+ 7MACgl2A2dP2x6Gyq4aR+NK3IQ617wmiA/SFqLc26bT5n28xlrMm4Vq4AuR2GRgamNAs6XTJg
+ wxVHsO89binj0jsopU0AadMmWpMHhzf0obmKOG7KoOktkV0XokvORrdryNJhzER/34Q0bwdyg
+ SIo7B2J1+uUWr2LrCQSjReDSDTFcn6lVDsAlp3M9OCx6HpEA6PE/m5Pn4O9CTfgBE8baKuqjQ
+ nTx/B+W23Rov7hCpquzZXwF9cCPFtd0usPWrGNXFsED2L6WLOMQSyu+z8I5nfkrK+co5d/PoV
+ dMDA1L2kkxT3Bal3zVJmxeXagcxSHKmM/cI4mCbMJ/qX7nCPgP71ZSZlQ/tWJlc/Y7w8cx7kP
+ nOjKmIogfoNm2qIETKhACvpmnbPdVIQRdVgJ8yQvQvY+CHTNjZuscDLtE2JLzcpDI3QCoBR70
+ SSbvlkB5HLZqM1Vc5z4i9kGnmza1OCYGHmYF1zTwBZrcYCNPQ3vLFPhBUJOBl9eNKGLGz8XTH
+ YJj/AwcBquOkF4fc5szHwFUcsWjnZNt9DzRBmJpQnHnVO6HZkujkO3/PNB+/lKuX6uv1Q5Sqo
+ 1ySdjSor1pxBI/t4ZGwB63uh1yY/0htAM24jkI23s=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_041418_888736_279F8960 
-X-CRM114-Status: GOOD (  20.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191111_045315_089618_761CF42B 
+X-CRM114-Status: GOOD (  23.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (fercerpav[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.17.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: add D-Link DIR-615 E4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -108,121 +83,155 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org, tmo26@gmx.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1353998057094631955=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Adrian,
+This is a multipart message in MIME format.
 
-Thank you very much for the review.
+--===============1353998057094631955==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=sIu/wg6cbf6fAd=-="
 
-On Mon, Nov 11, 2019 at 12:12:47PM +0100, Adrian Schmutzler wrote:
-> > +		power_green: power_green {
-> 
-> As stated above, change the _label_ to include a "led_" prefix, so
-> this becomes "led_power_green: power_green {". Same for power_amber
-> below.
+This is a multipart message in MIME format.
 
-Noted.
+--=-=sIu/wg6cbf6fAd=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-> > +			label = "dir-615-e4:green:power";
-> 
-> Sorry for causing confusion here. I have had a look into ar71xx mach
-> files and they consistent use "d-link" as vendor for the led
-> labels. Thus, I think it makes more sense to revert that to the
-> previous version "d-link:green:power".
+Hi,
 
-Why do you think so? If board name is a good idea and allows sharing
-led arrangements (and sharing is desired) then why should we stick to
-the old way of doing it?
+> > > +			label =3D "dir-615-e4:green:power";
+> >
+> > Sorry for causing confusion here. I have had a look into ar71xx mach
+> > files and they consistent use "d-link" as vendor for the led
+> > labels. Thus, I think it makes more sense to revert that to the
+> > previous version "d-link:green:power".
+>=20
+> Why do you think so? If board name is a good idea and allows sharing
+> led arrangements (and sharing is desired) then why should we stick to
+> the old way of doing it?
 
-> > +		wlan {
-> > +			label = "dir-615-e4:green:wlan";
-> > +			gpios = <&ath9k 1 GPIO_ACTIVE_LOW>;
-> > +			linux,default-trigger = "phy0tpt";
-> > +		};
-> 
-> At some point, we started to put ath9k leds into a node of their own:
+Because with boardname-specific LED labels you cannot share the LED definit=
+ions in device tree, so they cannot be moved into a common DTSI.
+Despite, if you had several similar d-link devices, you could also share de=
+finitions in 01_leds for those again.
+But 01_leds is just a workaround for stuff that cannot be defined in DTS, s=
+o IMO the impact on DT is more important than the impact on 01_leds.
 
-Noted.
+> > Well, we still do not know whether they are present in vendor
+> > firmware. I'm still skeptical about removing them.  Nevertheless, I
+> > won't prevent you from doing that, but please remove this comment
+> > from the DTS then and put an extensive description into the commit
+> > message instead.
+>=20
+> I've made specific effort to flash vendor firmware and confirmed by
+> testing on hardware that the vendor firmware doesn't need those
+> partitions. Isn't that enough? What important aspects did I not check?
 
-> > +&spi {
-> > +	status = "okay";
-> > +	num-cs = <1>;
-> 
-> Please add empty line after status.
+I haven't been able to extract that precise information from your previous =
+comments (I don't want to blame you for that, maybe I just overlooked it ..=
+.).
 
-Yep.
+If stock firmware works without those partitions, removing them is fine for=
+ me. Please explicitly state in your commit message (after telling about th=
+e removal) that you tested successfully on vendor firmware. :-)
 
-> > +			nvram: partition@30000 {
-> > +				reg = <0x30000 0x10000>;
-> > +				label = "nvram";
-> > +				read-only;
-> > +			};
-> 
-> Remove the node labels for the two partitions above, as they are not used anyway (but not the label properties).
+>=20
+> Regarding removing comments in DTS, this I am not yet sure is the
+> right way to go, please consider this rationale: DTS files are not
+> only OpenWrt-specific, they're supposed to specify hardware
+> arrangements for the upstream Linux, and for all the other low-level
+> software that can be booted on hardware too (such as barebox and
+> u-boot bootloaders). This said, whatever can't be expressed as a set
+> of properties should still be mentioned in the comments so that
+> whoever is dealing with this hardware has extensive information.
+>=20
 
-Noted.
+Well, I do not think we are using DTS files like this so far. Normally, wha=
+t's in board.d files is not added to DT "again".
 
-> > +			/*
-> > +			These two partitions are defined by CameoAP99 layout
-> > +			but not needed for vendor firmware: MAC address is
-> > taken
-> > +			from "nvram", language pack can be flashed separately.
-> > +
-> > +			mac: partition@3b0000 {
-> > +				reg = <0x3b0000 0x10000>;
-> > +				label = "mac";
-> > +				read-only;
-> > +			};
-> > +
-> > +			lp: partition@3c0000 {
-> > +				reg = <0x3c0000 0x30000>;
-> > +				label = "lp";
-> > +				read-only;
-> > +			};
-> > +			*/
-> 
-> Well, we still do not know whether they are present in vendor
-> firmware. I'm still skeptical about removing them.  Nevertheless, I
-> won't prevent you from doing that, but please remove this comment
-> from the DTS then and put an extensive description into the commit
-> message instead.
+> > > +&eth0 {
+> > > +	status =3D "okay";
+> > > +
+> > > +	/* ethernet MAC is stored in nvram */
+> >
+> > Remove those comments. You are setting up stuff in 02_network, which
+> > are relatively standard, so I think extra comments are not
+> > necessary.
+>=20
+> E.g. when (if at all ever) the kernel gains support for parsing nvram
+> partition, this comment will be changed to a proper DT property. But
+> it doesn't mean that a person looking at this file before that happens
+> should need to consult OpenWrt sources to understand how to deal with
+> this board properly.
 
-I've made specific effort to flash vendor firmware and confirmed by
-testing on hardware that the vendor firmware doesn't need those
-partitions. Isn't that enough? What important aspects did I not check?
+To make it really useful, you would at least have to add the "location" in =
+nvram to the comment, too. With your current solution, you'd still have to =
+look into 02_network to find out about that.
 
-Regarding removing comments in DTS, this I am not yet sure is the
-right way to go, please consider this rationale: DTS files are not
-only OpenWrt-specific, they're supposed to specify hardware
-arrangements for the upstream Linux, and for all the other low-level
-software that can be booted on hardware too (such as barebox and
-u-boot bootloaders). This said, whatever can't be expressed as a set
-of properties should still be mentioned in the comments so that
-whoever is dealing with this hardware has extensive information.
+And if you then really followed that strategy, you would also have to add c=
+omments for netdev/switch triggers, the caldata, etc.
 
-> > +&eth0 {
-> > +	status = "okay";
-> > +
-> > +	/* ethernet MAC is stored in nvram */
-> 
-> Remove those comments. You are setting up stuff in 02_network, which
-> are relatively standard, so I think extra comments are not
-> necessary.
+Anyway, my opposition is not strong enough to reject this right now, maybe =
+someone else can provide an additional opinion on the subject.
 
-E.g. when (if at all ever) the kernel gains support for parsing nvram
-partition, this comment will be changed to a proper DT property. But
-it doesn't mean that a person looking at this file before that happens
-should need to consult OpenWrt sources to understand how to deal with
-this board properly.
+Best
 
--- 
-Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
-mailto:fercerpav@gmail.com
+Adrian
+
+>=20
+> --
+> Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
+> mailto:fercerpav@gmail.com
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--=-=sIu/wg6cbf6fAd=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3JWbIACgkQoNyKO7qx
+AnDfHBAAxnVfN2qcmtlcsItC3vF8X+pTK6MPXFY8ZTUCquE+ezLkgIPYO6ddosAY
+Z8H9Ij5MyP4RRbio8S3ekxDIwmgiEwqFRWAEQIlWpxZfChZIJiq7zoGUju/SNRjv
+CTAULJWVGIjqUY5oSjBSVnpjeUf0ji98/dXjvnSWRXMqeWSUjUO/ugpBvnvBYetu
+apTDS9TZ8XBFKMDFjKJ6jgu0lpAvwQCp2BvfR3Jw0ThpBD69/elc9/Pjj3QNYBoH
+KxbJRpaq4pjelmkHZZfOeB4VYE++hFEeJ3mWvLORJI7TeIots6m82dfDH56WPU5y
+szauveaG5p8xXt9IEdvLudIiXpKohPPUFaU7eelUZHlqEyKJdrysxu3g0STgUgqZ
+a857nv+m+q5mOWrnS1HXPqBwzsEyQgLme2R8hdJrUiUTbCnOMZbXAgW7+Xtr3ClF
+BgldcpZQFRpURmJlbp4usRTxASfonFRZfpWeowYw1m0wXYKCTAVjKJvHcBzVfvc8
+wSgBtAKtPAZO5zvk2hfrthlOYWz81gXK8kYQ3Vw3omq3AFj+7s3PyxckjZ8X+i3w
+3k11ABqXLjF3DYXGjJ1Oezd6nNBBpHB+s2qtu9X1Yjxb1BpbW2+FLa+TKTWkqdfN
+H1vuNQMKLDCVspba+lKeLSaWX+rJYj9xp/QXt3wWTh+JUVqeNyE=
+=9sT9
+-----END PGP SIGNATURE-----
+
+
+--=-=sIu/wg6cbf6fAd=-=--
+
+
+
+--===============1353998057094631955==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1353998057094631955==--
+
+

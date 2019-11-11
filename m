@@ -2,61 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06DAAF7326
-	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 12:35:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE843F738D
+	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 13:03:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RhOteEYfmPZnLakJeBaJSljzU+DbSBiqLyIvkgT1QVM=; b=I94
-	xXBkmscngmaNMIANR+Vb1XIrKprD4ouGhpnhM+LDITmN+st/6XcU9pTfC+cW6rsakH+isMaDjmhg8
-	qm9TwmyjH9yucxhg5o1K42IdL5IcK/sNvH/dgaQsSCbeYrNJNHqEK6tCesDgWLLu5C4jlcr73bIV9
-	hrfJ6BCeivm4Yeg2dlUEDbiWY/5ezLSKiD5LxsiH4Y7YlE5ffO2uyYoihQkVCXY2o7fmMbl8VAWrZ
-	C0j4oLS8uNmQQEkAKckUFV+p5YJyJ2MWhNEWhcjZoTEeVMxkeAtP1g0K6fxgOWXOLU8aqX76vVFdQ
-	ZDtvSULy8ks8v3tf4qa9YvuJva1lfNQ==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=w8EG57BudQWU6fHwhPnhpSoADqR5lwPibVIE3lTHiTY=; b=dzDk0+Uylo+qQc/NAkfkFfGJ8
+	v7mBTf8cy/2oBpOQRX3pgiOQ2JhIxd21RScr4cskyWvpf51+j6Ft2n/0rL5KZFjoEmo8QDNVaYo3Z
+	/3buaCKqRP4p2J/Ih18JXO6eHlYrH/cza0JAsomTH3sm9lXtT0t/ZfxSSaNT6MslipT791NVN9c79
+	B4uQrqlGh3PK55VGQo8OrsjIwMX5uIykuj1vXHZAJcY2nypsgSavoUNMOqXbYleY/s8GM9xQvCLPK
+	AOXYs3vm2rmNgNkyjhbwLcK6ybIhWMxgNacHB5AKow/g2Q8xRi0vhyBPX+Xh6SzhyDD4flt2toGCt
+	4C5MoGbxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iU7wG-00015x-9Z; Mon, 11 Nov 2019 11:32:56 +0000
+	id 1iU8Ps-0007JY-VI; Mon, 11 Nov 2019 12:03:32 +0000
 Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iU7s1-00010L-2F
- for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 11:29:23 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MgNtR-1hyf7y3IMR-00htJZ; Mon, 11
- Nov 2019 12:28:29 +0100
+ id 1iU8Pk-0007IU-CE
+ for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 12:03:26 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MiJdI-1i18SG3OcQ-00fOAo; Mon, 11
+ Nov 2019 13:03:18 +0100
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
 To: "'Karl Palsson'" <karlp@tweak.net.au>
-Date: Mon, 11 Nov 2019 12:28:29 +0100
-Message-ID: <014701d59883$24819ef0$6d84dcd0$@adrianschmutzler.de>
+References: <010d01d59880$f2d30850$d87918f0$@adrianschmutzler.de>
+ <GVwQMCk7GxfGpCwB6ivL6JfwHDJy8udQsNMFKIBS2391@mailpile>
+In-Reply-To: <GVwQMCk7GxfGpCwB6ivL6JfwHDJy8udQsNMFKIBS2391@mailpile>
+Date: Mon, 11 Nov 2019 13:03:17 +0100
+Message-ID: <017901d59888$01a80360$04f80a20$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
 Content-Language: de
-Thread-Index: AdWYgkE/EUTCumcUQ5aNualj6M2H7gAABGeg
-X-Provags-ID: V03:K1:QPxa2a5KBOCpFxu/ENdxXcKlhtFVokp0tx4R4riU/1Jvy5qEo9Z
- guiO9GVDbPJp1WQNasKsWRdtln2vJ+gGiMQR8Y3nnm+E6fRNia7ztMwdX3hWZ8JZnVPBoXh
- clt4pkfQjSVCI+7ClcLUIgwXYRN9yhy0TvBdKtBG1fuqPJI3vSvcVYqzF8OS/xoaSXSZggO
- FncItvgUIF2f+Jke5OByQ==
+Thread-Index: AQGGMAKWIETr3+TQSVN2NGhscf0usAK0OoTPqA8MKHA=
+X-Provags-ID: V03:K1:h78BWvqcGJ0gQsAxPGRWiZrSNH8zgRrJAXAQ8gskNdfADqmVTqw
+ VsLoW7Mtq8u54H5aMNLz3+23/eU3BmG0eMIr6pZvHqeYBkJjBOgqtPzKz7PoyJPiTBqxGp6
+ UZVTOaf1/mwHN7+I0qwJAPP8gmTPgFoT5D1tIfNbWf8oS9jM0lMD9TIsx6ydu03VRNDqTWx
+ xGQmgZ/POErzBbA0FzgLg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:KpUSzcDjvaw=:xMHRLMpvXUTAF9WTwvZsHe
- +KdU3GEP7/xq4nWVNOlkNflAXtU5ju5NML/yGNUMDRhbyidqmWP85jGBjwwKRsPlsTa6LXRVh
- nGvejnZ654CqPL5BBOu1X801mcADzh1zWnqQZ+EipNktboTPn9TCt4nmJnlZ/I55vRvFi4m44
- QbezrxJ+x26acixAPwciOg1EXGpXIP7B+H1xDkkz0tzq2UJf9rXShdspljT2oEqAAoKHMMPSd
- 8jka6G8/8JeFpndYwnmPMaQ6yvQfOTi4MUAPx5c7E6ABcSbLHmjCWdAbMRAzlA2sx9pZJRaRu
- eNTJyawPf27H/y33mm66/7nEV3+QY6xCB4L6BcSJWlm+OsdODFT1USa1KCFfg7UshM6fu/mVg
- KjGpjaFhCY0NUN3p2i26d7QyK5BiOIbLCQzyszgtWKs5d1euLhe7Wi3AWGAnpXse2Gyei3P3Y
- 5E5s5DOCltpS+Ai9MBVgyApbuZ/LE60HMRV3qzquAIfwxKMbrlxiv4fNg+13AhNzPE9rEKO8f
- XehsykibZc5toalVODWgcElNLLv/X/oUNP2vrWBekufU9tyst5KCz0EcgamHXgSLOWU4Szvxa
- wtic8+QC0RK/3lOF5b5fxmDc2M1VYlNe2HguziMzeUYS6lgBf8WYV/2lZYlP9ueVkNNCidDxo
- L9J5A5BeCR5p58+LKhgsRBXggLOwbHL/n2vq7bTbXTaSbn5V55Gtu4hmb/PAGzvJe6mPO+aYb
- vaoyxqiKQxmZDQERklpMtCvI6f6PcyqMMVCAdkAprhKhxKYq9YWzHhfo5+3377wEr3EnJeFEk
- T+kvo2X3qf1Ua1Qh8sf9jZEjsM1GFdNJYbT3PAeD/56xD8wGUIK26h5FDu2dXNEZfHDxpnTzO
- T2PDaR2Oa19sw9lBxdD81QAuWGBpRXYNT/oM+iea8=
-X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ejSsowPMRkw=:rQFlzMKhKAJL1HDT7TbXGQ
+ QtMptjVES8uFAqFL6Ono6RA0k0uvAl+ABnfmd+xXrMcenqBxeHmc2zeyp36SF5wkQyGiagAYX
+ VdFGzDTkufcaWS4TQci344+P3XfK5eUfFi3FTdvIXQvc8EX1X02y9S45lg8arWzj2faNuXhbR
+ c3YryGW8GX7giY3yBK2rAnTTjfd8xjx9qfyvpT03Z8m0UM7YGct9HeZeXPcXgnxgGDCW13pJV
+ h3C2T29PuC5zeDgnpwT1UBqrOyOmLf5quqXgXDhAuqgKIvSYxDtq1vL/vK1KBoBGSnEHfyHx1
+ O3Uyb3fJMGWl68wtT7SnerN/OiR/rNeXFAIcIbP0lJciqfVUQ48z7AgBhXKVEIoCvqg+oWz7C
+ 4HwOpD8OTaIT4Z2Nb28K0QBOx8Zh73EwywzWHrPhNKctGEyNVc7RqS3QCNO6P5I4aWmXKe/GI
+ +pUYMSv18ZxoTOLbnxJtPjaScmT6AzvmaJtY3lfJ7dnr2IUJX/ESam4qNMXAgYwwlRfgTBSd5
+ ZlL+fPi+etUC4gqJ8Xa93GVcfmgIB2ir58KFFIo7JUb+GnvyaCQh3Rw/G90aBYTOQoOYTnie1
+ lCLaPT+D598XAGGEvr+m5CvIWKZW9mkUk7+r03n4iOsHJjFfNkuRd4LG1eNyiVF1A5Npem5Vh
+ xB+y/uwb5l59QeDCj6WFVb2voQUbFofewFT+SbuQs6aI3kzQyWeXxfRsBmmrniynlrVaVBsoB
+ 2ErgxarDE7jN1wnAxmkECkEYpJej3osv1HhrARPVAbB20hNdpaY2pgjy+z6/Y9seQkHVzmZCl
+ 5eT/W5QCYCAe5aaZFUwyACSqwfy9ZJ+GlShkuiQmVYHZalnHZc9ibx/adQMHiRwSDSZLezk06
+ OHCR0USexbPJsELpQbVcIHz/ItoirgMLnmFStXDlc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_032841_859788_511BA8D1 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20191111_040324_707494_187BA610 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,8 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [212.227.17.10 listed in wl.mailspike.net]
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] base-files: indicate initial setup
- by uci system config option
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: add D-Link DIR-615 E4
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,97 +82,99 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'openwrt-devel' <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============0114446157259343846=="
+Cc: 'Paul Fertser' <fercerpav@gmail.com>,
+ 'openwrt-devel' <openwrt-devel@lists.openwrt.org>, 'tmo26' <tmo26@gmx.de>
+Content-Type: multipart/mixed; boundary="===============1627087020066260070=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============0114446157259343846==
+--===============1627087020066260070==
 Content-Language: de
 Content-Type: multipart/signed;
 	protocol="application/pgp-signature";
 	micalg=pgp-sha256;
-	boundary="=-=hwc+ZxfiliMb0H=-="
+	boundary="=-=AEGDxnwKQu1vDv=-="
 
 This is a multipart message in MIME format.
 
---=-=hwc+ZxfiliMb0H=-=
+--=-=AEGDxnwKQu1vDv=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi Karl,
+Hi,
 
-> Adrian Schmutzler <freifunk@adrianschmutzler.de> wrote:=20
-> > This provides a uci system config setting that will be set only=20
-> > during initial setup. This can be used by uci-defaults script=20
-> > to determine whether they are run during initial setup or after=20
-> > a sysupgrade.=20
-> Given that it will be set again after every sysupgrade, I think=20
-> the name is unclear. (I don't have a better one)=20
+> > > +=C2=A0=C2=A0 =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 =C2=A0=C2=A0=
+=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 label =3D "dir-615-e4:green:power";=20
+> >=20
+> > Sorry for causing confusion here. I have had a look into ar71xx=20
+> > mach files and they consistent use "d-link" as vendor for the=20
+> > led labels. Thus, I think it makes more sense to revert that to=20
+> > the previous version "d-link:green:power".=20
+> Yes, and that used to be wrong :)=20
+> Originally upstream said it was meant to be board name here,=20
+> "d-link" was always wrong. (this was an interpretation debate on=20
+> "uniqueness" see=20
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit=
+/Documentation/devicetree/bindings/leds/common.txt?id=3D116b8e164116be537f5=
+0cdcce84d80be0facd0cf)
 
-No, it won't! That's the whole idea behind this thing. At the beginning of =
-config_generate, there is check whether /etc/config/system already exists (=
-simplified for this argument), and in this case the script is terminated. S=
-o, the option will _only_ be set after initial install or after "sysupgrade=
- -n ..." (or when someone deletes his/her /etc/config/system manually).
+Well, just from the commit message and documentation only the "LED class de=
+vice" has to be uniquely identified. That doesn't state in which set it has=
+ to be unique. One could also interpret this in a way that only the LEDs in=
+ a certain DTS (and thus for the device at hand) have to be unique, so you =
+cannot label two of them "usb".
 
-> You've also deleted it at 90-xxxx, so good luck anyone=20
-using 99 or similar to "be at the end".
+> Of course, nowadays, they actually say that label itself is=20
+> deprecated, so if we're moving forwards, let's just use "color"=20
+> and "function" attributes instead directly? (though the new=20
+> attributes are only available since 2019-07-xx timeframes)
 
-Well, I consider it good practice to _not_ use the last number. It will be =
-easy to move a script before 90-xxx, but if for some reason I don't see (th=
-ere always is one) it is required to run after, it will be easy to do. (One=
- could as well have chosen 95 ...)
+I'd like that, and I never understood why the device part was actually intr=
+oduced there. However, I'm too new as a committer to decide on that.
 
-> Having it baked in makes=20
-> it hard to do the difference between _first_ install and=20
-> upgrades/reinstalls.=20
+> (Or=20
+> just drop them, labels are always only needed if didn't name the=20
+> node clearly enough, or wanted characters you weren't allowed in=20
+> the node name)=20
 
-See above. Achieving that is actually the goal.
-
-> We solved this by having a uci-defaults script _set_ a flag.=20
-> (_not_ baked in) This allows scripts to detect that flag and know=20
-> whether it's truly a first boot or not.=20
-> With your setup, as a script author, all you know is that it's=20
-> the first boot since a sysupgrade, iff you run before 90_end.=20
-
-I do not get your point here.
+Those labels are used for luci AFAIK, and I'm not really familiar with the =
+mechanics of luci, so I cannot comment on this one.
 
 Best
 
 Adrian=20
 
---=-=hwc+ZxfiliMb0H=-=
+--=-=AEGDxnwKQu1vDv=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3JRdwACgkQoNyKO7qx
-AnDF2w/+KFbIyLWISjsztI7EXnv5vsPn8e7m/AvMC/VfGCSFoaVha31R5qJEBB7L
-Slv4rp8IFm7WPeVheMqGrTQRWS3zI2WP4SwVJMb6ipaoSkra549fZmR37sW7Cnus
-wPAOLSrTwvSqBM1Bc2MkHpd7MSq9CUxzrUCs49XpYPjiIxCg31I+8tBIAqNUuWz6
-Sc3bWM3P/VyNLwuHzc8yPVSZw+VMDBJThcMWq7pruRly3CyKV50fewUYx2OOurJF
-IPL8qZCvfdEWDIYJqNF+NNsdIM9TV58XFfs96tLQooD1z8qGK0iGjz8/S0D6ihpM
-UPSdjlNtNslytMH86zfJ40VuZKR81MeEHgZ43F9eYajFicIHpGLo3l5juAxRIeSK
-NTog3gAnA3gYW31n1CD2cSgOTxbsAaGpQizVgDfIhwVD7jL6V37xLdfooB8azGKg
-/osRGkmQLjAZZvKN6mXceBN/l0n8bUlvDzcGe6J8533yOo1DeFd+kKGsgwTFW2Hp
-xNeFC3vTD78c3SnQPiP8cFek++9fNEZ4JCDE0pmMpkEIRoFWKeK9vqXklhprPDOb
-kzV+mDs4/h/ER+Na66CSgduY2z3352SiUYQiJrJDRw2fcFCvjLONYIAly2X+CAPO
-bMi7d4PndhnhH5OhdJvoVOWKx2sLax32cJwd3zBI6zw5q6VO8Vw=
-=YFGP
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3JTgUACgkQoNyKO7qx
+AnA1cw/7BU4ibQlHG44hKdMZIzp1/LbmGIkMpRWTZe1lfvt9CQ5HI6hq+TtNdF6w
+7h2FfxrnAd7WqI3azbEkzVSBXuZ5ZiE3bkYw0oz66DA30qfusfjYJCX2XANCJdXS
+bvMV18pKAYFKwaccAjdK/cYUjReXMzgp5xPwow62bF/9wmgEQ1M8M3hSTD801TAy
+Miu95nsxqoON60DL31kFvvn88kHHRasYvBweH7tVbbrhhEYA7Hnl4AQhQycbdtvC
+AvUzJcTEk3jcQUkD8zxOJOZqugZGpGjx8/gypXSXuuIVoIA1YhgZTGxAMqfhlbmJ
+Sns0e92T1O9gTUC0qOAfOSoKz9RSBWwGDL5QoJg++9JrfmyKHINLxfdSvPsbwrgz
+DA1wTFD/Jz0RAMJn1DLz8XB4+3QkFm2sJzLolQ0dsjkHO8NtIly8KzK1A2WqUHb6
+UY9x+VZ77X3ALEHVj8PGBr8her8GsTegj/TXH8DD+tPdtuJtCHziuAjFoh2M81/i
+7RuRDWOTZ/Do0wN3jXIlg3Bdy5nL9ah4I/2oHRb+dCmBw56RN1WCTgo8NdCywVdt
+WfWfvVXLQcWsd5Pef77TgQu0Ntg4HZlmo7rVgqAwYD55DBSIkOZ0ydVT6ZSjZr4y
+c1PFY4g+ekYQ2gFJfJ7CnlLQSiy1mrlRJ93/64DeS9qhGTAN3Qs=
+=yrh1
 -----END PGP SIGNATURE-----
 
 
---=-=hwc+ZxfiliMb0H=-=--
+--=-=AEGDxnwKQu1vDv=-=--
 
 
 
---===============0114446157259343846==
+--===============1627087020066260070==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -182,6 +185,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0114446157259343846==--
+--===============1627087020066260070==--
 
 

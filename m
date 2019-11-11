@@ -2,70 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AF91F77D1
-	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 16:35:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89938F7810
+	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 16:52:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Jf8UH6wfv2ebXTi1XEJQZXbLW8qdch98PhDqw0EVYyA=; b=AVP8mZqIPzx+wc
-	Ctgi7tMAcw5pFksHJDsWqlLBAESaCfxHe56hQYmgdMoCgCugVsfS/PxVwWFuUNyNrYSUJcxwpBstj
-	I+9sLp9O2p4E4iIeAr+HCVAMnI5hqfV8v8S9UAo6/59GtynEvJrZubAM7WGi+zhEIVdLj1llGcAAP
-	dvS1QjMyr/q06TeVoTrM2C3LczX/ufTAFdWPquCe9kFkIhigmHFnhY+mwnVt3/nffYPNXNSrWEuiD
-	5Ezyg7gWco3n38PUchGrtgL7drfVgBeq5mQmJQ+1lVwsH6/yFyKUZPQ4hNttzE8bZfopoeNQoSChx
-	UAvNCrNdwfD2XLUyQiAg==;
+	List-Owner; bh=gSx1uh6SYIYXhLUD2KQeJsspjeGg2Ruhucg5++yufCk=; b=QqwAHxBRFxgLL0
+	2Ve0uQ/JY9/oUQr9hUYRgHjcGysRGsUUTr+6UpWKCUltQ+CFZ9I3MwYC7E7H0wTz2XmIfYvX0Ts4t
+	bU8kQK0eZjBZBbWtnuJzMupJDNRZo2nQfkqN5ILNxuYdKJThGrjQ6UEWJUjCh30Jx7P/6nA5k8a3i
+	iWRZi/ossCXxf50amEFX0qPT6I/cyho2GHorsKOqcr0uJJCi/MuKkD8DzAxtqGk+ChdsTctqgZXaU
+	ywm3o1ugzTYKBbQ8PVNQSJ3C2EiKdr8DtcBM+Wgxef3WMBfuVpoQ6cT9lytod2Dz5EnKC3Xo2kb16
+	e/uv2mWsTUtByJcCBE3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUBj0-0007pR-Mr; Mon, 11 Nov 2019 15:35:30 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1iUBzK-0005vw-Js; Mon, 11 Nov 2019 15:52:22 +0000
+Received: from li825-139.members.linode.com ([104.237.157.139]
+ helo=smtp.factglobal.ca)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUBis-0007oj-FJ
- for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 15:35:24 +0000
-Received: from buildfff.adridolf.com ([188.192.135.195]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MDhpZ-1ieJvR3dNH-00ApPQ for <openwrt-devel@lists.openwrt.org>; Mon, 11
- Nov 2019 16:35:14 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ id 1iUBzD-0005vI-3K
+ for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 15:52:16 +0000
+Received: by smtp.factglobal.ca (Postfix, from userid 1000)
+ id 37CDB7B94F; Mon, 11 Nov 2019 15:42:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kryma.net; s=mail;
+ t=1573486946; bh=Cx7V+MOC4kNNMkMOufzjWFSFkGNwqgXzjQr0s+NbSrQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=UmOpvC5cyK7MvsMp1Y8MAfKQCd9BSzWdUVpB4CguzzhOWCmEglrpxicysTxrcwAS1
+ hRGiN7xK0zjyWheidahoF2YRTuNwuDgif8M6Vcgq50VNtYtfKMS/3D11pdwA5XqQeW
+ YPXeR9bPcRYDmAt/pcy/pj2nyibTnbAPm76xmRR0=
+From: admin@kryma.net
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 11 Nov 2019 16:35:12 +0100
-Message-Id: <20191111153512.2917-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:9nzNlWehaLtLDbS3lKTfhw8z8SqkGJrEinia0X9G9SOisLrSypu
- X9t7ggGptH5s8QSC/sXQb4+Ny0ny5YhnFMG/KKYo0sjx3yrVJpdXf9JUCePq9HdaqlWSm0d
- m0B4igA44ZUy2xtmcOCJjbWVAsihGnOpKcT7ebHwubccQiQliDrzSrZRdAZ1nVNJtEmaH3X
- +Jr3Qrr9VxMdwmKuBXIWQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Co0rNL6ROtw=:YKAza9ZXsIh+I6gX7eepz9
- ulfC9srSAh17vG7xjKHim/DbAk7ApxVzx6ngB+CtJM01AOr0retDpe2wxRTSPtNYpLrm0L0FV
- s9b4qKRpsSJ97OsfAIdf9X8sUbzwVc6YlrJyy3ldSqAKuFcgZUlCHaGsP9E0c3gIWKZ6qfYmV
- WfmapHWcN7CXyfdIRfbRnO9QrS0vTe0ZubWblY29olmab1J/HzahFUz5tRNhBOxqmAfhoI+5r
- IyDO5LMMQqcfN1NTSlYp0325nVquuK/SSU7MsooD484JR1LYdKKEi4TYCfXhHlv0fPHef4rN9
- kzAcdZyqXXTryKxFNf0/MgYChBrc9RGnuwqXU18FoIs261mBTYaykQa+WOJRYWfWbaC8JVfep
- /R+Sjk7s9X4I7aQYlum2ZhkIrON4FCq9MWSaaG+4594B+VefAxxQ9DNdIFe1N0fJf/Ny5Fwz4
- x4Bsadcbyjd8rFCq2K4eYwE8S4Cls6zNjytPTpvHkKdyFqCbamZosLRHe17r6CbIFayxbfn59
- r1uurkBkQPDKKEaxzxg+qd29kL5RQt0YKt2sLxzTMrWSGnGT17+0gcn+5VvDxAGFyoYg+w/Ly
- 1ms5nAppR3XFY42xjz7/x7JV4Fl1hhf+2AzcbN7kymbSRjGey3p5eCRQuvZ0JqR+V5FLer3IN
- SQGJVl2D1CSbHt7u2exA9mJZ9R5Eu7D8axChuS7i3m1e+9w3enn1Wukcog/hCY6+8jBWAZDIM
- fyF54riAkaOvsFotHUeqVWO+otdg3kbYXuOIyOAQBF1SwoQ7TkO0TQEpDF9E5tNvUHNwZqJaR
- zC9hiDrI88Pm495wWu0edZP2FerWV+EraQCmxJFW36JYo9a0NkIyr+vh5y31Kik++3Uw78wbQ
- HLpoko9O2EJ25IiZnpznsDNGbnWQoEGFTe7QUhJiw=
+Date: Mon, 11 Nov 2019 15:42:24 +0000
+Message-Id: <20191111154224.1476-1-admin@kryma.net>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_073522_814638_AC5ED603 
-X-CRM114-Status: GOOD (  13.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_075215_154892_1CAD4A31 
+X-CRM114-Status: GOOD (  10.31  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [RFC/RFT PATCH] mediatek: split base-files into
- subtargets
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] ath79: add support for COMFAST CF-E130N v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,238 +66,237 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Pavel Balan <admin@kryma.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This splits some base-files across subtargets, as done previously
-on ath79 and ramips and also introduced for mt7629 subtarget here
-already.
+From: Pavel Balan <admin@kryma.net>
 
-While at it, apply the following fixes:
-- Remove lots of trailing whitespaces
-- Remove wildcard on unielec,u7623-02-emmc-512m
-- Remove inconsistent quotation marks in cases
+This patch adds support for the COMFAST CF-E130N v2, an outdoor wireless
+CPE with a single Ethernet port and a 802.11an radio.
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Specifications:
 
+ - QCA9531 SoC
+ - 1x 10/100 Mbps Ethernet, both with PoE-in support
+ - 64 MB of RAM (DDR2)
+ - 16 MB of FLASH
+ - 5 dBi built-in antenna
+ - POWER/LAN/WLAN green LEDs
+ - 4x RSSI LEDs (2x red, 2x green)
+ - UART (115200 8N1) and GPIO (J9) headers on PCB
+
+Flashing instructions:
+
+ The original firmware is based on OpenWrt so a sysupgrade image can be
+ installed via the stock web GUI.
+
+ The U-boot bootloader also contains a backup TFTP client to upload the
+ firmware from. Upon boot, it checks its ethernet network for the IP
+ 192.168.1.10. Host a TFTP server and provide the image to be flashed as
+ file firmware_auto.bin.
+
+Signed-off-by: Pavel Balan <admin@kryma.net>
 ---
+ .../ath79/dts/qca9531_comfast_cf-e130n-v2.dts | 142 ++++++++++++++++++
+ .../generic/base-files/etc/board.d/01_leds    |   8 +
+ target/linux/ath79/image/generic.mk           |  10 ++
+ 3 files changed, 160 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
 
-Note that the "left-over" platform_check_image for mt7622 looks odd.
-I kept the original logic for now, but I wonder whether this can be
-replaced by simple
-
-platform_check_image() {
-	return 0
-}
----
- .../mt7622/base-files/etc/board.d/02_network  | 29 ++++++++++++++
- .../mt7622/base-files/lib/upgrade/platform.sh | 25 ++++++++++++
- .../base-files/etc/board.d/02_network         |  8 ++--
- .../base-files/lib/preinit/07_set_iface_mac   |  2 +-
- .../base-files/lib/preinit/79_move_config     |  0
- .../base-files/lib/upgrade/platform.sh        | 38 +++++++++----------
- 6 files changed, 78 insertions(+), 24 deletions(-)
- create mode 100755 target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
- create mode 100755 target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh
- rename target/linux/mediatek/{ => mt7623}/base-files/etc/board.d/02_network (85%)
- rename target/linux/mediatek/{ => mt7623}/base-files/lib/preinit/07_set_iface_mac (97%)
- rename target/linux/mediatek/{ => mt7623}/base-files/lib/preinit/79_move_config (100%)
- rename target/linux/mediatek/{ => mt7623}/base-files/lib/upgrade/platform.sh (50%)
-
-diff --git a/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network b/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
-new file mode 100755
-index 0000000000..d719a35dec
+diff --git a/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
+new file mode 100644
+index 0000000000..457b12c54c
 --- /dev/null
-+++ b/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
-@@ -0,0 +1,29 @@
-+#!/bin/sh
++++ b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
+@@ -0,0 +1,142 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
 +
-+. /lib/functions.sh
-+. /lib/functions/uci-defaults.sh
-+. /lib/functions/system.sh
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
 +
-+mediatek_setup_interfaces()
-+{
-+	local board="$1"
++#include "qca953x.dtsi"
 +
-+	case $board in
-+	esac
-+}
++/ {
++	compatible = "comfast,cf-e130n-v2", "qca,qca9531";
++	model = "COMFAST CF-E130N v2";
 +
-+mediatek_setup_macs()
-+{
-+	local board="$1"
++	aliases {
++		serial0 = &uart;
++		led-boot = &lan;
++		led-failsafe = &lan;
++		led-upgrade = &lan;
++		label-mac-device = &eth0;
++	};
 +
-+	case $board in
-+	esac
-+}
++	leds {
++		compatible = "gpio-leds";
 +
-+board_config_update
-+board=$(board_name)
-+mediatek_setup_interfaces $board
-+mediatek_setup_macs $board
-+board_config_flush
++		pinctrl-names = "default";
++		pinctrl-0 = <&led_rssimediumhigh_pin>;
 +
-+exit 0
-diff --git a/target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh b/target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh
-new file mode 100755
-index 0000000000..396c814ab7
---- /dev/null
-+++ b/target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh
-@@ -0,0 +1,25 @@
-+platform_do_upgrade() {
-+	local board=$(board_name)
-+	case "$board" in
-+	*)
-+		default_do_upgrade "$1"
-+		;;
-+	esac
-+}
++		wlan {
++			label = "cf-e130n-v2:green:wlan";
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
 +
-+PART_NAME=firmware
++		lan: lan {
++			label = "cf-e130n-v2:green:lan";
++			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
++		};
 +
-+platform_check_image() {
-+	local board=$(board_name)
++		unused {
++			label = "cf-e130n-v2:green:unused";
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
 +
-+	[ "$#" -gt 1 ] && return 1
++		rssilow {
++			label = "cf-e130n-v2:red:rssilow";
++			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
++		};
 +
-+	case "$board" in
-+	*)
-+		echo "Sysupgrade is not supported on your board yet."
-+		return 1
-+		;;
-+	esac
++		rssimediumlow {
++			label = "cf-e130n-v2:red:rssimediumlow";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++		};
 +
-+	return 0
-+}
-diff --git a/target/linux/mediatek/base-files/etc/board.d/02_network b/target/linux/mediatek/mt7623/base-files/etc/board.d/02_network
-similarity index 85%
-rename from target/linux/mediatek/base-files/etc/board.d/02_network
-rename to target/linux/mediatek/mt7623/base-files/etc/board.d/02_network
-index faa2434241..3b71ffe3aa 100755
---- a/target/linux/mediatek/base-files/etc/board.d/02_network
-+++ b/target/linux/mediatek/mt7623/base-files/etc/board.d/02_network
-@@ -9,12 +9,12 @@ mediatek_setup_interfaces()
- 	local board="$1"
++		rssimediumhigh {
++			label = "cf-e130n-v2:green:rssimediumhigh";
++                        // No individual GPIOs matched this LED!
++		};
++
++		rssihigh {
++			label = "cf-e130n-v2:green:rssihigh";
++			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++			debounce-interval = <60>;
++		};
++	};
++};
++
++&pinmux {
++		led_rssimediumhigh_pin: pinmux_rssimediumhigh_pin {
++			pinctrl-single,bits = <0x10 0x0 0xff>;
++		};
++};
++
++&spi {
++	status = "okay";
++	num-cs = <1>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			uboot:	partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x010000>;
++				read-only;
++			};
++
++			art: partition@10000 {
++				label = "art";
++				reg = <0x010000 0x010000>;
++				read-only;
++			};
++
++			firmware: partition@20000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x020000 0x7d0000>;
++			};
++
++			nvram: partition@7f0000 {
++				label = "nvram";
++				reg = <0x7f0000 0x010000>;
++				read-only;
++			};
++		};
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&eth0 {
++	status = "okay";
++	phy-handle = <&swphy0>;
++	mtd-mac-address = <&art 0x0>;
++
++	gmac-config {
++		device = <&gmac>;
++		switch-phy-swap = <1>;
++	};
++};
++
++&wmac {
++	status = "okay";
++	mtd-cal-data = <&art 0x1000>;
++};
++
+diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+index fbb0d0ea03..3046d34605 100755
+--- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
++++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+@@ -47,6 +47,14 @@ comfast,cf-e120a-v3)
+ 	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
+ 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
+ 	;;
++comfast,cf-e130n-v2)
++	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
++	ucidef_set_rssimon "wlan0" "200000" "1"
++	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow" "wlan0" "1" "100"
++	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:red:rssimediumlow" "wlan0" "26" "100"
++	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
++	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
++	;;
+ comfast,cf-e313ac)
+ 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x02"
+ 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index 70631c20d0..48d6864ecb 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -258,6 +258,16 @@ define Device/comfast_cf-e120a-v3
+ endef
+ TARGET_DEVICES += comfast_cf-e120a-v3
  
- 	case $board in
--	'mediatek,mt7623a-rfb-emmc')
-+	mediatek,mt7623a-rfb-emmc)
- 		ucidef_set_interface_lan "lan0 lan1 lan2 lan3"
- 		ucidef_set_interface_wan eth1
- 		;;
--	'bananapi,bpi-r2'|\
--	"unielec,u7623"*)
-+	bananapi,bpi-r2|\
-+	unielec,u7623-02-emmc-512m)
- 		ucidef_set_interfaces_lan_wan "lan0 lan1 lan2 lan3" "wan"
- 		;;
- 	esac
-@@ -25,7 +25,7 @@ mediatek_setup_macs()
- 	local board="$1"
- 
- 	case $board in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		mac=$(cat /sys/class/net/wan/address)
- 		ucidef_set_interface_macaddr "wan" $mac
- 		;;
-diff --git a/target/linux/mediatek/base-files/lib/preinit/07_set_iface_mac b/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-similarity index 97%
-rename from target/linux/mediatek/base-files/lib/preinit/07_set_iface_mac
-rename to target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-index 3d04000738..7a73a2d84d 100644
---- a/target/linux/mediatek/base-files/lib/preinit/07_set_iface_mac
-+++ b/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-@@ -10,7 +10,7 @@ preinit_set_mac_address() {
- 	. /lib/functions/system.sh
- 
- 	case $(board_name) in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		if [ -b $RECOVERY_PART ]; then
- 			insmod nls_cp437
- 			insmod nls_iso8859-1
-diff --git a/target/linux/mediatek/base-files/lib/preinit/79_move_config b/target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-similarity index 100%
-rename from target/linux/mediatek/base-files/lib/preinit/79_move_config
-rename to target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-diff --git a/target/linux/mediatek/base-files/lib/upgrade/platform.sh b/target/linux/mediatek/mt7623/base-files/lib/upgrade/platform.sh
-similarity index 50%
-rename from target/linux/mediatek/base-files/lib/upgrade/platform.sh
-rename to target/linux/mediatek/mt7623/base-files/lib/upgrade/platform.sh
-index 9c99ee1c18..39dcb8e831 100755
---- a/target/linux/mediatek/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/mediatek/mt7623/base-files/lib/upgrade/platform.sh
-@@ -1,7 +1,7 @@
--platform_do_upgrade() {                 
-+platform_do_upgrade() {
- 	local board=$(board_name)
- 	case "$board" in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		#Keep the persisten random mac address (if it exists)
- 		mkdir -p /tmp/recovery
- 		mount -o rw,noatime /dev/mmcblk0p1 /tmp/recovery
-@@ -26,29 +26,29 @@ platform_do_upgrade() {
- 
- PART_NAME=firmware
- 
--platform_check_image() {                                                         
--	local board=$(board_name)                                                
--	local magic="$(get_magic_long "$1")"                                     
-+platform_check_image() {
-+	local board=$(board_name)
-+	local magic="$(get_magic_long "$1")"
- 
--	[ "$#" -gt 1 ] && return 1                                               
-+	[ "$#" -gt 1 ] && return 1
- 
--	case "$board" in                                                       
-+	case "$board" in
- 	bananapi,bpi-r2|\
--	"unielec,u7623"*)
--		[ "$magic" != "27051956" ] && {   
-+	unielec,u7623-02-emmc-512m)
-+		[ "$magic" != "27051956" ] && {
- 			echo "Invalid image type."
--			return 1                                     
--		}                                                    
--		return 0                                             
--		;;                                                   
-+			return 1
-+		}
-+		return 0
-+		;;
- 
--	*)                                                           
-+	*)
- 		echo "Sysupgrade is not supported on your board yet."
--		return 1                                             
--		;;                                
--	esac                                      
-+		return 1
-+		;;
-+	esac
- 
--	return 0                                                                                         
-+	return 0
- }
- 
- platform_copy_config_emmc() {
-@@ -61,7 +61,7 @@ platform_copy_config_emmc() {
- 
- platform_copy_config() {
- 	case "$(board_name)" in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		platform_copy_config_emmc
- 		;;
- 	esac
++define Device/comfast_cf-e130n-v2
++  ATH_SOC := qca9531
++  DEVICE_VENDOR := COMFAST
++  DEVICE_MODEL := CF-E130N
++  DEVICE_VARIANT := v2
++  DEVICE_PACKAGES := rssileds kmod-leds-gpio -swconfig -uboot-envtools
++  IMAGE_SIZE := 16192k
++endef
++TARGET_DEVICES += comfast_cf-e130n-v2
++
+ define Device/comfast_cf-e313ac
+   ATH_SOC := qca9531
+   DEVICE_VENDOR := COMFAST
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________

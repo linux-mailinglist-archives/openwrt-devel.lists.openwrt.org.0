@@ -2,74 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9C47F7870
-	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 17:09:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6585BF7A86
+	for <lists+openwrt-devel@lfdr.de>; Mon, 11 Nov 2019 19:10:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gj1VXwuuOTmWTDEZN33xACSfbZaop17dl5bI3xIe6bo=; b=qkmUqEyEOBx+LFHhsktTGUbFw
-	EXABlDemYgTYvgXHKkiMDHhx/6Aub9rZcAfHIZoddTtdbT79zpFF7hmI+Vuk2OZ9RPw/3BUDkF9zR
-	quaGoJ8yxJe/XOFqqqzpyRP1foyymQpaZtURiOPxhuPPfSpv/5kISS27wuISPXSphcA8Ks25WYcsq
-	slxJWqWWQePmN7e8x5dmygQ7YNCSfjiVyeUG016DykhNw4F9JB7eD2a1sNtx0w+VutoNPF22zXX/A
-	/rPwFZ4NSUw5HJdaxAOkWmjsCLSDhIse/p9eNAqb4evCtsg/giPZBh5WI4GO/SmrNcNKBgXNRWlrh
-	4kzy0imyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Date:Message-Id:Mime-Version
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YSQU+pr7Famd2GEFfHDQFJZ+sA5ba7h/XKirS0QEsKw=; b=R70MPbRuov4dkq
+	fk5Rz4vR8stOLGanR9fAd02Xb8vFpdqDvgO+jsFPjMhxrzoyE52s23cDmHCfray7CSnwmM5La3SsZ
+	irIe92tvVGX42S7bOcgJRtf+GI42RYvgR3+nUAUKG5v3oZ/20AbgHzdYkjiGgVaSLjLe+Wgsn1c10
+	IGHhdA47dPI4SrrU1Hvqy+U/slrg6QYMDSdGenbnhAze5yt8r5r2/0IGcMS5xrpMfyY5NN8DJ/L35
+	1RH0nGw6j/0vq0InitLVNn4MVEfjqT+LwqZLS+OSNGdriTiMIVe7+3icReGstOkAhfUGRMfMRkTOj
+	aWT3DLsAJT0BgvxStcWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUCFj-0004Hn-7b; Mon, 11 Nov 2019 16:09:19 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1iUE8Q-0006Lo-KG; Mon, 11 Nov 2019 18:09:54 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUCFd-0004HP-6O
- for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 16:09:14 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MIcqp-1iiGbR3ykv-00EeZw; Mon, 11
- Nov 2019 17:09:09 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: <admin@kryma.net>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20191111154224.1476-1-admin@kryma.net>
-In-Reply-To: <20191111154224.1476-1-admin@kryma.net>
-Date: Mon, 11 Nov 2019 17:09:08 +0100
-Message-ID: <023f01d598aa$596fa950$0c4efbf0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQDYsPDVGtk9m46CJtJ5e+pqP6kaLKl/79Tw
-X-Provags-ID: V03:K1:PHJjSRzN8JJ+SRbw9dnQ6Ybg1Cl7ABjKFxZMJ2JCFw/raMyfP7W
- eYpIFgyaw4Rh9ivU6x3IwV33hKj72M55wE52553Pj3h6SfPt1J6tOctbUmVdDEmLHlBpDS7
- 3ANmbSKQCFR0tNX5M7KlySvHmAHNMDSykPW323hqe0FZVE6CoXwneQ+RMjaW2lHhrkCFuTR
- YDnIQ1wXDQYpEt+WMt1WA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ckYuhIlTZbM=:0wALtblZHf+PuwjRVh4hR/
- gep6uTO6iv5+wacYzOs5h1AMLCiqd+NcU0hyGquXr1iOOaOfifLXzXuVk4fmqIgQq7VZ1W11s
- zvOE8Lp4VnMJ6TZqpRq+DgnGBM1B6xmvJH7LehCLNh2bFF0dJgyKdfU9D1gA6RIaAtjOLJA72
- QbuzhutH9iJlf+kub79hoc8adaWT1D2HmRNdmMQoeNavCEBET1lNqRHd74dYa02PWSCNEZnJy
- Dpw7SOT5dTtf4TPIsKAOcMMNOtd7BOt5jVpLcfpIAMQ9EY8/zizRKKTgh5Z7S4rBWFEynC1D6
- W7JLobNcezWnjJaagXWOT5VHkLSVmcuxyaV5C2+Wgi31yGerCtyQT+yN5wt/6eLy5/e803G1r
- 1XDagUQhO84HdJXS1oSa/XaqdoaCEQOH83vWTZkCDIQo2BhVA4jbu2BJYkSW0ATgcPH7hGVwX
- Q82KZAC6wRaJ9Ul7z3iOs0tvHAlYhW+4Qw4yNbSfJ8YrVlX/9SSwsFCm1u7GNtsgGbQYN+4hB
- Ycv0MXMkBHsuL7Fp7qigLuOjRfxW+COPEiHsidfdUztBqvlaIQb4PDuK786bDqP36KRnHdnK3
- xgXxiDQxqasjadHEuBUlBcyu6nuG5V+27Z++MQqyT6IhwgjhtahLFqyoRHmy7gZF2kfRjOyaP
- Pk+FctU8JMEIbkJIrH47sWf4xP+nM0koPmPKe/9wY5FoeqFprpIfRDFCMld1WzazcBdVkI6Dw
- GtkHEEivhftIH/6F8HPo9GNyuawWkr7pHGr9F8s/HdTCktdRMmteg/jSUSz5vs5LvdYqCPWR9
- Xv+0X1r7MrB8PkeRdX3mBXh50Ewz739eAI1jExC3hMEqaVxhYK+xeY7qjqrdJLgm0HwHkIjwx
- hIhpq62+R0pag7G6m+3q8RT1lVAHnZAVMrUR5SL/A=
+ id 1iUE8K-0006L4-BL
+ for openwrt-devel@lists.openwrt.org; Mon, 11 Nov 2019 18:09:49 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id r7so14840972ljg.2
+ for <openwrt-devel@lists.openwrt.org>; Mon, 11 Nov 2019 10:09:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:content-transfer-encoding:mime-version:subject:message-id:date
+ :to; bh=na34BySuKHfxr/u/zQcEfJnLigL4YaIzNRxG/58uhVU=;
+ b=uGsxdbw3BKYBDhmRHVoRMHARUshjQdCsBJVuOcAVXlVnpAm/ABnB1ZtJCn6UPY0tnI
+ 8aaH3YyvhraKpA9QwILWYWB7J+zKFaORzj0/alZo3PHiZ/BPbosffiqK9Irt5bqGPRQ3
+ QPGScV1vdy0bCMrGcPjNPr6O4QC5MSl0yEeDT2FbZGLGFU5QUD+mGz1gMR+/DBNop0F6
+ gzX9zOI+hPgyd3XHphCGqvplK/z9x23pjGq6roDcppJJg8YkqA/tJujRKZyHA7sXTnA0
+ H5NkJh1TI94rVqsY3dy4QKsYPh0iLrWBbZOyoFe3/eaJSqFOEtRQhncnx2eVt0qQgPwT
+ a8Fw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:content-transfer-encoding:mime-version
+ :subject:message-id:date:to;
+ bh=na34BySuKHfxr/u/zQcEfJnLigL4YaIzNRxG/58uhVU=;
+ b=fMHDF1vX/H2D/9oN+heF2Whm/AYCNIht1aHoJAM3UsOlR3rxxmvqVRtrzGpScZq7Mk
+ bZXHtc54RL+A5BJ40vVWyZn4XBiQrWjtey9BirMQjxux5nrVYBjfAyR3LbSVSvEK0cE4
+ VC+1GbaUeXuzQilmUgsUMfQ1JoCODbhQGOABLuF4oeYfYj6620bAzU2xlo4ErWjKJAs7
+ v5txOk8DrrjSUVosOJM8EB858vGrcjmtQtfl6KumvRXV6yTU7JILlK3AV6vx6bvW/DCX
+ vyjMqJa8ExQ1b4AqyI/WluyZLNWkeq7DjKyYzzPOCjPycYOg1U4BswTcvj9omv35PFmk
+ J9Xg==
+X-Gm-Message-State: APjAAAXILvgGkEgeFlQX3lGqcOW4CkDZObxOvFTmohXTTUA4Ipmlgicc
+ vrRwP2PWUu7yoAPmU6KEF+k497Cio38=
+X-Google-Smtp-Source: APXvYqxOPwBDbE7w/v18IZUpltRcYi2RidNcuriAQrHGx5t7CbIkMgLQjSeoULHhYAjW4Z/REaRyOQ==
+X-Received: by 2002:a2e:9a41:: with SMTP id k1mr16495393ljj.11.1573495785625; 
+ Mon, 11 Nov 2019 10:09:45 -0800 (PST)
+Received: from terminarch.lan (dotandthing.static.corbina.ru. [95.31.10.209])
+ by smtp.gmail.com with ESMTPSA id
+ s11sm6920542ljo.42.2019.11.11.10.09.44
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 11 Nov 2019 10:09:44 -0800 (PST)
+From: Ivan Baktsheev <dot.and.thing@gmail.com>
+X-Google-Original-From: Ivan Baktsheev <dot.and.thing+openwrt@gmail.com>
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
+Message-Id: <9146E54F-C4CD-4E4E-AFA0-180B36AFDE59@gmail.com>
+Date: Mon, 11 Nov 2019 21:09:42 +0300
+To: openwrt-devel@lists.openwrt.org
+X-Mailer: Apple Mail (2.3445.9.1)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_080913_528398_9A6C88A5 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191111_100948_408984_5123AD41 
+X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:22d listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dot.and.thing[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for COMFAST CF-E130N
- v2
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] wlan factory defaults
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,272 +98,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1913459292633538379=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============1913459292633538379==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=6d2S0ej2E5sOpE=-="
-
-This is a multipart message in MIME format.
-
---=-=6d2S0ej2E5sOpE=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-> +	aliases {
-> +		serial0 =3D &uart;
-> +		led-boot =3D &lan;
-> +		led-failsafe =3D &lan;
-> +		led-upgrade =3D &lan;
-
-Please don't use LAN here, as it will be ambiguous.
-For TP-Link CPE devices, we relied on rssi_high for this task, so either us=
-e this one or choose "unused".
-Please prefix the led label (but not the node name) with "led_", so either =
-led_rssihigh or led_unused ...
-
-> +		label-mac-device =3D &eth0;
-> +	};
-> +
-> +	leds {
-> +		compatible =3D "gpio-leds";
-> +
-> +		pinctrl-names =3D "default";
-> +		pinctrl-0 =3D <&led_rssimediumhigh_pin>;
-> +
-> +		wlan {
-> +			label =3D "cf-e130n-v2:green:wlan";
-> +			gpios =3D <&gpio 0 GPIO_ACTIVE_LOW>;
-> +			linux,default-trigger =3D "phy0tpt";
-> +		};
-> +
-> +		lan: lan {
-> +			label =3D "cf-e130n-v2:green:lan";
-> +			gpios =3D <&gpio 2 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		unused {
-> +			label =3D "cf-e130n-v2:green:unused";
-> +			gpios =3D <&gpio 3 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		rssilow {
-> +			label =3D "cf-e130n-v2:red:rssilow";
-> +			gpios =3D <&gpio 11 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		rssimediumlow {
-> +			label =3D "cf-e130n-v2:red:rssimediumlow";
-> +			gpios =3D <&gpio 12 GPIO_ACTIVE_LOW>;
-> +		};
-> +
-> +		rssimediumhigh {
-> +			label =3D "cf-e130n-v2:green:rssimediumhigh";
-> +                        // No individual GPIOs matched this LED!
-> +		};
-> +
-> +		rssihigh {
-> +			label =3D "cf-e130n-v2:green:rssihigh";
-> +			gpios =3D <&gpio 16 GPIO_ACTIVE_LOW>;
-> +		};
-> +	};
-> +
-> +	keys {
-> +		compatible =3D "gpio-keys";
-> +
-> +		reset {
-> +			label =3D "reset";
-> +			linux,code =3D <KEY_RESTART>;
-> +			gpios =3D <&gpio 17 GPIO_ACTIVE_LOW>;
-> +			debounce-interval =3D <60>;
-> +		};
-> +	};
-> +};
-> +
-> +&pinmux {
-> +		led_rssimediumhigh_pin: pinmux_rssimediumhigh_pin {
-> +			pinctrl-single,bits =3D <0x10 0x0 0xff>;
-> +		};
-
-Single tab indent.
-
-> +};
-> +
-> +&spi {
-> +	status =3D "okay";
-> +	num-cs =3D <1>;
-
-Add empty line after status.
-
-> +
-> +	flash@0 {
-> +		compatible =3D "jedec,spi-nor";
-> +		reg =3D <0>;
-> +		spi-max-frequency =3D <25000000>;
-> +
-> +		partitions {
-> +			compatible =3D "fixed-partitions";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +
-> +			uboot:	partition@0 {
-> +				label =3D "u-boot";
-> +				reg =3D <0x000000 0x010000>;
-> +				read-only;
-> +			};
-> +
-> +			art: partition@10000 {
-> +				label =3D "art";
-> +				reg =3D <0x010000 0x010000>;
-> +				read-only;
-> +			};
-> +
-> +			firmware: partition@20000 {
-> +				compatible =3D "denx,uimage";
-> +				label =3D "firmware";
-> +				reg =3D <0x020000 0x7d0000>;
-> +			};
-> +
-> +			nvram: partition@7f0000 {
-> +				label =3D "nvram";
-> +				reg =3D <0x7f0000 0x010000>;
-> +				read-only;
-> +			};
-
-We typically only add node labels when they are required, so here we would =
-only need "art:". Keep the label properties, though ...
-
-> +		};
-> +	};
-> +};
-> +
-> +&uart {
-> +	status =3D "okay";
-> +};
-> +
-> +&eth0 {
-> +	status =3D "okay";
-> +	phy-handle =3D <&swphy0>;
-> +	mtd-mac-address =3D <&art 0x0>;
-
-Add empty lines after status and after phy-handle.
-
-> +
-> +	gmac-config {
-> +		device =3D <&gmac>;
-> +		switch-phy-swap =3D <1>;
-> +	};
-> +};
-> +
-> +&wmac {
-> +	status =3D "okay";
-
-Add empty line after status.
-
-> +	mtd-cal-data =3D <&art 0x1000>;
-> +};
-> +
-> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> index fbb0d0ea03..3046d34605 100755
-> --- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> +++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> @@ -47,6 +47,14 @@ comfast,cf-e120a-v3)
->  	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH"
-> "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
->  	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh"
-> "wlan0" "76" "100"
->  	;;
-> +comfast,cf-e130n-v2)
-> +	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
-> +	ucidef_set_rssimon "wlan0" "200000" "1"
-> +	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow"
-> "wlan0" "1" "100"
-> +	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW"
-> "$boardname:red:rssimediumlow" "wlan0" "26" "100"
-> +	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH"
-> "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
-
-Will this work without a defined gpio?
-
-> +	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh"
-> "wlan0" "76" "100"
-> +	;;
->  comfast,cf-e313ac)
->  	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0"
-> "0x02"
->  	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
-> diff --git a/target/linux/ath79/image/generic.mk
-> b/target/linux/ath79/image/generic.mk
-> index 70631c20d0..48d6864ecb 100644
-> --- a/target/linux/ath79/image/generic.mk
-> +++ b/target/linux/ath79/image/generic.mk
-> @@ -258,6 +258,16 @@ define Device/comfast_cf-e120a-v3
->  endef
->  TARGET_DEVICES +=3D comfast_cf-e120a-v3
->=20
-> +define Device/comfast_cf-e130n-v2
-> +  ATH_SOC :=3D qca9531
-> +  DEVICE_VENDOR :=3D COMFAST
-> +  DEVICE_MODEL :=3D CF-E130N
-> +  DEVICE_VARIANT :=3D v2
-> +  DEVICE_PACKAGES :=3D rssileds kmod-leds-gpio -swconfig -uboot-envtools
-> +  IMAGE_SIZE :=3D 16192k
-
-That's wrong. You have 0x7d0000, not 0xfd0000 ...
-
-Best
-
-Adrian=20
-
---=-=6d2S0ej2E5sOpE=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3Jh6EACgkQoNyKO7qx
-AnDH8Q//V++a6+alYWJ6TnSXSqFa3VwkqmStN+SBA0iYPVjNWWcT2T1l/MVvsAGF
-nntZcEn1fw0RD9QQnEF1wB1gHegaTC4jWiEXePSngTaoHkRZqRQ1QgsveDBnLG1m
-oe2Hk3J1zAg10yzL1aScVlyWfq9XAH1Yk1gcU0YmTedaDkf2vsttPLqlMHx6d+x0
-yNB5ghmbV7cs4gRuL6giy2owr/BDs0+Kh7uZI/YTUNpmZwF/LhPFs23Y37fnD+gu
-pY5LLodvQEwQNLvkhfScPcBt/K2XItSQiPjRB47CpyIwF/dIC0mhxMHHDNUbxRMW
-bVOh6nt142ir7i/iMN9sv+nNEmdlztXnGMFh6TlqaI8omikIm4Nsz1Yat++onCyx
-E/ySATr49qptMjcBINEAasthEwgX0Kc+4eyEmdl/6aETUx3iidlYkJyyGqkR++vr
-TF+jokR9IYolGM6xPkNcgNbcHl+80t9cvNv/hoFVvwdYRvIG750nbq2Otc4+RI+o
-LgzYFwGkQDQ5d7JgpsqAtXb/szec8/0/fCx79jYNtF0Xq9uZrCEsPY8NT/wbXDYs
-tbFLYZ6vqL//aASovO5hc3TgxaxZptCovoLIu4A6njcTjqfRmzFkonV1MU05TQD1
-DGV+UTvrEhHVxN53vrMQA5PzIm11t23pigvFV/rIYFsmjSeoW+A=
-=gIAz
------END PGP SIGNATURE-----
-
-
---=-=6d2S0ej2E5sOpE=-=--
-
-
-
---===============1913459292633538379==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1913459292633538379==--
-
-
+SGksCgpJIHdhbnQgdG8gYWRkIG5ldyBkZXZpY2UsIGJ1dCBhcyBvZiBub3cgSSBjYW4gdXBsb2Fk
+IGZpcm13YXJlIHdpcmVsZXNzbHkgYW5kIHRoZW4gSSBuZWVkIHRvIGNvbm5lY3QgdXNpbmcgd2ly
+ZWQgY29ubmVjdGlvbiwgYmVjYXVzZSBpbiBzdG9jayBPcGVuV3J0IGltYWdlIHdpcmVsZXNzIGlz
+IGRpc2FibGVkLgoKRm9yIG15IHJvdXRlciAoYW5kIHByb2JhYmx5IG1hbnkgb3RoZXJzKSBkZWZh
+dWx0IFdpRmkgU1NJRCBzdG9yZWQgaW4gZmFjdG9yeSBwYXJ0aXRpb24gYW5kIGl04oCZcyBxdWl0
+ZSBlYXN5IHRvIGV4dHJhY3QuIFVuZm9ydHVuYXRlbHksIHdpcmVsZXNzIHNldHVwIHRha2VzIHBs
+YWNlIGluIGRpZmZlcmVudCB0aW1lIHRoYW4gd2lyZWQvZ3Bpby9sZWRzIHNldHVwIGZyb20gL2V0
+Yy9ib2FyZC5kIGFuZCBkZWZhdWx0cyBhcmUgaGFyZGNvZGVkIGluIC9saWIvd2lmaS9tYWM4MDIx
+MS5zaAoKQ3VycmVudGx5LCBJIGhhdmUgL2V0Yy9ib2FyZC5kLzA0X2ZhY3RvcnlfZGVmYXVsdHMs
+IHdoaWNoIGV4dHJhY3RzIGZhY3RvcnkgZGVmYXVsdHMgZm9yIHJvb3QgcGFzc3dvcmQgYW5kIFdp
+RmkuIFdpRmkgc2V0dGluZ3Mgd3JpdHRlbiBpbnRvIC9ldGMvZmFjdG9yeV84MDIxMSwgd2hpY2gg
+dGhlbiByZWFkIGF0IC9saWIvd2lmaS9tYWM4MDIxMS5zaAoKSSB3b3VsZCBsaWtlIHRvIGludGVn
+cmF0ZSB0aGlzIGludG8gT3BlbldydCwgcGxlYXNlIHRha2UgYSBsb29rIGF0IGZ1bGwgZXhhbXBs
+ZSBhdCBodHRwczovL2dpc3QuZ2l0aHViLmNvbS9hcGxhL2E4MWNhZDBhMWRjOWZlZGZlZmYxOTk0
+MTExNmRhMzY5IGFuZCBzaGFyZSB5b3VyIHRob3VnaHRzLiBEaWZmIGZvciAvbGliL3dpZmkvbWFj
+ODAyMTEuc2g6IAoKCmRpZmYgLS1naXQgYS9wYWNrYWdlL2tlcm5lbC9tYWM4MDIxMS9maWxlcy9s
+aWIvd2lmaS9tYWM4MDIxMS5zaCBiL3BhY2thZ2Uva2VybmVsL21hYzgwMjExL2ZpbGVzL2xpYi93
+aWZpL21hYzgwMjExLnNoCmluZGV4IGJlOWM1MzcuLjNjODhjODEgMTAwNjQ0Ci0tLSBhL3BhY2th
+Z2Uva2VybmVsL21hYzgwMjExL2ZpbGVzL2xpYi93aWZpL21hYzgwMjExLnNoCisrKyBiL3BhY2th
+Z2Uva2VybmVsL21hYzgwMjExL2ZpbGVzL2xpYi93aWZpL21hYzgwMjExLnNoCkBAIC0xLDEwICsx
+LDEyIEBACiAjIS9iaW4vc2gKIC4gL2xpYi9uZXRpZmQvbWFjODAyMTEuc2gKIAogYXBwZW5kIERS
+SVZFUlMgIm1hYzgwMjExIgogCisuIC9ldGMvZmFjdG9yeV84MDIxMQorCiBsb29rdXBfcGh5KCkg
+ewogCVsgLW4gIiRwaHkiIF0gJiYgewogCQlbIC1kIC9zeXMvY2xhc3MvaWVlZTgwMjExLyRwaHkg
+XSAmJiByZXR1cm4KIAl9CiAKQEAgLTk1LDI1ICs5Nyw0OSBAQCBkZXRlY3RfbWFjODAyMTEoKSB7
+CiAJCQlkZXZfaWQ9InNldCB3aXJlbGVzcy5yYWRpbyR7ZGV2aWR4fS5wYXRoPSckcGF0aCciCiAJ
+CWVsc2UKIAkJCWRldl9pZD0ic2V0IHdpcmVsZXNzLnJhZGlvJHtkZXZpZHh9Lm1hY2FkZHI9JChj
+YXQgL3N5cy9jbGFzcy9pZWVlODAyMTEvJHtkZXZ9L21hY2FkZHJlc3MpIgogCQlmaQogCisJCWV2
+YWwgcmFkaW9faV9kaXNhYmxlZD1cJHJhZGlvJHtkZXZpZHh9X2Rpc2FibGVkCisJCXJhZGlvX2lf
+ZGlzYWJsZWQ9JHtyYWRpb19pX2Rpc2FibGVkOi0ke3JhZGlvX2Rpc2FibGVkOi0xfX0KKwkJZXZh
+bCByYWRpb19pX2NvdW50cnk9XCRyYWRpbyR7ZGV2aWR4fV9jb3VudHJ5CisJCXJhZGlvX2lfY291
+bnRyeT0ke3JhZGlvX2lfY291bnRyeTotJHJhZGlvX2NvdW50cnl9CisJCWlmIFsgISAteiAiJHJh
+ZGlvX2lfY291bnRyeSIgXSA7IHRoZW4KKwkJCXVjaV9yYWRpb19jb3VudHJ5PSJzZXQgd2lyZWxl
+c3MucmFkaW8ke2RldmlkeH0uY291bnRyeT0ke3JhZGlvX2lfY291bnRyeX0iCisJCWVsc2UKKwkJ
+CXVjaV9yYWRpb19jb3VudHJ5PQorCQlmaQorCisJCWV2YWwgd2xhbl9pX3NzaWQ9XCR3bGFuJHtk
+ZXZpZHh9X3NzaWQKKwkJd2xhbl9pX3NzaWQ9JHt3bGFuX2lfc3NpZDotJHt3bGFuX3NzaWQ6LU9w
+ZW5XcnR9fQorCQlldmFsIHdsYW5faV9lbmNyeXB0aW9uPVwkd2xhbiR7ZGV2aWR4fV9lbmNyeXB0
+aW9uCisJCXdsYW5faV9lbmNyeXB0aW9uPSR7d2xhbl9pX2VuY3J5cHRpb246LSR7d2xhbl9lbmNy
+eXB0aW9uOi1ub25lfX0KKwkJZXZhbCB3bGFuX2lfa2V5PVwkd2xhbiR7ZGV2aWR4fV9rZXkKKwkJ
+d2xhbl9pX2tleT0ke3dsYW5faV9rZXk6LSR3bGFuX2tleX0KKwkJaWYgWyAhIC16ICIkd2xhbl9p
+X2tleSIgXSA7IHRoZW4KKwkJCXVjaV93bGFuX2tleT0ic2V0IHdpcmVsZXNzLmRlZmF1bHRfcmFk
+aW8ke2RldmlkeH0ua2V5PSR7d2xhbl9pX2tleX0iCisJCWVsc2UKKwkJCXVjaV93bGFuX2tleT0K
+KwkJZmkKKwogCQl1Y2kgLXEgYmF0Y2ggPDwtRU9GCiAJCQlzZXQgd2lyZWxlc3MucmFkaW8ke2Rl
+dmlkeH09d2lmaS1kZXZpY2UKIAkJCXNldCB3aXJlbGVzcy5yYWRpbyR7ZGV2aWR4fS50eXBlPW1h
+YzgwMjExCiAJCQlzZXQgd2lyZWxlc3MucmFkaW8ke2RldmlkeH0uY2hhbm5lbD0ke2NoYW5uZWx9
+CiAJCQlzZXQgd2lyZWxlc3MucmFkaW8ke2RldmlkeH0uaHdtb2RlPTExJHttb2RlX2JhbmR9CiAJ
+CQkke2Rldl9pZH0KIAkJCSR7aHRfY2FwYWJ9Ci0JCQlzZXQgd2lyZWxlc3MucmFkaW8ke2Rldmlk
+eH0uZGlzYWJsZWQ9MQorCQkJc2V0IHdpcmVsZXNzLnJhZGlvJHtkZXZpZHh9LmRpc2FibGVkPSR7
+cmFkaW9faV9kaXNhYmxlZH0KKwkJCSR7dWNpX3JhZGlvX2NvdW50cnl9CiAKIAkJCXNldCB3aXJl
+bGVzcy5kZWZhdWx0X3JhZGlvJHtkZXZpZHh9PXdpZmktaWZhY2UKIAkJCXNldCB3aXJlbGVzcy5k
+ZWZhdWx0X3JhZGlvJHtkZXZpZHh9LmRldmljZT1yYWRpbyR7ZGV2aWR4fQogCQkJc2V0IHdpcmVs
+ZXNzLmRlZmF1bHRfcmFkaW8ke2RldmlkeH0ubmV0d29yaz1sYW4KIAkJCXNldCB3aXJlbGVzcy5k
+ZWZhdWx0X3JhZGlvJHtkZXZpZHh9Lm1vZGU9YXAKLQkJCXNldCB3aXJlbGVzcy5kZWZhdWx0X3Jh
+ZGlvJHtkZXZpZHh9LnNzaWQ9T3BlbldydAotCQkJc2V0IHdpcmVsZXNzLmRlZmF1bHRfcmFkaW8k
+e2RldmlkeH0uZW5jcnlwdGlvbj1ub25lCisJCQlzZXQgd2lyZWxlc3MuZGVmYXVsdF9yYWRpbyR7
+ZGV2aWR4fS5zc2lkPSR7d2xhbl9pX3NzaWR9CisJCQlzZXQgd2lyZWxlc3MuZGVmYXVsdF9yYWRp
+byR7ZGV2aWR4fS5lbmNyeXB0aW9uPSR7d2xhbl9pX2VuY3J5cHRpb259CisJCQkke3VjaV93bGFu
+X2tleX0KIEVPRgogCQl1Y2kgLXEgY29tbWl0IHdpcmVsZXNzCiAKIAkJZGV2aWR4PSQoKCRkZXZp
+ZHggKyAxKSkKIAlkb25lCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3Bl
+bndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53
+cnQtZGV2ZWwK

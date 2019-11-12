@@ -2,64 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04D6EF9720
-	for <lists+openwrt-devel@lfdr.de>; Tue, 12 Nov 2019 18:32:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 014DAF9888
+	for <lists+openwrt-devel@lfdr.de>; Tue, 12 Nov 2019 19:23:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=evvMPonG7M9O9Af2sUZDOJ5XZYFLlg45tjiRdS3jo58=; b=RYHQH7+Db3584jF0pUYyHkhecX
-	g6RsksbIRzNdDvXVu8/jo2SPbQX5+EHtmlNfhim2Bw2FngPMh75j7XKBAWxlPa6qlYWNZtGo9rgcQ
-	OtLwve+ROGfMngxQ/3qNgMR0AWVT2X2H6xsMD3V5eFT4qopggCRgOPHnBlea42GmKoTBsJCYVnZDg
-	9MpkECEkfSGh7QDplP3cwO/ovU1VTtP3tKixJMNiqqtiL3l/E48AOE1Z8IXsMI2FJIxqLpyCSkLSQ
-	8oxx3uQ6/u18R+lG0MxjdkQTSWEuL0IIy8Jgo0FCLzQTUwAqTfge3gsbTfR5GThFaGXRe5lzLlq1j
-	tB6Aypxg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hdmCPI7Yq5rbdRsZ379jyzww70nWJJ4mGdU0amNg4I0=; b=qwHWsHJaAmmxwV
+	0Io7hC1b6cUrZyhqp/tQTiAv89NizBpCtbgScTeo3hLqqkAP2GYtdRqw/gfSuK/mqz6Zzct0E3bd5
+	Mxw0LGdRiQ/dbS6LQUdAictIOpig42y9iWFGBZp6PNeiKduURr46UoNIwYJRwGMM/dzPq+lcZ2osT
+	7l/RQdfWipBIdV36tCxVUoynXaz0SZZHI2MERV1kR2x67jn7OltusKTEi+yoKmZ6thvoh4K5p8MYc
+	tfVm270Dj/6Uy57p3rn1lf7+q1q6/XAZIbMguh4tV1GJVjLj4zlfx6HuIxCCUA5yVgXuZOL7YtFlE
+	9XvoGPjDP+WKstX1S0TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUa16-0007a4-Aj; Tue, 12 Nov 2019 17:31:48 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1iUaok-0003m3-MG; Tue, 12 Nov 2019 18:23:06 +0000
+Received: from mx4.wp.pl ([212.77.101.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUa10-0007Zl-Ag
- for openwrt-devel@lists.openwrt.org; Tue, 12 Nov 2019 17:31:44 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id A5D01385F;
- Tue, 12 Nov 2019 18:31:38 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 4ef5dbbb;
- Tue, 12 Nov 2019 18:31:28 +0100 (CET)
-Date: Tue, 12 Nov 2019 18:31:28 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Yousong Zhou <yszhou4tech@gmail.com>
-Message-ID: <20191112173128.GA86047@meh.true.cz>
-References: <20191112081625.27695-1-ynezz@true.cz>
- <CAECwjAjN3938FFjc3KJ2pQ=KP66EKD3s4RiWzW50LLZ+RiDrBQ@mail.gmail.com>
- <20191112091227.GB71646@meh.true.cz>
- <CAECwjAizD_AWQotEwG2QtHfJzxH9dveDbBEtrcjSvxG6rOSRPA@mail.gmail.com>
+ id 1iUaoK-0003dv-US
+ for openwrt-devel@lists.openwrt.org; Tue, 12 Nov 2019 18:22:43 +0000
+Received: (wp-smtpd smtp.wp.pl 4029 invoked from network);
+ 12 Nov 2019 19:22:36 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1573582956; bh=hCzaTYm9aT33Vvea3tF1Ug4sgSjyz2zU4LgcLJSnHTY=;
+ h=From:To:Cc:Subject;
+ b=NxvXaefb2zdPytPYsPNkbAMXScE2l2ThA5v9eDoC6O+dKwq4FxqFkdNRdbwIhjwkH
+ 7NeJOYO2sPCbcQ3hNwW+aijVCN1DtHA+shWq2eW8eM92F3Vr+cT0TMsEp2W3OId3rB
+ roD06QwUQjeL4rd5y8IVK3UMy+EEQCDIkEHabBhA=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <mail@david-bauer.net>; 12 Nov 2019 19:22:36 +0100
+Date: Tue, 12 Nov 2019 19:22:34 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: David Bauer <mail@david-bauer.net>
+Message-ID: <20191112192234.721c6a6e@kosmio.komorska>
+In-Reply-To: <04615660-e813-7bc1-1e75-a51c289fd518@david-bauer.net>
+References: <20191112140214.59f2971f@kosmio.komorska>
+ <04615660-e813-7bc1-1e75-a51c289fd518@david-bauer.net>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAECwjAizD_AWQotEwG2QtHfJzxH9dveDbBEtrcjSvxG6rOSRPA@mail.gmail.com>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+X-WP-MailID: 55f1c28988082b7de79e34b58e0e68ef
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [4aNU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_093142_513125_837B484A 
-X-CRM114-Status: UNSURE (   6.01  )
+X-CRM114-CacheID: sfid-20191112_102241_997584_223FC66A 
+X-CRM114-Status: UNSURE (   5.76  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [212.77.101.11 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (michal.cieslakiewicz[at]wp.pl)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH] build: make GCC version 6+ minimal host
- build requirement
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: enable all space on Netgear
+ ar9344-based WNDR routers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,32 +83,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Yousong Zhou <yszhou4tech@gmail.com> [2019-11-12 18:37:21]:
+On Tue, 12 Nov 2019 17:15:17 +0100
+David Bauer <mail@david-bauer.net> wrote:
 
-> I tried for a few times with packages provided by SoftwareCollections.org,
-> but it's definitely not "straightforward" enough in my opinion.
+> Hello Michal,
+> 
+> Have you tried if this breaks sysupgrade from an older OpenWrt
+> firmware? I'm not sure if an UBI resize works without additional
+> steps.
+> 
+> Best wishes
+> David
+> 
 
-I tried to install developer toolset version 8 in CentOS 7 Docker container in
-order to triage the same compile failure happening with GCC 8.3[1] and it
-simply worked as advertised, I was able to use GCC 8.3 on CentOS 7 just fine.
+Hello David,
 
-> Note that we are talking about host build with host toolchain whose input we
-> control and whose product only runs on the host itself at build times.
+Thanks! Good point, I was usually flashing from uboot to a clean state.
+I will test this sysupgrade scenario and come back with results.
 
-Note that fwtool is just a tip of the iceberg, reminder, that we're still
-supporting archaic compiler versions. Just imagine tools/firmware-utils with
--Wextra as the next step...
-
-1. https://github.com/openwrt/openwrt/commit/4ba8f7b1ef1e4c0607185a41c06b51928c625d8b#commitcomment-35914043
-
--- ynezz
+Best regards
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

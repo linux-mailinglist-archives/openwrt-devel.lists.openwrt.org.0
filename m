@@ -2,83 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90D03FA934
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 05:52:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DFA3FAA1C
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 07:22:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=l5W409N15p3N6LrQcdEd/O66IsCJpsLjGeom2bHQLkE=; b=SZc
-	XdQibIt+Zn7ygUy8zCg86L7rCPpFYJgZWT9WQlaOtwllisFhGfbAmLVK67MX+4EqpJYEKM5McQFgb
-	9iirCKKwSOUPpWocBzfrj1J7LCZBARmuw0va1bVFNx5JLsPAp3RrSRGWGLgFjmZb99riU0jKKhVk8
-	vhFRw0bFMwzyN+yDYdshMZPo/NtWv8UDICS3Kk7v04t/qr2/3EfeHSddtH/9v+W91p9Srd7pKTjdE
-	jjreaodVK7VA/UYnbtCbUVluscazRdRyEdXynsRyKnKw3laE6KrOYVGBcP8LJHJkZy2HHkoAmWMiY
-	2eqRzUZCF+IpX2guqQasd0P33kc03rA==;
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xOlRhOfhbz/a/wOF4QazSFs1lLxWTBfordc41Z4L5Jc=; b=eYS8IebgeYyzIRTfk2KOAd/H+
+	bV2m/entNA7oDe2SC9VCjZ1HECR8CR6f6dny/FYOZs9QQuMXDPouKpo2mKZd0mfuQaQIz+fk7c85L
+	Hnj8V9mBz1qHLWr9DLUKSFd6SJ4nKTXV5C/evk2toniDM9FTmqG9BvDkglC6zVVxuezJ6GaQTzD9j
+	ePeScTzvs1vsMChWlXMq6vpe5LBAfUU+yfOI8QFfO6YEhQbWfGY9Wl1BwdtCkrWYJgJg80CvwV1Bh
+	ip+Xy7z9U3NrGb8wjcqJINbvBhqImeNvy7ym/tL/D92XI42oAOlgs3409O8EtfPemHAlPqQmr3KYH
+	+vCPPJ/kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUkdS-00048g-Rx; Wed, 13 Nov 2019 04:52:06 +0000
-Received: from mail-qt1-x830.google.com ([2607:f8b0:4864:20::830])
+	id 1iUm3A-0004FD-FP; Wed, 13 Nov 2019 06:22:44 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUkdN-000486-9A
- for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 04:52:02 +0000
-Received: by mail-qt1-x830.google.com with SMTP id o49so1191967qta.7
- for <openwrt-devel@lists.openwrt.org>; Tue, 12 Nov 2019 20:52:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=4XO2mKRCUQRQ7XycBwOvvCgMdrdx5Pj6fUz3IQ0nAbQ=;
- b=kDaLo9r/i3XyPptmKFN0p4qMjmvmc+qM+sjC1MHo35sIBGJ+SyighBWtQ+9QfP345A
- VNxH2vKhVcbB6M9NYXpYZ6kQuUYb3H7eMvWEaK/GecEQe5YDeiPVbhiYAOEpUD9zH/lw
- L/zu61mwUgp08tAJQovsYNoEb/yYatLxauCtP/1AKsc8srZrtoWW0esVn62b/mXvG9hj
- 8PZCBQzZo//GfX+4RJvSxzE7ERgdKoFVfCB9ODIjYtzWKBgKVcWlhs4RIV0WHXAhB+6h
- rCf/Icmyw4sLorDWGiyMLdPWorj4H0CEyTd1BGm9VPQoUVUMiL6C7VaIKeaNM3aDGnNq
- zLZw==
+ id 1iUm35-0004Ek-2o
+ for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 06:22:40 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id j18so4030389wmk.1
+ for <openwrt-devel@lists.openwrt.org>; Tue, 12 Nov 2019 22:22:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kresin-me.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=xIsaEhYNtxTnFP3Jzk91ho8HwPsIqzF2CMBJgVxWYi4=;
+ b=Ij0Z2szVXESLiugH5bL3QeZtPBidvg2PIb++GVh1p1oHVS6hXqZwRFpRxj7ojvjuzl
+ aUZC1vD9qGqvRdkEVrVYNwCkAGKD4/u+WYMDrSLOKSbu60PwtLFnOQp7sq7Zdk91XAE9
+ kN3YITIMsxF4lNb3E07HLvA4CMj0PnyPGaueLXEuC92gDx2BPMu9GrNsn33pXXNAXFjm
+ 1YTA2F2N3x1jHil8GMJZJJujxyzy+wyTDxidYpn9cNf4Q+4Sb4i4vx1+o5m0G7DRFRoU
+ +uZ9HTf3UNOH1XAFQgGZqAGmy/VpLFD8m02yn/pAmxhBcWruneOm1U8YJxdQQhAOko1c
+ fRjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=4XO2mKRCUQRQ7XycBwOvvCgMdrdx5Pj6fUz3IQ0nAbQ=;
- b=FOwD24BIGjMAZNd1ZufNwBPzUomG4tNlYB/RQ5hwQFnyqZktyNaOgdR0pskbLMi4ZB
- IeDPvPNwqPsl4MRm30lKJRbVh6rhjO2n3T3hPsDJiyi5FK41oRcmr0pBVeXyUsBecf93
- 0aE5GxyVxRGVAck1qHp11uNxNXkTEm8P3ABIwphAnK1ggdQ+6XAAHGY7QDNEjPSiJS0y
- cTKaW4Df4KRSe+B36lKT9uEC1jDrsNgFdAvROUzAbcsPhHb57viCMDBWJ/pYleRQ6h5U
- iPbEOG34T7apvOniJ4zOuCPiUolV4rqrp0otUIv/9BW/noFHtRpSES26P4sAf4olan9r
- IKeg==
-X-Gm-Message-State: APjAAAWt8UPXaw4yHcvTDdYViYiBHb2ol2IK5p4J+LzjexBf4x9IOf6m
- MMCFNPUFR8e6g42a6uhXXmSAzW6ACNMAMwc+gvssjscOGxE=
-X-Google-Smtp-Source: APXvYqyMmrOfZJ2fS0TnriKAV96YPWzvh4yxVTTC6wJb6fPPalQTG1KUTw7S7Ewe3UeCMjrnmvUXGTjjxA7u3F4S4ws=
-X-Received: by 2002:ac8:244e:: with SMTP id d14mr947301qtd.388.1573620719287; 
- Tue, 12 Nov 2019 20:51:59 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=xIsaEhYNtxTnFP3Jzk91ho8HwPsIqzF2CMBJgVxWYi4=;
+ b=pE6tZXoVgZq673ittzk0iBAlNuiBuKVeeZ858f2N/HwUo1mBH1sBefNLxVgTApcVx0
+ znIkv+bBQulcu3V5ZVG6q6nf+IAlG3OWkytgf2Yxx3Y59OsV1olHqylACg/YKLhl9oIy
+ h6qUwxCrDuelziNYRAr4y0NJNf+CpeaUtY45aSQdRmnbPjauFxO1lMl8lqfVdQ1QcBFl
+ cNhMzbju0cIXKaQHmuzJaPlPsDMMwgGUJ70F4bNXwjSjSBfwOJ8bVn3nGntE3qGjHHxf
+ X13aJxx/T+ITk2HELjCE02Nwr5E/DVLNUUN4Gw4AtGdS03Hc5BL529NUNQNWz5ta44Pj
+ x0BA==
+X-Gm-Message-State: APjAAAULP6RsZHgGhJGoWhznoeJDAcV+MDCwyMX5RDFL9umQzv3VkOhb
+ lZZGKPbzvXP713lTp8P/eTOKKQ/C84g=
+X-Google-Smtp-Source: APXvYqzWBPMUAJN8a3mBiqTH541K+vHE65EukQM7lbVz41hVBsPwfaGn9vc6uWvP8qt0lWF3PUJO7A==
+X-Received: by 2002:a1c:7709:: with SMTP id t9mr1108913wmi.80.1573626156385;
+ Tue, 12 Nov 2019 22:22:36 -0800 (PST)
+Received: from ?IPv6:2003:ec:2f17:f600:95e8:b0fc:2be1:70f0?
+ (p200300EC2F17F60095E8B0FC2BE170F0.dip0.t-ipconnect.de.
+ [2003:ec:2f17:f600:95e8:b0fc:2be1:70f0])
+ by smtp.gmail.com with ESMTPSA id y189sm1140110wmb.13.2019.11.12.22.22.35
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 12 Nov 2019 22:22:35 -0800 (PST)
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+References: <000e01d59954$7241b8b0$56c52a10$@adrianschmutzler.de>
+From: Mathias Kresin <dev@kresin.me>
+Message-ID: <e5024ac7-56fa-8a01-6cf8-a62cce2f9dcc@kresin.me>
+Date: Wed, 13 Nov 2019 07:22:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-From: Luiz Angelo Daros de Luca <luizluca@gmail.com>
-Date: Wed, 13 Nov 2019 01:51:48 -0300
-Message-ID: <CAJq09z7aucMwTgmd3RAd9g=rok3FRxQ3xRnm3grNOhUk_WeRFQ@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+In-Reply-To: <000e01d59954$7241b8b0$56c52a10$@adrianschmutzler.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_205201_365436_96780644 
-X-CRM114-Status: UNSURE (   5.06  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_222239_184498_5BFFD4F4 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:830 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:32e listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (luizluca[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] Download link not working for 18.06.5 and 19.07.0rc1
+Subject: Re: [OpenWrt-Devel] OpenWrt: read label MAC address for FRITZ!WLAN
+ Repeater 300E
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,73 +98,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0774041662317272923=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0774041662317272923==
-Content-Type: multipart/alternative; boundary="000000000000fc00690597331f03"
+12/11/2019 13:26, Adrian Schmutzler:
+> Hi,
+> 
+> I'm currently trying to remove the dependency of label_mac in 02_network from phy setup, i.e. replacing stuff like
+> $(cat /sys/class/ieee80211/phyX/macaddress)
+> with extraction from the proper flash location.
+> 
+> One obstacle is the AVM FRITZ!WLAN Repeater 300E, where the calibration data is extracted with
+> caldata_extract_reverse "urloader" 0x1541 0x440
+> 
+> Is there a sufficiently easy way to get the MAC address out of there _without_ relying on initialized Wifi?
+> I'm looking for something like
+> label_mac=$(some_extraction_function "urloader" <some_offset>)
+> Technically, it should be somewhere in the reversed caldata, shouldn't it?
+> 
+> If this is not possible (with reasonable effort), I would just calculate it based on the lan_mac in 02_network.
+> 
+> Best
+> 
+> Adrian
 
---000000000000fc00690597331f03
-Content-Type: text/plain; charset="UTF-8"
+Hey Adrian,
 
-Hello,
+all mac-addresses can be found in the urlader key value store.
 
-The OpenWrt front page has a "Download a firmware image for your device"
-for each released version. However, the last two links are currently
-useless. Both show no devices.
+maca                  24:65:11:AE:CB:6B
+macb                  24:65:11:AE:CB:6C
+macwlan               24:65:11:AE:CB:6D
+macdsl                24:65:11:AE:CB:6E
 
-For 18.06.5, it seems that something somewhere must be updated from 18.06.4
-to 18.06.5.
+Following the fritz_tffs call in 02_network it will be:
 
-For 19.07, it could be only a temporary issue while in RC. However, if so,
-OpenWrt should not advertise that link for now.
+lan=$(fritz_tffs -n maca -i $(find_mtd_part "tffs (1)"))
+wlan=$(fritz_tffs -n macwlan -i $(find_mtd_part "tffs (1)"))
 
-And please, hide "Firmware OpenWrt snapshot Install URL" and "Firmware
-OpenWrt snapshot Upgrade URL" from a ToH link that filter support for a
-specific release. It only allows the user to wrongly install snapshot
-versions.
+FYI, the label mac is macwlan.
 
-Regards,
+Does that answer your question?
 
----
-     Luiz Angelo Daros de Luca
-            luizluca@gmail.com
-
---000000000000fc00690597331f03
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">Hello,<div><br></div><div>The OpenWrt front page has a &qu=
-ot;Download a firmware image for your device&quot; for each released versio=
-n. However, the last two links are currently useless. Both show no devices.=
-</div><div><br></div><div>For 18.06.5, it seems that something somewhere mu=
-st be updated from 18.06.4 to 18.06.5.</div><div><br></div><div>For 19.07, =
-it could be only a temporary issue while in RC. However, if so, OpenWrt sho=
-uld not advertise that link for now.</div><div><br></div><div>And please, h=
-ide &quot;Firmware OpenWrt snapshot Install URL&quot; and &quot;Firmware Op=
-enWrt snapshot Upgrade URL&quot; from a ToH link that filter support for a =
-specific release. It only allows the user to wrongly install snapshot versi=
-ons.</div><div><br></div><div>Regards,</div><div><br clear=3D"all"><div><di=
-v dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmail_signature">=
-<div dir=3D"ltr"><div>---<br>=C2=A0 =C2=A0=C2=A0 Luiz Angelo Daros de Luca<=
-br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 <a href=3D"mailto:luizluca@gma=
-il.com" target=3D"_blank">luizluca@gmail.com</a></div></div></div></div></d=
-iv></div>
-
---000000000000fc00690597331f03--
-
-
---===============0774041662317272923==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Mathias
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0774041662317272923==--
-

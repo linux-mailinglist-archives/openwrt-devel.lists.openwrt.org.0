@@ -2,79 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94A71FB043
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 13:18:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E4D5FB059
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 13:23:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KA+3ZS+EdwJWht3lo59LcFBR0seAJFt0qoXKBbgm3s0=; b=QKlDQWF1vqFSkuN7ifPTU/rUr
-	H5Zs8AUXxENFL8YG4Qqcoq1X7DrfegNBAcaCqiHW/yE0fck3+7RBiNYzrOPsTRkcU9VjH505505/O
-	UwMmEeD4PVrKjTa/0CeaHRHADs6MeDmt68sKRApoSMbNLL540n1DLDYI+tVBSsOzkR7FTHFCykUqc
-	cVpS26HNjKGqA40xQSg0Qv7DK4pp5FXl51OQ+67ncQVd/257rKg/O8rCsIyPBNjDdD1vgnlXG0Bv6
-	NGdhBthUUfTy077GzEIDRP4VV+KqiK9NliikBFj1jWykLdlU5DgRIn/I3pozZg0gRk9nz6DQTOUGM
-	qpN3yIZgw==;
+	 bh=kUBfovwcGL6A6qS6EX+1rtocJ1aaTclTJjPgFb501EA=; b=FQOGWr8dWjNMwNn+O6GPtb3Fy
+	3AK01Dk7YaDSTbHbhXXQZOez7QQvCFhwF3v4wCjLSSrDOdZtXj5nC2bbbXlS+7mH7ACiHxbjIXeho
+	FnxF0iJRfQoc6b1wimtO7DsyxpW7LQhtwlvd1gGdnxprDZxvtrm4HK/QFIU13hAYhWzUH7dlC+LqQ
+	Jx5xYLZfogl98W7Iwj+agldmL09wyIzoN9cnOQ6clmEMEG66wnuO5454FnErK4td7vIlV88ww6H1G
+	V6tk9TolUPt2Sr1U+n9XRTrbVRGfyDAqxSGEQKzYeoczxhYrt7IG1/bv9ebQC0+U3lpZ6sfkv2/8E
+	SdE7WPW0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUrav-0007qb-HG; Wed, 13 Nov 2019 12:17:57 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iUrgD-0001R1-PZ; Wed, 13 Nov 2019 12:23:25 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUran-0007q6-So
- for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 12:17:51 +0000
+ id 1iUrg4-0001QF-HP
+ for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 12:23:18 +0000
 Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1M3DeV-1iTUgE3Ti9-003aQg; Wed, 13
- Nov 2019 13:17:43 +0100
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1M1INQ-1iS7qm2l9m-002l8Y; Wed, 13
+ Nov 2019 13:23:10 +0100
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Kryma'" <admin@kryma.net>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20191111154224.1476-1-admin@kryma.net>
- <023f01d598aa$596fa950$0c4efbf0$@adrianschmutzler.de>
- <b8afe62e-867f-2d60-2c0a-08d01ebd9fa4@guifi.net>
- <025a227a-d897-e71c-3193-ef3776ffec39@kryma.net>
-In-Reply-To: <025a227a-d897-e71c-3193-ef3776ffec39@kryma.net>
-Date: Wed, 13 Nov 2019 13:17:43 +0100
-Message-ID: <007901d59a1c$5a15d640$0e4182c0$@adrianschmutzler.de>
+To: =?utf-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>,
+ <openwrt-devel@lists.openwrt.org>
+References: <CAOiHx=kDmjTAqgMW1W58-RUStCHvnHOwgM3s92Ooee3CZGSZGg@mail.gmail.com>
+ <20191110090447.16563-1-ynezz@true.cz>
+In-Reply-To: <20191110090447.16563-1-ynezz@true.cz>
+Date: Wed, 13 Nov 2019 13:23:10 +0100
+Message-ID: <008401d59a1d$1ce386e0$56aa94a0$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
 Content-Language: de
-Thread-Index: AQDYsPDVGtk9m46CJtJ5e+pqP6kaLAHQTdz/AiJ3EaECZdBCkalQEY+w
-X-Provags-ID: V03:K1:Mq4sEgiwKaFYWJ+9nRu5j/eVxEFZGoocU623+qy8fUui0E5y3ce
- jT0XsoouCivfRzxxAVNR/JIAt5Q6SCB39BtGwXRB7TPdGCdPwENBpjZlaE1NXDGQoKoJ1lM
- DM23YAemnm2CBEl0vMKif6gmqO8+LxbzyDBCtN7p02MJMT9gTaTCTJUIY88NRP2YUmgEu+e
- rBnxFKneCg8UF4dKAVGSg==
+Thread-Index: AQIH4rdC6XR+BCf4nzNUYslc8q5xIgEIiYTapxwvIQA=
+X-Provags-ID: V03:K1:GO+IF2I+xBqvQNWu1UQ8Ymae/2vTccI90sBZIEg7xnVqsxP/YPb
+ q86H4nOrQy5HqVU6XqU7EqWxbP1KPuaOlqU008Z5JM97+FvZm5+iOBsamvp6JsEFMRi9620
+ qVkS82g4nNEKsimy3jPKJynnd7Apz2qArzHMVDLqaG65EF1MQkvGj/QZ8JD3fdMdCw8NaRW
+ WSCBWq6F6RebaGubWeFQQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:BQ/yhRGU+Kg=:Jd+pez3F1VFj/zZTEQVEVe
- HohzXF+Wlq/d2rxMKWFGYo4+jMzFlNTvWWPQW2V4ZJnYyQ2Pc2eskjfTCgikVlNIfyZSJjXlg
- VTM8kuLRghYc6IRy6Qbb+vNVQX6AVaq7bU4fr5hNOgpBf5emd1MyGIUPEtEGnCl1LdKxAXFkE
- PuyJBDgVmPv5jWqAjDBmBcBWUqV6kcaf6ZYTYs7bum3ZM2ViH5JEyHaYu9BUGTNDnrqn5GkoU
- P7DzHkHTESJjzEqAFs5I3i8mZF00QY2X5uldxPk/96ITGxRIkZ0ehFpD7oPJ3f4xFmcow8JTs
- hyWXOQTVaMzyM05VrY6EDEvCVrkzDkqX5v52R5nTLk5rMaGJzwwHJmqbOX02T7SitwVecuUf7
- YSJajgy55CtyK8PBER06ruI+Eqv1YNuha4zr98pg8jfr1uOqtdVPrtGIFd3BtBQB3xez0cuPB
- ld4au+9uP3904DKF2dk8/Z3e3bQUNAynOUNlweVoK1g5kuuCi9QVlBTZEy4rF8FVpUMn07EPd
- NMDPXpDcrE586//ghjRh39fhvp8sAN2GI51fl/rNW90LsFi/XRkZtm6gMGq//6S+e+uza4PbL
- RjTMuL1doTuGhmMLnUc73nf0B4rpK0h2k3Ti+6OtYpbbMuGOhEwQGHEyfOs1gJtCObVJlnR9N
- c/BuZy0OnskH4xZoJvvL5x1iG4ZTMUiW/wTP4Av7tIz3SUsCcCIe2pZFNTOUDHUkZ/6F1nrSi
- CAeTowOfTDVnQoby1y294w5HNZvdlUvAMwqE/MXNH2fe/KPYVTXJZf3NxYet6d0OL8ZHpZf8X
- 5yhbL9EPNDzel6VeEFkrBlLt2OXqcKfCQp60t+aHQ/9mxZr5Nsw/E1wPSEhmOdzD8OQcF2Yb+
- F5/nEtwJ7TLK4uQ5C1twh2Uo84btCqsJsGtjvDxX4=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Ux51d6i5ZU8=:O34eBo4jc+nqyvxtvpF6iW
+ R//915cOZVqWlLrJfrSTcd+e5my60tK3FEnQzA1Sw30R9IO+E7ZVbhdcyI0x79eHgQV1QdwNE
+ uBQIPoxLlTWchOd3U899WgyMMGs2/C8tVOsyTNZVjjfjM4IVlCJmN6OlY2IwPdrSPo0594ZfA
+ 5VbDAV8tSB0axcRDuYF9AFpPctKljIrodzLUGHr2ODi0JsNVCuKk9lJ/HdR1P6T29fOrPBZm8
+ buklVKcnfT1Y8j6ee7wo0Pq3FxsP4++5akyEtVHOEEm8EKmMdKesNm7PxBtZheG4UPfHGC8WM
+ jjf6P1BqlDSPJsDHgYWPfkqPBHKqX9lT5UtlqwWu80gzWzeIUQKWlLMqHG05Wj6uMTaV4NVUr
+ U37nAq0VFEnpPhoMpyX/2u01niQ3Z3yDC+096Ag9n0cNIJ6iQokjyIOEz+wW1TMSZikKuZmCw
+ N7OhhYX/VIIKCIWqahQfeaNZ1JJ1VvfT7VG4U4NtAA4xqlRa/BFwKF7zqS7G2jQAIEGpf6D+w
+ JOu8PYCvwP7ZJGwbm1yRs5JJbN0jF+zFkzqagtFB/hy4VDBhY30YxUrupAxfwHe1hcgYgH2KY
+ AR+FZ/gz41UXro5+sMKbBZr/fNDeTF/i8D7QygpJVpdgE2fvm9c3V4+y/+AwmCKYLGKfVEc5S
+ W5qVagckle7jag9ZpuQzPwOUm6rbGd221VQMCs76zc4qS6PbPgqiCQ+L/in4xhNMmE0AF8uf3
+ fxvGBPnjdhDumrYwtZcTO4+LD9IOhpuLX+N3bKuP+2bkgUrLtGS+tbriN1ggwzqkbPDgAxjB5
+ fQiilbgjVtz4fe/QO0JZZY9JSTu8aSi/va1bpt8RiPbqNsFnwff+60pI3qufj0lQRqTqC2fqX
+ +N2PFLSej1hq0a7a8YCmj4B9Mmnu3IsPBUeIYIFnc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_041750_223262_9C314BB6 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20191113_042316_873085_27BC938F 
+X-CRM114-Status: GOOD (  11.10  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for COMFAST CF-E130N
- v2
+Subject: Re: [OpenWrt-Devel] [PATCH v2 maintainer-tools] patchwork-apply.sh:
+ try to fix DMARC mangled patches
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,22 +82,22 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8732037529060315402=="
+Content-Type: multipart/mixed; boundary="===============5350969944632518430=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============8732037529060315402==
+--===============5350969944632518430==
 Content-Language: de
 Content-Type: multipart/signed;
 	micalg=pgp-sha256;
 	protocol="application/pgp-signature";
-	boundary="=-=ohegdLCD/BHEPU=-="
+	boundary="=-=4Po2y7UZNTNwE6=-="
 
 This is a multipart message in MIME format.
 
---=-=ohegdLCD/BHEPU=-=
+--=-=4Po2y7UZNTNwE6=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
@@ -110,70 +106,75 @@ Hi,
 
 > -----Original Message-----
 > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of Kryma
-> Sent: Montag, 11. November 2019 23:02
+> Behalf Of Petr =C5=A0tetiar
+> Sent: Sonntag, 10. November 2019 10:05
 > To: openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for COMFAST CF-
-> E130N v2
+> Cc: Petr =C5=A0tetiar <ynezz@true.cz>
+> Subject: [OpenWrt-Devel] [PATCH v2 maintainer-tools] patchwork-apply.sh: =
+try
+> to fix DMARC mangled patches
 >=20
-> Hi,
+> In order to avoid DMARC plague in the commit messages:
 >=20
-> > That's wrong. You have 0x7d0000, not 0xfd0000 ...
+>  87f9292300cf hostapd: add IEEE 802.11k support
+>  450d44a8ead2 openssl: change defaults: ENGINE:on, NPN:off, misc
+>  eabc1ddc4541 build: Honour NO_COLOR in include/scan.mk
+>  3fb45576ac16 cryptodev-linux: move from packages feed
+>  a73283dc10f7 kernel: nf-nathelper-extra depends on ipt-raw
+>  0317fc3658eb libpcap: patch to add limits.h to pcap-usb-linux.c
+>  26dbf79f4905 libevent2: Don't build tests and samples
+>  d59126040701 brcm63xx: initial support for Sky SR102 router
+>  094d49cddf93 kernel: bump 4.14 to 4.14.51
+>  247055cbfbf1 igmpproxy: bump to 0.2.1
+>  c451434b963d cake: bump to 20180504 bake
+>  080fb7a3fbb6 iproute2: import latest cake
+>  ad5af37ca793 iproute2: backport json_print-fix-hidden-64-bit-type-promot=
+ion
+>  78f4305933b9 iftop: bump to latest
+>  7783f31359cb base-files: nand: use CI_KERNPART whenever the kernel volum=
+e is
+> needed
 >=20
-> There seems to be some discrepancy, possibly v1 vs v2. The
-> specifications on the website and the partitioning seem to imply a 8MB
-> image size - however, U-boot bootloader and the sum of MTD block sizes
-> gives us 16MB. Unsure, I tried both 8000 and 16192. Both seem to work
-> well, save for some I/O errors when writing files to homedir with both.
-> Not sure what that implies, but assuming 16MB as size all that given.
+> Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
 
-based on how we use it currently, IMAGE_SIZE should match the size of the f=
-irmware partition.
+I just want to support Petr, as I also think having just the DMARC comment =
+in the commit message is really a problem and should be addressed.
 
->=20
-> > Will this work without a defined gpio?
->=20
-> Could you elaborate?
-
-+		rssimediumhigh {
-+			label =3D "cf-e130n-v2:green:rssimediumhigh";
-+                        // No individual GPIOs matched this LED!
-+		};
-
-Will this still work when using rssimediumhigh in 01_leds?
+I think it should be dealt with both in patchwork-apply.sh and as a hook wh=
+en pushing to git.openwrt.org.
 
 Best
 
-Adrian
+Adrian=20
 
---=-=ohegdLCD/BHEPU=-=
+--=-=4Po2y7UZNTNwE6=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3L9GYACgkQoNyKO7qx
-AnBzwA/9H8SEXK4fe/0iF11QBMrLJpW1ajc4HtIzabAlY/5T4sx5ya9l605kTuey
-b2C1P0haW3CEA3rKcEawmhkKgLqSr/C8KcczF4ZEmGnpPtPED0TB1OMo50njruZZ
-i7p6hp7K7o0o1UXNWkxOAwyt5EeWd3o+TNKfCzSDsklnam87Hj8mAiDn+yT8if7k
-n8ZWK58cb1YLSYL/TMDyilPtJN652DtCNCO4hiIwQ9Pgl7Baw2J6UOMjec5HIiDD
-zHJ9oh8QCXRu29S5Zvo0xd/IFXktbbMVxzHEumv78b/mo74JBjDcsFB0l4JIivnS
-TBFPETdziLOz05V/zYP7z4cKtUyyKV71xKjfq72P3FcWP7Bc4xFyMf13QSPWwpe9
-/YSvQ4Tusl6/5X3oMue0RHPP69mUYxSiFtQ2G35WawyhP5yxeDbTvRy0IlnfEoXQ
-a9XGiPShiyY5XOeZi9d8mF2FkFL8f+n4jMBYVwuCzuQHsuNOWG329eP/4PR5V+wB
-cbbi/z6SdcVKFt+rWdqaj9ACxtvl1Ra4lUG8l73Y1sq571ZIhT7gfVXrSjwmNM2p
-gHd7bxyVlrwy3Y2aqCxos2zX2irpriWbX4jWJaM9KbDtylKQ5rhZFztlDdVM5Oy2
-REqGru3zmN2sRwxVZWfxs/SfbWeFAv+7gQbXv6iJN59uehiz5jY=
-=AouQ
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3L9a0ACgkQoNyKO7qx
+AnA5rA//RQO4LXDtYrfp5Vmo7gLNPy8TcHnb6MFidwfHP6imxDbTy3S2R83Icw3a
+owRUhP7vQ9xO5f6g3bsFe8LGYLy5HjXGewjMlCeaaBq7XYvkJ9Qt66CiLGdipTui
+g0CoXBmd1A6nXdVH1aP4SLlmWXUpxeSjiwJ0tBus0SPL+GpcDJeTDfns6vLmnE+N
+31NccTaHSwuoFoB0ssxAhQssgIMtE3zr88M50QCPUUF5QN+G5KSYgScnkifEzpoj
+9qFPN9gg2LNp+nTLS+UQxTphfcEZi+9EC9PJmv9na+luB8eEHsx+4ekQwdeCLuyy
+RZrBfvEQ1MkZFCS62CR0WemsmS1e12gbeK7o8RYWuTX94n0FxxQGuSVEwfblo2SD
+sBQAVIPl//NZk2phj9neY5lKhDk1LiUecue0C/7z+8UnJLue0hrH0s+FfUzu2R+K
+NjFz+qA1Df1Lj5TS41mgylpclC3AviAs6OlMIxCQbOxP/ex7OvidD0qWP6c4KnQi
+Q1j6pDsXuYT8AmUDwmMcAOilsXG4paQO6lb96sLUZmRwqvOp1MzhHSGPSKN6hHcf
+RTtGTtSwlRiRnNv9C5q+f5BFiIfsRl+nx3BJwefq/Nvm4uhAm+CGG1f4AwcBezQw
+ap4sYH4CQSWZH/EvMGWa20FRLohaIzQOVXcVYx2ARmhgQdhceWk=
+=+TcF
 -----END PGP SIGNATURE-----
 
 
---=-=ohegdLCD/BHEPU=-=--
+--=-=4Po2y7UZNTNwE6=-=--
 
 
 
---===============8732037529060315402==
+--===============5350969944632518430==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -184,6 +185,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8732037529060315402==--
+--===============5350969944632518430==--
 
 

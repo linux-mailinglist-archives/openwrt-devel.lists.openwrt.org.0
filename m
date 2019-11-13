@@ -2,37 +2,38 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28A17FBBAD
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 23:34:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E8ABFBBAF
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 23:34:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uDG47XrgzIzFey65vlRKsb9WwSEfAHeqgcRW9R08ewY=; b=X/GUsGUxj3YTHM
-	+R71hncZfYvDFwP1rrpB1caBNwueE71yIVsTth/Aul2hxZpiHOsI2WX2LfF+yPbb4p6pIXZsGdwJ3
-	jit/oj/GnjNByX5GkCGhAOpgjNmASJQ53LGKy+pBP6HGSt4H449fCu4DHxYvY7/eCntIf+hE6oDzn
-	QWf6e2VZ9ctnHovfXaCj1Ps5Hlxq86p+tneNpCLNkx8A97xidkb2nRbg+UTXoZnPYTButXcd2OCU0
-	hzAX97KPSyyfUxoY63uKEwvUS6SHm0/z4a25brNbfvqEXD0GpeBUTwHQYL6a8cR3JF4P7Md53tHK/
-	CtvB67oY2jv9HoS+1rjQ==;
+	List-Owner; bh=/6J5baprdhMOG9UVHcN2I9Nn8RdW0gj/jXGL+RFa8jY=; b=V23XmcTR8L1VUQ
+	sF8ZVylv/hyAlG5q7+sQknVaEPgvJZcq0ZNPeUnT0Hi76MlfkzdGA3DLquS2LIKGwJ1trasVgpnZt
+	NackAObcSROfrffs7YBa2rnvQ0Lw2ugrAuyhMWE0288DdG548Hu2dalx9JTZx7v+yBZr1+lisbKwc
+	lgzl0n6zJpfCNLS5G9sI+XkMB/xjJ+hDas4vFeq+Yv8qLbQJQDXWB0kQMz++BqLpsJEUuaqFrbXE/
+	bWwjvR+OAAmEVP6JeOouVP1ZZCwixLPVlJg5FElUG/XY4skTdkAFR70QYoINJWfhhGDAMqDy0Fdde
+	JIlM8U0+yLkN0e4s90Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV1DE-00070K-Vr; Wed, 13 Nov 2019 22:34:08 +0000
-Received: from mout-u-107.mailbox.org ([91.198.250.252])
+	id 1iV1Dc-0007Is-W4; Wed, 13 Nov 2019 22:34:33 +0000
+Received: from mout-u-204.mailbox.org ([2001:67c:2050:1::465:204])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV1D6-0006zF-Sz
- for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 22:34:03 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1iV1DV-0007IE-A2
+ for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 22:34:27 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-u-107.mailbox.org (Postfix) with ESMTPS id 47CztB4xB2zKmdr;
- Wed, 13 Nov 2019 23:33:54 +0100 (CET)
+ by mout-u-204.mailbox.org (Postfix) with ESMTPS id 47Cztk6QMFzQlDX;
+ Wed, 13 Nov 2019 23:34:22 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id ex-OyIh5tzb5; Wed, 13 Nov 2019 23:33:50 +0100 (CET)
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id 3-PJ5_0bptyz; Wed, 13 Nov 2019 23:34:19 +0100 (CET)
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -96,13 +97,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
 To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Message-ID: <5148efc9-0909-e522-4133-abae6f0e4a96@hauke-m.de>
-Date: Wed, 13 Nov 2019 23:33:49 +0100
+Message-ID: <09cccd72-f969-0324-f78a-a1c416406f50@hauke-m.de>
+Date: Wed, 13 Nov 2019 23:34:16 +0100
 MIME-Version: 1.0
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_143401_249878_EF131EB7 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20191113_143425_649669_8DC9ABE4 
+X-CRM114-Status: GOOD (  10.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -110,8 +111,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] Security Advisory 2019-11-05-3 - ustream-ssl
- information disclosure (CVE-2019-5101, CVE-2019-5102)
+Subject: [OpenWrt-Devel] Security Advisory 2019-11-05-1 - LuCI stored XSS
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,72 +123,79 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jo@mein.io>
+Cc: Jo-Philipp Wich <jo@mein.io>, Ridwan Maulana <mrm@asdqwe.net>,
+ Marcin Zieba <marcin.zieba@ehlo.red>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Security Advisory 2019-11-05-3 - ustream-ssl information disclosure
-(CVE-2019-5101, CVE-2019-5102)
+Security Advisory 2019-11-05-1 - LuCI stored XSS
 
 
 DESCRIPTION
 
-An exploitable information leak vulnerability exists in the ustream-ssl
-library of OpenWrt. When connecting to a remote server, the server's
-SSL certificate is checked but no action is taken when the certificate
-is invalid. An attacker could exploit this behavior by performing a
-man-in-the-middle attack, providing any certificate, leading to the
-theft of all the data sent by the client during the first request.
+A vulnerability has been reported in LuCI which allows injection of
+script code through maliciously crafted wireless network SSIDs.
+
+When joining a wireless network by clicking Network -> Wireless -> Join,
+the subsequent configuration view interprets the SSID of the network
+to join without proper escaping, allowing to execute arbitrary
+JavaScript in the client's web browser through network names which
+contains payload, for example
+AP</h2><svg onclick=alert(0);>
+
+Additionally the network interface overview displays configured wireless
+network SSID without proper escaping.
+
+Since the SSID string is stored in the UCI configuration, the issue
+effectively becomes a stored Stored Cross Site Scripting (XSS)
+vulnerability.
 
 
 REQUIREMENTS
 
-In order to exploit this vulnerability, a malicious actor needs to
-perform a man-in-the-middle attack, presenting a requesting ustream-ssl
-client with any invalid certificate. The ustream-ssl client will
-eventually tear down the SSL connection due to that, but only after
-flushing pending data, e.g. the HTTP request payload in case of an
-HTTPS client application.
+In order to exploit this vulnerability, a user needs to either
+explicitly pick a network with a malicious SSID from the wireless scan
+result list or manually add a wireless network with an SSID containing
+embedded script and browsing to the network interface overview page.
+
+The wireless scan result list is not affected by this issue, so no
+automatic script code execution is possible through it.
 
 
 MITIGATIONS
 
-To fix this issue, update the affected ustream-ssl packages using
-the command below.
+To fix this issue, update the affected LuCI package using the command
+below. The fix is contained in version `git-19.309.48729-bc17ef673` and
+later.
 
-   `opkg update; opkg upgrade libustream-mbedtls libustream-openssl`
+   `opkg update; opkg upgrade luci-mod-admin-full`
 
-The fix is contained in the following and later versions:
-
- - OpenWrt master: 2019-11-05-c9b66682-1
- - OpenWrt 19.07:  2019-08-17-e8f9c22d-2
- - OpenWrt 18.06:  2018-07-30-23a3f283-2
+To workaround the problem, avoid joining networks with HTML code in the
+SSID.
 
 
 AFFECTED VERSIONS
 
-To our knowledge, OpenWrt versions 18.06.0 to 18.06.4 are affected.
-The fixed packages are integrated in the OpenWrt 18.06.5, OpenWrt
-19.07.0-rc1 and subsequent releases. Older versions of OpenWrt (e.g.
-OpenWrt 15.05 and LEDE 17.01) are end of life and not supported any more.
+To our knowledge, LuCI packages with OpenWrt versions 18.06.0 to 18.06.4
+are affected. OpenWrt 19.07 is not affected by this problem.
+The fixed LuCI packages are integrated in the OpenWrt 18.06.5. Older
+versions of OpenWrt (e.g. OpenWrt 15.05 and LEDE 17.01) are end of life
+and not supported any more.
 
 
 CREDITS
 
-The issue has been reported by the Claudio Bozzato of Cisco Talos on
-11th September 2019.
-http://talosintelligence.com/vulnerability-reports/
+The issue has been reported by Marcin Zieba <marcin.zieba@ehlo.red> on
+27th October 2019 and independently by Ridwan Maulana <mrm@asdqwe.net>
+on 5th November 2019.
 The issue has been fixed by Jo-Philipp Wich <jo@mein.io>
 
 
 REFERENCES
 
-https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5101
-https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5102
-https://talosintelligence.com/vulnerability_reports/TALOS-2019-0893
-https://git.openwrt.org/?p=project/ustream-ssl.git;a=commitdiff;h=c9b6668215a27f2346d5eedd6f29cc720985b448
+https://github.com/openwrt/luci/commit/bc17ef673f734ea8e7e696ba5735588da9111dcd
 
 _______________________________________________
 openwrt-devel mailing list

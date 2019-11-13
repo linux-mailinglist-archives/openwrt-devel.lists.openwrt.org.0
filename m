@@ -2,52 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 093F6FB96A
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 21:08:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59240FB973
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 21:10:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GPi06+urj+KaOVssn4iAqTxqIE1P8aFyTNnLU1zq6fo=; b=WzsQGfImy13fxx
-	yldQNCsc74TYKkaABWZ3h9yTT6lY0eZiznWDmD5h/6PeGcXfBHMoGt9yBCRrFM7gO6Xhal0mzBL5G
-	9yhwLDWD05e5IEMiEQsit5gvyRbUlm/yOeOcgSV5PbYiMRvp7LaPQlzjJ5zkAgbbh05ee2tQ1AL7I
-	4578X+duVionoBOZlux4Mwiuy0deB6cOUFsJvQ1RgGmxH8eFAZ8lk1uTpKN6I0nKNUzX/9AcWniKD
-	YGhOsYf55Jivg4V3p6TfFRZAi0mDx7sIXuxt9tGyWLSciV9hCLXDb8VdP97wxURBYn3jz5sEjYJRm
-	ELc1UG7kuo4PM6ypYIgg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8GZOLloxxRfwTCyqLIoJHU0mRi3vEwmCviSGv9MCaKI=; b=UIKF/Ch0ZTqxHi
+	w9V+hM6qjfbdkG2pLOJVEvnywB9kv7CQC+oDiFJteiWbx1OXn6P5L+s/vUf57XUBdNqjQs67uGEUS
+	Quxc0zZwKd4xFSqZABFCSogvBV/sQ8OnICsFm8CilY82++DFECKB7oSALjiZCemuOcSpjktYOEvrr
+	n3f9ylEcRNrUHTtZR4/znVHoQfA6TfSEpeW/14Llv3sx1jERlH3kJZlDpHTKlmnPkaGPorqGs72oN
+	Jt5F/r1EEYpaQ4AYT7+61fTCs0fLyek2xrMGAjWP9o+twvKASJ/hzOwf7uXXagGwe8Wc2epb/4Wlb
+	bZ3/y1i7Qc3PkjOXX3DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUywW-0005FF-NI; Wed, 13 Nov 2019 20:08:44 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1iUyy0-0007Bx-Ax; Wed, 13 Nov 2019 20:10:16 +0000
+Received: from ned.t-8ch.de ([212.47.237.191])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUywM-0005Ej-Fg
- for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 20:08:36 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1iUywF-0004ED-Vy; Wed, 13 Nov 2019 21:08:30 +0100
-Date: Wed, 13 Nov 2019 21:08:06 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Russell Senior <russell@personaltelco.net>
-Message-ID: <20191113200806.GA1279@makrotopia.org>
-References: <87bltgller.fsf@husum.klickitat.com>
+ id 1iUyxt-0005zv-1S
+ for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 20:10:10 +0000
+From: =?UTF-8?q?Thomas=20Wei=C3=9Fschuh?= <thomas@t-8ch.de>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=t-8ch.de; s=mail;
+ t=1573675794; bh=ZP3rZ7zblpFt2gJAbdUz16gbwVBAfXqzl3KPqsCsIzY=;
+ h=From:To:Cc:Subject:Date:From;
+ b=oe6gv1/7eRdT82fu4V/J3uOuIzAb1x0RPa1DKgvFsjZRUbobDTypCeEPWBfeRl58+
+ FHJc3SSUh4VNL69cDjv2T33+UGPJ3ilL7ckHiuIWSHP7KVwA6TeZvV6Op34AXpueQO
+ I2H/lSOfyXhqwVMhL/au8XWl4uihStcQ/NLKyhqw=
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 13 Nov 2019 21:09:31 +0100
+Message-Id: <20191113200931.106783-1-thomas@t-8ch.de>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87bltgller.fsf@husum.klickitat.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_120834_521981_E74BE7A9 
-X-CRM114-Status: GOOD (  13.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191113_121009_363660_C78FBED3 
+X-CRM114-Status: UNSURE (   4.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.47.237.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] base-files: add
- /usr/share/libubox/jshn.sh to sysupgrade stage2
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH] build: support python 3.8
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,63 +67,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?Thomas=20Wei=C3=9Fschuh?= <thomas@t-8ch.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Russell,
-
-On Tue, Nov 12, 2019 at 03:33:48PM -0800, Russell Senior wrote:
-> 
-> Discovered recent changes had broken sysupgrade for ar71xx mikrotik
-> rb-493g, traced the problem to missing /usr/share/libubox/jshn.sh after
-> switching to tmpfs.
-
-I've applied your patch to master. Do we need to apply it for
-openwrt-19.07 as well?
-
-Cheers
-
-
-Daniel
-
-> 
-> 
-> Signed-off-by: Russell Senior <russell@personaltelco.net>
-> ---
->  package/base-files/files/lib/upgrade/stage2 | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/package/base-files/files/lib/upgrade/stage2 b/package/base-files/files/lib/upgrade/stage2
-> index 5d3d46ee80..41a3b2aeb3 100755
-> --- a/package/base-files/files/lib/upgrade/stage2
-> +++ b/package/base-files/files/lib/upgrade/stage2
-> @@ -48,7 +48,7 @@ switch_to_ramfs() {
->  		local file="$(which "$binary" 2>/dev/null)"
->  		[ -n "$file" ] && install_bin "$file"
->  	done
-> -	install_file /etc/resolv.conf /lib/*.sh /lib/functions/*.sh /lib/upgrade/*.sh /lib/upgrade/do_stage2 $RAMFS_COPY_DATA
-> +	install_file /etc/resolv.conf /lib/*.sh /lib/functions/*.sh /lib/upgrade/*.sh /lib/upgrade/do_stage2 /usr/share/libubox/jshn.sh $RAMFS_COPY_DATA
->  
->  	[ -L "/lib64" ] && ln -s /lib $RAM_ROOT/lib64
->  
-> -- 
-> 2.24.0
-> 
-> 
-> 
-> -- 
-> Russell Senior, President
-> russell@personaltelco.net
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+U2lnbmVkLW9mZi1ieTogVGhvbWFzIFdlacOfc2NodWggPHRob21hc0B0LThjaC5kZT4KLS0tCiBp
+bmNsdWRlL3ByZXJlcS1idWlsZC5tayB8IDIgKysKIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlv
+bnMoKykKCmRpZmYgLS1naXQgYS9pbmNsdWRlL3ByZXJlcS1idWlsZC5tayBiL2luY2x1ZGUvcHJl
+cmVxLWJ1aWxkLm1rCmluZGV4IDRjNTk5MTAwNTYuLjY1YmFmMWY1ZTUgMTAwNjQ0Ci0tLSBhL2lu
+Y2x1ZGUvcHJlcmVxLWJ1aWxkLm1rCisrKyBiL2luY2x1ZGUvcHJlcmVxLWJ1aWxkLm1rCkBAIC0x
+NDQsMTIgKzE0NCwxNCBAQCAkKGV2YWwgJChjYWxsIFNldHVwSG9zdENvbW1hbmQscGVybCxQbGVh
+c2UgaW5zdGFsbCBQZXJsIDUueCwgXAogJChldmFsICQoY2FsbCBDbGVhbnVwUHl0aG9uMikpCiAK
+ICQoZXZhbCAkKGNhbGwgU2V0dXBIb3N0Q29tbWFuZCxweXRob24sUGxlYXNlIGluc3RhbGwgUHl0
+aG9uID49IDMuNSwgXAorCXB5dGhvbjMuOCAtViAyPiYxIHwgZ3JlcCAtRSAnUHl0aG9uIDNcLls1
+LTldXC4/JywgXAogCXB5dGhvbjMuNyAtViAyPiYxIHwgZ3JlcCAtRSAnUHl0aG9uIDNcLls1LTld
+XC4/JywgXAogCXB5dGhvbjMuNiAtViAyPiYxIHwgZ3JlcCAtRSAnUHl0aG9uIDNcLls1LTldXC4/
+JywgXAogCXB5dGhvbjMuNSAtViAyPiYxIHwgZ3JlcCAtRSAnUHl0aG9uIDNcLls1LTldXC4/Jywg
+XAogCXB5dGhvbjMgLVYgMj4mMSB8IGdyZXAgLUUgJ1B5dGhvbiAzXC5bNS05XVwuPycpKQogCiAk
+KGV2YWwgJChjYWxsIFNldHVwSG9zdENvbW1hbmQscHl0aG9uMyxQbGVhc2UgaW5zdGFsbCBQeXRo
+b24gPj0gMy41LCBcCisJcHl0aG9uMy44IC1WIDI+JjEgfCBncmVwIC1FICdQeXRob24gM1wuWzUt
+OV1cLj8nLCBcCiAJcHl0aG9uMy43IC1WIDI+JjEgfCBncmVwIC1FICdQeXRob24gM1wuWzUtOV1c
+Lj8nLCBcCiAJcHl0aG9uMy42IC1WIDI+JjEgfCBncmVwIC1FICdQeXRob24gM1wuWzUtOV1cLj8n
+LCBcCiAJcHl0aG9uMy41IC1WIDI+JjEgfCBncmVwIC1FICdQeXRob24gM1wuWzUtOV1cLj8nLCBc
+Ci0tIAoyLjI0LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53
+cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0
+LWRldmVsCg==

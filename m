@@ -2,85 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB876FB88E
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 20:12:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 808D1FB8AB
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 20:20:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oPwVC1/M0zpfZu3zVc3ZhDnCCgzeUlkDl1hOVV0In0E=; b=YW0EzxUbv3oIyN
-	RgxP3HoFDjA9SR9ZAiOc5eqh+ebyChKbBaIy2bFITxlirLHImgkrgVhrr/1LBuRDzHVWdE1Za9TLO
-	zPAvGfvZDQtlDCEmojCK//y7GeCHORhzdACjNeO9GeqURPCxABRlfLoanAvwgWK1Jal9KhpU3YRcQ
-	yiHxXcq+GjQ0ihs+7b1JcF2VJ2MEmWjYeDGOUdOXbMtv5Y9qiM9JIojbgLEpR0MsAHEJGYUGd/OT/
-	v6bm/fXQ+USs62stJP9/AtX3vTvORYyAMcz6QBaDtL1MuGyJN8Uykvap7cpnCSe0usbb0krtk7qZY
-	JTbL4/OKGoMN94J2HrkQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3RHk5CaI3MJAt7HCEm6HpbQpt4iQq+2pn0klCI+q8rg=; b=bnrv9uFgcwBpjc
+	YvcTQ+y653Z0Ztc6Q4GELrcMtr/1A9NF92DaKz7fRQQQ+74+rKjYuSEKiKE9gAHM5USOnXNCX9Nxg
+	lIxdN4JwlOd6UF3V66gFC5x79TcjjHR/7ywwcD8LWdOpmF0gwH+xNeo5nFZEq3PUN1qSwuy1clPWO
+	m9EpFpg9i/xuRuAxyRyld8cEAOu6rv49G+OCOcS2E5XBeNHzcYSpS1C7X5qkPIzJujChuR7pcab3q
+	QQDCqfWNM1mhVDA6Chw+pfArxVKDTcwcNZii2XUhuw3iNx9LVJJI0/lBhjm/omvwo2DdJJooAEzoz
+	KhbrmpcFFgu60yXouzYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUy3o-0001H1-NY; Wed, 13 Nov 2019 19:12:12 +0000
+	id 1iUyBI-0003Sn-Rr; Wed, 13 Nov 2019 19:19:56 +0000
 Received: from a1i272.smtp2go.com ([43.228.185.16])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUy3g-0001GF-VA
- for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 19:12:06 +0000
+ id 1iUyBA-0003SM-TE
+ for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 19:19:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=smtpservice.net; s=m6sda0.a1-4.dyn; x=1573673211; h=Feedback-ID:
- X-Smtpcorp-Track:Date:Message-ID:From:To:Subject:Reply-To:Sender:
- List-Unsubscribe; bh=BlqfnZERYdjpqbXYooEXDyzzTeeaYIdg2ezAvv/cffQ=; b=kURI9R1K
- jHSMZz3JRCvNZ92VEwpaIU4Gq6IMGZdQnlcXohdlb7VL20mMYf8IahEOIUcfgOEKAi7i+w7MTv/3e
- enKsYytc/T+hpre4bShpQnITqv+yL1AIDsHf5s25w4Ds452p4yycJwN/yIvpIK9FfJEuME8Gwlq0x
- /GhfVO7nESKnzjCuoc81MpMEIFc5jGmlXkk0WbkleKSYff4kuu3rwFAbiPgyfSFflectzbPvcb4vv
- qmzBdRDPQmy1ceWDt7Ji3ffPoXinXiH8JdCtHoBRCpygXDIzz2kgDZXSiwPTh467hrqPuOsiGyJL7
- hcpIKd1i+7rSEjrYR/B7L1TAHw==;
-Received: from [10.173.255.233] (helo=SmtpCorp)
+ d=smtpservice.net; s=m6sda0.a1-4.dyn; x=1573673688; h=Feedback-ID:
+ X-Smtpcorp-Track:Message-Id:Date:Subject:To:From:Reply-To:Sender:
+ List-Unsubscribe; bh=EOXttfOLVype+0QzEM7cnGN5QhBpW4LrdoiMcztJfxA=; b=r944hyB8
+ hK/eAwwFDFuhTN/s2qXhBcz/NtFzwfig1Df0hkwFIfl5ik5DccBzqF4D/CGYEVPN2YlICuFqXVulD
+ GozfzKeqEHU1jY/iemZwU6ku0QHAYyMFUHL7kEXfjrr4zqGk9zWGONFbdjrrUiXMQ1OG/ugZSF7Zp
+ cmfUT8IFGb0c4SFhHMhvWO5Zjk8S5HTnyY2Nre5gtAPkolJPNAaXKwt1kC5jDtl3YqXff7P9ZaxrO
+ BnkGZmD63QlSg4o+iKtZbwoWqmBx/9HoOM0AFDSKR1Gae6Cv9nQr7RvdQsuu2EqZILV61dBxzicLZ
+ V4Hpbx93FbBSvDNYm4O8bZu6fw==;
+Received: from [10.66.228.43] (helo=SmtpCorp)
  by smtpcorp.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92-S2G) (envelope-from <paulb@blazebox.homeip.net>)
- id 1iUy3P-ItkG13-LZ; Wed, 13 Nov 2019 19:11:48 +0000
+ id 1iUyB9-ItkBGj-8c; Wed, 13 Nov 2019 19:19:47 +0000
 Received: from [10.68.161.204] (helo=mail.blazebox.homeip.net)
- by smtpcorp.com with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ by smtpcorp.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92-S2G) (envelope-from <paulb@blazebox.homeip.net>)
- id 1iUy3O-IbZrx4-Bt; Wed, 13 Nov 2019 19:11:46 +0000
+ id 1iUyB8-wSEWEY-S3; Wed, 13 Nov 2019 19:19:46 +0000
 Received: from blazebox.homeip.net (localhost [127.0.0.1])
- by mail.blazebox.homeip.net (Postfix) with ESMTP id 523B2630901;
- Wed, 13 Nov 2019 14:11:40 -0500 (EST)
+ by mail.blazebox.homeip.net (Postfix) with ESMTP id 93AB5630902;
+ Wed, 13 Nov 2019 14:19:40 -0500 (EST)
 X-Virus-Scanned: amavisd-new at blazebox.homeip.net
 Received: from mail.blazebox.homeip.net ([127.0.0.1])
  by blazebox.homeip.net (mail.blazebox.homeip.net [127.0.0.1]) (amavisd-new,
  port 10024)
- with LMTP id quCUGwWuTf8U; Wed, 13 Nov 2019 14:11:37 -0500 (EST)
-Received: from [IPv6:2001:470:1f07:a3a:2dac:cce6:ced7:c53d] (unknown
+ with LMTP id H_ryGuRZLtTH; Wed, 13 Nov 2019 14:19:38 -0500 (EST)
+Received: from blaze.homeip.net (unknown
  [IPv6:2001:470:1f07:a3a:2dac:cce6:ced7:c53d])
- by mail.blazebox.homeip.net (Postfix) with ESMTPA id C24CA630900;
- Wed, 13 Nov 2019 14:11:36 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=blazebox.homeip.net;
- s=mail; t=1573672296;
- bh=BlqfnZERYdjpqbXYooEXDyzzTeeaYIdg2ezAvv/cffQ=;
- h=Subject:To:References:From:Cc:Date:In-Reply-To;
- b=wYMfc0rZo448mntL72OG526ntnFLAY/pdcF0/iOjr3ACSLoCosgrO6acxMxmWY+yw
- J2OeoPuPB0wbF1w9lz3qkTuG5T78pZWwW72XTo8uotLO4TkQcNDBwVE3zQvhmNobfb
- 3a4tGvw/69jAxzMRsHM+gqbWTu1EUA6m0sMG4X6+CrL8H3BA3vc4A+75GvpyrDWkGd
- 7PBYQOjGay7JiiDu4Uue/EMuU9Odj5XPY2aMB6FsoHLNS0oGW9PZPFpwe5Q3ioVxWz
- h7JjZIwWF/mae/oxsVWm6s5nlulLyfjovfhgdi5QESHuUl3E9O5Ur1Mr57xNLfn69T
- 8i59n+4jka29A==
-To: "Schmutzler, Adrian" <Adrian.Schmutzler@uni-bayreuth.de>
-References: <20191113173242.9037-1-paulb@blazebox.homeip.net>
- <20191113173242.9037-2-paulb@blazebox.homeip.net>
- <f839b2d2d2aa4136b1562baf77074a09@uni-bayreuth.de>
+ by mail.blazebox.homeip.net (Postfix) with ESMTP id A22AF630900;
+ Wed, 13 Nov 2019 14:19:38 -0500 (EST)
+Received: by blaze.homeip.net (Postfix, from userid 4444)
+ id DCFAD2046002; Wed, 13 Nov 2019 14:19:37 -0500 (EST)
 From: Paul Blazejowski <paulb@blazebox.homeip.net>
-Message-ID: <6e39fe03-bd61-9683-68ef-0ec9721a422c@blazebox.homeip.net>
-Date: Wed, 13 Nov 2019 14:11:35 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 13 Nov 2019 14:19:31 -0500
+Message-Id: <20191113191932.11470-1-paulb@blazebox.homeip.net>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-In-Reply-To: <f839b2d2d2aa4136b1562baf77074a09@uni-bayreuth.de>
-Content-Language: en-US
-X-Smtpcorp-Track: 1ily3OmPZrx4Ut.zUVzwuNw1
-Feedback-ID: 316702m:316702a3jAEqy:316702svgSNKSEU-
+X-Smtpcorp-Track: 1ilyU8wSEWEYS3.zUdTuneAS
+Feedback-ID: 316702m:316702a3jAEqy:316702ssU6Uiw90n
 X-Report-Abuse: Please forward a copy of this message, including all headers,
  to <abuse-report@smtp2go.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_111205_340319_C17A32C7 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20191113_111949_068964_4091861A 
+X-CRM114-Status: GOOD (  12.78  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -93,8 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
-Subject: Re: [OpenWrt-Devel] FW: [PATCH 2/2] ath79: add support for Netgear
- WNDR3700v4
+Subject: [OpenWrt-Devel] [PATCH 1/2] ath79: split dts file for Netgear
+ WNDR4300
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,83 +92,622 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Cc: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 
+Move board configuration to dtsi file in preparation for WNDR3700v4
+router support.
 
-On 11/13/19 12:42 PM, Schmutzler, Adrian wrote:
-> =A0
-> =
+Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+---
+ .../linux/ath79/dts/ar9344_netgear_wndr.dtsi  | 290 ++++++++++++++++++
+ .../ath79/dts/ar9344_netgear_wndr4300.dts     | 286 +----------------
+ 2 files changed, 291 insertions(+), 285 deletions(-)
+ create mode 100644 target/linux/ath79/dts/ar9344_netgear_wndr.dtsi
 
-> =A0
-> =
+diff --git a/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi b/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi
+new file mode 100644
+index 0000000000..16a4e3f6e8
+--- /dev/null
++++ b/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi
+@@ -0,0 +1,290 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "ar9344.dtsi"
++
++/ {
++	chosen {
++		bootargs = "console=ttyS0,115200n8";
++	};
++
++	aliases {
++		led-boot = &led_power_amber;
++		led-failsafe = &led_power_amber;
++		led-running = &led_power_green;
++		led-upgrade = &led_power_amber;
++		label-mac-device = &eth0;
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		wps {
++			label = "wps";
++			linux,code = <KEY_WPS_BUTTON>;
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++		};
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 21 GPIO_ACTIVE_LOW>;
++		};
++
++		rfkill {
++			label = "rfkill";
++			linux,code = <KEY_RFKILL>;
++			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&enable_gpio_11>;
++
++		led_power_green: power_green {
++			label = "netgear:green:power";
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++		};
++
++		led_power_amber: power_amber {
++			label = "netgear:amber:power";
++			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
++			default-state = "keep";
++		};
++
++		wan_green {
++			label = "netgear:green:wan";
++			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
++		};
++
++		wan_amber {
++			label = "netgear:amber:wan";
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		wlan2g_green {
++			label = "netgear:green:wlan2g";
++			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++		wlan5g_blue {
++			label = "netgear:blue:wlan5g";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++
++		wps_green {
++			label = "netgear:green:wps";
++			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++		};
++
++		wps_amber {
++			label = "netgear:amber:wps";
++			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++		};
++
++		usb_green {
++			label = "netgear:green:usb";
++			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
++			trigger-sources = <&hub_port>;
++			linux,default-trigger = "usbport";
++		};
++	};
++};
++
++&pinmux {
++	enable_gpio_11: pinmux_enable_gpio_11 {
++		pinctrl-single,bits = <0x8 0x0 0xff000000>;
++	};
++};
++
++&nand {
++	status = "okay";
++
++	partitions {
++		compatible = "fixed-partitions";
++		#address-cells = <1>;
++		#size-cells = <1>;
++
++		partition@0 {
++			label = "u-boot";
++			reg = <0x0 0x40000>;
++			read-only;
++		};
++
++		partition@40000 {
++			label = "u-boot-env";
++			reg = <0x40000 0x40000>;
++		};
++
++		art: partition@80000 {
++			label = "caldata";
++			reg = <0x80000 0x40000>;
++			read-only;
++		};
++
++		partition@c0000 {
++			label = "pot";
++			reg = <0xc0000 0x80000>;
++		};
++
++		partition@140000 {
++			label = "language";
++			reg = <0x140000 0x200000>;
++		};
++
++		partition@340000 {
++			label = "config";
++			reg = <0x340000 0x80000>;
++		};
++
++		partition@3c0000 {
++			label = "traffic_meter";
++			reg = <0x3c0000 0x300000>;
++		};
++
++		kernel@6c0000 {
++			label = "kernel";
++			reg = <0x6c0000 0x200000>;
++		};
++
++		ubi@8c0000 {
++			label = "ubi";
++			reg = <0x8c0000 0x1700000>;
++		};
++
++		partition@6c0000 {
++			label = "firmware";
++			reg = <0x6c0000 0x1900000>;
++			compatible = "netgear,uimage";
++		};
++
++		partition@1fc0000 {
++			label = "caldata_backup";
++			reg = <0x1fc0000 0x40000>;
++			read-only;
++		};
++
++		partition@2000000 {
++			label = "reserved";
++			reg = <0x2000000 0x6000000>;
++			read-only;
++		};
++	};
++};
++
++&ref {
++	clock-frequency = <40000000>;
++};
++
++&builtin_switch {
++	resets = <&rst 8>, <&rst 12>;
++	reset-names = "switch", "switch-analog";
++};
++
++&mdio0 {
++	status = "okay";
++
++	phy-mask = <0>;
++
++	phy0: ethernet-phy@0 {
++		reg = <0>;
++		phy-mode = "rgmii";
++		qca,mib-poll-interval = <500>;
++
++		qca,ar8327-initvals = <
++			0x04 0x07600000
++			0x0c 0x01000000
++			0x10 0xc1000000
++			0x50 0xcc35cc35
++			0x54 0xcb37cb37
++			0x58 0x00000000
++			0x5c 0x00f3cf00
++			0x7c 0x0000007e
++			0x94 0x0000007e
++			>;
++	};
++};
++
++&eth0 {
++	status = "okay";
++
++	/* default for ar934x, except for 1000M */
++	pll-data = <0x06000000 0x00000101 0x00001616>;
++
++	mtd-mac-address = <&art 0x0>;
++
++	phy-mode = "rgmii";
++	phy-handle = <&phy0>;
++};
++
++&gpio {
++	status = "okay";
++
++	lna0 {
++		gpio-hog;
++		line-name = "netgear:ext:lna0";
++		gpios = <18 GPIO_ACTIVE_HIGH>;
++		output-high;
++	};
++
++	lna1 {
++		gpio-hog;
++		line-name = "netgear:ext:lna1";
++		gpios = <19 GPIO_ACTIVE_HIGH>;
++		output-high;
++	};
++};
++
++&wmac {
++	status = "okay";
++
++	mtd-mac-address = <&art 0x0>;
++	qca,no-eeprom;
++};
++
++&pcie {
++	status = "okay";
++
++	ath9k: wifi@0,0 {
++		compatible = "pci168c,0033";
++		reg = <0x0000 0 0 0 0>;
++		mtd-mac-address = <&art 0xc>;
++		qca,no-eeprom;
++		#gpio-cells = <2>;
++		gpio-controller;
++
++		usb_power {
++			gpio-hog;
++			line-name = "netgear:power:usb";
++			gpios = <0 GPIO_ACTIVE_HIGH>;
++			output-high;
++		};
++	};
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&usb {
++	status = "okay";
++	#address-cells = <1>;
++	#size-cells = <0>;
++
++	hub_port: port@1 {
++		reg = <1>;
++		#trigger-source-cells = <0>;
++	};
++};
++
++&uart {
++	status = "okay";
++};
+diff --git a/target/linux/ath79/dts/ar9344_netgear_wndr4300.dts b/target/linux/ath79/dts/ar9344_netgear_wndr4300.dts
+index 08cd84e51e..9b57bb88a6 100644
+--- a/target/linux/ath79/dts/ar9344_netgear_wndr4300.dts
++++ b/target/linux/ath79/dts/ar9344_netgear_wndr4300.dts
+@@ -1,293 +1,9 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+ /dts-v1/;
+ 
+-#include <dt-bindings/gpio/gpio.h>
+-#include <dt-bindings/input/input.h>
+-
+-#include "ar9344.dtsi"
++#include "ar9344_netgear_wndr.dtsi"
+ 
+ / {
+ 	compatible = "netgear,wndr4300", "qca,ar9344";
+ 	model = "Netgear WNDR4300";
+-
+-	chosen {
+-		bootargs = "console=ttyS0,115200n8";
+-	};
+-
+-	aliases {
+-		led-boot = &led_power_amber;
+-		led-failsafe = &led_power_amber;
+-		led-running = &led_power_green;
+-		led-upgrade = &led_power_amber;
+-		label-mac-device = &eth0;
+-	};
+-
+-	keys {
+-		compatible = "gpio-keys";
+-
+-		wps {
+-			label = "wps";
+-			linux,code = <KEY_WPS_BUTTON>;
+-			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		reset {
+-			label = "reset";
+-			linux,code = <KEY_RESTART>;
+-			gpios = <&gpio 21 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		rfkill {
+-			label = "rfkill";
+-			linux,code = <KEY_RFKILL>;
+-			gpios = <&gpio 15 GPIO_ACTIVE_LOW>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&enable_gpio_11>;
+-
+-		led_power_green: power_green {
+-			label = "netgear:green:power";
+-			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		led_power_amber: power_amber {
+-			label = "netgear:amber:power";
+-			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
+-			default-state = "keep";
+-		};
+-
+-		wan_green {
+-			label = "netgear:green:wan";
+-			gpios = <&gpio 1 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wan_amber {
+-			label = "netgear:amber:wan";
+-			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wlan2g_green {
+-			label = "netgear:green:wlan2g";
+-			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy0tpt";
+-		};
+-
+-		wlan5g_blue {
+-			label = "netgear:blue:wlan5g";
+-			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
+-			linux,default-trigger = "phy1tpt";
+-		};
+-
+-		wps_green {
+-			label = "netgear:green:wps";
+-			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		wps_amber {
+-			label = "netgear:amber:wps";
+-			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
+-		};
+-
+-		usb_green {
+-			label = "netgear:green:usb";
+-			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
+-			trigger-sources = <&hub_port>;
+-			linux,default-trigger = "usbport";
+-		};
+-	};
+-};
+-
+-&pinmux {
+-	enable_gpio_11: pinmux_enable_gpio_11 {
+-		pinctrl-single,bits = <0x8 0x0 0xff000000>;
+-	};
+-};
+-
+-&nand {
+-	status = "okay";
+-
+-	partitions {
+-		compatible = "fixed-partitions";
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-
+-		partition@0 {
+-			label = "u-boot";
+-			reg = <0x0 0x40000>;
+-			read-only;
+-		};
+-
+-		partition@40000 {
+-			label = "u-boot-env";
+-			reg = <0x40000 0x40000>;
+-		};
+-
+-		art: partition@80000 {
+-			label = "caldata";
+-			reg = <0x80000 0x40000>;
+-			read-only;
+-		};
+-
+-		partition@c0000 {
+-			label = "pot";
+-			reg = <0xc0000 0x80000>;
+-		};
+-
+-		partition@140000 {
+-			label = "language";
+-			reg = <0x140000 0x200000>;
+-		};
+-
+-		partition@340000 {
+-			label = "config";
+-			reg = <0x340000 0x80000>;
+-		};
+-
+-		partition@3c0000 {
+-			label = "traffic_meter";
+-			reg = <0x3c0000 0x300000>;
+-		};
+-
+-		kernel@6c0000 {
+-			label = "kernel";
+-			reg = <0x6c0000 0x200000>;
+-		};
+-
+-		ubi@8c0000 {
+-			label = "ubi";
+-			reg = <0x8c0000 0x1700000>;
+-		};
+-
+-		partition@6c0000 {
+-			label = "firmware";
+-			reg = <0x6c0000 0x1900000>;
+-			compatible = "netgear,uimage";
+-		};
+-
+-		partition@1fc0000 {
+-			label = "caldata_backup";
+-			reg = <0x1fc0000 0x40000>;
+-			read-only;
+-		};
+-
+-		partition@2000000 {
+-			label = "reserved";
+-			reg = <0x2000000 0x6000000>;
+-			read-only;
+-		};
+-	};
+-};
+-
+-&ref {
+-	clock-frequency = <40000000>;
+-};
+-
+-&builtin_switch {
+-	resets = <&rst 8>, <&rst 12>;
+-	reset-names = "switch", "switch-analog";
+-};
+-
+-&mdio0 {
+-	status = "okay";
+-
+-	phy-mask = <0>;
+-
+-	phy0: ethernet-phy@0 {
+-		reg = <0>;
+-		phy-mode = "rgmii";
+-		qca,mib-poll-interval = <500>;
+-
+-		qca,ar8327-initvals = <
+-			0x04 0x07600000
+-			0x0c 0x01000000
+-			0x10 0xc1000000
+-			0x50 0xcc35cc35
+-			0x54 0xcb37cb37
+-			0x58 0x00000000
+-			0x5c 0x00f3cf00
+-			0x7c 0x0000007e
+-			0x94 0x0000007e
+-			>;
+-	};
+-};
+-
+-&eth0 {
+-	status = "okay";
+-
+-	/* default for ar934x, except for 1000M */
+-	pll-data = <0x06000000 0x00000101 0x00001616>;
+-
+-	mtd-mac-address = <&art 0x0>;
+-
+-	phy-mode = "rgmii";
+-	phy-handle = <&phy0>;
+-};
+-
+-&gpio {
+-	status = "okay";
+-
+-	lna0 {
+-		gpio-hog;
+-		line-name = "netgear:ext:lna0";
+-		gpios = <18 GPIO_ACTIVE_HIGH>;
+-		output-high;
+-	};
+-
+-	lna1 {
+-		gpio-hog;
+-		line-name = "netgear:ext:lna1";
+-		gpios = <19 GPIO_ACTIVE_HIGH>;
+-		output-high;
+-	};
+-};
+-
+-&wmac {
+-	status = "okay";
+-
+-	mtd-mac-address = <&art 0x0>;
+-	qca,no-eeprom;
+-};
+-
+-&pcie {
+-	status = "okay";
+-
+-	ath9k: wifi@0,0 {
+-		compatible = "pci168c,0033";
+-		reg = <0x0000 0 0 0 0>;
+-		mtd-mac-address = <&art 0xc>;
+-		qca,no-eeprom;
+-		#gpio-cells = <2>;
+-		gpio-controller;
+-
+-		usb_power {
+-			gpio-hog;
+-			line-name = "netgear:power:usb";
+-			gpios = <0 GPIO_ACTIVE_HIGH>;
+-			output-high;
+-		};
+-	};
+-};
+-
+-&usb_phy {
+-	status = "okay";
+-};
+-
+-&usb {
+-	status = "okay";
+-	#address-cells = <1>;
+-	#size-cells = <0>;
+-
+-	hub_port: port@1 {
+-		reg = <1>;
+-		#trigger-source-cells = <0>;
+-	};
+-};
+-
+-&uart {
+-	status = "okay";
+ };
+-- 
+2.24.0
 
-> *From:*Adrian Schmutzler [mailto:mail@adrianschmutzler.de]
-> *Sent:* Mittwoch, 13. November 2019 18:39
-> *To:* 'Paul Blazejowski' <paulb@blazebox.homeip.net>;
-> 'openwrt-devel@lists.openwrt.org' <openwrt-devel@lists.openwrt.org>
-> *Subject:* RE: [PATCH 2/2] ath79: add support for Netgear WNDR3700v4
-> =
-
-> =A0
-Hi Adrian,
-
-> =
-
-> Hi,
-> =
-
->> diff --git a/target/linux/ath79/dts/ar9344_netgear_wndr3700-v4.dts
->> b/target/linux/ath79/dts/ar9344_netgear_wndr3700-v4.dts
->> new file mode 100644
->> index 0000000000..eb1ad731c3
->> --- /dev/null
->> +++ b/target/linux/ath79/dts/ar9344_netgear_wndr3700-v4.dts
->> @@ -0,0 +1,9 @@
->> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
->> +/dts-v1/;
->> +
->> +#include "ar9344_netgear_wndr.dtsi"
->> +
->> +/ {
->> +=A0=A0=A0 compatible =3D "netgear,wndr3700-v4", "qca,ar9344";
->> +=A0=A0=A0 model =3D "Netgear WNDR3700 v4";
->> +};
-> =
-
-> Indent should be fixed here (-> tab).
-
-Ok, noted!
-
-> =
-
-> One could also copy the flashing instructions to the commit message, so
-> you do not have to search for them.
-
-OK
-
-> =
-
-> Both could also be done by a willing dev during merge, unless there is
-> more to fix.
-
-Thanks for your help!
-
-> =
-
-> Best
-> =
-
-> Adrian
-> =
-
-
-Cheerios!
--paul
 
 _______________________________________________
 openwrt-devel mailing list

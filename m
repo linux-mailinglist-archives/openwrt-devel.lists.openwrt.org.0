@@ -2,57 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42827FB81C
-	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 19:53:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47F5BFB82B
+	for <lists+openwrt-devel@lfdr.de>; Wed, 13 Nov 2019 19:57:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZYafwX12DsoXXBakHfcQ5G+Q91UANDGQQCG+/TNr3AY=; b=Canc7s7OFsmPSoih3SCPxks0C
-	DYazeUez1XthC4B5cmbvMo5MoYTqkJa7nQpKP4q5PxabyYTmWfLPmm5YIBblNIVRxG9KlYR3mVxsG
-	Q71lxOdUsy+2g5ZuxMBxyHNBWdBzzksH7p+OftEx1tIP5vtwiHVHBJ5Kdt4Kop39i8eZJWoWeDh03
-	cusft9msIBAPHVAaKKvlzj4LYcjPoTTqHRFooPr47toIUIzhrVjSK1bCjvXAIwoM4t4b4Ec5yDiTh
-	5w3fmqRK4BSt17uF9r3kPR9oq02ePeLfWd8IosX47mnIkbIIlG085n6JThIzW+kS1DIHkGiVs9wFc
-	xhVbp32xA==;
+	 bh=0slW05Z1FMAvFIitSvX/Wksq9fo22cyFV7a8uaFnCso=; b=hLcwxIsSDnCpVNkuYo9erx+zR
+	eSQ8YAfObzch+c8zxl5iuZn7BM5ioPBYVHYN4nck9BUKQieyiI12wKgWwbr5qwpU8qDNFrItjXG2L
+	MlC2sD0JUTiQfv7cGo0eKVrXRZKgxObM0axc0u57ZNbZT38vv2X0UalR6vZzr9vQOFGXOb3fOsJM8
+	K5HGyKYImK+4MpWl8GhagkkY39IcO99WQD70fG4c4VFyzjAeiDWxdOOD2wqXTd8OhxgGg3CZwFHFt
+	DJPuAMlMu7SJixE3RaFzGaGO/9xOvxqaJw1415kno1XhYrkwHRFWBUEwBvYhC2k4AssqeH6IuNFsj
+	8ywZuIoSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUxlc-0008K7-HX; Wed, 13 Nov 2019 18:53:24 +0000
+	id 1iUxpO-0002nW-UD; Wed, 13 Nov 2019 18:57:19 +0000
 Received: from smtp1.guifi.net ([109.69.9.53] helo=smtp1.elserrat.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUxlT-0008Ii-4g
- for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 18:53:17 +0000
+ id 1iUxpH-0002n7-Ay
+ for openwrt-devel@lists.openwrt.org; Wed, 13 Nov 2019 18:57:12 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by smtp1.elserrat.org (Postfix) with ESMTP id 47CtzC1y97z3w8w;
- Wed, 13 Nov 2019 19:52:55 +0100 (CET)
+ by smtp1.elserrat.org (Postfix) with ESMTP id 47Cv4563nGz3w8l;
+ Wed, 13 Nov 2019 19:57:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=guifi.net; h=
  content-type:content-type:in-reply-to:mime-version:user-agent
  :date:date:message-id:from:from:references:subject:subject
- :received:received:received; s=dkim; t=1573671175; x=1575485576;
- bh=A9dR+YToQIaYy5JYy9rlk3lnUDET4o5HxBhB50v8QrU=; b=M0DDLscVb7lc
- OSCQkMGYEcP4UDAKwYcVvPX2mjUVNCwEj5/7n23GsHDTW5FjbClcworIJW9T2fNZ
- D1Mw1EtX+ErNwUuGE+LSPxJCGyNV2fiJcPUHQeWLYFsbhuDjpO2oGksj3zG0P5tL
- IJviQxCrStEPMltHvRhZu/m+TbxPuF/No0WmiFOVEGdif5OcMhccyjh6M0ecPcRZ
- wsXXXo1CoCrAm55LSX376L3HsFOV5ZIQ8SvmC3kGD7Wm1bYzWncHTHZILx/+SABh
- 5Cu5xFBn2l5kPiRgC8gpsA7B+T8+F64qPQg25yk6c8bg6u0lz/rIv69Wp03X2AoD
- o0Ee6Mqgzg==
+ :received:received:received; s=dkim; t=1573671429; x=1575485830;
+ bh=TJSLda6Mqq79Jq2b8D7mqwrioUVySeqXaIRqsW7sPEo=; b=XwOdpjf8kSpr
+ q33XXth1AXfkQhkTdZ9lKikydp0hKumN9DmuMctmhY3ka000wZap4BGeADm6OM6T
+ yDSYdYkIsiGiRmxpbaivbfmtN4eSKrf98RvXHRUFhaTFHCXf85QAgJ777TSLneov
+ aNGiGzBHIPOEEvbTpxgZZuWBcP+zPQZTXS2cPQWPwmei937XQAgRZ1vMotHUgPp2
+ 69T97Rp6eAc/1iZczzaPXLsIoNuY/AZO7jy3xL3XkZtqX37/vIqMAyMEyU3DoeVO
+ 6zzuSCOEke8uhpwzS3/xEAUOoV1BkiI63IxbbDGlKhvxeh1A9en9j9QD7IXt+k7H
+ bo/ruzBs5Q==
 X-Amavis-Modified: Mail body modified (using disclaimer) - smtp1.elserrat.org
 X-Virus-Scanned: Scrollout F1 at elserrat.org
 Received: from smtp1.elserrat.org ([127.0.0.1])
  by localhost (smtp1.elserrat.org [127.0.0.1]) (amavisd-new, port 10024)
- with LMTP id zddQ0GSYJT_h; Wed, 13 Nov 2019 19:52:55 +0100 (CET)
+ with LMTP id XxmpJxZVvL35; Wed, 13 Nov 2019 19:57:09 +0100 (CET)
 Received: from mail.guifi.net (mail.guifi.net [109.69.9.9])
- by smtp1.elserrat.org (Postfix) with ESMTP id 47CtzB5RPYz3w8l;
- Wed, 13 Nov 2019 19:52:54 +0100 (CET)
-Received: from [10.8.0.6] (gw-4-vpn-i.ac.upc.edu [147.83.35.81])
- by mail.guifi.net (Postfix) with ESMTPSA id 7778B6A7A4D;
- Wed, 13 Nov 2019 19:52:52 +0100 (CET)
+ by smtp1.elserrat.org (Postfix) with ESMTP id 47Cv454p2dz3w3F;
+ Wed, 13 Nov 2019 19:57:09 +0100 (CET)
+Received: from [10.8.0.6] (gw-4-vpn-i.ac.upc.es [147.83.35.81])
+ by mail.guifi.net (Postfix) with ESMTPSA id E1CAC6A7955;
+ Wed, 13 Nov 2019 19:57:07 +0100 (CET)
 To: openwrt-devel@lists.openwrt.org
-References: <20191111154224.1476-1-admin@kryma.net>
- <023f01d598aa$596fa950$0c4efbf0$@adrianschmutzler.de>
- <b8afe62e-867f-2d60-2c0a-08d01ebd9fa4@guifi.net>
- <f726e378-ed01-bb64-0873-8c09e1dc9953@kryma.net>
+References: <20191113182238.1921-1-admin@kryma.net>
 From: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
 Openpgp: preference=signencrypt
 Autocrypt: addr=roger.pueyo@guifi.net; keydata=
@@ -98,15 +95,16 @@ Autocrypt: addr=roger.pueyo@guifi.net; keydata=
  zkN9wXUrcQ3QCOVxyoWAe8cRLL/+cHUHpAytAU5FqHrS7s+94X9SiP5uWlnf+fmrzCboyqnl
  NU21+/v/2gaCdL37PogscBhyxpgRA3Od4WHB4IAMKWwAVRWJrHYrCb8Sycl03+lCATn8wpx6
  j8fJMgXCwO9ai/gMvX9Gz/qfy8CTIn8H2bXwzyNJeQ==
-Message-ID: <bd223657-fcec-df9f-5066-94bb90ef9316@guifi.net>
-Date: Wed, 13 Nov 2019 12:52:50 -0600
+Message-ID: <b1bff50e-44cf-a790-fd41-d66694e5b288@guifi.net>
+Date: Wed, 13 Nov 2019 12:57:05 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <f726e378-ed01-bb64-0873-8c09e1dc9953@kryma.net>
+In-Reply-To: <20191113182238.1921-1-admin@kryma.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_105315_757161_16178975 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20191113_105711_667314_1EB74AE8 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
@@ -121,8 +119,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for COMFAST CF-E130N
- v2
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: add support for COMFAST
+ CF-E130N v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -134,84 +132,76 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kryma <admin@kryma.net>
-Content-Type: multipart/mixed; boundary="===============5182969720631642948=="
+Cc: admin@kryma.net
+Content-Type: multipart/mixed; boundary="===============5307562656244409109=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============5182969720631642948==
+--===============5307562656244409109==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="E2zc2jbJc62G9QtlynPzGlSYNab2OCqxj"
+ boundary="5nSpkWEFEfV4CjnGwsaIxKBwgTwcSIrbG"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---E2zc2jbJc62G9QtlynPzGlSYNab2OCqxj
-Content-Type: multipart/mixed; boundary="vVzOUBXzrmZY9xkzOpXLj1jiqi5e9Dixu";
+--5nSpkWEFEfV4CjnGwsaIxKBwgTwcSIrbG
+Content-Type: multipart/mixed; boundary="EMZgW3Qai8DRPkfM4UuA1Qv2oep8opL6I";
  protected-headers="v1"
 From: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
 To: openwrt-devel@lists.openwrt.org
-Cc: Kryma <admin@kryma.net>
-Message-ID: <bd223657-fcec-df9f-5066-94bb90ef9316@guifi.net>
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for COMFAST CF-E130N
- v2
-References: <20191111154224.1476-1-admin@kryma.net>
- <023f01d598aa$596fa950$0c4efbf0$@adrianschmutzler.de>
- <b8afe62e-867f-2d60-2c0a-08d01ebd9fa4@guifi.net>
- <f726e378-ed01-bb64-0873-8c09e1dc9953@kryma.net>
-In-Reply-To: <f726e378-ed01-bb64-0873-8c09e1dc9953@kryma.net>
+Cc: admin@kryma.net
+Message-ID: <b1bff50e-44cf-a790-fd41-d66694e5b288@guifi.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2] ath79: add support for COMFAST
+ CF-E130N v2
+References: <20191113182238.1921-1-admin@kryma.net>
+In-Reply-To: <20191113182238.1921-1-admin@kryma.net>
 
---vVzOUBXzrmZY9xkzOpXLj1jiqi5e9Dixu
+--EMZgW3Qai8DRPkfM4UuA1Qv2oep8opL6I
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 Content-Language: en-US
 
-Well, rather than looking at the specifications, I'd check if the actual
-hardware is 802.11bgn. :)
+Hi Pavel,
 
-You could try the "iw list" command to see if the available channels
-match the 802.11bgn band or not.
+> Specifications:
+>
+>  - QCA9531 SoC
+>  - 1x 10/100 Mbps Ethernet, both with PoE-in support
+
+If it has one Ethernet, then there's only one PoE-in.
 
 Cheers!
 
-El 13/11/19 a les 11:33, Kryma ha escrit:
-> Hi,
->
->> In addition to Adrian's comments, could it be that the device was a
->> 802.11bgn router?
->>
-> Looking at the specifications, it seems to be one indeed. Should I
-> make any changes regarding that?
 
 
---vVzOUBXzrmZY9xkzOpXLj1jiqi5e9Dixu--
+--EMZgW3Qai8DRPkfM4UuA1Qv2oep8opL6I--
 
---E2zc2jbJc62G9QtlynPzGlSYNab2OCqxj
+--5nSpkWEFEfV4CjnGwsaIxKBwgTwcSIrbG
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEwCTDpYvv87wDBo8fWvSKN+NXZrEFAl3MUQMACgkQWvSKN+NX
-ZrHw7w//YExjlRTS6MufSEUV1J3dwaUhHFffUSGOVzGiGQCVDlXiu40Fm7fJsfyY
-y+LIxNTeIPxpXd8U6Krv07Y5YggcqRAo6Ivow71iRBljx0xHNPmh42dKRKvTUst8
-bKq7ftabLp1NFwscooQ2duSITij1oNN0AaDEdgoRrYvsMU0IzlZoXRzJtYH6+8jD
-kv+C2drzKMMNSJmx5jg5jsEF1uruffxwDgZoD7sh+nUfGEaE1CiiZglTrZNrWS5w
-w7KVNerCfC/uKSM0VyVhDFOSAIjRSbpnZ+Y87Wsr2cMZXuNG31BXItugKh1GhRMY
-WJf154x6PzbeoxruaeH3p872xYjpBL6/P4lQ0urxisRl3KZxR8p44LunudYI5vX/
-t67xTDwqTSCCDjzv/+PN2PsNwlcVcx/lFUobEV+MkxwH+vQOOYFKVUiPW2+6RuRb
-yA6fGIjVCcWnFka2aNuu50egFyfyWgoDCfMA4f/6M/rvNCJQgC7ZX5qhGWx5IyAr
-cVEpnxKBnqT9uw3piZHAW77Gkvuu1fFDzDw7JBLPNIVeunQ7Onk9rJTIL6KrorAt
-ybmfxtZ+zunjPHZRoVLTJTE7KhL/XaxTz9lbVUlQPv3PF1v9Z8ez8t/BkES48n0Z
-/YlYhl2BwPrM7tsCjHxs3W0r3PBSGMQOX77aAJf5bQWPUocx/rw=
-=H+RZ
+iQIzBAEBCgAdFiEEwCTDpYvv87wDBo8fWvSKN+NXZrEFAl3MUgEACgkQWvSKN+NX
+ZrEqNxAAlirJc4ssUb7Ve5BzMJWYBKrlzW7PKoY25u7d+ril6eeCwCXKf9Usk/3b
+qBH9F6mayD6SxX3e4YJRhGwZ12jnCwBshs0S3KeEPaIyKZpBAqUd7+vzRSFHmv+D
+DMzLzNkb9O53VCqzbgOLhXH0aYEwv/MTEAccHQ9WYYKezkGUzDcl7yCtCT2mGUyH
+9JH4EWCTuYrOxq/LrLej1pRz0So4HefNymw6fFDxmcpUWB2BmAXvJTdSH7HDN7Xm
+oUNu1OSz5MSn3NP+SO9LiEox4SV+aDsfhXVT4+UPtvjQlatvjWqaszsToCypI3YX
+jq13itWD6nsymWsB27zKgF5X274TGgGTOvgJtfZfmSVO3rycplLHKl9O49Qvvdo6
+CpGdZIWEkYXuh/fzrwlng1nTmM6fz0Rdg6LmPZBVLmXbJleZ8phvirMxQ5t111xa
+RfjMSMO/rt7knhxT6CrXuV0aXNS4egfCo0/gYdPIBU5lTHv+idNfhPzpxn0oWqfM
+wNnGk1ppKkxgLxB0T4fPAH35UdHWhX58ztIVzcfD1ccFjKRf5GgDtAlz5E3Be9ab
+5Ur9sKDqWmsU2XORxDXIR2JYvwYr6jch+gm0V7l9a/gDMLTZMIfnzT2bgdS8asav
+RH0krRE0D978sbmkVjnIZi+UXkPfNWF7M+bFd0F+PgiOGdhgfaE=
+=BtAl
 -----END PGP SIGNATURE-----
 
---E2zc2jbJc62G9QtlynPzGlSYNab2OCqxj--
+--5nSpkWEFEfV4CjnGwsaIxKBwgTwcSIrbG--
 
 
---===============5182969720631642948==
+--===============5307562656244409109==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -222,5 +212,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5182969720631642948==--
+--===============5307562656244409109==--
 

@@ -2,86 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE0F7FECC6
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 15:59:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16889FECE6
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 16:31:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yVIvWFa6hlAIVUn/AF78xZrVUgrLQqYDzVw9tATHPh4=; b=EdZGwDIHZA/slEhgIGjI8qF2X
-	aY15pBYFz6Y9leqXfBDCLQIK5EMdAGnYYUxviqlhM8KMruBN2+TskT8OYeAcp5PCOWHSROi7IpuJF
-	TIjuqDk6mp9gMwCDjK5WaGYoin60tLzft0teXc5neoYEBIU8LeXlY4Equzu2jL90AVzJWw99ycZe5
-	D/qY4kE6AgtXC2l7kmcb9jdMxSZKZT+CB1RVdnr/u2zGZofDSUYCjBP51gPBDeOqVNaizWAGjEQ2c
-	G2jFhLDL2Pb4tvDgpq/TVclAz6+v/iXuikOE7PayCu+nESfRoTgLiiXCbPbUe+97ZQkqm4ecMDnfI
-	YDz49dtTQ==;
+	 bh=vvE5rxc4uYl1Iz/66iFkg8Ti4N+LonKOXgUVzEtvGCs=; b=Rqx1itNT4IdOYnwdGcmeQOKcN
+	dpJYbGz1PdKJbPinP2aV21mFtiMroRT97zxbgpuSut1TdulmXKwcapONzadiMIabZ/XAEnPrvXQJ4
+	B44sp9PBVmHlrnBig9ZOzg70WdVkuTEqJ/rit9GGREb+XTUL68WO0PxBgl88TCr0X0/OjHc8RaLtI
+	NhlJTvQnogCihZkFZHcoBSygHjuB9eKGkYbv1ASr3vcGbxbw0VR02cxGtxy63+vAy1JntOhdQBEoS
+	RX3OPeuMnaxRdhEcecAl9Dv0LeNeI1Q0ZcSKXVCKAU7u1Yh6FessJGSo/vVxJ7soEPR76hTYfkv60
+	TFD7migiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVzXy-0007lc-2n; Sat, 16 Nov 2019 14:59:34 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iW034-0001tx-Rb; Sat, 16 Nov 2019 15:31:42 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVzXm-0007lI-1f
- for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 14:59:23 +0000
-Received: by mail-lj1-x243.google.com with SMTP id g3so13790508ljl.11
- for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 06:59:21 -0800 (PST)
+ id 1iW02y-0001tU-Bn
+ for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 15:31:37 +0000
+Received: by mail-lf1-x144.google.com with SMTP id b20so10342543lfp.4
+ for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 07:31:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NpWySyJML20QmSC0hfFDAlPpx7edaxS5YjwHihX/WBI=;
- b=YX2d0+v/3cOnIMerAP4+0USER4Jl8L97YXpvs3rKxmiT1s+Rt9dnpnaT7jCP7Mx/az
- uVxW9f1BPXK7rkoO5X3RHeqGIWywaL71VN4dSy4zZ02/InL+0gd/DSvOc6EW6yBYDl2s
- q11IPlwjQYCs099Yzm3HHIZm4GCiDnA5FYaIVKsJzU7VL65uL518pn5rXI8B4jluDCly
- n2YbQlVDT91u6EOg3Z+9OCU/Uiog375zjEIbiYgh/xAD88ySfQSV+Lb7iYXZB3LEYPJX
- J5688uPOicuq5TnralzTcy7LxDAokhY+PZPA5IYg4ywMhtssyEDad+Jch9yCkUL9FptB
- Ga8g==
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=c8l3O+Hqh0FNKCbTLPPufdW/lYEmHE0vIsJj7ZUm5po=;
+ b=GZr0hwX5cH+od477ZZkyuY4bXQY2LfUciQ1A3wcOteYoPSmy7OwfFwHJ+U5/qvbQBB
+ pcCRKM0Ty+JI4mosnFj1mQnhvDjAylCMapAkBqzRGK6NSz8rf+7ib5WCi62f54kZHEUI
+ B62Q6Nmao+SYUdEi6N64CcV74JDZz+M1BsltVm3diuI50RYRzqXqw2gEZpbuYSNHxucX
+ znBQtDjVtXiWa5AUss3CifbPRa/nrC08sV12bpvxIhzq+hiCxNTvSDJNfXYZf77Hpj7F
+ A29LbGS7/jwFMTMFzDybQDj1P7ZoyyNdnY+xjl3L/A5dgPfk6+608TTiWBUltLOlRFTt
+ 7inA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ h=x-gm-message-state:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=NpWySyJML20QmSC0hfFDAlPpx7edaxS5YjwHihX/WBI=;
- b=STbv7f4/4afkvFARD1y32QhoYn53Ppo+vuYuMJ4xZDlAfcB0qRTjszEqXHQODTN/YW
- pmWAl4KpM0NdPA1RhULNN2Rc4iETFrA77PZET4GZNOM2T5yL18CGu3RLLxSfmlEjjyiq
- frWouL4h4yOQGGWKDtN6Su1+Kbcprv9QhuyIC/whv8n3kdz2O5glUKiSfRjBsExjlzOf
- B6Wi1NW+gLRhciAlgr4/cPGorWY7lTtVBqOUa+8wzcgppulbh4T9+BWobEfEGJRmFUVL
- L299oqZQrEA1ZdJ+PQSoTd8+fMu6WwpvZk7hU4O9tNkGgtSGfUy+ZPa2+IDak/jCm1iG
- AV7Q==
-X-Gm-Message-State: APjAAAVaLc2rGv/zsjwtcakoI9bvRNLepKMxYY9kiDWTQzwfNG0czBka
- I1Y1WDvp12BmR7FIlBqFwFGl8/20
-X-Google-Smtp-Source: APXvYqzNnFfLz8Mp4WmOSD9E33373Gd6e5Cww4g/iM/WwzPNYVBowqZV/QRRF6TyWtS4mz0BFtxNyA==
-X-Received: by 2002:a2e:3311:: with SMTP id d17mr15292380ljc.237.1573916359998; 
- Sat, 16 Nov 2019 06:59:19 -0800 (PST)
+ bh=c8l3O+Hqh0FNKCbTLPPufdW/lYEmHE0vIsJj7ZUm5po=;
+ b=f+U+Wid/aYvbyBzk9+SprGdzaNaHiil+Jjm6hIa5SRziUU6Ugzu8U2Luvy3aw7fX2X
+ LK3mhIfW3zvL3vuPgAcbrU4fCJ2ayBf3mnFtGmNbJXRf9xvHNUE0M7KY5vXeBMYSF1Hh
+ lJAY2w37XpWXUvMY8DIoXajtEq0Q00DDSZQnoMPbhGFK6OF1bI3ohYfGy+uPRZjrllcP
+ oNca9RlTIrLh5GRfbXXl4Rxh/qedWlP/6lBCbT7h7v8uHq1mZKv9at+gqRPgnH4jAiF1
+ NoEyH9Q769rd5ETPVx4/MfnMZ60ss3cbdtumApuyJCiRqg+KdOAlxEzblp17uMHlLDhZ
+ 6hwg==
+X-Gm-Message-State: APjAAAUcnDPJjOevTWV1vK3+LaknMIGYXax8OKzV2CjcTQlNYszAzV0t
+ KS3kv+uve7vCuzEtxE5XzLekCaGe
+X-Google-Smtp-Source: APXvYqzObMeA0vuRLWpMW4ONeYEISqcEBJmLWQtzkmm5CjuUVr9lXNJxMab6NDIqrscg2Xo4a0zQ2A==
+X-Received: by 2002:ac2:5144:: with SMTP id q4mr15355499lfd.36.1573918293669; 
+ Sat, 16 Nov 2019 07:31:33 -0800 (PST)
 Received: from [31.11.183.129] (031011183129.warszawa.vectranet.pl.
  [31.11.183.129])
- by smtp.gmail.com with ESMTPSA id d17sm6597034lja.27.2019.11.16.06.59.18
+ by smtp.gmail.com with ESMTPSA id e14sm5657125ljb.75.2019.11.16.07.31.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 16 Nov 2019 06:59:19 -0800 (PST)
-To: Zefir Kurtisi <zefir.kurtisi@neratec.com>, openwrt-devel@lists.openwrt.org
-References: <20191107115408.13013-1-zefir.kurtisi@neratec.com>
+ Sat, 16 Nov 2019 07:31:32 -0800 (PST)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
+ openwrt-devel@lists.openwrt.org
+References: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
 From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <745e9302-3688-7f09-1012-14cb5b22ed08@gmail.com>
-Date: Sat, 16 Nov 2019 15:59:18 +0100
+Message-ID: <f05be16b-83ba-6640-c0e8-04e03877e589@gmail.com>
+Date: Sat, 16 Nov 2019 16:31:32 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191107115408.13013-1-zefir.kurtisi@neratec.com>
+In-Reply-To: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_065922_116314_1C55C80B 
-X-CRM114-Status: GOOD (  27.58  )
+X-CRM114-CacheID: sfid-20191116_073136_426548_49F15ED7 
+X-CRM114-Status: GOOD (  20.30  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (pepe2k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -89,7 +90,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] uqmi: add timeout parameter
+Subject: Re: [OpenWrt-Devel] [PATCH 0/2] introduce label_mac into hostname
+ and SSID
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,130 +103,65 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: bjorn@mork.no, malaakso@elisanet.fi
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Zefir,
+Hi Adrian,
 
-On 07.11.2019 12:54, Zefir Kurtisi wrote:
-> Working with Quectel EM12 LTE-module, we observe
-> regular stalls of the QMI interface which cause
-> a request issued by uqmi to hang forever.
-> 
-> Most reproducibly this happens after the device
-> has been power-cycled and left untouched for a
-> while (~ 60s+). Most of the time the very first
-> QMI request fails, since it is not responded by
-> the module. This is the strace from such a run
-> (from --get-pin-status):
-> 
->   open("/dev/cdc-wdm0", O_RDWR|O_EXCL|O_NOCTTY|O_NONBLOCK|O_LARGEFILE) = 6
->   fcntl64(6, F_GETFL)                     = 0x10802 (flags O_RDWR|O_NONBLOCK|O_LARGEFILE)
->   fcntl64(6, F_SETFL, O_RDWR|O_NONBLOCK|O_LARGEFILE) = 0
->   epoll_ctl(3, EPOLL_CTL_ADD, 6, {EPOLLIN|EPOLLRDHUP|EPOLLET, {u32=268567076, u64=1153486808202346496}}) = 0
->   write(6, "\1\17\0\0\0\0\0\1\"\0\4\0\1\1\0\2", 16) = 16
->   clock_gettime(CLOCK_MONOTONIC, {tv_sec=95, tv_nsec=583444789}) = 0
->   clock_gettime(CLOCK_MONOTONIC, {tv_sec=95, tv_nsec=583770264}) = 0
->   epoll_pwait(3,
->   [ hang forever ]
-> 
-> After killing the blocked uqmi process, the next
-> request works as expected.
-> 
-> We don't know whether this is a device FW issue
-> (we use the latest EM12GPAR01A15M4G) or whether
-> the device enters some undocumented power-save
-> mode after idling for some time.
+On 08.11.2019 12:48, Adrian Schmutzler wrote:
+> This patchset will introduce the label MAC address into the _default_
+> hostname and SSID of OpenWrt devices. Devices installed after these
+> commits (or upgraded with sysupgrade -n) will have their hostname and
+> SSID set to
+> OpenWrt-ddeeff
+> where "ddeeff" is the EUI of the label MAC address aa:bb:cc:dd:ee:ff.
 
-Could you share this firmware version, is that a generic Quectel or a 
-customized one? I would like to reproduce and debug the problem but the 
-EM12 I have here has 'EM12GPAR01A_11_M4G'.
+As this is something which touches essential system setting 
+(identification), I would really like other team members to join the 
+discussion before it sneaks in again. Especially because this was 
+already merged and reverted later, after short discussion on IRC.
 
-Also, what platform do you use this modem with?
+ From my point of view, I'm only worried about all the consequences we 
+don't know about, so I would prefer to have this one _optional_.
+
+On the other hand, I'm fine with the SSID change but I see it's not 
+going to be that straightforward to implement.
+Also, what I'm thinking about here is which one MAC should be used for 
+the SSID name. The 'label' one which is not available on all devices or 
+maybe the 'phy' one?
+
+> For devices where no label MAC address has been specified, hostname
+> and SSIDs will use the former default "OpenWrt".
+
+And this is probably the biggest issue I have with the whole idea behind 
+'label_mac'. As I understand the motivation, I don't like the fact it's 
+not specified (and probably would never be) for all devices so we will 
+have here inconsistency (in essential system settings!) and might end up 
+with confusion. Maybe that's something which should be handled by 
+downstream users/projects (and AFAIK, it is already).
 
 -- 
 Cheers,
 Piotr
 
-> This patch extends uqmi with a timeout option
-> (-t, --timeout <ms>) which if set terminates a
-> request after the given amount of msecs. In
-> our usecase it provides a means of preventing
-> infinitively stuck QMI requests. Since we
-> observe the issue only for the very first
-> request after cold-boot, we use a dummy access
-> early in qmi.sh, e.g.
->    uqmi -d /dev/cdc-wdm0 --get-pin-status -t 3000 >/dev/null 2>&1
 > 
-> This ensures the QMI interface is un-stuck in
-> case it entered the stall-state observed. The
-> change is intentionally not included in this
-> commit, since you don't need it if it works
-> for you.
+> Implementing the EUI is intended to make identification of a
+> particular OpenWrt device easier. The label MAC address qualifies
+> for this as it is easily visible on the case and thus apparent to
+> both educated and uneducated users.
 > 
+> Adrian Schmutzler (1):
+>    base-files: rename SSID with EUI of mac address
 > 
-> Signed-off-by: Zefir Kurtisi <zefir.kurtisi@neratec.com>
-> ---
->   main.c | 15 ++++++++++++++-
->   1 file changed, 14 insertions(+), 1 deletion(-)
+> Rosy Song (1):
+>    base-files: rename hostname with EUI of mac address
 > 
-> diff --git a/main.c b/main.c
-> index 9b43e5e..aa4634c 100644
-> --- a/main.c
-> +++ b/main.c
-> @@ -44,6 +44,7 @@ static const struct option uqmi_getopt[] = {
->   	{ "keep-client-id", required_argument, NULL, 'k' },
->   	{ "release-client-id", required_argument, NULL, 'r' },
->   	{ "mbim",  no_argument, NULL, 'm' },
-> +	{ "timeout", required_argument, NULL, 't' },
->   	{ NULL, 0, NULL, 0 }
->   };
->   #undef __uqmi_command
-> @@ -57,6 +58,7 @@ static int usage(const char *progname)
->   		"  --keep-client-id <name>:          Keep Client ID for service <name>\n"
->   		"  --release-client-id <name>:       Release Client ID after exiting\n"
->   		"  --mbim, -m                        NAME is an MBIM device with EXT_QMUX support\n"
-> +		"  --timeout, -t                     response timeout in msecs\n"
->   		"\n"
->   		"Services:                           dms, nas, pds, wds, wms\n"
->   		"\n"
-> @@ -103,6 +105,14 @@ static void handle_exit_signal(int signal)
->   	uloop_end();
->   }
->   
-> +static void _request_timeout_handler(struct uloop_timeout *timeout)
-> +{
-> +	fprintf(stderr, "Request timed out\n");
-> +	handle_exit_signal(0);
-> +}
-> +
-> +struct uloop_timeout request_timeout = { .cb = _request_timeout_handler, };
-> +
->   int main(int argc, char **argv)
->   {
->   	static struct qmi_dev dev;
-> @@ -112,7 +122,7 @@ int main(int argc, char **argv)
->   	signal(SIGINT, handle_exit_signal);
->   	signal(SIGTERM, handle_exit_signal);
->   
-> -	while ((ch = getopt_long(argc, argv, "d:k:sm", uqmi_getopt, NULL)) != -1) {
-> +	while ((ch = getopt_long(argc, argv, "d:k:smt:", uqmi_getopt, NULL)) != -1) {
->   		int cmd_opt = CMD_OPT(ch);
->   
->   		if (ch < 0 && cmd_opt >= 0 && cmd_opt < __UQMI_COMMAND_LAST) {
-> @@ -136,6 +146,9 @@ int main(int argc, char **argv)
->   		case 'm':
->   			dev.is_mbim = true;
->   			break;
-> +		case 't':
-> +			uloop_timeout_set(&request_timeout, atol(optarg));
-> +			break;
->   		default:
->   			return usage(argv[0]);
->   		}
+>   package/base-files/files/bin/config_generate  | 16 +++++++++++++-
+>   .../etc/uci-defaults/15_wifi-ssid-mac-address | 22 +++++++++++++++++++
+>   2 files changed, 37 insertions(+), 1 deletion(-)
+>   create mode 100644 package/base-files/files/etc/uci-defaults/15_wifi-ssid-mac-address
 > 
 
 

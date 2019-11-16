@@ -2,83 +2,82 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65C57FED40
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 16:44:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B40AFEE43
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 16:50:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
 	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Olsgj3rDFDcNupeOdsnQh+vSovzsq0b9Q9NNiiFqEFQ=; b=a20R7zRREBfFLRi+J1xyGkY8V
-	kOue4BxfnujrUj8oalpw8ZNQCVfaLBVsJIMZgpfaxnL56RJAPI/EtEQ3p3L4jplBE1d4NgBT3PctC
-	SV312+IjA/VxwbvP25R8SdNcjHyqSEBqYnkEtC1j7Cs1qNKWbaPJqpSGL9pFdaLIHdKFy0wMlSH/s
-	H6S5zhyjPin4OQ2Aa4bL0BWesvcraxURDnLV0ierFNPPotqphKBT1/Mh1+IY5lMXQc4P0jBhLKtsR
-	GjaT0R1+Vu3IC1OUXVbuOjDRXvcJbgfnqdKdjT+JLo7p/O2vYYrnWvbLhyKhcuiIF/egrglGlnI/k
-	KHi7mXxpA==;
+	 bh=PBBynZUUaIAv9VKKp4I099MjyY9U+pvty4lSxCwtvUE=; b=d622rYvwXM1pY5GL18ST9zkYH
+	v6dhikdD0KH0MBuxX9+MGITznws/2nnPsoDFkM+9X9xsH1Z/tYbtdw3rHUa2so0zWT1oW7YSBpgCV
+	BgQVPJajJMEaKPRKwOeEJTexZiI1OPxcBQmb3vdju0WzCwgRObfK0GtoI7VmhY0KR5GpV5pxbguzC
+	BJBa85INNMZzrleJ8dg0fZiWVtDngv8aXA5t32HXxAlVhzYVPyR+V5CX6wCiN7tMYgXAoWbA/IhnM
+	HBbB6D//qJnp6XSZ8gFwOzw/3YEY1Fha7IofJMJQ52udIEXBcYrU4od73roaHKGN/xvFmV0FcCvSu
+	CpWNckvsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW0Fe-0008St-J6; Sat, 16 Nov 2019 15:44:42 +0000
-Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
+	id 1iW0L9-0003dC-Ls; Sat, 16 Nov 2019 15:50:23 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW0FT-0008Rn-7l
- for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 15:44:32 +0000
-Received: by mail-lj1-x231.google.com with SMTP id 139so13911467ljf.1
- for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 07:44:30 -0800 (PST)
+ id 1iW0Kp-0003au-Bo
+ for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 15:50:08 +0000
+Received: by mail-lf1-x144.google.com with SMTP id q28so10345347lfa.5
+ for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 07:50:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:references:from:message-id:date:user-agent:mime-version
  :in-reply-to:content-language:content-transfer-encoding;
- bh=2N1uLqUMSCD65OS97ZE3eznvDeT+vPUYNPFSEdkwMzU=;
- b=PLM04CnYSVKcXRuRFH410EX7rIf4ZObPMq13E8KdPWZFpPB8Yf0o/JhzNEo/ifBqSd
- ACkGfr2NJPjd/OHN5FlTFYhQj9b63qjCubCP8Pd9EWn9GFzHHJvWmMmPz1twhP96oD2r
- ORzIfuZlnK42rvD1UI+iEztQyOO1kMOZxPoQa0B0P6NOhooTt/cQ+RzUvDztKdIJihiS
- wIybrGLLddjEGwUXPTVto7h6feneBv0/UvN7FRjYSEDUPfNjhC9UXaINA9nK1ANSlU0J
- +aKl4Bgc7YXGo1daI7BaAoKpXhcKDOwp0wWO74COH3vbqe6of45WxtKA+iqfnECdYAS/
- bu/w==
+ bh=aFaZW+e49S+yBbwxOQsSRTywijD6ROxPUx918fP1GBE=;
+ b=VFMBJRdnOanhqMoUYuYrLkVwCNu4NRmfS7pvP9sJVYd7Kby8hK8WrvvYbZBJZC4onU
+ SUYTKHPXkNaW4jHG0d0omBM7jGZi0nwkSbYBwwa82EgQt54P8qd5W68WzfcB8bRiTYUv
+ pBy8FLM37INjEuGVmeYMYreXoFhQmmP5EkJbn2NnQ/oi1hdjNlf82vVanlfTunlgoYxh
+ iBnisI5HWSmUhMdY90a771JI6U5LlDAl+/23Q3JRIcl2YDTGqTxgVOOiah0SvBeXG2UU
+ 2cN46u1vCzSkMzGud1h/DKEYQtU+tS+atLwD5sy18j6OBdMU876po5Bpapwl6TCBje5z
+ 0fDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=2N1uLqUMSCD65OS97ZE3eznvDeT+vPUYNPFSEdkwMzU=;
- b=b8M4zu9EU0E85ywgGDWv/uEhe+qZ4sOPnuXZ9vIbJ41smUmmCoUmiNyr/lKbC12K+e
- 6bHL5e3sLwXcZKaqSItgtPOGpZHJRuYeLgzVoAXkATMF1Qd7w6ILMlj6AgHcGibIiC14
- XDqdL50sPnSvNF1X2HHIES/5VD+LCKxNohFketfT8FGfzNQf/6eaa0PXpr9xNcgjwrt5
- 89UtjixFHR8UufLuZcPJqpQGdu4klnwmYnpWi2V/dO1BqwYJjJxwgFK5KgiCT50339DZ
- rFFI4sRWRh806kWg36gSLzgjHccUFJSxA6P6js7WuvpLZpg0sIM0PPTbPLpKLjBUo2nF
- 7SMg==
-X-Gm-Message-State: APjAAAXV6+q1CpUt2L5ngrUTDNc9TaGh1O9rY0nvJpSGygf1QXvkxGXt
- v1Z4DtbIsPUggvKDll4jybfyGUfg
-X-Google-Smtp-Source: APXvYqzyc5o+q32THl4dl7wQHHqy9EFICdp/N2IpImQl4MmYUVCOp/IkZgFhT5aiKGqBorS2y+bLDw==
-X-Received: by 2002:a2e:89c2:: with SMTP id c2mr14958703ljk.161.1573919069085; 
- Sat, 16 Nov 2019 07:44:29 -0800 (PST)
+ bh=aFaZW+e49S+yBbwxOQsSRTywijD6ROxPUx918fP1GBE=;
+ b=Z6W+8HpqV/MFgDg/jg96Hs3xNByAbMRjxKLZV+aIX9BAd/nZ+Cppj4QJhYwx4s/nAi
+ iVQ4JD1/utC5WF/htFxQgDhIX5Q1qfab9h/ChpJsUsauntX7GxXGzDCBVpzJsD/irs/s
+ qDINJsE035Kg0Cu2LsgkBHxz/o/T5JUZu1NujZTzPTC53WrPYtkTci3I1ADLXNeuk7ID
+ mtMKeU4vXyBOF3B9wxcGjqckLPs7aySKuFgNl7uq/oyxFLmRtKlfVgNo6kLFFe4c7xcY
+ I0HO0cVTpUibCVbg2hmEv/v6TbcCTiz0aYtZh6eJgzMiPXF8Ccgb8Dx3hrm4v6hVdIaI
+ A6jw==
+X-Gm-Message-State: APjAAAVXcFa0eZCl5goMDy8Pi4db1r6RQzRhD56oKoiRX78bt7KNUQQC
+ L+JL/HA6dyB3Hj+XM5Tt3+CU32TG
+X-Google-Smtp-Source: APXvYqzSvC+lSo1g1EEqwOYIIlSuHUPvCKOOkgAKYDDJbQAqst4pj8pVQ4F/obu00se528h0RaRlEw==
+X-Received: by 2002:ac2:5bc2:: with SMTP id u2mr14845113lfn.173.1573919401568; 
+ Sat, 16 Nov 2019 07:50:01 -0800 (PST)
 Received: from [31.11.183.129] (031011183129.warszawa.vectranet.pl.
  [31.11.183.129])
- by smtp.gmail.com with ESMTPSA id x16sm5689758ljd.69.2019.11.16.07.44.28
+ by smtp.gmail.com with ESMTPSA id 70sm6356471lfh.86.2019.11.16.07.50.00
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 16 Nov 2019 07:44:28 -0800 (PST)
-To: Micke Prag <micke.prag@telldus.se>, openwrt-devel@lists.openwrt.org
-References: <94e65ceb-1d84-f28d-a423-676c4aeca605@telldus.se>
- <d0d9d565-bd3c-48c3-0794-6f9ebdbafd94@gmail.com>
- <d2e8225f-b090-c568-5c86-599d0792fe2b@telldus.se>
+ Sat, 16 Nov 2019 07:50:00 -0800 (PST)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
+ openwrt-devel@lists.openwrt.org
+References: <20191108120520.1966-1-freifunk@adrianschmutzler.de>
 From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <6993a1eb-b6b5-f09e-e61b-ea9c09f20a18@gmail.com>
-Date: Sat, 16 Nov 2019 16:44:27 +0100
+Message-ID: <e67b9893-6173-de0f-0dc8-e0540adf97c0@gmail.com>
+Date: Sat, 16 Nov 2019 16:50:00 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <d2e8225f-b090-c568-5c86-599d0792fe2b@telldus.se>
+In-Reply-To: <20191108120520.1966-1-freifunk@adrianschmutzler.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_074431_321323_D09D2000 
-X-CRM114-Status: GOOD (  21.81  )
+X-CRM114-CacheID: sfid-20191116_075007_434322_E7A6AB93 
+X-CRM114-Status: GOOD (  18.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:231 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -91,7 +90,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] ath79: Force usb host mode for ar9331
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] base-files: indicate initial setup
+ by uci system config option
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,90 +108,57 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Micke,
+Hi Adrian,
 
-On 08.11.2019 13:30, Micke Prag wrote:
-> Den 11/8/19 kl. 11:01 AM, skrev Piotr Dymacz:
->> Hi Micke,
->>
->> On 08.11.2019 08:36, Micke Prag wrote:
->>> In commit 00ea16557d [1] the way usb is initiated was changed. Instead
->>> of initiate both ehci-platform and ci_hdrc the bootstrap status register
->>> is checked and used to determine which platform to initiate.
->>
->> There were other changes later, see for example 57c641ba6e.
-> Yes, I was looking at the code after this commit when making my
-> conclusions above. But 00ea16557d is the commit that breaks the board
-> initially.
->>
->>> Unfortunately this break my board since the gpio used to determine this
->>> is used for other purposes.
->>
->> This means your board has a wrong bootstrap configuration and you
->> should make sure GPIO for host/device mode has correct initialization
->> value.
+On 08.11.2019 13:05, Adrian Schmutzler wrote:
+> This provides a uci system config setting that will be set only
+> during initial setup. This can be used by uci-defaults script to
+> determine whether they are run during initial setup or after a
+> sysupgrade.
 > 
-> Yes, it is correct the bootstrap is not correct at hardware level. But
-> there is 30 k+ boards out in the world so fixing this now is a bit
-> late... ;)
-> 
->>
->>> dev-usb.h only exposes one function:
->>> void ath79_register_usb(void);
->>> so there is not much to alter the way usb is initiated.
->>>
->>> I tried to write to the bootstrap register but unfortunately this did
->>> not seem to work:
->>>
->>> u32 t;
->>> t = ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
->>> pr_warn("ath79: Register before %X", t);
->>> t |= AR933X_BOOTSTRAP_USB_MODE_HOST;
->>> ath79_reset_wr(AR933X_RESET_REG_BOOTSTRAP, t);
->>> pr_warn("ath79: Register after %X",
->>> ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP));
->>>
->>> Gives the following output:
->>>
->>> ath79: Register before 42202
->>> ath79: Register after 42202
->> USB mode in AR9331 is selected at power on, based on GPIO13 value and
->> I'm not aware of any other/software ways to change it. AFAIK, only
->> QCA9563 allows to switch between host and device modes 'on the fly'.
-> 
-> Is was working before 00ea16557d so simply initialize ehci-platform
-> instead ci_hdrc will fix it. Unfortunately I cannot find a way to tell
-> ath79_register_usb to force it into host mode in my board file instead
-> of reading the bootstrap register.
+> Since the setting is removed again after uci-defaults have been
+> processed, it won't be recognized by the user on the running device,
+> but can be exploited also for downstream setup tasks.
 
-Do you want to tell me that a board with wrong bootstrap configuration 
-and USB switched to device mode was able to use the bus in host mode?
+This looks for me like a misuse of uci configuration and some kind of 
+workaround for a missing feature, maybe in procd/ubus?
 
-IIRC, during my tests I found that this bootstrap option makes the D+ 
-line to gets pulled-up to VBUS and there was no way to change it back.
-I would need to make some more tests to confirm that, though.
+NAK on this one from me.
 
 -- 
 Cheers,
 Piotr
 
 > 
-> Writing to the bootstrap register was a workaround I tried. In the
-> datasheet this register should be read/write. I don't know if my code
-> for writing the register is wrong or it is simply not possible to write
-> into this register.
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
+>   package/base-files/files/bin/config_generate                  | 1 +
+>   .../base-files/files/etc/uci-defaults/90_end-initial-setup    | 4 ++++
+>   2 files changed, 5 insertions(+)
+>   create mode 100644 package/base-files/files/etc/uci-defaults/90_end-initial-setup
 > 
->>
->>> How can I solve this?
->>
->> Only in hardware I suppose (setup correct initial value on GPIO13).
->>
-> It could also be solved by telling the module to force it into host mode
-> and not reading the bootstrap register. I am not sure the best approach
-> for this that would be accepted upstream.
-> 
-> Adding a parameter to ath79_register_usb() could be one option?
-> 
+> diff --git a/package/base-files/files/bin/config_generate b/package/base-files/files/bin/config_generate
+> index b473eba9e9..273561229a 100755
+> --- a/package/base-files/files/bin/config_generate
+> +++ b/package/base-files/files/bin/config_generate
+> @@ -243,6 +243,7 @@ generate_static_system() {
+>   		set system.@system[-1].ttylogin='0'
+>   		set system.@system[-1].log_size='64'
+>   		set system.@system[-1].urandom_seed='0'
+> +		set system.@system[-1].initial_setup='1'
+>   
+>   		delete system.ntp
+>   		set system.ntp='timeserver'
+> diff --git a/package/base-files/files/etc/uci-defaults/90_end-initial-setup b/package/base-files/files/etc/uci-defaults/90_end-initial-setup
+> new file mode 100644
+> index 0000000000..779d858d5f
+> --- /dev/null
+> +++ b/package/base-files/files/etc/uci-defaults/90_end-initial-setup
+> @@ -0,0 +1,4 @@
+> +uci -q delete system.@system[0].initial_setup
+> +uci commit system
+> +
+> +exit 0
 > 
 
 

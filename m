@@ -2,46 +2,46 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 668AFFF56D
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 21:24:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14B54FF570
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 21:24:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDD8jxQlK8QckJ0XBXBs5UCU9gMFyQCya4l0FCWFICY=; b=AjIoGfu9ByXjoP
-	QaxeqxK19L953UHJkJZC4+QgXsZzefwcdbaQ23VaIZDj9KvZFd+mbaEkNwxnrdn/4FwSxMsrH+7EA
-	HT0Vuns4ROnpRHCQElrZHfDufHdN24LlfU+MafH/vUKksLIqCmC1lr/fKxoUO4DY1QGSVE29JhF4B
-	CxRBknqVTUMfppwCq6rjulr54mj433YG/wOCVpodDUIeHqEJryQTAVomWFCjSuhwWkelhnPM4qYrF
-	VHrxAroKdhb8mTWk1pS1A7m2JQiWwDE1ZHOBbFEdLW2OPX1eHTJI4e0vl731pQeLQ6f2dkl5uVeWU
-	SnmEvvP5cAMTeRSZHCmQ==;
+	List-Owner; bh=OvweRkgCc6QtamIv5NFi9NgsdpVw5ifSeSjUh1Vf8bU=; b=k+BufNQ4St6YBq
+	+lFwhts4zivw+o5O3OrHQqYIo+8Qa4vHneb+Tl0ZG7LTu+G9Kt768nrCvExhqmlAAwLCEzAmWdSQf
+	LiR+I1uBlpUbjJiSN3dHN+jsFRH9wrxV5+aqadhyU20J0J3n2c76jcPXWcN8Q/S2qaZ6Va2WV8O5X
+	Xt5LRxMCgZseIdE3Yvl89F6xwVTm4oKD3SU2ODdLvDlEoWpQxL/pKkuLaugcciolRC/DVckgjhJ1r
+	fI7H4JKKC283VVl6zZWLoWypb75SgKQiw0lIhC3JVTbG8bR923ybbxx40aNIsIWeLxOZIayzbj/YA
+	QY+gh42KuWXoo3uRDqEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW4c3-0003dw-Hw; Sat, 16 Nov 2019 20:24:07 +0000
+	id 1iW4cn-0004RG-8U; Sat, 16 Nov 2019 20:24:53 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW4bn-0003cH-Sg
- for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 20:23:55 +0000
+ id 1iW4bn-0003cI-TO
+ for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 20:23:56 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 73E6C57BCF; Sat, 16 Nov 2019 21:23:48 +0100 (CET)
+ id 93EB857BD2; Sat, 16 Nov 2019 21:23:48 +0100 (CET)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 224EF57BCA
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 563E257BCD
  for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 21:23:48 +0100 (CET)
-Received: (qmail 21274 invoked from network); 16 Nov 2019 21:23:48 +0100
+Received: (qmail 21286 invoked from network); 16 Nov 2019 21:23:48 +0100
 Received: from unknown (HELO j7.lan) (jo%wwsnet.net@95.90.27.109)
  by mail.bytecamp.net with ESMTPS (DHE-RSA-AES128-GCM-SHA256 encrypted);
  16 Nov 2019 21:23:48 +0100
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 16 Nov 2019 21:23:31 +0100
-Message-Id: <20191116202346.31885-3-jo@mein.io>
+Date: Sat, 16 Nov 2019 21:23:32 +0100
+Message-Id: <20191116202346.31885-4-jo@mein.io>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191116202346.31885-1-jo@mein.io>
 References: <20191116202346.31885-1-jo@mein.io>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_122352_092666_A82C9FCA 
+X-CRM114-CacheID: sfid-20191116_122352_103649_EE7F1277 
 X-CRM114-Status: UNSURE (   6.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
@@ -53,8 +53,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 02/17] ar71xx: disable Netgear WNR612 v2 by
- default
+Subject: [OpenWrt-Devel] [PATCH 03/17] ar71xx: disable TP-Link TL-WA850RE v2
+ by default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,26 +72,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Disable the Netgear WNR612 v2 image by default as the device has
+Disable the TP-Link TL-WA850RE v2 image by default as the device has
 insufficient flash space for release build images.
 
-Ref: https://forum.openwrt.org/t/devices-too-big-to-save-overlay/18161/4
+Ref: https://forum.openwrt.org/t/devices-too-big-to-save-overlay/18161/9
 Signed-off-by: Jo-Philipp Wich <jo@mein.io>
 ---
- target/linux/ar71xx/image/tiny-legacy-devices.mk | 1 +
+ target/linux/ar71xx/image/tiny-tp-link.mk | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/target/linux/ar71xx/image/tiny-legacy-devices.mk b/target/linux/ar71xx/image/tiny-legacy-devices.mk
-index bcf77de443..98d45557a6 100644
---- a/target/linux/ar71xx/image/tiny-legacy-devices.mk
-+++ b/target/linux/ar71xx/image/tiny-legacy-devices.mk
-@@ -110,6 +110,7 @@ LEGACY_DEVICES += WNR2000V4
- 
- define LegacyDevice/REALWNR612V2
-   DEVICE_TITLE := NETGEAR WNR612V2
+diff --git a/target/linux/ar71xx/image/tiny-tp-link.mk b/target/linux/ar71xx/image/tiny-tp-link.mk
+index 5b0ab3e970..db5f735498 100644
+--- a/target/linux/ar71xx/image/tiny-tp-link.mk
++++ b/target/linux/ar71xx/image/tiny-tp-link.mk
+@@ -249,6 +249,7 @@ define Device/tl-wa850re-v2
+   TPLINK_HWREV := 0
+   IMAGE_SIZE := 3648k
+   MTDPARTS := spi0.0:128k(u-boot)ro,1344k(kernel),2304k(rootfs),256k(config)ro,64k(art)ro,3648k@0x20000(firmware)
 +  DEFAULT := n
  endef
- LEGACY_DEVICES += REALWNR612V2
+ TARGET_DEVICES += tl-wa850re-v2
  
 -- 
 2.20.1

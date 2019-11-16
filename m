@@ -2,87 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16889FECE6
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 16:31:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65C57FED40
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 16:44:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
 	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vvE5rxc4uYl1Iz/66iFkg8Ti4N+LonKOXgUVzEtvGCs=; b=Rqx1itNT4IdOYnwdGcmeQOKcN
-	dpJYbGz1PdKJbPinP2aV21mFtiMroRT97zxbgpuSut1TdulmXKwcapONzadiMIabZ/XAEnPrvXQJ4
-	B44sp9PBVmHlrnBig9ZOzg70WdVkuTEqJ/rit9GGREb+XTUL68WO0PxBgl88TCr0X0/OjHc8RaLtI
-	NhlJTvQnogCihZkFZHcoBSygHjuB9eKGkYbv1ASr3vcGbxbw0VR02cxGtxy63+vAy1JntOhdQBEoS
-	RX3OPeuMnaxRdhEcecAl9Dv0LeNeI1Q0ZcSKXVCKAU7u1Yh6FessJGSo/vVxJ7soEPR76hTYfkv60
-	TFD7migiQ==;
+	 bh=Olsgj3rDFDcNupeOdsnQh+vSovzsq0b9Q9NNiiFqEFQ=; b=a20R7zRREBfFLRi+J1xyGkY8V
+	kOue4BxfnujrUj8oalpw8ZNQCVfaLBVsJIMZgpfaxnL56RJAPI/EtEQ3p3L4jplBE1d4NgBT3PctC
+	SV312+IjA/VxwbvP25R8SdNcjHyqSEBqYnkEtC1j7Cs1qNKWbaPJqpSGL9pFdaLIHdKFy0wMlSH/s
+	H6S5zhyjPin4OQ2Aa4bL0BWesvcraxURDnLV0ierFNPPotqphKBT1/Mh1+IY5lMXQc4P0jBhLKtsR
+	GjaT0R1+Vu3IC1OUXVbuOjDRXvcJbgfnqdKdjT+JLo7p/O2vYYrnWvbLhyKhcuiIF/egrglGlnI/k
+	KHi7mXxpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW034-0001tx-Rb; Sat, 16 Nov 2019 15:31:42 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iW0Fe-0008St-J6; Sat, 16 Nov 2019 15:44:42 +0000
+Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW02y-0001tU-Bn
- for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 15:31:37 +0000
-Received: by mail-lf1-x144.google.com with SMTP id b20so10342543lfp.4
- for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 07:31:35 -0800 (PST)
+ id 1iW0FT-0008Rn-7l
+ for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 15:44:32 +0000
+Received: by mail-lj1-x231.google.com with SMTP id 139so13911467ljf.1
+ for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 07:44:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:references:from:message-id:date:user-agent:mime-version
  :in-reply-to:content-language:content-transfer-encoding;
- bh=c8l3O+Hqh0FNKCbTLPPufdW/lYEmHE0vIsJj7ZUm5po=;
- b=GZr0hwX5cH+od477ZZkyuY4bXQY2LfUciQ1A3wcOteYoPSmy7OwfFwHJ+U5/qvbQBB
- pcCRKM0Ty+JI4mosnFj1mQnhvDjAylCMapAkBqzRGK6NSz8rf+7ib5WCi62f54kZHEUI
- B62Q6Nmao+SYUdEi6N64CcV74JDZz+M1BsltVm3diuI50RYRzqXqw2gEZpbuYSNHxucX
- znBQtDjVtXiWa5AUss3CifbPRa/nrC08sV12bpvxIhzq+hiCxNTvSDJNfXYZf77Hpj7F
- A29LbGS7/jwFMTMFzDybQDj1P7ZoyyNdnY+xjl3L/A5dgPfk6+608TTiWBUltLOlRFTt
- 7inA==
+ bh=2N1uLqUMSCD65OS97ZE3eznvDeT+vPUYNPFSEdkwMzU=;
+ b=PLM04CnYSVKcXRuRFH410EX7rIf4ZObPMq13E8KdPWZFpPB8Yf0o/JhzNEo/ifBqSd
+ ACkGfr2NJPjd/OHN5FlTFYhQj9b63qjCubCP8Pd9EWn9GFzHHJvWmMmPz1twhP96oD2r
+ ORzIfuZlnK42rvD1UI+iEztQyOO1kMOZxPoQa0B0P6NOhooTt/cQ+RzUvDztKdIJihiS
+ wIybrGLLddjEGwUXPTVto7h6feneBv0/UvN7FRjYSEDUPfNjhC9UXaINA9nK1ANSlU0J
+ +aKl4Bgc7YXGo1daI7BaAoKpXhcKDOwp0wWO74COH3vbqe6of45WxtKA+iqfnECdYAS/
+ bu/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=c8l3O+Hqh0FNKCbTLPPufdW/lYEmHE0vIsJj7ZUm5po=;
- b=f+U+Wid/aYvbyBzk9+SprGdzaNaHiil+Jjm6hIa5SRziUU6Ugzu8U2Luvy3aw7fX2X
- LK3mhIfW3zvL3vuPgAcbrU4fCJ2ayBf3mnFtGmNbJXRf9xvHNUE0M7KY5vXeBMYSF1Hh
- lJAY2w37XpWXUvMY8DIoXajtEq0Q00DDSZQnoMPbhGFK6OF1bI3ohYfGy+uPRZjrllcP
- oNca9RlTIrLh5GRfbXXl4Rxh/qedWlP/6lBCbT7h7v8uHq1mZKv9at+gqRPgnH4jAiF1
- NoEyH9Q769rd5ETPVx4/MfnMZ60ss3cbdtumApuyJCiRqg+KdOAlxEzblp17uMHlLDhZ
- 6hwg==
-X-Gm-Message-State: APjAAAUcnDPJjOevTWV1vK3+LaknMIGYXax8OKzV2CjcTQlNYszAzV0t
- KS3kv+uve7vCuzEtxE5XzLekCaGe
-X-Google-Smtp-Source: APXvYqzObMeA0vuRLWpMW4ONeYEISqcEBJmLWQtzkmm5CjuUVr9lXNJxMab6NDIqrscg2Xo4a0zQ2A==
-X-Received: by 2002:ac2:5144:: with SMTP id q4mr15355499lfd.36.1573918293669; 
- Sat, 16 Nov 2019 07:31:33 -0800 (PST)
+ bh=2N1uLqUMSCD65OS97ZE3eznvDeT+vPUYNPFSEdkwMzU=;
+ b=b8M4zu9EU0E85ywgGDWv/uEhe+qZ4sOPnuXZ9vIbJ41smUmmCoUmiNyr/lKbC12K+e
+ 6bHL5e3sLwXcZKaqSItgtPOGpZHJRuYeLgzVoAXkATMF1Qd7w6ILMlj6AgHcGibIiC14
+ XDqdL50sPnSvNF1X2HHIES/5VD+LCKxNohFketfT8FGfzNQf/6eaa0PXpr9xNcgjwrt5
+ 89UtjixFHR8UufLuZcPJqpQGdu4klnwmYnpWi2V/dO1BqwYJjJxwgFK5KgiCT50339DZ
+ rFFI4sRWRh806kWg36gSLzgjHccUFJSxA6P6js7WuvpLZpg0sIM0PPTbPLpKLjBUo2nF
+ 7SMg==
+X-Gm-Message-State: APjAAAXV6+q1CpUt2L5ngrUTDNc9TaGh1O9rY0nvJpSGygf1QXvkxGXt
+ v1Z4DtbIsPUggvKDll4jybfyGUfg
+X-Google-Smtp-Source: APXvYqzyc5o+q32THl4dl7wQHHqy9EFICdp/N2IpImQl4MmYUVCOp/IkZgFhT5aiKGqBorS2y+bLDw==
+X-Received: by 2002:a2e:89c2:: with SMTP id c2mr14958703ljk.161.1573919069085; 
+ Sat, 16 Nov 2019 07:44:29 -0800 (PST)
 Received: from [31.11.183.129] (031011183129.warszawa.vectranet.pl.
  [31.11.183.129])
- by smtp.gmail.com with ESMTPSA id e14sm5657125ljb.75.2019.11.16.07.31.32
+ by smtp.gmail.com with ESMTPSA id x16sm5689758ljd.69.2019.11.16.07.44.28
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 16 Nov 2019 07:31:32 -0800 (PST)
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-References: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
+ Sat, 16 Nov 2019 07:44:28 -0800 (PST)
+To: Micke Prag <micke.prag@telldus.se>, openwrt-devel@lists.openwrt.org
+References: <94e65ceb-1d84-f28d-a423-676c4aeca605@telldus.se>
+ <d0d9d565-bd3c-48c3-0794-6f9ebdbafd94@gmail.com>
+ <d2e8225f-b090-c568-5c86-599d0792fe2b@telldus.se>
 From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <f05be16b-83ba-6640-c0e8-04e03877e589@gmail.com>
-Date: Sat, 16 Nov 2019 16:31:32 +0100
+Message-ID: <6993a1eb-b6b5-f09e-e61b-ea9c09f20a18@gmail.com>
+Date: Sat, 16 Nov 2019 16:44:27 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
+In-Reply-To: <d2e8225f-b090-c568-5c86-599d0792fe2b@telldus.se>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_073136_426548_49F15ED7 
-X-CRM114-Status: GOOD (  20.30  )
+X-CRM114-CacheID: sfid-20191116_074431_321323_D09D2000 
+X-CRM114-Status: GOOD (  21.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:231 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (pepe2k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,8 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH 0/2] introduce label_mac into hostname
- and SSID
+Subject: Re: [OpenWrt-Devel] ath79: Force usb host mode for ar9331
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,60 +108,90 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Adrian,
+Hi Micke,
 
-On 08.11.2019 12:48, Adrian Schmutzler wrote:
-> This patchset will introduce the label MAC address into the _default_
-> hostname and SSID of OpenWrt devices. Devices installed after these
-> commits (or upgraded with sysupgrade -n) will have their hostname and
-> SSID set to
-> OpenWrt-ddeeff
-> where "ddeeff" is the EUI of the label MAC address aa:bb:cc:dd:ee:ff.
+On 08.11.2019 13:30, Micke Prag wrote:
+> Den 11/8/19 kl. 11:01 AM, skrev Piotr Dymacz:
+>> Hi Micke,
+>>
+>> On 08.11.2019 08:36, Micke Prag wrote:
+>>> In commit 00ea16557d [1] the way usb is initiated was changed. Instead
+>>> of initiate both ehci-platform and ci_hdrc the bootstrap status register
+>>> is checked and used to determine which platform to initiate.
+>>
+>> There were other changes later, see for example 57c641ba6e.
+> Yes, I was looking at the code after this commit when making my
+> conclusions above. But 00ea16557d is the commit that breaks the board
+> initially.
+>>
+>>> Unfortunately this break my board since the gpio used to determine this
+>>> is used for other purposes.
+>>
+>> This means your board has a wrong bootstrap configuration and you
+>> should make sure GPIO for host/device mode has correct initialization
+>> value.
+> 
+> Yes, it is correct the bootstrap is not correct at hardware level. But
+> there is 30 k+ boards out in the world so fixing this now is a bit
+> late... ;)
+> 
+>>
+>>> dev-usb.h only exposes one function:
+>>> void ath79_register_usb(void);
+>>> so there is not much to alter the way usb is initiated.
+>>>
+>>> I tried to write to the bootstrap register but unfortunately this did
+>>> not seem to work:
+>>>
+>>> u32 t;
+>>> t = ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
+>>> pr_warn("ath79: Register before %X", t);
+>>> t |= AR933X_BOOTSTRAP_USB_MODE_HOST;
+>>> ath79_reset_wr(AR933X_RESET_REG_BOOTSTRAP, t);
+>>> pr_warn("ath79: Register after %X",
+>>> ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP));
+>>>
+>>> Gives the following output:
+>>>
+>>> ath79: Register before 42202
+>>> ath79: Register after 42202
+>> USB mode in AR9331 is selected at power on, based on GPIO13 value and
+>> I'm not aware of any other/software ways to change it. AFAIK, only
+>> QCA9563 allows to switch between host and device modes 'on the fly'.
+> 
+> Is was working before 00ea16557d so simply initialize ehci-platform
+> instead ci_hdrc will fix it. Unfortunately I cannot find a way to tell
+> ath79_register_usb to force it into host mode in my board file instead
+> of reading the bootstrap register.
 
-As this is something which touches essential system setting 
-(identification), I would really like other team members to join the 
-discussion before it sneaks in again. Especially because this was 
-already merged and reverted later, after short discussion on IRC.
+Do you want to tell me that a board with wrong bootstrap configuration 
+and USB switched to device mode was able to use the bus in host mode?
 
- From my point of view, I'm only worried about all the consequences we 
-don't know about, so I would prefer to have this one _optional_.
-
-On the other hand, I'm fine with the SSID change but I see it's not 
-going to be that straightforward to implement.
-Also, what I'm thinking about here is which one MAC should be used for 
-the SSID name. The 'label' one which is not available on all devices or 
-maybe the 'phy' one?
-
-> For devices where no label MAC address has been specified, hostname
-> and SSIDs will use the former default "OpenWrt".
-
-And this is probably the biggest issue I have with the whole idea behind 
-'label_mac'. As I understand the motivation, I don't like the fact it's 
-not specified (and probably would never be) for all devices so we will 
-have here inconsistency (in essential system settings!) and might end up 
-with confusion. Maybe that's something which should be handled by 
-downstream users/projects (and AFAIK, it is already).
+IIRC, during my tests I found that this bootstrap option makes the D+ 
+line to gets pulled-up to VBUS and there was no way to change it back.
+I would need to make some more tests to confirm that, though.
 
 -- 
 Cheers,
 Piotr
 
 > 
-> Implementing the EUI is intended to make identification of a
-> particular OpenWrt device easier. The label MAC address qualifies
-> for this as it is easily visible on the case and thus apparent to
-> both educated and uneducated users.
+> Writing to the bootstrap register was a workaround I tried. In the
+> datasheet this register should be read/write. I don't know if my code
+> for writing the register is wrong or it is simply not possible to write
+> into this register.
 > 
-> Adrian Schmutzler (1):
->    base-files: rename SSID with EUI of mac address
+>>
+>>> How can I solve this?
+>>
+>> Only in hardware I suppose (setup correct initial value on GPIO13).
+>>
+> It could also be solved by telling the module to force it into host mode
+> and not reading the bootstrap register. I am not sure the best approach
+> for this that would be accepted upstream.
 > 
-> Rosy Song (1):
->    base-files: rename hostname with EUI of mac address
+> Adding a parameter to ath79_register_usb() could be one option?
 > 
->   package/base-files/files/bin/config_generate  | 16 +++++++++++++-
->   .../etc/uci-defaults/15_wifi-ssid-mac-address | 22 +++++++++++++++++++
->   2 files changed, 37 insertions(+), 1 deletion(-)
->   create mode 100644 package/base-files/files/etc/uci-defaults/15_wifi-ssid-mac-address
 > 
 
 

@@ -2,87 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB448FF53C
-	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 20:02:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D504FF548
+	for <lists+openwrt-devel@lfdr.de>; Sat, 16 Nov 2019 20:06:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YggVzvpf/yfrL137zOCvBBJBhRwzTtSXCrZAeZ5HDIE=; b=WSEQ4f6JtPIpNE
-	1nyDkkhThIMupWP3E9xZrt0WrrGVgY4AY8a4Zl+3r9yvnFuKo5zv1TcYdECzGEbH7JRAKrbbe7AKQ
-	o3vpC65ClHpU3ka16/YPspBQAIRQtzN06XVaf5WYnclyuxQ4JPtiQVWOkVLcnB90gzjBJ6iI1Uhuj
-	OCUA6CdPw5uvflRf9zE2/WRwSqfCPxGiAiQ3HOyH1u3frPYi4F0hAE6jdGet5PV2z0NqDuU3a/sKQ
-	8w/RD7FdWuon0XinHDd5POyg2X8JqWNkyofPpwC5e8auA5puXjzChuR4R8ShTPHIwezKjwwprmRhY
-	q5tDarCJYc1PXb78GQ8A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:References:In-Reply-To:Date:To:From:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9v/9FJNV+iQmlv6fQdE9Aj3dClWZ6Ixl1a4TwruyAs4=; b=aOOP8IWdG66GY8hrkZVSnCD4+
+	bvA7F1We28hnXcmzuMiXcVvue8DAie0iXMMfHVF3nkqE248TPdGUm5madCM1Hp2+FefGALe716jj+
+	AQRCaP/4JYFF3rx4mOl3DX3YQku2e145cGTIfaQETZjDW3AT1vDhzO+qJgKpic4L7Mmd1cTnczPO7
+	dgz8yzs3ICI9rr4BeA3Z6P+IhVJn2l3oZlVNAfoWtkKC27Jvfn2jA46BAccfktQ+xkHslEGcfapHt
+	TxXcWTV/rccnN5Fqj7sW65seiUDZRriHUWFzELzgvIuicOrC6BSiEVVKKAqPhigT4eOKb6q9clLn1
+	Y+niNtGhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW3L1-00029y-IP; Sat, 16 Nov 2019 19:02:27 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1iW3OU-0003qP-GW; Sat, 16 Nov 2019 19:06:02 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW3Kr-000299-Nv
- for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 19:02:19 +0000
-Received: by mail-io1-xd42.google.com with SMTP id r2so9019364iot.10
- for <openwrt-devel@lists.openwrt.org>; Sat, 16 Nov 2019 11:02:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=9ZefEKqeA4+nzXIBcEan8LIgoObh5MOUNFiLDh493Y4=;
- b=CQjcP0GIGkIk6ksvu+cFzxmqv5UUvCzpdT0amRM1kmMUoyFEzk/7i/O3fKaSUy+/NB
- uA+lanw1dEJR5R39v/2KXGXlPk+H1zgysdXUZdv0Au+GsOnRx8yxchK7odAfrlhGUpBn
- tt5qRcl8Kvlf+gYdACIv0eJC4GSSutOAjNOwp/3jkhPRE5uZ2cLdKVujodsJVInfLfm5
- 9GoT4vXt1yBwzGQ1BEj6CP2fbd8ftj35o2E6iP9V+0YbNVjnakpILsAu0RVbrjyLtbct
- vHP4EoRMZynmKxb1oiDSUP6FXICx7kA9HwmML8mKdSvyKGXAVMAsIynBirYiN8QjkX3J
- BS+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=9ZefEKqeA4+nzXIBcEan8LIgoObh5MOUNFiLDh493Y4=;
- b=QvunGl+pR3iphdDgDNZr+mZ84orVFVKarBXz6DyO9424aDwtl2Eq+bXc2C5OABpNem
- bd3OtoqRX4AAhPnkqNEt4exDe4C5FJEBQI87vHDnp+o6zQg4Si0n+6MEIade/Ml+psZO
- VYYdryY+BiBbVcUm6GDGLJE03UK4TSn9EJ8A3LhskNA8typuiEDIGHx+jEDrKHHq6Eev
- TO2a3mSJQvYaeKtlmGgMqHBr/BvBz1sYuq4mpy6KaM5vrnvo13teSimutm+F4tcvZoAs
- 78VQdTMGQnFG+QdNEXE3Rb9QDj0fGvYDt3MuNn+HNbqGg0FVxwF9RphXYa12nl39TsBC
- fE+g==
-X-Gm-Message-State: APjAAAWxc6o3yXdTL0pHbPCbHH5d1WEGtrFUX2C1tNLlm0OqQdwxa8YP
- Rhbmvmtj4+L+9WT26RDG1XU6J92B4EKtfkGx3kk=
-X-Google-Smtp-Source: APXvYqyONixPw3XUupSjXy103FFAp9mbMrP6wu6d3lJX8D+/1TFCM9bv/uqu93Di/fcnLE0rtLDKVsCKUcUAEetbv68=
-X-Received: by 2002:a5e:870c:: with SMTP id y12mr3908784ioj.215.1573930935205; 
- Sat, 16 Nov 2019 11:02:15 -0800 (PST)
+ id 1iW3OK-0003pk-Ql
+ for openwrt-devel@lists.openwrt.org; Sat, 16 Nov 2019 19:05:55 +0000
+Received: from t480s.lan ([88.152.169.61]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MSLhm-1iPPZi3Zvc-00ShrT; Sat, 16 Nov 2019 20:05:47 +0100
+Message-ID: <fa4b24dfd5f020cd0314510b31837850ef242c5f.camel@brenken.org>
+From: Dirk Brenken <dev@brenken.org>
+To: Daniel Golle <daniel@makrotopia.org>, e9hack <e9hack@gmail.com>
+Date: Sat, 16 Nov 2019 20:05:42 +0100
+In-Reply-To: <20191116162706.GA1274@makrotopia.org>
+References: <5bc298cc-cd3d-0cdf-9772-36fc86cb1680@gmail.com>
+ <20191116162706.GA1274@makrotopia.org>
+User-Agent: Evolution 3.34.1-2+b1 
 MIME-Version: 1.0
-References: <20191108114841.1343-1-freifunk@adrianschmutzler.de>
- <f05be16b-83ba-6640-c0e8-04e03877e589@gmail.com>
-In-Reply-To: <f05be16b-83ba-6640-c0e8-04e03877e589@gmail.com>
-From: Dmitry Tunin <hanipouspilot@gmail.com>
-Date: Sat, 16 Nov 2019 22:02:04 +0300
-Message-ID: <CANoib0GdgJ4QtsVD-O_GUhRLoeeRAacNLNoc9w_1dM6Xq7n6Sg@mail.gmail.com>
-To: Piotr Dymacz <pepe2k@gmail.com>
+X-Provags-ID: V03:K1:cATFVE93y3mHTMZQUUriAMEFAztqZS4NltCH+NzQL5ftAp0Wrbx
+ FUbOxTspuznYc4aF/08oT9OkoaVFrzrZ8uEm+4Mk5lLNXuSVNdq9YY3Ey5TIb/NrXMzZFjG
+ +G8jsn/I1dMXzM0zR1fFhW6Yw8lrvjj8woXPbrQMkD7I0IUsef7Am5nZHyVUvDKEjpdXYNC
+ OJlzlBd0+0JoFjE4ffupw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:2y7n8Hr5bqg=:j46/Us4hSAB+MtMp6Xqm2H
+ WO8YfpfErr1k0B4yMhECONmRYxxYESnxhPk1SkyPFoe+hLfVewsQn+MQTZFIhLiojEHO8gKvS
+ 97949WmzzIDl/sKOcnJ6b120Rs6Qftw3lsy6htguwrrpb3Ef3Btsds/7BtCdqGWfHF0uHC3+9
+ ZjYlfuf7cX6A6SZmBmogVd7r1g3gouq7ua1czSZiUZjpLmxbWXuZ1Vl8TeadWRjyZC1tviXsm
+ V0aJx0tFBZiWWPbdj8e9N/lrAjt392N10wzouWBYY4HujabINT/tQfTGC6NpSDI4w0F2hx1hg
+ 91u4kWdtNF6F8Z7ARzIM61NzC82nTPN23GGAy0WtBqOagq3BMWxCTPCBrkMmKubhuiS8VCJEk
+ lkdLfT5EYgQjTzPJKKXKlvebedmsYJlnU7RD/4+RTFNbEeYJOJL1cpSo5DfdjuHfDHVi8HVyT
+ GJUax2Wc1hrN9YL40UIDTv+w6cEW2aDEV6VmkAEFkHCrZvm7V4CiQOp4FhyJCIPKkIv2WabNK
+ fRQGo6w86V6MUvmU1yego8/25bvHGMNDHyOXTkJAmRGWOiD8HrD/hrLE3p9ulCqeqOO4Jaj3L
+ rvkCpcAHftdCb2A+4sP6WrWAfZBIOkP88QGN3J1ox830iLmA2NzoLt8RzvZimGN2R2fOWbyb/
+ bqeIfhIAv1BUCBjQzR8H/tzjcz8cb3UxszKRxqEKESRKbFzNjjbqDctbsGWmC6ztsO63UBB0x
+ YcIIzi6bajKC6puX8L3qH4C6qGDjPxKt7okr9O5sTvh9o2a3YU6yxajQpeIonJj8sAT5PmGdO
+ 5ql4mnynwPGrwF+VkqI09IQ/qk8ICMGQ0xm0vkMTRoNF5SJRuu0OUjrvZiGV+NUCv4c4K3S3H
+ bAtFtA4XPU16I/CxaRJQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_110217_804575_2F748C1D 
-X-CRM114-Status: GOOD (  22.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191116_110553_171130_C4FC17E4 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hanipouspilot[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH 0/2] introduce label_mac into hostname
- and SSID
+ no trust [212.227.17.13 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] Wifi is broken
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,62 +78,128 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============7217238200238022384=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SSBhbSBzdHJvbmdseSBhZ2FpbnN0IHRoaXMgY2hhbmdlIGZvciBhIHNpbXBsZSByZWFzb24uIEFk
-dmFudGFnZSBvZgp0aGlzIGNoYW5nZSBpcyBxdWVzdGlvbmFibGUsIGJ1dCB3ZSBjYW4gZ2V0IGFs
-bCBzb3J0cyBvZiB0cm91YmxlLgoK0YHQsSwgMTYg0L3QvtGP0LEuIDIwMTkg0LMuINCyIDE4OjMx
-LCBQaW90ciBEeW1hY3ogPHBlcGUya0BnbWFpbC5jb20+Ogo+Cj4gSGkgQWRyaWFuLAo+Cj4gT24g
-MDguMTEuMjAxOSAxMjo0OCwgQWRyaWFuIFNjaG11dHpsZXIgd3JvdGU6Cj4gPiBUaGlzIHBhdGNo
-c2V0IHdpbGwgaW50cm9kdWNlIHRoZSBsYWJlbCBNQUMgYWRkcmVzcyBpbnRvIHRoZSBfZGVmYXVs
-dF8KPiA+IGhvc3RuYW1lIGFuZCBTU0lEIG9mIE9wZW5XcnQgZGV2aWNlcy4gRGV2aWNlcyBpbnN0
-YWxsZWQgYWZ0ZXIgdGhlc2UKPiA+IGNvbW1pdHMgKG9yIHVwZ3JhZGVkIHdpdGggc3lzdXBncmFk
-ZSAtbikgd2lsbCBoYXZlIHRoZWlyIGhvc3RuYW1lIGFuZAo+ID4gU1NJRCBzZXQgdG8KPiA+IE9w
-ZW5XcnQtZGRlZWZmCj4gPiB3aGVyZSAiZGRlZWZmIiBpcyB0aGUgRVVJIG9mIHRoZSBsYWJlbCBN
-QUMgYWRkcmVzcyBhYTpiYjpjYzpkZDplZTpmZi4KPgo+IEFzIHRoaXMgaXMgc29tZXRoaW5nIHdo
-aWNoIHRvdWNoZXMgZXNzZW50aWFsIHN5c3RlbSBzZXR0aW5nCj4gKGlkZW50aWZpY2F0aW9uKSwg
-SSB3b3VsZCByZWFsbHkgbGlrZSBvdGhlciB0ZWFtIG1lbWJlcnMgdG8gam9pbiB0aGUKPiBkaXNj
-dXNzaW9uIGJlZm9yZSBpdCBzbmVha3MgaW4gYWdhaW4uIEVzcGVjaWFsbHkgYmVjYXVzZSB0aGlz
-IHdhcwo+IGFscmVhZHkgbWVyZ2VkIGFuZCByZXZlcnRlZCBsYXRlciwgYWZ0ZXIgc2hvcnQgZGlz
-Y3Vzc2lvbiBvbiBJUkMuCj4KPiAgRnJvbSBteSBwb2ludCBvZiB2aWV3LCBJJ20gb25seSB3b3Jy
-aWVkIGFib3V0IGFsbCB0aGUgY29uc2VxdWVuY2VzIHdlCj4gZG9uJ3Qga25vdyBhYm91dCwgc28g
-SSB3b3VsZCBwcmVmZXIgdG8gaGF2ZSB0aGlzIG9uZSBfb3B0aW9uYWxfLgo+Cj4gT24gdGhlIG90
-aGVyIGhhbmQsIEknbSBmaW5lIHdpdGggdGhlIFNTSUQgY2hhbmdlIGJ1dCBJIHNlZSBpdCdzIG5v
-dAo+IGdvaW5nIHRvIGJlIHRoYXQgc3RyYWlnaHRmb3J3YXJkIHRvIGltcGxlbWVudC4KPiBBbHNv
-LCB3aGF0IEknbSB0aGlua2luZyBhYm91dCBoZXJlIGlzIHdoaWNoIG9uZSBNQUMgc2hvdWxkIGJl
-IHVzZWQgZm9yCj4gdGhlIFNTSUQgbmFtZS4gVGhlICdsYWJlbCcgb25lIHdoaWNoIGlzIG5vdCBh
-dmFpbGFibGUgb24gYWxsIGRldmljZXMgb3IKPiBtYXliZSB0aGUgJ3BoeScgb25lPwo+Cj4gPiBG
-b3IgZGV2aWNlcyB3aGVyZSBubyBsYWJlbCBNQUMgYWRkcmVzcyBoYXMgYmVlbiBzcGVjaWZpZWQs
-IGhvc3RuYW1lCj4gPiBhbmQgU1NJRHMgd2lsbCB1c2UgdGhlIGZvcm1lciBkZWZhdWx0ICJPcGVu
-V3J0Ii4KPgo+IEFuZCB0aGlzIGlzIHByb2JhYmx5IHRoZSBiaWdnZXN0IGlzc3VlIEkgaGF2ZSB3
-aXRoIHRoZSB3aG9sZSBpZGVhIGJlaGluZAo+ICdsYWJlbF9tYWMnLiBBcyBJIHVuZGVyc3RhbmQg
-dGhlIG1vdGl2YXRpb24sIEkgZG9uJ3QgbGlrZSB0aGUgZmFjdCBpdCdzCj4gbm90IHNwZWNpZmll
-ZCAoYW5kIHByb2JhYmx5IHdvdWxkIG5ldmVyIGJlKSBmb3IgYWxsIGRldmljZXMgc28gd2Ugd2ls
-bAo+IGhhdmUgaGVyZSBpbmNvbnNpc3RlbmN5IChpbiBlc3NlbnRpYWwgc3lzdGVtIHNldHRpbmdz
-ISkgYW5kIG1pZ2h0IGVuZCB1cAo+IHdpdGggY29uZnVzaW9uLiBNYXliZSB0aGF0J3Mgc29tZXRo
-aW5nIHdoaWNoIHNob3VsZCBiZSBoYW5kbGVkIGJ5Cj4gZG93bnN0cmVhbSB1c2Vycy9wcm9qZWN0
-cyAoYW5kIEFGQUlLLCBpdCBpcyBhbHJlYWR5KS4KPgo+IC0tCj4gQ2hlZXJzLAo+IFBpb3RyCj4K
-PiA+Cj4gPiBJbXBsZW1lbnRpbmcgdGhlIEVVSSBpcyBpbnRlbmRlZCB0byBtYWtlIGlkZW50aWZp
-Y2F0aW9uIG9mIGEKPiA+IHBhcnRpY3VsYXIgT3BlbldydCBkZXZpY2UgZWFzaWVyLiBUaGUgbGFi
-ZWwgTUFDIGFkZHJlc3MgcXVhbGlmaWVzCj4gPiBmb3IgdGhpcyBhcyBpdCBpcyBlYXNpbHkgdmlz
-aWJsZSBvbiB0aGUgY2FzZSBhbmQgdGh1cyBhcHBhcmVudCB0bwo+ID4gYm90aCBlZHVjYXRlZCBh
-bmQgdW5lZHVjYXRlZCB1c2Vycy4KPiA+Cj4gPiBBZHJpYW4gU2NobXV0emxlciAoMSk6Cj4gPiAg
-ICBiYXNlLWZpbGVzOiByZW5hbWUgU1NJRCB3aXRoIEVVSSBvZiBtYWMgYWRkcmVzcwo+ID4KPiA+
-IFJvc3kgU29uZyAoMSk6Cj4gPiAgICBiYXNlLWZpbGVzOiByZW5hbWUgaG9zdG5hbWUgd2l0aCBF
-VUkgb2YgbWFjIGFkZHJlc3MKPiA+Cj4gPiAgIHBhY2thZ2UvYmFzZS1maWxlcy9maWxlcy9iaW4v
-Y29uZmlnX2dlbmVyYXRlICB8IDE2ICsrKysrKysrKysrKystCj4gPiAgIC4uLi9ldGMvdWNpLWRl
-ZmF1bHRzLzE1X3dpZmktc3NpZC1tYWMtYWRkcmVzcyB8IDIyICsrKysrKysrKysrKysrKysrKysK
-PiA+ICAgMiBmaWxlcyBjaGFuZ2VkLCAzNyBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4g
-PiAgIGNyZWF0ZSBtb2RlIDEwMDY0NCBwYWNrYWdlL2Jhc2UtZmlsZXMvZmlsZXMvZXRjL3VjaS1k
-ZWZhdWx0cy8xNV93aWZpLXNzaWQtbWFjLWFkZHJlc3MKPiA+Cj4KPgo+IF9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gb3BlbndydC1kZXZlbCBtYWlsaW5n
-IGxpc3QKPiBvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4gaHR0cHM6Ly9saXN0cy5v
-cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBs
-aXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+
+--===============7217238200238022384==
+Content-Type: multipart/signed; micalg="pgp-sha512";
+	protocol="application/pgp-signature"; boundary="=-ptcWSqDPGa4vrvx8N09O"
+
+
+--=-ptcWSqDPGa4vrvx8N09O
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, 2019-11-16 at 17:27 +0100, Daniel Golle wrote:
+> Hi,
+>=20
+> On Sat, Nov 16, 2019 at 09:17:08AM +0100, e9hack wrote:
+> > Hi,
+> >=20
+> > this commit
+> >=20
+> > commit	000b7687bc50be5b0f1161f4bf8ceb85c495c395
+> > mac80211: restore mac80211_interface_cleanup()
+> >=20
+> > breaks wifi on my tp-link archer C7 router. After update, only the
+> > 5G wifi will be activated. The 2.4G wifi doesn't start. I try to
+> > recover from this by shuting down and restart wifi by executing
+> > 'wifi down; sleep 30; wifi &'. Afterwards, wifi doesn't start
+> > anymore. I modify mac80211.sh to get some more log entries:
+>=20
+> I've reverted that commit and applied a more sophisticated fix
+> instead.
+> Please retest and report if that works better.
+>=20
+>=20
+> Cheers
+>=20
+> Daniel
+>=20
+Works better now - the AP now comes up after reboot (still with some
+suspicios error messages):
+
+[...]
+Sat Nov 16 17:26:15 2019 daemon.notice netifd: radio0 (1262): sh: out
+of range
+Sat Nov 16 17:26:16 2019 daemon.err odhcpd[1331]: Failed to send to
+ff02::1%lan@br-lan (Address not available)
+Sat Nov 16 17:26:16 2019 daemon.notice netifd: radio0 (1262): command
+failed: Too many open files in system (-23)
+Sat Nov 16 17:26:17 2019 daemon.notice netifd: radio0 (1262): command
+failed: Too many open files in system (-23)
+Sat Nov 16 17:26:19 2019 user.notice firewall: Reloading firewall due
+to ifup of lan (br-lan)
+Sat Nov 16 17:26:19 2019 daemon.notice hostapd: Configuration file:
+/var/run/hostapd-phy0.conf (phy wlan0) --> new PHY
+Sat Nov 16 17:26:19 2019 kern.info kernel: [   48.375045] IPv6:
+ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Sat Nov 16 17:26:19 2019 kern.info kernel: [   48.478057] br-lan: port
+2(wlan0) entered blocking state
+Sat Nov 16 17:26:19 2019 kern.info kernel: [   48.483739] br-lan: port
+2(wlan0) entered disabled state
+Sat Nov 16 17:26:19 2019 kern.info kernel: [   48.489606] device wlan0
+entered promiscuous mode
+Sat Nov 16 17:26:19 2019 daemon.notice hostapd: wlan0: interface state
+UNINITIALIZED->COUNTRY_UPDATE
+Sat Nov 16 17:26:19 2019 daemon.err hostapd: Using interface wlan0 with
+hwaddr e4:95:6e:45:87:e3 and ssid "adb2go"
+Sat Nov 16 17:26:21 2019 daemon.notice hostapd: wlan0: interface state
+COUNTRY_UPDATE->ENABLED
+Sat Nov 16 17:26:21 2019 daemon.notice hostapd: wlan0: AP-ENABLED
+[...]
+
+Regards,
+Dirk
+
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+>=20
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>=20
+>=20
+
+--=-ptcWSqDPGa4vrvx8N09O
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEvk9F2uJ4OsaK+T5unXHNVHv65oQFAl3QSIYACgkQnXHNVHv6
+5oRKSw//bTYATXjLWDvJcZ93b31TgQ50VfyO+Gf0jY+/AByNOXy1Zce9tPbMtYuG
+DTHZtCKihT0w/YVPXRcIkkt+TtJFj/TjB6kEEKozsTCL8NYlnijXmzDJa2sOMHRo
+IwaMiN0C/t5s8cRnujc8X2JsIRSL6WmATAcgF0adp0WRu2BOotT5aqkaO5RYy9ov
+M4kd5gZYJrMg3P7MYvh/pzEGiTqWt9AR6Ub1zypQ+PrK+p32Iu6ZaDo/9DRzYoFu
+L8KV38ADNLN89yXut5/LVkKR7Jztc01Pe0502sQ8oPLKDJ/QxMrA68PIML0njrMa
+qqezOkxAdugZO+1ZeFeldhQA/LYtE3xZwa4AnE11+GZ02nVoIPtbui0eQT9vTYRI
+Lyt877le7vXl8zvuqBRMEoaTFxTOHKK0cUMhAQyZ5DExag7hWtUg5M/6dw6rFJM/
+OYw5EOW/cql0s8EKMI7Dc+gmoWELcI3d5jLdN1m2EzrONgSmE14l24XUc8uZhkyl
+z+upAk7IcBCAMVWdblULuv5xmc71tVxGij/E+SfhJ8VagxiB3Jz4/KZD6sAyAIBB
+JyFaE57NicLPIk2TqWa4uNpJXWzlktrzjahSi0Q63aLulPa2EoFKnECD2yrOzB80
+avmBpPKolZvj2e8IFxfSL1nb4zPZ8csjvheuOmMJ3RAbIyf3rUs=
+=8Wmg
+-----END PGP SIGNATURE-----
+
+--=-ptcWSqDPGa4vrvx8N09O--
+
+
+
+--===============7217238200238022384==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7217238200238022384==--
+
+

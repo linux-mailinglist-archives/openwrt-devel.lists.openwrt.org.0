@@ -2,39 +2,39 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D069FFC46
-	for <lists+openwrt-devel@lfdr.de>; Mon, 18 Nov 2019 00:34:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61404FFC4F
+	for <lists+openwrt-devel@lfdr.de>; Mon, 18 Nov 2019 00:42:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jU84VajeurksJT2Aqm/wXgTsswIpKN5MZ4PD1mUMPq0=; b=b4pD7saJNQQraZ
-	QDU6Hu/tebBf1HcUH6OeBM1DmBVF6RI0jti9wRfgnsq4nraSXaVnSUTqEYk42LlcC5CEo0Gc2QaHC
-	xSu7d1QxDxyqyVeX70Snba0ku+UA70x+Cap2RLxCdpIIj36pCNAnPqH6yu4s1KUszfrp4HMBGFkug
-	BlSYfhe3wEQtPTzt0c5xTvTNsdSvPtauHr7brKve3L9P9j1roiI7qUqzP9LWOhcOrI6c6R+PSFF48
-	kIVBaTySapwANaJh7oNZ6hM8hQhzs/jMsUF8KAwkpRkCOacWUkrDCBPOJaWqITR66+EQQYkCt+8g7
-	yJ9uORSFVKlv3+yZKlhA==;
+	List-Owner; bh=srvaivoC8t09MUk8WwlksPsEumSeEYTv0QydY4fsBnI=; b=h91rJk1OH69GxW
+	aN4maTNYbffBGjZcr9XZ9mZVqO1TQMcD2hDT5VylcB7pGbCa4sXLDPfgKMKVBs68AJcTU9bybS6QX
+	QT7mCzttDN7CD55vbpw+S/G5mqeG0pbHbpAjmkBcgvPRe8nkfWkfXQkHJAlCbicd8g1cccmnq3G+F
+	n6CJYiXCFfcFfknc39qwmAcbdnk9UcGQA07/dq2fyrlf3ClUkcZeP5Dkm+v82gYb30H9SykaRbYzk
+	FApWHSEOciWQK0AtmggSqdbsfyJuHoDhkOQHEfqkiAUwTSruBqQZ0nyJegAFhx3A0eKjjsxD2eNGL
+	DWJiw64AkVmAVEX2VOBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWU3l-0004ME-Ob; Sun, 17 Nov 2019 23:34:25 +0000
-Received: from mout-u-204.mailbox.org ([91.198.250.253])
+	id 1iWUBn-0007Wu-VJ; Sun, 17 Nov 2019 23:42:43 +0000
+Received: from mout-u-204.mailbox.org ([2001:67c:2050:1::465:204])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWU3d-0004LD-VV
- for openwrt-devel@lists.openwrt.org; Sun, 17 Nov 2019 23:34:20 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ id 1iWUBh-0007WM-43
+ for openwrt-devel@lists.openwrt.org; Sun, 17 Nov 2019 23:42:38 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-u-204.mailbox.org (Postfix) with ESMTPS id 47GT1v3XQkzQlDG;
- Mon, 18 Nov 2019 00:34:11 +0100 (CET)
+ by mout-u-204.mailbox.org (Postfix) with ESMTPS id 47GTCb00VSzQkmD;
+ Mon, 18 Nov 2019 00:42:35 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id 7pT5qS2OQZIq; Mon, 18 Nov 2019 00:34:04 +0100 (CET)
-To: Christian Lamparter <chunkeey@gmail.com>, openwrt-devel@lists.openwrt.org
-References: <20191117014442.1427795-1-chunkeey@gmail.com>
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id p_Kpq5Y836uO; Mon, 18 Nov 2019 00:42:32 +0100 (CET)
+To: Yousong Zhou <yszhou4tech@gmail.com>, openwrt-devel@lists.openwrt.org
+References: <20191113171226.31591-1-yszhou4tech@gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Openpgp: preference=signencrypt
 Autocrypt: addr=hauke@hauke-m.de; keydata=
@@ -97,14 +97,14 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <32e80bbe-3365-c1ef-0358-ac0a4e60fd6c@hauke-m.de>
-Date: Mon, 18 Nov 2019 00:34:01 +0100
+Message-ID: <1c3d615c-efdd-77b1-1761-10094fbb661a@hauke-m.de>
+Date: Mon, 18 Nov 2019 00:42:30 +0100
 MIME-Version: 1.0
-In-Reply-To: <20191117014442.1427795-1-chunkeey@gmail.com>
+In-Reply-To: <20191113171226.31591-1-yszhou4tech@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_153418_336456_D7FED097 
-X-CRM114-Status: GOOD (  25.69  )
+X-CRM114-CacheID: sfid-20191117_154237_504594_6F6B7233 
+X-CRM114-Status: GOOD (  16.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -112,8 +112,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH] mac80211: switch to upstream owl-loader
- driver
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: nf_conntrack_rtcache: fix
+ cleanup on netns delete and rmmod
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,152 +125,135 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Cc: nbd@nbd.name
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 11/17/19 2:44 AM, Christian Lamparter wrote:
-> The Owl Loader (named after the codename that Atheros gave
-> these devices back in the day) has been accepted upstream.
+On 11/13/19 6:12 PM, Yousong Zhou wrote:
+> Fixes FS#1472, FS#2353, FS#2426
 > 
-> This patch removes the "misc" driver OpenWrt had and adds
-> the remaining differences against the version that ships
-> with 5.4-rc1 into a separate "120-owl-loader-compat.patch"
-> file that can be cut down once AR71XX is being dealt with.
-> 
-> Note: I decided to keep the existing (kmod-)owl-loader
-> package name around for now. The kernel module file in
-> the kmod package will be called ath9k_pci_owl_loader.ko
-> though.
-> 
-> Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
+> Fixes: b3f95490 ("kernel: generic: Add kernel 4.14 support")
+> Signed-off-by: Yousong Zhou <yszhou4tech@gmail.com>
 
 Acked-by: Hauke Mehrtens <hauke@hauke-m.de>
 
+Thanks for fixing this problem, this should also go into 19.07 and 18.06.
+
 > ---
->  package/kernel/linux/modules/wireless.mk      |  21 --
->  package/kernel/mac80211/ath.mk                |  20 +-
->  .../patches/ath/120-owl-loader-compat.patch   |  67 +++++
->  .../generic/files/drivers/misc/owl-loader.c   | 246 ------------------
->  .../hack-4.14/835-misc-owl_loader.patch       |  52 ----
->  .../hack-4.19/835-misc-owl_loader.patch       |  52 ----
->  .../hack-4.9/835-misc-owl_loader.patch        |  52 ----
->  7 files changed, 86 insertions(+), 424 deletions(-)
->  create mode 100644 package/kernel/mac80211/patches/ath/120-owl-loader-compat.patch
->  delete mode 100644 target/linux/generic/files/drivers/misc/owl-loader.c
->  delete mode 100644 target/linux/generic/hack-4.14/835-misc-owl_loader.patch
->  delete mode 100644 target/linux/generic/hack-4.19/835-misc-owl_loader.patch
->  delete mode 100644 target/linux/generic/hack-4.9/835-misc-owl_loader.patch
+>  .../020-backport_netfilter_rtcache.patch           | 14 +++++++++++++-
+>  .../020-backport_netfilter_rtcache.patch           | 14 +++++++++++++-
+>  2 files changed, 26 insertions(+), 2 deletions(-)
 > 
-> diff --git a/package/kernel/linux/modules/wireless.mk b/package/kernel/linux/modules/wireless.mk
-> index 7b1c663567..72e2bf477b 100644
-> --- a/package/kernel/linux/modules/wireless.mk
-> +++ b/package/kernel/linux/modules/wireless.mk
-> @@ -41,24 +41,3 @@ define KernelPackage/net-rtl8192su/description
->  endef
->  
->  $(eval $(call KernelPackage,net-rtl8192su))
-> -
-> -
-> -define KernelPackage/owl-loader
-> -  SUBMENU:=$(WIRELESS_MENU)
-> -  TITLE:=Owl loader for initializing Atheros PCI(e) Wifi chips
-> -  DEPENDS:=@PCI_SUPPORT
-> -  KCONFIG:=CONFIG_OWL_LOADER
-> -  FILES:=$(LINUX_DIR)/drivers/misc/owl-loader.ko
-> -  AUTOLOAD:=$(call AutoProbe,owl-loader)
-> -endef
-> -
-> -define KernelPackage/owl-loader/description
-> -  Kernel module that helps to initialize certain Qualcomm
-> -  Atheros' PCI(e) Wifi chips, which have the init data
-> -  (which contains the PCI device ID for example) stored
-> -  together with the calibration data in the file system.
-> -
-> -  This is necessary for devices like the Cisco Meraki Z1.
-> -endef
-> -
-> -$(eval $(call KernelPackage,owl-loader))
-> diff --git a/package/kernel/mac80211/ath.mk b/package/kernel/mac80211/ath.mk
-> index 64aac41b4d..788131b751 100644
-> --- a/package/kernel/mac80211/ath.mk
-> +++ b/package/kernel/mac80211/ath.mk
-> @@ -1,6 +1,6 @@
->  PKG_DRIVERS += \
->  	ath ath5k ath6kl ath6kl-sdio ath6kl-usb ath9k ath9k-common ath9k-htc ath10k \
-> -	carl9170
-> +	carl9170 owl-loader
->  
->  PKG_CONFIG_DEPENDS += \
->  	CONFIG_PACKAGE_ATH_DEBUG \
-> @@ -38,6 +38,7 @@ config-$(CONFIG_PACKAGE_ATH_SPECTRAL) += ATH9K_COMMON_SPECTRAL ATH10K_SPECTRAL
->  config-$(CONFIG_PACKAGE_ATH_DYNACK) += ATH9K_DYNACK
->  config-$(call config_package,ath9k) += ATH9K
->  config-$(call config_package,ath9k-common) += ATH9K_COMMON
-> +config-$(call config_package,owl-loader) += ATH9K_PCI_NO_EEPROM
->  config-$(CONFIG_TARGET_ar71xx) += ATH9K_AHB
->  config-$(CONFIG_TARGET_ath79) += ATH9K_AHB
->  config-$(CONFIG_TARGET_ipq40xx) += ATH10K_AHB
-> @@ -274,3 +275,20 @@ define KernelPackage/carl9170
->    FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/ath/carl9170/carl9170.ko
->    AUTOLOAD:=$(call AutoProbe,carl9170)
->  endef
-> +
-> +define KernelPackage/owl-loader
-> +  $(call KernelPackage/mac80211/Default)
-> +  TITLE:=Owl loader for initializing Atheros PCI(e) Wifi chips
-> +  DEPENDS:=@PCI_SUPPORT +kmod-ath9k
-> +  FILES:=$(PKG_BUILD_DIR)/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.ko
-> +  AUTOLOAD:=$(call AutoProbe,ath9k_pci_owl_loader)
-> +endef
-> +
-> +define KernelPackage/owl-loader/description
-> +  Kernel module that helps to initialize certain Qualcomm
-> +  Atheros' PCI(e) Wifi chips, which have the init data
-> +  (which contains the PCI device ID for example) stored
-> +  together with the calibration data in the file system.
-> +
-> +  This is necessary for devices like the Cisco Meraki Z1.
-> +endef
-> diff --git a/package/kernel/mac80211/patches/ath/120-owl-loader-compat.patch b/package/kernel/mac80211/patches/ath/120-owl-loader-compat.patch
-> new file mode 100644
-> index 0000000000..256fca45e4
-> --- /dev/null
-> +++ b/package/kernel/mac80211/patches/ath/120-owl-loader-compat.patch
-> @@ -0,0 +1,67 @@
-> +From: Christian Lamparter <chunkeey@gmail.com>
-> +Date: Sat, 16 Nov 2019 19:25:24 +0100
-> +Subject: [PATCH] owl_loader: compatibility patch
-> +
-> +This patch includes OpenWrt specific changes that are
-> +not included in the upstream owl-loader.
-> +
-> +These include:
-> +	- A Byteswap fix for lantiq's PCI code
-> +
-> +	- platform data handling for ar71xx
-> +
-> +Signed-off-by: Christian Lamparter <chunkeey@gmail.com>
-> +
-> +--- a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-> ++++ b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-> +@@ -84,6 +84,10 @@
-> + 			val = swahb32(val);
-> + 		}
-> + 
-> ++#ifdef CONFIG_LANTIQ
-> ++		val = swab32(val);
-> ++#endif
-
-Lantiq is big endian, are there other big endian system which do not
-need this byte swap?
-
+> diff --git a/target/linux/generic/backport-4.14/020-backport_netfilter_rtcache.patch b/target/linux/generic/backport-4.14/020-backport_netfilter_rtcache.patch
+> index 8a6fba4307..d745a97026 100644
+> --- a/target/linux/generic/backport-4.14/020-backport_netfilter_rtcache.patch
+> +++ b/target/linux/generic/backport-4.14/020-backport_netfilter_rtcache.patch
+> @@ -127,7 +127,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>   # netlink interface for nf_conntrack
+>  --- /dev/null
+>  +++ b/net/netfilter/nf_conntrack_rtcache.c
+> -@@ -0,0 +1,428 @@
+> +@@ -0,0 +1,440 @@
+>  +/* route cache for netfilter.
+>  + *
+>  + * (C) 2014 Red Hat GmbH
+> @@ -444,6 +444,11 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +	.destroy = nf_conn_rtcache_destroy,
+>  +};
+>  +
+> ++static int __net_init rtcache_net_init(struct net *net)
+> ++{
+> ++	return nf_register_net_hooks(net, rtcache_ops, ARRAY_SIZE(rtcache_ops));
+> ++}
 > ++
-> + 		__raw_writel(val, mem + reg);
-> + 		usleep_range(100, 120);
-> + 	}
+>  +static void __net_exit rtcache_net_exit(struct net *net)
+>  +{
+>  +	/* remove hooks so no new connections get rtcache extension */
+> @@ -451,6 +456,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +}
+>  +
+>  +static struct pernet_operations rtcache_ops_net_ops = {
+> ++	.init	= rtcache_net_init,
+>  +	.exit	= rtcache_net_exit,
+>  +};
+>  +
+> @@ -531,6 +537,11 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +	synchronize_net();
+>  +
+>  +	unregister_netdevice_notifier(&nf_rtcache_notifier);
+> ++	unregister_pernet_subsys(&rtcache_ops_net_ops);
+> ++	for_each_net(net)
+> ++		nf_unregister_net_hooks(net, rtcache_ops, ARRAY_SIZE(rtcache_ops));
+> ++
+> ++	synchronize_net();
+>  +
+>  +	rtnl_lock();
+>  +
+> @@ -547,6 +558,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +	}
+>  +
+>  +	rtnl_unlock();
+> ++
+>  +	synchronize_net();
+>  +	nf_ct_extend_unregister(&rtcache_extend);
+>  +}
+> diff --git a/target/linux/generic/backport-4.19/020-backport_netfilter_rtcache.patch b/target/linux/generic/backport-4.19/020-backport_netfilter_rtcache.patch
+> index 3a35381ce3..2d84bc2acf 100644
+> --- a/target/linux/generic/backport-4.19/020-backport_netfilter_rtcache.patch
+> +++ b/target/linux/generic/backport-4.19/020-backport_netfilter_rtcache.patch
+> @@ -127,7 +127,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>   # netlink interface for nf_conntrack
+>  --- /dev/null
+>  +++ b/net/netfilter/nf_conntrack_rtcache.c
+> -@@ -0,0 +1,428 @@
+> +@@ -0,0 +1,440 @@
+>  +/* route cache for netfilter.
+>  + *
+>  + * (C) 2014 Red Hat GmbH
+> @@ -444,6 +444,11 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +	.destroy = nf_conn_rtcache_destroy,
+>  +};
+>  +
+> ++static int __net_init rtcache_net_init(struct net *net)
+> ++{
+> ++	return nf_register_net_hooks(net, rtcache_ops, ARRAY_SIZE(rtcache_ops));
+> ++}
+> ++
+>  +static void __net_exit rtcache_net_exit(struct net *net)
+>  +{
+>  +	/* remove hooks so no new connections get rtcache extension */
+> @@ -451,6 +456,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +}
+>  +
+>  +static struct pernet_operations rtcache_ops_net_ops = {
+> ++	.init	= rtcache_net_init,
+>  +	.exit	= rtcache_net_exit,
+>  +};
+>  +
+> @@ -531,6 +537,11 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +	synchronize_net();
+>  +
+>  +	unregister_netdevice_notifier(&nf_rtcache_notifier);
+> ++	unregister_pernet_subsys(&rtcache_ops_net_ops);
+> ++	for_each_net(net)
+> ++		nf_unregister_net_hooks(net, rtcache_ops, ARRAY_SIZE(rtcache_ops));
+> ++
+> ++	synchronize_net();
+>  +
+>  +	rtnl_lock();
+>  +
+> @@ -547,6 +558,7 @@ Signed-off-by: Florian Westphal <fw@strlen.de>
+>  +	}
+>  +
+>  +	rtnl_unlock();
+> ++
+>  +	synchronize_net();
+>  +	nf_ct_extend_unregister(&rtcache_extend);
+>  +}
+> 
+
 
 _______________________________________________
 openwrt-devel mailing list

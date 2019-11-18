@@ -2,59 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99ECC100684
-	for <lists+openwrt-devel@lfdr.de>; Mon, 18 Nov 2019 14:33:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEF371006E5
+	for <lists+openwrt-devel@lfdr.de>; Mon, 18 Nov 2019 14:58:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:To:From:References:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RWKtdWGnmG9xJBO+Df2tD3/47blbkY1J6iFc740Cw6g=; b=CLVvN8aIsQsWjt
-	W9PwT/ylgLiiwgIes/x7JBkLJnPmCFNq0zDk3ytWL20cX94zHnhheS9zrNR5y185XPCATSyOrm7ql
-	YgrLOJspiKMEFpjG3Zp/ukG5rMqvGlRssd7MzmPwT4j6SzmLAk5yzXqZkSuCrUgFcldvrV/YL6Xen
-	FHBstsUy+b1MJL1mxCfdH3U6n4BRQT/yRe7PZfhqr/kC9jpPXtRqvyK14zCfyvpPrS7+V+criYmxJ
-	x/47A9fNLivQURYE2HF2mqkPPY0G0xbCXqgln+BWzuA0eH+39O+F/HJQ6zsm9KSF6Za7a57kjExtL
-	d/IAW6oc95fi+ZHdgMww==;
+	List-Owner; bh=KXTMoXdocWwtyuuB2UbUe7T0MiqLDRLXRPzYHxkKMyw=; b=CgW///xofMlGPd
+	aRYwX1MWwz3fIo7jlIP0xj4uKfExw6uTIutmioc9IzjTL1+pqp+1wyX6XlB8EAS+j7gvVccRYT8H4
+	spafo4CPokc6kaOn5WPyXOu9n8u6eY1tBvoGgPIEQw2t1F7mQpdeHk5fvR9Lys1fZ0vFqQGG0MjuH
+	ITQzsGUSbxdvE2MnSN27TlbPvwH+12ZXppXtiB8vIFIb2EIIPs6I1f+6iOS6/J/ot4fRWo5kAF3L8
+	hh146SKOJY6HVprawipfazX7cagRY/NfeeWXpWQpkzZMKO79RY+u7NA6en8lihj4S1I55r2zs1Khe
+	BTMrXF+gP5LmdARnllhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWh9K-0000eO-0Z; Mon, 18 Nov 2019 13:33:02 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1iWhXn-0001bD-KV; Mon, 18 Nov 2019 13:58:19 +0000
+Received: from smtpout-49.fbg1.glesys.net ([2a02:751:100:2::49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWh9C-0000d0-9C
- for openwrt-devel@lists.openwrt.org; Mon, 18 Nov 2019 13:32:56 +0000
-X-Originating-IP: 86.206.246.123
-Received: from windsurf.home (lfbn-tou-1-421-123.w86-206.abo.wanadoo.fr
- [86.206.246.123])
- (Authenticated sender: thomas.petazzoni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 23CA620005;
- Mon, 18 Nov 2019 13:32:37 +0000 (UTC)
-Date: Mon, 18 Nov 2019 14:32:36 +0100
-From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-To: Petr =?UTF-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
-Message-ID: <20191118143236.41da0d04@windsurf.home>
-In-Reply-To: <20191116132213.GA52387@meh.true.cz>
-References: <20191113151241.752720-1-thomas.petazzoni@bootlin.com>
- <20191115052949.GC13337@meh.true.cz>
- <20191115091632.1aeb1269@windsurf>
- <20191116132213.GA52387@meh.true.cz>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4git49 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1iWhXf-0001aT-K7
+ for openwrt-devel@lists.openwrt.org; Mon, 18 Nov 2019 13:58:13 +0000
+Received: from [192.168.0.49] (unknown [37.123.165.95])
+ by mail-halon-02.fbg1.glesys.net (Halon) with ESMTPSA
+ id 66448784-0a0b-11ea-b6a3-2f60bddcfa2d;
+ Mon, 18 Nov 2019 14:58:03 +0100 (CET)
+References: <94e65ceb-1d84-f28d-a423-676c4aeca605@telldus.se>
+ <d0d9d565-bd3c-48c3-0794-6f9ebdbafd94@gmail.com>
+ <d2e8225f-b090-c568-5c86-599d0792fe2b@telldus.se>
+ <6993a1eb-b6b5-f09e-e61b-ea9c09f20a18@gmail.com>
+From: Micke Prag <micke.prag@telldus.se>
+Openpgp: preference=signencrypt
+Autocrypt: addr=micke.prag@telldus.se; prefer-encrypt=mutual; keydata=
+ mQGiBEdTEc4RBACxgkIJHHBMsH182b0B35Hb9oAksm0dtBvB866l038ivY5dLRnblqK3REiY
+ TtxykDcilXV0UmjyDQP4YhUIf0Bch79K4VHksiAFIjN8Ci6AYBDLd8rXuqfykO+YprOoGDrU
+ j1sOCHw5zNKbTDfHUtVTOrUyBtbOhJVrCjch38E9iwCgqE3psviH+k992BQxMifLZfHupOkD
+ /2QBEUvClZirB1NAL/Tgb5Q1j7CwUSud9F1KPUHzrgVBnLuTYlin/Egk0LTeEID3FYEbbyCi
+ wKsISCduVfrC3fncjyek1/5ENdaGV7W8ShmTW5oxEDRMhUeQIrQeAPCYgHmjy2G/3/QlzMYb
+ LdWi2x5YSydGnLMI6WCud+HW+FSzA/9cjbv1jGBXL9fJT3oxw8G4CdPHgM/HtPXTPPpzRATW
+ U/CpU7v06WRWRNTjC7iUrtn6ylLV+skwPbb/ri2PMXOHq0h/Zdsd3JEFNSGNvC3UhKms48Mq
+ svixshI3pVw20Qbp8JjJkF8DRRTqSUVVcxP9AIKNt94gdNLiD1SoVuPazrQiTWlja2UgUHJh
+ ZyA8bWlja2UucHJhZ0B0ZWxsZHVzLnNlPohfBBMRAgAfBQJHUxHOAhsjBgsJCAcDAgQVAggD
+ AxYCAQIeAQIXgAAKCRAma/zcU1YkGKkTAJ9Ba/04C2kvLlys+RMc3P6S5hGXhACfZL2j7CGM
+ ZYKupjfcwEb7hBB4OHu5AQ0ER1MRzhAEAKPSM7TDyxkDZY+F+2wevuFG5mJKWRSe8gu0yrx2
+ 7s/zxdyZK98+UJO7JiwmzOOEQKFrR95tSD3PbU3U9vt0OW+PSiKDNJZ2U4EuXs7JlgkZcr+K
+ lQNQ/wNBEgPostKusMJeucZSsXobP/8ucR2THv0ADTXARXv0FRduPlT4CeybAAMFA/9WcTf3
+ RzDdsfnuOMhV7jtV2GdRsdqKvVsMBT8k6hVXgTFsQ3p1/yjpri4X6Y3uEl9j0N8Oi9uAKI06
+ 72uHIu0QxadJc7LsmaL1MbNNDMBr5RHT/dV1pLoeZ/7ePm9AayzuskJ31lY5Dnd8M5wN0S7r
+ biuID/sMr8cZAkapmUFqOIhJBBgRAgAJBQJHUxHOAhsMAAoJECZr/NxTViQYOD0AoJKjZDX4
+ BChcNomPd82IkfvSJHmCAKCFBzuGSF9JhjZI6FE0GsLPDGyrSg==
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <a7b4abc6-37b8-918b-ceaf-cc57a9accbe6@telldus.se>
+Date: Mon, 18 Nov 2019 14:57:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <6993a1eb-b6b5-f09e-e61b-ea9c09f20a18@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_053254_596520_1A150CB0 
-X-CRM114-Status: GOOD (  22.32  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191118_055811_822319_2976C235 
+X-CRM114-Status: GOOD (  12.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH procd] initd/init: add minimal SELinux
- policy loading support
+Subject: Re: [OpenWrt-Devel] ath79: Force usb host mode for ar9331
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,71 +81,92 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Piotr Dymacz <pepe2k@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGVsbG8gUGV0ciwKClRoYW5rcyBmb3IgeW91ciBmZWVkYmFjayBhZ2Fpbi4KCk9uIFNhdCwgMTYg
-Tm92IDIwMTkgMTQ6MjI6MTMgKzAxMDAKUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3Jv
-dGU6Cgo+IChuaXRwaWNrLCBpdCdzIE9wZW5XcnQsIG5vdCBPcGVuV1JUKQoKVGhhbmtzIGZvciB0
-aGlzIGNsYXJpZmljYXRpb24sIGl0J3MgYWx3YXlzIGdvb2QgdG8gdXNlIHRoZSBwcm9wZXIKY2Fw
-aXRhbGl6YXRpb24gZm9yIHByb2plY3QgbmFtZXMuIEknbGwgdHJ5IHRvIHVzZSBPcGVuV3J0IGlu
-IHRoZQpmdXR1cmUsIGJ1dCBwbGVhc2UgYmVhciB3aXRoIG1lIGlmIEkgc29tZXRpbWVzIGZvcmdl
-dC4KCj4gPiBObywgdGhpcyBwYXRjaCBpcyBub3QgUkZDLCBpdCBzaG91bGQgYmUgcmVhZHkgZm9y
-IG1lcmdpbmcsIEknbSBhbHJlYWR5Cj4gPiB1c2luZyBpdCBpbiBzb21lIGRldmljZXMuICAKPiAK
-PiBPaywgdGhpcyBwYXRjaCBpcyBnb29kIGVub3VnaCBmb3IgeW91ciBsaW1pdGVkIHVzZSBjYXNl
-LCBidXQgaW4gb3JkZXIgdG8KPiBpbmNsdWRlIFNFTGludXggc3VwcG9ydCBpbiBPcGVuV3J0LCB0
-aGVuIHRoZSBmaXJzdCBwYXRjaCBzZXJpZXMgc2hvdWxkIGJlIG1vcmUKPiBjb21wcmVoZW5zaXZl
-LCBtaW5pbWFsIHlldCBjb21wbGV0ZS4KCkkgZ3Vlc3MgSSdsbCBzZW5kIHRoZSBwYXRjaCBzZXJp
-ZXMgaXRzZWxmLCBzbyB3ZSBjYW4gaGF2ZSB0aGUKZGlzY3Vzc2lvbiBvbiB0aGUgYWN0dWFsIHBy
-b3Bvc2FsLiBJIHNlbnQgdGhpcyBwcm9jZCBwYXRjaCBzZXBhcmF0ZWx5LApqdXN0IGJlY2F1c2Ug
-aXQgaXMgYSByZXF1aXJlbWVudCBmb3IgdGhlIHJlc3Qgb2YgdGhlIHNlcmllcyB0byB3b3JrCihy
-aWdodCBub3cgSSB3YXMgd29ya2luZyB3aXRoIHRoaXMgcHJvY2QgcGF0Y2ggaW4gdGhlIE9wZW5X
-cnQgcHJvY2QKcGFja2FnZSkuCgo+ID4gVGhlIHRoaW5nIGlzIHRoYXQgdGhlIFNFTGludXggc3Vw
-cG9ydCBpbiBPcGVuV1JUIG5lZWRzIHRoaXMgaW1wcm92ZW1lbnQKPiA+IGluIHByb2NkLCBvdGhl
-cndpc2UgaXQgd29uJ3Qgd29yayBhdCBydW50aW1lIGFzIG5vdGhpbmcgd2lsbCBiZSBsb2FkaW5n
-Cj4gPiB0aGUgU0VMaW51eCBwb2xpY3kuICAKPiAKPiBXaGVyZSBpcyB0aGF0IHBvbGljeT8gV2hh
-dCBhYm91dCBrZXJuZWwgcGFydD8gV2hhdCBhYm91dCB1c2Vyc3BhY2UgcGFydD8gV2hhdAo+IGFi
-b3V0IGZpbGVzeXN0ZW0gaW1hZ2U/IEFuZCBzbyBvbi4KCkluIHRlcm1zIG9mIHBvbGljeSwgSSdt
-IHNpbXBseSB1c2luZyB0aGUgcmVmZXJlbmNlIHBvbGljeSBwcm92aWRlZCBieQp0aGUgU0VMaW51
-eCBwcm9qZWN0IGl0c2VsZiwgd2l0aCBubyBzcGVjaWZpYyBjdXN0b21pemF0aW9uIGZvciBPcGVu
-V3J0LgpPZiBjb3Vyc2UsIGFkZGl0aW9uYWwgdHVuaW5nIG1heSBiZSByZXF1aXJlZCwgYnV0IGZv
-ciBteSB1c2UgY2FzZSwgaXQKd2FzIHN1ZmZpY2llbnQuIEluIHRlcm1zIG9mIGtlcm5lbCBwYXJ0
-LCBpdCBvZiBjb3Vyc2UgcmVxdWlyZXMgc29tZQprZXJuZWwgb3B0aW9ucyB0byBiZSBlbmFibGVk
-LiBJbiB0ZXJtcyBvZiB1c2VyLXNwYWNlIHBhcnRzLCB0aGlzIGlzCndoZXJlIG15IHBhdGNoIHNl
-cmllcyBpcyB0aGUgbW9zdCBpbnRlcmVzdGluZzogaXQgcGFja2FnZXMgYWxsIHRoZQp1c2VyLXNw
-YWNlIGNvbXBvbmVudHMgdGhhdCBhcmUgbmVjZXNzYXJ5IHRvIGJlIGFibGUgdG8gd29yayB3aXRo
-ClNFTGludXguCgo+ID4gUmVnYXJkaW5nIHRoZSBmbGFzaCBzcGFjZSwgUkFNIGFuZCBDUFUgb3Zl
-cmhlYWQsIEknbSBub3Qgc3VyZSBpdCdzIHRoYXQKPiA+IHJlbGV2YW50OiB0aGUgU0VMaW51eCBw
-YWNrYWdpbmcgSSd2ZSBkb25lIG1ha2VzIGl0IGNvbXBsZXRlbHkgb3B0aW9uYWwsCj4gPiBzbyB5
-b3Ugb25seSBoYXZlIGFuIGltcGFjdCBvZiBmbGFzaCBzcGFjZSwgUkFNIGFuZCBDUFUgaWYgeW91
-IGVuYWJsZQo+ID4gU0VMaW51eCBzdXBwb3J0LiAgCj4gCj4gT25jZSBpdHMgbWVyZ2VkLCB3ZSBi
-YXNpY2FsbHkgc2F5LCB0aGF0IGl0cyBtb3JlIG9yIGxlc3Mgc3VwcG9ydGVkLCBldmVuIGlmCj4g
-aXQncyBvcHRpb25hbC4KPiAKPiBJdCdzIHByZXR0eSBtdWNoIGNyeXN0YWwgY2xlYXIsIHRoYXQg
-c29tZSBhZGRpdGlvbmFsIGhhcmRlbmluZyBsYXllciB3b3VsZCBiZQo+IHZlcnkgd2VsY29tZS4g
-SSB0aGluaywgdGhhdCBPcGVuV3J0IHNob3VsZCBhaW0gZm9yIHNvbWV0aGluZywgd2hpY2ggY291
-bGQgYmUKPiB1c2FibGUgb24gbW9zdCBvZiBtb2Rlcm4gZGV2aWNlcyB0b2RheSBhbmQgZW5hYmxl
-ZCBieSBkZWZhdWx0LiBTZWN1cml0eQo+IHNob3VsZG4ndCBiZSBhbiBvcHRpb24sIGl0IHNob3Vs
-ZCBiZSBkZWZhdWx0Lgo+IAo+IFNFTGludXggaXMganVzdCBvbmUgb2YgdGhlIExTTXMgaW4gTGlu
-dXguICBJcyBTRUxpbnV4IHRoZSByaWdodCBvbmUgZm9yCj4gT3BlbldydCBwcm9qZWN0PyBBcmUg
-d2UgZ29pbmcgdG8gc3VwcG9ydCBhbGwgb2YgdGhlbT8gSSBkb3VidCB0aGF0LCBzbwo+IGRlY2lz
-aW9uIG5lZWRzIHRvIGJlIG1hZGUuCgpJIGd1ZXNzIGhlcmUgSSBkb24ndCBoYXZlIHRoZSBPcGVu
-V3J0IG1pbmRzZXQsIGFzIEkgY29tZSBmcm9tIGEKQnVpbGRyb290IGJhY2tncm91bmQuIEJ1aWxk
-cm9vdCBzdXBwb3J0cyBtdWx0aXBsZSBzb2x1dGlvbnMgZm9yIHRoZQpzYW1lICJwcm9ibGVtIiwg
-YW5kIGxldCB1c2VycyBkZWNpZGUgd2hpY2ggc29sdXRpb24gdGhleSB3YW50IHRvIHVzZQooc28g
-dGhlIHVzZXJzIGhhdmUgc29tZSBpbnRlZ3JhdGlvbiB3b3JrIHRvIGRvKSwgd2hpbGUgaXQgc2Vl
-bXMgdGhhdApPcGVuV3J0IHdhbnRzIHRvIG1ha2UgYSBkZWNpc2lvbiBvbiBvbmUgc29sdXRpb24g
-dG8gdXNlLCBidXQgcHJvdmlkZQpzb21ldGhpbmcgdGhhdCBpcyBzZWFtbGVzc2x5IGludGVncmF0
-ZWQgZm9yIHVzZXJzLgoKPiA+IERvIHlvdSBoYXZlIG1vcmUgZGV0YWlscyBhYm91dCBlbnRlcmlu
-ZyBmYWlsc2FmZSBtb2RlID8gSG93IGRvIHlvdSBkbyB0aGF0ID8gIAo+IAo+IEl0J3MgdXN1YWxs
-eSB0cmlnZ2VyZWQgYnkgdGhlIGJ1dHRvbiBkdXJpbmcgdGhlIGJvb3QgcHJvY2Vzc1sxXSwgYnV0
-IGl0IHNob3VsZAo+IGJlIHBvc3NpYmxlIHRvIGZvcmNlIGl0IGZyb20gcHJvY2QgYXMgd2VsbC4K
-PiAKPiAxLiBodHRwczovL29wZW53cnQub3JnL2RvY3MvZ3VpZGUtdXNlci90cm91Ymxlc2hvb3Rp
-bmcvZmFpbHNhZmVfYW5kX2ZhY3RvcnlfcmVzZXQKCk9LLCB0aGFua3MuCgpUaG9tYXMKLS0gClRo
-b21hcyBQZXRhenpvbmksIENUTywgQm9vdGxpbgpFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVu
-Z2luZWVyaW5nCmh0dHBzOi8vYm9vdGxpbi5jb20KCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQt
-ZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+Den 11/16/19 kl. 4:44 PM, skrev Piotr Dymacz:
+> Hi Micke,
+>
+> On 08.11.2019 13:30, Micke Prag wrote:
+>> Den 11/8/19 kl. 11:01 AM, skrev Piotr Dymacz:
+>>> Hi Micke,
+>>>
+>>> On 08.11.2019 08:36, Micke Prag wrote:
+>>>> In commit 00ea16557d [1] the way usb is initiated was changed. Instead
+>>>> of initiate both ehci-platform and ci_hdrc the bootstrap status
+>>>> register
+>>>> is checked and used to determine which platform to initiate.
+>>>
+>>> There were other changes later, see for example 57c641ba6e.
+>> Yes, I was looking at the code after this commit when making my
+>> conclusions above. But 00ea16557d is the commit that breaks the board
+>> initially.
+>>>
+>>>> Unfortunately this break my board since the gpio used to determine
+>>>> this
+>>>> is used for other purposes.
+>>>
+>>> This means your board has a wrong bootstrap configuration and you
+>>> should make sure GPIO for host/device mode has correct initialization
+>>> value.
+>>
+>> Yes, it is correct the bootstrap is not correct at hardware level. But
+>> there is 30 k+ boards out in the world so fixing this now is a bit
+>> late... ;)
+>>
+>>>
+>>>> dev-usb.h only exposes one function:
+>>>> void ath79_register_usb(void);
+>>>> so there is not much to alter the way usb is initiated.
+>>>>
+>>>> I tried to write to the bootstrap register but unfortunately this did
+>>>> not seem to work:
+>>>>
+>>>> u32 t;
+>>>> t = ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP);
+>>>> pr_warn("ath79: Register before %X", t);
+>>>> t |= AR933X_BOOTSTRAP_USB_MODE_HOST;
+>>>> ath79_reset_wr(AR933X_RESET_REG_BOOTSTRAP, t);
+>>>> pr_warn("ath79: Register after %X",
+>>>> ath79_reset_rr(AR933X_RESET_REG_BOOTSTRAP));
+>>>>
+>>>> Gives the following output:
+>>>>
+>>>> ath79: Register before 42202
+>>>> ath79: Register after 42202
+>>> USB mode in AR9331 is selected at power on, based on GPIO13 value and
+>>> I'm not aware of any other/software ways to change it. AFAIK, only
+>>> QCA9563 allows to switch between host and device modes 'on the fly'.
+>>
+>> Is was working before 00ea16557d so simply initialize ehci-platform
+>> instead ci_hdrc will fix it. Unfortunately I cannot find a way to tell
+>> ath79_register_usb to force it into host mode in my board file instead
+>> of reading the bootstrap register.
+>
+> Do you want to tell me that a board with wrong bootstrap configuration
+> and USB switched to device mode was able to use the bus in host mode?
+>
+> IIRC, during my tests I found that this bootstrap option makes the D+
+> line to gets pulled-up to VBUS and there was no way to change it back.
+> I would need to make some more tests to confirm that, though.
+>
+Yes, I am.
+
+Or, to be correct. This gpio is used as an output so it is connected to
+a transistor. It's not "driven" to either high nor low other than what
+the base-pin from the transistor is doing.
+
+Regardless the bootstrap register is set incorrect and forcing to host
+mode _do_ work.
+
+I can provide more testing if you want me to?
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

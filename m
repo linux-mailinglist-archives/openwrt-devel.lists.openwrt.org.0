@@ -2,45 +2,45 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1AF41003AF
-	for <lists+openwrt-devel@lfdr.de>; Mon, 18 Nov 2019 12:20:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A40C100466
+	for <lists+openwrt-devel@lfdr.de>; Mon, 18 Nov 2019 12:39:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W7Ik1PZIMp5D9FpoIwuUbUZDNETuQPg9krTJnUI28C0=; b=qoNGZhFd2l9MBk
-	igHB0Dx7arKzfI7Nik0UhzSnE9zbYOidhvGEBcfuRjTS6g/lAD6G/1UuILVNvGeE4p0cBOhLmHuT5
-	pl4ntYuaJqaPRulGXxOJviS+otLsajT3gvyk3hRyFMZe+6vXxyfkBYkPPP743UFFhmrTpqs4DbuQk
-	4zkrsR/sikeO1uXSGvuOHiSINfI6Fdo6wFVtU47DCmSqOTGXJW1Go1emUNfBfQV8tIyZWMA8LXmgK
-	MxBF2R7zI7EGPUtk52n8YUzZ1qbP8m8y2Q7kjoEqaeoZZbC/QfVS1+d6r3tGzq6o4BWKV8nDGmqci
-	4G1CovS0WX1Qbm8GjUpQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jZdqtHfLrc0J4MlSfL4DA/xI4dvLgzrhRO72yitjl4M=; b=Q0//tI/dU0qDqhbP5AHm84SC9
+	PY7iMJR8E+Roa+Yf3E8Q8mEdgWJv5AtDs/2yqrE9wO4WnhSU7tNqWNAAYJYKe1KEZJVfEBY1+ha5N
+	O1tQE6PP40/ariKP3v46XrlXx1GS834waviWcQUt8lY69A2T0ZnH6axsqFOb83oOhR4WbfQSyDSyB
+	Gmiocew4kUAL+vc/EtC3BHX5rQCos6lbjo7gNBgUtGcWQ/mmZXlgFYJsJ+/r0h4fm/zNOgYoo7meG
+	QwA3vZewcXj5u+H422Gvjq20Q1rBtl2BQHVdLagWhG+y8EY4r/+6/CVIgrefGgUAdhiPiiALBMKGP
+	AULJyz5CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWf4q-0007Kz-08; Mon, 18 Nov 2019 11:20:16 +0000
-Received: from mail.klickitat.com ([54.70.207.208])
+	id 1iWfNq-0001AJ-Ji; Mon, 18 Nov 2019 11:39:54 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWf4W-0007KK-Qy
- for openwrt-devel@lists.openwrt.org; Mon, 18 Nov 2019 11:19:58 +0000
-Received: by mail.klickitat.com (Postfix, from userid 182)
- id EB1EDA611FD; Mon, 18 Nov 2019 03:19:54 -0800 (PST)
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dodson.localdomain
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=ham autolearn_force=no version=3.4.2
-Received: from husum.klickitat.com (husum.ptp [192.168.80.4])
- by mail.klickitat.com (Postfix) with ESMTP id 6D047A611F6;
- Mon, 18 Nov 2019 03:19:53 -0800 (PST)
-From: Russell Senior <russell@personaltelco.net>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 18 Nov 2019 03:19:53 -0800
-Message-ID: <87pnhp77om.fsf@husum.klickitat.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ id 1iWfIg-0003ZU-IW
+ for openwrt-devel@lists.openwrt.org; Mon, 18 Nov 2019 11:34:36 +0000
+Received: from p5dcfbb96.dip0.t-ipconnect.de ([93.207.187.150]
+ helo=[192.168.45.104])
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>)
+ id 1iWfIe-0007j7-H6; Mon, 18 Nov 2019 12:34:32 +0100
+To: Russell Senior <russell@personaltelco.net>, openwrt-devel@lists.openwrt.org
+References: <87pnhp77om.fsf@husum.klickitat.com>
+From: John Crispin <john@phrozen.org>
+Message-ID: <9d8dede1-a66a-b042-0977-ebb48ceeca27@phrozen.org>
+Date: Mon, 18 Nov 2019 12:34:31 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <87pnhp77om.fsf@husum.klickitat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_031956_914417_32DC9B62 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20191118_033434_797107_941E5C42 
+X-CRM114-Status: GOOD (  14.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -48,7 +48,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] mediatek: remove extraneous "+" typo in
+Subject: Re: [OpenWrt-Devel] [PATCH] mediatek: remove extraneous "+" typo in
  mt7629 kernel config
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -61,43 +61,40 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, John Crispin <john@phrozen.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Hauke Mehrtens <hauke@hauke-m.de>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+On 18/11/2019 12:19, Russell Senior wrote:
+> 
+> As noted by Hauke in IRC.
+> Introduced in commit 50735df7b238ce886c6f718b3e9437a09c8efb28
+> 
+> Cc: John Crispin <john@phrozen.org>
+> Cc: Hauke Mehrtens <hauke@hauke-m.de>
+> Signed-off-by: Russell Senior <russell@personaltelco.net>
+> ---
+>   target/linux/mediatek/mt7629/config-4.19 | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/target/linux/mediatek/mt7629/config-4.19 b/target/linux/mediatek/mt7629/config-4.19
+> index f32d9d1919..2dab4e393d 100644
+> --- a/target/linux/mediatek/mt7629/config-4.19
+> +++ b/target/linux/mediatek/mt7629/config-4.19
+> @@ -235,7 +235,7 @@ CONFIG_MTD_NAND=y
+>   CONFIG_MTD_NAND_CORE=y
+>   CONFIG_MTD_NAND_ECC=y
+>   CONFIG_MTD_NAND_MTK=y
+> -+CONFIG_MTD_SPI_NAND=y
+> +CONFIG_MTD_SPI_NAND=y
+>   CONFIG_MTD_SPI_NOR=y
+>   CONFIG_MTD_SPLIT_FIRMWARE=y
+>   CONFIG_MTD_SPLIT_FIT_FW=y
+> 
 
-As noted by Hauke in IRC.
-Introduced in commit 50735df7b238ce886c6f718b3e9437a09c8efb28
-
-Cc: John Crispin <john@phrozen.org>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>
-Signed-off-by: Russell Senior <russell@personaltelco.net>
----
- target/linux/mediatek/mt7629/config-4.19 | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/target/linux/mediatek/mt7629/config-4.19 b/target/linux/mediatek/mt7629/config-4.19
-index f32d9d1919..2dab4e393d 100644
---- a/target/linux/mediatek/mt7629/config-4.19
-+++ b/target/linux/mediatek/mt7629/config-4.19
-@@ -235,7 +235,7 @@ CONFIG_MTD_NAND=y
- CONFIG_MTD_NAND_CORE=y
- CONFIG_MTD_NAND_ECC=y
- CONFIG_MTD_NAND_MTK=y
--+CONFIG_MTD_SPI_NAND=y
-+CONFIG_MTD_SPI_NAND=y
- CONFIG_MTD_SPI_NOR=y
- CONFIG_MTD_SPLIT_FIRMWARE=y
- CONFIG_MTD_SPLIT_FIT_FW=y
--- 
-2.24.0
-
-
--- 
-Russell Senior, President
-russell@personaltelco.net
+https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=d4f1937a21ae81194918bc1eb5a91118e0ff6267
 
 _______________________________________________
 openwrt-devel mailing list

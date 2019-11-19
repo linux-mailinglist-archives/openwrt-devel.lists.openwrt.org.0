@@ -2,76 +2,67 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DA621027C5
-	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 16:13:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C5161027EF
+	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 16:18:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SB52T8unUA5DMhDLg6WQ9PPO+fsqqCVBqM+48CA/cFY=; b=nOGACrUcK7fBgi
-	Sc12MgKWw8zOMUG4Om/YKdRwTLr0xhNpwIALX4pI5/l2jpscgQEq+nDy4W+GnZepI96ZZyfbdmFJm
-	eoxUJ9BuabM3MygpplvGFS4WQtw7XcwRnNm/KYlp50xW7Rn00s+vcP6px/ZfxEKA3CT430IfzQ/Ll
-	GTiQIIagPDv+bxY6hVOuGMv0kKX9QodUmTL9+lHajyoaVmGws7wapv36R1xfSLkMAZcsNKhBFgcOf
-	8NTzzXkcv6w09nU04reMC+gWbJG4daUuDx0DoXA1hB2/OHeE7EF+cPwiEPrebEQOKXxakoMigJmMa
-	O4xdryIMNBCtdV2B0KAg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nq64nE3n/qeytS8v0gMWKxhhu+j4ST5Ekmr+FmtUTdk=; b=i6vomH3MJpyNPQ
+	+C6/6ydaSnvt0aVUFRA1C0YjrnlQhUNoiyH1B2fD0QsrZrgTCHKdahpipilXaqSLP/WDdxTMBlSKr
+	j0MVCbUT70pdxHrl1DoQxDO4wkndo/52w6o3w3Uc2FClMj0jZc8mxWjwTvRC3fYgFhnooPycFBaXm
+	Ylb/IpLBFAdSZE34F/LRum0BdhnZGfYyFHkQIDIXa96Cb2pU+lC0sXNu6liWicQa5MVwsQUSp3MkW
+	f5FZc5lrvwskeziJVyZEziddViaUu0hr4vDTnt5xnUZdFZWOR6e0DpFr2TVApFUAbzCGu4p7wCQ1V
+	HZihVv9nACCXZu9nmlhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX5Ba-00036T-Lc; Tue, 19 Nov 2019 15:12:58 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iX5HK-0005Bq-J6; Tue, 19 Nov 2019 15:18:54 +0000
+Received: from mx4.wp.pl ([212.77.101.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX5BT-00035i-L8
- for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 15:12:53 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f2so24284285wrs.11
- for <openwrt-devel@lists.openwrt.org>; Tue, 19 Nov 2019 07:12:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=darbyshire-bryant.me.uk; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=uHS3mc/Va1MlirhVd+k4R6rZPYUYUqCHp5ptw9MtbPo=;
- b=WNoxLi4YIjV23IEKFX91sALFW1M763h33s3kTooK0zkUvPHGhBS0lcRLTfgI5Hgbah
- d+ktkNTaLC2KL1y6WkAvjchYLzVRKZUNOA445HTn/gonnR5T051OHJBPX6Vo1HNlmSIo
- kF62pkG05yKl9FnyM9GETAecCATRR9ZhgzyGg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=uHS3mc/Va1MlirhVd+k4R6rZPYUYUqCHp5ptw9MtbPo=;
- b=UccqYrEIzLb+ztojIm664LNHbKubwQTkfW2kztnYCG4jELV1NLUeyVlBJvJS7J6xT7
- fnldV8CMFk5cg+AWF4AFFBRTHdgah1oamFBQpmGNXj5ZNFLMjGUy8MtXorN9jkbsozLf
- b/PfrK44KIECOQyT36Xsxj9kEtdnUKpcEbBLXfAUYqdO4YaAqrDlHzEvHhexYxlrmV5F
- Av7dgh94yAIqknrh19+1TpXwwCY2J7MwBr9AT/JI3aZh3sjnzWtHOcSkF/Zc5dSCfEmc
- mlRUiH1FCT79yBpkwlwJ4zLE4NVIAU6m1B2jwLITURbJ8dO1sCvGqAvUSu6gtj7GUL84
- Uo0g==
-X-Gm-Message-State: APjAAAWVuCLtEEIiN8tIPjYLc9vmJjfyKXSkZIOOztIPb3U4nILysm4n
- J4nnq7LAGUa1KdsnOPeHmuRLHvPSG6X/qMj9
-X-Google-Smtp-Source: APXvYqza1J+TGzAC4hSq/4tLmo16jz/gXPXsrFGyGQeXXIGV7KQJJP9I1YPkYLnsojxsmCpdmDUADQ==
-X-Received: by 2002:a5d:518c:: with SMTP id k12mr37661645wrv.104.1574176367904; 
- Tue, 19 Nov 2019 07:12:47 -0800 (PST)
-Received: from Kevins-MBP.lan.darbyshire-bryant.me.uk
- ([2a02:c7f:1243:8e00::dc83])
- by smtp.gmail.com with ESMTPSA id r25sm3402527wmh.6.2019.11.19.07.12.46
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 19 Nov 2019 07:12:46 -0800 (PST)
-From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 19 Nov 2019 15:12:42 +0000
-Message-Id: <20191119151242.96019-1-ldir@darbyshire-bryant.me.uk>
-X-Mailer: git-send-email 2.21.0 (Apple Git-122.2)
+ id 1iX5HB-0005Au-Ol
+ for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 15:18:47 +0000
+Received: (wp-smtpd smtp.wp.pl 30639 invoked from network);
+ 19 Nov 2019 16:18:40 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1574176720; bh=KNCt4ze8t71Ma0dDQAQgof7rtFxlZb+DOyh3WKfVWC8=;
+ h=From:To:Cc:Subject;
+ b=IFG2VKI7j6HZHrmPYJLz+lCMp3Ry8yw2RIhQfXT843Pq5jFA3P3coP5rEp03ZSgI4
+ pqO8PIToHWIa9JL9q4PIRwOz1A82F4v71wvrbQpmgYDC+bxjhyuQjRWznmcc80s97x
+ HY0OaijC8q59Hko4fj9rMLRWgsXy6R+fhEvw1ZXM=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <mail@david-bauer.net>; 19 Nov 2019 16:18:40 +0100
+Date: Tue, 19 Nov 2019 16:17:37 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: David Bauer <mail@david-bauer.net>
+Message-ID: <20191119161737.2fa01dc3@kosmio.komorska>
+In-Reply-To: <20191112192234.721c6a6e@kosmio.komorska>
+References: <20191112140214.59f2971f@kosmio.komorska>
+ <04615660-e813-7bc1-1e75-a51c289fd518@david-bauer.net>
+ <20191112192234.721c6a6e@kosmio.komorska>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
+X-WP-MailID: beaeea7b1477eabe5c3af7d2a75026ab
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [8ZOE]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_071251_690218_ED0015CF 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20191119_071846_162373_51E14C51 
+X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [212.77.101.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (michal.cieslakiewicz[at]wp.pl)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -80,8 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] netifd: dhcp proto convert release to
- norelease
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: enable all space on Netgear
+ ar9344-based WNDR routers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,113 +84,79 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Change dhcp no/release on shutdown to 'norelease' uci option to match
-existing proto dhcpv6 usage.
+Hello David,
 
-Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
----
-v2 - store the migrate script under netifd structure instead of as part
-of base-files
+Two questions were raised just after publishing 'all-flash-space' patch.
+Now I am ready to provide more information on these issues:
 
- package/network/config/netifd/Makefile        |  2 +-
- .../etc/uci-defaults/14_migrate-dhcp-release  | 23 +++++++++++++++++++
- .../netifd/files/lib/netifd/proto/dhcp.sh     | 10 ++++----
- 3 files changed, 29 insertions(+), 6 deletions(-)
- create mode 100644 package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
+0. Downgrade to vendor firmware.
 
-diff --git a/package/network/config/netifd/Makefile b/package/network/config/netifd/Makefile
-index 875628f66a..e24ebaba30 100644
---- a/package/network/config/netifd/Makefile
-+++ b/package/network/config/netifd/Makefile
-@@ -1,7 +1,7 @@
- include $(TOPDIR)/rules.mk
- 
- PKG_NAME:=netifd
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
- 
- PKG_SOURCE_PROTO:=git
- PKG_SOURCE_URL=$(PROJECT_GIT)/project/netifd.git
-diff --git a/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release b/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
-new file mode 100644
-index 0000000000..651c437cb2
---- /dev/null
-+++ b/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
-@@ -0,0 +1,23 @@
-+. /lib/functions.sh
-+
-+migrate_release() {
-+	local config="$1"
-+	local proto
-+	local release
-+
-+	config_get proto "$config" proto
-+	config_get release "$config" release
-+
-+	[ "$proto" = "dhcp" ] && [ -n "$release" ] && {
-+		norelease="$((!$release))"
-+		uci_set network "$config" norelease "$norelease"
-+		uci_remove network "$config" release
-+	}
-+
-+}
-+
-+config_load network
-+config_foreach migrate_release interface
-+commit network
-+
-+exit 0
-diff --git a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
-index 0d06eba06e..3034b2ba68 100755
---- a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
-+++ b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
-@@ -14,7 +14,7 @@ proto_dhcp_init_config() {
- 	proto_config_add_string clientid
- 	proto_config_add_string vendorid
- 	proto_config_add_boolean 'broadcast:bool'
--	proto_config_add_boolean 'release:bool'
-+	proto_config_add_boolean 'norelease:bool'
- 	proto_config_add_string 'reqopts:list(string)'
- 	proto_config_add_boolean 'defaultreqopts:bool'
- 	proto_config_add_string iface6rd
-@@ -35,8 +35,8 @@ proto_dhcp_setup() {
- 	local config="$1"
- 	local iface="$2"
- 
--	local ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
--	json_get_vars ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
-+	local ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
-+	json_get_vars ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
- 
- 	local opt dhcpopts
- 	for opt in $reqopts; do
-@@ -50,7 +50,7 @@ proto_dhcp_setup() {
- 
- 	[ "$defaultreqopts" = 0 ] && defaultreqopts="-o" || defaultreqopts=
- 	[ "$broadcast" = 1 ] && broadcast="-B" || broadcast=
--	[ "$release" = 1 ] && release="-R" || release=
-+	[ "$norelease" = 1 ] && norelease="" || norelease="-R"
- 	[ -n "$clientid" ] && clientid="-x 0x3d:${clientid//:/}" || clientid="-C"
- 	[ -n "$iface6rd" ] && proto_export "IFACE6RD=$iface6rd"
- 	[ "$iface6rd" != 0 -a -f /lib/netifd/proto/6rd.sh ] && append dhcpopts "-O 212"
-@@ -70,7 +70,7 @@ proto_dhcp_setup() {
- 		${ipaddr:+-r $ipaddr} \
- 		${hostname:+-x "hostname:$hostname"} \
- 		${vendorid:+-V "$vendorid"} \
--		$clientid $defaultreqopts $broadcast $release $dhcpopts
-+		$clientid $defaultreqopts $broadcast $norelease $dhcpopts
- }
- 
- proto_dhcp_renew() {
--- 
-2.21.0 (Apple Git-122.2)
+It is possible. Just don't forget to erase both ubi concat partitions:
+'mtd -r erase ubi' does the job fine.
 
+1. Sysupgrade:
+
+> > 
+> > Have you tried if this breaks sysupgrade from an older OpenWrt
+> > firmware? I'm not sure if an UBI resize works without additional
+> > steps.
+> > 
+
+You were right, rootfs_data volume stays small after sysupgrade. My
+approach is to execute 'ubirsvol' command for /dev/ubi0_1 and allocate
+all available space. There are caveats however:
+
+* command cannot be run after rootfs_data is mounted (device busy)
+* command cannot be run in sysupgrade sequence (sysupgrade works in old
+  system that is not mtd-concat aware)
+
+I came out with a solution - to plug into preinit phase after ubi is
+available but before ubi rootfs_data volume is started and incorporated
+into overlayfs. Here is script (only for ath79/nand target so path is
+target/linux/ath79/nand/base-files/lib/preinit/78_ubi_grow_rootfs_data).
+I've tested it by running sysupgrade on my WNDR4300 and volume was
+resized correctly.
+
+----
+#!/bin/sh
+
+grow_ubi_volume() {
+	local free_lebs="$(ubinfo /dev/ubi0 | awk '$1=="Amount" && $3=="available" { print $6 }')"
+	local used_lebs="$(ubinfo /dev/ubi0_$1 | awk '$1=="Size:" { print $2 }')"
+
+	if [ $free_lebs -eq 0 ] ; then
+		return
+	fi
+
+	echo "- grow ubi volume (id $1) -"
+	ubirsvol /dev/ubi0 -n $1 -S $(($used_lebs+$free_lebs))
+}
+
+do_grow_ubi_rootfs_data() {
+	local board_name="$(cat /tmp/sysinfo/board_name || echo '')"
+
+	case "$board_name" in
+		netgear,wndr3700-v4|\
+		netgear,wndr4300)
+			grow_ubi_volume 1
+		;;
+	esac
+}
+
+boot_hook_add preinit_main do_grow_ubi_rootfs_data
+----
+
+I'll gladly read your opinion on above solution. Can it be accepted into mainline ?
+
+Best regards
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

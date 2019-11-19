@@ -2,74 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B96F102514
-	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 14:03:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98C2C102525
+	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 14:05:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3Sw1TW12USg5K+xMxXa8eJFgga2hPqQ6JA/5nH7nMq4=; b=n7s
-	OGLTpXYSW/hkHOQyA+GuYZ8NX9zFTuXYDJDvWfbxUHCxEXtn9iLvV5wwkqkBQrqYJjhJUkjOXAh9O
-	KsjyCnPhIVG86C5NnTT6sMcQjpDMLDYVCJn/1vaETwaKKy3qxsyaVAf9oyGHH0c8Ox4rihG1Okbe8
-	CYRgH9S8BmsJe9XYr7HoKnUd9jA3JKeHT/eBjiTt0PVyk3R+f2jfkoBURyHVqgyNV5fq7c/63staz
-	5tPY/jq6lsU+FpGpN3YF9tPicerPAo0iIf0EWErFrRW0z7Qr5qwsKo41rPkz/lb117iTx6nLUnoUT
-	l3jDgITzEk1kdcWt4OrQUIiHERejLMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ode986BCPonvz8RFzKI0rkIK3szJxMvfIcplz639W9U=; b=mvBqP3ExZTPFUS
+	nHVvsaYEVEgR23RQtCWcPVcaobhmrGa1xKX8yE8o0iC04eMNq4jZ9MyXFEziIeUFE88MEgtJPNNPf
+	db+GlIfWJnYQpFdPRwlfcrwj28EvluTBvctGovpFI/GzkyXZ38flCAedzi1k+7FwIMtrn4nnkneWm
+	I3mtZL14W1NJYmzLGLD0/RWeLIgbxRJMPzwXaO0YUlHlYLknDbgnC6otFoju3usRACQ0Pr2fyFtNQ
+	WwVxa6fHCI3I5N/DLg1FK144PJINMBM2uXRGZYItnPfk6jtRs6szMyZV99hmZ7baTGdWNLHG3DQxX
+	ZgcRNaMn6nEGzzU+X3Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX39z-00040e-J7; Tue, 19 Nov 2019 13:03:11 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iX3CJ-0005hv-Of; Tue, 19 Nov 2019 13:05:35 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX39p-000408-Qq
- for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 13:03:04 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue009
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MHX3R-1ib9u53x9l-00DUlY
- for
- <openwrt-devel@lists.openwrt.org>; Tue, 19 Nov 2019 14:02:56 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Tue, 19 Nov 2019 14:02:56 +0100
-Message-ID: <001001d59ed9$a9b3ea90$fd1bbfb0$@adrianschmutzler.de>
+ id 1iX3C8-0005hF-ND
+ for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 13:05:26 +0000
+Received: by mail-wr1-x442.google.com with SMTP id l7so23737545wrp.6
+ for <openwrt-devel@lists.openwrt.org>; Tue, 19 Nov 2019 05:05:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pohxN/4A/9BPseKpLmAqZyPA//jihjKA5jArSx8XHyM=;
+ b=aLzBpklzXSSCeWHgtRRWiB0OtdNVNjMEMa6SCt+GYkCtR0OUOFz2FuWhxFs6hdXa3d
+ tH2JFfQmYTpTfp4snqMXsLea9scDPF27nU3gVs0FtwbAr1dfPb5bmRvCKMfNo/Nsg0rx
+ w2l4BGTHRmcSaEpL5+uwdeJiYvLsl6Xp4jGIE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=pohxN/4A/9BPseKpLmAqZyPA//jihjKA5jArSx8XHyM=;
+ b=Fn6gJ8eXAUtr6AT1aIfRQILWqOF1pPjs37dRk+p9d7TVX+MeFKZ1wVsmZmJBOh9UaW
+ mKSmmkqjBY8M2um0JJ6t4DIiC85qFJTWYHBnTrH8vKxnS5CJ9767buXIhLud3qHhM7qL
+ zs6Nb4CrbDdkQEo7bpYJVEuIDg2FiaAxfFYs8R1rRAE8k4KNEpDbVm02q4IXzbfJFWTG
+ HkcIXrKvjnu/craL1yNbSAW7Gtul+nnNrEBGvQHiFPttfHShM+3W7W1NKPgsXJjF7PYw
+ Cvh1VqaTPKiGThaKDGmmRWgaffhB7EXk4iHrl9Quz+RM29ZIkfnah2Fs8WbYIhp5J29I
+ vYew==
+X-Gm-Message-State: APjAAAU+CvqnpJTEG5xG2A2Rz0/55zrMPK7RBnUTjaWJvQGjyqzSRZ+N
+ 8XEa0A7qrVn/0Npc4QcNfz0AllOi0233LCyaQRo=
+X-Google-Smtp-Source: APXvYqzcPCiiV5T4K4UKwTgN43KTO5MfxRb7WufP3fbSKF2KVKiKeF02mzHF/ICo69uVhqHychCKkQ==
+X-Received: by 2002:a5d:55c7:: with SMTP id i7mr38455013wrw.64.1574168717658; 
+ Tue, 19 Nov 2019 05:05:17 -0800 (PST)
+Received: from Kevins-MBP.lan.darbyshire-bryant.me.uk
+ ([2a02:c7f:1243:8e00::dc83])
+ by smtp.gmail.com with ESMTPSA id w18sm26852519wrl.2.2019.11.19.05.05.16
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 19 Nov 2019 05:05:16 -0800 (PST)
+From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 19 Nov 2019 13:05:12 +0000
+Message-Id: <20191119130512.57496-1-ldir@darbyshire-bryant.me.uk>
+X-Mailer: git-send-email 2.21.0 (Apple Git-122.2)
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AdWe2ZlZnqA91PS5Si+OPDtj8nyv3Q==
-Content-Language: de
-X-Provags-ID: V03:K1:sTw0J2otBY2XbL6EcnXLMUg7PdlnYq7GVm91chM0SFQK4qr2n09
- fLo0bxnmdu7ES+obu3epTRtSF/KtbL6Ua5IHSPtTQPJAQdEH9jT3ng02qb+AxFalsCy+jZ7
- aNVWD38mIfQszLew8AJ5WY0dR6MG3ftY86FceUuybUlU9prNTN4rRGAVTlQWlWOykrf/VPt
- 78XkrHDRMi4tmXTkLglkg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:wXM18f+sd5c=:Yq6juNWT2joOqCfOz2u4wF
- oUXX1ysJk8qy082NVBGNVzqRNR4UWFVStCGqzbW65iO17uBbNLrENsHkmljfzHS727o2M7vEs
- Rrv1OPCAAy8+UHVJi8U6ZYFEyRDy2ftyyu9fFHPEGi1tTv5mv5DbkONLnOZ02w4q5nhZVSG7h
- fnEuJ5ecCCXv/dHyEfZ3pcbr/xb4Kef92j/fTQrXTbe4i993I4HAVi1XaU5CP139QYM/g6elO
- EXeOvmOdX51wP1M2HNcH+YiTEhBf5b5XzEPh6r78YoA9Vz91IHDXZV8ZDtuGlMfJKvYP2K/qy
- 56ZHb4EI2VVf4C2rf3sDXIIcNPYcBd2WSoweABu6sBu3RGMWKCsbsTVi3uO6O+6TW33qpJotP
- aH/GdgnotWen5//jwjEXwpHtxtpxNpTDtlrJwcw8urZr8DpdWcOJ9OKlLHmLFPyCrOyk9RZzk
- sy//kW8KetgpS/5WYyHAtkNJB5y13Bd5ecgBSXs/y7qcLCXTJ8j0M1TnTcVh+WkTaQ41Uf99C
- atQuUSnSfLLNavNIL7qTksolPPi7ncjgfkObqZMAsoSNoZdXAf82N9kOXUvkU3vayvC4QAFvZ
- Ul6X2p9pt/MHytacWkuKu9Cw8GgpF29mitwNVmKGBVK5gg+8O5DkQzlUZmzfMSLhorsPezAWC
- leAjgRJYacz0vPDRf+PhwgpLqbh2Y2ctDRefdwV1A0G8ODP/O3jEqIvD4KVlt719V6873VG9V
- fovyGMIr7uhkWepsy/4sVPnpqABdT5Gpx/Ewvr29Y683VNr8WtJfgT4LqK2zm1Eq7i9pUYs7S
- hHwHAvClP68K/o1q5cDt4tCYnjRcNg22Dvsq5qaS71cFRwKA0Tw+1gXKL6MjTwqVQcJDz5PuO
- w96NlzIDUrw+2JQXgsC+ZETN2Ot9Ye7S/GJvBfy6Q=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_050303_436387_BB862A07 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191119_050524_762250_E4772983 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
-Subject: [OpenWrt-Devel] MAC address locations on Ubiquiti XM (ath9k)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] netifd: dhcp proto convert release to
+ norelease
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,104 +93,112 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5444026461166259727=="
+Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Change dhcp no/release on shutdown to 'norelease' uci option to match
+existing proto dhcpv6 usage.
 
---===============5444026461166259727==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=M0VUfUkZ+1Pyi0=-="
+Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+---
+ .../etc/uci-defaults/14_migrate-dhcp-release  | 23 +++++++++++++++++++
+ package/network/config/netifd/Makefile        |  2 +-
+ .../netifd/files/lib/netifd/proto/dhcp.sh     | 10 ++++----
+ 3 files changed, 29 insertions(+), 6 deletions(-)
+ create mode 100644 package/base-files/files/etc/uci-defaults/14_migrate-dhcp-release
 
-This is a multipart message in MIME format.
+diff --git a/package/base-files/files/etc/uci-defaults/14_migrate-dhcp-release b/package/base-files/files/etc/uci-defaults/14_migrate-dhcp-release
+new file mode 100644
+index 0000000000..651c437cb2
+--- /dev/null
++++ b/package/base-files/files/etc/uci-defaults/14_migrate-dhcp-release
+@@ -0,0 +1,23 @@
++. /lib/functions.sh
++
++migrate_release() {
++	local config="$1"
++	local proto
++	local release
++
++	config_get proto "$config" proto
++	config_get release "$config" release
++
++	[ "$proto" = "dhcp" ] && [ -n "$release" ] && {
++		norelease="$((!$release))"
++		uci_set network "$config" norelease "$norelease"
++		uci_remove network "$config" release
++	}
++
++}
++
++config_load network
++config_foreach migrate_release interface
++commit network
++
++exit 0
+diff --git a/package/network/config/netifd/Makefile b/package/network/config/netifd/Makefile
+index 875628f66a..e24ebaba30 100644
+--- a/package/network/config/netifd/Makefile
++++ b/package/network/config/netifd/Makefile
+@@ -1,7 +1,7 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=netifd
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
+ 
+ PKG_SOURCE_PROTO:=git
+ PKG_SOURCE_URL=$(PROJECT_GIT)/project/netifd.git
+diff --git a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
+index 0d06eba06e..3034b2ba68 100755
+--- a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
++++ b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
+@@ -14,7 +14,7 @@ proto_dhcp_init_config() {
+ 	proto_config_add_string clientid
+ 	proto_config_add_string vendorid
+ 	proto_config_add_boolean 'broadcast:bool'
+-	proto_config_add_boolean 'release:bool'
++	proto_config_add_boolean 'norelease:bool'
+ 	proto_config_add_string 'reqopts:list(string)'
+ 	proto_config_add_boolean 'defaultreqopts:bool'
+ 	proto_config_add_string iface6rd
+@@ -35,8 +35,8 @@ proto_dhcp_setup() {
+ 	local config="$1"
+ 	local iface="$2"
+ 
+-	local ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
+-	json_get_vars ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
++	local ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
++	json_get_vars ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
+ 
+ 	local opt dhcpopts
+ 	for opt in $reqopts; do
+@@ -50,7 +50,7 @@ proto_dhcp_setup() {
+ 
+ 	[ "$defaultreqopts" = 0 ] && defaultreqopts="-o" || defaultreqopts=
+ 	[ "$broadcast" = 1 ] && broadcast="-B" || broadcast=
+-	[ "$release" = 1 ] && release="-R" || release=
++	[ "$norelease" = 1 ] && norelease="" || norelease="-R"
+ 	[ -n "$clientid" ] && clientid="-x 0x3d:${clientid//:/}" || clientid="-C"
+ 	[ -n "$iface6rd" ] && proto_export "IFACE6RD=$iface6rd"
+ 	[ "$iface6rd" != 0 -a -f /lib/netifd/proto/6rd.sh ] && append dhcpopts "-O 212"
+@@ -70,7 +70,7 @@ proto_dhcp_setup() {
+ 		${ipaddr:+-r $ipaddr} \
+ 		${hostname:+-x "hostname:$hostname"} \
+ 		${vendorid:+-V "$vendorid"} \
+-		$clientid $defaultreqopts $broadcast $release $dhcpopts
++		$clientid $defaultreqopts $broadcast $norelease $dhcpopts
+ }
+ 
+ proto_dhcp_renew() {
+-- 
+2.21.0 (Apple Git-122.2)
 
---=-=M0VUfUkZ+1Pyi0=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-by coincidence, I've learned that label MAC addresses on Ubiquiti devices a=
-ren't correct anymore after switching from phy0 to "expected" flash locatio=
-ns in this patch:
-https://github.com/openwrt/openwrt/commit/d421a8b9448968de0e3265f5beb469c21=
-0a909ab
-
-I've investigated that on a Ubiquiti Picostation M (ar71xx, I just happened=
- to have access to that):
-
-The phy seems to get calibration data from EEPROM 0x1000 (note that bullet-=
-m image is used):
-ar71xx: https://github.com/openwrt/openwrt/blob/master/target/linux/ar71xx/=
-files/arch/mips/ath79/mach-ubnt-xm.c#L97
-ath79: https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/ge=
-neric/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom#L88
-
-No explicit MAC address overwrite takes places. The phy0 MAC address on the=
- device is set up correctly.
-
-However, when I manually try to find the address in the EEPROM partition, I=
- find it twice, with the following locations:
-mtd_get_mac_binary EEPROM 0x120c
-mtd_get_mac_binary EEPROM 0xa0bf
-
-I expected it to be at 0x1002 where it is typically put by ath9k_patch_mac =
-(offset +2).
-
-However, I've found at least one reference to the first actual location in =
-10-ath9k-eeprom, for dlink,dir-825-b1:
-ath9k_patch_mac_crc $(mtd_get_mac_text "caldata" 0xffa0) 0x20c
-
-So, can someone enlighten me what the correct location (offset 0x2 vs. 0x20=
-c) depends on?
-
-Thanks
-
-Adrian
-
---=-=M0VUfUkZ+1Pyi0=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3T5/0ACgkQoNyKO7qx
-AnBaxQ/+KzFhiEZUPuDsNnnpcErTPcTh2ViPYiFHdr9mk/ptBWlT/UrycQC7JfNO
-N6uSnQMokQdQeTCIp/OGioYrZfX5RRWwVMg1XvmfB8XKW5fyMxdHHoBtnaJB3rd4
-BEmfUt6sVpJ3SWTDDSOCA9MLTA68UKl2g40cCgEJkRK87Ct+dLNkGM/G0KFknEFJ
-U3OLXFF5xJ9jeomODCqoPBebuJk9dubX5eYsBVMjML7CN7f21JbBc1ns8NDelgmS
-LKs0YsEG1dVhL4MeQJu7NSqp6OMQfynFZeUttlcLEfErA7qrwhZycmRzLsLmNkch
-wzbESdbYegfh1p6EBTkQ2HKtoMQH9L4DvqLkpbOlUW0Vsojm6zhyVyqKPgM31yIv
-ofp6zfhBYuMdQTlfcjqIZdzeFR54wJzyThWflqU43wJjBXqu7E0SMDXqx61Jg0q6
-SzZAbf7QQJa/jBszjLDj7zYXGdw/j3CWJQNLWdWkErxd7fXloa4pifRx9Baw8Lsz
-DzajzHx1oruKOTTSWkKQySS9DhQ7JodJHlVXAcHTUpQSutCnwr+mWUFWwk2EIqvB
-7oQXkeGTi1peRvJcnuI/qSAy+y821OX5KckGd6r/16nh/xesAN8riDyHDxbvQ46V
-AwkHCBoFBd9M7SJUDbPpsIf4AFaemnh+rXtEay4yl2rRrSTPd3M=
-=dtSh
------END PGP SIGNATURE-----
-
-
---=-=M0VUfUkZ+1Pyi0=-=--
-
-
-
---===============5444026461166259727==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5444026461166259727==--
-
-

@@ -2,73 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CAE4102766
-	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 15:54:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DA621027C5
+	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 16:13:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7RSRgm9EilYPFA1lDxhSs5OlHga9gxOIowjPWaNyapc=; b=BGzEy9+uqPOy8K
-	0DIZ3UqIOqAW2qqgBVf8m2yXaoY3QYG/UfnWMXJl88txo8MvjTx8v74C+eG6v0BOpN1tgCVSyr6Ky
-	vmgvnSVNoS0herJVLP0AiSEELiASdyM2LUXT7aOQuv2+PsvJFIk/Mcayksfq5NUlQg7faAi9ra3mm
-	rDelf5hMNJ/mkizDnjVRVqamWxJk86Rb6Fy1e3areL0M11Vj106eE5OzxhOn/s3jSvyXibZqwP7X2
-	RUn2VXkTWfdX6rTBzB5MHJJ07V2B+OikE5s0gp6MiFIWWowS1HPf0t0GaeUYNz/yv2iRxQQz7lfCm
-	xjcPMXFDDN5D3D2uJcOA==;
+	List-Owner; bh=SB52T8unUA5DMhDLg6WQ9PPO+fsqqCVBqM+48CA/cFY=; b=nOGACrUcK7fBgi
+	Sc12MgKWw8zOMUG4Om/YKdRwTLr0xhNpwIALX4pI5/l2jpscgQEq+nDy4W+GnZepI96ZZyfbdmFJm
+	eoxUJ9BuabM3MygpplvGFS4WQtw7XcwRnNm/KYlp50xW7Rn00s+vcP6px/ZfxEKA3CT430IfzQ/Ll
+	GTiQIIagPDv+bxY6hVOuGMv0kKX9QodUmTL9+lHajyoaVmGws7wapv36R1xfSLkMAZcsNKhBFgcOf
+	8NTzzXkcv6w09nU04reMC+gWbJG4daUuDx0DoXA1hB2/OHeE7EF+cPwiEPrebEQOKXxakoMigJmMa
+	O4xdryIMNBCtdV2B0KAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iX4te-0004AL-Jm; Tue, 19 Nov 2019 14:54:26 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iX5Ba-00036T-Lc; Tue, 19 Nov 2019 15:12:58 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iX4t9-000402-KQ
- for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 14:53:57 +0000
-Received: from buildfff.adridolf.com ([188.193.231.72]) by
- mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1M7auJ-1iU58l2Kr7-007zgf for <openwrt-devel@lists.openwrt.org>; Tue, 19
- Nov 2019 15:53:50 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ id 1iX5BT-00035i-L8
+ for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 15:12:53 +0000
+Received: by mail-wr1-x444.google.com with SMTP id f2so24284285wrs.11
+ for <openwrt-devel@lists.openwrt.org>; Tue, 19 Nov 2019 07:12:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uHS3mc/Va1MlirhVd+k4R6rZPYUYUqCHp5ptw9MtbPo=;
+ b=WNoxLi4YIjV23IEKFX91sALFW1M763h33s3kTooK0zkUvPHGhBS0lcRLTfgI5Hgbah
+ d+ktkNTaLC2KL1y6WkAvjchYLzVRKZUNOA445HTn/gonnR5T051OHJBPX6Vo1HNlmSIo
+ kF62pkG05yKl9FnyM9GETAecCATRR9ZhgzyGg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uHS3mc/Va1MlirhVd+k4R6rZPYUYUqCHp5ptw9MtbPo=;
+ b=UccqYrEIzLb+ztojIm664LNHbKubwQTkfW2kztnYCG4jELV1NLUeyVlBJvJS7J6xT7
+ fnldV8CMFk5cg+AWF4AFFBRTHdgah1oamFBQpmGNXj5ZNFLMjGUy8MtXorN9jkbsozLf
+ b/PfrK44KIECOQyT36Xsxj9kEtdnUKpcEbBLXfAUYqdO4YaAqrDlHzEvHhexYxlrmV5F
+ Av7dgh94yAIqknrh19+1TpXwwCY2J7MwBr9AT/JI3aZh3sjnzWtHOcSkF/Zc5dSCfEmc
+ mlRUiH1FCT79yBpkwlwJ4zLE4NVIAU6m1B2jwLITURbJ8dO1sCvGqAvUSu6gtj7GUL84
+ Uo0g==
+X-Gm-Message-State: APjAAAWVuCLtEEIiN8tIPjYLc9vmJjfyKXSkZIOOztIPb3U4nILysm4n
+ J4nnq7LAGUa1KdsnOPeHmuRLHvPSG6X/qMj9
+X-Google-Smtp-Source: APXvYqza1J+TGzAC4hSq/4tLmo16jz/gXPXsrFGyGQeXXIGV7KQJJP9I1YPkYLnsojxsmCpdmDUADQ==
+X-Received: by 2002:a5d:518c:: with SMTP id k12mr37661645wrv.104.1574176367904; 
+ Tue, 19 Nov 2019 07:12:47 -0800 (PST)
+Received: from Kevins-MBP.lan.darbyshire-bryant.me.uk
+ ([2a02:c7f:1243:8e00::dc83])
+ by smtp.gmail.com with ESMTPSA id r25sm3402527wmh.6.2019.11.19.07.12.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 19 Nov 2019 07:12:46 -0800 (PST)
+From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 19 Nov 2019 15:52:51 +0100
-Message-Id: <20191119145251.3098-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+Date: Tue, 19 Nov 2019 15:12:42 +0000
+Message-Id: <20191119151242.96019-1-ldir@darbyshire-bryant.me.uk>
+X-Mailer: git-send-email 2.21.0 (Apple Git-122.2)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:UrJSXL1v5Z7BsFkBKbxy6dLZYicbqeX5Qt0Q+ZUOUwPuttQ1UJh
- 9ydc3tbl7B7/EpKXPIMNpJNqpJhHZ9KI5UvkSoKTau+ZICWtp/NQneITXxhkQM/WyiLt6lc
- iYsEAmJUG3DrVQdzB427xORFDUUXC5JMxdRTdregdNaLpHjlgPX/8lXlW/kS9xL7h9tDtMH
- 4jYHa+U0uxCWJeWNiAy8Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:99s8877wntY=:ZY4O93GJn6nfmBdojr1aZj
- zIsA9NZnJpY9K/9aYqMOEbAOcBtmDvFvyLFS1OWgK3RkfqRTb+IWh+fXiT1/nHRi3wBZhzKk3
- CDR9k2yl9MIQJssEviSrtu/ik+04l1nF8sEUZ7bjQErbui6W4l1KRUnhybqt5CBt+ERZHuV59
- 2k70CD1mBj0HR/I5b+OCeVWRA7tGXcZiK2476QjfZbuNIV9fxDP59U//okRGv01at1L1AQQVh
- Dmf7mQcNM96tYu/WgQfuQy+JyoXf/zSNz4+ytr7zzDHWCnvORXfBZRJwfC4UwUvkzcuK0oDsf
- RWo5A9dgZnYo2l1pZ3g7hkxXvo4Epm+szzrExZgm14SspBpZWL3793W7r/UzV21olGOWGIM+i
- DKvqz4usFDchskCPdW4Ixyg813gqsNTNb2Lfpt1K6JcVCxWz2pOWnX9ev3JzPKQpnBZbMs29q
- I5dzK0Mi0zU9grF1FecIzClAxHQ3xet0fuSOc+0laKWDIp5wRQ7oILLRP5h7sWmM3l2SVoqhu
- 37rIaO3hXY1rsxwB9zhRvFlUu01bsA0DducbYR1ordOXSrqu+5sIN/vs2M9/DPlZc570ecHh2
- leCXk00jA4aTMTtgPzynY+fYTje05sGR4Fp4WRuI/VI9i49MGN1nzlGvYbAd6ktLrE4FIkhJ9
- sPDicnkXC3zq0xvd53YqCAV+/faBbF0tz/Gmvr4epzJsJ2pehjAY+aWR9PS9wgss3+pyObqeA
- O7gKv/rQCJ+M5iYgwuWgYc44Rk2Z4WXuzppcbmYP0HwgIEmNw/v9T8z6fuhCNCRQkuvn3h0hc
- eQUNWdZ2j4B4nbCQo4cdHeVAxCKm+8P0NGyr12g9055Zr8xhDjQ8Msrn/B3GKexw07nmH6WU9
- 7oGCSlufDRQD71af4n01un9u5agKrtGj9Ml9Or4S0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_065355_964438_59991281 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191119_071251_690218_ED0015CF 
+X-CRM114-Status: GOOD (  12.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ath79: DTS style improvement for Ubiquiti
- XM and BZ devices
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] netifd: dhcp proto convert release to
+ norelease
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,159 +93,112 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This applies minor style improvements and removes commented pll
-clock adjustments from ubnt_xm DTSI. The latter were introduced
-(already commented out) when adding ath79 target and have never
-been touched since then. For Unifi (BZ board), similar clock
-adjustments are employed and used.
+Change dhcp no/release on shutdown to 'norelease' uci option to match
+existing proto dhcpv6 usage.
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 ---
- .../linux/ath79/dts/ar7241_ubnt_airrouter.dts |  2 +-
- target/linux/ath79/dts/ar7241_ubnt_unifi.dts  | 10 ++++-----
- target/linux/ath79/dts/ar7241_ubnt_xm.dtsi    | 21 ++++++-------------
- .../ath79/dts/ar7241_ubnt_xm_outdoor.dtsi     |  1 +
- 4 files changed, 13 insertions(+), 21 deletions(-)
+v2 - store the migrate script under netifd structure instead of as part
+of base-files
 
-diff --git a/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts b/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
-index 03306de5d9..ad2762e20c 100644
---- a/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
-+++ b/target/linux/ath79/dts/ar7241_ubnt_airrouter.dts
-@@ -15,7 +15,7 @@
- 		label-mac-device = &wifi;
- 	};
+ package/network/config/netifd/Makefile        |  2 +-
+ .../etc/uci-defaults/14_migrate-dhcp-release  | 23 +++++++++++++++++++
+ .../netifd/files/lib/netifd/proto/dhcp.sh     | 10 ++++----
+ 3 files changed, 29 insertions(+), 6 deletions(-)
+ create mode 100644 package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
+
+diff --git a/package/network/config/netifd/Makefile b/package/network/config/netifd/Makefile
+index 875628f66a..e24ebaba30 100644
+--- a/package/network/config/netifd/Makefile
++++ b/package/network/config/netifd/Makefile
+@@ -1,7 +1,7 @@
+ include $(TOPDIR)/rules.mk
  
--	airrouter-leds {
-+	leds {
- 		compatible = "gpio-leds";
+ PKG_NAME:=netifd
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
  
- 		led_globe: globe {
-diff --git a/target/linux/ath79/dts/ar7241_ubnt_unifi.dts b/target/linux/ath79/dts/ar7241_ubnt_unifi.dts
-index 3e73eba9ed..5f12fd581b 100644
---- a/target/linux/ath79/dts/ar7241_ubnt_unifi.dts
-+++ b/target/linux/ath79/dts/ar7241_ubnt_unifi.dts
-@@ -78,30 +78,30 @@
- 				read-only;
- 			};
- 
--			partition@1 {
-+			partition@40000 {
- 				label = "u-boot-env";
- 				reg = <0x040000 0x010000>;
- 			};
- 
--			partition@2 {
-+			partition@50000 {
- 				compatible = "denx,uimage";
- 				label = "firmware";
- 				reg = <0x050000 0x750000>;
- 			};
- 
--			partition@3 {
-+			partition@7a0000 {
- 				label = "board_config";
- 				reg = <0x7a0000 0x010000>;
- 				read-only;
- 			};
- 
--			partition@4 {
-+			partition@7b0000 {
- 				label = "cfg";
- 				reg = <0x7b0000 0x040000>;
- 				read-only;
- 			};
- 
--			art: partition@5 {
-+			art: partition@7f0000 {
- 				label = "art";
- 				reg = <0x7f0000 0x010000>;
- 				read-only;
-diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi b/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
-index 687aef1112..e2b653b3a7 100644
---- a/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
-+++ b/target/linux/ath79/dts/ar7241_ubnt_xm.dtsi
-@@ -9,12 +9,6 @@
- 	compatible = "ubnt,xm", "qca,ar7241";
- 	model = "Ubiquiti Networks XM (rev 1.0) board";
- 
--/*	extosc: ref {
--		compatible = "fixed-clock";
--		#clock-cells = <0>;
--		clock-frequency = <40000000>;
--	};
--*/
- 	keys {
- 		compatible = "gpio-keys";
- 
-@@ -30,12 +24,9 @@
- 	status = "okay";
- };
- 
--/*&pll {
--	clocks = <&extosc>;
--};*/
--
- &spi {
- 	status = "okay";
+ PKG_SOURCE_PROTO:=git
+ PKG_SOURCE_URL=$(PROJECT_GIT)/project/netifd.git
+diff --git a/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release b/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
+new file mode 100644
+index 0000000000..651c437cb2
+--- /dev/null
++++ b/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
+@@ -0,0 +1,23 @@
++. /lib/functions.sh
 +
- 	num-cs = <1>;
- 
- 	flash@0 {
-@@ -54,30 +45,30 @@
- 				read-only;
- 			};
- 
--			partition@1 {
-+			partition@40000 {
- 				label = "u-boot-env";
- 				reg = <0x040000 0x010000>;
- 			};
- 
--			partition@2 {
-+			partition@50000 {
- 				compatible = "denx,uimage";
- 				label = "firmware";
- 				reg = <0x050000 0x750000>;
- 			};
- 
--			partition@3 {
-+			partition@7a0000 {
- 				label = "board_config";
- 				reg = <0x7a0000 0x010000>;
- 				read-only;
- 			};
- 
--			partition@4 {
-+			partition@7b0000 {
- 				label = "cfg";
- 				reg = <0x7b0000 0x040000>;
- 				read-only;
- 			};
- 
--			art: partition@5 {
-+			art: partition@7f0000 {
- 				label = "art";
- 				reg = <0x7f0000 0x010000>;
- 				read-only;
-diff --git a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi b/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
-index 337da5b4b7..75116edc51 100644
---- a/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
-+++ b/target/linux/ath79/dts/ar7241_ubnt_xm_outdoor.dtsi
-@@ -11,6 +11,7 @@
- 
- 	leds {
- 		compatible = "gpio-leds";
++migrate_release() {
++	local config="$1"
++	local proto
++	local release
 +
- 		link1 {
- 			label = "ubnt:red:link1";
- 			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
++	config_get proto "$config" proto
++	config_get release "$config" release
++
++	[ "$proto" = "dhcp" ] && [ -n "$release" ] && {
++		norelease="$((!$release))"
++		uci_set network "$config" norelease "$norelease"
++		uci_remove network "$config" release
++	}
++
++}
++
++config_load network
++config_foreach migrate_release interface
++commit network
++
++exit 0
+diff --git a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
+index 0d06eba06e..3034b2ba68 100755
+--- a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
++++ b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
+@@ -14,7 +14,7 @@ proto_dhcp_init_config() {
+ 	proto_config_add_string clientid
+ 	proto_config_add_string vendorid
+ 	proto_config_add_boolean 'broadcast:bool'
+-	proto_config_add_boolean 'release:bool'
++	proto_config_add_boolean 'norelease:bool'
+ 	proto_config_add_string 'reqopts:list(string)'
+ 	proto_config_add_boolean 'defaultreqopts:bool'
+ 	proto_config_add_string iface6rd
+@@ -35,8 +35,8 @@ proto_dhcp_setup() {
+ 	local config="$1"
+ 	local iface="$2"
+ 
+-	local ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
+-	json_get_vars ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
++	local ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
++	json_get_vars ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
+ 
+ 	local opt dhcpopts
+ 	for opt in $reqopts; do
+@@ -50,7 +50,7 @@ proto_dhcp_setup() {
+ 
+ 	[ "$defaultreqopts" = 0 ] && defaultreqopts="-o" || defaultreqopts=
+ 	[ "$broadcast" = 1 ] && broadcast="-B" || broadcast=
+-	[ "$release" = 1 ] && release="-R" || release=
++	[ "$norelease" = 1 ] && norelease="" || norelease="-R"
+ 	[ -n "$clientid" ] && clientid="-x 0x3d:${clientid//:/}" || clientid="-C"
+ 	[ -n "$iface6rd" ] && proto_export "IFACE6RD=$iface6rd"
+ 	[ "$iface6rd" != 0 -a -f /lib/netifd/proto/6rd.sh ] && append dhcpopts "-O 212"
+@@ -70,7 +70,7 @@ proto_dhcp_setup() {
+ 		${ipaddr:+-r $ipaddr} \
+ 		${hostname:+-x "hostname:$hostname"} \
+ 		${vendorid:+-V "$vendorid"} \
+-		$clientid $defaultreqopts $broadcast $release $dhcpopts
++		$clientid $defaultreqopts $broadcast $norelease $dhcpopts
+ }
+ 
+ proto_dhcp_renew() {
 -- 
-2.20.1
+2.21.0 (Apple Git-122.2)
 
 
 _______________________________________________

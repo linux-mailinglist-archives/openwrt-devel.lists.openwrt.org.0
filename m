@@ -2,56 +2,45 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE0DF102EB7
-	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 22:58:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B76E0102F98
+	for <lists+openwrt-devel@lfdr.de>; Tue, 19 Nov 2019 23:56:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pSh0Bhl6GKI9rDdFbNq6g8SLdVVZgeVBBo+C2qMdSt0=; b=qpcN+yixaWcKNS
-	DwzSTUihQly8FU3LcOTP8K4XB/xWxYTqoNMkdgbQp/w4s9El15wXDMCawgMrU7aGSFURhmkOegj4A
-	jevTGzAPsnD4XYry5mnIFh40PRM+zanQIyqdU8I7WNsKFiRZ29YNrh7+Lv6HSPYVXSuyC8MKSdAXn
-	WT8uVaVJ3EabnmZfN6BEJVLpSZIbmHDHVALxMn3QCe3HUQnM3POvpYau2/NuXFgU0FSPTJRgAktdt
-	G3E14X3TGrydSUYbyCFQ7uCAIE79B7qz/TiWjWk+7al+mWG1LCYam70cJYvhsLA+W34jyrgi43W6E
-	bOtvDIrUVMx1osyPhC9w==;
+	List-Owner; bh=JX+owFGQID+7EoTG3pM/5TGdl9uk7wSsjysdBebUinI=; b=GI8994eBQR7ALH
+	g8S2dEnOvLOyg2Qg+N3bV48HZ3NXBbAiwMEdfBVKHr7Qv7/kMNLz/yi+vF8PV+vtqnGGYypwipEIz
+	9j66u2uyHiHtLrq+dx8ZK4sE4OgQOcHfWMUfYJE09DZNJikrfNe6LKUnT/z+IqNBMxXRF34//Y8yb
+	rbNI/EmazmBbDk3jSKs+BZXnnb4y4WGdy4b26eeJgTyweSSNGg69L6doC7X2p6ih0ciFD6kcqqsc0
+	gJ5GDeOz8HxchFXOBvc+Ngq8O8gO88fXCE/QDx8OZ226l7TQxg4AjPNHJhf1ADLBXyaW7clPm5UkK
+	2fdcx//bF77X2S/HzMfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXBW9-0005jF-Mw; Tue, 19 Nov 2019 21:58:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iXCQL-0008IG-OJ; Tue, 19 Nov 2019 22:56:41 +0000
+Received: from mx3.wp.pl ([212.77.101.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXBVx-0005il-BF
- for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 21:58:28 +0000
-Received: by mail-wm1-x342.google.com with SMTP id z19so5620927wmk.3
- for <openwrt-devel@lists.openwrt.org>; Tue, 19 Nov 2019 13:58:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=U01FwytevncdWETMU3DXBXNwQ6LSsHlH4krrYfovF1k=;
- b=H+W2A33YWQyHG+uOK5XHS+MhODu8NfGyqEwdhZTI6O2ajG1IgfWD4s4Y3mqDktLvAH
- A6+FLF6ErrpHNTVOMsfJ1BHpp207JmqGAw0UutoI63cn8F6JhYx5ZyyUUK8RhXpWdicx
- RAqDVodgPYBjORx2v6spGOrgJmut29okfnR0klZ6yZzUTwaJndfjpBt04Yh3Zp+4DyS/
- SYj/V2HBLZarmxzZs8s5NNie9kQlG1GRE/1owgI8Ud52mAFOLPR3BCqOeNAAafg3wRn+
- uZ6yfmpLJemFAUzZoiqvLvvbyRK+wakZbl/sjrPP2FJq5AuCHec0bOycvx8cOrVMs25C
- vd+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=U01FwytevncdWETMU3DXBXNwQ6LSsHlH4krrYfovF1k=;
- b=bxhvZwq7nH4s0+xO25iG8k090AcUW9+ZuwRuk4CBAU88syDJyGetBTagZBEdWId0ed
- 1IJI+ovYku/BeYL4ogo25eCecIT+42kEZRF8Ps0tnDo4RmDJv2Bjo3YPc5KVBC5O06Cl
- QKBKKcVEZMxHxWg4UHn7U2Qs+DJy1YDp4cyRwJHyW0/tNnrhYFzemOcyQqL1LgqTDKL+
- xWmUoP9sffKyer9C7JwCA0n+oaDrcPRgybR09wwG31uM2c1v0sOdZFjHl/HOEY+d/EoF
- P8jPABC30OEq2ddB6gZuufENxTwT5N+oSJm8oVdM3KQiTR2RMZaIm4VKPAQwLDDXpuWR
- 8RSw==
-X-Gm-Message-State: APjAAAX8Y4MGUHrWxCkCa0rvZCZW1LeC9iaPETRLxNUJLZaYO71yILqI
- kTBDuCV/OHYPzR/Pg2TuV6m/a5+sjNoTeLgki9Y=
-X-Google-Smtp-Source: APXvYqy9otpME2diyI+YMJbG+rXv+46a8iPHzgeNWkVgHkThbUCQtxRr43YPpFs4oOk0Fbxsy4ahnMKKdw9xBDL/vXs=
-X-Received: by 2002:a05:600c:3cc:: with SMTP id
- z12mr16752wmd.151.1574200703611; 
- Tue, 19 Nov 2019 13:58:23 -0800 (PST)
-MIME-Version: 1.0
+ id 1iXCQA-0008HN-Q5
+ for openwrt-devel@lists.openwrt.org; Tue, 19 Nov 2019 22:56:36 +0000
+Received: (wp-smtpd smtp.wp.pl 1811 invoked from network);
+ 19 Nov 2019 23:56:25 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1574204185; bh=wwdDReE4+vGQSJZhpHvh294wB3sDBf0Io26Heas3WQg=;
+ h=From:To:Cc:Subject;
+ b=e/frWxzza34LIBSNKn5etIRVktv2QynnBaAU1eVC5G8NMhml3JAGfYlceT75x44DE
+ XqnUX05w4TtAsGERVysOAQam0fQRbMfI7dBmVcy3z1Ig0zl+b/wicA6gAU5q7YKvhn
+ VVQGO0b0UC0m0CTnm9roY8K1Fz2DkmsWCtc0tX9I=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <jonas.gorski@gmail.com>; 19 Nov 2019 23:56:25 +0100
+Date: Tue, 19 Nov 2019 23:56:24 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: Jonas Gorski <jonas.gorski@gmail.com>
+Message-ID: <20191119235624.4ce1853d@kosmio.komorska>
+In-Reply-To: <CAOiHx=kZ27wDd4K+=eT-RLSmknbTiGjyF+9Aa5e8_FbRgHU6GQ@mail.gmail.com>
 References: <20191112140214.59f2971f@kosmio.komorska>
  <04615660-e813-7bc1-1e75-a51c289fd518@david-bauer.net>
  <20191112192234.721c6a6e@kosmio.komorska>
@@ -60,27 +49,29 @@ References: <20191112140214.59f2971f@kosmio.komorska>
  <20191119173322.512c6669@kosmio.komorska>
  <CAOiHx=krODnS-PizVk3Y5arY69JSzVT9A8bTV28K_cUJs_pJ=A@mail.gmail.com>
  <20191119175900.0038eb08@kosmio.komorska>
-In-Reply-To: <20191119175900.0038eb08@kosmio.komorska>
-From: Jonas Gorski <jonas.gorski@gmail.com>
-Date: Tue, 19 Nov 2019 22:58:19 +0100
-Message-ID: <CAOiHx=kZ27wDd4K+=eT-RLSmknbTiGjyF+9Aa5e8_FbRgHU6GQ@mail.gmail.com>
-To: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+ <CAOiHx=kZ27wDd4K+=eT-RLSmknbTiGjyF+9Aa5e8_FbRgHU6GQ@mail.gmail.com>
+X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+MIME-Version: 1.0
+X-WP-MailID: 34a4a01cce60947efa14606fe5ed263e
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [8UMU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_135825_410018_052F2338 
-X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-CacheID: sfid-20191119_145634_932059_B8C5A682 
+X-CRM114-Status: UNSURE (   4.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.9 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.77.101.9 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jonas.gorski[at]gmail.com)
+ provider (michal.cieslakiewicz[at]wp.pl)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -109,22 +100,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, 19 Nov 2019 at 17:59, Michal Cieslakiewicz
-<michal.cieslakiewicz@wp.pl> wrote:
->
-> >
-> > That was my question, if the "new" OpenWrt sysupgrade.bin still works
-> > in the initial flash.
-> >
->
-> sysupgrade.bin for this model is in format tar+metadata, it is not
-> designed to be put into flash directly.
+> 
+> Typo, I did mean factory.bin ... . The type you use to initially flash
+> OpenWrt ;-)
+> 
 
-Typo, I did mean factory.bin ... . The type you use to initially flash
-OpenWrt ;-)
+Ok, that will be factory.img. There is no factory.bin image for that
+model to flash. If someone needs it badly, img file is 128-byte DNI
+header prepended to bin file (kernel + fake rootfs).
 
 Regards
-Jonas
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

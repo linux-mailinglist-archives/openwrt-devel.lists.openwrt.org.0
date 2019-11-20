@@ -2,85 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 973D5103576
-	for <lists+openwrt-devel@lfdr.de>; Wed, 20 Nov 2019 08:45:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF4E310394D
+	for <lists+openwrt-devel@lfdr.de>; Wed, 20 Nov 2019 12:59:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vDRbjgG3DxA7PLIZ0a312Qa4FUeu5lWd0+r9Tiri8TM=; b=nJT9jQAP2qFpBM
-	KvYfyg66t1PnBJ50UEgMQKW1xWhYARV9fSqRFQlOVz0YXNKmZVcG1V/f6h+oiDhd6+esOfvJHkFt5
-	enu0pxvh8mjklODJ/zSVXjCwLHOQTbvQ7XHnmEdacPVjHrbZb13iJyHfGNuM6cWzk4MLEqxNU55CC
-	MYMFdILCgee86nbrEPEilVdyiHa3S21zVcOSDJnPQTBhUBDqJhZLunqs9FwhRCdjZdahZ0qIaNrpx
-	wcOft2GOXY1Xaep7RMC13v02NxIyV2aJmdjpdSI6kIHz7PrO5jam1zMBVKMz8bLLOm7meR/5oS+M+
-	KUdRavTC30IWKQHMr6pQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Vu6xaDiwrhhju3NanOrGXEFgpvcFYvJiipgvNKGOA2M=; b=qs+gZ/JB5ZJOt9
+	JSwOwAaKZkrd8BqPQcl/cGn2/ndJw3e60qk1YsYW4Vg7F19x6q4S9Ei2O1rdt/AQBSH1Xei9Mvznv
+	/V4/NFxIYtVyzgd7JQ5dBVInHbxEPAYa0nC7d61NTUCgjfxN1Jaw4YaV7LmqHkHX9r/U2Urg3YjxH
+	xX/TFyoWlB4NuYQrc2knkJXog4fT1ufyJIG7YI0a2egSdDpS1fj99wBTmxpOSGeGp/k0AOBq3bd0K
+	ryRPqHI/OmxvVFSFiknS+YP29ZaDDbpTqyccLO31Tcc7aXvmNeCRfPI7+ThTExTR8nowckZvpIdWg
+	CcxL+clOu+zMmTGp8OAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXKfd-00033K-LI; Wed, 20 Nov 2019 07:45:01 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1iXOeB-0001a5-Sd; Wed, 20 Nov 2019 11:59:47 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXKfW-00032o-KT
- for openwrt-devel@lists.openwrt.org; Wed, 20 Nov 2019 07:44:56 +0000
-Received: by mail-qt1-x841.google.com with SMTP id t20so27924723qtn.9
- for <openwrt-devel@lists.openwrt.org>; Tue, 19 Nov 2019 23:44:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KrQKpZpiTVXXd1gLqV1gIaaG0EPczII2K8b/FHbiN64=;
- b=fEonk9Ui5a9w5sryTcsioImPoJ/6MNWZtQS2L5xULd6Yg+iKn3LfRedYO7gsspzi03
- TqGAphivt8071GvNFX3IpIIzoKwOQlFXO/Yip5Qp/Q66Oid5+8nbFfd/o3B3LOwVmTc7
- N046MbbE9JCsCZ76hl2xlaeg3xkkQ0415ei/MZGMbMGWnygnhA8o9QdIGyXR7YuXChlH
- p38GrUMb7w5t+yVSQqWqS9f7qB500Fmr5iNLDT+jixvi6+X+6nBJ1cYbwt4mZzHmShPs
- GcPlHNXHuCs7JLt3QSKpOlNt1MydC8GnCTpG6RbLPQKAn66D4/oaBBpPoiKSBVUFZsTW
- oIAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KrQKpZpiTVXXd1gLqV1gIaaG0EPczII2K8b/FHbiN64=;
- b=C78teyxK1a+cGU9pbVvwFi9ir1AYBHS1siB05RyAAqWBxyDqNFNDO1dtMOQDCAY+BY
- NTUC3Cn/8VfOblzM6UEiV7Aizci4zwepqZwSLsjG+1CoO5b7z363/jvgTp8MW/aZY2c+
- aa98JVLhkfVdn1wAIGNZH6G8EXGUIQAdw0k0dPpVbZoQlzP1R2bAPyFDa9WDy4NHiG5q
- RoYYymj9f0/80JXeHodAZCgYffzW5lk0RK6Ay6OayVb2yMuoaxAp9rUzIJgU/CkEZQgb
- okj7boGNUJyEksFqjK9ZnQzK1j6az2OpHTd2Jv6/jCBkNJCqVIWj2Zx8TeHiDsgPAjIa
- bKNQ==
-X-Gm-Message-State: APjAAAX3EiuZ2/O3GjAfUoO8KFGOFHx/GuxK5Nsdb0v0mecAFF9qT5ni
- srd1LMQtA+cvMkmlXmyNoCn23yegAbtpuAoieG8=
-X-Google-Smtp-Source: APXvYqyWFqSqQcPBOK/STs5qVT3ZNnXeLmTPAr/N8G9BPLQ9d9UH16bfwwabbIGDFCqXHhJLEx16WHXN+Lf/yUISOBg=
-X-Received: by 2002:ac8:2655:: with SMTP id v21mr1432228qtv.0.1574235892491;
- Tue, 19 Nov 2019 23:44:52 -0800 (PST)
+ id 1iXOe1-0001XR-Ug
+ for openwrt-devel@lists.openwrt.org; Wed, 20 Nov 2019 11:59:39 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 29A094667;
+ Wed, 20 Nov 2019 12:59:30 +0100 (CET)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id ca199d6d;
+ Wed, 20 Nov 2019 12:59:19 +0100 (CET)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 20 Nov 2019 12:59:17 +0100
+Message-Id: <20191120115926.23272-1-ynezz@true.cz>
 MIME-Version: 1.0
-References: <20191119151242.96019-1-ldir@darbyshire-bryant.me.uk>
-In-Reply-To: <20191119151242.96019-1-ldir@darbyshire-bryant.me.uk>
-From: Hans Dedecker <dedeckeh@gmail.com>
-Date: Wed, 20 Nov 2019 08:44:41 +0100
-Message-ID: <CAJLcKsHFaZuM9htTwhgYhi5=BW2hJS4NmuHuBVTn2b=am=OEXg@mail.gmail.com>
-To: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191119_234454_673360_340B2E4A 
-X-CRM114-Status: GOOD (  15.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191120_035938_143226_6876243A 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dedeckeh[at]gmail.com)
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] netifd: dhcp proto convert release to
- norelease
+Subject: [OpenWrt-Devel] [PATCH libubox 0/9] fixes,
+ some unit tests and GitLab CI
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,124 +60,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, Nov 19, 2019 at 4:12 PM Kevin Darbyshire-Bryant
-<ldir@darbyshire-bryant.me.uk> wrote:
->
-> Change dhcp no/release on shutdown to 'norelease' uci option to match
-> existing proto dhcpv6 usage.
->
-> Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
-Acked-by: Hans Dedecker <dedeckeh@gmail.com>
-> ---
-> v2 - store the migrate script under netifd structure instead of as part
-> of base-files
->
->  package/network/config/netifd/Makefile        |  2 +-
->  .../etc/uci-defaults/14_migrate-dhcp-release  | 23 +++++++++++++++++++
->  .../netifd/files/lib/netifd/proto/dhcp.sh     | 10 ++++----
->  3 files changed, 29 insertions(+), 6 deletions(-)
->  create mode 100644 package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
->
-> diff --git a/package/network/config/netifd/Makefile b/package/network/config/netifd/Makefile
-> index 875628f66a..e24ebaba30 100644
-> --- a/package/network/config/netifd/Makefile
-> +++ b/package/network/config/netifd/Makefile
-> @@ -1,7 +1,7 @@
->  include $(TOPDIR)/rules.mk
->
->  PKG_NAME:=netifd
-> -PKG_RELEASE:=1
-> +PKG_RELEASE:=2
->
->  PKG_SOURCE_PROTO:=git
->  PKG_SOURCE_URL=$(PROJECT_GIT)/project/netifd.git
-> diff --git a/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release b/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
-> new file mode 100644
-> index 0000000000..651c437cb2
-> --- /dev/null
-> +++ b/package/network/config/netifd/files/etc/uci-defaults/14_migrate-dhcp-release
-> @@ -0,0 +1,23 @@
-> +. /lib/functions.sh
-> +
-> +migrate_release() {
-> +       local config="$1"
-> +       local proto
-> +       local release
-> +
-> +       config_get proto "$config" proto
-> +       config_get release "$config" release
-> +
-> +       [ "$proto" = "dhcp" ] && [ -n "$release" ] && {
-> +               norelease="$((!$release))"
-> +               uci_set network "$config" norelease "$norelease"
-> +               uci_remove network "$config" release
-> +       }
-> +
-> +}
-> +
-> +config_load network
-> +config_foreach migrate_release interface
-> +commit network
-> +
-> +exit 0
-> diff --git a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
-> index 0d06eba06e..3034b2ba68 100755
-> --- a/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
-> +++ b/package/network/config/netifd/files/lib/netifd/proto/dhcp.sh
-> @@ -14,7 +14,7 @@ proto_dhcp_init_config() {
->         proto_config_add_string clientid
->         proto_config_add_string vendorid
->         proto_config_add_boolean 'broadcast:bool'
-> -       proto_config_add_boolean 'release:bool'
-> +       proto_config_add_boolean 'norelease:bool'
->         proto_config_add_string 'reqopts:list(string)'
->         proto_config_add_boolean 'defaultreqopts:bool'
->         proto_config_add_string iface6rd
-> @@ -35,8 +35,8 @@ proto_dhcp_setup() {
->         local config="$1"
->         local iface="$2"
->
-> -       local ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
-> -       json_get_vars ipaddr hostname clientid vendorid broadcast release reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
-> +       local ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd sendopts delegate zone6rd zone mtu6rd customroutes classlessroute
-> +       json_get_vars ipaddr hostname clientid vendorid broadcast norelease reqopts defaultreqopts iface6rd delegate zone6rd zone mtu6rd customroutes classlessroute
->
->         local opt dhcpopts
->         for opt in $reqopts; do
-> @@ -50,7 +50,7 @@ proto_dhcp_setup() {
->
->         [ "$defaultreqopts" = 0 ] && defaultreqopts="-o" || defaultreqopts=
->         [ "$broadcast" = 1 ] && broadcast="-B" || broadcast=
-> -       [ "$release" = 1 ] && release="-R" || release=
-> +       [ "$norelease" = 1 ] && norelease="" || norelease="-R"
->         [ -n "$clientid" ] && clientid="-x 0x3d:${clientid//:/}" || clientid="-C"
->         [ -n "$iface6rd" ] && proto_export "IFACE6RD=$iface6rd"
->         [ "$iface6rd" != 0 -a -f /lib/netifd/proto/6rd.sh ] && append dhcpopts "-O 212"
-> @@ -70,7 +70,7 @@ proto_dhcp_setup() {
->                 ${ipaddr:+-r $ipaddr} \
->                 ${hostname:+-x "hostname:$hostname"} \
->                 ${vendorid:+-V "$vendorid"} \
-> -               $clientid $defaultreqopts $broadcast $release $dhcpopts
-> +               $clientid $defaultreqopts $broadcast $norelease $dhcpopts
->  }
->
->  proto_dhcp_renew() {
-> --
-> 2.21.0 (Apple Git-122.2)
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+SGksCgpJJ3ZlIG1hZGUgbGlidWJveCBjb21waWxlIHdpdGggLVdleHRyYSBmbGFncywgdHJpZWQg
+dG8gbWFrZSBjbGFuZy9jcHBjaGVjawpzdGF0aWMgY29kZSBhbmFseXplcnMgaGFwcHksIGZpeGVk
+IHNvbWUgbWVtbGVha3MsIGFkZGVkIGluaXRpYWwgY3JhbSBiYXNlZAp1bml0IHRlc3RzIGZvciBh
+dmwvYmFzZTY0L2pzaG4gY29tcG9uZW50cyBhbmQgYWRkZWQgR2l0TGFiIENJIHN1cHBvcnRbMV0u
+CgoxLiBodHRwczovL2dpdGxhYi5jb20veW5lenovb3BlbndydC1saWJ1Ym94L3BpcGVsaW5lcy85
+NzI1NTYxMC9idWlsZHMKClBldHIgxaB0ZXRpYXIgKDkpOgogIGVuYWJsZSBleHRyYSBjb21waWxl
+ciBjaGVja3MKICBpcm9uIG91dCBhbGwgZXh0cmEgY29tcGlsZXIgd2FybmluZ3MKICBhZGQgaW5p
+dGlhbCBHaXRMYWIgQ0kgc3VwcG9ydAogIGFkZCBjcmFtIGJhc2VkIHVuaXQgdGVzdHMKICBiYXNl
+NjQ6IGI2NF9kZWNvZGU6IGZpeCBwb3NzaWJsZSBudWxsIHBvaW50ZXIgZGVyZWZlcmVuY2UKICBq
+c2huOiBtYWluOiBmaXggbGVhayBvZiBtZW1vcnkgcG9pbnRlZCB0byBieSAndmFycycKICBqc2hu
+OiBqc2huX3BhcnNlOiBmaXggbGVha3Mgb2YgbWVtb3J5IHBvaW50ZWQgdG8gYnkgJ29iaicKICBi
+bG9ibXNnX2pzb246IGZpeCBwb3NzaWJsZSB1bmluaXRpYWxpemVkIHN0cnVjdCBtZW1iZXIKICBh
+dmw6IGd1YXJkIGFnYWluc3QgdGhlb3JldGljYWwgbnVsbCBwb2ludGVyIGRlcmVmZXJlbmNlCgog
+LmdpdGxhYi1jaS55bWwgICAgICAgICAgICAgICAgIHwgIDcgKysrCiBDTWFrZUxpc3RzLnR4dCAg
+ICAgICAgICAgICAgICAgfCAgNyArKy0KIGF2bC5jICAgICAgICAgICAgICAgICAgICAgICAgICB8
+ICAzICstCiBiYXNlNjQuYyAgICAgICAgICAgICAgICAgICAgICAgfCAxMSArKysrLQogYmxvYi5j
+ICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDYgKy0tCiBibG9iLmggICAgICAgICAgICAgICAg
+ICAgICAgICAgfCAgNiArLS0KIGJsb2Jtc2cuYyAgICAgICAgICAgICAgICAgICAgICB8ICAyICst
+CiBibG9ibXNnX2pzb24uYyAgICAgICAgICAgICAgICAgfCAgOCArKy0tCiBleGFtcGxlcy9ibG9i
+bXNnLWV4YW1wbGUuYyAgICAgfCAgMiArLQogZXhhbXBsZXMvanNvbl9zY3JpcHQtZXhhbXBsZS5j
+IHwgIDIgKy0KIGpzaG4uYyAgICAgICAgICAgICAgICAgICAgICAgICB8ICA0ICsrCiBqc29uX3Nj
+cmlwdC5jICAgICAgICAgICAgICAgICAgfCAxNyArKysrLS0tCiB0ZXN0cy9DTWFrZUxpc3RzLnR4
+dCAgICAgICAgICAgfCAxMCArKysrCiB0ZXN0cy9jcmFtL0NNYWtlTGlzdHMudHh0ICAgICAgfCAy
+NyArKysrKysrKysrKwogdGVzdHMvY3JhbS90ZXN0X2F2bC50ICAgICAgICAgIHwgMTAgKysrKwog
+dGVzdHMvY3JhbS90ZXN0X2Jhc2U2NC50ICAgICAgIHwgMTcgKysrKysrKwogdGVzdHMvY3JhbS90
+ZXN0X2pzaG4udCAgICAgICAgIHwgMjUgKysrKysrKysrKwogdGVzdHMvdGVzdC1hdmwuYyAgICAg
+ICAgICAgICAgIHwgODcgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKwogdGVzdHMv
+dGVzdC1iYXNlNjQuYyAgICAgICAgICAgIHwgNTQgKysrKysrKysrKysrKysrKysrKysrCiAxOSBm
+aWxlcyBjaGFuZ2VkLCAyODEgaW5zZXJ0aW9ucygrKSwgMjQgZGVsZXRpb25zKC0pCiBjcmVhdGUg
+bW9kZSAxMDA2NDQgLmdpdGxhYi1jaS55bWwKIGNyZWF0ZSBtb2RlIDEwMDY0NCB0ZXN0cy9DTWFr
+ZUxpc3RzLnR4dAogY3JlYXRlIG1vZGUgMTAwNjQ0IHRlc3RzL2NyYW0vQ01ha2VMaXN0cy50eHQK
+IGNyZWF0ZSBtb2RlIDEwMDY0NCB0ZXN0cy9jcmFtL3Rlc3RfYXZsLnQKIGNyZWF0ZSBtb2RlIDEw
+MDY0NCB0ZXN0cy9jcmFtL3Rlc3RfYmFzZTY0LnQKIGNyZWF0ZSBtb2RlIDEwMDY0NCB0ZXN0cy9j
+cmFtL3Rlc3RfanNobi50CiBjcmVhdGUgbW9kZSAxMDA2NDQgdGVzdHMvdGVzdC1hdmwuYwogY3Jl
+YXRlIG1vZGUgMTAwNjQ0IHRlc3RzL3Rlc3QtYmFzZTY0LmMKCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApv
+cGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRldmVsCg==

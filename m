@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC99C1056FB
-	for <lists+openwrt-devel@lfdr.de>; Thu, 21 Nov 2019 17:25:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19EBA1056ED
+	for <lists+openwrt-devel@lfdr.de>; Thu, 21 Nov 2019 17:23:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G7Od9G5gRekd47zZAVy/wWsRpKuKjhvOqHmmSXTkSeU=; b=qDY4pq2xKnjffX
-	AEOPlS1cncOcf4dpZCPHX0QAZr4F8aIF/WvoxTfdN/tTNkMbCrTLCptmiR6X3dSftfjs2juGXKqbs
-	5EovPu7T9ZWXFgmNW/ypwVIfWa58w1/v2z/tGa3O99EiJwP4N5tK2B3zw6NNskiQQSeHuFhLOUFWO
-	T4mYT3iyzflsZPCQE3j/ErGTVLXcts0bEUY3IVkxiWbP3g/GQKdthLxv8YuQ+RAWl5cJ/nCqCogyy
-	y4S5lIRU0WUH5s+wSNymsPryYHkIWy4ZVvuuJwnuAkx/t/4nhs9aU1ROd5qXkeYoTh6xbBBqNRQd8
-	3/pEB5mscciaSvtHxpRA==;
+	List-Owner; bh=ZueatpDwhTN8BKiPWfS7MytH+B6bdVijMBOIJRg3DwQ=; b=A+VHzB4s1VxAfI
+	ydWjgdH+Mk9XjbQlenqDkea3LnbSr70r2VR7GAuvEHyMyT9pGpPxOt0ns2sC/eApscyvbjhWRshde
+	XlnBRAwBf+2BKyVswbiqy4S4SHpV+0b8FOVrDzs3sSBhVcvub/2NbgD96v4X5BOxhEwW+Ph8NQOzI
+	cPPRJDkckQN/D3PL+R/S+Ni0K/5sXjAC99HfsRoT1HOFPQvnnpu0Qcpw54lLSoPsZE6wqZhI3wwI9
+	o6WZcUegSB5mztqAV0G8NWSjmSa0WwYNpA0t6AyD5hiOgnqIAIYelLRkiGQlRO87v52J/xeb6Tl8/
+	tdIboxbnv460MeQgUDpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXpGT-000461-7y; Thu, 21 Nov 2019 16:25:05 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1iXpFG-0002oL-KM; Thu, 21 Nov 2019 16:23:50 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXpF2-0002nL-J9
- for openwrt-devel@lists.openwrt.org; Thu, 21 Nov 2019 16:23:40 +0000
+ id 1iXpF0-0002mo-6F
+ for openwrt-devel@lists.openwrt.org; Thu, 21 Nov 2019 16:23:36 +0000
 X-Originating-IP: 90.76.211.102
 Received: from localhost (lfbn-1-2154-102.w90-76.abo.wanadoo.fr
  [90.76.211.102]) (Authenticated sender: thomas.petazzoni@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 3D4161BF208;
- Thu, 21 Nov 2019 16:23:28 +0000 (UTC)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id C0D8A1C0011;
+ Thu, 21 Nov 2019 16:23:29 +0000 (UTC)
 From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 21 Nov 2019 17:23:16 +0100
-Message-Id: <20191121162322.671035-7-thomas.petazzoni@bootlin.com>
+Date: Thu, 21 Nov 2019 17:23:17 +0100
+Message-Id: <20191121162322.671035-8-thomas.petazzoni@bootlin.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191121162322.671035-1-thomas.petazzoni@bootlin.com>
 References: <20191121162322.671035-1-thomas.petazzoni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_082336_771006_A7B27F25 
-X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-CacheID: sfid-20191121_082334_366712_BC274263 
+X-CRM114-Status: UNSURE (   9.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -46,11 +46,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
+ low trust [217.70.183.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH v2 06/12] scripts/mkits.sh: extend with -s
- option to include a U-Boot script
+Subject: [OpenWrt-Devel] [PATCH v2 07/12] config/Config-kernel.in: add
+ options to enable dm-verity related kernel features
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,84 +69,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The mkits.sh prepares a .its file describing a FIT image. This commit
-extends it to support a -s option, that allows to pass a file that
-should be embedded as a U-Boot script in the FIT image.
-
-This will be used as part of the dm-verity integration to add in the
-FIT image a U-Boot script that provides the details of the dm-verity
-volume (salt, root hash, number of data blocks, start of hash blocks,
-etc.).
+The dm-verity support requires a number of kernel options to be
+enabled. This commit adds the corresponding options to
+config/Config-kernel.in, so that they can be selected by other OpenWrt
+options when needed.
 
 Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 ---
- scripts/mkits.sh | 22 ++++++++++++++++++++--
- 1 file changed, 20 insertions(+), 2 deletions(-)
+Note: I sometimes encounter an issue at build time where the kernel
+configuration system would prompt me for the values of the new options
+made visible as a result of enabling those MD, BLK_DEV_DM, DM_VERITY
+and DM_INIT options. Interestingly, I don't seem to encounter this at
+every build. I'm not sure why OpenWrt doesn't simply run a "make
+olddefconfig" to automatically accept the default values for
+unspecified options. What is the appropriate course of action to solve
+this problem ?
+---
+ config/Config-kernel.in | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-diff --git a/scripts/mkits.sh b/scripts/mkits.sh
-index 93c8cedaed..ce14f664d6 100755
---- a/scripts/mkits.sh
-+++ b/scripts/mkits.sh
-@@ -16,7 +16,8 @@
+diff --git a/config/Config-kernel.in b/config/Config-kernel.in
+index bdb6b91cbb..eae413eb29 100644
+--- a/config/Config-kernel.in
++++ b/config/Config-kernel.in
+@@ -860,3 +860,18 @@ config KERNEL_CC_OPTIMIZE_FOR_SIZE
+ 	  your compiler resulting in a smaller kernel.
  
- usage() {
- 	echo "Usage: `basename $0` -A arch -C comp -a addr -e entry" \
--		"-v version -k kernel [-D name -d dtb] -o its_file"
-+		"-v version -k kernel [-D name -d dtb] -o its_file" \
-+		"-s script"
- 	echo -e "\t-A ==> set architecture to 'arch'"
- 	echo -e "\t-C ==> set compression type 'comp'"
- 	echo -e "\t-c ==> set config name 'config'"
-@@ -27,10 +28,11 @@ usage() {
- 	echo -e "\t-D ==> human friendly Device Tree Blob 'name'"
- 	echo -e "\t-d ==> include Device Tree Blob 'dtb'"
- 	echo -e "\t-o ==> create output file 'its_file'"
-+	echo -e "\t-s ==> include U-Boot script 'script'"
- 	exit 1
- }
- 
--while getopts ":A:a:c:C:D:d:e:k:o:v:" OPTION
-+while getopts ":A:a:c:C:D:d:e:k:o:s:v:" OPTION
- do
- 	case $OPTION in
- 		A ) ARCH=$OPTARG;;
-@@ -42,6 +44,7 @@ do
- 		e ) ENTRY_ADDR=$OPTARG;;
- 		k ) KERNEL=$OPTARG;;
- 		o ) OUTPUT=$OPTARG;;
-+		s ) SCRIPT=$OPTARG;;
- 		v ) VERSION=$OPTARG;;
- 		* ) echo "Invalid option passed to '$0' (options:$@)"
- 		usage;;
-@@ -77,6 +80,18 @@ if [ -n "${DTB}" ]; then
- 	FDT_PROP="fdt = \"fdt@1\";"
- fi
- 
-+# Conditionally create script information
-+if [ -n "${SCRIPT}" ]; then
-+	SCRIPT="
-+		script {
-+			description = \"Script\";
-+			data = /incbin/(\"${SCRIPT}\");
-+			type = \"script\";
-+			compression = \"none\";
-+		};
-+"
-+fi
+ endchoice
 +
- # Create a default, fully populated DTS file
- DATA="/dts-v1/;
- 
-@@ -102,6 +117,9 @@ DATA="/dts-v1/;
- 			};
- 		};
- ${FDT_NODE}
++config KERNEL_MD
++	bool "Multiple devices driver support (RAID and LVM)"
 +
-+${SCRIPT}
++config KERNEL_BLK_DEV_DM
++	bool "Device mapper support"
++	depends on KERNEL_MD
 +
- 	};
- 
- 	configurations {
++config KERNEL_DM_VERITY
++	bool "Verity target support"
++	depends on KERNEL_BLK_DEV_DM
++
++config KERNEL_DM_INIT
++	bool "DM \"dm-mod.create=\" parameter support"
++	depends on KERNEL_BLK_DEV_DM
 -- 
 2.23.0
 

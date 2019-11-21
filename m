@@ -2,84 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43E65104D1C
-	for <lists+openwrt-devel@lfdr.de>; Thu, 21 Nov 2019 09:02:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E946F10570A
+	for <lists+openwrt-devel@lfdr.de>; Thu, 21 Nov 2019 17:26:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lFhOdFoKqQ8xHiAWi5/0LV1cfjtMxwkR4ca19GxNDlk=; b=txLSyfeyUg8jJr6w9lMVj74yY
-	im0iDoJaF912pIBcUIt2uRuFH2a6XrhI34X2J7ik3LmPmf/b+tCG2SjmhyY+YnH/QyA/FDHXiUR2d
-	Uo4NCAHuMWCHVhKnZHKyP2TLIYkkIDaO2CY5x6k+zFZ99yPs5Gbsx5py8KL20pIsxWJIGIeB1b7Q2
-	cajaYRx8NHvNIlu0WaMFHbsZrWFEbsfOdfuEDQiXV7ZP0/xFIp5OBptFxA8lzFFp5In1GOQeu+kCY
-	0F+r/5VV89WOc+vOLz1Mf7tC+x06elbSyEBDryv42ZnJPgHwNatIm8fdMEcB0vqi9emXbGD1LBn7s
-	AhL8GHxOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K9NyU9SHLUqVHUtG6qSC1+KJ/DS53+IWhCdU8OFqtDw=; b=D3MbhpYhVqsO0D
+	6tC2fPQIQC4qwMFXe6SYs74JDHkozV/vbW7xfc/tHZRob43YY5lhbngDW1amYWyhrzmLUvuhTpe+C
+	RStl6GT/W7TIZxTQ5OlhzL1QNpxgnHGqFLGblpCz4qaznEfV21KF0Mp7QWSyDCJMMhgPQIgguVs4Y
+	9x+BKquxSfkcU9+LzEH1E7dxGwY6rrnKkvrCX8rd5OZAOx+of3yE8dTqdw91dawyFzAchtSt4m3m6
+	xx5UVmbjb9ssQX9nmfy0N168vfU41lLAgX6ST4nwZRBRGoghY2adgEcbJP80yBd3jS9qYPWF/H8+K
+	HZ/lluiDjJ/v11T3U/hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXhPo-0006OW-9U; Thu, 21 Nov 2019 08:02:12 +0000
-Received: from mail-il1-x12c.google.com ([2607:f8b0:4864:20::12c])
+	id 1iXpHY-0006xp-Gn; Thu, 21 Nov 2019 16:26:12 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXhPe-0006Nn-Q8
- for openwrt-devel@lists.openwrt.org; Thu, 21 Nov 2019 08:02:04 +0000
-Received: by mail-il1-x12c.google.com with SMTP id q15so2369407ils.8
- for <openwrt-devel@lists.openwrt.org>; Thu, 21 Nov 2019 00:02:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=meshplusplus-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OcRyu2AhfeUwkcy+WizEm1rHcV+f6FBrIMVCokHT/g0=;
- b=vJNVq3HqyKQ12zEELnNJuy18ZqkgVw2LkNfzn75ImoYNqBZGWkDFbbkG/gy9hKD5te
- i/JsdDNrrMxsTl+HjRqMySp5u7gSUj5IDKIOQHZAkCVRwRoipzOxQD0xS1JDa5y+VAsR
- l417xgo3o5lc3ckYMddaNphWheXDkcrWj2YskteTJ0Mh9nxArGlnmsKIcxkcIuz2Sr4K
- Hpvcc/0QI5QBiiV1qBfAjJh1D1LDnn7JOhDVuUwpVWnB7wpRYBy1L/S1rqnu5c70c2d1
- cDfcDHk2qjZ/HGieqlaWigSEDcVsciMjPgjnVxpoDhxHAGs1duCf4TgWBQxhaDzGJioh
- ip4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OcRyu2AhfeUwkcy+WizEm1rHcV+f6FBrIMVCokHT/g0=;
- b=p6mCOBROYLwHQJ4ukfTIffbRHhDT9nJzPagna0dKtXGs8nH11OTNUAo8lbRKm9eXqv
- R5wU6oKnvg8NrZ9Pj+c2d+3RJSlJotNvIs96g8F9qfVFmb2IFnOLg6iUC9Dm75gVBbUc
- PgD9xD+KENMOH+XgzCv18pCV5XJPSfJws1JmJQA65leRg5MteXALg48yuewjx2pMZbv9
- RtQF8PCiTpYpBKU0rkhFeniur2y3NjGf+6AhiSJCOGitPpl2V5tsevDdhuvtoq+ERxcY
- cU/6fPr3eRRWZU+p+WMNqYkk4QkHx59yEv2bH+ayRwGOIW1AXvyF03Bjhww5l4vG5QYd
- 5o8A==
-X-Gm-Message-State: APjAAAWUVbzQeBvMOyvptFC4zPRzK7qsC4DmE6O8sTgp9XoYKLoFAO9J
- PIIOjH7XUIIjQwUh6IhPIba5WNJyYZeBgEKrMnGN5Gh13+E=
-X-Google-Smtp-Source: APXvYqwydCnwJTGjb3ELt+xjp5yVgFbSolYCkQMPuMFdjS/ZtY0idroR16c6EnV1vZdv5XjTZNNkBTHPHIAxTLQqvek=
-X-Received: by 2002:a92:2807:: with SMTP id l7mr8134899ilf.247.1574323321274; 
- Thu, 21 Nov 2019 00:02:01 -0800 (PST)
+ id 1iXpF3-0002nM-Qk
+ for openwrt-devel@lists.openwrt.org; Thu, 21 Nov 2019 16:23:44 +0000
+X-Originating-IP: 90.76.211.102
+Received: from localhost (lfbn-1-2154-102.w90-76.abo.wanadoo.fr
+ [90.76.211.102]) (Authenticated sender: thomas.petazzoni@bootlin.com)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 9912A60010;
+ Thu, 21 Nov 2019 16:23:25 +0000 (UTC)
+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 21 Nov 2019 17:23:10 +0100
+Message-Id: <20191121162322.671035-1-thomas.petazzoni@bootlin.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20191120214353.27652-1-ynezz@true.cz>
- <20191120214353.27652-6-ynezz@true.cz>
- <CAJQUmm6==KXt9qfaMQ720ZKud=drFQuSKv+eBDqt-9COjG4ysQ@mail.gmail.com>
- <20191121061735.GH52387@meh.true.cz>
-In-Reply-To: <20191121061735.GH52387@meh.true.cz>
-From: Michael Jones <mike@meshplusplus.com>
-Date: Thu, 21 Nov 2019 02:02:39 -0600
-Message-ID: <CAJQUmm6KiqcF2JEtoHkMmfdXEmO=euvzQKTZkXLQNxPOVyQOUA@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191121_000202_986823_3E940076 
-X-CRM114-Status: UNSURE (   7.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191121_082338_134418_4EA2A071 
+X-CRM114-Status: GOOD (  20.60  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12c listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.195 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH v2 libubox 05/10] add assert.h component
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: [OpenWrt-Devel] [PATCH v2 00/12] dm-verity support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,94 +61,166 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============8567427365342104882=="
+Cc: Hauke Mehrtens <hauke@hauke-m.de>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8567427365342104882==
-Content-Type: multipart/alternative; boundary="000000000000539ea60597d6b649"
+Hello,
 
---000000000000539ea60597d6b649
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+This is the second iteration of my patch series adding support for
+dm-verity in OpenWRT. See below for some introduction about the
+purpose of this series.
 
-On Thu, Nov 21, 2019 at 12:17 AM Petr =C5=A0tetiar <ynezz@true.cz> wrote:
+Changes since v1
+================
 
-> Michael Jones <mike@meshplusplus.com> [2019-11-20 18:12:14]:
->
-> > You may need #include_next, to avoid recursion.
->
-> Is this some theoretical experience? Or you can provide me with some buil=
-d
-> breakage? Just wondering, because #include should work this out with "" a=
-nd
-> <>.
->
-> BTW I would rather rename that include file to assert_internal.h, then
-> using
-> include_next. Anyway, as this builds fine on gcc 4.8,6,7,8,9 and with
-> clang-7,8,9,10 I would say, that it should be fine as it is.
->
-> -- ynezz
->
+- Rebase the patch series on the latest master.
 
-My experience with this was with MSVC in 2015 or so, and a heavily patched
-version of STLPort.
+- Make sure all patches have @bootlin.com as author, and not some
+  stale @free-electrons.com
 
-It's not obvious to me that you would encounter the same problem with GCC /
-Clang.
+- Switch to using the upstream kernel patches to set up a DM target at
+  boot time using the kernel command line, rather than patches that
+  were submitted years ago and not merged.
 
-I'm personally instantly averse to possible recursion issues because of how
-tricky they can be to debug, but if no one is concerned about it, it's not
-really an issue.
+- Make sure kernel patches are provided for both 4.14 and 4.19
 
---000000000000539ea60597d6b649
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+- Drop the SOURCE_DATE_EPOCH usage when creating the mksquashfs image.
 
-<div dir=3D"ltr"><div dir=3D"ltr"></div><br><div class=3D"gmail_quote"><div=
- dir=3D"ltr" class=3D"gmail_attr">On Thu, Nov 21, 2019 at 12:17 AM Petr =C5=
-=A0tetiar &lt;<a href=3D"mailto:ynezz@true.cz">ynezz@true.cz</a>&gt; wrote:=
-<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8=
-ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">Michael Jones &=
-lt;<a href=3D"mailto:mike@meshplusplus.com" target=3D"_blank">mike@meshplus=
-plus.com</a>&gt; [2019-11-20 18:12:14]:<br>
-<br>
-&gt; You may need #include_next, to avoid recursion.<br>
-<br>
-Is this some theoretical experience? Or you can provide me with some build<=
-br>
-breakage? Just wondering, because #include should work this out with &quot;=
-&quot; and<br>
-&lt;&gt;.<br>
-<br>
-BTW I would rather rename that include file to assert_internal.h, then usin=
-g<br>
-include_next. Anyway, as this builds fine on gcc 4.8,6,7,8,9 and with<br>
-clang-7,8,9,10 I would say, that it should be fine as it is.<br>
-<br>
--- ynezz<br></blockquote><div><br></div>My experience with this was with MS=
-VC in 2015 or so, and a heavily patched version of STLPort.<div><br></div><=
-div>It&#39;s not obvious to me that you would encounter the same problem wi=
-th GCC / Clang.</div><div><br></div><div>I&#39;m personally instantly avers=
-e to possible recursion issues because of how tricky they can be to debug, =
-but if no one is concerned about it, it&#39;s not really=C2=A0an issue.</di=
-v><div><br></div><div>=C2=A0</div></div></div>
+- Format the cryptsetup patch properly.
 
---000000000000539ea60597d6b649--
+- Only build the host tools if CONFIG_TARGET_ROOTFS_SQUASHFS_HASHED is
+  enabled
 
+- Instead of unconditionally enabling the necessary kernel options for
+  dm-verity support, we now add the appropriate options to
+  config/Config-kernel.in, and select them only when needed.
 
---===============8567427365342104882==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+- Drop empty Host/Configure rule in tools/libaio/Makefile
+
+Introduction
+============
+
+dm-verity is a Linux kernel Device Mapper target that verifies that
+the data in a block device has not been tampered with, by checking it
+at runtime against a hash tree, itself verified by a root hash, which
+is passed from a trusted source. dm-verity only supports read
+operations, so we only support the read-only squashfs root filesystem
+in this series.
+
+This "hash tree" is a bunch of metadata that needs to be stored on
+non-volatile storage. It can be appended to the filesystem data, or
+stored on a separate block device/partition. We have chosen to support
+only the case where it is appended to the filesystem data.
+
+In the proposed series:
+
+ - Patches 1-5 introduce new host packages. The first four are simply
+   dependencies needed for cryptsetup, which is the tool used to
+   generate the hash tree at build time.
+
+ - Patch 6 extends the mkits.sh script so that a U-Boot script can be
+   embedded in a FIT image. Indeed, to set up a dm-verity device at
+   boot time, you need to pass a lot of details to the kernel that
+   describe the dm-verity device, including the root hash. Those
+   details need to be trusted: having them as part of the FIT image
+   allows to leverage the signing capabilities of FIT images.
+
+ - Patch 7 extends config/Config-kernel.in to be able to enable the
+   appropriate kernel options for dm-verity support.
+
+ - Patch 8 allows to create a FIT image with an embedded U-Boot
+   script, leveraging the feature added in patch 6.
+
+ - Patch 9 adds the code itself that generates the dm-verity capable
+   squashfs image, and a script that produces the U-Boot script with
+   the various parameters needed to setup the DM device at boot time.
+
+ - Patch 10 adds two kernel patches that allow setting up a DM device
+   at boot time, which have been backported from the upstream kernel,
+   while patch 10 updates the kernel configuration to enable the
+   appropriate option for dm-verity.
+
+ - Patches 11 and 12 are just related to enabling this mechanism on
+   Armada XP GP, which is the platform I used to work on this topic.
+
+This work was tested on Armada XP GP, with both MMC and NAND storage.
+
+One aspect that is not solved by this patch series is the logic in the
+fstools programs to set up the overlay at boot time. Indeed, when
+there is a squashfs filesystem, fstools assumes that it can use the
+space after the squashfs filesystem for its overlay (in the MMC
+storage case). It is not the case with dm-verity, because we have the
+hash tree after the squashfs filesystem. This is something I intend to
+work on.
+
+Thomas Petazzoni
+
+Thomas Petazzoni (12):
+  tools/libaio: new package
+  tools/lvm2: new package
+  tools/popt: new package
+  tools/libjson-c: new package
+  tools/cryptsetup: new package
+  scripts/mkits.sh: extend with -s option to include a U-Boot script
+  config/Config-kernel.in: add options to enable dm-verity related
+    kernel features
+  include/image-commands.mk: extend Build/fit for U-Boot script
+    integration
+  include/image.mk: add support for building a dm-verity enabled
+    squashfs image
+  target/linux/generic: backport patches adding DM_INIT functionality
+  target/linux/mvebu: enable UBI factory image on Armada XP GP
+  target/linux/mvebu: generate a FIT image on Armada XP GP with
+    dm-verity
+
+ config/Config-images.in                       |   8 +
+ config/Config-kernel.in                       |  15 +
+ include/image-commands.mk                     |   1 +
+ include/image.mk                              |  17 +-
+ scripts/mkits.sh                              |  22 +-
+ scripts/prepare-dm-verity-uboot-script.sh     |  41 ++
+ ...-to-directly-boot-to-a-mapped-device.patch | 668 ++++++++++++++++++
+ ...-init-fix-max-devices-targets-checks.patch |  48 ++
+ ...hang-in-early-create-error-condition.patch |  49 ++
+ ...ion-dm-init-fix-multi-device-example.patch |  45 ++
+ ...-to-directly-boot-to-a-mapped-device.patch | 668 ++++++++++++++++++
+ ...-init-fix-max-devices-targets-checks.patch |  48 ++
+ ...hang-in-early-create-error-condition.patch |  49 ++
+ ...ion-dm-init-fix-multi-device-example.patch |  45 ++
+ target/linux/mvebu/image/cortex-a9.mk         |  15 +
+ tools/Makefile                                |   3 +
+ tools/cryptsetup/Makefile                     |  28 +
+ .../patches/0001-dont-use-c89.patch           |  11 +
+ tools/libaio/Makefile                         |  30 +
+ tools/libjson-c/Makefile                      |  25 +
+ tools/lvm2/Makefile                           |  47 ++
+ tools/popt/Makefile                           |  22 +
+ 22 files changed, 1900 insertions(+), 5 deletions(-)
+ create mode 100755 scripts/prepare-dm-verity-uboot-script.sh
+ create mode 100644 target/linux/generic/backport-4.14/390-dm-add-support-to-directly-boot-to-a-mapped-device.patch
+ create mode 100644 target/linux/generic/backport-4.14/391-dm-init-fix-max-devices-targets-checks.patch
+ create mode 100644 target/linux/generic/backport-4.14/392-dm-ioctl-fix-hang-in-early-create-error-condition.patch
+ create mode 100644 target/linux/generic/backport-4.14/393-Documentation-dm-init-fix-multi-device-example.patch
+ create mode 100644 target/linux/generic/backport-4.19/400-dm-add-support-to-directly-boot-to-a-mapped-device.patch
+ create mode 100644 target/linux/generic/backport-4.19/401-dm-init-fix-max-devices-targets-checks.patch
+ create mode 100644 target/linux/generic/backport-4.19/402-dm-ioctl-fix-hang-in-early-create-error-condition.patch
+ create mode 100644 target/linux/generic/backport-4.19/403-Documentation-dm-init-fix-multi-device-example.patch
+ create mode 100644 tools/cryptsetup/Makefile
+ create mode 100644 tools/cryptsetup/patches/0001-dont-use-c89.patch
+ create mode 100644 tools/libaio/Makefile
+ create mode 100644 tools/libjson-c/Makefile
+ create mode 100644 tools/lvm2/Makefile
+ create mode 100644 tools/popt/Makefile
+
+-- 
+2.23.0
+
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8567427365342104882==--
-

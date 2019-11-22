@@ -2,414 +2,199 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A75010696D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 11:00:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B68C7107204
+	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 13:14:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mcX0oNmffsi0UC757WbqvEvpUesFc2HUftHHHnms6Ao=; b=PjEsFeDfRHUcx4
-	tGGzbpquefF3Kz+OtzWZr2D9tvrqXuhix/thRTvgbpSiro+c0TuVA4uaNcJyb+TH8ctS27GzZNmct
-	udbi6zpX2JNylTqWypMoyCWVqs7sz/FmMjf/DhDS/q4LtopC0uRWuDwsMyhE4XVZZMbwLqg9hJxzp
-	a3LR2a1Rx6WX9gdc7EvjLqJaBLBQ5/IclJS7FnzhR2MFYlcwmFGkIN0wzgaLnJER83pfoJp/2utlo
-	tqj6QTYgVB8ICWtj4gKzV1QPtdFRQnEQ1Ux/OtjRXfxgjfIq3RGfdis88ojjH+Q6idP0YRkqpTYZr
-	QH26fDG3ydLW+TLHbUHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
+	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OlrxmdeEDm+cjTI3vnUpVV/axwdvEx9FQVk0cI2wCg0=; b=N5W
+	Alikv4aDSWGKwAheAy543XRJjBOJObO9oQ1X0o5zzuNl39tMAkzedFDIGLeYAvZT220Cbi4xXjCKG
+	FiqBvTwTZRNLqkA92fDb/u9oClDeYfcUYmXhusVEw8GxopzUaBqG7HExEKg5LdCoVP2CHX1h+O0yI
+	eYeUaQixwd3kHp3x1Xb0BwjYs8nEEb1MAMizsdJqJAMak2/ZLw5wTKboqzRfQWBUDa4pkGKF4QY1p
+	3AkEAyE9u8v6uP5CWV/z9JRvuBKS/fbsEk0miDczCqHx+sIfY+IpuzBi9zHFdihpyz8jb6rk6IX95
+	Uoct+a4cDzv3y1owRw9IMSFEv1kSA3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY5jw-0004Ts-Sx; Fri, 22 Nov 2019 10:00:36 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5gH-0007dk-IJ
- for openwrt-devel@bombadil.infradead.org; Fri, 22 Nov 2019 09:56:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ws1DQPFZD5N8JuZmVDesw4puDshhDKrYk4br/IPEtDU=; b=LVBetTrCc/8ue1Gzo+b3BplqyU
- CQ0jRa8SWKRivK282XqavYM0ut3lBkxkgvUjbk7A4L6ScDzOO/k/wiW+WrY40dx4teRdy2iX1eWZv
- TrRIUsxYcdx967iLyI/RdQ8oFU6nGBXiSe1aPC/SdztIiOumX3fnM7dwUlLXBXHxtQZON7OAe1/LH
- vjeEpVDhSNCfhPw5FROsApAkXV3DyUubuhpqfBYkHhzub4tcHSCTcdy1oJ/HQNoOK3HLlzM5uBfV8
- rMhZWvEcM9XaaULjR5vvDz3rPx1WT/PJrZ0x62yoLiO5YaVAYnRF0nwVxwHYVQBRUPl1Xg7LjB9ZG
- lP9g2NFw==;
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5gn-00044Z-AB
- for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 09:57:24 +0000
-X-Originating-IP: 90.76.211.102
-Received: from localhost (lfbn-1-2154-102.w90-76.abo.wanadoo.fr
- [90.76.211.102]) (Authenticated sender: thomas.petazzoni@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 98D671BF203;
- Fri, 22 Nov 2019 09:56:03 +0000 (UTC)
-From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+	id 1iY7pD-00026Q-Hr; Fri, 22 Nov 2019 12:14:11 +0000
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 22 Nov 2019 10:55:56 +0100
-Message-Id: <20191122095556.688191-12-thomas.petazzoni@bootlin.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191122095556.688191-1-thomas.petazzoni@bootlin.com>
-References: <20191122095556.688191-1-thomas.petazzoni@bootlin.com>
+Date: Fri, 22 Nov 2019 12:12:46 +0000
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_095721_440347_81B9CE86 
-X-CRM114-Status: GOOD (  22.27  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.7 points, 5.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.201 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH packages 11/11] utils/selinux-python: new
- package
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.13433.1574424844.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Kyle Copperfield via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Kyle Copperfield <kmcopper@danwin1210.me>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: [OpenWrt-Devel] [PATCH RESEND packages 1/2] openssh: add openwrt
+ failsafe support
+Content-Type: multipart/mixed; boundary="===============8053400720857068784=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+--===============8053400720857068784==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============8053400720857068784==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from danwin1210.me ([2a01:4f8:c010:d56::1])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1iY7p4-00025l-4N
+	for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 12:14:03 +0000
+Received: from localhost (unknown [10.8.3.3])
+	by danwin1210.me (Postfix) with ESMTPA id 4F7CB1F40E
+	for <openwrt-devel@lists.openwrt.org>; Fri, 22 Nov 2019 12:13:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=danwin1210.me;
+	s=mail; t=1574424828;
+	bh=LolxzHelnPAxmFHWcvzDNx/wTJqNu7jhPKy2VpE2fnE=;
+	h=From:To:Subject:Date:From;
+	b=cuRqyfzc3zZ7tXRR9J6ld/fHaWBEI5oRRBrgWXu30AvqAhyOEsxkYYw5gLiy7Tm95
+	 sULV6WckDZ0GvZtnMmTkkLrT/7IfprW0ZxXND6a/cF3sAgUNoamPQ8JIWr6mw/ApP8
+	 KcJDRpAZWoUy6DDjmUgh2Oah8KjJrTjBWvyph+rCL6P50uGygS49rimUNyOVdL2XGj
+	 AgQYji4+KaFQ5elCKXr/vq1q+pah9ADEE8CSb7pyJJjKLVtqUurkKhw6HQ/Th4is2C
+	 H80W976wLd420BLkj9dr2K3VoSkYzoHgGx9jwlj3rYnO/nIyCwjR1bCi1yqAdLeT0L
+	 nElDVT+1K37jTbgVCum0jwBbJqxWfAyQDG8VrZGE5GulONibp5jRueib4A6Pc38Cni
+	 noO+TZ4qx4F0o6UnypIOKUPTSiDTzUFMOBjADQxfjAre5fUQeRDOKp+pEHy2GyC9BU
+	 WrjswJqqbaeN5SMPEfDQMKDsZ0G78hPdol+KLaXlz9pmTvpNM3hRJF2BJdstteVOoj
+	 crcWXmBFHhunntNELUKomN/0NuaeL1xU39khCsTILEII3MY6dUz/HQuELOsNkLN+NR
+	 WcBI+trGDpZLmLlAW3jn7nsOhXR6UmscCnla9FtJmIeVUYzpj/RFFresT7DejSAJ9d
+	 AGgRBtLecesiyIi8EWBJWHj0=
+Received: from danwin1210.me (localhost [127.0.0.1])
+	by localhost (Postfix) with ESMTP id 17E8A104892
+	for <openwrt-devel@lists.openwrt.org>; Fri, 22 Nov 2019 12:13:48 +0000 (UTC)
+From: Kyle Copperfield <kmcopper@danwin1210.me>
+X-OPENPGPKEY: Message passed unmodified
+To: openwrt-devel@lists.openwrt.org
+Subject: [PATCH RESEND packages 1/2] openssh: add openwrt failsafe support
+Date: Fri, 22 Nov 2019 12:12:46 +0000
+Message-Id: <20191122121247.58881-1-kmcopper@danwin1210.me>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-Virus-Scanned: clamav-milter 0.101.4 at proxy
+X-Virus-Status: Clean
+X-Spam-Status: No, score=0.0 required=2.0 tests=none autolearn=ham
+	autolearn_force=no version=3.4.3-rc6
+X-Spam-Checker-Version: SpamAssassin 3.4.3-rc6 (2019-11-09) on proxy
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191122_041402_491547_655D5150 
+X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+                             medium trust
+                             [2a01:4f8:c010:d56:0:0:0:1 listed in]
+                             [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+
+Adds failsafe support to the openssh package.
+Roughly based on an earlier patch.
+
+Ref: https://github.com/openwrt/openwrt/pull/865
+Signed-off-by: Jeff Kletsky <git-commits@allycomm.com>
+Signed-off-by: Kyle Copperfield <kmcopper@danwin1210.me>
 ---
- utils/selinux-python/Makefile                 | 155 ++++++++++++++++++
- .../0001-sepolgen-adjust-data_dir.patch       |  26 +++
- ...hardcode-search-for-ausearch-in-sbin.patch |  38 +++++
- .../0003-Don-t-force-using-python3.patch      |  67 ++++++++
- 4 files changed, 286 insertions(+)
- create mode 100644 utils/selinux-python/Makefile
- create mode 100644 utils/selinux-python/patches/0001-sepolgen-adjust-data_dir.patch
- create mode 100644 utils/selinux-python/patches/0002-sepolgen-don-t-hardcode-search-for-ausearch-in-sbin.patch
- create mode 100644 utils/selinux-python/patches/0003-Don-t-force-using-python3.patch
+ net/openssh/Makefile            |  1 +
+ net/openssh/files/sshd.failsafe | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 32 insertions(+)
+ create mode 100755 net/openssh/files/sshd.failsafe
 
-diff --git a/utils/selinux-python/Makefile b/utils/selinux-python/Makefile
-new file mode 100644
-index 000000000..4fd0376b6
+diff --git a/net/openssh/Makefile b/net/openssh/Makefile
+index 97b7fc304..3273180af 100644
+--- a/net/openssh/Makefile
++++ b/net/openssh/Makefile
+@@ -231,6 +231,7 @@ define Package/openssh-server/install
+ 	sed -r -i 's,^#(HostKey /etc/ssh/ssh_host_(rsa|ecdsa|ed25519)_key)$$$$,\1,' $(1)/etc/ssh/sshd_config
+ 	$(INSTALL_DIR) $(1)/etc/init.d
+ 	$(INSTALL_BIN) ./files/sshd.init $(1)/etc/init.d/sshd
++	$(INSTALL_BIN) ./files/sshd.failsafe $(1)/lib/preinit/99_10_failsafe_sshd
+ 	$(INSTALL_DIR) $(1)/usr/sbin
+ 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/sshd $(1)/usr/sbin/
+ endef
+diff --git a/net/openssh/files/sshd.failsafe b/net/openssh/files/sshd.failsafe
+new file mode 100755
+index 000000000..aee7e7743
 --- /dev/null
-+++ b/utils/selinux-python/Makefile
-@@ -0,0 +1,155 @@
-+#
-+# This is free software, licensed under the GNU General Public License v2.
-+# See /LICENSE for more information.
-+#
++++ b/net/openssh/files/sshd.failsafe
+@@ -0,0 +1,31 @@
++#!/bin/sh
 +
-+include $(TOPDIR)/rules.mk
++failsafe_sshd () {
 +
-+PKG_NAME:=selinux-python
-+PKG_VERSION:=2.9
-+PKG_RELEASE:=1
++	sshd_tmpdir=/tmp/sshd
++	mkdir ${sshd_tmpdir}
 +
-+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-+PKG_SOURCE_URL:=https://github.com/SELinuxProject/selinux/releases/download/20190315
-+PKG_HASH:=3650b5393b0d1790cac66db00e34f059aa91c23cfe3c2559676594e295d75fde
-+PKG_BUILD_DEPENDS:=PACKAGE_selinux-audit2allow:libsepol
++	sed -i 's/^root.*/root::0:17000:::::/g' /etc/shadow
 +
-+PKG_MAINTAINER:=Thomas Petazzoni <thomas.petazzoni@bootlin.com>
++	for type in ecdsa ed25519; do
++		key=${sshd_tmpdir}/ssh_host_${type}_key
++		ssh-keygen -N '' -t ${type} -f ${key}
++	done
 +
-+include $(INCLUDE_DIR)/package.mk
-+include ../../lang/python/python-package.mk
++	mkdir -m 0700 -p /var/empty
 +
-+#
-+# common definitions
-+#
++	cat > ${sshd_tmpdir}/sshd_config <<EOF
 +
-+define Package/selinux-python/Default
-+  SECTION:=utils
-+  DEPENDS:=+python +python-libselinux
-+  CATEGORY:=Utilities
-+  URL:=http://selinuxproject.org/page/Main_Page
-+endef
++HostKey ${sshd_tmpdir}/ssh_host_ecdsa_key
++HostKey ${sshd_tmpdir}/ssh_host_ed25519_key
 +
-+define Package/selinux-python/Default/description
-+	A set of SELinux tools written in python that help with
-+	managing a system with SELinux enabled.
-+endef
++PermitRootLogin	yes
++PermitEmptyPasswords yes
 +
-+MAKE_VARS = \
-+	PYTHON=$(HOST_PYTHON_BIN) \
-+	PYTHONLIBDIR=$(PYTHON_PKG_DIR)
++EOF
 +
-+define Build/Compile
-+	$(call Build/Compile/Default,all)
-+endef
++	/usr/sbin/sshd -f ${sshd_tmpdir}/sshd_config -E ${sshd_tmpdir}/sshd.log
 +
-+#
-+# selinux-audit2allow
-+#
++}
 +
-+define Package/selinux-audit2allow
-+$(call Package/selinux-python/Default)
-+  TITLE:=selinux-audit2allow
-+  DEPENDS:=+python-sepolgen +libsepol
-+endef
-+
-+define Package/selinux-audit2allow/description
-+$(call Package/selinux-python/Default/description)
-+  This package contains the audit2allow and audit2why tools.
-+endef
-+
-+define Package/selinux-audit2allow/install
-+	$(MAKE_VARS) $(MAKE) -C $(PKG_BUILD_DIR)/audit2allow DESTDIR=$(1) install
-+	rm -rf $(1)/usr/share/man
-+endef
-+
-+#
-+# selinux-chchat
-+#
-+
-+define Package/selinux-chcat
-+$(call Package/selinux-python/Default)
-+  TITLE:=selinux-chcat
-+endef
-+
-+define Package/selinux-chcat/description
-+$(call Package/selinux-python/Default/description)
-+  This package contains the chcat tool.
-+endef
-+
-+define Package/selinux-chcat/install
-+	$(MAKE_VARS) $(MAKE) -C $(PKG_BUILD_DIR)/chcat DESTDIR=$(1) install
-+	rm -rf $(1)/usr/share
-+endef
-+
-+#
-+# selinux-semanage
-+#
-+
-+define Package/selinux-semanage
-+$(call Package/selinux-python/Default)
-+  TITLE:=selinux-semanage
-+  DEPENDS:=+python-sepolicy
-+endef
-+
-+define Package/selinux-semanage/description
-+$(call Package/selinux-python/Default/description)
-+  This package contains the semanage tool.
-+endef
-+
-+define Package/selinux-semanage/install
-+	$(MAKE_VARS) $(MAKE) -C $(PKG_BUILD_DIR)/semanage DESTDIR=$(1) install
-+	rm -rf $(1)/usr/share
-+endef
-+
-+#
-+# python-sepolgen
-+#
-+
-+define Package/python-sepolgen
-+$(call Package/selinux-python/Default)
-+  SUBMENU:=Python
-+  SECTION:=lang
-+  CATEGORY:=Languages
-+  TITLE:=python-sepolgen
-+endef
-+
-+define Package/python-sepolgen/description
-+$(call Package/selinux-python/Default/description)
-+  This package contains the sepolgen Python library.
-+endef
-+
-+define Package/python-sepolgen/install
-+	$(MAKE_VARS) $(MAKE) -C $(PKG_BUILD_DIR)/sepolgen DESTDIR=$(1) install
-+	$(INSTALL_DIR) $(1)/usr/share/sepolgen/
-+	$(INSTALL_DATA) $(1)/var/lib/sepolgen/perm_map $(1)/usr/share/sepolgen/perm_map
-+	$(RM) -rf $(1)/var
-+endef
-+
-+#
-+# python-sepolicy
-+#
-+
-+define Package/python-sepolicy
-+$(call Package/selinux-python/Default)
-+  SUBMENU:=Python
-+  SECTION:=lang
-+  CATEGORY:=Languages
-+  TITLE:=python-sepolicy
-+endef
-+
-+define Package/python-sepolicy/description
-+$(call Package/selinux-python/Default/description)
-+  This package contains the sepolicy Python library.
-+endef
-+
-+define Package/python-sepolicy/install
-+	$(MAKE_VARS) $(MAKE) -C $(PKG_BUILD_DIR)/sepolicy DESTDIR=$(1) install
-+	rm -rf $(1)/usr/share
-+endef
-+
-+$(eval $(call BuildPackage,selinux-audit2allow))
-+$(eval $(call BuildPackage,selinux-chcat))
-+$(eval $(call BuildPackage,selinux-semanage))
-+$(eval $(call BuildPackage,python-sepolgen))
-+$(eval $(call BuildPackage,python-sepolicy))
-diff --git a/utils/selinux-python/patches/0001-sepolgen-adjust-data_dir.patch b/utils/selinux-python/patches/0001-sepolgen-adjust-data_dir.patch
-new file mode 100644
-index 000000000..5b5426007
---- /dev/null
-+++ b/utils/selinux-python/patches/0001-sepolgen-adjust-data_dir.patch
-@@ -0,0 +1,26 @@
-+From 4dfa91b1377b6dc57e66443ea1a08c6d79a3a6e2 Mon Sep 17 00:00:00 2001
-+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-+Date: Wed, 2 Oct 2019 12:04:24 +0200
-+Subject: [PATCH] sepolgen: adjust data_dir()
-+
-+Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-+---
-+ sepolgen/src/sepolgen/defaults.py | 2 +-
-+ 1 file changed, 1 insertion(+), 1 deletion(-)
-+
-+diff --git a/sepolgen/src/sepolgen/defaults.py b/sepolgen/src/sepolgen/defaults.py
-+index 6e800695..a61d1efd 100644
-+--- a/sepolgen/src/sepolgen/defaults.py
-++++ b/sepolgen/src/sepolgen/defaults.py
-+@@ -57,7 +57,7 @@ Various default settings, including file and directory locations.
-+ """
-+ 
-+ def data_dir():
-+-    return "/var/lib/sepolgen"
-++    return "/usr/share/sepolgen"
-+ 
-+ def perm_map():
-+     return data_dir() + "/perm_map"
-+-- 
-+2.21.0
-+
-diff --git a/utils/selinux-python/patches/0002-sepolgen-don-t-hardcode-search-for-ausearch-in-sbin.patch b/utils/selinux-python/patches/0002-sepolgen-don-t-hardcode-search-for-ausearch-in-sbin.patch
-new file mode 100644
-index 000000000..0ebc3e593
---- /dev/null
-+++ b/utils/selinux-python/patches/0002-sepolgen-don-t-hardcode-search-for-ausearch-in-sbin.patch
-@@ -0,0 +1,38 @@
-+From a8a7f8fb5cfe95f28cd5f7ff4b4679ca122fe410 Mon Sep 17 00:00:00 2001
-+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-+Date: Wed, 2 Oct 2019 13:38:18 +0200
-+Subject: [PATCH] sepolgen: don't hardcode search for ausearch in /sbin
-+
-+ausearch may be installed in another location, just rely on PATH to
-+find ausearch.
-+
-+Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-+---
-+ sepolgen/src/sepolgen/audit.py | 4 ++--
-+ 1 file changed, 2 insertions(+), 2 deletions(-)
-+
-+diff --git a/sepolgen/src/sepolgen/audit.py b/sepolgen/src/sepolgen/audit.py
-+index 4adb851f..5eafa587 100644
-+--- a/sepolgen/src/sepolgen/audit.py
-++++ b/sepolgen/src/sepolgen/audit.py
-+@@ -41,7 +41,7 @@ def get_audit_boot_msgs():
-+     s = time.localtime(time.time() - off)
-+     bootdate = time.strftime("%x", s)
-+     boottime = time.strftime("%X", s)
-+-    output = subprocess.Popen(["/sbin/ausearch", "-m", "AVC,USER_AVC,MAC_POLICY_LOAD,DAEMON_START,SELINUX_ERR", "-ts", bootdate, boottime],
-++    output = subprocess.Popen(["ausearch", "-m", "AVC,USER_AVC,MAC_POLICY_LOAD,DAEMON_START,SELINUX_ERR", "-ts", bootdate, boottime],
-+                               stdout=subprocess.PIPE).communicate()[0]
-+     if util.PY3:
-+         output = util.decode_input(output)
-+@@ -56,7 +56,7 @@ def get_audit_msgs():
-+        string contain all of the audit messages returned by ausearch.
-+     """
-+     import subprocess
-+-    output = subprocess.Popen(["/sbin/ausearch", "-m", "AVC,USER_AVC,MAC_POLICY_LOAD,DAEMON_START,SELINUX_ERR"],
-++    output = subprocess.Popen(["ausearch", "-m", "AVC,USER_AVC,MAC_POLICY_LOAD,DAEMON_START,SELINUX_ERR"],
-+                               stdout=subprocess.PIPE).communicate()[0]
-+     if util.PY3:
-+         output = util.decode_input(output)
-+-- 
-+2.21.0
-+
-diff --git a/utils/selinux-python/patches/0003-Don-t-force-using-python3.patch b/utils/selinux-python/patches/0003-Don-t-force-using-python3.patch
-new file mode 100644
-index 000000000..c0746d026
---- /dev/null
-+++ b/utils/selinux-python/patches/0003-Don-t-force-using-python3.patch
-@@ -0,0 +1,67 @@
-+From 193e708d53517802040742e63041716e1f89a039 Mon Sep 17 00:00:00 2001
-+From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-+Date: Wed, 2 Oct 2019 13:40:20 +0200
-+Subject: [PATCH] Don't force using python3
-+
-+Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-+---
-+ audit2allow/audit2allow    | 2 +-
-+ audit2allow/sepolgen-ifgen | 2 +-
-+ chcat/chcat                | 2 +-
-+ semanage/semanage          | 2 +-
-+ sepolicy/sepolicy.py       | 2 +-
-+ 5 files changed, 5 insertions(+), 5 deletions(-)
-+
-+diff --git a/audit2allow/audit2allow b/audit2allow/audit2allow
-+index 09b06f66..81f610ad 100644
-+--- a/audit2allow/audit2allow
-++++ b/audit2allow/audit2allow
-+@@ -1,4 +1,4 @@
-+-#!/usr/bin/python3 -Es
-++#!/usr/bin/python -Es
-+ # Authors: Karl MacMillan <kmacmillan@mentalrootkit.com>
-+ # Authors: Dan Walsh <dwalsh@redhat.com>
-+ #
-+diff --git a/audit2allow/sepolgen-ifgen b/audit2allow/sepolgen-ifgen
-+index be2d093b..99700ea9 100644
-+--- a/audit2allow/sepolgen-ifgen
-++++ b/audit2allow/sepolgen-ifgen
-+@@ -1,4 +1,4 @@
-+-#!/usr/bin/python3 -Es
-++#!/usr/bin/python -Es
-+ #
-+ # Authors: Karl MacMillan <kmacmillan@mentalrootkit.com>
-+ #
-+diff --git a/chcat/chcat b/chcat/chcat
-+index ba398684..63e91635 100755
-+--- a/chcat/chcat
-++++ b/chcat/chcat
-+@@ -1,4 +1,4 @@
-+-#!/usr/bin/python3 -Es
-++#!/usr/bin/python -Es
-+ # Copyright (C) 2005 Red Hat
-+ # see file 'COPYING' for use and warranty information
-+ #
-+diff --git a/semanage/semanage b/semanage/semanage
-+index 144cc000..552ace6a 100644
-+--- a/semanage/semanage
-++++ b/semanage/semanage
-+@@ -1,4 +1,4 @@
-+-#!/usr/bin/python3 -Es
-++#!/usr/bin/python -Es
-+ # Copyright (C) 2012-2013 Red Hat
-+ # AUTHOR: Miroslav Grepl <mgrepl@redhat.com>
-+ # AUTHOR: David Quigley <selinux@davequigley.com>
-+diff --git a/sepolicy/sepolicy.py b/sepolicy/sepolicy.py
-+index 1934cd86..af606857 100755
-+--- a/sepolicy/sepolicy.py
-++++ b/sepolicy/sepolicy.py
-+@@ -1,4 +1,4 @@
-+-#!/usr/bin/python3 -Es
-++#!/usr/bin/python -Es
-+ # Copyright (C) 2012 Red Hat
-+ # AUTHOR: Dan Walsh <dwalsh@redhat.com>
-+ # see file 'COPYING' for use and warranty information
-+-- 
-+2.21.0
-+
++boot_hook_add failsafe failsafe_sshd
 -- 
-2.23.0
+2.24.0
 
+
+
+--===============8053400720857068784==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8053400720857068784==--

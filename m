@@ -2,44 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F763106967
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 10:59:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B3F5106969
+	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 10:59:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cA3wcSDO7e0bOVDOhAlfelhY7YFzRbNhdnWAJ1qAc+4=; b=jorWCRBu4PvBmH
-	C9a9RYjMUZIcWEw63zf3WmUcrvna0hBtSbxLTitEIJORqtYWfPHAsIeJBCpN9YanuVH+vHMg4rLMP
-	clIBXcppqsOfMXFXt0jbUeiaKRh3TchfwP1lW5+QYnWJ3y/B2VNoqcWF9xVBkBJBr8GuiU4OZrL+u
-	63K/puPJP11kiyWbebawsauExRcRng9QAoP7qJ0R/37DpHHe9laH1hbmAznofjCc6eoqBCpBLkFXh
-	qwqXBtaZATZa5lqwmYz65u0bc867Xig/GhMrttGl4QFK9DJyPXtFmESjNFindn94tJjmCadQWGLdg
-	ieXdU64B13m8uEfo1ZJA==;
+	List-Owner; bh=zmukPDYm7z+RzfuFgOV0mZXCX7jAlB9/ftJ4cHw3NxI=; b=uSrWLjKCojwiK6
+	skHujUxZpojgCsKFgar0S0wA+jtluIifK6ZgNz6Bv9gG6M5o5xt/+tb/BMtEDGhOaZrgBL4Lb8KRC
+	QfJldRIQj7W6/ssSalIzT6yG4tGOiBLPA4qujvMlxmOj/ZnBtHkwfD4dGGRc13Dg7wzjICEZvwrDI
+	TDeNYtF8N7dRvMjK0dyn29Z6ZA3CibhBV0R9Rg3JelcKH9gqJVVx1BaGxBg/y0YWA8aY0pKUEvxgw
+	eNFVu+6LW1yXVnTzObfna20WkhXDtrz9LVDHQNfI7XOtgDPpOWseEuw3YJ5JKb89JkJyULhtVVLkL
+	j1liK4/9e8YQzhrFjwSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY5iq-0002C5-Dc; Fri, 22 Nov 2019 09:59:28 +0000
+	id 1iY5j7-0002RV-0b; Fri, 22 Nov 2019 09:59:45 +0000
 Received: from relay3-d.mail.gandi.net ([217.70.183.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5fd-0006rg-N5
- for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 09:56:15 +0000
+ id 1iY5fe-0006se-6u
+ for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 09:56:14 +0000
 X-Originating-IP: 90.76.211.102
 Received: from localhost (lfbn-1-2154-102.w90-76.abo.wanadoo.fr
  [90.76.211.102]) (Authenticated sender: thomas.petazzoni@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 7289760011;
- Fri, 22 Nov 2019 09:56:01 +0000 (UTC)
+ by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 7FA046001C;
+ Fri, 22 Nov 2019 09:56:02 +0000 (UTC)
 From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 22 Nov 2019 10:55:52 +0100
-Message-Id: <20191122095556.688191-8-thomas.petazzoni@bootlin.com>
+Date: Fri, 22 Nov 2019 10:55:54 +0100
+Message-Id: <20191122095556.688191-10-thomas.petazzoni@bootlin.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191122095556.688191-1-thomas.petazzoni@bootlin.com>
 References: <20191122095556.688191-1-thomas.petazzoni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_015609_935266_B6337B2E 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191122_015610_557469_524D7129 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -52,8 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: [OpenWrt-Devel] [PATCH packages 07/11] utils/policycoreutils: new
- package
+Subject: [OpenWrt-Devel] [PATCH packages 09/11] admin/refpolicy: new package
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,16 +71,18 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 ---
- utils/policycoreutils/Makefile | 60 ++++++++++++++++++++++++++++++++++
- 1 file changed, 60 insertions(+)
- create mode 100644 utils/policycoreutils/Makefile
+ admin/refpolicy/Makefile             | 78 ++++++++++++++++++++++++++++
+ admin/refpolicy/files/selinux-config |  7 +++
+ 2 files changed, 85 insertions(+)
+ create mode 100644 admin/refpolicy/Makefile
+ create mode 100644 admin/refpolicy/files/selinux-config
 
-diff --git a/utils/policycoreutils/Makefile b/utils/policycoreutils/Makefile
+diff --git a/admin/refpolicy/Makefile b/admin/refpolicy/Makefile
 new file mode 100644
-index 000000000..ce3f68692
+index 000000000..fcf13cedf
 --- /dev/null
-+++ b/utils/policycoreutils/Makefile
-@@ -0,0 +1,60 @@
++++ b/admin/refpolicy/Makefile
+@@ -0,0 +1,78 @@
 +#
 +# This is free software, licensed under the GNU General Public License v2.
 +# See /LICENSE for more information.
@@ -90,59 +90,90 @@ index 000000000..ce3f68692
 +
 +include $(TOPDIR)/rules.mk
 +
-+PKG_NAME:=policycoreutils
-+PKG_VERSION:=2.9
++PKG_NAME:=refpolicy
++PKG_VERSION:=2.20190201
 +PKG_RELEASE:=1
 +
-+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-+PKG_SOURCE_URL:=https://github.com/SELinuxProject/selinux/releases/download/20190315
-+PKG_HASH:=c53c344f28007b3c0742bd958751e9b5d2385898adeb8aec6281ae57342f0f7b
++PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
++PKG_SOURCE_URL:=https://github.com/SELinuxProject/refpolicy/releases/download/RELEASE_2_20190201
++PKG_HASH:=ed620dc91c4e09eee6271b373f7c61a364a82ea57bd2dc86ca1f7075304e2843
 +PKG_INSTALL:=1
-+HOST_BUILD_DEPENDS:=libsemanage/host
++PKG_BUILD_DEPENDS:=checkpolicy/host policycoreutils/host
 +
 +PKG_MAINTAINER:=Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 +
++TAR_OPTIONS:=--transform='s%^refpolicy%$(PKG_NAME)-$(PKG_VERSION)%' -xf -
++
 +include $(INCLUDE_DIR)/package.mk
 +
-+define Package/policycoreutils
-+  SECTION:=utils
-+  CATEGORY:=Utilities
-+  DEPENDS:= +libsemanage +libcap-ng
-+  TITLE:=SELinux policy utilities
++define Package/refpolicy
++  SECTION:=admin
++  CATEGORY:=Administration
++  TITLE:=SELinux reference policy
 +  URL:=http://selinuxproject.org/page/Main_Page
++  DEPENDS:=+@TARGET_ROOTFS_NEEDS_XATTR
 +endef
 +
-+define Package/policycoreutils/description
-+	Policycoreutils is a collection of policy utilities
-+	(originally the "core" set of utilities needed to use
-+	SELinux, although it has grown a bit over time), which have
-+	different dependencies.  sestatus, secon, run_init, and
-+	newrole only use libselinux. load_policy and setfiles only
-+	use libselinux and libsepol. semodule and semanage use
-+	libsemanage (and thus bring in dependencies on libsepol and
-+	libselinux as well). setsebool uses libselinux to make
-+	non-persistent boolean changes (via the kernel interface)
-+	and uses libsemanage to make persistent boolean changes.
++define Package/refpolicy/description
++	The SELinux Reference Policy project (refpolicy) is a
++	complete SELinux policy that can be used as the system
++	policy for a variety of systems and used as the basis for
++	creating other policies. Reference Policy was originally
++	based on the NSA example policy, but aims to accomplish many
++	additional goals.
++
++	The current refpolicy does not fully support OpenWRT and
++	needs modifications to work with the default system file
++	layout. These changes should be added as patches to the
++	refpolicy that modify a single SELinux policy.
++
++	The refpolicy works for the most part in permissive
++	mode. Only the basic set of utilities are enabled in the
++	example policy config and some of the pathing in the
++	policies is not correct.  Individual policies would need to
++	be tweaked to get everything functioning properly.
 +endef
 +
-+include $(INCLUDE_DIR)/host-build.mk
++# Yes, we want CC=$(HOSTCC) because the only code that checkpolicy
++# builds is a small host tool that gets run as part of the build
++# process.
++MAKE_FLAGS += \
++	TEST_TOOLCHAIN=$(STAGING_DIR_HOSTPKG) \
++	BINDIR=/bin \
++	SBINDIR=/sbin \
++	CC=$(HOSTCC) \
++	CFLAGS=$(HOST_CFLAGS)
 +
-+HOST_MAKE_FLAGS += \
-+	PREFIX=$(STAGING_DIR_HOSTPKG) \
-+	SBINDIR=$(STAGING_DIR_HOSTPKG)/sbin \
-+	ETCDIR=$(STAGING_DIR_HOSTPKG)/etc
-+
-+define Package/policycoreutils/install
-+	$(INSTALL_DIR) $(1)/usr/bin
-+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/
-+	$(INSTALL_DIR) $(1)/usr/sbin
-+	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/* $(1)/usr/sbin/
-+	$(INSTALL_DIR) $(1)/sbin
-+	$(CP) $(PKG_INSTALL_DIR)/sbin/* $(1)/sbin/
++define Build/Configure
++	$(SED) "/MONOLITHIC/c\MONOLITHIC = y" $(PKG_BUILD_DIR)/build.conf
++	$(SED) "/NAME/c\NAME = targeted" $(PKG_BUILD_DIR)/build.conf
++	$(call Build/Compile/Default,conf)
 +endef
 +
-+$(eval $(call HostBuild))
-+$(eval $(call BuildPackage,policycoreutils))
++define Package/refpolicy/conffiles
++/etc/selinux/config
++endef
++
++define Package/refpolicy/install
++	$(INSTALL_DIR) $(1)/etc/selinux
++	$(CP) $(PKG_INSTALL_DIR)/etc/selinux/* $(1)/etc/selinux/
++	$(CP) ./files/selinux-config $(1)/etc/selinux/config
++endef
++
++$(eval $(call BuildPackage,refpolicy))
+diff --git a/admin/refpolicy/files/selinux-config b/admin/refpolicy/files/selinux-config
+new file mode 100644
+index 000000000..2ae174d29
+--- /dev/null
++++ b/admin/refpolicy/files/selinux-config
+@@ -0,0 +1,7 @@
++# This file controls the state of SELinux on the system.
++# SELINUX= can take one of these three values:
++#     enforcing - SELinux security policy is enforced.
++#     permissive - SELinux prints warnings instead of enforcing.
++#     disabled - No SELinux policy is loaded.
++SELINUX=permissive
++SELINUXTYPE=targeted
 -- 
 2.23.0
 

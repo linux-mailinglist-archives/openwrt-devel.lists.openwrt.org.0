@@ -2,51 +2,54 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9557106956
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 10:56:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9E8D106960
+	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 10:58:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KPkG4zXmS/dWkh373L6H7UjWVByPwSvqC7KqhMGIF3Y=; b=GQCjJIxyqDV++K
-	VcGlPMToJT9+aBaEcQiBh4rkwXsC39zO1yHYLlyqkhecsJou/Sw90s5l0isN/a9h9y6ZfWEtd1iJk
-	PzlbBBfjJ3fbnEi/nfAVipEduULM5q+meSahBi0iQDN/pBFQoGh0GOtYvmA3IvRyMkkElNSyKhLi8
-	Oga9eTbLqolB/xgfiF6ZEpltoiUD1D5+IEZ+KoXGeYm8oXz/uY+GVgBDnVIxinMARPb5FcTbKuIDg
-	OA7zz6Z+0L3ZgrwOvB9aQYZp+q3UYl5ggPgcMkxKE5ckTxMs1m4H6uWWhbBlDyami3DuftiUU7Jf6
-	Dh1GvWysqMDwT322Wtcg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=byZWD/AHKnugdTyxe8ILUiXtPxKIglHu9f8dtHZFsAM=; b=K+DZs4SlsirSVG
+	40cKSSvr4yythqotysTQt3pbKbio89+NWVow/nS8OpNGXz12PsO0Jfp218eB9evd1yzTvlUImRMUp
+	jdXl77NWNVkO2HtrzrE3Xfw8W7IW/R6uQIEEF+SUfw6IbNyZNdeGPWDU8TeZG7IjiY91z8076ZdyC
+	Kwf+3/oEsnSl4FXbjTp7EEEHMOQOkRU1TWlcMb2aG6H+xAPrndmd5FF8GqnBpm3X/ChIzlrPzBN8C
+	SeXDxJLk4kWht99ytN8+pDg2JZFr8ffMVrQZZsAH+mGmvjzPou6NWlI7MXmtnTs2M0d1uMV0NfU9m
+	OuzfztXYelng4aXW8+bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY5fb-0006gs-HI; Fri, 22 Nov 2019 09:56:07 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
+	id 1iY5hY-0000b9-GR; Fri, 22 Nov 2019 09:58:08 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY5fN-0006fm-JJ
- for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 09:55:55 +0000
-X-Originating-IP: 90.76.211.102
+ id 1iY5fR-0006ft-Aa
+ for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 09:56:01 +0000
 Received: from localhost (lfbn-1-2154-102.w90-76.abo.wanadoo.fr
  [90.76.211.102]) (Authenticated sender: thomas.petazzoni@bootlin.com)
- by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id E444B40009;
- Fri, 22 Nov 2019 09:55:45 +0000 (UTC)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 6FAD0100005;
+ Fri, 22 Nov 2019 09:55:46 +0000 (UTC)
 From: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 22 Nov 2019 10:55:34 +0100
-Message-Id: <20191122095541.688125-1-thomas.petazzoni@bootlin.com>
+Date: Fri, 22 Nov 2019 10:55:35 +0100
+Message-Id: <20191122095541.688125-2-thomas.petazzoni@bootlin.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191122095541.688125-1-thomas.petazzoni@bootlin.com>
+References: <20191122095541.688125-1-thomas.petazzoni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_015553_912789_680A3BD6 
-X-CRM114-Status: GOOD (  16.28  )
+X-CRM114-CacheID: sfid-20191122_015557_539494_250E99E0 
+X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.194 listed in list.dnswl.org]
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH 0/7] SELinux support: core OpenWrt changes
+Subject: [OpenWrt-Devel] [PATCH 1/7] package/utils/busybox: add optional
+ selinux support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,110 +67,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
+Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+---
+ package/utils/busybox/Makefile | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-This patch series is one part of the changes needed to bring minimal
-SELinux support to OpenWrt. SELinux is a mandatory access control
-Linux security module, which I assume most if not all OpenWrt users
-are already familiar with. The work presented in these patch series
-presents a minimal integration, in the sense that it allows to:
-
- (1) Build all the important SELinux components, both on the build
-     system (for example to compile a SELinux policy) and on the
-     target system (libselinux, policy management tools, etc.)
-
- (2) Set the SELinux security contexts on the files in the filesystem
-     image generated by OpenWrt.
-
- (3) Compile the SELinux policy on the build machine, and integrate
-     the compiled SELinux policy in the target filesystem.
-
- (4) Load at boot time the SELinux policy and enable it.
-
-The provided SELinux policy is the default SELinux policy from the
-upstream project: it has not been tuned specifically for OpenWrt.
-
-There are two patch series for this work:
-
- - One for OpenWrt itself (this patch series)
-
- - One for the OpenWrt packages feed
-
-OpenWrt changes
-===============
-
-This patch series brings the following changes:
-
- - Allow to build Busybox with SELinux support, mainly to get -Z
-   option support in several commands. This requires linking against
-   libselinux, which is provided in the packages feeds as part of the
-   second patch series.
-
- - Addition of minimal SELinux support in procd, to load the SELinux
-   policy at boot time. The patch has been submitted separately to
-   procd, and is being discussed.
-
- - Addition of the fakeroot tool, which we need when generating the
-   filesystem image to run the SELinux command "setfiles" that sets
-   the appropriate security context for the files in the
-   filesystem. It obviously requires root access, which is why it is
-   executed under fakeroot.
-
- - Addition of support for generating a SquashFS image with the
-   SELinux security contexts defined. It could be extended to other
-   filesystem formats of course.
-
- - Add some logic to be able to enable SquashFS extended attribute
-   support in the kernel configuration, as well as SELinux support.
-
- - Enable extended attribute support in mksquashfs.
-
-OpenWrt packages feed changes
-=============================
-
-This patch series brings new packages for the different user-space
-components of SELinux and their dependencies:
-
- - libsepol
- - libselinux, including its Python bindings
- - audit
- - libcap-ng
- - libsemanage
- - policycoreutils
- - checkpolicy
- - refpolicy
- - selinux-python
-
-These are pretty regular packages.
-
-I'm looking forward to the feedback of the OpenWrt community on this
-proposal.
-
-Best regards,
-
-Thomas Petazzoni
-
-Thomas Petazzoni (7):
-  package/utils/busybox: add optional selinux support
-  package/system/procd: add SELinux support
-  tools/fakeroot: new tool
-  include/image.mk: implement SELinux squashfs image generation
-  config/Config-kernel.in: add option to enable squashfs xattr support
-  config/Config-kernel.in: add various options needed for SELinux
-  tools/squashfs4: enable xattr support
-
- config/Config-kernel.in                       |  15 +++
- include/image.mk                              |  15 ++-
- package/system/procd/Makefile                 |   5 +-
- ...inimal-SELinux-policy-loading-suppor.patch | 110 ++++++++++++++++++
- package/utils/busybox/Makefile                |   7 +-
- tools/Makefile                                |   2 +-
- tools/fakeroot/Makefile                       |  20 ++++
- tools/squashfskit4/Makefile                   |   2 +-
- 8 files changed, 169 insertions(+), 7 deletions(-)
- create mode 100644 package/system/procd/patches/0001-initd-init-add-minimal-SELinux-policy-loading-suppor.patch
- create mode 100644 tools/fakeroot/Makefile
-
+diff --git a/package/utils/busybox/Makefile b/package/utils/busybox/Makefile
+index c0f3007e5d..bad4598525 100644
+--- a/package/utils/busybox/Makefile
++++ b/package/utils/busybox/Makefile
+@@ -17,7 +17,7 @@ PKG_SOURCE_URL:=https://www.busybox.net/downloads \
+ 		http://sources.buildroot.net
+ PKG_HASH:=d0f940a72f648943c1f2211e0e3117387c31d765137d92bd8284a3fb9752a998
+ 
+-PKG_BUILD_DEPENDS:=BUSYBOX_CONFIG_PAM:libpam
++PKG_BUILD_DEPENDS:=BUSYBOX_CONFIG_PAM:libpam BUSYBOX_CONFIG_SELINUX:libselinux
+ PKG_BUILD_PARALLEL:=1
+ PKG_CHECK_FORMAT_SECURITY:=0
+ 
+@@ -45,7 +45,7 @@ define Package/busybox
+   MAINTAINER:=Felix Fietkau <nbd@nbd.name>
+   TITLE:=Core utilities for embedded Linux
+   URL:=http://busybox.net/
+-  DEPENDS:=+BUSYBOX_CONFIG_PAM:libpam +BUSYBOX_CONFIG_NTPD:jsonfilter
++  DEPENDS:=+BUSYBOX_CONFIG_PAM:libpam +BUSYBOX_CONFIG_NTPD:jsonfilter +BUSYBOX_CONFIG_SELINUX:libselinux
+   MENU:=1
+ endef
+ 
+@@ -76,6 +76,9 @@ LDLIBS += $(call BUSYBOX_IF_ENABLED,PAM,pam pam_misc pthread)
+ ifeq ($(CONFIG_USE_GLIBC),y)
+   LDLIBS += $(call BUSYBOX_IF_ENABLED,NSLOOKUP_OPENWRT,resolv)
+ endif
++ifeq ($(CONFIG_BUSYBOX_CONFIG_SELINUX),y)
++  LDLIBS += selinux sepol
++endif
+ 
+ TARGET_CFLAGS += -flto
+ TARGET_LDFLAGS += -flto=jobserver -fuse-linker-plugin
 -- 
 2.23.0
 

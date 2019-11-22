@@ -2,59 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7FEC107259
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 13:45:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF239107394
+	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 14:46:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3F8fnHROLXCDo7Q3DdklUWdoilZujq59b+ADYK+v5Dc=; b=mO/V2kdnMvigI1
-	I8MsJBT3i7K7PSDpX+TZNSRcQiiz6wnPTSATvX4EpN4WddsmOaxzxeDLXj2gnX6IBEzI7VpxgmbHG
-	DvKGqgbF/DP99MmSOZQc+BjyqLKFz7XxIp6Yagj7JDH3oPgtooXGBb3n50V4RgQ5gDX2QPnfQFkZo
-	wSlWjB3HHB30HlApxeaXqwPseEv76xKMInWiAdNs9B+WCIAgq67KhAdcxQPwn6D0QYs1lTmvgPn+g
-	30HL8T/CeEUnOguLKyqvUEG5di4NJLfIcAtwaicftOwnFi6SP4bYt+Bj4wL2RCXjC97SaU9FlrtA9
-	awvizSR4aUMvuyCqzN5w==;
+	List-Owner; bh=PJHcLUfF3UmsDxCeRais3AkDfx1Q6kUAr4Eb9Y7XHfU=; b=GlrKe3epLPvfbV
+	zLKZ9d/QrZEuMQCnSLfTppK8VefI/WUTC6HxCFCZFvlIz3ITjct8PtZh4+MOO/aQdNRktGRhtJXy5
+	9pKh+DnQhjCfNOeiI5k7XRlE6KUTbTo/UK2igUa3j0QGaTQxxygMhby8B6FzU1JIbHRsGG7IsbI0a
+	Gk+/OR/n6O8os7LSPmd8R5A5l0/cWkatWJgd0/OmmZU7kmJoXH1I6xYwrLU5d4rym2kZ5p9UpQL/k
+	52VnkqbNQLzS/N0pToqcabhER3yLuNzTR+yqrc2AQXY06FRQxfGhUsB+qWYnEJ2bJqfbMj7B96Qch
+	4vkQaVQr0/IF6KwED1lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY8Je-0006TM-Hw; Fri, 22 Nov 2019 12:45:38 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iY9Gm-0007Vk-2o; Fri, 22 Nov 2019 13:46:44 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY8JT-0006Rg-42
- for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 12:45:32 +0000
+ id 1iY9Gd-0007VF-K2
+ for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 13:46:37 +0000
 Received: from buildfff.adridolf.com ([188.193.231.72]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1ML9ds-1iFuwB2vQY-00ICBe for <openwrt-devel@lists.openwrt.org>; Fri, 22
- Nov 2019 13:45:17 +0100
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1N4Q8u-1hoFo613zS-011R55 for <openwrt-devel@lists.openwrt.org>; Fri, 22
+ Nov 2019 14:46:32 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 22 Nov 2019 13:44:32 +0100
-Message-Id: <20191122124432.42844-1-freifunk@adrianschmutzler.de>
+Date: Fri, 22 Nov 2019 14:45:49 +0100
+Message-Id: <20191122134549.43222-1-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:hAy7fPzwj6ran4a81uuixlgkmOdFNeffdXRSK6FVttLN1Oouz/B
- RlCQO2d/uUEZ0RXx6snsmo49XaHbWFzOvh8WK+y23AkH+p7S+ZZwWgTb0iqCLv3WoNrOxE9
- YNxOxiF8s5Yqj1Z3P2qCFd5UlatUsHSAgFhu5EKmBSd6Oskzom+XCi2ulde6DpqKmmnUVV+
- wBU1ruS+2aKi7NQVZXOKg==
+X-Provags-ID: V03:K1:02gPnkRt3L9BnAy9SzwATaJY1jImRvcs4MOLM1wUZwGz8ljpGU5
+ +xLDgBhzcJdRLPRB03ler67/jrEwgnDZLrCDb7V9aGpOWyad8wnMMZ+6ATuqfvIPa1/cUxl
+ Pd7hQpxlGoWoon/OgglXKT/8gYSDDSMeH8wtUBjBYSJyeBoSKJYgTmUd3Lkmgr2+4jmuZw4
+ pD/WewKlY2yo5DfErriMg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:v+LaeGSfdDE=:vn3VCsMkpqpACIVNAYQ7+K
- n84GY0Fq3NWlXxZLF8rAQ+baDHN6jz7jtTVBpXPi0+FShBiSDoCjMqHPPYZWNTrsfBVfp5I+T
- MmeoQn6P2oTL00nRcTMv8KgXvfqdxC792X/3zj5lhNJ3RMAuEBRj/kE3uo347Gu1UUk7shV8f
- 2NPRmfWVAt7H2BORNAbSSktpAaF8iYHtmxXlywDxSmG2uGS9HYr/w+8JTmc+Su+xKsknxeNKb
- wLXVjsPur6862+uAkJGFt19p8sTFYbB3lwZvMoK0LxeMEYOTfvVpEZB6dPjqEL971MsprKxGN
- tl4VGKA6b3gi4ViDbJRGOLMoParcXlrsMFMbwcT8rGGcZA69t/DngkJUja4FaJQGbLpTa+Oz4
- ha+6gmVtUsZMYZTQwg/jIF20ihYmnwZ1NhECFOCwD2fpqSncvs0pQPuXQ8ME3LcS2OV9Kug/Z
- 4wCkyuUF/H+xDb4WDfyP6jC5QzbrG9JOLSAM/i70P1SmcTS4klls5Mhi8z6oS52Zs3EAIE42Y
- 1yi2A5Q3CayZ0Pe6cmmJ82X5ulmqzvWhAMOJ/NtBRgsELm4u6mRB2RaMB5nfs/STsfAm8iuLJ
- Kf+jfqxO055Shv12wkS1aH/MYN0DtZYVOrgIeBTC8PtqTL1/ZYlR1TtVnl5h1FfKKBwCA2Ko5
- hnR32Ja4P3DeH6D71/qkVeyGxbVv2sDujxyW+KNVCjDjx2SAaxBfVJ/4dtbiNToY3rIV7Jbqy
- cPPJzwfm9+CxUrG3Vq26WsuLVfoxXB/yYWsnnZRXDhGaqntXB8cLeBa5U9hUd/JVgSiD7vKKp
- qrKGO/zF5xitwxQherl2+FxH3uwmAuKeiSzC9vBwRT6bdy1HEohAtfJAaXwulasbYf0idWmX8
- ReZ2NC06WqM/J7FoMumDeP5tdjzeP3Oc8hS/eIGWw=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:NrJL4zrLsII=:874xiZ835fKiosGINSiums
+ 3XgsmiCci+QE06nBTGMrItDxpygUoFAxNFUgNqfl0Vbib2CwCdlWgQdQokgRFdokkhoqxSS2f
+ eVzroLCFXi0UwUe8eXItrn7liLUGpy9e0pHUYHkbf8yl7Bk7fN1uQn0Q6qtrhu5kEeTRP1eZM
+ Qg/ViZnl+qLbdRc8xA1os9VeXqgXMuZd2dQDvU+n1Ce6yzi7NTf6z6B63GwPoeABJQ9veGKnl
+ GkTWB+7w9m3tdsspMC6MlSt0cMCBnNy1FK2Nwg3uZkBkcXaxZmicwi1z+fLxQ5R9BpUj3OfPo
+ efp+o7rsmBGCkxlGAk7WvW2A9ifnjmgGg1Xny6TKQzxkz8boVcK4qAf6UbY55Zr8j8/mTzYVb
+ VSYX/4TwSQZWxYz6gk0Eskb9noYT6vu0t4hPJXF2jV0WwFGV9WBFXQ3hMNwhBM9wuNFyBPssI
+ k0994UL68M1sXiXZU9Qg3hgULIF8N7S75VvuWSZH4wW1laeyVFbnflnkAsB/bu9PjPc1jvMd2
+ 24oPQYtgT7dDCQQcQnbs0QSW94Apfm3hygSNUWIIUFsgcOHeJ46aZP0umYgdKxvU5cZIPev/y
+ PhYwlEHqWvvrzVv+YqcbPMsCrCkCGJ8SIqjVCX+ggZp2uVrt17HzG/8nUnIXp/Ua6Fhljmyew
+ F2+54Fp/BScGKwq1ifbE6c7F3r1lLO083KrBDUnx74K7QSlwYIzq0+sCcXPQ6JssGYjX7s78v
+ dhEWsc2yTjmIkljVAxa7lrdaLwfWLhkb+FDSR/CkJJiLHugKf+zhBnbQ21LuSLDR9dThVFO5g
+ DmquhXsT5VVB2pO4BICZqMnNsQQEpj03uvng9WesCRP4tw2x0ijiU/aSW95F4mv2g+UHA2yT0
+ 3Nsq4pFnrC2kxqqX46NuEq0dCqwfXo0L7ldlRxa7U=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_044527_452114_408AD4E5 
-X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-CacheID: sfid-20191122_054635_953158_870B7405 
+X-CRM114-Status: UNSURE (   9.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,11 +62,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ath79: fix source of label MAC address for
- Ubiquiti XM devices
+Subject: [OpenWrt-Devel] [PATCH] ath79: rename EEPROM to art
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,87 +82,254 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-In d421a8b94489 ("ath79: read label MAC address from flash instead
-of using phy0/phy1") the source of the label MAC address was changed
-for devices just reading it from phy0. To get rid of the dependency
-from phy startup, addresses were read directly from the flash
-locations that are used to initialize the phy MAC addresses.
-
-Unfortunately, it turned out that Ubiquiti XM devices seem to have
-different flash locations than expected, and also seem to have
-specific locations for different devices (all in art/EEPROM):
-
-0xe012 AR9280 Nanostation M2 - 0x120c
-0xe035 AR9280 Nanostation M3 - 0x120c
-0xe1b2 AR9280 Rocket M2 - 0x120c
-0xe1c3 AR9280 Rocket M3 - 0x120c
-0xe1b5 AR9280 Rocket M5 - 0x120c
-0xe2d5 AR9280 Bullet M2 Titanium - 0x120c
-0xe2b5 AR9280 Nanobridge M5 - 0x120c
-0xe202 AR9280 Bullet M2 - 0x120c
-0xe232 AR9287 Nanobridge M2 - 0x110c
-0xe4a2 AR9285 AirRouter - 0xa0bf
-Picostation M2 - 0x120c and 0xa0bf
-Nanostation Loco M2 - not in 0x120c, other locations not checked
-
-An additional problem of the Ubiquiti device support in OpenWrt is
-that we provide images that match several subvariants of the devices,
-which might have different MAC address locations.
-
-Given that reading the address from phy0 in 02_network _is_ working
-for the ath79 target in general, it does not seem reasonable to
-rebuild a complex MAC address retrieval mechanism which is already
-present in the ath9k driver.
-
-So, this patch reverts the label MAC address source for Ubiquiti XM
-devices (and the Unifi AP) to /sys/class/ieee80211/phy0/macaddress.
-
-This doesn't affect XW and Unifi AC devices, where the label MAC
-address source is defined via device tree.
-
-For alfa-network,ap121f the location 0x1002 is kept, as this has
-been verified during device support preparation in PR #2199.
-
-Fixes: d421a8b94489 ("ath79: read label MAC address from flash
-instead of using phy0/phy1")
+This renames all remaining occurrences of "EEPROM" to "art" to
+further harmonize the partition labelling in ath79.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- .../generic/base-files/etc/board.d/02_network      | 14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
+ .../linux/ath79/dts/ar9342_ubnt_lap-120.dts   |  2 +-
+ .../ath79/dts/ar9342_ubnt_nanobeam-ac.dts     |  2 +-
+ .../dts/ar9342_ubnt_nanostation-ac-loco.dts   |  2 +-
+ .../ath79/dts/ar9342_ubnt_nanostation-ac.dts  |  4 ++--
+ target/linux/ath79/dts/ar9342_ubnt_wa.dtsi    |  6 +++---
+ target/linux/ath79/dts/ar9342_ubnt_xw.dtsi    |  8 ++++----
+ .../linux/ath79/dts/qca9533_ubnt_acb-isp.dts  | 10 +++++-----
+ .../ath79/dts/qca9563_ubnt_unifiac-lite.dtsi  |  2 +-
+ .../ath79/dts/qca9563_ubnt_unifiac-pro.dtsi   |  2 +-
+ .../linux/ath79/dts/qca9563_ubnt_unifiac.dtsi |  6 +++---
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  | 20 +++++++++----------
+ 11 files changed, 31 insertions(+), 33 deletions(-)
 
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index 07f3c4e83c..be6df558a6 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -282,12 +282,7 @@ ath79_setup_macs()
- 		lan_mac=$(mtd_get_mac_binary "Board data" 2)
- 		label_mac=$lan_mac
+diff --git a/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts b/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts
+index 82f864b8e3..757654eaee 100644
+--- a/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts
++++ b/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts
+@@ -26,7 +26,7 @@
+ 	/* default for ar934x, except for 1000M and 10M */
+ 	pll-data = <0x06000000 0x00000101 0x00001313>;
+ 
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 
+ 	phy-mode = "rgmii";
+ 	phy-handle = <&phy4>;
+diff --git a/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts b/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts
+index 6e64c7faad..30d054dfed 100644
+--- a/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts
++++ b/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts
+@@ -51,7 +51,7 @@
+ 	/* default for ar934x, except for 1000M and 10M */
+ 	pll-data = <0x06000000 0x00000101 0x00001313>;
+ 
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 
+ 	phy-mode = "rgmii";
+ 	phy-handle = <&phy4>;
+diff --git a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts
+index 9b26d1a628..89904721c0 100644
+--- a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts
++++ b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts
+@@ -27,7 +27,7 @@
+ 	/* default for ar934x, except for 1000M and 10M */
+ 	pll-data = <0x06000000 0x00000101 0x00001313>;
+ 
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 
+ 	phy-mode = "rgmii";
+ 	phy-handle = <&phy4>;
+diff --git a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts
+index b591925154..97597e5f15 100644
+--- a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts
++++ b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts
+@@ -58,7 +58,7 @@
+ 	/* default for ar934x, except for 1000M and 10M */
+ 	pll-data = <0x06000000 0x00000101 0x00001313>;
+ 
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 
+ 	phy-mode = "rgmii";
+ 	phy-handle = <&phy0>;
+@@ -73,5 +73,5 @@
+ &wmac {
+ 	status = "okay";
+ 
+-	mtd-cal-data = <&eeprom 0x1000>;
++	mtd-cal-data = <&art 0x1000>;
+ };
+diff --git a/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi b/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi
+index 30fa299638..2847d4098c 100644
+--- a/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi
++++ b/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi
+@@ -75,8 +75,8 @@
+ 				read-only;
+ 			};
+ 
+-			eeprom: partition@ff0000 {
+-				label = "EEPROM";
++			art: partition@ff0000 {
++				label = "art";
+ 				reg = <0xff0000 0x010000>;
+ 				read-only;
+ 			};
+@@ -88,5 +88,5 @@
+ 	status = "okay";
+ 
+ 	qca,disable-5ghz;
+-	mtd-cal-data = <&eeprom 0x1000>;
++	mtd-cal-data = <&art 0x1000>;
+ };
+diff --git a/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi b/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi
+index ee42498af1..cf24aba5aa 100644
+--- a/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi
++++ b/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi
+@@ -103,8 +103,8 @@
+ 				read-only;
+ 			};
+ 
+-			eeprom: partition@7f0000 {
+-				label = "EEPROM";
++			art: partition@7f0000 {
++				label = "art";
+ 				reg = <0x7f0000 0x010000>;
+ 				read-only;
+ 			};
+@@ -115,9 +115,9 @@
+ &wmac {
+ 	status = "okay";
+ 
+-	mtd-cal-data = <&eeprom 0x1000>;
++	mtd-cal-data = <&art 0x1000>;
+ };
+ 
+ &eth0 {
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ };
+diff --git a/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts b/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts
+index 629899e1a2..ded95f3a18 100644
+--- a/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts
++++ b/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts
+@@ -64,8 +64,8 @@
+ 				read-only;
+ 			};
+ 
+-			eeprom: partition@ff0000 {
+-				label = "EEPROM";
++			art: partition@ff0000 {
++				label = "art";
+ 				reg = <0xff0000 0x010000>;
+ 				read-only;
+ 			};
+@@ -79,13 +79,13 @@
+ 
+ &eth0 {
+ 	status = "okay";
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 	phy-handle = <&swphy4>;
+ };
+ 
+ &eth1 {
+ 	status = "okay";
+-	mtd-mac-address = <&eeprom 0x6>;
++	mtd-mac-address = <&art 0x6>;
+ 
+ 	gmac-config {
+ 		device = <&gmac>;
+@@ -94,5 +94,5 @@
+ 
+ &wmac {
+ 	status = "okay";
+-	mtd-cal-data = <&eeprom 0x1000>;
++	mtd-cal-data = <&art 0x1000>;
+ };
+diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi
+index 4f77661fbd..8248e060c5 100644
+--- a/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi
++++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi
+@@ -21,6 +21,6 @@
+ &eth0 {
+ 	status = "okay";
+ 
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 	phy-handle = <&phy4>;
+ };
+diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi b/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi
+index 3a6c0cd3fa..5a0cf4bade 100644
+--- a/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi
++++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi
+@@ -25,6 +25,6 @@
+ &eth0 {
+ 	status = "okay";
+ 
+-	mtd-mac-address = <&eeprom 0x0>;
++	mtd-mac-address = <&art 0x0>;
+ 	phy-handle = <&phy0>;
+ };
+diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi b/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi
+index bb20caba47..bfad3ff306 100644
+--- a/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi
++++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi
+@@ -104,8 +104,8 @@
+ 				read-only;
+ 			};
+ 
+-			eeprom: partition@ff0000 {
+-				label = "EEPROM";
++			art: partition@ff0000 {
++				label = "art";
+ 				reg = <0xff0000 0x010000>;
+ 				read-only;
+ 			};
+@@ -116,5 +116,5 @@
+ &wmac {
+ 	status = "okay";
+ 
+-	mtd-cal-data = <&eeprom 0x1000>;
++	mtd-cal-data = <&art 0x1000>;
+ };
+diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index f128e8759f..258efc3bf4 100644
+--- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -12,6 +12,15 @@ case "$FIRMWARE" in
+ 	case $board in
+ 	comfast,cf-wr650ac-v1|\
+ 	comfast,cf-wr650ac-v2|\
++	ubnt,unifiac-lite|\
++	ubnt,unifiac-lr|\
++	ubnt,unifiac-mesh|\
++	ubnt,unifiac-mesh-pro|\
++	ubnt,lap-120|\
++	ubnt,nanobeam-ac|\
++	ubnt,nanostation-ac|\
++	ubnt,nanostation-ac-loco|\
++	ubnt,unifiac-pro|\
+ 	yuncore,a770)
+ 		caldata_extract "art" 0x5000 0x844
  		;;
--	alfa-network,ap121f|\
--	ubnt,airrouter|\
--	ubnt,bullet-m|\
--	ubnt,nanostation-m|\
--	ubnt,rocket-m|\
--	ubnt,unifi)
-+	alfa-network,ap121f)
- 		label_mac=$(mtd_get_mac_binary art 0x1002)
+@@ -101,17 +110,6 @@ case "$FIRMWARE" in
+ 		caldata_extract "art" 0x5000 0x844
+ 		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_binary info 0x8) +1)
  		;;
- 	avm,fritz300e)
-@@ -392,6 +387,13 @@ ath79_setup_macs()
- 		wan_mac=$(mtd_get_mac_text mac 0x18)
- 		label_mac=$wan_mac
- 		;;
-+	ubnt,airrouter|\
-+	ubnt,bullet-m|\
-+	ubnt,nanostation-m|\
-+	ubnt,rocket-m|\
-+	ubnt,unifi)
-+		label_mac=$(cat /sys/class/ieee80211/phy0/macaddress)
-+		;;
- 	ubnt,routerstation|\
- 	ubnt,routerstation-pro)
- 		wan_mac=$(fconfig -s -r -d $(find_mtd_part "RedBoot config") -n ar7100_esa)
+-	ubnt,unifiac-lite|\
+-	ubnt,unifiac-lr|\
+-	ubnt,unifiac-mesh|\
+-	ubnt,unifiac-mesh-pro|\
+-	ubnt,lap-120|\
+-	ubnt,nanobeam-ac|\
+-	ubnt,nanostation-ac|\
+-	ubnt,nanostation-ac-loco|\
+-	ubnt,unifiac-pro)
+-		caldata_extract "EEPROM" 0x5000 0x844
+-		;;
+ 	esac
+ 	;;
+ "ath10k/pre-cal-pci-0000:00:00.0.bin")
 -- 
 2.20.1
 

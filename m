@@ -2,88 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98BF4107A61
-	for <lists+openwrt-devel@lfdr.de>; Fri, 22 Nov 2019 23:08:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62D4A107B19
+	for <lists+openwrt-devel@lfdr.de>; Sat, 23 Nov 2019 00:09:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aQVjFBsj6hrT/twI6PNci9rCgJml5mnxbOfD1CPncWc=; b=n8aZ06fjYt1wOChP3lopOqnjq
-	Yy5yDJFNMYemjarTF4ygI1p9A24L5Uv2W6ckkDoGFRLkPy2misBJ6MyCC3wNoG9F8GcRPuKroeCYW
-	SlU7V4foPxa9x2H1wfNkSUfwDOcUsuVbAvIZTGF14NPaMilh3B3Nu1J+w0QDfId8tlqtfjl2kdjyP
-	bFUBXzUX0FELaWbTvgQZ7UhpLduEOmjrox7nJ7CRn30xNiN6t9viLSnUqfpXRsuWR6Qc8TPTRYC1O
-	B0mDCwLho1gZAFUmbCuNdmMgy9xQdCuxcJtLy/BTQI3N4T77cYCh+u10EZOmunZ1pxLL5nhkLCPR1
-	SKX4HvtgQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5qrNsnzO0/otvApywkZX8SArcQ4QrK1xPYrhANcUIXs=; b=lZw3LUdUAXZZUC
+	T3xKdFFu47+8UEIFEglx52RN7vjpfgD572HeRuG/cX3NbR4WleS8Q6hAntjRtp+GoJQXYWCI9osYX
+	qlvMvhpleH7W+X5mEooY7YVeukLO5fOP3kwFieXszcVomVqCT8w8OmhdezcO9m5M2++DqHogS5M4R
+	QqL5+HBHxBePTw2NdwsZt1v9jZ/YxqlLgy0mgVztxh4maj2uiE+LbIVaE+M13ewA7cH7AFaT9ixbC
+	CCVy2irEwDZkZFu5RuvlVlIFeXC+fPpGxrOcJm8EqkgZEmrlhCiR6SDnxK94Y5uO0MeWNH9BCCO20
+	gE/ofhg9g7Ircbu3KQgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYH6J-000073-Ph; Fri, 22 Nov 2019 22:08:27 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1iYI37-0003Ez-MT; Fri, 22 Nov 2019 23:09:13 +0000
+Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iYH69-00006Y-IF
- for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 22:08:21 +0000
-Received: by mail-lj1-x244.google.com with SMTP id n21so8993263ljg.12
- for <openwrt-devel@lists.openwrt.org>; Fri, 22 Nov 2019 14:08:16 -0800 (PST)
+ id 1iYI30-0003ES-EN
+ for openwrt-devel@lists.openwrt.org; Fri, 22 Nov 2019 23:09:07 +0000
+Received: by mail-pl1-x62b.google.com with SMTP id w7so3712958plz.12
+ for <openwrt-devel@lists.openwrt.org>; Fri, 22 Nov 2019 15:09:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=un9c/VwwRsyst2EE5o8XbxB0+pqT7x1WCIY5ekR/vEY=;
- b=lJ4ZuJbf/gTp1FJCpwckOYec5Ze7xIFhyuQxml+mRxcq85T608q5yqdsewp8k+++Ft
- m7kvVlydmTHiN/WODCUXglETNha8koY81miCYq9UxnQfJ0+G7oRt7ghRLwQu3Ksc4N+v
- wLy+C1qrXZUofAe+ZzB6r+ZxumUZWu5lE5wDMCitPSomctozALHtfFz5YC8Uqsfk28f7
- jRtm8MrGICkPiwXssd+I9VM5BmWe89NC5rRM3LwfeZrZsnVyXgmAFax3y+MXYcNNMY/0
- 0D6gr6pgUZO9wZru/utJst3iUGYlvTDYKKxDXuJsqfZCct0HiCVmqtJQ9TuJQHla8j7z
- kJ/Q==
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=1laC+ptJK7CMO4FlEnDKRzbex4o6JIjr87XDKFBP/Gg=;
+ b=oDAKVAWsQJDLqic9MqvS9yeZWhx8DgTUEk7gu7XJqQDvrZ0/aC4P8+AzPFmMxhmBff
+ tJEq6nF98GmhcULUi7DfIcJ6kSgcCCJMIuN05evup1iU6luRrGjUqiAFGa19P4K2OX7n
+ hf3JBnsuqw6uTEZjXhphQofFExwvXRI1qvtX2zL9DpeLH+igwX3VnO7SLZVgtet05WYG
+ rkiOJfwWZU0SdsjLB0X76jTL//GylyI3gkk14wFYQpg0Il8Ybdxg8mYO9I5kPQgl5YmR
+ VW67onscpS8MMIZ3ojXODhAbg3+cJU/jH19GzO3bUonthUMg8J0oeJZGBWXPdS8eAWGN
+ rxQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=un9c/VwwRsyst2EE5o8XbxB0+pqT7x1WCIY5ekR/vEY=;
- b=Xjw5yBXLWNq9Ym/RlSw7yWoddUDqmP+m0AdkYWsHKx3exmQjdt0VL2x4MyNZu1Uq2v
- 1R8JZLz1L4tpXFENhIfSqbh4fjds70YSTOn8g9EnwH/SNC04zCsxNpeRSkhokRAAtf3f
- 0a8JxpxlXd1NzslCYXAC0XHErgZkeLWXCHGKNybdJXEMcRM4BxUuBONLd9M09b9C7wl8
- Tshe38dTt8N/MatKU0CxLuPNocysV7HvJhReKxpqbQs4qQwb5n+nv8rbk+OF+3MfgWce
- 5dvI+NyruLvY4IywfN0TeuAiY88ZY8PfeLf/5egvWiLjB7qC907jkh2BQofqEb6e93Tm
- pI/w==
-X-Gm-Message-State: APjAAAWUlJGkIWdKREAeytw/k9i9BohAUowxcx2HitVnzDuocX8bFFKY
- 10v5Z3zjR7D3YLMw2s9PEUV99Xua
-X-Google-Smtp-Source: APXvYqzj9L/z1sd3BQDxD7pkQq5S43EaV73szLtz70Epf0iH/2NXMUQMJG7FwjLaFb1Gl0/J8b+jig==
-X-Received: by 2002:a2e:8ed6:: with SMTP id e22mr13952245ljl.3.1574460494498; 
- Fri, 22 Nov 2019 14:08:14 -0800 (PST)
-Received: from [192.168.55.98] (095160109150.warszawa.vectranet.pl.
- [95.160.109.150])
- by smtp.gmail.com with ESMTPSA id l10sm1067249lfk.61.2019.11.22.14.08.13
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 22 Nov 2019 14:08:13 -0800 (PST)
-To: David Bauer <mail@david-bauer.net>,
- Adrian Schmutzler <freifunk@adrianschmutzler.de>
-References: <20191122134549.43222-1-freifunk@adrianschmutzler.de>
- <08ec62eb-c779-4f98-c486-7d5fff2deb5a@david-bauer.net>
-From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <9a227150-46c2-96ac-3e1a-acc17810232c@gmail.com>
-Date: Fri, 22 Nov 2019 23:08:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ bh=1laC+ptJK7CMO4FlEnDKRzbex4o6JIjr87XDKFBP/Gg=;
+ b=B7F85fjmbpAH9AerEMfj3lpt8pGULVetXrLcpVOTs2l/qf9Q3P4OB2h5OKIEAkDP/a
+ S029+sYm8Vn7lUA2U9HtjBLfnESeOWW2mMgf9baPTz52MFIBsLX5gKx6QRjSCvgLEBH6
+ Gk3hkGBvg2qjGwQo1jcXapIIk9wVk8nxrZTTzPaYpdTPore9IZS4Jn9XYb0O6OVBkcp7
+ rqyitNnerNDPNwJ46gQUQxfndrfPTxM7sjN45ZH3mQj2A0U2Cg1hoKCWjxq6GD3tgFoz
+ 3Rlxv1hq9ROlENf2Ud7o6zF2fJOBy8jhsz0J8oh9zX+YR6rzUL6j7Bx/REVqIk/gqtGL
+ 1UzA==
+X-Gm-Message-State: APjAAAWA0eRdMRQURM0VtpBw8rOLTwXdptiMl3x7eLFeQk2tSus8JDQM
+ pVtKocewCxb9X+HPjMwgrX6Ymb3+JLs=
+X-Google-Smtp-Source: APXvYqzwtYbp0hIUBvtkKRoZId+D+veBd37zvpUBRB6fgLhr/t5xgoqCOwbc3jNkrfJf4phnceomBw==
+X-Received: by 2002:a17:902:9344:: with SMTP id
+ g4mr17280797plp.16.1574464143582; 
+ Fri, 22 Nov 2019 15:09:03 -0800 (PST)
+Received: from mangix-trapnet.lan ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id w8sm8473774pfi.60.2019.11.22.15.09.02
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 22 Nov 2019 15:09:02 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 22 Nov 2019 15:09:01 -0800
+Message-Id: <20191122230901.396227-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <08ec62eb-c779-4f98-c486-7d5fff2deb5a@david-bauer.net>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_140819_087378_8EBDC893 
-X-CRM114-Status: GOOD (  17.55  )
+X-CRM114-CacheID: sfid-20191122_150906_486708_689851B3 
+X-CRM114-Status: UNSURE (   5.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:62b listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pepe2k[at]gmail.com)
+ provider (rosenp[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,7 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: rename EEPROM to art
+Subject: [OpenWrt-Devel] [PATCH] toolchain/gdb: Don't use gdb-arc
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,297 +98,48 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi David, Adrian,
+GDB got support for ARC with version 8.2. No need for this fork.
 
-On 22.11.2019 22:39, David Bauer wrote:
-> Hello Adrian,
-> 
-> On 11/22/19 2:45 PM, Adrian Schmutzler wrote:
->> This renames all remaining occurrences of "EEPROM" to "art" to
->> further harmonize the partition labelling in ath79.
-> 
-> Hmm, I'm not sure if/why we should to these changes.
-> 
-> Ubiquiti names these partitions "EEPROM" in their firmware
-> and it contains more information (e.g. board-id / sub-revision)
-> than just the calibration data.
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ toolchain/gdb/Makefile | 11 -----------
+ 1 file changed, 11 deletions(-)
 
-Unified and consistent naming of calibration data partition has obvious 
-advantages, like decrease user-space code duplication and limit 
-copy&paste mistakes in future. I don't think this is the first time we 
-change manufacturer partition naming scheme.
-
-So:
-
-Acked-by: Piotr Dymacz <pepe2k@gmail.com>
-
+diff --git a/toolchain/gdb/Makefile b/toolchain/gdb/Makefile
+index 41ba9853fd..c25d181990 100644
+--- a/toolchain/gdb/Makefile
++++ b/toolchain/gdb/Makefile
+@@ -7,23 +7,12 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=gdb
+-
+-ifeq ($(CONFIG_arc),y)
+-PKG_VERSION:=arc-2017.09-gdb
+-
+-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+-PKG_SOURCE_URL:=https://github.com/foss-for-synopsys-dwc-arc-processors/binutils-gdb/archive/arc-2017.09-gdb
+-PKG_HASH:=7e3c2a763bf500a40c5c4591a7e22c591dafc1f214b1d514895c1096e85c883a
+-GDB_DIR:=binutils-$(PKG_NAME)-$(PKG_VERSION)
+-PATCH_DIR:=./patches-arc
+-else
+ PKG_VERSION:=8.3.1
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=@GNU/gdb
+ PKG_HASH:=1e55b4d7cdca7b34be12f4ceae651623aa73b2fd640152313f9f66a7149757c4
+ GDB_DIR:=$(PKG_NAME)-$(PKG_VERSION)
+-endif
+ 
+ HOST_BUILD_DIR:=$(BUILD_DIR_TOOLCHAIN)/$(GDB_DIR)
+ 
 -- 
-Cheers,
-Piotr
-
-> 
-> Best wishes
-> David
-> 
->> 
->> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
->> ---
->>  .../linux/ath79/dts/ar9342_ubnt_lap-120.dts   |  2 +-
->>  .../ath79/dts/ar9342_ubnt_nanobeam-ac.dts     |  2 +-
->>  .../dts/ar9342_ubnt_nanostation-ac-loco.dts   |  2 +-
->>  .../ath79/dts/ar9342_ubnt_nanostation-ac.dts  |  4 ++--
->>  target/linux/ath79/dts/ar9342_ubnt_wa.dtsi    |  6 +++---
->>  target/linux/ath79/dts/ar9342_ubnt_xw.dtsi    |  8 ++++----
->>  .../linux/ath79/dts/qca9533_ubnt_acb-isp.dts  | 10 +++++-----
->>  .../ath79/dts/qca9563_ubnt_unifiac-lite.dtsi  |  2 +-
->>  .../ath79/dts/qca9563_ubnt_unifiac-pro.dtsi   |  2 +-
->>  .../linux/ath79/dts/qca9563_ubnt_unifiac.dtsi |  6 +++---
->>  .../etc/hotplug.d/firmware/11-ath10k-caldata  | 20 +++++++++----------
->>  11 files changed, 31 insertions(+), 33 deletions(-)
->> 
->> diff --git a/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts b/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts
->> index 82f864b8e3..757654eaee 100644
->> --- a/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts
->> +++ b/target/linux/ath79/dts/ar9342_ubnt_lap-120.dts
->> @@ -26,7 +26,7 @@
->>  	/* default for ar934x, except for 1000M and 10M */
->>  	pll-data = <0x06000000 0x00000101 0x00001313>;
->>  
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  
->>  	phy-mode = "rgmii";
->>  	phy-handle = <&phy4>;
->> diff --git a/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts b/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts
->> index 6e64c7faad..30d054dfed 100644
->> --- a/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts
->> +++ b/target/linux/ath79/dts/ar9342_ubnt_nanobeam-ac.dts
->> @@ -51,7 +51,7 @@
->>  	/* default for ar934x, except for 1000M and 10M */
->>  	pll-data = <0x06000000 0x00000101 0x00001313>;
->>  
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  
->>  	phy-mode = "rgmii";
->>  	phy-handle = <&phy4>;
->> diff --git a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts
->> index 9b26d1a628..89904721c0 100644
->> --- a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts
->> +++ b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac-loco.dts
->> @@ -27,7 +27,7 @@
->>  	/* default for ar934x, except for 1000M and 10M */
->>  	pll-data = <0x06000000 0x00000101 0x00001313>;
->>  
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  
->>  	phy-mode = "rgmii";
->>  	phy-handle = <&phy4>;
->> diff --git a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts
->> index b591925154..97597e5f15 100644
->> --- a/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts
->> +++ b/target/linux/ath79/dts/ar9342_ubnt_nanostation-ac.dts
->> @@ -58,7 +58,7 @@
->>  	/* default for ar934x, except for 1000M and 10M */
->>  	pll-data = <0x06000000 0x00000101 0x00001313>;
->>  
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  
->>  	phy-mode = "rgmii";
->>  	phy-handle = <&phy0>;
->> @@ -73,5 +73,5 @@
->>  &wmac {
->>  	status = "okay";
->>  
->> -	mtd-cal-data = <&eeprom 0x1000>;
->> +	mtd-cal-data = <&art 0x1000>;
->>  };
->> diff --git a/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi b/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi
->> index 30fa299638..2847d4098c 100644
->> --- a/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi
->> +++ b/target/linux/ath79/dts/ar9342_ubnt_wa.dtsi
->> @@ -75,8 +75,8 @@
->>  				read-only;
->>  			};
->>  
->> -			eeprom: partition@ff0000 {
->> -				label = "EEPROM";
->> +			art: partition@ff0000 {
->> +				label = "art";
->>  				reg = <0xff0000 0x010000>;
->>  				read-only;
->>  			};
->> @@ -88,5 +88,5 @@
->>  	status = "okay";
->>  
->>  	qca,disable-5ghz;
->> -	mtd-cal-data = <&eeprom 0x1000>;
->> +	mtd-cal-data = <&art 0x1000>;
->>  };
->> diff --git a/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi b/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi
->> index ee42498af1..cf24aba5aa 100644
->> --- a/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi
->> +++ b/target/linux/ath79/dts/ar9342_ubnt_xw.dtsi
->> @@ -103,8 +103,8 @@
->>  				read-only;
->>  			};
->>  
->> -			eeprom: partition@7f0000 {
->> -				label = "EEPROM";
->> +			art: partition@7f0000 {
->> +				label = "art";
->>  				reg = <0x7f0000 0x010000>;
->>  				read-only;
->>  			};
->> @@ -115,9 +115,9 @@
->>  &wmac {
->>  	status = "okay";
->>  
->> -	mtd-cal-data = <&eeprom 0x1000>;
->> +	mtd-cal-data = <&art 0x1000>;
->>  };
->>  
->>  &eth0 {
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  };
->> diff --git a/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts b/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts
->> index 629899e1a2..ded95f3a18 100644
->> --- a/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts
->> +++ b/target/linux/ath79/dts/qca9533_ubnt_acb-isp.dts
->> @@ -64,8 +64,8 @@
->>  				read-only;
->>  			};
->>  
->> -			eeprom: partition@ff0000 {
->> -				label = "EEPROM";
->> +			art: partition@ff0000 {
->> +				label = "art";
->>  				reg = <0xff0000 0x010000>;
->>  				read-only;
->>  			};
->> @@ -79,13 +79,13 @@
->>  
->>  &eth0 {
->>  	status = "okay";
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  	phy-handle = <&swphy4>;
->>  };
->>  
->>  &eth1 {
->>  	status = "okay";
->> -	mtd-mac-address = <&eeprom 0x6>;
->> +	mtd-mac-address = <&art 0x6>;
->>  
->>  	gmac-config {
->>  		device = <&gmac>;
->> @@ -94,5 +94,5 @@
->>  
->>  &wmac {
->>  	status = "okay";
->> -	mtd-cal-data = <&eeprom 0x1000>;
->> +	mtd-cal-data = <&art 0x1000>;
->>  };
->> diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi
->> index 4f77661fbd..8248e060c5 100644
->> --- a/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi
->> +++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac-lite.dtsi
->> @@ -21,6 +21,6 @@
->>  &eth0 {
->>  	status = "okay";
->>  
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  	phy-handle = <&phy4>;
->>  };
->> diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi b/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi
->> index 3a6c0cd3fa..5a0cf4bade 100644
->> --- a/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi
->> +++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac-pro.dtsi
->> @@ -25,6 +25,6 @@
->>  &eth0 {
->>  	status = "okay";
->>  
->> -	mtd-mac-address = <&eeprom 0x0>;
->> +	mtd-mac-address = <&art 0x0>;
->>  	phy-handle = <&phy0>;
->>  };
->> diff --git a/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi b/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi
->> index bb20caba47..bfad3ff306 100644
->> --- a/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi
->> +++ b/target/linux/ath79/dts/qca9563_ubnt_unifiac.dtsi
->> @@ -104,8 +104,8 @@
->>  				read-only;
->>  			};
->>  
->> -			eeprom: partition@ff0000 {
->> -				label = "EEPROM";
->> +			art: partition@ff0000 {
->> +				label = "art";
->>  				reg = <0xff0000 0x010000>;
->>  				read-only;
->>  			};
->> @@ -116,5 +116,5 @@
->>  &wmac {
->>  	status = "okay";
->>  
->> -	mtd-cal-data = <&eeprom 0x1000>;
->> +	mtd-cal-data = <&art 0x1000>;
->>  };
->> diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
->> index f128e8759f..258efc3bf4 100644
->> --- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
->> +++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
->> @@ -12,6 +12,15 @@ case "$FIRMWARE" in
->>  	case $board in
->>  	comfast,cf-wr650ac-v1|\
->>  	comfast,cf-wr650ac-v2|\
->> +	ubnt,unifiac-lite|\
->> +	ubnt,unifiac-lr|\
->> +	ubnt,unifiac-mesh|\
->> +	ubnt,unifiac-mesh-pro|\
->> +	ubnt,lap-120|\
->> +	ubnt,nanobeam-ac|\
->> +	ubnt,nanostation-ac|\
->> +	ubnt,nanostation-ac-loco|\
->> +	ubnt,unifiac-pro|\
->>  	yuncore,a770)
->>  		caldata_extract "art" 0x5000 0x844
->>  		;;
->> @@ -101,17 +110,6 @@ case "$FIRMWARE" in
->>  		caldata_extract "art" 0x5000 0x844
->>  		ath10k_patch_mac $(macaddr_add $(mtd_get_mac_binary info 0x8) +1)
->>  		;;
->> -	ubnt,unifiac-lite|\
->> -	ubnt,unifiac-lr|\
->> -	ubnt,unifiac-mesh|\
->> -	ubnt,unifiac-mesh-pro|\
->> -	ubnt,lap-120|\
->> -	ubnt,nanobeam-ac|\
->> -	ubnt,nanostation-ac|\
->> -	ubnt,nanostation-ac-loco|\
->> -	ubnt,unifiac-pro)
->> -		caldata_extract "EEPROM" 0x5000 0x844
->> -		;;
->>  	esac
->>  	;;
->>  "ath10k/pre-cal-pci-0000:00:00.0.bin")
->> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
+2.23.0
 
 
 _______________________________________________

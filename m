@@ -2,52 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392BB107FC2
-	for <lists+openwrt-devel@lfdr.de>; Sat, 23 Nov 2019 19:05:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CDEB108006
+	for <lists+openwrt-devel@lfdr.de>; Sat, 23 Nov 2019 19:35:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=l2RrcSUQCvdBXNMjano+W8CW3N5lGNLt+Yx+NvqlGgs=; b=PVtGkwr16yfKod
-	PRL0WmLvV4NjcKmPa8r5Erjlyyx0Y7IG3K+qqcSkVskEyhM/fl+lStvZIw9S6NAss94kjbUVHOwnQ
-	MUAy5Bs+FtTWIGaoYYR/nHov6D1e3yCEC0qLtuz2s2gj+aWw0Dz73P4rGJ3TPWB6LctPqd3hZX7we
-	xq9Dcz4aMG+7fei6PkHEBxw90U6mbwRO+8xfuQDx8Z0HylBLwTVtbwlUyRVWlaa9ja6bsJ6PZoH7F
-	UmyoHbnIrPJ8k7Zu4LKJw4XFrfDNh9ho+2HJRhPH6487hm3vJ9O5lruK4gCskRgDoIZaqBN5vz1KL
-	AtkEYz+TxiS2Kt5VBjQg==;
+	List-Owner; bh=lHkY+N3swqtw8B5h4q7S5oELCRkWXF6J4ocykImqpBo=; b=HmSx3HZZPn2zjQ
+	NzwSmiC/UKmj4xaXh5p7VmkGvfEVn/HpjFM1PAOZpsNbqWthxoRhDKls/AlIhlv9XAxN7DHJf2VjF
+	PmOUWU8+nL2n7wpsV0o1iBG3hB4Fts5zCXhcj6e5kKs3btEY6ucRHnQltpoHJcqMiYO5Z9NzyoVou
+	zFHEJ7Te1TjkFCln3s5vlGthd35DD5qZzaSpwTGroJJB7Ov85lDuz3RNA1gwt30IixtFUlYBpi8rA
+	PGHEgIbrEWL/8FgiNaEcBL+Z1gNsF2HEkscCB5vYBkspToT9z5O8NmrTPZKWQ13JCWEDSoPTU/XSb
+	MtYx4Snqwpds+IRXbhPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYZmi-0007kz-GO; Sat, 23 Nov 2019 18:05:28 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iYZmZ-0007jt-Bf
- for openwrt-devel@lists.openwrt.org; Sat, 23 Nov 2019 18:05:21 +0000
-Received: from dbauer-t470.home.david-bauer.net
- (p200300E53F2FD500853DC40395BBEF91.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f2f:d500:853d:c403:95bb:ef91])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id D92011FA94
- for <openwrt-devel@lists.openwrt.org>; Sat, 23 Nov 2019 19:05:14 +0100 (CET)
-From: David Bauer <mail@david-bauer.net>
+	id 1iYaFj-0000Tr-4j; Sat, 23 Nov 2019 18:35:27 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYaFc-0000TH-0H
+ for openwrt-devel@lists.openwrt.org; Sat, 23 Nov 2019 18:35:21 +0000
+Received: from buildfff.adridolf.com ([188.193.231.72]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MnJdC-1i9OMw3bPQ-00jHJb for <openwrt-devel@lists.openwrt.org>; Sat, 23
+ Nov 2019 19:35:14 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 23 Nov 2019 19:05:07 +0100
-Message-Id: <20191123180507.265078-1-mail@david-bauer.net>
-X-Mailer: git-send-email 2.24.0
+Date: Sat, 23 Nov 2019 19:34:29 +0100
+Message-Id: <20191123183429.56891-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:dTaocmK+poJlaZCmGiWLlEXTtSjWrxqCuYAdrd7WEd9/tVD4AAa
+ UPK2XJWdpSNrdyKBBUQJ+Q4di5Nv1+bC+7C4aWD00uATZaoWJ7bkvE7UjotJY5Ej0E8WzXO
+ UTwAa8noM0iWt2anUZI7yO25bUwRSbj1fscyB3zDdAzSNmzGftG8E0Pxaj/qjlzULbg4U5O
+ CWD0qZFmHnAtR/WSXubBw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:noLAsGt+Tpo=:5w7nIYlVtOBV0F6D2Vk8Lt
+ ELlwR9XTxCEl0IIAoW/jpywsE7Sj6NUHC40c1dU8aokbAFMGJfm9CiG3CTHyuDbVBeQmOP4MJ
+ U0lXu2H7FLtzL8GSbzR6AUqHWntpP6tYXAg8i3PoGQxNG1XoCKSPuWstqNsS8Mr4U54Iylw75
+ PnikrHgrvbh3Ja1v88U9i8QV9n1kDVMCcghBRODLYN2UWbtBpl7s9x9I10+GDOk+eJCUiJlcv
+ F62LSfk3eoE+V2psFYwdrquBchThkPPG8lkNqMXcdvFp0bk7dsenhzJDzJqx4QyAfJT05bUNX
+ jQwVry+kAQtL3VjWXXzOmz2zTx0defCIGHBRCujQsaodwHiGJ1DLfYD2aJy4dwy92h7wI2bKS
+ ES04zXrlOOtbbq7reAGBvwHOrRr651c53uElI658Co32xBbiUy1NW/JZQmw8YeCudTqCteEMW
+ tVkELAjFg+nlzS3B9ysK6fBUFQdIXyoqxm2YaiZIbN53/gq01tvDeMh/SQu2HG44876IJwTXj
+ XsA7DarxlnMctaWJSUCtE8vGIbsNx877do7S4LKEi0l6PsAifnnX90vmF28MSLRaj+Tgg3nXl
+ vapgfI/eL6322fkZ3HhIX15BnS8c3oCqhEdJvsBe473fVk382bnTtiRwp/dGSapM/faBVmGA7
+ o+OgEUOBioHay9BSkJ79A0sZ/zls/+SD6BoIXe5Tglp4f+YyZtoADrKvPcMv1e2lfpRh7/Ozu
+ nOJO24bBGXNaWO+ASNmQftojdZizLmwq+7BwH3Tai9Lz1A8f9BjaOGbX4lJDpVRLid3e6YzPv
+ CR9tuUdKoSkB8bF7NAGKyCd+oVxtm+YXRlhk70s3txFW+ZZiV484RX/imkD64pB/DXfWXCWds
+ CNhyfMGkJsApQOkK0YIcZyH0o3k3XAQo4nSwn2jQo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191123_100519_701741_282798C3 
-X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-CacheID: sfid-20191123_103520_333252_425C3F2F 
+X-CRM114-Status: UNSURE (   7.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] ramips: reorganize NETGAR sercomm boards
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH] mpc85xx: add vendor to Makefile node name,
+ derive SUPPORTED_DEVICES
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,296 +83,136 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This re-organizes the device-tree files for the Sercomm-manufactured
-NETGEAR routers. They are now split into two different base-boards,
-from which the respective model is extended.
+By adding the vendor to the Makefile device definition node name,
+one can derive the standard compatible used in SUPPORTED_DEVICES
+instead of having to specify it manually.
 
-This partially reverts commit c7842ceaaa27 ("ramips: reorganize DTSI
-files for Netgear R devices"), which introduced inheritance between two
-completely unrelated base-boards.
+Despite, this moves the naming scheme closer to what is used for
+other targets (ath79, ramips).
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
+Build-tested on all subtargets.
+Run-tested on TP-Link TL-WDR4900 v1.
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- .../linux/ramips/dts/mt7621_netgear_r6220.dts | 35 ++------
- ...m.dtsi => mt7621_netgear_sercomm_ayx.dtsi} | 26 ++++++
- .../dts/mt7621_netgear_sercomm_chj.dtsi       | 90 ++++++++++++++++++-
- .../ramips/dts/mt7621_netgear_wndr3700-v5.dts | 35 ++------
- 4 files changed, 125 insertions(+), 61 deletions(-)
- rename target/linux/ramips/dts/{mt7621_netgear_sercomm.dtsi => mt7621_netgear_sercomm_ayx.dtsi} (80%)
+ target/linux/mpc85xx/image/Makefile | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
 
-diff --git a/target/linux/ramips/dts/mt7621_netgear_r6220.dts b/target/linux/ramips/dts/mt7621_netgear_r6220.dts
-index f23e12b852..4779b71c1d 100644
---- a/target/linux/ramips/dts/mt7621_netgear_r6220.dts
-+++ b/target/linux/ramips/dts/mt7621_netgear_r6220.dts
-@@ -1,40 +1,11 @@
- // SPDX-License-Identifier: GPL-2.0
- /dts-v1/;
+diff --git a/target/linux/mpc85xx/image/Makefile b/target/linux/mpc85xx/image/Makefile
+index 156f1e6eda..81b7293d71 100644
+--- a/target/linux/mpc85xx/image/Makefile
++++ b/target/linux/mpc85xx/image/Makefile
+@@ -37,16 +37,17 @@ endef
  
--#include "mt7621_netgear_sercomm.dtsi"
-+#include "mt7621_netgear_sercomm_ayx.dtsi"
+ define Device/Default
+   PROFILES := Default
+-  DEVICE_DTS := $(1)
++  DEVICE_DTS := $(lastword $(subst _, ,$(1)))
+   KERNEL_DEPENDS = $$(wildcard $(DTS_DIR)/$$(DEVICE_DTS).dts)
+   KERNEL_ENTRY := 0x00000000
+   KERNEL_LOADADDR := 0x00000000
+   KERNEL := kernel-bin
++  SUPPORTED_DEVICES := $(subst _,$(comma),$(1))
+ endef
  
- / {
- 	compatible = "netgear,r6220", "mediatek,mt7621-soc";
- 	model = "Netgear R6220";
--
--	keys {
--		compatible = "gpio-keys";
--
--		wps {
--			label = "wps";
--			gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_WPS_BUTTON>;
--		};
--
--		wifi {
--			label = "wifi";
--			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_RFKILL>;
--		};
--
--		reset {
--			label = "reset";
--			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_RESTART>;
--		};
--	};
--};
--
--&leds {
--	wps {
--		gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
--		label = "r6220:green:wps";
--	};
- };
+ ifeq ($(SUBTARGET),generic)
  
- &led_power {
-@@ -53,6 +24,10 @@
- 	label = "r6220:green:wifi";
- };
+-define Device/tl-wdr4900-v1
++define Device/tplink_tl-wdr4900-v1
+   DEVICE_VENDOR := TP-Link
+   DEVICE_MODEL := TL-WDR4900
+   DEVICE_VARIANT := v1
+@@ -59,33 +60,32 @@ define Device/tl-wdr4900-v1
+   KERNEL := kernel-bin | uImage none
+   KERNEL_ENTRY := 0x1000000
+   KERNEL_LOADADDR := 0x1000000
+-  SUPPORTED_DEVICES:=tl-wdr4900-v1 tplink,tl-wdr4900-v1
++  SUPPORTED_DEVICES += tl-wdr4900-v1
+   ARTIFACTS := fdt.bin
+   ARTIFACT/fdt.bin := append-dtb
+   IMAGES := fdt.bin factory.bin sysupgrade.bin
+   IMAGE/sysupgrade.bin := append-rootfs | mktplinkfw sysupgrade | append-metadata
+   IMAGE/factory.bin := append-rootfs | mktplinkfw factory
+ endef
+-TARGET_DEVICES += tl-wdr4900-v1
++TARGET_DEVICES += tplink_tl-wdr4900-v1
  
-+&led_wps {
-+	label = "r6220:green:wps";
-+};
-+
- &nand {
- 	status = "okay";
+-define Device/red-15w-rev1
++define Device/sophos_red-15w-rev1
+   DEVICE_VENDOR := Sophos
+   DEVICE_MODEL := RED 15w
+   DEVICE_VARIANT := Rev.1
+   # Original firmware uses a dedicated DTB-partition.
+   # The bootloader however supports FIT-images.
+   KERNEL = kernel-bin | gzip | fit gzip $(KDIR)/image-$$(DEVICE_DTS).dtb
+-  SUPPORTED_DEVICES := sophos,red-15w-rev1
+   IMAGES := sysupgrade.bin
+   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+ endef
+-TARGET_DEVICES += red-15w-rev1
++TARGET_DEVICES += sophos_red-15w-rev1
  
-diff --git a/target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi b/target/linux/ramips/dts/mt7621_netgear_sercomm_ayx.dtsi
-similarity index 80%
-rename from target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi
-rename to target/linux/ramips/dts/mt7621_netgear_sercomm_ayx.dtsi
-index 7cff51a090..4e6e91ed8f 100644
---- a/target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi
-+++ b/target/linux/ramips/dts/mt7621_netgear_sercomm_ayx.dtsi
-@@ -21,6 +21,28 @@
- 		bootargs = "console=ttyS0,57600";
- 	};
+ endif
  
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		wps {
-+			label = "wps";
-+			gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_WPS_BUTTON>;
-+		};
-+
-+		wifi {
-+			label = "wifi";
-+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RFKILL>;
-+		};
-+
-+		reset {
-+			label = "reset";
-+			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
-+			linux,code = <KEY_RESTART>;
-+		};
-+	};
-+
- 	leds: leds {
- 		compatible = "gpio-leds";
+ ifeq ($(SUBTARGET),p1020)
  
-@@ -42,6 +64,10 @@
- 			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
- 			linux,default-trigger = "phy0tpt";
- 		};
-+
-+		led_wps: wps {
-+			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
-+		};
- 	};
+-define Device/hiveap-330
++define Device/aerohive_hiveap-330
+   DEVICE_VENDOR := Aerohive
+   DEVICE_MODEL := HiveAP-330
+   DEVICE_PACKAGES := kmod-tpm-i2c-atmel
+@@ -93,7 +93,6 @@ define Device/hiveap-330
+   KERNEL := kernel-bin | gzip | uImage gzip
+   KERNEL_SIZE := 8m
+   KERNEL_INITRAMFS := copy-file $(KDIR)/vmlinux-initramfs | uImage none
+-  SUPPORTED_DEVICES := aerohive,hiveap-330
+   IMAGES := fdt.bin sysupgrade.bin
+   IMAGE/fdt.bin := append-dtb
+   IMAGE/sysupgrade.bin := append-dtb | pad-to 256k | check-size 256k | \
+@@ -101,9 +100,9 @@ define Device/hiveap-330
+ 	append-rootfs | pad-rootfs $$(BLOCKSIZE) | pad-to 41216k | check-size 41216k | \
+ 	append-kernel | append-metadata
+ endef
+-TARGET_DEVICES += hiveap-330
++TARGET_DEVICES += aerohive_hiveap-330
  
- 	reg_usb_vbus: regulator {
-diff --git a/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi b/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi
-index d09585a753..f2222a1412 100644
---- a/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi
-+++ b/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi
-@@ -1,9 +1,49 @@
- // SPDX-License-Identifier: GPL-2.0
- /dts-v1/;
+-define Device/panda
++define Device/ocedo_panda
+   DEVICE_VENDOR := OCEDO
+   DEVICE_MODEL := Panda
+   DEVICE_PACKAGES := kmod-rtc-ds1307 uboot-envtools
+@@ -111,18 +110,17 @@ define Device/panda
+   PAGESIZE := 2048
+   SUBPAGESIZE := 512
+   BLOCKSIZE := 128k
+-  SUPPORTED_DEVICES := ocedo,panda
+   IMAGES := fdt.bin sysupgrade.bin
+   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+   IMAGE/fdt.bin := append-dtb
+ endef
+-TARGET_DEVICES += panda
++TARGET_DEVICES += ocedo_panda
  
--#include "mt7621_netgear_sercomm.dtsi"
-+#include "mt7621.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
+ endif
  
- / {
-+	compatible = "mediatek,mt7621-soc";
-+
-+	aliases {
-+		led-boot = &led_power;
-+		led-failsafe = &led_power;
-+		led-running = &led_power;
-+		led-upgrade = &led_power;
-+		label-mac-device = &ethernet;
-+	};
-+
-+	chosen {
-+		bootargs = "console=ttyS0,57600";
-+	};
-+
-+	leds: leds {
-+		compatible = "gpio-leds";
-+
-+		led_power: power {
-+			gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		led_usb: usb {
-+			gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
-+			trigger-sources = <&xhci_ehci_port1>, <&ehci_port2>;
-+			linux,default-trigger = "usbport";
-+		};
-+
-+		led_internet: internet {
-+			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		led_wifi: wifi {
-+			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+	};
-+
- 	keys {
- 		compatible = "gpio-keys";
+ ifeq ($(SUBTARGET),p2020)
  
-@@ -19,6 +59,54 @@
- 			linux,code = <KEY_RESTART>;
- 		};
- 	};
-+
-+	reg_usb_vbus: regulator {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb_vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		gpio = <&gpio0 10 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+};
-+
-+&xhci {
-+	vbus-supply = <&reg_usb_vbus>;
-+};
-+
-+&pcie {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	wifi@0,0 {
-+		compatible = "mediatek,mt76";
-+		reg = <0x0 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x8000>;
-+		ieee80211-freq-limit = <5000000 6000000>;
-+	};
-+};
-+
-+&pcie1 {
-+	wifi@0,0 {
-+		compatible = "mediatek,mt76";
-+		reg = <0x0 0 0 0 0>;
-+		mediatek,mtd-eeprom = <&factory 0x0>;
-+		ieee80211-freq-limit = <2400000 2500000>;
-+	};
-+};
-+
-+&ethernet {
-+	mtd-mac-address = <&factory 0x4>;
-+};
-+
-+&pinctrl {
-+	state_default: pinctrl0 {
-+		gpio {
-+			ralink,group = "uart3", "uart2", "jtag", "wdt";
-+			ralink,function = "gpio";
-+		};
-+	};
- };
+-define Device/p2020rdb
++define Device/fsl_p2020rdb
+   DEVICE_VENDOR := Freescale
+   DEVICE_MODEL := P2020RDB
+   DEVICE_DTS_DIR := $(DTS_DIR)/fsl
+@@ -136,7 +134,7 @@ define Device/p2020rdb
+   IMAGE/sysupgrade.bin := append-kernel | append-rootfs | \
+ 	pad-rootfs $$(BLOCKSIZE) | append-metadata
+ endef
+-TARGET_DEVICES += p2020rdb
++TARGET_DEVICES += fsl_p2020rdb
  
- &nand {
-diff --git a/target/linux/ramips/dts/mt7621_netgear_wndr3700-v5.dts b/target/linux/ramips/dts/mt7621_netgear_wndr3700-v5.dts
-index 5cf09ac7c4..a5c8b21d53 100644
---- a/target/linux/ramips/dts/mt7621_netgear_wndr3700-v5.dts
-+++ b/target/linux/ramips/dts/mt7621_netgear_wndr3700-v5.dts
-@@ -1,40 +1,11 @@
- // SPDX-License-Identifier: GPL-2.0
- /dts-v1/;
- 
--#include "mt7621_netgear_sercomm.dtsi"
-+#include "mt7621_netgear_sercomm_ayx.dtsi"
- 
- / {
- 	compatible = "netgear,wndr3700-v5", "mediatek,mt7621-soc";
- 	model = "Netgear WNDR3700 v5";
--
--	keys {
--		compatible = "gpio-keys";
--
--		wps {
--			label = "wps";
--			gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_WPS_BUTTON>;
--		};
--
--		wifi {
--			label = "wifi";
--			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_RFKILL>;
--		};
--
--		reset {
--			label = "reset";
--			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
--			linux,code = <KEY_RESTART>;
--		};
--	};
--};
--
--&leds {
--	wps {
--		gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
--		label = "wndr3700-v5:green:wps";
--	};
- };
- 
- &led_power {
-@@ -53,6 +24,10 @@
- 	label = "wndr3700-v5:green:wifi";
- };
- 
-+&led_wps {
-+	label = "wndr3700-v5:green:wps";
-+};
-+
- &spi0 {
- 	status = "okay";
+ endif
  
 -- 
-2.24.0
+2.20.1
 
 
 _______________________________________________

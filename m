@@ -2,943 +2,629 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FC05108530
-	for <lists+openwrt-devel@lfdr.de>; Sun, 24 Nov 2019 22:59:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E45B10852F
+	for <lists+openwrt-devel@lfdr.de>; Sun, 24 Nov 2019 22:54:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:From:
-	List-Post:List-Id:Message-ID:MIME-Version:Date:To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6Fgz9LWBj9vTktY2ojLBDAT4AY8EoYWmpLUxtz0o6Zw=; b=L/e
-	lAoYXZYjQwdEDarw5clu9rRQ0vJa6hY/XQSaXmqd1o41PEkjDBYFc1GuuCtQPLvRUdYJ1zvesqg2/
-	SwbWEqY+Wj+1fKlMg/jMdEKeu3tcBlY86tCgE2l1S2Mt2ZsfORp4yohKgCWa2ev9QzUEdu01BBetP
-	gCUxcZ+6cGkpTuhWDp72w4idC98UxcNhEBdQaaAT8rBpdM83if7v1Yrwwpj0eylfwdHP22SRUBliQ
-	CENg1+mfry3dagoQw0o9So0XWJFjIS8LWRBUsBOD0di7GueIqqhDdGn2nargOthnBemH7uegH5oOW
-	KuSX2YLzN0OnQz0QH43KvgaOTYPuaOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z4IwYEn75ZOmcluwOH52JLtMdfMHpL+MOMzyf5+yofo=; b=kqz0lW5FSGKR/z
+	azNzHvemRuv/MkpBauaiUs0hxaR7OiR4kMuh+dE1AzKt4J/u0cMxF76uzVvBxdeG3rqtWo1IiGf6y
+	BvAOHrXVQn4w2+BoX2cvn07/jpxmAGAuzfKQ3iE6+B///XfxTZ9BtynlUCF2VccEEfr3sbVJbbgVB
+	CgqWinhBUgZWGnxC02SkWkoEsZnaylrWq+uAohTxIWVGFpn4s11vygFmCbMZFcXxitNHy/rwvmESE
+	egXvICPk7N30kpNTPCQ6sTln1BeNLzes7AVAOdFOgQbNqGdxiAEqJ8ug7vRU+RthTTesNAbhxRaq6
+	9oSBMaQpb0kw4eaJiicA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYzum-0002ax-M0; Sun, 24 Nov 2019 21:59:32 +0000
-To: <openwrt-devel@lists.openwrt.org>
-Date: Mon, 25 Nov 2019 00:50:18 +0300
+	id 1iYzpb-0000zk-EC; Sun, 24 Nov 2019 21:54:11 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iYzpQ-0000yj-Hk
+ for openwrt-devel@lists.openwrt.org; Sun, 24 Nov 2019 21:54:03 +0000
+Received: from buildfff.adridolf.com ([188.193.231.72]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis)
+ id 1N30VJ-1hpvXf2gUH-013Qmt for <openwrt-devel@lists.openwrt.org>; Sun, 24
+ Nov 2019 22:53:50 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun, 24 Nov 2019 22:53:01 +0100
+Message-Id: <20191124215301.1424-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Message-ID: <mailman.13673.1574632762.2486.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: "hjskvntjwgvt.ru via openwrt-devel" <openwrt-devel@lists.openwrt.org>
-Precedence: list
-X-Mailman-Version: 2.1.29
+X-Provags-ID: V03:K1:gWOVucVNJzKs7WWjPLKTshApvxzmMQLmEiHvmcJs2FScGmhSdPI
+ f82YIBb9x3aGSBMFFHizB6/lndB3hE1EWDmv2MUxEiXTzq4FE2aOjzjnG5mJL+LQLxrhRe2
+ GtxbsAxFTNYD/l7xTkqCA2N313KJB3uadl8ikOOIFrI9jh4wM72ydOi5kcKQEBPXokyl56n
+ W0VNZR68cDEtmEViICLsg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:XecnSf/k/Mg=:eox3g7A0yvvR4tCB7TfoBN
+ dPzip6e66EB8S6hFuUmPJBrAXVUhmfTT2C+P8Wmc2oVRzoJ0tyCPbEoq7Ex8Cy/tTPtWaCQjJ
+ 839PVMdZcFL+XzHydcFYbDIZ4xEYqHeEV9ib3hfFCfP5ARSVh2gzRhp7C12WCHacO8zYqmPfb
+ RjGCt4Jcdzu8VnMN85Z7EDjExFjBe3UK9/1aWTrpk6vqMZx5UScYuzfPcMKz9S4S47Sy/nNcJ
+ CMjgcIiLme/uKj/4Tewq8wSGeSY9Pe7s+XhGnz5d0nj2WHZvJZcOXne+ozbQ5rlZNDZtNDD1+
+ 6GFrsNR8qsUGY2WImlWcv1mLUO+07wCvER7ZJvrms/flC0BMtPe0YgmXuM8ZS5eliqaDkqdNV
+ m6PyGjoo+TI2P77IqkDLPC7+4KxIw4PrXJXt6yHt3LXF2iIu7wK2+FX2YJbzJfB5BYof52vT6
+ 30FnGnUIQoLU25vzdt6ihuP6bSetNi4CxbbR+vo5L1y+uvdBlEcXKdrRVnNox8wE/XPqIjQxt
+ K3wBXmeGEw2hq7i+3PHLqYcQu8qQdL6dgvsIdLeL2GIY87GaSIu3xQzFEwC1gvxTmyFoUPW7K
+ KAJKmEnx5HFwhcrmO1Mx0GUUo4NfexeXGPz/lXPsZCfj4iokjmyuQ8I9Ny4hYvEairBxGOIbM
+ 2B2W+SIO5KVTYPH5KZ0+h1UtjyAROtR/HdiS+cK/NYq4/+s1ybRjZa8Odg9LtFkn1cgdqaOP4
+ DWWcTPrGWFKh4Pktk1sDMidlHccrdFAAmHaMdumwDesIsVmhh/EaAB9j0m0KdXZRck3+vbHdi
+ oDa8SFsp+cYyTTbytufhdzRzDU2gB+bjUj/75foDBpjqAb9+1U1XVK/2unh7DoPZ1fkCM4Xf+
+ vWJmIlElol+B0oZUMRnr4qC4BfJ2Rtm7vm2+b4nYk=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191124_135401_028586_4AB4F4E5 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH] treewide: remove dts-v1 identifier from
+ DTSI files
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: "hjskvntjwgvt.ru" <info@hjskvntjwgvt.ru>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: [OpenWrt-Devel] =?cp1251?b?yuDqIO/w6O7x8uDt7uLo8vwg6PHv7uvt5e3o?=
-	=?cp1251?b?5SDy8OXh7uLg7ej/IO7hIPPv6+Dy5SDt4Ovu4+A/IDA1XzA4XzIw?=
-	=?cp1251?q?19_02=5F10_199508?=
-Content-Type: multipart/mixed; boundary="===============3130757399848188895=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
+The "/dts-v1/;" identifier is supposed to be put once at the beginning
+of a device tree file. Thus, it makes no sense to provide it a second
+time in to-be-included DTSI files.
 
---===============3130757399848188895==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+This removes the identifier from all DTSI files in /target/linux.
 
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
+Most of the DTS files in OpenWrt do contain the "/dts-v1/;". It is
+missing for most of the following targets, though:
+mvebu, ipq806x, mpc85xx, ipq40xx
 
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============3130757399848188895==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ target/linux/ath79/dts/ar7161_adtran_bsap1880.dtsi              | 1 -
+ target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi             | 1 -
+ target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi           | 1 -
+ target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi            | 1 -
+ target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi              | 1 -
+ target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi              | 1 -
+ target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi    | 1 -
+ target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi         | 1 -
+ target/linux/ath79/dts/ar9341_tplink.dtsi                       | 1 -
+ target/linux/ath79/dts/ar9344_dlink_dir-8x5.dtsi                | 1 -
+ target/linux/ath79/dts/ar9344_netgear_wndr.dtsi                 | 1 -
+ target/linux/ath79/dts/ar9344_tplink_cpe.dtsi                   | 1 -
+ target/linux/ath79/dts/ar9344_tplink_cpe_1port.dtsi             | 1 -
+ target/linux/ath79/dts/ar9344_tplink_cpe_2port.dtsi             | 1 -
+ target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi            | 1 -
+ target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi               | 1 -
+ target/linux/ath79/dts/qca9533_tplink_cpexxx.dtsi               | 1 -
+ target/linux/ath79/dts/qca9533_tplink_tl-wr841-v11.dtsi         | 1 -
+ target/linux/ath79/dts/qca9533_tplink_tl-wr841.dtsi             | 1 -
+ target/linux/ath79/dts/qca953x_tplink_tl-wr810n.dtsi            | 1 -
+ target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi            | 1 -
+ target/linux/ath79/dts/qca9558_comfast_cf-wr650ac.dtsi          | 1 -
+ target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi              | 2 --
+ target/linux/ath79/dts/qca9558_netgear_ex7300.dtsi              | 1 -
+ target/linux/ath79/dts/qca9558_tplink_archer-c.dtsi             | 1 -
+ target/linux/ath79/dts/qca9558_tplink_rex5x.dtsi                | 1 -
+ target/linux/ath79/dts/qca9558_tplink_tl-wr1043nd.dtsi          | 1 -
+ target/linux/ath79/dts/qca9561_tplink_archer-c6x.dtsi           | 1 -
+ target/linux/ath79/dts/qca9563_dlink_dir-842-c.dtsi             | 1 -
+ target/linux/ath79/dts/qca9563_elecom_wrc-ghbk2-i.dtsi          | 1 -
+ target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi            | 2 --
+ target/linux/ath79/dts/qca9563_tplink_archer-x6-v2.dtsi         | 1 -
+ target/linux/ath79/dts/qca9563_tplink_archer-x7-v5.dtsi         | 1 -
+ target/linux/ath79/dts/qca9563_tplink_tl-wr1043n.dtsi           | 1 -
+ target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi          | 1 -
+ target/linux/ath79/dts/tp9343_tplink_tl-wr94x.dtsi              | 1 -
+ .../ipq806x/files-4.14/arch/arm/boot/dts/qcom-ipq8064.dtsi      | 1 -
+ target/linux/lantiq/files/arch/mips/boot/dts/FRITZ736X.dtsi     | 1 -
+ target/linux/ramips/dts/mt7620a_edimax_ew-747x.dtsi             | 2 --
+ target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi       | 1 -
+ target/linux/ramips/dts/mt7621_asiarf_ap7621.dtsi               | 1 -
+ target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi               | 1 -
+ target/linux/ramips/dts/mt7621_elecom_wrc-gst.dtsi              | 1 -
+ target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi             | 1 -
+ target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi         | 1 -
+ target/linux/ramips/dts/mt7628an_hiwifi_hc5x61a.dtsi            | 1 -
+ target/linux/ramips/dts/mt7628an_iptime.dtsi                    | 1 -
+ 47 files changed, 50 deletions(-)
 
-Received: from mail.hjskvntjwgvt.ru ([91.247.220.108])
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iYzuY-0002aX-4p
-	for openwrt-devel@lists.openwrt.org; Sun, 24 Nov 2019 21:59:21 +0000
-Message-ID: <D92369CE6EBA96E5393C75CEFA19CC3D@hjskvntjwgvt.ru>
-Reply-To: "hjskvntjwgvt.ru" <info@hjskvntjwgvt.ru>
-From: "hjskvntjwgvt.ru" <info@hjskvntjwgvt.ru>
-To: <openwrt-devel@lists.openwrt.org>
-Subject: =?windows-1251?B?yuDqIO/w6O7x8uDt7uLo8vwg6PHv7uvt5e3o?=
-	=?windows-1251?B?5SDy8OXh7uLg7ej/IO7hIPPv6+Dy5SDt4Ovu?=
-	=?windows-1251?B?4+A/IDA1XzA4XzIwMTkgMDJfMTAgMTk5NTA4?=
-Date: Mon, 25 Nov 2019 00:50:18 +0300
-MIME-Version: 1.0
-Content-Type: multipart/alternative; boundary="cbc9a9a3109135ad4c8006329c3c"
-Precedence: bulk
-DKIM-Signature: v=1; a=rsa-sha256; d=hjskvntjwgvt.ru; s=mail;
-	c=relaxed/relaxed; t=1574632218;
-	h=message-id:from:to:subject:date:mime-version;
-	bh=CGZFYMl7dHqYeviEkUXtFOJ2DBFbPseSuYOoScAWnt0=;
-	b=R4Eb11UTZ4kF90CrGNuWImo6f/c1qJmARU1UmKwME8jC7GwQ0X8MsyhhRiUCFa
-	joJYnJwdKHbaShP8qFw3eNflXgm+mcYc48VwwAYxVYecGxc/BBEKglaz9GTiv5sk
-	WBZwxsRe6YIWHVB0mBIUqkAZOwJZdPuxv05lQ557CMFbM=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191124_135919_588512_4E933407 
-X-CRM114-Status: UNSURE (  -2.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+diff --git a/target/linux/ath79/dts/ar7161_adtran_bsap1880.dtsi b/target/linux/ath79/dts/ar7161_adtran_bsap1880.dtsi
+index f5dfa77912..b60718dd7f 100644
+--- a/target/linux/ath79/dts/ar7161_adtran_bsap1880.dtsi
++++ b/target/linux/ath79/dts/ar7161_adtran_bsap1880.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
  
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
-  0.5 FROM_DOMAIN_NOVOWEL    From: domain has series of non-vowel letters
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 HTML_MESSAGE           BODY: HTML included in message
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi b/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
+index 7d842af060..370e2c1c58 100644
+--- a/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
++++ b/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
+index 4f52e3cc40..35f3442b29 100644
+--- a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
++++ b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi b/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
+index 4ce7a0ec3d..a7e6b49c1f 100644
+--- a/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
++++ b/target/linux/ath79/dts/ar7240_netgear_wnr612-v2.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi
+index 4c5ae697d6..49b869f718 100644
+--- a/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi
++++ b/target/linux/ath79/dts/ar7241_netgear_wnr2200.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi b/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi
+index 4a848cb896..589896d9f8 100644
+--- a/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi
++++ b/target/linux/ath79/dts/ar7242_buffalo_wzr-bhr.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi b/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
+index a8e0331f08..2bacd08245 100644
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-wr703n_tl-mr10u.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi b/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi
+index 4fb06494a4..4f11d5d7a4 100644
+--- a/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi
++++ b/target/linux/ath79/dts/ar9331_tplink_tl-wr741nd-v4.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9341_tplink.dtsi b/target/linux/ath79/dts/ar9341_tplink.dtsi
+index f99b6da67e..0a950bd1a6 100644
+--- a/target/linux/ath79/dts/ar9341_tplink.dtsi
++++ b/target/linux/ath79/dts/ar9341_tplink.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9344_dlink_dir-8x5.dtsi b/target/linux/ath79/dts/ar9344_dlink_dir-8x5.dtsi
+index 2dd2297e87..9d9af23bab 100644
+--- a/target/linux/ath79/dts/ar9344_dlink_dir-8x5.dtsi
++++ b/target/linux/ath79/dts/ar9344_dlink_dir-8x5.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi b/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi
+index 16a4e3f6e8..18b9ae1778 100644
+--- a/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi
++++ b/target/linux/ath79/dts/ar9344_netgear_wndr.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9344_tplink_cpe.dtsi b/target/linux/ath79/dts/ar9344_tplink_cpe.dtsi
+index d002dfeb3c..27a8d0aa13 100644
+--- a/target/linux/ath79/dts/ar9344_tplink_cpe.dtsi
++++ b/target/linux/ath79/dts/ar9344_tplink_cpe.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/ar9344_tplink_cpe_1port.dtsi b/target/linux/ath79/dts/ar9344_tplink_cpe_1port.dtsi
+index 653efdee17..057ba4572f 100644
+--- a/target/linux/ath79/dts/ar9344_tplink_cpe_1port.dtsi
++++ b/target/linux/ath79/dts/ar9344_tplink_cpe_1port.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "ar9344_tplink_cpe.dtsi"
+ 
+diff --git a/target/linux/ath79/dts/ar9344_tplink_cpe_2port.dtsi b/target/linux/ath79/dts/ar9344_tplink_cpe_2port.dtsi
+index e97e49d718..8a1332c9c5 100644
+--- a/target/linux/ath79/dts/ar9344_tplink_cpe_2port.dtsi
++++ b/target/linux/ath79/dts/ar9344_tplink_cpe_2port.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "ar9344_tplink_cpe.dtsi"
+ 
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi b/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi
+index 72bc2a6466..f06305c47f 100644
+--- a/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar300m.dtsi
+@@ -1,4 +1,3 @@
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi b/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi
+index cb329a9a66..5edd2adc83 100644
+--- a/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi
++++ b/target/linux/ath79/dts/qca9533_tplink_cpe210.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "qca9533_tplink_cpexxx.dtsi"
+ 
+diff --git a/target/linux/ath79/dts/qca9533_tplink_cpexxx.dtsi b/target/linux/ath79/dts/qca9533_tplink_cpexxx.dtsi
+index 50d34c7c90..e0505e5724 100644
+--- a/target/linux/ath79/dts/qca9533_tplink_cpexxx.dtsi
++++ b/target/linux/ath79/dts/qca9533_tplink_cpexxx.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9533_tplink_tl-wr841-v11.dtsi b/target/linux/ath79/dts/qca9533_tplink_tl-wr841-v11.dtsi
+index ca95981008..a0d0afcccf 100644
+--- a/target/linux/ath79/dts/qca9533_tplink_tl-wr841-v11.dtsi
++++ b/target/linux/ath79/dts/qca9533_tplink_tl-wr841-v11.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "qca9533_tplink_tl-wr841.dtsi"
+ 
+diff --git a/target/linux/ath79/dts/qca9533_tplink_tl-wr841.dtsi b/target/linux/ath79/dts/qca9533_tplink_tl-wr841.dtsi
+index e3d244ee7b..9f1bef3d4d 100644
+--- a/target/linux/ath79/dts/qca9533_tplink_tl-wr841.dtsi
++++ b/target/linux/ath79/dts/qca9533_tplink_tl-wr841.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca953x_tplink_tl-wr810n.dtsi b/target/linux/ath79/dts/qca953x_tplink_tl-wr810n.dtsi
+index c5fd7166a0..d08b4d65a5 100644
+--- a/target/linux/ath79/dts/qca953x_tplink_tl-wr810n.dtsi
++++ b/target/linux/ath79/dts/qca953x_tplink_tl-wr810n.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi b/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi
+index 970a144dbc..b43ab2c6b6 100644
+--- a/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi
++++ b/target/linux/ath79/dts/qca9557_iodata_wn-ac-dgr.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9558_comfast_cf-wr650ac.dtsi b/target/linux/ath79/dts/qca9558_comfast_cf-wr650ac.dtsi
+index 39fae74b83..8ee967ab9f 100644
+--- a/target/linux/ath79/dts/qca9558_comfast_cf-wr650ac.dtsi
++++ b/target/linux/ath79/dts/qca9558_comfast_cf-wr650ac.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi b/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
+index ea752661ba..2cdb1b8373 100644
+--- a/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
++++ b/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
+@@ -10,8 +10,6 @@
+  * antennas and number of spatial streams.
+  */
+ 
+-/dts-v1/;
+-
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+ 
+diff --git a/target/linux/ath79/dts/qca9558_netgear_ex7300.dtsi b/target/linux/ath79/dts/qca9558_netgear_ex7300.dtsi
+index 170563b6a7..bbb43354c4 100644
+--- a/target/linux/ath79/dts/qca9558_netgear_ex7300.dtsi
++++ b/target/linux/ath79/dts/qca9558_netgear_ex7300.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9558_tplink_archer-c.dtsi b/target/linux/ath79/dts/qca9558_tplink_archer-c.dtsi
+index 3defa554de..9f5d7a6fcf 100644
+--- a/target/linux/ath79/dts/qca9558_tplink_archer-c.dtsi
++++ b/target/linux/ath79/dts/qca9558_tplink_archer-c.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9558_tplink_rex5x.dtsi b/target/linux/ath79/dts/qca9558_tplink_rex5x.dtsi
+index 2bc0f38f02..17e172d547 100644
+--- a/target/linux/ath79/dts/qca9558_tplink_rex5x.dtsi
++++ b/target/linux/ath79/dts/qca9558_tplink_rex5x.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9558_tplink_tl-wr1043nd.dtsi b/target/linux/ath79/dts/qca9558_tplink_tl-wr1043nd.dtsi
+index 4c3a3230fe..a3f2b11212 100644
+--- a/target/linux/ath79/dts/qca9558_tplink_tl-wr1043nd.dtsi
++++ b/target/linux/ath79/dts/qca9558_tplink_tl-wr1043nd.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9561_tplink_archer-c6x.dtsi b/target/linux/ath79/dts/qca9561_tplink_archer-c6x.dtsi
+index 719a9d065a..cee30a13b6 100644
+--- a/target/linux/ath79/dts/qca9561_tplink_archer-c6x.dtsi
++++ b/target/linux/ath79/dts/qca9561_tplink_archer-c6x.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9563_dlink_dir-842-c.dtsi b/target/linux/ath79/dts/qca9563_dlink_dir-842-c.dtsi
+index ac8fe3ae0a..2482874c99 100644
+--- a/target/linux/ath79/dts/qca9563_dlink_dir-842-c.dtsi
++++ b/target/linux/ath79/dts/qca9563_dlink_dir-842-c.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9563_elecom_wrc-ghbk2-i.dtsi b/target/linux/ath79/dts/qca9563_elecom_wrc-ghbk2-i.dtsi
+index f04304ee4c..9395c7b26f 100644
+--- a/target/linux/ath79/dts/qca9563_elecom_wrc-ghbk2-i.dtsi
++++ b/target/linux/ath79/dts/qca9563_elecom_wrc-ghbk2-i.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi
+index 8250db55ad..3e30a0fd0b 100644
+--- a/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi
++++ b/target/linux/ath79/dts/qca9563_glinet_gl-ar750s.dtsi
+@@ -1,7 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+ 
+-/dts-v1/;
+-
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+ 
+diff --git a/target/linux/ath79/dts/qca9563_tplink_archer-x6-v2.dtsi b/target/linux/ath79/dts/qca9563_tplink_archer-x6-v2.dtsi
+index f1a1f5673d..6a1edd8d2b 100644
+--- a/target/linux/ath79/dts/qca9563_tplink_archer-x6-v2.dtsi
++++ b/target/linux/ath79/dts/qca9563_tplink_archer-x6-v2.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9563_tplink_archer-x7-v5.dtsi b/target/linux/ath79/dts/qca9563_tplink_archer-x7-v5.dtsi
+index 3049c8bc20..8d6e1ed9f9 100644
+--- a/target/linux/ath79/dts/qca9563_tplink_archer-x7-v5.dtsi
++++ b/target/linux/ath79/dts/qca9563_tplink_archer-x7-v5.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/qca9563_tplink_tl-wr1043n.dtsi b/target/linux/ath79/dts/qca9563_tplink_tl-wr1043n.dtsi
+index ba56cf23b8..47480481fa 100644
+--- a/target/linux/ath79/dts/qca9563_tplink_tl-wr1043n.dtsi
++++ b/target/linux/ath79/dts/qca9563_tplink_tl-wr1043n.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi b/target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+index f5543e4f89..dcb450a2d3 100644
+--- a/target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
++++ b/target/linux/ath79/dts/tp9343_tplink_tl-wr940n-v3.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "tp9343_tplink_tl-wr94x.dtsi"
+ 
+diff --git a/target/linux/ath79/dts/tp9343_tplink_tl-wr94x.dtsi b/target/linux/ath79/dts/tp9343_tplink_tl-wr94x.dtsi
+index c6bb8a2417..fb5941657d 100644
+--- a/target/linux/ath79/dts/tp9343_tplink_tl-wr94x.dtsi
++++ b/target/linux/ath79/dts/tp9343_tplink_tl-wr94x.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+diff --git a/target/linux/ipq806x/files-4.14/arch/arm/boot/dts/qcom-ipq8064.dtsi b/target/linux/ipq806x/files-4.14/arch/arm/boot/dts/qcom-ipq8064.dtsi
+index 8387460d27..dc2034560a 100644
+--- a/target/linux/ipq806x/files-4.14/arch/arm/boot/dts/qcom-ipq8064.dtsi
++++ b/target/linux/ipq806x/files-4.14/arch/arm/boot/dts/qcom-ipq8064.dtsi
+@@ -1,4 +1,3 @@
+-/dts-v1/;
+ 
+ #include "skeleton.dtsi"
+ #include <dt-bindings/clock/qcom,gcc-ipq806x.h>
+diff --git a/target/linux/lantiq/files/arch/mips/boot/dts/FRITZ736X.dtsi b/target/linux/lantiq/files/arch/mips/boot/dts/FRITZ736X.dtsi
+index 57033eb4a9..f58a414a28 100644
+--- a/target/linux/lantiq/files/arch/mips/boot/dts/FRITZ736X.dtsi
++++ b/target/linux/lantiq/files/arch/mips/boot/dts/FRITZ736X.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "vr9.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7620a_edimax_ew-747x.dtsi b/target/linux/ramips/dts/mt7620a_edimax_ew-747x.dtsi
+index b7d8087d5a..52c0ac0925 100644
+--- a/target/linux/ramips/dts/mt7620a_edimax_ew-747x.dtsi
++++ b/target/linux/ramips/dts/mt7620a_edimax_ew-747x.dtsi
+@@ -1,7 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+ 
+-/dts-v1/;
+-
+ #include "mt7620a.dtsi"
+ 
+ #include <dt-bindings/gpio/gpio.h>
+diff --git a/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi b/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi
+index 800e8e6e03..f8f9bc754a 100644
+--- a/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi
++++ b/target/linux/ramips/dts/mt7620a_zbtlink_zbt-we1026-h.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "mt7620a_zbtlink_zbt-we1026.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7621_asiarf_ap7621.dtsi b/target/linux/ramips/dts/mt7621_asiarf_ap7621.dtsi
+index eb5a60bcdc..db83f99c3a 100644
+--- a/target/linux/ramips/dts/mt7621_asiarf_ap7621.dtsi
++++ b/target/linux/ramips/dts/mt7621_asiarf_ap7621.dtsi
+@@ -1,6 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+ 
+-/dts-v1/;
+ #include "mt7621.dtsi"
+ 
+ #include <dt-bindings/gpio/gpio.h>
+diff --git a/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi b/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi
+index e8b11e5d59..8eaf55dbc7 100644
+--- a/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi
++++ b/target/linux/ramips/dts/mt7621_asus_rt-acx5p.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "mt7621.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7621_elecom_wrc-gst.dtsi b/target/linux/ramips/dts/mt7621_elecom_wrc-gst.dtsi
+index 1776db8fc0..b4aaec46fc 100644
+--- a/target/linux/ramips/dts/mt7621_elecom_wrc-gst.dtsi
++++ b/target/linux/ramips/dts/mt7621_elecom_wrc-gst.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0
+-/dts-v1/;
+ 
+ #include "mt7621.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi b/target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi
+index 7cff51a090..980dfe1e1d 100644
+--- a/target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi
++++ b/target/linux/ramips/dts/mt7621_netgear_sercomm.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0
+-/dts-v1/;
+ 
+ #include "mt7621.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi b/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi
+index d09585a753..5bf4eb0ac7 100644
+--- a/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi
++++ b/target/linux/ramips/dts/mt7621_netgear_sercomm_chj.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0
+-/dts-v1/;
+ 
+ #include "mt7621_netgear_sercomm.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7628an_hiwifi_hc5x61a.dtsi b/target/linux/ramips/dts/mt7628an_hiwifi_hc5x61a.dtsi
+index c236a7a6f5..7a6631d2e4 100644
+--- a/target/linux/ramips/dts/mt7628an_hiwifi_hc5x61a.dtsi
++++ b/target/linux/ramips/dts/mt7628an_hiwifi_hc5x61a.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "mt7628an.dtsi"
+ 
+diff --git a/target/linux/ramips/dts/mt7628an_iptime.dtsi b/target/linux/ramips/dts/mt7628an_iptime.dtsi
+index 05d6aa533a..bbd8642f2a 100644
+--- a/target/linux/ramips/dts/mt7628an_iptime.dtsi
++++ b/target/linux/ramips/dts/mt7628an_iptime.dtsi
+@@ -1,5 +1,4 @@
+ // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+-/dts-v1/;
+ 
+ #include "mt7628an.dtsi"
+ 
+-- 
+2.20.1
 
-This is a multi-part message in MIME format.
-
---cbc9a9a3109135ad4c8006329c3c
-Content-Type: text/plain; charset="windows-1251"
-Content-Transfer-Encoding: quoted-printable
-
-=CE=CF=D2=C8=CC=C8=C7=C0=D6=C8=DF =CD=C0=CB=CE=C3=CE=CE=C1=CB=CE=C6=C5=CD=
-=C8=DF
-=C0=EA=F2=F3=E0=EB=FC=ED=FB=E5 =EC=E5=F2=EE=E4=E8=EA=E8 =F3=EC=E5=ED=FC=F8=
-=E5=ED=E8=FF =E2=FB=EF=EB=E0=F2 =E4=EB=FF =EE=F0=E3=E0=ED=E8=E7=E0=F6=E8=E9=
- =E8 =F4=E8=E7=E8=F7=E5=F1=EA=E8=F5 =EB=E8=F6
-
-=C7=E4=F0=E0=E2=F1=F2=E2=F3=E9=F2=E5, =F3=E2=E0=E6=E0=E5=EC=FB=E5 =E4=E0=EC=
-=FB =E8 =E3=EE=F1=EF=EE=E4=E0, =EF=F0=E5=E4=F1=F2=E0=E2=EB=FF=E5=EC =C2=E0=
-=EC =FD=EA=F1=EA=EB=FE=E7=E8=E2=ED=EE=E5 =E8=E7=E4=E0=ED=E8=E5 "=CE=EF=F2=
-=E8=EC=E8=E7=E0=F6=E8=FF =ED=E0=EB=EE=E3=EE=EE=E1=EB=EE=E6=E5=ED=E8=FF" =EF=
-=EE=F1=E2=FF=F9=B8=ED=ED=EE=E5 =EE=F0=E3=E0=ED=E8=E7=E0=F6=E8=E8 =E4=E5=E9=
-=F1=F2=E2=E8=E9 =ED=E0=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA=E0 =EF=EE=
- =EC=E8=ED=E8=EC=E8=E7=E0=F6=E8=E8 =ED=E0=EB=EE=E3=EE=E2 =E8 =ED=E0=EB=EE=
-=E3=EE=E2=EE=EC=F3 =EF=EB=E0=ED=E8=F0=EE=E2=E0=ED=E8=FE =F1 =F3=F7=E5=F2=EE=
-=EC =F4=E0=EA=F2=EE=F0=E0 =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=E8 (=EF=EE=EB=
-=F3=F7=E5=ED=E8=FF =EF=EE=EB=EE=E6=E8=F2=E5=EB=FC=ED=FB=F5 =F4=E8=ED=E0=ED=
-=F1=EE=E2=FB=F5 =F0=E5=E7=F3=EB=FC=F2=E0=F2=EE=E2, =ED=E5 =EE=F2=FF=E3=EE=
-=F9=E5=ED=ED=FB=F5 =EE=F2=F0=E8=F6=E0=F2=E5=EB=FC=ED=FB=EC=E8 =EF=EE=F1=EB=
-=E5=E4=F1=F2=E2=E8=FF=EC=E8). =CA=ED=E8=E3=E0 =EE=F0=E8=E5=ED=F2=E8=F0=EE=
-=E2=E0=ED=E0 =ED=E0 =FD=EA=EE=ED=EE=EC=E8=F7=E5=F1=EA=E8 =E0=EA=F2=E8=E2=ED=
-=FB=F5 =ED=E0=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA=EE=E2, =EA=EE=F2=EE=
-=F0=FB=E5 =E2 =F6=E5=EB=FF=F5 =EF=EE=E2=FB=F8=E5=ED=E8=FF =FD=F4=F4=E5=EA=
-=F2=E8=E2=ED=EE=F1=F2=E8 =F1=E2=EE=E5=E3=EE =E1=E8=E7=ED=E5=F1=E0 =E3=EE=F2=
-=EE=E2=FB =F0=E0=F1=F1=EC=E0=F2=F0=E8=E2=E0=F2=FC =EB=FE=E1=FB=E5 =ED=E5 =
-=EF=F0=EE=F2=E8=E2=EE=F0=E5=F7=E0=F9=E8=E5 =E7=E0=EA=EE=ED=F3 =EF=F3=F2=E8=
-, =E2=E5=E4=F3=F9=E8=E5 =EA =EF=EE=E2=FB=F8=E5=ED=E8=FE =EF=F0=E8=E1=FB=EB=
-=E8. =D2=E0=EA=EE=E9 =ED=E0=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA =F1=
-=F2=F0=E5=EC=E8=F2=F1=FF =EA =F3=EF=F0=E0=E2=EB=E5=ED=E8=FE =FD=EA=EE=ED=EE=
-=EC=E8=F7=E5=F1=EA=E8=EC=E8 =EF=F0=EE=F6=E5=F1=F1=E0=EC=E8, =E2 =F2=EE=EC=
- =F7=E8=F1=EB=E5 =E8 =ED=E0=EB=EE=E3=EE=EE=E1=EB=EE=E6=E5=ED=E8=E5=EC, =EE=
-=E4=ED=E0=EA=EE =E2=E2=E8=E4=F3 =F0=FF=E4=E0 =EE=E1=F1=F2=EE=FF=F2=E5=EB=FC=
-=F1=F2=E2 =F1=EF=EE=F1=EE=E1=E5=ED =F1=EE=E2=E5=F0=F8=E0=F2=FC =EE=F8=E8=E1=
-=EA=E8. =C7=E0=E4=E0=F7=E0 =E4=E0=ED=ED=EE=E9 =EA=ED=E8=E3=E8 =F1=EE=F1=F2=
-=EE=E8=F2 =E2 =EE=EF=E8=F1=E0=ED=E8=E8 =F6=E5=EB=E5=F1=EE=EE=E1=F0=E0=E7=ED=
-=FB=F5 =E4=E5=E9=F1=F2=E2=E8=E9 =ED=E0=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=
-=E8=EA=E0 =E8 =EF=F0=E5=E4=EE=F1=F2=E5=F0=E5=E6=E5=ED=E8=E8 =E5=E3=EE =EE=
-=F2 =ED=E5=F6=E5=EB=E5=F1=EE=EE=E1=F0=E0=E7=ED=FB=F5. =CA=ED=E8=E3=E0 =F1=
-=EE=E4=E5=F0=E6=E8=F2 =E7=ED=E0=ED=E8=FF =E8 =EE=EF=FB=F2, =EF=EE=E7=E2=EE=
-=EB=FF=FE=F9=E8=E5 =F1=EE=E7=E4=E0=F2=FC =F1=E8=F1=F2=E5=EC=F3 =ED=E0=EB=EE=
-=E3=EE=E2=EE=E9 =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=E8 =E2 =F1=EE=E2=F0=E5=EC=
-=E5=ED=ED=FB=F5 =F3=F1=EB=EE=E2=E8=FF=F5. =D3=E4=E5=EB=E5=ED=EE =E2=ED=E8=
-=EC=E0=ED=E8=E5 =E0=ED=E0=EB=E8=E7=F3 =ED=E0=EB=EE=E3=EE=E2=EE=E3=EE =E7=E0=
-=EA=EE=ED=EE=E4=E0=F2=E5=EB=FC=F1=F2=E2=E0, =ED=EE=F0=EC=E0=F2=E8=E2=ED=FB=
-=F5 =E8 =F0=E0=E7=FA=FF=F1=ED=FF=FE=F9=E8=F5 =E4=EE=EA=F3=EC=E5=ED=F2=EE=E2=
- =EC=E8=ED=E8=F1=F2=E5=F0=F1=F2=E2 =E8 =E2=E5=E4=EE=EC=F1=F2=E2, =F0=E5=E3=
-=F3=EB=E8=F0=F3=FE=F9=E8=F5 =ED=E0=EB=EE=E3=EE=E2=F3=FE =F1=F4=E5=F0=F3, =
-=E0 =F2=E0=EA=E6=E5 =F1=F3=E4=E5=E1=ED=EE=E9 =EF=F0=E0=EA=F2=E8=EA=E8. =CF=
-=EE=E4=F0=EE=E1=ED=EE =F0=E0=F1=F1=EC=E0=F2=F0=E8=E2=E0=FE=F2=F1=FF =E8 =E8=
-=F1=F1=EB=E5=E4=F3=FE=F2=F1=FF =EF=F0=EE=E2=E5=F0=E5=ED=ED=FB=E5 =ED=E0 =F0=
-=E5=E0=EB=FC=ED=EE=EC =E4=E5=EB=EE=E2=EE=EC =EE=EF=FB=F2=E5 =EB=E5=E3=E0=EB=
-=FC=ED=FB=E5 =E8 "=F2=E5=ED=E5=E2=FB=E5" =F1=EF=EE=F1=EE=E1=FB =F1=ED=E8=E6=
-=E5=ED=E8=FF =F3=F0=EE=E2=ED=FF =ED=E0=EB=EE=E3=EE=E2=FB=F5 =E2=FB=EF=EB=E0=
-=F2. =D0=E5=EA=EE=EC=E5=ED=E4=E0=F6=E8=E8 =EF=EE =EE=E1=E5=F1=EF=E5=F7=E5=
-=ED=E8=FE =EB=E8=F7=ED=EE=E9 =ED=E0=EB=EE=E3=EE=E2=EE=E9 =E1=E5=E7=EE=EF=E0=
-=F1=ED=EE=F1=F2=E8 =E8 =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=E8 =E4=E5=FF=F2=E5=
-=EB=FC=ED=EE=F1=F2=E8 =FE=F0=E8=E4=E8=F7=E5=F1=EA=E8=F5 =EB=E8=F6.
-
-=C2 =DD=D2=CE=C9 =CA=CD=C8=C3=C5 =C2=DB =CD=C0=C9=C4=C5=D2=C5 =CF=CE=C4=D0=
-=CE=C1=CD=D3=DE =C8=CD=D4=CE=D0=CC=C0=D6=C8=DE =CF=CE =D1=CB=C5=C4=D3=DE=D9=
-=C8=CC =C2=CE=CF=D0=CE=D1=C0=CC:
-
-=CA=E0=EA =EE=E1=E5=F1=EF=E5=F7=E8=F2=FC =EB=E8=F7=ED=F3=FE =ED=E0=EB=EE=E3=
-=EE=E2=F3=FE =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=FC =F0=F3=EA=EE=E2=EE=E4=E8=
-=F2=E5=EB=E5=E9 =E8 =F4=E0=EA=F2=E8=F7=E5=F1=EA=E8=F5 =F1=EE=E1=F1=F2=E2=E5=
-=ED=ED=E8=EA=EE=E2 =E1=E8=E7=ED=E5=F1=E0?=20
-
-=CA=E0=EA =E7=E0=F0=E0=E1=E0=F2=FB=E2=E0=FE=F2 =ED=E0 =ED=E0=EB=EE=E3=EE=E2=
-=FB=F5 =E8 =F4=E8=ED=E0=ED=F1=EE=E2=FB=F5 =F1=F5=E5=EC=E0=F5 - =E1=E8=E7=ED=
-=E5=F1 =ED=E0 =ED=E0=EB=EE=E3=E0=F5?=20
-
-=CA=E0=EA =EB=E5=E3=E0=EB=E8=E7=EE=E2=E0=F2=FC =E4=EE=F5=EE=E4=FB =E8 =F1=
-=EE=E1=F1=F2=E2=E5=ED=ED=EE=F1=F2=FC =F4=E8=E7=E8=F7=E5=F1=EA=E8=F5 (=E8 =
-=EF=EE=E4=EA=EE=ED=F2=F0=EE=EB=FC=ED=FB=F5 =E8=EC =FE=F0=E8=E4=E8=F7=E5=F1=
-=EA=E8=F5) =EB=E8=F6?=20
-
-=CA=E0=EA =E3=F0=E0=EC=EE=F2=ED=EE =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =E7=
-=E0=EA=EE=ED=ED=FB=E5 =E8 =F2=E5=ED=E5=E2=FB=E5 =F1=EF=EE=F1=EE=E1=FB =F1=
-=ED=E8=E6=E5=ED=E8=FF =ED=E0=EB=EE=E3=EE=E2 - =EC=E0=EB=FB=E9, =F1=F0=E5=E4=
-=ED=E8=E9 =E8 =EA=F0=F3=EF=ED=FB=EC =E1=E8=E7=ED=E5=F1?
-
-=CA=E0=EA =EE=E1=E5=F1=EF=E5=F7=E8=F2=FC =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=
-=FC =E8 =EB=E5=E3=E0=EB=E8=E7=EE=E2=E0=F2=FC =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=
-=ED=E8=E5 "=F1=E5=F0=FB=F5" =E8 "=F7=E5=F0=ED=FB=F5" =ED=E8=E7=EA=EE- =E8=
- =E1=E5=E7=ED=E0=EB=EE=E3=EE=E2=FB=F5 =F1=F5=E5=EC?
-
-=CA=E0=EA "=EE=F7=E8=F1=F2=E8=F2=FC" =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=E5 =EE=
-=F2 =ED=E0=EB=EE=E3=EE=E2=FB=F5 =EF=F0=E5=F2=E5=ED=E7=E8=E9 =E8 =EA=F0=E5=
-=E4=E8=F2=EE=F0=F1=EA=EE=E9 =E7=E0=E4=EE=EB=E6=E5=ED=ED=EE=F1=F2=E8?
-
-=CA=E0=EA =E7=E0=F9=E8=F2=E8=F2=FC =E0=EA=F2=E8=E2=FB =EF=F0=E5=E4=EF=F0=E8=
-=FF=F2=E8=FF =EE=F2 =E2=F0=E0=E6=E4=E5=E1=ED=EE=E3=EE =EF=EE=E3=EB=EE=F9=E5=
-=ED=E8=FF =E8=EB=E8 =E4=E0=E2=EB=E5=ED=E8=FF =E3=EE=F1=F3=E4=E0=F0=F1=F2=E2=
-=E0?
-
-=CA=E0=EA =E1=E5=E7=EE=EF=E0=F1=ED=EE =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC=
- =F1=F0=E5=E4=F1=F2=E2=E0 =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=FF =E2 =EB=E8=F7=
-=ED=FB=F5 =F6=E5=EB=FF=F5?
-
-=CA=E0=EA =E3=F0=E0=EC=EE=F2=ED=EE =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =F4=
-=E8=ED=E0=ED=F1=EE=E2=FB=E5 =F1=F5=E5=EC=FB =E4=EB=FF =C2=DD=C4 - =D1=D8=C0=
-, =CA=E0=ED=E0=E4=E0, =D4=F0=E0=ED=F6=E8=FF, =C8=F1=EF=E0=ED=E8=FF, =C1=F0=
-=E0=E7=E8=EB=E8=FF, =C3=EE=ED=EA=EE=ED=E3, =C1=E5=EB=E0=F0=F3=F1=FC?
-
-=CA=E0=EA =EF=F0=EE=E2=E5=F1=F2=E8 =EB=E5=E3=E0=EB=FC=ED=EE=E5 =F3=ED=E8=F7=
-=F2=EE=E6=E5=ED=E8=E5 "=ED=E5=ED=F3=E6=ED=EE=E9" =E4=EE=EA=F3=EC=E5=ED=F2=
-=E0=F6=E8=E8 =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=FF?
-
-=CA=E0=EA =E2=FB=E2=E5=F1=F2=E8 =E0=EA=F2=E8=E2=FB =E8 =EB=E8=EA=E2=E8=E4=
-=E8=F0=EE=E2=E0=F2=FC =EB=FE=E1=EE=E5, =E2 =F2=EE=EC =F7=E8=F1=EB=E5 =EF=F0=
-=EE=E1=EB=E5=EC=ED=EE=E5 =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=E5?
-
-=CA=E0=EA =E2 =F1=E2=EE=E8=F5 =E8=ED=F2=E5=F0=E5=F1=E0=F5 =EE=E1=E0=ED=EA=
-=F0=EE=F2=E8=F2=FC =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=E5 =E8 =E8=E7=E1=E5=E6=E0=
-=F2=FC =EE=F2=E2=E5=F2=F1=F2=E2=E5=ED=ED=EE=F1=F2=E8 =F0=F3=EA=EE=E2=EE=E4=
-=F1=F2=E2=E0 =E8 =F1=EE=E1=F1=F2=E2=E5=ED=ED=E8=EA=EE=E2?
-
-=CA=E0=EA =EF=F0=E0=E2=E8=EB=FC=ED=EE =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC=
- =ED=EE=EC=E8=ED=E0=EB=FC=ED=FB=F5 =E4=E8=F0=E5=EA=F2=EE=F0=EE=E2 =E2 =F0=
-=EE=F1=F1=E8=E9=F1=EA=E8=F5 =EA=EE=EC=EF=E0=ED=E8=FF=F5?
-
-=CA=E0=EA =E0=ED=EE=ED=E8=EC=ED=EE, =ED=E0=E4=E5=E6=ED=EE =E8 =E1=E5=F1=F1=
-=EB=E5=E4=ED=EE =EF=E5=F0=E5=EC=E5=F9=E0=F2=FC, =EE=E1=ED=E0=EB=E8=F7=E8=E2=
-=E0=F2=FC, =EB=E5=E3=E0=EB=E8=E7=EE=E2=E0=F2=FC =E4=E5=ED=E5=E6=ED=FB=E5 =
-=F1=F0=E5=E4=F1=F2=E2=E0 =EB=FE=E1=EE=E3=EE =EF=F0=EE=E8=F1=F5=EE=E6=E4=E5=
-=ED=E8=FF?
-
-=CA=E0=EA =EF=EE=EB=F3=F7=E8=F2=FC =EA=F0=E5=E4=E8=F2=FB, =E7=E0=EB=EE=E3=
-=E8, =E8=ED=E2=E5=F1=F2=E8=F6=E8=E8 - =F7=F2=EE=E1=FB =E7=E0=EA=EE=ED=ED=EE=
- =ED=E5 =E2=EE=E7=E2=F0=E0=F9=E0=F2=FC?
-
-=CA=E0=EA =ED=E5 =EF=EE=F2=E5=F0=FF=F2=FC =ED=E0 =ED=E0=EB=EE=E3=E0=F5 =E2=
- =F3=F1=EB=EE=E2=E8=FF=F5 =F0=E5=E7=EA=EE=E3=EE =EF=E0=E4=E5=ED=E8=FF =D0=
-=F3=E1=EB=FF?
-
-=CA=E0=EA=E8=E5 =F1=EB=F3=F7=E0=E8 =E1=EB=E0=E3=EE=EF=F0=E8=FF=F2=ED=FB =E8=
- =E2=FB=E3=EE=E4=ED=FB, =F7=F2=EE=E1=FB =EE=E1=FA=FF=E2=E8=F2=FC =F1=E5=E1=
-=FF =E1=E0=ED=EA=F0=EE=F2=EE=EC?
-
-=CA=E0=EA =E8=ED=F1=EF=E5=EA=F2=EE=F0=FB =EF=EB=E0=ED=E8=F0=F3=FE=F2 =E2=FB=
-=FF=E2=EB=FF=F2=FC =E0=ED=F2=E8=EA=F0=E8=E7=E8=F1=ED=FB=E5 =ED=E0=EB=EE=E3=
-=EE=E2=FB=E5 =F1=F5=E5=EC=FB?
-
-=CA=E0=EA =E8=ED=F1=EF=E5=EA=F2=EE=F0=EE=E2 =F3=F7=E0=F2 =E2=FB=FF=E2=EB=FF=
-=F2=FC =ED=E5=F3=F7=F2=E5=ED=ED=FB=E5 =E4=EE=F5=EE=E4=FB =F4=E8=E7=E8=F7=E5=
-=F1=EA=E8=F5 =EB=E8=F6?
-
-=CA=E0=EA =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =EA=E0=F0=EC=E0=ED=ED=FB=E9=
- =EF=F0=EE=F4=F1=EE=FE=E7 =E4=EB=FF =EF=EE=EB=F3=F7=E5=ED=E8=FF =ED=E0=EB=
-=EE=E3=EE=E2=EE=E9 =E2=FB=E3=EE=E4=FB?
-
-=CA=E0=EA =E8=E7=E1=E5=E6=E0=F2=FC =EE=E1=E2=E8=ED=E5=ED=E8=E9 =E2 =EF=F0=
-=EE=F2=E8=E2=EE=E4=E5=E9=F1=F2=E2=E8=E8 =ED=E0=EB=EE=E3=EE=E2=EE=E9 =EF=F0=
-=EE=E2=E5=F0=EA=E5?
-
-=CA=E0=EA =EF=F0=E8=EE=F1=F2=E0=ED=EE=E2=E8=F2=FC =E8=F1=EF=EE=EB=ED=E5=ED=
-=E8=E5 =F2=F0=E5=E1=EE=E2=E0=ED=E8=FF =EE=E1 =F3=EF=EB=E0=F2=E5 =ED=E0=EB=
-=EE=E3=E0?
-
-=CA=E0=EA =EE=F2=EC=E5=ED=E8=F2=FC =E4=EE=ED=E0=F7=E8=F1=EB=E5=ED=E8=FF, =
-=E5=F1=EB=E8 =E2 =E0=EA=F2=E5 =E8=EB=E8 =F0=E5=F8=E5=ED=E8=E8 =F1=EE=E4=E5=
-=F0=E6=E0=F2=F1=FF?
-
-=CA=E0=EA =EE=F1=EF=EE=F0=E8=F2=FC =EE=E1=E5=F1=EF=E5=F7=E8=F2=E5=EB=FC=ED=
-=FB=E5 =EC=E5=F0=FB =ED=E0=EB=EE=E3=EE=E2=E8=EA=EE=E2?
-
-=CA=E0=EA=F3=FE =ED=E0=EB=EE=E3=EE=E2=F3=FE =E2=FB=E3=EE=E4=F3 =EC=EE=E6=ED=
-=EE =EF=EE=EB=F3=F7=E8=F2=FC =EE=F2 =EB=E8=EA=E2=E8=E4=E0=F6=E8=E8 =EE=E1=
-=FA=E5=EA=F2=EE=E2?
-
-=CA=E0=EA =F1=E4=E5=EB=E0=F2=FC, =F7=F2=EE=E1=FB =EF=F0=EE=E2=E5=F0=EA=E0=
- =ED=E5 =E7=E0=EA=EE=ED=F7=E8=EB=E0=F1=FC =F3=E3=EE=EB=EE=E2=ED=FB=EC =E4=
-=E5=EB=EE=EC?
-
-=CA=E0=EA =EC=E8=ED=E8=EC=E8=E7=E8=F0=EE=E2=E0=F2=FC =ED=E0=EB=EE=E3=EE=E2=
-=FB=E5 =EF=EE=F2=E5=F0=E8 =EE=F2 =F1=E4=E5=EB=EE=EA =F1 =EE=E4=ED=EE=E4=ED=
-=E5=E2=EA=E0=EC=E8?
-
-=CA=E0=EA =E8=E7=EC=E5=ED=E5=ED=E8=FF =E2 =CD=E0=EB=EE=E3=EE=E2=EE=EC =EA=
-=EE=E4=E5=EA=F1=E5 2018-2019 =E3=EE=E4=EE=E2 =EF=EE=E2=EB=E8=FF=EB=E8 =ED=
-=E0 =F1=F5=E5=EC=FB?=20
-
-=CA=E0=EA =EF=F0=E0=E2=E8=EB=FC=ED=EE =EF=EE=F1=F2=F3=EF=E8=F2=FC, =E5=F1=
-=EB=E8 =EF=F0=E0=E2=EE=EE=F5=F0=E0=ED=E8=F2=E5=EB=E8 =F2=F0=E5=E1=F3=FE=F2=
- =E4=EE=EA=F3=EC=E5=ED=F2=FB, =E0 =E4=E0=E2=E0=F2=FC =E8=F5 =ED=E5 =F5=EE=
-=F7=E5=F2=F1=FF?=20
-
-=CA=E0=EA =EE=F2=E1=E8=F2=FC=F1=FF =EE=F2 =EE=E1=E2=E8=ED=E5=ED=E8=E9 =E2=
- =F3=EC=FB=F8=EB=E5=ED=ED=EE=E9 =ED=E5=F3=EF=EB=E0=F2=E5 =ED=E0=EB=EE=E3=EE=
-=E2?=20
-
-=CA=E0=EA =EE=F1=EF=EE=F0=E8=F2=FC =E0=F0=E5=F1=F2 =E8=EC=F3=F9=E5=F1=F2=E2=
-=E0 =EA=EE=EC=EF=E0=ED=E8=E8 =E8=EB=E8 =F1=ED=E8=E7=E8=F2=FC =F4=E8=ED=E0=
-=ED=F1=EE=E2=FB=E5 =EF=EE=F2=E5=F0=E8?=20
-
-=CA=E0=EA =E8=ED=F1=EF=E5=EA=F2=EE=F0=FB =EF=F0=E5=F1=E5=EA=E0=FE=F2 =E2=FB=
-=E2=EE=E4 =E8=EC=F3=F9=E5=F1=F2=E2=E0 =EF=F0=E8 =E1=E0=ED=EA=F0=EE=F2=F1=F2=
-=E2=E5?=20
-
-=CA=E0=EA =E2=FB=E3=EE=E4=ED=E5=E5 =EF=F0=EE=E4=E0=F2=FC =E1=E8=E7=ED=E5=F1=
- =E2 =EF=F0=E5=E4=E1=E0=ED=EA=F0=EE=F2=ED=EE=EC =F1=EE=F1=F2=EE=FF=ED=E8=E8=
-?=20
-
-=CA=E0=EA =E7=E0=F0=E0=E1=EE=F2=E0=F2=FC =ED=E0 =EA=F0=E5=E4=E8=F2=EE=F0=F1=
-=EA=EE=E9 =E7=E0=E4=EE=EB=E6=E5=ED=ED=EE=F1=F2=E8?=20
-
-=CA=E0=EA =E1=E5=E7=EE=EF=E0=F1=ED=EE =E8 =E2=FB=E3=EE=E4=ED=EE =E2=FB=E9=
-=F2=E8 =E8=E7 =EE=F4=F8=EE=F0=E0?=20
-
-=CA=E0=EA=E8=E5 =FD=EB=E5=EC=E5=ED=F2=FB =F1=F5=E5=EC =E4=E5=EB=E0=FE=F2 =
-=ED=E0=EB=EE=E3=EE=E2=F3=FE =E2=FB=E3=EE=E4=F3 =ED=E5=EE=E1=EE=F1=ED=EE=E2=
-=E0=ED=ED=EE=E9?=20
-
-=CA=E0=EA =EF=F0=E0=E2=E8=EB=FC=ED=EE =E7=E0=F9=E8=F2=E8=F2=FC =F1=F5=E5=EC=
-=F3 =E4=F0=EE=E1=EB=E5=ED=E8=FF?=20
-
-=CA=E0=EA =ED=E5 =EF=E5=F0=E5=F1=F2=E0=F0=E0=F2=FC=F1=FF =F1 =E4=EE=EA=F3=
-=EC=E5=ED=F2=E0=EC=E8, =E7=E0=F9=E8=F9=E0=FF =ED=E0=EB=EE=E3=EE=E2=F3=FE =
-=FD=EA=EE=ED=EE=EC=E8=FE?=20
-
-=CA=E0=EA =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =EF=F0=EE=EA=F3=F0=E0=F2=F3=
-=F0=F3, =F1=F3=E4=FB =E8 =E4=F0=F3=E3=E8=E5 =EE=F0=E3=E0=ED=FB =E4=EB=FF =
-=E7=E0=F9=E8=F2=FB =EE=F2 =ED=E0=EB=EE=E3=EE=E2=E8=EA=EE=E2?=20
-
-=CA=E0=EA=E8=E5 =F1=F5=E5=EC=FB =E8=ED=F1=EF=E5=EA=F2=EE=F0=E0=EC =E2=FB=E3=
-=EE=E4=ED=EE =EF=F0=E8=EC=E5=F0=FF=F2=FC =ED=E0 =ED=E0=EB=EE=E3=EE=EF=EB=E0=
-=F2=E5=EB=FC=F9=E8=EA=EE=E2?=20
-
-=CA=E0=EA =E7=E0=F9=E8=F2=E8=F2=F1=FF, =E5=F1=EB=E8 =EA=EE=EC=EF=E0=ED=E8=
-=E8 =EF=F0=E8=EF=E8=F1=FB=E2=E0=FE=F2 =ED=E5=F1=F3=F9=E5=F1=F2=E2=F3=FE=F9=
-=E8=E5 =E4=EE=EB=E3=E8?=20
-
-=CA=E0=EA=E8=E5 =E4=E5=E9=F1=F2=E2=E8=FF =ED=E0=EB=EE=E3=EE=E2=E8=EA=EE=E2=
- =F1=F2=EE=E8=F2 =EE=E1=E6=E0=EB=EE=E2=E0=F2=FC =E2 =C5=E2=F0=EE=EF=E5=E9=
-=F1=EA=EE=EC =F1=F3=E4=E5?=20
-
-=CA=E0=EA=E8=E5 =E2=FB=E3=EE=E4=ED=FB=E5 =F1 =ED=E0=EB=EE=E3=EE=E2=EE=E9 =
-=F2=EE=F7=EA=E8 =E7=F0=E5=ED=E8=FF =F1=EF=EE=F1=EE=E1=FB =F5=F0=E0=ED=E5=ED=
-=E8=FF =E0=EA=F2=E8=E2=EE=E2?
-
-=C8 =CD=C0 =C4=D0=D3=C3=C8=C5 =C2=CE=CF=D0=CE=D1=DB, =CD=C5 =CE=D1=C2=C5=D9=
-=C0=C5=CC=DB=C5 =C2 =CE=C1=D9=C5=C4=CE=D1=D2=D3=CF=CD=CE=C9 =CE=D4=C8=D6=C8=
-=C0=CB=DC=CD=CE=C9 =CB=C8=D2=C5=D0=C0=D2=D3=D0=C5.
-
-=C0=E2=F2=EE=F0=FB =E8 =FD=EA=F1=EF=E5=F0=F2=FB - =EF=F0=E0=EA=F2=E8=EA=F3=
-=FE=F9=E8=E5 =FE=F0=E8=F1=F2=FB, =EF=F0=E5=E4=EF=F0=E8=ED=E8=EC=E0=F2=E5=EB=
-=E8, =E4=E5=E9=F1=F2=E2=F3=FE=F9=E8=E5 =F1=EE=F2=F0=F3=E4=ED=E8=EA=E8 =ED=
-=E0=EB=EE=E3=EE=E2=FB=F5 =E8 =EF=F0=E0=E2=EE=EE=F5=F0=E0=ED=E8=F2=E5=EB=FC=
-=ED=FB=F5 =EE=F0=E3=E0=ED=EE=E2. =CF=EE=FD=F2=EE=EC=F3 =E2 =EA=ED=E8=E3=E5=
- =F0=E5=E0=EB=FC=ED=E0=FF =EF=F0=E0=EA=F2=E8=EA=E0 / =EE=F6=E5=ED=EA=E0 =E7=
-=E0=EA=EE=ED=ED=EE=F1=F2=E8 =E8 =F0=E8=F1=EA=EE=E2 / =EE=E1=F0=E0=E7=F6=FB=
- =E4=EE=EA=F3=EC=E5=ED=F2=EE=E2 / =EC=E5=F2=EE=E4=FB =F0=E0=E1=EE=F2=FB =ED=
-=E0=EB=EE=E3=EE=E2=FB=F5 =E8 =EF=F0=E0=E2=EE=EE=F5=F0=E0=ED=E8=F2=E5=EB=FC=
-=ED=FB=F5 =EE=F0=E3=E0=ED=EE=E2 / =EF=F0=EE=F4=E8=EB=E0=EA=F2=E8=EA=E0 =EE=
-=F2=E2=E5=F2=F1=F2=E2=E5=ED=ED=EE=F1=F2=E8. =CA=ED=E8=E3=E0 =ED=E5 =FF=E2=
-=EB=FF=E5=F2=F1=FF =F0=F3=EA=EE=E2=EE=E4=F1=F2=E2=EE=EC =EF=EE =F3=EA=EB=EE=
-=ED=E5=ED=E8=FE =EE=F2 =ED=E0=EB=EE=E3=EE=EE=E1=EB=EE=E6=E5=ED=E8=FF, =EE=
-=F2=EC=FB=E2=E0=ED=E8=FE =E4=E5=ED=E5=E3 =E8=EB=E8 =ED=E5=E7=E0=EA=EE=ED=ED=
-=EE=EC=F3 =EF=F0=E5=E4=EF=F0=E8=ED=E8=EC=E0=F2=E5=EB=FC=F1=F2=E2=F3, =EE=E4=
-=ED=E0=EA=EE =E4=E5=FF=F2=E5=EB=FC=ED=EE=F1=F2=FC =EF=F0=EE=F4=E5=F1=F1=E8=
-=EE=ED=E0=EB=EE=E2 =E2 =FD=F2=E8=F5 =EE=E1=EB=E0=F1=F2=FF=F5 =F0=E0=F1=F1=
-=EC=E0=F2=F0=E8=E2=E0=E5=F2=F1=FF, =EF=F0=E8=F7=E5=EC =E2 =F1=F3=E3=F3=E1=
-=EE =EF=F0=E0=EA=F2=E8=F7=E5=F1=EA=EE=EC =EA=EB=FE=F7=E5. =C2 =EA=E0=EA=E8=
-=F5-=F2=EE =F1=EB=F3=F7=E0=FF=F5 =F1=F2=EE=E8=F2 =EE=E1=F0=E0=F2=E8=F2=FC=
- =E2=ED=E8=EC=E0=ED=E8=E5 =E8 =ED=E0 =EE=EF=FB=F2 =F2=E0=EA=EE=E3=EE =F0=EE=
-=E4=E0, =EF=EE=F1=EA=EE=EB=FC=EA=F3 =EF=F0=E8 =E3=F0=E0=EC=EE=F2=ED=EE=EC=
- =E8 =EE=F1=EE=E7=ED=E0=ED=ED=EE=EC =EF=EE=E4=F5=EE=E4=E5 =F2=E0=EA=E0=FF=
- =E4=E5=FF=F2=E5=EB=FC=ED=EE=F1=F2=FC =E1=FB=E2=E0=E5=F2 =E2=E5=F1=FC=EC=E0=
- =F3=F1=EF=E5=F8=ED=E0 =E8 =FD=F2=EE=EC=F3 =E5=F1=F2=FC =EC=ED=EE=E6=E5=F1=
-=F2=E2=EE =EF=F0=E8=EC=E5=F0=EE=E2.
-
-=CE =EA=ED=E8=E3=E5: =C3=EE=E4 =E8=E7=E4=E0=ED=E8=FF - 2019; =CE=E1=EB=EE=
-=E6=EA=E0 - =D2=E2=B8=F0=E4=FB=E9 =EF=E5=F0=E5=EF=EB=B8=F2; =CA=EE=EB-=E2=
-=EE =F1=F2=F0=E0=ED=E8=F6 - 340; =D8=F0=E8=F4=F2 - Times New Roman; =CA=E5=
-=E3=EB=FC - 10 (=C1=EE=F0=E3=E5=F1); =D4=EE=F0=EC=E0=F2 - 310 x 215 =EC=EC=
-.; =C8=EB=EB=FE=F1=F2=F0=E0=F6=E8=E8 - =CF=F0=E8=F1=F3=F2=F1=F2=E2=F3=FE=F2=
-, =F2=E0=E1=EB=E8=F6=FB =E8 =F1=F5=E5=EC=FB; =C2=E5=F1 - 1200 =E3=F0.; =CA=
-=ED=E8=E3=E0 =ED=E5 =EF=EE=F1=F2=F3=EF=E0=E5=F2 =E2 =F1=E2=EE=E1=EE=E4=ED=
-=F3=FE =EF=F0=EE=E4=E0=E6=F3 =ED=E8 =E2 =EF=E5=F7=E0=F2=ED=EE=EC, =ED=E8 =
-=E2 =FD=EB=E5=EA=F2=F0=EE=ED=ED=EE=EC =E2=E8=E4=E5!
-
-=D1=F2=EE=E8=EC=EE=F1=F2=FC =EA=ED=E8=E3=E8 =F1=EE=F1=F2=E0=E2=EB=FF=E5=F2=
- - 7500 (=D1=E5=EC=FC =D2=FB=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2) =D0=F3=E1=EB=
-=E5=E9, =EE=EF=EB=E0=F2=E0 =EF=F0=EE=E8=E7=E2=EE=E4=E8=F2=F1=FF =ED=E0=EB=
-=E8=F7=ED=FB=EC=E8, =E2 =EC=EE=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=E8=FF.
-
-=C4=EE=F1=F2=E0=E2=EA=E0 =EE=F1=F3=F9=E5=F1=F2=E2=EB=FF=E5=F2=F1=FF =CF=EE=
-=F7=F2=EE=E9 =D0=EE=F1=F1=E8=E8, =EE=EF=EB=E0=F2=E0 =EF=F0=EE=E8=F1=F5=EE=
-=E4=E8=F2 =E2 =EC=EE=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=E8=FF =C2=E0=EC=E8=
- =E7=E0=EA=E0=E7=E0 =ED=E0 =EF=EE=F7=F2=E5 (=ED=E0=EB=EE=E6=E5=ED=ED=FB=EC=
- =EF=EB=E0=F2=E5=E6=EE=EC), =ED=E8=EA=E0=EA=EE=E9 =EF=F0=E5=E4=EE=EF=EB=E0=
-=F2=FB =ED=E5 =F2=F0=E5=E1=F3=E5=F2=F1=FF.
-
-=C4=EB=FF =EE=F4=EE=F0=EC=EB=E5=ED=E8=FF =E7=E0=EA=E0=E7=E0 =C2=E0=EC =ED=
-=E5=EE=E1=F5=EE=E4=E8=EC=EE =F1=EE=EE=E1=F9=E8=F2=FC =E2 =EF=E8=F1=FC=EC=E5=
- =F1=EB=E5=E4=F3=FE=F9=F3=FE =E8=ED=F4=EE=F0=EC=E0=F6=E8=FE:
---- =CD=E0=E8=EC=E5=ED=EE=E2=E0=ED=E8=E5 =EA=ED=E8=E3=E8 =E8 =EA=EE=EB=E8=
-=F7=E5=F1=F2=E2=EE =FD=EA=E7=E5=EC=EF=EB=FF=F0=EE=E2;
---- =C2=E0=F8 =E3=EE=F0=EE=E4;
---- =C2=E0=F8 =EF=EE=F7=F2=EE=E2=FB=E9 =E8=ED=E4=E5=EA=F1;
---- =C2=E0=F8 =F2=EE=F7=ED=FB=E9 =E0=E4=F0=E5=F1 ( =ED=E0=E7=E2=E0=ED=E8=E5=
- =F3=EB=E8=F6=FB, =ED=EE=EC=E5=F0 =E4=EE=EC=E0 =E8 =ED=EE=EC=E5=F0 =EA=E2=
-=E0=F0=F2=E8=F0=FB );
---- =D4.=C8.=CE. =EF=EE=EB=F3=F7=E0=F2=E5=EB=FF;
---- =CD=EE=EC=E5=F0 =F2=E5=EB=E5=F4=EE=ED=E0.
-Email: book@nalogbizopt.ru - =CF=F0=E8=E5=EC =E7=E0=EA=E0=E7=EE=E2, =EA=EE=
-=ED=F1=F3=EB=FC=F2=E0=F6=E8=E8 =F2=EE=EB=FC=EA=EE =ED=E0 =FD=F2=EE=F2 =E0=
-=E4=F0=E5=F1.
-
-=CD=E0 =F1=F2=F0=E0=ED=E8=F6=E0=F5 =ED=E0=F8=E5=E9 =EA=ED=E8=E3=E8 =EC=FB=
- =ED=E8=EA=EE=E8=EC =EE=E1=F0=E0=E7=EE=EC =ED=E5 =EF=F0=E8=E7=FB=E2=E0=E5=
-=EC =E2=E0=F1 =ED=E0=F0=F3=F8=E0=F2=FC =E7=E0=EA=EE=ED.
-=C4=E0 =E8 =E8=E3=F0=E0=F2=FC =F1 =EF=F0=E0=E2=EE=EE=F5=F0=E0=ED=E8=F2=E5=
-=EB=FC=ED=FB=EC=E8 =EE=F0=E3=E0=ED=E0=EC=E8 =ED=E5 =F1=F2=EE=E8=F2, =E2=E5=
-=E4=FC =E2 =E8=F5 =E0=F0=F1=E5=ED=E0=EB=E5 =E4=EE=F1=F2=E0=F2=EE=F7=ED=EE=
- =F1=F0=E5=E4=F1=F2=E2, =F7=F2=EE=E1=FB =F1=EE=E7=E4=E0=F2=FC =EB=FE=E1=EE=
-=EC=F3 =F7=E5=EB=EE=E2=E5=EA=F3 =E1=EE=EB=FC=F8=E8=E5 =EF=F0=EE=E1=EB=E5=EC=
-=FB.
-=CF=EB=E0=F2=E8=F2=E5 =ED=E0=EB=EE=E3=E8! =CD=E5 =ED=E0=F0=F3=F8=E0=E9=F2=
-=E5 =E7=E0=EA=EE=ED=EE=E4=E0=F2=E5=EB=FC=F1=F2=E2=EE! =C0 =E5=F1=EB=E8 =ED=
-=E5 =F5=EE=F2=E8=F2=E5 (=FD=F2=EE, =EA=EE=ED=E5=F7=ED=EE, =C2=E0=F8=E5 =E4=
-=E5=EB=EE), =F2=EE =F5=EE=F2=FF =E1=FB =EF=EE=E4=E3=EE=F2=EE=E2=FC=F2=E5=F1=
-=FC =EA =E2=EE=E7=EC=EE=E6=ED=FB=EC =ED=E5=EF=F0=E8=FF=F2=ED=EE=F1=F2=FF=EC=
-.
-
-=CE=F2=EF=E8=F1=E0=F2=FC=F1=FF =EE=F2 =F0=E0=F1=F1=FB=EB=EA=E8 =96 =EE=F2=
-=EF=F0=E0=E2=FC=F2=E5 =ED=E0=EC =EF=E8=F1=FC=EC=EE =F1 =F2=E5=EC=EE=E9 de=
-letemail =E8 =EC=FB =C2=E0=F1 =E1=EE=EB=FC=F8=E5 =ED=E5 =EF=EE=E1=E5=F1=EF=
-=EE=EA=EE=E8=EC.
-
-05_08_2019 02_10 199508
-
-openwrt-devel@lists.openwrt.org
-
---cbc9a9a3109135ad4c8006329c3c
-Content-Type: text/html; charset="windows-1251"
-Content-Transfer-Encoding: quoted-printable
-
-<HTML><HEAD><TITLE>=CD=EE=E2=E0=FF =F1=F2=F0=E0=ED=E8=F6=E0 1</TITLE>
-<META content=3Den-us http-equiv=3DContent-Language>
-<META http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dwindows=
--1251">
-</HEAD>
-<BODY>
-<P align=3Dcenter><B><FONT color=3D#ff0000 size=3D5 face=3DArial>=CE=CF=D2=
-=C8=CC=C8=C7=C0=D6=C8=DF=20
-=CD=C0=CB=CE=C3=CE=CE=C1=CB=CE=C6=C5=CD=C8=DF</FONT><FONT color=3D#ff0000=
- size=3D4 face=3DArial><BR>=C0=EA=F2=F3=E0=EB=FC=ED=FB=E5=20
-=EC=E5=F2=EE=E4=E8=EA=E8 =F3=EC=E5=ED=FC=F8=E5=ED=E8<SPAN lang=3Dru>=FF</=
-SPAN> =E2=FB=EF=EB=E0=F2 =E4=EB=FF =EE=F0=E3=E0=ED=E8=E7=E0=F6=E8=E9 =E8 =
-=F4=E8=E7=E8=F7=E5=F1=EA=E8=F5=20
-=EB=E8=F6</FONT></B></P>
-<P align=3Djustify><FONT face=3DArial><B>=C7=E4=F0=E0=E2=F1=F2=E2=F3=E9=F2=
-=E5, =F3=E2=E0=E6=E0=E5=EC=FB=E5 =E4=E0=EC=FB =E8 =E3=EE=F1=EF=EE=E4=E0,=20
-=EF=F0=E5=E4=F1=F2=E0=E2=EB=FF=E5=EC =C2=E0=EC =FD=EA=F1=EA=EB=FE=E7=E8=E2=
-=ED=EE=E5 =E8=E7=E4=E0=ED=E8=E5 "<SPAN lang=3Dru>=CE=EF=F2=E8=EC=E8=E7=E0=
-=F6=E8=FF=20
-=ED=E0=EB=EE=E3=EE=EE=E1=EB=EE=E6=E5=ED=E8=FF</SPAN>" =EF=EE=F1=E2=FF=F9<=
-SPAN lang=3Dru>=B8</SPAN>=ED<SPAN lang=3Dru>=ED</SPAN>=EE=E5=20
-=EE=F0=E3=E0=ED=E8=E7=E0=F6=E8=E8 =E4=E5=E9=F1=F2=E2=E8=E9 =ED=E0=EB=EE=E3=
-=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA=E0 =EF=EE =EC=E8=ED=E8=EC=E8=E7=E0=F6=E8=
-=E8 =ED=E0=EB=EE=E3=EE=E2 =E8 =ED=E0=EB=EE=E3=EE=E2=EE=EC=F3=20
-=EF=EB=E0=ED=E8=F0=EE=E2=E0=ED=E8=FE =F1 =F3=F7=E5=F2=EE=EC =F4=E0=EA=F2=EE=
-=F0=E0 =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=E8 (=EF=EE=EB=F3=F7=E5=ED=E8=FF =
-=EF=EE=EB=EE=E6=E8=F2=E5=EB=FC=ED=FB=F5 =F4=E8=ED=E0=ED=F1=EE=E2=FB=F5=20
-=F0=E5=E7=F3=EB=FC=F2=E0=F2=EE=E2, =ED=E5 =EE=F2=FF=E3=EE=F9=E5=ED=ED=FB=F5=
- =EE=F2=F0=E8=F6=E0=F2=E5=EB=FC=ED=FB=EC=E8 =EF=EE=F1=EB=E5=E4=F1=F2=E2=E8=
-=FF=EC=E8). =CA=ED=E8=E3=E0 =EE=F0=E8=E5=ED=F2=E8=F0=EE=E2=E0=ED=E0=20
-=ED=E0 =FD=EA=EE=ED=EE=EC=E8=F7=E5=F1=EA=E8 =E0=EA=F2=E8=E2=ED=FB=F5 =ED=E0=
-=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA=EE=E2, =EA=EE=F2=EE=F0=FB=E5 =E2=
- =F6=E5=EB=FF=F5 =EF=EE=E2=FB=F8=E5=ED=E8=FF=20
-=FD=F4=F4=E5=EA=F2=E8=E2=ED=EE=F1=F2=E8 =F1=E2=EE=E5=E3=EE =E1=E8=E7=ED=E5=
-=F1=E0 =E3=EE=F2=EE=E2=FB =F0=E0=F1=F1=EC=E0=F2=F0=E8=E2=E0=F2=FC =EB=FE=E1=
-=FB=E5 =ED=E5 =EF=F0=EE=F2=E8=E2=EE=F0=E5=F7=E0=F9=E8=E5 =E7=E0=EA=EE=ED=F3=
-=20
-=EF=F3=F2=E8, =E2=E5=E4=F3=F9=E8=E5 =EA =EF=EE=E2=FB=F8=E5=ED=E8=FE =EF=F0=
-=E8=E1=FB=EB=E8. =D2=E0=EA=EE=E9 =ED=E0=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=
-=E8=EA =F1=F2=F0=E5=EC=E8=F2=F1=FF =EA =F3=EF=F0=E0=E2=EB=E5=ED=E8=FE=20
-=FD=EA=EE=ED=EE=EC=E8=F7=E5=F1=EA=E8=EC=E8 =EF=F0=EE=F6=E5=F1=F1=E0=EC=E8=
-, =E2 =F2=EE=EC =F7=E8=F1=EB=E5 =E8 =ED=E0=EB=EE=E3=EE=EE=E1=EB=EE=E6=E5=ED=
-=E8=E5=EC, =EE=E4=ED=E0=EA=EE =E2=E2=E8=E4=F3 =F0=FF=E4=E0=20
-=EE=E1=F1=F2=EE=FF=F2=E5=EB=FC=F1=F2=E2 =F1=EF=EE=F1=EE=E1=E5=ED =F1=EE=E2=
-=E5=F0=F8=E0=F2=FC =EE=F8=E8=E1=EA=E8. =C7=E0=E4=E0=F7=E0 =E4=E0=ED=ED=EE=
-=E9 =EA=ED=E8=E3=E8 =F1=EE=F1=F2=EE=E8=F2 =E2 =EE=EF=E8=F1=E0=ED=E8=E8=20
-=F6=E5=EB=E5=F1=EE=EE=E1=F0=E0=E7=ED=FB=F5 =E4=E5=E9=F1=F2=E2=E8=E9 =ED=E0=
-=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA=E0 =E8 =EF=F0=E5=E4=EE=F1=F2=E5=
-=F0=E5=E6=E5=ED=E8=E8 =E5=E3=EE =EE=F2=20
-=ED=E5=F6=E5=EB=E5=F1=EE=EE=E1=F0=E0=E7=ED=FB=F5. =CA=ED=E8=E3=E0 =F1=EE=E4=
-=E5=F0=E6=E8=F2 =E7=ED=E0=ED=E8=FF =E8 =EE=EF=FB=F2, =EF=EE=E7=E2=EE=EB=FF=
-=FE=F9=E8=E5 =F1=EE=E7=E4=E0=F2=FC =F1=E8=F1=F2=E5=EC=F3=20
-=ED=E0=EB=EE=E3=EE=E2=EE=E9 =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=E8 =E2 =F1=EE=
-=E2=F0=E5=EC=E5=ED=ED=FB=F5 =F3=F1=EB=EE=E2=E8=FF=F5. =D3=E4=E5=EB=E5=ED=EE=
- =E2=ED=E8=EC=E0=ED=E8=E5 =E0=ED=E0=EB=E8=E7=F3=20
-=ED=E0=EB=EE=E3=EE=E2=EE=E3=EE =E7=E0=EA=EE=ED=EE=E4=E0=F2=E5=EB=FC=F1=F2=
-=E2=E0, =ED=EE=F0=EC=E0=F2=E8=E2=ED=FB=F5 =E8 =F0=E0=E7=FA=FF=F1=ED=FF=FE=
-=F9=E8=F5 =E4=EE=EA=F3=EC=E5=ED=F2=EE=E2 =EC=E8=ED=E8=F1=F2=E5=F0=F1=F2=E2=
- =E8=20
-=E2=E5=E4=EE=EC=F1=F2=E2, =F0=E5=E3=F3=EB=E8=F0=F3=FE=F9=E8=F5 =ED=E0=EB=EE=
-=E3=EE=E2=F3=FE =F1=F4=E5=F0=F3, =E0 =F2=E0=EA=E6=E5 =F1=F3=E4=E5=E1=ED=EE=
-=E9 =EF=F0=E0=EA=F2=E8=EA=E8. =CF=EE=E4=F0=EE=E1=ED=EE=20
-=F0=E0=F1=F1=EC=E0=F2=F0=E8=E2=E0=FE=F2=F1=FF =E8 =E8=F1=F1=EB=E5=E4=F3=FE=
-=F2=F1=FF =EF=F0=EE=E2=E5=F0=E5=ED=ED=FB=E5 =ED=E0 =F0=E5=E0=EB=FC=ED=EE=EC=
- =E4=E5=EB=EE=E2=EE=EC =EE=EF=FB=F2=E5 =EB=E5=E3=E0=EB=FC=ED=FB=E5 =E8=20
-"=F2=E5=ED=E5=E2=FB=E5" =F1=EF=EE=F1=EE=E1=FB =F1=ED=E8=E6=E5=ED=E8=FF =F3=
-=F0=EE=E2=ED=FF =ED=E0=EB=EE=E3=EE=E2=FB=F5 =E2=FB=EF=EB=E0=F2. =D0=E5=EA=
-=EE=EC=E5=ED=E4=E0=F6=E8=E8 =EF=EE =EE=E1=E5=F1=EF=E5=F7=E5=ED=E8=FE=20
-=EB=E8=F7=ED=EE=E9 =ED=E0=EB=EE=E3=EE=E2=EE=E9 =E1=E5=E7=EE=EF=E0=F1=ED=EE=
-=F1=F2=E8 =E8 =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=E8 =E4=E5=FF=F2=E5=EB=FC=ED=
-=EE=F1=F2=E8 =FE=F0=E8=E4=E8=F7=E5=F1=EA=E8=F5 =EB=E8=F6.=20
-</B></FONT></P>
-<P align=3Djustify><FONT color=3D#008000 face=3DArial><B>=C2 =DD=D2=CE=C9=
- =CA=CD=C8=C3=C5 =C2=DB =CD=C0=C9=C4=C5=D2=C5=20
-=CF=CE=C4=D0=CE=C1=CD=D3=DE =C8=CD=D4=CE=D0=CC=C0=D6=C8=DE =CF=CE =D1=CB=C5=
-=C4=D3=DE=D9=C8=CC =C2=CE=CF=D0=CE=D1=C0=CC:</B></FONT></P>
-<UL>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EE=E1=E5=F1=EF=E5=F7=E8=F2=
-=FC =EB=E8=F7=ED=F3=FE =ED=E0=EB=EE=E3=EE=E2=F3=FE =E1=E5=E7=EE=EF=E0=F1=ED=
-=EE=F1=F2=FC=20
-  =F0=F3=EA=EE=E2=EE=E4=E8=F2=E5=EB=E5=E9 =E8 =F4=E0=EA=F2=E8=F7=E5=F1=EA=
-=E8=F5 =F1=EE=E1=F1=F2=E2=E5=ED=ED=E8=EA=EE=E2 =E1=E8=E7=ED=E5=F1=E0?</SP=
-AN></B></FONT> </P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E7=E0=F0=E0=E1=E0=F2=FB=E2=
-=E0=FE=F2 =ED=E0 =ED=E0=EB=EE=E3=EE=E2=FB=F5 =E8 =F4=E8=ED=E0=ED=F1=EE=E2=
-=FB=F5=20
-  =F1=F5=E5=EC=E0=F5 - =E1=E8=E7=ED=E5=F1 =ED=E0 =ED=E0=EB=EE=E3=E0=F5?</=
-SPAN></B></FONT> </P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EB=E5=E3=E0=EB=E8=E7=EE=E2=
-=E0=F2=FC =E4=EE=F5=EE=E4=FB =E8 =F1=EE=E1=F1=F2=E2=E5=ED=ED=EE=F1=F2=FC=20
-  =F4=E8=E7=E8=F7=E5=F1=EA=E8=F5 (=E8 =EF=EE=E4=EA=EE=ED=F2=F0=EE=EB=FC=ED=
-=FB=F5 =E8=EC =FE=F0=E8=E4=E8=F7=E5=F1=EA=E8=F5) =EB=E8=F6?</SPAN></B></F=
-ONT> </P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E3=F0=E0=EC=EE=F2=ED=EE =
-=E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =E7=E0=EA=EE=ED=ED=FB=E5 =E8 =F2=E5=ED=
-=E5=E2=FB=E5=20
-  =F1=EF=EE=F1=EE=E1=FB =F1=ED=E8=E6=E5=ED=E8=FF =ED=E0=EB=EE=E3=EE=E2 - =
-=EC=E0=EB=FB=E9, =F1=F0=E5=E4=ED=E8=E9 =E8 =EA=F0=F3=EF=ED=FB=EC=20
-  =E1=E8=E7=ED=E5=F1?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EE=E1=E5=F1=EF=E5=F7=E8=F2=
-=FC =E1=E5=E7=EE=EF=E0=F1=ED=EE=F1=F2=FC =E8 =EB=E5=E3=E0=EB=E8=E7=EE=E2=E0=
-=F2=FC=20
-  =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=ED=E8=E5 "=F1=E5=F0=FB=F5" =E8 "=F7=E5=F0=
-=ED=FB=F5" =ED=E8=E7=EA=EE- =E8 =E1=E5=E7=ED=E0=EB=EE=E3=EE=E2=FB=F5=20
-  =F1=F5=E5=EC?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA "=EE=F7=E8=F1=F2=E8=F2=FC=
-" =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=E5 =EE=F2 =ED=E0=EB=EE=E3=EE=E2=FB=F5=20
-  =EF=F0=E5=F2=E5=ED=E7=E8=E9 =E8 =EA=F0=E5=E4=E8=F2=EE=F0=F1=EA=EE=E9 =E7=
-=E0=E4=EE=EB=E6=E5=ED=ED=EE=F1=F2=E8?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E7=E0=F9=E8=F2=E8=F2=FC =
-=E0=EA=F2=E8=E2=FB =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=FF =EE=F2=20
-  =E2=F0=E0=E6=E4=E5=E1=ED=EE=E3=EE =EF=EE=E3=EB=EE=F9=E5=ED=E8=FF =E8=EB=
-=E8 =E4=E0=E2=EB=E5=ED=E8=FF =E3=EE=F1=F3=E4=E0=F0=F1=F2=E2=E0?</SPAN></B=
-></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E1=E5=E7=EE=EF=E0=F1=ED=EE=
- =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =F1=F0=E5=E4=F1=F2=E2=E0=20
-  =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=FF =E2 =EB=E8=F7=ED=FB=F5 =F6=E5=EB=FF=F5=
-?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E3=F0=E0=EC=EE=F2=ED=EE =
-=E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =F4=E8=ED=E0=ED=F1=EE=E2=FB=E5 =F1=F5=
-=E5=EC=FB=20
-  =E4=EB=FF =C2=DD=C4 - =D1=D8=C0, =CA=E0=ED=E0=E4=E0, =D4=F0=E0=ED=F6=E8=
-=FF, =C8=F1=EF=E0=ED=E8=FF, =C1=F0=E0=E7=E8=EB=E8=FF, =C3=EE=ED=EA=EE=ED=E3=
-,=20
-  =C1=E5=EB=E0=F0=F3=F1=FC?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EF=F0=EE=E2=E5=F1=F2=E8 =
-=EB=E5=E3=E0=EB=FC=ED=EE=E5 =F3=ED=E8=F7=F2=EE=E6=E5=ED=E8=E5=20
-  "=ED=E5=ED=F3=E6=ED=EE=E9" =E4=EE=EA=F3=EC=E5=ED=F2=E0=F6=E8=E8 =EF=F0=E5=
-=E4=EF=F0=E8=FF=F2=E8=FF?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E2=FB=E2=E5=F1=F2=E8 =E0=
-=EA=F2=E8=E2=FB =E8 =EB=E8=EA=E2=E8=E4=E8=F0=EE=E2=E0=F2=FC =EB=FE=E1=EE=E5=
-, =E2=20
-  =F2=EE=EC =F7=E8=F1=EB=E5 =EF=F0=EE=E1=EB=E5=EC=ED=EE=E5 =EF=F0=E5=E4=EF=
-=F0=E8=FF=F2=E8=E5?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E2 =F1=E2=EE=E8=F5 =E8=ED=
-=F2=E5=F0=E5=F1=E0=F5 =EE=E1=E0=ED=EA=F0=EE=F2=E8=F2=FC=20
-  =EF=F0=E5=E4=EF=F0=E8=FF=F2=E8=E5 =E8 =E8=E7=E1=E5=E6=E0=F2=FC =EE=F2=E2=
-=E5=F2=F1=F2=E2=E5=ED=ED=EE=F1=F2=E8 =F0=F3=EA=EE=E2=EE=E4=F1=F2=E2=E0 =E8=
- =F1=EE=E1=F1=F2=E2=E5=ED=ED=E8=EA=EE=E2?=20
-  </SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EF=F0=E0=E2=E8=EB=FC=ED=EE=
- =E8=F1=EF=EE=EB=FC=E7=EE=E2=E0=F2=FC =ED=EE=EC=E8=ED=E0=EB=FC=ED=FB=F5=20
-  =E4=E8=F0=E5=EA=F2=EE=F0=EE=E2 =E2 =F0=EE=F1=F1=E8=E9=F1=EA=E8=F5 =EA=EE=
-=EC=EF=E0=ED=E8=FF=F5?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E0=ED=EE=ED=E8=EC=ED=EE,=
- =ED=E0=E4=E5=E6=ED=EE =E8 =E1=E5=F1=F1=EB=E5=E4=ED=EE=20
-  =EF=E5=F0=E5=EC=E5=F9=E0=F2=FC, =EE=E1=ED=E0=EB=E8=F7=E8=E2=E0=F2=FC, =EB=
-=E5=E3=E0=EB=E8=E7=EE=E2=E0=F2=FC =E4=E5=ED=E5=E6=ED=FB=E5 =F1=F0=E5=E4=F1=
-=F2=E2=E0 =EB=FE=E1=EE=E3=EE=20
-  =EF=F0=EE=E8=F1=F5=EE=E6=E4=E5=ED=E8=FF?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EF=EE=EB=F3=F7=E8=F2=FC =
-=EA=F0=E5=E4=E8=F2=FB, =E7=E0=EB=EE=E3=E8, =E8=ED=E2=E5=F1=F2=E8=F6=E8=E8=
- -=20
-  =F7=F2=EE=E1=FB =E7=E0=EA=EE=ED=ED=EE =ED=E5 =E2=EE=E7=E2=F0=E0=F9=E0=F2=
-=FC?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =ED=E5 =EF=EE=F2=E5=F0=FF=
-=F2=FC =ED=E0 =ED=E0=EB=EE=E3=E0=F5 =E2 =F3=F1=EB=EE=E2=E8=FF=F5=20
-  =F0=E5=E7=EA=EE=E3=EE =EF=E0=E4=E5=ED=E8=FF =D0=F3=E1=EB=FF?</SPAN></B>=
-</FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA=E8=E5 =F1=EB=F3=F7=E0=E8 =
-=E1=EB=E0=E3=EE=EF=F0=E8=FF=F2=ED=FB =E8 =E2=FB=E3=EE=E4=ED=FB, =F7=F2=EE=
-=E1=FB=20
-  =EE=E1=FA=FF=E2=E8=F2=FC =F1=E5=E1=FF =E1=E0=ED=EA=F0=EE=F2=EE=EC?</SPA=
-N></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=ED=F1=EF=E5=EA=F2=EE=F0=
-=FB =EF=EB=E0=ED=E8=F0=F3=FE=F2 =E2=FB=FF=E2=EB=FF=F2=FC=20
-  =E0=ED=F2=E8=EA=F0=E8=E7=E8=F1=ED=FB=E5 =ED=E0=EB=EE=E3=EE=E2=FB=E5 =F1=
-=F5=E5=EC=FB?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=ED=F1=EF=E5=EA=F2=EE=F0=
-=EE=E2 =F3=F7=E0=F2 =E2=FB=FF=E2=EB=FF=F2=FC =ED=E5=F3=F7=F2=E5=ED=ED=FB=E5=
-=20
-  =E4=EE=F5=EE=E4=FB =F4=E8=E7=E8=F7=E5=F1=EA=E8=F5 =EB=E8=F6?</SPAN></B>=
-</FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=F1=EF=EE=EB=FC=E7=EE=E2=
-=E0=F2=FC =EA=E0=F0=EC=E0=ED=ED=FB=E9 =EF=F0=EE=F4=F1=EE=FE=E7 =E4=EB=FF=20
-  =EF=EE=EB=F3=F7=E5=ED=E8=FF =ED=E0=EB=EE=E3=EE=E2=EE=E9 =E2=FB=E3=EE=E4=
-=FB?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=E7=E1=E5=E6=E0=F2=FC =
-=EE=E1=E2=E8=ED=E5=ED=E8=E9 =E2 =EF=F0=EE=F2=E8=E2=EE=E4=E5=E9=F1=F2=E2=E8=
-=E8=20
-  =ED=E0=EB=EE=E3=EE=E2=EE=E9 =EF=F0=EE=E2=E5=F0=EA=E5?</SPAN></B></FONT>=
-</P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EF=F0=E8=EE=F1=F2=E0=ED=EE=
-=E2=E8=F2=FC =E8=F1=EF=EE=EB=ED=E5=ED=E8=E5 =F2=F0=E5=E1=EE=E2=E0=ED=E8=FF=
- =EE=E1=20
-  =F3=EF=EB=E0=F2=E5 =ED=E0=EB=EE=E3=E0?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EE=F2=EC=E5=ED=E8=F2=FC =
-=E4=EE=ED=E0=F7=E8=F1=EB=E5=ED=E8=FF, =E5=F1=EB=E8 =E2 =E0=EA=F2=E5 =E8=EB=
-=E8=20
-  =F0=E5=F8=E5=ED=E8=E8 =F1=EE=E4=E5=F0=E6=E0=F2=F1=FF?</SPAN></B></FONT>=
-</P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EE=F1=EF=EE=F0=E8=F2=FC =
-=EE=E1=E5=F1=EF=E5=F7=E8=F2=E5=EB=FC=ED=FB=E5 =EC=E5=F0=FB=20
-  =ED=E0=EB=EE=E3=EE=E2=E8=EA=EE=E2?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA=F3=FE =ED=E0=EB=EE=E3=EE=E2=
-=F3=FE =E2=FB=E3=EE=E4=F3 =EC=EE=E6=ED=EE =EF=EE=EB=F3=F7=E8=F2=FC =EE=F2=
-=20
-  =EB=E8=EA=E2=E8=E4=E0=F6=E8=E8 =EE=E1=FA=E5=EA=F2=EE=E2?</SPAN></B></FO=
-NT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =F1=E4=E5=EB=E0=F2=FC, =F7=
-=F2=EE=E1=FB =EF=F0=EE=E2=E5=F0=EA=E0 =ED=E5 =E7=E0=EA=EE=ED=F7=E8=EB=E0=F1=
-=FC=20
-  =F3=E3=EE=EB=EE=E2=ED=FB=EC =E4=E5=EB=EE=EC?</SPAN></B></FONT></P>
-  <LI>
-  <P align=3Djustify><FONT color=3D#0000ff face=3DArial><B><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EC=E8=ED=E8=EC=E8=E7=E8=F0=
-=EE=E2=E0=F2=FC =ED=E0=EB=EE=E3=EE=E2=FB=E5 =EF=EE=F2=E5=F0=E8 =EE=F2=20
-  =F1=E4=E5=EB=EE=EA =F1 =EE=E4=ED=EE=E4=ED=E5=E2=EA=E0=EC=E8?</SPAN></B>=
-</FONT></P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=E7=EC=E5=ED=E5=ED=E8=FF=
- =E2 =CD=E0=EB=EE=E3=EE=E2=EE=EC =EA=EE=E4=E5=EA=F1=E5 2018-2019=20
-  =E3=EE=E4<SPAN lang=3Dru>=EE=E2</SPAN> =EF=EE=E2=EB=E8=FF=EB=E8 =ED=E0 =
-=F1=F5=E5=EC=FB?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA <SPAN lang=3Dru>=EF=F0=E0=
-=E2=E8=EB=FC=ED=EE=20
-  =EF=EE=F1=F2=F3=EF=E8=F2=FC</SPAN>, =E5=F1=EB=E8 =EF=F0=E0=E2=EE=EE=F5=F0=
-=E0=ED=E8=F2=E5=EB=E8 =F2=F0=E5=E1=F3=FE=F2 =E4=EE=EA=F3=EC=E5=ED=F2=FB, =
-=E0 =E4=E0=E2=E0=F2=FC =E8=F5 =ED=E5=20
-  =F5=EE=F7=E5=F2=F1=FF?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA <SPAN lang=3Dru>=EE=F2=E1=
-=E8=F2=FC=F1=FF =EE=F2=20
-  =EE=E1=E2=E8=ED=E5=ED=E8=E9</SPAN> =E2 =F3=EC=FB=F8=EB=E5=ED=ED=EE=E9 =ED=
-=E5=F3=EF=EB=E0=F2=E5 =ED=E0=EB=EE=E3=EE=E2?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EE=F1=EF=EE=F0=E8=F2=FC =
-=E0=F0=E5=F1=F2 =E8=EC=F3=F9=E5=F1=F2=E2=E0 =EA=EE=EC=EF=E0=ED=E8=E8 =E8=EB=
-=E8=20
-  =F1=ED=E8=E7=E8=F2=FC =F4=E8=ED=E0=ED=F1=EE=E2=FB=E5 =EF=EE=F2=E5=F0=E8=
-?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=ED=F1=EF=E5=EA=F2=EE=F0=
-=FB =EF=F0=E5=F1=E5=EA=E0=FE=F2 =E2=FB=E2=EE=E4 =E8=EC=F3=F9=E5=F1=F2=E2=E0=
- =EF=F0=E8=20
-  =E1=E0=ED=EA=F0=EE=F2=F1=F2=E2=E5?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E2=FB=E3=EE=E4=ED=E5=E5 =
-=EF=F0=EE=E4=E0=F2=FC =E1=E8=E7=ED=E5=F1 =E2 =EF=F0=E5=E4=E1=E0=ED=EA=F0=EE=
-=F2=ED=EE=EC=20
-  =F1=EE=F1=F2=EE=FF=ED=E8=E8?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E7=E0=F0=E0=E1=EE=F2=E0=F2=
-=FC =ED=E0 =EA=F0=E5=E4=E8=F2=EE=F0=F1=EA=EE=E9=20
-  =E7=E0=E4=EE=EB=E6=E5=ED=ED=EE=F1=F2=E8?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E1=E5=E7=EE=EF=E0=F1=ED=EE=
- =E8 =E2=FB=E3=EE=E4=ED=EE =E2=FB=E9=F2=E8 =E8=E7=20
-  =EE=F4=F8=EE=F0=E0?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA=E8=E5 =FD=EB=E5=EC=E5=ED=F2=
-=FB =F1=F5=E5=EC =E4=E5=EB=E0=FE=F2 =ED=E0=EB=EE=E3=EE=E2=F3=FE =E2=FB=E3=
-=EE=E4=F3=20
-  =ED=E5=EE=E1=EE=F1=ED=EE=E2=E0=ED=ED=EE=E9?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =EF=F0=E0=E2=E8=EB=FC=ED=EE=
- =E7=E0=F9=E8=F2=E8=F2=FC =F1=F5=E5=EC=F3=20
-  =E4=F0=EE=E1=EB=E5=ED=E8=FF?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =ED=E5 =EF=E5=F0=E5=F1=F2=
-=E0=F0=E0=F2=FC=F1=FF =F1 =E4=EE=EA=F3=EC=E5=ED=F2=E0=EC=E8, =E7=E0=F9=E8=
-=F9=E0=FF=20
-  =ED=E0=EB=EE=E3=EE=E2=F3=FE =FD=EA=EE=ED=EE=EC=E8=FE?</SPAN></FONT></B>=
- </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA =E8=F1=EF=EE=EB=FC=E7=EE=E2=
-=E0=F2=FC =EF=F0=EE=EA=F3=F0=E0=F2=F3=F0=F3, <SPAN=20
-  lang=3Dru>=F1=F3=E4=FB =E8 =E4=F0=F3=E3=E8=E5 =EE=F0=E3=E0=ED=FB</SPAN>=
- =E4=EB=FF =E7=E0=F9=E8=F2=FB =EE=F2=20
-  =ED=E0=EB=EE=E3=EE=E2=E8=EA=EE=E2?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA=E8=E5 =F1=F5=E5=EC=FB =E8=
-=ED=F1=EF=E5=EA=F2=EE=F0=E0=EC =E2=FB=E3=EE=E4=ED=EE =EF=F0=E8=EC=E5=F0=FF=
-=F2=FC =ED=E0=20
-  =ED=E0=EB=EE=E3=EE=EF=EB=E0=F2=E5=EB=FC=F9=E8=EA=EE=E2?</SPAN></FONT></=
-B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA <SPAN lang=3Dru>=E7=E0=F9=
-=E8=F2=E8=F2=F1=FF</SPAN>, =E5=F1=EB=E8=20
-  =EA=EE=EC=EF=E0=ED=E8=E8 =EF=F0=E8=EF=E8=F1=FB=E2=E0=FE=F2 =ED=E5=F1=F3=
-=F9=E5=F1=F2=E2=F3=FE=F9=E8=E5 =E4=EE=EB=E3=E8?</SPAN></FONT></B> </P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA=E8=E5 =E4=E5=E9=F1=F2=E2=E8=
-=FF =ED=E0=EB=EE=E3=EE=E2=E8=EA=EE=E2 =F1=F2=EE=E8=F2 =EE=E1=E6=E0=EB=EE=E2=
-=E0=F2=FC=20
-  =E2 =C5=E2=F0=EE=EF=E5=E9=F1=EA=EE=EC =F1=F3=E4=E5?</SPAN></FONT></B> <=
-/P>
-  <LI>
-  <P align=3Djustify><B><FONT color=3D#0000ff face=3DArial><SPAN=20
-  style=3D"BACKGROUND-COLOR: #ffffff">=CA=E0=EA=E8=E5 =E2=FB=E3=EE=E4=ED=FB=
-=E5 =F1 =ED=E0=EB=EE=E3=EE=E2=EE=E9 =F2=EE=F7=EA=E8 =E7=F0=E5=ED=E8=FF=20
-  =F1=EF=EE=F1=EE=E1=FB =F5=F0=E0=ED=E5=ED=E8=FF =E0=EA=F2=E8=E2=EE=E2?</=
-SPAN></FONT></B></P></LI></UL>
-<P align=3Dleft><FONT color=3D#ff0000 face=3DArial><B>=C8 =CD=C0 =C4=D0=D3=
-=C3=C8=C5 =C2=CE=CF=D0=CE=D1=DB, =CD=C5=20
-=CE=D1=C2=C5=D9=C0=C5=CC=DB=C5 =C2 =CE=C1=D9=C5=C4=CE=D1=D2=D3=CF=CD=CE=C9=
- =CE=D4=C8=D6=C8=C0=CB=DC=CD=CE=C9 =CB=C8=D2=C5=D0=C0=D2=D3=D0=C5.</B></F=
-ONT></P>
-<P align=3Djustify><B><FONT face=3DArial><FONT color=3D#008000>=C0=E2=F2=EE=
-=F0=FB =E8=20
-=FD=EA=F1=EF=E5=F0=F2=FB</FONT> - =EF=F0=E0=EA=F2=E8=EA=F3=FE=F9=E8=E5 =FE=
-=F0=E8=F1=F2=FB, =EF=F0=E5=E4=EF=F0=E8=ED=E8=EC=E0=F2=E5=EB=E8, =E4=E5=E9=
-=F1=F2=E2=F3=FE=F9=E8=E5 =F1=EE=F2=F0=F3=E4=ED=E8=EA=E8=20
-=ED=E0=EB=EE=E3=EE=E2=FB=F5 =E8 =EF=F0=E0=E2=EE=EE=F5=F0=E0=ED=E8=F2=E5=EB=
-=FC=ED=FB=F5 =EE=F0=E3=E0=ED=EE=E2. =CF=EE=FD=F2=EE=EC=F3 =E2 =EA=ED=E8=E3=
-=E5 =F0=E5=E0=EB=FC=ED=E0=FF =EF=F0=E0=EA=F2=E8=EA=E0 /=20
-=EE=F6=E5=ED=EA=E0 =E7=E0=EA=EE=ED=ED=EE=F1=F2=E8 =E8 =F0=E8=F1=EA=EE=E2 =
-/ =EE=E1=F0=E0=E7=F6=FB =E4=EE=EA=F3=EC=E5=ED=F2=EE=E2 / =EC=E5=F2=EE=E4=FB=
- =F0=E0=E1=EE=F2=FB =ED=E0=EB=EE=E3=EE=E2=FB=F5 =E8=20
-=EF=F0=E0=E2=EE=EE=F5=F0=E0=ED=E8=F2=E5=EB=FC=ED=FB=F5 =EE=F0=E3=E0=ED=EE=
-=E2 / =EF=F0=EE=F4=E8=EB=E0=EA=F2=E8=EA=E0 =EE=F2=E2=E5=F2=F1=F2=E2=E5=ED=
-=ED=EE=F1=F2=E8. =CA=ED=E8=E3=E0 =ED=E5 =FF=E2=EB=FF=E5=F2=F1=FF=20
-=F0=F3=EA=EE=E2=EE=E4=F1=F2=E2=EE=EC =EF=EE =F3=EA=EB=EE=ED=E5=ED=E8=FE =EE=
-=F2 =ED=E0=EB=EE=E3=EE=EE=E1=EB=EE=E6=E5=ED=E8=FF, =EE=F2=EC=FB=E2=E0=ED=E8=
-=FE =E4=E5=ED=E5=E3 =E8=EB=E8 =ED=E5=E7=E0=EA=EE=ED=ED=EE=EC=F3=20
-=EF=F0=E5=E4=EF=F0=E8=ED=E8=EC=E0=F2=E5=EB=FC=F1=F2=E2=F3, =EE=E4=ED=E0=EA=
-=EE =E4=E5=FF=F2=E5=EB=FC=ED=EE=F1=F2=FC =EF=F0=EE=F4=E5=F1=F1=E8=EE=ED=E0=
-=EB=EE=E2 =E2 =FD=F2=E8=F5 =EE=E1=EB=E0=F1=F2=FF=F5=20
-=F0=E0=F1=F1=EC=E0=F2=F0=E8=E2=E0=E5=F2=F1=FF, =EF=F0=E8=F7=E5=EC =E2 =F1=
-=F3=E3=F3=E1=EE =EF=F0=E0=EA=F2=E8=F7=E5=F1=EA=EE=EC =EA=EB=FE=F7=E5. =C2=
- =EA=E0=EA=E8=F5-=F2=EE =F1=EB=F3=F7=E0=FF=F5 =F1=F2=EE=E8=F2=20
-=EE=E1=F0=E0=F2=E8=F2=FC =E2=ED=E8=EC=E0=ED=E8=E5 =E8 =ED=E0 =EE=EF=FB=F2=
- =F2=E0=EA=EE=E3=EE =F0=EE=E4=E0, =EF=EE=F1=EA=EE=EB=FC=EA=F3 =EF=F0=E8 =E3=
-=F0=E0=EC=EE=F2=ED=EE=EC =E8 =EE=F1=EE=E7=ED=E0=ED=ED=EE=EC=20
-=EF=EE=E4=F5=EE=E4=E5 =F2=E0=EA=E0=FF =E4=E5=FF=F2=E5=EB=FC=ED=EE=F1=F2=FC=
- =E1=FB=E2=E0=E5=F2 =E2=E5=F1=FC=EC=E0 =F3=F1=EF=E5=F8=ED=E0 =E8 =FD=F2=EE=
-=EC=F3 =E5=F1=F2=FC =EC=ED=EE=E6=E5=F1=F2=E2=EE=20
-=EF=F0=E8=EC=E5=F0=EE=E2.</FONT></B></P>
-<P align=3Djustify><B><FONT face=3DArial><FONT color=3D#008000>=CE =EA=ED=
-=E8=E3=E5:</FONT> =C3=EE=E4=20
-=E8=E7=E4=E0=ED=E8=FF - 2019; =CE=E1=EB=EE=E6=EA=E0 - =D2=E2=B8=F0=E4=FB=E9=
- =EF=E5=F0=E5=EF=EB=B8=F2; =CA=EE=EB-=E2=EE =F1=F2=F0=E0=ED=E8=F6 - 340; =
-=D8=F0=E8=F4=F2 - Times=20
-New Roman; =CA=E5=E3=EB=FC - 10 (=C1=EE=F0=E3=E5=F1); =D4=EE=F0=EC=E0=F2 =
-- 310 x 215 =EC=EC.; =C8=EB=EB=FE=F1=F2=F0=E0=F6=E8=E8 -=20
-=CF=F0=E8=F1=F3=F2=F1=F2=E2=F3=FE=F2, =F2=E0=E1=EB=E8=F6=FB =E8 =F1=F5=E5=
-=EC=FB; =C2=E5=F1 - 1200 =E3=F0.; =CA=ED=E8=E3=E0 =ED=E5 =EF=EE=F1=F2=F3=EF=
-=E0=E5=F2 =E2 =F1=E2=EE=E1=EE=E4=ED=F3=FE=20
-=EF=F0=EE=E4=E0=E6=F3 =ED=E8 =E2 =EF=E5=F7=E0=F2=ED=EE=EC, =ED=E8 =E2 =FD=
-=EB=E5=EA=F2=F0=EE=ED=ED=EE=EC =E2=E8=E4=E5!</FONT></B></P>
-<HR>
-
-<P align=3Dleft><FONT color=3D#ff0000 face=3DArial><B>=D1=F2=EE=E8=EC=EE=F1=
-=F2=FC =EA=ED=E8=E3=E8 =F1=EE=F1=F2=E0=E2=EB=FF=E5=F2 -=20
-7500 (<SPAN lang=3Dru>=D1=E5=EC=FC =D2=FB=F1=FF=F7 =CF=FF=F2=FC=F1=EE=F2)=
- </SPAN>=D0=F3=E1=EB=E5=E9, =EE=EF=EB=E0=F2=E0 =EF=F0=EE=E8=E7=E2=EE=E4=E8=
-=F2=F1=FF=20
-=ED=E0=EB=E8=F7=ED=FB=EC=E8, =E2 =EC=EE=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=
-=E8=FF.</B></FONT></P>
-<HR>
-
-<P align=3Dleft><B><FONT face=3DArial>=C4=EE=F1=F2=E0=E2=EA=E0 =EE=F1=F3=F9=
-=E5=F1=F2=E2=EB=FF=E5=F2=F1=FF =CF=EE=F7=F2=EE=E9 =D0=EE=F1=F1=E8=E8, =EE=
-=EF=EB=E0=F2=E0=20
-=EF=F0=EE=E8=F1=F5=EE=E4=E8=F2 =E2 =EC=EE=EC=E5=ED=F2 =EF=EE=EB=F3=F7=E5=ED=
-=E8=FF =C2=E0=EC=E8 =E7=E0=EA=E0=E7=E0 =ED=E0 =EF=EE=F7=F2=E5 (=ED=E0=EB=EE=
-=E6=E5=ED=ED=FB=EC =EF=EB=E0=F2=E5=E6=EE=EC),=20
-=ED=E8=EA=E0=EA=EE=E9 =EF=F0=E5=E4=EE=EF=EB=E0=F2=FB =ED=E5 =F2=F0=E5=E1=F3=
-=E5=F2=F1=FF. </FONT></B></P>
-<P align=3Dleft><FONT face=3DArial><B>=C4=EB=FF =EE=F4=EE=F0=EC=EB=E5=ED=E8=
-=FF =E7=E0=EA=E0=E7=E0 =C2=E0=EC =ED=E5=EE=E1=F5=EE=E4=E8=EC=EE =F1=EE=EE=
-=E1=F9=E8=F2=FC=20
-=E2 =EF=E8=F1=FC=EC=E5 =F1=EB=E5=E4=F3=FE=F9=F3=FE =E8=ED=F4=EE=F0=EC=E0=F6=
-=E8=FE:<BR><BR>--- =CD=E0=E8=EC=E5=ED=EE=E2=E0=ED=E8=E5 =EA=ED=E8=E3=E8 =E8=
- =EA=EE=EB=E8=F7=E5=F1=F2=E2=EE=20
-=FD=EA=E7=E5=EC=EF=EB=FF=F0=EE=E2;<BR>--- =C2=E0=F8 =E3=EE=F0=EE=E4;<BR>-=
--- =C2=E0=F8 =EF=EE=F7=F2=EE=E2=FB=E9 =E8=ED=E4=E5=EA=F1;<BR>--- =C2=E0=F8=
- =F2=EE=F7=ED=FB=E9=20
-=E0=E4=F0=E5=F1 ( =ED=E0=E7=E2=E0=ED=E8=E5 =F3=EB=E8=F6=FB, =ED=EE=EC=E5=F0=
- =E4=EE=EC=E0 =E8 =ED=EE=EC=E5=F0 =EA=E2=E0=F0=F2=E8=F0=FB );<BR>--- =D4.=
-=C8.=CE.=20
-=EF=EE=EB=F3=F7=E0=F2=E5=EB=FF;<BR>--- =CD=EE=EC=E5=F0 =F2=E5=EB=E5=F4=EE=
-=ED=E0.<BR><BR>Email: <A=20
-href=3D"mailto:book@nalogbizopt.ru">book@nalogbizopt.ru</A> - =CF=F0=E8=E5=
-=EC =E7=E0=EA=E0=E7=EE=E2,=20
-=EA=EE=ED=F1=F3=EB=FC=F2=E0=F6=E8=E8 =F2=EE=EB=FC=EA=EE =ED=E0 =FD=F2=EE=F2=
- =E0=E4=F0=E5=F1.</B></FONT></P>
-<HR>
-
-<P align=3Dcenter><I><FONT face=3DArial>=CD=E0 =F1=F2=F0=E0=ED=E8=F6=E0=F5=
- =ED=E0=F8=E5=E9 =EA=ED=E8=E3=E8 =EC=FB =ED=E8=EA=EE=E8=EC =EE=E1=F0=E0=E7=
-=EE=EC=20
-=ED=E5 =EF=F0=E8=E7=FB=E2=E0=E5=EC =E2=E0=F1 =ED=E0=F0=F3=F8=E0=F2=FC =E7=
-=E0=EA=EE=ED. <BR>=C4=E0 =E8 =E8=E3=F0=E0=F2=FC =F1 =EF=F0=E0=E2=EE=EE=F5=
-=F0=E0=ED=E8=F2=E5=EB=FC=ED=FB=EC=E8 =EE=F0=E3=E0=ED=E0=EC=E8=20
-=ED=E5 =F1=F2=EE=E8=F2, =E2=E5=E4=FC =E2 =E8=F5 =E0=F0=F1=E5=ED=E0=EB=E5 =
-=E4=EE=F1=F2=E0=F2=EE=F7=ED=EE =F1=F0=E5=E4=F1=F2=E2, =F7=F2=EE=E1=FB =F1=
-=EE=E7=E4=E0=F2=FC =EB=FE=E1=EE=EC=F3 =F7=E5=EB=EE=E2=E5=EA=F3=20
-=E1=EE=EB=FC=F8=E8=E5 =EF=F0=EE=E1=EB=E5=EC=FB. <BR>=CF=EB=E0=F2=E8=F2=E5=
- =ED=E0=EB=EE=E3=E8! =CD=E5 =ED=E0=F0=F3=F8=E0=E9=F2=E5 =E7=E0=EA=EE=ED=EE=
-=E4=E0=F2=E5=EB=FC=F1=F2=E2=EE! =C0 =E5=F1=EB=E8 =ED=E5=20
-=F5=EE=F2=E8=F2=E5 (=FD=F2=EE, =EA=EE=ED=E5=F7=ED=EE, =C2=E0=F8=E5 =E4=E5=
-=EB=EE), =F2=EE =F5=EE=F2=FF =E1=FB =EF=EE=E4=E3=EE=F2=EE=E2=FC=F2=E5=F1=FC=
- =EA =E2=EE=E7=EC=EE=E6=ED=FB=EC=20
-=ED=E5=EF=F0=E8=FF=F2=ED=EE=F1=F2=FF=EC.</FONT></I></P>
-<HR>
-
-<P class=3DMsoNormal align=3Dcenter><SPAN=20
-style=3D"FONT-FAMILY: Arial; FONT-WEIGHT: 700; LINE-HEIGHT: 107%">=CE=F2=EF=
-=E8=F1=E0=F2=FC=F1=FF =EE=F2=20
-=F0=E0=F1=F1=FB=EB=EA=E8 =96 =EE=F2=EF=F0=E0=E2=FC=F2=E5 =ED=E0=EC =EF=E8=
-=F1=FC=EC=EE =F1 =F2=E5=EC=EE=E9 deletemail =E8 =EC=FB =C2=E0=F1 =E1=EE=EB=
-=FC=F8=E5 =ED=E5=20
-=EF=EE=E1=E5=F1=EF=EE=EA=EE=E8=EC.</SPAN></P>
-<P align=3Dcenter><FONT face=3DArial>05_08_2019 02_10=20
-199508</FONT></P>
-<P align=3Dcenter><FONT face=3DArial><A=20
-href=3D"mailto:[%25=FEmail%25%25]">openwrt-devel@lists.openwrt.org</A></F=
-ONT></P></BODY></HTML>
-
---cbc9a9a3109135ad4c8006329c3c--
-
-
---===============3130757399848188895==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3130757399848188895==--
-

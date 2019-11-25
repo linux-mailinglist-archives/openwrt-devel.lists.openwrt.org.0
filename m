@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9BC31095BF
-	for <lists+openwrt-devel@lfdr.de>; Mon, 25 Nov 2019 23:47:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB8701095C2
+	for <lists+openwrt-devel@lfdr.de>; Mon, 25 Nov 2019 23:47:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,64 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ADs9rKKajq0a6TpHOEDq4zPxAJq34U+43js1K1Il5b4=; b=EbsWQ4P2P8ycLM0R2iHjvsSW7z
-	J3D8lNVTLKzm3gl8i6S14DsfNFB3b9pSAB9j/32NiSqKrxGDynaNwm0HHCSbqVHmNhNcF6Oye1LLC
-	D15m+wGa1+IWxOktSeKCRBc1tS+dxAomiKA26QTDnOjDHz/eHr0QGO8Iszuc20Bouv0apfxLFMDZL
-	jaBctA0ZebJVfdmSOVaypfJ0PblwlApNcgAxwusy41EV8/PSJrSIutaK/S2sC5fGNcekcp7RA6kRg
-	LgAGozoUy43awobgwI/1DxlG/lVx9ps8JQQXoQmS4FE4suc0lsSsVjdi67iC/H9f4/iM/kB+jSdzM
-	iCf25UXA==;
+	bh=nFhT/ErPR1OC06bhMpv3oA4+v+0Ctd3vJGAvXQMR068=; b=s+EwvhAzFeFE2qX6ZImZ005ih8
+	yY18H1BhuDPOONtTv+/BC2HgIu7X2LizM9eKWEbNeTr27pRENe47WpUFuJ0onxeJB6BFo0aUpTCur
+	ctSbTRt1uMN6CJKdL+oRHRvmq93ZcI3lhYjjz8eYYhsVJnpl9+BZy2eJJ1k9fBEglM8ZyUmM2HKEi
+	T3iAzRGnCi4gBWWS6T/7LWK0JeV76O5wJMRXOY6z7YH32QE36oz7HRxE8DRvG9XVPNQQrKigeLf5G
+	2kbsyh2J5Wqfb0xeQU6SwPCIhw1RQj9ColYw5EWwt0oph/HM+ylWNrfc2ZIunrAuBkFJmCE5374qz
+	T/G5TqGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZN8O-0008Vd-RR; Mon, 25 Nov 2019 22:47:08 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iZN8j-0000Zi-9J; Mon, 25 Nov 2019 22:47:29 +0000
+Received: from mail-pl1-x62c.google.com ([2607:f8b0:4864:20::62c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZN6X-00067G-Ku
+ id 1iZN6Y-00068u-JD
  for openwrt-devel@lists.openwrt.org; Mon, 25 Nov 2019 22:45:15 +0000
-Received: by mail-pl1-x642.google.com with SMTP id j12so7158515plt.9
- for <openwrt-devel@lists.openwrt.org>; Mon, 25 Nov 2019 14:45:13 -0800 (PST)
+Received: by mail-pl1-x62c.google.com with SMTP id s10so7179754plp.2
+ for <openwrt-devel@lists.openwrt.org>; Mon, 25 Nov 2019 14:45:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=Bvsw+mXb6X2E/PKg4nSEphPbnkUNCC9dkfslMirx2ZE=;
- b=LnskaRRQa6VqVp6awqvNFHDqX1EFY2DzO9uL3TWfJJzwAtsgpPECG1YAP8LsFABOMp
- uJTpyoFqALRCO/sR++Yo3pxD3FzC0d1ozNCsya7afKs1c3nfOmYrv9yLpkCk+S4/Dbgm
- zffW0iqOWUaXRgRhfKGLEZIrQ8h6/V7IQWznBISzfmKw0GWRGZSPbV4ebGceWVfmArZa
- cXK7SNJgfTuYFuAYgflFIcJufPDv3Q2ZmTwGHSiFBkDVabQoHrQJEXTIXTHgn9BSZTMv
- 7ttytaGlDpJrG5RpOIyYKZSJHkJGyLpwDamrRAvGdCc0A5MksQhyzS5/grbOMutZpifu
- drJA==
+ bh=94Ok746n/qRpJVYDIpK3pZJhJwriXHG0+ONJY7RSNYA=;
+ b=pLPLVRH4PLVNzrt3Za5/ZGBn535g0WeVw3JoFr/1/SMROOdKqG2dzjGug6ww0pFh/C
+ tXmaxkYT9NcM0LXUVP4r0w8JN3/59VwpoQl9TN5Cn2pj3CEymfpcZUyaZffBwxc3QztY
+ obIgKdgVLShDpoIfaRaT39I+TUjk2LykdSaahqplJ7bZ58fzGJM9K5v9OYNvv68Dhvps
+ U8FS4JDvQtcKAiHBQpqdbpTz7lR5oC2IpIZT2nB1i67XbN2eHy5zQqidqofqc2xyo8Qv
+ TQltS7x09Oo79SEazlmqSInCfj5dcR0hHhIMO0FliO6TtvPmbP7ttoe6ulu6OnODWlJ/
+ pjxg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Bvsw+mXb6X2E/PKg4nSEphPbnkUNCC9dkfslMirx2ZE=;
- b=b5yRUIXEpOLtX7fTt4Tj9u4hslheMMLaxzjQrm6RGK3wGxA+v085LO6M4gYWZMgyiM
- xxpbzVsumu3ecirG0qybVe+E5fdHsGAl+aQ/Mt0TF2roW3MgqsW69/dvEoPa1eNiLl5i
- 2EhjygDavOweqb2OH7Ss48jBstvKMcHVuP1pVSDC7fiiMSrG/fPqPCqa6qxy5unNMOq7
- zLdZi05oxK3XAc7XJzyHP+vJs7ZxkKI/xJvu2MvU48xJHECdCd9C8ct5A7rHg6j2+Lu6
- shCYB6OOmSZv4oE4WJviL08bXb5v2GovANgx12NFu45HiduftifzJTeBGPbqeoE2gpuN
- zNgA==
-X-Gm-Message-State: APjAAAUvDUj6ekhoEUJ51CmcacqYxlCmcXim2YmyEcNsDL4rTgPPfeWI
- j1u3+S/omCSYVYZOPORBHjAD6Ut3DEQ=
-X-Google-Smtp-Source: APXvYqx/VDeA1jlGUCOcNty9pkaRBpgeeCKjtZMgBERb6EumSjxJAHRuvaS1R/6QTDtWp0ZeBTag4g==
-X-Received: by 2002:a17:90a:c082:: with SMTP id
- o2mr1996833pjs.94.1574721912326; 
- Mon, 25 Nov 2019 14:45:12 -0800 (PST)
+ bh=94Ok746n/qRpJVYDIpK3pZJhJwriXHG0+ONJY7RSNYA=;
+ b=HZrmLBCwhevImggHdGwQGfDVxePWOeMhrCjJfm/vgjAuy7yGAp2fl+tmMghHebN9zG
+ e1ea3ocwTLRKOxDKM0KFl+DYyEaQqSVM+pERAd2yZ4Ha2CD+gWwMsektQyCilw/dZQBJ
+ QTqqPR4EU/BpBE7pHHekRqSYSs1F5WdqUzg8tv/WioIm2KFuSmq+TXuMXM/GEVl59K3E
+ 0lQg+xZk6d3OixCHdNO0gjkI1/vss90/vdyuqOdqFa9yzFIiKWJbY77f76hPMbYZebFD
+ yVfMOgsm7EUmwZ9WEnWYcJ4C4r8KSPiSuKpuZWW630JWFc3zI+AoQOp4DPNhiyUf1NzH
+ tUyg==
+X-Gm-Message-State: APjAAAWdoWdOiiknMPVZ6bBBhIJ5Y5DgAdQA6VsvCgjaUKYOe4E8y8WP
+ R7Wag6XgrbkPEFnlwc7cuvBG1z7SVIg=
+X-Google-Smtp-Source: APXvYqyzJkU1RIOEXICFEskE5v7uWiCisFJDYaYBJB7f5CoPpVs2T7Y6oK3O8WyvGnDG2y9QLBzgww==
+X-Received: by 2002:a17:90a:7188:: with SMTP id i8mr1961307pjk.6.1574721913282; 
+ Mon, 25 Nov 2019 14:45:13 -0800 (PST)
 Received: from mangix-trapnet.lan ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id gx16sm393947pjb.10.2019.11.25.14.45.11
+ by smtp.gmail.com with ESMTPSA id gx16sm393947pjb.10.2019.11.25.14.45.12
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 14:45:11 -0800 (PST)
+ Mon, 25 Nov 2019 14:45:12 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 25 Nov 2019 14:44:54 -0800
-Message-Id: <20191125224502.266177-9-rosenp@gmail.com>
+Date: Mon, 25 Nov 2019 14:44:55 -0800
+Message-Id: <20191125224502.266177-10-rosenp@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191125224502.266177-1-rosenp@gmail.com>
 References: <20191125224502.266177-1-rosenp@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_144513_697405_423EE680 
-X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-CacheID: sfid-20191125_144514_645072_5F307962 
+X-CRM114-Status: UNSURE (   8.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:62c listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -89,8 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 09/17] mxs/image/gen_sdcard_ext4_ext4.sh:
- Use /bin/sh
+Subject: [OpenWrt-Devel] [PATCH 10/17] gen_mt7623_emmc_img.sh: Use /bin/sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,19 +109,19 @@ Nothing here needs bash.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- target/linux/mxs/image/gen_sdcard_ext4_ext4.sh | 2 +-
+ target/linux/mediatek/image/gen_mt7623_emmc_img.sh | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/target/linux/mxs/image/gen_sdcard_ext4_ext4.sh b/target/linux/mxs/image/gen_sdcard_ext4_ext4.sh
-index 99bd3bf573..20f3331bed 100755
---- a/target/linux/mxs/image/gen_sdcard_ext4_ext4.sh
-+++ b/target/linux/mxs/image/gen_sdcard_ext4_ext4.sh
+diff --git a/target/linux/mediatek/image/gen_mt7623_emmc_img.sh b/target/linux/mediatek/image/gen_mt7623_emmc_img.sh
+index 1cb0883fb0..a5f296ef14 100755
+--- a/target/linux/mediatek/image/gen_mt7623_emmc_img.sh
++++ b/target/linux/mediatek/image/gen_mt7623_emmc_img.sh
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
- #
- # Copyright (C) 2015 OpenWrt.org
- #
+ 
+ OUTPUT_FILE=$1
+ KERNEL_FILE=$2
 -- 
 2.23.0
 

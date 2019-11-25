@@ -2,82 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4627108DD5
-	for <lists+openwrt-devel@lfdr.de>; Mon, 25 Nov 2019 13:28:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 478BC108FA2
+	for <lists+openwrt-devel@lfdr.de>; Mon, 25 Nov 2019 15:11:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wF/sYaa/9r5u5PFcsuR9KLeV1MJuvCFbRqTbH9SxLrQ=; b=W4M2mBU2BEw4lM
-	liXnvRaid31xqziInemSUrOa1GWnqkKTU35eZ6qv8Yxv3O5p2vDsW3Ui/gk/hftCtBMiAsZH/hmug
-	NWswP1zGzzvBXU8QBn0Eo42OFVsP1hXL+MR3tXbk7e8n2CSf1FmckpT4jp4kX27FZkKW+8vBhwnAz
-	znDjYyA5w+GzpjQxX8yGx7UcT50sy2hkjjlxk2QP+aVjC+6pdCDKA2YTKML9f5MyjlXR68pdZVj46
-	oJPjTb20f1DD6DE3HEsa0HjvOJt59QDao8CnP9W4pQNhGSAcSAth3hQdYwhWvPSQziB1N+nqGqOsj
-	lqiqTrFybLjM1BS2FlQA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4/mrMc0U/+kC6B34+zR2I+H9DmicIGcUZyI8Kiwgzjs=; b=jgkOnty8C4/UTi5TlMAY6WTZw
+	fw8uv817aLa+2MYs2Dp7xOBsVF8dxgOEJwvHF+NSy6D3A3D4XOzTmPvvE4Hxco9LkyDm59fOcBEaT
+	qoI/d8ZhPG4SAy3K9EglxcVjEMifBezItRdnJSrxkNTba4LPRSM47Cb4dXD3U3QqPIQ2NZJiNpkOM
+	OvKcxb4eCVKwWZ7ZU72XN0/ISdicQIXuKxvXXhhpJJr7NkzH5yK19QxNCX2ZWpfFax4OM2EMEZ35R
+	MGCkvLl9OmGlxTNShn3kRkovZ6+vptIBrkadY6+6LQEvdISfXB9boshfqIEdv8iGEEU+ySaBt2cAX
+	Q4Ggm9vSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZDTm-0001JB-69; Mon, 25 Nov 2019 12:28:34 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iZDTD-0000zW-Bw
- for openwrt-devel@lists.openwrt.org; Mon, 25 Nov 2019 12:28:01 +0000
-Received: from [IPv6:2001:41b8:83c:fa01:157c:afba:5cc1:a85] (unknown
- [IPv6:2001:41b8:83c:fa01:157c:afba:5cc1:a85])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 7338422086;
- Mon, 25 Nov 2019 13:27:56 +0100 (CET)
-To: Jo-Philipp Wich <jo@mein.io>
-References: <20191124222140.26553-1-mail@david-bauer.net>
- <c0714653-7bc7-b757-1bb3-21ff632f00bc@mein.io>
-From: David Bauer <mail@david-bauer.net>
-Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <bbd9a786-1eee-8993-16a5-079e459625ad@david-bauer.net>
-Date: Mon, 25 Nov 2019 13:27:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iZF55-0001uK-Ep; Mon, 25 Nov 2019 14:11:11 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iZF4x-0001qi-5C
+ for openwrt-devel@lists.openwrt.org; Mon, 25 Nov 2019 14:11:05 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MVMJ7-1iQcbg2fFn-00SO3l; Mon, 25
+ Nov 2019 15:10:55 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20191123131239.16691-1-pepe2k@gmail.com>
+In-Reply-To: <20191123131239.16691-1-pepe2k@gmail.com>
+Date: Mon, 25 Nov 2019 15:10:53 +0100
+Message-ID: <02ad01d5a39a$2747ddd0$75d79970$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Content-Language: de
 MIME-Version: 1.0
-In-Reply-To: <c0714653-7bc7-b757-1bb3-21ff632f00bc@mein.io>
-Content-Language: en-US
+Thread-Index: AQGJkqr7w2ADRE3EbsxCbF9Mse0GC6g0Dpxw
+X-Provags-ID: V03:K1:1cSwvdvUEcJHfcvDvbNLUrOpAEkpCyRn94Fig2iJR9qLcE1RDj2
+ sFtWEURiEWsdjfckEcN5H1s7cCHvdUlYJ/yWLQFhT3bX9KPRudiydjAmen28wuOLNLuh0ow
+ GiSHaK44ANM6in+zl1JC9y37D1PTzFPKC7XhwYOmvcU8YbIaqc8YeJadC5OoE4lNo81GDij
+ EL19fp0LQZe+4veXv8FsA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:/4XihEVLS0s=:mg9/iZuucHPwC5FfFPBcl0
+ 1v8zVi7a0rMmVyGkpzF97pe3lTxIqhg7W9NEf04i+bMOKkAlskgYVO6O3o4PosFIDQaK/tfgE
+ vNM8NrBnwOGi/jIm5OcHfUm63T6/y5SRQ1kTfmNjchdKe31/RUFe5PeQy3aQ/B1xT2YHf6QRn
+ XFDdWM9kzM2HoAnwHmWbXEd9cSVxta/pxztt7huigH+BVW4clLo6msUMCMt2YPkfsvnELTvqH
+ KVwY8zs+gYLarYj3lSF3qJUB7uuqvEZTcuWRupOwwXL4Ww4B1455uvbhOCpOZ+j/Qjr1Hq8Ep
+ Ed479Hq8LNI6vJWZnVakoPfBkznA4bjBncajPoleaweRx8PcpWtK/hSNdlWAgjoovcGaY/WQa
+ VaY+LyCGLIkTfW1Fk4AFVJ/tlSQT5K4tnIMlovI3bgDB/q+ZvliVXsc7KYGmvsAHzYq0TYsiW
+ BWAu2Nw2qPXE1vDlXweioTH6toduLsiU7lzE5jcL+j/V84KSbgGZ6GtHfAaYPCg0xmJvbRvM3
+ CPOysuKpozi/v/GBFncFp6eZY/xSvYHuV5kPVffrbie56+p82kqII2l7hSQjhfZRWk6ZYq3Gl
+ hSDYCJQ4oGzpP9HmYn73i9MNSVUpHDpEKWgcOSQinOFxDRplwGuim6FNDVKfmoV3o6yesVn1V
+ h5PMAGVHUotWBiZld5n5OFCezbT/1AMLF/8uX7XPcGuEyLHCzDqj01ctP1xIw4BdJC+RTUYn3
+ 2unyNWnGcopcQygX/kFlBncbwOFZl8Rh28Q27bPGfcRzrv2ed8+oTdGc60lpxylRb3mwwHNfa
+ VmtaJ64AGYIr+9g1Nmiqq8lJV5Nofb7PLAZS7OOT6oBzNLysDeWrm4gyH70o0V6luqd3qCScq
+ rZbSt3N/2QOob0aGDtfKakOPVjuRxOveROAZCiPEA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_042759_602228_75172DB5 
-X-CRM114-Status: GOOD (  15.24  )
+X-CRM114-CacheID: sfid-20191125_061103_499161_9D6D3D85 
+X-CRM114-Status: GOOD (  22.88  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] generic ar8xxx: increase VLAN table for
- AR83x7
+Subject: Re: [OpenWrt-Devel] [PATCH 19.07] ramips: use upstream
+ RAW_APPENDED_DTB instead of our OWRTDTB
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,49 +81,344 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: ynezz@true.cz, gch981213@gmail.com, musashino.open@gmail.com
+Content-Type: multipart/mixed; boundary="===============1932744168325873583=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Jo,
+This is a multipart message in MIME format.
 
-On 11/25/19 1:01 PM, Jo-Philipp Wich wrote:
-> Hi,
-> 
-> does it make sense to keep the vlan/vid indirection if we increase the
-> table size to 4096? A simple 1:1 mapping of the vid to the table index
-> would be simpler and more robust from the configuration pov.
+--===============1932744168325873583==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=xS0vN1kQVeqA8A=-="
 
-i would like to keep it (for the moment), but i see why it's not the desirable the way it
-is now (for the AR83x7).
+This is a multipart message in MIME format.
 
-Reason being, we have this problem also in the opposite direction. The AR724x / AR933x
-has a similar issue, but in the opposite direction. It advertises a VLAN table size of 128,
-but in fact it only has a table size of 16.
+--=-=xS0vN1kQVeqA8A=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-If we do a 1:1 mapping for the whole series, this would break for users who use a VLAN > 15 on
-the affected devices.
+LGTM.
 
-I'm working on more patches to differentiate between VLAN_ID_MAX and VLAN_TABLE_SIZE, but for the
-short term (and in light of 19.07), i think we should fix this simple bug now.
+Best
 
-What do you think?
+Adrian
 
-Best wishes
-David
-
-> 
-> ~ Jo
-> 
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Piotr Dymacz
+> Sent: Samstag, 23. November 2019 14:13
+> To: openwrt-devel@lists.openwrt.org
+> Cc: ynezz@true.cz; gch981213@gmail.com; musashino.open@gmail.com
+> Subject: [OpenWrt-Devel] [PATCH 19.07] ramips: use upstream
+> RAW_APPENDED_DTB instead of our OWRTDTB
+>=20
+> From: Chuanhong Guo <gch981213@gmail.com>
+>=20
+> Upstream kernel added support for RAW_APPENDED_DTB on ralink arch
+> in the following commit:
+> 02564fc89d3d ("ralink: Introduce fw_passed_dtb to arch/mips/ralink")
+>=20
+> Use upstream solution and get rid of our OWRTDTB hack.
+> This commit set DEVICE_DTS to $$(DTS) instead of replacing DTS with
+> DEVICE_DTS in device profile because DTS variable will be dropped
+> in later commits.
+>=20
+> Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+> [Tested on mt7621/mt76x8]
+> Tested-by: Chuanhong Guo <gch981213@gmail.com>
+> [Tested on rt305x/mt7620]
+> Tested-by: INAGAKI Hiroshi <musashino.open@gmail.com>
+> (cherry picked from commit 7a8d3432c739c6ff038295176e8b6324e92fc116)
+> Signed-off-by: Piotr Dymacz <pepe2k@gmail.com>
+> ---
+>  target/linux/ramips/image/Makefile            | 11 +---
+>  target/linux/ramips/image/mt7621.mk           |  2 +-
+>  target/linux/ramips/image/rt3883.mk           |  2 +-
+>  target/linux/ramips/mt7620/config-4.14        |  4 +-
+>  target/linux/ramips/mt7621/config-4.14        |  4 +-
+>  target/linux/ramips/mt76x8/config-4.14        |  4 +-
+>  .../ramips/patches-4.14/0100-prom_fixes.patch | 66 -------------------
+>  target/linux/ramips/rt305x/config-4.14        |  4 +-
+>  target/linux/ramips/rt3883/config-4.14        |  4 +-
+>  9 files changed, 15 insertions(+), 86 deletions(-)
+>  delete mode 100644 target/linux/ramips/patches-4.14/0100-prom_fixes.patch
+>=20
+> diff --git a/target/linux/ramips/image/Makefile
+> b/target/linux/ramips/image/Makefile
+> index 0a32859bec..07251aebba 100644
+> --- a/target/linux/ramips/image/Makefile
+> +++ b/target/linux/ramips/image/Makefile
+> @@ -19,12 +19,12 @@ loadaddr-$(CONFIG_TARGET_ramips_mt7621) :=3D
+> 0x80001000
+>=20
+>  KERNEL_LOADADDR :=3D $(loadaddr-y)
+>=20
+> -KERNEL_DTB =3D kernel-bin | patch-dtb | lzma
+> +KERNEL_DTB =3D kernel-bin | append-dtb | lzma
+>  define Device/Default
+> -  PROFILES =3D Default $$(DTS)
+> -  KERNEL_DEPENDS =3D $$(wildcard ../dts/$$(DTS).dts)
+> +  PROFILES =3D Default
+>    KERNEL :=3D $(KERNEL_DTB) | uImage lzma
+>    DEVICE_DTS_DIR :=3D ../dts
+> +  DEVICE_DTS =3D $$(DTS)
+>    IMAGES :=3D sysupgrade.bin
+>    IMAGE_SIZE :=3D $(ralink_default_fw_size_8M)
+>    SUPPORTED_DEVICES :=3D $(subst _,$(comma),$(1))
+> @@ -52,11 +52,6 @@ define Build/jcg-header
+>  	mv $@.new $@
+>  endef
+>=20
+> -define Build/patch-dtb
+> -	$(call Image/BuildDTB,../dts/$(DTS).dts,$@.dtb)
+> -	$(STAGING_DIR_HOST)/bin/patch-dtb $@ $@.dtb
+> -endef
+> -
+>  define Build/trx
+>  	$(STAGING_DIR_HOST)/bin/trx $(1) \
+>  		-o $@ \
+> diff --git a/target/linux/ramips/image/mt7621.mk
+> b/target/linux/ramips/image/mt7621.mk
+> index f13e9c8a4f..fa222f7a89 100644
+> --- a/target/linux/ramips/image/mt7621.mk
+> +++ b/target/linux/ramips/image/mt7621.mk
+> @@ -106,7 +106,7 @@ define Device/dir-860l-b1
+>    DTS :=3D DIR-860L-B1
+>    BLOCKSIZE :=3D 64k
+>    SEAMA_SIGNATURE :=3D wrgac13_dlink.2013gui_dir860lb
+> -  KERNEL :=3D kernel-bin | patch-dtb | relocate-kernel | lzma | uImage l=
+zma
+> +  KERNEL :=3D kernel-bin | append-dtb | relocate-kernel | lzma | uImage =
+lzma
+>    IMAGE_SIZE :=3D $(ralink_default_fw_size_16M)
+>    DEVICE_TITLE :=3D D-Link DIR-860L B1
+>    DEVICE_PACKAGES :=3D kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport
+> wpad-basic
+> diff --git a/target/linux/ramips/image/rt3883.mk
+> b/target/linux/ramips/image/rt3883.mk
+> index 4844abd1b7..b783994357 100644
+> --- a/target/linux/ramips/image/rt3883.mk
+> +++ b/target/linux/ramips/image/rt3883.mk
+> @@ -48,7 +48,7 @@ define Device/belkin_f9k1109v1
+>    DEVICE_TITLE :=3D Belkin F9K1109 Version 1.0
+>    DEVICE_PACKAGES :=3D kmod-usb-core kmod-usb-ohci kmod-usb2 swconfig
+>    IMAGE_SIZE :=3D 7224k
+> -  KERNEL :=3D kernel-bin | patch-dtb | lzma -d16 | uImage lzma
+> +  KERNEL :=3D kernel-bin | append-dtb | lzma -d16 | uImage lzma
+>    # Stock firmware checks for this uImage image name during upload.
+>    UIMAGE_NAME :=3D N750F9K1103VB
+>  endef
+> diff --git a/target/linux/ramips/mt7620/config-4.14
+> b/target/linux/ramips/mt7620/config-4.14
+> index 05f3963d43..92a7a2fd38 100644
+> --- a/target/linux/ramips/mt7620/config-4.14
+> +++ b/target/linux/ramips/mt7620/config-4.14
+> @@ -146,8 +146,8 @@ CONFIG_MIPS_CMDLINE_FROM_DTB=3Dy
+>  # CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+>  CONFIG_MIPS_L1_CACHE_SHIFT=3D5
+>  # CONFIG_MIPS_MACHINE is not set
+> -CONFIG_MIPS_NO_APPENDED_DTB=3Dy
+> -# CONFIG_MIPS_RAW_APPENDED_DTB is not set
+> +# CONFIG_MIPS_NO_APPENDED_DTB is not set
+> +CONFIG_MIPS_RAW_APPENDED_DTB=3Dy
+>  CONFIG_MIPS_SPRAM=3Dy
+>  CONFIG_MODULES_USE_ELF_REL=3Dy
+>  # CONFIG_MT7621_WDT is not set
+> diff --git a/target/linux/ramips/mt7621/config-4.14
+> b/target/linux/ramips/mt7621/config-4.14
+> index b279c69879..a2c58e030b 100644
+> --- a/target/linux/ramips/mt7621/config-4.14
+> +++ b/target/linux/ramips/mt7621/config-4.14
+> @@ -173,9 +173,9 @@ CONFIG_MIPS_L1_CACHE_SHIFT=3D5
+>  CONFIG_MIPS_MT=3Dy
+>  CONFIG_MIPS_MT_FPAFF=3Dy
+>  CONFIG_MIPS_MT_SMP=3Dy
+> -CONFIG_MIPS_NO_APPENDED_DTB=3Dy
+> +# CONFIG_MIPS_NO_APPENDED_DTB is not set
+>  CONFIG_MIPS_PERF_SHARED_TC_COUNTERS=3Dy
+> -# CONFIG_MIPS_RAW_APPENDED_DTB is not set
+> +CONFIG_MIPS_RAW_APPENDED_DTB=3Dy
+>  CONFIG_MIPS_SPRAM=3Dy
+>  # CONFIG_MIPS_VPE_LOADER is not set
+>  CONFIG_MODULES_USE_ELF_REL=3Dy
+> diff --git a/target/linux/ramips/mt76x8/config-4.14
+> b/target/linux/ramips/mt76x8/config-4.14
+> index 5bcb948585..21cf070374 100644
+> --- a/target/linux/ramips/mt76x8/config-4.14
+> +++ b/target/linux/ramips/mt76x8/config-4.14
+> @@ -143,8 +143,8 @@ CONFIG_MIPS_CMDLINE_FROM_DTB=3Dy
+>  # CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+>  CONFIG_MIPS_L1_CACHE_SHIFT=3D5
+>  # CONFIG_MIPS_MACHINE is not set
+> -CONFIG_MIPS_NO_APPENDED_DTB=3Dy
+> -# CONFIG_MIPS_RAW_APPENDED_DTB is not set
+> +# CONFIG_MIPS_NO_APPENDED_DTB is not set
+> +CONFIG_MIPS_RAW_APPENDED_DTB=3Dy
+>  CONFIG_MIPS_SPRAM=3Dy
+>  CONFIG_MODULES_USE_ELF_REL=3Dy
+>  CONFIG_MT7621_WDT=3Dy
+> diff --git a/target/linux/ramips/patches-4.14/0100-prom_fixes.patch
+> b/target/linux/ramips/patches-4.14/0100-prom_fixes.patch
+> deleted file mode 100644
+> index 91ac3b22c4..0000000000
+> --- a/target/linux/ramips/patches-4.14/0100-prom_fixes.patch
+> +++ /dev/null
+> @@ -1,66 +0,0 @@
+> -From 67b7bff0fd364c194e653f69baa623ba2141bd4c Mon Sep 17 00:00:00 2001
+> -From: John Crispin <blogic@openwrt.org>
+> -Date: Mon, 4 Aug 2014 18:46:02 +0200
+> -Subject: [PATCH 07/53] MIPS: ralink: copy the commandline from the devic=
+etree
+> -
+> -Signed-off-by: John Crispin <blogic@openwrt.org>
+> ----
+> - arch/mips/ralink/of.c |    2 ++
+> - 1 file changed, 2 insertions(+)
+> -
+> ---- a/arch/mips/ralink/of.c
+> -+++ b/arch/mips/ralink/of.c
+> -@@ -3,7 +3,7 @@
+> -  * under the terms of the GNU General Public License version 2 as publi=
+shed
+> -  * by the Free Software Foundation.
+> -  *
+> -- * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+> -+ * Copyright (C) 2008-2014 Imre Kaloz <kaloz@openwrt.org>
+> -  * Copyright (C) 2008-2009 Gabor Juhos <juhosg@openwrt.org>
+> -  * Copyright (C) 2013 John Crispin <john@phrozen.org>
+> -  */
+> -@@ -66,6 +66,19 @@ static int __init early_init_dt_find_mem
+> - 	return 0;
+> - }
+> -
+> -+static int chosen_dtb;
+> -+
+> -+static int __init early_init_dt_find_chosen(unsigned long node, const c=
+har
+> *uname,
+> -+				     int depth, void *data)
+> -+{
+> -+	if (depth =3D=3D 1 && !strcmp(uname, "chosen"))
+> -+		chosen_dtb =3D 1;
+> -+
+> -+	return 0;
+> -+}
+> -+
+> -+extern struct boot_param_header __image_dtb;
+> -+
+> - void __init plat_mem_setup(void)
+> - {
+> - 	void *dtb =3D NULL;
+> -@@ -82,7 +95,11 @@ void __init plat_mem_setup(void)
+> - 	else if (__dtb_start !=3D __dtb_end)
+> - 		dtb =3D (void *)__dtb_start;
+> -
+> --	__dt_setup_arch(dtb);
+> -+	__dt_setup_arch(&__image_dtb);
+> -+
+> -+	of_scan_flat_dt(early_init_dt_find_chosen, NULL);
+> -+	if (chosen_dtb)
+> -+		strlcpy(arcs_cmdline, boot_command_line,
+> COMMAND_LINE_SIZE);
+> -
+> - 	strlcpy(arcs_cmdline, boot_command_line, COMMAND_LINE_SIZE);
+> -
+> ---- a/arch/mips/kernel/head.S
+> -+++ b/arch/mips/kernel/head.S
+> -@@ -85,6 +85,9 @@ EXPORT(__image_cmdline)
+> - 	.fill	0x400
+> - #endif /* CONFIG_IMAGE_CMDLINE_HACK */
+> -
+> -+	.ascii  "OWRTDTB:"
+> -+	EXPORT(__image_dtb)
+> -+	.fill   0x4000
+> - 	__REF
+> -
+> - NESTED(kernel_entry, 16, sp)			# kernel entry point
+> diff --git a/target/linux/ramips/rt305x/config-4.14
+> b/target/linux/ramips/rt305x/config-4.14
+> index 1f00bdaae9..60197a1eb8 100644
+> --- a/target/linux/ramips/rt305x/config-4.14
+> +++ b/target/linux/ramips/rt305x/config-4.14
+> @@ -124,8 +124,8 @@ CONFIG_MIPS_CMDLINE_FROM_DTB=3Dy
+>  # CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+>  CONFIG_MIPS_L1_CACHE_SHIFT=3D5
+>  # CONFIG_MIPS_MACHINE is not set
+> -CONFIG_MIPS_NO_APPENDED_DTB=3Dy
+> -# CONFIG_MIPS_RAW_APPENDED_DTB is not set
+> +# CONFIG_MIPS_NO_APPENDED_DTB is not set
+> +CONFIG_MIPS_RAW_APPENDED_DTB=3Dy
+>  CONFIG_MIPS_SPRAM=3Dy
+>  CONFIG_MODULES_USE_ELF_REL=3Dy
+>  # CONFIG_MTD_CFI_INTELEXT is not set
+> diff --git a/target/linux/ramips/rt3883/config-4.14
+> b/target/linux/ramips/rt3883/config-4.14
+> index 046e3732e2..f16b09deb0 100644
+> --- a/target/linux/ramips/rt3883/config-4.14
+> +++ b/target/linux/ramips/rt3883/config-4.14
+> @@ -138,8 +138,8 @@ CONFIG_MIPS_CMDLINE_FROM_DTB=3Dy
+>  # CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
+>  CONFIG_MIPS_L1_CACHE_SHIFT=3D5
+>  # CONFIG_MIPS_MACHINE is not set
+> -CONFIG_MIPS_NO_APPENDED_DTB=3Dy
+> -# CONFIG_MIPS_RAW_APPENDED_DTB is not set
+> +# CONFIG_MIPS_NO_APPENDED_DTB is not set
+> +CONFIG_MIPS_RAW_APPENDED_DTB=3Dy
+>  CONFIG_MIPS_SPRAM=3Dy
+>  CONFIG_MODULES_USE_ELF_REL=3Dy
+>  # CONFIG_MTD_CFI_INTELEXT is not set
+> --
+> 2.20.1
+>=20
+>=20
 > _______________________________________________
 > openwrt-devel mailing list
 > openwrt-devel@lists.openwrt.org
 > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
+
+--=-=xS0vN1kQVeqA8A=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3b4OoACgkQoNyKO7qx
+AnBlMxAAsRBKKLffvLuYMKnrpO2aCMRg2ypaKlqcmht6vflV06B8/QTf81CkyOQ2
+QlIJ305D0ZMpuMceOaMqWud1Vx46/+eZZzWN7zl8M7Rx6W9Dsknb+KF9YsguSu7v
+NYKDW2Brkyd76uEuiGLRRhVNsaKWH7iGBIYrBG0v6mfBIiqZr4bl5NbGqAOQa1J0
+N31qgyF8wTx30tRvRWBEn/Qvb7S5oLJ6ue4dyofNfZjTSZlbsuIJpMXxMVG2pVbO
+n/JkTmiECmJ954OxTigU1aEbAq8E46f0I/ObHWdUl0TXZdWOVI6FYpji0HLbuCUk
+uMQ0lUT5FKfJJLIIE2DS4MyFaYy4Ql2SFBS9/Epv/jLwPA7ZQVcDEwiKjO9mT0wG
+A88ykBcOo5/tugI6v9Xw6OMSuiALy3nELYqlV2i9q4UIvo01JlKGadeysMLJn7u7
+4BP2KSwSIJWe4H/LrAHRK4W7viya3CQigjK4anxQizK1Wpb3zHPzd+9tlg/lWdPs
+B+gpcqseQXr0wBtJhhsBSsZcNEQf34ePMBSTKD229zaczPilh4+hQHkhubfvC5B8
+7TUVIP+W2YPrduxsMObQYttiabrsC4qSnp9ao90bEZv/OvLYmy94sOoFVgjXx1Vz
+EdNr6bbmtQCX8IUupilvCGbGCunTf2jJTTSswefQmXkGMbyx7hM=
+=YdAJ
+-----END PGP SIGNATURE-----
+
+
+--=-=xS0vN1kQVeqA8A=-=--
+
+
+
+--===============1932744168325873583==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1932744168325873583==--
+
+

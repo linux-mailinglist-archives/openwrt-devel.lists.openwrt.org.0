@@ -2,67 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37687109220
-	for <lists+openwrt-devel@lfdr.de>; Mon, 25 Nov 2019 17:47:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98E091092A5
+	for <lists+openwrt-devel@lfdr.de>; Mon, 25 Nov 2019 18:10:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Date:Message-Id:MIME-Version:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FydisuSfHjdDzrzJ/gW4Z1Xls0Yp5ciLuvTt4gsdflI=; b=sny/b2IZh9c1F9
-	sSwyIruDn5LzlBZcEA4lrcSaQ4BVeuuthnqaHl8pU6n0XQxHLPjqEtrVla0sG+Tj3LHEmVBXn9xIx
-	/fAFceH8WJN3QP+dGsSKuBIvExzrVJnzo9PIM5SFZ6fWY5uxOeqdKgwHWldfiTeHDL4y8vMBKGcfU
-	oHhz6SMdOKPGAIhZy/Sgxas+bLZSlBIniICV9IYEhJEUp4U9V0x9yFqGTABR7n1oXaNcnLvbLW6Ie
-	Ebr8BSnQTL0ovZKlac6xzB+Mv8h+B2e2pVbUS/gNidyO/C9Qp67/d1gQ097Wwh5Opa2sJCoXh1yqx
-	Qh/T7U/LYdEEhdkabxHg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P9czDAUSTTrYCQf2YSEQKoeLdGIGKiote0qrRbryMIA=; b=jmSVoXEocIA/E/
+	+5MKQvjkASRl6FEuWCuHP39PROMeFGwkt18n20kFDdIDOl70st9FY5jSlwsg+FUH1rTk81Wcmne/s
+	QjvV6tXgK584faL8CSF5nylvblZlZ+K+0qDUnqUSCau/AL2TCM+cB91R3WPUdIogqZqejuy/BCbUL
+	CtGSdgCu8j3Z34hLT1ARV/wCUIMq211JSuEt/nG7CX4rlKzPECHefu3camAxBtyrRQgLFjpsBVVF4
+	OQzgEqmss7DJWenlDF4H4ISGE/wU7NHx7v0RMeuMEax+WgOzkdfSZHZpFVMLwhXc37MLTUcwMLtDr
+	ZgaPGG4jCfEUZDxfU6wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZHWB-0002fh-Q8; Mon, 25 Nov 2019 16:47:19 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iZHsy-0006fw-5j; Mon, 25 Nov 2019 17:10:52 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZHVt-0002ef-Os
- for openwrt-devel@lists.openwrt.org; Mon, 25 Nov 2019 16:47:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:To:From:Reply-To:Cc:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=zDgTTGZUXWJqA40QaBktmVYOs3K3cRvsC1vRLecOqcA=; b=BlKIw99JSA8pHSeRR6YIurTh8t
- 1vSoq5IKieo6X1CGfWF8apEIe060Wf1iw6YWDHTlK+b/w/gM4vNSOsHa/dS8TD7hMPBPViAGrA64Z
- h4tUu7prDWawy+qfAYFbIhAPwGtz79/MJjDTfr3lHfuStjEyVcEausm2tkNVA2KcnA5okMFDztUx9
- h+rDiTYh5UDk89cckGjXyeCOdhqo5XxaLut2CTLk4J7wg8fFlzVsP0gIjV691hwxUTWazYzrgCBJY
- kLapdNjBc4yo/2TjUMnZlAW+WtZY4MQTsNNSSfK/5Zv/Fa/ru/02DMG5tJ3ahOAnehfHYfqO89/P8
- +6UelISA==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:33818 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1iZHVh-0000PU-96; Mon, 25 Nov 2019 16:46:49 +0000
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1iZHVf-0001Jx-Nx; Mon, 25 Nov 2019 16:46:47 +0000
-From: Russell King <linux@armlinux.org.uk>
-To: openwrt-devel@lists.openwrt.org
+ id 1iZHsi-0006Zy-8B
+ for openwrt-devel@lists.openwrt.org; Mon, 25 Nov 2019 17:10:42 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g206so110585wme.1
+ for <openwrt-devel@lists.openwrt.org>; Mon, 25 Nov 2019 09:10:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kX0uSeoS1FdXqb1jppZU0r6Lbh5JgOvy5F5BYoUBEQw=;
+ b=AyWGylvgsLgpQ1eQCpwSDUWxNjO72qsMWBpkH5KG38t0Uo8TzNDm5kAHGgOMOPmQdG
+ 9ZSiRS4woOBz7xPXgCf237UwTycGA1BlgbxDyDy/WGdFs3qcF5EY8M9dh5ss4ss0c5AL
+ vgNr7PHAj9QLjAJQepfbYzmEFAHR/5ZhG+w2+MiHiSm+eee84338vzHM3V91MD6ZdwDT
+ ODvQK2K++du0GVwJH/q2cQqYLRU4aLZDwarpTYhZHS9I+wISns9GWjfdRhNuMl84+0/D
+ B171AstyK7XwvirgoZl2tkiSuQvJ/Dmm39y4rR8WaqOWHOBQyh8kp1bZE1tudHazvmNo
+ ys/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kX0uSeoS1FdXqb1jppZU0r6Lbh5JgOvy5F5BYoUBEQw=;
+ b=W/WHSqctZE2yH2vH7H0TveynwsuYe5YqTCdeM4b7x5gfoqMVD/6fHwom9yCv7SRcxb
+ rMx3r2FiyRgUVkD2hbXEmy9Z+38pQgDDHn898p8wyQH1mhC7e1nxtUWS0sLHAnKSzWpA
+ hQzCuXWI+7yTY0UKOY799o3pWDfSiEcsAsCyeqkMyHmNczYMDSfuoBqy80G1IpLcTUMH
+ TvMUhQ3ZiJnL07xKSVSQ97gACBYavrRZSZVezaN1zgCuT4+aPG//wJRW+tZpINXIdaaK
+ JwXxckqsGOEyoi4VZH79PAOc6XMx1eVFArfjYcTxB1pRU0h+n/UXM2a/ksmiY2gQWP0u
+ O1dg==
+X-Gm-Message-State: APjAAAWsepF03esTtmxQDPiZ3UuAx3xbSa2Y43/0nQXOnoQ1Y28qXMAn
+ uo8f3fK4mm+SzRJFtxq6QmpPclLQp9mfaz1HY3UHnw==
+X-Google-Smtp-Source: APXvYqzh5/sY6W+7c8ysWSQ8lLuAvdY9t9ClMiu6SMrWggnjwlj64l540PptuRf7UbIpMYA9LTsDnDRwetHJtXc5hhs=
+X-Received: by 2002:a1c:1904:: with SMTP id 4mr12982190wmz.151.1574701834188; 
+ Mon, 25 Nov 2019 09:10:34 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-Message-Id: <E1iZHVf-0001Jx-Nx@rmk-PC.armlinux.org.uk>
-Date: Mon, 25 Nov 2019 16:46:47 +0000
+References: <E1iZHVW-0001Ji-VK@rmk-PC.armlinux.org.uk>
+In-Reply-To: <E1iZHVW-0001Ji-VK@rmk-PC.armlinux.org.uk>
+From: Jonas Gorski <jonas.gorski@gmail.com>
+Date: Mon, 25 Nov 2019 18:10:18 +0100
+Message-ID: <CAOiHx=kE_sLtz3O5-RsmGNFb4zmUd2aKfcQxkDomrfnVtjTiyA@mail.gmail.com>
+To: Russell King <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_084701_940233_F6853105 
-X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191125_091037_408830_31BAA91B 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jonas.gorski[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -71,7 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 4/4] kernel: add uDPU update patches
+Subject: Re: [OpenWrt-Devel] [PATCH 1/4] kernel: remove obsolete phylink/SFP
+ patches
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,161 +92,74 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Update the uDPU kernel support, fixing a number of issues:
-* make ethernet work again by adding comphy definitions
-* slow the I2C bus to give it more chance of actually working
-* the SFP cages are designed to support up to 3W modules, which
-  would be prevented from initialising without this patch.
+On Mon, 25 Nov 2019 at 17:49, Russell King <linux@armlinux.org.uk> wrote:
+>
+> Remove the old phylink/SFP patches from the OpenWRT build; these will
+> be updated with a new set in subsequent.
+>
+> 450-reprobe_sfp_phy is also removed for several reasons:
+> 1) it is not in mainline.
+> 2) it breaks copper modules that do not have a PHY.
+> 3) it makes backporting the current patch set harder.
+>
+> Discussion is ongoing with the patch author for a mainline Linux kernel
+> patch for this.
 
-Signed-off-by: Russell King <linux@armlinux.org.uk>
----
- ...rm64-dts-uDPU-fix-comphy-definitions.patch | 40 +++++++++++++++++++
- ...-arm64-dts-uDPU-remove-i2c-fast-mode.patch | 35 ++++++++++++++++
- ...ts-uDPU-SFP-cages-support-3W-modules.patch | 38 ++++++++++++++++++
- 3 files changed, 113 insertions(+)
- create mode 100644 target/linux/mvebu/patches-4.19/657-arm64-dts-uDPU-fix-comphy-definitions.patch
- create mode 100644 target/linux/mvebu/patches-4.19/658-arm64-dts-uDPU-remove-i2c-fast-mode.patch
- create mode 100644 target/linux/mvebu/patches-4.19/659-arm64-dts-uDPU-SFP-cages-support-3W-modules.patch
+You can also just put me in Cc ;P
 
-diff --git a/target/linux/mvebu/patches-4.19/657-arm64-dts-uDPU-fix-comphy-definitions.patch b/target/linux/mvebu/patches-4.19/657-arm64-dts-uDPU-fix-comphy-definitions.patch
-new file mode 100644
-index 000000000000..bac9fa9666f1
---- /dev/null
-+++ b/target/linux/mvebu/patches-4.19/657-arm64-dts-uDPU-fix-comphy-definitions.patch
-@@ -0,0 +1,40 @@
-+From 9c222a1d78a1700220e38feb270f00d2ddd3c5ab Mon Sep 17 00:00:00 2001
-+From: Russell King <rmk+kernel@armlinux.org.uk>
-+Date: Wed, 6 Nov 2019 13:44:21 +0000
-+Subject: [PATCH 657/660] arm64: dts: uDPU: fix comphy definitions
-+
-+The uDPU uses both ethernet controllers, which ties up COMPHY 0 for
-+eth1 and COMPHY 1 for eth0, with no USB3 comphy.  The addition of
-+COMPHY support made the kernel override the setup by the boot loader
-+breaking this platform.  Delete the USB3 COMPHY definition at platform
-+level, and add phy specifications for the ethernet channels.
-+
-+Fixes: bd3d25b07342 ("arm64: dts: marvell: armada-37xx: link USB hosts with their PHYs")
-+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-+---
-+ arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 2 ++
-+ 1 file changed, 2 insertions(+)
-+
-+diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+index 5b722b4f8323..9d01e39a9eaa 100644
-+--- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-++++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+@@ -143,6 +143,7 @@
-+ 	status = "okay";
-+ 	phy-mode = "sgmii";
-+ 	managed = "in-band-status";
-++	phys = <&comphy1 0>;
-+ 	sfp = <&sfp_eth0>;
-+ };
-+ 
-+@@ -150,6 +151,7 @@
-+ 	status = "okay";
-+ 	phy-mode = "sgmii";
-+ 	managed = "in-band-status";
-++	phys = <&comphy0 1>;
-+ 	sfp = <&sfp_eth1>;
-+ };
-+ 
-+-- 
-+2.20.1
-+
-diff --git a/target/linux/mvebu/patches-4.19/658-arm64-dts-uDPU-remove-i2c-fast-mode.patch b/target/linux/mvebu/patches-4.19/658-arm64-dts-uDPU-remove-i2c-fast-mode.patch
-new file mode 100644
-index 000000000000..7237e37a9ade
---- /dev/null
-+++ b/target/linux/mvebu/patches-4.19/658-arm64-dts-uDPU-remove-i2c-fast-mode.patch
-@@ -0,0 +1,35 @@
-+From 662eb8fc87f982e63ccb9a9df25c7aeabf9fe341 Mon Sep 17 00:00:00 2001
-+From: Russell King <rmk+kernel@armlinux.org.uk>
-+Date: Thu, 14 Nov 2019 00:23:35 +0000
-+Subject: [PATCH 658/660] arm64: dts: uDPU: remove i2c-fast-mode
-+
-+The I2C bus violates the timing specifications when run in fast mode
-+on the uDPU, so switch to 100kHz mode.
-+
-+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-+---
-+ arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 2 ++
-+ 1 file changed, 2 insertions(+)
-+
-+diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+index 9d01e39a9eaa..296d72689faa 100644
-+--- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-++++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+@@ -119,12 +119,14 @@
-+ 	status = "okay";
-+ 	pinctrl-names = "default";
-+ 	pinctrl-0 = <&i2c1_pins>;
-++	/delete-property/mrvl,i2c-fast-mode;
-+ };
-+ 
-+ &i2c1 {
-+ 	status = "okay";
-+ 	pinctrl-names = "default";
-+ 	pinctrl-0 = <&i2c2_pins>;
-++	/delete-property/mrvl,i2c-fast-mode;
-+ 
-+ 	lm75@48 {
-+ 		status = "okay";
-+-- 
-+2.20.1
-+
-diff --git a/target/linux/mvebu/patches-4.19/659-arm64-dts-uDPU-SFP-cages-support-3W-modules.patch b/target/linux/mvebu/patches-4.19/659-arm64-dts-uDPU-SFP-cages-support-3W-modules.patch
-new file mode 100644
-index 000000000000..c32b92acabc5
---- /dev/null
-+++ b/target/linux/mvebu/patches-4.19/659-arm64-dts-uDPU-SFP-cages-support-3W-modules.patch
-@@ -0,0 +1,38 @@
-+From 1cb114a20854e34324a2cb308f23054ff8227ffa Mon Sep 17 00:00:00 2001
-+From: Russell King <rmk+kernel@armlinux.org.uk>
-+Date: Tue, 19 Nov 2019 22:48:50 +0000
-+Subject: [PATCH 659/660] arm64: dts: uDPU: SFP cages support 3W modules
-+
-+The SFP cages are designed to support up to 3W modules, such as G.hn,
-+G.fast and MoCA modules. Although there is no way for such modules to
-+declare to software that they consume 3W, we document in DT that this
-+is the designed power level for these cages.
-+
-+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-+---
-+ arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 2 ++
-+ 1 file changed, 2 insertions(+)
-+
-+diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+index 296d72689faa..275d396df1be 100644
-+--- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-++++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-+@@ -69,6 +69,7 @@
-+ 		mod-def0-gpio = <&gpiosb 3 GPIO_ACTIVE_LOW>;
-+ 		tx-disable-gpio = <&gpiosb 4 GPIO_ACTIVE_HIGH>;
-+ 		tx-fault-gpio = <&gpiosb 5 GPIO_ACTIVE_HIGH>;
-++		maximum-power-milliwatt = <3000>;
-+ 	};
-+ 
-+ 	sfp_eth1: sfp-eth1 {
-+@@ -78,6 +79,7 @@
-+ 		mod-def0-gpio = <&gpiosb 8 GPIO_ACTIVE_LOW>;
-+ 		tx-disable-gpio = <&gpiosb 9 GPIO_ACTIVE_HIGH>;
-+ 		tx-fault-gpio = <&gpiosb 10 GPIO_ACTIVE_HIGH>;
-++		maximum-power-milliwatt = <3000>;
-+ 	};
-+ };
-+ 
-+-- 
-+2.20.1
-+
--- 
-2.20.1
+Is using this patchset enough for the tests you asked, or are there
+some additional changes in your branch?
 
+
+Regards
+
+Jonas
+ --       * this time, that's fine too.
+> --       */
+> --      sfp_sm_next(sfp, SFP_S_INIT, T_INIT_JIFFIES);
+> --      sfp->sm_retries = 5;
+> -+      sfp_module_tx_enable(sfp);
+> -
+> -       /* Setting the serdes link mode is guesswork: there's no
+> -        * field in the EEPROM which indicates what mode should
+> -@@ -1485,7 +1482,22 @@ static void sfp_sm_mod_init(struct sfp *
+> -       if (sfp->id.base.e1000_base_t ||
+> -           sfp->id.base.e100_base_lx ||
+> -           sfp->id.base.e100_base_fx)
+> --              sfp_sm_probe_phy(sfp);
+> -+              ret = sfp_sm_probe_phy(sfp);
+> -+
+> -+      if (!ret) {
+> -+              /* Wait t_init before indicating that the link is up, provided
+> -+               * the current state indicates no TX_FAULT.  If TX_FAULT clears
+> -+               * this time, that's fine too.
+> -+               */
+> -+              sfp_sm_next(sfp, SFP_S_INIT, T_INIT_JIFFIES);
+> -+              sfp->sm_retries = 5;
+> -+              return;
+> -+      }
+> -+
+> -+      if (ret == -EAGAIN)
+> -+              sfp_sm_set_timer(sfp, T_PROBE_RETRY);
+> -+      else
+> -+              sfp_sm_next(sfp, SFP_S_TX_DISABLE, 0);
+> - }
+> -
+> - static int sfp_sm_mod_hpower(struct sfp *sfp)
+> --
+> 2.20.1
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list

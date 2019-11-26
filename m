@@ -2,71 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D4C5109737
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 Nov 2019 01:09:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9553109A61
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 Nov 2019 09:46:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=by1bDEEbUBCtjXfj3FlobLF9z4oI9N0Mt/p9ZUJ89u0=; b=TzWcTDZ64+Wn3Y
-	0fOHoN8LX9AtlsqQwvpRoSlzLqRQcnMUK+etOqg3bmMswluZgZthzxxPQWpJK76VC/DY7IU76qr5k
-	Jdh6p/MbaDlPlEWeG/ulkJgv9YbreWmd3mXsdmB4V3EcjGGTrFGHQS0iJdOf+ti4YXT5oVTCv9va2
-	Mz4sPLITQG8tp7MmRpVVph1wsqPbDT4QOdiscbs7twscvoffXz1iOO1MYS6o75V1bFoxaWchMfN97
-	O/gykLTqUXwmyfbztxUXVfh3l0898XOfx9Z4MLQbtJpy6nuGOriwLckyqX0ufTnYAKhBvRbk/JKAr
-	vbvN4mRkiWsj/P6ckd5w==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OHl+EgXGaBgfe9PPjYHd7ub10ZxjPuNSme9+V0uilJs=; b=ZsxQWJb60N+2FV
+	vDT82DjRnWm20cr8BmHI/EmN6188y3beHEpHl8r7rAOI10TuuHWq1Ch4K2/aWJlUKHEgZvWhRNMqq
+	Dxg7TOvS4HqoZPCekvydirve+QhfPhOyFze2qq3S7iGplsTR4gfrZ5augUiwWbz2V5I1nWamJm0Gt
+	OvSHXtDlPkvoVSGvpqmr/sg33B5TPIRBxU0izhy77cYSl6E9Tg2lPL2L7PFhILZfT94qkRJ4Hl6q3
+	XTw4cws7jhaRa6gSTWVcYrJ3U2jSHMkUIrghJOKZ9Mna8ojgy3SokeYSs6zaYRL2VKk5q0eAVL4SK
+	64JPTZAMAsMbhUWlqLcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZOPe-0003wu-5r; Tue, 26 Nov 2019 00:09:02 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iZWUG-0002ja-O9; Tue, 26 Nov 2019 08:46:20 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZOPT-0003vr-Ku
- for openwrt-devel@lists.openwrt.org; Tue, 26 Nov 2019 00:08:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8P/8XeXOzYAFUuectnnaLDPsuHrY8yYKdRxqYfHnPSI=; b=SkXQmzb3a22InUoKRPAL3NKzP
- JC9omUpcu+AITZX1z7CTLlVUQwWiydWnC4AmcSB+U5AgygkbCss3OUoN8F0U+LODqN3OIGG7ySbUG
- Xu7dTQWSUqAp9rPzaIyeoeR139caN+0qkXjpOzk+CL/LAyzTH+tKkH+pvgXVTeBEvuLqZLRKgWxhu
- tZPs6vosZ/Xwr0rPpObvSV7aZa8zIm/Kd2gouFhQKotptMgnyF13tF9EljVxMfi4qQudJ3SaQTHts
- cYGs7Fod0y8oGe2TYYCp6SpJFMS8A054AXmIxMLItDVEDu/pOcQrfQaYiojMgTQ4OJwe4ahf+ZpIi
- eDsPue+Qg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:32992)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iZOPP-0002Nb-1q; Tue, 26 Nov 2019 00:08:47 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iZOPO-00077L-2B; Tue, 26 Nov 2019 00:08:46 +0000
-Date: Tue, 26 Nov 2019 00:08:46 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-ID: <20191126000845.GW25745@shell.armlinux.org.uk>
-References: <E1iZHVW-0001Ji-VK@rmk-PC.armlinux.org.uk>
- <034901d5a3b0$f85c2e60$e9148b20$@adrianschmutzler.de>
+ id 1iZWU6-0002in-Ps
+ for openwrt-devel@lists.openwrt.org; Tue, 26 Nov 2019 08:46:13 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id y5so2255051wmi.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 26 Nov 2019 00:46:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TZoUtfc0SwqN/dOl5cMg0NH2OLmuEO1sVW29ADU8Ipo=;
+ b=g3MTuAftPLoTvO1QxUv+lAbWjXalXACMKF0+sqhy6AY45/58KMUCWoTeZWIQP75pcY
+ 0KgpADNXgVu9WrmHRVzRk4Mw6uFurDxj300bMrrtZDr5rG6ZyCQ2QFK2jws88+JdQ6of
+ R7HbcaRmYhYJOQIsNLkVYo26vf44ug5q22Odc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TZoUtfc0SwqN/dOl5cMg0NH2OLmuEO1sVW29ADU8Ipo=;
+ b=N3iC/NJsGlnz2iDbkzJxUKrl8tEaSBWh8TIN3cKXTJNextDsF4yEhmVfGqxDnJPJJV
+ 1MK06hZd/YP+hBTBA4pmKxTsY1ZsRI3SaeqpnLxzOxrUXh4ksUkQs4NTL5BuhsdKwkjd
+ ioY1H4ZyyzXwdQN7uKSSjk/8EPlO2BZhdiC/+J+AI3Sk39RuTorpEdZCZxci98qcEqYh
+ ukCcyH48qMDbsPfQmiSibI4fRCVNYwwqzn/wlHjGgkmTBEpOYs/POAECYYuSwhYQBXPy
+ WNFfWwoM6sxXDKM2Vef+/1oz1RBIgoTPCKnngnEKt/t4WQW65ZFss1E83XD836a7yUE4
+ NxyA==
+X-Gm-Message-State: APjAAAVhl4YX69wPpXJfuVvvRlLTTQKAYLKwdAD6PUdXevbUuYDX3laL
+ QKoni1dLYNUvgn93L/6FTXHCYpapn58FCQ==
+X-Google-Smtp-Source: APXvYqxHKc36lU8uiaMo1TLIzqjYArCl0McOXQj9krRGGGhUcotGetgj7ad2L90ux6jxT5duREsAgA==
+X-Received: by 2002:a1c:a906:: with SMTP id s6mr3100135wme.125.1574757966155; 
+ Tue, 26 Nov 2019 00:46:06 -0800 (PST)
+Received: from Kevins-MBP.lan.darbyshire-bryant.me.uk
+ ([2a02:c7f:1243:8e00:dd25:1f58:88cd:5281])
+ by smtp.gmail.com with ESMTPSA id t134sm2323144wmt.24.2019.11.26.00.46.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 26 Nov 2019 00:46:04 -0800 (PST)
+From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 26 Nov 2019 08:45:38 +0000
+Message-Id: <20191126084537.30505-1-ldir@darbyshire-bryant.me.uk>
+X-Mailer: git-send-email 2.21.0 (Apple Git-122.2)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <034901d5a3b0$f85c2e60$e9148b20$@adrianschmutzler.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_160852_304345_49B9288C 
-X-CRM114-Status: GOOD (  33.65  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191126_004610_848428_52D548C4 
+X-CRM114-Status: GOOD (  18.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:32d listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -75,8 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH 1/4] kernel: remove obsolete phylink/SFP
- patches
+Subject: [OpenWrt-Devel] [PATCH] kernel: act_ctinfo: update backport
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,821 +92,348 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Mon, Nov 25, 2019 at 05:54:14PM +0100, Adrian Schmutzler wrote:
-> Hi,
-> =
-
-> looks to me like a "mvebu:" prefix in commit titles would be more appropr=
-iate than "kernel:", as you are only touching mvebu (if I haven't overlooke=
-d it).
-
-Well, I've had one suggestion that it should not be limited to mvebu.
-If only I knew enough about openwrt to make it so, but I don't, and
-openwrt's build system seems to be designed to be incomprehensible.
-
-> Best
-> =
-
-> Adrian
-> =
-
-> > -----Original Message-----
-> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> > Behalf Of Russell King
-> > Sent: Montag, 25. November 2019 17:47
-> > To: openwrt-devel@lists.openwrt.org
-> > Subject: [OpenWrt-Devel] [PATCH 1/4] kernel: remove obsolete phylink/SFP
-> > patches
-> > =
-
-> > Remove the old phylink/SFP patches from the OpenWRT build; these will
-> > be updated with a new set in subsequent.
-> > =
-
-> > 450-reprobe_sfp_phy is also removed for several reasons:
-> > 1) it is not in mainline.
-> > 2) it breaks copper modules that do not have a PHY.
-> > 3) it makes backporting the current patch set harder.
-> > =
-
-> > Discussion is ongoing with the patch author for a mainline Linux kernel
-> > patch for this.
-> > =
-
-> > Signed-off-by: Russell King <linux@armlinux.org.uk>
-> > ---
-> >  ...etdev-sfp_bus-and-use-for-start-stop.patch |  39 ---
-> >  ...5-net-phy-marvell10g-add-SFP-support.patch | 155 ---------
-> >  .../406-sfp-add-sfp-compatible.patch          |  24 --
-> >  ...7-sfp-display-SFP-module-information.patch | 297 ------------------
-> >  .../408-sfp-more-cotsworks-fixes.patch        |  44 ---
-> >  .../patches-4.19/450-reprobe_sfp_phy.patch    |  94 ------
-> >  6 files changed, 653 deletions(-)
-> >  delete mode 100644 target/linux/mvebu/patches-4.19/404-sfp-provide-net=
-dev-
-> > sfp_bus-and-use-for-start-stop.patch
-> >  delete mode 100644 target/linux/mvebu/patches-4.19/405-net-phy-marvell=
-10g-
-> > add-SFP-support.patch
-> >  delete mode 100644 target/linux/mvebu/patches-4.19/406-sfp-add-sfp-
-> > compatible.patch
-> >  delete mode 100644 target/linux/mvebu/patches-4.19/407-sfp-display-SFP-
-> > module-information.patch
-> >  delete mode 100644 target/linux/mvebu/patches-4.19/408-sfp-more-cotswo=
-rks-
-> > fixes.patch
-> >  delete mode 100644 target/linux/mvebu/patches-4.19/450-
-> > reprobe_sfp_phy.patch
-> > =
-
-> > diff --git a/target/linux/mvebu/patches-4.19/404-sfp-provide-netdev-sfp=
-_bus-
-> > and-use-for-start-stop.patch b/target/linux/mvebu/patches-4.19/404-sfp-
-> > provide-netdev-sfp_bus-and-use-for-start-stop.patch
-> > deleted file mode 100644
-> > index f2581ca6b733..000000000000
-> > --- a/target/linux/mvebu/patches-4.19/404-sfp-provide-netdev-sfp_bus-an=
-d-
-> > use-for-start-stop.patch
-> > +++ /dev/null
-> > @@ -1,39 +0,0 @@
-> > -From 0068a89747e7c1d9a0bbb7282a34382a4274638a Mon Sep 17 00:00:00 2001
-> > -From: Russell King <rmk+kernel@armlinux.org.uk>
-> > -Date: Fri, 14 Apr 2017 16:41:55 +0100
-> > -Subject: [PATCH] sfp: provide netdev sfp_bus and use for start/stop
-> > -
-> > -Add a netdev sfp_bus pointer for propagating the phylink start/stop
-> > -actions to the SFP cage: the SFP cage may not be directly connected to
-> > -phylink, but may be the other side of a fixed PHY, and SFP needs to
-> > -know when the netdev is brought up or taken down.
-> > -
-> > -Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > ----
-> > - drivers/net/phy/phylink.c | 8 ++++----
-> > - 1 file changed, 4 insertions(+), 4 deletions(-)
-> > -
-> > ---- a/drivers/net/phy/phylink.c
-> > -+++ b/drivers/net/phy/phylink.c
-> > -@@ -949,8 +949,8 @@ void phylink_start(struct phylink *pl)
-> > -
-> > - 	if (pl->link_an_mode =3D=3D MLO_AN_FIXED && !IS_ERR(pl->link_gpio))
-> > - 		mod_timer(&pl->link_poll, jiffies + HZ);
-> > --	if (pl->sfp_bus)
-> > --		sfp_upstream_start(pl->sfp_bus);
-> > -+	if (pl->netdev->sfp_bus)
-> > -+		sfp_upstream_start(pl->netdev->sfp_bus);
-> > - 	if (pl->phydev)
-> > - 		phy_start(pl->phydev);
-> > - }
-> > -@@ -971,8 +971,8 @@ void phylink_stop(struct phylink *pl)
-> > -
-> > - 	if (pl->phydev)
-> > - 		phy_stop(pl->phydev);
-> > --	if (pl->sfp_bus)
-> > --		sfp_upstream_stop(pl->sfp_bus);
-> > -+	if (pl->netdev->sfp_bus)
-> > -+		sfp_upstream_stop(pl->netdev->sfp_bus);
-> > - 	if (pl->link_an_mode =3D=3D MLO_AN_FIXED && !IS_ERR(pl->link_gpio))
-> > - 		del_timer_sync(&pl->link_poll);
-> > -
-> > diff --git a/target/linux/mvebu/patches-4.19/405-net-phy-marvell10g-add=
--SFP-
-> > support.patch b/target/linux/mvebu/patches-4.19/405-net-phy-marvell10g-=
-add-
-> > SFP-support.patch
-> > deleted file mode 100644
-> > index 9624b6cd8127..000000000000
-> > --- a/target/linux/mvebu/patches-4.19/405-net-phy-marvell10g-add-SFP-
-> > support.patch
-> > +++ /dev/null
-> > @@ -1,155 +0,0 @@
-> > -From 5f3ac54810055fec0cc667bb04c16f783830abff Mon Sep 17 00:00:00 2001
-> > -From: Russell King <rmk+kernel@armlinux.org.uk>
-> > -Date: Fri, 14 Apr 2017 14:21:25 +0100
-> > -Subject: [PATCH] net: phy: marvell10g: add SFP+ support
-> > -
-> > -Add support for SFP+ cages to the Marvell 10G PHY driver. This is
-> > -slightly complicated by the way phylib works in that we need to use
-> > -a multi-step process to attach the SFP bus, and we also need to track
-> > -the phylink state machine to know when the module's transmit disable
-> > -signal should change state.
-> > -
-> > -With appropriate DT changes, this allows the SFP+ canges on the
-> > -Macchiatobin platform to be functional.
-> > -
-> > -Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > ----
-> > - drivers/net/phy/marvell10g.c | 80
-> > ++++++++++++++++++++++++++++++++++++
-> > - 1 file changed, 80 insertions(+)
-> > -
-> > ---- a/drivers/net/phy/marvell10g.c
-> > -+++ b/drivers/net/phy/marvell10g.c
-> > -@@ -25,6 +25,8 @@
-> > - #include <linux/hwmon.h>
-> > - #include <linux/marvell_phy.h>
-> > - #include <linux/phy.h>
-> > -+#include <linux/property.h>
-> > -+#include <linux/sfp.h>
-> > -
-> > - enum {
-> > - 	MV_PMA_BOOT		=3D 0xc050,
-> > -@@ -56,6 +58,11 @@ enum {
-> > - };
-> > -
-> > - struct mv3310_priv {
-> > -+	struct fwnode_handle *sfp_fwnode;
-> > -+	struct sfp_bus *sfp_bus;
-> > -+	enum phy_state state;
-> > -+	bool running;
-> > -+
-> > - 	struct device *hwmon_dev;
-> > - 	char *hwmon_name;
-> > - };
-> > -@@ -219,6 +226,27 @@ static int mv3310_hwmon_probe(struct phy
-> > - }
-> > - #endif
-> > -
-> > -+static int mv3310_sfp_insert(void *upstream, const struct sfp_eeprom_=
-id *id)
-> > -+{
-> > -+	struct phy_device *phydev =3D upstream;
-> > -+	struct mv3310_priv *priv =3D dev_get_drvdata(&phydev->mdio.dev);
-> > -+	__ETHTOOL_DECLARE_LINK_MODE_MASK(support) =3D { 0, };
-> > -+	phy_interface_t iface;
-> > -+
-> > -+	sfp_parse_support(priv->sfp_bus, id, support);
-> > -+	iface =3D sfp_select_interface(priv->sfp_bus, id, support);
-> > -+
-> > -+	if (iface !=3D PHY_INTERFACE_MODE_10GKR) {
-> > -+		dev_err(&phydev->mdio.dev, "incompatible SFP module
-> > inserted\n");
-> > -+		return -EINVAL;
-> > -+	}
-> > -+	return 0;
-> > -+}
-> > -+
-> > -+static const struct sfp_upstream_ops mv3310_sfp_ops =3D {
-> > -+	.module_insert =3D mv3310_sfp_insert,
-> > -+};
-> > -+
-> > - static int mv3310_probe(struct phy_device *phydev)
-> > - {
-> > - 	struct mv3310_priv *priv;
-> > -@@ -249,9 +277,30 @@ static int mv3310_probe(struct phy_devic
-> > - 	if (ret)
-> > - 		return ret;
-> > -
-> > -+	if (phydev->mdio.dev.fwnode) {
-> > -+		struct fwnode_reference_args ref;
-> > -+		int ret;
-> > -+
-> > -+		ret =3D fwnode_property_get_reference_args(phydev-
-> > >mdio.dev.fwnode,
-> > -+							 "sfp", NULL, 0, 0,
-> > -+							 &ref);
-> > -+		if (ret =3D=3D 0)
-> > -+			priv->sfp_fwnode =3D ref.fwnode;
-> > -+	}
-> > -+
-> > - 	return 0;
-> > - }
-> > -
-> > -+static void mv3310_remove(struct phy_device *phydev)
-> > -+{
-> > -+	struct mv3310_priv *priv =3D dev_get_drvdata(&phydev->mdio.dev);
-> > -+
-> > -+	if (priv->sfp_bus)
-> > -+		sfp_unregister_upstream(priv->sfp_bus);
-> > -+
-> > -+	fwnode_handle_put(priv->sfp_fwnode);
-> > -+}
-> > -+
-> > - static int mv3310_suspend(struct phy_device *phydev)
-> > - {
-> > - 	return 0;
-> > -@@ -262,8 +311,29 @@ static int mv3310_resume(struct phy_devi
-> > - 	return mv3310_hwmon_config(phydev, true);
-> > - }
-> > -
-> > -+static void mv3310_link_change_notify(struct phy_device *phydev)
-> > -+{
-> > -+	struct mv3310_priv *priv =3D dev_get_drvdata(&phydev->mdio.dev);
-> > -+	enum phy_state state =3D phydev->state;
-> > -+	bool running;
-> > -+
-> > -+	if (priv->sfp_bus && priv->state !=3D state) {
-> > -+		priv->state =3D state;
-> > -+
-> > -+		running =3D state >=3D PHY_UP && state < PHY_HALTED;
-> > -+		if (priv->running !=3D running) {
-> > -+			priv->running =3D running;
-> > -+			if (running)
-> > -+				sfp_upstream_start(priv->sfp_bus);
-> > -+			else
-> > -+				sfp_upstream_stop(priv->sfp_bus);
-> > -+		}
-> > -+	}
-> > -+}
-> > -+
-> > - static int mv3310_config_init(struct phy_device *phydev)
-> > - {
-> > -+	struct mv3310_priv *priv =3D dev_get_drvdata(&phydev->mdio.dev);
-> > - 	__ETHTOOL_DECLARE_LINK_MODE_MASK(supported) =3D { 0, };
-> > - 	u32 mask;
-> > - 	int val;
-> > -@@ -357,6 +427,14 @@ static int mv3310_config_init(struct phy
-> > - 	phydev->supported &=3D mask;
-> > - 	phydev->advertising &=3D phydev->supported;
-> > -
-> > -+	/* Would be nice to do this in the probe function, but unfortunately,
-> > -+	 * phylib doesn't have phydev->attached_dev set there.
-> > -+	 */
-> > -+	if (priv->sfp_fwnode && !priv->sfp_bus)
-> > -+		priv->sfp_bus =3D sfp_register_upstream(priv->sfp_fwnode,
-> > -+						      phydev->attached_dev,
-> > -+						      phydev, &mv3310_sfp_ops);
-> > -+
-> > - 	return 0;
-> > - }
-> > -
-> > -@@ -566,6 +644,8 @@ static struct phy_driver mv3310_drivers[
-> > - 		.config_aneg	=3D mv3310_config_aneg,
-> > - 		.aneg_done	=3D mv3310_aneg_done,
-> > - 		.read_status	=3D mv3310_read_status,
-> > -+		.remove		=3D mv3310_remove,
-> > -+		.link_change_notify =3D mv3310_link_change_notify,
-> > - 	},
-> > - };
-> > -
-> > diff --git a/target/linux/mvebu/patches-4.19/406-sfp-add-sfp-compatible=
-.patch
-> > b/target/linux/mvebu/patches-4.19/406-sfp-add-sfp-compatible.patch
-> > deleted file mode 100644
-> > index 0c6cb72cb9be..000000000000
-> > --- a/target/linux/mvebu/patches-4.19/406-sfp-add-sfp-compatible.patch
-> > +++ /dev/null
-> > @@ -1,24 +0,0 @@
-> > -From 7e8bf5227f87601d8d74948bcae8846d2bdd6995 Mon Sep 17 00:00:00 2001
-> > -From: Russell King <rmk+kernel@armlinux.org.uk>
-> > -Date: Fri, 14 Apr 2017 20:17:13 +0100
-> > -Subject: [PATCH] sfp: add sfp+ compatible
-> > -
-> > -Add a compatible for SFP+ cages.  SFP+ cages are backwards compatible,
-> > -but the ethernet device behind them may not support the slower speeds
-> > -of SFP modules.
-> > -
-> > -Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > ----
-> > - drivers/net/phy/sfp.c | 1 +
-> > - 1 file changed, 1 insertion(+)
-> > -
-> > ---- a/drivers/net/phy/sfp.c
-> > -+++ b/drivers/net/phy/sfp.c
-> > -@@ -230,6 +230,7 @@ static const struct sff_data sfp_data =3D
-> > - static const struct of_device_id sfp_of_match[] =3D {
-> > - 	{ .compatible =3D "sff,sff", .data =3D &sff_data, },
-> > - 	{ .compatible =3D "sff,sfp", .data =3D &sfp_data, },
-> > -+	{ .compatible =3D "sff,sfp+", .data =3D &sfp_data, },
-> > - 	{ },
-> > - };
-> > - MODULE_DEVICE_TABLE(of, sfp_of_match);
-> > diff --git a/target/linux/mvebu/patches-4.19/407-sfp-display-SFP-module-
-> > information.patch b/target/linux/mvebu/patches-4.19/407-sfp-display-SFP-
-> > module-information.patch
-> > deleted file mode 100644
-> > index 854ac68769f9..000000000000
-> > --- a/target/linux/mvebu/patches-4.19/407-sfp-display-SFP-module-
-> > information.patch
-> > +++ /dev/null
-> > @@ -1,297 +0,0 @@
-> > -From 4ce55fb01c473bf1ad2048f8b4db62dca392e6d2 Mon Sep 17 00:00:00 2001
-> > -From: Russell King <rmk+kernel@arm.linux.org.uk>
-> > -Date: Sun, 13 Sep 2015 01:06:31 +0100
-> > -Subject: [PATCH] sfp: display SFP module information
-> > -
-> > -Signed-off-by: Russell King <rmk+kernel@arm.linux.org.uk>
-> > ----
-> > - drivers/net/phy/sfp.c | 261
-> > +++++++++++++++++++++++++++++++++++++++++-
-> > - 1 file changed, 258 insertions(+), 3 deletions(-)
-> > -
-> > ---- a/drivers/net/phy/sfp.c
-> > -+++ b/drivers/net/phy/sfp.c
-> > -@@ -1132,6 +1132,184 @@ static void sfp_hwmon_remove(struct sfp
-> > - }
-> > - #endif
-> > -
-> > -+static const char *sfp_link_len(char *buf, size_t size, unsigned int =
-length,
-> > -+	unsigned int multiplier)
-> > -+{
-> > -+	if (length =3D=3D 0)
-> > -+		return "unsupported/unspecified";
-> > -+
-> > -+	if (length =3D=3D 255) {
-> > -+		*buf++ =3D '>';
-> > -+		size -=3D 1;
-> > -+		length -=3D 1;
-> > -+	}
-> > -+
-> > -+	length *=3D multiplier;
-> > -+
-> > -+	if (length >=3D 1000)
-> > -+		snprintf(buf, size, "%u.%0*ukm",
-> > -+			length / 1000,
-> > -+			multiplier > 100 ? 1 :
-> > -+			multiplier > 10 ? 2 : 3,
-> > -+			length % 1000);
-> > -+	else
-> > -+		snprintf(buf, size, "%um", length);
-> > -+
-> > -+	return buf;
-> > -+}
-> > -+
-> > -+struct bitfield {
-> > -+	unsigned int mask;
-> > -+	unsigned int val;
-> > -+	const char *str;
-> > -+};
-> > -+
-> > -+static const struct bitfield sfp_options[] =3D {
-> > -+	{
-> > -+		.mask =3D SFP_OPTIONS_HIGH_POWER_LEVEL,
-> > -+		.val =3D SFP_OPTIONS_HIGH_POWER_LEVEL,
-> > -+		.str =3D "hpl",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_PAGING_A2,
-> > -+		.val =3D SFP_OPTIONS_PAGING_A2,
-> > -+		.str =3D "paginga2",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_RETIMER,
-> > -+		.val =3D SFP_OPTIONS_RETIMER,
-> > -+		.str =3D "retimer",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_COOLED_XCVR,
-> > -+		.val =3D SFP_OPTIONS_COOLED_XCVR,
-> > -+		.str =3D "cooled",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_POWER_DECL,
-> > -+		.val =3D SFP_OPTIONS_POWER_DECL,
-> > -+		.str =3D "powerdecl",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_RX_LINEAR_OUT,
-> > -+		.val =3D SFP_OPTIONS_RX_LINEAR_OUT,
-> > -+		.str =3D "rxlinear",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_RX_DECISION_THRESH,
-> > -+		.val =3D SFP_OPTIONS_RX_DECISION_THRESH,
-> > -+		.str =3D "rxthresh",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_TUNABLE_TX,
-> > -+		.val =3D SFP_OPTIONS_TUNABLE_TX,
-> > -+		.str =3D "tunabletx",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_RATE_SELECT,
-> > -+		.val =3D SFP_OPTIONS_RATE_SELECT,
-> > -+		.str =3D "ratesel",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_TX_DISABLE,
-> > -+		.val =3D SFP_OPTIONS_TX_DISABLE,
-> > -+		.str =3D "txdisable",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_TX_FAULT,
-> > -+		.val =3D SFP_OPTIONS_TX_FAULT,
-> > -+		.str =3D "txfault",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_LOS_INVERTED,
-> > -+		.val =3D SFP_OPTIONS_LOS_INVERTED,
-> > -+		.str =3D "los-",
-> > -+	}, {
-> > -+		.mask =3D SFP_OPTIONS_LOS_NORMAL,
-> > -+		.val =3D SFP_OPTIONS_LOS_NORMAL,
-> > -+		.str =3D "los+",
-> > -+	}, { }
-> > -+};
-> > -+
-> > -+static const struct bitfield diagmon[] =3D {
-> > -+	{
-> > -+		.mask =3D SFP_DIAGMON_DDM,
-> > -+		.val =3D SFP_DIAGMON_DDM,
-> > -+		.str =3D "ddm",
-> > -+	}, {
-> > -+		.mask =3D SFP_DIAGMON_INT_CAL,
-> > -+		.val =3D SFP_DIAGMON_INT_CAL,
-> > -+		.str =3D "intcal",
-> > -+	}, {
-> > -+		.mask =3D SFP_DIAGMON_EXT_CAL,
-> > -+		.val =3D SFP_DIAGMON_EXT_CAL,
-> > -+		.str =3D "extcal",
-> > -+	}, {
-> > -+		.mask =3D SFP_DIAGMON_RXPWR_AVG,
-> > -+		.val =3D SFP_DIAGMON_RXPWR_AVG,
-> > -+		.str =3D "rxpwravg",
-> > -+	}, { }
-> > -+};
-> > -+
-> > -+static const char *sfp_bitfield(char *out, size_t outsz, const struct=
- bitfield *bits,
-> > unsigned int val)
-> > -+{
-> > -+	char *p =3D out;
-> > -+	int n;
-> > -+
-> > -+	*p =3D '\0';
-> > -+	while (bits->mask) {
-> > -+		if ((val & bits->mask) =3D=3D bits->val) {
-> > -+			n =3D snprintf(p, outsz, "%s%s",
-> > -+				     out !=3D p ? ", " : "",
-> > -+				     bits->str);
-> > -+			if (n =3D=3D outsz)
-> > -+				break;
-> > -+			p +=3D n;
-> > -+			outsz -=3D n;
-> > -+		}
-> > -+		bits++;
-> > -+	}
-> > -+
-> > -+	return out;
-> > -+}
-> > -+
-> > -+static const char *sfp_connector(unsigned int connector)
-> > -+{
-> > -+	switch (connector) {
-> > -+	case SFP_CONNECTOR_UNSPEC:
-> > -+		return "unknown/unspecified";
-> > -+	case SFP_CONNECTOR_SC:
-> > -+		return "SC";
-> > -+	case SFP_CONNECTOR_FIBERJACK:
-> > -+		return "Fiberjack";
-> > -+	case SFP_CONNECTOR_LC:
-> > -+		return "LC";
-> > -+	case SFP_CONNECTOR_MT_RJ:
-> > -+		return "MT-RJ";
-> > -+	case SFP_CONNECTOR_MU:
-> > -+		return "MU";
-> > -+	case SFP_CONNECTOR_SG:
-> > -+		return "SG";
-> > -+	case SFP_CONNECTOR_OPTICAL_PIGTAIL:
-> > -+		return "Optical pigtail";
-> > -+	case SFP_CONNECTOR_HSSDC_II:
-> > -+		return "HSSDC II";
-> > -+	case SFP_CONNECTOR_COPPER_PIGTAIL:
-> > -+		return "Copper pigtail";
-> > -+	default:
-> > -+		return "unknown";
-> > -+	}
-> > -+}
-> > -+
-> > -+static const char *sfp_encoding(unsigned int encoding)
-> > -+{
-> > -+	switch (encoding) {
-> > -+	case SFP_ENCODING_UNSPEC:
-> > -+		return "unspecified";
-> > -+	case SFP_ENCODING_8472_64B66B:
-> > -+		return "64b66b";
-> > -+	case SFP_ENCODING_8B10B:
-> > -+		return "8b10b";
-> > -+	case SFP_ENCODING_4B5B:
-> > -+		return "4b5b";
-> > -+	case SFP_ENCODING_NRZ:
-> > -+		return "NRZ";
-> > -+	case SFP_ENCODING_8472_MANCHESTER:
-> > -+		return "MANCHESTER";
-> > -+	default:
-> > -+		return "unknown";
-> > -+	}
-> > -+}
-> > -+
-> > - /* Helpers */
-> > - static void sfp_module_tx_disable(struct sfp *sfp)
-> > - {
-> > -@@ -1376,6 +1554,8 @@ static int sfp_sm_mod_probe(struct sfp *
-> > - {
-> > - 	/* SFP module inserted - read I2C data */
-> > - 	struct sfp_eeprom_id id;
-> > -+	char date[9];
-> > -+	char options[80];
-> > - 	bool cotsworks;
-> > - 	u8 check;
-> > - 	int ret;
-> > -@@ -1432,12 +1612,87 @@ static int sfp_sm_mod_probe(struct sfp *
-> > -
-> > - 	sfp->id =3D id;
-> > -
-> > --	dev_info(sfp->dev, "module %.*s %.*s rev %.*s sn %.*s dc %.*s\n",
-> > -+	date[0] =3D sfp->id.ext.datecode[4];
-> > -+	date[1] =3D sfp->id.ext.datecode[5];
-> > -+	date[2] =3D '-';
-> > -+	date[3] =3D sfp->id.ext.datecode[2];
-> > -+	date[4] =3D sfp->id.ext.datecode[3];
-> > -+	date[5] =3D '-';
-> > -+	date[6] =3D sfp->id.ext.datecode[0];
-> > -+	date[7] =3D sfp->id.ext.datecode[1];
-> > -+	date[8] =3D '\0';
-> > -+
-> > -+	dev_info(sfp->dev, "module %.*s %.*s rev %.*s sn %.*s dc %s\n",
-> > - 		 (int)sizeof(id.base.vendor_name), id.base.vendor_name,
-> > - 		 (int)sizeof(id.base.vendor_pn), id.base.vendor_pn,
-> > - 		 (int)sizeof(id.base.vendor_rev), id.base.vendor_rev,
-> > --		 (int)sizeof(id.ext.vendor_sn), id.ext.vendor_sn,
-> > --		 (int)sizeof(id.ext.datecode), id.ext.datecode);
-> > -+		 (int)sizeof(id.ext.vendor_sn), id.ext.vendor_sn, date);
-> > -+	dev_info(sfp->dev, "  %s connector, encoding %s, nominal bitrate
-> > %u.%uGbps +%u%% -%u%%\n",
-> > -+		 sfp_connector(sfp->id.base.connector),
-> > -+		 sfp_encoding(sfp->id.base.encoding),
-> > -+		 sfp->id.base.br_nominal / 10,
-> > -+		 sfp->id.base.br_nominal % 10,
-> > -+		 sfp->id.ext.br_max, sfp->id.ext.br_min);
-> > -+	dev_info(sfp->dev, "  1000BaseSX%c 1000BaseLX%c 1000BaseCX%c
-> > 1000BaseT%c 100BaseLX%c 100BaseFX%c BaseBX10%c BasePX%c\n",
-> > -+		 sfp->id.base.e1000_base_sx ? '+' : '-',
-> > -+		 sfp->id.base.e1000_base_lx ? '+' : '-',
-> > -+		 sfp->id.base.e1000_base_cx ? '+' : '-',
-> > -+		 sfp->id.base.e1000_base_t ? '+' : '-',
-> > -+		 sfp->id.base.e100_base_lx ? '+' : '-',
-> > -+		 sfp->id.base.e100_base_fx ? '+' : '-',
-> > -+		 sfp->id.base.e_base_bx10 ? '+' : '-',
-> > -+		 sfp->id.base.e_base_px ? '+' : '-');
-> > -+	dev_info(sfp->dev, "  10GBaseSR%c 10GBaseLR%c 10GBaseLRM%c
-> > 10GBaseER%c\n",
-> > -+		 sfp->id.base.e10g_base_sr ? '+' : '-',
-> > -+		 sfp->id.base.e10g_base_lr ? '+' : '-',
-> > -+		 sfp->id.base.e10g_base_lrm ? '+' : '-',
-> > -+		 sfp->id.base.e10g_base_er ? '+' : '-');
-> > -+
-> > -+	if (!sfp->id.base.sfp_ct_passive && !sfp->id.base.sfp_ct_active &&
-> > -+	    !sfp->id.base.e1000_base_t) {
-> > -+		char len_9um[16], len_om[16];
-> > -+
-> > -+		dev_info(sfp->dev, "  Wavelength %unm, fiber lengths:\n",
-> > -+			 be16_to_cpup(&sfp->id.base.optical_wavelength));
-> > -+
-> > -+		if (sfp->id.base.link_len[0] =3D=3D 255)
-> > -+			strcpy(len_9um, ">254km");
-> > -+		else if (sfp->id.base.link_len[1] && sfp->id.base.link_len[1] !=3D
-> > 255)
-> > -+			sprintf(len_9um, "%um",
-> > -+				sfp->id.base.link_len[1] * 100);
-> > -+		else if (sfp->id.base.link_len[0])
-> > -+			sprintf(len_9um, "%ukm", sfp->id.base.link_len[0]);
-> > -+		else if (sfp->id.base.link_len[1] =3D=3D 255)
-> > -+			strcpy(len_9um, ">25.4km");
-> > -+		else
-> > -+			strcpy(len_9um, "unsupported");
-> > -+
-> > -+		dev_info(sfp->dev, "    9=B5m SM    : %s\n", len_9um);
-> > -+		dev_info(sfp->dev, " 62.5=B5m MM OM1: %s\n",
-> > -+			 sfp_link_len(len_om, sizeof(len_om),
-> > -+				      sfp->id.base.link_len[3], 10));
-> > -+		dev_info(sfp->dev, "   50=B5m MM OM2: %s\n",
-> > -+			 sfp_link_len(len_om, sizeof(len_om),
-> > -+				      sfp->id.base.link_len[2], 10));
-> > -+		dev_info(sfp->dev, "   50=B5m MM OM3: %s\n",
-> > -+			 sfp_link_len(len_om, sizeof(len_om),
-> > -+				      sfp->id.base.link_len[5], 10));
-> > -+		dev_info(sfp->dev, "   50=B5m MM OM4: %s\n",
-> > -+			 sfp_link_len(len_om, sizeof(len_om),
-> > -+				      sfp->id.base.link_len[4], 10));
-> > -+	} else {
-> > -+		char len[16];
-> > -+		dev_info(sfp->dev, "  Copper length: %s\n",
-> > -+			 sfp_link_len(len, sizeof(len),
-> > -+				      sfp->id.base.link_len[4], 1));
-> > -+	}
-> > -+
-> > -+	dev_info(sfp->dev, "  Options: %s\n",
-> > -+		 sfp_bitfield(options, sizeof(options), sfp_options,
-> > -+			      be16_to_cpu(sfp->id.ext.options)));
-> > -+	dev_info(sfp->dev, "  Diagnostics: %s\n",
-> > -+		 sfp_bitfield(options, sizeof(options), diagmon,
-> > -+			      sfp->id.ext.diagmon));
-> > -
-> > - 	/* Check whether we support this module */
-> > - 	if (!sfp->type->module_supported(&sfp->id)) {
-> > diff --git a/target/linux/mvebu/patches-4.19/408-sfp-more-cotsworks-
-> > fixes.patch b/target/linux/mvebu/patches-4.19/408-sfp-more-cotsworks-
-> > fixes.patch
-> > deleted file mode 100644
-> > index 69a31cb9f06c..000000000000
-> > --- a/target/linux/mvebu/patches-4.19/408-sfp-more-cotsworks-fixes.patch
-> > +++ /dev/null
-> > @@ -1,44 +0,0 @@
-> > -From e26af2726067ff260b77485df6af8375b82bfb1d Mon Sep 17 00:00:00 2001
-> > -From: Russell King <rmk+kernel@armlinux.org.uk>
-> > -Date: Sat, 23 Dec 2017 12:22:58 +0000
-> > -Subject: [PATCH] sfp: more cotsworks fixes
-> > -
-> > -Cotsworks also gets the date code wrong.
-> > -
-> > -Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > ----
-> > - drivers/net/phy/sfp.c | 15 ++++++++-------
-> > - 1 file changed, 8 insertions(+), 7 deletions(-)
-> > -
-> > ---- a/drivers/net/phy/sfp.c
-> > -+++ b/drivers/net/phy/sfp.c
-> > -@@ -1571,9 +1571,9 @@ static int sfp_sm_mod_probe(struct sfp *
-> > - 		return -EAGAIN;
-> > - 	}
-> > -
-> > --	/* Cotsworks do not seem to update the checksums when they
-> > --	 * do the final programming with the final module part number,
-> > --	 * serial number and date code.
-> > -+	/* Cotsworks do not seem to update the checksums when they update
-> > the
-> > -+	 * module part number, serial number and date code. They also format
-> > -+	 * the date code incorrectly.
-> > - 	 */
-> > - 	cotsworks =3D !memcmp(id.base.vendor_name, "COTSWORKS       ", 16);
-> > -
-> > -@@ -1612,11 +1612,12 @@ static int sfp_sm_mod_probe(struct sfp *
-> > -
-> > - 	sfp->id =3D id;
-> > -
-> > --	date[0] =3D sfp->id.ext.datecode[4];
-> > --	date[1] =3D sfp->id.ext.datecode[5];
-> > -+	/* Cotsworks also gets the date code wrong. */
-> > -+	date[0] =3D sfp->id.ext.datecode[4 - 2 * cotsworks];
-> > -+	date[1] =3D sfp->id.ext.datecode[5 - 2 * cotsworks];
-> > - 	date[2] =3D '-';
-> > --	date[3] =3D sfp->id.ext.datecode[2];
-> > --	date[4] =3D sfp->id.ext.datecode[3];
-> > -+	date[3] =3D sfp->id.ext.datecode[2 + 2 * cotsworks];
-> > -+	date[4] =3D sfp->id.ext.datecode[3 + 2 * cotsworks];
-> > - 	date[5] =3D '-';
-> > - 	date[6] =3D sfp->id.ext.datecode[0];
-> > - 	date[7] =3D sfp->id.ext.datecode[1];
-> > diff --git a/target/linux/mvebu/patches-4.19/450-reprobe_sfp_phy.patch
-> > b/target/linux/mvebu/patches-4.19/450-reprobe_sfp_phy.patch
-> > deleted file mode 100644
-> > index 833c515a111f..000000000000
-> > --- a/target/linux/mvebu/patches-4.19/450-reprobe_sfp_phy.patch
-> > +++ /dev/null
-> > @@ -1,94 +0,0 @@
-> > -From 28baa5e2635285b178326b301f534ed95c65dd01 Mon Sep 17 00:00:00 2001
-> > -From: Jonas Gorski <jonas.gorski@gmail.com>
-> > -Date: Thu, 29 Sep 2016 11:44:39 +0200
-> > -Subject: [PATCH] sfp: retry phy probe if unsuccessful
-> > -
-> > -Some phys seem to take longer than 50 ms to come out of reset, so retry
-> > -until we find a phy.
-> > -
-> > -Signed-off-by: Jonas Gorski <jonas.gorski@gmail.com>
-> > ----
-> > - drivers/net/phy/sfp.c | 38 +++++++++++++++++++++++++-------------
-> > - 1 file changed, 25 insertions(+), 13 deletions(-)
-> > -
-> > ---- a/drivers/net/phy/sfp.c
-> > -+++ b/drivers/net/phy/sfp.c
-> > -@@ -1374,7 +1374,7 @@ static void sfp_sm_phy_detach(struct sfp
-> > - 	sfp->mod_phy =3D NULL;
-> > - }
-> > -
-> > --static void sfp_sm_probe_phy(struct sfp *sfp)
-> > -+static int sfp_sm_probe_phy(struct sfp *sfp)
-> > - {
-> > - 	struct phy_device *phy;
-> > - 	int err;
-> > -@@ -1384,11 +1384,11 @@ static void sfp_sm_probe_phy(struct sfp
-> > - 	phy =3D mdiobus_scan(sfp->i2c_mii, SFP_PHY_ADDR);
-> > - 	if (phy =3D=3D ERR_PTR(-ENODEV)) {
-> > - 		dev_info(sfp->dev, "no PHY detected\n");
-> > --		return;
-> > -+		return -EAGAIN;
-> > - 	}
-> > - 	if (IS_ERR(phy)) {
-> > - 		dev_err(sfp->dev, "mdiobus scan returned %ld\n",
-> > PTR_ERR(phy));
-> > --		return;
-> > -+		return PTR_ERR(phy);
-> > - 	}
-> > -
-> > - 	err =3D sfp_add_phy(sfp->sfp_bus, phy);
-> > -@@ -1396,11 +1396,13 @@ static void sfp_sm_probe_phy(struct sfp
-> > - 		phy_device_remove(phy);
-> > - 		phy_device_free(phy);
-> > - 		dev_err(sfp->dev, "sfp_add_phy failed: %d\n", err);
-> > --		return;
-> > -+		return err;
-> > - 	}
-> > -
-> > - 	sfp->mod_phy =3D phy;
-> > - 	phy_start(phy);
-> > -+
-> > -+	return 0;
-> > - }
-> > -
-> > - static void sfp_sm_link_up(struct sfp *sfp)
-> > -@@ -1464,14 +1466,9 @@ static void sfp_sm_fault(struct sfp *sfp
-> > -
-> > - static void sfp_sm_mod_init(struct sfp *sfp)
-> > - {
-> > --	sfp_module_tx_enable(sfp);
-> > -+	int ret =3D 0;
-> > -
-> > --	/* Wait t_init before indicating that the link is up, provided the
-> > --	 * current state indicates no TX_FAULT.  If TX_FAULT clears before
-> > --	 * this time, that's fine too.
-> > --	 */
-> > --	sfp_sm_next(sfp, SFP_S_INIT, T_INIT_JIFFIES);
-> > --	sfp->sm_retries =3D 5;
-> > -+	sfp_module_tx_enable(sfp);
-> > -
-> > - 	/* Setting the serdes link mode is guesswork: there's no
-> > - 	 * field in the EEPROM which indicates what mode should
-> > -@@ -1485,7 +1482,22 @@ static void sfp_sm_mod_init(struct sfp *
-> > - 	if (sfp->id.base.e1000_base_t ||
-> > - 	    sfp->id.base.e100_base_lx ||
-> > - 	    sfp->id.base.e100_base_fx)
-> > --		sfp_sm_probe_phy(sfp);
-> > -+		ret =3D sfp_sm_probe_phy(sfp);
-> > -+
-> > -+	if (!ret) {
-> > -+		/* Wait t_init before indicating that the link is up, provided
-> > -+		 * the current state indicates no TX_FAULT.  If TX_FAULT clears
-> > -+		 * this time, that's fine too.
-> > -+		 */
-> > -+		sfp_sm_next(sfp, SFP_S_INIT, T_INIT_JIFFIES);
-> > -+		sfp->sm_retries =3D 5;
-> > -+		return;
-> > -+	}
-> > -+
-> > -+	if (ret =3D=3D -EAGAIN)
-> > -+		sfp_sm_set_timer(sfp, T_PROBE_RETRY);
-> > -+	else
-> > -+		sfp_sm_next(sfp, SFP_S_TX_DISABLE, 0);
-> > - }
-> > -
-> > - static int sfp_sm_mod_hpower(struct sfp *sfp)
-> > --
-> > 2.20.1
-> > =
-
-> > =
-
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-
-
--- =
-
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
-up
-According to speedtest.net: 11.9Mbps down 500kbps up
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+U2luY2UgdGhlIG9yaWdpbmFsIGJhY2twb3J0cyBmcm9tIGtlcm5lbCA1LjMgYSBmZXcgdGhpbmdz
+IGhhdmUgYmVlbgp0d2Vha2VkIGJ5IGtlcm5lbCBidW1wcyAmIG90aGVyIHVwc3RyZWFtIGNoYW5n
+ZXMuICBVcGRhdGUgdGhlIGJhY2twb3J0CnRvIHJlZmxlY3QgdXBzdHJlYW0gYXMgY2xvc2VseSBh
+cyBwb3NzaWJsZSBhbmQgcmVtb3ZlIHRoZSBiaXRyb3QuCgpGdW5jdGlvbnMgcmVtYWluIHRoZSBz
+YW1lLCBlcnJvciByZXBvcnRpbmcgaW1wcm92ZWQuCgpTaWduZWQtb2ZmLWJ5OiBLZXZpbiBEYXJi
+eXNoaXJlLUJyeWFudCA8bGRpckBkYXJieXNoaXJlLWJyeWFudC5tZS51az4KLS0tCiAuLi5ldC1z
+Y2hlZC1JbnRyb2R1Y2UtYWN0X2N0aW5mby1hY3Rpb24ucGF0Y2ggfCAxNDIgKysrKysrKysrKysr
+KystLS0tCiAuLi5ldC1zY2hlZC1JbnRyb2R1Y2UtYWN0X2N0aW5mby1hY3Rpb24ucGF0Y2ggfCAx
+NDAgKysrKysrKysrKysrLS0tLS0KIDIgZmlsZXMgY2hhbmdlZCwgMjEwIGluc2VydGlvbnMoKyks
+IDcyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9nZW5lcmljL2JhY2tw
+b3J0LTQuMTQvMzgwLXY1LjMtbmV0LXNjaGVkLUludHJvZHVjZS1hY3RfY3RpbmZvLWFjdGlvbi5w
+YXRjaCBiL3RhcmdldC9saW51eC9nZW5lcmljL2JhY2twb3J0LTQuMTQvMzgwLXY1LjMtbmV0LXNj
+aGVkLUludHJvZHVjZS1hY3RfY3RpbmZvLWFjdGlvbi5wYXRjaAppbmRleCBkMmNiMDUzMmM5Li4x
+MDUzNzQyZTZlIDEwMDY0NAotLS0gYS90YXJnZXQvbGludXgvZ2VuZXJpYy9iYWNrcG9ydC00LjE0
+LzM4MC12NS4zLW5ldC1zY2hlZC1JbnRyb2R1Y2UtYWN0X2N0aW5mby1hY3Rpb24ucGF0Y2gKKysr
+IGIvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvYmFja3BvcnQtNC4xNC8zODAtdjUuMy1uZXQtc2NoZWQt
+SW50cm9kdWNlLWFjdF9jdGluZm8tYWN0aW9uLnBhdGNoCkBAIC0xLDQ3ICsxLDExMCBAQAotRnJv
+bSBlMzc3N2RkNDJkYzZmMWI5Y2IwOTk4MzY3MDdhM2U3OTcxZGNmNGRmIE1vbiBTZXAgMTcgMDA6
+MDA6MDAgMjAwMQorRnJvbSBhMDZlY2U1MDNkOTQxZWVmYTkyYmE0OGRjOTgxY2NhYTQwOTMzMzBi
+IE1vbiBTZXAgMTcgMDA6MDA6MDAgMjAwMQogRnJvbTogS2V2aW4gRGFyYnlzaGlyZS1CcnlhbnQg
+PGxkaXJAZGFyYnlzaGlyZS1icnlhbnQubWUudWs+CiBEYXRlOiBXZWQsIDEzIE1hciAyMDE5IDIw
+OjU0OjQ5ICswMDAwCi1TdWJqZWN0OiBbUEFUQ0hdIG5ldDogc2NoZWQ6IEludHJvZHVjZSBhY3Rf
+Y3RpbmZvIGFjdGlvbgorU3ViamVjdDogW1BBVENIXSBuZXQ6IHNjaGVkOiBCYWNrcG9ydCBJbnRy
+b2R1Y2UgYWN0X2N0aW5mbyBhY3Rpb24KK01JTUUtVmVyc2lvbjogMS4wCitDb250ZW50LVR5cGU6
+IHRleHQvcGxhaW47IGNoYXJzZXQ9VVRGLTgKK0NvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IDhi
+aXQKIAotY3RpbmZvIGlzIGEgbmV3IHRjIGZpbHRlciBhY3Rpb24gbW9kdWxlLiAgSXQgaXMgZGVz
+aWduZWQgdG8gcmVzdG9yZSBEU0NQcwotc3RvcmVkIGluIGNvbm50cmFjayBtYXJrcworY3RpbmZv
+IGlzIGEgbmV3IHRjIGZpbHRlciBhY3Rpb24gbW9kdWxlLiAgSXQgaXMgZGVzaWduZWQgdG8gcmVz
+dG9yZQoraW5mb3JtYXRpb24gY29udGFpbmVkIGluIGZpcmV3YWxsIGNvbm50cmFjayBtYXJrcyB0
+byBvdGhlciBwYWNrZXQgZmllbGRzCithbmQgaXMgdHlwaWNhbGx5IHVzZWQgb24gcGFja2V0IGlu
+Z3Jlc3MgcGF0aHMuICBBdCBwcmVzZW50IGl0IGhhcyB0d28KK2luZGVwZW5kZW50IHN1Yi1mdW5j
+dGlvbnMgb3Igb3BlcmF0aW5nIG1vZGVzLCBEU0NQIHJlc3RvcmF0aW9uIG1vZGUgJgorc2tiIG1h
+cmsgcmVzdG9yYXRpb24gbW9kZS4KIAotVGhlIGZlYXR1cmUgaXMgaW50ZW5kZWQgZm9yIHVzZSBh
+bmQgaGFzIGJlZW4gZm91bmQgdXNlZnVsIGZvciByZXN0b3JpbmcKLWluZ3Jlc3MgY2xhc3NpZmlj
+YXRpb25zIGJhc2VkIG9uIGVncmVzcyBjbGFzc2lmaWNhdGlvbnMgYWNyb3NzIGxpbmtzCi10aGF0
+IGJsZWFjaCBvciBvdGhlcndpc2UgY2hhbmdlIERTQ1AsIHR5cGljYWxseSBob21lIElTUCBJbnRl
+cm5ldCBsaW5rcy4KLVJlc3RvcmluZyBEU0NQIG9uIGluZ3Jlc3Mgb24gdGhlIFdBTiBsaW5rIGFs
+bG93cyBxZGlzY3Mgc3VjaCBhcyBDQUtFIHRvCi1zaGFwZSBpbmJvdW5kIHBhY2tldHMgYWNjb3Jk
+aW5nIHRvIHBvbGljaWVzIHRoYXQgYXJlIGVhc2llciB0byBpbXBsZW1lbnQKLW9uIGVncmVzcy4K
+K1RoZSBEU0NQIHJlc3RvcmUgbW9kZToKKworVGhpcyBtb2RlIGNvcGllcyBEU0NQIHZhbHVlcyB0
+aGF0IGhhdmUgYmVlbiBwbGFjZWQgaW4gdGhlIGZpcmV3YWxsCitjb25udHJhY2sgbWFyayBiYWNr
+IGludG8gdGhlIElQdjQvdjYgZGlmZnNlcnYgZmllbGRzIG9mIHJlbGV2YW50CitwYWNrZXRzLgor
+CitUaGUgRFNDUCByZXN0b3JhdGlvbiBpcyBpbnRlbmRlZCBmb3IgdXNlIGFuZCBoYXMgYmVlbiBm
+b3VuZCB1c2VmdWwgZm9yCityZXN0b3JpbmcgaW5ncmVzcyBjbGFzc2lmaWNhdGlvbnMgYmFzZWQg
+b24gZWdyZXNzIGNsYXNzaWZpY2F0aW9ucyBhY3Jvc3MKK2xpbmtzIHRoYXQgYmxlYWNoIG9yIG90
+aGVyd2lzZSBjaGFuZ2UgRFNDUCwgdHlwaWNhbGx5IGhvbWUgSVNQIEludGVybmV0CitsaW5rcy4g
+IFJlc3RvcmluZyBEU0NQIG9uIGluZ3Jlc3Mgb24gdGhlIFdBTiBsaW5rIGFsbG93cyBxZGlzY3Mg
+c3VjaCBhcworYnV0IGJ5IG5vIG1lYW5zIGxpbWl0ZWQgdG8gQ0FLRSB0byBzaGFwZSBpbmJvdW5k
+IHBhY2tldHMgYWNjb3JkaW5nIHRvCitwb2xpY2llcyB0aGF0IGFyZSBlYXNpZXIgdG8gc2V0ICYg
+bWFyayBvbiBlZ3Jlc3MuCiAKIEluZ3Jlc3MgY2xhc3NpZmljYXRpb24gaXMgdHJhZGl0aW9uYWxs
+eSBhIGNoYWxsZW5naW5nIHRhc2sgc2luY2UKIGlwdGFibGVzIHJ1bGVzIGhhdmVuJ3QgeWV0IHJ1
+biBhbmQgdGMgZmlsdGVyL2VCUEYgcHJvZ3JhbXMgYXJlIHByZS1OQVQKIGxvb2t1cHMsIGhlbmNl
+IGFyZSB1bmFibGUgdG8gc2VlIGludGVybmFsIElQdjQgYWRkcmVzc2VzIGFzIHVzZWQgb24gdGhl
+Ci10eXBpY2FsIGhvbWUgbWFzcXVlcmFkaW5nIGdhdGV3YXkuCi0KLWN0aW5mbyB1bmRlcnN0YW5k
+cyB0aGUgZm9sbG93aW5nIHBhcmFtZXRlcnM6Cit0eXBpY2FsIGhvbWUgbWFzcXVlcmFkaW5nIGdh
+dGV3YXkuICBUaHVzIG1hcmtpbmcgdGhlIGNvbm5lY3Rpb24gaW4gc29tZQorbWFubmVyIG9uIGVn
+cmVzcyBmb3IgbGF0ZXIgcmVzdG9yYXRpb24gb2YgY2xhc3NpZmljYXRpb24gb24gaW5ncmVzcyBp
+cworZWFzaWVyIHRvIGltcGxlbWVudC4KIAotZHNjcCBtYXNrWy9zdGF0ZW1hc2tdCitQYXJhbWV0
+ZXJzIHJlbGF0ZWQgdG8gRFNDUCByZXN0b3JlIG1vZGU6CiAKLW1hc2sgLSBhIDMyIGJpdCBtYXNr
+IG9mIGF0IGxlYXN0IDYgY29udGlndW91cyBiaXRzIHdoZXJlIGNvbm5kc2NwIHdpbGwKLXBsYWNl
+IHRoZSBEU0NQIGluIGNvbm50cmFjayBtYXJrLiAgVGhlIERTQ1AgaXMgbGVmdC1zaGlmdGVkIGJ5
+IHRoZQotbnVtYmVyIG9mIHVuc2V0IGxvd2VyIGJpdHMgb2YgdGhlIG1hc2sgYmVmb3JlIHN0b3Jp
+bmcgaW50byB0aGUgbWFyawotZmllbGQuCitkc2NwbWFzayAtIGEgMzIgYml0IG1hc2sgb2YgNiBj
+b250aWd1b3VzIGJpdHMgYW5kIGluZGljYXRlIGJpdHMgb2YgdGhlCitjb25udHJhY2sgbWFyayBm
+aWVsZCBjb250YWluIHRoZSBEU0NQIHZhbHVlIHRvIGJlIHJlc3RvcmVkLgogCiBzdGF0ZW1hc2sg
+LSBhIDMyIGJpdCBtYXNrIG9mICh1c3VhbGx5KSAxIGJpdCBsZW5ndGgsIG91dHNpZGUgdGhlIGFy
+ZWEKLXNwZWNpZmllZCBieSBtYXNrLiAgVGhpcyByZXByZXNlbnRzIGEgY29uZGl0aW9uYWwgb3Bl
+cmF0aW9uIGZsYWcgdGhlCi1EU0NQIGlzIG9ubHkgcmVzdG9yZWQgaWYgdGhlIGZsYWcgaXMgc2V0
+LiAgVGhpcyBpcyB1c2VmdWwgdG8gaW1wbGVtZW50IGEKLSdvbmUgc2hvdCcgaXB0YWJsZXMgYmFz
+ZWQgY2xhc3NpZmljYXRpb24gd2hlcmUgdGhlICdjb21wbGljYXRlZCcKLWlwdGFibGVzIHJ1bGVz
+IGFyZSBvbmx5IHJ1biBvbmNlIHRvIGNsYXNzaWZ5IHRoZSBjb25uZWN0aW9uIG9uIGluaXRpYWwK
+LShlZ3Jlc3MpIHBhY2tldCBhbmQgc3Vic2VxdWVudCBwYWNrZXRzIGFyZSBhbGwgbWFya2VkL3Jl
+c3RvcmVkIHdpdGggdGhlCi1zYW1lIERTQ1AuICBBIG1hc2sgb2YgemVybyBkaXNhYmxlcyB0aGUg
+Y29uZGl0aW9uYWwgYmVoYXZpb3VyLgorc3BlY2lmaWVkIGJ5IGRzY3BtYXNrLiAgVGhpcyByZXBy
+ZXNlbnRzIGEgY29uZGl0aW9uYWwgb3BlcmF0aW9uIGZsYWcKK3doZXJlYnkgdGhlIERTQ1AgaXMg
+b25seSByZXN0b3JlZCBpZiB0aGUgZmxhZyBpcyBzZXQuICBUaGlzIGlzIHVzZWZ1bCB0bworaW1w
+bGVtZW50IGEgJ29uZSBzaG90JyBpcHRhYmxlcyBiYXNlZCBjbGFzc2lmaWNhdGlvbiB3aGVyZSB0
+aGUKKydjb21wbGljYXRlZCcgaXB0YWJsZXMgcnVsZXMgYXJlIG9ubHkgcnVuIG9uY2UgdG8gY2xh
+c3NpZnkgdGhlCitjb25uZWN0aW9uIG9uIGluaXRpYWwgKGVncmVzcykgcGFja2V0IGFuZCBzdWJz
+ZXF1ZW50IHBhY2tldHMgYXJlIGFsbAorbWFya2VkL3Jlc3RvcmVkIHdpdGggdGhlIHNhbWUgRFND
+UC4gIEEgbWFzayBvZiB6ZXJvIGRpc2FibGVzIHRoZQorY29uZGl0aW9uYWwgYmVoYXZpb3VyIGll
+LiB0aGUgY29ubnRyYWNrIG1hcmsgRFNDUCBiaXRzIGFyZSBhbHdheXMKK3Jlc3RvcmVkIHRvIHRo
+ZSBpcCBkaWZmc2VydiBmaWVsZCAoYXNzdW1pbmcgdGhlIGNvbm50cmFjayBlbnRyeSBpcyBmb3Vu
+ZAorJiB0aGUgc2tiIGlzIGFuIGlwdjQvaXB2NiB0eXBlKQorCitlLmcuIGRzY3BtYXNrIDB4ZmMw
+MDAwMDAgc3RhdGVtYXNrIDB4MDEwMDAwMDAKKworfC0tLS0weEZDLS0tLWNvbm50cmFjayBtYXJr
+LS0tLTAwMDAwMC0tLXwKK3wgQml0cyAzMS0yNiB8IGJpdCAyNSB8IGJpdDI0IHx+fn4gQml0IDB8
+Cit8IERTQ1AgICAgICAgfCB1bnVzZWQgfCBmbGFnICB8dW51c2VkICAgfAorfC0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tMHgwMS0tLTAwMDAwMC0tLXwKKyAgICAgIHwgICAgICAgICAgICAgICAgICAg
+fAorICAgICAgfCAgICAgICAgICAgICAgICAgICB8CisgICAgICAtLS18ICAgICAgICAgICAgIENv
+bmRpdGlvbmFsIGZsYWcKKyAgICAgICAgIHYgICAgICAgICAgICAgb25seSByZXN0b3JlIGlmIHNl
+dAorfC1pcCBkaWZmc2Vydi18Cit8IDYgYml0cyAgICAgIHwKK3wtLS0tLS0tLS0tLS0tfAorCitU
+aGUgc2tiIG1hcmsgcmVzdG9yZSBtb2RlIChjcG1hcmspOgorCitUaGlzIG1vZGUgY29waWVzIHRo
+ZSBmaXJld2FsbCBjb25udHJhY2sgbWFyayB0byB0aGUgc2tiJ3MgbWFyayBmaWVsZC4KK0l0IGlz
+IGNvbXBsZXRlbHkgdGhlIGZ1bmN0aW9uYWwgZXF1aXZhbGVudCBvZiB0aGUgZXhpc3RpbmcgYWN0
+X2Nvbm5tYXJrCithY3Rpb24gd2l0aCB0aGUgYWRkaXRpb25hbCBmZWF0dXJlIG9mIGJlaW5nIGFi
+bGUgdG8gYXBwbHkgYSBtYXNrIHRvIHRoZQorcmVzdG9yZWQgdmFsdWUuCisKK1BhcmFtZXRlcnMg
+cmVsYXRlZCB0byBza2IgbWFyayByZXN0b3JlIG1vZGU6CisKK21hc2sgLSBhIDMyIGJpdCBtYXNr
+IGFwcGxpZWQgdG8gdGhlIGZpcmV3YWxsIGNvbm50cmFjayBtYXJrIHRvIG1hc2sgb3V0CitiaXRz
+IHVud2FudGVkIGZvciByZXN0b3JhdGlvbi4gIFRoaXMgY2FuIGJlIHVzZWZ1bCB3aGVyZSB0aGUg
+Y29ubnRyYWNrCittYXJrIGlzIGJlaW5nIHVzZWQgZm9yIGRpZmZlcmVudCBwdXJwb3NlcyBieSBk
+aWZmZXJlbnQgYXBwbGljYXRpb25zLiAgSWYKK25vdCBzcGVjaWZpZWQgYW5kIGJ5IGRlZmF1bHQg
+dGhlIHdob2xlIG1hcmsgZmllbGQgaXMgY29waWVkIChpLmUuCitkZWZhdWx0IG1hc2sgb2YgMHhm
+ZmZmZmZmZikKIAotb3B0aW9uYWwgcGFyYW1ldGVyczoKK2UuZy4gbWFzayAweDAwZmZmZmZmIHRv
+IG1hc2sgb3V0IHRoZSB0b3AgOCBiaXRzIGJlaW5nIHVzZWQgYnkgdGhlCithZm9yZW1lbnRpb25l
+ZCBEU0NQIHJlc3RvcmUgbW9kZS4KKworfC0tLS0weDAwLS0tLWNvbm50cmFjayBtYXJrLS0tLWZm
+ZmZmZi0tLXwKK3wgQml0cyAzMS0yNCB8ICAgICAgICAgICAgICAgICAgICAgICAgICB8Cit8IERT
+Q1AgJiBmbGFnfCAgICAgIHNvbWUgdmFsdWUgaGVyZSAgICAgfAorfC0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLXwKKwkJCXwKKwkJCXwKKwkJCXYKK3wtLS0tLS0tLS0tLS1z
+a2IgbWFyay0tLS0tLS0tLS0tLS0tLS0tLS18Cit8ICAgICAgICAgICAgfCAgICAgICAgICAgICAg
+ICAgICAgICAgICAgfAorfCAgemVyb2VkICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgIHwK
+K3wtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS18CisKK092ZXJhbGwgcGFy
+YW1ldGVyczoKIAogem9uZSAtIGNvbm50cmFjayB6b25lCiAKIGNvbnRyb2wgLSBhY3Rpb24gcmVs
+YXRlZCBjb250cm9sIChyZWNsYXNzaWZ5IHwgcGlwZSB8IGRyb3AgfCBjb250aW51ZSB8Ci1vayB8
+IGdvdG8gY2hhaW4gPENIQUlOX0lOREVYPgorb2sgfCBnb3RvIGNoYWluIDxDSEFJTl9JTkRFWD4p
+CisKK1NpZ25lZC1vZmYtYnk6IEtldmluIERhcmJ5c2hpcmUtQnJ5YW50IDxsZGlyQGRhcmJ5c2hp
+cmUtYnJ5YW50Lm1lLnVrPgorUmV2aWV3ZWQtYnk6IFRva2UgSMO4aWxhbmQtSsO4cmdlbnNlbiA8
+dG9rZUByZWRoYXQuY29tPgorQWNrZWQtYnk6IENvbmcgV2FuZyA8eGl5b3Uud2FuZ2NvbmdAZ21h
+aWwuY29tPgorU2lnbmVkLW9mZi1ieTogRGF2aWQgUy4gTWlsbGVyIDxkYXZlbUBkYXZlbWxvZnQu
+bmV0PgogCitCYWNrcG9ydAogU2lnbmVkLW9mZi1ieTogS2V2aW4gRGFyYnlzaGlyZS1CcnlhbnQg
+PGxkaXJAZGFyYnlzaGlyZS1icnlhbnQubWUudWs+CiAtLS0KICBpbmNsdWRlL25ldC90Y19hY3Qv
+dGNfY3RpbmZvLmggICAgICAgIHwgIDMzICsrKwpAQCAtNDksOCArMTEyLDggQEAgU2lnbmVkLW9m
+Zi1ieTogS2V2aW4gRGFyYnlzaGlyZS1CcnlhbnQgPGxkaXJAZGFyYnlzaGlyZS1icnlhbnQubWUu
+dWs+CiAgaW5jbHVkZS91YXBpL2xpbnV4L3RjX2FjdC90Y19jdGluZm8uaCB8ICAyOSArKwogIG5l
+dC9zY2hlZC9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgfCAgMTMgKwogIG5ldC9zY2hlZC9N
+YWtlZmlsZSAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwotIG5ldC9zY2hlZC9hY3RfY3RpbmZv
+LmMgICAgICAgICAgICAgICAgfCAzOTQgKysrKysrKysrKysrKysrKysrKysrKysrKysKLSA2IGZp
+bGVzIGNoYW5nZWQsIDQ3MiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCisgbmV0L3NjaGVk
+L2FjdF9jdGluZm8uYyAgICAgICAgICAgICAgICB8IDQwNyArKysrKysrKysrKysrKysrKysrKysr
+KysrKworIDYgZmlsZXMgY2hhbmdlZCwgNDg1IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkK
+ICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9uZXQvdGNfYWN0L3RjX2N0aW5mby5oCiAgY3Jl
+YXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvdWFwaS9saW51eC90Y19hY3QvdGNfY3RpbmZvLmgKICBj
+cmVhdGUgbW9kZSAxMDA2NDQgbmV0L3NjaGVkL2FjdF9jdGluZm8uYwpAQCAtMTY5LDcgKzIzMiw3
+IEBAIFNpZ25lZC1vZmYtYnk6IEtldmluIERhcmJ5c2hpcmUtQnJ5YW50IDxsZGlyQGRhcmJ5c2hp
+cmUtYnJ5YW50Lm1lLnVrPgogIG9iai0kKENPTkZJR19ORVRfSUZFX1NLQk1BUkspCSs9IGFjdF9t
+ZXRhX21hcmsubwogLS0tIC9kZXYvbnVsbAogKysrIGIvbmV0L3NjaGVkL2FjdF9jdGluZm8uYwot
+QEAgLTAsMCArMSwzOTQgQEAKK0BAIC0wLDAgKzEsNDA3IEBACiArLy8gU1BEWC1MaWNlbnNlLUlk
+ZW50aWZpZXI6IEdQTC0yLjArCiArLyogbmV0L3NjaGVkL2FjdF9jdGluZm8uYyAgbmV0ZmlsdGVy
+IGN0aW5mbyBjb25ubWFyayBhY3Rpb25zCiArICoKQEAgLTMzNywxNSArNDAwLDIwIEBAIFNpZ25l
+ZC1vZmYtYnk6IEtldmluIERhcmJ5c2hpcmUtQnJ5YW50IDxsZGlyQGRhcmJ5c2hpcmUtYnJ5YW50
+Lm1lLnVrPgogKwl1OCBkc2NwbWFza3NoaWZ0OwogKwlpbnQgcmV0ID0gMCwgZXJyOwogKwotKwlp
+ZiAoIW5sYSkKKysJaWYgKCFubGEpIHsKKysJCU5MX1NFVF9FUlJfTVNHX01PRChleHRhY2ssICJj
+dGluZm8gcmVxdWlyZXMgYXR0cmlidXRlcyB0byBiZSBwYXNzZWQiKTsKICsJCXJldHVybiAtRUlO
+VkFMOworKwl9CiArCiArCWVyciA9IG5sYV9wYXJzZV9uZXN0ZWQodGIsIFRDQV9DVElORk9fTUFY
+LCBubGEsIGN0aW5mb19wb2xpY3ksIE5VTEwpOwogKwlpZiAoZXJyIDwgMCkKICsJCXJldHVybiBl
+cnI7CiArCi0rCWlmICghdGJbVENBX0NUSU5GT19BQ1RdKQorKwlpZiAoIXRiW1RDQV9DVElORk9f
+QUNUXSkgeworKwkJTkxfU0VUX0VSUl9NU0dfTU9EKGV4dGFjaywKKysJCQkJICAgIk1pc3Npbmcg
+cmVxdWlyZWQgVENBX0NUSU5GT19BQ1QgYXR0cmlidXRlIik7CiArCQlyZXR1cm4gLUVJTlZBTDsK
+KysJfQogKwlhY3RwYXJtID0gbmxhX2RhdGEodGJbVENBX0NUSU5GT19BQ1RdKTsKICsKICsJLyog
+ZG8gc29tZSBiYXNpYyB2YWxpZGF0aW9uIGhlcmUgYmVmb3JlIGR5bmFtaWNhbGx5IGFsbG9jYXRp
+bmcgdGhpbmdzICovCkBAIC0zNTQsMTMgKzQyMiwyMSBAQCBTaWduZWQtb2ZmLWJ5OiBLZXZpbiBE
+YXJieXNoaXJlLUJyeWFudCA8bGRpckBkYXJieXNoaXJlLWJyeWFudC5tZS51az4KICsJCWRzY3Bt
+YXNrID0gbmxhX2dldF91MzIodGJbVENBX0NUSU5GT19QQVJNU19EU0NQX01BU0tdKTsKICsJCS8q
+IG5lZWQgY29udGlndW91cyA2IGJpdCBtYXNrICovCiArCQlkc2NwbWFza3NoaWZ0ID0gZHNjcG1h
+c2sgPyBfX2Zmcyhkc2NwbWFzaykgOiAwOwotKwkJaWYgKCh+MCAmIChkc2NwbWFzayA+PiBkc2Nw
+bWFza3NoaWZ0KSkgIT0gMHgzZikKKysJCWlmICgofjAgJiAoZHNjcG1hc2sgPj4gZHNjcG1hc2tz
+aGlmdCkpICE9IDB4M2YpIHsKKysJCQlOTF9TRVRfRVJSX01TR19BVFRSKGV4dGFjaywKKysJCQkJ
+CSAgICB0YltUQ0FfQ1RJTkZPX1BBUk1TX0RTQ1BfTUFTS10sCisrCQkJCQkgICAgImRzY3AgbWFz
+ayBtdXN0IGJlIDYgY29udGlndW91cyBiaXRzIik7CiArCQkJcmV0dXJuIC1FSU5WQUw7CisrCQl9
+CiArCQlkc2Nwc3RhdGVtYXNrID0gdGJbVENBX0NUSU5GT19QQVJNU19EU0NQX1NUQVRFTUFTS10g
+PwogKwkJCW5sYV9nZXRfdTMyKHRiW1RDQV9DVElORk9fUEFSTVNfRFNDUF9TVEFURU1BU0tdKSA6
+IDA7CiArCQkvKiBtYXNrICYgc3RhdGVtYXNrIG11c3Qgbm90IG92ZXJsYXAgKi8KLSsJCWlmIChk
+c2NwbWFzayAmIGRzY3BzdGF0ZW1hc2spCisrCQlpZiAoZHNjcG1hc2sgJiBkc2Nwc3RhdGVtYXNr
+KSB7CisrCQkJTkxfU0VUX0VSUl9NU0dfQVRUUihleHRhY2ssCisrCQkJCQkgICAgdGJbVENBX0NU
+SU5GT19QQVJNU19EU0NQX1NUQVRFTUFTS10sCisrCQkJCQkgICAgImRzY3Agc3RhdGVtYXNrIG11
+c3Qgbm90IG92ZXJsYXAgZHNjcCBtYXNrIik7CiArCQkJcmV0dXJuIC1FSU5WQUw7CisrCQl9CiAr
+CX0KICsJLyogZG9uZSB0aGUgdmFsaWRhdGlvbjpub3cgdG8gdGhlIGFjdHVhbCBhY3Rpb24gYWxs
+b2NhdGlvbiAqLwogKwllcnIgPSB0Y2ZfaWRyX2NoZWNrKHRuLCBhY3RwYXJtLT5pbmRleCwgYSwg
+YmluZCk7CmRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvZ2VuZXJpYy9iYWNrcG9ydC00LjE5LzM4
+MC12NS4zLW5ldC1zY2hlZC1JbnRyb2R1Y2UtYWN0X2N0aW5mby1hY3Rpb24ucGF0Y2ggYi90YXJn
+ZXQvbGludXgvZ2VuZXJpYy9iYWNrcG9ydC00LjE5LzM4MC12NS4zLW5ldC1zY2hlZC1JbnRyb2R1
+Y2UtYWN0X2N0aW5mby1hY3Rpb24ucGF0Y2gKaW5kZXggOTA5YzY4ZTFiNS4uOGUwNGRjZTMwOSAx
+MDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L2dlbmVyaWMvYmFja3BvcnQtNC4xOS8zODAtdjUuMy1u
+ZXQtc2NoZWQtSW50cm9kdWNlLWFjdF9jdGluZm8tYWN0aW9uLnBhdGNoCisrKyBiL3RhcmdldC9s
+aW51eC9nZW5lcmljL2JhY2twb3J0LTQuMTkvMzgwLXY1LjMtbmV0LXNjaGVkLUludHJvZHVjZS1h
+Y3RfY3RpbmZvLWFjdGlvbi5wYXRjaApAQCAtMSwyOSArMSw0MSBAQAotRnJvbSBjMTc4NzdlNDE0
+MTU1YjliOTdkMTA0MTZmZjYyYjEwMmQyNTAxOWExIE1vbiBTZXAgMTcgMDA6MDA6MDAgMjAwMQor
+RnJvbSA2ZDgwNzFiYmJkY2Q5ZDNhMmZiYjQ5ZTU1YjUxNjE3OTA2ZTNiODE2IE1vbiBTZXAgMTcg
+MDA6MDA6MDAgMjAwMQogRnJvbTogS2V2aW4gRGFyYnlzaGlyZS1CcnlhbnQgPGxkaXJAZGFyYnlz
+aGlyZS1icnlhbnQubWUudWs+CiBEYXRlOiBXZWQsIDEzIE1hciAyMDE5IDIwOjU0OjQ5ICswMDAw
+Ci1TdWJqZWN0OiBbUEFUQ0hdIG5ldDogc2NoZWQ6IEludHJvZHVjZSBhY3RfY3RpbmZvIGFjdGlv
+bgorU3ViamVjdDogW1BBVENIXSBuZXQ6IHNjaGVkOiBCYWNrcG9ydCBJbnRyb2R1Y2UgYWN0X2N0
+aW5mbyBhY3Rpb24KK01JTUUtVmVyc2lvbjogMS4wCitDb250ZW50LVR5cGU6IHRleHQvcGxhaW47
+IGNoYXJzZXQ9VVRGLTgKK0NvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IDhiaXQKIAotY3RpbmZv
+IGlzIGEgbmV3IHRjIGZpbHRlciBhY3Rpb24gbW9kdWxlLiAgSXQgaXMgZGVzaWduZWQgdG8gcmVz
+dG9yZSBEU0NQcwotc3RvcmVkIGluIGNvbm50cmFjayBtYXJrcyBpbnRvIHRoZSBpcHY0L3Y2IGRp
+ZmZzZXJ2IGZpZWxkLgorY3RpbmZvIGlzIGEgbmV3IHRjIGZpbHRlciBhY3Rpb24gbW9kdWxlLiAg
+SXQgaXMgZGVzaWduZWQgdG8gcmVzdG9yZQoraW5mb3JtYXRpb24gY29udGFpbmVkIGluIGZpcmV3
+YWxsIGNvbm50cmFjayBtYXJrcyB0byBvdGhlciBwYWNrZXQgZmllbGRzCithbmQgaXMgdHlwaWNh
+bGx5IHVzZWQgb24gcGFja2V0IGluZ3Jlc3MgcGF0aHMuICBBdCBwcmVzZW50IGl0IGhhcyB0d28K
+K2luZGVwZW5kZW50IHN1Yi1mdW5jdGlvbnMgb3Igb3BlcmF0aW5nIG1vZGVzLCBEU0NQIHJlc3Rv
+cmF0aW9uIG1vZGUgJgorc2tiIG1hcmsgcmVzdG9yYXRpb24gbW9kZS4KIAotVGhlIGZlYXR1cmUg
+aXMgaW50ZW5kZWQgZm9yIHVzZSBhbmQgaGFzIGJlZW4gZm91bmQgdXNlZnVsIGZvciByZXN0b3Jp
+bmcKLWluZ3Jlc3MgY2xhc3NpZmljYXRpb25zIGJhc2VkIG9uIGVncmVzcyBjbGFzc2lmaWNhdGlv
+bnMgYWNyb3NzIGxpbmtzCi10aGF0IGJsZWFjaCBvciBvdGhlcndpc2UgY2hhbmdlIERTQ1AsIHR5
+cGljYWxseSBob21lIElTUCBJbnRlcm5ldCBsaW5rcy4KLVJlc3RvcmluZyBEU0NQIG9uIGluZ3Jl
+c3Mgb24gdGhlIFdBTiBsaW5rIGFsbG93cyBxZGlzY3Mgc3VjaCBhcyBDQUtFIHRvCi1zaGFwZSBp
+bmJvdW5kIHBhY2tldHMgYWNjb3JkaW5nIHRvIHBvbGljaWVzIHRoYXQgYXJlIGVhc2llciB0byBp
+bmRpY2F0ZQotb24gZWdyZXNzLgorVGhlIERTQ1AgcmVzdG9yZSBtb2RlOgorCitUaGlzIG1vZGUg
+Y29waWVzIERTQ1AgdmFsdWVzIHRoYXQgaGF2ZSBiZWVuIHBsYWNlZCBpbiB0aGUgZmlyZXdhbGwK
+K2Nvbm50cmFjayBtYXJrIGJhY2sgaW50byB0aGUgSVB2NC92NiBkaWZmc2VydiBmaWVsZHMgb2Yg
+cmVsZXZhbnQKK3BhY2tldHMuCisKK1RoZSBEU0NQIHJlc3RvcmF0aW9uIGlzIGludGVuZGVkIGZv
+ciB1c2UgYW5kIGhhcyBiZWVuIGZvdW5kIHVzZWZ1bCBmb3IKK3Jlc3RvcmluZyBpbmdyZXNzIGNs
+YXNzaWZpY2F0aW9ucyBiYXNlZCBvbiBlZ3Jlc3MgY2xhc3NpZmljYXRpb25zIGFjcm9zcworbGlu
+a3MgdGhhdCBibGVhY2ggb3Igb3RoZXJ3aXNlIGNoYW5nZSBEU0NQLCB0eXBpY2FsbHkgaG9tZSBJ
+U1AgSW50ZXJuZXQKK2xpbmtzLiAgUmVzdG9yaW5nIERTQ1Agb24gaW5ncmVzcyBvbiB0aGUgV0FO
+IGxpbmsgYWxsb3dzIHFkaXNjcyBzdWNoIGFzCitidXQgYnkgbm8gbWVhbnMgbGltaXRlZCB0byBD
+QUtFIHRvIHNoYXBlIGluYm91bmQgcGFja2V0cyBhY2NvcmRpbmcgdG8KK3BvbGljaWVzIHRoYXQg
+YXJlIGVhc2llciB0byBzZXQgJiBtYXJrIG9uIGVncmVzcy4KIAogSW5ncmVzcyBjbGFzc2lmaWNh
+dGlvbiBpcyB0cmFkaXRpb25hbGx5IGEgY2hhbGxlbmdpbmcgdGFzayBzaW5jZQogaXB0YWJsZXMg
+cnVsZXMgaGF2ZW4ndCB5ZXQgcnVuIGFuZCB0YyBmaWx0ZXIvZUJQRiBwcm9ncmFtcyBhcmUgcHJl
+LU5BVAogbG9va3VwcywgaGVuY2UgYXJlIHVuYWJsZSB0byBzZWUgaW50ZXJuYWwgSVB2NCBhZGRy
+ZXNzZXMgYXMgdXNlZCBvbiB0aGUKLXR5cGljYWwgaG9tZSBtYXNxdWVyYWRpbmcgZ2F0ZXdheS4K
+K3R5cGljYWwgaG9tZSBtYXNxdWVyYWRpbmcgZ2F0ZXdheS4gIFRodXMgbWFya2luZyB0aGUgY29u
+bmVjdGlvbiBpbiBzb21lCittYW5uZXIgb24gZWdyZXNzIGZvciBsYXRlciByZXN0b3JhdGlvbiBv
+ZiBjbGFzc2lmaWNhdGlvbiBvbiBpbmdyZXNzIGlzCitlYXNpZXIgdG8gaW1wbGVtZW50LgogCi1j
+dGluZm8gdW5kZXJzdGFuZHMgdGhlIGZvbGxvd2luZyBwYXJhbWV0ZXJzOgorUGFyYW1ldGVycyBy
+ZWxhdGVkIHRvIERTQ1AgcmVzdG9yZSBtb2RlOgogCi1kc2NwIGRzY3BtYXNrWy9zdGF0ZW1hc2td
+Ci0KLWRzY3BtYXNrIC0gYSAzMiBiaXQgbWFzayBvZiBhdCBsZWFzdCA2IGNvbnRpZ3VvdXMgYml0
+cyBhbmQgaW5kaWNhdGVzCi13aGVyZSBjdGluZm8gd2lsbCBmaW5kIHRoZSBEU0NQIGJpdHMgc3Rv
+cmVkIGluIHRoZSBjb25udHJhY2sgbWFyay4KK2RzY3BtYXNrIC0gYSAzMiBiaXQgbWFzayBvZiA2
+IGNvbnRpZ3VvdXMgYml0cyBhbmQgaW5kaWNhdGUgYml0cyBvZiB0aGUKK2Nvbm50cmFjayBtYXJr
+IGZpZWxkIGNvbnRhaW4gdGhlIERTQ1AgdmFsdWUgdG8gYmUgcmVzdG9yZWQuCiAKIHN0YXRlbWFz
+ayAtIGEgMzIgYml0IG1hc2sgb2YgKHVzdWFsbHkpIDEgYml0IGxlbmd0aCwgb3V0c2lkZSB0aGUg
+YXJlYQogc3BlY2lmaWVkIGJ5IGRzY3BtYXNrLiAgVGhpcyByZXByZXNlbnRzIGEgY29uZGl0aW9u
+YWwgb3BlcmF0aW9uIGZsYWcKQEAgLTM2LDE0ICs0OCw3IEBAIGNvbmRpdGlvbmFsIGJlaGF2aW91
+ciBpZS4gdGhlIGNvbm50cmFjayBtYXJrIERTQ1AgYml0cyBhcmUgYWx3YXlzCiByZXN0b3JlZCB0
+byB0aGUgaXAgZGlmZnNlcnYgZmllbGQgKGFzc3VtaW5nIHRoZSBjb25udHJhY2sgZW50cnkgaXMg
+Zm91bmQKICYgdGhlIHNrYiBpcyBhbiBpcHY0L2lwdjYgdHlwZSkKIAotb3B0aW9uYWwgcGFyYW1l
+dGVyczoKLQotem9uZSAtIGNvbm50cmFjayB6b25lCi0KLWNvbnRyb2wgLSBhY3Rpb24gcmVsYXRl
+ZCBjb250cm9sIChyZWNsYXNzaWZ5IHwgcGlwZSB8IGRyb3AgfCBjb250aW51ZSB8Ci1vayB8IGdv
+dG8gY2hhaW4gPENIQUlOX0lOREVYPikKLQotZS5nLiBkc2NwIDB4ZmMwMDAwMDAvMHgwMTAwMDAw
+MAorZS5nLiBkc2NwbWFzayAweGZjMDAwMDAwIHN0YXRlbWFzayAweDAxMDAwMDAwCiAKIHwtLS0t
+MHhGQy0tLS1jb25udHJhY2sgbWFyay0tLS0wMDAwMDAtLS18CiB8IEJpdHMgMzEtMjYgfCBiaXQg
+MjUgfCBiaXQyNCB8fn5+IEJpdCAwfApAQCAtNTcsNiArNjIsNDkgQEAgZS5nLiBkc2NwIDB4ZmMw
+MDAwMDAvMHgwMTAwMDAwMAogfCA2IGJpdHMgICAgICB8CiB8LS0tLS0tLS0tLS0tLXwKIAorVGhl
+IHNrYiBtYXJrIHJlc3RvcmUgbW9kZSAoY3BtYXJrKToKKworVGhpcyBtb2RlIGNvcGllcyB0aGUg
+ZmlyZXdhbGwgY29ubnRyYWNrIG1hcmsgdG8gdGhlIHNrYidzIG1hcmsgZmllbGQuCitJdCBpcyBj
+b21wbGV0ZWx5IHRoZSBmdW5jdGlvbmFsIGVxdWl2YWxlbnQgb2YgdGhlIGV4aXN0aW5nIGFjdF9j
+b25ubWFyaworYWN0aW9uIHdpdGggdGhlIGFkZGl0aW9uYWwgZmVhdHVyZSBvZiBiZWluZyBhYmxl
+IHRvIGFwcGx5IGEgbWFzayB0byB0aGUKK3Jlc3RvcmVkIHZhbHVlLgorCitQYXJhbWV0ZXJzIHJl
+bGF0ZWQgdG8gc2tiIG1hcmsgcmVzdG9yZSBtb2RlOgorCittYXNrIC0gYSAzMiBiaXQgbWFzayBh
+cHBsaWVkIHRvIHRoZSBmaXJld2FsbCBjb25udHJhY2sgbWFyayB0byBtYXNrIG91dAorYml0cyB1
+bndhbnRlZCBmb3IgcmVzdG9yYXRpb24uICBUaGlzIGNhbiBiZSB1c2VmdWwgd2hlcmUgdGhlIGNv
+bm50cmFjaworbWFyayBpcyBiZWluZyB1c2VkIGZvciBkaWZmZXJlbnQgcHVycG9zZXMgYnkgZGlm
+ZmVyZW50IGFwcGxpY2F0aW9ucy4gIElmCitub3Qgc3BlY2lmaWVkIGFuZCBieSBkZWZhdWx0IHRo
+ZSB3aG9sZSBtYXJrIGZpZWxkIGlzIGNvcGllZCAoaS5lLgorZGVmYXVsdCBtYXNrIG9mIDB4ZmZm
+ZmZmZmYpCisKK2UuZy4gbWFzayAweDAwZmZmZmZmIHRvIG1hc2sgb3V0IHRoZSB0b3AgOCBiaXRz
+IGJlaW5nIHVzZWQgYnkgdGhlCithZm9yZW1lbnRpb25lZCBEU0NQIHJlc3RvcmUgbW9kZS4KKwor
+fC0tLS0weDAwLS0tLWNvbm50cmFjayBtYXJrLS0tLWZmZmZmZi0tLXwKK3wgQml0cyAzMS0yNCB8
+ICAgICAgICAgICAgICAgICAgICAgICAgICB8Cit8IERTQ1AgJiBmbGFnfCAgICAgIHNvbWUgdmFs
+dWUgaGVyZSAgICAgfAorfC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLXwK
+KwkJCXwKKwkJCXwKKwkJCXYKK3wtLS0tLS0tLS0tLS1za2IgbWFyay0tLS0tLS0tLS0tLS0tLS0t
+LS18Cit8ICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgfAorfCAgemVyb2Vk
+ICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgIHwKK3wtLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS18CisKK092ZXJhbGwgcGFyYW1ldGVyczoKKworem9uZSAtIGNvbm50
+cmFjayB6b25lCisKK2NvbnRyb2wgLSBhY3Rpb24gcmVsYXRlZCBjb250cm9sIChyZWNsYXNzaWZ5
+IHwgcGlwZSB8IGRyb3AgfCBjb250aW51ZSB8CitvayB8IGdvdG8gY2hhaW4gPENIQUlOX0lOREVY
+PikKKworU2lnbmVkLW9mZi1ieTogS2V2aW4gRGFyYnlzaGlyZS1CcnlhbnQgPGxkaXJAZGFyYnlz
+aGlyZS1icnlhbnQubWUudWs+CitSZXZpZXdlZC1ieTogVG9rZSBIw7hpbGFuZC1Kw7hyZ2Vuc2Vu
+IDx0b2tlQHJlZGhhdC5jb20+CitBY2tlZC1ieTogQ29uZyBXYW5nIDx4aXlvdS53YW5nY29uZ0Bn
+bWFpbC5jb20+CitTaWduZWQtb2ZmLWJ5OiBEYXZpZCBTLiBNaWxsZXIgPGRhdmVtQGRhdmVtbG9m
+dC5uZXQ+CisKK0JhY2twb3J0CiBTaWduZWQtb2ZmLWJ5OiBLZXZpbiBEYXJieXNoaXJlLUJyeWFu
+dCA8bGRpckBkYXJieXNoaXJlLWJyeWFudC5tZS51az4KIC0tLQogIGluY2x1ZGUvbmV0L3RjX2Fj
+dC90Y19jdGluZm8uaCAgICAgICAgICAgIHwgIDMzICsrCkBAIC02NCw5ICsxMTIsOSBAQCBTaWdu
+ZWQtb2ZmLWJ5OiBLZXZpbiBEYXJieXNoaXJlLUJyeWFudCA8bGRpckBkYXJieXNoaXJlLWJyeWFu
+dC5tZS51az4KICBpbmNsdWRlL3VhcGkvbGludXgvdGNfYWN0L3RjX2N0aW5mby5oICAgICB8ICAy
+OSArKwogIG5ldC9zY2hlZC9LY29uZmlnICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDE3ICsK
+ICBuZXQvc2NoZWQvTWFrZWZpbGUgICAgICAgICAgICAgICAgICAgICAgICB8ICAgMSArCi0gbmV0
+L3NjaGVkL2FjdF9jdGluZm8uYyAgICAgICAgICAgICAgICAgICAgfCAzOTUgKysrKysrKysrKysr
+KysrKysrKysrKworIG5ldC9zY2hlZC9hY3RfY3RpbmZvLmMgICAgICAgICAgICAgICAgICAgIHwg
+NDA5ICsrKysrKysrKysrKysrKysrKysrKysKICB0b29scy90ZXN0aW5nL3NlbGZ0ZXN0cy90Yy10
+ZXN0aW5nL2NvbmZpZyB8ICAgMSArCi0gNyBmaWxlcyBjaGFuZ2VkLCA0NzggaW5zZXJ0aW9ucygr
+KSwgMSBkZWxldGlvbigtKQorIDcgZmlsZXMgY2hhbmdlZCwgNDkyIGluc2VydGlvbnMoKyksIDEg
+ZGVsZXRpb24oLSkKICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9uZXQvdGNfYWN0L3RjX2N0
+aW5mby5oCiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvdWFwaS9saW51eC90Y19hY3QvdGNf
+Y3RpbmZvLmgKICBjcmVhdGUgbW9kZSAxMDA2NDQgbmV0L3NjaGVkL2FjdF9jdGluZm8uYwpAQCAt
+MTg5LDcgKzIzNyw3IEBAIFNpZ25lZC1vZmYtYnk6IEtldmluIERhcmJ5c2hpcmUtQnJ5YW50IDxs
+ZGlyQGRhcmJ5c2hpcmUtYnJ5YW50Lm1lLnVrPgogIG9iai0kKENPTkZJR19ORVRfSUZFX1NLQk1B
+UkspCSs9IGFjdF9tZXRhX21hcmsubwogLS0tIC9kZXYvbnVsbAogKysrIGIvbmV0L3NjaGVkL2Fj
+dF9jdGluZm8uYwotQEAgLTAsMCArMSwzOTUgQEAKK0BAIC0wLDAgKzEsNDA5IEBACiArLy8gU1BE
+WC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjArCiArLyogbmV0L3NjaGVkL2FjdF9jdGluZm8u
+YyAgbmV0ZmlsdGVyIGN0aW5mbyBjb25ubWFyayBhY3Rpb25zCiArICoKQEAgLTM0NywyNCArMzk1
+LDI5IEBAIFNpZ25lZC1vZmYtYnk6IEtldmluIERhcmJ5c2hpcmUtQnJ5YW50IDxsZGlyQGRhcmJ5
+c2hpcmUtYnJ5YW50Lm1lLnVrPgogKwkJCSAgIHN0cnVjdCBuZXRsaW5rX2V4dF9hY2sgKmV4dGFj
+aykKICt7CiArCXN0cnVjdCB0Y19hY3Rpb25fbmV0ICp0biA9IG5ldF9nZW5lcmljKG5ldCwgY3Rp
+bmZvX25ldF9pZCk7CisrCXUzMiBkc2NwbWFzayA9IDAsIGRzY3BzdGF0ZW1hc2ssIGluZGV4Owog
+KwlzdHJ1Y3QgbmxhdHRyICp0YltUQ0FfQ1RJTkZPX01BWCArIDFdOwogKwlzdHJ1Y3QgdGNmX2N0
+aW5mb19wYXJhbXMgKmNwX25ldzsKICsvKglzdHJ1Y3QgdGNmX2NoYWluICpnb3RvX2NoID0gTlVM
+TDsgKi8KLSsJdTMyIGRzY3BtYXNrID0gMCwgZHNjcHN0YXRlbWFzazsKICsJc3RydWN0IHRjX2N0
+aW5mbyAqYWN0cGFybTsKICsJc3RydWN0IHRjZl9jdGluZm8gKmNpOwogKwl1OCBkc2NwbWFza3No
+aWZ0OwogKwlpbnQgcmV0ID0gMCwgZXJyOwogKwotKwlpZiAoIW5sYSkKKysJaWYgKCFubGEpIHsK
+KysJCU5MX1NFVF9FUlJfTVNHX01PRChleHRhY2ssICJjdGluZm8gcmVxdWlyZXMgYXR0cmlidXRl
+cyB0byBiZSBwYXNzZWQiKTsKICsJCXJldHVybiAtRUlOVkFMOworKwl9CiArCi0rCWVyciA9IG5s
+YV9wYXJzZV9uZXN0ZWQodGIsIFRDQV9DVElORk9fTUFYLCBubGEsIGN0aW5mb19wb2xpY3ksIE5V
+TEwpOworKwllcnIgPSBubGFfcGFyc2VfbmVzdGVkKHRiLCBUQ0FfQ1RJTkZPX01BWCwgbmxhLCBj
+dGluZm9fcG9saWN5LCBleHRhY2spOwogKwlpZiAoZXJyIDwgMCkKICsJCXJldHVybiBlcnI7CiAr
+Ci0rCWlmICghdGJbVENBX0NUSU5GT19BQ1RdKQorKwlpZiAoIXRiW1RDQV9DVElORk9fQUNUXSkg
+eworKwkJTkxfU0VUX0VSUl9NU0dfTU9EKGV4dGFjaywKKysJCQkJICAgIk1pc3NpbmcgcmVxdWly
+ZWQgVENBX0NUSU5GT19BQ1QgYXR0cmlidXRlIik7CiArCQlyZXR1cm4gLUVJTlZBTDsKKysJfQog
+KwlhY3RwYXJtID0gbmxhX2RhdGEodGJbVENBX0NUSU5GT19BQ1RdKTsKICsKICsJLyogZG8gc29t
+ZSBiYXNpYyB2YWxpZGF0aW9uIGhlcmUgYmVmb3JlIGR5bmFtaWNhbGx5IGFsbG9jYXRpbmcgdGhp
+bmdzICovCkBAIC0zNzMsMjIgKzQyNiwzMSBAQCBTaWduZWQtb2ZmLWJ5OiBLZXZpbiBEYXJieXNo
+aXJlLUJyeWFudCA8bGRpckBkYXJieXNoaXJlLWJyeWFudC5tZS51az4KICsJCWRzY3BtYXNrID0g
+bmxhX2dldF91MzIodGJbVENBX0NUSU5GT19QQVJNU19EU0NQX01BU0tdKTsKICsJCS8qIG5lZWQg
+Y29udGlndW91cyA2IGJpdCBtYXNrICovCiArCQlkc2NwbWFza3NoaWZ0ID0gZHNjcG1hc2sgPyBf
+X2Zmcyhkc2NwbWFzaykgOiAwOwotKwkJaWYgKCh+MCAmIChkc2NwbWFzayA+PiBkc2NwbWFza3No
+aWZ0KSkgIT0gMHgzZikKKysJCWlmICgofjAgJiAoZHNjcG1hc2sgPj4gZHNjcG1hc2tzaGlmdCkp
+ICE9IDB4M2YpIHsKKysJCQlOTF9TRVRfRVJSX01TR19BVFRSKGV4dGFjaywKKysJCQkJCSAgICB0
+YltUQ0FfQ1RJTkZPX1BBUk1TX0RTQ1BfTUFTS10sCisrCQkJCQkgICAgImRzY3AgbWFzayBtdXN0
+IGJlIDYgY29udGlndW91cyBiaXRzIik7CiArCQkJcmV0dXJuIC1FSU5WQUw7CisrCQl9CiArCQlk
+c2Nwc3RhdGVtYXNrID0gdGJbVENBX0NUSU5GT19QQVJNU19EU0NQX1NUQVRFTUFTS10gPwogKwkJ
+CW5sYV9nZXRfdTMyKHRiW1RDQV9DVElORk9fUEFSTVNfRFNDUF9TVEFURU1BU0tdKSA6IDA7CiAr
+CQkvKiBtYXNrICYgc3RhdGVtYXNrIG11c3Qgbm90IG92ZXJsYXAgKi8KLSsJCWlmIChkc2NwbWFz
+ayAmIGRzY3BzdGF0ZW1hc2spCisrCQlpZiAoZHNjcG1hc2sgJiBkc2Nwc3RhdGVtYXNrKSB7Cisr
+CQkJTkxfU0VUX0VSUl9NU0dfQVRUUihleHRhY2ssCisrCQkJCQkgICAgdGJbVENBX0NUSU5GT19Q
+QVJNU19EU0NQX1NUQVRFTUFTS10sCisrCQkJCQkgICAgImRzY3Agc3RhdGVtYXNrIG11c3Qgbm90
+IG92ZXJsYXAgZHNjcCBtYXNrIik7CiArCQkJcmV0dXJuIC1FSU5WQUw7CisrCQl9CiArCX0KICsK
+ICsJLyogZG9uZSB0aGUgdmFsaWRhdGlvbjpub3cgdG8gdGhlIGFjdHVhbCBhY3Rpb24gYWxsb2Nh
+dGlvbiAqLwotKwllcnIgPSB0Y2ZfaWRyX2NoZWNrX2FsbG9jKHRuLCAmYWN0cGFybS0+aW5kZXgs
+IGEsIGJpbmQpOworKwlpbmRleCA9IGFjdHBhcm0tPmluZGV4OworKwllcnIgPSB0Y2ZfaWRyX2No
+ZWNrX2FsbG9jKHRuLCAmaW5kZXgsIGEsIGJpbmQpOwogKwlpZiAoIWVycikgewotKwkJcmV0ID0g
+dGNmX2lkcl9jcmVhdGUodG4sIGFjdHBhcm0tPmluZGV4LCBlc3QsIGEsCisrCQlyZXQgPSB0Y2Zf
+aWRyX2NyZWF0ZSh0biwgaW5kZXgsIGVzdCwgYSwKICsJCQkJICAgICAmYWN0X2N0aW5mb19vcHMs
+IGJpbmQsIGZhbHNlKTsKICsJCWlmIChyZXQpIHsKLSsJCQl0Y2ZfaWRyX2NsZWFudXAodG4sIGFj
+dHBhcm0tPmluZGV4KTsKKysJCQl0Y2ZfaWRyX2NsZWFudXAodG4sIGluZGV4KTsKICsJCQlyZXR1
+cm4gcmV0OwogKwkJfQogKwkJcmV0ID0gQUNUX1BfQ1JFQVRFRDsKQEAgLTU4NywxMSArNjQ5LDEx
+IEBAIFNpZ25lZC1vZmYtYnk6IEtldmluIERhcmJ5c2hpcmUtQnJ5YW50IDxsZGlyQGRhcmJ5c2hp
+cmUtYnJ5YW50Lm1lLnVrPgogK01PRFVMRV9MSUNFTlNFKCJHUEwiKTsKIC0tLSBhL3Rvb2xzL3Rl
+c3Rpbmcvc2VsZnRlc3RzL3RjLXRlc3RpbmcvY29uZmlnCiArKysgYi90b29scy90ZXN0aW5nL3Nl
+bGZ0ZXN0cy90Yy10ZXN0aW5nL2NvbmZpZwotQEAgLTM3LDYgKzM3LDcgQEAgQ09ORklHX05FVF9B
+Q1RfU0tCRURJVD1tCi0gQ09ORklHX05FVF9BQ1RfQ1NVTT1tCitAQCAtMzgsNiArMzgsNyBAQCBD
+T05GSUdfTkVUX0FDVF9DU1VNPW0KICBDT05GSUdfTkVUX0FDVF9WTEFOPW0KICBDT05GSUdfTkVU
+X0FDVF9CUEY9bQotK0NPTkZJR19ORVRfQUNUX0NPTk5EU0NQPW0KICBDT05GSUdfTkVUX0FDVF9D
+T05OTUFSSz1tCisrQ09ORklHX05FVF9BQ1RfQ09OTkNUSU5GTz1tCiAgQ09ORklHX05FVF9BQ1Rf
+U0tCTU9EPW0KICBDT05GSUdfTkVUX0FDVF9JRkU9bQorIENPTkZJR19ORVRfQUNUX1RVTk5FTF9L
+RVk9bQotLSAKMi4yMS4wIChBcHBsZSBHaXQtMTIyLjIpCgoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Bl
+bndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21h
+aWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

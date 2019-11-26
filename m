@@ -2,88 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED08810A069
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 Nov 2019 15:36:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11F4310A161
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 Nov 2019 16:45:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=h/cruRxBBF4rudHL/uepIG9j+9Q84cLPW+68f7ots5U=; b=D15
-	6NFitMfek/wt7sNOwWvffW+FoWeOGQ/QYRNnNGKa4w5al9FX1tACldwVuAV5/2a5kdNIfr3LAzRfO
-	hbVm0wX+xSEdNCGuIYWQywvoiVlBHrdQD+7VpWyg9UkuQzBmW/B91kN2A9+DuKEfEb0t6d88YJhFz
-	YgjgVIGm5zQC0+Igy7Dby/Wj6/afDs5MGQODN7/MaooMD+TpLU7WmINLTwYT+jBP7ic+Q3Ig2oRfc
-	yuOxbnWb4ENUzpDNh1Gims1zZMcYijl125oM3q/hj2BS+SgoJEFfvnNzzb/j/D50LnJeiVzPT86kZ
-	8W8LDK+LYfqMKJfM8pqqdPrjlO6qCoA==;
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3XUcYcFZJixsSAQ/KTZIv6Mz3jBqnCZdxhQb7Yodmt0=; b=PLKzM4HKBwTMmtSbRTHQ3COw7
+	6Cr7P8bLP92y7Kx/8Rlakvr6a6M0JaQ6/tHhHW0kPlQnvcFGpzcFm8TfOx9CAdIAnF9dlbynQOv2/
+	G3zw0txCN00vJMuKOoRKABOLGIJlKSFcXjgCikZwPwLoiV4I9bNagkhK/qBj0p6uK1U8+ZNORWlpt
+	fIpwGunVaO3f0rfqgXn70DLDHKMgl20PhSGsp5f0NGrjooUEf9ofAw0vjWZEM2/Izi3KPIP2iTMqE
+	76MGzh5jjgMR8FrgW2q2BKFv1lVhEb2tLdaJ2xBd03ZaEEC31Wd0/SVeu1RXYnHmMBe8h8bS6/Ut+
+	zqRr2jblg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZbx4-0000Ur-2b; Tue, 26 Nov 2019 14:36:26 +0000
-Received: from mail-il1-x136.google.com ([2607:f8b0:4864:20::136])
+	id 1iZd1o-0004DN-8W; Tue, 26 Nov 2019 15:45:24 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZbwl-00007x-O8
- for openwrt-devel@lists.openwrt.org; Tue, 26 Nov 2019 14:36:09 +0000
-Received: by mail-il1-x136.google.com with SMTP id f6so13827794ilh.9
- for <openwrt-devel@lists.openwrt.org>; Tue, 26 Nov 2019 06:36:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=HBEx0HEQzYhhDSYHmVBZoE/wMhJ8+sbgb5a5x3TjpFs=;
- b=A3MlwFhmADokoT0NFTygU4BLLoK3POGIq0q+x7jwvHt5Nr2LH+8gooO5AKpdTamEBc
- 5undIA+XhnChj1SVA+gYzqO5wI2iXG7ncTncl5xsh0yg70Uo7V43jKgbjY9TBzXFIgN2
- t5c1OU+WBnt27wq+d1V+e4mFlONDakbTbeLIqGNlyj1IQD2dhAbnWG+IKnyAw1JkjGEu
- RcDBI1wSCZ16jk6lhT4HrENQZYB3MmPhPXdQToo/+SmUi04HL0Z/w3obGXhHllCkHM70
- KXVx6K4AlWAuf1IL8JyFnw9H4JrPFiYA/toiSJycTFCM8qEGK8R0agaL+LNFeUM8Sod2
- PLmw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=HBEx0HEQzYhhDSYHmVBZoE/wMhJ8+sbgb5a5x3TjpFs=;
- b=EFNMbSAk+tX4sWJHBKxqOnmG35iqRQgdAcPpwAV17B/BHoSr5p/3LyyRlT5XYP++uG
- 3PFh1lSdcxZYRi5M4Q7x97KMWkVnNf2ufLEbCrDmS/QbBcKPBCKRL2oU2PfHn4Yh5lDl
- mxgRFKF2c7cFeOKX23h/ZdiMvwfcetr1HVjW6Jdp3cqX6GhRmGJu0PrYxOIUt9+Qu/YU
- qPaLF0bq+W4a1R+lo45hE886TvwsNxQNWAgJZ9ErH0+LK6CkY/tc2fbEuvw4WZlE2pAn
- icG/HQo66ENM36rvopxWSQF0zyzVhxhw1egXz2fQ/3tJZe9ZJB795gDDrsY1FwVaXG+Q
- IzUw==
-X-Gm-Message-State: APjAAAWUdwCzci8rQuu8QTR6DVbbr5plb3Ag2DHcZfL6thYChRSKO8LK
- nJrKgJXoopctlU7U01h1v5sytkF251o9kwLjAZEc5fmWNQS4Vg==
-X-Google-Smtp-Source: APXvYqyRS5a0k04rPG8wZsGR7VDAXOzi2/hf9EGru07JREUYo9Jf3Jz18Pk/eyRHj4rTdA1XVKZsKBw3C6j/9TST3Ko=
-X-Received: by 2002:a05:6e02:d92:: with SMTP id
- i18mr37701821ilj.20.1574778966119; 
- Tue, 26 Nov 2019 06:36:06 -0800 (PST)
+ id 1iZd1S-0002qH-5t
+ for openwrt-devel@lists.openwrt.org; Tue, 26 Nov 2019 15:45:04 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue012
+ [212.227.15.167]) with ESMTPSA (Nemesis) id 1MbC5g-1hyMOc1dGK-00ba27; Tue, 26
+ Nov 2019 16:44:54 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Paul Fertser'" <fercerpav@gmail.com>, <openwrt-devel@lists.openwrt.org>
+References: <20191126130111.31134-1-fercerpav@gmail.com>
+In-Reply-To: <20191126130111.31134-1-fercerpav@gmail.com>
+Date: Tue, 26 Nov 2019 16:44:53 +0100
+Message-ID: <003001d5a470$72a2c520$57e84f60$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-From: ql li <gxfclql@gmail.com>
-Date: Tue, 26 Nov 2019 22:35:54 +0800
-Message-ID: <CAOK+PsK1b=DFwmgSEFNTX-8tN5UbwLEXsQZkJb6g9616qbf2Xw@mail.gmail.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Language: de
+Thread-Index: AQKVJrBooM0WQyxUl7ZYHaPKeVAAkqYekmOA
+X-Provags-ID: V03:K1:gsSHITli1PoP8QZ4h/5o8gYvJvACVQizOh5CX03vKeYpfC3yFDM
+ CT5yuCoeQ9SFDncXUxzH+VvNvaEYSAhyWXKx5oA0DQPvsgjNJIwOHaNGg3rk76eBwB6IbWM
+ chzFSnI9PUSHTVWweLwDUi5GP3alTDX1NT02vOFGKFI/rI6yM5ruY49+wd1KyF4tlT67/tS
+ jhTAJo5f65HZ2r4y122zw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ZJFbKHid5NU=:YjOK4AehMH+anFZHIeeuRb
+ JTzBFY6Ox2eyEhselYwhnm2ZVnnMg9zreByw410Wxgq2iMvU2VCnc4BeJx4/F0ltmNPSREF3/
+ GRzYwT7o28nYOMqTk1kP3NlA0CCwxJlVccloiO+CoqfSVa+YN4WrxBLrhmUystz6qOl2s+a9O
+ f9QdH/9XLPnMomfQpPpcu15OVJtluYHMbdBlnteAMPD83YDDPKhsxkddIa8z+yXaB6+JpjKWv
+ Kxskq9GyWwen1X9aySPRh2c1KY2kqNnOEGg+ryrhrE0wbTiTtYf3YrEJtFX05k0aeDI7fdA7k
+ 9suLwbAdyE8Pf6wxN3a2yeOunNgPn9V8hG/SBJoqIhR9n3DAxPXNMd/H3DW1inQmOBxCvp2g5
+ A6yNbMum8FR8IYYP2+LEhVguKKhxBNIAj74iMJ8s8K6y6hanuY/39Q8YCEgzBFEVOItJllqek
+ +bIp+Qhmz49h4Lq8HglMtTLyPoWv/qUZ0D9SRbGDE5hr2/4DTV7VohstsRQKzWFAr9RW6GM/M
+ HRxVuZEy0o3Ev6NbZUfuecy3D3+7tHsETzGEXIFhLHxGzy+970sd8P/NlpluHCNr2Bar1iuCA
+ i5RHFTlQaHiuO+/qlfzbwFfnPLifSHYXhbggwSxMEasnso5sfCI7iCCsdw+aAjPu7PQjWIXDR
+ srw4zvfFewsMmc8T+2uw/o72RLxopciYZ8VP9/cpUBpznyWGNs8STPuXOd2fmcPWN9IzI0MEM
+ AoALI+o3hvCslG43TAPubNB73ILS/OdFik7sqiQyRhqwPdVhVWefz+zOq9Uh2l9igKOp52M8b
+ 4wMeS3Kb/5gfYf6WScAtTew7rxAaLlJ3x93Q6R371V2EDc0mgHA1PyIRu1OhGp2IJ8bCwPZyl
+ P8iR0yt/wpyFCvIWT11m3Ti06k6X39FZ0ImBHjw98=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_063607_799677_D7FB9223 
-X-CRM114-Status: UNSURE (   3.29  )
+X-CRM114-CacheID: sfid-20191126_074502_635454_509936C9 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.9 (+)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:136 listed in]
- [list.dnswl.org]
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.5 FROM_LOCAL_NOVOWEL     From: localpart has series of non-vowel
- letters
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (gxfclql[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] Can SRv6-net-prog be ported to openwrt?
+Subject: Re: [OpenWrt-Devel] [RFC][PATCH] ath79-tiny: enable 4k sectors
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,33 +80,86 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5773621625941577165=="
+Content-Type: multipart/mixed; boundary="===============8503647237008362918=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5773621625941577165==
-Content-Type: multipart/alternative; boundary="000000000000e01bed059840cc5e"
+This is a multipart message in MIME format.
 
---000000000000e01bed059840cc5e
-Content-Type: text/plain; charset="UTF-8"
+--===============8503647237008362918==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=W+tcOmDvXJh/pP=-="
 
-Project source address: https://github.com/netgroup/SRv6-net-prog
-Hope to add to openwrt
-thank you all
+This is a multipart message in MIME format.
 
---000000000000e01bed059840cc5e
-Content-Type: text/html; charset="UTF-8"
+--=-=W+tcOmDvXJh/pP=-=
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:nsimsun,=
-monospace;font-size:x-small">Project source address: <a href=3D"https://git=
-hub.com/netgroup/SRv6-net-prog">https://github.com/netgroup/SRv6-net-prog</=
-a><br>Hope to add to openwrt<br>thank you all<br></div></div>
+Hi,
 
---000000000000e01bed059840cc5e--
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Paul Fertser
+> Sent: Dienstag, 26. November 2019 14:01
+> To: openwrt-devel@lists.openwrt.org
+> Cc: Paul Fertser <fercerpav@gmail.com>
+> Subject: [OpenWrt-Devel] [RFC][PATCH] ath79-tiny: enable 4k sectors
+>=20
+> This enables using 4kiB sectors as erase blocks for 4MiB NOR flash ICs
+> that support it.
+>=20
+> Writeable jffs2 overlay used to store settings requires a partition with
+> at least 5 erase blocks, so using small sectors is essential for devices
+> with 4MiB flash.
+>=20
+> Sysupgrading a device running firmware without this feature will likely
+> not allow to preserve configs automatically but since ath79 is
+> considered to be in a "technology preview" state it shouldn't be a
+> problem.
+
+Because of this reason, we should ask ourselves whether we want to backport=
+ this to 19.07, so all (non-RC) released ath79-tiny images have 4k sectors,=
+ while we still can.
+Otherwise, with 20.xx having different sectors than 19.xx, users will be mo=
+re confused than with us now changing behavior during rc-period.
+
+Best
+
+Adrian=20
+
+--=-=W+tcOmDvXJh/pP=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3dSHEACgkQoNyKO7qx
+AnBWmhAAtgDQtVA/q4G0PfaibwVz6XbxBllAAs2jDBmU1brs+OHq+TsQFA1MieMq
+niF6ShSoo0BRJ9VCCiCZ87QnG+b4RJ1F4+HebI3tUuRUQJPvFR2KSnNTWQBhDr22
+Ngh/FrcJoV/jhpsSTdxQ4DklAhH1dfdW3kMOCl5Ew2IOsxbYpmwr6qmMyCeNIZ9I
+qd1BuYU374274+zeDjL/1YmCV1MB7b+1T3D4N55wUmem49j6/x8VtAkSpVzcLQS9
+jeeZIiSdj/LhQiHBidSnlSctfzLB5fxQMlyTtSVZpq/sf/0M2i3ao1s+rIBrxY34
+RYWNg8Bbv9EaN4x7LcmMVPJhk3POYFjJk0V6kUP+fDkNl9t9IDEfXXsHTjq+Skco
+7tS5DDuePm0AnZvi5ythoYZe2XsKw5jQ1LZLL1tvbl9i6bXA8zVdJiaT2Aa7D51k
+KgyUyW3QoeuDvP/zjzBMCjhnZgh2Vywr4la/Vt0In8FbqEE5dZe8qIwIjkoOQ2sl
+zIp7nZ8f/LlyawP33fQ4IYUNwtt/T2v1IWsoBOIvvbHsxh+nBpffcLvXWi9Pnnvt
+3KZoqL/7V5LYL2NpqYyKvbDoLw5ZcHn9wyu+ylkB5BJr94Pky+ieLhUWY3tSYhIC
+pXPNXncI7V0cGCDGNgYfXWbKqIKsdNJFKp9TgRsoLBcyybZ+YiU=
+=pdZd
+-----END PGP SIGNATURE-----
 
 
---===============5773621625941577165==
+--=-=W+tcOmDvXJh/pP=-=--
+
+
+
+--===============8503647237008362918==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -132,5 +170,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============5773621625941577165==--
+--===============8503647237008362918==--
+
 

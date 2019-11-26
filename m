@@ -2,69 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76CF910A561
-	for <lists+openwrt-devel@lfdr.de>; Tue, 26 Nov 2019 21:22:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06D7F10A57B
+	for <lists+openwrt-devel@lfdr.de>; Tue, 26 Nov 2019 21:31:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-Id:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TFLr9+1O5OleNXxXJOJvQfsog9Nr9aDJVnP3jJtiH80=; b=u/huRhTFGudJ1W2NoEOr4aGHG
-	oeOclzj+I3t1+2yAJc2rS84TCHfGzQVsgf9lh7ySToei9nPCqC9884Fkq20RAVTKyDpsJYbBPj8XM
-	EGGtPN62aybmsUaEPvXhpJFxnBIt80cddEDRdqA0SR9qIeuuK2EILQ18MEvR/UPdZ3rrzzGt0kAi8
-	k0w+pE8UK4cn8pxGQK/7uU3jmwmN5vRnF3TKdh9u2H/t94PG0ZeQpfXe1mfpvD/xL7Q/Ag4EWWP12
-	uYqmLTvp0CJpwtXmgNxfaxgmvDmcT4HzxZirlzI952GutLkzTrJs2WGPM5qllrFTefKpUVBe/ysP4
-	BmxVDGwow==;
+	 bh=qc1xX8ZTkXXhIE8hMOsUdolucIqGtF7eduft4uvX648=; b=CA5kzDkjID6ylQRkIMb1Kk3lY
+	O2+uTGlZ9QuyZWYV85qE7yqY2I7ekY+IvvWYnZwLKHayJHbXbeV0V04EM7RmwtP49TbLwE+TyB4kI
+	ZqyBMcYzxrFxjqjDDcULc3buNSYOSH1Yh02UDgZZY3PFusGmzLjw+TGq5bJwwDAa5RWWelL/LpY3e
+	rdKmP0TtJ4rOXoeKmXrzlGdMCixk+lQTtAyHqIDa444fs2yA7/yYgtJq8AXnoGB0GlfPmICvT3Bfr
+	9FhXHZVQqCGvPvYkFhECceZDBCr0SHSQnjE/609uFWfVKNnQG5q9tS4712j+r3wfFJjWPz4zeq3jE
+	LYcOv7o9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZhME-0006WQ-3A; Tue, 26 Nov 2019 20:22:46 +0000
-Received: from [2001:41d0:305:2100::8f39] (helo=volatilesystems.org)
+	id 1iZhUH-0001g6-Kr; Tue, 26 Nov 2019 20:31:05 +0000
+Received: from volatilesystems.org ([51.91.248.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZhM4-0006W0-CB
- for openwrt-devel@lists.openwrt.org; Tue, 26 Nov 2019 20:22:38 +0000
+ id 1iZhU9-0001fd-RJ
+ for openwrt-devel@lists.openwrt.org; Tue, 26 Nov 2019 20:30:59 +0000
 Received: by volatilesystems.org (Postfix, from userid 112)
- id D7208FA825; Tue, 26 Nov 2019 21:22:09 +0100 (CET)
+ id 05C53FA826; Tue, 26 Nov 2019 21:30:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1574799729;
- bh=dIWwgB310AZ61fWppbdi5So/TGslfpnideMJIh7aE7g=;
+ s=mail; t=1574800248;
+ bh=+Bm7Yj4yMRhAcNs4g3VKK1VR0W9pa/NfbYwAakSxLGc=;
  h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
- b=Kja/LXb65+8hufDfvVOwS2HYp+eHHf58RNWpz4kjOaTZOto17AhpCy4cWcJDgRQLT
- FuTpb6gs+EUfmfrKySz5RrOp0vjgD2ywNOMvdpTjV3Ro6ZyVe7lhnOVRITx4WN41Xs
- wLeQiID8b+UIPXAKh0xCOrjPyqpV4iO0kmCLbTCI=
+ b=ExXgcdnQr63jpovA6Qu7W5yVmajhx0jG1TX9psDNA81tDp2GZJB2SyOlDdhCCXD6m
+ 0/rWl32SSPV8xL0dyqvVf1+iyewOEEZeO19UpAoM9YbCfJ42SghiHCrs4vNYM4oErt
+ 6QqtqwsRqLSJyTHsCbnYfGfipkjVzpXXJxbv/Rww=
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
 X-Spam-Level: 
 X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=unavailable
+ DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=ham
  autolearn_force=no version=3.4.2
 Received: from [10.0.0.5] (213.219.161.238.adsl.dyn.edpnet.net
  [213.219.161.238])
- by volatilesystems.org (Postfix) with ESMTPSA id A1774FA823;
- Tue, 26 Nov 2019 21:22:06 +0100 (CET)
+ by volatilesystems.org (Postfix) with ESMTPSA id 72455FA824;
+ Tue, 26 Nov 2019 21:30:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1574799726;
- bh=dIWwgB310AZ61fWppbdi5So/TGslfpnideMJIh7aE7g=;
+ s=mail; t=1574800246;
+ bh=+Bm7Yj4yMRhAcNs4g3VKK1VR0W9pa/NfbYwAakSxLGc=;
  h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
- b=UcTXfWhdAf/aMw8ibWdDymj9EFC+2qISpiTd/rEselPXSTynO4dPI3iKUWS87fUsR
- pL7UN5gaaGg5np1RmLsf5zZMoK87e8+GF901vvkgbvMlnQDgsqQp6GtcP43oBrGtZp
- mMboyEp4G1XmLqIpM7nEGn2lPMBwawPzApyVS+8Y=
-Date: Tue, 26 Nov 2019 21:22:05 +0100
+ b=nX+WgtM3IZjTc95unRk3AL6i6zqkrU5sYWhk95ZrhNlY+i+U4si0y/yNBS+nSeE5L
+ S+33pybUWbVN4N3uqQL6E9FveCqixG/ddbJdxTvSq+p3H1wSN1n28QHqpTcY8FPiHb
+ FfjS3ckbtUwDoOM2CaM9Yc6ytqZuh2QOjX455mFE=
+Date: Tue, 26 Nov 2019 21:30:45 +0100
 From: Stijn Segers <foss@volatilesystems.org>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-Id: <1574799725.1719.0@volatilesystems.org>
-In-Reply-To: <003001d5a470$72a2c520$57e84f60$@adrianschmutzler.de>
-References: <20191126130111.31134-1-fercerpav@gmail.com>
- <003001d5a470$72a2c520$57e84f60$@adrianschmutzler.de>
+To: Hauke Mehrtens <hauke@hauke-m.de>
+Message-Id: <1574800245.1719.1@volatilesystems.org>
+In-Reply-To: <d530eff4-2b67-0bfe-78d0-510185e416b9@hauke-m.de>
+References: <d530eff4-2b67-0bfe-78d0-510185e416b9@hauke-m.de>
 X-Mailer: geary/0.12.4
 MIME-Version: 1.0
 X-Virus-Scanned: clamav-milter 0.101.4 at atalanta
 X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_122236_578236_D7E3E3D6 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20191126_123058_024479_8FA207C7 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -76,8 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
-Subject: Re: [OpenWrt-Devel] [RFC][PATCH] ath79-tiny: enable 4k sectors
+Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 status
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,7 +87,7 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Paul Fertser' <fercerpav@gmail.com>, openwrt-devel@lists.openwrt.org
+Cc: openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
@@ -97,54 +95,73 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 
 
-Op dinsdag 26 november 2019 om 16:44 schreef Adrian Schmutzler 
-<mail@adrianschmutzler.de>:
+Op maandag 25 november 2019 om 23:34 schreef Hauke Mehrtens 
+<hauke@hauke-m.de>:
 > Hi,
 > 
->>  -----Original Message-----
->>  From: openwrt-devel 
->> [mailto:openwrt-devel-bounces@lists.openwrt.org] On
->>  Behalf Of Paul Fertser
->>  Sent: Dienstag, 26. November 2019 14:01
->>  To: openwrt-devel@lists.openwrt.org
->>  Cc: Paul Fertser <fercerpav@gmail.com>
->>  Subject: [OpenWrt-Devel] [RFC][PATCH] ath79-tiny: enable 4k sectors
->> 
->>  This enables using 4kiB sectors as erase blocks for 4MiB NOR flash 
->> ICs
->>  that support it.
->> 
->>  Writeable jffs2 overlay used to store settings requires a partition 
->> with
->>  at least 5 erase blocks, so using small sectors is essential for 
->> devices
->>  with 4MiB flash.
->> 
->>  Sysupgrading a device running firmware without this feature will 
->> likely
->>  not allow to preserve configs automatically but since ath79 is
->>  considered to be in a "technology preview" state it shouldn't be a
->>  problem.
+> There are now quite some changes in the OpenWrt 19.07 branch compared 
+> to
+> the 19.07-rc1.
 > 
-> Because of this reason, we should ask ourselves whether we want to 
-> backport this to 19.07, so all (non-RC) released ath79-tiny images 
-> have 4k sectors, while we still can.
-> Otherwise, with 20.xx having different sectors than 19.xx, users will 
-> be more confused than with us now changing behavior during rc-period.
+> The builds are looking ok:
+> http://buildbot.openwrt.org/openwrt-19.07/images/grid
+> 
+> I looked through the responses to 19.07-rc1 in the forum and the bug
+> tracker and it looks mostly good.
+> https://forum.openwrt.org/t/openwrt-19-07-0-first-release-candidate/48040
+> https://bugs.openwrt.org/index.php?reported%5B%5D=10
+> 
+> 
+> I saw the following reports:
+> 
+> MT7621/MT7620: NETDEV WATCHDOG: eth0 (mtk_soc_eth):
+> https://bugs.openwrt.org/index.php?do=details&task_id=2628
+> https://bugs.openwrt.org/index.php?do=details&task_id=2617
+> https://bugs.openwrt.org/index.php?do=details&task_id=2605
+> 
+> 
+> It looks like there is a throughput problem with ath10k-ct on QCA9984,
+> https://bugs.openwrt.org/index.php?do=details&task_id=2593
+> there are multiple reports in the Forum.
+> 
+> For me QCA9880 on a BTHH5A with ath10k-ct on 5GHz works in openwrt 
+> 19.07
+> The AP can do 180 MBit/s TX and only 40 Mbit/s RX over about 8m with a
+> wall in between with sae-mixed to a Intel iwl8265.
+> It is also very close to 40MBit/s not much changing the lowest I saw 
+> in
+> about 30 outputs from iperf3 was 38.8 MBit/s and them highest 41.2 
+> MBit/s
+> 
+> Are there any more known regressions and serious bugs?
+> 
+> 
+> Images for the following devices are probably too big:
+> * WR902AC
+> * EnGenius ESR-9752  ( EnGenius ESR-9753 )
+> Jow has some pending patches to deactivate support for some of them:
+> https://patchwork.ozlabs.org/project/openwrt/list/?series=143332
+> This looks good to me.
 
-As a non-voting small time contributor I'd say: yes to pushing it to 
-19.07 now. People are already being encouraged not to keep settings 
-migrating from pre-19.07 ar71xx to 19.07 ath79, so two birds with one 
-stone.
+Hi Hauke, Jow,
+
+The TP-Link TL-MR3420 v2 images seem too big as well:
+
+https://forum.openwrt.org/t/openwrt-19-07-0-first-release-candidate/48040/144
+
+> 
+> We should mention how to install wpad-openssl or wpad-wolfssl to get
+> WPA3 support in the release notes.
+
+Excellent point, a lot of people seem to expect WPA3 works OOTB.
 
 Cheers
 
 Stijn
 
 > 
-> Best
+> Hauke
 > 
-> Adrian
 > _______________________________________________
 > openwrt-devel mailing list
 > openwrt-devel@lists.openwrt.org

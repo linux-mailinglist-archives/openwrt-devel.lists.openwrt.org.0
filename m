@@ -2,89 +2,59 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A57FE10B179
-	for <lists+openwrt-devel@lfdr.de>; Wed, 27 Nov 2019 15:35:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BC8510B1A7
+	for <lists+openwrt-devel@lfdr.de>; Wed, 27 Nov 2019 15:51:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:
-	Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wDuDF6NGt0fQwDjacAUWoOIvQKTmYxHftWC9c1035/4=; b=AvP9aobIvlSA8j0Yz+BqnjEQd
-	V4ePr8WULjHyQGl1P6WMp0M4vNW0dTnt+86+LgMaAoHavcZAjUxicQT6h8+eakY3Zv7UraVXAtUwe
-	Tl/xfvzhyqKoRyWzM3KgOpcDFOLFa3WGInyEIsk1BlzDPBpGibY/lnunwjIMaH0vGp1ocL4RfP73V
-	K8+ao+pvhkIbRwSUSNDrm3rgOXRYj4fHsfhJWeV0WhKU8bI6Vk+wUqJlWDDVUfrAZf2e83CJUkeFs
-	J012phfUczz49asyGsTfi6730HNRIT13Rih/D0TScDw2MEADy7QXrGRhARnLNGTxaiVvXDrTaqASO
-	RjnlAoT9Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0srTxSnlFV76hi1mH/gbemKhOgPEPYSWsSqL/ZYx2lg=; b=Fsm+i1+md1ystR
+	snZBmxuP/AJnO7IxBzGbivn1f7pNaXrLuqnMD4Xs7TwZ+EsNoicbM6yH/sNE7eVqYcirb7XlGpXju
+	gYDC77hTmkQaZFvgZGcSCUYJfXtuB/N3t0oyif6/OTdz7lMDDA7d1wZlU3XGSh+yoSoeDZPHL+8WR
+	J8wl8qHD6cXrSiGwjbzEN9AZm78apYde01VW9C6q7GkbtusPHBwsy3lkeP4Xgb4d16bh66w+IQy0p
+	rKxs2Nc8MP1VgzRLP/1aVnZFBKDLu8CcSaeX65AC03jXpeapC2iT7bVVT8S6sv6ccM7y3rO/CyYF+
+	SXqNyM1ct1E2GbypXQLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZyPk-00057h-DW; Wed, 27 Nov 2019 14:35:32 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iZyeo-0001hF-Ak; Wed, 27 Nov 2019 14:51:06 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZyPd-00057B-EF
- for openwrt-devel@lists.openwrt.org; Wed, 27 Nov 2019 14:35:26 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n5so7778864wmc.0
- for <openwrt-devel@lists.openwrt.org>; Wed, 27 Nov 2019 06:35:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language;
- bh=5Px62/HHH1ux0oxHGCgM9eG6wZpv5gs6GpGPS2UnJws=;
- b=boNwA+vvCJx+VsrT3Ft+sqzgdtjHCjBNRdXod58NQYncxPVgeBdfyUtQoPoIBSBUnA
- U8wNROr6n+S7EHknc5TOjhp8rn0+32PpkFRc+tLscTC6BoiCcL5LdBlRiYnBX6kRDFwT
- YZ4NcfSgVrg0YDecUP+DdcV0VS7alp1uZL94FX54H4hRKEzZzvm2EogFbCDf8PsXpIBF
- 0pro1pjNUd50pe1AUHoohlDePePZHmos4IRfSiEx6L4QT1QX917eaRgIaYard7qpi03y
- cDoxFgXauwRRw0IEnZzDD1tJ/b/oQj0okSBXa4jkKeQj/XmHwxj945R5wRSOLMUPcmNL
- t9Ag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language;
- bh=5Px62/HHH1ux0oxHGCgM9eG6wZpv5gs6GpGPS2UnJws=;
- b=ZKchfHwS5q58I4J8NHtcVGaAdUYRj02OUnwFPjRadL9rdix4f3CpIDlRHgU7bLpCtN
- 6F9EHRWSTYeQuC9hJoNbo0VgMkm3RtbOnCR5EX+D1QVgrl5dg1vRysZhTlz3WxQ//uUZ
- w3F1l9fIDFyLKW7ApBUtVKvQujooP8Rq0CLem/gmhu16d0L5n0DPP2yy2yud85eOIfJn
- /i6HddSbmJhFI7W8xDaW4OPPRIzUGEFSf0ES1pVC0XTlz051ke+YvNq4lpPgUWCpGOeJ
- ogun/FAjUfHSL6/a+eVryF6wS+dHepRawsr0aRn+MeUmgmAqRH1koWZsp2URcqS7n2C8
- fyNQ==
-X-Gm-Message-State: APjAAAXuURkkcghbmvex9gzTswURB2JN5fBU+hPBcW4aBuApTiHAC6sx
- sqwHyNoneIfUInddaraBpwO+hDIJ+cQ=
-X-Google-Smtp-Source: APXvYqznqIHm3iw1Js9IU8UmAzNvBlBxpXZuzjISu5iEjKCOSnV7XV/6mcTnouKQ+9eLzGLGtu70qw==
-X-Received: by 2002:a05:600c:3cd:: with SMTP id
- z13mr4679268wmd.105.1574865323790; 
- Wed, 27 Nov 2019 06:35:23 -0800 (PST)
-Received: from mamamia.internal (a89-183-60-41.net-htp.de. [89.183.60.41])
- by smtp.gmail.com with ESMTPSA id y139sm2554383wmd.24.2019.11.27.06.35.22
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 27 Nov 2019 06:35:23 -0800 (PST)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-References: <20191125224418.266082-1-rosenp@gmail.com>
- <20191127104917.GB37269@meh.true.cz>
- <8b1128c5-b171-afa1-4bac-c8e0aa9a7ece@gmail.com>
- <20191127121948.GD37269@meh.true.cz>
-From: Andre Heider <a.heider@gmail.com>
-Message-ID: <161dbb27-826e-c066-1ddb-951e229e7adf@gmail.com>
-Date: Wed, 27 Nov 2019 15:35:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iZyeg-0001gv-1b
+ for openwrt-devel@lists.openwrt.org; Wed, 27 Nov 2019 14:50:59 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 22a8670d;
+ Wed, 27 Nov 2019 13:57:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
+ :subject:date:message-id:mime-version:content-transfer-encoding;
+ s=mail; bh=hylHCXzPm7oKl0QS99Trab8gVkU=; b=H5HMBL7urnlYRDPQsWOr
+ PjOyEXvPN5xr6JRFI1VKXZW1CrptRC1rLUcYvisug0hoEZa8bb5DmYR8/tbd468s
+ OGVtTZ7u2Ev+A3Yypd2i6wmwLwO2BC3ct5Dk0S3iBYK1aAbcA7KZKSq4pnuKkRzB
+ wckaR3igN6neiiKuYjmQYy42CFWD5Pue/jL/PfACBW+WiXm4dodhf+h7xkZseViz
+ aWjR3Ji0medlP6rwAySXcdH+E9NXR21vvIfXeRIDeJKjCfWwqWhXwnQWBZir3mbQ
+ +hoL/nfWKr+MdJ7rceqIZs4O9Jlb+THJd+piLarsGhzdViQ0zefLzEpXDkhSGQB1
+ nw==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id acf3e338
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
+ Wed, 27 Nov 2019 13:57:00 +0000 (UTC)
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed, 27 Nov 2019 15:50:49 +0100
+Message-Id: <20191127145049.988153-1-Jason@zx2c4.com>
 MIME-Version: 1.0
-In-Reply-To: <20191127121948.GD37269@meh.true.cz>
-Content-Type: multipart/mixed; boundary="------------927702D1A41EA9E43905CD32"
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_063525_548691_9C2025A8 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20191127_065058_304362_FEEADB8E 
+X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [192.95.5.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (a.heider[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,7 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCHv3] tools/pkg-config: Replace with pkgconf
+Subject: [OpenWrt-Devel] [PATCH] wireguard: bump to 0.0.20191127
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,101 +74,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Rosen Penev <rosenp@gmail.com>
+Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multi-part message in MIME format.
---------------927702D1A41EA9E43905CD32
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
+* messages: recalculate rekey max based on a one minute flood
+* allowedips: safely dereference rcu roots
+* socket: remove redundant check of new4
+* allowedips: avoid double lock in selftest error case
+* tools: add syncconf command
 
-On 27/11/2019 13:19, Petr Štetiar wrote:
-> Andre Heider <a.heider@gmail.com> [2019-11-27 12:26:39]:
-> 
->> I didn't pursue upstreaming it because it looks like merge request at github
->> are ignored and I didn't feel like signing up at upstreams own page.
-> 
->   git send-email --to '~kaniini/pkgconf@lists.sr.ht' your.patch
-> 
-> doesnt work?
-
-No clue, just sent the attached version there.
-
-@Rosen
-You might wanna use this patch instead. An alternative would be to catch 
---version in the wrapper and don't add additional arguments in that case.
-
-Regards,
-Andre
-
---------------927702D1A41EA9E43905CD32
-Content-Type: text/x-patch; charset=UTF-8;
- name="0001-Revert-main-assume-modversion-insted-of-version-if-o.patch"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment;
- filename*0="0001-Revert-main-assume-modversion-insted-of-version-if-o.pa";
- filename*1="tch"
-
-From b1eec6b27560928fc9b111164c8abd7d5e527588 Mon Sep 17 00:00:00 2001
-From: Andre Heider <a.heider@gmail.com>
-Date: Wed, 27 Nov 2019 15:21:42 +0100
-Subject: [PATCH] Revert "main: assume --modversion insted of --version if
- other flags or module names are provided"
-
-This reverts commit 12a0eb124cea85586e57f33c91a1e4c73459eef6.
-
-This "user friendly" behavior is actually detrimental. pkg-config is very
-often wrapped in a shell script of cross-compiling toolchains. Such wrappers
-may pass extra arguments, such as --static, (reasonably) not expecting that
-to break --version. Some build systems (meson being one example) use
---version to determine whether pkg-config is usable. Naturally, the wrappers
-fail this test, even though they would've worked with the original pkg-config.
-
-Fixes #6
+Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
 ---
- cli/main.c | 14 ++------------
- 1 file changed, 2 insertions(+), 12 deletions(-)
+ package/network/services/wireguard/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/cli/main.c b/cli/main.c
-index 563ec8f..fc698a4 100644
---- a/cli/main.c
-+++ b/cli/main.c
-@@ -1005,18 +1005,8 @@ main(int argc, char *argv[])
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index 87aad9d..ea34b75 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
  
- 	if ((want_flags & PKG_VERSION) == PKG_VERSION)
- 	{
--		if (argc > 2)
--		{
--			fprintf(stderr, "%s: --version specified with other options or module names, assuming --modversion.\n", argv[0]);
--
--			want_flags &= ~PKG_VERSION;
--			want_flags |= PKG_MODVERSION;
--		}
--		else
--		{
--			version();
--			return EXIT_SUCCESS;
--		}
-+		version();
-+		return EXIT_SUCCESS;
- 	}
+ PKG_NAME:=wireguard
  
- 	if ((want_flags & PKG_HELP) == PKG_HELP)
+-PKG_VERSION:=0.0.20191012
++PKG_VERSION:=0.0.20191127
+ PKG_RELEASE:=1
+ 
+ PKG_SOURCE:=WireGuard-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://git.zx2c4.com/WireGuard/snapshot/
+-PKG_HASH:=93573193c9c1c22fde31eb1729ad428ca39da77a603a3d81561a9816ccecfa8e
++PKG_HASH:=7d4e80a6f84564d4826dd05da2b59e8d17645072c0345d0fc0d197be176c3d06
+ 
+ PKG_LICENSE:=GPL-2.0 Apache-2.0
+ PKG_LICENSE_FILES:=COPYING
 -- 
 2.24.0
 
-
---------------927702D1A41EA9E43905CD32
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---------------927702D1A41EA9E43905CD32--
-

@@ -2,78 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E7BD10C035
-	for <lists+openwrt-devel@lfdr.de>; Wed, 27 Nov 2019 23:30:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0FA710C037
+	for <lists+openwrt-devel@lfdr.de>; Wed, 27 Nov 2019 23:31:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Qz+uOWzp1EerEBtgrhxfj1Q8n98nB6iD1G41hCcJFUg=; b=HL8Va0J3wo/15yAki1zTpeGMqq
-	swv2Q9l5DDVHMfSpYEaM8jPQvfg0XieqbL/aDXGfV04eE9ZAUeUuFSpCHSMfjR4/rbnxy3hRGCqxN
-	IbTM95VfUYyAYvNFlemC3xjnUvkIWQnOv3gfHySAAnm0k76I2g8JlPFq4aZkMq+UKaf5RR2MYAadv
-	D65sAjBFZLViXp1rrzQFlhJ7iB0OJqMatpwyc5lZE0A/yULpjCrwqhPbn4GCtR3GfHKXJwnEWnSZM
-	C/IwGUlql2Dj9np/LNmFM/JF9oAQ82FCrX+Rw6tuU0goaJPjPGqV5ijpgJ1xKZJDnNnvVjU4t4ssg
-	rqKjEwxQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9f6yHdz8v1dXRkUZTF18W6bZTjXgYiDCK7yvsfwNJB0=; b=kpB74gYQkGZDha
+	VX8s6BjQIvzR6wp8A1Bwl3ps1q6F/+tv0mN2T8+Ji/7fifPTbJecDJ6PmEhrhX1GcB7TpX48X12/c
+	hmVL7vPpYoinF64kh7TRJhEZ27ZntDpzQssioNwMYj4pAQjpACWFaCe1d/H9vf8KtxsST10HDjtwg
+	oXzR7FMH86X/SSPgR+xIm3cTJVc1ACyPgtrN/wpxZ422g+3dj/AwH5qsZJyv3LmVuzQoNZx/IbqZv
+	eM6GNIq4jYd4pixJD4Ss86yHa5TixAeC/Z4QzGf7teSAgCMOF6NzWacxd2ei5lCElPTyTBnHuKHxj
+	+/xnvFmMPZdCGLww9jsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia5pR-0000Zv-AT; Wed, 27 Nov 2019 22:30:33 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1ia5q2-0001OB-G8; Wed, 27 Nov 2019 22:31:10 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia5p4-0000PR-P6
- for openwrt-devel@lists.openwrt.org; Wed, 27 Nov 2019 22:30:13 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id a16so10776371pjs.13
- for <openwrt-devel@lists.openwrt.org>; Wed, 27 Nov 2019 14:30:10 -0800 (PST)
+ id 1ia5pu-0001Nc-EX
+ for openwrt-devel@lists.openwrt.org; Wed, 27 Nov 2019 22:31:03 +0000
+Received: by mail-ot1-x343.google.com with SMTP id q23so14713018otn.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 27 Nov 2019 14:31:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=QofphPvxg5IfNElsfv5gqQU7Dr79fkfAin8t2VGS8LY=;
- b=M/34I+rUMNPc17FX3pgx4kVFI5Qo7kLWUwtr3uX4BRuD5bJw+iTj78glMH8SCcAAy8
- CA6+/6ZBoNUGKaJHN502bH2OOzW5QodM2Ab5jKFPPu6nCYkaNZj9TWlezAYlQqRlrb8G
- wgAaIHnp2VI4EKsMkc5cVFT1Jjyoz1JmgLtCEHiSUHYUPhzWX9+e78+PhX4tYP7NBpfU
- g6yVN3RMQE+NbvSWiufEMiMC5M2giBpDd/zop43MJ53m+Q68ltaL8yV+17wlT3gmVCfY
- u1V9812xPfJfaBNfkkNTOplcI6SH8otwKarLkBNpoQ4oT80EmPgQaM96RehjGa5Dlw7e
- xO5w==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=T7WZNIoPQ2h/7MZg76i9RnOZ4f7o5NM63IqJNL+0Bpw=;
+ b=vKk13rZm5Ly3M9MHExK6lcsWX6xkEoBIOX4Sqrifh8R0mOdrD2KdXFMZM8ArjEYBb4
+ 88/IqYJcXqtoV+CMLfVXJcIAFIzOS3SPVpvt+cyvfTS/a4ypu1vvIaage72jyDXvbU+v
+ k99V6aaSBA85nnT+mTimY26deFdd3lwZEEIgn/r3YC7prBg6jBQGZoWsz/BGIsjCUXK2
+ EuyGAyEqWJRn5ye1wMDVWcnSDvNcufrvkw+jsMfiNh27xqRIjlaXZBcCjuglhUYq/sya
+ nqnFHMvqWpW/ibXVqRXsQsW+xA0VmZUPgDc++a1OI39JkppRH5yOeF6EiyV4VKyNCAEE
+ Ts2w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=QofphPvxg5IfNElsfv5gqQU7Dr79fkfAin8t2VGS8LY=;
- b=rvk2LGMD9RUl6tGjbTksvrY6ByreUudG6r68QADj7dEx2+TSyQiGXs2SJSppBrWbGm
- V04u5F6JRlJATYwZMmsP41IwCDpH6ee2iifB2UFTJ8iS3/jx5wRRIkODpq0YzCx6K5vA
- 6gH+Pq/Oh7RwBOOH/TYQKrKLM26uHXw9wc/KqfmAS1PNGylEXG3oqM2hjO9gB4/IqA7H
- zAX14MmGbS83C21FJdx3cSSSweM3KCtRo9eTbE4ZJRYFl3thSgljCg4W19uyg+uKPzBd
- b+QkkNd/3rN/P2d5KBRea8LFlYLdZp5e50sreCTfFS4IJu8RANxSCpvYaISSRntnpoPg
- RPOQ==
-X-Gm-Message-State: APjAAAXhtENgjacsF8DvKGjt+GZjGn1suLQ2psfxG2A7/JgwPTL0KjEN
- NvHszzZZq8UmFrlvy5qFKL8xFwLERJw=
-X-Google-Smtp-Source: APXvYqz1AdtlPHiY+/5cvMgfyQQwtePFrwYZ6tGo53snf5Y+4fvevExFyLW1AAXW3jH6hEIjP9PciA==
-X-Received: by 2002:a17:902:8c91:: with SMTP id
- t17mr6342872plo.225.1574893809614; 
- Wed, 27 Nov 2019 14:30:09 -0800 (PST)
-Received: from mangix-trapnet.lan ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id g191sm7411397pfb.19.2019.11.27.14.30.08
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 Nov 2019 14:30:08 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 27 Nov 2019 14:30:05 -0800
-Message-Id: <20191127223005.9632-3-rosenp@gmail.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191127223005.9632-1-rosenp@gmail.com>
-References: <20191127223005.9632-1-rosenp@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=T7WZNIoPQ2h/7MZg76i9RnOZ4f7o5NM63IqJNL+0Bpw=;
+ b=AH/FEijVTLD9pihGaowWCZAEHznPAQD5GOymMOWBmhkCv8hB+5PU9IEluK7R+POSTK
+ Apxq8btzz2/zV87+005doxWL+C7yP+PjX0F1YwhpZ7NPAJWjVuuV6gIbm+xxSd8x19rJ
+ Z4MEQVOCAXZ2640Fv2KnXP5QFC8nkjK1pEi+tReYgTV7kQqZB2DYFadDQ+SBYY1gGV8I
+ 0L8ixA17iQkxMmhNO1a7o+AI98R/VFnbddMZ21HBomQKj42Vy0n6Rsn/rITQY7G4EjE+
+ ia6j2GtPMT704BX5J7fsp0T2pvKRzs78L4vZ46RVtN+haeJHk8kD9oFLSCdc4kxQGudS
+ s+tg==
+X-Gm-Message-State: APjAAAVQZdQ4v1HmSv+CKR7GpQK6sXHEjFcfjwmVahn9zpMUxi05kIx0
+ JoYgRvBo5bWX3NxiMpiQZqPDcxvkShnu79DOFjI=
+X-Google-Smtp-Source: APXvYqxlPDgmq726u3rSeiOBgxwu/Cv2v7Vr3XI0sEBkHKI/VqEP9NOIsulYRJ276iRAzNvpvxaM9/e1jYazcgOOcIs=
+X-Received: by 2002:a05:6830:1da:: with SMTP id
+ r26mr5480401ota.186.1574893861491; 
+ Wed, 27 Nov 2019 14:31:01 -0800 (PST)
 MIME-Version: 1.0
+References: <20191125224418.266082-1-rosenp@gmail.com>
+ <20191127104917.GB37269@meh.true.cz>
+ <8b1128c5-b171-afa1-4bac-c8e0aa9a7ece@gmail.com>
+ <20191127121948.GD37269@meh.true.cz>
+ <161dbb27-826e-c066-1ddb-951e229e7adf@gmail.com>
+In-Reply-To: <161dbb27-826e-c066-1ddb-951e229e7adf@gmail.com>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Wed, 27 Nov 2019 14:30:50 -0800
+Message-ID: <CAKxU2N-Uj1YJ8XGvNcB961_ar8mdHHzxBvbqS4XEF18unQJYmw@mail.gmail.com>
+To: Andre Heider <a.heider@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_143010_820377_7C807DFA 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20191127_143102_488617_05428AAC 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -85,8 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 3/3] tools/pkgconf: Add patch to fix meson
- compilation.
+Subject: Re: [OpenWrt-Devel] [PATCHv3] tools/pkg-config: Replace with pkgconf
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,82 +98,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The wrapper calls pkgconf with multiple arguments. meson wants to call
-it with a single --version argument. To keep compatibility with
-pkg-config, revert the upstream version change.
-
-This fixes projects that use meson and pkg-config to find packages.
-
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- ...me-modversion-insted-of-version-if-o.patch | 48 +++++++++++++++++++
- 1 file changed, 48 insertions(+)
- create mode 100644 tools/pkgconf/patches/0001-Revert-main-assume-modversion-insted-of-version-if-o.patch
-
-diff --git a/tools/pkgconf/patches/0001-Revert-main-assume-modversion-insted-of-version-if-o.patch b/tools/pkgconf/patches/0001-Revert-main-assume-modversion-insted-of-version-if-o.patch
-new file mode 100644
-index 0000000000..641083a606
---- /dev/null
-+++ b/tools/pkgconf/patches/0001-Revert-main-assume-modversion-insted-of-version-if-o.patch
-@@ -0,0 +1,48 @@
-+From b1eec6b27560928fc9b111164c8abd7d5e527588 Mon Sep 17 00:00:00 2001
-+From: Andre Heider <a.heider@gmail.com>
-+Date: Wed, 27 Nov 2019 15:21:42 +0100
-+Subject: [PATCH] Revert "main: assume --modversion insted of --version if
-+ other flags or module names are provided"
-+
-+This reverts commit 12a0eb124cea85586e57f33c91a1e4c73459eef6.
-+
-+This "user friendly" behavior is actually detrimental. pkg-config is very
-+often wrapped in a shell script of cross-compiling toolchains. Such wrappers
-+may pass extra arguments, such as --static, (reasonably) not expecting that
-+to break --version. Some build systems (meson being one example) use
-+--version to determine whether pkg-config is usable. Naturally, the wrappers
-+fail this test, even though they would've worked with the original pkg-config.
-+
-+Fixes #6
-+---
-+ cli/main.c | 14 ++------------
-+ 1 file changed, 2 insertions(+), 12 deletions(-)
-+
-+diff --git a/cli/main.c b/cli/main.c
-+index 563ec8f..fc698a4 100644
-+--- a/cli/main.c
-++++ b/cli/main.c
-+@@ -1005,18 +1005,8 @@ main(int argc, char *argv[])
-+ 
-+ 	if ((want_flags & PKG_VERSION) == PKG_VERSION)
-+ 	{
-+-		if (argc > 2)
-+-		{
-+-			fprintf(stderr, "%s: --version specified with other options or module names, assuming --modversion.\n", argv[0]);
-+-
-+-			want_flags &= ~PKG_VERSION;
-+-			want_flags |= PKG_MODVERSION;
-+-		}
-+-		else
-+-		{
-+-			version();
-+-			return EXIT_SUCCESS;
-+-		}
-++		version();
-++		return EXIT_SUCCESS;
-+ 	}
-+ 
-+ 	if ((want_flags & PKG_HELP) == PKG_HELP)
-+-- 
-+2.24.0
-+
--- 
-2.23.0
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gV2VkLCBOb3YgMjcsIDIwMTkgYXQgNjozNSBBTSBBbmRyZSBIZWlkZXIgPGEuaGVpZGVyQGdt
+YWlsLmNvbT4gd3JvdGU6Cj4KPiBPbiAyNy8xMS8yMDE5IDEzOjE5LCBQZXRyIMWgdGV0aWFyIHdy
+b3RlOgo+ID4gQW5kcmUgSGVpZGVyIDxhLmhlaWRlckBnbWFpbC5jb20+IFsyMDE5LTExLTI3IDEy
+OjI2OjM5XToKPiA+Cj4gPj4gSSBkaWRuJ3QgcHVyc3VlIHVwc3RyZWFtaW5nIGl0IGJlY2F1c2Ug
+aXQgbG9va3MgbGlrZSBtZXJnZSByZXF1ZXN0IGF0IGdpdGh1Ygo+ID4+IGFyZSBpZ25vcmVkIGFu
+ZCBJIGRpZG4ndCBmZWVsIGxpa2Ugc2lnbmluZyB1cCBhdCB1cHN0cmVhbXMgb3duIHBhZ2UuCj4g
+Pgo+ID4gICBnaXQgc2VuZC1lbWFpbCAtLXRvICd+a2FuaWluaS9wa2djb25mQGxpc3RzLnNyLmh0
+JyB5b3VyLnBhdGNoCj4gPgo+ID4gZG9lc250IHdvcms/Cj4KPiBObyBjbHVlLCBqdXN0IHNlbnQg
+dGhlIGF0dGFjaGVkIHZlcnNpb24gdGhlcmUuCj4KPiBAUm9zZW4KPiBZb3UgbWlnaHQgd2FubmEg
+dXNlIHRoaXMgcGF0Y2ggaW5zdGVhZC4gQW4gYWx0ZXJuYXRpdmUgd291bGQgYmUgdG8gY2F0Y2gK
+PiAtLXZlcnNpb24gaW4gdGhlIHdyYXBwZXIgYW5kIGRvbid0IGFkZCBhZGRpdGlvbmFsIGFyZ3Vt
+ZW50cyBpbiB0aGF0IGNhc2UuCkkgbm90aWNlZCB5b3VyIHBhdGNoZXMgaGF2ZSBDUkxGIGxpbmUg
+ZW5kaW5ncy4gSSBjb252ZXJ0ZWQgdG8gTEYgaW4KdGhlIHN1Ym1pc3Npb24uCj4KPiBSZWdhcmRz
+LAo+IEFuZHJlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQu
+b3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRl
+dmVsCg==

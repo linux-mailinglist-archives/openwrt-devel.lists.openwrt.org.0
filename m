@@ -2,53 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0609D10CFE0
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 Nov 2019 00:01:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A47B010D090
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 Nov 2019 03:40:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VsxjBeX1T0hRlugGmpfIm8LgifLqNTYdR0SinnD/Y50=; b=OIoZ33aR9f/rJk
-	vX9wHppUeF0a4jl/EwI3SdWh1aLiJt2fs7M4yqRN8NBrchBrbTTQkIvAprCCAfzUKYGhbxJQQT9c8
-	ONOG88JKsgevdgO5mcQYWZ6H0/OyZnrPfTYPr+1I9m3nyV2sFFRmFaM3WZ7V9CfTv3Z2HKP+8bUj5
-	xmfYl81tjAwFZi6MnDzKBNTtTIo3Wn1AWCkC5ktY5rT3Izps0tlGXFOByevRuSqrLxAv5kSnKP3JW
-	Z48MJ2vRv/qFAm92dkkWaAZA4wbha2rhLRidqMuKmZwPYVlEyhx3VXf66xydjJpYonjxaPCobDZA+
-	UcGtgYdTQ1SwuihN6Vpw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3IOMRFhzoRyKtITRU+uMH8eK+kYVmhNdm4qbZVAlp7o=; b=Li5
+	bcf7+neYrBM/ZgE7PA7EhwGbU+H09tg3OSWFXZA2TMCbBa8qxtjLc0/oaczZ/8QbOnDR7MfKmub0+
+	bwfQsEyXZ9OohKH667bUb0Ylp43/b0tjxvMSufhilI0D6hkARxopYLgLrE151t/Ja+wE4qbe1KHg9
+	5+VLJLzko/3LcpDUEN9YiLZqZAG+zvylg74ucRGF2CauhKf85LxuwV+zx+3KzESSTQo30NQwQVgj5
+	Vzi78Wz54oCxkDihUjeFxT2J3QpS5mt7gY6t99nddEcj8tpQwphkiM0zB+lUMvofF4g29oH0hcLjm
+	sx3apdFX6c8EUIltKlyg/dzyvQ715FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaSnG-0007Cw-J5; Thu, 28 Nov 2019 23:01:50 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1iaWD6-0008Sn-Oo; Fri, 29 Nov 2019 02:40:44 +0000
+Received: from mail-io1-xd33.google.com ([2607:f8b0:4864:20::d33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaSn9-0007CN-Eu
- for openwrt-devel@lists.openwrt.org; Thu, 28 Nov 2019 23:01:44 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1iaSn1-0003Jj-0V; Fri, 29 Nov 2019 00:01:35 +0100
-Date: Fri, 29 Nov 2019 00:01:26 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Message-ID: <20191128230126.GF3366@makrotopia.org>
-References: <20191122095541.688125-1-thomas.petazzoni@bootlin.com>
- <20191122095541.688125-5-thomas.petazzoni@bootlin.com>
+ id 1iaWCz-0008S5-9K
+ for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 02:40:38 +0000
+Received: by mail-io1-xd33.google.com with SMTP id j13so30856083ioe.0
+ for <openwrt-devel@lists.openwrt.org>; Thu, 28 Nov 2019 18:40:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ayerscasa-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=lB3enhG1ibD5sH1519EGoXgN4oQcuYJOCQLawIb82EA=;
+ b=IvuqhtjTSuSeRqYjsh4PuWfW7mAHZmSYVJiC3YVPQ3urJShWDe/oXETw16xGZXPg2S
+ ZxMezj92Xm+9PfbNZabgOcN3NC4gM7qWHUhGprXLpUKpPEb0KzbR8xO6TLDivBaqjzcT
+ 2LJCNJDLoztemVPcZqOtRnAlWVXByPnI94wf00hlAptqDqtC7l+6dmRoWn2W/ilsXYp+
+ wtUflHUe7RtUG7kUHtdc79yUjwBnRS75Yuc/puaQLZCvaz6gdEC9F2QWysooFTPjWKHo
+ cmNRv5ThoY3HK4yHi2PkQg0IJp0+A1EXzy2juAhvuwfVLaBk8glggavY16Jsd13ZaP1F
+ hmbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=lB3enhG1ibD5sH1519EGoXgN4oQcuYJOCQLawIb82EA=;
+ b=sEaVzEUySMJvwc1A9Sgu22HrvXWaBt8pPOfQQkQD+9GZgvfiE6ONWVfvtUPkqhNi+0
+ LgfElVM4K5BuaSKLf1miBQD/tWgmtQqeIXyUN5pqlQmthvnBJ1921H4g09vqLIUlvRDy
+ SIYeyqgmCz7J6TwnW8pb13DMINgptbMjFvyONuHDGvQB0e45VWJ+gjSOOqLawSTCxUSz
+ 8L80GIvo8DJ36uran6+WtRpFeZRJKG4KZIn+A5BLB1jmUEK9Zkw3et8C4So6BfbyktFT
+ mgSO6rdGT3phQjWyXrYKC2K0gTS/Qc45ntHboRTfhq5RatsrB5Gkhkw8copcOflYeKaG
+ SklQ==
+X-Gm-Message-State: APjAAAVtN3VKaz+HctxXolni12VLl/qmQ5IuOgwfmNS0vH58D5M5ARH0
+ w1UatHeMjdFPW9LOb977KseVhd2DMStmWyQymmEORS/G3GU=
+X-Google-Smtp-Source: APXvYqy5wnW/I124u3fT3BKva6ubFjUrI8zOXf6vmhRQh/n4ysUhpE2T3yCMcwVKVr6rb6OQNMs8SeWp6NOQdtHEks8=
+X-Received: by 2002:a02:b155:: with SMTP id s21mr12902148jah.84.1574995232746; 
+ Thu, 28 Nov 2019 18:40:32 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191122095541.688125-5-thomas.petazzoni@bootlin.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+From: Joe Ayers <joe@ayerscasa.com>
+Date: Thu, 28 Nov 2019 18:40:23 -0800
+Message-ID: <CAALvt2MKiCHmZb5neZqjawnr-R1VAHpTK+LQafPrUj=i_UJ05w@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_150143_497676_610B716A 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20191128_184037_352415_86E99088 
+X-CRM114-Status: UNSURE (   2.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d33 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 4/7] include/image.mk: implement SELinux
- squashfs image generation
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] ath10k memory leak on 19.07 branch and mikrotik
+ RB952Ui-5ac2nD?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,64 +85,75 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Thomas,
+Attempting to use the hAP ac lite model RB952Ui-5ac2nD with the 5GHz
+radio0 802.11ac seems to be unstable and consume available memory.
+This is only enabling radio0 with no other changes and bringing wifi
+up/down to reproduce.   Am I doing something silly, or should I submit
+a bug?
 
-On Fri, Nov 22, 2019 at 10:55:38AM +0100, Thomas Petazzoni wrote:
-> Signed-off-by: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-> ---
->  include/image.mk | 15 ++++++++++++++-
->  1 file changed, 14 insertions(+), 1 deletion(-)
-> 
-> diff --git a/include/image.mk b/include/image.mk
-> index 8592c19b99..86b3edeb87 100644
-> --- a/include/image.mk
-> +++ b/include/image.mk
-> @@ -239,13 +239,26 @@ endef
->  $(eval $(foreach S,$(JFFS2_BLOCKSIZE),$(call Image/mkfs/jffs2/template,$(S))))
->  $(eval $(foreach S,$(NAND_BLOCKSIZE),$(call Image/mkfs/jffs2-nand/template,$(S))))
->  
-> -define Image/mkfs/squashfs
-> +define Image/mkfs/squashfs-common
->  	$(STAGING_DIR_HOST)/bin/mksquashfs4 $(call mkfs_target_dir,$(1)) $@ \
->  		-nopad -noappend -root-owned \
->  		-comp $(SQUASHFSCOMP) $(SQUASHFSOPT) \
->  		-processors 1
->  endef
->  
-> +ifeq ($(CONFIG_PACKAGE_refpolicy),y)
-> +define Image/mkfs/squashfs
-> +	echo "LD_LIBRARY_PATH=\$$LD_LIBRARY_PATH:$(STAGING_DIR_HOSTPKG)/lib $(STAGING_DIR_HOSTPKG)/sbin/setfiles -r $(call mkfs_target_dir,$(1)) $(call mkfs_target_dir,$(1))/etc/selinux/targeted/contexts/files/file_contexts $(call mkfs_target_dir,$(1))" > $@.fakeroot-script
-> +	echo "$(Image/mkfs/squashfs-common)" >> $@.fakeroot-script
-> +	chmod +x $@.fakeroot-script
-> +	$(STAGING_DIR_HOST)/bin/fakeroot $@.fakeroot-script
-> +endef
-> +else
-> +define Image/mkfs/squashfs
-> +	$(call Image/mkfs/squashfs-common,$(1))
-> +endef
-> +endif
-> +
-
-I thought about introducing fakeroot in a similar way before, but for
-different purposes such as having setuid binaries or files owned by
-users other than root contained in the rootfs.
-Hence I believe it'd be good to always use fakeroot instead of using
-'-root-owned', but that's a bit more work...
-
-+1 for your work to enable SELinux in OpenWrt, I'll try to find time
-for some testing that.
-
-
-Cheers
-
-
-Daniel
+root@OpenWrt:/tmp# cat /etc/openwrt_release
+DISTRIB_ID='OpenWrt'
+DISTRIB_RELEASE='19.07-SNAPSHOT'
+DISTRIB_REVISION='r10752-1859391e9e'
+DISTRIB_TARGET='ar71xx/mikrotik'
+DISTRIB_ARCH='mips_24kc'
+DISTRIB_DESCRIPTION='OpenWrt 19.07-SNAPSHOT r10752-1859391e9e'
+DISTRIB_TAINTS='no-all'
+root@OpenWrt:/tmp# free
+              total        used        free      shared  buff/cache   available
+Mem:          59264       14104       33232        7804       11928       23352
+Swap:             0           0           0
+root@OpenWrt:/tmp# wifi up
+'radio1' is disabled
+'radio1' is disabled
+root@OpenWrt:/tmp# free
+              total        used        free      shared  buff/cache   available
+Mem:          59264       19556       24204        7804       15504       16156
+Swap:             0           0           0
+root@OpenWrt:/tmp# date; free
+Tue Nov 26 23:32:37 UTC 2019
+              total        used        free      shared  buff/cache   available
+Mem:          59264       29768       13984        7804       15512        5944
+Swap:             0           0           0
+root@OpenWrt:/tmp# date; free
+Tue Nov 26 23:32:55 UTC 2019
+              total        used        free      shared  buff/cache   available
+Mem:          59264       33384       10368        7804       15512        2328
+Swap:             0           0           0
+root@OpenWrt:/tmp# date; free
+Tue Nov 26 23:33:14 UTC 2019
+              total        used        free      shared  buff/cache   available
+Mem:          59264       37424       10452        7804       11388         304
+Swap:             0           0           0
+root@OpenWrt:/tmp# wifi down
+-ash: can't fork: Out of memory
+root@OpenWrt:/tmp# wifi down
+-ash: can't fork: Out of memory
+root@OpenWrt:/tmp# wifi down
+/sbin/wifi: line 188: can't fork: Out of memory
+Failed to parse message data
+'radio1' is disabled
+root@OpenWrt:/tmp# wifi down
+Segmentation fault
+Failed to parse message data
+'radio1' is disabled
+root@OpenWrt:/tmp# free
+              total        used        free      shared  buff/cache   available
+Mem:          59264       39436        8508        7804       11320           0
+Swap:             0           0           0
+root@OpenWrt:/tmp# wifi down
+'radio1' is disabled
+root@OpenWrt:/tmp# date; free
+Tue Nov 26 23:34:08 UTC 2019
+              total        used        free      shared  buff/cache   available
+Mem:          59264       13716       33932        7804       11616       23892
+Swap:             0           0           0
+root@OpenWrt:/tmp#
 
 _______________________________________________
 openwrt-devel mailing list

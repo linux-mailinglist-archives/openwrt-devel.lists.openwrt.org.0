@@ -2,41 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F91F10DB93
-	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 00:01:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8276110DB9A
+	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 00:12:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p1yBawbpZ58PuJSJ9qfNcy0a6yHJDcG/j6cdH/gGIaY=; b=Gd4VtOmPGG6nHyKioGCqDpFxN
-	OTUQhuJECm6VAFipAXYBMqoLePqhBM6W/XmaO7TTSHFaI0ZYp+rTDVngZL0raZuRQYKerzSnBg9+8
-	92zCoMkxGqJ9r//7YGMocxSvDCVugl+MfcgUMJjmYyRyeWWWuqWIzbw6bcv6/XA80WqSPERl7y3+D
-	LWvGUyyxkkO4gh2lBhf/bXuE6/wUC8oAAg/uTd2bCcDNV+HOaI7BkiP9QjqkoWAZv45VsHV8uBtfh
-	f9eEPLfLimdCd3sHkI7NCRSZP+P0t5ZwiD/DrVUKhyB6KMZUY5c7p+zu+lfKoQ84RzZJPSCPQQu6F
-	YiU5oxyWw==;
+	 bh=9SX39epKewUcB1YczlbWr8SHvT3l5kWt6wJGnCmCGwI=; b=IeAELCgTZp6DxkL33pJa4jZFk
+	tcabFuzze2Ext5X6pj8Is5YMsv2u8M3V4ATQgdaUJmTzAIy7zExaqtGdv3Q/ffYzTc1ZRBLcU+UhE
+	xsvLfU+YNdVoh2A0m0/j+smm6u4L7xXXcUx1oK9oJwpfp+8zAiibJEBhdG37RqVhaz3dd2uI7b4X6
+	JsuJwaGII8Rb9CBfAfVzbfSycG2B1Ms1Wc0Vz26Qcd5pQc41Pftv878hVhCbe4KTkMnjf5kS5WJB7
+	vvnCuPJ1eop+3ESAmUhUwdqPofBB4rzQ/fP0obIsSgvY08is1YQCue2IhYTj2DApGsmOxCl7jcOns
+	L8ILup9nA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iapGU-0002cK-EN; Fri, 29 Nov 2019 23:01:30 +0000
-Received: from mout-p-202.mailbox.org ([2001:67c:2050::465:202])
+	id 1iapQb-0006Bk-Qo; Fri, 29 Nov 2019 23:11:57 +0000
+Received: from mout-p-101.mailbox.org ([2001:67c:2050::465:101])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iapGM-0002bj-Az
- for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 23:01:24 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ id 1iapQU-0006BA-D9
+ for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 23:11:52 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-202.mailbox.org (Postfix) with ESMTPS id 47PqkR5tSDzQlCW;
- Sat, 30 Nov 2019 00:01:19 +0100 (CET)
+ by mout-p-101.mailbox.org (Postfix) with ESMTPS id 47PqyR0zTYzKmZx;
+ Sat, 30 Nov 2019 00:11:43 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
+Received: from smtp1.mailbox.org ([80.241.60.240])
  by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
  [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id t1OkTuxUE-RT; Sat, 30 Nov 2019 00:01:16 +0100 (CET)
-To: mail@adrianschmutzler.de, 'Jo-Philipp Wich' <jo@mein.io>
+ with ESMTP id nPv6b02qL7Pj; Sat, 30 Nov 2019 00:11:40 +0100 (CET)
+To: Jo-Philipp Wich <jo@mein.io>, openwrt-devel@lists.openwrt.org,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
 References: <20191116202346.31885-1-jo@mein.io>
- <20191116202346.31885-14-jo@mein.io>
- <007801d59cd5$cbcffbb0$636ff310$@adrianschmutzler.de>
+ <20191116202346.31885-6-jo@mein.io>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -98,13 +98,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <09ec1918-522c-05c2-63ff-3d710433e87f@hauke-m.de>
-Date: Sat, 30 Nov 2019 00:01:12 +0100
+Message-ID: <c1b8d82e-8910-ef6c-c07f-7da49525e360@hauke-m.de>
+Date: Sat, 30 Nov 2019 00:11:34 +0100
 MIME-Version: 1.0
-In-Reply-To: <007801d59cd5$cbcffbb0$636ff310$@adrianschmutzler.de>
+In-Reply-To: <20191116202346.31885-6-jo@mein.io>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_150122_678557_F06C409B 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20191129_151150_752650_0045A632 
+X-CRM114-Status: GOOD (  16.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -112,8 +112,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 13/17] brcm47xx: disable Netgear WNR2000
- v2 by default
+Subject: Re: [OpenWrt-Devel] [PATCH 05/17] ar71xx: disable Netgear WNR2000v4
+ by default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,110 +125,83 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============7383278185378194078=="
+Content-Type: multipart/mixed; boundary="===============3149908067665147729=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============7383278185378194078==
+--===============3149908067665147729==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="D0ZMBAttD6HbCPADGTqiRArrISQuqG3jd"
+ boundary="ZZcCuxQPDi8RTbByXeiwuDgzO6chD8Mah"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---D0ZMBAttD6HbCPADGTqiRArrISQuqG3jd
-Content-Type: multipart/mixed; boundary="FGQ0J7cL5ROnR4o6Y9wNToiGgCkzczl9E"
+--ZZcCuxQPDi8RTbByXeiwuDgzO6chD8Mah
+Content-Type: multipart/mixed; boundary="TbrHCTbYkjAK6iy1jxyQhwxrEdIvRVbRQ"
 
---FGQ0J7cL5ROnR4o6Y9wNToiGgCkzczl9E
+--TbrHCTbYkjAK6iy1jxyQhwxrEdIvRVbRQ
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 11/17/19 12:30 AM, mail@adrianschmutzler.de wrote:
-> Hi,
+On 11/16/19 9:23 PM, Jo-Philipp Wich wrote:
+> Disable the Netgear WNR2000v4 image by default as the device has
+> insufficient flash space for release build images.
 >=20
-> this actually additionally disables netgear-wnr3500l-v1-na without a co=
-mment about it.
+> Ref: https://forum.openwrt.org/t/devices-too-big-to-save-overlay/18161/=
+11
+> Signed-off-by: Jo-Philipp Wich <jo@mein.io>
+> ---
+>  target/linux/ar71xx/image/tiny-legacy-devices.mk | 1 +
+>  1 file changed, 1 insertion(+)
 >=20
-> Best
+> diff --git a/target/linux/ar71xx/image/tiny-legacy-devices.mk b/target/=
+linux/ar71xx/image/tiny-legacy-devices.mk
+> index 32912f79d6..4703e08541 100644
+> --- a/target/linux/ar71xx/image/tiny-legacy-devices.mk
+> +++ b/target/linux/ar71xx/image/tiny-legacy-devices.mk
+> @@ -105,6 +105,7 @@ LEGACY_DEVICES +=3D WNR2000V3
+>  define LegacyDevice/WNR2000V4
+>    DEVICE_TITLE :=3D NETGEAR WNR2000V4
+>    DEVICE_PACKAGES :=3D kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbpor=
+t
+> +  DEFAULT :=3D n
+>  endef
+>  LEGACY_DEVICES +=3D WNR2000V4
+> =20
 >=20
-> Adrian
-Thank you Adrian for the review.
 
-The linked forum post only mentions the wnr2000v2 and not the wnr3500l
-which has 8MB of flash, I only remove the wnr2000v2.
+Hi Jow,
+
+The linked thread is talking about the WNR2000v4 and not the WNR2000v2,
+I will drop this patch.
 
 Hauke
 
->=20
->> -----Original Message-----
->> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
->> On Behalf Of Jo-Philipp Wich
->> Sent: Samstag, 16. November 2019 21:24
->> To: openwrt-devel@lists.openwrt.org
->> Cc: Jo-Philipp Wich <jo@mein.io>
->> Subject: [OpenWrt-Devel] [PATCH 13/17] brcm47xx: disable Netgear
->> WNR2000 v2 by default
->>
->> Disable the Netgear WNR2000 v2 image by default as the device has
->> insufficient flash space for release build images.
->>
->> Ref: https://forum.openwrt.org/t/devices-too-big-to-save-overlay/18161=
-/72
->> Signed-off-by: Jo-Philipp Wich <jo@mein.io>
->> ---
->>  target/linux/brcm47xx/image/Makefile | 2 ++
->>  1 file changed, 2 insertions(+)
->>
->> diff --git a/target/linux/brcm47xx/image/Makefile
->> b/target/linux/brcm47xx/image/Makefile
->> index c2bf9d41d5..969d523956 100644
->> --- a/target/linux/brcm47xx/image/Makefile
->> +++ b/target/linux/brcm47xx/image/Makefile
->> @@ -916,6 +916,7 @@ define Device/netgear-wnr2000v2
->>    $(Device/netgear)
->>    NETGEAR_BOARD_ID :=3D U12H114T00_NETGEAR
->>    NETGEAR_REGION :=3D 2
->> +  DEFAULT :=3D n
->>  endef
->>  TARGET_DEVICES +=3D netgear-wnr2000v2
->>
->> @@ -925,6 +926,7 @@ define Device/netgear-wnr3500l-v1-na
->>    $(Device/netgear)
->>    NETGEAR_BOARD_ID :=3D U12H136T99_NETGEAR
->>    NETGEAR_REGION :=3D 2
->> +  DEFAULT :=3D n
->>  endef
->>  TARGET_DEVICES +=3D netgear-wnr3500l-v1-na
->>
->> --
->> 2.20.1
 
+--TbrHCTbYkjAK6iy1jxyQhwxrEdIvRVbRQ--
 
---FGQ0J7cL5ROnR4o6Y9wNToiGgCkzczl9E--
-
---D0ZMBAttD6HbCPADGTqiRArrISQuqG3jd
+--ZZcCuxQPDi8RTbByXeiwuDgzO6chD8Mah
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3hozgACgkQ8bdnhZyy
-68db2wf+PDXllPYlK6JmO34hWov/YGNir1n2FVJ3BJ7Am59sCTGiGqL9bYV/HRCA
-Dmwn5nJDajGwkWdymVd7zQKWNGUfDRiWhPaNUKlMJMvjafdWWBInEJpZQTjInWJS
-twE4sXNZ++o4TYD5k/OjDWMM9Sa1sSBfqOMAKunyPbxO74x+MPlcUsq9hZygc2b7
-byiiErYZVB6LNiTIvE9cuBfahFn9vN5D6lA0eZRNNx8pktsTmPQRb4M36U/rX/Z3
-d7mEMEEObOZwgewY4rY3wgXNsA07a4IgCDh9gis5nbP6qLfXZ1/dApEUVal0Dlos
-Qzaf70Rbyz5QXrLojlO6DGAoOvCjgw==
-=nA11
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3hpaYACgkQ8bdnhZyy
+68dEZgf+NQ7Kfyv2Ei0NcgPUD4mNrgjnFa7dMWYqK99F3Q3My7DuLH35IK7LL9ZB
+w0w4xmfSSl2fjPfTsj9DXa423+tTS/E8rlRFa199wBmhnzeeVESsoYKiJMO1p32p
+8dy25Xo4tmir3vFrCVTLuPGEBg+N4ccVpEiWYSBey56ZWOPz8xOZ3geft/OnwR5A
+OwxGUQuqVoPVM+7F3lUM5bQrQdYVyCvW67+ufEBKoVPACv6GY7ZjK5iccLCUYZbU
+qKXQYGHkKq6FHmLpwTwX3rkICG7jchRbjbVoCcn7t5LcWUi2cqxeygClnGxVyKwJ
+Z2VRaNSnz6sQ3DyyMZ0kP8jMUgJ+mw==
+=h0rW
 -----END PGP SIGNATURE-----
 
---D0ZMBAttD6HbCPADGTqiRArrISQuqG3jd--
+--ZZcCuxQPDi8RTbByXeiwuDgzO6chD8Mah--
 
 
---===============7383278185378194078==
+--===============3149908067665147729==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -239,5 +212,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7383278185378194078==--
+--===============3149908067665147729==--
 

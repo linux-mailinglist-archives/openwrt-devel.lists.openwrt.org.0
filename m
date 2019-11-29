@@ -2,78 +2,56 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A47B010D090
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 Nov 2019 03:40:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 008B710D62A
+	for <lists+openwrt-devel@lfdr.de>; Fri, 29 Nov 2019 14:36:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3IOMRFhzoRyKtITRU+uMH8eK+kYVmhNdm4qbZVAlp7o=; b=Li5
-	bcf7+neYrBM/ZgE7PA7EhwGbU+H09tg3OSWFXZA2TMCbBa8qxtjLc0/oaczZ/8QbOnDR7MfKmub0+
-	bwfQsEyXZ9OohKH667bUb0Ylp43/b0tjxvMSufhilI0D6hkARxopYLgLrE151t/Ja+wE4qbe1KHg9
-	5+VLJLzko/3LcpDUEN9YiLZqZAG+zvylg74ucRGF2CauhKf85LxuwV+zx+3KzESSTQo30NQwQVgj5
-	Vzi78Wz54oCxkDihUjeFxT2J3QpS5mt7gY6t99nddEcj8tpQwphkiM0zB+lUMvofF4g29oH0hcLjm
-	sx3apdFX6c8EUIltKlyg/dzyvQ715FQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X2JJJJXWwoGzRYhP9piL0X5qbs69VDr18fmqx+KRxcI=; b=IAfxvV3Lr5ZS2O
+	4rMyqLgqXy0arx69YhseVXLFJ6WgY7M7kKBa0bIgWf8ldwYO6YfGjHyzDdHauBT6ZDs6r0SC0isnn
+	UFeWMBJ+w2PMaFS/ekxHmB/AJE2kmoApZLFpNgZcC2AOCkzOfQfCK0M/BCYZv2bjZlF207gnNczPF
+	cWI4KJM0oEdaIpprpS3CZN2yNE6a39SFrICwHrLEfXgxRLxQlf9u2rXmINYkvPCzOAklMi8OPjGNF
+	LCTrSzPYGHxnLY4q1ig1RjL/q4mSWaoZSWIg+X9JssakRGhIzkluLa5zQUKDbMTfK9ApZQoz0o2UK
+	Wyq8P7gnoV256WCPi7gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaWD6-0008Sn-Oo; Fri, 29 Nov 2019 02:40:44 +0000
-Received: from mail-io1-xd33.google.com ([2607:f8b0:4864:20::d33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaWCz-0008S5-9K
- for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 02:40:38 +0000
-Received: by mail-io1-xd33.google.com with SMTP id j13so30856083ioe.0
- for <openwrt-devel@lists.openwrt.org>; Thu, 28 Nov 2019 18:40:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ayerscasa-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to;
- bh=lB3enhG1ibD5sH1519EGoXgN4oQcuYJOCQLawIb82EA=;
- b=IvuqhtjTSuSeRqYjsh4PuWfW7mAHZmSYVJiC3YVPQ3urJShWDe/oXETw16xGZXPg2S
- ZxMezj92Xm+9PfbNZabgOcN3NC4gM7qWHUhGprXLpUKpPEb0KzbR8xO6TLDivBaqjzcT
- 2LJCNJDLoztemVPcZqOtRnAlWVXByPnI94wf00hlAptqDqtC7l+6dmRoWn2W/ilsXYp+
- wtUflHUe7RtUG7kUHtdc79yUjwBnRS75Yuc/puaQLZCvaz6gdEC9F2QWysooFTPjWKHo
- cmNRv5ThoY3HK4yHi2PkQg0IJp0+A1EXzy2juAhvuwfVLaBk8glggavY16Jsd13ZaP1F
- hmbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=lB3enhG1ibD5sH1519EGoXgN4oQcuYJOCQLawIb82EA=;
- b=sEaVzEUySMJvwc1A9Sgu22HrvXWaBt8pPOfQQkQD+9GZgvfiE6ONWVfvtUPkqhNi+0
- LgfElVM4K5BuaSKLf1miBQD/tWgmtQqeIXyUN5pqlQmthvnBJ1921H4g09vqLIUlvRDy
- SIYeyqgmCz7J6TwnW8pb13DMINgptbMjFvyONuHDGvQB0e45VWJ+gjSOOqLawSTCxUSz
- 8L80GIvo8DJ36uran6+WtRpFeZRJKG4KZIn+A5BLB1jmUEK9Zkw3et8C4So6BfbyktFT
- mgSO6rdGT3phQjWyXrYKC2K0gTS/Qc45ntHboRTfhq5RatsrB5Gkhkw8copcOflYeKaG
- SklQ==
-X-Gm-Message-State: APjAAAVtN3VKaz+HctxXolni12VLl/qmQ5IuOgwfmNS0vH58D5M5ARH0
- w1UatHeMjdFPW9LOb977KseVhd2DMStmWyQymmEORS/G3GU=
-X-Google-Smtp-Source: APXvYqy5wnW/I124u3fT3BKva6ubFjUrI8zOXf6vmhRQh/n4ysUhpE2T3yCMcwVKVr6rb6OQNMs8SeWp6NOQdtHEks8=
-X-Received: by 2002:a02:b155:: with SMTP id s21mr12902148jah.84.1574995232746; 
- Thu, 28 Nov 2019 18:40:32 -0800 (PST)
+	id 1iagS2-0008UA-Fq; Fri, 29 Nov 2019 13:36:50 +0000
+Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
+ helo=mail.dev.tdt.de)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iagRs-0008Te-NG
+ for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 13:36:42 +0000
+Received: from feckert01.dev.tdt.de (unknown [10.2.3.40])
+ by mail.dev.tdt.de (Postfix) with ESMTPSA id D8F67200C4;
+ Fri, 29 Nov 2019 13:36:26 +0000 (UTC)
+From: Florian Eckert <fe@dev.tdt.de>
+To: Eckert.Florian@googlemail.com, Jason@zx2c4.com,
+ ldir@darbyshire-bryant.me.uk, daniel.engberg.lists@pyret.net
+Date: Fri, 29 Nov 2019 14:36:17 +0100
+Message-Id: <20191129133617.8512-1-fe@dev.tdt.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-From: Joe Ayers <joe@ayerscasa.com>
-Date: Thu, 28 Nov 2019 18:40:23 -0800
-Message-ID: <CAALvt2MKiCHmZb5neZqjawnr-R1VAHpTK+LQafPrUj=i_UJ05w@mail.gmail.com>
-To: openwrt-devel@lists.openwrt.org
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
+ autolearn_force=no version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_184037_352415_86E99088 
-X-CRM114-Status: UNSURE (   2.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191129_053640_912808_C353D252 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: 3.9 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (3.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d33 listed in]
- [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] ath10k memory leak on 19.07 branch and mikrotik
- RB952Ui-5ac2nD?
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 3.2 TO_NO_BRKTS_DYNIP      To: lacks brackets and dynamic rDNS
+Subject: [OpenWrt-Devel] [PATCH] wireguard: fix reload config on peer change
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,75 +63,105 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel@lists.openwrt.org, Florian Eckert <fe@dev.tdt.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Attempting to use the hAP ac lite model RB952Ui-5ac2nD with the 5GHz
-radio0 802.11ac seems to be unstable and consume available memory.
-This is only enabling radio0 with no other changes and bringing wifi
-up/down to reproduce.   Am I doing something silly, or should I submit
-a bug?
+If we change a peer section, then the interface of netifd gets not
+reloaded. Because the change were not made in an interface section.
+And so the netifd does not recognize the change. And the new config gets
+not applied until we do a network restart or we restart the interface
+with 'ifup <name>'.
 
-root@OpenWrt:/tmp# cat /etc/openwrt_release
-DISTRIB_ID='OpenWrt'
-DISTRIB_RELEASE='19.07-SNAPSHOT'
-DISTRIB_REVISION='r10752-1859391e9e'
-DISTRIB_TARGET='ar71xx/mikrotik'
-DISTRIB_ARCH='mips_24kc'
-DISTRIB_DESCRIPTION='OpenWrt 19.07-SNAPSHOT r10752-1859391e9e'
-DISTRIB_TAINTS='no-all'
-root@OpenWrt:/tmp# free
-              total        used        free      shared  buff/cache   available
-Mem:          59264       14104       33232        7804       11928       23352
-Swap:             0           0           0
-root@OpenWrt:/tmp# wifi up
-'radio1' is disabled
-'radio1' is disabled
-root@OpenWrt:/tmp# free
-              total        used        free      shared  buff/cache   available
-Mem:          59264       19556       24204        7804       15504       16156
-Swap:             0           0           0
-root@OpenWrt:/tmp# date; free
-Tue Nov 26 23:32:37 UTC 2019
-              total        used        free      shared  buff/cache   available
-Mem:          59264       29768       13984        7804       15512        5944
-Swap:             0           0           0
-root@OpenWrt:/tmp# date; free
-Tue Nov 26 23:32:55 UTC 2019
-              total        used        free      shared  buff/cache   available
-Mem:          59264       33384       10368        7804       15512        2328
-Swap:             0           0           0
-root@OpenWrt:/tmp# date; free
-Tue Nov 26 23:33:14 UTC 2019
-              total        used        free      shared  buff/cache   available
-Mem:          59264       37424       10452        7804       11388         304
-Swap:             0           0           0
-root@OpenWrt:/tmp# wifi down
--ash: can't fork: Out of memory
-root@OpenWrt:/tmp# wifi down
--ash: can't fork: Out of memory
-root@OpenWrt:/tmp# wifi down
-/sbin/wifi: line 188: can't fork: Out of memory
-Failed to parse message data
-'radio1' is disabled
-root@OpenWrt:/tmp# wifi down
-Segmentation fault
-Failed to parse message data
-'radio1' is disabled
-root@OpenWrt:/tmp# free
-              total        used        free      shared  buff/cache   available
-Mem:          59264       39436        8508        7804       11320           0
-Swap:             0           0           0
-root@OpenWrt:/tmp# wifi down
-'radio1' is disabled
-root@OpenWrt:/tmp# date; free
-Tue Nov 26 23:34:08 UTC 2019
-              total        used        free      shared  buff/cache   available
-Mem:          59264       13716       33932        7804       11616       23892
-Swap:             0           0           0
-root@OpenWrt:/tmp#
+With this new wireguard init script, a md5sum will be calculated on
+every network change. The sum is generated over the wireguard peers for
+each wireguard interface. If a change in the peers section gets detected
+then only the detecated wireguard interface gets restarted.
+
+With this change we can see if the peer section has changed to the
+corresponding interface. The wireguard configuration is rewritten and
+reconfigured by the netif proto handler.
+
+Signed-off-by: Florian Eckert <fe@dev.tdt.de>
+---
+ package/network/services/wireguard/Makefile   |  2 +
+ .../services/wireguard/files/wireguard.init   | 49 +++++++++++++++++++
+ 2 files changed, 51 insertions(+)
+ create mode 100644 package/network/services/wireguard/files/wireguard.init
+
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index ea34b7550b..d78fcfface 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -93,6 +93,8 @@ define Package/wireguard-tools/install
+ 	$(INSTALL_BIN) ./files/wireguard_watchdog $(1)/usr/bin/
+ 	$(INSTALL_DIR) $(1)/lib/netifd/proto/
+ 	$(INSTALL_BIN) ./files/wireguard.sh $(1)/lib/netifd/proto/
++	$(INSTALL_DIR) $(1)/etc/init.d/
++	$(INSTALL_BIN) ./files/wireguard.init $(1)/etc/init.d/wireguard
+ endef
+ 
+ define KernelPackage/wireguard
+diff --git a/package/network/services/wireguard/files/wireguard.init b/package/network/services/wireguard/files/wireguard.init
+new file mode 100644
+index 0000000000..24569752b4
+--- /dev/null
++++ b/package/network/services/wireguard/files/wireguard.init
+@@ -0,0 +1,49 @@
++#!/bin/sh /etc/rc.common
++
++START=80
++USE_PROCD=1
++
++WG_DIR="/tmp/wireguard"
++
++wireguard_check_peer(){
++	local cfg="${1}"
++	local cfile="${2}"
++
++	uci show "network.${cfg}" >> "${cfile}"
++}
++
++wireguard_check_interface() {
++	local cfg="${1}"
++	local proto cfile n_sum o_sum
++
++	config_get proto "${cfg}" proto
++	[ "${proto}" = "wireguard" ] || return 0
++	cfile="$(mktemp -p "${WG_DIR}")"
++	config_foreach wireguard_check_peer "wireguard_${1}" "${cfile}"
++
++	. /lib/functions/network.sh
++
++	n_sum="$(md5sum "${cfile}" | cut -d" " -f1)"
++	rm -rf "${cfile}"
++	[ -f "${WG_DIR}/${cfg}.check" ] && {
++		o_sum="$(cat "${WG_DIR}/${cfg}.check")"
++		[ "${o_sum}" != "${n_sum}" ] && {
++			network_is_up "${cfg}" && ifup "${cfg}"
++		}
++	}
++	echo "$n_sum" > "${WG_DIR}/${cfg}.check"
++}
++
++boot() {
++	config_load network
++	config_foreach wireguard_check_interface interface
++}
++
++service_triggers() {
++	procd_add_reload_trigger "network"
++}
++
++reload_service() {
++	config_load network
++	config_foreach wireguard_check_interface interface
++}
+-- 
+2.20.1
+
 
 _______________________________________________
 openwrt-devel mailing list

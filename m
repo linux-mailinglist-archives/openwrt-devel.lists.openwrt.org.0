@@ -2,42 +2,42 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E4D010DB8F
-	for <lists+openwrt-devel@lfdr.de>; Fri, 29 Nov 2019 23:59:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8855710DB92
+	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 00:00:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fvMIDkgAz/1bJvpgV2q2tS1pC/OFGNYuwZCrKmsveps=; b=btUPY9dswMFj6gpwJd3IOtPpc
-	CXeqB39l62hJT1pqs3AoIT5sGseI75mfZAus8I7t/+JctKVxLQW53yJEHrParXFUj5wRkwoNkX38u
-	C83SKt3pgoFPEljA8T7YeNLSpWA4yjQtNPu7iQ8LDNGnNwrASDNysA43dsMcalFKBGTLvqjPfoqoT
-	JBLIaTkVXg27vY8doZzrLBvFvP2m4R/A30k0HjiV9FYfJI8RUTJcq9nGIvcj9e9cJXZNptFwGQRGx
-	Jt7comfwTtT3BlNj7FEJbLKM9Yn13YvuS2gdd2GAFmtKTTH8sot+39bWgk+Nnxko21xjzbyE9jWu4
-	3Ss5b8f0A==;
+	 bh=FlauTvF1GbPEuD5+fmdhuGB1orxntuRNTHJUDsQZgRQ=; b=VAo3HPM4E6Hn3tPMu1XCevQMn
+	llp6b1pPHQW1OTA2gbodWb45hxYOGwusRR6z4H63QSMlPN0NQwKq3yWGumTHvUsW7Ge2kxKZFe7jR
+	vtczeEt5fn9il98alP4CezL4eByrbMuEdQP82Ksy5Yo2JRPYzIgQLUZT3rNGGXxE9nXn3nxSpOxdm
+	vd7/J73XO94U+7NkY7KyzBS2gLvYRXOCLBIVK6+2us49PltmVz8mSF+OSXBI7yX1k8qfhvZTyRVQG
+	UkOnBxh+ew/1d8ocZvKMkX+ffvI65pUQX0ErRur5gGKFGV6KIps0tr23Qatu9+gxaDTxSLIi3CFOY
+	mIr80XXDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iapEG-0000mI-Io; Fri, 29 Nov 2019 22:59:12 +0000
+	id 1iapFn-0002JF-8M; Fri, 29 Nov 2019 23:00:47 +0000
 Received: from mout-p-201.mailbox.org ([80.241.56.171])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iapE7-0000lP-3j
- for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 22:59:05 +0000
+ id 1iapFd-0002Ip-HX
+ for openwrt-devel@lists.openwrt.org; Fri, 29 Nov 2019 23:00:39 +0000
 Received: from smtp2.mailbox.org (smtp2.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47Pqgk0Y5vzQl8v;
- Fri, 29 Nov 2019 23:58:58 +0100 (CET)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47Pqjc2CTZzQl31;
+ Sat, 30 Nov 2019 00:00:36 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id oik38odrQfGR; Fri, 29 Nov 2019 23:58:54 +0100 (CET)
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id rmnLrL4hVi0u; Sat, 30 Nov 2019 00:00:29 +0100 (CET)
 To: mail@adrianschmutzler.de, 'Jo-Philipp Wich' <jo@mein.io>
 References: <20191116202346.31885-1-jo@mein.io>
- <20191116202346.31885-11-jo@mein.io>
- <006b01d59cd5$adface80$09f06b80$@adrianschmutzler.de>
+ <20191116202346.31885-18-jo@mein.io>
+ <008301d59cd6$14d2a060$3e77e120$@adrianschmutzler.de>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -99,13 +99,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <68d336ec-e93d-4c66-5840-dd71ddfed72b@hauke-m.de>
-Date: Fri, 29 Nov 2019 23:58:40 +0100
+Message-ID: <595843f6-95e9-f354-75c7-04084d91b998@hauke-m.de>
+Date: Sat, 30 Nov 2019 00:00:24 +0100
 MIME-Version: 1.0
-In-Reply-To: <006b01d59cd5$adface80$09f06b80$@adrianschmutzler.de>
+In-Reply-To: <008301d59cd6$14d2a060$3e77e120$@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191129_145903_458185_EBAF1EE4 
-X-CRM114-Status: GOOD (  13.43  )
+X-CRM114-CacheID: sfid-20191129_150037_889953_B9A8C3FF 
+X-CRM114-Status: GOOD (  14.45  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -113,8 +113,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 10/17] ar71xx: disable TP-Link
- TL-WA850RE by default
+Subject: Re: [OpenWrt-Devel] [PATCH 17/17] ramips: disable ZyXel Keenetic by
+ default
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,35 +127,42 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============6263725251456462978=="
+Content-Type: multipart/mixed; boundary="===============5258735636340411393=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============6263725251456462978==
+--===============5258735636340411393==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="QYeo04wM0GnWdnLp05Vx7eR8OQMedvtGT"
+ boundary="3PbBEGopZewNbGJIaea9NINcDENH0XMJy"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---QYeo04wM0GnWdnLp05Vx7eR8OQMedvtGT
-Content-Type: multipart/mixed; boundary="DN0qziPRCnY3or9jMicZ017FdXk4hqDje"
+--3PbBEGopZewNbGJIaea9NINcDENH0XMJy
+Content-Type: multipart/mixed; boundary="YHBeDHTceXKR9DWfwe7Ndhr7KCDsevgrQ"
 
---DN0qziPRCnY3or9jMicZ017FdXk4hqDje
-Content-Type: text/plain; charset=windows-1252
+--YHBeDHTceXKR9DWfwe7Ndhr7KCDsevgrQ
+Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 11/17/19 12:29 AM, mail@adrianschmutzler.de wrote:
+On 11/17/19 12:32 AM, mail@adrianschmutzler.de wrote:
 > Hi,
 >=20
-> Here you say WA850, but you disable WA860 ...
+> this disables "Keenetic" and "Keenetic Start".
+>=20
+> As there are so many keenetic variants flying around, I'd consider it h=
+elpful to mention both in the commit message/title.
+>=20
+> Best
 >=20
 > Adrian
 
 Thank you Adrian for the review.
 
-The linked forum post only mentions the WA850 so I changed it to WA850.
+The linked forum post only mentions the Keenetic v1 so I changed it to
+do not remove the Keenetic start any more. The Keenetic Start  does not
+have the USB packages in.
 
 Hauke
 
@@ -166,57 +173,71 @@ Hauke
 >> Sent: Samstag, 16. November 2019 21:24
 >> To: openwrt-devel@lists.openwrt.org
 >> Cc: Jo-Philipp Wich <jo@mein.io>
->> Subject: [OpenWrt-Devel] [PATCH 10/17] ar71xx: disable TP-Link TL-WA85=
-0RE
->> by default
+>> Subject: [OpenWrt-Devel] [PATCH 17/17] ramips: disable ZyXel Keenetic =
+by
+>> default
 >>
->> Disable the TP-Link TL-WA850RE image by default as the device has
->> insufficient flash space for release build images.
+>> Disable the ZyXel Keenetic images by default as the device has insuffi=
+cient
+>> flash space for release build images.
 >>
 >> Ref: https://forum.openwrt.org/t/devices-too-big-to-save-overlay/18161=
-/30
+/72
 >> Signed-off-by: Jo-Philipp Wich <jo@mein.io>
 >> ---
->>  target/linux/ar71xx/image/tiny-tp-link.mk | 1 +
->>  1 file changed, 1 insertion(+)
+>>  target/linux/ramips/image/rt305x.mk | 2 ++
+>>  1 file changed, 2 insertions(+)
 >>
->> diff --git a/target/linux/ar71xx/image/tiny-tp-link.mk
->> b/target/linux/ar71xx/image/tiny-tp-link.mk
->> index db5f735498..1c849cff32 100644
->> --- a/target/linux/ar71xx/image/tiny-tp-link.mk
->> +++ b/target/linux/ar71xx/image/tiny-tp-link.mk
->> @@ -272,6 +272,7 @@ define Device/tl-wa860re-v1
->>    BOARDNAME :=3D TL-WA860RE
->>    DEVICE_PROFILE :=3D TLWA860
->>    TPLINK_HWID :=3D 0x08600001
+>> diff --git a/target/linux/ramips/image/rt305x.mk
+>> b/target/linux/ramips/image/rt305x.mk
+>> index 9e599b4125..38fd1747a3 100644
+>> --- a/target/linux/ramips/image/rt305x.mk
+>> +++ b/target/linux/ramips/image/rt305x.mk
+>> @@ -908,6 +908,7 @@ define Device/kn
+>>    IMAGE_SIZE :=3D $(ralink_default_fw_size_4M)
+>>    DEVICE_TITLE :=3D ZyXEL Keenetic
+>>    DEVICE_PACKAGES :=3D kmod-usb-core kmod-usb2 kmod-usb-ehci kmod-
+>> usb-ledtrig-usbport
 >> +  DEFAULT :=3D n
 >>  endef
->>  TARGET_DEVICES +=3D tl-wa860re-v1
+>>  TARGET_DEVICES +=3D kn
+>>
+>> @@ -915,6 +916,7 @@ define Device/zyxel_keenetic-start
+>>    DTS :=3D kn_st
+>>    IMAGE_SIZE :=3D $(ralink_default_fw_size_4M)
+>>    DEVICE_TITLE :=3D ZyXEL Keenetic Start
+>> +  DEFAULT :=3D n
+>>  endef
+>>  TARGET_DEVICES +=3D zyxel_keenetic-start
+>>
+>> --
+>> 2.20.1
 
 
---DN0qziPRCnY3or9jMicZ017FdXk4hqDje--
 
---QYeo04wM0GnWdnLp05Vx7eR8OQMedvtGT
+--YHBeDHTceXKR9DWfwe7Ndhr7KCDsevgrQ--
+
+--3PbBEGopZewNbGJIaea9NINcDENH0XMJy
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3hoqgACgkQ8bdnhZyy
-68dyZwf+JNWWsQDtGVLH8mYD7iI9SrC8g395hWQ2NmW/f2xauSMlhjKMiUSCqtlr
-IP+okO4bOoRvQDCr8NhPDtjZewYgv1RtDXuFhsJSug+m/EPBnQ3WXIsVvHveQpHX
-aE1GYj7uH93yBZpG2XQ6k9k8jexGSjIYY7hjKqUkPFkghfqvBzLmFOgTJ0hnEzGW
-ta2rUrDuYnHgof/XsB9VOdoCQLiRTEIh3xrLeH5pjYgm4gn8YBRiUhI5HMcyxDPw
-9s4Yxh9UjD0eHNxIbHpKG8u2XY/zjvjD9MLDKlIk/hr4xGJZnZxPJtJfPU6lCTIE
-MQ754uReD8ss/dBnLS/+B7NgI4EHIw==
-=zhmQ
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl3howgACgkQ8bdnhZyy
+68fesQgAroMNFybP4N5cpl8w0G9bOTdXgvSXfl9strn5kcpxDeuenPpiPNG0nEq9
+aK4Y875kOpOwT+bhJo0yjlqK/16O/+e4an7h655HeSpm9gTkC3aIEYE9QDI//4BI
+E4bYzs1fkAHZA0Kfnqvfrg2dX+tUhXlTlK/r/1q+y92WIibyzmqXNO4QG9Sa8jFJ
+2MFY/TQP0yoR+cr2kp7VU7+ZyOnSAYKmiOwpv+F4uVT7/Tf9siegbqIoi9/IEczx
++3oWHFS52LD2ye/HGIHPX0v5SsIZXQTfuYbu8QM5KRK2Z82EVa7uWNOosSeCW4jW
+QME/IXmlgY2Mpt0DjvkcYIAnEyFNdg==
+=iNNi
 -----END PGP SIGNATURE-----
 
---QYeo04wM0GnWdnLp05Vx7eR8OQMedvtGT--
+--3PbBEGopZewNbGJIaea9NINcDENH0XMJy--
 
 
---===============6263725251456462978==
+--===============5258735636340411393==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -227,5 +248,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============6263725251456462978==--
+--===============5258735636340411393==--
 

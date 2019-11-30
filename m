@@ -2,88 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B10310DF6D
-	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 22:42:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F21C10DFA5
+	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 23:44:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5WzYjBZhVuW6NFpfnTSx13g5ACCqBydwkqWvtrUSwHU=; b=YKreOS1wT0FB7z
-	vUSy0970j4v77E1w76VZh/uqvtwpUnD2KsNQSJq9Ghh7r0PUJk/WnPBtkpgc5cK43EafCd58pHisD
-	028x7u17sYKa0mbiPn4MBQYNtT+zH6V373kPqfXnqZkyisSeHydogQ6Q5qiScjfL00L4XE7dd0D2q
-	j1RecaoIoidBd0Ib5k8zUZ6WSzo6cA5Bbp26GHhbLoWsH+hP9ChtsoU2taCgi5EPQ3i4TIJbuoloV
-	FaxJaQSqoWEuaJ5rCK4qB7ao50WhX18baXpODKctmpBxxrpW5tdfpYPRmNx31WC5KnWbjHoY4BaoF
-	FVnO5xp7/CeFR4ao0KjA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6xcycIlnTzx3GSmWOygfbw2T5HycD4A2hWF9uFrXWQE=; b=JcBoks4jvKdZeP
+	vfJ/xO1pZek4fwY2LoXcB2Oby409U5I2euwTVHZH1km76a5t5qUXur6+f9bPzXuv5WJN7ozFQ3pFD
+	XHQfGuDA3tA5WQF0fTSFf+wyl9r7IOMRu9Sjf3U/YHT/VTywQ3vsKDIEt1gCa3eVAn9ex33PGlZ6t
+	WI8J75oLJQ/Ul+/KSB+C3WmJxi/MymkOeQ7USkDLAopPhGipl2B3x0KFeOihs4mvCxWca2yGfbIDx
+	i/5qTFmpkO9APtoFXa0udXWIxiN8Wc4aYSRCrhewuJRX9qgstNXCtpLHv6gUMK+ijAzVbPfIqb84V
+	1MTr5NQ/ZveWCp7ArUww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibAVP-00089X-MG; Sat, 30 Nov 2019 21:42:19 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1ibBT9-0001ic-Bf; Sat, 30 Nov 2019 22:44:03 +0000
+Received: from mail.tintel.eu ([2001:41d0:8:1644:0:ff:fe5c:6a54])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibAVF-00089E-Hw
- for openwrt-devel@lists.openwrt.org; Sat, 30 Nov 2019 21:42:10 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id z21so3328472pjq.13
- for <openwrt-devel@lists.openwrt.org>; Sat, 30 Nov 2019 13:42:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4pGuqfhKhtInbkjnqm7VkaYwfOpCvyc/M+W6Z4HdBm8=;
- b=mdNg4imSlP6+gPMQxD/kcC5Mt7QWgzXtwxnqOEK/Xam0l1KetPpraVc93jR2CJIQUs
- 11PNCgIUogHcQt2gPCNM+PumtpFmCVWqkDz8df58YZj1mqecJEiklCBav3QbZDm01imB
- NhuGrsktYqLEszNKxS6zQg4q/wWGHGbh/I9GMKZrK9w9mSas5Ehf1ncpo4FZm1QyUGZw
- +SIys7SL9u3+2PmQerIt0r/Qzk+f9HjN2oDUWPQYUgtB3h1pC8Das1XXYacd1gXsK/rO
- N3spTtikfrg5xqIO72PBwldN8Frz/hQHrJor8Y9TNkZ6I8gSWur0OlMBWu0bEUIO9gyI
- Ex2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4pGuqfhKhtInbkjnqm7VkaYwfOpCvyc/M+W6Z4HdBm8=;
- b=iwpfSFmGUn/6BxAHGcXMREjAgVoptFDoE3+eJ8+iXRHXz7DhMf9HrBHlJnaTcLa2Nf
- GedL9PvJv5QxuUWGzlKGupwASoZfUbmT13bORvj2r//SyRf5hnOFFHZBhodxA6kLkMuT
- FhxrOSRsEdHlLZDf/yQLrLfZbVc+ZawWlRTydI6TUcm8d7tTpIZ7VP+Gm/el5AbYvhGi
- myYVpMJdssN5iuMni3yc7kcEXjqvy0NS8+bKAS1QjF5xAr0xUJYF4x+zYBoTLUvKITXE
- MNUUmh/xj/uBtnu7MksKx+Za0/CRjQG7NW6qrdV0vzXVdsFDIAkDYz2GQf/YnvTJN5ED
- 3+Cw==
-X-Gm-Message-State: APjAAAWQEAgm9d4XEKYHXxZyeCproXwk37hW92e8DPygD4uBjlYKD9QB
- B7KVA69/2vZvND+SLPIG0mxQBgaVohs=
-X-Google-Smtp-Source: APXvYqwHmsvS3uN0oRSbZ2Dae2vgv7DGW7uQMFgFy1SO12NqNdzz11YhsU6mSUIo1o7gdI6rsvN7Vw==
-X-Received: by 2002:a17:90b:3cc:: with SMTP id
- go12mr3558831pjb.89.1575150126005; 
- Sat, 30 Nov 2019 13:42:06 -0800 (PST)
-Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id h128sm4307953pfe.172.2019.11.30.13.42.04
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 30 Nov 2019 13:42:04 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat, 30 Nov 2019 13:42:03 -0800
-Message-Id: <20191130214203.15623-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.23.0
+ id 1ibBSz-0001i1-Pm
+ for openwrt-devel@lists.openwrt.org; Sat, 30 Nov 2019 22:43:56 +0000
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id 228F7423414B;
+ Sat, 30 Nov 2019 23:43:48 +0100 (CET)
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10032)
+ with ESMTP id X_zVfGP9x0N1; Sat, 30 Nov 2019 23:43:47 +0100 (CET)
+Received: from localhost (localhost [IPv6:::1])
+ by mail.tintel.eu (Postfix) with ESMTP id 39625423417C;
+ Sat, 30 Nov 2019 23:43:47 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu 39625423417C
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
+ s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1575153827;
+ bh=AMGpbANJFxtNYP11w3ZeHK9DXDpPfTXbmO4VF5hOlrE=;
+ h=To:From:Message-ID:Date:MIME-Version;
+ b=YfY63ZX896gWtRV22bsLPImZRmzGRZfcTqGgPzWSXNxSG6xjjVnSEXHDBAN0iO75E
+ rs39+bbxNPu47he+qViFl+5Tykv8BZOSLvL5U1rjN5pXDMkHQfybV0Y8u9YrQzqYYV
+ yNbySaaGqNjJIIsz0/F3EB+ycY9BFCj44DpDHx68=
+X-Virus-Scanned: amavisd-new at mail.tintel.eu
+Received: from mail.tintel.eu ([IPv6:::1])
+ by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10026)
+ with ESMTP id 1T5sZEP7kk3I; Sat, 30 Nov 2019 23:43:47 +0100 (CET)
+Received: from [IPv6:2001:67c:21bc:24::adb] (taz.sof.bg.adlevio.net
+ [IPv6:2001:67c:21bc:24::adb]) (Authenticated sender: stijn@tintel.eu)
+ by mail.tintel.eu (Postfix) with ESMTPSA id 53DAE423414B;
+ Sat, 30 Nov 2019 23:43:46 +0100 (CET)
+To: Tom Psyborg <pozega.tomislav@gmail.com>
+References: <d530eff4-2b67-0bfe-78d0-510185e416b9@hauke-m.de>
+ <7d4516c2-c9d2-102a-cb33-796497baa611@linux-ipv6.be>
+ <CAKR_QV+KnepnZURdc_tHA06rdTYKJr-JYmsc4d_YFv=qzD_A2g@mail.gmail.com>
+From: Stijn Tintel <stijn@linux-ipv6.be>
+Message-ID: <fba68e8d-ae30-a88e-9973-3bbdedb40e86@linux-ipv6.be>
+Date: Sun, 1 Dec 2019 00:43:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
+In-Reply-To: <CAKR_QV+KnepnZURdc_tHA06rdTYKJr-JYmsc4d_YFv=qzD_A2g@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_134209_594015_7DB43993 
-X-CRM114-Status: UNSURE (   9.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191130_144354_119182_485EE348 
+X-CRM114-Status: GOOD (  11.39  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] uci: Fix extra semicolons warnings
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 status
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,61 +85,42 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Found with clang's -Wextra-semi-stmt
+On 30/11/2019 22:44, Tom Psyborg wrote:
+> On 26/11/2019, Stijn Tintel <stijn@linux-ipv6.be> wrote:
+>> On 26/11/2019 00:34, Hauke Mehrtens wrote:
+>>> It looks like there is a throughput problem with ath10k-ct on QCA9984,
+>>> https://bugs.openwrt.org/index.php?do=details&task_id=2593
+>>> there are multiple reports in the Forum.
+>>>
+>>> For me QCA9880 on a BTHH5A with ath10k-ct on 5GHz works in openwrt 19.07
+>>> The AP can do 180 MBit/s TX and only 40 Mbit/s RX over about 8m with a
+>>> wall in between with sae-mixed to a Intel iwl8265.
+>>> It is also very close to 40MBit/s not much changing the lowest I saw in
+>>> about 30 outputs from iperf3 was 38.8 MBit/s and them highest 41.2 MBit/s
+>> I am seeing the same low RX with a qca988x AP and an 8265 client. This
+>> did not happen earlier this year. I first noticed this on September 5th,
+>> but I don't have known good commit hash. The problem goes away when I
+>> disable 802.11w. Without 802.11w, I get 300-400Mbps TX and RX.
+> Hi
+>
+> Do you ever plan to merge your lbe-5ac-gen2 branch into main tree?
+> Would be nice if the device would get 19.07 release binaries. Code
+> testing really sucks if I need to build from source for almost all of
+> my devices...
 
-Fixes:
+I never got around to test and write installation notes for the commit
+message. I've just rebased that branch on master, and am doing that now,
+but it seems the ethernet port is no longer functioning now. Link is up
+but no traffic received. I'll try to get that sorted but can't promise
+anything.
 
-error: empty expression statement has no effect; remove unnecessary ';' to
-silence this warning [-Werror,-Wextra-semi-stmt]
-                UCI_TRAP_SAVE(ctx, error);
-                                         ^
-error: empty expression statement has no effect; remove unnecessary ';' to
-silence this warning [-Werror,-Wextra-semi-stmt]
-        UCI_TRAP_SAVE(ctx, ignore);
-
-error: empty expression statement has no effect; remove unnecessary ';' to
-silence this warning [-Werror,-Wextra-semi-stmt]
-        };
-
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- parse.c        | 2 +-
- uci_internal.h | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/parse.c b/parse.c
-index 499c32e..40645c5 100644
---- a/parse.c
-+++ b/parse.c
-@@ -83,7 +83,7 @@ static uint32_t hash_murmur2(uint32_t h, const void * key, int len)
- 		/* fall through */
- 	case 1: h ^= data[0];
- 	        h *= m;
--	};
-+	}
- 
- 	h ^= h >> 13;
- 	h *= m;
-diff --git a/uci_internal.h b/uci_internal.h
-index 61f2da2..f00b394 100644
---- a/uci_internal.h
-+++ b/uci_internal.h
-@@ -215,7 +215,7 @@ struct uci_backend _var = {		\
- 		ctx->err = __val;	\
- 		memcpy(ctx->trap, __old_trap, sizeof(ctx->trap)); \
- 		goto handler;		\
--	}
-+	} while(0)
- #define UCI_TRAP_RESTORE(ctx)		\
- 	memcpy(ctx->trap, __old_trap, sizeof(ctx->trap)); \
- } while(0)
--- 
-2.23.0
+Stijn
 
 
 _______________________________________________

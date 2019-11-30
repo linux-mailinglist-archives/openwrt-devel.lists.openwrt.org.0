@@ -2,68 +2,67 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E98410DF49
-	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 21:44:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32D8510DF56
+	for <lists+openwrt-devel@lfdr.de>; Sat, 30 Nov 2019 22:12:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=epISMfjm84Xo3uH0meD5KhlHsrtfI9FK8hduSrijLTQ=; b=fCth0kSw9oTzkG
-	1DgX7FS0OJiX3b1nPMnPslDmkaE77tEb7l+UEXQBmPrJhX87ardmxhEZkJ3jZ5Kq3d84cX+fvYxSL
-	qpivk/xW2ZcLnh8cw0DeZ+ssov4rJxwf3xbYh5qA22DBRE/BcReiVx147bhrVO1sraUnriN3fl0Uc
-	ZIlL7mVZhMteXc4dPEpz8KSWVECr6L0r0M7f8NsybHwG4GjXTGbFlYi2rnvKg5VeYvNnbpRUK22AI
-	cKyf9crUz79YReuW3rBbyGTxxa5C1r3PO4NSscf2r7VpXf6lONa/ktpMf/ELn6WNo/wGky20GkmS6
-	v1FTkDDt+iSh6TDwpK9Q==;
+	List-Owner; bh=H3LCC3yHg34sHSAiAo1lQeGOu9VrkM5YqiQGF+9U+F4=; b=YPGtf3lX1VGGjl
+	pVfA9fmiFC2hlx5V4kIVBmNNOgEovbL6gLWBykPPLM26tmGwzi2S2bYXuqP5n8QFTKXCd4d4DkyTT
+	x1TMcMV6h5x6yp2ooXaF7FXih2bByclxxHtb8+kx3q7Y/YjP5FuLojB9TlYsz3bvTX5NVTmlkhN4r
+	9ElAWzxVNaLLjz2zx2+3U9NKXZYlzd+w4EAjNZmquKMyU1mwwRyoHvgIifnvpEs6KspLYjTFo4S0R
+	HhZq91iKhnihXiA4rVkLUwQISGyamAXitNqT4qLZjiai7bt1VratSc7SVUCZtWZ/YA9wINz1TQMob
+	LyA9YurCfiUqcVBSGGbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ib9bX-0007QI-IW; Sat, 30 Nov 2019 20:44:35 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1ibA24-0007lj-RH; Sat, 30 Nov 2019 21:12:00 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ib9bP-0007Q0-CU
- for openwrt-devel@lists.openwrt.org; Sat, 30 Nov 2019 20:44:28 +0000
-Received: by mail-ot1-x342.google.com with SMTP id g18so499578otj.13
- for <openwrt-devel@lists.openwrt.org>; Sat, 30 Nov 2019 12:44:26 -0800 (PST)
+ id 1ibA1v-0007lQ-QK
+ for openwrt-devel@lists.openwrt.org; Sat, 30 Nov 2019 21:11:53 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r27so13140761otc.8
+ for <openwrt-devel@lists.openwrt.org>; Sat, 30 Nov 2019 13:11:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to
- :cc; bh=jOeaEMfxhanguewqIFEiZNssp1zJHw+KewDL3GXLRsk=;
- b=NMGwkvbKYVJVIQEYsKqtUx5PLMCSVOGf+MT7XTxrhGwtGRajA8LXaanXvyuUAnncPj
- wP51CCkfm/5EbgxaZdERksuqZpTYm/byPNi5dGe1ZLGS/oUHNC55dI5+2uw8HFFvztHB
- whBVY+3AafVeAIcttziwxtODhHgBrv3/tft9bjR3OFWmLvSFC1uoiF7QwVCp1G26JVkI
- HoVxGscFYpeufK7erB4SBbO4Tw1KofNWyxIgbZAhrojckLC2rn8qpcw0tMkb6bmXEem/
- +ruQTb0YnYtAKeqYHt06GLHSV9hl6uqVxADzo21NYB+zHrrZuPzH8htWgVisMEa4T3ED
- Q/uw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=OZb0KV9CME1jEJKdLmC46qs3/SqyGi0VWOaU48xLRrM=;
+ b=XswBgDjFTsFU64RGR3bx90Wfi5Xs7PcxIZ6gDsORdjR11FpD78QqBsYtnfoeTn4qZx
+ emq0pd9SsnKEYf2gilkOB6sfrYWJ+Qo245NDfMX6B1iVIa0uOga3sFIcoXlpnPnEsMPJ
+ sfSUvupVnOnV4WtRuz5iwBipig+dLX1B6s/mWQB/1gOeKGrsRPwedIRzFefkPYXpLxmn
+ IsI9FXFpGlv/ap4egkY3tlmx5MCUbP+NbDqLNy3CSX1rYiYv0ckDwUX3RiZxabxDtqaR
+ 0NTMaKVR59tEgpB6eBCDPp7QXOw3yMVsMpLlaIGs6kxqC6e9zAdRzQYCLaSzdANm7CyQ
+ heSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:in-reply-to:references:from:date
- :message-id:subject:to:cc;
- bh=jOeaEMfxhanguewqIFEiZNssp1zJHw+KewDL3GXLRsk=;
- b=eGaq3tKkrNYEa7GoGNkfo91OfuIjoUJmrp9/Ystmbvuex6Mkdf+fmWx1DReyS18MAY
- 4Hv/8MRG9TJZ3PVPYUa8fJ71OuP1CEbHagZZSg2ClCd4MpFgZDCyjLWmgzyt8+D/VWss
- HF53ZeQyIyaQ+ZlOmfjaie9s7GGg9EZFEC6PlYDilCw+hLaykadc2mLFuJsh6tnC9cZY
- DBqcFak6P4x0/2fJlU0kU10pDEq57LWdTYwEcUlueCqYQ+iFzAcAVJzFG2SrLaW+U3fq
- HL2GYu9nZMKeEyARepQH9WgskkZsClQGv9RlW6g2t+D6/EHAlb0I1TP5sP5rct+FGaON
- 1t+g==
-X-Gm-Message-State: APjAAAVDc1F1i1Thh37Vntvh3zTWcwGJK41+f+Iuv34+1pbRhzh4UXgK
- meH7EduNp2kbzKXgnkh0yr+f5lM7IwYqewfFDvPp7g==
-X-Google-Smtp-Source: APXvYqyjnT5NAoYKnWVwKz7N1wsJgxPz/ZJCWBQCwYTGWSlwtRV5Ep7yD0srhc54+fHQnVBmpHBYZTRwPdJm0+fpyCQ=
-X-Received: by 2002:a05:6830:22ee:: with SMTP id
- t14mr1995514otc.236.1575146665855; 
- Sat, 30 Nov 2019 12:44:25 -0800 (PST)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=OZb0KV9CME1jEJKdLmC46qs3/SqyGi0VWOaU48xLRrM=;
+ b=PunPiSzNwxU1TocjCAFPhKyHjjDZsDsUFHHsCXrOd7G7J6GYxcAfpbB6l03ACA3kPo
+ pLHvzsNg/mz6GfMKque4wjK2o8TF/alihFnW34cZ07/mbXOdajZsyQw3kNde8pBpJphg
+ vlQUEzMaFaTS+g6uhjR5g330ORBj2oIsVYvYpfDUEP9Bl65fmd3xbKRQjcGtYvI3JH+G
+ cFafLzoEQJWcIZoyzx3Bm+0TaBGPZd/ZDH+pxOx/x0gCj9sLbgHQZCKHK6sx9Hwu/1j8
+ Af93hzdU45s5FbTHA8jmlkJg3woAccwSTgmA6MoPiehipuQwXWT1qnCaHV/Bo9VZ3jv6
+ qsog==
+X-Gm-Message-State: APjAAAXqpfVxPNWZsyZ0GiuTwoWFP9A9dIy4ZAtALdjKb7pBtEYryVuF
+ uL8PBZlqjyw9dFD6I/ouMNxN3lpCKsQTt6HK5wlNxETD
+X-Google-Smtp-Source: APXvYqyHbnBsfNlbC1EXYY8iGNBP1Z3f4y8zoOxIMX6y7snG3ZcZU5oGCgjnodG0eWPSJ0yoGHTWoX5amKI+/iA2LM4=
+X-Received: by 2002:a05:6830:1da:: with SMTP id
+ r26mr16180106ota.186.1575148308945; 
+ Sat, 30 Nov 2019 13:11:48 -0800 (PST)
 MIME-Version: 1.0
-Received: by 2002:a9d:384:0:0:0:0:0 with HTTP;
- Sat, 30 Nov 2019 12:44:25 -0800 (PST)
-In-Reply-To: <7d4516c2-c9d2-102a-cb33-796497baa611@linux-ipv6.be>
-References: <d530eff4-2b67-0bfe-78d0-510185e416b9@hauke-m.de>
- <7d4516c2-c9d2-102a-cb33-796497baa611@linux-ipv6.be>
-From: Tom Psyborg <pozega.tomislav@gmail.com>
-Date: Sat, 30 Nov 2019 21:44:25 +0100
-Message-ID: <CAKR_QV+KnepnZURdc_tHA06rdTYKJr-JYmsc4d_YFv=qzD_A2g@mail.gmail.com>
-To: Stijn Tintel <stijn@linux-ipv6.be>
+References: <20191130140440.GG61235@meh.true.cz>
+ <20191130154148.GH61235@meh.true.cz>
+In-Reply-To: <20191130154148.GH61235@meh.true.cz>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Sat, 30 Nov 2019 13:11:37 -0800
+Message-ID: <CAKxU2N-p72=iDd08NLC+2u4T3A=etAWnAGPwFsQZAF5Fhtaypg@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_124427_452214_564A72E1 
-X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-CacheID: sfid-20191130_131151_876750_1E884485 
+X-CRM114-Status: UNSURE (   8.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,11 +70,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pozega.tomislav[at]gmail.com)
+ provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,7 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 status
+Subject: Re: [OpenWrt-Devel] default compiler hardening options for all C
+ projects [Was: Re: [PATCH] uci: Fix Wformat-nonliteral warning]
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,37 +96,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 26/11/2019, Stijn Tintel <stijn@linux-ipv6.be> wrote:
-> On 26/11/2019 00:34, Hauke Mehrtens wrote:
->> It looks like there is a throughput problem with ath10k-ct on QCA9984,
->> https://bugs.openwrt.org/index.php?do=details&task_id=2593
->> there are multiple reports in the Forum.
->>
->> For me QCA9880 on a BTHH5A with ath10k-ct on 5GHz works in openwrt 19.07
->> The AP can do 180 MBit/s TX and only 40 Mbit/s RX over about 8m with a
->> wall in between with sae-mixed to a Intel iwl8265.
->> It is also very close to 40MBit/s not much changing the lowest I saw in
->> about 30 outputs from iperf3 was 38.8 MBit/s and them highest 41.2 MBit/s
->
-> I am seeing the same low RX with a qca988x AP and an 8265 client. This
-> did not happen earlier this year. I first noticed this on September 5th,
-> but I don't have known good commit hash. The problem goes away when I
-> disable 802.11w. Without 802.11w, I get 300-400Mbps TX and RX.
-
-Hi
-
-Do you ever plan to merge your lbe-5ac-gen2 branch into main tree?
-Would be nice if the device would get 19.07 release binaries. Code
-testing really sucks if I need to build from source for almost all of
-my devices...
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gU2F0LCBOb3YgMzAsIDIwMTkgYXQgNzo0MSBBTSBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVl
+LmN6PiB3cm90ZToKPgo+IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+IFsyMDE5LTExLTMw
+IDE1OjA0OjQwXToKPgo+ID4gV291bGRuJ3QgaXQgbWFrZSBzZW5zZSB0byBlbmFibGUgZm9sbG93
+aW5nIGhhcmRlbmluZyBmbGFncyAobWF5YmUgY29uc2lkZXIKPiA+IG90aGVycyBhcyB3ZWxsPyk6
+Cj4gPgo+ID4gICAtV2Vycm9yPWZvcm1hdC1zZWN1cml0eQo+ID4gICAtV2Vycm9yPWZvcm1hdC1u
+b25saXRlcmFsCj4KPiBGWUksIGZvbGxvd2luZyB1Y2kgcGF0Y2g6Cj4KPiAgZGlmZiAtLWdpdCBh
+L0NNYWtlTGlzdHMudHh0IGIvQ01ha2VMaXN0cy50eHQKPiAgaW5kZXggOTJhZGY0YTQ3MTIxLi41
+NmExNGUyYjJiNDAgMTAwNjQ0Cj4gIC0tLSBhL0NNYWtlTGlzdHMudHh0Cj4gICsrKyBiL0NNYWtl
+TGlzdHMudHh0Cj4gIEBAIC00LDcgKzQsNyBAQCBQUk9KRUNUKHVjaSBDKQo+Cj4gICBTRVQoQ01B
+S0VfU0hBUkVEX0xJQlJBUllfTElOS19DX0ZMQUdTICIiKQo+ICAgQUREX0RFRklOSVRJT05TKC1P
+cyAtV2FsbCAtV2Vycm9yIC1XZXh0cmEgLS1zdGQ9Z251OTkgLWczIC1JLgo+ICAtRFVDSV9QUkVG
+SVg9IiR7Q01BS0VfSU5TVEFMTF9QUkVGSVh9IikKPiAgLUFERF9ERUZJTklUSU9OUygtV25vLXVu
+dXNlZC1wYXJhbWV0ZXIpCj4gICtBRERfREVGSU5JVElPTlMoLVduby11bnVzZWQtcGFyYW1ldGVy
+IC1XZXJyb3I9Zm9ybWF0LW5vbmxpdGVyYWwgLVdlcnJvcj1mb3JtYXQtc2VjdXJpdHkpCj4KPiB5
+aWVsZHMgZm9sbG93aW5nIGVycm9yIHdpdGggY2xhbmctMTAgb24gQ0lbMV06Cj4KPiAgY2xpLmM6
+MTk2OjE5OiBlcnJvcjogZm9ybWF0IHN0cmluZyBpcyBub3QgYSBzdHJpbmcgbGl0ZXJhbCBbLVdl
+cnJvciwtV2Zvcm1hdC1ub25saXRlcmFsXQo+ICAgICAgICAgIHZmcHJpbnRmKHN0ZGVyciwgZm10
+LCBhcCk7CkFjdHVhbGx5IGZvciB0aGF0IHNwZWNpZmljIG9uZSBJIHRoaW5rIF9fYXR0cmlidXRl
+X18oKGZvcm1hdChwcmludGYsCjEsIDIpKSkgZm9yIHRoZSBmdW5jdGlvbiB3aWxsIGZpeCBpdC4K
+Pgo+IDEuIGh0dHBzOi8vZ2l0bGFiLmNvbS95bmV6ei9vcGVud3J0LXVjaS8tL2pvYnMvMzY1NjE3
+MjkzCj4KPiAtLSB5bmV6egoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5v
+cGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Bl
+bndydC1kZXZlbAo=

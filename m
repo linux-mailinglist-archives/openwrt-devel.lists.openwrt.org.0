@@ -2,80 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F41C510F35D
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 00:26:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 552CA10F384
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 00:39:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8TyxeGaxUbFTBbB7CkKrJFAEL1JnHWUaA2UYNeJOhKI=; b=WqBW8qEqBv4zL1
-	B/FM06L0/yx6DSg7zrE7oSh/CE+AGeydBGbBrZw23l2tOhpQea8q5ut9UpwE7BifTMVuSqCr09eAf
-	WSZMn+lyZHihuBV5ThMmLl65MPAd0HVrChW74aditdr4Bz6NhKWX4AQEFXVWipHB7sbVBdgl6F8gt
-	JdTSf6XRULN34+kot1LTW/EAImjTPyWj+N5GWcqtVv7v2RLW16n2igOOSdNr4E3tRIc8ZbkivziHf
-	+rqLboGrS5lRS14bAqhLFxrrUG2QFjPfdFW3nPXPfNi3OsMDuEEPI40nG7nvQnAqiMkNo2RS9+n4s
-	DSddmNqYrJR8b8LxvDsw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KD9zHT/S4PZLhT/KM4kNVvadpysnuv3UfbxQ6BshJsk=; b=H8pAuyj9iVO1psoJlz/GIjH5v
+	qcFJQWTV3FweBPbW/BU97rRgdbV00OKaUzmlJfC5JN/oG7ELkJq3katCR5I6j/e4eDcvJxpDW9kSw
+	sanpmW6O+DJCxGAiBtlmjFkz8TID59lwV4cQXEhO9KOm5KQF8q51/86+ODoOP9v6jxleC92ZUlU3J
+	Uijogm2CW+rWG9j9eHdj0L1uyelzQONDsJKRULeq1wxcpk/Df3UTB1F6GY9RxpblyXy8iDjpmxGg1
+	sXbrpdHcjD7D8js0t3XdRJwgBf3cHPQlSkmvM9ll8s4pPDfAZ6XgnD9FjRiB8FbmtzfsCpQp05Qef
+	leUZxBhvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibv5b-0001LI-F0; Mon, 02 Dec 2019 23:26:47 +0000
-Received: from mail.tintel.eu ([54.36.12.13])
+	id 1ibvI5-0006Uo-Ny; Mon, 02 Dec 2019 23:39:41 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibv5U-0001Kj-JM
- for openwrt-devel@lists.openwrt.org; Mon, 02 Dec 2019 23:26:43 +0000
-Received: from localhost (localhost [IPv6:::1])
- by mail.tintel.eu (Postfix) with ESMTP id 474E0449472A;
- Tue,  3 Dec 2019 00:26:33 +0100 (CET)
-Received: from mail.tintel.eu ([IPv6:::1])
- by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10032)
- with ESMTP id v1UQcMtjRILK; Tue,  3 Dec 2019 00:26:32 +0100 (CET)
-Received: from localhost (localhost [IPv6:::1])
- by mail.tintel.eu (Postfix) with ESMTP id BCD394665172;
- Tue,  3 Dec 2019 00:26:31 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu BCD394665172
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
- s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1575329191;
- bh=U6FFOvbc96IPegROUCCZMcifvB74MygiG0u3IBxIZ1Q=;
- h=From:To:Date:Message-Id:MIME-Version;
- b=CsXzxsugFlZbgbA8msYZiq8HWYWdJOcYaq0reFzzu1v1767oGdzunvKHvBslddbJk
- l6MXhV1hCVQztqntQeKeajXdIzQHYMZBMNawAXi2aRADxKY81lhmdJBq/Uyxu2/rOu
- jTp1mTguJ/RKnD1LzZASzHu22TKo0e+KgwX/vqTc=
-X-Virus-Scanned: amavisd-new at mail.tintel.eu
-Received: from mail.tintel.eu ([IPv6:::1])
- by localhost (mail.tintel.eu [IPv6:::1]) (amavisd-new, port 10026)
- with ESMTP id lY-4u3iGQyHY; Tue,  3 Dec 2019 00:26:31 +0100 (CET)
-Received: from taz.sof.bg.adlevio.net (taz.sof.bg.adlevio.net
- [IPv6:2001:67c:21bc:24::adb])
- by mail.tintel.eu (Postfix) with SMTP id AE9ED449472A;
- Tue,  3 Dec 2019 00:26:30 +0100 (CET)
-Received: (nullmailer pid 952431 invoked by uid 1000);
- Mon, 02 Dec 2019 23:26:29 -0000
-From: Stijn Tintel <stijn@linux-ipv6.be>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue,  3 Dec 2019 01:26:29 +0200
-Message-Id: <20191202232629.952385-1-stijn@linux-ipv6.be>
-X-Mailer: git-send-email 2.23.0
+ id 1ibvHy-0006TZ-Qr
+ for openwrt-devel@lists.openwrt.org; Mon, 02 Dec 2019 23:39:36 +0000
+Received: from desktop ([188.193.231.72]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1Mv3I0-1hl3cI3cHY-00qxSu; Tue, 03 Dec 2019 00:39:22 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Stijn Tintel'" <stijn@linux-ipv6.be>, <openwrt-devel@lists.openwrt.org>
+References: <20191202232629.952385-1-stijn@linux-ipv6.be>
+In-Reply-To: <20191202232629.952385-1-stijn@linux-ipv6.be>
+Date: Tue, 3 Dec 2019 00:39:22 +0100
+Message-ID: <00f701d5a969$b9aa8cc0$2cffa640$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQGTXJoeUjZX+dYvmEdnKnqdj0FkC6gsGDwg
+Content-Language: de
 MIME-Version: 1.0
-X-Rspamd-Queue-Id: AE9ED449472A
-X-Spamd-Result: default: False [0.00 / 15.00]; TAGGED_RCPT(0.00)[];
- ASN(0.00)[asn:200533, ipnet:2001:67c:21bc::/48, country:BG];
- IP_WHITELIST(0.00)[2001:67c:21bc:24::adb]
-X-Rspamd-Server: musltoo
+X-Provags-ID: V03:K1:M3y1NaLV2f6KsMrRt68pl8V9sAOifKCFG4PDqLC4MYgbFNrU8eI
+ UqjY3h9AkjImNbftV0bDEnW1DtBg9pRm6rIOBEDjaWxysXEuqzgJJx8I1jPh9lG1fmL7BVj
+ BnOmwVf3qaZLJovfjbK/3loPNqmRkoEhiakcnkliY7rVrR1wz2u2eAo32gDbEAbgYSvLVJF
+ ORHyhXleqONVtrqa49mQA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:KQhQovtlj9I=:4YQpAAktzwqMzs+jf4hgZG
+ XahHjs9VqSnaNc9EGWi/1OlFaX9lJU65tzWk10g3TmQdyPqWAeFj6oMdjtZRpqLgYDEztxnIr
+ rWfOt6Dugj2Ym3ZV156L4emN9HRlKeoTYASIH7J0fSHRytSCixbmRe+4h9zuXfG+gXx7oy8yU
+ rKZ8EACNz8ezeQpLhnFklkRAJRtUWHwekJ5tIlKT062zwT5mOaN0/tWos7rEsp4WriB0P4l2Y
+ KpE/UPhOolahU7Za/sK9VQy0atymjgHMxCqnk2D2fbPhQtIbgdiZUEqATIr/tV7Up6fNE7wpx
+ lsWSKWmLJ+/eslLaTM3k6PVbHg0fYtO4t6ytZS2tZNobUPnQ24GGC1VSpm7Pg0l0ypd5KqiqA
+ 8c8l48DLHMbt6Oc1C9EB6Idkqu26wYrCKmEc5K12RzgNx+00jsqAK3YGQJQlecl4yLrRl+/JA
+ 6RS8Ds4V9z3lJl4YMXBPap/meM7Czj/QtNA1H84KO2/rD9NZ+9Z0UujE6y9NVOgvsTGjTRXQ9
+ FdNhIu++O2Yta5jYRsR2rTEshi+U726bPqL3MHq+un5CO3w07dTYY/aTDc1Xd3eSC1NhJ82lT
+ ais696fDddUyaXElgDV10OG6AUEghJ0yF4cH38vf8LNip0b9n/4IAZz/1ohiORhuZvTwQK5nG
+ yhFBo6B00eV7NpoiFLdDA7rCux0gsy3liT0bQKuItOHOEdDKphgi7lI9SFrkFUS/UULQLXO69
+ OHxDhGIlOSYornwVWGTWlGEtz5rdWbIAuThR6pULfixBmustsO3MmFmVKlApRn8sgGv0QLy7P
+ 07t+zCsAkIjez6yyRtf8qtWjLoWarjVGXfdBr6WPhbXPhGxwFO/YZ/x+Uya8CZCIXgQdtt6Z0
+ pKeVMfZ+LAJP2DzYTAV/ICXctA2TxSCvtFqw28wj4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_152641_082751_C9DF8D6C 
-X-CRM114-Status: GOOD (  10.98  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191202_153935_165659_37A46E0B 
+X-CRM114-Status: UNSURE (   6.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: [OpenWrt-Devel] [PATCH] ath79: add support for Ubiquiti LiteBeam AC
- Gen2
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for Ubiquiti
+ LiteBeam AC Gen2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,150 +82,96 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: pozega.tomislav@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2543474416738506394=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hardware:
-* SoC: Atheros AR9342-BL1A
-* RAM: 64MB DDR2 (Winbond W9751G6KB-25)
-* Flash: 16MB SPI NOR (Macronix MX25L12835FZ2I-10G)
-* Ethernet: 1x 10/100/1000 Mbps (Atheros AR8035-A) with 24V PoE support
-* Wifi 2.4GHz: Atheros AR9340 v2
-* WiFi 5GHz: Ubiquiti U-AME-G1-BR4A (rebranded QCA988X v2)
-* LEDs: 1x Power, 1x Ethernet
-* Buttons: 1x Reset
-* UART: 1x TTL 115200n8, 3.3V RX TX GND, 3.3V pin closest to RJ45 port
+This is a multipart message in MIME format.
 
-The LEDs do not seem to be connected to any GPIO, so there is currently
-no way to control them.
+--===============2543474416738506394==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	boundary="=-=/YdUN05nZC8cB4=-=";
+	micalg=pgp-sha256
 
-Installation via U-Boot, TFTP and serial console:
-* Configure your TFTP server with IP 192.168.1.254
-* Connect serial console and power up the device
-* Hit any key to stop autoboot
-* tftpboot 0x81000000 openwrt-ath79-generic-ubnt_litebeam-ac-gen2-initramfs-kernel.bin
-* bootm 0x81000000
-* copy openwrt-ath79-generic-ubnt_litebeam-ac-gen2-squashfs-sysupgrade.bin
-  to /tmp
-* sysupgrade /tmp/openwrt-ath79-generic-ubnt_litebeam-ac-gen2-squashfs-sysupgrade.bin
+This is a multipart message in MIME format.
 
-Signed-off-by: Stijn Tintel <stijn@linux-ipv6.be>
----
+--=-=/YdUN05nZC8cB4=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-Notes:
-    Instructions can be found to install OpenWrt via AirOS at [0]. Unfortunately
-    they require an AirOS image, which can only be downloaded by accepting
-    the EULA. As I do not want to accept this EULA, I have not been able to
-    test these instructions and did not include them in the commit message.
-    
-    Also available in my staging tree at [1]
-    
-    [0] https://github.com/openwrt/openwrt/pull/689#issuecomment-493658317
-    [1] https://git.openwrt.org/?p=openwrt/staging/stintel.git;a=shortlog;h=refs/heads/lbe-5ac-gen2
+Hi Stijn,
 
- .../dts/ar9342_ubnt_litebeam-ac-gen2.dts      | 39 +++++++++++++++++++
- .../generic/base-files/etc/board.d/02_network |  1 +
- .../etc/hotplug.d/firmware/11-ath10k-caldata  |  1 +
- target/linux/ath79/image/generic-ubnt.mk      |  9 +++++
- 4 files changed, 50 insertions(+)
- create mode 100644 target/linux/ath79/dts/ar9342_ubnt_litebeam-ac-gen2.dts
+does the device have a MAC address label or imprint on the box?
 
-diff --git a/target/linux/ath79/dts/ar9342_ubnt_litebeam-ac-gen2.dts b/target/linux/ath79/dts/ar9342_ubnt_litebeam-ac-gen2.dts
-new file mode 100644
-index 0000000000..d7eacf44d0
---- /dev/null
-+++ b/target/linux/ath79/dts/ar9342_ubnt_litebeam-ac-gen2.dts
-@@ -0,0 +1,39 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "ar9342_ubnt_wa.dtsi"
-+
-+/ {
-+	compatible = "ubnt,litebeam-ac-gen2", "ubnt,wa", "qca,ar9342";
-+	model = "Ubiquiti LiteBeam AC Gen2";
-+};
-+
-+&mdio0 {
-+	status = "okay";
-+
-+	phy-mask = <4>;
-+	phy4: ethernet-phy@4 {
-+		reg = <4>;
-+	};
-+};
-+
-+&eth0 {
-+	status = "okay";
-+
-+	/* default for ar934x, except for 1000M and 10M */
-+	pll-data = <0x02000000 0x00000101 0x00001313>;
-+
-+	mtd-mac-address = <&art 0x0>;
-+
-+	phy-mode = "rgmii-id";
-+	phy-handle = <&phy4>;
-+
-+	gmac-config {
-+		device = <&gmac>;
-+		rxd-delay = <3>;
-+		rxdv-delay = <3>;
-+	};
-+};
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index e811f85f0e..c194def53d 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -40,6 +40,7 @@ ath79_setup_interfaces()
- 	ubnt,bullet-m|\
- 	ubnt,bullet-m-xw|\
- 	ubnt,lap-120|\
-+	ubnt,litebeam-ac-gen2|\
- 	ubnt,nanobeam-ac|\
- 	ubnt,nanostation-ac-loco|\
- 	ubnt,rocket-m|\
-diff --git a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-index 062caf6ad5..55c6b74e74 100644
---- a/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-+++ b/target/linux/ath79/generic/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
-@@ -17,6 +17,7 @@ case "$FIRMWARE" in
- 	ubnt,unifiac-mesh|\
- 	ubnt,unifiac-mesh-pro|\
- 	ubnt,lap-120|\
-+	ubnt,litebeam-ac-gen2|\
- 	ubnt,nanobeam-ac|\
- 	ubnt,nanostation-ac|\
- 	ubnt,nanostation-ac-loco|\
-diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
-index 19dbe2eb8b..7f59b6e841 100644
---- a/target/linux/ath79/image/generic-ubnt.mk
-+++ b/target/linux/ath79/image/generic-ubnt.mk
-@@ -128,6 +128,15 @@ define Device/ubnt_lap-120
- endef
- TARGET_DEVICES += ubnt_lap-120
- 
-+define Device/ubnt_litebeam-ac-gen2
-+  $(Device/ubnt-wa)
-+  DEVICE_TITLE := Ubiquiti LiteBeam AC Gen2
-+  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  IMAGE_SIZE := 15744k
-+  IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
-+endef
-+TARGET_DEVICES += ubnt_litebeam-ac-gen2
-+
- define Device/ubnt_nanobeam-ac
-   $(Device/ubnt-wa)
-   DEVICE_MODEL := NanoBeam AC
--- 
-2.23.0
+[...]
 
+> +define Device/ubnt_litebeam-ac-gen2
+> +  $(Device/ubnt-wa)
+> +  DEVICE_TITLE :=3D Ubiquiti LiteBeam AC Gen2
+
+DEVICE_TITLE has been replaced by DEVICE_VENDOR, DEVICE_MODEL and DEVICE_VA=
+RIANT. In your case, I'd choose:
+
+DEVICE_MODEL :=3D LiteBeam AC
+DEVICE_VARIANT :=3D Gen2
+
+DEVICE_VENDOR is inherited from Device/ubnt.
+
+> +  DEVICE_PACKAGES :=3D kmod-ath10k-ct ath10k-firmware-qca988x-ct
+> +  IMAGE_SIZE :=3D 15744k
+
+IMAGE_SIZE can be dropped here, it is inherited from Device/ubnt-wa.
+
+> +  IMAGE/factory.bin :=3D $$(IMAGE/sysupgrade.bin) | mkubntimage-split
+
+Can we reuse the IMAGE/factory.bin from Device/ubnt here? The only thing mi=
+ssing compared to your line is append-metadata ...
+
+Best
+
+Adrian=20
+
+--=-=/YdUN05nZC8cB4=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3loKQACgkQoNyKO7qx
+AnA/5xAArKemKsVQpGf6Y6EaePbrpbC9sbeCn6fFd6kincmxDJ2bgfpmUIko889v
+zhc2ef/0nhhug3BsolKIlApVKo5JjLeo1Q3ZkntsbAOm7EvXnGp8Aloe4l7rvDTe
+z+eRuuJdx6VH9kWqAzgYuUFZ6999q2cZDNG5vO5o5aNWms9A5AtVBSPwdvgsECwk
+gEjE0/2Dui1ZPI+4R2c1U+FaYW3967DIffj1fc0KAKshaBD4oBlzLIlTG3+sOUfF
+L1IfvFvtzaI140OoGsgsZqVynJ9yMQLmYoot38BvoxlXsP3gp39H7RJxQ2C45S9L
+NeM/54PVWX3KlGToPVDU+W/S8YgldGenMCidqsPCjDXVUZGwffvphuj+SSYc/s2F
+Hk/lqh1JAI9MxGPZ0Vh09nbT+NGgfgd5u7+8L6cRoP2GF1k4Vy8rQ/2Cn+TDv/f4
+yvhQDRoh3pO+SIahWi7+oSgEDoyT8VgZUxxVF06DHRbI8jxK8ByugQJNqbUquVId
+M3FfBNTw9SmzoKoH2OFHWwJQFq+Jnzd9iC0mV7DWNJs4d26s1/vA2dekfpSNiGLS
+AUdpfCAj8kZZHpgR6/X/F/3hJtoUww2PFWx+8kJqd7rWRf2rABKlMRat3/a3/UoF
+sEdFHv17BAatQN6DoNflxuwggW5Pgmar1FFaF9JosBu2+c0vnrA=
+=YIOr
+-----END PGP SIGNATURE-----
+
+
+--=-=/YdUN05nZC8cB4=-=--
+
+
+
+--===============2543474416738506394==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============2543474416738506394==--
+
+

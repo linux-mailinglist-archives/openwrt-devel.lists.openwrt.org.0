@@ -2,58 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD6671105ED
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 21:30:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4DE811063D
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 22:02:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tu1Yz416oVSB3kXUXIbP8b9ySGsSLjeOQssXIHhLrJw=; b=FHLNcb3qQ2z9iD
-	5YHfi+Wm9Qxu+zzQ+QAHP/qn/guRYTNDW29FJsA1F4ki4Vosdh4gVhr0jDQdZ+2krb0i+xnALHuTB
-	dB9fcCHmGSFchDwcI8NnL1cwmMlbcvhEjWc/dqUqQsOII1Wbj/d4OEGOGxdiNxJO+SmHUxN/ql+kz
-	3hoIa5178xPtjyjs2T69KIZpJ1/BrUkoSX2hjPFhLU1VJ/w+HMKyNo88p1eZG0TiQ/yZdl4pB+XkD
-	ZpdtE1UuY91IKU9dwt3KXAhXtuUnHgrc3NytKiU5PBw3PicD5RHYSMZmtG7/g0k/BnBMtov661MbW
-	bzNwbzAEFd8064Wzt+ow==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xUf/VjsNwOhR1o7G93/452FiMMcu5afUJG/TOx8m7Uo=; b=nl7Sv6us+2bOW/
+	XRKMy/oxeATy4Fnm0jPl7ZgSUqyg8d0n3ckAzdWxMzmsWXgNCm4huUhd8PcaZql3SrPfcnzGhQZUz
+	7k2kThVl8E9ggA5tLfCP4+4QH7VHAwtU9+SIOznoaeOpMMtpIzgMxpKik8RwTM5GmpIijyVs8L2lO
+	nIDCZ1CNNRB48rI0qLf+g7lggtpb5I3AY1tEdUyu7MW0JNp6uic92JiAMD4pEryvaLcuJMKvE499h
+	3bLcPNSYdFywbJPccEw4sZ5IoVCTHCerRea+OIgFUJbvZC5/FUjg2XXuuQ1XTb8hV3EA9Ns4aan4T
+	Onb2c7vJoy/73IlKp/sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icEok-0000Jf-K6; Tue, 03 Dec 2019 20:30:42 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1icFJZ-0002LA-86; Tue, 03 Dec 2019 21:02:33 +0000
+Received: from mout.web.de ([212.227.17.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icEoV-0000Ix-Ee
- for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 20:30:29 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1icEoN-00055X-Ss; Tue, 03 Dec 2019 21:30:20 +0100
-Date: Tue, 3 Dec 2019 21:30:15 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <uwe@kleine-koenig.org>
-Message-ID: <20191203203015.GH1281@makrotopia.org>
-References: <20191120181131.2622-1-uwe@kleine-koenig.org>
- <CAJLcKsGef==YdFG8mSjQS=KD9zXwwpuEuJfAhxNTqHadKLOy0w@mail.gmail.com>
- <6a20ec46-f61a-a1df-5530-54031c299c97@kleine-koenig.org>
- <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
- <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
- <CAJLcKsH1EY3SRK3ByXBn8Exjb8bhSoJu94=7gK_-B6YHx1hvGg@mail.gmail.com>
- <1d820be9-1d5d-364d-f270-5ebce820c5ba@kleine-koenig.org>
+ id 1icFJH-0002K5-QZ
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 21:02:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1575406928;
+ bh=CBzu8MwvYieZUPVZWwDiAZBJIV+zz5BypA1p1DyUgOI=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=a/bRQA7sWPSceJT9iUxVog/OJPkq9Lr2O+tFG1ckSL//8ozCx5zyrNiOumvCyZzAP
+ ao+dVkX8UuIeiFAs+iuvv2kTFIbDfnqFvndwa/777vlGUzm/3UTWFxyiAuw4AZT3CJ
+ 5c2iJvgCgHz4ryYUQgJovKdA//9nFNZ3A1gkBd/0=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from xanax.club.berlin.ccc.de ([195.160.172.42]) by smtp.web.de
+ (mrweb102 [213.165.67.124]) with ESMTPSA (Nemesis) id
+ 0McFPX-1iJCSN2tQl-00JY6c; Tue, 03 Dec 2019 22:02:08 +0100
+From: Moritz Warning <moritzwarning@web.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  3 Dec 2019 22:02:32 +0100
+Message-Id: <20191203210232.29432-1-moritzwarning@web.de>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1d820be9-1d5d-364d-f270-5ebce820c5ba@kleine-koenig.org>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-Provags-ID: V03:K1:qUYVZOQPT53kgonq+MnGKawhkESIJIHcX53YlyaMTqtre0x3/99
+ BQdjCgqTJU5+e2kQaAmMRqn95U+n3Uck4VX8JmMYhh2vtTRPLfD47McMYj7+e3+Z3nlNqiK
+ FCXuGFItX46UB+Vvm/Ks0IaiJCjkznnZS27JLgzmGWLJGXGPekktoG6sXseDY54iY5rd9zD
+ MCeRR9nZ/aNXOk+Gq2nWw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:8DFF1gXuPCU=:3PMbSiuSnjj+t+Q4+quu8O
+ G/IHzSFoG0BLeWSVz6d7PC3ZFb1qn7DK+KEfyOQ/WQrpZsAYz0JOsSC0N6dhkTdaH3+q1nOO+
+ nFHm2to7Y0x3i4urkMuDRrdk/I4fmF3zPMoeO+GH135CujAnFaKijh8S35oXteOuxJoDGX1+J
+ nDa398R9ngvhnDeqlr0/S3mTP4R6B38KtsDUlujIKpod4jWgrfWF2V8vJ5AOljQILunSFBmei
+ K2QedjUg9huczHak3TBNCoGiRlQJtse4CjmqmPWwhA3gX+eUpOzsbvMpbX6Cc8cBQ5E1VTh6m
+ Ss4lNwcVbY/GDO9Aj5Zjw5ODGdlgTtlA8axDaglT8NeUu6xK0zf6imFCyhZQL56NOQHEGrGE4
+ JNBpehRK6xTyP9cYhsyI4VDIadNXikVpIk9pqJUB8NF9M93nUjG3hoAlwu4ZQRvwMDECCvKjP
+ brmFZ3ylcixTGlQzuAnCjlaSXgdJDf4FKO/tfrr21aVDlwaHT2lW60yy1WtjpFi3oREy1f7LR
+ C5YwEN2UV12onpA+uVm/VvMokXWWQ6nQCJpl/piJa7/dngrx/UuzAvg4vlg3D1ICUpLYaL4pZ
+ 3I3BVGdXpGbzU0sANnJ3xG6dUU7mxbg9WLbURmvSP0PulIY95Oe2PbonyPATpEbrd+SUfFU73
+ gCfPu62wbO+CStXq8n+4MpAbMEXkbunSFCZrcTewfeFjS8IV99mMSPZm7GuS9M6VIpuMYuFtd
+ 39FDuR+z8vZmu5GzGTsahAraH4xgOEaGtEMmckbGwpibFMR407BhtX0EDfypmJ1rux4pWQe9y
+ LNgt9p91APzaPdDZp7oFK8JDjo2jXLEI2l2ySMWoLhjYOr6nh21PsOQfzWU//vifW/dKv8exp
+ RxkaR4lhpoT2BhnczqYWZuCiHsOB8IKJ5/43++SpuKmTkN5pmilmAVXCo3nIPNARDSGCkpDy5
+ fuv1zc0SGyC8ktmKqJsw69fB9oqFb2fjL5xTiwrwmPAB4r9YzYWn7/oTA23J9z8zA6XrI86Gj
+ 08zTtqUn4hu5dZezjODSW9mwLZ/YD3OUbsXmsyTf9urCwMYYNlVM/Sf+g2zyC2MfTWZujGi6W
+ pFrTPHUZt/3m9umpuudx386JoX4PMuGHDcWiNmun+mZWdZNz/97W14Y84i4X6wVJPGY1uetn/
+ o80MXJ/TAU0RZJBq3XcmvhsZnFo1DB8WVOnJMSowGLBwTTLJAad6XbRo+7O+DbvEPn2/C4wni
+ MLfqO41xqsBWoCe8lsm6cVSWmVpa6JWNHEtXaEv1wKx7kl7HrjLVhCkzrMv0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_123027_494709_785F5204 
-X-CRM114-Status: GOOD (  24.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191203_130216_200055_877F8947 
+X-CRM114-Status: UNSURE (   6.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (moritzwarning[at]web.de)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] The meaning of Signed-off-by for netifd [Was:
- Re: [PATCH netifd] interface: warn if ip6hint is truncated]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.12 listed in list.dnswl.org]
+Subject: [OpenWrt-Devel] [PATCH] ramips: fix inverted reset led for ravpower
+ wd03
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,120 +99,32 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hans Dedecker <dedeckeh@gmail.com>,
- openwrt-devel <openwrt-devel@lists.openwrt.org>, Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Moritz Warning <moritzwarning@web.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, Dec 03, 2019 at 08:56:46PM +0100, Uwe Kleine-K=F6nig wrote:
-> On 12/3/19 4:28 PM, Hans Dedecker wrote:
-> > On Tue, Dec 3, 2019 at 3:59 PM Uwe Kleine-K=F6nig <uwe@kleine-koenig.or=
-g> wrote:
-> >>
-> >> Hello Hans,
-> >>
-> >> On 12/3/19 8:50 AM, Hans Dedecker wrote:
-> >>> On Fri, Nov 29, 2019 at 9:29 PM Uwe Kleine-K=F6nig <uwe@kleine-koenig=
-.org> wrote:
-> >>>>
-> >>>> On 11/29/19 8:50 PM, Hans Dedecker wrote:
-> >>>>> On Wed, Nov 20, 2019 at 7:11 PM Uwe Kleine-K=F6nig <uwe@kleine-koen=
-ig.org> wrote:
-> >>>>>>
-> >>>>>> When for example a /60 is assigned to a network the last 4 bits of=
- the
-> >>>>>> ip6hint are unused. Emit a warning if any of these unused bits is =
-set as
-> >>>>>> it indicates that someone didn't understand how the hint is used. =
-(As I
-> >>>>>> did earlier today resulting in spending some time understanding the
-> >>>>>> code.)
-> >>>>> Patch applied with some minor tweaks
-> >>>>> (https://git.openwrt.org/?p=3Dproject/netifd.git;a=3Dcommit;h=3De45=
-b1408284c05984b38a910a1f0a07d6c761397);
-> >>>>
-> >>>> The updated warning message is fine.
-> >>>>
-> >>>>> I added your SoB as this was missing in the patch
-> >>>>
-> >>>> I wonder what the significance of the SoB is given that a) it's not
-> >>>> documented (at least in the netifd sources) and b) it seems to be ok=
- to
-> >>>> "fake" someone else's SoB and c) there are several commits in the ne=
-wer
-> >>>> history of netifd that don't have a SoB of either Author or Committer
-> >>>> (or both).
-> >>> For details why a SoB is required; see
-> >>> https://openwrt.org/submitting-patches#sign_your_work.
-> >>> If there're any commits in the netifd repo which don't have a SoB this
-> >>> must rather stay an exception than becoming a general rule.
-> >>
-> >> ok, so you claim my SoB means that *I* confirmed that my change is
-> >> compatible to the netifd's license. I didn't do that though.
-> >>
-> >> Even if it was me who added that line I doubt is has any relevance for
-> >> netifd because nothing in the netifd sources explains what an SoB mean=
-s.
-> >> And the link you sent applies only to patches for openwrt, not netifd.
-> >> (Also if this is the only place for openwrt where the significance of =
-an
-> >> SoB is described I wonder if this is relevant given that from the POV =
-of
-> >> openwrt.git the wiki is an external resource that can be modified by
-> >> anyone. What if someone removes item (d) from the wiki or introduces an
-> >> (e)?)
-> >>
-> >> Don't get me wrong, my patch is compatible to netifd's license. But if
-> >> you want that netifd's license situation stays reasonably safe and
-> >> clean, it IMHO cannot be that you add a SoB for someone else, and give
-> >> that SoB a meaning that isn't documented for your project and assumes
-> >> things about that someone else that you cannot know for sure. So if you
-> >> require a formalism, please formalize it properly. (Of course INAL, but
-> >> that's my understanding of how open source licensing works.)
-> > I won't waste further my time and energy on this ...
-> > I acted in good faith and next time if I find a patch from you without
-> > SoB I will just simply reject it to avoid contra productive
-> > discussions
+Signed-off-by: Moritz Warning <moritzwarning@web.de>
+---
+ target/linux/ramips/dts/mt7620n_ravpower_wd03.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Yes, and please do so as well for anyone else who doesn't add SoB
-herself.
+diff --git a/target/linux/ramips/dts/mt7620n_ravpower_wd03.dts b/target/linux/ramips/dts/mt7620n_ravpower_wd03.dts
+index 7dcff46917..bcc1e2c27b 100644
+--- a/target/linux/ramips/dts/mt7620n_ravpower_wd03.dts
++++ b/target/linux/ramips/dts/mt7620n_ravpower_wd03.dts
+@@ -32,7 +32,7 @@
 
-> =
-
-> I would have expected that the discussion is in your interest because
-> not being strict with licenses is something that really hurts when it
-> goes wrong. My intention is not to drain your energy but to highlight
-> the necessity[1] to be stricter with license stuff than the way my patch
-> was handled.
-
-I definitely agree, adding SoB on behalf of someone else should not
-happen and I haven't seen it happening before this occasion.
-
-> =
-
-> > Patches delivered for all projects (netifd/libubox/ubus/...)
-> > maintained by OpenWrt must have a SoB in line what is described on the
-> > Wiki; this does not solely apply to the OpenWrt repo
-> > =
-
-> > This closes the discussion for me
-> =
-
-> Fine for me, I won't press the matter any further. I wish you that this
-> problem won't backfire.
-
-I hope as well...
-
-> =
-
-> Bye
-> Uwe
-> =
-
-> [1] well, or at least what I consider to be necessary
-> =
+ 		reset {
+ 			label = "reset";
+-			gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
++			gpios = <&gpio2 1 GPIO_ACTIVE_LOW>;
+ 			linux,code = <KEY_RESTART>;
+ 		};
+ 	};
+--
+2.23.0
 
 
 _______________________________________________

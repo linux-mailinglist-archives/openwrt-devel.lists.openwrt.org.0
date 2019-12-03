@@ -2,71 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85442111BAF
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 23:33:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2098B111BB7
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 23:36:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xUf/VjsNwOhR1o7G93/452FiMMcu5afUJG/TOx8m7Uo=; b=MiEnhEjAm0GK/m
-	N1gvUTeNXKAaJmFXu6A80ioJidE8L+DWujFmLOIRBlQv0+KD4txQNaz/tqCV6OZUGeocqa61MR9+d
-	sKQs8CFP5ba3JhSG66mzwCYbKRAjhZR6RdOShYUJIkta0OrsrMJxwzlpr1hH98SS0ehOkdNLAIdIT
-	pslm33hWBTd2tKlu9aJflovFoPQrOKIqagrqSxoOk5P7T6kbQBbnWkOSDwTt6k2cyps5qsAN1c0jQ
-	j4S83w+BmEZ+tU/rM6DLiyl5Ly7cvZvG0iLhVHWUIFwVLIwizxhQ/fVzL1q3w6ALxLL/dLnDmVnBw
-	sff86QcXP4cbOPPIbvIw==;
+	List-Owner; bh=8MxPaqeCj3dX1g63iPrupJXOFKCuoGsp1iOURMOa304=; b=tgMgp/B+o/PvCI
+	a4s932V62LE2nDKa9eiJfQyQXJb1BbvRgu6LlATmuazSHYsOqxZpx8gCnOOCsGdi2l3WyAMfo4JUh
+	rjOEbL6rf3jfPis84qAYLFFdYSYAf+rITYt2jPBSVJpeEL90qvt/rAOmug9j6KhQF4xgGIbh7d2kH
+	OoWDjg6PKV1KyekMi5EyAWsfjaPsv3Rcq28p/wWf1KoFP2JSqUB6IEcy728ctN3p940yQg0AiEx+L
+	5SqKJMjlZh0oTLgKuTG90femSTymZMYbx615YY6D0t3Nl2/g0+Xp+5CoeyiYYitVx0TEKud9XcAVv
+	qOltn/vkUtz8sbX9sJlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icGjf-0002wM-Lo; Tue, 03 Dec 2019 22:33:35 +0000
+	id 1icGm0-0004ac-HI; Tue, 03 Dec 2019 22:36:00 +0000
 Received: from mout.web.de ([212.227.17.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icGjW-0002vZ-DR
- for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 22:33:27 +0000
+ id 1icGlu-0004a7-CA
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 22:35:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1575412401;
- bh=CBzu8MwvYieZUPVZWwDiAZBJIV+zz5BypA1p1DyUgOI=;
+ s=dbaedf251592; t=1575412553;
+ bh=6e/Guk8ODy6nRm8UPr7kPF+O7sKnPDW9sTf+SdPdc0c=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=KsYpz3O4hqmEQU45t3pw+q95vSZ28KHjGwv8KRnAsmpm+yN6czN0x5fm20MJZfssX
- 1tp+nfSDo6FrbjaNEyctXAk2CccICXviZTpXd0woU4OHlUV+Z3m6O+yYe50XJ437Vo
- nEmNVR9Wi4EZ5nve/8pPYOutWrz1UYIlY55j9rfM=
+ b=BCBzzwCEAvwXm3ZzSlXg/Mw6uHrfpjMqtKAy7NmLTOVhxpkvJPmD3TiVqEuyufbD5
+ gVfbEXk+4GO+wB3irdbqbG8QJuVVTkMMn89L/lw1jB/+tEjOWf/y2813ZNAW2UsAnK
+ cysSIcLuXP0bI2y28PSk92XMP27CM7gHI6cydV/Q=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from xanax.club.berlin.ccc.de ([195.160.172.42]) by smtp.web.de
  (mrweb103 [213.165.67.124]) with ESMTPSA (Nemesis) id
- 0LnS8Q-1i7uWd0ize-00he65; Tue, 03 Dec 2019 23:33:21 +0100
+ 0MXYWA-1iEXMs3ExC-00WXIe; Tue, 03 Dec 2019 23:35:52 +0100
 From: Moritz Warning <moritzwarning@web.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Tue,  3 Dec 2019 23:33:13 +0100
-Message-Id: <20191203223313.11820-1-moritzwarning@web.de>
+Date: Tue,  3 Dec 2019 23:36:13 +0100
+Message-Id: <20191203223613.12661-1-moritzwarning@web.de>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:xu7oO2kxi2LYfzMSxz7Yi3thLTQU6KavGQ9rekeiq2cLvEZsoe/
- ZWQJLwo9vE+H5VlJg0d/rfWQ09Me8HH+NF4V9gUSwFwJLmXYaEcxxxFvqqOtGgqt9XZfhvg
- mAv70EBlGzjaZgHxkZBtHHsQP96e/21oWhFnUoy6uQosDFAiKGH61JFFRxgjbYWwY0V7cgh
- H01Fj4pglVXTYojkt+Zrg==
+X-Provags-ID: V03:K1:e0I10yAQ9Njz8+lxgg08RNNkp78IAN/ZwomCwM8S4k4khuSKJ08
+ Bmxq2CtZ1v9Q3e85j8PO8s1+ZsIpNek3jVnr4BqsCasDP/b3fULmguUlVXBFAaWwRuqjJ0G
+ 3TxXKHuRwatL8vFDd26DRBgpo/YwKQBuGm+bGONpci2jWKwtB1V4LYp37nBdT5WhmSwF7oV
+ 4khQejDeprd3wE1bO0rCg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:7Yb6ibSzCV4=:Wg3kn/t6nnwRGcfcrKdv4W
- RUKQfj9aIfy8paPhhTIlqewl/wJj4s+saLSVUoLzBq44hZpoKULtIgOCUYpT1ygi5pU8cy+e8
- e/WTKJ5SBa+m9GVGFEJNHlVYKja4qHsaX89zFZsyED1ILH8HxY0hD+5EIT76pOBcZ+q4K3CWw
- IwvDDu16swhWsmrwkU8nNqwXnxSw2LfleZq51WtdJI1CzKeZoglhz/BIpZn32HvHuNtTZaCoo
- onv2KV2POxHZKNBDCorPqdO+aQUOvV7V6y+TIGOcYNC4T3/TKgOCcb1sNNsEFQw3XnWJtKT9/
- ix612TzgPj62LDf5E6nkx2RQVNUM5MFJGhRiSj696X0cwChETFr/S8cOXpAGSrIIcnN/651EZ
- ys1j+cs3UziK9TWSSvNoGtMkOb8yW9GyS829QTVtsV5E4hBrpcLHZtBsEdUjLfPH/suMVeCFL
- mJHflyzwRFUxKzv9YsyEb2jEJe1yYrQvviHrm0tPTA5rvQWFuIEEmEIc7FNAA9wPw60CrR3WS
- kMR8yNrLRAMwt/IGQGmgAt/7258z11Tmc/Vz02n3LSCS8JqLEepaL9NVA/731mqClHLAC13c6
- 8eHFrvbUfgYjHslKRlsFMCxNkG1Rj/jlQxIPeV44NvtJpQQse/GBLWtKaSPmQQrgeTB9tkSv0
- dz7wUQm1l6YJPon0rD7XJrm5ztb5MrbKq/NA7YeSEGNh8TcfgJplx/+2LroVHzahiB42BU904
- lzq5mIAsjiz9V75Q3d2XBfdva2cfxIMnve+jHdgDiGhSmUax4Lu1KLiAYxID5m49D3QFtpLez
- qkI07idZp1jqbu+pAw1MJJXUtRK7aLshjP90f7mbv9FyBjfX9OQrBgcHIib3pVxkLl1KGrvhV
- bnLISLxuvVMPObOAndlQguDXPo8aMPeXYgPyUeIIZih9eoRNyLpldJqV2VNtNXGVJaqcM+BAk
- +7RgLLs7cig57qv3xtD0d936ISf24+Py7/tT5xo8g7mAMeluID1ZqV9BOdSX9ImARW5IEw1Z/
- ZW+YDV2Q4yZ68TSzVlfxfKMeTNdkO+NJ6zo2+nqUM4PYYYAUpvWsOGJ/1K87+CbUALzUKq7Oq
- cFxlTJoDe6imxfHu1QwKe4JAxqQIFcXf7hachYLIp6St+hrEBaDVCp2DUmvGnY/xmrc4plkYa
- jFAOfMamkhpBjN8X2/TrgK/oq6uGFp9Fkihcz5ocU7GNHL8eD4fVGHq9jiS25lUGBCGKjCJg/
- +1yP9Tp2aJVevIMsRj5SlneM39M1F/QXA2eYBtI5VQ30iHGp77Z257FIKADM=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:if1ONFvQ0m4=:/YEAKNVncO6G4QUqfN5O+Q
+ SGqVT1JFn1Dl1HIqdhhMvNglueoLxWfh+5rx60vELvb8LGLZXrl6RxRL+37K/z0QiAamD5tpo
+ PvDkrX6/d8ZXerQDsDcUpu2F7txmCgQtgoLXQeIjmfwQ88HKMREuCp3S6ftfOpu9I5yMHuXaR
+ uVcSx+fgRindC1IiHKg3nyzSW/9oRwiShWga75qXpE4cByXmN/6ioL1f2mrlLEE3fOUUPA1YP
+ ZL8Zx3p6g0APp03UT69MtVzVdXtHzmqURSKKnusK86ti8eF6qIA2cLvAOX+aaifBHI4uNHiZp
+ ZejGPjQFbdrAHGVPM0+DHv/FZz5OO93DfInkTYCssWVZHTwdNx23+BWzouFtHrp7vjFgQ2L6g
+ 2XK6rhd0rMwvh5CKEQCiNNZDBgIN4XMNaTF1TKpiowFrqVyNQb91nl6htgDPUNUERuiZQVOro
+ pxp4FuFbB6nl1CCnMrMuG9HzcyKzbiBHV//SN8nWRw/jvCULZiMr9kekpWDPJEUkbJ1USq4pQ
+ 6Elvi+8BFygSf0QV4V9l26hgA2WExCmQmFRQsFLQ50/ioHlZNfS81aeZ81DunzKvMFSjS5xGx
+ nESJddnNi3SRiacnjvIUrIxFxhnpqNVxLj+EaMsrCcKqJ1+NYi0ZkSpNcWyjDvnhuHjnCW+y4
+ jVAlz7BPiw4uwfrXpP27rVU9OpIixbIRiaD38Fn2Xlp3+WqI5xMcKKhEo+BOdvCh6kEXXYk2B
+ UANz/WzEhMTbBC3HHg5rILP9PbwasiIPSJx/+xTNba/IT5g1rNYIAVWvgIGOB9mXGpLKorr4l
+ fGP2787WlGzdpnrpOYUPOz8lGFx8HIsucU+1a06IBJZfH0kRCuZP3v1UmF6yfNTUAERWkdw6K
+ GP3F1rv25F1C5l3FXy2/s8/oPQv4i6E1qRT3NKvQw2Ohge08GhdeLaZ6edbfaUA5zHK0xdYJ8
+ AdkcgeAkXVDGUBUYpH/+U7E/9ecCKiHNFPslGt98OMOo07ZlnY3JuduKEZNgizR3K6jyS/Exn
+ tXIQA76M4M7dKBNzXkJdUMOESet5U5epUW7g5Fqac7nrJl7XWoVQt90bM1mPJ6gkFDbSnkedb
+ CRJyynAquVVvleDhXQ6pFQKfbIN7ryL9ZlYghQ8OpTCKMmkkk2fQ4nUvXqazwlRj0FZIiCCLY
+ EyBwyzH5wYhae7X2AuzdkTY6Md3ORVLKJT1SKH1Q1M9jkEovnbeIljRgStKgEkjgy/U3XSABT
+ oFELurLB+k94jreOQjNIJXoJnzke31ecEE9JkDXd1BrDQR9QhmGK/nosY0hU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_143326_789824_B2A93004 
-X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-CacheID: sfid-20191203_143554_714552_55521430 
+X-CRM114-Status: UNSURE (   6.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,8 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH v2] ramips: fix inverted reset led for
- ravpower wd03
+Subject: [OpenWrt-Devel] [PATCH v3] ramips: fix inverted reset button for
+ Ravpower WD03
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,6 +104,8 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
+
+The button events "pressed" and "released" were switched. Tested with v18.06.4.
 
 Signed-off-by: Moritz Warning <moritzwarning@web.de>
 ---

@@ -2,65 +2,119 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33033110038
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 15:35:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56F9E1100B1
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 15:59:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7OJktdlPB6IV1qfbsjvBHWurkG4/7TPCYc4Ct08xzDY=; b=dGfoKe/foSrgJ4ODsUC/lESnpw
-	SgJifPTIGW6MgEA1ROFgA05tvtfBx5k9WrMBppg7RkaPUBfPL5ahkcxZXrpPowz/ZYFhPIT/nsnra
-	uMZOdbFgCzL63b815VZ2JEIoNKgZIexY0M1ovuwbAVdT0ncxWC4P1xgttlAoR4rRZ3aLF8B97psKQ
-	t+QsX9XRv2Wntba6jN50DFArPm8qzN5kbxC6P1Tk28TD+BsWH67aasCV6ADxzzFT/ihw0n+i2W5Ig
-	pZkz/3zfafZ25qfxv9QdMXidM72MhMeZdqdMYA1S1USkQlWDVlYb2t82AW2YnufbLKHaMde32WJjm
-	YACNRPFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fNLryUNvrSe0hsAX4aQssRQCMvzH60GrYxYpic7HOEc=; b=dgLbhsw/zxK93oZ+pUn2wY8bG
+	kYvYOXDgm0JEuZ/9QXmEdmAP3Yflpsrgr/iegNskTiXNGx59n7dKLpND7u/+laO01BYI7qta82KsA
+	xnXNhc5K9tarSRa92cC8wdbKcdyMynz2uEWkagGSBmW4M1p0HXKI9ZZ+SlIFtnwuHMXfDHTwaxyAL
+	/qRdQvg//fKrh4Ip7oZuay2q3gAks2CjC7mMTBLMDQ74e5Q80tuOU1d3o0iHdUu/Mzv3z6mpF5pc9
+	CZcoICeKUvO5oGupaQ+O+g5g96nAuozpTPw9AHN+s2EWEZD6l9yjVRIFDZc6htoBG4iQEIPAHJFvN
+	o0udD7Mpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic9GS-0002nE-8U; Tue, 03 Dec 2019 14:34:56 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1ic9eU-0004We-Kn; Tue, 03 Dec 2019 14:59:46 +0000
+Received: from antares.kleine-koenig.org ([2a01:4f8:c0c:3a97::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic9GJ-0002bg-Nt
- for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 14:34:49 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 3008439DD;
- Tue,  3 Dec 2019 15:34:44 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 5a846660;
- Tue, 3 Dec 2019 15:34:34 +0100 (CET)
-Date: Tue, 3 Dec 2019 15:34:34 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Joe Ayers <joe@ayerscasa.com>
-Message-ID: <20191203143434.GF8181@meh.true.cz>
-References: <CAALvt2MKiCHmZb5neZqjawnr-R1VAHpTK+LQafPrUj=i_UJ05w@mail.gmail.com>
+ id 1ic9eF-0004Vj-I0
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 14:59:34 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by antares.kleine-koenig.org (Postfix) with ESMTP id ECE6285E224;
+ Tue,  3 Dec 2019 15:59:26 +0100 (CET)
+Received: from antares.kleine-koenig.org ([127.0.0.1])
+ by localhost (antares.kleine-koenig.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id jKq7_k47Ycqh; Tue,  3 Dec 2019 15:59:25 +0100 (CET)
+Received: from [192.168.77.173] (unknown [149.172.52.110])
+ by antares.kleine-koenig.org (Postfix) with ESMTPSA;
+ Tue,  3 Dec 2019 15:59:25 +0100 (CET)
+To: Hans Dedecker <dedeckeh@gmail.com>
+References: <20191120181131.2622-1-uwe@kleine-koenig.org>
+ <CAJLcKsGef==YdFG8mSjQS=KD9zXwwpuEuJfAhxNTqHadKLOy0w@mail.gmail.com>
+ <6a20ec46-f61a-a1df-5530-54031c299c97@kleine-koenig.org>
+ <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
+From: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <uwe@kleine-koenig.org>
+Autocrypt: addr=uwe@kleine-koenig.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
+Date: Tue, 3 Dec 2019 15:59:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAALvt2MKiCHmZb5neZqjawnr-R1VAHpTK+LQafPrUj=i_UJ05w@mail.gmail.com>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+In-Reply-To: <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_063447_945470_C8E49B8F 
-X-CRM114-Status: UNSURE (   6.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191203_065931_911442_89D46C54 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: ayerscasa.com]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: ayerscasa.com]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] ath10k memory leak on 19.07 branch and mikrotik
- RB952Ui-5ac2nD?
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] The meaning of Signed-off-by for netifd [Was: Re:
+ [PATCH netifd] interface: warn if ip6hint is truncated]
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,105 +126,134 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>,
+ Felix Fietkau <nbd@nbd.name>
+Content-Type: multipart/mixed; boundary="===============1407907189313077680=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Joe Ayers <joe@ayerscasa.com> [2019-11-28 18:40:23]:
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============1407907189313077680==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="gVADSYs39qM42jFbyJDaMf0Rn5xANlLFC"
 
-Hi,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--gVADSYs39qM42jFbyJDaMf0Rn5xANlLFC
+Content-Type: multipart/mixed; boundary="cLkhhaWRJMiGWmG4GEQfVRwjZCaqjQFj0";
+ protected-headers="v1"
+From: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <uwe@kleine-koenig.org>
+To: Hans Dedecker <dedeckeh@gmail.com>
+Cc: Felix Fietkau <nbd@nbd.name>,
+ openwrt-devel <openwrt-devel@lists.openwrt.org>
+Message-ID: <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
+Subject: The meaning of Signed-off-by for netifd [Was: Re: [OpenWrt-Devel]
+ [PATCH netifd] interface: warn if ip6hint is truncated]
+References: <20191120181131.2622-1-uwe@kleine-koenig.org>
+ <CAJLcKsGef==YdFG8mSjQS=KD9zXwwpuEuJfAhxNTqHadKLOy0w@mail.gmail.com>
+ <6a20ec46-f61a-a1df-5530-54031c299c97@kleine-koenig.org>
+ <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
+In-Reply-To: <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
 
-I'm not able to reproduce it on TP-Link Archer C7 v5.
+--cLkhhaWRJMiGWmG4GEQfVRwjZCaqjQFj0
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-> Attempting to use the hAP ac lite model RB952Ui-5ac2nD with the 5GHz
-> radio0 802.11ac seems to be unstable and consume available memory.
-> This is only enabling radio0 with no other changes and bringing wifi
-> up/down to reproduce.   Am I doing something silly, or should I submit
-> a bug?
+Hello Hans,
 
-uptime > /tmp/wifi.log && \
-cat /etc/openwrt_release >> /tmp/wifi.log && \
-uci set wireless.radio0.disabled=0 && \
-uci commit wireless && \
-wifi up && \
-echo "up: $(free | grep Mem:)" >> /tmp/wifi.log && \
-sleep 120 && \
-wifi down && sleep 1 && \
-echo "dn: $(free | grep Mem:)" >> /tmp/wifi.log && \
-for i in $(seq 1 10); do \
-	wifi up; sleep 15; echo "up: $(free | grep Mem:)" >> /tmp/wifi.log; \
-	wifi down; sleep 15; wifi down; sleep 1; wifi down; sleep 1; \
-	wifi down; sleep 1; echo "dn: $(free | grep Mem:)" >> /tmp/wifi.log; \
-done; cat /tmp/wifi.log
+On 12/3/19 8:50 AM, Hans Dedecker wrote:
+> On Fri, Nov 29, 2019 at 9:29 PM Uwe Kleine-K=C3=B6nig <uwe@kleine-koeni=
+g.org> wrote:
+>>
+>> On 11/29/19 8:50 PM, Hans Dedecker wrote:
+>>> On Wed, Nov 20, 2019 at 7:11 PM Uwe Kleine-K=C3=B6nig <uwe@kleine-koe=
+nig.org> wrote:
+>>>>
+>>>> When for example a /60 is assigned to a network the last 4 bits of t=
+he
+>>>> ip6hint are unused. Emit a warning if any of these unused bits is se=
+t as
+>>>> it indicates that someone didn't understand how the hint is used. (A=
+s I
+>>>> did earlier today resulting in spending some time understanding the
+>>>> code.)
+>>> Patch applied with some minor tweaks
+>>> (https://git.openwrt.org/?p=3Dproject/netifd.git;a=3Dcommit;h=3De45b1=
+408284c05984b38a910a1f0a07d6c761397);
+>>
+>> The updated warning message is fine.
+>>
+>>> I added your SoB as this was missing in the patch
+>>
+>> I wonder what the significance of the SoB is given that a) it's not
+>> documented (at least in the netifd sources) and b) it seems to be ok t=
+o
+>> "fake" someone else's SoB and c) there are several commits in the newe=
+r
+>> history of netifd that don't have a SoB of either Author or Committer
+>> (or both).
+> For details why a SoB is required; see
+> https://openwrt.org/submitting-patches#sign_your_work.
+> If there're any commits in the netifd repo which don't have a SoB this
+> must rather stay an exception than becoming a general rule.
 
- 14:06:05 up 2 min,  load average: 0.24, 0.19, 0.08
-DISTRIB_ID='OpenWrt'
-DISTRIB_RELEASE='19.07.0-rc2'
-DISTRIB_REVISION='r10775-db8345d8e4'
-DISTRIB_TARGET='ath79/generic'
-DISTRIB_ARCH='mips_24kc'
-DISTRIB_DESCRIPTION='OpenWrt 19.07.0-rc2 r10775-db8345d8e4'
-DISTRIB_TAINTS=''
-up: Mem:         124528       15128       99536          76        9864       80684
-dn: Mem:         124528       14860       99076          84       10592       80596
-up: Mem:         124528       22592       91340          84       10596       72872
-dn: Mem:         124528       14884       99048          84       10596       80580
-up: Mem:         124528       22848       91084          84       10596       72616
-dn: Mem:         124528       14884       99048          84       10596       80576
-up: Mem:         124528       22848       91084          84       10596       72612
-dn: Mem:         124528       14884       99048          84       10596       80576
-up: Mem:         124528       22848       91084          84       10596       72612
-dn: Mem:         124528       14884       99048          84       10596       80576
-up: Mem:         124528       22940       90992          84       10596       72520
-dn: Mem:         124528       14916       99016          84       10596       80544
-up: Mem:         124528       22808       91124          84       10596       72652
-dn: Mem:         124528       14868       99064          84       10596       80592
-up: Mem:         124528       22900       91032          84       10596       72560
-dn: Mem:         124528       14876       99056          84       10596       80584
-up: Mem:         124528       22676       91256          84       10596       72784
-dn: Mem:         124528       14904       99028          84       10596       80556
-up: Mem:         124528       22712       91220          84       10596       72748
-dn: Mem:         124528       14936       98996          84       10596       80524
-up: Mem:         124528       22708       91224          84       10596       72752
-dn: Mem:         124528       14936       98996          84       10596       80524
+ok, so you claim my SoB means that *I* confirmed that my change is
+compatible to the netifd's license. I didn't do that though.
 
- 15:53:35 up 1 min,  load average: 1.35, 0.41, 0.14
-DISTRIB_ID='OpenWrt'
-DISTRIB_RELEASE='19.07.0-rc2'
-DISTRIB_REVISION='r10775-db8345d8e4'
-DISTRIB_TARGET='ar71xx/generic'
-DISTRIB_ARCH='mips_24kc'
-DISTRIB_DESCRIPTION='OpenWrt 19.07.0-rc2 r10775-db8345d8e4'
-DISTRIB_TAINTS=''
-up: Mem:         124624       14068      100680         120        9876       81760
-dn: Mem:         124624       14368       99524         140       10732       80996
-up: Mem:         124624       22072       91816         140       10736       73296
-dn: Mem:         124624       14360       99528         140       10736       81004
-up: Mem:         124624       22072       91816         140       10736       73292
-dn: Mem:         124624       14360       99528         140       10736       81004
-up: Mem:         124624       22068       91820         140       10736       73296
-dn: Mem:         124624       14360       99528         140       10736       81004
-up: Mem:         124624       22196       91692         140       10736       73168
-dn: Mem:         124624       14360       99528         140       10736       81004
-up: Mem:         124624       22356       91532         140       10736       73008
-dn: Mem:         124624       14392       99496         140       10736       80972
-up: Mem:         124624       22164       91724         140       10736       73200
-dn: Mem:         124624       14344       99544         140       10736       81020
-up: Mem:         124624       22956       90932         140       10736       72408
-dn: Mem:         124624       14352       99536         140       10736       81012
-up: Mem:         124624       22924       90964         140       10736       72440
-dn: Mem:         124624       14352       99536         140       10736       81012
-up: Mem:         124624       22444       91444         140       10736       72920
-dn: Mem:         124624       14384       99504         140       10736       80980
-up: Mem:         124624       22188       91700         140       10736       73176
-dn: Mem:         124624       14352       99536         140       10736       81012
+Even if it was me who added that line I doubt is has any relevance for
+netifd because nothing in the netifd sources explains what an SoB means.
+And the link you sent applies only to patches for openwrt, not netifd.
+(Also if this is the only place for openwrt where the significance of an
+SoB is described I wonder if this is relevant given that from the POV of
+openwrt.git the wiki is an external resource that can be modified by
+anyone. What if someone removes item (d) from the wiki or introduces an
+(e)?)
 
--- ynezz
+Don't get me wrong, my patch is compatible to netifd's license. But if
+you want that netifd's license situation stays reasonably safe and
+clean, it IMHO cannot be that you add a SoB for someone else, and give
+that SoB a meaning that isn't documented for your project and assumes
+things about that someone else that you cannot know for sure. So if you
+require a formalism, please formalize it properly. (Of course INAL, but
+that's my understanding of how open source licensing works.)
+
+Best regards
+Uwe
+
+
+--cLkhhaWRJMiGWmG4GEQfVRwjZCaqjQFj0--
+
+--gVADSYs39qM42jFbyJDaMf0Rn5xANlLFC
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAl3meEoACgkQwfwUeK3K
+7Akn3AgAgIe98OB+wrzD+6/VnxazLBJpNflKgSTk3rarGUYUr3i/J/Sj91peN0wU
+zHCc2D7L+/eWfY9JqQ1XJRab0293kX3Ix6+/Dm4/IdUWZprlCYmOOgbzrVicemDV
+fNI5/kyqtCBtIlxJaR5NT/qof70zgGegRh91s3BnehxJf8Rj7iw+S4ADQtlMPkUc
+ssvh0VZuyO1eEdK8riC+oKu3wMkhgA5l0QH5IiM/vfSQ/M4OVCdtrgfsxeOUhPrO
+wgySXqn2tSJxO+zexCWytFYFvV4MA1DfqDI59ux2t1suVweDmH0NVzxI9OH2eKrx
+hDaKZ/6o2LAatR7evKAAoKDxHIhHOA==
+=j+eH
+-----END PGP SIGNATURE-----
+
+--gVADSYs39qM42jFbyJDaMf0Rn5xANlLFC--
+
+
+--===============1407907189313077680==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1407907189313077680==--
+

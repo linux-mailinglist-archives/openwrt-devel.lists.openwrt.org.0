@@ -2,75 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B29910FD7A
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 13:17:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 382D710FD95
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 13:26:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S/dSTlFK+K5sD1yDPbuyqZkrDzo2kTcOpvAsv+gDU4M=; b=UlrivHkfx3EvPKLurboQR6luV
-	uHseFWSs7BrxZ6NkEsUWkSyzdf+/AP0KqiXJY0Z0ctnK45NEkuNzpNq20GDQNu/fc7eojm4KHJL+i
-	+946N9cPCfOACiqoTDvHKW7H9rPENMHG05jHFCpU7aYgwT6cJLCX+7BUxqD9NthycUXaD1eriN3ei
-	EIFw6nOStBUGXHIofXVtgdItPlxNDnvp8ZH8aL6tEgW4BXbMmgtQAuNRirp8tbxVr6sUpwys9hNx/
-	3+bfkO9I1rZ8mDvUKqtguBddWnhr1e+RDoXHKZWnQFsCqgV7L+GTmwD6gDRLVvEYozNtcxCMAbCGn
-	AdJ75Z6Jg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zP8V1UJSdPGp+3WNlmubyb1+TETN/XdRfaGpW+GCgUk=; b=i0hTRpudKpXBdpxsbg2PgaQd5C
+	F810NGEdk1MtCn33uMgSfpPoPdHbV4wxTtHdBTmhdWqvWioV+49Rsv5iIITqQLlEfDLgju1SGANjj
+	KJJYvyenmhyML7+vveRy4eD0DusHgDTJ+oKAFwKZpA6hhK4FE1Lv2DR6j25kz6O73o8f/5+NqWoOR
+	egdbIN4WO7/scctSwoJKYkr6nnH903KUFNNPM/Q25TfQnG2atB3VeVl7n15FShuS1m2l/BX+sS74N
+	Hn7Fkh5F4Q7LF98icCrdx4nxa0hjBezy4m68ztdoq7TMWI0k7bzXLb6eKiY9T4MSGCiIAmcPpREdj
+	Mxlxc1bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic77Z-00039s-2C; Tue, 03 Dec 2019 12:17:37 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1ic7GD-00073J-9t; Tue, 03 Dec 2019 12:26:33 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic77B-00032K-AQ
- for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 12:17:15 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue009
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1Mnac9-1htTAj2Rsr-00jVgF; Tue, 03
- Dec 2019 13:17:04 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: =?UTF-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>
+ id 1ic7Fw-0006vk-4p
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 12:26:17 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 352BF3416;
+ Tue,  3 Dec 2019 13:26:13 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id ed780b92;
+ Tue, 3 Dec 2019 13:26:03 +0100 (CET)
+Date: Tue, 3 Dec 2019 13:26:03 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Stijn Tintel <stijn@linux-ipv6.be>
+Message-ID: <20191203122602.GD8181@meh.true.cz>
 References: <20191202232629.952385-1-stijn@linux-ipv6.be>
  <00f701d5a969$b9aa8cc0$2cffa640$@adrianschmutzler.de>
  <075e2d8a-191b-2993-2ee0-ebf432b4c2d6@linux-ipv6.be>
  <00c701d5a9d0$7da69ae0$78f3d0a0$@adrianschmutzler.de>
- <20191203120930.GC8181@meh.true.cz>
-In-Reply-To: <20191203120930.GC8181@meh.true.cz>
-Date: Tue, 3 Dec 2019 13:17:04 +0100
-Message-ID: <010701d5a9d3$92f3c320$b8db4960$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ <2e4672f9-0fe3-b8cf-7322-df64cd552ff5@linux-ipv6.be>
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQGTXJoeUjZX+dYvmEdnKnqdj0FkCwKX8CklAfcicwACX0CtAgH8zkFEp+WUJWA=
-X-Provags-ID: V03:K1:v7JerhqMZAde0Zb/jt1wn7R/Jg0zZdojo/D7jF6AGSKDXT6AMDV
- XR+NFgWF+UMQeYQ8+ZH8BkCFgh9vc5HVIY4GDCJsld6AW46bmfsa86TjjdnRI1ramq7C4b5
- dlQq4suZxy8TVWAEhulCI5V0Xmmo7u0o8otWc2uC6o24OIsWzHEVSHDwr/25FdVt7mTEov+
- lz6W4LFgkznepsYe/9N8g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:APeSA0siN8g=:8Qi7rEpCh71cRgs6gm8kby
- hICGr6LwnrZi/PcVCoa+itur4FslkVcF1q0veObaLe38cfkn7I2b5WbLGuEt7s1GI8zOLxxEc
- hboLe/EZ23qnAyG4tjp0gM8CwY+ozUmQzRIfUyg2nh8nExp9y1B7LXdlKSl536UrbzrzRA/xU
- HL6VcfkRgJ6v4Fzv2Y73/vY2hoSD70E5bZyo92kJGYLgbouiE7rgqz3TURHTEm2ChTurE2LaY
- Y66kcZK7NLqgI7eNwGZV5QfvgOxTGngIezU/Lxo5+ZnGtyRrPN7+pG893Q+p2EHsB88AJ/jzA
- u0n4MkOiLKNkBu6AHPFd3k5DUneinYmtjMoeGTj+0fKcLT2A2iW5smgDCTaojD7/kyaj6tUii
- ILJDKDEsx4I6S6V5HQPBDM3RGWFMYnkQ3GR25NaB51EtaDT/Gj3hDaDQ5yoD26DBdnRj/++Rj
- 5H8A/XzeHIWiIqOetfzqDAIPT1PvDVSwgD0SgDZhthcJt7pL5XoCl9IZwnwmlVUVgjsSnQiDW
- rWR47Xfn8hiouie5b2mr6Dac+yhbiZ35bihKxADJc2Vp0eOk2tMt1/g3PGQHsKqMgtnnXbLIn
- XDtbFSp4wIfsnZb/9ACug3C+CPMO6a438kHZB7liibnPmRZzWaI7snqWPGm1Z0zHSrltPaBh3
- RTV5y6MwEZVLKB2Tk4WD/mnOomyvjwvR5MGzCAKRFZc4jJ8gIm0A7n5ghe9qCDhNmlrXwSDON
- fSInxke+uPK6Sx6BF7Sih/53GpxvYF4hR1N5j/ycpnjH2+FYNt4KD8BO9uUvP8nbS66+xVDCN
- McjSxCPvd1H2DhLOzXEOieFKOALLlg3Cu4/i8lGWU9cPvxiiYWlAy5QrCLJTbsG97Eie2T1v7
- bGCNBNJSf0+IfLTGOqxDgyjzcLK9HGNTBUCXu20fA=
+Content-Disposition: inline
+In-Reply-To: <2e4672f9-0fe3-b8cf-7322-df64cd552ff5@linux-ipv6.be>
+X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_041713_690122_588B2799 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20191203_042616_360668_64068C39 
+X-CRM114-Status: UNSURE (   5.18  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for Ubiquiti
  LiteBeam AC Gen2
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -84,123 +72,61 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Stijn Tintel' <stijn@linux-ipv6.be>, openwrt-devel@lists.openwrt.org,
- pozega.tomislav@gmail.com
-Content-Type: multipart/mixed; boundary="===============9191084129858798100=="
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org,
+ Adrian Schmutzler <mail@adrianschmutzler.de>, pozega.tomislav@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Stijn Tintel <stijn@linux-ipv6.be> [2019-12-03 14:03:16]:
 
---===============9191084129858798100==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=tIBpnBlVfkYfVC=-=";
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature"
+> I've addressed this and added the MAC label in my staging tree:
+> https://git.openwrt.org/?p=openwrt/staging/stintel.git;a=shortlog;h=refs/heads/lbe-5ac-gen2
 
-This is a multipart message in MIME format.
+Note, that this commit:
 
---=-=tIBpnBlVfkYfVC=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+ ath79: move IMAGE/factory.bin to Device/ubnt-wa
 
-Hi,
+should be probably:
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of Petr =C5=A0tetiar
-> Sent: Dienstag, 3. Dezember 2019 13:10
-> To: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Cc: 'Stijn Tintel' <stijn@linux-ipv6.be>; openwrt-devel@lists.openwrt.org;
-> pozega.tomislav@gmail.com
-> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for Ubiquiti Lite=
-Beam
-> AC Gen2
->=20
-> Hi,
->=20
-> > > I used the same as with other ubnt-wa devices. I'm not really up to d=
-ate
-> > > on this metadata thing. Do we normally not include it in factory imag=
-es?
->=20
-> Indeed, but you've added following extra line to your device:
->=20
->  IMAGE/factory.bin :=3D $$(IMAGE/sysupgrade.bin) | mkubntimage-split
->=20
-> Which means, that you're constructing factory image from sysupgrade image=
-, and
-> sysupgrade images have this metadata included. I would just drop this lin=
-e.
->=20
-> > I'm also not sure whether we need the append-metadata, thus I wouldn't
-> > deviate from the other ubnt-wa devices.
->=20
-> I'm sure, that there is no need for this deviation from other ubnt-wa dev=
-ices.
+ ath79: remove wrong IMAGE/factory.bin from ubnt-wa devices
 
-Other ubnt-wa do this, too, they just do not define it in parent node:
+      (and use default and correct one from ubnt)
 
-https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/image/gen=
-eric-ubnt.mk#L127
-and below that.
+because following:
 
-So, the question is whether it would make sense to remove the line for all =
-the other ubnt-wa devices, too, then.
+ IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
 
-Best
+is in essence:
 
-Adrian
+  define Device/Default
+   IMAGE/sysupgrade.bin = append-kernel | pad-to $$$$(BLOCKSIZE) | \
+          append-rootfs | pad-rootfs | append-metadata | check-size $$$$(IMAGE_SIZE)
+  endef
 
+  + | mkubntimage-split
+  = append-kernel | pad-to $$$$(BLOCKSIZE) | append-rootfs | pad-rootfs | append-metadata | check-size $$$$(IMAGE_SIZE) | mkubntimage-split
 
->=20
-> -- ynezz
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+where ubnt has following:
 
---=-=tIBpnBlVfkYfVC=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
+  define Device/ubnt
+    IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
+          append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | mkubntimage-split
+  endef
 
------BEGIN PGP SIGNATURE-----
+  = append-kernel | pad-to $$$$(BLOCKSIZE) | append-rootfs | pad-rootfs |                  | check-size $$$$(IMAGE_SIZE) | mkubntimage-split
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3mUjoACgkQoNyKO7qx
-AnCNnxAAm7nzyGlkgwlA/Wd3zkT0vDbsdYVGi1Nv62pSX3Uu7vnw+A26s30dBFBR
-ssJ0qYBOu+GTCRatX0IV5Qq8Eaom3kSLa55Ftjnfb6RBnjij57IWWxpJJ987HCqk
-idalGTJSiG2bZVTdbC8FOOp9TysTJ5UBmxhR6hrKti9nPI7xtJgn+2C3BVjzNc+h
-Ovlel842qG0nmysWWDqpxBxqcjmqnZdXvUxPml4Duhhp/h2UiwVcTOW1u3x0CEUH
-CWQ30UnA01GwnTvqF8T45qdBGAqfkOYMJehA0GBVnHoioikWZ8mq8t1e+KaIwKqr
-YiqJ3mpMYVdPQ4saFK0tQ7K4i97a2iT8UaoXMaRlNnOi8nQMrYmVnd/+bMgnjWWU
-Ve4LW6ycrBNZ//rtzMGg1rtfa06Ye5QjqT4P78zTJckB4wQZFZiHNHSiUSLM4tYh
-PxnN/skz7XNHpK8+9/6ZYO4uqtmuL1qQKqU2RDJFiJ+noKR2YB6RAipLdZDhnkJ9
-ILCoa1O1MaWveUXQikfb7HFtM4lYaIN2TluEy3eu//uf8Ygvoq1DvHps3uqxwDk2
-j0WoymEmzTMm1RsOQp5TDJKhZZGAjcfn7quZKEtQ835tTu9MtVpCVpqCvg7uwNdn
-vfdBRHFBmFB6fv3hV9jcNVDhsQuix1/eYFLcXt27xcqYcsds6qQ=
-=i5bd
------END PGP SIGNATURE-----
+                                                                          ^------ append-metadata missing
 
+so using IMAGE/factory.bin from ubnt (default) is probably the correct way,
+because having OpenWrt specific metadata in the factory images doesn't make
+any sense.
 
---=-=tIBpnBlVfkYfVC=-=--
-
-
-
---===============9191084129858798100==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============9191084129858798100==--
-
-

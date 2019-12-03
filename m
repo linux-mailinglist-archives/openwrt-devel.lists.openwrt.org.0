@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 382D710FD95
-	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 13:26:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E54D10FDB2
+	for <lists+openwrt-devel@lfdr.de>; Tue,  3 Dec 2019 13:32:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,42 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zP8V1UJSdPGp+3WNlmubyb1+TETN/XdRfaGpW+GCgUk=; b=i0hTRpudKpXBdpxsbg2PgaQd5C
-	F810NGEdk1MtCn33uMgSfpPoPdHbV4wxTtHdBTmhdWqvWioV+49Rsv5iIITqQLlEfDLgju1SGANjj
-	KJJYvyenmhyML7+vveRy4eD0DusHgDTJ+oKAFwKZpA6hhK4FE1Lv2DR6j25kz6O73o8f/5+NqWoOR
-	egdbIN4WO7/scctSwoJKYkr6nnH903KUFNNPM/Q25TfQnG2atB3VeVl7n15FShuS1m2l/BX+sS74N
-	Hn7Fkh5F4Q7LF98icCrdx4nxa0hjBezy4m68ztdoq7TMWI0k7bzXLb6eKiY9T4MSGCiIAmcPpREdj
-	Mxlxc1bA==;
+	bh=DkyWPABKSDglWbjlL7fPGSd1+1TNPirFN/Pi3c/n2/o=; b=FM8oUHvh490VImya45aZ8Pwz86
+	gb3taKdXRO04jmWv+i6BmfRxemQdVE4YehgOR9eaLtgQgU/cGcfBVBubrPpsojvRcRBxonRtQ0DGU
+	yYvDMK8kBf2C5gsLgd5EuqvqLC/7im8mKp78MsjglOZiReI5keSUZ34hKMIGiZCgTsOOnBqZfHips
+	enBkhcoT2DtLRpAWtZ5QzpuJppslt2jyrv8uHHY+KjkB+2uxqHk7MU5fmxisZUfOXJ1kUC0T2GyMZ
+	mFkS9cQYgtSD01rDiQGRFsD8VB0ttJ3mZRM7omaSHUYkzqBJZQIQ2jRw6xrIZ/lUPVJpiRf8dSoQf
+	MzJR65iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic7GD-00073J-9t; Tue, 03 Dec 2019 12:26:33 +0000
+	id 1ic7Lq-0002OF-W3; Tue, 03 Dec 2019 12:32:23 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic7Fw-0006vk-4p
- for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 12:26:17 +0000
+ id 1ic7LP-0002AI-Qt
+ for openwrt-devel@lists.openwrt.org; Tue, 03 Dec 2019 12:31:57 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 352BF3416;
- Tue,  3 Dec 2019 13:26:13 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 0AEAB3439;
+ Tue,  3 Dec 2019 13:31:54 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id ed780b92;
- Tue, 3 Dec 2019 13:26:03 +0100 (CET)
-Date: Tue, 3 Dec 2019 13:26:03 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 05c88352;
+ Tue, 3 Dec 2019 13:31:44 +0100 (CET)
+Date: Tue, 3 Dec 2019 13:31:44 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Stijn Tintel <stijn@linux-ipv6.be>
-Message-ID: <20191203122602.GD8181@meh.true.cz>
+To: Adrian Schmutzler <mail@adrianschmutzler.de>
+Message-ID: <20191203123144.GE8181@meh.true.cz>
 References: <20191202232629.952385-1-stijn@linux-ipv6.be>
  <00f701d5a969$b9aa8cc0$2cffa640$@adrianschmutzler.de>
  <075e2d8a-191b-2993-2ee0-ebf432b4c2d6@linux-ipv6.be>
  <00c701d5a9d0$7da69ae0$78f3d0a0$@adrianschmutzler.de>
- <2e4672f9-0fe3-b8cf-7322-df64cd552ff5@linux-ipv6.be>
+ <20191203120930.GC8181@meh.true.cz>
+ <010701d5a9d3$92f3c320$b8db4960$@adrianschmutzler.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2e4672f9-0fe3-b8cf-7322-df64cd552ff5@linux-ipv6.be>
+In-Reply-To: <010701d5a9d3$92f3c320$b8db4960$@adrianschmutzler.de>
 X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_042616_360668_64068C39 
-X-CRM114-Status: UNSURE (   5.18  )
+X-CRM114-CacheID: sfid-20191203_043156_046402_36E5CA14 
+X-CRM114-Status: UNSURE (   5.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -73,56 +74,22 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org,
- Adrian Schmutzler <mail@adrianschmutzler.de>, pozega.tomislav@gmail.com
+Cc: 'Stijn Tintel' <stijn@linux-ipv6.be>, openwrt-devel@lists.openwrt.org,
+ pozega.tomislav@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Stijn Tintel <stijn@linux-ipv6.be> [2019-12-03 14:03:16]:
+Adrian Schmutzler <mail@adrianschmutzler.de> [2019-12-03 13:17:04]:
 
-> I've addressed this and added the MAC label in my staging tree:
-> https://git.openwrt.org/?p=openwrt/staging/stintel.git;a=shortlog;h=refs/heads/lbe-5ac-gen2
+> Other ubnt-wa do this, too, they just do not define it in parent node:
 
-Note, that this commit:
+Ok, I've checked only the parent node.
 
- ath79: move IMAGE/factory.bin to Device/ubnt-wa
+> So, the question is whether it would make sense to remove the line for all the other ubnt-wa devices, too, then.
 
-should be probably:
-
- ath79: remove wrong IMAGE/factory.bin from ubnt-wa devices
-
-      (and use default and correct one from ubnt)
-
-because following:
-
- IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
-
-is in essence:
-
-  define Device/Default
-   IMAGE/sysupgrade.bin = append-kernel | pad-to $$$$(BLOCKSIZE) | \
-          append-rootfs | pad-rootfs | append-metadata | check-size $$$$(IMAGE_SIZE)
-  endef
-
-  + | mkubntimage-split
-  = append-kernel | pad-to $$$$(BLOCKSIZE) | append-rootfs | pad-rootfs | append-metadata | check-size $$$$(IMAGE_SIZE) | mkubntimage-split
-
-where ubnt has following:
-
-  define Device/ubnt
-    IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
-          append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | mkubntimage-split
-  endef
-
-  = append-kernel | pad-to $$$$(BLOCKSIZE) | append-rootfs | pad-rootfs |                  | check-size $$$$(IMAGE_SIZE) | mkubntimage-split
-
-                                                                          ^------ append-metadata missing
-
-so using IMAGE/factory.bin from ubnt (default) is probably the correct way,
-because having OpenWrt specific metadata in the factory images doesn't make
-any sense.
+I would remove it, it doesn't make sense and is misleading.
 
 -- ynezz
 

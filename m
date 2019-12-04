@@ -2,139 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6888113630
-	for <lists+openwrt-devel@lfdr.de>; Wed,  4 Dec 2019 21:13:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE700113687
+	for <lists+openwrt-devel@lfdr.de>; Wed,  4 Dec 2019 21:36:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vSHERzKpWWOiTxIE9v7lghfxXnr9zPHUQpq6cZjkedM=; b=LzAi+0Pt27wYvOTukzl7qtHwb
-	kYW6ecsZ2taGJtsdpd0asVmjG0BEXIAQM3BfX0KkS93/h4EiiPyEB9IgHe4kfmcreJl5TEwqXHWPk
-	TN9Kb+6zmi9VGThyhmVfr6Q2dxZZRrIKithPX8vYiGO/ijXOg1npysG2L7hfdUZVVoqeAlpotUnA5
-	85s3fVithe9WtV63B138nrXXQn+tY0rGf+b9sFpv7gi+EhE1jgKbK1A+6h2eR7+7ovkr1IpQ5J7bK
-	73PhgJwp51XqiyAbNHoXu+3hPEeRRWyNNzb9NSCccb5hc9ql5DKwTRHGyH8LyOU8WYNZTaI1ITfe/
-	jIpOs8Xnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kGaZVv1WscW3hOddDdUiMTGsD3OkYi6bH3/IHdk0GRo=; b=cezeTF+KE3gLl8
+	a8ZAU8SQ9SO+qlsEcu3eMwmLx1pYuJIKRM9/Yn0hRHC3DvW9ydgOng6k5kLHYRSzRjhFuswAlh6k+
+	XLqSNNCQ3oNgHVgd8CMWsxZYPejLdHlEKOWYM03tF6GTVlyoCBQlxJib2hCEi5T1TmUIoLIjeVHps
+	FslmyLBhO5FIagfYPUYccyzD5vBNkX5yfZ7uA29olXiFCl6/kQzK+x9c5bLJbVd8gSe9WieIJ+tQY
+	WSB5fUBjpiXGs4rFCbCkJm8+xl2LqlrYhHd3pvj63cD3VIThud6sXXBzXRIThykDIuJEeUpts7ZG+
+	HMeOMjbCsH6DboIKS+lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icb1g-0007QB-FE; Wed, 04 Dec 2019 20:13:32 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1icbNl-000816-W2; Wed, 04 Dec 2019 20:36:22 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icb1U-0007Pq-Fq
- for openwrt-devel@lists.openwrt.org; Wed, 04 Dec 2019 20:13:22 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 65CB0542FA; Wed,  4 Dec 2019 21:13:18 +0100 (CET)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 48BBF542F1
- for <openwrt-devel@lists.openwrt.org>; Wed,  4 Dec 2019 21:13:17 +0100 (CET)
-Received: (qmail 49239 invoked from network); 4 Dec 2019 21:13:17 +0100
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.27.109)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 4 Dec 2019 21:13:17 +0100
-To: openwrt-devel@lists.openwrt.org
-References: <20191120181131.2622-1-uwe@kleine-koenig.org>
- <CAJLcKsGef==YdFG8mSjQS=KD9zXwwpuEuJfAhxNTqHadKLOy0w@mail.gmail.com>
- <6a20ec46-f61a-a1df-5530-54031c299c97@kleine-koenig.org>
- <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
- <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; keydata=
- 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
- y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <c044cb7d-c2fb-256b-d518-19675c86a837@wwsnet.net>
-Date: Wed, 4 Dec 2019 21:13:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1icbNe-00080W-1R
+ for openwrt-devel@lists.openwrt.org; Wed, 04 Dec 2019 20:36:16 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1icbNU-0000XU-Sg; Wed, 04 Dec 2019 21:36:07 +0100
+Date: Wed, 4 Dec 2019 21:35:54 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: Tomasz Maciej Nowak <tomek_n@o2.pl>
+Message-ID: <20191204203554.GO1281@makrotopia.org>
+References: <20191204181430.4675-1-linus.luessing@c0d3.blue>
+ <d7dfd705-e311-4f63-b116-1b09dcb3e13b@o2.pl>
 MIME-Version: 1.0
-In-Reply-To: <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
+Content-Disposition: inline
+In-Reply-To: <d7dfd705-e311-4f63-b116-1b09dcb3e13b@o2.pl>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_121320_838952_1C913511 
-X-CRM114-Status: UNSURE (   9.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191204_123614_407021_4C14AB63 
+X-CRM114-Status: GOOD (  28.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] The meaning of Signed-off-by for netifd [Was:
- Re: [PATCH netifd] interface: warn if ip6hint is truncated]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: Re: [OpenWrt-Devel] [PATCH v2] imx6: Adding Ka-Ro electronics
+ TX6U-8033 Module on MB7 baseboard support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -146,86 +60,489 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5080374227242098386=="
+Cc: Simon Wunderlich <sw@simonwunderlich.de>, openwrt-devel@lists.openwrt.org,
+ Linus =?iso-8859-1?Q?L=FCssing?= <linus.luessing@c0d3.blue>,
+ Linus =?iso-8859-1?Q?L=FCssing?= <ll@simonwunderlich.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============5080374227242098386==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="IDzkngoVhzaTvpy61pkdGkmyESUapVGCe"
+On Wed, Dec 04, 2019 at 07:52:32PM +0100, Tomasz Maciej Nowak wrote:
+> Hi,
+> small nit at the end.
+> =
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---IDzkngoVhzaTvpy61pkdGkmyESUapVGCe
-Content-Type: multipart/mixed; boundary="PvDzYSmI4h57FYztEGDzgmr6Ab8ZJjbyH";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <c044cb7d-c2fb-256b-d518-19675c86a837@wwsnet.net>
-Subject: Re: The meaning of Signed-off-by for netifd [Was: Re: [OpenWrt-Devel]
- [PATCH netifd] interface: warn if ip6hint is truncated]
-References: <20191120181131.2622-1-uwe@kleine-koenig.org>
- <CAJLcKsGef==YdFG8mSjQS=KD9zXwwpuEuJfAhxNTqHadKLOy0w@mail.gmail.com>
- <6a20ec46-f61a-a1df-5530-54031c299c97@kleine-koenig.org>
- <CAJLcKsHhA3_qaWN2bHv8tAJCg5Ymdj6rfRLN5Gb89AqDzn6hYA@mail.gmail.com>
- <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
-In-Reply-To: <a7a0b354-7ecb-ff39-cca1-070276f8b747@kleine-koenig.org>
+> W dniu 04.12.2019 o=A019:14, Linus L=FCssing pisze:
+> > From: Linus L=FCssing <ll@simonwunderlich.de>
+> > =
 
---PvDzYSmI4h57FYztEGDzgmr6Ab8ZJjbyH
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+> > This adds support for the Ka-Ro MB7 board with a TX6U-8033 module.
+> > =
 
-Hi,
+> > Specification, according to Linux DTS commit:
+> > =
 
-> ok, so you claim my SoB means that *I* confirmed that my change is
-> compatible to the netifd's license. I didn't do that though.
+> >     TX6U-8033:
+> >     Processor    Freescale i.MX 6 Dual Lite, 800MHz
+> >     RAM          1GiB DDR3 SDRAM
+> >     ROM          4GiB eMMC
+> >     Power supply Single 3.1V to 5.5V
+> >     Size         31mm SO-DIMM
+> >     Temp. Range  industrial grade (-40=B0C/-25=B0C to 105=B0C Tj)
+> > =
 
-as it has been pointed out on this list, adding a S-o-b without consent
-should not be done, so I reverted the offending commit.
+> > The u-boot shipped by the vendor by default expects the following parti=
+tion
+> > layout:
+> > =
 
-Kind regards,
-Jo
+> > MBR/MSDOS, disk-id '0cc66cc0' {
+> > 	0cc66cc0-01 =3D> ext2, /vmlinuz
+> > 	0cc66cc0-02 =3D> ext4, rootfs
+> > }
+> > =
 
+> > TX6DL U-Boot > env print
+> > append_bootargs=3Drootfstype=3Dext4
+> > [...]
+> > bootcmd_mmc=3Dsetenv autostart no;run bootargs_mmc;ext2load mmc 0 ${ker=
+neladdr} vmlinuz
+> > [...]
+> > rootpart_uuid=3D0cc66cc0-02
+> > [...]
+> > =
 
---PvDzYSmI4h57FYztEGDzgmr6Ab8ZJjbyH--
+> > This is also one of the reasons, why only ext4 rootfs support was added
+> > and tested so far. No squashfs support yet.
 
---IDzkngoVhzaTvpy61pkdGkmyESUapVGCe
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
+OpenWrt allows to easily ignore or even filter bootloader cmdline, this
+is needed on *most* devices out there. Please add squashfs regardless,
+as some features of OpenWrt (overlayfs, factory-reset, ...) are only
+available when using squashfs (+f2fs in this case) and it should not
+be difficult to do so. Also the rootpart_uuid should not be relevant
+when using OpenWrt.
 
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl3oE1cACgkQQuLLvzou
-ZtP7MxAA0TZVHhOwwlgCXR5WQ+L3RXrp52w8RrJMeeGehNPac2fx1CWnDyOGv5YC
-psApgndmah+vCTMlUx23Sts9u1+xwcb3ozVUr94bZ4SkjGFM1PNl6GZGvbZQrcDc
-hryfBzs6eEMdblPvAlo/RHFelMj9yd5nKK8yEydEw9poDqt0Q+bpQGILIUrsf+Cw
-hpb4xdhMONi/SYnhi3KLEyMCcq1GAj7LyBW6We/mYmmgyMbpOuaEdBYnkDj/Blsz
-A129ADzPBwbPZMCoXUwGlTYrhEVA2ZV9sU3s/amvephFtTqlCfX1iitI1gAHeehS
-sEn2OlrQT0TwP6tO8/7pNb/XHf/QMOWhVRWHbfhLypewEEV+gNMkddZ5C5gJXI2R
-rJI9oVYj3hMCkhkg91hy+mlyS52uCMjIBB95Lzy/qhXqBspqXYoekDDn8Yf8ORVK
-6YMJ8GG7y8lzsay+F9wfQUahc7gYEyWZKpMAQdY7vztPJ2+d7xFPJ2IxQQgOSSPw
-42eLEWn0VYASPKU5Rrmb88QHgpb1SwVvAmtoQ6VYkmV4Q/JEEzDmOzYgqYB2ivRn
-kXlTrtv3XTdT1jbWFEvAOPjeOj1fFz02S1Yjpf7330WzBJ+fcwjtqkn1fdsB326Y
-q9WCtLpIzly6puy8R7qQJobbTHEFQGazKZuF29OP6o/r5xBBqxg=
-=9NOe
------END PGP SIGNATURE-----
-
---IDzkngoVhzaTvpy61pkdGkmyESUapVGCe--
+Let me know if anything is not clear of if you need help achieving
+this.
 
 
---===============5080374227242098386==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> > =
+
+> > Other than that, nothing fancy needs to be added or preserved on the
+> > eMMC.
+> > =
+
+> > Cc: Simon Wunderlich <sw@simonwunderlich.de>
+> > Signed-off-by: Linus L=FCssing <ll@simonwunderlich.de>
+> > ---
+> > =
+
+> > Changelog v2:
+> > * removed wildcard board names
+> > =
+
+> >  target/linux/imx6/Makefile                    |   2 +-
+> >  .../imx6/base-files/etc/board.d/02_network    |   3 +-
+> >  target/linux/imx6/base-files/lib/imx6.sh      |   4 +
+> >  .../base-files/lib/preinit/79_move_config     |   9 ++
+> >  .../imx6/base-files/lib/upgrade/platform.sh   | 108 +++++++++++++++++-
+> >  target/linux/imx6/image/Makefile              |  34 ++++++
+> >  .../linux/imx6/image/gen_karo_sdcard_img.sh   |  26 +++++
+> >  .../imx6/patches-4.14/100-bootargs.patch      |  13 +++
+> >  tools/Makefile                                |   1 +
+> >  9 files changed, 197 insertions(+), 3 deletions(-)
+> >  create mode 100755 target/linux/imx6/image/gen_karo_sdcard_img.sh
+> > =
+
+> > diff --git a/target/linux/imx6/Makefile b/target/linux/imx6/Makefile
+> > index ac4300f7eb..8083a54e16 100644
+> > --- a/target/linux/imx6/Makefile
+> > +++ b/target/linux/imx6/Makefile
+> > @@ -20,6 +20,6 @@ include $(INCLUDE_DIR)/target.mk
+> >  =
+
+> >  KERNELNAME:=3DzImage dtbs
+> >  =
+
+> > -DEFAULT_PACKAGES +=3D uboot-envtools mkf2fs e2fsprogs blkid
+> > +DEFAULT_PACKAGES +=3D uboot-envtools mkf2fs e2fsprogs blkid partx-utils
+> >  =
+
+> >  $(eval $(call BuildTarget))
+> > diff --git a/target/linux/imx6/base-files/etc/board.d/02_network b/targ=
+et/linux/imx6/base-files/etc/board.d/02_network
+> > index 6ec667346d..c662be72b7 100755
+> > --- a/target/linux/imx6/base-files/etc/board.d/02_network
+> > +++ b/target/linux/imx6/base-files/etc/board.d/02_network
+> > @@ -21,7 +21,8 @@ cubox-i |\
+> >  *gw552x)
+> >  	ucidef_set_interfaces_lan_wan 'eth0' 'eth1'
+> >  	;;
+> > -*wandboard)
+> > +*wandboard |\
+> > +tx6u-8033)
+> >  	ucidef_set_interface_wan 'eth0'
+> >  	;;
+> >  esac
+> > diff --git a/target/linux/imx6/base-files/lib/imx6.sh b/target/linux/im=
+x6/base-files/lib/imx6.sh
+> > index 68caaff15f..c4b87d1c21 100755
+> > --- a/target/linux/imx6/base-files/lib/imx6.sh
+> > +++ b/target/linux/imx6/base-files/lib/imx6.sh
+> > @@ -99,6 +99,10 @@ imx6_board_detect() {
+> >  		name=3D"wandboard"
+> >  		;;
+> >  =
+
+> > +	"Ka-Ro electronics TX6U-8033 Module on MB7 baseboard")
+> > +		name=3D"tx6u-8033"
+> > +		;;
+> > +
+> >  	*)
+> >  		name=3D"generic"
+> >  		;;
+> > diff --git a/target/linux/imx6/base-files/lib/preinit/79_move_config b/=
+target/linux/imx6/base-files/lib/preinit/79_move_config
+> > index bdf397c4fc..de7196c7a1 100644
+> > --- a/target/linux/imx6/base-files/lib/preinit/79_move_config
+> > +++ b/target/linux/imx6/base-files/lib/preinit/79_move_config
+> > @@ -15,6 +15,15 @@ move_config() {
+> >  			umount /boot
+> >  		fi
+> >  		;;
+> > +	tx6u-8033)
+> > +		local bootpart=3D/dev/mmcblk2p1
+> > +
+> > +		if [ -b $bootpart ]; then
+> > +			mkdir -p /boot
+> > +			mount -t ext2 -o rw,noatime $bootpart /boot
+> > +			[ -f /boot/sysupgrade.tgz ] && mv -f /boot/sysupgrade.tgz /
+> > +		fi
+> > +		;;
+> >  	esac
+> >  }
+> >  =
+
+> > diff --git a/target/linux/imx6/base-files/lib/upgrade/platform.sh b/tar=
+get/linux/imx6/base-files/lib/upgrade/platform.sh
+> > index a090cc080b..9c9bed96fe 100755
+> > --- a/target/linux/imx6/base-files/lib/upgrade/platform.sh
+> > +++ b/target/linux/imx6/base-files/lib/upgrade/platform.sh
+> > @@ -1,5 +1,5 @@
+> >  #
+> > -# Copyright (C) 2010-2015 OpenWrt.org
+> > +# Copyright (C) 2010-2019 OpenWrt.org
+> >  #
+> >  =
+
+> >  . /lib/imx6.sh
+> > @@ -30,6 +30,102 @@ apalis_do_upgrade() {
+> >  	umount /boot
+> >  }
+> >  =
+
+> > +# (mostly) copied from brcm2708 platform.sh (which was copied from x86=
+?)
+> > +tx6u_8033_check_image() {
+> > +	local diskdev partdev diff
+> > +
+> > +	[ "$#" -gt 1 ] && return 1
+> > +
+> > +	export_bootdevice && export_partdevice diskdev 0 || {
+> > +		echo "Unable to determine upgrade device"
+> > +		return 1
+> > +	}
+> > +
+> > +	get_partitions "/dev/$diskdev" bootdisk
+> > +
+> > +	#extract the boot sector from the image
+> > +	get_image "$@" | dd of=3D/tmp/image.bs count=3D1 bs=3D512b 2>/dev/null
+> > +
+> > +	get_partitions /tmp/image.bs image
+> > +
+> > +	#compare tables
+> > +	diff=3D"$(grep -F -x -v -f /tmp/partmap.bootdisk /tmp/partmap.image)"
+> > +
+> > +	rm -f /tmp/image.bs /tmp/partmap.bootdisk /tmp/partmap.image
+> > +
+> > +	if [ -n "$diff" ]; then
+> > +		echo "Partition layout has changed. Full image will be written."
+> > +		ask_bool 0 "Abort" && exit 1
+> > +		return 0
+> > +	fi
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +# (mostly) copied from brcm2708 platform.sh (which was copied from x86=
+?)
+> > +tx6u_8033_do_upgrade() {
+> > +	local diskdev partdev diff
+> > +
+> > +	export_bootdevice && export_partdevice diskdev 0 || {
+> > +		echo "Unable to determine upgrade device"
+> > +		return 1
+> > +	}
+> > +
+> > +	sync
+> > +
+> > +	if [ "$SAVE_PARTITIONS" =3D "1" ]; then
+> > +		get_partitions "/dev/$diskdev" bootdisk
+> > +
+> > +		#extract the boot sector from the image
+> > +		get_image "$@" | dd of=3D/tmp/image.bs count=3D1 bs=3D512b
+> > +
+> > +		get_partitions /tmp/image.bs image
+> > +
+> > +		#compare tables
+> > +		diff=3D"$(grep -F -x -v -f /tmp/partmap.bootdisk /tmp/partmap.image)"
+> > +	else
+> > +		diff=3D1
+> > +	fi
+> > +
+> > +	if [ -n "$diff" ]; then
+> > +		get_image "$@" | dd of=3D"/dev/$diskdev" bs=3D2M conv=3Dfsync
+> > +
+> > +		# Separate removal and addtion is necessary; otherwise, partition 1
+> > +		# will be missing if it overlaps with the old partition 2
+> > +		partx -d - "/dev/$diskdev"
+> > +		partx -a - "/dev/$diskdev"
+> > +
+> > +		return 0
+> > +	fi
+> > +
+> > +	#iterate over each partition from the image and write it to the boot =
+disk
+> > +	while read part start size; do
+> > +		if export_partdevice partdev $part; then
+> > +			echo "Writing image to /dev/$partdev..."
+> > +			get_image "$@" | dd of=3D"/dev/$partdev" ibs=3D"512" obs=3D1M skip=
+=3D"$start" count=3D"$size" conv=3Dfsync
+> > +		else
+> > +			echo "Unable to find partition $part device, skipped."
+> > +	fi
+> > +	done < /tmp/partmap.image
+> > +
+> > +	#copy partition uuid
+> > +	echo "Writing new UUID to /dev/$diskdev..."
+> > +	get_image "$@" | dd of=3D"/dev/$diskdev" bs=3D1 skip=3D440 count=3D4 =
+seek=3D440 conv=3Dfsync
+> > +}
+> > +
+> > +# (mostly) copied from brcm2708 platform.sh (which was copied from x86=
+?)
+> > +tx6u_8033_copy_config() {
+> > +	local partdev
+> > +
+> > +	if export_partdevice partdev 1; then
+> > +		mkdir -p /boot
+> > +		[ -f /boot/vmlinuz.img ] || mount -t ext4 -o rw,noatime "/dev/$partd=
+ev" /boot
+> > +		cp -af "$UPGRADE_BACKUP" "/boot/$BACKUP_FILE"
+> > +		sync
+> > +		unmount /boot
+> > +	fi
+> > +}
+> > +
+> >  platform_check_image() {
+> >  	local board=3D$(board_name)
+> >  =
+
+> > @@ -41,6 +137,10 @@ platform_check_image() {
+> >  		nand_do_platform_check $board $1
+> >  		return $?;
+> >  		;;
+> > +	tx6u-8033)
+> > +		tx6u_8033_check_image "$1"
+> > +		return $?;
+> > +		;;
+> >  	esac
+> >  =
+
+> >  	echo "Sysupgrade is not yet supported on $board."
+> > @@ -57,6 +157,9 @@ platform_do_upgrade() {
+> >  	*gw5*)
+> >  		nand_do_upgrade "$1"
+> >  		;;
+> > +	tx6u-8033)
+> > +		tx6u_8033_do_upgrade "$1"
+> > +		;;
+> >  	esac
+> >  }
+> >  =
+
+> > @@ -67,6 +170,9 @@ platform_copy_config() {
+> >  	apalis*)
+> >  		apalis_copy_config
+> >  		;;
+> > +	tx6u-8033)
+> > +		tx6u_8033_copy_config
+> > +		;;
+> >  	esac
+> >  }
+> >  =
+
+> > diff --git a/target/linux/imx6/image/Makefile b/target/linux/imx6/image=
+/Makefile
+> > index d1e9e9034e..34fb4a2690 100644
+> > --- a/target/linux/imx6/image/Makefile
+> > +++ b/target/linux/imx6/image/Makefile
+> > @@ -113,6 +113,24 @@ define Build/apalis-emmc
+> >  	$(Build/imx6-combined-image-clean)
+> >  endef
+> >  =
+
+> > +define Build/karo-boot-img
+> > +	$(RM) -rf $@.bootdir
+> > +	mkdir $@.bootdir
+> > +
+> > +	$(CP) $(IMAGE_KERNEL) $@.bootdir/$(KERNEL_IMG)
+> > +
+> > +	genext2fs --block-size $(BLOCKSIZE:%k=3D%Ki) --size-in-blocks $$((102=
+4 * 1024 * $(CONFIG_TARGET_KERNEL_PARTSIZE) / ($(subst k,* 1024,$(BLOCKSIZE=
+))))) --root $@.bootdir $@.boot
+> > +
+> > +	# convert it to revision 1 - needed for u-boot ext2load
+> > +	$(STAGING_DIR_HOST)/bin/tune2fs -O filetype $@.boot
+> > +	$(STAGING_DIR_HOST)/bin/e2fsck -pDf $@.boot > /dev/null
+> > +endef
+> > +
+> > +define Build/karo-sdcard-img
+> > +	./gen_karo_sdcard_img.sh $@ $@.boot $(IMAGE_ROOTFS) $(CONFIG_TARGET_K=
+ERNEL_PARTSIZE) $(CONFIG_TARGET_ROOTFS_PARTSIZE)
+> > +endef
+> > +
+> > +
+> >  #################################################
+> >  # Devices
+> >  #################################################
+> > @@ -232,4 +250,20 @@ define Device/apalis
+> >  endef
+> >  TARGET_DEVICES +=3D apalis
+> >  =
+
+> > +define Device/tx6u-8033
+> > +  DEVICE_TITLE :=3D Ka-Ro electronics TX6U-8033 Module on MB7 baseboard
+> > +  DEVICE_DTS :=3D imx6dl-tx6u-8033
+> > +  FILESYSTEMS :=3D ext4
+> > +  BLOCKSIZE :=3D 4k
+> > +  KERNEL_SUFFIX :=3D -zImage
+> > +  KERNEL_NAME :=3D zImage
+> > +  KERNEL :=3D kernel-bin
+> > +  KERNEL_IMG :=3D vmlinuz
+> > +  IMAGES :=3D factory.img.gz sysupgrade.img.gz
+> > +  IMAGE_SIZE :=3D 3776m
+> > +  IMAGE/sysupgrade.img.gz :=3D karo-boot-img | karo-sdcard-img | check=
+-size $$$$(IMAGE_SIZE) | gzip | append-metadata
+> > +  IMAGE/factory.img.gz :=3D karo-boot-img | karo-sdcard-img | check-si=
+ze $$$$(IMAGE_SIZE) | gzip
+> > +endef
+> > +TARGET_DEVICES +=3D tx6u-8033
+> > +
+> >  $(eval $(call BuildImage))
+> > diff --git a/target/linux/imx6/image/gen_karo_sdcard_img.sh b/target/li=
+nux/imx6/image/gen_karo_sdcard_img.sh
+
+Please do not introduce another gen_*_sdcard_img.sh script.
+See x86 for a more modern example of how to use OpenWrt on block
+(eMMC and such) devices.
+
+> > new file mode 100755
+> > index 0000000000..362ce5838b
+> > --- /dev/null
+> > +++ b/target/linux/imx6/image/gen_karo_sdcard_img.sh
+> > @@ -0,0 +1,26 @@
+> > +#!/usr/bin/env bash
+> > +
+> > +set -x
+> > +[ $# -eq 5 ] || {
+> > +    echo "SYNTAX: $0 <file> <bootfs image> <rootfs image> <bootfs size=
+> <rootfs size>"
+> > +    exit 1
+> > +}
+> > +
+> > +OUTPUT=3D"$1"
+> > +BOOTFS=3D"$2"
+> > +ROOTFS=3D"$3"
+> > +BOOTFSSIZE=3D"$4"
+> > +ROOTFSSIZE=3D"$5"
+> > +
+> > +head=3D4
+> > +sect=3D63
+> > +
+> > +set `ptgen -o $OUTPUT -h $head -s $sect -l 4096 -t 83 -S 0x0cc66cc0 -p=
+ ${BOOTFSSIZE}M -t 83 -p ${ROOTFSSIZE}M`
+> > +
+> > +BOOTOFFSET=3D"$(($1 / 512))"
+> > +BOOTSIZE=3D"$(($2 / 512))"
+> > +ROOTFSOFFSET=3D"$(($3 / 512))"
+> > +ROOTFSSIZE=3D"$(($4 / 512))"
+> > +
+> > +dd bs=3D512 if=3D"$BOOTFS" of=3D"$OUTPUT" seek=3D"$BOOTOFFSET" conv=3D=
+notrunc
+> > +dd bs=3D512 if=3D"$ROOTFS" of=3D"$OUTPUT" seek=3D"$ROOTFSOFFSET" conv=
+=3Dnotrunc
+> > diff --git a/target/linux/imx6/patches-4.14/100-bootargs.patch b/target=
+/linux/imx6/patches-4.14/100-bootargs.patch
+> > index 0954391203..6c025e15db 100644
+> > --- a/target/linux/imx6/patches-4.14/100-bootargs.patch
+> > +++ b/target/linux/imx6/patches-4.14/100-bootargs.patch
+> > @@ -1,3 +1,16 @@
+> > +--- a/arch/arm/boot/dts/imx6dl-tx6u-8033.dts
+> > ++++ b/arch/arm/boot/dts/imx6dl-tx6u-8033.dts
+> > +@@ -51,6 +51,10 @@
+> > + 		display =3D &display;
+> > + 	};
+> > + =
+
+> > ++	chosen {
+> > ++		bootargs =3D "console=3Dttymxc0,115200";
+> > ++	};
+> > ++
+> > + 	backlight: backlight {
+> > + 		compatible =3D "pwm-backlight";
+> > + 		pwms =3D <&pwm2 0 500000 PWM_POLARITY_INVERTED>;
+> >  --- a/arch/arm/boot/dts/imx6dl-wandboard.dts
+> >  +++ b/arch/arm/boot/dts/imx6dl-wandboard.dts
+> >  @@ -19,4 +19,8 @@
+> > diff --git a/tools/Makefile b/tools/Makefile
+> > index 2f57d25525..034e54c5d9 100644
+> > --- a/tools/Makefile
+> > +++ b/tools/Makefile
+> > @@ -39,6 +39,7 @@ tools-$(BUILD_ISL) +=3D isl
+> >  tools-$(CONFIG_USE_SPARSE) +=3D sparse
+> >  tools-$(CONFIG_TARGET_apm821xx)$(CONFIG_TARGET_gemini) +=3D genext2fs
+> >  tools-$(CONFIG_TARGET_tegra) +=3D cbootimage cbootimage-configs
+> > +tools-$(CONFIG_TARGET_imx6) +=3D genext2fs
+> =
+
+> The target for genext2fs is already specified, merge it with previous def=
+inition.
+> =
+
+> >  =
+
+> >  # builddir dependencies
+> >  $(curdir)/bison/compile :=3D $(curdir)/flex/compile
+> > =
+
+> =
+
+> Regards
+> =
+
+> -- =
+
+> TMN
+> =
+
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5080374227242098386==--
-

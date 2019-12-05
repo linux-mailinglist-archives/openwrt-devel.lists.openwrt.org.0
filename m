@@ -2,45 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A66A7113F77
-	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Dec 2019 11:35:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FAA4113FCB
+	for <lists+openwrt-devel@lfdr.de>; Thu,  5 Dec 2019 11:58:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UyWdykLvi50E3ObAekL8IPW/VeUo88oVdu0qgzvEfVI=; b=VVuK9B7jS8Lha5
-	aOHXbk8QueIgidq3RZF2QZZtc2P4x3W5U4V+Jrvqaee8Rm1g6CFQ0tsvd/e2ynvq9Qsn8nU9mdC88
-	jMi2o1+1bnD7PV8/Eunu8HQI2ccPLDcdPjvMsOZm5hasBV9o25y1tHJbtIr4S/DPwFqFTJIkGTSqZ
-	kSuP0aslbGkMaVPHY1rV8URGTEET/tF1Ww5MnVSqA4xhp6fyjn4SEzDRPblGc97ooMKbeKRwDVjsN
-	Cf4FjV+ULrxqxhk7nGaGM4DMVgNNEikNC4xfkoJzuj2cjwa+6mQZC5YjHWMcMR5jviIYwOriiKvN0
-	bGrjbaStpdWet9LTuw0w==;
+	List-Owner; bh=SwB0pEk/kjyX/JZiFZ8NzKYXfBM5YK8oM3y3xstzA7Y=; b=ZZf7JfVc2ASbur
+	86xRpN/I6D3F/OgoYhW2nTvci4ROV04B69s/RBWqva9w0ci3+apyoUdDeIYTM7OIldZtUp4QF+GdX
+	gaSQjSZdPwU7Jz1ormSYguPrw9HjfuWJifWMs2Uoyvd1Wm7UEmDCmVDF12CDJWS0uOA7thMAvNFGk
+	7U52sgGlKqu3AwE62CGO7Pyg2qBztIxgff9mWNpfwXH1JNAKLwQop/iHok63YfRDSb3uKYxAwokKy
+	0QpG64luU9kvPfj9TBOQXmlAC5RFez58fnyh9FHjosNUz9mJXdFWKjHUkK6ttjH0tAgcStqyuU+om
+	DusCsQkNvEsx/cmBTudw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icoSp-0005u5-VI; Thu, 05 Dec 2019 10:34:27 +0000
+	id 1icopw-00073v-QG; Thu, 05 Dec 2019 10:58:20 +0000
 Received: from host-88-217-225-28.customer.m-online.net ([88.217.225.28]
  helo=mail.dev.tdt.de)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icoSk-0005tV-9C
- for openwrt-devel@lists.openwrt.org; Thu, 05 Dec 2019 10:34:23 +0000
+ id 1icopp-00073Y-0F
+ for openwrt-devel@lists.openwrt.org; Thu, 05 Dec 2019 10:58:14 +0000
 Received: from feckert01.dev.tdt.de (unknown [10.2.3.40])
- by mail.dev.tdt.de (Postfix) with ESMTPSA id 39ADD20498;
- Thu,  5 Dec 2019 10:34:12 +0000 (UTC)
+ by mail.dev.tdt.de (Postfix) with ESMTPSA id 4256520811;
+ Thu,  5 Dec 2019 10:58:11 +0000 (UTC)
 From: Florian Eckert <fe@dev.tdt.de>
 To: Eckert.Florian@googlemail.com, Jason@zx2c4.com,
  ldir@darbyshire-bryant.me.uk, daniel.engberg.lists@pyret.net
-Date: Thu,  5 Dec 2019 11:33:38 +0100
-Message-Id: <20191205103338.28355-1-fe@dev.tdt.de>
+Date: Thu,  5 Dec 2019 11:58:05 +0100
+Message-Id: <20191205105805.29869-1-fe@dev.tdt.de>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED autolearn=ham
  autolearn_force=no version=3.4.2
 X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.dev.tdt.de
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_023422_473842_63C7CE2C 
-X-CRM114-Status: UNSURE (   8.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191205_025813_197207_564BF104 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: 4.3 (++++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (4.3 points)
@@ -52,8 +51,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  dynamic-looking rDNS
  0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
  3.5 TO_NO_BRKTS_DYNIP      To: lacks brackets and dynamic rDNS
-Subject: [OpenWrt-Devel] [PATCH v2] wireguard: skip peer config if public
- key of the peer is not defined
+Subject: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
+ lonely peers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,41 +70,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-If a config section of a peer does not have a public key defined, the
-whole interface does not start. The following log is shown
+When we delete a Wireguard interface, the associated peer sections are
+not deleted. They remain in the network configuration.
 
-daemon.notice netifd: test (21071): Line unrecognized: `PublicKey='
-daemon.notice netifd: test (21071): Configuration parsing erro
+This commit adds an init script, that triggers when the network
+configuration file is changed.
 
-The command 'wg show' does only show the interface name.
-
-With this change we skip the peer for this interface and emit a log
-message. So the other peers get configured.
+For each change event, each Wireguard peer section is checked to see if
+the corresponding wireguard interface section still exists. If this is not
+the case, all wireguard peer sections for that interface are deleted.
 
 Signed-off-by: Florian Eckert <fe@dev.tdt.de>
 ---
 v2:
-* Update error message to be a sentence
+* update commit description
 
- package/network/services/wireguard/files/wireguard.sh | 5 +++++
- 1 file changed, 5 insertions(+)
+ package/network/services/wireguard/Makefile   |  2 ++
+ .../services/wireguard/files/wireguard.init   | 31 +++++++++++++++++++
+ 2 files changed, 33 insertions(+)
+ create mode 100644 package/network/services/wireguard/files/wireguard.init
 
-diff --git a/package/network/services/wireguard/files/wireguard.sh b/package/network/services/wireguard/files/wireguard.sh
-index 4c811c6ba9..ccac34e45f 100644
---- a/package/network/services/wireguard/files/wireguard.sh
-+++ b/package/network/services/wireguard/files/wireguard.sh
-@@ -42,6 +42,11 @@ proto_wireguard_setup_peer() {
- 	config_get endpoint_port "${peer_config}" "endpoint_port"
- 	config_get persistent_keepalive "${peer_config}" "persistent_keepalive"
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index ea34b7550b..d78fcfface 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -93,6 +93,8 @@ define Package/wireguard-tools/install
+ 	$(INSTALL_BIN) ./files/wireguard_watchdog $(1)/usr/bin/
+ 	$(INSTALL_DIR) $(1)/lib/netifd/proto/
+ 	$(INSTALL_BIN) ./files/wireguard.sh $(1)/lib/netifd/proto/
++	$(INSTALL_DIR) $(1)/etc/init.d/
++	$(INSTALL_BIN) ./files/wireguard.init $(1)/etc/init.d/wireguard
+ endef
  
-+	if [ -z "$public_key" ]; then
-+		echo "Skipping peer config $peer_config because public key is not defined."
-+		return 0
-+	fi
+ define KernelPackage/wireguard
+diff --git a/package/network/services/wireguard/files/wireguard.init b/package/network/services/wireguard/files/wireguard.init
+new file mode 100644
+index 0000000000..781d0839bc
+--- /dev/null
++++ b/package/network/services/wireguard/files/wireguard.init
+@@ -0,0 +1,31 @@
++#!/bin/sh /etc/rc.common
 +
- 	echo "[Peer]" >> "${wg_cfg}"
- 	echo "PublicKey=${public_key}" >> "${wg_cfg}"
- 	if [ "${preshared_key}" ]; then
++START=80
++USE_PROCD=1
++
++service_triggers() {
++	procd_add_reload_trigger "network"
++}
++
++reload_service() {
++	# delete old peers of related wireguard interface
++	wireguard_check_peers
++}
++
++wireguard_check_peers() {
++	local iface peer
++
++	# get all wireguard peers
++	for peer in $(uci show network | grep =wireguard_); do
++		# extract peer section type
++		peer="${peer##*=}"
++		# extract interface name
++		iface="${peer#*_}"
++
++		# delete peer if iface is not present anymore
++		if ! uci -q show "network.${iface}" 1>/dev/null 2>/dev/null; then
++			uci -q delete "network.@${peer}[-1]"
++			uci commit network
++		fi
++	done
++}
 -- 
 2.20.1
 

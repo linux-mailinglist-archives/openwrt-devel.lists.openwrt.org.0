@@ -2,61 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 002D01156EE
-	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Dec 2019 19:02:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BFEE115838
+	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Dec 2019 21:37:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dBTMI/3ziRFNm+C6fJ9yzt6EYQBvJzxLBS9irvCCWAg=; b=T5k711CpTat8UfYEmWS1cPfSB
-	XodWb1m3YMG/9/q36rz9E9s5omuqiF7s10UTk+FK1fOr8Y+FVcNHSUDLeNAZ9Z5ZsHoqRoGxeRnqW
-	FdoYVXrRhTho0OglDY+HFI8piy+JCL59dU4hk9GPISEfv+5r4wVGW9iBkCGGJyWuwH0PComEkalwb
-	yQU8BURTySGCSqd0ByEyzjD9/YYzVfn3wqUeZIOr9hNvnXJ0Rtp/BvxkRyq9erq3P0YFhjEH4y+Pq
-	GLVeZdly8TUGFMhmx+noycQFlOOTadfPJvMXmYWtoI6xD2bTUPxA1kRFK0F7MCnaF5QOzBEwyyi0q
-	RS47IwjTQ==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To:From:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eQVWz1sXsuj7el5lQX0AnuLSJoFSzoHGYHh1dbXSsoY=; b=fFU9mfvX/dGulD
+	VTIzDvy6yMW2X2FnjkCtJOiGQ9LAuCiYA4OE1mLpEC0aKbbgkobs4YuKhfiAXNdZRl9w1NRkKI3YY
+	YF9ymI/z8orVIBN1ijCfQfTHHK6Px00eUH/QGJznwZSDmOGEW1gbwYLnp7bqq5MPYem3jZNtemyu9
+	IbsEfduu117pFzXrIx3DcWiW6ZIYxzUzyUL1BbMp1tPodgmQnKU04uSOZDRIRhpmzeH8LxixTH6HS
+	iKqwnL9ifSAumAb20sldsU/16Ek4PJqOUS4uTNLzZAzxkLb5o3UEFdG/3dSkgjLqc/L0DHVKt8zvZ
+	WCGl+WHfeWHQfXBWJXyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idHvu-00045z-3C; Fri, 06 Dec 2019 18:02:26 +0000
+	id 1idKML-0000kr-E1; Fri, 06 Dec 2019 20:37:53 +0000
 Received: from mail2.candelatech.com ([208.74.158.173]
  helo=mail3.candelatech.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idHvj-00045T-V8
- for openwrt-devel@lists.openwrt.org; Fri, 06 Dec 2019 18:02:17 +0000
+ id 1idKMC-0000k0-Kw
+ for openwrt-devel@lists.openwrt.org; Fri, 06 Dec 2019 20:37:46 +0000
 Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
  [50.251.239.81])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail3.candelatech.com (Postfix) with ESMTPSA id 0C33F137534;
- Fri,  6 Dec 2019 10:02:14 -0800 (PST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com 0C33F137534
+ by mail3.candelatech.com (Postfix) with ESMTPSA id DA26E137547
+ for <openwrt-devel@lists.openwrt.org>; Fri,  6 Dec 2019 12:37:41 -0800 (PST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com DA26E137547
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
- s=default; t=1575655334;
- bh=gOPR37uiZ5KWgXZP5W/XU/Ngov+Rgqz7aWGLytLe7ow=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=rZPzrvzqMQKnq9qBICax1hH3rouf44FBFuONvuM76UnsrAw37ziM/nYp+ubgS1EF0
- 8Q0Y8RhQTd+haslh/6Tu7pxqtXmf544b4v7r6CCRD3Q10flvKMVvjoFWltlIN7V/9S
- vUUO+bmxM2oUnyG1CbGOKXLTGNVDXpwCukicIKCM=
-To: Joe Ayers <joe@ayerscasa.com>, =?UTF-8?Q?Petr_=c5=a0tetiar?=
- <ynezz@true.cz>
-References: <CAALvt2MKiCHmZb5neZqjawnr-R1VAHpTK+LQafPrUj=i_UJ05w@mail.gmail.com>
- <20191203143434.GF8181@meh.true.cz>
- <CAALvt2POG3isiKH+2aHjSGRoh-+HADtamD9O2VLOCKO=73byGw@mail.gmail.com>
- <20191205200036.GD71465@meh.true.cz>
- <CAALvt2NygyiyJ3iV82B3DXLr+hWsW_7T=iL=9=7xnyUHxD8UdA@mail.gmail.com>
+ s=default; t=1575664661;
+ bh=9fphUVXe71Dk8OwjhZSaw82o1iIBYG8BAj6tm/47TBE=;
+ h=From:Subject:To:Date:From;
+ b=UoMQA2VPe7JdbBmPlTkQHcWwVchO6RL5WjuoU87gcRZ8C67nRxlYlQhBB5dR7J5/z
+ zF7c0juhZ2G4s8vRAQsw9NDPEwFtt1v9b5zbvrG8peGkgflI3VvYk+7R43K5yT5LcZ
+ FArf/62vxw0+ZBOzqOkt2TjxUf7/zYFg04FJvtfs=
 From: Ben Greear <greearb@candelatech.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Organization: Candela Technologies
-Message-ID: <069ab5b0-f9ea-8700-afc6-3514ea2dba99@candelatech.com>
-Date: Fri, 6 Dec 2019 10:02:13 -0800
+Message-ID: <24195555-8a64-8a1e-5b1b-c1d85c5fcdad@candelatech.com>
+Date: Fri, 6 Dec 2019 12:37:41 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.1.1
 MIME-Version: 1.0
-In-Reply-To: <CAALvt2NygyiyJ3iV82B3DXLr+hWsW_7T=iL=9=7xnyUHxD8UdA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_100216_027329_B2B9148F 
-X-CRM114-Status: GOOD (  16.13  )
+X-CRM114-CacheID: sfid-20191206_123744_711134_BE570252 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -71,8 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] ath10k memory leak on 19.07 branch and mikrotik
- RB952Ui-5ac2nD?
+Subject: [OpenWrt-Devel] New ath10k-ct firmware available
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,55 +77,50 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 12/6/19 9:44 AM, Joe Ayers wrote:
->>
->>
->>> Possibly the same symptoms don't exist on 128MB RAM devices.
->>
->> Like there is some if condition, which is doing some nasty things on 64M
->> devices? I admit, that I don't have ath10k-ct source code under my pillow, but
->> it doesn't make much sense to me.
->>
->>> Comparable results between above and my 64MB device.   However, if the
->>> sleep time is extended the consumption is more
->>
->> Ok, I'll let it run overnight with 120s sleep in between.
->>
->>> I suspect this is not the intended behavior.
->>
->> No its not and it's even strange, that I'm not seeing it here if it should
->> happen in the "default setup". Maybe its because:
->>
->> 1. You're using custom image (I'm using official prebuilt images)
->> 2. You're not providing all the steps needed to reproduce the issue
->> 3. I've way different hardware
->>
->> Every detail could make huge difference.
->>
->> -- ynezz
-> 
-> On the device I am testing, it is both (2GHz) ath9k and (5GHz) ath10k.
->    These look to be related patches to this issue:
-> 
-> 960-0010-ath10k-limit-htt-rx-ring-size.patch
-> 960-0011-ath10k-limit-pci-buffer-size.patch
-> 
-> In the v19.07.0-rc2 build for the rb-nor-flash-16M-ac ar71xx image,
-> these patches are applied to backports-4.19.85-1, but don't seem to be
-> applied to ath10k-ct-2019-09-09-5e8cd86f.    Should ath10k-ct have
-> these and other patches?    The device's installed packages do include
-> ath10k-ct (from downloads.openwrt.org installed image).
+Please see new file names and checksums below:
 
-I think that if you need the patches for upstream ath10k, then you should also apply
-the patches to ath10k-ct.
+988x
+19db86003509dedb8ace339c183813ca637d65af24d00666411d1590efe33e13  firmware-2-ct-full-community-22.bin.lede.013
+454e67dab545e720369a07be2fee16de008c76db4ab3119e7760bf9f7504c066  firmware-2-ct-full-htt-mgt-community-22.bin.lede.013
+/home/greearb/candela_html/downloads
+9887
+b3c738328427e124701a5735d65cde0f60e4172ae5bc23b00e5b16df7995dbd4  firmware-2-ct-full-community-22.bin.lede.013
+4432ccee23133bbaa4a5552e50a1e7e889b257362603e05530e751b67c29b7b5  firmware-2-ct-full-htt-mgt-community-22.bin.lede.013
+/home/greearb/candela_html/downloads
+9980
+6fa74a3fc87cba97dbc4a7213b760f8d997cd9c5f11900d47d387b23764cf20a  firmware-5-ct-full-community-12.bin-lede.013
+68e92820c51270eba4f68b24654c4a9408902b2600762b70204f4cb5419bb714  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
+/home/greearb/candela_html/downloads
+9984
+08aeb883bd2d9258e8f1907cca8a0d2eda1c559a66e228dadffd6798f6877c7d  firmware-5-ct-full-community-12.bin-lede.013
+38ed59a2b3c66c10926706a21ae2d3aeaf83e589f19345a8f48d6520522e4fde  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
+/home/greearb/candela_html/downloads
+4019
+feca75fe89af9a3e998047f85ff3428676f4d574b770d51773bb419d0dd98e5a  firmware-5-ct-full-community-12.bin-lede.013
+6a4977689343f43edd934823512f031fd1a026e872004343b9952077f9607cb0  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
+/home/greearb/candela_html/downloads
+9888
+d6a59c17bfbec1abc8498762d9f00b2449cab352feb8bef8b621771168376dbf  firmware-5-ct-full-community-12.bin-lede.013
+fe242c0d56494975d7a1aeb6969d90cc21cb133fba99040d4da7a25fdb90d92c  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
+/home/greearb/candela_html/downloads
 
-Platforms with more memory probably do not need or benefit from those patches.
+
+The release notes since last time for wave-1:
+
+   *  November 29, 2019:  Fix IBSS merge issue, related to TSF id leakage bug in firmware code.
+                          Thanks for Ahmed Zaki @ Mage-Networks for helping to diagnose and test.
+
+
+
+The release notes since last time for wave-2:
+
+   *  December 6, 2019:  Fix 160Mhz problem caused by logic that did not take into account the fact that
+                         160Mhz has only 1/2 of the NSS of lower bandwidths in the rate table.
 
 Thanks,
 Ben
@@ -140,6 +128,12 @@ Ben
 -- 
 Ben Greear <greearb@candelatech.com>
 Candela Technologies Inc  http://www.candelatech.com
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 _______________________________________________

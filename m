@@ -2,59 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A534115D8D
-	for <lists+openwrt-devel@lfdr.de>; Sat,  7 Dec 2019 17:38:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5458B115E0E
+	for <lists+openwrt-devel@lfdr.de>; Sat,  7 Dec 2019 19:50:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OKMWu58XkyymjLVVIZVzSuGcAJpGEDgiT0wZgQQTuRg=; b=R1psGUZeXmZT2r
-	JNGPDXzJ4/B0q98o5CJv/f+3i2lhh2SqGhCYmZubz21KacSm3sB1yl5YqEzgP9eq0OYJjjNS9SvXl
-	82gPUHp51tX0pqtFpkHmS473GvXsnG/fgKinWdXl65DIVc2sGKi6gPKlDI3j98kwZBqpihAykCRQG
-	EclHOd+kZXIMbHqgc+LMMJGpbAFjjofPeE8jPugZb2bVoFjJMhnPhSeLkMbFZF/hGS3+vIckxIQi4
-	f55utbmh8qjZa3IV2SX/TYeKLPbi7J1/xrP3ypTrlbBIjFZRXb4rIk+aRfBWRtkeJwt6zX87AqUrm
-	6ObBhrCXvZB52VsjkPjw==;
+	List-Owner; bh=apt3+4cDw7rcJiLYCQkPJdNLhLBoAps1XFG4RwCkVgc=; b=kXQ2qDh1IigOOJ
+	k+HfqHqts9ZoZvasNaVOARWsSkczb2gK1XyHVIrFzwyIDTrNnZ9MTFB4uK7zvqZ2wrUYnHwZY9sgO
+	p8TcVeeHLCvUKBv//VYAu3sIuwWHx0AzUd+bXa7bLz7BI0MCs8Mfzg+nSUYCURTaVFaoh5VoFWMfJ
+	n+hVB6FDSR1iyObRgf0Dg1qRRHrsEPclprv1BnSrR7E9U2m7YY3BvEjzI7P9HEKxzYPH5L3swLbTr
+	3Q9Y6PcvcWSqVM3axymCcUSwoBuEmfwi9Aj96f9KQe5g1C8Ikaeuw+gSM4PsCmJY1Nv5zcHzLp/ks
+	HdksOlQWi+deRhK0uF3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idd65-0002Dd-RU; Sat, 07 Dec 2019 16:38:21 +0000
-Received: from smtpbg702.qq.com ([203.205.195.102] helo=smtpproxy21.qq.com)
+	id 1idfAJ-0001Gc-BZ; Sat, 07 Dec 2019 18:50:51 +0000
+Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idd5v-0002Bn-1b
- for openwrt-devel@lists.openwrt.org; Sat, 07 Dec 2019 16:38:13 +0000
-X-QQ-mid: bizesmtp18t1575736652tbgeymr5
-Received: from example.com (unknown [112.19.111.110])
- by esmtp6.qq.com (ESMTP) with SMTP id 0
- for <openwrt-devel@lists.openwrt.org>; Sun, 08 Dec 2019 00:37:31 +0800 (CST)
-X-QQ-SSF: 0120000000200050E142B00A0000000
-X-QQ-FEAT: PJL/FS1uSvKVLrkT5HdmYW+bZiImIG7+U4FKEHQTsjEi2yFFw613Myy4Ecz0E
- u5b2W8+sDztR4DMmGCwFnRkGxe/seYfWkqazsx4TiO61aVlIDoYJhrzSdsEenmlJNB/2/zT
- U0gb0+2HChhzwc5KbnIbQbCAwm/ysMnYhkrzWR46nmRfU7CXtLU2fHZLL5KgnGEXXWx6K3a
- IAnesoRLTRjvSrTp02k0hWWlXvIREr9zYsjHFK+MZ0JmLjom9gF3o8nGZj4LoUD09mDvMnM
- 8mwr+Jrb3fG8wVXYg/vH4OM81L5jTnyMRjVltV+x6jnUcZ6P8wz/2NWh4=
-X-QQ-GoodBg: 0
-From: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+ id 1idfAD-0001G8-U6
+ for openwrt-devel@lists.openwrt.org; Sat, 07 Dec 2019 18:50:47 +0000
+Received: by mail-pg1-x532.google.com with SMTP id r11so5014382pgf.1
+ for <openwrt-devel@lists.openwrt.org>; Sat, 07 Dec 2019 10:50:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WtKSroPi7eznLyyhL8kSnsjUypJ6jBuTkz9qpxLb/cQ=;
+ b=LjJ4NCOFWjg1jOfP6BANVm5TOqaiz9k4FWgTsK9YTfSm63gGxy2v8KhpxWahUdMbJE
+ EK3mfXLj9ZGFjmfMs3X6JpKPGF5tpc1ZPeAPXNTe31c35wV3J6TORuZXjbYd+P3JxoAo
+ ghEreqGVBciX+nTawQ1h4ChQuGSdLtv59fYQ9Ak38eZ/VeYix08Fjts9XKEtzUc/Mhly
+ 4vTBmxQXThH8QQ32nwQahJgfV8P546RKsQq+d4GysuBU2mjdPi1jVp4yUKhasRxAMKX+
+ QvGcvc9KyeSBZwLLvTfeHiUDI1wh88J2pqw9MqbE38s+6slMAsex/vo77lcqcBWhYPCP
+ xpAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WtKSroPi7eznLyyhL8kSnsjUypJ6jBuTkz9qpxLb/cQ=;
+ b=ObOVfzoY96pFfBZKS6YsQ4Qo5geuotMgTIGkL7segmO//EDiotgagHFiNgSK6gq8XH
+ fU/RHs+fjtqbQQL8yjxWFskH2RQb0r5GYeDU7BnKJGUjPREtiCF5oH8FfmVs/N1I6Kx0
+ shBFdRWb3rkpM8abhj4Xp7ixp6PeN9GrT04elSOGGqYqGHeLd+usCZ77uM6AmEhgAJBs
+ xUoVFnuvX1pUA+Cb8hgBhchOGdUUep6lLskNjANFoH9e4n+MGdsmyUnbFWPDiSZN2nTa
+ 0OB7NLUvtssN0i0u/LA4zeXnEvaVf4jZ03X7WAGu/Db1cyjgUSprFZp5gZ2LXHJ0ylnT
+ fAAg==
+X-Gm-Message-State: APjAAAXNRratJIFCOMpOJIpKG+01ctt9aF0zHfSIKEFq36oO2DqTmV2r
+ XYNGiiDZQHihoHdEeqTsP1DOOWUaX/Q=
+X-Google-Smtp-Source: APXvYqw/UISKF8O47hRaQgUSIiaR6bXBc2CEb9eQOFhVCiHRwm8hygQbPaA5rVn/+kcMQ9K6KHov/A==
+X-Received: by 2002:a63:9d07:: with SMTP id i7mr10842513pgd.344.1575744644350; 
+ Sat, 07 Dec 2019 10:50:44 -0800 (PST)
+Received: from mangix-trapnet.lan ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id c8sm21843458pfj.106.2019.12.07.10.50.42
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 07 Dec 2019 10:50:43 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  8 Dec 2019 00:37:31 +0800
-Message-Id: <20191207163731.15028-1-dengqf6@mail2.sysu.edu.cn>
-X-Mailer: git-send-email 2.24.0
+Date: Sat,  7 Dec 2019 10:50:41 -0800
+Message-Id: <20191207185041.8861-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-QQ-SENDSIZE: 520
-Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign7
-X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_083811_127679_693F0657 
-X-CRM114-Status: UNSURE (   6.50  )
+X-CRM114-CacheID: sfid-20191207_105045_993836_006F8D70 
+X-CRM114-Status: UNSURE (   9.56  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:532 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] ath79: fix typos in DTS
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCHv4] uci: Fix Wformat-nonliteral warning
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,136 +102,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-echi->ehci
-ochi->ohci
+A const char * variable is being passed as a format string. Unfortunately,
+this is not correct.
 
-Signed-off-by: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+A constant expression needs to be passed so that GCC can determine the
+types of the format properly.
+
+Also fixed a different warning that needs a printf attribute.
+
+Fixes:
+
+error: format not a string literal, argument types not checked
+[-Werror=format-nonliteral]
+  176 |    error_info);
+      |    ^~~~~~~~~~
+error: format not a string literal, argument types not checked
+[-Werror=format-nonliteral]
+  185 |    error_info);
+
+cli.c:196:19: error: format string is not a string literal
+[-Werror=format-nonliteral]
+           vfprintf(stderr, fmt, ap);
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts | 6 +++---
- target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts      | 6 +++---
- target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi     | 6 +++---
- target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi   | 4 ++--
- 4 files changed, 11 insertions(+), 11 deletions(-)
+ v4: Use a proper named define
+ v3: Moved define to top of file.
+ v2: Fixed extra warning from clang 10.
+ cli.c    |  1 +
+ libuci.c | 15 ++++++++-------
+ 2 files changed, 9 insertions(+), 7 deletions(-)
 
-diff --git a/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts b/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
-index 2e00de8887..e87f422051 100644
---- a/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
-+++ b/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
-@@ -47,7 +47,7 @@
- 		usb {
- 			label = "buffalo:green:usb";
- 			gpios = <&ath9k0 3 GPIO_ACTIVE_LOW>;
--			trigger-sources = <&usb_ochi_port>, <&usb_echi_port>;
-+			trigger-sources = <&usb_ohci_port>, <&usb_ehci_port>;
- 			linux,default-trigger = "usbport";
- 		};
+diff --git a/cli.c b/cli.c
+index 8970f4f..6ba97ea 100644
+--- a/cli.c
++++ b/cli.c
+@@ -185,6 +185,7 @@ static void cli_perror(void)
+ 	uci_perror(ctx, appname);
+ }
  
-@@ -180,7 +180,7 @@
- 	#size-cells = <0>;
- 	status = "okay";
++__attribute__((format(printf, 1, 2)))
+ static void cli_error(const char *fmt, ...)
+ {
+ 	va_list ap;
+diff --git a/libuci.c b/libuci.c
+index a9e70e8..2e46456 100644
+--- a/libuci.c
++++ b/libuci.c
+@@ -40,6 +40,12 @@ static const char *uci_errstr[] = {
+ #include "uci_internal.h"
+ #include "list.c"
  
--	usb_ochi_port: port@1 {
-+	usb_ohci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-@@ -191,7 +191,7 @@
- 	#size-cells = <0>;
- 	status = "okay";
++#define UCI_ERR_FORMAT \
++	"%s%s" /* prefix */ \
++	"%s%s" /* function */ \
++	"%s" /* error */ \
++	"%s" /* details */
++
+ __private const char *uci_confdir = UCI_CONFDIR;
+ __private const char *uci_savedir = UCI_SAVEDIR;
  
--	usb_echi_port: port@1 {
-+	usb_ehci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-diff --git a/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts b/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
-index 92de193aba..5e35dddd4b 100644
---- a/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
-+++ b/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
-@@ -34,7 +34,7 @@
- 		usb {
- 			label = "d-link:blue:usb";
- 			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
--			trigger-sources = <&usb_ochi_port>, <&usb_echi_port>;
-+			trigger-sources = <&usb_ohci_port>, <&usb_ehci_port>;
- 			linux,default-trigger = "usbport";
- 		};
+@@ -142,11 +148,6 @@ uci_get_errorstr(struct uci_context *ctx, char **dest, const char *prefix)
+ {
+ 	static char error_info[128];
+ 	int err;
+-	const char *format =
+-		"%s%s" /* prefix */
+-		"%s%s" /* function */
+-		"%s" /* error */
+-		"%s"; /* details */
  
-@@ -123,7 +123,7 @@
- 	#size-cells = <0>;
- 	status = "okay";
+ 	error_info[0] = 0;
  
--	usb_ochi_port: port@1 {
-+	usb_ohci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-@@ -134,7 +134,7 @@
- 	#size-cells = <0>;
- 	status = "okay";
- 
--	usb_echi_port: port@1 {
-+	usb_ehci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-diff --git a/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi b/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
-index 08b3c77b39..b6ae167024 100644
---- a/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
-+++ b/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
-@@ -32,7 +32,7 @@
- 		usb_led {
- 			label = "netgear:green:usb";
- 			resets = <&rst 12>;
--			trigger-sources = <&usb_ochi_port>, <&usb_echi_port>;
-+			trigger-sources = <&usb_ohci_port>, <&usb_ehci_port>;
- 			linux,default-trigger = "usbport";
- 		};
- 	};
-@@ -134,7 +134,7 @@
- 	#size-cells = <0>;
- 	status = "okay";
- 
--	usb_ochi_port: port@1 {
-+	usb_ohci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-@@ -145,7 +145,7 @@
- 	#size-cells = <0>;
- 	status = "okay";
- 
--	usb_echi_port: port@1 {
-+	usb_ehci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-diff --git a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
-index 4f52e3cc40..0ed9970813 100644
---- a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
-+++ b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
-@@ -86,7 +86,7 @@
- 	#address-cells = <1>;
- 	#size-cells = <0>;
- 
--	usb_ochi_port: port@1 {
-+	usb_ohci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
-@@ -97,7 +97,7 @@
- 	#address-cells = <1>;
- 	#size-cells = <0>;
- 
--	usb_echi_port: port@1 {
-+	usb_ehci_port: port@1 {
- 		reg = <1>;
- 		#trigger-source-cells = <0>;
- 	};
+@@ -169,7 +170,7 @@ uci_get_errorstr(struct uci_context *ctx, char **dest, const char *prefix)
+ 		break;
+ 	}
+ 	if (dest) {
+-		err = asprintf(dest, format,
++		err = asprintf(dest, UCI_ERR_FORMAT,
+ 			(prefix ? prefix : ""), (prefix ? ": " : ""),
+ 			(ctx && ctx->func ? ctx->func : ""), (ctx && ctx->func ? ": " : ""),
+ 			uci_errstr[err],
+@@ -178,7 +179,7 @@ uci_get_errorstr(struct uci_context *ctx, char **dest, const char *prefix)
+ 			*dest = NULL;
+ 	} else {
+ 		strcat(error_info, "\n");
+-		fprintf(stderr, format,
++		fprintf(stderr, UCI_ERR_FORMAT,
+ 			(prefix ? prefix : ""), (prefix ? ": " : ""),
+ 			(ctx && ctx->func ? ctx->func : ""), (ctx && ctx->func ? ": " : ""),
+ 			uci_errstr[err],
 -- 
-2.24.0
-
-
+2.23.0
 
 
 _______________________________________________

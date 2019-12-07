@@ -2,70 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BFEE115838
-	for <lists+openwrt-devel@lfdr.de>; Fri,  6 Dec 2019 21:37:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C9F2115C19
+	for <lists+openwrt-devel@lfdr.de>; Sat,  7 Dec 2019 12:46:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:To:From:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eQVWz1sXsuj7el5lQX0AnuLSJoFSzoHGYHh1dbXSsoY=; b=fFU9mfvX/dGulD
-	VTIzDvy6yMW2X2FnjkCtJOiGQ9LAuCiYA4OE1mLpEC0aKbbgkobs4YuKhfiAXNdZRl9w1NRkKI3YY
-	YF9ymI/z8orVIBN1ijCfQfTHHK6Px00eUH/QGJznwZSDmOGEW1gbwYLnp7bqq5MPYem3jZNtemyu9
-	IbsEfduu117pFzXrIx3DcWiW6ZIYxzUzyUL1BbMp1tPodgmQnKU04uSOZDRIRhpmzeH8LxixTH6HS
-	iKqwnL9ifSAumAb20sldsU/16Ek4PJqOUS4uTNLzZAzxkLb5o3UEFdG/3dSkgjLqc/L0DHVKt8zvZ
-	WCGl+WHfeWHQfXBWJXyw==;
+	List-Owner; bh=T3hfeTXBRWevGDhYvyU9MG1ObBtcuJdbcYokhF2sddg=; b=Hfw/8BEcAn6Htb
+	5ZsuencbSanmDI7L9ZWS1cuU721GHB/J2GPS9UhVQ24S/W2eCuKoXbA5gEsR2uXrUWCfOpWv0bxU+
+	/ObcF5C4gAy4/TCgbM//ouYwF0c5pkgj1tIU1qPyqqTjeId3US6JxfDHB7qzlGZmPpKADu/yK6Yo6
+	JPOh2jDuarbPTmfvFGhS9lozxm2thMuIFahcgySS8cef10K2/OnB/LWAIubnKpd0MybsLFBds5zo0
+	fx2lPUzAEX2W+a5GzTcaB4+vzAm+I/9Gj+POZVC53vRQG6I+VSSttgJsTy+z/OLF/P5DStMrCEMKH
+	y6dh4hPu0lVUOZM4Vs5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idKML-0000kr-E1; Fri, 06 Dec 2019 20:37:53 +0000
-Received: from mail2.candelatech.com ([208.74.158.173]
- helo=mail3.candelatech.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idKMC-0000k0-Kw
- for openwrt-devel@lists.openwrt.org; Fri, 06 Dec 2019 20:37:46 +0000
-Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
- [50.251.239.81])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail3.candelatech.com (Postfix) with ESMTPSA id DA26E137547
- for <openwrt-devel@lists.openwrt.org>; Fri,  6 Dec 2019 12:37:41 -0800 (PST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com DA26E137547
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
- s=default; t=1575664661;
- bh=9fphUVXe71Dk8OwjhZSaw82o1iIBYG8BAj6tm/47TBE=;
- h=From:Subject:To:Date:From;
- b=UoMQA2VPe7JdbBmPlTkQHcWwVchO6RL5WjuoU87gcRZ8C67nRxlYlQhBB5dR7J5/z
- zF7c0juhZ2G4s8vRAQsw9NDPEwFtt1v9b5zbvrG8peGkgflI3VvYk+7R43K5yT5LcZ
- FArf/62vxw0+ZBOzqOkt2TjxUf7/zYFg04FJvtfs=
-From: Ben Greear <greearb@candelatech.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Organization: Candela Technologies
-Message-ID: <24195555-8a64-8a1e-5b1b-c1d85c5fcdad@candelatech.com>
-Date: Fri, 6 Dec 2019 12:37:41 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+	id 1idYXh-00020a-MF; Sat, 07 Dec 2019 11:46:33 +0000
+Received: from lmr1.uibk.ac.at ([138.232.1.142] helo=smtp.uibk.ac.at)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1idYXb-00020F-J2
+ for openwrt-devel@lists.openwrt.org; Sat, 07 Dec 2019 11:46:29 +0000
+Received: from localhost.localdomain (ip5f5ac5d9.dynamic.kabel-deutschland.de
+ [95.90.197.217]) (authenticated bits=0)
+ by smtp.uibk.ac.at (8.14.4/8.14.4/F1) with ESMTP id xB7BjnPP031380
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+ Sat, 7 Dec 2019 12:46:20 +0100
+From: Peter Stadler <peter.stadler@student.uibk.ac.at>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat,  7 Dec 2019 12:45:47 +0100
+Message-Id: <20191207114547.5209-1-peter.stadler@student.uibk.ac.at>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Language: en-US
+X-Spam-Score: () -15.0 ALL_TRUSTED,RCV_SMTP_AUTH,RCV_SMTP_UIBK
+X-Scanned-By: MIMEDefang 2.84 at uibk.ac.at
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_123744_711134_BE570252 
-X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-CacheID: sfid-20191207_034627_942441_52D7BCC9 
+X-CRM114-Status: UNSURE (   5.48  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [138.232.1.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] New ath10k-ct firmware available
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH] ubus: make libubus ready for linking into
+ C++
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,63 +62,45 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Peter Stadler <peter.stadler@student.uibk.ac.at>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Please see new file names and checksums below:
+Use extern "C" { ... } if using libubus.h in a C++ project.
 
-988x
-19db86003509dedb8ace339c183813ca637d65af24d00666411d1590efe33e13  firmware-2-ct-full-community-22.bin.lede.013
-454e67dab545e720369a07be2fee16de008c76db4ab3119e7760bf9f7504c066  firmware-2-ct-full-htt-mgt-community-22.bin.lede.013
-/home/greearb/candela_html/downloads
-9887
-b3c738328427e124701a5735d65cde0f60e4172ae5bc23b00e5b16df7995dbd4  firmware-2-ct-full-community-22.bin.lede.013
-4432ccee23133bbaa4a5552e50a1e7e889b257362603e05530e751b67c29b7b5  firmware-2-ct-full-htt-mgt-community-22.bin.lede.013
-/home/greearb/candela_html/downloads
-9980
-6fa74a3fc87cba97dbc4a7213b760f8d997cd9c5f11900d47d387b23764cf20a  firmware-5-ct-full-community-12.bin-lede.013
-68e92820c51270eba4f68b24654c4a9408902b2600762b70204f4cb5419bb714  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
-/home/greearb/candela_html/downloads
-9984
-08aeb883bd2d9258e8f1907cca8a0d2eda1c559a66e228dadffd6798f6877c7d  firmware-5-ct-full-community-12.bin-lede.013
-38ed59a2b3c66c10926706a21ae2d3aeaf83e589f19345a8f48d6520522e4fde  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
-/home/greearb/candela_html/downloads
-4019
-feca75fe89af9a3e998047f85ff3428676f4d574b770d51773bb419d0dd98e5a  firmware-5-ct-full-community-12.bin-lede.013
-6a4977689343f43edd934823512f031fd1a026e872004343b9952077f9607cb0  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
-/home/greearb/candela_html/downloads
-9888
-d6a59c17bfbec1abc8498762d9f00b2449cab352feb8bef8b621771168376dbf  firmware-5-ct-full-community-12.bin-lede.013
-fe242c0d56494975d7a1aeb6969d90cc21cb133fba99040d4da7a25fdb90d92c  firmware-5-ct-full-htt-mgt-community-12.bin-lede.013
-/home/greearb/candela_html/downloads
+Signed-off-by: Peter Stadler <peter.stadler@student.uibk.ac.at>
+---
+ libubus.h | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-
-The release notes since last time for wave-1:
-
-   *  November 29, 2019:  Fix IBSS merge issue, related to TSF id leakage bug in firmware code.
-                          Thanks for Ahmed Zaki @ Mage-Networks for helping to diagnose and test.
-
-
-
-The release notes since last time for wave-2:
-
-   *  December 6, 2019:  Fix 160Mhz problem caused by logic that did not take into account the fact that
-                         160Mhz has only 1/2 of the NSS of lower bandwidths in the rate table.
-
-Thanks,
-Ben
-
+diff --git a/libubus.h b/libubus.h
+index dc42ea7..6925514 100644
+--- a/libubus.h
++++ b/libubus.h
+@@ -14,6 +14,10 @@
+ #ifndef __LIBUBUS_H
+ #define __LIBUBUS_H
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ #include <libubox/avl.h>
+ #include <libubox/list.h>
+ #include <libubox/blobmsg.h>
+@@ -414,4 +418,8 @@ static inline int ubus_unregister_event_handler(struct ubus_context *ctx,
+     return ubus_remove_object(ctx, &ev->obj);
+ }
+ 
++#ifdef __cplusplus
++}
++#endif
++
+ #endif
 -- 
-Ben Greear <greearb@candelatech.com>
-Candela Technologies Inc  http://www.candelatech.com
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+2.23.0
 
 
 _______________________________________________

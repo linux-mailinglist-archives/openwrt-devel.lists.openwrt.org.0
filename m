@@ -2,38 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33CD11162F0
-	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Dec 2019 17:15:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A86051162EF
+	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Dec 2019 17:14:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3165csOtk1wELeqwjhQBTybE51ixCEUAVDr6ZmAX48w=; b=DH6JN9bkGeTLGQ
-	BOx31zfdKPC6hxQMUUlp0S5e54+mZ51GJhvsQRBKsecy6ijufyiHGKaf8Vh/uP3/GAFfN5DcQDjQz
-	ui42cvDvp295n1D3wihLH7FP+A7+UcQJdumYQJboWrXYMjhpPci/4OH4CfViUC8LB5qpzutqXA7iQ
-	d7LKsJIfw72bjvtkJOfQvtWTdI6Mg+R9Wt5ftB2hmqe/J91ykdoduLZarrbG6mfjZlAHOfcK4+mR1
-	yn3q3A2i0gApfiMIpwMim9n7y9lpLPgyUKgf4CEX1nJSHfw1MU9zQUD3vHkJSHpG3ndARFcq3eBGA
-	Oa2jh+SsQjhLk+e/AGiQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Iar6UNY3CEcAOy/nD1Q2dFVvqSRm9Ct6iZnZIZXhxQQ=; b=fbtkOa+ps5QrJg
+	K+zTqhscu/6ZMV3C1RGOG3q0/E7q0BM4/7ytQk9crIhQK5LmyHphvyK8nUJXUJ23QqkMs3LvMf2kO
+	Jnf2nKlP6NyFiXgtv52UhmjbobLMqLZRObqlHNnJc53t9d0wd+L+/2q+kFmNVuycvUHkouvnifCeg
+	34nUOtl9L1HHXBlIq+65YbzK+6NQMvWIut+jHw5WSSBWV1FoWViirW5QePUn5y/LKMzlb4bR2GE4w
+	po4e2sDWiN50naR6YWpC19UDhc2DfAn2/df8IkWCVbwqX1+xDLaih18IJ/vFkx4gfe7XuvqIgKtk1
+	xD8HP3xLbpy8xjV9SB/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idzD1-0007i8-Jh; Sun, 08 Dec 2019 16:14:59 +0000
+	id 1idzCn-0007ZB-Ke; Sun, 08 Dec 2019 16:14:45 +0000
 Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]
  helo=webmail.newmedia-net.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idzCf-0007YS-1s
+ id 1idzCf-0007YT-1C
  for openwrt-devel@lists.openwrt.org; Sun, 08 Dec 2019 16:14:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com;
  s=mikd; 
- h=Subject:Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Cc:To:From;
- bh=DSysEYWw3FnhVKb0+/2QCTLhlHlq9SXbwFVbTEtYvTA=; 
- b=kSy6xTgeF3RvQy+LDVXButObAWCjgYyDxLJVur4tuacOA0pDeVTl9JUNAf11iheMUR6MJcNokqbIVTZ+Vr3sDAabvmetJJrcDPaRCY7UY0CMxyviw799C7xk6fqQ6Wxf6aesaM91uIIhtrOUF91P7No8C2jFFyCk35URQomUEV0=;
+ h=Subject:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:Date:Cc:To:From;
+ bh=qZirfSPfas5Fbg8gcZHXmrCYldMvnFdvC/dh6ZOnKdE=; 
+ b=i3pn/AH3m+9PqmMi4fedATYDriFgiGAbVtHBpBluWCJVkZdYwx1k3ILBGlpPk2QY7e3UP8GRV4Zy5hISyVzkeEZlgP+Bx+ajB0OgiqdQCo/jgyLznOo4D4CoAQv0wDxznUQBaDyqZInB2LfAyc6rjqYy045meIfcbSaHEZ40ELA=;
 From: Daniel Danzberger <daniel@dd-wrt.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  8 Dec 2019 17:14:18 +0100
-Message-Id: <20191208161419.124991-1-daniel@dd-wrt.com>
+Date: Sun,  8 Dec 2019 17:14:19 +0100
+Message-Id: <20191208161419.124991-2-daniel@dd-wrt.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191208161419.124991-1-daniel@dd-wrt.com>
+References: <20191208161419.124991-1-daniel@dd-wrt.com>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 2a02:908:2614:35c:840f:e4b6:a243:a02
 X-SA-Exim-Mail-From: daniel@dd-wrt.com
@@ -45,17 +47,17 @@ X-Spam-Status: No, score=-2.6 required=4.0 tests=BAYES_00,NO_RELAYS
 X-SA-Exim-Version: 4.2.1 (built Thu, 26 May 2011 15:22:33 +0200)
 X-SA-Exim-Scanned: Yes (on webmail.newmedia-net.de)
 X-NMN-MailScanner-Information: Please contact the ISP for more information
-X-NMN-MailScanner-ID: 1idzBE-0003r4-BQ
+X-NMN-MailScanner-ID: 1idzBE-0003r4-OO
 X-NMN-MailScanner: Found to be clean
 X-NMN-MailScanner-From: daniel@dd-wrt.com
 X-Received: from [2a02:908:2614:35c:840f:e4b6:a243:a02]
  (helo=localhost.localdomain)
  by webmail.newmedia-net.de with esmtpa (Exim 4.72)
  (envelope-from <daniel@dd-wrt.com>)
- id 1idzBE-0003r4-BQ; Sun, 08 Dec 2019 17:13:08 +0100
+ id 1idzBE-0003r4-OO; Sun, 08 Dec 2019 17:13:09 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_081437_403371_95E3A9E1 
-X-CRM114-Status: UNSURE (   7.21  )
+X-CRM114-CacheID: sfid-20191208_081437_402175_1E296893 
+X-CRM114-Status: UNSURE (   5.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,8 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 1/2] ustream-ssl: mbedtls: fix net_sockets.h
- include warning
+Subject: [OpenWrt-Devel] [PATCH 2/2] ustream-ssl: mbedtls: fix ssl client
+ verification
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,22 +94,30 @@ Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
 ---
- ustream-mbedtls.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ ustream-mbedtls.c | 7 -------
+ 1 file changed, 7 deletions(-)
 
-diff --git a/ustream-mbedtls.h b/ustream-mbedtls.h
-index 70bd4ea..0e5988a 100644
---- a/ustream-mbedtls.h
-+++ b/ustream-mbedtls.h
-@@ -19,7 +19,7 @@
- #ifndef __USTREAM_POLARSSL_H
- #define __USTREAM_POLARSSL_H
+diff --git a/ustream-mbedtls.c b/ustream-mbedtls.c
+index 85bbb1c..74c27a5 100644
+--- a/ustream-mbedtls.c
++++ b/ustream-mbedtls.c
+@@ -182,16 +182,9 @@ static void ustream_ssl_update_own_cert(struct ustream_ssl_ctx *ctx)
+ 	if (!ctx->cert.version)
+ 		return;
  
--#include <mbedtls/net.h>
-+#include <mbedtls/net_sockets.h>
- #include <mbedtls/ssl.h>
- #include <mbedtls/certs.h>
- #include <mbedtls/x509.h>
+-	if (!ctx->server) {
+-		mbedtls_ssl_conf_ca_chain(&ctx->conf, &ctx->cert, NULL);
+-		return;
+-	}
+-
+ 	if (!ctx->key.pk_info)
+ 		return;
+ 
+-	if (ctx->cert.next)
+-		mbedtls_ssl_conf_ca_chain(&ctx->conf, ctx->cert.next, NULL);
+ 	mbedtls_ssl_conf_own_cert(&ctx->conf, &ctx->cert, &ctx->key);
+ }
+ 
 -- 
 2.24.0
 

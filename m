@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18DE01162D2
-	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Dec 2019 16:34:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79E151162D7
+	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Dec 2019 16:35:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,66 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jAy9fV+ZeJ/AsIvgY50rFFYtzRYzcdmX+uARviVKoso=; b=Ul6gvAEHALJRb6UvSpCNFejQoh
-	957MXLRmZMBIH2wtqPYlxKMXhyp7kivYf/VhBRkqU1GmAjJzBNPjwmAKEWLMWmgXxIZaseakNzkWE
-	J313Ro/Vikt/hY+gRodOp35QgzfwIxd6T7UzTaSJfRR+WyMWzl46EoN8SpsVGauvnggtF2zet/ZhS
-	3R19mSMb/2zVj3idY9FHsblNNFdp4/241HuQQwLEjHld4uU++NP6VF92yd7H6/mvVEfvhb3Nn4Bvt
-	gbT6B2M8RAPwuHBZsVg43Y/Brw5cDHDumBNoh0bZYGm5PClLf9YaygszwafT3aZ8WudWrbM9TykIw
-	pjrSpMlQ==;
+	bh=ym4NyJRUbap/RpMg6leIquwy9ndPXk6rg4rxCh3/1EQ=; b=Dbyz6Nn47gCdlJxvEAG+0QjYF9
+	pMX45P3yVCiUaj6+m8gyZZrKEVdanW2dECjTZ96/ESzgwYEsbQhH+NfujUZWAsaxEmobEw3ZBOHeP
+	f6HLs7HdsvqLWp2BXeBUCkE2LHhl97qydYrnBbRSMtV+ZO7vM43TAwcXVuvfnk8z3Yv4Ks6iP4KcF
+	yzqKg11Hv9SvvbzI5hlXaUTqUEq3bl3LVUrMHxLmcqUHxB3FZUDVvvcZyp0z/HnhldJfBmYxMSmzn
+	rbsVV7bAF9virZ1VU8z2cedgZxHN+aJZevou4qOzavU2eom/61SSUufCDeOld7+MZqEMyR060+Lyx
+	yQQCNPEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idyZY-0001Ax-3G; Sun, 08 Dec 2019 15:34:12 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1idyaO-0002QH-0Z; Sun, 08 Dec 2019 15:35:04 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idyZB-0000zG-9N
- for openwrt-devel@lists.openwrt.org; Sun, 08 Dec 2019 15:33:50 +0000
+ id 1idyZB-0000zE-Aq
+ for openwrt-devel@lists.openwrt.org; Sun, 08 Dec 2019 15:33:52 +0000
 Received: from buildfff.adridolf.com ([188.193.231.72]) by
  mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MvsN5-1hmYIT3HN9-00sxjM for <openwrt-devel@lists.openwrt.org>; Sun, 08
- Dec 2019 16:33:42 +0100
+ id 1Macaw-1i3Gu43u38-00c8EX for <openwrt-devel@lists.openwrt.org>; Sun, 08
+ Dec 2019 16:33:43 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  8 Dec 2019 16:32:51 +0100
-Message-Id: <20191208153255.27655-3-freifunk@adrianschmutzler.de>
+Date: Sun,  8 Dec 2019 16:32:52 +0100
+Message-Id: <20191208153255.27655-4-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191208153255.27655-1-freifunk@adrianschmutzler.de>
 References: <20191208153255.27655-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:nTCp+JBIGGzoCT74JNavtECQBFwpmptpAFEYCNqhC9aAnvsCMx5
- 0ECLm1oAGJjHnu4moW5k4G86Yd29l3VztVLESSeKwBvWrgwgqudn+pz8BMCjbe8jXXdo+HA
- CMA+e/ucTzlINtSgUM8WeiiXTxQH6rtqCJic8AuJkW2yJwWLwR1rNlWxm1Pq7Wjcgip5BEX
- oapeKjd3C0iq/q7GELqGQ==
+X-Provags-ID: V03:K1:PtgawOWsJdg5hTmSy4OrPIB0C8O2UB5d6GcTZyKf4bmZXOXQDyP
+ NcXULlMyy+Yshkucc8DVAE9wdElOxL34k4zin6qreR/Sxp2tzfuK1+dZ2xlVoA1GyDBLvCl
+ bGM6BdJDXL57KalUyhZchX/lqtVYN6t2VfOWLFLU+KKA0ADIp44lhpXho5P4LPSn+s3cC14
+ Th5CaYVw69tzkQoL171uA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:sXJiYerfqtk=:/aUf0oVc7xhKUVzm7Qec96
- 5X/lCIgnHPQXm5J4++ABAfSpxNLz+OHejR28LDHWh8Z2PVhbfAX362S6iujrbT8udjGwzSk3X
- cuoDt/vZyDhrigzWzcKJ3DMZds4USavUgGLWujrJKYwxDkYLjG5nBtL3r1QLGHwbhCob8F7hM
- okeDZXay/ZVgxuJp4iMl2JtJ7LM/nXeD9+NYn085KIj8wSP904soM7Dk3zZazzq+BM23Vd0vE
- A/P4et++zqZQW01ZqFC5L7xfX9GwutM4clymdGAXOiLVQzWy35DyQ/TJjcNl8gcyitQvMs18j
- 45DyVoORUIzj7yg7tmlH0ZF9RwCFRcPXBs2freUiFfyDdscYsl61GuUugKSKOyq78sUvv2xGJ
- dQqitKWQrGhyPVu5HK5FtcjVD7e6Y3jjhPjDf0b28gdKTUW3eN65vjaS4qpAO6hyVetKkPZPU
- HiVXbdBGbCW8BQPxAceSbmoVEqDs3km6dlWulcx/pTeorfQqDieqTxB3KuEBCD7dmbvhBx16F
- LXIWc/rHn9PHWAKaRYA/slgp3nXTa/X1qHj3TueM577pKWvFKievolxFBLITubUJUt9ISqIh4
- +4mdK5uFG4L7SCG+Ai5NYhObDcLqJfSKCGUAQJAQS00R3Q1mtRwrlH5aPqgnyxcjSRNJ34HWk
- OzGcT4pRUduwBjY9pHX6bQYG+/MwseoHphfcmHW7ghdSk4HnDCRjZThmMW+DCV1LmJpGj8DoS
- W12fUEzNPNd2EorjYe0qh/QdLa/bWH+cLHM7L0UA4fBS/If0YcFub2JMGsLdd1Mz8sCXtHxey
- hgGpmmmjlGDFDaZKhEq9ZJpoqbxRge/Y3xWkoaryj8+6WGMaD/3kuezmb7Zeg02bJdiElYwYG
- bP3r+xR4q782QvAr6GpoaQmdU6mECBvZ6s4qw6fWM=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:I+MG8G3r52o=:KogNBi1fO89KBpNuPyUQsL
+ OwZ1XamsFJgfjJp45PH7Ruk+IZzpSTXFIItJkL+anjPPuJcaLQUgrnvrPxApttIferkdPd0A9
+ hgUWm1bOXqlkGLroRtnOb8YVvusawmNnz6COwsMd33awvJeXVVC34zVlnXmRLcgLsvo/cl7Ui
+ yR01YGE5/hZNfkxuhFDMv+yELej0YgujRs6YMh2CV/z4eW17FQtjzKsLhdOIUATrEOsIFg7Aa
+ 3XLW9Sdet3yC9oxiqDcDNMqzwjJlavWjIyfmYehH3SuvJwp1Xs23G1Zw/yRtK8rfrgOB2vI+2
+ R2WhEqTJM9IJjpWaezHwBZEBJEcoA/MYpiZjW9eXkFzK44I/8bMTUsCok+L82sAjse7x6/ziW
+ UmoZemtLYMVvcRs7aZEjqkF8oIB0MqWI9xnFcAPjUx/rfwPYfto+A8znzpZ6FQW1caRNMOzgk
+ XVdqrtS5gvBV232w07ZtBkCyAkxxHy98WoshuSffqiMWUkg83DI/2RcnLjraqwpBZ/42JS7CJ
+ J8d6BXL2zdVvqtemddUlvUszhrY9963SYrvs0Z7zOpQZSXj/CmfCHeBh1BGulFQamMzAPreOI
+ eRI0S8JijnHJCQUuSgNDv0xnvPbfnUiREh9n4V0AtjzAKedEm8GfBqVA5kb6WJdX2E1ADAQUd
+ bedpTBKkgcnHs3XrArgv2i3B4Nrv9UJdg7F1KPmqYxgRl5hdEJTkeviTeGFcufDl8Ncw3YQUn
+ fCI3yx6vvmCLZ2KwarC+8OC3lPNQi67WRi6lW1kUvYlcdSnnwD23v3g5Cu+kuo7H/CgJmMAXb
+ XDkfMtGlzEVeUSFhClWqKICA0fL6q+KFQNpMouIcjflcyMSYmy7DDqlJGy6rUATrpq28KE1rC
+ 9ihSfZT6d/yxtcUKQRTEsy4O4jfK7l654JG3WUmTo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_073349_632451_B7EEF18F 
-X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-CacheID: sfid-20191208_073349_682531_8090F292 
+X-CRM114-Status: UNSURE (   7.78  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 2/6] ramips: mt7620: use flash location for
+Subject: [OpenWrt-Devel] [PATCH 3/6] ramips: mt7621: use flash location for
  wan_mac in 02_network
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -97,89 +95,96 @@ initialization.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- .../mt7620/base-files/etc/board.d/02_network  | 28 +++++++++++--------
- 1 file changed, 16 insertions(+), 12 deletions(-)
+ .../mt7621/base-files/etc/board.d/02_network  | 42 ++++++++++++-------
+ 1 file changed, 26 insertions(+), 16 deletions(-)
 
-diff --git a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
-index 900bbc5550..20846ef202 100755
---- a/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
-+++ b/target/linux/ramips/mt7620/base-files/etc/board.d/02_network
-@@ -222,28 +222,19 @@ ramips_setup_macs()
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+index a39dfb40f3..2173e4d13b 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+@@ -147,30 +147,21 @@ ramips_setup_macs()
+ 	local label_mac=""
  
  	case $board in
- 	aigale,ai-br100|\
--	alfa-network,ac1200rm|\
- 	asus,rt-ac51u|\
- 	asus,rt-n12p|\
- 	asus,rt-n14u|\
- 	bdcom,wap2100-sk|\
--	dlink,dir-810l|\
- 	edimax,ew-7478apc|\
- 	fon,fon2601|\
- 	head-weblink,hdrm200|\
- 	nexx,wt3020-4m|\
- 	nexx,wt3020-8m|\
- 	phicomm,psg1208|\
--	phicomm,psg1218a|\
--	phicomm,psg1218b|\
- 	planex,db-wrt01|\
- 	planex,mzk-750dhp|\
- 	sanlinking,d240|\
--	tplink,archer-c2-v1|\
--	tplink,archer-c20-v1|\
--	tplink,archer-c20i|\
--	tplink,archer-c50-v1|\
--	tplink,archer-mr200|\
- 	vonets,var11n-300|\
- 	wrtnode,wrtnode|\
- 	youku,yk1|\
-@@ -254,7 +245,13 @@ ramips_setup_macs()
- 	zbtlink,zbt-we826-32m|\
- 	zbtlink,zbt-we826-e|\
- 	zbtlink,zbt-wr8305rt)
--		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth0/address)" 1)
-+		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x4)" 1)
+-	adslr,g7|\
++	adslr,g7)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0xe00c)" 1)
 +		;;
-+	alfa-network,ac1200rm|\
-+	dlink,dir-810l|\
-+	phicomm,psg1218a|\
-+	phicomm,psg1218b)
-+		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x28)" 1)
+ 	afoundry,ew1200|\
+ 	asiarf,ap7621-001|\
+ 	asiarf,ap7621-nv1|\
+ 	firefly,firewrt|\
+ 	gehua,ghl-r-001|\
+-	mediatek,ap-mt7621a-v60|\
+-	mikrotik,rb750gr3|\
+-	mikrotik,rbm33g|\
+ 	mqmaker,witi|\
+-	mtc,wr1201|\
+-	netgear,r6220|\
+-	netgear,wndr3700-v5|\
+-	storylink,sap-g3200u3|\
+-	telco-electronics,x1|\
+ 	totolink,a7000r|\
+-	ubiquiti,edgerouterx|\
+-	ubiquiti,edgerouterx-sfp|\
+ 	unielec,u7621-06-16m|\
+ 	unielec,u7621-06-64m|\
+-	xiaoyu,xy-c5|\
+ 	xzwifi,creativebox-v1|\
+ 	zbtlink,zbt-wg2626)
+-		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth0/address)" 1)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0xe000)" 1)
  		;;
- 	alfa-network,r36m-e4g|\
- 	zbtlink,zbt-we1026-h-32m)
-@@ -280,7 +277,7 @@ ramips_setup_macs()
- 		wan_mac=$(mtd_get_mac_ascii u-boot-env WAN_MAC_ADDR)
+ 	alfa-network,quad-e4g|\
+ 	asus,rt-ac57u|\
+@@ -215,17 +206,36 @@ ramips_setup_macs()
+ 		wan_mac=$(macaddr_add "$lan_mac" 1)
  		;;
- 	edimax,br-6478ac-v2)
+ 	iodata,wn-ax1167gr|\
+-	iodata,wn-gx300gr)
++	iodata,wn-gx300gr|\
++	mtc,wr1201|\
++	netgear,r6220|\
++	netgear,wndr3700-v5|\
++	xiaoyu,xy-c5)
+ 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x4)" 1)
+ 		;;
+ 	iodata,wnpr2600g)
+ 		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
+ 		label_mac=$wan_mac
+ 		;;
++	mediatek,ap-mt7621a-v60)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x5)" 1)
++		;;
++	mikrotik,rb750gr3|\
++	mikrotik,rbm33g)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary hard_config 0x10)" 2)
++		;;
+ 	netgear,r6260|\
+ 	netgear,r6350|\
+ 	netgear,r6850)
 -		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth0/address)" 2)
 +		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x4)" 2)
- 		;;
- 	engenius,esr600)
- 		lan_mac=$(mtd_get_mac_ascii u-boot-env ethaddr)
-@@ -289,7 +286,7 @@ ramips_setup_macs()
- 	glinet,gl-mt300a|\
- 	glinet,gl-mt300n|\
- 	glinet,gl-mt750)
--		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth0/address)" 1)
-+		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x4000)" 1)
- 		label_mac=$(mtd_get_mac_binary factory 0x4)
- 		;;
- 	hiwifi,hc5661|\
-@@ -313,6 +310,13 @@ ramips_setup_macs()
- 	linksys,e1700)
- 		wan_mac=$(mtd_get_mac_ascii config WAN_MAC_ADDR)
- 		;;
-+	tplink,archer-c2-v1|\
-+	tplink,archer-c20-v1|\
-+	tplink,archer-c20i|\
-+	tplink,archer-c50-v1|\
-+	tplink,archer-mr200)
-+		wan_mac=$(macaddr_add "$(mtd_get_mac_binary rom 0xf100)" 1)
 +		;;
- 	zbtlink,zbt-we1026-5g-16m)
++	storylink,sap-g3200u3|\
++	telco-electronics,x1)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0xe006)" 1)
++		;;
++	ubiquiti,edgerouterx|\
++	ubiquiti,edgerouterx-sfp)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x22)" 1)
+ 		;;
+ 	wevo,11acnas|\
+ 	wevo,w2914ns-v2)
+@@ -249,7 +259,7 @@ ramips_setup_macs()
+ 		;;
+ 	zbtlink,zbt-wg3526-16m|\
+ 	zbtlink,zbt-wg3526-32m)
+-		wan_mac=$(macaddr_add "$(cat /sys/class/net/eth0/address)" 1)
++		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0xe000)" 1)
  		label_mac=$(mtd_get_mac_binary factory 0x4)
  		;;
+ 	esac
 -- 
 2.20.1
 

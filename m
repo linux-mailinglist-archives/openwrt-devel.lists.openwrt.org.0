@@ -2,66 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6764811639E
-	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Dec 2019 20:41:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7731B1163AE
+	for <lists+openwrt-devel@lfdr.de>; Sun,  8 Dec 2019 21:14:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:Message-ID:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1JmS0d4J3p14ItPLcwmX5ZhH8msxPBeiEJe2wMM8tOc=; b=OB3Ay0elsZgRug
-	xj51GcHuvqoy8HcGv+IwypZE88oJ4R8dw9qoaOf1lafaSywd4IR8R8ZGqHVytMRJcM+DLrqEHIpi9
-	q0TZkxNlY3Iil3sqzW5YcteLZK/xlILZIBtte4ifrD6/NpAkNx/6VA9ZoZXd/vITi/AM3aDDJseXd
-	CFhuFeBnk9QcFE4XRMRHXq38cYVqoXRuD4IDuBz0DHOTUpBAEyLHx3zfzZxs0ycpRHG+AGIE1VNeT
-	A+OoRe9vlQ/BDUHUbmT69otbmvqx9ZGuCTrdyZWXWPwzVvvjzqUJSqTQHCGnZtbfXr71clCQ8IBvU
-	hWP7yHvJ870u9zZQdEOw==;
+	List-Owner; bh=LF8p7zA9UQ5PnP8ExsEejiFCuJ/Z3tKYe5l1OpcZPng=; b=UNJawPTHh3DGyA
+	jeiYet2KmCho1Tq42CBWLaFwO4amoT8/ndokO0pdO2z56E9iQ/tRacu6bO6hVOXwAE6cvUdLuKsp7
+	r9f/jMw5ipKTyGZKmTxQKW/fTu/n4SMrpp+bj1RfOAxi0nhObs26O1SjoFy+tFEUyCIwj32C/62C4
+	DZ1bYNtnWAqIFxNUM8rdnoY1Kj5/SiKve/ZZcvDbt/hKhgeK4RzdKdg2+qlCHWlUGqXoDszX/vSb6
+	0OGvu+WNS+HRjI34TrSNxUxYNhbVdhBTW72/RV8qpztyQkQlwUufMTUJ1zz6cVm0hA4FQwJs6NrEJ
+	ypf6B4im6WlNFNf8I3eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie2Qv-0008Hv-Lm; Sun, 08 Dec 2019 19:41:33 +0000
-Received: from out-22.smtp.github.com ([192.30.252.205])
+	id 1ie2wm-0000tp-EC; Sun, 08 Dec 2019 20:14:28 +0000
+Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]
+ helo=webmail.newmedia-net.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie2Qo-0008HS-Gt
- for lede-dev@lists.infradead.org; Sun, 08 Dec 2019 19:41:28 +0000
-Received: from github-lowworker-c53a806.ac4-iad.github.net
- (github-lowworker-c53a806.ac4-iad.github.net [10.52.23.45])
- by smtp.github.com (Postfix) with ESMTP id 23D8EA0067;
- Sun,  8 Dec 2019 11:41:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
- s=pf2014; t=1575834084;
- bh=3hltusvNM/j0wDStIIzwrr76f39XgGB3osPj4jQNv0U=;
- h=Date:From:To:Subject:From;
- b=ZDXZG26RJoCpc4B28R0N4AZKZoGKIILXUya0QHelZlEHo9VGH8TnZM3JI+Ul5pRcg
- 956QCs6e8eR3oHgzke6xELR3eiwbLbqJgXnJQ1Gx5fQjk30xNm/5CaQDsKDLI3+P84
- 9QiHy7V9wImSJ18oTO4dGbxzKElbkA7BwvEUwDVQ=
-Date: Sun, 08 Dec 2019 11:41:24 -0800
-From: Stephen Walker <noreply@github.com>
-To: stephendwalker+github@gmail.com, 
- openwrt-devel@lists.openwrt.org
-Message-ID: <sdwalker/sdwalker.github.io/push/refs/heads/master/83c714-d4b099@github.com>
-Mime-Version: 1.0
-X-GitHub-Recipient-Address: stephendwalker+github@gmail.com,
- lede-dev@lists.infradead.org
-X-Auto-Response-Suppress: All
+ id 1ie2wa-0000tQ-6Y
+ for openwrt-devel@lists.openwrt.org; Sun, 08 Dec 2019 20:14:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com;
+ s=mikd; 
+ h=Subject:Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Cc:To:From;
+ bh=wQUnq8jpUSmmrqig0lzg1nKTz+XTOHe8tNDjAl109kI=; 
+ b=Iw2fypO1OFy7YARSIxfkWEVYJbh6GKfhGvpxxYo1HbBfZzkX2TumLJnQZBsS4RLXYtEe1xLz0TUdKwHLGt7eVSz2rSEvrAPkoHzAfFhwOY0dEBPtgzA4VlTsF4ud8Z5DjjgA1zdR9SSz+T5Nd5VPXCylLbmjB+LY2yLLzxVSKC0=;
+From: Daniel Danzberger <daniel@dd-wrt.com>
+To: openwrt-devel@lists.openwrt.org,
+	daniel@makrotopia.org
+Date: Sun,  8 Dec 2019 21:14:08 +0100
+Message-Id: <20191208201408.130971-1-daniel@dd-wrt.com>
+X-Mailer: git-send-email 2.24.0
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2a02:908:2614:35c:840f:e4b6:a243:a02
+X-SA-Exim-Mail-From: daniel@dd-wrt.com
+X-Spam-Checker-Version: SpamAssassin 3.1.9 (2007-02-13) on
+ webmail.newmedia-net.de
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.6 required=4.0 tests=BAYES_00,NO_RELAYS
+ autolearn=ham version=3.1.9, No
+X-SA-Exim-Version: 4.2.1 (built Thu, 26 May 2011 15:22:33 +0200)
+X-SA-Exim-Scanned: Yes (on webmail.newmedia-net.de)
+X-NMN-MailScanner-Information: Please contact the ISP for more information
+X-NMN-MailScanner-ID: 1ie2vJ-0002BZ-4W
+X-NMN-MailScanner: Found to be clean
+X-NMN-MailScanner-From: daniel@dd-wrt.com
+X-Received: from [2a02:908:2614:35c:840f:e4b6:a243:a02]
+ (helo=localhost.localdomain)
+ by webmail.newmedia-net.de with esmtpa (Exim 4.72)
+ (envelope-from <daniel@dd-wrt.com>)
+ id 1ie2vJ-0002BZ-4W; Sun, 08 Dec 2019 21:12:57 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_114126_632564_2BAB2635 
-X-CRM114-Status: UNSURE (   1.76  )
+X-CRM114-CacheID: sfid-20191208_121416_662716_4AE935EF 
+X-CRM114-Status: UNSURE (   6.52  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.30.252.205 listed in list.dnswl.org]
- 2.5 HEADER_SPAM            Bulk email fingerprint (header-based) found
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
-Subject: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] d4b099: This week's
- update
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH 2/2] ustream-ssl: mbedtls: fix ssl client
+ verification
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,27 +85,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Daniel Danzberger <daniel@dd-wrt.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-  Branch: refs/heads/master
-  Home:   https://github.com/sdwalker/sdwalker.github.io
-  Commit: d4b09966b2363f0d81c2c79dee32482b79cbc05b
-      https://github.com/sdwalker/sdwalker.github.io/commit/d4b09966b2363f0d81c2c79dee32482b79cbc05b
-  Author: Stephen Walker <stephendwalker+github@gmail.com>
-  Date:   2019-12-08 (Sun, 08 Dec 2019)
+The ustream_ssl_update_own_cert() function should, like the name suggests, only
+update the local ssl peer's own certificate and not the any of the CA's.
 
-  Changed paths:
-    M uscan/index-18.06.html
-    M uscan/index-19.07.html
-    M uscan/index.html
+By overwriting the CA's certifcates when setting the own certificate, the code
+broke SSL client verification.
 
-  Log Message:
-  -----------
-  This week's update
+This bug was only triggerd when:
+ ustream_ssl_context_set_crt_file()
+was called after
+ ustream_ssl_context_add_ca_crt_file()
 
+Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
+---
+ ustream-mbedtls.c | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/ustream-mbedtls.c b/ustream-mbedtls.c
+index 85bbb1c..74c27a5 100644
+--- a/ustream-mbedtls.c
++++ b/ustream-mbedtls.c
+@@ -182,16 +182,9 @@ static void ustream_ssl_update_own_cert(struct ustream_ssl_ctx *ctx)
+ 	if (!ctx->cert.version)
+ 		return;
+ 
+-	if (!ctx->server) {
+-		mbedtls_ssl_conf_ca_chain(&ctx->conf, &ctx->cert, NULL);
+-		return;
+-	}
+-
+ 	if (!ctx->key.pk_info)
+ 		return;
+ 
+-	if (ctx->cert.next)
+-		mbedtls_ssl_conf_ca_chain(&ctx->conf, ctx->cert.next, NULL);
+ 	mbedtls_ssl_conf_own_cert(&ctx->conf, &ctx->cert, &ctx->key);
+ }
+ 
+-- 
+2.24.0
 
 
 _______________________________________________

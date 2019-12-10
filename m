@@ -2,74 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 753BF118695
-	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Dec 2019 12:39:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D4591188E6
+	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Dec 2019 13:53:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RhsIQxJsp6RMv3y3B46NS7vcJnCdMrUQOJdtLSl31fg=; b=aNCtsyXucKZonKmSTfhJbmqa5
-	/Y/ZHMxwgopQviJJee91EbB4AKT6GGm8C0itAA75WieBICL+inZnoZd759KqfsEEq0jTN+tCrBbdj
-	1tJkcdq2l3znAbQsTay5YaV6dJxsOVecJlMqyY5ISvXFQZm4xvlnJuv1jIgUQcv+gjRVDDexlYp+f
-	F1W2ZH03j2mc+Zz91bNGFCDJnHF7kUyoCfsuQXj+wyhdV38RMtGq1pkqN0R7SgyTDUxsBYmr39o4b
-	8G/mnj9lE1oOtnR1g7uh6Ss8L0nfC7pGbG0XRHsJrOoQrHo8zDnVxNryLRsMaDo90enukvh7dNGmf
-	a4gZ/al9Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JuP4cmN9LC4TSNESQf9mSAkhpB4BcHeYnRwgx0QOmqM=; b=skEqBuG0wY/VbW
+	7FwR2gQxVTKfM/1cJyahj4KTM1xQdU4uF+ge1wxKMFaNUm/n6MAUgLqj8Ql8EKiIWjzLDaZf8ez/y
+	YmSHtt0teu++pDStgjUaOlkWQIPp+GSCSEYSE/0elO6fgqBZ0EkHPnzbrIdlA7UfpdseLq2HSZH2d
+	EjWJWvd3TzAWVh/Q6HTiABw7mVg+jnwrDGf2ernjqahiNaES93KGXf3LQ/l+Fl8iV8eIWPaKWxZ/a
+	DXYVKt3Biso9421HseFmgB8mYCX/m/YnaP/iciNMpVJoQBsp7RGlfW90iNI0ST5I0LhZr9mxYnsYZ
+	m6HuJV/ZaIABuBOzB8EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iedrW-0001NJ-By; Tue, 10 Dec 2019 11:39:30 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1ief19-0006nB-Ma; Tue, 10 Dec 2019 12:53:31 +0000
+Received: from smtpbgau1.qq.com ([54.206.16.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iedrN-0001MN-OY
- for openwrt-devel@lists.openwrt.org; Tue, 10 Dec 2019 11:39:23 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue012
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1MYLqs-1iID9x2Jc2-00VSsb; Tue, 10
- Dec 2019 12:39:11 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: <vargagab@gmail.com>, <openwrt-devel@lists.openwrt.org>,
- "'Birger Koblitz'" <mail@birger-koblitz.de>
-References: <20191209220358.103352-1-vargagab@gmail.com>
-In-Reply-To: <20191209220358.103352-1-vargagab@gmail.com>
-Date: Tue, 10 Dec 2019 12:39:10 +0100
-Message-ID: <011b01d5af4e$70ff5830$52fe0890$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQJIPYEFOxgZO5l15Y8SOyw0Q5Np86bOIR1Q
-Content-Language: de
+ id 1ief0z-0006mT-0Z
+ for openwrt-devel@lists.openwrt.org; Tue, 10 Dec 2019 12:53:23 +0000
+X-QQ-mid: bizesmtp22t1575982370tmbpidk0
+Received: from example.com (unknown [112.19.110.248])
+ by esmtp6.qq.com (ESMTP) with SMTP id 0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 10 Dec 2019 20:52:49 +0800 (CST)
+X-QQ-SSF: 0140000000200050E180B00A0000000
+X-QQ-FEAT: l6IKqkG+NbkI5MkehXYYel4I80ABj5tes+yLelDcmN8d8RnO9T7I415ldZ5Sp
+ MWOKpY06TapJz5DPwBqT31i0jiV7iSqEsMr++Tm4lHoqPVlR+wP+VgGboYTllr769/D1e/f
+ bHX+r7WRfrPEPlxmgL8XMn1LOGaxolODT+fUIAIgfclI7N1zJcSJce8mHZB0ku7ozzEQJSw
+ Ie2RtPLNSX9js+Jyo7xiDzenQXNMh0TZxtqDj5rTV1k2yuWLN7Jwxpg2rjcZnPuPGhY90w7
+ vAZRw9Y9Z5EUBi9DvKTJgaQAOgUHCTCl087MEcpMHCOLhzI2ErNitwxBfwSsMJQ/uG6VCaT
+ P/DjsZC
+X-QQ-GoodBg: 2
+From: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 10 Dec 2019 20:52:49 +0800
+Message-Id: <20191210125249.27265-1-dengqf6@mail2.sysu.edu.cn>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:y/qhRHth3tXNq+S412CqODuZkeOTB21nkhO58snjKUsjpEg0aDy
- rcvefQronEMxKTQOJZvjqJnjm+7ajSiBWp5YViVbmZRHGlwfEPBOhoFm4uv9YvH7Bk0/ARB
- 52YKR4MvRte0fHHSe72E/QAuU8Qc+o6EfmZxCu9A97JfZ7HxpzmkZQYo2wtoU/HF66JwfmT
- KNXW8KqQrNCNW1vdW48Cw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:NXg8SjJl3r4=:n+6J+BscfP/WqhFXIiXQ7I
- BP0e+J+FECLS4ljIXtoB6yC1zmINAbRRVnu05A4W4frfW6jFBJm5MPZJsxyB96cGc3W+JPwRb
- Cw8uuh6bSwNIUQ2Tigv4aFrdeZRaKCeJVWukSFn+Mw0zAB/Ts07Tb0jCg5nPrAORs8ZpStfAE
- 5YkreTLi7c5123vegsuY5cKhPTUz2oS5nUdFaU8AqbncA5G6pDzbXbf1PtVjXgmSk+/wDURO4
- X0P6QLmZj9fQcynjSY7iFLjfGWhWn4OOcJ3cmgLuHSQ6CWPvbUJRuIJTYRf/eGMegU7qplHFr
- 8OxEgYxW1Imqaq9FEZZYI3zlhh3c6FZ96L2e3PCYWlXLVPUJi8DyjeOcNw9z9fTyqdHn3Y/GA
- iUE/AgRjACy8SwLEfE57q2GrKfYyS5pOC43odgWhwoVpDS4qSfRgf0sSnkA6lbfkKPS1sqAl5
- w+9nMdPeZIVoPXLvEQvDtoAOFIaivBvmTM3xXlUnRRHCsiOsxw9A3Sg2mLsN8t0RVtGY2i7aS
- EGd4gclsFrogvM7dq+urPzVmrJoahe+7A+8JXRSQGHn0/YptqpncjgcKg4FLLwGEM45xwioW5
- dBnT12QN8Ge1R4eXQNggFW2wtCKxRzzV1MdtR4tGuc+2ioZK/JhqFEA/DVa7g2/VHMk8V3xIG
- md7eKFFz86bqPzbPSoxrYXkWMtqvhlIlJmUyX0oLubpgzJAwgYmC+KSzvLk9H7NpxsjaQWlze
- e6ikNvxN/+a7Igu6XevdG9LdVTOp5yNyBXUp0FnyD5+e0D4hrYbZUAJkrBxnxB8KKdyMvR2jQ
- BnmsXKhsGzx13dDIE4HKdWdsSjZNCmM+iGo0IpVYz6umQrS/rI1G1hZMUUm1sQRWJP+IXU+Dg
- x7vt+yhQPo4wgalC2yJhJeB6Q6f9NQYpJ69A+75+s=
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign7
+X-QQ-Bgrelay: 1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_033922_090095_18B64AB2 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_045321_407750_0E8BD166 
+X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: fix switch port numbering for
- RT-AC65P/RT-AC85P
+ no trust [54.206.16.166 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH V2] ath79: fix typos in DTS
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,129 +69,143 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: ynezz@true.cz, gch981213@gmail.com
-Content-Type: multipart/mixed; boundary="===============7445469393845324783=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Replace "usb_ochi" with "usb_ohci", and "usb_echi" with "usb_ehci"
 
---===============7445469393845324783==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=OG2IczoN++yrx/=-="
+Signed-off-by: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+---
+ target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts | 6 +++---
+ target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts      | 6 +++---
+ target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi     | 6 +++---
+ target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi   | 4 ++--
+ 4 files changed, 11 insertions(+), 11 deletions(-)
 
-This is a multipart message in MIME format.
+diff --git a/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts b/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
+index 2e00de8887..e87f422051 100644
+--- a/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
++++ b/target/linux/ath79/dts/ar7161_buffalo_wzr-hp-ag300h.dts
+@@ -47,7 +47,7 @@
+ 		usb {
+ 			label = "buffalo:green:usb";
+ 			gpios = <&ath9k0 3 GPIO_ACTIVE_LOW>;
+-			trigger-sources = <&usb_ochi_port>, <&usb_echi_port>;
++			trigger-sources = <&usb_ohci_port>, <&usb_ehci_port>;
+ 			linux,default-trigger = "usbport";
+ 		};
+ 
+@@ -180,7 +180,7 @@
+ 	#size-cells = <0>;
+ 	status = "okay";
+ 
+-	usb_ochi_port: port@1 {
++	usb_ohci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+@@ -191,7 +191,7 @@
+ 	#size-cells = <0>;
+ 	status = "okay";
+ 
+-	usb_echi_port: port@1 {
++	usb_ehci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+diff --git a/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts b/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
+index 92de193aba..5e35dddd4b 100644
+--- a/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
++++ b/target/linux/ath79/dts/ar7161_dlink_dir-825-b1.dts
+@@ -34,7 +34,7 @@
+ 		usb {
+ 			label = "d-link:blue:usb";
+ 			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
+-			trigger-sources = <&usb_ochi_port>, <&usb_echi_port>;
++			trigger-sources = <&usb_ohci_port>, <&usb_ehci_port>;
+ 			linux,default-trigger = "usbport";
+ 		};
+ 
+@@ -123,7 +123,7 @@
+ 	#size-cells = <0>;
+ 	status = "okay";
+ 
+-	usb_ochi_port: port@1 {
++	usb_ohci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+@@ -134,7 +134,7 @@
+ 	#size-cells = <0>;
+ 	status = "okay";
+ 
+-	usb_echi_port: port@1 {
++	usb_ehci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+diff --git a/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi b/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
+index f29137352f..ab4f37da11 100644
+--- a/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
++++ b/target/linux/ath79/dts/ar7161_netgear_wndr3700.dtsi
+@@ -31,7 +31,7 @@
+ 		usb_led {
+ 			label = "netgear:green:usb";
+ 			resets = <&rst 12>;
+-			trigger-sources = <&usb_ochi_port>, <&usb_echi_port>;
++			trigger-sources = <&usb_ohci_port>, <&usb_ehci_port>;
+ 			linux,default-trigger = "usbport";
+ 		};
+ 	};
+@@ -133,7 +133,7 @@
+ 	#size-cells = <0>;
+ 	status = "okay";
+ 
+-	usb_ochi_port: port@1 {
++	usb_ohci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+@@ -144,7 +144,7 @@
+ 	#size-cells = <0>;
+ 	status = "okay";
+ 
+-	usb_echi_port: port@1 {
++	usb_ehci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+diff --git a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
+index 35f3442b29..fc5d8335b5 100644
+--- a/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
++++ b/target/linux/ath79/dts/ar7161_ubnt_routerstation.dtsi
+@@ -85,7 +85,7 @@
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+ 
+-	usb_ochi_port: port@1 {
++	usb_ohci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+@@ -96,7 +96,7 @@
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+ 
+-	usb_echi_port: port@1 {
++	usb_ehci_port: port@1 {
+ 		reg = <1>;
+ 		#trigger-source-cells = <0>;
+ 	};
+-- 
+2.24.0
 
---=-=OG2IczoN++yrx/=-=
-Content-Type: text/plain;
-	charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-
-Hi,
-
-have you verified this for both devices (rt-ac65p and rt-ac85p)?
-
-I've added Birger Koblitz to recipients (RT-AC85P author).
-
-Best
-
-Adrian
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of vargagab@gmail.com
-> Sent: Montag, 9. Dezember 2019 23:04
-> To: openwrt-devel@lists.openwrt.org
-> Cc: ynezz@true.cz; gch981213@gmail.com; Gabor Varga <vargagab@gmail.com>
-> Subject: [OpenWrt-Devel] [PATCH] ramips: fix switch port numbering for RT-
-> AC65P/RT-AC85P
-> 
-> From: Gabor Varga <vargagab@gmail.com>
-> 
-> The switch LAN port numbers are in reversed order with original config.
-> With this patch they are fixed.
-> 
-> Signed-off-by: Gabor Varga <vargagab@gmail.com>
-> ---
->  .../linux/ramips/mt7621/base-files/etc/board.d/02_network  | 7 +++++--
->  1 file changed, 5 insertions(+), 2 deletions(-)
-> 
-> diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> index 420780a101..42cdb4d57f 100755
-> --- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> +++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> @@ -37,6 +37,11 @@ ramips_setup_interfaces()
->  		ucidef_add_switch "switch0" \
->  			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
->  		;;
-> +	asus,rt-ac65p|\
-> +	asus,rt-ac85p)
-> +		ucidef_add_switch "switch0" \
-> +			"1:lan:1" "2:lan:2" "3:lan:3" "4:lan:4" "0:wan" "6@eth0"
-> +		;;
->  	alfa-network,quad-e4g|\
->  	netgear,r6220|\
->  	netgear,r6260|\
-> @@ -64,8 +69,6 @@ ramips_setup_interfaces()
->  		ucidef_add_switch "switch0" \
->  			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
->  		;;
-> -	asus,rt-ac65p|\
-> -	asus,rt-ac85p|\
->  	dlink,dir-860l-b1|\
->  	elecom,wrc-1167ghbk2-s|\
->  	elecom,wrc-1900gst|\
-> --
-> 2.24.0
-> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=OG2IczoN++yrx/=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3vg9QACgkQoNyKO7qx
-AnBO9A//bV/OcgHJHE3T2EzzFgP+2sr/D2fiv8XHZruFDB5O7JcUSs8pTxdiL1sY
-BYqa2oIyWnxZFj/SnAk2zlCQQtVY9AtUQw5ckT0GUzdu+L1pY8DiG5CXiCdt8fsk
-6mzS+cS1vWJsQVZJjZ6hMxHvXxp8DZLp+tZWu8NqAEa/r5xk+LrOiCNGYMb67B+N
-HVHkLy0VmycgaY8SwHlJY2fFH4RVHduiYUZ8Vhbkr+FV73xeA0LWOSMAUM3aR2GE
-V0d3XJu2LirDIwKzHmwQ/RxPCbJSRsDUxe/WKK7pcXfDtP/3YobMMimfEuVILWwa
-0SsTMw2oWkDt9ObzQaDJihQomq0zprQA1rlE+3C+vcoJkIEp5v+oonbaTZQpSTgz
-uycSxzHYuLWwpAyR3QaxzVaFzl52SEvTPSx6dN5mPS0A7RZLWo3+GgaJBIyMuCsY
-dLqurfMsRMYHDEGJJAg5BS6cLaByTvVCdx3CEulIZMy7O9rtobcTN0YpwLLmVaPG
-ABDR9GT4mO3bDTk+cok2ecWZw/mVgFe+AZtxAdhC8sDXxQ9vUKkJwxP502qJTmf3
-xv5arS3/qYmKMa55/z0HB90vuegdEe2e8dFZ6lZsBtdEceWYBcCmkTsYfFpG+Ifp
-tKY4bhAHDAdr1TRbuXDlt9ZVSJFheuDBG0+F+dQjjP2qw8VqEI0=
-=m86V
------END PGP SIGNATURE-----
 
 
---=-=OG2IczoN++yrx/=-=--
-
-
-
---===============7445469393845324783==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7445469393845324783==--
-
-

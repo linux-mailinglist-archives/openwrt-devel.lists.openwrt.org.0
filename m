@@ -2,87 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADF37118964
-	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Dec 2019 14:17:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3196A11896E
+	for <lists+openwrt-devel@lfdr.de>; Tue, 10 Dec 2019 14:22:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FoWstbhOsI937YKAavG2UMaQxfZkGOLxYRIGDaoG2/Q=; b=WUC1J9HnOHeEq1jkjjJ5neHkl
-	uXhIDnx699MkBIBlQuqVMxKxrYByzRG+W+IJy/NZUZqQGuxshwOU7D4btOat0kOTMkWZz3XZc45qj
-	ued12liL2IEr2Slzp/PNBMaSWZPqEHZ3peqrWGLlDANUH/Wlya6qNFT0d+G2ZIFsQDBZzZsH8dyQA
-	MuQ7tYK7ZIK1BepKcNwTl/23zXjOkgHmTuYQUXODFGlDVqisY5VZXo60SOzDC0Dze7xTiqAIRDIN2
-	O87KZNZ5DoFFX4rkLkxvm5mqO+j5LgfSD3NuJHNLVw0mwtJfpSttAPQiU9UtQ2gitojgoSNESYUxx
-	RGLJ2vqSw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+UkzB+EDKcqiJZKxSFgzVbk6LU2NZu1ZTsmGlYQSL6U=; b=E1K4jcplZvTrDj
+	oPJwgfMHsFk3eczCoh0sKD26Pjo7lr2IxrInGuz1R404GZQMuyv3upSZYa5NlVKvWMpxRqAPOfsIv
+	asSKxzPYWh3y+C3i1A0J35pSTAfn6IdJLJTBkSg8bqRannk70j1faxeyL14Q7Q75/l8hMp44Va/oX
+	MdX90Ahaz0CBXiGn+ohG2IUE2m16bV1zgO/6Lisj/nwdrzV+7Nudr4CAaJURXTk4uE0RVDIB8JbrO
+	FzVWEH/UXYdnZT0dWr4QYZiCCpM6OUBgfXRM30+9ouyIyVfwOCxpwZ7gCLo4231DMVV6Y2XATxtGh
+	Wdi0zi0wjVqI/yONm6BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefOB-0007Hp-IU; Tue, 10 Dec 2019 13:17:19 +0000
-Received: from mail-pg1-x52d.google.com ([2607:f8b0:4864:20::52d])
+	id 1iefTD-0000nQ-Qn; Tue, 10 Dec 2019 13:22:31 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefNz-0007HV-RX
- for openwrt-devel@lists.openwrt.org; Tue, 10 Dec 2019 13:17:09 +0000
-Received: by mail-pg1-x52d.google.com with SMTP id x7so8885820pgl.11
- for <openwrt-devel@lists.openwrt.org>; Tue, 10 Dec 2019 05:17:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DGLlyfx+CTvrX8fOJYsg/HOne0r3KbU1caIFp4AGowE=;
- b=WMkdzPAVR0lUb7IIULfralz4aMkkkMllTP3YEy3gfEL7cepsRkXC4K4zI6edz7hVnc
- eOTnf2YLoM4Ja0yuhs9xderl62JpobfeSMA0dPg3q1UM2A3XtZSyxL4YU4KFop3/DuFn
- vZ9NqxfsDLWv30/4UU4wKC2RQYJZYrss8Uu0SWYe5tv9r8qjqzk9SnAm8HtEzsc7KbJ/
- NNs65v1h6NXmW1QmhwTI6lrXs7UU65uk9zzrEQh4cjCxeK/5GYrO6gLeC7ojnZVrriWb
- 9gSrPkS8ZRtvTdbk2/RLTAw9dYvUk8ZJ52s6TJVzQm9dOllBxXoh5gJdihQbVS9ODLhW
- 5r4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DGLlyfx+CTvrX8fOJYsg/HOne0r3KbU1caIFp4AGowE=;
- b=fgqCIg+Ddg4Vw19GBY3/mla/IVLo4FS1XszHcw4lTVzcmtERSMGq+6HqkpveEh8z7r
- VdVH8+2OcQaXoJH4irMT35V0phj3gW/uAu20l3DaWmaYXDCqLHMLBR/RrjZLHi+QVks0
- lnwEJ1TYfwfhXJ104VxplQDDqG6Qd9ROgYi8FnFYxL8QyAuSGuY+kbnMMhHvRKFcIDHd
- Ck2SWPSBUETp2mWOcSbT+mnGCOe9EetIO8mNbGM3OZvsYgDtZvWDubDFEgCGM/Z+2HDQ
- 7E7FGaznRhpcXRg6k0uMKz747W2t+SMWnnuzmE18hCKFjtQQESny72yznIGi3Bi4KpHm
- AE2A==
-X-Gm-Message-State: APjAAAU897LGYkenQHhfB25nsDIevmFdGAEzCdBxbnXJsXx2Ih8T1hHK
- cAMsRnppvFemF97nW9CCQ3BJaL5ag5c3/de8/tw=
-X-Google-Smtp-Source: APXvYqzszTvUVWDWPuMoMNELndBDGRyK6lvL7nIGqPczA/LigTwk0Ue+St51rW0RN+At/EwJWdtZWFymOLnkdLIFdys=
-X-Received: by 2002:a63:360a:: with SMTP id d10mr3267937pga.366.1575983826445; 
- Tue, 10 Dec 2019 05:17:06 -0800 (PST)
+ id 1iefT5-0000nH-R6
+ for openwrt-devel@bombadil.infradead.org; Tue, 10 Dec 2019 13:22:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=hl29IZ0+k1+cL2JfJvpTenFBiKX7L87quxCJAxrMt8k=; b=0SsP2rlv6EovoN0CzObf+1i82Z
+ aTOC2Ad7KFPQ5L4UjYFpm5r/3IZvbcxgTEfKryOGqHrzCXFwPvNF3gmLO1onPAkcDBfXmIacqa87U
+ nEnSwVXy2aTlMOY0YXWWWdI9kDj1LgvfuNh8AVhRT6myegHSUNdbZtA+FcOwcU0KlzYsZKD3Wdmsr
+ r/N9PfNQWO1kpv1O9n4NraYOYr1a61IEYVYf2Ij6RQi9ePOTvzWyCS0vg5bKpXdIZgahLiNbLCuV0
+ Yk6ONkKZordNxINUEzeGD8Q/WBjWdaAEBKXs9rw9qculOrx+fMcC2LOQUw580ZOtcwAfbTE7VLyMA
+ KWGJYagA==;
+Received: from smtpbgbr2.qq.com ([54.207.22.56])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iefSy-0005em-E1
+ for openwrt-devel@lists.openwrt.org; Tue, 10 Dec 2019 13:22:22 +0000
+X-QQ-mid: bizesmtp25t1575984095tfa6wald
+Received: from example.com (unknown [112.19.110.248])
+ by esmtp10.qq.com (ESMTP) with SMTP id 0
+ for <openwrt-devel@lists.openwrt.org>; Tue, 10 Dec 2019 21:21:34 +0800 (CST)
+X-QQ-SSF: 0140000000200050E190B00A0000000
+X-QQ-FEAT: W55xVYr4DdaRtKeUwD/lA69UHDyW1xY3ifZCwTp9InLy3rU+xC21O7Wezr9up
+ rhX8nHSJNoCuen+gUFuWnmNoMc/gyZ984cxIQpMRqG1ziLSLNka168NjCZGRX8Q10Yqelnz
+ xU2U/Tbdg4hXJpKgSb3eWaKVCPPemeb6JvXEIrHVxoJW0iSGqOrNZIc/hXxBTrUxOJSX4DO
+ b9fslhxaXlw2vjG1JgUkTdVJfjMFxvjTFSPgu/DUHoV8hfHtuZyvIbJDEu7v9Q3sOuvY/xa
+ qdfJ6yhbXoIb1B7vB6BRetGsFlFutfId/MHBHJwsl9cIs7YhBB7QEcHYflhVqDNXmxltUD3
+ gu7MHbO4tPYRdNx0NY=
+X-QQ-GoodBg: 2
+From: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 10 Dec 2019 21:21:34 +0800
+Message-Id: <20191210132134.28943-1-dengqf6@mail2.sysu.edu.cn>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <20191209220358.103352-1-vargagab@gmail.com>
- <011b01d5af4e$70ff5830$52fe0890$@adrianschmutzler.de>
-In-Reply-To: <011b01d5af4e$70ff5830$52fe0890$@adrianschmutzler.de>
-From: =?UTF-8?B?R8OhYm9yIFZhcmdh?= <vargagab@gmail.com>
-Date: Tue, 10 Dec 2019 14:16:55 +0100
-Message-ID: <CADQ6-wvyOuFE1aD_MVD38QkQbsRmst5OEBGVFapQcsMt+nfkwg@mail.gmail.com>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_051707_894839_E52FF9EF 
-X-CRM114-Status: GOOD (  16.16  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign7
+X-QQ-Bgrelay: 1
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:52d listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (vargagab[at]gmail.com)
+ no trust [54.207.22.56 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.207.22.56 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: fix switch port numbering for
- RT-AC65P/RT-AC85P
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ramips: add support for JCG JHR-AC876M
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,229 +84,247 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: ynezz@true.cz, openwrt-devel@lists.openwrt.org, gch981213@gmail.com,
- Birger Koblitz <mail@birger-koblitz.de>
-Content-Type: multipart/mixed; boundary="===============9017961259130960303=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============9017961259130960303==
-Content-Type: multipart/alternative; boundary="00000000000025a95f0599595454"
+JCG JHR-AC876M is an AC2600M router
 
---00000000000025a95f0599595454
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Hardware specs:
+  SoC: MT7621AT
+  2.4GHz: MT7615N 4x4 @ PCIe0
+  5GHz: MT7615N 4x4 @ PCIe1
+  Flash: Winbond W25Q128JVSQ 16MiB
+  RAM: Nanya NT5CB128M16 256MiB
+  USB 2.0 and 3.0 ports
+  6 LEDs, 3 of which are connected to SoC GPIO
+  Reset and WPS buttons
 
-Dear Adrian,
+Flash instructions:
+Stock to OpenWrt:
+  Upload factory.bin in stock firmware's upgrade page,
+  do not preserve settings
 
-of course no, I have only Asus RT-AC65P router. As I see, the two devices
-are identical, but hopefully Birger can confirm (or not) this. When the
-port numbering are different on two devices, than I send a new patch.
+OpenWrt to stock:
+  Push and hold the reset button for 5s while power cycling to
+  enter recovery mode;
+  Visit 192.168.1.1 and upload stock firmware
 
-Thanks,
+Signed-off-by: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+---
+ .../ramips/dts/mt7621_jcg_jhr-ac876m.dts      | 147 ++++++++++++++++++
+ target/linux/ramips/image/mt7621.mk           |  13 ++
+ .../mt7621/base-files/etc/board.d/02_network  |   4 +
+ 3 files changed, 164 insertions(+)
+ create mode 100644 target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts
 
-Gabor Varga
+diff --git a/target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts b/target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts
+new file mode 100644
+index 0000000000..7aa644b124
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts
+@@ -0,0 +1,147 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "jcg,jhr-ac876m", "mediatek,mt7621-soc";
++	model = "JCG JHR-AC876M";
++
++	aliases {
++		led-boot = &led_wps;
++		led-failsafe = &led_wps;
++		led-running = &led_wps;
++		led-upgrade = &led_wps;
++		label-mac-device = &wifi2g;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,57600";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		usb3 {
++			label = "jhr-ac876m:blue:usb3";
++			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
++			trigger-sources = <&xhci_ehci_port1>;
++			linux,default-trigger = "usbport";
++		};
++
++		usb2 {
++			label = "jhr-ac876m:blue:usb2";
++			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
++			trigger-sources = <&ehci_port2>;
++			linux,default-trigger = "usbport";
++		};
++
++		led_wps: wps {
++			label = "jhr-ac876m:blue:wps";
++			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		wps {
++			label = "wps";
++			gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_WPS_BUTTON>;
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <80000000>;
++		m25p,fast-read;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x50000 0xfb0000>;
++			};
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi2g: wifi@0,0 {
++		compatible = "mediatek,mt76";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0>;
++		ieee80211-freq-limit = <2400000 2500000>;
++
++		led {
++			led-active-low;
++		};
++	};
++};
++
++&pcie1 {
++	wifi@0,0 {
++		compatible = "mediatek,mt76";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++
++		led {
++			led-active-low;
++		};
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++};
++
++&pinctrl {
++	state_default: pinctrl0 {
++		gpio {
++			ralink,group = "i2c", "uart3", "jtag", "wdt";
++			ralink,function = "gpio";
++		};
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index d663aa29da..cbbda06822 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -361,6 +361,19 @@ define Device/iodata_wnpr2600g
+ endef
+ TARGET_DEVICES += iodata_wnpr2600g
+ 
++define Device/jcg_jhr-ac876m
++  MTK_SOC := mt7621
++  IMAGE_SIZE := 16064k
++  IMAGES += factory.bin
++  IMAGE/factory.bin := \
++        $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | jcg-header 89.1
++  JCG_MAXSIZE := 16449536
++  DEVICE_VENDOR := JCG
++  DEVICE_MODEL := JHR-AC876M
++  DEVICE_PACKAGES := kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
++endef
++TARGET_DEVICES += jcg_jhr-ac876m
++
+ define Device/lenovo_newifi-d1
+   MTK_SOC := mt7621
+   IMAGE_SIZE := 32448k
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+index bb6e41e06f..904e82e09a 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+@@ -14,6 +14,7 @@ ramips_setup_interfaces()
+ 	d-team,pbr-m1|\
+ 	firefly,firewrt|\
+ 	hiwifi,hc5962|\
++	jcg,jhr-ac876m|\
+ 	mediatek,ap-mt7621a-v60|\
+ 	mediatek,mt7621-eval-board|\
+ 	mqmaker,witi|\
+@@ -223,6 +224,9 @@ ramips_setup_macs()
+ 		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
+ 		label_mac=$wan_mac
+ 		;;
++	jcg,jhr-ac876m)
++		wan_mac=$(mtd_get_mac_binary factory 0x4)
++		;;
+ 	netgear,r6260|\
+ 	netgear,r6350|\
+ 	netgear,r6850)
+-- 
+2.24.0
 
-Adrian Schmutzler <mail@adrianschmutzler.de> ezt =C3=ADrta (id=C5=91pont: 2=
-019. dec.
-10., K, 12:39):
-
-> Hi,
->
-> have you verified this for both devices (rt-ac65p and rt-ac85p)?
->
-> I've added Birger Koblitz to recipients (RT-AC85P author).
->
-> Best
->
-> Adrian
->
-> > -----Original Message-----
-> > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> > Behalf Of vargagab@gmail.com
-> > Sent: Montag, 9. Dezember 2019 23:04
-> > To: openwrt-devel@lists.openwrt.org
-> > Cc: ynezz@true.cz; gch981213@gmail.com; Gabor Varga <vargagab@gmail.com=
->
-> > Subject: [OpenWrt-Devel] [PATCH] ramips: fix switch port numbering for
-> RT-
-> > AC65P/RT-AC85P
-> >
-> > From: Gabor Varga <vargagab@gmail.com>
-> >
-> > The switch LAN port numbers are in reversed order with original config.
-> > With this patch they are fixed.
-> >
-> > Signed-off-by: Gabor Varga <vargagab@gmail.com>
-> > ---
-> >  .../linux/ramips/mt7621/base-files/etc/board.d/02_network  | 7 +++++--
-> >  1 file changed, 5 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_netwo=
-rk
-> > b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> > index 420780a101..42cdb4d57f 100755
-> > --- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> > +++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
-> > @@ -37,6 +37,11 @@ ramips_setup_interfaces()
-> >               ucidef_add_switch "switch0" \
-> >                       "0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "6@eth0"
-> >               ;;
-> > +     asus,rt-ac65p|\
-> > +     asus,rt-ac85p)
-> > +             ucidef_add_switch "switch0" \
-> > +                     "1:lan:1" "2:lan:2" "3:lan:3" "4:lan:4" "0:wan"
-> "6@eth0"
-> > +             ;;
-> >       alfa-network,quad-e4g|\
-> >       netgear,r6220|\
-> >       netgear,r6260|\
-> > @@ -64,8 +69,6 @@ ramips_setup_interfaces()
-> >               ucidef_add_switch "switch0" \
-> >                       "1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
-> >               ;;
-> > -     asus,rt-ac65p|\
-> > -     asus,rt-ac85p|\
-> >       dlink,dir-860l-b1|\
-> >       elecom,wrc-1167ghbk2-s|\
-> >       elecom,wrc-1900gst|\
-> > --
-> > 2.24.0
-> >
-> >
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
-
---00000000000025a95f0599595454
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">Dear Adrian,<div><br></div><div>of course no, I have only =
-Asus RT-AC65P router. As I see, the two devices are identical, but hopefull=
-y Birger can confirm (or not) this. When the port numbering are different o=
-n two devices, than I send a new patch.</div><div><br></div><div>Thanks,</d=
-iv><div><br></div><div>Gabor Varga</div></div><br><div class=3D"gmail_quote=
-"><div dir=3D"ltr" class=3D"gmail_attr">Adrian Schmutzler &lt;<a href=3D"ma=
-ilto:mail@adrianschmutzler.de">mail@adrianschmutzler.de</a>&gt; ezt =C3=ADr=
-ta (id=C5=91pont: 2019. dec. 10., K, 12:39):<br></div><blockquote class=3D"=
-gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(20=
-4,204,204);padding-left:1ex">Hi,<br>
-<br>
-have you verified this for both devices (rt-ac65p and rt-ac85p)?<br>
-<br>
-I&#39;ve added Birger Koblitz to recipients (RT-AC85P author).<br>
-<br>
-Best<br>
-<br>
-Adrian<br>
-<br>
-&gt; -----Original Message-----<br>
-&gt; From: openwrt-devel [mailto:<a href=3D"mailto:openwrt-devel-bounces@li=
-sts.openwrt.org" target=3D"_blank">openwrt-devel-bounces@lists.openwrt.org<=
-/a>] On<br>
-&gt; Behalf Of <a href=3D"mailto:vargagab@gmail.com" target=3D"_blank">varg=
-agab@gmail.com</a><br>
-&gt; Sent: Montag, 9. Dezember 2019 23:04<br>
-&gt; To: <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blan=
-k">openwrt-devel@lists.openwrt.org</a><br>
-&gt; Cc: <a href=3D"mailto:ynezz@true.cz" target=3D"_blank">ynezz@true.cz</=
-a>; <a href=3D"mailto:gch981213@gmail.com" target=3D"_blank">gch981213@gmai=
-l.com</a>; Gabor Varga &lt;<a href=3D"mailto:vargagab@gmail.com" target=3D"=
-_blank">vargagab@gmail.com</a>&gt;<br>
-&gt; Subject: [OpenWrt-Devel] [PATCH] ramips: fix switch port numbering for=
- RT-<br>
-&gt; AC65P/RT-AC85P<br>
-&gt; <br>
-&gt; From: Gabor Varga &lt;<a href=3D"mailto:vargagab@gmail.com" target=3D"=
-_blank">vargagab@gmail.com</a>&gt;<br>
-&gt; <br>
-&gt; The switch LAN port numbers are in reversed order with original config=
-.<br>
-&gt; With this patch they are fixed.<br>
-&gt; <br>
-&gt; Signed-off-by: Gabor Varga &lt;<a href=3D"mailto:vargagab@gmail.com" t=
-arget=3D"_blank">vargagab@gmail.com</a>&gt;<br>
-&gt; ---<br>
-&gt;=C2=A0 .../linux/ramips/mt7621/base-files/etc/board.d/02_network=C2=A0 =
-| 7 +++++--<br>
-&gt;=C2=A0 1 file changed, 5 insertions(+), 2 deletions(-)<br>
-&gt; <br>
-&gt; diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_netw=
-ork<br>
-&gt; b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network<br>
-&gt; index 420780a101..42cdb4d57f 100755<br>
-&gt; --- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network<br>
-&gt; +++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network<br>
-&gt; @@ -37,6 +37,11 @@ ramips_setup_interfaces()<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_add_switc=
-h &quot;switch0&quot; \<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0&quot;0:lan&quot; &quot;1:lan&quot; &quot;2:lan&quot; &quot;3:=
-lan&quot; &quot;4:wan&quot; &quot;6@eth0&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0asus,rt-ac65p|\<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0asus,rt-ac85p)<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_add_switch &qu=
-ot;switch0&quot; \<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0&quot;1:lan:1&quot; &quot;2:lan:2&quot; &quot;3:lan:3&quot; &quot;4:=
-lan:4&quot; &quot;0:wan&quot; &quot;6@eth0&quot;<br>
-&gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0alfa-network,quad-e4g|\<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0netgear,r6220|\<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0netgear,r6260|\<br>
-&gt; @@ -64,8 +69,6 @@ ramips_setup_interfaces()<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0ucidef_add_switc=
-h &quot;switch0&quot; \<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0 =C2=A0&quot;1:lan&quot; &quot;2:lan&quot; &quot;3:lan&quot; &quot;4:=
-lan&quot; &quot;0:wan&quot; &quot;6@eth0&quot;<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0;;<br>
-&gt; -=C2=A0 =C2=A0 =C2=A0asus,rt-ac65p|\<br>
-&gt; -=C2=A0 =C2=A0 =C2=A0asus,rt-ac85p|\<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0dlink,dir-860l-b1|\<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0elecom,wrc-1167ghbk2-s|\<br>
-&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0elecom,wrc-1900gst|\<br>
-&gt; --<br>
-&gt; 2.24.0<br>
-&gt; <br>
-&gt; <br>
-&gt; _______________________________________________<br>
-&gt; openwrt-devel mailing list<br>
-&gt; <a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">o=
-penwrt-devel@lists.openwrt.org</a><br>
-&gt; <a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" r=
-el=3D"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listi=
-nfo/openwrt-devel</a><br>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
-
---00000000000025a95f0599595454--
 
 
---===============9017961259130960303==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============9017961259130960303==--
-

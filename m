@@ -2,83 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9C2811A8A1
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 11:10:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE51311A8CD
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 11:24:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dR4JYI34Yy3KjTEv+97QkDxIFivAkUIlwDI8ciIoqYU=; b=mHRPkvpPc/jwYxEEHUiEqDcUj
-	e6WGynbR832VjS0FYaH7wGLBvXiCXwnIqkO81CDVbpKiohZvMmco7N3xXO+f9lTqQsI1uZYB5AAoD
-	HnvYRkMyL36yr0KxSBR3CQyMd+L2Tohqp0cgMoe1o9ypJrTtMTG0Xb+MQVbJ2oWVHwSm8ltRWBIUP
-	UrXxuKysoDiZrL+xyMQUOlaIXL7kHI6itUTUg7Hx2EzRQGfzn0R1WE+55F//m51hP9jc5SObLqOE/
-	5H3VBCoz+39afCc+nZKj2zIZYTkdyd7zy5/xZH8jCvgzbzdGphDfXKHRbjz+U4aGiK/hfK6vNFQnC
-	3EyjoXRgQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s2EZwJ6i/pcPFvMVDr+iDYTeDJMjnYtlbc0b1gM5sbU=; b=s7X5uyg6aHb4YO
+	1hcIBwc/rhGQAoc5t3xj6zRmxoP3Utpb/S0B8u2Skf8DSvYpz1PZJ2tFzMFJMf2vkm5My9tsFWziy
+	u2U7hJ7MT5ab8lYXdD3MUuDhUyTkHeWLBG1uOZWZWOcQXnqVd90cek9PIA5Gks7+oqf8CtgBsdqci
+	Z3u783NXtdNRPvefXNAHCNpprDkcwqifxom6sHKtayaQB23BtM8bfnEH5dE5Q2GiQD+H5meSumcKs
+	Qjf+IePl/qIjR3bYIFCseAqOrNG90NrGemM1B33duNeWModWPmuVQPl49/357v/Dw5/7FSxNBiw2p
+	Kqd8LEZ07U+QgQ14DSZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieyws-0000RI-BI; Wed, 11 Dec 2019 10:10:26 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1iezAZ-0005BP-8N; Wed, 11 Dec 2019 10:24:35 +0000
+Received: from mail-oi1-x234.google.com ([2607:f8b0:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieywj-0000PR-NJ
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 10:10:19 +0000
-Received: by mail-ua1-x943.google.com with SMTP id f9so8227657ual.4
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 02:10:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=personaltelco-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=j8ETR0OoWOnCjuXKg4dscLLhUISVrsJobH/ItXRrmac=;
- b=ixR0PeFKysrkwfbMm+aLP5uQl75v1wA0e9dhpGFVoDeQ5JdIOdvVIDPFHFf2gf1yQu
- HdpoxNxQYlduYk4CdhlN8iibvs8cMTFNsAvHPyNdEDWmdcEvfQ6UaiVNzcLvKxOEXIw/
- fT5iUu3YI9lhSIdf1/ctUf0w8EhO454wNVmIxN55QnxQV1bcSd0zIkdeoS8EZUM3NGoZ
- Jhvg01Pc+3KaROD+3/3r3idpLr8T2r3nODY0rzfgr8vw9LtCJgoQRILLSjHAgCFXLutq
- gfGPxIz2h0ghv3jQhbFdjCpHyyq7VB0D8ls3QHKI2+6Fi/3M1evFVZXYPzChvcAE+B6/
- vAnQ==
+ id 1iezAN-0005Al-UA
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 10:24:25 +0000
+Received: by mail-oi1-x234.google.com with SMTP id d62so12707065oia.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 02:24:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=trZ54nCVE8MrdeQpa7IIjADW8w5odR9CxwNxeJp1B7U=;
+ b=g4Zq13LN4crZhBr9jJtxJD3N2RoElaYJy25JDy49g84juUrqEYBcPsHuioM725NC0n
+ /sE7kbToP7CsmHqtfNzWNDniMhH6pUn+2S5vcllcNDonPYU1iVEHj2VlK/Guu59LSWtF
+ bV2C0izUaHlXfsBJaPQYG5ivo/+cCGSnFYP2zmAd6wVReyqvZkjvH+JuoAW6cpuWaytv
+ zkaPe5rAhXTWgWmg1siznGlizZFE84Z4HE10pQ3jWdmBcVNAbTmFw7sVRxICIFYcefWW
+ dGnAf3PX8neThPyNNSdK96P88TMMcjeEPtpW6JFNmhi/LdH3GBW6ryhb9dzXbGYnYA4V
+ qjJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=j8ETR0OoWOnCjuXKg4dscLLhUISVrsJobH/ItXRrmac=;
- b=j8YXW5lO4eT60zNRgF3LZwc0xFcRGlRV0LvhXwtmDKYPvFMr1P6/5i+tF+2GTShik/
- +5IzhbQ8IEbo7YhF+yt5m/pdTfTVtvA7CndFy0rFcBrcGp986u5Nf8f+YMSu8p/klwXp
- jIiTxrzrPoRYwmo/8LRIgk0pfH7h0062mkWTBCQ3Yv+lYYLhm4F9FO5bgkzaPiAeTZ44
- M4ry2xU1FrRPRrOZjJ0ptS0lGFhNPdWvZHACyHtZvg8oWSJtKZ34yiyfYEoUszSdgE58
- xUINcxWsfsbVF1va1vviRzgXR6VQvLyi9PFeYvd8Jr5ZVJJJy4NEAiUCnDB93G/rbA3Q
- obwQ==
-X-Gm-Message-State: APjAAAWFdn+fE6ozyxnm+Vqd/kG/H30gPOBxmJfLE2UjIRrCTottSf3D
- wvLb8FQad8ox1VWSQaQqpzfZ7AmHzIpQuCHjGjeylA==
-X-Google-Smtp-Source: APXvYqzPAJsauf2U2kX+HrKCvf/hDZDvjujRZtVktw3Kk+aTLjw+CoNwrVowV02n8EQ9nRSAVGi+orqbowxee+S1zqM=
-X-Received: by 2002:ab0:6494:: with SMTP id p20mr2082412uam.38.1576059015829; 
- Wed, 11 Dec 2019 02:10:15 -0800 (PST)
+ h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=trZ54nCVE8MrdeQpa7IIjADW8w5odR9CxwNxeJp1B7U=;
+ b=HXR47Rq/hb5IWj45UJ4yDLeJWPiATewXsAwSwDxOW8iWuIjLaXV/NV5OUAbjNaiUuR
+ EkHC5sy3E67iAIc3M0AkSyRwFJrFdqMPllaqnOR522EyRXBEI8k0N2BbznUCu3Blg4gy
+ hDL245fceFnVNb5DicI21584BSg8WYEmwPHtV1wpCOCjhSiy9igdWg32sLye/L6WS10x
+ krLWrneiQcTFwP9nEx8R9s0oQ1m2u172SaHMklBW1+a7Z/zBuoAxYHeLRAnaEWMAtntW
+ wBz5lKA5uaUc01sSSqlbtaRrPZjDhXsNy1i/QzPRzyjwdEq2dYi4MaDa5M8YLiKs1M+e
+ ggag==
+X-Gm-Message-State: APjAAAWolicly9e9bCzt/1BZCr43YlWuyojZtLFcjEvlESOh6VGBQ0kD
+ gvNmlV6Sl60/cp7wN54Qk7XMP/+hiWLs5LYhVTc=
+X-Google-Smtp-Source: APXvYqzYqJK6IJYdGl6k/eHcfmWWwEskKYZuLg8KzMJoycPeGVbQHpITw1fuHdArFyYQQ5BNjradDa5FPh/U2VNKMVk=
+X-Received: by 2002:aca:3b54:: with SMTP id i81mr2226557oia.155.1576059862442; 
+ Wed, 11 Dec 2019 02:24:22 -0800 (PST)
 MIME-Version: 1.0
-References: <20191117014442.1427795-1-chunkeey@gmail.com>
- <32e80bbe-3365-c1ef-0358-ac0a4e60fd6c@hauke-m.de>
- <2725101.T8L288SS5r@debian64>
-In-Reply-To: <2725101.T8L288SS5r@debian64>
-From: Russell Senior <russell@personaltelco.net>
-Date: Wed, 11 Dec 2019 02:10:04 -0800
-Message-ID: <CAHP3WfOOHbn6tMoSTvYsfJ9CRYGrPYtLcnjXKjqEPAPWUQ6nww@mail.gmail.com>
-To: Christian Lamparter <chunkeey@gmail.com>
+Received: by 2002:a9d:350:0:0:0:0:0 with HTTP;
+ Wed, 11 Dec 2019 02:24:21 -0800 (PST)
+In-Reply-To: <e13712e.36225d.16ef3b3ec4c.Coremail.rqgxfc@vip.163.com>
+References: <e13712e.36225d.16ef3b3ec4c.Coremail.rqgxfc@vip.163.com>
+From: Tom Psyborg <pozega.tomislav@gmail.com>
+Date: Wed, 11 Dec 2019 11:24:21 +0100
+Message-ID: <CAKR_QV+a___R2qsPSf6vtpk+JUPqvt3ZdvTHQA9Y_pFOZ-R6zA@mail.gmail.com>
+To: rqgxfc <rqgxfc@vip.163.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_021017_836140_3604AFF1 
-X-CRM114-Status: GOOD (  12.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_022423_996839_2D05A873 
+X-CRM114-Status: UNSURE (   5.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:234 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pozega.tomislav[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] mac80211: switch to upstream owl-loader
- driver
+ 2.0 PDS_TONAME_EQ_TOLOCAL_SHORT Short body with To: name matches
+ everything in local email
+Subject: Re: [OpenWrt-Devel] Inquery
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,153 +97,20 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============4317726629986990712=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============4317726629986990712==
-Content-Type: multipart/alternative; boundary="000000000000c8af7305996ad5dd"
-
---000000000000c8af7305996ad5dd
-Content-Type: text/plain; charset="UTF-8"
-
-This commit broke wifi on the Buffalo WZR600DHP.  See:
-https://bugs.openwrt.org/index.php?do=details&task_id=2668
-
-On Fri, Nov 22, 2019 at 12:00 PM Christian Lamparter <chunkeey@gmail.com>
-wrote:
-
-> On Monday, 18 November 2019 00:34:01 CET Hauke Mehrtens wrote:
-> > > +--- a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-> > > ++++ b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
-> > > +@@ -84,6 +84,10 @@
-> > > +                   val = swahb32(val);
-> > > +           }
-> > > +
-> > > ++#ifdef CONFIG_LANTIQ
-> > > ++          val = swab32(val);
-> > > ++#endif
-> >
-> > Lantiq is big endian, are there other big endian system which do not
-> > need this byte swap?
->
-> From what I vaguely remember (I know that Mathias explained it to me
-> once.),
-> that special hack was necessary due to Lantiq's pci(e?)-host silicon doing
-> byteswaps just for 32-bit writes. The only other system that uses the
-> owl-loader
-> is ath79/ar71xx. This is a big-endian MIPS as well that didn't need the
-> swap.
->
-> (That said, I don't remember what was the reason for going with
-> __raw_writel
-> rather than "iowrite32" though. At least ath9k is using it for the pci
-> access
-> just fine everywhere.)
->
-> Anyone fancy checking out lantiq and ath79 devices with a AR92XX without
-> the
-> swap above and the __raw_writel replaced by iowrite32?
->
-> > > ++
-> > > +           __raw_writel(val, mem + reg);
-> > > +           usleep_range(100, 120);
-> > > +   }
->
-> Regards,
-> Christian
->
->
->
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->
-
---000000000000c8af7305996ad5dd
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr">This commit broke wifi on the Buffalo WZR600DHP.=C2=A0 See=
-: <a href=3D"https://bugs.openwrt.org/index.php?do=3Ddetails&amp;task_id=3D=
-2668">https://bugs.openwrt.org/index.php?do=3Ddetails&amp;task_id=3D2668</a=
-></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr"=
->On Fri, Nov 22, 2019 at 12:00 PM Christian Lamparter &lt;<a href=3D"mailto=
-:chunkeey@gmail.com">chunkeey@gmail.com</a>&gt; wrote:<br></div><blockquote=
- class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px so=
-lid rgb(204,204,204);padding-left:1ex">On Monday, 18 November 2019 00:34:01=
- CET Hauke Mehrtens wrote:<br>
-&gt; &gt; +--- a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c<br>
-&gt; &gt; ++++ b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c<br>
-&gt; &gt; +@@ -84,6 +84,10 @@<br>
-&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
-=C2=A0val =3D swahb32(val);<br>
-&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
-&gt; &gt; + <br>
-&gt; &gt; ++#ifdef CONFIG_LANTIQ<br>
-&gt; &gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 val =3D swab32(val);<br>
-&gt; &gt; ++#endif<br>
-&gt; <br>
-&gt; Lantiq is big endian, are there other big endian system which do not<b=
-r>
-&gt; need this byte swap?<br>
-<br>
-From what I vaguely remember (I know that Mathias explained it to me once.)=
-,<br>
-that special hack was necessary due to Lantiq&#39;s pci(e?)-host silicon do=
-ing<br>
-byteswaps just for 32-bit writes. The only other system that uses the owl-l=
-oader<br>
-is ath79/ar71xx. This is a big-endian MIPS as well that didn&#39;t need the=
- swap.<br>
-<br>
-(That said, I don&#39;t remember what was the reason for going with __raw_w=
-ritel<br>
-rather than &quot;iowrite32&quot; though. At least ath9k is using it for th=
-e pci access<br>
-just fine everywhere.)<br>
-<br>
-Anyone fancy checking out lantiq and ath79 devices with a AR92XX without th=
-e<br>
-swap above and the __raw_writel replaced by iowrite32?<br>
-<br>
-&gt; &gt; ++<br>
-&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0__raw_writel(val, mem +=
- reg);<br>
-&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0usleep_range(100, 120);=
-<br>
-&gt; &gt; +=C2=A0 =C2=A0} <br>
-<br>
-Regards,<br>
-Christian<br>
-<br>
-<br>
-<br>
-_______________________________________________<br>
-openwrt-devel mailing list<br>
-<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
-t-devel@lists.openwrt.org</a><br>
-<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
-"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
-penwrt-devel</a><br>
-</blockquote></div>
-
---000000000000c8af7305996ad5dd--
-
-
---===============4317726629986990712==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4317726629986990712==--
-
+c3VjayBpdAoKT24gMTEvMTIvMjAxOSwgcnFneGZjIDxycWd4ZmNAdmlwLjE2My5jb20+IHdyb3Rl
+Ogo+Cj4KPiBIZWxsbyBTaXIg77yMCj4KPiBXZSBhcmUgIGEgdHJhZGluZyBjb21wYW55IG5hbWVk
+IFNoYWFueGkgSGFvIFppIEd1YW4gTWF0ZXJpYWxzIENvLixMdGQgIC4gTm93Cj4gd2UgYXJlIHZl
+cnkgaW50ZXJlc3RlZCBpbiB5b3VyIHByb2R1Y3RzICwgd2Ugd2lsbCBwbGFuIHRvICBzZWxsIHlv
+dXIKPiBwcm9kdWN0cyBpbiB0aGUgQ2hpbmVzZSBtYXJrZXQgLiBJZiB5b3UgYXJlIGludGVyZXN0
+ZWQgaW4gY29vcGVyYXRpb24sCj4gcGxlYXNlIHNlbmQgdXMgYSBjYXRhbG9nIGFuZCBwcmljZWxp
+c3QgLncKPiBMb29raW5nIGZvcndhcmQgdG8gcmVjZWl2aW5nIHlvdXIgcmVwbHkgLgo+Cj4gQmVz
+dCByZWdhcmRzLAo+IENhdGhlcmluYQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBs
+aXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vb3BlbndydC1kZXZlbAo=

@@ -2,99 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E288911A5CB
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 09:24:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9C2811A8A1
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 11:10:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8BouCXTFr0a7azUaUOlOXQRoYrwGO7w0usResH4tKD4=; b=qE/c33Xn19Gi0M3T0BfuR0VWC
-	0EhUCRdwfzuk2Ldn5GEd31HSgrxMUEEJRk1I47Mi5/9xmBgkm8wIGQI/It3uNr4ooaFRr6H8rh/CR
-	S0Y8YasnOrtiKhKGvSlg2tOWwHUuakEISP3DtAJu6kHC0SaH9rlJNuz7yc7ZJZ5kmvJa6eoiBcVpk
-	zmUoFHutKs/2GxAW1LCYkm9OPYE+KBVc0mZYDFnbZQ8zE6syiLYZHc8LMmbXdtoTxfVNTNDgojSF9
-	o6ql2ZFgpzXJPJNkz1Hv3NKz2J0fHKYK/wcXCPk7OPxhC94TRHvJuqLW3eX3mx00O3kjT9e+UGhQq
-	STwJx8PzQ==;
+	 bh=dR4JYI34Yy3KjTEv+97QkDxIFivAkUIlwDI8ciIoqYU=; b=mHRPkvpPc/jwYxEEHUiEqDcUj
+	e6WGynbR832VjS0FYaH7wGLBvXiCXwnIqkO81CDVbpKiohZvMmco7N3xXO+f9lTqQsI1uZYB5AAoD
+	HnvYRkMyL36yr0KxSBR3CQyMd+L2Tohqp0cgMoe1o9ypJrTtMTG0Xb+MQVbJ2oWVHwSm8ltRWBIUP
+	UrXxuKysoDiZrL+xyMQUOlaIXL7kHI6itUTUg7Hx2EzRQGfzn0R1WE+55F//m51hP9jc5SObLqOE/
+	5H3VBCoz+39afCc+nZKj2zIZYTkdyd7zy5/xZH8jCvgzbzdGphDfXKHRbjz+U4aGiK/hfK6vNFQnC
+	3EyjoXRgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iexI5-0005Ro-6V; Wed, 11 Dec 2019 08:24:13 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ieyws-0000RI-BI; Wed, 11 Dec 2019 10:10:26 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iexHw-0005RM-Fx
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 08:24:06 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a5so245560wmb.0
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 00:24:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=NEi0KENMaeFtU5usPv6zUkWPnu6uigpHevvo5cxCDu4=;
- b=LrF/mlmTPEeg0+2Aue5/VBZxTi7OwbAAcUJ3tg3eWVn5CnoYHRfovUrNesn9lQ0hIe
- 0x/VmOiL6v3Byur5gdQFxnX3bWHVWqxXfpYDF1+MVaqKE9NnXunY8gx1YtlzgVi7BGzA
- Ex0cowZ5wXmVS2ZAF7agbrXhbrJioSt5uYIgu6Uz5RaBNSskshoHzAjMm9FulYsmJmaL
- rq9o2odCrLm4ML/y/QdS/i4ZwmikUxHnMr3PpPpLd2CL1WiuIA0UnEfRrFoCsjzq6oJx
- R37e6Hea0NBet1x0bnb0qyD7IiirKZPEhMi2p6YjghCUN0rLzEhRXJHeIFvID0bcps+J
- KPQw==
+ id 1ieywj-0000PR-NJ
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 10:10:19 +0000
+Received: by mail-ua1-x943.google.com with SMTP id f9so8227657ual.4
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 02:10:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=personaltelco-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=j8ETR0OoWOnCjuXKg4dscLLhUISVrsJobH/ItXRrmac=;
+ b=ixR0PeFKysrkwfbMm+aLP5uQl75v1wA0e9dhpGFVoDeQ5JdIOdvVIDPFHFf2gf1yQu
+ HdpoxNxQYlduYk4CdhlN8iibvs8cMTFNsAvHPyNdEDWmdcEvfQ6UaiVNzcLvKxOEXIw/
+ fT5iUu3YI9lhSIdf1/ctUf0w8EhO454wNVmIxN55QnxQV1bcSd0zIkdeoS8EZUM3NGoZ
+ Jhvg01Pc+3KaROD+3/3r3idpLr8T2r3nODY0rzfgr8vw9LtCJgoQRILLSjHAgCFXLutq
+ gfGPxIz2h0ghv3jQhbFdjCpHyyq7VB0D8ls3QHKI2+6Fi/3M1evFVZXYPzChvcAE+B6/
+ vAnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=NEi0KENMaeFtU5usPv6zUkWPnu6uigpHevvo5cxCDu4=;
- b=YyLKAWxtucolozWRqImt4xm+vQf+Pc6/YIdPboc5bU4KGRXgDhXVHzaMWcErNw5Edh
- COv6zwuSI6lTsYB8NOucO97/IoDvNtqoXvU+v8wOFRep38F6i0fzJgVKaibLd+ogHQ4Q
- EbzKEreWRPvQUnejGKjDA69UNcWImrTZE4xHk4kkHutc1B4v2R20fohNcKrxil8MdceL
- 4n7Gpo0uUgx/mHu8EP3GrMT4PRAqkw+AMCYkHQYjwd2KqUohlmy87NueZ2bK99ndXa4N
- 0Nh6qXFt53tGxAvdYCTigip6fA8+qTvRFJ3zxPwVzudSDeqfVE0+L66v2h6IhC7AHcBK
- X+kA==
-X-Gm-Message-State: APjAAAWrG4+fxsQq1JRLX97usl7eAzZQ2LYai2pwd4kZudmeh/aXI6Tf
- JGEPxvc+HFokmzkPaUlZmLUsbU1hM+yzVA==
-X-Google-Smtp-Source: APXvYqyMGeZKZOAE6mAj0NUV9C23ZYBVgpkZx+910o1pPpz2+LCsMlo/6Ndq5BnZwEsx8VGa4oq4qw==
-X-Received: by 2002:a05:600c:a:: with SMTP id g10mr2044693wmc.69.1576052640980; 
- Wed, 11 Dec 2019 00:24:00 -0800 (PST)
-Received: from [192.168.111.148] ([151.84.207.109])
- by smtp.gmail.com with ESMTPSA id d10sm1361183wrw.64.2019.12.11.00.24.00
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Dec 2019 00:24:00 -0800 (PST)
-To: openwrt-devel@lists.openwrt.org
-References: <CANtF88fWk+3eyOyE+HGdFrEYCTrJeZQ47b0bhyRmyCs7rHWrxQ@mail.gmail.com>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <76d5fe58-93fc-8e8d-fe8a-2d69c5e8d8df@gmail.com>
-Date: Wed, 11 Dec 2019 09:23:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=j8ETR0OoWOnCjuXKg4dscLLhUISVrsJobH/ItXRrmac=;
+ b=j8YXW5lO4eT60zNRgF3LZwc0xFcRGlRV0LvhXwtmDKYPvFMr1P6/5i+tF+2GTShik/
+ +5IzhbQ8IEbo7YhF+yt5m/pdTfTVtvA7CndFy0rFcBrcGp986u5Nf8f+YMSu8p/klwXp
+ jIiTxrzrPoRYwmo/8LRIgk0pfH7h0062mkWTBCQ3Yv+lYYLhm4F9FO5bgkzaPiAeTZ44
+ M4ry2xU1FrRPRrOZjJ0ptS0lGFhNPdWvZHACyHtZvg8oWSJtKZ34yiyfYEoUszSdgE58
+ xUINcxWsfsbVF1va1vviRzgXR6VQvLyi9PFeYvd8Jr5ZVJJJy4NEAiUCnDB93G/rbA3Q
+ obwQ==
+X-Gm-Message-State: APjAAAWFdn+fE6ozyxnm+Vqd/kG/H30gPOBxmJfLE2UjIRrCTottSf3D
+ wvLb8FQad8ox1VWSQaQqpzfZ7AmHzIpQuCHjGjeylA==
+X-Google-Smtp-Source: APXvYqzPAJsauf2U2kX+HrKCvf/hDZDvjujRZtVktw3Kk+aTLjw+CoNwrVowV02n8EQ9nRSAVGi+orqbowxee+S1zqM=
+X-Received: by 2002:ab0:6494:: with SMTP id p20mr2082412uam.38.1576059015829; 
+ Wed, 11 Dec 2019 02:10:15 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CANtF88fWk+3eyOyE+HGdFrEYCTrJeZQ47b0bhyRmyCs7rHWrxQ@mail.gmail.com>
-Content-Language: en-US
+References: <20191117014442.1427795-1-chunkeey@gmail.com>
+ <32e80bbe-3365-c1ef-0358-ac0a4e60fd6c@hauke-m.de>
+ <2725101.T8L288SS5r@debian64>
+In-Reply-To: <2725101.T8L288SS5r@debian64>
+From: Russell Senior <russell@personaltelco.net>
+Date: Wed, 11 Dec 2019 02:10:04 -0800
+Message-ID: <CAHP3WfOOHbn6tMoSTvYsfJ9CRYGrPYtLcnjXKjqEPAPWUQ6nww@mail.gmail.com>
+To: Christian Lamparter <chunkeey@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_002404_533032_9D567386 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191211_021017_836140_3604AFF1 
+X-CRM114-Status: GOOD (  12.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bobafetthotmail[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: espec.ws]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: espec.ws]
-Subject: Re: [OpenWrt-Devel] Requesting a custom firmware for a router
+Subject: Re: [OpenWrt-Devel] [PATCH] mac80211: switch to upstream owl-loader
+ driver
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,20 +90,153 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============4317726629986990712=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Ck9uIDExLzEyLzE5IDA3OjE3LCBKb2huIFdpY2sgd3JvdGU6Cj4gS2luZCByZXF1ZXN0IHRvIHVw
-bG9hZCB0aGUgY3VzdG9tIGZpcm13YXJlIGZvciByb3V0ZXIgbW9kZWwgVFAtTElOSyAKPiBURC1X
-ODk1MU5EIHY1LjAgaWYgcG9zc2libGUKPgo+CgpPcGVuV3J0IGZvciB0aGF0IGRldmljZSBpcyBp
-bXBvc3NpYmxlLiBEZXZpY2UgaXMgdXNpbmcgdW5zdXBwb3J0ZWQgQ1BVIAooUmFsaW5rIFJUNjMz
-NjVFKSBoYXMgOE1CIFJBTSAod2hpY2ggaXMgbGVzcyB0aGFuIGhhbGYgb2YgdGhlIG1pbmltdW0g
-CnJlcXVpcmVkKSBhbmQgMk1CIGZsYXNoIHN0b3JhZ2UgKGFsc28gbGVzcyB0aGFuIGhhbGYgbWlu
-aW11bSByZXF1aXJlZCkuCgpTZWUgaGVyZSBmb3Igc29tZW9uZSB0aGF0IG9wZW5lZCB0aGF0IGRl
-dmljZSBhbmQgcG9zdGVkIHNwZWNpZmljYXRpb25zIAphbmQgaW5mbyAoaW4gcnVzc2lhbinCoGh0
-dHA6Ly9tb25pdG9yLmVzcGVjLndzL3NlY3Rpb241L3RvcGljMjY5NDYyLmh0bWwKCi1BbGJlcnRv
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3Blbndy
-dC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRw
-czovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+--===============4317726629986990712==
+Content-Type: multipart/alternative; boundary="000000000000c8af7305996ad5dd"
+
+--000000000000c8af7305996ad5dd
+Content-Type: text/plain; charset="UTF-8"
+
+This commit broke wifi on the Buffalo WZR600DHP.  See:
+https://bugs.openwrt.org/index.php?do=details&task_id=2668
+
+On Fri, Nov 22, 2019 at 12:00 PM Christian Lamparter <chunkeey@gmail.com>
+wrote:
+
+> On Monday, 18 November 2019 00:34:01 CET Hauke Mehrtens wrote:
+> > > +--- a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
+> > > ++++ b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c
+> > > +@@ -84,6 +84,10 @@
+> > > +                   val = swahb32(val);
+> > > +           }
+> > > +
+> > > ++#ifdef CONFIG_LANTIQ
+> > > ++          val = swab32(val);
+> > > ++#endif
+> >
+> > Lantiq is big endian, are there other big endian system which do not
+> > need this byte swap?
+>
+> From what I vaguely remember (I know that Mathias explained it to me
+> once.),
+> that special hack was necessary due to Lantiq's pci(e?)-host silicon doing
+> byteswaps just for 32-bit writes. The only other system that uses the
+> owl-loader
+> is ath79/ar71xx. This is a big-endian MIPS as well that didn't need the
+> swap.
+>
+> (That said, I don't remember what was the reason for going with
+> __raw_writel
+> rather than "iowrite32" though. At least ath9k is using it for the pci
+> access
+> just fine everywhere.)
+>
+> Anyone fancy checking out lantiq and ath79 devices with a AR92XX without
+> the
+> swap above and the __raw_writel replaced by iowrite32?
+>
+> > > ++
+> > > +           __raw_writel(val, mem + reg);
+> > > +           usleep_range(100, 120);
+> > > +   }
+>
+> Regards,
+> Christian
+>
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+>
+
+--000000000000c8af7305996ad5dd
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">This commit broke wifi on the Buffalo WZR600DHP.=C2=A0 See=
+: <a href=3D"https://bugs.openwrt.org/index.php?do=3Ddetails&amp;task_id=3D=
+2668">https://bugs.openwrt.org/index.php?do=3Ddetails&amp;task_id=3D2668</a=
+></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr"=
+>On Fri, Nov 22, 2019 at 12:00 PM Christian Lamparter &lt;<a href=3D"mailto=
+:chunkeey@gmail.com">chunkeey@gmail.com</a>&gt; wrote:<br></div><blockquote=
+ class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px so=
+lid rgb(204,204,204);padding-left:1ex">On Monday, 18 November 2019 00:34:01=
+ CET Hauke Mehrtens wrote:<br>
+&gt; &gt; +--- a/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c<br>
+&gt; &gt; ++++ b/drivers/net/wireless/ath/ath9k/ath9k_pci_owl_loader.c<br>
+&gt; &gt; +@@ -84,6 +84,10 @@<br>
+&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0val =3D swahb32(val);<br>
+&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
+&gt; &gt; + <br>
+&gt; &gt; ++#ifdef CONFIG_LANTIQ<br>
+&gt; &gt; ++=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 val =3D swab32(val);<br>
+&gt; &gt; ++#endif<br>
+&gt; <br>
+&gt; Lantiq is big endian, are there other big endian system which do not<b=
+r>
+&gt; need this byte swap?<br>
+<br>
+From what I vaguely remember (I know that Mathias explained it to me once.)=
+,<br>
+that special hack was necessary due to Lantiq&#39;s pci(e?)-host silicon do=
+ing<br>
+byteswaps just for 32-bit writes. The only other system that uses the owl-l=
+oader<br>
+is ath79/ar71xx. This is a big-endian MIPS as well that didn&#39;t need the=
+ swap.<br>
+<br>
+(That said, I don&#39;t remember what was the reason for going with __raw_w=
+ritel<br>
+rather than &quot;iowrite32&quot; though. At least ath9k is using it for th=
+e pci access<br>
+just fine everywhere.)<br>
+<br>
+Anyone fancy checking out lantiq and ath79 devices with a AR92XX without th=
+e<br>
+swap above and the __raw_writel replaced by iowrite32?<br>
+<br>
+&gt; &gt; ++<br>
+&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0__raw_writel(val, mem +=
+ reg);<br>
+&gt; &gt; +=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0usleep_range(100, 120);=
+<br>
+&gt; &gt; +=C2=A0 =C2=A0} <br>
+<br>
+Regards,<br>
+Christian<br>
+<br>
+<br>
+<br>
+_______________________________________________<br>
+openwrt-devel mailing list<br>
+<a href=3D"mailto:openwrt-devel@lists.openwrt.org" target=3D"_blank">openwr=
+t-devel@lists.openwrt.org</a><br>
+<a href=3D"https://lists.openwrt.org/mailman/listinfo/openwrt-devel" rel=3D=
+"noreferrer" target=3D"_blank">https://lists.openwrt.org/mailman/listinfo/o=
+penwrt-devel</a><br>
+</blockquote></div>
+
+--000000000000c8af7305996ad5dd--
+
+
+--===============4317726629986990712==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============4317726629986990712==--
+

@@ -2,75 +2,102 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E305B11A920
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 11:42:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 737C911A997
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 12:04:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NCuXpMd7ZUdE6ISTKV46FAEcOIA/sgdnrD+wtUSDE/k=; b=eWkk29yavMGWoCBgEE2c7i7XK
-	YNCvIa6EzwMr9DBuHlJ7Pg16WKAnJ/tIrC6eghNv7VsxQ6s/JqcJ6ZdZQfLFkG9MYqEZDrfBis4lP
-	Ou7wM6rNj1z3RCQgyjo4rtwPglEi7wh3H3QBhzqih3G7PQlu4VlQK1jqgDf8BbG+6QDsvEINadz9I
-	6TZALBw79K2MLXZyIQGUvZiYPX8TIsSFLA43zf3S7IODciK1vzzQrFr7rkjmCK0FcKa3rrRjfCy+c
-	qXqoXk0haBmth3aza2bRktI370gIR22x+/yMWzJYTcljppl3cN/5cw+cbmB23ipCRmFHrSJYwww0y
-	yPc3E7/OQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6IympL1Jl0zPMGAsIXrG2kGbjfr6iXZhXauSfpeyxj0=; b=JLNg4k3s1VzYow
+	NUdaeTxycNiFXwJXmOkSTByshgW2j/FzVqJZ2Ba/V/U3bIGRgb1a4QzIzJAn4J61BMxjN0MJIpoha
+	3SNYsGlICU6kShpbFQX0as0fCidVlbxJweo9avzJrd4hoxnyq7iGvktYXbthAvEhqqudUcxrVAQut
+	xFtx1S5cqKHHuSlwcOJB61LwDJ9YInYC31PRbEJWwbwuc8ghNr/TWG3NjZ2fCLCPtbDJpUtu4RwFz
+	1bjHC6OcIrcEf/liiO5Rbtw0Oj05Wcp26OBRdMv6onObyp/JjcVL2XpHtTPg8QIP9dTrnRYuNq1bC
+	aDvOup2/z7L4+3RNqXmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iezS0-0006Bj-Nm; Wed, 11 Dec 2019 10:42:36 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1iezmw-00085n-Tg; Wed, 11 Dec 2019 11:04:14 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iezRp-0006AW-RL
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 10:42:28 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue012
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1Ml3ym-1i0BaV3BEq-00lUMf; Wed, 11
- Dec 2019 11:42:23 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Tomasz Maciej Nowak'" <tomek_n@o2.pl>, <openwrt-devel@lists.openwrt.org>
-References: <20191207222826.47389-1-freifunk@adrianschmutzler.de>
- <20191207222826.47389-3-freifunk@adrianschmutzler.de>
- <c548878d-5a73-6530-168b-f42057b124c3@o2.pl>
-In-Reply-To: <c548878d-5a73-6530-168b-f42057b124c3@o2.pl>
-Date: Wed, 11 Dec 2019 11:42:22 +0100
-Message-ID: <008b01d5b00f$ac39ba00$04ad2e00$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQIg8uL5W0LbU13NgEjaIr76/4apSgJ0476pAgso3G+m+jaCgA==
-Content-Language: de
+ id 1iezmk-0007mE-HD
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 11:04:04 +0000
+Received: by mail-lj1-x243.google.com with SMTP id u17so23556576lja.4
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 03:04:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=iBLiv9GBp5bk0zcsK75fQu5eAcE+nRyBsygubtVhpxk=;
+ b=CweDQ8PbrODVHp9VTUdSbP0F4kbPWYrm1EMXqcIX0eJ0jKLX1z185/m285LrcB2vhh
+ 9UwmiZySy6zfoNOwkcxOej+uztQrxrar9tFUSoATyfv08GKtfVzNL4sB6tjAYw1XOtbB
+ WMl5WY1nhUDKT0x7OoHYTMoAJE/Iv9XTKzNrpEk7x3FhwTZkdGBZtEx5hlPuC9LFryVI
+ kXR2oryDUGPTV8AL8PUROw8lNS002amvUjCpm6cSeFHNYgFkoHDPmswHC5otUdsElu6m
+ srn761SmKCYBhYtnBahBgryi5jfWQ5b93P0T8/NM8qr858C544ob4cycv3+jZu785l7n
+ Apfw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=iBLiv9GBp5bk0zcsK75fQu5eAcE+nRyBsygubtVhpxk=;
+ b=DXhLzxoqUq9H9/Bhx2tNxKfxV5QQXLYVcaDqjJ77X436iso65BQ7QDUk1vLSP1JwXN
+ P4GcFHR2BEjtEb4fEuYKw3OG3TQaDlZ4Z39kEOUDnRKTfWHIxbrEgGZvyTnqgVNQVNUX
+ HCVSg5oOGzi4Y20ZEaD0jD++Oh/JqJUQx1ljJmfvQP3Rs0YSvoI3U5Nnnn6t/U/glfsZ
+ mozfUePLAIeZ00HBjXjULwZ21yMyqD8WmJqcE9ZwG6XUOtsBbSJp0fhOgZP4sTGZCbWh
+ naK7dRNcvMHKL/J4las/1r+whUS4owBlAAJrpXeMv1uyf/ESQU748ql9JShFeMhx51s9
+ Qt5A==
+X-Gm-Message-State: APjAAAXG6tjK7Upsbi2riCDB6hgUo7x8a27c81R4HVTSl8d1v3sJqZoP
+ TKseeFnt1ClsBqzI12TO4+4=
+X-Google-Smtp-Source: APXvYqzpZl4qoyZHOqVdEwQzn92NhI1xzRqH1i+zmUHTY78/KECmJcEOJ39FnmZWIOGAnNCB6+AdXQ==
+X-Received: by 2002:a2e:859a:: with SMTP id b26mr1611509lji.137.1576062236730; 
+ Wed, 11 Dec 2019 03:03:56 -0800 (PST)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id h14sm955143lfc.2.2019.12.11.03.03.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Dec 2019 03:03:56 -0800 (PST)
+Received: from home.paul.comp (localhost [127.0.0.1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
+ xBBB3rHM010901; Wed, 11 Dec 2019 14:03:54 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.15.2/Submit) id xBBB3rHX010900;
+ Wed, 11 Dec 2019 14:03:53 +0300
+Date: Wed, 11 Dec 2019 14:03:53 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Message-ID: <20191211110352.GL11070@home.paul.comp>
+References: <20191210142420.30748-1-fercerpav@gmail.com>
+ <20191210144213.GH71465@meh.true.cz>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:vTersMaNlJmPPwEFfrWzElQVaYOzewv92HPRwCIDIrSgLd6OtKn
- vjuh4axHZweF/c/HS9lQ64tqAQtRyn2fa/qcP2uW1sy1BXR8uNDekfbR+RAmgriIT7wqcyY
- Wudo+m/ovYLcQjfpj6Narr3b3j24u0+2C92OvrbDK7C/wpZY80l9vRs+lKp+Wk59KArV9ZO
- s8/hF9y4k0aRDJnmP/tLw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:WdjUAh2bh84=:DMGZsLVaHRUTj6JqYE1zvv
- F79q3R9sztbJWnDsl0Scig50MrQiu7KpSDi9wE5KXdGUHr2t3DOKFCQg+A/TsFiYfLbz65xJ+
- 56Qid4BHiJeDXpawyn5XOvl2Wo9mndV3Pl1zerrmKad/suClfwcvw0ALYbZfijAGwsz8Fc1O2
- CnOherIf3Aah7QWc6G/+lJO1XO6j3botT7Bu4z9x+r1Yf2tZBEx9xQBQS3UazYSoUQ6Y6abF/
- E4JTRy2N0Tfm07MyKgH6XIw2H8SH7OXxJx3cKtNdJmdDras/vl7Kcj/rebzJ++pVkt/PfNkUY
- cL51bsvZeaDZhbdy37gD7MA6leqdio7dk/Kz3l/Xfj1Q5Zh37mR9MdzWAykVAitkoJPjQycV2
- FnUyLtHeIOFa2+KroKaEB/s7GrTtKPhWHD84nByLHfVhxiGv9Vje9AT8/qRH/d+slI7bsTuvv
- Zm+uvEFZAN1f7bxOyo7Y847gc1bF0GSaWOqs/cTMUEsEEMlP3nvxTPQiIyBVpkHKOUiBuAewx
- Qs9woEgdpuS57Q8fjaibieNWO+9bEx9BiDP+QCKaBCq4JxYMW3mMUERncZ001hc6XUBI9IA9K
- Q0MCY3RXu+fJTl8Eh3oCyhw+KJ406TfRGyCfO60PNX/sxct7kbv2jewYvhgzacPqQFBvNMxXf
- kGWhuYZ19Wrnif/EYuuHnjawKTN9dCmBsTiLr0SADvfu9aFRfXXHBEGtE+AItD3z1f+o16bli
- P4raJJfo8J8G7ISzFNOWbhp/TjdHda1eOSM9aM8DtF6ZpFxLE0ubNSQqVKsm7iI2OHq04QCro
- gxiS/xtpyDWCrvZEtlYNCcSdeIwJ6CboRPNf83Wwg7Cl3rQAUSrlgy3m1G8e0rQNNckUl0aoA
- OMMNLH+1S0IN973mswmH98O3SaHleJnADuw3TTWuE=
+Content-Disposition: inline
+In-Reply-To: <20191210144213.GH71465@meh.true.cz>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_024226_196009_511D213E 
-X-CRM114-Status: GOOD (  17.54  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_030402_589764_8D7AC2B6 
+X-CRM114-Status: UNSURE (   8.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] sunxi: construct DTS name from
- device node name and SOC
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (fercerpav[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: Re: [OpenWrt-Devel] [RFC][PATCH] base-files: send informational UDP
+ message each second waiting
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,136 +109,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7991575329890317015=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============7991575329890317015==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=dwEPK3CXo5sTLJ=-="
-
-This is a multipart message in MIME format.
-
---=-=dwEPK3CXo5sTLJ=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-> -----Original Message-----
-> From: Tomasz Maciej Nowak [mailto:tomek_n@o2.pl]
-> Sent: Dienstag, 10. Dezember 2019 14:39
-> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>; openwrt-
-> devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH 2/2] sunxi: construct DTS name from
-> device node name and SOC
->=20
-> Hi Adrian.
->=20
-> W dniu 07.12.2019 o=C2=A023:28, Adrian Schmutzler pisze:
-> > The device part in the SUNXI_DTS variable always corresponds to
-> > device node name. This is another redundancy that can be removed
-> > by calculating the DTS name from a newly introduced SUNXI_SOC
-> > variable and the node name.
-> >
-> > Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> > ---
-> >  target/linux/sunxi/image/Makefile      |  5 ++-
-> >  target/linux/sunxi/image/cortex-a53.mk | 18 +++++++----
-> >  target/linux/sunxi/image/cortex-a7.mk  | 44 +++++++++++++-------------
-> >  target/linux/sunxi/image/cortex-a8.mk  | 13 ++++----
-> >  4 files changed, 45 insertions(+), 35 deletions(-)
-> >
-> > diff --git a/target/linux/sunxi/image/Makefile
-> b/target/linux/sunxi/image/Makefile
-> > index 04e0abee49..929f4c70f9 100644
-> > --- a/target/linux/sunxi/image/Makefile
-> > +++ b/target/linux/sunxi/image/Makefile
-> > @@ -32,12 +32,15 @@ endef
-> >  # why \x00\x00\x00\x00 for zImage-initramfs
-> >  define Device/Default
-> >    PROFILES :=3D Default
-> > -  DEVICE_VARS :=3D SUNXI_DTS SUNXI_UBOOT
-> > +  DEVICE_VARS :=3D SUNXI_SOC SUNXI_DTS SUNXI_DTS_DIR SUNXI_UBOOT
->=20
-> Instead of adding new target speciffic variables, wouldn't using already
-> specified ones be better? We have DEVICE_DTS and DEVICE_DTS_DIR. Also the
-
-Based on
-https://github.com/openwrt/openwrt/commit/7a8d3432c739c6ff038295176e8b6324e=
-92fc116
-I had the impression that DEVICE_DTS and DEVICE_DTS_DIR are reserved keywor=
-ds for a particular mechanism to append DTB.
-
-Thus, and since the target has been using "custom" SUNXI_DTS variable so fa=
-r, I decided to stick to that pattern.
-
-> SUNXI_SOC feels bit redundant since it needs to be specified for each dev=
-ice
-> and it could be replaced with DEVICE_DTS :=3D sun50i-h5-$(1) or simply fu=
-ll dts
-> name.
-
-No, because I need to cut down the device name, so it would be
-DEVICE_DTS :=3D sun50i-h5-$(lastword $(subst _, ,$(1)))
-which I would not like to repeat over and over.
-
-I admit that changing the DTS variable is the weakest part in my patchset. =
-However, I think introducing the SUNXI_SOC and SUNXI_DTS_DIR will make the =
-target more organized. Despite, by this it becomes more consistent with oth=
-er targets where this has been reorganized recently (i.e. ath79 and ramips,=
- where we use ATH_SOC and MTK_SOC to do the very same).
-At least I personally think that this is better that repeating the very sam=
-e name again in the DTS definition.
-
-Best
-
-Adrian
-
---=-=dwEPK3CXo5sTLJ=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3wyAkACgkQoNyKO7qx
-AnAe4w//aFldY02SqjIq+EfG74J+WbdnWdkYkme8IhwMqUMQgg340qvL2OelIcbY
-Gbu+yh+ek4EIjg6WFqjUTp8tD7jW5P/98qcmj1FracTnd9ySVFkD7ljif9gJ/I5L
-/7QjOq886tEZXWF5rlnEHzXZEfUTcvNevWLieuyWkTks0zOCjrHqtySehTUw1TRC
-09X2KUH/PLnv9lJBO88+2zy3HAOKy4MiRXM6WDqJf+RMeRFKMRpezv8/NJleAVFC
-9sRN7gWNjjajLvlRfDS6ujVPlxE0HeW+IFkqvjCwdj0fy5xaD44rSZiQF02XPPB4
-qC14PQiHmN/Ur/aIQinJ0SAkWsfz0bPDIqapeN9TWCTg9EmZ+u+yxxmGvguRTIxP
-ZTnudJL/Ugp89QW2WYy+vorssfidiS1ziddTc5WNuBXj5fdtLda9K4bi2Tzndqor
-e7lTqZy4tTlmihtCk2J11HXi9xNZIFC6DsMsSIJERcFHruAdDhHuvfUXJgK12J78
-9/UNT+VwZK6j7icnrWo6Nmm6oaZ1B1VH3D6L53JI+hwSrjHuImnkllp1lp3vt/AZ
-0zFBhtD14nJDw+ntWAmQXuEKwyex3XkKdl9Sj6nXFEHR8GVjHB4h7IwD4NY3Fl+X
-kcrplcBZW472tTtLso2nULYJ7lOzmvq4Tid9b8/qrmw0ZKaY5hg=
-=Esqh
------END PGP SIGNATURE-----
-
-
---=-=dwEPK3CXo5sTLJ=-=--
-
-
-
---===============7991575329890317015==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7991575329890317015==--
-
-
+SGksCgpPbiBUdWUsIERlYyAxMCwgMjAxOSBhdCAwMzo0MjoxM1BNICswMTAwLCBQZXRyIMWgdGV0
+aWFyIHdyb3RlOgo+IFBhdWwgRmVydHNlciA8ZmVyY2VycGF2QGdtYWlsLmNvbT4gWzIwMTktMTIt
+MTAgMTc6MjQ6MjBdOgo+ID4gaW4gY2FzZXMgd2hlbiB0aGUgaW50ZXJmYWNlIGlzIGJyb3VnaHQg
+dXAgZmFzdGVyIGl0IGxlYWRzIHRvIHR3byBtZXNzYWdlcwo+IAo+IGluIGNhc2VzIHdoZW4gdGhl
+IGludGVyZmFjZSBpcyBicm91Z2h0IHVwIHNsb3dlciBpdCBsZWFkcyB0byBubyBtZXNzYWdlLgo+
+IAo+IFRvIG1lIGl0IGp1c3Qgc2VlbXMgbGlrZSBhIHdvcmthcm91bmQgdG8gZml4IHlvdXIgdXNl
+IGNhc2UsIG5vdCBhIHByb3BlciBmaXguCgpZb3UncmUgcmlnaHQsIEkgbWVudGlvbmVkICJpbmhl
+cmVudGx5IHJhY3kiIGluIHRoZSBjb21taXQgbWVzc2FnZQpleGFjdGx5IGJlY2F1c2Ugb2YgdGhh
+dC4KCldhaXRpbmcgZm9yIExPV0VSX1VQIHRoZXJlIHdpdGhvdXQgYSB0aW1lb3V0IGlzIG5vdCBh
+IHNvbHV0aW9uIGJlY2F1c2UKaW4gdGhlIG5vcm1hbCBib290dXAgY2FzZSB0aGVyZSBtaWdodCBi
+ZSBub3RoaW5nIGF0dGFjaGVkIHRvIHRoZSBMQU4Kc28gdGhlIGJvb3Qgd2lsbCBiZSBlZmZlY3Rp
+dmVseSBoYWx0ZWQgZm9yZXZlci4gV2FpdGluZyB3aXRoIGEgdGltZW91dApwb3NlcyBhIHF1ZXN0
+aW9uIG9mIHdoYXQgdGhhdCB0aW1lb3V0IHNob3VsZCBiZSBzZXQgdG87IGFuZCBpZiB0aGF0J3MK
+cmVhc29uYWJsZSB0byBleHRlbmQgY3VycmVudCAyIHNlY29uZHMgd2l0aCBhbnkgc2lnbmlmaWNh
+bnQgYW1vdW50LgoKQ3VycmVudCBkb2N1bWVudGF0aW9uIHNheXMgYSBtZXNzYWdlIHNob3VsZCBi
+ZSBzZW50LiBDdXJyZW50IGNvZGUKd29ya3MgZm9yIHNvbWUgZGV2aWNlcyBhbmQgZmFpbHMgZm9y
+IG90aGVyIGRldmljZXMuIE15IHBhdGNoIGltcHJvdmVzCnRoZSBzaXR1YXRpb24gd2l0aG91dCBh
+ZGRpbmcgYW55IGNvZGUgY29tcGxleGl0eSAoaW5kZWVkLCBpdCdzIGV2ZW4KcmVtb3Zpbmcgb25l
+IGxpbmUpIG9yIHdhc3RpbmcgYm9vdCB0aW1lLgoKRG8geW91IGhhdmUgYW55IG90aGVyIHBvc3Np
+YmxlIHNvbHV0aW9uIGluIG1pbmQ/CgotLSAKQmUgZnJlZSwgdXNlIGZyZWUgKGh0dHA6Ly93d3cu
+Z251Lm9yZy9waGlsb3NvcGh5L2ZyZWUtc3cuaHRtbCkgc29mdHdhcmUhCm1haWx0bzpmZXJjZXJw
+YXZAZ21haWwuY29tCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53
+cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0
+LWRldmVsCg==

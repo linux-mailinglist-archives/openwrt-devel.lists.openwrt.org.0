@@ -2,44 +2,47 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59F8111AD45
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 15:22:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BC8511AD91
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 15:33:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbftMRkmhIq3LjvcoxlL/lNd5/7Z3ML+5VVuVmVPonA=; b=m8j6fvGU2Hsh8t
-	3ayLgPASevN94LnspLuDB59SpYlM9vW7zsdip2nWOMk1iEYHUCIOq41IRrzQndy3xFPO3LJ30inIF
-	7d5+/U2jXukW/Q0meojFf2UXExKshkqlEFKH60mQE8RQ9QkXZiLEYAMPb1jrLlTgv6NrPtFNTD4WN
-	0LMnMDodRwia03k3fbo6KS/PXFukw49fS7EGN1f3X/VC2tTrD5K5Hoda5vw6HwZv5869oamLmhrUk
-	kppE1xLSKEIBxEpsKBSwLjn62elhTKRyTHnVWRd0K5NOF2Re792Crjf4cU5FhSRoCIh2eQFIDLfhR
-	oJUUowgVfnzxl+6zocUA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vDsTMCuju3UljQDiogOgtpNq/iH9HluvJ/MHM69m2do=; b=UURepkCDyVHv+fq+zyi+ujvTS
+	o6kh9A25MpP0eogdsaoL2ZRyeNZGmq/I7wPK6rbyu6metnjpSkQW3U+dWgktrcQNENW3fh7wpJ8PG
+	lfUdCBu1yPSZj+U8SY9SCZkJ2Kc5zwooK9mtrNbCmAhUTcDZ+W/KG/vqruQmbeaDJtFdpKKyr5aLk
+	S8NSi8O9sMMDhWSwR5tzJMQUkKfVL9sYUpPvf7Dqw1kp3mXoUy5RcFsoe5xauT+V/RREctM2bviIy
+	keVqyV72g+ZqCEzyPNl1UccTxSfw/RtRbggtH5Y5riZehHa1n4tUFmY9/jZx4qUCZ6Vonse8170Oy
+	cL9OuImOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2sn-0007Ib-29; Wed, 11 Dec 2019 14:22:29 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1if33m-0003r4-GL; Wed, 11 Dec 2019 14:33:50 +0000
+Received: from nbd.name ([2a01:4f8:221:3d45::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2sf-0007I4-F8
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 14:22:22 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1if2sb-00031Z-Ko; Wed, 11 Dec 2019 15:22:18 +0100
-Date: Wed, 11 Dec 2019 15:22:09 +0100
-From: Daniel Golle <daniel@makrotopia.org>
-To: Tom Psyborg <pozega.tomislav@gmail.com>
-Message-ID: <20191211142209.GC1371@makrotopia.org>
+ id 1if33e-0003q9-Vp
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 14:33:44 +0000
+Received: from pd95fd432.dip0.t-ipconnect.de ([217.95.212.50]
+ helo=[192.168.45.104])
+ by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <john@phrozen.org>) id 1if33b-0004AM-05
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 15:33:39 +0100
+To: openwrt-devel@lists.openwrt.org
 References: <e13712e.36225d.16ef3b3ec4c.Coremail.rqgxfc@vip.163.com>
  <CAKR_QV+a___R2qsPSf6vtpk+JUPqvt3ZdvTHQA9Y_pFOZ-R6zA@mail.gmail.com>
+ <20191211142209.GC1371@makrotopia.org>
+From: John Crispin <john@phrozen.org>
+Message-ID: <72795206-d999-c459-4fa6-ae09df4e92f7@phrozen.org>
+Date: Wed, 11 Dec 2019 15:33:38 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKR_QV+a___R2qsPSf6vtpk+JUPqvt3ZdvTHQA9Y_pFOZ-R6zA@mail.gmail.com>
+In-Reply-To: <20191211142209.GC1371@makrotopia.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_062221_507783_839EDB29 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_063343_189719_5516CC53 
+X-CRM114-Status: GOOD (  14.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,41 +62,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgVG9taXNsYXYsCgpPbiBXZWQsIERlYyAxMSwgMjAxOSBhdCAxMToyNDoyMUFNICswMTAwLCBU
-b20gUHN5Ym9yZyB3cm90ZToKPiBzdWNrIGl0CgpBcyBhIGNvbW11bml0eSwgd2UgZGVjaWRlZCB0
-byBnaXZlIG91ciBzZWxmIGEgc2V0IG9mIG1pbmltYWwgcnVsZXNbMV0uCkFuZCBldmVuIHRob3Vn
-aCBpdCBpcyBpbiB0aGUgbGFzdCBwb3NpdGlvbiwgcnVsZSAjMTIgIkJlIG5pY2UgdG8gZWFjaApv
-dGhlci4iIGlzIG1lYW50IGp1c3QgYXMgc2VyaW91cyBhcyBhbGwgdGhlIG90aGVyIHJ1bGVzLgoK
-U28gaGVyZSwgbm90IGZvciB0aGUgZmlyc3QgdGltZSwgeW91IGFyZSB1c2luZyBsYW5ndWFnZSB3
-aGljaCBoYXMgdGhlCm9ubHkgcHVycG9zZSB0byBodXJ0IG90aGVyIHBlb3BsZSAoZm9yIHdoaWNo
-IHJlYXNvbiBldmVyLCBpdCBkb2Vzbid0Cm1hdHRlcikuIFRoaXMgaXMgdGhlcmVmb3JlIGEgdmVy
-eSBjbGVhciB2aW9sYXRpb24gdG8gdGhlIGFib3ZlCm1lbnRpb25lZCBydWxlLiBZb3Ugc3RhdGVt
-ZW50ICJzdWNrIGl0IiAoZ3Vlc3Mgd2hhdCkgaXMgYWxzbyBhbiBvYnZpb3VzCmFuZCBkaXNndXN0
-aW5nIGV4YW1wbGUgb2YgYSBtYXNjdWxpc3QgY3VsdHVyZSB3aGljaCBodXJ0cyBvdXIgY29tbXVu
-aXR5CmFzIGEgd2hvbGUgYW5kIEkgc3Ryb25nbHkgYmVsaWV2ZSB3ZSBzaG91bGQgbm90IHRvbGVy
-YXRlIHRoYXQuCgpBbmQgeWVzIHRoaXMgd2FzIGEgc3BhbSBtYWlsLiBBbmQgaXQncyBldmVuIG5l
-ZWRsZXNzIHRvIHNheSB0aGF0CnJlcGx5aW5nIHRvIGEgc3BhbSBlbWFpbCBpbiB3aGljaCBldmVy
-IHdheSB3aWxsIGFsd2F5cyBtYWtlIGl0IHdvcnNlLgpCdXQgdGhhdCdzIG5vdCB0aGUgcG9pbnQg
-aGVyZSBhbmQgSSB3aWxsIG5vdCBlbmdhZ2UgaW4gYW55IGRpc2N1c3Npb24Kb24gdGhhdCBtYXR0
-ZXIuCgpQbGVhc2UgbGVhcm4gdG8gYmVoYXZlIG9yIGxlYXZlIHVzIGFsb25lLgoKWzFdOiBodHRw
-czovL29wZW53cnQub3JnL3J1bGVzCgoKPiAKPiBPbiAxMS8xMi8yMDE5LCBycWd4ZmMgPHJxZ3hm
-Y0B2aXAuMTYzLmNvbT4gd3JvdGU6Cj4gPgo+ID4KPiA+IEhlbGxvIFNpciDvvIwKPiA+Cj4gPiBX
-ZSBhcmUgIGEgdHJhZGluZyBjb21wYW55IG5hbWVkIFNoYWFueGkgSGFvIFppIEd1YW4gTWF0ZXJp
-YWxzIENvLixMdGQgIC4gTm93Cj4gPiB3ZSBhcmUgdmVyeSBpbnRlcmVzdGVkIGluIHlvdXIgcHJv
-ZHVjdHMgLCB3ZSB3aWxsIHBsYW4gdG8gIHNlbGwgeW91cgo+ID4gcHJvZHVjdHMgaW4gdGhlIENo
-aW5lc2UgbWFya2V0IC4gSWYgeW91IGFyZSBpbnRlcmVzdGVkIGluIGNvb3BlcmF0aW9uLAo+ID4g
-cGxlYXNlIHNlbmQgdXMgYSBjYXRhbG9nIGFuZCBwcmljZWxpc3QgLncKPiA+IExvb2tpbmcgZm9y
-d2FyZCB0byByZWNlaXZpbmcgeW91ciByZXBseSAuCj4gPgo+ID4gQmVzdCByZWdhcmRzLAo+ID4g
-Q2F0aGVyaW5hCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KPiBvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMu
-b3BlbndydC5vcmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8v
-b3BlbndydC1kZXZlbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVu
-d3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Blbndy
-dC1kZXZlbAo=
+On 11/12/2019 15:22, Daniel Golle wrote:
+> As a community, we decided to give our self a set of minimal rules[1].
+> And even though it is in the last position, rule #12 "Be nice to each
+> other." is meant just as serious as all the other rules.
+> 
+> So here, not for the first time, you are using language which has the
+> only purpose to hurt other people (for which reason ever, it doesn't
+> matter). This is therefore a very clear violation to the above
+> mentioned rule. You statement "suck it" (guess what) is also an obvious
+> and disgusting example of a masculist culture which hurts our community
+> as a whole and I strongly believe we should not tolerate that.
+> 
+> And yes this was a spam mail. And it's even needless to say that
+> replying to a spam email in which ever way will always make it worse.
+> But that's not the point here and I will not engage in any discussion
+> on that matter.
+> 
+> Please learn to behave or leave us alone.
+> 
+> [1]:https://openwrt.org/rules
+
++1
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

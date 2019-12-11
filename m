@@ -2,93 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7272711AE7D
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 15:56:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E93911B0B0
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 16:25:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Cc:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VlCanKx+zHWzPkEtrAyjHISo6uu9hgoAB8PDEHPkW78=; b=haK05//l4hYhTg
-	0DujwcqMo2MI1MqLFVf25vueWTOix1zCMcmN93SE1t2lp8Px/Le48SG79sfnakUUhs410kHSlciJV
-	Raq/Nm3bZr1nhQ7lKTaM92ol/Sot2OhjS2rH5HLPdPBA6nm3LBO1CdamVfmGMxTJeL4Tpdo4qlLCI
-	4+dID+OJEWiSCJ8LzJlyokVdCVJx4tMte2H3WAUIynABWoOLVVf8S/J98gdrPnUewX8NyRy5V2i2k
-	ivUtRLjjWZUrV6mLRC/hLnacZlr/38ZsEza6vvF1ztRlR5AKyfTh6MdzeY57K35knsvBTaDxOi3t5
-	8UKMFpXF7dfhhFJupnKw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qNFs6v2+Bvm0QZ9IDHA+wV1dPzXMB79XqOxd4sv8+Fc=; b=dzLJkXurvOptIb5Ye8yWmvToh
+	0MMWe07f0bk98wUbhlBiA0vG0e6Ox1obPPJEOyEkvCPpUY7c7PPPMx7ZyJ5zv3LUrUhtXoLWp+XgY
+	0X9nHk1wVFg5vhi3K7ldy6Vm/zpJiipi43ofCGf741uzaaPDktRMQPfAQKICKksjhwjaJY8wMzlwm
+	tjldUVwCFlDJhASpORjvUm2/YjKHzhoJJ6oWh8x9GNa4GP9Pi1G7SqyykXf55CDckvVJVbDzZVVj7
+	t6GYBWerAGpmsf/kv2Ms103hCSZYfoM8YfnIqt7YoOOYv0H6CXIGLF/TYj1hlKYS3zXkRF6ANjSFE
+	TE913RBqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3PZ-0002pP-PI; Wed, 11 Dec 2019 14:56:21 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1if3rb-0003Gw-4m; Wed, 11 Dec 2019 15:25:19 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3OK-0000kE-AX
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 14:55:06 +0000
-Received: by mail-lj1-x243.google.com with SMTP id 21so24452448ljr.0
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 06:55:03 -0800 (PST)
+ id 1if3rT-0003F9-Uf
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 15:25:13 +0000
+Received: by mail-lj1-x236.google.com with SMTP id c19so24441351lji.11
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 07:25:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=eUSjLNn+TFs1R1Nn6Ci4Jf+/T+7NXPinyORecPPBRT8=;
- b=N3jqAgfERRy4PJnyJ2oYiLcsTbqHZUPie39PB5UI2X8ylbV3tbNxavceafGYiDEuxY
- CrlsKGUpfsePZM92rvd1tK7CwIe4SEYDqQUSLdJo4Bp4jHWjZKWvFvLXGLQ9HmCvoZR4
- W7Y6otlzN68LnRy9kb2hS5dQJmj/3kJGHuOPgbfMcDMfg79ry4s4WaQI3DfQA1Urr3OM
- 1CtQ+5zwsi3SopMYzsIir14+/teGd38DYumJHWFgRmjHhZKUet5gNIzF4s8xujEYTuzd
- rHcPu4E5s7mfBNedhWLBT11PfFuM7QNKC6u09Ta5XOVB9qm37AIGNNoBGU4X99A7ssOI
- eJjQ==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=V7KR/FTEokdzwKrC2/sUKsv/XsYihZl9VkunBxEl6zQ=;
+ b=WMA4iI46hTdYUb+zgo2FStFVSSfFVFLyqoMvrzm6hhvcQqPJI7rH6QFx2sgwpJwZad
+ 9MvVXzW69ZoVAJK8kVrXWNOPZQb9K+XNZeg0fqrs6/yijipxs9d2I9VekR2cjkQkWBPk
+ K9tzLpDvIvi+9P1CaYm3zowR/n/0aYz9LD1qPnOvk7BHymoO6/kv8p69j89pnN083FsW
+ YppvjuXWQ5vgBFDPWUVCRY3UIIwKumkAVbICwzYVF4YUXD9n2n0K54UfQtd8H49HlQ2a
+ r05jua7uSvEns7w95eSANPAnPBfiR40sV0qLiZ+o60tuFSMPwL/uXgIJ2achJJkw0ZGC
+ BqyA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eUSjLNn+TFs1R1Nn6Ci4Jf+/T+7NXPinyORecPPBRT8=;
- b=Q6ZRS8ccwfySnb95uglMivegnxavs9s2pA8rkdTC0E8S1f4h4Dw1aN9D0nwA97QDd3
- tykhNI9e9Q8cTbCpM6mgk9G6I+Q5HGk7LxsxnNpT7nyzBqwTzbHrf90p2XBUsv0XMv4/
- 701rQ0hAXX/EnIQa6wvTg/JzIV4OrjF6m2A1sY1efwOuDpQDHXpYFixzap9Qkt2hCwl7
- LS2WVpeX7Ra0YGgpn5GWgfu0Q5m8V9WgZfSzGJhTBmoasLRa3OgMdnnSwvMMGIzMES/p
- lfFK5uoCfasGiziaX2JWo5R6D7WcM9HbLPOteJGtBpEG69Uy0b48gZ9Gm69NYxpoAXr+
- yDog==
-X-Gm-Message-State: APjAAAXRDZ2a/rfIRBsw8nFNHuHqYlmk1uXtFLVsFlFa9DXBbqUuUWIp
- 5eVopzZ4ItzqR4gUz3m9TKvOu76i
-X-Google-Smtp-Source: APXvYqwaK/PvuiN/GPQxyTsWoeVJs1/5Brjd4hessmP15sJP7VFeQB11GvBFgvN1a5AoLQUM5HLGpg==
-X-Received: by 2002:a2e:6f19:: with SMTP id k25mr2336820ljc.84.1576076101321; 
- Wed, 11 Dec 2019 06:55:01 -0800 (PST)
-Received: from home.paul.comp (paulfertser.info.
- [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id v14sm1313349ljv.105.2019.12.11.06.55.00
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 06:55:00 -0800 (PST)
-Received: from home.paul.comp (localhost [127.0.0.1])
- by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- xBBEswq2013384
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 17:54:58 +0300
-Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id xBBEswdx013383
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 17:54:58 +0300
-Date: Wed, 11 Dec 2019 17:54:58 +0300
-From: Paul Fertser <fercerpav@gmail.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=V7KR/FTEokdzwKrC2/sUKsv/XsYihZl9VkunBxEl6zQ=;
+ b=fA87WbkamEAvum2dKchB1u5Bl1ZOQZc7UVwU2PUtZe6H5onpBeCLX3RsJO0uMlNhP6
+ joNfIMkae13vji0XwEFzuXz73jct/EUtjb1N5K4rT/9YNzk48Xsf9DRBdsVKf/zKpieL
+ DExOGEqTKNlb1Zn5YBRUckCUFyFEO+S1fxIygOsFwDRLTuj9g8Czj/q1ejcfGYlYMGJv
+ S1XhyDhalfAnH/E8XvmsjH64L/vF0comBhi79lfTlTC25TNhj9e6c62+lFVnfJqkmQS/
+ j6WZGxWH/xmB11+BsMwR0xAFX/qW5xXNUzA655M+0OYrcKapVlEMrPFs9VE5SYl14ubn
+ 7Ejg==
+X-Gm-Message-State: APjAAAWAvYhnbW+S+VECHzPqYFZZWGYByGUqhwWI5M1LqCcowzKxLUyc
+ hvqo0BrD3P2hX6ej1EiCLenU0PYL
+X-Google-Smtp-Source: APXvYqzt/UcJIz51Gcpvpdc/X25P/cakU23EMXzWzsxSE+J8u4qE4NOx1QwLHBmaAo5zGVB9RkxnNw==
+X-Received: by 2002:a2e:809a:: with SMTP id i26mr2447939ljg.108.1576077909841; 
+ Wed, 11 Dec 2019 07:25:09 -0800 (PST)
+Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
+ [31.11.201.135])
+ by smtp.gmail.com with ESMTPSA id w19sm1320804lfl.55.2019.12.11.07.25.08
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 11 Dec 2019 07:25:08 -0800 (PST)
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <20191211145458.GN11070@home.paul.comp>
-References: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
- <20191211144459.13235-1-fercerpav@gmail.com>
+References: <e13712e.36225d.16ef3b3ec4c.Coremail.rqgxfc@vip.163.com>
+ <CAKR_QV+a___R2qsPSf6vtpk+JUPqvt3ZdvTHQA9Y_pFOZ-R6zA@mail.gmail.com>
+ <20191211142209.GC1371@makrotopia.org>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <bb246fdf-6cba-23e1-ae47-0df3ac5ca3fd@gmail.com>
+Date: Wed, 11 Dec 2019 16:25:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191211144459.13235-1-fercerpav@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191211142209.GC1371@makrotopia.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_065504_416300_B42B8AD7 
-X-CRM114-Status: UNSURE (   6.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_072512_013291_0FB55C22 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:236 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (fercerpav[at]gmail.com)
+ provider (pepe2k[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,8 +91,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build
- variant for small RAM devices
+Subject: Re: [OpenWrt-Devel] Inquery
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,28 +103,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Daniel Golle <daniel@makrotopia.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Wed, Dec 11, 2019 at 05:44:59PM +0300, Paul Fertser wrote:
-> +define Build/Patch
-> +	$(if $(QUILT),rm -rf $(PKG_BUILD_DIR)/patches; mkdir -p $(PKG_BUILD_DIR)/patches)
-> +	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR),)
-> +ifeq ($(BUILD_VARIANT),smallbuffers)
-> +	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR)-smallbuffers,patches-smallbuffers)
-> +endif
-> +	$(if $(QUILT),touch $(PKG_BUILD_DIR)/.quilt_used)
-> +endef
+On 11.12.2019 15:22, Daniel Golle wrote:
 
-This is not correctly creating the patches-smallbuffers directory,
-I'll fix it for v2 along with other review points (if this approach is
-considered worthy at all).
+> As a community, we decided to give our self a set of minimal rules[1].
+> And even though it is in the last position, rule #12 "Be nice to each
+> other." is meant just as serious as all the other rules.
+> 
+> So here, not for the first time, you are using language which has the
+> only purpose to hurt other people (for which reason ever, it doesn't
+> matter). This is therefore a very clear violation to the above
+> mentioned rule. You statement "suck it" (guess what) is also an obvious
+> and disgusting example of a masculist culture which hurts our community
+> as a whole and I strongly believe we should not tolerate that.
+> 
+> And yes this was a spam mail. And it's even needless to say that
+> replying to a spam email in which ever way will always make it worse.
+> But that's not the point here and I will not engage in any discussion
+> on that matter.
+> 
+> Please learn to behave or leave us alone.
+> 
+> [1]: https://openwrt.org/rules
+
++1
 
 -- 
-Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
-mailto:fercerpav@gmail.com
+Cheers,
+Piotr
 
 _______________________________________________
 openwrt-devel mailing list

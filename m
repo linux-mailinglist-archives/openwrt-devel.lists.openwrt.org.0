@@ -2,84 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BE4D11AE16
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 15:45:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7272711AE7D
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 15:56:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3xOROTfzykEm4RFt8Q3tj9j0rBRyMHuTj6QhFLmVmxA=; b=q8tneqWFVOWKH4
-	i4XQ6vr21JJvTxESZ4zpIR7YMr1sCd64O0bbsuzBizn+1A8heI+SMYPBEIV1piDvWiwADYuckTNsQ
-	iT5B8EtUpmVFuKGHRVmXDYXdpvfjrPjd4hUGP73fd7GJWUhoAYUvOhbvFlGlOR6eEyII0d6DhjktW
-	ZF7Qj1lijFouCXQgxGZSW1H3Nkje+aXl9H2wMj8zVRJ7/pJMiyB+HxhCB1mqC/vy0QiqYgO/ihbFf
-	uyd1FifR5Ke2ZMtVPU51uEQyOjgW7gHSgfx/cVbUdNt9Bk9RfSuhmI1ZsCWxqvDYnwfgtiaI226av
-	sLDs0osgIA8c9EiFAMYQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Cc:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VlCanKx+zHWzPkEtrAyjHISo6uu9hgoAB8PDEHPkW78=; b=haK05//l4hYhTg
+	0DujwcqMo2MI1MqLFVf25vueWTOix1zCMcmN93SE1t2lp8Px/Le48SG79sfnakUUhs410kHSlciJV
+	Raq/Nm3bZr1nhQ7lKTaM92ol/Sot2OhjS2rH5HLPdPBA6nm3LBO1CdamVfmGMxTJeL4Tpdo4qlLCI
+	4+dID+OJEWiSCJ8LzJlyokVdCVJx4tMte2H3WAUIynABWoOLVVf8S/J98gdrPnUewX8NyRy5V2i2k
+	ivUtRLjjWZUrV6mLRC/hLnacZlr/38ZsEza6vvF1ztRlR5AKyfTh6MdzeY57K35knsvBTaDxOi3t5
+	8UKMFpXF7dfhhFJupnKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3F4-0002lN-UY; Wed, 11 Dec 2019 14:45:30 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1if3PZ-0002pP-PI; Wed, 11 Dec 2019 14:56:21 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3Ev-0002kq-J4
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 14:45:23 +0000
-Received: by mail-lj1-x241.google.com with SMTP id h23so24334764ljc.8
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 06:45:20 -0800 (PST)
+ id 1if3OK-0000kE-AX
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 14:55:06 +0000
+Received: by mail-lj1-x243.google.com with SMTP id 21so24452448ljr.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 06:55:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=iicPvo1hXk1BRMKfdnGhoA0nm94/9rC8JOnv267R9Gg=;
- b=DZMTYu63eWQhHMUvbBv1aY7mMhvBi9mv3yO6B3tsFr3mj9nUJPQNCf/IRF224x+WLu
- wyVmNHh3HmCUp2cMxVDKIyUNGv7MtfFA0boDJj6kPZ233SIwDBy5ZRH4jl9iPdF9aJgO
- R2PeSCZNB5B1rkaPgOC1yjtr0RAvPIJCBNN2SrqVngBS/m45IGydJjjZ6SVz7hJ+q7RI
- 08GDL63Jv/0U8d4MM2IdqQzi9v5LBJh/es0k9bMTEugalzB5voGCQ4NMPLxrxxxSbmCK
- y7PalFrDctKHEgVaApGcLgF0Vr4Q8drS65f2V7ZJopPXeJr2DTjwoRXjBNPC3QDmVoo6
- 2/zg==
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=eUSjLNn+TFs1R1Nn6Ci4Jf+/T+7NXPinyORecPPBRT8=;
+ b=N3jqAgfERRy4PJnyJ2oYiLcsTbqHZUPie39PB5UI2X8ylbV3tbNxavceafGYiDEuxY
+ CrlsKGUpfsePZM92rvd1tK7CwIe4SEYDqQUSLdJo4Bp4jHWjZKWvFvLXGLQ9HmCvoZR4
+ W7Y6otlzN68LnRy9kb2hS5dQJmj/3kJGHuOPgbfMcDMfg79ry4s4WaQI3DfQA1Urr3OM
+ 1CtQ+5zwsi3SopMYzsIir14+/teGd38DYumJHWFgRmjHhZKUet5gNIzF4s8xujEYTuzd
+ rHcPu4E5s7mfBNedhWLBT11PfFuM7QNKC6u09Ta5XOVB9qm37AIGNNoBGU4X99A7ssOI
+ eJjQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=iicPvo1hXk1BRMKfdnGhoA0nm94/9rC8JOnv267R9Gg=;
- b=CAxvcnaEEpmrPfQ7AzU/kXt1q44ycNdY09fv4bBboj1Z/UQzgXxUTm7bKzUJZR31Lv
- geGUgt/aetDRAZ0v72tyogZEqsor2ToRG+gGDzAqsffZX+qKGQe6/EZO1nDH15SR1ifm
- o+3yiQcw4dQzkAHHh3DweGqYun+LE1lEIdQpxIguoEArOhTsMxmRSQtM6ul8mpFdLVfn
- HDAYvgtF2I5ygdlrHjDNQRmvXFWkdKMDdSWUVdWrBV4GM7f8ihrAIhQ6QtwKbkjESLe4
- OY/q9IWykx1j4ksZtXukd4m6C08cpIyg9c3Dj4xxDSkbxsavxpQn8QdSdej3bXRz3Oug
- NoVg==
-X-Gm-Message-State: APjAAAXuaeuT6XRHV0oK0iRc+bUBwoRr6otBcoTVWJlclUL++xQxVOLC
- SaqtsXk0ylXaaS0lg66Rp6IhUcvS
-X-Google-Smtp-Source: APXvYqxn9oBC+Blb3ksLWRzM0FDfsz2KozGut60jCDSTU8na0Z4WEtCCePJ7TAT9/v7H+pVSP6gvfA==
-X-Received: by 2002:a2e:8758:: with SMTP id q24mr2362464ljj.157.1576075518846; 
- Wed, 11 Dec 2019 06:45:18 -0800 (PST)
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=eUSjLNn+TFs1R1Nn6Ci4Jf+/T+7NXPinyORecPPBRT8=;
+ b=Q6ZRS8ccwfySnb95uglMivegnxavs9s2pA8rkdTC0E8S1f4h4Dw1aN9D0nwA97QDd3
+ tykhNI9e9Q8cTbCpM6mgk9G6I+Q5HGk7LxsxnNpT7nyzBqwTzbHrf90p2XBUsv0XMv4/
+ 701rQ0hAXX/EnIQa6wvTg/JzIV4OrjF6m2A1sY1efwOuDpQDHXpYFixzap9Qkt2hCwl7
+ LS2WVpeX7Ra0YGgpn5GWgfu0Q5m8V9WgZfSzGJhTBmoasLRa3OgMdnnSwvMMGIzMES/p
+ lfFK5uoCfasGiziaX2JWo5R6D7WcM9HbLPOteJGtBpEG69Uy0b48gZ9Gm69NYxpoAXr+
+ yDog==
+X-Gm-Message-State: APjAAAXRDZ2a/rfIRBsw8nFNHuHqYlmk1uXtFLVsFlFa9DXBbqUuUWIp
+ 5eVopzZ4ItzqR4gUz3m9TKvOu76i
+X-Google-Smtp-Source: APXvYqwaK/PvuiN/GPQxyTsWoeVJs1/5Brjd4hessmP15sJP7VFeQB11GvBFgvN1a5AoLQUM5HLGpg==
+X-Received: by 2002:a2e:6f19:: with SMTP id k25mr2336820ljc.84.1576076101321; 
+ Wed, 11 Dec 2019 06:55:01 -0800 (PST)
 Received: from home.paul.comp (paulfertser.info.
  [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id z3sm1300793ljh.83.2019.12.11.06.45.16
+ by smtp.gmail.com with ESMTPSA id v14sm1313349ljv.105.2019.12.11.06.55.00
+ for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 06:45:16 -0800 (PST)
+ Wed, 11 Dec 2019 06:55:00 -0800 (PST)
 Received: from home.paul.comp (localhost [127.0.0.1])
  by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- xBBEjEj7013280; Wed, 11 Dec 2019 17:45:14 +0300
+ xBBEswq2013384
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 17:54:58 +0300
 Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id xBBEjDew013277;
- Wed, 11 Dec 2019 17:45:13 +0300
+ by home.paul.comp (8.15.2/8.15.2/Submit) id xBBEswdx013383
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 17:54:58 +0300
+Date: Wed, 11 Dec 2019 17:54:58 +0300
 From: Paul Fertser <fercerpav@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 11 Dec 2019 17:44:59 +0300
-Message-Id: <20191211144459.13235-1-fercerpav@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
+Message-ID: <20191211145458.GN11070@home.paul.comp>
 References: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
+ <20191211144459.13235-1-fercerpav@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191211144459.13235-1-fercerpav@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_064521_672033_F4CB4755 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20191211_065504_416300_B42B8AD7 
+X-CRM114-Status: UNSURE (   6.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -92,8 +97,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build variant
- for small RAM devices
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build
+ variant for small RAM devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,211 +110,28 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Paul Fertser <fercerpav@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>,
- Ben Greear <greearb@candelatech.com>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
- Christian Lamparter <chunkeey@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-According to many bugreports [0][1][2] the default ath10k-ct kernel
-module is unusable on devices with just 64 MiB RAM or with 128 MiB and
-dual ath10k cards. The target boards boot but eventually oom-killer
-starts to interfere with normal operation, so the current state is
-effectively broken.
+On Wed, Dec 11, 2019 at 05:44:59PM +0300, Paul Fertser wrote:
+> +define Build/Patch
+> +	$(if $(QUILT),rm -rf $(PKG_BUILD_DIR)/patches; mkdir -p $(PKG_BUILD_DIR)/patches)
+> +	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR),)
+> +ifeq ($(BUILD_VARIANT),smallbuffers)
+> +	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR)-smallbuffers,patches-smallbuffers)
+> +endif
+> +	$(if $(QUILT),touch $(PKG_BUILD_DIR)/.quilt_used)
+> +endef
 
-Since the two patches in question might have a performance impact (and
-possibly some other unexpected side-effects) a dedicated build variant
-is added so that users of the low RAM devices can still benefit from all
-the ath10k-ct advantages.
+This is not correctly creating the patches-smallbuffers directory,
+I'll fix it for v2 along with other review points (if this approach is
+considered worthy at all).
 
-[0] http://lists.infradead.org/pipermail/openwrt-devel/2019-December/020573.html
-[1] https://github.com/openwrt/openwrt/pull/1077
-[2] https://bugs.openwrt.org/index.php?do=details&task_id=2664
-
-Signed-off-by: Paul Fertser <fercerpav@gmail.com>
----
- package/kernel/ath10k-ct/Makefile             | 30 +++++++-
- ...0-0010-ath10k-limit-htt-rx-ring-size.patch | 22 ++++++
- ...60-0011-ath10k-limit-pci-buffer-size.patch | 76 +++++++++++++++++++
- 3 files changed, 127 insertions(+), 1 deletion(-)
- create mode 100644 package/kernel/ath10k-ct/patches-smallbuffers/960-0010-ath10k-limit-htt-rx-ring-size.patch
- create mode 100644 package/kernel/ath10k-ct/patches-smallbuffers/960-0011-ath10k-limit-pci-buffer-size.patch
-
-diff --git a/package/kernel/ath10k-ct/Makefile b/package/kernel/ath10k-ct/Makefile
-index dbf75fe174..d5726a1c88 100644
---- a/package/kernel/ath10k-ct/Makefile
-+++ b/package/kernel/ath10k-ct/Makefile
-@@ -35,6 +35,7 @@ define KernelPackage/ath10k-ct
- 	$(PKG_BUILD_DIR)/ath10k$(CT_KVER)/ath10k_core.ko
-   AUTOLOAD:=$(call AutoProbe,ath10k_pci)
-   PROVIDES:=kmod-ath10k
-+  VARIANT:=regular
- endef
- 
- define KernelPackage/ath10k-ct/config
-@@ -42,7 +43,17 @@ define KernelPackage/ath10k-ct/config
-        config ATH10K-CT_LEDS
-                bool "Enable LED support"
-                default y
--               depends on PACKAGE_kmod-ath10k-ct
-+               depends on PACKAGE_kmod-ath10k-ct || PACKAGE_kmod-ath10k-ct-smallbuffers
-+endef
-+
-+define KernelPackage/ath10k-ct-smallbuffers
-+$(call KernelPackage/ath10k-ct)
-+  TITLE+= (small buffers to work on low-RAM devices)
-+  VARIANT:=smallbuffers
-+endef
-+
-+define KernelPackage/ath10k-ct-smallbuffers/config
-+$(call KernelPackage/ath10k-ct/config)
- endef
- 
- NOSTDINC_FLAGS = \
-@@ -90,6 +101,22 @@ ifeq ($(CONFIG_ATH10K-CT_LEDS),y)
-   NOSTDINC_FLAGS += -DCONFIG_ATH10K_LEDS
- endif
- 
-+define Build/Patch
-+	$(if $(QUILT),rm -rf $(PKG_BUILD_DIR)/patches; mkdir -p $(PKG_BUILD_DIR)/patches)
-+	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR),)
-+ifeq ($(BUILD_VARIANT),smallbuffers)
-+	$(call PatchDir,$(PKG_BUILD_DIR),$(PATCH_DIR)-smallbuffers,patches-smallbuffers)
-+endif
-+	$(if $(QUILT),touch $(PKG_BUILD_DIR)/.quilt_used)
-+endef
-+
-+define Quilt/Refresh/Package
-+	$(call Quilt/RefreshDir,$(PKG_BUILD_DIR),$(PATCH_DIR),)
-+ifeq ($(BUILD_VARIANT),smallbuffers)
-+	$(call Quilt/RefreshDir,$(PKG_BUILD_DIR),$(PATCH_DIR)-smallbuffers,patches-smallbuffers)
-+endif
-+endef
-+
- define Build/Configure
- 	cp $(STAGING_DIR)/usr/include/mac80211/ath/*.h $(PKG_BUILD_DIR)
- endef
-@@ -107,3 +134,4 @@ define Build/Compile
- endef
- 
- $(eval $(call KernelPackage,ath10k-ct))
-+$(eval $(call KernelPackage,ath10k-ct-smallbuffers))
-diff --git a/package/kernel/ath10k-ct/patches-smallbuffers/960-0010-ath10k-limit-htt-rx-ring-size.patch b/package/kernel/ath10k-ct/patches-smallbuffers/960-0010-ath10k-limit-htt-rx-ring-size.patch
-new file mode 100644
-index 0000000000..f73b02e5ef
---- /dev/null
-+++ b/package/kernel/ath10k-ct/patches-smallbuffers/960-0010-ath10k-limit-htt-rx-ring-size.patch
-@@ -0,0 +1,22 @@
-+--- a/ath10k-4.19/htt.h
-++++ b/ath10k-4.19/htt.h
-+@@ -226,7 +226,7 @@ enum htt_rx_ring_flags {
-+ };
-+ 
-+ #define HTT_RX_RING_SIZE_MIN 128
-+-#define HTT_RX_RING_SIZE_MAX 2048
-++#define HTT_RX_RING_SIZE_MAX 512
-+ #define HTT_RX_RING_SIZE HTT_RX_RING_SIZE_MAX
-+ #define HTT_RX_RING_FILL_LEVEL (((HTT_RX_RING_SIZE) / 2) - 1)
-+ #define HTT_RX_RING_FILL_LEVEL_DUAL_MAC (HTT_RX_RING_SIZE - 1)
-+--- a/ath10k-5.2/htt.h
-++++ b/ath10k-5.2/htt.h
-+@@ -226,7 +226,7 @@ enum htt_rx_ring_flags {
-+ };
-+ 
-+ #define HTT_RX_RING_SIZE_MIN 128
-+-#define HTT_RX_RING_SIZE_MAX 2048
-++#define HTT_RX_RING_SIZE_MAX 512
-+ #define HTT_RX_RING_SIZE HTT_RX_RING_SIZE_MAX
-+ #define HTT_RX_RING_FILL_LEVEL (((HTT_RX_RING_SIZE) / 2) - 1)
-+ #define HTT_RX_RING_FILL_LEVEL_DUAL_MAC (HTT_RX_RING_SIZE - 1)
-diff --git a/package/kernel/ath10k-ct/patches-smallbuffers/960-0011-ath10k-limit-pci-buffer-size.patch b/package/kernel/ath10k-ct/patches-smallbuffers/960-0011-ath10k-limit-pci-buffer-size.patch
-new file mode 100644
-index 0000000000..27c0032bfb
---- /dev/null
-+++ b/package/kernel/ath10k-ct/patches-smallbuffers/960-0011-ath10k-limit-pci-buffer-size.patch
-@@ -0,0 +1,76 @@
-+--- a/ath10k-4.19/pci.c
-++++ b/ath10k-4.19/pci.c
-+@@ -131,7 +131,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 2048,
-+-		.dest_nentries = 512,
-++		.dest_nentries = 128,
-+ 		.recv_cb = ath10k_pci_htt_htc_rx_cb,
-+ 	},
-+ 
-+@@ -140,7 +140,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 2048,
-+-		.dest_nentries = 128,
-++		.dest_nentries = 64,
-+ 		.recv_cb = ath10k_pci_htc_rx_cb,
-+ 	},
-+ 
-+@@ -167,7 +167,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 512,
-+-		.dest_nentries = 512,
-++		.dest_nentries = 128,
-+ 		.recv_cb = ath10k_pci_htt_rx_cb,
-+ 	},
-+ 
-+@@ -192,7 +192,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 2048,
-+-		.dest_nentries = 128,
-++		.dest_nentries = 96,
-+ 		.recv_cb = ath10k_pci_pktlog_rx_cb,
-+ 	},
-+ 
-+--- a/ath10k-5.2/pci.c
-++++ b/ath10k-5.2/pci.c
-+@@ -131,7 +131,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 2048,
-+-		.dest_nentries = 512,
-++		.dest_nentries = 128,
-+ 		.recv_cb = ath10k_pci_htt_htc_rx_cb,
-+ 	},
-+ 
-+@@ -140,7 +140,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 2048,
-+-		.dest_nentries = 128,
-++		.dest_nentries = 64,
-+ 		.recv_cb = ath10k_pci_htc_rx_cb,
-+ 	},
-+ 
-+@@ -167,7 +167,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 512,
-+-		.dest_nentries = 512,
-++		.dest_nentries = 128,
-+ 		.recv_cb = ath10k_pci_htt_rx_cb,
-+ 	},
-+ 
-+@@ -192,7 +192,7 @@ static struct ce_attr host_ce_config_wla
-+ 		.flags = CE_ATTR_FLAGS,
-+ 		.src_nentries = 0,
-+ 		.src_sz_max = 2048,
-+-		.dest_nentries = 128,
-++		.dest_nentries = 96,
-+ 		.recv_cb = ath10k_pci_pktlog_rx_cb,
-+ 	},
-+ 
 -- 
-2.20.1
-
+Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
+mailto:fercerpav@gmail.com
 
 _______________________________________________
 openwrt-devel mailing list

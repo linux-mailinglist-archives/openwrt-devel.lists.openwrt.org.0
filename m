@@ -2,126 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C53CE11AA57
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 12:58:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBA1F11AA92
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 13:16:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+mUUEMRSzxkRFW/igcvclIYYQZ8/VeWwIeHJH3cgLc4=; b=qdLu/orNaXLbPM
-	wVZC729twNWxq5lZ9x0uY/tKjlZIIbVLgj7Br13xKjmvCMkt1tF3a7DYnAJpYKf4vEkzC0nhZI+jZ
-	u9RC++R7nPAP0P9+UUGsoLYojdkZ1kOgeuCvVHRW8mnlBBvdoDp7r200fTlTj6//ce1+AQb/xBW0C
-	6DLvyFrAGzGbmlFPOpshh9vhhXawEXcBHgHHo9Ldnzg59HdnAFaSYYu4VcCJex2vA7dhs6AwksyrG
-	ggUELs8/PjvlADFbh3s8mQ+kWcWhZEJ4mpx1+wPjzfhA4yrUqpAMQPgOWVY3kZBHg2vrZxPdtaXWc
-	IzHEe3DgnXH440FO9MVQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O6m0zUls6t6EqPjvPkfSUoFB79EdZhMq/NWlACCPxpk=; b=rb60w2cSgAHaHR
+	mcdgs8Q861ihmCHwUWHQaYW4qfuDSmfSQOXXl7PuQv7lKMCcEqazzYAJEb3o+wN0B8pXXHq0fC6H6
+	TzyMMAdcfpvY78fOqyqSL+hh5G1tvrW/zDYrkk5KeLJUmEAo0saA9XkSxVKBjfSGJBPSUPP2rSVRB
+	f7QkHJdZNv6VB1/DIejyfO64RJYxJ5sAzm40pJOLmGo0EnMUEQH/VtQ0CH+pfUwv/xfuYhSQ73Ucx
+	nNAoEm1XVlTY36J+yJqJVPSKgJhQ/+nkqw2xYqGLRWuJxNp1URFulLx5Kx8xyR4jlXiM4qNVASuMK
+	OSsUokWvcZuJRoi21Qvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if0d1-0004ue-MU; Wed, 11 Dec 2019 11:58:03 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
+	id 1if0ut-0003Q6-5Y; Wed, 11 Dec 2019 12:16:31 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if0cs-0004u3-S9
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 11:57:56 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 420B152C3D; Wed, 11 Dec 2019 12:57:51 +0100 (CET)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 233A252C3B
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 12:57:51 +0100 (CET)
-Received: (qmail 74316 invoked from network); 11 Dec 2019 12:57:51 +0100
-Received: from unknown (HELO ?10.42.0.249?) (jo%wwsnet.net@24.134.185.161)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 11 Dec 2019 12:57:51 +0100
+ id 1if0uW-0003BP-BA
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 12:16:11 +0000
+X-Originating-IP: 77.191.81.254
+Received: from tb.localdomain (x4dbf51fe.dyn.telefonica.de [77.191.81.254])
+ (Authenticated sender: mail@aparcar.org)
+ by relay2-d.mail.gandi.net (Postfix) with ESMTPSA id 728E84000D;
+ Wed, 11 Dec 2019 12:15:53 +0000 (UTC)
+From: Paul Spooren <mail@aparcar.org>
 To: openwrt-devel@lists.openwrt.org
-References: <20191210142420.30748-1-fercerpav@gmail.com>
- <20191210144213.GH71465@meh.true.cz> <20191211110352.GL11070@home.paul.comp>
- <20191211114722.GA11343@meh.true.cz>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
- mQINBFU/gqoBEADOH7rJT9/cMjuHsUqHn38uxtIEPMsaI0zg1t4nU+sraS5aatIjWVouDdUB
- TBvYK6bVgef74Rh4zlnhNxOAQyWmTW1BApe4/et3F69wUpUW38mWYiwXJ1IoXFiK+74G3dix
- yvTl7zabyUzNqjP3MyEXFO0w0mQQqXWqncjD192mTZeN+AldCjIyNpKl3iTQ6mZUGydjPs53
- OBizq+gHOAa0tmxeYbMP5nI9dvgBFunycs2X8MNvAGCOLg24SqTTO0yxmwHlJEKDcxH+H1hN
- v3HkZGfBYtbdEBCiA7Y5trDYD9yjHaVf/u+U9BKnKX8RWQicoSiWT8ZoO9WSmAfwSaTl43W9
- X73QMnsDUQZTwox4c6ApnnhCU8KSAJeg1ghVKp7rH5W9I3YWMDXCVETS2NZYBuzRaGGzoc6X
- g8kAHAEBIJV3eodw+EAi8JOEBfAck8/DHKbX/3Z+1vmT8oU+P16sm9wXRbDF8sAsdu49Tdnf
- aRlVtSDU2sRT6jWms54+Mz0mLdU5UNQZZmC+/H8L8Km+aIpmEsMk0BPSSTs0RlD3+rtbsX+Z
- cbnD4QUU2fHjqmxbuyBxBjDrrbQFiai7iXkJnPxmrX8M7NAQtKsgCaBhL1Vr+Wf+kQ8iOO7o
- HqwmLINZ/ibA/fqq0WK1zbJIXFFFF1spYPobs+pyIhE/F2/UKwARAQABtCpKby1QaGlsaXBw
- IFdpY2ggKERldmVsb3BtZW50KSA8am9AbWVpbi5pbz6JAlcEEwEIAEECGyMFCwkIBwIGFQgJ
- CgsCBBYCAwECHgECF4ACGQEWIQRlmIU8XC7ES/NiIks6ofWzR9lAhgUCXTfqXgUJC7rOtAAK
- CRA6ofWzR9lAhh2CD/9FMgm1kYqjG685ZVv7naXIgfoJQG85zGJgE6CNj6furJSvx0MqQRIN
- +dZ5pOmV8C2eYwdJUvxyIYINjxc0epioK7X8aMXZp57t8y6CfC2SDITvrE7FG+aRlHDp0/WB
- dBZrqfV90v6TM9OLyXvhzk0VYUN8Fhncdnfi+haHfzRMkndjlG4C1QV3Ayro1alpZTkVS8Cz
- Lt0Iv1Q8NP1yue4Qk6gPV6hetlVotrpQcOwvHqffQfC5mjf55AFo+APIWF4UknDi73T56fTJ
- fedu0MK44+iJl7CpK9ESaX96y1BEtDF8eOXjg4v8SXhTlF7RGxCjSxqjqvufjVprLWAy/lI2
- RvTFskr/k4i7V+pxrjnNcw1gj8GbH6SbgLt1hv1XFFw3dIbFQoJESGGQnvJ+sHIjiqY4TjBR
- SER+8pM9OAQ8CMVqoGjFxuAGyyoj4npLGY9tAu5RudgQnev3msn+LiZqycwyr3b9q8jUme51
- 8bnumCZeNQVLY7RCocM43BnHA04I3jsFqXgHd/ZzsRyrN5nP3reNGMYVghkGLmD5ET4aLc35
- S2Zy54FF8KMIg6n+/H+mraBJ9AuVHQ/0Tb59rlQCgW5Y81uopF/pZWDMzhJAs26LrVyqb5bb
- LQFRDs7RFm4QAAR3z8zgzPzhvIVT/ML/DOmN9nZmA5reAmNveov3m7kCDQRVP4KqARAAu0n+
- LOANYoZBw6h/aHjDRYiufOFr3mrRr0R1z/29r9G3CgYAR+wREG3d+Eof6Gihbci03SabInFM
- fp7B0AZ9Y2byEoauLG1GprTD9qIh1KJbnxFCrHTKTERtblh14OI0KUzqXOsxIKq0yI4xUg57
- 49eRwEeCtBIoy4z37TXCu+v3TVVJva7Gy8ij1LB/xBVPCmoTzVHnOl8DKsdPQ4POX/TqL02t
- A2PBpQPklpAfkxrmpeQbVrm8EMGQdPOfaFCUfcFnj/8/qauZhFgIrMJrxoXzQeW+9AP3K+Be
- U7yNNvzDNPpLQQ3wp5XmVLmJ0xurqoVbheZiQBtF4MbQxIT+9YiLv514oGK9UG+syBj/nE49
- AymL6OcBR3/ZfBk5VABKynUtP5LDP0vPErvcKsE9b2Q/AqoGiPV3fJ9fhrFivoS56fxLd+sl
- 4le/uuENMDnEg8fjoGoGJ0UQMeEGg87bcI1V5D6YXtJy1v5g0Ro8mJ+/yh4RSifn587Juetv
- ub2w6TGqsnASaYZvaoN6udnUu9T90U2zW0yGu/mIrm2JjJJYqTpjBLZb5yEd9DKITozQQPlU
- oy01wldpTgaZZh8nRw20C+UJMUK0JisFBAB0RtPNwCMC7ci6H6IoOxZOTkPEedFQ0Gq/W6Pt
- Aj4kFBHHoj+oqXzu+USp1fZnyV461q0AEQEAAYkCPAQYAQIAJgIbDBYhBGWYhTxcLsRL82Ii
- Szqh9bNH2UCGBQJdN+pPBQkLus6lAAoJEDqh9bNH2UCGkMYP/jdJmeAn9qDzcSP8vlVEvVAq
- l0Prdhv9+EKKOVTCpEhFrMm9ecCgjJ7GH6C0SY9eRFOd5Xz7F2HzR0RYdqE0wndvsu14nGMT
- wsiBlVks/KAYHClTliH5Ai/l6iMReZ2/E18GsfqAEadVv3c8ixDCHbFjUeePZXl6bzyGE2xY
- 2svs4xZxv/jKmgrv+utHN75Ks4NaaxObUO0BfM8yPyiX6CDUuoSoEBTeQpIaEnmFcKmeW18X
- FgtxYBUhy3v/WI5FtBMqSx80znmlloo/ci7YschP0YiR25BO5/Lqtep3L4hz6vjbXFEbzWSx
- TJbBuk/Je+Jd/H9w5CI58GThGXcFaIjmys3TBtxDjgh+/e6OmYOCoRu1DVtz/9xP5egmuTLo
- 4ihKW8Snc78gN1U1nxxlR9wHyRU1HKSgtEsF/jXawjoUiHSAJJ5ipPRSHeCRAHqShy8yH0BO
- q3b0oydKYcIjKmpHEGqz2X1t1hOsFwCoB2SJtOxQAe5qi/CFfpM189GP0qiXxsMwlldPTsqi
- hhK2kdJtQsFuoFQsAddGk4feyWCToDPkIwk4TImNj3UbZvAjtNGL63iaNIJCJ0P+Wj6mKvJa
- DcYJHy6jT4Khs/iTyTUt0ocgZskwNr0aKsr0J6uGjLjg1Rd3wDOZleDfnH8OIcuyN0KBaruo
- yxsOKc06fSVmuQINBFbUU4kBEADWr/vCGzsQmXqHzHLnTfTlx0nq18tB/Ws3JJxHKihD/CST
- CnYpsWz+Ce7QS5mV8q8zIUSYaCSkzn91zQkKe0la72vIKyS963b7wFNC27QZ20v6wuAFEfnK
- 7rr4TRLMLXRd18B+mcwy99b1qySbc34jwPPhEkaQ+F+/2Ur7V1ZWhfyBOpVbOJrt4awaqC2j
- Q76AwFrAyHN6cAAoyrIjiG/ERARumriCbYunZjTBHAAYw5RL/M6JvtIeuCtUBvn0RniENUHU
- wYQEZVVQM9QdY8xStddsRWVQ4+8jIIZk3TfyBTM/djap5qqXr7VbrMle85DpV/wCbiIWkjVR
- 1/OWU112GFklrXMoYGBYZqVuSLU0irq/o01mfHq4mfFm8XL0Wd7dV+da0UaTggigGumEiEO8
- 9Z601m/2gVlXMrhxfDVffeoU8YurrLCZOxlRKV7+P6aB8aeMtE7Q3U+bCDyOlMSXO+0J92OF
- LEVr+7jq299R0s7sM3bPU/0IhtkI2yqknCXQL6Br7on3lRa/yCxx1B0y3XcAMYm7WWqiTuEf
- kLmhj2uIFx2hOk8WlKUjrjoLCD94Wr16GurtKCCNPpPB9qrTBmKbeCMqV6PsDkW7rgPGGT7b
- k9yv4eebSHjV2p2eQqbZz5w1d5LYK4PjwgxT3/d4WrdM8eNMCBQlhZ48PAAO/wARAQABiQRb
- BBgBAgAmAhsCFiEEZZiFPFwuxEvzYiJLOqH1s0fZQIYFAl036jgFCQol/a8CKcFdIAQZAQIA
- BgUCVtRTiQAKCRBC4su/Oi5m0zjMEACx67a8Y6vNVApEmRR4yopZGz44J2P4XEF6ef9jryw4
- tnd9Gow057M2syesHI0f2DqmTG9GL6H7mWA66oNNbP+UWcd9XArPh4UUF6he32Xt12qLF0Ch
- FF6nxh281/lj3scqem2lbIjXNoK6Av+OCgS3MSdW8gP1MU3WyDdYcmoHHotFB3jgaUy891DR
- K7NAs2ak03uINxvmi/8JbDwPTSaOkvwi8cbpCbN1Jp7cKA/AI1VNMB8SXPdmcaCKo++aZc22
- 9IYdSGgJ30OJruID83SfdYFjZLAAw/JWUjYPmKJDeI+r0gyI6rz8So/yiUDNL+1R4wSplmWW
- +wqmI4vfgzc/HljqUY8282tikqmhIOQThlcwexNDqWv4D1TEAUNUn9QXIbqPp4gbJBSWoWAC
- 3cEhkvsptPfD+G0EEZdvJCdPDRCd0tH8ErG3POTsQS9/e+j1VmX5tpHHzDHhU2p8ee0eZ0v0
- WAFUi1QAE13vNmjAwgxWj3GC3cOjGeZEz/6jfeKOTzWCqgAYS1uLHkeBxA4O9m4kh3k/6/Oh
- Rp3qMwv2AqDf+e+guDFOEVVWtRB/R9yHxTM/cuPJ8GWVCEf789J7KjSrPkyRvu6U7KlwCaG8
- VTXMyNxUKbzNlwLIIYXE9RD7URFRaZNErKa7csokEG1YgWEQCkprvbXopleShFigAQkQOqH1
- s0fZQIY1FA/9Fed9OLGavChmwXKLnJpu0BjkJIVbrJaBFaKCF8MWaDP1SCilL5q1jPtuekPO
- Bw1ZNm6wTIXxnte5SLhxhAGjvD0Wvz1kGUbCKPJ+TT0VPqkIfhNG5VMxdNeneLdJ90TZKPlm
- msH1CcZJq+qJkNIGU9roL4MenkOdjpD9ENCNllEcY1cvDSO+rKLgx5wJW5c4uvPsagkW1YGO
- yW0oAbLMdsWy3wyhYmqwD6BJzCz/y+KgjM5yG1arHWVNp5IEwD4nmjhQ0dFUN1pAEZYN1qJv
- rrBhccW/ft3rI2HQ02o+52GuNR6Qt1Rl4idVSft3SCtMCbtgJo9Aobr5l80pnronetpn/Lkz
- 42TCAQnZ2KHBfhteI6VNaBNTb7QYH+GClVJS157ElvY0dTYeL20qDAlStt9TK1/XqsZGxnwF
- sp9HLi38G/enVih9r3omPl2LKWbLHKaRL/PRwjNzF6JfxnsEmx3jWwVgY6aHAgmlMsQI4H2n
- uMQDDldblmzRzTwmjhNKHXh9whBD6qcchO7+GmioooeAZ4iCzLvmVVV/vv3kvQ6rWczBlXsj
- GDeZxXxkn50nP9D9lvgnt60WWx+NENxilZ9YdfQVo9pAVyQVhaWEjuWZAoy8MF6MwzCiUtPI
- d/+2PBVvhp4A6ioJlsvV2WvflP0mSVuNJwczN4VMvhFZLxY=
-Message-ID: <fac99d76-8929-e68d-0eb8-7e5a525f1988@mein.io>
-Date: Wed, 11 Dec 2019 12:57:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+Date: Wed, 11 Dec 2019 02:15:47 -1000
+Message-Id: <20191211121547.430267-1-mail@aparcar.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-In-Reply-To: <20191211114722.GA11343@meh.true.cz>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_035755_066021_F5934E95 
-X-CRM114-Status: UNSURE (   7.35  )
+X-CRM114-CacheID: sfid-20191211_041608_672315_C9C2AFF2 
+X-CRM114-Status: UNSURE (   8.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -129,13 +44,14 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.204.60.217 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ low trust [217.70.183.194 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [RFC][PATCH] base-files: send informational UDP
- message each second waiting
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Subject: [OpenWrt-Devel] [PATCH v4] This separates the options for signature
+ creation and verification
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,16 +68,136 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+* SIGNED_PACKAGES create Packages.sig
+* SIGNED_IMAGES add ucert signature to created images
+* CHECK_SIGNATURE add verification capabilities to images
+* INSTALL_LOCAL_KEY add local key-build to /etc/opkg/keys
 
-> Question is, if it's worth the hassle for a feature which is targeted more
-> towards the expert users.
+Right now the buildbot.git contains some hacks to create images that
+have signature verification capabilities while not storing private keys
+on buildbot slaves. This commit allows to disable these steps for the
+buildbots and only perform signing on the master.
 
-from my pov - it is not worth overengineering this feature. The proposed
-patch is more than adequate. It increases the probability of the message
-getting delivered without additional code complexity.
+Signed-off-by: Paul Spooren <mail@aparcar.org>
+---
+v4: replace ifdef with ifneq - Makefile magic
+-ifdef CONFIG_SIGNED_PACKAGES
++ifneq ($(CONFIG_SIGNED_PACKAGES),)
 
-~ Jo
+ config/Config-build.in      | 12 ++++++++++--
+ include/image-commands.mk   | 13 ++++++++-----
+ package/base-files/Makefile | 20 +++++++++++---------
+ 3 files changed, 29 insertions(+), 16 deletions(-)
+
+diff --git a/config/Config-build.in b/config/Config-build.in
+index 872e5c12ab..af5de42ac6 100644
+--- a/config/Config-build.in
++++ b/config/Config-build.in
+@@ -37,13 +37,21 @@ menu "Global build settings"
+ 		  - Enabling per-device rootfs support
+ 		  ...
+ 
++	config INSTALL_LOCAL_KEY
++		bool "Install local usign key into image"
++		default y if !BUILDBOT
++
+ 	config SIGNED_PACKAGES
+ 		bool "Cryptographically signed package lists"
+-		default y
++		default y if !BUILDBOT
++
++	config SIGNED_IMAGES
++		bool "Cryptographically signed firmware images"
++		default y if !BUILDBOT
+ 
+ 	config SIGNATURE_CHECK
+ 		bool "Enable signature checking in opkg"
+-		default SIGNED_PACKAGES
++		default y
+ 
+ 	comment "General build options"
+ 
+diff --git a/include/image-commands.mk b/include/image-commands.mk
+index 5dfd6a2c2f..3d10b18bc8 100644
+--- a/include/image-commands.mk
++++ b/include/image-commands.mk
+@@ -373,11 +373,14 @@ metadata_json = \
+ 
+ define Build/append-metadata
+ 	$(if $(SUPPORTED_DEVICES),-echo $(call metadata_json,$(SUPPORTED_DEVICES)) | fwtool -I - $@)
+-	[ ! -s "$(BUILD_KEY)" -o ! -s "$(BUILD_KEY).ucert" -o ! -s "$@" ] || { \
+-		cp "$(BUILD_KEY).ucert" "$@.ucert" ;\
+-		usign -S -m "$@" -s "$(BUILD_KEY)" -x "$@.sig" ;\
+-		ucert -A -c "$@.ucert" -x "$@.sig" ;\
+-		fwtool -S "$@.ucert" "$@" ;\
++	[ -z "$(SIGNED_IMAGES)" \
++		-o ! -s "$(BUILD_KEY)" \
++		-o ! -s "$(BUILD_KEY).ucert" \
++		-o ! -s "$@" ] || { \
++			cp "$(BUILD_KEY).ucert" "$@.ucert" ;\
++			usign -S -m "$@" -s "$(BUILD_KEY)" -x "$@.sig" ;\
++			ucert -A -c "$@.ucert" -x "$@.sig" ;\
++			fwtool -S "$@.ucert" "$@" ;\
+ 	}
+ endef
+ 
+diff --git a/package/base-files/Makefile b/package/base-files/Makefile
+index cf5166772d..e95a155124 100644
+--- a/package/base-files/Makefile
++++ b/package/base-files/Makefile
+@@ -37,7 +37,7 @@ endif
+ define Package/base-files
+   SECTION:=base
+   CATEGORY:=Base system
+-  DEPENDS:=+netifd +libc +procd +jsonfilter +SIGNED_PACKAGES:usign +SIGNED_PACKAGES:openwrt-keyring +NAND_SUPPORT:ubi-utils +fstools +fwtool
++  DEPENDS:=+netifd +libc +procd +jsonfilter +SIGNATURE_CHECK:usign +SIGNATURE_CHECK:openwrt-keyring +NAND_SUPPORT:ubi-utils +fstools +fwtool
+   TITLE:=Base filesystem for OpenWrt
+   URL:=http://openwrt.org/
+   VERSION:=$(PKG_RELEASE)-$(REVISION)
+@@ -107,7 +107,7 @@ define Build/Compile/Default
+ endef
+ Build/Compile = $(Build/Compile/Default)
+ 
+-ifdef CONFIG_SIGNED_PACKAGES
++ifneq ($(CONFIG_SIGNED_PACKAGES),)
+   define Build/Configure
+ 	[ -s $(BUILD_KEY) -a -s $(BUILD_KEY).pub ] || \
+ 		$(STAGING_DIR_HOST)/bin/usign -G -s $(BUILD_KEY) -p $(BUILD_KEY).pub -c "Local build key"
+@@ -116,12 +116,6 @@ ifdef CONFIG_SIGNED_PACKAGES
+ 		$(STAGING_DIR_HOST)/bin/ucert -I -c $(BUILD_KEY).ucert -p $(BUILD_KEY).pub -s $(BUILD_KEY)
+ 
+   endef
+-
+-  define Package/base-files/install-key
+-	mkdir -p $(1)/etc/opkg/keys
+-	$(CP) $(BUILD_KEY).pub $(1)/etc/opkg/keys/`$(STAGING_DIR_HOST)/bin/usign -F -p $(BUILD_KEY).pub`
+-
+-  endef
+ endif
+ 
+ ifeq ($(CONFIG_NAND_SUPPORT),)
+@@ -130,9 +124,17 @@ ifeq ($(CONFIG_NAND_SUPPORT),)
+   endef
+ endif
+ 
++ifneq ($(CONFIG_INSTALL_LOCAL_KEY),)
++  define Package/base-files/install-local-key
++	mkdir -p $(1)/etc/opkg/keys
++	$(CP) $(BUILD_KEY).pub $(1)/etc/opkg/keys/`$(STAGING_DIR_HOST)/bin/usign \
++		-F -p $(BUILD_KEY).pub`
++  endef
++endif
++
+ define Package/base-files/install
+ 	$(CP) ./files/* $(1)/
+-	$(Package/base-files/install-key)
++	$(Package/base-files/install-local-key)
+ 	$(Package/base-files/nand-support)
+ 	if [ -d $(GENERIC_PLATFORM_DIR)/base-files/. ]; then \
+ 		$(CP) $(GENERIC_PLATFORM_DIR)/base-files/* $(1)/; \
+-- 
+2.24.0
+
 
 _______________________________________________
 openwrt-devel mailing list

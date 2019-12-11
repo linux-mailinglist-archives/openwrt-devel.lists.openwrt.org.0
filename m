@@ -2,91 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FAAD11BD37
-	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 20:43:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4F7011BD7B
+	for <lists+openwrt-devel@lfdr.de>; Wed, 11 Dec 2019 20:50:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Date:From:To:MIME-Version:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BcF8W3uQhyGJhGQoNXXe0UbdJq2xKudQ6wST6SEFEmo=; b=mz3
-	9BZF+eX+fZYxUXgOoryyRyzvocwiXnuaAGD46lCqFnmQ/UaYdUcitIkQiplVIu6OV1zhwFB2SyXNX
-	vWbWxSot1uUFjEjU9/JzRSjv8mMkUWcdzk/riuin91P/xhSgITW3qCzKZKpMnRCVKYssNQmwzXRMC
-	aTdzWcKW1E/s+weFLr0kMp4LYIne3BFYqtN/4ujktehJpxRNuupdGFqPrwBUOf3qjdCWuzE9l8u/F
-	ewkCvYKqM0/Psl4sH/NPm4QDR6B9udqKVVRodWCCVxFy+HOiIu2PJa6nVFGmNqO0LIetlphrGtdkh
-	52hKL+gDMmg5xrLI2sVWMUiw+GhBR2g==;
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uGU1m5TaRs7Q9JXxflte7GSuu6bApaxBn++MWsapkBQ=; b=NqVEZRm/QBGmN6/5WfAVhZSkL
+	6/aMFqDajxy96EPUEd0eoLNux47O8fHBthM/uVUC4ohehcPkzRv9wA8A/NX5JgarNwvUHm0bfB78v
+	lnVIsmgKcyq3lL3SOB7PqCIHiFyTjyWJWaAKDltx+J/8dG50MBNTYjc2Ue41LwXUqxyLZ2kjSKUeH
+	onzIemkUQoYz/LmYxBqv3vUedga1JjOG4NeIo9PVyc9O/0s2oi/f2ns+YCqESaUWxSK5A3pGj1RsC
+	zCwpGssM35kuNG4E/OCg3onnxjBtUZrATQVrK1vtlJbTo9kOPjIgo6B8ZFJfE1F0Ow3jjcrNMO0wv
+	znrQohCyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if7td-0003RB-RU; Wed, 11 Dec 2019 19:43:41 +0000
-Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
+	id 1if80b-0001r9-V1; Wed, 11 Dec 2019 19:50:53 +0000
+Received: from masdeu.rogerpueyo.com ([5.134.119.116])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if7tV-0003Pi-Qz
- for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 19:43:35 +0000
-Received: by mail-pf1-x435.google.com with SMTP id q8so2299956pfh.7
- for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 11:43:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=message-id:mime-version:to:from:subject:date:importance;
- bh=Z3saGTZZ7IPA1CLjw1I7Ug4gcTBdZB0Iquh2d0DL5v8=;
- b=o5G323bc66Elvvhr7J2MAlVbhLIzn1maHe7g2DfNghemdqnUvGQCmEQsiTqaJEgIVO
- Z3VEVLtdlW134/SbRvHKzGUSUCelnjmN+cIvtlzhxOWbDCQBFSVjFIPkgOyY4ek2A9sx
- 6WnXPWl+JSSliaVh7AvkY1CI1S0tSiELPLDpXhcYwZWf7CzdNDVofN2TWM+lisWtlxpw
- DMtJ+wGvuXnkqF/fa7VtPzR2ezfUMGYZWhOpPupHjoXaAIEwMjaiBc9V0FUz1zfU4EpI
- AT5mxWH/HHpIqXiiHjiOchyakxcAkU6e53OJCagHkRznroh5trohOacmUfH1UHI8oO/e
- Qs2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:mime-version:to:from:subject:date
- :importance;
- bh=Z3saGTZZ7IPA1CLjw1I7Ug4gcTBdZB0Iquh2d0DL5v8=;
- b=dNEuTxiWBLgdeO5KfeYCqDUEeXK8QnKdxvflecbWdT+/IdVZ4vPJIsZ5uo7qqTy8xw
- 6wYAAj26Tv16UM0GN8MBRvAO9mf4k6BMpIaGh5PAE7FuotWNNJupeXgAniLQPXnSyQI9
- rvD5elSYWvDuJuANsWJeLtuG93mKXhzkFO5m1bOaDYoTZWyjIuxJwk5afdn6wg+zfKOS
- RPkwOticK03da77u5GvFxhpvk6arSAOVofbJje8FrUCpvPssoCTkt2dbLyF+fgKpg5qo
- ea/c7cU9xDR9lllYUmkh3R8QNVWqblCez3ut4fCiJ3dm204+EZ0mAEHKB7tjOstQFusT
- PqiQ==
-X-Gm-Message-State: APjAAAWaPNLzdtrwyvrigI8CflNvqqh9aT5Af4jEV/Ne0D0bEm1WtzdB
- 1jJhLqmzIgnah26vgVAPZe5wxzkr
-X-Google-Smtp-Source: APXvYqwLqT/hjWcl7G8i8GnDus3rMBa5Xv817+xuc5CGgk7OzqL7uHrO7MpygirXI6HL5P0dJxhi/Q==
-X-Received: by 2002:aa7:8b17:: with SMTP id f23mr5670217pfd.197.1576093412023; 
- Wed, 11 Dec 2019 11:43:32 -0800 (PST)
-Received: from ?IPv6:::ffff:192.168.3.201? ([27.4.110.69])
- by smtp.gmail.com with ESMTPSA id d2sm3333925pja.1.2019.12.11.11.43.29
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Dec 2019 11:43:30 -0800 (PST)
-Message-ID: <5df146e2.1c69fb81.5cb4d.808e@mx.google.com>
-MIME-Version: 1.0
+ id 1if7xm-0006NY-Mq
+ for openwrt-devel@lists.openwrt.org; Wed, 11 Dec 2019 19:48:04 +0000
+Received: from [10.1.24.66] (unknown [84.88.85.1])
+ by masdeu.rogerpueyo.com (Postfix) with ESMTPSA id C458C841
+ for <openwrt-devel@lists.openwrt.org>; Wed, 11 Dec 2019 20:47:53 +0100 (CET)
 To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-From: sagar jain <geekysagarjain@gmail.com>
-Date: Thu, 12 Dec 2019 01:13:32 +0530
-Importance: normal
-X-Priority: 3
+References: <5df146e2.1c69fb81.5cb4d.808e@mx.google.com>
+From: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
+Autocrypt: addr=roger.pueyo@guifi.net; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <36b96546-0b2b-7492-70b7-904bdb3c85e6@guifi.net>
+Date: Wed, 11 Dec 2019 20:47:51 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <5df146e2.1c69fb81.5cb4d.808e@mx.google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_114333_876610_5411997A 
-X-CRM114-Status: UNSURE (   2.34  )
+X-CRM114-CacheID: sfid-20191211_114759_052911_FB0B55FE 
+X-CRM114-Status: UNSURE (   3.91  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:435 listed in]
- [list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geekysagarjain[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] (no subject)
+Subject: Re: [OpenWrt-Devel] (no subject)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,32 +103,66 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7339470265056472874=="
+Content-Type: multipart/mixed; boundary="===============1062370729449114385=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============7339470265056472874==
+This is a multi-part message in MIME format.
+--===============1062370729449114385==
 Content-Type: multipart/alternative;
-	boundary="_035BC71F-F67B-4F0D-81BC-5BE41A03E2E1_"
+ boundary="------------634CDFF7BC2292ED02E70097"
+Content-Language: en-US
 
---_035BC71F-F67B-4F0D-81BC-5BE41A03E2E1_
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="utf-8"
+This is a multi-part message in MIME format.
+--------------634CDFF7BC2292ED02E70097
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
 
-Can i sell OpenWRT based router ?
+Hi,
 
-Sent from Mail for Windows 10
+Have you checked https://openwrt.org/trademark ?
 
+Cheers!
 
---_035BC71F-F67B-4F0D-81BC-5BE41A03E2E1_
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/html; charset="utf-8"
+El 11/12/19 a les 20:43, sagar jain ha escrit:
+>
+> Can i sell OpenWRT based router ?
+>
+>  
+>
+> Sent from Mail <https://go.microsoft.com/fwlink/?LinkId=550986> for
+> Windows 10
+>
+>  
+>
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
-<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sc=
-hemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/of=
-fice/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta ht=
-tp-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8"><meta name=
-=3DGenerator content=3D"Microsoft Word 15 (filtered medium)"><style><!--
+--------------634CDFF7BC2292ED02E70097
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Hi,</p>
+    <p>Have you checked <a class="moz-txt-link-freetext" href="https://openwrt.org/trademark">https://openwrt.org/trademark</a> ?</p>
+    <p>Cheers!<br>
+    </p>
+    <div class="moz-cite-prefix">El 11/12/19 a les 20:43, sagar jain ha
+      escrit:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:5df146e2.1c69fb81.5cb4d.808e@mx.google.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator" content="Microsoft Word 15 (filtered
+        medium)">
+      <style><!--
 /* Font Definitions */
 @font-face
 	{font-family:Mangal;
@@ -151,18 +190,31 @@ a:link, span.MsoHyperlink
 	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
 div.WordSection1
 	{page:WordSection1;}
---></style></head><body lang=3DEN-IN link=3Dblue vlink=3D"#954F72"><div cla=
-ss=3DWordSection1><p class=3DMsoNormal><span lang=3DEN-US>Can i sell OpenWR=
-T based router ?</span></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p cla=
-ss=3DMsoNormal>Sent from <a href=3D"https://go.microsoft.com/fwlink/?LinkId=
-=3D550986">Mail</a> for Windows 10</p><p class=3DMsoNormal><o:p>&nbsp;</o:p=
-></p></div></body></html>=
+--></style>
+      <div class="WordSection1">
+        <p class="MsoNormal"><span lang="EN-US">Can i sell OpenWRT based
+            router ?</span></p>
+        <p class="MsoNormal"><o:p> </o:p></p>
+        <p class="MsoNormal">Sent from <a
+            href="https://go.microsoft.com/fwlink/?LinkId=550986"
+            moz-do-not-send="true">Mail</a> for Windows 10</p>
+        <p class="MsoNormal"><o:p> </o:p></p>
+      </div>
+      <br>
+      <fieldset class="mimeAttachmentHeader"></fieldset>
+      <pre class="moz-quote-pre" wrap="">_______________________________________________
+openwrt-devel mailing list
+<a class="moz-txt-link-abbreviated" href="mailto:openwrt-devel@lists.openwrt.org">openwrt-devel@lists.openwrt.org</a>
+<a class="moz-txt-link-freetext" href="https://lists.openwrt.org/mailman/listinfo/openwrt-devel">https://lists.openwrt.org/mailman/listinfo/openwrt-devel</a>
+</pre>
+    </blockquote>
+  </body>
+</html>
 
---_035BC71F-F67B-4F0D-81BC-5BE41A03E2E1_--
+--------------634CDFF7BC2292ED02E70097--
 
 
-
---===============7339470265056472874==
+--===============1062370729449114385==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -173,6 +225,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============7339470265056472874==--
-
+--===============1062370729449114385==--
 

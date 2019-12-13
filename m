@@ -2,74 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C73F311E8A2
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 17:45:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9621D11EB3E
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 20:52:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hluDm034pVQHB8YoVP83ItV8YdO1Du46IsVCO/zfmPA=; b=JYJ0IkxxnTtwePLbwi9Gkonx4
-	Y6Ai2TTPYAe2uuNaNu2f259Nj4oEM+PeCiKxidaszAebwGNYeqBAkb2Y05OnryBEs7kZDtOPWjQNZ
-	s6GqzdNSNaerhu+0lgL2Lq1gIb01P+W29PdwyX6q0jCKnw9DUZ+oKnsI4Q8gOyGBvFs8nLtxAl5Ed
-	Pz9Iq/mnxWtq4uytCOcZmy2e7hSXMqTNjP+KNXLIAFje/14y73Ndp7YGQXRH668e6xJ7xzAc64I13
-	usFIErm9O+5NsSf9pvRjnuKQZyp6e3sxFjM99S9+Mn09bf5Ps2MIg+HNzmYZqWjkvh95FYsWCREGO
-	AYtIssf8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hDI6BjmDUzFKihXcVrJLQU/s5jE++r8W1xkv14x2K00=; b=AZYC3gNNVzPRB/
+	qW+O4aLpTyFWZXvtbw0b94tx1GKr0/9XW7xK0qr8Sa977/9xpVAsky+ySsju6qcHNykiVQ3h4ptIO
+	NgBESbbHGUUC2TtdXgCd+q7CC9jzPPExD6SAUbfcz4A52FGrp29ZJe6TgsasCtfY16VXbtr8cHWXY
+	37JCjE1VnLaSqPR59EsqbGFc5i/aj50WgUfinnehM2gtUqo10+B34/bVnYjTxTP6JiskyDt3dTyDL
+	Ku2G1QHN/WU0cuiTUuTmJZCHWkK/XaFg/fiYZS+u2mc/jm0TQZ4uZeBuUoH67oH11pt0654ktWEwq
+	R1PkonTQs1E8r6WRGnwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifo45-0005w2-KY; Fri, 13 Dec 2019 16:45:17 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1ifqym-00025J-UK; Fri, 13 Dec 2019 19:52:00 +0000
+Received: from dazzle.geroedel.de ([2a02:180:6:1::b3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifo3o-0005cT-I9
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 16:45:02 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MOzfO-1iN4MI3pJE-00PLxY; Fri, 13
- Dec 2019 17:44:50 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'DENG Qingfang'" <dengqf6@mail2.sysu.edu.cn>,
- <openwrt-devel@lists.openwrt.org>
-References: <20191213162419.11469-1-dengqf6@mail2.sysu.edu.cn>
-In-Reply-To: <20191213162419.11469-1-dengqf6@mail2.sysu.edu.cn>
-Date: Fri, 13 Dec 2019 17:44:48 +0100
-Message-ID: <019201d5b1d4$a35ef4b0$ea1cde10$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQIN39WAotaWWp78cET6ywH0MNTCBqdH6Nkg
+ id 1ifqyL-0001uQ-PZ
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 19:51:36 +0000
+Received: from [192.168.15.2] (helo=feeble.bln.roederer.dhs.org)
+ by dazzle.geroedel.de with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <devel-sven@geroedel.de>)
+ id 1ifqy7-0004xB-01; Fri, 13 Dec 2019 20:51:22 +0100
+Received: from build.bln.roederer.dhs.org ([192.168.8.5] helo=build)
+ by feeble.bln.roederer.dhs.org with smtp (Exim 4.92)
+ (envelope-from <devel-sven@geroedel.de>)
+ id 1ifqy5-0001b1-IT; Fri, 13 Dec 2019 20:51:17 +0100
+Received: (nullmailer pid 13406 invoked by uid 10000);
+ Fri, 13 Dec 2019 19:51:16 -0000
+From: Sven Roederer <devel-sven@geroedel.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 13 Dec 2019 20:50:46 +0100
+Message-Id: <20191213195046.13358-1-devel-sven@geroedel.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Language: de
-X-Provags-ID: V03:K1:e3UkQjbKee6r1sfMHWWo3Gl/u5n7vHVEwKGb06hXoQ0AKm3t0fe
- 6un25JmSxMMHeghGlPb7uSSS1jcSEZr352wk79tGHA7n1a0SpjOvKp1umTukr7/fK64uKFT
- X7CSZvQ+SE07tKDKeTNIyMkLmCW0Tyyz0hLhspQH/gUMJ2ZuvEa8njevlcvUgZ2gsKAm1Dp
- 2edWGNl+9gfKworr145VQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Ik4BDBNJcnU=:yrxjtgoGeZtLly1oTsDPRW
- YrdXTO/EhJgHvTgVlr/bPGlGqcTR+srJ3ENqP6zAsElGIiF3Ok8wtMChVLU422aKEAcnnj47z
- NkXtub5J9BWMsM9O9svERFHcr4Li8msEEqjxiJIPfSSL73DhZFiT7P/BaYp5gk2pHEVQWTyPn
- PuNNOl8VFNqdoPTSsvik+vfsRs8eMEgW+e40XVqh6YSOC6tXfBCNZeoy56cF8ZHJHY6RNgHZr
- LgBncZmxM6lqOcPqc7ibG2aPI9OYhV3cw2XpTA85AmHUnmxJTZnP9vXvMyMHXBcPGWxg2l5Tm
- 3vm4ETdj7fGiIXMEjszK5xw3UoBdiMkRwpfS0qPgiT2XJ9eZMdQwPmBM9zX7BuWkOCbZUaqHB
- YBV9LdnzRwzZ777pZCkYiLofSG5HN2IGQMfsd3BNjmkZZIzbI2koQJdnKcKTZBP9U+L5OmAXS
- ggcZ5Zb3v+TUOktGxkUlq7aKBxmjcEPyONoSSGCJV3iZlVgUmE6GMmIClLpsYJvi4hv5yQwJk
- hTF+3qqJ41USmvEiP0H9N90GVU5t+u25gqXccVDnUpwRNOS/lqfXEG6HQG5c7n7W1Y+yVfeYO
- 8pi8tZptqYNsT5RnSEN8fFmRI4eAJixpi4I8Kfp90ECgdIueIgticiH4uFul0d2hwGD96yHwh
- Gb71OlhL6Vu6VqxvTqKDgbRR1KOftGLBTm6Ja0gqWU222WsvdpLoViv0nKg/9Mc6ZNLmVASRw
- ihiJCytGEaQSX+L8mrq6mpOHMkslPQ0aqRrVQMDU0DfTlymHO79VX3szZUMCQA50hBVrLiNAk
- E4vBsel7CAsAJI9u4tTxm/YTrf4Y5e6EDA1X0dmF8Wa8+DZAhUnE0iq8+F8pTnebhvmWveUST
- /38fzyKND94c9RgAuN98pTRSLI3lSONYmKRpFCAUQ=
+X-Spam_score: -2.9
+X-Spam_score_int: -28
+X-Spam_bar: --
+X-Spam_report: Spam detection software, running on the system "dazzle",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ @@CONTACT_ADDRESS@@ for details.
+ Content preview: From: Luochongjun <luochongjun@gl-inet.com> This patch
+ supports
+ gl-ar750, which was previously supported by ar71xx. Specification: - SOC:
+ QCA9531 (650MHz) - Flash: 16 MiB (W25Q128FVSG) - RAM: 128 MiB DDR2 - Ethernet:
+ 10/100: 2xLAN + 10/100: 1xWAN - Wireless: 2.4GHz (bgn) and 5GHz (ac) - USB:
+ 1x USB 2.0 port - Switc [...] 
+ Content analysis details:   (-2.9 points, 5.0 required)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -1.0 ALL_TRUSTED            Passed through trusted hosts only via SMTP
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
+X-SA-Exim-Connect-IP: 192.168.15.2
+X-SA-Exim-Mail-From: devel-sven@geroedel.de
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on dazzle
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
+ autolearn=unavailable autolearn_force=no version=3.4.2
+X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
+X-SA-Exim-Scanned: Yes (on dazzle.geroedel.de)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_084500_889944_E559DFE0 
-X-CRM114-Status: UNSURE (   6.28  )
+X-CRM114-CacheID: sfid-20191213_115134_043942_8AB15ABE 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for JCG JHR-AC876M
+Subject: [OpenWrt-Devel] [PATCH 19.07] ath79: add support for gl-ar750
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,86 +90,243 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5997844357429725252=="
+Cc: Luochongjun <luochongjun@gl-inet.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+From: Luochongjun <luochongjun@gl-inet.com>
 
---===============5997844357429725252==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=lKYstiMgcsiF8i=-="
+This patch supports gl-ar750, which was previously supported by ar71xx.
 
-This is a multipart message in MIME format.
+Specification:
+- SOC: QCA9531 (650MHz)
+- Flash: 16 MiB (W25Q128FVSG)
+- RAM: 128 MiB DDR2
+- Ethernet: 10/100: 2xLAN + 10/100: 1xWAN
+- Wireless: 2.4GHz (bgn) and 5GHz (ac)
+- USB: 1x USB 2.0 port
+- Switch: 1x switch
+- Button: 1x reset button
+- LED: 3x LEDS (white)
 
---=-=lKYstiMgcsiF8i=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Flash instruction:
+Support for sysupgrade directive upgrades, as well as luci upgrades.
 
-Hi,
+Signed-off-by: Luochongjun <luochongjun@gl-inet.com>
+(cherry picked from commit 921675a2d148330a7ec44f10ea4d583b8d7b5a44)
+[backported to 19.07]
+Signed-off-by: Sven Roederer <devel-sven@geroedel.de>
+---
+ .../ath79/base-files/etc/board.d/02_network   |   5 +
+ .../etc/hotplug.d/firmware/11-ath10k-caldata  |   1 +
+ .../ath79/dts/qca9531_glinet_gl-ar750.dts     | 142 ++++++++++++++++++
+ target/linux/ath79/image/generic.mk           |   9 ++
+ 4 files changed, 157 insertions(+)
+ create mode 100644 target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of DENG Qingfang
-> Sent: Freitag, 13. Dezember 2019 17:24
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] [PATCH] ramips: add support for JCG JHR-AC876M
->=20
-> JCG JHR-AC876M is an AC2600M router
+diff --git a/target/linux/ath79/base-files/etc/board.d/02_network b/target/linux/ath79/base-files/etc/board.d/02_network
+index 82c1e09981..41c8e37e31 100755
+--- a/target/linux/ath79/base-files/etc/board.d/02_network
++++ b/target/linux/ath79/base-files/etc/board.d/02_network
+@@ -128,6 +128,11 @@ ath79_setup_interfaces()
+ 	etactica,eg200)
+ 		ucidef_set_interface_lan "eth0" "dhcp"
+ 		;;
++	glinet,gl-ar750)
++		ucidef_set_interface_wan "eth1"
++		ucidef_add_switch "switch0" \
++			"0@eth0" "1:lan" "2:lan"
++		;;
+ 	glinet,gl-ar750s)
+ 		ucidef_add_switch "switch0" \
+ 			"0@eth0" "2:lan:2" "3:lan:1" "1:wan"
+diff --git a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+index d1f529fde5..cf28c474b1 100644
+--- a/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
++++ b/target/linux/ath79/base-files/etc/hotplug.d/firmware/11-ath10k-caldata
+@@ -117,6 +117,7 @@ case "$FIRMWARE" in
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(cat /sys/class/net/eth0/address) +1)
+ 		;;
++	glinet,gl-ar750|\
+ 	glinet,gl-ar750s)
+ 		ath10kcal_extract "art" 20480 2116
+ 		ath10kcal_patch_mac $(macaddr_add $(mtd_get_mac_binary art 0) +1)
+diff --git a/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+new file mode 100644
+index 0000000000..54aad320f6
+--- /dev/null
++++ b/target/linux/ath79/dts/qca9531_glinet_gl-ar750.dts
+@@ -0,0 +1,142 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++#include "qca953x.dtsi"
++
++/ {
++	compatible = "glinet,gl-ar750", "qca,qca9531";
++	model = "GL.iNet GL-AR750";
++
++	keys {
++		compatible = "gpio-keys";
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&jtag_disable_pins>;
++
++		reset {
++			label = "reset";
++			linux,code = <KEY_RESTART>;
++			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
++		};
++
++		mode {
++			label = "mode";
++			linux,code = <BTN_0>;
++			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power {
++			label = "gl-ar750:white:power";
++			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
++			default-state = "on";
++		};
++
++		wlan2g {
++			label = "gl-ar750:white:wlan2g";
++			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy1tpt";
++		};
++
++		wlan5g {
++			label = "gl-ar750:white:wlan5g";
++			gpios = <&gpio 13 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "phy0tpt";
++		};
++
++	};
++
++	i2c {
++		compatible = "i2c-gpio";
++
++		sda-gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
++		scl-gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
++	};
++
++
++};
++
++&pcie0 {
++	status = "okay";
++
++	wifi@0,0 {
++		compatible = "qcom,ath10k";
++		reg = <0 0 0 0 0>;
++		device_type = "pci";
++	};
++};
++
++&uart {
++	status = "okay";
++};
++
++&usb0 {
++	status = "okay";
++};
++
++&usb_phy {
++	status = "okay";
++};
++
++&spi {
++	status = "okay";
++	num-cs = <0>;
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <25000000>;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x000000 0x040000>;
++				read-only;
++			};
++
++			partition@40000 {
++				label = "u-boot-env";
++				reg = <0x040000 0x010000>;
++				read-only;
++			};
++
++			art: partition@50000 {
++				label = "art";
++				reg = <0x050000 0x010000>;
++				read-only;
++			};
++
++			partition@60000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x060000 0xfa0000>;
++			};
++		};
++	};
++};
++
++&eth0 {
++	status = "okay";
++	mtd-mac-address = <&art 0x0>;
++	phy-handle = <&swphy4>;
++};
++
++&eth1 {
++	mtd-mac-address = <&art 0x0>;
++	mtd-mac-address-increment = <1>;
++};
++
++&wmac {
++	status = "okay";
++	mtd-cal-data = <&art 0x1000>;
++};
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index 625c2bdd05..f8db5fca6f 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -397,6 +397,15 @@ define Device/glinet_gl-ar300m-nor
+ endef
+ #TARGET_DEVICES += glinet_gl-ar300m-nor
+ 
++define Device/glinet_gl-ar750
++  ATH_SOC := qca9531
++  DEVICE_TITLE := GL.iNet GL-AR750
++  DEVICE_PACKAGES := kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca9887-ct
++  IMAGE_SIZE := 16000k
++  SUPPORTED_DEVICES += gl-ar750
++endef
++TARGET_DEVICES += glinet_gl-ar750
++
+ define Device/glinet_gl-ar750s
+   ATH_SOC := qca9563
+   DEVICE_TITLE := GL.iNet GL-AR750S
+-- 
+2.20.1
 
-I've added this to my staging tree [1] and will merge it as soon as @Davide=
-Fioravanti has tested the jcg-header change for his Cudy WR1000 [2].
-
-[1] https://git.openwrt.org/?p=3Dopenwrt/staging/adrian.git;a=3Dshortlog;h=
-=3Drefs/heads/staging
-[2] https://github.com/openwrt/openwrt/pull/2062#issuecomment-565415609
-
-Best
-
-Adrian=20
-
---=-=lKYstiMgcsiF8i=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3zv/0ACgkQoNyKO7qx
-AnB+lg//fjeuotZhvDs7LYJrjDo2xMmccHn8D28zQhf508+m3Vv8GJYjjmA5fUTd
-7PpGQIJFjfmewWxR+DMgNKkAWmmdQOC6eTWYV7r1qtP9VAWfrVzB+9SKHsN79GiX
-ZesbJXQK4bQxQmzdn49nLKn772YKcRqmox/usste4OkcCMmL3ovAnZMfj8eqfNdH
-78fQRN1PKxkHGh0PTnMwm9lGrXjej6gqxu6bHMaGQqEBcomyV5gDWZ2QKLy6UrwK
-CFu4Rt5bbICSH6HK4p65ccDAv0N25ITX6VlBR5dC72pJVi1yXNkammt+Acz+7amY
-ZX/At5Fd1e9Dl6wo3EzCy5gw79OQ2Pv4IzAqInftag/mz+aTy+HGlcSH/0EJaZNX
-dFZiL/FET/aH789GmgBv0tFU/7TEIrCgFFNNCVQW8KvokBTwGsUG4w5eQWKx0bqp
-67yvqMpybwJC0n01wajdPIoVI8OtMxsSftvi3VsfZiSUaWgP/8DquLHRTj+J1SC/
-mh1mb2vebizyB9R5HMNaDZgHtrnVDkwR7/AMk/gJ2Ah74SfUAsHXwyieeyUyjs4Q
-Bp4/8/FiSgob9zC9xGyo02g2vBItxv9p8OawgipQlur+Kai1nlj1VSjwySLDrl5h
-BKJ6uwQr0oMEOywjXlzsrM7VrmROuXS7WjMmIZ9AbDSdHOPDHIc=
-=yvFh
------END PGP SIGNATURE-----
-
-
---=-=lKYstiMgcsiF8i=-=--
-
-
-
---===============5997844357429725252==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5997844357429725252==--
-
-

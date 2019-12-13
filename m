@@ -2,75 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6BF311E5C9
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 15:42:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3772411E83D
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 17:26:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yfTt8fBKKyumgzTYKVht/xMk6HVr1xZKXrfbaB6DYtk=; b=INx9ofiKg0khUkghrOQYNRbu+
-	XsLrvlDVmS+W7575heltOcQ06lrWG2vbXYGVhjeEnYF4AYS32rb7zXZp42mobIV8UNNoQVM2ACdSR
-	GVfJO0PUFQNZCNSr/DMYMSwXPXMA/gp0POD5yBqbN2YxYOpVAnfX/hRK6bmVI5NkkY77B6keJ5UYl
-	Lp58L2M07GHcR0mYwGuWX6xmf+DRVmGbPemedttV4y4dNAZNy9aUU4Tg+tcPCVSGNhZImdlNbdmKx
-	B8GkYOEi6neTYYYmHnI5C5iy2GjZOBA18npAhTj/s5b6VKevI5xYqx0cugPGVdqaGoWJBEl8FPlUn
-	Mv1aaMuBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5eJByDAVckt0W7jUkuGarYBQRNJ86eQCsamQbI4ymv0=; b=lB/70v9LVOcu/u
+	bs6tgwx+kutUjlaYWzILxbBEHpmTF8FQasHEOpMKzLbpU8g04TPz3rHKpjHEbvaBPlCZPVwlWaGQG
+	V9iZzFqkziASUfRG89kutWec32eO019ujzxlwhz5pLF3zu/xsiwz2Ilk6uyTPRiUJx5Q9sVp9SjrC
+	D/BIVXWXk0iy0Rcb6u9yIH1AaadPsgkOIQwoNTuxaO+MxSrXQd8llzATYIXIeKQ+fQyfOxvyZQr8U
+	YDNfGNx+/iXwLd/1WDOYkI4ZcFdMRNJ7xKZS+1pN9qrx1Bza+DpD7hxeuTAmcNmBw6JrfPKJwoq+N
+	Gj1kAnQ/l/lr1TERC4XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifm9A-00051B-KC; Fri, 13 Dec 2019 14:42:24 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1ifnm8-0007wt-Tr; Fri, 13 Dec 2019 16:26:44 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifm94-00050M-Bi
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 14:42:19 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1M7auJ-1ieQhf0jxV-0086XQ; Fri, 13
- Dec 2019 15:42:14 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'John Crispin'" <john@phrozen.org>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20191213111146.1492-1-freifunk@adrianschmutzler.de>
- <89b69073-cddb-5b08-d555-08efd97dd9f0@phrozen.org>
-In-Reply-To: <89b69073-cddb-5b08-d555-08efd97dd9f0@phrozen.org>
-Date: Fri, 13 Dec 2019 15:42:09 +0100
-Message-ID: <015401d5b1c3$8269d290$873d77b0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1ifnlY-0007YP-Jw
+ for openwrt-devel@bombadil.infradead.org; Fri, 13 Dec 2019 16:26:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=eV9WrsXIJUZ3mPElwwN5Ik6jkznsRsYOr7CJTW3MmAA=; b=Z2cYhBnEA50BU1NVRJJmAHSm6K
+ lANcoqOTrn4bIBLQ4oTu/ved4h6sQCHDLCSHMjNDHafGjR8R7xCL3Yofy4XAEUgAlf2McyR4EgOSl
+ ItzG645cRscrqjaDiCdiv8X1MYJdoCstP0YLCyyGLFWv2F2CcxEVSRfcAj22/2JZWg1t6CNqCGUXe
+ 4s162og90STU3MasPTC6ox92wjOiPg7IseOF9qoY2KK4636qNrCbbrmGJvfznOKsNcouo8ABPwgf7
+ Idyac3G0bEwsPpyRCKrEaHyEVGwg6f+/IRw59WUKkpiwnA6dBvg9gQXSAcIoPGV9ErFcV+hhAh/P4
+ 7TzJLD9w==;
+Received: from smtpbgsg3.qq.com ([54.179.177.220])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifnlQ-0007Kv-Qt
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 16:26:06 +0000
+X-QQ-mid: bizesmtp29t1576254260tahdirlg
+Received: from example.com (unknown [112.19.108.4])
+ by esmtp10.qq.com (ESMTP) with SMTP id 0
+ for <openwrt-devel@lists.openwrt.org>; Sat, 14 Dec 2019 00:24:20 +0800 (CST)
+X-QQ-SSF: 0140000000200060E2F0B00A0000000
+X-QQ-FEAT: T9Tg8WUtjPgwMaMH6vYv3JhOgZH6CTw6W2U4t34POpKsTC6l1Peay8F4yuwsK
+ 4A+0x1yJHMo3TnuN8/TMSaADoAnN5vKLrMaVDhMYeCZwMm7LXhojjPjtAaIUVC1jI2nbrW0
+ eV16Gxvi4Q96qbE5dtH8YLkwS8nIc2FeDvy2ar0MCifAxBfx2StoovFk3rDWGb3p695V0s0
+ 8EOV0brkeWuAsIDKmdvwYUh2eKxJpW+DP4EUc56LN/T4EpctKuf/mDAbad/1D62F83Lnsie
+ /xqeG86fGtlb0l4D9vA+Kw1xWUEIiybrdJOxQ77Yr+mpAIGL8rlR0yGPE=
+X-QQ-GoodBg: 2
+From: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat, 14 Dec 2019 00:24:19 +0800
+Message-Id: <20191213162419.11469-1-dengqf6@mail2.sysu.edu.cn>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Thread-Index: AQChcodubREwFOH5EcLx/YwYcHcRCgGrWyzJqhNG1JA=
-Content-Language: de
-X-Provags-ID: V03:K1:W2dOp/Bm52ieQWON7tQGp+OudoLLWHI2q3KAYPo3NZ3zpUXtDuN
- rjJ4SixkJfApF2Db/VHAsmJANvKBP5Q5zXJm5h794vpf63r6bLyaJW+m+xdXjr/AM+QdNfN
- SdNemGCYFsNg2IsVCa1Ccf2QoDAqYyGg0F7wLX/IqQlZNiI7znso9sHbZVn0LEtglU5ymuT
- SE892QF6YWo8hzFAkzrxg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:KCSRbX1kPoo=:wJCUnSNcZmc+sPVhPSsWqT
- 6VqP1pUUCT0Y6IAXKy7Bq3tDIy1NEadHHUZI9Z5FCRKKBYhDC1UbCU7cccuXrb+k5muxxJ74O
- ziW2uvgTEu0GjsWUTzj6D36QqkQF8QhfasGf9E0IIpLFymx7vyxj5wHsEmxDWwRrPm4EMASrM
- XclyTbxnkO4pAFVNVxhE0YEzLgtcJ4jZs6qTMhaC6KhiTt4Gqx/ncfVWsplkhliMv4ePGMMN/
- TUKum6d3BQUkegWFfsCLN3NLZuRAnV84pLaFpgkr1rCy3GZVKPnpipJyrp+W/MIOqQ0FQJ3DN
- EXZL10OOzKqe5qmrD0GMUwlc+dXSIWF5k8FtetToijBH6jiSLMy82A+0l1Lo4yGKJ3bIiet4m
- I0DsfXQl0JqSobebid+xGToScxFPCitMmzLqwFxLQzsxtkiusTluQpHdBq1E+YXoZUcU+uFiu
- x+TDWE727+UTaPlpziEDIW1R6jOSj4GTSYZ5f/IMR4tJZ60rQmABInNE/laWTBeQ55XOqxAId
- ev2M0kehkoqOG3IlZrsjmUoU5xyXp33znNstbtMZmj7JOV1XZ94pr4W1T9hjKFp5KQjJQgHTB
- IzrgagO8h/sbgRMCXzPLv6Vmre9vI4H62+1IcU2PnRmNIwnLIk/nHAwXh6Or1crob7847Qlbh
- rrwl+a1AjyPNLMDZZIujkS/KIDvVpjWS54wo8s9h5nL/qqQ0ifHNvUsFJqldBAVve9DNUA1wR
- P5dvGFl4YdFEp9+IOJQtFWlNz7Oq0hMaiFMN9e8WPxT7ZzB1+WMWkw0GG8+bPSRSf6/2sZL9H
- PZHUZA0PxWPDgRTj7sTya1xvHYFYZuUGSZYsn9sTETyEnm5u+f3oXO7QGxZqvLXQ9hX4f1wXE
- 0c5jcsDuXpQ1IwkTXe0X687B8/5GkoZd5Sd1C+6f0=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_064218_696597_66447C79 
-X-CRM114-Status: GOOD (  11.74  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtp:mail2.sysu.edu.cn:qybgforeign:qybgforeign5
+X-QQ-Bgrelay: 1
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.179.177.220 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [RFT PATCH v2] mediatek: split base-files into
- subtargets
+ no trust [54.179.177.220 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+Subject: [OpenWrt-Devel] [PATCH] ramips: add support for JCG JHR-AC876M
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,97 +83,256 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8504667815131630195=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+JCG JHR-AC876M is an AC2600M router
 
---===============8504667815131630195==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=P9EugopMiQk/Y/=-="
+Hardware specs:
+  SoC: MT7621AT
+  2.4GHz: MT7615N 4x4 @ PCIe0
+  5GHz: MT7615N 4x4 @ PCIe1
+  Flash: Winbond W25Q128JVSQ 16MiB
+  RAM: Nanya NT5CB128M16 256MiB
+  USB 2.0 and 3.0 ports
+  6 LEDs, 3 of which are connected to SoC GPIO
+  Reset and WPS buttons
 
-This is a multipart message in MIME format.
+Flash instructions:
+Stock to OpenWrt:
+  Upload factory.bin in stock firmware's upgrade page,
+  do not preserve settings
 
---=-=P9EugopMiQk/Y/=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+OpenWrt to stock:
+  Push and hold the reset button for 5s while power cycling to
+  enter recovery mode;
+  Visit 192.168.1.1 and upload stock firmware
 
-Hi John,
+MAC addresses map:
+  0x0004  *:1c  wlan2g/wan/label
+  0x8004  *:20  wlan5g
+  0xe000  *:1b  lan
+  0xe006  *:1a  not used in stock fw
 
-> -----Original Message-----
-> From: John Crispin [mailto:john@phrozen.org]
-> Sent: Freitag, 13. Dezember 2019 14:07
-> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>; openwrt-
-> devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [RFT PATCH v2] mediatek: split base-files in=
-to
-> subtargets
->=20
-> On 13/12/2019 12:11, Adrian Schmutzler wrote:
-> > This splits some base-files across subtargets, as done previously
-> > on ath79 and ramips and also introduced for mt7629 subtarget here
-> > already.
-> >
-> > While at it, apply the following fixes:
-> > - Remove lots of trailing whitespaces
-> > - Remove wildcard on unielec,u7623-02-emmc-512m
-> > - Remove inconsistent quotation marks in cases
-> >
-> > Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> Acked-by: John Crispin <john@phrozen.org>
-> I'll be doing some cleanups to the target next week and will look at the
-> plaform_check issue
+Signed-off-by: DENG Qingfang <dengqf6@mail2.sysu.edu.cn>
+---
+Changes since v2:
+	Flattened pinctrl node
+	Add MAC addresses map in commit message
+	Use kilobytes as JCG_MAXSIZE unit
+---
+ .../ramips/dts/mt7621_jcg_jhr-ac876m.dts      | 144 ++++++++++++++++++
+ target/linux/ramips/image/mt7621.mk           |  13 ++
+ .../mt7621/base-files/etc/board.d/02_network  |   5 +
+ 3 files changed, 162 insertions(+)
+ create mode 100644 target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts
 
-Sounds to me like it will be easiest if you push this patch together with t=
-he others then?
+diff --git a/target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts b/target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts
+new file mode 100644
+index 0000000000..10766c0649
+--- /dev/null
++++ b/target/linux/ramips/dts/mt7621_jcg_jhr-ac876m.dts
+@@ -0,0 +1,144 @@
++// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
++/dts-v1/;
++
++#include "mt7621.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++
++/ {
++	compatible = "jcg,jhr-ac876m", "mediatek,mt7621-soc";
++	model = "JCG JHR-AC876M";
++
++	aliases {
++		led-boot = &led_wps;
++		led-failsafe = &led_wps;
++		led-running = &led_wps;
++		led-upgrade = &led_wps;
++	};
++
++	chosen {
++		bootargs = "console=ttyS0,57600";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		usb3 {
++			label = "jhr-ac876m:blue:usb3";
++			gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
++			trigger-sources = <&xhci_ehci_port1>;
++			linux,default-trigger = "usbport";
++		};
++
++		usb2 {
++			label = "jhr-ac876m:blue:usb2";
++			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
++			trigger-sources = <&ehci_port2>;
++			linux,default-trigger = "usbport";
++		};
++
++		led_wps: wps {
++			label = "jhr-ac876m:blue:wps";
++			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
++		};
++	};
++
++	keys {
++		compatible = "gpio-keys";
++
++		reset {
++			label = "reset";
++			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_RESTART>;
++		};
++
++		wps {
++			label = "wps";
++			gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
++			linux,code = <KEY_WPS_BUTTON>;
++		};
++	};
++};
++
++&spi0 {
++	status = "okay";
++
++	flash@0 {
++		compatible = "jedec,spi-nor";
++		reg = <0>;
++		spi-max-frequency = <80000000>;
++		m25p,fast-read;
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			partition@0 {
++				label = "u-boot";
++				reg = <0x0 0x30000>;
++				read-only;
++			};
++
++			partition@30000 {
++				label = "u-boot-env";
++				reg = <0x30000 0x10000>;
++				read-only;
++			};
++
++			factory: partition@40000 {
++				label = "factory";
++				reg = <0x40000 0x10000>;
++				read-only;
++			};
++
++			partition@50000 {
++				compatible = "denx,uimage";
++				label = "firmware";
++				reg = <0x50000 0xfb0000>;
++			};
++		};
++	};
++};
++
++&pcie {
++	status = "okay";
++};
++
++&pcie0 {
++	wifi@0,0 {
++		compatible = "mediatek,mt76";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x0>;
++		ieee80211-freq-limit = <2400000 2500000>;
++
++		led {
++			led-active-low;
++		};
++	};
++};
++
++&pcie1 {
++	wifi@0,0 {
++		compatible = "mediatek,mt76";
++		reg = <0x0000 0 0 0 0>;
++		mediatek,mtd-eeprom = <&factory 0x8000>;
++		ieee80211-freq-limit = <5000000 6000000>;
++
++		led {
++			led-active-low;
++		};
++	};
++};
++
++&ethernet {
++	mtd-mac-address = <&factory 0xe000>;
++};
++
++&state_default {
++	gpio {
++		ralink,group = "i2c", "uart3", "jtag", "wdt";
++		ralink,function = "gpio";
++	};
++};
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 0b2b74800a..6120ad8ec9 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -361,6 +361,19 @@ define Device/iodata_wnpr2600g
+ endef
+ TARGET_DEVICES += iodata_wnpr2600g
+ 
++define Device/jcg_jhr-ac876m
++  MTK_SOC := mt7621
++  IMAGE_SIZE := 16064k
++  IMAGES += factory.bin
++  IMAGE/factory.bin := \
++        $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | jcg-header 89.1
++  JCG_MAXSIZE := 16064k
++  DEVICE_VENDOR := JCG
++  DEVICE_MODEL := JHR-AC876M
++  DEVICE_PACKAGES := kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
++endef
++TARGET_DEVICES += jcg_jhr-ac876m
++
+ define Device/lenovo_newifi-d1
+   MTK_SOC := mt7621
+   IMAGE_SIZE := 32448k
+diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+index c9e3cbb984..ed2c5bb185 100755
+--- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+@@ -14,6 +14,7 @@ ramips_setup_interfaces()
+ 	d-team,pbr-m1|\
+ 	firefly,firewrt|\
+ 	hiwifi,hc5962|\
++	jcg,jhr-ac876m|\
+ 	mediatek,ap-mt7621a-v60|\
+ 	mediatek,mt7621-eval-board|\
+ 	mqmaker,witi|\
+@@ -218,6 +219,10 @@ ramips_setup_macs()
+ 		wan_mac=$(mtd_get_mac_ascii u-boot-env wanaddr)
+ 		label_mac=$wan_mac
+ 		;;
++	jcg,jhr-ac876m)
++		label_mac=$(mtd_get_mac_binary factory 0x4)
++		wan_mac=$label_mac
++		;;
+ 	mediatek,ap-mt7621a-v60)
+ 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 0x5)" 1)
+ 		;;
+-- 
+2.24.1
 
-Best
-
-Adrian
-
---=-=P9EugopMiQk/Y/=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3zoz4ACgkQoNyKO7qx
-AnDqOQ/9EYs9HXBKGnKwJvZSsoaqxNzW8lucX8BJE0ngv74OD+L0aoNu3ehq6pCF
-Nixl7PLVeaCLmeI0LhQo2l1wg8iv/5d8S+IJaP8EDZOZaK32s/KhCFlGMYOngWS9
-rtuZXIBnX2rrM3FZfjaLcFi5aiLwnoOAIhU30c6uduZ3ZHJ0PrMtuIHa5dWSIZtc
-VCGgncdhzMvkiAKSoNFn90WHrWm/VGuzJZl4hxTU6qnWmNJOjs/uJsdVx7BdwWYq
-oZfOmHGpDrWdXw5V3S1glwKcMH5UOPXb7nSE1nNtl10ByeEUwFYGq99C9YSkqyG7
-7TQvVPTgkHaWRu54Fy1kynCCqQHHyy8M8jAWsH3DRl2qyYZRugCUCUW2NgYZCZMd
-y/XyCgD5R4Xo1DC8TLmSXShgh3ymmU1leXrVZMyt8X9o5tZkUfOIwZjLZGl9YGke
-DoDkthGxk0oIJ8vzgd/627DqM55b4m3KR216Lt9bmARhMxjQ6+XtWWowp1fjzSK2
-LmC/l04xc/UoT7liF2H0oemIAJwrFRY/jJVYKcmkQmNj7NjyqDAWQSgZHHKARfZY
-gpj/Ft9NYWHD/E+d30T0mbcJ8V7RKq821zTJWTmqPHsdtLSHxZV+egKDT0b7v9G2
-gl4v/a+EZOTQfZQEUZOTB5Di6opR8f2fBQvlEYI8cRDkEjwnDSk=
-=6833
------END PGP SIGNATURE-----
 
 
---=-=P9EugopMiQk/Y/=-=--
-
-
-
---===============8504667815131630195==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============8504667815131630195==--
-
-

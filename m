@@ -2,113 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B885411E5BA
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 15:38:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6BF311E5C9
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 15:42:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1Xg9F4G5TGElLVz3Wce7adxLVLWQBR+Q9D8OxSmxOoc=; b=RmUNbzDcwaRgZ9
-	CtONKatB5fqg+BzGcyF+nbmlcXGYS35oMdqHem6qF77jvvAb03yvk6Bf2tXz8otL0Q4ENoWbpC1WT
-	6v9n5Voxi31AsenN8TRX8yKjqxYfvKVdLVHywdDija0nXAlzey9IgAKY1poOzA4fvlwyaQgYblhYN
-	liZ1xcT7VTJZ8sbOWRoArCBl2rzV8Bt2o+uwpORSGCKDo/p1e2lQ+Lt5uLMxKewg+LtHSNpReV4En
-	eAyfS1cZXAjLOrnOeyl6Z7uU8gW2DthWFbzqinFOsLlSkZV/qS+I4rgIEdkSNCvW2YGfuXBGdj1sA
-	w+GCS6isHmPlMOlSqBkg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yfTt8fBKKyumgzTYKVht/xMk6HVr1xZKXrfbaB6DYtk=; b=INx9ofiKg0khUkghrOQYNRbu+
+	XsLrvlDVmS+W7575heltOcQ06lrWG2vbXYGVhjeEnYF4AYS32rb7zXZp42mobIV8UNNoQVM2ACdSR
+	GVfJO0PUFQNZCNSr/DMYMSwXPXMA/gp0POD5yBqbN2YxYOpVAnfX/hRK6bmVI5NkkY77B6keJ5UYl
+	Lp58L2M07GHcR0mYwGuWX6xmf+DRVmGbPemedttV4y4dNAZNy9aUU4Tg+tcPCVSGNhZImdlNbdmKx
+	B8GkYOEi6neTYYYmHnI5C5iy2GjZOBA18npAhTj/s5b6VKevI5xYqx0cugPGVdqaGoWJBEl8FPlUn
+	Mv1aaMuBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifm5V-000348-7K; Fri, 13 Dec 2019 14:38:37 +0000
-Received: from mail-ve1eur01on072e.outbound.protection.outlook.com
- ([2a01:111:f400:fe1f::72e]
- helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1ifm9A-00051B-KC; Fri, 13 Dec 2019 14:42:24 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifm5O-00033j-Tv
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 14:38:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ay/9+rGW8bSabtyF8yCZ5rpg+7N5ZgxBX2NUUa4D4Hf2XIQ7xArLp7HE9XGYixGdydtJQpoFE2EOPcf8C9JtV0tr1Rv4iOUzqTI3OlUaixyeCYoyh44ysrS2o9MEPOhi5NCuu49TR2UYonz0GS691ZlLnEP2gE9XrUCmiy+kPCvqxtqCjopfll6Uw59mTImAm8IWxDtWVeg2Nzi0748y0wF3PUOCCbPlP0zwqhmfSYyhR4H3Zr1DXLg7F0eIsKGHe7Vy+kpxUqDRnGq2uFVN8oC+VCwES/gxMxwnK2CpS2aOVTONViFbV0/MQUesEbDziW2GTtlkxwtD1gg1GjC/lg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=obk3W0UdcAXw/JtBjdPNDmlYmGCxM+YUuWDP8LFqGWE=;
- b=SA+87IJ8HcaYlKPPpNtZRQTaYY7ah+c2FpqVnhjmaZDJE9KanjsUW0rASiayq6eAVzg/F5R8XiPzg4QtPNoBlG6G+3NF73t09qwbzLdLpjmw/b6PfUtoAeJZD7+I3Km2F3eXccL2am77eAL/CsRo3J8RFVwkp9oetZlvedibb2PAeeizxkaOkofssRNeh9y8eTm8BWr9LQt9QXBpY1DxCcYTv+4i9T+OaXrb2wKEU4S8IqqychO248G19rgCamM0qFRMphyqaRCTDNZj0TOP0CjxKJ20+FxWvd62jm7gnUuRt7+Dqne7jtu89oNlDh3gtp4AVXQ0z8U0S3zrNPtpXw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=etactica.com; dmarc=pass action=none header.from=etactica.com;
- dkim=pass header.d=etactica.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=eTactica.onmicrosoft.com; s=selector2-eTactica-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=obk3W0UdcAXw/JtBjdPNDmlYmGCxM+YUuWDP8LFqGWE=;
- b=Ij254oJiNlccOPN82Su5Ew6w40owtMVmvablnaPThR+Zpbe4SrhYuvt7ZlLUzhzCbwKMUkmjSP0GrBA5q88ITE4/sesuRQnUkjgxJYdcV+p/DJmGQquOJ68cTkl+6XcxqTPzFMzz07qMfPQ+gl3+mOcEFeDcUoT4T0crjqqMEas=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=karlp@etactica.com; 
-Received: from AM0PR07MB5953.eurprd07.prod.outlook.com (20.178.82.92) by
- AM0PR07MB4291.eurprd07.prod.outlook.com (52.133.60.150) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.4; Fri, 13 Dec 2019 14:38:25 +0000
-Received: from AM0PR07MB5953.eurprd07.prod.outlook.com
- ([fe80::e9c5:aef3:46d5:1e56]) by AM0PR07MB5953.eurprd07.prod.outlook.com
- ([fe80::e9c5:aef3:46d5:1e56%7]) with mapi id 15.20.2538.017; Fri, 13 Dec 2019
- 14:38:25 +0000
-From: Karl Palsson <karlp@etactica.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 13 Dec 2019 14:38:14 +0000
-Message-Id: <20191213143814.25083-1-karlp@etactica.com>
-X-Mailer: git-send-email 2.21.0
-X-ClientProxiedBy: LO2P265CA0279.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:a1::27) To AM0PR07MB5953.eurprd07.prod.outlook.com
- (2603:10a6:208:108::28)
+ id 1ifm94-00050M-Bi
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 14:42:19 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1M7auJ-1ieQhf0jxV-0086XQ; Fri, 13
+ Dec 2019 15:42:14 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'John Crispin'" <john@phrozen.org>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20191213111146.1492-1-freifunk@adrianschmutzler.de>
+ <89b69073-cddb-5b08-d555-08efd97dd9f0@phrozen.org>
+In-Reply-To: <89b69073-cddb-5b08-d555-08efd97dd9f0@phrozen.org>
+Date: Fri, 13 Dec 2019 15:42:09 +0100
+Message-ID: <015401d5b1c3$8269d290$873d77b0$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Received: from localhost.localdomain (213.181.112.179) by
- LO2P265CA0279.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:a1::27) with Microsoft
- SMTP Server (version=TLS1_2, cipher=) via Frontend Transport;
- Fri, 13 Dec 2019 14:38:25 +0000
-X-Mailer: git-send-email 2.21.0
-X-Originating-IP: [213.181.112.179]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: c56b33d9-40da-41b5-4fbf-08d77fda1c6b
-X-MS-TrafficTypeDiagnostic: AM0PR07MB4291:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR07MB429143CB74FA99E9E7B88052DD540@AM0PR07MB4291.eurprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:3513;
-X-Forefront-PRVS: 0250B840C1
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10019020)(346002)(136003)(396003)(39830400003)(376002)(366004)(189003)(199004)(6486002)(1076003)(81156014)(107886003)(66556008)(66476007)(186003)(4326008)(81166006)(26005)(16526019)(86362001)(66946007)(6666004)(36756003)(8936002)(2616005)(5660300002)(8676002)(508600001)(6916009)(69590400006)(956004)(316002)(6512007)(4744005)(52116002)(2906002)(6506007);
- DIR:OUT; SFP:1102; SCL:1; SRVR:AM0PR07MB4291;
- H:AM0PR07MB5953.eurprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-Received-SPF: None (protection.outlook.com: etactica.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: M1zc+XGsWdiKT3LvpVVPTVH3/a5HWBkZZ4T38hM2KxYe/88sl2tloWFrxPrGFswMMZdUV1EN1p4jkOIAXR++moIVSMFhJ8hsUkxt/m7CPyd2NqoIZzlHU6jyQfynYJPFD+BST5uvyQfRgH/rwQXvZcc/qudfCiMe4txD4gkgOJT8mIU34dvm0MAoKbwq2/OR5LTRcwGtXFzN+Ofqe5rKoutm5r8YfqJpyFy6+L2TyYAfjE2g4d9ONvtJawaMABaaIXUY5eMOC1zLsLwlLAaRgsJPuglvU/xKg3/CFDImBQDUAHUTIoRVsFfeEQQsvhYtEgl/tuWAL7f5fhDR1StvnqLWlPTEq81jshOErdAyyVElzuri8MyMALXQRQX4hRMjtEXjmzTu9aFddtS7P4C6J+OBSMusWJTLxpD1/bfHTdY8Mrg3awrE0c+hTQToA2dm4hFjXnrC0TbdVXK89Yx7drltv15XRwLZd1FI8Jw98dh59A58fDj+YVqO7NeCONoi
-X-OriginatorOrg: etactica.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c56b33d9-40da-41b5-4fbf-08d77fda1c6b
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Dec 2019 14:38:25.4266 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: e3621586-558f-4e21-92a9-26df2c484dae
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: TciFh/7RQPyuqvOrJwYkk7IgNLRJJw0nzUFyqsfDMWezapG58Vqhxg/zqqKolqv58eJWZrk1gULe+9Q7yYM0KQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR07MB4291
+Thread-Index: AQChcodubREwFOH5EcLx/YwYcHcRCgGrWyzJqhNG1JA=
+Content-Language: de
+X-Provags-ID: V03:K1:W2dOp/Bm52ieQWON7tQGp+OudoLLWHI2q3KAYPo3NZ3zpUXtDuN
+ rjJ4SixkJfApF2Db/VHAsmJANvKBP5Q5zXJm5h794vpf63r6bLyaJW+m+xdXjr/AM+QdNfN
+ SdNemGCYFsNg2IsVCa1Ccf2QoDAqYyGg0F7wLX/IqQlZNiI7znso9sHbZVn0LEtglU5ymuT
+ SE892QF6YWo8hzFAkzrxg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:KCSRbX1kPoo=:wJCUnSNcZmc+sPVhPSsWqT
+ 6VqP1pUUCT0Y6IAXKy7Bq3tDIy1NEadHHUZI9Z5FCRKKBYhDC1UbCU7cccuXrb+k5muxxJ74O
+ ziW2uvgTEu0GjsWUTzj6D36QqkQF8QhfasGf9E0IIpLFymx7vyxj5wHsEmxDWwRrPm4EMASrM
+ XclyTbxnkO4pAFVNVxhE0YEzLgtcJ4jZs6qTMhaC6KhiTt4Gqx/ncfVWsplkhliMv4ePGMMN/
+ TUKum6d3BQUkegWFfsCLN3NLZuRAnV84pLaFpgkr1rCy3GZVKPnpipJyrp+W/MIOqQ0FQJ3DN
+ EXZL10OOzKqe5qmrD0GMUwlc+dXSIWF5k8FtetToijBH6jiSLMy82A+0l1Lo4yGKJ3bIiet4m
+ I0DsfXQl0JqSobebid+xGToScxFPCitMmzLqwFxLQzsxtkiusTluQpHdBq1E+YXoZUcU+uFiu
+ x+TDWE727+UTaPlpziEDIW1R6jOSj4GTSYZ5f/IMR4tJZ60rQmABInNE/laWTBeQ55XOqxAId
+ ev2M0kehkoqOG3IlZrsjmUoU5xyXp33znNstbtMZmj7JOV1XZ94pr4W1T9hjKFp5KQjJQgHTB
+ IzrgagO8h/sbgRMCXzPLv6Vmre9vI4H62+1IcU2PnRmNIwnLIk/nHAwXh6Or1crob7847Qlbh
+ rrwl+a1AjyPNLMDZZIujkS/KIDvVpjWS54wo8s9h5nL/qqQ0ifHNvUsFJqldBAVve9DNUA1wR
+ P5dvGFl4YdFEp9+IOJQtFWlNz7Oq0hMaiFMN9e8WPxT7ZzB1+WMWkw0GG8+bPSRSf6/2sZL9H
+ PZHUZA0PxWPDgRTj7sTya1xvHYFYZuUGSZYsn9sTETyEnm5u+f3oXO7QGxZqvLXQ9hX4f1wXE
+ 0c5jcsDuXpQ1IwkTXe0X687B8/5GkoZd5Sd1C+6f0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_063831_024984_9EB9D87C 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191213_064218_696597_66447C79 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe1f:0:0:0:72e listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
-Subject: [OpenWrt-Devel] [PATCH] uboot-envtools: ath79: add etactica eg200
- support
+ no trust [212.227.17.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [RFT PATCH v2] mediatek: split base-files into
+ subtargets
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,39 +82,97 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Karl Palsson <karlp@etactica.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8504667815131630195=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Was inadvertantly missed from the inital forward port from ar71xx to
-ath79.
+This is a multipart message in MIME format.
 
-Fixes: 1588114cf2 ath79: add etactica-eg200 support
+--===============8504667815131630195==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=P9EugopMiQk/Y/=-="
 
-Signed-off-by: Karl Palsson <karlp@etactica.com>
----
- package/boot/uboot-envtools/files/ath79 | 1 +
- 1 file changed, 1 insertion(+)
+This is a multipart message in MIME format.
 
-diff --git a/package/boot/uboot-envtools/files/ath79 b/package/boot/uboot-envtools/files/ath79
-index 1499aa19a2..f956cf4ed4 100644
---- a/package/boot/uboot-envtools/files/ath79
-+++ b/package/boot/uboot-envtools/files/ath79
-@@ -16,6 +16,7 @@ case "$board" in
- alfa-network,ap121f|\
- buffalo,bhr-4grv2|\
- engenius,ecb1750|\
-+etactica,eg200|\
- glinet,gl-ar300m-lite|\
- glinet,gl-ar300m-nand|\
- glinet,gl-ar300m-nor|\
--- 
-2.21.0
+--=-=P9EugopMiQk/Y/=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
+Hi John,
+
+> -----Original Message-----
+> From: John Crispin [mailto:john@phrozen.org]
+> Sent: Freitag, 13. Dezember 2019 14:07
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>; openwrt-
+> devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [RFT PATCH v2] mediatek: split base-files in=
+to
+> subtargets
+>=20
+> On 13/12/2019 12:11, Adrian Schmutzler wrote:
+> > This splits some base-files across subtargets, as done previously
+> > on ath79 and ramips and also introduced for mt7629 subtarget here
+> > already.
+> >
+> > While at it, apply the following fixes:
+> > - Remove lots of trailing whitespaces
+> > - Remove wildcard on unielec,u7623-02-emmc-512m
+> > - Remove inconsistent quotation marks in cases
+> >
+> > Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> Acked-by: John Crispin <john@phrozen.org>
+> I'll be doing some cleanups to the target next week and will look at the
+> plaform_check issue
+
+Sounds to me like it will be easiest if you push this patch together with t=
+he others then?
+
+Best
+
+Adrian
+
+--=-=P9EugopMiQk/Y/=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3zoz4ACgkQoNyKO7qx
+AnDqOQ/9EYs9HXBKGnKwJvZSsoaqxNzW8lucX8BJE0ngv74OD+L0aoNu3ehq6pCF
+Nixl7PLVeaCLmeI0LhQo2l1wg8iv/5d8S+IJaP8EDZOZaK32s/KhCFlGMYOngWS9
+rtuZXIBnX2rrM3FZfjaLcFi5aiLwnoOAIhU30c6uduZ3ZHJ0PrMtuIHa5dWSIZtc
+VCGgncdhzMvkiAKSoNFn90WHrWm/VGuzJZl4hxTU6qnWmNJOjs/uJsdVx7BdwWYq
+oZfOmHGpDrWdXw5V3S1glwKcMH5UOPXb7nSE1nNtl10ByeEUwFYGq99C9YSkqyG7
+7TQvVPTgkHaWRu54Fy1kynCCqQHHyy8M8jAWsH3DRl2qyYZRugCUCUW2NgYZCZMd
+y/XyCgD5R4Xo1DC8TLmSXShgh3ymmU1leXrVZMyt8X9o5tZkUfOIwZjLZGl9YGke
+DoDkthGxk0oIJ8vzgd/627DqM55b4m3KR216Lt9bmARhMxjQ6+XtWWowp1fjzSK2
+LmC/l04xc/UoT7liF2H0oemIAJwrFRY/jJVYKcmkQmNj7NjyqDAWQSgZHHKARfZY
+gpj/Ft9NYWHD/E+d30T0mbcJ8V7RKq821zTJWTmqPHsdtLSHxZV+egKDT0b7v9G2
+gl4v/a+EZOTQfZQEUZOTB5Di6opR8f2fBQvlEYI8cRDkEjwnDSk=
+=6833
+-----END PGP SIGNATURE-----
+
+
+--=-=P9EugopMiQk/Y/=-=--
+
+
+
+--===============8504667815131630195==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8504667815131630195==--
+
+

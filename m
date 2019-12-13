@@ -2,74 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 706D711EBC6
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 21:21:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5AC111EDBB
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 23:29:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Reply-To:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BNQuNd1ppUwxljouUUQz7U6vVV4Uk1fFvdA5dIkVKo8=; b=TXvcgV1JoXrVMranSJsdMcQYi
-	dYI14cnl3qTm1+j5H08xZIr1DHP25UoaVXN8TKQ9NC3/3cDxduck2X+wbvlGLzHyb7drHKeh8jl3c
-	R25VXcjUF1v3DMTvEuCLSXqzYbnwLVkJ5TPJ0n+HKKGbc5HMDC8Rzf2NFFfacFRRFbkkhaaxraxij
-	NkolB+eG2PmvLQKHpBovFikSwg5q0WX6DDODDlH8z0RUFekdM5mQRZFnPoEdGX6x7qI0XtmRusdb4
-	mxpqwtE+o/mFvwu/P9S/LrsL9q2Gbc0YS3lunc9SwxfgZgqToIG0QVuPJfHYIRQdYfSaJLU5SkUNj
-	H3S3Shxiw==;
+	Subject:MIME-Version:Message-ID:Date:To:From:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=YImvm9YWqG4TsN5b5cnT5XNySkZndQfLNmScgOvZsT0=; b=VPtOyciuqucXHeUF3zgwb48Qqc
+	/DC9Htpc9uOTpFE5DSoT1O7hSW6a3eUgVQpXmsJwW4uIUaTyynHsj2hu0cxFoVrhJEACgYjzwYgSC
+	5zaLQFtR4qRzCIKKzqAMrIocnifCqtlDyTVvIzcs2Ta5upwDOnFdG0w4SHenw4EyxXOwenURMFpXT
+	BMKyqH6TgPllcJaz3uVXoT/Csb7DmhBaMhMS3sz7BmQJekOCbQV4AsUYl7IWa+89IGJ+5TI0mRpms
+	5VD1/1lxVmWwN+jsR6VgrXt0VhqYYyzgWqE4Upi7e1Y3sVIssktCTZgG2JY8x+rMNWJOkCOsZzG6z
+	o7Be2l6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifrRP-0005qc-QZ; Fri, 13 Dec 2019 20:21:35 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1iftRF-0006fv-1T; Fri, 13 Dec 2019 22:29:33 +0000
+Received: from sg2nlsmtp01.shr.prod.sin2.secureserver.net ([182.50.132.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifrRF-0005qL-Fl
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 20:21:26 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1Mj7yt-1i2wFK2XCv-00fBwO; Fri, 13
- Dec 2019 21:21:15 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Sven Roederer'" <devel-sven@geroedel.de>,
- <openwrt-devel@lists.openwrt.org>
-References: <20191213195046.13358-1-devel-sven@geroedel.de>
-In-Reply-To: <20191213195046.13358-1-devel-sven@geroedel.de>
-Date: Fri, 13 Dec 2019 21:21:14 +0100
-Message-ID: <01c401d5b1f2$ded6d1c0$9c847540$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQJl8ojyB3VcR7EwxOFQHbyxK17f56aX/1KQ
+ id 1iftR7-0006Ku-EE
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 22:29:27 +0000
+Received: from sg2plcpnl0070.prod.sin2.secureserver.net ([182.50.151.18])
+ by : HOSTING RELAY : with ESMTP
+ id ftPNi8ceRmw8YftPNiPK0a; Fri, 13 Dec 2019 15:27:37 -0700
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=metamediaprodatasolutions.com; s=default; h=Content-Type:MIME-Version:
+ Message-ID:Date:Subject:To:From:Reply-To:Sender:Cc:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=a9lWvuO/ZB1SplXEfiZNRCsdSkBQuTCT577q1Lmi6Lk=; b=YU7MtNtON9vhHidxAVfTFA22p
+ O48FYT5yS2qDbtWZGirhO2QzRc0cSVw0XB/CZpaDvEa+/fxZnfLs9YNUUKezlJRV4G5kQNbYLx7if
+ wMH1ZRIyKRc1BWavCvIDXqSz5AUbBgkiSUR6qkIbMuJY08cbGyoAY2YvAMkuRZNyHHy9ZwdKW5766
+ 6T47LEzeC8YVB7MUQ5LVgoCpOxswx898AhynT+7NGSf6VuGlOZZW5ScWJ6MFxehbAWdtiaSvIW9YH
+ op/8+HCYAbI5YaEVgzXDhlqWKR9kG0P+VHo2vXkN0haV/Ir6ZcsLIkhE3EPjP7YqyTAX1bZI0JXCF
+ pynVy2jgg==;
+Received: from [37.120.192.25] (port=53167 helo=WS013)
+ by sg2plcpnl0070.prod.sin2.secureserver.net with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92)
+ (envelope-from <lucy.mitchell@metamediaprodatasolutions.com>)
+ id 1ifsWk-005KBU-IQ
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 14:31:11 -0700
+From: "Lucy Mitchell" <lucy.mitchell@metamediaprodatasolutions.com>
+To: <openwrt-devel@lists.openwrt.org>
+Date: Sat, 14 Dec 2019 03:03:28 +0530
+Message-ID: <!&!AAAAAAAAAAAYAAAAAAAAAGaUIo+vL9tHkzMA6WtwcifCgAAAEAAAAFFUacguNFJHjKYboh9OGMgBAAAAAA==@metamediaprodatasolutions.com>
 MIME-Version: 1.0
-Content-Language: de
-X-Provags-ID: V03:K1:R7PLirC1Csj5PKPBZEsb2KajPfZN8hJMzzU+pGv2aImwhx1z6+g
- C/Xmeu3EDW4r0/Y8zy96dB9n8+8fDSCRu4BBmBfSxsv2eS/RAQsA8L+Ezejag9IwT4j+eI5
- CbM0fP7hB7DgbDpRoVKvtaEH7LgSn3wBwhA2ty69BtbimFuR+v50DWuYBv4IdWblNQvAFBd
- hGugPgjqeYHW9zBZOAA0w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:xlp5KK8Nrj0=:QyAZqDv8QoQayFS9b1N3lj
- han787mR2jAUEO33fV3vE6BPkV46Pqm/tfpTj5iLOdyYcAL8Bs1nRuf8qoud/LOeN26s+/eUN
- eBZEOCgNe8hYH340WlaCTo5jxySXflcHre+zjCQVjbrLkjCLbgd9hVMp2Pa2/1OzQFGwu17SE
- COF6N7PCzRpDsVQQh1c9Qp55S+CfDlsolMyRBcSLEeXRA9L+d+qqjRTMdJUqq7grS2Yh24NNF
- VCB8NovRhv7Uwb76R7iQYkHIjm5nDdaF+dkh9um9p4QCsZBBtXrw6D4Xphfu3eUmLpidlNstH
- uvUaYXyjWNiDXhzdlnC9J1Y8pRUAvfb4wKNrCy5aUxRxZSTO5ijLW+bCp2NJVulxuK1g5shS0
- /mf60L1kBLiWDj4y4l7dxo0/c5YT0MrbPs/ucJyRiJ/FRNhKqD2ONvMcs8jMKh2S6Hd70+8mx
- wpqPAT0IwA1p1Soyatz8/pLDU9C7USjitNxwzTsvbV5Iq6Zqk32V1AekmbAAcreBTC2nOdqcx
- 1JeziWIOPQ+eQpZSPV7qB8cMBAxSgJBBOJxJvqE+W83fNuk9rw68PD2nrPRgi0tLxzhYnVn+g
- jiPcEJBWW4h47+FHemPM4GBmIdG8/50+nvO2UQG3IBfuvH4br4Tp3IUz9SoKdxTaEO71anf+0
- D/gMi1eU8Oa6Ulz7J84jN+9uWIN2y+T3Tv9Rs09R3S5mDBWi6xIJycEqSu9MnJn9ZnSz4pL71
- Y7kI2OdH/tkcNt7PloMNAN9Ru4hcp7hFhzhbPoPdEM/iMvoTWjgEIZUZu9f0TWMuIZGXyaXYe
- TuVyFDKcxCno0sbSrdkXGunnWhX7um9AJ9uHwMzhVQ15EMcKz9639pDC2XyVaIpJhwz5iDXmY
- ip5seb+0tblXfeeEeo3CE7L7qFR7Hpbw42SBtA72I=
+X-Priority: 1 (Highest)
+X-MSMail-Priority: High
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AdWx/IP6SphCUb+lR9y2qPMStKgnAA==
+Importance: High
+Content-Language: en-in
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - sg2plcpnl0070.prod.sin2.secureserver.net
+X-AntiAbuse: Original Domain - lists.openwrt.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - metamediaprodatasolutions.com
+X-Get-Message-Sender-Via: sg2plcpnl0070.prod.sin2.secureserver.net: authenticated_id:
+ lucy.mitchell@metamediaprodatasolutions.com
+X-Authenticated-Sender: sg2plcpnl0070.prod.sin2.secureserver.net: lucy.mitchell@metamediaprodatasolutions.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-CMAE-Envelope: MS4wfBLFmAU8hqyXFsA1sn8eU59GM8gYbVABl9ziACMD4ZpZbmQQanFj6ofS9A8rSOlcJeKykutHTNe8HGfAFuY3xA360uGygCEz/ISvYZnKWnUhu3ZI4x+6
+ zD9UMfVzja+0fkj0oQPCqbPS8akM9kUMfGudsd2efPNRQwBxE9kg8S0Per8a0496TwloR8bjSNoDcaBNi5MQofAzt6RCTCrUX/CrTu4aWYt7fDzl6Ov2y16Q
+ esE34SdMr3fXOywX+cRmmw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_122125_819152_6B05221E 
-X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-CacheID: sfid-20191213_142925_841392_506BB680 
+X-CRM114-Status: UNSURE (  -2.77  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [182.50.132.200 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_L5      RBL: Very bad reputation (-5)
+ [182.50.132.200 listed in bl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 19.07] ath79: add support for gl-ar750
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
+Subject: [OpenWrt-Devel] Embedded World Exhibition & Conference
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,72 +103,152 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Luochongjun' <luochongjun@gl-inet.com>
-Content-Type: multipart/mixed; boundary="===============4083515388828870627=="
+Reply-To: lucy.mitchell@metamediaprodatasolutions.com
+Content-Type: multipart/mixed; boundary="===============4149821044204673479=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============4083515388828870627==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=HxWv90ZCq26kzV=-="
+--===============4149821044204673479==
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_01CA_01D5B22B.1E49AB60"
+Content-Language: en-in
 
 This is a multipart message in MIME format.
 
---=-=HxWv90ZCq26kzV=-=
+------=_NextPart_000_01CA_01D5B22B.1E49AB60
 Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi Sven,
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of Sven Roederer
-> Sent: Freitag, 13. Dezember 2019 20:51
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Luochongjun <luochongjun@gl-inet.com>
-> Subject: [OpenWrt-Devel] [PATCH 19.07] ath79: add support for gl-ar750
-
-so, the primary question remains unanswered: Why should exactly this device=
- be backported (out of the big set of devices only in master)?
-
-Best
-
-Adrian=20
-
---=-=HxWv90ZCq26kzV=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
+	charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 
------BEGIN PGP SIGNATURE-----
+Hi greetings 
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl3z8rcACgkQoNyKO7qx
-AnBrKRAApIexXoVYNjqSAOtZQuoM6rdn4su12NfTACh24RT1UyqmB1iO5EePxu8T
-YMsGTRsvjUmm744laehfcizx9JE0uxRp2C4M/+NLRj2OMvNkyzCPxrgR8Lbdkx6Y
-WvpG5Fxj0yKdM/XbVy2pApWHd7DVIqZ84YMd2OfoL7TRjaabaXdeSYPGhfSZiL35
-ht/WX9VBXSUo4x8TkwpNj1iSS5ZIPDrXkGZuvVmtnurpf5LXkSORtrEOZKZsHd32
-qYrIX3xeWb6JIspwYsP+fw/Ukp1fthVN83gWi0rpY3Na7NkEQiOvQJYU1hayaKxh
-w1eM4Z0NFE5p5DqAesvYQjAKMNM8Xma2rZwVEb6Sd9+CMOswX3AzsjEjPfCfv2aO
-5kFwk0PrrMG3qAYrMTmQhKgsI8hMlGc8Cag22ws0nhPdWexmr+rswAWVAw0b3aF+
-cjKzNDoAUnkDpg+QQxjYBtrpJGMZ7tQnO9Tw0S7NXUr4Twmt6gyE/Hh33T0m0e/f
-bcgrK6L8FAXxt/G84H6Tb3pEAVTcd3SVaBZa/5jXLsKUB1nhiwwnGL4WGp+12qg7
-T5/JDH8Shm378b9tQ6kTkeEwSrxCKlH67tEmEAqC1J6wdXomIcu0wfrFXYPmudDU
-0mWJtVzqgfhpdiYOZxQi0/9yCW3RBOxb1m3AACwOrTHhaANOnFQ=
-=8Was
------END PGP SIGNATURE-----
+Will you be interested in acquiring the attendees list of Embedded World
+Exhibition & Conference? The leading international fair for embedded
+systems.
+
+Visitors list: 32,000 trade visitors and 2,200 conference participants from
+77 countries.
+
+Date: 25 - 27 Feb 2020
+
+Location: Nurnberg Messe GmbH, Nuremberg, Germany
+
+The counts given above are GDPR complaint with all the rules and regulations
+with 100% opt-in contacts.
+
+We provide all the relevant information about the attendee including email,
+phone and mailing address. Hence you can use this information for your
+email, telephonic and mailing campaigns.
+
+Let me know if you would like to proceed with purchasing opt in contacts.
+
+Awaiting your response 
+
+Regards 
+
+Lucy Mitchell | Business Analyst
+
+Note: - If this is something you are interested in, please respond to this
+email. If this is not of your interest, reply as "Exclude" so we will not
+email you again.
 
 
---=-=HxWv90ZCq26kzV=-=--
+------=_NextPart_000_01CA_01D5B22B.1E49AB60
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =
+HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
+(filtered medium)"><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-language:EN-US;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-fareast-language:EN-US;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-IN><div =
+class=3DWordSection1><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Hi greetings <o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Will you be interested in acquiring the attendees list of <b>Embedded =
+World Exhibition &amp; Conference</b>? The leading international fair =
+for embedded systems.<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Visitors list: <b>32,000 trade visitors and 2,200 conference =
+participants from 77 countries.</b><o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Date: 25 - 27 Feb 2020<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Location: Nurnberg Messe GmbH, Nuremberg, =
+Germany<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>The counts given above are GDPR complaint with all the rules and =
+regulations with 100% opt-in contacts.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>We provide all the relevant information about the attendee including =
+<b>email, phone and mailing address.</b> Hence you can use this =
+information for your <b>email, telephonic and mailing =
+campaigns.</b><o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Let me know if you would like to proceed with purchasing opt in =
+contacts.<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Awaiting your response <o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Regards <o:p></o:p></span></p><p class=3DMsoNormal><b><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Lucy Mitchell | Business Analyst<o:p></o:p></span></b></p><p =
+class=3DMsoNormal><span =
+style=3D'font-family:"Arial","sans-serif";color:#333333;background:white'=
+>Note: - If this is something you are interested in, please respond to =
+this email. If this is not of your interest, reply as =
+&#8220;Exclude&#8221; so we will not email you =
+again.<o:p></o:p></span></p></div></body></html>
+------=_NextPart_000_01CA_01D5B22B.1E49AB60--
 
 
 
---===============4083515388828870627==
+--===============4149821044204673479==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -157,6 +259,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4083515388828870627==--
+--===============4149821044204673479==--
 
 

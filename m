@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E143211EDFA
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 23:46:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50C5C11EE02
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 23:51:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbEcgvI+lIVsUGLyc9dDP5q1+n4oJ/m4LfEK6UDUOdk=; b=sZbgscmJtOHAeO
-	WPwRfUIGXCrTvmn+0ehtcSlMOptRC+5W54HLQJ9yklko0MOtkkarwSfGj6CjToAcBgWtLPbznS3PT
-	bQnfztD6SIOCNj/qvW49VFISmCO7PjBTrX+OFGKybRY+gPPlqKGRKHLGcvc8nPTdvkY7v5p24S3kO
-	jrq5kcrjVGH1fHx+P1vrrsGA3KIqP7NdC/C0gt/lIYWMyIFyDAIDfqPLXwsKkkJw7J6NcpJSWGRXu
-	hbbvagWUxF7vI9Sljk3ADsa1q6SA91zHlffV/qVACHHGoTy7CH20XbWNwcC3tOcvyj/uLEtat99gJ
-	mrTfwfhh28va7O2QbuSg==;
+	List-Owner; bh=DEQDSA67IlEiozuIViW8EjWNeXcLsLT7kN00P4COqug=; b=tB5IkgML0jvF2x
+	d8k8jqar2/4bWzcqTkXlMHTiPvQNVn7pre4y0FGo9C4TTt8vJ8b36TbRTmC5/pvUWauu16GE7QtCN
+	9DXIy7XNYQwYup3UugxuAAehOCdshQRiIwzeJmxfUvQzxso0O6EjgRgbNKCQKuCOXINm0XTG2xvap
+	inNrlxp3xhuzc/97QNwOMlZqtTMrgUxScK/3kyOc7yh5Y2ryGKiW4pz3pzeGqQBPXkAydNESNjVVn
+	62Y4nRBeXcbVCquV79DZFX2BArMiDrvKaA+twz9r69g2id1ZsGc6d7mgvPRIqbRoIml8t8BSUmmfe
+	+GVUG8DzPJOjFDweyT7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifthl-0005ao-NT; Fri, 13 Dec 2019 22:46:37 +0000
+	id 1iftmR-0007XH-WA; Fri, 13 Dec 2019 22:51:28 +0000
 Received: from dazzle.geroedel.de ([2a02:180:6:1::b3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifthd-0005aB-MD
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 22:46:31 +0000
+ id 1iftmH-0007WJ-Sz
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 22:51:19 +0000
 Received: from [192.168.15.2] (helo=feeble.bln.roederer.dhs.org)
  by dazzle.geroedel.de with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <devel-sven@geroedel.de>)
- id 1ifthX-0007zv-0m; Fri, 13 Dec 2019 23:46:23 +0100
+ id 1iftmF-000851-60; Fri, 13 Dec 2019 23:51:15 +0100
 Received: from strike.bln.roederer.dhs.org ([192.168.8.36]
  helo=strike.localnet)
  by feeble.bln.roederer.dhs.org with esmtp (Exim 4.92)
  (envelope-from <devel-sven@geroedel.de>)
- id 1ifthW-0006wQ-KO; Fri, 13 Dec 2019 23:46:22 +0100
+ id 1iftmE-0007Jb-Il; Fri, 13 Dec 2019 23:51:14 +0100
 From: Sven Roederer <devel-sven@geroedel.de>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-Date: Fri, 13 Dec 2019 23:46:22 +0100
-Message-ID: <2161512.f3matcrDuR@strike>
-In-Reply-To: <01c401d5b1f2$ded6d1c0$9c847540$@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 13 Dec 2019 23:51:14 +0100
+Message-ID: <2070834.sci2Q4oWNF@strike>
+In-Reply-To: <20191213200723.GX11070@home.paul.comp>
 References: <20191213195046.13358-1-devel-sven@geroedel.de>
- <01c401d5b1f2$ded6d1c0$9c847540$@adrianschmutzler.de>
+ <20191213200723.GX11070@home.paul.comp>
 MIME-Version: 1.0
 X-Spam_score: -2.9
 X-Spam_score_int: -28
@@ -48,8 +48,10 @@ X-Spam_report: Spam detection software, running on the system "dazzle",
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  @@CONTACT_ADDRESS@@ for details.
- Content preview:  Adrian, it's just that I've this patch around for some time, 
- as I use this device on 19.07. So just sharing this patch ... Sven 
+ Content preview:  Am Freitag, 13. Dezember 2019,
+ 21:07:23 CET schrieb Paul Fertser:
+ > Hello, > > On Fri, Dec 13, 2019 at 08:50:46PM +0100, Sven Roederer wrote:
+ > > .../ath79/base-files/etc/board.d/02_network | 5 + > > [...] 
  Content analysis details:   (-2.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -65,8 +67,8 @@ X-Spam-Status: No, score=-2.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
 X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
 X-SA-Exim-Scanned: Yes (on dazzle.geroedel.de)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_144629_873270_17033E9C 
-X-CRM114-Status: UNSURE (   1.76  )
+X-CRM114-CacheID: sfid-20191213_145118_084875_83825DD4 
+X-CRM114-Status: UNSURE (   3.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,26 +89,29 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Luochongjun' <luochongjun@gl-inet.com>, openwrt-devel@lists.openwrt.org
+Cc: Paul Fertser <fercerpav@gmail.com>, Luochongjun <luochongjun@gl-inet.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Adrian,
+Am Freitag, 13. Dezember 2019, 21:07:23 CET schrieb Paul Fertser:
+> Hello,
+> 
+> On Fri, Dec 13, 2019 at 08:50:46PM +0100, Sven Roederer wrote:
+> >  .../ath79/base-files/etc/board.d/02_network   |   5 +
+> >  .../etc/hotplug.d/firmware/11-ath10k-caldata  |   1 +
+> >  .../ath79/dts/qca9531_glinet_gl-ar750.dts     | 142 ++++++++++++++++++
+> >  target/linux/ath79/image/generic.mk           |   9 ++
+> 
+> Is this not missing the additions to board.d/01_leds ?
 
-it's just that I've this patch around for some time, as I use this device on 
-19.07. So just sharing this patch ...
+Paul,
+
+good point. But also on master seems to be no entry for this board in 
+"01_leds". So I assume the default case fits  for it.
 
 Sven
-
-Am Freitag, 13. Dezember 2019, 21:21:14 CET schrieb Adrian Schmutzler:
-> Hi Sven,
-> 
-> so, the primary question remains unanswered: Why should exactly this device
-> be backported (out of the big set of devices only in master)?
-> 
-
 
 
 

@@ -2,70 +2,97 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6C7311E290
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 12:12:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA98B11E3C6
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 13:44:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S8PA+eVHJYenYsbGqz9s/1uXWQnlTuGrPQEsf9qqS8c=; b=S4o7IWZPwcfBQv
-	4p+CgnsSdUXQcISLXISPgpqqVwPhGvWDpZH+upBrnOVn6s7tADBvT17nF1/YSnYSCr4Iumv4DPsJI
-	brVRG1+t7pjH4rwSwjEEZOueLSJ79BJb/5yCiaSers1bmwtF5TUkHF5EU9mXxEM5rFZ0cWxNNTlAb
-	OGRimO1/mA6iqDXomn4dpvmdlEUWv5cJA193QnQb6gdI/S6zI+EaC3dKhwV7OwzKsD6cpulmYciy0
-	i2+61BQiP4UDyGmScDrKRrdzGILC+wVGHs25zDNQDufMAenPOMzTTbT9fKsSV7Npo1ZGQJRsfPkaJ
-	ZBkRlzVYesdusKkefXDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	References:To:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kj+YzwSOO5abLFD/u9MZnsGV/vV2D1Q8ia3FMgGCIjs=; b=VUyZarDbIo6sxoElm39gWU4B+
+	Sq3Cu0WBOZ4fgOvlEoUyAXToyqeHCcTRQPnu/8k2DwKuHe11dZOv1rxS4u2RHl8H5jUxwkvkokxbP
+	HHhBWz6cLB6fol/pxJEU5VoFI5SeUZ0WfzufqY5ZKch88elE7bEMoGInIDql59DkEcIwTxO3ZVE2f
+	ZE5Oacpp/BTDK/nRCbKidinadsTaG2ccxC6sLonBbMeoGY9it/2FkUbctjIru/e3jpmhx9dFb+DO9
+	mBbO98jgXOlDh960BXrNvTP2U+kTuS2xCOhHh5di+M5RhhF9v5D1/GfqBOLUukXrEJY7IEgD+vOZx
+	19fbW312w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifisH-0006Uv-Az; Fri, 13 Dec 2019 11:12:45 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1ifkJI-0005UP-W5; Fri, 13 Dec 2019 12:44:45 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifisA-0006UT-TA
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 11:12:40 +0000
-Received: from buildfff.adridolf.com ([188.193.231.72]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1M42fA-1ifis424rg-0008Aq for <openwrt-devel@lists.openwrt.org>; Fri, 13
- Dec 2019 12:12:32 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 13 Dec 2019 12:11:46 +0100
-Message-Id: <20191213111146.1492-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+ id 1ifkJB-0005Tw-AD
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 12:44:38 +0000
+Received: by mail-lj1-x243.google.com with SMTP id k8so2494529ljh.5
+ for <openwrt-devel@lists.openwrt.org>; Fri, 13 Dec 2019 04:44:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:references:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=Zuw6tt6LSCI7nrfmkCJNUAAV/SSfJuEJU4CqIKuiW8A=;
+ b=OqBJpCJGSVlSYTsKebCGfRIXphqpUH1gsYBpwCZn9BVBKiWFeh/VF1SZPN3pt/prad
+ 6VdY4CaBNAfEY+/+AiloXmbVKbAMnzNxCj7dzP+Mh5eAuUd4LVujcOX1U5dyTnFB0GvP
+ 2xMArVDR5a5dHf7VG6Md95BerltZw+mRtqTIN1/QkKK11TIpkx8wEEsBHKTdfPl8lhg7
+ 6fUnpQy3DtV7PKW1591mn+ze2U9yX9QOwdFttsi5IYfd3lo+Ts6RoUQgOCmFBfgS12D8
+ fka2JKJm+4Zrdkavzx3j9GmD6lvfx0/mMlFJGw65NvQZ6i+pHH5Iurb9vkQ8eHzVzrrL
+ vEdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Zuw6tt6LSCI7nrfmkCJNUAAV/SSfJuEJU4CqIKuiW8A=;
+ b=hBo1CGyfx89D9vfZEZS4K3RcQDZmOnAnLfZ5Bo93YGxGMl610kuG3j9L6r+/IjRT4T
+ k7tfWe9LYaXGdroj9tBcHnp3S4GDligQ5HQVYycwTve9ZbUZiO/PNhxSlZwiCgJCz7YN
+ TA/Te20RM7Y1WM0vkyILi8O/MwTtX7ZjpDaNEtN8KpME5WIygwZDWpyqxpTXKhJ0sAN1
+ 1TMJeGFR2stm0u+NQVrv+tsXC7+6T9ITyuqQ4xKzIRabjUxRf8bWaT6adYzfkOa5eR/u
+ xCLKh3/nRU6CR7A+CkKFd/ahZhs1Clc1KIV+60ibkD65tFT4sOUDl4TLev8ecP5NEb5D
+ Vc/w==
+X-Gm-Message-State: APjAAAXyv40lfknsdss8Q+Ho8vsUfrW/LLQAtZHdUhoLi1hsUmUtA7nV
+ TKkJc69athHwV7b9sD08GE8=
+X-Google-Smtp-Source: APXvYqy3AIo6vyp5jjFxjWSCNZFxEImqcqhvvOeOUrcjfLU89DiI1zINh0tICNaq2uvnf8d4c5HaHw==
+X-Received: by 2002:a2e:7816:: with SMTP id t22mr9594227ljc.161.1576241073768; 
+ Fri, 13 Dec 2019 04:44:33 -0800 (PST)
+Received: from elitebook.lan (ip-194-187-74-233.konfederacka.maverick.com.pl.
+ [194.187.74.233])
+ by smtp.googlemail.com with ESMTPSA id t27sm4845013ljd.26.2019.12.13.04.44.32
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 13 Dec 2019 04:44:32 -0800 (PST)
+From: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ John Crispin <john@phrozen.org>
+References: <94e6f04d-19c5-3818-0748-db4ec0d481ad@gmail.com>
+Message-ID: <88022db3-abe4-de12-118c-e9b74d8a331b@gmail.com>
+Date: Fri, 13 Dec 2019 13:44:31 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.5.2
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:ME4fsdo/p09RtnFzovMN+HmEie3VrahqEf88zzlL21aVoRybtkz
- e60w6qhuKdCvVNSSuq3MmCEbq9uVzVyatYLTAg8i/SiZs0iwGdI1zwWTIqU0Bbhln5/VDiv
- /xikod9rgYK8VxDWc9UnVfC85zz3419nH3csG1aSG+oaGoy0EjjDEULzEtMJttWAFHJNs2+
- BtUYdz1oYhyPL/X8u/+5Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:qqpUqjObmbs=:vZ+nWifkHSYZ+qxJcyS38l
- F8WfsD9iEYSWkEO1RNal56z8VTEwqm3Kylv0gWSLxITOMHoZdyXSPvD5c8cEnGO2kYA2FGdsD
- 4j5o6CPOwQRQBcOWu8+KTLW2aO9WbbJxHDS43wfQoec+Z+3OYnUvQMcmVjrX+vbCMY9EM5dsm
- 5Zu2uWXCH9mohpVmsiRzFVcR6e0WQ+GjrWUbtXZsoZ97ZM4BulejZo5BG8Yo/LZqbTxpPobV6
- xgD290AkFPyJWNzfdGGlw42axK/XiK6JgO46dbMRnRXRYoO8Ks6wmp3pXkPEydTuENmcY0o2j
- vNp0FUdOX3EIx8xAOb906Dk8mjAhYdpZsFtCH8ICYFC2KOGkGcKjUZKhvsFl1F5pxmYM1zQoZ
- X1/8xxjW4gl6G0sy9yhB8cs6i9Id/UqRVLu/NOYLOv9z6IlLLO75HdMnHNDnzdvM/RIN00gv3
- ZhkQBVh+dgPWPdTMGobLP/QA5dsvl98IyDxMCYZea57wp2WdNd88m8CcmycDbers1ukQrTDSt
- zg/qfBaTVS6Axgr472JZ/QU2p86nfus+P2jhSwsaowCZ/55/1H+gP+UbsTzHOe5oQ05GwNscW
- 8AzAIu+Gei79TV3dkqpXuLmcWCUJLRw6KFYxowR/D5wBvqDONhtw35nCctMSdLiWaTiSnWu9a
- WJUBJrnsahmOkZ9kmtg0B2H06edXILvqBmIfU009uDoRYVAH7CzuVGq4vM9mH6sGei6+al9Me
- y/6Focpb7hyTDwJUuXqt6Gb9waUp374TYxIVoRt5EM64MkvPD6/lYR025QGr/8f6yf0lff10O
- zmL0nAw7SRCb59sd7SB471UZjU83TdkurM0Dv4g4rimO1tcGu8VhFtyeRVWN4//D1DsA+CAWr
- NzsPtaxvNB8EnRg8pUUh3PONf6ju5xk9L3RbPg6tE=
+In-Reply-To: <94e6f04d-19c5-3818-0748-db4ec0d481ad@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_031239_236532_6A308B88 
-X-CRM114-Status: GOOD (  12.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_044437_379617_BF72CD7E 
+X-CRM114-Status: GOOD (  14.91  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [RFT PATCH v2] mediatek: split base-files into
- subtargets
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zajec5[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] libblkid-tiny: bugged buffer management
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,239 +104,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This splits some base-files across subtargets, as done previously
-on ath79 and ramips and also introduced for mt7629 subtarget here
-already.
-
-While at it, apply the following fixes:
-- Remove lots of trailing whitespaces
-- Remove wildcard on unielec,u7623-02-emmc-512m
-- Remove inconsistent quotation marks in cases
-
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-
----
-
-Changes in v2:
-- rebase
-
-Note that the "left-over" platform_check_image for mt7622 looks odd.
-I kept the original logic for now.
----
- .../mt7622/base-files/etc/board.d/02_network  | 29 ++++++++++++++
- .../mt7622/base-files/lib/upgrade/platform.sh | 25 ++++++++++++
- .../base-files/etc/board.d/02_network         |  8 ++--
- .../base-files/lib/preinit/07_set_iface_mac   |  2 +-
- .../base-files/lib/preinit/79_move_config     |  0
- .../base-files/lib/upgrade/platform.sh        | 38 +++++++++----------
- 6 files changed, 78 insertions(+), 24 deletions(-)
- create mode 100755 target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
- create mode 100755 target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh
- rename target/linux/mediatek/{ => mt7623}/base-files/etc/board.d/02_network (85%)
- rename target/linux/mediatek/{ => mt7623}/base-files/lib/preinit/07_set_iface_mac (97%)
- rename target/linux/mediatek/{ => mt7623}/base-files/lib/preinit/79_move_config (100%)
- rename target/linux/mediatek/{ => mt7623}/base-files/lib/upgrade/platform.sh (50%)
-
-diff --git a/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network b/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
-new file mode 100755
-index 0000000000..d719a35dec
---- /dev/null
-+++ b/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
-@@ -0,0 +1,29 @@
-+#!/bin/sh
-+
-+. /lib/functions.sh
-+. /lib/functions/uci-defaults.sh
-+. /lib/functions/system.sh
-+
-+mediatek_setup_interfaces()
-+{
-+	local board="$1"
-+
-+	case $board in
-+	esac
-+}
-+
-+mediatek_setup_macs()
-+{
-+	local board="$1"
-+
-+	case $board in
-+	esac
-+}
-+
-+board_config_update
-+board=$(board_name)
-+mediatek_setup_interfaces $board
-+mediatek_setup_macs $board
-+board_config_flush
-+
-+exit 0
-diff --git a/target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh b/target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh
-new file mode 100755
-index 0000000000..396c814ab7
---- /dev/null
-+++ b/target/linux/mediatek/mt7622/base-files/lib/upgrade/platform.sh
-@@ -0,0 +1,25 @@
-+platform_do_upgrade() {
-+	local board=$(board_name)
-+	case "$board" in
-+	*)
-+		default_do_upgrade "$1"
-+		;;
-+	esac
-+}
-+
-+PART_NAME=firmware
-+
-+platform_check_image() {
-+	local board=$(board_name)
-+
-+	[ "$#" -gt 1 ] && return 1
-+
-+	case "$board" in
-+	*)
-+		echo "Sysupgrade is not supported on your board yet."
-+		return 1
-+		;;
-+	esac
-+
-+	return 0
-+}
-diff --git a/target/linux/mediatek/base-files/etc/board.d/02_network b/target/linux/mediatek/mt7623/base-files/etc/board.d/02_network
-similarity index 85%
-rename from target/linux/mediatek/base-files/etc/board.d/02_network
-rename to target/linux/mediatek/mt7623/base-files/etc/board.d/02_network
-index faa2434241..3b71ffe3aa 100755
---- a/target/linux/mediatek/base-files/etc/board.d/02_network
-+++ b/target/linux/mediatek/mt7623/base-files/etc/board.d/02_network
-@@ -9,12 +9,12 @@ mediatek_setup_interfaces()
- 	local board="$1"
- 
- 	case $board in
--	'mediatek,mt7623a-rfb-emmc')
-+	mediatek,mt7623a-rfb-emmc)
- 		ucidef_set_interface_lan "lan0 lan1 lan2 lan3"
- 		ucidef_set_interface_wan eth1
- 		;;
--	'bananapi,bpi-r2'|\
--	"unielec,u7623"*)
-+	bananapi,bpi-r2|\
-+	unielec,u7623-02-emmc-512m)
- 		ucidef_set_interfaces_lan_wan "lan0 lan1 lan2 lan3" "wan"
- 		;;
- 	esac
-@@ -25,7 +25,7 @@ mediatek_setup_macs()
- 	local board="$1"
- 
- 	case $board in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		mac=$(cat /sys/class/net/wan/address)
- 		ucidef_set_interface_macaddr "wan" $mac
- 		;;
-diff --git a/target/linux/mediatek/base-files/lib/preinit/07_set_iface_mac b/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-similarity index 97%
-rename from target/linux/mediatek/base-files/lib/preinit/07_set_iface_mac
-rename to target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-index 3d04000738..7a73a2d84d 100644
---- a/target/linux/mediatek/base-files/lib/preinit/07_set_iface_mac
-+++ b/target/linux/mediatek/mt7623/base-files/lib/preinit/07_set_iface_mac
-@@ -10,7 +10,7 @@ preinit_set_mac_address() {
- 	. /lib/functions/system.sh
- 
- 	case $(board_name) in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		if [ -b $RECOVERY_PART ]; then
- 			insmod nls_cp437
- 			insmod nls_iso8859-1
-diff --git a/target/linux/mediatek/base-files/lib/preinit/79_move_config b/target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-similarity index 100%
-rename from target/linux/mediatek/base-files/lib/preinit/79_move_config
-rename to target/linux/mediatek/mt7623/base-files/lib/preinit/79_move_config
-diff --git a/target/linux/mediatek/base-files/lib/upgrade/platform.sh b/target/linux/mediatek/mt7623/base-files/lib/upgrade/platform.sh
-similarity index 50%
-rename from target/linux/mediatek/base-files/lib/upgrade/platform.sh
-rename to target/linux/mediatek/mt7623/base-files/lib/upgrade/platform.sh
-index 9c99ee1c18..39dcb8e831 100755
---- a/target/linux/mediatek/base-files/lib/upgrade/platform.sh
-+++ b/target/linux/mediatek/mt7623/base-files/lib/upgrade/platform.sh
-@@ -1,7 +1,7 @@
--platform_do_upgrade() {                 
-+platform_do_upgrade() {
- 	local board=$(board_name)
- 	case "$board" in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		#Keep the persisten random mac address (if it exists)
- 		mkdir -p /tmp/recovery
- 		mount -o rw,noatime /dev/mmcblk0p1 /tmp/recovery
-@@ -26,29 +26,29 @@ platform_do_upgrade() {
- 
- PART_NAME=firmware
- 
--platform_check_image() {                                                         
--	local board=$(board_name)                                                
--	local magic="$(get_magic_long "$1")"                                     
-+platform_check_image() {
-+	local board=$(board_name)
-+	local magic="$(get_magic_long "$1")"
- 
--	[ "$#" -gt 1 ] && return 1                                               
-+	[ "$#" -gt 1 ] && return 1
- 
--	case "$board" in                                                       
-+	case "$board" in
- 	bananapi,bpi-r2|\
--	"unielec,u7623"*)
--		[ "$magic" != "27051956" ] && {   
-+	unielec,u7623-02-emmc-512m)
-+		[ "$magic" != "27051956" ] && {
- 			echo "Invalid image type."
--			return 1                                     
--		}                                                    
--		return 0                                             
--		;;                                                   
-+			return 1
-+		}
-+		return 0
-+		;;
- 
--	*)                                                           
-+	*)
- 		echo "Sysupgrade is not supported on your board yet."
--		return 1                                             
--		;;                                
--	esac                                      
-+		return 1
-+		;;
-+	esac
- 
--	return 0                                                                                         
-+	return 0
- }
- 
- platform_copy_config_emmc() {
-@@ -61,7 +61,7 @@ platform_copy_config_emmc() {
- 
- platform_copy_config() {
- 	case "$(board_name)" in
--	"unielec,u7623"*)
-+	unielec,u7623-02-emmc-512m)
- 		platform_copy_config_emmc
- 		;;
- 	esac
--- 
-2.20.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gMjYuMDguMjAxOSAxNzozMywgUmFmYcWCIE1pxYJlY2tpIHdyb3RlOgo+IEkgbm90aWNlZCBh
+IGJ1ZyBpbiAiYmxvY2siIHRvb2wgYmVoYXZpb3IuIEl0IHdhcyBwcm92aWRpbmcgaW5jb25zaXN0
+ZW50Cj4gVVVJRHMgZm9yIG15IGRpc2tzIHdpdGggTlRGUyBwYXJ0aXRpb25zLgo+IAo+ICguLi4p
+Cj4gCj4gVGhhdCBidWcgd2FzIGV4cG9zZWQgYnkgY2FjaGVfbG9hZCgwKSB2cy4gY2FjaGVfbG9h
+ZCgxKS4gVGhvc2UgY2FsbHMKPiByZXN1bHQgaW4gZGlmZmVyZW50IG9yZGVyIG9mIGJ1ZmZlciBh
+bGxvY2F0aW9uIGluIHRoZQo+IGJsa2lkX3Byb2JlX2dldF9idWZmZXIoKS4KPiAKPiBUaGlzIHBy
+b2JsZW0gaXMgY2F1c2VkIGJ5Ogo+IDEpIGJsa2lkX3Byb2JlX2dldF9idWZmZXIoKSByZXN1aW5n
+IGJ1ZmZlciB3aGVuIHBvc3NpYmxlCj4gMikgX19wcm9iZV9udGZzKCkgcmVhZGluZyBtdWx0aXBs
+ZSBibG9ja3MKPiAKPiBBcyB5b3UgY2FuIHByb2JhYmx5IGd1ZXNzIGFueSBzdWJzZXF1ZW50IGJs
+b2NrIHJlYWR5IGNhbiBvdmVyd3JpdGUgYQo+IGNvbnRlbnQgb2YgcHJldmlvdXNseSByZXR1cm5l
+ZCBibG9jayBjb250ZW50IGJ1ZmZlci4gSW4gX19wcm9iZV9udGZzKCkKPiBjYXNlIGl0J3Mgc29t
+ZXRoaW5nIGxpa2U6Cj4gCj4gbnMgPSBibGtpZF9wcm9iZV9nZXRfc2IoLi4uKTsKPiBidWZfbWZ0
+ID0gYmxraWRfcHJvYmVfZ2V0X2J1ZmZlciguLi4pOwo+IGJ1Zl9tZnQgPSBibGtpZF9wcm9iZV9n
+ZXRfYnVmZmVyKC4uLik7Cj4gbnMtPnZvbHVtZV9zZXJpYWwKPiAKPiBJZiB5b3UgdGFrZSBhIGxv
+b2sgYXQgYmxraWRfcHJvYmVfZ2V0X2J1ZmZlcigpIGluIHRoZSBvcmlnaW5hbCBwcm9qZWN0Cj4g
+KHV0aWwtbGludXgncyBsaWJibGtpZCkgaXQncyBhIGJpdCBtb3JlIGNvbXBsaWNhdGVkOgo+IGh0
+dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS91dGlscy91dGlsLWxpbnV4L3V0aWwtbGludXgu
+Z2l0L3RyZWUvbGliYmxraWQvc3JjL3Byb2JlLmMjbjY0MAoKQW5vdGhlciB1c2VyIG5vdGljZWQg
+dGhlIHNhbWUgYnVnIGFuZCBwb3N0ZWQgYSB3b3JrYXJvdW5kOgpbUEFUQ0hdIGZzdG9vbHM6IGZp
+eCBsaWJibGtpZC10aW55IG50ZnMgdXVpZCBkZXRlY3Rpb24KaHR0cHM6Ly9wYXRjaHdvcmsub3ps
+YWJzLm9yZy9wYXRjaC8xMTU3MDk3LwoKQW5vdGhlciBleGFtcGxlIGlzIHZmYXQgd2hpY2ggY2Fu
+bm90IGRldGVjdCBvbmUgb2YgbXkgcGFydGl0aW9ucy4gSXQncwpjYXNlZCBieSBwcm9iZV92ZmF0
+KCk6CjEuIFJlYWRpbmcgdmZhdCBzdXBlcmJsb2NrOgp2cyA9IGJsa2lkX3Byb2JlX2dldF9zYihw
+ciwgbWFnLCBzdHJ1Y3QgdmZhdF9zdXBlcl9ibG9jayk7CjIuIFJlYWRpbmcgd2hpbGUgdHJ5aW5n
+IHRvIGdldCBGQVQgZW50cnk6CmJ1ZiA9IGJsa2lkX3Byb2JlX2dldF9idWZmZXIocHIsIGZhdF9l
+bnRyeV9vZmYsIGJ1Zl9zaXplKTsKMy4gVHJ5aW5nIHRvIGFjY2VzcyB2cyBkYXRhIG9uY2UgaXQg
+d2FzIGNvcnJ1cHRlZDoKZnNpbmZvX3NlY3QgPSBsZTE2X3RvX2NwdSh2cy0+dnNfZnNpbmZvX3Nl
+Y3Rvcik7CgpUaGlzIGJ1ZyByZWFsbHkgcmVxdWlyZXMgYSBwcm9wZXIgZml4LgoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWls
+aW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9w
+ZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

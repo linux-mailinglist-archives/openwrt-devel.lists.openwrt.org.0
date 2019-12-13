@@ -2,77 +2,113 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B9C411E469
-	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 14:16:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B885411E5BA
+	for <lists+openwrt-devel@lfdr.de>; Fri, 13 Dec 2019 15:38:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4rC39pq49kfJOgtreI7AQfQ/TS8Q9CoeS1HTE6Ui/DY=; b=H8KzgpX/fQIf9u
-	FRqqVrJczx+nZ5OCS04drizhbIiIbPCP9Sa79qMvJTzpRiLK9+AukGwwHMsGVSLhxdARrJcg9abwy
-	kST2p1rO2veU3omYNJnHla6OrHOroJmavIA7BrYhuJV4HYd+O6MHOhmslAkuySybwS6YrS8KAgCK6
-	5azcY5QkRbo9P5tF2YRe5rRwtRNpC3lUJBUQItRcS9oZIP8keSw2AjXwhIbExUqEltjee2wIf/Zlv
-	aKNqKOngfmScb6Sn4YNXrw5plk9CeUHOqx4/UyiP2saioo1ebPWF6G8kVD5+k2hn6bv0jaIlOZ/KE
-	/EnmkAS9EbHg+RzZB+1Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1Xg9F4G5TGElLVz3Wce7adxLVLWQBR+Q9D8OxSmxOoc=; b=RmUNbzDcwaRgZ9
+	CtONKatB5fqg+BzGcyF+nbmlcXGYS35oMdqHem6qF77jvvAb03yvk6Bf2tXz8otL0Q4ENoWbpC1WT
+	6v9n5Voxi31AsenN8TRX8yKjqxYfvKVdLVHywdDija0nXAlzey9IgAKY1poOzA4fvlwyaQgYblhYN
+	liZ1xcT7VTJZ8sbOWRoArCBl2rzV8Bt2o+uwpORSGCKDo/p1e2lQ+Lt5uLMxKewg+LtHSNpReV4En
+	eAyfS1cZXAjLOrnOeyl6Z7uU8gW2DthWFbzqinFOsLlSkZV/qS+I4rgIEdkSNCvW2YGfuXBGdj1sA
+	w+GCS6isHmPlMOlSqBkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifko4-0001kx-Ce; Fri, 13 Dec 2019 13:16:32 +0000
-Received: from mx-out.tlen.pl ([193.222.135.148])
+	id 1ifm5V-000348-7K; Fri, 13 Dec 2019 14:38:37 +0000
+Received: from mail-ve1eur01on072e.outbound.protection.outlook.com
+ ([2a01:111:f400:fe1f::72e]
+ helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifknv-0001kF-GF
- for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 13:16:25 +0000
-Received: (wp-smtpd smtp.tlen.pl 11979 invoked from network);
- 13 Dec 2019 14:16:16 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1576242976; bh=gf61MO3IfsNA0c0z86SA8ed82IaL+C/ut1DK2O8iEnI=;
- h=Subject:To:From;
- b=PXhny6d9goBwJLmz/scabnQ6Y2VpxyEy1z2rACmZaj58iImwo6u5mE6Z7vyC984MX
- QLQFAJ7VUw9HPfgJu6zgk4CX8ynxVliA4CCiCu7CzZkZ4yML+9Axi0lWXzxql77MOV
- o/iS5Q0rBE8u9npmX6MtqS8JdFofU6On7qfxOPHY=
-Received: from 131.ip-164-132-48.eu (HELO [10.8.0.6])
- (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 13 Dec 2019 14:16:16 +0100
-To: Adrian Schmutzler <mail@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-References: <20191207222826.47389-1-freifunk@adrianschmutzler.de>
- <20191207222826.47389-3-freifunk@adrianschmutzler.de>
- <c548878d-5a73-6530-168b-f42057b124c3@o2.pl>
- <008b01d5b00f$ac39ba00$04ad2e00$@adrianschmutzler.de>
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-Message-ID: <d482001d-cb94-a41d-7499-efb8c278c757@o2.pl>
-Date: Fri, 13 Dec 2019 14:16:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ id 1ifm5O-00033j-Tv
+ for openwrt-devel@lists.openwrt.org; Fri, 13 Dec 2019 14:38:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ay/9+rGW8bSabtyF8yCZ5rpg+7N5ZgxBX2NUUa4D4Hf2XIQ7xArLp7HE9XGYixGdydtJQpoFE2EOPcf8C9JtV0tr1Rv4iOUzqTI3OlUaixyeCYoyh44ysrS2o9MEPOhi5NCuu49TR2UYonz0GS691ZlLnEP2gE9XrUCmiy+kPCvqxtqCjopfll6Uw59mTImAm8IWxDtWVeg2Nzi0748y0wF3PUOCCbPlP0zwqhmfSYyhR4H3Zr1DXLg7F0eIsKGHe7Vy+kpxUqDRnGq2uFVN8oC+VCwES/gxMxwnK2CpS2aOVTONViFbV0/MQUesEbDziW2GTtlkxwtD1gg1GjC/lg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=obk3W0UdcAXw/JtBjdPNDmlYmGCxM+YUuWDP8LFqGWE=;
+ b=SA+87IJ8HcaYlKPPpNtZRQTaYY7ah+c2FpqVnhjmaZDJE9KanjsUW0rASiayq6eAVzg/F5R8XiPzg4QtPNoBlG6G+3NF73t09qwbzLdLpjmw/b6PfUtoAeJZD7+I3Km2F3eXccL2am77eAL/CsRo3J8RFVwkp9oetZlvedibb2PAeeizxkaOkofssRNeh9y8eTm8BWr9LQt9QXBpY1DxCcYTv+4i9T+OaXrb2wKEU4S8IqqychO248G19rgCamM0qFRMphyqaRCTDNZj0TOP0CjxKJ20+FxWvd62jm7gnUuRt7+Dqne7jtu89oNlDh3gtp4AVXQ0z8U0S3zrNPtpXw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=etactica.com; dmarc=pass action=none header.from=etactica.com;
+ dkim=pass header.d=etactica.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=eTactica.onmicrosoft.com; s=selector2-eTactica-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=obk3W0UdcAXw/JtBjdPNDmlYmGCxM+YUuWDP8LFqGWE=;
+ b=Ij254oJiNlccOPN82Su5Ew6w40owtMVmvablnaPThR+Zpbe4SrhYuvt7ZlLUzhzCbwKMUkmjSP0GrBA5q88ITE4/sesuRQnUkjgxJYdcV+p/DJmGQquOJ68cTkl+6XcxqTPzFMzz07qMfPQ+gl3+mOcEFeDcUoT4T0crjqqMEas=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=karlp@etactica.com; 
+Received: from AM0PR07MB5953.eurprd07.prod.outlook.com (20.178.82.92) by
+ AM0PR07MB4291.eurprd07.prod.outlook.com (52.133.60.150) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.4; Fri, 13 Dec 2019 14:38:25 +0000
+Received: from AM0PR07MB5953.eurprd07.prod.outlook.com
+ ([fe80::e9c5:aef3:46d5:1e56]) by AM0PR07MB5953.eurprd07.prod.outlook.com
+ ([fe80::e9c5:aef3:46d5:1e56%7]) with mapi id 15.20.2538.017; Fri, 13 Dec 2019
+ 14:38:25 +0000
+From: Karl Palsson <karlp@etactica.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 13 Dec 2019 14:38:14 +0000
+Message-Id: <20191213143814.25083-1-karlp@etactica.com>
+X-Mailer: git-send-email 2.21.0
+X-ClientProxiedBy: LO2P265CA0279.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a1::27) To AM0PR07MB5953.eurprd07.prod.outlook.com
+ (2603:10a6:208:108::28)
 MIME-Version: 1.0
-In-Reply-To: <008b01d5b00f$ac39ba00$04ad2e00$@adrianschmutzler.de>
-Content-Language: en-US
-X-WP-MailID: ef3ac9444fadceed72b342128ddd64a1
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [oUPw]                               
+Received: from localhost.localdomain (213.181.112.179) by
+ LO2P265CA0279.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:a1::27) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=) via Frontend Transport;
+ Fri, 13 Dec 2019 14:38:25 +0000
+X-Mailer: git-send-email 2.21.0
+X-Originating-IP: [213.181.112.179]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: c56b33d9-40da-41b5-4fbf-08d77fda1c6b
+X-MS-TrafficTypeDiagnostic: AM0PR07MB4291:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM0PR07MB429143CB74FA99E9E7B88052DD540@AM0PR07MB4291.eurprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3513;
+X-Forefront-PRVS: 0250B840C1
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(346002)(136003)(396003)(39830400003)(376002)(366004)(189003)(199004)(6486002)(1076003)(81156014)(107886003)(66556008)(66476007)(186003)(4326008)(81166006)(26005)(16526019)(86362001)(66946007)(6666004)(36756003)(8936002)(2616005)(5660300002)(8676002)(508600001)(6916009)(69590400006)(956004)(316002)(6512007)(4744005)(52116002)(2906002)(6506007);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:AM0PR07MB4291;
+ H:AM0PR07MB5953.eurprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+Received-SPF: None (protection.outlook.com: etactica.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: M1zc+XGsWdiKT3LvpVVPTVH3/a5HWBkZZ4T38hM2KxYe/88sl2tloWFrxPrGFswMMZdUV1EN1p4jkOIAXR++moIVSMFhJ8hsUkxt/m7CPyd2NqoIZzlHU6jyQfynYJPFD+BST5uvyQfRgH/rwQXvZcc/qudfCiMe4txD4gkgOJT8mIU34dvm0MAoKbwq2/OR5LTRcwGtXFzN+Ofqe5rKoutm5r8YfqJpyFy6+L2TyYAfjE2g4d9ONvtJawaMABaaIXUY5eMOC1zLsLwlLAaRgsJPuglvU/xKg3/CFDImBQDUAHUTIoRVsFfeEQQsvhYtEgl/tuWAL7f5fhDR1StvnqLWlPTEq81jshOErdAyyVElzuri8MyMALXQRQX4hRMjtEXjmzTu9aFddtS7P4C6J+OBSMusWJTLxpD1/bfHTdY8Mrg3awrE0c+hTQToA2dm4hFjXnrC0TbdVXK89Yx7drltv15XRwLZd1FI8Jw98dh59A58fDj+YVqO7NeCONoi
+X-OriginatorOrg: etactica.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c56b33d9-40da-41b5-4fbf-08d77fda1c6b
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Dec 2019 14:38:25.4266 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: e3621586-558f-4e21-92a9-26df2c484dae
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: TciFh/7RQPyuqvOrJwYkk7IgNLRJJw0nzUFyqsfDMWezapG58Vqhxg/zqqKolqv58eJWZrk1gULe+9Q7yYM0KQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR07MB4291
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_051623_866064_15B3A7A0 
-X-CRM114-Status: GOOD (  16.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191213_063831_024984_9EB9D87C 
+X-CRM114-Status: UNSURE (   7.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe1f:0:0:0:72e listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tomek_n[at]o2.pl)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] sunxi: construct DTS name from
- device node name and SOC
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+Subject: [OpenWrt-Devel] [PATCH] uboot-envtools: ath79: add etactica eg200
+ support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,70 +120,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Karl Palsson <karlp@etactica.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VyBkbml1IDExLjEyLjIwMTkgb8KgMTE6NDIsIEFkcmlhbiBTY2htdXR6bGVyIHBpc3plOgo+IEhp
-LAo+IAo+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+PiBGcm9tOiBUb21hc3ogTWFjaWVq
-IE5vd2FrIFttYWlsdG86dG9tZWtfbkBvMi5wbF0KPj4gU2VudDogRGllbnN0YWcsIDEwLiBEZXpl
-bWJlciAyMDE5IDE0OjM5Cj4+IFRvOiBBZHJpYW4gU2NobXV0emxlciA8ZnJlaWZ1bmtAYWRyaWFu
-c2NobXV0emxlci5kZT47IG9wZW53cnQtCj4+IGRldmVsQGxpc3RzLm9wZW53cnQub3JnCj4+IFN1
-YmplY3Q6IFJlOiBbT3BlbldydC1EZXZlbF0gW1BBVENIIDIvMl0gc3VueGk6IGNvbnN0cnVjdCBE
-VFMgbmFtZSBmcm9tCj4+IGRldmljZSBub2RlIG5hbWUgYW5kIFNPQwo+Pgo+PiBIaSBBZHJpYW4u
-Cj4+Cj4+IFcgZG5pdSAwNy4xMi4yMDE5IG/CoDIzOjI4LCBBZHJpYW4gU2NobXV0emxlciBwaXN6
-ZToKPj4+IFRoZSBkZXZpY2UgcGFydCBpbiB0aGUgU1VOWElfRFRTIHZhcmlhYmxlIGFsd2F5cyBj
-b3JyZXNwb25kcyB0bwo+Pj4gZGV2aWNlIG5vZGUgbmFtZS4gVGhpcyBpcyBhbm90aGVyIHJlZHVu
-ZGFuY3kgdGhhdCBjYW4gYmUgcmVtb3ZlZAo+Pj4gYnkgY2FsY3VsYXRpbmcgdGhlIERUUyBuYW1l
-IGZyb20gYSBuZXdseSBpbnRyb2R1Y2VkIFNVTlhJX1NPQwo+Pj4gdmFyaWFibGUgYW5kIHRoZSBu
-b2RlIG5hbWUuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogQWRyaWFuIFNjaG11dHpsZXIgPGZyZWlm
-dW5rQGFkcmlhbnNjaG11dHpsZXIuZGU+Cj4+PiAtLS0KPj4+ICB0YXJnZXQvbGludXgvc3VueGkv
-aW1hZ2UvTWFrZWZpbGUgICAgICB8ICA1ICsrLQo+Pj4gIHRhcmdldC9saW51eC9zdW54aS9pbWFn
-ZS9jb3J0ZXgtYTUzLm1rIHwgMTggKysrKysrKy0tLS0KPj4+ICB0YXJnZXQvbGludXgvc3VueGkv
-aW1hZ2UvY29ydGV4LWE3Lm1rICB8IDQ0ICsrKysrKysrKysrKystLS0tLS0tLS0tLS0tCj4+PiAg
-dGFyZ2V0L2xpbnV4L3N1bnhpL2ltYWdlL2NvcnRleC1hOC5tayAgfCAxMyArKysrLS0tLQo+Pj4g
-IDQgZmlsZXMgY2hhbmdlZCwgNDUgaW5zZXJ0aW9ucygrKSwgMzUgZGVsZXRpb25zKC0pCj4+Pgo+
-Pj4gZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9zdW54aS9pbWFnZS9NYWtlZmlsZQo+PiBiL3Rh
-cmdldC9saW51eC9zdW54aS9pbWFnZS9NYWtlZmlsZQo+Pj4gaW5kZXggMDRlMGFiZWU0OS4uOTI5
-ZjRjNzBmOSAxMDA2NDQKPj4+IC0tLSBhL3RhcmdldC9saW51eC9zdW54aS9pbWFnZS9NYWtlZmls
-ZQo+Pj4gKysrIGIvdGFyZ2V0L2xpbnV4L3N1bnhpL2ltYWdlL01ha2VmaWxlCj4+PiBAQCAtMzIs
-MTIgKzMyLDE1IEBAIGVuZGVmCj4+PiAgIyB3aHkgXHgwMFx4MDBceDAwXHgwMCBmb3IgekltYWdl
-LWluaXRyYW1mcwo+Pj4gIGRlZmluZSBEZXZpY2UvRGVmYXVsdAo+Pj4gICAgUFJPRklMRVMgOj0g
-RGVmYXVsdAo+Pj4gLSAgREVWSUNFX1ZBUlMgOj0gU1VOWElfRFRTIFNVTlhJX1VCT09UCj4+PiAr
-ICBERVZJQ0VfVkFSUyA6PSBTVU5YSV9TT0MgU1VOWElfRFRTIFNVTlhJX0RUU19ESVIgU1VOWElf
-VUJPT1QKPj4KPj4gSW5zdGVhZCBvZiBhZGRpbmcgbmV3IHRhcmdldCBzcGVjaWZmaWMgdmFyaWFi
-bGVzLCB3b3VsZG4ndCB1c2luZyBhbHJlYWR5Cj4+IHNwZWNpZmllZCBvbmVzIGJlIGJldHRlcj8g
-V2UgaGF2ZSBERVZJQ0VfRFRTIGFuZCBERVZJQ0VfRFRTX0RJUi4gQWxzbyB0aGUKPiAKPiBCYXNl
-ZCBvbgo+IGh0dHBzOi8vZ2l0aHViLmNvbS9vcGVud3J0L29wZW53cnQvY29tbWl0LzdhOGQzNDMy
-YzczOWM2ZmYwMzgyOTUxNzZlOGI2MzI0ZTkyZmMxMTYKPiBJIGhhZCB0aGUgaW1wcmVzc2lvbiB0
-aGF0IERFVklDRV9EVFMgYW5kIERFVklDRV9EVFNfRElSIGFyZSByZXNlcnZlZCBrZXl3b3JkcyBm
-b3IgYSBwYXJ0aWN1bGFyIG1lY2hhbmlzbSB0byBhcHBlbmQgRFRCLgoKVGhlc2UgYXJlIG5vdCBy
-ZXNlcnZlZCBhdCBhbGwuIE90aGVyIHRhcmdldHMgdXNlIGl0LgoKPiAKPiBUaHVzLCBhbmQgc2lu
-Y2UgdGhlIHRhcmdldCBoYXMgYmVlbiB1c2luZyAiY3VzdG9tIiBTVU5YSV9EVFMgdmFyaWFibGUg
-c28gZmFyLCBJIGRlY2lkZWQgdG8gc3RpY2sgdG8gdGhhdCBwYXR0ZXJuLgoKTG9va2luZyBhdCBn
-aXQgaGlzdG9yeSB0aGF0IHZhcmlhYmxlIHByZWNlZGVzIERFVklDRV9EVFMsIHNvIEkgYXNzdW1l
-IHRoZXJlIHdhcwpubyBvbmUgYm90aGVyZWQgdG8gY29udmVydCBpdCB3aGVuIGdsb2JhbCBvbmUg
-d2FzIGludHJvZHVjZWQuIE5vdyBpcyBiZXN0IHRpbWUKdG8gZG8gdGhhdC4KCj4gCj4+IFNVTlhJ
-X1NPQyBmZWVscyBiaXQgcmVkdW5kYW50IHNpbmNlIGl0IG5lZWRzIHRvIGJlIHNwZWNpZmllZCBm
-b3IgZWFjaCBkZXZpY2UKPj4gYW5kIGl0IGNvdWxkIGJlIHJlcGxhY2VkIHdpdGggREVWSUNFX0RU
-UyA6PSBzdW41MGktaDUtJCgxKSBvciBzaW1wbHkgZnVsbCBkdHMKPj4gbmFtZS4KPiAKPiBObywg
-YmVjYXVzZSBJIG5lZWQgdG8gY3V0IGRvd24gdGhlIGRldmljZSBuYW1lLCBzbyBpdCB3b3VsZCBi
-ZQo+IERFVklDRV9EVFMgOj0gc3VuNTBpLWg1LSQobGFzdHdvcmQgJChzdWJzdCBfLCAsJCgxKSkp
-Cj4gd2hpY2ggSSB3b3VsZCBub3QgbGlrZSB0byByZXBlYXQgb3ZlciBhbmQgb3Zlci4KClllYWgs
-IGZvcmdvdCBhYm91dCByZXBsYWNpbmcgc2VwYXJhdG9yIHdpdGggZGFzaC4KCj4gCj4gSSBhZG1p
-dCB0aGF0IGNoYW5naW5nIHRoZSBEVFMgdmFyaWFibGUgaXMgdGhlIHdlYWtlc3QgcGFydCBpbiBt
-eSBwYXRjaHNldC4gSG93ZXZlciwgSSB0aGluayBpbnRyb2R1Y2luZyB0aGUgU1VOWElfU09DIGFu
-ZCBTVU5YSV9EVFNfRElSIHdpbGwgbWFrZSB0aGUgdGFyZ2V0IG1vcmUgb3JnYW5pemVkLiBEZXNw
-aXRlLCBieSB0aGlzIGl0IGJlY29tZXMgbW9yZSBjb25zaXN0ZW50IHdpdGggb3RoZXIgdGFyZ2V0
-cyB3aGVyZSB0aGlzIGhhcyBiZWVuIHJlb3JnYW5pemVkIHJlY2VudGx5IChpLmUuIGF0aDc5IGFu
-ZCByYW1pcHMsIHdoZXJlIHdlIHVzZSBBVEhfU09DIGFuZCBNVEtfU09DIHRvIGRvIHRoZSB2ZXJ5
-IHNhbWUpLgo+IEF0IGxlYXN0IEkgcGVyc29uYWxseSB0aGluayB0aGF0IHRoaXMgaXMgYmV0dGVy
-IHRoYXQgcmVwZWF0aW5nIHRoZSB2ZXJ5IHNhbWUgbmFtZSBhZ2FpbiBpbiB0aGUgRFRTIGRlZmlu
-aXRpb24uCgpXZWxsLCBJJ3ZlIG5vIHN0cm9uZyBmZWVsaW5ncyBhZ2FpbnN0IHVzaW5nIFNVTlhJ
-X1NPQywgaXQncyByZWFzb25hYmxlIGdpdmVuCllvdXIgZXhwbGFuYXRpb24sIGJ1dCBTVU5YSV9E
-VFNfRElSIHNob3VsZCBiZSBjaGFuZ2VkIHRvIGdsb2JhbCBvbmUuCgo+IAo+IEJlc3QKPiAKPiBB
-ZHJpYW4KPiAKClJlZ2FyZHMKCi0tIApUTU4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2
-ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL29wZW53cnQtZGV2ZWwK
+Was inadvertantly missed from the inital forward port from ar71xx to
+ath79.
+
+Fixes: 1588114cf2 ath79: add etactica-eg200 support
+
+Signed-off-by: Karl Palsson <karlp@etactica.com>
+---
+ package/boot/uboot-envtools/files/ath79 | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/package/boot/uboot-envtools/files/ath79 b/package/boot/uboot-envtools/files/ath79
+index 1499aa19a2..f956cf4ed4 100644
+--- a/package/boot/uboot-envtools/files/ath79
++++ b/package/boot/uboot-envtools/files/ath79
+@@ -16,6 +16,7 @@ case "$board" in
+ alfa-network,ap121f|\
+ buffalo,bhr-4grv2|\
+ engenius,ecb1750|\
++etactica,eg200|\
+ glinet,gl-ar300m-lite|\
+ glinet,gl-ar300m-nand|\
+ glinet,gl-ar300m-nor|\
+-- 
+2.21.0
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,66 +2,97 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3676911F4FD
-	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Dec 2019 00:03:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B606311F74E
+	for <lists+openwrt-devel@lfdr.de>; Sun, 15 Dec 2019 12:01:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Cc:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gf2+uJbrscUns3r7BPyOgyKLeabOHb5nBTSRQU9qKIo=; b=gns2h9qOQYJgY0
-	KD1edaRzjGRUDXbg9RySSwztZZOJkTJJUHMjnRkASTK+FDn7DJsHJNOzWz3lzBvGH7dJ/4Sq4duIR
-	6kW8aYD5Mk8+F/B5o3jZg2PqZLbnWRmM3lD6NzjuMjohOXriOtItpbKr2XoxIIeKg4MxIQnz4lRZz
-	E/qj9VsmRtZb0GHzR99XzR9DJ8mz56bTazmoHDkGc7/Rb7fMYBdE1KI8tAme6766zXM+CtkET+znc
-	+UHet+KvvOf4ibuJN+1TqfVjbHbHNMVxpXTnmH2gRcGZswD4igLLGGLXvHcUazbssuvAXMHrY04Yp
-	IyPSo/59ugjNOh9oyGiQ==;
+	List-Owner; bh=EIFb/iglYVuSUaBLCrpbRVbDvysKaBqraTqAHbue4kI=; b=q+hH8yoKPRuVaF
+	oPbwtWrq7uzT/U8lDdA9bjrU0e7c6s+wFlfUF/ui7N+34DHsC0eImgEiWrcckHj4q5JhAlshIqxC6
+	Sahvus2hykP0xYAUBz5t/4S0GGcBGGnFauUyKhjXj9NtaFXxLFb8ulSreAv16yPY+BVPPgUaBV9p8
+	DDFR6z8xQhmpF6oeluK4qb07Pcfb0ofjTO1Btv04KDfbVsldcrWHRCckb1WpVRcXdsFjfobTHzPaR
+	ZWCdXTp2j9J3MOacGIXDgSOuRcA3Xl15rBlGTz3rFlVa1fVFDXDoKjHqqtjo6N8yBVuA58kLacaTx
+	NKPh9vJlhG3CLp55Oaeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igGRF-0006zn-QL; Sat, 14 Dec 2019 23:03:05 +0000
-Received: from mailout.easymail.ca ([64.68.200.34])
+	id 1igRe2-0007Sw-7l; Sun, 15 Dec 2019 11:01:02 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igGR4-0006z4-HT
- for openwrt-devel@lists.openwrt.org; Sat, 14 Dec 2019 23:03:00 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mailout.easymail.ca (Postfix) with ESMTP id 1B4E622372;
- Sat, 14 Dec 2019 23:02:52 +0000 (UTC)
-X-Virus-Scanned: Debian amavisd-new at emo06-pco.easydns.vpn
-Received: from mailout.easymail.ca ([127.0.0.1])
- by localhost (emo06-pco.easydns.vpn [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id h6PuvDymH5Ec; Sat, 14 Dec 2019 23:02:51 +0000 (UTC)
-Received: from [10.0.2.101] (pool-71-184-94-200.bstnma.fios.verizon.net
- [71.184.94.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailout.easymail.ca (Postfix) with ESMTPSA id 8DA4A2236C;
- Sat, 14 Dec 2019 23:02:50 +0000 (UTC)
-From: "Ted Hess" <thess@kitschensync.net>
-To: openwrt-devel@lists.openwrt.org, "daniel@makrotopia.org"
- <daniel@makrotopia.org>
-Date: Sat, 14 Dec 2019 23:02:49 +0000
-Message-Id: <em02797504-f3aa-4a10-a70f-3c6f2adba652@twonky7>
-In-Reply-To: <72795206-d999-c459-4fa6-ae09df4e92f7@phrozen.org>
-References: <e13712e.36225d.16ef3b3ec4c.Coremail.rqgxfc@vip.163.com>
- <CAKR_QV+a___R2qsPSf6vtpk+JUPqvt3ZdvTHQA9Y_pFOZ-R6zA@mail.gmail.com>
- <20191211142209.GC1371@makrotopia.org>
- <72795206-d999-c459-4fa6-ae09df4e92f7@phrozen.org>
-User-Agent: eM_Client/7.2.36908.0
-Mime-Version: 1.0
+ id 1igRdu-0007Re-Aj
+ for openwrt-devel@lists.openwrt.org; Sun, 15 Dec 2019 11:00:55 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z3so3680730wru.3
+ for <openwrt-devel@lists.openwrt.org>; Sun, 15 Dec 2019 03:00:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=9L0kLesc7926H26NjssDoFyb4ofTaoMrLxoSHmJSO/4=;
+ b=J03jCtkFYiWJJ6MTk/g2hCB1/KYvKuq4l0i9eq7yEy3ogGhN5BV4ZcfOMJFIZJXYnw
+ tz4Ojo7v3OCL54eoW8XWxw0PICqsULGW6l3O+L3xf+mIWTxCT/DDEFI7kg6bIumijEtq
+ jzn5l3RcMEF76UGqAg1whE363kH0DrnHJYizhVJwAMIPhzElYEvcZ/7DSiReJYH97Yjw
+ ypg/iFdj8pBV9s8457pDMS0O//Uu47QK3RE4R1VMwPwgjcL5VG07lSXSqaJVqfNDJrpp
+ D3CL/+aFr3p+5T+/09Jlal4rOE3sxKH3n0eCGNvn7ngau2aWToIoBJNerPuWd/jdKqVe
+ Xe4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=9L0kLesc7926H26NjssDoFyb4ofTaoMrLxoSHmJSO/4=;
+ b=Xm5AMQmFmLBgn97DQjLlPSbUx7aAqzsOtMiVYodq4IbpRdjBRcZFo916F+Ys6Ei04g
+ uHj9Low4T5JEIgvx1MLkb0PecE0k4/Gvfv25AVfPhTLMokG3wryY3FF+q+70l6b6K7S0
+ 6b7l9e8tzO8BLQXWjUGiGoCL58xigTOqSPkgTYfjdDXOidJVrdbIDEYpXpLr2nG9wepG
+ ChlFVWmGUHfC2nv3Tl0rHWEaa6P+yOe1N+2UDpSBaqQQFE95f7f2Pjvtgv3UL5qc+wV3
+ ZJSp4th03i0XNZ+GqSlaYiydmW8GDn2CklYNuwusN1BjfCES7hENYXVgNsvQ+uarpdL4
+ 0tlw==
+X-Gm-Message-State: APjAAAX6kyIoJx5bj61d0C7oOa2kVSVGMlEBoss8b1jP2F0bZ0cHsz4U
+ bJWZJjsrgaOB6rv2BXzV/Sk=
+X-Google-Smtp-Source: APXvYqw1Q8JVZOmsnziCWzEp54+y2BeNq86orPYXb8Zrc0KSL58hvQdOXqi2rSDQ/UZXbcjxzFzvmQ==
+X-Received: by 2002:adf:ef49:: with SMTP id c9mr23811269wrp.292.1576407650194; 
+ Sun, 15 Dec 2019 03:00:50 -0800 (PST)
+Received: from debian64.daheim (pD9E29F10.dip0.t-ipconnect.de.
+ [217.226.159.16])
+ by smtp.gmail.com with ESMTPSA id o16sm2596217wmc.18.2019.12.15.03.00.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 15 Dec 2019 03:00:49 -0800 (PST)
+Received: from localhost.daheim ([127.0.0.1] helo=debian64.localnet)
+ by debian64.daheim with esmtp (Exim 4.93)
+ (envelope-from <chunkeey@gmail.com>)
+ id 1igRdo-00021g-9a; Sun, 15 Dec 2019 12:00:48 +0100
+From: Christian Lamparter <chunkeey@gmail.com>
+To: Paul Fertser <fercerpav@gmail.com>
+Date: Sun, 15 Dec 2019 12:00:48 +0100
+Message-ID: <5675304.dXXkMWVoIb@debian64>
+In-Reply-To: <20191211191652.GU11070@home.paul.comp>
+References: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
+ <d938b7ab-80b0-c78a-5a84-435243dff86d@candelatech.com>
+ <20191211191652.GU11070@home.paul.comp>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_150254_637921_AD6F024B 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191215_030054_400884_6B2CA975 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [64.68.200.34 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (chunkeey[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Inquery
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build
+ variant for small RAM devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,40 +104,69 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Ted Hess <thess@kitschensync.net>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>, Ben Greear <greearb@candelatech.com>,
+ openwrt-devel@lists.openwrt.org, Petr =?utf-8?B?xaB0ZXRpYXI=?= <ynezz@true.cz>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+On Wednesday, 11 December 2019 20:16:52 CET Paul Fertser wrote:
+> Hey Ben,
+> 
+> On Wed, Dec 11, 2019 at 10:06:26AM -0800, Ben Greear wrote:
+> > On 12/11/19 6:44 AM, Paul Fertser wrote:
+> > > According to many bugreports [0][1][2] the default ath10k-ct kernel
+> ...
+> > And also if you want to just have the makefile pass a -DBUILD_ATH10K_SMALL or something
+> > like that and #ifdef code in the ath10k-ct driver, then I'd apply that patch to ath10k-ct
+> > so that you don't need the patches.
+> 
+> I am offering my patch to the OpenWrt maintainers as kind of a
+> stop-gap measure to get ath10k-ct working for the release (or in any
+> way they think is appropriate). Another approach they can choose is to
+> select the upstream ath10k for those devices. Otherwise some
+> previously supported boards will require manual intervention to get
+> WiFi working after an upgrade.
+> 
+> Regarding your fwcfg idea, I am not sure it will work as it seems the
+> PCI initialisation is happening before fwcfg is parsed and applied.
+> 
+> Adding a Kconfig option is another possibility.
+> 
+> But what do you think about an additional module parameter, wouldn't
+> it be the cleanest solution in the long run?
+> 
+> BTW, according to the git logs the patches were initially added by
+> Christian Lamparter, so I hope he can clarify the situation a
+> bit. Probably there were some performance tests executed back than to
+> measure the impact.
+> 
+Heh no. These patches come up in discussions time and time again. And I
+would rather see them being removed alltogether. What I can tell you is
+that the Idea of limiting ath10k memory thirst came from Qualcomm itself.
 
->On 11/12/2019 15:22, Daniel Golle wrote:
->>As a community, we decided to give our self a set of minimal rules[1].
->>And even though it is in the last position, rule #12 "Be nice to each
->>other." is meant just as serious as all the other rules.
->>
->>So here, not for the first time, you are using language which has the
->>only purpose to hurt other people (for which reason ever, it doesn't
->>matter). This is therefore a very clear violation to the above
->>mentioned rule. You statement "suck it" (guess what) is also an obvious
->>and disgusting example of a masculist culture which hurts our community
->>as a whole and I strongly believe we should not tolerate that.
->>
->>And yes this was a spam mail. And it's even needless to say that
->>replying to a spam email in which ever way will always make it worse.
->>But that's not the point here and I will not engage in any discussion
->>on that matter.
->>
->>Please learn to behave or leave us alone.
->>
->>[1]:https://openwrt.org/rules
->
->+1
->
->
-And, +1 from me - thanks.
+If you look on the ML you can find the old posts like:
+<https://www.mail-archive.com/lede-dev@lists.infradead.org/msg04738.html>
 
-/ted
+And for reference: Here's a independent bootlog (from pepe2k/Piotr Dymacz
+no less) with the "Low Memory System" messages for the RT-AC58U:
+<https://gist.github.com/pepe2k/eba2766f05ccf4e089347c531c49848b>
+
+From what I remember Sven Eckelmann also measured the impact from the
+patches on the performance and posted his results to the OpenWrt ML
+(google will find them).
+
+I think for this to have any chance of moving forward you'll need to
+pressure your ODMs and if that doesn't work: Go with a different WIFI
+chip vendor that supports low memory devices, or add more RAM.
+From what I can tell, Qualcomm nowadays gets what they want "for free"
+and for the past four-five years, they certainly didn't feel pressured
+to add "low memory" support to ath10k.
+
+Cheers,
+Christian
+
 
 
 _______________________________________________

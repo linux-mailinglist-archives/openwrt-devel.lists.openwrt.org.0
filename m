@@ -2,72 +2,98 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5BFD121B6D
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Dec 2019 22:01:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18430121BAE
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Dec 2019 22:26:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=N/V8LRIWambbeZbOpopvuSk0oN2X9up5dPOd6TzMTfI=; b=e4o
-	fHLw1nsuMCSQrwIwVmOd6nOCuHyHWfUyQ3WXk3zMIcqdbNZ9ZAJhJUdY8RvlipnwaCmotjcKldkLD
-	pQe5B9JfyXa1Wta7TFX1BN6HIO81RctbD6s0zCYngDFcF+A8bDLOZN85uDWhi+sztiDX+BdO9iXJU
-	wBldcWfvQCadqdwINzyLnPoqy9AgWVqKA560dIB/Zws4sKIB4vj8HsSMBPtwiPTG2/EzH9R5/kDuB
-	SDa5Qgy94KYKnh0QO/w5HH5rJWYEpjTsRJkeQE2ZrGy5e3nlABUCRmb9pxTw///C4esI6KjbWqEF7
-	rYP3eZpASC6/hiwbh42kySG5cxKoqeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=78t0pgoun54DEUWkh5PhJ9F/hUwTsh8ArkLSQDI8Bnc=; b=CJcxQdpRNFiY4qXE2MXd6q1F1
+	SQshL5Ct2fpAunuhcdN0UOtnp1yXlrIihcpF/q3zFryk90IX+AMhQFW/hdUrGIMwRd5P3PUHxjJpj
+	cS1yp+eZQZ60ombGV6vqFE5TNifUWH3JYA+c6kDeSgqhyz9m0pNueYY0awjluM3ewM+xEJCd9jiy1
+	TqmfRBMsdj0Adn0n3kXiB/lcLkjBV5jPMuYGtyRG607LEwdZ0PGqpTY+hFcyZB2J5xtD/vM+UKU5u
+	74T17DiM2ePAqKL0xopgn8ArhPvnigXv/hkJy+JuZ7IQkoQaqyWMpF43ttIp7I3rxFTb2q34ywCSG
+	tYPE8aeRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igxUw-0001Wh-Hz; Mon, 16 Dec 2019 21:01:46 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1igxsK-0004E1-8Y; Mon, 16 Dec 2019 21:25:56 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igxUo-0001VU-By
- for openwrt-devel@lists.openwrt.org; Mon, 16 Dec 2019 21:01:40 +0000
-Received: from desktop ([188.193.231.72]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MVdYY-1iFMU41gFY-00RYEY; Mon, 16 Dec 2019 22:01:32 +0100
-From: <mail@adrianschmutzler.de>
-To: "'Matthias Schiffer'" <mschiffer@universe-factory.net>
-Date: Mon, 16 Dec 2019 22:01:31 +0100
-Message-ID: <012a01d5b453$fe9c9ea0$fbd5dbe0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AdW0UBrtL/XTSIlSThGMt9Ju1NCMSgAAZV1Q
+ id 1igxsD-0004DZ-7r
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Dec 2019 21:25:51 +0000
+Received: by mail-wr1-x441.google.com with SMTP id t2so9062445wrr.1
+ for <openwrt-devel@lists.openwrt.org>; Mon, 16 Dec 2019 13:25:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=PFAox/ugJuc67Ih3g4dnpR93dDW73+a2U0Pp5enLdaY=;
+ b=EhYVQT4jO1F3oQRETtWy9wHyLd9aah4sT//wWTT70AJRvM49hZUmwEOjDeOuh04hrY
+ 8z/LM2BbF8B1giiioqg3N81O8dyTrK1GREIobmC+7AwecAeKnekGjve3ovw2uhTbRz+m
+ n9M4ejink0uqNYg+W1OOTZ+dkb2kUTEid3FLH2/+diOwC6W7qhSNSZNhVGl8qxQUUwck
+ KmyX34VPmrHLrnPgNO1SY8N8mTBbbw1qaNCLxYJHt7ciZ7+VGzt+2XISxZDcZ/ZXnmtI
+ l3tXMGqvTnLBlOtO2WsHL7kfESujIZnQhoKhPrwbDtUlUsRkYly95q7cBpWkvOzznEh1
+ TFhQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=PFAox/ugJuc67Ih3g4dnpR93dDW73+a2U0Pp5enLdaY=;
+ b=c49ajSodzvNAwxCG8ai1cxFrA2hIwUQwS/2BQFPEjBDab/5H2jI3UvFlKxhqcVXLFU
+ 9UP0yK6r02ESj3tY81PrKFCIkT+ONh7nHJ5/e06IQ5pKfxVNFxwBRq+OQrTHkOddwUZm
+ zYo6Uu39GBYltquZJPcR/UhG7jLOyg+Upw5QrJGcTbBsRTXVYwa4j/A2BgJhMMemDhyS
+ 1daA9HvP/0toY12nnsYfgC4aJi18lioDOCQWqp5IH/G3zUUTyNovP+BvpyCfzuTBsjDW
+ aqLfXl3axxR0JWcy23EvQpR10qmaNpyaR1aNOANPDqJ97rsdibsL/NJUUztoVb+FXE13
+ JZSA==
+X-Gm-Message-State: APjAAAXPzJ3gBT3ozVYy4kqQ2tYuqJTt364CvgjeenDjmi57W4R6nkOp
+ vfbFdlY8LM9jm3EsbRZ5fooileaFjV5HSw==
+X-Google-Smtp-Source: APXvYqygbZKYW/oQN2e37VUnXwjK/KySpesHN5Gs2iUZPje9KgoHrpseASPYz2EdVw9ngrWc7Jq59Q==
+X-Received: by 2002:adf:bc4f:: with SMTP id a15mr32783640wrh.160.1576531547139; 
+ Mon, 16 Dec 2019 13:25:47 -0800 (PST)
+Received: from [192.168.1.230] ([134.90.239.71])
+ by smtp.gmail.com with ESMTPSA id z6sm24315049wrw.36.2019.12.16.13.25.45
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 16 Dec 2019 13:25:46 -0800 (PST)
+To: Christian Lamparter <chunkeey@gmail.com>
+References: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
+ <5675304.dXXkMWVoIb@debian64> <20191215120114.GD11070@home.paul.comp>
+ <4186246.Rc2P9gcx8s@debian64>
+ <a8f56a23-108f-3f76-2ea3-a904726ed224@gmail.com>
+ <CAAd0S9BT1y2F7tEXp720u4xx_3Xry0uZnyvaOExH-85X7ctyjg@mail.gmail.com>
+From: Alberto Bursi <bobafetthotmail@gmail.com>
+Message-ID: <c073338d-eea5-36f2-1fed-62f40613855b@gmail.com>
+Date: Mon, 16 Dec 2019 22:25:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:iu5H1i6/elT10gH1Wx5UzWwygbPXuB1sS//nOmOzY+x7Bz48GPD
- 47AdhKKvJBGFjZdAHXdzhmt/3PxZm8sOZP0uiMrplI3gYhYVTmpAGir3AyWIaXMlfgg1ypl
- NDjzhavAIrzeOnFaTD9euogyllhaQvQdQqPWylhH9tvLCyhkCfeKpZ9kHcllIrccCs5Hcub
- ASNIM8jJPhV7K4bqFp3hg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:X1JvTJRUqPM=:VwQIXR/zUMF1DwNO9r4hVv
- tGSsbKkHFdhxGQ4Am92x0aDWJ/doxuBoEZSiz2nRCzhXnBWdCdGsVj/ga3AIaEMMnVJ6Vy77Y
- 3lZwUT4Jyct45UidUzReFWxRuEK1bPG8KPLQFgW0DVFiUrpwnDXgMC8RVmfGXiayPCvP207za
- 9h8Sg0zuoV31Q0OExZowVya5VkPjUtycc3LZhy1ffDr063qLTWbs+vl303X7kp4WXLObHJiBb
- 0BHqr1CpOk4FzZ0wugZA8Sr0d+fhImCkKJdgCF5hAowQ6+5qYkdsPgcMkZstc5dMLqueDFxPo
- PbJbNsBTR2qx9Q3l1juYyLjmSUM6NUt7egHA8pCeXJgrTw6oj4fYvf6PxAwka9nM5abJLnyKj
- GC/31LnULDjzoxnG54Tb5+2mgTQ3LpSGkQagluqnEAd97xlHy9D5XvrCsI7472WNmsYVyPKgo
- j7VSiYucRTHh+I6P8ZLXcDUbtHh+cWxZfjJI4TqK6mQd6ZLp3XK3sfjGPdTvQvHKPewAFsLLY
- T8Z5BaEpjVotm28KBzQiJiafZPu0aKeovooPLvXGLoVEmHwWYFMveoQlO4kNTnys2Ic8pCkTz
- ZCiIKeHxJuIJ5lJInIR17MIZEi9fvD33nEu3Xr4LdPjEQoo8BOzKmf4fQl4kqKqL9dZ5YHnCo
- NQa3JI5HDo6nVQYVERDNztEPeepmUAVNzvjJR0hexOqDPkz3hnhUPvuhw32X+hfd4rW55ve5V
- xDZi3hH4ox11Pmk7pZZuQkuafBdQHV38QO61S78JkZO87e81C60Y1x3Ggn+NiHz+uTfNge1ee
- C2TMODGdR6FcCh/GVc/blBZKkJGVMSGpCtgy1yykusolT2qfPpt5+1Nh3Syq+jBynD4GBNdin
- G6sfxteWt+5GmTNAUSQVsQouS+8YOeWO6HyWszW1Q=
-X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
+In-Reply-To: <CAAd0S9BT1y2F7tEXp720u4xx_3Xry0uZnyvaOExH-85X7ctyjg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_130138_706052_D5AAC525 
-X-CRM114-Status: GOOD (  12.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191216_132549_277869_AE76357D 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: fix port setup for Ubiquiti
- EdgeRouter X (and SFP)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bobafetthotmail[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build
+ variant for small RAM devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,106 +105,78 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============5614359210763177078=="
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============5614359210763177078==
-Content-Language: de
-Content-Type: multipart/signed;
-	boundary="=-=yEAmQrEw3y7hi2=-=";
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256
-
-This is a multipart message in MIME format.
-
---=-=yEAmQrEw3y7hi2=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hallo Matthias,
-
-> Having a WAN port by default is extremely useful (and necessary for easy=
-=20
-> automatic configuration by OpenWrt-based frameworks like Gluon without=20
-> having to special-case many devices).=20
-> I would prefer if we could always make one port WAN as long as we have at=
-=20
-> least two independently configurable ports, regardless of labeling - at=20
-> least that was my policy for creating new hardware support in the past.=20
-> Regards,=20
-> Matthias=20
-
-while I understand your reasoning, I look at this from a different angle:
-On a device with five equivalent ports, I would expect those to be still eq=
-uivalent in OpenWrt. Having an arbitrary port chosen to be a WAN port is ra=
-ther confusing in that situation; users may only realize that if they reall=
-y look into the configuration in the first place. Consequently, I would han=
-dle this the opposite way: For the uneducated user downloading the prebuild=
- image, I would provide the setup which is supposed to be "expected". Exper=
-ienced users and downstream developers (as I am myself) would then be able =
-to change configuration to their particular demands. Though one could argue=
- that the uneducated user would also be troubled to set up a WAN port if he=
- wanted it, this is already assuming a certain use case which I would not d=
-o for the default settings (where I would plead that the user expects what =
-the device is built for).
-To make it even worse, having the predefined wan port for this device in pa=
-rticular will mess up the port order in luci, where ports are ordered "1 2 =
-3 4 0" because 0 is wan. On the device, ports are 0 1 2 3 4 ...
-
-Note that this is not just my personal opinion: I actually was made aware o=
-f the situation with the EdgeRouter by a user who reported the situation, c=
-omplaining about having to configure away the WAN port for this device and =
-being annoyed by the luci issue.
-
-So, I'd still prefer to have this device switched to lan-only.
-
-Best
-
-Adrian
-
---=-=yEAmQrEw3y7hi2=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl338KcACgkQoNyKO7qx
-AnCjvBAApsbvL8dmlRRYyMoIFcyY0vHgripZuuD/Ako0uNMiAt5iyOc1vi1dDwhX
-KtXk9urBxBLaF/br8OItwvPsMvLVWQdpZLmWi5IB4bPfAtVeS9CrYhr241dGs+nN
-SldcHEbifW4RjK6iEKNGus2rGMUnR6HInGIpzPz4qWu/AVKBPzett3f1JAnlXOyH
-yXHW1nv2xu2ln58U570IC0NPzVQtWCdFOGfgb3PsxPDcXhvc3qYl9XLhjGAyaRT9
-I8sUT1Y/s9JIMTCwCf9B4pJbGZGckjAbivQZzPX2MLrxd9tjK+Ax6uU92Q5FCZk1
-3a0O46XPzzXohHzYBuKBTMsbt9cnCArBD0V6PwxbT3DA972NXQDYUnSDRrIEzm+E
-r37zXA9YNwerdA6y9Uhig4QR5j5/QayEG2UdLhhM3JdWiM/OxT1Nlektcn3NM0MG
-KSXL+9ozI468er+FVkNSY+cEcl45y2uzzJgCmn+DKrWTEcGT3PetZJO8h5rcBpZx
-wTUjo4GVaEReSzhXKxfUsnizUxwh/DaWw3Y+mI4A/jjgpivRwDrc97+U6xHl3qm/
-HSzHpqR7WfihX40y7r4jcQEOb5xQ+5tI7EMBpr7CzVWEJPbUKT/vpymOffClICC2
-yRSOQ/jh2GB25wBoEZ9FraSi5QBLDSoURQC+4RnZqjXOo1xRMmA=
-=D0Tj
------END PGP SIGNATURE-----
 
 
---=-=yEAmQrEw3y7hi2=-=--
+On 16/12/19 21:04, Christian Lamparter wrote:
+> Hello,
+> 
+> On Mon, Dec 16, 2019 at 12:27 PM Alberto Bursi
+> <bobafetthotmail@gmail.com> wrote:
+>>
+>>
+>> On 15/12/19 14:09, Christian Lamparter wrote:
+>>>
+>>> But it seems that Ben had a change of heart in this regard. I don't know the
+>>> details or why, But it makes sense because it would enable his company to save
+>>> some money for the systems his company sells:
+>>>    <https://www.candelatech.com/lf_systems.php> so there is some value
+>>> in supporting these devices, especially if someone else does all the work
+>>> for it.
+>>
+>> These are wifi/network testing equipment, not network devices.
+>>
+>> Also I don't see the value in "saving some money" by using a bit less RAM
+>>
+>> when the cheaper system is sold for 3k, and most stuff is above 10k.
+>>
+>> You could use standard whitebox x86 stuff at that price point.
+> 
+> I'm glad this is getting some attention and others are chiming in. But
+> let me tell
+> you first, that I'm not an opponent of the "American way", I'm trying
+> to make sense
+> of it though and also what would happen to the ath10k GPIO patches that got
+> quietly dropped from your reply there...
+I was just commenting about the fact that they clearly don't care about 
+RAM consumption for their own hardware, I found it strange that you 
+pulled that up as a "potential way to save money".
 
+Saving 10-20$ (RAM prices) on a low-volume high-price item costing 
+thousands of dollars is mostly irrelevant.
 
+> 
+> As for the "These are wifi/network testing equipment, not network devices."
+> True and If you are interested you can buy cheaper devices like
+> <https://www.candelatech.com/ct314_product.php> from the company as well:
+> 
 
---===============5614359210763177078==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+When I said "expensive devices" I was talking of their devices that 
+could mount a ath10k-supported card. A Raspi really does not.
+
+> 
+> I know these have not much to do with the issue at hand ("low-memory system"
+> support in ath10k(-ct) with OpenWrt). But as Ben explained in the follow-up that
+> he has a keen interest for supporting the ath10k-ct driver+firmware
+> and he's doing
+> a great job with the ath10k-ct issue tracker.
+> 
+
+I fully agree with merging and possibly upstreaming the current patches 
+about a build option to reduce buffer sizes so that this thing does not 
+OOM on devices that OpenWrt supports.
+
+My remarks about RAM usage being irrelevant was specifc to their own 
+usecase in their "expensive test equipment".
+
+-Alberto
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5614359210763177078==--
-
-

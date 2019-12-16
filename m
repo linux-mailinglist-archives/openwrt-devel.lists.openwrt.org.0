@@ -2,87 +2,98 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4307A121A7E
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Dec 2019 21:05:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70764121AD8
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Dec 2019 21:25:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BuTfGH46x1gyqs4joxoZaBUiItW512oSzl04B1Fh2MY=; b=gx5cHkZt8sf3TE
-	hDm9rrdIGzZGpwEjld/m9p5dpwkUR3gnxJmlNXKSbS0RmlogORkzQ7R6sa8bB6grOooBD8vX+TYJ3
-	DLw9Zxgy5WJwB4rRkd9pEtv+vIaX3yhUydk78sIrRfPxIEAzKMf9z5P8BqLcNn5SeV4eyTUY25nuj
-	84oVonwdIANvAjUJ0C+nTmS7IU7B0kINl2cl4peoKKl2bClWlw6YV9e3bcQ+H10/phw5rwQQHfUFf
-	CgE5kN1/gQv2OkZ90zk08MEix6uGhpavFIeDitc2WQofOdmYfabmbMPY9oTCtgSfec0GDdldzHpYA
-	EtHlY8vk4OMaCBZ6X6lA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=R3SUEjhytivf+qfZT02W6FrE4Y52piVS8PQAcl8zmUk=; b=OZ0nUU2Og85Aivkaui0lP+zOu
+	xuuTapT19zyuSGkzbEzUBiTbfp7uTXrTa9JSiSv7oJ5f/JjQ+x9P8ikUukFDbEKSsmIivQluwPR4p
+	8iz7UJMPQxsnrShwaGnjlJC0kVgCCQxD9Eso+F1uCR7eqk2A8xyzgViW03qTclQ2THqsP6El/rNje
+	fGvqawtsYNQxNOaOGg+5VUhtK0LVc4R4wad5fNoIsx/OeExu9OUfeZo3mcWUzrWF4Scs9UziREuim
+	snnsIlXZtIJchujiV9UIHkCsMB0Rhr5K6UVxHS16OBOah5V66rgSE4l9NNrHzRLg+mzxEoAmyhhn8
+	HxBOD/w7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igwcF-00040l-Lz; Mon, 16 Dec 2019 20:05:15 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1igwvo-0005Ax-66; Mon, 16 Dec 2019 20:25:28 +0000
+Received: from orthanc.universe-factory.net ([2001:19f0:6c01:100::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igwc0-0003t8-1o
- for openwrt-devel@lists.openwrt.org; Mon, 16 Dec 2019 20:05:01 +0000
-Received: by mail-oi1-x243.google.com with SMTP id b8so4326829oiy.5
- for <openwrt-devel@lists.openwrt.org>; Mon, 16 Dec 2019 12:04:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5SGUDQ8y2uyVOHswrQfnkm8uSIKBeCLVN/loDS3044s=;
- b=uGmKrkABXStVFuZ0CnCMl2sifC41KEVbEXgFqnnuriF38oFGmgKtjabGR7Xfd6zVDw
- hgNFbl1WVwp5VPS9A9Ka3N81LrMJ4Xkf0nCML2i9DQsvY+6RdulcUIVt8FEZrCqzeHUr
- +x3bcAe7LIz8amVhuL1iJoP8bM/Ockw9dtGGBMNzr+50bGco1SjJuRS8AIBAQkesTBU5
- DT14dRsU+u6qB9DvGjyCE4CLwlIaTAeH0R8FeX6lw1dqQZiYcO3tOCiiywV6llSaBvbv
- x9m3qyTpIuKXLGjc97Hgdl4iHDp4sFA7biU2IC9qUp40g3YWvaDi0L0Z4SfBIt08jFTz
- DQvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5SGUDQ8y2uyVOHswrQfnkm8uSIKBeCLVN/loDS3044s=;
- b=Zdt5qbZ92gZR+ALnH3sgWxZ9E+YseZHNiORud/+th9QxThTCjc1wa3CSwhcviWBkwu
- 41fS5fMmTPWOHD+LTagN7Y1exwtpqBktuOwSCva3oLVMLsFwbKmA/uzDMBUIXtQp2/5b
- 21cqvPyr25kdZMfUSiIlqwXFu5j3D8RjuRowCZ8wwVHbSkOD+CCefmcvNUmSdmXD6Vd5
- CqB3tiPg7efg0Fqild/wXxFLx4ENI60Cp3gUja48AMqKiWYWG4F/Ay07s9hT3LKhpLPQ
- xD+ltG8Vkh36/tECipLsWC/albj55VWMGZwJIL93n0T9Z5AuVTzfPuRaOzpFW57/wghV
- joqQ==
-X-Gm-Message-State: APjAAAXnh+0Zbf6FCFc/d6XA8/XEbDHSCQCp6/X0zR4UYFHTFEGSyuYb
- NTIHwKwlQktYYvPpiJ1x0UKWMFLuOveoz0GE4i4=
-X-Google-Smtp-Source: APXvYqyWMrqQS/3xOx4JnWpIFOn4nw4iUjqok/XySrzUUDKCLUM8HL2wIxx1L2mxFs/9cFkBofU42Ewxs0bf8eV5OHY=
-X-Received: by 2002:aca:1b08:: with SMTP id b8mr491051oib.106.1576526697695;
- Mon, 16 Dec 2019 12:04:57 -0800 (PST)
+ id 1igwvg-0005AP-3M
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Dec 2019 20:25:21 +0000
+Received: from [IPv6:2001:19f0:6c01:100::2] (unknown
+ [IPv6:2001:19f0:6c01:100::2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by orthanc.universe-factory.net (Postfix) with ESMTPSA id AA64C25213;
+ Mon, 16 Dec 2019 21:25:14 +0100 (CET)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+References: <20191216123110.22741-1-freifunk@adrianschmutzler.de>
+From: Matthias Schiffer <mschiffer@universe-factory.net>
+Autocrypt: addr=mschiffer@universe-factory.net; prefer-encrypt=mutual; keydata=
+ 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
+ mNagDQm6idBibmeHejD0zFE=
+Message-ID: <b3565dbd-88aa-2346-3f7c-7db8183af98b@universe-factory.net>
+Date: Mon, 16 Dec 2019 21:25:13 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
- <5675304.dXXkMWVoIb@debian64> <20191215120114.GD11070@home.paul.comp>
- <4186246.Rc2P9gcx8s@debian64> <a8f56a23-108f-3f76-2ea3-a904726ed224@gmail.com>
-In-Reply-To: <a8f56a23-108f-3f76-2ea3-a904726ed224@gmail.com>
-From: Christian Lamparter <chunkeey@gmail.com>
-Date: Mon, 16 Dec 2019 21:04:44 +0100
-Message-ID: <CAAd0S9BT1y2F7tEXp720u4xx_3Xry0uZnyvaOExH-85X7ctyjg@mail.gmail.com>
-To: Alberto Bursi <bobafetthotmail@gmail.com>
+In-Reply-To: <20191216123110.22741-1-freifunk@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_120500_114556_332D61D1 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_122520_453411_203CF495 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (chunkeey[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build
- variant for small RAM devices
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: fix port setup for Ubiquiti
+ EdgeRouter X (and SFP)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,64 +105,157 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: openwrt-devel@lists.openwrt.org
+Content-Type: multipart/mixed; boundary="===============3670834188574528679=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3670834188574528679==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="r0nydQz1qVKuRnSqIhnSItZIS2sShDhFS"
 
-On Mon, Dec 16, 2019 at 12:27 PM Alberto Bursi
-<bobafetthotmail@gmail.com> wrote:
->
->
-> On 15/12/19 14:09, Christian Lamparter wrote:
-> >
-> > But it seems that Ben had a change of heart in this regard. I don't know the
-> > details or why, But it makes sense because it would enable his company to save
-> > some money for the systems his company sells:
-> >   <https://www.candelatech.com/lf_systems.php> so there is some value
-> > in supporting these devices, especially if someone else does all the work
-> > for it.
->
-> These are wifi/network testing equipment, not network devices.
->
-> Also I don't see the value in "saving some money" by using a bit less RAM
->
-> when the cheaper system is sold for 3k, and most stuff is above 10k.
->
-> You could use standard whitebox x86 stuff at that price point.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--r0nydQz1qVKuRnSqIhnSItZIS2sShDhFS
+Content-Type: multipart/mixed; boundary="VvDbhNw5CcJ76GDhLR6BuJyjkSgEnfGIs";
+ protected-headers="v1"
+From: Matthias Schiffer <mschiffer@universe-factory.net>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Cc: openwrt-devel@lists.openwrt.org
+Message-ID: <b3565dbd-88aa-2346-3f7c-7db8183af98b@universe-factory.net>
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: fix port setup for Ubiquiti
+ EdgeRouter X (and SFP)
+References: <20191216123110.22741-1-freifunk@adrianschmutzler.de>
+In-Reply-To: <20191216123110.22741-1-freifunk@adrianschmutzler.de>
 
-I'm glad this is getting some attention and others are chiming in. But
-let me tell
-you first, that I'm not an opponent of the "American way", I'm trying
-to make sense
-of it though and also what would happen to the ath10k GPIO patches that got
-quietly dropped from your reply there...
+--VvDbhNw5CcJ76GDhLR6BuJyjkSgEnfGIs
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US-large
+Content-Transfer-Encoding: quoted-printable
 
-As for the "These are wifi/network testing equipment, not network devices."
-True and If you are interested you can buy cheaper devices like
-<https://www.candelatech.com/ct314_product.php> from the company as well:
+On 12/16/19 1:31 PM, Adrian Schmutzler wrote:
+> The EdgeRouter only has LAN ports labelled eth0 to eth4 (plus
+> unsupported eth5 for SFP version). Thus, there is no reason to set
+> up one of them as WAN.
+>=20
+> This patch sets all ports to "lan" and removes the unused wan_mac.
+>=20
+> Actually, stock firmware on the EdgeRouter X assigns a specific MAC
+> address to each port:
+>=20
+> eth0    *:f4 (label)
+> eth1    *:f5
+> eth2    *:f6
+> eth3    *:f7
+> eth4    *:f8
+> switch0 *:f9
+>=20
+> (No data for SFP version)
+>=20
+> Only the label MAC is stored on flash in factory 0x22.
+>=20
+> OpenWrt currently sets &ethernet to this address, so all ports will
+> use that one in OpenWrt.
+>=20
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 
-"The CT314 is a low-power and affordable applicance with a single 10/100
-Ethernet port and one Broadcome 802.11b/g/n Wireless interface. It is targeted
-at users who wish to have an inexpensive appliance that can be left at remote
-sites for network monitoring and lower speed testing. The maximum throughput
-is about 90Mbps bi-directional wired. Wireless throughput is steady at 38Mbps
-and can peak at 48Mpbs. The CT314 is based on the Raspberry PI B version 3
-platform, running the Ubuntu Server OS. [...]".
+Having a WAN port by default is extremely useful (and necessary for easy
+automatic configuration by OpenWrt-based frameworks like Gluon without
+having to special-case many devices).
 
-I know these have not much to do with the issue at hand ("low-memory system"
-support in ath10k(-ct) with OpenWrt). But as Ben explained in the follow-up that
-he has a keen interest for supporting the ath10k-ct driver+firmware
-and he's doing
-a great job with the ath10k-ct issue tracker.
+I would prefer if we could always make one port WAN as long as we have at=
 
-Cheers,
-Christian
+least two independently configurable ports, regardless of labeling - at
+least that was my policy for creating new hardware support in the past.
+
+Regards,
+Matthias
+
+
+> ---
+>  .../ramips/mt7621/base-files/etc/board.d/02_network   | 11 +++++------=
+
+>  1 file changed, 5 insertions(+), 6 deletions(-)
+>=20
+> diff --git a/target/linux/ramips/mt7621/base-files/etc/board.d/02_netwo=
+rk b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> index 5c6b5659cb..6dfe24e296 100755
+> --- a/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> +++ b/target/linux/ramips/mt7621/base-files/etc/board.d/02_network
+> @@ -62,8 +62,6 @@ ramips_setup_interfaces()
+>  	asus,rt-ac85p|\
+>  	iptime,a6ns-m|\
+>  	mikrotik,rb750gr3|\
+> -	ubiquiti,edgerouterx|\
+> -	ubiquiti,edgerouterx-sfp|\
+>  	youhua,wr1200js)
+>  		ucidef_add_switch "switch0" \
+>  			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
+> @@ -124,6 +122,11 @@ ramips_setup_interfaces()
+>  		ucidef_add_switch "switch0" \
+>  			"0:lan" "6@eth0"
+>  		;;
+> +	ubiquiti,edgerouterx|\
+> +	ubiquiti,edgerouterx-sfp)
+> +		ucidef_add_switch "switch0" \
+> +			"0:lan" "1:lan" "2:lan" "3:lan" "4:lan" "6@eth0"
+> +		;;
+>  	xiaomi,mir3g)
+>  		ucidef_add_switch "switch0" \
+>  			"2:lan:2" "3:lan:1" "1:wan" "6t@eth0"
+> @@ -246,10 +249,6 @@ ramips_setup_macs()
+>  	telco-electronics,x1)
+>  		wan_mac=3D$(macaddr_add "$(mtd_get_mac_binary factory 0xe006)" 1)
+>  		;;
+> -	ubiquiti,edgerouterx|\
+> -	ubiquiti,edgerouterx-sfp)
+> -		wan_mac=3D$(macaddr_add "$(mtd_get_mac_binary factory 0x22)" 1)
+> -		;;
+>  	wevo,11acnas|\
+>  	wevo,w2914ns-v2|\
+>  	zio,freezio)
+>=20
+
+
+
+--VvDbhNw5CcJ76GDhLR6BuJyjkSgEnfGIs--
+
+--r0nydQz1qVKuRnSqIhnSItZIS2sShDhFS
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEZmTnvaa2aYgexS51Fu8/ZMsgHZwFAl336CkACgkQFu8/ZMsg
+HZxMUQ/9HUwtC5jF2+nyaGMu13gOup8GBPNF/8vQR9pzvR6dW3pKE6wGwb6wNLFu
+HoqfvblmkPLqjzEwCN/3iuIbvB2eOYeiVyeeRPWCwX+s5AeZCe/vIZMDCa26P+WU
+J27Oqp2tQSbD8pTeQ9w5Itx7ujwaVnyWPoIAWPvL4qGzVH2heKOPHJX6i9ZoZHQE
+FmPeR82MTpEnqmYjRBQmYwKO04dUjMvGfShTs9q77NaTnLsSpncuasT61yzIHNN9
+aPlMWedIRj9yKT+MBfrDdCumc2aZSJgVLQf8th4uflFlkF1VrAa8FCWosnNhoIbz
+6uOuCUQP5vK5BeVxyC5NfIF+DewkNng11kLa/PKAeDf9Xln9Uyv4r5lflRq1lZdp
+c5y5ZAMXHlVZMqx0hEXid67n7+YWVkiiHBj9Z5gevighvsRYY85Rf3+idg1GibE3
+X2QLBMjSRuQrVyljEG5n5bqKTtZj682yPQ8JRJyjDVzKWawCmfpB3j9wruPpdyD/
+sf3dBNcJlm/8XyCMVyTp47QPRRZ9O0LLu7rA97oYscJAuUkDKCFS7ZJ+1A4PGumk
+36xvhR60og/eC0Hm08rFh7e5V+IRiE6YXCmOCJnx6WbSu/y1FfkhxnmZnNNeuThC
+oWKm/rAt04dkgh7H8pgWJt6MWdqJSDfVea7aGiN+MOJg4UG2GcE=
+=LoLo
+-----END PGP SIGNATURE-----
+
+--r0nydQz1qVKuRnSqIhnSItZIS2sShDhFS--
+
+
+--===============3670834188574528679==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3670834188574528679==--
+

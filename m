@@ -2,97 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32391203DB
-	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Dec 2019 12:27:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 585AB1205C7
+	for <lists+openwrt-devel@lfdr.de>; Mon, 16 Dec 2019 13:31:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kzorXH5l8iAG4Y5cTQHAN6kqn7iYx8Vl7vmaPG7IdKE=; b=ZOS3T/0lDP0PrmC3n5zA5ahu7
-	LDN7v9zblilH7egn94KkFXFamyc9kfOHUreHDFOLh0dbYgrt3Z5Wzh8WYP2v11G3hbu3QEDQKK8w9
-	k8PtWQ7SpdIIZSiMy6IRRwCeUC0DE4zyFtzGOWHNoNZH6TAGJtl1MATjY7HttGL/AWE0grijV60lU
-	VtFSaLe99nd8tvWZ5f/YMUaF4KnuBml95JT73JyyLaYEidupXFKWWojZg1Js01dw9A9z9zjU0+oaS
-	uAexu+Hp3Thn+bWl5GryqLOmW22F1NuS3lLpZj07UvTpCxR/kH+tru+sdV+Yx/CDVZeQuUOwA7yp7
-	kcgljmWug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fjrh3VXWwl32iUhgeEF/giS77lrArAngn5fqrBlgYVo=; b=cMR90z7fp3d7mv
+	pJXWN+mtu7LFmp4JLjJ9lQthyIVtIwUzRzs2gm7f3KaBJG3nZccxtMGrMBPHeAPlfiqjf2t30GPmP
+	AvX6l0iufUiAgkJissjv1/zx2RQ78A7QOcon/BAAxbmyenP/rAjpDN0DWAVPdOHvXVwb1TPVnTLAl
+	KYVKOrqRPjfxyC0wTZyYLO9ZsitMyDHzO/m7FX3yVaaCn307KxWnG0WbEL47Jd9cZ6IgIQNh2EaaT
+	Ss62lU+QHEWWvfLvPP58vpdwpkmBB93QiEdC/DTW4KqdHbYSZStytrdBNkOOQm/3KuUDusoPZAjUB
+	gD5/om57ZZFJ0QM5xtgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoWv-0001ra-EQ; Mon, 16 Dec 2019 11:27:13 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1igpWm-0000dZ-Op; Mon, 16 Dec 2019 12:31:08 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoWo-0001rB-RG
- for openwrt-devel@lists.openwrt.org; Mon, 16 Dec 2019 11:27:08 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g17so6803616wro.2
- for <openwrt-devel@lists.openwrt.org>; Mon, 16 Dec 2019 03:27:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=BtMO/sGJzKRbjfkIe0booNVK9M8tU5DPIv+pk+s61Yw=;
- b=Yj8Mj7xNjE68mQIGAUBSZXYb7m1//cmLFiHxwoLNN955lZ/YyCLc0mzyiavsljvk0M
- 0v+5rNuu0tHDZXUBfEtLi1OtHAfYIHyL00+HUBKrm+j8otNRBMIUKH4VZjqsz6sug9+7
- HucQ6d9zTGEdSbrnMbJ002H7TyG+rVluVdXTgpItGDSoXCQt8OcDZ2YaLXcbCRiOIjSQ
- a5DdPSuYRFIDb0Rfk/tsAhfhgf5nCom1Zl54UrtAwfNE2w+vnRb4PM7Qpy4EWv/ywDbJ
- 8HlZ1pELMiwSPoZiWmZ7dRz0lXFasjYbvNNtWQDYtWRnsmsYgJGUQkmHdGaPnlyeOTun
- IGHQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=BtMO/sGJzKRbjfkIe0booNVK9M8tU5DPIv+pk+s61Yw=;
- b=UF+p/Jft49uDflnD1QdaUdrvzo5MqEvUQN9bJszMHJi9DVay1WObtwJEytaIIxtOLe
- l1Gf6Opv6eYr96BRurN6KFYUxaaw1A6LnfukBKs6Qv5kruPPd1oturUfsyxnn/sOUEll
- rmqh4Wja0FZNPEvV9xedOcQAePvIIhzGFF8DJ2x6wFahJSS91dpbFZTpIPM0ka+NE1Uq
- u5PEdKWyYFGjsy9pzCSq8LXa4B2NEp6swEbWfZzMRx/0+T9H2cKCdyoD9tYhVSdJXD0R
- YPIeB6SWzprluTshY4/49CKtHVs/hjnqr2ntR14IrzmJ8+m6V7U/NfIHlp1W+mM6hC1d
- AjAw==
-X-Gm-Message-State: APjAAAXpSAGjEXRUp4LGcPIyYmARtaqbin7YV2hCwI0Wob6zTJ2k2nZt
- YXzRnGQrMjfxNWP84sn1Pv0ILLtgl3LNVQ==
-X-Google-Smtp-Source: APXvYqzGP4HNw+tos+7gQnxeKP6j4nj5sSM6Cbysrx2r94rboAIjV+O2MdfyaEt+y5u0DCzvkpTICw==
-X-Received: by 2002:adf:ee88:: with SMTP id b8mr31069945wro.249.1576495624841; 
- Mon, 16 Dec 2019 03:27:04 -0800 (PST)
-Received: from [192.168.111.145] ([151.84.207.109])
- by smtp.gmail.com with ESMTPSA id k16sm22308134wru.0.2019.12.16.03.27.04
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 16 Dec 2019 03:27:04 -0800 (PST)
+ id 1igpWA-000092-6g
+ for openwrt-devel@lists.openwrt.org; Mon, 16 Dec 2019 12:30:34 +0000
+Received: from buildfff.adridolf.com ([188.193.231.72]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1Mzy6q-1hk2bP1GJ4-00x1eX for <openwrt-devel@lists.openwrt.org>; Mon, 16
+ Dec 2019 13:30:25 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-References: <4c10fab6-2a90-ea0b-8176-314638e1cb06@hauke-m.de>
- <5675304.dXXkMWVoIb@debian64> <20191215120114.GD11070@home.paul.comp>
- <4186246.Rc2P9gcx8s@debian64>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <a8f56a23-108f-3f76-2ea3-a904726ed224@gmail.com>
-Date: Mon, 16 Dec 2019 12:26:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+Date: Mon, 16 Dec 2019 13:28:13 +0100
+Message-Id: <20191216122817.22628-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <4186246.Rc2P9gcx8s@debian64>
-Content-Language: en-US
+X-Provags-ID: V03:K1:nJqg1YpQSDNdlUt4M6nUbUoKJCyLsgjtLvilRcgMd/0dWVHy/BL
+ dT4TOisPyj363SGAkhwU+idX2DgGkyL7QKmQd3wuiCkxaDTcxuW3QhHP2+zl98hUfLjIH2j
+ dPmPajjiy7oZTz3ZfWXQVrQuDEHENbrV6Ck6YToCXgthURqP8So7o5vHmoo3DmLTbrfyOs0
+ mZ0gA3nV4EYtQhWprFpyw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:isFCuJpYbK0=:Xpm4X5/8Dv8ynIF3cI4msZ
+ i9Lv3mZYrF/uvNCpmdp4cufsO769oLWlQf9anWYHQMPJWFK4qkwGOGHv+hV1aXvzlNUl9oaAu
+ LEViYwmdziKJ7jig16ij93NNpD2+nBcRdPImGd+kkqEI2P7/pHf6vuDC6hhIPkWaACg5iGtK6
+ nPtIcJ9Hqmya/yF//y6ie2CZYmDC/ic/0NSGNRa0kRiPf5uUg8Z3OOMiOtW0E62u2WoyGmDmW
+ wuAerAfjH/qrCXM0mXSTU4DHZaUujjJPEN7fVNgEHKswTe+X91jyQoxPu4VqptTXpvkilg28o
+ +5fJ5aAwO1yv0dBKvbppZvu+0MYGKWC5uuFnRhHADm6M4NorUa3n4vtmtqvVFWZp9Itaw/hHw
+ eSNRZIOiFWdvLIenQje66N1Aq4BiuOUWrR5kTKPkXcFOf4Cxjc7vNRvJl5iLgTuL3Xr4G9GMA
+ 12bf41k3h24IVcSM9ZFIDbW/fMNxhowI6D/x4nILbw4U6wwy21gSZU/8iTqrFBKfftNXDqmHO
+ vf4FscQEZgCxAyRi5RSTaOZG+LFccFnqKge4k0RcoQap8vM5Ft6Kxz+2HW2h7dKB0I9Qy4dkW
+ vq7HSAMfxJS0tTptmiV/WX5Ye0pg15JbX7Z/B/8PYA8UXztKD+05QK63c2oS8mTYCwTJkRq/6
+ hyDOtcYphWO3sSaukVHtVjVcoFYAcU7smdIQXb2Uogj2n3exzXR9yoqYf6gjkQa5901jOYKZD
+ oo/edJ3aUctnvyIUkxnd7rTpa+ti064Htc8ZeoUKwYFCxNeecfH7SALyMO+O597xdbTd44Tz+
+ 7fvt3TMMMqStQbqmWeDN3J9ppqp/QA4uRSsyTcVfZ+perfjmnQs1LD8ZI6dLBIMmU1VCPUtWN
+ EkN3Kg6+DM4Bob3fvfnoXEZwKMFY0vjfriiGInc3c=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_032706_886672_5A7E48FB 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_043030_556040_A6E423DC 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bobafetthotmail[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH] kernel: ath10k-ct: provide a build
- variant for small RAM devices
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] [PATCH 0/4] lantiq: use soc_vendor_device scheme on
+ DTS file
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,30 +78,218 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+** Please run-test **
 
-On 15/12/19 14:09, Christian Lamparter wrote:
->
-> But it seems that Ben had a change of heart in this regard. I don't know the
-> details or why, But it makes sense because it would enable his company to save
-> some money for the systems his company sells:
->   <https://www.candelatech.com/lf_systems.php> so there is some value
-> in supporting these devices, especially if someone else does all the work
-> for it.
+This renames lantiq DTS(I) files to follow soc_vendor_device scheme.
 
-These are wifi/network testing equipment, not network devices.
+The same patchset is available for easy build at:
+https://git.openwrt.org/?p=openwrt/staging/adrian.git;a=shortlog;h=refs/heads/lantiq
 
-Also I don't see the value in "saving some money" by using a bit less RAM
+It is based on the DTS changes proposed in
+https://github.com/openwrt/openwrt/pull/2216
+(this patchset is based on them, but they are not included in the set;
+they are added in the referenced staging tree, though)
 
-when the cheaper system is sold for 3k, and most stuff is above 10k.
+The state in my tree is build-tested on all subtargets, but should be
+run-tested at least on 1-3 selected devices.
 
-You could use standard whitebox x86 stuff at that price point.
+If Acked, I will change the ATH_SOC, MTK_SOC and SUNXI_SOC variables to
+SOC as well when applying this patchset.
 
--Alberto
+Adrian Schmutzler (4):
+  lantiq: split device definitions into files
+  build: image: add SOC device variable
+  lantiq: use soc_vendor_device scheme on DTS file
+  lantiq: remove ar9_lantiq_easy50810.dts
+
+ include/image.mk                              |   3 +-
+ .../files/arch/mips/boot/dts/EASY50810.dts    |  73 --
+ .../mips/boot/dts/{ => lantiq}/amazonse.dtsi  |   0
+ .../amazonse_allnet_all0333cj.dts}            |   0
+ .../amazonse_netgear_dgn1000b.dts}            |   0
+ .../arch/mips/boot/dts/{ => lantiq}/ar9.dtsi  |   0
+ .../ar9_avm_fritz7312.dts}                    |   0
+ .../ar9_avm_fritz7320.dts}                    |   0
+ .../ar9_bt_homehub-v3a.dts}                   |   0
+ .../ar9_buffalo_wbmr-hp-g300h.dts}            |   0
+ .../ar9_netgear_dgn3500.dts}                  |   2 +-
+ .../ar9_netgear_dgn3500.dtsi}                 |   0
+ .../ar9_netgear_dgn3500b.dts}                 |   2 +-
+ .../{H201L.dts => lantiq/ar9_zte_h201l.dts}   |   0
+ .../ar9_zyxel_p-2601hn.dts}                   |   0
+ .../mips/boot/dts/{ => lantiq}/danube.dtsi    |   0
+ .../danube_arcadyan_arv4510pw.dts}            |   0
+ .../danube_arcadyan_arv4518pwr01.dts}         |   2 +-
+ .../danube_arcadyan_arv4518pwr01.dtsi}        |   0
+ .../danube_arcadyan_arv4518pwr01a.dts}        |   2 +-
+ .../danube_arcadyan_arv4519pw.dts}            |   0
+ .../danube_arcadyan_arv4520pw.dts}            |   0
+ .../danube_arcadyan_arv4525pw.dts}            |   0
+ .../danube_arcadyan_arv452cqw.dts}            |   0
+ .../danube_arcadyan_arv7506pw11.dts}          |   0
+ .../danube_arcadyan_arv7510pw22.dts}          |   0
+ .../danube_arcadyan_arv7518pw.dts}            |   0
+ .../danube_arcadyan_arv7519pw.dts}            |   0
+ .../danube_arcadyan_arv7525pw.dts}            |   0
+ .../danube_arcadyan_arv752dpw.dts}            |   0
+ .../danube_arcadyan_arv752dpw22.dts}          |   0
+ .../danube_arcadyan_arv8539pw22.dts}          |   0
+ .../danube_audiocodes_mp-252.dts}             |   0
+ .../danube_bt_homehub-v2b.dts}                |   0
+ .../danube_lantiq_easy50712.dts}              |   0
+ .../danube_siemens_gigaset-sx76x.dts}         |   0
+ .../mips/boot/dts/{ => lantiq}/falcon.dtsi    |   0
+ .../falcon_lantiq_easy88388.dts}              |   2 +-
+ .../falcon_lantiq_easy88444.dts}              |   2 +-
+ .../falcon_lantiq_easy98000-nand.dts}         |   2 +-
+ .../falcon_lantiq_easy98000-nor.dts}          |   2 +-
+ .../falcon_lantiq_easy98000-sflash.dts}       |   4 +-
+ .../falcon_lantiq_easy98000.dtsi}             |   0
+ .../falcon_lantiq_easy98020-v18.dts}          |   2 +-
+ .../falcon_lantiq_easy98020.dts}              |   2 +-
+ .../falcon_lantiq_easy98021.dts}              |   2 +-
+ .../falcon_lantiq_easy98035synce.dts}         |   2 +-
+ .../falcon_lantiq_easy98035synce1588.dts}     |   2 +-
+ .../falcon_lantiq_falcon-mdu.dts}             |   2 +-
+ .../falcon_lantiq_falcon-sfp.dts}             |   2 +-
+ .../falcon_sflash-16m.dtsi}                   |   0
+ .../arch/mips/boot/dts/{ => lantiq}/vr9.dtsi  |   0
+ .../vr9_alphanetworks_asl56026.dts}           |   0
+ .../vr9_arcadyan_arv7519rw22.dts}             |   0
+ .../vr9_arcadyan_vg3503j.dts}                 |   0
+ .../vr9_arcadyan_vgv7510kw22-brn.dts}         |   2 +-
+ .../vr9_arcadyan_vgv7510kw22-nor.dts}         |   2 +-
+ .../vr9_arcadyan_vgv7510kw22.dtsi}            |   0
+ .../vr9_arcadyan_vgv7519-brn.dts}             |   2 +-
+ .../vr9_arcadyan_vgv7519-nor.dts}             |   2 +-
+ .../vr9_arcadyan_vgv7519.dtsi}                |   0
+ .../vr9_avm_fritz3370-rev2-hynix.dts}         |   2 +-
+ .../vr9_avm_fritz3370-rev2-micron.dts}        |   2 +-
+ .../vr9_avm_fritz3370-rev2.dtsi}              |   0
+ .../vr9_avm_fritz7360sl.dts}                  |   2 +-
+ .../vr9_avm_fritz7362sl.dts}                  |   2 +-
+ .../vr9_avm_fritz736x.dtsi}                   |   0
+ .../vr9_avm_fritz7412.dts}                    |   0
+ .../vr9_bt_homehub-v5a.dts}                   |   0
+ .../vr9_buffalo_wbmr-300hpd.dts}              |   0
+ .../vr9_lantiq_easy80920-nand.dts}            |   2 +-
+ .../vr9_lantiq_easy80920-nor.dts}             |   2 +-
+ .../vr9_lantiq_easy80920.dtsi}                |   0
+ .../vr9_netgear_dm200.dts}                    |   0
+ .../vr9_tplink_tdw8970.dts}                   |   2 +-
+ .../vr9_tplink_tdw8980.dts}                   |   2 +-
+ .../vr9_tplink_tdw89x0.dtsi}                  |   0
+ .../vr9_tplink_vr200.dts}                     |   2 +-
+ .../vr9_tplink_vr200.dtsi}                    |   0
+ .../vr9_tplink_vr200v.dts}                    |   2 +-
+ .../vr9_zyxel_p-2812hnu-f1.dts}               |   2 +-
+ .../vr9_zyxel_p-2812hnu-f3.dts}               |   2 +-
+ .../vr9_zyxel_p-2812hnu-fx.dtsi}              |   0
+ target/linux/lantiq/image/Makefile            | 859 +-----------------
+ target/linux/lantiq/image/amazonse.mk         |  22 +
+ target/linux/lantiq/image/ar9.mk              | 165 ++++
+ target/linux/lantiq/image/danube.mk           | 219 +++++
+ target/linux/lantiq/image/falcon.mk           | 105 +++
+ target/linux/lantiq/image/tp-link.mk          |   5 +-
+ target/linux/lantiq/image/vr9.mk              | 244 +++++
+ target/linux/lantiq/image/xway_legacy.mk      |  77 ++
+ 91 files changed, 876 insertions(+), 962 deletions(-)
+ delete mode 100644 target/linux/lantiq/files/arch/mips/boot/dts/EASY50810.dts
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ => lantiq}/amazonse.dtsi (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ALL0333CJ.dts => lantiq/amazonse_allnet_all0333cj.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{DGN1000B.dts => lantiq/amazonse_netgear_dgn1000b.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ => lantiq}/ar9.dtsi (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ7312.dts => lantiq/ar9_avm_fritz7312.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ7320.dts => lantiq/ar9_avm_fritz7320.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{BTHOMEHUBV3A.dts => lantiq/ar9_bt_homehub-v3a.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{WBMR.dts => lantiq/ar9_buffalo_wbmr-hp-g300h.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{DGN3500.dts => lantiq/ar9_netgear_dgn3500.dts} (75%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{DGN3500.dtsi => lantiq/ar9_netgear_dgn3500.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{DGN3500B.dts => lantiq/ar9_netgear_dgn3500b.dts} (75%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{H201L.dts => lantiq/ar9_zte_h201l.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{P2601HNFX.dts => lantiq/ar9_zyxel_p-2601hn.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ => lantiq}/danube.dtsi (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4510PW.dts => lantiq/danube_arcadyan_arv4510pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4518PWR01.dts => lantiq/danube_arcadyan_arv4518pwr01.dts} (71%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4518PWR01.dtsi => lantiq/danube_arcadyan_arv4518pwr01.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4518PWR01A.dts => lantiq/danube_arcadyan_arv4518pwr01a.dts} (78%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4519PW.dts => lantiq/danube_arcadyan_arv4519pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4520PW.dts => lantiq/danube_arcadyan_arv4520pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV4525PW.dts => lantiq/danube_arcadyan_arv4525pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV452CQW.dts => lantiq/danube_arcadyan_arv452cqw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV7506PW11.dts => lantiq/danube_arcadyan_arv7506pw11.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV7510PW22.dts => lantiq/danube_arcadyan_arv7510pw22.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV7518PW.dts => lantiq/danube_arcadyan_arv7518pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV7519PW.dts => lantiq/danube_arcadyan_arv7519pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV7525PW.dts => lantiq/danube_arcadyan_arv7525pw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV752DPW.dts => lantiq/danube_arcadyan_arv752dpw.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV752DPW22.dts => lantiq/danube_arcadyan_arv752dpw22.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV8539PW22.dts => lantiq/danube_arcadyan_arv8539pw22.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ACMP252.dts => lantiq/danube_audiocodes_mp-252.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{BTHOMEHUBV2B.dts => lantiq/danube_bt_homehub-v2b.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY50712.dts => lantiq/danube_lantiq_easy50712.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{GIGASX76X.dts => lantiq/danube_siemens_gigaset-sx76x.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ => lantiq}/falcon.dtsi (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY88388.dts => lantiq/falcon_lantiq_easy88388.dts} (98%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY88444.dts => lantiq/falcon_lantiq_easy88444.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98000NAND.dts => lantiq/falcon_lantiq_easy98000-nand.dts} (93%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98000NOR.dts => lantiq/falcon_lantiq_easy98000-nor.dts} (93%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98000SFLASH.dts => lantiq/falcon_lantiq_easy98000-sflash.dts} (73%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98000-base.dtsi => lantiq/falcon_lantiq_easy98000.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98020V18.dts => lantiq/falcon_lantiq_easy98020-v18.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98020.dts => lantiq/falcon_lantiq_easy98020.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98021.dts => lantiq/falcon_lantiq_easy98021.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98035SYNCE.dts => lantiq/falcon_lantiq_easy98035synce.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY98035SYNCE1588.dts => lantiq/falcon_lantiq_easy98035synce1588.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FALCON-MDU.dts => lantiq/falcon_lantiq_falcon-mdu.dts} (96%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FALCON-SFP.dts => lantiq/falcon_lantiq_falcon-sfp.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{falcon-sflash-16M.dtsi => lantiq/falcon_sflash-16m.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ => lantiq}/vr9.dtsi (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ASL56026.dts => lantiq/vr9_alphanetworks_asl56026.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{ARV7519RW22.dts => lantiq/vr9_arcadyan_arv7519rw22.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VG3503J.dts => lantiq/vr9_arcadyan_vg3503j.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VGV7510KW22BRN.dts => lantiq/vr9_arcadyan_vgv7510kw22-brn.dts} (96%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VGV7510KW22NOR.dts => lantiq/vr9_arcadyan_vgv7510kw22-nor.dts} (92%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VGV7510KW22.dtsi => lantiq/vr9_arcadyan_vgv7510kw22.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VGV7519BRN.dts => lantiq/vr9_arcadyan_vgv7519-brn.dts} (96%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VGV7519NOR.dts => lantiq/vr9_arcadyan_vgv7519-nor.dts} (92%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VGV7519.dtsi => lantiq/vr9_arcadyan_vgv7519.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ3370-REV2-HYNIX.dts => lantiq/vr9_avm_fritz3370-rev2-hynix.dts} (94%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ3370-REV2-MICRON.dts => lantiq/vr9_avm_fritz3370-rev2-micron.dts} (94%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ3370-REV2.dtsi => lantiq/vr9_avm_fritz3370-rev2.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ7360SL.dts => lantiq/vr9_avm_fritz7360sl.dts} (97%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ7362SL.dts => lantiq/vr9_avm_fritz7362sl.dts} (98%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ736X.dtsi => lantiq/vr9_avm_fritz736x.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{FRITZ7412.dts => lantiq/vr9_avm_fritz7412.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{BTHOMEHUBV5A.dts => lantiq/vr9_bt_homehub-v5a.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{WBMR300.dts => lantiq/vr9_buffalo_wbmr-300hpd.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY80920NAND.dts => lantiq/vr9_lantiq_easy80920-nand.dts} (96%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY80920NOR.dts => lantiq/vr9_lantiq_easy80920-nor.dts} (94%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{EASY80920.dtsi => lantiq/vr9_lantiq_easy80920.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{DM200.dts => lantiq/vr9_netgear_dm200.dts} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{TDW8970.dts => lantiq/vr9_tplink_tdw8970.dts} (78%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{TDW8980.dts => lantiq/vr9_tplink_tdw8980.dts} (94%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{TDW89X0.dtsi => lantiq/vr9_tplink_tdw89x0.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VR200.dts => lantiq/vr9_tplink_vr200.dts} (98%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VR200.dtsi => lantiq/vr9_tplink_vr200.dtsi} (100%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{VR200v.dts => lantiq/vr9_tplink_vr200v.dts} (98%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{P2812HNUF1.dts => lantiq/vr9_zyxel_p-2812hnu-f1.dts} (96%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{P2812HNUF3.dts => lantiq/vr9_zyxel_p-2812hnu-f3.dts} (96%)
+ rename target/linux/lantiq/files/arch/mips/boot/dts/{P2812HNUFX.dtsi => lantiq/vr9_zyxel_p-2812hnu-fx.dtsi} (100%)
+ create mode 100644 target/linux/lantiq/image/amazonse.mk
+ create mode 100644 target/linux/lantiq/image/ar9.mk
+ create mode 100644 target/linux/lantiq/image/danube.mk
+ create mode 100644 target/linux/lantiq/image/falcon.mk
+ create mode 100644 target/linux/lantiq/image/vr9.mk
+ create mode 100644 target/linux/lantiq/image/xway_legacy.mk
+
+-- 
+2.20.1
 
 
 _______________________________________________

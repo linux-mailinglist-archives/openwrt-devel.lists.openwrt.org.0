@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5CCD127077
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 23:14:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D988E127084
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 23:15:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b2HJ+n7ZDPutvKEpBP/nRq7yIleS0Ty0mlyVJN6VGm4=; b=P3GAl/G+z0G3mZ
-	kaPilh3VsG3KT8tyBuDNhF+dE6NIEMgfYNQSEQLNiaqlBklt8wTfKtDUf4VeCnXIl1tpaxyHVpLsK
-	Oc2Wvo/7aReUrNiWzgGBCIQ8lWVkh3LQ9sNcOUv6k9H3WHn0Lgc/NB2uenJ5KteMzvH9lHRCfkCzS
-	l1HL+/5jvAVEqztvIqXyAccKk9O7tTtlcVrhZuY0MBMbZkJoB6dwxoukzpZGJtS6aZt2/IVW0MAP5
-	03OvlkY5x+ZfVmuqOgljLP7hkZ1DTigvP10BC0ahXL63QsdByP8wUx+fOX5YaUEU0uPBJ8BN3I+Xo
-	6gM6771FtI10Er15V/tw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:References:In-Reply-To:Message-Id:Date:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=G7A3BsH4i3/nQ3+YKJyNxb+4AbDxao6muUwUIWcxkmM=; b=X+8DCMTWnxGpLyy/Efz+t+jS2
+	s736uU7z2uIPv94RSSJY2na4dgjyHZHuBS7+JNzT5w+ETsaYS7f56huhBeOW0Ee3l4osGpmC/UkZZ
+	zx9m2S9FR+z9tUz3zxEsRcYq2YW5eXBkDIRWPGY8teCF6KlrYHVi0F3btnpT1qBUOBVrRBX40v7rt
+	ngdWXKRoloS6EgVKI/WCAWwC74hMa4sbIuyikf3nV+oHz4cAG7zJCG8G4PRzVtU5ejCHbvMt59yi+
+	B66M4rjaLYen2IksdVoWP1IbqtbdmGBqwZ/9JhWK4xeRwnMWjN7ciVrmuSv6MZAelevYJWzbjLj/C
+	qQmm2JFYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii43T-000066-Vb; Thu, 19 Dec 2019 22:13:59 +0000
+	id 1ii451-00046P-SS; Thu, 19 Dec 2019 22:15:35 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii41K-000546-88
- for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 22:11:50 +0000
+ id 1ii41L-00054b-1c
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 22:11:53 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 2DEB94BC8;
- Thu, 19 Dec 2019 23:11:44 +0100 (CET)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id 07b0a3f0;
- Thu, 19 Dec 2019 23:11:34 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 688004BCA;
+ Thu, 19 Dec 2019 23:11:45 +0100 (CET)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 30bbbe90;
+ Thu, 19 Dec 2019 23:11:35 +0100 (CET)
 From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 19 Dec 2019 23:11:17 +0100
-Message-Id: <20191219221125.22646-9-ynezz@true.cz>
+Date: Thu, 19 Dec 2019 23:11:18 +0100
+Message-Id: <20191219221125.22646-10-ynezz@true.cz>
 In-Reply-To: <20191219221125.22646-1-ynezz@true.cz>
 References: <20191219221125.22646-1-ynezz@true.cz>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_141146_624604_3E0AAF0D 
-X-CRM114-Status: GOOD (  19.36  )
+X-CRM114-CacheID: sfid-20191219_141147_554997_FCB75681 
+X-CRM114-Status: GOOD (  12.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -48,8 +48,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH ubus 08/16] refactor ubusd.c into reusable
- ubusd_library
+Subject: [OpenWrt-Devel] [PATCH ubus 09/16] add fuzzer and cram based unit
+ tests
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,271 +62,519 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============0042868664019523038=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SW4gb3JkZXIgdG8gYWxsb3cgcmV1c2FiaWxpdHkgaW4gdW5pdCB0ZXN0aW5nICYgZnV6emluZy4K
-ClNpZ25lZC1vZmYtYnk6IFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+Ci0tLQogQ01ha2VM
-aXN0cy50eHQgICAgIHwgICA1ICstCiBsaWJ1YnVzLWludGVybmFsLmggfCAgIDEgKwogbGlidWJ1
-cy1pby5jICAgICAgIHwgICAyICstCiB1YnVzZC5jICAgICAgICAgICAgfCAyNjkgKy0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIHVidXNkLmggICAgICAgICAgICB8
-ICAgMSArCiB1YnVzZF9tYWluLmMgICAgICAgfCAyNzEgKysrKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrCiA2IGZpbGVzIGNoYW5nZWQsIDI3OCBpbnNlcnRpb25zKCsp
-LCAyNzEgZGVsZXRpb25zKC0pCiBjcmVhdGUgbW9kZSAxMDA2NDQgdWJ1c2RfbWFpbi5jCgpkaWZm
-IC0tZ2l0IGEvQ01ha2VMaXN0cy50eHQgYi9DTWFrZUxpc3RzLnR4dAppbmRleCA4NjZiM2FiNjAx
-NjguLmRjNmU0Mjg0NzA4NiAxMDA2NDQKLS0tIGEvQ01ha2VMaXN0cy50eHQKKysrIGIvQ01ha2VM
-aXN0cy50eHQKQEAgLTQxLDggKzQxLDkgQEAgVEFSR0VUX0xJTktfTElCUkFSSUVTKHVidXMgJHt1
-Ym94X2xpYnJhcnl9KQogCiBmaW5kX2xpYnJhcnkoanNvbiBOQU1FUyBqc29uLWMganNvbikKIAot
-QUREX0VYRUNVVEFCTEUodWJ1c2QgdWJ1c2QuYyB1YnVzZF9pZC5jIHVidXNkX29iai5jIHVidXNk
-X3Byb3RvLmMgdWJ1c2RfZXZlbnQuYyB1YnVzZF9hY2wuYyB1YnVzZF9tb25pdG9yLmMpCi1UQVJH
-RVRfTElOS19MSUJSQVJJRVModWJ1c2QgJHt1Ym94X2xpYnJhcnl9ICR7YmxvYl9saWJyYXJ5fSAk
-e2pzb259KQorQUREX0xJQlJBUlkodWJ1c2RfbGlicmFyeSBTVEFUSUMgdWJ1c2QuYyB1YnVzZF9w
-cm90by5jIHVidXNkX2lkLmMgdWJ1c2Rfb2JqLmMgdWJ1c2RfZXZlbnQuYyB1YnVzZF9hY2wuYyB1
-YnVzZF9tb25pdG9yLmMpCitBRERfRVhFQ1VUQUJMRSh1YnVzZCB1YnVzZF9tYWluLmMpCitUQVJH
-RVRfTElOS19MSUJSQVJJRVModWJ1c2QgdWJ1c2RfbGlicmFyeSAke3Vib3hfbGlicmFyeX0gJHti
-bG9iX2xpYnJhcnl9ICR7anNvbn0pCiAKIEFERF9FWEVDVVRBQkxFKGNsaSBjbGkuYykKIFNFVF9U
-QVJHRVRfUFJPUEVSVElFUyhjbGkgUFJPUEVSVElFUyBPVVRQVVRfTkFNRSB1YnVzKQpkaWZmIC0t
-Z2l0IGEvbGlidWJ1cy1pbnRlcm5hbC5oIGIvbGlidWJ1cy1pbnRlcm5hbC5oCmluZGV4IGM0MDY3
-ZDM0MzgxNy4uOGNmOTliM2JjNmIxIDEwMDY0NAotLS0gYS9saWJ1YnVzLWludGVybmFsLmgKKysr
-IGIvbGlidWJ1cy1pbnRlcm5hbC5oCkBAIC0xOCw2ICsxOCw3IEBAIGV4dGVybiBzdHJ1Y3QgYmxv
-Yl9idWYgYjsKIGV4dGVybiBjb25zdCBzdHJ1Y3QgdWJ1c19tZXRob2Qgd2F0Y2hfbWV0aG9kOwog
-CiBzdHJ1Y3QgYmxvYl9hdHRyICoqdWJ1c19wYXJzZV9tc2coc3RydWN0IGJsb2JfYXR0ciAqbXNn
-KTsKK2Jvb2wgdWJ1c192YWxpZGF0ZV9oZHIoc3RydWN0IHVidXNfbXNnaGRyICpoZHIpOwogdm9p
-ZCB1YnVzX2hhbmRsZV9kYXRhKHN0cnVjdCB1bG9vcF9mZCAqdSwgdW5zaWduZWQgaW50IGV2ZW50
-cyk7CiBpbnQgdWJ1c19zZW5kX21zZyhzdHJ1Y3QgdWJ1c19jb250ZXh0ICpjdHgsIHVpbnQzMl90
-IHNlcSwKIAkJICBzdHJ1Y3QgYmxvYl9hdHRyICptc2csIGludCBjbWQsIHVpbnQzMl90IHBlZXIs
-IGludCBmZCk7CmRpZmYgLS1naXQgYS9saWJ1YnVzLWlvLmMgYi9saWJ1YnVzLWlvLmMKaW5kZXgg
-MTIwZmI2MDVlOTBhLi44MWMxY2QxMzA5YjEgMTAwNjQ0Ci0tLSBhL2xpYnVidXMtaW8uYworKysg
-Yi9saWJ1YnVzLWlvLmMKQEAgLTIxNSw3ICsyMTUsNyBAQCBzdGF0aWMgaW50IHJlY3ZfcmV0cnko
-c3RydWN0IHVidXNfY29udGV4dCAqY3R4LCBzdHJ1Y3QgaW92ZWMgKmlvdiwgYm9vbCB3YWl0LCBp
-bgogCXJldHVybiB0b3RhbDsKIH0KIAotc3RhdGljIGJvb2wgdWJ1c192YWxpZGF0ZV9oZHIoc3Ry
-dWN0IHVidXNfbXNnaGRyICpoZHIpCitib29sIHVidXNfdmFsaWRhdGVfaGRyKHN0cnVjdCB1YnVz
-X21zZ2hkciAqaGRyKQogewogCXN0cnVjdCBibG9iX2F0dHIgKmRhdGEgPSAoc3RydWN0IGJsb2Jf
-YXR0ciAqKSAoaGRyICsgMSk7CiAKZGlmZiAtLWdpdCBhL3VidXNkLmMgYi91YnVzZC5jCmluZGV4
-IGMwMjBmZjQxNmEzMi4uMGQ0Mzk3N2MwYmRlIDEwMDY0NAotLS0gYS91YnVzZC5jCisrKyBiL3Vi
-dXNkLmMKQEAgLTEyLDIxICsxMiw5IEBACiAgKi8KIAogI2luY2x1ZGUgPHN5cy9zb2NrZXQuaD4K
-LSNpbmNsdWRlIDxzeXMvc3RhdC5oPgotI2luY2x1ZGUgPHN5cy91aW8uaD4KICNpZmRlZiBGcmVl
-QlNECiAjaW5jbHVkZSA8c3lzL3BhcmFtLmg+CiAjZW5kaWYKLSNpbmNsdWRlIDxzeXNsb2cuaD4K
-LSNpbmNsdWRlIDxzaWduYWwuaD4KLSNpbmNsdWRlIDxzdGRpby5oPgotI2luY2x1ZGUgPHVuaXN0
-ZC5oPgotI2luY2x1ZGUgPGZjbnRsLmg+Ci0KLSNpbmNsdWRlIDxsaWJ1Ym94L2Jsb2IuaD4KLSNp
-bmNsdWRlIDxsaWJ1Ym94L3Vsb29wLmg+Ci0jaW5jbHVkZSA8bGlidWJveC91c29jay5oPgotI2lu
-Y2x1ZGUgPGxpYnVib3gvbGlzdC5oPgogCiAjaW5jbHVkZSAidWJ1c2QuaCIKIApAQCAtOTIsNyAr
-ODAsNyBAQCB2b2lkIHVidXNfbXNnX2ZyZWUoc3RydWN0IHVidXNfbXNnX2J1ZiAqdWIpCiAJfQog
-fQogCi1zdGF0aWMgc3NpemVfdCB1YnVzX21zZ193cml0ZXYoaW50IGZkLCBzdHJ1Y3QgdWJ1c19t
-c2dfYnVmICp1Yiwgc2l6ZV90IG9mZnNldCkKK3NzaXplX3QgdWJ1c19tc2dfd3JpdGV2KGludCBm
-ZCwgc3RydWN0IHVidXNfbXNnX2J1ZiAqdWIsIHNpemVfdCBvZmZzZXQpCiB7CiAJc3RhdGljIHN0
-cnVjdCBpb3ZlYyBpb3ZbMl07CiAJc3RhdGljIHN0cnVjdCB7CkBAIC0xNzcsMjU4ICsxNjUsMyBA
-QCB2b2lkIHVidXNfbXNnX3NlbmQoc3RydWN0IHVidXNfY2xpZW50ICpjbCwgc3RydWN0IHVidXNf
-bXNnX2J1ZiAqdWIpCiAJfQogCXVidXNfbXNnX2VucXVldWUoY2wsIHViKTsKIH0KLQotc3RhdGlj
-IHN0cnVjdCB1YnVzX21zZ19idWYgKnVidXNfbXNnX2hlYWQoc3RydWN0IHVidXNfY2xpZW50ICpj
-bCkKLXsKLQlyZXR1cm4gY2wtPnR4X3F1ZXVlW2NsLT50eHFfY3VyXTsKLX0KLQotc3RhdGljIHZv
-aWQgdWJ1c19tc2dfZGVxdWV1ZShzdHJ1Y3QgdWJ1c19jbGllbnQgKmNsKQotewotCXN0cnVjdCB1
-YnVzX21zZ19idWYgKnViID0gdWJ1c19tc2dfaGVhZChjbCk7Ci0KLQlpZiAoIXViKQotCQlyZXR1
-cm47Ci0KLQl1YnVzX21zZ19mcmVlKHViKTsKLQljbC0+dHhxX29mcyA9IDA7Ci0JY2wtPnR4X3F1
-ZXVlW2NsLT50eHFfY3VyXSA9IE5VTEw7Ci0JY2wtPnR4cV9jdXIgPSAoY2wtPnR4cV9jdXIgKyAx
-KSAlIEFSUkFZX1NJWkUoY2wtPnR4X3F1ZXVlKTsKLX0KLQotc3RhdGljIHZvaWQgaGFuZGxlX2Ns
-aWVudF9kaXNjb25uZWN0KHN0cnVjdCB1YnVzX2NsaWVudCAqY2wpCi17Ci0Jd2hpbGUgKHVidXNf
-bXNnX2hlYWQoY2wpKQotCQl1YnVzX21zZ19kZXF1ZXVlKGNsKTsKLQotCXVidXNkX21vbml0b3Jf
-ZGlzY29ubmVjdChjbCk7Ci0JdWJ1c2RfcHJvdG9fZnJlZV9jbGllbnQoY2wpOwotCWlmIChjbC0+
-cGVuZGluZ19tc2dfZmQgPj0gMCkKLQkJY2xvc2UoY2wtPnBlbmRpbmdfbXNnX2ZkKTsKLQl1bG9v
-cF9mZF9kZWxldGUoJmNsLT5zb2NrKTsKLQljbG9zZShjbC0+c29jay5mZCk7Ci0JZnJlZShjbCk7
-Ci19Ci0KLXN0YXRpYyB2b2lkIGNsaWVudF9jYihzdHJ1Y3QgdWxvb3BfZmQgKnNvY2ssIHVuc2ln
-bmVkIGludCBldmVudHMpCi17Ci0Jc3RydWN0IHVidXNfY2xpZW50ICpjbCA9IGNvbnRhaW5lcl9v
-Zihzb2NrLCBzdHJ1Y3QgdWJ1c19jbGllbnQsIHNvY2spOwotCXN0cnVjdCB1YnVzX21zZ19idWYg
-KnViOwotCXN0YXRpYyBzdHJ1Y3QgaW92ZWMgaW92OwotCXN0YXRpYyBzdHJ1Y3QgewotCQlpbnQg
-ZmQ7Ci0JCXN0cnVjdCBjbXNnaGRyIGg7Ci0JfSBmZF9idWYgPSB7Ci0JCS5oID0gewotCQkJLmNt
-c2dfdHlwZSA9IFNDTV9SSUdIVFMsCi0JCQkuY21zZ19sZXZlbCA9IFNPTF9TT0NLRVQsCi0JCQku
-Y21zZ19sZW4gPSBzaXplb2YoZmRfYnVmKSwKLQkJfQotCX07Ci0Jc3RydWN0IG1zZ2hkciBtc2do
-ZHIgPSB7Ci0JCS5tc2dfaW92ID0gJmlvdiwKLQkJLm1zZ19pb3ZsZW4gPSAxLAotCX07Ci0KLQkv
-KiBmaXJzdCB0cnkgdG8gdHggbW9yZSBwZW5kaW5nIGRhdGEgKi8KLQl3aGlsZSAoKHViID0gdWJ1
-c19tc2dfaGVhZChjbCkpKSB7Ci0JCXNzaXplX3Qgd3JpdHRlbjsKLQotCQl3cml0dGVuID0gdWJ1
-c19tc2dfd3JpdGV2KHNvY2stPmZkLCB1YiwgY2wtPnR4cV9vZnMpOwotCQlpZiAod3JpdHRlbiA8
-IDApIHsKLQkJCXN3aXRjaChlcnJubykgewotCQkJY2FzZSBFSU5UUjoKLQkJCWNhc2UgRUFHQUlO
-OgotCQkJCWJyZWFrOwotCQkJZGVmYXVsdDoKLQkJCQlnb3RvIGRpc2Nvbm5lY3Q7Ci0JCQl9Ci0J
-CQlicmVhazsKLQkJfQotCi0JCWNsLT50eHFfb2ZzICs9IHdyaXR0ZW47Ci0JCWlmIChjbC0+dHhx
-X29mcyA8IHViLT5sZW4gKyBzaXplb2YodWItPmhkcikpCi0JCQlicmVhazsKLQotCQl1YnVzX21z
-Z19kZXF1ZXVlKGNsKTsKLQl9Ci0KLQkvKiBwcmV2ZW50IGZ1cnRoZXIgVUxPT1BfV1JJVEUgZXZl
-bnRzIGlmIHdlIGRvbid0IGhhdmUgZGF0YQotCSAqIHRvIHNlbmQgYW55bW9yZSAqLwotCWlmICgh
-dWJ1c19tc2dfaGVhZChjbCkgJiYgKGV2ZW50cyAmIFVMT09QX1dSSVRFKSkKLQkJdWxvb3BfZmRf
-YWRkKHNvY2ssIFVMT09QX1JFQUQgfCBVTE9PUF9FREdFX1RSSUdHRVIpOwotCi1yZXRyeToKLQlp
-ZiAoIXNvY2stPmVvZiAmJiBjbC0+cGVuZGluZ19tc2dfb2Zmc2V0IDwgKGludCkgc2l6ZW9mKGNs
-LT5oZHJidWYpKSB7Ci0JCWludCBvZmZzZXQgPSBjbC0+cGVuZGluZ19tc2dfb2Zmc2V0OwotCQlp
-bnQgYnl0ZXM7Ci0KLQkJZmRfYnVmLmZkID0gLTE7Ci0KLQkJaW92Lmlvdl9iYXNlID0gKChjaGFy
-ICopICZjbC0+aGRyYnVmKSArIG9mZnNldDsKLQkJaW92Lmlvdl9sZW4gPSBzaXplb2YoY2wtPmhk
-cmJ1ZikgLSBvZmZzZXQ7Ci0KLQkJaWYgKGNsLT5wZW5kaW5nX21zZ19mZCA8IDApIHsKLQkJCW1z
-Z2hkci5tc2dfY29udHJvbCA9ICZmZF9idWY7Ci0JCQltc2doZHIubXNnX2NvbnRyb2xsZW4gPSBz
-aXplb2YoZmRfYnVmKTsKLQkJfSBlbHNlIHsKLQkJCW1zZ2hkci5tc2dfY29udHJvbCA9IE5VTEw7
-Ci0JCQltc2doZHIubXNnX2NvbnRyb2xsZW4gPSAwOwotCQl9Ci0KLQkJYnl0ZXMgPSByZWN2bXNn
-KHNvY2stPmZkLCAmbXNnaGRyLCAwKTsKLQkJaWYgKGJ5dGVzIDwgMCkKLQkJCWdvdG8gb3V0Owot
-Ci0JCWlmIChmZF9idWYuZmQgPj0gMCkKLQkJCWNsLT5wZW5kaW5nX21zZ19mZCA9IGZkX2J1Zi5m
-ZDsKLQotCQljbC0+cGVuZGluZ19tc2dfb2Zmc2V0ICs9IGJ5dGVzOwotCQlpZiAoY2wtPnBlbmRp
-bmdfbXNnX29mZnNldCA8IChpbnQpIHNpemVvZihjbC0+aGRyYnVmKSkKLQkJCWdvdG8gb3V0Owot
-Ci0JCWlmIChibG9iX3BhZF9sZW4oJmNsLT5oZHJidWYuZGF0YSkgPiBVQlVTX01BWF9NU0dMRU4p
-Ci0JCQlnb3RvIGRpc2Nvbm5lY3Q7Ci0KLQkJY2wtPnBlbmRpbmdfbXNnID0gdWJ1c19tc2dfbmV3
-KE5VTEwsIGJsb2JfcmF3X2xlbigmY2wtPmhkcmJ1Zi5kYXRhKSwgZmFsc2UpOwotCQlpZiAoIWNs
-LT5wZW5kaW5nX21zZykKLQkJCWdvdG8gZGlzY29ubmVjdDsKLQotCQljbC0+aGRyYnVmLmhkci5z
-ZXEgPSBiZTE2X3RvX2NwdShjbC0+aGRyYnVmLmhkci5zZXEpOwotCQljbC0+aGRyYnVmLmhkci5w
-ZWVyID0gYmUzMl90b19jcHUoY2wtPmhkcmJ1Zi5oZHIucGVlcik7Ci0KLQkJbWVtY3B5KCZjbC0+
-cGVuZGluZ19tc2ctPmhkciwgJmNsLT5oZHJidWYuaGRyLCBzaXplb2YoY2wtPmhkcmJ1Zi5oZHIp
-KTsKLQkJbWVtY3B5KGNsLT5wZW5kaW5nX21zZy0+ZGF0YSwgJmNsLT5oZHJidWYuZGF0YSwgc2l6
-ZW9mKGNsLT5oZHJidWYuZGF0YSkpOwotCX0KLQotCXViID0gY2wtPnBlbmRpbmdfbXNnOwotCWlm
-ICh1YikgewotCQlpbnQgb2Zmc2V0ID0gY2wtPnBlbmRpbmdfbXNnX29mZnNldCAtIHNpemVvZih1
-Yi0+aGRyKTsKLQkJaW50IGxlbiA9IGJsb2JfcmF3X2xlbih1Yi0+ZGF0YSkgLSBvZmZzZXQ7Ci0J
-CWludCBieXRlcyA9IDA7Ci0KLQkJaWYgKGxlbiA+IDApIHsKLQkJCWJ5dGVzID0gcmVhZChzb2Nr
-LT5mZCwgKGNoYXIgKikgdWItPmRhdGEgKyBvZmZzZXQsIGxlbik7Ci0JCQlpZiAoYnl0ZXMgPD0g
-MCkKLQkJCQlnb3RvIG91dDsKLQkJfQotCi0JCWlmIChieXRlcyA8IGxlbikgewotCQkJY2wtPnBl
-bmRpbmdfbXNnX29mZnNldCArPSBieXRlczsKLQkJCWdvdG8gb3V0OwotCQl9Ci0KLQkJLyogYWNj
-ZXB0IG1lc3NhZ2UgKi8KLQkJdWItPmZkID0gY2wtPnBlbmRpbmdfbXNnX2ZkOwotCQljbC0+cGVu
-ZGluZ19tc2dfZmQgPSAtMTsKLQkJY2wtPnBlbmRpbmdfbXNnX29mZnNldCA9IDA7Ci0JCWNsLT5w
-ZW5kaW5nX21zZyA9IE5VTEw7Ci0JCXVidXNkX21vbml0b3JfbWVzc2FnZShjbCwgdWIsIGZhbHNl
-KTsKLQkJdWJ1c2RfcHJvdG9fcmVjZWl2ZV9tZXNzYWdlKGNsLCB1Yik7Ci0JCWdvdG8gcmV0cnk7
-Ci0JfQotCi1vdXQ6Ci0JaWYgKCFzb2NrLT5lb2YgfHwgdWJ1c19tc2dfaGVhZChjbCkpCi0JCXJl
-dHVybjsKLQotZGlzY29ubmVjdDoKLQloYW5kbGVfY2xpZW50X2Rpc2Nvbm5lY3QoY2wpOwotfQot
-Ci1zdGF0aWMgYm9vbCBnZXRfbmV4dF9jb25uZWN0aW9uKGludCBmZCkKLXsKLQlzdHJ1Y3QgdWJ1
-c19jbGllbnQgKmNsOwotCWludCBjbGllbnRfZmQ7Ci0KLQljbGllbnRfZmQgPSBhY2NlcHQoZmQs
-IE5VTEwsIDApOwotCWlmIChjbGllbnRfZmQgPCAwKSB7Ci0JCXN3aXRjaCAoZXJybm8pIHsKLQkJ
-Y2FzZSBFQ09OTkFCT1JURUQ6Ci0JCWNhc2UgRUlOVFI6Ci0JCQlyZXR1cm4gdHJ1ZTsKLQkJZGVm
-YXVsdDoKLQkJCXJldHVybiBmYWxzZTsKLQkJfQotCX0KLQotCWNsID0gdWJ1c2RfcHJvdG9fbmV3
-X2NsaWVudChjbGllbnRfZmQsIGNsaWVudF9jYik7Ci0JaWYgKGNsKQotCQl1bG9vcF9mZF9hZGQo
-JmNsLT5zb2NrLCBVTE9PUF9SRUFEIHwgVUxPT1BfRURHRV9UUklHR0VSKTsKLQllbHNlCi0JCWNs
-b3NlKGNsaWVudF9mZCk7Ci0KLQlyZXR1cm4gdHJ1ZTsKLX0KLQotc3RhdGljIHZvaWQgc2VydmVy
-X2NiKHN0cnVjdCB1bG9vcF9mZCAqZmQsIHVuc2lnbmVkIGludCBldmVudHMpCi17Ci0JYm9vbCBu
-ZXh0OwotCi0JZG8gewotCQluZXh0ID0gZ2V0X25leHRfY29ubmVjdGlvbihmZC0+ZmQpOwotCX0g
-d2hpbGUgKG5leHQpOwotfQotCi1zdGF0aWMgc3RydWN0IHVsb29wX2ZkIHNlcnZlcl9mZCA9IHsK
-LQkuY2IgPSBzZXJ2ZXJfY2IsCi19OwotCi1zdGF0aWMgaW50IHVzYWdlKGNvbnN0IGNoYXIgKnBy
-b2duYW1lKQotewotCWZwcmludGYoc3RkZXJyLCAiVXNhZ2U6ICVzIFs8b3B0aW9ucz5dXG4iCi0J
-CSJPcHRpb25zOiBcbiIKLQkJIiAgLUEgPHBhdGg+OgkJU2V0IHRoZSBwYXRoIHRvIEFDTCBmaWxl
-c1xuIgotCQkiICAtcyA8c29ja2V0PjoJCVNldCB0aGUgdW5peCBkb21haW4gc29ja2V0IHRvIGxp
-c3RlbiBvblxuIgotCQkiXG4iLCBwcm9nbmFtZSk7Ci0JcmV0dXJuIDE7Ci19Ci0KLXN0YXRpYyB2
-b2lkIHNpZ2h1cF9oYW5kbGVyKGludCBzaWcpCi17Ci0JdWJ1c2RfYWNsX2xvYWQoKTsKLX0KLQot
-aW50IG1haW4oaW50IGFyZ2MsIGNoYXIgKiphcmd2KQotewotCWNvbnN0IGNoYXIgKnVidXNfc29j
-a2V0ID0gVUJVU19VTklYX1NPQ0tFVDsKLQlpbnQgcmV0ID0gMDsKLQlpbnQgY2g7Ci0KLQlzaWdu
-YWwoU0lHUElQRSwgU0lHX0lHTik7Ci0Jc2lnbmFsKFNJR0hVUCwgc2lnaHVwX2hhbmRsZXIpOwot
-Ci0Jb3BlbmxvZygidWJ1c2QiLCBMT0dfUElELCBMT0dfREFFTU9OKTsKLQl1bG9vcF9pbml0KCk7
-Ci0KLQl3aGlsZSAoKGNoID0gZ2V0b3B0KGFyZ2MsIGFyZ3YsICJBOnM6IikpICE9IC0xKSB7Ci0J
-CXN3aXRjaCAoY2gpIHsKLQkJY2FzZSAncyc6Ci0JCQl1YnVzX3NvY2tldCA9IG9wdGFyZzsKLQkJ
-CWJyZWFrOwotCQljYXNlICdBJzoKLQkJCXVidXNkX2FjbF9kaXIgPSBvcHRhcmc7Ci0JCQlicmVh
-azsKLQkJZGVmYXVsdDoKLQkJCXJldHVybiB1c2FnZShhcmd2WzBdKTsKLQkJfQotCX0KLQotCXVu
-bGluayh1YnVzX3NvY2tldCk7Ci0JdW1hc2soMDExMSk7Ci0Jc2VydmVyX2ZkLmZkID0gdXNvY2so
-VVNPQ0tfVU5JWCB8IFVTT0NLX1NFUlZFUiB8IFVTT0NLX05PTkJMT0NLLCB1YnVzX3NvY2tldCwg
-TlVMTCk7Ci0JaWYgKHNlcnZlcl9mZC5mZCA8IDApIHsKLQkJcGVycm9yKCJ1c29jayIpOwotCQly
-ZXQgPSAtMTsKLQkJZ290byBvdXQ7Ci0JfQotCXVsb29wX2ZkX2FkZCgmc2VydmVyX2ZkLCBVTE9P
-UF9SRUFEIHwgVUxPT1BfRURHRV9UUklHR0VSKTsKLQl1YnVzZF9hY2xfbG9hZCgpOwotCi0JdWxv
-b3BfcnVuKCk7Ci0JdW5saW5rKHVidXNfc29ja2V0KTsKLQotb3V0OgotCXVsb29wX2RvbmUoKTsK
-LQlyZXR1cm4gcmV0OwotfQpkaWZmIC0tZ2l0IGEvdWJ1c2QuaCBiL3VidXNkLmgKaW5kZXggNGQ4
-NzkyMDFlMmY1Li44NjdjZGU5YTM4NGIgMTAwNjQ0Ci0tLSBhL3VidXNkLmgKKysrIGIvdWJ1c2Qu
-aApAQCAtNzAsNiArNzAsNyBAQCBleHRlcm4gY29uc3QgY2hhciAqdWJ1c2RfYWNsX2RpcjsKIAog
-c3RydWN0IHVidXNfbXNnX2J1ZiAqdWJ1c19tc2dfbmV3KHZvaWQgKmRhdGEsIGludCBsZW4sIGJv
-b2wgc2hhcmVkKTsKIHZvaWQgdWJ1c19tc2dfc2VuZChzdHJ1Y3QgdWJ1c19jbGllbnQgKmNsLCBz
-dHJ1Y3QgdWJ1c19tc2dfYnVmICp1Yik7Citzc2l6ZV90IHVidXNfbXNnX3dyaXRldihpbnQgZmQs
-IHN0cnVjdCB1YnVzX21zZ19idWYgKnViLCBzaXplX3Qgb2Zmc2V0KTsKIHZvaWQgdWJ1c19tc2df
-ZnJlZShzdHJ1Y3QgdWJ1c19tc2dfYnVmICp1Yik7CiBzdHJ1Y3QgYmxvYl9hdHRyICoqdWJ1c19w
-YXJzZV9tc2coc3RydWN0IGJsb2JfYXR0ciAqbXNnKTsKIApkaWZmIC0tZ2l0IGEvdWJ1c2RfbWFp
-bi5jIGIvdWJ1c2RfbWFpbi5jCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAw
-MC4uODE4NjhjMTQ4MmJjCi0tLSAvZGV2L251bGwKKysrIGIvdWJ1c2RfbWFpbi5jCkBAIC0wLDAg
-KzEsMjcxIEBACisvKgorICogQ29weXJpZ2h0IChDKSAyMDExLTIwMTQgRmVsaXggRmlldGthdSA8
-bmJkQG9wZW53cnQub3JnPgorICoKKyAqIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBMR1BMLTIu
-MS1vbmx5CisgKi8KKworI2luY2x1ZGUgPHN5cy9zb2NrZXQuaD4KKyNpbmNsdWRlIDxzeXMvc3Rh
-dC5oPgorI2lmZGVmIEZyZWVCU0QKKyNpbmNsdWRlIDxzeXMvcGFyYW0uaD4KKyNlbmRpZgorI2lu
-Y2x1ZGUgPHN5c2xvZy5oPgorCisjaW5jbHVkZSA8bGlidWJveC91c29jay5oPgorCisjaW5jbHVk
-ZSAidWJ1c2QuaCIKKworc3RhdGljIHN0cnVjdCB1YnVzX21zZ19idWYgKnVidXNfbXNnX2hlYWQo
-c3RydWN0IHVidXNfY2xpZW50ICpjbCkKK3sKKwlyZXR1cm4gY2wtPnR4X3F1ZXVlW2NsLT50eHFf
-Y3VyXTsKK30KKworc3RhdGljIHZvaWQgdWJ1c19tc2dfZGVxdWV1ZShzdHJ1Y3QgdWJ1c19jbGll
-bnQgKmNsKQoreworCXN0cnVjdCB1YnVzX21zZ19idWYgKnViID0gdWJ1c19tc2dfaGVhZChjbCk7
-CisKKwlpZiAoIXViKQorCQlyZXR1cm47CisKKwl1YnVzX21zZ19mcmVlKHViKTsKKwljbC0+dHhx
-X29mcyA9IDA7CisJY2wtPnR4X3F1ZXVlW2NsLT50eHFfY3VyXSA9IE5VTEw7CisJY2wtPnR4cV9j
-dXIgPSAoY2wtPnR4cV9jdXIgKyAxKSAlIEFSUkFZX1NJWkUoY2wtPnR4X3F1ZXVlKTsKK30KKwor
-c3RhdGljIHZvaWQgaGFuZGxlX2NsaWVudF9kaXNjb25uZWN0KHN0cnVjdCB1YnVzX2NsaWVudCAq
-Y2wpCit7CisJd2hpbGUgKHVidXNfbXNnX2hlYWQoY2wpKQorCQl1YnVzX21zZ19kZXF1ZXVlKGNs
-KTsKKworCXVidXNkX21vbml0b3JfZGlzY29ubmVjdChjbCk7CisJdWJ1c2RfcHJvdG9fZnJlZV9j
-bGllbnQoY2wpOworCWlmIChjbC0+cGVuZGluZ19tc2dfZmQgPj0gMCkKKwkJY2xvc2UoY2wtPnBl
-bmRpbmdfbXNnX2ZkKTsKKwl1bG9vcF9mZF9kZWxldGUoJmNsLT5zb2NrKTsKKwljbG9zZShjbC0+
-c29jay5mZCk7CisJZnJlZShjbCk7Cit9CisKK3N0YXRpYyB2b2lkIGNsaWVudF9jYihzdHJ1Y3Qg
-dWxvb3BfZmQgKnNvY2ssIHVuc2lnbmVkIGludCBldmVudHMpCit7CisJc3RydWN0IHVidXNfY2xp
-ZW50ICpjbCA9IGNvbnRhaW5lcl9vZihzb2NrLCBzdHJ1Y3QgdWJ1c19jbGllbnQsIHNvY2spOwor
-CXN0cnVjdCB1YnVzX21zZ19idWYgKnViOworCXN0YXRpYyBzdHJ1Y3QgaW92ZWMgaW92OworCXN0
-YXRpYyBzdHJ1Y3QgeworCQlpbnQgZmQ7CisJCXN0cnVjdCBjbXNnaGRyIGg7CisJfSBmZF9idWYg
-PSB7CisJCS5oID0geworCQkJLmNtc2dfdHlwZSA9IFNDTV9SSUdIVFMsCisJCQkuY21zZ19sZXZl
-bCA9IFNPTF9TT0NLRVQsCisJCQkuY21zZ19sZW4gPSBzaXplb2YoZmRfYnVmKSwKKwkJfQorCX07
-CisJc3RydWN0IG1zZ2hkciBtc2doZHIgPSB7CisJCS5tc2dfaW92ID0gJmlvdiwKKwkJLm1zZ19p
-b3ZsZW4gPSAxLAorCX07CisKKwkvKiBmaXJzdCB0cnkgdG8gdHggbW9yZSBwZW5kaW5nIGRhdGEg
-Ki8KKwl3aGlsZSAoKHViID0gdWJ1c19tc2dfaGVhZChjbCkpKSB7CisJCXNzaXplX3Qgd3JpdHRl
-bjsKKworCQl3cml0dGVuID0gdWJ1c19tc2dfd3JpdGV2KHNvY2stPmZkLCB1YiwgY2wtPnR4cV9v
-ZnMpOworCQlpZiAod3JpdHRlbiA8IDApIHsKKwkJCXN3aXRjaChlcnJubykgeworCQkJY2FzZSBF
-SU5UUjoKKwkJCWNhc2UgRUFHQUlOOgorCQkJCWJyZWFrOworCQkJZGVmYXVsdDoKKwkJCQlnb3Rv
-IGRpc2Nvbm5lY3Q7CisJCQl9CisJCQlicmVhazsKKwkJfQorCisJCWNsLT50eHFfb2ZzICs9IHdy
-aXR0ZW47CisJCWlmIChjbC0+dHhxX29mcyA8IHViLT5sZW4gKyBzaXplb2YodWItPmhkcikpCisJ
-CQlicmVhazsKKworCQl1YnVzX21zZ19kZXF1ZXVlKGNsKTsKKwl9CisKKwkvKiBwcmV2ZW50IGZ1
-cnRoZXIgVUxPT1BfV1JJVEUgZXZlbnRzIGlmIHdlIGRvbid0IGhhdmUgZGF0YQorCSAqIHRvIHNl
-bmQgYW55bW9yZSAqLworCWlmICghdWJ1c19tc2dfaGVhZChjbCkgJiYgKGV2ZW50cyAmIFVMT09Q
-X1dSSVRFKSkKKwkJdWxvb3BfZmRfYWRkKHNvY2ssIFVMT09QX1JFQUQgfCBVTE9PUF9FREdFX1RS
-SUdHRVIpOworCityZXRyeToKKwlpZiAoIXNvY2stPmVvZiAmJiBjbC0+cGVuZGluZ19tc2dfb2Zm
-c2V0IDwgKGludCkgc2l6ZW9mKGNsLT5oZHJidWYpKSB7CisJCWludCBvZmZzZXQgPSBjbC0+cGVu
-ZGluZ19tc2dfb2Zmc2V0OworCQlpbnQgYnl0ZXM7CisKKwkJZmRfYnVmLmZkID0gLTE7CisKKwkJ
-aW92Lmlvdl9iYXNlID0gKChjaGFyICopICZjbC0+aGRyYnVmKSArIG9mZnNldDsKKwkJaW92Lmlv
-dl9sZW4gPSBzaXplb2YoY2wtPmhkcmJ1ZikgLSBvZmZzZXQ7CisKKwkJaWYgKGNsLT5wZW5kaW5n
-X21zZ19mZCA8IDApIHsKKwkJCW1zZ2hkci5tc2dfY29udHJvbCA9ICZmZF9idWY7CisJCQltc2do
-ZHIubXNnX2NvbnRyb2xsZW4gPSBzaXplb2YoZmRfYnVmKTsKKwkJfSBlbHNlIHsKKwkJCW1zZ2hk
-ci5tc2dfY29udHJvbCA9IE5VTEw7CisJCQltc2doZHIubXNnX2NvbnRyb2xsZW4gPSAwOworCQl9
-CisKKwkJYnl0ZXMgPSByZWN2bXNnKHNvY2stPmZkLCAmbXNnaGRyLCAwKTsKKwkJaWYgKGJ5dGVz
-IDwgMCkKKwkJCWdvdG8gb3V0OworCisJCWlmIChmZF9idWYuZmQgPj0gMCkKKwkJCWNsLT5wZW5k
-aW5nX21zZ19mZCA9IGZkX2J1Zi5mZDsKKworCQljbC0+cGVuZGluZ19tc2dfb2Zmc2V0ICs9IGJ5
-dGVzOworCQlpZiAoY2wtPnBlbmRpbmdfbXNnX29mZnNldCA8IChpbnQpIHNpemVvZihjbC0+aGRy
-YnVmKSkKKwkJCWdvdG8gb3V0OworCisJCWlmIChibG9iX3BhZF9sZW4oJmNsLT5oZHJidWYuZGF0
-YSkgPiBVQlVTX01BWF9NU0dMRU4pCisJCQlnb3RvIGRpc2Nvbm5lY3Q7CisKKwkJY2wtPnBlbmRp
-bmdfbXNnID0gdWJ1c19tc2dfbmV3KE5VTEwsIGJsb2JfcmF3X2xlbigmY2wtPmhkcmJ1Zi5kYXRh
-KSwgZmFsc2UpOworCQlpZiAoIWNsLT5wZW5kaW5nX21zZykKKwkJCWdvdG8gZGlzY29ubmVjdDsK
-KworCQljbC0+aGRyYnVmLmhkci5zZXEgPSBiZTE2X3RvX2NwdShjbC0+aGRyYnVmLmhkci5zZXEp
-OworCQljbC0+aGRyYnVmLmhkci5wZWVyID0gYmUzMl90b19jcHUoY2wtPmhkcmJ1Zi5oZHIucGVl
-cik7CisKKwkJbWVtY3B5KCZjbC0+cGVuZGluZ19tc2ctPmhkciwgJmNsLT5oZHJidWYuaGRyLCBz
-aXplb2YoY2wtPmhkcmJ1Zi5oZHIpKTsKKwkJbWVtY3B5KGNsLT5wZW5kaW5nX21zZy0+ZGF0YSwg
-JmNsLT5oZHJidWYuZGF0YSwgc2l6ZW9mKGNsLT5oZHJidWYuZGF0YSkpOworCX0KKworCXViID0g
-Y2wtPnBlbmRpbmdfbXNnOworCWlmICh1YikgeworCQlpbnQgb2Zmc2V0ID0gY2wtPnBlbmRpbmdf
-bXNnX29mZnNldCAtIHNpemVvZih1Yi0+aGRyKTsKKwkJaW50IGxlbiA9IGJsb2JfcmF3X2xlbih1
-Yi0+ZGF0YSkgLSBvZmZzZXQ7CisJCWludCBieXRlcyA9IDA7CisKKwkJaWYgKGxlbiA+IDApIHsK
-KwkJCWJ5dGVzID0gcmVhZChzb2NrLT5mZCwgKGNoYXIgKikgdWItPmRhdGEgKyBvZmZzZXQsIGxl
-bik7CisJCQlpZiAoYnl0ZXMgPD0gMCkKKwkJCQlnb3RvIG91dDsKKwkJfQorCisJCWlmIChieXRl
-cyA8IGxlbikgeworCQkJY2wtPnBlbmRpbmdfbXNnX29mZnNldCArPSBieXRlczsKKwkJCWdvdG8g
-b3V0OworCQl9CisKKwkJLyogYWNjZXB0IG1lc3NhZ2UgKi8KKwkJdWItPmZkID0gY2wtPnBlbmRp
-bmdfbXNnX2ZkOworCQljbC0+cGVuZGluZ19tc2dfZmQgPSAtMTsKKwkJY2wtPnBlbmRpbmdfbXNn
-X29mZnNldCA9IDA7CisJCWNsLT5wZW5kaW5nX21zZyA9IE5VTEw7CisJCXVidXNkX21vbml0b3Jf
-bWVzc2FnZShjbCwgdWIsIGZhbHNlKTsKKwkJdWJ1c2RfcHJvdG9fcmVjZWl2ZV9tZXNzYWdlKGNs
-LCB1Yik7CisJCWdvdG8gcmV0cnk7CisJfQorCitvdXQ6CisJaWYgKCFzb2NrLT5lb2YgfHwgdWJ1
-c19tc2dfaGVhZChjbCkpCisJCXJldHVybjsKKworZGlzY29ubmVjdDoKKwloYW5kbGVfY2xpZW50
-X2Rpc2Nvbm5lY3QoY2wpOworfQorCitzdGF0aWMgYm9vbCBnZXRfbmV4dF9jb25uZWN0aW9uKGlu
-dCBmZCkKK3sKKwlzdHJ1Y3QgdWJ1c19jbGllbnQgKmNsOworCWludCBjbGllbnRfZmQ7CisKKwlj
-bGllbnRfZmQgPSBhY2NlcHQoZmQsIE5VTEwsIDApOworCWlmIChjbGllbnRfZmQgPCAwKSB7CisJ
-CXN3aXRjaCAoZXJybm8pIHsKKwkJY2FzZSBFQ09OTkFCT1JURUQ6CisJCWNhc2UgRUlOVFI6CisJ
-CQlyZXR1cm4gdHJ1ZTsKKwkJZGVmYXVsdDoKKwkJCXJldHVybiBmYWxzZTsKKwkJfQorCX0KKwor
-CWNsID0gdWJ1c2RfcHJvdG9fbmV3X2NsaWVudChjbGllbnRfZmQsIGNsaWVudF9jYik7CisJaWYg
-KGNsKQorCQl1bG9vcF9mZF9hZGQoJmNsLT5zb2NrLCBVTE9PUF9SRUFEIHwgVUxPT1BfRURHRV9U
-UklHR0VSKTsKKwllbHNlCisJCWNsb3NlKGNsaWVudF9mZCk7CisKKwlyZXR1cm4gdHJ1ZTsKK30K
-Kworc3RhdGljIHZvaWQgc2VydmVyX2NiKHN0cnVjdCB1bG9vcF9mZCAqZmQsIHVuc2lnbmVkIGlu
-dCBldmVudHMpCit7CisJYm9vbCBuZXh0OworCisJZG8geworCQluZXh0ID0gZ2V0X25leHRfY29u
-bmVjdGlvbihmZC0+ZmQpOworCX0gd2hpbGUgKG5leHQpOworfQorCitzdGF0aWMgc3RydWN0IHVs
-b29wX2ZkIHNlcnZlcl9mZCA9IHsKKwkuY2IgPSBzZXJ2ZXJfY2IsCit9OworCitzdGF0aWMgaW50
-IHVzYWdlKGNvbnN0IGNoYXIgKnByb2duYW1lKQoreworCWZwcmludGYoc3RkZXJyLCAiVXNhZ2U6
-ICVzIFs8b3B0aW9ucz5dXG4iCisJCSJPcHRpb25zOiBcbiIKKwkJIiAgLUEgPHBhdGg+OgkJU2V0
-IHRoZSBwYXRoIHRvIEFDTCBmaWxlc1xuIgorCQkiICAtcyA8c29ja2V0PjoJCVNldCB0aGUgdW5p
-eCBkb21haW4gc29ja2V0IHRvIGxpc3RlbiBvblxuIgorCQkiXG4iLCBwcm9nbmFtZSk7CisJcmV0
-dXJuIDE7Cit9CisKK3N0YXRpYyB2b2lkIHNpZ2h1cF9oYW5kbGVyKGludCBzaWcpCit7CisJdWJ1
-c2RfYWNsX2xvYWQoKTsKK30KKworaW50IG1haW4oaW50IGFyZ2MsIGNoYXIgKiphcmd2KQorewor
-CWNvbnN0IGNoYXIgKnVidXNfc29ja2V0ID0gVUJVU19VTklYX1NPQ0tFVDsKKwlpbnQgcmV0ID0g
-MDsKKwlpbnQgY2g7CisKKwlzaWduYWwoU0lHUElQRSwgU0lHX0lHTik7CisJc2lnbmFsKFNJR0hV
-UCwgc2lnaHVwX2hhbmRsZXIpOworCisJb3BlbmxvZygidWJ1c2QiLCBMT0dfUElELCBMT0dfREFF
-TU9OKTsKKwl1bG9vcF9pbml0KCk7CisKKwl3aGlsZSAoKGNoID0gZ2V0b3B0KGFyZ2MsIGFyZ3Ys
-ICJBOnM6IikpICE9IC0xKSB7CisJCXN3aXRjaCAoY2gpIHsKKwkJY2FzZSAncyc6CisJCQl1YnVz
-X3NvY2tldCA9IG9wdGFyZzsKKwkJCWJyZWFrOworCQljYXNlICdBJzoKKwkJCXVidXNkX2FjbF9k
-aXIgPSBvcHRhcmc7CisJCQlicmVhazsKKwkJZGVmYXVsdDoKKwkJCXJldHVybiB1c2FnZShhcmd2
-WzBdKTsKKwkJfQorCX0KKworCXVubGluayh1YnVzX3NvY2tldCk7CisJdW1hc2soMDExMSk7CisJ
-c2VydmVyX2ZkLmZkID0gdXNvY2soVVNPQ0tfVU5JWCB8IFVTT0NLX1NFUlZFUiB8IFVTT0NLX05P
-TkJMT0NLLCB1YnVzX3NvY2tldCwgTlVMTCk7CisJaWYgKHNlcnZlcl9mZC5mZCA8IDApIHsKKwkJ
-cGVycm9yKCJ1c29jayIpOworCQlyZXQgPSAtMTsKKwkJZ290byBvdXQ7CisJfQorCXVsb29wX2Zk
-X2FkZCgmc2VydmVyX2ZkLCBVTE9PUF9SRUFEIHwgVUxPT1BfRURHRV9UUklHR0VSKTsKKwl1YnVz
-ZF9hY2xfbG9hZCgpOworCisJdWxvb3BfcnVuKCk7CisJdW5saW5rKHVidXNfc29ja2V0KTsKKwor
-b3V0OgorCXVsb29wX2RvbmUoKTsKKwlyZXR1cm4gcmV0OworfQoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QK
-b3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3Jn
-L21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+--===============0042868664019523038==
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+For improved QA etc.
+
+Signed-off-by: Petr Å tetiar <ynezz@true.cz>
+---
+ CMakeLists.txt                                |  16 +++++
+ tests/CMakeLists.txt                          |  18 ++++++
+ tests/cram/CMakeLists.txt                     |  22 +++++++
+ tests/cram/test_ubus.t                        |  58 ++++++++++++++++++
+ tests/cram/test_ubusd.t                       |  24 ++++++++
+ tests/fuzz/CMakeLists.txt                     |  18 ++++++
+ .../05fe405753166f125559e7c9ac558654f107c7e9  | Bin 0 -> 8 bytes
+ .../0660e49c13f6d167a8298d885f724bad8f62fc35  | Bin 0 -> 8 bytes
+ .../37dadeab8d8ce7611f230f9524c1e8ab751c4a6a  | Bin 0 -> 8 bytes
+ .../71520a5c4b5ca73903216857abbad54a8002d44a  | Bin 0 -> 2 bytes
+ .../73c72a4d2bd1cd31b0b44256a888feec9eaaba27  | Bin 0 -> 9 bytes
+ .../8db068f76b98df8730f5308b12c793fdf04c47c2  | Bin 0 -> 8 bytes
+ .../c1dfd96eea8cc2b62785275bca38ac261256e278  |   1 +
+ .../c42ac1c46f1d4e211c735cc7dfad4ff8391110e9  | Bin 0 -> 3 bytes
+ ...h-1b8fb1be45db3aff7699100f497fb74138f3df4f | Bin 0 -> 6 bytes
+ ...h-4c4d2c3c9ade5da9347534e290305c3b9760f627 | Bin 0 -> 17 bytes
+ ...h-5e9937b197c88bf4e7b7ee2612456cad4cb83f5b | Bin 0 -> 86 bytes
+ ...h-75b146c4e6fac64d3e62236b27c64b50657bab2a | Bin 0 -> 4 bytes
+ ...h-813f3e68661da09c26d4a87dbb9d5099e92be50f | Bin 0 -> 36 bytes
+ ...h-98595faa58ba01d85ba4fd0b109cd3d490b45795 | Bin 0 -> 6 bytes
+ ...h-d0f3aa7d60a094b021f635d4edb7807c055a4ea1 |   1 +
+ ...h-df9d1243057b27bbad6211e5a23d1cb699028aa2 | Bin 0 -> 16 bytes
+ ...h-e2fd5ecb3b37926743256f1083f47a07c39e10c2 | Bin 0 -> 66 bytes
+ .../e2814b29dd2fd5db02b1ab7c5e147e1194a489ce  | Bin 0 -> 8 bytes
+ tests/fuzz/corpus/valid-blobmsg.bin           | Bin 0 -> 176 bytes
+ tests/fuzz/test-fuzz.c                        |  40 ++++++++++++
+ 26 files changed, 198 insertions(+)
+ create mode 100644 tests/CMakeLists.txt
+ create mode 100644 tests/cram/CMakeLists.txt
+ create mode 100644 tests/cram/test_ubus.t
+ create mode 100644 tests/cram/test_ubusd.t
+ create mode 100644 tests/fuzz/CMakeLists.txt
+ create mode 100644 tests/fuzz/corpus/05fe405753166f125559e7c9ac558654f107c7e9
+ create mode 100644 tests/fuzz/corpus/0660e49c13f6d167a8298d885f724bad8f62fc35
+ create mode 100644 tests/fuzz/corpus/37dadeab8d8ce7611f230f9524c1e8ab751c4a6a
+ create mode 100644 tests/fuzz/corpus/71520a5c4b5ca73903216857abbad54a8002d44a
+ create mode 100644 tests/fuzz/corpus/73c72a4d2bd1cd31b0b44256a888feec9eaaba27
+ create mode 100644 tests/fuzz/corpus/8db068f76b98df8730f5308b12c793fdf04c47c2
+ create mode 100644 tests/fuzz/corpus/c1dfd96eea8cc2b62785275bca38ac261256e278
+ create mode 100644 tests/fuzz/corpus/c42ac1c46f1d4e211c735cc7dfad4ff8391110e9
+ create mode 100644 tests/fuzz/corpus/crash-1b8fb1be45db3aff7699100f497fb74138f3df4f
+ create mode 100644 tests/fuzz/corpus/crash-4c4d2c3c9ade5da9347534e290305c3b9760f627
+ create mode 100644 tests/fuzz/corpus/crash-5e9937b197c88bf4e7b7ee2612456cad4cb83f5b
+ create mode 100644 tests/fuzz/corpus/crash-75b146c4e6fac64d3e62236b27c64b50657bab2a
+ create mode 100644 tests/fuzz/corpus/crash-813f3e68661da09c26d4a87dbb9d5099e92be50f
+ create mode 100644 tests/fuzz/corpus/crash-98595faa58ba01d85ba4fd0b109cd3d490b45795
+ create mode 100644 tests/fuzz/corpus/crash-d0f3aa7d60a094b021f635d4edb7807c055a4ea1
+ create mode 100644 tests/fuzz/corpus/crash-df9d1243057b27bbad6211e5a23d1cb699028aa2
+ create mode 100644 tests/fuzz/corpus/crash-e2fd5ecb3b37926743256f1083f47a07c39e10c2
+ create mode 100644 tests/fuzz/corpus/e2814b29dd2fd5db02b1ab7c5e147e1194a489ce
+ create mode 100644 tests/fuzz/corpus/valid-blobmsg.bin
+ create mode 100644 tests/fuzz/test-fuzz.c
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index dc6e42847086..5c0f760d031c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -41,6 +41,15 @@ TARGET_LINK_LIBRARIES(ubus ${ubox_library})
+ 
+ find_library(json NAMES json-c json)
+ 
++MACRO(ADD_UNIT_TEST_SAN name output_name)
++  ADD_EXECUTABLE(${name}-san ${name}.c)
++  TARGET_COMPILE_OPTIONS(${name}-san PRIVATE -g -fno-omit-frame-pointer -fsanitize=undefined,address,leak -fno-sanitize-recover=all)
++  TARGET_LINK_OPTIONS(${name}-san PRIVATE -fsanitize=undefined,address,leak)
++  TARGET_LINK_LIBRARIES(${name}-san ubus ubusd_library ${ubox_library} ${blob_library} ${json})
++  TARGET_INCLUDE_DIRECTORIES(${name}-san PRIVATE ${PROJECT_SOURCE_DIR})
++  SET_TARGET_PROPERTIES(${name}-san PROPERTIES OUTPUT_NAME ${output_name})
++ENDMACRO(ADD_UNIT_TEST_SAN)
++
+ ADD_LIBRARY(ubusd_library STATIC ubusd.c ubusd_proto.c ubusd_id.c ubusd_obj.c ubusd_event.c ubusd_acl.c ubusd_monitor.c)
+ ADD_EXECUTABLE(ubusd ubusd_main.c)
+ TARGET_LINK_LIBRARIES(ubusd ubusd_library ${ubox_library} ${blob_library} ${json})
+@@ -52,6 +61,13 @@ TARGET_LINK_LIBRARIES(cli ubus ${ubox_library} ${blob_library} ${json})
+ ADD_SUBDIRECTORY(lua)
+ ADD_SUBDIRECTORY(examples)
+ 
++IF(UNIT_TESTING)
++  ENABLE_TESTING()
++  ADD_SUBDIRECTORY(tests)
++  ADD_UNIT_TEST_SAN(cli ubus-san)
++  ADD_UNIT_TEST_SAN(ubusd_main ubusd-san)
++ENDIF()
++
+ INSTALL(TARGETS ubus cli
+ 	ARCHIVE DESTINATION lib
+ 	LIBRARY DESTINATION lib
+diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
+new file mode 100644
+index 000000000000..0cb33427e45a
+--- /dev/null
++++ b/tests/CMakeLists.txt
+@@ -0,0 +1,18 @@
++ADD_SUBDIRECTORY(cram)
++
++MACRO(ADD_UNIT_TEST name)
++  ADD_EXECUTABLE(${name} ${name}.c)
++  TARGET_LINK_LIBRARIES(${name} ubox blobmsg_json json_script ${json})
++  TARGET_INCLUDE_DIRECTORIES(${name} PRIVATE ${PROJECT_SOURCE_DIR})
++ENDMACRO(ADD_UNIT_TEST)
++
++FILE(GLOB test_cases "test-*.c")
++FOREACH(test_case ${test_cases})
++  GET_FILENAME_COMPONENT(test_case ${test_case} NAME_WE)
++  ADD_UNIT_TEST(${test_case})
++  ADD_UNIT_TEST_SAN(${test_case})
++ENDFOREACH(test_case)
++
++IF(CMAKE_C_COMPILER_ID STREQUAL "Clang")
++  ADD_SUBDIRECTORY(fuzz)
++ENDIF()
+diff --git a/tests/cram/CMakeLists.txt b/tests/cram/CMakeLists.txt
+new file mode 100644
+index 000000000000..30593aeb7605
+--- /dev/null
++++ b/tests/cram/CMakeLists.txt
+@@ -0,0 +1,22 @@
++FIND_PACKAGE(PythonInterp 3 REQUIRED)
++FILE(GLOB test_cases "test_*.t")
++
++SET(PYTHON_VENV_DIR "${CMAKE_CURRENT_BINARY_DIR}/.venv")
++SET(PYTHON_VENV_PIP "${PYTHON_VENV_DIR}/bin/pip")
++SET(PYTHON_VENV_CRAM "${PYTHON_VENV_DIR}/bin/cram")
++
++ADD_CUSTOM_COMMAND(
++	OUTPUT ${PYTHON_VENV_CRAM}
++	COMMAND ${PYTHON_EXECUTABLE} -m venv ${PYTHON_VENV_DIR}
++	COMMAND ${PYTHON_VENV_PIP} install cram
++)
++ADD_CUSTOM_TARGET(prepare-cram-venv ALL DEPENDS ${PYTHON_VENV_CRAM})
++
++ADD_TEST(
++	NAME cram
++	COMMAND ${PYTHON_VENV_CRAM} ${test_cases}
++	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
++)
++
++SET_PROPERTY(TEST cram APPEND PROPERTY ENVIRONMENT "UBUS=$<TARGET_FILE:ubus>")
++SET_PROPERTY(TEST cram APPEND PROPERTY ENVIRONMENT "TEST_BIN_DIR=$<TARGET_FILE_DIR:ubus>")
+diff --git a/tests/cram/test_ubus.t b/tests/cram/test_ubus.t
+new file mode 100644
+index 000000000000..e4ba87fd14a6
+--- /dev/null
++++ b/tests/cram/test_ubus.t
+@@ -0,0 +1,58 @@
++set environment for convenience:
++
++  $ [ -n "$TEST_BIN_DIR" ] && export PATH="$TEST_BIN_DIR:$PATH"
++  $ alias ubus='valgrind --quiet --leak-check=full ubus'
++
++check usage:
++
++  $ ubus
++  Usage: ubus [<options>] <command> [arguments...]
++  Options:
++   -s <socket>:\t\tSet the unix domain socket to connect to (esc)
++   -t <timeout>:\t\tSet the timeout (in seconds) for a command to complete (esc)
++   -S:\t\t\tUse simplified output (for scripts) (esc)
++   -v:\t\t\tMore verbose output (esc)
++   -m <type>:\t\t(for monitor): include a specific message type (esc)
++  \t\t\t(can be used more than once) (esc)
++   -M <r|t>\t\t(for monitor): only capture received or transmitted traffic (esc)
++  
++  Commands:
++   - list [<path>]\t\t\tList objects (esc)
++   - call <path> <method> [<message>]\tCall an object method (esc)
++   - listen [<path>...]\t\t\tListen for events (esc)
++   - send <type> [<message>]\t\tSend an event (esc)
++   - wait_for <object> [<object>...]\tWait for multiple objects to appear on ubus (esc)
++   - monitor\t\t\t\tMonitor ubus traffic (esc)
++  
++  [1]
++
++  $ ubus-san
++  Usage: ubus-san [<options>] <command> [arguments...]
++  Options:
++   -s <socket>:\t\tSet the unix domain socket to connect to (esc)
++   -t <timeout>:\t\tSet the timeout (in seconds) for a command to complete (esc)
++   -S:\t\t\tUse simplified output (for scripts) (esc)
++   -v:\t\t\tMore verbose output (esc)
++   -m <type>:\t\t(for monitor): include a specific message type (esc)
++  \t\t\t(can be used more than once) (esc)
++   -M <r|t>\t\t(for monitor): only capture received or transmitted traffic (esc)
++  
++  Commands:
++   - list [<path>]\t\t\tList objects (esc)
++   - call <path> <method> [<message>]\tCall an object method (esc)
++   - listen [<path>...]\t\t\tListen for events (esc)
++   - send <type> [<message>]\t\tSend an event (esc)
++   - wait_for <object> [<object>...]\tWait for multiple objects to appear on ubus (esc)
++   - monitor\t\t\t\tMonitor ubus traffic (esc)
++  
++  [1]
++
++check monitor command:
++
++  $ ubus monitor
++  Failed to connect to ubus
++  [255]
++
++  $ ubus-san monitor
++  Failed to connect to ubus
++  [255]
+diff --git a/tests/cram/test_ubusd.t b/tests/cram/test_ubusd.t
+new file mode 100644
+index 000000000000..1f72e61a8bb8
+--- /dev/null
++++ b/tests/cram/test_ubusd.t
+@@ -0,0 +1,24 @@
++set environment for convenience:
++
++  $ [ -n "$TEST_BIN_DIR" ] && export PATH="$TEST_BIN_DIR:$PATH"
++  $ alias ubusd='valgrind --quiet --leak-check=full ubusd'
++
++check usage:
++
++  $ ubusd -h
++  ubusd: invalid option -- 'h'
++  Usage: ubusd [<options>]
++  Options: 
++    -A <path>:\t\tSet the path to ACL files (esc)
++    -s <socket>:\t\tSet the unix domain socket to listen on (esc)
++  
++  [1]
++
++  $ ubusd-san -h
++  ubusd-san: invalid option -- 'h'
++  Usage: ubusd-san [<options>]
++  Options: 
++    -A <path>:\t\tSet the path to ACL files (esc)
++    -s <socket>:\t\tSet the unix domain socket to listen on (esc)
++  
++  [1]
+diff --git a/tests/fuzz/CMakeLists.txt b/tests/fuzz/CMakeLists.txt
+new file mode 100644
+index 000000000000..ecdfd32a1a6e
+--- /dev/null
++++ b/tests/fuzz/CMakeLists.txt
+@@ -0,0 +1,18 @@
++FILE(GLOB test_cases "test-*.c")
++
++MACRO(ADD_FUZZER_TEST name)
++  ADD_EXECUTABLE(${name} ${name}.c)
++  TARGET_COMPILE_OPTIONS(${name} PRIVATE -g -O1 -fno-omit-frame-pointer -fsanitize=fuzzer,address,leak,undefined)
++  TARGET_INCLUDE_DIRECTORIES(${name} PRIVATE ${PROJECT_SOURCE_DIR})
++  TARGET_LINK_OPTIONS(${name} PRIVATE -stdlib=libc++ -fsanitize=fuzzer,address,leak,undefined)
++  TARGET_LINK_LIBRARIES(${name} ubus ubusd_library ${ubox_library} ${blob_library} ${json})
++  ADD_TEST(
++    NAME ${name}
++    COMMAND ${name} -max_len=256 -timeout=10 -max_total_time=300 ${CMAKE_CURRENT_SOURCE_DIR}/corpus
++  )
++ENDMACRO(ADD_FUZZER_TEST)
++
++FOREACH(test_case ${test_cases})
++  GET_FILENAME_COMPONENT(test_case ${test_case} NAME_WE)
++  ADD_FUZZER_TEST(${test_case})
++ENDFOREACH(test_case)
+diff --git a/tests/fuzz/corpus/05fe405753166f125559e7c9ac558654f107c7e9 b/tests/fuzz/corpus/05fe405753166f125559e7c9ac558654f107c7e9
+new file mode 100644
+index 0000000000000000000000000000000000000000..1b1cb4d44c57c2d7a5122870fa6ac3e62ff7e94e
+GIT binary patch
+literal 8
+KcmZQzfB*mh2mk>9
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/0660e49c13f6d167a8298d885f724bad8f62fc35 b/tests/fuzz/corpus/0660e49c13f6d167a8298d885f724bad8f62fc35
+new file mode 100644
+index 0000000000000000000000000000000000000000..ec23f710327d388930349f21e39d79aecaf3971a
+GIT binary patch
+literal 8
+Mcmd<$0s#gF00B|}Jpcdz
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/37dadeab8d8ce7611f230f9524c1e8ab751c4a6a b/tests/fuzz/corpus/37dadeab8d8ce7611f230f9524c1e8ab751c4a6a
+new file mode 100644
+index 0000000000000000000000000000000000000000..9281635f0e9260b19cd1f470c1de0be0397cc2e7
+GIT binary patch
+literal 8
+NcmZQzU=Uyc0ssJ501*HH
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/71520a5c4b5ca73903216857abbad54a8002d44a b/tests/fuzz/corpus/71520a5c4b5ca73903216857abbad54a8002d44a
+new file mode 100644
+index 0000000000000000000000000000000000000000..b4e009dd6d7e91ff56595a84010db2eb81e41622
+GIT binary patch
+literal 2
+Jcmcb}0004`0MY;e
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/73c72a4d2bd1cd31b0b44256a888feec9eaaba27 b/tests/fuzz/corpus/73c72a4d2bd1cd31b0b44256a888feec9eaaba27
+new file mode 100644
+index 0000000000000000000000000000000000000000..490a43d8a011333cb0d599b294b465ab33fe25f2
+GIT binary patch
+literal 9
+QcmZQzVBq3n<YHg|005Z)AOHXW
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/8db068f76b98df8730f5308b12c793fdf04c47c2 b/tests/fuzz/corpus/8db068f76b98df8730f5308b12c793fdf04c47c2
+new file mode 100644
+index 0000000000000000000000000000000000000000..91fa1a0929eebfcff6b81cf8e5310266ff62845a
+GIT binary patch
+literal 8
+NcmZSJ0s;mG1^@u$04V?f
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/c1dfd96eea8cc2b62785275bca38ac261256e278 b/tests/fuzz/corpus/c1dfd96eea8cc2b62785275bca38ac261256e278
+new file mode 100644
+index 000000000000..62f9457511f8
+--- /dev/null
++++ b/tests/fuzz/corpus/c1dfd96eea8cc2b62785275bca38ac261256e278
+@@ -0,0 +1 @@
++6
+\ No newline at end of file
+diff --git a/tests/fuzz/corpus/c42ac1c46f1d4e211c735cc7dfad4ff8391110e9 b/tests/fuzz/corpus/c42ac1c46f1d4e211c735cc7dfad4ff8391110e9
+new file mode 100644
+index 0000000000000000000000000000000000000000..3d70d85eba81360f757bc71859316667610c5339
+GIT binary patch
+literal 3
+KcmZQ%U<3dF2LJ;A
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-1b8fb1be45db3aff7699100f497fb74138f3df4f b/tests/fuzz/corpus/crash-1b8fb1be45db3aff7699100f497fb74138f3df4f
+new file mode 100644
+index 0000000000000000000000000000000000000000..407114eb1a9fc2c82f40cac9948c75ac23948385
+GIT binary patch
+literal 6
+Lcmd;L00Kt<0D}Nb
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-4c4d2c3c9ade5da9347534e290305c3b9760f627 b/tests/fuzz/corpus/crash-4c4d2c3c9ade5da9347534e290305c3b9760f627
+new file mode 100644
+index 0000000000000000000000000000000000000000..2ca392f0c6109a4b0d6cf44ed18d69133addd8ca
+GIT binary patch
+literal 17
+NcmZQ(U|@cV3;<Ep3#b49
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-5e9937b197c88bf4e7b7ee2612456cad4cb83f5b b/tests/fuzz/corpus/crash-5e9937b197c88bf4e7b7ee2612456cad4cb83f5b
+new file mode 100644
+index 0000000000000000000000000000000000000000..b49d3e7de86e2402f1d182aad74819a2c0abd8cc
+GIT binary patch
+literal 86
+OcmZQ(U|_yRbpQY#s6>+h
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-75b146c4e6fac64d3e62236b27c64b50657bab2a b/tests/fuzz/corpus/crash-75b146c4e6fac64d3e62236b27c64b50657bab2a
+new file mode 100644
+index 0000000000000000000000000000000000000000..39ae859cc00ce0c4b80c5a1d0bf031b6a6310ce0
+GIT binary patch
+literal 4
+LcmZQ(U|<3O01^NO
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-813f3e68661da09c26d4a87dbb9d5099e92be50f b/tests/fuzz/corpus/crash-813f3e68661da09c26d4a87dbb9d5099e92be50f
+new file mode 100644
+index 0000000000000000000000000000000000000000..62338ff4f0801529d0f6598c02bfbb9c57b5533c
+GIT binary patch
+literal 36
+QcmZQ(U|{}_7cese01OQs?*IS*
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-98595faa58ba01d85ba4fd0b109cd3d490b45795 b/tests/fuzz/corpus/crash-98595faa58ba01d85ba4fd0b109cd3d490b45795
+new file mode 100644
+index 0000000000000000000000000000000000000000..530ae8f6c1f7b9fa3ed86d1bf66b7e0a6d8b7485
+GIT binary patch
+literal 6
+Ncmd<$;^Jap0{{TP051Rl
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-d0f3aa7d60a094b021f635d4edb7807c055a4ea1 b/tests/fuzz/corpus/crash-d0f3aa7d60a094b021f635d4edb7807c055a4ea1
+new file mode 100644
+index 000000000000..46b749ee7968
+--- /dev/null
++++ b/tests/fuzz/corpus/crash-d0f3aa7d60a094b021f635d4edb7807c055a4ea1
+@@ -0,0 +1 @@
++ÿÿÿÿÝ
+diff --git a/tests/fuzz/corpus/crash-df9d1243057b27bbad6211e5a23d1cb699028aa2 b/tests/fuzz/corpus/crash-df9d1243057b27bbad6211e5a23d1cb699028aa2
+new file mode 100644
+index 0000000000000000000000000000000000000000..f6899b51bcb4283949208b7937e9a4ce3a7ef13c
+GIT binary patch
+literal 16
+RcmZQzVBln8U;rWr4FCY<02=@R
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/crash-e2fd5ecb3b37926743256f1083f47a07c39e10c2 b/tests/fuzz/corpus/crash-e2fd5ecb3b37926743256f1083f47a07c39e10c2
+new file mode 100644
+index 0000000000000000000000000000000000000000..92a30d23706ee628d4a076fcbe0b7613650c2039
+GIT binary patch
+literal 66
+QcmZQ(U|{}F0bphZ0GOFO(EtDd
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/e2814b29dd2fd5db02b1ab7c5e147e1194a489ce b/tests/fuzz/corpus/e2814b29dd2fd5db02b1ab7c5e147e1194a489ce
+new file mode 100644
+index 0000000000000000000000000000000000000000..cc81c2c7fcbddacaab466e0b4cb46d0e8e4e1332
+GIT binary patch
+literal 8
+NcmZQz-~s{$1^@uO04V?f
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/corpus/valid-blobmsg.bin b/tests/fuzz/corpus/valid-blobmsg.bin
+new file mode 100644
+index 0000000000000000000000000000000000000000..2d0c68e8a1273ae12ac6d4401c7471927809a926
+GIT binary patch
+literal 176
+zcmZo>V31>A&rK~ZPE1c_U|{e_&B@8vQ7F$Z%1KcK@*9Cd3@kaB#U%_3tqcr2Kp`+d
+zVlyJKnK~F4BpBFI@=KF)K*ljRBy39qfhLeS93`p6B`Jv|i3|+5)B(*BU|`JvxdNn}
+Rv6+E^kAW5J90ntx007e$BMSfk
+
+literal 0
+HcmV?d00001
+
+diff --git a/tests/fuzz/test-fuzz.c b/tests/fuzz/test-fuzz.c
+new file mode 100644
+index 000000000000..9922ff9de609
+--- /dev/null
++++ b/tests/fuzz/test-fuzz.c
+@@ -0,0 +1,40 @@
++#include <stdio.h>
++#include <stdint.h>
++#include <stddef.h>
++#include <limits.h>
++
++#include <libubox/blob.h>
++#include <libubox/blobmsg.h>
++
++#include "ubusmsg.h"
++#include "libubus.h"
++#include "libubus-internal.h"
++
++static void _ubus_validate_hdr(const uint8_t *data, size_t size)
++{
++	if (size > sizeof(struct ubus_msghdr))
++		return;
++
++	ubus_validate_hdr((struct ubus_msghdr *) data);
++}
++
++static void _ubus_parse_msg(const uint8_t *data, size_t size)
++{
++	struct blob_attr *attr = (struct blob_attr *) data;
++
++	if (size < sizeof(struct blob_attr *))
++		return;
++
++	if (blob_pad_len(attr) > UBUS_MAX_MSGLEN)
++		return;
++
++	ubus_parse_msg(attr);
++}
++
++int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
++{
++	_ubus_validate_hdr(data, size);
++	_ubus_parse_msg(data, size);
++
++	return 0;
++}
+
+
+--===============0042868664019523038==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============0042868664019523038==--

@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A475127022
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 22:59:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52F7F12701F
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 22:59:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0zz1bZZgq2a6Q8o0Xva7diz4xNdfp9XPwOqhuCXwCvY=; b=TGycDuIPf46wFB
-	0NKY0BtLefRNTKTxRD8IotlPeQi6IYIMWjhRmIrQh6WFHH/DuA4X1pauIGC8WLLzqRpHth8VcI1Sp
-	abZxlh5UC76QYqgdNUsuit2L9YnE0N+OUlh1FJccBzQ3UIcl8tFKjT+l/gI4CZuQyUvcEypWrC224
-	lRa5pJecrqkCjUwBulO0CaGiNmVOxquUnZRfr3ypWzxuF5F5L5AVlQJ2VHd/uSmlDRpLvuoyF5Srg
-	6R68o5d53Mlk58YGwfcjKeVUD1PqYZBE7IoX4QqY1PDE0pytPEXQTQaI/ZnvLM5rObxrTXpnD9OFS
-	s45V7QYo4DQxKAwGQzPw==;
+	List-Owner; bh=a+mSIErsM+Ko9wGhglyDJoK7iihZ0AnXsrsRBJqAf8o=; b=Th7GPSDRPkjUGd
+	GjkyFKTXtK6Vd4x+GLO/8Ndm1+I6AFhcNwO8UpHh9gLO4jvLRpY8GYP1zWd1TPQ45iSjHmJVqguTa
+	vHi1cvqreT9qyz7DS0CkMhnROrTE4tu+YIqSEc6+T0qk7z7iHfeiYLl9A0rvDgfVeN0sYkJa/h5Ha
+	Xam2LKy0b9uN1rscbTDx51YKGcXTaCAqvnWvEjn53m9sAFACEiL5j3Ls/NaQyoqp/5RtHe9QhzWQA
+	C8ShH+wjwxTbQTwC26Auqn4Ecw3WRbSRxVan5haCQvY3ThT3HsainuACCCliofkT5nENwksCxM8Qq
+	xoTqBgWBAR1ptiDoAwhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii3ph-0001lZ-5P; Thu, 19 Dec 2019 21:59:45 +0000
+	id 1ii3pJ-0001AP-3g; Thu, 19 Dec 2019 21:59:21 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii3om-0000r0-KH
+ id 1ii3om-0000r1-KI
  for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 21:58:51 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 766F04B43;
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 9DCDA4B44;
  Thu, 19 Dec 2019 22:58:46 +0100 (CET)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id abf7970f;
- Thu, 19 Dec 2019 22:58:32 +0100 (CET)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id b19516bc;
+ Thu, 19 Dec 2019 22:58:33 +0100 (CET)
 From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 19 Dec 2019 22:58:18 +0100
-Message-Id: <20191219215836.21773-3-ynezz@true.cz>
+Date: Thu, 19 Dec 2019 22:58:19 +0100
+Message-Id: <20191219215836.21773-4-ynezz@true.cz>
 In-Reply-To: <20191219215836.21773-1-ynezz@true.cz>
 References: <20191219215836.21773-1-ynezz@true.cz>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_135848_831623_29A8BE34 
-X-CRM114-Status: UNSURE (   6.83  )
+X-CRM114-CacheID: sfid-20191219_135848_832982_4E03092F 
+X-CRM114-Status: UNSURE (   7.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -49,8 +49,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH libubox 02/20] blobmsg/ulog: fix format
- string compiler warnings
+Subject: [OpenWrt-Devel] [PATCH libubox 03/20] cmake: add more hardening
+ compiler flags
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,46 +68,21 @@ Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Rml4ZXMgZm9sbG93aW5nIGNvbXBpbGVyIHdhcm5pbmdzOgoKIGJsb2Jtc2cuYzoyNDI6Mzk6IGVy
-cm9yOiBmb3JtYXQgc3RyaW5nIGlzIG5vdCBhIHN0cmluZyBsaXRlcmFsIFstV2Vycm9yLC1XZm9y
-bWF0LW5vbmxpdGVyYWxdCiBibG9ibXNnLmM6MjQ4OjIzOiBlcnJvcjogZm9ybWF0IHN0cmluZyBp
-cyBub3QgYSBzdHJpbmcgbGl0ZXJhbCBbLVdlcnJvciwtV2Zvcm1hdC1ub25saXRlcmFsXQogdWxv
-Zy5jOjEwMDoxODogZXJyb3I6IGZvcm1hdCBzdHJpbmcgaXMgbm90IGEgc3RyaW5nIGxpdGVyYWwg
-Wy1XZXJyb3IsLVdmb3JtYXQtbm9ubGl0ZXJhbF0KIHVsb2cuYzoxMTI6MTY6IGVycm9yOiBmb3Jt
-YXQgc3RyaW5nIGlzIG5vdCBhIHN0cmluZyBsaXRlcmFsIFstV2Vycm9yLC1XZm9ybWF0LW5vbmxp
-dGVyYWxdCiB1bG9nLmM6MTE3OjIwOiBlcnJvcjogZm9ybWF0IHN0cmluZyBpcyBub3QgYSBzdHJp
-bmcgbGl0ZXJhbCBbLVdlcnJvciwtV2Zvcm1hdC1ub25saXRlcmFsXQoKU2lnbmVkLW9mZi1ieTog
-UGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4KLS0tCiBibG9ibXNnLmMgfCA4ICsrKystLS0t
-CiB1bG9nLmMgICAgfCAzICsrKwogMiBmaWxlcyBjaGFuZ2VkLCA3IGluc2VydGlvbnMoKyksIDQg
-ZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvYmxvYm1zZy5jIGIvYmxvYm1zZy5jCmluZGV4IGE4
-NjA0ODNiZmE3ZS4uOTdlMGMyMDU3NWZmIDEwMDY0NAotLS0gYS9ibG9ibXNnLmMKKysrIGIvYmxv
-Ym1zZy5jCkBAIC0yMzAsOCArMjMwLDggQEAgYmxvYm1zZ19vcGVuX25lc3RlZChzdHJ1Y3QgYmxv
-Yl9idWYgKmJ1ZiwgY29uc3QgY2hhciAqbmFtZSwgYm9vbCBhcnJheSkKIAlyZXR1cm4gKHZvaWQg
-KilvZmZzZXQ7CiB9CiAKLWludAotYmxvYm1zZ192cHJpbnRmKHN0cnVjdCBibG9iX2J1ZiAqYnVm
-LCBjb25zdCBjaGFyICpuYW1lLCBjb25zdCBjaGFyICpmb3JtYXQsIHZhX2xpc3QgYXJnKQorX19h
-dHRyaWJ1dGVfXygoZm9ybWF0KHByaW50ZiwgMywgMCkpKQoraW50IGJsb2Jtc2dfdnByaW50Zihz
-dHJ1Y3QgYmxvYl9idWYgKmJ1ZiwgY29uc3QgY2hhciAqbmFtZSwgY29uc3QgY2hhciAqZm9ybWF0
-LCB2YV9saXN0IGFyZykKIHsKIAl2YV9saXN0IGFyZzI7CiAJY2hhciBjYnVmOwpAQCAtMjUxLDgg
-KzI1MSw4IEBAIGJsb2Jtc2dfdnByaW50ZihzdHJ1Y3QgYmxvYl9idWYgKmJ1ZiwgY29uc3QgY2hh
-ciAqbmFtZSwgY29uc3QgY2hhciAqZm9ybWF0LCB2YV9sCiAJcmV0dXJuIHJldDsKIH0KIAotaW50
-Ci1ibG9ibXNnX3ByaW50ZihzdHJ1Y3QgYmxvYl9idWYgKmJ1ZiwgY29uc3QgY2hhciAqbmFtZSwg
-Y29uc3QgY2hhciAqZm9ybWF0LCAuLi4pCitfX2F0dHJpYnV0ZV9fKChmb3JtYXQocHJpbnRmLCAz
-LCA0KSkpCitpbnQgYmxvYm1zZ19wcmludGYoc3RydWN0IGJsb2JfYnVmICpidWYsIGNvbnN0IGNo
-YXIgKm5hbWUsIGNvbnN0IGNoYXIgKmZvcm1hdCwgLi4uKQogewogCXZhX2xpc3QgYXA7CiAJaW50
-IHJldDsKZGlmZiAtLWdpdCBhL3Vsb2cuYyBiL3Vsb2cuYwppbmRleCBiNzMwMGU3MjBkMjEuLjA1
-OTQ2YTBjMzUyMSAxMDA2NDQKLS0tIGEvdWxvZy5jCisrKyBiL3Vsb2cuYwpAQCAtODcsNiArODcs
-NyBAQCBzdGF0aWMgdm9pZCB1bG9nX2RlZmF1bHRzKHZvaWQpCiAJX3Vsb2dfaW5pdGlhbGl6ZWQg
-PSAxOwogfQogCitfX2F0dHJpYnV0ZV9fKChmb3JtYXQocHJpbnRmLCAyLCAwKSkpCiBzdGF0aWMg
-dm9pZCB1bG9nX2ttc2coaW50IHByaW9yaXR5LCBjb25zdCBjaGFyICpmbXQsIHZhX2xpc3QgYXAp
-CiB7CiAJRklMRSAqa21zZzsKQEAgLTEwMiw2ICsxMDMsNyBAQCBzdGF0aWMgdm9pZCB1bG9nX2tt
-c2coaW50IHByaW9yaXR5LCBjb25zdCBjaGFyICpmbXQsIHZhX2xpc3QgYXApCiAJfQogfQogCitf
-X2F0dHJpYnV0ZV9fKChmb3JtYXQocHJpbnRmLCAyLCAwKSkpCiBzdGF0aWMgdm9pZCB1bG9nX3N0
-ZGlvKGludCBwcmlvcml0eSwgY29uc3QgY2hhciAqZm10LCB2YV9saXN0IGFwKQogewogCUZJTEUg
-Km91dCA9IHN0ZGVycjsKQEAgLTExMiw2ICsxMTQsNyBAQCBzdGF0aWMgdm9pZCB1bG9nX3N0ZGlv
-KGludCBwcmlvcml0eSwgY29uc3QgY2hhciAqZm10LCB2YV9saXN0IGFwKQogCXZmcHJpbnRmKG91
-dCwgZm10LCBhcCk7CiB9CiAKK19fYXR0cmlidXRlX18oKGZvcm1hdChwcmludGYsIDIsIDApKSkK
-IHN0YXRpYyB2b2lkIHVsb2dfc3lzbG9nKGludCBwcmlvcml0eSwgY29uc3QgY2hhciAqZm10LCB2
-YV9saXN0IGFwKQogewogCXZzeXNsb2cocHJpb3JpdHksIGZtdCwgYXApOwoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5n
-IGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53
-cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+SW4gb3JkZXIgdG8gc3BvdCBwb3NzaWJsZSBpc3N1ZXMgd2l0aCBkaXJlY3QgaW1wYWN0IG9uIHNl
+Y3VyaXR5IGR1cmluZwpRQSBvbiBDSSAoR0NDIHZlcnNpb24gNiBhbmQgaGlnaGVyKS4KClJlZjog
+aHR0cHM6Ly9kZXZlbG9wZXJzLnJlZGhhdC5jb20vYmxvZy8yMDE4LzAzLzIxL2NvbXBpbGVyLWFu
+ZC1saW5rZXItZmxhZ3MtZ2NjLwpTaWduZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0
+cnVlLmN6PgotLS0KIENNYWtlTGlzdHMudHh0IHwgMyArKy0KIDEgZmlsZSBjaGFuZ2VkLCAyIGlu
+c2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9DTWFrZUxpc3RzLnR4dCBi
+L0NNYWtlTGlzdHMudHh0CmluZGV4IGRhN2QwM2M3ZmMyMS4uMGIwYzllMzE2YmZiIDEwMDY0NAot
+LS0gYS9DTWFrZUxpc3RzLnR4dAorKysgYi9DTWFrZUxpc3RzLnR4dApAQCAtNiw3ICs2LDggQEAg
+UFJPSkVDVCh1Ym94IEMpCiAKIEFERF9ERUZJTklUSU9OUygtV2FsbCAtV2Vycm9yKQogSUYoQ01B
+S0VfQ19DT01QSUxFUl9WRVJTSU9OIFZFUlNJT05fR1JFQVRFUiA2KQotCUFERF9ERUZJTklUSU9O
+UygtV2V4dHJhKQorCUFERF9ERUZJTklUSU9OUygtV2V4dHJhIC1XZXJyb3I9aW1wbGljaXQtZnVu
+Y3Rpb24tZGVjbGFyYXRpb24pCisJQUREX0RFRklOSVRJT05TKC1XZm9ybWF0IC1XZXJyb3I9Zm9y
+bWF0LXNlY3VyaXR5IC1XZXJyb3I9Zm9ybWF0LW5vbmxpdGVyYWwpCiBFTkRJRigpCiBBRERfREVG
+SU5JVElPTlMoLU9zIC1zdGQ9Z251OTkgLWczIC1XbWlzc2luZy1kZWNsYXJhdGlvbnMgLVduby11
+bnVzZWQtcGFyYW1ldGVyKQogCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3Rz
+Lm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9v
+cGVud3J0LWRldmVsCg==

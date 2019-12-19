@@ -2,41 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 888EF125EED
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 11:29:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3973A125F1A
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 11:34:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1AaNm70PtPZzUzwOnnFnE/glFvt46D7xEi+nfp3/08s=; b=COjOq/gZFo6+y9
-	GdzzjQbFjuTTH85/IrT3JFlpt6sTonL4NCB+KwtAU/p03qBIxRe5qCR1nKLwbTPdYCe6xPlj3GUlP
-	ABUSIpimGqI+Sj9d1n3L2X0QWZqRn2iFZZopYL0seoejJgZqqhWxDMFfqirF/kViv21FoGwb5Z9FX
-	T3g+BgcFEeFWDPV3+lHsaAOd/8bFsHfj3pX5VjZ+0aiA1kfssS/tnHBNG+3leCI0y3dIMfxwJvMki
-	ATxC8ycQdR6RoI2618pzggRopD7mf7+j3hgWv3bsvoQ5xTM9ri6Z5YxctmcMMyWkEiX16lN75OIS+
-	/w5zRyfDjum/5yBIEBKw==;
+	List-Owner; bh=iTExv8bryKGKNSZkBBUR0NnmsBNEzHgMh7ADdlA0ZOc=; b=aine9L1lQQ2U6J
+	+BwNmqD4FAMa4UiZAk0hHE2sr4sEyu4z1O9Q87GDcJBjq0jAHnD5CJyaAnQGGXeMy1MIH0m9Hlzpa
+	JXluL2QJ6S+cA+mSrwbeTBN0LJCtl/mxMzEswIzyPLTsBs6/nvkw1yJyDhNW5uLcoKLqcfIb7shaT
+	p3MDVjWrFigGj4W6yn1xRxnpzdhzDUqwLrOeJReohd1by88f+33mErSDfCQAcHlwVHi3JsoD61sfn
+	5qE35LbnSzjJ132z1fxUXoh2b2/DkAphn5BETZrL7puNH3K0YuzUzHypmgCQrKSMo+dxmClBXfS0S
+	x4VrMFwo0OV7zsYSFCzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iht3k-0002Z9-4A; Thu, 19 Dec 2019 10:29:32 +0000
+	id 1iht89-0004Ix-QO; Thu, 19 Dec 2019 10:34:05 +0000
 Received: from mout-p-201.mailbox.org ([80.241.56.171])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iht3Y-0002YN-Aj
- for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 10:29:22 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
+ id 1iht81-0004Id-UK
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 10:33:59 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47dp5P1TqkzQlBH;
- Thu, 19 Dec 2019 11:29:13 +0100 (CET)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47dpBr4pGPzQlCC;
+ Thu, 19 Dec 2019 11:33:56 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id wKKXNO2lQEMz; Thu, 19 Dec 2019 11:29:08 +0100 (CET)
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id T6eqpT12DPZt; Thu, 19 Dec 2019 11:33:53 +0100 (CET)
 To: Daniel Danzberger <daniel@dd-wrt.com>, openwrt-devel@lists.openwrt.org
 References: <20191127172952.2143-1-daniel@dd-wrt.com>
- <20191127172952.2143-2-daniel@dd-wrt.com>
+ <20191127172952.2143-3-daniel@dd-wrt.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -98,14 +97,14 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <7d92a7e1-ef8b-4b4c-351a-0c169ba47aef@hauke-m.de>
-Date: Thu, 19 Dec 2019 11:29:07 +0100
+Message-ID: <3bcad720-ea8b-1ba9-b12c-9bcf6e13a174@hauke-m.de>
+Date: Thu, 19 Dec 2019 11:33:47 +0100
 MIME-Version: 1.0
-In-Reply-To: <20191127172952.2143-2-daniel@dd-wrt.com>
+In-Reply-To: <20191127172952.2143-3-daniel@dd-wrt.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_022920_677662_F39EC245 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20191219_023358_285905_80F632BA 
+X-CRM114-Status: GOOD (  21.65  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -113,8 +112,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] iwinfo: add current hw and ht mode
- to info call
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] nl80211: add htmode to iwinfo_ops
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,19 +130,133 @@ Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 On 11/27/19 6:29 PM, Daniel Danzberger wrote:
+> This callback shows the currently active HTMODE of the device.
+> 
 > Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
 > ---
->  iwinfo.c | 44 ++++++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 44 insertions(+)
+>  include/iwinfo.h |  4 ++-
+>  iwinfo_nl80211.c | 70 ++++++++++++++++++++++++++++++++++++++++++++++++
+>  2 files changed, 73 insertions(+), 1 deletion(-)
 > 
-> diff --git a/iwinfo.c b/iwinfo.c
-> index a76b72a..7f46e3e 100644
-> --- a/iwinfo.c
-> +++ b/iwinfo.c
+> diff --git a/include/iwinfo.h b/include/iwinfo.h
+> index d035c9c..5e64294 100644
+> --- a/include/iwinfo.h
+> +++ b/include/iwinfo.h
+> @@ -88,8 +88,9 @@ enum iwinfo_htmode {
+>  	IWINFO_HTMODE_VHT80      = (1 << 4),
+>  	IWINFO_HTMODE_VHT80_80   = (1 << 5),
+>  	IWINFO_HTMODE_VHT160     = (1 << 6),
+> +	IWINFO_HTMODE_NOHT       = (1 << 7),
+>  
+> -	IWINFO_HTMODE_COUNT      = 7
+> +	IWINFO_HTMODE_COUNT      = 8
+>  };
+>  
+>  extern const char *IWINFO_HTMODE_NAMES[IWINFO_HTMODE_COUNT];
+> @@ -231,6 +232,7 @@ struct iwinfo_ops {
+>  	int (*mbssid_support)(const char *, int *);
+>  	int (*hwmodelist)(const char *, int *);
+>  	int (*htmodelist)(const char *, int *);
+> +	int (*htmode)(const char *, int *);
+>  	int (*ssid)(const char *, char *);
+>  	int (*bssid)(const char *, char *);
+>  	int (*country)(const char *, char *);
+> diff --git a/iwinfo_nl80211.c b/iwinfo_nl80211.c
+> index 4b6ef91..36f1da2 100644
+> --- a/iwinfo_nl80211.c
+> +++ b/iwinfo_nl80211.c
+> @@ -2958,6 +2958,75 @@ out:
+>  	return -1;
+>  }
+>  
+> +struct chan_info {
+> +	int width;
+> +	int mode;
+> +};
+> +
+> +static int nl80211_get_htmode_cb(struct nl_msg *msg, void *arg)
+> +{
+> +	struct nlattr **tb = nl80211_parse(msg);
+> +	struct nlattr *cur;
+> +	struct chan_info *chn = arg;
+> +
+> +	if ((cur = tb[NL80211_ATTR_CHANNEL_WIDTH]))
+> +		chn->width = nla_get_u32(cur);
+> +
+> +	if ((cur = tb[NL80211_ATTR_BSS_HT_OPMODE]))
+> +		chn->mode = nla_get_u32(cur);
+> +
+> +	return NL_SKIP;
+> +}
+> +
+> +static int nl80211_get_htmode(const char *ifname, int *buf)
+> +{
+> +	struct chan_info chn = { .width = 0, .mode = 0 };
+> +	char *res;
+> +	int err;
+> +
+> +	res = nl80211_phy2ifname(ifname);
+> +	*buf = 0;
+> +
+> +	err =  nl80211_request(res ? res : ifname,
+> +				NL80211_CMD_GET_INTERFACE, 0,
+> +				nl80211_get_htmode_cb, &chn);
+> +	if (err)
+> +		return -1;
+> +
+> +	switch (chn.width) {
+> +	case NL80211_CHAN_WIDTH_20_NOHT:
+> +		*buf = IWINFO_HTMODE_NOHT;
+> +		break;
+> +	case NL80211_CHAN_WIDTH_20:
+> +		if (chn.mode == -1)
+> +			*buf = IWINFO_HTMODE_VHT20;
+> +		else
+> +			*buf = IWINFO_HTMODE_HT20;
+> +		break;
+> +	case NL80211_CHAN_WIDTH_40:
+> +		if (chn.mode == -1)
+> +			*buf = IWINFO_HTMODE_VHT40;
+> +		else
+> +			*buf = IWINFO_HTMODE_HT40;
+> +		break;
+> +	case NL80211_CHAN_WIDTH_80:
+> +		*buf = IWINFO_HTMODE_VHT80;
+> +		break;
+> +	case NL80211_CHAN_WIDTH_80P80:
+> +		*buf = IWINFO_HTMODE_VHT80_80;
+> +		break;
+> +	case NL80211_CHAN_WIDTH_160:
+> +		*buf = IWINFO_HTMODE_VHT160;
+> +		break;
+> +	case NL80211_CHAN_WIDTH_5:
+> +	case NL80211_CHAN_WIDTH_10:
 
-This file does not exist.
+Should this also return IWINFO_HTMODE_NOHT ?
 
-Hauke
+> +	default:
+> +		break;
+
+Why not return an error if nothing matches?
+
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static int nl80211_get_htmodelist(const char *ifname, int *buf)
+>  {
+>  	struct nl80211_modes m = { 0 };
+> @@ -3147,6 +3216,7 @@ const struct iwinfo_ops nl80211_ops = {
+>  	.mbssid_support   = nl80211_get_mbssid_support,
+>  	.hwmodelist       = nl80211_get_hwmodelist,
+>  	.htmodelist       = nl80211_get_htmodelist,
+> +	.htmode		  = nl80211_get_htmode,
+>  	.mode             = nl80211_get_mode,
+>  	.ssid             = nl80211_get_ssid,
+>  	.bssid            = nl80211_get_bssid,
+> 
+
 
 _______________________________________________
 openwrt-devel mailing list

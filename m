@@ -2,117 +2,107 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3973A125F1A
-	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 11:34:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 742DD126132
+	for <lists+openwrt-devel@lfdr.de>; Thu, 19 Dec 2019 12:50:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iTExv8bryKGKNSZkBBUR0NnmsBNEzHgMh7ADdlA0ZOc=; b=aine9L1lQQ2U6J
-	+BwNmqD4FAMa4UiZAk0hHE2sr4sEyu4z1O9Q87GDcJBjq0jAHnD5CJyaAnQGGXeMy1MIH0m9Hlzpa
-	JXluL2QJ6S+cA+mSrwbeTBN0LJCtl/mxMzEswIzyPLTsBs6/nvkw1yJyDhNW5uLcoKLqcfIb7shaT
-	p3MDVjWrFigGj4W6yn1xRxnpzdhzDUqwLrOeJReohd1by88f+33mErSDfCQAcHlwVHi3JsoD61sfn
-	5qE35LbnSzjJ132z1fxUXoh2b2/DkAphn5BETZrL7puNH3K0YuzUzHypmgCQrKSMo+dxmClBXfS0S
-	x4VrMFwo0OV7zsYSFCzQ==;
+	List-Owner; bh=hEsWx4I5pOt3N4uvPBjAY6Jez4lvi0EwFn/ng3q6iOM=; b=NtKgnoNt+Qo1Sa
+	C5mCgGN1REbJVNXq3aa+T6PVTJC6RSaikD8FUIdKNyIFN73cVyKnVdPPARI4LDzqTjIQonbfaHw53
+	+uXXURIYm/N/mSfUva9TfGMO8FPVkWSDasKuv8VwYM0wWuF98C1ubPFrPFxjSoB1mn1u4fgr/xO/6
+	D3l6U8orfqORrluu2tMxlbwKy+3/ltnrIP4fuPxcfw2ZparSvVuoE5ku4aguLzwJ4lv0faKcBZWYT
+	FVLZxdMUWFSs+39mx8uJX8Ns63P2DCRr/3kiZRWBka0BMTIG7t3kSKtnKWEdf/oDJb1b1/pIP+BJX
+	/b2hNf5TSOAbtTJjn9QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iht89-0004Ix-QO; Thu, 19 Dec 2019 10:34:05 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+	id 1ihuJb-00080Z-PI; Thu, 19 Dec 2019 11:49:59 +0000
+Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]
+ helo=webmail.newmedia-net.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iht81-0004Id-UK
- for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 10:33:59 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47dpBr4pGPzQlCC;
- Thu, 19 Dec 2019 11:33:56 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id T6eqpT12DPZt; Thu, 19 Dec 2019 11:33:53 +0100 (CET)
-To: Daniel Danzberger <daniel@dd-wrt.com>, openwrt-devel@lists.openwrt.org
+ id 1ihuJP-0007zB-Jt
+ for openwrt-devel@lists.openwrt.org; Thu, 19 Dec 2019 11:49:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=dd-wrt.com;
+ s=mikd; 
+ h=Subject:Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To;
+ bh=Q+EmDYMjc91SjXB8nX36TcTYdyLkcVSwrpl3RQ3zwIs=; 
+ b=KP1pEz8V/b6yGkyJ5a1ETJ3J/oRzH8ddZdpfczcwg9GMHZ0xMf8rGM/JRT8Twh4Ct+WJ2Vq7rRbIX7MF8u6lLXONdr5fkDbP7nd4zi6ydQfu55dOVsMp5tGcsr+11yahmtyTDab9Z34nW/m0wvtpBSJcmXnJraG8au/tqRk0xUw=;
+To: Hauke Mehrtens <hauke@hauke-m.de>, openwrt-devel@lists.openwrt.org
 References: <20191127172952.2143-1-daniel@dd-wrt.com>
- <20191127172952.2143-3-daniel@dd-wrt.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <3bcad720-ea8b-1ba9-b12c-9bcf6e13a174@hauke-m.de>
-Date: Thu, 19 Dec 2019 11:33:47 +0100
+ <20191127172952.2143-2-daniel@dd-wrt.com>
+ <7d92a7e1-ef8b-4b4c-351a-0c169ba47aef@hauke-m.de>
+From: Daniel Danzberger <daniel@dd-wrt.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=daniel@dd-wrt.com; prefer-encrypt=mutual; keydata=
+ mQENBFEb+wQBCAD7DgPNNCJeLdnVdMCcneGypnjJ8mtCmpjo/r7HO2Ig6im559z5IQwnGdmj
+ FM+6Xws5oGBdhqh7V+uGJ0/pSVJ432OFd/2JYlEs9p9aLbth/QIaoMO4DfDS8EestMLuGYlj
+ ffojt+lCwI/OVNvlsHPZczxUuLENDeCKPQKyVkSo8tf5qgOJxZmJ8ebSY2DiTD8Sr3TC7ge3
+ aOMuE1YVMv8RbOEVvRcTBerCXteANRuJYA8H1Nwg1WOJjPl5SoysQqPamCkiyVFbteNtRZaV
+ tBqfJNRUi4JXdZxsNoaWygJr5pAMyJ9FPMQ6meo/97Cj1E46fTH7QWDhYkwGS3sFLb1jABEB
+ AAG0JURhbmllbCBEYW56YmVyZ2VyIDxkYW5pZWxAZGQtd3J0LmNvbT6JAT4EEwECACgFAlEc
+ oikCGwMFCVexLAAGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEF2W1+mV7KsoZYwH/1HG
+ YtcQuMVXOD1ClaDDoWumBZ089ABCeExcCjuNAqtySAD0Z1i3Dr153CDL5IF8WsLDL+hkhmRJ
+ knQg31kwkFglm62HcYuVZiAEjoTgNZRfBezTQevWV6Dys8YdfJGdLifqtMQM5dBLuWtyRWK/
+ gkcv0rf2iI9PLveCqb93K9qDLxzgV96kwTUabc6n4FIF324RUPlzCuGoDEUNkh/sVo8jkXl7
+ v8vfxwKb1EEMlWLk7bRGqUg7mdHf9zM4Fnb9oMQLJUrFWtME2FlZLwKvMfW8/bPqHI3thIYV
+ qgYvagC/1HKmlvHfo8rraKXsQKzNadlv4Vyh6iZYkdQXUTuQtDO5AQ0EURv7BAEIAL1UNRYJ
+ q1hv3ggyZv9PSkaWy0t+xMoSwAd2hWdA3iuILrQXjtzJ3nTtePE9TrmLpjwmN8H/ppcNpf1W
+ WZ1Zxer9e4cUmm1LjbbgNIArZqzplVh+7QwDJk0ER282k3p5s7IYLkjymwmgeuiSJgaRAmFm
+ AJKjiaNZoGdZvaC8TGpgGCRidwDR/cUR1hjpA2vyidNSP5ynILqohEpIe2lvhClODSvEgcMN
+ o4xOtmI+Yq2Qg2e7FUaP8pptEysDdDoUnSPxq9v0aQHe3FS90KzXGAaoCuEnnRaotzZcVI31
+ vffWHoZ30yGETeTF+W52hIKe7D+MbFfyiRjNtOw6HKli7TEAEQEAAYkBJQQYAQIADwUCURv7
+ BAIbDAUJV7EsAAAKCRBdltfpleyrKDikB/0SWPBPhPBpogDLF4bIwORt6Uu8UQus5jYudtMx
+ j67v+R+f42sfBj+iKtz2GHlboul8tJXzcO6zVJf2gqQisCNAoS7wZ/k3axPtbgClQmsLtU7B
+ KgVRYaWVlLol0hg/Sn1lju/yHhgmbdttfBmCE63wDWr1ITTFepp9aVwaoIhIRBmCBpf3Vk5I
+ e6l+1iqDXNXVQVf5qPdVE0Im7IZb9kA7Wk7N6Fa+zYpK+Qz1wFOXYjmK9SPhjdf/5/V2EQGi
+ JgaVyfwaMRPUDRFW2wBlScmP+82LqA6TvKKyi3O3zgnFqTGvY2+bvkr9dTfRBlx1NlX0am9t
+ YMmhspz7064avRsg
+Message-ID: <37e03683-ddcc-db67-b784-0540a771c960@dd-wrt.com>
+Date: Thu, 19 Dec 2019 12:49:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191127172952.2143-3-daniel@dd-wrt.com>
+In-Reply-To: <7d92a7e1-ef8b-4b4c-351a-0c169ba47aef@hauke-m.de>
 Content-Language: en-US
+X-SA-Exim-Connect-IP: 2a02:908:2614:35c:3cca:ee05:75cb:b0e1
+X-SA-Exim-Mail-From: daniel@dd-wrt.com
+X-Spam-Checker-Version: SpamAssassin 3.1.9 (2007-02-13) on
+ webmail.newmedia-net.de
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.9 required=4.0 tests=BAYES_00,NO_RELAYS,
+ RATWARE_GECKO_BUILD autolearn=no version=3.1.9, No
+X-SA-Exim-Version: 4.2.1 (built Thu, 26 May 2011 15:22:33 +0200)
+X-SA-Exim-Scanned: Yes (on webmail.newmedia-net.de)
+X-NMN-MailScanner-Information: Please contact the ISP for more information
+X-NMN-MailScanner-ID: 1ihuHp-0005zK-6K
+X-NMN-MailScanner: Found to be clean
+X-NMN-MailScanner-SpamScore: s
+X-NMN-MailScanner-From: daniel@dd-wrt.com
+X-Received: from [2a02:908:2614:35c:3cca:ee05:75cb:b0e1]
+ by webmail.newmedia-net.de with esmtpsa (TLSv1:AES128-SHA:128)
+ (Exim 4.72) (envelope-from <daniel@dd-wrt.com>)
+ id 1ihuHp-0005zK-6K; Thu, 19 Dec 2019 12:48:09 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_023358_285905_80F632BA 
-X-CRM114-Status: GOOD (  21.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191219_034948_188401_12C82391 
+X-CRM114-Status: GOOD (  12.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH 1/2] nl80211: add htmode to iwinfo_ops
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] [PATCH 2/2] iwinfo: add current hw and ht mode
+ to info call
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,134 +119,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 11/27/19 6:29 PM, Daniel Danzberger wrote:
-> This callback shows the currently active HTMODE of the device.
+On 12/19/19 11:29 AM, Hauke Mehrtens wrote:
+> On 11/27/19 6:29 PM, Daniel Danzberger wrote:
+>> Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
+>> ---
+>>  iwinfo.c | 44 ++++++++++++++++++++++++++++++++++++++++++++
+>>  1 file changed, 44 insertions(+)
+>>
+>> diff --git a/iwinfo.c b/iwinfo.c
+>> index a76b72a..7f46e3e 100644
+>> --- a/iwinfo.c
+>> +++ b/iwinfo.c
 > 
-> Signed-off-by: Daniel Danzberger <daniel@dd-wrt.com>
-> ---
->  include/iwinfo.h |  4 ++-
->  iwinfo_nl80211.c | 70 ++++++++++++++++++++++++++++++++++++++++++++++++
->  2 files changed, 73 insertions(+), 1 deletion(-)
+> This file does not exist.
+This is the rpcd part of the patch. The file exists in the rpcd repository.
+
 > 
-> diff --git a/include/iwinfo.h b/include/iwinfo.h
-> index d035c9c..5e64294 100644
-> --- a/include/iwinfo.h
-> +++ b/include/iwinfo.h
-> @@ -88,8 +88,9 @@ enum iwinfo_htmode {
->  	IWINFO_HTMODE_VHT80      = (1 << 4),
->  	IWINFO_HTMODE_VHT80_80   = (1 << 5),
->  	IWINFO_HTMODE_VHT160     = (1 << 6),
-> +	IWINFO_HTMODE_NOHT       = (1 << 7),
->  
-> -	IWINFO_HTMODE_COUNT      = 7
-> +	IWINFO_HTMODE_COUNT      = 8
->  };
->  
->  extern const char *IWINFO_HTMODE_NAMES[IWINFO_HTMODE_COUNT];
-> @@ -231,6 +232,7 @@ struct iwinfo_ops {
->  	int (*mbssid_support)(const char *, int *);
->  	int (*hwmodelist)(const char *, int *);
->  	int (*htmodelist)(const char *, int *);
-> +	int (*htmode)(const char *, int *);
->  	int (*ssid)(const char *, char *);
->  	int (*bssid)(const char *, char *);
->  	int (*country)(const char *, char *);
-> diff --git a/iwinfo_nl80211.c b/iwinfo_nl80211.c
-> index 4b6ef91..36f1da2 100644
-> --- a/iwinfo_nl80211.c
-> +++ b/iwinfo_nl80211.c
-> @@ -2958,6 +2958,75 @@ out:
->  	return -1;
->  }
->  
-> +struct chan_info {
-> +	int width;
-> +	int mode;
-> +};
-> +
-> +static int nl80211_get_htmode_cb(struct nl_msg *msg, void *arg)
-> +{
-> +	struct nlattr **tb = nl80211_parse(msg);
-> +	struct nlattr *cur;
-> +	struct chan_info *chn = arg;
-> +
-> +	if ((cur = tb[NL80211_ATTR_CHANNEL_WIDTH]))
-> +		chn->width = nla_get_u32(cur);
-> +
-> +	if ((cur = tb[NL80211_ATTR_BSS_HT_OPMODE]))
-> +		chn->mode = nla_get_u32(cur);
-> +
-> +	return NL_SKIP;
-> +}
-> +
-> +static int nl80211_get_htmode(const char *ifname, int *buf)
-> +{
-> +	struct chan_info chn = { .width = 0, .mode = 0 };
-> +	char *res;
-> +	int err;
-> +
-> +	res = nl80211_phy2ifname(ifname);
-> +	*buf = 0;
-> +
-> +	err =  nl80211_request(res ? res : ifname,
-> +				NL80211_CMD_GET_INTERFACE, 0,
-> +				nl80211_get_htmode_cb, &chn);
-> +	if (err)
-> +		return -1;
-> +
-> +	switch (chn.width) {
-> +	case NL80211_CHAN_WIDTH_20_NOHT:
-> +		*buf = IWINFO_HTMODE_NOHT;
-> +		break;
-> +	case NL80211_CHAN_WIDTH_20:
-> +		if (chn.mode == -1)
-> +			*buf = IWINFO_HTMODE_VHT20;
-> +		else
-> +			*buf = IWINFO_HTMODE_HT20;
-> +		break;
-> +	case NL80211_CHAN_WIDTH_40:
-> +		if (chn.mode == -1)
-> +			*buf = IWINFO_HTMODE_VHT40;
-> +		else
-> +			*buf = IWINFO_HTMODE_HT40;
-> +		break;
-> +	case NL80211_CHAN_WIDTH_80:
-> +		*buf = IWINFO_HTMODE_VHT80;
-> +		break;
-> +	case NL80211_CHAN_WIDTH_80P80:
-> +		*buf = IWINFO_HTMODE_VHT80_80;
-> +		break;
-> +	case NL80211_CHAN_WIDTH_160:
-> +		*buf = IWINFO_HTMODE_VHT160;
-> +		break;
-> +	case NL80211_CHAN_WIDTH_5:
-> +	case NL80211_CHAN_WIDTH_10:
-
-Should this also return IWINFO_HTMODE_NOHT ?
-
-> +	default:
-> +		break;
-
-Why not return an error if nothing matches?
-
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static int nl80211_get_htmodelist(const char *ifname, int *buf)
->  {
->  	struct nl80211_modes m = { 0 };
-> @@ -3147,6 +3216,7 @@ const struct iwinfo_ops nl80211_ops = {
->  	.mbssid_support   = nl80211_get_mbssid_support,
->  	.hwmodelist       = nl80211_get_hwmodelist,
->  	.htmodelist       = nl80211_get_htmodelist,
-> +	.htmode		  = nl80211_get_htmode,
->  	.mode             = nl80211_get_mode,
->  	.ssid             = nl80211_get_ssid,
->  	.bssid            = nl80211_get_bssid,
+> Hauke
 > 
 
+-- 
+Regards
+
+Daniel Danzberger
+embeDD GmbH, Alter Postplatz 2, CH-6370 Stans
 
 _______________________________________________
 openwrt-devel mailing list

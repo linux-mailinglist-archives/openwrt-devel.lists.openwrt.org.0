@@ -2,76 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB15812894B
-	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Dec 2019 14:57:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 673B7128A7D
+	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Dec 2019 17:52:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W/d73T06H2dXRFgymxIAt0YJJ6DUAyTf10R92kVTHQ4=; b=tAZikw2PrVa+eI
-	QFu7mJu98VlNo3pIh9X3VVppr1rAdG/I0doh6FDYtIBVpUy5SW1M5aOMhjcdofZhf0Il6v5z5N79Q
-	Oh7Yzlm47ZM/egp+HBuFzm4wwqbv3QZkWeZi28gumB9Md6Ttu3M1XjeJqax0OQsNKnyueNZrFx5k9
-	lFhvzzmKPFopsAXYc5x1Bd9NENx69Kye4KyfNweaD6QYseJ0xYSuHZKKEkN/1dS1Sz94qwiY3QOG1
-	JnjM/wBqvzg5qhnOCVH7gSZPfuQHWfvi0DeUAVblCCmtNkVz2q0qGuyWxqOhUAhM9r5IYnwYoay52
-	U6U0IJGcXYCt9QyX17WA==;
+	List-Owner; bh=NnSy7qhi1N4Df2qFdVDBvG671wzoeOfmMmCDSmxy0YE=; b=cHZmjNP19DLblI
+	ewRtzhi2Rff2s5QHLMcKtg1WUyrG+MpZWikSRcyJ2aroxeih+iITf1EQMHAjeCh3DcfochbKEDs7B
+	vB8wnTDzq6NNLsu25c6tImxG24vjItpE1P2v6YWX/zWhH15SrCfFdZlpNxnsk0ygIs7ik7RoTt0D4
+	5owUK5JyzkqFexO4GMIeiAHzSgx4iOQmvD5qglI3/LFr4vJx2E/pzf3tY8asi7sQ1FU0IlyPtNuiD
+	PUbft8wTDFgbIXEUCaFSiKJHAEac4twDv2yeHsfaLxr7dDH8DcdlfMm1NcQ8bXl9ksfkDio2h1TS9
+	Kq8wlSdv5vKMO35k3qbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iifFe-0002dR-AL; Sat, 21 Dec 2019 13:57:02 +0000
-Received: from mx3.wp.pl ([212.77.101.9])
+	id 1iihzV-0006JF-Op; Sat, 21 Dec 2019 16:52:33 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iifFH-0002Sj-QL
- for openwrt-devel@lists.openwrt.org; Sat, 21 Dec 2019 13:56:41 +0000
-Received: (wp-smtpd smtp.wp.pl 14691 invoked from network);
- 21 Dec 2019 14:56:32 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1576936592; bh=WZX5BlPGmEd9FiE9eTQGm7OUQnyZ/kMhoaL+kJjn4hA=;
- h=From:To:Cc:Subject;
- b=vAFcN/zqS8INt0c1GWf37kB/sJU9ced7kce5qL0gLuwEJYJRJvIyynl78F69fyYxG
- D2qHdN5mwu4j+SwWX7DGXhxr5kDWiN4PxIc68FLeb/tFbt3pETbBJ4GNUccIvoSMXp
- Uq6UNm9RSTRFITa9f1sggNAZvCESQj3NKMHRRIEs=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 21 Dec 2019 14:56:32 +0100
-Date: Sat, 21 Dec 2019 14:55:55 +0100
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
-Message-ID: <20191221145523.603be643@kosmio.komorska>
-In-Reply-To: <20191221145041.3e272a8b@kosmio.komorska>
+ id 1iihzP-0006Ii-2Q
+ for openwrt-devel@lists.openwrt.org; Sat, 21 Dec 2019 16:52:29 +0000
+Received: from [45.140.183.209] (pD9F0FDE8.dip0.t-ipconnect.de
+ [217.240.253.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id D1195227FD;
+ Sat, 21 Dec 2019 17:52:19 +0100 (CET)
+To: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
 References: <20191221145041.3e272a8b@kosmio.komorska>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+ <20191221145331.18ed2dad@kosmio.komorska>
+From: David Bauer <mail@david-bauer.net>
+Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <6c29edd3-88d9-ae74-cd29-d50eafde3ec9@david-bauer.net>
+Date: Sat, 21 Dec 2019 17:52:18 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-WP-MailID: a1bd891907cf55bb58d4d5179a745c47
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 000000A [4WMU]                               
+In-Reply-To: <20191221145331.18ed2dad@kosmio.komorska>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191221_055640_219915_A0566228 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191221_085227_411142_D2EABB6E 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.9 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michal.cieslakiewicz[at]wp.pl)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.77.101.9 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 3/3] ath79: add support for Netgear WNDR4500
- v3
+Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: add support for Netgear
+ WNDR4300 v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,183 +90,63 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
+Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
+ Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This patch introduces support for Netgear WNDR4500v3. Router
-is very similar to WNDR4300v2 and is based on the same PCB.
+Hello Michal,
 
-Information gathered from various Internet sources (including
-https://patchwork.ozlabs.org/patch/809227/) shows following
-differences to WNDR4300v2:
+On 12/21/19 2:54 PM, Michal Cieslakiewicz wrote:
+> 1. NAND Flash (128 MiB) layout under OpenWrt is changed as follows:
+>    all space is assigned to 'firmware' partition which is divided into
+>    2 MiB kernel and 126 MiB UBI areas; vendor partitions (language and
+>    mtdoops) are removed; kernel space size can be increased if needed;
+>    maximum image size is set to 25600k for compatibility and can also
+>    be increased.
 
- * two USB 2.0 ports
- * WPS and RFKILL buttons soldered to secondary pads
- * described as N900 device with 3x3:3 MIMO for 2.4GHz radio
- * power supply requirement is DC 12V 2.5A
- * HW ID suffix differs in one digit
- * bigger case
+Do you know if there is a hard limit to the kernel size? OpenWrt does not support
+relocation of UBI as doing so would interfere with wear leveling.
+This means the kernel size is more or less fixed if we want to be able to use sysupgrade.
 
-Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
----
- package/boot/uboot-envtools/files/ath79       |  1 +
- .../ath79/dts/qca9563_netgear_wndr4500-v3.dts | 41 +++++++++++++++++++
- target/linux/ath79/image/nand.mk              | 11 +++++
- .../ath79/nand/base-files/etc/board.d/01_leds |  3 +-
- .../nand/base-files/etc/board.d/02_network    |  6 ++-
- .../etc/hotplug.d/firmware/10-ath9k-eeprom    |  6 ++-
- 6 files changed, 63 insertions(+), 5 deletions(-)
- create mode 100644 target/linux/ath79/dts/qca9563_netgear_wndr4500-v3.dts
+I personally would prefer to allocate 4 (or even 8) megabytes to the kernel partition.
+This would give us a lot more flexibility (ath79 kernel is already at ~1.8MB the last time
+I've checked.
 
-diff --git a/package/boot/uboot-envtools/files/ath79 b/package/boot/uboot-envtools/files/ath79
-index 85a0342a60..aafced98db 100644
---- a/package/boot/uboot-envtools/files/ath79
-+++ b/package/boot/uboot-envtools/files/ath79
-@@ -27,6 +27,7 @@ librerouter,librerouter-v1|\
- netgear,ex6400|\
- netgear,ex7300|\
- netgear,wndr4300-v2|\
-+netgear,wndr4500-v3|\
- netgear,wnr1000-v2|\
- netgear,wnr2000-v3|\
- netgear,wnr2200-8m|\
-diff --git a/target/linux/ath79/dts/qca9563_netgear_wndr4500-v3.dts b/target/linux/ath79/dts/qca9563_netgear_wndr4500-v3.dts
-new file mode 100644
-index 0000000000..95e30ea84b
---- /dev/null
-+++ b/target/linux/ath79/dts/qca9563_netgear_wndr4500-v3.dts
-@@ -0,0 +1,41 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+
-+/dts-v1/;
-+
-+#include "qca9563_netgear_wndr.dtsi"
-+
-+/ {
-+	compatible = "netgear,wndr4500-v3", "qca,qca9563";
-+	model = "Netgear WNDR4500 v3";
-+};
-+
-+&leds {
-+	usb1_green {
-+		label = "netgear:green:usb1";
-+		gpios = <&gpio 7 GPIO_ACTIVE_LOW>;
-+		trigger-sources = <&hub_port0>;
-+		linux,default-trigger = "usbport";
-+	};
-+
-+	usb2_green {
-+		label = "netgear:green:usb2";
-+		gpios = <&gpio 8 GPIO_ACTIVE_LOW>;
-+		trigger-sources = <&hub_port1>;
-+		linux,default-trigger = "usbport";
-+	};
-+};
-+
-+&usb_phy1 {
-+	status = "okay";
-+};
-+
-+&usb1 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	hub_port1: port@1 {
-+		reg = <1>;
-+		#trigger-source-cells = <0>;
-+	};
-+};
-diff --git a/target/linux/ath79/image/nand.mk b/target/linux/ath79/image/nand.mk
-index a81127a962..529ae870a5 100644
---- a/target/linux/ath79/image/nand.mk
-+++ b/target/linux/ath79/image/nand.mk
-@@ -162,6 +162,17 @@ define Device/netgear_wndr4300-v2
- endef
- TARGET_DEVICES += netgear_wndr4300-v2
- 
-+define Device/netgear_wndr4500-v3
-+  SOC := qca9563
-+  DEVICE_MODEL := WNDR4500
-+  DEVICE_VARIANT := v3
-+  NETGEAR_KERNEL_MAGIC := 0x27051956
-+  NETGEAR_BOARD_ID := WNDR4500series
-+  NETGEAR_HW_ID := 29764821+2+128+128+3x3+3x3+5508012173
-+  $(Device/netgear_ath79_nand)
-+endef
-+TARGET_DEVICES += netgear_wndr4500-v3
-+
- define Device/zyxel_nbg6716
-   SOC := qca9558
-   DEVICE_VENDOR := ZyXEL
-diff --git a/target/linux/ath79/nand/base-files/etc/board.d/01_leds b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-index 0376b7cfc6..d9989ec538 100755
---- a/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/nand/base-files/etc/board.d/01_leds
-@@ -14,7 +14,8 @@ glinet,gl-ar300m-nor)
- 	;;
- netgear,wndr3700-v4|\
- netgear,wndr4300|\
--netgear,wndr4300-v2)
-+netgear,wndr4300-v2|\
-+netgear,wndr4500-v3)
- 	ucidef_set_led_switch "wan-amber" "WAN (amber)" "netgear:amber:wan" "switch0" "0x20"
- 	;;
- esac
-diff --git a/target/linux/ath79/nand/base-files/etc/board.d/02_network b/target/linux/ath79/nand/base-files/etc/board.d/02_network
-index 135a06d44b..bd02a4b383 100755
---- a/target/linux/ath79/nand/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/nand/base-files/etc/board.d/02_network
-@@ -18,7 +18,8 @@ ath79_setup_interfaces()
- 		;;
- 	netgear,wndr3700-v4|\
- 	netgear,wndr4300|\
--	netgear,wndr4300-v2)
-+	netgear,wndr4300-v2|\
-+	netgear,wndr4500-v3)
- 		ucidef_add_switch "switch0" \
- 			"0@eth0" "1:lan:4" "2:lan:3" "3:lan:2" "4:lan:1" "5:wan"
- 		;;
-@@ -39,7 +40,8 @@ ath79_setup_macs()
- 	case "$board" in
- 	netgear,wndr3700-v4|\
- 	netgear,wndr4300|\
--	netgear,wndr4300-v2)
-+	netgear,wndr4300-v2|\
-+	netgear,wndr4500-v3)
- 		wan_mac=$(mtd_get_mac_binary caldata 0x6)
- 		;;
- 	zyxel,nbg6716)
-diff --git a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-index 7ee291d109..d2f8bae1ca 100644
---- a/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-+++ b/target/linux/ath79/nand/base-files/etc/hotplug.d/firmware/10-ath9k-eeprom
-@@ -11,7 +11,8 @@ case "$FIRMWARE" in
- 	case $board in
- 	netgear,wndr3700-v4|\
- 	netgear,wndr4300|\
--	netgear,wndr4300-v2)
-+	netgear,wndr4300-v2|\
-+	netgear,wndr4500-v3)
- 		caldata_extract "caldata" 0x1000 0x440
- 		;;
- 	zyxel,nbg6716)
-@@ -27,7 +28,8 @@ case "$FIRMWARE" in
- 	case $board in
- 	netgear,wndr3700-v4|\
- 	netgear,wndr4300|\
--	netgear,wndr4300-v2)
-+	netgear,wndr4300-v2|\
-+	netgear,wndr4500-v3)
- 		caldata_extract "caldata" 0x5000 0x440
- 		;;
- 	*)
--- 
-2.24.1
+> +	flash@1 {
+> +		compatible = "spi-nand";
+> +		reg = <1>;
+> +		spi-max-frequency = <25000000>;
+> +
+> +		partitions {
+> +			compatible = "fixed-partitions";
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +
+> +			partition@0 {
+> +				label = "firmware";
+> +				reg = <0x0 0x8000000>;
+> +				compatible = "netgear,uimage";
+> +			};
+> +
+> +			kernel@0 {
+> +				label = "kernel";
+> +				reg = <0x0 0x200000>;
+> +			};
+> +
+> +			ubi@200000 {
+> +				label = "ubi";
+> +				reg = <0x200000 0x7e00000>;
+> +			};
+> +		};
+> +	};
 
+The firmware node can be dropped, as kernel and UBI partitions are fixed.
+
+Best wishes
+David
 
 _______________________________________________
 openwrt-devel mailing list

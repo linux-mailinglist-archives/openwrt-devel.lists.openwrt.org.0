@@ -2,67 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DCB1128AB6
-	for <lists+openwrt-devel@lfdr.de>; Sat, 21 Dec 2019 19:04:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97C27128C2A
+	for <lists+openwrt-devel@lfdr.de>; Sun, 22 Dec 2019 02:52:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qp4KAcmUjpAzQKkDc8SnyQCTRAiqMimKmjmvXRFcvCw=; b=gPZ/DN3O4zc98T
-	qWo2W0zVP33guM/d/GUX6cDqK0/bTIKP1scVN1rw2STcJWAdegSRwHsEtnPwapSF/B4nTwB0lnz4J
-	A0pfTunHt07htTkEwvLapFF88Nv1vJeN0thIAYBN4cLyEf9Dedi5p02C+kuMwkFvSZidxUXnlHfgD
-	Hlw1n+amd4LxbedvKq4+IpL9y5nfyuIWOMzCrfEieM5vd2OLcUgKOR7ZE0W+GDiW96W0eSZT+OJwe
-	hBqLcOvm7LdqJQPhGhCF0wGAokcw1ohrgCCN+2CutMRDmuxee9eUt6Uxy33CZtXTcs2IoDo3/8In+
-	7r9VD3gCz3xzrnA4LY3w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PYYcKOMtvRBrFCrJV4fihYQ3DgsvFAxrJ6AyCPE/VM4=; b=NVMN44Cd0Oall9
+	uARJOOuGhRLd+smuBkRdijrFpB0S8thgPY/kp4U84/7H0enWviYN6owbHLuVr31Bdhs/ZStzTm69u
+	LTjPDpu7MlllozDHvrc7HC357hYjWqi8d9Eg4zuaqVTZBbLOB5g+PUSxDEevujCYiMgfDun2i1cxx
+	/VtTivSNY0rmQEBOdDQSieuAQ0NvYQyif3Glu9t3t1mQKf+VG8xam/FyejO3HihSyX6I1l+Uhi9uL
+	mLUFV+KP/VQeWIBhYP1tqq8SSbCTSbfkVRLJ1r0NUS2U3y4aqajfuIPpoHbbUesvzOeSl1nphxplt
+	Za6nIsMfG2GyXXm9EaGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iij76-0003nt-Ea; Sat, 21 Dec 2019 18:04:28 +0000
-Received: from mx4.wp.pl ([212.77.101.12])
+	id 1iiqPe-0003gD-Fz; Sun, 22 Dec 2019 01:52:06 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iij6x-0003md-6y
- for openwrt-devel@lists.openwrt.org; Sat, 21 Dec 2019 18:04:21 +0000
-Received: (wp-smtpd smtp.wp.pl 6083 invoked from network);
- 21 Dec 2019 19:04:13 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1576951453; bh=8GOZQZjmd+VDpOi1O24IHVBiNbkTxOm8vKUM32gOr+g=;
- h=From:To:Cc:Subject;
- b=jpn+edFW5F1McRvo2WQ24wwzImPQYyBKFmq9+UZ8Gc1IY9Z84RfwyPeaExqydOGbo
- U9Rr6atjp9lDgdkbCjx9HMFttu6CRZeDRx//+1WFtBJl1inPdxNBaMVzwTqWM3NFyD
- PfiiUPELUs1ElOQF1hhuPYgoJt4GdE09oYPjz/fw=
-Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
- (michal.cieslakiewicz@wp.pl@[89.79.49.72])
- (envelope-sender <michal.cieslakiewicz@wp.pl>)
- by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <mail@david-bauer.net>; 21 Dec 2019 19:04:13 +0100
-Date: Sat, 21 Dec 2019 19:04:12 +0100
-From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: David Bauer <mail@david-bauer.net>
-Message-ID: <20191221190412.30bfcde7@kosmio.komorska>
-In-Reply-To: <6c29edd3-88d9-ae74-cd29-d50eafde3ec9@david-bauer.net>
-References: <20191221145041.3e272a8b@kosmio.komorska>
- <20191221145331.18ed2dad@kosmio.komorska>
- <6c29edd3-88d9-ae74-cd29-d50eafde3ec9@david-bauer.net>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
+ id 1iiqPU-0003ft-SX
+ for openwrt-devel@lists.openwrt.org; Sun, 22 Dec 2019 01:51:58 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id l35so5865963pje.3
+ for <openwrt-devel@lists.openwrt.org>; Sat, 21 Dec 2019 17:51:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=GRSQfcTnDXCgwMkMC+PMXxamz2vOOtybUA86cVkHjHw=;
+ b=q1OpfOtysSVyX90Sb817OM2WFyD/f9FhU5gab7mt4diCvW+PL5P+CRrdJac6QWK5fM
+ +VrRotrwZ/NoByh/JnT8yNsWdIKbcBNrsh7lyRYQIxhgL4aKeYJX6v3DEA6/43Y0XWkn
+ k1abYIeHYA8tli3L23z+vAZ1x+M9nwgbrlkaf54ICMQtz0BBN8eNOXtI7jZmKwQpzKuv
+ gPs39hDgYByW0lVnNcQBJ5KrnbZdLNOZhT2bW4EqOQJQFUFI9RX7PKYYtf62RdRPxKQy
+ QyzuUbsU95XvKGOWMnDUhg50tmX5gBMMslWMWOuO1dKl65iOh81bWBDlDxl9yMp93XCT
+ bodA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=GRSQfcTnDXCgwMkMC+PMXxamz2vOOtybUA86cVkHjHw=;
+ b=gS1lJf70xjW3lSF5leScOZFISYuTzaIPum4wKrDxWxpQe0OoUgseODFeMxjTUWkySw
+ P+RVtR13ERobCfB3Rz16WPsnya3Cg6hlkxC+DSLZl7ENLha9wOYE0WB8FWAxmu3ndAhM
+ 1WouxUhuPCW2GS8FvkZizvD+sShXZ/luo/Vxp6Z9m1zaw2BCxIiH4YQ6Cq86B953BIb6
+ VXqACX5TV0nWkkCgp+tw19uWWcJNA8WaVdEFUNQzAYwRRvx63yrxIpkcVBFcCEyToD63
+ N/U5NKjphSPQ3epJLmS/yvWxvZSf6qWLuPXLQhd9y0eLMx61kgGa0WU8l4mheDijmFyN
+ Gdaw==
+X-Gm-Message-State: APjAAAUk50O+hzRndLKQMsQc/45m4wmq326DgFJrUCySyHYL0OaCtI0i
+ 8yrvNOC3sVBi+nRjXGo9dFb15IE0qxY=
+X-Google-Smtp-Source: APXvYqxQL3ZLuf+Hd0zxsUnHnyv7pQHRhor1nKV1zchdzE65j5pVcr5De8DrYgj8P3f6j2inewSkyQ==
+X-Received: by 2002:a17:902:a516:: with SMTP id
+ s22mr23598084plq.89.1576979510346; 
+ Sat, 21 Dec 2019 17:51:50 -0800 (PST)
+Received: from mangix-trapnet.lan ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id y197sm19075276pfc.79.2019.12.21.17.51.48
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 21 Dec 2019 17:51:49 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat, 21 Dec 2019 17:51:47 -0800
+Message-Id: <20191222015147.671590-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-WP-MailID: 9de39e66771f628f40698009c4faec29
-X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 0000000 [8TNU]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191221_100419_785489_1734457F 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20191221_175156_946884_8F37BA2F 
+X-CRM114-Status: UNSURE (   7.15  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.77.101.12 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (michal.cieslakiewicz[at]wp.pl)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.77.101.12 listed in wl.mailspike.net]
+ provider (rosenp[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -72,8 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] [PATCH 2/3] ath79: add support for Netgear
- WNDR4300 v2
+Subject: [OpenWrt-Devel] [PATCH] perf: Add libunwind only if selected
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,50 +95,46 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
- Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello David!
+The depends are totally wrong. libunwind does not work with powerpc and
+i386 as it needs glibc.
 
-> 
-> Do you know if there is a hard limit to the kernel size? OpenWrt does
-> not support relocation of UBI as doing so would interfere with wear
-> leveling. This means the kernel size is more or less fixed if we want
-> to be able to use sysupgrade.
-> 
+Instead of duplicating the platforms, just change the dependency.
 
-AFAIK there is no problem with increasing kernel size here.
-Unfortunately I couldn't find proper u-boot source for this router, so
-my claim is not based on actual code analysis. However there was
-a similar question for WNDR4300(v1) and u-boot definitely allowed
-kernels > 2 MiB then.
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ package/devel/perf/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
->
-> I personally would prefer to allocate 4 (or even 8) megabytes to the
-> kernel partition. This would give us a lot more flexibility (ath79
-> kernel is already at ~1.8MB the last time I've checked.
->
-
-That's reasonable, it's better to reserve space for future developments
-than issue a patch every time kernel size grows over a certain
-boundary. So in v2 I will assign 4 MiBs here - and prepare similar patch
-for WNDR4300(v1) to keep them compatible.
+diff --git a/package/devel/perf/Makefile b/package/devel/perf/Makefile
+index 6f31c826e5..aa5fb16f60 100644
+--- a/package/devel/perf/Makefile
++++ b/package/devel/perf/Makefile
+@@ -10,7 +10,7 @@ include $(INCLUDE_DIR)/kernel.mk
  
-> 
-> The firmware node can be dropped, as kernel and UBI partitions are
-> fixed.
-> 
+ PKG_NAME:=perf
+ PKG_VERSION:=$(LINUX_VERSION)
+-PKG_RELEASE:=2
++PKG_RELEASE:=3
+ 
+ PKG_USE_MIPS16:=0
+ PKG_BUILD_PARALLEL:=1
+@@ -26,7 +26,7 @@ include $(INCLUDE_DIR)/package.mk
+ define Package/perf
+   SECTION:=devel
+   CATEGORY:=Development
+-  DEPENDS:= +libelf +libdw +(mips||mipsel||powerpc||i386||x86_64||arm||aarch64):libunwind +libpthread +librt +objdump @!IN_SDK @!TARGET_arc770 @KERNEL_PERF_EVENTS
++  DEPENDS:= +libelf +libdw +PACKAGE_libunwind:libunwind +libpthread +librt +objdump @!IN_SDK @!TARGET_arc770 @KERNEL_PERF_EVENTS
+   TITLE:=Linux performance monitoring tool
+   VERSION:=$(LINUX_VERSION)-$(PKG_RELEASE)
+   URL:=http://www.kernel.org
+-- 
+2.24.1
 
-OK then, I just wasn't sure if "netgear,uimage" compatibility string is
-not used somwehere in the install/config/sysupgrade process. If not,
-then indeed it's redundant.
-
-Best regards
-Michal
 
 _______________________________________________
 openwrt-devel mailing list

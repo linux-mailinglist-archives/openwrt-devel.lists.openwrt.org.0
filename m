@@ -2,90 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6294E128FC3
-	for <lists+openwrt-devel@lfdr.de>; Sun, 22 Dec 2019 21:05:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB851128FEA
+	for <lists+openwrt-devel@lfdr.de>; Sun, 22 Dec 2019 21:58:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ymanasjfA8A+bAqd1ENn6JDNWNOAOkKapmzjFA+PheM=; b=LYHQZJHFrbE65p
-	AR//GoonUyzvf6D3J+gXLgTyw9pNZwXxIoYAZmvUP6YakFbxzw7YEukhqUXck+eEEGs9o0sNSHPtv
-	m0jQiU+a6VOIxXBniR+827NV56QOaNx/QqNKC34v8N428T5euFAn+6o7N/qNJIcSD/SofMZBZbAaN
-	QVQPsK5YZBJpk45Pq3KBT5wDX6EkiaZMZBto1TpDcJ81KgATZgEAGK59ZcfbA03n0Sle+++pXPwee
-	sCC1d1PQ72szlP09NakbwIk5IYMXuFReIVfpLHxthRAqXoFXEDo7WJ4+Pt2Xee1cq22ihZ2/K61/p
-	l9deOzWGqRS+AS4Sy3XQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jUDzWtzuqSTw8K2faVKsSeJTOnRnqDQRD/yfbaoZ++g=; b=WY/GEmKYahXttT
+	88CUBnsnXiPnid5L1RGhE12riLwb+vggdFXjHttiCckArRH4W+9ypnn2IAHvpAkQDUpLXY1j4vF7l
+	GFJDqmkDdhAEDKtbeHH2wQeOs1j+2UNVTw7zQs0cTVMYalg62yvyPdCOBN/2lo5klRdGwyyRsyXsF
+	2cZ5PQMlXEar20tijjJl0VuZgth/YECXziNuGUvy23xIB8qMRSe9eHSOrO/6rMUWVRA9H33RYjMCL
+	1SwGUNinMy/maI3RgIBhI5JMq9VQiHto2X3J783eGJBl0KQWHqDGgKzylBwULJQN5HlG0VJT9XqL7
+	DsqeYciMfJAcmG/3RPwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij7Tm-0002tq-CG; Sun, 22 Dec 2019 20:05:30 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1ij8JC-00020G-PX; Sun, 22 Dec 2019 20:58:38 +0000
+Received: from mx4.wp.pl ([212.77.101.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij7Te-0002tL-DG
- for openwrt-devel@lists.openwrt.org; Sun, 22 Dec 2019 20:05:24 +0000
-Received: by mail-lf1-x133.google.com with SMTP id l18so2888323lfc.1
- for <openwrt-devel@lists.openwrt.org>; Sun, 22 Dec 2019 12:05:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=4Hv7KmeKEFnGE0WSLtX1VrIhJvOcuoOX+3w46Bz8VQQ=;
- b=P7RGtcWfTbZhJXKSwf8mnyDd/phmbPMN2aCt4eHoNI3G0OAybdQi91IXhxHuzCEa7B
- 8qf51Ky9cSebi6GZf3ew0KraQWJNcUzUIb1dDKXNH6QdFAJj2XdDxhoE2BDEYkdxDQnk
- 0RM3BupjUS8mxuHfe0FKtxOnzpfxeIT01Et1DAdLJ+mIcs4up98Z/H231JWgao5x/j9K
- PGY8ZYccVSG62s6+CaK729n6didfoBJzIuVv0KmKCAPKOayPL9pk4e8gE3kWaxHbB6B8
- /HRROopmbH8NV6t+3gumurkhO54elM/s4eQ86dv5hllhsRBfMUUPIzhs8n9BslMNb4vy
- /l0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=4Hv7KmeKEFnGE0WSLtX1VrIhJvOcuoOX+3w46Bz8VQQ=;
- b=aSoZa6kyTWmXWJGt4wfy+Y/VqlAaJqatPMSS3/hBtY5NNjWeSxMwO/xBIDvq0Tkjd7
- kZB+AKzToRceVlbMc5x4e8kz38zJpFSpCMywQ0QflM8JghBOvc1Fthpbz7x8ezBHiOTE
- BXhRcC+IfajUWiB1rWKqi6cIkwwxTgnWaRlrU05TeapP5svPr3yGDlm3FHPr52VZnjvi
- 5FE+2CtcfAIJnkGd/3tqjpOAzAUIQuFrBMYz8mUjRklZeQAaG2dVRF0IKIdxi9xS3lt8
- fsV8gKC1u/8GpAGx/ls3B9Bi2reGto1A/6pXqU0OgJGBEbDjD3fcY0UncHrsuD4yqpAm
- gVww==
-X-Gm-Message-State: APjAAAWXET/Au5iXqFNs4NMyrlV3FlhvI56ffN9x7KZK5p633ss/62lc
- t4Sn6ujv/ZnFuirsYN0u422Rbd/2
-X-Google-Smtp-Source: APXvYqzyppyAb+mthrkp3FEbyXFwuldlnnerE7XAVnJw4tNjkgcKPknK0G4ikEGBcqlFk1WkVtaHhA==
-X-Received: by 2002:a05:6512:284:: with SMTP id
- j4mr14166392lfp.109.1577045119987; 
- Sun, 22 Dec 2019 12:05:19 -0800 (PST)
-Received: from home.paul.comp (paulfertser.info.
- [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id p15sm7045334lfo.88.2019.12.22.12.05.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Dec 2019 12:05:19 -0800 (PST)
-Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
- by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- xBMK5G7q009995; Sun, 22 Dec 2019 23:05:17 +0300
-Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id xBMK5FZ4009994;
- Sun, 22 Dec 2019 23:05:15 +0300
-From: Paul Fertser <fercerpav@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 22 Dec 2019 23:05:13 +0300
-Message-Id: <20191222200514.9955-1-fercerpav@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191222182057.9805-1-fercerpav@gmail.com>
-References: <20191222182057.9805-1-fercerpav@gmail.com>
+ id 1ij8IM-0000yK-F4
+ for openwrt-devel@lists.openwrt.org; Sun, 22 Dec 2019 20:57:49 +0000
+Received: (wp-smtpd smtp.wp.pl 21339 invoked from network);
+ 22 Dec 2019 21:57:39 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1577048259; bh=ZKAqja/Yi1+hxkjfaKMP3FgQTgizn5pEUc+PNpnkrnA=;
+ h=From:To:Cc:Subject;
+ b=AwMve6Lbj03Oqngx/vF+WC5QkiNeBc8HwypGrmMd7B8xfphEVdx0FEO1m7heFjtQ9
+ saiWPsG7QXP6VgAhfylXYXPJ+GJWzJ5S6M3Y6S2dQBTWOGNqkPdTVTbYEZV6oEsgPo
+ cc+uiIumsBYJfbc0CvzdhtxDg7RQ4/i3Rtrs6DJc=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 22 Dec 2019 21:57:39 +0100
+Date: Sun, 22 Dec 2019 21:50:52 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Message-ID: <20191222215052.6901e39f@kosmio.komorska>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
+X-WP-MailID: 0188bdc8e3a0b8e86f878b8275148499
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [IbMR]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_120522_475412_0A60BED6 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191222_125746_683558_AAAFE378 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:133 listed in]
- [list.dnswl.org]
+ no trust [212.77.101.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (fercerpav[at]gmail.com)
+ provider (michal.cieslakiewicz[at]wp.pl)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,8 +66,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] ath79: use ath10k-ct-smallbuffers for 64
- MiB devices
+Subject: [OpenWrt-Devel] [PATCH v2 0/4] ath79: add support for QCA9563-based
+ Netgear WNDR routers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,162 +79,67 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Stijn Tintel <stijn@linux-ipv6.be>, Paul Fertser <fercerpav@gmail.com>
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>,
+ David Bauer <mail@david-bauer.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Paul Fertser <fercerpav@gmail.com>
----
+This patchset introduces support for two Netgear dual-band routers
+based on the same PCB (29764821) with QCA9563 SoC, AR9580 5GHz chip,
+128 MiB RAM, 2 MiB SPI-NOR + 128 MiB SPI-NAND flash:
+* Netgear WNDR4300 v2
+* Netgear WNDR4500 v3
 
-These should be all the affected ath79 devices. There're also some in
-ipq40xx and ipq806x. And, of course, plenty in ar71xx, not sure if
-it's worth caring about those.
+WNDR4300v2 has been tested successfully with this patchset applied
+to master branch. Since I have no access to 4500v3, configuration
+for this device is based on information provided by various websites,
+including abandoned ar71xx patch https://patchwork.ozlabs.org/patch/809227/
 
+Note: technical wikis claim device is running CPU @ 750 MHz, while on my
+WNDR4300v2 both u-boot and OpenWrt report CPU clock value of 775 MHz.
 
- target/linux/ath79/image/generic-tp-link.mk | 10 +++++-----
- target/linux/ath79/image/generic-ubnt.mk    | 10 +++++-----
- target/linux/ath79/image/generic.mk         |  8 ++++----
- 3 files changed, 14 insertions(+), 14 deletions(-)
+MAC address printed on device label is for LAN interface (ART offset 0x0).
 
-diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
-index cc5c13b919..8a030492c5 100644
---- a/target/linux/ath79/image/generic-tp-link.mk
-+++ b/target/linux/ath79/image/generic-tp-link.mk
-@@ -20,7 +20,7 @@ define Device/tplink_archer-c2-v3
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := Archer C2
-   DEVICE_VARIANT := v3
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
-   TPLINK_BOARD_ID := ARCHER-C2-V3
- endef
- TARGET_DEVICES += tplink_archer-c2-v3
-@@ -32,7 +32,7 @@ define Device/tplink_archer-c25-v1
-   DEVICE_MODEL := Archer C25
-   DEVICE_VARIANT := v1
-   TPLINK_BOARD_ID := ARCHER-C25-V1
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
-   SUPPORTED_DEVICES += archer-c25-v1
- endef
- TARGET_DEVICES += tplink_archer-c25-v1
-@@ -56,7 +56,7 @@ define Device/tplink_archer-c58-v1
-   DEVICE_MODEL := Archer C58
-   DEVICE_VARIANT := v1
-   TPLINK_BOARD_ID := ARCHER-C58-V1
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
-   SUPPORTED_DEVICES += archer-c58-v1
- endef
- TARGET_DEVICES += tplink_archer-c58-v1
-@@ -119,7 +119,7 @@ define Device/tplink_archer-c60-v1
-   DEVICE_MODEL := Archer C60
-   DEVICE_VARIANT := v1
-   TPLINK_BOARD_ID := ARCHER-C60-V1
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
-   SUPPORTED_DEVICES += archer-c60-v1
- endef
- TARGET_DEVICES += tplink_archer-c60-v1
-@@ -131,7 +131,7 @@ define Device/tplink_archer-c60-v2
-   DEVICE_MODEL := Archer C60
-   DEVICE_VARIANT := v2
-   TPLINK_BOARD_ID := ARCHER-C60-V2
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
-   SUPPORTED_DEVICES += archer-c60-v2
- endef
- TARGET_DEVICES += tplink_archer-c60-v2
-diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
-index 760d5be196..8a45fb09d1 100644
---- a/target/linux/ath79/image/generic-ubnt.mk
-+++ b/target/linux/ath79/image/generic-ubnt.mk
-@@ -122,7 +122,7 @@ define Device/ubnt_lap-120
-   $(Device/ubnt-wa)
-   DEVICE_MODEL := LiteAP ac
-   DEVICE_VARIANT := LAP-120
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
- endef
- TARGET_DEVICES += ubnt_lap-120
- 
-@@ -130,28 +130,28 @@ define Device/ubnt_litebeam-ac-gen2
-   $(Device/ubnt-wa)
-   DEVICE_MODEL := LiteBeam AC
-   DEVICE_VARIANT := Gen2
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
- endef
- TARGET_DEVICES += ubnt_litebeam-ac-gen2
- 
- define Device/ubnt_nanobeam-ac
-   $(Device/ubnt-wa)
-   DEVICE_MODEL := NanoBeam AC
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct rssileds
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct rssileds
- endef
- TARGET_DEVICES += ubnt_nanobeam-ac
- 
- define Device/ubnt_nanostation-ac
-   $(Device/ubnt-wa)
-   DEVICE_MODEL := Nanostation AC
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct rssileds
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct rssileds
- endef
- TARGET_DEVICES += ubnt_nanostation-ac
- 
- define Device/ubnt_nanostation-ac-loco
-   $(Device/ubnt-wa)
-   DEVICE_MODEL := Nanostation AC loco
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
- endef
- TARGET_DEVICES += ubnt_nanostation-ac-loco
- 
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 10bd40abc1..18dad80d5d 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -273,7 +273,7 @@ define Device/comfast_cf-e313ac
-   SOC := qca9531
-   DEVICE_VENDOR := COMFAST
-   DEVICE_MODEL := CF-E313AC
--  DEVICE_PACKAGES := rssileds kmod-leds-gpio kmod-ath10k-ct \
-+  DEVICE_PACKAGES := rssileds kmod-leds-gpio kmod-ath10k-ct-smallbuffers \
- 	ath10k-firmware-qca9888-ct -swconfig -uboot-envtools
-   IMAGE_SIZE := 7936k
- endef
-@@ -473,7 +473,7 @@ define Device/dlink_dir-859-a1
-   DEVICE_MODEL := DIR-859
-   DEVICE_VARIANT := A1
-   IMAGE_SIZE := 15872k
--  DEVICE_PACKAGES :=  kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES :=  kmod-usb2 kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
-   SEAMA_SIGNATURE := wrgac37_dlink.2013gui_dir859
-   SUPPORTED_DEVICES += dir-859-a1
- endef
-@@ -719,7 +719,7 @@ define Device/nec_wg800hp
-   IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | \
- 	append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | \
- 	xor-image -p 6A57190601121E4C004C1E1201061957 -x | nec-fw LASER_ATERM
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct-htt
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct-htt
- endef
- TARGET_DEVICES += nec_wg800hp
- 
-@@ -917,7 +917,7 @@ define Device/phicomm_k2t
-   IMAGE_SIZE := 15744k
-   IMAGE/sysupgrade.bin := append-kernel | append-rootfs | pad-rootfs | \
- 	append-metadata | check-size $$$$(IMAGE_SIZE)
--  DEVICE_PACKAGES := kmod-leds-reset kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-leds-reset kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
- endef
- TARGET_DEVICES += phicomm_k2t
- 
+Patch #1 is a prerequisite and allows to unmask certain pins for
+ath9k-compatible wireless chips using Device Tree definition. Parameter
+is labelled "qca,gpio-mask" and accepts u32 value (see *_GPIO_MASK
+constants in ath9k/reg.h file). One of main reasons for blocking access
+to these pins is that they provide only one-way communication (in or out).
+Here - setting new mask to 0xf6ff (default one is 0xf4ff) enables RFKILL
+button wired to input pin 9.
+
+Changes v1->v2:
+* kernel partition size increased from 2 MiB to 4 MiB for all Netgear WNDR
+  routers with NAND flash, including AR9344 models (WNDR4300 and WNDR3700v4)
+  already in master (patch 2/4 added)
+* dropped 'firmware' overlay partition
+
+Patch list (4):
+  mac80211: ath9k: add GPIO mask dts property
+  ath79: WNDR4300: increase kernel partition to 4M
+  ath79: add support for Netgear WNDR4300 v2
+  ath79: add support for Netgear WNDR4500 v3
+
+ package/boot/uboot-envtools/files/ath79       |   2 +
+ .../patches/ath/553-ath9k_of_gpio_mask.patch  |  25 ++
+ .../linux/ath79/dts/ar9344_netgear_wndr.dtsi  |  10 +-
+ .../linux/ath79/dts/qca9563_netgear_wndr.dtsi | 256 ++++++++++++++++++
+ .../ath79/dts/qca9563_netgear_wndr4300-v2.dts |  19 ++
+ .../ath79/dts/qca9563_netgear_wndr4500-v3.dts |  41 +++
+ target/linux/ath79/image/nand.mk              |  24 +-
+ .../ath79/nand/base-files/etc/board.d/01_leds |   4 +-
+ .../nand/base-files/etc/board.d/02_network    |   8 +-
+ .../etc/hotplug.d/firmware/10-ath9k-eeprom    |   8 +-
+ 10 files changed, 386 insertions(+), 11 deletions(-)
+ create mode 100644 package/kernel/mac80211/patches/ath/553-ath9k_of_gpio_mask.patch
+ create mode 100644 target/linux/ath79/dts/qca9563_netgear_wndr.dtsi
+ create mode 100644 target/linux/ath79/dts/qca9563_netgear_wndr4300-v2.dts
+ create mode 100644 target/linux/ath79/dts/qca9563_netgear_wndr4500-v3.dts
+
 -- 
-2.20.1
+2.24.1
 
 
 _______________________________________________

@@ -2,90 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F72212A100
-	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Dec 2019 13:04:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11A7912A1E5
+	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Dec 2019 15:03:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SQHt325g0I/Mf3L3VTMjMr5nX1DLNSOBCcNdJsyQ/aY=; b=O8HVBSQnbZQHsd
-	uzhGjancMNcrNG0KZzRqM823jOnoLAdiWIQXpxqQTZNRAzNrgbwFxUJ71AZhQKDRVLGVjplPwAYQZ
-	C/CVhaZHYZdZVDgtlwwitHmlJjTG2Qt6KDUs4K5P/6fpWNBvV1SwlVaL+ZI+Cbw3fxRIxa6WoNkfc
-	o5wxwp3AxKGCr/L66SZAVDArJHsx64Ezx9/+RerYQZ5UYF01YCV5UuhG52xMRe1HZrDzJUzlfyRBI
-	v1L2CeHevk98BzlhvMhaFEc1wYwyo+/k7lR2zJs0sEJRmnrrBQzX6g71edeFZobOJoTcp0M4cvzk4
-	x+IZNsYbvi41K+GnkrtA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=NSKmj/1foRfVYHCE3X46dLm6bV6WWn7zQHx7gU8C8QI=; b=R4y
+	4FDtiG2ttDB+hkACg5dSXOfckIWMHdC3NJqwmZLdIcC/pBG/u0iiEU17yzT5fxu3SEGtIIj1vPTaJ
+	xgyFtu8MnlqtLO6bEh1kDDv7Wd8C52uhGEX07Ffkp7YUoIDDmZO6y50wcuvYPx1p4E7YdthVfoVb0
+	HDdXZ73OFLJh1gd1Pa/zTk7/U0J+mD9YbDZ4hD4TAUV0PoOWwvumXrBcnXGv6qFyLurT/TA9Q/TP6
+	12qIh11nBrPw4GB97FeuPKWSuESgXqEYQ9WQhUCfDIjtkWPcv++PHQpABtjuoDuv225Z+gi9wXsef
+	8E1nepcWMCm1jC1pf4aPidAyCuMTjRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijive-0005uJ-PL; Tue, 24 Dec 2019 12:04:46 +0000
-Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
+	id 1ijkmS-00074n-Vy; Tue, 24 Dec 2019 14:03:24 +0000
+Received: from host.cas.cat ([51.68.173.168])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijivS-0005ts-Lf
- for openwrt-devel@lists.openwrt.org; Tue, 24 Dec 2019 12:04:36 +0000
-Received: by mail-lf1-x12d.google.com with SMTP id n12so14953368lfe.3
- for <openwrt-devel@lists.openwrt.org>; Tue, 24 Dec 2019 04:04:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=vmrnL4i8/JAylxg5K0TLlnUROfnIM6iVEJhW0JobaoQ=;
- b=LDxBP4paUyDYf3ZNWkc/DIUlDZ6qMgIYpzHZYzuyOB8E5zhocgoA5nyWKPafdGQqRG
- DNIg1nDrs0CCb2YqEJwCKR4ImRkyiccIu6CibjT5V8CQ1CnSngurxAAU3eVL2V69SH4w
- jQMksS+VzR47rijY1UUglYFYbNCFItK4McPFd/8CNsnb56lLTI6GW+BJgt4Ljbc+yxqP
- Yb9ID11KEfUbtngoE/Bx77JiFepR5o18ZpXwHL9BbWdAfPXM84vYpm1f5Hwy25TcCiX4
- bqGV5g4yOom8/zyiLWNQz7LjNiylDcQJQK5P+GSR7hasAL9SLrYrUj9cxgax3HwhdlDH
- Fm1A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=vmrnL4i8/JAylxg5K0TLlnUROfnIM6iVEJhW0JobaoQ=;
- b=uElMNsJmHmioIilO1yiQXOnBtI/Eow6x8ZX8iqOt0LPBLLJUJNjJMqRvpxbC+7IEyJ
- wBVnko5o6Wg+D9Oui8H47mnyj1jOq+fFBnaX4HVBA9hNbHRQuleqg3MStxw+HEwpZZmx
- QHxkedF5Cp3ited5gcAfdeEj9KG+dDz/hjoXRu5FtGtlQnlFuF6FV2aUGWz4YfLaE4BJ
- tHd8jAXSP5G8M0KYJKblyRG++P4I+IicKkWGK2zup9t+OTnW9n0SzhZe/j+5Mj03r4x0
- oO+uCQ05Ir2pKCv59xxmdwSDMNlVWwe3Ib7G4aGxy1WV+iF0OF25/Jusfib5ybxTZAmq
- LWTg==
-X-Gm-Message-State: APjAAAXTPaPghH9ycUkR/d+80krRoYeT3eP8XEJzQ9cgYB8i18tR02FI
- Q//FabJsBpt5rFLrVACvUqTGu4C5
-X-Google-Smtp-Source: APXvYqyge/XGZSXZ1YdQVjkuOXZg8lv8akDvNhoqQpYHNhRui77jKbr5Z6o2ncU8IPRvLf6c2R2zTQ==
-X-Received: by 2002:ac2:4a91:: with SMTP id l17mr20017310lfp.75.1577189072237; 
- Tue, 24 Dec 2019 04:04:32 -0800 (PST)
-Received: from home.paul.comp (paulfertser.info.
- [2001:470:26:54b:226:9eff:fe70:80c2])
- by smtp.gmail.com with ESMTPSA id z7sm11766554lfa.81.2019.12.24.04.04.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Dec 2019 04:04:31 -0800 (PST)
-Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
- by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
- xBOC4Svg013635; Tue, 24 Dec 2019 15:04:29 +0300
-Received: (from paul@localhost)
- by home.paul.comp (8.15.2/8.15.2/Submit) id xBOC4RYc013634;
- Tue, 24 Dec 2019 15:04:27 +0300
-From: Paul Fertser <fercerpav@gmail.com>
+ id 1ijkmM-00074M-2M
+ for openwrt-devel@lists.openwrt.org; Tue, 24 Dec 2019 14:03:20 +0000
+Received: from [192.168.40.50] (p.ddns.jazztel.es [37.133.181.30])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (No client certificate requested)
+ by host.cas.cat (Postfix) with ESMTPSA id 93B533E83D
+ for <openwrt-devel@lists.openwrt.org>; Tue, 24 Dec 2019 15:03:11 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=cas.cat; s=mail;
+ t=1577196191; bh=GuhIvxWJcLoiulK9m/4QAVBjhDleypdVJCRFEq9mTWM=;
+ h=To:From:Subject:Date:From;
+ b=WLKT7xfnUp17MIuOdM6N11EJEuZ2SrUB+jX0pGswIwB0+ohLQbXtI7V0bD/FSf5Kr
+ qMWVeDftwlzcsPulQpsm8U8lb8fV7/ojkOwmBJIy+Th9G7D3zgiBvrotxW0HoL9v1O
+ OCLfmo3GEQHQTLMCau6E5k/F1Bh0k6L2RNCG8ydIVZNd0cqKQWq5qi2K+Ka6YGh3Zp
+ UwHb+k1mIdZ21S8EnLBf1TwHmfsJVkfQUKNVDV5yqhqz9Z0CbgOTk/Xle9UDaKb4l2
+ Flil9wchN3TkOMsYhkbC/b9Lg0vVINmsN2agJZvu+0j6XWlt6p9iO601pjYWfRub1b
+ VSnSjDkzxTYxA==
 To: openwrt-devel@lists.openwrt.org
-Date: Tue, 24 Dec 2019 15:04:26 +0300
-Message-Id: <20191224120426.13595-1-fercerpav@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <4d6e1b57-d2f5-0f53-b118-4b999d4f15c8@hauke-m.de>
-References: <4d6e1b57-d2f5-0f53-b118-4b999d4f15c8@hauke-m.de>
+From: Pedro <pedro@cas.cat>
+Autocrypt: addr=pedro@cas.cat; keydata=
+ mQENBFwTT0gBCACpCcJSv4ADrV8f6puGEXyGRxLdARePpMhY1LNQ4JmvDE4UGbkSHHp0A/SM
+ wFnKvhkc9oPrIoqTIcgfRRzr1JtYTwU3lNGQCawmrBOt5PoyHxbzE1YCpTW2Kxs/tGaBOtfn
+ CC6ic8Sj1MPiuyUvjnCpb8dABE2CmsEPVT+zSt0nSCmPbj2hHv6azs4wdjHhlZnnTTBbbnGU
+ 3atAoZHDZ0fESSxyfV92U0dTn0dYa8tWnnQuYNBDKu5UdB3hFdF61dmL+8yZqFcWwohlySvx
+ HnuqKKW7/80Rplkbp5QQT/uBP4Cyad/DoCRuNLKdHTz0nsb86KqwOXQwCttLYbusVwhlABEB
+ AAG0FXBlZHJvIDxwZWRyb0BjYXMuY2F0PokBVAQTAQgAPgIbLwULCQgHAgYVCAkKCwIEFgID
+ AQIeAQIXgBYhBLAblhazwwE6Jn7qc51kWXw6mC3KBQJd2Zn9BQkDp341AAoJEJ1kWXw6mC3K
+ Am8H/jGOPki2z37rA1iQck+sES/QsbFTUnBJIlXQDHJf30NQnokYDPgdfOMU5GdZUmt+CD7V
+ pntrZKXnHSC/ANkul3XPxTxe8xKbqAgX/Whu9Edorr0yBq7OUkAhswE2vBaVehj7DgSbSkC5
+ 7HQUME55y2Gg9GkqWV1XBucf1kQElRPZ1jtwfB9jjCAULjRcNEsOVVT/ztJvSaCPQsUcVBfv
+ LLna/aKnTWQJpNxCCKMfMK16dVksmZ9kfkg3hh5+0i79iYd7KfiL+j5XEqC4qdHfcAU1uLgT
+ mZRM0OosoWpsPsuHUzqS5oafdwAHQ39KpfiK9tBqhH7FyUv5hZeHpnWm3SE=
+Message-ID: <0f9883f5-598b-1a08-f4d9-d6dc9fc1ffaa@cas.cat>
+Date: Tue, 24 Dec 2019 15:03:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_040434_735577_0B506C02 
-X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-CacheID: sfid-20191224_060318_843919_3A4821EA 
+X-CRM114-Status: UNSURE (   7.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:12d listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (fercerpav[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,8 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH for-19.07] ath79: use ath10k-ct-smallbuffers
- for 64 MiB devices
+Subject: [OpenWrt-Devel] petition: start an slightly frozen branch based on
+ snapshot (future 20.x ? release)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,162 +89,137 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Paul Fertser <fercerpav@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7069895703223949025=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Signed-off-by: Paul Fertser <fercerpav@gmail.com>
----
- target/linux/ath79/image/generic-tp-link.mk | 14 +++++++-------
- target/linux/ath79/image/generic-ubnt.mk    |  8 ++++----
- target/linux/ath79/image/generic.mk         |  6 +++---
- 3 files changed, 14 insertions(+), 14 deletions(-)
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============7069895703223949025==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="2n9RwI1cvKvKW3DQUDkbHuIORJD6EWiC1"
 
-diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
-index 468117aad4..304304799d 100644
---- a/target/linux/ath79/image/generic-tp-link.mk
-+++ b/target/linux/ath79/image/generic-tp-link.mk
-@@ -17,7 +17,7 @@ define Device/tplink_archer-c2-v3
-   ATH_SOC := qca9563
-   IMAGE_SIZE := 7808k
-   DEVICE_TITLE := TP-Link Archer C2 v3
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
-   TPLINK_BOARD_ID := ARCHER-C2-V3
- endef
- TARGET_DEVICES += tplink_archer-c2-v3
-@@ -28,7 +28,7 @@ define Device/tplink_archer-c25-v1
-   IMAGE_SIZE := 7808k
-   DEVICE_TITLE := TP-Link Archer C25 v1
-   TPLINK_BOARD_ID := ARCHER-C25-V1
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
-   SUPPORTED_DEVICES += archer-c25-v1
- endef
- TARGET_DEVICES += tplink_archer-c25-v1
-@@ -39,7 +39,7 @@ define Device/tplink_archer-c58-v1
-   IMAGE_SIZE := 7936k
-   DEVICE_TITLE := TP-Link Archer C58 v1
-   TPLINK_BOARD_ID := ARCHER-C58-V1
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
-   SUPPORTED_DEVICES += archer-c58-v1
- endef
- TARGET_DEVICES += tplink_archer-c58-v1
-@@ -61,7 +61,7 @@ define Device/tplink_archer-c60-v1
-   IMAGE_SIZE := 7936k
-   DEVICE_TITLE := TP-Link Archer C60 v1
-   TPLINK_BOARD_ID := ARCHER-C60-V1
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
-   SUPPORTED_DEVICES += archer-c60-v1
- endef
- TARGET_DEVICES += tplink_archer-c60-v1
-@@ -72,7 +72,7 @@ define Device/tplink_archer-c60-v2
-   IMAGE_SIZE := 7808k
-   DEVICE_TITLE := TP-Link Archer C60 v2
-   TPLINK_BOARD_ID := ARCHER-C60-V2
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
-   SUPPORTED_DEVICES += archer-c60-v2
- endef
- TARGET_DEVICES += tplink_archer-c60-v2
-@@ -171,7 +171,7 @@ TARGET_DEVICES += tplink_cpe210-v3
- define Device/tplink_archer-d50-v1
-   ATH_SOC := qca9531
-   DEVICE_TITLE := TP-Link Archer D50 v1
--  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
-   BOARDNAME := ARCHER-D50-V1
-   IMAGE_SIZE := 7808k
-   TPLINK_HWID := 0xC1200001
-@@ -206,7 +206,7 @@ define Device/tplink_re450-v2
-   ATH_SOC := qca9563
-   IMAGE_SIZE := 6016k
-   DEVICE_TITLE := TP-Link RE450 v2
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
-   TPLINK_HWID := 0x0
-   TPLINK_HWREV := 0
-   TPLINK_BOARD_ID := RE450-V2
-diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
-index 6601986e08..8bc4523f46 100644
---- a/target/linux/ath79/image/generic-ubnt.mk
-+++ b/target/linux/ath79/image/generic-ubnt.mk
-@@ -128,7 +128,7 @@ TARGET_DEVICES += ubnt_nanostation-m-xw
- define Device/ubnt_lap-120
-   $(Device/ubnt-wa)
-   DEVICE_TITLE := Ubiquiti LiteAP ac (LAP-120)
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
-   IMAGE_SIZE := 15744k
-   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
- endef
-@@ -137,7 +137,7 @@ TARGET_DEVICES += ubnt_lap-120
- define Device/ubnt_nanobeam-ac
-   $(Device/ubnt-wa)
-   DEVICE_TITLE := Ubiquiti NanoBeam AC
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct rssileds
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct rssileds
-   IMAGE_SIZE := 15744k
-   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
- endef
-@@ -146,7 +146,7 @@ TARGET_DEVICES += ubnt_nanobeam-ac
- define Device/ubnt_nanostation-ac
-   $(Device/ubnt-wa)
-   DEVICE_TITLE := Ubiquiti Nanostation AC
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct rssileds
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct rssileds
-   IMAGE_SIZE := 15744k
-   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
- endef
-@@ -155,7 +155,7 @@ TARGET_DEVICES += ubnt_nanostation-ac
- define Device/ubnt_nanostation-ac-loco
-   $(Device/ubnt-wa)
-   DEVICE_TITLE := Ubiquiti Nanostation AC loco
--  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
-   IMAGE_SIZE := 15744k
-   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
- endef
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 29a67de816..430740e5d6 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -295,7 +295,7 @@ define Device/dlink_dir-859-a1
-   ATH_SOC := qca9563
-   DEVICE_TITLE := D-LINK DIR-859 A1
-   IMAGE_SIZE := 15872k
--  DEVICE_PACKAGES :=  kmod-usb-core kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca988x-ct
-+  DEVICE_PACKAGES :=  kmod-usb-core kmod-usb2 kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
-   SEAMA_SIGNATURE := wrgac37_dlink.2013gui_dir859
-   SUPPORTED_DEVICES += dir-859-a1
- endef
-@@ -519,7 +519,7 @@ define Device/nec_wg800hp
-     append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | \
-     xor-image -p 6A57190601121E4C004C1E1201061957 -x | \
-     nec-fw LASER_ATERM
--  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct-htt
-+  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct-htt
- endef
- TARGET_DEVICES += nec_wg800hp
- 
-@@ -662,7 +662,7 @@ define Device/phicomm_k2t
-   DEVICE_TITLE := Phicomm K2T
-   IMAGE_SIZE := 15744k
-   IMAGE/sysupgrade.bin := append-kernel | append-rootfs | pad-rootfs | append-metadata | check-size $$$$(IMAGE_SIZE)
--  DEVICE_PACKAGES := kmod-leds-reset kmod-ath10k-ct ath10k-firmware-qca9888-ct
-+  DEVICE_PACKAGES := kmod-leds-reset kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
- endef
- TARGET_DEVICES += phicomm_k2t
- 
--- 
-2.20.1
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--2n9RwI1cvKvKW3DQUDkbHuIORJD6EWiC1
+Content-Type: multipart/mixed; boundary="7opKmID1qhW4Jd5F6rjEvrQom0QKgQsJK";
+ protected-headers="v1"
+From: Pedro <pedro@cas.cat>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <0f9883f5-598b-1a08-f4d9-d6dc9fc1ffaa@cas.cat>
+Subject: petition: start an slightly frozen branch based on snapshot (future
+ 20.x ? release)
 
+--7opKmID1qhW4Jd5F6rjEvrQom0QKgQsJK
+Content-Type: multipart/mixed;
+ boundary="------------51ED8E6114DA74913DC4E8B8"
+Content-Language: en-US
+
+This is a multi-part message in MIME format.
+--------------51ED8E6114DA74913DC4E8B8
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Dear List,
+
+Most of the new devices that are coming, or that are useful for us as
+community networks are in the snapshot release [1] [2] [3]. I feel the
+new 19.07 is not benefiting this new devices that will remain
+unsupported by a stable branch (most of them, based on ath10k / 802.11ac)=
+=2E
+
+We are between: (1) buying legacy devices (ath9k and 802.11n), for
+example right now classic nanostation XW m5 is locked right now [4]),
+(2) second hand devices or (3) buying new devices using ath10k and
+802.11ac (using the wiki procedure still you can unlock them and install
+openwrt)
+
+Our use case requires stable releases because in a community network we
+remotely upgrade firmwares. Based on previous experiences (releases 17,
+18) it worked perfectly. I don't feel good introducing the usage of
+snapshot for building our firmwares (image builder and so on). In that
+circumstances, I think we prefer known bugs that new bugs approaching.
+
+I thought of having my custom patches on top of 19.07 branch. Maybe
+someone is already doing it. I'm sure more people have this need.
+
+I don't feel confortable leading that proposed frozen branch that could
+help as a pre-work/alpha for future 20.x openwrt release.
+
+Anyone in the same situation?
+
+But maybe is too much effort and we should continue focusing on the plan
+right now (get 19.07 release done)
+
+Cheers,
+Pedro
+
+[1] https://openwrt.org/toh/ubiquiti/ubiquiti_nanostation_ac_loco
+[2] https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_liteap_ac_lap-120
+[3] v2 and v3 https://openwrt.org/toh/tp-link/cpe510
+[4]
+https://forum.openwrt.org/t/hw-of-ubiquiti-nanostation-m5-has-changed/392=
+25
+
+--------------51ED8E6114DA74913DC4E8B8
+Content-Type: application/pgp-keys;
+ name="0x9D64597C3A982DCA.asc"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment;
+ filename="0x9D64597C3A982DCA.asc"
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBFwTT0gBCACpCcJSv4ADrV8f6puGEXyGRxLdARePpMhY1LNQ4JmvDE4UGbkS
+HHp0A/SMwFnKvhkc9oPrIoqTIcgfRRzr1JtYTwU3lNGQCawmrBOt5PoyHxbzE1YC
+pTW2Kxs/tGaBOtfnCC6ic8Sj1MPiuyUvjnCpb8dABE2CmsEPVT+zSt0nSCmPbj2h
+Hv6azs4wdjHhlZnnTTBbbnGU3atAoZHDZ0fESSxyfV92U0dTn0dYa8tWnnQuYNBD
+Ku5UdB3hFdF61dmL+8yZqFcWwohlySvxHnuqKKW7/80Rplkbp5QQT/uBP4Cyad/D
+oCRuNLKdHTz0nsb86KqwOXQwCttLYbusVwhlABEBAAG0FXBlZHJvIDxwZWRyb0Bj
+YXMuY2F0PokBVAQTAQgAPgIbLwULCQgHAgYVCAkKCwIEFgIDAQIeAQIXgBYhBLAb
+lhazwwE6Jn7qc51kWXw6mC3KBQJd2Zn9BQkDp341AAoJEJ1kWXw6mC3KAm8H/jGO
+Pki2z37rA1iQck+sES/QsbFTUnBJIlXQDHJf30NQnokYDPgdfOMU5GdZUmt+CD7V
+pntrZKXnHSC/ANkul3XPxTxe8xKbqAgX/Whu9Edorr0yBq7OUkAhswE2vBaVehj7
+DgSbSkC57HQUME55y2Gg9GkqWV1XBucf1kQElRPZ1jtwfB9jjCAULjRcNEsOVVT/
+ztJvSaCPQsUcVBfvLLna/aKnTWQJpNxCCKMfMK16dVksmZ9kfkg3hh5+0i79iYd7
+KfiL+j5XEqC4qdHfcAU1uLgTmZRM0OosoWpsPsuHUzqS5oafdwAHQ39KpfiK9tBq
+hH7FyUv5hZeHpnWm3SE=3D
+=3DPJ6r
+-----END PGP PUBLIC KEY BLOCK-----
+
+--------------51ED8E6114DA74913DC4E8B8--
+
+--7opKmID1qhW4Jd5F6rjEvrQom0QKgQsJK--
+
+--2n9RwI1cvKvKW3DQUDkbHuIORJD6EWiC1
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEsBuWFrPDATomfupznWRZfDqYLcoFAl4CGp4ACgkQnWRZfDqY
+LcqgtAf9F+wC5mTAuO5AYsqseApFAjSmTTzqXqNli4pM/k7xg5HasMzoX+orucOd
+kKAjAntKlQ6GrKJcpnO+6dYBfGGZoRc5578I/3qK1bclKPwLKR1TTtaF8lU8U4SE
+jKRZ0f6n74yr7+QzfdGHkWYTFYIOleicJlpLKbfR9YtFphXWrZ/J3Xv3Ako61wlu
+UFCvc3YWA9zNrNuZ2Che7K1zJXMbEawO3NYrKN6K+b4CkCCcV9RuVdmOrz9FW6/S
+OvjQeJOM4ARNVkp3F1PHvd+qEXPo3pO2rGushV4sIk+ocvQhRNpws3ghLbYYxMvL
+5tadHx4MnLMgFe+sFNuHWmgdBDiYGg==
+=1VqU
+-----END PGP SIGNATURE-----
+
+--2n9RwI1cvKvKW3DQUDkbHuIORJD6EWiC1--
+
+
+--===============7069895703223949025==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7069895703223949025==--
+

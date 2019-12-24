@@ -2,121 +2,99 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7A1E129C06
-	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Dec 2019 01:17:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F72212A100
+	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Dec 2019 13:04:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VaJWoBL39Az+o/qAk6/mW/BNh8csUMeTARPEJvxzgQA=; b=HEwXkppUxfoxD4
-	Y3BKC1/rAFfBaDs/ozi328RE0E1RyoS9ZS5bgaU1vg3cJx099MNkLO6cuiVuLtMsuSW4MWSzb5/c2
-	8XcH+O8FTjVkc3Axe1LZnSKNT4JedxjeSLKXqbfgfxvArdTRmZ5hPyPlTzAftn/GvGKT7CFB1T+CA
-	h7IudzWso1aonuzbb66HOv/juskI2oQMs5MvNnZyaXam2mydZRvzKOBoD4FpUNSYW0eG22FHp7eW1
-	SChpaxktmD3wk2sGWnDk3+9lXjNsSPqMt57AmjsTfZCworP4S2OTDjqK1vHNGbrfiwGEr2p4xKii9
-	J2oFDfa5674fE8BDOTVQ==;
+	List-Owner; bh=SQHt325g0I/Mf3L3VTMjMr5nX1DLNSOBCcNdJsyQ/aY=; b=O8HVBSQnbZQHsd
+	uzhGjancMNcrNG0KZzRqM823jOnoLAdiWIQXpxqQTZNRAzNrgbwFxUJ71AZhQKDRVLGVjplPwAYQZ
+	C/CVhaZHYZdZVDgtlwwitHmlJjTG2Qt6KDUs4K5P/6fpWNBvV1SwlVaL+ZI+Cbw3fxRIxa6WoNkfc
+	o5wxwp3AxKGCr/L66SZAVDArJHsx64Ezx9/+RerYQZ5UYF01YCV5UuhG52xMRe1HZrDzJUzlfyRBI
+	v1L2CeHevk98BzlhvMhaFEc1wYwyo+/k7lR2zJs0sEJRmnrrBQzX6g71edeFZobOJoTcp0M4cvzk4
+	x+IZNsYbvi41K+GnkrtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijXsu-0001pv-Ph; Tue, 24 Dec 2019 00:17:12 +0000
-Received: from mout-p-101.mailbox.org ([2001:67c:2050::465:101])
+	id 1ijive-0005uJ-PL; Tue, 24 Dec 2019 12:04:46 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijXsm-0001p8-BW
- for openwrt-devel@lists.openwrt.org; Tue, 24 Dec 2019 00:17:06 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-101.mailbox.org (Postfix) with ESMTPS id 47hcGZ12tyzKmWh;
- Tue, 24 Dec 2019 01:16:54 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id AtnEVi94L75z; Tue, 24 Dec 2019 01:16:49 +0100 (CET)
-To: Paul Fertser <fercerpav@gmail.com>, =?UTF-8?Q?Bj=c3=b8rn_Mork?=
- <bjorn@mork.no>
-References: <20191215172522.26626-1-fercerpav@gmail.com>
- <20191222182057.9805-1-fercerpav@gmail.com>
- <87fthb4d0o.fsf@miraculix.mork.no> <20191223195702.GE11377@home.paul.comp>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <4d6e1b57-d2f5-0f53-b118-4b999d4f15c8@hauke-m.de>
-Date: Tue, 24 Dec 2019 01:16:48 +0100
+ id 1ijivS-0005ts-Lf
+ for openwrt-devel@lists.openwrt.org; Tue, 24 Dec 2019 12:04:36 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id n12so14953368lfe.3
+ for <openwrt-devel@lists.openwrt.org>; Tue, 24 Dec 2019 04:04:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=vmrnL4i8/JAylxg5K0TLlnUROfnIM6iVEJhW0JobaoQ=;
+ b=LDxBP4paUyDYf3ZNWkc/DIUlDZ6qMgIYpzHZYzuyOB8E5zhocgoA5nyWKPafdGQqRG
+ DNIg1nDrs0CCb2YqEJwCKR4ImRkyiccIu6CibjT5V8CQ1CnSngurxAAU3eVL2V69SH4w
+ jQMksS+VzR47rijY1UUglYFYbNCFItK4McPFd/8CNsnb56lLTI6GW+BJgt4Ljbc+yxqP
+ Yb9ID11KEfUbtngoE/Bx77JiFepR5o18ZpXwHL9BbWdAfPXM84vYpm1f5Hwy25TcCiX4
+ bqGV5g4yOom8/zyiLWNQz7LjNiylDcQJQK5P+GSR7hasAL9SLrYrUj9cxgax3HwhdlDH
+ Fm1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=vmrnL4i8/JAylxg5K0TLlnUROfnIM6iVEJhW0JobaoQ=;
+ b=uElMNsJmHmioIilO1yiQXOnBtI/Eow6x8ZX8iqOt0LPBLLJUJNjJMqRvpxbC+7IEyJ
+ wBVnko5o6Wg+D9Oui8H47mnyj1jOq+fFBnaX4HVBA9hNbHRQuleqg3MStxw+HEwpZZmx
+ QHxkedF5Cp3ited5gcAfdeEj9KG+dDz/hjoXRu5FtGtlQnlFuF6FV2aUGWz4YfLaE4BJ
+ tHd8jAXSP5G8M0KYJKblyRG++P4I+IicKkWGK2zup9t+OTnW9n0SzhZe/j+5Mj03r4x0
+ oO+uCQ05Ir2pKCv59xxmdwSDMNlVWwe3Ib7G4aGxy1WV+iF0OF25/Jusfib5ybxTZAmq
+ LWTg==
+X-Gm-Message-State: APjAAAXTPaPghH9ycUkR/d+80krRoYeT3eP8XEJzQ9cgYB8i18tR02FI
+ Q//FabJsBpt5rFLrVACvUqTGu4C5
+X-Google-Smtp-Source: APXvYqyge/XGZSXZ1YdQVjkuOXZg8lv8akDvNhoqQpYHNhRui77jKbr5Z6o2ncU8IPRvLf6c2R2zTQ==
+X-Received: by 2002:ac2:4a91:: with SMTP id l17mr20017310lfp.75.1577189072237; 
+ Tue, 24 Dec 2019 04:04:32 -0800 (PST)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id z7sm11766554lfa.81.2019.12.24.04.04.30
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 24 Dec 2019 04:04:31 -0800 (PST)
+Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
+ xBOC4Svg013635; Tue, 24 Dec 2019 15:04:29 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.15.2/Submit) id xBOC4RYc013634;
+ Tue, 24 Dec 2019 15:04:27 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 24 Dec 2019 15:04:26 +0300
+Message-Id: <20191224120426.13595-1-fercerpav@gmail.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <4d6e1b57-d2f5-0f53-b118-4b999d4f15c8@hauke-m.de>
+References: <4d6e1b57-d2f5-0f53-b118-4b999d4f15c8@hauke-m.de>
 MIME-Version: 1.0
-In-Reply-To: <20191223195702.GE11377@home.paul.comp>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_161704_694663_A0DA5710 
-X-CRM114-Status: GOOD (  19.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191224_040434_735577_0B506C02 
+X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:12d listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v3] kernel: ath10k-ct: provide a build
- variant for small RAM devices
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (fercerpav[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH for-19.07] ath79: use ath10k-ct-smallbuffers
+ for 64 MiB devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,48 +106,162 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Stijn Tintel <stijn@linux-ipv6.be>, Ben Greear <greearb@candelatech.com>,
- openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Fertser <fercerpav@gmail.com>, Hauke Mehrtens <hauke@hauke-m.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gMTIvMjMvMTkgODo1NyBQTSwgUGF1bCBGZXJ0c2VyIHdyb3RlOgo+IEhpIEJqw7hybiwKPiAK
-PiBPbiBNb24sIERlYyAyMywgMjAxOSBhdCAxMDoxNzoxMUFNICswMTAwLCBCasO4cm4gTW9yayB3
-cm90ZToKPj4gUGF1bCBGZXJ0c2VyIDxmZXJjZXJwYXZAZ21haWwuY29tPiB3cml0ZXM6Cj4+PiAt
-LS0gL2Rldi9udWxsCj4+PiArKysgYi9wYWNrYWdlL2tlcm5lbC9hdGgxMGstY3QvcGF0Y2hlcy85
-NjAtMDAxMS1hdGgxMGstbGltaXQtcGNpLWJ1ZmZlci1zaXplLnBhdGNoCj4+PiBAQCAtMCwwICsx
-LDEwMCBAQAo+Pj4gKy0tLSBhL2F0aDEway00LjE5L3BjaS5jCj4+PiArKysrIGIvYXRoMTBrLTQu
-MTkvcGNpLmMKPj4+ICtAQCAtMTQyLDcgKzE0MiwxMSBAQCBzdGF0aWMgc3RydWN0IGNlX2F0dHIg
-aG9zdF9jZV9jb25maWdfd2xhCj4+PiArIAkJLmZsYWdzID0gQ0VfQVRUUl9GTEFHUywKPj4+ICsg
-CQkuc3JjX25lbnRyaWVzID0gMCwKPj4+ICsgCQkuc3JjX3N6X21heCA9IDIwNDgsCj4+PiArKyNp
-Zm5kZWYgQ09ORklHX0FUSDEwS19TTUFMTEJVRkZFUlMKPj4+ICsgCQkuZGVzdF9uZW50cmllcyA9
-IDUxMiwKPj4+ICsrI2Vsc2UKPj4+ICsrCQkuZGVzdF9uZW50cmllcyA9IDEyOCwKPj4+ICsrI2Vu
-ZGlmCj4+PiArIAkJLnJlY3ZfY2IgPSBhdGgxMGtfcGNpX2h0dF9odGNfcnhfY2IsCj4+PiArIAl9
-LAo+Pj4gKyAKPj4KPj4gV2h5IG5vdCByZXBsYWNlIHRoZSBtYWdpYyBudW1iZXJzIHdpdGggYSBt
-YWNybz8gIFRoZW4geW91IGNvdWxkIGdldCBhd2F5Cj4+IHdpdGggKm9uZSogImlmIGNvbmZpZ3gg
-dGhlbiB0aGlzIGVsc2UgdGhhdCI/ICBBbmQgcHJlZmVyYWJseSBwdXQgaXQgaW4gYQo+PiBoZWFk
-ZXIgZmlsZS4KPiAKPiBUaGVyZSdyZSBkaWZmZXJlbnQgdmFsdWVzIGZvciBkaWZmZXJlbnQgYnVm
-ZmVycyBzbyB0aGVyZSBjYW4ndCBiZSBhCj4gc2luZ2xlIG51bWJlciB0byBmaXQgdGhlbSBhbGwu
-IEFuZCBJIGRvIG5vdCBzZWUgaG93IGFkZGluZyA0IGRpZmZlcmVudAo+IGRlZmluZXMganVzdCBm
-b3IgdGhlIHNha2Ugb2YgaXQgd291bGQgbWFrZSBzZW5zZSB0aGVyZS4KPiAKPj4gT3IgbWF5YmUg
-dGhlc2UgdGhpbmdzIGV2ZW4gY291bGQgYmUgbWFkZSBydW50aW1lIGNvbmZpZ3VyYWJsZT8gIEJ1
-ZmZlcnMKPj4gb2YgdGhpcyBzaXplIHJlYWxseSBzaG91bGQgYmUgSU1ITywgYXMgdGhlcmUgaXMg
-bm8gd2F5IHRvIG1ha2Ugb25lIHNpemUKPj4gZml0IGFsbC4gIEFzIGRlbW9uc3RyYXRlZC4uLgo+
-IAo+IFRoaXMgd2FzIGFscmVhZHkgZGlzY3Vzc2VkLCBwbGVhc2Ugc2VlIFswXS4gSSB0aGluayBh
-ZGRpbmcgYSBrZXJuZWwKPiBtb2R1bGUgcGFyYW1ldGVyIHdvdWxkIG1ha2Ugc2Vuc2UgZm9yIHRo
-aXMgYnV0IGl0J3MgYWxzbyBtdWNoIG1vcmUKPiBjb21wbGljYXRlZCB0aGFuIGp1c3QgYWRkaW5n
-IHR3byBwYXRjaGVzIHRoYXQgd2VyZSBhbHJlYWR5IHVzZWQgaW4KPiBPcGVuV3J0IGZvciBtYW55
-IHllYXJzLiBTbyBmYXIgbm9ib2R5IHZvbHVudGVlcmVkIHRvIGRvIHRoYXQsIGFuZCBJCj4gd2Fu
-dGVkIHRvIHByb3ZpZGUgYXQgbGVhc3Qgc29tZSBzZW1pLXNhbmUgc29sdXRpb24gZm9yIHRoZSB1
-cGNvbWluZwo+IHJlbGVhc2UuCj4gCj4gWzBdIGh0dHBzOi8vcGF0Y2h3b3JrLm96bGFicy5vcmcv
-Y29tbWVudC8yMzIyNzAxLwo+IApIaSBQYXVsLAoKVGhhbmsgeW91IGZvciB5b3VyIHBhdGNoZXMs
-IEkgYXBwbGllZCBib3RoIHBhdGNoZXMgdG8gbWFzdGVyIHdpdGggc29tZQpzbWFsbCBmaXhlcyBh
-bmQgYmFja3BvcnRlZCB0aGUgZmlyc3QgcGF0Y2ggZm9yIDE5LjA3IGJyYW5jaC4gVGhlIHBhdGNo
-CmFkZGluZyB0aGUgZGVwZW5kZW5jaWVzIHRvIHRoZSBhdGg3OSB0YXJnZXQgaXMgbm90IGFwcGx5
-aW5nIG9uIDE5LjA3LCBpdAp3b3VsZCBiZSBuaWNlIGlmIHlvdSBjb3VsZCBwcm92aWRlIGEgdmVy
-c2lvbiBvbiB0b3Agb2YgMTkuMDcgdG9vLgoKSGF1a2UKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53
-cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWls
-bWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+Signed-off-by: Paul Fertser <fercerpav@gmail.com>
+---
+ target/linux/ath79/image/generic-tp-link.mk | 14 +++++++-------
+ target/linux/ath79/image/generic-ubnt.mk    |  8 ++++----
+ target/linux/ath79/image/generic.mk         |  6 +++---
+ 3 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
+index 468117aad4..304304799d 100644
+--- a/target/linux/ath79/image/generic-tp-link.mk
++++ b/target/linux/ath79/image/generic-tp-link.mk
+@@ -17,7 +17,7 @@ define Device/tplink_archer-c2-v3
+   ATH_SOC := qca9563
+   IMAGE_SIZE := 7808k
+   DEVICE_TITLE := TP-Link Archer C2 v3
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
+   TPLINK_BOARD_ID := ARCHER-C2-V3
+ endef
+ TARGET_DEVICES += tplink_archer-c2-v3
+@@ -28,7 +28,7 @@ define Device/tplink_archer-c25-v1
+   IMAGE_SIZE := 7808k
+   DEVICE_TITLE := TP-Link Archer C25 v1
+   TPLINK_BOARD_ID := ARCHER-C25-V1
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct
+   SUPPORTED_DEVICES += archer-c25-v1
+ endef
+ TARGET_DEVICES += tplink_archer-c25-v1
+@@ -39,7 +39,7 @@ define Device/tplink_archer-c58-v1
+   IMAGE_SIZE := 7936k
+   DEVICE_TITLE := TP-Link Archer C58 v1
+   TPLINK_BOARD_ID := ARCHER-C58-V1
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
+   SUPPORTED_DEVICES += archer-c58-v1
+ endef
+ TARGET_DEVICES += tplink_archer-c58-v1
+@@ -61,7 +61,7 @@ define Device/tplink_archer-c60-v1
+   IMAGE_SIZE := 7936k
+   DEVICE_TITLE := TP-Link Archer C60 v1
+   TPLINK_BOARD_ID := ARCHER-C60-V1
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
+   SUPPORTED_DEVICES += archer-c60-v1
+ endef
+ TARGET_DEVICES += tplink_archer-c60-v1
+@@ -72,7 +72,7 @@ define Device/tplink_archer-c60-v2
+   IMAGE_SIZE := 7808k
+   DEVICE_TITLE := TP-Link Archer C60 v2
+   TPLINK_BOARD_ID := ARCHER-C60-V2
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9888-ct
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
+   SUPPORTED_DEVICES += archer-c60-v2
+ endef
+ TARGET_DEVICES += tplink_archer-c60-v2
+@@ -171,7 +171,7 @@ TARGET_DEVICES += tplink_cpe210-v3
+ define Device/tplink_archer-d50-v1
+   ATH_SOC := qca9531
+   DEVICE_TITLE := TP-Link Archer D50 v1
+-  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport kmod-ath10k-ct ath10k-firmware-qca988x-ct
++  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb-ledtrig-usbport kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
+   BOARDNAME := ARCHER-D50-V1
+   IMAGE_SIZE := 7808k
+   TPLINK_HWID := 0xC1200001
+@@ -206,7 +206,7 @@ define Device/tplink_re450-v2
+   ATH_SOC := qca9563
+   IMAGE_SIZE := 6016k
+   DEVICE_TITLE := TP-Link RE450 v2
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca988x-ct
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
+   TPLINK_HWID := 0x0
+   TPLINK_HWREV := 0
+   TPLINK_BOARD_ID := RE450-V2
+diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
+index 6601986e08..8bc4523f46 100644
+--- a/target/linux/ath79/image/generic-ubnt.mk
++++ b/target/linux/ath79/image/generic-ubnt.mk
+@@ -128,7 +128,7 @@ TARGET_DEVICES += ubnt_nanostation-m-xw
+ define Device/ubnt_lap-120
+   $(Device/ubnt-wa)
+   DEVICE_TITLE := Ubiquiti LiteAP ac (LAP-120)
+-  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct
++  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
+   IMAGE_SIZE := 15744k
+   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
+ endef
+@@ -137,7 +137,7 @@ TARGET_DEVICES += ubnt_lap-120
+ define Device/ubnt_nanobeam-ac
+   $(Device/ubnt-wa)
+   DEVICE_TITLE := Ubiquiti NanoBeam AC
+-  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct rssileds
++  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct rssileds
+   IMAGE_SIZE := 15744k
+   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
+ endef
+@@ -146,7 +146,7 @@ TARGET_DEVICES += ubnt_nanobeam-ac
+ define Device/ubnt_nanostation-ac
+   $(Device/ubnt-wa)
+   DEVICE_TITLE := Ubiquiti Nanostation AC
+-  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct rssileds
++  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct rssileds
+   IMAGE_SIZE := 15744k
+   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
+ endef
+@@ -155,7 +155,7 @@ TARGET_DEVICES += ubnt_nanostation-ac
+ define Device/ubnt_nanostation-ac-loco
+   $(Device/ubnt-wa)
+   DEVICE_TITLE := Ubiquiti Nanostation AC loco
+-  DEVICE_PACKAGES += kmod-ath10k-ct ath10k-firmware-qca988x-ct
++  DEVICE_PACKAGES += kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
+   IMAGE_SIZE := 15744k
+   IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | mkubntimage-split
+ endef
+diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+index 29a67de816..430740e5d6 100644
+--- a/target/linux/ath79/image/generic.mk
++++ b/target/linux/ath79/image/generic.mk
+@@ -295,7 +295,7 @@ define Device/dlink_dir-859-a1
+   ATH_SOC := qca9563
+   DEVICE_TITLE := D-LINK DIR-859 A1
+   IMAGE_SIZE := 15872k
+-  DEVICE_PACKAGES :=  kmod-usb-core kmod-usb2 kmod-ath10k-ct ath10k-firmware-qca988x-ct
++  DEVICE_PACKAGES :=  kmod-usb-core kmod-usb2 kmod-ath10k-ct-smallbuffers ath10k-firmware-qca988x-ct
+   SEAMA_SIGNATURE := wrgac37_dlink.2013gui_dir859
+   SUPPORTED_DEVICES += dir-859-a1
+ endef
+@@ -519,7 +519,7 @@ define Device/nec_wg800hp
+     append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE) | \
+     xor-image -p 6A57190601121E4C004C1E1201061957 -x | \
+     nec-fw LASER_ATERM
+-  DEVICE_PACKAGES := kmod-ath10k-ct ath10k-firmware-qca9887-ct-htt
++  DEVICE_PACKAGES := kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9887-ct-htt
+ endef
+ TARGET_DEVICES += nec_wg800hp
+ 
+@@ -662,7 +662,7 @@ define Device/phicomm_k2t
+   DEVICE_TITLE := Phicomm K2T
+   IMAGE_SIZE := 15744k
+   IMAGE/sysupgrade.bin := append-kernel | append-rootfs | pad-rootfs | append-metadata | check-size $$$$(IMAGE_SIZE)
+-  DEVICE_PACKAGES := kmod-leds-reset kmod-ath10k-ct ath10k-firmware-qca9888-ct
++  DEVICE_PACKAGES := kmod-leds-reset kmod-ath10k-ct-smallbuffers ath10k-firmware-qca9888-ct
+ endef
+ TARGET_DEVICES += phicomm_k2t
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

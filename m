@@ -2,82 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 493B812A3CA
-	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Dec 2019 19:02:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 866DE12A3D7
+	for <lists+openwrt-devel@lfdr.de>; Tue, 24 Dec 2019 19:10:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AJFoJuHuLUWI2pXSffsvuTv7D2kaUKNueaFcbHilR9M=; b=AH2DSc0ga7gxip
-	+tYs0yB8teAGr9x1mwEA5erLHYRWZIVGIdFyADSOwQUflcs4ny6MpbyJUZsEDkjVScvr48yF5wEBS
-	sruY1cDP/BIaaNh1VyfqMGZPFhtoF+CTUpa6o2W0Nbw8Jz03YUOQQFZf8cb6+Upuxtk/Tf4O0baXZ
-	eMbB7k0xmsfPW2hKaLL5ojAU6+EiAgsF38f7kpbfkVedQPmdUSwBMn++kQ00zfGznBsp1j2Y8efca
-	mYyW80AV8PMcBtGiY9HU+MwfY082PMuJwIT24ARlz3Q6Ka3MY24UInUz3nbojdlI+O8sIdpqYdzpC
-	DqbMOfr3EgUB3iTd3ceQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9yM/O2l5tlxG6z2hfC7eaiUT9FSzvRYcrM2FjawEXeQ=; b=KY0w5aqtvbfbLV
+	Eq8v4ZwbmmMPKwGIasC77zoiV4hG/TjE4EsPWvIN0ZRKvKSwR0SSKTs7bG505gLe5Cw3TsdC1bKBU
+	iBUa/nlPm5rM3t6B34fFl1Pd23LZd61Cb9JC2sEQJlF444coKmmtYRfgmxWyAWVLpL6eBEJ1bNxbJ
+	tFMskVJaB9AJ18O53vifDxuzcLmiP7hW2H04rB62LLoLMn6Rx1yRf/e734P6Oa4D8Vz7SMLa/qCrp
+	cOy/tl8BsUBIAAmuStmFX/i2img5ucM+eipe6pH8zIePKNPuvWK7AU8czWldooM0VtIKLSYLdmFj4
+	FTeti/EOsPROEe51E30w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijoVr-00030m-DO; Tue, 24 Dec 2019 18:02:31 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1ijodX-0006BD-UO; Tue, 24 Dec 2019 18:10:27 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijoVj-00030H-M5
- for openwrt-devel@lists.openwrt.org; Tue, 24 Dec 2019 18:02:25 +0000
-Received: by mail-pg1-x542.google.com with SMTP id x8so10676077pgk.8
- for <openwrt-devel@lists.openwrt.org>; Tue, 24 Dec 2019 10:02:23 -0800 (PST)
+ id 1ijodP-000665-3f
+ for openwrt-devel@lists.openwrt.org; Tue, 24 Dec 2019 18:10:20 +0000
+Received: by mail-lj1-x244.google.com with SMTP id k8so21390965ljh.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 24 Dec 2019 10:10:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vskVOQAz7iz5hIj8oOHHi5zgHP6yaXCCMC1/XY0Zy6o=;
- b=A7tZ29oF82F2zwzyvuyh3t3uupzNDyk4BCHNLZ88bn5gmgaDd7HCtP+tVU8t5WOIQB
- 6E7MOHurnj3LbLv+vhZzWTCqs5genO0zQQclimMpCUZQJRBGCFhlavW2PPa7RpCZ3xT5
- Pz84SOUPKd+FHD9yTaXeWXryfLXtbK8POLYYWRciD0ejpCvj1PzvTRa91iPW1wq2kKyC
- dnpRfhDJBI+Vp20c1L/0gqAmhlTLj47wabBgXS9uCWl/roeTeTOUepgD4Xl742QqWgf+
- CEowyTc+lqbEflF+XrKvDl+iV2LceiKi6ERQjCZJdDBI6dAWyJ14+lJhB55Z8qrr8LmQ
- 5k3g==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=IAaUt27Xf/cZXlpBITICBRKNNk+tVN9Pxcr5UjTf9CU=;
+ b=jy0xnGd4366+/zx8wxqAChonPibs2+KU0s7dGqx0bXIg4M4GluFXHdkqioD40NhUXV
+ Iks+N1dan56222Qrq134kXztIAShEzC32DXfk9FO0Wzi4QyIVdNR/bH15C3ZVhMDWKb2
+ 8uTWxAcstnuniKyEP7xiFgtJKly+hUwt8PmtvntEMloTSLhxCk8Za2bNt0nQM/Or3nDD
+ B7D2v9+WiHDOZ2xfy8YXFASoglTmJexRC3RspZyRvBT/k7LdN+WcthWgjFCSlB5FCrVX
+ qty7LS+75rRyFe7bbYpAocQ4ysY3WZ1p2anD45Y6/A4dZgLcSQ19ZkgttwIFlZ3tQmPH
+ nU4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vskVOQAz7iz5hIj8oOHHi5zgHP6yaXCCMC1/XY0Zy6o=;
- b=SU0yZBGcqGLi/xyYOIXP2iIWpXRhZ6WNfs8Y+4Lduh7VkFpLr976vHJaQkYuRZCAP2
- SKsWlSrPjL9KKJlK1qi6+lxxMeJS1enaiAX3gc+x0tff+KBJQ6qnN1Q4FDdjVA6sVuUY
- AemP6kiFQbwSYZdZhlKkrXniGcCFYyWIpfZ4znuPl8+DScZ2SpSRknywXv9y0DaryBHR
- BZg2Tzi49otfv+YKHLRmA3vL0LuIgnGf96luiRAhz4ORHyOchzE2zOfwiy2ZE9ie8C5a
- W7k8aYw5s0N4cFnUyGKzqYf9Eetk6pg+7iOuniNcVxMxDsqdoXqmcv85oYBEGtJ40vE4
- tdXw==
-X-Gm-Message-State: APjAAAX1DpTg/dheJMALyjP3CfA3Hwb5KusoXgak8sLJ+CLk0wITREkV
- iAPRKFxsQ6W7LIFNqaBz07gL5m6eO6Y=
-X-Google-Smtp-Source: APXvYqwPMoCCtsTM6YKbyLuiahNbQNrgfx73n4za4vTofC09Lr9BKIG3xjNEXthJ5IQ/sNFF1Le0Aw==
-X-Received: by 2002:a63:3196:: with SMTP id
- x144mr38133933pgx.319.1577210542284; 
- Tue, 24 Dec 2019 10:02:22 -0800 (PST)
-Received: from apollo.hsd1.ca.comcast.net ([2601:646:9200:4e0::36e9])
- by smtp.gmail.com with ESMTPSA id u23sm29590457pfm.29.2019.12.24.10.02.21
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=IAaUt27Xf/cZXlpBITICBRKNNk+tVN9Pxcr5UjTf9CU=;
+ b=Wtl4nT7jVriGpkaaJP9TB0ZptQdEtZ7/i+OMyY7pNsg+oub4nkK6BGwrwdZLaR7F5s
+ 2GsSTT6vk+ZV/Ru9iGaXb5J9ewWtWMbDOZEUnVm48AwT3+cxNvXJ8yNtEA0Xid2GAdEF
+ O8+OKqAz+trShE4U5a6DcC1iEHyIv7hjraiKZrADHuB/8ZVkkuyHGQY9uhfRUZSf8mdp
+ Oxc7oQdzp67vBSj5NFlKALhTiNeRyEsFaVxXdC3kqeUCHc5tW3U8WnrupNvsoh87Fgc2
+ fk9vJMOvw4NzLY6jdwH71jr5/ktCy5OC8dzUOwkCjdgrFF5c5yJBQleptpGaMGcYBtGh
+ +2LA==
+X-Gm-Message-State: APjAAAWahobcCbfJMdMFF5aEck5RdigoF4drZPb6H80zP4+Y4c8CEO5h
+ IGwpcq635NhnEiyByiSz4ORDwg2k
+X-Google-Smtp-Source: APXvYqwL6urMeEDpZNnira0vZ3hH36vJYNRcLrBCr7XsF/94nlqIkyvZBMVIDiRgX+cXCcgfBtP6FQ==
+X-Received: by 2002:a2e:9a11:: with SMTP id o17mr21488131lji.256.1577211017423; 
+ Tue, 24 Dec 2019 10:10:17 -0800 (PST)
+Received: from home.paul.comp (paulfertser.info.
+ [2001:470:26:54b:226:9eff:fe70:80c2])
+ by smtp.gmail.com with ESMTPSA id f22sm58868ljh.74.2019.12.24.10.10.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Dec 2019 10:02:21 -0800 (PST)
-From: Khem Raj <raj.khem@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 24 Dec 2019 10:02:13 -0800
-Message-Id: <20191224180213.3542623-1-raj.khem@gmail.com>
-X-Mailer: git-send-email 2.24.1
+ Tue, 24 Dec 2019 10:10:16 -0800 (PST)
+Received: from home.paul.comp (home.paul.comp [IPv6:0:0:0:0:0:0:0:1])
+ by home.paul.comp (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTP id
+ xBOIADkY014496; Tue, 24 Dec 2019 21:10:14 +0300
+Received: (from paul@localhost)
+ by home.paul.comp (8.15.2/8.15.2/Submit) id xBOIADRU014495;
+ Tue, 24 Dec 2019 21:10:13 +0300
+Date: Tue, 24 Dec 2019 21:10:13 +0300
+From: Paul Fertser <fercerpav@gmail.com>
+To: Khem Raj <raj.khem@gmail.com>
+Message-ID: <20191224181013.GH11377@home.paul.comp>
+References: <20191224180213.3542623-1-raj.khem@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191224180213.3542623-1-raj.khem@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_100223_747090_932C0217 
-X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-CacheID: sfid-20191224_101019_179335_5CA2B90B 
+X-CRM114-Status: UNSURE (   6.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (raj.khem[at]gmail.com)
+ provider (fercerpav[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,7 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] use strncpy instead of strcpy
+Subject: Re: [OpenWrt-Devel] [PATCH] use strncpy instead of strcpy
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,37 +106,27 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Khem Raj <raj.khem@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Fixes
-error: '__builtin_strcpy' offset 6 from the object at 'attr' is out of the bounds of referenced subobject 'name' with type 'uint8_t[0]' {aka 'unsigned char[0]'} at offset 6 [-Werror=array-bounds]
+Hi,
 
-Signed-off-by: Khem Raj <raj.khem@gmail.com>
----
- blobmsg.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+On Tue, Dec 24, 2019 at 10:02:13AM -0800, Khem Raj wrote:
+> +	hdr->name[strlen((char*)hdr->name)] = '\0';
+> +	strncpy((char *) hdr->name, (const char *)name, strlen((char*)hdr->name));
 
-diff --git a/blobmsg.c b/blobmsg.c
-index a860483..63fada8 100644
---- a/blobmsg.c
-+++ b/blobmsg.c
-@@ -195,7 +195,8 @@ blobmsg_new(struct blob_buf *buf, int type, const char *name, int payload_len, v
- 	attr->id_len |= be32_to_cpu(BLOB_ATTR_EXTENDED);
- 	hdr = blob_data(attr);
- 	hdr->namelen = cpu_to_be16(namelen);
--	strcpy((char *) hdr->name, (const char *)name);
-+	hdr->name[strlen((char*)hdr->name)] = '\0';
-+	strncpy((char *) hdr->name, (const char *)name, strlen((char*)hdr->name));
- 	pad_end = *data = blobmsg_data(attr);
- 	pad_start = (char *) &hdr->name[namelen];
- 	if (pad_start < pad_end)
+strlen((char*)hdr->name) doesn't seem to be meaningful in this
+context, are you sure you were not meaning to do something like this instead?
+
++	strncpy((char *) hdr->name, (const char *)name, sizeof(hdr->name));
++	hdr->name[sizeof(hdr->name) - 1] = '\0';
+
 -- 
-2.24.1
-
+Be free, use free (http://www.gnu.org/philosophy/free-sw.html) software!
+mailto:fercerpav@gmail.com
 
 _______________________________________________
 openwrt-devel mailing list

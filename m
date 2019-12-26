@@ -2,73 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C834312AE9D
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 21:49:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B0B112AF4D
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 23:32:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Message-ID:From:To:MIME-Version:References:In-Reply-To:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CGKtSom0cx3Nk8pY5zDL2AXJIeKDKiKLuFAqaUld3Xg=; b=ba48fve6XFMdqieIxzEx+teBn
-	/HuqO3Z+NzLOgL5sjwXoNhv7LmpwCPsxJpq1pdSNFUl9PpeeyzbxwvBjtThgsGC+Nngbv6FQgB8HN
-	47s5T3COqNfhKq2N5XrI/Y4BDdBpZIngw3ubuVnujMp9wM5f2keHhxjCGTIkYB0Kcy7aM9LWzQDbo
-	1WuA4GigvpuRN/2bnVHDOISej4ph9uFI/gJcLRucO0GqD5AawunSQDVrJPK8YBLt7uzRHgPHl8a2n
-	QNuN6R15Z3HFftZc2Jel9jNc4lvmzd2epvgeKHKMMb+r2QCK/91gINZ8iOWpQdkvmde3xbgTf0bvj
-	PcRuTqdEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ge6pjrR7dCJgUJ7mkWrbvuuzmiBQj+fhaffowaR7tBA=; b=ATdvYuZozC4W0+
+	ny5AFiP9MxO5K2wrhUjIZDUmNMBPiSK+KlwaQsQVie+EKxX1GhpUHzmccBrFuxx3BU0fsz7J8H6HY
+	XPhAwCptCtr/YqXYNZwNP5GxPG/5JW4uETX545PhlUvfstHJ1zfOByRcCVHokGNbOdnhLue8IJRAU
+	YjhRehoyqBK8jJPgpR3kYeBKnhAEP0/viC7BDp/aUKwxQInHJ3UvCXvV5l0ipbhI3cdz41qBNB4Hx
+	8vVeKngx8NsjO8gU0bXjMcRN3ATRxx9OsEZ4Nqzamyej9ypTSQ8U/nWG72lTWVMIV+VC56tIi9gH5
+	ovtwVxKjac8JwJr2WWuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ika4q-0000fT-A4; Thu, 26 Dec 2019 20:49:48 +0000
-Received: from [2001:41d0:305:2100::8f39] (helo=volatilesystems.org)
+	id 1ikbfj-0000Za-S4; Thu, 26 Dec 2019 22:31:59 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ika4f-0000fB-Hu
- for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 20:49:39 +0000
-Received: by volatilesystems.org (Postfix, from userid 112)
- id 690FDFA68F; Thu, 26 Dec 2019 21:49:29 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1577393369;
- bh=cf3LnaHNlw3KQs2cGggt8MiwyaIIvpvhL6aT8S6yLdY=;
- h=Date:In-Reply-To:References:Subject:To:From:From;
- b=oi/dA2i8h8ItznnrDLjR3phUAVrWjhbxKdOsZ+LPP5IpLsgnROFvY8ZNkJllkxw7F
- Xk8dBDEJ/adn9E+jiFTacrCSWtePgYS625OYM0m1va6tLnP+YGtymUd8jp1m/7sNgT
- jbXulkA5j3JV23b3eknSHMtXiJSOb3ceBbLA6TZk=
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,HTML_MESSAGE,URIBL_BLOCKED autolearn=ham
- autolearn_force=no version=3.4.2
-Received: from [10.0.0.6] (213.219.161.238.adsl.dyn.edpnet.net
- [213.219.161.238])
- by volatilesystems.org (Postfix) with ESMTPSA id 22646FA687
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 21:49:27 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1577393367;
- bh=cf3LnaHNlw3KQs2cGggt8MiwyaIIvpvhL6aT8S6yLdY=;
- h=Date:In-Reply-To:References:Subject:To:From:From;
- b=SdwkuxGjWieoyu1w1rI51Sd9NzojHoQQ/c6/nZGxqTe/5PM+ULPYR75YqPa5EqQzT
- Le0pSJmqfydWL0MOxTkL1jETI/jJoOmlDlUaX7pRcBXUhj1jg2D3JnVgFLQIlSLcKx
- Mds19bzIayKLxx9xmkJA4M716ggdfzQyWwhg27a8=
-Date: Thu, 26 Dec 2019 21:49:25 +0100
-In-Reply-To: <20191226191211.5262-1-foss@volatilesystems.org>
-References: <20191226191211.5262-1-foss@volatilesystems.org>
+ id 1ikbfb-0000Z2-2U
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 22:31:52 +0000
+Received: by mail-qk1-x743.google.com with SMTP id c17so20335906qkg.7
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 14:31:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=K1TTNrEkuT9hdJvAG0RXTX04fsVthXk2DPxzsJ5rPQE=;
+ b=S/8sjTo7Zx2uDmU4lL4ijanidmzcNdOIHfAA7EnCadX100Hwkr41hCpNePVBYq4KCA
+ A/GJh6DIxYVUBdcjM9R0tixu11Ig5DYDLJjMHmDNTx1O9CSEPLquDGorzwMYerCzRbY4
+ k+b08UNDNYYJZfQEjph//qLP1HIa4LTxZTBxvBI0rrfVYRLKZqEkgNVsg2L2Jia8z9k0
+ ziDj9hE7N8euYulcrobG27atE1bbMzWw5/o/Vwnxv18tPYTFFSllWHPVzqAfEAfp39ez
+ roh73rnKK2KZmpnjUPBUsvP1DVNMl1/Wd1p/eE+W+lApCIF2oz+A8E7VSDQVaR2Y174T
+ wAQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=K1TTNrEkuT9hdJvAG0RXTX04fsVthXk2DPxzsJ5rPQE=;
+ b=j8DUe6todl+UZBiGM24Rc1t7s9Yd98nUch7+C4zqXpTAfb/Lg2AGyT+jid9hHXN+Lj
+ GQxEEAdcQxhNFS2/ha2U8j499/zZLzd95n6WW3y7ZSevVAeLsmIe+nLpuO9oprK3IDLr
+ BjhT2tcmKfrD7EKP88sOhxgWiqlpWyIyjFI5RiGCljJ4ZLmxi7Td51VZW26ALmhwvkn3
+ sUe0W7nCCL3ike5uwLSjS2zmB3q7TPP/ZebTMaq7XWoOhosOTpxjFHABirtBCn11V0n0
+ 7ipGs3z4f9NPS3F5Wn1g45oBikXrAKnvzWyR/vrtYbjcwe84RZQEbmIdnSJDhLNSN9Sl
+ LPdQ==
+X-Gm-Message-State: APjAAAU8YhTLOvVAqUTC1C+qmEPejuAo2Sbu63a7t14tvbIWrH6y14pb
+ hdIShXXjG8eimrUSOFHD20JFo9AhhvyUaWcss1YkRXj3H3g=
+X-Google-Smtp-Source: APXvYqz+HPuOf9easrXIfjBDngFYHKesrHE88Zc7KLu/iZKNZqI4w52aoqsyKymfFGzpAdf3kR5EXAglML6wLjIiQr0=
+X-Received: by 2002:ae9:ef50:: with SMTP id d77mr39534931qkg.71.1577399509028; 
+ Thu, 26 Dec 2019 14:31:49 -0800 (PST)
 MIME-Version: 1.0
-To: openwrt-devel@lists.openwrt.org
-From: Stijn Segers <foss@volatilesystems.org>
-Message-ID: <D9524DBE-985B-4A1B-95A3-6B5657A177A9@volatilesystems.org>
-X-Virus-Scanned: clamav-milter 0.101.4 at atalanta
-X-Virus-Status: Clean
+References: <20191224180213.3542623-1-raj.khem@gmail.com>
+ <20191224215051.GF70645@meh.true.cz>
+ <b3d98fd9-34a0-31cc-c4ce-c311bcec3d38@hauke-m.de>
+In-Reply-To: <b3d98fd9-34a0-31cc-c4ce-c311bcec3d38@hauke-m.de>
+From: Khem Raj <raj.khem@gmail.com>
+Date: Thu, 26 Dec 2019 14:31:22 -0800
+Message-ID: <CAMKF1soqVxRsawUbHYmL1QFO-n6OXF_5Xh0WyxYuReOgv692uQ@mail.gmail.com>
+To: Hauke Mehrtens <hauke@hauke-m.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_124937_877369_B409C7D9 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20191226_143151_115842_8D3DF82C 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (raj.khem[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,9 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
-Subject: Re: [OpenWrt-Devel] [PATCH v2] ramips: rename DIR-860L entries
- according to the new manufacturer / device spec
+Subject: Re: [OpenWrt-Devel] [PATCH] use strncpy instead of strcpy
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,194 +94,36 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0734257221738912995=="
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============0734257221738912995==
-Content-Type: multipart/alternative; boundary="----YCKHWGQ39VP40GOOHE1ZWWAGR38H5P"
-Content-Transfer-Encoding: 7bit
-
-------YCKHWGQ39VP40GOOHE1ZWWAGR38H5P
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-
-Stijn Segers <foss@volatilesystems=2Eorg> schreef op 26 december 2019 20:12=
-:11 CET:
->Most images follow the openwrt-target-subtarget-manufacturer-device
->naming specification, but the D-Link DIR-860L rev B1 does not=2E This
->patch brings it in line=2E
->
->Master had this updated a while ago, it's okay there=2E
->
->Signed-off-by: Stijn Segers <foss@volatilesystems=2Eorg>
->---
-> target/linux/ramips/base-files/etc/board=2Ed/01_leds            | 2 +-
-> target/linux/ramips/base-files/etc/board=2Ed/02_network         | 4 ++--
-> =2E=2E=2E/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum  | 2 =
-+-
-> target/linux/ramips/image/mt7621=2Emk                           | 4 ++--
-> 4 files changed, 6 insertions(+), 6 deletions(-)
->
->diff --git a/target/linux/ramips/base-files/etc/board=2Ed/01_leds
->b/target/linux/ramips/base-files/etc/board=2Ed/01_leds
->index fb74a2c87b=2E=2Ef08f6d7b1d 100755
->--- a/target/linux/ramips/base-files/etc/board=2Ed/01_leds
->+++ b/target/linux/ramips/base-files/etc/board=2Ed/01_leds
->@@ -160,7 +160,7 @@ dlink,dwr-922-e2)
->	ucidef_set_led_netdev "signalstrength" "signalstrength"
->"$boardname:green:sigstrength" "wwan0" "link"
-> 	ucidef_set_led_netdev "4g" "4g" "$boardname:green:4g" "wwan0" "tx rx"
-> 	;;
->-dir-860l-b1)
->+dlink,dir-860l-b1)
-> 	ucidef_set_led_netdev "wan" "wan" "$boardname:green:net" "eth0=2E2"
-> 	;;
-> ex2700|\
->diff --git a/target/linux/ramips/base-files/etc/board=2Ed/02_network
->b/target/linux/ramips/base-files/etc/board=2Ed/02_network
->index 77cc8d63f9=2E=2E38d2d38c2b 100755
->--- a/target/linux/ramips/base-files/etc/board=2Ed/02_network
->+++ b/target/linux/ramips/base-files/etc/board=2Ed/02_network
->@@ -271,7 +271,7 @@ ramips_setup_interfaces()
-> 		ucidef_add_switch "switch0" \
-> 			"1:lan:3" "2:lan:4" "3:lan:1" "4:lan:2" "0:wan" "6@eth0"
-> 		;;
->-	dir-860l-b1|\
->+	dlink,dir-860l-b1|\
-> 	elecom,wrc-1167ghbk2-s|\
-> 	elecom,wrc-2533gst|\
-> 	elecom,wrc-1900gst|\
->@@ -553,7 +553,7 @@ ramips_setup_macs()
-> 	dch-m225)
-> 		lan_mac=3D$(mtd_get_mac_ascii factory lanmac)
-> 		;;
->-	dir-860l-b1)
->+	dlink,dir-860l-b1)
-> 		lan_mac=3D$(mtd_get_mac_ascii factory lanmac)
-> 		wan_mac=3D$(mtd_get_mac_ascii factory wanmac)
-> 		;;
->diff --git
->a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
->b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
->index 54deb5b2e0=2E=2E40746c6af4 100644
->--- a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
->+++ b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
->@@ -17,7 +17,7 @@ case "$board" in
-> cy-swr1100 | \
-> dch-m225 | \
-> dir-645 | \
->-dir-860l-b1)
->+dlink,dir-860l-b1)
-> 	fix_checksum seama
-> 	;;
-> dlink,dap-1522-a1)
->diff --git a/target/linux/ramips/image/mt7621=2Emk
->b/target/linux/ramips/image/mt7621=2Emk
->index 7eb59188fb=2E=2E6507e40f86 100644
->--- a/target/linux/ramips/image/mt7621=2Emk
->+++ b/target/linux/ramips/image/mt7621=2Emk
->@@ -110,7 +110,7 @@ define Device/asus_rt-ac57u
-> endef
-> TARGET_DEVICES +=3D asus_rt-ac57u
->=20
->-define Device/dir-860l-b1
->+define Device/dlink_dir-860l-b1
->   $(Device/seama)
->   DTS :=3D DIR-860L-B1
->   BLOCKSIZE :=3D 64k
->@@ -120,7 +120,7 @@ define Device/dir-860l-b1
->   DEVICE_TITLE :=3D D-Link DIR-860L B1
->DEVICE_PACKAGES :=3D kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport
->wpad-basic
-> endef
->-TARGET_DEVICES +=3D dir-860l-b1
->+TARGET_DEVICES +=3D dlink_dir-860l-b1
->=20
-> define Device/mediatek_ap-mt7621a-v60
->   DTS :=3D AP-MT7621A-V60
->--=20
->2=2E20=2E1
->
->
->_______________________________________________
->openwrt-devel mailing list
->openwrt-devel@lists=2Eopenwrt=2Eorg
->https://lists=2Eopenwrt=2Eorg/mailman/listinfo/openwrt-devel
-
-Sorry guys=2E=2E=2E A v2 for my previous patch, still for 19=2E07=2E
-------YCKHWGQ39VP40GOOHE1ZWWAGR38H5P
-Content-Type: text/html;
- charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-
-<html><head></head><body><div class=3D"gmail_quote">Stijn Segers &lt;foss@v=
-olatilesystems=2Eorg&gt; schreef op 26 december 2019 20:12:11 CET:<blockquo=
-te class=3D"gmail_quote" style=3D"margin: 0pt 0pt 0pt 0=2E8ex; border-left:=
- 1px solid rgb(204, 204, 204); padding-left: 1ex;">
-<pre class=3D"k9mail">Most images follow the openwrt-target-subtarget-manu=
-facturer-device<br>naming specification, but the D-Link DIR-860L rev B1 doe=
-s not=2E This<br>patch brings it in line=2E<br><br>Master had this updated =
-a while ago, it's okay there=2E<br><br>Signed-off-by: Stijn Segers &lt;foss=
-@volatilesystems=2Eorg&gt;<hr> target/linux/ramips/base-files/etc/board=2Ed=
-/01_leds            | 2 +-<br> target/linux/ramips/base-files/etc/board=2Ed=
-/02_network         | 4 ++--<br> =2E=2E=2E/linux/ramips/base-files/etc/uci-=
-defaults/09_fix-checksum  | 2 +-<br> target/linux/ramips/image/mt7621=2Emk =
-                          | 4 ++--<br> 4 files changed, 6 insertions(+), 6 =
-deletions(-)<br><br>diff --git a/target/linux/ramips/base-files/etc/board=
-=2Ed/01_leds b/target/linux/ramips/base-files/etc/board=2Ed/01_leds<br>inde=
-x fb74a2c87b=2E=2Ef08f6d7b1d 100755<br>--- a/target/linux/ramips/base-files=
-/etc/board=2Ed/01_leds<br>+++ b/target/linux/ramips/base-files/etc/board=2E=
-d/01_leds<br>@@ -160,7 +160,7 @@ dlink,dwr-922-e2)<br> 	ucidef_set_led_netd=
-ev "signalstrength" "signalstrength" "$boardname:green:sigstrength" "wwan0"=
- "link"<br> 	ucidef_set_led_netdev "4g" "4g" "$boardname:green:4g" "wwan0" =
-"tx rx"<br> 	;;<br>-dir-860l-b1)<br>+dlink,dir-860l-b1)<br> 	ucidef_set_led=
-_netdev "wan" "wan" "$boardname:green:net" "eth0=2E2"<br> 	;;<br> ex2700|\<=
-br>diff --git a/target/linux/ramips/base-files/etc/board=2Ed/02_network b/t=
-arget/linux/ramips/base-files/etc/board=2Ed/02_network<br>index 77cc8d63f9=
-=2E=2E38d2d38c2b 100755<br>--- a/target/linux/ramips/base-files/etc/board=
-=2Ed/02_network<br>+++ b/target/linux/ramips/base-files/etc/board=2Ed/02_ne=
-twork<br>@@ -271,7 +271,7 @@ ramips_setup_interfaces()<br> 		ucidef_add_swi=
-tch "switch0" \<br> 			"1:lan:3" "2:lan:4" "3:lan:1" "4:lan:2" "0:wan" "6@e=
-th0"<br> 		;;<br>-	dir-860l-b1|\<br>+	dlink,dir-860l-b1|\<br> 	elecom,wrc-1=
-167ghbk2-s|\<br> 	elecom,wrc-2533gst|\<br> 	elecom,wrc-1900gst|\<br>@@ -553=
-,7 +553,7 @@ ramips_setup_macs()<br> 	dch-m225)<br> 		lan_mac=3D$(mtd_get_m=
-ac_ascii factory lanmac)<br> 		;;<br>-	dir-860l-b1)<br>+	dlink,dir-860l-b1)=
-<br> 		lan_mac=3D$(mtd_get_mac_ascii factory lanmac)<br> 		wan_mac=3D$(mtd_=
-get_mac_ascii factory wanmac)<br> 		;;<br>diff --git a/target/linux/ramips/=
-base-files/etc/uci-defaults/09_fix-checksum b/target/linux/ramips/base-file=
-s/etc/uci-defaults/09_fix-checksum<br>index 54deb5b2e0=2E=2E40746c6af4 1006=
-44<br>--- a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum=
-<br>+++ b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum<b=
-r>@@ -17,7 +17,7 @@ case "$board" in<br> cy-swr1100 | \<br> dch-m225 | \<br=
-> dir-645 | \<br>-dir-860l-b1)<br>+dlink,dir-860l-b1)<br> 	fix_checksum sea=
-ma<br> 	;;<br> dlink,dap-1522-a1)<br>diff --git a/target/linux/ramips/image=
-/mt7621=2Emk b/target/linux/ramips/image/mt7621=2Emk<br>index 7eb59188fb=2E=
-=2E6507e40f86 100644<br>--- a/target/linux/ramips/image/mt7621=2Emk<br>+++ =
-b/target/linux/ramips/image/mt7621=2Emk<br>@@ -110,7 +110,7 @@ define Devic=
-e/asus_rt-ac57u<br> endef<br> TARGET_DEVICES +=3D asus_rt-ac57u<br> <br>-de=
-fine Device/dir-860l-b1<br>+define Device/dlink_dir-860l-b1<br>   $(Device/=
-seama)<br>   DTS :=3D DIR-860L-B1<br>   BLOCKSIZE :=3D 64k<br>@@ -120,7 +12=
-0,7 @@ define Device/dir-860l-b1<br>   DEVICE_TITLE :=3D D-Link DIR-860L B1=
-<br>   DEVICE_PACKAGES :=3D kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport =
-wpad-basic<br> endef<br>-TARGET_DEVICES +=3D dir-860l-b1<br>+TARGET_DEVICES=
- +=3D dlink_dir-860l-b1<br> <br> define Device/mediatek_ap-mt7621a-v60<br> =
-  DTS :=3D AP-MT7621A-V60</pre></blockquote></div><br clear=3D"all">Sorry g=
-uys=2E=2E=2E A v2 for my previous patch, still for 19=2E07=2E</body></html>
-------YCKHWGQ39VP40GOOHE1ZWWAGR38H5P--
-
-
---===============0734257221738912995==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0734257221738912995==--
-
+T24gVGh1LCBEZWMgMjYsIDIwMTkgYXQgNDo1MCBBTSBIYXVrZSBNZWhydGVucyA8aGF1a2VAaGF1
+a2UtbS5kZT4gd3JvdGU6Cj4KPiBPbiAxMi8yNC8xOSAxMDo1MCBQTSwgUGV0ciDFoHRldGlhciB3
+cm90ZToKPiA+IEtoZW0gUmFqIDxyYWoua2hlbUBnbWFpbC5jb20+IFsyMDE5LTEyLTI0IDEwOjAy
+OjEzXToKPiA+Cj4gPiBIaSwKPiA+Cj4gPiB1c2UgIlBBVENIIGxpYnVib3giIHN1YmplY3QgcHJl
+Zml4LCBiZWNhdXNlIHRoZXJlIGlzIG5vIGJsb2Jtc2cuYyBmaWxlIGluIHRoZQo+ID4gbWFpbiB0
+cmVlLgo+ID4KPiA+PiBGaXhlcyBlcnJvcjogJ19fYnVpbHRpbl9zdHJjcHknIG9mZnNldCA2IGZy
+b20gdGhlIG9iamVjdCBhdCAnYXR0cicgaXMgb3V0IG9mCj4gPj4gdGhlIGJvdW5kcyBvZiByZWZl
+cmVuY2VkIHN1Ym9iamVjdCAnbmFtZScgd2l0aCB0eXBlICd1aW50OF90WzBdJyB7YWthCj4gPj4g
+J3Vuc2lnbmVkIGNoYXJbMF0nfSBhdCBvZmZzZXQgNiBbLVdlcnJvcj1hcnJheS1ib3VuZHNdCj4g
+Pgo+ID4gb3V0IG9mIGN1cmlvc2l0eSwgd2hpY2ggdGFyZ2V0L2NvbXBpbGVyIGlzIHRoYXQ/IEkn
+bSBub3QgYWJsZSB0byByZXByb2R1Y2UKPiA+IGl0IG9uIGFueSBvZiB0aGUgcHJlLXNlbGVjdGVk
+IENJIHRhcmdldHNbMV0uCj4KPiBIaSBQZXRyLAo+Cj4gVGhlIGZvcnRpZnkgaGVhZGVycyBhcmUg
+cHJldmVudGluZyBzb21lIG9mIHRoZXNlIHdhcm5pbmdzLCBJIHNlZSB0aGVtCj4gd2hlbiBjb21w
+aWxpbmcgd2l0aG91dCBmb3J0aWZ5IGhlYWRlciBvciB3aGVuIHVzaW5nIGdsaWJjLgo+Cj4gSSBz
+dGFydGVkIHRvIGxvb2sgaW50byB0aGlzIHByb2JsZW0sIGJ1dCBpdCBsb29rcyBtb3JlIGNvbXBs
+aWNhdGVkIHRvCj4gY2hhbmdlIHRoZSBmb3J0aWZ5IGhlYWRlcnMgaW4gYSB3YXksIHRoYXQgdGhl
+IGNvbXBpbGUgdGltZSBidWZmZXIKPiBvdmVyZmxvdyBkZXRlY3Rpb24gc3RpbGwgd29ya3MgbGlr
+ZSBleHBlY3RlZCBmb3IgYWxsIGZ1bmN0aW9ucyB3aGljaCBhcmUKPiBzdXBwb3J0ZWQgYnkgZ2Nj
+Lgo+CgpJIGRvIHVzZSB0aGVzZSBmbGFncwotZnN0YWNrLXByb3RlY3Rvci1zdHJvbmcgIC1EX0ZP
+UlRJRllfU09VUkNFPTIgLVdmb3JtYXQKLVdmb3JtYXQtc2VjdXJpdHkgLVdlcnJvcj1mb3JtYXQt
+c2VjdXJpdHkKCmFuZCBwZXJoYXBzIHRoYXQgY29tYmluZWQgd2l0aCBnY2MxMCBleHBvc2VzIHRo
+aXMgaXNzdWUuCgo+IFBsZWFzZSBhbHNvIHVzZSBhIHRvb2xjaGlhbiB3aXRoIGdsaWJjIHdoZW4g
+Y29tcGlsaW5nIGluIENJLgo+Cj4gSGF1a2UKPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1k
+ZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4v
+bGlzdGluZm8vb3BlbndydC1kZXZlbAo=

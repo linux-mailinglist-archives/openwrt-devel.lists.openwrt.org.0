@@ -2,117 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3633512AC6D
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 14:43:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF3F312ACA4
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 15:01:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eMIFDSSnyqk5oZZuEC+TFSBQNKTZRC+aemsfwI9t2Pw=; b=riBTSsuhVFRnlJXkJLWelquF6
-	ZtJnZHTTEmS2wYZGS+zVPGkKSDgnpl+YbnAKo7s/uuL5mxV1HVKwCZDRCV8L2bJmUigH6ozMPAPZ9
-	qgTfbQuSPX9/OwneMxifym1MrNYKpGsu3qgTEc0FOBhZzPfcbt4nBbOf8cwsu1flufdVQMbvlVcXT
-	nO5c1b0TLVcknraoPpJVG5+nuilkhtDf3ElFawQWZncc0b1WKTWmpjIKuyxzC2R86noIGFCoyXMp+
-	ggalCvayiENn6mzexfSnI6SfRakr6Z3TNCVPiyumpM7arJwaOS5Y8PY34PFwginu5fV0xoKFOWSbg
-	q6/A/ujmA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=H8tywk8WWvqnlGQQm1CXTJRgxHVOG7zBc4jAHv1r8BQ=; b=nHLClBJqc3bwpkRhnk4ZjmY2kj
+	+t4FwSW0upwq7oNdB0wauk4EYe9iQq2BTokXAxTXvpwBnDN7BgJb+s8msrzEUPBGVw8TvD0ghBoF4
+	SqPKPyMIUkp1i4FwjCwh5wHt0+27r12gXgQjvqBPF1x5LQ/CUyr9ArDD4EFAdcYidFGvKew4iQClU
+	I94o7goL2IUbdjC0Ez7GCJXM++bqOagt08iTEPhA/aNIv6kni6tKccP7MSWyvC9RwNeNDaa8JfzW9
+	fAVBTxOUARWyiGoW5GI4t6RMu805QORLfd1oxW4fUbx5oozrJe8YMPbETH7cpfdJjZe8ZEKgLe9i1
+	ydmAfOhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikTQS-00018A-8p; Thu, 26 Dec 2019 13:43:40 +0000
-Received: from mout-p-102.mailbox.org ([80.241.56.152])
+	id 1ikThd-0008No-B4; Thu, 26 Dec 2019 14:01:25 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikTQK-00017Z-Pw
- for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 13:43:35 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-102.mailbox.org (Postfix) with ESMTPS id 47kB4C0bnZzKmZX;
- Thu, 26 Dec 2019 14:43:23 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id WPtid8pks97E; Thu, 26 Dec 2019 14:43:19 +0100 (CET)
-To: Tom Psyborg <pozega.tomislav@gmail.com>
-References: <a42e0ef1-b2b8-4f77-624d-2a8831fe073d@hauke-m.de>
- <CAKR_QVJ3bFbFpCy4vDx7g2R_8qjBJUva2EHo6AK8TvRuhVcuYQ@mail.gmail.com>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <9cce8066-8f7f-31e6-8f54-f4301a3e4f5c@hauke-m.de>
-Date: Thu, 26 Dec 2019 14:43:00 +0100
+ id 1ikTgI-00066B-E9
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 14:00:05 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 1E2ED3EE8;
+ Thu, 26 Dec 2019 14:59:57 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id bba6849b;
+ Thu, 26 Dec 2019 14:59:46 +0100 (CET)
+Date: Thu, 26 Dec 2019 14:59:46 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Hauke Mehrtens <hauke@hauke-m.de>
+Message-ID: <20191226135946.GA70184@meh.true.cz>
+References: <20191224180213.3542623-1-raj.khem@gmail.com>
+ <20191224215051.GF70645@meh.true.cz>
+ <b3d98fd9-34a0-31cc-c4ce-c311bcec3d38@hauke-m.de>
 MIME-Version: 1.0
-In-Reply-To: <CAKR_QVJ3bFbFpCy4vDx7g2R_8qjBJUva2EHo6AK8TvRuhVcuYQ@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <b3d98fd9-34a0-31cc-c4ce-c311bcec3d38@hauke-m.de>
+X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_054333_151251_CD9E4C6F 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20191226_060002_847544_A46E1BF0 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 final timeline
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: [OpenWrt-Devel] OpenWrt GitLab CI details [Was: Re: [PATCH] use
+ strncpy instead of strcpy]
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,78 +70,84 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jow@openwrt.org>,
- LEDE Development List <openwrt-devel@lists.openwrt.org>,
- Ben Greear <greearb@candelatech.com>
-Content-Type: multipart/mixed; boundary="===============0314184531403024932=="
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org, Khem Raj <raj.khem@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0314184531403024932==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="zQro68k0BYEIl3Oqj1T7fvVew1Yh5UoD9"
+Hauke Mehrtens <hauke@hauke-m.de> [2019-12-26 13:49:46]:
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---zQro68k0BYEIl3Oqj1T7fvVew1Yh5UoD9
-Content-Type: multipart/mixed; boundary="lxoDnT1USrWmvUntgWa4IOfIToBTKuvDR"
+Hi,
 
---lxoDnT1USrWmvUntgWa4IOfIToBTKuvDR
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+I really needed to use latest GCC 10 in order to see that warning/error, I was
+unable to get those warnings locally with glibc and clang-9/clang-10 and
+gcc-9.
 
-On 12/24/19 8:50 PM, Tom Psyborg wrote:
-> Hi
->=20
-> And what about this one?
-> https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2593
->=20
-> Some regulatorty bugs?
+> Please also use a toolchian with glibc when compiling in CI.
 
-Here is an other one related to ath10k:
-https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2614
-The reporter says it works with an older ath10k FW.
+I'm not sure if I understand this properly, but I'll try to shed some light
+into the CI stuff.
 
-@Tom: could you please check if it works better for you with an older
-ath10k firmware.
+Default CI pipeline[1] has currently following 5 jobs:
 
-Hauke
+ 1. build with Atheros ATH79 SDK (out of tree)
+ 2. build with Freescale i.MX 6 SDK (out of tree)
+ 3. build with MIPS Malta CoreLV BE SDK (out of tree)
+ 4. build with Marvell Armada Cortex A-53 SDK (out of tree)
+ 5. various native checks
 
+where the first 4 jobs are using target SDK, so musl libc.
 
---lxoDnT1USrWmvUntgWa4IOfIToBTKuvDR--
+The 5th job is "various native checks" which is using Docker image[2] based on
+Debian testing which comes with gcc-9 by default, then adds gcc-7 and gcc-8
+and clang-9 from apt.llvm.org (clang-10 is currently unusable as it's still
+missing libFuzzer dependencies[3]) to the compiler mix.
 
---zQro68k0BYEIl3Oqj1T7fvVew1Yh5UoD9
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
+So the CI in this native checks[4] job runs `make ci-native-checks` which
+translates into following[5]:
 
------BEGIN PGP SIGNATURE-----
+ * make ci-native-scan-build   (build with clang's static analyzer)
+ * make ci-native-cppcheck     (build with cppcheck static analyzer)
+ * make ci-native-build        (build with gcc 7 8 9 and clang 9)
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4EuOQACgkQ8bdnhZyy
-68e8VggA5MMaS9MD6CrJyQhJbL4PG5Ohl/8mKzwOk1sZRmZzxXQyCbixAzoIg7Vo
-gLtWqFwt75Go8rppL0lGo84rQLmHBOc0khPhDXMqm3aYYizIZl3CheQj4Cs1RAHg
-seShyrwSIr3QD19vAX3fp/pkWOkY+DL8McODYkS6nhB7LKxfdm9dYUzVgXGM+bFE
-A4/3mE2mU6+XB1apmGLqvN36K27c60fP6wYXY7exI/Kn/8Dn6eFPHwToZkCtcHTJ
-JfpOR2m8FhV5dPOPTJYXEJMhCi3iN5zFVAeHgpwCCue3lc6MXwQ0tVRbv/S48Hru
-B8PVCMGAmomLJK6I2pAhQaARCeGqyA==
-=VHQ2
------END PGP SIGNATURE-----
+So this should be using the standard and possibly some decent glibc. The last
+`ci-native-build` make target also runs unit tests (under Valgrind and various
+sanitizers) and libFuzzer based fuzzing where available (under Clang only).
 
---zQro68k0BYEIl3Oqj1T7fvVew1Yh5UoD9--
+I know, that it makes no sense to have CI if it's not available directly on
+the developer's machine as well, so I've tried hard to make it as easy as
+possible[6], so for example following steps allows running of the above
+mentioned "native" CI checks in libubox locally inside Docker container:
 
+ git clone git://git.openwrt.org/project/libubox.git && cd libubox
+ wget -q https://gitlab.com/ynezz/openwrt-ci/raw/master/Makefile -O Makefile.ci
+ make ci-prepare -f Makefile.ci
+ docker run --rm --tty --interactive --volume $(pwd):/home/build/openwrt \
+ 	registry.gitlab.com/ynezz/openwrt-ci/native-testing:latest \
+ 	make ci-native-checks -f Makefile.ci
 
---===============0314184531403024932==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ (BTW this Docker container is not necessary, just convenient, otherwise one
+  would need to provide all the build and compiler dependencies manually)
+
+FYI I've also added short how-to "Example of adding CI support to fstools
+project"[7] which should help anyone interested in adding CI support to the
+remaining OpenWrt C projects.
+
+As always, any questions/suggestions more then welcome.
+
+1. https://gitlab.com/ynezz/openwrt-ci/blob/master/openwrt-ci/gitlab/pipeline.yml
+2. https://gitlab.com/ynezz/openwrt-ci/blob/master/docker/Dockerfile
+3. https://bugs.llvm.org/show_bug.cgi?id=44196
+4. https://gitlab.com/ynezz/openwrt-ci/blob/master/openwrt-ci/gitlab/main.yml#L35
+5. https://gitlab.com/ynezz/openwrt-ci/blob/master/openwrt-ci/native-build.mk#L26
+6. https://gitlab.com/ynezz/openwrt-ci#usage-example
+7. https://gitlab.com/ynezz/openwrt-ci/-/wikis/Example-of-adding-CI-support-to-fstools-project
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============0314184531403024932==--
-

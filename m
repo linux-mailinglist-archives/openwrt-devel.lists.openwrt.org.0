@@ -2,69 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1767912ADD6
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 19:12:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 248F112ADD7
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 19:14:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4dPTu3dZ5htQ5vCxK02OiXrO1DQX8ZjWrVH9yQmUnhc=; b=DuKKaKsn+GOlZA
-	DCpVJ+ucs6nzTrTKMJANK1kk34ffgBsZ+ns76nlqyyXRu/XwZTgBkpZ3NQ2TSxl3fEF/zJ0UoEqYF
-	eMrwm330GtzppNxkBhJ8YQRc+CVxCwJbjlcQ8vVOXuJIEgHTLH0taE4NL8HlPiqF1yCfUAcwS3TpP
-	4Iz4nznjVhpYVOmyNJqMIcHsKR2897DDCsF//g7CSRP+pox5uVQLkfEvpum/T2SoDYvO+wMdt2N5a
-	JLH0cBzR1s1Vnca7bOYRtA+545byKDs3AZ0n80drXedi4UbyGT9UvHYTYuwCtV88O+HhiI4yIsq6b
-	y24CpQcc7sZbXQNv0ORA==;
+	List-Owner; bh=BIck/5jXrHWKWtpO2N0PkdZ79cdcOWcith5dOyWaIxw=; b=oFDdwTFT/+K5OP
+	Vu3qFJquyq+8RS86+0JoYvhudto+ikVyeTIL0Rzs0+js3QtVMZ0wJPpnRCTPog0qdKuJlH1jfZSUn
+	3KtVJtFar76lz+eHPMJ1eGdpkdg7puj/2SKfKFnWB0VrFqDa1ne4CPqN0mwMo7p4SzMI3SYEBG2Lc
+	vCOr2iVt3UGi2YEsw1V+CXOyvN4ZCeUvPqbOgM2f+2815esVY5W0heEUK0tIk8wH6Hb2JfiC6bN0L
+	BL5IYGx7HZTE9izAOg/OjnVqZte7P9QdfXeW+xzgc17AeKSyT1LfEsUi9n/Z9XxT6Bk8piCmYwf6K
+	jB9L9EqOudEWfIgHzALg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikXc3-0005bM-VK; Thu, 26 Dec 2019 18:11:55 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ikXeb-00067y-4Y; Thu, 26 Dec 2019 18:14:33 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikXbx-0005ag-De
- for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 18:11:50 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q8so13511346pfh.7
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 10:11:47 -0800 (PST)
+ id 1ikXeU-00067V-Rx
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 18:14:28 +0000
+Received: by mail-pg1-x541.google.com with SMTP id k3so13191151pgc.3
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 10:14:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=UNBwjdfuCwH4foSW9/LS3IovWbMkB/ibDGCWvdTnNrs=;
- b=FmzXuCteqmNRXypPmIp4OXrmCbwILqygUmFIOk6m5JRZMlMeOl31TUjTzhA9ryEA/v
- Jx61XzyP6SHsA8qBf/IwlKRD1uPq86oEf0Pc5GDwup0V+T73m6tp9yAF3vdxsVvL508P
- x/ugkmL2ll6RqehTyfQpjT07FcMS6Lzii1wdbF6bBBVVfyMZoQyvqvqmcx0BJ+nJBUEC
- pMkLQY8bftoomVByhGzYR2Ed9Uf+Gli6TA4LPwnW1/hD7EyFfI7DpfBYfAdygsSNm68W
- gwMPlGchDuzp7qUcqVe8wXQ8gYVPo6cVjYxD0r5uudx/rYP1bmIucEdCfLhLmFMQSMoW
- uW4g==
+ bh=Vb8mNhhczC1EI5MpXt+IPtC6svi1fmE0lW9Iq0QRHgU=;
+ b=DE9vqaMPwPrnanCaj5jDSZvCvs3xefoRY4RjYEvU6gLiTfF6n9XyJtmBz0srRMOlKa
+ TIdVrpPayOJWILp7gdRM+3EqtBoq6lkD/x0Ee4Ye2Ho15zKZ3ZDx2iyuf0u+gqDGVPC3
+ gzR3fxnk7e6esFCwHitugPp03CTuRdmmabobpDoybPi121vWV8U7CF4OLaQPfGU7lSRO
+ +1P0qtRxcHuzuO8zAKjEpAbFKjuFYDp8OLOa9aVFn1dfCEkMEMFIsyAnN7FZVdllqOVo
+ eUZPX1fYhqaCpnYdfzKqpTDFE7XPEjC6RDsmS5X/yJK90FJ4WPngvfJ/IaQnQo6Vg1jC
+ tBUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=UNBwjdfuCwH4foSW9/LS3IovWbMkB/ibDGCWvdTnNrs=;
- b=K1sv8rViCZ5i9soFayF6iO/7NNd1rfyJIABhktTYcGaeIPoTxq+Zd1zabIUuhqGLhj
- QgNBepgdvMCRcg7rbsMqi0Buf99H+H8fy7KfvodC6QarAtexG5wPZYbu3p0BOz9uCu+q
- LmjiVPV7IcEvGpY+8QVLBunPky0hy7Gn/ZDA1hYKSNw2N0Y+dv283ilmIH+QQwYHlgOQ
- NlMqmjnW+L/93PucAx5MNK4SPPIPK8e0bmLag0uxfcvIt4BgtIq2emlt/sZMoMs7TUBE
- qQE66NHQ8DeMrDXGa7smsqR/+Br7+Kg7LyWiqYGWHvaP66IaDl4+fmf4vvjFpiZ03t9k
- a1GA==
-X-Gm-Message-State: APjAAAXdBTPubdd64V+zAqyYX1cqsxDLlUN/CAFHftrWec+aANneQZYZ
- 09VylLhvw1oOvNDSqnrBeJ0W0vPSAcs=
-X-Google-Smtp-Source: APXvYqw/JL+1ppsXFvX9fHNLzxvXnLvh8m4MA7/N7AdIMi5iZimq8wjml6PCwYd3fQKIC0vxWXQllQ==
-X-Received: by 2002:a63:e4b:: with SMTP id 11mr50197308pgo.5.1577383906442;
- Thu, 26 Dec 2019 10:11:46 -0800 (PST)
+ bh=Vb8mNhhczC1EI5MpXt+IPtC6svi1fmE0lW9Iq0QRHgU=;
+ b=O9kjCPlgjxgLF3o2Sf2mscIW2mM14FvrrqAHfwzdjoSwYxdL1ztzEexfrr5OBdYf2G
+ YSzsnssL0aAZsUbaq/8eX+5rIaVM9BP+ovy7Nb4cABvwmLHyQtAuvASge4qUpOPfXzHy
+ JCgMcHkg6LOUn4B8VXmqD6LZ8ZRfigCeWlY7UsZqsZyL5XBjtVOGoviU+VOJcDTzEXJz
+ DaHucHXLkudofK0ZE8fDgu69aVrvUN3o6omHYa1njg+JnYHvgbcmD1tx3/jzZ7K9ZH1s
+ Meku13sM8wzKrkJvRgzh3bYjkNAKYC36JLiVRf9NbVx4SYMPT0WA44JRhRx12YF3vVRg
+ jDlw==
+X-Gm-Message-State: APjAAAWR5u7ASeuTIStiqHNtGFOkEheA8bZNZPDzvgUDC/9lK1Ig6py7
+ 9QJNQgYo4zoQuDCf2IYgpkeY3B0gikI=
+X-Google-Smtp-Source: APXvYqwZAe5DaTodZFnTzb1e6wfdvA8F57xqkOA5lCAgFi5f6poEVd6yxSiJqM2RbhjEt4QAiLlSng==
+X-Received: by 2002:a63:c04a:: with SMTP id z10mr42829519pgi.441.1577384061587; 
+ Thu, 26 Dec 2019 10:14:21 -0800 (PST)
 Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
  [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id q199sm37643516pfq.163.2019.12.26.10.11.44
+ by smtp.gmail.com with ESMTPSA id d23sm36691080pfo.176.2019.12.26.10.14.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 10:11:45 -0800 (PST)
+ Thu, 26 Dec 2019 10:14:21 -0800 (PST)
 From: Eneas U de Queiroz <cotequeiroz@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 26 Dec 2019 15:11:31 -0300
-Message-Id: <20191226181131.15652-1-cotequeiroz@gmail.com>
+Date: Thu, 26 Dec 2019 15:14:09 -0300
+Message-Id: <20191226181409.16135-1-cotequeiroz@gmail.com>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_101149_484473_92CD7CA3 
-X-CRM114-Status: UNSURE (   5.14  )
+X-CRM114-CacheID: sfid-20191226_101426_905269_9FE3B60A 
+X-CRM114-Status: UNSURE (   4.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (cotequeiroz[at]gmail.com)
@@ -85,7 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] wolfssl: bump to 4.3.0-stable
+Subject: [OpenWrt-Devel] [PATCH] curl: rename cyassl->wolfssl
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,45 +103,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This update fixes many bugs, and six security vulnerabilities, including
-CVE-2019-18840.
+The old name was dropped and no longer works.
 
 Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
 --
-Compile-tested all dependents, and run-tested with wpad, uhttpd, and
-curl on WRT3200ACM.
+While testing this with wolfssl, I noticed the package was built without
+TLS support.  This was run-tested with wolfssl on WRT3200ACM
 
-There has been an issue with WPA3 and wolfssl.  I am not able to test
-it, but I am hoping this may fix the problem.
-
-diff --git a/package/libs/wolfssl/Makefile b/package/libs/wolfssl/Makefile
-index 3d2a56a97f..cb1ab1b64c 100644
---- a/package/libs/wolfssl/Makefile
-+++ b/package/libs/wolfssl/Makefile
-@@ -8,12 +8,12 @@
- include $(TOPDIR)/rules.mk
+diff --git a/package/network/utils/curl/Makefile b/package/network/utils/curl/Makefile
+index 830d5a7192..8ccfaedc46 100644
+--- a/package/network/utils/curl/Makefile
++++ b/package/network/utils/curl/Makefile
+@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
  
- PKG_NAME:=wolfssl
--PKG_VERSION:=4.2.0-stable
-+PKG_VERSION:=4.3.0-stable
- PKG_RELEASE:=1
+ PKG_NAME:=curl
+ PKG_VERSION:=7.67.0
+-PKG_RELEASE:=1
++PKG_RELEASE:=2
  
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
- PKG_SOURCE_URL:=https://github.com/wolfSSL/wolfssl/archive/v$(PKG_VERSION)
--PKG_HASH:=3562af485c26cd7abe94d9404fbfc0c5c9bceb4aab29b81ebf5e6c2467507e12
-+PKG_HASH:=6896f8ad6c44aff3e583006eeee839600848a0e37118ebbb7514eca9409ae08b
- 
- PKG_FIXUP:=libtool
- PKG_INSTALL:=1
-@@ -44,7 +44,7 @@ define Package/libwolfssl
-   MENU:=1
-   PROVIDES:=libcyassl
-   DEPENDS:=+WOLFSSL_HAS_DEVCRYPTO:kmod-cryptodev +WOLFSSL_HAS_AFALG:kmod-crypto-user
--  ABI_VERSION:=23
-+  ABI_VERSION:=24
- endef
- 
- define Package/libwolfssl/description
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://dl.uxnr.de/mirror/curl/ \
+@@ -118,7 +118,7 @@ CONFIGURE_ARGS += \
+ 	\
+ 	$(call autoconf_bool,CONFIG_IPV6,ipv6) \
+ 	\
+-	$(if $(CONFIG_LIBCURL_WOLFSSL),--with-cyassl="$(STAGING_DIR)/usr",--without-cyassl) \
++	$(if $(CONFIG_LIBCURL_WOLFSSL),--with-wolfssl="$(STAGING_DIR)/usr",--without-wolfssl) \
+ 	$(if $(CONFIG_LIBCURL_GNUTLS),--with-gnutls="$(STAGING_DIR)/usr",--without-gnutls) \
+ 	$(if $(CONFIG_LIBCURL_OPENSSL),--with-ssl="$(STAGING_DIR)/usr",--without-ssl) \
+ 	$(if $(CONFIG_LIBCURL_MBEDTLS),--with-mbedtls="$(STAGING_DIR)/usr",--without-mbedtls) \
 
 _______________________________________________
 openwrt-devel mailing list

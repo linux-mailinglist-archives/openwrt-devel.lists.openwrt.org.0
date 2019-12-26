@@ -2,82 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 248F112ADD7
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 19:14:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4076B12AE40
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 20:15:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BIck/5jXrHWKWtpO2N0PkdZ79cdcOWcith5dOyWaIxw=; b=oFDdwTFT/+K5OP
-	Vu3qFJquyq+8RS86+0JoYvhudto+ikVyeTIL0Rzs0+js3QtVMZ0wJPpnRCTPog0qdKuJlH1jfZSUn
-	3KtVJtFar76lz+eHPMJ1eGdpkdg7puj/2SKfKFnWB0VrFqDa1ne4CPqN0mwMo7p4SzMI3SYEBG2Lc
-	vCOr2iVt3UGi2YEsw1V+CXOyvN4ZCeUvPqbOgM2f+2815esVY5W0heEUK0tIk8wH6Hb2JfiC6bN0L
-	BL5IYGx7HZTE9izAOg/OjnVqZte7P9QdfXeW+xzgc17AeKSyT1LfEsUi9n/Z9XxT6Bk8piCmYwf6K
-	jB9L9EqOudEWfIgHzALg==;
+	List-Owner; bh=wvImDrVBfiw2SZ045dDMtYOY3bFkvBKgXmNN8FFqYoI=; b=Zr2BYn1RGRdpOG
+	EakkynNWYXoJ6Fg77QVcsVv8Te4GhSBGSAeFN45/GEemPbnYjvLkhMznsz3qG1Q2V814O+ni+xFnc
+	RPmiUDITKn6Tp9AvCpkBoZMpw+laBxxNOHK6DtClSCaYKLcb4R0wdkhF7oznP4iAMN9mnVGKLO3Ui
+	noNfL2/MtDNPhPATKqrOQzBLZvSt8jrt4v4nsVHv3VvrpXOyqOubZ+GE4albdsOtdHgvhmovPnkyK
+	z+nlY8rM+ck3UBWJ52C7NLmtsoEEqAphG4pLvAtviqHeNylJplbajOlEhJuxTwLucZBIfZHYYI3u8
+	lc72V0fh3JN3d4w8PsXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikXeb-00067y-4Y; Thu, 26 Dec 2019 18:14:33 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ikYbb-00040F-Gb; Thu, 26 Dec 2019 19:15:31 +0000
+Received: from volatilesystems.org ([51.91.248.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikXeU-00067V-Rx
- for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 18:14:28 +0000
-Received: by mail-pg1-x541.google.com with SMTP id k3so13191151pgc.3
- for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 10:14:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Vb8mNhhczC1EI5MpXt+IPtC6svi1fmE0lW9Iq0QRHgU=;
- b=DE9vqaMPwPrnanCaj5jDSZvCvs3xefoRY4RjYEvU6gLiTfF6n9XyJtmBz0srRMOlKa
- TIdVrpPayOJWILp7gdRM+3EqtBoq6lkD/x0Ee4Ye2Ho15zKZ3ZDx2iyuf0u+gqDGVPC3
- gzR3fxnk7e6esFCwHitugPp03CTuRdmmabobpDoybPi121vWV8U7CF4OLaQPfGU7lSRO
- +1P0qtRxcHuzuO8zAKjEpAbFKjuFYDp8OLOa9aVFn1dfCEkMEMFIsyAnN7FZVdllqOVo
- eUZPX1fYhqaCpnYdfzKqpTDFE7XPEjC6RDsmS5X/yJK90FJ4WPngvfJ/IaQnQo6Vg1jC
- tBUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Vb8mNhhczC1EI5MpXt+IPtC6svi1fmE0lW9Iq0QRHgU=;
- b=O9kjCPlgjxgLF3o2Sf2mscIW2mM14FvrrqAHfwzdjoSwYxdL1ztzEexfrr5OBdYf2G
- YSzsnssL0aAZsUbaq/8eX+5rIaVM9BP+ovy7Nb4cABvwmLHyQtAuvASge4qUpOPfXzHy
- JCgMcHkg6LOUn4B8VXmqD6LZ8ZRfigCeWlY7UsZqsZyL5XBjtVOGoviU+VOJcDTzEXJz
- DaHucHXLkudofK0ZE8fDgu69aVrvUN3o6omHYa1njg+JnYHvgbcmD1tx3/jzZ7K9ZH1s
- Meku13sM8wzKrkJvRgzh3bYjkNAKYC36JLiVRf9NbVx4SYMPT0WA44JRhRx12YF3vVRg
- jDlw==
-X-Gm-Message-State: APjAAAWR5u7ASeuTIStiqHNtGFOkEheA8bZNZPDzvgUDC/9lK1Ig6py7
- 9QJNQgYo4zoQuDCf2IYgpkeY3B0gikI=
-X-Google-Smtp-Source: APXvYqwZAe5DaTodZFnTzb1e6wfdvA8F57xqkOA5lCAgFi5f6poEVd6yxSiJqM2RbhjEt4QAiLlSng==
-X-Received: by 2002:a63:c04a:: with SMTP id z10mr42829519pgi.441.1577384061587; 
- Thu, 26 Dec 2019 10:14:21 -0800 (PST)
-Received: from gateway.troianet.com.br (ipv6.troianet.com.br.
- [2804:688:21:4::2])
- by smtp.gmail.com with ESMTPSA id d23sm36691080pfo.176.2019.12.26.10.14.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 10:14:21 -0800 (PST)
-From: Eneas U de Queiroz <cotequeiroz@gmail.com>
+ id 1ikYbV-0003zi-6F
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 19:15:26 +0000
+Received: by volatilesystems.org (Postfix, from userid 112)
+ id C2C53FA687; Thu, 26 Dec 2019 20:15:09 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1577387709;
+ bh=tgv0O6Tar9xlGrLrhwvCYCzLeWJpVGQbvnL2z2LQlTQ=;
+ h=From:To:Subject:Date:From;
+ b=MO3c5DpoGj5vBWzwCKi7lr4xeLae8O0W1c3JswE+o11oDHLF9f30VN1WZUKkQ7jxp
+ GnDyGdExB4FpmpEffvw79LqfZ4DRRarByosY9TDuiM8e7mssF1x598xSG96+ZbuMTW
+ tCmA+EsaiDB91b+DWsv/S/5NhqHC4UJ4cZU47vKU=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+ DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=ham
+ autolearn_force=no version=3.4.2
+Received: from okeanos.lan (213.219.161.238.adsl.dyn.edpnet.net
+ [213.219.161.238])
+ by volatilesystems.org (Postfix) with ESMTPSA id DCA80FA684
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 20:15:08 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1577387708;
+ bh=tgv0O6Tar9xlGrLrhwvCYCzLeWJpVGQbvnL2z2LQlTQ=;
+ h=From:To:Subject:Date:From;
+ b=N9q0IALztxJBZ6dN3YShXODPlQAyDgwaQAcV7Af0OnZAVw2Arl9Kj4l4dlDlZBmif
+ /MjXTwIMyVFmCsbN1tDtaAodmF08PfToYxhCLIYTNhRnJmiqKDYjROv1dd4UBc+zP7
+ AsWhWC/Jxq7oRLfOX7xq+rIT4kWe88zqR5Zo52mk=
+From: Stijn Segers <foss@volatilesystems.org>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 26 Dec 2019 15:14:09 -0300
-Message-Id: <20191226181409.16135-1-cotequeiroz@gmail.com>
-X-Mailer: git-send-email 2.23.0
+Date: Thu, 26 Dec 2019 20:12:11 +0100
+Message-Id: <20191226191211.5262-1-foss@volatilesystems.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Virus-Scanned: clamav-milter 0.101.4 at atalanta
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_101426_905269_9FE3B60A 
-X-CRM114-Status: UNSURE (   4.21  )
+X-CRM114-CacheID: sfid-20191226_111525_377022_00FDF795 
+X-CRM114-Status: UNSURE (   9.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cotequeiroz[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -85,7 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] curl: rename cyassl->wolfssl
+Subject: [OpenWrt-Devel] [PATCH v2] ramips: rename DIR-860L entries
+ according to the new manufacturer / device spec
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,41 +87,98 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Eneas U de Queiroz <cotequeiroz@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The old name was dropped and no longer works.
+Most images follow the openwrt-target-subtarget-manufacturer-device
+naming specification, but the D-Link DIR-860L rev B1 does not. This
+patch brings it in line.
 
-Signed-off-by: Eneas U de Queiroz <cotequeiroz@gmail.com>
---
-While testing this with wolfssl, I noticed the package was built without
-TLS support.  This was run-tested with wolfssl on WRT3200ACM
+Master had this updated a while ago, it's okay there.
 
-diff --git a/package/network/utils/curl/Makefile b/package/network/utils/curl/Makefile
-index 830d5a7192..8ccfaedc46 100644
---- a/package/network/utils/curl/Makefile
-+++ b/package/network/utils/curl/Makefile
-@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
+Signed-off-by: Stijn Segers <foss@volatilesystems.org>
+---
+ target/linux/ramips/base-files/etc/board.d/01_leds            | 2 +-
+ target/linux/ramips/base-files/etc/board.d/02_network         | 4 ++--
+ .../linux/ramips/base-files/etc/uci-defaults/09_fix-checksum  | 2 +-
+ target/linux/ramips/image/mt7621.mk                           | 4 ++--
+ 4 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/target/linux/ramips/base-files/etc/board.d/01_leds b/target/linux/ramips/base-files/etc/board.d/01_leds
+index fb74a2c87b..f08f6d7b1d 100755
+--- a/target/linux/ramips/base-files/etc/board.d/01_leds
++++ b/target/linux/ramips/base-files/etc/board.d/01_leds
+@@ -160,7 +160,7 @@ dlink,dwr-922-e2)
+ 	ucidef_set_led_netdev "signalstrength" "signalstrength" "$boardname:green:sigstrength" "wwan0" "link"
+ 	ucidef_set_led_netdev "4g" "4g" "$boardname:green:4g" "wwan0" "tx rx"
+ 	;;
+-dir-860l-b1)
++dlink,dir-860l-b1)
+ 	ucidef_set_led_netdev "wan" "wan" "$boardname:green:net" "eth0.2"
+ 	;;
+ ex2700|\
+diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+index 77cc8d63f9..38d2d38c2b 100755
+--- a/target/linux/ramips/base-files/etc/board.d/02_network
++++ b/target/linux/ramips/base-files/etc/board.d/02_network
+@@ -271,7 +271,7 @@ ramips_setup_interfaces()
+ 		ucidef_add_switch "switch0" \
+ 			"1:lan:3" "2:lan:4" "3:lan:1" "4:lan:2" "0:wan" "6@eth0"
+ 		;;
+-	dir-860l-b1|\
++	dlink,dir-860l-b1|\
+ 	elecom,wrc-1167ghbk2-s|\
+ 	elecom,wrc-2533gst|\
+ 	elecom,wrc-1900gst|\
+@@ -553,7 +553,7 @@ ramips_setup_macs()
+ 	dch-m225)
+ 		lan_mac=$(mtd_get_mac_ascii factory lanmac)
+ 		;;
+-	dir-860l-b1)
++	dlink,dir-860l-b1)
+ 		lan_mac=$(mtd_get_mac_ascii factory lanmac)
+ 		wan_mac=$(mtd_get_mac_ascii factory wanmac)
+ 		;;
+diff --git a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
+index 54deb5b2e0..40746c6af4 100644
+--- a/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
++++ b/target/linux/ramips/base-files/etc/uci-defaults/09_fix-checksum
+@@ -17,7 +17,7 @@ case "$board" in
+ cy-swr1100 | \
+ dch-m225 | \
+ dir-645 | \
+-dir-860l-b1)
++dlink,dir-860l-b1)
+ 	fix_checksum seama
+ 	;;
+ dlink,dap-1522-a1)
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 7eb59188fb..6507e40f86 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -110,7 +110,7 @@ define Device/asus_rt-ac57u
+ endef
+ TARGET_DEVICES += asus_rt-ac57u
  
- PKG_NAME:=curl
- PKG_VERSION:=7.67.0
--PKG_RELEASE:=1
-+PKG_RELEASE:=2
+-define Device/dir-860l-b1
++define Device/dlink_dir-860l-b1
+   $(Device/seama)
+   DTS := DIR-860L-B1
+   BLOCKSIZE := 64k
+@@ -120,7 +120,7 @@ define Device/dir-860l-b1
+   DEVICE_TITLE := D-Link DIR-860L B1
+   DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
+ endef
+-TARGET_DEVICES += dir-860l-b1
++TARGET_DEVICES += dlink_dir-860l-b1
  
- PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=https://dl.uxnr.de/mirror/curl/ \
-@@ -118,7 +118,7 @@ CONFIGURE_ARGS += \
- 	\
- 	$(call autoconf_bool,CONFIG_IPV6,ipv6) \
- 	\
--	$(if $(CONFIG_LIBCURL_WOLFSSL),--with-cyassl="$(STAGING_DIR)/usr",--without-cyassl) \
-+	$(if $(CONFIG_LIBCURL_WOLFSSL),--with-wolfssl="$(STAGING_DIR)/usr",--without-wolfssl) \
- 	$(if $(CONFIG_LIBCURL_GNUTLS),--with-gnutls="$(STAGING_DIR)/usr",--without-gnutls) \
- 	$(if $(CONFIG_LIBCURL_OPENSSL),--with-ssl="$(STAGING_DIR)/usr",--without-ssl) \
- 	$(if $(CONFIG_LIBCURL_MBEDTLS),--with-mbedtls="$(STAGING_DIR)/usr",--without-mbedtls) \
+ define Device/mediatek_ap-mt7621a-v60
+   DTS := AP-MT7621A-V60
+-- 
+2.20.1
+
 
 _______________________________________________
 openwrt-devel mailing list

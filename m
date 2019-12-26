@@ -2,117 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F8FC12AC46
-	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 13:50:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 307DD12AC49
+	for <lists+openwrt-devel@lfdr.de>; Thu, 26 Dec 2019 13:58:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Subject:To:Message-ID:Date:From:MIME-Version:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/Svgq8ap+Kt0xF0Mqcw41uh2ZfHXSZvdr6tXi7hMrcA=; b=n6Ag7eQetGtmbT4aD9bFWvArv
-	I49/VdJlUCwe/etRGSqeAfQgjPq2gwNDW518/lBG3Kxxky4nh/n/wKQol2r1q+f6GsRZCm6nQ6QdJ
-	4OIKiL8l/vOUBm7E1/AC++7/JjN1yvtgpVtHSh9tro7aoHrm+Wnn2FFBDCczvnPoKn+1WkVjfn8TH
-	T1IRwUE8H5fOx91MZ+kND3Yd9BIcAMfL+2EpczzBX91q7Ezs5GNcioQDBSOiPiuT8qoIL88lsw5h6
-	rYbEYi5Pl4Ajzg+BVUg+hfOLmqrbhk8MYXNmt+EFVLnESOmCg5FI4cf9s+FYcPpLjG4fYhQz824on
-	i2HKzwXaA==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=q9xEeSqLPiuzbR97JuO00bIo7xgE43a/+V4gL8kSjTA=; b=mGz
+	XJwbN/yi1Dl5rw8xafKtvnES+f09ajW0XgErPjPe7LNVBM7vJbuy2MJ3We+wfW3YhHYfh0gDdj2tg
+	B9entSKO9MxuTVLNwya/7/9yunBIu3B+QuTC62GKxv/K2pXf1nys7BktYDIge+Cf4SuLOZQeqT3Eb
+	1LsiAQhs2U8lD1On5NhTSaY4yrl9KhbBo6Al7lrLJ4uf8E0fBnXfvIR95+2YgvYUg7YHbh+1wQcEL
+	XZHIklKZ0qyWSigBBgcN/DP8Q/E+qD9kazDdBglskkjvHXl0aPGjZJui/UimWfk2PGob2aroO1Ttl
+	1tfxQ6XFGw9aXuv1ZsW969lz1PTlOqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikSbI-0002uT-7M; Thu, 26 Dec 2019 12:50:48 +0000
-Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
+	id 1ikSip-0004zc-QT; Thu, 26 Dec 2019 12:58:35 +0000
+Received: from mail-qv1-xf29.google.com ([2607:f8b0:4864:20::f29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikSbA-0002tm-B5
- for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 12:50:42 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47k8vF3b4BzQjy2;
- Thu, 26 Dec 2019 13:50:33 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id ltEOSrp_l_OA; Thu, 26 Dec 2019 13:50:30 +0100 (CET)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- Khem Raj <raj.khem@gmail.com>
-References: <20191224180213.3542623-1-raj.khem@gmail.com>
- <20191224215051.GF70645@meh.true.cz>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <b3d98fd9-34a0-31cc-c4ce-c311bcec3d38@hauke-m.de>
-Date: Thu, 26 Dec 2019 13:49:46 +0100
+ id 1ikSih-0004zC-HW
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 12:58:28 +0000
+Received: by mail-qv1-xf29.google.com with SMTP id dc14so9018683qvb.9
+ for <openwrt-devel@lists.openwrt.org>; Thu, 26 Dec 2019 04:58:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=NM1LBXBKqsy2eKWHYJ/T+E7ZVwsCCavmdsrmBfyiN/Y=;
+ b=eAqsUNLQikgE6S59mLzfQ2Sp0IjDMiig5qjo1U50r2V9PciFoZCCMf+qjP3M6cVGLW
+ hunmrNS8UAoJdRTOWH9p5zFc0ltc5ghZO9jxYTN9sbcO3Bmh/JYoSX6Q21rLSni4A7IT
+ hP6nKRkDKHp0PbvMGmt7imaAcEqoPAgV2tfdtOqiM+sRJrZzCS01xytvIXCuk90zgCLS
+ e5jFRb8VHpqBUwY6KOtprXTLNFmqZkBWFXM6MrSg7dxWCo9b5L8l/s+EzzJ17FhofGSi
+ zkrT6ZHuy35qRh0551ldzqcRMyHTDQZ3xDhvnI0aL++hs913RKtvNv+BIdJgqWw+iaHL
+ Thqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=NM1LBXBKqsy2eKWHYJ/T+E7ZVwsCCavmdsrmBfyiN/Y=;
+ b=TqU1rAAAo7d7b7uEocoggtPrGW32425pVLBA2pAFkNeK9dZgBw07Uus0Xl+HCAnbc7
+ DGGfD7WCk9MDZYxgfa8C3PT/hSR5ApGsfTvRWwNKc567HtoZbYXB6FesPrODar5EodUJ
+ rfOjzScX1FUL/BauVTMRF0aheBe5Osob8Ak5r7wmkt4gkwi1I1HYqJOkmfO/4WqOytMy
+ DRgf9v3RYR3277zJiWefeJnpNYoL5ofX6fHkA0I9anosm3gGV5jG/uW07ax/ioofCLCq
+ ILM3eYMEt9+nYxXVjLn20kAen+l+hg6CReTVRLO6uHimLsz81Ysvt1nuQGsr7u2EFPHN
+ WDhQ==
+X-Gm-Message-State: APjAAAX0XSnKuo9cBY28zyRuH2M5KWp77BGGjGiEWR8j8A49PHMzoNH2
+ vq2yhJvfCIZ1FOTMDZNxg/9MDrr9dmXnx8m4KlI3Hfkg
+X-Google-Smtp-Source: APXvYqyrRfQdUS+b+rY8K6lavUKzMfzYM0f/D7f0z47Jb4tud4hCxeIduG5pJxlpbFYt53+453U8ke2qelw2nStREYc=
+X-Received: by 2002:ad4:40cb:: with SMTP id x11mr35727553qvp.167.1577364654589; 
+ Thu, 26 Dec 2019 04:50:54 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191224215051.GF70645@meh.true.cz>
+From: Jeffery To <jeffery.to@gmail.com>
+Date: Thu, 26 Dec 2019 20:50:43 +0800
+Message-ID: <CAJXyS=ivRQx3D8kJ8p3eoN0CtzVu-Y1LvuPHb24CcHs2o3DWsw@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_045040_678602_609DEC0F 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191226_045827_605559_E8D75E81 
+X-CRM114-Status: UNSURE (   3.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jeffery.to[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] use strncpy instead of strcpy
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] dev.archive.openwrt.org cert expired
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,82 +87,37 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============8902656978649478468=="
+Content-Type: multipart/mixed; boundary="===============4363856130018128893=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============8902656978649478468==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="9A6N7cMMnAyoeqDlR9xui3pIH1CHNGwsf"
+--===============4363856130018128893==
+Content-Type: multipart/alternative; boundary="000000000000eb0ce5059a9ad3a8"
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---9A6N7cMMnAyoeqDlR9xui3pIH1CHNGwsf
-Content-Type: multipart/mixed; boundary="hQhBGViAmpo1iNACo9HPqq47YzIgJyKNi"
+--000000000000eb0ce5059a9ad3a8
+Content-Type: text/plain; charset="UTF-8"
 
---hQhBGViAmpo1iNACo9HPqq47YzIgJyKNi
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+Hi,
 
-On 12/24/19 10:50 PM, Petr =C5=A0tetiar wrote:
-> Khem Raj <raj.khem@gmail.com> [2019-12-24 10:02:13]:
->=20
-> Hi,
->=20
-> use "PATCH libubox" subject prefix, because there is no blobmsg.c file =
-in the
-> main tree.
->=20
->> Fixes error: '__builtin_strcpy' offset 6 from the object at 'attr' is =
-out of
->> the bounds of referenced subobject 'name' with type 'uint8_t[0]' {aka
->> 'unsigned char[0]'} at offset 6 [-Werror=3Darray-bounds]
->=20
-> out of curiosity, which target/compiler is that? I'm not able to reprod=
-uce
-> it on any of the pre-selected CI targets[1].
+Apologies if this isn't the right place to mention this, but the Let's
+Encrypt certificate for dev.archive.openwrt.org has expired (on 22 Dec 2019
+21:44:43 GMT).
 
-Hi Petr,
+I tried sending this to openwrt-adm but the messages were stuck in the
+moderator queue.
 
-The fortify headers are preventing some of these warnings, I see them
-when compiling without fortify header or when using glibc.
+Jeff
 
-I started to look into this problem, but it looks more complicated to
-change the fortify headers in a way, that the compile time buffer
-overflow detection still works like expected for all functions which are
-supported by gcc.
+--000000000000eb0ce5059a9ad3a8
+Content-Type: text/html; charset="UTF-8"
 
-Please also use a toolchian with glibc when compiling in CI.
+<div dir="ltr"><div dir="ltr"><div dir="ltr"><div>Hi,</div><div><br></div><div>Apologies if this isn&#39;t the right place to mention this, but the Let&#39;s Encrypt certificate for <a href="http://dev.archive.openwrt.org">dev.archive.openwrt.org</a>
+ has expired (on 22 Dec 2019 21:44:43 GMT).</div><div><br></div><div>I tried sending this to openwrt-adm but the messages were stuck in the moderator queue.<br></div><div><br></div><div>Jeff</div></div></div></div>
 
-Hauke
+--000000000000eb0ce5059a9ad3a8--
 
 
---hQhBGViAmpo1iNACo9HPqq47YzIgJyKNi--
-
---9A6N7cMMnAyoeqDlR9xui3pIH1CHNGwsf
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4ErGoACgkQ8bdnhZyy
-68eewwgAr7pCoO8khcz3g6WU0gkCRf0mc4FHb9p/0h4RZcr26PXoISaft83ENkdm
-/6JoL3OVMIkBXd8kTsPgEGt13thHDHdUOw2TgAdzy2ffSby82KT9Wr/LsDpeP1VN
-i8wqyna0UpN2NdgFfF+AItw2ZJUx7zHUNSdSJsUuciDIToewbof6qd3+QHybocv/
-cAYKAcTWS5VsZ6VltVgc/QuWSGFN+S6+iccWNX4wxePQd59fRdPjDCJZQIjaghbL
-XTp9FqGWqTkBg6u7wO9YVkADMtwY8TJS+taKVH/hTDRx5vfrgUvDggRTGBQZepNm
-TqcRyOW09egY+G/f7zDaRMYHOHuwFg==
-=hm1+
------END PGP SIGNATURE-----
-
---9A6N7cMMnAyoeqDlR9xui3pIH1CHNGwsf--
-
-
---===============8902656978649478468==
+--===============4363856130018128893==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -210,5 +128,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8902656978649478468==--
+--===============4363856130018128893==--
 

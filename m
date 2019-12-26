@@ -2,47 +2,63 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CD2412AF7D
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 00:00:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F008712AF8D
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 00:11:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cTo6tgLaIy5ha1AJYoqar8pT2IH9ndvDJcTOjzaGinI=; b=JzH/T3jXCIhM7Gxyf6yhsBbTQn
-	DpTEXPFRZJSkgPUdkQZa9qcdDMxNx8By/Rv4JPNopXl/jU0+/nszM+AFq5ZM6uYYsrfa9HRTOXWJt
-	UCXlGJUjeRZup7VhkRG0OGkpXTe5MIRZKG7ZmDPV0ItiqlvIXRxPeOqidbPv/wV5/RJPKJ1KeKvi9
-	h3At/bdheXxqjD2DMoqP6O0QpgvA72dJtKI3ge2bFVrtjJH92yu9C97sO9oqRt53j/5R4n02fYMVg
-	EcNFRp5624pkJ+qgB13KPCsBaeZAh+zNcYxd+T/Gw9ODXotZZDJra/+oVRJoJBNlgf0txfXrNNwEK
-	jLTllU/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CMsWobevYy1rtL0/iMskdMzQnBT7UYwFF4ue8g5ocR4=; b=TDYKMIptg0I70t1U3kllr7ZaP
+	uiiTg2Iju8ZTgIMtIOufSYI/V8UaDuZ01P+pNIf7NjoOzq3nV2UWDAvRO152U0MIoJ3rcoGQC5ahX
+	gLsGqj/OyWOoJjy2DCzLvQ6c/Sk4pCUvudGmZX3jEtuzn4q8RS4x5Oh60mNw7Wx44Brwd2EMuLXYt
+	1LPq6QtcJ7Queb3UzhjbV8s9s9CvQYRM6mjX9No4loMtDVSotrphmKJuUogasTkJourOLDbsXCoEF
+	yOf/WfCM/Eg+H7ttSGXojtJcOVPbGABSCRN4pnwWGSpNlSDEltxsxzGqGz15Vl46rM7/Kr/dvconm
+	SWVZwfkqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikc6o-0001Qm-NI; Thu, 26 Dec 2019 22:59:58 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1ikcII-0006FD-H8; Thu, 26 Dec 2019 23:11:50 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikc6f-0001QC-FG
- for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 22:59:51 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 1A10245FE;
- Thu, 26 Dec 2019 23:59:47 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 02fb8911;
- Thu, 26 Dec 2019 23:59:36 +0100 (CET)
-Date: Thu, 26 Dec 2019 23:59:36 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: hannu.nyman@iki.fi
-Message-ID: <20191226225936.GB70184@meh.true.cz>
-References: <6cb3b640-8590-d083-e5c2-63df74c7e86b@welho.com>
+ id 1ikcIA-0006EO-B8
+ for openwrt-devel@lists.openwrt.org; Thu, 26 Dec 2019 23:11:44 +0000
+Received: from desktop ([188.194.105.26]) by mrelayeu.kundenserver.de
+ (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MVuXT-1j9fgA39QD-00Rtmv; Fri, 27 Dec 2019 00:11:35 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Stijn Segers'" <foss@volatilesystems.org>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20191225143851.12368-1-foss@volatilesystems.org>
+In-Reply-To: <20191225143851.12368-1-foss@volatilesystems.org>
+Date: Fri, 27 Dec 2019 00:11:34 +0100
+Message-ID: <00ce01d5bc41$d1e99520$75bcbf60$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6cb3b640-8590-d083-e5c2-63df74c7e86b@welho.com>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+Content-Language: de
+Thread-Index: AQGiL1PWem/OmFXn4PTpL5gEbv8yQqg0Iqyw
+X-Provags-ID: V03:K1:S0VIC/VRu4KF1bXrPSsPISJMqG/h1ZIIKppAk/31D/ObCb7X8mI
+ PL2di8/Oafqw56k5ECjI0JSnbC8zip9c1tdTZG/p74EI7Cn1/pT4EjzgJc4qmLppeqG9VoH
+ QH6syufMqEV3B2HjuUF/4Vi4vQXFgZaB3S/Lvb8A7NPbDCF//M1KSqPDlDl47R+3sABab1C
+ dBhAnDypejKPFXbRTopsw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:JfseAvrbHQ4=:gU/OWlop8vP1tXMQoYTRY4
+ BQevWgLLoOyIqiwpopsRRoKqlEg4vHMtCRhaAzaTCQMerBWvD1YgBSFR76tL1swxVC/YZUdaW
+ x0wiD1RsbhsabS5NP+fEIlE+0SRz8hNxGMElB3JzozjQLJWlz/I+O8+K5ooMKXC1SqYIWAkDy
+ tVNv43fqUewlULKcori+nX3D+aajIojHqjRIYCqIjVJrUF2dLwyiBbhrSi0aMcp7FmUZXgDvu
+ 5qqpC4Xa5QqVmODZnKPml5yEoEu6r0k/LZpYY00ZDzXr3kSY/W162cDExIaQXbzMGwAQXwGDy
+ xRQG84BSTkUCI1aC35xaHl9hcsEBus8PA6zWke8Ixb791Mfo/t6T7iYPZ6u2UdXLoPUBvlt4S
+ ASqqnUiewczqvRT0JFV1NQLh0qt4v8AuEzaSOz2Vm+GW+oDtFRfAo0YaWnfPnTVPYJbK3cUXc
+ QrbIaTzspyvwhLI5uVBw22qlZ53ZP9kb3g1QwJhXXglOJGwQPWuUQqxIRvXK/E8S/o4IjjjTZ
+ l7tahfFsws547Cxj1/hrQuDTWoD2KiViDg1zPdSlcrFjy5jDsTexjgg/bkQB+pCChksTuGXMy
+ Etv/53mDuPPGR3mkqOxtEVs8ri0JiDeE+KcYIxmfhkTneRm5pSmTeLw4Kpn9yBXdEHOzDMrDa
+ jYGXHarzmdEXO8FdlahVd9ufzzj4KBQnYidwiHMrc5BrODHkNjYVt9qneTopMtIpEDE7C6KG7
+ J9UcqTO/RZARbsAR75ojc2i7hzr4vq74jZlZEE3mnL5XuuSGdaMw7LRo/qOcYoS2DOjSZ/NG2
+ OE2K4eYh7/lB3SR2I06PhTN4qG+6KBBwzRwwcObMPxqDs6ncgUZ1EZQ12VZeF01b0G+/rS3q8
+ ZPQgFAzZcfVW1yCbFZqm0o2+uSIxqnze6iLxprwf0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_145949_659633_F450FCF1 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20191226_151142_678094_D12EF2A3 
+X-CRM114-Status: UNSURE (   7.71  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -50,13 +66,11 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] ubus and/or libubox upgrades today cause
- problems: some services do not start, logread hangs
+Subject: Re: [OpenWrt-Devel] [PATCH] [19.07] ramips: rename DIR-860L entries
+ according to the new manufacturer / device spec
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,34 +82,100 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============7272296864864967106=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGFubnUgTnltYW4gPGhhbm51Lm55bWFuQHdlbGhvLmNvbT4gWzIwMTktMTItMjYgMjI6Mzc6MzFd
-OgoKSGksCgo+IEkgbm90aWNlZCB0b2RheSBwcm9ibGVtcyB3aXRoIG5ldyBtYXN0ZXIgYnVpbGRz
-LCBib3RoIHdpdGggaXBxODA2eC9SNzgwMCBhbmQKPiBhcjcxeHgvV05EUjM3MDA6Cj4gCj4gKiBT
-b21lIHNlcnZpY2VzIGRvIG5vdCBzdGFydCBhbmQgdGhlaXIgcHJvY2Vzc2VzIGFyZSBub3Qgdmlz
-aWJsZSBpbiB0aGUKPiBwcm9jZXNzIGxpc3QuIEV4YW1wbGVzOiBjb2xsZWN0ZCBhbmQgbmxid21v
-bgo+ICogbG9ncmVhZCBjb21tYW5kIGFsd2F5cyBoYW5ncy4gQm90aCBmcm9tIFNTSCBjb25zb2xl
-IGFuZCBsdWNpCgpzb3JyeSBmb3IgdGhlIGJyZWFrYWdlLgoKPiBJIHJldmVydGVkIGJvdGggdWJ1
-cyBhbmQgbGlidWJveCBjaGFuZ2VzIGFuZCB0aGUgc2VydmljZXMgc3RhcnQgYWdhaW4KPiAobmxi
-d21vbiwgY29sbGVjdGQpLCBhbmQgYWxzbyBsb2dyZWFkIHdvcmtzIDstKQoKSSd2ZSBqdXN0IGxv
-b2tlZCBhdCB0aGUgbG9ncmVhZCBpc3N1ZSBhbmQgSSd2ZSB0cmFja2VkIGl0IGRvd24gdG8gdGhl
-IGZvbGxvd2luZwpjb21taXRbMV06CgogY29tbWl0IDVkN2NhODMwOWQwYTE2MTRkODI5ZGY5ZWNk
-NzI1NTNiY2Q2YjVlYzYKIEF1dGhvcjogICAgIFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+
-CgogICAgdWJ1c2QvbGlidWJ1cy1pbzogZml4IHZhcmlhYmxlIHNpemVkIHN0cnVjdCBwb3NpdGlv
-biB3YXJuaW5nCiAgICAKICAgIEZpeGVzIGZvbGxvd2luZyBjbGFuZy05IGNvbXBpbGVyIHdhcm5p
-bmdzOgogICAgCiAgICAgdWJ1c2QuYzo5OToxODogZXJyb3I6IGZpZWxkICdoJyB3aXRoIHZhcmlh
-YmxlIHNpemVkIHR5cGUgJ3N0cnVjdCBjbXNnaGRyJyBub3QgYXQgdGhlIGVuZCBvZiBhIHN0cnVj
-dCBvciBjbGFzcyBpcyBhIEdOVSBleHRlbnNpb24gWy1XZXJyb3IsLVdnbnUtdmFyaWFibGUtc2l6
-ZWQtdHlwZS1ub3QtYXQtZW5kXQogICAgICAgICAgICAgICAgICAgIHN0cnVjdCBjbXNnaGRyIGg7
-CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgoKSSdsbCB0cnkgdG8gZml4IHRo
-YXQgdG9tb3Jyb3cuCgoxLiBodHRwczovL2dpdC5vcGVud3J0Lm9yZy81ZDdjYTgzMDlkMGExNjE0
-ZDgyOWRmOWVjZDcyNTUzYmNkNmI1ZWM2CgotLSB5bmV6egoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3Bl
-bndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21h
-aWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+This is a multipart message in MIME format.
+
+--===============7272296864864967106==
+Content-Language: de
+Content-Type: multipart/signed;
+	boundary="=-=ymdwEPK3CXo5sT=-=";
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature"
+
+This is a multipart message in MIME format.
+
+--=-=ymdwEPK3CXo5sT=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
+> On Behalf Of Stijn Segers
+> Sent: Mittwoch, 25. Dezember 2019 15:39
+> To: openwrt-devel@lists.openwrt.org
+> Subject: [OpenWrt-Devel] [PATCH] [19.07] ramips: rename DIR-860L entries
+> according to the new manufacturer / device spec
+>=20
+> Most images follow the openwrt-target-subtarget-manufacturer-device
+> naming specification, but the D-Link DIR-860L rev B1 does not. This patch
+> brings it in line.
+>=20
+> Master had this updated a while ago, it's okay there.
+
+Though I'm a big fan of unification and made an effort to have this sorted =
+out in master, I do not think backporting those device name changes is very=
+ helpful. This will create additional work, but effectively it will just mo=
+ve the "break" from 19.07/master to 18.06/19.07.
+
+As a cosmetic issue, it wouldn't be a candidate for backporting under norma=
+l circumstances, too.
+
+For further reasoning/discussion, refer to the following PR in GitHub, wher=
+e the same question has already been discussed a month ago:
+
+https://github.com/openwrt/openwrt/pull/2574#issuecomment-559460188
+
+I will mark this PR as Rejected, I hope you accept my arguments and continu=
+e to submit contributions in the future.
+
+Best
+
+Adrian=20
+
+--=-=ymdwEPK3CXo5sT=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4FPiIACgkQoNyKO7qx
+AnAdbhAAvMxaf96xIoUxexQZCQoU3YPiG02F+0/DlVtD1TufCgbPe0A8r+8BKFoT
+PmjeHWl3+p9dfDGWos4BHES1/fUps+e2Niqo5eAubV0NVtha02RegX9Qg9cckyxC
+TqjcBs4a+iesg5jNLTuHWifgJ5mq0hUglL3fxtCVD1dvVZBlZooi5J1z18XLXy52
+hefJ6WwII0vwSZGJMYIiwkHYG9DLDsZ4Jb+px48TgFB1DEhPQJDKSoH0RgN9ExpN
+3Ys5HngVehuS7h7o13tdBm+AVF3McW8rS4xhQ9EPYEibXVq9988+0iRpo2uH7DD7
+zl1v7BJgBw2CothXXRxhVKyTfEY0R6+JuJeN2ukRRQsvEwgxcmTqzLXQn3SDejf6
+epD7BM5WTLYphTQTSxXRjp3YLHaDrWWHZsRJZAF8osPEr7IzHdk1N3zytC++cNxO
+bCH7A24/+qOqbAOjh1sxnEobMi86LpuT1FCu+BkV7tz51aJFWxW1VPZUgq48OVel
+L9hP7MOcMZHAbuQ01u3KNiEU+1n8R57XY+uxIEg53PUZpRtVV2sPSNcyeBOlMhkg
+KWS4N2eoUHMaaEVmxqyFKj3KyPPbPCqeWrhAYjP2DQzLx5ToNN5GhF8pvEI5y93E
+/i0qSu8BHzKYl0LBekCUWHb3rGaosDz4VHR/vJHjkMWJJYSpYgQ=
+=bly9
+-----END PGP SIGNATURE-----
+
+
+--=-=ymdwEPK3CXo5sT=-=--
+
+
+
+--===============7272296864864967106==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7272296864864967106==--
+
+

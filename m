@@ -2,67 +2,93 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 859C612B38E
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 10:34:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF15512B46F
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 13:09:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Uq0o53ORaarPiQ6MCLtaEj+uhJ7ys8B1coFwpOnBkMA=; b=hqShzioRkv0omXdvyCbIfq/Eq
-	feN06cbFYzPNr+6tVpM5yy3rqaLVi0hZkyL2D0diswHXfYJygDeJfBQocf0Tkv3yHFjQxN9TReZ0A
-	wPtVTXevDhCIQUazrwktGknAz8tdWx87x/5VUZqb9/r5j03ZiCnbAAuiu3f2Go8KNAuVjzTU1yoLA
-	/ehQJEroOQIvMyR502nv39/Vc2aeCIvLpBSLgsWZ+MmYBtqTOsjclpvEJY/1AWa90TBignMKZ1siC
-	bh6vYNO0Xm9+VS6sIwl1OB2V5vuLh4rBlZ1aXEUwHg2tBoWwoMk7qJh8v4MnQtt3X0AsyNfUme6aL
-	NvpFxFgtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZRLuZgv3aKtsTAFBVz0vzxP4L8MkaYiEo/cDp1m55Pc=; b=Nx5naxuBg39SBK
+	L6zD+v/VxvlTlCrLuiheHECzXn8djv51KB4dsEP4ahUjLM/2IA9d8pQ3pm5UTTr0JoiZ+uhQxeYnL
+	2ZneDaat/pZRrHeH4Lhr4NfThZHz3XBfq2uboa6VyhOTFsPSn8XyOdmsQDcWrf4CN+k7HPu6XSAVk
+	QjHpDYHO7SfrioFSdQ7mVY/+3W0fcoOs5myjcjHP7tghYjXTcGu3bqFrH6SlVItVf184EOLoqDR7X
+	7AsoTXP8U0homblGzKtizj1nnai0UZfKAzGKls1NDHA9rdD+j0YvbjwIziptX58x+oVswHsnXCc7f
+	GO+EjpDoH3m7TuduvCog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikm0S-0006rg-9g; Fri, 27 Dec 2019 09:34:04 +0000
-Received: from welho-filter2.welho.com ([83.102.41.24])
+	id 1ikoQo-0007AH-Hp; Fri, 27 Dec 2019 12:09:26 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikm0H-0006rK-Cf
- for openwrt-devel@lists.openwrt.org; Fri, 27 Dec 2019 09:33:55 +0000
-Received: from localhost (localhost [127.0.0.1])
- by welho-filter2.welho.com (Postfix) with ESMTP id 2102F20838;
- Fri, 27 Dec 2019 11:33:49 +0200 (EET)
-X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
-Received: from welho-smtp2.welho.com ([IPv6:::ffff:83.102.41.85])
- by localhost (welho-filter2.welho.com [::ffff:83.102.41.24]) (amavisd-new,
- port 10024)
- with ESMTP id D8owi9QjKirk; Fri, 27 Dec 2019 11:33:47 +0200 (EET)
-Received: from [192.168.1.180] (87-100-240-191.bb.dnainternet.fi
- [87.100.240.191])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by welho-smtp2.welho.com (Postfix) with ESMTPS id 9867172;
- Fri, 27 Dec 2019 11:33:45 +0200 (EET)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <6cb3b640-8590-d083-e5c2-63df74c7e86b@welho.com>
- <20191226225936.GB70184@meh.true.cz>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <fa84e9a6-5b08-c680-b3ed-0ad1b3f00359@iki.fi>
-Date: Fri, 27 Dec 2019 11:33:46 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101
- Thunderbird/72.0
+ id 1ikoQk-00079y-9c
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Dec 2019 12:09:23 +0000
+Received: by mail-lj1-x243.google.com with SMTP id o13so15547577ljg.4
+ for <openwrt-devel@lists.openwrt.org>; Fri, 27 Dec 2019 04:09:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Albt9xSbCPrsg6Vzc2roUyvk1qEFVVAMic+PZBXrslo=;
+ b=TqlBErLTSAMKBVMIAmkowPokb+8v+RSicxMGvNxP3jc5B6lUPD1ibcXjffHUThNYl/
+ mazIDvAgNx2Px5kG17h0yd8XQRHJXkjUg7jZG793gGp/CAwk/f9TIqrCw8SL9S+Nx654
+ plC//UJur7ddks5fyNxxY3vSXUMMggUyJjRl1vmEUre9ZbTtROxn8iYHuUVGS84lsMyq
+ FfZQUL/UPFLX0fTehLx0mY3FLVp9ksZVgEB8VdLqsBpFlffWo+QpQjG4kn3OT7caI8nq
+ vy0Q+TaXy81EkKl8hVaq2SAUoa9EyUeHOpfAYKrWY4cBnUTn99sQNtSP72nt/8u6uMC7
+ VCPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Albt9xSbCPrsg6Vzc2roUyvk1qEFVVAMic+PZBXrslo=;
+ b=qNLZFf2rX1rSbIVVa5DneJR368xHVsdOz56VRuo4FC0IFeYEgMAR/VsGrPLSG2op2n
+ AJf9wbH8jB6F8yi6pWabjPmtzUGFzPIrfpIIYUtVP8Cjt8yFodSZXws7OHO25LQTudJd
+ iFP9Iie+YKhUmt/OpqT8NA2ic5kXHvygOaqthewF92puFdtmPhh9Hecu29HfdZaGtHHD
+ 6rCZGx8Pe9ZKHcxpLo1u4opdPhxo9iCGZR2QcXYXkf68XHnjGHOht1ZFruB9a6ARxxH5
+ uv/P73BViah9Bpk1QmF+dyAQw3MP0dfOewxMTYIeY///NTWwLhmyvj4sbAQXam06AQKe
+ Wl9w==
+X-Gm-Message-State: APjAAAUKQjSrT2Et0/abMDOs1LwucVRDoyRUvYAzr9GR8iBxfOUdKCm7
+ kS7wVM5imdUqmQ1bFeFniWWuiIs7
+X-Google-Smtp-Source: APXvYqzrDQ8Kq7SP7EX20wAHHS7Yz76J88mIGVzQUDEj2zaNKn68B8xarxgfWbty+e3Scii+cQVOLQ==
+X-Received: by 2002:a2e:918c:: with SMTP id f12mr28343555ljg.66.1577448559023; 
+ Fri, 27 Dec 2019 04:09:19 -0800 (PST)
+Received: from localhost.localdomain
+ (ip-194-187-74-233.konfederacka.maverick.com.pl. [194.187.74.233])
+ by smtp.gmail.com with ESMTPSA id u25sm14561033lfk.46.2019.12.27.04.09.17
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 27 Dec 2019 04:09:18 -0800 (PST)
+From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 27 Dec 2019 13:09:11 +0100
+Message-Id: <20191227120911.9236-1-zajec5@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <20191226225936.GB70184@meh.true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_013353_596290_09B0F0FE 
-X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-CacheID: sfid-20191227_040922_359020_EAD29013 
+X-CRM114-Status: UNSURE (   8.87  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [83.102.41.24 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] ubus and/or libubox upgrades today cause
- problems: some services do not start, logread hangs
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (zajec5[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (zajec5[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH fstools] blockd: report "target" path as
+ "mount" for autofs available mounts
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,37 +100,26 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>,
+ John Crispin <john@phrozen.org>
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGV0ciDFoHRldGlhciBraXJqb2l0dGkgMjcuMTIuMjAxOSBrbG8gMC41OToKPiBIYW5udSBOeW1h
-biA8aGFubnUubnltYW5Ad2VsaG8uY29tPiBbMjAxOS0xMi0yNiAyMjozNzozMV06Cj4KPiBIaSwK
-Pgo+PiBJIG5vdGljZWQgdG9kYXkgcHJvYmxlbXMgd2l0aCBuZXcgbWFzdGVyIGJ1aWxkcywgYm90
-aCB3aXRoIGlwcTgwNngvUjc4MDAgYW5kCj4+IGFyNzF4eC9XTkRSMzcwMDoKPj4KPj4gKiBTb21l
-IHNlcnZpY2VzIGRvIG5vdCBzdGFydCBhbmQgdGhlaXIgcHJvY2Vzc2VzIGFyZSBub3QgdmlzaWJs
-ZSBpbiB0aGUKPj4gcHJvY2VzcyBsaXN0LiBFeGFtcGxlczogY29sbGVjdGQgYW5kIG5sYndtb24K
-Pj4gKiBsb2dyZWFkIGNvbW1hbmQgYWx3YXlzIGhhbmdzLiBCb3RoIGZyb20gU1NIIGNvbnNvbGUg
-YW5kIGx1Y2kKPiBzb3JyeSBmb3IgdGhlIGJyZWFrYWdlLgo+Cj4+IEkgcmV2ZXJ0ZWQgYm90aCB1
-YnVzIGFuZCBsaWJ1Ym94IGNoYW5nZXMgYW5kIHRoZSBzZXJ2aWNlcyBzdGFydCBhZ2Fpbgo+PiAo
-bmxid21vbiwgY29sbGVjdGQpLCBhbmQgYWxzbyBsb2dyZWFkIHdvcmtzIDstKQo+IEkndmUganVz
-dCBsb29rZWQgYXQgdGhlIGxvZ3JlYWQgaXNzdWUgYW5kIEkndmUgdHJhY2tlZCBpdCBkb3duIHRv
-IHRoZSBmb2xsb3dpbmcKPiBjb21taXRbMV06Cj4KPiAgIGNvbW1pdCA1ZDdjYTgzMDlkMGExNjE0
-ZDgyOWRmOWVjZDcyNTUzYmNkNmI1ZWM2Cj4gICBBdXRob3I6ICAgICBQZXRyIMWgdGV0aWFyIDx5
-bmV6ekB0cnVlLmN6Pgo+Cj4gICAgICB1YnVzZC9saWJ1YnVzLWlvOiBmaXggdmFyaWFibGUgc2l6
-ZWQgc3RydWN0IHBvc2l0aW9uIHdhcm5pbmcKPiAgICAgIAo+ICAgICAgRml4ZXMgZm9sbG93aW5n
-IGNsYW5nLTkgY29tcGlsZXIgd2FybmluZ3M6Cj4gICAgICAKPiAgICAgICB1YnVzZC5jOjk5OjE4
-OiBlcnJvcjogZmllbGQgJ2gnIHdpdGggdmFyaWFibGUgc2l6ZWQgdHlwZSAnc3RydWN0IGNtc2do
-ZHInIG5vdCBhdCB0aGUgZW5kIG9mIGEgc3RydWN0IG9yIGNsYXNzIGlzIGEgR05VIGV4dGVuc2lv
-biBbLVdlcnJvciwtV2dudS12YXJpYWJsZS1zaXplZC10eXBlLW5vdC1hdC1lbmRdCj4gICAgICAg
-ICAgICAgICAgICAgICAgc3RydWN0IGNtc2doZHIgaDsKPiAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICBeCj4KPiBJJ2xsIHRyeSB0byBmaXggdGhhdCB0b21vcnJvdy4KCgpIb3Bl
-ZnVsbHkgeW91L3NvbWVib2R5IHdpbGwgcmV2ZXJ0IHRoZSB1YnVzIGNoYW5nZXMgaW4gbWFzdGVy
-IHVudGlsIHRoZW4uCgp1YnVzIGlzIHNvIGNlbnRyYWwgdG8gT3BlbldydCB0aGF0IHNpbGVudCBi
-cmVha2FnZSBpbiBpdHMgY29yZSBmdW5jdGlvbmFsaXR5IAp3aWxsIGNhdXNlIGxvdHMgb2Ygc25l
-YWtpbHkgYnJva2VuIGJ1aWxkcy4KCgo+Cj4gMS4gaHR0cHM6Ly9naXQub3BlbndydC5vcmcvNWQ3
-Y2E4MzA5ZDBhMTYxNGQ4MjlkZjllY2Q3MjU1M2JjZDZiNWVjNgo+Cj4gLS0geW5lenoKCgoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZl
-bCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xp
-c3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKRGV2aWNlcyBoYW5kbGVk
+IHdpdGggYXV0b2ZzIHNob3VsZCBiZSBzZWVuIGFzIGF2YWlsYWJsZSBldmVuIGlmCmN1cnJlbnRs
+eSB1bm1vdW50ZWQuIE1vdW50aW5nIGlzIGhhbmRsZWQgb24gZGVtYW5kIGFuZCB0cmFuc3BhcmVu
+dGx5IGZvcgp1c2Vycy4KClNpZ25lZC1vZmYtYnk6IFJhZmHFgiBNacWCZWNraSA8cmFmYWxAbWls
+ZWNraS5wbD4KLS0tCiBibG9ja2QuYyB8IDIgKysKIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlv
+bnMoKykKCmRpZmYgLS1naXQgYS9ibG9ja2QuYyBiL2Jsb2NrZC5jCmluZGV4IGUwNzUzMGMuLmJh
+NGFmZGQgMTAwNjQ0Ci0tLSBhL2Jsb2NrZC5jCisrKyBiL2Jsb2NrZC5jCkBAIC0yODMsNiArMjgz
+LDggQEAgYmxvY2tfaW5mbyhzdHJ1Y3QgdWJ1c19jb250ZXh0ICpjdHgsIHN0cnVjdCB1YnVzX29i
+amVjdCAqb2JqLAogCQlpZiAobXApIHsKIAkJCWJsb2Jtc2dfYWRkX3N0cmluZygmYmIsICJtb3Vu
+dCIsIG1wKTsKIAkJCWZyZWUobXApOworCQl9IGVsc2UgaWYgKGRldmljZS0+YXV0b2ZzICYmIGRl
+dmljZS0+dGFyZ2V0KSB7CisJCQlibG9ibXNnX2FkZF9zdHJpbmcoJmJiLCAibW91bnQiLCBkZXZp
+Y2UtPnRhcmdldCk7CiAJCX0KIAkJYmxvYm1zZ19jbG9zZV90YWJsZSgmYmIsIHQpOwogCX0KLS0g
+CjIuMjEuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
+cmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2
+ZWwK

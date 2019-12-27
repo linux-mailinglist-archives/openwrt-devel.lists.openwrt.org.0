@@ -2,53 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9852312B517
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 15:16:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51EEF12B543
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 15:41:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=7p7YWFgT2XjVV1Di4OApdTw2zeQK3b8nmvRn/EQeVYI=; b=qi4UwNBbbminR3
-	mnYJNDztnPf6urQgieryctpt9x2jQJyLea6iT4U2GiePCetn/Oi2IafjkI6alBuN4MB2Tq42Z8XEG
-	4syoy7a+maIlnnV61Z6Xl5I0Ngiyq1LXCtTR5lQ0Y9l+JsZk1M6bxguybxIMfarbL5B01VCaZeSjn
-	kEJ51emo2mGTWGSBtYgJKAYvq6rxTKzxKhTM6ELh4ypazVKnLLDjm3fpimqRHtYPiDwbUThlDL4ci
-	k1zcq+xtTQuOVJ5MqJJ6ZxYVaCLq/82Uf2uuJxp1m/ep9nbxwgaUb8m1be8HKjsqIVWUlvMUJOtLB
-	Z5plRSnr0pI5YwOemHVA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kQo6PKBhbkSHBAg+CV5R5zvliqsJCwG5+6epgCt2UYA=; b=ulFLO+JvNFS/zG
+	0R2dEw/eSAGBKTctexcsQVa4Ww3JON242orsCcKs8O1S9oxGrXNJxYtrctVvl+FuGDkaG9YFZWow0
+	Zv+8Wfjjk0NJr8dMC7z3qY2byF6BGUtU5K6KD2YAvGKtNBXBrmgnULL8/aLooRBYCDPiKk/ApAvH6
+	1rUkvHYvDlgIobRgsyY/ZsiqNDjWxiSBlgThswAmZoK6vK92DyuWPZ6GzvWY77gpeNT20WIai4/VJ
+	tVM34pIsYaC6mEjAMcEPPU/ZcqkAOB3MKMEljxlND7pi6QdoFhGPi1y1lYXXSHB4SgLwPmWrcJzlR
+	Hc8h2zPwueNB+kycB6BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikqPK-0005vt-EN; Fri, 27 Dec 2019 14:16:02 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1ikqoA-0005qU-Om; Fri, 27 Dec 2019 14:41:42 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikqOn-0005bh-Pw
- for openwrt-devel@lists.openwrt.org; Fri, 27 Dec 2019 14:15:32 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 57581393B;
- Fri, 27 Dec 2019 15:15:27 +0100 (CET)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id f061c865;
- Fri, 27 Dec 2019 15:15:16 +0100 (CET)
-From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+ id 1ikqnz-0005q3-Ll
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Dec 2019 14:41:34 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 382cb6e0;
+ Fri, 27 Dec 2019 13:43:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
+ :subject:date:message-id:mime-version:content-transfer-encoding;
+ s=mail; bh=zq3TlvhIdBtJPoTusPgVqG8sNGg=; b=L53ImlHZ8jSETdkuIrMQ
+ ComMtUHPmvxYjLh2t/7jSud18RG1x/zXV8MB3d2rptw63wWoC5b6XgfsZ5zxe/+E
+ 6cJn0GQ6cfUoBNFYEDqy0qqlL2jKea1sVVZpti66xKy4KWfEL+O/49N92zFOSZgY
+ XipqPqaGKo20Fbg34oukg1X6fB1kBb19JUPTk4+UBy/jlDWPyijJGE1QMyRpVtEJ
+ SgAGnf847GLq6LK8r8BHwje4f/qgaUgBkaU0JBn8JD5XN4A+mc3/HIH9ayPooFsb
+ 8FXtuLNW2KTIYqWHoyGPmWJjcyC6ujJZ3Y4Lz2Rz6RD33876RaPutQjOOB0N2yAX
+ /g==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id bbb8b24c
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
+ Fri, 27 Dec 2019 13:43:43 +0000 (UTC)
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 27 Dec 2019 15:15:19 +0100
-Message-Id: <20191227141519.15626-1-ynezz@true.cz>
+Date: Fri, 27 Dec 2019 15:41:12 +0100
+Message-Id: <20191227144112.984987-1-Jason@zx2c4.com>
 MIME-Version: 1.0
-In-Reply-To: <20191227135922.13972-1-ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_061530_004757_C5B2F626 
-X-CRM114-Status: GOOD (  11.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191227_064131_922847_6E29B5EF 
+X-CRM114-Status: GOOD (  11.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ no trust [192.95.5.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2 ubus] ubusd/libubus-io: fix socket
- descriptor passing
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] wireguard: bump to 20191226
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,137 +73,191 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hannu Nyman <hannu.nyman@welho.com>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SW4gY29tbWl0IDVkN2NhODMwOWQwYSAoInVidXNkL2xpYnVidXMtaW86IGZpeCB2YXJpYWJsZSBz
-aXplZCBzdHJ1Y3QKcG9zaXRpb24gd2FybmluZyIpIHRoZSBwb3NpdGlvbiBvZiBjbXNnaGRyIHN0
-cnVjdCBoYXMgYmVlbiBjaGFuZ2VkIGluCm9yZGVyIHRvIGZpeCBjbGFuZy05IGNvbXBpbGVyIHdh
-cm5pbmcsIGJ1dCBpdCBoYXMgaW50cm9kdWNlZCByZWdyZXNzaW9uCmluIGF0IGxlYXN0IGBsb2dy
-ZWFkYCB3aGljaCBoYW5nZWQgaW5kZWZpbml0ZWx5LgoKU28gdGhpcyBwYXRjaCByZXdvcmtzIHRo
-ZSBzb2NrZXQgZGVzY3JpcHRvciBwYXNzaW5nIGluIGEgd2F5IHJlY29tbWVuZGVkCmluIHRoZSBg
-Y21zZygzKWAgbWFudWFsIHBhZ2UuCgpSZWY6IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL3Bp
-cGVybWFpbC9vcGVud3J0LWRldmVsLzIwMTktRGVjZW1iZXIvMDIwODQwLmh0bWwKRml4ZXM6IDVk
-N2NhODMwOWQwYSAoInVidXNkL2xpYnVidXMtaW86IGZpeCB2YXJpYWJsZSBzaXplZCBzdHJ1Y3Qg
-cG9zaXRpb24gd2FybmluZyIpClJlcG9ydGVkLWJ5OiBIYW5udSBOeW1hbiA8aGFubnUubnltYW5A
-d2VsaG8uY29tPgpTaWduZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6Pgot
-LS0KCiBjaGFuZ2VzIHNpbmNlIHYxOgoKICAtIHJlbW92ZWQgdW5uZWNlc3NhcnkgcmVuYW1lIG9m
-IHRoZSBgbXNnaGRyYCB2YXJpYWJsZSB0byBuZXcgYG1zZ2AgbmFtZQoKIGxpYnVidXMtaW8uYyB8
-IDgwICsrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0K
-IHVidXNkLmMgICAgICB8IDM1ICsrKysrKysrKysrKy0tLS0tLS0tLS0tCiB1YnVzZF9tYWluLmMg
-fCA0MSArKysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0KIDMgZmlsZXMgY2hhbmdlZCwgODMgaW5z
-ZXJ0aW9ucygrKSwgNzMgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvbGlidWJ1cy1pby5jIGIv
-bGlidWJ1cy1pby5jCmluZGV4IGJhMTAxNmQwZmEwOS4uMzU2MWFjNDYyZWI5IDEwMDY0NAotLS0g
-YS9saWJ1YnVzLWlvLmMKKysrIGIvbGlidWJ1cy1pby5jCkBAIC01OSwyMyArNTksMjQgQEAgc3Rh
-dGljIHZvaWQgd2FpdF9kYXRhKGludCBmZCwgYm9vbCB3cml0ZSkKIAogc3RhdGljIGludCB3cml0
-ZXZfcmV0cnkoaW50IGZkLCBzdHJ1Y3QgaW92ZWMgKmlvdiwgaW50IGlvdl9sZW4sIGludCBzb2Nr
-X2ZkKQogewotCXN0YXRpYyBzdHJ1Y3QgewotCQlpbnQgZmQ7Ci0JCXN0cnVjdCBjbXNnaGRyIGg7
-Ci0JfSBmZF9idWYgPSB7Ci0JCS5oID0gewotCQkJLmNtc2dfbGVuID0gc2l6ZW9mKGZkX2J1Ziks
-Ci0JCQkuY21zZ19sZXZlbCA9IFNPTF9TT0NLRVQsCi0JCQkuY21zZ190eXBlID0gU0NNX1JJR0hU
-UywKLQkJfQotCX07Ci0Jc3RydWN0IG1zZ2hkciBtc2doZHIgPSB7Ci0JCS5tc2dfaW92ID0gaW92
-LAotCQkubXNnX2lvdmxlbiA9IGlvdl9sZW4sCi0JCS5tc2dfY29udHJvbCA9ICZmZF9idWYsCi0J
-CS5tc2dfY29udHJvbGxlbiA9IHNpemVvZihmZF9idWYpLAotCX07CisJdWludDhfdCBmZF9idWZb
-Q01TR19TUEFDRShzaXplb2YoaW50KSldID0geyAwIH07CisJc3RydWN0IG1zZ2hkciBtc2doZHIg
-PSB7IDAgfTsKKwlzdHJ1Y3QgY21zZ2hkciAqY21zZzsKIAlpbnQgbGVuID0gMDsKKwlpbnQgKnBm
-ZDsKKworCW1zZ2hkci5tc2dfaW92ID0gaW92LAorCW1zZ2hkci5tc2dfaW92bGVuID0gaW92X2xl
-biwKKwltc2doZHIubXNnX2NvbnRyb2wgPSBmZF9idWY7CisJbXNnaGRyLm1zZ19jb250cm9sbGVu
-ID0gc2l6ZW9mKGZkX2J1Zik7CisKKwljbXNnID0gQ01TR19GSVJTVEhEUigmbXNnaGRyKTsKKwlj
-bXNnLT5jbXNnX3R5cGUgPSBTQ01fUklHSFRTOworCWNtc2ctPmNtc2dfbGV2ZWwgPSBTT0xfU09D
-S0VUOworCWNtc2ctPmNtc2dfbGVuID0gQ01TR19MRU4oc2l6ZW9mKGludCkpOworCisJcGZkID0g
-KGludCAqKSBDTVNHX0RBVEEoY21zZyk7CisJbXNnaGRyLm1zZ19jb250cm9sbGVuID0gY21zZy0+
-Y21zZ19sZW47CiAKIAlkbyB7CiAJCXNzaXplX3QgY3VyX2xlbjsKQEAgLTg0LDcgKzg1LDcgQEAg
-c3RhdGljIGludCB3cml0ZXZfcmV0cnkoaW50IGZkLCBzdHJ1Y3QgaW92ZWMgKmlvdiwgaW50IGlv
-dl9sZW4sIGludCBzb2NrX2ZkKQogCQkJbXNnaGRyLm1zZ19jb250cm9sID0gTlVMTDsKIAkJCW1z
-Z2hkci5tc2dfY29udHJvbGxlbiA9IDA7CiAJCX0gZWxzZSB7Ci0JCQlmZF9idWYuZmQgPSBzb2Nr
-X2ZkOworCQkJKnBmZCA9IHNvY2tfZmQ7CiAJCX0KIAogCQljdXJfbGVuID0gc2VuZG1zZyhmZCwg
-Jm1zZ2hkciwgMCk7CkBAIC0xNTYsMzMgKzE1NywzOCBAQCBpbnQgX19oaWRkZW4gdWJ1c19zZW5k
-X21zZyhzdHJ1Y3QgdWJ1c19jb250ZXh0ICpjdHgsIHVpbnQzMl90IHNlcSwKIAogc3RhdGljIGlu
-dCByZWN2X3JldHJ5KHN0cnVjdCB1YnVzX2NvbnRleHQgKmN0eCwgc3RydWN0IGlvdmVjICppb3Ys
-IGJvb2wgd2FpdCwgaW50ICpyZWN2X2ZkKQogewotCWludCBieXRlcywgdG90YWwgPSAwOwotCWlu
-dCBmZCA9IGN0eC0+c29jay5mZDsKLQlzdGF0aWMgc3RydWN0IHsKLQkJaW50IGZkOwotCQlzdHJ1
-Y3QgY21zZ2hkciBoOwotCX0gZmRfYnVmID0gewotCQkuaCA9IHsKLQkJCS5jbXNnX3R5cGUgPSBT
-Q01fUklHSFRTLAotCQkJLmNtc2dfbGV2ZWwgPSBTT0xfU09DS0VULAotCQkJLmNtc2dfbGVuID0g
-c2l6ZW9mKGZkX2J1ZiksCi0JCX0sCi0JfTsKLQlzdHJ1Y3QgbXNnaGRyIG1zZ2hkciA9IHsKLQkJ
-Lm1zZ19pb3YgPSBpb3YsCi0JCS5tc2dfaW92bGVuID0gMSwKLQl9OworCXVpbnQ4X3QgZmRfYnVm
-W0NNU0dfU1BBQ0Uoc2l6ZW9mKGludCkpXSA9IHsgMCB9OworCXN0cnVjdCBtc2doZHIgbXNnaGRy
-ID0geyAwIH07CisJc3RydWN0IGNtc2doZHIgKmNtc2c7CisJaW50IHRvdGFsID0gMDsKKwlpbnQg
-Ynl0ZXM7CisJaW50ICpwZmQ7CisJaW50IGZkOworCisJZmQgPSBjdHgtPnNvY2suZmQ7CisKKwlt
-c2doZHIubXNnX2lvdiA9IGlvdiwKKwltc2doZHIubXNnX2lvdmxlbiA9IDEsCisJbXNnaGRyLm1z
-Z19jb250cm9sID0gZmRfYnVmOworCW1zZ2hkci5tc2dfY29udHJvbGxlbiA9IHNpemVvZihmZF9i
-dWYpOworCisJY21zZyA9IENNU0dfRklSU1RIRFIoJm1zZ2hkcik7CisJY21zZy0+Y21zZ190eXBl
-ID0gU0NNX1JJR0hUUzsKKwljbXNnLT5jbXNnX2xldmVsID0gU09MX1NPQ0tFVDsKKwljbXNnLT5j
-bXNnX2xlbiA9IENNU0dfTEVOKHNpemVvZihpbnQpKTsKKworCXBmZCA9IChpbnQgKikgQ01TR19E
-QVRBKGNtc2cpOwogCiAJd2hpbGUgKGlvdi0+aW92X2xlbiA+IDApIHsKIAkJaWYgKHJlY3ZfZmQp
-IHsKLQkJCW1zZ2hkci5tc2dfY29udHJvbCA9ICZmZF9idWY7Ci0JCQltc2doZHIubXNnX2NvbnRy
-b2xsZW4gPSBzaXplb2YoZmRfYnVmKTsKKwkJCW1zZ2hkci5tc2dfY29udHJvbCA9IGZkX2J1ZjsK
-KwkJCW1zZ2hkci5tc2dfY29udHJvbGxlbiA9IGNtc2ctPmNtc2dfbGVuOwogCQl9IGVsc2Ugewog
-CQkJbXNnaGRyLm1zZ19jb250cm9sID0gTlVMTDsKIAkJCW1zZ2hkci5tc2dfY29udHJvbGxlbiA9
-IDA7CiAJCX0KIAotCQlmZF9idWYuZmQgPSAtMTsKKwkJKnBmZCA9IC0xOwogCQlieXRlcyA9IHJl
-Y3Ztc2coZmQsICZtc2doZHIsIDApOwogCQlpZiAoIWJ5dGVzKQogCQkJcmV0dXJuIC0xOwpAQCAt
-MTk5LDcgKzIwNSw3IEBAIHN0YXRpYyBpbnQgcmVjdl9yZXRyeShzdHJ1Y3QgdWJ1c19jb250ZXh0
-ICpjdHgsIHN0cnVjdCBpb3ZlYyAqaW92LCBib29sIHdhaXQsIGluCiAJCQlyZXR1cm4gMDsKIAog
-CQlpZiAocmVjdl9mZCkKLQkJCSpyZWN2X2ZkID0gZmRfYnVmLmZkOworCQkJKnJlY3ZfZmQgPSAq
-cGZkOwogCiAJCXJlY3ZfZmQgPSBOVUxMOwogCmRpZmYgLS1naXQgYS91YnVzZC5jIGIvdWJ1c2Qu
-YwppbmRleCAwZDQzOTc3YzBiZGUuLjU5OTM2NTM3ODVlMCAxMDA2NDQKLS0tIGEvdWJ1c2QuYwor
-KysgYi91YnVzZC5jCkBAIC04MiwyNyArODIsMjggQEAgdm9pZCB1YnVzX21zZ19mcmVlKHN0cnVj
-dCB1YnVzX21zZ19idWYgKnViKQogCiBzc2l6ZV90IHVidXNfbXNnX3dyaXRldihpbnQgZmQsIHN0
-cnVjdCB1YnVzX21zZ19idWYgKnViLCBzaXplX3Qgb2Zmc2V0KQogeworCXVpbnQ4X3QgZmRfYnVm
-W0NNU0dfU1BBQ0Uoc2l6ZW9mKGludCkpXSA9IHsgMCB9OwogCXN0YXRpYyBzdHJ1Y3QgaW92ZWMg
-aW92WzJdOwotCXN0YXRpYyBzdHJ1Y3QgewotCQlpbnQgZmQ7Ci0JCXN0cnVjdCBjbXNnaGRyIGg7
-Ci0JfSBmZF9idWYgPSB7Ci0JCS5oID0gewotCQkJLmNtc2dfbGVuID0gc2l6ZW9mKGZkX2J1Ziks
-Ci0JCQkuY21zZ19sZXZlbCA9IFNPTF9TT0NLRVQsCi0JCQkuY21zZ190eXBlID0gU0NNX1JJR0hU
-UywKLQkJfSwKLQl9OwotCXN0cnVjdCBtc2doZHIgbXNnaGRyID0gewotCQkubXNnX2lvdiA9IGlv
-diwKLQkJLm1zZ19pb3ZsZW4gPSBBUlJBWV9TSVpFKGlvdiksCi0JCS5tc2dfY29udHJvbCA9ICZm
-ZF9idWYsCi0JCS5tc2dfY29udHJvbGxlbiA9IHNpemVvZihmZF9idWYpLAotCX07CisJc3RydWN0
-IG1zZ2hkciBtc2doZHIgPSB7IDAgfTsKIAlzdHJ1Y3QgdWJ1c19tc2doZHIgaGRyOworCXN0cnVj
-dCBjbXNnaGRyICpjbXNnOwogCXNzaXplX3QgcmV0OworCWludCAqcGZkOwogCi0JZmRfYnVmLmZk
-ID0gdWItPmZkOworCW1zZ2hkci5tc2dfaW92ID0gaW92OworCW1zZ2hkci5tc2dfaW92bGVuID0g
-QVJSQVlfU0laRShpb3YpOworCW1zZ2hkci5tc2dfY29udHJvbCA9IGZkX2J1ZjsKKwltc2doZHIu
-bXNnX2NvbnRyb2xsZW4gPSBzaXplb2YoZmRfYnVmKTsKKworCWNtc2cgPSBDTVNHX0ZJUlNUSERS
-KCZtc2doZHIpOworCWNtc2ctPmNtc2dfdHlwZSA9IFNDTV9SSUdIVFM7CisJY21zZy0+Y21zZ19s
-ZXZlbCA9IFNPTF9TT0NLRVQ7CisJY21zZy0+Y21zZ19sZW4gPSBDTVNHX0xFTihzaXplb2YoaW50
-KSk7CisKKwlwZmQgPSAoaW50ICopIENNU0dfREFUQShjbXNnKTsKKwltc2doZHIubXNnX2NvbnRy
-b2xsZW4gPSBjbXNnLT5jbXNnX2xlbjsKKworCSpwZmQgPSB1Yi0+ZmQ7CiAJaWYgKHViLT5mZCA8
-IDAgfHwgb2Zmc2V0KSB7CiAJCW1zZ2hkci5tc2dfY29udHJvbCA9IE5VTEw7CiAJCW1zZ2hkci5t
-c2dfY29udHJvbGxlbiA9IDA7CmRpZmYgLS1naXQgYS91YnVzZF9tYWluLmMgYi91YnVzZF9tYWlu
-LmMKaW5kZXggODE4NjhjMTQ4MmJjLi5mOTc3ZmYzMGQxMmQgMTAwNjQ0Ci0tLSBhL3VidXNkX21h
-aW4uYworKysgYi91YnVzZF9tYWluLmMKQEAgLTUwLDIyICs1MCwyNSBAQCBzdGF0aWMgdm9pZCBo
-YW5kbGVfY2xpZW50X2Rpc2Nvbm5lY3Qoc3RydWN0IHVidXNfY2xpZW50ICpjbCkKIHN0YXRpYyB2
-b2lkIGNsaWVudF9jYihzdHJ1Y3QgdWxvb3BfZmQgKnNvY2ssIHVuc2lnbmVkIGludCBldmVudHMp
-CiB7CiAJc3RydWN0IHVidXNfY2xpZW50ICpjbCA9IGNvbnRhaW5lcl9vZihzb2NrLCBzdHJ1Y3Qg
-dWJ1c19jbGllbnQsIHNvY2spOworCXVpbnQ4X3QgZmRfYnVmW0NNU0dfU1BBQ0Uoc2l6ZW9mKGlu
-dCkpXSA9IHsgMCB9OworCXN0cnVjdCBtc2doZHIgbXNnaGRyID0geyAwIH07CiAJc3RydWN0IHVi
-dXNfbXNnX2J1ZiAqdWI7CiAJc3RhdGljIHN0cnVjdCBpb3ZlYyBpb3Y7Ci0Jc3RhdGljIHN0cnVj
-dCB7Ci0JCWludCBmZDsKLQkJc3RydWN0IGNtc2doZHIgaDsKLQl9IGZkX2J1ZiA9IHsKLQkJLmgg
-PSB7Ci0JCQkuY21zZ190eXBlID0gU0NNX1JJR0hUUywKLQkJCS5jbXNnX2xldmVsID0gU09MX1NP
-Q0tFVCwKLQkJCS5jbXNnX2xlbiA9IHNpemVvZihmZF9idWYpLAotCQl9Ci0JfTsKLQlzdHJ1Y3Qg
-bXNnaGRyIG1zZ2hkciA9IHsKLQkJLm1zZ19pb3YgPSAmaW92LAotCQkubXNnX2lvdmxlbiA9IDEs
-Ci0JfTsKKwlzdHJ1Y3QgY21zZ2hkciAqY21zZzsKKwlpbnQgKnBmZDsKKworCW1zZ2hkci5tc2df
-aW92ID0gJmlvdiwKKwltc2doZHIubXNnX2lvdmxlbiA9IDEsCisJbXNnaGRyLm1zZ19jb250cm9s
-ID0gZmRfYnVmOworCW1zZ2hkci5tc2dfY29udHJvbGxlbiA9IHNpemVvZihmZF9idWYpOworCisJ
-Y21zZyA9IENNU0dfRklSU1RIRFIoJm1zZ2hkcik7CisJY21zZy0+Y21zZ190eXBlID0gU0NNX1JJ
-R0hUUzsKKwljbXNnLT5jbXNnX2xldmVsID0gU09MX1NPQ0tFVDsKKwljbXNnLT5jbXNnX2xlbiA9
-IENNU0dfTEVOKHNpemVvZihpbnQpKTsKKworCXBmZCA9IChpbnQgKikgQ01TR19EQVRBKGNtc2cp
-OworCW1zZ2hkci5tc2dfY29udHJvbGxlbiA9IGNtc2ctPmNtc2dfbGVuOwogCiAJLyogZmlyc3Qg
-dHJ5IHRvIHR4IG1vcmUgcGVuZGluZyBkYXRhICovCiAJd2hpbGUgKCh1YiA9IHVidXNfbXNnX2hl
-YWQoY2wpKSkgewpAQCAtMTAwLDE0ICsxMDMsMTQgQEAgcmV0cnk6CiAJCWludCBvZmZzZXQgPSBj
-bC0+cGVuZGluZ19tc2dfb2Zmc2V0OwogCQlpbnQgYnl0ZXM7CiAKLQkJZmRfYnVmLmZkID0gLTE7
-CisJCSpwZmQgPSAtMTsKIAogCQlpb3YuaW92X2Jhc2UgPSAoKGNoYXIgKikgJmNsLT5oZHJidWYp
-ICsgb2Zmc2V0OwogCQlpb3YuaW92X2xlbiA9IHNpemVvZihjbC0+aGRyYnVmKSAtIG9mZnNldDsK
-IAogCQlpZiAoY2wtPnBlbmRpbmdfbXNnX2ZkIDwgMCkgewotCQkJbXNnaGRyLm1zZ19jb250cm9s
-ID0gJmZkX2J1ZjsKLQkJCW1zZ2hkci5tc2dfY29udHJvbGxlbiA9IHNpemVvZihmZF9idWYpOwor
-CQkJbXNnaGRyLm1zZ19jb250cm9sID0gZmRfYnVmOworCQkJbXNnaGRyLm1zZ19jb250cm9sbGVu
-ID0gY21zZy0+Y21zZ19sZW47CiAJCX0gZWxzZSB7CiAJCQltc2doZHIubXNnX2NvbnRyb2wgPSBO
-VUxMOwogCQkJbXNnaGRyLm1zZ19jb250cm9sbGVuID0gMDsKQEAgLTExNyw4ICsxMjAsOCBAQCBy
-ZXRyeToKIAkJaWYgKGJ5dGVzIDwgMCkKIAkJCWdvdG8gb3V0OwogCi0JCWlmIChmZF9idWYuZmQg
-Pj0gMCkKLQkJCWNsLT5wZW5kaW5nX21zZ19mZCA9IGZkX2J1Zi5mZDsKKwkJaWYgKCpwZmQgPj0g
-MCkKKwkJCWNsLT5wZW5kaW5nX21zZ19mZCA9ICpwZmQ7CiAKIAkJY2wtPnBlbmRpbmdfbXNnX29m
-ZnNldCArPSBieXRlczsKIAkJaWYgKGNsLT5wZW5kaW5nX21zZ19vZmZzZXQgPCAoaW50KSBzaXpl
-b2YoY2wtPmhkcmJ1ZikpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9w
-ZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVu
-d3J0LWRldmVsCg==
+As announced on the mailing list, WireGuard will be in Linux 5.6. As a
+result, the wg(8) tool, used by OpenWRT in the same manner as ip(8), is
+moving to its own wireguard-tools repo. Meanwhile, the out-of-tree
+kernel module for kernels 3.10 - 5.5 moved to its own wireguard-linux-
+compat repo. Yesterday, releases were cut out of these repos, so this
+commit bumps packages to match. Since wg(8) and the compat kernel module
+are versioned and released separately, we create a wireguard-tools
+Makefile to contain the source for the new tools repo. Later, when
+OpenWRT moves permanently to Linux 5.6, we'll drop the original module
+package, leaving only the tools. So this commit shuffles the build
+definition around a bit but is basically the same idea as before.
+
+Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
+---
+ package/network/services/wireguard/Makefile   | 41 +++-----------
+ .../network/utils/wireguard-tools/Makefile    | 54 +++++++++++++++++++
+ .../wireguard-tools}/files/wireguard.sh       |  0
+ .../wireguard-tools}/files/wireguard_watchdog |  0
+ 4 files changed, 61 insertions(+), 34 deletions(-)
+ create mode 100644 package/network/utils/wireguard-tools/Makefile
+ rename package/network/{services/wireguard => utils/wireguard-tools}/files/wireguard.sh (100%)
+ rename package/network/{services/wireguard => utils/wireguard-tools}/files/wireguard_watchdog (100%)
+
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index 2849361733..c379b712dd 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (C) 2016-2018 Jason A. Donenfeld <Jason@zx2c4.com>
++# Copyright (C) 2016-2019 Jason A. Donenfeld <Jason@zx2c4.com>
+ # Copyright (C) 2016 Baptiste Jonglez <openwrt@bitsofnetworks.org>
+ # Copyright (C) 2016-2017 Dan Luedtke <mail@danrl.com>
+ #
+@@ -11,17 +11,17 @@ include $(INCLUDE_DIR)/kernel.mk
+ 
+ PKG_NAME:=wireguard
+ 
+-PKG_VERSION:=0.0.20191219
++PKG_VERSION:=0.0.20191226
+ PKG_RELEASE:=1
+ 
+-PKG_SOURCE:=WireGuard-$(PKG_VERSION).tar.xz
+-PKG_SOURCE_URL:=https://git.zx2c4.com/WireGuard/snapshot/
+-PKG_HASH:=5aba6f0c38e97faa0b155623ba594bb0e4bd5e29deacd8d5ed8bda8d8283b0e7
++PKG_SOURCE:=wireguard-linux-compat-$(PKG_VERSION).tar.xz
++PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-linux-compat/snapshot/
++PKG_HASH:=7c0e576459c6337bcdea692bdbec561719a15da207dc739e0e3e60ff821a5491
+ 
+-PKG_LICENSE:=GPL-2.0 Apache-2.0
++PKG_LICENSE:=GPL-2.0
+ PKG_LICENSE_FILES:=COPYING
+ 
+-PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/WireGuard-$(PKG_VERSION)
++PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/wireguard-linux-compat-$(PKG_VERSION)
+ PKG_BUILD_PARALLEL:=1
+ PKG_USE_MIPS16:=0
+ 
+@@ -56,13 +56,8 @@ endef
+ include $(INCLUDE_DIR)/kernel-defaults.mk
+ include $(INCLUDE_DIR)/package-defaults.mk
+ 
+-# Used by Build/Compile/Default
+-MAKE_PATH:=src/tools
+-MAKE_VARS += PLATFORM=linux
+-
+ define Build/Compile
+ 	$(MAKE) $(KERNEL_MAKEOPTS) M="$(PKG_BUILD_DIR)/src" modules
+-	$(call Build/Compile/Default)
+ endef
+ 
+ define Package/wireguard/install
+@@ -73,27 +68,6 @@ define Package/wireguard/description
+   $(call Package/wireguard/Default/description)
+ endef
+ 
+-define Package/wireguard-tools
+-  $(call Package/wireguard/Default)
+-  TITLE:=WireGuard userspace control program (wg)
+-  DEPENDS:=+libmnl +ip
+-endef
+-
+-define Package/wireguard-tools/description
+-  $(call Package/wireguard/Default/description)
+-
+-  This package provides the userspace control program for WireGuard,
+-  `wg(8)`, a netifd protocol helper, and a re-resolve watchdog script.
+-endef
+-
+-define Package/wireguard-tools/install
+-	$(INSTALL_DIR) $(1)/usr/bin/
+-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/tools/wg $(1)/usr/bin/
+-	$(INSTALL_BIN) ./files/wireguard_watchdog $(1)/usr/bin/
+-	$(INSTALL_DIR) $(1)/lib/netifd/proto/
+-	$(INSTALL_BIN) ./files/wireguard.sh $(1)/lib/netifd/proto/
+-endef
+-
+ define KernelPackage/wireguard
+   SECTION:=kernel
+   CATEGORY:=Kernel modules
+@@ -111,5 +85,4 @@ define KernelPackage/wireguard/description
+ endef
+ 
+ $(eval $(call BuildPackage,wireguard))
+-$(eval $(call BuildPackage,wireguard-tools))
+ $(eval $(call KernelPackage,wireguard))
+diff --git a/package/network/utils/wireguard-tools/Makefile b/package/network/utils/wireguard-tools/Makefile
+new file mode 100644
+index 0000000000..2f6d307094
+--- /dev/null
++++ b/package/network/utils/wireguard-tools/Makefile
+@@ -0,0 +1,54 @@
++#
++# Copyright (C) 2016-2019 Jason A. Donenfeld <Jason@zx2c4.com>
++# Copyright (C) 2016 Baptiste Jonglez <openwrt@bitsofnetworks.org>
++# Copyright (C) 2016-2017 Dan Luedtke <mail@danrl.com>
++#
++# This is free software, licensed under the GNU General Public License v2.
++# See /LICENSE for more information.
++
++include $(TOPDIR)/rules.mk
++include $(INCLUDE_DIR)/kernel.mk
++
++PKG_NAME:=wireguard-tools
++
++PKG_VERSION:=1.0.20191226
++PKG_RELEASE:=1
++
++PKG_SOURCE:=wireguard-tools-$(PKG_VERSION).tar.xz
++PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-tools/snapshot/
++PKG_HASH:=aa8af0fdc9872d369d8c890a84dbc2a2466b55795dccd5b47721b2d97644b04f
++
++PKG_LICENSE:=GPL-2.0
++PKG_LICENSE_FILES:=COPYING
++
++PKG_BUILD_PARALLEL:=1
++PKG_USE_MIPS16:=0
++
++include $(INCLUDE_DIR)/package.mk
++include $(INCLUDE_DIR)/package-defaults.mk
++
++MAKE_PATH:=src
++MAKE_VARS += PLATFORM=linux
++
++define Package/wireguard-tools
++  $(call Package/wireguard/Default)
++  TITLE:=WireGuard userspace control program (wg)
++  DEPENDS:=+libmnl +ip
++endef
++
++define Package/wireguard-tools/description
++  $(call Package/wireguard/Default/description)
++
++  This package provides the userspace control program for WireGuard,
++  `wg(8)`, a netifd protocol helper, and a re-resolve watchdog script.
++endef
++
++define Package/wireguard-tools/install
++	$(INSTALL_DIR) $(1)/usr/bin/
++	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/wg $(1)/usr/bin/
++	$(INSTALL_BIN) ./files/wireguard_watchdog $(1)/usr/bin/
++	$(INSTALL_DIR) $(1)/lib/netifd/proto/
++	$(INSTALL_BIN) ./files/wireguard.sh $(1)/lib/netifd/proto/
++endef
++
++$(eval $(call BuildPackage,wireguard-tools))
+diff --git a/package/network/services/wireguard/files/wireguard.sh b/package/network/utils/wireguard-tools/files/wireguard.sh
+similarity index 100%
+rename from package/network/services/wireguard/files/wireguard.sh
+rename to package/network/utils/wireguard-tools/files/wireguard.sh
+diff --git a/package/network/services/wireguard/files/wireguard_watchdog b/package/network/utils/wireguard-tools/files/wireguard_watchdog
+similarity index 100%
+rename from package/network/services/wireguard/files/wireguard_watchdog
+rename to package/network/utils/wireguard-tools/files/wireguard_watchdog
+-- 
+2.24.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

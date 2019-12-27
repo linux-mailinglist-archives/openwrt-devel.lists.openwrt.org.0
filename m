@@ -2,66 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3427712B544
-	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 15:45:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67B7412B5A2
+	for <lists+openwrt-devel@lfdr.de>; Fri, 27 Dec 2019 16:31:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Za5Ytm6JfMtIHfYF0Mxw3nA5IFxiM9LrvM6XoH2Oddg=; b=P70rWcvO4Sz4a4poWbtoLD0Z6
-	CjQW5EBE9DPEJlLXNcAb+tm5XUTJG4IAUvA3FP/jh4GjiMa4oWldqNHg+5V1mNWm+lhUa90g/Dfrl
-	tHFJ6ccwO9PnL8qUA0kSmJDd2i5a9O+y1xZ+dZZihZKw77pbdU5YgEJ3XjHWg0rfBexHtwuy2mKwP
-	f85X9z3S2qH4sYSOlNE/+NRQhrz667dEKLZhJywk0PXKDlibskCb5FWKzsHE8ATHDGudu9jLVGX44
-	P1yORn2/HJz/0DItKcrzDtHZeNRvYh8g+o+YJTUQU3izpFNH7IJf/ZBTaJPx4b+CV1omvu/CJSAMB
-	FiHqXZcag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XewxmQ4kehAVD5RYBUr9EOo0Y7UoByI539IScx6RAvE=; b=pZX/iPu3/qesdx
+	bKSTaDjVcivdP0x4t9yqClRA+fmxW52+YoXPCAxPclqfeWBWSPJN7vnBwqOhz+9Wu5tKP0n7FWAHV
+	Cv8zyF+bIe9TdJ8P4zz3jmAIgNAFczM5J729IcvYsxsVoiJeMq7kt+jOTOMTLSjG3Wwm5hAK6zBkp
+	5y1g1UUog4xejGVax8PoS/921VKZD+CbuykcYdKbgRR3IPGbAuMh9JGUUNQBOJRc555Lt9flAGppn
+	OYrmEUN/CsOeY0wxcSwSNMPD2ottribhr5UqwOrmHX0DvDISpb1gvjRpwX/lfs7HCWpF4g4EjQsVo
+	NBy/YZba8aGFJ1Zu6F1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikqrI-0006Av-Uv; Fri, 27 Dec 2019 14:44:57 +0000
-Received: from welho-filter3.welho.com ([83.102.41.25])
+	id 1ikraD-0005U8-Aj; Fri, 27 Dec 2019 15:31:21 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikqr7-0006AP-Po
- for openwrt-devel@lists.openwrt.org; Fri, 27 Dec 2019 14:44:47 +0000
-Received: from localhost (localhost [127.0.0.1])
- by welho-filter3.welho.com (Postfix) with ESMTP id 1623FD0D3;
- Fri, 27 Dec 2019 16:44:40 +0200 (EET)
-X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
-Received: from welho-smtp1.welho.com ([IPv6:::ffff:83.102.41.84])
- by localhost (welho-filter3.welho.com [::ffff:83.102.41.25]) (amavisd-new,
- port 10024)
- with ESMTP id BdW4PTfVTlnl; Fri, 27 Dec 2019 16:44:39 +0200 (EET)
-Received: from [192.168.1.180] (87-100-240-191.bb.dnainternet.fi
- [87.100.240.191])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by welho-smtp1.welho.com (Postfix) with ESMTPS id 616E12A0;
- Fri, 27 Dec 2019 16:44:37 +0200 (EET)
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- openwrt-devel@lists.openwrt.org
-References: <20191227141519.15626-1-ynezz@true.cz>
-From: Hannu Nyman <hannu.nyman@welho.com>
-Message-ID: <e6cf33a5-4716-290a-bb88-79fe8b3919a2@welho.com>
-Date: Fri, 27 Dec 2019 16:44:39 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101
- Thunderbird/72.0
+ id 1ikra2-0005Te-1t
+ for openwrt-devel@lists.openwrt.org; Fri, 27 Dec 2019 15:31:12 +0000
+Received: by mail-qk1-x743.google.com with SMTP id w127so21721782qkb.11
+ for <openwrt-devel@lists.openwrt.org>; Fri, 27 Dec 2019 07:31:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ENh/qk0Aoe598Ufym230kVYZ+bzs+SOGfKTee+N//N8=;
+ b=Lm45dm1yhwzIaYKnuVPNB7XQxq7ARiLfOqiFv/qlDZX1onmQznZbS2Drs8bs72eSlC
+ ISMAdAfMeNY87hQelspjKJ//zk0L+m3nYGhoCLAR41ddRP5qdW8NdXMm/8ClnlufZm9t
+ x/skqIzEWE9WC4yAQK71UmSwZiU6kl9PJZsNDNP+Dxftlv9HGStgNqNAyR/a6+EQLReT
+ Q0wk+lYFTeIWApY6w0V/pfTHRtzF68eqd+7jnDHSL4nkT2THW1mQLS7wce3vKc9afVTV
+ ZULQ/CgVdHbD87IXd8ZUllM8tnvkg/9eU3Q0nHczcg48KB39IlwMY8Rx7z+0vAVp33ri
+ Zn/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ENh/qk0Aoe598Ufym230kVYZ+bzs+SOGfKTee+N//N8=;
+ b=QKabq8mKKzKnikkWOqTJC8Ly2CDMKebOUKFukOHf9ZwCoHli9d0e48wpDZ0tOjgohG
+ piMxPSpx4mw2yHLZ/OfmxM/S5qksUrB5RBebMr5n4jQvWdiYAVh0pN+yTvDSYLtgj42S
+ tCzL3K6cJ/IdKRAEy6VrAJQndewLpxLHbKb4/TT5kNQ1GHRjLJeiA+Xeg9DStC9BOjo7
+ N1ESVHxtw6QbhmqL2vfzrbbDzhD2tl5FsN75UuZFoj2Rvh/j8GOkdXIIAcbGmlZvoIw1
+ hMdc43XGheCcOvGg0roITH6WS8NWDD/tA8HkRiuPghcqTyPjcvVZo+NtKlzKMGSQ9ptd
+ rbRQ==
+X-Gm-Message-State: APjAAAWJSH4qR/NnZebnxwOOvAfQdbYLBLoDJHAoTO46ZVO2J6/kX4aw
+ 7gI25n034/IW3gUwUOesvVMS7EK02rsgGha5v6s=
+X-Google-Smtp-Source: APXvYqyrjWDw8ub9n+Is8ZXqmLD6ZrdVKH7Mg8ri3W8A8DqG5iQ+zwesJvgVjnnpQy4gtWd6bnMhhbguX1DmN0AO2Pg=
+X-Received: by 2002:a37:4f8d:: with SMTP id
+ d135mr44658758qkb.455.1577460668177; 
+ Fri, 27 Dec 2019 07:31:08 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191227141519.15626-1-ynezz@true.cz>
+References: <20191022090743.1487-1-G.M0N3Y.2503@gmail.com>
+ <CAKycSdBphp4zdRNM2xkMhSWawQDa5=703q_FN3+4_XvPJJXGLA@mail.gmail.com>
+In-Reply-To: <CAKycSdBphp4zdRNM2xkMhSWawQDa5=703q_FN3+4_XvPJJXGLA@mail.gmail.com>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Fri, 27 Dec 2019 16:30:57 +0100
+Message-ID: <CAJLcKsFUuH73vqSF-E-KQ8E=FW6fQ3e0xp60oXnKE1wiha3jqw@mail.gmail.com>
+To: Gerard Ryan <g.m0n3y.2503@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_064446_003382_9722E4AB 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191227_073110_097318_F8F3DFCB 
+X-CRM114-Status: GOOD (  23.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [83.102.41.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 ubus] ubusd/libubus-io: fix socket
- descriptor passing
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dedeckeh[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [OpenWrt-Devel, V3,
+ 2/2] kmodloader: added -a arg to modprobe
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,33 +94,178 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: hannu.nyman@iki.fi
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGV0ciDFoHRldGlhciBraXJqb2l0dGkgMjcuMTIuMjAxOSBrbG8gMTYuMTU6Cj4gSW4gY29tbWl0
-IDVkN2NhODMwOWQwYSAoInVidXNkL2xpYnVidXMtaW86IGZpeCB2YXJpYWJsZSBzaXplZCBzdHJ1
-Y3QKPiBwb3NpdGlvbiB3YXJuaW5nIikgdGhlIHBvc2l0aW9uIG9mIGNtc2doZHIgc3RydWN0IGhh
-cyBiZWVuIGNoYW5nZWQgaW4KPiBvcmRlciB0byBmaXggY2xhbmctOSBjb21waWxlciB3YXJuaW5n
-LCBidXQgaXQgaGFzIGludHJvZHVjZWQgcmVncmVzc2lvbgo+IGluIGF0IGxlYXN0IGBsb2dyZWFk
-YCB3aGljaCBoYW5nZWQgaW5kZWZpbml0ZWx5Lgo+Cj4gU28gdGhpcyBwYXRjaCByZXdvcmtzIHRo
-ZSBzb2NrZXQgZGVzY3JpcHRvciBwYXNzaW5nIGluIGEgd2F5IHJlY29tbWVuZGVkCj4gaW4gdGhl
-IGBjbXNnKDMpYCBtYW51YWwgcGFnZS4KPgo+IFJlZjogaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvcGlwZXJtYWlsL29wZW53cnQtZGV2ZWwvMjAxOS1EZWNlbWJlci8wMjA4NDAuaHRtbAo+IEZp
-eGVzOiA1ZDdjYTgzMDlkMGEgKCJ1YnVzZC9saWJ1YnVzLWlvOiBmaXggdmFyaWFibGUgc2l6ZWQg
-c3RydWN0IHBvc2l0aW9uIHdhcm5pbmciKQo+IFJlcG9ydGVkLWJ5OiBIYW5udSBOeW1hbiA8aGFu
-bnUubnltYW5Ad2VsaG8uY29tPgo+IFNpZ25lZC1vZmYtYnk6IFBldHIgxaB0ZXRpYXIgPHluZXp6
-QHRydWUuY3o+Cj4gLS0tCgpUaGF0IHNlZW1zIHRvIHRha2UgY2FyZSBvZiB0aGUgbG9ncmVhZCBw
-cm9ibGVtLiBUaGFua3MuCgpCdXQgbmVpdGhlciBjb2xsZWN0ZCBub3Qgbmxid21vbiBzdGFydHMu
-IFRoZXkgYXJlIHN0aWxsIGJyb2tlbiB3aXRoIHRoZSAKY3VycmVudCB1YnVzLgoKCkxvb2tpbmcg
-bm93IGF0IHRoZSAoYWdhaW4gd29ya2luZykgc3lzdGVtIGxvZyByZXZlYWxzOgoKcm9vdEByb3V0
-ZXIyOn4jIGxvZ3JlYWQgfCBncmVwIGNvbGxlY3RkCkZyaSBEZWMgMjcgMTY6MjM6MzcgMjAxOSBk
-YWVtb24uaW5mbyBwcm9jZDogTm90IHN0YXJ0aW5nIGluc3RhbmNlIApjb2xsZWN0ZDo6aW5zdGFu
-Y2UxLCBjb21tYW5kIG5vdCBzZXQKcm9vdEByb3V0ZXIyOn4jIGxvZ3JlYWQgfCBncmVwIG5sYndt
-b24KRnJpIERlYyAyNyAxNjoyMzozMyAyMDE5IGRhZW1vbi5pbmZvIHByb2NkOiBOb3Qgc3RhcnRp
-bmcgaW5zdGFuY2UgCm5sYndtb246Omluc3RhbmNlMSwgY29tbWFuZCBub3Qgc2V0CgoKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwg
-bWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0
-cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+On Sat, Dec 21, 2019 at 2:32 AM Gerard Ryan <g.m0n3y.2503@gmail.com> wrote:
+>
+> Does anyone have any tips on how to expedite the review of this patch?
+> Am I missing something or is the patch malformed?
+Patch looks fine; some style comments inline
+
+Hans
+>
+> Thanks in advance,
+> Gerard
+>
+> On Tue, Oct 22, 2019 at 7:08 PM Gerard Ryan <g.m0n3y.2503@gmail.com> wrote:
+> >
+> > -a treats all non-op trailing arguments as module names
+> > and attempts to load all of them. This behaviour mirrors the behaviour
+> > of the respective -a in /tools/modprobe.c from https://git.kernel.org.
+> >
+> > This is primarily to satiate the multiple modules passed by
+> > docker/libnetwork.
+> >
+> > Signed-off-by: Gerard Ryan <G.M0N3Y.2503@gmail.com>
+> > ---
+> > Compile tested: x86_x64, Hyper-V, OpenWrt Master
+> > Run tested: x86_x64, Hyper-V, OpenWrt Master
+> >
+> > You can also find this patch on GitHub if you prefer.
+> > https://github.com/G-M0N3Y-2503/openwrt-ubox-mirror/tree/feature_extend_modprobe_options
+> >
+> > Since https://patchwork.ozlabs.org/patch/1175792/ I adjusted some whitespace to indent more consistently and split the patch by the args they implement.
+> > Since https://patchwork.ozlabs.org/patch/1179955/ I reworded the commit message to explain the functionality of -a
+> >
+> >  kmodloader.c | 68 +++++++++++++++++++++++++++++-----------------------
+> >  1 file changed, 38 insertions(+), 30 deletions(-)
+> >
+> > diff --git a/kmodloader.c b/kmodloader.c
+> > index 07b6700..838bc8c 100644
+> > --- a/kmodloader.c
+> > +++ b/kmodloader.c
+> > @@ -681,6 +681,7 @@ static int print_modprobe_usage(void)
+> >         ULOG_INFO(
+> >                 "Usage:\n"
+> >                 "\tmodprobe [-q] [-v] filename\n"
+> > +               "\tmodprobe -a [-q] [-v] filename [filename...]\n"
+> >         );
+> >
+> >         return -1;
+> > @@ -854,16 +855,20 @@ static int main_modinfo(int argc, char **argv)
+> >
+> >  static int main_modprobe(int argc, char **argv)
+> >  {
+> > +       int exit_code = EXIT_SUCCESS;
+Group this line with the other int parameter declarations below; for
+alignment with other functions like lsmod and rmmod I prefer to set
+exit_code to 0.
+Another alternative is to change this for all functions but then in a
+separate patch.
+> >         struct module_node *mn;
+> >         struct module *m;
+> > -       char *name;
+> > -       char *mod = NULL;
+> > +       int load_fail;
+> >         int log_level = LOG_WARNING;
+> >         int opt;
+> >         bool quiet = false;
+> > +       bool use_all = false;
+> >
+> > -       while ((opt = getopt(argc, argv, "qv")) != -1 ) {
+> > +       while ((opt = getopt(argc, argv, "aqv")) != -1 ) {
+> >                 switch (opt) {
+> > +                       case 'a':
+> > +                               use_all = true;
+> > +                               break;
+> >                         case 'q': /* shhhh! */
+> >                                 quiet = true;
+> >                                 break;
+> > @@ -882,48 +887,51 @@ static int main_modprobe(int argc, char **argv)
+> >         /* after print_modprobe_usage() so it won't be filtered out */
+> >         ulog_threshold(log_level);
+> >
+> > -       mod = argv[optind];
+> > -
+> >         if (scan_module_folders())
+> >                 return -1;
+> >
+> >         if (scan_loaded_modules())
+> >                 return -1;
+> >
+> > -       name = get_module_name(mod);
+> > -       m = find_module(name);
+> > -       if (m && m->state == LOADED) {
+> > -               if (!quiet)
+> > -                       ULOG_ERR("%s is already loaded\n", name);
+> > -               return 0;
+> > -       } else if (!m) {
+> > -               if (!quiet)
+> > -                       ULOG_ERR("failed to find a module named %s\n", name);
+> > -               return -1;
+> > -       } else {
+> > -               int fail;
+> > +       do {
+> > +               char *name;
+> >
+> > -               m->state = PROBE;
+> > +               name = get_module_name(argv[optind]);
+> > +               m = find_module(name);
+> >
+> > -               fail = load_modprobe(true);
+> > +               if (m && m->state == LOADED) {
+> > +                       if (!quiet)
+> > +                               ULOG_INFO("%s is already loaded\n", name);
+> > +               } else if (!m) {
+> > +                       if (!quiet)
+> > +                               ULOG_ERR("failed to find a module named %s\n", name);
+> > +                       exit_code = EXIT_FAILURE;
+Same as above use -1 for alignment with other functions
+> > +               } else {
+> > +                       m->state = PROBE;
+> > +               }
+> >
+> > -               if (fail) {
+> > -                       ULOG_ERR("%d module%s could not be probed\n",
+> > -                                fail, (fail == 1) ? ("") : ("s"));
+> > +               optind++;
+> > +       } while (use_all && optind < argc);
+> >
+> > -                       avl_for_each_element(&modules, mn, avl) {
+> > -                               if (mn->is_alias)
+> > -                                       continue;
+> > -                               m = mn->m;
+> > -                               if ((m->state == PROBE) || m->error)
+> > -                                       ULOG_ERR("- %s\n", m->name);
+> > -                       }
+> > +       load_fail = load_modprobe(true);
+> > +       if (load_fail) {
+> > +               ULOG_ERR("%d module%s could not be probed\n",
+> > +                        load_fail, (load_fail == 1) ? ("") : ("s"));
+> > +
+> > +               avl_for_each_element(&modules, mn, avl) {
+> > +                       if (mn->is_alias)
+> > +                               continue;
+> > +                       m = mn->m;
+> > +                       if ((m->state == PROBE) || m->error)
+> > +                               ULOG_ERR("- %s\n", m->name);
+> >                 }
+> > +
+> > +               exit_code = EXIT_FAILURE;
+Same as above use -1 for alignment with other functions
+> >         }
+> >
+> >         free_modules();
+> >
+> > -       return 0;
+> > +       return exit_code;
+> >  }
+> >
+> >  static int main_loader(int argc, char **argv)
+> > --
+> > 2.17.1
+> >
+>
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

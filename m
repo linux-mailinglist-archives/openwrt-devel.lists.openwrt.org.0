@@ -2,197 +2,228 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7A3A12D419
-	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Dec 2019 20:44:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27CFB12D4A1
+	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Dec 2019 22:11:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:To:References:Date:In-Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hAOFLy6FXaB7F+PW20oKVQB/jf/UrSUmfyiBmDutcmE=; b=iLCuMuqZei8MJnN5Fpbzs4Vg3
-	KX2Lxh5ZH9HQJ/fGtw6ePezkyfF8ZZ/qNU3KJzGwlKu6ce0EKucDe8xJmBzNopNXy58JXcw9VdvDE
-	cUBPlm1ABQly40IfrkOEpfyU0mijwi83WJOSIqX1TNT02bNZo56siImQiYX+kXQIv0hdFkuVSxTO2
-	1vEBBv0bgWyvaAoqBVdAKE+/rkK3FAVBYVdyP/H+hz0CBmjBksaYr8bY7gbi2p4iUTEibUddXXqcb
-	vi4tEVATBn9rRVzPxCWxfX4rwnlLqPfvxWO1iBARq5wqJamxbv+TAnBGxLBx1xepEHpiqFDKC/xFf
-	ncWiTozZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=57uSyYQ8Z0LVwxR+QQ3j9TdxPjh9IzIzAOB5DwgRXOM=; b=DxZ24ddm+L0gET
+	WjkQAR3VNyOyPAQ6INpc9GIfSTkKJ9/kWBOvnph+wl1rWcNjuWX4PnOrDfiBVQHx21ekjKBtzqBlS
+	1XQbVKwvRvciHMBcpxMVlMtl3+BG7WPlwJQU/w0dSQAWYM4AxcmaluyKLw3++4VL8TSbzPEPL+FgW
+	sMy7be0S3B9Ls2DrMd9+fYjv9PcdwX9qXqsZU9MuWajYb7wh/hxgAvRrqvEZfRkyFL4tMuzHojdS+
+	PfXSZKl/qCsIkZT/bqEpSlechF2ThI3m9/LXdg3Y3z0LMDNLYDG/N/T1oOeOrYh13nudMBomCvD2V
+	NMzROAE1ogkF5rCxHsxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im0xK-0002WI-2g; Mon, 30 Dec 2019 19:43:58 +0000
-In-Reply-To: <20191230190746.GI70184@meh.true.cz>
-Date: Mon, 30 Dec 2019 20:43:36 +0100
-References: <mailman.21094.1577616584.2486.openwrt-devel@lists.openwrt.org>
- <20191229222123.GH70184@meh.true.cz> <20191230190746.GI70184@meh.true.cz>
-To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+	id 1im2JK-0001fL-VC; Mon, 30 Dec 2019 21:10:46 +0000
+Received: from canardo.mork.no ([2001:4641::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1im2JD-0001dz-0U
+ for openwrt-devel@lists.openwrt.org; Mon, 30 Dec 2019 21:10:41 +0000
+Received: from canardo.mork.no (ip6-localhost [IPv6:0:0:0:0:0:0:0:1])
+ by canardo.mork.no (8.15.2/8.15.2) with ESMTPS id xBULAUNt019053
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=OK);
+ Mon, 30 Dec 2019 22:10:30 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
+ t=1577740230; bh=Ft0wCgd9lqJGSq+hj0jGOXS67yChrrnz6J81FDyt17M=;
+ h=From:To:Cc:Subject:Date:Message-Id:From;
+ b=GVOE3XQyVRCf5Hb8P43KT09kqZYYWoel7BhRzzJfUDBqX9KW1qbh3cXt/k8pMaLP8
+ a728JtVupjFUXwi8joCcJQWn4yDh9fuUOiMvS2pGLPZrYxwoiYMmPRVUbyuidNHyL2
+ tU7TIqrxuwUa+U3/JDm75V8XuyUPcP7rpbQfwbBU=
+Received: (from bjorn@localhost)
+ by canardo.mork.no (8.15.2/8.15.2/Submit) id xBULATf3019052;
+ Mon, 30 Dec 2019 22:10:29 +0100
+From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon, 30 Dec 2019 22:10:27 +0100
+Message-Id: <20191230211027.19005-1-bjorn@mork.no>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Message-ID: <mailman.21390.1577735029.2486.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: =?utf-8?q?Petr_Nov=C3=A1k_via_openwrt-devel?=
- <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: Hannu Nyman <hannu.nyman@welho.com>, openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
+X-Spam-Status: No, score=-1.0 required=5.0 tests=ALL_TRUSTED,SHORTCIRCUIT
+ shortcircuit=ham autolearn=disabled version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on canardo.mork.no
+X-Virus-Scanned: clamav-milter 0.101.4 at canardo
+X-Virus-Status: Clean
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191230_131039_585008_D5481A2B 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] ath79: drop obsolete ehci hacks
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: =?utf-8?Q?Petr_Nov=C3=A1k?= <petrn@me.com>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent
- development snapshots: "message": "Firmware image couldn't be validated"
-Content-Type: multipart/mixed; boundary="===============3023402254213717658=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============3023402254213717658==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
-
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============3023402254213717658==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
-
-Received: from mr85p00im-hyfv06011301.me.com ([17.58.23.184])
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im0x9-0002Vs-3I
-	for openwrt-devel@lists.openwrt.org; Mon, 30 Dec 2019 19:43:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=me.com; s=1a1hai;
-	t=1577735020; bh=bGhAfY1sTVUIvUxtSN5Fsgi8r8Kfo19M+qmkYJ9pqRw=;
-	h=Content-Type:Subject:From:Date:Message-Id:To;
-	b=emyKAMrTrlu6WgCUiW9n7yWxCVUgLaCK27rXEAmBrUqxfujffWH6dATTLLlby7klP
-	 Gr1Nafh+sDEm3tZz3CnRibWl+AOVAwnQ/xGt0/Ig8T4G2qy0GMVEukaTZ/fPsmXBHz
-	 oHS3ohgTjDtbSzlnaUvk39WZ8La8Wc5IPmSNpFPNLRy7eHiNr/E0yL4yNdJESJZ4Ix
-	 VpeuZmIV4Hua4ONYvz4yGcQcv+5u5fgJxXIEb4vSE46SxlaYFjTNGW55xKZcxMuzwD
-	 JXYMPymTfXL2ZimdFIR1qGerTfaYmm9I6KSdPqp2j2nolWUV+AlJMvCC4+m9Kt08F7
-	 5KvtPPvAsR9KQ==
-Received: from [192.168.176.103] (89-24-43-124.nat.epc.tmcz.cz [89.24.43.124])
-	by mr85p00im-hyfv06011301.me.com (Postfix) with ESMTPSA id 9EF18580781;
-	Mon, 30 Dec 2019 19:43:38 +0000 (UTC)
-Content-Type: text/plain;
-	charset=utf-8
-Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.40.2.2.4\))
-Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent development
- snapshots: "message": "Firmware image couldn't be validated"
-From: =?utf-8?Q?Petr_Nov=C3=A1k?= <petrn@me.com>
-In-Reply-To: <20191230190746.GI70184@meh.true.cz>
-Date: Mon, 30 Dec 2019 20:43:36 +0100
-Cc: Hannu Nyman <hannu.nyman@welho.com>,
- openwrt-devel@lists.openwrt.org
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <357266D6-1E26-4066-AFE5-746C2407B0DF@me.com>
-References: <mailman.21094.1577616584.2486.openwrt-devel@lists.openwrt.org>
- <20191229222123.GH70184@meh.true.cz> <20191230190746.GI70184@meh.true.cz>
-To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-X-Mailer: Apple Mail (2.3608.40.2.2.4)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2019-12-30_06:,,
- signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 clxscore=1011 mlxscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1908290000 definitions=main-1912300177
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_114347_151915_87E917F3 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
-                             low trust
-                             [17.58.23.184 listed in list.dnswl.org]
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider (petrn[at]me.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-
-Hi Petr,
-
-thanks a lot for the effort. I will do my best to reproduce the issue =
-giving more details, I will post any more details here tomorrow.
-
-PN
-
-> On 30 Dec 2019, at 20:07, Petr =C5=A0tetiar <ynezz@true.cz> wrote:
->=20
-> Petr =C5=A0tetiar <ynezz@true.cz> [2019-12-29 23:21:23]:
->=20
->> So perhaps this is something Cortex-A72 related?
->=20
-> I've just tried it under QEMU 4.2.50 with:
->=20
-> * machine: virt
-> * cpu:     cortex-a72
-> * rootfs:  =
-http://downloads.openwrt.org/snapshots/targets/armvirt/64/openwrt-armvirt-=
-64-rootfs-squashfs.img.gz
->            (OpenWrt SNAPSHOT, r11829-e3e939d8e6)
->=20
-> and the result is same as on x86/64, I'm unable to reproduce the =
-issue:
->=20
-> root@OpenWrt:/# sysupgrade =
-http://downloads.openwrt.org/snapshots/targets/brcm2708/bcm2711/openwrt-br=
-cm2708-bcm2711-rpi-4-squashfs-sysupgrade.img.gz
-> Downloading =
-'http://downloads.openwrt.org/snapshots/targets/brcm2708/bcm2711/openwrt-b=
-rcm2708-bcm2711-rpi-4-squashfs-sysupgrade.img.gz'
-> Connecting to 176.9.48.73:80
-> Writing to '/tmp/sysupgrade.img'
-> /tmp/sysupgrade.img  100% |*******************************| 12067k  =
-0:00:00 ETA
-> Download completed (12357050 bytes)
-> Device linux,dummy-virt not supported by this image
-> Supported devices: raspberrypi,4-model-b
-> Image check failed.
->=20
-> root@OpenWrt:/# echo raspberrypi,4-model-b > /tmp/sysinfo/board_name
->=20
-> root@OpenWrt:/# sysupgrade /tmp/sysupgrade.img=20
-> Saving config files...
-> Commencing upgrade. Closing all shell sessions.
-> killall: telnetd: no process killed
-> Sending TERM to remaining processes ... dnsmasq netifd odhcpd ntpd =
-ubusd urngd logd=20
-> Sending KILL to remaining processes ...=20
-> Switching to ramdisk...
-> ...snip...
->=20
-> So I'm wondering what is going on there.
->=20
-> -- ynezz
-
-
-
---===============3023402254213717658==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3023402254213717658==--
+VGhlcmUncyBub3RoaW5nIGVuYWJsaW5nIHRoZXNlIGhhY2tzIGluIGF0aDc5LCBzbyBkcm9wIHRo
+ZSByZWR1bmRhbnQKcGF0Y2hlcy4KClNpZ25lZC1vZmYtYnk6IEJqw7hybiBNb3JrIDxiam9ybkBt
+b3JrLm5vPgotLS0KIC4uLjQ5MC11c2ItZWhjaS1hZGQtcXVpcmtzLWZvci1xY2Etc29jcy5wYXRj
+aCB8IDEwMyAtLS0tLS0tLS0tLS0tLS0tLS0KIC4uLjQ5MC11c2ItZWhjaS1hZGQtcXVpcmtzLWZv
+ci1xY2Etc29jcy5wYXRjaCB8IDEwMyAtLS0tLS0tLS0tLS0tLS0tLS0KIDIgZmlsZXMgY2hhbmdl
+ZCwgMjA2IGRlbGV0aW9ucygtKQogZGVsZXRlIG1vZGUgMTAwNjQ0IHRhcmdldC9saW51eC9hdGg3
+OS9wYXRjaGVzLTQuMTQvNDkwLXVzYi1laGNpLWFkZC1xdWlya3MtZm9yLXFjYS1zb2NzLnBhdGNo
+CiBkZWxldGUgbW9kZSAxMDA2NDQgdGFyZ2V0L2xpbnV4L2F0aDc5L3BhdGNoZXMtNC4xOS80OTAt
+dXNiLWVoY2ktYWRkLXF1aXJrcy1mb3ItcWNhLXNvY3MucGF0Y2gKCmRpZmYgLS1naXQgYS90YXJn
+ZXQvbGludXgvYXRoNzkvcGF0Y2hlcy00LjE0LzQ5MC11c2ItZWhjaS1hZGQtcXVpcmtzLWZvci1x
+Y2Etc29jcy5wYXRjaCBiL3RhcmdldC9saW51eC9hdGg3OS9wYXRjaGVzLTQuMTQvNDkwLXVzYi1l
+aGNpLWFkZC1xdWlya3MtZm9yLXFjYS1zb2NzLnBhdGNoCmRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0
+NAppbmRleCAxZDE5NzljZDZlYjguLjAwMDAwMDAwMDAwMAotLS0gYS90YXJnZXQvbGludXgvYXRo
+NzkvcGF0Y2hlcy00LjE0LzQ5MC11c2ItZWhjaS1hZGQtcXVpcmtzLWZvci1xY2Etc29jcy5wYXRj
+aAorKysgL2Rldi9udWxsCkBAIC0xLDEwMyArMCwwIEBACi0tLS0gYS9kcml2ZXJzL3VzYi9ob3N0
+L2VoY2ktaGNkLmMKLSsrKyBiL2RyaXZlcnMvdXNiL2hvc3QvZWhjaS1oY2QuYwotQEAgLTI1Miw2
+ICsyNTIsMzcgQEAgaW50IGVoY2lfcmVzZXQoc3RydWN0IGVoY2lfaGNkICplaGNpKQotIAljb21t
+YW5kIHw9IENNRF9SRVNFVDsKLSAJZGJnX2NtZCAoZWhjaSwgInJlc2V0IiwgY29tbWFuZCk7Ci0g
+CWVoY2lfd3JpdGVsKGVoY2ksIGNvbW1hbmQsICZlaGNpLT5yZWdzLT5jb21tYW5kKTsKLSsKLSsJ
+aWYgKGVoY2ktPnFjYV9mb3JjZV9ob3N0X21vZGUpIHsKLSsJCXUzMiB1c2Jtb2RlOwotKwotKwkJ
+dWRlbGF5KDEwMDApOwotKwotKwkJdXNibW9kZSA9IGVoY2lfcmVhZGwoZWhjaSwgJmVoY2ktPnJl
+Z3MtPnVzYm1vZGUpOwotKwkJdXNibW9kZSB8PSBVU0JNT0RFX0NNX0hDIHwgKDEgPDwgNCk7Ci0r
+CQllaGNpX3dyaXRlbChlaGNpLCB1c2Jtb2RlLCAmZWhjaS0+cmVncy0+dXNibW9kZSk7Ci0rCi0r
+CQllaGNpX2RiZyhlaGNpLCAiZm9yY2VkIGhvc3QgbW9kZSwgdXNibW9kZTogJTA4eFxuIiwKLSsJ
+CQkgZWhjaV9yZWFkbChlaGNpLCAmZWhjaS0+cmVncy0+dXNibW9kZSkpOwotKwl9Ci0rCi0rCWlm
+IChlaGNpLT5xY2FfZm9yY2VfMTZiaXRfcHR3KSB7Ci0rCQl1MzIgcG9ydF9zdGF0dXM7Ci0rCi0r
+CQl1ZGVsYXkoMTAwMCk7Ci0rCi0rCQkvKiBlbmFibGUgMTYtYml0IFVUTUkgaW50ZXJmYWNlICov
+Ci0rCQlwb3J0X3N0YXR1cyA9IGVoY2lfcmVhZGwoZWhjaSwgJmVoY2ktPnJlZ3MtPnBvcnRfc3Rh
+dHVzWzBdKTsKLSsJCXBvcnRfc3RhdHVzIHw9IEJJVCgyOCk7Ci0rCQllaGNpX3dyaXRlbChlaGNp
+LCBwb3J0X3N0YXR1cywgJmVoY2ktPnJlZ3MtPnBvcnRfc3RhdHVzWzBdKTsKLSsKLSsJCWVoY2lf
+ZGJnKGVoY2ksICIxNi1iaXQgVVRNSSBpbnRlcmZhY2UgZW5hYmxlZCwgc3RhdHVzOiAlMDh4XG4i
+LAotKwkJCSBlaGNpX3JlYWRsKGVoY2ksICZlaGNpLT5yZWdzLT5wb3J0X3N0YXR1c1swXSkpOwot
+Kwl9Ci0rCi0rCWlmIChlaGNpLT5yZXNldF9ub3RpZmllcikKLSsJCWVoY2ktPnJlc2V0X25vdGlm
+aWVyKGVoY2lfdG9faGNkKGVoY2kpKTsKLSsKLSAJZWhjaS0+cmhfc3RhdGUgPSBFSENJX1JIX0hB
+TFRFRDsKLSAJZWhjaS0+bmV4dF9zdGF0ZWNoYW5nZSA9IGppZmZpZXM7Ci0gCXJldHZhbCA9IGVo
+Y2lfaGFuZHNoYWtlKGVoY2ksICZlaGNpLT5yZWdzLT5jb21tYW5kLAotLS0tIGEvZHJpdmVycy91
+c2IvaG9zdC9laGNpLmgKLSsrKyBiL2RyaXZlcnMvdXNiL2hvc3QvZWhjaS5oCi1AQCAtMjMyLDYg
+KzIzMiwxMCBAQCBzdHJ1Y3QgZWhjaV9oY2QgewkJCS8qIG9uZSBwZXIgY29udHJvbGxlCi0gCXVu
+c2lnbmVkCQluZWVkX29jX3BwX2N5Y2xlOjE7IC8qIE1QQzgzNFggcG9ydCBwb3dlciAqLwotIAl1
+bnNpZ25lZAkJaW14Mjhfd3JpdGVfZml4OjE7IC8qIEZvciBGcmVlc2NhbGUgaS5NWDI4ICovCi0g
+CXVuc2lnbmVkCQlpZ25vcmVfb2M6MTsKLSsJdW5zaWduZWQJCXFjYV9mb3JjZV9ob3N0X21vZGU6
+MTsKLSsJdW5zaWduZWQJCXFjYV9mb3JjZV8xNmJpdF9wdHc6MTsgLyogZm9yY2UgMTYgYml0IFVU
+TUkgKi8KLSsKLSsJdm9pZCAoKnJlc2V0X25vdGlmaWVyKShzdHJ1Y3QgdXNiX2hjZCAqaGNkKTsK
+LSAKLSAJLyogcmVxdWlyZWQgZm9yIHVzYjMyIHF1aXJrICovCi0gCSNkZWZpbmUgT0hDSV9DVFJM
+X0hDRlMgICAgICAgICAgKDMgPDwgNikKLS0tLSBhL2luY2x1ZGUvbGludXgvdXNiL2VoY2lfcGRy
+aXZlci5oCi0rKysgYi9pbmNsdWRlL2xpbnV4L3VzYi9laGNpX3Bkcml2ZXIuaAotQEAgLTUwLDYg
+KzUwLDggQEAgc3RydWN0IHVzYl9laGNpX3BkYXRhIHsKLSAJdW5zaWduZWQJcmVzZXRfb25fcmVz
+dW1lOjE7Ci0gCXVuc2lnbmVkCWRtYV9tYXNrXzY0OjE7Ci0gCXVuc2lnbmVkCWlnbm9yZV9vYzox
+OwotKwl1bnNpZ25lZAlxY2FfZm9yY2VfaG9zdF9tb2RlOjE7Ci0rCXVuc2lnbmVkCXFjYV9mb3Jj
+ZV8xNmJpdF9wdHc6MTsKLSAKLSAJLyogVHVybiBvbiBhbGwgcG93ZXIgYW5kIGNsb2NrcyAqLwot
+IAlpbnQgKCpwb3dlcl9vbikoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldik7Ci1AQCAtNTks
+NiArNjEsNyBAQCBzdHJ1Y3QgdXNiX2VoY2lfcGRhdGEgewotIAkgKiB0dXJuIG9mZiBldmVyeXRo
+aW5nIGVsc2UgKi8KLSAJdm9pZCAoKnBvd2VyX3N1c3BlbmQpKHN0cnVjdCBwbGF0Zm9ybV9kZXZp
+Y2UgKnBkZXYpOwotIAlpbnQgKCpwcmVfc2V0dXApKHN0cnVjdCB1c2JfaGNkICpoY2QpOwotKwl2
+b2lkICgqcmVzZXRfbm90aWZpZXIpKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpOwotIH07
+Ci0gCi0gI2VuZGlmIC8qIF9fVVNCX0NPUkVfRUhDSV9QRFJJVkVSX0ggKi8KLS0tLSBhL2RyaXZl
+cnMvdXNiL2hvc3QvZWhjaS1wbGF0Zm9ybS5jCi0rKysgYi9kcml2ZXJzL3VzYi9ob3N0L2VoY2kt
+cGxhdGZvcm0uYwotQEAgLTUzLDYgKzUzLDE0IEBAIHN0cnVjdCBlaGNpX3BsYXRmb3JtX3ByaXYg
+ewotIAotIHN0YXRpYyBjb25zdCBjaGFyIGhjZF9uYW1lW10gPSAiZWhjaS1wbGF0Zm9ybSI7Ci0g
+Ci0rc3RhdGljIHZvaWQgZWhjaV9wbGF0Zm9ybV9yZXNldF9ub3RpZmllcihzdHJ1Y3QgdXNiX2hj
+ZCAqaGNkKQotK3sKLSsJc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldiA9IHRvX3BsYXRmb3Jt
+X2RldmljZShoY2QtPnNlbGYuY29udHJvbGxlcik7Ci0rCXN0cnVjdCB1c2JfZWhjaV9wZGF0YSAq
+cGRhdGEgPSBwZGV2LT5kZXYucGxhdGZvcm1fZGF0YTsKLSsKLSsJcGRhdGEtPnJlc2V0X25vdGlm
+aWVyKHBkZXYpOwotK30KLSsKLSBzdGF0aWMgaW50IGVoY2lfcGxhdGZvcm1fcmVzZXQoc3RydWN0
+IHVzYl9oY2QgKmhjZCkKLSB7Ci0gCXN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYgPSB0b19w
+bGF0Zm9ybV9kZXZpY2UoaGNkLT5zZWxmLmNvbnRyb2xsZXIpOwotQEAgLTI3MCw2ICsyNzgsMTMg
+QEAgc3RhdGljIGludCBlaGNpX3BsYXRmb3JtX3Byb2JlKHN0cnVjdCBwbAotIAkJcHJpdi0+cmVz
+ZXRfb25fcmVzdW1lID0gdHJ1ZTsKLSAJaWYgKHBkYXRhLT5pZ25vcmVfb2MpCi0gCQllaGNpLT5p
+Z25vcmVfb2MgPSAxOwotKwlpZiAocGRhdGEtPnFjYV9mb3JjZV9ob3N0X21vZGUpCi0rCQllaGNp
+LT5xY2FfZm9yY2VfaG9zdF9tb2RlID0gMTsKLSsJaWYgKHBkYXRhLT5xY2FfZm9yY2VfMTZiaXRf
+cHR3KQotKwkJZWhjaS0+cWNhX2ZvcmNlXzE2Yml0X3B0dyA9IDE7Ci0rCi0rCWlmIChwZGF0YS0+
+cmVzZXRfbm90aWZpZXIpCi0rCQllaGNpLT5yZXNldF9ub3RpZmllciA9IGVoY2lfcGxhdGZvcm1f
+cmVzZXRfbm90aWZpZXI7Ci0gCi0gI2lmbmRlZiBDT05GSUdfVVNCX0VIQ0lfQklHX0VORElBTl9N
+TUlPCi0gCWlmIChlaGNpLT5iaWdfZW5kaWFuX21taW8pIHsKZGlmZiAtLWdpdCBhL3RhcmdldC9s
+aW51eC9hdGg3OS9wYXRjaGVzLTQuMTkvNDkwLXVzYi1laGNpLWFkZC1xdWlya3MtZm9yLXFjYS1z
+b2NzLnBhdGNoIGIvdGFyZ2V0L2xpbnV4L2F0aDc5L3BhdGNoZXMtNC4xOS80OTAtdXNiLWVoY2kt
+YWRkLXF1aXJrcy1mb3ItcWNhLXNvY3MucGF0Y2gKZGVsZXRlZCBmaWxlIG1vZGUgMTAwNjQ0Cmlu
+ZGV4IDRlMmE2ZmVjZWU3My4uMDAwMDAwMDAwMDAwCi0tLSBhL3RhcmdldC9saW51eC9hdGg3OS9w
+YXRjaGVzLTQuMTkvNDkwLXVzYi1laGNpLWFkZC1xdWlya3MtZm9yLXFjYS1zb2NzLnBhdGNoCisr
+KyAvZGV2L251bGwKQEAgLTEsMTAzICswLDAgQEAKLS0tLSBhL2RyaXZlcnMvdXNiL2hvc3QvZWhj
+aS1oY2QuYwotKysrIGIvZHJpdmVycy91c2IvaG9zdC9laGNpLWhjZC5jCi1AQCAtMjM5LDYgKzIz
+OSwzNyBAQCBpbnQgZWhjaV9yZXNldChzdHJ1Y3QgZWhjaV9oY2QgKmVoY2kpCi0gCWNvbW1hbmQg
+fD0gQ01EX1JFU0VUOwotIAlkYmdfY21kIChlaGNpLCAicmVzZXQiLCBjb21tYW5kKTsKLSAJZWhj
+aV93cml0ZWwoZWhjaSwgY29tbWFuZCwgJmVoY2ktPnJlZ3MtPmNvbW1hbmQpOwotKwotKwlpZiAo
+ZWhjaS0+cWNhX2ZvcmNlX2hvc3RfbW9kZSkgewotKwkJdTMyIHVzYm1vZGU7Ci0rCi0rCQl1ZGVs
+YXkoMTAwMCk7Ci0rCi0rCQl1c2Jtb2RlID0gZWhjaV9yZWFkbChlaGNpLCAmZWhjaS0+cmVncy0+
+dXNibW9kZSk7Ci0rCQl1c2Jtb2RlIHw9IFVTQk1PREVfQ01fSEMgfCAoMSA8PCA0KTsKLSsJCWVo
+Y2lfd3JpdGVsKGVoY2ksIHVzYm1vZGUsICZlaGNpLT5yZWdzLT51c2Jtb2RlKTsKLSsKLSsJCWVo
+Y2lfZGJnKGVoY2ksICJmb3JjZWQgaG9zdCBtb2RlLCB1c2Jtb2RlOiAlMDh4XG4iLAotKwkJCSBl
+aGNpX3JlYWRsKGVoY2ksICZlaGNpLT5yZWdzLT51c2Jtb2RlKSk7Ci0rCX0KLSsKLSsJaWYgKGVo
+Y2ktPnFjYV9mb3JjZV8xNmJpdF9wdHcpIHsKLSsJCXUzMiBwb3J0X3N0YXR1czsKLSsKLSsJCXVk
+ZWxheSgxMDAwKTsKLSsKLSsJCS8qIGVuYWJsZSAxNi1iaXQgVVRNSSBpbnRlcmZhY2UgKi8KLSsJ
+CXBvcnRfc3RhdHVzID0gZWhjaV9yZWFkbChlaGNpLCAmZWhjaS0+cmVncy0+cG9ydF9zdGF0dXNb
+MF0pOwotKwkJcG9ydF9zdGF0dXMgfD0gQklUKDI4KTsKLSsJCWVoY2lfd3JpdGVsKGVoY2ksIHBv
+cnRfc3RhdHVzLCAmZWhjaS0+cmVncy0+cG9ydF9zdGF0dXNbMF0pOwotKwotKwkJZWhjaV9kYmco
+ZWhjaSwgIjE2LWJpdCBVVE1JIGludGVyZmFjZSBlbmFibGVkLCBzdGF0dXM6ICUwOHhcbiIsCi0r
+CQkJIGVoY2lfcmVhZGwoZWhjaSwgJmVoY2ktPnJlZ3MtPnBvcnRfc3RhdHVzWzBdKSk7Ci0rCX0K
+LSsKLSsJaWYgKGVoY2ktPnJlc2V0X25vdGlmaWVyKQotKwkJZWhjaS0+cmVzZXRfbm90aWZpZXIo
+ZWhjaV90b19oY2QoZWhjaSkpOwotKwotIAllaGNpLT5yaF9zdGF0ZSA9IEVIQ0lfUkhfSEFMVEVE
+OwotIAllaGNpLT5uZXh0X3N0YXRlY2hhbmdlID0gamlmZmllczsKLSAJcmV0dmFsID0gZWhjaV9o
+YW5kc2hha2UoZWhjaSwgJmVoY2ktPnJlZ3MtPmNvbW1hbmQsCi0tLS0gYS9kcml2ZXJzL3VzYi9o
+b3N0L2VoY2kuaAotKysrIGIvZHJpdmVycy91c2IvaG9zdC9laGNpLmgKLUBAIC0yMTksNiArMjE5
+LDEwIEBAIHN0cnVjdCBlaGNpX2hjZCB7CQkJLyogb25lIHBlciBjb250cm9sbGUKLSAJdW5zaWdu
+ZWQJCW5lZWRfb2NfcHBfY3ljbGU6MTsgLyogTVBDODM0WCBwb3J0IHBvd2VyICovCi0gCXVuc2ln
+bmVkCQlpbXgyOF93cml0ZV9maXg6MTsgLyogRm9yIEZyZWVzY2FsZSBpLk1YMjggKi8KLSAJdW5z
+aWduZWQJCWlnbm9yZV9vYzoxOwotKwl1bnNpZ25lZAkJcWNhX2ZvcmNlX2hvc3RfbW9kZToxOwot
+Kwl1bnNpZ25lZAkJcWNhX2ZvcmNlXzE2Yml0X3B0dzoxOyAvKiBmb3JjZSAxNiBiaXQgVVRNSSAq
+LwotKwotKwl2b2lkICgqcmVzZXRfbm90aWZpZXIpKHN0cnVjdCB1c2JfaGNkICpoY2QpOwotIAot
+IAkvKiByZXF1aXJlZCBmb3IgdXNiMzIgcXVpcmsgKi8KLSAJI2RlZmluZSBPSENJX0NUUkxfSENG
+UyAgICAgICAgICAoMyA8PCA2KQotLS0tIGEvaW5jbHVkZS9saW51eC91c2IvZWhjaV9wZHJpdmVy
+LmgKLSsrKyBiL2luY2x1ZGUvbGludXgvdXNiL2VoY2lfcGRyaXZlci5oCi1AQCAtNTEsNiArNTEs
+OCBAQCBzdHJ1Y3QgdXNiX2VoY2lfcGRhdGEgewotIAl1bnNpZ25lZAlyZXNldF9vbl9yZXN1bWU6
+MTsKLSAJdW5zaWduZWQJZG1hX21hc2tfNjQ6MTsKLSAJdW5zaWduZWQJaWdub3JlX29jOjE7Ci0r
+CXVuc2lnbmVkCXFjYV9mb3JjZV9ob3N0X21vZGU6MTsKLSsJdW5zaWduZWQJcWNhX2ZvcmNlXzE2
+Yml0X3B0dzoxOwotIAotIAkvKiBUdXJuIG9uIGFsbCBwb3dlciBhbmQgY2xvY2tzICovCi0gCWlu
+dCAoKnBvd2VyX29uKShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KTsKLUBAIC02MCw2ICs2
+Miw3IEBAIHN0cnVjdCB1c2JfZWhjaV9wZGF0YSB7Ci0gCSAqIHR1cm4gb2ZmIGV2ZXJ5dGhpbmcg
+ZWxzZSAqLwotIAl2b2lkICgqcG93ZXJfc3VzcGVuZCkoc3RydWN0IHBsYXRmb3JtX2RldmljZSAq
+cGRldik7Ci0gCWludCAoKnByZV9zZXR1cCkoc3RydWN0IHVzYl9oY2QgKmhjZCk7Ci0rCXZvaWQg
+KCpyZXNldF9ub3RpZmllcikoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldik7Ci0gfTsKLSAK
+LSAjZW5kaWYgLyogX19VU0JfQ09SRV9FSENJX1BEUklWRVJfSCAqLwotLS0tIGEvZHJpdmVycy91
+c2IvaG9zdC9laGNpLXBsYXRmb3JtLmMKLSsrKyBiL2RyaXZlcnMvdXNiL2hvc3QvZWhjaS1wbGF0
+Zm9ybS5jCi1AQCAtNDgsNiArNDgsMTQgQEAgc3RydWN0IGVoY2lfcGxhdGZvcm1fcHJpdiB7Ci0g
+Ci0gc3RhdGljIGNvbnN0IGNoYXIgaGNkX25hbWVbXSA9ICJlaGNpLXBsYXRmb3JtIjsKLSAKLStz
+dGF0aWMgdm9pZCBlaGNpX3BsYXRmb3JtX3Jlc2V0X25vdGlmaWVyKHN0cnVjdCB1c2JfaGNkICpo
+Y2QpCi0rewotKwlzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2ID0gdG9fcGxhdGZvcm1fZGV2
+aWNlKGhjZC0+c2VsZi5jb250cm9sbGVyKTsKLSsJc3RydWN0IHVzYl9laGNpX3BkYXRhICpwZGF0
+YSA9IHBkZXYtPmRldi5wbGF0Zm9ybV9kYXRhOwotKwotKwlwZGF0YS0+cmVzZXRfbm90aWZpZXIo
+cGRldik7Ci0rfQotKwotIHN0YXRpYyBpbnQgZWhjaV9wbGF0Zm9ybV9yZXNldChzdHJ1Y3QgdXNi
+X2hjZCAqaGNkKQotIHsKLSAJc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldiA9IHRvX3BsYXRm
+b3JtX2RldmljZShoY2QtPnNlbGYuY29udHJvbGxlcik7Ci1AQCAtMjE1LDYgKzIyMywxMyBAQCBz
+dGF0aWMgaW50IGVoY2lfcGxhdGZvcm1fcHJvYmUoc3RydWN0IHBsCi0gCQlwcml2LT5yZXNldF9v
+bl9yZXN1bWUgPSB0cnVlOwotIAlpZiAocGRhdGEtPmlnbm9yZV9vYykKLSAJCWVoY2ktPmlnbm9y
+ZV9vYyA9IDE7Ci0rCWlmIChwZGF0YS0+cWNhX2ZvcmNlX2hvc3RfbW9kZSkKLSsJCWVoY2ktPnFj
+YV9mb3JjZV9ob3N0X21vZGUgPSAxOwotKwlpZiAocGRhdGEtPnFjYV9mb3JjZV8xNmJpdF9wdHcp
+Ci0rCQllaGNpLT5xY2FfZm9yY2VfMTZiaXRfcHR3ID0gMTsKLSsKLSsJaWYgKHBkYXRhLT5yZXNl
+dF9ub3RpZmllcikKLSsJCWVoY2ktPnJlc2V0X25vdGlmaWVyID0gZWhjaV9wbGF0Zm9ybV9yZXNl
+dF9ub3RpZmllcjsKLSAKLSAjaWZuZGVmIENPTkZJR19VU0JfRUhDSV9CSUdfRU5ESUFOX01NSU8K
+LSAJaWYgKGVoY2ktPmJpZ19lbmRpYW5fbW1pbykgewotLSAKMi4yMC4xCgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5n
+IGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53
+cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

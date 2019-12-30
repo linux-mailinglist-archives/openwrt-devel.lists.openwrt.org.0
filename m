@@ -2,50 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7186C12CB7A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Dec 2019 01:54:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05E4912CC2F
+	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Dec 2019 04:41:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Vq+biZS0N/zHzg8bib2Fsoq1ppxgBYBBWNva3Q2XLyQ=; b=Xz5h0VxU3eK/r4
-	EGwQzt6n2ZBVYdtMwIiHpnCzp+xbJ8KjmbIJ5B7h1Dg9zlzeceS24a9DOtHIdea+JtD2u+Gubjb6W
-	VWSs/wGElTiJe4rByk2vG4dTaCV3GHsjbL8dX5Hn5lgpHxWa9RQwZYJK63xEt3TpYqMs7xIR1JA/l
-	QWUcT+bRWNugoP7F6PVm6WC4dmWFfuY6zMPhY6+QwXnrVXAlLZlTtanR04cZ8v0d5JYR3QRIyVabw
-	YKjD8bWvF7HJ7Q5QWMwhgExrFKYLVoJGdiIIOigA8sDWeZc6sc2cOkdRnL256KV1OX9tIFCz5CsN5
-	TRNYaPqy2tC/FAcyGxEQ==;
+	List-Owner; bh=jRdjKtEXaTvoW0fxz+ktaF/JfrDVCBs4AzPXkxOldsc=; b=I3JymfZurKSTLU
+	Ev2SJYOUxHWy8p73rrLqtAhSWAYTjSSz5cSWmhgUfCUJUSMXsrVhpo/hj2SNeGtl4dgRCd07Ro9QL
+	ndiCKSoCRnd08tgfUGwaszP5kbtBnXSR7joZXgzvx5Fiw5Dm2/Sgjv/IKP4nBwZLEESohXwCbQe0K
+	b+gvX6xu5GQ2Xs1IRk8D5j6uBs8oAEldFHDpLz56NrZ2mQwsgE+iVMQ8uDhHOdh4qDSXt9/AROcGk
+	O3/KONnWcQJ0dhwA/TV0216jfDwqUifwejaPH+sUWE4cUzy0LIcmivE2wGspqfH5PvD9qB2HK+YsQ
+	MPEZ5ACR5HeGHXz/Uslg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iljJY-0007B7-6z; Mon, 30 Dec 2019 00:53:44 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1illvt-0003tU-I6; Mon, 30 Dec 2019 03:41:29 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iljJP-0007AW-JX
- for openwrt-devel@lists.openwrt.org; Mon, 30 Dec 2019 00:53:38 +0000
-Received: from localhost.localdomain (unknown [83.135.250.187])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 8D391227F6;
- Mon, 30 Dec 2019 01:53:23 +0100 (CET)
-From: David Bauer <mail@david-bauer.net>
+ id 1illvm-0003sW-Vk
+ for openwrt-devel@lists.openwrt.org; Mon, 30 Dec 2019 03:41:24 +0000
+Received: by mail-pl1-x642.google.com with SMTP id bd4so14124535plb.8
+ for <openwrt-devel@lists.openwrt.org>; Sun, 29 Dec 2019 19:41:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vUXEqp9wGivgCeT5XwoVXw/RYE5MZhXzzZDtt8w3Ig8=;
+ b=Av0+ZnpjyZoDaxNJdFUn110e/XCYvm5d1cpi1VEjH5+YutAGheJyzdDdzu0rZaHp6E
+ tjDFNFKvvFrPsMfK92iT8maqii8rTuDEsgzhqAOYmc/FPH4PyzfaDHUGIRU35bYyTs4J
+ XTlKVkIcLEYaTg2s+pqsouZZlihjiQwYct3FL+odN87EMoZB3l84B1jpX6YwjaarBwmG
+ ZQsp9tlpVDRmAdMESdb1AP1gG6Hg4FDcivFhSl3/T0hZOrVfYArpUNbPucG+/a1zJqBK
+ +ajopW1j+qqZXor280txYBDEFKgCj68VKS/g5GVaQCBQf2gq4oW98wNDovVJ8X/AyU9g
+ 137w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vUXEqp9wGivgCeT5XwoVXw/RYE5MZhXzzZDtt8w3Ig8=;
+ b=XKrk6dC1KSl6y5D7CUzM6yK0JUspCF+4bqgP8+sW/Chh83KRCLD/HUVqfc1lFr4XuL
+ CGchdpG3DvMj4DifVaH47T+H5qSFP2HLsWfHWao2k1+MN+EyCCDciDWCR8lS/8ed8DUX
+ iTTR4Yo7jVykxvFlAxNdXbSjV5rPzRM79chL3G4rgn6uUHwfYaw6SsCWnZFstgh1ggaJ
+ UAdREyP9Chl8KBw/jkA1sQKDtmE35h+S9cPpPEjpNHuYpmtpFS8ocagvL/Dzizfpx/Qz
+ k905jAXHKZ+AjJ4vj4RrRRW5aY88c6Smxu13KCFp+wdp5j6WRAAYCgSbL2XwQPWDTsdI
+ NoyA==
+X-Gm-Message-State: APjAAAUbXb/3pUSjW3siswl5NIEEzzP8U49pHtmuZc5AA86rZFU2JefS
+ QvKCrVHicJktusOQlmB7s/NgLMkmqhg=
+X-Google-Smtp-Source: APXvYqzwHAS9r+xS5Tkq8zAOSXBeuVgvQQx0VZorbxYWCT8xMYBmNVb6TEtay5jxjjsaju0O+goDMg==
+X-Received: by 2002:a17:902:9302:: with SMTP id
+ bc2mr49689616plb.328.1577677281614; 
+ Sun, 29 Dec 2019 19:41:21 -0800 (PST)
+Received: from localhost.localdomain ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id k21sm43351576pgt.22.2019.12.29.19.41.20
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 29 Dec 2019 19:41:20 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 30 Dec 2019 01:52:59 +0100
-Message-Id: <20191230005259.175150-1-mail@david-bauer.net>
+Date: Sun, 29 Dec 2019 19:41:16 -0800
+Message-Id: <20191230034118.21718-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_165335_792996_43A9EE8B 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191229_194123_070861_9D001378 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] rt2x00: add throughput LED trigger
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH 1/3] toolchain/wrapper: Replace legacy ``
+ with $()
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,73 +99,36 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Christoph Krapp <achterin@googlemail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This adds a (currently missing) throughput LED trigger for the rt2x00
-driver. Previously, LED triggers had to be assigned to the netdev, which
-was limited to a single VAP.
+Found with shellcheck.
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
-Tested-by: Christoph Krapp <achterin@googlemail.com>
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- .../612-rt2x00-led-tpt-trigger-support.patch  | 44 +++++++++++++++++++
- 1 file changed, 44 insertions(+)
- create mode 100644 package/kernel/mac80211/patches/rt2x00/612-rt2x00-led-tpt-trigger-support.patch
+ target/toolchain/files/wrapper.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/package/kernel/mac80211/patches/rt2x00/612-rt2x00-led-tpt-trigger-support.patch b/package/kernel/mac80211/patches/rt2x00/612-rt2x00-led-tpt-trigger-support.patch
-new file mode 100644
-index 0000000000..25d15b617f
---- /dev/null
-+++ b/package/kernel/mac80211/patches/rt2x00/612-rt2x00-led-tpt-trigger-support.patch
-@@ -0,0 +1,44 @@
-+From: David Bauer <mail@david-bauer.net>
-+Date: Mon, 16 Dec 2019 20:47:06 +0100
-+Subject: [PATCH] rt2x00: add throughput LED trigger
-+
-+This adds a (currently missing) throughput LED trigger for the rt2x00
-+driver. Previously, LED triggers had to be assigned to the netdev, which
-+was limited to a single VAP.
-+
-+Signed-off-by: David Bauer <mail@david-bauer.net>
-+Tested-by: Christoph Krapp <achterin@googlemail.com>
-+
-+--- a/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-++++ b/drivers/net/wireless/ralink/rt2x00/rt2x00dev.c
-+@@ -1129,6 +1129,19 @@ static void rt2x00lib_remove_hw(struct r
-+ 	kfree(rt2x00dev->spec.channels_info);
-+ }
-+ 
-++static const struct ieee80211_tpt_blink rt2x00_tpt_blink[] = {
-++	{ .throughput = 0 * 1024, .blink_time = 334 },
-++	{ .throughput = 1 * 1024, .blink_time = 260 },
-++	{ .throughput = 2 * 1024, .blink_time = 220 },
-++	{ .throughput = 5 * 1024, .blink_time = 190 },
-++	{ .throughput = 10 * 1024, .blink_time = 170 },
-++	{ .throughput = 25 * 1024, .blink_time = 150 },
-++	{ .throughput = 54 * 1024, .blink_time = 130 },
-++	{ .throughput = 120 * 1024, .blink_time = 110 },
-++	{ .throughput = 265 * 1024, .blink_time = 80 },
-++	{ .throughput = 586 * 1024, .blink_time = 50 },
-++};
-++
-+ static int rt2x00lib_probe_hw(struct rt2x00_dev *rt2x00dev)
-+ {
-+ 	struct hw_mode_spec *spec = &rt2x00dev->spec;
-+@@ -1211,6 +1225,10 @@ static int rt2x00lib_probe_hw(struct rt2
-+ 
-+ #undef RT2X00_TASKLET_INIT
-+ 
-++	ieee80211_create_tpt_led_trigger(rt2x00dev->hw,
-++		IEEE80211_TPT_LEDTRIG_FL_RADIO, rt2x00_tpt_blink,
-++		ARRAY_SIZE(rt2x00_tpt_blink));
-++
-+ 	/*
-+ 	 * Register HW.
-+ 	 */
+diff --git a/target/toolchain/files/wrapper.sh b/target/toolchain/files/wrapper.sh
+index 4452128382..bd4996cac2 100755
+--- a/target/toolchain/files/wrapper.sh
++++ b/target/toolchain/files/wrapper.sh
+@@ -15,10 +15,10 @@
+ #
+ 
+ PROGNAME=$0
+-REALNAME=`readlink -f $0`
++REALNAME=$(readlink -f $0)
+ 
+-REALNAME_BASE=`basename $REALNAME`
+-REALNAME_DIR=`dirname $REALNAME`
++REALNAME_BASE=$(basename $REALNAME)
++REALNAME_DIR=$(dirname $REALNAME)
+ 
+ TARGET_FUNDAMENTAL_ASFLAGS=''
+ TARGET_FUNDAMENTAL_CFLAGS=''
 -- 
 2.24.1
 

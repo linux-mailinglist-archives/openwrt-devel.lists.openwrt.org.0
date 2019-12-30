@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18E1412CC3A
-	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Dec 2019 04:49:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7152812CC38
+	for <lists+openwrt-devel@lfdr.de>; Mon, 30 Dec 2019 04:48:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,63 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=MbyadmpYlmXNJg+3kTy53sWYNPd6KXvbY8f8DGOHrTw=; b=mSfsCXrGLBsURFtDjD2ijFfNt+
-	0KAZDXsgdLc/zLGy3HlB+/6yEQYq0GqxlbKxkwpN4GWKSGjEm2QA7gq9aChmKGkkc4wUJUEmsVRqs
-	saRtgarQALS2oneESJEWaUF+siotyNIA0qRj4G6/4wpo8+nQGGgMJhv7FXMTsLxY6UH7ehom4vZ5R
-	BX4Igl0Vw0QpMy/I5lHx0XVks+Mhu6ejpX/edGgk7n7hTHHDUaA7Z9WFKDyPPeHmFw2zQBr/SHbue
-	p/Debd5CzWWDoJFeg5Nck0IBEfZRxy5ric46Imv+wnI6gu3CY5AnfEsEKJFyrGagSPHw01676s17+
-	TGAmZn7Q==;
+	bh=MMaR2Vx59GtM8NmTvGiwnggtp1Ngr9JBbaGBeZW64ec=; b=Fu6vBdB8tOTg8gUG3iTLEYgPQP
+	AxOak1CyvMTqyMKObCJ76a6QdeE0hXELxHWV+S4OJxltIZtntnTgdv8J9J490smzhP75GYSQY/aJm
+	NJEdijT2D7qtwm4mTdkve7xnJIkLlcy5LXMK86E9V/jpUROnTH7jPMTcgheqoI68FJUom9dhfeRVW
+	8Y5UPA4OisRVaRs7/k2DCNal9D3wSVDz7vVZvMU49x5apCwv3HaHuTfaDKJic4qlRwGdANnRpF7TO
+	I9ILOTZ80LZ9HZPQX9qv+LRDfUNKUDr1I3tjh3WACj1uxKd7vipzlx0QlqDNxkgO6LdF+vPfGlJ5K
+	ZzChsagw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilm3C-0007XW-5F; Mon, 30 Dec 2019 03:49:02 +0000
-Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
+	id 1ilm2v-000788-3p; Mon, 30 Dec 2019 03:48:45 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilm2l-00077B-DE
- for openwrt-devel@lists.openwrt.org; Mon, 30 Dec 2019 03:48:36 +0000
-Received: by mail-pf1-x42f.google.com with SMTP id q8so17646308pfh.7
+ id 1ilm2i-00077F-NJ
+ for openwrt-devel@lists.openwrt.org; Mon, 30 Dec 2019 03:48:34 +0000
+Received: by mail-pf1-x432.google.com with SMTP id n9so9772085pff.13
  for <openwrt-devel@lists.openwrt.org>; Sun, 29 Dec 2019 19:48:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=mgjAZOGstAF5cVFxH1m7B/iQEce3qLqtvjKPqtjg2sU=;
- b=nWDdHidy/NRJDIk2PxB4VsDS+GIDtKaifW9SvRZ61Girx5bIspF9p47QpprSAOnZgh
- DhIvxIOEY0FlDg/poWHtsVyZnKpIA8e2hN5GWyCYoPYb3ymw3BlsTDPmVdVrd0c80mBr
- bjmDEvYB05DNrqz0vngeutQnEBWw79cUyRU3PDFxYRlrNQ3JiOCQhcyiFTN+3PF3wAgo
- Y84thfEl0M8+KxsayKGMpwFMicroLIVf1lPHfZUqKCFx6T8t8NdRstgQW/FwDcm/hnxi
- 3s1K+pi2cLGzPb2yjcMI3UpFBxpW2JmpX1DRUwA30Ox5SNHF03OedAiFjDwiKwh5VoQY
- SVYw==
+ bh=h/wusmL7xi7HTlmuik2AidyHVa9AemAJ9p6QE6rRs44=;
+ b=e8Zm+1XXOIhRHDgPJ/2yESlUwmaYOeg7TY5OtN3+BQRZxYC7ILurMI+uz5nfNNkb6G
+ P6RAI6vWyz6MvZ5DrtYdsAMtdJ2JIW9qRnEscujYSx/atOD7MFelcW4R6WuA1DfTnSRw
+ 3b9qDBnWR4Oksdxdneb7L/6rIxW1CTHiOmZuvjSTupt5EHG4N+lK8qHhHjzNMBMe8Gvf
+ uW24Ez1yEOHJckCtfhlMvz4c6tLkjTSzC5OtJmAamMxMr8Q3j/gO3YFybMWkHEOK+Zyt
+ TBHKeacPC/vQA1++I3Aq+4S5SZexJc8W4E3LWCTx61x5vnjWVIw9NCTaEycQbC47/Mvv
+ VYkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=mgjAZOGstAF5cVFxH1m7B/iQEce3qLqtvjKPqtjg2sU=;
- b=nKfyy/FSwdeaupq2/hejWkmAXsezjkSXcbinIzYonEDdUvIPflbxzoP6xqxBvfBno/
- xTHToa6GYNWZnpwoEhYoy8h6UsRhJ13H2wFJxm9t3Z4HkO978SrARKdIYUHrpRlYZTSv
- knvvu63j3pfKUw7tF659boI/mLCgGteg2wbHkX7hi2rzOy8QRfJnwV1sSyA2SVX6wM+o
- xqA0mXnZbhbGBGNQhlgKFRTeAWDeuTI/zobAtWsup65aKgCsrUieejHryYC51SjelAfT
- iMwFhHpC+kiakErvkh4tuBSwa7XVOgg5sIrpQQY9gYcV06nAwCeVgkK4TND8ngaW3M8W
- iyDQ==
-X-Gm-Message-State: APjAAAWeg7gEn+f8m0ECiNfkYh8ejJxMdefGOmA4J9aDjjK7nNe/zryv
- MP23qHw1+WHC3GD5gkdiy4TpB6mx/98=
-X-Google-Smtp-Source: APXvYqyONbGJlFUCe2Bm2ksY/VHV2tDpfkdOrtTISkGi+sR3U6Nuo/gpjCyyPBQFcz4raxuzPfbnIA==
-X-Received: by 2002:aa7:9522:: with SMTP id c2mr68518007pfp.43.1577677711355; 
- Sun, 29 Dec 2019 19:48:31 -0800 (PST)
+ bh=h/wusmL7xi7HTlmuik2AidyHVa9AemAJ9p6QE6rRs44=;
+ b=OVyCAOJ5TSL7Oh/6rowVdmfy5R6Otws4ZhJ3sBjQFDt1WCbW1C+lWBWkdzvJ1qkbmk
+ 3W11l8G33D4abBpr6Lq2RabUbFIRE7Nt1x9IFmGpLlbRE/J7fsC/lq8MYBmqy4/rJT40
+ uhYxRBiLkQ/m3TVD2d0sAKsk/d4bSfD63ZNo+OH+VquAYe4L4DdJkUvuIlorK8kvho4U
+ cTJObdgRYh4uYCKwdQ5hDxLWH8LgVoqAf4yLLhCDe7ABOyM+7hS2VNZFgqp0yjVeOCCA
+ YzIDq6tWX8Ra88qMOQ2eybqG1CsqpmNJoHIbH4FvvfRF1ZKQsF35hvi2Cnpq2RMssFxk
+ kozA==
+X-Gm-Message-State: APjAAAUZ841u15+lEuEGf1ccHBmj0ufJxNQKc71UIu1O3JfqG6x81zCb
+ gFPYKdeTT08t4+1BacdhYeCTqQOIhIM=
+X-Google-Smtp-Source: APXvYqyU1nXjy1ZNHnbrun3KNKqR0foobBAVkbVwMRgzMHlVZhGVhB9At6ckrAwVCgpftbZRwxlNdg==
+X-Received: by 2002:a62:7c58:: with SMTP id x85mr69145624pfc.76.1577677712120; 
+ Sun, 29 Dec 2019 19:48:32 -0800 (PST)
 Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id p28sm46211414pgb.93.2019.12.29.19.48.30
+ by smtp.gmail.com with ESMTPSA id p28sm46211414pgb.93.2019.12.29.19.48.31
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 29 Dec 2019 19:48:30 -0800 (PST)
+ Sun, 29 Dec 2019 19:48:31 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun, 29 Dec 2019 19:48:26 -0800
-Message-Id: <20191230034827.22185-3-rosenp@gmail.com>
+Date: Sun, 29 Dec 2019 19:48:27 -0800
+Message-Id: <20191230034827.22185-4-rosenp@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191230034827.22185-1-rosenp@gmail.com>
 References: <20191230034827.22185-1-rosenp@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_194835_446937_A486C88C 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20191229_194832_783812_C92ACF0D 
+X-CRM114-Status: UNSURE (   7.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:42f listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:432 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -88,8 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 3/4] scripts/clean-package.sh: Remove
- useless cat
+Subject: [OpenWrt-Devel] [PATCH 4/4] scripts/clean-package.sh: Switch from
+ -a in if to &&
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,31 +106,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Found with shellcheck.
+-a is not well defined.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- scripts/clean-package.sh | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ scripts/clean-package.sh | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/scripts/clean-package.sh b/scripts/clean-package.sh
-index e849c41afa..b64d7ad21a 100755
+index b64d7ad21a..2c9d4169ba 100755
 --- a/scripts/clean-package.sh
 +++ b/scripts/clean-package.sh
-@@ -8,13 +8,13 @@ IFS=$'\n'
+@@ -1,13 +1,14 @@
+ #!/usr/bin/env bash
+ IFS=$'\n'
+-[ -n "$1" -a -n "$2" ] || {
++
++if [ -z "$1" ] || [ -z "$2" ]; then
+ 	echo "Usage: $0 <file> <directory>"
+ 	exit 1
+-}
+-[ -f "$1" -a -d "$2" ] || {
++fi
++if [ ! -f "$1" ] || [ ! -d "$2" ]; then
  	echo "File/directory not found"
  	exit 1
- }
--cat "$1" | (
-+(
- 	cd "$2" || exit 1
- 	while read -r entry; do
- 		[ -n "$entry" ] || break
- 		[ -f "$entry" ] && rm -f $entry
- 	done
--)
-+) < "$1"
- sort -r "$1" | (
+-}
++fi
+ (
  	cd "$2" || exit 1
  	while read -r entry; do
 -- 

@@ -2,69 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D12A112D5BE
-	for <lists+openwrt-devel@lfdr.de>; Tue, 31 Dec 2019 03:19:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E14F12D5BF
+	for <lists+openwrt-devel@lfdr.de>; Tue, 31 Dec 2019 03:19:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0hu0kzxVSipWq6YLG/3NtaxNNFeWVv41knwmEaxnWZQ=; b=TSR7M5Xqp3EUN2
-	hmLljaLhJUjbrNb/o0dM2ovIsJukOl4TwxftpyF8idlA1VBtnWhLQ2CH+/pcDfreGmx/ORuhkfNpt
-	MbUztDoeYP/hQTGiLQ5ZYQdFx1LsAegxiVhVxLqr5PiZ1IfAiZ6WqN9bBzSgj2xJQ9jc4IBFmXdfG
-	Toez3y29Fke9/loMJ0u+AHoX4uaTiES4ICxVbTQWNIElwKeYEgaHvmZuKedb3mqMToWGLnSm8W+kT
-	D5+0iZgoWGtxacF28l66AwScLY1QdOIm7L6pPQ8WeLWKKX0buNwfXwoAy6DGXltmLo3DfD0AiJ9kr
-	PkqHoGK8DsVsCT35AfgQ==;
+	List-Owner; bh=HQIrpLbaeuUzcTbs4Ded3gQkTkczMnSKU0dG8K9ZIpc=; b=DZOpVtlzFti4kd
+	3UADpj0BRJvVzUePBpWevyI6LByzc+KHuCUO1JONHC6KwDVMC0evjol6Fa9JDlR18unsvPJ/nwoTF
+	dZcvwg1xcrxjL6ogY8RT5zaIsMPJCoWpOis1I1K9AkYO+J8Oy+ax4fggFbxu8cZnYgOUnBiy/cktc
+	XF1qt8Frwszt59acFSupi2Ms3WybVHjuJBoTDIluJaYG2Ji++9dmopeQIlLJzAzVVap1MzzMAQfpu
+	qEFrjh+NwozfZWsDpbaGj/vo1RSYGBBdDR++OP2pw8YK+NfUhpV575Y4Wsu97oCFlurmd0er1EXLH
+	GABhZ8jxvLL3WDCo/2TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im77y-0004Hq-PW; Tue, 31 Dec 2019 02:19:22 +0000
-Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
+	id 1im78F-0004Zl-7T; Tue, 31 Dec 2019 02:19:39 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1im77p-0004HT-4F
- for openwrt-devel@lists.openwrt.org; Tue, 31 Dec 2019 02:19:14 +0000
-Received: by mail-pg1-x536.google.com with SMTP id z124so18875529pgb.13
- for <openwrt-devel@lists.openwrt.org>; Mon, 30 Dec 2019 18:19:12 -0800 (PST)
+ id 1im787-0004Ye-Us
+ for openwrt-devel@lists.openwrt.org; Tue, 31 Dec 2019 02:19:33 +0000
+Received: by mail-pg1-x542.google.com with SMTP id k3so18906814pgc.3
+ for <openwrt-devel@lists.openwrt.org>; Mon, 30 Dec 2019 18:19:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=4IwB4wr1rg8jmNdeib7Dxp8q4/Z5/TdW2LQUxd+jmo0=;
- b=TTtzm6LJ6+OC37BM+sPCm+vWREsFaB8i465OC2vItnR7GvqPrhzmfsj+WnKExwAXnB
- K5HlUIFZ+7OHIBkCWqRK9x4MWyKehcTl6JaHGPDNAvZntnfUH6B0yGq0lL5qlDfggJwA
- zy6Pl1boz6cjXJ2BvwwpJtfj2mkQI2ViUgIxYGm6Gu9+q1ziBM/Fy77EZ2MVku7s/4Ii
- 9Tj2yL2iPdGVgx2zUjvgTkLJ6ejhTmHJQ3TrTs95FG4WJ9Lcdtp4QwmqFp6JrlWw7VR+
- S9fnEliBXAAO5HTEZQTOPWbp4aaBVV6nlF6N17XIsH47N2JtkKYMWBpOOulwmu43darr
- Zyhg==
+ bh=9XsTjf+8Jg2dO0gXFxANKmlJ3uQWEc99xwnqyC0cd80=;
+ b=MlE1mq1Dm9mABK0dC1bJiRHknyLJOSPaNO+FWakVHFAHSj2GyLxVks3t4AUte9T0bf
+ B7vQf9FpMo+89q41VdlUfOrinp0UElL/WoAmrpnoGo0jCA8hCKZiCf2FJO1tKde4jKeh
+ iyNOO2Op5gm29N+oNHT2qFNLhPNOBR/c97wTQkw7Ln9AmJ/nZsbzPNW8W7uLT+zScboM
+ GUtsVeG4lxZVJrlxIugLMKtjGb2+Q7JOJvNS7Q3tf9ILuCH+cLF1rI2qe2VtazLdM1gI
+ iA1Q4sTJ11IDdwJONPmhsChabapmVRFYTBr+QR9EpcJ9YEmLwqDrghmpjwypCFpoM+SN
+ hqdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=4IwB4wr1rg8jmNdeib7Dxp8q4/Z5/TdW2LQUxd+jmo0=;
- b=HPmVQEtmR7b+Spv4sHFCEiAm1sxaTsLuGNfUw75HiFx8MfCVrR1fsXweq6kolV7flo
- aicQTIVeeajHVTHztqfJW2/juuNCLP+xv6aNfoDvQh6zxqQugBj6Rft8Cxxy3bmXf3le
- vFp2qSqkCcJVQStN9BugLhTJiMWao2bzrz2m0csAjeV3Jtw6DyhMnrnItOUZwEKSTYi2
- YO6r8IqIoj4P3LoZS2s/33WE8ineAxWmmuRX6Is2b2iqOhyqf5u70J/bTfd5J3MtazFf
- Dcc+kTmB4W1O7gpEqk1/UDqwT9GMVauxD9Ho4UegI3D5fq4CUEJL6flzVCZ88tNQ4nRS
- 2P0g==
-X-Gm-Message-State: APjAAAXOpu94UQ3TiPOx6j3npPbJ3P6j3KYZbtgbkf9XHya7deLq24H6
- mJ6p8xluTuKDGJc26cOmdsidtn/+YUk=
-X-Google-Smtp-Source: APXvYqwR8SF3HyjnnGBRqYVts/2N5QnWEQkvjagnmuhjBTNBDk/yYFSbh79JojmrpGct1ennzUb1ww==
-X-Received: by 2002:aa7:988e:: with SMTP id r14mr75949069pfl.126.1577758751935; 
- Mon, 30 Dec 2019 18:19:11 -0800 (PST)
+ bh=9XsTjf+8Jg2dO0gXFxANKmlJ3uQWEc99xwnqyC0cd80=;
+ b=ub/lmfqXT6v82jI2RiXcW1bwL/JQNu3oonjIukOz+K8AYSCDjnGuSPydWCIWpl6Euy
+ svET3BIywyOceHnDhD9ObYRGUeWo3UJCy/MjOMsQMYi1M9pB7clyXj2Lp5iYO0LiM7AE
+ CUfbcN0+SrfO9GMIb1gDaSIgwIQy6E/CLV8OxeQZBOFXYwgVeCFLjuIx141jYW+MoXSD
+ M2ZZiBoccKfe6ZGi06CZt9V92kHEAQe6vAzpi7w/iPcpdMAONcChnJAr2d2a1gCdLeIt
+ 2Cxp59U+yEBjLHbb6yupwL3oyH3DCrBBwurk0nOAJ6N8xqYSi1bRYaiPzlf9JrZLnwHU
+ MVww==
+X-Gm-Message-State: APjAAAUpxkiPTVdi3qhPZMcPZh9OJTiikOctdzjX8AAq/cTzqXt9rpA/
+ 9r8O2Zt2zC6xDz265N9tAtCJGe5baqI=
+X-Google-Smtp-Source: APXvYqx6nK1BoMtTr4WV57KqBcIgKVjORGEl0SiznTdNYkAkuN3zsmg/qDF9Q9wQZVFpX7z4tfo0Dw==
+X-Received: by 2002:a63:e17:: with SMTP id d23mr76288478pgl.173.1577758771160; 
+ Mon, 30 Dec 2019 18:19:31 -0800 (PST)
 Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id i4sm50041377pgc.51.2019.12.30.18.19.11
+ by smtp.gmail.com with ESMTPSA id p16sm36716712pfq.184.2019.12.30.18.19.30
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Dec 2019 18:19:11 -0800 (PST)
+ Mon, 30 Dec 2019 18:19:30 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 30 Dec 2019 18:19:08 -0800
-Message-Id: <20191231021910.47929-1-rosenp@gmail.com>
+Date: Mon, 30 Dec 2019 18:19:29 -0800
+Message-Id: <20191231021929.48012-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_181913_168473_12CB2BF2 
-X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-CacheID: sfid-20191230_181932_010010_97DF2482 
+X-CRM114-Status: UNSURE (   8.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:536 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -85,8 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 1/2] scripts/strip-kmod.sh: Replace legacy
- `` with $()
+Subject: [OpenWrt-Devel] [PATCH] scripts/symlink-tree.sh: Use /bin/sh
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,25 +102,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Found with shellcheck.
+This uses nothing bash specific.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- scripts/strip-kmod.sh | 2 +-
+ scripts/symlink-tree.sh | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/scripts/strip-kmod.sh b/scripts/strip-kmod.sh
-index 313015b909..7886cd907f 100755
---- a/scripts/strip-kmod.sh
-+++ b/scripts/strip-kmod.sh
-@@ -50,6 +50,6 @@ $3 && $2 ~ /[brtd]/ && $3 !~ /\$LC/ && !def[$3] {
- }
- ' > "$MODULE.tmp1"
+diff --git a/scripts/symlink-tree.sh b/scripts/symlink-tree.sh
+index aa169e2455..6ed91dfb5a 100755
+--- a/scripts/symlink-tree.sh
++++ b/scripts/symlink-tree.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ # Create a new openwrt tree with symlinks pointing at the current tree
+ # Usage: ./scripts/symlink-tree.sh <destination>
  
--${CROSS}objcopy `cat ${MODULE}.tmp1` ${MODULE}.tmp ${MODULE}.out
-+${CROSS}objcopy $(cat ${MODULE}.tmp1) ${MODULE}.tmp ${MODULE}.out
- mv "${MODULE}.out" "${MODULE}"
- rm -f "${MODULE}".t*
 -- 
 2.24.1
 

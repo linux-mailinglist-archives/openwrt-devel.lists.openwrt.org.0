@@ -2,71 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0677612DB25
-	for <lists+openwrt-devel@lfdr.de>; Tue, 31 Dec 2019 20:19:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5804112DBF2
+	for <lists+openwrt-devel@lfdr.de>; Tue, 31 Dec 2019 22:22:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:Message-ID:From:To:MIME-Version:Date:Reply-To:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Content-Type:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8NabALtReiVa3vuNELi1SYZ5AfY8HNQqDFuKPffhVvE=; b=OBE
-	8AQhEsD1bbRAJBj3TIS7tFbs4Q7pvSLSrm9wydU430NMPU+rGtNacQ2bnmiWEDKe4YiL8qANB+5vi
-	R4XHOp+S0AtvZTosJyaDqqRVxouQ9VMSziWaU62SQHGm9odw0zzJwhWAI+n4c0NZB0eODvHKjT1Nq
-	nzfZ439uZc5mfJdaSVT5EUWqE8UZsqbWakkJEdVVb00meMRfMMa2k81k4awVj9tj/upwyX1hSz2Lx
-	o83SYzZ4iIoKXizh63tJteRP9Wfbvb0Cs5s6YNc+FUwpNmaWM0wycFCZJ/ad125UUbeB42EGJUihr
-	x/NCtuewtXHt6MUI9D95YvzRr6hWi/A==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xxS74OiPr7Zzt+CPyJzL01wx73MVOf8GVuAektGR1xQ=; b=Mz1WD1vJ4QPDcvMyzrIGKu1Ww
+	YplP/Is9rJKhAjTZBWzPuGQRWnyzXtz7NdonFaAH4RWH4raAQ8B4JBfxeG7Z+OAJtPCKkPIIPcZ+y
+	Uw5a1pl6e9pG06wf/7b5ZlffVSCGw2w0OCi6/YllVjomnrdpbGLj8xLg0ixSavlaT7LMeiLs2Gcx2
+	rOsYGeb1FjI08mlwh7XUOTc2BD7Yc7XKutKIZukc7/xcdDUHrFfWA0WjRCt2aPDGJXqHjXOq1+yYK
+	Xky6+iqHB8v4114UYi4YqKfyStFW7Rp4RMjEjwZa0COFG9VSWHCPIQapkNFkqq3Oi0O+025aKKqm4
+	Q+HhSB+cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imN2m-0001zO-Dy; Tue, 31 Dec 2019 19:19:04 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1imOyQ-0006j4-EQ; Tue, 31 Dec 2019 21:22:42 +0000
+Received: from mout.gmx.net ([212.227.15.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imN2g-0001yp-Ji
- for openwrt-devel@lists.openwrt.org; Tue, 31 Dec 2019 19:19:00 +0000
-Received: from Honor-Play-1db35e6380f5c0.fritz.box ([5.10.1.184]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MN5Nt-1j4rGL2JOv-00J69t for <openwrt-devel@lists.openwrt.org>; Tue, 31
- Dec 2019 20:18:52 +0100
-Date: Tue, 31 Dec 2019 20:18:50 +0100
-User-Agent: K-9 Mail for Android
+ id 1imOyD-0006hx-Vf
+ for openwrt-devel@lists.openwrt.org; Tue, 31 Dec 2019 21:22:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1577827342;
+ bh=N4gsRdoMfp0ak+l0I/QXaYkRJC0Z2aXrNie9dYhp7yI=;
+ h=X-UI-Sender-Class:Subject:To:References:From:Date:In-Reply-To;
+ b=EDzq2YkgWznHJFMLF3kO4gclbLt3OgLo1dUEvdNMlic8pg8NhgS/kByi/N1nM0Tlc
+ hUTYMHR43AZ8oD8V4mmaGEy9MaF6JBE3Yj87W9HbUQ299RBXCd9weY1p/Vqt4tlO4+
+ 5TREy1ATDOa4ryU3Jhxe/P4LJRTxiRCzw9T5Vneo=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.0.80] ([178.14.1.230]) by mail.gmx.com (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1N0oFz-1jiKoV1eDN-00wlT0; Tue, 31
+ Dec 2019 22:22:22 +0100
+To: Rosen Penev <rosenp@gmail.com>, openwrt-devel@lists.openwrt.org
+References: <20191230050756.3675-1-rosenp@gmail.com>
+From: Hartmut Knaack <knaack.h@gmx.de>
+Openpgp: preference=signencrypt
+Message-ID: <e01450cb-1ef1-dc8f-3d88-c7dd237fcbd1@gmx.de>
+Date: Tue, 31 Dec 2019 22:22:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Firefox/52.0 SeaMonkey/2.49.4
 MIME-Version: 1.0
-To: openwrt-devel@lists.openwrt.org
-From: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-ID: <A1FAAEE6-7F9D-4556-8BEA-3C30FD156938@adrianschmutzler.de>
-X-Provags-ID: V03:K1:k22DMwAbzDhpc7SqvfCHdVK7opOXDLoAWwUKjFyG+VpVU+dOKYV
- /kdnp+3HcT/FkpQ7+/mZ9ZbW/MvQY+w3qnmUK9keKr6nebNSCcMtLLubhaSkoZllBLl4t3u
- km+YzNRtSsz5Kc6Z5x5UoK/LajpBOtKj7GvaOBq/z5JqK1IjVqpCOlp3ebENxoTAFxxCL5i
- dkly9JLbRKy4dn7KQf5Zg==
+In-Reply-To: <20191230050756.3675-1-rosenp@gmail.com>
+Content-Type: multipart/mixed; boundary="------------CCDF1598FFA555A8DBBD1153"
+X-Provags-ID: V03:K1:g75ltSZDRFPn8tgFVoarBNTrgMdgQAE6963JRGSEYpPhZzJA5lR
+ +xG3RunIRH1/bUUFKrhIQddHMMWEvdDBQchf7IpKGhFxwJrpCD8kc0tyQAGqnm949JcgjGD
+ XCAvtGIiRBlwwtwHMJ4jHKD6pt50byxMw3El91I9eQhbWChT3YsevqGR1FMia2rc7jx4djL
+ M6toKDtG+JVlFhSCgMwPQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:a+HgP26dP2g=:vdDnWExLBbfvNvmctfJnDU
- sZ4yMPgNL5gK2rKVUsib/3J/NTNfNRkJd8GkgKqUV0pHg1rH1Qgcxw4xnOTxahWf5FX4paQIW
- i17zZJQn837joszmx0/d2E3EI5TOdmub3llIcvgzDHLmF/Ofo7tQ9NHPZWNiVTzJZJfp0U1Or
- JHa57SpZcalhwJLRpsddU1SgfQ5M5QVGllGhAGA9tCvADMD5xrCT5MFWKGjNV6Q2fWJ2jhngA
- tFICoVyZ9asz7YerJbc9EuTjQA6QV+hIJSsR4VbjI0lT47fO3Qh1U2OhRHI9auEfy6w/wtXL0
- n/PYdzcMxHgeyOYVKKlfVBrrLPr9z87WXFezUjkskEMYqwOSF0vK4Dal6BkdOIwsoi5j97wIP
- mYr5HBYb9lo9xLr6JYcNdVjCuTsc6RzYryZp2U/ZtyTQcZtMmSJJPhgAwLPZxLRCmSmfq/9gu
- DwsjgIMfKxExWQ8dYDRbZICZ9PABQ2qrmhygBQLDIW3t9dH4/FCAq/4I1nQqooeWzTIXVrLsd
- DPyOv/pv+sg2oR3ggC4aQq5Map7UI9U0tdWby892dBXNY4J5KVlElqJO8v12EUZYzKzNNSk6H
- m7+81hCnlaLjMFrzsG0pfFF8V78dHqLbwYDaQtlwx3B4hvG16r0QnEWI59t59p1kXpbuePb4W
- Xk5Mkuy2NQipCZ9Y1KVQVUhEbTBTDP+LgzSSA0yjg8easXqkY6qvjHjVn/JigQU4f50ItkZ55
- 7PJmqVs18K12zbZ0H8rbvSI57nPX/2P2K/EoQteoWo8ex+YisQm5r2rs5EU9fY/rSCA3xTWGc
- tqsh+u08Gfek7TWqhJbib7qL6eRxAI16t2FEBlSY0mVKkS4oiAiErlhfInmq8rt/tVvgWU5W4
- trCzCOfRaYkbuh42haiY+IcFi200GNXTYYfZZScfA=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:o+UgohWF8as=:rToku0OtF//glR6vioIINC
+ h6NW1fnIvdqHjYGEjp+vP56X3io635r9JA5iqVpvvCO5ou6FH43EN+CxRYm6701Y8Z43k7k+O
+ lS7AIhnzVS5pDEAgeNut3JVAdDj/fDV27XBVhLMiUTu0lr7yUUCLMUwvJ/+tSB0nMGgHNZO24
+ S7IjpPu1RfJAwA7RYq4WTTy2+OSUtFYf2dUFTCV5o1mIE7cBqvAPu2RUbqFlDuQWmGXVCLwxa
+ IoOT073IOu42PKr4mLnuGqVHDdk5g5p0qg6RxvArBaebPqJOoRmqGLkHUPNcNw1y48XWffUUe
+ t85PpC8UuXHyJI6jk2ji+VZvlo1D2I86MqDwJjuKNSdo0a+SdS41X4BUc+4iGeXK1pNU9KiSJ
+ pdCchb0z52ZIrLBO/0H7N11SMfWWkvcdhS5UhA2XSMYGD6LKgdQdlsAPGBIqZGfIB/ziFdxiD
+ gt0PACXhH0rXRkAH3a/tYXdpwB1I/iCJ3ocy4TaRwhRJjXb5HlIX5+35scI8/ze1ZlmRVKdIy
+ T4l5+thqC690McefyBfQsWwSgFkCDU4DziUlNML8WuMAc22U4MOHgqAsPbARCT2nF+PBKJv8J
+ mcvNQsKd2/W7XHT+znK7lfpRozBgcC/c572JPPN2up8x1Ag3RINXjzzeYhX32cHD6Ibftf7xo
+ QdI9tvqPi0+DQdnZH/kYfHt428FHAXA0mOpY0+FkYRk1weVRr93ZXhMlNDLwJdKR2DpbGFI3D
+ Zfos9OYu7dCAQ6VMNwnGc31aYz8kbwV0A7Dnp9mh03NUbsMDRcpBHz0g9ZWe6MnH8jT09sX17
+ mUXdo0N0WArYqNgy97WZjsjfq30f+IOWQboaxM/m1rIS5GbYYlhDvIflHSkaXCpvkE8whTXBx
+ i/hKg/+LdqGTEQEb2GiHj8pYdzSrJCl/3MM81phnmrvJruMLB39vJm1fa1exhVj3c5IbHbCYD
+ x/oPrIkTgZJ5juvci8zu2lApeQWRbuz4APxmOxAo39/wHAJrZRnXCf5whzJ3XN+INWSRx88pb
+ ppMVpuBfsL0APsUHJIxdxqFdyyMKutWv5vNmrZxWh4sdUbTEdLRUMMmNM8cyq4uvkL/qUZtjC
+ hJaQQtzTLUF7XN4wGau5HpDz377W6FulGqFwPIPUazzBA3me/AhgJiHIf80/WNb8GWwoULtra
+ M726vPwywy3fBMdQQDd7khwH6u3Lks3t35pVpJtMVnhYldYvOuePBFjP9uCJPdn2eqbl8EVyd
+ IxVA3cpuL9p8R/CQjFWlDO/DCd8fGYIYBI7Ro3Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_111858_943864_B3FD7E03 
-X-CRM114-Status: UNSURE (   1.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191231_132230_348078_60C325DE 
+X-CRM114-Status: GOOD (  11.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
-Subject: [OpenWrt-Devel] Dependency build error fix
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (knaack.h[at]gmx.de)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.15 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] [PATCHv2 1/4] scripts/gen_image_generic.sh:
+ Replace -o with ||
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,66 +99,114 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8792288559676730015=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8792288559676730015==
-Content-Type: multipart/alternative; boundary="----G5C41BOH8JQR3NY9QM5ZNGDEMWJZ9L"
-Content-Transfer-Encoding: 7bit
-
-------G5C41BOH8JQR3NY9QM5ZNGDEMWJZ9L
-Content-Type: text/plain;
- charset=utf-8
+This is a multi-part message in MIME format.
+--------------CCDF1598FFA555A8DBBD1153
+Content-Type: text/plain; charset=ISO-8859-15
 Content-Transfer-Encoding: quoted-printable
 
-Since I've read similar reports five times already:
+Rosen Penev schrieb am 30.12.2019 um 06:07:
+> -o is not well defined.
+>
+> Found with shellcheck.
+>
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> ---
+>  scripts/gen_image_generic.sh | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/scripts/gen_image_generic.sh b/scripts/gen_image_generic.sh
+> index 2d2fb120ce..1e35b1b349 100755
+> --- a/scripts/gen_image_generic.sh
+> +++ b/scripts/gen_image_generic.sh
+> @@ -1,10 +1,10 @@
+>  #!/usr/bin/env bash
+>  # Copyright (C) 2006-2012 OpenWrt.org
+>  set -e -x
+> -[ $# =3D=3D 5 -o $# =3D=3D 6 ] || {
+> +if [ $# -ge 5 ] || [ $# -le 6 ]; then
+>      echo "SYNTAX: $0 <file> <kernel size> <kernel directory> <rootfs si=
+ze> <rootfs image> [<align>]"
+>      exit 1
+> -}
+> +fi
+>
+>  OUTPUT=3D"$1"
+>  KERNELSIZE=3D"$2"
+>
+Hi,
+this does not look right. You changed it from reporting a failure in case =
+there
+was any other amount of options than 5 or 6 given, to reporting a failure =
+if at
+least 5 or at most 6 options are provided (in other words: every amount).
 
-Problem:
+Regards,
 
-Package luci-mCollected errors:
-* satisfy_dependencies_for: Cannot satisfy the following dependencies for =
-base-files:
-* 	libubox20170601
-* opkg_install_cmd: Cannot install package base-files=2E
-* satisfy_dependencies_for: Cannot satisfy the following dependencies for =
-odhcp6c:
-* 	libubox20170601
-* opkg_install_cmd: Cannot install package odhcp6c=2E
-* satisfy_dependencies_for: Cannot satisfy the following dependencies for =
-urngd:
-* 	libubox20170601
-* opkg_install_cmd: Cannot install package urngd=2E
+Hartmut
 
-Solution:
-
-make clean
-
-This should cover similar errors with other packages=2E=20
-
-Best
-
-Adrian
-
-------G5C41BOH8JQR3NY9QM5ZNGDEMWJZ9L
-Content-Type: text/html;
- charset=utf-8
+--------------CCDF1598FFA555A8DBBD1153
+Content-Type: application/pgp-keys;
+ name="0x03684A18FAC89148.asc"
 Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment;
+ filename="0x03684A18FAC89148.asc"
 
-Since I've read similar reports five times already:<br><br>Problem:<br><br>=
-Package luci-mCollected errors:<br>* satisfy_dependencies_for: Cannot satis=
-fy the following dependencies for base-files:<br>* 	libubox20170601<br>* op=
-kg_install_cmd: Cannot install package base-files=2E<br>* satisfy_dependenc=
-ies_for: Cannot satisfy the following dependencies for odhcp6c:<br>* 	libub=
-ox20170601<br>* opkg_install_cmd: Cannot install package odhcp6c=2E<br>* sa=
-tisfy_dependencies_for: Cannot satisfy the following dependencies for urngd=
-:<br>* 	libubox20170601<br>* opkg_install_cmd: Cannot install package urngd=
-=2E<br><br>Solution:<br><br>make clean<br><br>This should cover similar err=
-ors with other packages=2E <br><br>Best<br><br>Adrian<br>
-------G5C41BOH8JQR3NY9QM5ZNGDEMWJZ9L--
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 
+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
+av9TAmRKNmtD0i57
+=3DafBB
+-----END PGP PUBLIC KEY BLOCK-----
 
---===============8792288559676730015==
+--------------CCDF1598FFA555A8DBBD1153
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -148,5 +217,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8792288559676730015==--
+--------------CCDF1598FFA555A8DBBD1153--
 

@@ -2,81 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ED3912D5C4
-	for <lists+openwrt-devel@lfdr.de>; Tue, 31 Dec 2019 03:22:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42EED12D5F7
+	for <lists+openwrt-devel@lfdr.de>; Tue, 31 Dec 2019 04:24:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hGvIBZ/FwYAnzAGwjk7NFqGpnLu+NsqLi2AEWL6Tp7M=; b=kG4ss9XBlmehxVhcERi5p4gUbi
-	DxgGc1ExTszx9mFF4kFZQuSoZ7YPOEtj7Ncs7UhZfh420/b0Tu5YTT0H0ljq5qUBvgVc1lz4LMtdy
-	Z/7XNfiBuSMI4f/JX0s5aCeUSZJz3ePhxs5csSQEX2Cin1UvCgnhliIrzO8xz5AJEV32j4Y4Yf2Op
-	aSe54yr9sH/KOliKo3DNaoaiWC7huBwJyXti4xkLUyoHIFSlxnxHFPJqJy4rr1LMFbCwptekiHKqr
-	GEsBTbGP12D91z6kJQI0TeKqPoz7azyuTaiKLI3hOvOvYCl145gP/2L0+zhcN2biyWkpJfHuckxD6
-	pMBUsqow==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZQdTF3usYM+IFUXlI1VlWmNhPVLaC0EJ90Drjp6Lk9k=; b=EpecqREeRCVN4c
+	+FlAs/iKowOVupU+NoQ/5aEgDhPwYR0x5trFaTDVQmwWfl2v7DpZlKyYXZ3vg/qfPJfhGrL3gbwOP
+	HRMvLGagAKDmk+H6EVKGFdQMKLlS+kcTYDU4z+3R3/U/PCdVj8UN4SiNTeMjc6Ml218bH/PFIc9u0
+	NHde/ihipr+g5MFJJhs1eRy2b5tqeqpWJvpznJmsCXhqgqoalDcb0NGR2xO1opc3SWe19TWF2uZ6W
+	rwnHgv4b9fu8WznQF3FanncvdrUHrZfXjSpiyFTbKanBFZIMFe5YQvwdzMesNEm/ZrjOGFsOYYMUH
+	S9EBcfRildAPRBY9NVcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im7B8-0006xW-KU; Tue, 31 Dec 2019 02:22:38 +0000
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+	id 1im88n-0000c5-Vu; Tue, 31 Dec 2019 03:24:17 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1im7AK-000657-0D
- for openwrt-devel@lists.openwrt.org; Tue, 31 Dec 2019 02:21:49 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id x17so15359009pln.1
- for <openwrt-devel@lists.openwrt.org>; Mon, 30 Dec 2019 18:21:47 -0800 (PST)
+ id 1im88b-0000bS-0o
+ for openwrt-devel@lists.openwrt.org; Tue, 31 Dec 2019 03:24:07 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z124so18937949pgb.13
+ for <openwrt-devel@lists.openwrt.org>; Mon, 30 Dec 2019 19:24:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
+ h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=0iTjjrtmcLbGL72uRDOjaNp+YiZSkx5AA7AaWar483g=;
- b=OeinYLw4z0sTJXXOnlJHGPt0E6GTfAuZVcAVTfxXsrATO0jR8ax3RYah7pLzkNZb1p
- Er8UjYbseVpEKA+yGFdVivtM1PcGTkOvfABWXP7GstCIUEPY1TAYPqLR/1j7+BBjViXH
- ZcvqRyTaMbAL3oGCanJD8+CDTZHOs68Fs4WWaYKeOLyXqZBxTbe9nAc8JhfPxASKoJiu
- +DZlZsI9Ktw43Zt3A8W/RZUADWYPheSZugQxY9Cz9zNVw/Yxjp8oralXLkQ+Ik2cSLrP
- V9L0cI4TdfV9QK4PRUnBpe3lQhMCrjjFSwx4nP0g27OgApfL//ivgZbnlS5BPqXWnG5G
- 86Jg==
+ bh=41b/MWcgnqyeWq4jX24kZHQlzLHV68k/ib4Tm0CA02Y=;
+ b=r8D2M7Y+g4oG77YFoR/I2Pvv4zTj8o2rcl5niZfWrlUNDkapzFLayXvDzXhJwa2aTo
+ 9p4J+3WOL6g5XjN86EIsfgVnNFBhH3qyHmCXulC6+xTGKF2bOw8TMO0R7kwMXnNiqCV3
+ NFGGRAHEKB8tldgW/RMd4vXlTEHG3cu/+5lhHacd80yCyReORwN+LVre50AdsKo4dtbs
+ jgI7nosOrMDQh2/nVqti1gx/NEn10ZjtFh0unFt5Zbf705tU8UNrEtn++SmjAnUxVYOJ
+ uLoKuXHdoYgZU9pcFPkNCBSc/xs+D7XHfBTositX/SWFjvohv4QX8gpaDsCvL8QLEJX5
+ ktag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=0iTjjrtmcLbGL72uRDOjaNp+YiZSkx5AA7AaWar483g=;
- b=X83OinNL+SQGjkFjbA++8CepgOfSeI9S5hY4FfjwqY23t/Wh5tIDmMRb25qIAU/Uo5
- tshX15WuemWFMGYFiKJaLn6lXhxiw1jU0d2XtJ6zs0gTbStzL96lJiMefrWf8zEEOX4j
- hNZ5J1hQvtUNfoU8Zl3StN/qpsiyCASFIzQmWyXsNX72ceFnx8birxe7BsEETcz0YqB0
- XnSijwaz5KZuBJ61tEMpAyqHX/qg80OXH8XFgpR5MobETxauLmDKp1xvUJe16vgAGT4N
- bV+GkyrT0/pK+ZQ5Lq1W7KRDa+XmCIkaY4o/ItXwFsERa3YjHcatz5jximRsiuEqglt+
- r/Qg==
-X-Gm-Message-State: APjAAAUXzMG9vcnW9KTasES0z0bp1oJrACGNH3qdVZOFrctVxKoGRnjk
- qh2t40CzSuuxe6DamHj+QvmGFQeE2Zg=
-X-Google-Smtp-Source: APXvYqx3NhVqoQtgv6/roaU7f6E5Pbz0ehXadli9YzTDi5nexZNRfLFiZko30sVElnVyxboUQBtOZg==
-X-Received: by 2002:a17:90a:c214:: with SMTP id
- e20mr3180066pjt.98.1577758907040; 
- Mon, 30 Dec 2019 18:21:47 -0800 (PST)
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=41b/MWcgnqyeWq4jX24kZHQlzLHV68k/ib4Tm0CA02Y=;
+ b=OIyNu5isGFuipKc0sEWZQqt0YhOH18ClWCxIVZx1VxDvpphUWdBXFDupSYHEf3Becx
+ ILr9gQmY8PVs2QT7z9fb2DlsUnCpzWptFejDBR670fRl58kR/ZvXw51TLjBIx2IxmhMc
+ oFU7DKTv3gKjWIe3rppQLxZMy6zIJ04Z1g9bOgLS48YY1rD1ufgVRcQqRoBoGQranLck
+ 3ZCjPRMGH+a2pEhigB0d+4cDnqI4xoXB+lHCsUWEa3JzVpPgLcH6ogrkFv3u/valeuuq
+ aGdSt9M1VneVV5UofgYLkieecIvmhB2oFPz8Q+4uQi1oZJ5xXU/rsUeqXiVm8Vwc/wL1
+ G8tg==
+X-Gm-Message-State: APjAAAV8NnqMUlonQJjLqqx9PPVzCvLTWxOGmuRN5+6jzlzF+qRDE3SL
+ k0c7ui16vK9d62++sA7yTibcJje5fLA=
+X-Google-Smtp-Source: APXvYqxQVt87NKPJ9eyxpIssGEId0U1P+aJFrOGkHHfTunQ3wKQFv9MCfK2JAoHKyfEDVRbsUH68WA==
+X-Received: by 2002:a63:f814:: with SMTP id n20mr74877797pgh.318.1577762643456; 
+ Mon, 30 Dec 2019 19:24:03 -0800 (PST)
 Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id k1sm908587pjl.21.2019.12.30.18.21.46
+ by smtp.gmail.com with ESMTPSA id c14sm32286065pfn.8.2019.12.30.19.24.02
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Dec 2019 18:21:46 -0800 (PST)
+ Mon, 30 Dec 2019 19:24:02 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 30 Dec 2019 18:21:40 -0800
-Message-Id: <20191231022140.48222-5-rosenp@gmail.com>
+Date: Mon, 30 Dec 2019 19:24:01 -0800
+Message-Id: <20191231032401.79465-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20191231022140.48222-1-rosenp@gmail.com>
-References: <20191231022140.48222-1-rosenp@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_182148_072300_28882D64 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191230_192405_085874_FBACCB56 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:62d listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rosenp[at]gmail.com)
@@ -89,7 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 5/5] scripts/mkits.sh: Switch from bash to sh
+Subject: [OpenWrt-Devel] [PATCH] trace-cmd: Fix compilation without
+ fortify-headers
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,23 +102,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This no longer needs bash.
+Upstream backport.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- scripts/mkits.sh | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ package/devel/trace-cmd/Makefile              |  2 +-
+ .../devel/trace-cmd/patches/120-limits.patch  | 26 +++++++++++++++++++
+ 2 files changed, 27 insertions(+), 1 deletion(-)
+ create mode 100644 package/devel/trace-cmd/patches/120-limits.patch
 
-diff --git a/scripts/mkits.sh b/scripts/mkits.sh
-index c09e537dbd..62cfc21c6b 100755
---- a/scripts/mkits.sh
-+++ b/scripts/mkits.sh
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/bin/sh
- #
- # Licensed under the terms of the GNU GPL License version 2 or later.
- #
+diff --git a/package/devel/trace-cmd/Makefile b/package/devel/trace-cmd/Makefile
+index 6d3fe53758..25831d8b1b 100644
+--- a/package/devel/trace-cmd/Makefile
++++ b/package/devel/trace-cmd/Makefile
+@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=trace-cmd
+ PKG_VERSION:=v2.6.1
+-PKG_RELEASE=1
++PKG_RELEASE:=2
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+ PKG_SOURCE_URL:=https://git.kernel.org/pub/scm/linux/kernel/git/rostedt/trace-cmd.git/snapshot/
+diff --git a/package/devel/trace-cmd/patches/120-limits.patch b/package/devel/trace-cmd/patches/120-limits.patch
+new file mode 100644
+index 0000000000..66e26b8934
+--- /dev/null
++++ b/package/devel/trace-cmd/patches/120-limits.patch
+@@ -0,0 +1,26 @@
++From 293ff6d5bc9d3b8bfbc3c57d20d3d2d00986c168 Mon Sep 17 00:00:00 2001
++From: Alexander Couzens <lynxis@fe80.eu>
++Date: Sun, 26 Nov 2017 05:22:51 +0100
++Subject: [PATCH] trace-cmd listen: Include limits.h to define PATH_MAX
++
++PATH_MAX is defined by limits.h. On some system it's also
++defined by dirent.h but not on musl.
++
++Signed-off-by: Alexander Couzens <lynxis@fe80.eu>
++Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
++---
++ trace-listen.c | 1 +
++ 1 file changed, 1 insertion(+)
++
++diff --git a/trace-listen.c b/trace-listen.c
++index 871df0e7..8cc0c64b 100644
++--- a/trace-listen.c
+++++ b/trace-listen.c
++@@ -23,6 +23,7 @@
++ #include <stdlib.h>
++ #include <string.h>
++ #include <getopt.h>
+++#include <limits.h>
++ #include <sys/types.h>
++ #include <sys/socket.h>
++ #include <sys/wait.h>
 -- 
 2.24.1
 

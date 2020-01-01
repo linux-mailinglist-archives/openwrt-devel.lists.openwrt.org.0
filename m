@@ -2,75 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2556812E054
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 21:07:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0187A12E056
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 21:08:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l2bPRr+djEh9QTHV9KilBx1DQHD6Ax6QiyqO+KL3/YU=; b=iZgfDA9PCw7QI2
-	nphhT/s139XVK5SzR3ODqG5XSYlr2Az882rjAuJ3NmlLRs1AVA3YGoyar1Y3erjBBxpswT3GektQD
-	dCb3WHknIFnYYa37dpbQgSnS8QLb8he8ZmkI7o3tFJpH1LRcsk2XofoxxqDFItUOZSuCuAmYRnp8p
-	jJPOHybuGWopKBInwKDj2Rye8t35hPtO74vthkb7uEPbzT/bQu2uCPuMfSDdYsz0UfnR4T+hqNcCk
-	tQEwzyDZ1kL0f9MlR1o/4dSrArqQL+y+L8bvt9WwOgW8tYjRdDt66BhUaOkIzjzAvuY9SQtvBA2mW
-	zclSsjIvla0TygS2UFcQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YJOpeTXezVU1rW2JxnhSXEBBPJHh4FRU4wMhwgNXDME=; b=rKRTUxWa+fQqxqmvrSA7RZAvMJ
+	aqVK4+tGV8029acJNRezYFaV5cdeJryC6g/rbG4p8vzRsBUrEVsgWfN9zCczfsBnoscvW/SBxjZyK
+	fv1j79rHHxZJPkF4FCzLApcb1oEYG7Qw6RYaDVPPd8u6cSwX5yMhTQbhfYvcSE1+PxAG9Q5qyB1EW
+	dJ6Y34lQmvw2A703Y6IZgAR/xIe2shh9loyHlsgEEBYFKGk8VHfPtf/jQL+XJncxpGoQ3s4ave+gC
+	6joXzSCro7XYuzgRR85yPzg+YXR2mCQT3V9RVG2jTIaGwt2xFJovrfbNwGjNzGBX7r/ETVqp1IMWV
+	ruUyq8PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imkGg-0006Tw-S6; Wed, 01 Jan 2020 20:06:58 +0000
-Received: from canardo.mork.no ([2001:4641::1])
+	id 1imkIU-0006zC-B6; Wed, 01 Jan 2020 20:08:50 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imkGb-0006S9-7d
- for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 20:06:55 +0000
-Received: from miraculix.mork.no (miraculix.mork.no
- [IPv6:2001:4641:0:2:7627:374e:db74:e353]) (authenticated bits=0)
- by canardo.mork.no (8.15.2/8.15.2) with ESMTPSA id 001K6hYa024538
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
- Wed, 1 Jan 2020 21:06:43 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
- t=1577909205; bh=ZSp033IO9wkh04BJ5eVy4S/27n1kvnhEEJuYqd1Pe+o=;
- h=From:To:Cc:Subject:References:Date:Message-ID:From;
- b=fgAsyUo5mjloMeyaHx5JmRKUreJJyYIjIxFTPpTgDz0Y7MMlcvJMrCjs2fYbuqgXQ
- yZqg7u7Bq4NByzVMVXxtIx4ZdykKiLDPlLStSPtONBm8jBTxJetBfYkXN1lqKnwiKa
- mvU0TLtC82s1zJu9hkc0SMsXEbGGfTqAFfUxcPwo=
-Received: from bjorn by miraculix.mork.no with local (Exim 4.92)
- (envelope-from <bjorn@mork.no>)
- id 1imkGR-00028D-Fa; Wed, 01 Jan 2020 21:06:43 +0100
-From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-To: Jo-Philipp Wich <jo@mein.io>
-Organization: m
-References: <CAJXyS=ivRQx3D8kJ8p3eoN0CtzVu-Y1LvuPHb24CcHs2o3DWsw@mail.gmail.com>
- <97b99a6a-6d85-a858-3ff6-809cc5b13b6d@wwsnet.net>
-Date: Wed, 01 Jan 2020 21:06:43 +0100
-In-Reply-To: <97b99a6a-6d85-a858-3ff6-809cc5b13b6d@wwsnet.net> (Jo-Philipp
- Wich's message of "Wed, 1 Jan 2020 17:29:39 +0100")
-Message-ID: <87h81fx7os.fsf@miraculix.mork.no>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1imkIJ-0006yJ-Li
+ for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 20:08:41 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 610474F03;
+ Wed,  1 Jan 2020 21:08:36 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 048dfc38;
+ Wed, 1 Jan 2020 21:08:25 +0100 (CET)
+Date: Wed, 1 Jan 2020 21:08:25 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Petr =?utf-8?B?Tm92w6Fr?= <petrn@me.com>
+Message-ID: <20200101200825.GR70184@meh.true.cz>
+References: <20191230225631.GJ70184@meh.true.cz>
+ <D18390C9-BACD-441C-BC1F-41CD9B01634E@me.com>
+ <20191231095801.GK70184@meh.true.cz>
+ <46C7C775-CDBB-4E84-8C7F-A0F949F1F981@me.com>
+ <20191231134925.GL70184@meh.true.cz>
+ <C9B93DB4-A2CA-455B-8B4F-E7A23E34D141@me.com>
+ <20200101124453.GM70184@meh.true.cz>
+ <2DF80201-77E5-4301-9046-67165E5A8B9C@me.com>
+ <20200101161447.GQ70184@meh.true.cz>
+ <DC52BD3D-AB2B-426F-A184-C1F7664BB076@me.com>
 MIME-Version: 1.0
-X-Virus-Scanned: clamav-milter 0.101.4 at canardo
-X-Virus-Status: Clean
+Content-Disposition: inline
+In-Reply-To: <DC52BD3D-AB2B-426F-A184-C1F7664BB076@me.com>
+X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_120653_749998_A5D98C57 
-X-CRM114-Status: UNSURE (   6.49  )
+X-CRM114-CacheID: sfid-20200101_120839_859706_E2849FFE 
+X-CRM114-Status: UNSURE (   5.05  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4641:0:0:0:0:0:1 listed in] [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] dev.archive.openwrt.org cert expired
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent
+ development snapshots: "message": "Firmware image couldn't be validated"
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,19 +77,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: Hannu Nyman <hannu.nyman@welho.com>, openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Sm8tUGhpbGlwcCBXaWNoIDxqb0BtZWluLmlvPiB3cml0ZXM6Cgo+IHRoYW5rcy4gVGhlIGNlcnQg
-d2FzIGF1dG8tcmVuZXdlZCBidXQgdGhlIG5naW54IHJlbG9hZCBmYWlsZWQgZHVlIHRvCj4gYHNl
-cnZpY2VgIG5vdCBiZWluZyBpbiAkUEFUSCBmb3IgY3JvbmpvYnMuCgpUaGFuayB5b3UgZm9yIHRh
-a2luZyB0aGUgdGltZSB0byBleHBsYWluLiAgSXQncyBhcHByZWNpYXRlZC4KCkZXSVcsIHlvdSdy
-ZSBub3QgdGhlIGZpcnN0IG9uZSBmYWxsaW5nIGludG8gdGhhdCB0cmFwIHdpdGggY2VydGlmaWNh
-dGUKYXV0by1yZW5ld2FscywgZm9yIHZhcnlpbmcgcmVsb2FkIGZhaWx1cmUgcmVhc29ucy4uLgoK
-CkJqw7hybgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-b3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9y
-ZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZl
-bAo=
+UGV0ciBOb3bDoWsgPHBldHJuQG1lLmNvbT4gWzIwMjAtMDEtMDEgMTg6MTM6MDZdOgoKPiA1YzZk
+ZjJkZWYyYTFkMjYzMTNiNDVjYjQwZTIyNjhhMDhjNTlmMDAgLSBGQUlMUwo+IDQ2NTY3NmM4YjEy
+NjE4ZWM5OTEyMmQwY2MxMjE3OTk0ZGU4ODQyODQgLSBXT1JLUwo+IDViZDEyNzYwZThmY2UwMjZm
+ZDJhODJkNTZmN2IzYzhkZmYyN2UwOTYgLSBXT1JLUwo+IDhlMTk1YjMyNWE4NmI0ZGM5OWVlNWE5
+ZWUwYjYzN2NmMjY2ZjlhMGEgLSBXT1JLUwoKTmljZSwgdGhhbmtzIGEgbG90IGZvciB5b3VyIGhl
+bHAuCgo+IFRoZSBwcm9jZCBhZnRlciBmb3JraW5nIHRoZSB2YWxpZGF0ZV9maXJtd2FyZV9pbWFn
+ZSBwcm9jZXNzIGRvZXMgdGhpcyBpbiB0aGUKPiBwYXJlbnQgKDEpIHByb2Nlc3MgKHVzaW5nIHN0
+cmFjZSk6Cj4gCj4gY2xvbmUoY2hpbGRfc3RhY2s9TlVMTCwgZmxhZ3M9U0lHQ0hMRCkgID0gMTMw
+Mwo+IHJ0X3NpZ3Byb2NtYXNrKFNJR19TRVRNQVNLLCBbXSwgTlVMTCwgOCkgPSAwCj4gY2xvc2Uo
+MTApICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgID0gMAo+IHJlYWQoOSwgMHg3ZmZmNWQx
+NDIwLCA2NCkgICAgICAgICAgICAgICA9ID8gRVJFU1RBUlRTWVMgKFRvIGJlIHJlc3RhcnRlZCBp
+ZiBTQV9SRVNUQVJUIGlzIHNldCkKPiAtLS0gU0lHQ0hMRCB7c2lfc2lnbm89U0lHQ0hMRCwgc2lf
+Y29kZT1DTERfRVhJVEVELCBzaV9waWQ9MTM3Miwgc2lfdWlkPTAsIHNpX3N0YXR1cz0xLCBzaV91
+dGltZT0xLCBzaV9zdGltZT0wfSDigJQKPiB3cml0ZSg2LCAidyIsIDEpICAgICAgICAgICAgICAg
+ICAgICAgICAgPSAxCj4gcnRfc2lncmV0dXJuKHttYXNrPVtdfSkgICAgICAgICAgICAgICAgID0g
+LTEgRUlOVFIgKEludGVycnVwdGVkIHN5c3RlbSBjYWxsKQo+IGNsb3NlKDkpCgpZZXAsIGJ1dCB0
+aGlzIEVJTlRSIGxlYWRzIHRvIHRoZSAiRmFpbGVkIHRvIHBhcnNlIEpTT046IDQiIHdoaWNoIHdh
+cyBtaXNzaW5nCmluIHlvdXIgbG9ncywgc28gSSB3YXMgY29uZnVzZWQuIFRoZW4gSSBzYXcgYENv
+bm5lY3Rpb24gdG8gMTcyLjMwLjMxLjIzMwpjbG9zZWQgYnkgcmVtb3RlIGhvc3QuYCBpbiBvbmUg
+b2YgeW91ciBsYXRlc3QgbG9ncyBhbmQgSSd2ZSByZWFsaXplZCwgdGhhdAp5b3UncmUgbm90IGFi
+bGUgdG8gc2VlIHRob3NlIG1lc3NhZ2VzIGFjdHVhbGx5IGFzIHRob3NlIGFyZSBvbmx5IHZpc2li
+bGUgb24KdGhlIHNlcmlhbCBjb25zb2xlLi4uCgotLSB5bmV6egoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QK
+b3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3Jn
+L21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=

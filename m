@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0B1012DF0C
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 14:44:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D7F712DF16
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 15:03:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,38 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9AZQwMTXqsfmMWRm7X7/RzGc9f6K8fNm/bJjs5EckeU=; b=ugNlLUseqfWfqPRCgl5iOA2CqN
-	A5v74jEJVM42nwlqRRSu07bFC/nlPSRPy31cvwgHdnciqxyY1zDYOOGaL4Daihrjeqgr+nYsG6cdu
-	luLKcOzP6ZDtoSYvHiAa56TRe9t2Ez7dQRri+WOsMzrst5pTlKH7DdFb7NX1VvboZD4KpEDnoOn9q
-	Op9qzk8re/3fZVNdqI5T3w5B3zBlc8nmL2xyMgWvPdnTu2WqQOT8+KWLXb2dLvkjI0yyQqfA4CnRb
-	pwCiJedIMEFdW9V1tfAqkwyiFmYo+Bgjn1c1JxDpJLPA54mPoz91/wn1m2Mf2pf+He7j0EzVtJV54
-	4kdrb4QQ==;
+	bh=H+kh0TsyX4WNuEjY5RsWiRcPezUpgitkPpdSabUVVIc=; b=Y6l0gRgfnx6hXAlAQETerm9SGH
+	a7q1/h92gTadLjCTo/TF1CkiR5iIErqF1KbphNunQyMd9qn0SHuM16jpm4Zktmp8Lu1VhvHDEmAMe
+	GLKYZuNJFlrI/5UdiYGapVhWeiaTk+LMT/X9IwiKsTuWaVazNQi9nGYEC9amtHqUigpiyuUE5OWsv
+	bFSmCzZgiueZLbQaMWl+u1wT+dDAqfMwOCNHY3CvHRTM/d8dX5jR4K1ZjADUOOBqMBi6aPa8N5Ol4
+	k1vvZjO18eX8lymp97uu6ShwBZEngmq4CdUhLLnkNTDgzZmG5vZXHbHygZ+D0hoBeN0VUDTUGVMJA
+	1IsTpHLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imeI5-0006oM-69; Wed, 01 Jan 2020 13:44:01 +0000
+	id 1imeaY-0004BD-Qo; Wed, 01 Jan 2020 14:03:06 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imeHx-0006nz-Rm
- for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 13:43:55 +0000
+ id 1imeaS-0004AH-PS
+ for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 14:03:02 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id CA7A549BB;
- Wed,  1 Jan 2020 14:43:51 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id ABEE64A27;
+ Wed,  1 Jan 2020 15:02:56 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id f71bf4d9;
- Wed, 1 Jan 2020 14:43:41 +0100 (CET)
-Date: Wed, 1 Jan 2020 14:43:41 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 8a5f1063;
+ Wed, 1 Jan 2020 15:02:45 +0100 (CET)
+Date: Wed, 1 Jan 2020 15:02:45 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Paul Fertser <fercerpav@gmail.com>
-Message-ID: <20200101134341.GO70184@meh.true.cz>
+To: Alberto Bursi <bobafetthotmail@gmail.com>
+Message-ID: <20200101140245.GP70184@meh.true.cz>
 References: <20191228140048.GO11377@home.paul.comp>
+ <9f716d9b-4230-b3e0-7e38-78c4c4781a78@wwsnet.net>
+ <36732b2f-c95a-5749-e028-653a9f8ea4f8@david-bauer.net>
+ <bcd2f7e5-abad-3b9c-7a62-b79bd6b424a6@gmail.com>
+ <20191231141559.GP11377@home.paul.comp>
+ <3dd75d93-e74f-6831-51f0-d2100fdbc1db@david-bauer.net>
+ <20191231152922.GQ11377@home.paul.comp>
+ <80fed589-f821-70f3-0337-24904f087351@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191228140048.GO11377@home.paul.comp>
+In-Reply-To: <80fed589-f821-70f3-0337-24904f087351@gmail.com>
 X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_054354_047614_1853731E 
-X-CRM114-Status: UNSURE (   3.66  )
+X-CRM114-CacheID: sfid-20200101_060300_975854_3ED13714 
+X-CRM114-Status: UNSURE (   5.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,19 +76,40 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org, Chuanhong Guo <gch981213@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Paul Fertser <fercerpav@gmail.com> [2019-12-28 17:00:49]:
+Alberto Bursi <bobafetthotmail@gmail.com> [2020-01-01 03:30:34]:
 
-> 2. Fix BLOCKSIZE for those boards that are consistent, document
-> possible config loss for the others;
+Hi,
 
-What about some DTS based solution? I mean, explicitly enable 4K on the
-devices which are known (or likely) to work.
+> A LOT of OpenWrt userbase does not follow the mailing lists (or even know
+> what a mailing list is), so if you want to have the full picture please
+> visit the forum as well.
+
+users dont know/use mailing lists, developers hate to waste time with the slow
+and barely usable web UIs, not mentioning the amount of noise, making it
+harder to find the signal.
+
+Anyway, the project certainly needs a better popularity/usage feedback in
+order to better understand the userbase, so perhaps some kind of run time
+statistics[1] would help in this regard.
+
+Or perhaps it would be possible to distill the similar information from the
+following passive sources as well:
+
+ - download stats
+ - forum posts
+ - IRC logs
+ - bug tracker/issues
+
+Not so trivial, but less privacy intrusive, probably less accurate as well.
+Ideally we would have both :-)
+
+1. https://openwrt.org/meetings/hamburg2019/start#statistics
 
 -- ynezz
 

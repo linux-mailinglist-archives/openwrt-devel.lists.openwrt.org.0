@@ -2,207 +2,289 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B70F12DF75
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 17:29:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 194A412DFA3
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 18:13:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:References:To:In-Reply-To:Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TNZToZ9vonNhtBSTdY+VhHQ0t6A2ihhkq+ASBJiuPdI=; b=s3Rk22HEOOGzIb2VyLvMFTTnz
-	fVdWMGdlYmwjInuEW7uOVaZsfyhf+NYU8MujVKwveH61dw5Z3zhD1+SBBB1hMBmaFq91kAsALj+er
-	6LpzWi1ofGN0+//IKmz5e7VEPFlnVDYGEo304FJITxl53Ppk+FOweUH71tEaMH5NQvoWyU+Etyy2D
-	rn+K+nF9UkCSelUW+dX6BjjBSOwMvNhmC0rsgf8jALCYBCb+MibApp9Q8otmr23Y82tonmDHI8MYq
-	7xHNwuCOeQ9jvSDi4OQHy4cPuVpKOPRbSCBvLS2LG3hzguJn2f1JGZdthS5eWoWP4fC0cZdcuefz2
-	H1AHEmQ9w==;
+	 bh=l9LSlwl5vFxlKhLiTpakO0Qhr8iK9M1NWai2ShB+gxg=; b=bcOH3YpZ0y1Wa7J1Sp756nqa5
+	Mxo/TvuSpzJZUgiiP8jOPpA9gjlDaFOAv09TN7l9Ge+Trc1ju02GaWT4H+CJz66ZMhycyYwcTnRxG
+	wy/8CUXZSw2g4mPeEKo/m5d+Q87jqiFAN86PxciSVDazD18SuAUYfPZFSLLoFW57Rr5a9c4GAF60F
+	Khr31SxiOPWIohrUDKu0fe7RJMI14S9nEvpsasoecPfx1JeG6mnSBemV/8CMYdk1lWVv9AdD6YEeg
+	AFak+PJCCbe6NczNbEB+mef7OaxkX/hZRYl1s5eBEHAqxN8385b4NfDd9OWI5HDsSx6LJXskSZ8PS
+	agd6qJMKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imgsb-0000Nf-FB; Wed, 01 Jan 2020 16:29:53 +0000
-Received: from mxout01.bytecamp.net ([212.204.60.217])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imgsT-0000NH-6p
- for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 16:29:46 +0000
-Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id DC123532B2; Wed,  1 Jan 2020 17:29:43 +0100 (CET)
-Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id A1136532B0
- for <openwrt-devel@lists.openwrt.org>; Wed,  1 Jan 2020 17:29:43 +0100 (CET)
-Received: (qmail 66613 invoked from network); 1 Jan 2020 17:29:43 +0100
-Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.41.162)
- by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 1 Jan 2020 17:29:43 +0100
-To: openwrt-devel@lists.openwrt.org
-References: <CAJXyS=ivRQx3D8kJ8p3eoN0CtzVu-Y1LvuPHb24CcHs2o3DWsw@mail.gmail.com>
-From: Jo-Philipp Wich <jo@mein.io>
-Openpgp: preference=signencrypt
-Autocrypt: addr=jo@mein.io; keydata=
- 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
- y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <97b99a6a-6d85-a858-3ff6-809cc5b13b6d@wwsnet.net>
-Date: Wed, 1 Jan 2020 17:29:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+	id 1imhYe-0007FQ-Pd; Wed, 01 Jan 2020 17:13:20 +0000
+Date: Wed, 1 Jan 2020 18:13:06 +0100
+In-Reply-To: <20200101161447.GQ70184@meh.true.cz>
+To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+References: <20191230190746.GI70184@meh.true.cz>
+ <357266D6-1E26-4066-AFE5-746C2407B0DF@me.com>
+ <20191230225631.GJ70184@meh.true.cz>
+ <D18390C9-BACD-441C-BC1F-41CD9B01634E@me.com>
+ <20191231095801.GK70184@meh.true.cz>
+ <46C7C775-CDBB-4E84-8C7F-A0F949F1F981@me.com>
+ <20191231134925.GL70184@meh.true.cz>
+ <C9B93DB4-A2CA-455B-8B4F-E7A23E34D141@me.com>
+ <20200101124453.GM70184@meh.true.cz>
+ <2DF80201-77E5-4301-9046-67165E5A8B9C@me.com>
+ <20200101161447.GQ70184@meh.true.cz>
 MIME-Version: 1.0
-In-Reply-To: <CAJXyS=ivRQx3D8kJ8p3eoN0CtzVu-Y1LvuPHb24CcHs2o3DWsw@mail.gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_082945_556996_7C1C87A9 
-X-CRM114-Status: UNSURE (   7.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.204.60.217 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] dev.archive.openwrt.org cert expired
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.21645.1577898793.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: =?utf-8?q?Petr_Nov=C3=A1k_via_openwrt-devel?=
+ <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: Hannu Nyman <hannu.nyman@welho.com>, openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: =?utf-8?Q?Petr_Nov=C3=A1k?= <petrn@me.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1174685986824205303=="
+Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent
+ development snapshots: "message": "Firmware image couldn't be validated"
+Content-Type: multipart/mixed; boundary="===============0064836377139583645=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============1174685986824205303==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="39TBrBtcLrxhnK7JDu88kOKEYw6RTBIcY"
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---39TBrBtcLrxhnK7JDu88kOKEYw6RTBIcY
-Content-Type: multipart/mixed; boundary="aA7P8ztwDhQyCjsNSXIIvwRDbnvjtclmm";
- protected-headers="v1"
-From: Jo-Philipp Wich <jo@mein.io>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <97b99a6a-6d85-a858-3ff6-809cc5b13b6d@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] dev.archive.openwrt.org cert expired
-References: <CAJXyS=ivRQx3D8kJ8p3eoN0CtzVu-Y1LvuPHb24CcHs2o3DWsw@mail.gmail.com>
-In-Reply-To: <CAJXyS=ivRQx3D8kJ8p3eoN0CtzVu-Y1LvuPHb24CcHs2o3DWsw@mail.gmail.com>
+--===============0064836377139583645==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
---aA7P8ztwDhQyCjsNSXIIvwRDbnvjtclmm
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============0064836377139583645==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mr85p00im-ztdg06021101.me.com ([17.58.23.180])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1imhYV-0007F7-8C
+	for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 17:13:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=me.com; s=1a1hai;
+	t=1577898790; bh=SkVBBkIadYV3jMOxMcsatIHxmGSXprLaQL7QwV9pYDs=;
+	h=From:Message-Id:Content-Type:Subject:Date:To;
+	b=BqkXNREgahtzNmZEr0T9VXLp+musFUjHZCWze19kZ7ZuLuErxFkdLi1avfmMd4aOS
+	 7t3YkVL7auoRv8LUmRhVlBQs601pGVI8cH9+7+a55c4JukWvC7BDYc9Z+pkAJj2AHm
+	 wa/xW2IHgpBQkmmigBs73cqsBcRoQtz778axzATZdGjLI7wzr3MQPDIlq45ZDU6hPE
+	 BbpLu79RmX0G8mHZzqE3auy6ZnXd9fLjVHTBkd33OAicy3WsKvagbHjeAKjcgzZDE9
+	 B6LD5/pkZywiF6VXGkxnV41Ud+yTWVHSh7lVoZ7gx128UfyG6EUGe+Y3cXPzyBkNZf
+	 9qbiOnuPkD6ew==
+Received: from [192.168.176.103] (78-80-17-93.nat.epc.tmcz.cz [78.80.17.93])
+	by mr85p00im-ztdg06021101.me.com (Postfix) with ESMTPSA id 425FB340E2F;
+	Wed,  1 Jan 2020 17:13:09 +0000 (UTC)
+From: =?utf-8?Q?Petr_Nov=C3=A1k?= <petrn@me.com>
+Message-Id: <DC52BD3D-AB2B-426F-A184-C1F7664BB076@me.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_DA364966-7FB4-471F-B137-79170928B6B3"
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.40.2.2.4\))
+Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent development
+ snapshots: "message": "Firmware image couldn't be validated"
+Date: Wed, 1 Jan 2020 18:13:06 +0100
+In-Reply-To: <20200101161447.GQ70184@meh.true.cz>
+Cc: Hannu Nyman <hannu.nyman@welho.com>,
+ openwrt-devel@lists.openwrt.org
+To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+References: <20191230190746.GI70184@meh.true.cz>
+ <357266D6-1E26-4066-AFE5-746C2407B0DF@me.com>
+ <20191230225631.GJ70184@meh.true.cz>
+ <D18390C9-BACD-441C-BC1F-41CD9B01634E@me.com>
+ <20191231095801.GK70184@meh.true.cz>
+ <46C7C775-CDBB-4E84-8C7F-A0F949F1F981@me.com>
+ <20191231134925.GL70184@meh.true.cz>
+ <C9B93DB4-A2CA-455B-8B4F-E7A23E34D141@me.com>
+ <20200101124453.GM70184@meh.true.cz>
+ <2DF80201-77E5-4301-9046-67165E5A8B9C@me.com>
+ <20200101161447.GQ70184@meh.true.cz>
+X-Mailer: Apple Mail (2.3608.40.2.2.4)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2020-01-01_05:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0 malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 clxscore=1015 mlxscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-2001010157
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200101_091311_309048_E94C189D 
+X-CRM114-Status: UNSURE (   5.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.9 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+                             low trust
+                             [17.58.23.180 listed in list.dnswl.org]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider (petrn[at]me.com)
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+
+
+--Apple-Mail=_DA364966-7FB4-471F-B137-79170928B6B3
 Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
 
-Hi,
+Here are the results:
 
-thanks. The cert was auto-renewed but the nginx reload failed due to
-`service` not being in $PATH for cronjobs.
+1. build with =
+PKG_SOURCE_VERSION:=3D5ed190aae1b3985719046f4c744e311fc9ef18e3, test
 
-~ Jo
+Fails
 
+2. build with =
+PKG_SOURCE_VERSION:=3D6544e4f1fbdbb92df8a3776e449fdb5602b8ddcd, test
 
---aA7P8ztwDhQyCjsNSXIIvwRDbnvjtclmm--
+the commit hash does not match any version in =
+https://gitlab.com/ynezz/openwrt-procd/commits/wip
 
---39TBrBtcLrxhnK7JDu88kOKEYw6RTBIcY
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
+3. build with =
+PKG_SOURCE_VERSION:=3Dff03f3ed9b6af8b209dae63f24790664c94bd916, test
 
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl4MyPMACgkQQuLLvzou
-ZtNbmw/9GadmSWOk+eqwU9Kcr2w+2CJ5bqekRSkvOaQga+uQuTAhJmIx7erIWseO
-kYY392lgIGJBg2MUAjTze0ODeAQxaAa+Y+VzDpQoHiemmSHBtu6szDg4zMHVT07E
-gZbMLGPexV6VPCEXK08bIDtpySVvCpVahXqvNHvqFOtkNkmLoX/psHsJ2J7SwHG0
-uR7IIWzw8K6yxREaOS/8aT3bQpV3W0UliR7wnn07uAmOfAZenuh0c/lGdkuuoKuJ
-fSuEmcpQOqGy6nFYkxOjbkH39zWjbMnAFjKTpmRXc/maqQsixHQXqcBUKZmGamYr
-SKwvu64gA90WFTRLrRfpQ/tVNo2WVqYx62vikqGqacdfxdVFq1++a5fOAApI7DSi
-eow1HGo7iCYTLJLXhcO3cDoYCG3bLDuH4juTxtGf20JR/f7WB7OEyHxoqc3U1oPp
-psTEfYpfxUdb+Vuux8n5zagtHIWEcpvIo5h1HZU7rrhHK/nbRYO84+fI6iq73ySu
-4psO3mP/1z23NCq9GOqNNs/F7XNeVm1mScfUw6KXWAifkPkzx2XEIvQ7/hYMhY5j
-Q8h6ax55CSeGoNdmlvW3a7Ym+VzC6P8L+mIXrHydgvQ2z/nrK6K+IYPFdYbHfMR1
-a8gPlb/YnAqc0bR1elwB4o5F1mbbz5L4qMoS24dSPyLQVhFDAeM=
-=AhRn
------END PGP SIGNATURE-----
-
---39TBrBtcLrxhnK7JDu88kOKEYw6RTBIcY--
+the commit hash does not match any version in =
+https://gitlab.com/ynezz/openwrt-procd/commits/wip
 
 
---===============1174685986824205303==
+and then:
+
+5c6df2def2a1d26313b45cb40e2268a08c59f00 - FAILS
+
+465676c8b12618ec99122d0cc1217994de884284 - WORKS
+
+5bd12760e8fce026fd2a82d56f7b3c8dff27e096 - WORKS
+
+8e195b325a86b4dc99ee5a9ee0b637cf266f9a0a - WORKS
+
+I did get confused, as when it reports no error but the image is the =
+same as the previous one, it does just reboot but does not flash =
+anything. but when using a different image it did actually flash it as =
+expected.
+
+
+The procd after forking the validate_firmware_image process does this in =
+the parent (1) process (using strace):
+
+clone(child_stack=3DNULL, flags=3DSIGCHLD)  =3D 1303
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) =3D 0
+close(10)                               =3D 0
+read(9, 0x7fff5d1420, 64)               =3D ? ERESTARTSYS (To be =
+restarted if SA_RESTART is set)
+--- SIGCHLD {si_signo=3DSIGCHLD, si_code=3DCLD_EXITED, si_pid=3D1372, =
+si_uid=3D0, si_status=3D1, si_utime=3D1, si_stime=3D0} =E2=80=94
+write(6, "w", 1)                        =3D 1
+rt_sigreturn({mask=3D[]})                 =3D -1 EINTR (Interrupted =
+system call)
+close(9)
+
+
+
+
+
+--Apple-Mail=_DA364966-7FB4-471F-B137-79170928B6B3
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;" =
+class=3D""><div>Here are the results:</div><div><br =
+class=3D""></div><div>1. build with =
+PKG_SOURCE_VERSION:=3D5ed190aae1b3985719046f4c744e311fc9ef18e3, test<br =
+class=3D""><div><br class=3D""></div>Fails</div><div><br =
+class=3D""></div><div>2. build with =
+PKG_SOURCE_VERSION:=3D6544e4f1fbdbb92df8a3776e449fdb5602b8ddcd, =
+test</div><div><br class=3D""></div><div>the commit hash does not match =
+any version in&nbsp;<a =
+href=3D"https://gitlab.com/ynezz/openwrt-procd/commits/wip" =
+class=3D"">https://gitlab.com/ynezz/openwrt-procd/commits/wip</a></div><di=
+v><br class=3D""></div><div>3. build with =
+PKG_SOURCE_VERSION:=3Dff03f3ed9b6af8b209dae63f24790664c94bd916, test<br =
+class=3D""><div><br class=3D""></div><div>the commit hash does not match =
+any version in&nbsp;<a =
+href=3D"https://gitlab.com/ynezz/openwrt-procd/commits/wip" =
+class=3D"">https://gitlab.com/ynezz/openwrt-procd/commits/wip</a></div><di=
+v><br class=3D""></div><div><br class=3D""></div><div>and =
+then:</div><div><br =
+class=3D""></div><div>5c6df2def2a1d26313b45cb40e2268a08c59f00 - =
+FAILS</div><div><br =
+class=3D""></div><div>465676c8b12618ec99122d0cc1217994de884284 - =
+WORKS</div><div><br =
+class=3D""></div><div>5bd12760e8fce026fd2a82d56f7b3c8dff27e096 - <font =
+color=3D"#000000" class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" =
+class=3D"">WORKS</span></font></div><div class=3D""><span =
+style=3D"caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);" class=3D""><br =
+class=3D""></span></div><div class=3D""><font color=3D"#000000" =
+class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" =
+class=3D"">8e195b325a86b4dc99ee5a9ee0b637cf266f9a0a - =
+WORKS</span></font></div><div class=3D""><font color=3D"#000000" =
+class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" class=3D""><br =
+class=3D""></span></font></div><div class=3D""><font color=3D"#000000" =
+class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" class=3D"">I did =
+get confused, as when it reports no error but the image is the same as =
+the previous one, it does just reboot but does not flash anything. but =
+when using a different image it did actually flash it as =
+expected.</span></font></div><div class=3D""><font color=3D"#000000" =
+class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" class=3D""><br =
+class=3D""></span></font></div><div class=3D""><br class=3D""></div><div =
+class=3D""><font color=3D"#000000" class=3D""><span style=3D"caret-color: =
+rgb(0, 0, 0);" class=3D"">The procd after forking the =
+validate_firmware_image process does this in the parent (1) process =
+(using strace):</span></font></div><div class=3D""><font color=3D"#000000"=
+ class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" class=3D""><br =
+class=3D""></span></font></div><div class=3D""><font color=3D"#000000" =
+class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" class=3D""><div =
+class=3D"">clone(child_stack=3DNULL, flags=3DSIGCHLD) &nbsp;=3D =
+1303</div><div class=3D"">rt_sigprocmask(SIG_SETMASK, [], NULL, 8) =3D =
+0</div><div class=3D"">close(10) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =3D =
+0</div><div class=3D"">read(9, 0x7fff5d1420, 64) &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &nbsp; =3D ? ERESTARTSYS (To be restarted if =
+SA_RESTART is set)</div><div class=3D"">--- SIGCHLD {si_signo=3DSIGCHLD, =
+si_code=3DCLD_EXITED, si_pid=3D1372, si_uid=3D0, si_status=3D1, =
+si_utime=3D1, si_stime=3D0} =E2=80=94</div><div class=3D""><div =
+class=3D"">write(6, "w", 1) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=3D 1</div><div =
+class=3D"">rt_sigreturn({mask=3D[]}) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; =3D -1 EINTR (Interrupted system call)</div><div =
+class=3D"">close(9)</div></div><div class=3D""><br =
+class=3D""></div></span></font></div><div class=3D""><font =
+color=3D"#000000" class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" =
+class=3D""><br class=3D""></span></font></div><div class=3D""><font =
+color=3D"#000000" class=3D""><span style=3D"caret-color: rgb(0, 0, 0);" =
+class=3D""><br class=3D""></span></font></div><div><br =
+class=3D""></div></div></body></html>=
+
+--Apple-Mail=_DA364966-7FB4-471F-B137-79170928B6B3--
+
+
+--===============0064836377139583645==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -213,5 +295,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============1174685986824205303==--
+--===============0064836377139583645==--
 

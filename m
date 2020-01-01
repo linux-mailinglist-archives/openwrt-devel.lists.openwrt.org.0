@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9332812DEE5
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 13:45:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E148812DF00
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 14:16:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,47 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YwHPmhD0P1fam576o7Outfzhh5rdshyS36ImqR35JZc=; b=MbvaNw03lT2BX0AVLPxqmt610R
-	+jQRcFhIMFw4Z4K3uMj9uvF29JStE1FEff3PlbxcdRXTnZFz45S4+VNFhOKHwk5I4YaUFR1Al06pM
-	gTe4C2OM+p1FzKKqRNo+M84Qz2eYWSa5O/Xb2YUXa6VszOmGSZ4XSEueKqaTOCDRpyk7++RkBK/z4
-	Y/HRUXOQspe/4zquUgat+ThmK04WJQhFCBi11Fsh9Q/873zCl6OTvyDXuvDMG/LimlHW90HZSvddf
-	Remx3z+lfObInzVwX/HnmqhLWBXJuVKNZoPSWMsyC75QWktLDW7XRWbGMgJnXMx7q18ZCoJWBLAI8
-	q3PCzfBw==;
+	bh=lDqDLySi5RqJ/ADHEtYuzB4OFua1zzZ+5qE5he7l1T8=; b=QRMUlqdqnyqXqeMO7UPA5RaDqt
+	GrtGrtu6+lB5YeK/UzjccKjCw0byaLoG1pBn9c2Qd9cibRc7WTw3ErjUUA3QT3ZSWZvrSMv7XIPa0
+	tPsjm5+oWEBs2FFenKV0wdXHqFlbouhOaf1NF5MA7xPCZ4l/4YMDNDF2VfcHuBQirbDJWsGkdfO4G
+	/ye0JZpXEeq/fr9pnUI/OIDHnmKBgPId9GdsCW99jgXUg1vpkegmA7qos7a1sLsOhBURrFknNMQAO
+	yAQ7aiFk9Yalp+zOhb590AMpGLD3DcKK+5PnbmZY/Ff/+gdMTIJ1mNFAYyrR01Y5JiRVFWXFqRFm3
+	BZR3I3YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imdNI-00067l-Le; Wed, 01 Jan 2020 12:45:20 +0000
+	id 1imdrT-0007Im-7o; Wed, 01 Jan 2020 13:16:31 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imdNB-0005Zt-De
- for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 12:45:15 +0000
+ id 1imdrK-0007Hk-TB
+ for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 13:16:25 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 71C84482B;
- Wed,  1 Jan 2020 13:45:04 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 3D5C948A4;
+ Wed,  1 Jan 2020 14:16:20 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 92a642de;
- Wed, 1 Jan 2020 13:44:53 +0100 (CET)
-Date: Wed, 1 Jan 2020 13:44:53 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id b9538f89;
+ Wed, 1 Jan 2020 14:16:09 +0100 (CET)
+Date: Wed, 1 Jan 2020 14:16:09 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Petr =?utf-8?B?Tm92w6Fr?= <petrn@me.com>
-Message-ID: <20200101124453.GM70184@meh.true.cz>
-References: <mailman.21094.1577616584.2486.openwrt-devel@lists.openwrt.org>
- <20191229222123.GH70184@meh.true.cz>
- <20191230190746.GI70184@meh.true.cz>
- <357266D6-1E26-4066-AFE5-746C2407B0DF@me.com>
- <20191230225631.GJ70184@meh.true.cz>
- <D18390C9-BACD-441C-BC1F-41CD9B01634E@me.com>
- <20191231095801.GK70184@meh.true.cz>
- <46C7C775-CDBB-4E84-8C7F-A0F949F1F981@me.com>
- <20191231134925.GL70184@meh.true.cz>
- <C9B93DB4-A2CA-455B-8B4F-E7A23E34D141@me.com>
+To: David Bauer <mail@david-bauer.net>
+Message-ID: <20200101131609.GN70184@meh.true.cz>
+References: <20191228140048.GO11377@home.paul.comp>
+ <9f716d9b-4230-b3e0-7e38-78c4c4781a78@wwsnet.net>
+ <36732b2f-c95a-5749-e028-653a9f8ea4f8@david-bauer.net>
+ <bcd2f7e5-abad-3b9c-7a62-b79bd6b424a6@gmail.com>
+ <20191231141559.GP11377@home.paul.comp>
+ <3dd75d93-e74f-6831-51f0-d2100fdbc1db@david-bauer.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <C9B93DB4-A2CA-455B-8B4F-E7A23E34D141@me.com>
+In-Reply-To: <3dd75d93-e74f-6831-51f0-d2100fdbc1db@david-bauer.net>
 X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_044513_612398_A14FA6AA 
-X-CRM114-Status: UNSURE (   4.09  )
+X-CRM114-CacheID: sfid-20200101_051623_090059_948084DF 
+X-CRM114-Status: UNSURE (   4.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -64,8 +60,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
-Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent
- development snapshots: "message": "Firmware image couldn't be validated"
+Subject: Re: [OpenWrt-Devel] Preserving configs over sysupgrade on
+ ath79/tiny broken for some boards (on 19.07 and master), possible solutions
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,28 +74,54 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Hannu Nyman <hannu.nyman@welho.com>, openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Fertser <fercerpav@gmail.com>, openwrt-devel@lists.openwrt.org,
+ Jo-Philipp Wich <jo@mein.io>, Piotr Dymacz <pepe2k@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGV0ciBOb3bDoWsgPHBldHJuQG1lLmNvbT4gWzIwMTktMTItMzEgMTQ6NTY6MTNdOgoKSSB3YXMg
-c3VzcGVjdGluZyBzb21lIGlzc3VlIGluIGpzaG4sIHdoaWNoIGVtcG93ZXJzIHRoZSBqc29uX2R1
-bXAgY29tbWFuZCwgYnV0Cml0IHNlZW1zLCB0aGF0IHRoZSBKU09OIHBhc3NlZCBmcm9tIC91c3Iv
-bGliZXhlYy92YWxpZGF0ZV9maXJtd2FyZV9pbWFnZSBiYWNrCnRvIHZhbGlkYXRlX2Zpcm13YXJl
-X2ltYWdlX2NhbGwoKSBsb29rcyBjb3JyZWN0OgoKPiB7Cj4gCSJ0ZXN0cyI6IHsKPiAJCSJmd3Rv
-b2xfc2lnbmF0dXJlIjogdHJ1ZSwKPiAJCSJmd3Rvb2xfZGV2aWNlX21hdGNoIjogdHJ1ZQo+IAl9
-LAo+IAkidmFsaWQiOiB0cnVlLAo+IAkiZm9yY2VhYmxlIjogdHJ1ZSwKPiAJImFsbG93X2JhY2t1
-cCI6IHRydWUKPiB9CgpidXQgdmFsaWRhdGVfZmlybXdhcmVfaW1hZ2VfY2FsbCgpIHNvbWVob3cg
-ZG9lc24ndCBnZXQvcGFyc2UgaXQgYW5kIHlpZWxkczoKCj4gewo+IAkiZXJyb3IiOiB7Cj4gCQki
-bWVzc2FnZSI6ICJGaXJtd2FyZSBpbWFnZSBjb3VsZG4ndCBiZSB2YWxpZGF0ZWQiCj4gCX0KPiB9
-Cgpsb29raW5nIGF0IHRoZSB2YWxpZGF0ZV9maXJtd2FyZV9pbWFnZV9jYWxsKCkgSSByZWFsbHkg
-ZG9uJ3Qgc2VlIGFueXRoaW5nIHJlbGF0ZWQgdG8KbGlidWJveCB3aGljaCB3b3VsZCBsZWFkIHRv
-IHRoaXMgZXJyb3IsIHNvIGNhbiB5b3UgcGxlYXNlIHRyeSBhZ2FpbiB3aXRoIG1vcmUKdmVyYm9z
-ZSB2ZXJzaW9uIG9mIHByb2NkWzFdPyBUaGFua3MhCgoxLiAgaHR0cHM6Ly9naXRsYWIuY29tL3lu
-ZXp6L29wZW53cnQvY29tbWl0L2E4ZGI5NzNjYzJiY2Y4ZDg3N2I5Mzk4MDFlYmE1MjlmMjlhYjdk
-M2EKCi0tIHluZXp6CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53
-cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0
-LWRldmVsCg==
+David Bauer <mail@david-bauer.net> [2019-12-31 16:20:29]:
+
+Hi,
+
+> release images will not be built for most (if not all), as a full build with LuCI
+> will not fit into the flash (even with 4K sector size).
+
+one could still use image builder and generate images which would fit.
+
+OpenWrt offers currently following images:
+
+ - master/snapshot: core images without LuCI
+ - releases:        images with LuCI
+
+What about some unification? What about providing same -luci and -core
+firmware image variants for both master and release?
+
+For:
+
+ 1. Less confusion (different snapshot Vs release image content)
+ 2. Likely more testing for master LuCI
+
+Against:
+
+ 1. Increased storage usage and build time
+ 2. Additional code supporting those variants, so increased maintenance
+
+> The code is not really an issue, as there's not much code dedicated for 4M
+> devices. It's mostly their device-tree, which is maintainable compared to
+> the previous ar71xx boardfiles.
+
+Exactly.
+
+> As many people still use these 4M devices (see, for example, the forum)
+
+And finally there is someone interested (Paul) in actually supporting those
+devices with patches of very good quality = almost no maintenance effort.
+
+-- ynezz
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

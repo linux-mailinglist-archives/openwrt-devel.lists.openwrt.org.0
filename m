@@ -2,66 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E148812DF00
-	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 14:16:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBE0A12DF07
+	for <lists+openwrt-devel@lfdr.de>; Wed,  1 Jan 2020 14:34:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lDqDLySi5RqJ/ADHEtYuzB4OFua1zzZ+5qE5he7l1T8=; b=QRMUlqdqnyqXqeMO7UPA5RaDqt
-	GrtGrtu6+lB5YeK/UzjccKjCw0byaLoG1pBn9c2Qd9cibRc7WTw3ErjUUA3QT3ZSWZvrSMv7XIPa0
-	tPsjm5+oWEBs2FFenKV0wdXHqFlbouhOaf1NF5MA7xPCZ4l/4YMDNDF2VfcHuBQirbDJWsGkdfO4G
-	/ye0JZpXEeq/fr9pnUI/OIDHnmKBgPId9GdsCW99jgXUg1vpkegmA7qos7a1sLsOhBURrFknNMQAO
-	yAQ7aiFk9Yalp+zOhb590AMpGLD3DcKK+5PnbmZY/Ff/+gdMTIJ1mNFAYyrR01Y5JiRVFWXFqRFm3
-	BZR3I3YA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VAu1HU+lgr3Q+zSAfzBsOfffkKoNqgmhh5/JEZHaDjM=; b=FQs+insg3mLd4T
+	XUKaA91wrbjmXEL/vZvXt+4qopOINKju2HP8TA2MfyyraXxk265dq/inya95b4n2qU1N6LRJdkJpF
+	a7km8idxjnZpOHp2sGsSEhIA0w9eJmDIAhkD6BeQxoclJXI1OScz/tE6u5VeeM7bEzxqWInIymXq8
+	0ZWvg94y/YkvmNBpDw/VOR57eSUh6AV4iAgMT27cDVR6kA46TVg78WxH+Wk+CPgp515fYqtzw9NJy
+	l2EkezbSq22tlmsvgNj0bi6nyIie3q60aii9/8YqDIIuvDBQb3eFuVpzVL9uSNoHKLC+h2VKUIPuk
+	h71y4QLJ6MIlIddlSEIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imdrT-0007Im-7o; Wed, 01 Jan 2020 13:16:31 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1ime8n-0003lb-C2; Wed, 01 Jan 2020 13:34:25 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imdrK-0007Hk-TB
- for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 13:16:25 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 3D5C948A4;
- Wed,  1 Jan 2020 14:16:20 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id b9538f89;
- Wed, 1 Jan 2020 14:16:09 +0100 (CET)
-Date: Wed, 1 Jan 2020 14:16:09 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: David Bauer <mail@david-bauer.net>
-Message-ID: <20200101131609.GN70184@meh.true.cz>
-References: <20191228140048.GO11377@home.paul.comp>
- <9f716d9b-4230-b3e0-7e38-78c4c4781a78@wwsnet.net>
- <36732b2f-c95a-5749-e028-653a9f8ea4f8@david-bauer.net>
- <bcd2f7e5-abad-3b9c-7a62-b79bd6b424a6@gmail.com>
- <20191231141559.GP11377@home.paul.comp>
- <3dd75d93-e74f-6831-51f0-d2100fdbc1db@david-bauer.net>
+ id 1ime8e-0003lI-OP
+ for openwrt-devel@lists.openwrt.org; Wed, 01 Jan 2020 13:34:18 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y19so28364580lfl.9
+ for <openwrt-devel@lists.openwrt.org>; Wed, 01 Jan 2020 05:34:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ECkOzi5o/s6wmKtTpRhd8gxNR9twI2RnzuwUl4li6bc=;
+ b=U3pPJE2Oz6mYuqmnBsm6/4gsDw8gyF3s11ks7MCF0cMcimafeXPRy0wCpxUqpsO4+h
+ sckG0dEFsrbFQhMH9o/dTViYHpT7j7IGiM1IIOwFx/65uTEaZuOgDVAeKDhfkTisdXea
+ zCmetQgRm8KONiYLm8qtoeHXgUUtJJ+AYOQdS3y7QIFeCnbku6iRvaAk4nPdvGbGm6bQ
+ cSepvw48GhDJJfgtSTDf3MXthgab+9i1TijVmLxr9OCB8annDYDlB4CA8dnxQbTA/DSB
+ 0HUuJxg0fROmNxnJJ1NlMIyOkaVMd3aqgTbtbEjS1tvS6M7YDB1mCfKDs73zN/45K+yT
+ fELg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ECkOzi5o/s6wmKtTpRhd8gxNR9twI2RnzuwUl4li6bc=;
+ b=YaKU+vqMNqsTQlPdVCcbXY8nYJyAq9nsKUV1XkfzH6XNWUGwKuu45xAFcWPTThwMay
+ +4JLr0U0mIT0Nn9q8GTh3SDe6MKOGDVh2msq7HAE5zS+RddIR0/8yv0ZregFBP+5rSLU
+ xcDJ+RilMXzyDgNEHdOA4zChuxPt5qjE5lElJEB6qydCOFow7RwHHUqAvcUbj8EbuKBE
+ 4zRY9cBqXulqZmaD7pnr1TAhbbjcumbuDzgpDKrSdCrX7qWJnPmflb9+XJRUu2qgclMG
+ pc8Pln0SZs9kpBUYsHbY1dYVsl7WPquxc16oFk7s3mmQXGOdcFIpyhbg1noj+An+5s7N
+ FXGQ==
+X-Gm-Message-State: APjAAAXzPST0wIF+JvnFqV+qTV7W5hRhmezq+0HJJtXkt36cbZBm1XcG
+ Z/2ag7umf/TJa1c/B0mXKRU1OjQ4tVIYwA==
+X-Google-Smtp-Source: APXvYqxHVvQqcIbSFEc68Jm0t7fPlwSGVmnMqMgSPEW/2FFp5DzvORnrq/Lxon6fy98H12+W3tJ39g==
+X-Received: by 2002:ac2:50da:: with SMTP id h26mr21653469lfm.80.1577885653948; 
+ Wed, 01 Jan 2020 05:34:13 -0800 (PST)
+Received: from localhost.bredbandsbolaget
+ (c-5ac9225c.014-348-6c756e10.bbcust.telenor.se. [92.34.201.90])
+ by smtp.gmail.com with ESMTPSA id m15sm21290962ljg.4.2020.01.01.05.34.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 01 Jan 2020 05:34:12 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: openwrt-devel@lists.openwrt.org
+Date: Wed,  1 Jan 2020 14:34:11 +0100
+Message-Id: <20200101133411.10451-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3dd75d93-e74f-6831-51f0-d2100fdbc1db@david-bauer.net>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200101_051623_090059_948084DF 
-X-CRM114-Status: UNSURE (   4.50  )
+X-CRM114-CacheID: sfid-20200101_053417_000572_97C7D563 
+X-CRM114-Status: UNSURE (   7.48  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] Preserving configs over sysupgrade on
- ath79/tiny broken for some boards (on 19.07 and master), possible solutions
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH] busybox: Include hdparm by default on nas
+ type device
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,53 +96,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Paul Fertser <fercerpav@gmail.com>, openwrt-devel@lists.openwrt.org,
- Jo-Philipp Wich <jo@mein.io>, Piotr Dymacz <pepe2k@gmail.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-David Bauer <mail@david-bauer.net> [2019-12-31 16:20:29]:
+NAS devices certainly need to have hdparm to configure
+things like spin-down time or their disks will be
+constantly spinning. Just catenate CONFIG_HDPARM=y
+on these configs.
 
-Hi,
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ package/utils/busybox/Makefile | 3 +++
+ 1 file changed, 3 insertions(+)
 
-> release images will not be built for most (if not all), as a full build with LuCI
-> will not fit into the flash (even with 4K sector size).
+diff --git a/package/utils/busybox/Makefile b/package/utils/busybox/Makefile
+index c0f3007e5d85..b9684d2da66e 100644
+--- a/package/utils/busybox/Makefile
++++ b/package/utils/busybox/Makefile
+@@ -93,6 +93,9 @@ endif
+ 
+ define Build/Configure
+ 	grep 'CONFIG_BUSYBOX_$(BUSYBOX_SYM)' $(TOPDIR)/.config | sed -e "s,\\(# \)\\?CONFIG_BUSYBOX_$(BUSYBOX_SYM)_\\(.*\\),\\1CONFIG_\\2,g" > $(PKG_BUILD_DIR)/.config
++ifeq ($(DEVICE_TYPE),nas)
++	echo "CONFIG_HDPARM=y" >> $(PKG_BUILD_DIR)/.config
++endif
+ 	yes 'n' | $(MAKE) -C $(PKG_BUILD_DIR) $(MAKE_FLAGS) oldconfig
+ endef
+ 
+-- 
+2.21.0
 
-one could still use image builder and generate images which would fit.
-
-OpenWrt offers currently following images:
-
- - master/snapshot: core images without LuCI
- - releases:        images with LuCI
-
-What about some unification? What about providing same -luci and -core
-firmware image variants for both master and release?
-
-For:
-
- 1. Less confusion (different snapshot Vs release image content)
- 2. Likely more testing for master LuCI
-
-Against:
-
- 1. Increased storage usage and build time
- 2. Additional code supporting those variants, so increased maintenance
-
-> The code is not really an issue, as there's not much code dedicated for 4M
-> devices. It's mostly their device-tree, which is maintainable compared to
-> the previous ar71xx boardfiles.
-
-Exactly.
-
-> As many people still use these 4M devices (see, for example, the forum)
-
-And finally there is someone interested (Paul) in actually supporting those
-devices with patches of very good quality = almost no maintenance effort.
-
--- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

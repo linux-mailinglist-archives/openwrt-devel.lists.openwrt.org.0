@@ -2,78 +2,83 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D543612E98A
-	for <lists+openwrt-devel@lfdr.de>; Thu,  2 Jan 2020 18:49:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA93812E992
+	for <lists+openwrt-devel@lfdr.de>; Thu,  2 Jan 2020 18:51:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0RqrruzM7N4gwJWKzr2QslPOumlk7gCxgcMfykoqxeA=; b=B0/JhJT3/va/WrB9MXjKLh60q
-	7/kFjVwZ88OehRPqFruRTzly5ftrn63KuVnR5cvSBxWlQBfAnxDqAQCJYy5i5jv8Hq+/T3BgqbbvQ
-	EIndIEufsKDXC+C8rt6AJssR07sVqPqsgA26L1gRQvXkjZ4U5hBH0PunGQoe4doIZrmK0THeHPzsd
-	5fqiuEtNSFbYvOsLoiYuIQkHY6M5nqykfJlMq6D1NeESy/aEwik7JqwXLBSroMZVzlopo/5k0AdAP
-	PsK8KUyuiRQ9/wRX7ObCx+qOBENBbXc7UuEnkwWXCx44yo2LfYdycwcZJnf0f/8Ca/CeT8zBkKAt/
-	cyJZVi4tQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T25+4VY/+RVH2zOYZ3tAB/2wecHlJb7QrRLX3WpZPAM=; b=BSPhDF4Qb/i5ik
+	Pj6A5WF/C70aPiXbDSKlt2cu492jF8lcAYagpJBt1sRQR59A+RTduHKNODliU8cYp/yBXqbxu7na3
+	S2kU5vxUDBl8fq6eP1WgknzOwVZkJ6H5JEsA1SmSFIbAJy4lcPE/b/N5d+Rx+3EgAZ2evKMZDWOri
+	LHQBAmffVJsiAY9CXn78Y0ZceQek/HQC/lHHIZPgwOE88VJS8AOQUIpekjCDUURS4b0HRmQAna7m7
+	/dR+O/T5Q9vVj1PTy//iCEofbSLNdt4Jsjtjj4ii6CxXs/cv+wIinyISxjsPHJSEg2WbXd3/kGdUB
+	R5ZqM3cTkwrCSyMRaQsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in4b4-0001CN-Go; Thu, 02 Jan 2020 17:49:22 +0000
-Received: from welho-filter4.welho.com ([83.102.41.26])
+	id 1in4cd-0002zv-GN; Thu, 02 Jan 2020 17:50:59 +0000
+Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
+ helo=mail.blocktrron.ovh)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in4aw-0001Bt-BQ
- for openwrt-devel@lists.openwrt.org; Thu, 02 Jan 2020 17:49:16 +0000
-Received: from localhost (localhost [127.0.0.1])
- by welho-filter4.welho.com (Postfix) with ESMTP id EEDEA4EE00;
- Thu,  2 Jan 2020 19:49:09 +0200 (EET)
-X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
-Received: from welho-smtp3.welho.com ([IPv6:::ffff:83.102.41.86])
- by localhost (welho-filter4.welho.com [::ffff:83.102.41.26]) (amavisd-new,
- port 10024)
- with ESMTP id va09LtwPL2ls; Thu,  2 Jan 2020 19:49:09 +0200 (EET)
-Received: from [192.168.1.180] (87-100-240-191.bb.dnainternet.fi
- [87.100.240.191])
+ id 1in4cU-0002z4-R3
+ for openwrt-devel@lists.openwrt.org; Thu, 02 Jan 2020 17:50:52 +0000
+Received: from [IPv6:2003:e5:3f0b:1a00:971d:32e:eedb:b471]
+ (p200300E53F0B1A00971D032EEEDBB471.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f0b:1a00:971d:32e:eedb:b471])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by welho-smtp3.welho.com (Postfix) with ESMTPS id C974B2308;
- Thu,  2 Jan 2020 19:49:04 +0200 (EET)
-To: =?UTF-8?Q?Petr_Nov=c3=a1k?= <petrn@me.com>, openwrt-devel@lists.openwrt.org
-References: <20191231095801.GK70184@meh.true.cz>
- <46C7C775-CDBB-4E84-8C7F-A0F949F1F981@me.com>
- <20191231134925.GL70184@meh.true.cz>
- <C9B93DB4-A2CA-455B-8B4F-E7A23E34D141@me.com>
- <20200101124453.GM70184@meh.true.cz>
- <2DF80201-77E5-4301-9046-67165E5A8B9C@me.com>
- <20200101161447.GQ70184@meh.true.cz>
- <DC52BD3D-AB2B-426F-A184-C1F7664BB076@me.com>
- <20200101200825.GR70184@meh.true.cz>
- <C6E8AA31-AE61-40F5-881B-A69A2007272B@me.com>
- <20200101204630.GS70184@meh.true.cz>
- <5e23fc80-72c7-5fe8-cf61-1b1390844a64@iki.fi>
- <60DBDE96-C4EB-42D9-8927-DF7771685F0A@volatilesystems.org>
- <5B5E9BA4-0BE8-4FDD-B089-35658B983306@me.com>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <83f2c4de-f317-fcca-d695-3c03510b216c@iki.fi>
-Date: Thu, 2 Jan 2020 19:49:07 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101
- Thunderbird/72.0
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id EF57D227F6;
+ Thu,  2 Jan 2020 18:50:47 +0100 (CET)
+To: mail@adrianschmutzler.de
+References: <20200102025452.59863-1-mail@david-bauer.net>
+ <005a01d5c180$d9ba2f50$8d2e8df0$@adrianschmutzler.de>
+From: David Bauer <mail@david-bauer.net>
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <38c57f3f-e5d1-8419-23a9-7e4550cbb712@david-bauer.net>
+Date: Thu, 2 Jan 2020 18:50:47 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-In-Reply-To: <5B5E9BA4-0BE8-4FDD-B089-35658B983306@me.com>
+In-Reply-To: <005a01d5c180$d9ba2f50$8d2e8df0$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_094914_557675_175D9408 
-X-CRM114-Status: UNSURE (   6.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200102_095051_019268_D32465A5 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [83.102.41.26 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Sysupgrade possibly broken in recent
- development snapshots: "message": "Firmware image couldn't be validated"
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: convert TP-Link MT7620 boards
+ to tpt trigger
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,21 +90,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
- Stijn Segers <foss@volatilesystems.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: openwrt-devel@lists.openwrt.org, achterin@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGV0ciBOb3bDoWsga2lyam9pdHRpIDIuMS4yMDIwIGtsbyAxOS40MDoKPiBROiBhcmUgYWxsIHRo
-ZSBwbGF0Zm9ybXMgd2hlcmUgdGhpcyBwcm9ibGVtIGhhcyBiZWVuIG9ic2VydmVkIG11bHRpLWNv
-cmUgKGxpa2UgdGhlIFJQaTQgb3IgbXQ3NjIxKSBvciBoYXMgdGhpcyBldmVyIGJlZW4gZXhwZXJp
-ZW5jZWQgb24gYSBzaW5nbGUgY29yZSBzeXN0ZW0/Cj4KPiBXYXMgdGhlIFFlbXUgdGVzdCBQZXRy
-IFMuIGhhcyBkb25lIGJlZW4gcnVubmluZyBhIG11bHRpLWNvcmUgb3Igc2luZ2xlIGNvcmUgZW11
-bGF0aW9uPwo+CgpNeSB0cnVzdHkgb2xkIFdORFIzNzAwdjIgaXMgYW4gb2xkIHNpbmdsZS1jb3Jl
-IGRldmljZSB3aXRoIEF0aGVyb3MgQVI3MTYxLgoKU28sIG5vdCBvbmx5IGEgbXVsdGktY29yZSBp
-c3N1ZSwgYnV0IGFsc28gYWZmZWN0aW5nIHNpbmdsZSBjb3JlIGRldmljZXMuCgoKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFp
-bGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5v
-cGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+Hello Adrian,
+
+On 1/2/20 4:25 PM, mail@adrianschmutzler.de wrote:
+> while I appreciate your patch, the choice of phy0tpt vs. phy1tpt looks strange to me for several devices. E.g. for C20i you are converting a phy0radio to a phy1tpt. Is this a mistake or a misunderstanding from my side?
+
+This is due to a previously false trigger assignment. The device only has 1 WiFi LED.
+OpenWrt in this case maps the LED to the 2.4 GHz radio. phy0 however is the MT7610 chip
+(which is probed prior to rt2x00), so this is wrong for the device. This most likely
+happened, as the board was introduced without support for the M7610. When the MT7610
+was introduced later, the LED trigger was not changed (as the 2.4GHz radio became phy1).
+
+I will add a note to the commit message, a separate patch for this change however is
+superfluous.
+
+Best wishes
+David
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

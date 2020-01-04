@@ -2,42 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B789E1303CC
-	for <lists+openwrt-devel@lfdr.de>; Sat,  4 Jan 2020 18:47:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61EB0130409
+	for <lists+openwrt-devel@lfdr.de>; Sat,  4 Jan 2020 20:42:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ksFzZ+t8vwLipsmjHBp1uTNOY/8A1lRTyWfCazF8Q+Q=; b=HEyDk+c8IhwxyRqZ/P72+QDIE
-	37EfCPobZoy7CxKIxP83AuW2e6QF6tbJgTzlb0uaz47jCm4r1JgG+KH/VMY9YrNASEjlaof8Ht5wJ
-	3gtuf+YOPPsRb/2w/yQLVFXbaqMdWHcWcrEitXs+3pWjj/+7jwcui+LGbl7KWyjbXvWDIhd8VrpZp
-	UHEzEbjLZeQ0/lpS7+DAkUvPoKnkl6wkGHibZwIyfVKZNARNk1qU4WB4HS7i4SnTm/PUoPQMdqSgx
-	rJqqIABCrCmawKZrUR/ejSmx3cj2oaFQgbR0kubjdL77dLrzkpfo4a89cVgiNUa+Jj/pqjGmCLkG8
-	lm0R6LjHw==;
+	 bh=SRZSeHLb+Sl/jPIgeyx7+PCM7KOUYqRTMpmj+ySmtUk=; b=fAkXzihUdRIJm/FeylQNhP2Gb
+	y3LNLgeiZghTDBbymqGICYsgO+CWSA2UdZauyxacM3iTgbIXoMGfnGa5h9eyzppGFaZlPanxHzq5F
+	3izcJhWo618EmNT16KPJm85glPk2sGhYYzpnRrl6RBXN5wDd95Ynj58yv6mutAbf2NvvkmU3imcOS
+	rGgUL2WlS6D4yg58663unBtPYH3BMf1q9Y2Wa5X/idhj62FTgm4zIk4OXdg9EvPEeu4B9DEwlWJ+7
+	zBljbhA2FUDsqLhXwDTN68u2Jc3DbQDdycGVK1+/Eg4SnztkA4718Lg4aZkqKfGYtf+vElqpWHSSp
+	5s98Nz+Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1innWF-0001Zm-Pk; Sat, 04 Jan 2020 17:47:23 +0000
-Received: from mout-p-101.mailbox.org ([80.241.56.151])
+	id 1inpJP-0000uW-2i; Sat, 04 Jan 2020 19:42:15 +0000
+Received: from mout-p-202.mailbox.org ([2001:67c:2050::465:202])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1innW5-0001YA-G1
- for openwrt-devel@lists.openwrt.org; Sat, 04 Jan 2020 17:47:15 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
+ id 1inpJE-0000sJ-1r
+ for openwrt-devel@lists.openwrt.org; Sat, 04 Jan 2020 19:42:07 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-101.mailbox.org (Postfix) with ESMTPS id 47qq3J2cmhzKmgk;
- Sat,  4 Jan 2020 18:47:08 +0100 (CET)
+ by mout-p-202.mailbox.org (Postfix) with ESMTPS id 47qsbj3DRhzQlCq;
+ Sat,  4 Jan 2020 20:41:53 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
- by gerste.heinlein-support.de (gerste.heinlein-support.de [91.198.250.173])
- (amavisd-new, port 10030)
- with ESMTP id vaBJX5sZWDCr; Sat,  4 Jan 2020 18:47:04 +0100 (CET)
+ by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
+ [80.241.56.115]) (amavisd-new, port 10030)
+ with ESMTP id Lcmd6PHupjYN; Sat,  4 Jan 2020 20:41:49 +0100 (CET)
 To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org
 References: <20200103004638.16307-1-ynezz@true.cz>
- <20200103004638.16307-3-ynezz@true.cz>
+ <20200103004638.16307-4-ynezz@true.cz>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -99,24 +98,22 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <e0146cee-a7ed-6784-31fc-f607b24f208f@hauke-m.de>
-Date: Sat, 4 Jan 2020 18:46:59 +0100
+Message-ID: <75fc5a11-2610-b298-ec69-24595184b5d9@hauke-m.de>
+Date: Sat, 4 Jan 2020 20:41:44 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200103004638.16307-3-ynezz@true.cz>
+In-Reply-To: <20200103004638.16307-4-ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200104_094713_842428_644BF30D 
-X-CRM114-Status: GOOD (  20.63  )
+X-CRM114-CacheID: sfid-20200104_114204_404322_DAFCE8F4 
+X-CRM114-Status: GOOD (  27.60  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.241.56.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH procd 2/4] system: fix failing image
- validation due to EINTR
+Subject: Re: [OpenWrt-Devel] [PATCH procd 3/4] system: sysupgrade: rework
+ firmware validation
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,77 +126,317 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: =?UTF-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
-Content-Type: multipart/mixed; boundary="===============4978197135155465804=="
+Content-Type: multipart/mixed; boundary="===============7898199745309186853=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4978197135155465804==
+--===============7898199745309186853==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="3O6O72txAmzZqtCMr32tdjyTNKqp9DIwT"
+ boundary="50MVT8MabhZBWZVvbAtuXecV9fUm81uwi"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---3O6O72txAmzZqtCMr32tdjyTNKqp9DIwT
-Content-Type: multipart/mixed; boundary="inhA4janWdN0bmXwyy6VeATJMASnz6lOP"
+--50MVT8MabhZBWZVvbAtuXecV9fUm81uwi
+Content-Type: multipart/mixed; boundary="dhatMKaai0uCCzn9stIWYCVRWSoiymGFc"
 
---inhA4janWdN0bmXwyy6VeATJMASnz6lOP
+--dhatMKaai0uCCzn9stIWYCVRWSoiymGFc
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 On 1/3/20 1:46 AM, Petr =C5=A0tetiar wrote:
-> It was quite common to see following error during sysupgrade on serial
-> console:
+> Fixes following deficiencies:
 >=20
->  Failed to parse JSON: 4
->=20
-> This is happening due to the fact, that validate_firmware_image_call
-> fork()s then waits in blocking read() for the input from the child
-> process, but child finishes its tasks and exits, thus emitting SIGCHLD
-> signal which then leads to the interruption of the blocking read() in
-> the parent process with EINTR error.
->=20
-> It seems like the recent fixes in the libubox library, particulary in
-> the jshn sub-component (which empowers json_dump used in the shell
-> script executed by the child process) made the execution somehow faster=
-,
-> thus exposing this racy behaviour in the validate_firmware_image_call a=
+>  * unhandled read() errors
+>  * everything bundled in one long function, which is hard to follow and=
+
+>    reason about
+>  * JSON parser errors are being ignored, anything else then
+>    json_tokener_continue is fatal error
+>  * JSON parser errors are being output to stderr, thus invisible via SS=
+H
+>  * validate_firmware_image_call can fail at a lot of places, but we jus=
 t
-> least on RPi-4 (Cortex-A72) target.
+>    get one generic "Firmware image couldn't be validated" so it's hard
+>    to debug
 >=20
-> So this patch fixes this issue by checking the read() return value and
-> retrying the read() if interrupted due to the EINTR error.
->=20
-> Ref: http://lists.infradead.org/pipermail/openwrt-devel/2020-January/02=
-0994.html
-> Fixes: e990e215e8a3 ("system: add "validate_firmware_image" ubus method=
-")
 > Cc: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
-> Reported-by: Petr Nov=C3=A1k <petrn@me.com>
 > Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
 > ---
+>  system.c | 170 ++++++++++++++++++++++++++++++++++++++++---------------=
 
-Reviewed-by: Hauke Mehrtens <hauke@hauke-m.de>
-
->  system.c | 3 +++
->  1 file changed, 3 insertions(+)
+>  1 file changed, 123 insertions(+), 47 deletions(-)
 >=20
 > diff --git a/system.c b/system.c
-> index 65d3f09b7fb6..5cd88e0d8227 100644
+> index 5cd88e0d8227..f0198a5b20b8 100644
 > --- a/system.c
 > +++ b/system.c
-> @@ -466,6 +466,9 @@ static int validate_firmware_image_call(const char =
-*file)
+> @@ -37,6 +37,12 @@ static struct blob_buf b;
+>  static int notify;
+>  static struct ubus_context *_ctx;
 > =20
->  	blob_buf_init(&b, 0);
->  	while ((len =3D read(fds[0], buf, sizeof(buf)))) {
+> +enum vjson_state {
+> +	VJSON_ERROR,
+> +	VJSON_CONTINUE,
+> +	VJSON_SUCCESS,
+> +};
+> +
+>  static int system_board(struct ubus_context *ctx, struct ubus_object *=
+obj,
+>                   struct ubus_request_data *req, const char *method,
+>                   struct blob_attr *msg)
+> @@ -413,30 +419,127 @@ static int proc_signal(struct ubus_context *ctx,=
+ struct ubus_object *obj,
+>  	return 0;
+>  }
+> =20
+> +static enum vjson_state vjson_error(char **b, const char *fmt, ...)
+
+Please annotate the function with:
+__attribute__ ((format (printf, 2, 3)));
+
+> +{
+> +	static char buf[256] =3D { 0 };
+> +	const char *pfx =3D "Firmware image couldn't be validated: ";
+> +	va_list va;
+> +	int r;
+> +
+> +	r =3D snprintf(buf, sizeof(buf), "%s", pfx);
+> +	if (r < 0) {
+> +		*b =3D "vjson_error() snprintf failed";
+> +		return VJSON_ERROR;
+> +	}
+> +
+> +	va_start(va, fmt);
+> +	r =3D vsnprintf(buf+r, sizeof(buf)-r, fmt, va);
+Please check here for truncation:
+rv =3D vsnprintf(buf+r, sizeof(buf)-r, fmt, va);
+if (rv < 0 || rv >=3D  sizeof(buf)-r ) {
+
+
+> +	if (r < 0) {
+> +		*b =3D "vjson_error() vsnprintf failed";
+> +		return VJSON_ERROR;
+> +	}
+> +	va_end(va);
+> +
+> +	*b =3D buf;
+> +	return VJSON_ERROR;
+> +}
+> +
+> +static enum vjson_state vjson_parse_token(json_tokener *tok, char *buf=
+, ssize_t len, char **err)
+> +{
+> +	json_object *jsobj =3D NULL;
+> +
+> +	jsobj =3D json_tokener_parse_ex(tok, buf, len);
+> +	if (json_tokener_get_error(tok) =3D=3D json_tokener_continue)
+> +		return VJSON_CONTINUE;
+> +
+> +	if (json_tokener_get_error(tok) =3D=3D json_tokener_success) {
+> +		if (json_object_get_type(jsobj) !=3D json_type_object) {
+> +			json_object_put(jsobj);
+> +			return vjson_error(err, "result is not an JSON object");
+> +		}
+> +
+> +		blobmsg_add_object(&b, jsobj);
+> +		json_object_put(jsobj);
+> +		return VJSON_SUCCESS;
+> +	}
+> +
+> +	return vjson_error(err, "failed to parse JSON: %s (%d)",
+> +			   json_tokener_error_desc(json_tokener_get_error(tok)),
+> +			   json_tokener_get_error(tok));
+
+Why don't you free it here too json_object_put()?
+
+> +}
+> +
+> +static enum vjson_state vjson_parse(int fd, char **err)
+> +{
+> +	enum vjson_state r =3D VJSON_ERROR;
+> +	size_t read_count =3D 0;
+> +	char buf[64] =3D { 0 };
+> +	json_tokener *tok;
+> +	ssize_t len;
+> +	int _errno;
+> +
+> +	tok =3D json_tokener_new();
+> +	if (!tok)
+> +		return vjson_error(err, "json_tokener_new() failed");
+> +
+> +	vjson_error(err, "incomplete JSON input");
+> +
+> +	while ((len =3D read(fd, buf, sizeof(buf)))) {
 > +		if (len < 0 && errno =3D=3D EINTR)
 > +			continue;
 > +
->  		jsobj =3D json_tokener_parse_ex(tok, buf, len);
+> +		if (len < 0) {
+> +			_errno =3D errno;
+> +			json_tokener_free(tok);
+> +			return vjson_error(err, "read() failed: %s (%d)",
+> +					   strerror(_errno), _errno);
+> +		}
+> +
+> +		read_count +=3D len;
+> +		r =3D vjson_parse_token(tok, buf, len, err);
+> +		if (r !=3D VJSON_CONTINUE)
+> +			break;
+> +
+> +		memset(buf, 0, sizeof(buf));
+> +	}
+> +
+> +	if (read_count =3D=3D 0)
+> +		vjson_error(err, "no JSON input");
+> +
+> +	json_tokener_free(tok);
+> +	return r;
+> +}
+> +
+>  /**
+>   * validate_firmware_image_call - perform validation & store result in=
+ global b
+>   *
+>   * @file: firmware image path
+>   */
+> -static int validate_firmware_image_call(const char *file)
+> +static enum vjson_state validate_firmware_image_call(const char *file,=
+ char **err)
+>  {
+>  	const char *path =3D "/usr/libexec/validate_firmware_image";
+> -	json_object *jsobj =3D NULL;
+> -	json_tokener *tok;
+> -	char buf[64];
+> -	ssize_t len;
+> +	enum vjson_state ret =3D VJSON_ERROR;
+> +	int _errno;
+>  	int fds[2];
+> -	int err;
+>  	int fd;
 > =20
->  		if (json_tokener_get_error(tok) =3D=3D json_tokener_success)
+> -	if (pipe(fds))
+> -		return -errno;
+> +	blob_buf_init(&b, 0);
+> +	vjson_error(err, "unhandled error");
+In which case is this returned, aren't there specific error handlers in
+call cases now and vjson_parse() would overwrite it again?
+
+> +
+> +	if (pipe(fds)) {
+> +		_errno =3D errno;
+> +		return vjson_error(err, "pipe() failed: %s (%d)",
+> +				   strerror(_errno), _errno);
+> +	}
+> =20
+>  	switch (fork()) {
+>  	case -1:
+> +		_errno =3D errno;
+> +
+>  		close(fds[0]);
+>  		close(fds[1]);
+> -		return -errno;
+> +
+> +		return vjson_error(err, "fork() failed: %s (%d)",
+> +				   strerror(_errno), _errno);
+>  	case 0:
+>  		/* Set stdin & stderr to /dev/null */
+>  		fd =3D open("/dev/null", O_RDWR);
+> @@ -458,43 +561,10 @@ static int validate_firmware_image_call(const cha=
+r *file)
+>  	/* Parent process */
+>  	close(fds[1]);
+> =20
+> -	tok =3D json_tokener_new();
+> -	if (!tok) {
+> -		close(fds[0]);
+> -		return -ENOMEM;
+> -	}
+> -
+> -	blob_buf_init(&b, 0);
+> -	while ((len =3D read(fds[0], buf, sizeof(buf)))) {
+> -		if (len < 0 && errno =3D=3D EINTR)
+> -			continue;
+> -
+> -		jsobj =3D json_tokener_parse_ex(tok, buf, len);
+> -
+> -		if (json_tokener_get_error(tok) =3D=3D json_tokener_success)
+> -			break;
+> -		else if (json_tokener_get_error(tok) =3D=3D json_tokener_continue)
+> -			continue;
+> -		else
+> -			fprintf(stderr, "Failed to parse JSON: %d\n",
+> -				json_tokener_get_error(tok));
+> -	}
+> -
+> +	ret =3D vjson_parse(fds[0], err);
+>  	close(fds[0]);
+> =20
+> -	err =3D -ENOENT;
+> -	if (jsobj) {
+> -		if (json_object_get_type(jsobj) =3D=3D json_type_object) {
+> -			blobmsg_add_object(&b, jsobj);
+> -			err =3D 0;
+> -		}
+> -
+> -		json_object_put(jsobj);
+> -	}
+> -
+> -	json_tokener_free(tok);
+> -
+> -	return err;
+> +	return ret;
+>  }
+> =20
+>  enum {
+> @@ -512,6 +582,8 @@ static int validate_firmware_image(struct ubus_cont=
+ext *ctx,
+>  				   const char *method, struct blob_attr *msg)
+>  {
+>  	struct blob_attr *tb[__VALIDATE_FIRMWARE_IMAGE_MAX];
+> +	enum vjson_state ret =3D VJSON_ERROR;
+> +	char *err;
+> =20
+>  	if (!msg)
+>  		return UBUS_STATUS_INVALID_ARGUMENT;
+> @@ -520,7 +592,8 @@ static int validate_firmware_image(struct ubus_cont=
+ext *ctx,
+>  	if (!tb[VALIDATE_FIRMWARE_IMAGE_PATH])
+>  		return UBUS_STATUS_INVALID_ARGUMENT;
+> =20
+> -	if (validate_firmware_image_call(blobmsg_get_string(tb[VALIDATE_FIRMW=
+ARE_IMAGE_PATH])))
+> +	ret =3D validate_firmware_image_call(blobmsg_get_string(tb[VALIDATE_F=
+IRMWARE_IMAGE_PATH]), &err);
+> +	if (ret !=3D VJSON_SUCCESS)
+>  		return UBUS_STATUS_UNKNOWN_ERROR;
+> =20
+>  	ubus_send_reply(ctx, req, b.head);
+> @@ -580,6 +653,8 @@ static int sysupgrade(struct ubus_context *ctx, str=
+uct ubus_object *obj,
+>  	struct blob_attr *validation[__VALIDATION_MAX];
+>  	struct blob_attr *tb[__SYSUPGRADE_MAX];
+>  	bool valid, forceable, allow_backup;
+> +	enum vjson_state ret =3D VJSON_ERROR;
+> +	char *err;
+> =20
+>  	if (!msg)
+>  		return UBUS_STATUS_INVALID_ARGUMENT;
+> @@ -588,8 +663,9 @@ static int sysupgrade(struct ubus_context *ctx, str=
+uct ubus_object *obj,
+>  	if (!tb[SYSUPGRADE_PATH] || !tb[SYSUPGRADE_PREFIX])
+>  		return UBUS_STATUS_INVALID_ARGUMENT;
+> =20
+> -	if (validate_firmware_image_call(blobmsg_get_string(tb[SYSUPGRADE_PAT=
+H]))) {
+> -		sysupgrade_error(ctx, req, "Firmware image couldn't be validated");
+> +	ret =3D validate_firmware_image_call(blobmsg_get_string(tb[SYSUPGRADE=
+_PATH]), &err);
+> +	if (ret !=3D VJSON_SUCCESS) {
+> +		sysupgrade_error(ctx, req, err);
+>  		return UBUS_STATUS_UNKNOWN_ERROR;
+>  	}
+> =20
 >=20
 > _______________________________________________
 > openwrt-devel mailing list
@@ -209,29 +446,29 @@ Reviewed-by: Hauke Mehrtens <hauke@hauke-m.de>
 
 
 
---inhA4janWdN0bmXwyy6VeATJMASnz6lOP--
+--dhatMKaai0uCCzn9stIWYCVRWSoiymGFc--
 
---3O6O72txAmzZqtCMr32tdjyTNKqp9DIwT
+--50MVT8MabhZBWZVvbAtuXecV9fUm81uwi
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4Qz5MACgkQ8bdnhZyy
-68eN0wgArwNP+DtSpQluLMXP4pZpDef+kETTUVhc1RvVz5slHdioOiOl3wf1ApOc
-dJ674kamFs9CF9Atce/i13kG5H54XapGXgWvyOI9563frWLIkiS9LS1uPtksQlrb
-KaPVbdUmaYt0QUddkrJwf64aIUqyhcTs+s9frKatuA94NATlamA1BO6KH0MDvz2q
-sCauAxFJRVfNmzlu5WrJ/IA98MJRC65D2nadWvP2kICDMqAPLODC1ynGLKI6fiU1
-LPj/+6gs6koPzvDSvv++TqnrOdrstI+YNrb8TWp+wc6xEwVKn3kAdukvQICVNCN4
-H6d2StGwS6acJUcE48qcG4ONb5f9gg==
-=5XGS
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4Q6ngACgkQ8bdnhZyy
+68duvwf/U+9g6ZffwTXUGk3/G7i22J79mEqkmapGrixnKRqm0Xqqz0wEhNM7aHq5
+Jem4W30UqVKYrb74LnziAWpQszuScwq6BqaZBzE+eLdzaO8PD8VQjXGiufYPu0Vd
+KOkgh31BWbFaErhCQMRF0GtuLQRfiXkWi8HYjuE/6hTfPpvuP6z36+Dvd3gDYYS3
+Qnmi3+mYh8nmUv408H4/sTo4D1kfzvl/w/s929H7QoV5PkW1N8Bm0gVl2FIktFqB
+x+Jpkpq3ob6J5naiHzJm9If7xRlG87KpKbekTMM4AEhWvjHRmKpe2fuJ4jIVXc/S
+rE6SllHz/hsxoWk7xnFvX3simDV2MQ==
+=aVfz
 -----END PGP SIGNATURE-----
 
---3O6O72txAmzZqtCMr32tdjyTNKqp9DIwT--
+--50MVT8MabhZBWZVvbAtuXecV9fUm81uwi--
 
 
---===============4978197135155465804==
+--===============7898199745309186853==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -242,5 +479,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4978197135155465804==--
+--===============7898199745309186853==--
 

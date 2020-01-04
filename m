@@ -2,83 +2,79 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B018513000F
-	for <lists+openwrt-devel@lfdr.de>; Sat,  4 Jan 2020 03:06:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F544130020
+	for <lists+openwrt-devel@lfdr.de>; Sat,  4 Jan 2020 03:31:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oL2I3S1neHh+S0CgLBbxRLoOkn6AKo02bDZA36hbIAk=; b=d+qMYxnLKqCG0mXkMO9M2wZVy
-	mUvIcuMM/vY5XdnNBwgpl7jHL2UIxT3ASL+m26PgMbHMuAxviTL2CYMOnNPUqx3TnhaGHLcC2EQeh
-	7LbZ5VW3QN5GMvdJ0ik/pPYwasP+eJUfRZTH0+qnPfVBe3ujg9qZJfmXc2UVzhBiCgAPShcCodVMx
-	/TrS4TvyqJLz/ooqlcoMOpUw3eKBUfv49sdYebEvKoqdc7FthB4RyZCDXcntjcqbuozEKrjvt/Q3D
-	6x4kRH5+/zTYz7Vpt9QObw3GolcdHlv8R8lja+plNEn2gHJEyLkQXHqd5J+6E8g7rrgu49rX9EDFg
-	92l5mo68g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kDbVsyr00mOUlOP2ERmOcdae5G1gurKp12mfDczqZZM=; b=O6/i3akTNfUGX6
+	L3W/ibzV88//bc016p+uN6U1e44k1Y7ZPDH3jjsHKaNtYKg7UMn6TJ7Qo3vlW7ljf2s45f2QX3c+H
+	H7u9ZfSGPQIj/1eaUXZZdBphfH4OKGrE6M9kLlc6okjKyJIvxWhHgLLl3MZezX/SaLl8geKE/FDTr
+	UwmFDEwlfcoo4DIQa1jmhq7Stk7FxWzwY29sa/a4kNvhHkn3CUdVLW1jLlijCp3Yv3EvYx0hfb5xD
+	g5uvN+Lhl9AweUVbxuWRwE/0FCSdMZa6MZwGy6rSPDGANS5DpYubQ3FKkqjiklSrumkrUdEJb43Uh
+	ZSfRtY1KwmaicLBRCsRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inYpG-0000BC-Oq; Sat, 04 Jan 2020 02:06:02 +0000
-Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
+	id 1inZDh-0000ts-Mt; Sat, 04 Jan 2020 02:31:17 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inYp3-0000As-V5
- for openwrt-devel@lists.openwrt.org; Sat, 04 Jan 2020 02:05:51 +0000
-Received: by mail-pj1-x102f.google.com with SMTP id a6so5235095pjh.2
- for <openwrt-devel@lists.openwrt.org>; Fri, 03 Jan 2020 18:05:46 -0800 (PST)
+ id 1inZDY-0000tF-7E
+ for openwrt-devel@lists.openwrt.org; Sat, 04 Jan 2020 02:31:09 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 4so24284037pfz.9
+ for <openwrt-devel@lists.openwrt.org>; Fri, 03 Jan 2020 18:31:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=gXbKYQwPDa1UgDXbpeuTjxlUukE+GB5qjfyiVRtWYs8=;
- b=BWTvFaCwLN9gOTktBCZfbczHm5n/eRFRKy8V0GFF0e70KwCjq9mx1edYaRBNyf+tu5
- G+l/L3plp/+ehqwmNdE/up9M6eS36k/JHy7Pm59xW4cAYP5oiNxqUy99aQN0O37qoq/g
- jPo+oxZ2UD6kf0b6N45mPE1+kr0li+TKUGjxCyiNJwgDO71XgWEZHWz/Elmtlhr/bK8N
- ibTtfJWp9NXjBDbK/ApvB76oOtMLaSR5d1jvyaQ5CZW8Xl1Ec4kTvAvcWuV4Y80HRa/g
- 5SFdAiLyAmNjy8i6BoyOSdrs4agL9rOji0JMTtLdFwDl1GekhwAQQ2H5+NZGE5lHGWGl
- 9oBw==
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VJV2/O+x5KuQny/CnE+BBTjFXvGd89P57ZLMQmbx9+Q=;
+ b=t1X0IzeSs+1tvxHSx2qWEy0Jiv22ebwtxPIrjho3hweQ4W/Cqs8iDcHYq82QvF8WmM
+ SEvWEcuixOe/ajdybsq7GkhP9QFHa2jj4pcc+FN8ijv4pHByiNdtCUSnNknntm+aAj8Q
+ 4f1Z3sEZwJpfat4g36Y0mtaGXAUrJGzOBAHRbeVopqLb/Ki4txt8UZsnD7xt7WYcCE/m
+ mBFQBIZfF9JOALEuh4rT836z+bQj6xw0BSZrVz21eVCB+NUInZKjS1c/YqQ2MlWyoy0F
+ wl6X83jLZfJpCnaIOE6mIp95pYTJnI4EodunewdCUmMgkC/79cvDO4aopDU/QRylHBem
+ PmXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=gXbKYQwPDa1UgDXbpeuTjxlUukE+GB5qjfyiVRtWYs8=;
- b=AhsV1HaPyky8YK71cg2FimmtX/HYsaRgR9qD4GWFk+s7/pICXy1ihqxNr9Qz1d20Rc
- JVK0OuCm1ht2ssdCu4VlbX0BYpDtrUZ0LDmxplLhTgzPaSRqbh983LsBB/rLLjtRelWp
- jBgyMcrX9gHb6F5pNWav5W1QjKS9GG/ByC+vn00LiJUZMYzQA6RHe2e0aXW0waD4+MVW
- sBNanNL4KFLW4+WockbP02p48zf8koQrdqAIh9HYkFlJNyMXl4CB86MG0Kg/4sQfh98S
- Oa4b8uln1Wp5Zw8VOtXrWtWseOfccbKLJLsiP36763mTK90XGNH5Ci4jBsM2oo+VsqTY
- 0QuQ==
-X-Gm-Message-State: APjAAAVGnSN61UXY+fGCI6hym2AdlGYGSFSrfLYMD1y8UjKmU0zeUEPv
- x2AcEyK1dI2eUEI334pErPZPWHUK
-X-Google-Smtp-Source: APXvYqxrgKTRms4/Z5RFveVtCTn/klrzSVl447QmNrTKL2F0qf+Uc2rTz6G0EIGXSXYxtyno80fI0Q==
-X-Received: by 2002:a17:90a:cb8c:: with SMTP id
- a12mr30932409pju.71.1578103545516; 
- Fri, 03 Jan 2020 18:05:45 -0800 (PST)
-Received: from ?IPv6:240b:10:2720:5500:9023:1cd:7665:11ef?
- ([240b:10:2720:5500:9023:1cd:7665:11ef])
- by smtp.gmail.com with ESMTPSA id t63sm69651587pfb.70.2020.01.03.18.05.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 03 Jan 2020 18:05:45 -0800 (PST)
-To: mail@adrianschmutzler.de, openwrt-devel@lists.openwrt.org
-References: <00f001d5c23b$c980ad10$5c820730$@adrianschmutzler.de>
-From: Tokunori Ikegami <ikegami.t@gmail.com>
-Message-ID: <3d29ecf2-b5b4-1384-fcba-1e3dbbe1446c@gmail.com>
-Date: Sat, 4 Jan 2020 11:05:41 +0900
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VJV2/O+x5KuQny/CnE+BBTjFXvGd89P57ZLMQmbx9+Q=;
+ b=sI4OjRgTMORw2bh34FyiYvJEInCD6QXQCZ/HHqTIiibg0gX3qhXbdsMqzUfGIDoDG4
+ THahXYl2BjnOk5x0Eie8h8NunQR5Rt8X/dOlpPf5bRfAOmR4R4uvWllUUyc2v49z0inv
+ hpyYpjU3aZeT6XT9tobFV+0tY7YIGPenHzeTksda0B4eieSxqUoMfXZiwGIXoJ/mWcEV
+ 4pHQThwd9ADwRn4gmOcOFjofY/sz3PcEG1AujHP2P2QLzUJT3N4GFzYPE+w5ps1pZ8Oz
+ wQ7zmOUbTjRE0kgjwP4PJp0ZBSLQLyausgN18iKEIFUwEQ2FP5tW5OirwRk/yc0vd0lB
+ yNKQ==
+X-Gm-Message-State: APjAAAUi+TqT+al2Vp+jlcjoVPaNssJxUPMjjRvWQH2aVNYiDlhXpNaa
+ mPv7wOrPvwJrb1W4sVAMLRcm8HOpLNE=
+X-Google-Smtp-Source: APXvYqxOEG7JTD63ID0hrEfzNVZx03vaF5wHvLlWE24OzawjpARvFIVL1ko74bWdl+22nYCAiK+4fQ==
+X-Received: by 2002:a63:8c48:: with SMTP id q8mr102563459pgn.213.1578105064860; 
+ Fri, 03 Jan 2020 18:31:04 -0800 (PST)
+Received: from localhost.localdomain ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id u23sm68842449pfm.29.2020.01.03.18.31.03
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 03 Jan 2020 18:31:04 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri,  3 Jan 2020 18:31:01 -0800
+Message-Id: <20200104023101.65075-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <00f001d5c23b$c980ad10$5c820730$@adrianschmutzler.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_180550_002290_F8845E1F 
-X-CRM114-Status: UNSURE (   8.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200103_183108_290068_C0B4D742 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (ikegami.t[at]gmail.com)
+ provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,8 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] ar71xx: Remove mtd cfi_cmdset_0002 status check
- patch
+Subject: [OpenWrt-Devel] [PATCH] libcxx: Remove -flto from LDFLAGS
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,38 +96,85 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+It seems the buildbots can't handle it.
 
-Thanks for the confirmation.
+Added a cmake option to find the cxxabi files as they are part of the
+toolchain and not in the normal path. It doesn't seem to make a
+difference, just gets rid of cmake warnings.
 
-Yes your understanding is correct.
-Also I could understand it as rejected patch since ar71xx is deprecated.
+Added another small GCC warning fix. It's fairly minor.
 
-By the way how about ath79 is if deprecated as same?
-Since there are same patches in ath79 also.
+This has no change in compiled size, and most likely no change in
+behavior. Bumped the PKG_RELEASE anyway.
 
-Regards,
-Ikegami
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ package/libs/libcxx/Makefile                |  6 ++++--
+ package/libs/libcxx/patches/020-fixes.patch | 11 +++++++++++
+ 2 files changed, 15 insertions(+), 2 deletions(-)
 
-On 2020/01/03 22:43, mail@adrianschmutzler.de wrote:
-> Hi,
->
-> your patch "ar71xx: Remove mtd cfi_cmdset_0002 status check patch" looks cosmetical to me. Is this impression correct?
->
-> If yes, since ar71xx is effectively deprecated and won't be included in next (after-19.07) release, I would reject it to save reviewing time for other changes.
->
-> I hope you understand this and continue to improve OpenWrt with other submissions.
->
-> https://patchwork.ozlabs.org/patch/1198343/
->
-> Best
->
-> Adrian
+diff --git a/package/libs/libcxx/Makefile b/package/libs/libcxx/Makefile
+index 1d8e502221..53b7f1eaab 100644
+--- a/package/libs/libcxx/Makefile
++++ b/package/libs/libcxx/Makefile
+@@ -1,3 +1,4 @@
++
+ #
+ # This is free software, licensed under the GNU General Public License v2.
+ # See /LICENSE for more information.
+@@ -7,7 +8,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=libcxx
+ PKG_VERSION:=9.0.1
+-PKG_RELEASE:=3
++PKG_RELEASE:=4
+ 
+ PKG_SOURCE_PROTO:=git
+ PKG_SOURCE_URL:=https://git.llvm.org/git/libcxx
+@@ -38,6 +39,7 @@ endef
+ 
+ CMAKE_OPTIONS += \
+ 	-DLIBCXX_CXX_ABI="libsupc++" \
++	-DLIBCXX_CXX_ABI_INCLUDE_PATHS="$(TOOLCHAIN_DIR)/$(REAL_GNU_TARGET_NAME)/include/c++/$(CONFIG_GCC_VERSION);$(TOOLCHAIN_DIR)/$(REAL_GNU_TARGET_NAME)/include/c++/$(CONFIG_GCC_VERSION)/$(REAL_GNU_TARGET_NAME)" \
+ 	-DLIBCXX_ENABLE_ASSERTIONS=OFF \
+ 	-DLIBCXX_ENABLE_EXPERIMENTAL_LIBRARY=OFF \
+ 	-DLIBCXX_INCLUDE_BENCHMARKS=OFF \
+@@ -47,7 +49,7 @@ CMAKE_OPTIONS += \
+ 	-DLIBCXX_HAS_MUSL_LIBC=$(if $(CONFIG_USE_MUSL),ON,OFF)
+ 
+ TARGET_CXXFLAGS += -D_LIBCPP_DISABLE_DEPRECATION_WARNINGS -Wno-attributes -flto
+-TARGET_LDFLAGS += -Wl,--gc-sections,--as-needed -flto=jobserver
++TARGET_LDFLAGS += -Wl,--gc-sections,--as-needed
+ 
+ define Build/InstallDev
+ 	$(call Build/InstallDev/cmake,$(1))
+diff --git a/package/libs/libcxx/patches/020-fixes.patch b/package/libs/libcxx/patches/020-fixes.patch
+index abc630d42f..96624776af 100644
+--- a/package/libs/libcxx/patches/020-fixes.patch
++++ b/package/libs/libcxx/patches/020-fixes.patch
+@@ -1,3 +1,14 @@
++--- a/include/cmath
+++++ b/include/cmath
++@@ -615,7 +615,7 @@ _Fp __lerp(_Fp __a, _Fp __b, _Fp __t) noexcept {
++ 
++     if (__t == 1) return __b;
++     const _Fp __x = __a + __t * (__b - __a);
++-    if (__t > 1 == __b > __a)
+++    if ((__t > 1) == (__b > __a))
++     	return __b < __x ? __x : __b;
++     else
++     	return __x < __b ? __x : __b;
+ --- a/include/memory
+ +++ b/include/memory
+ @@ -1696,7 +1696,7 @@ struct _LIBCPP_TEMPLATE_VIS allocator_traits
+-- 
+2.24.1
+
 
 _______________________________________________
 openwrt-devel mailing list

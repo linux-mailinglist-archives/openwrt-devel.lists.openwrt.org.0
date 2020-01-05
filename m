@@ -2,68 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ED67130926
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 17:40:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4543A130925
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 17:39:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mOG0FSa6WEkNZzhU9q34rKub4yXf4olNfoKcrMSaYa8=; b=kc3cucNV/qfHR/
-	0ZsWpAIFwcyYx30XkYD+8oBa6COu/kNqDUpRORWj0Bu+h8hu+yjCm7szl8n0SYDGCgNFTUevHilix
-	LGJZChaM59NkUuUpkLpZkZNfqVkL5ZtvNy+vCMVxdftF7u0mtDTK6kObu05ZUW256qrbXN7arQ9s/
-	EfsvFD8CpU8qdMZyPEiWWR97wnptBi3e1/+Zfcbh4DcO2IkhwRiV0VQjgkrpovuEoYe3ombCauGs3
-	jjuCW0+Vplc1z6d5tSSNflvu+BSzIpdX6WFVC2RXRCumE6PD2nHXCloeN6FKGacaPzL7jC7HrWafg
-	LR0NtGK8zvRSSdg9lxig==;
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=P/i1DGPy8fOd1DqW4D/sus3NVgbdty4G6Hspx0r/vcY=; b=a6ZfxMK0YBAMIFwYU3nqCx40Ze
+	MEmgQC1OLvN7wCXqb3/rqhXviSErIPJ2qaeKMVRB0uObvnURpkyCqujpXqhD34eKovJwqHKt67648
+	euRZ0pTnefZP64Uzq+t2lhkV/EasGsAvq2ffWwrolOGSNwd/PV02WWszWSvOU78XJNfJQr8nXuuxS
+	F+DsGgANGRuv7hREYawZOieyMs+KCjpTfgxypHdFDukj5e+VCqjU3HcsMAtfmBgVnQMktHD7yjrpj
+	zyrJZ5xaaskX7hL3HxgisH5Cs7LZDt0v9MMjHmuy5uw07FqxOth3qeWq1UDZbxKHaO8w4OW7t3P6/
+	U3gcMJMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io8wb-0001oR-JJ; Sun, 05 Jan 2020 16:40:01 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1io8wI-0001Wf-Lw; Sun, 05 Jan 2020 16:39:42 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io8vh-0001GL-NX
- for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 16:39:33 +0000
+ id 1io8vg-0001Fu-6f
+ for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 16:39:09 +0000
 Received: from buildfff.adridolf.com ([188.194.105.26]) by
  mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MVv4X-1jG1T60qN3-00RqyP; Sun, 05 Jan 2020 17:39:01 +0100
+ id 1Mg6Na-1jLpKF3Toc-00hdTO for <openwrt-devel@lists.openwrt.org>; Sun, 05
+ Jan 2020 17:39:01 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 Jan 2020 17:38:10 +0100
-Message-Id: <20200105163813.3846-3-freifunk@adrianschmutzler.de>
+Date: Sun,  5 Jan 2020 17:38:11 +0100
+Message-Id: <20200105163813.3846-4-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200105163813.3846-1-freifunk@adrianschmutzler.de>
 References: <20200105163813.3846-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:DsS8/rHK2giqN9of6tajfjJA/mCAKpnjulSUnd9YylAFhvO++Dd
- VeDNNiFRx9UZYfPZ6uOvmfzQ/xhNexxwItaKcFIOT86kk0xBpLqU3Sa6nkyaVGPshxtp/Ap
- bv8n7zncJjS1U5/bfDUlXC3DUE+8YRH/IgsTT7S7Pt7l7UFghqplRuBr8KbW+C4SfUM/zOG
- QIbTg5qSu9OJ5xrPH42Wg==
+X-Provags-ID: V03:K1:VnZ438UhkH7PFhvtFwtnfI7xi/++8PE9+p8d6PBAWvJxBCMaGRf
+ +T2NWvdUk27UatfyR/eNxLsHl/EW2i+pYZpDR/jAIVBofuQcCrTndVyXeaLm2AT0wa+JKkh
+ IoAJ6DKkXpVlLhfuRRe2oZ79o/cE1DJ2zDGGjaDD5ZLARGTE0PjQ0un72Ss/l31bI1qjDC6
+ 0kLLW0RlTds/fsKWt3/qw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:bijt7ynYSsA=:r39jdS9QtdtCbhKnmubvnZ
- VRj72ye3K1jpq3PLiTZGyWlqN47BeBO6kZJiJBqPLasYjd5imcHB/alPUnXonV9WT2izn5w5Y
- txAwgHQAOmY0LD9cXHc9KylHqMsVr63L7O1IaxkE8hre0UwbzWhcQVX2eDWC8yMyt7wafm69d
- G4DFxcdiUjXfB0LW3bWnwOLSX0tjXFjj3mEr1w9jZkAmgwDdCyCjWL3G7eu+Une/JnVmVrc+s
- Kv2kcCxOS/HhA9FU6KPcKF9RLqzXdAV7gKGBjOA3NYEmdQnqFOXSlQCxzVtsBameejPAsCATR
- 1drjM6AAFLJpJpe2dMQdePLCRKH2nQ3Fb1oz5a4VL5lhRu5Y3w8lsuCr9qdulXv0UJRCT1z3F
- d0f4MGWXAChIS3x3awbTLvTVziYbZjybFz92yv9bMgoZcoPmlTWEByt5200yME5rToXystQLw
- dr3MPFe+Px+2z0sB0kfYMs9qRm7OEutPYivSR+Nj75qQH6wCDjXvWOc90BwX/YxuiktlvwvM9
- H1YEI9ZvBL9phUdREk0nCD/vys8JcSrY+JfzGJ/T5fvrtn1q6ijCh51M3LIPkvju/CE5l72Gw
- gorWTVnhxZzi5wPG8KL3tx2TdXrXrsamqd3ur+O6YshruK8HVS7Yz6jlXbk0V+DXBhTNrm+kP
- d7B+vLr0ua3CoFwpzQi4PHihxuO74NiNmbZegFcZEK5N48mQrwsojjrh95+lx5mNigcnLs90C
- V5Nak8JWIzUojzZb5BlcgfQBTxBLrnO9WjxXpLsyaUvulvz+wYw+4oggcAkSOiQxrIqA5uT5y
- mHy7MT3s7UuwEXzJLBVVIwvxPmtn9yn6ch8OjgQYD5CaCkHodIuE98jtQ/DzgR+MHOihKA68p
- dpFSldIfykt+Vqtmr4D711X+RI80xBDoBYovu0aZM=
-X-Spam-Note: CRM114 run bypassed due to message size (344582 bytes)
+X-UI-Out-Filterresults: notjunk:1;V03:K0:AOsBLR+vVjc=:DnxIiLzfCJCbDtZmVkBhjU
+ aHT7bSWjjDRie0ACu47eIt+JFBWCcMh1neIJy7TV34WyKPYGCRhag1eULbuH+7uexxcwFBpR/
+ p/TYXJtZPi+OW1VhA8LcmvGuawHkUFXIvgLCPnY0jt8C4bQOzrVy5OI9bgTA3hM70XR7xpuJh
+ mQfUZegP5arebcfSO90C2z8iQ3tQYKY9sQrLmDjPME43D81aUhqKmnzCZU4Fgrf9UrFs1SiNj
+ iyJWGArSlRSp2K1eWRbyan1sOCVCqTGrIK9+Wx42fF27ivRjv5396wcOe+R4O4AvXYBvf/+VI
+ /kKvF62MC88tWe3CKjpmsSJIRrVa5zre9wIVAtQaC4q6upHX1WEIHEkOVUVFuNByVMcKNXnu5
+ i4SBOLgtF3MQHOgSBVQupPD8cRBtsbFDNyJS5o6eUPmD0YwxvnK/LGuYYElKlNfEP/QJhlDdv
+ F5Ly6YmGKBEA9rqE1nPObCowjTMVTUe3PJwLj6n55KRjssY6qPLhLPOA+8FvkRKdtTiR7igo9
+ TrlWaoYlu8ujbhPyD1du3M1GcJy4Y/0ALEzRNRETIXZuKJhlrXgw03qk2UxMzMeVNZ5/ut62r
+ 1f3wGm+0R3k71XYtkF6FmXu7cHS7vEwo9j90FEL6Fzqw/8ONQHQi1OFpXkvE/1FgPLCbXG54n
+ PvN1BDvoNbAfwo5RsgSxT5TmcbAQEsC0y+H+KrUWJmA+T6R0I71VD/NKupw6ZbIKJ0OLo7ZsW
+ udmlUaoi1E0H83NLH9dqyEdgBWEiMxG2ZqCiL7+uju5V3foC09lOTQIPe2VnagdjH817FCSoL
+ WzVHpqp/uC3lJSbZmgRsRGc58a+Ka+BPiW0TxxBQdFSlY0OO/G3XqgsQ4dBsi7rz1wkqG3Ekb
+ Uqcr+BtLoqrDxPbIoEHRoaSA/xo5B71+FFhTDZC/Q=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200105_083904_843288_A926CB07 
+X-CRM114-Status: GOOD (  10.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 2/5] ixp4xx: remove unmaintained target
+Subject: [OpenWrt-Devel] [PATCH 3/5] orion: remove unmaintained target
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,7 +79,6 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jonas Gorski <jogo@openwrt.org>, Imre Kaloz <kaloz@openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
@@ -90,1246 +93,196 @@ kernel version.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- package/boot/apex/Makefile                    |   62 -
- .../boot/apex/patches/001-compile_fix.patch   |   20 -
- .../100-openwrt_nslu2_armeb_config.patch      |   23 -
- .../120-openwrt_nslu2_16mb_armeb_config.patch |   23 -
- .../140-openwrt_fsg3_armeb_config.patch       |   23 -
- .../apex/patches/150-limit_ram_to_64mb.patch  |   22 -
- .../160-openwrt_nas100d_armeb_config.patch    |   20 -
- package/firmware/ixp4xx-microcode/Makefile    |   59 -
- .../ixp4xx-microcode/src/IxNpeMicrocode.h     |  148 --
- .../firmware/ixp4xx-microcode/src/LICENSE.IPL |   27 -
- package/kernel/avila-wdt/Makefile             |   34 -
- package/kernel/avila-wdt/src/Makefile         |    1 -
- package/kernel/avila-wdt/src/avila-wdt.c      |  231 --
- package/kernel/linux/modules/sound.mk         |   19 -
- target/linux/ixp4xx/Makefile                  |   24 -
- target/linux/ixp4xx/base-files/lib/ixp4xx.sh  |   34 -
- .../ixp4xx/base-files/lib/preinit/01_sysinfo  |    9 -
- .../lib/preinit/05_set_ether_mac_ixp4xx       |   32 -
- .../ixp4xx/base-files/lib/upgrade/platform.sh |  137 --
- target/linux/ixp4xx/config-4.9                |  245 --
- .../ixp4xx/generic/profiles/100-Default.mk    |   17 -
- .../generic/profiles/105-Atheros-ath5k.mk     |   17 -
- .../ixp4xx/generic/profiles/200-NSLU2.mk      |   19 -
- .../ixp4xx/generic/profiles/300-NAS100d.mk    |   21 -
- .../generic/profiles/400-DSMG600RevA.mk       |   22 -
- .../ixp4xx/generic/profiles/500-USR8200.mk    |   19 -
- target/linux/ixp4xx/generic/target.mk         |    9 -
- target/linux/ixp4xx/harddisk/config-default   |   20 -
- .../ixp4xx/harddisk/profiles/100-FSG3.mk      |   20 -
- target/linux/ixp4xx/harddisk/target.mk        |    6 -
- target/linux/ixp4xx/image/Makefile            |   76 -
- target/linux/ixp4xx/modules.mk                |   74 -
- ...ohorent_dma_mask-for-ethernet-platfo.patch |  136 --
- ...se-parent-device-for-dma-allocations.patch |   95 -
- .../patches-4.9/020-gateworks_i2c_pld.patch   |  424 ----
- .../patches-4.9/030-gpio_line_config.patch    |   73 -
- .../patches-4.9/040-arm_mach_types.patch      |   18 -
- .../090-increase_entropy_pools.patch          |   17 -
- ...00-wg302v2_gateway7001_mac_plat_info.patch |   78 -
- .../patches-4.9/105-wg302v1_support.patch     |  261 --
- .../110-pronghorn_series_support.patch        |  393 ----
- .../111-pronghorn_swap_uarts.patch            |   44 -
- .../patches-4.9/115-sidewinder_support.patch  |  286 ---
- .../116-sidewinder_fis_location.patch         |   30 -
- .../patches-4.9/120-compex_support.patch      |  199 --
- .../patches-4.9/130-wrt300nv2_support.patch   |  227 --
- .../131-wrt300nv2_mac_plat_info.patch         |   42 -
- .../patches-4.9/132-wrt300nv2_mac_fix.patch   |   72 -
- .../150-lanready_ap1000_support.patch         |  201 --
- .../151-lanready_ap1000_mac_plat_info.patch   |   44 -
- .../patches-4.9/160-delayed_uart_io.patch     |  133 --
- .../patches-4.9/162-wg302v1_mem_fixup.patch   |   37 -
- .../170-ixdpg425_mac_plat_info.patch          |   51 -
- .../175-avila_hss_audio_support.patch         | 2093 -----------------
- .../patches-4.9/180-tw5334_support.patch      |  287 ---
- .../patches-4.9/185-mi424wr_support.patch     |  504 ----
- .../patches-4.9/190-cambria_support.patch     | 1131 ---------
- ...01-npe_driver_print_license_location.patch |   11 -
- ...05-npe_driver_separate_phy_functions.patch |  127 -
- ...-npe_driver_add_update_link_function.patch |  100 -
- .../207-npe_driver_multiphy_support.patch     |  153 --
- .../patches-4.9/295-latch_led_driver.patch    |  201 --
- .../patches-4.9/300-avila_support.patch       |  726 ------
- .../304-ixp4xx_eth_jumboframe.patch           |   80 -
- .../patches-4.9/310-gtwx5717_spi_bus.patch    |   57 -
- .../311-gtwx5717_mac_plat_info.patch          |   50 -
- .../312-ixp4xx_pata_optimization.patch        |  137 --
- .../patches-4.9/500-usr8200_support.patch     |  347 ---
- .../patches-4.9/520-tw2662_support.patch      |  316 ---
- .../patches-4.9/530-ap42x_support.patch       |  282 ---
- .../patches-4.9/600-skb_avoid_dmabounce.patch |   23 -
- .../900-ixp4xx-crypto-include-module.h.patch  |   10 -
- .../patches-4.9/910-ixp4xx-nr_irq_lines.patch |   22 -
- 73 files changed, 11031 deletions(-)
- delete mode 100644 package/boot/apex/Makefile
- delete mode 100644 package/boot/apex/patches/001-compile_fix.patch
- delete mode 100644 package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch
- delete mode 100644 package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch
- delete mode 100644 package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch
- delete mode 100644 package/boot/apex/patches/150-limit_ram_to_64mb.patch
- delete mode 100644 package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch
- delete mode 100644 package/firmware/ixp4xx-microcode/Makefile
- delete mode 100644 package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h
- delete mode 100644 package/firmware/ixp4xx-microcode/src/LICENSE.IPL
- delete mode 100644 package/kernel/avila-wdt/Makefile
- delete mode 100644 package/kernel/avila-wdt/src/Makefile
- delete mode 100644 package/kernel/avila-wdt/src/avila-wdt.c
- delete mode 100644 target/linux/ixp4xx/Makefile
- delete mode 100644 target/linux/ixp4xx/base-files/lib/ixp4xx.sh
- delete mode 100644 target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo
- delete mode 100644 target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx
- delete mode 100644 target/linux/ixp4xx/base-files/lib/upgrade/platform.sh
- delete mode 100644 target/linux/ixp4xx/config-4.9
- delete mode 100644 target/linux/ixp4xx/generic/profiles/100-Default.mk
- delete mode 100644 target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk
- delete mode 100644 target/linux/ixp4xx/generic/profiles/200-NSLU2.mk
- delete mode 100644 target/linux/ixp4xx/generic/profiles/300-NAS100d.mk
- delete mode 100644 target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk
- delete mode 100644 target/linux/ixp4xx/generic/profiles/500-USR8200.mk
- delete mode 100644 target/linux/ixp4xx/generic/target.mk
- delete mode 100644 target/linux/ixp4xx/harddisk/config-default
- delete mode 100644 target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk
- delete mode 100644 target/linux/ixp4xx/harddisk/target.mk
- delete mode 100644 target/linux/ixp4xx/image/Makefile
- delete mode 100644 target/linux/ixp4xx/modules.mk
- delete mode 100644 target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/120-compex_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/190-cambria_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/300-avila_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch
- delete mode 100644 target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch
+ target/linux/orion/Makefile                   |  24 -
+ .../orion/base-files/etc/board.d/02_network   |  15 -
+ .../orion/base-files/etc/hotplug.d/usb/10-usb |  54 --
+ .../orion/base-files/lib/preinit/01_sysinfo   |  12 -
+ target/linux/orion/config-4.9                 | 246 --------
+ .../base-files/etc/uci-defaults/09_hardware   |  54 --
+ .../base-files/lib/upgrade/platform.sh        |  38 --
+ target/linux/orion/generic/target.mk          |  14 -
+ target/linux/orion/harddisk/config-default    |  38 --
+ target/linux/orion/harddisk/target.mk         |  15 -
+ target/linux/orion/image/Makefile             |  12 -
+ target/linux/orion/image/generic.mk           | 237 --------
+ target/linux/orion/image/harddisk.mk          |  57 --
+ .../000-arm_openwrt_machtypes.patch           |   8 -
+ .../100-wrt350nv2_openwrt_partition_map.patch |  32 -
+ .../101-wnr854t_partition_map.patch           |  25 -
+ .../patches-4.9/200-dt2_board_support.patch   | 562 ------------------
+ .../patches-4.9/210-wn802t_support.patch      |  73 ---
+ 18 files changed, 1516 deletions(-)
+ delete mode 100644 target/linux/orion/Makefile
+ delete mode 100755 target/linux/orion/base-files/etc/board.d/02_network
+ delete mode 100644 target/linux/orion/base-files/etc/hotplug.d/usb/10-usb
+ delete mode 100644 target/linux/orion/base-files/lib/preinit/01_sysinfo
+ delete mode 100644 target/linux/orion/config-4.9
+ delete mode 100644 target/linux/orion/generic/base-files/etc/uci-defaults/09_hardware
+ delete mode 100644 target/linux/orion/generic/base-files/lib/upgrade/platform.sh
+ delete mode 100644 target/linux/orion/generic/target.mk
+ delete mode 100644 target/linux/orion/harddisk/config-default
+ delete mode 100644 target/linux/orion/harddisk/target.mk
+ delete mode 100644 target/linux/orion/image/Makefile
+ delete mode 100644 target/linux/orion/image/generic.mk
+ delete mode 100644 target/linux/orion/image/harddisk.mk
+ delete mode 100644 target/linux/orion/patches-4.9/000-arm_openwrt_machtypes.patch
+ delete mode 100644 target/linux/orion/patches-4.9/100-wrt350nv2_openwrt_partition_map.patch
+ delete mode 100644 target/linux/orion/patches-4.9/101-wnr854t_partition_map.patch
+ delete mode 100644 target/linux/orion/patches-4.9/200-dt2_board_support.patch
+ delete mode 100644 target/linux/orion/patches-4.9/210-wn802t_support.patch
 
-diff --git a/package/boot/apex/Makefile b/package/boot/apex/Makefile
+diff --git a/target/linux/orion/Makefile b/target/linux/orion/Makefile
 deleted file mode 100644
-index 64c2426802..0000000000
---- a/package/boot/apex/Makefile
-+++ /dev/null
-@@ -1,62 +0,0 @@
--#
--# Copyright (C) 2006-2011 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--include $(TOPDIR)/rules.mk
--include $(INCLUDE_DIR)/kernel.mk
--
--PKG_NAME:=apex
--PKG_VERSION:=1.6.9
--PKG_RELEASE:=1
--
--PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
--PKG_SOURCE_URL:=https://downloads.openwrt.org/sources/
--PKG_HASH:=1d2bc04c2c6bb3d2d6c1916b6dc559cda2b1ecb045d7801fd49af6af4234abeb
--PKG_TARGETS:=bin
--
--include $(INCLUDE_DIR)/package.mk
--
--export GCC_HONOUR_COPTS=s
--
--define Package/apex
--  SECTION:=boot
--  CATEGORY:=Boot Loaders
--  DEPENDS:=@TARGET_ixp4xx
--  DEFAULT:=y
--  TITLE:=Boot loader for NSLU2, FSG3, NAS100D and others
--endef
--
--define build_apex
--	$(MAKE) -C $(PKG_BUILD_DIR) \
--		ARCH=arm \
--		$(1)_config
--	$(MAKE) -C $(PKG_BUILD_DIR) \
--		$(TARGET_CONFIGURE_OPTS) \
--		KBUILD_HAVE_NLS=no \
--		ARCH=arm \
--		clean all
--	$(INSTALL_BIN) $(PKG_BUILD_DIR)/apex.bin $(PKG_BUILD_DIR)/out/apex-$(2).bin
--endef
--
--define Build/Compile
--	$(INSTALL_DIR) $(PKG_BUILD_DIR)/out
--	$(call build_apex,slugos-nslu2-armeb,nslu2-armeb)
--	$(call build_apex,slugos-nslu2-16mb-armeb,nslu2-16mb-armeb)
--	$(call build_apex,slugos-fsg3-armeb,fsg3-armeb)
--	$(call build_apex,slugos-nas100d-armeb,nas100d-armeb)
--endef
--
--define Package/apex/install
--	$(INSTALL_DIR) $(STAGING_DIR)/apex
--	$(CP) $(PKG_BUILD_DIR)/out/*.bin $(1)/
--endef
--
--define Build/InstallDev
--	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)
--	$(CP) $(PKG_BUILD_DIR)/out/*.bin $(STAGING_DIR_IMAGE)/
--endef
--
--$(eval $(call BuildPackage,apex))
-diff --git a/package/boot/apex/patches/001-compile_fix.patch b/package/boot/apex/patches/001-compile_fix.patch
-deleted file mode 100644
-index 8a25de6570..0000000000
---- a/package/boot/apex/patches/001-compile_fix.patch
-+++ /dev/null
-@@ -1,20 +0,0 @@
----- a/Makefile
--+++ b/Makefile
--@@ -444,7 +444,7 @@ ifeq ($(config-targets),1)
-- include $(srctree)/src/arch-$(SRCARCH)/Makefile
-- export KBUILD_DEFCONFIG
-- 
---config %config: scripts_basic outputmakefile FORCE
--+%config: scripts_basic outputmakefile FORCE
-- 	$(Q)mkdir -p include/linux include/config
-- 	$(Q)$(MAKE) $(build)=scripts/kconfig $@
-- 
--@@ -1585,7 +1585,7 @@ endif
-- 	$(Q)$(MAKE) $(build)=$(build-dir) $(target-dir)$(notdir $@)
-- 
-- # Modules
---/ %/: prepare scripts FORCE
--+%/: prepare scripts FORCE
-- 	$(cmd_crmodverdir)
-- 	$(Q)$(MAKE) KBUILD_MODULES=$(if $(CONFIG_MODULES),1) \
-- 	$(build)=$(build-dir)
-diff --git a/package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch b/package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch
-deleted file mode 100644
-index d598ff3287..0000000000
---- a/package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch
-+++ /dev/null
-@@ -1,23 +0,0 @@
----- a/src/mach-ixp42x/slugos-nslu2-armeb_config
--+++ b/src/mach-ixp42x/slugos-nslu2-armeb_config
--@@ -19,7 +19,7 @@ CONFIG_EXPERIMENTAL=y
-- #
-- # General Setup
-- #
---CONFIG_TARGET_DESCRIPTION="SlugOS NSLU2 (bigendian)"
--+CONFIG_TARGET_DESCRIPTION="OpenWrt NSLU2 (8MiB Flash)"
-- CONFIG_CROSS_COMPILE=""
-- CONFIG_AEABI=y
-- # CONFIG_DRIVER_LONG_LONG_SIZE is not set
--@@ -163,9 +163,9 @@ CONFIG_ENV_REGION_KERNEL_ALT="fis://kern
-- # Overrides
-- #
-- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
---CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
--+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
-- CONFIG_ENV_DEFAULT_CMDLINE_ALT_P=y
---CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
--+CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
-- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
-- # CONFIG_ENV_DEFAULT_STARTUP_ALT_P is not set
-- CONFIG_USES_NOR_BOOTFLASH=y
-diff --git a/package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch b/package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch
-deleted file mode 100644
-index 5e7ecee27c..0000000000
---- a/package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch
-+++ /dev/null
-@@ -1,23 +0,0 @@
----- a/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
--+++ b/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
--@@ -19,7 +19,7 @@ CONFIG_EXPERIMENTAL=y
-- #
-- # General Setup
-- #
---CONFIG_TARGET_DESCRIPTION="SlugOS NSLU2/BE (16MiB Flash)"
--+CONFIG_TARGET_DESCRIPTION="OpenWrt NSLU2 (16MiB Flash)"
-- CONFIG_CROSS_COMPILE=""
-- CONFIG_AEABI=y
-- # CONFIG_DRIVER_LONG_LONG_SIZE is not set
--@@ -163,9 +163,9 @@ CONFIG_ENV_REGION_KERNEL_ALT="fis://kern
-- # Overrides
-- #
-- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
---CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
--+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
-- CONFIG_ENV_DEFAULT_CMDLINE_ALT_P=y
---CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
--+CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
-- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
-- # CONFIG_ENV_DEFAULT_STARTUP_ALT_P is not set
-- CONFIG_USES_NOR_BOOTFLASH=y
-diff --git a/package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch b/package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch
-deleted file mode 100644
-index fc0e8b9f3d..0000000000
---- a/package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch
-+++ /dev/null
-@@ -1,23 +0,0 @@
----- a/src/mach-ixp42x/slugos-fsg3-armeb_config
--+++ b/src/mach-ixp42x/slugos-fsg3-armeb_config
--@@ -17,7 +17,7 @@ CONFIG_EXPERIMENTAL=y
-- #
-- # General Setup
-- #
---CONFIG_TARGET_DESCRIPTION="SlugOS FSG3/BE"
--+CONFIG_TARGET_DESCRIPTION="OpenWrt FSG3"
-- CONFIG_CROSS_COMPILE=""
-- CONFIG_AEABI=y
-- CONFIG_CC_OPTIMIZE_FOR_SIZE=y
--@@ -148,9 +148,9 @@ CONFIG_ENV_REGION_KERNEL_ALT="fis://kern
-- #    Overrides
-- #
-- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
---CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/sda1 rootdelay=10 console=ttyS0,115200"
--+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/sda1 rootdelay=10 console=ttyS0,115200 init=/etc/preinit noinitrd"
-- CONFIG_ENV_DEFAULT_CMDLINE_ALT_P=y
---CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/sda2 rootdelay=10 console=ttyS0,115200"
--+CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock2 rootfstype=squashfs console=ttyS0,115200 init=/etc/preinit noinitrd"
-- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
-- # CONFIG_ENV_DEFAULT_STARTUP_ALT_P is not set
-- CONFIG_USES_NOR_BOOTFLASH=y
-diff --git a/package/boot/apex/patches/150-limit_ram_to_64mb.patch b/package/boot/apex/patches/150-limit_ram_to_64mb.patch
-deleted file mode 100644
-index 3e178166e1..0000000000
---- a/package/boot/apex/patches/150-limit_ram_to_64mb.patch
-+++ /dev/null
-@@ -1,22 +0,0 @@
----- a/src/mach-ixp42x/slugos-nslu2-armeb_config
--+++ b/src/mach-ixp42x/slugos-nslu2-armeb_config
--@@ -137,7 +137,7 @@ CONFIG_AUTOBOOT_DELAY=10
-- CONFIG_ENV_STARTUP_KERNEL_COPY=y
-- # CONFIG_ENV_REGION_KERNEL_SWAP is not set
-- CONFIG_ENV_STARTUP_PREFIX_P=y
---CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+256m"
--+CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+64m"
-- 
-- #
-- #    Regions
----- a/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
--+++ b/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
--@@ -137,7 +137,7 @@ CONFIG_AUTOBOOT_DELAY=10
-- CONFIG_ENV_STARTUP_KERNEL_COPY=y
-- # CONFIG_ENV_REGION_KERNEL_SWAP is not set
-- CONFIG_ENV_STARTUP_PREFIX_P=y
---CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+256m"
--+CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+64m"
-- 
-- #
-- #    Regions
-diff --git a/package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch b/package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch
-deleted file mode 100644
-index e190964857..0000000000
---- a/package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch
-+++ /dev/null
-@@ -1,20 +0,0 @@
----- a/src/mach-ixp42x/slugos-nas100d-armeb_config
--+++ b/src/mach-ixp42x/slugos-nas100d-armeb_config
--@@ -19,7 +19,7 @@ CONFIG_EXPERIMENTAL=y
-- #
-- # General Setup
-- #
---CONFIG_TARGET_DESCRIPTION="SlugOS NAS100D/BE"
--+CONFIG_TARGET_DESCRIPTION="OpenWrt NAS100D"
-- CONFIG_CROSS_COMPILE=""
-- CONFIG_AEABI=y
-- # CONFIG_DRIVER_LONG_LONG_SIZE is not set
--@@ -158,7 +158,7 @@ CONFIG_ENV_REGION_KERNEL="fis://kernel"
-- # Overrides
-- #
-- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
---CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock2 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
--+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock2 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
-- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
-- CONFIG_USES_NOR_BOOTFLASH=y
-- CONFIG_RELOCATE_SIMPLE=y
-diff --git a/package/firmware/ixp4xx-microcode/Makefile b/package/firmware/ixp4xx-microcode/Makefile
-deleted file mode 100644
-index 78fedfd1aa..0000000000
---- a/package/firmware/ixp4xx-microcode/Makefile
-+++ /dev/null
-@@ -1,59 +0,0 @@
--#
--# Copyright (C) 2007 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--include $(TOPDIR)/rules.mk
--
--PKG_NAME:=ixp4xx-microcode
--PKG_VERSION:=2.4
--PKG_RELEASE:=2
--
--PKG_SOURCE:=IPL_ixp400NpeLibraryWithCrypto-2_4.zip
--PKG_SOURCE_URL:=http://downloads.openwrt.org/sources
--PKG_HASH:=1b1170d0657847248589d946048c0aeaa9cd671966fc5bec5933283309485eaa
--
--PKG_FLAGS:=nonshared
--
--include $(INCLUDE_DIR)/package.mk
--
--define Package/ixp4xx-microcode
--  SECTION:=net
--  CATEGORY:=Network
--  TITLE:=Microcode for the IXP4xx network engines
--  DEPENDS:=@TARGET_ixp4xx
--endef
--
--define Package/ixp4xx-microcode/description
-- This package contains the microcode needed to use the network engines in IXP4xx CPUs
--endef
--
--define Build/Prepare
--	rm -rf $(PKG_BUILD_DIR)
--	mkdir -p $(PKG_BUILD_DIR)
--	unzip -d $(PKG_BUILD_DIR)/ $(DL_DIR)/$(PKG_SOURCE)
--	mv $(PKG_BUILD_DIR)/ixp400_xscale_sw/src/npeDl/IxNpeMicrocode.c $(PKG_BUILD_DIR)/
--	rm -rf $(PKG_BUILD_DIR)/ixp400_xscale_sw
--	$(CP) ./src/* $(PKG_BUILD_DIR)/
--endef
--
--define Build/Compile
--	(cd $(PKG_BUILD_DIR); \
--		$(HOSTCC) -Wall -I$(STAGING_DIR_HOST)/include IxNpeMicrocode.c -o IxNpeMicrocode; \
--		./IxNpeMicrocode -be \
--	)
--endef
--
--define Package/ixp4xx-microcode/install
--	$(INSTALL_DIR) $(1)/lib/firmware
--	$(INSTALL_DIR) $(1)/usr/share/doc
--	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-A $(1)/lib/firmware/
--	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-A-HSS $(1)/lib/firmware/
--	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-B $(1)/lib/firmware/
--	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-C $(1)/lib/firmware/
--	$(INSTALL_DATA) $(PKG_BUILD_DIR)/LICENSE.IPL $(1)/usr/share/doc/
--endef
--
--$(eval $(call BuildPackage,ixp4xx-microcode))
-diff --git a/package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h b/package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h
-deleted file mode 100644
-index 4a843db104..0000000000
---- a/package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h
-+++ /dev/null
-@@ -1,148 +0,0 @@
--/*
-- * IxNpeMicrocode.h - Headerfile for compiling the Intel microcode C file
-- *
-- * Copyright (C) 2006 Christian Hohnstaedt <chohnstaedt@innominate.com>
-- *
-- * This file is released under the GPLv2
-- *
-- *
-- * compile with
-- *
-- * gcc -Wall IxNpeMicrocode.c -o IxNpeMicrocode
-- *
-- * Executing the resulting binary on your build-host creates the
-- * "NPE-[ABC].xxxxxxxx" files containing the selected microcode
-- *
-- * fetch the IxNpeMicrocode.c from the Intel Access Library.
-- * It will include this header.
-- *
-- * select Images for every NPE from the following
-- * (used C++ comments for easy uncommenting ....)
-- */
--
--// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_SPAN_MASK_FIREWALL_VLAN_QOS_HDR_CONV_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_SPAN_VLAN_QOS_HDR_CONV_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_LEARN_FILTER_SPAN_MASK_FIREWALL_VLAN_QOS_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEA_HSS_TSLOT_SWITCH
--#define IX_NPEDL_NPEIMAGE_NPEA_ETH_SPAN_FIREWALL_VLAN_QOS_HDR_CONV
--// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_LEARN_FILTER_SPAN_FIREWALL_VLAN_QOS
--// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_LEARN_FILTER_SPAN_FIREWALL
--#define IX_NPEDL_NPEIMAGE_NPEA_HSS_2_PORT
--// #define IX_NPEDL_NPEIMAGE_NPEA_DMA
--// #define IX_NPEDL_NPEIMAGE_NPEA_ATM_MPHY_12_PORT
--// #define IX_NPEDL_NPEIMAGE_NPEA_HSS0_ATM_MPHY_1_PORT
--// #define IX_NPEDL_NPEIMAGE_NPEA_HSS0_ATM_SPHY_1_PORT
--// #define IX_NPEDL_NPEIMAGE_NPEA_HSS0
--// #define IX_NPEDL_NPEIMAGE_NPEA_WEP
--
--
--// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_SPAN_MASK_FIREWALL_VLAN_QOS_HDR_CONV_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_SPAN_VLAN_QOS_HDR_CONV_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_LEARN_FILTER_SPAN_MASK_FIREWALL_VLAN_QOS_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEB_DMA
--#define IX_NPEDL_NPEIMAGE_NPEB_ETH_SPAN_FIREWALL_VLAN_QOS_HDR_CONV
--// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_LEARN_FILTER_SPAN_FIREWALL_VLAN_QOS
--// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_LEARN_FILTER_SPAN_FIREWALL
--
--
--// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_SPAN_MASK_FIREWALL_VLAN_QOS_HDR_CONV_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_SPAN_VLAN_QOS_HDR_CONV_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_LEARN_FILTER_SPAN_MASK_FIREWALL_VLAN_QOS_EXTMIB
--// #define IX_NPEDL_NPEIMAGE_NPEC_DMA
--// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_ETH_LEARN_FILTER_SPAN
--// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_ETH_LEARN_FILTER_FIREWALL
--#define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_CCM_ETH
--// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_CCM_EXTSHA_ETH
--// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_ETH_LEARN_FILTER_SPAN_FIREWALL
--// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_SPAN_FIREWALL_VLAN_QOS_HDR_CONV
--// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_LEARN_FILTER_SPAN_FIREWALL_VLAN_QOS
--// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_LEARN_FILTER_SPAN_FIREWALL
--
--
--#include <stdio.h>
--#include <unistd.h>
--#include <stdlib.h>
--#include <netinet/in.h>
--#include <sys/types.h>
--#include <sys/stat.h>
--#include <fcntl.h>
--#include <errno.h>
--#include <endian.h>
--#include <byteswap.h>
--#include <string.h>
--
--#if __BYTE_ORDER == __LITTLE_ENDIAN
--#define to_le32(x) (x)
--#define to_be32(x) bswap_32(x)
--#else
--#define to_be32(x) (x)
--#define to_le32(x) bswap_32(x)
--#endif
--
--struct dl_image {
--	unsigned magic;
--	unsigned id;
--	unsigned size;
--	unsigned data[0];
--};
--
--const unsigned IxNpeMicrocode_array[];
--
--int main(int argc, char *argv[])
--{
--	struct dl_image *image = (struct dl_image *)IxNpeMicrocode_array;
--	int imgsiz, i, fd, cnt;
--	const unsigned *arrayptr = IxNpeMicrocode_array;
--	const char *names[] = { "IXP425", "IXP465", "unknown" };
--	int bigendian = 1;
--
--	if (argc > 1) {
--		if (!strcmp(argv[1], "-le"))
--			bigendian = 0;
--		else if (!strcmp(argv[1], "-be"))
--			bigendian = 1;
--		else {
--			printf("Usage: %s <-le|-be>\n", argv[0]);
--			return EXIT_FAILURE;
--		}
--	}
--
--	for (image = (struct dl_image *)arrayptr, cnt=0;
--		(image->id != 0xfeedf00d) && (image->magic == 0xfeedf00d);
--		image = (struct dl_image *)(arrayptr), cnt++)
--	{
--		unsigned char field[4];
--		imgsiz = image->size + 3;
--		*(unsigned*)field = to_be32(image->id);
--		char filename[40], slnk[10];
--
--		sprintf(filename, "NPE-%c.%08x", (field[0] & 0xf) + 'A',
--			image->id);
--		if (image->id == 0x00090000)
--			sprintf(slnk, "NPE-%c-HSS", (field[0] & 0xf) + 'A');
--		else
--			sprintf(slnk, "NPE-%c", (field[0] & 0xf) + 'A');
--
--		printf("Writing image: %s.NPE_%c Func: %2x Rev: %02x.%02x "
--			"Size: %5d to: '%s'\n",
--			names[field[0] >> 4], (field[0] & 0xf) + 'A',
--			field[1], field[2], field[3], imgsiz*4, filename);
--		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0644);
--		if (fd >= 0) {
--			for (i=0; i<imgsiz; i++) {
--				*(unsigned*)field = bigendian ?
--					to_be32(arrayptr[i]) :
--					to_le32(arrayptr[i]);
--				write(fd, field, sizeof(field));
--			}
--			close(fd);
--			unlink(slnk);
--			symlink(filename, slnk);
--		} else {
--			perror(filename);
--		}
--		arrayptr += imgsiz;
--	}
--	close(fd);
--	return 0;
--}
-diff --git a/package/firmware/ixp4xx-microcode/src/LICENSE.IPL b/package/firmware/ixp4xx-microcode/src/LICENSE.IPL
-deleted file mode 100644
-index dad2566cfc..0000000000
---- a/package/firmware/ixp4xx-microcode/src/LICENSE.IPL
-+++ /dev/null
-@@ -1,27 +0,0 @@
--INTEL(R) SOFTWARE LICENSE AGREEMENT
-- 
--Copyright (c) 2007, Intel Corporation.
--All rights reserved.
--
--Redistribution. Redistribution and use in binary form, without modification, are permitted
--provided that the following conditions are met:
--o Redistributions must reproduce the above copyright notice and the following disclaimer in the
--documentation and/or other materials provided with the distribution. 
--o Neither the name of Intel Corporation nor the names of its suppliers may be used to endorse
--or promote products derived from this software without specific prior written permission. 
--o No reverse engineering, decompilation, or disassembly of this software is permitted.
--
--Limited patent license. Intel Corporation grants a world-wide, royalty-free, non-exclusive
--license under patents it now or hereafter owns or controls to make, have made, use, import,
--offer to sell and sell (.Utilize.) this software, but solely to the extent that any such patent is
--necessary to Utilize the software alone. The patent license shall not apply to any combinations
--which include this software. No hardware per se is licensed hereunder.
--DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
--ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
--MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
--COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
--EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
--GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
--ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
--OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
--OF SUCH DAMAGE.
-diff --git a/package/kernel/avila-wdt/Makefile b/package/kernel/avila-wdt/Makefile
-deleted file mode 100644
-index a91c93374c..0000000000
---- a/package/kernel/avila-wdt/Makefile
-+++ /dev/null
-@@ -1,34 +0,0 @@
--#
--# Copyright (C) 2008 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--include $(TOPDIR)/rules.mk
--include $(INCLUDE_DIR)/kernel.mk
--
--PKG_NAME:=avila-wdt
--PKG_RELEASE:=1
--
--include $(INCLUDE_DIR)/package.mk
--
--define KernelPackage/avila-wdt
--  SUBMENU:=Other modules
--  TITLE:=GPIO hardware watchdog driver for modified Avila boards
--  DEPENDS:=@GPIO_SUPPORT @TARGET_ixp4xx
--  FILES:=$(PKG_BUILD_DIR)/avila-wdt.ko
--  AUTOLOAD:=$(call AutoLoad,10,avila-wdt)
--endef
--
--MAKE_OPTS:= \
--	$(KERNEL_MAKE_FLAGS) \
--	SUBDIRS="$(PKG_BUILD_DIR)"
--
--define Build/Compile
--	$(MAKE) -C "$(LINUX_DIR)" \
--		$(MAKE_OPTS) \
--		modules
--endef
--
--$(eval $(call KernelPackage,avila-wdt))
-diff --git a/package/kernel/avila-wdt/src/Makefile b/package/kernel/avila-wdt/src/Makefile
-deleted file mode 100644
-index 90d90657ed..0000000000
---- a/package/kernel/avila-wdt/src/Makefile
-+++ /dev/null
-@@ -1 +0,0 @@
--obj-m := avila-wdt.o
-diff --git a/package/kernel/avila-wdt/src/avila-wdt.c b/package/kernel/avila-wdt/src/avila-wdt.c
-deleted file mode 100644
-index 22a3d6c7ea..0000000000
---- a/package/kernel/avila-wdt/src/avila-wdt.c
-+++ /dev/null
-@@ -1,231 +0,0 @@
--/*
-- * avila-wdt.c 
-- * Copyright (C) 2009 Felix Fietkau <nbd@nbd.name>
-- *
-- * based on:
-- * drivers/char/watchdog/ixp4xx_wdt.c
-- *
-- * Watchdog driver for Intel IXP4xx network processors
-- *
-- * Author: Deepak Saxena <dsaxena@plexity.net>
-- *
-- * Copyright 2004 (c) MontaVista, Software, Inc.
-- * Based on sa1100 driver, Copyright (C) 2000 Oleg Drokin <green@crimea.edu>
-- *
-- * This file is licensed under  the terms of the GNU General Public
-- * License version 2. This program is licensed "as is" without any
-- * warranty of any kind, whether express or implied.
-- */
--
--#include <linux/module.h>
--#include <linux/moduleparam.h>
--#include <linux/types.h>
--#include <linux/kernel.h>
--#include <linux/jiffies.h>
--#include <linux/timer.h>
--#include <linux/fs.h>
--#include <linux/miscdevice.h>
--#include <linux/watchdog.h>
--#include <linux/init.h>
--#include <linux/bitops.h>
--#include <linux/uaccess.h>
--#include <mach/hardware.h>
--
--static int nowayout = WATCHDOG_NOWAYOUT;
--static int heartbeat = 20;	/* (secs) Default is 20 seconds */
--static unsigned long wdt_status;
--static atomic_t wdt_counter;
--struct timer_list wdt_timer;
--
--#define	WDT_IN_USE		0
--#define	WDT_OK_TO_CLOSE		1
--#define WDT_RUNNING		2
--
--static void wdt_refresh(unsigned long data)
--{
--	if (test_bit(WDT_RUNNING, &wdt_status)) {
--		if (atomic_dec_and_test(&wdt_counter)) {
--			printk(KERN_WARNING "Avila watchdog expired, expect a reboot soon!\n");
--			clear_bit(WDT_RUNNING, &wdt_status);
--			return;
--		}
--	}
--
--	/* strobe to the watchdog */
--	gpio_line_set(14, IXP4XX_GPIO_HIGH);
--	gpio_line_set(14, IXP4XX_GPIO_LOW);
--
--	mod_timer(&wdt_timer, jiffies + msecs_to_jiffies(500));
--}
--
--static void wdt_enable(void)
--{
--	atomic_set(&wdt_counter, heartbeat * 2);
--
--	/* Disable clock generator output on GPIO 14/15 */
--	*IXP4XX_GPIO_GPCLKR &= ~(1 << 8);
--
--	/* activate GPIO 14 out */
--	gpio_line_config(14, IXP4XX_GPIO_OUT);
--	gpio_line_set(14, IXP4XX_GPIO_LOW);
--
--	if (!test_bit(WDT_RUNNING, &wdt_status))
--		wdt_refresh(0);
--	set_bit(WDT_RUNNING, &wdt_status);
--}
--
--static void wdt_disable(void)
--{
--	/* Re-enable clock generator output on GPIO 14/15 */
--	*IXP4XX_GPIO_GPCLKR |= (1 << 8);
--}
--
--static int avila_wdt_open(struct inode *inode, struct file *file)
--{
--	if (test_and_set_bit(WDT_IN_USE, &wdt_status))
--		return -EBUSY;
--
--	clear_bit(WDT_OK_TO_CLOSE, &wdt_status);
--	wdt_enable();
--	return nonseekable_open(inode, file);
--}
--
--static ssize_t
--avila_wdt_write(struct file *file, const char *data, size_t len, loff_t *ppos)
--{
--	if (len) {
--		if (!nowayout) {
--			size_t i;
--
--			clear_bit(WDT_OK_TO_CLOSE, &wdt_status);
--
--			for (i = 0; i != len; i++) {
--				char c;
--
--				if (get_user(c, data + i))
--					return -EFAULT;
--				if (c == 'V')
--					set_bit(WDT_OK_TO_CLOSE, &wdt_status);
--			}
--		}
--		wdt_enable();
--	}
--	return len;
--}
--
--static struct watchdog_info ident = {
--	.options	= WDIOF_CARDRESET | WDIOF_MAGICCLOSE |
--			  WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING,
--	.identity	= "Avila Watchdog",
--};
--
--
--static long avila_wdt_ioctl(struct file *file, unsigned int cmd,
--							unsigned long arg)
--{
--	int ret = -ENOTTY;
--	int time;
--
--	switch (cmd) {
--	case WDIOC_GETSUPPORT:
--		ret = copy_to_user((struct watchdog_info *)arg, &ident,
--				   sizeof(ident)) ? -EFAULT : 0;
--		break;
--
--	case WDIOC_GETSTATUS:
--		ret = put_user(0, (int *)arg);
--		break;
--
--	case WDIOC_KEEPALIVE:
--		wdt_enable();
--		ret = 0;
--		break;
--
--	case WDIOC_SETTIMEOUT:
--		ret = get_user(time, (int *)arg);
--		if (ret)
--			break;
--
--		if (time <= 0 || time > 60) {
--			ret = -EINVAL;
--			break;
--		}
--
--		heartbeat = time;
--		wdt_enable();
--		/* Fall through */
--
--	case WDIOC_GETTIMEOUT:
--		ret = put_user(heartbeat, (int *)arg);
--		break;
--	}
--	return ret;
--}
--
--static int avila_wdt_release(struct inode *inode, struct file *file)
--{
--	if (test_bit(WDT_OK_TO_CLOSE, &wdt_status))
--		wdt_disable();
--	else
--		printk(KERN_CRIT "WATCHDOG: Device closed unexpectedly - "
--					"timer will not stop\n");
--	clear_bit(WDT_IN_USE, &wdt_status);
--	clear_bit(WDT_OK_TO_CLOSE, &wdt_status);
--
--	return 0;
--}
--
--
--static const struct file_operations avila_wdt_fops = {
--	.owner		= THIS_MODULE,
--	.llseek		= no_llseek,
--	.write		= avila_wdt_write,
--	.unlocked_ioctl	= avila_wdt_ioctl,
--	.open		= avila_wdt_open,
--	.release	= avila_wdt_release,
--};
--
--static struct miscdevice avila_wdt_miscdev = {
--	.minor		= WATCHDOG_MINOR + 1,
--	.name		= "avila_watchdog",
--	.fops		= &avila_wdt_fops,
--};
--
--static int __init avila_wdt_init(void)
--{
--	int ret;
--
--	init_timer(&wdt_timer);
--	wdt_timer.expires = 0;
--	wdt_timer.data = 0;
--	wdt_timer.function = wdt_refresh;
--	ret = misc_register(&avila_wdt_miscdev);
--	if (ret == 0)
--		printk(KERN_INFO "Avila Watchdog Timer: heartbeat %d sec\n",
--			heartbeat);
--	return ret;
--}
--
--static void __exit avila_wdt_exit(void)
--{
--	misc_deregister(&avila_wdt_miscdev);
--	del_timer(&wdt_timer);
--	wdt_disable();
--}
--
--
--module_init(avila_wdt_init);
--module_exit(avila_wdt_exit);
--
--MODULE_AUTHOR("Felix Fietkau <nbd@nbd.name>");
--MODULE_DESCRIPTION("Gateworks Avila Hardware Watchdog");
--
--module_param(heartbeat, int, 0);
--MODULE_PARM_DESC(heartbeat, "Watchdog heartbeat in seconds (default 20s)");
--
--module_param(nowayout, int, 0);
--MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started");
--
--MODULE_LICENSE("GPL");
--MODULE_ALIAS_MISCDEV(WATCHDOG_MINOR);
--
-diff --git a/package/kernel/linux/modules/sound.mk b/package/kernel/linux/modules/sound.mk
-index c83e553d8f..aa7eb72756 100644
---- a/package/kernel/linux/modules/sound.mk
-+++ b/package/kernel/linux/modules/sound.mk
-@@ -255,25 +255,6 @@ endef
- $(eval $(call KernelPackage,sound-soc-imx-sgtl5000))
- 
- 
--define KernelPackage/sound-soc-gw_avila
--  TITLE:=Gateworks Avila SoC sound support
--  KCONFIG:= \
--	CONFIG_SND_GW_AVILA_SOC \
--	CONFIG_SND_GW_AVILA_SOC_PCM \
--	CONFIG_SND_GW_AVILA_SOC_HSS
--  FILES:= \
--	$(LINUX_DIR)/sound/soc/codecs/snd-soc-tlv320aic3x.ko \
--	$(LINUX_DIR)/sound/soc/gw-avila/snd-soc-gw-avila.ko \
--	$(LINUX_DIR)/sound/soc/gw-avila/snd-soc-gw-avila-pcm.ko \
--	$(LINUX_DIR)/sound/soc/gw-avila/snd-soc-gw-avila-hss.ko
--  AUTOLOAD:=$(call AutoLoad,65,snd-soc-tlv320aic3x snd-soc-gw-avila snd-soc-gw-avila-pcm snd-soc-gw-avila-hss)
--  DEPENDS:=@TARGET_ixp4xx +kmod-sound-soc-core
--  $(call AddDepends/sound)
--endef
--
--$(eval $(call KernelPackage,sound-soc-gw_avila))
--
--
- define KernelPackage/pcspkr
-   DEPENDS:=@TARGET_x86 +kmod-input-core
-   TITLE:=PC speaker support
-diff --git a/target/linux/ixp4xx/Makefile b/target/linux/ixp4xx/Makefile
-deleted file mode 100644
-index e1964331a0..0000000000
---- a/target/linux/ixp4xx/Makefile
+index 994c37ea6a..0000000000
+--- a/target/linux/orion/Makefile
 +++ /dev/null
 @@ -1,24 +0,0 @@
 -#
--# Copyright (C) 2006-2011 OpenWrt.org
+-# Copyright (C) 2008-2015 OpenWrt.org
 -#
 -# This is free software, licensed under the GNU General Public License v2.
 -# See /LICENSE for more information.
 -#
 -include $(TOPDIR)/rules.mk
 -
--ARCH:=armeb
--BOARD:=ixp4xx
--BOARDNAME:=Intel IXP4xx
--FEATURES:=squashfs
--MAINTAINER:=Ted Hess <thess@kitschensync.net>, \
--	    Imre Kaloz <kaloz@openwrt.org>
+-ARCH:=arm
+-BOARD:=orion
+-BOARDNAME:=Marvell Orion
+-FEATURES:=broken rtc
 -SUBTARGETS:=generic harddisk
+-MAINTAINER:=Imre Kaloz <kaloz@openwrt.org>
 -
 -KERNEL_PATCHVER:=4.9
 -
 -include $(INCLUDE_DIR)/target.mk
 -
--DEFAULT_PACKAGES += ixp4xx-microcode fconfig
 -KERNELNAME:=zImage
 -
+-DEFAULT_PACKAGES += kmod-ath9k wpad-basic kmod-rtc-isl1208 uboot-envtools
+-
 -$(eval $(call BuildTarget))
-diff --git a/target/linux/ixp4xx/base-files/lib/ixp4xx.sh b/target/linux/ixp4xx/base-files/lib/ixp4xx.sh
-deleted file mode 100644
-index 3f73dd98e0..0000000000
---- a/target/linux/ixp4xx/base-files/lib/ixp4xx.sh
+diff --git a/target/linux/orion/base-files/etc/board.d/02_network b/target/linux/orion/base-files/etc/board.d/02_network
+deleted file mode 100755
+index ab74bf3713..0000000000
+--- a/target/linux/orion/base-files/etc/board.d/02_network
 +++ /dev/null
-@@ -1,34 +0,0 @@
+@@ -1,15 +0,0 @@
+-#!/bin/sh
+-
+-. /lib/functions/uci-defaults.sh
+-
+-board_config_update
+-
+-if grep -q lan1 /proc/net/dev; then
+-	ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
+-else
+-	ucidef_set_interface_lan "eth0"
+-fi
+-
+-board_config_flush
+-
+-exit 0
+diff --git a/target/linux/orion/base-files/etc/hotplug.d/usb/10-usb b/target/linux/orion/base-files/etc/hotplug.d/usb/10-usb
+deleted file mode 100644
+index 2ae0f73bdc..0000000000
+--- a/target/linux/orion/base-files/etc/hotplug.d/usb/10-usb
++++ /dev/null
+@@ -1,54 +0,0 @@
 -#!/bin/sh
 -#
--# Copyright (C) 2012 OpenWrt.org
+-# Copyright (C) 2009-2010 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
 -#
 -
--IXP4XX_BOARD_NAME=
--IXP4XX_MODEL=
+-usb_led=''
+-usb_device=''
 -
--ixp4xx_board_detect() {
--	local machine
--	local name
+-led_set_attr() {
+-	[ -f "/sys/class/leds/$1/$2" ] && echo "$3" > "/sys/class/leds/$1/$2"
+-}
 -
--	machine=$(awk 'BEGIN{FS="[ \t]+:[ \t]"} /Hardware/ {print $2}' /proc/cpuinfo)
+-usb_led_set_timer() {
+-	led_set_attr "${usb_led}" 'trigger' 'timer'
+-	led_set_attr "${usb_led}" 'delay_on' "$1"
+-	led_set_attr "${usb_led}" 'delay_off' "$2"
+-}
 -
--	case "$machine" in
--	"Gateworks Cambria"*)
--		name="cambria"
+-usb_led_on() {
+-	led_set_attr "${usb_led}" 'trigger' 'none'
+-	led_set_attr "${usb_led}" 'brightness' 255
+-}
+-
+-usb_led_off() {
+-	led_set_attr "${usb_led}" 'trigger' 'none'
+-	led_set_attr "${usb_led}" 'brightness' 0
+-}
+-
+-get_usb_led() {
+-	. /lib/functions.sh
+-
+-	case "$(board_name)" in
+-	 'Linksys WRT350N v2')
+-		usb_led='wrt350nv2:green:usb'
+-		usb_device='1-1:1.0'
 -		;;
--	"Gateworks Avila"*)
--		name="avila"
--		;;
--	*)
--		name="generic";
--		;;
--	esac
+-	esac;
+-}
 -
--	[ -z "$IXP4XX_BOARD_NAME" ] && IXP4XX_BOARD_NAME="$name"
--	[ -z "$IXP4XX_MODEL" ] && IXP4XX_MODEL="$machine"
+-get_usb_led
+-
+-case "${ACTION}" in
+- add)
+-	# update LEDs
+-	[ "${usb_device}" = "${DEVICENAME}" ] && usb_led_on
+-	;;
+- remove)
+-	# update LEDs
+-	[ "${usb_device}" = "${DEVICENAME}" ] && usb_led_off
+-	;;
+-esac
+diff --git a/target/linux/orion/base-files/lib/preinit/01_sysinfo b/target/linux/orion/base-files/lib/preinit/01_sysinfo
+deleted file mode 100644
+index 1ef07d774f..0000000000
+--- a/target/linux/orion/base-files/lib/preinit/01_sysinfo
++++ /dev/null
+@@ -1,12 +0,0 @@
+-#!/bin/sh
+-
+-do_sysinfo_orion() {
+-	local name="$(sed -n /Hardware/s/.*:.//p /proc/cpuinfo)"
+-	[ -z "$name" ] && name="unknown"
 -
 -	[ -e "/tmp/sysinfo/" ] || mkdir -p "/tmp/sysinfo/"
--
--	echo "$IXP4XX_BOARD_NAME" > /tmp/sysinfo/board_name
--	echo "$IXP4XX_MODEL" > /tmp/sysinfo/model
+-	echo "$name" > /tmp/sysinfo/board_name
+-	echo "unknown" > /tmp/sysinfo/model
 -}
-diff --git a/target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo b/target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo
+-
+-boot_hook_add preinit_main do_sysinfo_orion
+diff --git a/target/linux/orion/config-4.9 b/target/linux/orion/config-4.9
 deleted file mode 100644
-index 7699e9a10e..0000000000
---- a/target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo
+index 56ae5ee98a..0000000000
+--- a/target/linux/orion/config-4.9
 +++ /dev/null
-@@ -1,9 +0,0 @@
--#!/bin/sh
--
--do_sysinfo_ixp4xx() {
--	. /lib/ixp4xx.sh
--
--	ixp4xx_board_detect
--}
--
--boot_hook_add preinit_main do_sysinfo_ixp4xx
-diff --git a/target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx b/target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx
-deleted file mode 100644
-index adda197b59..0000000000
---- a/target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx
-+++ /dev/null
-@@ -1,32 +0,0 @@
--#!/bin/sh
--
--set_ether_mac() {
--
--	RB_CONFIG="$(grep "RedBoot config" /proc/mtd | cut -d: -f1)"
--
--	for npe in eth0 eth1 eth2
--	do
--		if [ "$(ifconfig $npe 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
--			ifconfig $npe hw ether $(fconfig -s -r -d /dev/$RB_CONFIG -n npe_"$npe"_esa)
--		fi
--	done
--
--	# Some developers should be shot on sight at Zcom/Netgear
--	# -- Fixup for the WG302v1, need someone with a WAG302v1 to fix that, too
--
--	if [ "$(ifconfig eth0 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
--			ifconfig eth0 hw ether $(fconfig -s -r -d /dev/$RB_CONFIG -n zcom_npe_esa)
--	fi
--
--	# Others (*cough*, Tonze) are dumb enough to not handle mac addresses at all
--
--	if [ "$(ifconfig eth0 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
--		ifconfig eth0 hw ether 00:11:22:33:44:55
--	fi
--	if [ "$(ifconfig eth1 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
--		ifconfig eth1 hw ether 00:11:22:33:44:56
--	fi
--}
--
--boot_hook_add preinit_main set_ether_mac
--
-diff --git a/target/linux/ixp4xx/base-files/lib/upgrade/platform.sh b/target/linux/ixp4xx/base-files/lib/upgrade/platform.sh
-deleted file mode 100644
-index f83aa430cf..0000000000
---- a/target/linux/ixp4xx/base-files/lib/upgrade/platform.sh
-+++ /dev/null
-@@ -1,137 +0,0 @@
--CI_BLKSZ=65536
--CI_LDADR=0x00800000
--
--platform_find_partitions() {
--	local first dev size erasesize name
--	while read dev size erasesize name; do
--		name=${name#'"'}; name=${name%'"'}
--		case "$name" in
--			vmlinux.bin.l7|kernel|linux|rootfs)
--				if [ -z "$first" ]; then
--					first="$name"
--				else
--					echo "$erasesize:$first:$name"
--					break
--				fi
--			;;
--		esac
--	done < /proc/mtd
--}
--
--platform_find_kernelpart() {
--	local part
--	for part in "${1%:*}" "${1#*:}"; do
--		case "$part" in
--			vmlinux.bin.l7|kernel|linux)
--				echo "$part"
--				break
--			;;
--		esac
--	done
--}
--
--platform_find_part_size() {
--	local first dev size erasesize name
--	while read dev size erasesize name; do
--		name=${name#'"'}; name=${name%'"'}
--		[ "$name" = "$1" ] && {
--			echo "$size"
--			break
--		}
--	done < /proc/mtd
--}
--
--platform_do_upgrade_combined() {
--	local partitions=$(platform_find_partitions)
--	local kernelpart=$(platform_find_kernelpart "${partitions#*:}")
--	local erase_size=$((0x${partitions%%:*})); partitions="${partitions#*:}"
--	local kern_part_size=0x$(platform_find_part_size "$kernelpart")
--	local kern_part_blocks=$(($kern_part_size / $CI_BLKSZ))
--	local kern_length=0x$(dd if="$1" bs=2 skip=1 count=4 2>/dev/null)
--	local kern_blocks=$(($kern_length / $CI_BLKSZ))
--	local root_blocks=$((0x$(dd if="$1" bs=2 skip=5 count=4 2>/dev/null) / $CI_BLKSZ))
--
--	v "platform_do_upgrade_combined"
--	v "partitions=$partitions"
--	v "kernelpart=$kernelpart"
--	v "kernel_part_size=$kern_part_size"
--	v "kernel_part_blocks=$kern_part_blocks"
--	v "kern_length=$kern_length"
--	v "erase_size=$erase_size"
--	v "kern_blocks=$kern_blocks"
--	v "root_blocks=$root_blocks"
--	v "kern_pad_blocks=$(($kern_part_blocks-$kern_blocks))"
--
--	if [ -n "$partitions" ] && [ -n "$kernelpart" ] && \
--	   [ ${kern_blocks:-0} -gt 0 ] && \
--	   [ ${root_blocks:-0} -gt 0 ] && \
--	   [ ${erase_size:-0} -gt 0 ];
--	then
--		local append=""
--		[ -f "$UPGRADE_BACKUP" ] && append="-j $UPGRADE_BACKUP"
--
--		# write the kernel
--		dd if="$1" bs=$CI_BLKSZ skip=1 count=$kern_blocks 2>/dev/null | \
--			mtd -F$kernelpart:$kern_part_size:$CI_LDADR write - $kernelpart
--		# write the rootfs
--		dd if="$1" bs=$CI_BLKSZ skip=$((1+$kern_blocks)) count=$root_blocks 2>/dev/null | \
--			mtd $append write - rootfs
--	else
--		echo "invalid image"
--	fi
--}
--
--platform_check_image() {
--	local board=$(board_name)
--	local magic="$(get_magic_word "$1")"
--	local partitions=$(platform_find_partitions)
--	local kernelpart=$(platform_find_kernelpart "${partitions#*:}")
--	local kern_part_size=0x$(platform_find_part_size "$kernelpart")
--	local kern_length=0x$(dd if="$1" bs=2 skip=1 count=4 2>/dev/null)
--
--	[ "$#" -gt 1 ] && return 1
--
--	case "$board" in
--	avila | cambria )
--		[ "$magic" != "4349" ] && {
--			echo "Invalid image. Use *-sysupgrade.bin files on this board"
--			return 1
--		}
--
--		kern_length_b=$(printf '%d' $kern_length)
--		kern_part_size_b=$(printf '%d' $kern_part_size)
--		if [ $kern_length_b -gt $kern_part_size_b ]; then
--			echo "Invalid image. Kernel size ($kern_length) exceeds kernel partition ($kern_part_size)"
--			return 1
--		fi
--
--		local md5_img=$(dd if="$1" bs=2 skip=9 count=16 2>/dev/null)
--		local md5_chk=$(dd if="$1" bs=$CI_BLKSZ skip=1 2>/dev/null | md5sum -); md5_chk="${md5_chk%% *}"
--		if [ -n "$md5_img" -a -n "$md5_chk" ] && [ "$md5_img" = "$md5_chk" ]; then
--			return 0
--		else
--			echo "Invalid image. Contents do not match checksum (image:$md5_img calculated:$md5_chk)"
--			return 1
--		fi
--
--		return 0
--		;;
--	esac
--
--	echo "Sysupgrade is not yet supported on $board."
--	return 1
--}
--
--platform_do_upgrade() {
--	local board=$(board_name)
--
--	v "board=$board"
--	case "$board" in
--	avila | cambria )
--		platform_do_upgrade_combined "$1"
--		;;
--	*)
--		default_do_upgrade "$1"
--		;;
--	esac
--}
-diff --git a/target/linux/ixp4xx/config-4.9 b/target/linux/ixp4xx/config-4.9
-deleted file mode 100644
-index 5623f907a6..0000000000
---- a/target/linux/ixp4xx/config-4.9
-+++ /dev/null
-@@ -1,245 +0,0 @@
+@@ -1,246 +0,0 @@
 -CONFIG_ALIGNMENT_TRAP=y
--# CONFIG_ARCH_ADI_COYOTE is not set
--CONFIG_ARCH_CLOCKSOURCE_DATA=y
--CONFIG_ARCH_HAS_DMA_SET_COHERENT_MASK=y
+-CONFIG_ARCH_HAS_ATOMIC64_DEC_IF_POSITIVE=y
 -CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
 -CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
 -# CONFIG_ARCH_HAS_SG_CHAIN is not set
 -CONFIG_ARCH_HAVE_CUSTOM_GPIO_H=y
 -CONFIG_ARCH_HIBERNATION_POSSIBLE=y
--CONFIG_ARCH_IXCDP1100=y
--CONFIG_ARCH_IXDP425=y
--CONFIG_ARCH_IXDP4XX=y
--CONFIG_ARCH_IXP4XX=y
 -CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
+-# CONFIG_ARCH_MULTI_V4 is not set
+-# CONFIG_ARCH_MULTI_V4T is not set
 -CONFIG_ARCH_NR_GPIO=0
--# CONFIG_ARCH_PRPMC1100 is not set
+-CONFIG_ARCH_ORION5X=y
+-# CONFIG_ARCH_ORION5X_DT is not set
+-CONFIG_ARCH_REQUIRE_GPIOLIB=y
 -# CONFIG_ARCH_SELECT_MEMORY_MODEL is not set
 -# CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
 -CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=y
--CONFIG_ARCH_SUPPORTS_BIG_ENDIAN=y
 -CONFIG_ARCH_SUPPORTS_UPROBES=y
 -CONFIG_ARCH_SUSPEND_POSSIBLE=y
 -CONFIG_ARCH_USE_BUILTIN_BSWAP=y
@@ -1341,53 +294,64 @@ index 5623f907a6..0000000000
 -CONFIG_ARM_L1_CACHE_SHIFT=5
 -CONFIG_ARM_PATCH_PHYS_VIRT=y
 -# CONFIG_ARM_THUMB is not set
+-CONFIG_ASYNC_TX_ENABLE_CHANNEL_SWITCH=y
 -CONFIG_ATAGS=y
--CONFIG_BLK_MQ_PCI=y
--CONFIG_BOUNCE=y
+-CONFIG_AUTO_ZRELADDR=y
 -# CONFIG_CACHE_L2X0 is not set
+-CONFIG_CLKDEV_LOOKUP=y
 -CONFIG_CLKSRC_MMIO=y
 -CONFIG_CLONE_BACKWARDS=y
--CONFIG_CMDLINE="root=/dev/mtdblock2 rootfstype=squashfs,jffs2 noinitrd console=ttyS0,115200"
--CONFIG_CMDLINE_FROM_BOOTLOADER=y
+-CONFIG_CMDLINE="rootfstype=squashfs,jffs2 noinitrd console=ttyS0,115200 earlyprintk"
+-CONFIG_CMDLINE_FORCE=y
+-CONFIG_COMMON_CLK=y
 -CONFIG_CPU_32v5=y
 -CONFIG_CPU_ABRT_EV5T=y
--CONFIG_CPU_BIG_ENDIAN=y
 -CONFIG_CPU_CACHE_VIVT=y
+-CONFIG_CPU_COPY_FEROCEON=y
 -CONFIG_CPU_CP15=y
 -CONFIG_CPU_CP15_MMU=y
--CONFIG_CPU_ENDIAN_BE32=y
--# CONFIG_CPU_ENDIAN_BE8 is not set
--CONFIG_CPU_IXP43X=y
--CONFIG_CPU_IXP46X=y
+-CONFIG_CPU_FEROCEON=y
+-CONFIG_CPU_FEROCEON_OLD_ID=y
+-# CONFIG_CPU_ICACHE_DISABLE is not set
 -CONFIG_CPU_PABRT_LEGACY=y
--CONFIG_CPU_TLB_V4WBI=y
+-CONFIG_CPU_TLB_FEROCEON=y
 -CONFIG_CPU_USE_DOMAINS=y
--CONFIG_CPU_XSCALE=y
+-CONFIG_CRYPTO_DES=y
+-CONFIG_CRYPTO_DEV_MARVELL_CESA=y
+-CONFIG_CRYPTO_HASH=y
+-CONFIG_CRYPTO_HASH2=y
+-CONFIG_CRYPTO_HW=y
 -CONFIG_CRYPTO_RNG2=y
 -CONFIG_CRYPTO_WORKQUEUE=y
--CONFIG_DEBUG_BUGVERBOSE=y
+-CONFIG_DEBUG_LL=y
 -CONFIG_DEBUG_LL_INCLUDE="debug/8250.S"
+-CONFIG_DEBUG_LL_UART_8250=y
 -CONFIG_DEBUG_UART_8250=y
 -# CONFIG_DEBUG_UART_8250_FLOW_CONTROL is not set
 -CONFIG_DEBUG_UART_8250_SHIFT=2
 -# CONFIG_DEBUG_UART_8250_WORD is not set
--CONFIG_DEBUG_UART_PHYS=0xc8000003
--CONFIG_DEBUG_UART_VIRT=0xfef00003
+-CONFIG_DEBUG_UART_PHYS=0xf1012000
+-CONFIG_DEBUG_UART_VIRT=0xfe012000
 -# CONFIG_DEBUG_USER is not set
--CONFIG_DMABOUNCE=y
+-CONFIG_DMADEVICES=y
+-CONFIG_DMA_ENGINE=y
+-CONFIG_DMA_ENGINE_RAID=y
+-CONFIG_DMA_OF=y
 -CONFIG_DNOTIFY=y
+-CONFIG_DTC=y
+-CONFIG_EARLY_PRINTK=y
 -CONFIG_EDAC_ATOMIC_SCRUB=y
 -CONFIG_EDAC_SUPPORT=y
--CONFIG_EEPROM_AT24=y
+-CONFIG_FIXED_PHY=y
 -CONFIG_FIX_EARLYCON_MEM=y
 -CONFIG_FRAME_POINTER=y
 -CONFIG_GENERIC_ALLOCATOR=y
 -CONFIG_GENERIC_ATOMIC64=y
 -CONFIG_GENERIC_BUG=y
 -CONFIG_GENERIC_CLOCKEVENTS=y
--CONFIG_GENERIC_EARLY_IOREMAP=y
 -CONFIG_GENERIC_IDLE_POLL_SETUP=y
 -CONFIG_GENERIC_IO=y
+-CONFIG_GENERIC_IRQ_CHIP=y
 -CONFIG_GENERIC_IRQ_SHOW=y
 -CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
 -CONFIG_GENERIC_PCI_IOMAP=y
@@ -1396,6 +360,8 @@ index 5623f907a6..0000000000
 -CONFIG_GENERIC_STRNCPY_FROM_USER=y
 -CONFIG_GENERIC_STRNLEN_USER=y
 -CONFIG_GPIOLIB=y
+-CONFIG_GPIO_DEVRES=y
+-CONFIG_GPIO_MVEBU=y
 -CONFIG_GPIO_SYSFS=y
 -CONFIG_HANDLE_DOMAIN_IRQ=y
 -CONFIG_HARDIRQS_SW_RESEND=y
@@ -1405,23 +371,30 @@ index 5623f907a6..0000000000
 -# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
 -CONFIG_HAVE_ARCH_AUDITSYSCALL=y
 -# CONFIG_HAVE_ARCH_BITREVERSE is not set
+-CONFIG_HAVE_ARCH_JUMP_LABEL=y
+-CONFIG_HAVE_ARCH_KGDB=y
 -CONFIG_HAVE_ARCH_PFN_VALID=y
 -CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
 -CONFIG_HAVE_ARCH_TRACEHOOK=y
 -# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
--CONFIG_HAVE_CBPF_JIT=y
+-CONFIG_HAVE_BPF_JIT=y
 -CONFIG_HAVE_CC_STACKPROTECTOR=y
+-CONFIG_HAVE_CLK=y
+-CONFIG_HAVE_CLK_PREPARE=y
 -CONFIG_HAVE_CONTEXT_TRACKING=y
 -CONFIG_HAVE_C_RECORDMCOUNT=y
 -CONFIG_HAVE_DEBUG_KMEMLEAK=y
 -CONFIG_HAVE_DMA_API_DEBUG=y
+-CONFIG_HAVE_DMA_ATTRS=y
 -CONFIG_HAVE_DMA_CONTIGUOUS=y
+-CONFIG_HAVE_DYNAMIC_FTRACE=y
 -CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
 -CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
 -CONFIG_HAVE_FUNCTION_TRACER=y
 -CONFIG_HAVE_GENERIC_DMA_COHERENT=y
 -CONFIG_HAVE_IDE=y
 -CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
+-CONFIG_HAVE_LATENCYTOP_SUPPORT=y
 -CONFIG_HAVE_MEMBLOCK=y
 -CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
 -CONFIG_HAVE_NET_DSA=y
@@ -1435,444 +408,117 @@ index 5623f907a6..0000000000
 -CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
 -CONFIG_HAVE_UID16=y
 -CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
--CONFIG_HWMON=y
--CONFIG_HWMON_VID=y
--CONFIG_HW_RANDOM=y
--CONFIG_HW_RANDOM_IXP4XX=y
 -CONFIG_HZ_FIXED=0
 -CONFIG_HZ_PERIODIC=y
 -CONFIG_I2C=y
--CONFIG_I2C_ALGOBIT=y
 -CONFIG_I2C_BOARDINFO=y
 -CONFIG_I2C_CHARDEV=y
--CONFIG_I2C_GPIO=y
--# CONFIG_I2C_IOP3XX is not set
+-CONFIG_I2C_MV64XXX=y
 -CONFIG_INITRAMFS_SOURCE=""
 -CONFIG_IOMMU_HELPER=y
--CONFIG_IP_PIMSM_V1=y
--CONFIG_IP_PIMSM_V2=y
+-CONFIG_IRQCHIP=y
+-CONFIG_IRQ_DOMAIN=y
 -CONFIG_IRQ_FORCED_THREADING=y
 -CONFIG_IRQ_WORK=y
--# CONFIG_IWMMXT is not set
--CONFIG_IXP4XX_ETH=y
--# CONFIG_IXP4XX_INDIRECT_PCI is not set
--CONFIG_IXP4XX_NPE=y
--CONFIG_IXP4XX_QMGR=y
--CONFIG_IXP4XX_WATCHDOG=y
--CONFIG_LEDS_FSG=y
 -CONFIG_LEDS_GPIO=y
--CONFIG_LEDS_LATCH=y
--CONFIG_LZO_COMPRESS=y
--CONFIG_LZO_DECOMPRESS=y
--CONFIG_MACH_AP1000=y
--CONFIG_MACH_AP42X=y
--# CONFIG_MACH_ARCOM_VULCAN is not set
--CONFIG_MACH_AVILA=y
--CONFIG_MACH_CAMBRIA=y
--CONFIG_MACH_COMPEXWP18=y
--# CONFIG_MACH_DEVIXP is not set
--CONFIG_MACH_DSMG600=y
--CONFIG_MACH_FSG=y
--CONFIG_MACH_GATEWAY7001=y
--# CONFIG_MACH_GORAMO_MLR is not set
--# CONFIG_MACH_GTWX5715 is not set
--# CONFIG_MACH_IXDP465 is not set
--CONFIG_MACH_IXDPG425=y
--# CONFIG_MACH_KIXRP435 is not set
--CONFIG_MACH_LOFT=y
--CONFIG_MACH_MI424WR=y
--# CONFIG_MACH_MIC256 is not set
--# CONFIG_MACH_MICCPT is not set
--CONFIG_MACH_NAS100D=y
--CONFIG_MACH_NSLU2=y
--CONFIG_MACH_PRONGHORN=y
--CONFIG_MACH_PRONGHORNMETRO=y
--CONFIG_MACH_SIDEWINDER=y
--CONFIG_MACH_TW2662=y
--CONFIG_MACH_TW5334=y
--CONFIG_MACH_USR8200=y
--CONFIG_MACH_WG302V1=y
--CONFIG_MACH_WG302V2=y
--CONFIG_MACH_WRT300NV2=y
+-CONFIG_LIBFDT=y
+-# CONFIG_MACH_D2NET_DT is not set
+-# CONFIG_MACH_DB88F5281 is not set
+-# CONFIG_MACH_DNS323 is not set
+-# CONFIG_MACH_DT2 is not set
+-# CONFIG_MACH_KUROBOX_PRO is not set
+-# CONFIG_MACH_LINKSTATION_LSCHL is not set
+-# CONFIG_MACH_LINKSTATION_LS_HGL is not set
+-# CONFIG_MACH_LINKSTATION_MINI is not set
+-# CONFIG_MACH_LINKSTATION_PRO is not set
+-# CONFIG_MACH_MSS2_DT is not set
+-# CONFIG_MACH_MV2120 is not set
+-# CONFIG_MACH_NET2BIG is not set
+-# CONFIG_MACH_RD88F5181L_FXO is not set
+-# CONFIG_MACH_RD88F5181L_GE is not set
+-# CONFIG_MACH_RD88F5182 is not set
+-# CONFIG_MACH_RD88F5182_DT is not set
+-# CONFIG_MACH_RD88F6183AP_GE is not set
+-CONFIG_MACH_TERASTATION_PRO2=y
+-# CONFIG_MACH_TS209 is not set
+-# CONFIG_MACH_TS409 is not set
+-# CONFIG_MACH_TS78XX is not set
+-CONFIG_MACH_WN802T=y
+-CONFIG_MACH_WNR854T=y
+-CONFIG_MACH_WRT350N_V2=y
 -CONFIG_MDIO_BOARDINFO=y
--CONFIG_MIGHT_HAVE_PCI=y
+-CONFIG_MMC=y
+-CONFIG_MMC_MVSDIO=y
+-# CONFIG_MMC_TIFM_SD is not set
 -CONFIG_MODULES_USE_ELF_REL=y
--CONFIG_MTD_CFI_ADV_OPTIONS=y
--# CONFIG_MTD_CFI_GEOMETRY is not set
--CONFIG_MTD_IXP4XX=y
--CONFIG_MTD_OTP=y
 -CONFIG_MTD_PHYSMAP=y
--CONFIG_MTD_REDBOOT_PARTS=y
+-CONFIG_MULTI_IRQ_HANDLER=y
+-CONFIG_MV643XX_ETH=y
+-CONFIG_MVEBU_MBUS=y
+-CONFIG_MVMDIO=y
+-# CONFIG_MVNETA is not set
+-CONFIG_MV_XOR=y
 -CONFIG_NEED_DMA_MAP_STATE=y
 -CONFIG_NEED_KUSER_HELPERS=y
--CONFIG_NEED_MACH_IO_H=y
 -CONFIG_NEED_PER_CPU_KM=y
--CONFIG_NET_PTP_CLASSIFY=y
--CONFIG_NET_VENDOR_XSCALE=y
+-# CONFIG_NET_VENDOR_AURORA is not set
 -CONFIG_NO_BOOTMEM=y
--CONFIG_NVMEM=y
--# CONFIG_OF is not set
+-CONFIG_OF=y
+-CONFIG_OF_ADDRESS=y
+-CONFIG_OF_ADDRESS_PCI=y
+-CONFIG_OF_EARLY_FLATTREE=y
+-CONFIG_OF_FLATTREE=y
+-CONFIG_OF_GPIO=y
+-CONFIG_OF_IRQ=y
+-CONFIG_OF_MDIO=y
+-CONFIG_OF_MTD=y
+-CONFIG_OF_NET=y
+-CONFIG_OF_PCI=y
+-CONFIG_OF_PCI_IRQ=y
+-CONFIG_OF_RESERVED_MEM=y
 -CONFIG_OLD_SIGACTION=y
 -CONFIG_OLD_SIGSUSPEND3=y
+-CONFIG_ORION_WATCHDOG=y
 -CONFIG_PAGE_OFFSET=0xC0000000
 -CONFIG_PCI=y
 -# CONFIG_PCI_DOMAINS_GENERIC is not set
 -CONFIG_PERF_USE_VMALLOC=y
 -CONFIG_PGTABLE_LEVELS=2
 -CONFIG_PHYLIB=y
+-CONFIG_PLAT_ORION=y
+-CONFIG_PLAT_ORION_LEGACY=y
+-CONFIG_RATIONAL=y
+-# CONFIG_RCU_EXPERT is not set
 -# CONFIG_RCU_STALL_COMMON is not set
--CONFIG_REGMAP=y
--CONFIG_REGMAP_I2C=y
 -CONFIG_RTC_CLASS=y
--CONFIG_RTC_DRV_DS1672=y
--CONFIG_RTC_DRV_ISL1208=y
--CONFIG_RTC_DRV_PCF8563=y
--CONFIG_RTC_DRV_X1205=y
--CONFIG_RTC_I2C_AND_SPI=y
--CONFIG_RTC_MC146818_LIB=y
 -CONFIG_RWSEM_XCHGADD_ALGORITHM=y
 -# CONFIG_SCHED_INFO is not set
 -# CONFIG_SCSI_DMA is not set
--CONFIG_SENSORS_AD7418=y
--CONFIG_SENSORS_MAX6650=y
--CONFIG_SENSORS_W83781D=y
 -CONFIG_SERIAL_8250_FSL=y
--CONFIG_SERIAL_8250_NR_UARTS=4
--CONFIG_SERIAL_8250_RUNTIME_UARTS=4
 -CONFIG_SPLIT_PTLOCK_CPUS=999999
+-CONFIG_SRAM=y
 -CONFIG_SRCU=y
 -CONFIG_SWIOTLB=y
 -CONFIG_SYS_SUPPORTS_APM_EMULATION=y
 -CONFIG_TICK_CPU_ACCOUNTING=y
 -CONFIG_UNCOMPRESS_INCLUDE="mach/uncompress.h"
--CONFIG_USB_EHCI_BIG_ENDIAN_DESC=y
--CONFIG_USB_EHCI_BIG_ENDIAN_MMIO=y
 -CONFIG_USB_SUPPORT=y
+-CONFIG_USE_OF=y
 -CONFIG_VECTORS_BASE=0xffff0000
--CONFIG_VM_EVENT_COUNTERS=y
--CONFIG_WATCHDOG_NOWAYOUT=y
+-# CONFIG_VFP is not set
+-CONFIG_WATCHDOG_CORE=y
 -CONFIG_XZ_DEC_ARM=y
 -CONFIG_XZ_DEC_BCJ=y
 -CONFIG_ZBOOT_ROM_BSS=0x0
 -CONFIG_ZBOOT_ROM_TEXT=0x0
-diff --git a/target/linux/ixp4xx/generic/profiles/100-Default.mk b/target/linux/ixp4xx/generic/profiles/100-Default.mk
+-CONFIG_ZONE_DMA_FLAG=0
+diff --git a/target/linux/orion/generic/base-files/etc/uci-defaults/09_hardware b/target/linux/orion/generic/base-files/etc/uci-defaults/09_hardware
 deleted file mode 100644
-index c881c8001d..0000000000
---- a/target/linux/ixp4xx/generic/profiles/100-Default.mk
+index 5d928b092a..0000000000
+--- a/target/linux/orion/generic/base-files/etc/uci-defaults/09_hardware
 +++ /dev/null
-@@ -1,17 +0,0 @@
--#
--# Copyright (C) 2006 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/Default
--  NAME:=Default Profile
--  PACKAGES:=kmod-ath5k
--endef
--
--define Profile/Default/Description
--	Default IXP4xx Profile
--endef
--$(eval $(call Profile,Default))
--
-diff --git a/target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk b/target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk
-deleted file mode 100644
-index 8f74277c3b..0000000000
---- a/target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk
-+++ /dev/null
-@@ -1,17 +0,0 @@
--#
--# Copyright (C) 2006-2008 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/Atheros-ath5k
--  NAME:=Atheros WiFi (atk5k)
--  PACKAGES:=kmod-ath5k
--endef
--
--define Profile/Atheros-ath5k/Description
--	Package set compatible with hardware using Atheros WiFi cards
--endef
--$(eval $(call Profile,Atheros-ath5k))
--
-diff --git a/target/linux/ixp4xx/generic/profiles/200-NSLU2.mk b/target/linux/ixp4xx/generic/profiles/200-NSLU2.mk
-deleted file mode 100644
-index 55073602a0..0000000000
---- a/target/linux/ixp4xx/generic/profiles/200-NSLU2.mk
-+++ /dev/null
-@@ -1,19 +0,0 @@
--#
--# Copyright (C) 2006-2008 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/NSLU2
--  NAME:=Linksys NSLU2
--  PACKAGES:=-wpad-basic -kmod-ath5k kmod-scsi-core \
--	kmod-usb-ohci-pci kmod-usb2-pci kmod-usb-storage \
--	kmod-fs-ext4
--endef
--
--define Profile/NSLU2/Description
--	Package set optimized for the Linksys NSLU2
--endef
--$(eval $(call Profile,NSLU2))
--
-diff --git a/target/linux/ixp4xx/generic/profiles/300-NAS100d.mk b/target/linux/ixp4xx/generic/profiles/300-NAS100d.mk
-deleted file mode 100644
-index a50eec09e0..0000000000
---- a/target/linux/ixp4xx/generic/profiles/300-NAS100d.mk
-+++ /dev/null
-@@ -1,21 +0,0 @@
--#
--# Copyright (C) 2006 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/NAS100d
--  NAME:=Iomega NAS 100d
--  PACKAGES:=kmod-ath5k \
--	kmod-scsi-core \
--	kmod-ata-core kmod-ata-artop \
--	kmod-usb2-pci kmod-usb-storage \
--	kmod-fs-ext4
--endef
--
--define Profile/NAS100d/Description
--	Package set optimized for the Iomega NAS 100d
--endef
--$(eval $(call Profile,NAS100d))
--
-diff --git a/target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk b/target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk
-deleted file mode 100644
-index fe2b1ccc64..0000000000
---- a/target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk
-+++ /dev/null
-@@ -1,22 +0,0 @@
--#
--# Copyright (C) 2006 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/DSMG600RevA
--  NAME:=DSM-G600 Rev A
--  PACKAGES:=kmod-via-velocity \
--	kmod-ath5k \
--	kmod-scsi-core \
--	kmod-ata-core kmod-ata-artop \
--	kmod-usb-uhci kmod-usb2-pci kmod-usb-storage \
--	kmod-fs-ext4
--endef
--
--define Profile/DSMG600RevA/Description
--	Package set optimized for the DSM-G600 Rev A
--endef
--$(eval $(call Profile,DSMG600RevA))
--
-diff --git a/target/linux/ixp4xx/generic/profiles/500-USR8200.mk b/target/linux/ixp4xx/generic/profiles/500-USR8200.mk
-deleted file mode 100644
-index a4c1f7f430..0000000000
---- a/target/linux/ixp4xx/generic/profiles/500-USR8200.mk
-+++ /dev/null
-@@ -1,19 +0,0 @@
--#
--# Copyright (C) 2006-2008 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/USR8200
--  NAME:=USRobotics USR8200
--  PACKAGES:=-wpad-basic kmod-scsi-core \
--	kmod-usb-uhci kmod-usb2-pci kmod-usb-storage \
--	kmod-fs-ext4 kmod-firewire kmod-firewire-ohci kmod-firewire-sbp2
--endef
--
--define Profile/USR8200/Description
--	Package set optimized for the USRobotics USR8200
--endef
--$(eval $(call Profile,USR8200))
--
-diff --git a/target/linux/ixp4xx/generic/target.mk b/target/linux/ixp4xx/generic/target.mk
-deleted file mode 100644
-index 4794755fdc..0000000000
---- a/target/linux/ixp4xx/generic/target.mk
-+++ /dev/null
-@@ -1,9 +0,0 @@
--BOARDNAME:=Generic
--
--DEFAULT_PACKAGES+= wpad-basic
--
--define Target/Description
--	Build firmware images for ixp4xx based boards that boot from internal flash
--	(e.g : Linksys NSLU2, ...)
--endef
--
-diff --git a/target/linux/ixp4xx/harddisk/config-default b/target/linux/ixp4xx/harddisk/config-default
-deleted file mode 100644
-index 78e599ca86..0000000000
---- a/target/linux/ixp4xx/harddisk/config-default
-+++ /dev/null
-@@ -1,20 +0,0 @@
--CONFIG_ATA=y
--CONFIG_BLK_DEV_SD=y
--CONFIG_CMDLINE="root=/dev/sda1 noinitrd console=ttyS0,115200"
--CONFIG_EXT4_FS=y
--CONFIG_JBD=y
--CONFIG_REISERFS_FS=y
--CONFIG_SATA_VIA=y
--CONFIG_USB=y
--CONFIG_USB_ARCH_HAS_EHCI=y
--CONFIG_USB_ARCH_HAS_HCD=y
--CONFIG_USB_ARCH_HAS_OHCI=y
--CONFIG_USB_EHCI_HCD=y
--# CONFIG_USB_EHCI_HCD_PLATFORM is not set
--CONFIG_USB_EHCI_ROOT_HUB_TT=y
--CONFIG_USB_EHCI_SPLIT_ISO=y
--CONFIG_USB_EHCI_TT_NEWSCHED=y
--CONFIG_USB_OHCI_HCD=y
--# CONFIG_USB_OHCI_HCD_PLATFORM is not set
--CONFIG_USB_OHCI_LITTLE_ENDIAN=y
--CONFIG_USB_STORAGE=y
-diff --git a/target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk b/target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk
-deleted file mode 100644
-index 489ef083a8..0000000000
---- a/target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk
-+++ /dev/null
-@@ -1,20 +0,0 @@
--#
--# Copyright (C) 2006 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/FSG3
--  NAME:=Freecom FSG-3
--  PACKAGES:= \
--	kmod-ath5k \
--	kmod-usb-uhci kmod-usb2-pci kmod-usb-storage \
--	kmod-fs-ext4 kmod-fs-reiserfs
--endef
--
--define Profile/FSG3/Description
--	Package set optimized for the Freecom FSG-3
--endef
--$(eval $(call Profile,FSG3))
--
-diff --git a/target/linux/ixp4xx/harddisk/target.mk b/target/linux/ixp4xx/harddisk/target.mk
-deleted file mode 100644
-index c71065e5f1..0000000000
---- a/target/linux/ixp4xx/harddisk/target.mk
-+++ /dev/null
-@@ -1,6 +0,0 @@
--BOARDNAME:=Internal Hard-Disk
--
--define Target/Description
--	Build firmware images for ixp4xx based boards that boot directly from internal disk storage
--	(e.g : Freecom FSG-3, ...)
--endef
-diff --git a/target/linux/ixp4xx/image/Makefile b/target/linux/ixp4xx/image/Makefile
-deleted file mode 100644
-index 5b6ff0b08e..0000000000
---- a/target/linux/ixp4xx/image/Makefile
-+++ /dev/null
-@@ -1,76 +0,0 @@
--# 
--# Copyright (C) 2006-2010 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--include $(TOPDIR)/rules.mk
--include $(INCLUDE_DIR)/image.mk
--
--ifdef CONFIG_PACKAGE_apex
--  define Image/Build/Linksys
--	BIN_DIR=$(BIN_DIR) $(TOPDIR)/scripts/slugimage.pl \
--		-L $(STAGING_DIR_IMAGE)/apex-$(2)-armeb.bin \
--		-k $(BIN_DIR)/$(IMG_PREFIX)-$(2)-zImage \
--		-r rootfs:$(BIN_DIR)/$(IMG_PREFIX)-$(1).img \
--		-p -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).bin
--	BIN_DIR=$(BIN_DIR) $(TOPDIR)/scripts/slugimage.pl \
--		-F -L $(STAGING_DIR_IMAGE)/apex-$(2)-16mb-armeb.bin \
--		-k $(BIN_DIR)/$(IMG_PREFIX)-$(2)-zImage \
--		-r rootfs:$(BIN_DIR)/$(IMG_PREFIX)-$(1).img \
--		-p -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1)-16mb.bin
--  endef
--endif
--
--define Image/Build/Freecom
--	$(INSTALL_DIR) $(TARGET_DIR)/boot
--	# TODO: Add special CMDLINE shim for webupgrade image here
--	$(CP) $(BIN_DIR)/$(IMG_PREFIX)-$(2)-zImage $(TARGET_DIR)/zImage
--	$(TAR) cfj $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).img --numeric-owner --owner=0 --group=0 -C $(TARGET_DIR)/ .
--	$(STAGING_DIR_HOST)/bin/encode_crc $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).img $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1)-webupgrade.img
--	rm -f $(TARGET_DIR)/zImage
--endef
--
--define Image/BuildKernel
--	cp $(KDIR)/zImage $(BIN_DIR)/$(IMG_PREFIX)-zImage
--	BIN_DIR=$(BIN_DIR) IMG_PREFIX="$(IMG_PREFIX)" $(TOPDIR)/scripts/arm-magic.sh
--endef
--
--define Image/BuildKernel/Initramfs
--	cp $(KDIR)/zImage-initramfs $(BIN_DIR)/$(IMG_PREFIX)-initramfs-zImage
--	BIN_DIR=$(BIN_DIR) IMG_PREFIX="$(IMG_PREFIX)-initramfs" $(TOPDIR)/scripts/arm-magic.sh
--endef
--
--# Build sysupgrade image
--define BuildFirmware/Generic
--	dd if=$(KDIR)/zImage of=$(KDIR)/zImage.pad bs=64k conv=sync; \
--	dd if=$(KDIR)/root.$(1) of=$(KDIR)/root.$(1).pad bs=128k conv=sync; \
--	sh $(TOPDIR)/scripts/combined-image.sh \
--		$(KDIR)/zImage.pad \
--		$(KDIR)/root.$(1).pad \
--		$(BIN_DIR)/$(IMG_PREFIX)-$(patsubst jffs2-%,jffs2,$(patsubst squashfs-%,squashfs,$(1)))-sysupgrade.bin
--endef
--
--define Image/Build
--	$(call Image/Build/$(1),$(1))
--	$(call BuildFirmware/Generic,$(1))
--endef
--
--define Image/Build/jffs2-64k
--	dd if=$(KDIR)/root.$(1) of=$(BIN_DIR)/$(IMG_PREFIX)-$(1).img bs=65536 conv=sync
--endef
--
--define Image/Build/jffs2-128k
--	dd if=$(KDIR)/root.$(1) of=$(BIN_DIR)/$(IMG_PREFIX)-$(1).img bs=131072 conv=sync
--	$(call Image/Build/Linksys,$(1),nslu2,$(1))
--	$(call Image/Build/Freecom,$(1),fsg3,$(1))
--endef
--
--define Image/Build/squashfs
--	$(call prepare_generic_squashfs,$(KDIR)/root.squashfs)
--	dd if=$(KDIR)/root.$(1) of=$(BIN_DIR)/$(IMG_PREFIX)-$(1).img bs=131072 conv=sync
--	$(call Image/Build/Linksys,$(1),nslu2,$(1))
--	$(call Image/Build/Freecom,$(1),fsg3,$(1))
--endef
--
--$(eval $(call BuildImage))
-diff --git a/target/linux/ixp4xx/modules.mk b/target/linux/ixp4xx/modules.mk
-deleted file mode 100644
-index 2d6446c05b..0000000000
---- a/target/linux/ixp4xx/modules.mk
-+++ /dev/null
-@@ -1,74 +0,0 @@
+@@ -1,54 +0,0 @@
+-#!/bin/sh
 -#
 -# Copyright (C) 2010 OpenWrt.org
 -#
@@ -1880,9837 +526,1235 @@ index 2d6446c05b..0000000000
 -# See /LICENSE for more information.
 -#
 -
--define KernelPackage/ata-ixp4xx-cf
--  SUBMENU:=$(BLOCK_MENU)
--  TITLE:=IXP4XX Compact Flash support
--  DEPENDS:=@TARGET_ixp4xx
--  KCONFIG:=CONFIG_PATA_IXP4XX_CF
--  FILES:=$(LINUX_DIR)/drivers/ata/pata_ixp4xx_cf.ko
--  AUTOLOAD:=$(call AutoLoad,41,pata_ixp4xx_cf,1)
--  $(call AddDepends/ata)
--endef
+-#
+-# This script sets system defaults for the hardware on firstboot
+-#
 -
--define KernelPackage/ata-ixp4xx-cf/description
-- IXP4XX Compact Flash support.
--endef
+-. /lib/functions.sh
 -
--$(eval $(call KernelPackage,ata-ixp4xx-cf))
+-wrt350nv2_default() {
+-# leds
+-	uci batch <<__EOF
+-set system.power_led=led
+-set system.power_led.name='Power LED (green)'
+-set system.power_led.sysfs='wrt350nv2:green:power'
+-set system.power_led.default='1'
+-set system.wifi_led=led
+-set system.wifi_led.name='Wireless LED (green)'
+-set system.wifi_led.sysfs='wrt350nv2:green:wireless'
+-set system.wifi_led.trigger='netdev'
+-set system.wifi_led.dev='wlan0'
+-set system.wifi_led.mode='link tx rx'
+-set system.wifi_led.default='0'
+-commit system
+-__EOF
 -
+-# add mac address from U-Boot partition to lan and wan devices
+-	MTD=$(grep -e 'u-boot' /proc/mtd)
+-	MTD=$(echo ${MTD} | sed 's/[a-z]*\([0-9]*\):.*/\1/')
+-	[ -n "${MTD}" ] && {
+-		MACADDR=$(dd if=/dev/mtdblock${MTD} bs=1 skip=262048 count=6 2>/dev/null | hexdump -e '1/1 "%02x"')
+-		MACADDR2=$(( 0x${MACADDR} + 1))
+-		MACADDR2=$(printf "%012x" ${MACADDR2})
 -
--define KernelPackage/ixp4xx-beeper
--  SUBMENU:=$(OTHER_MENU)
--  TITLE:=IXP4XX Beeper support
--  DEPENDS:=@TARGET_ixp4xx +kmod-input-core
--  KCONFIG:= \
--	CONFIG_INPUT_MISC=y \
--	CONFIG_INPUT_IXP4XX_BEEPER
--  FILES:=$(LINUX_DIR)/drivers/input/misc/ixp4xx-beeper.ko
--  AUTOLOAD:=$(call AutoLoad,50,ixp4xx-beeper)
--  $(call AddDepends/input)
--endef
+-		MACADDR=$(echo ${MACADDR} | sed 's/\(..\)/\1:/g' | sed 's/:$//')
+-		MACADDR2=$(echo ${MACADDR2} | sed 's/\(..\)/\1:/g' | sed 's/:$//')
 -
--define KernelPackage/ixp4xx-beeper/description
-- IXP4XX Beeper support
--endef
+-		uci set network.eth0.macaddr=${MACADDR}
+-		uci set network.lan.macaddr=${MACADDR}
+-		uci set network.wan.macaddr=${MACADDR2}
+-		uci commit network
+-	}
+-}
 -
--$(eval $(call KernelPackage,ixp4xx-beeper))
--
--
--define KernelPackage/crypto-hw-ixp4xx
--  TITLE:=Intel IXP4xx hardware crypto module
--  DEPENDS:=@TARGET_ixp4xx
--  KCONFIG:= \
--	CONFIG_CRYPTO_DEV_IXP4XX
--  FILES:=$(LINUX_DIR)/drivers/crypto/ixp4xx_crypto.ko
--  AUTOLOAD:=$(call AutoLoad,90,ixp4xx_crypto)
--  $(call AddDepends/crypto,+kmod-crypto-authenc +kmod-crypto-des)
--endef
--
--define KernelPackage/crypto-hw-ixp4xx/description
--  Kernel support for the Intel IXP4xx HW crypto engine.
--endef
--
--$(eval $(call KernelPackage,crypto-hw-ixp4xx))
--
--
--define KernelPackage/ixp4xx-eth
--  SUBMENU:=$(NETWORK_DEVICES_MENU)
--  TITLE:=IXP4xxt Ethernet Adapter kernel support
--  DEPENDS:=@TARGET_ixp4xx
--  KCONFIG:=CONFIG_IXP4XX_ETH
--  FILES:=$(LINUX_DIR)/drivers/net/ethernet/xscale/ixp4xx_eth.ko
--  AUTOLOAD:=$(call AutoLoad,50,ixp4xx_eth)
--endef
--
--define KernelPackage/ixp4xx-eth/description
-- Kernel modules for Intel IXP4xx Ethernet chipsets.
--endef
--
--$(eval $(call KernelPackage,ixp4xx-eth))
-diff --git a/target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch b/target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch
+-case "$(board_name)" in
+- 'Linksys WRT350N v2')
+-	wrt350nv2_default
+-	;;
+-esac
+diff --git a/target/linux/orion/generic/base-files/lib/upgrade/platform.sh b/target/linux/orion/generic/base-files/lib/upgrade/platform.sh
 deleted file mode 100644
-index 3ca3eb76a6..0000000000
---- a/target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch
+index cf1fad83a8..0000000000
+--- a/target/linux/orion/generic/base-files/lib/upgrade/platform.sh
 +++ /dev/null
-@@ -1,136 +0,0 @@
--From 7113f56b683c5123df5c20724ac813cee66fa21a Mon Sep 17 00:00:00 2001
--From: Jonas Gorski <jogo@openwrt.org>
--Date: Mon, 1 Jul 2013 16:49:05 +0200
--Subject: [PATCH 1/2] arm: ixp4xx: set cohorent_dma_mask for ethernet platform
-- devices
+@@ -1,38 +0,0 @@
+-#
+-# Copyright (C) 2010-2011 OpenWrt.org
+-#
 -
--ARM requires the cohorent_dma_mask set, so set it for the platform
--devices so that the ethernet driver has access to it.
+-# use default "image" for PART_NAME
+-# use default for platform_do_upgrade()
 -
--Signed-off-by: Jonas Gorski <jogo@openwrt.org>
-----
-- arch/arm/mach-ixp4xx/fsg-setup.c     |    2 ++
-- arch/arm/mach-ixp4xx/goramo_mlr.c    |    2 ++
-- arch/arm/mach-ixp4xx/ixdp425-setup.c |    3 +++
-- arch/arm/mach-ixp4xx/nas100d-setup.c |    1 +
-- arch/arm/mach-ixp4xx/nslu2-setup.c   |    1 +
-- arch/arm/mach-ixp4xx/omixp-setup.c   |    3 +++
-- arch/arm/mach-ixp4xx/vulcan-setup.c  |    2 ++
-- 7 files changed, 14 insertions(+)
+-platform_check_image() {
+-	[ "$#" -gt 1 ] && { echo 'Too many arguments. Only flash file expected.'; return 1; }
 -
----- a/arch/arm/mach-ixp4xx/fsg-setup.c
--+++ b/arch/arm/mach-ixp4xx/fsg-setup.c
--@@ -142,12 +142,14 @@ static struct platform_device fsg_eth[]
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev = {
-- 			.platform_data	= fsg_plat_eth,
--+			.coherent_dma_mask = DMA_BIT_MASK(32),
-- 		},
-- 	}, {
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEC,
-- 		.dev = {
-- 			.platform_data	= fsg_plat_eth + 1,
--+			.coherent_dma_mask = DMA_BIT_MASK(32),
-- 		},
-- 	}
-- };
----- a/arch/arm/mach-ixp4xx/goramo_mlr.c
--+++ b/arch/arm/mach-ixp4xx/goramo_mlr.c
--@@ -295,10 +295,12 @@ static struct platform_device device_eth
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev.platform_data	= eth_plat,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}, {
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEC,
-- 		.dev.platform_data	= eth_plat + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}
-- };
-- 
----- a/arch/arm/mach-ixp4xx/ixdp425-setup.c
--+++ b/arch/arm/mach-ixp4xx/ixdp425-setup.c
--@@ -20,6 +20,7 @@
-- #include <linux/mtd/nand.h>
-- #include <linux/mtd/partitions.h>
-- #include <linux/delay.h>
--+#include <linux/dma-mapping.h>
-- #include <linux/gpio.h>
-- #include <asm/types.h>
-- #include <asm/setup.h>
--@@ -196,10 +197,12 @@ static struct platform_device ixdp425_et
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev.platform_data	= ixdp425_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}, {
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEC,
-- 		.dev.platform_data	= ixdp425_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}
-- };
-- 
----- a/arch/arm/mach-ixp4xx/nas100d-setup.c
--+++ b/arch/arm/mach-ixp4xx/nas100d-setup.c
--@@ -170,6 +170,7 @@ static struct platform_device nas100d_et
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev.platform_data	= nas100d_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}
-- };
-- 
----- a/arch/arm/mach-ixp4xx/nslu2-setup.c
--+++ b/arch/arm/mach-ixp4xx/nslu2-setup.c
--@@ -182,6 +182,7 @@ static struct platform_device nslu2_eth[
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev.platform_data	= nslu2_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}
-- };
-- 
----- a/arch/arm/mach-ixp4xx/omixp-setup.c
--+++ b/arch/arm/mach-ixp4xx/omixp-setup.c
--@@ -17,6 +17,7 @@
-- #include <linux/serial_8250.h>
-- #include <linux/mtd/mtd.h>
-- #include <linux/mtd/partitions.h>
--+#include <linux/dma-mapping.h>
-- #include <linux/leds.h>
-- 
-- #include <asm/setup.h>
--@@ -188,10 +189,12 @@ static struct platform_device ixdp425_et
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev.platform_data	= ixdp425_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	}, {
-- 		.name			= "ixp4xx_eth",
-- 		.id			= IXP4XX_ETH_NPEC,
-- 		.dev.platform_data	= ixdp425_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
-- 	},
-- };
-- 
----- a/arch/arm/mach-ixp4xx/vulcan-setup.c
--+++ b/arch/arm/mach-ixp4xx/vulcan-setup.c
--@@ -139,6 +139,7 @@ static struct platform_device vulcan_eth
-- 		.id			= IXP4XX_ETH_NPEB,
-- 		.dev = {
-- 			.platform_data	= &vulcan_plat_eth[0],
--+			.coherent_dma_mask = DMA_BIT_MASK(32),
-- 		},
-- 	},
-- 	[1] = {
--@@ -146,6 +147,7 @@ static struct platform_device vulcan_eth
-- 		.id			= IXP4XX_ETH_NPEC,
-- 		.dev = {
-- 			.platform_data	= &vulcan_plat_eth[1],
--+			.coherent_dma_mask = DMA_BIT_MASK(32),
-- 		},
-- 	},
-- };
-diff --git a/target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch b/target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch
+-	local hardware="$(board_name)"
+-	local magic="$(get_magic_word "$1")"
+-	local magic_long="$(get_magic_long "$1")"
+-
+-	case "${hardware}" in
+-	 # hardware with a direct uImage partition
+-	 # image header format as described in U-Boot's include/image.h
+-	 # see http://git.denx.de/cgi-bin/gitweb.cgi?p=u-boot.git;a=blob;f=include/image.h
+-	 'Linksys WRT350N v2')
+-		[ "${magic_long}" != '27051956' ] && {
+-			echo "Invalid image type ${magic_long}."
+-			return 1
+-		}
+-		return 0
+-		;;
+-	 # Netgear WNR854T (has uImage as file inside a JFFS2 partition)
+-	 'Netgear WNR854T')
+-		[ "${magic}" != '8519' ] && {
+-			echo "Invalid image type ${magic}."
+-			return 1
+-		}
+-		return 0
+-		;;
+-	esac
+-
+-	echo "Sysupgrade is not yet supported on ${hardware}."
+-	return 1
+-}
+diff --git a/target/linux/orion/generic/target.mk b/target/linux/orion/generic/target.mk
 deleted file mode 100644
-index b369b56f00..0000000000
---- a/target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch
+index 7b054edd6b..0000000000
+--- a/target/linux/orion/generic/target.mk
 +++ /dev/null
-@@ -1,95 +0,0 @@
--From 1d67040af0144c549f4db8144d2ccc253ff8639c Mon Sep 17 00:00:00 2001
--From: Jonas Gorski <jogo@openwrt.org>
--Date: Mon, 1 Jul 2013 16:39:28 +0200
--Subject: [PATCH 2/2] net: ixp4xx_eth: use parent device for dma allocations
+@@ -1,14 +0,0 @@
+-#
+-# Copyright (C) 2008-2010 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
 -
--Now that the platfomr device provides a dma_cohorent_mask, use it for
--dma operations.
+-BOARDNAME:=Generic
+-FEATURES+=squashfs
 -
--This fixes ethernet on ixp4xx which was broken since 3.7.
--
--Signed-off-by: Jonas Gorski <jogo@openwrt.org>
-----
-- drivers/net/ethernet/xscale/ixp4xx_eth.c |   23 ++++++++++++-----------
-- 1 file changed, 12 insertions(+), 11 deletions(-)
--
----- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
--+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
--@@ -656,10 +656,10 @@ static inline void queue_put_desc(unsign
-- static inline void dma_unmap_tx(struct port *port, struct desc *desc)
-- {
-- #ifdef __ARMEB__
---	dma_unmap_single(&port->netdev->dev, desc->data,
--+	dma_unmap_single(port->netdev->dev.parent, desc->data,
-- 			 desc->buf_len, DMA_TO_DEVICE);
-- #else
---	dma_unmap_single(&port->netdev->dev, desc->data & ~3,
--+	dma_unmap_single(port->netdev->dev.parent, desc->data & ~3,
-- 			 ALIGN((desc->data & 3) + desc->buf_len, 4),
-- 			 DMA_TO_DEVICE);
-- #endif
--@@ -725,9 +725,9 @@ static int eth_poll(struct napi_struct *
-- 
-- #ifdef __ARMEB__
-- 		if ((skb = netdev_alloc_skb(dev, RX_BUFF_SIZE))) {
---			phys = dma_map_single(&dev->dev, skb->data,
--+			phys = dma_map_single(dev->dev.parent, skb->data,
-- 					      RX_BUFF_SIZE, DMA_FROM_DEVICE);
---			if (dma_mapping_error(&dev->dev, phys)) {
--+			if (dma_mapping_error(dev->dev.parent, phys)) {
-- 				dev_kfree_skb(skb);
-- 				skb = NULL;
-- 			}
--@@ -750,10 +750,11 @@ static int eth_poll(struct napi_struct *
-- #ifdef __ARMEB__
-- 		temp = skb;
-- 		skb = port->rx_buff_tab[n];
---		dma_unmap_single(&dev->dev, desc->data - NET_IP_ALIGN,
--+		dma_unmap_single(dev->dev.parent, desc->data - NET_IP_ALIGN,
-- 				 RX_BUFF_SIZE, DMA_FROM_DEVICE);
-- #else
---		dma_sync_single_for_cpu(&dev->dev, desc->data - NET_IP_ALIGN,
--+		dma_sync_single_for_cpu(dev->dev.parent,
--+					desc->data - NET_IP_ALIGN,
-- 					RX_BUFF_SIZE, DMA_FROM_DEVICE);
-- 		memcpy_swab32((u32 *)skb->data, (u32 *)port->rx_buff_tab[n],
-- 			      ALIGN(NET_IP_ALIGN + desc->pkt_len, 4) / 4);
--@@ -872,7 +873,7 @@ static int eth_xmit(struct sk_buff *skb,
-- 	memcpy_swab32(mem, (u32 *)((int)skb->data & ~3), bytes / 4);
-- #endif
-- 
---	phys = dma_map_single(&dev->dev, mem, bytes, DMA_TO_DEVICE);
--+	phys = dma_map_single(dev->dev.parent, mem, bytes, DMA_TO_DEVICE);
-- 	if (dma_mapping_error(&dev->dev, phys)) {
-- 		dev_kfree_skb(skb);
-- #ifndef __ARMEB__
--@@ -1107,7 +1108,7 @@ static int init_queues(struct port *port
-- 	int i;
-- 
-- 	if (!ports_open) {
---		dma_pool = dma_pool_create(DRV_NAME, &port->netdev->dev,
--+		dma_pool = dma_pool_create(DRV_NAME, port->netdev->dev.parent,
-- 					   POOL_ALLOC_SIZE, 32, 0);
-- 		if (!dma_pool)
-- 			return -ENOMEM;
--@@ -1135,9 +1136,9 @@ static int init_queues(struct port *port
-- 		data = buff;
-- #endif
-- 		desc->buf_len = MAX_MRU;
---		desc->data = dma_map_single(&port->netdev->dev, data,
--+		desc->data = dma_map_single(port->netdev->dev.parent, data,
-- 					    RX_BUFF_SIZE, DMA_FROM_DEVICE);
---		if (dma_mapping_error(&port->netdev->dev, desc->data)) {
--+		if (dma_mapping_error(port->netdev->dev.parent, desc->data)) {
-- 			free_buffer(buff);
-- 			return -EIO;
-- 		}
--@@ -1157,7 +1158,7 @@ static void destroy_queues(struct port *
-- 			struct desc *desc = rx_desc_ptr(port, i);
-- 			buffer_t *buff = port->rx_buff_tab[i];
-- 			if (buff) {
---				dma_unmap_single(&port->netdev->dev,
--+				dma_unmap_single(port->netdev->dev.parent,
-- 						 desc->data - NET_IP_ALIGN,
-- 						 RX_BUFF_SIZE, DMA_FROM_DEVICE);
-- 				free_buffer(buff);
-diff --git a/target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch b/target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch
+-define Target/Description
+-	Build firmware images for Marvell Orion based boards that boot from internal flash.
+-	(e.g.: Linksys WRT350N v2, Netgear WNR854T, ...)
+-endef
+diff --git a/target/linux/orion/harddisk/config-default b/target/linux/orion/harddisk/config-default
 deleted file mode 100644
-index 185a09fff2..0000000000
---- a/target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch
+index bf6cee1715..0000000000
+--- a/target/linux/orion/harddisk/config-default
 +++ /dev/null
-@@ -1,424 +0,0 @@
----- a/drivers/gpio/Kconfig
--+++ b/drivers/gpio/Kconfig
--@@ -656,6 +656,14 @@ config GPIO_WS16C48
-- 	  parameter. The interrupt line numbers for the devices may be
-- 	  configured via the irq module parameter.
-- 
--+config GPIO_GW_I2C_PLD
--+	tristate "Gateworks I2C PLD GPIO Expander"
--+	depends on I2C
--+	help
--+		Say yes here to provide access to the Gateworks I2C PLD GPIO
--+		Expander. This is used at least on the GW2358-4.
--+
--+
-- endmenu
-- 
-- menu "I2C GPIO expanders"
----- a/drivers/gpio/Makefile
--+++ b/drivers/gpio/Makefile
--@@ -48,6 +48,7 @@ obj-$(CONFIG_GPIO_F7188X)	+= gpio-f7188x
-- obj-$(CONFIG_GPIO_GE_FPGA)	+= gpio-ge.o
-- obj-$(CONFIG_GPIO_GPIO_MM)	+= gpio-gpio-mm.o
-- obj-$(CONFIG_GPIO_GRGPIO)	+= gpio-grgpio.o
--+obj-$(CONFIG_GPIO_GW_I2C_PLD)	+= gw_i2c_pld.o
-- obj-$(CONFIG_HTC_EGPIO)		+= gpio-htc-egpio.o
-- obj-$(CONFIG_GPIO_ICH)		+= gpio-ich.o
-- obj-$(CONFIG_GPIO_IOP)		+= gpio-iop.o
----- /dev/null
--+++ b/drivers/gpio/gw_i2c_pld.c
--@@ -0,0 +1,371 @@
--+/*
--+ * Gateworks I2C PLD GPIO expander
--+ *
--+ * Copyright (C) 2009 Gateworks Corporation
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License as published by
--+ * the Free Software Foundation; either version 2 of the License, or
--+ * (at your option) any later version.
--+ *
--+ * This program is distributed in the hope that it will be useful,
--+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
--+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--+ * GNU General Public License for more details.
--+ *
--+ * You should have received a copy of the GNU General Public License
--+ * along with this program; if not, write to the Free Software
--+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/slab.h>
--+#include <linux/hardirq.h>
--+#include <linux/i2c.h>
--+#include <linux/i2c/gw_i2c_pld.h>
--+#include <linux/module.h>
--+#include <linux/export.h>
--+#include <asm/gpio.h>
--+#include <mach/hardware.h>
--+
--+static const struct i2c_device_id gw_i2c_pld_id[] = {
--+	{ "gw_i2c_pld", 8 },
--+	{ }
--+};
--+MODULE_DEVICE_TABLE(i2c, gw_i2c_pld_id);
--+
--+/*
--+ * The Gateworks I2C PLD chip only expose one read and one
--+ * write register.  Writing a "one" bit (to match the reset state) lets
--+ * that pin be used as an input. It is an open-drain model.
--+ */
--+
--+struct gw_i2c_pld {
--+	struct gpio_chip	chip;
--+	struct i2c_client	*client;
--+	unsigned		out;		/* software latch */
--+};
--+
--+/*-------------------------------------------------------------------------*/
--+
--+/*
--+ * The Gateworks I2C PLD chip does not properly send the acknowledge bit
--+ * thus we cannot use standard i2c_smbus functions. We have recreated
--+ * our own here, but we still use the rt_mutex_lock to lock the i2c_bus
--+ * as the device still exists on the I2C bus.
--+*/
--+
--+#define PLD_SCL_GPIO 6
--+#define PLD_SDA_GPIO 7
--+
--+#define SCL_LO()  gpio_line_set(PLD_SCL_GPIO, IXP4XX_GPIO_LOW)
--+#define SCL_HI()  gpio_line_set(PLD_SCL_GPIO, IXP4XX_GPIO_HIGH)
--+#define SCL_EN()  gpio_line_config(PLD_SCL_GPIO, IXP4XX_GPIO_OUT)
--+#define SDA_LO()  gpio_line_set(PLD_SDA_GPIO, IXP4XX_GPIO_LOW)
--+#define SDA_HI()  gpio_line_set(PLD_SDA_GPIO, IXP4XX_GPIO_HIGH)
--+#define SDA_EN()  gpio_line_config(PLD_SDA_GPIO, IXP4XX_GPIO_OUT)
--+#define SDA_DIS() gpio_line_config(PLD_SDA_GPIO, IXP4XX_GPIO_IN)
--+#define SDA_IN(x) gpio_line_get(PLD_SDA_GPIO, &x);
--+
--+static int i2c_pld_write_byte(int address, int byte)
--+{
--+	int i;
--+
--+	address = (address << 1) & ~0x1;
--+
--+	SDA_HI();
--+	SDA_EN();
--+	SCL_EN();
--+	SCL_HI();
--+	SDA_LO();
--+	SCL_LO();
--+
--+	for (i = 7; i >= 0; i--)
--+	{
--+		if (address & (1 << i))
--+			SDA_HI();
--+		else
--+			SDA_LO();
--+
--+		SCL_HI();
--+		SCL_LO();
--+	}
--+
--+	SDA_DIS();
--+	SCL_HI();
--+	SDA_IN(i);
--+	SCL_LO();
--+	SDA_EN();
--+
--+	for (i = 7; i >= 0; i--)
--+	{
--+		if (byte & (1 << i))
--+      SDA_HI();
--+		else
--+			SDA_LO();
--+		SCL_HI();
--+		SCL_LO();
--+	}
--+
--+	SDA_DIS();
--+	SCL_HI();
--+	SDA_IN(i);
--+	SCL_LO();
--+
--+	SDA_HI();
--+	SDA_EN();
--+
--+	SDA_LO();
--+	SCL_HI();
--+	SDA_HI();
--+	SCL_LO();
--+	SCL_HI();
--+
--+	return 0;
--+}
--+
--+static unsigned int i2c_pld_read_byte(int address)
--+{
--+	int i = 0, byte = 0;
--+	int bit;
--+
--+	address = (address << 1) | 0x1;
--+
--+	SDA_HI();
--+	SDA_EN();
--+	SCL_EN();
--+	SCL_HI();
--+	SDA_LO();
--+	SCL_LO();
--+
--+	for (i = 7; i >= 0; i--)
--+	{
--+		if (address & (1 << i))
--+			SDA_HI();
--+		else
--+			SDA_LO();
--+
--+		SCL_HI();
--+		SCL_LO();
--+	}
--+
--+	SDA_DIS();
--+	SCL_HI();
--+	SDA_IN(i);
--+	SCL_LO();
--+	SDA_EN();
--+
--+	SDA_DIS();
--+	for (i = 7; i >= 0; i--)
--+	{
--+		SCL_HI();
--+		SDA_IN(bit);
--+		byte |= bit << i;
--+		SCL_LO();
--+	}
--+
--+	SDA_LO();
--+	SCL_HI();
--+	SDA_HI();
--+	SCL_LO();
--+	SCL_HI();
--+
--+	return byte;
--+}
--+
--+
--+static int gw_i2c_pld_input8(struct gpio_chip *chip, unsigned offset)
--+{
--+	int ret;
--+	struct gw_i2c_pld *gpio = container_of(chip, struct gw_i2c_pld, chip);
--+	struct i2c_adapter *adap = gpio->client->adapter;
--+
--+	if (in_atomic() || irqs_disabled()) {
--+		ret = rt_mutex_trylock(&adap->bus_lock);
--+		if (!ret)
--+			/* I2C activity is ongoing. */
--+			return -EAGAIN;
--+	} else {
--+		rt_mutex_lock(&adap->bus_lock);
--+	}
--+
--+	gpio->out |= (1 << offset);
--+
--+	ret = i2c_pld_write_byte(gpio->client->addr, gpio->out);
--+
--+	rt_mutex_unlock(&adap->bus_lock);
--+
--+	return ret;
--+}
--+
--+static int gw_i2c_pld_get8(struct gpio_chip *chip, unsigned offset)
--+{
--+	int ret;
--+	s32	value;
--+	struct gw_i2c_pld *gpio = container_of(chip, struct gw_i2c_pld, chip);
--+	struct i2c_adapter *adap = gpio->client->adapter;
--+
--+	if (in_atomic() || irqs_disabled()) {
--+		ret = rt_mutex_trylock(&adap->bus_lock);
--+		if (!ret)
--+			/* I2C activity is ongoing. */
--+			return -EAGAIN;
--+	} else {
--+		rt_mutex_lock(&adap->bus_lock);
--+	}
--+
--+	value = i2c_pld_read_byte(gpio->client->addr);
--+
--+	rt_mutex_unlock(&adap->bus_lock);
--+
--+	return (value < 0) ? 0 : (value & (1 << offset));
--+}
--+
--+static int gw_i2c_pld_output8(struct gpio_chip *chip, unsigned offset, int value)
--+{
--+	int ret;
--+
--+	struct gw_i2c_pld *gpio = container_of(chip, struct gw_i2c_pld, chip);
--+	struct i2c_adapter *adap = gpio->client->adapter;
--+
--+	unsigned bit = 1 << offset;
--+
--+	if (in_atomic() || irqs_disabled()) {
--+		ret = rt_mutex_trylock(&adap->bus_lock);
--+		if (!ret)
--+			/* I2C activity is ongoing. */
--+			return -EAGAIN;
--+	} else {
--+		rt_mutex_lock(&adap->bus_lock);
--+	}
--+
--+
--+	if (value)
--+		gpio->out |= bit;
--+	else
--+		gpio->out &= ~bit;
--+
--+	ret = i2c_pld_write_byte(gpio->client->addr, gpio->out);
--+
--+	rt_mutex_unlock(&adap->bus_lock);
--+
--+	return ret;
--+}
--+
--+static void gw_i2c_pld_set8(struct gpio_chip *chip, unsigned offset, int value)
--+{
--+	gw_i2c_pld_output8(chip, offset, value);
--+}
--+
--+/*-------------------------------------------------------------------------*/
--+
--+static int gw_i2c_pld_probe(struct i2c_client *client,
--+			 const struct i2c_device_id *id)
--+{
--+	struct gw_i2c_pld_platform_data	*pdata;
--+	struct gw_i2c_pld *gpio;
--+	int status;
--+
--+	pdata = client->dev.platform_data;
--+	if (!pdata)
--+		return -ENODEV;
--+
--+	/* Allocate, initialize, and register this gpio_chip. */
--+	gpio = kzalloc(sizeof *gpio, GFP_KERNEL);
--+	if (!gpio)
--+		return -ENOMEM;
--+
--+	gpio->chip.base = pdata->gpio_base;
--+	gpio->chip.can_sleep = 1;
--+	gpio->chip.dev = &client->dev;
--+	gpio->chip.owner = THIS_MODULE;
--+
--+	gpio->chip.ngpio = pdata->nr_gpio;
--+	gpio->chip.direction_input = gw_i2c_pld_input8;
--+	gpio->chip.get = gw_i2c_pld_get8;
--+	gpio->chip.direction_output = gw_i2c_pld_output8;
--+	gpio->chip.set = gw_i2c_pld_set8;
--+
--+	gpio->chip.label = client->name;
--+
--+	gpio->client = client;
--+	i2c_set_clientdata(client, gpio);
--+
--+	gpio->out = 0xFF;
--+
--+	status = gpiochip_add(&gpio->chip);
--+	if (status < 0)
--+		goto fail;
--+
--+	dev_info(&client->dev, "gpios %d..%d on a %s%s\n",
--+			gpio->chip.base,
--+			gpio->chip.base + gpio->chip.ngpio - 1,
--+			client->name,
--+			client->irq ? " (irq ignored)" : "");
--+
--+	/* Let platform code set up the GPIOs and their users.
--+	 * Now is the first time anyone could use them.
--+	 */
--+	if (pdata->setup) {
--+		status = pdata->setup(client,
--+				gpio->chip.base, gpio->chip.ngpio,
--+				pdata->context);
--+		if (status < 0)
--+			dev_warn(&client->dev, "setup --> %d\n", status);
--+	}
--+
--+	return 0;
--+
--+fail:
--+	dev_dbg(&client->dev, "probe error %d for '%s'\n",
--+			status, client->name);
--+	kfree(gpio);
--+	return status;
--+}
--+
--+static int gw_i2c_pld_remove(struct i2c_client *client)
--+{
--+	struct gw_i2c_pld_platform_data	*pdata = client->dev.platform_data;
--+	struct gw_i2c_pld *gpio = i2c_get_clientdata(client);
--+	int				status = 0;
--+
--+	if (pdata->teardown) {
--+		status = pdata->teardown(client,
--+				gpio->chip.base, gpio->chip.ngpio,
--+				pdata->context);
--+		if (status < 0) {
--+			dev_err(&client->dev, "%s --> %d\n",
--+					"teardown", status);
--+			return status;
--+		}
--+	}
--+
--+	gpiochip_remove(&gpio->chip);
--+	kfree(gpio);
--+	return 0;
--+}
--+
--+static struct i2c_driver gw_i2c_pld_driver = {
--+	.driver = {
--+		.name	= "gw_i2c_pld",
--+		.owner	= THIS_MODULE,
--+	},
--+	.probe	= gw_i2c_pld_probe,
--+	.remove	= gw_i2c_pld_remove,
--+	.id_table = gw_i2c_pld_id,
--+};
--+
--+static int __init gw_i2c_pld_init(void)
--+{
--+	return i2c_add_driver(&gw_i2c_pld_driver);
--+}
--+module_init(gw_i2c_pld_init);
--+
--+static void __exit gw_i2c_pld_exit(void)
--+{
--+	i2c_del_driver(&gw_i2c_pld_driver);
--+}
--+module_exit(gw_i2c_pld_exit);
--+
--+MODULE_LICENSE("GPL");
--+MODULE_AUTHOR("Chris Lang");
----- /dev/null
--+++ b/include/linux/i2c/gw_i2c_pld.h
--@@ -0,0 +1,20 @@
--+#ifndef __LINUX_GW_I2C_PLD_H
--+#define __LINUX_GW_I2C_PLD_H
--+
--+/**
--+ * The Gateworks I2C PLD Implements an additional 8 bits of GPIO through the PLD
--+ */
--+
--+struct gw_i2c_pld_platform_data {
--+	unsigned gpio_base;
--+	unsigned nr_gpio;
--+	int		(*setup)(struct i2c_client *client,
--+					int gpio, unsigned ngpio,
--+					void *context);
--+	int		(*teardown)(struct i2c_client *client,
--+					int gpio, unsigned ngpio,
--+					void *context);
--+	void		*context;
--+};
--+
--+#endif /* __LINUX_GW_I2C_PLD_H */
-diff --git a/target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch b/target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch
+@@ -1,38 +0,0 @@
+-CONFIG_ATA=y
+-CONFIG_BLK_DEV_DM=y
+-CONFIG_BLK_DEV_MD=y
+-CONFIG_BLK_DEV_SD=y
+-CONFIG_CRC16=y
+-# CONFIG_DM_CRYPT is not set
+-# CONFIG_DM_MIRROR is not set
+-# CONFIG_DM_SNAPSHOT is not set
+-CONFIG_EXT4_FS=y
+-CONFIG_FS_MBCACHE=y
+-CONFIG_HWMON=y
+-CONFIG_I2C_BOARDINFO=y
+-CONFIG_JBD2=y
+-CONFIG_MACH_DT2=y
+-CONFIG_MACH_NET2BIG=y
+-# CONFIG_MACH_WN802T is not set
+-# CONFIG_MACH_WNR854T is not set
+-# CONFIG_MACH_WRT350N_V2 is not set
+-CONFIG_MD=y
+-CONFIG_MD_AUTODETECT=y
+-CONFIG_MD_LINEAR=y
+-# CONFIG_MD_MULTIPATH is not set
+-CONFIG_MD_RAID0=y
+-CONFIG_MD_RAID1=y
+-# CONFIG_MD_RAID10 is not set
+-# CONFIG_MD_RAID456 is not set
+-CONFIG_NLS=y
+-CONFIG_RTC_CLASS=y
+-CONFIG_SATA_MV=y
+-CONFIG_SCSI=y
+-CONFIG_SCSI_DMA=y
+-CONFIG_USB=y
+-CONFIG_USB_COMMON=y
+-CONFIG_USB_EHCI_HCD=y
+-CONFIG_USB_EHCI_HCD_ORION=y
+-CONFIG_USB_EHCI_HCD_PLATFORM=y
+-CONFIG_USB_STORAGE=y
+-# CONFIG_USB_UHCI_HCD is not set
+diff --git a/target/linux/orion/harddisk/target.mk b/target/linux/orion/harddisk/target.mk
 deleted file mode 100644
-index 0e51793273..0000000000
---- a/target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch
+index 6096e69709..0000000000
+--- a/target/linux/orion/harddisk/target.mk
 +++ /dev/null
-@@ -1,73 +0,0 @@
----- a/arch/arm/mach-ixp4xx/common.c
--+++ b/arch/arm/mach-ixp4xx/common.c
--@@ -93,22 +93,7 @@ void __init ixp4xx_map_io(void)
-- /*
--  * GPIO-functions
--  */
---/*
--- * The following converted to the real HW bits the gpio_line_config
--- */
---/* GPIO pin types */
---#define IXP4XX_GPIO_OUT 		0x1
---#define IXP4XX_GPIO_IN  		0x2
---
---/* GPIO signal types */
---#define IXP4XX_GPIO_LOW			0
---#define IXP4XX_GPIO_HIGH		1
---
---/* GPIO Clocks */
---#define IXP4XX_GPIO_CLK_0		14
---#define IXP4XX_GPIO_CLK_1		15
---
---static void gpio_line_config(u8 line, u32 direction)
--+void gpio_line_config(u8 line, u32 direction)
-- {
-- 	if (direction == IXP4XX_GPIO_IN)
-- 		*IXP4XX_GPIO_GPOER |= (1 << line);
--@@ -116,17 +101,17 @@ static void gpio_line_config(u8 line, u3
-- 		*IXP4XX_GPIO_GPOER &= ~(1 << line);
-- }
-- 
---static void gpio_line_get(u8 line, int *value)
--+void gpio_line_get(u8 line, int *value)
-- {
-- 	*value = (*IXP4XX_GPIO_GPINR >> line) & 0x1;
-- }
-- 
---static void gpio_line_set(u8 line, int value)
--+void gpio_line_set(u8 line, int value)
-- {
---	if (value == IXP4XX_GPIO_HIGH)
---	    *IXP4XX_GPIO_GPOUTR |= (1 << line);
---	else if (value == IXP4XX_GPIO_LOW)
--+	if (value == IXP4XX_GPIO_LOW)
-- 	    *IXP4XX_GPIO_GPOUTR &= ~(1 << line);
--+	else
--+	    *IXP4XX_GPIO_GPOUTR |= (1 << line);
-- }
-- 
-- /*************************************************************************
----- a/arch/arm/mach-ixp4xx/include/mach/platform.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/platform.h
--@@ -131,5 +131,21 @@ struct pci_sys_data;
-- extern int ixp4xx_setup(int nr, struct pci_sys_data *sys);
-- extern struct pci_ops ixp4xx_ops;
-- 
--+/* GPIO pin types */
--+#define IXP4XX_GPIO_OUT 		0x1
--+#define IXP4XX_GPIO_IN  		0x2
--+
--+/* GPIO signal types */
--+#define IXP4XX_GPIO_LOW			0
--+#define IXP4XX_GPIO_HIGH		1
--+
--+/* GPIO Clocks */
--+#define IXP4XX_GPIO_CLK_0		14
--+#define IXP4XX_GPIO_CLK_1		15
--+
--+void gpio_line_config(u8 line, u32 direction);
--+void gpio_line_get(u8 line, int *value);
--+void gpio_line_set(u8 line, int value);
--+
-- #endif // __ASSEMBLY__
-- 
-diff --git a/target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch b/target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch
+@@ -1,15 +0,0 @@
+-#
+-# Copyright (C) 2008-2010 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-BOARDNAME:=Internal Hard-Disk
+-FEATURES+=targz
+-DEVICE_TYPE:=nas
+-
+-define Target/Description
+-	Build firmware images for Marvell Orion based boards that boot directly from internal disk storage.
+-	(e.g.: Freecom DataTank 2, ...)
+-endef
+diff --git a/target/linux/orion/image/Makefile b/target/linux/orion/image/Makefile
 deleted file mode 100644
-index c6392ef2f8..0000000000
---- a/target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch
+index 058519f720..0000000000
+--- a/target/linux/orion/image/Makefile
 +++ /dev/null
-@@ -1,18 +0,0 @@
+@@ -1,12 +0,0 @@
+-#
+-# Copyright (C) 2008-2010 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-include $(TOPDIR)/rules.mk
+-include $(INCLUDE_DIR)/image.mk
+-
+-include $(SUBTARGET).mk
+-
+-$(eval $(call BuildImage))
+diff --git a/target/linux/orion/image/generic.mk b/target/linux/orion/image/generic.mk
+deleted file mode 100644
+index 595f8c1f79..0000000000
+--- a/target/linux/orion/image/generic.mk
++++ /dev/null
+@@ -1,237 +0,0 @@
+-#
+-# Copyright (C) 2008-2015 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-### DO NOT INDENT LINES CONTAINING $(call xyz) AS THIS MAY CHANGE THE CONTEXT
+-### OF THE FIRST LINE IN THE CALLED VARIABLE (NOTE: variable!)
+-### see http://www.gnu.org/software/make/manual/html_node/Call-Function.html#Call-Function
+-### ACTUALLY IT IS A SIMPLE MACRO EXPANSION
+-
+-### use round brackets for make variables, and curly brackets for shell variables
+-
+-
+-## Kernel mtd partition size in KiB
+-KERNEL_MTD_SIZE:=1280
+-
+-# Netgear WNR854T: erase size is 128KiB = 0x00020000 = 131072
+-ERASE_SIZE_128K:=128
+-
+-# Linksys WRT350N v2: erase size is 64KiB = 0x00010000 = 65536
+-ERASE_SIZE_64K:=64
+-
+-# define JFFS2 sizes for include/image.mk
+-JFFS2_BLOCKSIZE:=64k 128k
+-
+-
+-###
+-### Image/BuildKernel
+-###
+-
+-define Image/BuildKernel
+-### Dummy comment for indented calls of Image/BuildKernel
+-
+- ## Netgear WN802T: mach id 3306 (0x0cea)
+-$(call Image/BuildKernel/ARM/zImage,wn802t,"\x0c\x1c\xa0\xe3\xea\x10\x81\xe3")
+-$(call Image/BuildKernel/ARM/uImage,wn802t)
+-ifeq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)
+-$(call Image/BuildKernel/ARM/zImage,wn802t,"\x0c\x1c\xa0\xe3\xea\x10\x81\xe3",-initramfs)
+-$(call Image/BuildKernel/ARM/uImage,wn802t,-initramfs)
+-endif
+- ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)  # nothing more to do for a ramdisk build
+-$(call Image/BuildKernel/JFFS2uImage,wn802t,$(ERASE_SIZE_64K),uImage)
+-$(call Image/Default/FileSizeCheck,$(KDIR)/wn802t-uImage.jffs2,$(shell expr $(KERNEL_MTD_SIZE) \* 1024))
+- endif
+-
+- ## Netgear WNR854T: mach id 1801 (0x0709)
+-$(call Image/BuildKernel/ARM/zImage,wnr854t,"\x07\x1c\xa0\xe3\x09\x10\x81\xe3")
+-$(call Image/BuildKernel/ARM/uImage,wnr854t)
+-ifeq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)
+-$(call Image/BuildKernel/ARM/zImage,wnr854t,"\x07\x1c\xa0\xe3\x09\x10\x81\xe3",-initramfs)
+-$(call Image/BuildKernel/ARM/uImage,wnr854t,-initramfs)
+-endif
+- ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)  # nothing more to do for a ramdisk build
+-$(call Image/BuildKernel/JFFS2uImage,wnr854t,$(ERASE_SIZE_128K),uImage)
+-$(call Image/Default/FileSizeCheck,$(KDIR)/wnr854t-uImage.jffs2,$(shell expr $(KERNEL_MTD_SIZE) \* 1024))
+- endif
+-
+- ## Linksys WRT350N v2: mach id 1633 (0x0661)
+-$(call Image/BuildKernel/ARM/zImage,wrt350nv2,"\x06\x1c\xa0\xe3\x61\x10\x81\xe3")
+-$(call Image/BuildKernel/ARM/uImage,wrt350nv2)
+-ifeq ($($CONFIG_TARGET_ROOTFS_INITRAMFS),y)
+-$(call Image/BuildKernel/ARM/zImage,wrt350nv2,"\x06\x1c\xa0\xe3\x61\x10\x81\xe3",-initramfs)
+-$(call Image/BuildKernel/ARM/uImage,wrt350nv2-initramfs)
+-endif
+- ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)  # nothing more to do for a ramdisk build
+-$(call Image/Default/FileSizeCheck,$(KDIR)/wrt350nv2-uImage,$(shell expr $(KERNEL_MTD_SIZE) \* 1024))
+- endif
+-
+- ## Buffalo Terastation Pro II/Live: mach id 1584 (0x0630)
+-$(call Image/BuildKernel/ARM/zImage,terastation-pro2,"\x06\x1c\xa0\xe3\x30\x10\x81\xe3")
+-$(call Image/BuildKernel/ARM/uImage,terastation-pro2)
+-ifeq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)
+-$(call Image/BuildKernel/ARM/zImage,terastation-pro2,"\x06\x1c\xa0\xe3\x30\x10\x81\xe3",-initramfs)
+-$(call Image/BuildKernel/ARM/uImage,terastation-pro2,-initramfs)
+-endif
+-endef
+-
+-define Image/BuildKernel/ARM/zImage
+- # merge machine id and regular zImage into one file
+- # parameters: 1 = machine name, 2 = machine id as string in quotes
+-	# $(BOARD) kernel zImage for $(1)
+-	echo -en $(2) > '$(KDIR)/$(1)-zImage$(3)'
+-	cat '$(KDIR)/zImage$(3)' >> '$(KDIR)/$(1)-zImage$(3)'
+-endef
+-
+-define Image/BuildKernel/ARM/uImage
+- # create uImage from zImage
+- # parameters: 1 = machine name
+-	# $(BOARD) kernel uImage for $(1)
+-	'$(STAGING_DIR_HOST)/bin/mkimage' -A arm -O linux -T kernel \
+-	-C none -a 0x00008000 -e 0x00008000 -n 'Linux-$(LINUX_VERSION)' \
+-	-d '$(KDIR)/$(1)-zImage$(2)' '$(KDIR)/$(1)-uImage$(2)'
+- ifeq ($(2),-initramfs) # only copy uImage for ramdisk build
+-	cp '$(KDIR)/$(1)-uImage-initramfs' '$(BIN_DIR)/openwrt-$(1)-uImage-initramfs'
+- endif
+-endef
+-
+-define Image/BuildKernel/JFFS2uImage
+- # create JFFS2 partition with uImage file (result is already padded to erase size)
+- # parameters: 1 = machine name, 2 = erase size in KiB, 3 = uImage file name
+-	# $(BOARD) kernel uImage for $(1) in JFFS2-$(2)k partition
+-	rm -rf '$(TMP_DIR)/$(1)_jffs2_uimage'
+-	mkdir '$(TMP_DIR)/$(1)_jffs2_uimage'
+-	cp '$(KDIR)/$(1)-uImage' '$(TMP_DIR)/$(1)_jffs2_uimage/$(3)'
+-	$(STAGING_DIR_HOST)/bin/mkfs.jffs2 --compression-mode=none --pad --little-endian --squash -e $(2)KiB -o '$(KDIR)/$(1)-uImage.jffs2' -d '$(TMP_DIR)/$(1)_jffs2_uimage'
+-	rm -rf '$(TMP_DIR)/$(1)_jffs2_uimage'
+-endef
+-
+-define Image/Default/FileSizeCheck
+- # parameters: 1 = file path, 2 = maximum size in bytes
+-	[ $(stat -c %s '$(1)') -le $(2) ] || { echo '   ERROR: $(1) too big (> $(2) bytes)'; rm -f $(1); }
+-endef
+-
+-
+-###
+-### Image/Build
+-###
+-
+-define Image/Build
+-### Dummy comment for indented calls of Image/Build with $(1)
+-
+- ## Prepare rootfs
+-$(call Image/Build/$(1),$(1))
+-
+- ## Netgear WN802T
+-$(call Image/Build/Default,$(1),wn802t,$(ERASE_SIZE_64K),$(KERNEL_MTD_SIZE),.jffs2,NG_WN802T)
+-
+- ## Netgear WNR854T
+-$(call Image/Build/Default,$(1),wnr854t,$(ERASE_SIZE_128K),$(KERNEL_MTD_SIZE),.jffs2,NG_WNR854T)
+-
+- ## Linksys WRT350N v2
+-$(call Image/Build/Linksys/wrt350nv2,$(1),wrt350nv2,$(ERASE_SIZE_64K),$(KERNEL_MTD_SIZE),)
+-
+- ## Buffalo Terastation Pro II/Live
+-$(call Image/Build/Default,$(1),terastation-pro2,$(ERASE_SIZE_128K),$(KERNEL_MTD_SIZE),.jffs2,TERASTATION_PRO2)
+-endef
+-
+-define Image/Build/squashfs
+-$(call prepare_generic_squashfs,$(KDIR)/root.squashfs)
+-endef
+-
+-## generate defines for all JFFS2 block sizes
+-define Image/Build/jffs2/sub
+- $(eval define Image/Build/jffs2-$(1)
+-	cp '$$(KDIR)/root.jffs2-$(1)' '$$(BIN_DIR)/$$(IMG_PREFIX)-root.jffs2-$(1)'
+- endef)
+-endef
+-
+-$(foreach SZ,$(JFFS2_BLOCKSIZE),$(call Image/Build/jffs2/sub,$(SZ)))
+-
+-define Image/Build/Default
+- # parameters: 1 = rootfs type, 2 = machine name, 3 = erase size in KiB, 4 = kernel mtd size in KiB, 5 = kernel file suffix, 6 = header
+- ifeq ($(findstring jffs2-,$(1)),jffs2-)  # JFFS2: build only image fitting to erase size
+-  ifeq ($(1),jffs2-$(3)k)
+-$(call Image/Build/Default/sysupgrade,$(1),$(2),$(4),$(5))
+-$(call Image/Build/Default/factory,$(1),$(2),$(6))
+-  endif
+- else
+-  ifeq ($(1),ext4)  # EXT4: ignore
+-   # do nothing
+-  else  # do all other images
+-$(call Image/Build/Default/sysupgrade,$(1),$(2),$(4),$(5))
+-$(call Image/Build/Default/factory,$(1),$(2),$(6))
+-  endif
+- endif
+-endef
+-
+-define Image/Build/Default/sysupgrade
+- # parameters: 1 = rootfs type, 2 = machine name, 3 = pad size in KiB (kernel mtd size or erase size), 4 = kernel file suffix
+-	# $(BOARD) $(1) sysupgrade image for $(2)
+-	( \
+-		dd if='$(KDIR)/$(2)-uImage$(4)' bs=$(3)k conv=sync; \
+-		dd if='$(KDIR)/root.$(1)'; \
+-	) > '$(BIN_DIR)/openwrt-$(2)-$(1)-sysupgrade.img'
+-endef
+-
+-define Image/Build/Default/factory
+- # parameters: 1 = rootfs type, 2 = machine name, 3 = header
+-	# $(BOARD) $(1) factory upgrade image for $(2)
+-	'$(STAGING_DIR_HOST)/bin/add_header' $(3) '$(BIN_DIR)/openwrt-$(2)-$(1)-sysupgrade.img' '$(BIN_DIR)/openwrt-$(2)-$(1)-factory.img'
+-endef
+-
+-##
+-## Image/Build/Linksys
+-##
+-
+-define Image/Build/Linksys/wrt350nv2
+- # parameters: 1 = rootfs type, 2 = machine name, 3 = erase size in KiB, 4 = kernel mtd size in KiB, 5 = kernel file suffix
+- ifeq ($(findstring jffs2-,$(1)),jffs2-)  # JFFS2: build only image fitting to erase size
+-  ifeq ($(1),jffs2-$(3)k)
+-$(call Image/Build/Default/sysupgrade,$(1),$(2),$(4),$(5))
+-$(call Image/Build/Linksys/wrt350nv2-builder,$(1),$(2))
+-  endif
+- else
+-  ifeq ($(1),ext4)  # EXT4: ignore
+-   # do nothing
+-  else  # do all other images
+-$(call Image/Build/Default/sysupgrade,$(1),$(2),$(4),$(5))
+-$(call Image/Build/Linksys/wrt350nv2-builder,$(1),$(2))
+-  endif
+- endif
+-endef
+-
+-define Image/Build/Linksys/wrt350nv2-builder
+- # parameters: 1 = rootfs type, 2 = machine name
+-	# $(BOARD) $(1) factory and recovery image for $(2) via wrt350nv2-builder
+-	rm -rf '$(TMP_DIR)/$(2)_factory'
+-	mkdir '$(TMP_DIR)/$(2)_factory'
+- # create parameter file
+-	echo ':image 0 $(BIN_DIR)/openwrt-$(2)-$(1)-sysupgrade.img' > '$(TMP_DIR)/$(2)_factory/$(2).par'
+-	[ ! -f '$(STAGING_DIR_HOST)/share/wrt350nv2-builder/u-boot.bin' ] || ( \
+-		echo ':u-boot 0 $(STAGING_DIR_HOST)/share/wrt350nv2-builder/u-boot.bin' >> '$(TMP_DIR)/$(2)_factory/$(2).par'; \
+-	)
+-	echo '#version 0x2020' >> '$(TMP_DIR)/$(2)_factory/$(2).par'
+- # create bin file for recovery and factory image
+-	-( \
+-		cd '$(TMP_DIR)/$(2)_factory'; \
+-		'$(STAGING_DIR_HOST)/bin/wrt350nv2-builder' -b '$(TMP_DIR)/$(2)_factory/$(2).par'; \
+-	) && $(CP) '$(TMP_DIR)/$(2)_factory/wrt350n.bin' '$(BIN_DIR)/openwrt-$(2)-$(1)-recovery.bin' && \
+-	( \
+-		cd '$(TMP_DIR)/$(2)_factory'; \
+-		zip 'wrt350n.zip' 'wrt350n.bin'; \
+-	) && '$(STAGING_DIR_HOST)/bin/wrt350nv2-builder' -z '$(TMP_DIR)/$(2)_factory/wrt350n.zip' '$(BIN_DIR)/openwrt-$(2)-$(1)-factory.img'
+-	rm -rf '$(TMP_DIR)/$(2)_factory'
+-endef
+-
+-
+-###
+-### Image/PreReq
+-###
+-
+-## Dependency for WRT350N v2 factory image
+-$(eval $(call RequireCommand,zip, \
+-	Please install zip. \
+-))
+diff --git a/target/linux/orion/image/harddisk.mk b/target/linux/orion/image/harddisk.mk
+deleted file mode 100644
+index fb2f351b7f..0000000000
+--- a/target/linux/orion/image/harddisk.mk
++++ /dev/null
+@@ -1,57 +0,0 @@
+-#
+-# Copyright (C) 2008-2010 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define Image/BuildKernelMachId
+-	echo -en "\x$(2)\x1c\xa0\xe3\x$(3)\x10\x81\xe3" > $(KDIR)/$(1)-zImage
+-	cat $(LINUX_DIR)/arch/arm/boot/zImage >> $(KDIR)/$(1)-zImage
+-	$(STAGING_DIR_HOST)/bin/mkimage -A arm -O linux -T kernel \
+-	-C none -a 0x00008000 -e 0x00008000 -n 'Linux-$(LINUX_VERSION)' \
+-	-d $(KDIR)/$(1)-zImage $(KDIR)/$(1)-uImage
+-	cp $(KDIR)/$(1)-uImage $(BIN_DIR)/openwrt-$(1)-uImage
+-endef
+-
+-define Image/BuildKernel
+-	# Orion Kernel uImages
+- # DT2: mach id 1514 (0x5EA)
+-	$(call Image/BuildKernelMachId,dt2,05,ea)
+- # LaCie 2big Network: mach id 2342 (0x926)
+-	$(call Image/BuildKernelMachId,net2big,09,26)
+-endef
+-
+-define Image/Build/Freecom
+-	# Orion Freecom Images
+- # backup unwanted files
+-	rm -rf ${TMP_DIR}/$2_backup
+-	mkdir ${TMP_DIR}/$2_backup
+-	-mv $(TARGET_DIR)/{var,jffs,rom} ${TMP_DIR}/$2_backup
+- # add extra files
+-	$(INSTALL_DIR) $(TARGET_DIR)/boot
+-	# TODO: Add special CMDLINE shim for webupgrade image here
+-	$(CP) $(KDIR)/dt2-uImage $(TARGET_DIR)/boot/uImage
+-	$(INSTALL_DIR) $(TARGET_DIR)/var
+- # create image
+-	$(TAR) cfj $(BIN_DIR)/openwrt-$(2)-$(1).img --numeric-owner --owner=0 --group=0 -C $(TARGET_DIR)/ .
+-	$(STAGING_DIR_HOST)/bin/encode_crc $(BIN_DIR)/openwrt-$(2)-$(1).img $(BIN_DIR)/openwrt-$(2)-$(1)-webupgrade.img $(3)
+- # remove extra files
+-	rm -rf $(TARGET_DIR)/{boot,var}
+- # recover unwanted files
+-	-mv ${TMP_DIR}/$2_backup/* $(TARGET_DIR)/
+-	rm -rf ${TMP_DIR}/$2_backup
+-endef
+-
+-define Image/Build
+-$(call Image/Build/$(1),$(1))
+-$(call Image/Build/Freecom,$(1),dt2,DT,$(1))
+-endef
+-
+-define Image/Build/squashfs
+-$(call prepare_generic_squashfs,$(KDIR)/root.squashfs)
+-	( \
+-		dd if=$(KDIR)/uImage bs=1024k conv=sync; \
+-		dd if=$(KDIR)/root.$(1) bs=128k conv=sync; \
+-	) > $(BIN_DIR)/$(IMG_PREFIX)-$(1).img
+-endef
+diff --git a/target/linux/orion/patches-4.9/000-arm_openwrt_machtypes.patch b/target/linux/orion/patches-4.9/000-arm_openwrt_machtypes.patch
+deleted file mode 100644
+index 764f992288..0000000000
+--- a/target/linux/orion/patches-4.9/000-arm_openwrt_machtypes.patch
++++ /dev/null
+@@ -1,8 +0,0 @@
 ---- a/arch/arm/tools/mach-types
 -+++ b/arch/arm/tools/mach-types
--@@ -1006,3 +1006,15 @@ eco5_bx2		MACH_ECO5_BX2		ECO5_BX2		4572
+-@@ -1006,3 +1006,5 @@ eco5_bx2		MACH_ECO5_BX2		ECO5_BX2		4572
 - eukrea_cpuimx28sd	MACH_EUKREA_CPUIMX28SD	EUKREA_CPUIMX28SD	4573
 - domotab			MACH_DOMOTAB		DOMOTAB			4574
 - pfla03			MACH_PFLA03		PFLA03			4575
--+wg302v1			MACH_WG302V1		WG302V1			889
--+pronghorn		MACH_PRONGHORN		PRONGHORN		928
--+pronghorn_metro		MACH_PRONGHORNMETRO	PRONGHORNMETRO		1040
--+sidewinder		MACH_SIDEWINDER		SIDEWINDER		1041
--+wrt300nv2		MACH_WRT300NV2		WRT300NV2		1077
--+compex42x		MACH_COMPEXWP18		COMPEXWP18		1273
--+cambria			MACH_CAMBRIA		CAMBRIA			1468
--+ap1000			MACH_AP1000		AP1000			1543
--+tw2662			MACH_TW2662		TW2662			1658
--+tw5334			MACH_TW5334		TW5334			1664
--+usr8200			MACH_USR8200		USR8200			1762
--+mi424wr			MACH_MI424WR		MI424WR			1778
-diff --git a/target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch b/target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch
+-+dt2			MACH_DT2		DT2			1514
+-+wn802t			MACH_WN802T		WN802T			3306
+diff --git a/target/linux/orion/patches-4.9/100-wrt350nv2_openwrt_partition_map.patch b/target/linux/orion/patches-4.9/100-wrt350nv2_openwrt_partition_map.patch
 deleted file mode 100644
-index 9da213911e..0000000000
---- a/target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch
+index 89c2c9420b..0000000000
+--- a/target/linux/orion/patches-4.9/100-wrt350nv2_openwrt_partition_map.patch
 +++ /dev/null
-@@ -1,17 +0,0 @@
----- a/drivers/char/random.c
--+++ b/drivers/char/random.c
--@@ -279,11 +279,11 @@
-- /*
--  * Configuration information
--  */
---#define INPUT_POOL_SHIFT	12
--+#define INPUT_POOL_SHIFT	13
-- #define INPUT_POOL_WORDS	(1 << (INPUT_POOL_SHIFT-5))
---#define OUTPUT_POOL_SHIFT	10
--+#define OUTPUT_POOL_SHIFT	11
-- #define OUTPUT_POOL_WORDS	(1 << (OUTPUT_POOL_SHIFT-5))
---#define SEC_XFER_SIZE		512
--+#define SEC_XFER_SIZE		1024
-- #define EXTRACT_SIZE		10
-- 
-- #define DEBUG_RANDOM_BOOT 0
-diff --git a/target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch
-deleted file mode 100644
-index 317103fdab..0000000000
---- a/target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch
-+++ /dev/null
-@@ -1,78 +0,0 @@
----- a/arch/arm/mach-ixp4xx/gateway7001-setup.c
--+++ b/arch/arm/mach-ixp4xx/gateway7001-setup.c
--@@ -17,6 +17,7 @@
-- #include <linux/serial.h>
-- #include <linux/tty.h>
-- #include <linux/serial_8250.h>
--+#include <linux/dma-mapping.h>
-- 
-- #include <asm/types.h>
-- #include <asm/setup.h>
--@@ -75,9 +76,37 @@ static struct platform_device gateway700
-- 	.resource	= &gateway7001_uart_resource,
-- };
-- 
--+static struct eth_plat_info gateway7001_plat_eth[] = {
--+	{
--+		.phy		= 1,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}, {
--+		.phy		= 2,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}
--+};
--+
--+static struct platform_device gateway7001_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= gateway7001_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= gateway7001_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
-- static struct platform_device *gateway7001_devices[] __initdata = {
-- 	&gateway7001_flash,
---	&gateway7001_uart
--+	&gateway7001_uart,
--+	&gateway7001_eth[0],
--+	&gateway7001_eth[1],
-- };
-- 
-- static void __init gateway7001_init(void)
----- a/arch/arm/mach-ixp4xx/wg302v2-setup.c
--+++ b/arch/arm/mach-ixp4xx/wg302v2-setup.c
--@@ -76,9 +76,26 @@ static struct platform_device wg302v2_ua
-- 	.resource	= &wg302v2_uart_resource,
-- };
-- 
--+static struct eth_plat_info wg302v2_plat_eth[] = {
--+	{
--+		.phy		= 8,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}
--+};
--+
--+static struct platform_device wg302v2_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= wg302v2_plat_eth,
--+	}
--+};
--+
-- static struct platform_device *wg302v2_devices[] __initdata = {
-- 	&wg302v2_flash,
-- 	&wg302v2_uart,
--+	&wg302v2_eth[0],
-- };
-- 
-- static void __init wg302v2_init(void)
-diff --git a/target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch b/target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch
-deleted file mode 100644
-index 8793549c64..0000000000
---- a/target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch
-+++ /dev/null
-@@ -1,261 +0,0 @@
----- a/arch/arm/configs/ixp4xx_defconfig
--+++ b/arch/arm/configs/ixp4xx_defconfig
--@@ -13,6 +13,7 @@ CONFIG_MACH_AVILA=y
-- CONFIG_MACH_LOFT=y
-- CONFIG_ARCH_ADI_COYOTE=y
-- CONFIG_MACH_GATEWAY7001=y
--+CONFIG_MACH_WG302V1=y
-- CONFIG_MACH_WG302V2=y
-- CONFIG_ARCH_IXDP425=y
-- CONFIG_MACH_IXDPG425=y
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -45,6 +45,14 @@ config MACH_GATEWAY7001
-- 	  7001 Access Point. For more information on this platform,
-- 	  see http://openwrt.org
-- 
--+config MACH_WG302V1
--+	bool "Netgear WG302 v1 / WAG302 v1"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support Netgear's
--+	  WG302 v1 or WAG302 v1 Access Points. For more information
--+	  on this platform, see http://openwrt.org
--+
-- config MACH_WG302V2
-- 	bool "Netgear WG302 v2 / WAG302 v2"
-- 	select PCI
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -15,6 +15,7 @@ obj-pci-$(CONFIG_MACH_NSLU2)		+= nslu2-p
-- obj-pci-$(CONFIG_MACH_NAS100D)		+= nas100d-pci.o
-- obj-pci-$(CONFIG_MACH_DSMG600)		+= dsmg600-pci.o
-- obj-pci-$(CONFIG_MACH_GATEWAY7001)	+= gateway7001-pci.o
--+obj-pci-$(CONFIG_MACH_WG302V1)		+= wg302v1-pci.o
-- obj-pci-$(CONFIG_MACH_WG302V2)		+= wg302v2-pci.o
-- obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
-- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
--@@ -33,6 +34,7 @@ obj-$(CONFIG_MACH_NSLU2)	+= nslu2-setup.
-- obj-$(CONFIG_MACH_NAS100D)	+= nas100d-setup.o
-- obj-$(CONFIG_MACH_DSMG600)      += dsmg600-setup.o
-- obj-$(CONFIG_MACH_GATEWAY7001)	+= gateway7001-setup.o
--+obj-$(CONFIG_MACH_WG302V1)	+= wg302v1-setup.o
-- obj-$(CONFIG_MACH_WG302V2)	+= wg302v2-setup.o
-- obj-$(CONFIG_MACH_FSG)		+= fsg-setup.o
-- obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_mlr.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/wg302v1-pci.c
--@@ -0,0 +1,63 @@
--+/*
--+ * arch/arch/mach-ixp4xx/wg302v1-pci.c
--+ *
--+ * PCI setup routines for the Netgear WG302 v1 and WAG302 v1
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Software, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+
--+#include <asm/mach/pci.h>
--+
--+void __init wg302v1_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init wg302v1_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 1)
--+		return IRQ_IXP4XX_GPIO8;
--+	else if (slot == 2)
--+		return IRQ_IXP4XX_GPIO10;
--+	else
--+		return -1;
--+}
--+
--+struct hw_pci wg302v1_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit =        wg302v1_pci_preinit,
--+	.ops =            &ixp4xx_ops,
--+	.setup =          ixp4xx_setup,
--+	.map_irq =        wg302v1_map_irq,
--+};
--+
--+int __init wg302v1_pci_init(void)
--+{
--+	if (machine_is_wg302v1())
--+		pci_common_init(&wg302v1_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(wg302v1_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/wg302v1-setup.c
--@@ -0,0 +1,147 @@
--+/*
--+ * arch/arm/mach-ixp4xx/wg302v1-setup.c
--+ *
--+ * Board setup for the Netgear WG302 v1 and WAG302 v1
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+#include <linux/types.h>
--+#include <linux/memory.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/setup.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data wg302v1_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource wg302v1_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device wg302v1_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &wg302v1_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &wg302v1_flash_resource,
--+};
--+
--+static struct resource wg302v1_uart_resources[] = {
--+	{
--+		.start	= IXP4XX_UART1_BASE_PHYS,
--+		.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.start	= IXP4XX_UART2_BASE_PHYS,
--+		.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags	= IORESOURCE_MEM,
--+	}
--+};
--+
--+static struct plat_serial8250_port wg302v1_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device wg302v1_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev			= {
--+		.platform_data	= wg302v1_uart_data,
--+	},
--+	.num_resources	= 2,
--+	.resource	= wg302v1_uart_resources,
--+};
--+
--+static struct eth_plat_info wg302v1_plat_eth[] = {
--+	{
--+		.phy		= 30,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}
--+};
--+
--+static struct platform_device wg302v1_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= wg302v1_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *wg302v1_devices[] __initdata = {
--+	&wg302v1_flash,
--+	&wg302v1_uart,
--+	&wg302v1_eth[0],
--+};
--+
--+static void __init wg302v1_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	wg302v1_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	wg302v1_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(wg302v1_devices, ARRAY_SIZE(wg302v1_devices));
--+}
--+
--+#ifdef CONFIG_MACH_WG302V1
--+MACHINE_START(WG302V1, "Netgear WG302 v1 / WAG302 v1")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.fixup		= wg302v1_fixup,
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= wg302v1_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+#endif
-diff --git a/target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch b/target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch
-deleted file mode 100644
-index d1fdfcba49..0000000000
---- a/target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch
-+++ /dev/null
-@@ -1,393 +0,0 @@
----- a/arch/arm/configs/ixp4xx_defconfig
--+++ b/arch/arm/configs/ixp4xx_defconfig
--@@ -15,6 +15,8 @@ CONFIG_ARCH_ADI_COYOTE=y
-- CONFIG_MACH_GATEWAY7001=y
-- CONFIG_MACH_WG302V1=y
-- CONFIG_MACH_WG302V2=y
--+CONFIG_MACH_PRONGHORN=y
--+CONFIG_MACH_PRONGHORNMETRO=y
-- CONFIG_ARCH_IXDP425=y
-- CONFIG_MACH_IXDPG425=y
-- CONFIG_MACH_IXDP465=y
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -61,6 +61,22 @@ config MACH_WG302V2
-- 	  WG302 v2 or WAG302 v2 Access Points. For more information
-- 	  on this platform, see http://openwrt.org
-- 
--+config MACH_PRONGHORN
--+	bool "ADI Pronghorn series"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support the ADI
--+	  Engineering Pronghorn series. For more
--+	  information on this platform, see http://www.adiengineering.com
--+
--+#
--+# There're only minimal differences kernel-wise between the Pronghorn and
--+# Pronghorn Metro boards - they use different chip selects to drive the
--+# CF slot connected to the expansion bus, so we just enable them together.
--+#
--+config MACH_PRONGHORNMETRO
--+	def_bool MACH_PRONGHORN
--+
-- config ARCH_IXDP425
-- 	bool "IXDP425"
-- 	help
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -19,6 +19,7 @@ obj-pci-$(CONFIG_MACH_WG302V1)		+= wg302
-- obj-pci-$(CONFIG_MACH_WG302V2)		+= wg302v2-pci.o
-- obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
-- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
--+obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -39,6 +40,7 @@ obj-$(CONFIG_MACH_WG302V2)	+= wg302v2-se
-- obj-$(CONFIG_MACH_FSG)		+= fsg-setup.o
-- obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_mlr.o
-- obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-setup.o
--+obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--@@ -42,7 +42,8 @@ static __inline__ void __arch_decomp_set
-- 	 */
-- 	if (machine_is_adi_coyote() || machine_is_gtwx5715() ||
-- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
---	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256())
--+	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
--+	    machine_is_pronghorn() || machine_is_pronghorn_metro())
-- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
-- 	else
-- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/pronghorn-pci.c
--@@ -0,0 +1,69 @@
--+/*
--+ * arch/arch/mach-ixp4xx/pronghorn-pci.c
--+ *
--+ * PCI setup routines for ADI Engineering Pronghorn series
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+
--+#include <asm/mach/pci.h>
--+
--+void __init pronghorn_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO6, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO1, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init pronghorn_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 13)
--+		return IRQ_IXP4XX_GPIO4;
--+	else if (slot == 14)
--+		return IRQ_IXP4XX_GPIO6;
--+	else if (slot == 15)
--+		return IRQ_IXP4XX_GPIO11;
--+	else if (slot == 16)
--+		return IRQ_IXP4XX_GPIO1;
--+	else
--+		return -1;
--+}
--+
--+struct hw_pci pronghorn_pci __initdata = {
--+	.nr_controllers	= 1,
--+	.preinit	= pronghorn_pci_preinit,
--+	.ops		= &ixp4xx_ops,
--+	.setup		= ixp4xx_setup,
--+	.map_irq	= pronghorn_map_irq,
--+};
--+
--+int __init pronghorn_pci_init(void)
--+{
--+	if (machine_is_pronghorn() || machine_is_pronghorn_metro())
--+		pci_common_init(&pronghorn_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(pronghorn_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/pronghorn-setup.c
--@@ -0,0 +1,252 @@
--+/*
--+ * arch/arm/mach-ixp4xx/pronghorn-setup.c
--+ *
--+ * Board setup for the ADI Engineering Pronghorn series
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <Kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+#include <linux/types.h>
--+#include <linux/memory.h>
--+#include <linux/i2c-gpio.h>
--+#include <linux/leds.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/setup.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data pronghorn_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource pronghorn_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device pronghorn_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data	= &pronghorn_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &pronghorn_flash_resource,
--+};
--+
--+static struct resource pronghorn_uart_resources [] = {
--+	{
--+		.start		= IXP4XX_UART1_BASE_PHYS,
--+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	},
--+	{
--+		.start		= IXP4XX_UART2_BASE_PHYS,
--+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port pronghorn_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device pronghorn_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev		= {
--+		.platform_data	= pronghorn_uart_data,
--+	},
--+	.num_resources	= 2,
--+	.resource	= pronghorn_uart_resources,
--+};
--+
--+static struct i2c_gpio_platform_data pronghorn_i2c_gpio_data = {
--+	.sda_pin	= 9,
--+	.scl_pin	= 10,
--+};
--+
--+static struct platform_device pronghorn_i2c_gpio = {
--+	.name		= "i2c-gpio",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data	= &pronghorn_i2c_gpio_data,
--+	},
--+};
--+
--+static struct gpio_led pronghorn_led_pin[] = {
--+	{
--+		.name		= "pronghorn:green:status",
--+		.gpio		= 7,
--+	}
--+};
--+
--+static struct gpio_led_platform_data pronghorn_led_data = {
--+	.num_leds		= 1,
--+	.leds			= pronghorn_led_pin,
--+};
--+
--+static struct platform_device pronghorn_led = {
--+	.name			= "leds-gpio",
--+	.id			= -1,
--+	.dev.platform_data	= &pronghorn_led_data,
--+};
--+
--+static struct resource pronghorn_pata_resources[] = {
--+	{
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.name	= "intrq",
--+		.start	= IRQ_IXP4XX_GPIO0,
--+		.end	= IRQ_IXP4XX_GPIO0,
--+		.flags	= IORESOURCE_IRQ,
--+	},
--+};
--+
--+static struct ixp4xx_pata_data pronghorn_pata_data = {
--+	.cs0_bits	= 0xbfff0043,
--+	.cs1_bits	= 0xbfff0043,
--+};
--+
--+static struct platform_device pronghorn_pata = {
--+	.name			= "pata_ixp4xx_cf",
--+	.id			= 0,
--+	.dev.platform_data      = &pronghorn_pata_data,
--+	.num_resources		= ARRAY_SIZE(pronghorn_pata_resources),
--+	.resource		= pronghorn_pata_resources,
--+};
--+
--+static struct eth_plat_info pronghorn_plat_eth[] = {
--+	{
--+		.phy		= 0,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}, {
--+		.phy		= 1,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}
--+};
--+
--+static struct platform_device pronghorn_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= pronghorn_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= pronghorn_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *pronghorn_devices[] __initdata = {
--+	&pronghorn_flash,
--+	&pronghorn_uart,
--+	&pronghorn_led,
--+	&pronghorn_eth[0],
--+	&pronghorn_eth[1],
--+};
--+
--+static void __init pronghorn_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	pronghorn_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	pronghorn_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(pronghorn_devices, ARRAY_SIZE(pronghorn_devices));
--+
--+	if (machine_is_pronghorn()) {
--+		pronghorn_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(2);
--+		pronghorn_pata_resources[0].end = IXP4XX_EXP_BUS_END(2);
--+
--+		pronghorn_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(3);
--+		pronghorn_pata_resources[1].end = IXP4XX_EXP_BUS_END(3);
--+
--+		pronghorn_pata_data.cs0_cfg = IXP4XX_EXP_CS2;
--+		pronghorn_pata_data.cs1_cfg = IXP4XX_EXP_CS3;
--+	} else {
--+		pronghorn_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(3);
--+		pronghorn_pata_resources[0].end = IXP4XX_EXP_BUS_END(3);
--+
--+		pronghorn_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(4);
--+		pronghorn_pata_resources[1].end = IXP4XX_EXP_BUS_END(4);
--+
--+		pronghorn_pata_data.cs0_cfg = IXP4XX_EXP_CS3;
--+		pronghorn_pata_data.cs1_cfg = IXP4XX_EXP_CS4;
--+
--+		platform_device_register(&pronghorn_i2c_gpio);
--+	}
--+
--+	platform_device_register(&pronghorn_pata);
--+}
--+
--+MACHINE_START(PRONGHORN, "ADI Engineering Pronghorn")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= pronghorn_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+
--+MACHINE_START(PRONGHORNMETRO, "ADI Engineering Pronghorn Metro")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= pronghorn_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
-diff --git a/target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch b/target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch
-deleted file mode 100644
-index ed9f7a785d..0000000000
---- a/target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch
-+++ /dev/null
-@@ -1,44 +0,0 @@
----- a/arch/arm/mach-ixp4xx/pronghorn-setup.c
--+++ b/arch/arm/mach-ixp4xx/pronghorn-setup.c
--@@ -52,31 +52,31 @@ static struct platform_device pronghorn_
-- 
-- static struct resource pronghorn_uart_resources [] = {
+@@ -1,32 +0,0 @@
+---- a/arch/arm/mach-orion5x/wrt350n-v2-setup.c
+-+++ b/arch/arm/mach-orion5x/wrt350n-v2-setup.c
+-@@ -134,11 +134,11 @@ static struct mtd_partition wrt350n_v2_n
 - 	{
---		.start		= IXP4XX_UART1_BASE_PHYS,
---		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.start		= IXP4XX_UART2_BASE_PHYS,
--+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
-- 		.flags		= IORESOURCE_MEM
-- 	},
-- 	{
---		.start		= IXP4XX_UART2_BASE_PHYS,
---		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.start		= IXP4XX_UART1_BASE_PHYS,
--+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
-- 		.flags		= IORESOURCE_MEM
-- 	}
-- };
-- 
-- static struct plat_serial8250_port pronghorn_uart_data[] = {
-- 	{
---		.mapbase	= IXP4XX_UART1_BASE_PHYS,
---		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
---		.irq		= IRQ_IXP4XX_UART1,
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
-- 		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
-- 		.iotype		= UPIO_MEM,
-- 		.regshift	= 2,
-- 		.uartclk	= IXP4XX_UART_XTAL,
-- 	},
-- 	{
---		.mapbase	= IXP4XX_UART2_BASE_PHYS,
---		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
---		.irq		= IRQ_IXP4XX_UART2,
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
-- 		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
-- 		.iotype		= UPIO_MEM,
-- 		.regshift	= 2,
-diff --git a/target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch b/target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch
-deleted file mode 100644
-index 20adbb5c04..0000000000
---- a/target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch
-+++ /dev/null
-@@ -1,286 +0,0 @@
--From 95dac4a842a3c66f69f949b48f9075e16275f77b Mon Sep 17 00:00:00 2001
--From: Jonas Gorski <jogo@openwrt.org>
--Date: Sun, 30 Jun 2013 15:48:47 +0200
--Subject: [PATCH 07/36] 115-sidewinder_support.patch
--
-----
-- arch/arm/mach-ixp4xx/Kconfig            |   10 +-
-- arch/arm/mach-ixp4xx/Makefile           |    2 +
-- arch/arm/mach-ixp4xx/sidewinder-pci.c   |   68 ++++++++++++++
-- arch/arm/mach-ixp4xx/sidewinder-setup.c |  151 +++++++++++++++++++++++++++++++
-- 4 files changed, 230 insertions(+), 1 deletion(-)
-- create mode 100644 arch/arm/mach-ixp4xx/sidewinder-pci.c
-- create mode 100644 arch/arm/mach-ixp4xx/sidewinder-setup.c
--
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -77,6 +77,14 @@ config MACH_PRONGHORN
-- config MACH_PRONGHORNMETRO
-- 	def_bool MACH_PRONGHORN
-- 
--+config MACH_SIDEWINDER
--+	bool "ADI Sidewinder"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support the ADI 
--+	  Engineering Sidewinder board. For more information on this
--+	  platform, see http://www.adiengineering.com
--+
-- config ARCH_IXDP425
-- 	bool "IXDP425"
-- 	help
--@@ -173,7 +181,7 @@ config MACH_ARCOM_VULCAN
-- #
-- config CPU_IXP46X
-- 	bool
---	depends on MACH_IXDP465
--+	depends on MACH_IXDP465 || MACH_SIDEWINDER
-- 	default y
-- 
-- config CPU_IXP43X
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -20,6 +20,7 @@ obj-pci-$(CONFIG_MACH_WG302V2)		+= wg302
-- obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
-- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
-- obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
--+obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -41,6 +42,7 @@ obj-$(CONFIG_MACH_FSG)		+= fsg-setup.o
-- obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_mlr.o
-- obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-setup.o
-- obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
--+obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/sidewinder-pci.c
--@@ -0,0 +1,67 @@
--+/*
--+ * arch/arch/mach-ixp4xx/pronghornmetro-pci.c
--+ *
--+ * PCI setup routines for ADI Engineering Sidewinder
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+
--+#include <asm/mach/pci.h>
--+
--+void __init sidewinder_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init sidewinder_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 1)
--+		return IRQ_IXP4XX_GPIO11;
--+	else if (slot == 2)
--+		return IRQ_IXP4XX_GPIO10;
--+	else if (slot == 3)
--+		return IRQ_IXP4XX_GPIO9;
--+	else
--+		return -1;
--+}
--+
--+struct hw_pci sidewinder_pci __initdata = {
--+	.nr_controllers	= 1,
--+	.preinit	= sidewinder_pci_preinit,
--+	.ops		= &ixp4xx_ops,
--+	.setup		= ixp4xx_setup,
--+	.map_irq	= sidewinder_map_irq,
--+};
--+
--+int __init sidewinder_pci_init(void)
--+{
--+	if (machine_is_sidewinder())
--+		pci_common_init(&sidewinder_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(sidewinder_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/sidewinder-setup.c
--@@ -0,0 +1,155 @@
--+/*
--+ * arch/arm/mach-ixp4xx/sidewinder-setup.c
--+ *
--+ * Board setup for the ADI Engineering Sidewinder
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <Kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/serial.h>
--+#include <linux/serial_8250.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data sidewinder_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource sidewinder_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device sidewinder_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &sidewinder_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &sidewinder_flash_resource,
--+};
--+
--+static struct resource sidewinder_uart_resources[] = {
--+	{
--+		.start	= IXP4XX_UART1_BASE_PHYS,
--+		.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.start	= IXP4XX_UART2_BASE_PHYS,
--+		.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags	= IORESOURCE_MEM,
--+	}
--+};
--+
--+static struct plat_serial8250_port sidewinder_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device sidewinder_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev		= {
--+		.platform_data	= sidewinder_uart_data,
--+	},
--+	.num_resources	= ARRAY_SIZE(sidewinder_uart_resources),
--+	.resource	= sidewinder_uart_resources,
--+};
--+
--+static struct eth_plat_info sidewinder_plat_eth[] = {
--+	{
--+		.phy		= 5,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}, {
--+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+		.phy_mask	= 0x1e,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}, {
--+		.phy		= 31,
--+		.rxq		= 2,
--+		.txreadyq	= 19,
--+	}
--+};
--+
--+static struct platform_device sidewinder_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= sidewinder_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= sidewinder_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEA,
--+		.dev.platform_data	= sidewinder_plat_eth + 2,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *sidewinder_devices[] __initdata = {
--+	&sidewinder_flash,
--+	&sidewinder_uart,
--+	&sidewinder_eth[0],
--+	&sidewinder_eth[1],
--+	&sidewinder_eth[2],
--+};
--+
--+static void __init sidewinder_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	sidewinder_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	sidewinder_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_64M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(sidewinder_devices, ARRAY_SIZE(sidewinder_devices));
--+}
--+
--+MACHINE_START(SIDEWINDER, "ADI Engineering Sidewinder")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= sidewinder_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
-diff --git a/target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch b/target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch
-deleted file mode 100644
-index 8a28eb0a7a..0000000000
---- a/target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch
-+++ /dev/null
-@@ -1,30 +0,0 @@
----- a/drivers/mtd/redboot.c
--+++ b/drivers/mtd/redboot.c
--@@ -31,6 +31,8 @@
-- #include <linux/module.h>
-- #include <linux/mod_devicetable.h>
-- 
--+#include <asm/mach-types.h>
--+
-- struct fis_image_desc {
--     unsigned char name[16];      // Null terminated name
--     uint32_t	  flash_base;    // Address within FLASH of image
--@@ -48,7 +50,8 @@ struct fis_list {
-- 	struct fis_list *next;
-- };
-- 
---static int directory = CONFIG_MTD_REDBOOT_DIRECTORY_BLOCK;
--+int directory = CONFIG_MTD_REDBOOT_DIRECTORY_BLOCK;
--+
-- module_param(directory, int, 0);
-- 
-- static inline int redboot_checksum(struct fis_image_desc *img)
--@@ -76,6 +79,8 @@ static int parse_redboot_partitions(stru
-- #ifdef CONFIG_MTD_REDBOOT_PARTS_UNALLOCATED
-- 	static char nullstring[] = "unallocated";
-- #endif
--+	if (machine_is_sidewinder())
--+		directory = -5;
-- 
-- 	if ( directory < 0 ) {
-- 		offset = master->size + directory * master->erasesize;
-diff --git a/target/linux/ixp4xx/patches-4.9/120-compex_support.patch b/target/linux/ixp4xx/patches-4.9/120-compex_support.patch
-deleted file mode 100644
-index 2abc159f04..0000000000
---- a/target/linux/ixp4xx/patches-4.9/120-compex_support.patch
-+++ /dev/null
-@@ -1,199 +0,0 @@
--From 24025a2dcf1248079dd3019fac6ed955252d277f Mon Sep 17 00:00:00 2001
--From: Imre Kaloz <kaloz@openwrt.org>
--Date: Mon, 14 Jul 2008 21:56:34 +0200
--Subject: [PATCH] Add support for the Compex WP18 / NP18A boards
--
--Signed-off-by: Imre Kaloz <kaloz@openwrt.org>
-----
--
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -85,6 +85,14 @@ config MACH_SIDEWINDER
-- 	  Engineering Sidewinder board. For more information on this
-- 	  platform, see http://www.adiengineering.com
-- 
--+config MACH_COMPEXWP18
--+	bool "Compex WP18 / NP18A"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support Compex' 
--+	  WP18 or NP18A boards. For more information on this
--+	  platform, see http://www.compex.com.sg/home/OEM/product_ap.htm
--+
-- config ARCH_IXDP425
-- 	bool "IXDP425"
-- 	help
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -21,6 +21,7 @@ obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
-- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
-- obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
-- obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
--+obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -43,6 +44,7 @@ obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_
-- obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-setup.o
-- obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
-- obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
--+obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/compex42x-setup.c
--@@ -0,0 +1,141 @@
--+/*
--+ * arch/arm/mach-ixp4xx/compex-setup.c
--+ *
--+ * Compex WP18 / NP18A board-setup
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <Kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *	Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/serial.h>
--+#include <linux/serial_8250.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data compex42x_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource compex42x_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device compex42x_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &compex42x_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &compex42x_flash_resource,
--+};
--+
--+static struct resource compex42x_uart_resources[] = {
--+	{
--+		.start		= IXP4XX_UART1_BASE_PHYS,
--+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	},
--+	{
--+		.start		= IXP4XX_UART2_BASE_PHYS,
--+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port compex42x_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device compex42x_uart = {
--+	.name			= "serial8250",
--+	.id			= PLAT8250_DEV_PLATFORM,
--+	.dev.platform_data	= compex42x_uart_data,
--+	.num_resources		= 2,
--+	.resource		= compex42x_uart_resources,
--+};
--+
--+static struct eth_plat_info compex42x_plat_eth[] = {
--+	{
--+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+		.phy_mask	= 0xf0000,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}, {
--+		.phy		= 3,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}
--+};
--+
--+static struct platform_device compex42x_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= compex42x_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= compex42x_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *compex42x_devices[] __initdata = {
--+	&compex42x_flash,
--+	&compex42x_uart,
--+	&compex42x_eth[0],
--+	&compex42x_eth[1],
--+};
--+
--+static void __init compex42x_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	compex42x_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	compex42x_flash_resource.end =
--+		IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	platform_add_devices(compex42x_devices, ARRAY_SIZE(compex42x_devices));
--+}
--+
--+MACHINE_START(COMPEXWP18, "Compex WP18 / NP18A")
--+	/* Maintainer: Imre Kaloz <Kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= compex42x_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
----- a/arch/arm/mach-ixp4xx/ixdp425-pci.c
--+++ b/arch/arm/mach-ixp4xx/ixdp425-pci.c
--@@ -69,7 +69,8 @@ struct hw_pci ixdp425_pci __initdata = {
-- int __init ixdp425_pci_init(void)
-- {
-- 	if (machine_is_ixdp425() || machine_is_ixcdp1100() ||
---			machine_is_ixdp465() || machine_is_kixrp435())
--+			machine_is_ixdp465() || machine_is_kixrp435() ||
--+			machine_is_compex42x())
-- 		pci_common_init(&ixdp425_pci);
-- 	return 0;
-- }
-diff --git a/target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch b/target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch
-deleted file mode 100644
-index 49359be447..0000000000
---- a/target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch
-+++ /dev/null
-@@ -1,227 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -93,6 +93,14 @@ config MACH_COMPEXWP18
-- 	  WP18 or NP18A boards. For more information on this
-- 	  platform, see http://www.compex.com.sg/home/OEM/product_ap.htm
-- 
--+config MACH_WRT300NV2
--+	bool "Linksys WRT300N v2"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support Linksys'
--+	  WRT300N v2 router. For more information on this
--+	  platform, see http://openwrt.org
--+
-- config ARCH_IXDP425
-- 	bool "IXDP425"
-- 	help
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -22,6 +22,7 @@ obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= v
-- obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
-- obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
-- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
--+obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -45,6 +46,7 @@ obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulca
-- obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
-- obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
-- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
--+obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--@@ -43,7 +43,8 @@ static __inline__ void __arch_decomp_set
-- 	if (machine_is_adi_coyote() || machine_is_gtwx5715() ||
-- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
-- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
---	    machine_is_pronghorn() || machine_is_pronghorn_metro())
--+	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
--+	    machine_is_wrt300nv2())
-- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
-- 	else
-- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/wrt300nv2-pci.c
--@@ -0,0 +1,64 @@
--+/*
--+ * arch/arch/mach-ixp4xx/wrt300nv2-pci.c
--+ *
--+ * PCI setup routines for Linksys WRT300N v2
--+ *
--+ * Copyright (C) 2007 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+
--+#include <asm/mach/pci.h>
--+
--+extern void ixp4xx_pci_preinit(void);
--+extern int ixp4xx_setup(int nr, struct pci_sys_data *sys);
--+extern struct pci_bus *ixp4xx_scan_bus(int nr, struct pci_sys_data *sys);
--+
--+void __init wrt300nv2_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init wrt300nv2_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 1)
--+		return IRQ_IXP4XX_GPIO8;
--+	else return -1;
--+}
--+
--+struct hw_pci wrt300nv2_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit	= wrt300nv2_pci_preinit,
--+	.ops		= &ixp4xx_ops,
--+	.setup		= ixp4xx_setup,
--+	.map_irq	= wrt300nv2_map_irq,
--+};
--+
--+int __init wrt300nv2_pci_init(void)
--+{
--+	if (machine_is_wrt300nv2())
--+		pci_common_init(&wrt300nv2_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(wrt300nv2_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
--@@ -0,0 +1,110 @@
--+/*
--+ * arch/arm/mach-ixp4xx/wrt300nv2-setup.c
--+ *
--+ * Board setup for the Linksys WRT300N v2
--+ *
--+ * Copyright (C) 2007 Imre Kaloz <Kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+
--+#include <asm/types.h>
--+#include <asm/setup.h>
--+#include <asm/memory.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data wrt300nv2_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource wrt300nv2_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device wrt300nv2_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &wrt300nv2_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &wrt300nv2_flash_resource,
--+};
--+
--+static struct resource wrt300nv2_uart_resource = {
--+	.start	= IXP4XX_UART2_BASE_PHYS,
--+	.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+	.flags	= IORESOURCE_MEM,
--+};
--+
--+static struct plat_serial8250_port wrt300nv2_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device wrt300nv2_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev			= {
--+		.platform_data	= wrt300nv2_uart_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &wrt300nv2_uart_resource,
--+};
--+
--+static struct platform_device *wrt300nv2_devices[] __initdata = {
--+	&wrt300nv2_flash,
--+	&wrt300nv2_uart
--+};
--+
--+static void __init wrt300nv2_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	wrt300nv2_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	wrt300nv2_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(wrt300nv2_devices, ARRAY_SIZE(wrt300nv2_devices));
--+}
--+
--+#ifdef CONFIG_MACH_WRT300NV2
--+MACHINE_START(WRT300NV2, "Linksys WRT300N v2")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= wrt300nv2_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+#endif
-diff --git a/target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch
-deleted file mode 100644
-index 5debbf1072..0000000000
---- a/target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch
-+++ /dev/null
-@@ -1,42 +0,0 @@
----- a/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
--+++ b/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
--@@ -76,9 +76,38 @@ static struct platform_device wrt300nv2_
-- 	.resource	= &wrt300nv2_uart_resource,
-- };
-- 
--+/* Built-in 10/100 Ethernet MAC interfaces */
--+static struct eth_plat_info wrt300nv2_plat_eth[] = {
--+	{
--+		.phy		= -1,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}, {
--+		.phy		= 1,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}
--+};
--+
--+static struct platform_device wrt300nv2_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= wrt300nv2_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= wrt300nv2_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
-- static struct platform_device *wrt300nv2_devices[] __initdata = {
-- 	&wrt300nv2_flash,
---	&wrt300nv2_uart
--+	&wrt300nv2_uart,
--+	&wrt300nv2_eth[0],
--+	&wrt300nv2_eth[1],
-- };
-- 
-- static void __init wrt300nv2_init(void)
-diff --git a/target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch b/target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch
-deleted file mode 100644
-index 99db2673d0..0000000000
---- a/target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch
-+++ /dev/null
-@@ -1,72 +0,0 @@
----- a/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
--+++ b/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
--@@ -3,6 +3,7 @@
--  *
--  * Board setup for the Linksys WRT300N v2
--  *
--+ * Copyright (C) 2010 Alexandros C. Couloumbis <alex@ozo.com>
--  * Copyright (C) 2007 Imre Kaloz <Kaloz@openwrt.org>
--  *
--  * based on coyote-setup.c:
--@@ -18,6 +19,7 @@
-- #include <linux/tty.h>
-- #include <linux/serial_8250.h>
-- #include <linux/slab.h>
--+#include <linux/etherdevice.h>
-- 
-- #include <asm/types.h>
-- #include <asm/setup.h>
--@@ -79,7 +81,8 @@ static struct platform_device wrt300nv2_
-- /* Built-in 10/100 Ethernet MAC interfaces */
-- static struct eth_plat_info wrt300nv2_plat_eth[] = {
-- 	{
---		.phy		= -1,
--+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+		.phy_mask	= 0x0F0000,
-- 		.rxq		= 3,
-- 		.txreadyq	= 20,
+- 		.name		= "kernel",
+- 		.offset		= 0x00000000,
+--		.size		= 0x00760000,
+-+		.size		= 0x00140000,	// change to kernel mtd size here (1/3)
 - 	}, {
--@@ -112,6 +115,10 @@ static struct platform_device *wrt300nv2
-- 
-- static void __init wrt300nv2_init(void)
-- {
--+	uint8_t __iomem *f;
--+	int offset = 0;
--+	int i;
--+
-- 	ixp4xx_sys_init();
-- 
-- 	wrt300nv2_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--@@ -121,6 +128,32 @@ static void __init wrt300nv2_init(void)
-- 	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
-- 
-- 	platform_add_devices(wrt300nv2_devices, ARRAY_SIZE(wrt300nv2_devices));
--+
--+	f = ioremap(IXP4XX_EXP_BUS_BASE(0), 0x60000);
--+
--+	if (f) {
--+		for (i = 0; i < 6; i++) {
--+#ifdef __ARMEB__
--+			wrt300nv2_plat_eth[0].hwaddr[i] = readb(f + 0x5FFA0 + i);
--+			if (i == 5)
--+				offset = 1;
--+			wrt300nv2_plat_eth[1].hwaddr[i] = (wrt300nv2_plat_eth[0].hwaddr[i] + offset);
--+#else
--+			wrt300nv2_plat_eth[0].hwaddr[i] = readb(f + 0x5FFA0 + (i^3));
--+			if (i == 5)
--+				offset = 1;
--+			wrt300nv2_plat_eth[1].hwaddr[i] = (wrt300nv2_plat_eth[0].hwaddr[i] + offset);
--+#endif
--+		}
--+		iounmap(f);
--+	}
--+
--+	if (!(is_valid_ether_addr(wrt300nv2_plat_eth[0].hwaddr)))
--+		random_ether_addr(wrt300nv2_plat_eth[0].hwaddr);
--+	if (!(is_valid_ether_addr(wrt300nv2_plat_eth[1].hwaddr))) {
--+		memcpy(wrt300nv2_plat_eth[1].hwaddr, wrt300nv2_plat_eth[0].hwaddr, ETH_ALEN);
--+		wrt300nv2_plat_eth[1].hwaddr[5] = (wrt300nv2_plat_eth[0].hwaddr[5] + 1);
--+	}
-- }
-- 
-- #ifdef CONFIG_MACH_WRT300NV2
-diff --git a/target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch b/target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch
-deleted file mode 100644
-index fb5c3adb76..0000000000
---- a/target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch
-+++ /dev/null
-@@ -1,201 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -101,6 +101,14 @@ config MACH_WRT300NV2
-- 	  WRT300N v2 router. For more information on this
-- 	  platform, see http://openwrt.org
-- 
--+config MACH_AP1000
--+	bool "Lanready AP-1000"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support Lanready's
--+	  AP1000 board. For more information on this
--+	  platform, see http://openwrt.org
--+
-- config ARCH_IXDP425
-- 	bool "IXDP425"
-- 	help
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -23,6 +23,7 @@ obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pron
-- obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
-- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
--+obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -47,6 +48,7 @@ obj-$(CONFIG_MACH_PRONGHORN)	+= pronghor
-- obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
-- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
-- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
--+obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/ap1000-setup.c
--@@ -0,0 +1,152 @@
--+/*
--+ * arch/arm/mach-ixp4xx/ap1000-setup.c
--+ *
--+ * Lanready AP-1000
--+ *
--+ * Copyright (C) 2007 Imre Kaloz <Kaloz@openwrt.org>
--+ *
--+ * based on ixdp425-setup.c:
--+ *	Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/types.h>
--+#include <asm/setup.h>
--+#include <asm/memory.h>
--+#include <mach/hardware.h>
--+#include <asm/mach-types.h>
--+#include <asm/irq.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data ap1000_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource ap1000_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device ap1000_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &ap1000_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &ap1000_flash_resource,
--+};
--+
--+static struct resource ap1000_uart_resources[] = {
--+	{
--+		.start		= IXP4XX_UART1_BASE_PHYS,
--+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	},
--+	{
--+		.start		= IXP4XX_UART2_BASE_PHYS,
--+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port ap1000_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device ap1000_uart = {
--+	.name			= "serial8250",
--+	.id			= PLAT8250_DEV_PLATFORM,
--+	.dev.platform_data	= ap1000_uart_data,
--+	.num_resources		= 2,
--+	.resource		= ap1000_uart_resources
--+};
--+
--+static struct platform_device *ap1000_devices[] __initdata = {
--+	&ap1000_flash,
--+	&ap1000_uart
--+};
--+
--+static char ap1000_mem_fixup[] __initdata = "mem=64M ";
--+
--+static void __init ap1000_fixup(struct tag *tags, char **cmdline)
--+{
--+	struct tag *t = tags;
--+	char *p = *cmdline;
--+
--+	/* Find the end of the tags table, taking note of any cmdline tag. */
--+	for (; t->hdr.size; t = tag_next(t)) {
--+		if (t->hdr.tag == ATAG_CMDLINE) {
--+			p = t->u.cmdline.cmdline;
--+		}
--+	}
--+
--+	/* Overwrite the end of the table with a new cmdline tag. */
--+	t->hdr.tag = ATAG_CMDLINE;
--+	t->hdr.size = (sizeof (struct tag_header) +
--+		strlen(ap1000_mem_fixup) + strlen(p) + 1 + 4) >> 2;
--+	strlcpy(t->u.cmdline.cmdline, ap1000_mem_fixup, COMMAND_LINE_SIZE);
--+	strlcpy(t->u.cmdline.cmdline + strlen(ap1000_mem_fixup), p,
--+		COMMAND_LINE_SIZE - strlen(ap1000_mem_fixup));
--+
--+	/* Terminate the table. */
--+	t = tag_next(t);
--+	t->hdr.tag = ATAG_NONE;
--+	t->hdr.size = 0;
--+}
--+
--+static void __init ap1000_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	ap1000_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	ap1000_flash_resource.end =
--+		IXP4XX_EXP_BUS_BASE(0) + ixp4xx_exp_bus_size - 1;
--+
--+	platform_add_devices(ap1000_devices, ARRAY_SIZE(ap1000_devices));
--+}
--+
--+#ifdef CONFIG_MACH_AP1000
--+MACHINE_START(AP1000, "Lanready AP-1000")
--+	/* Maintainer: Imre Kaloz <Kaloz@openwrt.org> */
--+	.fixup		= ap1000_fixup,
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= ap1000_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+#endif
----- a/arch/arm/mach-ixp4xx/ixdp425-pci.c
--+++ b/arch/arm/mach-ixp4xx/ixdp425-pci.c
--@@ -70,7 +70,7 @@ int __init ixdp425_pci_init(void)
-- {
-- 	if (machine_is_ixdp425() || machine_is_ixcdp1100() ||
-- 			machine_is_ixdp465() || machine_is_kixrp435() ||
---			machine_is_compex42x())
--+			machine_is_compex42x() || machine_is_ap1000())
-- 		pci_common_init(&ixdp425_pci);
-- 	return 0;
-- }
-diff --git a/target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch
-deleted file mode 100644
-index a3ed2d066e..0000000000
---- a/target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch
-+++ /dev/null
-@@ -1,44 +0,0 @@
----- a/arch/arm/mach-ixp4xx/ap1000-setup.c
--+++ b/arch/arm/mach-ixp4xx/ap1000-setup.c
--@@ -91,9 +91,39 @@ static struct platform_device ap1000_uar
-- 	.resource		= ap1000_uart_resources
-- };
-- 
--+/* Built-in 10/100 Ethernet MAC interfaces */
--+static struct eth_plat_info ap1000_plat_eth[] = {
--+	{
--+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+		.phy_mask	= 0x1e,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
+- 		.name		= "rootfs",
+--		.offset		= 0x001a0000,
+--		.size		= 0x005c0000,
+-+		.offset		= 0x00140000,	// change to kernel mtd size here (2/3)
+-+		.size		= 0x00610000,	// adopt to kernel mtd size here (3/3) = 0x00750000 - <kernel mtd size>
+- 	}, {
+- 		.name		= "lang",
+- 		.offset		= 0x00760000,
+-@@ -151,6 +151,14 @@ static struct mtd_partition wrt350n_v2_n
+- 		.name		= "u-boot",
+- 		.offset		= 0x007c0000,
+- 		.size		= 0x00040000,
 -+	}, {
--+		.phy		= 5,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}
--+};
--+
--+static struct platform_device ap1000_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= ap1000_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+		.name		= "eRcOmM_do_not_touch",
+-+		.offset		= 0x00750000,
+-+		.size		= 0x00010000,	// erasesize
 -+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= ap1000_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
-- static struct platform_device *ap1000_devices[] __initdata = {
---	&ap1000_flash,
---	&ap1000_uart
--+ 	&ap1000_flash,
--+	&ap1000_uart,
--+	&ap1000_eth[0],
--+	&ap1000_eth[1],
-- };
-- 
-- static char ap1000_mem_fixup[] __initdata = "mem=64M ";
-diff --git a/target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch b/target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch
-deleted file mode 100644
-index 95cc5680cd..0000000000
---- a/target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch
-+++ /dev/null
-@@ -1,133 +0,0 @@
----- a/drivers/tty/serial/8250/8250_core.c
--+++ b/drivers/tty/serial/8250/8250_core.c
--@@ -833,6 +833,7 @@ static int serial8250_probe(struct platf
-- 		uart.port.get_mctrl	= p->get_mctrl;
-- 		uart.port.pm		= p->pm;
-- 		uart.port.dev		= &dev->dev;
--+		uart.port.rw_delay	= p->rw_delay;
-- 		uart.port.irqflags	|= irqflag;
-- 		ret = serial8250_register_8250_port(&uart);
-- 		if (ret < 0) {
--@@ -989,6 +990,7 @@ int serial8250_register_8250_port(struct
-- 		uart->bugs		= up->bugs;
-- 		uart->port.mapbase      = up->port.mapbase;
-- 		uart->port.mapsize      = up->port.mapsize;
--+		uart->port.rw_delay	= up->port.rw_delay;
-- 		uart->port.private_data = up->port.private_data;
-- 		uart->tx_loadsz		= up->tx_loadsz;
-- 		uart->capabilities	= up->capabilities;
----- a/drivers/tty/serial/serial_core.c
--+++ b/drivers/tty/serial/serial_core.c
--@@ -2259,6 +2259,7 @@ uart_report_port(struct uart_driver *drv
-- 		snprintf(address, sizeof(address),
-- 			 "I/O 0x%lx offset 0x%x", port->iobase, port->hub6);
-- 		break;
--+	case UPIO_MEM_DELAY:
-- 	case UPIO_MEM:
-- 	case UPIO_MEM16:
-- 	case UPIO_MEM32:
--@@ -2931,6 +2932,7 @@ int uart_match_port(struct uart_port *po
-- 	case UPIO_HUB6:
-- 		return (port1->iobase == port2->iobase) &&
-- 		       (port1->hub6   == port2->hub6);
--+	case UPIO_MEM_DELAY:
-- 	case UPIO_MEM:
-- 	case UPIO_MEM16:
-- 	case UPIO_MEM32:
----- a/include/linux/serial_8250.h
--+++ b/include/linux/serial_8250.h
--@@ -28,6 +28,7 @@ struct plat_serial8250_port {
-- 	void            *private_data;
-- 	unsigned char	regshift;	/* register shift */
-- 	unsigned char	iotype;		/* UPIO_* */
--+	unsigned int rw_delay;	/* udelay for slower busses IXP4XX Expansion Bus */
-- 	unsigned char	hub6;
-- 	upf_t		flags;		/* UPF_* flags */
-- 	unsigned int	type;		/* If UPF_FIXED_TYPE */
----- a/include/linux/serial_core.h
--+++ b/include/linux/serial_core.h
--@@ -152,6 +152,7 @@ struct uart_port {
-- #define UPIO_TSI		(SERIAL_IO_TSI)		/* Tsi108/109 type IO */
-- #define UPIO_MEM32BE		(SERIAL_IO_MEM32BE)	/* 32b big endian */
-- #define UPIO_MEM16		(SERIAL_IO_MEM16)	/* 16b little endian */
--+#define UPIO_MEM_DELAY		(SERIAL_IO_MEM_DELAY)
-- 
-- 	unsigned int		read_status_mask;	/* driver specific */
-- 	unsigned int		ignore_status_mask;	/* driver specific */
--@@ -234,6 +235,7 @@ struct uart_port {
-- 	int			hw_stopped;		/* sw-assisted CTS flow state */
-- 	unsigned int		mctrl;			/* current modem ctrl settings */
-- 	unsigned int		timeout;		/* character-based timeout */
--+	unsigned int		rw_delay;		/* udelay for slow busses, IXP4XX Expansion Bus */
-- 	unsigned int		type;			/* port type */
-- 	const struct uart_ops	*ops;
-- 	unsigned int		custom_divisor;
----- a/drivers/tty/serial/8250/8250_port.c
--+++ b/drivers/tty/serial/8250/8250_port.c
--@@ -383,6 +383,20 @@ static unsigned int mem16_serial_in(stru
-- 	return readw(p->membase + offset);
-- }
-- 
--+static unsigned int memdelay_serial_in(struct uart_port *p, int offset)
--+{
--+	struct uart_8250_port *up = (struct uart_8250_port *)p;
--+	udelay(up->port.rw_delay);
--+	return mem_serial_in(p, offset);
--+}
--+
--+static void memdelay_serial_out(struct uart_port *p, int offset, int value)
--+{
--+	struct uart_8250_port *up = (struct uart_8250_port *)p;
--+	udelay(up->port.rw_delay);
--+	mem_serial_out(p, offset, value);
--+}
--+
-- static void mem32_serial_out(struct uart_port *p, int offset, int value)
-- {
-- 	offset = offset << p->regshift;
--@@ -455,6 +469,11 @@ static void set_io_from_upio(struct uart
-- 		p->serial_out = mem32be_serial_out;
-- 		break;
-- 
--+	case UPIO_MEM_DELAY:
--+		p->serial_in = memdelay_serial_in;
--+		p->serial_out = memdelay_serial_out;
--+		break;
--+
-- #ifdef CONFIG_SERIAL_8250_RT288X
-- 	case UPIO_AU:
-- 		p->serial_in = au_serial_in;
--@@ -482,6 +501,7 @@ serial_port_out_sync(struct uart_port *p
-- 	case UPIO_MEM16:
-- 	case UPIO_MEM32:
-- 	case UPIO_MEM32BE:
--+	case UPIO_MEM_DELAY:
-- 	case UPIO_AU:
-- 		p->serial_out(p, offset, value);
-- 		p->serial_in(p, UART_LCR);	/* safe, no side-effects */
--@@ -2759,6 +2779,7 @@ static int serial8250_request_std_resour
-- 	case UPIO_MEM32BE:
-- 	case UPIO_MEM16:
-- 	case UPIO_MEM:
--+	case UPIO_MEM_DELAY:
-- 		if (!port->mapbase)
-- 			break;
-- 
--@@ -2797,6 +2818,7 @@ static void serial8250_release_std_resou
-- 	case UPIO_MEM32BE:
-- 	case UPIO_MEM16:
-- 	case UPIO_MEM:
--+	case UPIO_MEM_DELAY:
-- 		if (!port->mapbase)
-- 			break;
-- 
----- a/include/uapi/linux/serial.h
--+++ b/include/uapi/linux/serial.h
--@@ -70,6 +70,7 @@ struct serial_struct {
-- #define SERIAL_IO_TSI	  5
-- #define SERIAL_IO_MEM32BE 6
-- #define SERIAL_IO_MEM16	7
--+#define SERIAL_IO_MEM_DELAY 10
-- 
-- #define UART_CLEAR_FIFO		0x01
-- #define UART_USE_FIFO		0x02
-diff --git a/target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch b/target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch
-deleted file mode 100644
-index efa389d786..0000000000
---- a/target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch
-+++ /dev/null
-@@ -1,37 +0,0 @@
----- a/arch/arm/mach-ixp4xx/wg302v1-setup.c
--+++ b/arch/arm/mach-ixp4xx/wg302v1-setup.c
--@@ -117,6 +117,34 @@ static struct platform_device *wg302v1_d
-- 	&wg302v1_eth[0],
-- };
-- 
--+static char wg302v1_mem_fixup[] __initdata = " mem=32M";
--+
--+static void __init wg302v1_fixup(struct tag *tags, char **cmdline)
--+{
--+	struct tag *t = tags;
--+	char *p = *cmdline;
--+	size_t fixlen, cmdlen;
--+
--+	/* Find the end of the tags table, taking note of any cmdline tag. */
--+	for (; t->hdr.size; t = tag_next(t)) {
--+		if (t->hdr.tag == ATAG_CMDLINE) {
--+			p = t->u.cmdline.cmdline;
--+		}
--+	}
--+
--+	fixlen = strlen(wg302v1_mem_fixup);
--+	cmdlen = strlen(p);
--+	if (fixlen + cmdlen >= COMMAND_LINE_SIZE)
--+		return;
--+
--+	/* append the fixup to the cmdline */
--+	memmove(p + cmdlen, wg302v1_mem_fixup, fixlen + 1);
--+
--+	/* Adjust the size of the atag if there was one */
--+	if (t->hdr.size)
--+		t->hdr.size += fixlen;
--+}
--+
-- static void __init wg302v1_init(void)
-- {
-- 	ixp4xx_sys_init();
-diff --git a/target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch
-deleted file mode 100644
-index f7090cd1b4..0000000000
---- a/target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch
-+++ /dev/null
-@@ -1,51 +0,0 @@
----- a/arch/arm/mach-ixp4xx/coyote-setup.c
--+++ b/arch/arm/mach-ixp4xx/coyote-setup.c
--@@ -14,6 +14,7 @@
-- #include <linux/serial.h>
-- #include <linux/tty.h>
-- #include <linux/serial_8250.h>
--+#include <linux/dma-mapping.h>
-- 
-- #include <asm/types.h>
-- #include <asm/setup.h>
--@@ -81,9 +82,39 @@ static struct platform_device coyote_uar
-- 	.resource	= &coyote_uart_resource,
-- };
-- 
--+/* Built-in 10/100 Ethernet MAC interfaces */
--+static struct eth_plat_info ixdpg425_plat_eth[] = {
--+        {
--+                .phy            = 5,
--+                .rxq            = 3,
--+                .txreadyq       = 20,
--+        }, {
--+                .phy            = 4,
--+                .rxq            = 4,
--+                .txreadyq       = 21,
--+        }
--+};
--+
--+static struct platform_device ixdpg425_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= ixdpg425_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= ixdpg425_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+
-- static struct platform_device *coyote_devices[] __initdata = {
-- 	&coyote_flash,
---	&coyote_uart
--+	&coyote_uart,
--+	&ixdpg425_eth[0],
--+	&ixdpg425_eth[1],
-- };
-- 
-- static void __init coyote_init(void)
-diff --git a/target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch b/target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch
-deleted file mode 100644
-index 398344d188..0000000000
---- a/target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch
-+++ /dev/null
-@@ -1,2093 +0,0 @@
----- a/sound/soc/Kconfig
--+++ b/sound/soc/Kconfig
--@@ -47,6 +47,7 @@ source "sound/soc/cirrus/Kconfig"
-- source "sound/soc/davinci/Kconfig"
-- source "sound/soc/dwc/Kconfig"
-- source "sound/soc/fsl/Kconfig"
--+source "sound/soc/gw-avila/Kconfig"
-- source "sound/soc/jz4740/Kconfig"
-- source "sound/soc/nuc900/Kconfig"
-- source "sound/soc/omap/Kconfig"
----- a/sound/soc/Makefile
--+++ b/sound/soc/Makefile
--@@ -27,6 +27,7 @@ obj-$(CONFIG_SND_SOC)	+= cirrus/
-- obj-$(CONFIG_SND_SOC)	+= davinci/
-- obj-$(CONFIG_SND_SOC)	+= dwc/
-- obj-$(CONFIG_SND_SOC)	+= fsl/
--+obj-$(CONFIG_SND_SOC)	+= gw-avila/
-- obj-$(CONFIG_SND_SOC)	+= jz4740/
-- obj-$(CONFIG_SND_SOC)	+= img/
-- obj-$(CONFIG_SND_SOC)	+= intel/
----- /dev/null
--+++ b/sound/soc/gw-avila/Kconfig
--@@ -0,0 +1,17 @@
--+config SND_GW_AVILA_SOC_PCM
--+	tristate
--+
--+config SND_GW_AVILA_SOC_HSS
--+	tristate
--+
--+config SND_GW_AVILA_SOC
--+	tristate "SoC Audio for the Gateworks AVILA Family"
--+	depends on ARCH_IXP4XX && SND_SOC
--+	select SND_GW_AVILA_SOC_PCM
--+	select SND_GW_AVILA_SOC_HSS
--+	select SND_SOC_TLV320AIC3X
--+	help
--+	  Say Y or M if you want to add support for codecs attached to
--+	  the Gateworks HSS interface. You will also need
--+	  to select the audio interfaces to support below.
--+
----- /dev/null
--+++ b/sound/soc/gw-avila/Makefile
--@@ -0,0 +1,8 @@
--+# Gateworks Avila HSS Platform Support
--+snd-soc-gw-avila-objs := gw-avila.o ixp4xx_hss.o
--+snd-soc-gw-avila-pcm-objs := gw-avila-pcm.o
--+snd-soc-gw-avila-hss-objs := gw-avila-hss.o
--+
--+obj-$(CONFIG_SND_GW_AVILA_SOC) += snd-soc-gw-avila.o
--+obj-$(CONFIG_SND_GW_AVILA_SOC_PCM) += snd-soc-gw-avila-pcm.o
--+obj-$(CONFIG_SND_GW_AVILA_SOC_HSS) += snd-soc-gw-avila-hss.o
----- /dev/null
--+++ b/sound/soc/gw-avila/gw-avila-hss.c
--@@ -0,0 +1,103 @@
--+/*
--+ * gw-avila-hss.c -- HSS Audio Support for Gateworks Avila
--+ *
--+ * Author:	Chris Lang	<clang@gateworks.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ */
--+
--+#include <linux/init.h>
--+#include <linux/module.h>
--+#include <linux/platform_device.h>
--+#include <linux/interrupt.h>
--+#include <linux/wait.h>
--+#include <linux/delay.h>
--+
--+#include <sound/core.h>
--+#include <sound/pcm.h>
--+#include <sound/ac97_codec.h>
--+#include <sound/initval.h>
--+#include <sound/soc.h>
--+
--+#include <asm/irq.h>
--+#include <linux/mutex.h>
--+#include <linux/gpio.h>
--+
--+#include "ixp4xx_hss.h"
--+#include "gw-avila-hss.h"
--+
--+#define gw_avila_hss_suspend	NULL
--+#define gw_avila_hss_resume	NULL
--+
--+struct snd_soc_dai_driver gw_avila_hss_dai = {
--+	.playback = {
--+		.channels_min = 2,
--+		.channels_max = 2,
--+		.rates = (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |
--+			SNDRV_PCM_RATE_22050 | SNDRV_PCM_RATE_32000 |
--+			SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 |
--+			SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 |
--+			SNDRV_PCM_RATE_KNOT),
--+		.formats = SNDRV_PCM_FMTBIT_S16_LE, },
--+	.capture = {
--+		.channels_min = 2,
--+		.channels_max = 2,
--+		.rates = (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |
--+			SNDRV_PCM_RATE_22050 | SNDRV_PCM_RATE_32000 |
--+			SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 |
--+			SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 |
--+			SNDRV_PCM_RATE_KNOT),
--+		.formats = SNDRV_PCM_FMTBIT_S16_LE, },
--+};
--+
--+static const struct snd_soc_component_driver gw_avila_hss_component = {
--+	.name   = "gw_avila_hss",
--+};
--+
--+static int gw_avila_hss_probe(struct platform_device *pdev)
--+{
--+	int port = (pdev->id < 2) ? 0 : 1;
--+	int channel = (pdev->id % 2);
--+
--+	hss_handle[pdev->id] = hss_init(port, channel);
--+	if (!hss_handle[pdev->id]) {
--+		return -ENODEV;
--+	}
--+
--+	return snd_soc_register_component(&pdev->dev, &gw_avila_hss_component,
--+					  &gw_avila_hss_dai, 1);
--+}
--+
--+static int gw_avila_hss_remove(struct platform_device *pdev)
--+{
--+	snd_soc_unregister_component(&pdev->dev);
--+
--+	return 0;
--+}
--+
--+static struct platform_driver gw_avila_hss_driver = {
--+	.probe    = gw_avila_hss_probe,
--+	.remove   = gw_avila_hss_remove,
--+	.driver   = {
--+		.name = "gw_avila_hss",
--+		.owner  = THIS_MODULE,
--+	}
--+};
--+
--+static int __init gw_avila_hss_init(void)
--+{
--+	return platform_driver_register(&gw_avila_hss_driver);
--+}
--+module_init(gw_avila_hss_init);
--+
--+static void __exit gw_avila_hss_exit(void)
--+{
--+	platform_driver_unregister(&gw_avila_hss_driver);
--+}
--+module_exit(gw_avila_hss_exit);
--+
--+MODULE_AUTHOR("Chris Lang");
--+MODULE_DESCRIPTION("HSS Audio Driver for Gateworks Avila");
--+MODULE_LICENSE("GPL");
----- /dev/null
--+++ b/sound/soc/gw-avila/gw-avila-hss.h
--@@ -0,0 +1,12 @@
--+/*
--+ * Author: Chris Lang <clang@gateworks.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ */
--+
--+#ifndef _GW_AVILA_HSS_H
--+#define _GW_AVILA_HSS_H
--+
--+#endif
----- /dev/null
--+++ b/sound/soc/gw-avila/gw-avila-pcm.c
--@@ -0,0 +1,327 @@
--+/*
--+ * ALSA PCM interface for the TI DAVINCI processor
--+ *
--+ * Author:      Chris Lang, <clang@gateworks.com>
--+ * Copyright:   (C) 2009 Gateworks Corporation
--+ *
--+ * Based On:    davinci-evm.c, Author: Vladimir Barinov, <vbarinov@ru.mvista.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ */
--+
--+#include <linux/module.h>
--+#include <linux/init.h>
--+#include <linux/platform_device.h>
--+#include <linux/slab.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <sound/core.h>
--+#include <sound/pcm.h>
--+#include <sound/pcm_params.h>
--+#include <sound/soc.h>
--+
--+#include <asm/dma.h>
--+
--+#include "gw-avila-pcm.h"
--+#include "gw-avila-hss.h"
--+#include "ixp4xx_hss.h"
--+
--+#define GW_AVILA_PCM_DEBUG 0
--+#if GW_AVILA_PCM_DEBUG
--+#define DPRINTK(x...) printk(KERN_DEBUG x)
--+#else
--+#define DPRINTK(x...)
--+#endif
--+
--+static struct snd_pcm_hardware gw_avila_pcm_hardware = {
--+	.info = (SNDRV_PCM_INFO_INTERLEAVED | SNDRV_PCM_INFO_BLOCK_TRANSFER |
--+		 SNDRV_PCM_INFO_MMAP | SNDRV_PCM_INFO_MMAP_VALID),
--+/*		 SNDRV_PCM_INFO_PAUSE),*/
--+	.formats = (SNDRV_PCM_FMTBIT_S16_LE),
--+	.rates = (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |
--+		  SNDRV_PCM_RATE_22050 | SNDRV_PCM_RATE_32000 |
--+		  SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 |
--+		  SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 |
--+		  SNDRV_PCM_RATE_KNOT),
--+	.rate_min = 8000,
--+	.rate_max = 8000,
--+	.channels_min = 2,
--+	.channels_max = 2,
--+	.buffer_bytes_max = 64 * 1024, // All of the lines below may need to be changed
--+	.period_bytes_min = 128,
--+	.period_bytes_max = 4 * 1024,
--+	.periods_min = 16,
--+	.periods_max = 32,
--+	.fifo_size = 0,
--+};
--+
--+struct gw_avila_runtime_data {
--+	spinlock_t lock;
--+	int period;		/* current DMA period */
--+	int master_lch;		/* Master DMA channel */
--+	int slave_lch;		/* Slave DMA channel */
--+	struct gw_avila_pcm_dma_params *params;	/* DMA params */
--+};
--+
--+static void gw_avila_dma_irq(void *data)
--+{
--+	struct snd_pcm_substream *substream = data;
--+	snd_pcm_period_elapsed(substream);
--+}
--+
--+static int gw_avila_pcm_trigger(struct snd_pcm_substream *substream, int cmd)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+	struct hss_device *hdev = runtime->private_data;
--+	int ret = 0;
--+
--+	switch (cmd) {
--+	case SNDRV_PCM_TRIGGER_START:
--+	case SNDRV_PCM_TRIGGER_RESUME:
--+	case SNDRV_PCM_TRIGGER_PAUSE_RELEASE:
--+		if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
--+			hss_tx_start(hdev);
--+		else
--+			hss_rx_start(hdev);
--+		break;
--+	case SNDRV_PCM_TRIGGER_STOP:
--+	case SNDRV_PCM_TRIGGER_SUSPEND:
--+	case SNDRV_PCM_TRIGGER_PAUSE_PUSH:
--+		if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
--+			hss_tx_stop(hdev);
--+		else
--+			hss_rx_stop(hdev);
--+		break;
--+	default:
--+		ret = -EINVAL;
--+		break;
--+	}
--+	return ret;
--+}
--+
--+static int gw_avila_pcm_prepare(struct snd_pcm_substream *substream)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+	struct hss_device *hdev = runtime->private_data;
--+
--+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
--+		hss_set_tx_callback(hdev, gw_avila_dma_irq, substream);
--+		hss_config_tx_dma(hdev, runtime->dma_area, runtime->buffer_size, runtime->period_size);
--+	} else {
--+		hss_set_rx_callback(hdev, gw_avila_dma_irq, substream);
--+		hss_config_rx_dma(hdev, runtime->dma_area, runtime->buffer_size, runtime->period_size);
--+	}
--+
--+	return 0;
--+}
--+
--+static snd_pcm_uframes_t
--+gw_avila_pcm_pointer(struct snd_pcm_substream *substream)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+	struct hss_device *hdev = runtime->private_data;
--+
--+	unsigned int curr = 0;
--+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
--+		curr = hss_curr_offset_tx(hdev);
--+	else
--+		curr = hss_curr_offset_rx(hdev);
--+  return curr;
--+}
--+
--+static int gw_avila_pcm_open(struct snd_pcm_substream *substream)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+	struct snd_soc_pcm_runtime *rtd = substream->private_data;
--+	struct snd_soc_dai *cpu_dai = rtd->cpu_dai;
--+
--+	snd_soc_set_runtime_hwparams(substream, &gw_avila_pcm_hardware);
--+
--+	if (hss_handle[cpu_dai->id] != NULL)
--+		runtime->private_data = hss_handle[cpu_dai->id];
--+	else {
--+		pr_err("hss_handle is NULL\n");
--+		return -1;
--+	}
--+
--+	hss_chan_open(hss_handle[cpu_dai->id]);
--+
--+	return 0;
--+}
--+
--+static int gw_avila_pcm_close(struct snd_pcm_substream *substream)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+	struct hss_device *hdev = runtime->private_data;
--+
--+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
--+		memset(hdev->tx_buf, 0, runtime->buffer_size);
--+	} else
--+		memset(hdev->rx_buf, 0, runtime->buffer_size);
--+
--+	hss_chan_close(hdev);
--+
--+	return 0;
--+}
--+
--+static int gw_avila_pcm_hw_params(struct snd_pcm_substream *substream,
--+				 struct snd_pcm_hw_params *hw_params)
--+{
--+	return snd_pcm_lib_malloc_pages(substream,
--+					params_buffer_bytes(hw_params));
--+}
--+
--+static int gw_avila_pcm_hw_free(struct snd_pcm_substream *substream)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+
--+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
--+	  memset(runtime->dma_area, 0, runtime->buffer_size);
--+
--+	return snd_pcm_lib_free_pages(substream);
--+}
--+
--+static int gw_avila_pcm_mmap(struct snd_pcm_substream *substream,
--+          struct vm_area_struct *vma)
--+{
--+	struct snd_pcm_runtime *runtime = substream->runtime;
--+
--+	return dma_mmap_writecombine(substream->pcm->card->dev, vma,
--+						runtime->dma_area,
--+						runtime->dma_addr,
--+						runtime->dma_bytes);
--+}
--+
--+struct snd_pcm_ops gw_avila_pcm_ops = {
--+	.open = 	gw_avila_pcm_open,
--+	.close = 	gw_avila_pcm_close,
--+	.ioctl = 	snd_pcm_lib_ioctl,
--+	.hw_params = 	gw_avila_pcm_hw_params,
--+	.hw_free = 	gw_avila_pcm_hw_free,
--+	.prepare = 	gw_avila_pcm_prepare,
--+	.trigger = 	gw_avila_pcm_trigger,
--+	.pointer = 	gw_avila_pcm_pointer,
--+	.mmap = gw_avila_pcm_mmap,
--+};
--+
--+static int gw_avila_pcm_preallocate_dma_buffer(struct snd_pcm *pcm, int stream)
--+{
--+	struct snd_pcm_substream *substream = pcm->streams[stream].substream;
--+	struct snd_dma_buffer *buf = &substream->dma_buffer;
--+	size_t size = gw_avila_pcm_hardware.buffer_bytes_max;
--+
--+	buf->dev.type = SNDRV_DMA_TYPE_DEV;
--+	buf->dev.dev = pcm->card->dev;
--+	buf->private_data = NULL;
--+
--+	buf->area = dma_alloc_coherent(pcm->card->dev, size,
--+					   &buf->addr, GFP_KERNEL);
--+
--+	if (!buf->area) {
--+		return -ENOMEM;
--+	}
--+
--+	memset(buf->area, 0xff, size);
--+
--+	DPRINTK("preallocate_dma_buffer: area=%p, addr=%p, size=%d\n",
--+		(void *) buf->area, (void *) buf->addr, size);
--+
--+	buf->bytes = size;
--+
--+	return 0;
--+}
--+
--+static void gw_avila_pcm_free(struct snd_pcm *pcm)
--+{
--+	struct snd_pcm_substream *substream;
--+	struct snd_dma_buffer *buf;
--+	int stream;
--+
--+	for (stream = 0; stream < 2; stream++) {
--+		substream = pcm->streams[stream].substream;
--+		if (!substream)
--+			continue;
--+
--+		buf = &substream->dma_buffer;
--+		if (!buf->area)
--+			continue;
--+
--+		dma_free_coherent(NULL, buf->bytes, buf->area, 0);
--+		buf->area = NULL;
--+	}
--+}
--+
--+static u64 gw_avila_pcm_dmamask = 0xFFFFFFFF;
--+
--+static int gw_avila_pcm_new(struct snd_soc_pcm_runtime *rtd)
--+{
--+        struct snd_card *card = rtd->card->snd_card;
--+        struct snd_pcm *pcm = rtd->pcm;
--+        struct snd_soc_dai *dai = rtd->codec_dai;
--+	int ret;
--+
--+	if (!card->dev->dma_mask)
--+		card->dev->dma_mask = &gw_avila_pcm_dmamask;
--+	if (!card->dev->coherent_dma_mask)
--+		card->dev->coherent_dma_mask = 0xFFFFFFFF;
--+
--+	if (dai->driver->playback.channels_min) {
--+		ret = gw_avila_pcm_preallocate_dma_buffer(pcm,
--+			SNDRV_PCM_STREAM_PLAYBACK);
--+		if (ret)
--+			return ret;
--+	}
--+
--+	if (dai->driver->capture.channels_min) {
--+		ret = gw_avila_pcm_preallocate_dma_buffer(pcm,
--+			SNDRV_PCM_STREAM_CAPTURE);
--+		if (ret)
--+			return ret;
--+	}
--+
--+	return 0;
--+}
--+
--+struct snd_soc_platform_driver gw_avila_soc_platform = {
--+	.ops = 	&gw_avila_pcm_ops,
--+	.pcm_new = 	gw_avila_pcm_new,
--+	.pcm_free = 	gw_avila_pcm_free,
--+};
--+
--+static int gw_avila_pcm_platform_probe(struct platform_device *pdev)
--+{
--+	return snd_soc_register_platform(&pdev->dev, &gw_avila_soc_platform);
--+}
--+
--+static int gw_avila_pcm_platform_remove(struct platform_device *pdev)
--+{
--+	snd_soc_unregister_platform(&pdev->dev);
--+	return 0;
--+}
--+
--+static struct platform_driver gw_avila_pcm_driver = {
--+	.driver = {
--+		.name = "gw_avila-audio",
--+		.owner = THIS_MODULE,
--+	},
--+	.probe = gw_avila_pcm_platform_probe,
--+	.remove = gw_avila_pcm_platform_remove,
--+};
--+
--+static int __init gw_avila_soc_platform_init(void)
--+{
--+	return platform_driver_register(&gw_avila_pcm_driver);
--+}
--+module_init(gw_avila_soc_platform_init);
--+
--+static void __exit gw_avila_soc_platform_exit(void)
--+{
--+	platform_driver_unregister(&gw_avila_pcm_driver);
--+}
--+module_exit(gw_avila_soc_platform_exit);
--+
--+MODULE_AUTHOR("Chris Lang");
--+MODULE_DESCRIPTION("Gateworks Avila PCM DMA module");
--+MODULE_LICENSE("GPL");
----- /dev/null
--+++ b/sound/soc/gw-avila/gw-avila-pcm.h
--@@ -0,0 +1,32 @@
--+/*
--+ * ALSA PCM interface for the Gateworks Avila platform
--+ *
--+ * Author:      Chris Lang, <clang@gateworks.com>
--+ * Copyright:   (C) 2009 Gateworks Corporation
--+ *
--+ * Based On:    davinci-evm.c, Author: Vladimir Barinov, <vbarinov@ru.mvista.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ */
--+
--+#ifndef _GW_AVILA_PCM_H
--+#define _GW_AVILA_PCM_H
--+
--+#if 0
--+struct gw_avila_pcm_dma_params {
--+	char *name;		/* stream identifier */
--+	int channel;		/* sync dma channel ID */
--+	dma_addr_t dma_addr;	/* device physical address for DMA */
--+	unsigned int data_type;	/* xfer data type */
--+};
--+
--+struct gw_avila_snd_platform_data {
--+	int tx_dma_ch; // XXX Do we need this?
--+	int rx_dma_ch; // XXX Do we need this
--+};
--+extern struct snd_soc_platform gw_avila_soc_platform[];
--+#endif
--+
--+#endif
----- /dev/null
--+++ b/sound/soc/gw-avila/gw-avila.c
--@@ -0,0 +1,244 @@
--+/*
--+ * File:         sound/soc/gw-avila/gw_avila.c
--+ * Author:       Chris Lang <clang@gateworks.com>
--+ *
--+ * Created:      Tue June 06 2008
--+ * Description:  Board driver for Gateworks Avila
--+ *
--+ * Modified:
--+ *               Copyright 2009 Gateworks Corporation
--+ *
--+ * Bugs:         What Bugs?
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License as published by
--+ * the Free Software Foundation; either version 2 of the License, or
--+ * (at your option) any later version.
--+ *
--+ * This program is distributed in the hope that it will be useful,
--+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
--+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--+ * GNU General Public License for more details.
--+ *
--+ * You should have received a copy of the GNU General Public License
--+ * along with this program; if not, see the file COPYING, or write
--+ * to the Free Software Foundation, Inc.,
--+ * 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
--+ */
--+
--+#include <linux/module.h>
--+#include <linux/moduleparam.h>
--+#include <linux/device.h>
--+#include <asm/dma.h>
--+#include <linux/platform_device.h>
--+#include <sound/core.h>
--+#include <sound/pcm.h>
--+#include <sound/soc.h>
--+#include <linux/slab.h>
--+#include <linux/gpio.h>
--+
--+#include "ixp4xx_hss.h"
--+#include "gw-avila-hss.h"
--+#include "gw-avila-pcm.h"
--+
--+#define CODEC_FREQ 33333000
--+
--+static int gw_avila_board_startup(struct snd_pcm_substream *substream)
--+{
--+	pr_debug("%s enter\n", __func__);
--+	return 0;
--+}
--+
--+static int gw_avila_hw_params(struct snd_pcm_substream *substream,
--+		struct snd_pcm_hw_params *params)
--+{
--+	struct snd_soc_pcm_runtime *rtd = substream->private_data;
--+	struct snd_soc_dai *codec_dai = rtd->codec_dai;
--+	struct snd_soc_dai *cpu_dai = rtd->cpu_dai;
--+
--+	int ret = 0;
--+
--+	/* set codec DAI configuration */
--+	if (cpu_dai->id % 2) {
--+  		ret = snd_soc_dai_set_fmt(codec_dai, SND_SOC_DAIFMT_DSP_B | SND_SOC_DAIFMT_IB_NF | SND_SOC_DAIFMT_CBS_CFS);
--+			snd_soc_dai_set_tdm_slot(codec_dai, 0, 0, 1, 32);
--+	} else {
--+	  	ret = snd_soc_dai_set_fmt(codec_dai, SND_SOC_DAIFMT_DSP_B | SND_SOC_DAIFMT_IB_NF | SND_SOC_DAIFMT_CBM_CFM);
--+			snd_soc_dai_set_tdm_slot(codec_dai, 0, 0, 0, 32);
--+	}
--+
--+	if (ret < 0)
--+	    return ret;
--+
--+	/* set the codec system clock */
--+	ret = snd_soc_dai_set_sysclk(codec_dai, 0, CODEC_FREQ, SND_SOC_CLOCK_OUT);
--+	if (ret < 0)
--+	    return ret;
--+
--+	return 0;
--+}
--+
--+static const struct snd_soc_dapm_widget aic3x_dapm_widgets[] = {
--+  SND_SOC_DAPM_HP("Headphone Jack", NULL),
--+  SND_SOC_DAPM_LINE("Line Out", NULL),
--+  SND_SOC_DAPM_LINE("Line In", NULL),
--+};
--+
--+static const struct snd_soc_dapm_route audio_map[] = {
--+  {"Headphone Jack", NULL, "HPLOUT"},
--+  {"Headphone Jack", NULL, "HPROUT"},
--+
--+  /* Line Out connected to LLOUT, RLOUT */
--+  {"Line Out", NULL, "LLOUT"},
--+  {"Line Out", NULL, "RLOUT"},
--+
--+  /* Line In connected to (LINE1L | LINE2L), (LINE1R | LINE2R) */
--+  {"LINE1L", NULL, "Line In"},
--+  {"LINE1R", NULL, "Line In"},
--+};
--+
--+/* Logic for a aic3x as connected on a davinci-evm */
--+static int avila_aic3x_init(struct snd_soc_pcm_runtime *rtd)
--+{
--+	struct snd_soc_codec *codec = rtd->codec;
--+	struct snd_soc_dapm_context *dapm = snd_soc_codec_get_dapm(codec);
--+
--+  /* Add davinci-evm specific widgets */
--+  snd_soc_dapm_new_controls(dapm, aic3x_dapm_widgets,
--+          ARRAY_SIZE(aic3x_dapm_widgets));
--+
--+  /* Set up davinci-evm specific audio path audio_map */
--+  snd_soc_dapm_add_routes(dapm, audio_map, ARRAY_SIZE(audio_map));
--+
--+  /* not connected */
--+  snd_soc_dapm_disable_pin(dapm, "MONO_LOUT");
--+  //snd_soc_dapm_disable_pin(dapm, "HPLCOM");
--+  //snd_soc_dapm_disable_pin(dapm, "HPRCOM");
--+  snd_soc_dapm_disable_pin(dapm, "MIC3L");
--+  snd_soc_dapm_disable_pin(dapm, "MIC3R");
--+  snd_soc_dapm_disable_pin(dapm, "LINE2L");
--+  snd_soc_dapm_disable_pin(dapm, "LINE2R");
--+
--+  /* always connected */
--+	snd_soc_dapm_enable_pin(dapm, "Headphone Jack");
--+  snd_soc_dapm_enable_pin(dapm, "Line Out");
--+  snd_soc_dapm_enable_pin(dapm, "Line In");
--+
--+  snd_soc_dapm_sync(dapm);
--+
--+	return 0;
--+}
--+
--+static struct snd_soc_ops gw_avila_board_ops = {
--+	.startup = gw_avila_board_startup,
--+	.hw_params = gw_avila_hw_params,
--+};
--+
--+static struct snd_soc_dai_link gw_avila_board_dai[] = {
--+	{
--+		.name = "HSS-0",
--+		.stream_name = "HSS-0",
--+		.cpu_dai_name = "gw_avila_hss.0",
--+		.codec_dai_name = "tlv320aic3x-hifi",
--+		.codec_name = "tlv320aic3x-codec.0-001b",
--+		.platform_name = "gw_avila-audio.0",
--+		.init = avila_aic3x_init,
--+		.ops = &gw_avila_board_ops,
--+	},{
--+		.name = "HSS-1",
--+		.stream_name = "HSS-1",
--+		.cpu_dai_name = "gw_avila_hss.1",
--+		.codec_dai_name = "tlv320aic3x-hifi",
--+		.codec_name = "tlv320aic3x-codec.0-001a",
--+		.platform_name = "gw_avila-audio.1",
--+		.init = avila_aic3x_init,
--+		.ops = &gw_avila_board_ops,
--+	},{
--+		.name = "HSS-2",
--+		.stream_name = "HSS-2",
--+		.cpu_dai_name = "gw_avila_hss.2",
--+		.codec_dai_name = "tlv320aic3x-hifi",
--+		.codec_name = "tlv320aic3x-codec.0-0019",
--+		.platform_name = "gw_avila-audio.2",
--+		.init = avila_aic3x_init,
--+		.ops = &gw_avila_board_ops,
--+	},{
--+		.name = "HSS-3",
--+		.stream_name = "HSS-3",
--+		.cpu_dai_name = "gw_avila_hss.3",
--+		.codec_dai_name = "tlv320aic3x-hifi",
--+		.codec_name = "tlv320aic3x-codec.0-0018",
--+		.platform_name = "gw_avila-audio.3",
--+		.init = avila_aic3x_init,
--+		.ops = &gw_avila_board_ops,
--+	},
--+};
--+
--+static struct snd_soc_card gw_avila_board[] = {
--+	{
--+		.name = "gw_avila-board.0",
--+		.owner = THIS_MODULE,
--+		.dai_link = &gw_avila_board_dai[0],
--+		.num_links = 1,
--+	},{
--+		.name = "gw_avila-board.1",
--+		.owner = THIS_MODULE,
--+		.dai_link = &gw_avila_board_dai[1],
--+		.num_links = 1,
--+	},{
--+		.name = "gw_avila-board.2",
--+		.owner = THIS_MODULE,
--+		.dai_link = &gw_avila_board_dai[2],
--+		.num_links = 1,
--+	},{
--+		.name = "gw_avila-board.3",
--+		.owner = THIS_MODULE,
--+		.dai_link = &gw_avila_board_dai[3],
--+		.num_links = 1,
--+	}
--+};
--+
--+static struct platform_device *gw_avila_board_snd_device[4];
--+
--+static int __init gw_avila_board_init(void)
--+{
--+	int ret;
--+	struct port *port;
--+	int i;
--+
--+	if ((hss_port[0] = kzalloc(sizeof(*port), GFP_KERNEL)) == NULL)
--+		return -ENOMEM;
--+
--+	if ((hss_port[1] = kzalloc(sizeof(*port), GFP_KERNEL)) == NULL)
--+		return -ENOMEM;
--+
--+	for (i = 0; i < 4; i++) {
--+		gw_avila_board_snd_device[i] = platform_device_alloc("soc-audio", i);
--+		if (!gw_avila_board_snd_device[i]) {
--+			return -ENOMEM;
--+		}
--+
--+		platform_set_drvdata(gw_avila_board_snd_device[i], &gw_avila_board[i]);
--+		ret = platform_device_add(gw_avila_board_snd_device[i]);
--+
--+		if (ret) {
--+			platform_device_put(gw_avila_board_snd_device[i]);
--+		}
--+	}
--+	return ret;
--+}
--+
--+static void __exit gw_avila_board_exit(void)
--+{
--+	int i;
--+	for (i = 0; i < 4; i++)
--+		platform_device_unregister(gw_avila_board_snd_device[i]);
--+}
--+
--+module_init(gw_avila_board_init);
--+module_exit(gw_avila_board_exit);
--+
--+/* Module information */
--+MODULE_AUTHOR("Chris Lang");
--+MODULE_DESCRIPTION("ALSA SoC HSS Audio gw_avila board");
--+MODULE_LICENSE("GPL");
----- /dev/null
--+++ b/sound/soc/gw-avila/ixp4xx_hss.c
--@@ -0,0 +1,902 @@
--+/*
--+ * Intel IXP4xx HSS (synchronous serial port) driver for Linux
--+ *
--+ * Copyright (C) 2009 Chris Lang <clang@gateworks.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify it
--+ * under the terms of version 2 of the GNU General Public License
--+ * as published by the Free Software Foundation.
--+ */
--+
--+#include <linux/module.h>
--+#include <linux/bitops.h>
--+#include <linux/cdev.h>
--+#include <linux/dma-mapping.h>
--+#include <linux/dmapool.h>
--+#include <linux/fs.h>
--+#include <linux/io.h>
--+#include <linux/kernel.h>
--+#include <linux/platform_device.h>
--+#include <linux/poll.h>
--+#include <linux/slab.h>
--+#include <linux/delay.h>
--+
--+#include <mach/npe.h>
--+#include <mach/qmgr.h>
--+
--+#include "ixp4xx_hss.h"
--+
--+/*****************************************************************************
--+ * global variables
--+ ****************************************************************************/
--+
--+void hss_chan_read(unsigned long data);
--+static char lock_init = 0;
--+static spinlock_t npe_lock;
--+static struct npe *npe;
--+
--+static const struct {
--+	int tx, txdone, rx, rxfree, chan;
--+}queue_ids[2] = {{HSS0_PKT_TX0_QUEUE, HSS0_PKT_TXDONE_QUEUE, HSS0_PKT_RX_QUEUE,
--+		  HSS0_PKT_RXFREE0_QUEUE, HSS0_CHL_RXTRIG_QUEUE},
--+		 {HSS1_PKT_TX0_QUEUE, HSS1_PKT_TXDONE_QUEUE, HSS1_PKT_RX_QUEUE,
--+		  HSS1_PKT_RXFREE0_QUEUE, HSS1_CHL_RXTRIG_QUEUE},
--+};
--+
--+struct port *hss_port[2];
--+struct hss_device *hss_handle[32];
--+EXPORT_SYMBOL(hss_handle);
--+
--+/*****************************************************************************
--+ * utility functions
--+ ****************************************************************************/
--+
--+#ifndef __ARMEB__
--+static inline void memcpy_swab32(u32 *dest, u32 *src, int cnt)
--+{
--+	int i;
--+	for (i = 0; i < cnt; i++)
--+		dest[i] = swab32(src[i]);
--+}
--+#endif
--+
--+static inline unsigned int sub_offset(unsigned int a, unsigned int b,
--+				      unsigned int modulo)
--+{
--+	return (modulo /* make sure the result >= 0 */ + a - b) % modulo;
--+}
--+
--+/*****************************************************************************
--+ * HSS access
--+ ****************************************************************************/
--+
--+static void hss_config_load(struct port *port)
--+{
--+	struct msg msg;
--+
--+	do {
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = PORT_CONFIG_LOAD;
--+		msg.hss_port = port->id;
--+		if (npe_send_message(npe, &msg, "HSS_LOAD_CONFIG"))
--+			break;
--+		if (npe_recv_message(npe, &msg, "HSS_LOAD_CONFIG"))
--+			break;
--+
--+		/* HSS_LOAD_CONFIG for port #1 returns port_id = #4 */
--+		if (msg.cmd != PORT_CONFIG_LOAD || msg.data32)
--+			break;
--+
--+		/* HDLC may stop working without this */
--+		npe_recv_message(npe, &msg, "FLUSH_IT");
--+		return;
--+	} while (0);
--+
--+	printk(KERN_CRIT "HSS-%i: unable to reload HSS configuration\n",
--+	       port->id);
--+	BUG();
--+}
--+
--+static void hss_config_set_pcr(struct port *port)
--+{
--+	struct msg msg;
--+
--+	do {
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = PORT_CONFIG_WRITE;
--+		msg.hss_port = port->id;
--+		msg.index = HSS_CONFIG_TX_PCR;
--+#if 0
--+		msg.data32 = PCR_FRM_SYNC_RISINGEDGE | PCR_MSB_ENDIAN |
--+			PCR_TX_DATA_ENABLE | PCR_TX_UNASS_HIGH_IMP | PCR_TX_V56K_HIGH_IMP | PCR_TX_FB_HIGH_IMP;
--+#else
--+		msg.data32 = PCR_FRM_SYNC_RISINGEDGE | PCR_MSB_ENDIAN |
--+			PCR_TX_DATA_ENABLE | PCR_TX_FB_HIGH_IMP | PCR_DCLK_EDGE_RISING;
--+#endif
--+		if (port->frame_size % 8 == 0)
--+			msg.data32 |= PCR_SOF_NO_FBIT;
--+
--+		if (npe_send_message(npe, &msg, "HSS_SET_TX_PCR"))
--+			break;
--+
--+		msg.index = HSS_CONFIG_RX_PCR;
--+		msg.data32 &= ~ (PCR_DCLK_EDGE_RISING | PCR_FCLK_EDGE_RISING | PCR_TX_DATA_ENABLE);
--+
--+		if (npe_send_message(npe, &msg, "HSS_SET_RX_PCR"))
--+			break;
--+		return;
--+	} while (0);
--+
--+	printk(KERN_CRIT "HSS-%i: unable to set HSS PCR registers\n", port->id);
--+	BUG();
--+}
--+
--+static void hss_config_set_core(struct port *port)
--+{
--+	struct msg msg;
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = PORT_CONFIG_WRITE;
--+	msg.hss_port = port->id;
--+	msg.index = HSS_CONFIG_CORE_CR;
--+#if 0
--+	msg.data32 = 0 | CCR_LOOPBACK |
--+		(port->id ? CCR_SECOND_HSS : 0);
--+#else
--+	msg.data32 = 0 |
--+		(port->id ? CCR_SECOND_HSS : 0);
--+#endif
--+	if (npe_send_message(npe, &msg, "HSS_SET_CORE_CR")) {
--+		printk(KERN_CRIT "HSS-%i: unable to set HSS core control"
--+		       " register\n", port->id);
--+		BUG();
--+	}
--+}
--+
--+static void hss_config_set_line(struct port *port)
--+{
--+	struct msg msg;
--+
--+	hss_config_set_pcr(port);
--+	hss_config_set_core(port);
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = PORT_CONFIG_WRITE;
--+	msg.hss_port = port->id;
--+	msg.index = HSS_CONFIG_CLOCK_CR;
--+	msg.data32 = CLK42X_SPEED_8192KHZ /* FIXME */;
--+	if (npe_send_message(npe, &msg, "HSS_SET_CLOCK_CR")) {
--+		printk(KERN_CRIT "HSS-%i: unable to set HSS clock control"
--+		       " register\n", port->id);
--+		BUG();
--+	}
--+}
--+
--+static void hss_config_set_rx_frame(struct port *port)
--+{
--+	struct msg msg;
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = PORT_CONFIG_WRITE;
--+	msg.hss_port = port->id;
--+	msg.index = HSS_CONFIG_RX_FCR;
--+	msg.data16a = port->frame_sync_offset;
--+	msg.data16b = port->frame_size - 1;
--+	if (npe_send_message(npe, &msg, "HSS_SET_RX_FCR")) {
--+		printk(KERN_CRIT "HSS-%i: unable to set HSS RX frame size"
--+		       " and offset\n", port->id);
--+		BUG();
--+	}
--+}
--+
--+static void hss_config_set_frame(struct port *port)
--+{
--+	struct msg msg;
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = PORT_CONFIG_WRITE;
--+	msg.hss_port = port->id;
--+	msg.index = HSS_CONFIG_TX_FCR;
--+	msg.data16a = TX_FRAME_SYNC_OFFSET;
--+	msg.data16b = port->frame_size - 1;
--+	if (npe_send_message(npe, &msg, "HSS_SET_TX_FCR")) {
--+		printk(KERN_CRIT "HSS-%i: unable to set HSS TX frame size"
--+		       " and offset\n", port->id);
--+		BUG();
--+	}
--+	hss_config_set_rx_frame(port);
--+}
--+
--+static void hss_config_set_lut(struct port *port)
--+{
--+	struct msg msg;
--+	int chan_count = 32;
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = PORT_CONFIG_WRITE;
--+	msg.hss_port = port->id;
--+
--+	msg.index = HSS_CONFIG_TX_LUT;
--+	msg.data32 = 0xffffffff;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.data32 = 0x0;
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
--+
--+	msg.index = HSS_CONFIG_RX_LUT;
--+	msg.data32 = 0xffffffff;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.data32 = 0x0;
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+	msg.index += 4;
--+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
--+
--+	hss_config_set_frame(port);
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = CHAN_NUM_CHANS_WRITE;
--+	msg.hss_port = port->id;
--+	msg.data8a = chan_count;
--+	if (npe_send_message(npe, &msg, "CHAN_NUM_CHANS_WRITE")) {
--+		printk(KERN_CRIT "HSS-%i: unable to set HSS channel count\n",
--+		       port->id);
--+		BUG();
--+	}
--+}
--+
--+static u32 hss_config_get_status(struct port *port)
--+{
--+	struct msg msg;
--+
--+	do {
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = PORT_ERROR_READ;
--+		msg.hss_port = port->id;
--+		if (npe_send_message(npe, &msg, "PORT_ERROR_READ"))
--+			break;
--+		if (npe_recv_message(npe, &msg, "PORT_ERROR_READ"))
--+			break;
--+
--+		return msg.data32;
--+	} while (0);
--+
--+	printk(KERN_CRIT "HSS-%i: unable to read HSS status\n", port->id);
--+	BUG();
--+}
--+
--+static void hss_config_start_chan(struct port *port)
--+{
--+	struct msg msg;
--+
--+	port->chan_last_tx = 0;
--+	port->chan_last_rx = 0;
--+
--+	do {
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = CHAN_RX_BUF_ADDR_WRITE;
--+		msg.hss_port = port->id;
--+		msg.data32 = port->chan_rx_buf_phys;
--+		if (npe_send_message(npe, &msg, "CHAN_RX_BUF_ADDR_WRITE"))
--+			break;
--+
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = CHAN_TX_BUF_ADDR_WRITE;
--+		msg.hss_port = port->id;
--+		msg.data32 = port->chan_tx_pointers_phys;
--+		if (npe_send_message(npe, &msg, "CHAN_TX_BUF_ADDR_WRITE"))
--+			break;
--+
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = CHAN_FLOW_ENABLE;
--+		msg.hss_port = port->id;
--+		if (npe_send_message(npe, &msg, "CHAN_FLOW_ENABLE"))
--+			break;
--+		port->chan_started = 1;
--+		return;
--+	} while (0);
--+
--+	printk(KERN_CRIT "HSS-%i: unable to start channelized flow\n",
--+	       port->id);
--+	BUG();
--+}
--+
--+static void hss_config_stop_chan(struct port *port)
--+{
--+	struct msg msg;
--+
--+	if (!port->chan_started)
--+		return;
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = CHAN_FLOW_DISABLE;
--+	msg.hss_port = port->id;
--+	if (npe_send_message(npe, &msg, "CHAN_FLOW_DISABLE")) {
--+		printk(KERN_CRIT "HSS-%i: unable to stop channelized flow\n",
--+		       port->id);
--+		BUG();
--+	}
--+	hss_config_get_status(port); /* make sure it's halted */
--+	port->chan_started = 0;
--+}
--+
--+static int hss_config_load_firmware(struct port *port)
--+{
--+	struct msg msg;
--+
--+	if (port->initialized)
--+		return 0;
--+
--+	if (!npe_running(npe)) {
--+		int err;
--+		if ((err = npe_load_firmware(npe, "NPE-A-HSS",
--+					     port->dev)))
--+			return err;
--+	}
--+
--+	do {
--+		/* HSS main configuration */
--+		hss_config_set_line(port);
--+
--+		hss_config_set_frame(port);
--+
--+		/* Channelized operation settings */
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = CHAN_TX_BLK_CFG_WRITE;
--+		msg.hss_port = port->id;
--+		msg.data8b = (CHAN_TX_LIST_FRAMES & ~7) / 2;
--+		msg.data8a = msg.data8b / 4;
--+		msg.data8d = CHAN_TX_LIST_FRAMES - msg.data8b;
--+		msg.data8c = msg.data8d / 4;
--+		if (npe_send_message(npe, &msg, "CHAN_TX_BLK_CFG_WRITE"))
--+			break;
--+
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = CHAN_RX_BUF_CFG_WRITE;
--+		msg.hss_port = port->id;
--+		msg.data8a = CHAN_RX_TRIGGER / 8;
--+		msg.data8b = CHAN_RX_FRAMES;
--+		if (npe_send_message(npe, &msg, "CHAN_RX_BUF_CFG_WRITE"))
--+			break;
--+
--+		memset(&msg, 0, sizeof(msg));
--+		msg.cmd = CHAN_TX_BUF_SIZE_WRITE;
--+		msg.hss_port = port->id;
--+		msg.data8a = CHAN_TX_LISTS;
--+		if (npe_send_message(npe, &msg, "CHAN_TX_BUF_SIZE_WRITE"))
--+			break;
--+
--+		port->initialized = 1;
--+		return 0;
--+	} while (0);
--+
--+	printk(KERN_CRIT "HSS-%i: unable to start HSS operation\n", port->id);
--+	BUG();
--+}
--+
--+void hss_chan_irq(void *pdev)
--+{
--+	struct port *port = pdev;
--+
--+	qmgr_disable_irq(queue_ids[port->id].chan);
--+
--+	tasklet_hi_schedule(&port->task);
--+}
--+
--+
--+int hss_prepare_chan(struct port *port)
--+{
--+	int err, i, j;
--+	u32 *temp;
--+	u32 temp2;
--+	u8 *temp3;
--+
--+	if (port->initialized)
--+		return 0;
--+
--+	if ((err = hss_config_load_firmware(port)))
--+		return err;
--+
--+	if ((err = qmgr_request_queue(queue_ids[port->id].chan,
--+				      CHAN_QUEUE_LEN, 0, 0, "%s:hss", "hss")))
--+		return err;
--+
--+	port->chan_tx_buf = dma_alloc_coherent(port->dev, chan_tx_buf_len(port), &port->chan_tx_buf_phys, GFP_DMA);
--+	memset(port->chan_tx_buf, 0, chan_tx_buf_len(port));
--+
--+	port->chan_tx_pointers = dma_alloc_coherent(port->dev, chan_tx_buf_len(port) / CHAN_TX_LIST_FRAMES * 4, &port->chan_tx_pointers_phys, GFP_DMA);
--+
--+	temp3 = port->chan_tx_buf;
--+	for (i = 0; i < CHAN_TX_LISTS; i++) {
--+		for (j = 0; j < 8; j++) {
--+			port->tx_lists[i][j] = temp3;
--+			temp3 += CHAN_TX_LIST_FRAMES * 4;
--+		}
--+	}
--+
--+	temp = port->chan_tx_pointers;
--+	temp2 = port->chan_tx_buf_phys;
--+	for (i = 0; i < CHAN_TX_LISTS; i++)
--+	{
--+		for (j = 0; j < 32; j++)
--+		{
--+			*temp = temp2;
--+			temp2 += CHAN_TX_LIST_FRAMES;
--+			temp++;
--+		}
--+	}
--+
--+	port->chan_rx_buf = dma_alloc_coherent(port->dev, chan_rx_buf_len(port), &port->chan_rx_buf_phys, GFP_DMA);
--+
--+	for (i = 0; i < 8; i++) {
--+		temp3 = port->chan_rx_buf + (i * 4 * 128);
--+		for (j = 0; j < 8; j++) {
--+			port->rx_frames[i][j] = temp3;
--+			temp3 += CHAN_RX_TRIGGER;
--+		}
--+	}
--+
--+	qmgr_set_irq(queue_ids[port->id].chan, QUEUE_IRQ_SRC_NOT_EMPTY,
--+		     hss_chan_irq, port);
--+
--+	return 0;
--+
--+}
--+
--+int hss_tx_start(struct hss_device *hdev)
--+{
--+	unsigned long flags;
--+	struct port *port = hdev->port;
--+
--+	hdev->tx_loc = 0;
--+	hdev->tx_frame = 0;
--+
--+	set_bit((1 << hdev->id), &port->chan_tx_bitmap);
--+
--+	if (!port->chan_started)
--+	{
--+		qmgr_enable_irq(queue_ids[port->id].chan);
--+		spin_lock_irqsave(&npe_lock, flags);
--+		hss_config_start_chan(port);
--+		spin_unlock_irqrestore(&npe_lock, flags);
--+		hss_chan_irq(port);
--+	}
--+
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_tx_start);
--+
--+int hss_rx_start(struct hss_device *hdev)
--+{
--+	unsigned long flags;
--+	struct port *port = hdev->port;
--+
--+	hdev->rx_loc = 0;
--+	hdev->rx_frame = 0;
--+
--+	set_bit((1 << hdev->id), &port->chan_rx_bitmap);
--+
--+	if (!port->chan_started)
--+	{
--+		qmgr_enable_irq(queue_ids[port->id].chan);
--+		spin_lock_irqsave(&npe_lock, flags);
--+		hss_config_start_chan(port);
--+		spin_unlock_irqrestore(&npe_lock, flags);
--+		hss_chan_irq(port);
--+	}
--+
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_rx_start);
--+
--+int hss_tx_stop(struct hss_device *hdev)
--+{
--+	struct port *port = hdev->port;
--+
--+	clear_bit((1 << hdev->id), &port->chan_tx_bitmap);
--+
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_tx_stop);
--+
--+int hss_rx_stop(struct hss_device *hdev)
--+{
--+	struct port *port = hdev->port;
--+
--+	clear_bit((1 << hdev->id), &port->chan_rx_bitmap);
--+
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_rx_stop);
--+
--+int hss_chan_open(struct hss_device *hdev)
--+{
--+	struct port *port = hdev->port;
--+	int i, err = 0;
--+
--+	if (port->chan_open)
--+		return 0;
--+
--+	if (port->mode == MODE_HDLC) {
--+		err = -ENOSYS;
--+		goto out;
--+	}
--+
--+	if (port->mode == MODE_G704 && port->channels[0] == hdev->id) {
--+		err = -EBUSY; /* channel #0 is used for G.704 signaling */
--+		goto out;
--+	}
--+
--+	for (i = MAX_CHANNELS; i > port->frame_size / 8; i--)
--+		if (port->channels[i - 1] == hdev->id) {
--+			err = -ECHRNG; /* frame too short */
--+			goto out;
--+		}
--+
--+	hdev->rx_loc = hdev->tx_loc = 0;
--+	hdev->rx_frame = hdev->tx_frame = 0;
--+
--+	//clear_bit((1 << hdev->id), &port->chan_rx_bitmap);
--+	//clear_bit((1 << hdev->id), &port->chan_tx_bitmap);
--+
--+	if (!port->initialized) {
--+		hss_prepare_chan(port);
--+
--+		hss_config_stop_chan(port);
--+		hdev->open_count++;
--+		port->chan_open_count++;
--+
--+		hss_config_set_lut(port);
--+		hss_config_load(port);
--+
--+	}
--+	port->chan_open = 1;
--+
--+out:
--+	return err;
--+}
--+EXPORT_SYMBOL(hss_chan_open);
--+
--+int hss_chan_close(struct hss_device *hdev)
--+{
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_chan_close);
--+
--+void hss_chan_read(unsigned long data)
--+{
--+	struct port *port = (void *)data;
--+	struct hss_device *hdev;
--+	u8 *hw_buf, *save_buf;
--+	u8 *buf;
--+	u32 v;
--+  unsigned int tx_list, rx_frame;
--+	int i, j, channel;
--+	u8 more_work = 0;
--+
--+/*
--+	My Data in the hardware buffer is scattered by channels into 4 trunks
--+	as follows for rx
--+
--+					channel 0					channel 1					channel 2					channel 3
--+Trunk 1	=	0			-> 	127			128		->	255			256		->	383			384		->	512
--+Trunk 2 =	513		->	639			640		->	768			769		->	895			896		->	1023
--+Trunk 3 =	1024	->	1151		1152	->	1207		1208	->	1407		1408	->	1535
--+Trunk 4 = 1535	->	1663		1664	->	1791		1792	->	1920		1921	->	2047
--+
--+	I will get CHAN_RX_TRIGGER worth of bytes out of each channel on each trunk
--+	with each IRQ
--+
--+	For TX Data, it is split into 8 lists with each list containing 16 bytes per
--+	channel
--+
--+Trunk 1 = 0		->	16				17		->	32			33		->	48			49		->	64
--+Trunk 2 = 65	->	80				81		->	96			97		->	112			113		->	128
--+Trunk	3	=	129	->	144				145		->	160			161		->	176			177		->	192
--+Trunk	4	=	193	->	208				209		->	224			225		->	240			241		->	256
--+
--+*/
--+
--+
--+	while ((v = qmgr_get_entry(queue_ids[port->id].chan)))
--+	{
--+		tx_list = (v >> 8) & 0xFF;
--+		rx_frame = v & 0xFF;
--+
--+		if (tx_list == 7)
--+			tx_list = 0;
--+		else
--+			tx_list++;
--+		for (channel = 0; channel < 8; channel++) {
--+
--+			hdev = port->chan_devices[channel];
--+			if (!hdev)
--+				continue;
--+
--+			if (test_bit(1 << channel, &port->chan_tx_bitmap)) {
--+				buf = (u8 *)hdev->tx_buf + hdev->tx_loc;
--+#if 0
--+				hw_buf = (u8 *)port->chan_tx_buf;
--+				hw_buf += (tx_list * CHAN_TX_LIST_FRAMES * 32);
--+				hw_buf += (4 * CHAN_TX_LIST_FRAMES * channel);
--+				save_buf = hw_buf;
--+#else
--+				save_buf = port->tx_lists[tx_list][channel];
--+#endif
--+				for (i = 0; i < CHAN_TX_LIST_FRAMES; i++) {
--+					hw_buf = save_buf + i;
--+					for (j = 0; j < 4; j++) {
--+						*hw_buf = *(buf++);
--+						hw_buf += CHAN_TX_LIST_FRAMES;
--+					}
--+
--+					hdev->tx_loc += 4;
--+					hdev->tx_frame++;
--+					if (hdev->tx_loc >= hdev->tx_buffer_size) {
--+						hdev->tx_loc = 0;
--+						buf = (u8 *)hdev->tx_buf;
--+					}
--+				}
--+			} else {
--+#if 0
--+				hw_buf = (u8 *)port->chan_tx_buf;
--+				hw_buf += (tx_list * CHAN_TX_LIST_FRAMES * 32);
--+				hw_buf += (4 * CHAN_TX_LIST_FRAMES * channel);
--+#else
--+				hw_buf = port->tx_lists[tx_list][channel];
--+#endif
--+				memset(hw_buf, 0, 64);
--+			}
--+
--+			if (hdev->tx_frame >= hdev->tx_period_size && test_bit(1 << channel, &port->chan_tx_bitmap))
--+			{
--+				hdev->tx_frame %= hdev->tx_period_size;
--+				if (hdev->tx_callback)
--+					hdev->tx_callback(hdev->tx_data);
--+				more_work = 1;
--+			}
--+
--+			if (test_bit(1 << channel, &port->chan_rx_bitmap)) {
--+				buf = (u8 *)hdev->rx_buf + hdev->rx_loc;
--+#if 0
--+				hw_buf = (u8 *)port->chan_rx_buf;
--+				hw_buf += (4 * CHAN_RX_FRAMES * channel);
--+				hw_buf += rx_frame;
--+				save_buf = hw_buf;
--+#else
--+				save_buf = port->rx_frames[channel][rx_frame >> 4];
--+#endif
--+				for (i = 0; i < CHAN_RX_TRIGGER; i++) {
--+					hw_buf = save_buf + i;
--+					for (j = 0; j < 4; j++) {
--+						*(buf++) = *hw_buf;
--+						hw_buf += CHAN_RX_FRAMES;
--+					}
--+					hdev->rx_loc += 4;
--+					hdev->rx_frame++;
--+					if (hdev->rx_loc >= hdev->rx_buffer_size) {
--+						hdev->rx_loc = 0;
--+						buf = (u8 *)hdev->rx_buf;
--+					}
--+				}
--+			}
--+
--+			if (hdev->rx_frame >= hdev->rx_period_size && test_bit(1 << channel, &port->chan_rx_bitmap))
--+			{
--+				hdev->rx_frame %= hdev->rx_period_size;
--+				if (hdev->rx_callback)
--+					hdev->rx_callback(hdev->rx_data);
--+				more_work = 1;
--+			}
--+		}
--+#if 0
--+		if (more_work)
--+		{
--+			tasklet_hi_schedule(&port->task);
--+			return;
--+		}
--+#endif
--+	}
--+
--+	qmgr_enable_irq(queue_ids[port->id].chan);
--+
--+	return;
--+
--+}
--+
--+struct hss_device *hss_chan_create(struct port *port, unsigned int channel)
--+{
--+	struct hss_device *chan_dev;
--+	unsigned long flags;
--+
--+	chan_dev = kzalloc(sizeof(struct hss_device), GFP_KERNEL);
--+
--+	spin_lock_irqsave(&npe_lock, flags);
--+
--+	chan_dev->id = channel;
--+	chan_dev->port = port;
--+
--+	port->channels[channel] = channel;
--+
--+	port->chan_devices[channel] = chan_dev;
--+
--+	spin_unlock_irqrestore(&npe_lock, flags);
--+
--+	return chan_dev;
--+}
--+
--+/*****************************************************************************
--+ * initialization
--+ ****************************************************************************/
--+
--+static struct platform_device gw_avila_hss_device_0 = {
--+  .name     = "ixp4xx_hss",
--+  .id       = 0,
--+};
--+
--+static struct platform_device gw_avila_hss_device_1 = {
--+  .name     = "ixp4xx_hss",
--+  .id       = 1,
--+};
--+
--+static struct platform_device *gw_avila_hss_port_0;
--+static struct platform_device *gw_avila_hss_port_1;
--+static u64 hss_dmamask = 0xFFFFFFFF;
--+
--+struct hss_device *hss_init(int id, int channel)
--+{
--+	struct port *port = hss_port[id];
--+	struct hss_device *hdev;
--+	int ret;
--+
--+	if (!lock_init)
--+	{
--+		spin_lock_init(&npe_lock);
--+		lock_init = 1;
--+		npe = npe_request(0);
--+	}
--+
--+	if (!port->init) {
--+		if (id == 0) {
--+			gw_avila_hss_port_0 = platform_device_alloc("hss-port", 0);
--+
--+			platform_set_drvdata(gw_avila_hss_port_0, &gw_avila_hss_device_0);
--+			port->dev = &gw_avila_hss_port_0->dev;
--+
--+			if (!port->dev->dma_mask)
--+		    port->dev->dma_mask = &hss_dmamask;
--+		  if (!port->dev->coherent_dma_mask)
--+	    	port->dev->coherent_dma_mask = 0xFFFFFFFF;
--+
--+			ret = platform_device_add(gw_avila_hss_port_0);
--+
--+		  if (ret)
--+	  	  platform_device_put(gw_avila_hss_port_0);
--+
--+			tasklet_init(&port->task, hss_chan_read, (unsigned long) port);
--+		}
--+		else
--+		{
--+			gw_avila_hss_port_1 = platform_device_alloc("hss-port", 1);
--+
--+			platform_set_drvdata(gw_avila_hss_port_1, &gw_avila_hss_device_1);
--+			port->dev = &gw_avila_hss_port_1->dev;
--+
--+			if (!port->dev->dma_mask)
--+		    port->dev->dma_mask = &hss_dmamask;
--+		  if (!port->dev->coherent_dma_mask)
--+	    	port->dev->coherent_dma_mask = 0xFFFFFFFF;
--+
--+			ret = platform_device_add(gw_avila_hss_port_1);
--+
--+		  if (ret)
--+	  	  platform_device_put(gw_avila_hss_port_1);
--+
--+			tasklet_init(&port->task, hss_chan_read, (unsigned long) port);
--+		}
--+
--+		port->init = 1;
--+		port->id = id;
--+		port->clock_type = CLOCK_EXT;
--+		port->clock_rate = 8192000;
--+		port->frame_size = 256; /* E1 */
--+		port->mode = MODE_RAW;
--+		port->next_rx_frame = 0;
--+		memset(port->channels, CHANNEL_UNUSED, sizeof(port->channels));
--+	}
--+
--+	hdev = hss_chan_create(port, channel);
--+
--+	return hdev;
--+}
--+EXPORT_SYMBOL(hss_init);
--+
--+int hss_set_tx_callback(struct hss_device *hdev, void (*tx_callback)(void *), void *tx_data)
--+{
--+  BUG_ON(tx_callback == NULL);
--+  hdev->tx_callback = tx_callback;
--+  hdev->tx_data = tx_data;
--+
--+  return 0;
--+}
--+EXPORT_SYMBOL(hss_set_tx_callback);
--+
--+int hss_set_rx_callback(struct hss_device *hdev, void (*rx_callback)(void *), void *rx_data)
--+{
--+  BUG_ON(rx_callback == NULL);
--+  hdev->rx_callback = rx_callback;
--+  hdev->rx_data = rx_data;
--+
--+  return 0;
--+}
--+EXPORT_SYMBOL(hss_set_rx_callback);
--+
--+int hss_config_rx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size)
--+{
--+	/*
--+	 * Period Size and Buffer Size are in Frames which are u32
--+	 * We convert the u32 *buf to u8 in order to make channel reads
--+	 * and rx_loc easier
--+	 */
--+
--+	hdev->rx_buf = (u8 *)buf;
--+	hdev->rx_buffer_size = buffer_size << 2;
--+	hdev->rx_period_size = period_size;
--+
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_config_rx_dma);
--+
--+int hss_config_tx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size)
--+{
--+	/*
--+	 * Period Size and Buffer Size are in Frames which are u32
--+	 * We convert the u32 *buf to u8 in order to make channel reads
--+	 * and rx_loc easier
--+	 */
--+
--+	hdev->tx_buf = (u8 *)buf;
--+	hdev->tx_buffer_size = buffer_size << 2;
--+	hdev->tx_period_size = period_size;
--+
--+	return 0;
--+}
--+EXPORT_SYMBOL(hss_config_tx_dma);
--+
--+unsigned long hss_curr_offset_rx(struct hss_device *hdev)
--+{
--+	return hdev->rx_loc >> 2;
--+}
--+EXPORT_SYMBOL(hss_curr_offset_rx);
--+
--+unsigned long hss_curr_offset_tx(struct hss_device *hdev)
--+{
--+	return hdev->tx_loc >> 2;
--+}
--+EXPORT_SYMBOL(hss_curr_offset_tx);
--+
--+MODULE_AUTHOR("Chris Lang");
--+MODULE_DESCRIPTION("Intel IXP4xx HSS Audio driver");
--+MODULE_LICENSE("GPL v2");
----- /dev/null
--+++ b/sound/soc/gw-avila/ixp4xx_hss.h
--@@ -0,0 +1,401 @@
--+/*
--+ *
--+ *
--+ * Copyright (C) 2009 Gateworks Corporation
--+ *
--+ * This program is free software; you can redistribute it and/or modify it
--+ * under the terms of version 2 of the GNU General Public License
--+ * as published by the Free Software Foundation.
--+ */
--+
--+#include <linux/types.h>
--+#include <linux/bitops.h>
--+#include <linux/dma-mapping.h>
--+#include <linux/dmapool.h>
--+#include <linux/fs.h>
--+#include <linux/io.h>
--+#include <linux/kernel.h>
--+#include <linux/platform_device.h>
--+#include <linux/poll.h>
--+#include <mach/npe.h>
--+#include <mach/qmgr.h>
--+#include <linux/interrupt.h>
--+
--+//#include <linux/hdlc.h> XXX We aren't HDLC
--+
--+#define DEBUG_QUEUES		0
--+#define DEBUG_DESC		0
--+#define DEBUG_RX		0
--+#define DEBUG_TX		0
--+#define DEBUG_PKT_BYTES		0
--+#define DEBUG_CLOSE		0
--+#define DEBUG_FRAMER		0
--+
--+#define DRV_NAME		"ixp4xx_hss"
--+
--+#define PKT_EXTRA_FLAGS		0 /* orig 1 */
--+#define TX_FRAME_SYNC_OFFSET	0 /* channelized */
--+#define PKT_NUM_PIPES		1 /* 1, 2 or 4 */
--+#define PKT_PIPE_FIFO_SIZEW	4 /* total 4 dwords per HSS */
--+
--+#define RX_DESCS		512 /* also length of all RX queues */
--+#define TX_DESCS		512 /* also length of all TX queues */
--+
--+//#define POOL_ALLOC_SIZE		(sizeof(struct desc) * (RX_DESCS + TX_DESCS))
--+#define RX_SIZE			(HDLC_MAX_MRU + 4) /* NPE needs more space */
--+#define MAX_CLOSE_WAIT		1000 /* microseconds */
--+#define HSS_COUNT		2
--+#define MIN_FRAME_SIZE		16   /* bits */
--+#define MAX_FRAME_SIZE		257  /* 256 bits + framing bit */
--+#define MAX_CHANNELS		(MAX_FRAME_SIZE / 8)
--+#define MAX_CHAN_DEVICES	32
--+#define CHANNEL_HDLC		0xFE
--+#define CHANNEL_UNUSED		0xFF
--+
--+#define NAPI_WEIGHT		16
--+#define CHAN_RX_TRIGGER		16 /* 8 RX frames = 1 ms @ E1 */
--+#define CHAN_RX_FRAMES		128
--+#define CHAN_RX_TRUNKS		1
--+#define MAX_CHAN_RX_BAD_SYNC	(CHAN_RX_TRIGGER / 2 /* pairs */ - 3)
--+
--+#define CHAN_TX_LIST_FRAMES	CHAN_RX_TRIGGER /* bytes/channel per list, 16 - 48 */
--+#define CHAN_TX_LISTS		8
--+#define CHAN_TX_TRUNKS CHAN_RX_TRUNKS
--+#define CHAN_TX_FRAMES		(CHAN_TX_LIST_FRAMES * CHAN_TX_LISTS)
--+
--+#define CHAN_QUEUE_LEN		32 /* minimum possible */
--+
--+#define chan_rx_buf_len(port)	(port->frame_size / 8 * CHAN_RX_FRAMES * CHAN_RX_TRUNKS)
--+#define chan_tx_buf_len(port) (port->frame_size / 8 * CHAN_TX_FRAMES * CHAN_TX_TRUNKS)
--+
--+/* Queue IDs */
--+#define HSS0_CHL_RXTRIG_QUEUE	12	/* orig size = 32 dwords */
--+#define HSS0_PKT_RX_QUEUE	13	/* orig size = 32 dwords */
--+#define HSS0_PKT_TX0_QUEUE	14	/* orig size = 16 dwords */
--+#define HSS0_PKT_TX1_QUEUE	15
--+#define HSS0_PKT_TX2_QUEUE	16
--+#define HSS0_PKT_TX3_QUEUE	17
--+#define HSS0_PKT_RXFREE0_QUEUE	18	/* orig size = 16 dwords */
--+#define HSS0_PKT_RXFREE1_QUEUE	19
--+#define HSS0_PKT_RXFREE2_QUEUE	20
--+#define HSS0_PKT_RXFREE3_QUEUE	21
--+#define HSS0_PKT_TXDONE_QUEUE	22	/* orig size = 64 dwords */
--+
--+#define HSS1_CHL_RXTRIG_QUEUE	10
--+#define HSS1_PKT_RX_QUEUE	0
--+#define HSS1_PKT_TX0_QUEUE	5
--+#define HSS1_PKT_TX1_QUEUE	6
--+#define HSS1_PKT_TX2_QUEUE	7
--+#define HSS1_PKT_TX3_QUEUE	8
--+#define HSS1_PKT_RXFREE0_QUEUE	1
--+#define HSS1_PKT_RXFREE1_QUEUE	2
--+#define HSS1_PKT_RXFREE2_QUEUE	3
--+#define HSS1_PKT_RXFREE3_QUEUE	4
--+#define HSS1_PKT_TXDONE_QUEUE	9
--+
--+#define NPE_PKT_MODE_HDLC		0
--+#define NPE_PKT_MODE_RAW		1
--+#define NPE_PKT_MODE_56KMODE		2
--+#define NPE_PKT_MODE_56KENDIAN_MSB	4
--+
--+/* PKT_PIPE_HDLC_CFG_WRITE flags */
--+#define PKT_HDLC_IDLE_ONES		0x1 /* default = flags */
--+#define PKT_HDLC_CRC_32			0x2 /* default = CRC-16 */
--+#define PKT_HDLC_MSB_ENDIAN		0x4 /* default = LE */
--+
--+
--+/* hss_config, PCRs */
--+/* Frame sync sampling, default = active low */
--+#define PCR_FRM_SYNC_ACTIVE_HIGH	0x40000000
--+#define PCR_FRM_SYNC_FALLINGEDGE	0x80000000
--+#define PCR_FRM_SYNC_RISINGEDGE		0xC0000000
--+
--+/* Frame sync pin: input (default) or output generated off a given clk edge */
--+#define PCR_FRM_SYNC_OUTPUT_FALLING	0x20000000
--+#define PCR_FRM_SYNC_OUTPUT_RISING	0x30000000
--+
--+/* Frame and data clock sampling on edge, default = falling */
--+#define PCR_FCLK_EDGE_RISING		0x08000000
--+#define PCR_DCLK_EDGE_RISING		0x04000000
--+
--+/* Clock direction, default = input */
--+#define PCR_SYNC_CLK_DIR_OUTPUT		0x02000000
--+
--+/* Generate/Receive frame pulses, default = enabled */
--+#define PCR_FRM_PULSE_DISABLED		0x01000000
--+
--+ /* Data rate is full (default) or half the configured clk speed */
--+#define PCR_HALF_CLK_RATE		0x00200000
--+
--+/* Invert data between NPE and HSS FIFOs? (default = no) */
--+#define PCR_DATA_POLARITY_INVERT	0x00100000
--+
--+/* TX/RX endianness, default = LSB */
--+#define PCR_MSB_ENDIAN			0x00080000
--+
--+/* Normal (default) / open drain mode (TX only) */
--+#define PCR_TX_PINS_OPEN_DRAIN		0x00040000
--+
--+/* No framing bit transmitted and expected on RX? (default = framing bit) */
--+#define PCR_SOF_NO_FBIT			0x00020000
--+
--+/* Drive data pins? */
--+#define PCR_TX_DATA_ENABLE		0x00010000
--+
--+/* Voice 56k type: drive the data pins low (default), high, high Z */
--+#define PCR_TX_V56K_HIGH		0x00002000
--+#define PCR_TX_V56K_HIGH_IMP		0x00004000
--+
--+/* Unassigned type: drive the data pins low (default), high, high Z */
--+#define PCR_TX_UNASS_HIGH		0x00000800
--+#define PCR_TX_UNASS_HIGH_IMP		0x00001000
--+
--+/* T1 @ 1.544MHz only: Fbit dictated in FIFO (default) or high Z */
--+#define PCR_TX_FB_HIGH_IMP		0x00000400
--+
--+/* 56k data endiannes - which bit unused: high (default) or low */
--+#define PCR_TX_56KE_BIT_0_UNUSED	0x00000200
--+
--+/* 56k data transmission type: 32/8 bit data (default) or 56K data */
--+#define PCR_TX_56KS_56K_DATA		0x00000100
--+
--+/* hss_config, cCR */
--+/* Number of packetized clients, default = 1 */
--+#define CCR_NPE_HFIFO_2_HDLC		0x04000000
--+#define CCR_NPE_HFIFO_3_OR_4HDLC	0x08000000
--+
--+/* default = no loopback */
--+#define CCR_LOOPBACK			0x02000000
--+
--+/* HSS number, default = 0 (first) */
--+#define CCR_SECOND_HSS			0x01000000
--+
--+
--+/* hss_config, clkCR: main:10, num:10, denom:12 */
--+#define CLK42X_SPEED_EXP	((0x3FF << 22) | (  2 << 12) |   15) /*65 KHz*/
--+
--+#define CLK42X_SPEED_512KHZ	((  130 << 22) | (  2 << 12) |   15)
--+#define CLK42X_SPEED_1536KHZ	((   43 << 22) | ( 18 << 12) |   47)
--+#define CLK42X_SPEED_1544KHZ	((   43 << 22) | ( 33 << 12) |  192)
--+#define CLK42X_SPEED_2048KHZ	((   32 << 22) | ( 34 << 12) |   63)
--+#define CLK42X_SPEED_4096KHZ	((   16 << 22) | ( 34 << 12) |  127)
--+#define CLK42X_SPEED_8192KHZ	((    8 << 22) | ( 34 << 12) |  255)
--+
--+#define CLK46X_SPEED_512KHZ	((  130 << 22) | ( 24 << 12) |  127)
--+#define CLK46X_SPEED_1536KHZ	((   43 << 22) | (152 << 12) |  383)
--+#define CLK46X_SPEED_1544KHZ	((   43 << 22) | ( 66 << 12) |  385)
--+#define CLK46X_SPEED_2048KHZ	((   32 << 22) | (280 << 12) |  511)
--+#define CLK46X_SPEED_4096KHZ	((   16 << 22) | (280 << 12) | 1023)
--+#define CLK46X_SPEED_8192KHZ	((    8 << 22) | (280 << 12) | 2047)
--+
--+
--+/* hss_config, LUT entries */
--+#define TDMMAP_UNASSIGNED	0
--+#define TDMMAP_HDLC		1	/* HDLC - packetized */
--+#define TDMMAP_VOICE56K		2	/* Voice56K - 7-bit channelized */
--+#define TDMMAP_VOICE64K		3	/* Voice64K - 8-bit channelized */
--+
--+/* offsets into HSS config */
--+#define HSS_CONFIG_TX_PCR	0x00 /* port configuration registers */
--+#define HSS_CONFIG_RX_PCR	0x04
--+#define HSS_CONFIG_CORE_CR	0x08 /* loopback control, HSS# */
--+#define HSS_CONFIG_CLOCK_CR	0x0C /* clock generator control */
--+#define HSS_CONFIG_TX_FCR	0x10 /* frame configuration registers */
--+#define HSS_CONFIG_RX_FCR	0x14
--+#define HSS_CONFIG_TX_LUT	0x18 /* channel look-up tables */
--+#define HSS_CONFIG_RX_LUT	0x38
--+
--+
--+/* NPE command codes */
--+/* writes the ConfigWord value to the location specified by offset */
--+#define PORT_CONFIG_WRITE		0x40
--+
--+/* triggers the NPE to load the contents of the configuration table */
--+#define PORT_CONFIG_LOAD		0x41
--+
--+/* triggers the NPE to return an HssErrorReadResponse message */
--+#define PORT_ERROR_READ			0x42
--+
--+/* reset NPE internal status and enable the HssChannelized operation */
--+#define CHAN_FLOW_ENABLE		0x43
--+#define CHAN_FLOW_DISABLE		0x44
--+#define CHAN_IDLE_PATTERN_WRITE		0x45
--+#define CHAN_NUM_CHANS_WRITE		0x46
--+#define CHAN_RX_BUF_ADDR_WRITE		0x47
--+#define CHAN_RX_BUF_CFG_WRITE		0x48
--+#define CHAN_TX_BLK_CFG_WRITE		0x49
--+#define CHAN_TX_BUF_ADDR_WRITE		0x4A
--+#define CHAN_TX_BUF_SIZE_WRITE		0x4B
--+#define CHAN_TSLOTSWITCH_ENABLE		0x4C
--+#define CHAN_TSLOTSWITCH_DISABLE	0x4D
--+
--+/* downloads the gainWord value for a timeslot switching channel associated
--+   with bypassNum */
--+#define CHAN_TSLOTSWITCH_GCT_DOWNLOAD	0x4E
--+
--+/* triggers the NPE to reset internal status and enable the HssPacketized
--+   operation for the flow specified by pPipe */
--+#define PKT_PIPE_FLOW_ENABLE		0x50
--+#define PKT_PIPE_FLOW_DISABLE		0x51
--+#define PKT_NUM_PIPES_WRITE		0x52
--+#define PKT_PIPE_FIFO_SIZEW_WRITE	0x53
--+#define PKT_PIPE_HDLC_CFG_WRITE		0x54
--+#define PKT_PIPE_IDLE_PATTERN_WRITE	0x55
--+#define PKT_PIPE_RX_SIZE_WRITE		0x56
--+#define PKT_PIPE_MODE_WRITE		0x57
--+
--+/* HDLC packet status values - desc->status */
--+#define ERR_SHUTDOWN		1 /* stop or shutdown occurrance */
--+#define ERR_HDLC_ALIGN		2 /* HDLC alignment error */
--+#define ERR_HDLC_FCS		3 /* HDLC Frame Check Sum error */
--+#define ERR_RXFREE_Q_EMPTY	4 /* RX-free queue became empty while receiving
--+				     this packet (if buf_len < pkt_len) */
--+#define ERR_HDLC_TOO_LONG	5 /* HDLC frame size too long */
--+#define ERR_HDLC_ABORT		6 /* abort sequence received */
--+#define ERR_DISCONNECTING	7 /* disconnect is in progress */
--+
--+#define CLOCK_EXT 0
--+#define CLOCK_INT 1
--+
--+enum mode {MODE_HDLC = 0, MODE_RAW, MODE_G704};
--+enum rx_tx_bit {
--+	TX_BIT = 0,
--+	RX_BIT = 1
--+};
--+enum chan_bit {
--+	CHAN_0 = (1 << 0),
--+	CHAN_1 = (1 << 1),
--+	CHAN_2 = (1 << 2),
--+	CHAN_3 = (1 << 3),
--+	CHAN_4 = (1 << 4),
--+	CHAN_5 = (1 << 5),
--+	CHAN_6 = (1 << 6),
--+	CHAN_7 = (1 << 7),
--+	CHAN_8 = (1 << 8),
--+	CHAN_9 = (1 << 9),
--+	CHAN_10 = (1 << 10),
--+	CHAN_11 = (1 << 11),
--+	CHAN_12 = (1 << 12),
--+	CHAN_13 = (1 << 13),
--+	CHAN_14 = (1 << 14),
--+	CHAN_15 = (1 << 15)
--+};
--+
--+enum alignment { NOT_ALIGNED = 0, EVEN_FIRST, ODD_FIRST };
--+
--+#ifdef __ARMEB__
--+typedef struct sk_buff buffer_t;
--+#define free_buffer dev_kfree_skb
--+#define free_buffer_irq dev_kfree_skb_irq
--+#else
--+typedef void buffer_t;
--+#define free_buffer kfree
--+#define free_buffer_irq kfree
--+#endif
--+
--+struct hss_device {
--+	struct port *port;
--+	unsigned int open_count, excl_open;
--+	unsigned long tx_loc, rx_loc; /* bytes */
--+	unsigned long tx_frame, rx_frame; /* Frames */
--+	u8 id, chan_count;
--+	u8 log_channels[MAX_CHANNELS];
--+
--+  u8 *rx_buf;
--+  u8 *tx_buf;
--+
--+	size_t rx_buffer_size;
--+	size_t rx_period_size;
--+	size_t tx_buffer_size;
--+	size_t tx_period_size;
--+
--+  void (*rx_callback)(void *data);
--+  void *rx_data;
--+  void (*tx_callback)(void *data);
--+  void *tx_data;
--+  void *private_data;
--+};
--+
--+extern struct hss_device *hss_handle[32];
--+extern struct port *hss_port[2];
--+
--+struct port {
--+	unsigned char init;
--+
--+	struct device *dev;
--+
--+	struct tasklet_struct task;
--+	unsigned int id;
--+	unsigned long chan_rx_bitmap;
--+	unsigned long chan_tx_bitmap;
--+	unsigned char chan_open;
--+
--+	/* the following fields must be protected by npe_lock */
--+	enum mode mode;
--+	unsigned int clock_type, clock_rate, loopback;
--+	unsigned int frame_size, frame_sync_offset;
--+	unsigned int next_rx_frame;
--+
--+	struct hss_device *chan_devices[MAX_CHAN_DEVICES];
--+	u32 chan_tx_buf_phys, chan_rx_buf_phys;
--+	u32	chan_tx_pointers_phys;
--+	u32 *chan_tx_pointers;
--+	u8 *chan_rx_buf;
--+	u8 *chan_tx_buf;
--+	u8 *tx_lists[CHAN_TX_LISTS][8];
--+	u8 *rx_frames[8][CHAN_TX_LISTS];
--+	unsigned int chan_open_count, hdlc_open;
--+	unsigned int chan_started, initialized, just_set_offset;
--+	unsigned int chan_last_rx, chan_last_tx;
--+
--+	/* assigned channels, may be invalid with given frame length or mode */
--+	u8 channels[MAX_CHANNELS];
--+	int msg_count;
--+};
--+
--+/* NPE message structure */
--+struct msg {
--+#ifdef __ARMEB__
--+	u8 cmd, unused, hss_port, index;
--+	union {
--+		struct { u8 data8a, data8b, data8c, data8d; };
--+		struct { u16 data16a, data16b; };
--+		struct { u32 data32; };
--+	};
--+#else
--+	u8 index, hss_port, unused, cmd;
--+	union {
--+		struct { u8 data8d, data8c, data8b, data8a; };
--+		struct { u16 data16b, data16a; };
--+		struct { u32 data32; };
--+	};
--+#endif
--+};
--+
--+#define rx_desc_phys(port, n)	((port)->desc_tab_phys +		\
--+				 (n) * sizeof(struct desc))
--+#define rx_desc_ptr(port, n)	(&(port)->desc_tab[n])
--+
--+#define tx_desc_phys(port, n)	((port)->desc_tab_phys +		\
--+				 ((n) + RX_DESCS) * sizeof(struct desc))
--+#define tx_desc_ptr(port, n)	(&(port)->desc_tab[(n) + RX_DESCS])
--+
--+int hss_prepare_chan(struct port *port);
--+void hss_chan_stop(struct port *port);
--+
--+struct hss_device *hss_init(int id, int channel);
--+int hss_chan_open(struct hss_device *hdev);
--+int hss_chan_close(struct hss_device *hdev);
--+
--+int hss_set_tx_callback(struct hss_device *hdev, void (*tx_callback)(void *), void *tx_data);
--+int hss_set_rx_callback(struct hss_device *hdev, void (*rx_callback)(void *), void *rx_data);
--+int hss_tx_start(struct hss_device *hdev);
--+int hss_tx_stop(struct hss_device *hdev);
--+int hss_rx_start(struct hss_device *hdev);
--+int hss_rx_stop(struct hss_device *hdev);
--+
--+int hss_config_rx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size);
--+int hss_config_tx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size);
--+unsigned long hss_curr_offset_rx(struct hss_device *hdev);
--+unsigned long hss_curr_offset_tx(struct hss_device *hdev);
--+
-diff --git a/target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch b/target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch
-deleted file mode 100644
-index b56fbb732d..0000000000
---- a/target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch
-+++ /dev/null
-@@ -1,287 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -160,6 +160,14 @@ config ARCH_PRPMC1100
-- 	  PrPCM1100 Processor Mezanine Module. For more information on
-- 	  this platform, see <file:Documentation/arm/IXP4xx>.
-- 
--+config MACH_TW5334
--+	bool "Titan Wireless TW-533-4"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support the Titan
--+	  Wireless TW533-4. For more information on this platform,
--+	  see http://openwrt.org
--+
-- config MACH_NAS100D
-- 	bool
-- 	prompt "NAS100D"
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -24,6 +24,7 @@ obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sid
-- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
-- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
--+obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -49,6 +50,7 @@ obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewin
-- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
-- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
-- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
--+obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--@@ -44,7 +44,7 @@ static __inline__ void __arch_decomp_set
-- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
-- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
-- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
---	    machine_is_wrt300nv2())
--+	    machine_is_wrt300nv2() || machine_is_tw5334())
-- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
-- 	else
-- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/tw5334-pci.c
--@@ -0,0 +1,68 @@
--+/*
--+ * arch/arch/mach-ixp4xx/tw5334-pci.c
--+ *
--+ * PCI setup routines for the Titan Wireless TW-533-4
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+
--+#include <asm/mach/pci.h>
--+
--+void __init tw5334_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO6, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO1, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO0, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init tw5334_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 12)
--+		return IRQ_IXP4XX_GPIO6;
--+	else if (slot == 13)
--+		return IRQ_IXP4XX_GPIO2;
--+	else if (slot == 14)
--+		return IRQ_IXP4XX_GPIO1;
--+	else if (slot == 15)
--+		return IRQ_IXP4XX_GPIO0;
--+	else return -1;
--+}
--+
--+struct hw_pci tw5334_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit =        tw5334_pci_preinit,
--+	.ops =            &ixp4xx_ops,
--+	.setup =          ixp4xx_setup,
--+	.map_irq =        tw5334_map_irq,
--+};
--+
--+int __init tw5334_pci_init(void)
--+{
--+	if (machine_is_tw5334())
--+		pci_common_init(&tw5334_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(tw5334_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/tw5334-setup.c
--@@ -0,0 +1,167 @@
--+/*
--+ * arch/arm/mach-ixp4xx/tw5334-setup.c
--+ *
--+ * Board setup for the Titan Wireless TW-533-4
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/if_ether.h>
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+
--+#include <asm/types.h>
--+#include <asm/setup.h>
--+#include <asm/memory.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data tw5334_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource tw5334_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device tw5334_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &tw5334_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &tw5334_flash_resource,
--+};
--+
--+static struct resource tw5334_uart_resource = {
--+	.start	= IXP4XX_UART2_BASE_PHYS,
--+	.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+	.flags	= IORESOURCE_MEM,
--+};
--+
--+static struct plat_serial8250_port tw5334_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device tw5334_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev			= {
--+		.platform_data	= tw5334_uart_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &tw5334_uart_resource,
--+};
--+
--+/* Built-in 10/100 Ethernet MAC interfaces */
--+static struct eth_plat_info tw5334_plat_eth[] = {
--+        {
--+                .phy            = 0,
--+                .rxq            = 3,
--+		.txreadyq	= 20,
--+        }, {
--+                .phy            = 1,
--+                .rxq            = 4,
--+		.txreadyq	= 21,
--+	}
--+};
--+
--+static struct platform_device tw5334_eth[] = {
--+        {
--+                .name                   = "ixp4xx_eth",
--+                .id                     = IXP4XX_ETH_NPEB,
--+                .dev.platform_data      = tw5334_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+        }, {
--+                .name                   = "ixp4xx_eth",
--+                .id                     = IXP4XX_ETH_NPEC,
--+                .dev.platform_data      = tw5334_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *tw5334_devices[] __initdata = {
--+	&tw5334_flash,
--+	&tw5334_uart,
--+	&tw5334_eth[0],
--+	&tw5334_eth[1],
--+};
--+
--+static void __init tw5334_init(void)
--+{
--+	uint8_t __iomem *f;
--+	int i;
--+
--+	ixp4xx_sys_init();
--+
--+	tw5334_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	tw5334_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(tw5334_devices, ARRAY_SIZE(tw5334_devices));
--+
--+	/*
--+	 * Map in a portion of the flash and read the MAC addresses.
--+	 * Since it is stored in BE in the flash itself, we need to
--+	 * byteswap it if we're in LE mode.
--+	 */
--+	f = ioremap(IXP4XX_EXP_BUS_BASE(0), 0x1000000);
--+	if (f) {
--+		for (i = 0; i < 6; i++) {
--+#ifdef __ARMEB__
--+			tw5334_plat_eth[0].hwaddr[i] = readb(f + 0xFC0422 + i);
--+			tw5334_plat_eth[1].hwaddr[i] = readb(f + 0xFC043B + i);
--+#else
--+			tw5334_plat_eth[0].hwaddr[i] = readb(f + 0xFC0422 + (i^3));
--+			tw5334_plat_eth[1].hwaddr[i] = readb(f + 0xFC043B + (i^3));
--+#endif
--+		}
--+		iounmap(f);
--+	}
--+
--+	printk(KERN_INFO "TW-533-4: Using MAC address %pM for port 0\n",
--+		tw5334_plat_eth[0].hwaddr);
--+	printk(KERN_INFO "TW-533-4: Using MAC address %pM for port 1\n",
--+		tw5334_plat_eth[1].hwaddr);
--+}
--+
--+#ifdef CONFIG_MACH_TW5334
--+MACHINE_START(TW5334, "Titan Wireless TW-533-4")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= tw5334_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+#endif
-diff --git a/target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch b/target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch
-deleted file mode 100644
-index 7c229276fc..0000000000
---- a/target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch
-+++ /dev/null
-@@ -1,504 +0,0 @@
----- a/arch/arm/configs/ixp4xx_defconfig
--+++ b/arch/arm/configs/ixp4xx_defconfig
--@@ -26,6 +26,7 @@ CONFIG_MACH_NAS100D=y
-- CONFIG_MACH_DSMG600=y
-- CONFIG_MACH_FSG=y
-- CONFIG_MACH_GTWX5715=y
--+CONFIG_MACH_MI424WR=y
-- CONFIG_IXP4XX_QMGR=y
-- CONFIG_IXP4XX_NPE=y
-- # CONFIG_ARM_THUMB is not set
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -258,6 +258,13 @@ config MACH_MIC256
-- 	  Say 'Y' here if you want your kernel to support the MIC256
-- 	  board from OMICRON electronics GmbH.
-- 
--+config MACH_MI424WR
--+	bool "Actiontec MI424WR"
--+	depends on ARCH_IXP4XX
--+	select PCI
--+	help
--+		Add support for the Actiontec MI424-WR.
--+
-- comment "IXP4xx Options"
-- 
-- config IXP4XX_INDIRECT_PCI
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -25,6 +25,7 @@ obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixd
-- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
-- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
--+obj-pci-$(CONFIG_MACH_MI424WR)		+= mi424wr-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -51,6 +52,7 @@ obj-$(CONFIG_MACH_COMPEXWP18)	+= compex4
-- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
-- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
-- obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
--+obj-$(CONFIG_MACH_MI424WR)	+= mi424wr-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/mi424wr-pci.c
--@@ -0,0 +1,70 @@
--+/*
--+ * arch/arm/mach-ixp4xx/mi424wr-pci.c
--+ *
--+ * Actiontec MI424WR board-level PCI initialization
--+ *
--+ * Copyright (C) 2008 Jose Vasconcellos
--+ *
--+ * Maintainer: Jose Vasconcellos <jvasco@verizon.net>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <asm/mach/pci.h>
--+
--+/* PCI controller GPIO to IRQ pin mappings
--+ * This information was obtained from Actiontec's GPL release.
--+ *
--+ *		INTA		INTB
--+ * SLOT 13	8		6
--+ * SLOT 14	7		8
--+ * SLOT 15	6		7
--+ */
--+
--+void __init mi424wr_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO6, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO7, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init mi424wr_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 13)
--+		return IRQ_IXP4XX_GPIO8;
--+	if (slot == 14)
--+		return IRQ_IXP4XX_GPIO7;
--+	if (slot == 15)
--+		return IRQ_IXP4XX_GPIO6;
--+
--+	return -1;
--+}
--+
--+struct hw_pci mi424wr_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit	= mi424wr_pci_preinit,
--+	.ops		= &ixp4xx_ops,
--+	.setup		= ixp4xx_setup,
--+	.map_irq	= mi424wr_map_irq,
--+};
--+
--+int __init mi424wr_pci_init(void)
--+{
--+	if (machine_is_mi424wr())
--+		pci_common_init(&mi424wr_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(mi424wr_pci_init);
--+
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/mi424wr-setup.c
--@@ -0,0 +1,384 @@
--+/*
--+ * arch/arm/mach-ixp4xx/mi424wr-setup.c
--+ *
--+ * Actiontec MI424-WR board setup
--+ * Copyright (c) 2008 Jose Vasconcellos
--+ *
--+ * Based on Gemtek GTWX5715 by
--+ * Copyright (C) 2004 George T. Joseph
--+ * Derived from Coyote
--+ *
--+ * This program is free software; you can redistribute it and/or
--+ * modify it under the terms of the GNU General Public License
--+ * as published by the Free Software Foundation; either version 2
--+ * of the License, or (at your option) any later version.
--+ *
--+ * This program is distributed in the hope that it will be useful,
--+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
--+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--+ * GNU General Public License for more details.
--+ *
--+ * You should have received a copy of the GNU General Public License
--+ * along with this program; if not, write to the Free Software
--+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
--+ *
--+ */
--+
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/serial_8250.h>
--+#include <linux/types.h>
--+#include <linux/memory.h>
--+#include <linux/leds.h>
--+#include <linux/spi/spi.h>
--+#include <linux/spi/spi_gpio.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/setup.h>
--+#include <asm/system_info.h>
--+#include <asm/irq.h>
--+#include <asm/io.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+/*
--+ * GPIO 2,3,4 and 9 are hard wired to the Micrel/Kendin KS8995M Switch
--+ * and operate as an SPI type interface.  The details of the interface
--+ * are available on Kendin/Micrel's web site.
--+ */
--+
--+#define MI424WR_KSSPI_SELECT		9
--+#define MI424WR_KSSPI_TXD		4
--+#define MI424WR_KSSPI_CLOCK		2
--+#define MI424WR_KSSPI_RXD		3
--+
--+/*
--+ * The "reset" button is wired to GPIO 10.
--+ * The GPIO is brought "low" when the button is pushed.
--+ */
--+
--+#define MI424WR_BUTTON_GPIO	10
--+#define MI424WR_BUTTON_IRQ	IRQ_IXP4XX_GPIO10
--+
--+#define MI424WR_MOCA_WAN_LED	11
--+
--+/* Latch on CS1 - taken from Actiontec's 2.4 source code
--+ *
--+ * default latch value
--+ * 0  - power alarm led (red)           0 (off)
--+ * 1  - power led (green)               0 (off)
--+ * 2  - wireless led    (green)         1 (off)
--+ * 3  - no internet led (red)           0 (off)
--+ * 4  - internet ok led (green)         0 (off)
--+ * 5  - moca LAN                        0 (off)
--+ * 6  - WAN alarm led (red)		0 (off)
--+ * 7  - PCI reset                       1 (not reset)
--+ * 8  - IP phone 1 led (green)          1 (off)
--+ * 9  - IP phone 2 led (green)          1 (off)
--+ * 10 - VOIP ready led (green)          1 (off)
--+ * 11 - PSTN relay 1 control            0 (PSTN)
--+ * 12 - PSTN relay 1 control            0 (PSTN)
--+ * 13 - N/A
--+ * 14 - N/A
--+ * 15 - N/A
--+ */
--+
--+#define MI424WR_LATCH_MASK              0x04
--+#define MI424WR_LATCH_DEFAULT           0x1f86
--+
--+#define MI424WR_LATCH_ALARM_LED         0x00
--+#define MI424WR_LATCH_POWER_LED         0x01
--+#define MI424WR_LATCH_WIRELESS_LED      0x02
--+#define MI424WR_LATCH_INET_DOWN_LED     0x03
--+#define MI424WR_LATCH_INET_OK_LED       0x04
--+#define MI424WR_LATCH_MOCA_LAN_LED      0x05
--+#define MI424WR_LATCH_WAN_ALARM_LED     0x06
--+#define MI424WR_LATCH_PCI_RESET         0x07
--+#define MI424WR_LATCH_PHONE1_LED        0x08
--+#define MI424WR_LATCH_PHONE2_LED        0x09
--+#define MI424WR_LATCH_VOIP_LED          0x10
--+#define MI424WR_LATCH_PSTN_RELAY1       0x11
--+#define MI424WR_LATCH_PSTN_RELAY2       0x12
--+
--+/* initialize CS1 to default timings, Intel style, 16-bit bus */
--+#define MI424WR_CS1_CONFIG	0x80000002
--+
--+/* Define both UARTs but they are not easily accessible.
--+ */
--+
--+static struct resource mi424wr_uart_resources[] = {
--+	{
--+		.start	= IXP4XX_UART1_BASE_PHYS,
--+		.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.start	= IXP4XX_UART2_BASE_PHYS,
--+		.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags	= IORESOURCE_MEM,
--+	}
--+};
--+
--+
--+static struct plat_serial8250_port mi424wr_uart_platform_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device mi424wr_uart_device = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev.platform_data	= mi424wr_uart_platform_data,
--+	.num_resources	= ARRAY_SIZE(mi424wr_uart_resources),
--+	.resource	= mi424wr_uart_resources,
--+};
--+
--+static struct flash_platform_data mi424wr_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource mi424wr_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device mi424wr_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev.platform_data = &mi424wr_flash_data,
--+	.num_resources	= 1,
--+	.resource	= &mi424wr_flash_resource,
--+};
--+
--+static struct spi_gpio_platform_data mi424wr_spi_platform_data = {
--+        .sck            = MI424WR_KSSPI_CLOCK,
--+        .mosi           = MI424WR_KSSPI_TXD,
--+        .miso           = MI424WR_KSSPI_RXD,
--+        .num_chipselect = 1,
--+};
--+
--+static struct platform_device mi424wr_spi_device = {
--+        .name   = "spi-gpio",
--+        .id     = 1,
--+        .dev.platform_data  = &mi424wr_spi_platform_data,
--+};
--+
--+static struct spi_board_info mi424wr_spi_devices[] __initdata = {
--+       {
--+		.modalias               = "spi-ks8995",
--+		.max_speed_hz           = 500000,
--+		.mode			= SPI_MODE_0,
--+		.bus_num		= 1,
--+		.chip_select            = 0,
--+		.controller_data        = (void *)MI424WR_KSSPI_SELECT,
--+	}
--+};
--+
--+static struct gpio_led mi424wr_gpio_led[] = {
--+	{
--+		.name		= "moca-wan",	/* green led */
--+		.gpio		= MI424WR_MOCA_WAN_LED,
--+		.active_low	= 0,
--+	}
--+};
--+
--+static struct gpio_led_platform_data mi424wr_gpio_leds_data = {
--+	.num_leds	= 1,
--+	.leds		= mi424wr_gpio_led,
--+};
--+
--+static struct platform_device mi424wr_gpio_leds = {
--+	.name		= "leds-gpio",
--+	.id		= -1,
--+	.dev.platform_data = &mi424wr_gpio_leds_data,
--+};
--+
--+static uint16_t latch_value = MI424WR_LATCH_DEFAULT;
--+static uint16_t __iomem *iobase;
--+
--+static void mi424wr_latch_set_led(u8 bit, enum led_brightness value)
--+{
--+
--+	if (((MI424WR_LATCH_MASK >> bit) & 1) ^ (value == LED_OFF))
--+		latch_value &= ~(0x1 << bit);
--+	else
--+		latch_value |= (0x1 << bit);
--+
--+	__raw_writew(latch_value, iobase);
--+
--+}
--+
--+static struct latch_led mi424wr_latch_led[] = {
--+	{
--+		.name	= "power-alarm",
--+		.bit	= MI424WR_LATCH_ALARM_LED,
--+	},
--+	{
--+		.name	= "power-ok",
--+		.bit	= MI424WR_LATCH_POWER_LED,
--+	},
--+	{
--+		.name	= "wireless",	/* green led */
--+		.bit	= MI424WR_LATCH_WIRELESS_LED,
--+	},
--+	{
--+		.name	= "inet-down",	/* red led */
--+		.bit	= MI424WR_LATCH_INET_DOWN_LED,
--+	},
--+	{
--+		.name	= "inet-up",	/* green led */
--+		.bit	= MI424WR_LATCH_INET_OK_LED,
--+	},
--+	{
--+		.name	= "moca-lan",	/* green led */
--+		.bit	= MI424WR_LATCH_MOCA_LAN_LED,
--+	},
--+	{
--+		.name	= "wan-alarm",	/* red led */
--+		.bit	= MI424WR_LATCH_WAN_ALARM_LED,
--+	}
--+};
--+
--+static struct latch_led_platform_data mi424wr_latch_leds_data = {
--+	.num_leds	= ARRAY_SIZE(mi424wr_latch_led),
--+	.mem		= 0x51000000,
--+	.leds		= mi424wr_latch_led,
--+	.set_led        = mi424wr_latch_set_led,
--+};
--+
--+static struct platform_device mi424wr_latch_leds = {
--+	.name		= "leds-latch",
--+	.id		= -1,
--+	.dev.platform_data = &mi424wr_latch_leds_data,
--+};
--+
--+static struct eth_plat_info mi424wr_wan_data = {
--+	.phy		= 17,	/* KS8721 */
--+	.rxq		= 3,
--+	.txreadyq	= 20,
--+};
--+
--+static struct eth_plat_info mi424wr_lan_data = {
--+	.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+	.phy_mask	= 0x1e, /* ports 1-4 of the KS8995 switch */
--+	.rxq		= 4,
--+	.txreadyq	= 21,
--+};
--+
--+static struct platform_device mi424wr_npe_devices[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= &mi424wr_lan_data,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= &mi424wr_wan_data,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct eth_plat_info mi424wr_wanD_data = {
--+	.phy		= 5,
--+	.rxq		= 4,
--+	.txreadyq	= 21,
--+};
--+
--+static struct eth_plat_info mi424wr_lanD_data = {
--+	.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+	.phy_mask	= 0x1e, /* ports 1-4 of the KS8995 switch */
--+	.rxq		= 3,
--+	.txreadyq	= 20,
--+};
--+
--+static struct platform_device mi424wr_npeD_devices[] = {
--+	{
--+		.name                   = "ixp4xx_eth",
--+		.id                     = IXP4XX_ETH_NPEB,
--+		.dev.platform_data      = &mi424wr_lanD_data,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name                   = "ixp4xx_eth",
--+		.id                     = IXP4XX_ETH_NPEC,
--+		.dev.platform_data      = &mi424wr_wanD_data,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *mi424wr_devices[] __initdata = {
--+	&mi424wr_uart_device,
--+	&mi424wr_flash,
--+	&mi424wr_spi_device,
--+	&mi424wr_gpio_leds,
--+	&mi424wr_latch_leds,
--+};
--+
--+static void __init mi424wr_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	mi424wr_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	mi424wr_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_8M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = MI424WR_CS1_CONFIG;
--+
--+	/* configure button as input
--+	 */
--+	gpio_line_config(MI424WR_BUTTON_GPIO, IXP4XX_GPIO_IN);
--+
--+	/* Initialize LEDs and enables PCI bus.
--+	 */
--+	iobase = ioremap_nocache(IXP4XX_EXP_BUS_BASE(1), 0x1000);
--+	__raw_writew(latch_value, iobase);
--+
--+	spi_register_board_info(mi424wr_spi_devices, ARRAY_SIZE(mi424wr_spi_devices));
--+	platform_add_devices(mi424wr_devices, ARRAY_SIZE(mi424wr_devices));
--+
--+	/* Need to figure out how to detect revD.
--+	 * Look for a revision argument sent by redboot.
--+	 */
--+#define revD 4
--+	if (system_rev == revD) {
--+		platform_device_register(&mi424wr_npeD_devices[0]);
--+		platform_device_register(&mi424wr_npeD_devices[1]);
--+	} else {
--+		platform_device_register(&mi424wr_npe_devices[0]);
--+		platform_device_register(&mi424wr_npe_devices[1]);
--+	}
--+}
--+
--+
--+MACHINE_START(MI424WR, "Actiontec MI424WR")
--+	/* Maintainer: Jose Vasconcellos */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= mi424wr_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+
-diff --git a/target/linux/ixp4xx/patches-4.9/190-cambria_support.patch b/target/linux/ixp4xx/patches-4.9/190-cambria_support.patch
-deleted file mode 100644
-index 83a3319261..0000000000
---- a/target/linux/ixp4xx/patches-4.9/190-cambria_support.patch
-+++ /dev/null
-@@ -1,1131 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -21,6 +21,14 @@ config MACH_AVILA
-- 	  Avila Network Platform. For more information on this platform,
-- 	  see <file:Documentation/arm/IXP4xx>.
-- 
--+config MACH_CAMBRIA
--+	bool "Cambria"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support the Gateworks
--+	  Cambria series. For more information on this platform,
--+	  see <file:Documentation/arm/IXP4xx>.
--+
-- config MACH_LOFT
--     bool "Loft"
--     depends on MACH_AVILA
--@@ -218,7 +226,7 @@ config CPU_IXP46X
-- 
-- config CPU_IXP43X
-- 	bool
---	depends on MACH_KIXRP435
--+	depends on MACH_KIXRP435 || MACH_CAMBRIA
-- 	default y
-- 
-- config MACH_GTWX5715
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -7,6 +7,7 @@ obj-pci-n	:=
-- 
-- obj-pci-$(CONFIG_ARCH_IXDP4XX)		+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_AVILA)		+= avila-pci.o
--+obj-pci-$(CONFIG_MACH_CAMBRIA)		+= cambria-pci.o
-- obj-pci-$(CONFIG_MACH_IXDPG425)		+= ixdpg425-pci.o
-- obj-pci-$(CONFIG_ARCH_ADI_COYOTE)	+= coyote-pci.o
-- obj-pci-$(CONFIG_MACH_GTWX5715)		+= gtwx5715-pci.o
--@@ -31,6 +32,7 @@ obj-y	+= common.o
-- 
-- obj-$(CONFIG_ARCH_IXDP4XX)	+= ixdp425-setup.o
-- obj-$(CONFIG_MACH_AVILA)	+= avila-setup.o
--+obj-$(CONFIG_MACH_CAMBRIA)	+= cambria-setup.o
-- obj-$(CONFIG_MACH_IXDPG425)	+= coyote-setup.o
-- obj-$(CONFIG_ARCH_ADI_COYOTE)	+= coyote-setup.o
-- obj-$(CONFIG_MACH_GTWX5715)	+= gtwx5715-setup.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/cambria-pci.c
--@@ -0,0 +1,78 @@
--+/*
--+ * arch/arch/mach-ixp4xx/cambria-pci.c
--+ *
--+ * PCI setup routines for Gateworks Cambria series
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+
--+#include <asm/mach/pci.h>
--+
--+extern void ixp4xx_pci_preinit(void);
--+extern int ixp4xx_setup(int nr, struct pci_sys_data *sys);
--+extern struct pci_bus *ixp4xx_scan_bus(int nr, struct pci_sys_data *sys);
--+
--+void __init cambria_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init cambria_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 1)
--+		return IRQ_IXP4XX_GPIO11;
--+	else if (slot == 2)
--+		return IRQ_IXP4XX_GPIO10;
--+	else if (slot == 3)
--+		return IRQ_IXP4XX_GPIO9;
--+	else if (slot == 4)
--+		return IRQ_IXP4XX_GPIO8;
--+	else if (slot == 6)
--+		return IRQ_IXP4XX_GPIO10;
--+	else if (slot == 15)
--+		return IRQ_IXP4XX_GPIO8;
--+
--+	else return -1;
--+}
--+
--+struct hw_pci cambria_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit =        cambria_pci_preinit,
--+	.ops =            &ixp4xx_ops,
--+	.setup =          ixp4xx_setup,
--+	.map_irq =        cambria_map_irq,
--+};
--+
--+int __init cambria_pci_init(void)
--+{
--+	if (machine_is_cambria())
--+		pci_common_init(&cambria_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(cambria_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/cambria-setup.c
--@@ -0,0 +1,1003 @@
--+/*
--+ * arch/arm/mach-ixp4xx/cambria-setup.c
--+ *
--+ * Board setup for the Gateworks Cambria series
--+ *
--+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ * Copyright (C) 2012 Gateworks Corporation <support@gateworks.com>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <kaloz@openwrt.org>
--+ *         Tim Harvey <tharvey@gateworks.com>
--+ */
--+
--+#include <linux/device.h>
--+#include <linux/gpio_keys.h>
--+#include <linux/gpio.h>
--+#include <linux/i2c.h>
--+#include <linux/i2c-gpio.h>
--+#include <linux/platform_data/at24.h>
--+#include <linux/i2c/gw_i2c_pld.h>
--+#include <linux/platform_data/pca953x.h>
--+#include <linux/if_ether.h>
--+#include <linux/init.h>
--+#include <linux/input.h>
--+#include <linux/kernel.h>
--+#include <linux/leds.h>
--+#include <linux/memory.h>
--+#include <linux/netdevice.h>
--+#include <linux/serial.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+#include <linux/socket.h>
--+#include <linux/types.h>
--+#include <linux/tty.h>
--+#include <linux/irq.h>
--+#include <linux/usb/ehci_pdriver.h>
--+
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+#include <asm/setup.h>
--+
--+#define ARRAY_AND_SIZE(x)       (x), ARRAY_SIZE(x)
--+
--+struct cambria_board_info {
--+	unsigned char	*model;
--+	void		(*setup)(void);
--+};
--+
--+static struct cambria_board_info *cambria_info __initdata;
--+
--+static struct flash_platform_data cambria_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource cambria_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device cambria_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &cambria_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &cambria_flash_resource,
--+};
--+
--+static struct i2c_gpio_platform_data cambria_i2c_gpio_data = {
--+	.sda_pin	= 7,
--+	.scl_pin	= 6,
--+};
--+
--+static struct platform_device cambria_i2c_gpio = {
--+	.name		= "i2c-gpio",
--+	.id		= 0,
--+	.dev = {
--+		.platform_data	= &cambria_i2c_gpio_data,
--+	},
--+};
--+
--+#ifdef SFP_SERIALID
--+static struct i2c_gpio_platform_data cambria_i2c_gpio_sfpa_data = {
--+	.sda_pin	= 113,
--+	.scl_pin	= 112,
--+	.sda_is_open_drain = 0,
--+	.scl_is_open_drain = 0,
--+};
--+
--+static struct platform_device cambria_i2c_gpio_sfpa = {
--+	.name		= "i2c-gpio",
--+	.id		= 1,
--+	.dev = {
--+		.platform_data	= &cambria_i2c_gpio_sfpa_data,
--+	},
--+};
--+
--+static struct i2c_gpio_platform_data cambria_i2c_gpio_sfpb_data = {
--+	.sda_pin	= 115,
--+	.scl_pin	= 114,
--+	.sda_is_open_drain = 0,
--+	.scl_is_open_drain = 0,
--+};
--+
--+static struct platform_device cambria_i2c_gpio_sfpb = {
--+	.name		= "i2c-gpio",
--+	.id		= 2,
--+	.dev = {
--+		.platform_data	= &cambria_i2c_gpio_sfpb_data,
--+	},
--+};
--+#endif // #ifdef SFP_SERIALID
--+
--+static struct eth_plat_info cambria_npec_data = {
--+	.phy		= 1,
--+	.rxq		= 4,
--+	.txreadyq	= 21,
--+};
--+
--+static struct eth_plat_info cambria_npea_data = {
--+	.phy		= 2,
--+	.rxq		= 2,
--+	.txreadyq	= 19,
--+};
--+
--+static struct platform_device cambria_npec_device = {
--+	.name			= "ixp4xx_eth",
--+	.id			= IXP4XX_ETH_NPEC,
--+	.dev.platform_data	= &cambria_npec_data,
--+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+};
--+
--+static struct platform_device cambria_npea_device = {
--+	.name			= "ixp4xx_eth",
--+	.id			= IXP4XX_ETH_NPEA,
--+	.dev.platform_data	= &cambria_npea_data,
--+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+};
--+
--+static struct resource cambria_uart_resource = {
--+	.start	= IXP4XX_UART1_BASE_PHYS,
--+	.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+	.flags	= IORESOURCE_MEM,
--+};
--+
--+static struct plat_serial8250_port cambria_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device cambria_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev = {
--+		.platform_data	= cambria_uart_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &cambria_uart_resource,
--+};
--+
--+static struct resource cambria_optional_uart_resources[] = {
--+	{
--+		.start	= 0x52000000,
--+		.end	= 0x52000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x53000000,
--+		.end	= 0x53000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x52000000,
--+		.end	= 0x52000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x52000000,
--+		.end	= 0x52000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x52000000,
--+		.end	= 0x52000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x52000000,
--+		.end	= 0x52000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x52000000,
--+		.end	= 0x52000fff,
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.start	= 0x53000000,
--+		.end	= 0x53000fff,
--+		.flags	= IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port cambria_optional_uart_data[] = {
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM_DELAY,
--+		.regshift	= 0,
--+		.uartclk	= 1843200,
--+		.rw_delay	= 10,
--+	},
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM_DELAY,
--+		.regshift	= 0,
--+		.uartclk	= 1843200,
--+		.rw_delay	= 10,
--+	},
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 0,
--+		.uartclk	= 18432000,
--+	},
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 0,
--+		.uartclk	= 18432000,
--+	},
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 0,
--+		.uartclk	= 18432000,
--+	},
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 0,
--+		.uartclk	= 18432000,
--+	},
--+	{
--+		.flags		= UPF_BOOT_AUTOCONF,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 0,
--+		.uartclk	= 18432000,
--+	},
--+  { },
--+};
--+
--+static struct platform_device cambria_optional_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM1,
--+	.dev.platform_data	= cambria_optional_uart_data,
--+	.num_resources	= 2,
--+	.resource	= cambria_optional_uart_resources,
--+};
--+
--+static struct resource cambria_pata_resources[] = {
--+	{
--+		.flags	= IORESOURCE_MEM
--+	},
--+	{
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.name	= "intrq",
--+		.start	= IRQ_IXP4XX_GPIO12,
--+		.end	= IRQ_IXP4XX_GPIO12,
--+		.flags	= IORESOURCE_IRQ,
--+	},
--+};
--+
--+static struct ixp4xx_pata_data cambria_pata_data = {
--+	.cs0_bits	= 0xbfff3c03,
--+	.cs1_bits	= 0xbfff3c03,
--+};
--+
--+static struct platform_device cambria_pata = {
--+	.name			= "pata_ixp4xx_cf",
--+	.id			= 0,
--+	.dev.platform_data      = &cambria_pata_data,
--+	.num_resources		= ARRAY_SIZE(cambria_pata_resources),
--+	.resource		= cambria_pata_resources,
--+};
--+
--+static struct gpio_led cambria_gpio_leds[] = {
--+	{
--+		.name		= "user",
--+		.gpio		= 5,
--+		.active_low 	= 1,
--+	},
--+	{
--+		.name		= "user2",
--+		.gpio		= 0,
--+		.active_low 	= 1,
--+	},
--+	{
--+		.name		= "user3",
--+		.gpio		= 0,
--+		.active_low 	= 1,
--+	},
--+	{
--+		.name		= "user4",
--+		.gpio		= 0,
--+		.active_low 	= 1,
--+	}
--+};
--+
--+static struct gpio_led_platform_data cambria_gpio_leds_data = {
--+	.num_leds	= 1,
--+	.leds		= cambria_gpio_leds,
--+};
--+
--+static struct platform_device cambria_gpio_leds_device = {
--+	.name		= "leds-gpio",
--+	.id		= -1,
--+	.dev.platform_data = &cambria_gpio_leds_data,
--+};
--+
--+static struct resource cambria_gpio_resources[] = {
--+	{
--+		.name = "gpio",
--+		.flags  = 0,
--+	},
--+};
--+
--+static struct gpio cambria_gpios_gw2350[] = {
--+	// ARM GPIO
--+#if 0 // configured from bootloader
--+	{  0, GPIOF_IN,            "ARM_DIO0" },
--+	{  1, GPIOF_IN,            "ARM_DIO1" },
--+	{  2, GPIOF_IN,            "ARM_DIO2" },
--+	{  3, GPIOF_IN,            "ARM_DIO3" },
--+	{  4, GPIOF_IN,            "ARM_DIO4" },
--+	{  5, GPIOF_IN,            "ARM_DIO5" },
--+	{ 12, GPIOF_OUT_INIT_HIGH, "WDOGEN#" },
--+#endif
--+	{  8, GPIOF_IN,            "ARM_DIO8" },
--+	{  9, GPIOF_IN,            "ARM_DIO9" },
--+};
--+
--+static struct gpio cambria_gpios_gw2358[] = {
--+	// ARM GPIO
--+#if 0 // configured from bootloader
--+	{  0, GPIOF_IN,            "*VINLOW#" },
--+	{  2, GPIOF_IN,            "*GPS_PPS" },
--+	{  3, GPIOF_IN,            "*GPS_IRQ#" },
--+	{  4, GPIOF_IN,            "*RS485_IRQ#" },
--+	{  5, GPIOF_IN,            "*SER_EN#" },
--+	{ 14, GPIOF_OUT_INIT_HIGH, "*WDOGEN#" },
--+#endif
--+};
--+
--+static struct gpio cambria_gpios_gw2359[] = {
--+	// ARM GPIO
--+#if 0 // configured from bootloader
--+	{  0, GPIOF_IN,            "*PCA_IRQ#" },
--+	{  1, GPIOF_IN,            "ARM_DIO1" },
--+	{  2, GPIOF_IN,            "ARM_DIO2" },
--+	{  3, GPIOF_IN,            "ARM_DIO3" },
--+	{  4, GPIOF_IN,            "ARM_DIO4" },
--+	{  5, GPIOF_IN,            "ARM_DIO5" },
--+	{  8, GPIOF_OUT_INIT_HIGH, "*WDOGEN#" },
--+#endif
--+	{ 11, GPIOF_OUT_INIT_HIGH, "*SER_EN"   },       // console serial enable
--+	{ 12, GPIOF_IN,            "*GSC_IRQ#" },
--+	{ 13, GPIOF_OUT_INIT_HIGH, "*PCIE_RST#"},
--+	// GSC GPIO
--+#if !(IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
--+	{100, GPIOF_IN,            "*USER_PB#" },
--+#endif
--+	{103, GPIOF_OUT_INIT_HIGH, "*5V_EN" },         // 5V aux supply enable
--+	{108, GPIOF_IN,            "*SMUXDA0" },
--+	{109, GPIOF_IN,            "*SMUXDA1" },
--+	{110, GPIOF_IN,            "*SMUXDA2" },
--+	{111, GPIOF_IN,            "*SMUXDB0" },
--+	{112, GPIOF_IN,            "*SMUXDB1" },
--+	{113, GPIOF_IN,            "*SMUXDB2" },
--+	// PCA GPIO
--+	{118, GPIOF_IN,            "*USIM2_DET#"},     // USIM2 Detect
--+	{120, GPIOF_OUT_INIT_LOW,  "*USB1_PCI_SEL"},   // USB1  Select (1=PCI, 0=FP)
--+	{121, GPIOF_OUT_INIT_LOW,  "*USB2_PCI_SEL"},   // USB2  Select (1=PCI, 0=FP)
--+	{122, GPIOF_IN,            "*USIM1_DET#"},     // USIM1 Detect
--+	{123, GPIOF_OUT_INIT_HIGH, "*COM1_DTR#" },     // J21/J10
--+	{124, GPIOF_IN,            "*COM1_DSR#" },     // J21/J10
--+	{127, GPIOF_IN,            "PCA_DIO0" },
--+	{128, GPIOF_IN,            "PCA_DIO1" },
--+	{129, GPIOF_IN,            "PCA_DIO2" },
--+	{130, GPIOF_IN,            "PCA_DIO3" },
--+	{131, GPIOF_IN,            "PCA_DIO4" },
--+};
--+
--+static struct gpio cambria_gpios_gw2360[] = {
--+	// ARM GPIO
--+	{  0, GPIOF_IN,            "*PCA_IRQ#" },
--+	{ 11, GPIOF_OUT_INIT_LOW, "*SER0_EN#" },
--+	{ 12, GPIOF_IN,            "*GSC_IRQ#" },
--+	{ 13, GPIOF_OUT_INIT_HIGH, "*PCIE_RST#"},
--+	// GSC GPIO
--+#if !(IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
--+	{100, GPIOF_IN,            "*USER_PB#" },
--+#endif
--+	{108, GPIOF_OUT_INIT_LOW,  "*ENET1_EN#" },     // ENET1 TX Enable
--+	{109, GPIOF_IN,            "*ENET1_PRES#" },   // ENET1 Detect (0=SFP present)
--+	{110, GPIOF_OUT_INIT_LOW,  "*ENET2_EN#" },     // ENET2 TX Enable
--+	{111, GPIOF_IN,            "*ENET2_PRES#"},    // ENET2 Detect (0=SFP present)
--+	// PCA GPIO
--+	{116, GPIOF_OUT_INIT_HIGH, "*USIM2_LOC"},      // USIM2 Select (1=Loc, 0=Rem)
--+	{117, GPIOF_IN,            "*USIM2_DET_LOC#" },// USIM2 Detect (Local Slot)
--+	{118, GPIOF_IN,            "*USIM2_DET_REM#" },// USIM2 Detect (Remote Slot)
--+	{120, GPIOF_OUT_INIT_LOW,  "*USB1_PCI_SEL"},   // USB1  Select (1=PCIe1, 0=J1)
--+	{121, GPIOF_OUT_INIT_LOW,  "*USB2_PCI_SEL"},   // USB2  Select (1=PCIe2, 0=J1)
--+	{122, GPIOF_IN,            "*USIM1_DET#"},     // USIM1 Detect
--+	{127, GPIOF_IN,            "DIO0" },
--+	{128, GPIOF_IN,            "DIO1" },
--+	{129, GPIOF_IN,            "DIO2" },
--+	{130, GPIOF_IN,            "DIO3" },
--+	{131, GPIOF_IN,            "DIO4" },
--+};
--+
--+static struct latch_led cambria_latch_leds[] = {
--+	{
--+		.name	= "ledA",  /* green led */
--+		.bit	= 0,
--+	},
--+	{
--+		.name	= "ledB",  /* green led */
--+		.bit	= 1,
--+	},
--+	{
--+		.name	= "ledC",  /* green led */
--+		.bit	= 2,
--+	},
--+	{
--+		.name	= "ledD",  /* green led */
--+		.bit	= 3,
--+	},
--+	{
--+		.name	= "ledE",  /* green led */
--+		.bit	= 4,
--+	},
--+	{
--+		.name	= "ledF",  /* green led */
--+		.bit	= 5,
--+	},
--+	{
--+		.name	= "ledG",  /* green led */
--+		.bit	= 6,
--+	},
--+	{
--+		.name	= "ledH",  /* green led */
--+		.bit	= 7,
--+	}
--+};
--+
--+static struct latch_led_platform_data cambria_latch_leds_data = {
--+	.num_leds	= 8,
--+	.leds		= cambria_latch_leds,
--+	.mem		= 0x53F40000,
--+};
--+
--+static struct platform_device cambria_latch_leds_device = {
--+	.name		= "leds-latch",
--+	.id		= -1,
--+	.dev.platform_data = &cambria_latch_leds_data,
--+};
--+
--+static struct resource cambria_usb0_resources[] = {
--+	{
--+		.start	= 0xCD000000,
--+		.end	= 0xCD000300,
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.start	= 32,
--+		.flags	= IORESOURCE_IRQ,
--+	},
--+};
--+
--+static struct resource cambria_usb1_resources[] = {
--+	{
--+		.start	= 0xCE000000,
--+		.end	= 0xCE000300,
--+		.flags	= IORESOURCE_MEM,
--+	},
--+	{
--+		.start	= 33,
--+		.flags	= IORESOURCE_IRQ,
--+	},
--+};
--+
--+static u64 ehci_dma_mask = ~(u32)0;
--+
--+static struct usb_ehci_pdata cambria_usb_pdata = {
--+	.big_endian_desc = 1,
--+	.big_endian_mmio = 1,
--+	.has_tt = 1,
--+	.caps_offset = 0x100,
--+};
--+
--+static struct platform_device cambria_usb0_device =  {
--+	.name		= "ehci-platform",
--+	.id		= 0,
--+	.resource	= cambria_usb0_resources,
--+	.num_resources	= ARRAY_SIZE(cambria_usb0_resources),
--+	.dev = {
--+		.dma_mask		= &ehci_dma_mask,
--+		.coherent_dma_mask	= 0xffffffff,
--+		.platform_data = &cambria_usb_pdata,
--+	},
--+};
--+
--+static struct platform_device cambria_usb1_device = {
--+	.name		= "ehci-platform",
--+	.id		= 1,
--+	.resource	= cambria_usb1_resources,
--+	.num_resources	= ARRAY_SIZE(cambria_usb1_resources),
--+	.dev = {
--+		.dma_mask		= &ehci_dma_mask,
--+		.coherent_dma_mask	= 0xffffffff,
--+		.platform_data = &cambria_usb_pdata,
--+	},
--+};
--+
--+static struct gw_i2c_pld_platform_data gw_i2c_pld_data0 = {
--+	.gpio_base	= 16,
--+	.nr_gpio	= 8,
--+};
--+
--+static struct gw_i2c_pld_platform_data gw_i2c_pld_data1 = {
--+	.gpio_base	= 24,
--+	.nr_gpio	= 2,
--+};
--+
--+
--+static struct gpio_keys_button cambria_gpio_buttons[] = {
--+	{
--+		.desc		= "user",
--+		.type		= EV_KEY,
--+		.code		= BTN_0,
--+		.debounce_interval = 6,
--+		.gpio		= 25,
--+	}
--+};
--+
--+static struct gpio_keys_platform_data cambria_gpio_buttons_data = {
--+	.poll_interval	= 500,
--+	.nbuttons	= 1,
--+	.buttons	= cambria_gpio_buttons,
--+};
--+
--+static struct platform_device cambria_gpio_buttons_device = {
--+	.name			= "gpio-keys-polled",
--+	.id			= -1,
--+	.dev.platform_data	= &cambria_gpio_buttons_data,
--+};
--+
--+static struct platform_device *cambria_devices[] __initdata = {
--+	&cambria_i2c_gpio,
--+	&cambria_flash,
--+	&cambria_uart,
--+};
--+
--+static int cambria_register_gpio(struct gpio *array, size_t num)
--+{
--+	int i, err, ret;
--+
--+	ret = 0;
--+	for (i = 0; i < num; i++, array++) {
--+		const char *label = array->label;
--+		if (label[0] == '*')
--+			label++;
--+		err = gpio_request_one(array->gpio, array->flags, label);
--+		if (err)
--+			ret = err;
--+		else {
--+			err = gpio_export(array->gpio, array->label[0] != '*');
--+		}
--+	}
--+	return ret;
--+}
--+
--+static void __init cambria_gw23xx_setup(void)
--+{
--+	cambria_gpio_resources[0].start = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) |\
--+																		(1 << 5) | (1 << 8) | (1 << 9) | (1 << 12);
--+	cambria_gpio_resources[0].end = cambria_gpio_resources[0].start;
--+
--+	platform_device_register(&cambria_npec_device);
--+	platform_device_register(&cambria_npea_device);
--+}
--+
--+static void __init cambria_gw2350_setup(void)
--+{
--+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
--+	cambria_optional_uart_data[0].mapbase	= 0x52FF0000;
--+	cambria_optional_uart_data[0].membase	= (void __iomem *)ioremap(0x52FF0000, 0x0fff);
--+	cambria_optional_uart_data[0].irq		= IRQ_IXP4XX_GPIO3;
--+
--+	*IXP4XX_EXP_CS3 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_EDGE_RISING);
--+	cambria_optional_uart_data[1].mapbase	= 0x53FF0000;
--+	cambria_optional_uart_data[1].membase	= (void __iomem *)ioremap(0x53FF0000, 0x0fff);
--+	cambria_optional_uart_data[1].irq		= IRQ_IXP4XX_GPIO4;
--+
--+	cambria_gpio_resources[0].start = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) |\
--+																		(1 << 5) | (1 << 8) | (1 << 9) | (1 << 12);
--+	cambria_gpio_resources[0].end = cambria_gpio_resources[0].start;
--+
--+	platform_device_register(&cambria_optional_uart);
--+	platform_device_register(&cambria_npec_device);
--+	platform_device_register(&cambria_npea_device);
--+
--+	platform_device_register(&cambria_usb0_device);
--+	platform_device_register(&cambria_usb1_device);
--+
--+	platform_device_register(&cambria_gpio_leds_device);
--+
--+	/* gpio config (/sys/class/gpio) */
--+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2350));
--+}
--+
--+static void __init cambria_gw2358_setup(void)
--+{
--+	*IXP4XX_EXP_CS3 = 0xBFFF3C43; // bit0 = 16bit vs 8bit bus
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
--+	cambria_optional_uart_data[0].mapbase	= 0x53FC0000;
--+	cambria_optional_uart_data[0].membase	= (void __iomem *)ioremap(0x53FC0000, 0x0fff);
--+	cambria_optional_uart_data[0].irq		= IRQ_IXP4XX_GPIO3;
--+
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_EDGE_RISING);
--+	cambria_optional_uart_data[1].mapbase	= 0x53F80000;
--+	cambria_optional_uart_data[1].membase	= (void __iomem *)ioremap(0x53F80000, 0x0fff);
--+	cambria_optional_uart_data[1].irq		= IRQ_IXP4XX_GPIO4;
--+
--+	cambria_gpio_resources[0].start = (1 << 14) | (1 << 16) | (1 << 17) | (1 << 18) |\
--+																		(1 << 19) | (1 << 20) | (1 << 24) | (1 << 25);
--+	cambria_gpio_resources[0].end = cambria_gpio_resources[0].start;
--+
--+	platform_device_register(&cambria_optional_uart);
--+
--+	platform_device_register(&cambria_npec_device);
--+	platform_device_register(&cambria_npea_device);
--+
--+	platform_device_register(&cambria_usb0_device);
--+	platform_device_register(&cambria_usb1_device);
--+
--+	platform_device_register(&cambria_pata);
--+
--+	cambria_gpio_leds[0].gpio = 24;
--+	platform_device_register(&cambria_gpio_leds_device);
--+
--+	platform_device_register(&cambria_latch_leds_device);
--+
--+	platform_device_register(&cambria_gpio_buttons_device);
--+
--+	/* gpio config (/sys/class/gpio) */
--+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2358));
--+}
--+
--+static void __init cambria_gw2359_setup(void)
--+{
--+#if defined(CONFIG_MVSWITCH_PHY) || defined(CONFIG_MVSWITCH_PHY_MODULE)
--+	/* The mvswitch driver has some hard-coded values which could
--+	 * easily be turned into a platform resource if needed.  For now they
--+	 * match our hardware configuration:
--+	 *  MV_BASE    0x10 - phy base address
--+	 *  MV_WANPORT 0 - Port0 (ENET2) is WAN (SFP module)
--+	 *  MV_CPUPORT 5 - Port5 is CPU NPEA (eth1)
--+	 *
--+	 * The mvswitch driver registers a fixup which forces a driver match
--+	 * if phy_addr matches MV_BASE
--+	 *
--+	 * Two static defautl VLAN's are created: WAN port in 1, and all other ports
--+	 * in the other.
--+	 */
--+	cambria_npea_data.phy = 0x10; // mvswitch driver catches this
--+#else
--+	// Switch Port5 to CPU is MII<->MII (no PHY) - this disables the genphy driver
--+	cambria_npea_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
--+	// CPU NPE-C is in bridge bypass mode to Port4 PHY@0x14
--+	cambria_npec_data.phy = 0x14;
--+#endif
--+	platform_device_register(&cambria_npec_device);
--+	platform_device_register(&cambria_npea_device);
--+
--+	platform_device_register(&cambria_usb0_device);
--+	platform_device_register(&cambria_usb1_device);
--+
--+	cambria_gpio_leds_data.num_leds = 3;
--+	cambria_gpio_leds[0].name = "user1";
--+	cambria_gpio_leds[0].gpio = 125; // PNLLED1#
--+	cambria_gpio_leds[1].gpio = 126; // PNLLED3#
--+	cambria_gpio_leds[2].gpio = 119; // PNLLED4#
--+	platform_device_register(&cambria_gpio_leds_device);
--+
--+#if (IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
--+	cambria_gpio_buttons[0].gpio = 100;
--+	platform_device_register(&cambria_gpio_buttons_device);
--+#endif
--+
--+	/* gpio config (/sys/class/gpio) */
--+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2359));
--+}
--+
--+static void __init cambria_gw2360_setup(void)
--+{
--+	/* The GW2360 has 8 UARTs in addition to the 1 IXP4xxx UART.
--+	 * The chip-selects are expanded via a 3-to-8 decoder and CS2
--+	 * and they are 8bit devices
--+	 */
--+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
--+	cambria_optional_uart_data[0].mapbase = 0x52000000;
--+	cambria_optional_uart_data[0].membase = (void __iomem *)ioremap(0x52000000, 0x0fff);
--+	cambria_optional_uart_data[0].uartclk = 18432000;
--+	cambria_optional_uart_data[0].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[0].irq     = IRQ_IXP4XX_GPIO2;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart_data[1].mapbase = 0x52000008;
--+	cambria_optional_uart_data[1].membase = (void __iomem *)ioremap(0x52000008, 0x0fff);
--+	cambria_optional_uart_data[1].uartclk = 18432000;
--+	cambria_optional_uart_data[1].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[1].irq     = IRQ_IXP4XX_GPIO3;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart_data[2].mapbase = 0x52000010;
--+	cambria_optional_uart_data[2].membase = (void __iomem *)ioremap(0x52000010, 0x0fff);
--+	cambria_optional_uart_data[2].uartclk = 18432000;
--+	cambria_optional_uart_data[2].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[2].irq     = IRQ_IXP4XX_GPIO4;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart_data[3].mapbase = 0x52000018;
--+	cambria_optional_uart_data[3].membase = (void __iomem *)ioremap(0x52000018, 0x0fff);
--+	cambria_optional_uart_data[3].uartclk = 18432000;
--+	cambria_optional_uart_data[3].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[3].irq     = IRQ_IXP4XX_GPIO5;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO5, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart_data[4].mapbase = 0x52000020;
--+	cambria_optional_uart_data[4].membase = (void __iomem *)ioremap(0x52000020, 0x0fff);
--+	cambria_optional_uart_data[4].uartclk = 18432000;
--+	cambria_optional_uart_data[4].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[4].irq     = IRQ_IXP4XX_GPIO8;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart_data[5].mapbase = 0x52000028;
--+	cambria_optional_uart_data[5].membase = (void __iomem *)ioremap(0x52000028, 0x0fff);
--+	cambria_optional_uart_data[5].uartclk = 18432000;
--+	cambria_optional_uart_data[5].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[5].irq     = IRQ_IXP4XX_GPIO9;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart_data[6].mapbase = 0x52000030;
--+	cambria_optional_uart_data[6].membase = (void __iomem *)ioremap(0x52000030, 0x0fff);
--+	cambria_optional_uart_data[6].uartclk = 18432000;
--+	cambria_optional_uart_data[6].iotype  = UPIO_MEM;
--+	cambria_optional_uart_data[6].irq     = IRQ_IXP4XX_GPIO10;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_EDGE_RISING);
--+
--+	cambria_optional_uart.num_resources   = 7,
--+	platform_device_register(&cambria_optional_uart);
--+
--+#if defined(CONFIG_MVSWITCH_PHY) || defined(CONFIG_MVSWITCH_PHY_MODULE)
--+	/* The mvswitch driver has some hard-coded values which could
--+	 * easily be turned into a platform resource if needed.  For now they
--+	 * match our hardware configuration:
--+	 *  MV_BASE    0x10 - phy base address
--+	 *  MV_WANPORT 0 - Port0 (ENET2) is WAN (SFP module)
--+	 *  MV_CPUPORT 5 - Port5 is CPU NPEA (eth1)
--+	 *
--+	 * The mvswitch driver registers a fixup which forces a driver match
--+	 * if phy_addr matches MV_BASE
--+	 *
--+	 * Two static defautl VLAN's are created: WAN port in 1, and all other ports
--+	 * in the other.
--+	 */
--+	cambria_npea_data.phy = 0x10; // mvswitch driver catches this
--+#else
--+	// Switch Port5 to CPU is MII<->MII (no PHY) - this disables the generic PHY driver
--+	cambria_npea_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
--+#endif
--+
--+	// disable genphy autonegotiation on NPE-C PHY (eth1) as its 100BaseFX
--+	//cambria_npec_data.noautoneg = 1;   // disable autoneg
--+	cambria_npec_data.speed_10 = 0;    // 100mbps
--+	cambria_npec_data.half_duplex = 0; // full-duplex
--+	platform_device_register(&cambria_npec_device);
--+	platform_device_register(&cambria_npea_device);
--+
--+	platform_device_register(&cambria_usb0_device);
--+	platform_device_register(&cambria_usb1_device);
--+
--+	cambria_gpio_leds_data.num_leds = 3;
--+	cambria_gpio_leds[0].name = "user1";
--+	cambria_gpio_leds[0].gpio = 125;
--+	cambria_gpio_leds[1].gpio = 126;
--+	cambria_gpio_leds[2].gpio = 119;
--+	platform_device_register(&cambria_gpio_leds_device);
--+
--+#if (IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
--+	cambria_gpio_buttons[0].gpio = 100;
--+	platform_device_register(&cambria_gpio_buttons_device);
--+#endif
--+
--+#ifdef SFP_SERIALID
--+	/* the SFP modules each have an i2c bus for serial ident via GSC GPIO
--+	 * To use these the i2c-gpio driver must be changed to use the _cansleep
--+	 * varients of gpio_get_value/gpio_set_value (I don't know why it doesn't
--+	 * use that anyway as it doesn't operate in an IRQ context).
--+	 * Additionally the i2c-gpio module must set the gpio to output-high prior
--+	 * to changing direction to an input to enable internal Pullups
--+	 */
--+	platform_device_register(&cambria_i2c_gpio_sfpa);
--+	platform_device_register(&cambria_i2c_gpio_sfpb);
--+#endif
--+
--+	/* gpio config (/sys/class/gpio) */
--+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2360));
--+}
--+
--+static struct cambria_board_info cambria_boards[] __initdata = {
--+	{
--+		.model	= "GW2350",
--+		.setup	= cambria_gw2350_setup,
--+	}, {
--+		.model	= "GW2351",
--+		.setup	= cambria_gw2350_setup,
--+	}, {
--+		.model	= "GW2358",
--+		.setup	= cambria_gw2358_setup,
--+	}, {
--+		.model	= "GW2359",
--+		.setup	= cambria_gw2359_setup,
--+	}, {
--+		.model	= "GW2360",
--+		.setup	= cambria_gw2360_setup,
--+	}, {
--+		.model	= "GW2371",
--+		.setup	= cambria_gw2358_setup,
--+	}
--+};
--+
--+static struct cambria_board_info * __init cambria_find_board_info(char *model)
--+{
--+	int i;
--+	model[6] = '\0';
--+
--+	for (i = 0; i < ARRAY_SIZE(cambria_boards); i++) {
--+		struct cambria_board_info *info = &cambria_boards[i];
--+		if (strcmp(info->model, model) == 0)
--+			return info;
--+	}
--+
--+	return NULL;
--+}
--+
--+static struct nvmem_device *at24_nvmem;
--+
--+static void at24_setup(struct nvmem_device *mem_acc, void *context)
--+{
--+	char mac_addr[ETH_ALEN];
--+	char model[7];
--+
--+	at24_nvmem = mem_acc;
--+
--+	/* Read MAC addresses */
--+	if (nvmem_device_read(at24_nvmem, 0x0, 6, mac_addr) == 6) {
--+		memcpy(&cambria_npec_data.hwaddr, mac_addr, ETH_ALEN);
--+	}
--+	if (nvmem_device_read(at24_nvmem, 0x6, 6, mac_addr) == 6) {
--+		memcpy(&cambria_npea_data.hwaddr, mac_addr, ETH_ALEN);
--+	}
--+
--+	/* Read the first 6 bytes of the model number */
--+	if (nvmem_device_read(at24_nvmem, 0x20, 6, model) == 6) {
--+		cambria_info = cambria_find_board_info(model);
--+	}
--+
--+}
--+
--+static struct at24_platform_data cambria_eeprom_info = {
--+	.byte_len	= 1024,
--+	.page_size	= 16,
--+	.flags		= AT24_FLAG_READONLY,
--+	.setup		= at24_setup,
--+};
--+
--+static struct pca953x_platform_data cambria_pca_data = {
--+	.gpio_base = 100,
--+	.irq_base = -1,
--+};
--+
--+static struct pca953x_platform_data cambria_pca2_data = {
--+	.gpio_base = 116,
--+	.irq_base = -1,
--+};
--+
--+static struct i2c_board_info __initdata cambria_i2c_board_info[] = {
--+	{
--+		I2C_BOARD_INFO("pca9555", 0x23),
--+		.platform_data = &cambria_pca_data,
--+	},
--+	{
--+		I2C_BOARD_INFO("pca9555", 0x27),
--+		.platform_data = &cambria_pca2_data,
--+	},
--+	{
--+		I2C_BOARD_INFO("ds1672", 0x68),
--+	},
--+	{
--+		I2C_BOARD_INFO("gsp", 0x29),
--+	},
--+	{
--+		I2C_BOARD_INFO("ad7418", 0x28),
--+	},
--+	{
--+		I2C_BOARD_INFO("24c08", 0x51),
--+		.platform_data	= &cambria_eeprom_info
--+	},
--+	{
--+		I2C_BOARD_INFO("gw_i2c_pld", 0x56),
--+		.platform_data	= &gw_i2c_pld_data0,
--+	},
--+	{
--+		I2C_BOARD_INFO("gw_i2c_pld", 0x57),
--+		.platform_data	= &gw_i2c_pld_data1,
--+	},
--+};
--+
--+static void __init cambria_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	cambria_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	cambria_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE; // make sure window is writable
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(ARRAY_AND_SIZE(cambria_devices));
--+
--+	cambria_pata_resources[0].start = 0x53e00000;
--+	cambria_pata_resources[0].end = 0x53e3ffff;
--+
--+	cambria_pata_resources[1].start = 0x53e40000;
--+	cambria_pata_resources[1].end = 0x53e7ffff;
--+
--+	cambria_pata_data.cs0_cfg = IXP4XX_EXP_CS3;
--+	cambria_pata_data.cs1_cfg = IXP4XX_EXP_CS3;
--+
--+	i2c_register_board_info(0, ARRAY_AND_SIZE(cambria_i2c_board_info));
--+}
--+
--+static int __init cambria_model_setup(void)
--+{
--+	if (!machine_is_cambria())
--+		return 0;
--+
--+	if (cambria_info) {
--+		printk(KERN_DEBUG "Running on Gateworks Cambria %s\n",
--+				cambria_info->model);
--+		cambria_info->setup();
--+	} else {
--+		printk(KERN_INFO "Unknown/missing Cambria model number"
--+				" -- defaults will be used\n");
--+		cambria_gw23xx_setup();
--+	}
--+
--+	return 0;
--+}
--+late_initcall(cambria_model_setup);
--+
--+MACHINE_START(CAMBRIA, "Gateworks Cambria series")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= cambria_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
-diff --git a/target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch b/target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch
-deleted file mode 100644
-index f46b9c61bf..0000000000
---- a/target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/arch/arm/mach-ixp4xx/ixp4xx_npe.c
--+++ b/arch/arm/mach-ixp4xx/ixp4xx_npe.c
--@@ -586,6 +586,8 @@ int npe_load_firmware(struct npe *npe, c
-- 	npe_reset(npe);
-- #endif
-- 
--+	print_npe(KERN_INFO, npe, "firmware's license can be found in /usr/share/doc/LICENSE.IPL\n");
--+
-- 	print_npe(KERN_INFO, npe, "firmware functionality 0x%X, "
-- 		  "revision 0x%X:%X\n", (image->id >> 16) & 0xFF,
-- 		  (image->id >> 8) & 0xFF, image->id & 0xFF);
-diff --git a/target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch b/target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch
-deleted file mode 100644
-index cc77c5dddc..0000000000
---- a/target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch
-+++ /dev/null
-@@ -1,127 +0,0 @@
--From e3eab80fb5d0a7d7fdb0f2f231b27161d5ec3804 Mon Sep 17 00:00:00 2001
--From: Jonas Gorski <jogo@openwrt.org>
--Date: Sun, 30 Jun 2013 15:52:53 +0200
--Subject: [PATCH 23/36] 205-npe_driver_separate_phy_functions.patch
--
-----
-- drivers/net/ethernet/xscale/ixp4xx_eth.c |   70 ++++++++++++++++++++++--------
-- 1 file changed, 51 insertions(+), 19 deletions(-)
--
----- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
--+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
--@@ -588,6 +588,51 @@ static void ixp4xx_adjust_link(struct ne
-- 	       dev->name, port->speed, port->duplex ? "full" : "half");
-- }
-- 
--+static int ixp4xx_phy_connect(struct net_device *dev)
--+{
--+	struct port *port = netdev_priv(dev);
--+	struct eth_plat_info *plat = port->plat;
--+	char phy_id[MII_BUS_ID_SIZE + 3];
--+
--+	snprintf(phy_id, MII_BUS_ID_SIZE + 3, PHY_ID_FMT,
--+		mdio_bus->id, plat->phy);
--+	port->phydev = phy_connect(dev, phy_id, &ixp4xx_adjust_link,
--+				   PHY_INTERFACE_MODE_MII);
--+	if (IS_ERR(port->phydev)) {
--+		printk(KERN_ERR "%s: Could not attach to PHY\n", dev->name);
--+		return PTR_ERR(port->phydev);
--+	}
--+
--+	/* mask with MAC supported features */
--+	port->phydev->supported &= PHY_BASIC_FEATURES;
--+	port->phydev->advertising = port->phydev->supported;
--+
--+	port->phydev->irq = PHY_POLL;
--+
--+	return 0;
--+}
--+
--+static void ixp4xx_phy_disconnect(struct net_device *dev)
--+{
--+	struct port *port = netdev_priv(dev);
--+
--+	phy_disconnect(port->phydev);
--+}
--+
--+static void ixp4xx_phy_start(struct net_device *dev)
--+{
--+	struct port *port = netdev_priv(dev);
--+
--+	port->speed = 0;	/* force "link up" message */
--+	phy_start(port->phydev);
--+}
--+
--+static void ixp4xx_phy_stop(struct net_device *dev)
--+{
--+	struct port *port = netdev_priv(dev);
--+
--+	phy_stop(port->phydev);
--+}
-- 
-- static inline void debug_pkt(struct net_device *dev, const char *func,
-- 			     u8 *data, int len)
--@@ -1242,8 +1287,7 @@ static int eth_open(struct net_device *d
-- 		return err;
-- 	}
-- 
---	port->speed = 0;	/* force "link up" message */
---	phy_start(dev->phydev);
--+	ixp4xx_phy_start(dev);
-- 
-- 	for (i = 0; i < ETH_ALEN; i++)
-- 		__raw_writel(dev->dev_addr[i], &port->regs->hw_addr[i]);
--@@ -1364,7 +1408,7 @@ static int eth_close(struct net_device *
-- 		printk(KERN_CRIT "%s: unable to disable loopback\n",
-- 		       dev->name);
-- 
---	phy_stop(dev->phydev);
--+	ixp4xx_phy_stop(dev);
-- 
-- 	if (!ports_open)
-- 		qmgr_disable_irq(TXDONE_QUEUE);
--@@ -1391,7 +1435,6 @@ static int eth_init_one(struct platform_
-- 	struct eth_plat_info *plat = dev_get_platdata(&pdev->dev);
-- 	struct phy_device *phydev = NULL;
-- 	u32 regs_phys;
---	char phy_id[MII_BUS_ID_SIZE + 3];
-- 	int err;
-- 
-- 	if (!(dev = alloc_etherdev(sizeof(struct port))))
--@@ -1449,16 +1492,9 @@ static int eth_init_one(struct platform_
-- 	__raw_writel(DEFAULT_CORE_CNTRL, &port->regs->core_control);
-- 	udelay(50);
-- 
---	snprintf(phy_id, MII_BUS_ID_SIZE + 3, PHY_ID_FMT,
---		mdio_bus->id, plat->phy);
---	phydev = phy_connect(dev, phy_id, &ixp4xx_adjust_link,
---			     PHY_INTERFACE_MODE_MII);
---	if (IS_ERR(phydev)) {
---		err = PTR_ERR(phydev);
--+	err = ixp4xx_phy_connect(dev);
--+	if (err)
-- 		goto err_free_mem;
---	}
---
---	phydev->irq = PHY_POLL;
-- 
-- 	if ((err = register_netdev(dev)))
-- 		goto err_phy_dis;
--@@ -1469,7 +1505,7 @@ static int eth_init_one(struct platform_
-- 	return 0;
-- 
-- err_phy_dis:
---	phy_disconnect(phydev);
--+	ixp4xx_phy_disconnect(phydev);
-- err_free_mem:
-- 	npe_port_tab[NPE_ID(port->id)] = NULL;
-- 	release_resource(port->mem_res);
--@@ -1487,7 +1523,7 @@ static int eth_remove_one(struct platfor
-- 	struct port *port = netdev_priv(dev);
-- 
-- 	unregister_netdev(dev);
---	phy_disconnect(phydev);
--+	ixp4xx_phy_disconnect(phydev);
-- 	npe_port_tab[NPE_ID(port->id)] = NULL;
-- 	npe_release(port->npe);
-- 	release_resource(port->mem_res);
-diff --git a/target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch b/target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch
-deleted file mode 100644
-index e12764e053..0000000000
---- a/target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch
-+++ /dev/null
-@@ -1,100 +0,0 @@
----- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
--+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
--@@ -171,12 +171,13 @@ struct port {
-- 	struct npe *npe;
-- 	struct net_device *netdev;
-- 	struct napi_struct napi;
--+	struct phy_device *phydev;
-- 	struct eth_plat_info *plat;
-- 	buffer_t *rx_buff_tab[RX_DESCS], *tx_buff_tab[TX_DESCS];
-- 	struct desc *desc_tab;	/* coherent */
-- 	u32 desc_tab_phys;
-- 	int id;			/* logical port ID */
---	int speed, duplex;
--+	int link, speed, duplex;
-- 	u8 firmware[4];
-- 	int hwts_tx_en;
-- 	int hwts_rx_en;
--@@ -558,36 +559,46 @@ static void ixp4xx_mdio_remove(void)
-- }
-- 
-- 
---static void ixp4xx_adjust_link(struct net_device *dev)
--+static void ixp4xx_update_link(struct net_device *dev)
-- {
-- 	struct port *port = netdev_priv(dev);
---	struct phy_device *phydev = dev->phydev;
---
---	if (!phydev->link) {
---		if (port->speed) {
---			port->speed = 0;
---			printk(KERN_INFO "%s: link down\n", dev->name);
---		}
---		return;
---	}
---
---	if (port->speed == phydev->speed && port->duplex == phydev->duplex)
---		return;
---
---	port->speed = phydev->speed;
---	port->duplex = phydev->duplex;
-- 
---	if (port->duplex)
--+	if (port->duplex == DUPLEX_FULL)
-- 		__raw_writel(DEFAULT_TX_CNTRL0 & ~TX_CNTRL0_HALFDUPLEX,
-- 			     &port->regs->tx_control[0]);
-- 	else
-- 		__raw_writel(DEFAULT_TX_CNTRL0 | TX_CNTRL0_HALFDUPLEX,
-- 			     &port->regs->tx_control[0]);
-- 
--+	netif_carrier_on(dev);
-- 	printk(KERN_INFO "%s: link up, speed %u Mb/s, %s duplex\n",
-- 	       dev->name, port->speed, port->duplex ? "full" : "half");
-- }
-- 
--+static void ixp4xx_adjust_link(struct net_device *dev)
--+{
--+	struct port *port = netdev_priv(dev);
--+	struct phy_device *phydev = port->phydev;
--+	int status_change = 0;
--+
--+	if (phydev->link) {
--+		if (port->duplex != phydev->duplex
--+		    || port->speed != phydev->speed) {
--+			status_change = 1;
--+		}
--+	}
--+
--+	if (phydev->link != port->link)
--+		status_change = 1;
--+
--+	port->link = phydev->link;
--+	port->speed = phydev->speed;
--+	port->duplex = phydev->duplex;
--+
--+	if (status_change)
--+		ixp4xx_update_link(dev);
--+}
--+
-- static int ixp4xx_phy_connect(struct net_device *dev)
-- {
-- 	struct port *port = netdev_priv(dev);
--@@ -623,7 +634,6 @@ static void ixp4xx_phy_start(struct net_
-- {
-- 	struct port *port = netdev_priv(dev);
-- 
---	port->speed = 0;	/* force "link up" message */
-- 	phy_start(port->phydev);
-- }
-- 
--@@ -1499,6 +1509,10 @@ static int eth_init_one(struct platform_
-- 	if ((err = register_netdev(dev)))
-- 		goto err_phy_dis;
-- 
--+	port->link = 0;
--+	port->speed = 0;
--+	port->duplex = -1;
--+
-- 	printk(KERN_INFO "%s: MII PHY %i on %s\n", dev->name, plat->phy,
-- 	       npe_name(port->npe));
-- 
-diff --git a/target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch b/target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch
-deleted file mode 100644
-index a23644a167..0000000000
---- a/target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch
-+++ /dev/null
-@@ -1,153 +0,0 @@
--TODO: take care of additional PHYs through the PHY abstraction layer
--
----- a/arch/arm/mach-ixp4xx/include/mach/platform.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/platform.h
--@@ -95,12 +95,23 @@ struct ixp4xx_pata_data {
-- #define IXP4XX_ETH_NPEB		0x10
-- #define IXP4XX_ETH_NPEC		0x20
-- 
--+#define IXP4XX_ETH_PHY_MAX_ADDR	32
--+
-- /* Information about built-in Ethernet MAC interfaces */
-- struct eth_plat_info {
-- 	u8 phy;		/* MII PHY ID, 0 - 31 */
-- 	u8 rxq;		/* configurable, currently 0 - 31 only */
-- 	u8 txreadyq;
-- 	u8 hwaddr[6];
--+
--+	u32 phy_mask;
--+#if 0
--+	int speed;
--+	int duplex;
--+#else
--+	int speed_10;
--+	int half_duplex;
--+#endif
-- };
-- 
-- /* Information about built-in HSS (synchronous serial) interfaces */
----- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
--+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
--@@ -605,6 +605,37 @@ static int ixp4xx_phy_connect(struct net
-- 	struct eth_plat_info *plat = port->plat;
-- 	char phy_id[MII_BUS_ID_SIZE + 3];
-- 
--+	if (plat->phy == IXP4XX_ETH_PHY_MAX_ADDR) {
--+#if 0
--+		switch (plat->speed) {
--+		case SPEED_10:
--+		case SPEED_100:
--+			break;
--+		default:
--+			printk(KERN_ERR "%s: invalid speed (%d)\n",
--+					dev->name, plat->speed);
--+			return -EINVAL;
--+		}
--+
--+		switch (plat->duplex) {
--+		case DUPLEX_HALF:
--+		case DUPLEX_FULL:
--+			break;
--+		default:
--+			printk(KERN_ERR "%s: invalid duplex mode (%d)\n",
--+					dev->name, plat->duplex);
--+			return -EINVAL;
--+		}
--+		port->speed = plat->speed;
--+		port->duplex = plat->duplex;
--+#else
--+		port->speed = plat->speed_10 ? SPEED_10 : SPEED_100;
--+		port->duplex = plat->half_duplex ? DUPLEX_HALF : DUPLEX_FULL;
--+#endif
--+
--+		return 0;
--+	}
--+
-- 	snprintf(phy_id, MII_BUS_ID_SIZE + 3, PHY_ID_FMT,
-- 		mdio_bus->id, plat->phy);
-- 	port->phydev = phy_connect(dev, phy_id, &ixp4xx_adjust_link,
--@@ -627,21 +658,32 @@ static void ixp4xx_phy_disconnect(struct
-- {
-- 	struct port *port = netdev_priv(dev);
-- 
---	phy_disconnect(port->phydev);
--+	if (port->phydev)
--+		phy_disconnect(port->phydev);
-- }
-- 
-- static void ixp4xx_phy_start(struct net_device *dev)
-- {
-- 	struct port *port = netdev_priv(dev);
-- 
---	phy_start(port->phydev);
--+	if (port->phydev) {
--+		phy_start(port->phydev);
--+	} else {
--+		port->link = 1;
--+		ixp4xx_update_link(dev);
--+	}
-- }
-- 
-- static void ixp4xx_phy_stop(struct net_device *dev)
-- {
-- 	struct port *port = netdev_priv(dev);
-- 
---	phy_stop(port->phydev);
--+	if (port->phydev) {
--+		phy_stop(port->phydev);
--+	} else {
--+		port->link = 0;
--+		ixp4xx_update_link(dev);
--+	}
-- }
-- 
-- static inline void debug_pkt(struct net_device *dev, const char *func,
--@@ -1030,6 +1072,8 @@ static void eth_set_mcast_list(struct ne
-- 
-- static int eth_ioctl(struct net_device *dev, struct ifreq *req, int cmd)
-- {
--+	struct port *port = netdev_priv(dev);
--+
-- 	if (!netif_running(dev))
-- 		return -EINVAL;
-- 
--@@ -1040,6 +1084,9 @@ static int eth_ioctl(struct net_device *
-- 			return hwtstamp_get(dev, req);
-- 	}
-- 
--+	if (!port->phydev)
--+		return -EOPNOTSUPP;
--+
-- 	return phy_mii_ioctl(dev->phydev, req, cmd);
-- }
-- 
--@@ -1059,6 +1106,11 @@ static void ixp4xx_get_drvinfo(struct ne
-- 
-- static int ixp4xx_nway_reset(struct net_device *dev)
-- {
--+	struct port *port = netdev_priv(dev);
--+
--+	if (!port->phydev)
--+		return -EOPNOTSUPP;
--+
-- 	return phy_start_aneg(dev->phydev);
-- }
-- 
--@@ -1519,7 +1571,7 @@ static int eth_init_one(struct platform_
-- 	return 0;
-- 
-- err_phy_dis:
---	ixp4xx_phy_disconnect(phydev);
--+	ixp4xx_phy_disconnect(port->netdev);
-- err_free_mem:
-- 	npe_port_tab[NPE_ID(port->id)] = NULL;
-- 	release_resource(port->mem_res);
--@@ -1537,7 +1589,7 @@ static int eth_remove_one(struct platfor
-- 	struct port *port = netdev_priv(dev);
-- 
-- 	unregister_netdev(dev);
---	ixp4xx_phy_disconnect(phydev);
--+	ixp4xx_phy_disconnect(port->netdev);
-- 	npe_port_tab[NPE_ID(port->id)] = NULL;
-- 	npe_release(port->npe);
-- 	release_resource(port->mem_res);
-diff --git a/target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch b/target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch
-deleted file mode 100644
-index 66bc3e86b0..0000000000
---- a/target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch
-+++ /dev/null
-@@ -1,201 +0,0 @@
----- a/drivers/leds/Kconfig
--+++ b/drivers/leds/Kconfig
--@@ -312,6 +312,12 @@ config LEDS_LP8860
-- 	  on the LP8860 4 channel LED driver using the I2C communication
-- 	  bus.
-- 
--+config LEDS_LATCH
--+	tristate "LED Support for Memory Latched LEDs"
--+	depends on LEDS_CLASS
--+	help
--+		-- To Do --
--+
-- config LEDS_CLEVO_MAIL
-- 	tristate "Mail LED on Clevo notebook"
-- 	depends on LEDS_CLASS
----- a/drivers/leds/Makefile
--+++ b/drivers/leds/Makefile
--@@ -25,6 +25,7 @@ obj-$(CONFIG_LEDS_SUNFIRE)		+= leds-sunf
-- obj-$(CONFIG_LEDS_PCA9532)		+= leds-pca9532.o
-- obj-$(CONFIG_LEDS_GPIO_REGISTER)	+= leds-gpio-register.o
-- obj-$(CONFIG_LEDS_GPIO)			+= leds-gpio.o
--+obj-$(CONFIG_LEDS_LATCH)		+= leds-latch.o
-- obj-$(CONFIG_LEDS_LP3944)		+= leds-lp3944.o
-- obj-$(CONFIG_LEDS_LP3952)		+= leds-lp3952.o
-- obj-$(CONFIG_LEDS_LP55XX_COMMON)	+= leds-lp55xx-common.o
----- /dev/null
--+++ b/drivers/leds/leds-latch.c
--@@ -0,0 +1,152 @@
--+/*
--+ * LEDs driver for Memory Latched Devices
--+ *
--+ * Copyright (C) 2008 Gateworks Corp.
--+ * Chris Lang <clang@gateworks.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+#include <linux/kernel.h>
--+#include <linux/slab.h>
--+#include <linux/init.h>
--+#include <linux/platform_device.h>
--+#include <linux/leds.h>
--+#include <linux/workqueue.h>
--+#include <asm/io.h>
--+#include <linux/spinlock.h>
--+#include <linux/slab.h>
--+#include <linux/module.h>
--+#include <linux/export.h>
--+
--+static unsigned int mem_keep = 0xFF;
--+static spinlock_t mem_lock;
--+static unsigned char *iobase;
--+
--+struct latch_led_data {
--+	struct led_classdev cdev;
--+	struct work_struct work;
--+	u8 new_level;
--+	u8 bit;
--+	void (*set_led)(u8 bit, enum led_brightness value);
--+};
--+
--+static void latch_set_led(u8 bit, enum led_brightness value)
--+{
--+	if (value == LED_OFF)
--+		mem_keep |= (0x1 << bit);
--+	else
--+		mem_keep &= ~(0x1 << bit);
--+
--+	writeb(mem_keep, iobase);
--+}
--+
--+static void latch_led_set(struct led_classdev *led_cdev,
--+	enum led_brightness value)
--+{
--+	struct latch_led_data *led_dat =
--+		container_of(led_cdev, struct latch_led_data, cdev);
--+
--+	raw_spin_lock(mem_lock);
--+
--+	led_dat->set_led(led_dat->bit, value);
--+
--+	raw_spin_unlock(mem_lock);
--+}
--+
--+static int latch_led_probe(struct platform_device *pdev)
--+{
--+	struct latch_led_platform_data *pdata = pdev->dev.platform_data;
--+	struct latch_led *cur_led;
--+	struct latch_led_data *leds_data, *led_dat;
--+	int i, ret = 0;
--+
--+	if (!pdata)
--+		return -EBUSY;
--+
--+	leds_data = kzalloc(sizeof(struct latch_led_data) * pdata->num_leds,
--+				GFP_KERNEL);
--+	if (!leds_data)
--+		return -ENOMEM;
--+
--+	for (i = 0; i < pdata->num_leds; i++) {
--+		cur_led = &pdata->leds[i];
--+		led_dat = &leds_data[i];
--+
--+		led_dat->cdev.name = cur_led->name;
--+		led_dat->cdev.default_trigger = cur_led->default_trigger;
--+		led_dat->cdev.brightness_set = latch_led_set;
--+		led_dat->cdev.brightness = LED_OFF;
--+		led_dat->bit = cur_led->bit;
--+		led_dat->set_led = pdata->set_led ? pdata->set_led : latch_set_led;
--+
--+		ret = led_classdev_register(&pdev->dev, &led_dat->cdev);
--+		if (ret < 0) {
--+			goto err;
--+		}
--+	}
--+
--+	if (!pdata->set_led) {
--+		iobase = ioremap_nocache(pdata->mem, 0x1000);
--+		writeb(0xFF, iobase);
--+	}
--+	platform_set_drvdata(pdev, leds_data);
--+
--+	return 0;
--+
--+err:
--+	if (i > 0) {
--+		for (i = i - 1; i >= 0; i--) {
--+			led_classdev_unregister(&leds_data[i].cdev);
--+		}
--+	}
--+
--+	kfree(leds_data);
--+
--+	return ret;
--+}
--+
--+static int latch_led_remove(struct platform_device *pdev)
--+{
--+	int i;
--+	struct latch_led_platform_data *pdata = pdev->dev.platform_data;
--+	struct latch_led_data *leds_data;
--+
--+	leds_data = platform_get_drvdata(pdev);
--+
--+	for (i = 0; i < pdata->num_leds; i++) {
--+		led_classdev_unregister(&leds_data[i].cdev);
--+		cancel_work_sync(&leds_data[i].work);
--+	}
--+
--+	kfree(leds_data);
--+
--+	return 0;
--+}
--+
--+static struct platform_driver latch_led_driver = {
--+	.probe		= latch_led_probe,
--+	.remove		= latch_led_remove,
--+	.driver		= {
--+		.name	= "leds-latch",
--+		.owner	= THIS_MODULE,
--+	},
--+};
--+
--+static int __init latch_led_init(void)
--+{
--+	return platform_driver_register(&latch_led_driver);
--+}
--+
--+static void __exit latch_led_exit(void)
--+{
--+	platform_driver_unregister(&latch_led_driver);
--+}
--+
--+module_init(latch_led_init);
--+module_exit(latch_led_exit);
--+
--+MODULE_AUTHOR("Chris Lang <clang@gateworks.com>");
--+MODULE_DESCRIPTION("Latch LED driver");
----- a/include/linux/leds.h
--+++ b/include/linux/leds.h
--@@ -423,4 +423,18 @@ static inline void ledtrig_cpu(enum cpu_
-- }
-- #endif
-- 
--+/* For the leds-latch driver */
--+struct latch_led {
--+	const char *name;
--+	char *default_trigger;
--+	unsigned  bit;
--+};
--+
--+struct latch_led_platform_data {
--+	int     num_leds;
--+	u32     mem;
--+	struct latch_led *leds;
--+	void	(*set_led)(u8 bit, enum led_brightness value);
--+};
--+
-- #endif		/* __LINUX_LEDS_H_INCLUDED */
-diff --git a/target/linux/ixp4xx/patches-4.9/300-avila_support.patch b/target/linux/ixp4xx/patches-4.9/300-avila_support.patch
-deleted file mode 100644
-index c801607f4b..0000000000
---- a/target/linux/ixp4xx/patches-4.9/300-avila_support.patch
-+++ /dev/null
-@@ -1,726 +0,0 @@
----- a/arch/arm/mach-ixp4xx/avila-pci.c
--+++ b/arch/arm/mach-ixp4xx/avila-pci.c
--@@ -27,8 +27,8 @@
-- #include <mach/hardware.h>
-- #include <asm/mach-types.h>
-- 
---#define AVILA_MAX_DEV	4
---#define LOFT_MAX_DEV	6
--+#define AVILA_MAX_DEV	6
--+
-- #define IRQ_LINES	4
-- 
-- /* PCI controller GPIO to IRQ pin mappings */
--@@ -55,10 +55,8 @@ static int __init avila_map_irq(const st
-- 		IXP4XX_GPIO_IRQ(INTD)
-- 	};
-- 
---	if (slot >= 1 &&
---	    slot <= (machine_is_loft() ? LOFT_MAX_DEV : AVILA_MAX_DEV) &&
---	    pin >= 1 && pin <= IRQ_LINES)
---		return pci_irq_table[(slot + pin - 2) % 4];
--+	if (slot >= 1 && slot <= AVILA_MAX_DEV && pin >= 1 && pin <= IRQ_LINES)
--+		return pci_irq_table[(slot + pin - 2) % IRQ_LINES];
-- 
-- 	return -1;
-- }
----- a/arch/arm/mach-ixp4xx/avila-setup.c
--+++ b/arch/arm/mach-ixp4xx/avila-setup.c
--@@ -14,9 +14,16 @@
-- #include <linux/kernel.h>
-- #include <linux/init.h>
-- #include <linux/device.h>
--+#include <linux/if_ether.h>
--+#include <linux/socket.h>
--+#include <linux/netdevice.h>
-- #include <linux/serial.h>
-- #include <linux/tty.h>
-- #include <linux/serial_8250.h>
--+#include <linux/i2c.h>
--+#include <linux/platform_data/at24.h>
--+#include <linux/leds.h>
--+#include <linux/platform_data/pca953x.h>
-- #include <linux/i2c-gpio.h>
-- #include <asm/types.h>
-- #include <asm/setup.h>
--@@ -26,10 +33,25 @@
-- #include <asm/irq.h>
-- #include <asm/mach/arch.h>
-- #include <asm/mach/flash.h>
--+#include <linux/irq.h>
-- 
-- #define AVILA_SDA_PIN	7
-- #define AVILA_SCL_PIN	6
-- 
--+/* User LEDs */
--+#define AVILA_GW23XX_LED_USER_GPIO     3
--+#define AVILA_GW23X7_LED_USER_GPIO     4
--+
--+/* gpio mask used by platform device */
--+#define AVILA_GPIO_MASK        (1 << 1) | (1 << 3) | (1 << 5) | (1 << 7) | (1 << 9)
--+
--+struct avila_board_info {
--+	unsigned char	*model;
--+	void		(*setup)(void);
--+};
--+
--+static struct avila_board_info *avila_info __initdata;
--+
-- static struct flash_platform_data avila_flash_data = {
-- 	.map_name	= "cfi_probe",
-- 	.width		= 2,
--@@ -105,14 +127,69 @@ static struct platform_device avila_uart
-- 	.resource		= avila_uart_resources
-- };
-- 
---static struct resource avila_pata_resources[] = {
--+static struct resource avila_optional_uart_resources[] = {
-- 	{
---		.flags	= IORESOURCE_MEM
---	},
--+		.start  = 0x54000000,
--+		.end  = 0x54000fff,
--+		.flags  = IORESOURCE_MEM
--+	},{
--+		.start  = 0x55000000,
--+		.end  = 0x55000fff,
--+		.flags  = IORESOURCE_MEM
--+	},{
--+		.start  = 0x56000000,
--+		.end  = 0x56000fff,
--+		.flags  = IORESOURCE_MEM
--+	},{
--+		.start  = 0x57000000,
--+		.end  = 0x57000fff,
--+		.flags  = IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port avila_optional_uart_data[] = {
-- 	{
---		.flags	= IORESOURCE_MEM,
--+		.flags    = UPF_BOOT_AUTOCONF,
--+		.iotype   = UPIO_MEM,
--+		.regshift = 0,
--+		.uartclk  = 18432000,
--+		.rw_delay = 2,
--+	},{
--+		.flags    = UPF_BOOT_AUTOCONF,
--+		.iotype   = UPIO_MEM,
--+		.regshift = 0,
--+		.uartclk  = 18432000,
--+		.rw_delay = 2,
--+	},{
--+		.flags    = UPF_BOOT_AUTOCONF,
--+		.iotype   = UPIO_MEM,
--+		.regshift = 0,
--+		.uartclk  = 18432000,
--+		.rw_delay = 2,
--+	},{
--+		.flags    = UPF_BOOT_AUTOCONF,
--+		.iotype   = UPIO_MEM,
--+		.regshift = 0,
--+		.uartclk  = 18432000,
--+		.rw_delay = 2,
-- 	},
--+	{ }
--+};
--+
--+static struct platform_device avila_optional_uart = {
--+  .name   = "serial8250",
--+  .id   = PLAT8250_DEV_PLATFORM1,
--+  .dev.platform_data  = avila_optional_uart_data,
--+  .num_resources  = 4,
--+  .resource = avila_optional_uart_resources,
--+};
--+
--+static struct resource avila_pata_resources[] = {
-- 	{
--+		.flags	= IORESOURCE_MEM
--+	},{
--+		.flags	= IORESOURCE_MEM,
--+	},{
-- 		.name	= "intrq",
-- 		.start	= IRQ_IXP4XX_GPIO12,
-- 		.end	= IRQ_IXP4XX_GPIO12,
--@@ -133,21 +210,237 @@ static struct platform_device avila_pata
-- 	.resource		= avila_pata_resources,
-- };
-- 
--+/* Built-in 10/100 Ethernet MAC interfaces */
--+static struct eth_plat_info avila_npeb_data = {
--+	.phy		= 0,
--+	.rxq		= 3,
--+	.txreadyq	= 20,
--+};
--+
--+static struct eth_plat_info avila_npec_data = {
--+	.phy		= 1,
--+	.rxq		= 4,
--+	.txreadyq	= 21,
--+};
--+
--+static struct platform_device avila_npeb_device = {
--+	.name			= "ixp4xx_eth",
--+	.id			= IXP4XX_ETH_NPEB,
--+	.dev.platform_data	= &avila_npeb_data,
--+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+};
--+
--+static struct platform_device avila_npec_device = {
--+	.name			= "ixp4xx_eth",
--+	.id			= IXP4XX_ETH_NPEC,
--+	.dev.platform_data	= &avila_npec_data,
--+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+};
--+
--+static struct gpio_led avila_gpio_leds[] = {
--+	{
--+		.name		= "user",  /* green led */
--+		.gpio		= AVILA_GW23XX_LED_USER_GPIO,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "radio1",  /* green led */
--+		.gpio		= 104,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "radio2",  /* green led */
--+		.gpio		= 105,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "radio3",  /* green led */
--+		.gpio		= 106,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "radio4",  /* green led */
--+		.gpio		= 107,
--+		.active_low	= 1,
--+	},
--+
--+};
--+
--+static struct gpio_led_platform_data avila_gpio_leds_data = {
--+	.num_leds		= 1,
--+	.leds			= avila_gpio_leds,
--+};
--+
--+static struct platform_device avila_gpio_leds_device = {
--+	.name			= "leds-gpio",
--+	.id			= -1,
--+	.dev.platform_data	= &avila_gpio_leds_data,
--+};
--+
--+static struct latch_led avila_latch_leds[] = {
--+	{
--+		.name	= "led0",  /* green led */
--+		.bit	= 0,
--+	},
--+	{
--+		.name	= "led1",  /* green led */
--+		.bit	= 1,
--+	},
--+	{
--+		.name	= "led2",  /* green led */
--+		.bit	= 2,
--+	},
--+	{
--+		.name	= "led3",  /* green led */
--+		.bit	= 3,
--+	},
--+	{
--+		.name	= "led4",  /* green led */
--+		.bit	= 4,
--+	},
--+	{
--+		.name	= "led5",  /* green led */
--+		.bit	= 5,
--+	},
--+	{
--+		.name	= "led6",  /* green led */
--+		.bit	= 6,
--+	},
--+	{
--+		.name	= "led7",  /* green led */
--+		.bit	= 7,
--+	}
--+};
--+
--+static struct latch_led_platform_data avila_latch_leds_data = {
--+	.num_leds	= 8,
--+	.leds		= avila_latch_leds,
--+	.mem		= 0x51000000,
--+};
--+
--+static struct platform_device avila_latch_leds_device = {
--+	.name			= "leds-latch",
--+	.id			= -1,
--+	.dev.platform_data	= &avila_latch_leds_data,
--+};
--+
-- static struct platform_device *avila_devices[] __initdata = {
-- 	&avila_i2c_gpio,
---	&avila_flash,
-- 	&avila_uart
-- };
-- 
---static void __init avila_init(void)
--+/*
--+ * Audio Devices
--+ */
--+
--+static struct platform_device avila_hss_device[] = {
--+	{
--+		.name = "gw_avila_hss",
--+		.id = 0,
--+	},{
--+		.name = "gw_avila_hss",
--+		.id = 1,
--+	},{
--+		.name = "gw_avila_hss",
--+		.id = 2,
--+	},{
--+		.name = "gw_avila_hss",
--+		.id = 3,
--+	},
--+};
--+
--+static struct platform_device avila_pcm_device[] = {
--+	{
--+		.name = "gw_avila-audio",
--+		.id = 0,
--+	},{
--+		.name = "gw_avila-audio",
--+		.id = 1,
--+	},{
--+		.name = "gw_avila-audio",
--+		.id = 2,
--+	},{
--+		.name = "gw_avila-audio",
--+		.id = 3,
--+	}
--+};
--+
--+static void setup_audio_devices(void) {
--+	platform_device_register(&avila_hss_device[0]);
--+	platform_device_register(&avila_hss_device[1]);
--+	platform_device_register(&avila_hss_device[2]);
--+	platform_device_register(&avila_hss_device[3]);
--+
--+	platform_device_register(&avila_pcm_device[0]);
--+	platform_device_register(&avila_pcm_device[1]);
--+	platform_device_register(&avila_pcm_device[2]);
--+	platform_device_register(&avila_pcm_device[3]);
--+}
--+
--+static void __init avila_gw23xx_setup(void)
-- {
---	ixp4xx_sys_init();
--+	platform_device_register(&avila_npeb_device);
--+	platform_device_register(&avila_npec_device);
-- 
---	avila_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
---	avila_flash_resource.end =
---		IXP4XX_EXP_BUS_BASE(0) + ixp4xx_exp_bus_size - 1;
--+	platform_device_register(&avila_gpio_leds_device);
--+}
-- 
---	platform_add_devices(avila_devices, ARRAY_SIZE(avila_devices));
--+static void __init avila_gw2342_setup(void)
--+{
--+	platform_device_register(&avila_npeb_device);
--+	platform_device_register(&avila_npec_device);
--+
--+	platform_device_register(&avila_gpio_leds_device);
--+
--+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
--+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
--+
--+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(2);
--+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(2);
--+
--+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS1;
--+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
--+
--+	platform_device_register(&avila_pata);
--+}
--+
--+static void __init avila_gw2345_setup(void)
--+{
--+	avila_npeb_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
--+	avila_npeb_data.phy_mask = 0x1e; /* ports 1-4 of the KS8995 switch */
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_npec_data.phy = 5; /* port 5 of the KS8995 switch */
--+	platform_device_register(&avila_npec_device);
--+
--+	platform_device_register(&avila_gpio_leds_device);
--+
--+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
--+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
--+
--+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(2);
--+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(2);
--+
--+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS1;
--+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
--+
--+	platform_device_register(&avila_pata);
--+}
--+
--+static void __init avila_gw2347_setup(void)
--+{
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_gpio_leds[0].gpio = AVILA_GW23X7_LED_USER_GPIO;
--+	platform_device_register(&avila_gpio_leds_device);
--+}
--+
--+static void __init avila_gw2348_setup(void)
--+{
--+	platform_device_register(&avila_npeb_device);
--+	platform_device_register(&avila_npec_device);
--+
--+	platform_device_register(&avila_gpio_leds_device);
-- 
-- 	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
-- 	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
--@@ -159,8 +452,335 @@ static void __init avila_init(void)
-- 	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
-- 
-- 	platform_device_register(&avila_pata);
--+}
--+
--+static void __init avila_gw2353_setup(void)
--+{
--+	platform_device_register(&avila_npeb_device);
--+	platform_device_register(&avila_gpio_leds_device);
--+}
--+
--+static void __init avila_gw2355_setup(void)
--+{
--+	avila_npeb_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
--+	avila_npeb_data.phy_mask = 0x1e; /* ports 1-4 of the KS8995 switch */
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_npec_data.phy = 16;
--+	platform_device_register(&avila_npec_device);
--+
--+	avila_gpio_leds[0].gpio = AVILA_GW23X7_LED_USER_GPIO;
--+	platform_device_register(&avila_gpio_leds_device);
--+
--+	*IXP4XX_EXP_CS4 |= 0xbfff3c03;
--+	avila_latch_leds[0].name = "RXD";
--+	avila_latch_leds[1].name = "TXD";
--+	avila_latch_leds[2].name = "POL";
--+	avila_latch_leds[3].name = "LNK";
--+	avila_latch_leds[4].name = "ERR";
--+	avila_latch_leds_data.num_leds = 5;
--+	avila_latch_leds_data.mem = 0x54000000;
--+	platform_device_register(&avila_latch_leds_device);
--+
--+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
--+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
--+
--+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(2);
--+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(2);
--+
--+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS1;
--+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
--+
--+	platform_device_register(&avila_pata);
--+}
--+
--+static void __init avila_gw2357_setup(void)
--+{
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_gpio_leds[0].gpio = AVILA_GW23X7_LED_USER_GPIO;
--+	platform_device_register(&avila_gpio_leds_device);
--+
--+	*IXP4XX_EXP_CS1 |= 0xbfff3c03;
--+	platform_device_register(&avila_latch_leds_device);
--+}
--+
--+static void __init avila_gw2365_setup(void)
--+{
--+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	*IXP4XX_EXP_CS4 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO0, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[0].mapbase = 0x54000000;
--+	avila_optional_uart_data[0].membase = (void __iomem *)ioremap(0x54000000, 0x0fff);
--+	avila_optional_uart_data[0].irq   = IRQ_IXP4XX_GPIO0;
--+
--+	*IXP4XX_EXP_CS5 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO1, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[1].mapbase = 0x55000000;
--+	avila_optional_uart_data[1].membase = (void __iomem *)ioremap(0x55000000, 0x0fff);
--+	avila_optional_uart_data[1].irq   = IRQ_IXP4XX_GPIO1;
--+
--+	*IXP4XX_EXP_CS6 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[2].mapbase = 0x56000000;
--+	avila_optional_uart_data[2].membase = (void __iomem *)ioremap(0x56000000, 0x0fff);
--+	avila_optional_uart_data[2].irq   = IRQ_IXP4XX_GPIO2;
--+
--+	*IXP4XX_EXP_CS7 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[3].mapbase = 0x57000000;
--+	avila_optional_uart_data[3].membase = (void __iomem *)ioremap(0x57000000, 0x0fff);
--+	avila_optional_uart_data[3].irq   = IRQ_IXP4XX_GPIO3;
--+
--+	platform_device_register(&avila_optional_uart);
--+
--+	avila_npeb_data.phy = 1;
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_npec_data.phy = 2;
--+	platform_device_register(&avila_npec_device);
--+
--+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(2);
--+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(2);
--+
--+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(3);
--+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(3);
--+
--+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS2;
--+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS3;
--+
--+	platform_device_register(&avila_pata);
--+
--+	avila_gpio_leds[0].gpio = 109;
--+	avila_gpio_leds_data.num_leds = 5;
--+	platform_device_register(&avila_gpio_leds_device);
--+
--+	setup_audio_devices();
--+}
--+
--+static void __init avila_gw2369_setup(void)
--+{
--+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	avila_npeb_data.phy = 1;
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_npec_data.phy = 2;
--+	platform_device_register(&avila_npec_device);
--+
--+	setup_audio_devices();
--+}
--+
--+static void __init avila_gw2370_setup(void)
--+{
--+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
--+
--+	avila_npeb_data.phy = 5;
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_npec_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
--+	avila_npec_data.phy_mask = 0x1e; /* ports 1-4 of the KS8995 switch */
--+	platform_device_register(&avila_npec_device);
--+
--+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[0].mapbase = 0x52000000;
--+	avila_optional_uart_data[0].membase = (void __iomem *)ioremap(0x52000000, 0x0fff);
--+	avila_optional_uart_data[0].irq   = IRQ_IXP4XX_GPIO2;
--+
--+	*IXP4XX_EXP_CS3 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[1].mapbase = 0x53000000;
--+	avila_optional_uart_data[1].membase = (void __iomem *)ioremap(0x53000000, 0x0fff);
--+	avila_optional_uart_data[1].irq   = IRQ_IXP4XX_GPIO3;
--+
--+	avila_optional_uart.num_resources = 2;
--+
--+	platform_device_register(&avila_optional_uart);
--+
--+	avila_gpio_leds[0].gpio = 101;
--+	platform_device_register(&avila_gpio_leds_device);
--+
--+	setup_audio_devices();
--+}
--+
--+static void __init avila_gw2375_setup(void)
--+{
--+	avila_npeb_data.phy = 1;
--+	platform_device_register(&avila_npeb_device);
--+
--+	avila_npec_data.phy = 2;
--+	platform_device_register(&avila_npec_device);
--+
--+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_EDGE_RISING);
--+	avila_optional_uart_data[0].mapbase = 0x52000000;
--+	avila_optional_uart_data[0].membase = (void __iomem *)ioremap(0x52000000, 0x0fff);
--+	avila_optional_uart_data[0].irq   = IRQ_IXP4XX_GPIO10;
--+
--+	avila_optional_uart.num_resources = 1;
--+
--+	platform_device_register(&avila_optional_uart);
--+
--+	setup_audio_devices();
--+}
--+
--+
--+static struct avila_board_info avila_boards[] __initdata = {
--+	{
--+		.model		= "GW2342",
--+		.setup		= avila_gw2342_setup,
--+	}, {
--+		.model		= "GW2345",
--+		.setup		= avila_gw2345_setup,
--+	}, {
--+		.model		= "GW2347",
--+		.setup		= avila_gw2347_setup,
--+	}, {
--+		.model		= "GW2348",
--+		.setup		= avila_gw2348_setup,
--+	}, {
--+		.model		= "GW2353",
--+		.setup		= avila_gw2353_setup,
--+	}, {
--+		.model		= "GW2355",
--+		.setup		= avila_gw2355_setup,
--+	}, {
--+		.model		= "GW2357",
--+		.setup		= avila_gw2357_setup,
--+	}, {
--+		.model		= "GW2365",
--+		.setup		= avila_gw2365_setup,
--+	}, {
--+		.model		= "GW2369",
--+		.setup		= avila_gw2369_setup,
--+	}, {
--+		.model		= "GW2370",
--+		.setup		= avila_gw2370_setup,
--+	}, {
--+		.model		= "GW2373",
--+		.setup		= avila_gw2369_setup,
--+	}, {
--+		.model		= "GW2375",
--+		.setup		= avila_gw2375_setup,
--+	}
--+};
--+
--+static struct avila_board_info * __init avila_find_board_info(char *model)
--+{
--+	int i;
--+	model[6] = '\0';
--+
--+	for (i = 0; i < ARRAY_SIZE(avila_boards); i++) {
--+		struct avila_board_info *info = &avila_boards[i];
--+		if (strcmp(info->model, model) == 0)
--+			return info;
--+	}
--+
--+	return NULL;
--+}
--+
--+static struct nvmem_device *at24_nvmem;
--+
--+static void at24_setup(struct nvmem_device *mem_acc, void *context)
--+{
--+	char mac_addr[ETH_ALEN];
--+	char model[7];
--+
--+	at24_nvmem = mem_acc;
--+
--+	/* Read MAC addresses */
--+	if (nvmem_device_read(at24_nvmem, 0x0, 6, mac_addr) == 6) {
--+		memcpy(&avila_npeb_data.hwaddr, mac_addr, ETH_ALEN);
--+	}
--+	if (nvmem_device_read(at24_nvmem, 0x6, 6, mac_addr) == 6) {
--+		memcpy(&avila_npec_data.hwaddr, mac_addr, ETH_ALEN);
--+	}
--+
--+	/* Read the first 6 bytes of the model number */
--+	if (nvmem_device_read(at24_nvmem, 0x20, 6, model) == 6) {
--+		avila_info = avila_find_board_info(model);
--+	}
--+
--+}
--+
--+static struct at24_platform_data avila_eeprom_info = {
--+	.byte_len	= 1024,
--+	.page_size	= 16,
--+//	.flags		= AT24_FLAG_READONLY,
--+	.setup		= at24_setup,
--+};
--+
--+static struct pca953x_platform_data avila_pca_data = {
--+	.gpio_base  = 100,
--+};
--+
--+static struct i2c_board_info __initdata avila_i2c_board_info[] = {
--+	{
--+		I2C_BOARD_INFO("ds1672", 0x68),
--+	},
--+	{
--+		I2C_BOARD_INFO("gsp", 0x29),
--+	},
--+	{
--+		I2C_BOARD_INFO("pca9555", 0x23),
--+		.platform_data = &avila_pca_data,
--+	},
--+	{
--+		I2C_BOARD_INFO("ad7418", 0x28),
--+	},
--+	{
--+		I2C_BOARD_INFO("24c08", 0x51),
--+		.platform_data	= &avila_eeprom_info
--+	},
--+	{
--+		I2C_BOARD_INFO("tlv320aic33", 0x1b),
--+	},
--+	{
--+		I2C_BOARD_INFO("tlv320aic33", 0x1a),
--+	},
--+	{
--+		I2C_BOARD_INFO("tlv320aic33", 0x19),
--+	},
--+	{
--+		I2C_BOARD_INFO("tlv320aic33", 0x18),
--+	},
--+};
--+
--+static void __init avila_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	platform_add_devices(avila_devices, ARRAY_SIZE(avila_devices));
--+
--+	i2c_register_board_info(0, avila_i2c_board_info,
--+			ARRAY_SIZE(avila_i2c_board_info));
--+}
--+
--+static int __init avila_model_setup(void)
--+{
--+	if (!machine_is_avila())
--+		return 0;
--+
--+	/* default 16MB flash */
--+	avila_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_16M - 1;
--+
--+	if (avila_info) {
--+		printk(KERN_DEBUG "Running on Gateworks Avila %s\n",
--+							avila_info->model);
--+		avila_info->setup();
--+	} else {
--+		printk(KERN_INFO "Unknown/missing Avila model number"
--+						" -- defaults will be used\n");
--+		avila_gw23xx_setup();
--+	}
--+	platform_device_register(&avila_flash);
-- 
--+	return 0;
-- }
--+late_initcall(avila_model_setup);
-- 
-- MACHINE_START(AVILA, "Gateworks Avila Network Platform")
-- 	/* Maintainer: Deepak Saxena <dsaxena@plexity.net> */
-diff --git a/target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch b/target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch
-deleted file mode 100644
-index 108fbcb37a..0000000000
---- a/target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch
-+++ /dev/null
-@@ -1,80 +0,0 @@
----- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
--+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
--@@ -57,7 +57,7 @@
-- 
-- #define POOL_ALLOC_SIZE		(sizeof(struct desc) * (RX_DESCS + TX_DESCS))
-- #define REGS_SIZE		0x1000
---#define MAX_MRU			1536 /* 0x600 */
--+#define MAX_MRU			(14320 - ETH_HLEN - ETH_FCS_LEN)
-- #define RX_BUFF_SIZE		ALIGN((NET_IP_ALIGN) + MAX_MRU, 4)
-- 
-- #define NAPI_WEIGHT		16
--@@ -1289,6 +1289,32 @@ static void destroy_queues(struct port *
-- 	}
-- }
-- 
--+static int eth_do_change_mtu(struct net_device *dev, int mtu)
--+{
--+	struct port *port;
--+	struct msg msg;
--+	/* adjust for ethernet headers */
--+	int framesize = mtu + ETH_HLEN + ETH_FCS_LEN;
--+
--+	port = netdev_priv(dev);
--+
--+	memset(&msg, 0, sizeof(msg));
--+	msg.cmd = NPE_SETMAXFRAMELENGTHS;
--+	msg.eth_id = port->id;
--+
--+	/* max rx/tx 64 byte blocks */
--+	msg.byte2 = ((framesize + 63) / 64) << 8;
--+	msg.byte3 = ((framesize + 63) / 64) << 8;
--+
--+	msg.byte4 = msg.byte6 = framesize >> 8;
--+	msg.byte5 = msg.byte7 = framesize & 0xff;
--+
--+	if (npe_send_recv_message(port->npe, &msg, "ETH_SET_MAX_FRAME_LENGTH"))
--+		return -EIO;
--+
--+	return 0;
--+}
--+
-- static int eth_open(struct net_device *dev)
-- {
-- 	struct port *port = netdev_priv(dev);
--@@ -1340,6 +1366,8 @@ static int eth_open(struct net_device *d
-- 	if (npe_send_recv_message(port->npe, &msg, "ETH_SET_FIREWALL_MODE"))
-- 		return -EIO;
-- 
--+	eth_do_change_mtu(dev, dev->mtu);
--+
-- 	if ((err = request_queues(port)) != 0)
-- 		return err;
-- 
--@@ -1479,7 +1507,26 @@ static int eth_close(struct net_device *
-- 	return 0;
-- }
-- 
--+static int ixp_eth_change_mtu(struct net_device *dev, int mtu)
--+{
--+	int ret;
--+
--+	if (mtu > MAX_MRU)
--+		return -EINVAL;
--+
--+	if (dev->flags & IFF_UP) {
--+		ret = eth_do_change_mtu(dev, mtu);
--+		if (ret < 0)
--+			return ret;
--+	}
--+
--+	dev->mtu = mtu;
--+
--+	return 0;
--+}
--+
-- static const struct net_device_ops ixp4xx_netdev_ops = {
--+	.ndo_change_mtu = ixp_eth_change_mtu,
-- 	.ndo_open = eth_open,
-- 	.ndo_stop = eth_close,
-- 	.ndo_start_xmit = eth_xmit,
-diff --git a/target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch b/target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch
-deleted file mode 100644
-index 51f3f14510..0000000000
---- a/target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch
-+++ /dev/null
-@@ -1,57 +0,0 @@
----- a/arch/arm/mach-ixp4xx/gtwx5715-setup.c
--+++ b/arch/arm/mach-ixp4xx/gtwx5715-setup.c
--@@ -27,6 +27,8 @@
-- #include <linux/serial.h>
-- #include <linux/tty.h>
-- #include <linux/serial_8250.h>
--+#include <linux/spi/spi.h>
--+#include <linux/spi/spi_gpio.h>
-- #include <asm/types.h>
-- #include <asm/setup.h>
-- #include <asm/memory.h>
--@@ -146,9 +148,37 @@ static struct platform_device gtwx5715_f
-- 	.resource	= &gtwx5715_flash_resource,
-- };
-- 
--+static struct spi_gpio_platform_data gtwx5715_spi_platform_data = {
--+        .sck            = GTWX5715_KSSPI_CLOCK,
--+        .mosi           = GTWX5715_KSSPI_TXD,
--+        .miso           = GTWX5715_KSSPI_RXD,
--+        .num_chipselect = 1,
--+};
--+
--+static struct platform_device gtwx5715_spi_device = {
--+        .name   = "spi_gpio",
--+        .id     = 1,
--+        .dev    = {
--+                .platform_data  = &gtwx5715_spi_platform_data,
--+	}
--+};
--+
--+static struct spi_board_info gtwx5715_spi_devices[] __initdata = {
--+        {
--+                .modalias               = "spi-ks8995",
--+                .max_speed_hz           = 5000000,
--+                .mode                   = SPI_MODE_0,
--+                .bus_num                = 1,
--+                .chip_select            = 0,
--+                .controller_data        = (void *)GTWX5715_KSSPI_SELECT,
--+	}
--+};
--+
--+
-- static struct platform_device *gtwx5715_devices[] __initdata = {
-- 	&gtwx5715_uart_device,
-- 	&gtwx5715_flash,
--+	&gtwx5715_spi_device,
-- };
-- 
-- static void __init gtwx5715_init(void)
--@@ -158,6 +188,7 @@ static void __init gtwx5715_init(void)
-- 	gtwx5715_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
-- 	gtwx5715_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_8M - 1;
-- 
--+	spi_register_board_info(gtwx5715_spi_devices, ARRAY_SIZE(gtwx5715_spi_devices));
-- 	platform_add_devices(gtwx5715_devices, ARRAY_SIZE(gtwx5715_devices));
-- }
-- 
-diff --git a/target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch
-deleted file mode 100644
-index 85a8f162c6..0000000000
---- a/target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch
-+++ /dev/null
-@@ -1,50 +0,0 @@
----- a/arch/arm/mach-ixp4xx/gtwx5715-setup.c
--+++ b/arch/arm/mach-ixp4xx/gtwx5715-setup.c
--@@ -29,6 +29,7 @@
-- #include <linux/serial_8250.h>
-- #include <linux/spi/spi.h>
-- #include <linux/spi/spi_gpio.h>
--+#include <linux/dma-mapping.h>
-- #include <asm/types.h>
-- #include <asm/setup.h>
-- #include <asm/memory.h>
--@@ -174,11 +175,39 @@ static struct spi_board_info gtwx5715_sp
-- 	}
-- };
-- 
--+static struct eth_plat_info gtwx5715_npeb_data = {
--+	.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+	.phy_mask	= 0x1e, /* ports 1-4 of the KS8995 switch */
--+	.rxq		= 3,
--+	.txreadyq	= 20,
--+};
--+
--+static struct eth_plat_info gtwx5715_npec_data = {
--+	.phy		= 5,	/* port 5 of the KS8995 switch */
--+	.rxq		= 4,
--+	.txreadyq	= 21,
--+};
--+
--+static struct platform_device gtwx5715_npeb_device = {
--+	.name			= "ixp4xx_eth",
--+	.id			= IXP4XX_ETH_NPEB,
--+	.dev.platform_data	= &gtwx5715_npeb_data,
--+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+};
--+
--+static struct platform_device gtwx5715_npec_device = {
--+	.name			= "ixp4xx_eth",
--+	.id			= IXP4XX_ETH_NPEC,
--+	.dev.platform_data	= &gtwx5715_npec_data,
--+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+};
-- 
-- static struct platform_device *gtwx5715_devices[] __initdata = {
-- 	&gtwx5715_uart_device,
-- 	&gtwx5715_flash,
-- 	&gtwx5715_spi_device,
--+	&gtwx5715_npeb_device,
--+	&gtwx5715_npec_device,
-- };
-- 
-- static void __init gtwx5715_init(void)
-diff --git a/target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch b/target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch
-deleted file mode 100644
-index 59c2837f0c..0000000000
---- a/target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch
-+++ /dev/null
-@@ -1,137 +0,0 @@
----- a/drivers/ata/pata_ixp4xx_cf.c
--+++ b/drivers/ata/pata_ixp4xx_cf.c
--@@ -24,16 +24,58 @@
-- #include <scsi/scsi_host.h>
-- 
-- #define DRV_NAME	"pata_ixp4xx_cf"
---#define DRV_VERSION	"0.2"
--+#define DRV_VERSION	"0.3"
-- 
-- static int ixp4xx_set_mode(struct ata_link *link, struct ata_device **error)
-- {
--+	struct ixp4xx_pata_data *data = link->ap->host->dev->platform_data;
--+	unsigned int pio_mask;
-- 	struct ata_device *dev;
-- 
-- 	ata_for_each_dev(dev, link, ENABLED) {
---		ata_dev_info(dev, "configured for PIO0\n");
---		dev->pio_mode = XFER_PIO_0;
---		dev->xfer_mode = XFER_PIO_0;
--+		if (dev->id[ATA_ID_FIELD_VALID] & (1 << 1)) {
--+			pio_mask = dev->id[ATA_ID_PIO_MODES] & 0x03;
--+			if (pio_mask & (1 << 1)) {
--+				pio_mask = 4;
--+			} else {
--+				pio_mask = 3;
--+			}
--+		} else {
--+			pio_mask = (dev->id[ATA_ID_OLD_PIO_MODES] >> 8);
--+		}
--+
--+		switch (pio_mask){
--+			case 0:
--+				ata_dev_printk(dev, KERN_INFO, "configured for PIO0\n");
--+				dev->pio_mode = XFER_PIO_0;
--+				dev->xfer_mode = XFER_PIO_0;
--+				*data->cs0_cfg = 0x8a473c03;
--+				break;
--+			case 1:
--+				ata_dev_printk(dev, KERN_INFO, "configured for PIO1\n");
--+				dev->pio_mode = XFER_PIO_1;
--+				dev->xfer_mode = XFER_PIO_1;
--+				*data->cs0_cfg = 0x86433c03;
--+				break;
--+			case 2:
--+				ata_dev_printk(dev, KERN_INFO, "configured for PIO2\n");
--+				dev->pio_mode = XFER_PIO_2;
--+				dev->xfer_mode = XFER_PIO_2;
--+				*data->cs0_cfg = 0x82413c03;
--+				break;
--+			case 3:
--+				ata_dev_printk(dev, KERN_INFO, "configured for PIO3\n");
--+				dev->pio_mode = XFER_PIO_3;
--+				dev->xfer_mode = XFER_PIO_3;
--+				*data->cs0_cfg = 0x80823c03;
--+				break;
--+			case 4:
--+				ata_dev_printk(dev, KERN_INFO, "configured for PIO4\n");
--+				dev->pio_mode = XFER_PIO_4;
--+				dev->xfer_mode = XFER_PIO_4;
--+				*data->cs0_cfg = 0x80403c03;
--+				break;
--+		}
-- 		dev->xfer_shift = ATA_SHIFT_PIO;
-- 		dev->flags |= ATA_DFLAG_PIO;
-- 	}
--@@ -46,6 +88,7 @@ static unsigned int ixp4xx_mmio_data_xfe
-- 	unsigned int i;
-- 	unsigned int words = buflen >> 1;
-- 	u16 *buf16 = (u16 *) buf;
--+	unsigned int pio_mask;
-- 	struct ata_port *ap = dev->link->ap;
-- 	void __iomem *mmio = ap->ioaddr.data_addr;
-- 	struct ixp4xx_pata_data *data = dev_get_platdata(ap->host->dev);
--@@ -53,8 +96,34 @@ static unsigned int ixp4xx_mmio_data_xfe
-- 	/* set the expansion bus in 16bit mode and restore
-- 	 * 8 bit mode after the transaction.
-- 	 */
---	*data->cs0_cfg &= ~(0x01);
---	udelay(100);
--+	if (dev->id[ATA_ID_FIELD_VALID] & (1 << 1)){
--+		pio_mask = dev->id[ATA_ID_PIO_MODES] & 0x03;
--+		if (pio_mask & (1 << 1)){
--+			pio_mask = 4;
--+		}else{
--+			pio_mask = 3;
--+		}
--+	}else{
--+		pio_mask = (dev->id[ATA_ID_OLD_PIO_MODES] >> 8);
--+	}
--+	switch (pio_mask){
--+		case 0:
--+			*data->cs0_cfg = 0xa9643c42;
--+		break;
--+		case 1:
--+			*data->cs0_cfg = 0x85033c42;
--+		break;
--+		case 2:
--+			*data->cs0_cfg = 0x80b23c42;
--+		break;
--+		case 3:
--+			*data->cs0_cfg = 0x80823c42;
--+		break;
--+		case 4:
--+			*data->cs0_cfg = 0x80403c42;
--+		break;
--+	}
--+	udelay(5);
-- 
-- 	/* Transfer multiple of 2 bytes */
-- 	if (rw == READ)
--@@ -79,8 +148,24 @@ static unsigned int ixp4xx_mmio_data_xfe
-- 		words++;
-- 	}
-- 
---	udelay(100);
---	*data->cs0_cfg |= 0x01;
--+	udelay(5);
--+	switch (pio_mask){
--+		case 0:
--+			*data->cs0_cfg = 0x8a473c03;
--+		break;
--+		case 1:
--+			*data->cs0_cfg = 0x86433c03;
--+		break;
--+		case 2:
--+			*data->cs0_cfg = 0x82413c03;
--+		break;
--+		case 3:
--+			*data->cs0_cfg = 0x80823c03;
--+		break;
--+		case 4:
--+			*data->cs0_cfg = 0x80403c03;
--+		break;
--+	}
-- 
-- 	return words << 1;
-- }
-diff --git a/target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch b/target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch
-deleted file mode 100644
-index fb7f03ee1a..0000000000
---- a/target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch
-+++ /dev/null
-@@ -1,347 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -93,6 +93,14 @@ config MACH_SIDEWINDER
-- 	  Engineering Sidewinder board. For more information on this
-- 	  platform, see http://www.adiengineering.com
-- 
--+config MACH_USR8200
--+	bool "USRobotics USR8200"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support the USRobotics
--+	  USR8200 router board. For more information on this platform, see
--+	  http://openwrt.org
--+
-- config MACH_COMPEXWP18
-- 	bool "Compex WP18 / NP18A"
-- 	select PCI
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -27,6 +27,7 @@ obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt
-- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
-- obj-pci-$(CONFIG_MACH_MI424WR)		+= mi424wr-pci.o
--+obj-pci-$(CONFIG_MACH_USR8200)		+= usr8200-pci.o
-- 
-- obj-y	+= common.o
-- 
--@@ -55,6 +56,7 @@ obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv
-- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
-- obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
-- obj-$(CONFIG_MACH_MI424WR)	+= mi424wr-setup.o
--+obj-$(CONFIG_MACH_USR8200)	+= usr8200-setup.o
-- 
-- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
-- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
----- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--@@ -44,7 +44,8 @@ static __inline__ void __arch_decomp_set
-- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
-- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
-- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
---	    machine_is_wrt300nv2() || machine_is_tw5334())
--+	    machine_is_wrt300nv2() || machine_is_tw5334() ||
--+	    machine_is_usr8200())
-- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
-- 	else
-- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/usr8200-pci.c
--@@ -0,0 +1,77 @@
--+/*
--+ * arch/arch/mach-ixp4xx/usr8200-pci.c
--+ *
--+ * PCI setup routines for USRobotics USR8200
--+ *
--+ * Copyright (C) 2008 Peter Denison <openwrt@marshadder.org>
--+ *
--+ * based on pronghorn-pci.c
--+ * 	Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Peter Denison <openwrt@marshadder.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+
--+#include <asm/mach/pci.h>
--+
--+void __init usr8200_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO7, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init usr8200_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == 14)
--+		return IRQ_IXP4XX_GPIO7;
--+	else if (slot == 15)
--+		return IRQ_IXP4XX_GPIO8;
--+	else if (slot == 16) {
--+		if (pin == 1)
--+			return IRQ_IXP4XX_GPIO11;
--+		else if (pin == 2)
--+			return IRQ_IXP4XX_GPIO10;
--+		else if (pin == 3)
--+			return IRQ_IXP4XX_GPIO9;
--+		else
--+			return -1;
--+	} else
--+		return -1;
--+}
--+
--+struct hw_pci usr8200_pci __initdata = {
--+	.nr_controllers	= 1,
--+	.preinit	= usr8200_pci_preinit,
--+	.ops		= &ixp4xx_ops,
--+	.setup		= ixp4xx_setup,
--+	.map_irq	= usr8200_map_irq,
--+};
--+
--+int __init usr8200_pci_init(void)
--+{
--+	if (machine_is_usr8200())
--+		pci_common_init(&usr8200_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(usr8200_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/usr8200-setup.c
--@@ -0,0 +1,217 @@
--+/*
--+ * arch/arm/mach-ixp4xx/usr8200-setup.c
--+ *
--+ * Board setup for the USRobotics USR8200
--+ *
--+ * Copyright (C) 2008 Peter Denison <openwrt@marshadder.org>
--+ *
--+ * based on pronghorn-setup.c:
--+ * 	Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Peter Denison <openwrt@marshadder.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+#include <linux/types.h>
--+#include <linux/memory.h>
--+#include <linux/i2c-gpio.h>
--+#include <linux/leds.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/setup.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct flash_platform_data usr8200_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource usr8200_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device usr8200_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data	= &usr8200_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &usr8200_flash_resource,
--+};
--+
--+static struct resource usr8200_uart_resources [] = {
--+	{
--+		.start		= IXP4XX_UART2_BASE_PHYS,
--+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	},
--+	{
--+		.start		= IXP4XX_UART1_BASE_PHYS,
--+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port usr8200_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device usr8200_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev		= {
--+		.platform_data	= usr8200_uart_data,
--+	},
--+	.num_resources	= 2,
--+	.resource	= usr8200_uart_resources,
--+};
--+
--+static struct gpio_led usr8200_led_pin[] = {
--+	{
--+		.name		= "usr8200:usb1",
--+		.gpio		= 0,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "usr8200:usb2",
--+		.gpio		= 1,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "usr8200:ieee1394",
--+		.gpio		= 2,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "usr8200:internal",
--+		.gpio		= 3,
--+		.active_low	= 1,
--+	},
--+	{
--+		.name		= "usr8200:power",
--+		.gpio		= 14,
--+	}
--+};
--+
--+static struct gpio_led_platform_data usr8200_led_data = {
--+	.num_leds		= ARRAY_SIZE(usr8200_led_pin),
--+	.leds			= usr8200_led_pin,
--+};
--+
--+static struct platform_device usr8200_led = {
--+	.name			= "leds-gpio",
--+	.id			= -1,
--+	.dev.platform_data	= &usr8200_led_data,
--+};
--+
--+static struct eth_plat_info usr8200_plat_eth[] = {
--+	{ /* NPEC - LAN with Marvell 88E6060 switch */
--+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
--+		.phy_mask	= 0x0F0000,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}, { /* NPEB - WAN */
--+		.phy		= 9,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}
--+};
--+
--+static struct platform_device usr8200_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= usr8200_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= usr8200_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct resource usr8200_rtc_resources = {
--+	.flags		= IORESOURCE_MEM
--+};
--+
--+static struct platform_device usr8200_rtc = {
--+	.name		= "rtc7301",
--+	.id		= 0,
--+	.num_resources	= 1,
--+	.resource	= &usr8200_rtc_resources,
--+};
--+
--+static struct platform_device *usr8200_devices[] __initdata = {
--+	&usr8200_flash,
--+	&usr8200_uart,
--+	&usr8200_led,
--+	&usr8200_eth[0],
--+	&usr8200_eth[1],
--+	&usr8200_rtc,
--+};
--+
--+static void __init usr8200_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	usr8200_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	usr8200_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_16M - 1;
--+
--+	usr8200_rtc_resources.start = IXP4XX_EXP_BUS_BASE(2);
--+	usr8200_rtc_resources.end = IXP4XX_EXP_BUS_BASE(2) + 0x01ff;
--+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS2 = 0x3fff000 | IXP4XX_EXP_BUS_SIZE(0) | IXP4XX_EXP_BUS_WR_EN |
--+	                  IXP4XX_EXP_BUS_CS_EN | IXP4XX_EXP_BUS_BYTE_EN;
--+	*IXP4XX_GPIO_GPCLKR = 0x01100000;
--+
--+	/* configure button as input */
--+	gpio_line_config(12, IXP4XX_GPIO_IN);
--+
--+	platform_add_devices(usr8200_devices, ARRAY_SIZE(usr8200_devices));
--+}
--+
--+MACHINE_START(USR8200, "USRobotics USR8200")
--+	/* Maintainer: Peter Denison <openwrt@marshadder.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= usr8200_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
-diff --git a/target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch b/target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch
-deleted file mode 100644
-index 39a261b8e0..0000000000
---- a/target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch
-+++ /dev/null
-@@ -1,316 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -176,6 +176,15 @@ config ARCH_PRPMC1100
-- 	  PrPCM1100 Processor Mezanine Module. For more information on
-- 	  this platform, see <file:Documentation/arm/IXP4xx>.
-- 
--+config MACH_TW2662
--+        bool "Titan Wireless TW-266-2"
--+        select PCI
--+        help
--+          Say 'Y' here if you want your kernel to support the Titan
--+          Wireless TW266-2. For more information on this platform,
--+          see http://openwrt.org
--+
--+
-- config MACH_TW5334
-- 	bool "Titan Wireless TW-533-4"
-- 	select PCI
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -25,6 +25,7 @@ obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sid
-- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
-- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
--+obj-pci-$(CONFIG_MACH_TW2662)		+= tw2662-pci.o
-- obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
-- obj-pci-$(CONFIG_MACH_MI424WR)		+= mi424wr-pci.o
-- obj-pci-$(CONFIG_MACH_USR8200)		+= usr8200-pci.o
--@@ -54,6 +55,7 @@ obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewin
-- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
-- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
-- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
--+obj-$(CONFIG_MACH_TW2662)	+= tw2662-setup.o
-- obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
-- obj-$(CONFIG_MACH_MI424WR)	+= mi424wr-setup.o
-- obj-$(CONFIG_MACH_USR8200)	+= usr8200-setup.o
----- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--@@ -45,7 +45,7 @@ static __inline__ void __arch_decomp_set
-- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
-- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
-- 	    machine_is_wrt300nv2() || machine_is_tw5334() ||
---	    machine_is_usr8200())
--+	    machine_is_usr8200() || machine_is_tw2662())
-- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
-- 	else
-- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/tw2662-pci.c
--@@ -0,0 +1,67 @@
--+/*
--+ * arch/arm/mach-ixp4xx/tw2662-pci.c
--+ *
--+ * PCI setup routines for Tiran Wireless TW-266-2 platform
--+ *
--+ * Copyright (C) 2002 Jungo Software Technologies.
--+ * Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ * Copyright (C) 2010 Alexandros C. Couloumbis <alex@ozo.com>
--+ * Copyright (C) 2010 Gabor Juhos <juhosg@openwrt.org>
--+ *
--+ * Maintainer: Deepak Saxena <dsaxena@mvista.com>
--+ * Maintainer: Alexandros C. Couloumbis <alex@ozo.com>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach/pci.h>
--+
--+#define SLOT0_DEVID	1
--+#define SLOT1_DEVID	3
--+
--+/* PCI controller GPIO to IRQ pin mappings */
--+#define SLOT0_INTA	11
--+#define SLOT1_INTA	9
--+
--+void __init tw2662_pci_preinit(void)
--+{
--+	irq_set_irq_type(IXP4XX_GPIO_IRQ(SLOT0_INTA), IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IXP4XX_GPIO_IRQ(SLOT1_INTA), IRQ_TYPE_LEVEL_LOW);
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init tw2662_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
--+{
--+	if (slot == SLOT0_DEVID)
--+		return IXP4XX_GPIO_IRQ(SLOT0_INTA);
--+	else if (slot == SLOT1_DEVID)
--+		return IXP4XX_GPIO_IRQ(SLOT1_INTA);
--+	else return -1;
--+}
--+
--+struct hw_pci tw2662_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit =        tw2662_pci_preinit,
--+	.ops =            &ixp4xx_ops,
--+	.setup =          ixp4xx_setup,
--+	.map_irq =        tw2662_map_irq,
--+};
--+
--+int __init tw2662_pci_init(void)
--+{
--+        if (machine_is_tw2662())
--+		pci_common_init(&tw2662_pci);
--+        return 0;
--+}
--+
--+subsys_initcall(tw2662_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/tw2662-setup.c
--@@ -0,0 +1,196 @@
--+/*
--+ * arch/arm/mach-ixp4xx/tw2662-setup.c
--+ *
--+ * Titan Wireless TW-266-2
--+ *
--+ * Copyright (C) 2010 Gabor Juhos <juhosg@openwrt.org>
--+ * Copyright (C) 2010 Alexandros C. Couloumbis <alex@ozo.com>
--+ *
--+ * based on ap1000-setup.c:
--+ * 	Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/if_ether.h>
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/slab.h>
--+#include <linux/netdevice.h>
--+#include <linux/etherdevice.h>
--+#include <linux/platform_device.h>
--+
--+#include <asm/io.h>
--+#include <asm/types.h>
--+#include <asm/setup.h>
--+#include <asm/memory.h>
--+#include <mach/hardware.h>
--+#include <asm/mach-types.h>
--+#include <asm/irq.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+/* gpio mask used by platform device */
--+#define TW2662_GPIO_MASK        (1 << 1) | (1 << 3) | (1 << 5) | (1 << 7)
--+
--+static struct flash_platform_data tw2662_flash_data = {
--+	.map_name	= "cfi_probe",
--+	.width		= 2,
--+};
--+
--+static struct resource tw2662_flash_resource = {
--+	.flags		= IORESOURCE_MEM,
--+};
--+
--+static struct platform_device tw2662_flash = {
--+	.name		= "IXP4XX-Flash",
--+	.id		= 0,
--+	.dev		= {
--+		.platform_data = &tw2662_flash_data,
--+	},
--+	.num_resources	= 1,
--+	.resource	= &tw2662_flash_resource,
--+};
--+
--+static struct resource tw2662_uart_resources[] = {
--+	{
--+		.start		= IXP4XX_UART1_BASE_PHYS,
--+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	},
--+	{
--+		.start		= IXP4XX_UART2_BASE_PHYS,
--+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+		.flags		= IORESOURCE_MEM
--+	}
--+};
--+
--+static struct plat_serial8250_port tw2662_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART1,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device tw2662_uart = {
--+	.name			= "serial8250",
--+	.id			= PLAT8250_DEV_PLATFORM,
--+	.dev.platform_data	= tw2662_uart_data,
--+	.num_resources		= 2,
--+	.resource		= tw2662_uart_resources
--+};
--+
--+/* Built-in 10/100 Ethernet MAC interfaces */
--+static struct eth_plat_info tw2662_plat_eth[] = {
--+        {
--+                .phy            = 3,
--+                .rxq            = 3,
--+                .txreadyq       = 20,
--+        }, {
--+                .phy            = 1,
--+                .rxq            = 4,
--+                .txreadyq       = 21,
--+        }
--+};
--+
--+static struct platform_device tw2662_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= tw2662_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= tw2662_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+
--+static struct platform_device *tw2662_devices[] __initdata = {
--+	&tw2662_flash,
--+	&tw2662_uart,
--+	&tw2662_eth[0],
--+	&tw2662_eth[1],
--+};
--+
--+static char tw2662_mem_fixup[] __initdata = "mem=64M ";
--+
--+static void __init tw2662_fixup(struct tag *tags, char **cmdline)
--+{
--+	struct tag *t = tags;
--+	char *p = *cmdline;
--+
--+	/* Find the end of the tags table, taking note of any cmdline tag. */
--+	for (; t->hdr.size; t = tag_next(t)) {
--+		if (t->hdr.tag == ATAG_CMDLINE) {
--+			p = t->u.cmdline.cmdline;
--+		}
--+	}
--+
--+	/* Overwrite the end of the table with a new cmdline tag. */
--+	t->hdr.tag = ATAG_CMDLINE;
--+	t->hdr.size = (sizeof (struct tag_header) +
--+		strlen(tw2662_mem_fixup) + strlen(p) + 1 + 4) >> 2;
--+	strlcpy(t->u.cmdline.cmdline, tw2662_mem_fixup, COMMAND_LINE_SIZE);
--+	strlcpy(t->u.cmdline.cmdline + strlen(tw2662_mem_fixup), p,
--+		COMMAND_LINE_SIZE - strlen(tw2662_mem_fixup));
--+
--+	/* Terminate the table. */
--+	t = tag_next(t);
--+	t->hdr.tag = ATAG_NONE;
--+	t->hdr.size = 0;
--+}
--+
--+static void __init tw2662_init(void)
--+{
--+	ixp4xx_sys_init();
--+
--+	tw2662_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	tw2662_flash_resource.end =
--+		IXP4XX_EXP_BUS_BASE(0) + ixp4xx_exp_bus_size - 1;
--+
--+	platform_add_devices(tw2662_devices, ARRAY_SIZE(tw2662_devices));
--+
--+	if (!(is_valid_ether_addr(tw2662_plat_eth[0].hwaddr)))
--+		random_ether_addr(tw2662_plat_eth[0].hwaddr);
--+	if (!(is_valid_ether_addr(tw2662_plat_eth[1].hwaddr))) {
--+		memcpy(tw2662_plat_eth[1].hwaddr, tw2662_plat_eth[0].hwaddr, ETH_ALEN);
--+		tw2662_plat_eth[1].hwaddr[5] = (tw2662_plat_eth[0].hwaddr[5] + 1);
--+	}
--+
--+}
--+
--+#ifdef CONFIG_MACH_TW2662
--+MACHINE_START(TW2662, "Titan Wireless TW-266-2")
--+	/* Maintainer: Alexandros C. Couloumbis <alex@ozo.com> */
--+	.fixup		= tw2662_fixup,
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x0100,
--+	.init_machine	= tw2662_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+#endif
-diff --git a/target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch b/target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch
-deleted file mode 100644
-index 1afbe3d61e..0000000000
---- a/target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch
-+++ /dev/null
-@@ -1,282 +0,0 @@
----- a/arch/arm/mach-ixp4xx/Kconfig
--+++ b/arch/arm/mach-ixp4xx/Kconfig
--@@ -4,6 +4,14 @@ menu "Intel IXP4xx Implementation Option
-- 
-- comment "IXP4xx Platforms"
-- 
--+config MACH_AP42X
--+	bool "Tonze AP-422/425"
--+	select PCI
--+	help
--+	  Say 'Y' here if you want your kernel to support Tonze's
--+	  AP-422/425 boards. For more information on this platform,
--+	  see http://tonze.com.tw
--+
-- config MACH_NSLU2
-- 	bool
-- 	prompt "Linksys NSLU2"
----- a/arch/arm/mach-ixp4xx/Makefile
--+++ b/arch/arm/mach-ixp4xx/Makefile
--@@ -5,6 +5,7 @@
-- obj-pci-y	:=
-- obj-pci-n	:=
-- 
--+obj-pci-$(CONFIG_MACH_AP42X)		+= ap42x-pci.o
-- obj-pci-$(CONFIG_ARCH_IXDP4XX)		+= ixdp425-pci.o
-- obj-pci-$(CONFIG_MACH_AVILA)		+= avila-pci.o
-- obj-pci-$(CONFIG_MACH_CAMBRIA)		+= cambria-pci.o
--@@ -32,6 +33,7 @@ obj-pci-$(CONFIG_MACH_USR8200)		+= usr82
-- 
-- obj-y	+= common.o
-- 
--+obj-$(CONFIG_MACH_AP42X)	+= ap42x-setup.o
-- obj-$(CONFIG_ARCH_IXDP4XX)	+= ixdp425-setup.o
-- obj-$(CONFIG_MACH_AVILA)	+= avila-setup.o
-- obj-$(CONFIG_MACH_CAMBRIA)	+= cambria-setup.o
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/ap42x-pci.c
--@@ -0,0 +1,63 @@
--+/*
--+ * arch/arch/mach-ixp4xx/ap42x-pci.c
--+ *
--+ * PCI setup routines for Tonze AP-422/425
--+ *
--+ * Copyright (C) 2012 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-pci.c:
--+ *	Copyright (C) 2002 Jungo Software Technologies.
--+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
--+ *
--+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * This program is free software; you can redistribute it and/or modify
--+ * it under the terms of the GNU General Public License version 2 as
--+ * published by the Free Software Foundation.
--+ *
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/pci.h>
--+#include <linux/init.h>
--+#include <linux/irq.h>
--+
--+#include <asm/mach-types.h>
--+#include <mach/hardware.h>
--+
--+#include <asm/mach/pci.h>
--+
--+void __init ap42x_pci_preinit(void)
--+{
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
--+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
--+
--+	ixp4xx_pci_preinit();
--+}
--+
--+static int __init ap42x_map_irq(const struct pci_dev *dev, u8 slot,
--+	u8 pin)
--+{
--+	if (slot == 1)
--+		return IRQ_IXP4XX_GPIO11;
--+	else if (slot == 2)
--+		return IRQ_IXP4XX_GPIO10;
--+	else return -1;
--+}
--+
--+struct hw_pci ap42x_pci __initdata = {
--+	.nr_controllers = 1,
--+	.preinit	= ap42x_pci_preinit,
--+	.ops		= &ixp4xx_ops,
--+	.setup		= ixp4xx_setup,
--+	.map_irq	= ap42x_map_irq,
--+};
--+
--+int __init ap42x_pci_init(void)
--+{
--+	if (machine_is_ap42x())
--+		pci_common_init(&ap42x_pci);
--+	return 0;
--+}
--+
--+subsys_initcall(ap42x_pci_init);
----- /dev/null
--+++ b/arch/arm/mach-ixp4xx/ap42x-setup.c
--@@ -0,0 +1,166 @@
--+/*
--+ * arch/arm/mach-ixp4xx/ap42x-setup.c
--+ *
--+ * Board setup for the Tonze AP-42x boards
--+ *
--+ * Copyright (C) 2012 Imre Kaloz <kaloz@openwrt.org>
--+ *
--+ * based on coyote-setup.c:
--+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
--+ *
--+ * Author: Imre Kaloz <Kaloz@openwrt.org>
--+ */
--+
--+#include <linux/kernel.h>
--+#include <linux/init.h>
--+#include <linux/device.h>
--+#include <linux/serial.h>
--+#include <linux/tty.h>
--+#include <linux/serial_8250.h>
--+#include <linux/mtd/physmap.h>
--+#include <linux/dma-mapping.h>
--+
--+#include <asm/types.h>
--+#include <asm/setup.h>
--+#include <asm/memory.h>
--+#include <mach/hardware.h>
--+#include <asm/irq.h>
--+#include <asm/mach-types.h>
--+#include <asm/mach/arch.h>
--+#include <asm/mach/flash.h>
--+
--+static struct mtd_partition ap42x_flash_partitions[] = {
--+	{
--+		.name		= "RedBoot",
+-+		.name		= "image",	// for sysupgrade
 -+		.offset		= 0x00000000,
--+		.size		= 0x00080000,
+-+		.size		= 0x00750000,
+- 	},
+- };
+- 
+diff --git a/target/linux/orion/patches-4.9/101-wnr854t_partition_map.patch b/target/linux/orion/patches-4.9/101-wnr854t_partition_map.patch
+deleted file mode 100644
+index 881cfb773e..0000000000
+--- a/target/linux/orion/patches-4.9/101-wnr854t_partition_map.patch
++++ /dev/null
+@@ -1,25 +0,0 @@
+---- a/arch/arm/mach-orion5x/wnr854t-setup.c
+-+++ b/arch/arm/mach-orion5x/wnr854t-setup.c
+-@@ -57,15 +57,19 @@ static struct mtd_partition wnr854t_nor_
+- 	{
+- 		.name		= "kernel",
+- 		.offset		= 0x00000000,
+--		.size		= 0x00100000,
+-+		.size		= 0x00140000,
+- 	}, {
+- 		.name		= "rootfs",
+--		.offset		= 0x00100000,
+--		.size		= 0x00660000,
+-+		.offset		= 0x00140000,
+-+		.size		= 0x00620000,
+- 	}, {
+- 		.name		= "uboot",
+- 		.offset		= 0x00760000,
+- 		.size		= 0x00040000,
 -+	}, {
--+		.name		= "linux",
--+		.offset		= 0x00080000,
--+		.size		= 0x00100000,
--+	}, {
--+		.name		= "rootfs",
--+		.offset		= 0x00180000,
--+		.size		= 0x00660000,
--+	}, {
--+		.name		= "FIS directory",
--+		.offset		= 0x007f8000,
--+		.size		= 0x00007000,
--+	}, {
--+		.name		= "RedBoot config",
--+		.offset		= 0x007ff000,
--+		.size		= 0x00001000,
+-+		.name		= "image",	// for sysupgrade
+-+		.offset		= 0x00000000,
+-+		.size		= 0x00760000,
+- 	},
+- };
+- 
+diff --git a/target/linux/orion/patches-4.9/200-dt2_board_support.patch b/target/linux/orion/patches-4.9/200-dt2_board_support.patch
+deleted file mode 100644
+index 5528069cd5..0000000000
+--- a/target/linux/orion/patches-4.9/200-dt2_board_support.patch
++++ /dev/null
+@@ -1,562 +0,0 @@
+---- a/arch/arm/mach-orion5x/Kconfig
+-+++ b/arch/arm/mach-orion5x/Kconfig
+-@@ -48,6 +48,13 @@ config MACH_RD88F5182_DT
+- 	  Say 'Y' here if you want your kernel to support the Marvell
+- 	  Orion-NAS (88F5182) RD2, Flattened Device Tree.
+- 
+-+config MACH_DT2
+-+	bool "Freecom DataTank Gateway"
+-+	select I2C_BOARDINFO
+-+	help
+-+	  Say 'Y' here if you want your kernel to support the
+-+	  Freecom DataTank Gateway
+-+
+- config MACH_KUROBOX_PRO
+- 	bool "KuroBox Pro"
+- 	select I2C_BOARDINFO if I2C
+---- a/arch/arm/mach-orion5x/Makefile
+-+++ b/arch/arm/mach-orion5x/Makefile
+-@@ -15,6 +15,7 @@ obj-$(CONFIG_MACH_TS78XX)	+= ts78xx-setu
+- obj-$(CONFIG_MACH_MV2120)	+= mv2120-setup.o
+- obj-$(CONFIG_MACH_NET2BIG)	+= net2big-setup.o
+- obj-$(CONFIG_MACH_WNR854T)	+= wnr854t-setup.o
+-+obj-$(CONFIG_MACH_DT2)		+= dt2-setup.o
+- obj-$(CONFIG_MACH_RD88F5181L_GE)	+= rd88f5181l-ge-setup.o
+- obj-$(CONFIG_MACH_RD88F5181L_FXO)	+= rd88f5181l-fxo-setup.o
+- obj-$(CONFIG_MACH_RD88F6183AP_GE)	+= rd88f6183ap-ge-setup.o
+---- /dev/null
+-+++ b/arch/arm/mach-orion5x/dt2-common.h
+-@@ -0,0 +1,82 @@
+-+#ifndef __INC_DT2_COMMON_H
+-+#define __INC_DT2_COMMON_H
+-+
+-+#define ATAG_MV_UBOOT			0x41000403
+-+
+-+struct tag_mv_uboot {
+-+	u32 uboot_version;
+-+	u32 tclk;
+-+	u32 sysclk;
+-+	u32 isUsbHost;
+-+	u32 overEthAddr;
+-+	u8  dt2_eeprom[256];
+-+};
+-+
+-+#define DT2_EEPROM_ADDR 		0x50
+-+#define DT2_EEPROM_OFFSET		0
+-+#define DT2_EEPROM_LENGTH		256
+-+
+-+#define DT2_SERIAL_NUMBER_DEFAULT	"run on default\0"
+-+#define DT2_REVISION_DEFAULT_INIT 	0xFF
+-+#define DT2_CONFIG_FLAGS_DEFAULT 	0x00
+-+
+-+#define _PACKED_	__attribute__((packed))
+-+
+-+struct DT2_EEPROM_SD_CONFIG {
+-+	unsigned int	ram_1;
+-+	unsigned int	ram_2;
+-+	unsigned int	ram_3;
+-+	unsigned int	ram_4;
+-+	unsigned char	ram_5;
+-+	unsigned char	ram_6;
+-+	unsigned short	ram_7;
+-+	unsigned int 	magic_id;
+-+	} _PACKED_;		// 24 Bytes in total
+-+
+-+struct DT2_EEPROM_FC_CONFIG {
+-+	unsigned char	rtc_sts_mask;
+-+	unsigned char	rtc_sts_init;
+-+	unsigned char	rtc_int_mask;
+-+	unsigned char	rtc_int_init;
+-+	unsigned char	rtc_atrim_init;
+-+	unsigned char	rtc_dtrim_init;
+-+	unsigned char	dummy1;
+-+	unsigned char	dummy2;
+-+	unsigned char	dt2_config_flags;	/* 0x80 to load rtc_values to RTC */
+-+	unsigned char	dt2_revision;		/* upper nibble is HW, lower nibble is FW */
+-+	unsigned char	dt2_serial_number[16];	/* Serial number of DT-2 */
+-+	} _PACKED_;		// 26 Bytes in total
+-+
+-+#define CFG_LOAD_RTC_VALUES 	0x80
+-+
+-+struct DT2_EEPROM_GW_CONFIG {
+-+	unsigned int	dummy1;
+-+	unsigned int	dummy2;
+-+	unsigned int	dummy3;
+-+	unsigned char	dummy4;
+-+	unsigned char	tos_video_val1;
+-+	unsigned char	tos_video_val2;
+-+	unsigned char	tos_voip_val;
+-+	unsigned char	qos_igmp_cfg;
+-+	unsigned char	num_of_ifs;
+-+	unsigned short	vlan_ports_if[3];
+-+	unsigned char	mac_addr[3][6];
+-+	} _PACKED_;		// 42 Bytes in total
+-+
+-+#define _SIZE_OF_ALL_STRUCTS_ (sizeof(struct DT2_EEPROM_SD_CONFIG) + sizeof(struct DT2_EEPROM_FC_CONFIG) +  sizeof(struct DT2_EEPROM_GW_CONFIG))
+-+
+-+// MV = EEPROM - SD - FC - GW - CRC
+-+struct DT2_EEPROM_MV_CONFIG {
+-+	unsigned int reg_addr[(DT2_EEPROM_LENGTH - _SIZE_OF_ALL_STRUCTS_ - sizeof(unsigned int)) / (sizeof(unsigned int) * 2)];
+-+	unsigned int reg_data[(DT2_EEPROM_LENGTH - _SIZE_OF_ALL_STRUCTS_ - sizeof(unsigned int)) / (sizeof(unsigned int) * 2)];
+-+ 	} _PACKED_;
+-+
+-+struct DT2_EEPROM_STRUCT {
+-+	struct DT2_EEPROM_MV_CONFIG mv;
+-+	struct DT2_EEPROM_SD_CONFIG sd;
+-+	struct DT2_EEPROM_FC_CONFIG fc;
+-+	struct DT2_EEPROM_GW_CONFIG gw;
+-+	unsigned int	crc;
+-+	} _PACKED_;
+-+
+-+#endif
+---- /dev/null
+-+++ b/arch/arm/mach-orion5x/dt2-setup.c
+-@@ -0,0 +1,448 @@
+-+/*
+-+ * arch/arm/mach-orion5x/dt2-setup.c
+-+ *
+-+ * Freecom DataTank Gateway Setup
+-+ *
+-+ * Copyright (C) 2009 Zintis Petersons <Zintis.Petersons@abcsolutions.lv>
+-+ *
+-+ * This file is licensed under the terms of the GNU General Public
+-+ * License version 2.  This program is licensed "as is" without any
+-+ * warranty of any kind, whether express or implied.
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/platform_device.h>
+-+#include <linux/pci.h>
+-+#include <linux/irq.h>
+-+#include <linux/mtd/physmap.h>
+-+#include <linux/mv643xx_eth.h>
+-+#include <linux/ethtool.h>
+-+#include <linux/if_ether.h>
+-+#include <net/dsa.h>
+-+#include <linux/ata_platform.h>
+-+#include <linux/i2c.h>
+-+#include <linux/reboot.h>
+-+#include <linux/interrupt.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/gpio.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/pci.h>
+-+#include "orion5x.h"
+-+#include "common.h"
+-+#include "mpp.h"
+-+
+-+/*****************************************************************************
+-+ * DT2 local
+-+ ****************************************************************************/
+-+#include <asm/setup.h>
+-+#include "dt2-common.h"
+-+
+-+u32 mvUbootVer = 0;
+-+u32 mvTclk = 166666667;
+-+u32 mvSysclk = 200000000;
+-+u32 mvIsUsbHost = 1;
+-+u32 overEthAddr = 0;
+-+u32 gBoardId = -1;
+-+struct DT2_EEPROM_STRUCT dt2_eeprom;
+-+
+-+/*****************************************************************************
+-+ * DT2 Info
+-+ ****************************************************************************/
+-+/*
+-+ * PCI
+-+ */
+-+
+-+#define DT2_PCI_SLOT0_OFFS	7
+-+#define DT2_PCI_SLOT0_IRQ_A_PIN	3
+-+#define DT2_PCI_SLOT0_IRQ_B_PIN	2
+-+
+-+#define DT2_PIN_GPIO_SYNC	25
+-+#define DT2_PIN_GPIO_POWER	24
+-+#define DT2_PIN_GPIO_UNPLUG1	23
+-+#define DT2_PIN_GPIO_UNPLUG2	22
+-+#define DT2_PIN_GPIO_RESET	4
+-+
+-+#define DT2_NOR_BOOT_BASE	0xf4000000
+-+#define DT2_NOR_BOOT_SIZE	SZ_512K
+-+
+-+#define DT2_LEDS_BASE		0xfa000000
+-+#define DT2_LEDS_SIZE		SZ_1K
+-+
+-+/*****************************************************************************
+-+ * 512K NOR Flash on Device bus Boot CS
+-+ ****************************************************************************/
+-+
+-+static struct mtd_partition dt2_partitions[] = {
+-+	{
+-+		.name	= "u-boot",
+-+		.size	= 0x00080000,
+-+		.offset	= 0,
 -+	},
 -+};
 -+
--+static struct physmap_flash_data ap42x_flash_data = {
--+	.width		= 2,
--+	.parts		= ap42x_flash_partitions,
--+	.nr_parts	= ARRAY_SIZE(ap42x_flash_partitions),
+-+static struct physmap_flash_data dt2_nor_flash_data = {
+-+	.width		= 1,		/* 8 bit bus width */
+-+	.parts		= dt2_partitions,
+-+	.nr_parts	= ARRAY_SIZE(dt2_partitions)
 -+};
 -+
--+static struct resource ap42x_flash_resource = {
+-+static struct resource dt2_nor_flash_resource = {
 -+	.flags		= IORESOURCE_MEM,
--+	.start		= IXP4XX_EXP_BUS_BASE_PHYS,
--+	.end		= IXP4XX_EXP_BUS_BASE_PHYS + SZ_8M - 1,
+-+	.start		= DT2_NOR_BOOT_BASE,
+-+	.end		= DT2_NOR_BOOT_BASE + DT2_NOR_BOOT_SIZE - 1,
 -+};
 -+
--+static struct platform_device ap42x_flash = {
--+	.name			= "physmap-flash",
--+	.id			= 0,
+-+static struct platform_device dt2_nor_flash = {
+-+	.name		= "physmap-flash",
+-+	.id		= 0,
 -+	.dev		= {
--+		.platform_data	= &ap42x_flash_data,
+-+		.platform_data	= &dt2_nor_flash_data,
 -+	},
--+	.num_resources		= 1,
--+	.resource		= &ap42x_flash_resource,
--+};
--+
--+static struct resource ap42x_uart_resource = {
--+	.start	= IXP4XX_UART2_BASE_PHYS,
--+	.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
--+	.flags	= IORESOURCE_MEM,
--+};
--+
--+static struct plat_serial8250_port ap42x_uart_data[] = {
--+	{
--+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
--+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
--+		.irq		= IRQ_IXP4XX_UART2,
--+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
--+		.iotype		= UPIO_MEM,
--+		.regshift	= 2,
--+		.uartclk	= IXP4XX_UART_XTAL,
--+	},
--+	{ },
--+};
--+
--+static struct platform_device ap42x_uart = {
--+	.name		= "serial8250",
--+	.id		= PLAT8250_DEV_PLATFORM,
--+	.dev			= {
--+		.platform_data	= ap42x_uart_data,
--+	},
+-+	.resource	= &dt2_nor_flash_resource,
 -+	.num_resources	= 1,
--+	.resource	= &ap42x_uart_resource,
 -+};
 -+
--+static struct eth_plat_info ap42x_plat_eth[] = {
--+	{
--+		.phy		= 2,
--+		.rxq		= 3,
--+		.txreadyq	= 20,
--+	}, {
--+		.phy		= 1,
--+		.rxq		= 4,
--+		.txreadyq	= 21,
--+	}
--+};
+-+/*****************************************************************************
+-+ * PCI
+-+ ****************************************************************************/
 -+
--+static struct platform_device ap42x_eth[] = {
--+	{
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEB,
--+		.dev.platform_data	= ap42x_plat_eth,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}, {
--+		.name			= "ixp4xx_eth",
--+		.id			= IXP4XX_ETH_NPEC,
--+		.dev.platform_data	= ap42x_plat_eth + 1,
--+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
--+	}
--+};
--+
--+static struct platform_device *ap42x_devices[] __initdata = {
--+	&ap42x_flash,
--+	&ap42x_uart,
--+	&ap42x_eth[0],
--+	&ap42x_eth[1],
--+};
--+
--+static void __init ap42x_init(void)
+-+void __init dt2_pci_preinit(void)
 -+{
--+	ixp4xx_sys_init();
+-+	int pin, irq;
 -+
--+	ap42x_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
--+	ap42x_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+	/*
+-+	 * Configure PCI GPIO IRQ pins
+-+	 */
+-+	pin = DT2_PCI_SLOT0_IRQ_A_PIN;
+-+	if (gpio_request(pin, "PCI IntA") == 0) {
+-+		if (gpio_direction_input(pin) == 0) {
+-+			irq = gpio_to_irq(pin);
+-+			irq_set_irq_type(irq, IRQ_TYPE_LEVEL_LOW);
+-+			printk (KERN_INFO "PCI IntA IRQ: %d\n", irq);
+-+		} else {
+-+			printk(KERN_ERR "dt2_pci_preinit failed to "
+-+					"irq_set_irq_type pin %d\n", pin);
+-+			gpio_free(pin);
+-+		}
+-+	} else {
+-+		printk(KERN_ERR "dt2_pci_preinit failed to request gpio %d\n", pin);
+-+	}
 -+
--+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
--+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
--+
--+	platform_add_devices(ap42x_devices, ARRAY_SIZE(ap42x_devices));
+-+	pin = DT2_PCI_SLOT0_IRQ_B_PIN;
+-+	if (gpio_request(pin, "PCI IntB") == 0) {
+-+		if (gpio_direction_input(pin) == 0) {
+-+			irq = gpio_to_irq(pin);
+-+			irq_set_irq_type(irq, IRQ_TYPE_LEVEL_LOW);
+-+			printk (KERN_INFO "PCI IntB IRQ: %d\n", irq);
+-+		} else {
+-+			printk(KERN_ERR "dt2_pci_preinit failed to "
+-+					"irq_set_irq_type pin %d\n", pin);
+-+			gpio_free(pin);
+-+		}
+-+	} else {
+-+		printk(KERN_ERR "dt2_pci_preinit failed to gpio_request %d\n", pin);
+-+	}
 -+}
 -+
--+#ifdef CONFIG_MACH_AP42X
--+MACHINE_START(AP42X, "Tonze AP-422/425")
--+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
--+	.map_io		= ixp4xx_map_io,
--+	.init_irq	= ixp4xx_init_irq,
--+	.init_time	= ixp4xx_timer_init,
--+	.atag_offset	= 0x100,
--+	.init_machine	= ap42x_init,
--+#if defined(CONFIG_PCI)
--+	.dma_zone_size	= SZ_64M,
--+#endif
--+	.restart	= ixp4xx_restart,
--+MACHINE_END
--+#endif
----- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
--@@ -45,7 +45,8 @@ static __inline__ void __arch_decomp_set
-- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
-- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
-- 	    machine_is_wrt300nv2() || machine_is_tw5334() ||
---	    machine_is_usr8200() || machine_is_tw2662())
--+	    machine_is_usr8200() || machine_is_tw2662() ||
--+	    machine_is_ap42x())
-- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
-- 	else
-- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
-diff --git a/target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch b/target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch
-deleted file mode 100644
-index cdd9fde8f0..0000000000
---- a/target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch
-+++ /dev/null
-@@ -1,23 +0,0 @@
----- a/net/core/skbuff.c
--+++ b/net/core/skbuff.c
--@@ -215,6 +215,9 @@ struct sk_buff *__alloc_skb(unsigned int
-- 
-- 	if (sk_memalloc_socks() && (flags & SKB_ALLOC_RX))
-- 		gfp_mask |= __GFP_MEMALLOC;
--+#ifdef CONFIG_ARCH_IXP4XX
--+	gfp_mask |= GFP_DMA;
--+#endif
-- 
-- 	/* Get the HEAD */
-- 	skb = kmem_cache_alloc_node(cache, gfp_mask & ~__GFP_DMA, node);
--@@ -1228,6 +1231,10 @@ int pskb_expand_head(struct sk_buff *skb
-- 	if (skb_shared(skb))
-- 		BUG();
-- 
--+#ifdef CONFIG_ARCH_IXP4XX
--+	gfp_mask |= GFP_DMA;
--+#endif
+-+static int __init dt2_pci_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	int irq;
 -+
-- 	size = SKB_DATA_ALIGN(size);
-- 
-- 	if (skb_pfmemalloc(skb))
-diff --git a/target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch b/target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch
+-+	/*
+-+	 * Check for devices with hard-wired IRQs.
+-+	 */
+-+	irq = orion5x_pci_map_irq(dev, slot, pin);
+-+	if (irq != -1){
+-+		printk(KERN_INFO "orion5x_pci_map_irq: %d\n", irq);
+-+		return irq;
+-+	}
+-+
+-+	/*
+-+	 * PCI IRQs are connected via GPIOs
+-+	 */
+-+	switch (slot - DT2_PCI_SLOT0_OFFS) {
+-+	case 0:
+-+		if (pin == 1){
+-+			irq = gpio_to_irq(DT2_PCI_SLOT0_IRQ_A_PIN);
+-+			printk(KERN_INFO "dt2_pci_map_irq DT2_PCI_SLOT0_IRQ_A_PIN: %d\n", irq);
+-+		}
+-+		else {
+-+			irq = gpio_to_irq(DT2_PCI_SLOT0_IRQ_B_PIN);
+-+			printk(KERN_INFO "dt2_pci_map_irq DT2_PCI_SLOT0_IRQ_B_PIN: %d\n", irq);
+-+		}
+-+	default:
+-+		irq = -1;
+-+			printk(KERN_INFO "dt2_pci_map_irq IRQ: %d\n", irq);
+-+	}
+-+
+-+	return irq;
+-+}
+-+
+-+static struct hw_pci dt2_pci __initdata = {
+-+	.nr_controllers	= 2,
+-+	.preinit	= dt2_pci_preinit,
+-+	.setup		= orion5x_pci_sys_setup,
+-+	.scan		= orion5x_pci_sys_scan_bus,
+-+	.map_irq	= dt2_pci_map_irq,
+-+};
+-+
+-+static int __init dt2_pci_init(void)
+-+{
+-+	if (machine_is_dt2())
+-+		pci_common_init(&dt2_pci);
+-+
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(dt2_pci_init);
+-+
+-+/*****************************************************************************
+-+ * Ethernet
+-+ ****************************************************************************/
+-+
+-+static struct mv643xx_eth_platform_data dt2_eth_data = {
+-+	.phy_addr	= MV643XX_ETH_PHY_NONE,
+-+	.speed		= SPEED_1000,
+-+	.duplex		= DUPLEX_FULL,
+-+};
+-+
+-+static struct dsa_chip_data dt2_switch_chip_data = {
+-+	.port_names[0] = "wan",
+-+	.port_names[1] = "lan1",
+-+	.port_names[2] = "lan2",
+-+	.port_names[3] = "cpu",
+-+	.port_names[4] = "lan3",
+-+	.port_names[5] = "lan4",
+-+};
+-+
+-+static struct dsa_platform_data dt2_switch_plat_data = {
+-+	.nr_chips	= 1,
+-+	.chip		= &dt2_switch_chip_data,
+-+};
+-+
+-+/*****************************************************************************
+-+ * RTC ISL1208 on I2C bus
+-+ ****************************************************************************/
+-+static struct i2c_board_info __initdata dt2_i2c_rtc = {
+-+	I2C_BOARD_INFO("isl1208", 0x6F),
+-+};
+-+
+-+/*****************************************************************************
+-+ * Sata
+-+ ****************************************************************************/
+-+static struct mv_sata_platform_data dt2_sata_data = {
+-+	.n_ports	= 2,
+-+};
+-+
+-+/*****************************************************************************
+-+ * General Setup
+-+ ****************************************************************************/
+-+static unsigned int dt2_mpp_modes[] __initdata = {
+-+	MPP0_GPIO,		// RTC interrupt
+-+	MPP1_GPIO,		// 88e6131 interrupt
+-+	MPP2_GPIO,		// PCI_intB
+-+	MPP3_GPIO,		// PCI_intA
+-+	MPP4_GPIO,		// reset button switch
+-+	MPP5_GPIO,
+-+	MPP6_GPIO,
+-+	MPP7_GPIO,
+-+	MPP8_GPIO,
+-+	MPP9_GIGE,		/* GE_RXERR */
+-+	MPP10_GPIO,		// usb
+-+	MPP11_GPIO,		// usb
+-+	MPP12_GIGE,		// GE_TXD[4]
+-+	MPP13_GIGE,		// GE_TXD[5]
+-+	MPP14_GIGE,		// GE_TXD[6]
+-+	MPP15_GIGE,		// GE_TXD[7]
+-+	MPP16_GIGE,		// GE_RXD[4]
+-+	MPP17_GIGE,		// GE_RXD[5]
+-+	MPP18_GIGE,		// GE_RXD[6]
+-+	MPP19_GIGE,		// GE_RXD[7]
+-+	0,
+-+};
+-+
+-+/*****************************************************************************
+-+ * LEDS
+-+ ****************************************************************************/
+-+static struct platform_device dt2_leds = {
+-+	.name		= "dt2-led",
+-+	.id		= -1,
+-+};
+-+
+-+/****************************************************************************
+-+ * GPIO key
+-+ ****************************************************************************/
+-+static irqreturn_t dt2_reset_handler(int irq, void *dev_id)
+-+{
+-+	/* This is the paper-clip reset which does an emergency reboot. */
+-+	printk(KERN_INFO "Restarting system.\n");
+-+	machine_restart(NULL);
+-+
+-+	/* This should never be reached. */
+-+	return IRQ_HANDLED;
+-+}
+-+
+-+static irqreturn_t dt2_power_handler(int irq, void *dev_id)
+-+{
+-+	printk(KERN_INFO "Shutting down system.\n");
+-+	machine_power_off();
+-+	return IRQ_HANDLED;
+-+}
+-+
+-+static void __init dt2_init(void)
+-+{
+-+	/*
+-+	 * Setup basic Orion functions. Need to be called early.
+-+	 */
+-+	orion5x_init();
+-+
+-+	orion5x_mpp_conf(dt2_mpp_modes);
+-+
+-+	/*
+-+	 * Configure peripherals.
+-+	 */
+-+
+-+	orion5x_uart0_init();
+-+	orion5x_ehci0_init();
+-+	orion5x_ehci1_init();
+-+	orion5x_i2c_init();
+-+	orion5x_sata_init(&dt2_sata_data);
+-+	orion5x_xor_init();
+-+
+-+	printk(KERN_INFO "U-Boot parameters:\n");
+-+	printk(KERN_INFO "Sys Clk = %d, Tclk = %d, BoardID = 0x%02x\n", mvSysclk, mvTclk, gBoardId);
+-+
+-+	printk(KERN_INFO "Serial: %s\n", dt2_eeprom.fc.dt2_serial_number);
+-+	printk(KERN_INFO "Revision: %016x\n", dt2_eeprom.fc.dt2_revision);
+-+	printk(KERN_INFO "DT2: Using MAC address %pM for port 0\n",
+-+	       dt2_eeprom.gw.mac_addr[0]);
+-+	printk(KERN_INFO "DT2: Using MAC address %pM for port 1\n",
+-+	       dt2_eeprom.gw.mac_addr[1]);
+-+
+-+	orion5x_eth_init(&dt2_eth_data);
+-+	memcpy(dt2_eth_data.mac_addr, dt2_eeprom.gw.mac_addr[0], 6);
+-+	orion5x_eth_switch_init(&dt2_switch_plat_data);
+-+
+-+	i2c_register_board_info(0, &dt2_i2c_rtc, 1);
+-+
+-+	mvebu_mbus_add_window_by_id(ORION_MBUS_DEVBUS_BOOT_TARGET,
+-+				    ORION_MBUS_DEVBUS_BOOT_ATTR,
+-+				    DT2_NOR_BOOT_BASE, DT2_NOR_BOOT_SIZE);
+-+
+-+	platform_device_register(&dt2_nor_flash);
+-+
+-+	mvebu_mbus_add_window_by_id(ORION_MBUS_DEVBUS_TARGET(0),
+-+				    ORION_MBUS_DEVBUS_ATTR(0),
+-+				    DT2_LEDS_BASE, DT2_LEDS_SIZE);
+-+	platform_device_register(&dt2_leds);
+-+
+-+	if (request_irq(gpio_to_irq(DT2_PIN_GPIO_RESET), &dt2_reset_handler,
+-+			IRQF_TRIGGER_LOW,
+-+			"DT2: Reset button", NULL) < 0) {
+-+
+-+		printk("DT2: Reset Button IRQ %d not available\n",
+-+			gpio_to_irq(DT2_PIN_GPIO_RESET));
+-+	}
+-+
+-+	if (request_irq(gpio_to_irq(DT2_PIN_GPIO_POWER), &dt2_power_handler,
+-+			IRQF_TRIGGER_LOW,
+-+			"DT2: Power button", NULL) < 0) {
+-+
+-+		printk(KERN_DEBUG "DT2: Power Button IRQ %d not available\n",
+-+			gpio_to_irq(DT2_PIN_GPIO_POWER));
+-+	}
+-+}
+-+
+-+static int __init parse_tag_dt2_uboot(const struct tag *t)
+-+{
+-+	struct tag_mv_uboot *mv_uboot;
+-+
+-+	// Get pointer to our block
+-+	mv_uboot = (struct tag_mv_uboot*)&t->u;
+-+	mvTclk = mv_uboot->tclk;
+-+	mvSysclk = mv_uboot->sysclk;
+-+	mvUbootVer = mv_uboot->uboot_version;
+-+	mvIsUsbHost = mv_uboot->isUsbHost;
+-+
+-+	// Some clock fixups
+-+	if(mvTclk == 166000000) mvTclk = 166666667;
+-+	else if(mvTclk == 133000000) mvTclk = 133333333;
+-+	else if(mvSysclk == 166000000) mvSysclk = 166666667;
+-+
+-+	gBoardId =  (mvUbootVer & 0xff);
+-+
+-+	//DT2 specific data
+-+	memcpy(&dt2_eeprom, mv_uboot->dt2_eeprom, sizeof(struct DT2_EEPROM_STRUCT));
+-+
+-+	return 0;
+-+}
+-+__tagtable(ATAG_MV_UBOOT, parse_tag_dt2_uboot);
+-+
+-+/*
+-+ * This is OpenWrt specific fixup. It includes code from original "tag_fixup_mem32" to
+-+ * fixup bogus memory tags and also fixes kernel cmdline by adding " init=/etc/preinit"
+-+ * at the end. It is important to flash OpenWrt image from original Freecom firmware.
+-+ *
+-+ * Vanilla kernel should use "tag_fixup_mem32" function.
+-+ */
+-+static void __init openwrt_fixup(struct tag *t, char **from)
+-+{
+-+	char *p = NULL;
+-+	static char openwrt_init_tag[] __initdata = " init=/etc/preinit";
+-+
+-+	for (; t->hdr.size; t = tag_next(t)){
+-+		/* Locate the Freecom cmdline */
+-+		if (t->hdr.tag == ATAG_CMDLINE) {
+-+			p = t->u.cmdline.cmdline;
+-+			printk("%s(%d): Found cmdline '%s' at 0x%0lx\n",
+-+			       __FUNCTION__, __LINE__, p, (unsigned long)p);
+-+		}
+-+		/*
+-+		 * Many orion-based systems have buggy bootloader implementations.
+-+		 * This is a common fixup for bogus memory tags.
+-+		 */
+-+		if (t->hdr.tag == ATAG_MEM &&
+-+		    (!t->u.mem.size || t->u.mem.size & ~PAGE_MASK ||
+-+		     t->u.mem.start & ~PAGE_MASK)) {
+-+			printk(KERN_WARNING
+-+			       "Clearing invalid memory bank %dKB@0x%08x\n",
+-+			       t->u.mem.size / 1024, t->u.mem.start);
+-+			t->hdr.tag = 0;
+-+		}
+-+	}
+-+
+-+	printk("%s(%d): End of table at 0x%0lx\n", __FUNCTION__, __LINE__, (unsigned long)t);
+-+
+-+	/* Overwrite the end of the table with a new cmdline tag. */
+-+	t->hdr.tag = ATAG_CMDLINE;
+-+	t->hdr.size =
+-+		(sizeof (struct tag_header) +
+-+		 strlen(p) + strlen(openwrt_init_tag) + 1 + 4) >> 2;
+-+
+-+	strlcpy(t->u.cmdline.cmdline, p, COMMAND_LINE_SIZE);
+-+	strlcpy(t->u.cmdline.cmdline + strlen(p), openwrt_init_tag,
+-+		COMMAND_LINE_SIZE - strlen(p));
+-+
+-+	printk("%s(%d): New cmdline '%s' at 0x%0lx\n",
+-+	       __FUNCTION__, __LINE__,
+-+	       t->u.cmdline.cmdline, (unsigned long)t->u.cmdline.cmdline);
+-+
+-+	t = tag_next(t);
+-+
+-+	printk("%s(%d): New end of table at 0x%0lx\n", __FUNCTION__, __LINE__, (unsigned long)t);
+-+
+-+	t->hdr.tag = ATAG_NONE;
+-+	t->hdr.size = 0;
+-+}
+-+
+-+/* Warning: Freecom uses their own custom bootloader with mach-type (=1500) */
+-+MACHINE_START(DT2, "Freecom DataTank Gateway")
+-+	/* Maintainer: Zintis Petersons <Zintis.Petersons@abcsolutions.lv> */
+-+	.atag_offset    = 0x100,
+-+	.init_machine	= dt2_init,
+-+	.map_io		= orion5x_map_io,
+-+	.init_irq	= orion5x_init_irq,
+-+	.init_time	= orion5x_timer_init,
+-+	.fixup		= openwrt_fixup, //tag_fixup_mem32,
+-+MACHINE_END
+diff --git a/target/linux/orion/patches-4.9/210-wn802t_support.patch b/target/linux/orion/patches-4.9/210-wn802t_support.patch
 deleted file mode 100644
-index 24c93dc741..0000000000
---- a/target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch
+index a274beedc3..0000000000
+--- a/target/linux/orion/patches-4.9/210-wn802t_support.patch
 +++ /dev/null
-@@ -1,10 +0,0 @@
----- a/drivers/crypto/ixp4xx_crypto.c
--+++ b/drivers/crypto/ixp4xx_crypto.c
--@@ -14,6 +14,7 @@
-- #include <linux/dmapool.h>
-- #include <linux/crypto.h>
-- #include <linux/kernel.h>
--+#include <linux/module.h>
-- #include <linux/rtnetlink.h>
-- #include <linux/interrupt.h>
-- #include <linux/spinlock.h>
-diff --git a/target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch b/target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch
-deleted file mode 100644
-index 06e09f469d..0000000000
---- a/target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch
-+++ /dev/null
-@@ -1,22 +0,0 @@
----- a/arch/arm/mach-ixp4xx/ixdp425-pci.c
--+++ b/arch/arm/mach-ixp4xx/ixdp425-pci.c
--@@ -53,7 +53,7 @@ static int __init ixdp425_map_irq(const
-- 	};
+@@ -1,73 +0,0 @@
+---- a/arch/arm/mach-orion5x/Kconfig
+-+++ b/arch/arm/mach-orion5x/Kconfig
+-@@ -159,10 +159,13 @@ config MACH_MSS2_DT
+- 	  Maxtor Shared Storage II platform.
 - 
-- 	if (slot >= 1 && slot <= MAX_DEV && pin >= 1 && pin <= IRQ_LINES)
---		return pci_irq_table[(slot + pin - 2) % 4];
--+		return pci_irq_table[(slot + pin - 2) % IRQ_LINES];
+- config MACH_WNR854T
+--	bool "Netgear WNR854T"
+-+	bool "Netgear WNR854T / WN802T"
+- 	help
+- 	  Say 'Y' here if you want your kernel to support the
+--	  Netgear WNR854T platform.
+-+	  Netgear WNR854T or WN802T platform.
+-+
+-+config MACH_WN802T
+-+	def_bool MACH_WNR854T
 - 
-- 	return -1;
-- }
----- a/arch/arm/mach-ixp4xx/miccpt-pci.c
--+++ b/arch/arm/mach-ixp4xx/miccpt-pci.c
--@@ -54,7 +54,7 @@ static int __init miccpt_map_irq(const s
-- 	};
+- config MACH_RD88F5181L_GE
+- 	bool "Marvell Orion-VoIP GE Reference Design"
+---- a/arch/arm/mach-orion5x/wnr854t-setup.c
+-+++ b/arch/arm/mach-orion5x/wnr854t-setup.c
+-@@ -115,6 +115,15 @@ static struct dsa_platform_data __initda
+- 	.chip		= &wnr854t_switch_chip_data,
+- };
 - 
-- 	if (slot >= 1 && slot <= MAX_DEV && pin >= 1 && pin <= IRQ_LINES)
---		return pci_irq_table[(slot + pin - 2) % 4];
--+		return pci_irq_table[(slot + pin - 2) % IRQ_LINES];
+-+static struct dsa_chip_data wn802t_switch_chip_data = {
+-+	.port_names[2] = "wan",
+-+	.port_names[3] = "cpu",
+-+};
+-+
+-+static struct dsa_platform_data wn802t_switch_plat_data = {
+-+	.nr_chips	= 1,
+-+	.chip		= &wn802t_switch_chip_data,
+-+};
+- static void __init wnr854t_init(void)
+- {
+- 	/*
+-@@ -128,7 +137,10 @@ static void __init wnr854t_init(void)
+- 	 * Configure peripherals.
+- 	 */
+- 	orion5x_eth_init(&wnr854t_eth_data);
+--	orion5x_eth_switch_init(&wnr854t_switch_plat_data);
+-+	if (machine_is_wn802t())
+-+		orion5x_eth_switch_init(&wn802t_switch_plat_data);
+-+	else
+-+		orion5x_eth_switch_init(&wnr854t_switch_plat_data);
+- 	orion5x_uart0_init();
 - 
-- 	return -1;
-- }
+- 	mvebu_mbus_add_window_by_id(ORION_MBUS_DEVBUS_BOOT_TARGET,
+-@@ -168,7 +180,7 @@ static struct hw_pci wnr854t_pci __initd
+- 
+- static int __init wnr854t_pci_init(void)
+- {
+--	if (machine_is_wnr854t())
+-+	if (machine_is_wnr854t() || machine_is_wn802t())
+- 		pci_common_init(&wnr854t_pci);
+- 
+- 	return 0;
+-@@ -187,3 +199,15 @@ MACHINE_START(WNR854T, "Netgear WNR854T"
+- 	.fixup		= tag_fixup_mem32,
+- 	.restart	= orion5x_restart,
+- MACHINE_END
+-+
+-+MACHINE_START(WN802T, "Netgear WN802T")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.atag_offset	= 0x100,
+-+	.init_machine	= wnr854t_init,
+-+	.map_io		= orion5x_map_io,
+-+	.init_early	= orion5x_init_early,
+-+	.init_irq	= orion5x_init_irq,
+-+	.init_time	= orion5x_timer_init,
+-+	.fixup		= tag_fixup_mem32,
+-+	.restart	= orion5x_restart,
+-+MACHINE_END
 -- 
 2.20.1
 

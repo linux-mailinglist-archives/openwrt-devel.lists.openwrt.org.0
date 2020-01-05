@@ -2,68 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECFBC13092B
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 17:40:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ED67130926
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 17:40:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=74EnvivehAfcKqys50J8Jydw18G/tDTbzVbdtydR8W8=; b=ZGSjxFgX/jqJWA
-	Q8F9OhZphmfWoO9Enn/u97oHYBAYkLpkreENrInJy3Dr3QO9zxCuTalg098esbCvbkyePC1NXjmzb
-	KQ6IiRPY/mp/0iMtB6d8K1qRmUR89DvRuD/N3fACxrxDDM72d00ABPRLgaOTbwb890Xd5qPjcaB6z
-	2Dfy9JUujDzkAjDto5t0OU9xSuyakj8BybReNsy34zgyYSjdzxyYzjTf6rX/FSyZirTBl5hQJ85J9
-	lbtnYpCLADiIRcs1vl5Nlsqdi1yaEai02uaB5U3GKdMUeDDtYyBta5vx5QyclNPQxaAgO/jjyY45r
-	zC+T6Glq+CVmmhZIaE2Q==;
+	List-Owner; bh=mOG0FSa6WEkNZzhU9q34rKub4yXf4olNfoKcrMSaYa8=; b=kc3cucNV/qfHR/
+	0ZsWpAIFwcyYx30XkYD+8oBa6COu/kNqDUpRORWj0Bu+h8hu+yjCm7szl8n0SYDGCgNFTUevHilix
+	LGJZChaM59NkUuUpkLpZkZNfqVkL5ZtvNy+vCMVxdftF7u0mtDTK6kObu05ZUW256qrbXN7arQ9s/
+	EfsvFD8CpU8qdMZyPEiWWR97wnptBi3e1/+Zfcbh4DcO2IkhwRiV0VQjgkrpovuEoYe3ombCauGs3
+	jjuCW0+Vplc1z6d5tSSNflvu+BSzIpdX6WFVC2RXRCumE6PD2nHXCloeN6FKGacaPzL7jC7HrWafg
+	LR0NtGK8zvRSSdg9lxig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io8ws-00027c-An; Sun, 05 Jan 2020 16:40:18 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1io8wb-0001oR-JJ; Sun, 05 Jan 2020 16:40:01 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io8vh-0001GK-DW
- for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 16:39:36 +0000
+ id 1io8vh-0001GL-NX
+ for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 16:39:33 +0000
 Received: from buildfff.adridolf.com ([188.194.105.26]) by
  mrelayeu.kundenserver.de (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1MAfpQ-1izBXg1oUa-00B0PU; Sun, 05 Jan 2020 17:39:01 +0100
+ id 1MVv4X-1jG1T60qN3-00RqyP; Sun, 05 Jan 2020 17:39:01 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 Jan 2020 17:38:09 +0100
-Message-Id: <20200105163813.3846-2-freifunk@adrianschmutzler.de>
+Date: Sun,  5 Jan 2020 17:38:10 +0100
+Message-Id: <20200105163813.3846-3-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200105163813.3846-1-freifunk@adrianschmutzler.de>
 References: <20200105163813.3846-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:M5nta7QzD2YXcY3NutT2/IdrSl2T387wQx+gL52xnS4dyW6EDtq
- eEzH9WBr2KYVEm9MJkw8WpIdWV05p6uAeZa0qHSMQeIWLZ06ckP4OwaivQNLF9c4K0TQQr/
- gY/pftfeh2KJRlEwrbZ6GRrfBf3H2DAZPrnujHjlaZHbMY25HrDJIF6xfa+ldaOJri2h3L3
- BCy4HgaFGEJn0E4g+PEOA==
+X-Provags-ID: V03:K1:DsS8/rHK2giqN9of6tajfjJA/mCAKpnjulSUnd9YylAFhvO++Dd
+ VeDNNiFRx9UZYfPZ6uOvmfzQ/xhNexxwItaKcFIOT86kk0xBpLqU3Sa6nkyaVGPshxtp/Ap
+ bv8n7zncJjS1U5/bfDUlXC3DUE+8YRH/IgsTT7S7Pt7l7UFghqplRuBr8KbW+C4SfUM/zOG
+ QIbTg5qSu9OJ5xrPH42Wg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:JPDFZ75M5qE=:TNv1Ps/6tmzwdR2dO6lAOM
- TpCSV37e3EcQfe9guSllxZZT72FqS+WaFLLkz0SvgIjGekC13rFePljq27OnJ8Y0aH/DrvsVM
- cpzBciU1f77XYoM0l8ity6dco2M/JYEvtuEOGbmaIxuTrB3v+P3WVMOJfHDGlHgbLjgOClWKf
- BLv2dWxdzN9Qvv5/P3EBcpPCTVbqQCdUv3lftCT19KhDzt9Ip5+HAS2Od48+pfSOFph+n52nM
- W+fFfeBaL362Wd/v3J29kridBzYLO69X/uo5d+/+JaNRmvGafBBzS2si3IBaYgNGU36N6hfUE
- H5y4GZHuzIDb8O5g0HQtN06+OKwNFzJVxRq1bmfTIWojmyqpQmCx+Z6i7zK21O967TYqergG7
- j+9WyNx3ym+C6psF075MQ+Zz0OPbFJkBWCC+oAK33dRcNMWqXavGgKlBcRr9GZWSryOJivVHM
- LGnLas8l+eDtXNj3WgQukoZsS/TqPlwUcpkCxHF8CoW3T9xkziWA8QhQgnsqhY8keJUxnWJyC
- xxbryDS/YEwkuOwQtIgTk2XFv6dk9DYd2+Nre5FD/m+b6Lsra1oc9h1kniDg/VQXVXFqqoc0O
- SVHUSRjXdAbWQtyXBmIDkWZmJZ9mvavAi3Vdxsls/8+Bhg1RR4oYJYMDvthJhYCOZpVNzz6/C
- Ii5uPoD9HMTavphAOdqZU0tOa2bz4kDSf467IppfUsHpMYuYp3WJ36xl87OBS2KAmm7IPbdrQ
- Y/zTiSxjNC8SFLx8SppM9+p8eyAze3ClnnDSczkFhtu2BXiDSp2Z/OCR5ghBZurSTLzoJzOIi
- 07mTzcFPDNfaU9/UiMMOZZSgmsBmU/k6oC1wgFlkoom1TNTQjrx++z0PE3vf+YC+4pMN3Yeiz
- a23WNABZbzcn6rKLTkwwbsG6Al0oyelUlyqmbIgk0=
-X-Spam-Note: CRM114 run bypassed due to message size (424519 bytes)
+X-UI-Out-Filterresults: notjunk:1;V03:K0:bijt7ynYSsA=:r39jdS9QtdtCbhKnmubvnZ
+ VRj72ye3K1jpq3PLiTZGyWlqN47BeBO6kZJiJBqPLasYjd5imcHB/alPUnXonV9WT2izn5w5Y
+ txAwgHQAOmY0LD9cXHc9KylHqMsVr63L7O1IaxkE8hre0UwbzWhcQVX2eDWC8yMyt7wafm69d
+ G4DFxcdiUjXfB0LW3bWnwOLSX0tjXFjj3mEr1w9jZkAmgwDdCyCjWL3G7eu+Une/JnVmVrc+s
+ Kv2kcCxOS/HhA9FU6KPcKF9RLqzXdAV7gKGBjOA3NYEmdQnqFOXSlQCxzVtsBameejPAsCATR
+ 1drjM6AAFLJpJpe2dMQdePLCRKH2nQ3Fb1oz5a4VL5lhRu5Y3w8lsuCr9qdulXv0UJRCT1z3F
+ d0f4MGWXAChIS3x3awbTLvTVziYbZjybFz92yv9bMgoZcoPmlTWEByt5200yME5rToXystQLw
+ dr3MPFe+Px+2z0sB0kfYMs9qRm7OEutPYivSR+Nj75qQH6wCDjXvWOc90BwX/YxuiktlvwvM9
+ H1YEI9ZvBL9phUdREk0nCD/vys8JcSrY+JfzGJ/T5fvrtn1q6ijCh51M3LIPkvju/CE5l72Gw
+ gorWTVnhxZzi5wPG8KL3tx2TdXrXrsamqd3ur+O6YshruK8HVS7Yz6jlXbk0V+DXBhTNrm+kP
+ d7B+vLr0ua3CoFwpzQi4PHihxuO74NiNmbZegFcZEK5N48mQrwsojjrh95+lx5mNigcnLs90C
+ V5Nak8JWIzUojzZb5BlcgfQBTxBLrnO9WjxXpLsyaUvulvz+wYw+4oggcAkSOiQxrIqA5uT5y
+ mHy7MT3s7UuwEXzJLBVVIwvxPmtn9yn6ch8OjgQYD5CaCkHodIuE98jtQ/DzgR+MHOihKA68p
+ dpFSldIfykt+Vqtmr4D711X+RI80xBDoBYovu0aZM=
+X-Spam-Note: CRM114 run bypassed due to message size (344582 bytes)
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 1/5] ar7: remove unmaintained target
+Subject: [OpenWrt-Devel] [PATCH 2/5] ixp4xx: remove unmaintained target
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,8 +75,7 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jonas Gorski <jogo@openwrt.org>, Mathias Kresin <dev@kresin.me>,
- Jonas Gorski <jonas.gorski@gmail.com>
+Cc: Jonas Gorski <jogo@openwrt.org>, Imre Kaloz <kaloz@openwrt.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
@@ -91,192 +90,161 @@ kernel version.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- package/kernel/acx-mac80211/Makefile          |    2 +-
- package/kernel/ar7-atm/Config.in              |   22 -
- package/kernel/ar7-atm/Makefile               |  100 -
- .../090-no-date-time.patch                    |   11 -
- .../patches-D7.04.03.00/100-compile_fix.patch |  768 ----
- .../110-interrupt_fix.patch                   |   37 -
- .../120-no_dumb_inline.patch                  |   11 -
- .../130-powercutback.patch                    |   44 -
- .../patches-D7.04.03.00/140-debug_mode.patch  |   16 -
- .../150-tasklet_mode.patch                    |   11 -
- .../160-module-params.patch                   |  589 ----
- .../170-bus_id_removal.patch                  |   19 -
- .../180-git_headers_include.patch             |   39 -
- .../190-2.6.32_proc_fixes.patch               |   92 -
- .../patches-D7.04.03.00/200-2.6.37_args.patch |   32 -
- .../210-3.3-remove-smp_lock.h.patch           |   33 -
- .../220-3.10-update_proc_code.patch           | 2945 ----------------
- .../230-compile_fixes.patch                   |   44 -
- .../patches-D7.04.03.00/240-3.18_fixes.patch  |   38 -
- .../patches-D7.04.03.00/250-4.1_fixes.patch   |   20 -
- .../260-fix_function_signatures.patch         |   63 -
- .../090-no-date-time.patch                    |   11 -
- .../patches-D7.05.01.00/100-compile_fix.patch |  808 -----
- .../110-interrupt_fix.patch                   |   37 -
- .../120-no_dumb_inline.patch                  |   11 -
- .../130-powercutback.patch                    |   44 -
- .../patches-D7.05.01.00/140-debug_mode.patch  |   16 -
- .../150-tasklet_mode.patch                    |   11 -
- .../160-module-params.patch                   |  675 ----
- .../170-bus_id_removal.patch                  |   19 -
- .../180-git_headers_include.patch             |   39 -
- .../190-2.6.32_proc_fixes.patch               |   92 -
- .../patches-D7.05.01.00/200-2.6.37_args.patch |   32 -
- .../210-3.3-remove-smp_lock.h.patch           |   33 -
- .../220-3.10-update_proc_code.patch           | 3082 -----------------
- .../patches-D7.05.01.00/240-3.18_fixes.patch  |   38 -
- .../patches-D7.05.01.00/250-4.1_fixes.patch   |   20 -
- .../260-fix_function_signatures.patch         |   63 -
- target/linux/ar7/Makefile                     |   25 -
- target/linux/ar7/ac49x/config-default         |    4 -
- target/linux/ar7/ac49x/profiles/210-None.mk   |   17 -
- target/linux/ar7/ac49x/target.mk              |   10 -
- target/linux/ar7/base-files.mk                |   11 -
- .../ar7/base-files/etc/board.d/02_network     |   28 -
- target/linux/ar7/base-files/etc/diag.sh       |   32 -
- target/linux/ar7/base-files/etc/init.d/adam2  |   13 -
- target/linux/ar7/config-4.9                   |  151 -
- .../linux/ar7/files/drivers/mtd/ac49xpart.c   |  221 --
- .../linux/ar7/files/drivers/mtd/titanpart.c   |  234 --
- target/linux/ar7/generic/config-default       |    5 -
- .../linux/ar7/generic/profiles/100-Annex-A.mk |   18 -
- .../linux/ar7/generic/profiles/110-Annex-B.mk |   18 -
- .../linux/ar7/generic/profiles/200-Texas.mk   |   18 -
- target/linux/ar7/generic/profiles/210-None.mk |   17 -
- target/linux/ar7/generic/target.mk            |   12 -
- target/linux/ar7/image/Makefile               |  137 -
- .../patches-4.9/100-fix-highmem-offset.patch  |   11 -
- ...R7-allow-NULL-clock-for-clk_get_rate.patch |   45 -
- target/linux/ar7/patches-4.9/110-flash.patch  |   22 -
- .../160-vlynq_try_remote_first.patch          |  300 --
- .../200-free-mem-below-kernel-offset.patch    |   15 -
- .../patches-4.9/300-add-ac49x-platform.patch  |   85 -
- .../patches-4.9/310-ac49x-prom-support.patch  |   20 -
- .../320-ac49x-mtd-partitions.patch            |   35 -
- .../linux/ar7/patches-4.9/920-ar7part.patch   |  120 -
- .../ar7/patches-4.9/925-actiontec_leds.patch  |   95 -
- .../ar7/patches-4.9/950-cpmac_titan.patch     |   52 -
- target/linux/ar7/src/adam2patcher.c           |   59 -
- 68 files changed, 1 insertion(+), 11796 deletions(-)
- delete mode 100644 package/kernel/ar7-atm/Config.in
- delete mode 100644 package/kernel/ar7-atm/Makefile
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/090-no-date-time.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/100-compile_fix.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/110-interrupt_fix.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/120-no_dumb_inline.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/130-powercutback.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/140-debug_mode.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/150-tasklet_mode.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/160-module-params.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/170-bus_id_removal.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/180-git_headers_include.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/190-2.6.32_proc_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/200-2.6.37_args.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/210-3.3-remove-smp_lock.h.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/220-3.10-update_proc_code.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/230-compile_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/240-3.18_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/250-4.1_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.04.03.00/260-fix_function_signatures.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/090-no-date-time.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/100-compile_fix.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/110-interrupt_fix.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/120-no_dumb_inline.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/130-powercutback.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/140-debug_mode.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/150-tasklet_mode.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/160-module-params.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/170-bus_id_removal.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/180-git_headers_include.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/190-2.6.32_proc_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/200-2.6.37_args.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/210-3.3-remove-smp_lock.h.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/220-3.10-update_proc_code.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/240-3.18_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/250-4.1_fixes.patch
- delete mode 100644 package/kernel/ar7-atm/patches-D7.05.01.00/260-fix_function_signatures.patch
- delete mode 100644 target/linux/ar7/Makefile
- delete mode 100644 target/linux/ar7/ac49x/config-default
- delete mode 100644 target/linux/ar7/ac49x/profiles/210-None.mk
- delete mode 100644 target/linux/ar7/ac49x/target.mk
- delete mode 100644 target/linux/ar7/base-files.mk
- delete mode 100755 target/linux/ar7/base-files/etc/board.d/02_network
- delete mode 100644 target/linux/ar7/base-files/etc/diag.sh
- delete mode 100755 target/linux/ar7/base-files/etc/init.d/adam2
- delete mode 100644 target/linux/ar7/config-4.9
- delete mode 100644 target/linux/ar7/files/drivers/mtd/ac49xpart.c
- delete mode 100644 target/linux/ar7/files/drivers/mtd/titanpart.c
- delete mode 100644 target/linux/ar7/generic/config-default
- delete mode 100644 target/linux/ar7/generic/profiles/100-Annex-A.mk
- delete mode 100644 target/linux/ar7/generic/profiles/110-Annex-B.mk
- delete mode 100644 target/linux/ar7/generic/profiles/200-Texas.mk
- delete mode 100644 target/linux/ar7/generic/profiles/210-None.mk
- delete mode 100644 target/linux/ar7/generic/target.mk
- delete mode 100644 target/linux/ar7/image/Makefile
- delete mode 100644 target/linux/ar7/patches-4.9/100-fix-highmem-offset.patch
- delete mode 100644 target/linux/ar7/patches-4.9/101-MIPS-AR7-allow-NULL-clock-for-clk_get_rate.patch
- delete mode 100644 target/linux/ar7/patches-4.9/110-flash.patch
- delete mode 100644 target/linux/ar7/patches-4.9/160-vlynq_try_remote_first.patch
- delete mode 100644 target/linux/ar7/patches-4.9/200-free-mem-below-kernel-offset.patch
- delete mode 100644 target/linux/ar7/patches-4.9/300-add-ac49x-platform.patch
- delete mode 100644 target/linux/ar7/patches-4.9/310-ac49x-prom-support.patch
- delete mode 100644 target/linux/ar7/patches-4.9/320-ac49x-mtd-partitions.patch
- delete mode 100644 target/linux/ar7/patches-4.9/920-ar7part.patch
- delete mode 100644 target/linux/ar7/patches-4.9/925-actiontec_leds.patch
- delete mode 100644 target/linux/ar7/patches-4.9/950-cpmac_titan.patch
- delete mode 100644 target/linux/ar7/src/adam2patcher.c
+ package/boot/apex/Makefile                    |   62 -
+ .../boot/apex/patches/001-compile_fix.patch   |   20 -
+ .../100-openwrt_nslu2_armeb_config.patch      |   23 -
+ .../120-openwrt_nslu2_16mb_armeb_config.patch |   23 -
+ .../140-openwrt_fsg3_armeb_config.patch       |   23 -
+ .../apex/patches/150-limit_ram_to_64mb.patch  |   22 -
+ .../160-openwrt_nas100d_armeb_config.patch    |   20 -
+ package/firmware/ixp4xx-microcode/Makefile    |   59 -
+ .../ixp4xx-microcode/src/IxNpeMicrocode.h     |  148 --
+ .../firmware/ixp4xx-microcode/src/LICENSE.IPL |   27 -
+ package/kernel/avila-wdt/Makefile             |   34 -
+ package/kernel/avila-wdt/src/Makefile         |    1 -
+ package/kernel/avila-wdt/src/avila-wdt.c      |  231 --
+ package/kernel/linux/modules/sound.mk         |   19 -
+ target/linux/ixp4xx/Makefile                  |   24 -
+ target/linux/ixp4xx/base-files/lib/ixp4xx.sh  |   34 -
+ .../ixp4xx/base-files/lib/preinit/01_sysinfo  |    9 -
+ .../lib/preinit/05_set_ether_mac_ixp4xx       |   32 -
+ .../ixp4xx/base-files/lib/upgrade/platform.sh |  137 --
+ target/linux/ixp4xx/config-4.9                |  245 --
+ .../ixp4xx/generic/profiles/100-Default.mk    |   17 -
+ .../generic/profiles/105-Atheros-ath5k.mk     |   17 -
+ .../ixp4xx/generic/profiles/200-NSLU2.mk      |   19 -
+ .../ixp4xx/generic/profiles/300-NAS100d.mk    |   21 -
+ .../generic/profiles/400-DSMG600RevA.mk       |   22 -
+ .../ixp4xx/generic/profiles/500-USR8200.mk    |   19 -
+ target/linux/ixp4xx/generic/target.mk         |    9 -
+ target/linux/ixp4xx/harddisk/config-default   |   20 -
+ .../ixp4xx/harddisk/profiles/100-FSG3.mk      |   20 -
+ target/linux/ixp4xx/harddisk/target.mk        |    6 -
+ target/linux/ixp4xx/image/Makefile            |   76 -
+ target/linux/ixp4xx/modules.mk                |   74 -
+ ...ohorent_dma_mask-for-ethernet-platfo.patch |  136 --
+ ...se-parent-device-for-dma-allocations.patch |   95 -
+ .../patches-4.9/020-gateworks_i2c_pld.patch   |  424 ----
+ .../patches-4.9/030-gpio_line_config.patch    |   73 -
+ .../patches-4.9/040-arm_mach_types.patch      |   18 -
+ .../090-increase_entropy_pools.patch          |   17 -
+ ...00-wg302v2_gateway7001_mac_plat_info.patch |   78 -
+ .../patches-4.9/105-wg302v1_support.patch     |  261 --
+ .../110-pronghorn_series_support.patch        |  393 ----
+ .../111-pronghorn_swap_uarts.patch            |   44 -
+ .../patches-4.9/115-sidewinder_support.patch  |  286 ---
+ .../116-sidewinder_fis_location.patch         |   30 -
+ .../patches-4.9/120-compex_support.patch      |  199 --
+ .../patches-4.9/130-wrt300nv2_support.patch   |  227 --
+ .../131-wrt300nv2_mac_plat_info.patch         |   42 -
+ .../patches-4.9/132-wrt300nv2_mac_fix.patch   |   72 -
+ .../150-lanready_ap1000_support.patch         |  201 --
+ .../151-lanready_ap1000_mac_plat_info.patch   |   44 -
+ .../patches-4.9/160-delayed_uart_io.patch     |  133 --
+ .../patches-4.9/162-wg302v1_mem_fixup.patch   |   37 -
+ .../170-ixdpg425_mac_plat_info.patch          |   51 -
+ .../175-avila_hss_audio_support.patch         | 2093 -----------------
+ .../patches-4.9/180-tw5334_support.patch      |  287 ---
+ .../patches-4.9/185-mi424wr_support.patch     |  504 ----
+ .../patches-4.9/190-cambria_support.patch     | 1131 ---------
+ ...01-npe_driver_print_license_location.patch |   11 -
+ ...05-npe_driver_separate_phy_functions.patch |  127 -
+ ...-npe_driver_add_update_link_function.patch |  100 -
+ .../207-npe_driver_multiphy_support.patch     |  153 --
+ .../patches-4.9/295-latch_led_driver.patch    |  201 --
+ .../patches-4.9/300-avila_support.patch       |  726 ------
+ .../304-ixp4xx_eth_jumboframe.patch           |   80 -
+ .../patches-4.9/310-gtwx5717_spi_bus.patch    |   57 -
+ .../311-gtwx5717_mac_plat_info.patch          |   50 -
+ .../312-ixp4xx_pata_optimization.patch        |  137 --
+ .../patches-4.9/500-usr8200_support.patch     |  347 ---
+ .../patches-4.9/520-tw2662_support.patch      |  316 ---
+ .../patches-4.9/530-ap42x_support.patch       |  282 ---
+ .../patches-4.9/600-skb_avoid_dmabounce.patch |   23 -
+ .../900-ixp4xx-crypto-include-module.h.patch  |   10 -
+ .../patches-4.9/910-ixp4xx-nr_irq_lines.patch |   22 -
+ 73 files changed, 11031 deletions(-)
+ delete mode 100644 package/boot/apex/Makefile
+ delete mode 100644 package/boot/apex/patches/001-compile_fix.patch
+ delete mode 100644 package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch
+ delete mode 100644 package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch
+ delete mode 100644 package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch
+ delete mode 100644 package/boot/apex/patches/150-limit_ram_to_64mb.patch
+ delete mode 100644 package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch
+ delete mode 100644 package/firmware/ixp4xx-microcode/Makefile
+ delete mode 100644 package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h
+ delete mode 100644 package/firmware/ixp4xx-microcode/src/LICENSE.IPL
+ delete mode 100644 package/kernel/avila-wdt/Makefile
+ delete mode 100644 package/kernel/avila-wdt/src/Makefile
+ delete mode 100644 package/kernel/avila-wdt/src/avila-wdt.c
+ delete mode 100644 target/linux/ixp4xx/Makefile
+ delete mode 100644 target/linux/ixp4xx/base-files/lib/ixp4xx.sh
+ delete mode 100644 target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo
+ delete mode 100644 target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx
+ delete mode 100644 target/linux/ixp4xx/base-files/lib/upgrade/platform.sh
+ delete mode 100644 target/linux/ixp4xx/config-4.9
+ delete mode 100644 target/linux/ixp4xx/generic/profiles/100-Default.mk
+ delete mode 100644 target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk
+ delete mode 100644 target/linux/ixp4xx/generic/profiles/200-NSLU2.mk
+ delete mode 100644 target/linux/ixp4xx/generic/profiles/300-NAS100d.mk
+ delete mode 100644 target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk
+ delete mode 100644 target/linux/ixp4xx/generic/profiles/500-USR8200.mk
+ delete mode 100644 target/linux/ixp4xx/generic/target.mk
+ delete mode 100644 target/linux/ixp4xx/harddisk/config-default
+ delete mode 100644 target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk
+ delete mode 100644 target/linux/ixp4xx/harddisk/target.mk
+ delete mode 100644 target/linux/ixp4xx/image/Makefile
+ delete mode 100644 target/linux/ixp4xx/modules.mk
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/120-compex_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/190-cambria_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/300-avila_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch
+ delete mode 100644 target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch
 
-diff --git a/package/kernel/acx-mac80211/Makefile b/package/kernel/acx-mac80211/Makefile
-index 52c8914947..195802f5f5 100644
---- a/package/kernel/acx-mac80211/Makefile
-+++ b/package/kernel/acx-mac80211/Makefile
-@@ -26,7 +26,7 @@ include $(INCLUDE_DIR)/package.mk
- define KernelPackage/acx-mac80211
-   SUBMENU:=Wireless Drivers
-   TITLE:=ACX1xx mac80211 driver
--  DEPENDS:=@(PCI_SUPPORT||TARGET_ar7) @mipsel +kmod-mac80211
-+  DEPENDS:=@PCI_SUPPORT @mipsel +kmod-mac80211
-   FILES:=$(PKG_BUILD_DIR)/acx-mac80211.ko
-   AUTOLOAD:=$(call AutoProbe,acx-mac80211)
-   MENU:=1
-diff --git a/package/kernel/ar7-atm/Config.in b/package/kernel/ar7-atm/Config.in
+diff --git a/package/boot/apex/Makefile b/package/boot/apex/Makefile
 deleted file mode 100644
-index 479b7ad072..0000000000
---- a/package/kernel/ar7-atm/Config.in
+index 64c2426802..0000000000
+--- a/package/boot/apex/Makefile
 +++ /dev/null
-@@ -1,22 +0,0 @@
--menu "Configuration"
--	depends on (PACKAGE_kmod-sangam-atm-annex-a || PACKAGE_kmod-sangam-atm-annex-b)
--
--choice
--	prompt "Firmware version"
--	default AR7_ATM_FW_VERSION_704
--	help
--		This option allows you to switch between firmware/driver versions which
--		might improve the DSL line speed.
--
--config AR7_ATM_FW_VERSION_705
--	bool "D7.05.01.00"
--
--config AR7_ATM_FW_VERSION_704
--	bool "D7.04.03.00"
--
--config AR7_ATM_FW_VERSION_703
--	bool "D7.03.01.00"
--
--endchoice
--
--endmenu
-diff --git a/package/kernel/ar7-atm/Makefile b/package/kernel/ar7-atm/Makefile
-deleted file mode 100644
-index 88ffb52c65..0000000000
---- a/package/kernel/ar7-atm/Makefile
-+++ /dev/null
-@@ -1,100 +0,0 @@
+@@ -1,62 +0,0 @@
 -#
--# Copyright (C) 2006-2014 OpenWrt.org
+-# Copyright (C) 2006-2011 OpenWrt.org
 -#
 -# This is free software, licensed under the GNU General Public License v2.
 -# See /LICENSE for more information.
@@ -285,10155 +253,797 @@ index 88ffb52c65..0000000000
 -include $(TOPDIR)/rules.mk
 -include $(INCLUDE_DIR)/kernel.mk
 -
--PKG_NAME:=sangam_atm
+-PKG_NAME:=apex
+-PKG_VERSION:=1.6.9
+-PKG_RELEASE:=1
 -
--ifeq ($(CONFIG_AR7_ATM_FW_VERSION_705),y)
--PKG_VERSION:=D7.05.01.00
--PKG_HASH:=874b5baff92159e99cef0dfb839d6fdc124a46aef7374653064d29d9eee9a3c9
--PKG_RELEASE:=R1
--PATCH_DIR:=patches-$(PKG_VERSION)
--endif
+-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+-PKG_SOURCE_URL:=https://downloads.openwrt.org/sources/
+-PKG_HASH:=1d2bc04c2c6bb3d2d6c1916b6dc559cda2b1ecb045d7801fd49af6af4234abeb
+-PKG_TARGETS:=bin
 -
--ifeq ($(CONFIG_AR7_ATM_FW_VERSION_704),y)
--PKG_VERSION:=D7.04.03.00
--PKG_HASH:=af2e203e4c86f9a86cdd07d172897b07e66a25379376e8da4c1b14816f86b58f
--PKG_RELEASE:=R1
--PATCH_DIR:=patches-$(PKG_VERSION)
--endif
+-include $(INCLUDE_DIR)/package.mk
 -
--ifeq ($(CONFIG_AR7_ATM_FW_VERSION_703),y)
--PKG_VERSION:=D7.03.01.00
--PKG_HASH:=2d156164ef5abbe10ffb2400ada4cef2035df3ba2b3f866f00bdede489861c4d
--PKG_RELEASE:=R2
--PATCH_DIR:=patches-D7.04.03.00
--endif
+-export GCC_HONOUR_COPTS=s
 -
--PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_RELEASE).tar.bz2
--PKG_SOURCE_URL:=http://mirror2.openwrt.org/sources
+-define Package/apex
+-  SECTION:=boot
+-  CATEGORY:=Boot Loaders
+-  DEPENDS:=@TARGET_ixp4xx
+-  DEFAULT:=y
+-  TITLE:=Boot loader for NSLU2, FSG3, NAS100D and others
+-endef
+-
+-define build_apex
+-	$(MAKE) -C $(PKG_BUILD_DIR) \
+-		ARCH=arm \
+-		$(1)_config
+-	$(MAKE) -C $(PKG_BUILD_DIR) \
+-		$(TARGET_CONFIGURE_OPTS) \
+-		KBUILD_HAVE_NLS=no \
+-		ARCH=arm \
+-		clean all
+-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/apex.bin $(PKG_BUILD_DIR)/out/apex-$(2).bin
+-endef
+-
+-define Build/Compile
+-	$(INSTALL_DIR) $(PKG_BUILD_DIR)/out
+-	$(call build_apex,slugos-nslu2-armeb,nslu2-armeb)
+-	$(call build_apex,slugos-nslu2-16mb-armeb,nslu2-16mb-armeb)
+-	$(call build_apex,slugos-fsg3-armeb,fsg3-armeb)
+-	$(call build_apex,slugos-nas100d-armeb,nas100d-armeb)
+-endef
+-
+-define Package/apex/install
+-	$(INSTALL_DIR) $(STAGING_DIR)/apex
+-	$(CP) $(PKG_BUILD_DIR)/out/*.bin $(1)/
+-endef
+-
+-define Build/InstallDev
+-	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)
+-	$(CP) $(PKG_BUILD_DIR)/out/*.bin $(STAGING_DIR_IMAGE)/
+-endef
+-
+-$(eval $(call BuildPackage,apex))
+diff --git a/package/boot/apex/patches/001-compile_fix.patch b/package/boot/apex/patches/001-compile_fix.patch
+deleted file mode 100644
+index 8a25de6570..0000000000
+--- a/package/boot/apex/patches/001-compile_fix.patch
++++ /dev/null
+@@ -1,20 +0,0 @@
+---- a/Makefile
+-+++ b/Makefile
+-@@ -444,7 +444,7 @@ ifeq ($(config-targets),1)
+- include $(srctree)/src/arch-$(SRCARCH)/Makefile
+- export KBUILD_DEFCONFIG
+- 
+--config %config: scripts_basic outputmakefile FORCE
+-+%config: scripts_basic outputmakefile FORCE
+- 	$(Q)mkdir -p include/linux include/config
+- 	$(Q)$(MAKE) $(build)=scripts/kconfig $@
+- 
+-@@ -1585,7 +1585,7 @@ endif
+- 	$(Q)$(MAKE) $(build)=$(build-dir) $(target-dir)$(notdir $@)
+- 
+- # Modules
+--/ %/: prepare scripts FORCE
+-+%/: prepare scripts FORCE
+- 	$(cmd_crmodverdir)
+- 	$(Q)$(MAKE) KBUILD_MODULES=$(if $(CONFIG_MODULES),1) \
+- 	$(build)=$(build-dir)
+diff --git a/package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch b/package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch
+deleted file mode 100644
+index d598ff3287..0000000000
+--- a/package/boot/apex/patches/100-openwrt_nslu2_armeb_config.patch
++++ /dev/null
+@@ -1,23 +0,0 @@
+---- a/src/mach-ixp42x/slugos-nslu2-armeb_config
+-+++ b/src/mach-ixp42x/slugos-nslu2-armeb_config
+-@@ -19,7 +19,7 @@ CONFIG_EXPERIMENTAL=y
+- #
+- # General Setup
+- #
+--CONFIG_TARGET_DESCRIPTION="SlugOS NSLU2 (bigendian)"
+-+CONFIG_TARGET_DESCRIPTION="OpenWrt NSLU2 (8MiB Flash)"
+- CONFIG_CROSS_COMPILE=""
+- CONFIG_AEABI=y
+- # CONFIG_DRIVER_LONG_LONG_SIZE is not set
+-@@ -163,9 +163,9 @@ CONFIG_ENV_REGION_KERNEL_ALT="fis://kern
+- # Overrides
+- #
+- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
+--CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
+-+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
+- CONFIG_ENV_DEFAULT_CMDLINE_ALT_P=y
+--CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
+-+CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
+- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
+- # CONFIG_ENV_DEFAULT_STARTUP_ALT_P is not set
+- CONFIG_USES_NOR_BOOTFLASH=y
+diff --git a/package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch b/package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch
+deleted file mode 100644
+index 5e7ecee27c..0000000000
+--- a/package/boot/apex/patches/120-openwrt_nslu2_16mb_armeb_config.patch
++++ /dev/null
+@@ -1,23 +0,0 @@
+---- a/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
+-+++ b/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
+-@@ -19,7 +19,7 @@ CONFIG_EXPERIMENTAL=y
+- #
+- # General Setup
+- #
+--CONFIG_TARGET_DESCRIPTION="SlugOS NSLU2/BE (16MiB Flash)"
+-+CONFIG_TARGET_DESCRIPTION="OpenWrt NSLU2 (16MiB Flash)"
+- CONFIG_CROSS_COMPILE=""
+- CONFIG_AEABI=y
+- # CONFIG_DRIVER_LONG_LONG_SIZE is not set
+-@@ -163,9 +163,9 @@ CONFIG_ENV_REGION_KERNEL_ALT="fis://kern
+- # Overrides
+- #
+- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
+--CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
+-+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
+- CONFIG_ENV_DEFAULT_CMDLINE_ALT_P=y
+--CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
+-+CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock4 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
+- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
+- # CONFIG_ENV_DEFAULT_STARTUP_ALT_P is not set
+- CONFIG_USES_NOR_BOOTFLASH=y
+diff --git a/package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch b/package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch
+deleted file mode 100644
+index fc0e8b9f3d..0000000000
+--- a/package/boot/apex/patches/140-openwrt_fsg3_armeb_config.patch
++++ /dev/null
+@@ -1,23 +0,0 @@
+---- a/src/mach-ixp42x/slugos-fsg3-armeb_config
+-+++ b/src/mach-ixp42x/slugos-fsg3-armeb_config
+-@@ -17,7 +17,7 @@ CONFIG_EXPERIMENTAL=y
+- #
+- # General Setup
+- #
+--CONFIG_TARGET_DESCRIPTION="SlugOS FSG3/BE"
+-+CONFIG_TARGET_DESCRIPTION="OpenWrt FSG3"
+- CONFIG_CROSS_COMPILE=""
+- CONFIG_AEABI=y
+- CONFIG_CC_OPTIMIZE_FOR_SIZE=y
+-@@ -148,9 +148,9 @@ CONFIG_ENV_REGION_KERNEL_ALT="fis://kern
+- #    Overrides
+- #
+- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
+--CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/sda1 rootdelay=10 console=ttyS0,115200"
+-+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/sda1 rootdelay=10 console=ttyS0,115200 init=/etc/preinit noinitrd"
+- CONFIG_ENV_DEFAULT_CMDLINE_ALT_P=y
+--CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/sda2 rootdelay=10 console=ttyS0,115200"
+-+CONFIG_ENV_DEFAULT_CMDLINE_ALT="root=/dev/mtdblock2 rootfstype=squashfs console=ttyS0,115200 init=/etc/preinit noinitrd"
+- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
+- # CONFIG_ENV_DEFAULT_STARTUP_ALT_P is not set
+- CONFIG_USES_NOR_BOOTFLASH=y
+diff --git a/package/boot/apex/patches/150-limit_ram_to_64mb.patch b/package/boot/apex/patches/150-limit_ram_to_64mb.patch
+deleted file mode 100644
+index 3e178166e1..0000000000
+--- a/package/boot/apex/patches/150-limit_ram_to_64mb.patch
++++ /dev/null
+@@ -1,22 +0,0 @@
+---- a/src/mach-ixp42x/slugos-nslu2-armeb_config
+-+++ b/src/mach-ixp42x/slugos-nslu2-armeb_config
+-@@ -137,7 +137,7 @@ CONFIG_AUTOBOOT_DELAY=10
+- CONFIG_ENV_STARTUP_KERNEL_COPY=y
+- # CONFIG_ENV_REGION_KERNEL_SWAP is not set
+- CONFIG_ENV_STARTUP_PREFIX_P=y
+--CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+256m"
+-+CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+64m"
+- 
+- #
+- #    Regions
+---- a/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
+-+++ b/src/mach-ixp42x/slugos-nslu2-16mb-armeb_config
+-@@ -137,7 +137,7 @@ CONFIG_AUTOBOOT_DELAY=10
+- CONFIG_ENV_STARTUP_KERNEL_COPY=y
+- # CONFIG_ENV_REGION_KERNEL_SWAP is not set
+- CONFIG_ENV_STARTUP_PREFIX_P=y
+--CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+256m"
+-+CONFIG_ENV_STARTUP_PREFIX="sdram-init; memscan -u 0+64m"
+- 
+- #
+- #    Regions
+diff --git a/package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch b/package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch
+deleted file mode 100644
+index e190964857..0000000000
+--- a/package/boot/apex/patches/160-openwrt_nas100d_armeb_config.patch
++++ /dev/null
+@@ -1,20 +0,0 @@
+---- a/src/mach-ixp42x/slugos-nas100d-armeb_config
+-+++ b/src/mach-ixp42x/slugos-nas100d-armeb_config
+-@@ -19,7 +19,7 @@ CONFIG_EXPERIMENTAL=y
+- #
+- # General Setup
+- #
+--CONFIG_TARGET_DESCRIPTION="SlugOS NAS100D/BE"
+-+CONFIG_TARGET_DESCRIPTION="OpenWrt NAS100D"
+- CONFIG_CROSS_COMPILE=""
+- CONFIG_AEABI=y
+- # CONFIG_DRIVER_LONG_LONG_SIZE is not set
+-@@ -158,7 +158,7 @@ CONFIG_ENV_REGION_KERNEL="fis://kernel"
+- # Overrides
+- #
+- CONFIG_ENV_DEFAULT_CMDLINE_OVERRIDE=y
+--CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock2 rootfstype=jffs2 console=ttyS0,115200 init=/linuxrc"
+-+CONFIG_ENV_DEFAULT_CMDLINE="root=/dev/mtdblock2 rootfstype=squashfs,jffs2 console=ttyS0,115200 init=/etc/preinit noinitrd"
+- # CONFIG_ENV_DEFAULT_STARTUP_OVERRIDE is not set
+- CONFIG_USES_NOR_BOOTFLASH=y
+- CONFIG_RELOCATE_SIMPLE=y
+diff --git a/package/firmware/ixp4xx-microcode/Makefile b/package/firmware/ixp4xx-microcode/Makefile
+deleted file mode 100644
+index 78fedfd1aa..0000000000
+--- a/package/firmware/ixp4xx-microcode/Makefile
++++ /dev/null
+@@ -1,59 +0,0 @@
+-#
+-# Copyright (C) 2007 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-include $(TOPDIR)/rules.mk
+-
+-PKG_NAME:=ixp4xx-microcode
+-PKG_VERSION:=2.4
+-PKG_RELEASE:=2
+-
+-PKG_SOURCE:=IPL_ixp400NpeLibraryWithCrypto-2_4.zip
+-PKG_SOURCE_URL:=http://downloads.openwrt.org/sources
+-PKG_HASH:=1b1170d0657847248589d946048c0aeaa9cd671966fc5bec5933283309485eaa
 -
 -PKG_FLAGS:=nonshared
 -
 -include $(INCLUDE_DIR)/package.mk
 -
--define KernelPackage/sangam-atm/Default
--  SUBMENU:=Network Devices
--  DEPENDS:=@TARGET_ar7_generic +kmod-atm
--  TITLE:=AR7 ADSL driver
--  FILES:=$(PKG_BUILD_DIR)/tiatm.ko
--  AUTOLOAD:=$(call AutoLoad,50,tiatm)
--  MENU:=1
+-define Package/ixp4xx-microcode
+-  SECTION:=net
+-  CATEGORY:=Network
+-  TITLE:=Microcode for the IXP4xx network engines
+-  DEPENDS:=@TARGET_ixp4xx
 -endef
 -
--define KernelPackage/sangam-atm/config
--	source "$(SOURCE)/Config.in"
+-define Package/ixp4xx-microcode/description
+- This package contains the microcode needed to use the network engines in IXP4xx CPUs
 -endef
 -
--define KernelPackage/sangam-atm-annex-a
--$(call KernelPackage/sangam-atm/Default)
--  TITLE+= (Annex A, ADSL over POTS)
--endef
--
--define KernelPackage/sangam-atm-annex-a/description
-- The AR7 ADSL driver for Annex A (ADSL over POTS).
--endef
--
--define KernelPackage/sangam-atm-annex-a/config
--$(call KernelPackage/sangam-atm/config)
--endef
--
--define KernelPackage/sangam-atm-annex-b
--$(call KernelPackage/sangam-atm/Default)
--  TITLE+= (Annex B, ADSL over ISDN)
--endef
--
--define KernelPackage/sangam-atm-annex-b/description
-- The AR7 ADSL driver for Annex B (ADSL over ISDN).
--endef
--
--define KernelPackage/sangam-atm-annex-a/config
--$(call KernelPackage/sangam-atm/config)
+-define Build/Prepare
+-	rm -rf $(PKG_BUILD_DIR)
+-	mkdir -p $(PKG_BUILD_DIR)
+-	unzip -d $(PKG_BUILD_DIR)/ $(DL_DIR)/$(PKG_SOURCE)
+-	mv $(PKG_BUILD_DIR)/ixp400_xscale_sw/src/npeDl/IxNpeMicrocode.c $(PKG_BUILD_DIR)/
+-	rm -rf $(PKG_BUILD_DIR)/ixp400_xscale_sw
+-	$(CP) ./src/* $(PKG_BUILD_DIR)/
 -endef
 -
 -define Build/Compile
+-	(cd $(PKG_BUILD_DIR); \
+-		$(HOSTCC) -Wall -I$(STAGING_DIR_HOST)/include IxNpeMicrocode.c -o IxNpeMicrocode; \
+-		./IxNpeMicrocode -be \
+-	)
+-endef
+-
+-define Package/ixp4xx-microcode/install
+-	$(INSTALL_DIR) $(1)/lib/firmware
+-	$(INSTALL_DIR) $(1)/usr/share/doc
+-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-A $(1)/lib/firmware/
+-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-A-HSS $(1)/lib/firmware/
+-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-B $(1)/lib/firmware/
+-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/NPE-C $(1)/lib/firmware/
+-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/LICENSE.IPL $(1)/usr/share/doc/
+-endef
+-
+-$(eval $(call BuildPackage,ixp4xx-microcode))
+diff --git a/package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h b/package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h
+deleted file mode 100644
+index 4a843db104..0000000000
+--- a/package/firmware/ixp4xx-microcode/src/IxNpeMicrocode.h
++++ /dev/null
+@@ -1,148 +0,0 @@
+-/*
+- * IxNpeMicrocode.h - Headerfile for compiling the Intel microcode C file
+- *
+- * Copyright (C) 2006 Christian Hohnstaedt <chohnstaedt@innominate.com>
+- *
+- * This file is released under the GPLv2
+- *
+- *
+- * compile with
+- *
+- * gcc -Wall IxNpeMicrocode.c -o IxNpeMicrocode
+- *
+- * Executing the resulting binary on your build-host creates the
+- * "NPE-[ABC].xxxxxxxx" files containing the selected microcode
+- *
+- * fetch the IxNpeMicrocode.c from the Intel Access Library.
+- * It will include this header.
+- *
+- * select Images for every NPE from the following
+- * (used C++ comments for easy uncommenting ....)
+- */
+-
+-// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_SPAN_MASK_FIREWALL_VLAN_QOS_HDR_CONV_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_SPAN_VLAN_QOS_HDR_CONV_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_LEARN_FILTER_SPAN_MASK_FIREWALL_VLAN_QOS_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEA_HSS_TSLOT_SWITCH
+-#define IX_NPEDL_NPEIMAGE_NPEA_ETH_SPAN_FIREWALL_VLAN_QOS_HDR_CONV
+-// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_LEARN_FILTER_SPAN_FIREWALL_VLAN_QOS
+-// #define IX_NPEDL_NPEIMAGE_NPEA_ETH_LEARN_FILTER_SPAN_FIREWALL
+-#define IX_NPEDL_NPEIMAGE_NPEA_HSS_2_PORT
+-// #define IX_NPEDL_NPEIMAGE_NPEA_DMA
+-// #define IX_NPEDL_NPEIMAGE_NPEA_ATM_MPHY_12_PORT
+-// #define IX_NPEDL_NPEIMAGE_NPEA_HSS0_ATM_MPHY_1_PORT
+-// #define IX_NPEDL_NPEIMAGE_NPEA_HSS0_ATM_SPHY_1_PORT
+-// #define IX_NPEDL_NPEIMAGE_NPEA_HSS0
+-// #define IX_NPEDL_NPEIMAGE_NPEA_WEP
+-
+-
+-// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_SPAN_MASK_FIREWALL_VLAN_QOS_HDR_CONV_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_SPAN_VLAN_QOS_HDR_CONV_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_LEARN_FILTER_SPAN_MASK_FIREWALL_VLAN_QOS_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEB_DMA
+-#define IX_NPEDL_NPEIMAGE_NPEB_ETH_SPAN_FIREWALL_VLAN_QOS_HDR_CONV
+-// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_LEARN_FILTER_SPAN_FIREWALL_VLAN_QOS
+-// #define IX_NPEDL_NPEIMAGE_NPEB_ETH_LEARN_FILTER_SPAN_FIREWALL
+-
+-
+-// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_SPAN_MASK_FIREWALL_VLAN_QOS_HDR_CONV_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_SPAN_VLAN_QOS_HDR_CONV_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_LEARN_FILTER_SPAN_MASK_FIREWALL_VLAN_QOS_EXTMIB
+-// #define IX_NPEDL_NPEIMAGE_NPEC_DMA
+-// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_ETH_LEARN_FILTER_SPAN
+-// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_ETH_LEARN_FILTER_FIREWALL
+-#define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_CCM_ETH
+-// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_AES_CCM_EXTSHA_ETH
+-// #define IX_NPEDL_NPEIMAGE_NPEC_CRYPTO_ETH_LEARN_FILTER_SPAN_FIREWALL
+-// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_SPAN_FIREWALL_VLAN_QOS_HDR_CONV
+-// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_LEARN_FILTER_SPAN_FIREWALL_VLAN_QOS
+-// #define IX_NPEDL_NPEIMAGE_NPEC_ETH_LEARN_FILTER_SPAN_FIREWALL
+-
+-
+-#include <stdio.h>
+-#include <unistd.h>
+-#include <stdlib.h>
+-#include <netinet/in.h>
+-#include <sys/types.h>
+-#include <sys/stat.h>
+-#include <fcntl.h>
+-#include <errno.h>
+-#include <endian.h>
+-#include <byteswap.h>
+-#include <string.h>
+-
+-#if __BYTE_ORDER == __LITTLE_ENDIAN
+-#define to_le32(x) (x)
+-#define to_be32(x) bswap_32(x)
+-#else
+-#define to_be32(x) (x)
+-#define to_le32(x) bswap_32(x)
+-#endif
+-
+-struct dl_image {
+-	unsigned magic;
+-	unsigned id;
+-	unsigned size;
+-	unsigned data[0];
+-};
+-
+-const unsigned IxNpeMicrocode_array[];
+-
+-int main(int argc, char *argv[])
+-{
+-	struct dl_image *image = (struct dl_image *)IxNpeMicrocode_array;
+-	int imgsiz, i, fd, cnt;
+-	const unsigned *arrayptr = IxNpeMicrocode_array;
+-	const char *names[] = { "IXP425", "IXP465", "unknown" };
+-	int bigendian = 1;
+-
+-	if (argc > 1) {
+-		if (!strcmp(argv[1], "-le"))
+-			bigendian = 0;
+-		else if (!strcmp(argv[1], "-be"))
+-			bigendian = 1;
+-		else {
+-			printf("Usage: %s <-le|-be>\n", argv[0]);
+-			return EXIT_FAILURE;
+-		}
+-	}
+-
+-	for (image = (struct dl_image *)arrayptr, cnt=0;
+-		(image->id != 0xfeedf00d) && (image->magic == 0xfeedf00d);
+-		image = (struct dl_image *)(arrayptr), cnt++)
+-	{
+-		unsigned char field[4];
+-		imgsiz = image->size + 3;
+-		*(unsigned*)field = to_be32(image->id);
+-		char filename[40], slnk[10];
+-
+-		sprintf(filename, "NPE-%c.%08x", (field[0] & 0xf) + 'A',
+-			image->id);
+-		if (image->id == 0x00090000)
+-			sprintf(slnk, "NPE-%c-HSS", (field[0] & 0xf) + 'A');
+-		else
+-			sprintf(slnk, "NPE-%c", (field[0] & 0xf) + 'A');
+-
+-		printf("Writing image: %s.NPE_%c Func: %2x Rev: %02x.%02x "
+-			"Size: %5d to: '%s'\n",
+-			names[field[0] >> 4], (field[0] & 0xf) + 'A',
+-			field[1], field[2], field[3], imgsiz*4, filename);
+-		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0644);
+-		if (fd >= 0) {
+-			for (i=0; i<imgsiz; i++) {
+-				*(unsigned*)field = bigendian ?
+-					to_be32(arrayptr[i]) :
+-					to_le32(arrayptr[i]);
+-				write(fd, field, sizeof(field));
+-			}
+-			close(fd);
+-			unlink(slnk);
+-			symlink(filename, slnk);
+-		} else {
+-			perror(filename);
+-		}
+-		arrayptr += imgsiz;
+-	}
+-	close(fd);
+-	return 0;
+-}
+diff --git a/package/firmware/ixp4xx-microcode/src/LICENSE.IPL b/package/firmware/ixp4xx-microcode/src/LICENSE.IPL
+deleted file mode 100644
+index dad2566cfc..0000000000
+--- a/package/firmware/ixp4xx-microcode/src/LICENSE.IPL
++++ /dev/null
+@@ -1,27 +0,0 @@
+-INTEL(R) SOFTWARE LICENSE AGREEMENT
+- 
+-Copyright (c) 2007, Intel Corporation.
+-All rights reserved.
+-
+-Redistribution. Redistribution and use in binary form, without modification, are permitted
+-provided that the following conditions are met:
+-o Redistributions must reproduce the above copyright notice and the following disclaimer in the
+-documentation and/or other materials provided with the distribution. 
+-o Neither the name of Intel Corporation nor the names of its suppliers may be used to endorse
+-or promote products derived from this software without specific prior written permission. 
+-o No reverse engineering, decompilation, or disassembly of this software is permitted.
+-
+-Limited patent license. Intel Corporation grants a world-wide, royalty-free, non-exclusive
+-license under patents it now or hereafter owns or controls to make, have made, use, import,
+-offer to sell and sell (.Utilize.) this software, but solely to the extent that any such patent is
+-necessary to Utilize the software alone. The patent license shall not apply to any combinations
+-which include this software. No hardware per se is licensed hereunder.
+-DISCLAIMER. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+-COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+-EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+-GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+-OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+-OF SUCH DAMAGE.
+diff --git a/package/kernel/avila-wdt/Makefile b/package/kernel/avila-wdt/Makefile
+deleted file mode 100644
+index a91c93374c..0000000000
+--- a/package/kernel/avila-wdt/Makefile
++++ /dev/null
+@@ -1,34 +0,0 @@
+-#
+-# Copyright (C) 2008 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-include $(TOPDIR)/rules.mk
+-include $(INCLUDE_DIR)/kernel.mk
+-
+-PKG_NAME:=avila-wdt
+-PKG_RELEASE:=1
+-
+-include $(INCLUDE_DIR)/package.mk
+-
+-define KernelPackage/avila-wdt
+-  SUBMENU:=Other modules
+-  TITLE:=GPIO hardware watchdog driver for modified Avila boards
+-  DEPENDS:=@GPIO_SUPPORT @TARGET_ixp4xx
+-  FILES:=$(PKG_BUILD_DIR)/avila-wdt.ko
+-  AUTOLOAD:=$(call AutoLoad,10,avila-wdt)
+-endef
+-
+-MAKE_OPTS:= \
+-	$(KERNEL_MAKE_FLAGS) \
+-	SUBDIRS="$(PKG_BUILD_DIR)"
+-
+-define Build/Compile
 -	$(MAKE) -C "$(LINUX_DIR)" \
--		$(KERNEL_MAKE_FLAGS) \
--		SUBDIRS="$(PKG_BUILD_DIR)" \
+-		$(MAKE_OPTS) \
 -		modules
 -endef
 -
--define KernelPackage/sangam-atm-annex-a/install
--	mkdir -p $(1)/lib/firmware
--	$(INSTALL_DATA) $(PKG_BUILD_DIR)/ar0700mp.bin $(1)/lib/firmware/
--	$(LN) ar0700mp.bin $(1)/lib/firmware/ar0700xx.bin
--endef
--
--define KernelPackage/sangam-atm-annex-b/install
--	mkdir -p $(1)/lib/firmware
--	$(INSTALL_DATA) $(PKG_BUILD_DIR)/ar0700db.bin $(1)/lib/firmware/
--	$(LN) ar0700db.bin $(1)/lib/firmware/ar0700xx.bin
--endef
--
--$(eval $(call KernelPackage,sangam-atm-annex-a))
--$(eval $(call KernelPackage,sangam-atm-annex-b))
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/090-no-date-time.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/090-no-date-time.patch
+-$(eval $(call KernelPackage,avila-wdt))
+diff --git a/package/kernel/avila-wdt/src/Makefile b/package/kernel/avila-wdt/src/Makefile
 deleted file mode 100644
-index 9b3abf006b..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/090-no-date-time.patch
+index 90d90657ed..0000000000
+--- a/package/kernel/avila-wdt/src/Makefile
 +++ /dev/null
-@@ -1,11 +0,0 @@
----- a/aal5sar.h
--+++ b/aal5sar.h
--@@ -19,7 +19,7 @@
-- /** \namespace AAL5_Version
-- This documents version 01.07.2c of the AAL5 CPHAL.
-- */
---const char *pszVersion_CPAAL5="CPAAL5 01.07.2c "__DATE__" "__TIME__;
--+const char *pszVersion_CPAAL5="CPAAL5 01.07.2c ";
-- 
-- #include "cpsar_cpaal5.h"
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/100-compile_fix.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/100-compile_fix.patch
+@@ -1 +0,0 @@
+-obj-m := avila-wdt.o
+diff --git a/package/kernel/avila-wdt/src/avila-wdt.c b/package/kernel/avila-wdt/src/avila-wdt.c
 deleted file mode 100644
-index df5fe53967..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/100-compile_fix.patch
+index 22a3d6c7ea..0000000000
+--- a/package/kernel/avila-wdt/src/avila-wdt.c
 +++ /dev/null
-@@ -1,768 +0,0 @@
----- a/cppi_cpaal5.c
--+++ b/cppi_cpaal5.c
--@@ -352,7 +352,7 @@ static int halRxReturn(HAL_RECEIVEINFO *
--            {
--             /* malloc failed, add this RCB to Needs Buffer List */
--             TempRcb->FragCount = 1;                                             /*MJH+030417*/
---            (HAL_RCB *)TempRcb->Eop = TempRcb;                                  /* GSG +030430 */
--+            TempRcb->Eop = TempRcb;                                             /* GSG +030430 */
-- 
--             if(HalDev->NeedsCount < MAX_NEEDS)                                  /* +MJH 030410 */
--               {                                                                 /* +MJH 030410 */
----- a/dsl_hal_api.c
--+++ b/dsl_hal_api.c
--@@ -254,15 +254,15 @@
-- *                            of phyEnableDisableWord & phyControlWord to avoid changing API struct
-- *                            which may cause change required to application data structure.
-- ******************************************************************************/
---#include <dev_host_interface.h>
---#include <dsl_hal_register.h>
---#include <dsl_hal_support.h>
--+#include "dev_host_interface.h"
--+#include "dsl_hal_register.h"
--+#include "dsl_hal_support.h"
-- 
-- #ifndef NO_ADV_STATS
---#include <dsl_hal_logtable.h>
--+#include "dsl_hal_logtable.h"
-- #endif
-- 
---#include <dsl_hal_version.h>
--+#include "dsl_hal_version.h"
-- 
-- //  UR8_MERGE_START CQ11054   Jack Zhang
-- static unsigned int highprecision_selected = 0;  //By default we use low precision for backward compt.
----- a/dsl_hal_support.c
--+++ b/dsl_hal_support.c
--@@ -140,9 +140,9 @@
-- *                                          oamFeature are overriden
-- // UR8_MERGE_END CQ10774 Ram
-- *******************************************************************************/
---#include <dev_host_interface.h>
---#include <dsl_hal_register.h>
---#include <dsl_hal_support.h>
--+#include "dev_host_interface.h"
--+#include "dsl_hal_register.h"
--+#include "dsl_hal_support.h"
-- 
-- #define NUM_READ_RETRIES 3
-- static unsigned int dslhal_support_adsl2ByteSwap32(unsigned int in32Bits);
----- a/dsl_hal_support.h
--+++ b/dsl_hal_support.h
--@@ -49,7 +49,7 @@
-- *    04Nov05     0.11.00            CPH    Fixed T1413 mode got Zero DS/US rate when DSL_BIT_TMODE is set.
-- *******************************************************************************/
-- 
---#include <dsl_hal_api.h>
--+#include "dsl_hal_api.h"
-- 
-- #define virtual2Physical(a)    (((int)a)&~0xe0000000)
-- /* External Function Prototype Declarations */
----- a/Makefile
--+++ b/Makefile
--@@ -1,18 +1,9 @@
---# File: drivers/atm/ti_evm3/Makefile
-- #
---# Makefile for the Texas Instruments EVM3 ADSL/ATM driver.
--+# Makefile for the TIATM device driver.
-- #
---#
---# Copyright (c) 2000 Texas Instruments Incorporated.
---# 	Jeff Harrell (jharrell@telogy.com)
---# 	Viren Balar  (vbalar@ti.com)
---# 	Victor Wells (vwells@telogy.com)
---#
---include $(TOPDIR)/Rules.make
---
---
---
---
---
---
-- 
--+CONFIG_SANGAM_ATM=m
--+#EXTRA_CFLAGS += -DEL -I. -DPOST_SILICON -DCOMMON_NSP -DCONFIG_LED_MODULE -DDEREGISTER_LED -DNO_ACT
--+EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
--+obj-$(CONFIG_SANGAM_ATM) := tiatm.o
--+tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -61,7 +61,6 @@
--  *    UR8_MERGE_END   CQ11057*
-- *********************************************************************************************/
-- 
---#include <linux/config.h>
-- #include <linux/kernel.h>
-- #include <linux/module.h>
-- #include <linux/init.h>
--@@ -69,11 +68,14 @@
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
-- #include <linux/smp_lock.h>
---#include <asm/io.h>
---#include <asm/mips-boards/prom.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
--+
--+#include <asm/io.h>
--+#include <asm/ar7/ar7.h>
--+#include <asm/ar7/prom.h>
--+
-- #include "dsl_hal_api.h"
-- #include "tn7atm.h"
-- #include "tn7api.h"
--@@ -82,6 +84,7 @@
-- #include "dsl_hal_register.h"
-- 
-- #ifdef MODULE
--+MODULE_LICENSE("GPL");
-- MODULE_DESCRIPTION ("Tnetd73xx ATM Device Driver");
-- MODULE_AUTHOR ("Zhicheng Tang");
-- #endif
--@@ -100,9 +103,9 @@ MODULE_AUTHOR ("Zhicheng Tang");
-- 
-- /*end of externs */
-- 
---#ifndef TI_STATIC_ALLOCATIONS
---#define TI_STATIC_ALLOCATIONS
---#endif
--+//#ifndef TI_STATIC_ALLOCATIONS
--+//#define TI_STATIC_ALLOCATIONS
--+//#endif
-- 
-- #define tn7atm_kfree_skb(x)     dev_kfree_skb(x)
-- 
--@@ -114,7 +117,7 @@ static int EnableQoS = FALSE;
-- /* prototypes */
-- static int tn7atm_set_can_support_adsl2 (int can);
-- 
---static int tn7atm_open (struct atm_vcc *vcc, short vpi, int vci);
--+static int tn7atm_open (struct atm_vcc *vcc);
-- 
-- static void tn7atm_close (struct atm_vcc *vcc);
-- 
--@@ -257,13 +260,12 @@ static const struct atmdev_ops tn7atm_op
--         getsockopt:     NULL,
--         setsockopt:     NULL,
--         send:           tn7atm_send,
---        sg_send:        NULL,
--         phy_put:        NULL,
--         phy_get:        NULL,
--         change_qos:     tn7atm_change_qos,
-- };
-- 
---const char drv_proc_root_folder[] = "avalanche/";
--+const char drv_proc_root_folder[] = "avalanche";
-- static struct proc_dir_entry *root_proc_dir_entry = NULL;
-- #define DRV_PROC_MODE 0644
-- static int proc_root_already_exists = TRUE;
--@@ -559,56 +561,6 @@ static int turbodsl_check_priority_type(
-- 
-- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--  *
--- *  Function: int tn7atm_walk_vccs(struct atm_dev *dev, short *vcc, int *vci)
--- *
--- *  Description: retrieve VPI/VCI for connection
--- *
--- *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
---static int tn7atm_walk_vccs (struct atm_vcc *vcc, short *vpi, int *vci)
---{
---  struct atm_vcc *walk;
---
---  /*
---   * find a free VPI
---   */
---  if (*vpi == ATM_VPI_ANY)
---  {
---
---    for (*vpi = 0, walk = vcc->dev->vccs; walk; walk = walk->next)
---    {
---
---      if ((walk->vci == *vci) && (walk->vpi == *vpi))
---      {
---        (*vpi)++;
---        walk = vcc->dev->vccs;
---      }
---    }
---  }
---
---  /*
---   * find a free VCI
---   */
---  if (*vci == ATM_VCI_ANY)
---  {
---
---    for (*vci = ATM_NOT_RSV_VCI, walk = vcc->dev->vccs; walk;
---         walk = walk->next)
---    {
---
---      if ((walk->vpi = *vpi) && (walk->vci == *vci))
---      {
---        *vci = walk->vci + 1;
---        walk = vcc->dev->vccs;
---      }
---    }
---  }
---
---  return 0;
---}
---
---
---/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--- *
--  *  Function: int tn7atm_sar_irq(void)
--  *
--  *  Description: tnetd73xx SAR interrupt.
--@@ -693,7 +645,7 @@ static int __init tn7atm_irq_request (st
--    * Register SAR interrupt
--    */
--   priv->sar_irq = LNXINTNUM (ATM_SAR_INT);      /* Interrupt line # */
---  if (request_irq (priv->sar_irq, tn7atm_sar_irq, SA_INTERRUPT, "SAR ", dev))
--+  if (request_irq (priv->sar_irq, tn7atm_sar_irq, IRQF_DISABLED, "SAR ", dev))
--     printk ("Could not register tn7atm_sar_irq\n");
-- 
--   /*
--@@ -704,14 +656,14 @@ static int __init tn7atm_irq_request (st
--   {
--     def_sar_inter_pace = os_atoi (ptr);
--   }
---  avalanche_request_pacing (priv->sar_irq, ATM_SAR_INT_PACING_BLOCK_NUM,
---                            def_sar_inter_pace);
--+/*  avalanche_request_pacing (priv->sar_irq, ATM_SAR_INT_PACING_BLOCK_NUM,
--+                            def_sar_inter_pace);*/
-- 
--   /*
--    * Reigster Receive interrupt A
--    */
--   priv->dsl_irq = LNXINTNUM (ATM_DSL_INT);      /* Interrupt line # */
---  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, SA_INTERRUPT, "DSL ", dev))
--+  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, IRQF_DISABLED, "DSL ", dev))
--     printk ("Could not register tn7atm_dsl_irq\n");
-- 
-- /***** VRB Tasklet Mode ****/
--@@ -875,11 +827,15 @@ static int __init tn7atm_get_ESI (struct
-- #define ATM_VBR_RT     5
-- #endif
-- 
---int tn7atm_open (struct atm_vcc *vcc, short vpi, int vci)
--+int tn7atm_open (struct atm_vcc *vcc)
-- {
--   tn7atm_activate_vc_parm_t tn7atm_activate_vc_parm;
--   int rc;
--   //int flags;
--+  tn7atm_activate_vc_parm.pcr = 0x20000;
--+  tn7atm_activate_vc_parm.scr = 0x20000;
--+  tn7atm_activate_vc_parm.mbs = 0x20000;
--+  tn7atm_activate_vc_parm.cdvt = 10000;
-- 
--   dgprintf(1, "tn7atm_open()\n");
-- 
--@@ -891,24 +847,18 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--     return -1;
--   }
-- 
---  MOD_INC_USE_COUNT;
--+//  MOD_INC_USE_COUNT;
-- 
---  /* find a free VPI/VCI */
---  tn7atm_walk_vccs(vcc, &vpi, &vci);
---
---  vcc->vpi = vpi;
---  vcc->vci = vci;
---
---  if ((vci == ATM_VCI_UNSPEC) || (vpi == ATM_VCI_UNSPEC))
--+  if ((vcc->vci == ATM_VCI_UNSPEC) || (vcc->vpi == ATM_VCI_UNSPEC))
--   {
---    MOD_DEC_USE_COUNT;
--+//    MOD_DEC_USE_COUNT;
--     return -EBUSY;
--   }
-- 
---  tn7atm_activate_vc_parm.vpi = vpi;
---  tn7atm_activate_vc_parm.vci = vci;
--+  tn7atm_activate_vc_parm.vpi = vcc->vpi;
--+  tn7atm_activate_vc_parm.vci = vcc->vci;
-- 
---  if ((vpi == CLEAR_EOC_VPI) && (vci == CLEAR_EOC_VCI))
--+  if ((vcc->vpi == CLEAR_EOC_VPI) && (vcc->vci == CLEAR_EOC_VCI))
--   {
--     /* always use (max_dma_chan+1) for clear eoc */
--     tn7atm_activate_vc_parm.chan = EOC_DMA_CHAN;
--@@ -916,7 +866,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--     /* check to see whether clear eoc is opened or not */
--     if (tn7atm_activate_vc_parm.priv->lut[tn7atm_activate_vc_parm.chan].inuse)
--     {
---      MOD_DEC_USE_COUNT;
--+//      MOD_DEC_USE_COUNT;
--       printk("tn7atm_open: Clear EOC channel (dmachan=%d) already in use.\n", tn7atm_activate_vc_parm.chan);
--       return -EBUSY;
--     }
--@@ -925,7 +875,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--     if (rc)
--     {
--       printk("tn7atm_open: failed to setup clear_eoc\n");
---      MOD_DEC_USE_COUNT;
--+//      MOD_DEC_USE_COUNT;
--       return -EBUSY;
--     }
--     tn7atm_set_lut(tn7atm_activate_vc_parm.priv,vcc, tn7atm_activate_vc_parm.chan);
--@@ -934,17 +884,17 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--   }
--   else  /* PVC channel setup */
--   {
---    if ((vpi==REMOTE_MGMT_VPI) && (vci==REMOTE_MGMT_VCI))
--+    if ((vcc->vpi==REMOTE_MGMT_VPI) && (vcc->vci==REMOTE_MGMT_VCI))
--     {
--       tn7atm_activate_vc_parm.chan = 14;   /* always use chan 14 for MII PVC-base romote mgmt */
--     }
--     else
--     {
---       rc = tn7atm_lut_find(vpi, vci);
--+       rc = tn7atm_lut_find(vcc->vpi, vcc->vci);
--       /* check to see whether PVC is opened or not */
--       if(ATM_NO_DMA_CHAN != rc)
--       {
---        MOD_DEC_USE_COUNT;
--+//        MOD_DEC_USE_COUNT;
--         printk("PVC already opened. dmachan = %d\n", rc);
--         return -EBUSY;
--       }
--@@ -976,6 +926,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--        tn7atm_activate_vc_parm.priority = 2;
--        break;
-- 
--+#if 0
--      case ATM_VBR: /* Variable Bit Rate-Non RealTime*/
--        tn7atm_activate_vc_parm.qos = 1;
--        tn7atm_activate_vc_parm.priority = 1;
--@@ -997,6 +948,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--            tn7atm_activate_vc_parm.mbs = vcc->qos.txtp.max_pcr;
--        tn7atm_activate_vc_parm.cdvt = vcc->qos.txtp.max_cdv;
--        break;
--+#endif
-- 
--      default:
--          tn7atm_activate_vc_parm.qos = 2;
--@@ -1024,7 +976,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--    if (rc < 0)
--    {
--       printk("failed to activate hw channel\n");
---      MOD_DEC_USE_COUNT;
--+//      MOD_DEC_USE_COUNT;
--       tn7atm_lut_clear(vcc, tn7atm_activate_vc_parm.chan);
--       //spin_unlock_irqrestore(&chan_init_lock, flags);
--       return -EBUSY;
--@@ -1114,7 +1066,7 @@ void tn7atm_close (struct atm_vcc *vcc)
--   tn7atm_lut_clear (vcc, dmachan);
--   //spin_unlock_irqrestore (&closeLock, closeFlag);
-- 
---  MOD_DEC_USE_COUNT;
--+//  MOD_DEC_USE_COUNT;
-- 
--   dgprintf (1, "Leave tn7atm_close\n");
-- }
--@@ -1528,8 +1480,7 @@ int tn7atm_receive (void *os_dev, int ch
--                                  * firewall is on */
-- 
--   dgprintf (3, "pushing the skb...\n");
---
---  skb->stamp = vcc->timestamp = xtime;
--+  __net_timestamp(skb);
-- 
--   xdump ((unsigned char *) skb->data, skb->len, 5);
-- 
--@@ -1725,8 +1676,7 @@ static void tn7atm_exit (void)
-- 
--   kfree (dev->dev_data);
-- 
---  // atm_dev_deregister (dev);
---  shutdown_atm_dev (dev);
--+  atm_dev_deregister (dev);
-- 
--   /*
--    * remove proc entries
--@@ -1885,9 +1835,6 @@ static int __init tn7atm_detect (void)
--   /*
--    * Set up proc entry for atm stats
--    */
---  if (tn7atm_xlate_proc_name
---      (drv_proc_root_folder, &root_proc_dir_entry, &residual))
---  {
--     printk ("Creating new root folder %s in the proc for the driver stats \n",
--             drv_proc_root_folder);
--     root_proc_dir_entry = proc_mkdir (drv_proc_root_folder, NULL);
--@@ -1897,7 +1844,6 @@ static int __init tn7atm_detect (void)
--       return -ENOMEM;
--     }
--     proc_root_already_exists = FALSE;
---  }
-- 
--   /*
--    * AV: Clean-up. Moved all the definitions to the data structure.
--@@ -2479,7 +2425,5 @@ static int tn7atm_proc_qos_write(struct
--     return count;
-- }
-- 
---#ifdef MODULE
-- module_init (tn7atm_detect);
-- module_exit (tn7atm_exit);
---#endif /* MODULE */
----- a/tn7atm.h
--+++ b/tn7atm.h
--@@ -19,7 +19,8 @@
-- //#include  "mips_support.h"
-- #include  <linux/list.h>
-- 
---#include <linux/config.h>
--+#define MIPS_EXCEPTION_OFFSET 8
--+#define LNXINTNUM(x)((x) + MIPS_EXCEPTION_OFFSET)
-- 
-- #ifdef CONFIG_MODVERSIONS
-- #include <linux/modversions.h>
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -94,7 +94,6 @@
-- *  1/02/07  JZ     CQ11054: Data Precision and Range Changes for TR-069 Conformance
-- *  UR8_MERGE_END   CQ11054*
--  *********************************************************************************************/
---#include <linux/config.h>
-- #include <linux/kernel.h>
-- #include <linux/module.h>
-- #include <linux/init.h>
--@@ -102,8 +101,6 @@
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
-- #include <linux/smp_lock.h>
---#include <asm/io.h>
---#include <asm/mips-boards/prom.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
--@@ -111,6 +108,12 @@
-- #include <linux/timer.h>
-- #include <linux/vmalloc.h>
-- #include <linux/file.h>
--+#include <linux/firmware.h>
--+
--+#include <asm/io.h>
--+#include <asm/ar7/ar7.h>
--+#include <asm/ar7/prom.h>
--+
-- /* Modules specific header files */
-- #include "tn7atm.h"
-- #include "tn7api.h"
--@@ -173,7 +176,7 @@ led_reg_t ledreg[2];
-- static struct led_funcs ledreg[2];
-- #endif
-- 
---#define DEV_DSLMOD       1
--+#define DEV_DSLMOD       CTL_UNNUMBERED
-- #define MAX_STR_SIZE     256
-- #define DSL_MOD_SIZE     256
-- 
--@@ -299,7 +302,7 @@ static PITIDSLHW_T    pIhw;
-- static volatile int bshutdown;
-- static char info[MAX_STR_SIZE];
-- /* Used for DSL Polling enable */
---static DECLARE_MUTEX_LOCKED (adsl_sem_overlay);
--+static struct semaphore adsl_sem_overlay;
-- 
-- //kthread_t overlay_thread;
-- /* end of module wide declars */
--@@ -323,6 +326,14 @@ static int tn7dsl_proc_snr_print (char *
-- #define gDot1(a) ((a>0)?(a%10):((-a)%10))
-- //  UR8_MERGE_END   CQ11054*
-- 
--+int avalanche_request_intr_pacing(int irq_nr, unsigned int blk_num,
--+                            unsigned int pace_value)
--+{
--+	printk("avalanche_request_pacing(%d, %u, %u); // not implemented\n", irq_nr, blk_num, pace_value);
--+	return 0;
--+}
--+
--+
-- int os_atoi(const char *pStr)
-- {
--   int MulNeg = (*pStr == '-' ? -1 : 1);
--@@ -359,39 +370,6 @@ void dprintf (int uDbgLevel, char *szFmt
-- #endif
-- }
-- 
---int strcmp(const char *s1, const char *s2)
---{
---
---  int size = strlen(s1);
---
---  return(strncmp(s1, s2, size));
---}
---
---int strncmp(const char *s1, const char *s2, size_t size)
---{
---  int i = 0;
---  int max_size = (int)size;
---
---  while((s1[i] != 0) && i < max_size)
---  {
---    if(s2[i] == 0)
---    {
---      return -1;
---    }
---    if(s1[i] != s2[i])
---    {
---       return 1;
---    }
---    i++;
---  }
---  if(s2[i] != 0)
---  {
---    return 1;
---  }
---
---  return 0;
---}
---
-- // * UR8_MERGE_START CQ10640   Jack Zhang
-- int tn7dsl_dump_dsp_memory(char *input_str) //cph99
--   {
--@@ -441,101 +419,74 @@ unsigned int shim_osGetCpuFrequency(void
--   return CpuFrequency;
-- }
-- 
---int shim_osLoadFWImage(unsigned char *ptr)
--+static void avsar_release(struct device *dev)
-- {
---  unsigned int bytesRead;
---  mm_segment_t  oldfs;
---  static struct file *filp;
---  unsigned int imageLength=0x5ffff;
---
---
---  dgprintf(4, "tn7dsl_read_dsp()\n");
---
---  dgprintf(4,"open file %s\n", DSP_FIRMWARE_PATH);
---
---  filp=filp_open(DSP_FIRMWARE_PATH,00,O_RDONLY);
---  if(filp ==NULL)
---  {
---    printk("Failed: Could not open DSP binary file\n");
---          return -1;
---  }
---
---  if (filp->f_dentry != NULL)
---  {
---    if (filp->f_dentry->d_inode != NULL)
---    {
---      printk ("DSP binary filesize = %d bytes\n",
---              (int) filp->f_dentry->d_inode->i_size);
---      imageLength = (unsigned int)filp->f_dentry->d_inode->i_size + 0x200;
---    }
---  }
---
---  if (filp->f_op->read==NULL)
---          return -1;  /* File(system) doesn't allow reads */
---
---  /*
---   * Disable parameter checking
---   */
---  oldfs = get_fs();
---  set_fs(KERNEL_DS);
---
---  /*
---   * Now read bytes from postion "StartPos"
---   */
---  filp->f_pos = 0;
---
---  bytesRead = filp->f_op->read(filp,ptr,imageLength,&filp->f_pos);
---
---  dgprintf(4,"file length = %d\n", bytesRead);
---
---  set_fs(oldfs);
---
---  /*
---   * Close the file
---   */
---  fput(filp);
---
---  return bytesRead;
--+	printk(KERN_DEBUG "avsar firmware released\n");
-- }
-- 
--+static struct device avsar = {
--+	.bus_id    = "vlynq",
--+	.release   = avsar_release,
--+};
-- 
---unsigned int shim_read_overlay_page (void *ptr, unsigned int secOffset,
---                                     unsigned int secLength)
--+int shim_osLoadFWImage(unsigned char *ptr)
-- {
---  unsigned int bytesRead;
---  mm_segment_t  oldfs;
---  struct file *filp;
---
---  dgprintf(4,"shim_read_overlay_page\n");
---  //dgprintf(4,"sec offset=%d, sec length =%d\n", secOffset, secLength);
--+	const struct firmware *fw_entry;
--+	size_t size;
-- 
---  filp=filp_open(DSP_FIRMWARE_PATH,00,O_RDONLY);
---  if(filp ==NULL)
---  {
---    printk("Failed: Could not open DSP binary file\n");
---          return -1;
---  }
---
---  if (filp->f_op->read==NULL)
---          return -1;  /* File(system) doesn't allow reads */
---
---  /*
---   * Now read bytes from postion "StartPos"
---   */
---
---  if(filp->f_op->llseek)
---    filp->f_op->llseek(filp,secOffset, 0);
---  oldfs = get_fs();
---  set_fs(KERNEL_DS);
---  filp->f_pos = secOffset;
---  bytesRead = filp->f_op->read(filp,ptr,secLength,&filp->f_pos);
---
---  set_fs(oldfs);
---  /*
---   * Close the file
---   */
---  fput(filp);
---  return bytesRead;
--+	printk("requesting firmware image \"ar0700xx.bin\"\n");
--+	if(device_register(&avsar) < 0) {
--+		printk(KERN_ERR
--+			"avsar: device_register fails\n");
--+		return -1;
--+	}
--+
--+	if(request_firmware(&fw_entry, "ar0700xx.bin", &avsar)) {
--+		printk(KERN_ERR
--+			"avsar: Firmware not available\n");
--+		device_unregister(&avsar);
--+		return -1;
--+	}
--+	size = fw_entry->size;
--+	device_unregister(&avsar);
--+	if(size > 0x5ffff) {
--+			printk(KERN_ERR
--+			"avsar: Firmware too big (%d bytes)\n", size);
--+			release_firmware(fw_entry);
--+			return -1;
--+		}
--+	memcpy(ptr, fw_entry->data, size);
--+	release_firmware(fw_entry);
--+	return size;
--+}
--+
--+unsigned int shim_read_overlay_page(void *ptr, unsigned int secOffset, unsigned int secLength)
--+{
--+	const struct firmware *fw_entry;
--+
--+	printk("requesting firmware image \"ar0700xx.bin\"\n");
--+	if(device_register(&avsar) < 0) {
--+		printk(KERN_ERR
--+			"avsar: device_register fails\n");
--+		return -1;
--+	}
--+
--+	if(request_firmware(&fw_entry, "ar0700xx.bin", &avsar)) {
--+		printk(KERN_ERR
--+			"avsar: Firmware not available\n");
--+		device_unregister(&avsar);
--+		return -1;
--+	}
--+	device_unregister(&avsar);
--+	if(fw_entry->size > secLength) {
--+		printk(KERN_ERR
--+			"avsar: Firmware too big (%d bytes)\n", fw_entry->size);
--+		release_firmware(fw_entry);
--+		return -1;
--+	}
--+	memcpy(ptr + secOffset, fw_entry->data, secLength);
--+	release_firmware(fw_entry);
--+	return secLength;
-- }
-- 
-- int shim_osLoadDebugFWImage(unsigned char *ptr)
--@@ -3064,6 +3015,7 @@ int tn7dsl_init(void *priv)
--   int high_precision_selected = 0;  
-- //  UR8_MERGE_END   CQ11054*
-- 
--+  sema_init(&adsl_sem_overlay, 0);
--   /*
--    * start dsl
--    */
--@@ -3442,7 +3394,7 @@ static int dslmod_sysctl(ctl_table *ctl,
--    */
--   if(write)
--     {
---    ret = proc_dostring(ctl, write, filp, buffer, lenp);
--+    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
-- 
--     switch (ctl->ctl_name)
--       {
--@@ -3528,14 +3480,14 @@ static int dslmod_sysctl(ctl_table *ctl,
--   else
--     {
--     len += sprintf(info+len, mod_req);
---    ret = proc_dostring(ctl, write, filp, buffer, lenp);
--+    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
--     }
--   return ret;
-- }
-- 
-- 
-- ctl_table dslmod_table[] = {
---  {DEV_DSLMOD, "dslmod", info, DSL_MOD_SIZE, 0644, NULL, &dslmod_sysctl}
--+  {DEV_DSLMOD, "dslmod", info, DSL_MOD_SIZE, 0644, NULL, NULL, &dslmod_sysctl, &sysctl_string}
--   ,
--   {0}
--   };
--@@ -3558,8 +3510,7 @@ void tn7dsl_dslmod_sysctl_register(void)
--   if (initialized == 1)
--     return;
-- 
---  dslmod_sysctl_header = register_sysctl_table(dslmod_root_table, 1);
---  dslmod_root_table->child->de->owner = THIS_MODULE;
--+  dslmod_sysctl_header = register_sysctl_table(dslmod_root_table);
-- 
--   /*
--    * set the defaults
--@@ -4821,4 +4772,4 @@ int tn7dsl_proc_PMDus(char* buf, char **
-- }
-- #endif //NO_ADV_STATS
-- #endif //TR69_PMD_IN
---// *    UR8_MERGE_END   CQ11057 *
--\ No newline at end of file
--+// *    UR8_MERGE_END   CQ11057 *
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -42,7 +42,6 @@
--  * UR8_MERGE_END CQ10700
--  *******************************************************************************/
-- 
---#include <linux/config.h>
-- #include <linux/kernel.h>
-- #include <linux/module.h>
-- #include <linux/init.h>
--@@ -50,12 +49,13 @@
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
-- #include <linux/smp_lock.h>
---#include <asm/io.h>
---#include <asm/mips-boards/prom.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
-- 
--+#include <asm/io.h>
--+#include <asm/ar7/ar7.h>
--+#include <asm/ar7/prom.h>
-- 
-- #define _CPHAL_AAL5
-- #define _CPHAL_SAR
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/110-interrupt_fix.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/110-interrupt_fix.patch
-deleted file mode 100644
-index 9acb862e5d..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/110-interrupt_fix.patch
-+++ /dev/null
-@@ -1,37 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -566,7 +566,7 @@ static int turbodsl_check_priority_type(
--  *  Description: tnetd73xx SAR interrupt.
--  *
--  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
---static void tn7atm_sar_irq (int irq, void *voiddev, struct pt_regs *regs)
--+static irqreturn_t tn7atm_sar_irq (int irq, void *voiddev)
-- {
--   struct atm_dev *atmdev;
--   Tn7AtmPrivate *priv;
--@@ -593,6 +593,7 @@ static void tn7atm_sar_irq (int irq, voi
-- #ifdef TIATM_INST_SUPP
--   psp_trace_par (ATM_DRV_SAR_ISR_EXIT, retval);
-- #endif
--+  return IRQ_HANDLED;
-- }
-- 
-- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--@@ -602,7 +603,7 @@ static void tn7atm_sar_irq (int irq, voi
--  *  Description: tnetd73xx DSL interrupt.
--  *
--  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
---static void tn7atm_dsl_irq (int irq, void *voiddev, struct pt_regs *regs)
--+static irqreturn_t tn7atm_dsl_irq (int irq, void *voiddev)
-- {
--   struct atm_dev *atmdev;
--   Tn7AtmPrivate *priv;
--@@ -624,6 +625,8 @@ static void tn7atm_dsl_irq (int irq, voi
-- #ifdef TIATM_INST_SUPP
--   psp_trace_par (ATM_DRV_DSL_ISR_EXIT, retval);
-- #endif
--+
--+  return IRQ_HANDLED;
-- }
-- 
-- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/120-no_dumb_inline.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/120-no_dumb_inline.patch
-deleted file mode 100644
-index 2968fdc166..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/120-no_dumb_inline.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/tn7api.h
--+++ b/tn7api.h
--@@ -107,7 +107,7 @@ int tn7dsl_proc_dbg_rmsgs4(char* buf, ch
-- 
-- int tn7dsl_proc_write_stats(struct file *fp, const char * buf, unsigned long count, void * data);
-- int tn7dsl_proc_modem(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---inline int tn7dsl_handle_interrupt(void);
--+int tn7dsl_handle_interrupt(void);
-- 
-- void tn7dsl_dslmod_sysctl_register(void);
-- void tn7dsl_dslmod_sysctl_unregister(void);
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/130-powercutback.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/130-powercutback.patch
-deleted file mode 100644
-index ec00df97ab..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/130-powercutback.patch
-+++ /dev/null
-@@ -1,44 +0,0 @@
----- a/dsl_hal_advcfg.c
--+++ b/dsl_hal_advcfg.c
--@@ -36,9 +36,9 @@
-- *    05Jul05     0.00.09            CPH    CQ9775: Change dslhal_advcfg_configDsTones input parameters & support for ADSL2+
-- *    24Jul05     0.00.10            CPH    Fixed comments in dslhal_advcfg_configDsTones function header
-- *******************************************************************************/
---#include <dev_host_interface.h>
---#include <dsl_hal_register.h>
---#include <dsl_hal_support.h>
--+#include "dev_host_interface.h"
--+#include "dsl_hal_register.h"
--+#include "dsl_hal_support.h"
-- 
-- /*****************************************************************************/
-- /* ACT API functions -- To be moved into their own independent module --RamP */
----- a/Makefile
--+++ b/Makefile
--@@ -4,6 +4,7 @@
-- 
-- CONFIG_SANGAM_ATM=m
-- #EXTRA_CFLAGS += -DEL -I. -DPOST_SILICON -DCOMMON_NSP -DCONFIG_LED_MODULE -DDEREGISTER_LED -DNO_ACT
---EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
--+#EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
--+EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL
-- obj-$(CONFIG_SANGAM_ATM) := tiatm.o
---tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o
--+tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o dsl_hal_advcfg.o
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -2869,6 +2869,14 @@ static int tn7dsl_set_dsl(void)
--     dslhal_api_setRateAdaptFlag(pIhw, os_atoi(ptr));
--   }
-- 
--+  // set powercutback
--+  ptr = NULL;
--+  ptr = prom_getenv("powercutback");
--+  if(ptr)
--+  {
--+    dslhal_advcfg_onOffPcb(pIhw, os_atoi(ptr));
--+  }
--+
--   // trellis
--   ptr = NULL;
--   ptr = prom_getenv("trellis");
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/140-debug_mode.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/140-debug_mode.patch
-deleted file mode 100644
-index ce3697b10d..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/140-debug_mode.patch
-+++ /dev/null
-@@ -1,16 +0,0 @@
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -103,10 +103,10 @@ enum
-- 
-- #define RESERVED_OAM_CHANNEL              15
-- 
---#define AAL5_PARM "id=aal5, base = 0x03000000, offset = 0, int_line=15, ch0=[RxBufSize=1522; RxNumBuffers = 32; RxServiceMax = 50; TxServiceMax=50; TxNumBuffers=32; CpcsUU=0x5aa5; TxVc_CellRate=0x3000; TxVc_AtmHeader=0x00000640]"
---#define SAR_PARM "id=sar,base = 0x03000000, reset_bit = 9, offset = 0; UniNni = 0, PdspEnable = 1"
--+#define CH0_PARM "RxBufSize=1522, RxNumBuffers=32, RxServiceMax=50, TxServiceMax=50, TxNumBuffers=32, CpcsUU=0x5aa5, TxVc_CellRate=0x3000, TxVc_AtmHeader=0x00000640"
--+#define AAL5_PARM "id=aal5, base=0x03000000, offset=0, int_line=15, ch0=[" CH0_PARM "]"
--+#define SAR_PARM "id=sar, base=0x03000000, reset_bit=9, offset=0; UniNni=0, PdspEnable=1, Debug=0xFFFFFFFF"
-- #define RESET_PARM "id=ResetControl, base=0xA8611600"
---#define CH0_PARM "RxBufSize=1522, RxNumBuffers = 32, RxServiceMax = 50, TxServiceMax=50, TxNumBuffers=32, CpcsUU=0x5aa5, TxVc_CellRate=0x3000, TxVc_AtmHeader=0x00000640"
-- 
-- #define MAX_PVC_TABLE_ENTRY 16
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/150-tasklet_mode.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/150-tasklet_mode.patch
-deleted file mode 100644
-index 97b8cecdd9..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/150-tasklet_mode.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/Makefile
--+++ b/Makefile
--@@ -5,6 +5,7 @@
-- CONFIG_SANGAM_ATM=m
-- #EXTRA_CFLAGS += -DEL -I. -DPOST_SILICON -DCOMMON_NSP -DCONFIG_LED_MODULE -DDEREGISTER_LED -DNO_ACT
-- #EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
---EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL
--+#EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL
--+EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL -DCPATM_TASKLET_MODE
-- obj-$(CONFIG_SANGAM_ATM) := tiatm.o
-- tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o dsl_hal_advcfg.o
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/160-module-params.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/160-module-params.patch
-deleted file mode 100644
-index c3d07a9def..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/160-module-params.patch
-+++ /dev/null
-@@ -1,589 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -87,6 +87,146 @@
-- MODULE_LICENSE("GPL");
-- MODULE_DESCRIPTION ("Tnetd73xx ATM Device Driver");
-- MODULE_AUTHOR ("Zhicheng Tang");
--+
--+int mp_sar_ipacemax = -1;
--+module_param_named(ipacemax, mp_sar_ipacemax, int, 0);
--+MODULE_PARM_DESC(ipacemax, "Interrupt pacing");
--+
--+char *mp_macc = NULL;
--+module_param_named(macc, mp_macc, charp, 0);
--+MODULE_PARM_DESC(macc, "MAC address");
--+
--+int mp_dsp_noboost = -1;
--+module_param_named(dsp_noboost, mp_dsp_noboost, int, 0);
--+MODULE_PARM_DESC(dsp_noboost, "Suppress DSP frequency boost");
--+
--+int mp_dsp_freq = -1;
--+module_param_named(dsp_freq, mp_dsp_freq, int, 0);
--+MODULE_PARM_DESC(dsp_freq, "Frequency to boost the DSP to");
--+
--+char *mp_featctl0 = NULL;
--+module_param_named(featctl0, mp_featctl0, charp, 0);
--+MODULE_PARM_DESC(featctl0, "DSL feature control 0");
--+
--+char *mp_featctl1 = NULL;
--+module_param_named(featctl1, mp_featctl1, charp, 0);
--+MODULE_PARM_DESC(featctl1, "DSL feature control 1");
--+
--+char *mp_phyctl0 = NULL;
--+module_param_named(phyctl0, mp_phyctl0, charp, 0);
--+MODULE_PARM_DESC(phyctl0, "DSL PHY control 0");
--+
--+char *mp_phyctl1 = NULL;
--+module_param_named(phyctl1, mp_phyctl1, charp, 0);
--+MODULE_PARM_DESC(phyctl1, "DSL PHY control 1");
--+
--+int mp_turbodsl = -1;
--+module_param_named(turbodsl, mp_turbodsl, int, 0);
--+MODULE_PARM_DESC(turbodsl, "Enable TurboDSL");
--+
--+int mp_sar_rxbuf = -1;
--+module_param_named(sar_rxbuf, mp_sar_rxbuf, int, 0);
--+MODULE_PARM_DESC(sar_rxbuf, "SAR RxBuf size");
--+
--+int mp_sar_rxmax = -1;
--+module_param_named(sar_rxmax, mp_sar_rxmax, int, 0);
--+MODULE_PARM_DESC(sar_rxmax, "SAR RxMax size");
--+
--+int mp_sar_txbuf = -1;
--+module_param_named(sar_txbuf, mp_sar_txbuf, int, 0);
--+MODULE_PARM_DESC(sar_txbuf, "SAR TxBuf size");
--+
--+int mp_sar_txmax = -1;
--+module_param_named(sar_txmax, mp_sar_txmax, int, 0);
--+MODULE_PARM_DESC(sar_txmax, "SAR TxMax size");
--+
--+char *mp_modulation = NULL;
--+module_param_named(modulation, mp_modulation, charp, 0);
--+MODULE_PARM_DESC(modulation, "Modulation");
--+
--+int mp_fine_gain_control = -1;
--+module_param_named(fine_gain_control, mp_fine_gain_control, int, 0);
--+MODULE_PARM_DESC(fine_gain_control, "Fine gain control");
--+
--+int mp_fine_gain_value = -1;
--+module_param_named(fine_gain_value, mp_fine_gain_value, int, 0);
--+MODULE_PARM_DESC(fine_gain_value, "Fine gain value");
--+
--+int mp_enable_margin_retrain = -1;
--+module_param_named(enable_margin_retrain, mp_enable_margin_retrain, int, 0);
--+MODULE_PARM_DESC(enable_margin_retrain, "Enable margin retrain");
--+
--+int mp_margin_threshold = -1;
--+module_param_named(margin_threshold, mp_margin_threshold, int, 0);
--+MODULE_PARM_DESC(margin_threshold, "Margin retrain treshold");
--+
--+int mp_enable_rate_adapt = -1;
--+module_param_named(enable_rate_adapt, mp_enable_rate_adapt, int, 0);
--+MODULE_PARM_DESC(enable_rate_adapt, "Enable rate adaption");
--+
--+int mp_powercutback = -1;
--+module_param_named(powercutback, mp_powercutback, int, 0);
--+MODULE_PARM_DESC(powercutback, "Enable / disable powercutback");
--+
--+int mp_trellis = -1;
--+module_param_named(trellis, mp_trellis, int, 0);
--+MODULE_PARM_DESC(trellis, "Enable / disable trellis coding");
--+
--+int mp_bitswap = -1;
--+module_param_named(bitswap, mp_bitswap, int, 0);
--+MODULE_PARM_DESC(bitswap, "Enable / disable bitswap");
--+
--+int mp_maximum_bits_per_carrier = -1;
--+module_param_named(maximum_bits_per_carrier, mp_maximum_bits_per_carrier, int, 0);
--+MODULE_PARM_DESC(maximum_bits_per_carrier, "Maximum bits per carrier");
--+
--+int mp_maximum_interleave_depth = -1;
--+module_param_named(maximum_interleave_depth, mp_maximum_interleave_depth, int, 0);
--+MODULE_PARM_DESC(maximum_interleave_depth, "Maximum interleave depth");
--+
--+int mp_pair_selection = -1;
--+module_param_named(pair_selection, mp_pair_selection, int, 0);
--+MODULE_PARM_DESC(pair_selection, "Pair selection");
--+
--+int mp_dgas_polarity = -1;
--+module_param_named(dgas_polarity, mp_dgas_polarity, int, 0);
--+MODULE_PARM_DESC(dgas_polarity, "DGAS polarity");
--+
--+int mp_los_alarm = -1;
--+module_param_named(los_alarm, mp_los_alarm, int, 0);
--+MODULE_PARM_DESC(los_alarm, "LOS alarm");
--+
--+char *mp_eoc_vendor_id = NULL;
--+module_param_named(eoc_vendor_id, mp_eoc_vendor_id, charp, 0);
--+MODULE_PARM_DESC(eoc_vendor_id, "EOC vendor id");
--+
--+int mp_eoc_vendor_revision = -1;
--+module_param_named(eoc_vendor_revision, mp_eoc_vendor_revision, int, 0);
--+MODULE_PARM_DESC(eoc_vendor_revision, "EOC vendor revision");
--+
--+char *mp_eoc_vendor_serialnum = NULL;
--+module_param_named(eoc_vendor_serialnum, mp_eoc_vendor_serialnum, charp, 0);
--+MODULE_PARM_DESC(eoc_vendor_serialnum, "EOC vendor serial number");
--+
--+char *mp_invntry_vernum = NULL;
--+module_param_named(invntry_vernum, mp_invntry_vernum, charp, 0);
--+MODULE_PARM_DESC(invntry_vernum, "Inventory revision number");
--+
--+int mp_dsl_bit_tmode = -1;
--+module_param_named(dsl_bit_tmode, mp_dsl_bit_tmode, int, 0);
--+MODULE_PARM_DESC(dsl_bit_tmode, "DSL bit training mode");
--+
--+int mp_high_precision = -1;
--+module_param_named(high_precision, mp_high_precision, int, 0);
--+MODULE_PARM_DESC(high_precision, "High precision");
--+
--+int mp_autopvc_enable = -1;
--+module_param_named(autopvc_enable, mp_autopvc_enable, int, 0);
--+MODULE_PARM_DESC(autopvc_enable, "Enable / disable automatic PVC");
--+
--+int mp_oam_lb_timeout = -1;
--+module_param_named(oam_lb_timeout, mp_oam_lb_timeout, int, 0);
--+MODULE_PARM_DESC(oam_lb_timeout, "OAM LB timeout");
-- #endif
-- 
-- #ifndef TRUE
--@@ -655,9 +795,9 @@ static int __init tn7atm_irq_request (st
--    * interrupt pacing
--    */
--   ptr = prom_getenv ("sar_ipacemax");
---  if (ptr)
--+  if (ptr || mp_sar_ipacemax != -1)
--   {
---    def_sar_inter_pace = os_atoi (ptr);
--+    def_sar_inter_pace = mp_sar_ipacemax == -1 ? os_atoi (ptr) : mp_sar_ipacemax;
--   }
-- /*  avalanche_request_pacing (priv->sar_irq, ATM_SAR_INT_PACING_BLOCK_NUM,
--                             def_sar_inter_pace);*/
--@@ -795,9 +935,18 @@ static int __init tn7atm_get_ESI (struct
-- {
--   int i;
--   char esi_addr[ESI_LEN] = { 0x00, 0x00, 0x11, 0x22, 0x33, 0x44 };
---  char *esiaddr_str = NULL;
--+  char *esiaddr_str = mp_macc;
-- 
---  esiaddr_str = prom_getenv ("maca");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("macdsl");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("macc");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("HWA_1");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("macb");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("maca");
-- 
--   if (!esiaddr_str)
--   {
--@@ -1930,15 +2079,15 @@ static int tn7atm_autoDetectDspBoost (vo
-- //UR8_MERGE_END   CQ10450*
-- 
--   cp = prom_getenv ("dsp_noboost");
---  if (cp)
--+  if (cp || mp_dsp_noboost != -1)
--   {
---    dsp_noboost = os_atoi (cp);
--+    dsp_noboost = mp_dsp_noboost == -1 ? os_atoi (cp) : mp_dsp_noboost;
--   }
-- 
--   cp = (char *) prom_getenv ("dsp_freq");
---  if (cp)
--+  if (cp || mp_dsp_freq != -1)
--   {
---    dspfreq = os_atoi (cp);
--+    dspfreq = mp_dsp_freq == -1 ? os_atoi (cp) : mp_dsp_freq;
--     if (dspfreq == 250)
--     {
--       boostDsp = 1;
--@@ -2187,8 +2336,9 @@ static int __init tn7atm_init (struct at
--   // Inter-Op DSL phy Control
--   // Note the setting of _dsl_Feature_0 and _dsl_Feature_1 must before
--   // dslhal_api_dslStartup (in tn7dsl_init()).
---  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_0")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_0")) != NULL || mp_featctl0 != NULL)
--   {
--+    if (mp_featctl0 != NULL) ptr = mp_featctl0;
--     if ((ptr[0] == '0') && (ptr[1] == 'x'))     // skip 0x before pass to
--       // os_atoh
--       ptr += 2;
--@@ -2196,8 +2346,9 @@ static int __init tn7atm_init (struct at
--     _dsl_Feature_0_defined = 1;
--   }
-- 
---  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_1")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_1")) != NULL || mp_featctl1 != NULL)
--   {
--+    if (mp_featctl1 != NULL) ptr = mp_featctl1;
--     if ((ptr[0] == '0') && (ptr[1] == 'x'))     // skip 0x before pass to
--       // os_atoh
--       ptr += 2;
--@@ -2209,8 +2360,9 @@ static int __init tn7atm_init (struct at
--   // DSL phy Feature Control
--   // Note the setting of _dsl_PhyControl_0 and _dsl_PhyControl_1 must before
--   // dslhal_api_dslStartup (in tn7dsl_init()).
---  if ((ptr = prom_getenv ("DSL_PHY_CNTL_0")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_PHY_CNTL_0")) != NULL || mp_phyctl0 != NULL)
--   {
--+    if (mp_phyctl0 != NULL) ptr = mp_phyctl0;
--     if ((ptr[0] == '0') && (ptr[1] == 'x'))     // skip 0x before pass to
--       // os_atoh
--       ptr += 2;
--@@ -2218,8 +2370,9 @@ static int __init tn7atm_init (struct at
--     _dsl_PhyControl_0_defined = 1;
--   }
-- 
---  if ((ptr = prom_getenv ("DSL_PHY_CNTL_1")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_PHY_CNTL_1")) != NULL || mp_phyctl1 != NULL)
--   {
--+    if (mp_phyctl1 != NULL) ptr = mp_phyctl1;
--     if ((ptr[0] == '0') && (ptr[1] == 'x'))     // skip 0x before pass to
--       // os_atoh
--       ptr += 2;
--@@ -2247,9 +2400,9 @@ static int __init tn7atm_init (struct at
--   priv->bTurboDsl = 1;
--   // read config for turbo dsl
--   ptr = prom_getenv ("TurboDSL");
---  if (ptr)
--+  if (ptr || mp_turbodsl != -1)
--   {
---    priv->bTurboDsl = os_atoi (ptr);
--+    priv->bTurboDsl = mp_turbodsl == -1 ? os_atoi (ptr) : mp_turbodsl;
--   }
-- 
--   // @Added to make Rx buffer number & Service max configurable through
--@@ -2257,30 +2410,30 @@ static int __init tn7atm_init (struct at
--   priv->sarRxBuf = RX_BUFFER_NUM;
--   ptr = NULL;
--   ptr = prom_getenv ("SarRxBuf");
---  if (ptr)
--+  if (ptr || mp_sar_rxbuf != -1)
--   {
---    priv->sarRxBuf = os_atoi (ptr);
--+    priv->sarRxBuf = mp_sar_rxbuf == -1 ? os_atoi (ptr) : mp_sar_rxbuf;
--   }
--   priv->sarRxMax = RX_SERVICE_MAX;
--   ptr = NULL;
--   ptr = prom_getenv ("SarRxMax");
---  if (ptr)
--+  if (ptr || mp_sar_rxmax != -1)
--   {
---    priv->sarRxMax = os_atoi (ptr);
--+    priv->sarRxMax = mp_sar_rxmax == -1 ? os_atoi (ptr) : mp_sar_rxmax;
--   }
--   priv->sarTxBuf = TX_BUFFER_NUM;
--   ptr = NULL;
--   ptr = prom_getenv ("SarTxBuf");
---  if (ptr)
--+  if (ptr || mp_sar_txbuf != -1)
--   {
---    priv->sarTxBuf = os_atoi (ptr);
--+    priv->sarTxBuf = mp_sar_txbuf == -1 ? os_atoi (ptr) : mp_sar_txbuf;
--   }
--   priv->sarTxMax = TX_SERVICE_MAX;
--   ptr = NULL;
--   ptr = prom_getenv ("SarTxMax");
---  if (ptr)
--+  if (ptr || mp_sar_txmax != -1)
--   {
---    priv->sarTxMax = os_atoi (ptr);
--+    priv->sarTxMax = mp_sar_txmax == -1 ? os_atoi (ptr) : mp_sar_txmax;
--   }
-- 
--   return 0;
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -136,6 +136,27 @@
-- #define NEW_TRAINING_VAL_T1413  128
-- #define NEW_TRAINING_VAL_MMODE  255
-- 
--+extern char *mp_modulation;
--+extern int mp_fine_gain_control;
--+extern int mp_fine_gain_value;
--+extern int mp_enable_margin_retrain;
--+extern int mp_margin_threshold;
--+extern int mp_enable_rate_adapt;
--+extern int mp_powercutback;
--+extern int mp_trellis;
--+extern int mp_bitswap;
--+extern int mp_maximum_bits_per_carrier;
--+extern int mp_maximum_interleave_depth;
--+extern int mp_pair_selection;
--+extern int mp_dgas_polarity;
--+extern int mp_los_alarm;
--+extern char *mp_eoc_vendor_id;
--+extern int mp_eoc_vendor_revision;
--+extern char *mp_eoc_vendor_serialnum;
--+extern char *mp_invntry_vernum;
--+extern int mp_dsl_bit_tmode;
--+extern int mp_high_precision;
--+
-- int testflag1 = 0;
-- extern int  __guDbgLevel;
-- extern sar_stat_t sarStat;
--@@ -2818,84 +2839,80 @@ static int tn7dsl_set_dsl(void)
-- 
--   // modulation
--   ptr = prom_getenv("modulation");
---  if (ptr)
--+  if (ptr || mp_modulation != NULL)
--   {
---    tn7dsl_set_modulation(ptr, FALSE);
--+    tn7dsl_set_modulation(mp_modulation == NULL ? ptr : mp_modulation, FALSE);
--   }
-- 
--   // Fine Gains
--   ptr = prom_getenv("fine_gain_control");
---  if (ptr)
--+  if (ptr || mp_fine_gain_control != -1)
--   {
---    value = os_atoi(ptr);
--+    value = mp_fine_gain_control == -1 ? os_atoi(ptr) : mp_fine_gain_control;
--     tn7dsl_ctrl_fineGain(value);
--   }
--   ptr = NULL;
--   ptr = prom_getenv("fine_gain_value");
---  if(ptr)
---    tn7dsl_set_fineGainValue(os_atoh(ptr));
--+  if(ptr || mp_fine_gain_value != -1)
--+    tn7dsl_set_fineGainValue(mp_fine_gain_value == -1 ? os_atoh(ptr) : mp_fine_gain_value);
-- 
--   // margin retrain
--   ptr = NULL;
--   ptr = prom_getenv("enable_margin_retrain");
---  if(ptr)
--+  value = mp_enable_margin_retrain == -1 ? (ptr ? os_atoi(ptr) : 0) : mp_enable_margin_retrain;
--+
--+  if (value == 1)
--   {
---    value = os_atoi(ptr);
---    if(value == 1)
--+    dslhal_api_setMarginMonitorFlags(pIhw, 0, 1);
--+    bMarginRetrainEnable = 1;
--+    //printk("enable showtime margin monitor.\n");
--+
--+    ptr = NULL;
--+    ptr = prom_getenv("margin_threshold");
--+    value = mp_margin_threshold == -1 ? (ptr ? os_atoi(ptr) : 0) : mp_margin_threshold;
--+
--+    if(value >= 0)
--     {
---      dslhal_api_setMarginMonitorFlags(pIhw, 0, 1);
---      bMarginRetrainEnable = 1;
---      //printk("enable showtime margin monitor.\n");
---      ptr = NULL;
---      ptr = prom_getenv("margin_threshold");
---      if(ptr)
---      {
---        value = os_atoi(ptr);
---        //printk("Set margin threshold to %d x 0.5 db\n",value);
---        if(value >= 0)
---        {
---          dslhal_api_setMarginThreshold(pIhw, value);
---          bMarginThConfig=1;
---        }
---      }
--+      dslhal_api_setMarginThreshold(pIhw, value);
--+      bMarginThConfig=1;
--     }
--   }
-- 
--   // rate adapt
--   ptr = NULL;
--   ptr = prom_getenv("enable_rate_adapt");
---  if(ptr)
--+  if(ptr || mp_enable_rate_adapt != -1)
--   {
---    dslhal_api_setRateAdaptFlag(pIhw, os_atoi(ptr));
--+    dslhal_api_setRateAdaptFlag(pIhw, mp_enable_rate_adapt == -1 ? os_atoi(ptr) : mp_enable_rate_adapt);
--   }
-- 
--   // set powercutback
--   ptr = NULL;
--   ptr = prom_getenv("powercutback");
---  if(ptr)
--+  if(ptr || mp_powercutback != -1)
--   {
---    dslhal_advcfg_onOffPcb(pIhw, os_atoi(ptr));
--+    dslhal_advcfg_onOffPcb(pIhw, mp_powercutback == -1 ? os_atoi(ptr) : mp_powercutback);
--   }
-- 
--   // trellis
--   ptr = NULL;
--   ptr = prom_getenv("trellis");
---  if(ptr)
--+  if(ptr || mp_trellis != -1)
--   {
---    dslhal_api_setTrellisFlag(pIhw, os_atoi(ptr));
---    trellis = os_atoi(ptr);
--+    trellis = mp_trellis == -1 ? os_atoi(ptr) : mp_trellis;
--+    dslhal_api_setTrellisFlag(pIhw, trellis);
--     //printk("trellis=%d\n");
--   }
-- 
--   // bitswap
--   ptr = NULL;
--   ptr = prom_getenv("bitswap");
---  if(ptr)
--+  if(ptr || mp_bitswap != -1)
--   {
--     int offset[2] = {33, 0};
--     unsigned int bitswap;
-- 
---    bitswap = os_atoi(ptr);
--+    bitswap = mp_bitswap == -1 ? os_atoi(ptr) : mp_bitswap;
-- 
--     tn7dsl_generic_read(2, offset);
--     dslReg &= dslhal_support_byteSwap32(0xFFFFFF00);
--@@ -2913,46 +2930,47 @@ static int tn7dsl_set_dsl(void)
--   // maximum bits per carrier
--   ptr = NULL;
--   ptr = prom_getenv("maximum_bits_per_carrier");
---  if(ptr)
--+  if(ptr || mp_maximum_bits_per_carrier != -1)
--   {
---    dslhal_api_setMaxBitsPerCarrierUpstream(pIhw, os_atoi(ptr));
--+    dslhal_api_setMaxBitsPerCarrierUpstream(pIhw, mp_maximum_bits_per_carrier == -1 ? os_atoi(ptr) : mp_maximum_bits_per_carrier);
--   }
-- 
--   // maximum interleave depth
--   ptr = NULL;
--   ptr = prom_getenv("maximum_interleave_depth");
---  if(ptr)
--+  if(ptr || mp_maximum_interleave_depth != -1)
--   {
---    dslhal_api_setMaxInterleaverDepth(pIhw, os_atoi(ptr));
--+    dslhal_api_setMaxInterleaverDepth(pIhw, mp_maximum_interleave_depth == -1 ? os_atoi(ptr) : mp_maximum_interleave_depth);
--   }
-- 
--   // inner and outer pairs
--   ptr = NULL;
--   ptr = prom_getenv("pair_selection");
---  if(ptr)
--+  if(ptr || mp_pair_selection != -1)
--   {
---    dslhal_api_selectInnerOuterPair(pIhw, os_atoi(ptr));
--+    dslhal_api_selectInnerOuterPair(pIhw, mp_pair_selection == -1 ? os_atoi(ptr) : mp_pair_selection);
--   }
-- 
--   ptr = NULL;
--   ptr = prom_getenv("dgas_polarity");
---  if(ptr)
--+  if(ptr || mp_dgas_polarity != -1)
--   {
--     dslhal_api_configureDgaspLpr(pIhw, 1, 1);
---    dslhal_api_configureDgaspLpr(pIhw, 0, os_atoi(ptr));
--+    dslhal_api_configureDgaspLpr(pIhw, 0, mp_dgas_polarity == -1 ? os_atoi(ptr) : mp_dgas_polarity);
--   }
-- 
--   ptr = NULL;
--   ptr = prom_getenv("los_alarm");
---  if(ptr)
--+  if(ptr || mp_los_alarm != -1)
--   {
---    dslhal_api_disableLosAlarm(pIhw, os_atoi(ptr));
--+    dslhal_api_disableLosAlarm(pIhw, mp_los_alarm == -1 ? os_atoi(ptr) : mp_los_alarm);
--   }
-- 
--   ptr = NULL;
--   ptr = prom_getenv("eoc_vendor_id");
---  if(ptr)
--+  if(ptr || mp_eoc_vendor_id != NULL)
--   {
--+    ptr = mp_eoc_vendor_id == NULL ? ptr : mp_eoc_vendor_id;
--     for(i=0;i<8;i++)
--     {
--       tmp[0]=ptr[i*2];
--@@ -2977,26 +2995,26 @@ static int tn7dsl_set_dsl(void)
--   }
--   ptr = NULL;
--   ptr = prom_getenv("eoc_vendor_revision");
---  if(ptr)
--+  if(ptr || mp_eoc_vendor_revision != -1)
--   {
---    value = os_atoi(ptr);
--+    value = mp_eoc_vendor_revision == -1 ? os_atoi(ptr) : mp_eoc_vendor_revision;
--     //printk("eoc rev=%d\n", os_atoi(ptr));
--     dslhal_api_setEocRevisionNumber(pIhw, (char *)&value);
-- 
--   }
--   ptr = NULL;
--   ptr = prom_getenv("eoc_vendor_serialnum");
---  if(ptr)
--+  if(ptr || mp_eoc_vendor_serialnum != NULL)
--   {
---    dslhal_api_setEocSerialNumber(pIhw, ptr);
--+    dslhal_api_setEocSerialNumber(pIhw, mp_eoc_vendor_serialnum == NULL ? ptr : mp_eoc_vendor_serialnum);
--   }  
--   
--   // CQ10037 Added invntry_vernum environment variable to be able to set version number in ADSL2, ADSL2+ modes.  
--   ptr = NULL;
--   ptr = prom_getenv("invntry_vernum");
---  if(ptr)
--+  if(ptr || mp_invntry_vernum != NULL)
--   {
---    dslhal_api_setEocRevisionNumber(pIhw, ptr);
--+    dslhal_api_setEocRevisionNumber(pIhw, mp_invntry_vernum == NULL ? ptr : mp_invntry_vernum);
--   }
-- 
--   return 0;
--@@ -3041,7 +3059,7 @@ int tn7dsl_init(void *priv)
--    * backward compatibility.
--    */
--   cp = prom_getenv("DSL_BIT_TMODE");
---  if (cp)
--+  if (cp || mp_dsl_bit_tmode != -1)
--   {
--     printk("%s : env var DSL_BIT_TMODE is set\n", __FUNCTION__);
--     /*
--@@ -3070,9 +3088,9 @@ int tn7dsl_init(void *priv)
-- 
-- //  UR8_MERGE_START CQ11054   Jack Zhang
--   cp = prom_getenv("high_precision");
---  if (cp)
--+  if (cp || mp_high_precision != -1)
--   {
---    high_precision_selected = os_atoi(cp);
--+    high_precision_selected = mp_high_precision == -1 ? os_atoi(cp) : mp_high_precision;
--   }
--   if ( high_precision_selected)
--   {
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -74,6 +74,8 @@ typedef void OS_SETUP;
-- /* PDSP Firmware files */
-- #include "tnetd7300_sar_firm.h"
-- 
--+extern int mp_oam_lb_timeout;
--+extern int mp_autopvc_enable;
-- 
-- enum
-- {
--@@ -817,9 +819,9 @@ int tn7sar_setup_oam_channel(Tn7AtmPriva
--   pHalDev  = (HAL_DEVICE *)priv->pSarHalDev;
-- 
--   pauto_pvc = prom_getenv("autopvc_enable");
---  if(pauto_pvc)  //CQ10273
--+  if(pauto_pvc || mp_autopvc_enable != -1)  //CQ10273
--   {
---    auto_pvc =tn7sar_strtoul(pauto_pvc, NULL, 10);
--+    auto_pvc = mp_autopvc_enable == -1 ? tn7sar_strtoul(pauto_pvc, NULL, 10) : mp_autopvc_enable;
--   }
-- 
--   memset(&chInfo, 0xff, sizeof(chInfo));
--@@ -985,9 +987,9 @@ int tn7sar_init(struct atm_dev *dev, Tn7
-- 
--   /* read in oam lb timeout value */
--   pLbTimeout = prom_getenv("oam_lb_timeout");
---  if(pLbTimeout)
--+  if(pLbTimeout || mp_oam_lb_timeout != -1)
--   {
---    lbTimeout =tn7sar_strtoul(pLbTimeout, NULL, 10);
--+    lbTimeout = mp_oam_lb_timeout == -1 ? tn7sar_strtoul(pLbTimeout, NULL, 10) : mp_oam_lb_timeout;
--     oamLbTimeout = lbTimeout;
--     pHalFunc->Control(pHalDev,"OamLbTimeout", "Set", &lbTimeout);
--   }
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/170-bus_id_removal.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/170-bus_id_removal.patch
-deleted file mode 100644
-index a970574fe5..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/170-bus_id_removal.patch
-+++ /dev/null
-@@ -1,19 +0,0 @@
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -446,7 +446,6 @@ static void avsar_release(struct device
-- }
-- 
-- static struct device avsar = {
---	.bus_id    = "vlynq",
-- 	.release   = avsar_release,
-- };
-- 
--@@ -455,6 +454,8 @@ int shim_osLoadFWImage(unsigned char *pt
-- 	const struct firmware *fw_entry;
-- 	size_t size;
-- 
--+	dev_set_name(&avsar, "avsar");
--+
-- 	printk("requesting firmware image \"ar0700xx.bin\"\n");
-- 	if(device_register(&avsar) < 0) {
-- 		printk(KERN_ERR
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/180-git_headers_include.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/180-git_headers_include.patch
-deleted file mode 100644
-index 6d72b00544..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/180-git_headers_include.patch
-+++ /dev/null
-@@ -1,39 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -73,8 +73,8 @@
-- #include <linux/ctype.h>
-- 
-- #include <asm/io.h>
---#include <asm/ar7/ar7.h>
---#include <asm/ar7/prom.h>
--+#include <asm/mach-ar7/ar7.h>
--+#include <asm/mach-ar7/prom.h>
-- 
-- #include "dsl_hal_api.h"
-- #include "tn7atm.h"
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -111,8 +111,8 @@
-- #include <linux/firmware.h>
-- 
-- #include <asm/io.h>
---#include <asm/ar7/ar7.h>
---#include <asm/ar7/prom.h>
--+#include <asm/mach-ar7/ar7.h>
--+#include <asm/mach-ar7/prom.h>
-- 
-- /* Modules specific header files */
-- #include "tn7atm.h"
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -54,8 +54,8 @@
-- #include <linux/ctype.h>
-- 
-- #include <asm/io.h>
---#include <asm/ar7/ar7.h>
---#include <asm/ar7/prom.h>
--+#include <asm/mach-ar7/ar7.h>
--+#include <asm/mach-ar7/prom.h>
-- 
-- #define _CPHAL_AAL5
-- #define _CPHAL_SAR
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/190-2.6.32_proc_fixes.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/190-2.6.32_proc_fixes.patch
-deleted file mode 100644
-index 1223604b0e..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/190-2.6.32_proc_fixes.patch
-+++ /dev/null
-@@ -1,92 +0,0 @@
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -197,7 +197,7 @@ led_reg_t ledreg[2];
-- static struct led_funcs ledreg[2];
-- #endif
-- 
---#define DEV_DSLMOD       CTL_UNNUMBERED
--+#define DEV_DSLMOD	0
-- #define MAX_STR_SIZE     256
-- #define DSL_MOD_SIZE     256
-- 
--@@ -333,8 +333,8 @@ static void tn7dsl_chng_modulation(void*
-- static unsigned int tn7dsl_set_modulation(void* data, int flag);
-- static void tn7dsl_ctrl_fineGain(int value);
-- static void tn7dsl_set_fineGainValue(int value);
---static int dslmod_sysctl (ctl_table * ctl, int write, struct file *filp,
---                          void *buffer, size_t * lenp);
--+static int dslmod_sysctl (ctl_table * ctl, int write, void *buffer,
--+                          size_t * lenp, loff_t *ppos);
-- static void tn7dsl_register_dslss_led(void);
-- void tn7dsl_dslmod_sysctl_register(void);
-- void tn7dsl_dslmod_sysctl_unregister(void);
--@@ -3398,8 +3398,8 @@ unsigned int tn7dsl_get_memory(unsigned
-- 
-- 
-- 
---static int dslmod_sysctl(ctl_table *ctl, int write, struct file * filp,
---      void *buffer, size_t *lenp)
--+static int dslmod_sysctl(ctl_table *ctl, int write, void *buffer,
--+      size_t *lenp, loff_t *ppos)
-- {
--   char *ptr;
--   int ret, len = 0;
--@@ -3411,7 +3411,7 @@ static int dslmod_sysctl(ctl_table *ctl,
--   char mod_req[16] = { '\t' };
--   char fst_byt;
-- 
---  if (!*lenp || (filp->f_pos && !write))
--+  if (!*lenp || (*ppos && !write))
--   {
--     *lenp = 0;
--     return 0;
--@@ -3421,9 +3421,9 @@ static int dslmod_sysctl(ctl_table *ctl,
--    */
--   if(write)
--     {
---    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
--+    ret = proc_dostring(ctl, write, buffer, lenp, ppos);
-- 
---    switch (ctl->ctl_name)
--+    switch ((long)ctl->extra2)
--       {
--       case DEV_DSLMOD:
--       ptr = strpbrk(info, " \t");
--@@ -3507,14 +3507,21 @@ static int dslmod_sysctl(ctl_table *ctl,
--   else
--     {
--     len += sprintf(info+len, mod_req);
---    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
--+    ret = proc_dostring(ctl, write, buffer, lenp, ppos);
--     }
--   return ret;
-- }
-- 
-- 
-- ctl_table dslmod_table[] = {
---  {DEV_DSLMOD, "dslmod", info, DSL_MOD_SIZE, 0644, NULL, NULL, &dslmod_sysctl, &sysctl_string}
--+	{
--+		.procname 		= "dslmod",
--+		.data			= info,
--+		.maxlen			= DSL_MOD_SIZE,
--+		.mode			= 0644,
--+		.proc_handler	= &dslmod_sysctl,
--+		.extra2			= (void *)DEV_DSLMOD,
--+	}
--   ,
--   {0}
--   };
--@@ -3522,7 +3529,12 @@ ctl_table dslmod_table[] = {
-- /* Make sure that /proc/sys/dev is there */
-- ctl_table dslmod_root_table[] = {
-- #ifdef CONFIG_PROC_FS
---  {CTL_DEV, "dev", NULL, 0, 0555, dslmod_table}
--+	{
--+		.procname		= "dev",
--+		.maxlen			= 0,
--+		.mode			= 0555,
--+		.child			= dslmod_table,
--+	}
--   ,
-- #endif /* CONFIG_PROC_FS */
--   {0}
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/200-2.6.37_args.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/200-2.6.37_args.patch
-deleted file mode 100644
-index 2007b497c2..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/200-2.6.37_args.patch
-+++ /dev/null
-@@ -1,32 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -1870,7 +1870,7 @@ static int __init tn7atm_register (Tn7At
-- 
--   dgprintf (4, "device %s being registered\n", priv->name);
-- 
---  mydev = atm_dev_register (priv->proc_name, &tn7atm_ops, -1, NULL);
--+  mydev = atm_dev_register (priv->proc_name, NULL, &tn7atm_ops, -1, NULL);
-- 
--   if (mydev == NULL)
--   {
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -453,13 +453,16 @@ int shim_osLoadFWImage(unsigned char *pt
-- {
-- 	const struct firmware *fw_entry;
-- 	size_t size;
--+ 	int ret;
-- 
-- 	dev_set_name(&avsar, "avsar");
-- 
-- 	printk("requesting firmware image \"ar0700xx.bin\"\n");
---	if(device_register(&avsar) < 0) {
--+	dev_set_name(&avsar, "avsar");
--+	ret = device_register(&avsar);
--+	if (ret < 0) {
-- 		printk(KERN_ERR
---			"avsar: device_register fails\n");
--+			"avsar: device_register fails, error%i\n", ret);
-- 		return -1;
-- 	}
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/210-3.3-remove-smp_lock.h.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/210-3.3-remove-smp_lock.h.patch
-deleted file mode 100644
-index 525218c3b4..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/210-3.3-remove-smp_lock.h.patch
-+++ /dev/null
-@@ -1,33 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -67,7 +67,7 @@
-- #include <linux/atmdev.h>
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
---#include <linux/smp_lock.h>
--+#include <linux/interrupt.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -48,7 +48,7 @@
-- #include <linux/atmdev.h>
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
---#include <linux/smp_lock.h>
--+#include <linux/interrupt.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -100,7 +100,7 @@
-- #include <linux/atmdev.h>
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
---#include <linux/smp_lock.h>
--+#include <linux/interrupt.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/220-3.10-update_proc_code.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/220-3.10-update_proc_code.patch
-deleted file mode 100644
-index 7a2bbe8089..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/220-3.10-update_proc_code.patch
-+++ /dev/null
-@@ -1,2945 +0,0 @@
--From 2826b9f6aa1ad2ac4c2846bbce10eb3378014555 Mon Sep 17 00:00:00 2001
--From: Jonas Gorski <jogo@openwrt.org>
--Date: Thu, 26 Sep 2013 12:28:35 +0200
--Subject: [PATCH 3/3] update proc code to fix compilation for 3.10
--
--Signed-off-by: Jonas Gorski <jogo@openwrt.org>
-----
-- tn7api.h |   63 ++-
-- tn7atm.c |  330 ++++++--------
-- tn7dsl.c | 1447 ++++++++++++++++++++++++++++++--------------------------------
-- tn7sar.c |   91 ++--
-- 4 files changed, 922 insertions(+), 1009 deletions(-)
--
----- a/tn7api.h
--+++ b/tn7api.h
--@@ -86,27 +86,26 @@ void * tn7atm_memcpy(void * dst, void co
-- /* tn7dsl.h */
-- void tn7dsl_exit(void);
-- int tn7dsl_init(void *priv);
---int tn7dsl_proc_eoc(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_stats(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_eoc_fops;
--+extern struct file_operations tn7dsl_proc_stats_fops;
-- 
-- //#define ADV_DIAG_STATS  1  //CQ10275 To enable Adv Stats
-- 
-- #ifdef ADV_DIAG_STATS
---int tn7dsl_proc_adv_stats(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_adv_stats1(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_adv_stats2(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_adv_stats3(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_adv_stats_fops;
--+extern struct file_operations tn7dsl_proc_adv1_stats_fops;
--+extern struct file_operations tn7dsl_proc_adv2_stats_fops;
--+extern struct file_operations tn7dsl_proc_adv3_stats_fops;
-- //UR8_MERGE_START CQ10682   Jack Zhang
---int tn7dsl_proc_dbg_cmsgs(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs1(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs2(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs3(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs4(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs1_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs2_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs3_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs4_fops;
-- //UR8_MERGE_END   CQ10682*
-- #endif //ADV_DIAG_STATS
-- 
---int tn7dsl_proc_write_stats(struct file *fp, const char * buf, unsigned long count, void * data);
---int tn7dsl_proc_modem(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_modem_fops;
-- int tn7dsl_handle_interrupt(void);
-- 
-- void tn7dsl_dslmod_sysctl_register(void);
--@@ -127,31 +126,31 @@ unsigned int tn7dsl_get_memory(unsigned
-- int os_atoi(const char *pStr);
-- int os_atoh(const char *pStr);
-- unsigned long os_atoul(const char *pStr);
---int tn7dsl_proc_snr0(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_snr1(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_snr2(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_bit_allocation(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_ds_noise(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_generic_read_result(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_train_mode_export(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_snr0_fops;
--+extern struct file_operations tn7dsl_proc_snr1_fops;
--+extern struct file_operations tn7dsl_proc_snr2_fops;
--+extern struct file_operations tn7dsl_proc_bit_allocation_fops;
--+extern struct file_operations tn7dsl_proc_ds_noise_fops;
--+extern struct file_operations tn7dsl_proc_generic_read_result_fops;
--+extern struct file_operations tn7dsl_proc_train_mode_export_fops;
-- 
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_SNRpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_QLNpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_SNRpsds_fops;
--+extern struct file_operations tn7dsl_proc_QLNpsds_fops;
-- // *    UR8_MERGE_START CQ10979   Jack Zhang
-- #ifdef TR69_HLIN_IN
---//int tn7dsl_proc_HLINpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds1(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds2(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds3(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds4(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+//extern struct file_operations tn7dsl_proc_HLINpsds_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds1_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds2_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds3_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds4_fops;
-- #endif //TR69_HLIN_IN
-- // *    UR8_MERGE_END   CQ10979*
-- // *    UR8_MERGE_START CQ11057   Jack Zhang
-- #define TR69_PMD_IN
-- #ifdef TR69_PMD_IN
---//int tn7dsl_proc_PMDus(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_PMDus(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+//extern struct file_operations tn7dsl_proc_PMDus_fops;
--+extern struct file_operations tn7dsl_proc_PMDus_fops;
-- #endif  //TR69_PMD_IN
-- // *    UR8_MERGE_END   CQ11057 *
-- #endif
--@@ -168,9 +167,9 @@ void tn7sar_get_sar_version(Tn7AtmPrivat
-- int tn7sar_get_near_end_loopback_count(unsigned int *pF4count, unsigned int *pF5count);
-- int tn7sar_oam_generation(void *privContext, int chan, int type, int vpi, int vci, int timeout);
-- int tn7sar_get_stats(void *priv1);
---int tn7sar_proc_sar_stat(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7sar_proc_sar_stat_fops;
-- void tn7sar_get_sar_firmware_version(unsigned int *pdsp_version_ms, unsigned int *pdsp_version_ls);
---int tn7sar_proc_oam_ping(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7sar_proc_pvc_table(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7sar_proc_oam_ping_fops;
--+extern struct file_operations tn7sar_proc_pvc_table_fops;
-- int tn7sar_tx_flush(void *privContext, int chan, int queue, int skip);
-- #endif __SGAPI_H
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -271,25 +271,15 @@ static int tn7atm_change_qos (struct atm
-- static int tn7atm_detect (void);
-- static int tn7atm_init (struct atm_dev *dev);
-- static int tn7atm_irq_request (struct atm_dev *dev);
---static int tn7atm_proc_version (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data);
--+
--+static struct file_operations tn7atm_proc_version_fops;
-- static void tn7atm_exit (void);
---static int tn7atm_proc_channels (char *buf, char **start, off_t offset,
---                                 int count, int *eof, void *data);
---static int tn7atm_proc_private (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data);
--+static struct file_operations tn7atm_proc_channels_fops;
--+static struct file_operations tn7atm_proc_private_fops;
-- inline static int tn7atm_queue_packet_to_sar (void *vcc1, void *skb1,
--                                               int chan);
-- 
---static int tn7atm_xlate_proc_name (const char *name,
---                                   struct proc_dir_entry **ret,
---                                   const char **residual);
---static int tn7atm_proc_match (int len, const char *name,
---                              struct proc_dir_entry *de);
---static int tn7atm_proc_qos_read  (char *buf, char **start, off_t offset,
---                                  int count, int *eof, void *data);
---static int tn7atm_proc_qos_write (struct file *fp, const char *buf,
---                                  unsigned long count, void *data);
--+static struct file_operations tn7atm_proc_qos_fops;
-- 
-- //CT - Added function to return chipset Id
--        void tn7atm_get_chipsetId (char *pVerId);
--@@ -412,60 +402,59 @@ static int proc_root_already_exists = TR
-- static struct
-- {
--     const unsigned char name[32];
---    int (*read_func) (char* , char **, off_t , int ,int *, void *);
---    int (*write_func) (struct file *, const char * , unsigned long , void *);
--+    struct file_operations *fops;
-- 
-- } proc_if[] = {
---    {"avsar_ver",                   tn7atm_proc_version,           NULL},
---    {"avsar_channels",              tn7atm_proc_channels,          NULL},
---    {"avsar_sarhal_stats",          tn7sar_proc_sar_stat,          NULL},
---    {"avsar_oam_ping",              tn7sar_proc_oam_ping,          NULL},
---    {"avsar_pvc_table",             tn7sar_proc_pvc_table,         NULL},
---    {"avsar_rxsnr0",                tn7dsl_proc_snr0,              NULL},
---    {"avsar_rxsnr1",                tn7dsl_proc_snr1,              NULL},
---    {"avsar_rxsnr2",                tn7dsl_proc_snr2,              NULL},
---    {"clear_eoc_stats",             tn7dsl_proc_eoc,               NULL},
---    {"avsar_bit_allocation_table",  tn7dsl_proc_bit_allocation,    NULL},
---    {"avsar_dsl_modulation_schemes",tn7dsl_proc_train_mode_export, NULL},
--+    {"avsar_ver",                   &tn7atm_proc_version_fops},
--+    {"avsar_channels",              &tn7atm_proc_channels_fops},
--+    {"avsar_sarhal_stats",          &tn7sar_proc_sar_stat_fops},
--+    {"avsar_oam_ping",              &tn7sar_proc_oam_ping_fops},
--+    {"avsar_pvc_table",             &tn7sar_proc_pvc_table_fops},
--+    {"avsar_rxsnr0",                &tn7dsl_proc_snr0_fops},
--+    {"avsar_rxsnr1",                &tn7dsl_proc_snr1_fops},
--+    {"avsar_rxsnr2",                &tn7dsl_proc_snr2_fops},
--+    {"clear_eoc_stats",             &tn7dsl_proc_eoc_fops},
--+    {"avsar_bit_allocation_table",  &tn7dsl_proc_bit_allocation_fops},
--+    {"avsar_dsl_modulation_schemes",&tn7dsl_proc_train_mode_export_fops},
-- #ifndef NO_ADV_STATS
---    {"avsar_SNRpsds",               tn7dsl_proc_SNRpsds,           NULL},
---    {"avsar_QLNpsds",               tn7dsl_proc_QLNpsds,           NULL},
--+    {"avsar_SNRpsds",               &tn7dsl_proc_SNRpsds_fops},
--+    {"avsar_QLNpsds",               &tn7dsl_proc_QLNpsds_fops},
-- // *    UR8_MERGE_START CQ10979   Jack Zhang
-- #ifdef TR69_HLIN_IN
---//    {"avsar_HLINpsds",              tn7dsl_proc_HLINpsds,          NULL},
---    {"avsar_HLINpsds1",             tn7dsl_proc_HLINpsds1,         NULL},
---    {"avsar_HLINpsds2",             tn7dsl_proc_HLINpsds2,         NULL},
---    {"avsar_HLINpsds3",             tn7dsl_proc_HLINpsds3,         NULL},
---    {"avsar_HLINpsds4",             tn7dsl_proc_HLINpsds4,         NULL},
--+//    {"avsar_HLINpsds",              &tn7dsl_proc_HLINpsds_fops},
--+    {"avsar_HLINpsds1",             &tn7dsl_proc_HLINpsds1_fops},
--+    {"avsar_HLINpsds2",             &tn7dsl_proc_HLINpsds2_fops},
--+    {"avsar_HLINpsds3",             &tn7dsl_proc_HLINpsds3_fops},
--+    {"avsar_HLINpsds4",             &tn7dsl_proc_HLINpsds4_fops},
-- #endif //TR69_HLIN_IN
-- // *    UR8_MERGE_END   CQ10979*
-- // *    UR8_MERGE_START CQ11057   Jack Zhang
-- #define TR69_PMD_IN
-- #ifdef TR69_PMD_IN
---    {"avsar_PMDTestus",             tn7dsl_proc_PMDus,            NULL},
---//    {"avsar_PMDTestus1",          tn7dsl_proc_PMDus1,            NULL},
--+    {"avsar_PMDTestus",             &tn7dsl_proc_PMDus_fops},
--+//    {"avsar_PMDTestus1",          &tn7dsl_proc_PMDus1_fops},
-- #endif  //TR69_PMD_IN
-- // *    UR8_MERGE_END   CQ11057 *
-- #endif
---    {"avsar_private",               tn7atm_proc_private,           NULL},
---    {"avsar_modem_training",        tn7dsl_proc_modem,             NULL},
---    {"avsar_modem_stats",           tn7dsl_proc_stats,             tn7dsl_proc_write_stats},
--+    {"avsar_private",               &tn7atm_proc_private_fops},
--+    {"avsar_modem_training",        &tn7dsl_proc_modem_fops},
--+    {"avsar_modem_stats",           &tn7dsl_proc_stats_fops},
-- 
-- #ifdef ADV_DIAG_STATS //CQ10275
---//for 2.6    {"avsar_modem_adv_stats",       tn7dsl_proc_adv_stats,         NULL},
--+//for 2.6    {"avsar_modem_adv_stats",       &tn7dsl_proc_adv_stats_fops},
-- //For 2.4 kernel, due to proc file system size limitation
---    {"avsar_modem_adv_stats1",      tn7dsl_proc_adv_stats1,        NULL},
---    {"avsar_modem_adv_stats2",      tn7dsl_proc_adv_stats2,        NULL},
---    {"avsar_modem_adv_stats3",      tn7dsl_proc_adv_stats3,        NULL},
--+    {"avsar_modem_adv_stats1",      &tn7dsl_proc_adv_stats1_fops},
--+    {"avsar_modem_adv_stats2",      &tn7dsl_proc_adv_stats2_fops},
--+    {"avsar_modem_adv_stats3",      &tn7dsl_proc_adv_stats3_fops},
-- //UR8_MERGE_START CQ10682   Jack Zhang
---    {"avsar_modem_dbg_cmsgs",       tn7dsl_proc_dbg_cmsgs,         NULL},
---    {"avsar_modem_dbg_rmsgs1",      tn7dsl_proc_dbg_rmsgs1,        NULL},
---    {"avsar_modem_dbg_rmsgs2",      tn7dsl_proc_dbg_rmsgs2,        NULL},
---    {"avsar_modem_dbg_rmsgs3",      tn7dsl_proc_dbg_rmsgs3,        NULL},
---    {"avsar_modem_dbg_rmsgs4",      tn7dsl_proc_dbg_rmsgs4,        NULL},
--+    {"avsar_modem_dbg_cmsgs",       &tn7dsl_proc_dbg_cmsgs_fops},
--+    {"avsar_modem_dbg_rmsgs1",      &tn7dsl_proc_dbg_rmsgs1_fops},
--+    {"avsar_modem_dbg_rmsgs2",      &tn7dsl_proc_dbg_rmsgs2_fops},
--+    {"avsar_modem_dbg_rmsgs3",      &tn7dsl_proc_dbg_rmsgs3_fops},
--+    {"avsar_modem_dbg_rmsgs4",      &tn7dsl_proc_dbg_rmsgs4_fops},
-- // UR8_MERGE_END   CQ10682*
-- #endif //ADV_DIAG_STATS
---    {"avsar_qos_enable",            tn7atm_proc_qos_read,          tn7atm_proc_qos_write}
--+    {"avsar_qos_enable",            &tn7atm_proc_qos_fops}
-- };
-- 
-- /* *INDENT-ON* */
--@@ -1703,75 +1692,81 @@ int tn7atm_receive (void *os_dev, int ch
--   return 0;
-- }
-- 
---static int tn7atm_proc_channels (char *buf, char **start, off_t offset,
---                                 int count, int *eof, void *data)
--+static int tn7atm_proc_channels (struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   int i;
-- 
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
-- 
---  dev = (struct atm_dev *) data;
--+  dev = (struct atm_dev *) m->private;
--   priv = (Tn7AtmPrivate *) dev->dev_data;
-- 
---  if (len <= limit)
---    len += sprintf (buf + len, "Chan  Inuse   ChanID   VPI     VCI \n");
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m, "Chan  Inuse   ChanID   VPI     VCI \n");
--+  seq_printf (m,
--                "------------------------------------------------------------------\n");
-- 
--   for (i = 0; i <= MAX_DMA_CHAN; i++)
--   {
---    if (len <= limit)
---    {
---      len += sprintf (buf + len,
---                      " %02d    %05d   %05d   %05d   %05d \n",
---                      i, priv->lut[i].inuse, priv->lut[i].chanid,
---                      priv->lut[i].vpi, priv->lut[i].vci);
---    }
--+      seq_printf (m,
--+                  " %02d    %05d   %05d   %05d   %05d \n",
--+                  i, priv->lut[i].inuse, priv->lut[i].chanid,
--+                  priv->lut[i].vpi, priv->lut[i].vci);
--   }
-- 
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "------------------------------------------------------------------\n");
-- 
---  return len;
--+  return 0;
-- }
-- 
---static int tn7atm_proc_private (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data)
--+static int tn7atm_proc_channels_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_channels, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_channels_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_channels_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+static int tn7atm_proc_private (struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
-- 
---  dev = (struct atm_dev *) data;
--+  dev = (struct atm_dev *) m->private;
--   priv = (Tn7AtmPrivate *) dev->dev_data;
-- 
---  if (len <= limit)
---    len += sprintf (buf + len, "\nPrivate Data Structure(%s):\n", priv->name);
---  if (len <= limit)
---    len += sprintf (buf + len, "----------------------------------------\n");
---  if (len <= limit)
---    len += sprintf (buf + len, "priv:  0x%p\n", priv);
---  if (len <= limit)
---    len += sprintf (buf + len, "next:  0x%p", priv->next);
---  if (len <= limit)
---    len += sprintf (buf + len, "\tdev:   0x%p\n", priv->dev);
---
---  if (len <= limit)
---    len += sprintf (buf + len, "tx_irq: %02d", priv->sar_irq);
---  if (len <= limit)
---    len += sprintf (buf + len, "rx_irq: %02d", priv->dsl_irq);
--+  seq_printf (m, "\nPrivate Data Structure(%s):\n", priv->name);
--+  seq_printf (m, "----------------------------------------\n");
--+  seq_printf (m, "priv:  0x%p\n", priv);
--+  seq_printf (m, "next:  0x%p", priv->next);
--+  seq_printf (m, "\tdev:   0x%p\n", priv->dev);
--+
--+  seq_printf (m, "tx_irq: %02d", priv->sar_irq);
--+  seq_printf (m, "rx_irq: %02d", priv->dsl_irq);
--+
--+  return 0;
--+}
-- 
---  return len;
--+static int tn7atm_proc_private_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_private, PDE_DATA(inode));
-- }
-- 
--+static struct file_operations tn7atm_proc_private_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_private_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- void tn7atm_sarhal_isr_register (void *os_dev, void *hal_isr,
--                                  int interrupt_num)
-- {
--@@ -1890,10 +1885,8 @@ static int __init tn7atm_register (Tn7At
--   return ATM_REG_OK;
-- }
-- 
---static int tn7atm_proc_version (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data)
--+static int tn7atm_proc_version (struct seq_file *m, void *data)
-- {
---  int len = 0;
--   char dslVer[8];
--   char dspVer[10];
--   char chipsetID[32]; //CT CQ10076 - Added temporary buffer to store chipset Id
--@@ -1904,56 +1897,64 @@ static int tn7atm_proc_version (char *bu
-- 
--   priv = mydev->dev_data;
-- 
---  len +=
---    sprintf (buf + len, "ATM Driver version:[%d.%02d.%02d.%02d]\n",
---             LINUXATM_VERSION_MAJOR, LINUXATM_VERSION_MINOR,
---             LINUXATM_VERSION_BUGFIX, LINUXATM_VERSION_BUILDNUM);
--+  seq_printf (m, "ATM Driver version:[%d.%02d.%02d.%02d]\n",
--+              LINUXATM_VERSION_MAJOR, LINUXATM_VERSION_MINOR,
--+              LINUXATM_VERSION_BUGFIX, LINUXATM_VERSION_BUILDNUM);
-- 
--   tn7dsl_get_dslhal_version (dslVer);
-- 
---  len +=
---    sprintf (buf + len, "DSL HAL version: [%d.%02d.%02d.%02d]\n", dslVer[0],
---             dslVer[1], dslVer[2], dslVer[3]);
--+  seq_printf (m, "DSL HAL version: [%d.%02d.%02d.%02d]\n", dslVer[0],
--+              dslVer[1], dslVer[2], dslVer[3]);
--   tn7dsl_get_dsp_version (dspVer);
-- 
---  len +=
---    sprintf (buf + len, "DSP Datapump version: [%d.%02d.%02d.%02d] ",
---             dspVer[4], dspVer[5], dspVer[6], dspVer[7]);
--+  seq_printf (m, "DSP Datapump version: [%d.%02d.%02d.%02d] ",
--+              dspVer[4], dspVer[5], dspVer[6], dspVer[7]);
--   if (dspVer[8] == 2)           // annex B
---    len += sprintf (buf + len, "Annex B\n");
--+    seq_printf (m, "Annex B\n");
--   else if (dspVer[8] == 3)      // annex c
---    len += sprintf (buf + len, "Annex c\n");
--+    seq_printf (m, "Annex c\n");
--   else
---    len += sprintf (buf + len, "Annex A\n");
--+    seq_printf (m, "Annex A\n");
-- 
--   tn7sar_get_sar_version (priv, &pSarVer);
-- 
---  len += sprintf (buf + len, "SAR HAL version: [");
--+  seq_printf (m, "SAR HAL version: [");
--   for (i = 0; i < 8; i++)
--   {
---    len += sprintf (buf + len, "%c", pSarVer[i + 7]);
--+    seq_printf (m, "%c", pSarVer[i + 7]);
--   }
---  len += sprintf (buf + len, "]\n");
--+  seq_printf (m, "]\n");
-- 
--   tn7sar_get_sar_firmware_version (&pdspV1, &pdspV2);
---  len += sprintf (buf + len, "PDSP Firmware version:[%01x.%02x]\n",
--+  seq_printf (m, "PDSP Firmware version:[%01x.%02x]\n",
--                   pdspV1, pdspV2);
-- 
--   //CT CQ10076 - Added code to report chipset ID using proc file system
--   tn7atm_get_chipsetId(chipsetID);
---  len += sprintf (buf + len, "Chipset ID: [%s]\n",chipsetID);
--+  seq_printf (m, "Chipset ID: [%s]\n",chipsetID);
-- 
---  return len;
--+  return 0;
-- }
-- 
--+static int tn7atm_proc_version_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_version, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_version_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_version_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- 
-- /* Device detection */
-- 
-- static int __init tn7atm_detect (void)
-- {
--   Tn7AtmPrivate *priv;
---  struct proc_dir_entry *dsl_wr_file = NULL; /* Only for ones with a write
---                                                 * function. */
--   int ctr;
--   const char *residual;
-- 
--@@ -2002,24 +2003,7 @@ static int __init tn7atm_detect (void)
--    */
--   for (ctr = 0; ctr < (NUM_ELEMS (proc_if)); ctr++)
--   {
---      /* Only if we have a write function, we create a normal proc file. */
---      if(proc_if[ctr].write_func)
---      {
---          dsl_wr_file = create_proc_entry (proc_if[ctr].name, DRV_PROC_MODE, root_proc_dir_entry);
---          if (dsl_wr_file)
---          {
---            dsl_wr_file->read_proc  = proc_if[ctr].read_func;
---            dsl_wr_file->write_proc = proc_if[ctr].write_func;
---            dsl_wr_file->data = (void *)mydev; //UR8_MERGE_START_END CQ10700 Manjula K
---          }
---          dsl_wr_file = NULL;
---      }
---      else
---      {
---          /* Create a read-only entry. */
---          create_proc_read_entry (proc_if[ctr].name, 0, root_proc_dir_entry,
---                             proc_if[ctr].read_func, mydev);
---      }
--+    proc_create_data(proc_if[ctr].name, DRV_PROC_MODE, root_proc_dir_entry, proc_if[ctr].fops, (void *)mydev);
--   }
-- 
--   tn7dsl_dslmod_sysctl_register ();
--@@ -2491,63 +2475,10 @@ static int tn7atm_set_can_support_adsl2
--   return TRUE;
-- }
-- 
---/*
--- * This function matches a name such as "serial", and that specified by the
--- * proc_dir_entry
--- */
---static int tn7atm_proc_match (int len, const char *name,
---                              struct proc_dir_entry *de)
--+static int tn7atm_proc_qos_read(struct seq_file *m, void *data)
-- {
---  if (!de || !de->low_ino)
---    return 0;
---  if (de->namelen != len)
--+    seq_printf (m, "\nEnableQoS = %d\n", EnableQoS);
--     return 0;
---  return !strncmp (name, de->name, len);
---}
---
---/*
--- * This function parses a name such as "tty/driver/serial", and
--- * returns the struct proc_dir_entry for "/proc/tty/driver", and
--- * returns "serial" in residual.
--- */
---static int tn7atm_xlate_proc_name (const char *name,
---                                   struct proc_dir_entry **ret,
---                                   const char **residual)
---{
---  const char *cp = name, *next;
---  struct proc_dir_entry *de;
---  int len;
---  extern struct proc_dir_entry proc_root;
---
---  de = &proc_root;
---  while (1)
---  {
---    next = strchr (cp, '/');
---    if (!next)
---      break;
---
---    len = next - cp;
---    for (de = de->subdir; de; de = de->next)
---    {
---      if (tn7atm_proc_match (len, cp, de))
---        break;
---    }
---    if (!de)
---      return -ENOENT;
---    cp += len + 1;
---  }
---  *residual = cp;
---  *ret = de;
---
---  return 0;
---}
---
---static int tn7atm_proc_qos_read(char *buf, char **start, off_t offset, int count, int *eof, void *data)
---{
---    int len = 0;
---
---    len += sprintf (buf + len, "\nEnableQoS = %d\n", EnableQoS);
---    return len;
-- 
-- }
-- static int tn7atm_proc_qos_write(struct file *fp, const char *buf, unsigned long count, void *data)
--@@ -2581,5 +2512,19 @@ static int tn7atm_proc_qos_write(struct
--     return count;
-- }
-- 
--+static int tn7atm_proc_qos_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_qos_read, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_qos_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_qos_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+	.write		= tn7atm_proc_qos_write,
--+};
--+
-- module_init (tn7atm_detect);
-- module_exit (tn7atm_exit);
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -339,7 +339,7 @@ static void tn7dsl_register_dslss_led(vo
-- void tn7dsl_dslmod_sysctl_register(void);
-- void tn7dsl_dslmod_sysctl_unregister(void);
-- static int tn7dsl_clear_eoc_receive(void);
---static int tn7dsl_proc_snr_print (char *buf, int count, int *eof, int data);
--+static int tn7dsl_proc_snr_print (struct seq_file *m, int data);
-- /* end of internal functions */
-- 
-- //  UR8_MERGE_START CQ11054   Jack Zhang
--@@ -635,11 +635,9 @@ void shim_osCriticalExit(void)
--   spin_unlock_irqrestore(&shimLock, flags);
-- }
-- 
---static int tn7dsl_proc_snr_print (char *buf, int count, int *eof, int data)
--+static int tn7dsl_proc_snr_print (struct seq_file *m, int data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i, j;
--   int bin = (int) data;
--   unsigned short *rxSnrPerBin;
--@@ -660,95 +658,128 @@ static int tn7dsl_proc_snr_print (char *
--       break;
-- 
--   default:
---  if(len<=limit)
---        len += sprintf (buf + len, "\nInvalid bin selected Bin%d :\n", bin);
---  return len;
---}
--+      seq_printf (m, "\nInvalid bin selected Bin%d :\n", bin);
--+      return 0;
--+  }
-- 
---  if(len<=limit)
---    len += sprintf (buf + len, "\nAR7 DSL Modem Rx SNR Per Bin for Bin%d :\n", bin);
--+  seq_printf (m, "\nAR7 DSL Modem Rx SNR Per Bin for Bin%d :\n", bin);
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones/16; i++)
--   {
--     for(j=0;j<16;j++)
--     {
---      if(len <=limit)
---        len +=
---          sprintf (buf + len, "%04x ",
--+      seq_printf (m, "%04x ",
--                    (unsigned short) rxSnrPerBin[i * 16 + j]);
---  }
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--     }
--+      seq_printf(m, "\n");
--+  }
-- 
---  return len;
--+  return 0;
-- }
-- 
-- 
-- //@Added SNR per bin info per customer request. 05-14-2004
---int tn7dsl_proc_snr0 (char *buf, char **start, off_t offset, int count,
---                      int *eof, void *data)
--+static int tn7dsl_proc_snr0 (struct seq_file *m, void *data)
--     {
---  return tn7dsl_proc_snr_print(buf, count, eof, 0);
--+  return tn7dsl_proc_snr_print(m, 0);
--     }
-- 
---int tn7dsl_proc_snr1 (char *buf, char **start, off_t offset, int count,
---                      int *eof, void *data)
--+static int tn7dsl_proc_snr0_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_snr_print(buf, count, eof, 1);
--+	return single_open(file, tn7dsl_proc_snr0, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_snr0_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_snr0_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int tn7dsl_proc_snr1 (struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_snr_print(m, 1);
--   }
-- 
---int tn7dsl_proc_snr2 (char *buf, char **start, off_t offset, int count,
---                      int *eof, void *data)
--+static int tn7dsl_proc_snr1_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_snr_print(buf, count, eof, 2);
--+	return single_open(file, tn7dsl_proc_snr1, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_snr1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_snr1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int tn7dsl_proc_snr2 (struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_snr_print(m, 2);
--+}
--+
--+static int tn7dsl_proc_snr2_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_snr2, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_snr2_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_snr2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- //@Added bit allocation table per customer request. 05-14-2004
---int tn7dsl_proc_bit_allocation (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data)
--+static int tn7dsl_proc_bit_allocation (struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i, j;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 DSL Modem US Bit Allocation:");
--+  seq_printf(m, "\nAR7 DSL Modem US Bit Allocation:");
-- 
--   for(i=0; i<pIhw->AppData.max_us_tones; i++)
--     {
--     if (!(i%16))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+        seq_printf(m, "\n");
--     }
---    if(len <=limit)
---      len +=
---        sprintf (buf + len, "%02x ",
---                 (unsigned char) pIhw->AppData.BitAllocTblUstrm[i]);
--+    seq_printf (m, "%02x ",
--+                (unsigned char) pIhw->AppData.BitAllocTblUstrm[i]);
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\nAR7 DSL Modem DS Bit Allocation:\n");
--+  seq_printf(m, "\n\nAR7 DSL Modem DS Bit Allocation:\n");
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones/16; i++)
--   {
--     for(j=0;j<16;j++)
--     {
---      if(len <=limit)
---        len +=
---          sprintf (buf + len, "%02x ",
---                   (unsigned char) pIhw->AppData.BitAllocTblDstrm[i * 16 +
---                                                                  j]);
--+      seq_printf (m, "%02x ",
--+                  (unsigned char) pIhw->AppData.BitAllocTblDstrm[i * 16 +
--+                                                                 j]);
--     }
---    if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+    seq_printf(m, "\n");
--   }
-- 
---  return len;
--+  return 0;
--+}
--+
--+int tn7dsl_proc_bit_allocation_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_bit_allocation, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_bit_allocation_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_bit_allocation_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #ifndef NO_ACT
-- int tn7dsl_proc_ds_noise(char* buf, char **start, off_t offset, int count,
--                  int *eof, void *data)
--@@ -811,59 +842,48 @@ static char *pUnknown= "Unknown";
-- #ifdef ADV_DIAG_STATS //CQ10275, CQ10449
-- //UR8_MERGE_START CQ10449 Jack Zhang
-- 
---static int proc_adv_stats_header(char* buf, int limit);
--+static int proc_adv_stats_header(struct seq_file *m);
-- 
---int tn7dsl_proc_adv_stats(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_adv_stats(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   //char *cp = buf + offset;
--   char *cp = buf;
--   int i = 0;
--   int strt = 32;
---  static int ctr = 0;
-- 
-- //  printk("proc_adv_stats: buf=0x%X, ctr=%d, offset=%d, count=%d, eof=%d\n",
-- //             (unsigned int)buf, ctr, offset, count, *eof);
---  if( ctr == 0)
---  {
---    len = proc_adv_stats_header( cp, limit);
---                   
---    if( len<=limit)
---      len += sprintf(cp+len, "\n\tBin No.\tBits:\tMargin:\tSNR\n");
---  }
---  else
---  {
---    strt = ctr;
---  }
---    
--+  proc_adv_stats_header(m);
--+
--+  seq_printf(m, "\n\tBin No.\tBits:\tMargin:\tSNR\n");
--+
--   for( i =strt; i<512; i++)
--   {
---    if(len<=limit)
---    {
---      len += sprintf(cp+len, "\t%u\t%u\t%u\t%d\n", i, 
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
---    }
---    else
---    {
---      ctr = i;
---      //*eof = 0;
---      *(cp + len) = '\0';
---      printk("proc_adv_stats - return: ctr=%d, len=%d\n", ctr, len);
---      return len;
---    }
--   }
---  ctr = 0;
---  *eof = 1;
--   printk("proc_adv_stats - return: ctr=%d, len=%d\n", ctr, len);
---  return len;
--+  return 0;
--+}
--+
--+
--+static int tn7dsl_proc_adv_stats_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_adv_stats, PDE_DATA(inode));
-- }
-- 
---static int proc_adv_stats_header(char* buf, int limit)
--+struct file_operations tn7dsl_proc_adv_stats_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int proc_adv_stats_header(struct seq_file *m)
-- {
--   int len = 0;
--   int i = 0;
--@@ -872,66 +892,53 @@ static int proc_adv_stats_header(char* b
--    */
-- 
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 DSL Modem Advanced Statistics:\n");
--+  seq_printf(m, "\nAR7 DSL Modem Advanced Statistics:\n");
-- 
---  if(len<=limit)
--+  if(pIhw->lConnected != 1)
--   {
---    if(pIhw->lConnected != 1)
---    {
---      pIhw->AppData.USConRate = 0;
---      pIhw->AppData.DSConRate = 0;
---    }
---    len +=
---      sprintf (buf + len,
--+    pIhw->AppData.USConRate = 0;
--+    pIhw->AppData.DSConRate = 0;
--+  }
--+  seq_printf (m,
--                "\t[Connection Rate]\tUS:\t%u\tDS:\t%u\n",
--                    (unsigned int)pIhw->AppData.USConRate,
--                    (unsigned int)pIhw->AppData.DSConRate );
--   }
---  if(len<=limit)
-- //  UR8_MERGE_START CQ11054   Jack Zhang
--+  if (dslhal_api_getHighPrecision())
--   {
---    if (dslhal_api_getHighPrecision())
---    {
---      len +=
---        sprintf (buf + len, "\t[Margin]\tUS:\t%d.%u\tDS:\t\t%d.%u\n",
---                   gInt(pIhw->AppData.usMargin), gDot1(pIhw->AppData.usMargin),
---                   gInt(pIhw->AppData.dsMargin), gDot1(pIhw->AppData.dsMargin));
---    }
---    else
---    {
---      len +=
---        sprintf (buf + len, "\t[Margin]\tUS:\t%u\tDS:\t\t%u\n",
---                   (unsigned int)pIhw->AppData.usMargin,
---                   (unsigned int)pIhw->AppData.dsMargin/2 );
---    }
--+    seq_printf (m, "\t[Margin]\tUS:\t%d.%u\tDS:\t\t%d.%u\n",
--+                 gInt(pIhw->AppData.usMargin), gDot1(pIhw->AppData.usMargin),
--+                 gInt(pIhw->AppData.dsMargin), gDot1(pIhw->AppData.dsMargin));
--+  }
--+  else
--+  {
--+    seq_printf (m, "\t[Margin]\tUS:\t%u\tDS:\t\t%u\n",
--+                 (unsigned int)pIhw->AppData.usMargin,
--+                 (unsigned int)pIhw->AppData.dsMargin/2 );
--   }
-- //  UR8_MERGE_END   CQ11054*
--                    
--   /*
--    * Downstream/Upstream Interleaved Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Interleave path] US (TX):\tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Interleave path] US (TX):\tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usICRC_errors,
--                    (unsigned int)pIhw->AppData.usIFEC_errors);
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Interleave path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Interleave path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsICRC_errors,
--                    (unsigned int)pIhw->AppData.dsIFEC_errors);
--   /*
--    * Upstream/Downstream Fast Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Fast path] US (TX):  \tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Fast path] US (TX):  \tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usFCRC_errors,
--                    (unsigned int)pIhw->AppData.usFFEC_errors);
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Fast path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Fast path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsFCRC_errors,
--                    (unsigned int)pIhw->AppData.dsFFEC_errors);
---                   
---  return len;
--+
--+  return 0;
-- }
-- 
-- static int getDiagDisplayMode()
--@@ -954,29 +961,24 @@ static int getDiagDisplayMode()
--     ret = 2;
--   return ret;
-- }
---int tn7dsl_proc_adv_stats1(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+int tn7dsl_proc_adv_stats1(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i;
--   int mode = 0;  //mode = 0 => ADSL1 or ADSL2 & 2+
--   unsigned char SNRpsds[512];
--   int n;
-- 
---  len = proc_adv_stats_header( buf+len, limit);
--+  proc_adv_stats_header( m);
--   mode = getDiagDisplayMode();
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\tBin No.\tBits:\tMargin:\tSNR (Part 1 of 3)\n");
---    
--+  seq_printf(m, "\tBin No.\tBits:\tMargin:\tSNR (Part 1 of 3)\n");
--+
--   if(mode==1) //ADSL1
--   {
--   for( i =32; i<128; i++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i, 
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
--@@ -987,26 +989,34 @@ int tn7dsl_proc_adv_stats1(char* buf, ch
--     if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--     {
--       dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---      return len;
--+      return -EIO;
--     }
--     for( i =32; i<128; i++)
--     {
---      if(len<=limit)
---          len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i, 
--+      seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (i<pIhw->AppData.max_ds_tones)?(unsigned char)SNRpsds[i]:0);
--     }
--   }
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_adv_stats2(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_adv_stats1_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_adv_stats1, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_adv_stats1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_adv_stats2(struct seq_file *m, void *data)
--+{
--   int i;
--   int mode = 0;  //mode = 0 => ADSL1 or ADSL2 & 2+
--   unsigned char SNRpsds[512];
--@@ -1016,12 +1026,10 @@ int tn7dsl_proc_adv_stats2(char* buf, ch
--   if( mode==1) //ADSL1
--   {
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---      len += sprintf(buf+len, "\tBin No.\tBits:\tMargin:\tSNR (Part 2 of 3):\n");
--+    seq_printf(m, "\tBin No.\tBits:\tMargin:\tSNR (Part 2 of 3):\n");
--     for( i =128; i<320; i++)
--     {
---  if(len<=limit)
---        len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i, 
--+      seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
--@@ -1032,26 +1040,35 @@ int tn7dsl_proc_adv_stats2(char* buf, ch
--     if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--     {
--       dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---      return len;
--+      return -EIO;
--     }
--   for( i =128; i<320; i++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i, 
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (i<pIhw->AppData.max_ds_tones)?(unsigned char)SNRpsds[i]:0);
--     }
--   }
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_adv_stats3(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_adv_stats2_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_adv_stats2, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_adv_stats2_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_adv_stats3(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i;
--   int mode = 0;  //mode = 0 => ADSL1 or ADSL2 & 2+
--   unsigned char SNRpsds[512];
--@@ -1061,12 +1078,10 @@ int tn7dsl_proc_adv_stats3(char* buf, ch
--   if( mode==1) //ADSL1
--   {
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---      len += sprintf(buf+len, "\tBin No.\tBits:\tMargin:\tSNR (Part 3 of 3):\n");
--+    seq_printf(m, "\tBin No.\tBits:\tMargin:\tSNR (Part 3 of 3):\n");
--     for( i =320; i<512; i++)
--     {
---  if(len<=limit)
---        len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i, 
--+      seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
--@@ -1077,283 +1092,287 @@ int tn7dsl_proc_adv_stats3(char* buf, ch
--     if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--     {
--       dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---      return len;
--+      return -EIO;
--     }
--   for( i =320; i<512; i++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i, 
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (i<pIhw->AppData.max_ds_tones)?(unsigned char)SNRpsds[i]:0);
--     }
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "[End of Stats]\n");
---  return len;
--+  seq_printf(m, "[End of Stats]\n");
--+  return 0;
-- }
---//UR8_MERGE_END  CQ10449
---//UR8_MERGE_START CQ10682   Jack Zhang
---int tn7dsl_proc_dbg_cmsgs(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+
--+static int tn7dsl_proc_adv_stats3_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_adv_stats3, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_adv_stats3_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats3_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
--+//UR8_MERGE_END  CQ10449
--+//UR8_MERGE_START CQ10682   Jack Zhang
--+int tn7dsl_proc_dbg_cmsgs(struct seq_file *m, void *data)
--+{
--   int rc=0;
--   
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (C-Msgs 1-5)..\n");
--+  seq_printf(m, "Training Messages (C-Msgs 1-5)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "ADSL2 DELT C-Msg1Ld \t Message Length:%d\n",
--+  seq_printf(m, "ADSL2 DELT C-Msg1Ld \t Message Length:%d\n",
--                             pIhw->adsl2DiagnosticMessages.cMsg1LdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg1LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg1Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg1Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg2LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg2LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg2LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg2Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg2Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg3LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg3LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg3LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg3Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg3Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg4LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg4LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg4LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg4Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg4Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg5LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg5LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg5LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg5Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg5Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
---  return len;
--+  seq_printf(m, "\n");
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs1(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_cmsgs_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_cmsgs, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_dbg_cmsgs_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_cmsgs_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+int tn7dsl_proc_dbg_rmsgs1(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
--   
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 1-3)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 1-3)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg1Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsg1LdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg1Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsg1LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsg1LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg1Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg1Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg2Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg2Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg3Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg3Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
---  return len;
--+  seq_printf(m, "\n");
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs2(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_rmsgs1_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs1, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_dbg_rmsgs1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+int tn7dsl_proc_dbg_rmsgs2(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
--   
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 4-5)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 4-5)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg4Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg4Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      len += sprintf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg5Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg5Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
---  return len;
--+  seq_printf(m, "\n");
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs3(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_rmsgs2_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs2, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations _fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_dbg_rmsgs3(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
--   
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 6-7)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 6-7)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg6Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg6Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg6Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg6Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg7Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg7Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg7Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg7Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs4(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_rmsgs3_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs3, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_dbg_rmsgs3_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs3_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_dbg_rmsgs4(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
--   
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 8-9)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 8-9)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg8Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg8Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg8Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg8Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg9Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg9Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg9Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg9Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_dbg_rmsgs4_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs4, PDE_DATA(inode));
-- }
--+
--+struct file_operations tn7dsl_proc_dbg_rmsgs4_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs4_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- //UR8_MERGE_END   CQ10682*
-- #endif //ADV_DIAG_STATS
-- 
---int tn7dsl_proc_stats(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_stats(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int F4count, F5count;
--   unsigned int maxRate=0;
--   unsigned int us_maxRate=0;
--@@ -1361,80 +1380,58 @@ int tn7dsl_proc_stats(char* buf, char **
--   //UR8_MERGE_START CQ10700 Manjula K
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
---  dev = (struct atm_dev *)data;
--+  int offset[2] = { 32, 0 };
--+  unsigned int usBitswap, dsBitswap;
--+  dev = (struct atm_dev *)m->private;
--   priv = (Tn7AtmPrivate *)dev->dev_data;
--   //UR8_MERGE_END CQ10700
-- 
--+
--   /*
--    * Read Ax5 Stats
--    */
-- 
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 DSL Modem Statistics:\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "--------------------------------\n");
--+  seq_printf(m, "\nAR7 DSL Modem Statistics:\n");
--+  seq_printf(m, "--------------------------------\n");
--   /*
--    * us and ds Connection Rates
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "[DSL Modem Stats]\n");
--+  seq_printf(m, "[DSL Modem Stats]\n");
-- 
-- 
---  if(len<=limit)
--+  if(pIhw->lConnected != 1)
--   {
---    if(pIhw->lConnected != 1)
---    {
---      pIhw->AppData.USConRate = 0;
---      pIhw->AppData.DSConRate = 0;
---    }
---    len +=
---      sprintf (buf + len,
---               "\tUS Connection Rate:\t%u\tDS Connection Rate:\t%u\n",
---                   (unsigned int)pIhw->AppData.USConRate,
---                   (unsigned int)pIhw->AppData.DSConRate );
--+    pIhw->AppData.USConRate = 0;
--+    pIhw->AppData.DSConRate = 0;
--   }
---  if(len<=limit)
--+  seq_printf (m,
--+             "\tUS Connection Rate:\t%u\tDS Connection Rate:\t%u\n",
--+                 (unsigned int)pIhw->AppData.USConRate,
--+                 (unsigned int)pIhw->AppData.DSConRate );
-- //  UR8_MERGE_START CQ11054   Jack Zhang
---  {
---    if (dslhal_api_getHighPrecision())
---    {
---      len +=
---        sprintf (buf + len, "\tDS Line Attenuation:\t%u.%u\tDS Margin:\t\t%d.%u\n",
--+  if (dslhal_api_getHighPrecision())
--+    seq_printf (m, "\tDS Line Attenuation:\t%u.%u\tDS Margin:\t\t%d.%u\n",
--                    gInt(pIhw->AppData.dsLineAttn), gDot1(pIhw->AppData.dsLineAttn),
--                    gInt(pIhw->AppData.dsMargin), gDot1(pIhw->AppData.dsMargin));
---    }
---    else{
---      len +=
---        sprintf (buf + len, "\tDS Line Attenuation:\t%u\tDS Margin:\t\t%u\n",
--+  else
--+    seq_printf (m, "\tDS Line Attenuation:\t%u\tDS Margin:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.dsLineAttn/2,
--                    (unsigned int)pIhw->AppData.dsMargin/2 );
---    }
---  }
-- //  UR8_MERGE_END   CQ11054*
-- 
---  if(len<=limit)
-- //  UR8_MERGE_START CQ11054   Jack Zhang
---  {
---    if (dslhal_api_getHighPrecision())
---    {
---      len +=
---        sprintf (buf + len, "\tUS Line Attenuation:\t%u.%u\tUS Margin:\t\t%d.%u\n",
--+  if (dslhal_api_getHighPrecision())
--+    seq_printf (m, "\tUS Line Attenuation:\t%u.%u\tUS Margin:\t\t%d.%u\n",
--                    gInt(pIhw->AppData.usLineAttn), gDot1(pIhw->AppData.usLineAttn),
--                    gInt(pIhw->AppData.usMargin), gDot1(pIhw->AppData.usMargin));
---    }
---    else
---    {
---      len +=
---        sprintf (buf + len, "\tUS Line Attenuation:\t%u\tUS Margin:\t\t%u\n",
--+  else
--+    seq_printf (m, "\tUS Line Attenuation:\t%u\tUS Margin:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.usLineAttn/2,
--                    (unsigned int)pIhw->AppData.usMargin );
---    }
---  }
-- //  UR8_MERGE_END   CQ11054*
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\tUS Payload :\t\t%u\tDS Payload:\t\t%u\n",
--+  seq_printf(m, "\tUS Payload :\t\t%u\tDS Payload:\t\t%u\n",
--                     ((unsigned int) pIhw->AppData.usAtm_count[0] +
--                      (unsigned int) pIhw->AppData.usAtm_count[1]) * 48,
--                     ((unsigned int) pIhw->AppData.dsGood_count[0] +
--@@ -1442,9 +1439,7 @@ int tn7dsl_proc_stats(char* buf, char **
--   /*
--    * Superframe Count
--    */
---  if(len<=limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tUS Superframe Cnt :\t%u\tDS Superframe Cnt:\t%u\n",
--                    (unsigned int)pIhw->AppData.usSuperFrmCnt,
--                    (unsigned int)pIhw->AppData.dsSuperFrmCnt );
--@@ -1452,57 +1447,45 @@ int tn7dsl_proc_stats(char* buf, char **
--   /*
--    * US and DS power
--    */
---  if(len<=limit)
--+  if(pIhw->AppData.bState < 5)
--   {
---    if(pIhw->AppData.bState < 5)
---    {
---      pIhw->AppData.usTxPower = 0;
---      pIhw->AppData.dsTxPower = 0;
---    }
---    len +=
---      sprintf (buf + len,
--+    pIhw->AppData.usTxPower = 0;
--+    pIhw->AppData.dsTxPower = 0;
--+  }
--+  seq_printf (m,
--+// UR8_MERGE_START - CQ11579 - Jeremy #1
--                "\tUS Transmit Power :\t%u\tDS Transmit Power:\t%u\n",
--                    (unsigned int)pIhw->AppData.usTxPower/256,
--                    (unsigned int)pIhw->AppData.dsTxPower/256 );
---  }
--+// UR8_MERGE_END - CQ11579
--   /*
--    * DSL Stats Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLOS errors:\t\t%u\tSEF errors:\t\t%u\n",
--+  seq_printf(m, "\tLOS errors:\t\t%u\tSEF errors:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.LOS_errors,
--                    (unsigned int)pIhw->AppData.SEF_errors );
--                    
--   //UR8_MERGE_START Report_SES Manjula K
--   //CQ10369
---  if(len<=limit)
---    len += sprintf(buf+len, "\tErrored Seconds:\t%u\tSeverely Err Secs:\t%u\n",
--+  seq_printf(m, "\tErrored Seconds:\t%u\tSeverely Err Secs:\t%u\n",
--                    (unsigned int)pIhw->AppData.erroredSeconds,
--                    (unsigned int)pIhw->AppData.severelyerrsecs );
--   //UR8_MERGE_END Report_SES
---                                    
---  if(len<=limit)
---    len += sprintf(buf+len, "\tFrame mode:\t\t%u\tMax Frame mode:\t\t%u\n",
--+
--+  seq_printf(m, "\tFrame mode:\t\t%u\tMax Frame mode:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.FrmMode,
--                    (unsigned int)pIhw->AppData.MaxFrmMode );
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTrained Path:\t\t%u\tUS Peak Cell Rate:\t%u\n",
--+  seq_printf (m, "\tTrained Path:\t\t%u\tUS Peak Cell Rate:\t%u\n",
--                    (unsigned int)pIhw->AppData.TrainedPath,
--                    (unsigned int)pIhw->AppData.USConRate*1000/8/53 );
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTrained Mode:\t\t%u\tSelected Mode:\t\t%u\n",
--+  seq_printf (m, "\tTrained Mode:\t\t%u\tSelected Mode:\t\t%u\n",
--                (unsigned int) pIhw->AppData.TrainedMode,
--                (unsigned int) pIhw->AppData.StdMode);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tATUC Vendor Code:\t%X\tATUC Revision:\t%u\n",
--+  seq_printf (m, "\tATUC Vendor Code:\t%X\tATUC Revision:\t%u\n",
--                (unsigned int) pIhw->AppData.atucVendorId,
--                pIhw->AppData.atucRevisionNum);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tHybrid Selected:\t%u\tTrellis:\t\t%u\n",
--+  seq_printf(m, "\tHybrid Selected:\t%u\tTrellis:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.currentHybridNum, trellis);
-- 
--   //@Added Maximum attainable bit rate information. 05-14-2004
--@@ -1514,12 +1497,12 @@ int tn7dsl_proc_stats(char* buf, char **
--   }
--   else
--   {
---     int offset[2] = {5, 1};
--+     int dspOffset[2] = { 5, 1 };
--      unsigned char rMsgsRA[12];
--      int numPayloadBytes = 0;
-- 
--     dslhal_api_dspInterfaceRead (pIhw, (unsigned int) pIhw->pmainAddr, 2,
---                                 (unsigned int *) &offset,
--+                                 (unsigned int *) &dspOffset,
--                                  (unsigned char *) &rMsgsRA[0], 12);
-- 
--      maxRate = (unsigned int)pIhw->AppData.DSConRate;
--@@ -1535,283 +1518,213 @@ int tn7dsl_proc_stats(char* buf, char **
--      }
--   }
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tShowtime Count:\t\t%u\tDS Max Attainable Bit Rate: %u kbps\n",
--                    (unsigned int)pIhw->AppData.showtimeCount, maxRate);
-- 
---  if(len<=limit)
---  {
---    int offset[2] = {32, 0};
---    unsigned int usBitswap, dsBitswap;
--+  tn7dsl_generic_read(2, (unsigned int *)&offset);
--+  dsBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
-- 
---    tn7dsl_generic_read(2, (unsigned int *)&offset);
---    dsBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
--+  offset[0] = 33;
--+  tn7dsl_generic_read(2, (unsigned int *)&offset);
--+  usBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
-- 
---    offset[0] = 33;
---    tn7dsl_generic_read(2, (unsigned int *)&offset);
---    usBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
---
---    if(pIhw->AppData.dsl_modulation > 5)
---      len +=
---        sprintf (buf + len,
--+  if(pIhw->AppData.dsl_modulation > 5)
--+    seq_printf (m,
--                  "\tBitSwap:\t\t%u\tUS Max Attainable Bit Rate: %u bps\n",
--                    (unsigned int)(usBitswap && dsBitswap), us_maxRate);
---    else
---      len +=
---        sprintf (buf + len,
--+  else
--+    seq_printf (m,
--                  "\tBitSwap:\t\t%u\tUS Max Attainable Bit Rate:\tn/a\n",
--                    (unsigned int)(usBitswap && dsBitswap));
---  }
-- 
-- #if 1 // TR69
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tAnnex: \t\t\t%s\tpsd_mask_qualifier: 0x%04x\n",
--+  seq_printf (m, "\tAnnex: \t\t\t%s\tpsd_mask_qualifier: 0x%04x\n",
--              tn7dsl_AnnexFromNum(pIhw->AppData.annex_selected),
--              pIhw->AppData.psd_mask_qualifier);
-- 
-- //  UR8_MERGE_START CQ10979   Jack Zhang
-- //  UR8_MERGE_START CQ10978   Jack Zhang
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tPower Management Status: L%d\tDS HLINSC: %d\n",
--+  seq_printf (m, "\tPower Management Status: L%d\tDS HLINSC: %d\n",
--              pIhw->AppData.pwrStatus, pIhw->AppData.dsHLINSC);
-- //  UR8_MERGE_END   CQ10978*
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tUS ACTPSD: \t\t%d\tDS ACTPSD: %d\n",
--+  seq_printf (m, "\tUS ACTPSD: \t\t%d\tDS ACTPSD: %d\n",
--              pIhw->AppData.usACTPSD, pIhw->AppData.dsACTPSD);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTotal init. errors: \t%d\tTotal init. timeouts: %d\n",
--+  seq_printf (m, "\tTotal init. errors: \t%d\tTotal init. timeouts: %d\n",
--              pIhw->AppData.totalInitErrs, pIhw->AppData.totalInitTOs);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tShowtime init. errors: \t%d\tShowtime init. timeouts: %d\n",
--+  seq_printf (m, "\tShowtime init. errors: \t%d\tShowtime init. timeouts: %d\n",
--              pIhw->AppData.showtimeInitErrs, pIhw->AppData.showtimeInitTOs);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tLast showtime init. errors: %ld\tLast showtime init. timeouts: %ld\n",
--+  seq_printf (m, "\tLast showtime init. errors: %ld\tLast showtime init. timeouts: %ld\n",
--              pIhw->AppData.lastshowInitErrs, pIhw->AppData.lastshowInitTOs);
-- //  UR8_MERGE_END   CQ10979*
-- 
---  if (len<=limit)
---  {
---    len += sprintf(buf+len,"\tATUC ghsVid: ");
---    for (i=0; i<8; i++)
---      len+= sprintf(buf+len, " %02x", pIhw->AppData.ghsATUCVendorId[i]);
---  }
--+  seq_printf(m,"\tATUC ghsVid: ");
--+  for (i=0; i<8; i++)
--+    seq_printf(m, " %02x", pIhw->AppData.ghsATUCVendorId[i]);
-- 
---  if (len<=limit)
---  {
---    len += sprintf (buf + len, "\n");
---  }
--+  seq_printf (m, "\n");
-- 
---  if (len <= limit)
---  {
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tT1413Vid: %02x %02x\t\tT1413Rev: %02x\t\tVendorRev: %02x\n",
--                pIhw->AppData.t1413ATUC.VendorId[0],
--                pIhw->AppData.t1413ATUC.VendorId[1],
--       pIhw->AppData.t1413ATUC.t1413Revision,
--       pIhw->AppData.t1413ATUC.VendorRevision);
---  }
-- 
---  if (len<=limit)
---  {
---    len += sprintf(buf+len,"\tATUR ghsVid: ");
---    for (i=0; i<8; i++)
---      len+= sprintf(buf+len, " %02x", pIhw->AppData.ghsATURVendorId[i]);
---  }
--+  seq_printf(m,"\tATUR ghsVid: ");
--+  for (i=0; i<8; i++)
--+    seq_printf(m, " %02x", pIhw->AppData.ghsATURVendorId[i]);
-- 
---  if (len<=limit)
---  {
---    len += sprintf (buf + len, "\n");
---  }
--+  seq_printf (m, "\n");
-- 
---  if (len <= limit)
---  {
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tT1413Vid: %02x %02x\tT1413Rev: %02x\tVendorRev: %02x\n",
--                pIhw->AppData.t1413ATUR.VendorId[0],
--                pIhw->AppData.t1413ATUR.VendorId[1],
--       pIhw->AppData.t1413ATUR.t1413Revision,
--       pIhw->AppData.t1413ATUR.VendorRevision);
---  }
-- 
-- #endif
--   /*
--    * Upstream Interleaved Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Upstream (TX) Interleave path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Upstream (TX) Interleave path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.usICRC_errors,
--                    (unsigned int)pIhw->AppData.usIFEC_errors,
--                    (unsigned int)pIhw->AppData.usINCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usILCD_errors,
--                    (unsigned int)pIhw->AppData.usIHEC_errors);
--   /*
--    * Downstream Interleaved Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Downstream (RX) Interleave path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Downstream (RX) Interleave path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsICRC_errors,
--                    (unsigned int)pIhw->AppData.dsIFEC_errors,
--                    (unsigned int)pIhw->AppData.dsINCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsILCD_errors,
--                    (unsigned int)pIhw->AppData.dsIHEC_errors);
--   /*
--    * Upstream Fast Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Upstream (TX) Fast path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Upstream (TX) Fast path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.usFCRC_errors,
--                    (unsigned int)pIhw->AppData.usFFEC_errors,
--                    (unsigned int)pIhw->AppData.usFNCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usFLCD_errors,
--                    (unsigned int)pIhw->AppData.usFHEC_errors);
--   /*
--    * Downstream Fast Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Downstream (RX) Fast path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Downstream (RX) Fast path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsFCRC_errors,
--                    (unsigned int)pIhw->AppData.dsFFEC_errors,
--                    (unsigned int)pIhw->AppData.dsFNCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
---                   (unsigned int)pIhw->AppData.dsFLCD_errors,
---                   (unsigned int)pIhw->AppData.dsFHEC_errors);
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--+             (unsigned int)pIhw->AppData.dsFLCD_errors,
--+             (unsigned int)pIhw->AppData.dsFHEC_errors);
-- 
--   /*
--    * ATM stats upstream
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n[ATM Stats]");
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Upstream/TX]\n");
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\n",
---               (unsigned int) pIhw->AppData.usAtm_count[0] +
---               (unsigned int) pIhw->AppData.usAtm_count[1],
---               (unsigned int) pIhw->AppData.usIdle_count[0] +
---               (unsigned int) pIhw->AppData.usIdle_count[1]);
---//UR8_MERGE_START CQ10700 Manjula K  
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf(m, "\n[ATM Stats]");
--+  seq_printf(m, "\n\t[Upstream/TX]\n");
--+  seq_printf (m, "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\n",
--+              (unsigned int) pIhw->AppData.usAtm_count[0] +
--+              (unsigned int) pIhw->AppData.usAtm_count[1],
--+              (unsigned int) pIhw->AppData.usIdle_count[0] +
--+              (unsigned int) pIhw->AppData.usIdle_count[1]);
--+//UR8_MERGE_START CQ10700 Manjula K
--+  seq_printf (m,
--                "\tTx Packets Dropped Count:\t%lu\n\tTx Bad Packets Count:\t%lu\n",
--                priv->stats.tx_dropped, priv->stats.tx_errors);
-- //UR8_MERGE_END CQ10700
--   /*
--    * ATM stats downstream
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Downstream/RX)]\n");
---  if(len<=limit)
---    len +=
---      sprintf (buf + len,
---               "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\tBad Hec Cell Cnt:\t%u\n",
---               (unsigned int) pIhw->AppData.dsGood_count[0] +
---               (unsigned int) pIhw->AppData.dsGood_count[1],
---               (unsigned int) pIhw->AppData.dsIdle_count[0] +
---               (unsigned int) pIhw->AppData.dsIdle_count[1],
---               (unsigned int) pIhw->AppData.dsBadHec_count[0] +
---               (unsigned int) pIhw->AppData.dsBadHec_count[1]);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tOverflow Dropped Cell Cnt:\t%u\n",
---                    (unsigned int) pIhw->AppData.dsOVFDrop_count[0] +
---                    (unsigned int) pIhw->AppData.dsOVFDrop_count[1]);
---                    
--- //UR8_MERGE_START CQ10700 Manjula K   
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
---               "\tRx Packets Dropped Count:\t%lu\n\tRx Bad Packets Count:\t%lu\n\n",
---               priv->stats.rx_dropped, priv->stats.rx_errors);
--+  seq_printf(m, "\n\t[Downstream/RX)]\n");
--+  seq_printf (m,
--+              "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\tBad Hec Cell Cnt:\t%u\n",
--+              (unsigned int) pIhw->AppData.dsGood_count[0] +
--+              (unsigned int) pIhw->AppData.dsGood_count[1],
--+              (unsigned int) pIhw->AppData.dsIdle_count[0] +
--+              (unsigned int) pIhw->AppData.dsIdle_count[1],
--+              (unsigned int) pIhw->AppData.dsBadHec_count[0] +
--+              (unsigned int) pIhw->AppData.dsBadHec_count[1]);
--+  seq_printf(m, "\tOverflow Dropped Cell Cnt:\t%u\n",
--+             (unsigned int) pIhw->AppData.dsOVFDrop_count[0] +
--+             (unsigned int) pIhw->AppData.dsOVFDrop_count[1]);
--+
--+ //UR8_MERGE_START CQ10700 Manjula K
--+  seq_printf (m,
--+              "\tRx Packets Dropped Count:\t%lu\n\tRx Bad Packets Count:\t%lu\n\n",
--+              priv->stats.rx_dropped, priv->stats.rx_errors);
-- //UR8_MERGE_END CQ10700
--     
--   tn7sar_get_stats(pIhw->pOsContext);
---  if(len<=limit)
---    len += sprintf(buf+len, "\n[SAR AAL5 Stats]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tTx PDU's:\t%u\n\tRx PDU's:\t%u\n",
---                    sarStat.txPktCnt, sarStat.rxPktCnt);
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTx Total Bytes:\t%u\n\tRx Total Bytes:\t%u\n",
---               sarStat.txBytes, sarStat.rxBytes);
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
---               "\tTx Total Error Counts:\t%u\n\tRx Total Error Counts:\t%u\n\n",
---               sarStat.txErrors, sarStat.rxErrors);
--+  seq_printf(m, "\n[SAR AAL5 Stats]\n");
--+  seq_printf(m, "\tTx PDU's:\t%u\n\tRx PDU's:\t%u\n",
--+             sarStat.txPktCnt, sarStat.rxPktCnt);
--+  seq_printf (m, "\tTx Total Bytes:\t%u\n\tRx Total Bytes:\t%u\n",
--+              sarStat.txBytes, sarStat.rxBytes);
--+  seq_printf (m,
--+              "\tTx Total Error Counts:\t%u\n\tRx Total Error Counts:\t%u\n\n",
--+              sarStat.txErrors, sarStat.rxErrors);
-- 
--   /*
--    * oam loopback info
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n[OAM Stats]\n");
--+  seq_printf(m, "\n[OAM Stats]\n");
-- 
--   tn7sar_get_near_end_loopback_count(&F4count, &F5count);
-- 
---  if(len<=limit)
---    {
---    len +=
---      sprintf (buf + len,
---               "\tNear End F5 Loop Back Count:\t%u\n\tNear End F4 Loop Back Count:\t%u\n\tFar End F5 Loop Back Count:\t%u\n\tFar End F4 Loop Back Count:\t%u\n",
--+  seq_printf (m,
--+              "\tNear End F5 Loop Back Count:\t%u\n\tNear End F4 Loop Back Count:\t%u\n\tFar End F5 Loop Back Count:\t%u\n\tFar End F4 Loop Back Count:\t%u\n",
--                F5count, F4count, oamFarLBCount[0] + oamFarLBCount[2],
--                   oamFarLBCount[1] + oamFarLBCount[3]);
---    }
-- 
-- #define USE_OAM_DROP_COUNT   //CQ10273 
--   //Read OAM ping responses count:
-- #ifdef USE_OAM_DROP_COUNT
---  if(len<=limit)
---  {
---  /*  len +=
---      sprintf (buf + len,
---               "\tSAR OAM Retry in 0x%X cycles, Drop Count=%d\n",
---               tn7dsl_get_memory(0xa30085cc), tn7dsl_get_memory(0xa30085c4)); */
--+/*  seq_printf (m,
--+              "\tSAR OAM Retry in 0x%X cycles, Drop Count=%d\n",
--+              tn7dsl_get_memory(0xa30085cc), tn7dsl_get_memory(0xa30085c4)); */
-- 
---    len += sprintf (buf + len, "\tSAR OAM Ping Response Drop Count=%d\n",
---               tn7dsl_get_memory(0xa30085b0));
---  }
--+  seq_printf (m, "\tSAR OAM Ping Response Drop Count=%d\n",
--+              tn7dsl_get_memory(0xa30085b0));
-- #endif // USE_OAM_DROP_COUNT
-- 
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_modem(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_stats_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_stats, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+int tn7dsl_proc_write_stats (struct file *fp, const char *buf, unsigned long count, void *data);
--+
--+struct file_operations tn7dsl_proc_stats_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_stats_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+	.write		= tn7dsl_proc_write_stats,
--+};
-- 
--+static int tn7dsl_proc_modem(struct seq_file *m, void *data)
--+{
--   char *state;
--   int tag;
-- 
--@@ -1845,16 +1758,26 @@ int tn7dsl_proc_modem(char* buf, char **
-- 
--   if(pIhw->lConnected == 1)
--     state = "SHOWTIME";
---  if(len<=limit)
---    len += sprintf(buf+len,"%s\n",state);
---  if(len<=limit)
---    len += sprintf(buf+len, "%d\n", dslReg);
---  if(len<=limit)
---    len += sprintf(buf+len, "failTrains=%d\n", pIhw->AppData.trainFails);
--+  seq_printf(m,"%s\n",state);
--+  seq_printf(m, "%d\n", dslReg);
--+  seq_printf(m, "failTrains=%d\n", pIhw->AppData.trainFails);
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_modem_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_modem, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_modem_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_modem_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- /**********************************************************************
-- **                                                                    *
-- **  tn7dsl_hdlc_update_crc() -- Calculate CRC                         *
--@@ -2119,11 +2042,8 @@ static int tn7dsl_hdlc_rx_process(unsign
--   return(ret);
-- }
-- 
---int tn7dsl_proc_eoc (char *buf, char **start, off_t OffSet, int count,
---                     int *eof, void *data)
--+static int tn7dsl_proc_eoc (struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   int offset[2] = {34, 0};  // point to buffer parameter data structure
--   clearEocParm_t   peoc;
-- 
--@@ -2132,62 +2052,49 @@ int tn7dsl_proc_eoc (char *buf, char **s
--                                (unsigned char *) &peoc,
--                                sizeof (clearEocParm_t));
-- 
---  if (len <= limit)
---     len += sprintf(buf+len, "\nClear EOC Channel:\n\n");
---  if (len <= limit)
---     len += sprintf(buf+len, "  Enabled:\t%d\n", dslhal_support_byteSwap32(peoc.clearEocEnabled));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[0]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[1]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[2]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[3]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[0]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[1]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[2]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[3]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  txRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txRdIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  txWrIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txWrIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  rxRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.rxRdIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  rxWrIndex:\t%d\n\n", dslhal_support_byteSwap32(peoc.rxWrIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalTxPkts:\t%d\n", EocTxTotalPackets);
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalRxPkts:\t%d\n", EocRxTotalPackets);
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalTxBytes:\t%d\n", EocTxTotalBytes);
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalRxBytes:\t%d\n\n", EocRxTotalBytes);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrBufFull:\t%d\n", ErrEocBufFull);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrBufIndx:\t%d\n", ErrEocBufIndex);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrBufMax:\t%d\n", ErrEocBufMax);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrMsgMax:\t%d\n", ErrEocMsgOversized);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrTxHDLC:\t%d\n", ErrEocTxHdlcCRC);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrRxHDLC:\t%d\n", ErrEocRxHdlcCRC);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrRxSnmp:\t%d\n", ErrEocRxHdlcFraming);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrRxPush:\t%d\n\n", ErrEocRxPush);
--+  seq_printf(m, "\nClear EOC Channel:\n\n");
--+  seq_printf(m, "  Enabled:\t%d\n", dslhal_support_byteSwap32(peoc.clearEocEnabled));
--+  seq_printf(m, "  TxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[0]));
--+  seq_printf(m, "  TxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[1]));
--+  seq_printf(m, "  TxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[2]));
--+  seq_printf(m, "  TxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[3]));
--+  seq_printf(m, "  RxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[0]));
--+  seq_printf(m, "  RxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[1]));
--+  seq_printf(m, "  RxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[2]));
--+  seq_printf(m, "  RxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[3]));
--+  seq_printf(m, "  txRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txRdIndex));
--+  seq_printf(m, "  txWrIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txWrIndex));
--+  seq_printf(m, "  rxRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.rxRdIndex));
--+  seq_printf(m, "  rxWrIndex:\t%d\n\n", dslhal_support_byteSwap32(peoc.rxWrIndex));
--+  seq_printf(m, "  TotalTxPkts:\t%d\n", EocTxTotalPackets);
--+  seq_printf(m, "  TotalRxPkts:\t%d\n", EocRxTotalPackets);
--+  seq_printf(m, "  TotalTxBytes:\t%d\n", EocTxTotalBytes);
--+  seq_printf(m, "  TotalRxBytes:\t%d\n\n", EocRxTotalBytes);
--+  seq_printf(m, "  ErrBufFull:\t%d\n", ErrEocBufFull);
--+  seq_printf(m, "  ErrBufIndx:\t%d\n", ErrEocBufIndex);
--+  seq_printf(m, "  ErrBufMax:\t%d\n", ErrEocBufMax);
--+  seq_printf(m, "  ErrMsgMax:\t%d\n", ErrEocMsgOversized);
--+  seq_printf(m, "  ErrTxHDLC:\t%d\n", ErrEocTxHdlcCRC);
--+  seq_printf(m, "  ErrRxHDLC:\t%d\n", ErrEocRxHdlcCRC);
--+  seq_printf(m, "  ErrRxSnmp:\t%d\n", ErrEocRxHdlcFraming);
--+  seq_printf(m, "  ErrRxPush:\t%d\n\n", ErrEocRxPush);
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_eoc_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_eoc, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_eoc_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_eoc_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- int tn7dsl_clear_eoc_setup(void)
-- {
--   int   i;
--@@ -4407,14 +4314,10 @@ int tn7dsl_proc_write_stats (struct file
-- }
-- 
-- 
---int tn7dsl_proc_train_mode_export (char *buf, char **start, off_t offset,
---                                   int count, int *eof, void *data)
--+static int tn7dsl_proc_train_mode_export (struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  char *cp = buf + offset;
--   int i = 0;
---  static int ctr = 0;
-- 
--   typedef struct
--   {
--@@ -4495,197 +4398,185 @@ int tn7dsl_proc_train_mode_export (char
--   }
-- 
-- 
---    if(len <= count)
--+  for (i = 0; (i < num_entries) ; i++)
--     {
---        for (i = ctr; ((i < num_entries)&& (len <= count)) ; i++)
---        {
---      /*
---       * Write the current string only if we can fit it into the buffer
---       */
---            if((strlen(dsl_modes[i].mode_name) + 6 + len) <= count)
---        {
---                len += snprintf(cp+len, (count - len), "%s\t\t\t%#x\n",
---                                    dsl_modes[i].mode_name, dsl_modes[i].mode_value);
---            }
---            else
---                break;
---        }
--+              seq_printf(m, "%s\t\t\t%#x\n",
--+                         dsl_modes[i].mode_name, dsl_modes[i].mode_value);
--     }
-- 
---  /*
---   * Data was completely written
---   */
---    if (i >= num_entries)
---    {
---    /*
---     * We are done with this
---     */
---        *eof = 1;
---        ctr = 0;
---    }
---    else
---    {
---    /*
---     * We have not been able to write the complete data, and we have to nul
---     * terminate the buffer.
---        */
---        *(cp + len) = '\0';
---
---    /*
---     * Save the value of the counter for the next read for the rest of the
---     * data.
---        */
---        ctr = i;
---    }
---
---    return len;
--+    return 0;
-- }
-- 
---#ifndef NO_ADV_STATS
---int tn7dsl_proc_SNRpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_train_mode_export_open(struct inode *inode, struct file *file)
-- {
---  int len = 0;
---
--+	return single_open(file, tn7dsl_proc_train_mode_export, PDE_DATA(inode));
--+}
-- 
--+struct file_operations tn7dsl_proc_train_mode_export_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_train_mode_export_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
---  int limit = count - 80;
--+#ifndef NO_ADV_STATS
--+int tn7dsl_proc_SNRpsds(struct seq_file *m, void *data)
--+{
--   int i;
--   unsigned char SNRpsds[512];
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 SNRpsds:");
--+  seq_printf(m, "\nAR7 SNRpsds:");
-- 
--   if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--   {
--     dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones; i++)
--   {
--     if (!(i%16))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "%d ", (unsigned char)SNRpsds[i]);
--+    seq_printf(m, "%d ", (unsigned char)SNRpsds[i]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
-- 
-- 
---  return len;
--+  return 0;
-- }
-- 
--+static int tn7dsl_proc_SNRpsds_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_SNRpsds, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_SNRpsds_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_SNRpsds_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif
-- 
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_QLNpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_QLNpsds(struct seq_file *m, void *data)
-- {
---  int len = 0;
---
---  int limit = count - 80;
--   unsigned char QLNpsds[512];
--   int i;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 QLNpsds:");
--+  seq_printf(m, "\nAR7 QLNpsds:");
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getQLNpsds(pIhw, QLNpsds, 0))
--   {
--     dgprintf(4, "dslhal_api_getQLNpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones; i++)
--   {
--     if (!(i%16))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "%d ", (unsigned char)QLNpsds[i]);
--+    seq_printf(m, "%d ", (unsigned char)QLNpsds[i]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
-- 
---  return len;
--+  return 0;
-- }
--+
--+static int tn7dsl_proc_QLNpsds_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_QLNpsds, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_QLNpsds_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_QLNpsds_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif
-- 
-- //  UR8_MERGE_START CQ10979   Jack Zhang
-- #ifdef TR69_HLIN_IN
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_HLINpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds(struct seq_file *m, void *data)
-- {
---  int len = 0;
---
---  int limit = count - 80;
--   short HLINpsds[2*512];
--   int i;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 HLINpsds:");
--+  seq_printf(m, "\nAR7 HLINpsds:");
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getHLINpsds(pIhw, (unsigned char *)HLINpsds, 1))
--   {
--     dgprintf(4, "dslhal_api_getHLINpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones; i++)
--   {
--     if (!(i%8))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--+    seq_printf(m, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
-- 
---  return len;
--+  return 0;
-- }
-- 
---static int tn7dsl_proc_HLINpsdsIndx(char* buf, char **start, off_t offset, int count,int *eof, void *data, int indx)
--+static int tn7dsl_proc_HLINpsds_open(struct inode *inode, struct file *file)
-- {
---  int len = 0;
--+	return single_open(file, tn7dsl_proc_HLINpsds, PDE_DATA(inode));
--+}
-- 
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_HLINpsds_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int tn7dsl_proc_HLINpsdsIndx(struct seq_file *m, void *data, int indx)
--+{
--   short HLINpsds[2*512];
--   int i;
--   int start=0, dim=128;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 HLINpsds: (section %d)", indx);
--+  seq_printf(m, "\nAR7 HLINpsds: (section %d)", indx);
-- 
--   if((indx > 2) && (pIhw->AppData.max_ds_tones <= 256))
--   {
---    if(len <=limit)
---      len += sprintf(buf+len, "\n[End of data]");
---    return len;
--+    seq_printf(m, "\n[End of data]");
--+    return 0;
--   }
--   
--   // call API instead of access internal buf directly
--   if (dslhal_api_getHLINpsds(pIhw, (unsigned char *)HLINpsds, 1))
--   {
--     dgprintf(4, "dslhal_api_getHLINpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   start = (indx -1) * 128;
--@@ -4694,39 +4585,89 @@ static int tn7dsl_proc_HLINpsdsIndx(char
--   {
--     if (!(i%8))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n%d: ", i);
--+      seq_printf(m, "\n%d: ", i);
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--+    seq_printf(m, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_HLINpsds1(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 1);
--+}
--+
--+static int tn7dsl_proc_HLINpsds2(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 2);
--+}
--+
--+static int tn7dsl_proc_HLINpsds3(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 3);
--+}
--+
--+static int tn7dsl_proc_HLINpsds4(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 4);
-- }
-- 
---int tn7dsl_proc_HLINpsds1(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds1_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 1);
--+	return single_open(file, tn7dsl_proc_HLINpsds1, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_HLINpsds2(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds2_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 2);
--+	return single_open(file, tn7dsl_proc_HLINpsds2, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_HLINpsds3(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds3_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 3);
--+	return single_open(file, tn7dsl_proc_HLINpsds3, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_HLINpsds4(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds4_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 4);
--+	return single_open(file, tn7dsl_proc_HLINpsds4, PDE_DATA(inode));
-- }
--+
--+struct file_operations tn7dsl_proc_HLINpsds1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+struct file_operations tn7dsl_proc_HLINpsds2_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+struct file_operations tn7dsl_proc_HLINpsds3_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds3_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+struct file_operations tn7dsl_proc_HLINpsds4_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds4_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif
-- #endif //TR69_HLIN_IN
-- //  UR8_MERGE_END   CQ10979*
--@@ -4734,64 +4675,48 @@ int tn7dsl_proc_HLINpsds4(char* buf, cha
-- // *    UR8_MERGE_START CQ11057   Jack Zhang
-- #ifdef TR69_PMD_IN
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_PMDus(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_PMDus(struct seq_file *m, void *data)
-- {
---  int len = 0;
---
---  int limit = count - 80;
--   int i;
--   CoPMDTestParams_t  co_pmdtest_params;
---  
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 US PMD Test:\n");
--+
--+  seq_printf(m, "\nAR7 US PMD Test:\n");
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getPMDTestus(pIhw, &co_pmdtest_params, 0) != DSLHAL_ERROR_NO_ERRORS)
--   {
--     dgprintf(4, "dslhal_api_getPMDTestus failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "LATN=%d\n", co_pmdtest_params.co_latn);
--+  seq_printf(m, "LATN=%d\n", co_pmdtest_params.co_latn);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "SATN=%d\n", co_pmdtest_params.co_satn);
--+  seq_printf(m, "SATN=%d\n", co_pmdtest_params.co_satn);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "SNRM=%d\n", co_pmdtest_params.usMargin);
--+  seq_printf(m, "SNRM=%d\n", co_pmdtest_params.usMargin);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "attndr=%ld\n", co_pmdtest_params.co_attndr);
--+  seq_printf(m, "attndr=%ld\n", co_pmdtest_params.co_attndr);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "NearActatp=%d\n", co_pmdtest_params.co_near_actatp);
--+  seq_printf(m, "NearActatp=%d\n", co_pmdtest_params.co_near_actatp);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "FarActatp=%d\n", co_pmdtest_params.co_far_actatp);
--+  seq_printf(m, "FarActatp=%d\n", co_pmdtest_params.co_far_actatp);
-- 
--   //HLOG
--   for (i=0; i<pIhw->AppData.max_us_tones; i++)
--   {
--     if (!(i%16))
---    {
---      if(len <=limit)
---        len += sprintf(buf+len, "\nHLOG(%3d):", i);
---    }
---    if(len <=limit)
---      len += sprintf(buf+len, " %d", co_pmdtest_params.TestParmCOHlogfMsg[i]);
--+      seq_printf(m, "\nHLOG(%3d):", i);
--+
--+    seq_printf(m, " %d", co_pmdtest_params.TestParmCOHlogfMsg[i]);
--   }
-- 
--   //QLN
--   for (i=0; i<pIhw->AppData.max_us_tones; i++)
--   {
--     if (!(i%16))
---    {
---      if(len <=limit)
---        len += sprintf(buf+len, "\nQLN(%3d):", i);
---    }
---    if(len <=limit)
---      len += sprintf(buf+len, " %d", co_pmdtest_params.TestParmCOQLNfMsg[i]);
--+      seq_printf(m, "\nQLN(%3d):", i);
--+
--+    seq_printf(m, " %d", co_pmdtest_params.TestParmCOQLNfMsg[i]);
-- 
--   }
-- 
--@@ -4799,19 +4724,28 @@ int tn7dsl_proc_PMDus(char* buf, char **
--   for (i=0; i<pIhw->AppData.max_us_tones; i++)
--   {
--     if (!(i%16))
---    {
---      if(len <=limit)
---        len += sprintf(buf+len, "\nSNR(%3d):", i);
---    }
---    if(len <=limit)
---      len += sprintf(buf+len, " %d", co_pmdtest_params.TestParmCOSNRfMsg[i]);
--+      seq_printf(m, "\nSNR(%3d):", i);
--+    seq_printf(m, " %d", co_pmdtest_params.TestParmCOSNRfMsg[i]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_PMDus_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_PMDus, PDE_DATA(inode));
-- }
--+
--+struct file_operations tn7dsl_proc_PMDus_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_PMDus_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif //NO_ADV_STATS
-- #endif //TR69_PMD_IN
-- // *    UR8_MERGE_END   CQ11057 *
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -1395,44 +1395,66 @@ int tn7sar_oam_generation(void *privCont
--   return 0;
-- }
-- 
---int tn7sar_proc_oam_ping(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7sar_proc_oam_ping(struct seq_file *m, void *data)
-- {
---  int len = 0;
--   unsigned int oam_ps = oamPingStatus;
-- 
--   if( oam_ps == OAM_PING_PENDING_RECVD )
--     oam_ps = OAM_PING_PENDING;  //jz  CQ9861: Only export the PENDING status, not internal state
-- 
---  len += sprintf(buf+len, "%d\n", oam_ps); //oamPingStatus);
--+  seq_printf(m, "%d\n", oam_ps); //oamPingStatus);
-- 
---  return len;
--+  return 0;
-- }
-- 
---int tn7sar_proc_pvc_table(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7sar_proc_oam_ping_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7sar_proc_oam_ping, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7sar_proc_oam_ping_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7sar_proc_oam_ping_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+static int tn7sar_proc_pvc_table(struct seq_file *m, void *data)
-- {
---  int len = 0;
--   int i;
-- 
--   for(i=0;i<16;i++)
--   {
--     if(pvc_result[i].bInUse)
--     {
---      len += sprintf(buf+len, "%d,%d\n", pvc_result[i].vpi,pvc_result[i].vci);
--+      seq_printf(m, "%d,%d\n", pvc_result[i].vpi,pvc_result[i].vci);
--     }
--     else
--     {
---      len += sprintf(buf+len, "0,0\n");
--+      seq_printf(m, "0,0\n");
--     }
--   }
---  return len;
--+  return 0;
--+}
--+
--+static int tn7sar_proc_pvc_table_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7sar_proc_pvc_table, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7sar_proc_pvc_table_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7sar_proc_pvc_table_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
-- 
---int tn7sar_proc_sar_stat(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7sar_proc_sar_stat(struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
--   int i, j, k;
--@@ -1441,21 +1463,19 @@ int tn7sar_proc_sar_stat(char* buf, char
--   unsigned int *pStateBase, *pSarStat;
--   HAL_FUNCTIONS *pHalFunc;
--   HAL_DEVICE    *pHalDev;
---  int dBytes;
-- 
---  dev = (struct atm_dev *)data;
--+  dev = (struct atm_dev *)m->private;
--   priv = (Tn7AtmPrivate *)dev->dev_data;
-- 
--   pHalFunc = (HAL_FUNCTIONS *)priv->pSarHalFunc;
--   pHalDev  = (HAL_DEVICE *)priv->pSarHalDev;
-- 
---  len += sprintf(buf+len, "SAR HAL Statistics");
--+  seq_printf(m, "SAR HAL Statistics");
--   for(i=0;i<MAX_DMA_CHAN;i++)
--   {
--     if(priv->lut[i].inuse)
--     {
---      if(len<=limit)
---      len += sprintf(buf+len, "\nChannel %d:\n",priv->lut[i].chanid);
--+      seq_printf(m, "\nChannel %d:\n",priv->lut[i].chanid);
--       k=0;
--       for(j=0;j<4;j++)
--       {
--@@ -1468,26 +1488,18 @@ int tn7sar_proc_sar_stat(char* buf, char
--         {
--           if((char *)*pSarStat == NULL)
--             break;
---          if(len<=limit)
---          {
---            dBytes = sprintf(buf+len, "%s: ",(char *) *pSarStat);
---            len += dBytes;
---            k += dBytes;
---          }
--+
--+          seq_printf(m, "%s: ",(char *) *pSarStat);
--+          k += strlen((char *) *pSarStat) + strlen(": ");
--           pSarStat++;
---          if(len<=limit)
---          {
---            dBytes = sprintf(buf+len, "%s;  \n",(char *) *pSarStat);
---            len += dBytes;
---            k += dBytes;
---          }
--+          seq_printf(m, "%s;  \n",(char *) *pSarStat);
--+          k += strlen((char *) *pSarStat) + strlen(";  \n");
--           pSarStat++;
-- 
--           if(k > 60)
--           {
--             k=0;
---            if(len<=limit)
---            len += sprintf(buf+len, "\n");
--+            seq_printf(m, "\n");
--           }
--         }
-- 
--@@ -1496,9 +1508,22 @@ int tn7sar_proc_sar_stat(char* buf, char
--     }
--   }
-- 
---  return len;
--+  return 0;
-- }
-- 
--+static int tn7sar_proc_sar_stat_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7sar_proc_sar_stat, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7sar_proc_sar_stat_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7sar_proc_sar_stat_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- void tn7sar_get_sar_firmware_version(unsigned int *pdsp_version_ms, unsigned int *pdsp_version_ls)
-- {
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/230-compile_fixes.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/230-compile_fixes.patch
-deleted file mode 100644
-index c7d9127012..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/230-compile_fixes.patch
-+++ /dev/null
-@@ -1,44 +0,0 @@
----- a/cp_sar_reg.h
--+++ b/cp_sar_reg.h
--@@ -214,4 +214,4 @@
-- 
-- /* END OF FILE */
-- 
---#endif _INC_SAR_REG
--+#endif
----- a/tn7api.h
--+++ b/tn7api.h
--@@ -172,4 +172,4 @@ void tn7sar_get_sar_firmware_version(uns
-- extern struct file_operations tn7sar_proc_oam_ping_fops;
-- extern struct file_operations tn7sar_proc_pvc_table_fops;
-- int tn7sar_tx_flush(void *privContext, int chan, int queue, int skip);
---#endif __SGAPI_H
--+#endif
----- a/tn7atm.h
--+++ b/tn7atm.h
--@@ -276,4 +276,4 @@ typedef struct
-- #define PHYS_TO_K1(X)                             (PHYS_ADDR(X)|K1BASE)
-- #endif
-- 
---#endif __TN7ATM_H
--+#endif
----- a/dsl_hal_api.h
--+++ b/dsl_hal_api.h
--@@ -2448,7 +2448,7 @@ unsigned int dslhal_api_getHLINpsds(tids
+@@ -1,231 +0,0 @@
+-/*
+- * avila-wdt.c 
+- * Copyright (C) 2009 Felix Fietkau <nbd@nbd.name>
 - *
-- ********************************************************************************************/
-- 
---unsigned int dslhal_api_getHighPrecision();
--+unsigned int dslhal_api_getHighPrecision(void);
-- 
-- /********************************************************************************************
-- * FUNCTION NAME: void dslhal_api_setHighPrecision
--@@ -2459,7 +2459,7 @@ unsigned int dslhal_api_getHighPrecision
-- * Return: None
-- ********************************************************************************************/
-- 
---void dslhal_api_setHighPrecision();
--+void dslhal_api_setHighPrecision(void);
-- //  UR8_MERGE_END   CQ11054*
-- 
-- #ifdef INTERNAL_BUILD
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/240-3.18_fixes.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/240-3.18_fixes.patch
-deleted file mode 100644
-index 2e69300147..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/240-3.18_fixes.patch
-+++ /dev/null
-@@ -1,38 +0,0 @@
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -333,7 +333,7 @@ static void tn7dsl_chng_modulation(void*
-- static unsigned int tn7dsl_set_modulation(void* data, int flag);
-- static void tn7dsl_ctrl_fineGain(int value);
-- static void tn7dsl_set_fineGainValue(int value);
---static int dslmod_sysctl (ctl_table * ctl, int write, void *buffer,
--+static int dslmod_sysctl (struct ctl_table * ctl, int write, void *buffer,
--                           size_t * lenp, loff_t *ppos);
-- static void tn7dsl_register_dslss_led(void);
-- void tn7dsl_dslmod_sysctl_register(void);
--@@ -3308,7 +3308,7 @@ unsigned int tn7dsl_get_memory(unsigned
-- 
-- 
-- 
---static int dslmod_sysctl(ctl_table *ctl, int write, void *buffer,
--+static int dslmod_sysctl(struct ctl_table *ctl, int write, void *buffer,
--       size_t *lenp, loff_t *ppos)
-- {
--   char *ptr;
--@@ -3423,7 +3423,7 @@ static int dslmod_sysctl(ctl_table *ctl,
-- }
-- 
-- 
---ctl_table dslmod_table[] = {
--+struct ctl_table dslmod_table[] = {
-- 	{
-- 		.procname 		= "dslmod",
-- 		.data			= info,
--@@ -3437,7 +3437,7 @@ ctl_table dslmod_table[] = {
--   };
-- 
-- /* Make sure that /proc/sys/dev is there */
---ctl_table dslmod_root_table[] = {
--+struct ctl_table dslmod_root_table[] = {
-- #ifdef CONFIG_PROC_FS
-- 	{
-- 		.procname		= "dev",
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/250-4.1_fixes.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/250-4.1_fixes.patch
-deleted file mode 100644
-index f26b7e221c..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/250-4.1_fixes.patch
-+++ /dev/null
-@@ -1,20 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -777,7 +777,7 @@ static int __init tn7atm_irq_request (st
--    * Register SAR interrupt
--    */
--   priv->sar_irq = LNXINTNUM (ATM_SAR_INT);      /* Interrupt line # */
---  if (request_irq (priv->sar_irq, tn7atm_sar_irq, IRQF_DISABLED, "SAR ", dev))
--+  if (request_irq (priv->sar_irq, tn7atm_sar_irq, 0, "SAR ", dev))
--     printk ("Could not register tn7atm_sar_irq\n");
-- 
--   /*
--@@ -795,7 +795,7 @@ static int __init tn7atm_irq_request (st
--    * Reigster Receive interrupt A
--    */
--   priv->dsl_irq = LNXINTNUM (ATM_DSL_INT);      /* Interrupt line # */
---  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, IRQF_DISABLED, "DSL ", dev))
--+  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, 0, "DSL ", dev))
--     printk ("Could not register tn7atm_dsl_irq\n");
-- 
-- /***** VRB Tasklet Mode ****/
-diff --git a/package/kernel/ar7-atm/patches-D7.04.03.00/260-fix_function_signatures.patch b/package/kernel/ar7-atm/patches-D7.04.03.00/260-fix_function_signatures.patch
-deleted file mode 100644
-index fe13fc5476..0000000000
---- a/package/kernel/ar7-atm/patches-D7.04.03.00/260-fix_function_signatures.patch
-+++ /dev/null
-@@ -1,63 +0,0 @@
----- a/cpswhal_cpsar.h
--+++ b/cpswhal_cpsar.h
--@@ -430,10 +430,10 @@ typedef struct
--   int   (*DeviceFindInfo)(int Inst, const char *DeviceName, void *DeviceInfo);
--   int   (*DeviceFindParmUint)(void *DeviceInfo, const char *Parm, bit32u *Value);
--   int   (*DeviceFindParmValue)(void *DeviceInfo, const char *Parm, void *Value);
---  void  (*Free)(void *MemPtr);
--+  void  (*Free)(const void *MemPtr);
--   void  (*FreeRxBuffer)(OS_RECEIVEINFO *OsReceiveInfo, void *MemPtr);
---  void  (*FreeDev)(void *MemPtr);
---  void  (*FreeDmaXfer)(void *MemPtr);
--+  void  (*FreeDev)(const void *MemPtr);
--+  void  (*FreeDmaXfer)(const void *MemPtr);
--   void  (*IsrRegister)(OS_DEVICE *OsDev, int (*halISR)(HAL_DEVICE*, int*), int InterruptBit);
--   void  (*IsrUnRegister)(OS_DEVICE *OsDev, int InterruptBit);
--   void* (*Malloc)(bit32u size);
----- a/cpswhal_cpaal5.h
--+++ b/cpswhal_cpaal5.h
--@@ -430,10 +430,10 @@ typedef struct
--   int   (*DeviceFindInfo)(int Inst, const char *DeviceName, void *DeviceInfo);
--   int   (*DeviceFindParmUint)(void *DeviceInfo, const char *Parm, bit32u *Value);
--   int   (*DeviceFindParmValue)(void *DeviceInfo, const char *Parm, void *Value);
---  void  (*Free)(void *MemPtr);
--+  void  (*Free)(const void *MemPtr);
--   void  (*FreeRxBuffer)(OS_RECEIVEINFO *OsReceiveInfo, void *MemPtr);
---  void  (*FreeDev)(void *MemPtr);
---  void  (*FreeDmaXfer)(void *MemPtr);
--+  void  (*FreeDev)(const void *MemPtr);
--+  void  (*FreeDmaXfer)(const void *MemPtr);
--   void  (*IsrRegister)(OS_DEVICE *OsDev, int (*halISR)(HAL_DEVICE*, int*), int InterruptBit);
--   void  (*IsrUnRegister)(OS_DEVICE *OsDev, int InterruptBit);
--   void* (*Malloc)(bit32u size);
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -2481,7 +2481,7 @@ static int tn7atm_proc_qos_read(struct s
--     return 0;
-- 
-- }
---static int tn7atm_proc_qos_write(struct file *fp, const char *buf, unsigned long count, void *data)
--+static int tn7atm_proc_qos_write(struct file *fp, const char *buf, size_t count, loff_t *data)
-- {
--     char local_buf[32];
-- 
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -1712,7 +1712,7 @@ static int tn7dsl_proc_stats_open(struct
-- 	return single_open(file, tn7dsl_proc_stats, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_write_stats (struct file *fp, const char *buf, unsigned long count, void *data);
--+int tn7dsl_proc_write_stats (struct file *fp, const char *buf, size_t count, loff_t *data);
-- 
-- struct file_operations tn7dsl_proc_stats_fops = {
-- 	.owner 		= THIS_MODULE,
--@@ -4256,7 +4256,7 @@ int tn7dsl_generic_write( int offsetnum,
-- }
-- 
-- int tn7dsl_proc_write_stats (struct file *fp, const char *buf,
---                             unsigned long count, void *data)
--+                             size_t count, loff_t *data)
-- {
--     char local_buf[31];
--     int  ret_val = 0;
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/090-no-date-time.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/090-no-date-time.patch
-deleted file mode 100644
-index 9b3abf006b..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/090-no-date-time.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/aal5sar.h
--+++ b/aal5sar.h
--@@ -19,7 +19,7 @@
-- /** \namespace AAL5_Version
-- This documents version 01.07.2c of the AAL5 CPHAL.
+- * based on:
+- * drivers/char/watchdog/ixp4xx_wdt.c
+- *
+- * Watchdog driver for Intel IXP4xx network processors
+- *
+- * Author: Deepak Saxena <dsaxena@plexity.net>
+- *
+- * Copyright 2004 (c) MontaVista, Software, Inc.
+- * Based on sa1100 driver, Copyright (C) 2000 Oleg Drokin <green@crimea.edu>
+- *
+- * This file is licensed under  the terms of the GNU General Public
+- * License version 2. This program is licensed "as is" without any
+- * warranty of any kind, whether express or implied.
 - */
---const char *pszVersion_CPAAL5="CPAAL5 01.07.2c "__DATE__" "__TIME__;
--+const char *pszVersion_CPAAL5="CPAAL5 01.07.2c ";
-- 
-- #include "cpsar_cpaal5.h"
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/100-compile_fix.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/100-compile_fix.patch
-deleted file mode 100644
-index 7dee220256..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/100-compile_fix.patch
-+++ /dev/null
-@@ -1,808 +0,0 @@
----- a/cppi_cpaal5.c
--+++ b/cppi_cpaal5.c
--@@ -360,7 +360,7 @@ static int halRxReturn(HAL_RECEIVEINFO *
--            {
--             /* malloc failed, add this RCB to Needs Buffer List */
--             TempRcb->FragCount = 1;                                             /*MJH+030417*/
---            (HAL_RCB *)TempRcb->Eop = TempRcb;                                  /* GSG +030430 */
--+            TempRcb->Eop = TempRcb;                                             /* GSG +030430 */
-- 
--             if(HalDev->NeedsCount < MAX_NEEDS)                                  /* +MJH 030410 */
--               {                                                                 /* +MJH 030410 */
----- a/dsl_hal_api.c
--+++ b/dsl_hal_api.c
--@@ -273,15 +273,15 @@
-- *  09/15/07  CPH    CQ11466  Added EFM support
-- *  09/27/07  EYin   CQ11929: Added NFEC/INP/Lp/Rp reporting for only ADSL2/2+ mode.
-- ******************************************************************************/
---#include <dev_host_interface.h>
---#include <dsl_hal_register.h>
---#include <dsl_hal_support.h>
--+#include "dev_host_interface.h"
--+#include "dsl_hal_register.h"
--+#include "dsl_hal_support.h"
-- 
-- #ifndef NO_ADV_STATS
---#include <dsl_hal_logtable.h>
--+#include "dsl_hal_logtable.h"
-- #endif
-- 
---#include <dsl_hal_version.h>
--+#include "dsl_hal_version.h"
-- 
-- //  UR8_MERGE_START CQ11054   Jack Zhang
-- static unsigned int highprecision_selected = 0;  //By default we use low precision for backward compt.
----- a/dsl_hal_support.c
--+++ b/dsl_hal_support.c
--@@ -142,9 +142,9 @@
-- *  UR8_MERGE_START_END CQ11922 Tim
-- *    04Sep07     0.14.00            Tim    CQ11922: Added support for new scratchram for INP NDR tables
-- *******************************************************************************/
---#include <dev_host_interface.h>
---#include <dsl_hal_register.h>
---#include <dsl_hal_support.h>
--+#include "dev_host_interface.h"
--+#include "dsl_hal_register.h"
--+#include "dsl_hal_support.h"
-- 
-- #define NUM_READ_RETRIES 3
-- static unsigned int dslhal_support_adsl2ByteSwap32(unsigned int in32Bits);
----- a/dsl_hal_support.h
--+++ b/dsl_hal_support.h
--@@ -49,7 +49,7 @@
-- *    04Nov05     0.11.00            CPH    Fixed T1413 mode got Zero DS/US rate when DSL_BIT_TMODE is set.
-- *******************************************************************************/
-- 
---#include <dsl_hal_api.h>
--+#include "dsl_hal_api.h"
-- 
-- #define virtual2Physical(a)    (((int)a)&~0xe0000000)
-- /* External Function Prototype Declarations */
----- a/Makefile
--+++ b/Makefile
--@@ -1,18 +1,9 @@
---# File: drivers/atm/ti_evm3/Makefile
-- #
---# Makefile for the Texas Instruments EVM3 ADSL/ATM driver.
--+# Makefile for the TIATM device driver.
-- #
---#
---# Copyright (c) 2000 Texas Instruments Incorporated.
---# 	Jeff Harrell (jharrell@telogy.com)
---# 	Viren Balar  (vbalar@ti.com)
---# 	Victor Wells (vwells@telogy.com)
---#
---include $(TOPDIR)/Rules.make
---
---
---
---
---
---
-- 
--+CONFIG_SANGAM_ATM=m
--+#EXTRA_CFLAGS += -DEL -I. -DPOST_SILICON -DCOMMON_NSP -DCONFIG_LED_MODULE -DDEREGISTER_LED -DNO_ACT
--+EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
--+obj-$(CONFIG_SANGAM_ATM) := tiatm.o
--+tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -66,7 +66,6 @@
--  *    09/18/07 CPH    CQ11466  Added EFM Support
-- *********************************************************************************************/
-- 
---#include <linux/config.h>
-- #include <linux/kernel.h>
-- #include <linux/module.h>
-- #include <linux/init.h>
--@@ -74,11 +73,14 @@
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
-- #include <linux/smp_lock.h>
---#include <asm/io.h>
---#include <asm/mips-boards/prom.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
--+
--+#include <asm/io.h>
--+#include <asm/ar7/ar7.h>
--+#include <asm/ar7/prom.h>
--+
-- #include "dsl_hal_api.h"
-- #ifdef AR7_EFM
-- #include "tn7efm.h"
--@@ -90,6 +92,7 @@
-- #include "dsl_hal_register.h"
-- 
-- #ifdef MODULE
--+MODULE_LICENSE("GPL");
-- MODULE_DESCRIPTION ("Tnetd73xx ATM Device Driver");
-- MODULE_AUTHOR ("Zhicheng Tang");
-- #endif
--@@ -108,9 +111,9 @@ MODULE_AUTHOR ("Zhicheng Tang");
-- 
-- /*end of externs */
-- 
---#ifndef TI_STATIC_ALLOCATIONS
---#define TI_STATIC_ALLOCATIONS
---#endif
--+//#ifndef TI_STATIC_ALLOCATIONS
--+//#define TI_STATIC_ALLOCATIONS
--+//#endif
-- 
-- #define tn7atm_kfree_skb(x)     dev_kfree_skb(x)
-- 
--@@ -135,7 +138,7 @@ static int EnableQoS = FALSE;
-- /* prototypes */
-- static int tn7atm_set_can_support_adsl2 (int can);
-- 
---static int tn7atm_open (struct atm_vcc *vcc, short vpi, int vci);
--+static int tn7atm_open (struct atm_vcc *vcc);
-- 
-- void tn7atm_close (struct atm_vcc *vcc);
-- 
--@@ -298,13 +301,12 @@ static const struct atmdev_ops tn7atm_op
--         getsockopt:     NULL,
--         setsockopt:     NULL,
--         send:           tn7atm_send,
---        sg_send:        NULL,
--         phy_put:        NULL,
--         phy_get:        NULL,
--         change_qos:     tn7atm_change_qos,
-- };
-- 
---const char drv_proc_root_folder[] = "avalanche/";
--+const char drv_proc_root_folder[] = "avalanche";
-- static struct proc_dir_entry *root_proc_dir_entry = NULL;
-- #define DRV_PROC_MODE 0644
-- static int proc_root_already_exists = TRUE;
--@@ -626,56 +628,6 @@ static int turbodsl_check_priority_type(
-- 
-- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--  *
--- *  Function: int tn7atm_walk_vccs(struct atm_dev *dev, short *vcc, int *vci)
--- *
--- *  Description: retrieve VPI/VCI for connection
--- *
--- *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
---static int tn7atm_walk_vccs (struct atm_vcc *vcc, short *vpi, int *vci)
---{
---  struct atm_vcc *walk;
---
---  /*
---   * find a free VPI
---   */
---  if (*vpi == ATM_VPI_ANY)
---  {
---
---    for (*vpi = 0, walk = vcc->dev->vccs; walk; walk = walk->next)
---    {
---
---      if ((walk->vci == *vci) && (walk->vpi == *vpi))
---      {
---        (*vpi)++;
---        walk = vcc->dev->vccs;
---      }
---    }
---  }
---
---  /*
---   * find a free VCI
---   */
---  if (*vci == ATM_VCI_ANY)
---  {
---
---    for (*vci = ATM_NOT_RSV_VCI, walk = vcc->dev->vccs; walk;
---         walk = walk->next)
---    {
---
---      if ((walk->vpi = *vpi) && (walk->vci == *vci))
---      {
---        *vci = walk->vci + 1;
---        walk = vcc->dev->vccs;
---      }
---    }
---  }
---
---  return 0;
---}
---
---
---/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--- *
--  *  Function: int tn7atm_sar_irq(void)
--  *
--  *  Description: tnetd73xx SAR interrupt.
--@@ -766,7 +718,7 @@ static int __init tn7atm_irq_request (st
-- 
--   priv->sar_irq = LNXINTNUM (ATM_SAR_INT);      /* Interrupt line # */
-- 
---  if (request_irq (priv->sar_irq, tn7atm_sar_irq, SA_INTERRUPT, "SAR ", dev))
--+  if (request_irq (priv->sar_irq, tn7atm_sar_irq, IRQF_DISABLED, "SAR ", dev))
--     printk ("Could not register tn7atm_sar_irq\n");
-- 
--   /*
--@@ -777,8 +729,8 @@ static int __init tn7atm_irq_request (st
--   {
--     def_sar_inter_pace = os_atoi (ptr);
--   }
---  avalanche_request_pacing (priv->sar_irq, ATM_SAR_INT_PACING_BLOCK_NUM,
---                            def_sar_inter_pace);
--+  /* avalanche_request_pacing (priv->sar_irq, ATM_SAR_INT_PACING_BLOCK_NUM,
--+                            def_sar_inter_pace); */
-- 
-- 
-- #ifdef AR7_EFM
--@@ -790,7 +742,7 @@ static int __init tn7atm_irq_request (st
--    * Reigster Receive interrupt A
--    */
--   priv->dsl_irq = LNXINTNUM (ATM_DSL_INT);      /* Interrupt line # */
---  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, SA_INTERRUPT, "DSL ", dev))
--+  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, IRQF_DISABLED, "DSL ", dev))
--     printk ("Could not register tn7atm_dsl_irq\n");
-- 
-- /***** VRB Tasklet Mode ****/
--@@ -958,11 +910,15 @@ static int __init tn7atm_get_ESI (struct
-- #define ATM_VBR_RT     5
-- #endif
-- 
---int tn7atm_open (struct atm_vcc *vcc, short vpi, int vci)
--+int tn7atm_open (struct atm_vcc *vcc)
-- {
--   tn7atm_activate_vc_parm_t tn7atm_activate_vc_parm;
--   int rc;
--   //int flags;
--+  tn7atm_activate_vc_parm.pcr = 0x20000;
--+  tn7atm_activate_vc_parm.scr = 0x20000;
--+  tn7atm_activate_vc_parm.mbs = 0x20000;
--+  tn7atm_activate_vc_parm.cdvt = 10000;
-- 
--   dgprintf(1, "tn7atm_open()\n");
-- 
--@@ -974,24 +930,18 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--     return -1;
--   }
-- 
---  MOD_INC_USE_COUNT;
--+//  MOD_INC_USE_COUNT;
-- 
---  /* find a free VPI/VCI */
---  tn7atm_walk_vccs(vcc, &vpi, &vci);
---
---  vcc->vpi = vpi;
---  vcc->vci = vci;
---
---  if ((vci == ATM_VCI_UNSPEC) || (vpi == ATM_VCI_UNSPEC))
--+  if ((vcc->vci == ATM_VCI_UNSPEC) || (vcc->vpi == ATM_VCI_UNSPEC))
--   {
---    MOD_DEC_USE_COUNT;
--+//    MOD_DEC_USE_COUNT;
--     return -EBUSY;
--   }
-- 
---  tn7atm_activate_vc_parm.vpi = vpi;
---  tn7atm_activate_vc_parm.vci = vci;
--+  tn7atm_activate_vc_parm.vpi = vcc->vpi;
--+  tn7atm_activate_vc_parm.vci = vcc->vci;
-- 
---  if ((vpi == CLEAR_EOC_VPI) && (vci == CLEAR_EOC_VCI))
--+  if ((vcc->vpi == CLEAR_EOC_VPI) && (vcc->vci == CLEAR_EOC_VCI))
--   {
--     /* always use (max_dma_chan+1) for clear eoc */
--     tn7atm_activate_vc_parm.chan = EOC_DMA_CHAN;
--@@ -999,7 +949,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--     /* check to see whether clear eoc is opened or not */
--     if (tn7atm_activate_vc_parm.priv->lut[tn7atm_activate_vc_parm.chan].inuse)
--     {
---      MOD_DEC_USE_COUNT;
--+//      MOD_DEC_USE_COUNT;
--       printk("tn7atm_open: Clear EOC channel (dmachan=%d) already in use.\n", tn7atm_activate_vc_parm.chan);
--       return -EBUSY;
--     }
--@@ -1008,7 +958,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--     if (rc)
--     {
--       printk("tn7atm_open: failed to setup clear_eoc\n");
---      MOD_DEC_USE_COUNT;
--+//      MOD_DEC_USE_COUNT;
--       return -EBUSY;
--     }
--     tn7atm_set_lut(tn7atm_activate_vc_parm.priv,vcc, tn7atm_activate_vc_parm.chan);
--@@ -1017,17 +967,17 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--   }
--   else  /* PVC channel setup */
--   {
---    if ((vpi==REMOTE_MGMT_VPI) && (vci==REMOTE_MGMT_VCI))
--+    if ((vcc->vpi==REMOTE_MGMT_VPI) && (vcc->vci==REMOTE_MGMT_VCI))
--     {
--       tn7atm_activate_vc_parm.chan = 14;   /* always use chan 14 for MII PVC-base romote mgmt */
--     }
--     else
--     {
---       rc = tn7atm_lut_find(vpi, vci);
--+       rc = tn7atm_lut_find(vcc->vpi, vcc->vci);
--       /* check to see whether PVC is opened or not */
--       if(ATM_NO_DMA_CHAN != rc)
--       {
---        MOD_DEC_USE_COUNT;
--+//        MOD_DEC_USE_COUNT;
--         printk("PVC already opened. dmachan = %d\n", rc);
--         return -EBUSY;
--       }
--@@ -1059,6 +1009,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--        tn7atm_activate_vc_parm.priority = 2;
--        break;
-- 
--+#if 0
--      case ATM_VBR: /* Variable Bit Rate-Non RealTime*/
--        tn7atm_activate_vc_parm.qos = 1;
--        tn7atm_activate_vc_parm.priority = 1;
--@@ -1080,6 +1031,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--            tn7atm_activate_vc_parm.mbs = vcc->qos.txtp.max_pcr;
--        tn7atm_activate_vc_parm.cdvt = vcc->qos.txtp.max_cdv;
--        break;
--+#endif
-- 
--      default:
--          tn7atm_activate_vc_parm.qos = 2;
--@@ -1107,7 +1059,7 @@ int tn7atm_open (struct atm_vcc *vcc, sh
--    if (rc < 0)
--    {
--       printk("failed to activate hw channel\n");
---      MOD_DEC_USE_COUNT;
--+//      MOD_DEC_USE_COUNT;
--       tn7atm_lut_clear(vcc, tn7atm_activate_vc_parm.chan);
--       //spin_unlock_irqrestore(&chan_init_lock, flags);
--       return -EBUSY;
--@@ -1197,7 +1149,7 @@ void tn7atm_close (struct atm_vcc *vcc)
--   tn7atm_lut_clear (vcc, dmachan);
--   //spin_unlock_irqrestore (&closeLock, closeFlag);
-- 
---  MOD_DEC_USE_COUNT;
--+//  MOD_DEC_USE_COUNT;
-- 
--   dgprintf (1, "Leave tn7atm_close\n");
-- }
--@@ -1630,8 +1582,7 @@ int tn7atm_receive (void *os_dev, int ch
--                                  * firewall is on */
-- 
--   dgprintf (3, "pushing the skb...\n");
---
---  skb->stamp = vcc->timestamp = xtime;
--+  __net_timestamp(skb);
-- 
--   xdump ((unsigned char *) skb->data, skb->len, 5);
-- 
--@@ -1854,8 +1805,7 @@ printk("!!!free atm irq: tn7atm_exit\n")
-- 
--   kfree (dev->dev_data);
-- 
---  // atm_dev_deregister (dev);
---  shutdown_atm_dev (dev);
--+  atm_dev_deregister (dev);
-- 
--   /*
--    * remove proc entries
--@@ -2086,9 +2036,6 @@ static int __init tn7atm_detect (void)
--    * Set up proc entry for atm stats
--    */
-- 
---  if (tn7atm_xlate_proc_name
---      (drv_proc_root_folder, &root_proc_dir_entry, &residual))
---  {
--     printk ("Creating new root folder %s in the proc for the driver stats \n",
--             drv_proc_root_folder);
--     root_proc_dir_entry = proc_mkdir (drv_proc_root_folder, NULL);
--@@ -2098,7 +2045,6 @@ static int __init tn7atm_detect (void)
--       return -ENOMEM;
--     }
--     proc_root_already_exists = FALSE;
---  }
-- 
-- 
--   /*
--@@ -2731,7 +2677,5 @@ int tn7atm_proc_turbodsl_write(struct fi
--     return count;
-- }
-- 
---#ifdef MODULE
-- module_init (tn7atm_detect);
-- module_exit (tn7atm_exit);
---#endif /* MODULE */
----- a/tn7atm.h
--+++ b/tn7atm.h
--@@ -20,7 +20,8 @@
-- //#include  "mips_support.h"
-- #include  <linux/list.h>
-- 
---#include <linux/config.h>
--+#define MIPS_EXCEPTION_OFFSET 8
--+#define LNXINTNUM(x)((x) + MIPS_EXCEPTION_OFFSET)
-- 
-- #ifdef CONFIG_MODVERSIONS
-- #include <linux/modversions.h>
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -102,7 +102,6 @@
-- *  UR8_MERGE_END   CQ11813
-- *  09/18/07 CPH   CQ11466: Added EFM support.
--  *********************************************************************************************/
---#include <linux/config.h>
-- #include <linux/kernel.h>
-- #include <linux/module.h>
-- #include <linux/init.h>
--@@ -110,8 +109,6 @@
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
-- #include <linux/smp_lock.h>
---#include <asm/io.h>
---#include <asm/mips-boards/prom.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
--@@ -119,6 +116,12 @@
-- #include <linux/timer.h>
-- #include <linux/vmalloc.h>
-- #include <linux/file.h>
--+#include <linux/firmware.h>
--+
--+#include <asm/io.h>
--+#include <asm/ar7/ar7.h>
--+#include <asm/ar7/prom.h>
--+
-- /* Modules specific header files */
-- #ifdef AR7_EFM
-- #include "tn7efm.h"
--@@ -185,7 +188,7 @@ led_reg_t ledreg[2];
-- static struct led_funcs ledreg[2];
-- #endif
-- 
---#define DEV_DSLMOD       1
--+#define DEV_DSLMOD       CTL_UNNUMBERED
-- #define MAX_STR_SIZE     256
-- #define DSL_MOD_SIZE     256
-- 
--@@ -316,7 +319,7 @@ static PITIDSLHW_T    pIhw;
-- static volatile int bshutdown;
-- static char info[MAX_STR_SIZE];
-- /* Used for DSL Polling enable */
---static DECLARE_MUTEX_LOCKED (adsl_sem_overlay);
--+static struct semaphore adsl_sem_overlay;
-- 
-- //kthread_t overlay_thread;
-- /* end of module wide declars */
--@@ -369,6 +372,14 @@ int os_atoih (const char *pstr)
--   return val;
-- }
-- 
--+int avalanche_request_intr_pacing(int irq_nr, unsigned int blk_num,
--+                            unsigned int pace_value)
--+{
--+	printk("avalanche_request_pacing(%d, %u, %u); // not implemented\n", irq_nr, blk_num, pace_value);
--+	return 0;
--+}
--+
--+
-- int os_atoi(const char *pStr)
-- {
--   int MulNeg = (*pStr == '-' ? -1 : 1);
--@@ -405,39 +416,6 @@ void dprintf (int uDbgLevel, char *szFmt
-- #endif
-- }
-- 
---int strcmp(const char *s1, const char *s2)
---{
---
---  int size = strlen(s1);
---
---  return(strncmp(s1, s2, size));
---}
---
---int strncmp(const char *s1, const char *s2, size_t size)
---{
---  int i = 0;
---  int max_size = (int)size;
---
---  while((s1[i] != 0) && i < max_size)
---  {
---    if(s2[i] == 0)
---    {
---      return -1;
---    }
---    if(s1[i] != s2[i])
---    {
---       return 1;
---    }
---    i++;
---  }
---  if(s2[i] != 0)
---  {
---    return 1;
---  }
---
---  return 0;
---}
---
-- // * UR8_MERGE_START CQ10640   Jack Zhang
-- int tn7dsl_dump_dsp_memory(char *input_str) //cph99
--   {
--@@ -487,144 +465,78 @@ unsigned int shim_osGetCpuFrequency(void
--   return CpuFrequency;
-- }
-- 
---int shim_osLoadFWImage(unsigned char *ptr)
--+static void avsar_release(struct device *dev)
-- {
---  unsigned int bytesRead;
---  mm_segment_t  oldfs;
---  static struct file *filp;
---  unsigned int imageLength=0x5ffff;
---
---#ifdef AR7_EFM
---  int dp_alt=0;
---  char *ptr1=NULL;
---#ifdef EFM_DEBUG  
---  char *ptr2=NULL;
---  char *ptr3=NULL;
---#endif    
---
---  if ((ptr1 = prom_getenv("DSL_DP_ALT")) != NULL)
---  {
---    dp_alt=os_atoi(ptr1);
---    if (dp_alt==1)
---    {
---      filp = filp_open(DSP_DEBUG_FIRMWARE_PATH,00,O_RDONLY);
---      if (!IS_ERR(filp))
---      {
---          strcpy (DSP_FIRMWARE_PATH, DSP_DEBUG_FIRMWARE_PATH);
---      }
---    }
---#ifdef EFM_DEBUG    
---    else if (dp_alt==2)
---    {
---      if ((ptr2 = prom_getenv("DSL_DP")) != NULL)
---      {
---        if (!strncmp(ptr2, "DSL_DP", 6))
---        { // indirect naming
---          if ((ptr3 = prom_getenv(ptr2)) != NULL)
---          filp = filp_open(ptr3,00,O_RDONLY);
---          ptr2 = ptr3; // redirect ptr2 to ptr3
---        }
---
---        filp = filp_open(ptr2,00,O_RDONLY);
---        if (!IS_ERR(filp))
---        {
---          strcpy (DSP_FIRMWARE_PATH, ptr2);
---        }
---      }
---    }
---    printk("dp_path=%s\n", DSP_FIRMWARE_PATH);
---#endif    
---  }
---#endif
---
---  dgprintf(4, "tn7dsl_read_dsp()\n");
---
---  dgprintf(4,"open file %s\n", DSP_FIRMWARE_PATH);
---
---  filp=filp_open(DSP_FIRMWARE_PATH,00,O_RDONLY);
---  if(IS_ERR(filp))
---  {
---    printk("Failed: Could not open DSP binary file\n");
---          return -1;
---  }
---
---  if (filp->f_dentry != NULL)
---  {
---    if (filp->f_dentry->d_inode != NULL)
---    {
---      printk ("DSP binary filesize = %d bytes\n",
---              (int) filp->f_dentry->d_inode->i_size);
---      imageLength = (unsigned int)filp->f_dentry->d_inode->i_size + 0x200;
---    }
---  }
---
---  if (filp->f_op->read==NULL)
---          return -1;  /* File(system) doesn't allow reads */
---
---  /*
---   * Disable parameter checking
---   */
---  oldfs = get_fs();
---  set_fs(KERNEL_DS);
---
---  /*
---   * Now read bytes from postion "StartPos"
---   */
---  filp->f_pos = 0;
---
---  bytesRead = filp->f_op->read(filp,ptr,imageLength,&filp->f_pos);
---
---  dgprintf(4,"file length = %d\n", bytesRead);
---
---  set_fs(oldfs);
---
---  /*
---   * Close the file
---   */
---  fput(filp);
---
---  return bytesRead;
--+	printk(KERN_DEBUG "avsar firmware released\n");
-- }
-- 
--+static struct device avsar = {
--+	.bus_id    = "vlynq",
--+	.release   = avsar_release,
--+};
-- 
---unsigned int shim_read_overlay_page (void *ptr, unsigned int secOffset,
---                                     unsigned int secLength)
--+int shim_osLoadFWImage(unsigned char *ptr)
-- {
---  unsigned int bytesRead;
---  mm_segment_t  oldfs;
---  struct file *filp;
---
---  dgprintf(4,"shim_read_overlay_page\n");
---  //dgprintf(4,"sec offset=%d, sec length =%d\n", secOffset, secLength);
--+	const struct firmware *fw_entry;
--+	size_t size;
-- 
---  filp=filp_open(DSP_FIRMWARE_PATH,00,O_RDONLY);
---  if(filp ==NULL)
---  {
---    printk("Failed: Could not open DSP binary file\n");
---          return -1;
---  }
---
---  if (filp->f_op->read==NULL)
---          return -1;  /* File(system) doesn't allow reads */
---
---  /*
---   * Now read bytes from postion "StartPos"
---   */
--+	printk("requesting firmware image \"ar0700xx.bin\"\n");
--+	if(device_register(&avsar) < 0) {
--+		printk(KERN_ERR
--+			"avsar: device_register fails\n");
--+		return -1;
--+	}
--+
--+	if (request_firmware(&fw_entry, "ar0700xx.bin", &avsar)) {
--+		printk(KERN_ERR
--+			"avsar: Firmware not available\n");
--+		device_unregister(&avsar);
--+		return -1;
--+	}
--+	size = fw_entry->size;
--+	device_unregister(&avsar);
--+	if (size > 0x6ffff) {
--+		printk(KERN_ERR
--+			"avsar: Firmware too big (%d bytes)\n", size);
--+			release_firmware(fw_entry);
--+			return -1;
--+	}
--+	memcpy(ptr, fw_entry->data, size);
--+	release_firmware(fw_entry);
--+	return size;
--+}
--+
--+unsigned int shim_read_overlay_page(void *ptr, unsigned int secOffset, unsigned int secLength)
--+{
--+	const struct firmware *fw_entry;
--+
--+	printk("requesting firmware image \"ar0700xx.bin\"\n");
--+	if (device_register(&avsar) < 0) {
--+		printk(KERN_ERR
--+			"avsar: device_register fails\n");
--+		return -1;
--+	}
--+
--+	if (request_firmware(&fw_entry, "ar0700xx.bin", &avsar)) {
--+		printk(KERN_ERR
--+			"avsar: Firmware not available\n");
--+		device_unregister(&avsar);
--+		return -1;
--+	}
--+
--+	device_unregister(&avsar);
--+	if (fw_entry->size > secLength) {
--+		printk(KERN_ERR
--+			"avsar: Firmware too big (%d bytes)\n", fw_entry->size);
--+		release_firmware(fw_entry);
--+		return -1;
--+	}
--+	memcpy(ptr + secOffset, fw_entry->data, secLength);
--+	release_firmware(fw_entry);
--+	return secLength;
--+}
-- 
---  if(filp->f_op->llseek)
---    filp->f_op->llseek(filp,secOffset, 0);
---  oldfs = get_fs();
---  set_fs(KERNEL_DS);
---  filp->f_pos = secOffset;
---  bytesRead = filp->f_op->read(filp,ptr,secLength,&filp->f_pos);
-- 
---  set_fs(oldfs);
---  /*
---   * Close the file
---   */
---  fput(filp);
---  return bytesRead;
---}
-- 
-- int shim_osLoadDebugFWImage(unsigned char *ptr)
-- {
--@@ -3287,6 +3199,7 @@ int tn7dsl_init(void *priv)
--   int high_precision_selected = 0;
-- //  UR8_MERGE_END   CQ11054*
-- 
--+  sema_init(&adsl_sem_overlay, 0);
--   /*
--    * start dsl
--    */
--@@ -3665,7 +3578,7 @@ static int dslmod_sysctl(ctl_table *ctl,
--    */
--   if(write)
--     {
---    ret = proc_dostring(ctl, write, filp, buffer, lenp);
--+    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
-- 
--     switch (ctl->ctl_name)
--       {
--@@ -3751,14 +3664,14 @@ static int dslmod_sysctl(ctl_table *ctl,
--   else
--     {
--     len += sprintf(info+len, mod_req);
---    ret = proc_dostring(ctl, write, filp, buffer, lenp);
--+    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
--     }
--   return ret;
-- }
-- 
-- 
-- ctl_table dslmod_table[] = {
---  {DEV_DSLMOD, "dslmod", info, DSL_MOD_SIZE, 0644, NULL, &dslmod_sysctl}
--+  {DEV_DSLMOD, "dslmod", info, DSL_MOD_SIZE, 0644, NULL, NULL, &dslmod_sysctl, &sysctl_string}
--   ,
--   {0}
--   };
--@@ -3781,8 +3694,7 @@ void tn7dsl_dslmod_sysctl_register(void)
--   if (initialized == 1)
--     return;
-- 
---  dslmod_sysctl_header = register_sysctl_table(dslmod_root_table, 1);
---  dslmod_root_table->child->de->owner = THIS_MODULE;
--+  dslmod_sysctl_header = register_sysctl_table(dslmod_root_table);
-- 
--   /*
--    * set the defaults
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -43,7 +43,6 @@
--  * 09/18/07 CPH   CQ11466: Added EFM support.
--  *******************************************************************************/
-- 
---#include <linux/config.h>
-- #include <linux/kernel.h>
-- #include <linux/module.h>
-- #include <linux/init.h>
--@@ -51,12 +50,13 @@
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
-- #include <linux/smp_lock.h>
---#include <asm/io.h>
---#include <asm/mips-boards/prom.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
-- 
--+#include <asm/io.h>
--+#include <asm/ar7/ar7.h>
--+#include <asm/ar7/prom.h>
-- 
-- #define _CPHAL_AAL5
-- #define _CPHAL_SAR
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/110-interrupt_fix.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/110-interrupt_fix.patch
-deleted file mode 100644
-index 1122457691..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/110-interrupt_fix.patch
-+++ /dev/null
-@@ -1,37 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -633,7 +633,7 @@ static int turbodsl_check_priority_type(
--  *  Description: tnetd73xx SAR interrupt.
--  *
--  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
---static void tn7atm_sar_irq (int irq, void *voiddev, struct pt_regs *regs)
--+static irqreturn_t tn7atm_sar_irq (int irq, void *voiddev)
-- {
--   struct atm_dev *atmdev;
--   Tn7AtmPrivate *priv;
--@@ -660,6 +660,7 @@ static void tn7atm_sar_irq (int irq, voi
-- #ifdef TIATM_INST_SUPP
--   psp_trace_par (ATM_DRV_SAR_ISR_EXIT, retval);
-- #endif
--+  return IRQ_HANDLED;
-- }
-- 
-- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--@@ -669,7 +670,7 @@ static void tn7atm_sar_irq (int irq, voi
--  *  Description: tnetd73xx DSL interrupt.
--  *
--  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
---static void tn7atm_dsl_irq (int irq, void *voiddev, struct pt_regs *regs)
--+static irqreturn_t tn7atm_dsl_irq (int irq, void *voiddev)
-- {
--   struct atm_dev *atmdev;
--   Tn7AtmPrivate *priv;
--@@ -691,6 +692,8 @@ static void tn7atm_dsl_irq (int irq, voi
-- #ifdef TIATM_INST_SUPP
--   psp_trace_par (ATM_DRV_DSL_ISR_EXIT, retval);
-- #endif
--+
--+  return IRQ_HANDLED;
-- }
-- 
-- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/120-no_dumb_inline.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/120-no_dumb_inline.patch
-deleted file mode 100644
-index e9d99dff42..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/120-no_dumb_inline.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/tn7api.h
--+++ b/tn7api.h
--@@ -118,7 +118,7 @@ int tn7dsl_proc_dbgmsg_write(struct file
-- int tn7dsl_proc_dbgmsg_read(char* buf, char **start, off_t offset, int count,int *eof, void *data);
-- #endif
-- //UR8_MERGE_END CQ11813
---inline int tn7dsl_handle_interrupt(void);
--+int tn7dsl_handle_interrupt(void);
-- 
-- void tn7dsl_dslmod_sysctl_register(void);
-- void tn7dsl_dslmod_sysctl_unregister(void);
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/130-powercutback.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/130-powercutback.patch
-deleted file mode 100644
-index 415486482e..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/130-powercutback.patch
-+++ /dev/null
-@@ -1,44 +0,0 @@
----- a/dsl_hal_advcfg.c
--+++ b/dsl_hal_advcfg.c
--@@ -36,9 +36,9 @@
-- *    05Jul05     0.00.09            CPH    CQ9775: Change dslhal_advcfg_configDsTones input parameters & support for ADSL2+
-- *    24Jul05     0.00.10            CPH    Fixed comments in dslhal_advcfg_configDsTones function header
-- *******************************************************************************/
---#include <dev_host_interface.h>
---#include <dsl_hal_register.h>
---#include <dsl_hal_support.h>
--+#include "dev_host_interface.h"
--+#include "dsl_hal_register.h"
--+#include "dsl_hal_support.h"
-- 
-- /*****************************************************************************/
-- /* ACT API functions -- To be moved into their own independent module --RamP */
----- a/Makefile
--+++ b/Makefile
--@@ -4,6 +4,7 @@
-- 
-- CONFIG_SANGAM_ATM=m
-- #EXTRA_CFLAGS += -DEL -I. -DPOST_SILICON -DCOMMON_NSP -DCONFIG_LED_MODULE -DDEREGISTER_LED -DNO_ACT
---EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
--+#EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
--+EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL
-- obj-$(CONFIG_SANGAM_ATM) := tiatm.o
---tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o
--+tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o dsl_hal_advcfg.o
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -3053,6 +3053,14 @@ static int tn7dsl_set_dsl(void)
--     dslhal_api_setRateAdaptFlag(pIhw, os_atoi(ptr));
--   }
-- 
--+  // set powercutback
--+  ptr = NULL;
--+  ptr = prom_getenv("powercutback");
--+  if(ptr)
--+  {
--+    dslhal_advcfg_onOffPcb(pIhw, os_atoi(ptr));
--+  }
--+
--   // trellis
--   ptr = NULL;
--   ptr = prom_getenv("trellis");
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/140-debug_mode.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/140-debug_mode.patch
-deleted file mode 100644
-index 3873827afc..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/140-debug_mode.patch
-+++ /dev/null
-@@ -1,16 +0,0 @@
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -125,10 +125,10 @@ enum
-- //09/05/07: cph, move to tn7atm.h
-- // #define RESERVED_OAM_CHANNEL              15
-- 
---#define AAL5_PARM "id=aal5, base = 0x03000000, offset = 0, int_line=15, ch0=[RxBufSize=1522; RxNumBuffers = 32; RxServiceMax = 50; TxServiceMax=50; TxNumBuffers=32; CpcsUU=0x5aa5; TxVc_CellRate=0x3000; TxVc_AtmHeader=0x00000640]"
---#define SAR_PARM "id=sar,base = 0x03000000, reset_bit = 9, offset = 0; UniNni = 0, PdspEnable = 1"
--+#define CH0_PARM "RxBufSize=1522, RxNumBuffers=32, RxServiceMax=50, TxServiceMax=50, TxNumBuffers=32, CpcsUU=0x5aa5, TxVc_CellRate=0x3000, TxVc_AtmHeader=0x00000640"
--+#define AAL5_PARM "id=aal5, base=0x03000000, offset=0, int_line=15, ch0=[" CH0_PARM "]"
--+#define SAR_PARM "id=sar, base=0x03000000, reset_bit=9, offset=0; UniNni=0, PdspEnable=1, Debug=0xFFFFFFFF"
-- #define RESET_PARM "id=ResetControl, base=0xA8611600"
---#define CH0_PARM "RxBufSize=1522, RxNumBuffers = 32, RxServiceMax = 50, TxServiceMax=50, TxNumBuffers=32, CpcsUU=0x5aa5, TxVc_CellRate=0x3000, TxVc_AtmHeader=0x00000640"
-- 
-- #define MAX_PVC_TABLE_ENTRY 16
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/150-tasklet_mode.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/150-tasklet_mode.patch
-deleted file mode 100644
-index 97b8cecdd9..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/150-tasklet_mode.patch
-+++ /dev/null
-@@ -1,11 +0,0 @@
----- a/Makefile
--+++ b/Makefile
--@@ -5,6 +5,7 @@
-- CONFIG_SANGAM_ATM=m
-- #EXTRA_CFLAGS += -DEL -I. -DPOST_SILICON -DCOMMON_NSP -DCONFIG_LED_MODULE -DDEREGISTER_LED -DNO_ACT
-- #EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -DNO_ACT -D__NO__VOICE_PATCH__ -DEL
---EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL
--+#EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL
--+EXTRA_CFLAGS += -DEL -I$(PWD) -DPOST_SILICON -DCOMMON_NSP -D__NO__VOICE_PATCH__ -DEL -DCPATM_TASKLET_MODE
-- obj-$(CONFIG_SANGAM_ATM) := tiatm.o
-- tiatm-objs += cpsar.o aal5sar.o tn7sar.o tn7atm.o tn7dsl.o dsl_hal_api.o dsl_hal_support.o dsl_hal_advcfg.o
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/160-module-params.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/160-module-params.patch
-deleted file mode 100644
-index 9c504c0e33..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/160-module-params.patch
-+++ /dev/null
-@@ -1,675 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -95,6 +95,146 @@
-- MODULE_LICENSE("GPL");
-- MODULE_DESCRIPTION ("Tnetd73xx ATM Device Driver");
-- MODULE_AUTHOR ("Zhicheng Tang");
--+
--+int mp_sar_ipacemax = -1;
--+module_param_named(ipacemax, mp_sar_ipacemax, int, 0);
--+MODULE_PARM_DESC(ipacemax, "Interrupt pacing");
--+
--+char *mp_macc = NULL;
--+module_param_named(macc, mp_macc, charp, 0);
--+MODULE_PARM_DESC(macc, "MAC address");
--+
--+int mp_dsp_noboost = -1;
--+module_param_named(dsp_noboost, mp_dsp_noboost, int, 0);
--+MODULE_PARM_DESC(dsp_noboost, "Suppress DSP frequency boost");
--+
--+int mp_dsp_freq = -1;
--+module_param_named(dsp_freq, mp_dsp_freq, int, 0);
--+MODULE_PARM_DESC(dsp_freq, "Frequency to boost the DSP to");
--+
--+char *mp_featctl0 = NULL;
--+module_param_named(featctl0, mp_featctl0, charp, 0);
--+MODULE_PARM_DESC(featctl0, "DSL feature control 0");
--+
--+char *mp_featctl1 = NULL;
--+module_param_named(featctl1, mp_featctl1, charp, 0);
--+MODULE_PARM_DESC(featctl1, "DSL feature control 1");
--+
--+char *mp_phyctl0 = NULL;
--+module_param_named(phyctl0, mp_phyctl0, charp, 0);
--+MODULE_PARM_DESC(phyctl0, "DSL PHY control 0");
--+
--+char *mp_phyctl1 = NULL;
--+module_param_named(phyctl1, mp_phyctl1, charp, 0);
--+MODULE_PARM_DESC(phyctl1, "DSL PHY control 1");
--+
--+int mp_turbodsl = -1;
--+module_param_named(turbodsl, mp_turbodsl, int, 0);
--+MODULE_PARM_DESC(turbodsl, "Enable TurboDSL");
--+
--+int mp_sar_rxbuf = -1;
--+module_param_named(sar_rxbuf, mp_sar_rxbuf, int, 0);
--+MODULE_PARM_DESC(sar_rxbuf, "SAR RxBuf size");
--+
--+int mp_sar_rxmax = -1;
--+module_param_named(sar_rxmax, mp_sar_rxmax, int, 0);
--+MODULE_PARM_DESC(sar_rxmax, "SAR RxMax size");
--+
--+int mp_sar_txbuf = -1;
--+module_param_named(sar_txbuf, mp_sar_txbuf, int, 0);
--+MODULE_PARM_DESC(sar_txbuf, "SAR TxBuf size");
--+
--+int mp_sar_txmax = -1;
--+module_param_named(sar_txmax, mp_sar_txmax, int, 0);
--+MODULE_PARM_DESC(sar_txmax, "SAR TxMax size");
--+
--+char *mp_modulation = NULL;
--+module_param_named(modulation, mp_modulation, charp, 0);
--+MODULE_PARM_DESC(modulation, "Modulation");
--+
--+int mp_fine_gain_control = -1;
--+module_param_named(fine_gain_control, mp_fine_gain_control, int, 0);
--+MODULE_PARM_DESC(fine_gain_control, "Fine gain control");
--+
--+int mp_fine_gain_value = -1;
--+module_param_named(fine_gain_value, mp_fine_gain_value, int, 0);
--+MODULE_PARM_DESC(fine_gain_value, "Fine gain value");
--+
--+int mp_enable_margin_retrain = -1;
--+module_param_named(enable_margin_retrain, mp_enable_margin_retrain, int, 0);
--+MODULE_PARM_DESC(enable_margin_retrain, "Enable margin retrain");
--+
--+int mp_margin_threshold = -1;
--+module_param_named(margin_threshold, mp_margin_threshold, int, 0);
--+MODULE_PARM_DESC(margin_threshold, "Margin retrain treshold");
--+
--+int mp_enable_rate_adapt = -1;
--+module_param_named(enable_rate_adapt, mp_enable_rate_adapt, int, 0);
--+MODULE_PARM_DESC(enable_rate_adapt, "Enable rate adaption");
--+
--+int mp_powercutback = -1;
--+module_param_named(powercutback, mp_powercutback, int, 0);
--+MODULE_PARM_DESC(powercutback, "Enable / disable powercutback");
--+
--+int mp_trellis = -1;
--+module_param_named(trellis, mp_trellis, int, 0);
--+MODULE_PARM_DESC(trellis, "Enable / disable trellis coding");
--+
--+int mp_bitswap = -1;
--+module_param_named(bitswap, mp_bitswap, int, 0);
--+MODULE_PARM_DESC(bitswap, "Enable / disable bitswap");
--+
--+int mp_maximum_bits_per_carrier = -1;
--+module_param_named(maximum_bits_per_carrier, mp_maximum_bits_per_carrier, int, 0);
--+MODULE_PARM_DESC(maximum_bits_per_carrier, "Maximum bits per carrier");
--+
--+int mp_maximum_interleave_depth = -1;
--+module_param_named(maximum_interleave_depth, mp_maximum_interleave_depth, int, 0);
--+MODULE_PARM_DESC(maximum_interleave_depth, "Maximum interleave depth");
--+
--+int mp_pair_selection = -1;
--+module_param_named(pair_selection, mp_pair_selection, int, 0);
--+MODULE_PARM_DESC(pair_selection, "Pair selection");
--+
--+int mp_dgas_polarity = -1;
--+module_param_named(dgas_polarity, mp_dgas_polarity, int, 0);
--+MODULE_PARM_DESC(dgas_polarity, "DGAS polarity");
--+
--+int mp_los_alarm = -1;
--+module_param_named(los_alarm, mp_los_alarm, int, 0);
--+MODULE_PARM_DESC(los_alarm, "LOS alarm");
--+
--+char *mp_eoc_vendor_id = NULL;
--+module_param_named(eoc_vendor_id, mp_eoc_vendor_id, charp, 0);
--+MODULE_PARM_DESC(eoc_vendor_id, "EOC vendor id");
--+
--+int mp_eoc_vendor_revision = -1;
--+module_param_named(eoc_vendor_revision, mp_eoc_vendor_revision, int, 0);
--+MODULE_PARM_DESC(eoc_vendor_revision, "EOC vendor revision");
--+
--+char *mp_eoc_vendor_serialnum = NULL;
--+module_param_named(eoc_vendor_serialnum, mp_eoc_vendor_serialnum, charp, 0);
--+MODULE_PARM_DESC(eoc_vendor_serialnum, "EOC vendor serial number");
--+
--+char *mp_invntry_vernum = NULL;
--+module_param_named(invntry_vernum, mp_invntry_vernum, charp, 0);
--+MODULE_PARM_DESC(invntry_vernum, "Inventory revision number");
--+
--+int mp_dsl_bit_tmode = -1;
--+module_param_named(dsl_bit_tmode, mp_dsl_bit_tmode, int, 0);
--+MODULE_PARM_DESC(dsl_bit_tmode, "DSL bit training mode");
--+
--+int mp_high_precision = -1;
--+module_param_named(high_precision, mp_high_precision, int, 0);
--+MODULE_PARM_DESC(high_precision, "High precision");
--+
--+int mp_autopvc_enable = -1;
--+module_param_named(autopvc_enable, mp_autopvc_enable, int, 0);
--+MODULE_PARM_DESC(autopvc_enable, "Enable / disable automatic PVC");
--+
--+int mp_oam_lb_timeout = -1;
--+module_param_named(oam_lb_timeout, mp_oam_lb_timeout, int, 0);
--+MODULE_PARM_DESC(oam_lb_timeout, "OAM LB timeout");
-- #endif
-- 
-- #ifndef TRUE
--@@ -728,9 +868,9 @@ static int __init tn7atm_irq_request (st
--    * interrupt pacing
--    */
--   ptr = prom_getenv ("sar_ipacemax");
---  if (ptr)
--+  if (ptr || mp_sar_ipacemax != -1)
--   {
---    def_sar_inter_pace = os_atoi (ptr);
--+    def_sar_inter_pace = mp_sar_ipacemax == -1 ? os_atoi (ptr) : mp_sar_ipacemax;
--   }
--   /* avalanche_request_pacing (priv->sar_irq, ATM_SAR_INT_PACING_BLOCK_NUM,
--                             def_sar_inter_pace); */
--@@ -878,9 +1018,18 @@ static int __init tn7atm_get_ESI (struct
-- {
--   int i;
--   char esi_addr[ESI_LEN] = { 0x00, 0x00, 0x11, 0x22, 0x33, 0x44 };
---  char *esiaddr_str = NULL;
--+  char *esiaddr_str = mp_macc;
-- 
---  esiaddr_str = prom_getenv ("macc");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("macdsl");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("macc");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("HWA_1");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("macb");
--+  if (esiaddr_str == NULL)
--+    esiaddr_str = prom_getenv ("maca");
-- 
--   if (!esiaddr_str)
--   {
--@@ -2139,15 +2288,15 @@ static int tn7atm_autoDetectDspBoost (vo
-- //UR8_MERGE_END   CQ10450*
-- 
--   cp = prom_getenv ("dsp_noboost");
---  if (cp)
--+  if (cp || mp_dsp_noboost != -1)
--   {
---    dsp_noboost = os_atoi (cp);
--+    dsp_noboost = mp_dsp_noboost == -1 ? os_atoi (cp) : mp_dsp_noboost;
--   }
-- 
--   cp = (char *) prom_getenv ("dsp_freq");
---  if (cp)
--+  if (cp || mp_dsp_freq != -1)
--   {
---    dspfreq = os_atoi (cp);
--+    dspfreq = mp_dsp_freq == -1 ? os_atoi (cp) : mp_dsp_freq;
--     if (dspfreq == 250)
--     {
--       boostDsp = 1;
--@@ -2396,15 +2545,17 @@ static int __init tn7atm_init (struct at
--   // Inter-Op DSL phy Control
--   // Note the setting of _dsl_Feature_0 and _dsl_Feature_1 must before
--   // dslhal_api_dslStartup (in tn7dsl_init()).
---  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_0")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_0")) != NULL || mp_featctl0 != NULL)
--   {
---    _dsl_Feature_0 = os_atoih (ptr);
--+    if (mp_featctl0 != NULL) ptr = mp_featctl0;
--+    _dsl_Feature_0 = os_atoh (ptr);
--     _dsl_Feature_0_defined = 1;
--   }
-- 
---  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_1")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_FEATURE_CNTL_1")) != NULL || mp_featctl1 != NULL)
--   {
---    _dsl_Feature_1 = os_atoih (ptr);
--+    if (mp_featctl1 != NULL) ptr = mp_featctl1;
--+    _dsl_Feature_1 = os_atoh (ptr);
--     _dsl_Feature_1_defined = 1;
--   }
-- 
--@@ -2412,15 +2563,17 @@ static int __init tn7atm_init (struct at
--   // DSL phy Feature Control
--   // Note the setting of _dsl_PhyControl_0 and _dsl_PhyControl_1 must before
--   // dslhal_api_dslStartup (in tn7dsl_init()).
---  if ((ptr = prom_getenv ("DSL_PHY_CNTL_0")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_PHY_CNTL_0")) != NULL || mp_phyctl0 != NULL)
--   {
---    _dsl_PhyControl_0 = os_atoih (ptr);
--+    if (mp_phyctl0 != NULL) ptr = mp_phyctl0;
--+    _dsl_PhyControl_0 = os_atoh (ptr);
--     _dsl_PhyControl_0_defined = 1;
--   }
-- 
---  if ((ptr = prom_getenv ("DSL_PHY_CNTL_1")) != NULL)
--+  if ((ptr = prom_getenv ("DSL_PHY_CNTL_1")) != NULL || mp_phyctl1 != NULL)
--   {
---    _dsl_PhyControl_1 = os_atoih (ptr);
--+    if (mp_phyctl1 != NULL) ptr = mp_phyctl1;
--+    _dsl_PhyControl_1 = os_atoh (ptr);
--     _dsl_PhyControl_1_defined = 1;
--   }
-- 
--@@ -2440,12 +2593,12 @@ static int __init tn7atm_init (struct at
--   // read config for turbo dsl
--    
--   ptr = prom_getenv ("TurboDSL");
---  if (ptr)
--+  if (ptr || mp_turbodsl != -1)
--   {
--     #if 1 //[KT]
--     bTurboDsl = os_atoi (ptr);
--     #else
---    priv->bTurboDsl = os_atoi (ptr);
--+    priv->bTurboDsl = mp_turbodsl == -1 ? os_atoi (ptr) : mp_turbodsl;
--     #endif
--   }
--    else
--@@ -2459,33 +2612,33 @@ static int __init tn7atm_init (struct at
--   priv->sarRxBuf = RX_BUFFER_NUM;
--   ptr = NULL;
--   ptr = prom_getenv ("SarRxBuf");
---  if (ptr)
--+  if (ptr || mp_sar_rxbuf != -1)
--   {
---    priv->sarRxBuf = os_atoi (ptr);
--+    priv->sarRxBuf = mp_sar_rxbuf == -1 ? os_atoi (ptr) : mp_sar_rxbuf;
--   }
-- 
--   priv->sarRxMax = RX_SERVICE_MAX;
--   ptr = NULL;
--   ptr = prom_getenv ("SarRxMax");
---  if (ptr)
--+  if (ptr || mp_sar_rxmax != -1)
--   {
---    priv->sarRxMax = os_atoi (ptr);
--+    priv->sarRxMax = mp_sar_rxmax == -1 ? os_atoi (ptr) : mp_sar_rxmax;
--   }
-- 
--   priv->sarTxBuf = TX_BUFFER_NUM;
--   ptr = NULL;
--   ptr = prom_getenv ("SarTxBuf");
---  if (ptr)
--+  if (ptr || mp_sar_txbuf != -1)
--   {
---    priv->sarTxBuf = os_atoi (ptr);
--+    priv->sarTxBuf = mp_sar_txbuf == -1 ? os_atoi (ptr) : mp_sar_txbuf;
--   }
-- 
--   priv->sarTxMax = TX_SERVICE_MAX;
--   ptr = NULL;
--   ptr = prom_getenv ("SarTxMax");
---  if (ptr)
--+  if (ptr || mp_sar_txmax != -1)
--   {
---    priv->sarTxMax = os_atoi (ptr);
--+    priv->sarTxMax = mp_sar_txmax == -1 ? os_atoi (ptr) : mp_sar_txmax;
--   }
-- 
-- #ifdef AR7_EFM
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -148,6 +148,27 @@
-- #define NEW_TRAINING_VAL_T1413  128
-- #define NEW_TRAINING_VAL_MMODE  255
-- 
--+extern char *mp_modulation;
--+extern int mp_fine_gain_control;
--+extern int mp_fine_gain_value;
--+extern int mp_enable_margin_retrain;
--+extern int mp_margin_threshold;
--+extern int mp_enable_rate_adapt;
--+extern int mp_powercutback;
--+extern int mp_trellis;
--+extern int mp_bitswap;
--+extern int mp_maximum_bits_per_carrier;
--+extern int mp_maximum_interleave_depth;
--+extern int mp_pair_selection;
--+extern int mp_dgas_polarity;
--+extern int mp_los_alarm;
--+extern char *mp_eoc_vendor_id;
--+extern int mp_eoc_vendor_revision;
--+extern char *mp_eoc_vendor_serialnum;
--+extern char *mp_invntry_vernum;
--+extern int mp_dsl_bit_tmode;
--+extern int mp_high_precision;
--+
-- int testflag1 = 0;
-- extern int  __guDbgLevel;
-- extern sar_stat_t sarStat;
--@@ -2933,24 +2954,24 @@ static int tn7dsl_set_dsl(void)
--                                 (unsigned char *) &oamFeature, 4);
-- 	
--   ptr = prom_getenv("DSL_FEATURE_CNTL_0"); 
---  if(!ptr)
---    prom_setenv("DSL_FEATURE_CNTL_0", "0x00004000");
--+  //if(!ptr)
--+    //prom_setenv("DSL_FEATURE_CNTL_0", "0x00004000");
-- 
--   ptr = prom_getenv("DSL_FEATURE_CNTL_1"); 
---  if(!ptr)   
---	prom_setenv("DSL_FEATURE_CNTL_1", "0x00000000");
--+  //if(!ptr)   
--+	//prom_setenv("DSL_FEATURE_CNTL_1", "0x00000000");
-- 
--   ptr = prom_getenv("DSL_PHY_CNTL_0"); 
---  if(!ptr)   
---	prom_setenv("DSL_PHY_CNTL_0", "0x00000400");
--+  //if(!ptr)   
--+	//prom_setenv("DSL_PHY_CNTL_0", "0x00000400");
-- 	
--   ptr = prom_getenv("enable_margin_retrain"); 
---  if(!ptr)   
---	prom_setenv("enable_margin_retrain", "0");
--+  //if(!ptr)   
--+	//prom_setenv("enable_margin_retrain", "0");
-- 	
--   ptr = prom_getenv("modulation");
---  if(!ptr)
---    prom_setenv("modulation", "0xbf");
--+  //if(!ptr)
--+    //prom_setenv("modulation", "0xbf");
--   
-- #define EOC_VENDOR_ID "4200534153000000"
-- #define EOC_VENDOR_REVISION "FW370090708b1_55"
--@@ -2959,25 +2980,25 @@ static int tn7dsl_set_dsl(void)
--   ptr = prom_getenv("eoc_vendor_id");
--   if(!ptr || strcmp(ptr,EOC_VENDOR_ID) != 0 || strlen(ptr) != strlen(EOC_VENDOR_ID))
--   {
---      if(ptr)      	
---         prom_unsetenv("eoc_vendor_id");
---      prom_setenv("eoc_vendor_id",EOC_VENDOR_ID);
--+      //if(ptr)      	
--+         //prom_unsetenv("eoc_vendor_id");
--+      //prom_setenv("eoc_vendor_id",EOC_VENDOR_ID);
--   }
--       
--   ptr = prom_getenv("eoc_vendor_revision");
--   if(!ptr || strcmp(ptr,EOC_VENDOR_REVISION) != 0 || strlen(ptr) != strlen(EOC_VENDOR_REVISION))
--   {  
---      if(ptr)      	
---         prom_unsetenv("eoc_vendor_revision");
---      prom_setenv("eoc_vendor_revision",EOC_VENDOR_REVISION);
--+      //if(ptr)      	
--+         //prom_unsetenv("eoc_vendor_revision");
--+      //prom_setenv("eoc_vendor_revision",EOC_VENDOR_REVISION);
--   }
--       
--   ptr = prom_getenv("eoc_vendor_serialnum");
--   if(!ptr || strcmp(ptr,EOC_VENDOR_SERIALNUM) != 0 || strlen(ptr) != strlen(EOC_VENDOR_SERIALNUM))
--   {
---      if(ptr)      	
---         prom_unsetenv("eoc_vendor_serialnum");
---      prom_setenv("eoc_vendor_serialnum",EOC_VENDOR_SERIALNUM);
--+      //if(ptr)      	
--+        // prom_unsetenv("eoc_vendor_serialnum");
--+      //prom_setenv("eoc_vendor_serialnum",EOC_VENDOR_SERIALNUM);
--   }
-- 
--   /* Do only if we are in the new Base PSP 7.4.*/
--@@ -2994,92 +3015,88 @@ static int tn7dsl_set_dsl(void)
--              we clear the modulation environment variable, as this could potentially
--              not have the same meaning in the new mode.
--           */
---         prom_unsetenv("modulation");
---         prom_setenv("DSL_UPG_DONE", "1");
--+         //prom_unsetenv("modulation");
--+         //prom_setenv("DSL_UPG_DONE", "1");
--       }
--   }
--   #endif
-- 
--   // modulation
--   ptr = prom_getenv("modulation");
---  if (ptr)
--+  if (ptr || mp_modulation != NULL)
--   {
---    tn7dsl_set_modulation(ptr, FALSE);
--+    tn7dsl_set_modulation(mp_modulation == NULL ? ptr : mp_modulation, FALSE);
--   }
-- 
--   // Fine Gains
--   ptr = prom_getenv("fine_gain_control");
---  if (ptr)
--+  if (ptr || mp_fine_gain_control != -1)
--   {
---    value = os_atoi(ptr);
--+    value = mp_fine_gain_control == -1 ? os_atoi(ptr) : mp_fine_gain_control;
--     tn7dsl_ctrl_fineGain(value);
--   }
--   ptr = NULL;
--   ptr = prom_getenv("fine_gain_value");
---  if(ptr)
---    tn7dsl_set_fineGainValue(os_atoh(ptr));
--+  if(ptr || mp_fine_gain_value != -1)
--+    tn7dsl_set_fineGainValue(mp_fine_gain_value == -1 ? os_atoh(ptr) : mp_fine_gain_value);
-- 
--   // margin retrain
--   ptr = NULL;
--   ptr = prom_getenv("enable_margin_retrain");
---  if(ptr)
--+  value = mp_enable_margin_retrain == -1 ? (ptr ? os_atoi(ptr) : 0) : mp_enable_margin_retrain;
--+
--+  if (value == 1)
--   {
---    value = os_atoi(ptr);
---    if(value == 1)
--+    dslhal_api_setMarginMonitorFlags(pIhw, 0, 1);
--+    bMarginRetrainEnable = 1;
--+    //printk("enable showtime margin monitor.\n");
--+
--+    ptr = NULL;
--+    ptr = prom_getenv("margin_threshold");
--+    value = mp_margin_threshold == -1 ? (ptr ? os_atoi(ptr) : 0) : mp_margin_threshold;
--+
--+    if(value >= 0)
--     {
---      dslhal_api_setMarginMonitorFlags(pIhw, 0, 1);
---      bMarginRetrainEnable = 1;
---      //printk("enable showtime margin monitor.\n");
---      ptr = NULL;
---      ptr = prom_getenv("margin_threshold");
---      if(ptr)
---      {
---        value = os_atoi(ptr);
---        //printk("Set margin threshold to %d x 0.5 db\n",value);
---        if(value >= 0)
---        {
---          dslhal_api_setMarginThreshold(pIhw, value);
---          bMarginThConfig=1;
---        }
---      }
--+      dslhal_api_setMarginThreshold(pIhw, value);
--+      bMarginThConfig=1;
--     }
--   }
-- 
--   // rate adapt
--   ptr = NULL;
--   ptr = prom_getenv("enable_rate_adapt");
---  if(ptr)
--+  if(ptr || mp_enable_rate_adapt != -1)
--   {
---    dslhal_api_setRateAdaptFlag(pIhw, os_atoi(ptr));
--+    dslhal_api_setRateAdaptFlag(pIhw, mp_enable_rate_adapt == -1 ? os_atoi(ptr) : mp_enable_rate_adapt);
--   }
-- 
--   // set powercutback
--   ptr = NULL;
--   ptr = prom_getenv("powercutback");
---  if(ptr)
--+  if(ptr || mp_powercutback != -1)
--   {
---    dslhal_advcfg_onOffPcb(pIhw, os_atoi(ptr));
--+    dslhal_advcfg_onOffPcb(pIhw, mp_powercutback == -1 ? os_atoi(ptr) : mp_powercutback);
--   }
-- 
--   // trellis
--   ptr = NULL;
--   ptr = prom_getenv("trellis");
---  if(ptr)
--+  if(ptr || mp_trellis != -1)
--   {
---    dslhal_api_setTrellisFlag(pIhw, os_atoi(ptr));
---    trellis = os_atoi(ptr);
--+    trellis = mp_trellis == -1 ? os_atoi(ptr) : mp_trellis;
--+    dslhal_api_setTrellisFlag(pIhw, trellis);
--     //printk("trellis=%d\n");
--   }
-- 
--   // bitswap
--   ptr = NULL;
--   ptr = prom_getenv("bitswap");
---  if(ptr)
--+  if(ptr || mp_bitswap != -1)
--   {
--     int offset[2] = {33, 0};
--     unsigned int bitswap;
-- 
---    bitswap = os_atoi(ptr);
--+    bitswap = mp_bitswap == -1 ? os_atoi(ptr) : mp_bitswap;
-- 
--     tn7dsl_generic_read(2, offset);
--     dslReg &= dslhal_support_byteSwap32(0xFFFFFF00);
--@@ -3097,46 +3114,47 @@ static int tn7dsl_set_dsl(void)
--   // maximum bits per carrier
--   ptr = NULL;
--   ptr = prom_getenv("maximum_bits_per_carrier");
---  if(ptr)
--+  if(ptr || mp_maximum_bits_per_carrier != -1)
--   {
---    dslhal_api_setMaxBitsPerCarrierUpstream(pIhw, os_atoi(ptr));
--+    dslhal_api_setMaxBitsPerCarrierUpstream(pIhw, mp_maximum_bits_per_carrier == -1 ? os_atoi(ptr) : mp_maximum_bits_per_carrier);
--   }
-- 
--   // maximum interleave depth
--   ptr = NULL;
--   ptr = prom_getenv("maximum_interleave_depth");
---  if(ptr)
--+  if(ptr || mp_maximum_interleave_depth != -1)
--   {
---    dslhal_api_setMaxInterleaverDepth(pIhw, os_atoi(ptr));
--+    dslhal_api_setMaxInterleaverDepth(pIhw, mp_maximum_interleave_depth == -1 ? os_atoi(ptr) : mp_maximum_interleave_depth);
--   }
-- 
--   // inner and outer pairs
--   ptr = NULL;
--   ptr = prom_getenv("pair_selection");
---  if(ptr)
--+  if(ptr || mp_pair_selection != -1)
--   {
---    dslhal_api_selectInnerOuterPair(pIhw, os_atoi(ptr));
--+    dslhal_api_selectInnerOuterPair(pIhw, mp_pair_selection == -1 ? os_atoi(ptr) : mp_pair_selection);
--   }
-- 
--   ptr = NULL;
--   ptr = prom_getenv("dgas_polarity");
---  if(ptr)
--+  if(ptr || mp_dgas_polarity != -1)
--   {
--     dslhal_api_configureDgaspLpr(pIhw, 1, 1);
---    dslhal_api_configureDgaspLpr(pIhw, 0, os_atoi(ptr));
--+    dslhal_api_configureDgaspLpr(pIhw, 0, mp_dgas_polarity == -1 ? os_atoi(ptr) : mp_dgas_polarity);
--   }
-- 
--   ptr = NULL;
--   ptr = prom_getenv("los_alarm");
---  if(ptr)
--+  if(ptr || mp_los_alarm != -1)
--   {
---    dslhal_api_disableLosAlarm(pIhw, os_atoi(ptr));
--+    dslhal_api_disableLosAlarm(pIhw, mp_los_alarm == -1 ? os_atoi(ptr) : mp_los_alarm);
--   }
-- 
--   ptr = NULL;
--   ptr = prom_getenv("eoc_vendor_id");
---  if(ptr)
--+  if(ptr || mp_eoc_vendor_id != NULL)
--   {
--+    ptr = mp_eoc_vendor_id == NULL ? ptr : mp_eoc_vendor_id;
--     for(i=0;i<8;i++)
--     {
--       tmp[0]=ptr[i*2];
--@@ -3161,26 +3179,26 @@ static int tn7dsl_set_dsl(void)
--   }
--   ptr = NULL;
--   ptr = prom_getenv("eoc_vendor_revision");
---  if(ptr)
--+  if(ptr || mp_eoc_vendor_revision != -1)
--   {
---    value = os_atoi(ptr);
--+    value = mp_eoc_vendor_revision == -1 ? os_atoi(ptr) : mp_eoc_vendor_revision;
--     //printk("eoc rev=%d\n", os_atoi(ptr));
--     dslhal_api_setEocRevisionNumber(pIhw, (char *)&value);
-- 
--   }
--   ptr = NULL;
--   ptr = prom_getenv("eoc_vendor_serialnum");
---  if(ptr)
--+  if(ptr || mp_eoc_vendor_serialnum != NULL)
--   {
---    dslhal_api_setEocSerialNumber(pIhw, ptr);
--+    dslhal_api_setEocSerialNumber(pIhw, mp_eoc_vendor_serialnum == NULL ? ptr : mp_eoc_vendor_serialnum);
--   }
-- 
--   // CQ10037 Added invntry_vernum environment variable to be able to set version number in ADSL2, ADSL2+ modes.
--   ptr = NULL;
--   ptr = prom_getenv("invntry_vernum");
---  if(ptr)
--+  if(ptr || mp_invntry_vernum != NULL)
--   {
---    dslhal_api_setEocRevisionNumber(pIhw, ptr);
--+    dslhal_api_setEocRevisionNumber(pIhw, mp_invntry_vernum == NULL ? ptr : mp_invntry_vernum);
--   }
-- 
--   return 0;
--@@ -3225,7 +3243,7 @@ int tn7dsl_init(void *priv)
--    * backward compatibility.
--    */
--   cp = prom_getenv("DSL_BIT_TMODE");
---  if (cp)
--+  if (cp || mp_dsl_bit_tmode != -1)
--   {
--     printk("%s : env var DSL_BIT_TMODE is set\n", __FUNCTION__);
--     /*
--@@ -3254,9 +3272,9 @@ int tn7dsl_init(void *priv)
-- 
-- //  UR8_MERGE_START CQ11054   Jack Zhang
--   cp = prom_getenv("high_precision");
---  if (cp)
--+  if (cp || mp_high_precision != -1)
--   {
---    high_precision_selected = os_atoi(cp);
--+    high_precision_selected = mp_high_precision == -1 ? os_atoi(cp) : mp_high_precision;
--   }
--   if ( high_precision_selected)
--   {
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -76,6 +76,8 @@ typedef void OS_SETUP;
-- #include "tn7atm.h"
-- #include "tn7api.h"
-- 
--+extern int mp_oam_lb_timeout;
--+extern int mp_autopvc_enable;
-- 
-- /* PDSP Firmware files */
-- #include "tnetd7300_sar_firm.h"
--@@ -932,9 +934,9 @@ int tn7sar_setup_oam_channel(Tn7AtmPriva
--   pHalDev  = (HAL_DEVICE *)priv->pSarHalDev;
-- 
--   pauto_pvc = prom_getenv("autopvc_enable");
---  if(pauto_pvc)  //CQ10273
--+  if(pauto_pvc || mp_autopvc_enable != -1)  //CQ10273
--   {
---    auto_pvc =tn7sar_strtoul(pauto_pvc, NULL, 10);
--+    auto_pvc = mp_autopvc_enable == -1 ? tn7sar_strtoul(pauto_pvc, NULL, 10) : mp_autopvc_enable;
--   }
-- 
--   memset(&chInfo, 0xff, sizeof(chInfo));
--@@ -1133,9 +1135,9 @@ int tn7sar_init(struct atm_dev *dev, Tn7
-- 
--   /* read in oam lb timeout value */
--   pLbTimeout = prom_getenv("oam_lb_timeout");
---  if(pLbTimeout)
--+  if(pLbTimeout || mp_oam_lb_timeout != -1)
--   {
---    lbTimeout =tn7sar_strtoul(pLbTimeout, NULL, 10);
--+    lbTimeout = mp_oam_lb_timeout == -1 ? tn7sar_strtoul(pLbTimeout, NULL, 10) : mp_oam_lb_timeout;
--     oamLbTimeout = lbTimeout;
--     pHalFunc->Control(pHalDev,"OamLbTimeout", "Set", &lbTimeout);
--   }
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/170-bus_id_removal.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/170-bus_id_removal.patch
-deleted file mode 100644
-index 53767e45be..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/170-bus_id_removal.patch
-+++ /dev/null
-@@ -1,19 +0,0 @@
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -492,7 +492,6 @@ static void avsar_release(struct device
-- }
-- 
-- static struct device avsar = {
---	.bus_id    = "vlynq",
-- 	.release   = avsar_release,
-- };
-- 
--@@ -501,6 +500,8 @@ int shim_osLoadFWImage(unsigned char *pt
-- 	const struct firmware *fw_entry;
-- 	size_t size;
-- 
--+	dev_set_name(&avsar, "avsar");
--+
-- 	printk("requesting firmware image \"ar0700xx.bin\"\n");
-- 	if(device_register(&avsar) < 0) {
-- 		printk(KERN_ERR
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/180-git_headers_include.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/180-git_headers_include.patch
-deleted file mode 100644
-index 69b433b2b9..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/180-git_headers_include.patch
-+++ /dev/null
-@@ -1,39 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -78,8 +78,8 @@
-- #include <linux/ctype.h>
-- 
-- #include <asm/io.h>
---#include <asm/ar7/ar7.h>
---#include <asm/ar7/prom.h>
--+#include <asm/mach-ar7/ar7.h>
--+#include <asm/mach-ar7/prom.h>
-- 
-- #include "dsl_hal_api.h"
-- #ifdef AR7_EFM
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -119,8 +119,8 @@
-- #include <linux/firmware.h>
-- 
-- #include <asm/io.h>
---#include <asm/ar7/ar7.h>
---#include <asm/ar7/prom.h>
--+#include <asm/mach-ar7/ar7.h>
--+#include <asm/mach-ar7/prom.h>
-- 
-- /* Modules specific header files */
-- #ifdef AR7_EFM
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -55,8 +55,8 @@
-- #include <linux/ctype.h>
-- 
-- #include <asm/io.h>
---#include <asm/ar7/ar7.h>
---#include <asm/ar7/prom.h>
--+#include <asm/mach-ar7/ar7.h>
--+#include <asm/mach-ar7/prom.h>
-- 
-- #define _CPHAL_AAL5
-- #define _CPHAL_SAR
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/190-2.6.32_proc_fixes.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/190-2.6.32_proc_fixes.patch
-deleted file mode 100644
-index 10d32d2618..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/190-2.6.32_proc_fixes.patch
-+++ /dev/null
-@@ -1,92 +0,0 @@
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -209,7 +209,7 @@ led_reg_t ledreg[2];
-- static struct led_funcs ledreg[2];
-- #endif
-- 
---#define DEV_DSLMOD       CTL_UNNUMBERED
--+#define DEV_DSLMOD	0
-- #define MAX_STR_SIZE     256
-- #define DSL_MOD_SIZE     256
-- 
--@@ -350,8 +350,8 @@ static void tn7dsl_chng_modulation(void*
-- static unsigned int tn7dsl_set_modulation(void* data, int flag);
-- static void tn7dsl_ctrl_fineGain(int value);
-- static void tn7dsl_set_fineGainValue(int value);
---static int dslmod_sysctl (ctl_table * ctl, int write, struct file *filp,
---                          void *buffer, size_t * lenp);
--+static int dslmod_sysctl (ctl_table * ctl, int write, void *buffer,
--+                          size_t * lenp, loff_t *ppos);
-- static void tn7dsl_register_dslss_led(void);
-- void tn7dsl_dslmod_sysctl_register(void);
-- void tn7dsl_dslmod_sysctl_unregister(void);
--@@ -3582,8 +3582,8 @@ unsigned int tn7dsl_get_memory(unsigned
-- 
-- 
-- 
---static int dslmod_sysctl(ctl_table *ctl, int write, struct file * filp,
---      void *buffer, size_t *lenp)
--+static int dslmod_sysctl(ctl_table *ctl, int write, void *buffer,
--+      size_t *lenp, loff_t *ppos)
-- {
--   char *ptr;
--   int ret, len = 0;
--@@ -3595,7 +3595,7 @@ static int dslmod_sysctl(ctl_table *ctl,
--   char mod_req[16] = { '\t' };
--   char fst_byt;
-- 
---  if (!*lenp || (filp->f_pos && !write))
--+  if (!*lenp || (*ppos && !write))
--   {
--     *lenp = 0;
--     return 0;
--@@ -3605,9 +3605,9 @@ static int dslmod_sysctl(ctl_table *ctl,
--    */
--   if(write)
--     {
---    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
--+    ret = proc_dostring(ctl, write, buffer, lenp, ppos);
-- 
---    switch (ctl->ctl_name)
--+    switch ((long)ctl->extra2)
--       {
--       case DEV_DSLMOD:
--       ptr = strpbrk(info, " \t");
--@@ -3691,14 +3691,21 @@ static int dslmod_sysctl(ctl_table *ctl,
--   else
--     {
--     len += sprintf(info+len, mod_req);
---    ret = proc_dostring(ctl, write, filp, buffer, lenp, 0);
--+    ret = proc_dostring(ctl, write, buffer, lenp, ppos);
--     }
--   return ret;
-- }
-- 
-- 
-- ctl_table dslmod_table[] = {
---  {DEV_DSLMOD, "dslmod", info, DSL_MOD_SIZE, 0644, NULL, NULL, &dslmod_sysctl, &sysctl_string}
--+	{
--+		.procname 		= "dslmod",
--+		.data			= info,
--+		.maxlen			= DSL_MOD_SIZE,
--+		.mode			= 0644,
--+		.proc_handler	= &dslmod_sysctl,
--+		.extra2			= (void *)DEV_DSLMOD,
--+	}
--   ,
--   {0}
--   };
--@@ -3706,7 +3713,12 @@ ctl_table dslmod_table[] = {
-- /* Make sure that /proc/sys/dev is there */
-- ctl_table dslmod_root_table[] = {
-- #ifdef CONFIG_PROC_FS
---  {CTL_DEV, "dev", NULL, 0, 0555, dslmod_table}
--+	{
--+		.procname		= "dev",
--+		.maxlen			= 0,
--+		.mode			= 0555,
--+		.child			= dslmod_table,
--+	}
--   ,
-- #endif /* CONFIG_PROC_FS */
--   {0}
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/200-2.6.37_args.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/200-2.6.37_args.patch
-deleted file mode 100644
-index 75de5a33e7..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/200-2.6.37_args.patch
-+++ /dev/null
-@@ -1,32 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -2003,7 +2003,7 @@ static int __init tn7atm_register (Tn7At
-- 
--   dgprintf (4, "device %s being registered\n", priv->name);
-- 
---  mydev = atm_dev_register (priv->proc_name, &tn7atm_ops, -1, NULL);
--+  mydev = atm_dev_register (priv->proc_name, NULL, &tn7atm_ops, -1, NULL);
-- 
--   if (mydev == NULL)
--   {
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -499,13 +499,16 @@ int shim_osLoadFWImage(unsigned char *pt
-- {
-- 	const struct firmware *fw_entry;
-- 	size_t size;
--+ 	int ret;
-- 
-- 	dev_set_name(&avsar, "avsar");
-- 
-- 	printk("requesting firmware image \"ar0700xx.bin\"\n");
---	if(device_register(&avsar) < 0) {
--+	dev_set_name(&avsar, "avsar");
--+	ret = device_register(&avsar);
--+	if (ret < 0) {
-- 		printk(KERN_ERR
---			"avsar: device_register fails\n");
--+			"avsar: device_register fails, error%i\n", ret);
-- 		return -1;
-- 	}
-- 
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/210-3.3-remove-smp_lock.h.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/210-3.3-remove-smp_lock.h.patch
-deleted file mode 100644
-index 975ebaf299..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/210-3.3-remove-smp_lock.h.patch
-+++ /dev/null
-@@ -1,33 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -72,7 +72,7 @@
-- #include <linux/atmdev.h>
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
---#include <linux/smp_lock.h>
--+#include <linux/interrupt.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -49,7 +49,7 @@
-- #include <linux/atmdev.h>
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
---#include <linux/smp_lock.h>
--+#include <linux/interrupt.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -108,7 +108,7 @@
-- #include <linux/atmdev.h>
-- #include <linux/delay.h>
-- #include <linux/spinlock.h>
---#include <linux/smp_lock.h>
--+#include <linux/interrupt.h>
-- #include <linux/proc_fs.h>
-- #include <linux/string.h>
-- #include <linux/ctype.h>
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/220-3.10-update_proc_code.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/220-3.10-update_proc_code.patch
-deleted file mode 100644
-index ef1ddd833c..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/220-3.10-update_proc_code.patch
-+++ /dev/null
-@@ -1,3082 +0,0 @@
--From 42d0f4c2f5cf0f73edd827263dc65aefc8f82192 Mon Sep 17 00:00:00 2001
--From: Jonas Gorski <jogo@openwrt.org>
--Date: Thu, 26 Sep 2013 12:28:35 +0200
--Subject: [PATCH] update proc code to fix compilation for 3.10
 -
--Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+-#include <linux/module.h>
+-#include <linux/moduleparam.h>
+-#include <linux/types.h>
+-#include <linux/kernel.h>
+-#include <linux/jiffies.h>
+-#include <linux/timer.h>
+-#include <linux/fs.h>
+-#include <linux/miscdevice.h>
+-#include <linux/watchdog.h>
+-#include <linux/init.h>
+-#include <linux/bitops.h>
+-#include <linux/uaccess.h>
+-#include <mach/hardware.h>
 -
-----
-- tn7api.h |   66 ++-
-- tn7atm.c |  395 ++++++++---------
-- tn7dsl.c | 1439 ++++++++++++++++++++++++++++++--------------------------------
-- tn7sar.c |   91 ++--
-- 4 files changed, 951 insertions(+), 1040 deletions(-)
+-static int nowayout = WATCHDOG_NOWAYOUT;
+-static int heartbeat = 20;	/* (secs) Default is 20 seconds */
+-static unsigned long wdt_status;
+-static atomic_t wdt_counter;
+-struct timer_list wdt_timer;
 -
----- a/tn7api.h
--+++ b/tn7api.h
--@@ -91,31 +91,29 @@ void * tn7atm_memcpy(void * dst, void co
-- /* tn7dsl.h */
-- void tn7dsl_exit(void);
-- int tn7dsl_init(void *priv);
---int tn7dsl_proc_eoc(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_stats(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_eoc_fops;
--+extern struct file_operations tn7dsl_proc_stats_fops;
-- 
-- //#define ADV_DIAG_STATS  1  //CQ10275 To enable Adv Stats
-- 
-- #ifdef ADV_DIAG_STATS
---int tn7dsl_proc_adv_stats(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_adv_stats1(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_adv_stats2(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_adv_stats3(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_adv_stats_fops;
--+extern struct file_operations tn7dsl_proc_adv1_stats_fops;
--+extern struct file_operations tn7dsl_proc_adv2_stats_fops;
--+extern struct file_operations tn7dsl_proc_adv3_stats_fops;
-- //UR8_MERGE_START CQ10682   Jack Zhang
---int tn7dsl_proc_dbg_cmsgs(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs1(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs2(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs3(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_dbg_rmsgs4(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs1_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs2_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs3_fops;
--+extern struct file_operations tn7dsl_proc_dbg_cmsgs4_fops;
-- //UR8_MERGE_END   CQ10682*
-- #endif //ADV_DIAG_STATS
-- 
---int tn7dsl_proc_write_stats(struct file *fp, const char * buf, unsigned long count, void * data);
---int tn7dsl_proc_modem(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_modem_fops;
-- //UR8_MERGE_START CQ11813 Hao-Ting
-- #ifdef LINUX_CLI_SUPPORT
---int tn7dsl_proc_dbgmsg_write(struct file *fp, const char *buf, unsigned long count, void *data);
---int tn7dsl_proc_dbgmsg_read(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_dbgmsg_fops;
-- #endif
-- //UR8_MERGE_END CQ11813
-- int tn7dsl_handle_interrupt(void);
--@@ -142,31 +140,31 @@ int os_atoih(const char *pStr);
-- #endif
-- 
-- unsigned long os_atoul(const char *pStr);
---int tn7dsl_proc_snr0(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_snr1(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_snr2(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_bit_allocation(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_ds_noise(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_generic_read_result(char* buf, char **start, off_t offset, int count, int *eof, void *data);
---int tn7dsl_proc_train_mode_export(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_snr0_fops;
--+extern struct file_operations tn7dsl_proc_snr1_fops;
--+extern struct file_operations tn7dsl_proc_snr2_fops;
--+extern struct file_operations tn7dsl_proc_bit_allocation_fops;
--+extern struct file_operations tn7dsl_proc_ds_noise_fops;
--+extern struct file_operations tn7dsl_proc_generic_read_result_fops;
--+extern struct file_operations tn7dsl_proc_train_mode_export_fops;
-- 
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_SNRpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_QLNpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7dsl_proc_SNRpsds_fops;
--+extern struct file_operations tn7dsl_proc_QLNpsds_fops;
-- // *    UR8_MERGE_START CQ10979   Jack Zhang
-- #ifdef TR69_HLIN_IN
---//int tn7dsl_proc_HLINpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds1(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds2(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds3(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_HLINpsds4(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+//extern struct file_operations tn7dsl_proc_HLINpsds_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds1_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds2_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds3_fops;
--+extern struct file_operations tn7dsl_proc_HLINpsds4_fops;
-- #endif //TR69_HLIN_IN
-- // *    UR8_MERGE_END   CQ10979*
-- // *    UR8_MERGE_START CQ11057   Jack Zhang
-- #define TR69_PMD_IN
-- #ifdef TR69_PMD_IN
---//int tn7dsl_proc_PMDus(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7dsl_proc_PMDus(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+//extern struct file_operations tn7dsl_proc_PMDus_fops;
--+extern struct file_operations tn7dsl_proc_PMDus_fops;
-- #endif  //TR69_PMD_IN
-- // *    UR8_MERGE_END   CQ11057 *
-- #endif
--@@ -183,12 +181,12 @@ void tn7sar_get_sar_version(Tn7AtmPrivat
-- int tn7sar_get_near_end_loopback_count(unsigned int *pF4count, unsigned int *pF5count);
-- int tn7sar_oam_generation(void *privContext, int chan, int type, int vpi, int vci, int timeout);
-- int tn7sar_get_stats(void *priv1);
---int tn7sar_proc_sar_stat(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7sar_proc_sar_stat_fops;
-- #ifdef AR7_EFM
-- void tn7sar_get_EFM_firmware_version(unsigned int *pdsp_version_ms, unsigned int *pdsp_version_ls);
-- #endif
-- void tn7sar_get_sar_firmware_version(unsigned int *pdsp_version_ms, unsigned int *pdsp_version_ls);
---int tn7sar_proc_oam_ping(char* buf, char **start, off_t offset, int count,int *eof, void *data);
---int tn7sar_proc_pvc_table(char* buf, char **start, off_t offset, int count,int *eof, void *data);
--+extern struct file_operations tn7sar_proc_oam_ping_fops;
--+extern struct file_operations tn7sar_proc_pvc_table_fops;
-- int tn7sar_tx_flush(void *privContext, int chan, int queue, int skip);
-- #endif __SGAPI_H
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -259,11 +259,9 @@ MODULE_PARM_DESC(oam_lb_timeout, "OAM LB
-- 
-- #ifdef AR7_EFM
-- extern void tn7dsl_disable_alarm(void);
---extern int tn7efm_proc_channels (char *buf, char **start, 
---            off_t offset, int count, int *eof, void *data);
---extern int tn7efm_proc_ctrl_read (char *buf, char **start, off_t offset, int count, int *eof, void *data);
---extern int tn7efm_proc_ctrl_write (struct file *fp, const char *buf, unsigned long count, void *data);
---extern int tn7efm_proc_info (char *buf, char **start, off_t offset, int count, int *eof, void *data);
--+extern struct file_operations tn7efm_proc_channels_fops;
--+extern struct file_operations tn7efm_proc_ctrl_fops;
--+extern struct file_operations tn7efm_proc_info_fops;
-- extern unsigned int g_efm_proc_ctl;
-- extern struct net_device *mydev_efm;
-- extern Tn7AtmPrivate *mypriv;
--@@ -299,31 +297,17 @@ extern int tn7efm_register (Tn7AtmPrivat
-- static int tn7atm_irq_request (struct atm_dev *dev);
-- #endif
-- 
---static int tn7atm_proc_version (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data);
--+static struct file_operations tn7atm_proc_version_fops;
-- static void tn7atm_exit (void);
---static int tn7atm_proc_channels (char *buf, char **start, off_t offset,
---                                 int count, int *eof, void *data);
---static int tn7atm_proc_private (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data);
--+static struct file_operations tn7atm_proc_channels_fops;
--+static struct file_operations tn7atm_proc_private_fops;
-- inline static int tn7atm_queue_packet_to_sar (void *vcc1, void *skb1,
--                                               int chan);
-- 
---static int tn7atm_xlate_proc_name (const char *name,
---                                   struct proc_dir_entry **ret,
---                                   const char **residual);
---static int tn7atm_proc_match (int len, const char *name,
---                              struct proc_dir_entry *de);
---static int tn7atm_proc_qos_read  (char *buf, char **start, off_t offset,
---                                  int count, int *eof, void *data);
---static int tn7atm_proc_qos_write (struct file *fp, const char *buf,
---                                  unsigned long count, void *data);
--+static struct file_operations tn7atm_proc_qos_fops;
-- 
-- // [KT]
---static int tn7atm_proc_turbodsl_read  (char *buf, char **start, off_t offset,
---                                  int count, int *eof, void *data);
---static int tn7atm_proc_turbodsl_write (struct file *fp, const char *buf,
---                                  unsigned long count, void *data);
--+static struct file_operations tn7atm_proc_turbodsl_fops;
-- 
-- //CT - Added function to return chipset Id
--        void tn7atm_get_chipsetId (char *pVerId);
--@@ -453,75 +437,75 @@ static int proc_root_already_exists = TR
-- static struct
-- {
--     const unsigned char name[32];
---    int (*read_func) (char* , char **, off_t , int ,int *, void *);
---    int (*write_func) (struct file *, const char * , unsigned long , void *);
--+    struct file_operations *fops;
-- 
-- } proc_if[] = {
-- #ifdef AR7_EFM
-- #ifdef EFM_DEBUG
---    {"avsar_efm_channel",           tn7efm_proc_channels,          NULL},
--+    {"avsar_efm_channel",           &tn7efm_proc_channels_fops},
-- #endif    
---    {"avsar_efm_info",              tn7efm_proc_info,              NULL},
---    {"avsar_efm_ctl",               tn7efm_proc_ctrl_read,  tn7efm_proc_ctrl_write},
--+    {"avsar_efm_info",              &tn7efm_proc_info_fops},
--+    {"avsar_efm_ctl",               &tn7efm_proc_ctrl_fops},
-- #endif
---    {"avsar_ver",                   tn7atm_proc_version,           NULL},
---    {"avsar_channels",              tn7atm_proc_channels,          NULL},
---    {"avsar_sarhal_stats",          tn7sar_proc_sar_stat,          NULL},
---    {"avsar_oam_ping",              tn7sar_proc_oam_ping,          NULL},
---    {"avsar_pvc_table",             tn7sar_proc_pvc_table,         NULL},
---    {"avsar_rxsnr0",                tn7dsl_proc_snr0,              NULL},
---    {"avsar_rxsnr1",                tn7dsl_proc_snr1,              NULL},
---    {"avsar_rxsnr2",                tn7dsl_proc_snr2,              NULL},
---    {"clear_eoc_stats",             tn7dsl_proc_eoc,               NULL},
---    {"avsar_bit_allocation_table",  tn7dsl_proc_bit_allocation,    NULL},
---    {"avsar_dsl_modulation_schemes",tn7dsl_proc_train_mode_export, NULL},
--+    {"avsar_ver",                   &tn7atm_proc_version_fops},
--+    {"avsar_channels",              &tn7atm_proc_channels_fops},
--+    {"avsar_sarhal_stats",          &tn7sar_proc_sar_stat_fops},
--+    {"avsar_oam_ping",              &tn7sar_proc_oam_ping_fops},
--+    {"avsar_pvc_table",             &tn7sar_proc_pvc_table_fops},
--+    {"avsar_rxsnr0",                &tn7dsl_proc_snr0_fops},
--+    {"avsar_rxsnr1",                &tn7dsl_proc_snr1_fops},
--+    {"avsar_rxsnr2",                &tn7dsl_proc_snr2_fops},
--+    {"clear_eoc_stats",             &tn7dsl_proc_eoc_fops},
--+    {"avsar_bit_allocation_table",  &tn7dsl_proc_bit_allocation_fops},
--+    {"avsar_dsl_modulation_schemes",&tn7dsl_proc_train_mode_export_fops},
-- #ifndef NO_ADV_STATS
---    {"avsar_SNRpsds",               tn7dsl_proc_SNRpsds,           NULL},
---    {"avsar_QLNpsds",               tn7dsl_proc_QLNpsds,           NULL},
--+    {"avsar_SNRpsds",               &tn7dsl_proc_SNRpsds_fops},
--+    {"avsar_QLNpsds",               &tn7dsl_proc_QLNpsds_fops},
-- // *    UR8_MERGE_START CQ10979   Jack Zhang
-- #ifdef TR69_HLIN_IN
---//    {"avsar_HLINpsds",              tn7dsl_proc_HLINpsds,          NULL},
---    {"avsar_HLINpsds1",             tn7dsl_proc_HLINpsds1,         NULL},
---    {"avsar_HLINpsds2",             tn7dsl_proc_HLINpsds2,         NULL},
---    {"avsar_HLINpsds3",             tn7dsl_proc_HLINpsds3,         NULL},
---    {"avsar_HLINpsds4",             tn7dsl_proc_HLINpsds4,         NULL},
--+//    {"avsar_HLINpsds",              &tn7dsl_proc_HLINpsds_fops},
--+    {"avsar_HLINpsds1",             &tn7dsl_proc_HLINpsds1_fops},
--+    {"avsar_HLINpsds2",             &tn7dsl_proc_HLINpsds2_fops},
--+    {"avsar_HLINpsds3",             &tn7dsl_proc_HLINpsds3_fops},
--+    {"avsar_HLINpsds4",             &tn7dsl_proc_HLINpsds4_fops},
-- #endif //TR69_HLIN_IN
-- // *    UR8_MERGE_END   CQ10979*
-- // *    UR8_MERGE_START CQ11057   Jack Zhang
-- #define TR69_PMD_IN
-- #ifdef TR69_PMD_IN
---    {"avsar_PMDTestus",             tn7dsl_proc_PMDus,            NULL},
---//    {"avsar_PMDTestus1",          tn7dsl_proc_PMDus1,            NULL},
--+    {"avsar_PMDTestus",             &tn7dsl_proc_PMDus_fops},
--+//    {"avsar_PMDTestus1",          &tn7dsl_proc_PMDus1_fops},
-- #endif  //TR69_PMD_IN
-- // *    UR8_MERGE_END   CQ11057 *
-- #endif
---    {"avsar_private",               tn7atm_proc_private,           NULL},
---    {"avsar_modem_training",        tn7dsl_proc_modem,             NULL},
---    {"avsar_modem_stats",           tn7dsl_proc_stats,             tn7dsl_proc_write_stats},
--+    {"avsar_private",               &tn7atm_proc_private_fops},
--+    {"avsar_modem_training",        &tn7dsl_proc_modem_fops},
--+    {"avsar_modem_stats",           &tn7dsl_proc_stats_fops},
-- 
-- #ifdef ADV_DIAG_STATS //CQ10275
---//for 2.6    {"avsar_modem_adv_stats",       tn7dsl_proc_adv_stats,         NULL},
--+//for 2.6    {"avsar_modem_adv_stats",       &tn7dsl_proc_adv_stats_fops},
-- //For 2.4 kernel, due to proc file system size limitation
---    {"avsar_modem_adv_stats1",      tn7dsl_proc_adv_stats1,        NULL},
---    {"avsar_modem_adv_stats2",      tn7dsl_proc_adv_stats2,        NULL},
---    {"avsar_modem_adv_stats3",      tn7dsl_proc_adv_stats3,        NULL},
--+    {"avsar_modem_adv_stats1",      &tn7dsl_proc_adv_stats1_fops},
--+    {"avsar_modem_adv_stats2",      &tn7dsl_proc_adv_stats2_fops},
--+    {"avsar_modem_adv_stats3",      &tn7dsl_proc_adv_stats3_fops},
-- //UR8_MERGE_START CQ10682   Jack Zhang
---    {"avsar_modem_dbg_cmsgs",       tn7dsl_proc_dbg_cmsgs,         NULL},
---    {"avsar_modem_dbg_rmsgs1",      tn7dsl_proc_dbg_rmsgs1,        NULL},
---    {"avsar_modem_dbg_rmsgs2",      tn7dsl_proc_dbg_rmsgs2,        NULL},
---    {"avsar_modem_dbg_rmsgs3",      tn7dsl_proc_dbg_rmsgs3,        NULL},
---    {"avsar_modem_dbg_rmsgs4",      tn7dsl_proc_dbg_rmsgs4,        NULL},
--+    {"avsar_modem_dbg_cmsgs",       &tn7dsl_proc_dbg_cmsgs_fops},
--+    {"avsar_modem_dbg_rmsgs1",      &tn7dsl_proc_dbg_rmsgs1_fops},
--+    {"avsar_modem_dbg_rmsgs2",      &tn7dsl_proc_dbg_rmsgs2_fops},
--+    {"avsar_modem_dbg_rmsgs3",      &tn7dsl_proc_dbg_rmsgs3_fops},
--+    {"avsar_modem_dbg_rmsgs4",      &tn7dsl_proc_dbg_rmsgs4_fops},
-- // UR8_MERGE_END   CQ10682*
-- #endif //ADV_DIAG_STATS
-- //UR8_MERGE_START CQ11813 Hao-Ting
-- #ifdef LINUX_CLI_SUPPORT
---    {"avsar_dbg_enable",            tn7dsl_proc_dbgmsg_read,       tn7dsl_proc_dbgmsg_write},
--+    {"avsar_dbg_enable",            &tn7dsl_proc_dbgmsg_fops},
-- #endif
-- //UR8_MERGE_END CQ11813
---    {"avsar_qos_enable",            tn7atm_proc_qos_read,          tn7atm_proc_qos_write},
--+    {"avsar_qos_enable",            &tn7atm_proc_qos_fops},
--     #if 1 /* [MS] */
---    {"avsar_turbodsl",              tn7atm_proc_turbodsl_read,     tn7atm_proc_turbodsl_write}
--+    {"avsar_turbodsl",              &tn7atm_proc_turbodsl_fops}
--     #endif
--+
-- };
-- 
-- /* *INDENT-ON* */
--@@ -1805,76 +1789,81 @@ int tn7atm_receive (void *os_dev, int ch
--   return 0;
-- }
-- 
---
---static int tn7atm_proc_channels (char *buf, char **start, off_t offset,
---                                 int count, int *eof, void *data)
--+static int tn7atm_proc_channels (struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   int i;
-- 
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
-- 
---  dev = (struct atm_dev *) data;
--+  dev = (struct atm_dev *) m->private;
--   priv = (Tn7AtmPrivate *) dev->dev_data;
-- 
---  if (len <= limit)
---    len += sprintf (buf + len, "Chan  Inuse   ChanID   VPI     VCI \n");
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m, "Chan  Inuse   ChanID   VPI     VCI \n");
--+  seq_printf (m,
--                "------------------------------------------------------------------\n");
-- 
--   for (i = 0; i <= MAX_DMA_CHAN; i++)
--   {
---    if (len <= limit)
---    {
---      len += sprintf (buf + len,
---                      " %02d    %05d   %05d   %05d   %05d \n",
---                      i, priv->lut[i].inuse, priv->lut[i].chanid,
---                      priv->lut[i].vpi, priv->lut[i].vci);
---    }
--+      seq_printf (m,
--+                  " %02d    %05d   %05d   %05d   %05d \n",
--+                  i, priv->lut[i].inuse, priv->lut[i].chanid,
--+                  priv->lut[i].vpi, priv->lut[i].vci);
--   }
-- 
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "------------------------------------------------------------------\n");
-- 
---  return len;
--+  return 0;
-- }
-- 
---static int tn7atm_proc_private (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data)
--+static int tn7atm_proc_channels_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_channels, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_channels_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_channels_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+static int tn7atm_proc_private (struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
-- 
---  dev = (struct atm_dev *) data;
--+  dev = (struct atm_dev *) m->private;
--   priv = (Tn7AtmPrivate *) dev->dev_data;
-- 
---  if (len <= limit)
---    len += sprintf (buf + len, "\nPrivate Data Structure(%s):\n", priv->name);
---  if (len <= limit)
---    len += sprintf (buf + len, "----------------------------------------\n");
---  if (len <= limit)
---    len += sprintf (buf + len, "priv:  0x%p\n", priv);
---  if (len <= limit)
---    len += sprintf (buf + len, "next:  0x%p", priv->next);
---  if (len <= limit)
---    len += sprintf (buf + len, "\tdev:   0x%p\n", priv->dev);
---
---  if (len <= limit)
---    len += sprintf (buf + len, "tx_irq: %02d", priv->sar_irq);
---  if (len <= limit)
---    len += sprintf (buf + len, "rx_irq: %02d", priv->dsl_irq);
--+  seq_printf (m, "\nPrivate Data Structure(%s):\n", priv->name);
--+  seq_printf (m, "----------------------------------------\n");
--+  seq_printf (m, "priv:  0x%p\n", priv);
--+  seq_printf (m, "next:  0x%p", priv->next);
--+  seq_printf (m, "\tdev:   0x%p\n", priv->dev);
--+
--+  seq_printf (m, "tx_irq: %02d", priv->sar_irq);
--+  seq_printf (m, "rx_irq: %02d", priv->dsl_irq);
--+
--+  return 0;
--+}
-- 
---  return len;
--+static int tn7atm_proc_private_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_private, PDE_DATA(inode));
-- }
-- 
--+static struct file_operations tn7atm_proc_private_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_private_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- void tn7atm_sarhal_isr_register (void *os_dev, void *hal_isr,
--                                  int interrupt_num)
-- {
--@@ -2023,10 +2012,8 @@ static int __init tn7atm_register (Tn7At
--   return ATM_REG_OK;
-- }
-- 
---static int tn7atm_proc_version (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data)
--+static int tn7atm_proc_version (struct seq_file *m, void *data)
-- {
---  int len = 0;
--   char dslVer[8];
--   char dspVer[10];
--   char chipsetID[32]; //CT CQ10076 - Added temporary buffer to store chipset Id
--@@ -2041,58 +2028,52 @@ static int tn7atm_proc_version (char *bu
--   priv = mydev->dev_data;
-- 
-- #ifdef AR7_EFM
---  len +=
---    sprintf (buf + len, "ATM/EFM Driver version:[%d.%02d.%02d.%02d]\n",
---             LINUXATM_VERSION_MAJOR, LINUXATM_VERSION_MINOR,
---             LINUXATM_VERSION_BUGFIX, LINUXATM_VERSION_BUILDNUM);
---
--+  seq_printf (m, "ATM/EFM Driver version:[%d.%02d.%02d.%02d]\n",
--+              LINUXATM_VERSION_MAJOR, LINUXATM_VERSION_MINOR,
--+              LINUXATM_VERSION_BUGFIX, LINUXATM_VERSION_BUILDNUM);
-- #else
---  len +=
---    sprintf (buf + len, "ATM Driver version:[%d.%02d.%02d.%02d]\n",
---             LINUXATM_VERSION_MAJOR, LINUXATM_VERSION_MINOR,
---             LINUXATM_VERSION_BUGFIX, LINUXATM_VERSION_BUILDNUM);
--+  seq_printf (m, "ATM Driver version:[%d.%02d.%02d.%02d]\n",
--+              LINUXATM_VERSION_MAJOR, LINUXATM_VERSION_MINOR,
--+              LINUXATM_VERSION_BUGFIX, LINUXATM_VERSION_BUILDNUM);
-- #endif
-- 
--   tn7dsl_get_dslhal_version (dslVer);
-- 
---  len +=
---    sprintf (buf + len, "DSL HAL version: [%d.%02d.%02d.%02d]\n", dslVer[0],
---             dslVer[1], dslVer[2], dslVer[3]);
--+  seq_printf (m, "DSL HAL version: [%d.%02d.%02d.%02d]\n", dslVer[0],
--+              dslVer[1], dslVer[2], dslVer[3]);
--   tn7dsl_get_dsp_version (dspVer);
-- 
-- #ifdef EFM_DEBUG
---  len +=
---    sprintf (buf + len, "DSP Datapump version: [%d.%02d.%02d.%02d(%u)] ",
---             dspVer[4], dspVer[5], dspVer[6], dspVer[7], (unsigned char) dspVer[7]);
--+  seq_printf (m, "DSP Datapump version: [%d.%02d.%02d.%02d(%u)] ",
--+              dspVer[4], dspVer[5], dspVer[6], dspVer[7], (unsigned char) dspVer[7]);
-- #else
---  len +=
---    sprintf (buf + len, "DSP Datapump version: [%d.%02d.%02d.%02d] ",
---             dspVer[4], dspVer[5], dspVer[6], dspVer[7]);
--+  seq_printf (m, "DSP Datapump version: [%d.%02d.%02d.%02d] ",
--+              dspVer[4], dspVer[5], dspVer[6], dspVer[7]);
-- #endif
--   if (dspVer[8] == 2)           // annex B
---    len += sprintf (buf + len, "Annex B\n");
--+    seq_printf (m, "Annex B\n");
--   else if (dspVer[8] == 3)      // annex c
---    len += sprintf (buf + len, "Annex c\n");
--+    seq_printf (m, "Annex c\n");
--   else
---    len += sprintf (buf + len, "Annex A\n");
--+    seq_printf (m, "Annex A\n");
-- 
--   tn7sar_get_sar_version (priv, &pSarVer);
-- 
---  len += sprintf (buf + len, "SAR HAL version: [");
--+  seq_printf (m, "SAR HAL version: [");
--   for (i = 0; i < 8; i++)
--   {
---    len += sprintf (buf + len, "%c", pSarVer[i + 7]);
--+    seq_printf (m, "%c", pSarVer[i + 7]);
--   }
---  len += sprintf (buf + len, "]\n");
--+  seq_printf (m, "]\n");
-- 
--   tn7sar_get_sar_firmware_version (&pdspV1, &pdspV2);
-- 
-- #ifndef AR7_EFM
---  len += sprintf (buf + len, "PDSP Firmware version:[%01x.%02x]\n",
--+  seq_printf (m, "PDSP Firmware version:[%01x.%02x]\n",
--                   pdspV1, pdspV2);
-- #else
-- 
---  len += sprintf (buf + len, "PDSP Firmware version:[%01x.%02x](ATM)%c\n",
--+  seq_printf (m, "PDSP Firmware version:[%01x.%02x](ATM)%c\n",
--             pdspV1, pdspV2, (priv->curr_TC_mode== TC_MODE_ATM) ? '*' : ' ');
-- 
--   tn7sar_get_EFM_firmware_version (&pdspV1, &pdspV2);
--@@ -2104,26 +2085,37 @@ static int tn7atm_proc_version (char *bu
-- #endif
--     str = "EFM";  
-- 
---  len += sprintf (buf + len, "PDSP Firmware version:[%01x.%02x](%s)%c\n",
--+  seq_printf (m, "PDSP Firmware version:[%01x.%02x](%s)%c\n",
--             pdspV1, pdspV2, str, (priv->curr_TC_mode== TC_MODE_PTM) ? '*' : ' ');
-- 
-- #endif
-- 
--   //CT CQ10076 - Added code to report chipset ID using proc file system
--   tn7atm_get_chipsetId(chipsetID);
---  len += sprintf (buf + len, "Chipset ID: [%s]\n",chipsetID);
--+  seq_printf (m, "Chipset ID: [%s]\n",chipsetID);
-- 
---  return len;
--+  return 0;
-- }
-- 
--+static int tn7atm_proc_version_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_version, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_version_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_version_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- 
-- /* Device detection */
-- 
-- static int __init tn7atm_detect (void)
-- {
--   Tn7AtmPrivate *priv;
---  struct proc_dir_entry *dsl_wr_file = NULL; /* Only for ones with a write
---                                                 * function. */
--   int ctr;
--   const char *residual;
-- 
--@@ -2204,24 +2196,7 @@ static int __init tn7atm_detect (void)
--    */
--   for (ctr = 0; ctr < (NUM_ELEMS (proc_if)); ctr++)
--   {
---      /* Only if we have a write function, we create a normal proc file. */
---      if(proc_if[ctr].write_func)
---      {
---          dsl_wr_file = create_proc_entry (proc_if[ctr].name, DRV_PROC_MODE, root_proc_dir_entry);
---          if (dsl_wr_file)
---          {
---            dsl_wr_file->read_proc  = proc_if[ctr].read_func;
---            dsl_wr_file->write_proc = proc_if[ctr].write_func;
---            dsl_wr_file->data = (void *)mydev; //UR8_MERGE_START_END CQ10700 Manjula K
---          }
---          dsl_wr_file = NULL;
---      }
---      else
---      {
---          /* Create a read-only entry. */
---          create_proc_read_entry (proc_if[ctr].name, 0, root_proc_dir_entry,
---                             proc_if[ctr].read_func, mydev);
---      }
--+    proc_create_data(proc_if[ctr].name, DRV_PROC_MODE, root_proc_dir_entry, proc_if[ctr].fops, (void *)mydev);
--   }
-- 
--   tn7dsl_dslmod_sysctl_register ();
--@@ -2701,73 +2676,18 @@ static int tn7atm_set_can_support_adsl2
--   return TRUE;
-- }
-- 
---/*
--- * This function matches a name such as "serial", and that specified by the
--- * proc_dir_entry
--- */
---static int tn7atm_proc_match (int len, const char *name,
---                              struct proc_dir_entry *de)
--+static int tn7atm_proc_qos_read(struct seq_file *m, void *data)
-- {
---  if (!de || !de->low_ino)
---    return 0;
---  if (de->namelen != len)
--+    seq_printf (m, "\nEnableQoS = %d\n", EnableQoS);
--     return 0;
---  return !strncmp (name, de->name, len);
---}
---
---/*
--- * This function parses a name such as "tty/driver/serial", and
--- * returns the struct proc_dir_entry for "/proc/tty/driver", and
--- * returns "serial" in residual.
--- */
---static int tn7atm_xlate_proc_name (const char *name,
---                                   struct proc_dir_entry **ret,
---                                   const char **residual)
---{
---  const char *cp = name, *next;
---  struct proc_dir_entry *de;
---  int len;
---  extern struct proc_dir_entry proc_root;
---
---  de = &proc_root;
---  while (1)
---  {
---    next = strchr (cp, '/');
---    if (!next)
---      break;
---
---    len = next - cp;
---    for (de = de->subdir; de; de = de->next)
---    {
---      if (tn7atm_proc_match (len, cp, de))
---        break;
---    }
---    if (!de)
---      return -ENOENT;
---    cp += len + 1;
---  }
---  *residual = cp;
---  *ret = de;
---
---  return 0;
---}
---
---static int tn7atm_proc_qos_read(char *buf, char **start, off_t offset, int count, int *eof, void *data)
---{
---    int len = 0;
---
---    len += sprintf (buf + len, "\nEnableQoS = %d\n", EnableQoS);
---    return len;
-- 
-- }
-- 
-- // [KT]
---static int tn7atm_proc_turbodsl_read(char *buf, char **start, off_t offset, int count, int *eof, void *data)
--+static int tn7atm_proc_turbodsl_read(struct seq_file *m, void *data)
-- {
---    int len = 0;
---
---    len += sprintf (buf + len, "%d\n", bTurboDsl);
---    return len;
--+    seq_printf (m, "%d\n", bTurboDsl);
--+    return 0;
-- }
-- 
-- static int tn7atm_proc_qos_write(struct file *fp, const char *buf, unsigned long count, void *data)
--@@ -2802,7 +2722,7 @@ static int tn7atm_proc_qos_write(struct
-- }
-- 
-- // [KT]
---int tn7atm_proc_turbodsl_write(struct file *fp, const char *buf, unsigned long count, void *data)
--+static int tn7atm_proc_turbodsl_write(struct file *fp, const char *buf, unsigned long count, void *data)
-- {
--     char local_buf[10];
--  
--@@ -2833,5 +2753,33 @@ int tn7atm_proc_turbodsl_write(struct fi
--     return count;
-- }
-- 
--+static int tn7atm_proc_qos_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_qos_read, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_qos_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_qos_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+	.write		= tn7atm_proc_qos_write,
--+};
--+
--+static int tn7atm_proc_turbodsl_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7atm_proc_turbodsl_read, PDE_DATA(inode));
--+}
--+
--+static struct file_operations tn7atm_proc_turbodsl_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7atm_proc_turbodsl_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+	.write		= tn7atm_proc_turbodsl_write,
--+};
--+
-- module_init (tn7atm_detect);
-- module_exit (tn7atm_exit);
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -356,7 +356,7 @@ static void tn7dsl_register_dslss_led(vo
-- void tn7dsl_dslmod_sysctl_register(void);
-- void tn7dsl_dslmod_sysctl_unregister(void);
-- static int tn7dsl_clear_eoc_receive(void);
---static int tn7dsl_proc_snr_print (char *buf, int count, int *eof, int data);
--+static int tn7dsl_proc_snr_print (struct seq_file *m, int data);
-- /* end of internal functions */
-- 
-- //  UR8_MERGE_START CQ11054   Jack Zhang
--@@ -684,11 +684,9 @@ void shim_osCriticalExit(void)
--   spin_unlock_irqrestore(&shimLock, flags);
-- }
-- 
---static int tn7dsl_proc_snr_print (char *buf, int count, int *eof, int data)
--+static int tn7dsl_proc_snr_print (struct seq_file *m, int data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i, j;
--   int bin = (int) data;
--   unsigned short *rxSnrPerBin;
--@@ -709,95 +707,128 @@ static int tn7dsl_proc_snr_print (char *
--       break;
-- 
--   default:
---  if(len<=limit)
---        len += sprintf (buf + len, "\nInvalid bin selected Bin%d :\n", bin);
---  return len;
---}
--+      seq_printf (m, "\nInvalid bin selected Bin%d :\n", bin);
--+      return 0;
--+  }
-- 
---  if(len<=limit)
---    len += sprintf (buf + len, "\nAR7 DSL Modem Rx SNR Per Bin for Bin%d :\n", bin);
--+  seq_printf (m, "\nAR7 DSL Modem Rx SNR Per Bin for Bin%d :\n", bin);
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones/16; i++)
--   {
--     for(j=0;j<16;j++)
--     {
---      if(len <=limit)
---        len +=
---          sprintf (buf + len, "%04x ",
--+      seq_printf (m, "%04x ",
--                    (unsigned short) rxSnrPerBin[i * 16 + j]);
---  }
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--     }
--+      seq_printf(m, "\n");
--+  }
-- 
---  return len;
--+  return 0;
-- }
-- 
-- 
-- //@Added SNR per bin info per customer request. 05-14-2004
---int tn7dsl_proc_snr0 (char *buf, char **start, off_t offset, int count,
---                      int *eof, void *data)
--+static int tn7dsl_proc_snr0 (struct seq_file *m, void *data)
--     {
---  return tn7dsl_proc_snr_print(buf, count, eof, 0);
--+  return tn7dsl_proc_snr_print(m, 0);
--     }
-- 
---int tn7dsl_proc_snr1 (char *buf, char **start, off_t offset, int count,
---                      int *eof, void *data)
--+static int tn7dsl_proc_snr0_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_snr_print(buf, count, eof, 1);
--+	return single_open(file, tn7dsl_proc_snr0, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_snr0_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_snr0_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int tn7dsl_proc_snr1 (struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_snr_print(m, 1);
--   }
-- 
---int tn7dsl_proc_snr2 (char *buf, char **start, off_t offset, int count,
---                      int *eof, void *data)
--+static int tn7dsl_proc_snr1_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_snr_print(buf, count, eof, 2);
--+	return single_open(file, tn7dsl_proc_snr1, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_snr1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_snr1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int tn7dsl_proc_snr2 (struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_snr_print(m, 2);
--+}
--+
--+static int tn7dsl_proc_snr2_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_snr2, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_snr2_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_snr2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- //@Added bit allocation table per customer request. 05-14-2004
---int tn7dsl_proc_bit_allocation (char *buf, char **start, off_t offset,
---                                int count, int *eof, void *data)
--+static int tn7dsl_proc_bit_allocation (struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i, j;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 DSL Modem US Bit Allocation:");
--+  seq_printf(m, "\nAR7 DSL Modem US Bit Allocation:");
-- 
--   for(i=0; i<pIhw->AppData.max_us_tones; i++)
--     {
--     if (!(i%16))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+        seq_printf(m, "\n");
--     }
---    if(len <=limit)
---      len +=
---        sprintf (buf + len, "%02x ",
---                 (unsigned char) pIhw->AppData.BitAllocTblUstrm[i]);
--+    seq_printf (m, "%02x ",
--+                (unsigned char) pIhw->AppData.BitAllocTblUstrm[i]);
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\nAR7 DSL Modem DS Bit Allocation:\n");
--+  seq_printf(m, "\n\nAR7 DSL Modem DS Bit Allocation:\n");
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones/16; i++)
--   {
--     for(j=0;j<16;j++)
--     {
---      if(len <=limit)
---        len +=
---          sprintf (buf + len, "%02x ",
---                   (unsigned char) pIhw->AppData.BitAllocTblDstrm[i * 16 +
---                                                                  j]);
--+      seq_printf (m, "%02x ",
--+                  (unsigned char) pIhw->AppData.BitAllocTblDstrm[i * 16 +
--+                                                                 j]);
--     }
---    if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+    seq_printf(m, "\n");
--   }
-- 
---  return len;
--+  return 0;
--+}
--+
--+int tn7dsl_proc_bit_allocation_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_bit_allocation, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_bit_allocation_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_bit_allocation_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #ifndef NO_ACT
-- int tn7dsl_proc_ds_noise(char* buf, char **start, off_t offset, int count,
--                  int *eof, void *data)
--@@ -860,59 +891,48 @@ static char *pUnknown= "Unknown";
-- #ifdef ADV_DIAG_STATS //CQ10275, CQ10449
-- //UR8_MERGE_START CQ10449 Jack Zhang
-- 
---static int proc_adv_stats_header(char* buf, int limit);
--+static int proc_adv_stats_header(struct seq_file *m);
-- 
---int tn7dsl_proc_adv_stats(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_adv_stats(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   //char *cp = buf + offset;
--   char *cp = buf;
--   int i = 0;
--   int strt = 32;
---  static int ctr = 0;
-- 
-- //  printk("proc_adv_stats: buf=0x%X, ctr=%d, offset=%d, count=%d, eof=%d\n",
-- //             (unsigned int)buf, ctr, offset, count, *eof);
---  if( ctr == 0)
---  {
---    len = proc_adv_stats_header( cp, limit);
--+  proc_adv_stats_header(m);
-- 
---    if( len<=limit)
---      len += sprintf(cp+len, "\n\tBin No.\tBits:\tMargin:\tSNR\n");
---  }
---  else
---  {
---    strt = ctr;
---  }
--+  seq_printf(m, "\n\tBin No.\tBits:\tMargin:\tSNR\n");
-- 
--   for( i =strt; i<512; i++)
--   {
---    if(len<=limit)
---    {
---      len += sprintf(cp+len, "\t%u\t%u\t%u\t%d\n", i,
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
---    }
---    else
---    {
---      ctr = i;
---      //*eof = 0;
---      *(cp + len) = '\0';
---      printk("proc_adv_stats - return: ctr=%d, len=%d\n", ctr, len);
---      return len;
---    }
--   }
---  ctr = 0;
---  *eof = 1;
--   printk("proc_adv_stats - return: ctr=%d, len=%d\n", ctr, len);
---  return len;
--+  return 0;
--+}
--+
--+
--+static int tn7dsl_proc_adv_stats_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_adv_stats, PDE_DATA(inode));
-- }
-- 
---static int proc_adv_stats_header(char* buf, int limit)
--+struct file_operations tn7dsl_proc_adv_stats_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int proc_adv_stats_header(struct seq_file *m)
-- {
--   int len = 0;
--   int i = 0;
--@@ -921,66 +941,53 @@ static int proc_adv_stats_header(char* b
--    */
-- 
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 DSL Modem Advanced Statistics:\n");
--+  seq_printf(m, "\nAR7 DSL Modem Advanced Statistics:\n");
-- 
---  if(len<=limit)
--+  if(pIhw->lConnected != 1)
--   {
---    if(pIhw->lConnected != 1)
---    {
---      pIhw->AppData.USConRate = 0;
---      pIhw->AppData.DSConRate = 0;
---    }
---    len +=
---      sprintf (buf + len,
--+    pIhw->AppData.USConRate = 0;
--+    pIhw->AppData.DSConRate = 0;
--+  }
--+  seq_printf (m,
--                "\t[Connection Rate]\tUS:\t%u\tDS:\t%u\n",
--                    (unsigned int)pIhw->AppData.USConRate,
--                    (unsigned int)pIhw->AppData.DSConRate );
--   }
---  if(len<=limit)
-- //  UR8_MERGE_START CQ11054   Jack Zhang
--+  if (dslhal_api_getHighPrecision())
--   {
---    if (dslhal_api_getHighPrecision())
---    {
---      len +=
---        sprintf (buf + len, "\t[Margin]\tUS:\t%d.%u\tDS:\t\t%d.%u\n",
---                   gInt(pIhw->AppData.usMargin), gDot1(pIhw->AppData.usMargin),
---                   gInt(pIhw->AppData.dsMargin), gDot1(pIhw->AppData.dsMargin));
---    }
---    else
---    {
---      len +=
---        sprintf (buf + len, "\t[Margin]\tUS:\t%u\tDS:\t\t%u\n",
---                   (unsigned int)pIhw->AppData.usMargin,
---                   (unsigned int)pIhw->AppData.dsMargin/2 );
---    }
--+    seq_printf (m, "\t[Margin]\tUS:\t%d.%u\tDS:\t\t%d.%u\n",
--+                 gInt(pIhw->AppData.usMargin), gDot1(pIhw->AppData.usMargin),
--+                 gInt(pIhw->AppData.dsMargin), gDot1(pIhw->AppData.dsMargin));
--+  }
--+  else
--+  {
--+    seq_printf (m, "\t[Margin]\tUS:\t%u\tDS:\t\t%u\n",
--+                 (unsigned int)pIhw->AppData.usMargin,
--+                 (unsigned int)pIhw->AppData.dsMargin/2 );
--   }
-- //  UR8_MERGE_END   CQ11054*
-- 
--   /*
--    * Downstream/Upstream Interleaved Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Interleave path] US (TX):\tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Interleave path] US (TX):\tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usICRC_errors,
--                    (unsigned int)pIhw->AppData.usIFEC_errors);
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Interleave path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Interleave path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsICRC_errors,
--                    (unsigned int)pIhw->AppData.dsIFEC_errors);
--   /*
--    * Upstream/Downstream Fast Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Fast path] US (TX):  \tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Fast path] US (TX):  \tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usFCRC_errors,
--                    (unsigned int)pIhw->AppData.usFFEC_errors);
---  if(len<=limit)
---    len += sprintf(buf+len, "\t[Fast path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--+  seq_printf(m, "\t[Fast path] DS (RX):\tCRC: \t%u\tFEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsFCRC_errors,
--                    (unsigned int)pIhw->AppData.dsFFEC_errors);
-- 
---  return len;
--+  return 0;
-- }
-- 
-- static int getDiagDisplayMode()
--@@ -1003,29 +1010,24 @@ static int getDiagDisplayMode()
--     ret = 2;
--   return ret;
-- }
---int tn7dsl_proc_adv_stats1(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+int tn7dsl_proc_adv_stats1(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i;
--   int mode = 0;  //mode = 0 => ADSL1 or ADSL2 & 2+
--   unsigned char SNRpsds[512];
--   int n;
-- 
---  len = proc_adv_stats_header( buf+len, limit);
--+  proc_adv_stats_header( m);
--   mode = getDiagDisplayMode();
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\tBin No.\tBits:\tMargin:\tSNR (Part 1 of 3)\n");
--+  seq_printf(m, "\tBin No.\tBits:\tMargin:\tSNR (Part 1 of 3)\n");
-- 
--   if(mode==1) //ADSL1
--   {
--   for( i =32; i<128; i++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i,
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
--@@ -1036,26 +1038,34 @@ int tn7dsl_proc_adv_stats1(char* buf, ch
--     if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--     {
--       dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---      return len;
--+      return -EIO;
--     }
--     for( i =32; i<128; i++)
--     {
---      if(len<=limit)
---          len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i,
--+      seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (i<pIhw->AppData.max_ds_tones)?(unsigned char)SNRpsds[i]:0);
--     }
--   }
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_adv_stats2(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_adv_stats1_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_adv_stats1, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_adv_stats1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_adv_stats2(struct seq_file *m, void *data)
--+{
--   int i;
--   int mode = 0;  //mode = 0 => ADSL1 or ADSL2 & 2+
--   unsigned char SNRpsds[512];
--@@ -1065,12 +1075,10 @@ int tn7dsl_proc_adv_stats2(char* buf, ch
--   if( mode==1) //ADSL1
--   {
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---      len += sprintf(buf+len, "\tBin No.\tBits:\tMargin:\tSNR (Part 2 of 3):\n");
--+    seq_printf(m, "\tBin No.\tBits:\tMargin:\tSNR (Part 2 of 3):\n");
--     for( i =128; i<320; i++)
--     {
---  if(len<=limit)
---        len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i,
--+      seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
--@@ -1081,26 +1089,35 @@ int tn7dsl_proc_adv_stats2(char* buf, ch
--     if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--     {
--       dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---      return len;
--+      return -EIO;
--     }
--   for( i =128; i<320; i++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i,
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (i<pIhw->AppData.max_ds_tones)?(unsigned char)SNRpsds[i]:0);
--     }
--   }
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_adv_stats3(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_adv_stats2_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_adv_stats2, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_adv_stats2_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_adv_stats3(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int i;
--   int mode = 0;  //mode = 0 => ADSL1 or ADSL2 & 2+
--   unsigned char SNRpsds[512];
--@@ -1110,12 +1127,10 @@ int tn7dsl_proc_adv_stats3(char* buf, ch
--   if( mode==1) //ADSL1
--   {
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---      len += sprintf(buf+len, "\tBin No.\tBits:\tMargin:\tSNR (Part 3 of 3):\n");
--+    seq_printf(m, "\tBin No.\tBits:\tMargin:\tSNR (Part 3 of 3):\n");
--     for( i =320; i<512; i++)
--     {
---  if(len<=limit)
---        len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i,
--+      seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (int)pIhw->AppData.rxSnrPerBin0[i]);
--@@ -1126,283 +1141,287 @@ int tn7dsl_proc_adv_stats3(char* buf, ch
--     if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--     {
--       dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---      return len;
--+      return -EIO;
--     }
--   for( i =320; i<512; i++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "\t%u\t%u\t%u\t%d\n", i,
--+    seq_printf(m, "\t%u\t%u\t%u\t%d\n", i,
--                     (unsigned int)pIhw->AppData.BitAllocTblDstrm[i],
--                     (unsigned int)pIhw->AppData.marginTblDstrm[i],
--                     (i<pIhw->AppData.max_ds_tones)?(unsigned char)SNRpsds[i]:0);
--     }
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "[End of Stats]\n");
---  return len;
--+  seq_printf(m, "[End of Stats]\n");
--+  return 0;
-- }
---//UR8_MERGE_END  CQ10449
---//UR8_MERGE_START CQ10682   Jack Zhang
---int tn7dsl_proc_dbg_cmsgs(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+
--+static int tn7dsl_proc_adv_stats3_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_adv_stats3, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_adv_stats3_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_adv_stats3_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
--+//UR8_MERGE_END  CQ10449
--+//UR8_MERGE_START CQ10682   Jack Zhang
--+int tn7dsl_proc_dbg_cmsgs(struct seq_file *m, void *data)
--+{
--   int rc=0;
-- 
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (C-Msgs 1-5)..\n");
--+  seq_printf(m, "Training Messages (C-Msgs 1-5)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "ADSL2 DELT C-Msg1Ld \t Message Length:%d\n",
--+  seq_printf(m, "ADSL2 DELT C-Msg1Ld \t Message Length:%d\n",
--                             pIhw->adsl2DiagnosticMessages.cMsg1LdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg1LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg1Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg1Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg2LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg2LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg2LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg2Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg2Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg3LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg3LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg3LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg3Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg3Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg4LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg4LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg4LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg4Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg4Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT C-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg5LdLen);
--+  seq_printf(m, "\nADSL2 DELT C-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.cMsg5LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.cMsg5LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg5Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.cMsg5Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
---  return len;
--+  seq_printf(m, "\n");
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs1(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_cmsgs_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_cmsgs, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_dbg_cmsgs_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_cmsgs_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+int tn7dsl_proc_dbg_rmsgs1(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
-- 
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 1-3)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 1-3)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg1Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsg1LdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg1Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsg1LdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsg1LdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg1Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg1Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg2Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
-- 
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg2Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg2Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg3Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg3Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg3Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
---  return len;
--+  seq_printf(m, "\n");
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs2(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_rmsgs1_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs1, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_dbg_rmsgs1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
---  int len = 0;
---  int limit = count - 80;
--+
--+int tn7dsl_proc_dbg_rmsgs2(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
-- 
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 4-5)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 4-5)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg4Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg4Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg4Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      len += sprintf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg5Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg5Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg5Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
---  return len;
--+  seq_printf(m, "\n");
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs3(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_rmsgs2_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs2, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations _fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_dbg_rmsgs3(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
-- 
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 6-7)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 6-7)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg6Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg6Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg6Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg6Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg7Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg7Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg7Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg7Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_dbg_rmsgs4(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_dbg_rmsgs3_open(struct inode *inode, struct file *file)
-- {
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs3, PDE_DATA(inode));
--+}
-- 
---  int len = 0;
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_dbg_rmsgs3_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs3_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+int tn7dsl_proc_dbg_rmsgs4(struct seq_file *m, void *data)
--+{
-- 
--   int rc=0;
-- 
--   dslhal_api_gatherStatistics(pIhw);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "Training Messages (R-Msgs 8-9)..\n");
--+  seq_printf(m, "Training Messages (R-Msgs 8-9)..\n");
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg8Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg8Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg8Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg8Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nADSL2 DELT R-Msg9Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--+  seq_printf(m, "\nADSL2 DELT R-Msg9Ld \t Message Length:%d\n",pIhw->adsl2DiagnosticMessages.rMsgxLdLen);
--   for(rc=0;rc<pIhw->adsl2DiagnosticMessages.rMsgxLdLen;rc++)
--   {
---    if(len<=limit)
---      len += sprintf(buf+len, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg9Ld[rc]);
--+    seq_printf(m, "  %02x",(unsigned char)pIhw->adsl2DiagnosticMessages.rMsg9Ld[rc]);
--     if(rc!=0 && (rc%16==0))
---      if(len<=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--   }
---  if(len<=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_dbg_rmsgs4_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_dbg_rmsgs4, PDE_DATA(inode));
-- }
--+
--+struct file_operations tn7dsl_proc_dbg_rmsgs4_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_dbg_rmsgs4_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- //UR8_MERGE_END   CQ10682*
-- #endif //ADV_DIAG_STATS
-- 
---int tn7dsl_proc_stats(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_stats(struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  int limit = count - 80;
--   int F4count, F5count;
--   unsigned int maxRate=0;
--   unsigned int us_maxRate=0;
--@@ -1410,80 +1429,58 @@ int tn7dsl_proc_stats(char* buf, char **
--   //UR8_MERGE_START CQ10700 Manjula K
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
---  dev = (struct atm_dev *)data;
--+  int offset[2] = { 32, 0 };
--+  unsigned int usBitswap, dsBitswap;
--+  dev = (struct atm_dev *)m->private;
--   priv = (Tn7AtmPrivate *)dev->dev_data;
--   //UR8_MERGE_END CQ10700
-- 
--+
--   /*
--    * Read Ax5 Stats
--    */
-- 
--   dslhal_api_gatherStatistics(pIhw);
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 DSL Modem Statistics:\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "--------------------------------\n");
--+  seq_printf(m, "\nAR7 DSL Modem Statistics:\n");
--+  seq_printf(m, "--------------------------------\n");
--   /*
--    * us and ds Connection Rates
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "[DSL Modem Stats]\n");
--+  seq_printf(m, "[DSL Modem Stats]\n");
-- 
-- 
---  if(len<=limit)
--+  if(pIhw->lConnected != 1)
--   {
---    if(pIhw->lConnected != 1)
---    {
---      pIhw->AppData.USConRate = 0;
---      pIhw->AppData.DSConRate = 0;
---    }
---    len +=
---      sprintf (buf + len,
---               "\tUS Connection Rate:\t%u\tDS Connection Rate:\t%u\n",
---                   (unsigned int)pIhw->AppData.USConRate,
---                   (unsigned int)pIhw->AppData.DSConRate );
--+    pIhw->AppData.USConRate = 0;
--+    pIhw->AppData.DSConRate = 0;
--   }
---  if(len<=limit)
--+  seq_printf (m,
--+             "\tUS Connection Rate:\t%u\tDS Connection Rate:\t%u\n",
--+                 (unsigned int)pIhw->AppData.USConRate,
--+                 (unsigned int)pIhw->AppData.DSConRate );
-- //  UR8_MERGE_START CQ11054   Jack Zhang
---  {
---    if (dslhal_api_getHighPrecision())
---    {
---      len +=
---        sprintf (buf + len, "\tDS Line Attenuation:\t%u.%u\tDS Margin:\t\t%d.%u\n",
--+  if (dslhal_api_getHighPrecision())
--+    seq_printf (m, "\tDS Line Attenuation:\t%u.%u\tDS Margin:\t\t%d.%u\n",
--                    gInt(pIhw->AppData.dsLineAttn), gDot1(pIhw->AppData.dsLineAttn),
--                    gInt(pIhw->AppData.dsMargin), gDot1(pIhw->AppData.dsMargin));
---    }
---    else{
---      len +=
---        sprintf (buf + len, "\tDS Line Attenuation:\t%u\tDS Margin:\t\t%u\n",
--+  else
--+    seq_printf (m, "\tDS Line Attenuation:\t%u\tDS Margin:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.dsLineAttn/2,
--                    (unsigned int)pIhw->AppData.dsMargin/2 );
---    }
---  }
-- //  UR8_MERGE_END   CQ11054*
-- 
---  if(len<=limit)
-- //  UR8_MERGE_START CQ11054   Jack Zhang
---  {
---    if (dslhal_api_getHighPrecision())
---    {
---      len +=
---        sprintf (buf + len, "\tUS Line Attenuation:\t%u.%u\tUS Margin:\t\t%d.%u\n",
--+  if (dslhal_api_getHighPrecision())
--+    seq_printf (m, "\tUS Line Attenuation:\t%u.%u\tUS Margin:\t\t%d.%u\n",
--                    gInt(pIhw->AppData.usLineAttn), gDot1(pIhw->AppData.usLineAttn),
--                    gInt(pIhw->AppData.usMargin), gDot1(pIhw->AppData.usMargin));
---    }
---    else
---    {
---      len +=
---        sprintf (buf + len, "\tUS Line Attenuation:\t%u\tUS Margin:\t\t%u\n",
--+  else
--+    seq_printf (m, "\tUS Line Attenuation:\t%u\tUS Margin:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.usLineAttn/2,
--                    (unsigned int)pIhw->AppData.usMargin );
---    }
---  }
-- //  UR8_MERGE_END   CQ11054*
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\tUS Payload :\t\t%u\tDS Payload:\t\t%u\n",
--+  seq_printf(m, "\tUS Payload :\t\t%u\tDS Payload:\t\t%u\n",
--                     ((unsigned int) pIhw->AppData.usAtm_count[0] +
--                      (unsigned int) pIhw->AppData.usAtm_count[1]) * 48,
--                     ((unsigned int) pIhw->AppData.dsGood_count[0] +
--@@ -1491,9 +1488,7 @@ int tn7dsl_proc_stats(char* buf, char **
--   /*
--    * Superframe Count
--    */
---  if(len<=limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tUS Superframe Cnt :\t%u\tDS Superframe Cnt:\t%u\n",
--                    (unsigned int)pIhw->AppData.usSuperFrmCnt,
--                    (unsigned int)pIhw->AppData.dsSuperFrmCnt );
--@@ -1501,59 +1496,45 @@ int tn7dsl_proc_stats(char* buf, char **
--   /*
--    * US and DS power
--    */
---  if(len<=limit)
--+  if(pIhw->AppData.bState < 5)
--   {
---    if(pIhw->AppData.bState < 5)
---    {
---      pIhw->AppData.usTxPower = 0;
---      pIhw->AppData.dsTxPower = 0;
---    }
---    len +=
---      sprintf (buf + len,
--+    pIhw->AppData.usTxPower = 0;
--+    pIhw->AppData.dsTxPower = 0;
--+  }
--+  seq_printf (m,
-- // UR8_MERGE_START - CQ11579 - Jeremy #1
--                "\tUS Transmit Power :\t%d\tDS Transmit Power:\t%d\n",
--                    pIhw->AppData.usTxPower/256,
--                    pIhw->AppData.dsTxPower/256 );
-- // UR8_MERGE_END - CQ11579
---  }
--   /*
--    * DSL Stats Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLOS errors:\t\t%u\tSEF errors:\t\t%u\n",
--+  seq_printf(m, "\tLOS errors:\t\t%u\tSEF errors:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.LOS_errors,
--                    (unsigned int)pIhw->AppData.SEF_errors );
-- 
--   //UR8_MERGE_START Report_SES Manjula K
--   //CQ10369
---  if(len<=limit)
---    len += sprintf(buf+len, "\tErrored Seconds:\t%u\tSeverely Err Secs:\t%u\n",
--+  seq_printf(m, "\tErrored Seconds:\t%u\tSeverely Err Secs:\t%u\n",
--                    (unsigned int)pIhw->AppData.erroredSeconds,
--                    (unsigned int)pIhw->AppData.severelyerrsecs );
--   //UR8_MERGE_END Report_SES
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\tFrame mode:\t\t%u\tMax Frame mode:\t\t%u\n",
--+  seq_printf(m, "\tFrame mode:\t\t%u\tMax Frame mode:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.FrmMode,
--                    (unsigned int)pIhw->AppData.MaxFrmMode );
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTrained Path:\t\t%u\tUS Peak Cell Rate:\t%u\n",
--+  seq_printf (m, "\tTrained Path:\t\t%u\tUS Peak Cell Rate:\t%u\n",
--                    (unsigned int)pIhw->AppData.TrainedPath,
--                    (unsigned int)pIhw->AppData.USConRate*1000/8/53 );
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTrained Mode:\t\t%u\tSelected Mode:\t\t%u\n",
--+  seq_printf (m, "\tTrained Mode:\t\t%u\tSelected Mode:\t\t%u\n",
--                (unsigned int) pIhw->AppData.TrainedMode,
--                (unsigned int) pIhw->AppData.StdMode);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tATUC Vendor Code:\t%X\tATUC Revision:\t%u\n",
--+  seq_printf (m, "\tATUC Vendor Code:\t%X\tATUC Revision:\t%u\n",
--                (unsigned int) pIhw->AppData.atucVendorId,
--                pIhw->AppData.atucRevisionNum);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tHybrid Selected:\t%u\tTrellis:\t\t%u\n",
--+  seq_printf(m, "\tHybrid Selected:\t%u\tTrellis:\t\t%u\n",
--                    (unsigned int)pIhw->AppData.currentHybridNum, trellis);
-- 
--   //@Added Maximum attainable bit rate information. 05-14-2004
--@@ -1567,12 +1548,12 @@ int tn7dsl_proc_stats(char* buf, char **
--   }
--   else
--   {
---     int offset[2] = {5, 1};
--+     int dspOffset[2] = { 5, 1 };
--      unsigned char rMsgsRA[12];
--      int numPayloadBytes = 0;
-- 
--     dslhal_api_dspInterfaceRead (pIhw, (unsigned int) pIhw->pmainAddr, 2,
---                                 (unsigned int *) &offset,
--+                                 (unsigned int *) &dspOffset,
--                                  (unsigned char *) &rMsgsRA[0], 12);
-- 
--      maxRate = (unsigned int)pIhw->AppData.DSConRate;
--@@ -1588,294 +1569,223 @@ int tn7dsl_proc_stats(char* buf, char **
--      }
--   }
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tShowtime Count:\t\t%u\tDS Max Attainable Bit Rate: %u kbps\n",
--                    (unsigned int)pIhw->AppData.showtimeCount, maxRate);
-- 
---  if(len<=limit)
---  {
---    int offset[2] = {32, 0};
---    unsigned int usBitswap, dsBitswap;
---
---    tn7dsl_generic_read(2, (unsigned int *)&offset);
---    dsBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
--+  tn7dsl_generic_read(2, (unsigned int *)&offset);
--+  dsBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
-- 
---    offset[0] = 33;
---    tn7dsl_generic_read(2, (unsigned int *)&offset);
---    usBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
--+  offset[0] = 33;
--+  tn7dsl_generic_read(2, (unsigned int *)&offset);
--+  usBitswap = dslReg & dslhal_support_byteSwap32(0x000000ff);
-- 
-- // UR8_MERGE_START - CQ11579 - Jeremy
---    if((pIhw->AppData.dsl_modulation > 5) && (pIhw->AppData.dsl_modulation != 128))
--+  if((pIhw->AppData.dsl_modulation > 5) && (pIhw->AppData.dsl_modulation != 128))
-- // UR8_MERGE_END - CQ11579 - Jeremy
---      len +=
---        sprintf (buf + len,
--+    seq_printf (m,
--                  "\tBitSwap:\t\t%u\tUS Max Attainable Bit Rate: %u bps\n",
--                    (unsigned int)(usBitswap && dsBitswap), us_maxRate);
---    else
---      len +=
---        sprintf (buf + len,
--+  else
--+    seq_printf (m,
--                  "\tBitSwap:\t\t%u\tUS Max Attainable Bit Rate:\tn/a\n",
--                    (unsigned int)(usBitswap && dsBitswap));
---  }
-- 
-- #if 1 // TR69
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tAnnex: \t\t\t%s\tpsd_mask_qualifier: 0x%04x\n",
--+  seq_printf (m, "\tAnnex: \t\t\t%s\tpsd_mask_qualifier: 0x%04x\n",
--              tn7dsl_AnnexFromNum(pIhw->AppData.annex_selected),
--              pIhw->AppData.psd_mask_qualifier);
-- 
-- //  UR8_MERGE_START CQ10979   Jack Zhang
-- //  UR8_MERGE_START CQ10978   Jack Zhang
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tPower Management Status: L%d\tDS HLINSC: %d\n",
--+  seq_printf (m, "\tPower Management Status: L%d\tDS HLINSC: %d\n",
--              pIhw->AppData.pwrStatus, pIhw->AppData.dsHLINSC);
-- //  UR8_MERGE_END   CQ10978*
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tUS ACTPSD: \t\t%d\tDS ACTPSD: %d\n",
--+  seq_printf (m, "\tUS ACTPSD: \t\t%d\tDS ACTPSD: %d\n",
--              pIhw->AppData.usACTPSD, pIhw->AppData.dsACTPSD);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTotal init. errors: \t%d\tTotal init. timeouts: %d\n",
--+  seq_printf (m, "\tTotal init. errors: \t%d\tTotal init. timeouts: %d\n",
--              pIhw->AppData.totalInitErrs, pIhw->AppData.totalInitTOs);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tShowtime init. errors: \t%d\tShowtime init. timeouts: %d\n",
--+  seq_printf (m, "\tShowtime init. errors: \t%d\tShowtime init. timeouts: %d\n",
--              pIhw->AppData.showtimeInitErrs, pIhw->AppData.showtimeInitTOs);
-- 
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tLast showtime init. errors: %d\tLast showtime init. timeouts: %d\n",
--+  seq_printf (m, "\tLast showtime init. errors: %d\tLast showtime init. timeouts: %d\n",
--              pIhw->AppData.lastshowInitErrs, pIhw->AppData.lastshowInitTOs);
-- //  UR8_MERGE_END   CQ10979*
-- 
---  if (len<=limit)
---  {
---    len += sprintf(buf+len,"\tATUC ghsVid: ");
---    for (i=0; i<8; i++)
---      len+= sprintf(buf+len, " %02x", pIhw->AppData.ghsATUCVendorId[i]);
---  }
--+  seq_printf(m,"\tATUC ghsVid: ");
--+  for (i=0; i<8; i++)
--+    seq_printf(m, " %02x", pIhw->AppData.ghsATUCVendorId[i]);
-- 
---  if (len<=limit)
---  {
---    len += sprintf (buf + len, "\n");
---  }
--+  seq_printf (m, "\n");
-- 
---  if (len <= limit)
---  {
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tT1413Vid: %02x %02x\t\tT1413Rev: %02x\t\tVendorRev: %02x\n",
--                pIhw->AppData.t1413ATUC.VendorId[0],
--                pIhw->AppData.t1413ATUC.VendorId[1],
--       pIhw->AppData.t1413ATUC.t1413Revision,
--       pIhw->AppData.t1413ATUC.VendorRevision);
---  }
-- 
---  if (len<=limit)
---  {
---    len += sprintf(buf+len,"\tATUR ghsVid: ");
---    for (i=0; i<8; i++)
---      len+= sprintf(buf+len, " %02x", pIhw->AppData.ghsATURVendorId[i]);
---  }
--+  seq_printf(m,"\tATUR ghsVid: ");
--+  for (i=0; i<8; i++)
--+    seq_printf(m, " %02x", pIhw->AppData.ghsATURVendorId[i]);
-- 
---  if (len<=limit)
---  {
---    len += sprintf (buf + len, "\n");
---  }
--+  seq_printf (m, "\n");
-- 
---  if (len <= limit)
---  {
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tT1413Vid: %02x %02x\tT1413Rev: %02x\tVendorRev: %02x\n",
--                pIhw->AppData.t1413ATUR.VendorId[0],
--                pIhw->AppData.t1413ATUR.VendorId[1],
--       pIhw->AppData.t1413ATUR.t1413Revision,
--       pIhw->AppData.t1413ATUR.VendorRevision);
---  }
-- 
-- #ifdef AR7_EFM
---  if (len <= limit)
---  {
---    len += sprintf(buf + len, "\tTC Mode: %s\n",
--+  seq_printf(m, "\tTC Mode: %s\n",
--       (priv->curr_TC_mode == TC_MODE_PTM) ? "PTM" : "ATM");
---  }
-- #endif
-- 
-- #endif
--   /*
--    * Upstream Interleaved Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Upstream (TX) Interleave path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Upstream (TX) Interleave path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.usICRC_errors,
--                    (unsigned int)pIhw->AppData.usIFEC_errors,
--                    (unsigned int)pIhw->AppData.usINCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usILCD_errors,
--                    (unsigned int)pIhw->AppData.usIHEC_errors);
--   /*
--    * Downstream Interleaved Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Downstream (RX) Interleave path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Downstream (RX) Interleave path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsICRC_errors,
--                    (unsigned int)pIhw->AppData.dsIFEC_errors,
--                    (unsigned int)pIhw->AppData.dsINCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsILCD_errors,
--                    (unsigned int)pIhw->AppData.dsIHEC_errors);
--   /*
--    * Upstream Fast Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Upstream (TX) Fast path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Upstream (TX) Fast path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.usFCRC_errors,
--                    (unsigned int)pIhw->AppData.usFFEC_errors,
--                    (unsigned int)pIhw->AppData.usFNCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--                    (unsigned int)pIhw->AppData.usFLCD_errors,
--                    (unsigned int)pIhw->AppData.usFHEC_errors);
--   /*
--    * Downstream Fast Errors
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Downstream (RX) Fast path]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--+  seq_printf(m, "\n\t[Downstream (RX) Fast path]\n");
--+  seq_printf(m, "\tCRC: \t%u\tFEC: \t%u\tNCD: \t%u\n",
--                    (unsigned int)pIhw->AppData.dsFCRC_errors,
--                    (unsigned int)pIhw->AppData.dsFFEC_errors,
--                    (unsigned int)pIhw->AppData.dsFNCD_error);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tLCD: \t%u\tHEC: \t%u\n",
---                   (unsigned int)pIhw->AppData.dsFLCD_errors,
---                   (unsigned int)pIhw->AppData.dsFHEC_errors);
--+  seq_printf(m, "\tLCD: \t%u\tHEC: \t%u\n",
--+             (unsigned int)pIhw->AppData.dsFLCD_errors,
--+             (unsigned int)pIhw->AppData.dsFHEC_errors);
-- 
--   /*
--    * ATM stats upstream
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n[ATM Stats]");
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Upstream/TX]\n");
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\n",
---               (unsigned int) pIhw->AppData.usAtm_count[0] +
---               (unsigned int) pIhw->AppData.usAtm_count[1],
---               (unsigned int) pIhw->AppData.usIdle_count[0] +
---               (unsigned int) pIhw->AppData.usIdle_count[1]);
--+  seq_printf(m, "\n[ATM Stats]");
--+  seq_printf(m, "\n\t[Upstream/TX]\n");
--+  seq_printf (m, "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\n",
--+              (unsigned int) pIhw->AppData.usAtm_count[0] +
--+              (unsigned int) pIhw->AppData.usAtm_count[1],
--+              (unsigned int) pIhw->AppData.usIdle_count[0] +
--+              (unsigned int) pIhw->AppData.usIdle_count[1]);
-- //UR8_MERGE_START CQ10700 Manjula K
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
--+  seq_printf (m,
--                "\tTx Packets Dropped Count:\t%lu\n\tTx Bad Packets Count:\t%lu\n",
--                priv->stats.tx_dropped, priv->stats.tx_errors);
-- //UR8_MERGE_END CQ10700
--   /*
--    * ATM stats downstream
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n\t[Downstream/RX)]\n");
---  if(len<=limit)
---    len +=
---      sprintf (buf + len,
---               "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\tBad Hec Cell Cnt:\t%u\n",
---               (unsigned int) pIhw->AppData.dsGood_count[0] +
---               (unsigned int) pIhw->AppData.dsGood_count[1],
---               (unsigned int) pIhw->AppData.dsIdle_count[0] +
---               (unsigned int) pIhw->AppData.dsIdle_count[1],
---               (unsigned int) pIhw->AppData.dsBadHec_count[0] +
---               (unsigned int) pIhw->AppData.dsBadHec_count[1]);
---  if(len<=limit)
---    len += sprintf(buf+len, "\tOverflow Dropped Cell Cnt:\t%u\n",
---                    (unsigned int) pIhw->AppData.dsOVFDrop_count[0] +
---                    (unsigned int) pIhw->AppData.dsOVFDrop_count[1]);
--+  seq_printf(m, "\n\t[Downstream/RX)]\n");
--+  seq_printf (m,
--+              "\tGood Cell Cnt:\t%u\n\tIdle Cell Cnt:\t%u\n\tBad Hec Cell Cnt:\t%u\n",
--+              (unsigned int) pIhw->AppData.dsGood_count[0] +
--+              (unsigned int) pIhw->AppData.dsGood_count[1],
--+              (unsigned int) pIhw->AppData.dsIdle_count[0] +
--+              (unsigned int) pIhw->AppData.dsIdle_count[1],
--+              (unsigned int) pIhw->AppData.dsBadHec_count[0] +
--+              (unsigned int) pIhw->AppData.dsBadHec_count[1]);
--+  seq_printf(m, "\tOverflow Dropped Cell Cnt:\t%u\n",
--+             (unsigned int) pIhw->AppData.dsOVFDrop_count[0] +
--+             (unsigned int) pIhw->AppData.dsOVFDrop_count[1]);
-- 
--  //UR8_MERGE_START CQ10700 Manjula K
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
---               "\tRx Packets Dropped Count:\t%lu\n\tRx Bad Packets Count:\t%lu\n\n",
---               priv->stats.rx_dropped, priv->stats.rx_errors);
--+  seq_printf (m,
--+              "\tRx Packets Dropped Count:\t%lu\n\tRx Bad Packets Count:\t%lu\n\n",
--+              priv->stats.rx_dropped, priv->stats.rx_errors);
-- //UR8_MERGE_END CQ10700
-- 
--   tn7sar_get_stats(pIhw->pOsContext);
---  if(len<=limit)
---    len += sprintf(buf+len, "\n[SAR AAL5 Stats]\n");
---  if(len<=limit)
---    len += sprintf(buf+len, "\tTx PDU's:\t%u\n\tRx PDU's:\t%u\n",
---                    sarStat.txPktCnt, sarStat.rxPktCnt);
---  if(len<=limit)
---    len +=
---      sprintf (buf + len, "\tTx Total Bytes:\t%u\n\tRx Total Bytes:\t%u\n",
---               sarStat.txBytes, sarStat.rxBytes);
---  if (len <= limit)
---    len +=
---      sprintf (buf + len,
---               "\tTx Total Error Counts:\t%u\n\tRx Total Error Counts:\t%u\n\n",
---               sarStat.txErrors, sarStat.rxErrors);
--+  seq_printf(m, "\n[SAR AAL5 Stats]\n");
--+  seq_printf(m, "\tTx PDU's:\t%u\n\tRx PDU's:\t%u\n",
--+             sarStat.txPktCnt, sarStat.rxPktCnt);
--+  seq_printf (m, "\tTx Total Bytes:\t%u\n\tRx Total Bytes:\t%u\n",
--+              sarStat.txBytes, sarStat.rxBytes);
--+  seq_printf (m,
--+              "\tTx Total Error Counts:\t%u\n\tRx Total Error Counts:\t%u\n\n",
--+              sarStat.txErrors, sarStat.rxErrors);
-- 
--   /*
--    * oam loopback info
--    */
---  if(len<=limit)
---    len += sprintf(buf+len, "\n[OAM Stats]\n");
--+  seq_printf(m, "\n[OAM Stats]\n");
-- 
--   tn7sar_get_near_end_loopback_count(&F4count, &F5count);
-- 
---  if(len<=limit)
---    {
---    len +=
---      sprintf (buf + len,
---               "\tNear End F5 Loop Back Count:\t%u\n\tNear End F4 Loop Back Count:\t%u\n\tFar End F5 Loop Back Count:\t%u\n\tFar End F4 Loop Back Count:\t%u\n",
--+  seq_printf (m,
--+              "\tNear End F5 Loop Back Count:\t%u\n\tNear End F4 Loop Back Count:\t%u\n\tFar End F5 Loop Back Count:\t%u\n\tFar End F4 Loop Back Count:\t%u\n",
--                F5count, F4count, oamFarLBCount[0] + oamFarLBCount[2],
--                   oamFarLBCount[1] + oamFarLBCount[3]);
---    }
-- 
-- #define USE_OAM_DROP_COUNT   //CQ10273
--   //Read OAM ping responses count:
-- #ifdef USE_OAM_DROP_COUNT
---  if(len<=limit)
---  {
---  /*  len +=
---      sprintf (buf + len,
---               "\tSAR OAM Retry in 0x%X cycles, Drop Count=%d\n",
---               tn7dsl_get_memory(0xa30085cc), tn7dsl_get_memory(0xa30085c4)); */
--+/*  seq_printf (m,
--+              "\tSAR OAM Retry in 0x%X cycles, Drop Count=%d\n",
--+              tn7dsl_get_memory(0xa30085cc), tn7dsl_get_memory(0xa30085c4)); */
-- 
---    len += sprintf (buf + len, "\tSAR OAM Ping Response Drop Count=%d\n",
---               tn7dsl_get_memory(0xa30085b0));
---  }
--+  seq_printf (m, "\tSAR OAM Ping Response Drop Count=%d\n",
--+              tn7dsl_get_memory(0xa30085b0));
-- #endif // USE_OAM_DROP_COUNT
-- 
---  return len;
--+  return 0;
-- }
-- 
---int tn7dsl_proc_modem(char* buf, char **start, off_t offset, int count,
---                 int *eof, void *data)
--+static int tn7dsl_proc_stats_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_stats, PDE_DATA(inode));
--+}
--+
--+int tn7dsl_proc_write_stats(struct file *fp, const char * buf, unsigned long count, void * data);
--+
--+struct file_operations tn7dsl_proc_stats_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_stats_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+	.write		= tn7dsl_proc_write_stats,
--+};
--+
--+static int tn7dsl_proc_modem(struct seq_file *m, void *data)
-- {
-- #ifdef AR7_EFM
-- extern int tn7efm_get_currTCmode(void);
-- #endif
---  int len = 0;
---  int limit = count - 80;
--   char *state;
--   int tag;
-- 
--@@ -1909,22 +1819,31 @@ extern int tn7efm_get_currTCmode(void);
-- 
--   if(pIhw->lConnected == 1)
--     state = "SHOWTIME";
---  if(len<=limit)
---    len += sprintf(buf+len,"%s\n",state);
---  if(len<=limit)
---    len += sprintf(buf+len, "%d\n", dslReg);
---  if(len<=limit)
---    len += sprintf(buf+len, "failTrains=%d\n", pIhw->AppData.trainFails);
--+  seq_printf(m,"%s\n",state);
--+  seq_printf(m, "%d\n", dslReg);
--+  seq_printf(m, "failTrains=%d\n", pIhw->AppData.trainFails);
-- 
-- #ifdef AR7_EFM
---  if (len<=limit)
---    len += sprintf(buf+len, "TCMODE=%s\n", 
---      tn7efm_get_currTCmode()== TC_MODE_PTM ? "EFM" : "ATM");
--+  seq_printf(m, "TCMODE=%s\n", 
--+    tn7efm_get_currTCmode()== TC_MODE_PTM ? "EFM" : "ATM");
-- #endif
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_modem_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_modem, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_modem_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_modem_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- /**********************************************************************
-- **                                                                    *
-- **  tn7dsl_hdlc_update_crc() -- Calculate CRC                         *
--@@ -2189,11 +2108,8 @@ static int tn7dsl_hdlc_rx_process(unsign
--   return(ret);
-- }
-- 
---int tn7dsl_proc_eoc (char *buf, char **start, off_t OffSet, int count,
---                     int *eof, void *data)
--+static int tn7dsl_proc_eoc (struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   int offset[2] = {34, 0};  // point to buffer parameter data structure
--   clearEocParm_t   peoc;
-- 
--@@ -2202,62 +2118,49 @@ int tn7dsl_proc_eoc (char *buf, char **s
--                                (unsigned char *) &peoc,
--                                sizeof (clearEocParm_t));
-- 
---  if (len <= limit)
---     len += sprintf(buf+len, "\nClear EOC Channel:\n\n");
---  if (len <= limit)
---     len += sprintf(buf+len, "  Enabled:\t%d\n", dslhal_support_byteSwap32(peoc.clearEocEnabled));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[0]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[1]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[2]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[3]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[0]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[1]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[2]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  RxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[3]));
---  if (len <= limit)
---     len += sprintf(buf+len, "  txRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txRdIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  txWrIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txWrIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  rxRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.rxRdIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  rxWrIndex:\t%d\n\n", dslhal_support_byteSwap32(peoc.rxWrIndex));
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalTxPkts:\t%d\n", EocTxTotalPackets);
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalRxPkts:\t%d\n", EocRxTotalPackets);
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalTxBytes:\t%d\n", EocTxTotalBytes);
---  if (len <= limit)
---     len += sprintf(buf+len, "  TotalRxBytes:\t%d\n\n", EocRxTotalBytes);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrBufFull:\t%d\n", ErrEocBufFull);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrBufIndx:\t%d\n", ErrEocBufIndex);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrBufMax:\t%d\n", ErrEocBufMax);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrMsgMax:\t%d\n", ErrEocMsgOversized);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrTxHDLC:\t%d\n", ErrEocTxHdlcCRC);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrRxHDLC:\t%d\n", ErrEocRxHdlcCRC);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrRxSnmp:\t%d\n", ErrEocRxHdlcFraming);
---  if (len <= limit)
---     len += sprintf(buf+len, "  ErrRxPush:\t%d\n\n", ErrEocRxPush);
--+  seq_printf(m, "\nClear EOC Channel:\n\n");
--+  seq_printf(m, "  Enabled:\t%d\n", dslhal_support_byteSwap32(peoc.clearEocEnabled));
--+  seq_printf(m, "  TxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[0]));
--+  seq_printf(m, "  TxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[1]));
--+  seq_printf(m, "  TxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[2]));
--+  seq_printf(m, "  TxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pTxBufDesc[3]));
--+  seq_printf(m, "  RxBuf[0]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[0]));
--+  seq_printf(m, "  RxBuf[1]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[1]));
--+  seq_printf(m, "  RxBuf[2]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[2]));
--+  seq_printf(m, "  RxBuf[3]:\t0x%08x\n", dslhal_support_byteSwap32((unsigned int)peoc.pRxBufDesc[3]));
--+  seq_printf(m, "  txRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txRdIndex));
--+  seq_printf(m, "  txWrIndex:\t%d\n", dslhal_support_byteSwap32(peoc.txWrIndex));
--+  seq_printf(m, "  rxRdIndex:\t%d\n", dslhal_support_byteSwap32(peoc.rxRdIndex));
--+  seq_printf(m, "  rxWrIndex:\t%d\n\n", dslhal_support_byteSwap32(peoc.rxWrIndex));
--+  seq_printf(m, "  TotalTxPkts:\t%d\n", EocTxTotalPackets);
--+  seq_printf(m, "  TotalRxPkts:\t%d\n", EocRxTotalPackets);
--+  seq_printf(m, "  TotalTxBytes:\t%d\n", EocTxTotalBytes);
--+  seq_printf(m, "  TotalRxBytes:\t%d\n\n", EocRxTotalBytes);
--+  seq_printf(m, "  ErrBufFull:\t%d\n", ErrEocBufFull);
--+  seq_printf(m, "  ErrBufIndx:\t%d\n", ErrEocBufIndex);
--+  seq_printf(m, "  ErrBufMax:\t%d\n", ErrEocBufMax);
--+  seq_printf(m, "  ErrMsgMax:\t%d\n", ErrEocMsgOversized);
--+  seq_printf(m, "  ErrTxHDLC:\t%d\n", ErrEocTxHdlcCRC);
--+  seq_printf(m, "  ErrRxHDLC:\t%d\n", ErrEocRxHdlcCRC);
--+  seq_printf(m, "  ErrRxSnmp:\t%d\n", ErrEocRxHdlcFraming);
--+  seq_printf(m, "  ErrRxPush:\t%d\n\n", ErrEocRxPush);
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_eoc_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_eoc, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_eoc_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_eoc_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- int tn7dsl_clear_eoc_setup(void)
-- {
--   int   i;
--@@ -4591,14 +4494,10 @@ int tn7dsl_proc_write_stats (struct file
-- }
-- 
-- 
---int tn7dsl_proc_train_mode_export (char *buf, char **start, off_t offset,
---                                   int count, int *eof, void *data)
--+static int tn7dsl_proc_train_mode_export (struct seq_file *m, void *data)
-- {
-- 
---  int len = 0;
---  char *cp = buf + offset;
--   int i = 0;
---  static int ctr = 0;
-- 
--   typedef struct
--   {
--@@ -4679,197 +4578,185 @@ int tn7dsl_proc_train_mode_export (char
--   }
-- 
-- 
---    if(len <= count)
---    {
---        for (i = ctr; ((i < num_entries)&& (len <= count)) ; i++)
---        {
---      /*
---       * Write the current string only if we can fit it into the buffer
---       */
---            if((strlen(dsl_modes[i].mode_name) + 6 + len) <= count)
---        {
---                len += snprintf(cp+len, (count - len), "%s\t\t\t%#x\n",
---                                    dsl_modes[i].mode_name, dsl_modes[i].mode_value);
---            }
---            else
---                break;
---        }
---    }
---
---  /*
---   * Data was completely written
---   */
---    if (i >= num_entries)
--+  for (i = 0; (i < num_entries) ; i++)
--     {
---    /*
---     * We are done with this
---     */
---        *eof = 1;
---        ctr = 0;
--+              seq_printf(m, "%s\t\t\t%#x\n",
--+                         dsl_modes[i].mode_name, dsl_modes[i].mode_value);
--     }
---    else
---    {
---    /*
---     * We have not been able to write the complete data, and we have to nul
---     * terminate the buffer.
---        */
---        *(cp + len) = '\0';
-- 
---    /*
---     * Save the value of the counter for the next read for the rest of the
---     * data.
---        */
---        ctr = i;
---    }
---
---    return len;
--+    return 0;
-- }
-- 
---#ifndef NO_ADV_STATS
---int tn7dsl_proc_SNRpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_train_mode_export_open(struct inode *inode, struct file *file)
-- {
---  int len = 0;
---
--+	return single_open(file, tn7dsl_proc_train_mode_export, PDE_DATA(inode));
--+}
-- 
--+struct file_operations tn7dsl_proc_train_mode_export_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_train_mode_export_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
---  int limit = count - 80;
--+#ifndef NO_ADV_STATS
--+int tn7dsl_proc_SNRpsds(struct seq_file *m, void *data)
--+{
--   int i;
--   unsigned char SNRpsds[512];
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 SNRpsds:");
--+  seq_printf(m, "\nAR7 SNRpsds:");
-- 
--   if (dslhal_api_getSNRpsds(pIhw, SNRpsds, 1))
--   {
--     dgprintf(4, "dslhal_api_getSNRpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones; i++)
--   {
--     if (!(i%16))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "%d ", (unsigned char)SNRpsds[i]);
--+    seq_printf(m, "%d ", (unsigned char)SNRpsds[i]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
-- 
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_SNRpsds_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_SNRpsds, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7dsl_proc_SNRpsds_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_SNRpsds_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif
-- 
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_QLNpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_QLNpsds(struct seq_file *m, void *data)
-- {
---  int len = 0;
---
---  int limit = count - 80;
--   unsigned char QLNpsds[512];
--   int i;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 QLNpsds:");
--+  seq_printf(m, "\nAR7 QLNpsds:");
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getQLNpsds(pIhw, QLNpsds, 0))
--   {
--     dgprintf(4, "dslhal_api_getQLNpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones; i++)
--   {
--     if (!(i%16))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "%d ", (unsigned char)QLNpsds[i]);
--+    seq_printf(m, "%d ", (unsigned char)QLNpsds[i]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
-- 
---  return len;
--+  return 0;
-- }
--+
--+static int tn7dsl_proc_QLNpsds_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_QLNpsds, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7dsl_proc_QLNpsds_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_QLNpsds_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif
-- 
-- //  UR8_MERGE_START CQ10979   Jack Zhang
-- #ifdef TR69_HLIN_IN
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_HLINpsds(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds(struct seq_file *m, void *data)
-- {
---  int len = 0;
---
---  int limit = count - 80;
--   short HLINpsds[2*512];
--   int i;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 HLINpsds:");
--+  seq_printf(m, "\nAR7 HLINpsds:");
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getHLINpsds(pIhw, (unsigned char *)HLINpsds, 1))
--   {
--     dgprintf(4, "dslhal_api_getHLINpsds failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
--   for (i=0; i<pIhw->AppData.max_ds_tones; i++)
--   {
--     if (!(i%8))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n");
--+      seq_printf(m, "\n");
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--+    seq_printf(m, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
-- 
---  return len;
--+  return 0;
-- }
-- 
---static int tn7dsl_proc_HLINpsdsIndx(char* buf, char **start, off_t offset, int count,int *eof, void *data, int indx)
--+static int tn7dsl_proc_HLINpsds_open(struct inode *inode, struct file *file)
-- {
---  int len = 0;
--+	return single_open(file, tn7dsl_proc_HLINpsds, PDE_DATA(inode));
--+}
-- 
---  int limit = count - 80;
--+struct file_operations tn7dsl_proc_HLINpsds_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+static int tn7dsl_proc_HLINpsdsIndx(struct seq_file *m, void *data, int indx)
--+{
--   short HLINpsds[2*512];
--   int i;
--   int start=0, dim=128;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 HLINpsds: (section %d)", indx);
--+  seq_printf(m, "\nAR7 HLINpsds: (section %d)", indx);
-- 
--   if((indx > 2) && (pIhw->AppData.max_ds_tones <= 256))
--   {
---    if(len <=limit)
---      len += sprintf(buf+len, "\n[End of data]");
---    return len;
--+    seq_printf(m, "\n[End of data]");
--+    return 0;
--   }
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getHLINpsds(pIhw, (unsigned char *)HLINpsds, 1))
--   {
--     dgprintf(4, "dslhal_api_getHLINpsds failed!\n");
---    return len;
--+    return -1;
--   }
-- 
--   start = (indx -1) * 128;
--@@ -4878,39 +4765,89 @@ static int tn7dsl_proc_HLINpsdsIndx(char
--   {
--     if (!(i%8))
--     {
---      if(len <=limit)
---        len += sprintf(buf+len, "\n%d: ", i);
--+      seq_printf(m, "\n%d: ", i);
--     }
-- 
---    if(len <=limit)
---      len += sprintf(buf+len, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--+    seq_printf(m, "(%d,%d) ", HLINpsds[2*i], HLINpsds[2*i+1]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_HLINpsds1(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 1);
--+}
--+
--+static int tn7dsl_proc_HLINpsds2(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 2);
--+}
--+
--+static int tn7dsl_proc_HLINpsds3(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 3);
--+}
--+
--+static int tn7dsl_proc_HLINpsds4(struct seq_file *m, void *data)
--+{
--+  return tn7dsl_proc_HLINpsdsIndx(m, data, 4);
-- }
-- 
---int tn7dsl_proc_HLINpsds1(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds1_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 1);
--+	return single_open(file, tn7dsl_proc_HLINpsds1, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_HLINpsds2(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds2_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 2);
--+	return single_open(file, tn7dsl_proc_HLINpsds2, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_HLINpsds3(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds3_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 3);
--+	return single_open(file, tn7dsl_proc_HLINpsds3, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_HLINpsds4(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_HLINpsds4_open(struct inode *inode, struct file *file)
-- {
---  return tn7dsl_proc_HLINpsdsIndx(buf, start, offset, count,eof, data, 4);
--+	return single_open(file, tn7dsl_proc_HLINpsds4, PDE_DATA(inode));
-- }
--+
--+struct file_operations tn7dsl_proc_HLINpsds1_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds1_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+struct file_operations tn7dsl_proc_HLINpsds2_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds2_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+struct file_operations tn7dsl_proc_HLINpsds3_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds3_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+struct file_operations tn7dsl_proc_HLINpsds4_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_HLINpsds4_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif
-- #endif //TR69_HLIN_IN
-- //  UR8_MERGE_END   CQ10979*
--@@ -4918,64 +4855,48 @@ int tn7dsl_proc_HLINpsds4(char* buf, cha
-- // *    UR8_MERGE_START CQ11057   Jack Zhang
-- #ifdef TR69_PMD_IN
-- #ifndef NO_ADV_STATS
---int tn7dsl_proc_PMDus(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7dsl_proc_PMDus(struct seq_file *m, void *data)
-- {
---  int len = 0;
---
---  int limit = count - 80;
--   int i;
--   CoPMDTestParams_t  co_pmdtest_params;
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "\nAR7 US PMD Test:\n");
--+  seq_printf(m, "\nAR7 US PMD Test:\n");
-- 
--   // call API instead of access internal buf directly
--   if (dslhal_api_getPMDTestus(pIhw, &co_pmdtest_params, 0) != DSLHAL_ERROR_NO_ERRORS)
--   {
--     dgprintf(4, "dslhal_api_getPMDTestus failed!\n");
---    return len;
--+    return -EIO;
--   }
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "LATN=%d\n", co_pmdtest_params.co_latn);
--+  seq_printf(m, "LATN=%d\n", co_pmdtest_params.co_latn);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "SATN=%d\n", co_pmdtest_params.co_satn);
--+  seq_printf(m, "SATN=%d\n", co_pmdtest_params.co_satn);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "SNRM=%d\n", co_pmdtest_params.usMargin);
--+  seq_printf(m, "SNRM=%d\n", co_pmdtest_params.usMargin);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "attndr=%ld\n", co_pmdtest_params.co_attndr);
--+  seq_printf(m, "attndr=%ld\n", co_pmdtest_params.co_attndr);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "NearActatp=%d\n", co_pmdtest_params.co_near_actatp);
--+  seq_printf(m, "NearActatp=%d\n", co_pmdtest_params.co_near_actatp);
-- 
---  if(len<=limit)
---    len += sprintf(buf+len, "FarActatp=%d\n", co_pmdtest_params.co_far_actatp);
--+  seq_printf(m, "FarActatp=%d\n", co_pmdtest_params.co_far_actatp);
-- 
--   //HLOG
--   for (i=0; i<pIhw->AppData.max_us_tones; i++)
--   {
--     if (!(i%16))
---    {
---      if(len <=limit)
---        len += sprintf(buf+len, "\nHLOG(%3d):", i);
---    }
---    if(len <=limit)
---      len += sprintf(buf+len, " %d", co_pmdtest_params.TestParmCOHlogfMsg[i]);
--+      seq_printf(m, "\nHLOG(%3d):", i);
--+
--+    seq_printf(m, " %d", co_pmdtest_params.TestParmCOHlogfMsg[i]);
--   }
-- 
--   //QLN
--   for (i=0; i<pIhw->AppData.max_us_tones; i++)
--   {
--     if (!(i%16))
---    {
---      if(len <=limit)
---        len += sprintf(buf+len, "\nQLN(%3d):", i);
---    }
---    if(len <=limit)
---      len += sprintf(buf+len, " %d", co_pmdtest_params.TestParmCOQLNfMsg[i]);
--+      seq_printf(m, "\nQLN(%3d):", i);
--+
--+    seq_printf(m, " %d", co_pmdtest_params.TestParmCOQLNfMsg[i]);
-- 
--   }
-- 
--@@ -4983,19 +4904,28 @@ int tn7dsl_proc_PMDus(char* buf, char **
--   for (i=0; i<pIhw->AppData.max_us_tones; i++)
--   {
--     if (!(i%16))
---    {
---      if(len <=limit)
---        len += sprintf(buf+len, "\nSNR(%3d):", i);
---    }
---    if(len <=limit)
---      len += sprintf(buf+len, " %d", co_pmdtest_params.TestParmCOSNRfMsg[i]);
--+      seq_printf(m, "\nSNR(%3d):", i);
--+    seq_printf(m, " %d", co_pmdtest_params.TestParmCOSNRfMsg[i]);
--   }
-- 
---  if(len <=limit)
---    len += sprintf(buf+len, "\n");
--+  seq_printf(m, "\n");
-- 
---  return len;
--+  return 0;
--+}
--+
--+static int tn7dsl_proc_PMDus_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7dsl_proc_PMDus, PDE_DATA(inode));
-- }
--+
--+struct file_operations tn7dsl_proc_PMDus_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7dsl_proc_PMDus_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #endif //NO_ADV_STATS
-- #endif //TR69_PMD_IN
-- // *    UR8_MERGE_END   CQ11057 *
----- a/tn7sar.c
--+++ b/tn7sar.c
--@@ -1547,44 +1547,66 @@ int tn7sar_oam_generation(void *privCont
--   return 0;
-- }
-- 
---int tn7sar_proc_oam_ping(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7sar_proc_oam_ping(struct seq_file *m, void *data)
-- {
---  int len = 0;
--   unsigned int oam_ps = oamPingStatus;
-- 
--   if( oam_ps == OAM_PING_PENDING_RECVD )
--     oam_ps = OAM_PING_PENDING;  //jz  CQ9861: Only export the PENDING status, not internal state
-- 
---  len += sprintf(buf+len, "%d\n", oam_ps); //oamPingStatus);
--+  seq_printf(m, "%d\n", oam_ps); //oamPingStatus);
-- 
---  return len;
--+  return 0;
-- }
-- 
---int tn7sar_proc_pvc_table(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7sar_proc_oam_ping_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7sar_proc_oam_ping, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7sar_proc_oam_ping_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7sar_proc_oam_ping_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
--+
--+static int tn7sar_proc_pvc_table(struct seq_file *m, void *data)
-- {
---  int len = 0;
--   int i;
-- 
--   for(i=0;i<16;i++)
--   {
--     if(pvc_result[i].bInUse)
--     {
---      len += sprintf(buf+len, "%d,%d\n", pvc_result[i].vpi,pvc_result[i].vci);
--+      seq_printf(m, "%d,%d\n", pvc_result[i].vpi,pvc_result[i].vci);
--     }
--     else
--     {
---      len += sprintf(buf+len, "0,0\n");
--+      seq_printf(m, "0,0\n");
--     }
--   }
---  return len;
--+  return 0;
--+}
--+
--+static int tn7sar_proc_pvc_table_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7sar_proc_pvc_table, PDE_DATA(inode));
-- }
-- 
--+struct file_operations tn7sar_proc_pvc_table_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7sar_proc_pvc_table_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
-- 
-- 
---int tn7sar_proc_sar_stat(char* buf, char **start, off_t offset, int count,int *eof, void *data)
--+static int tn7sar_proc_sar_stat(struct seq_file *m, void *data)
-- {
---  int len = 0;
---  int limit = count - 80;
--   struct atm_dev *dev;
--   Tn7AtmPrivate *priv;
--   int i, j, k;
--@@ -1593,21 +1615,19 @@ int tn7sar_proc_sar_stat(char* buf, char
--   unsigned int *pStateBase, *pSarStat;
--   HAL_FUNCTIONS *pHalFunc;
--   HAL_DEVICE    *pHalDev;
---  int dBytes;
-- 
---  dev = (struct atm_dev *)data;
--+  dev = (struct atm_dev *)m->private;
--   priv = (Tn7AtmPrivate *)dev->dev_data;
-- 
--   pHalFunc = (HAL_FUNCTIONS *)priv->pSarHalFunc;
--   pHalDev  = (HAL_DEVICE *)priv->pSarHalDev;
-- 
---  len += sprintf(buf+len, "SAR HAL Statistics");
--+  seq_printf(m, "SAR HAL Statistics");
--   for(i=0;i<MAX_DMA_CHAN;i++)
--   {
--     if(priv->lut[i].inuse)
--     {
---      if(len<=limit)
---      len += sprintf(buf+len, "\nChannel %d:\n",priv->lut[i].chanid);
--+      seq_printf(m, "\nChannel %d:\n",priv->lut[i].chanid);
--       k=0;
--       for(j=0;j<4;j++)
--       {
--@@ -1620,26 +1640,18 @@ int tn7sar_proc_sar_stat(char* buf, char
--         {
--           if((char *)*pSarStat == NULL)
--             break;
---          if(len<=limit)
---          {
---            dBytes = sprintf(buf+len, "%s: ",(char *) *pSarStat);
---            len += dBytes;
---            k += dBytes;
---          }
--+
--+          seq_printf(m, "%s: ",(char *) *pSarStat);
--+          k += strlen((char *) *pSarStat) + strlen(": ");
--           pSarStat++;
---          if(len<=limit)
---          {
---            dBytes = sprintf(buf+len, "%s;  \n",(char *) *pSarStat);
---            len += dBytes;
---            k += dBytes;
---          }
--+          seq_printf(m, "%s;  \n",(char *) *pSarStat);
--+          k += strlen((char *) *pSarStat) + strlen(";  \n");
--           pSarStat++;
-- 
--           if(k > 60)
--           {
--             k=0;
---            if(len<=limit)
---            len += sprintf(buf+len, "\n");
--+            seq_printf(m, "\n");
--           }
--         }
-- 
--@@ -1648,9 +1660,22 @@ int tn7sar_proc_sar_stat(char* buf, char
--     }
--   }
-- 
---  return len;
--+  return 0;
-- }
-- 
--+static int tn7sar_proc_sar_stat_open(struct inode *inode, struct file *file)
--+{
--+	return single_open(file, tn7sar_proc_sar_stat, PDE_DATA(inode));
--+}
--+
--+struct file_operations tn7sar_proc_sar_stat_fops = {
--+	.owner 		= THIS_MODULE,
--+	.open		= tn7sar_proc_sar_stat_open,
--+	.read		= seq_read,
--+	.llseek		= seq_lseek,
--+	.release	= single_release,
--+};
--+
-- #ifdef AR7_EFM
-- void tn7sar_get_EFM_firmware_version(unsigned int *pdsp_version_ms, unsigned int *pdsp_version_ls)
-- {
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/240-3.18_fixes.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/240-3.18_fixes.patch
+-#define	WDT_IN_USE		0
+-#define	WDT_OK_TO_CLOSE		1
+-#define WDT_RUNNING		2
+-
+-static void wdt_refresh(unsigned long data)
+-{
+-	if (test_bit(WDT_RUNNING, &wdt_status)) {
+-		if (atomic_dec_and_test(&wdt_counter)) {
+-			printk(KERN_WARNING "Avila watchdog expired, expect a reboot soon!\n");
+-			clear_bit(WDT_RUNNING, &wdt_status);
+-			return;
+-		}
+-	}
+-
+-	/* strobe to the watchdog */
+-	gpio_line_set(14, IXP4XX_GPIO_HIGH);
+-	gpio_line_set(14, IXP4XX_GPIO_LOW);
+-
+-	mod_timer(&wdt_timer, jiffies + msecs_to_jiffies(500));
+-}
+-
+-static void wdt_enable(void)
+-{
+-	atomic_set(&wdt_counter, heartbeat * 2);
+-
+-	/* Disable clock generator output on GPIO 14/15 */
+-	*IXP4XX_GPIO_GPCLKR &= ~(1 << 8);
+-
+-	/* activate GPIO 14 out */
+-	gpio_line_config(14, IXP4XX_GPIO_OUT);
+-	gpio_line_set(14, IXP4XX_GPIO_LOW);
+-
+-	if (!test_bit(WDT_RUNNING, &wdt_status))
+-		wdt_refresh(0);
+-	set_bit(WDT_RUNNING, &wdt_status);
+-}
+-
+-static void wdt_disable(void)
+-{
+-	/* Re-enable clock generator output on GPIO 14/15 */
+-	*IXP4XX_GPIO_GPCLKR |= (1 << 8);
+-}
+-
+-static int avila_wdt_open(struct inode *inode, struct file *file)
+-{
+-	if (test_and_set_bit(WDT_IN_USE, &wdt_status))
+-		return -EBUSY;
+-
+-	clear_bit(WDT_OK_TO_CLOSE, &wdt_status);
+-	wdt_enable();
+-	return nonseekable_open(inode, file);
+-}
+-
+-static ssize_t
+-avila_wdt_write(struct file *file, const char *data, size_t len, loff_t *ppos)
+-{
+-	if (len) {
+-		if (!nowayout) {
+-			size_t i;
+-
+-			clear_bit(WDT_OK_TO_CLOSE, &wdt_status);
+-
+-			for (i = 0; i != len; i++) {
+-				char c;
+-
+-				if (get_user(c, data + i))
+-					return -EFAULT;
+-				if (c == 'V')
+-					set_bit(WDT_OK_TO_CLOSE, &wdt_status);
+-			}
+-		}
+-		wdt_enable();
+-	}
+-	return len;
+-}
+-
+-static struct watchdog_info ident = {
+-	.options	= WDIOF_CARDRESET | WDIOF_MAGICCLOSE |
+-			  WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING,
+-	.identity	= "Avila Watchdog",
+-};
+-
+-
+-static long avila_wdt_ioctl(struct file *file, unsigned int cmd,
+-							unsigned long arg)
+-{
+-	int ret = -ENOTTY;
+-	int time;
+-
+-	switch (cmd) {
+-	case WDIOC_GETSUPPORT:
+-		ret = copy_to_user((struct watchdog_info *)arg, &ident,
+-				   sizeof(ident)) ? -EFAULT : 0;
+-		break;
+-
+-	case WDIOC_GETSTATUS:
+-		ret = put_user(0, (int *)arg);
+-		break;
+-
+-	case WDIOC_KEEPALIVE:
+-		wdt_enable();
+-		ret = 0;
+-		break;
+-
+-	case WDIOC_SETTIMEOUT:
+-		ret = get_user(time, (int *)arg);
+-		if (ret)
+-			break;
+-
+-		if (time <= 0 || time > 60) {
+-			ret = -EINVAL;
+-			break;
+-		}
+-
+-		heartbeat = time;
+-		wdt_enable();
+-		/* Fall through */
+-
+-	case WDIOC_GETTIMEOUT:
+-		ret = put_user(heartbeat, (int *)arg);
+-		break;
+-	}
+-	return ret;
+-}
+-
+-static int avila_wdt_release(struct inode *inode, struct file *file)
+-{
+-	if (test_bit(WDT_OK_TO_CLOSE, &wdt_status))
+-		wdt_disable();
+-	else
+-		printk(KERN_CRIT "WATCHDOG: Device closed unexpectedly - "
+-					"timer will not stop\n");
+-	clear_bit(WDT_IN_USE, &wdt_status);
+-	clear_bit(WDT_OK_TO_CLOSE, &wdt_status);
+-
+-	return 0;
+-}
+-
+-
+-static const struct file_operations avila_wdt_fops = {
+-	.owner		= THIS_MODULE,
+-	.llseek		= no_llseek,
+-	.write		= avila_wdt_write,
+-	.unlocked_ioctl	= avila_wdt_ioctl,
+-	.open		= avila_wdt_open,
+-	.release	= avila_wdt_release,
+-};
+-
+-static struct miscdevice avila_wdt_miscdev = {
+-	.minor		= WATCHDOG_MINOR + 1,
+-	.name		= "avila_watchdog",
+-	.fops		= &avila_wdt_fops,
+-};
+-
+-static int __init avila_wdt_init(void)
+-{
+-	int ret;
+-
+-	init_timer(&wdt_timer);
+-	wdt_timer.expires = 0;
+-	wdt_timer.data = 0;
+-	wdt_timer.function = wdt_refresh;
+-	ret = misc_register(&avila_wdt_miscdev);
+-	if (ret == 0)
+-		printk(KERN_INFO "Avila Watchdog Timer: heartbeat %d sec\n",
+-			heartbeat);
+-	return ret;
+-}
+-
+-static void __exit avila_wdt_exit(void)
+-{
+-	misc_deregister(&avila_wdt_miscdev);
+-	del_timer(&wdt_timer);
+-	wdt_disable();
+-}
+-
+-
+-module_init(avila_wdt_init);
+-module_exit(avila_wdt_exit);
+-
+-MODULE_AUTHOR("Felix Fietkau <nbd@nbd.name>");
+-MODULE_DESCRIPTION("Gateworks Avila Hardware Watchdog");
+-
+-module_param(heartbeat, int, 0);
+-MODULE_PARM_DESC(heartbeat, "Watchdog heartbeat in seconds (default 20s)");
+-
+-module_param(nowayout, int, 0);
+-MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started");
+-
+-MODULE_LICENSE("GPL");
+-MODULE_ALIAS_MISCDEV(WATCHDOG_MINOR);
+-
+diff --git a/package/kernel/linux/modules/sound.mk b/package/kernel/linux/modules/sound.mk
+index c83e553d8f..aa7eb72756 100644
+--- a/package/kernel/linux/modules/sound.mk
++++ b/package/kernel/linux/modules/sound.mk
+@@ -255,25 +255,6 @@ endef
+ $(eval $(call KernelPackage,sound-soc-imx-sgtl5000))
+ 
+ 
+-define KernelPackage/sound-soc-gw_avila
+-  TITLE:=Gateworks Avila SoC sound support
+-  KCONFIG:= \
+-	CONFIG_SND_GW_AVILA_SOC \
+-	CONFIG_SND_GW_AVILA_SOC_PCM \
+-	CONFIG_SND_GW_AVILA_SOC_HSS
+-  FILES:= \
+-	$(LINUX_DIR)/sound/soc/codecs/snd-soc-tlv320aic3x.ko \
+-	$(LINUX_DIR)/sound/soc/gw-avila/snd-soc-gw-avila.ko \
+-	$(LINUX_DIR)/sound/soc/gw-avila/snd-soc-gw-avila-pcm.ko \
+-	$(LINUX_DIR)/sound/soc/gw-avila/snd-soc-gw-avila-hss.ko
+-  AUTOLOAD:=$(call AutoLoad,65,snd-soc-tlv320aic3x snd-soc-gw-avila snd-soc-gw-avila-pcm snd-soc-gw-avila-hss)
+-  DEPENDS:=@TARGET_ixp4xx +kmod-sound-soc-core
+-  $(call AddDepends/sound)
+-endef
+-
+-$(eval $(call KernelPackage,sound-soc-gw_avila))
+-
+-
+ define KernelPackage/pcspkr
+   DEPENDS:=@TARGET_x86 +kmod-input-core
+   TITLE:=PC speaker support
+diff --git a/target/linux/ixp4xx/Makefile b/target/linux/ixp4xx/Makefile
 deleted file mode 100644
-index c95c876c54..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/240-3.18_fixes.patch
+index e1964331a0..0000000000
+--- a/target/linux/ixp4xx/Makefile
 +++ /dev/null
-@@ -1,38 +0,0 @@
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -350,7 +350,7 @@ static void tn7dsl_chng_modulation(void*
-- static unsigned int tn7dsl_set_modulation(void* data, int flag);
-- static void tn7dsl_ctrl_fineGain(int value);
-- static void tn7dsl_set_fineGainValue(int value);
---static int dslmod_sysctl (ctl_table * ctl, int write, void *buffer,
--+static int dslmod_sysctl (struct ctl_table * ctl, int write, void *buffer,
--                           size_t * lenp, loff_t *ppos);
-- static void tn7dsl_register_dslss_led(void);
-- void tn7dsl_dslmod_sysctl_register(void);
--@@ -3488,7 +3488,7 @@ unsigned int tn7dsl_get_memory(unsigned
-- 
-- 
-- 
---static int dslmod_sysctl(ctl_table *ctl, int write, void *buffer,
--+static int dslmod_sysctl(struct ctl_table *ctl, int write, void *buffer,
--       size_t *lenp, loff_t *ppos)
-- {
--   char *ptr;
--@@ -3603,7 +3603,7 @@ static int dslmod_sysctl(ctl_table *ctl,
-- }
-- 
-- 
---ctl_table dslmod_table[] = {
--+struct ctl_table dslmod_table[] = {
-- 	{
-- 		.procname 		= "dslmod",
-- 		.data			= info,
--@@ -3617,7 +3617,7 @@ ctl_table dslmod_table[] = {
--   };
-- 
-- /* Make sure that /proc/sys/dev is there */
---ctl_table dslmod_root_table[] = {
--+struct ctl_table dslmod_root_table[] = {
-- #ifdef CONFIG_PROC_FS
-- 	{
-- 		.procname		= "dev",
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/250-4.1_fixes.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/250-4.1_fixes.patch
-deleted file mode 100644
-index 426d593191..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/250-4.1_fixes.patch
-+++ /dev/null
-@@ -1,20 +0,0 @@
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -845,7 +845,7 @@ static int __init tn7atm_irq_request (st
-- 
--   priv->sar_irq = LNXINTNUM (ATM_SAR_INT);      /* Interrupt line # */
-- 
---  if (request_irq (priv->sar_irq, tn7atm_sar_irq, IRQF_DISABLED, "SAR ", dev))
--+  if (request_irq (priv->sar_irq, tn7atm_sar_irq, 0, "SAR ", dev))
--     printk ("Could not register tn7atm_sar_irq\n");
-- 
--   /*
--@@ -869,7 +869,7 @@ static int __init tn7atm_irq_request (st
--    * Reigster Receive interrupt A
--    */
--   priv->dsl_irq = LNXINTNUM (ATM_DSL_INT);      /* Interrupt line # */
---  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, IRQF_DISABLED, "DSL ", dev))
--+  if (request_irq (priv->dsl_irq, tn7atm_dsl_irq, 0, "DSL ", dev))
--     printk ("Could not register tn7atm_dsl_irq\n");
-- 
-- /***** VRB Tasklet Mode ****/
-diff --git a/package/kernel/ar7-atm/patches-D7.05.01.00/260-fix_function_signatures.patch b/package/kernel/ar7-atm/patches-D7.05.01.00/260-fix_function_signatures.patch
-deleted file mode 100644
-index 61a1ff7c83..0000000000
---- a/package/kernel/ar7-atm/patches-D7.05.01.00/260-fix_function_signatures.patch
-+++ /dev/null
-@@ -1,63 +0,0 @@
----- a/cpswhal_cpsar.h
--+++ b/cpswhal_cpsar.h
--@@ -437,10 +437,10 @@ typedef struct
--   int   (*DeviceFindInfo)(int Inst, const char *DeviceName, void *DeviceInfo);
--   int   (*DeviceFindParmUint)(void *DeviceInfo, const char *Parm, bit32u *Value);
--   int   (*DeviceFindParmValue)(void *DeviceInfo, const char *Parm, void *Value);
---  void  (*Free)(void *MemPtr);
--+  void  (*Free)(const void *MemPtr);
--   void  (*FreeRxBuffer)(OS_RECEIVEINFO *OsReceiveInfo, void *MemPtr);
---  void  (*FreeDev)(void *MemPtr);
---  void  (*FreeDmaXfer)(void *MemPtr);
--+  void  (*FreeDev)(const void *MemPtr);
--+  void  (*FreeDmaXfer)(const void *MemPtr);
--   void  (*IsrRegister)(OS_DEVICE *OsDev, int (*halISR)(HAL_DEVICE*, int*), int InterruptBit);
--   void  (*IsrUnRegister)(OS_DEVICE *OsDev, int InterruptBit);
--   void* (*Malloc)(bit32u size);
----- a/cpswhal_cpaal5.h
--+++ b/cpswhal_cpaal5.h
--@@ -436,10 +436,10 @@ typedef struct
--   int   (*DeviceFindInfo)(int Inst, const char *DeviceName, void *DeviceInfo);
--   int   (*DeviceFindParmUint)(void *DeviceInfo, const char *Parm, bit32u *Value);
--   int   (*DeviceFindParmValue)(void *DeviceInfo, const char *Parm, void *Value);
---  void  (*Free)(void *MemPtr);
--+  void  (*Free)(const void *MemPtr);
--   void  (*FreeRxBuffer)(OS_RECEIVEINFO *OsReceiveInfo, void *MemPtr);
---  void  (*FreeDev)(void *MemPtr);
---  void  (*FreeDmaXfer)(void *MemPtr);
--+  void  (*FreeDev)(const void *MemPtr);
--+  void  (*FreeDmaXfer)(const void *MemPtr);
--   void  (*IsrRegister)(OS_DEVICE *OsDev, int (*halISR)(HAL_DEVICE*, int*), int InterruptBit);
--   void  (*IsrUnRegister)(OS_DEVICE *OsDev, int InterruptBit);
--   void* (*Malloc)(bit32u size);
----- a/tn7atm.c
--+++ b/tn7atm.c
--@@ -2690,7 +2690,7 @@ static int tn7atm_proc_turbodsl_read(str
--     return 0;
-- }
-- 
---static int tn7atm_proc_qos_write(struct file *fp, const char *buf, unsigned long count, void *data)
--+static int tn7atm_proc_qos_write(struct file *fp, const char *buf, size_t count, loff_t *data)
-- {
--     char local_buf[32];
-- 
----- a/tn7dsl.c
--+++ b/tn7dsl.c
--@@ -1770,7 +1770,7 @@ static int tn7dsl_proc_stats_open(struct
-- 	return single_open(file, tn7dsl_proc_stats, PDE_DATA(inode));
-- }
-- 
---int tn7dsl_proc_write_stats(struct file *fp, const char * buf, unsigned long count, void * data);
--+int tn7dsl_proc_write_stats(struct file *fp, const char * buf, size_t count, loff_t * data);
-- 
-- struct file_operations tn7dsl_proc_stats_fops = {
-- 	.owner 		= THIS_MODULE,
--@@ -4436,7 +4436,7 @@ int tn7dsl_generic_write( int offsetnum,
-- }
-- 
-- int tn7dsl_proc_write_stats (struct file *fp, const char *buf,
---                             unsigned long count, void *data)
--+                             size_t count, loff_t *data)
-- {
--     char local_buf[31];
--     int  ret_val = 0;
-diff --git a/target/linux/ar7/Makefile b/target/linux/ar7/Makefile
-deleted file mode 100644
-index ba40e508fc..0000000000
---- a/target/linux/ar7/Makefile
-+++ /dev/null
-@@ -1,25 +0,0 @@
+@@ -1,24 +0,0 @@
 -#
 -# Copyright (C) 2006-2011 OpenWrt.org
 -#
@@ -10442,891 +1052,513 @@ index ba40e508fc..0000000000
 -#
 -include $(TOPDIR)/rules.mk
 -
--ARCH:=mipsel
--BOARD:=ar7
--BOARDNAME:=TI AR7
--FEATURES:=squashfs atm low_mem
--SUBTARGETS:=generic ac49x
+-ARCH:=armeb
+-BOARD:=ixp4xx
+-BOARDNAME:=Intel IXP4xx
+-FEATURES:=squashfs
+-MAINTAINER:=Ted Hess <thess@kitschensync.net>, \
+-	    Imre Kaloz <kaloz@openwrt.org>
+-SUBTARGETS:=generic harddisk
 -
 -KERNEL_PATCHVER:=4.9
 -
--define Target/Description
--	Build firmware images for TI AR7 based routers.
--endef
--
 -include $(INCLUDE_DIR)/target.mk
 -
--DEFAULT_PACKAGES+= swconfig
+-DEFAULT_PACKAGES += ixp4xx-microcode fconfig
+-KERNELNAME:=zImage
 -
 -$(eval $(call BuildTarget))
-diff --git a/target/linux/ar7/ac49x/config-default b/target/linux/ar7/ac49x/config-default
+diff --git a/target/linux/ixp4xx/base-files/lib/ixp4xx.sh b/target/linux/ixp4xx/base-files/lib/ixp4xx.sh
 deleted file mode 100644
-index d56df86682..0000000000
---- a/target/linux/ar7/ac49x/config-default
+index 3f73dd98e0..0000000000
+--- a/target/linux/ixp4xx/base-files/lib/ixp4xx.sh
 +++ /dev/null
-@@ -1,4 +0,0 @@
--CONFIG_AR7_AC49X=y
--CONFIG_AR7_TYPE_AC49X=y
--# CONFIG_AR7_TYPE_TI is not set
--CONFIG_MTD_AC49X_PARTS=y
-diff --git a/target/linux/ar7/ac49x/profiles/210-None.mk b/target/linux/ar7/ac49x/profiles/210-None.mk
-deleted file mode 100644
-index 2fcfacde9f..0000000000
---- a/target/linux/ar7/ac49x/profiles/210-None.mk
-+++ /dev/null
-@@ -1,17 +0,0 @@
--#
--# Copyright (C) 2006 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/None
--  NAME:=No WiFi
--  PACKAGES:=
--endef
--
--define Profile/None/Description
--	Package set without WiFi support
--endef
--$(eval $(call Profile,None))
--
-diff --git a/target/linux/ar7/ac49x/target.mk b/target/linux/ar7/ac49x/target.mk
-deleted file mode 100644
-index 47f3ab282d..0000000000
---- a/target/linux/ar7/ac49x/target.mk
-+++ /dev/null
-@@ -1,10 +0,0 @@
+@@ -1,34 +0,0 @@
+-#!/bin/sh
 -#
 -# Copyright (C) 2012 OpenWrt.org
 -#
 -
--SUBTARGET:=ac49x
--BOARDNAME:=AudioCodes AC49x
+-IXP4XX_BOARD_NAME=
+-IXP4XX_MODEL=
 -
--define Target/Description
--	Build firmware images for AudioCodes AC49x based routers.
--endef
-diff --git a/target/linux/ar7/base-files.mk b/target/linux/ar7/base-files.mk
+-ixp4xx_board_detect() {
+-	local machine
+-	local name
+-
+-	machine=$(awk 'BEGIN{FS="[ \t]+:[ \t]"} /Hardware/ {print $2}' /proc/cpuinfo)
+-
+-	case "$machine" in
+-	"Gateworks Cambria"*)
+-		name="cambria"
+-		;;
+-	"Gateworks Avila"*)
+-		name="avila"
+-		;;
+-	*)
+-		name="generic";
+-		;;
+-	esac
+-
+-	[ -z "$IXP4XX_BOARD_NAME" ] && IXP4XX_BOARD_NAME="$name"
+-	[ -z "$IXP4XX_MODEL" ] && IXP4XX_MODEL="$machine"
+-
+-	[ -e "/tmp/sysinfo/" ] || mkdir -p "/tmp/sysinfo/"
+-
+-	echo "$IXP4XX_BOARD_NAME" > /tmp/sysinfo/board_name
+-	echo "$IXP4XX_MODEL" > /tmp/sysinfo/model
+-}
+diff --git a/target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo b/target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo
 deleted file mode 100644
-index f21a604b83..0000000000
---- a/target/linux/ar7/base-files.mk
+index 7699e9a10e..0000000000
+--- a/target/linux/ixp4xx/base-files/lib/preinit/01_sysinfo
 +++ /dev/null
-@@ -1,11 +0,0 @@
--define Build/Compile
--	$(call Build/Compile/Default)
--	$(TARGET_CC) -o $(PKG_BUILD_DIR)/adam2patcher $(PLATFORM_DIR)/src/adam2patcher.c
--endef
--
--define Package/base-files/install-target
--	mkdir -p $(1)/sbin
--	$(CP) $(PKG_BUILD_DIR)/adam2patcher $(1)/sbin
--endef
--
--
-diff --git a/target/linux/ar7/base-files/etc/board.d/02_network b/target/linux/ar7/base-files/etc/board.d/02_network
-deleted file mode 100755
-index c1c2dc42fe..0000000000
---- a/target/linux/ar7/base-files/etc/board.d/02_network
-+++ /dev/null
-@@ -1,28 +0,0 @@
+@@ -1,9 +0,0 @@
 -#!/bin/sh
 -
--. /lib/functions/uci-defaults.sh
+-do_sysinfo_ixp4xx() {
+-	. /lib/ixp4xx.sh
 -
--board_config_update
+-	ixp4xx_board_detect
+-}
 -
--if [ -e "/sys/bus/mdio_bus/drivers/IC+ IP175A/1:00" -o \
--     -e "/sys/bus/mdio_bus/drivers/IC+ IP17xx/1:00" ] && \
--   [ -x /sbin/swconfig ];
--then
--	ucidef_add_switch "eth0" \
--		"0:lan" "1:lan" "2:lan" "3:lan" "4t@eth0"
--
--elif [ -e "/sys/bus/mdio_bus/drivers/Infineon ADM6996/1:00" -o \
--       -e "/sys/bus/mdio_bus/drivers/Marvell 88E6060/1:10" ];
--then
--	ucidef_set_interface_lan "eth0.1"
--
--elif [ -d "/sys/class/net/eth1" ]; then
--	ucidef_set_interface_lan "eth0 eth1"
--
--else
--	ucidef_set_interface_lan "eth0"
--fi
--
--board_config_flush
--
--exit 0
-diff --git a/target/linux/ar7/base-files/etc/diag.sh b/target/linux/ar7/base-files/etc/diag.sh
+-boot_hook_add preinit_main do_sysinfo_ixp4xx
+diff --git a/target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx b/target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx
 deleted file mode 100644
-index f9aa809405..0000000000
---- a/target/linux/ar7/base-files/etc/diag.sh
+index adda197b59..0000000000
+--- a/target/linux/ixp4xx/base-files/lib/preinit/05_set_ether_mac_ixp4xx
 +++ /dev/null
 @@ -1,32 +0,0 @@
 -#!/bin/sh
--# Copyright (C) 2007-2013 OpenWrt.org
 -
--. /lib/functions/leds.sh
+-set_ether_mac() {
 -
--get_status_led() {
--	[ -d "/sys/class/leds/status" ] && status_led="status"
--	[ -d "/sys/class/leds/power:green" ] && status_led="power:green"
+-	RB_CONFIG="$(grep "RedBoot config" /proc/mtd | cut -d: -f1)"
+-
+-	for npe in eth0 eth1 eth2
+-	do
+-		if [ "$(ifconfig $npe 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
+-			ifconfig $npe hw ether $(fconfig -s -r -d /dev/$RB_CONFIG -n npe_"$npe"_esa)
+-		fi
+-	done
+-
+-	# Some developers should be shot on sight at Zcom/Netgear
+-	# -- Fixup for the WG302v1, need someone with a WAG302v1 to fix that, too
+-
+-	if [ "$(ifconfig eth0 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
+-			ifconfig eth0 hw ether $(fconfig -s -r -d /dev/$RB_CONFIG -n zcom_npe_esa)
+-	fi
+-
+-	# Others (*cough*, Tonze) are dumb enough to not handle mac addresses at all
+-
+-	if [ "$(ifconfig eth0 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
+-		ifconfig eth0 hw ether 00:11:22:33:44:55
+-	fi
+-	if [ "$(ifconfig eth1 2>/dev/null | grep -c 00:00:00:00:00:00)" = "1" ]; then
+-		ifconfig eth1 hw ether 00:11:22:33:44:56
+-	fi
 -}
 -
--set_state() {
--	get_status_led
+-boot_hook_add preinit_main set_ether_mac
 -
--	case "$1" in
--	preinit)
--		status_led_blink_preinit
--		;;
--	failsafe)
--		status_led_blink_failsafe
--		;;
--	preinit_regular)
--		status_led_blink_preinit_regular
--		;;
--	done)
--		status_led_on
+diff --git a/target/linux/ixp4xx/base-files/lib/upgrade/platform.sh b/target/linux/ixp4xx/base-files/lib/upgrade/platform.sh
+deleted file mode 100644
+index f83aa430cf..0000000000
+--- a/target/linux/ixp4xx/base-files/lib/upgrade/platform.sh
++++ /dev/null
+@@ -1,137 +0,0 @@
+-CI_BLKSZ=65536
+-CI_LDADR=0x00800000
 -
--		[ "$status_led" = "power:green" ] && {
--			led_off "power:red"
+-platform_find_partitions() {
+-	local first dev size erasesize name
+-	while read dev size erasesize name; do
+-		name=${name#'"'}; name=${name%'"'}
+-		case "$name" in
+-			vmlinux.bin.l7|kernel|linux|rootfs)
+-				if [ -z "$first" ]; then
+-					first="$name"
+-				else
+-					echo "$erasesize:$first:$name"
+-					break
+-				fi
+-			;;
+-		esac
+-	done < /proc/mtd
+-}
+-
+-platform_find_kernelpart() {
+-	local part
+-	for part in "${1%:*}" "${1#*:}"; do
+-		case "$part" in
+-			vmlinux.bin.l7|kernel|linux)
+-				echo "$part"
+-				break
+-			;;
+-		esac
+-	done
+-}
+-
+-platform_find_part_size() {
+-	local first dev size erasesize name
+-	while read dev size erasesize name; do
+-		name=${name#'"'}; name=${name%'"'}
+-		[ "$name" = "$1" ] && {
+-			echo "$size"
+-			break
 -		}
+-	done < /proc/mtd
+-}
+-
+-platform_do_upgrade_combined() {
+-	local partitions=$(platform_find_partitions)
+-	local kernelpart=$(platform_find_kernelpart "${partitions#*:}")
+-	local erase_size=$((0x${partitions%%:*})); partitions="${partitions#*:}"
+-	local kern_part_size=0x$(platform_find_part_size "$kernelpart")
+-	local kern_part_blocks=$(($kern_part_size / $CI_BLKSZ))
+-	local kern_length=0x$(dd if="$1" bs=2 skip=1 count=4 2>/dev/null)
+-	local kern_blocks=$(($kern_length / $CI_BLKSZ))
+-	local root_blocks=$((0x$(dd if="$1" bs=2 skip=5 count=4 2>/dev/null) / $CI_BLKSZ))
+-
+-	v "platform_do_upgrade_combined"
+-	v "partitions=$partitions"
+-	v "kernelpart=$kernelpart"
+-	v "kernel_part_size=$kern_part_size"
+-	v "kernel_part_blocks=$kern_part_blocks"
+-	v "kern_length=$kern_length"
+-	v "erase_size=$erase_size"
+-	v "kern_blocks=$kern_blocks"
+-	v "root_blocks=$root_blocks"
+-	v "kern_pad_blocks=$(($kern_part_blocks-$kern_blocks))"
+-
+-	if [ -n "$partitions" ] && [ -n "$kernelpart" ] && \
+-	   [ ${kern_blocks:-0} -gt 0 ] && \
+-	   [ ${root_blocks:-0} -gt 0 ] && \
+-	   [ ${erase_size:-0} -gt 0 ];
+-	then
+-		local append=""
+-		[ -f "$UPGRADE_BACKUP" ] && append="-j $UPGRADE_BACKUP"
+-
+-		# write the kernel
+-		dd if="$1" bs=$CI_BLKSZ skip=1 count=$kern_blocks 2>/dev/null | \
+-			mtd -F$kernelpart:$kern_part_size:$CI_LDADR write - $kernelpart
+-		# write the rootfs
+-		dd if="$1" bs=$CI_BLKSZ skip=$((1+$kern_blocks)) count=$root_blocks 2>/dev/null | \
+-			mtd $append write - rootfs
+-	else
+-		echo "invalid image"
+-	fi
+-}
+-
+-platform_check_image() {
+-	local board=$(board_name)
+-	local magic="$(get_magic_word "$1")"
+-	local partitions=$(platform_find_partitions)
+-	local kernelpart=$(platform_find_kernelpart "${partitions#*:}")
+-	local kern_part_size=0x$(platform_find_part_size "$kernelpart")
+-	local kern_length=0x$(dd if="$1" bs=2 skip=1 count=4 2>/dev/null)
+-
+-	[ "$#" -gt 1 ] && return 1
+-
+-	case "$board" in
+-	avila | cambria )
+-		[ "$magic" != "4349" ] && {
+-			echo "Invalid image. Use *-sysupgrade.bin files on this board"
+-			return 1
+-		}
+-
+-		kern_length_b=$(printf '%d' $kern_length)
+-		kern_part_size_b=$(printf '%d' $kern_part_size)
+-		if [ $kern_length_b -gt $kern_part_size_b ]; then
+-			echo "Invalid image. Kernel size ($kern_length) exceeds kernel partition ($kern_part_size)"
+-			return 1
+-		fi
+-
+-		local md5_img=$(dd if="$1" bs=2 skip=9 count=16 2>/dev/null)
+-		local md5_chk=$(dd if="$1" bs=$CI_BLKSZ skip=1 2>/dev/null | md5sum -); md5_chk="${md5_chk%% *}"
+-		if [ -n "$md5_img" -a -n "$md5_chk" ] && [ "$md5_img" = "$md5_chk" ]; then
+-			return 0
+-		else
+-			echo "Invalid image. Contents do not match checksum (image:$md5_img calculated:$md5_chk)"
+-			return 1
+-		fi
+-
+-		return 0
+-		;;
+-	esac
+-
+-	echo "Sysupgrade is not yet supported on $board."
+-	return 1
+-}
+-
+-platform_do_upgrade() {
+-	local board=$(board_name)
+-
+-	v "board=$board"
+-	case "$board" in
+-	avila | cambria )
+-		platform_do_upgrade_combined "$1"
+-		;;
+-	*)
+-		default_do_upgrade "$1"
 -		;;
 -	esac
 -}
-diff --git a/target/linux/ar7/base-files/etc/init.d/adam2 b/target/linux/ar7/base-files/etc/init.d/adam2
-deleted file mode 100755
-index 6b786270ea..0000000000
---- a/target/linux/ar7/base-files/etc/init.d/adam2
-+++ /dev/null
-@@ -1,13 +0,0 @@
--#!/bin/sh /etc/rc.common
--# ADAM2 patcher for Netgear DG834 and compatible
--# Copyright (C) 2006 OpenWrt.org
--
--START=00
--start() {
--	MD5="$(md5sum /dev/mtdblock0  | awk '{print $1}')"
--	[ "$MD5" = "0530bfdf00ec155f4182afd70da028c1" ] && {
--		mtd unlock adam2
--		/sbin/adam2patcher /dev/mtdblock0
--	}
--	rm -f /etc/rc.d/S${START}adam2 /etc/init.d/adam2 /sbin/adam2patcher >&- 2>&-
--}
-diff --git a/target/linux/ar7/config-4.9 b/target/linux/ar7/config-4.9
+diff --git a/target/linux/ixp4xx/config-4.9 b/target/linux/ixp4xx/config-4.9
 deleted file mode 100644
-index 95a5375bae..0000000000
---- a/target/linux/ar7/config-4.9
+index 5623f907a6..0000000000
+--- a/target/linux/ixp4xx/config-4.9
 +++ /dev/null
-@@ -1,151 +0,0 @@
--CONFIG_ADM6996_PHY=y
--CONFIG_AR7=y
--CONFIG_AR7_TI=y
--# CONFIG_AR7_TYPE_AC49X is not set
--CONFIG_AR7_TYPE_TI=y
--CONFIG_AR7_WDT=y
--CONFIG_ARCH_BINFMT_ELF_STATE=y
+@@ -1,245 +0,0 @@
+-CONFIG_ALIGNMENT_TRAP=y
+-# CONFIG_ARCH_ADI_COYOTE is not set
 -CONFIG_ARCH_CLOCKSOURCE_DATA=y
--CONFIG_ARCH_DISCARD_MEMBLOCK=y
+-CONFIG_ARCH_HAS_DMA_SET_COHERENT_MASK=y
 -CONFIG_ARCH_HAS_ELF_RANDOMIZE=y
--# CONFIG_ARCH_HAS_GCOV_PROFILE_ALL is not set
+-CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
 -# CONFIG_ARCH_HAS_SG_CHAIN is not set
+-CONFIG_ARCH_HAVE_CUSTOM_GPIO_H=y
 -CONFIG_ARCH_HIBERNATION_POSSIBLE=y
+-CONFIG_ARCH_IXCDP1100=y
+-CONFIG_ARCH_IXDP425=y
+-CONFIG_ARCH_IXDP4XX=y
+-CONFIG_ARCH_IXP4XX=y
 -CONFIG_ARCH_MIGHT_HAVE_PC_PARPORT=y
--CONFIG_ARCH_MIGHT_HAVE_PC_SERIO=y
+-CONFIG_ARCH_NR_GPIO=0
+-# CONFIG_ARCH_PRPMC1100 is not set
+-# CONFIG_ARCH_SELECT_MEMORY_MODEL is not set
+-# CONFIG_ARCH_SPARSEMEM_DEFAULT is not set
+-CONFIG_ARCH_SUPPORTS_ATOMIC_RMW=y
+-CONFIG_ARCH_SUPPORTS_BIG_ENDIAN=y
 -CONFIG_ARCH_SUPPORTS_UPROBES=y
 -CONFIG_ARCH_SUSPEND_POSSIBLE=y
 -CONFIG_ARCH_USE_BUILTIN_BSWAP=y
+-CONFIG_ARCH_USE_CMPXCHG_LOCKREF=y
+-CONFIG_ARCH_WANT_GENERAL_HUGETLB=y
 -CONFIG_ARCH_WANT_IPC_PARSE_VERSION=y
--CONFIG_BOOT_ELF32=y
--CONFIG_CEVT_R4K=y
+-CONFIG_ARM=y
+-# CONFIG_ARM_CPU_SUSPEND is not set
+-CONFIG_ARM_L1_CACHE_SHIFT=5
+-CONFIG_ARM_PATCH_PHYS_VIRT=y
+-# CONFIG_ARM_THUMB is not set
+-CONFIG_ATAGS=y
+-CONFIG_BLK_MQ_PCI=y
+-CONFIG_BOUNCE=y
+-# CONFIG_CACHE_L2X0 is not set
+-CONFIG_CLKSRC_MMIO=y
 -CONFIG_CLONE_BACKWARDS=y
--CONFIG_CMDLINE="rootfstype=squashfs,jffs2"
--CONFIG_CMDLINE_BOOL=y
--# CONFIG_CMDLINE_OVERRIDE is not set
--CONFIG_CPMAC=y
--CONFIG_CPU_GENERIC_DUMP_TLB=y
--CONFIG_CPU_HAS_PREFETCH=y
--CONFIG_CPU_HAS_SYNC=y
--CONFIG_CPU_LITTLE_ENDIAN=y
--CONFIG_CPU_MIPS32=y
--CONFIG_CPU_MIPS32_R1=y
--CONFIG_CPU_MIPSR1=y
--CONFIG_CPU_NEEDS_NO_SMARTMIPS_OR_MICROMIPS=y
--CONFIG_CPU_R4K_CACHE_TLB=y
--CONFIG_CPU_R4K_FPU=y
--CONFIG_CPU_SUPPORTS_32BIT_KERNEL=y
--CONFIG_CPU_SUPPORTS_HIGHMEM=y
+-CONFIG_CMDLINE="root=/dev/mtdblock2 rootfstype=squashfs,jffs2 noinitrd console=ttyS0,115200"
+-CONFIG_CMDLINE_FROM_BOOTLOADER=y
+-CONFIG_CPU_32v5=y
+-CONFIG_CPU_ABRT_EV5T=y
+-CONFIG_CPU_BIG_ENDIAN=y
+-CONFIG_CPU_CACHE_VIVT=y
+-CONFIG_CPU_CP15=y
+-CONFIG_CPU_CP15_MMU=y
+-CONFIG_CPU_ENDIAN_BE32=y
+-# CONFIG_CPU_ENDIAN_BE8 is not set
+-CONFIG_CPU_IXP43X=y
+-CONFIG_CPU_IXP46X=y
+-CONFIG_CPU_PABRT_LEGACY=y
+-CONFIG_CPU_TLB_V4WBI=y
+-CONFIG_CPU_USE_DOMAINS=y
+-CONFIG_CPU_XSCALE=y
 -CONFIG_CRYPTO_RNG2=y
 -CONFIG_CRYPTO_WORKQUEUE=y
--CONFIG_CSRC_R4K=y
--CONFIG_DMA_NONCOHERENT=y
--CONFIG_EARLY_PRINTK=y
--CONFIG_ETHERNET_PACKET_MANGLE=y
--CONFIG_FIXED_PHY=y
+-CONFIG_DEBUG_BUGVERBOSE=y
+-CONFIG_DEBUG_LL_INCLUDE="debug/8250.S"
+-CONFIG_DEBUG_UART_8250=y
+-# CONFIG_DEBUG_UART_8250_FLOW_CONTROL is not set
+-CONFIG_DEBUG_UART_8250_SHIFT=2
+-# CONFIG_DEBUG_UART_8250_WORD is not set
+-CONFIG_DEBUG_UART_PHYS=0xc8000003
+-CONFIG_DEBUG_UART_VIRT=0xfef00003
+-# CONFIG_DEBUG_USER is not set
+-CONFIG_DMABOUNCE=y
+-CONFIG_DNOTIFY=y
+-CONFIG_EDAC_ATOMIC_SCRUB=y
+-CONFIG_EDAC_SUPPORT=y
+-CONFIG_EEPROM_AT24=y
+-CONFIG_FIX_EARLYCON_MEM=y
+-CONFIG_FRAME_POINTER=y
+-CONFIG_GENERIC_ALLOCATOR=y
 -CONFIG_GENERIC_ATOMIC64=y
+-CONFIG_GENERIC_BUG=y
 -CONFIG_GENERIC_CLOCKEVENTS=y
--CONFIG_GENERIC_CMOS_UPDATE=y
+-CONFIG_GENERIC_EARLY_IOREMAP=y
+-CONFIG_GENERIC_IDLE_POLL_SETUP=y
 -CONFIG_GENERIC_IO=y
--CONFIG_GENERIC_IRQ_CHIP=y
 -CONFIG_GENERIC_IRQ_SHOW=y
+-CONFIG_GENERIC_IRQ_SHOW_LEVEL=y
 -CONFIG_GENERIC_PCI_IOMAP=y
 -CONFIG_GENERIC_SCHED_CLOCK=y
 -CONFIG_GENERIC_SMP_IDLE_THREAD=y
--CONFIG_GENERIC_TIME_VSYSCALL=y
+-CONFIG_GENERIC_STRNCPY_FROM_USER=y
+-CONFIG_GENERIC_STRNLEN_USER=y
 -CONFIG_GPIOLIB=y
+-CONFIG_GPIO_SYSFS=y
 -CONFIG_HANDLE_DOMAIN_IRQ=y
--CONFIG_HARDWARE_WATCHPOINTS=y
+-CONFIG_HARDIRQS_SW_RESEND=y
 -CONFIG_HAS_DMA=y
 -CONFIG_HAS_IOMEM=y
 -CONFIG_HAS_IOPORT_MAP=y
 -# CONFIG_HAVE_64BIT_ALIGNED_ACCESS is not set
+-CONFIG_HAVE_ARCH_AUDITSYSCALL=y
 -# CONFIG_HAVE_ARCH_BITREVERSE is not set
--CONFIG_HAVE_ARCH_JUMP_LABEL=y
--CONFIG_HAVE_ARCH_KGDB=y
+-CONFIG_HAVE_ARCH_PFN_VALID=y
 -CONFIG_HAVE_ARCH_SECCOMP_FILTER=y
 -CONFIG_HAVE_ARCH_TRACEHOOK=y
 -# CONFIG_HAVE_BOOTMEM_INFO_NODE is not set
 -CONFIG_HAVE_CBPF_JIT=y
 -CONFIG_HAVE_CC_STACKPROTECTOR=y
--CONFIG_HAVE_CLK=y
 -CONFIG_HAVE_CONTEXT_TRACKING=y
 -CONFIG_HAVE_C_RECORDMCOUNT=y
 -CONFIG_HAVE_DEBUG_KMEMLEAK=y
--CONFIG_HAVE_DEBUG_STACKOVERFLOW=y
 -CONFIG_HAVE_DMA_API_DEBUG=y
 -CONFIG_HAVE_DMA_CONTIGUOUS=y
--CONFIG_HAVE_DYNAMIC_FTRACE=y
 -CONFIG_HAVE_FTRACE_MCOUNT_RECORD=y
 -CONFIG_HAVE_FUNCTION_GRAPH_TRACER=y
 -CONFIG_HAVE_FUNCTION_TRACER=y
 -CONFIG_HAVE_GENERIC_DMA_COHERENT=y
 -CONFIG_HAVE_IDE=y
--CONFIG_HAVE_IRQ_EXIT_ON_IRQ_STACK=y
 -CONFIG_HAVE_IRQ_TIME_ACCOUNTING=y
--CONFIG_HAVE_LATENCYTOP_SUPPORT=y
 -CONFIG_HAVE_MEMBLOCK=y
--CONFIG_HAVE_MEMBLOCK_NODE_MAP=y
 -CONFIG_HAVE_MOD_ARCH_SPECIFIC=y
 -CONFIG_HAVE_NET_DSA=y
 -CONFIG_HAVE_OPROFILE=y
+-CONFIG_HAVE_OPTPROBES=y
 -CONFIG_HAVE_PERF_EVENTS=y
+-CONFIG_HAVE_PERF_REGS=y
+-CONFIG_HAVE_PERF_USER_STACK_DUMP=y
+-CONFIG_HAVE_PROC_CPU=y
 -CONFIG_HAVE_REGS_AND_STACK_ACCESS_API=y
 -CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+-CONFIG_HAVE_UID16=y
 -CONFIG_HAVE_VIRT_CPU_ACCOUNTING_GEN=y
+-CONFIG_HWMON=y
+-CONFIG_HWMON_VID=y
 -CONFIG_HW_RANDOM=y
+-CONFIG_HW_RANDOM_IXP4XX=y
+-CONFIG_HZ_FIXED=0
 -CONFIG_HZ_PERIODIC=y
+-CONFIG_I2C=y
+-CONFIG_I2C_ALGOBIT=y
+-CONFIG_I2C_BOARDINFO=y
+-CONFIG_I2C_CHARDEV=y
+-CONFIG_I2C_GPIO=y
+-# CONFIG_I2C_IOP3XX is not set
 -CONFIG_INITRAMFS_SOURCE=""
--CONFIG_IP17XX_PHY=y
--CONFIG_IRQ_DOMAIN=y
+-CONFIG_IOMMU_HELPER=y
+-CONFIG_IP_PIMSM_V1=y
+-CONFIG_IP_PIMSM_V2=y
 -CONFIG_IRQ_FORCED_THREADING=y
--CONFIG_IRQ_MIPS_CPU=y
 -CONFIG_IRQ_WORK=y
--CONFIG_KALLSYMS=y
+-# CONFIG_IWMMXT is not set
+-CONFIG_IXP4XX_ETH=y
+-# CONFIG_IXP4XX_INDIRECT_PCI is not set
+-CONFIG_IXP4XX_NPE=y
+-CONFIG_IXP4XX_QMGR=y
+-CONFIG_IXP4XX_WATCHDOG=y
+-CONFIG_LEDS_FSG=y
 -CONFIG_LEDS_GPIO=y
--CONFIG_LEDS_TRIGGER_HEARTBEAT=y
+-CONFIG_LEDS_LATCH=y
+-CONFIG_LZO_COMPRESS=y
+-CONFIG_LZO_DECOMPRESS=y
+-CONFIG_MACH_AP1000=y
+-CONFIG_MACH_AP42X=y
+-# CONFIG_MACH_ARCOM_VULCAN is not set
+-CONFIG_MACH_AVILA=y
+-CONFIG_MACH_CAMBRIA=y
+-CONFIG_MACH_COMPEXWP18=y
+-# CONFIG_MACH_DEVIXP is not set
+-CONFIG_MACH_DSMG600=y
+-CONFIG_MACH_FSG=y
+-CONFIG_MACH_GATEWAY7001=y
+-# CONFIG_MACH_GORAMO_MLR is not set
+-# CONFIG_MACH_GTWX5715 is not set
+-# CONFIG_MACH_IXDP465 is not set
+-CONFIG_MACH_IXDPG425=y
+-# CONFIG_MACH_KIXRP435 is not set
+-CONFIG_MACH_LOFT=y
+-CONFIG_MACH_MI424WR=y
+-# CONFIG_MACH_MIC256 is not set
+-# CONFIG_MACH_MICCPT is not set
+-CONFIG_MACH_NAS100D=y
+-CONFIG_MACH_NSLU2=y
+-CONFIG_MACH_PRONGHORN=y
+-CONFIG_MACH_PRONGHORNMETRO=y
+-CONFIG_MACH_SIDEWINDER=y
+-CONFIG_MACH_TW2662=y
+-CONFIG_MACH_TW5334=y
+-CONFIG_MACH_USR8200=y
+-CONFIG_MACH_WG302V1=y
+-CONFIG_MACH_WG302V2=y
+-CONFIG_MACH_WRT300NV2=y
 -CONFIG_MDIO_BOARDINFO=y
--CONFIG_MIPS=y
--CONFIG_MIPS_ASID_BITS=8
--CONFIG_MIPS_ASID_SHIFT=0
--CONFIG_MIPS_CLOCK_VSYSCALL=y
--# CONFIG_MIPS_CMDLINE_BUILTIN_EXTEND is not set
--CONFIG_MIPS_CMDLINE_FROM_BOOTLOADER=y
--# CONFIG_MIPS_HUGE_TLB_SUPPORT is not set
--CONFIG_MIPS_L1_CACHE_SHIFT=5
--# CONFIG_MIPS_MACHINE is not set
+-CONFIG_MIGHT_HAVE_PCI=y
 -CONFIG_MODULES_USE_ELF_REL=y
--# CONFIG_MTD_AC49X_PARTS is not set
--CONFIG_MTD_CFI_STAA=y
+-CONFIG_MTD_CFI_ADV_OPTIONS=y
+-# CONFIG_MTD_CFI_GEOMETRY is not set
+-CONFIG_MTD_IXP4XX=y
+-CONFIG_MTD_OTP=y
 -CONFIG_MTD_PHYSMAP=y
--CONFIG_MVSWITCH_PHY=y
+-CONFIG_MTD_REDBOOT_PARTS=y
 -CONFIG_NEED_DMA_MAP_STATE=y
+-CONFIG_NEED_KUSER_HELPERS=y
+-CONFIG_NEED_MACH_IO_H=y
 -CONFIG_NEED_PER_CPU_KM=y
--CONFIG_NO_EXCEPT_FILL=y
--CONFIG_NO_GENERIC_PCI_IOPORT_MAP=y
--# CONFIG_NO_IOPORT_MAP is not set
+-CONFIG_NET_PTP_CLASSIFY=y
+-CONFIG_NET_VENDOR_XSCALE=y
+-CONFIG_NO_BOOTMEM=y
+-CONFIG_NVMEM=y
 -# CONFIG_OF is not set
--CONFIG_PCI_DRIVERS_LEGACY=y
+-CONFIG_OLD_SIGACTION=y
+-CONFIG_OLD_SIGSUSPEND3=y
+-CONFIG_PAGE_OFFSET=0xC0000000
+-CONFIG_PCI=y
+-# CONFIG_PCI_DOMAINS_GENERIC is not set
 -CONFIG_PERF_USE_VMALLOC=y
 -CONFIG_PGTABLE_LEVELS=2
 -CONFIG_PHYLIB=y
 -# CONFIG_RCU_STALL_COMMON is not set
+-CONFIG_REGMAP=y
+-CONFIG_REGMAP_I2C=y
+-CONFIG_RTC_CLASS=y
+-CONFIG_RTC_DRV_DS1672=y
+-CONFIG_RTC_DRV_ISL1208=y
+-CONFIG_RTC_DRV_PCF8563=y
+-CONFIG_RTC_DRV_X1205=y
+-CONFIG_RTC_I2C_AND_SPI=y
+-CONFIG_RTC_MC146818_LIB=y
+-CONFIG_RWSEM_XCHGADD_ALGORITHM=y
 -# CONFIG_SCHED_INFO is not set
 -# CONFIG_SCSI_DMA is not set
--# CONFIG_SERIAL_8250_FSL is not set
+-CONFIG_SENSORS_AD7418=y
+-CONFIG_SENSORS_MAX6650=y
+-CONFIG_SENSORS_W83781D=y
+-CONFIG_SERIAL_8250_FSL=y
+-CONFIG_SERIAL_8250_NR_UARTS=4
+-CONFIG_SERIAL_8250_RUNTIME_UARTS=4
+-CONFIG_SPLIT_PTLOCK_CPUS=999999
 -CONFIG_SRCU=y
--CONFIG_SWAP_IO_SPACE=y
--CONFIG_SWCONFIG=y
--CONFIG_SWPHY=y
--CONFIG_SYSCTL_EXCEPTION_TRACE=y
--CONFIG_SYS_HAS_CPU_MIPS32_R1=y
--CONFIG_SYS_HAS_EARLY_PRINTK=y
--CONFIG_SYS_SUPPORTS_32BIT_KERNEL=y
--CONFIG_SYS_SUPPORTS_ARBIT_HZ=y
--CONFIG_SYS_SUPPORTS_LITTLE_ENDIAN=y
--CONFIG_SYS_SUPPORTS_MIPS16=y
--CONFIG_SYS_SUPPORTS_ZBOOT=y
--CONFIG_SYS_SUPPORTS_ZBOOT_UART16550=y
+-CONFIG_SWIOTLB=y
+-CONFIG_SYS_SUPPORTS_APM_EMULATION=y
 -CONFIG_TICK_CPU_ACCOUNTING=y
--CONFIG_VLYNQ=y
--# CONFIG_VLYNQ_DEBUG is not set
-diff --git a/target/linux/ar7/files/drivers/mtd/ac49xpart.c b/target/linux/ar7/files/drivers/mtd/ac49xpart.c
+-CONFIG_UNCOMPRESS_INCLUDE="mach/uncompress.h"
+-CONFIG_USB_EHCI_BIG_ENDIAN_DESC=y
+-CONFIG_USB_EHCI_BIG_ENDIAN_MMIO=y
+-CONFIG_USB_SUPPORT=y
+-CONFIG_VECTORS_BASE=0xffff0000
+-CONFIG_VM_EVENT_COUNTERS=y
+-CONFIG_WATCHDOG_NOWAYOUT=y
+-CONFIG_XZ_DEC_ARM=y
+-CONFIG_XZ_DEC_BCJ=y
+-CONFIG_ZBOOT_ROM_BSS=0x0
+-CONFIG_ZBOOT_ROM_TEXT=0x0
+diff --git a/target/linux/ixp4xx/generic/profiles/100-Default.mk b/target/linux/ixp4xx/generic/profiles/100-Default.mk
 deleted file mode 100644
-index 4f8a9c1b84..0000000000
---- a/target/linux/ar7/files/drivers/mtd/ac49xpart.c
-+++ /dev/null
-@@ -1,221 +0,0 @@
--/*
-- * AudioCodes AC49x PSPBoot-based flash partition table
-- * Copyright 2012 Daniel Golle <daniel.golle@gmail.com>
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License as published by
-- * the Free Software Foundation; either version 2 of the License, or
-- * (at your option) any later version.
-- *
-- * This program is distributed in the hope that it will be useful,
-- * but WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License
-- * along with this program; if not, write to the Free Software
-- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-- *
-- */
--
--#include <linux/kernel.h>
--#include <linux/slab.h>
--
--#include <linux/mtd/mtd.h>
--#include <linux/mtd/partitions.h>
--#include <linux/bootmem.h>
--#include <linux/magic.h>
--#include <linux/module.h>
--
--#include <asm/mach-ar7/prom.h>
--
--#define AC49X_MAXENVPARTS	8
--
--#define AC49X_PARTTYPE_LOADER	0
--#define AC49X_PARTTYPE_BOOTENV	1
--#define AC49X_PARTTYPE_LINUX	2
--#define AC49X_PARTTYPE_ROOTFS	3
--#define AC49X_PARTTYPE_UNKNOWN	4
--#define AC49X_NUM_PARTTYPES	5
--
--#define AC49X_FLASH_ADDRMASK	0x00FFFFFF
--
--#define AC49X_LOADER_MAGIC	0x40809000
--#define AC49X_LINUX_MAGIC	0x464c457f /*  ELF */
--#define AC49X_BOOTENV_MAGIC	0x4578614d /* MaxE */
--
--#define ROOTFS_MIN_OFFSET	0xC0000
--
--int parse_partvar(const unsigned char *partvar, struct mtd_partition *part)
--{
--	unsigned int partstart, partend;
--	unsigned int pnum;
--
--	pnum = sscanf(partvar, "0x%x,0x%x", &partstart, &partend);
--	if (pnum != 2)
--		return 1;
--
--	part->offset = partstart & AC49X_FLASH_ADDRMASK;
--	part->size = partend - partstart;
--
--	return 0;
--}
--
--int detect_parttype(struct mtd_info *master, struct mtd_partition part)
--{
--	unsigned int magic;
--	size_t len;
--
--	if (part.size < 4)
--		return -1;
--
--	mtd_read(master, part.offset, sizeof(magic), &len,
--		 (uint8_t *)&magic);
--
--	if (len != sizeof(magic))
--		return -1;
--
--	switch (magic) {
--	case AC49X_LOADER_MAGIC:
--		return AC49X_PARTTYPE_LOADER;
--	case AC49X_LINUX_MAGIC:
--		return AC49X_PARTTYPE_LINUX;
--	case SQUASHFS_MAGIC:
--	case CRAMFS_MAGIC:
--	case CRAMFS_MAGIC_WEND:
--		return AC49X_PARTTYPE_ROOTFS;
--	case AC49X_BOOTENV_MAGIC:
--		return AC49X_PARTTYPE_BOOTENV;
--	default:
--		switch (magic & 0xFF) {
--		case JFFS2_SUPER_MAGIC:
--			return AC49X_PARTTYPE_ROOTFS;
--		}
--		switch (magic >> 8) {
--		case JFFS2_SUPER_MAGIC:
--			return AC49X_PARTTYPE_ROOTFS;
--		}
--		return AC49X_PARTTYPE_UNKNOWN;
--	}
--}
--
--const char *partnames[] = {
--	"loader",
--	"config",
--	"linux",
--	"rootfs",
--	"data"
--};
--
--void gen_partname(unsigned int type,
--		  unsigned int *typenumeration,
--		  struct mtd_partition *part)
--{
--	char *s  = kzalloc(sizeof(char) * 8, GFP_KERNEL);
--
--	(typenumeration[type])++;
--	if (typenumeration[type] == 1)
--		sprintf(s, "%s", partnames[type]);
--	else
--		sprintf(s, "%s%d", partnames[type], typenumeration[type]);
--
--	part->name = s;
--}
--
--static int create_mtd_partitions(struct mtd_info *master,
--				 const struct mtd_partition **pparts,
--				 struct mtd_part_parser_data *data)
--{
--	unsigned int envpartnum = 0, linuxpartnum = 0;
--	unsigned int typenumeration[5] = { 0, 0, 0, 0, 0 };
--	unsigned char evn[5];
--	const unsigned char *partvar = NULL;
--
--	struct mtd_partition *ac49x_parts;
--
--	ac49x_parts = kzalloc(sizeof(*ac49x_parts) * AC49X_MAXENVPARTS,
--				GFP_KERNEL);
--
--	if (!ac49x_parts)
--		return -ENOMEM;
--
--	linuxpartnum = 0;
--	for (envpartnum = 0; envpartnum < AC49X_MAXENVPARTS; envpartnum++) {
--		struct mtd_partition parsepart;
--		unsigned int offset, size, type;
--		int err;
--		sprintf(evn, "mtd%d", envpartnum);
--		partvar = prom_getenv(evn);
--		if (!partvar)
--			continue;
--		err = parse_partvar(partvar, &parsepart);
--		if (err)
--			continue;
--		offset = parsepart.offset;
--		size = parsepart.size;
--		type = detect_parttype(master, parsepart);
--		gen_partname(type, typenumeration, &parsepart);
--		/* protect loader */
--		if (type == AC49X_PARTTYPE_LOADER)
--			parsepart.mask_flags = MTD_WRITEABLE;
--		else
--			parsepart.mask_flags = 0;
--
--		memcpy(&(ac49x_parts[linuxpartnum]), &parsepart,
--			sizeof(struct mtd_partition));
--
--		/* scan for contained rootfs */
--		if (type == AC49X_PARTTYPE_LINUX) {
--			parsepart.offset += ROOTFS_MIN_OFFSET &
--						~(master->erasesize - 1);
--			parsepart.size -= ROOTFS_MIN_OFFSET &
--						~(master->erasesize - 1);
--			do {
--				unsigned int size, offset;
--				size = parsepart.size;
--				offset = parsepart.offset;
--
--				type = detect_parttype(master, parsepart);
--				if (type == AC49X_PARTTYPE_ROOTFS) {
--					gen_partname(type, typenumeration,
--							&parsepart);
--					printk(KERN_INFO
--						"%s %s: 0x%08x@0x%08x\n",
--						"detected sub-partition",
--						parsepart.name,
--						(unsigned int)parsepart.size,
--						(unsigned int)parsepart.offset);
--					linuxpartnum++;
--					memcpy(&(ac49x_parts[linuxpartnum]),
--						&parsepart,
--						sizeof(struct mtd_partition));
--					break;
--				}
--				parsepart.offset += master->erasesize;
--				parsepart.size -= master->erasesize;
--			} while (parsepart.size >= master->erasesize);
--		}
--		linuxpartnum++;
--	}
--
--	*pparts = ac49x_parts;
--	return linuxpartnum;
--}
--
--static struct mtd_part_parser ac49x_parser = {
--	.owner = THIS_MODULE,
--	.parse_fn = create_mtd_partitions,
--	.name = "ac49xpart",
--};
--
--static int __init ac49x_parser_init(void)
--{
--	register_mtd_parser(&ac49x_parser);
--	return 0;
--}
--
--module_init(ac49x_parser_init);
--
--MODULE_LICENSE("GPL");
--MODULE_AUTHOR("Daniel Golle <daniel.golle@gmail.com>");
--MODULE_DESCRIPTION("MTD partitioning for AudioCodes AC49x");
-diff --git a/target/linux/ar7/files/drivers/mtd/titanpart.c b/target/linux/ar7/files/drivers/mtd/titanpart.c
-deleted file mode 100644
-index a6403f6ce2..0000000000
---- a/target/linux/ar7/files/drivers/mtd/titanpart.c
-+++ /dev/null
-@@ -1,234 +0,0 @@
--#include <linux/kernel.h>
--#include <linux/slab.h>
--
--#include <linux/mtd/mtd.h>
--#include <linux/mtd/partitions.h>
--#include <linux/bootmem.h>
--#include <linux/magic.h>
--#include <asm/mach-ar7/prom.h>
--
--#define IMAGE_A_SIZE 0X3c0000
--#define WRTP_PARTS	14
--#define NSP_IMG_MAGIC_NUMBER		le32_to_cpu(0x4D544443)
--#define NSP_IMG_SECTION_TYPE_KERNEL		(0x01)
--#define NSP_IMG_SECTION_TYPE_FILESYSTEM_ROOT	(0x02)
--#define NSP_IMG_SECTION_TYPE_FILESYSTEM		(0x03)
--#define MAX_NUM_PARTITIONS 14
--
--static int part_count=0;
--static struct mtd_partition titan_parts[WRTP_PARTS];
--
--
--struct nsp_img_hdr_head
--{
--	unsigned int	magic;		/* Magic number to identify this image header */
--	unsigned int	boot_offset;	/* Offset from start of header to kernel code. */
--	unsigned int	flags;		/* Image flags. */
--	unsigned int	hdr_version;	/* Version of this header. */
--	unsigned int	hdr_size;	/* The complete size of all portions of the header */
--	unsigned int	prod_id;	/* This product id */
--	unsigned int	rel_id;		/* Which release this is */
--	unsigned int	version;	/* name-MMM.nnn.ooo-rxx => 0xMMnnooxx. See comment
--					   below */
--	unsigned int	image_size;	/* Image size (including header) */
--	unsigned int	info_offset;	/* Offset from start of header to info block */
--	unsigned int	sect_info_offset;	/* Offset from start of header to section desc */
--	unsigned int	chksum_offset;	/* Offset from start of header to chksum block */
--	unsigned int    pad1;
--};
--
--struct nsp_img_hdr_section_info
--{
--	unsigned int	num_sects;	/* Number of section (and section desc blocks) in this image */
--	unsigned int	sect_size;	/* Size of a SINGLE section_desc block */
--	unsigned int	sections_offset;	/* Offset to from start of header to the start of the section blocks */
--};
--
--/* There will be one of more of the following stuctures in the image header. Each
--   section will have one of these blocks. */
--struct nsp_img_hdr_sections
--{
--	unsigned int	offset;		/* Offset of section from start of NSP_IMG_HDR_HEAD */
--	unsigned int	total_size;	/* Size of section (including pad size.) */
--	unsigned int	raw_size;	/* Size of section only */
--	unsigned int	flags;		/* Section flags */
--	unsigned int	chksum;		/* Section checksum */
--	unsigned int	type;		/* Section type. What kind of info does this section describe */
--	char		name[16];	/* Reference name for this section. */
--};
--
--
--
--
--
--static int	titan_parse_env_address(char *env_name, unsigned int *flash_base,
--				unsigned int *flash_end)
--{
--	char	image_name[30];
--	char	*env_ptr;
--	char	*base_ptr;
--	char	*end_ptr;
--	char * string_ptr;
--	/* Get the image variable */
--	env_ptr = prom_getenv(env_name);
--	if(!env_ptr){
--		printk("titan: invalid env name, %s.\n", env_name);
--		return -1;	/* Error, no image variable */
--	}
--	strncpy(image_name, env_ptr, 30);
--	image_name[29]=0;
--	string_ptr = image_name;
--	/* Extract the start and stop addresses of the partition */
--	base_ptr = strsep(&string_ptr, ",");
--	end_ptr = strsep(&string_ptr, ",");
--	if ((base_ptr == NULL) || (end_ptr == NULL)) {	
--		printk("titan: Couldn't tokenize %s start,end.\n", image_name);
--		return -1;
--	}
--
--	*flash_base = (unsigned int) simple_strtol(base_ptr, NULL, 0);
--	*flash_end = (unsigned int) simple_strtol(end_ptr, NULL, 0);
--	if((!*flash_base) || (!*flash_end)) {
--		printk("titan: Unable to convert :%s: :%s: into start,end values.\n",
--				env_name, image_name);
--		return -1;
--	}
--	*flash_base &= 0x0fffffff;
--	*flash_end &= 0x0fffffff;
--	return 0;
--}
--
--
--
--static int	titan_get_single_image(char *bootcfg_name, unsigned int *flash_base,
--				unsigned int *flash_end)
--{
--	char	*env_ptr;
--	char	*base_ptr;
--	char	*end_ptr;
--	char	image_name[30];
--	char * string_ptr;
--
--	if(!bootcfg_name || !flash_base || !flash_end)
--		return -1;
--
--	env_ptr = prom_getenv(bootcfg_name);
--	if(!env_ptr){
--		printk("titan: %s variable not found.\n", bootcfg_name);
--		return -1;	/* Error, no bootcfg variable */
--	}
--
--	string_ptr = image_name;
--	/* Save off the image name */
--	strncpy(image_name, env_ptr, 30);
--	image_name[29]=0;
--
--	end_ptr=strsep(&string_ptr, "\"");
--	base_ptr=strsep(&string_ptr, "\"");		/* Loose the last " */
--	if(!end_ptr || !base_ptr){
--		printk("titan: invalid bootcfg format, %s.\n", image_name);
--		return -1;	/* Error, invalid bootcfg variable */
--	}
--
--	/* Now, parse the addresses */
--	return titan_parse_env_address(base_ptr, flash_base, flash_end);
--}
--
--
--
--static void titan_add_partition(char * env_name, unsigned int flash_base, unsigned int flash_end)
--{
--		titan_parts[part_count].name = env_name;
--		titan_parts[part_count].offset = flash_base;
--		titan_parts[part_count].size = flash_end-flash_base;
--		titan_parts[part_count].mask_flags = (strcmp(env_name, "bootloader")==0|| 
--			strcmp(env_name, "boot_env")==0 ||
--			strcmp(env_name, "full_image")==0 )?MTD_WRITEABLE:0;
--		part_count++;
--
--}
--int create_titan_partitions(struct mtd_info *master,
--	struct mtd_partition **pparts,
--	unsigned long origin)
--{
--	struct nsp_img_hdr_head		hdr;
--	struct nsp_img_hdr_section_info	sect_info;
--	struct nsp_img_hdr_sections	section;
--	unsigned int			flash_base, flash_end;
--	unsigned int			start, end;
--	char				*name;
--	int	i;
--	int	total_sects=0;
--	size_t len;
--
--	/* Get the bootcfg env variable first */
--	if(titan_get_single_image("BOOTCFG", &flash_base, &flash_end)) {
--		/* Error, fallback */
--		return -1;
--	}
--
--	/* Get access to the header, and do some validation checks */
--	//hdr=(struct nsp_img_hdr_head*)flash_base;
--	mtd_read(master, flash_base, sizeof(struct nsp_img_hdr_head), &len, (uint8_t *)&hdr);
--	if(hdr.magic != NSP_IMG_MAGIC_NUMBER)
--		return -1;	/* Not a single image */
--
--	mtd_read(master, flash_base + hdr.sect_info_offset, sizeof(struct nsp_img_hdr_section_info), &len, (uint8_t *)&sect_info);
--
--	/* Look for the root fs, and add it first. This way we KNOW where the rootfs is */
--	for(i=0; i< sect_info.num_sects && i<MAX_NUM_PARTITIONS; i++){
--		mtd_read(master, flash_base + sect_info.sections_offset + (i * sect_info.sect_size) , sizeof(struct nsp_img_hdr_sections), &len, (uint8_t *)&section);
--		/* Add only the root partition */
--		if(section.type != NSP_IMG_SECTION_TYPE_FILESYSTEM_ROOT){
--			continue;
--		}
--		start=flash_base + section.offset;
--		end=start + section.total_size;
--		titan_add_partition("root", start, end);
--		total_sects++;
--		
--	}
--
--	for(i=0; i< sect_info.num_sects && i<MAX_NUM_PARTITIONS; i++){
--
--		mtd_read(master, flash_base + sect_info.sections_offset + (i * sect_info.sect_size) , sizeof(struct nsp_img_hdr_sections), &len, (uint8_t *)&section);
--
--		name=section.name;
--		if(section.type == NSP_IMG_SECTION_TYPE_FILESYSTEM_ROOT)
--		{
--			name = "rootfs";
--			start=flash_base + section.offset;
--			end=flash_end;
--			titan_add_partition(name, start, end);
--			total_sects++;
--		}
--		else if(section.type == NSP_IMG_SECTION_TYPE_KERNEL)
--		{
--			name = "kernel";
--			start=flash_base + section.offset;
--			end=start + section.total_size;
--			titan_add_partition(name, start, end);
--			total_sects++;
--		}
--
--	}
--
--	/* Next, lets add the single image */
--	titan_add_partition("primary_image", flash_base, flash_end);
--	total_sects++;
--
--
--	titan_add_partition("full_image", 0,  master->size);
--	total_sects++;
--
--	if (!titan_parse_env_address("BOOTLOADER", &start, &end)){
--		titan_add_partition("bootloader", start, end);
--		total_sects++;
--	}
--	if (!titan_parse_env_address("boot_env", &start, &end)){
--		titan_add_partition("boot_env", start, end);
--		total_sects++;
--	}
--	*pparts = titan_parts;
--	return total_sects;
--}
-diff --git a/target/linux/ar7/generic/config-default b/target/linux/ar7/generic/config-default
-deleted file mode 100644
-index 10d46e9c26..0000000000
---- a/target/linux/ar7/generic/config-default
-+++ /dev/null
-@@ -1,5 +0,0 @@
--CONFIG_AR7_TI=y
--# CONFIG_AR7_TYPE_AC49X is not set
--CONFIG_AR7_TYPE_TI=y
--# CONFIG_MTD_AC49X_PARTS is not set
--CONFIG_MTD_AR7_PARTS=y
-diff --git a/target/linux/ar7/generic/profiles/100-Annex-A.mk b/target/linux/ar7/generic/profiles/100-Annex-A.mk
-deleted file mode 100644
-index d8e549ea65..0000000000
---- a/target/linux/ar7/generic/profiles/100-Annex-A.mk
-+++ /dev/null
-@@ -1,18 +0,0 @@
--#
--# Copyright (C) 2009 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/Annex-A
--  NAME:=Annex-A DSL firmware (default)
--  PACKAGES:=kmod-pppoa ppp-mod-pppoa linux-atm atm-tools br2684ctl \
--	    kmod-sangam-atm-annex-a
--endef
--
--define Profile/Annex-A/Description
--	Package set compatible with Annex-A DSL lines (most countries).
--endef
--$(eval $(call Profile,Annex-A))
--
-diff --git a/target/linux/ar7/generic/profiles/110-Annex-B.mk b/target/linux/ar7/generic/profiles/110-Annex-B.mk
-deleted file mode 100644
-index 55de1fc4ad..0000000000
---- a/target/linux/ar7/generic/profiles/110-Annex-B.mk
-+++ /dev/null
-@@ -1,18 +0,0 @@
--#
--# Copyright (C) 2009 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/Annex-B
--  NAME:=Annex-B DSL firmware
--  PACKAGES:=kmod-pppoa ppp-mod-pppoa linux-atm atm-tools br2684ctl \
--	    kmod-sangam-atm-annex-b
--endef
--
--define Profile/Annex-B/Description
--	Package set compatible with Annex-B DSL lines (Germany).
--endef
--$(eval $(call Profile,Annex-B))
--
-diff --git a/target/linux/ar7/generic/profiles/200-Texas.mk b/target/linux/ar7/generic/profiles/200-Texas.mk
-deleted file mode 100644
-index 7d868bdb08..0000000000
---- a/target/linux/ar7/generic/profiles/200-Texas.mk
-+++ /dev/null
-@@ -1,18 +0,0 @@
--#
--# Copyright (C) 2006-2009 OpenWrt.org
--#
--# This is free software, licensed under the GNU General Public License v2.
--# See /LICENSE for more information.
--#
--
--define Profile/Texas
--  NAME:=Texas Instruments WiFi (mac80211)
--  PACKAGES:=kmod-acx-mac80211
--endef
--
--define Profile/Texas/Description
--	Package set compatible with hardware using Texas Instruments WiFi cards
--	using the mac80211 driver.
--endef
--$(eval $(call Profile,Texas))
--
-diff --git a/target/linux/ar7/generic/profiles/210-None.mk b/target/linux/ar7/generic/profiles/210-None.mk
-deleted file mode 100644
-index 2fcfacde9f..0000000000
---- a/target/linux/ar7/generic/profiles/210-None.mk
+index c881c8001d..0000000000
+--- a/target/linux/ixp4xx/generic/profiles/100-Default.mk
 +++ /dev/null
 @@ -1,17 +0,0 @@
 -#
@@ -11336,42 +1568,231 @@ index 2fcfacde9f..0000000000
 -# See /LICENSE for more information.
 -#
 -
--define Profile/None
--  NAME:=No WiFi
--  PACKAGES:=
+-define Profile/Default
+-  NAME:=Default Profile
+-  PACKAGES:=kmod-ath5k
 -endef
 -
--define Profile/None/Description
--	Package set without WiFi support
+-define Profile/Default/Description
+-	Default IXP4xx Profile
 -endef
--$(eval $(call Profile,None))
+-$(eval $(call Profile,Default))
 -
-diff --git a/target/linux/ar7/generic/target.mk b/target/linux/ar7/generic/target.mk
+diff --git a/target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk b/target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk
 deleted file mode 100644
-index b40d2a4722..0000000000
---- a/target/linux/ar7/generic/target.mk
+index 8f74277c3b..0000000000
+--- a/target/linux/ixp4xx/generic/profiles/105-Atheros-ath5k.mk
 +++ /dev/null
-@@ -1,12 +0,0 @@
+@@ -1,17 +0,0 @@
 -#
--# Copyright (C) 2012 OpenWrt.org
+-# Copyright (C) 2006-2008 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
 -#
 -
--SUBTARGET:=generic
--BOARDNAME:=Texas Instruments AR7 boards
+-define Profile/Atheros-ath5k
+-  NAME:=Atheros WiFi (atk5k)
+-  PACKAGES:=kmod-ath5k
+-endef
 -
--DEFAULT_PACKAGES+= kmod-mac80211 kmod-acx-mac80211 wpad-basic
+-define Profile/Atheros-ath5k/Description
+-	Package set compatible with hardware using Atheros WiFi cards
+-endef
+-$(eval $(call Profile,Atheros-ath5k))
+-
+diff --git a/target/linux/ixp4xx/generic/profiles/200-NSLU2.mk b/target/linux/ixp4xx/generic/profiles/200-NSLU2.mk
+deleted file mode 100644
+index 55073602a0..0000000000
+--- a/target/linux/ixp4xx/generic/profiles/200-NSLU2.mk
++++ /dev/null
+@@ -1,19 +0,0 @@
+-#
+-# Copyright (C) 2006-2008 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define Profile/NSLU2
+-  NAME:=Linksys NSLU2
+-  PACKAGES:=-wpad-basic -kmod-ath5k kmod-scsi-core \
+-	kmod-usb-ohci-pci kmod-usb2-pci kmod-usb-storage \
+-	kmod-fs-ext4
+-endef
+-
+-define Profile/NSLU2/Description
+-	Package set optimized for the Linksys NSLU2
+-endef
+-$(eval $(call Profile,NSLU2))
+-
+diff --git a/target/linux/ixp4xx/generic/profiles/300-NAS100d.mk b/target/linux/ixp4xx/generic/profiles/300-NAS100d.mk
+deleted file mode 100644
+index a50eec09e0..0000000000
+--- a/target/linux/ixp4xx/generic/profiles/300-NAS100d.mk
++++ /dev/null
+@@ -1,21 +0,0 @@
+-#
+-# Copyright (C) 2006 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define Profile/NAS100d
+-  NAME:=Iomega NAS 100d
+-  PACKAGES:=kmod-ath5k \
+-	kmod-scsi-core \
+-	kmod-ata-core kmod-ata-artop \
+-	kmod-usb2-pci kmod-usb-storage \
+-	kmod-fs-ext4
+-endef
+-
+-define Profile/NAS100d/Description
+-	Package set optimized for the Iomega NAS 100d
+-endef
+-$(eval $(call Profile,NAS100d))
+-
+diff --git a/target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk b/target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk
+deleted file mode 100644
+index fe2b1ccc64..0000000000
+--- a/target/linux/ixp4xx/generic/profiles/400-DSMG600RevA.mk
++++ /dev/null
+@@ -1,22 +0,0 @@
+-#
+-# Copyright (C) 2006 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define Profile/DSMG600RevA
+-  NAME:=DSM-G600 Rev A
+-  PACKAGES:=kmod-via-velocity \
+-	kmod-ath5k \
+-	kmod-scsi-core \
+-	kmod-ata-core kmod-ata-artop \
+-	kmod-usb-uhci kmod-usb2-pci kmod-usb-storage \
+-	kmod-fs-ext4
+-endef
+-
+-define Profile/DSMG600RevA/Description
+-	Package set optimized for the DSM-G600 Rev A
+-endef
+-$(eval $(call Profile,DSMG600RevA))
+-
+diff --git a/target/linux/ixp4xx/generic/profiles/500-USR8200.mk b/target/linux/ixp4xx/generic/profiles/500-USR8200.mk
+deleted file mode 100644
+index a4c1f7f430..0000000000
+--- a/target/linux/ixp4xx/generic/profiles/500-USR8200.mk
++++ /dev/null
+@@ -1,19 +0,0 @@
+-#
+-# Copyright (C) 2006-2008 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define Profile/USR8200
+-  NAME:=USRobotics USR8200
+-  PACKAGES:=-wpad-basic kmod-scsi-core \
+-	kmod-usb-uhci kmod-usb2-pci kmod-usb-storage \
+-	kmod-fs-ext4 kmod-firewire kmod-firewire-ohci kmod-firewire-sbp2
+-endef
+-
+-define Profile/USR8200/Description
+-	Package set optimized for the USRobotics USR8200
+-endef
+-$(eval $(call Profile,USR8200))
+-
+diff --git a/target/linux/ixp4xx/generic/target.mk b/target/linux/ixp4xx/generic/target.mk
+deleted file mode 100644
+index 4794755fdc..0000000000
+--- a/target/linux/ixp4xx/generic/target.mk
++++ /dev/null
+@@ -1,9 +0,0 @@
+-BOARDNAME:=Generic
+-
+-DEFAULT_PACKAGES+= wpad-basic
 -
 -define Target/Description
--	Build firmware images for TI AR7 based routers.
+-	Build firmware images for ixp4xx based boards that boot from internal flash
+-	(e.g : Linksys NSLU2, ...)
 -endef
-diff --git a/target/linux/ar7/image/Makefile b/target/linux/ar7/image/Makefile
+-
+diff --git a/target/linux/ixp4xx/harddisk/config-default b/target/linux/ixp4xx/harddisk/config-default
 deleted file mode 100644
-index d20de27113..0000000000
---- a/target/linux/ar7/image/Makefile
+index 78e599ca86..0000000000
+--- a/target/linux/ixp4xx/harddisk/config-default
 +++ /dev/null
-@@ -1,137 +0,0 @@
+@@ -1,20 +0,0 @@
+-CONFIG_ATA=y
+-CONFIG_BLK_DEV_SD=y
+-CONFIG_CMDLINE="root=/dev/sda1 noinitrd console=ttyS0,115200"
+-CONFIG_EXT4_FS=y
+-CONFIG_JBD=y
+-CONFIG_REISERFS_FS=y
+-CONFIG_SATA_VIA=y
+-CONFIG_USB=y
+-CONFIG_USB_ARCH_HAS_EHCI=y
+-CONFIG_USB_ARCH_HAS_HCD=y
+-CONFIG_USB_ARCH_HAS_OHCI=y
+-CONFIG_USB_EHCI_HCD=y
+-# CONFIG_USB_EHCI_HCD_PLATFORM is not set
+-CONFIG_USB_EHCI_ROOT_HUB_TT=y
+-CONFIG_USB_EHCI_SPLIT_ISO=y
+-CONFIG_USB_EHCI_TT_NEWSCHED=y
+-CONFIG_USB_OHCI_HCD=y
+-# CONFIG_USB_OHCI_HCD_PLATFORM is not set
+-CONFIG_USB_OHCI_LITTLE_ENDIAN=y
+-CONFIG_USB_STORAGE=y
+diff --git a/target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk b/target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk
+deleted file mode 100644
+index 489ef083a8..0000000000
+--- a/target/linux/ixp4xx/harddisk/profiles/100-FSG3.mk
++++ /dev/null
+@@ -1,20 +0,0 @@
 -#
--# Copyright (C) 2006-2015 OpenWrt.org
+-# Copyright (C) 2006 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define Profile/FSG3
+-  NAME:=Freecom FSG-3
+-  PACKAGES:= \
+-	kmod-ath5k \
+-	kmod-usb-uhci kmod-usb2-pci kmod-usb-storage \
+-	kmod-fs-ext4 kmod-fs-reiserfs
+-endef
+-
+-define Profile/FSG3/Description
+-	Package set optimized for the Freecom FSG-3
+-endef
+-$(eval $(call Profile,FSG3))
+-
+diff --git a/target/linux/ixp4xx/harddisk/target.mk b/target/linux/ixp4xx/harddisk/target.mk
+deleted file mode 100644
+index c71065e5f1..0000000000
+--- a/target/linux/ixp4xx/harddisk/target.mk
++++ /dev/null
+@@ -1,6 +0,0 @@
+-BOARDNAME:=Internal Hard-Disk
+-
+-define Target/Description
+-	Build firmware images for ixp4xx based boards that boot directly from internal disk storage
+-	(e.g : Freecom FSG-3, ...)
+-endef
+diff --git a/target/linux/ixp4xx/image/Makefile b/target/linux/ixp4xx/image/Makefile
+deleted file mode 100644
+index 5b6ff0b08e..0000000000
+--- a/target/linux/ixp4xx/image/Makefile
++++ /dev/null
+@@ -1,76 +0,0 @@
+-# 
+-# Copyright (C) 2006-2010 OpenWrt.org
 -#
 -# This is free software, licensed under the GNU General Public License v2.
 -# See /LICENSE for more information.
@@ -11379,1065 +1800,9917 @@ index d20de27113..0000000000
 -include $(TOPDIR)/rules.mk
 -include $(INCLUDE_DIR)/image.mk
 -
--DROP_SECTIONS:=.reginfo .mdebug .comment .note .pdr .options .MIPS.options
--OBJCOPY_SREC:=$(TARGET_CROSS)objcopy -S -O srec $(addprefix --remove-section=,$(DROP_SECTIONS))
--
--LOADADDR:=0x94600000
--KERNEL_ENTRY:=0x94100000
--RAMSTART:=0x94000000
--RAMSIZE:=0x00100000
--
--EVA_LOADADDR := 0x94100000
--
--LOADER_MAKEOPTS= \
--	KDIR=$(KDIR) \
--	LOADADDR=$(LOADADDR) \
--	KERNEL_ENTRY=$(KERNEL_ENTRY) \
--	RAMSTART=$(RAMSTART) \
--	RAMSIZE=$(RAMSIZE)
--
--CFLAGS := -D__KERNEL__ -Wall -Wstrict-prototypes -Wno-trigraphs -Os \
--	-fno-strict-aliasing -fno-common -fomit-frame-pointer -G 0 -mno-abicalls -fno-pic \
--	-pipe -mlong-calls -fno-common \
--	-mabi=32 -march=mips32 -Wa,-32 -Wa,-march=mips32 -Wa,-mips32 -Wa,--trap \
--	-DLOADADDR=$(LOADADDR)
--
--define Build/Clean
--	$(MAKE) -C $(GENERIC_PLATFORM_DIR)/image/lzma-loader $(LOADER_MAKEOPTS) clean
--endef
--
--define Image/Prepare
--	cat $(KDIR)/vmlinux | $(STAGING_DIR_HOST)/bin/lzma e -si -so -eos -lc1 -lp2 -pb2 > $(KDIR)/vmlinux.lzma
--	$(STAGING_DIR_HOST)/bin/lzma2eva $(EVA_LOADADDR) 0x$${shell $(TARGET_CROSS)nm $(KDIR)/vmlinux | grep -w kernel_entry | cut -d' ' -f1} $(KDIR)/vmlinux.lzma $(KDIR)/loader.eva
--
--	$(MAKE) -C $(GENERIC_PLATFORM_DIR)/image/lzma-loader \
--		$(LOADER_MAKEOPTS) \
--		clean compile
--	$(OBJCOPY_SREC) $(KDIR)/loader.elf $(KDIR)/loader.srec
--	$(OBJCOPY_SREC) $(KDIR)/vmlinux.elf $(KDIR)/vmlinux.srec
--	srec2bin $(KDIR)/loader.srec $(KDIR)/loader.bin
--	srec2bin $(KDIR)/vmlinux.srec $(KDIR)/vmlinux.bin
--ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
--	$(OBJCOPY_SREC) $(KDIR)/vmlinux-initramfs.elf \
--		$(KDIR)/vmlinux-initramfs.srec
--	srec2bin $(KDIR)/vmlinux-initramfs.srec $(KDIR)/vmlinux-initramfs.bin
+-ifdef CONFIG_PACKAGE_apex
+-  define Image/Build/Linksys
+-	BIN_DIR=$(BIN_DIR) $(TOPDIR)/scripts/slugimage.pl \
+-		-L $(STAGING_DIR_IMAGE)/apex-$(2)-armeb.bin \
+-		-k $(BIN_DIR)/$(IMG_PREFIX)-$(2)-zImage \
+-		-r rootfs:$(BIN_DIR)/$(IMG_PREFIX)-$(1).img \
+-		-p -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).bin
+-	BIN_DIR=$(BIN_DIR) $(TOPDIR)/scripts/slugimage.pl \
+-		-F -L $(STAGING_DIR_IMAGE)/apex-$(2)-16mb-armeb.bin \
+-		-k $(BIN_DIR)/$(IMG_PREFIX)-$(2)-zImage \
+-		-r rootfs:$(BIN_DIR)/$(IMG_PREFIX)-$(1).img \
+-		-p -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1)-16mb.bin
+-  endef
 -endif
+-
+-define Image/Build/Freecom
+-	$(INSTALL_DIR) $(TARGET_DIR)/boot
+-	# TODO: Add special CMDLINE shim for webupgrade image here
+-	$(CP) $(BIN_DIR)/$(IMG_PREFIX)-$(2)-zImage $(TARGET_DIR)/zImage
+-	$(TAR) cfj $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).img --numeric-owner --owner=0 --group=0 -C $(TARGET_DIR)/ .
+-	$(STAGING_DIR_HOST)/bin/encode_crc $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).img $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1)-webupgrade.img
+-	rm -f $(TARGET_DIR)/zImage
 -endef
 -
--define align/jffs2-64k
--bs=65536 conv=sync
+-define Image/BuildKernel
+-	cp $(KDIR)/zImage $(BIN_DIR)/$(IMG_PREFIX)-zImage
+-	BIN_DIR=$(BIN_DIR) IMG_PREFIX="$(IMG_PREFIX)" $(TOPDIR)/scripts/arm-magic.sh
 -endef
 -
--define align/jffs2-128k
--bs=131072 conv=sync
+-define Image/BuildKernel/Initramfs
+-	cp $(KDIR)/zImage-initramfs $(BIN_DIR)/$(IMG_PREFIX)-initramfs-zImage
+-	BIN_DIR=$(BIN_DIR) IMG_PREFIX="$(IMG_PREFIX)-initramfs" $(TOPDIR)/scripts/arm-magic.sh
 -endef
 -
--define align/squashfs
+-# Build sysupgrade image
+-define BuildFirmware/Generic
+-	dd if=$(KDIR)/zImage of=$(KDIR)/zImage.pad bs=64k conv=sync; \
+-	dd if=$(KDIR)/root.$(1) of=$(KDIR)/root.$(1).pad bs=128k conv=sync; \
+-	sh $(TOPDIR)/scripts/combined-image.sh \
+-		$(KDIR)/zImage.pad \
+-		$(KDIR)/root.$(1).pad \
+-		$(BIN_DIR)/$(IMG_PREFIX)-$(patsubst jffs2-%,jffs2,$(patsubst squashfs-%,squashfs,$(1)))-sysupgrade.bin
 -endef
 -
--define Image/Build/CyberTAN
--	(dd if=/dev/zero bs=16 count=1; cat $(BIN_DIR)/$(IMG_PREFIX)-$(1).bin) | \
--		$(STAGING_DIR_HOST)/bin/addpattern -p $(3) -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(4)-code.bin
--endef
--
--define Image/Build/Titan
--	$(STAGING_DIR_HOST)/bin/mktitanimg -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(4)-code.bin -i $(KDIR)/loader.bin $(KDIR)/root.$(1) -a 0x10000 0x10000 -h 2  -p 0x4C575943 -s 0x0b010000
--	$(STAGING_DIR_HOST)/bin/mktitanimg -o $(BIN_DIR)/$(IMG_PREFIX)-$(2)-na-$(4)-code.bin -i $(KDIR)/loader.bin $(KDIR)/root.$(1) -a 0x10000 0x10000 -h 2  -p 0x4D575943 -s 0x0b010000
--endef
--
--define Image/Build/AudioCodes
--	( dd if=$(KDIR)/vmlinux.elf bs=64k conv=sync ; dd if=$(KDIR)/root.$(1) ) > $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(1).bin
--endef
--
--#define Image/Build/sErCoMm
--#	cat sercomm/adam2.bin "$(BIN_DIR)/$(IMG_PREFIX)-$(1).bin" > "$(KDIR)/dgfw.tmp"
--#	dd if=sercomm/$(2) of="$(KDIR)/dgfw.tmp" bs=$$$$((0x3e0000 - 80)) seek=1 conv=notrunc
--#	$(STAGING_DIR_HOST)/bin/dgfirmware -f -w "$(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(3).img" "$(KDIR)/dgfw.tmp"
--#	rm -f "$(KDIR)/dgfw.tmp"
--#endef
--
--define Image/Build/EVA
--	dd if=$(KDIR)/loader.eva $(call align/$(1)) > $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(KERNEL)-$(1).bin
--	cat $(KDIR)/root.$(1) >> $(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(KERNEL)-$(1).bin
--	$(call prepare_generic_squashfs,$(BIN_DIR)/$(IMG_PREFIX)-$(2)-$(KERNEL)-$(1).bin)
--endef
--
--define Image/Build/Initramfs
--	$(CP) $(KDIR)/vmlinux-initramfs.bin $(BIN_DIR)/$(IMG_PREFIX)-initramfs.bin
--endef
--
--ifeq ($(CONFIG_AR7_TI),y)
 -define Image/Build
--	dd if=$(KDIR)/loader.bin $(call align/$(1)) > $(BIN_DIR)/$(IMG_PREFIX)-$(1).bin
--	cat $(KDIR)/root.$(1) >> $(BIN_DIR)/$(IMG_PREFIX)-$(1).bin
--	$(call prepare_generic_squashfs,$(BIN_DIR)/$(IMG_PREFIX)-$(1).bin)
--	$(call Image/Build/CyberTAN,$(1),AG1B,AG1B,$(1))
--	$(call Image/Build/CyberTAN,$(1),AG1A,AG1A,$(1))
--	$(call Image/Build/CyberTAN,$(1),WA21,WA21,$(1))
--	$(call Image/Build/CyberTAN,$(1),WA22,WA22,$(1))
--	$(call Image/Build/CyberTAN,$(1),WAG2,WAG2,$(1))
--	$(call Image/Build/CyberTAN,$(1),AG310,AV2A -b -r 1.0,$(1))
--	$(call Image/Build/CyberTAN,$(1),AG241v2,AG3A -b -r 2.0,$(1))
--	$(call Image/Build/CyberTAN,$(1),AG241v2b,AG3B -b -r 2.0,$(1))
--	$(call Image/Build/CyberTAN,$(1),AG241v1,AG3A -b,$(1))
--	$(call Image/Build/CyberTAN,$(1),WAG54GP2v1,ATWL -b,$(1))
--	$(call Image/Build/CyberTAN,$(1),WAG54GP2v2,CTWL -b,$(1))
--	$(call Image/Build/CyberTAN,$(1),WA31,WA31 -b,$(1))
--	$(call Image/Build/CyberTAN,$(1),WA32,WA32 -b,$(1))
--	$(call Image/Build/CyberTAN,$(1),WA7A,WA7A -b,$(1))
--	$(call Image/Build/CyberTAN,$(1),WA7B,WA7B -b,$(1))
--#	$(call Image/Build/sErCoMm,$(1),dg834,$(1))
--#	$(call Image/Build/sErCoMm,$(1),jdr454wb,$(1))
--	$(call Image/Build/EVA,$(1),EVA)
--	$(call Image/Build/Titan,$(1),Titan,Titan,$(1))
--ifeq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)
--	$(call Image/Build/Initramfs)
--endif
+-	$(call Image/Build/$(1),$(1))
+-	$(call BuildFirmware/Generic,$(1))
 -endef
--endif
 -
--ifeq ($(CONFIG_AR7_AC49X),y)
--define Image/Build
--#	$(call prepare_generic_squashfs,$(BIN_DIR)/$(IMG_PREFIX)-$(1).bin)
--	$(call Image/Build/AudioCodes,$(1),mp202,$(1))
--ifeq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),y)
--	$(call Image/Build/Initramfs)
--endif
+-define Image/Build/jffs2-64k
+-	dd if=$(KDIR)/root.$(1) of=$(BIN_DIR)/$(IMG_PREFIX)-$(1).img bs=65536 conv=sync
 -endef
--endif
+-
+-define Image/Build/jffs2-128k
+-	dd if=$(KDIR)/root.$(1) of=$(BIN_DIR)/$(IMG_PREFIX)-$(1).img bs=131072 conv=sync
+-	$(call Image/Build/Linksys,$(1),nslu2,$(1))
+-	$(call Image/Build/Freecom,$(1),fsg3,$(1))
+-endef
+-
+-define Image/Build/squashfs
+-	$(call prepare_generic_squashfs,$(KDIR)/root.squashfs)
+-	dd if=$(KDIR)/root.$(1) of=$(BIN_DIR)/$(IMG_PREFIX)-$(1).img bs=131072 conv=sync
+-	$(call Image/Build/Linksys,$(1),nslu2,$(1))
+-	$(call Image/Build/Freecom,$(1),fsg3,$(1))
+-endef
 -
 -$(eval $(call BuildImage))
-diff --git a/target/linux/ar7/patches-4.9/100-fix-highmem-offset.patch b/target/linux/ar7/patches-4.9/100-fix-highmem-offset.patch
+diff --git a/target/linux/ixp4xx/modules.mk b/target/linux/ixp4xx/modules.mk
 deleted file mode 100644
-index f1a7549786..0000000000
---- a/target/linux/ar7/patches-4.9/100-fix-highmem-offset.patch
+index 2d6446c05b..0000000000
+--- a/target/linux/ixp4xx/modules.mk
 +++ /dev/null
-@@ -1,11 +0,0 @@
----- a/arch/mips/include/asm/mach-ar7/spaces.h
--+++ b/arch/mips/include/asm/mach-ar7/spaces.h
--@@ -20,6 +20,8 @@
-- #define UNCAC_BASE	_AC(0xb4000000, UL)	/* 0xa0000000 + PHYS_OFFSET */
-- #define IO_BASE		UNCAC_BASE
-- 
--+#define HIGHMEM_START	_AC(0x20000000, UL)
--+
-- #include <asm/mach-generic/spaces.h>
-- 
-- #endif /* __ASM_AR7_SPACES_H */
-diff --git a/target/linux/ar7/patches-4.9/101-MIPS-AR7-allow-NULL-clock-for-clk_get_rate.patch b/target/linux/ar7/patches-4.9/101-MIPS-AR7-allow-NULL-clock-for-clk_get_rate.patch
+@@ -1,74 +0,0 @@
+-#
+-# Copyright (C) 2010 OpenWrt.org
+-#
+-# This is free software, licensed under the GNU General Public License v2.
+-# See /LICENSE for more information.
+-#
+-
+-define KernelPackage/ata-ixp4xx-cf
+-  SUBMENU:=$(BLOCK_MENU)
+-  TITLE:=IXP4XX Compact Flash support
+-  DEPENDS:=@TARGET_ixp4xx
+-  KCONFIG:=CONFIG_PATA_IXP4XX_CF
+-  FILES:=$(LINUX_DIR)/drivers/ata/pata_ixp4xx_cf.ko
+-  AUTOLOAD:=$(call AutoLoad,41,pata_ixp4xx_cf,1)
+-  $(call AddDepends/ata)
+-endef
+-
+-define KernelPackage/ata-ixp4xx-cf/description
+- IXP4XX Compact Flash support.
+-endef
+-
+-$(eval $(call KernelPackage,ata-ixp4xx-cf))
+-
+-
+-define KernelPackage/ixp4xx-beeper
+-  SUBMENU:=$(OTHER_MENU)
+-  TITLE:=IXP4XX Beeper support
+-  DEPENDS:=@TARGET_ixp4xx +kmod-input-core
+-  KCONFIG:= \
+-	CONFIG_INPUT_MISC=y \
+-	CONFIG_INPUT_IXP4XX_BEEPER
+-  FILES:=$(LINUX_DIR)/drivers/input/misc/ixp4xx-beeper.ko
+-  AUTOLOAD:=$(call AutoLoad,50,ixp4xx-beeper)
+-  $(call AddDepends/input)
+-endef
+-
+-define KernelPackage/ixp4xx-beeper/description
+- IXP4XX Beeper support
+-endef
+-
+-$(eval $(call KernelPackage,ixp4xx-beeper))
+-
+-
+-define KernelPackage/crypto-hw-ixp4xx
+-  TITLE:=Intel IXP4xx hardware crypto module
+-  DEPENDS:=@TARGET_ixp4xx
+-  KCONFIG:= \
+-	CONFIG_CRYPTO_DEV_IXP4XX
+-  FILES:=$(LINUX_DIR)/drivers/crypto/ixp4xx_crypto.ko
+-  AUTOLOAD:=$(call AutoLoad,90,ixp4xx_crypto)
+-  $(call AddDepends/crypto,+kmod-crypto-authenc +kmod-crypto-des)
+-endef
+-
+-define KernelPackage/crypto-hw-ixp4xx/description
+-  Kernel support for the Intel IXP4xx HW crypto engine.
+-endef
+-
+-$(eval $(call KernelPackage,crypto-hw-ixp4xx))
+-
+-
+-define KernelPackage/ixp4xx-eth
+-  SUBMENU:=$(NETWORK_DEVICES_MENU)
+-  TITLE:=IXP4xxt Ethernet Adapter kernel support
+-  DEPENDS:=@TARGET_ixp4xx
+-  KCONFIG:=CONFIG_IXP4XX_ETH
+-  FILES:=$(LINUX_DIR)/drivers/net/ethernet/xscale/ixp4xx_eth.ko
+-  AUTOLOAD:=$(call AutoLoad,50,ixp4xx_eth)
+-endef
+-
+-define KernelPackage/ixp4xx-eth/description
+- Kernel modules for Intel IXP4xx Ethernet chipsets.
+-endef
+-
+-$(eval $(call KernelPackage,ixp4xx-eth))
+diff --git a/target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch b/target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch
 deleted file mode 100644
-index 74ac0d1482..0000000000
---- a/target/linux/ar7/patches-4.9/101-MIPS-AR7-allow-NULL-clock-for-clk_get_rate.patch
+index 3ca3eb76a6..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/001-arm-ixp4xx-set-cohorent_dma_mask-for-ethernet-platfo.patch
 +++ /dev/null
-@@ -1,45 +0,0 @@
--From patchwork Tue Jul 18 10:17:26 2017
--Content-Type: text/plain; charset="utf-8"
--MIME-Version: 1.0
--Content-Transfer-Encoding: 7bit
--Subject: [5/9] MIPS: AR7: allow NULL clock for clk_get_rate
--X-Patchwork-Submitter: Jonas Gorski <jonas.gorski@gmail.com>
--X-Patchwork-Id: 16775
--Message-Id: <20170718101730.2541-6-jonas.gorski@gmail.com>
--To: unlisted-recipients:; (no To-header on input)
--Cc: Ralf Baechle <ralf@linux-mips.org>,
-- Paul Gortmaker <paul.gortmaker@windriver.com>,
-- James Hogan <james.hogan@imgtec.com>,
-- linux-mips@linux-mips.org, linux-kernel@vger.kernel.org
--Date: Tue, 18 Jul 2017 12:17:26 +0200
--From: Jonas Gorski <jonas.gorski@gmail.com>
--List-Id: linux-mips <linux-mips.eddie.linux-mips.org>
+@@ -1,136 +0,0 @@
+-From 7113f56b683c5123df5c20724ac813cee66fa21a Mon Sep 17 00:00:00 2001
+-From: Jonas Gorski <jogo@openwrt.org>
+-Date: Mon, 1 Jul 2013 16:49:05 +0200
+-Subject: [PATCH 1/2] arm: ixp4xx: set cohorent_dma_mask for ethernet platform
+- devices
 -
--Make the behaviour of clk_get_rate consistent with common clk's
--clk_get_rate by accepting NULL clocks as parameter. Some device
--drivers rely on this, and will cause an OOPS otherwise.
+-ARM requires the cohorent_dma_mask set, so set it for the platform
+-devices so that the ethernet driver has access to it.
 -
--Fixes: 780019ddf02f ("MIPS: AR7: Implement clock API")
--Cc: Ralf Baechle <ralf@linux-mips.org>
--Cc: Paul Gortmaker <paul.gortmaker@windriver.com>
--Cc: James Hogan <james.hogan@imgtec.com>
--Cc: linux-mips@linux-mips.org
--Cc: linux-kernel@vger.kernel.org
--Reported-by: Mathias Kresin <dev@kresin.me>
--Signed-off-by: Jonas Gorski <jonas.gorski@gmail.com>
+-Signed-off-by: Jonas Gorski <jogo@openwrt.org>
 ----
-- arch/mips/ar7/clock.c | 3 +++
-- 1 file changed, 3 insertions(+)
+- arch/arm/mach-ixp4xx/fsg-setup.c     |    2 ++
+- arch/arm/mach-ixp4xx/goramo_mlr.c    |    2 ++
+- arch/arm/mach-ixp4xx/ixdp425-setup.c |    3 +++
+- arch/arm/mach-ixp4xx/nas100d-setup.c |    1 +
+- arch/arm/mach-ixp4xx/nslu2-setup.c   |    1 +
+- arch/arm/mach-ixp4xx/omixp-setup.c   |    3 +++
+- arch/arm/mach-ixp4xx/vulcan-setup.c  |    2 ++
+- 7 files changed, 14 insertions(+)
 -
----- a/arch/mips/ar7/clock.c
--+++ b/arch/mips/ar7/clock.c
--@@ -430,6 +430,9 @@ EXPORT_SYMBOL(clk_disable);
-- 
-- unsigned long clk_get_rate(struct clk *clk)
-- {
--+	if (!clk)
--+		return 0;
--+
-- 	return clk->rate;
-- }
-- EXPORT_SYMBOL(clk_get_rate);
-diff --git a/target/linux/ar7/patches-4.9/110-flash.patch b/target/linux/ar7/patches-4.9/110-flash.patch
-deleted file mode 100644
-index f5713bd033..0000000000
---- a/target/linux/ar7/patches-4.9/110-flash.patch
-+++ /dev/null
-@@ -1,22 +0,0 @@
----- a/drivers/mtd/Makefile
--+++ b/drivers/mtd/Makefile
--@@ -12,7 +12,7 @@ obj-$(CONFIG_MTD_OF_PARTS)	+= ofpart.o
-- obj-$(CONFIG_MTD_REDBOOT_PARTS) += redboot.o
-- obj-$(CONFIG_MTD_CMDLINE_PARTS) += cmdlinepart.o
-- obj-$(CONFIG_MTD_AFS_PARTS)	+= afs.o
---obj-$(CONFIG_MTD_AR7_PARTS)	+= ar7part.o
--+obj-$(CONFIG_MTD_AR7_PARTS)	+= ar7part.o titanpart.o
-- obj-$(CONFIG_MTD_BCM63XX_PARTS)	+= bcm63xxpart.o
-- obj-$(CONFIG_MTD_BCM47XX_PARTS)	+= bcm47xxpart.o
-- obj-$(CONFIG_MTD_MYLOADER_PARTS) += myloader.o
----- a/arch/mips/ar7/platform.c
--+++ b/arch/mips/ar7/platform.c
--@@ -198,7 +198,7 @@ static struct resource physmap_flash_res
-- 	.name	= "mem",
-- 	.flags	= IORESOURCE_MEM,
-- 	.start	= 0x10000000,
---	.end	= 0x107fffff,
--+	.end	= 0x11ffffff,
+---- a/arch/arm/mach-ixp4xx/fsg-setup.c
+-+++ b/arch/arm/mach-ixp4xx/fsg-setup.c
+-@@ -142,12 +142,14 @@ static struct platform_device fsg_eth[]
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev = {
+- 			.platform_data	= fsg_plat_eth,
+-+			.coherent_dma_mask = DMA_BIT_MASK(32),
+- 		},
+- 	}, {
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEC,
+- 		.dev = {
+- 			.platform_data	= fsg_plat_eth + 1,
+-+			.coherent_dma_mask = DMA_BIT_MASK(32),
+- 		},
+- 	}
+- };
+---- a/arch/arm/mach-ixp4xx/goramo_mlr.c
+-+++ b/arch/arm/mach-ixp4xx/goramo_mlr.c
+-@@ -295,10 +295,12 @@ static struct platform_device device_eth
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev.platform_data	= eth_plat,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}, {
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEC,
+- 		.dev.platform_data	= eth_plat + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}
 - };
 - 
-- static const char *ar7_probe_types[] = { "ar7part", NULL };
-diff --git a/target/linux/ar7/patches-4.9/160-vlynq_try_remote_first.patch b/target/linux/ar7/patches-4.9/160-vlynq_try_remote_first.patch
+---- a/arch/arm/mach-ixp4xx/ixdp425-setup.c
+-+++ b/arch/arm/mach-ixp4xx/ixdp425-setup.c
+-@@ -20,6 +20,7 @@
+- #include <linux/mtd/nand.h>
+- #include <linux/mtd/partitions.h>
+- #include <linux/delay.h>
+-+#include <linux/dma-mapping.h>
+- #include <linux/gpio.h>
+- #include <asm/types.h>
+- #include <asm/setup.h>
+-@@ -196,10 +197,12 @@ static struct platform_device ixdp425_et
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev.platform_data	= ixdp425_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}, {
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEC,
+- 		.dev.platform_data	= ixdp425_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}
+- };
+- 
+---- a/arch/arm/mach-ixp4xx/nas100d-setup.c
+-+++ b/arch/arm/mach-ixp4xx/nas100d-setup.c
+-@@ -170,6 +170,7 @@ static struct platform_device nas100d_et
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev.platform_data	= nas100d_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}
+- };
+- 
+---- a/arch/arm/mach-ixp4xx/nslu2-setup.c
+-+++ b/arch/arm/mach-ixp4xx/nslu2-setup.c
+-@@ -182,6 +182,7 @@ static struct platform_device nslu2_eth[
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev.platform_data	= nslu2_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}
+- };
+- 
+---- a/arch/arm/mach-ixp4xx/omixp-setup.c
+-+++ b/arch/arm/mach-ixp4xx/omixp-setup.c
+-@@ -17,6 +17,7 @@
+- #include <linux/serial_8250.h>
+- #include <linux/mtd/mtd.h>
+- #include <linux/mtd/partitions.h>
+-+#include <linux/dma-mapping.h>
+- #include <linux/leds.h>
+- 
+- #include <asm/setup.h>
+-@@ -188,10 +189,12 @@ static struct platform_device ixdp425_et
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev.platform_data	= ixdp425_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	}, {
+- 		.name			= "ixp4xx_eth",
+- 		.id			= IXP4XX_ETH_NPEC,
+- 		.dev.platform_data	= ixdp425_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+- 	},
+- };
+- 
+---- a/arch/arm/mach-ixp4xx/vulcan-setup.c
+-+++ b/arch/arm/mach-ixp4xx/vulcan-setup.c
+-@@ -139,6 +139,7 @@ static struct platform_device vulcan_eth
+- 		.id			= IXP4XX_ETH_NPEB,
+- 		.dev = {
+- 			.platform_data	= &vulcan_plat_eth[0],
+-+			.coherent_dma_mask = DMA_BIT_MASK(32),
+- 		},
+- 	},
+- 	[1] = {
+-@@ -146,6 +147,7 @@ static struct platform_device vulcan_eth
+- 		.id			= IXP4XX_ETH_NPEC,
+- 		.dev = {
+- 			.platform_data	= &vulcan_plat_eth[1],
+-+			.coherent_dma_mask = DMA_BIT_MASK(32),
+- 		},
+- 	},
+- };
+diff --git a/target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch b/target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch
 deleted file mode 100644
-index 1d1310d82e..0000000000
---- a/target/linux/ar7/patches-4.9/160-vlynq_try_remote_first.patch
+index b369b56f00..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/002-ixp4xx_eth-use-parent-device-for-dma-allocations.patch
 +++ /dev/null
-@@ -1,300 +0,0 @@
----- a/drivers/vlynq/vlynq.c
--+++ b/drivers/vlynq/vlynq.c
--@@ -119,20 +119,40 @@ static int vlynq_linked(struct vlynq_dev
-- 	return 0;
-- }
-- 
--+static volatile int vlynq_delay_value_new = 0;
--+
--+static void vlynq_delay_wait(u32 count)
--+{
--+	/* Code adopted from original vlynq driver */
--+	int i = 0;
--+	volatile int *ptr = &vlynq_delay_value_new;
--+	*ptr = 0;
--+
--+	/* We are assuming that the each cycle takes about
--+	 * 23 assembly instructions. */
--+	for(i = 0; i < (count + 23)/23; i++)
--+		*ptr = *ptr + 1;
--+}
--+
-- static void vlynq_reset(struct vlynq_device *dev)
+@@ -1,95 +0,0 @@
+-From 1d67040af0144c549f4db8144d2ccc253ff8639c Mon Sep 17 00:00:00 2001
+-From: Jonas Gorski <jogo@openwrt.org>
+-Date: Mon, 1 Jul 2013 16:39:28 +0200
+-Subject: [PATCH 2/2] net: ixp4xx_eth: use parent device for dma allocations
+-
+-Now that the platfomr device provides a dma_cohorent_mask, use it for
+-dma operations.
+-
+-This fixes ethernet on ixp4xx which was broken since 3.7.
+-
+-Signed-off-by: Jonas Gorski <jogo@openwrt.org>
+----
+- drivers/net/ethernet/xscale/ixp4xx_eth.c |   23 ++++++++++++-----------
+- 1 file changed, 12 insertions(+), 11 deletions(-)
+-
+---- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-@@ -656,10 +656,10 @@ static inline void queue_put_desc(unsign
+- static inline void dma_unmap_tx(struct port *port, struct desc *desc)
 - {
--+	u32 rtm = readl(&dev->local->revision);
+- #ifdef __ARMEB__
+--	dma_unmap_single(&port->netdev->dev, desc->data,
+-+	dma_unmap_single(port->netdev->dev.parent, desc->data,
+- 			 desc->buf_len, DMA_TO_DEVICE);
+- #else
+--	dma_unmap_single(&port->netdev->dev, desc->data & ~3,
+-+	dma_unmap_single(port->netdev->dev.parent, desc->data & ~3,
+- 			 ALIGN((desc->data & 3) + desc->buf_len, 4),
+- 			 DMA_TO_DEVICE);
+- #endif
+-@@ -725,9 +725,9 @@ static int eth_poll(struct napi_struct *
+- 
+- #ifdef __ARMEB__
+- 		if ((skb = netdev_alloc_skb(dev, RX_BUFF_SIZE))) {
+--			phys = dma_map_single(&dev->dev, skb->data,
+-+			phys = dma_map_single(dev->dev.parent, skb->data,
+- 					      RX_BUFF_SIZE, DMA_FROM_DEVICE);
+--			if (dma_mapping_error(&dev->dev, phys)) {
+-+			if (dma_mapping_error(dev->dev.parent, phys)) {
+- 				dev_kfree_skb(skb);
+- 				skb = NULL;
+- 			}
+-@@ -750,10 +750,11 @@ static int eth_poll(struct napi_struct *
+- #ifdef __ARMEB__
+- 		temp = skb;
+- 		skb = port->rx_buff_tab[n];
+--		dma_unmap_single(&dev->dev, desc->data - NET_IP_ALIGN,
+-+		dma_unmap_single(dev->dev.parent, desc->data - NET_IP_ALIGN,
+- 				 RX_BUFF_SIZE, DMA_FROM_DEVICE);
+- #else
+--		dma_sync_single_for_cpu(&dev->dev, desc->data - NET_IP_ALIGN,
+-+		dma_sync_single_for_cpu(dev->dev.parent,
+-+					desc->data - NET_IP_ALIGN,
+- 					RX_BUFF_SIZE, DMA_FROM_DEVICE);
+- 		memcpy_swab32((u32 *)skb->data, (u32 *)port->rx_buff_tab[n],
+- 			      ALIGN(NET_IP_ALIGN + desc->pkt_len, 4) / 4);
+-@@ -872,7 +873,7 @@ static int eth_xmit(struct sk_buff *skb,
+- 	memcpy_swab32(mem, (u32 *)((int)skb->data & ~3), bytes / 4);
+- #endif
+- 
+--	phys = dma_map_single(&dev->dev, mem, bytes, DMA_TO_DEVICE);
+-+	phys = dma_map_single(dev->dev.parent, mem, bytes, DMA_TO_DEVICE);
+- 	if (dma_mapping_error(&dev->dev, phys)) {
+- 		dev_kfree_skb(skb);
+- #ifndef __ARMEB__
+-@@ -1107,7 +1108,7 @@ static int init_queues(struct port *port
+- 	int i;
+- 
+- 	if (!ports_open) {
+--		dma_pool = dma_pool_create(DRV_NAME, &port->netdev->dev,
+-+		dma_pool = dma_pool_create(DRV_NAME, port->netdev->dev.parent,
+- 					   POOL_ALLOC_SIZE, 32, 0);
+- 		if (!dma_pool)
+- 			return -ENOMEM;
+-@@ -1135,9 +1136,9 @@ static int init_queues(struct port *port
+- 		data = buff;
+- #endif
+- 		desc->buf_len = MAX_MRU;
+--		desc->data = dma_map_single(&port->netdev->dev, data,
+-+		desc->data = dma_map_single(port->netdev->dev.parent, data,
+- 					    RX_BUFF_SIZE, DMA_FROM_DEVICE);
+--		if (dma_mapping_error(&port->netdev->dev, desc->data)) {
+-+		if (dma_mapping_error(port->netdev->dev.parent, desc->data)) {
+- 			free_buffer(buff);
+- 			return -EIO;
+- 		}
+-@@ -1157,7 +1158,7 @@ static void destroy_queues(struct port *
+- 			struct desc *desc = rx_desc_ptr(port, i);
+- 			buffer_t *buff = port->rx_buff_tab[i];
+- 			if (buff) {
+--				dma_unmap_single(&port->netdev->dev,
+-+				dma_unmap_single(port->netdev->dev.parent,
+- 						 desc->data - NET_IP_ALIGN,
+- 						 RX_BUFF_SIZE, DMA_FROM_DEVICE);
+- 				free_buffer(buff);
+diff --git a/target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch b/target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch
+deleted file mode 100644
+index 185a09fff2..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/020-gateworks_i2c_pld.patch
++++ /dev/null
+@@ -1,424 +0,0 @@
+---- a/drivers/gpio/Kconfig
+-+++ b/drivers/gpio/Kconfig
+-@@ -656,6 +656,14 @@ config GPIO_WS16C48
+- 	  parameter. The interrupt line numbers for the devices may be
+- 	  configured via the irq module parameter.
+- 
+-+config GPIO_GW_I2C_PLD
+-+	tristate "Gateworks I2C PLD GPIO Expander"
+-+	depends on I2C
+-+	help
+-+		Say yes here to provide access to the Gateworks I2C PLD GPIO
+-+		Expander. This is used at least on the GW2358-4.
 -+
--+	rtm = rtm < 0x00010205 || readl(&dev->local->status) & 0x800 == 0 ?
--+			0 : 0x600000;
 -+
-- 	writel(readl(&dev->local->control) | VLYNQ_CTRL_RESET,
-- 			&dev->local->control);
+- endmenu
 - 
-- 	/* Wait for the devices to finish resetting */
---	msleep(5);
--+	vlynq_delay_wait(0xffffff);
-- 
-- 	/* Remove reset bit */
---	writel(readl(&dev->local->control) & ~VLYNQ_CTRL_RESET,
--+	writel(readl(&dev->local->control) & ~VLYNQ_CTRL_RESET | rtm,
-- 			&dev->local->control);
-- 
-- 	/* Give some time for the devices to settle */
---	msleep(5);
--+	vlynq_delay_wait(0xffffff);
-- }
-- 
-- static void vlynq_irq_unmask(struct irq_data *d)
--@@ -379,6 +399,61 @@ void vlynq_unregister_driver(struct vlyn
-- }
-- EXPORT_SYMBOL(vlynq_unregister_driver);
-- 
--+enum vlynq_clk_src {
--+	vlynq_clk_external,
--+	vlynq_clk_local,
--+	vlynq_clk_remote,
--+	vlynq_clk_invalid,
+- menu "I2C GPIO expanders"
+---- a/drivers/gpio/Makefile
+-+++ b/drivers/gpio/Makefile
+-@@ -48,6 +48,7 @@ obj-$(CONFIG_GPIO_F7188X)	+= gpio-f7188x
+- obj-$(CONFIG_GPIO_GE_FPGA)	+= gpio-ge.o
+- obj-$(CONFIG_GPIO_GPIO_MM)	+= gpio-gpio-mm.o
+- obj-$(CONFIG_GPIO_GRGPIO)	+= gpio-grgpio.o
+-+obj-$(CONFIG_GPIO_GW_I2C_PLD)	+= gw_i2c_pld.o
+- obj-$(CONFIG_HTC_EGPIO)		+= gpio-htc-egpio.o
+- obj-$(CONFIG_GPIO_ICH)		+= gpio-ich.o
+- obj-$(CONFIG_GPIO_IOP)		+= gpio-iop.o
+---- /dev/null
+-+++ b/drivers/gpio/gw_i2c_pld.c
+-@@ -0,0 +1,371 @@
+-+/*
+-+ * Gateworks I2C PLD GPIO expander
+-+ *
+-+ * Copyright (C) 2009 Gateworks Corporation
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License as published by
+-+ * the Free Software Foundation; either version 2 of the License, or
+-+ * (at your option) any later version.
+-+ *
+-+ * This program is distributed in the hope that it will be useful,
+-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-+ * GNU General Public License for more details.
+-+ *
+-+ * You should have received a copy of the GNU General Public License
+-+ * along with this program; if not, write to the Free Software
+-+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/slab.h>
+-+#include <linux/hardirq.h>
+-+#include <linux/i2c.h>
+-+#include <linux/i2c/gw_i2c_pld.h>
+-+#include <linux/module.h>
+-+#include <linux/export.h>
+-+#include <asm/gpio.h>
+-+#include <mach/hardware.h>
+-+
+-+static const struct i2c_device_id gw_i2c_pld_id[] = {
+-+	{ "gw_i2c_pld", 8 },
+-+	{ }
+-+};
+-+MODULE_DEVICE_TABLE(i2c, gw_i2c_pld_id);
+-+
+-+/*
+-+ * The Gateworks I2C PLD chip only expose one read and one
+-+ * write register.  Writing a "one" bit (to match the reset state) lets
+-+ * that pin be used as an input. It is an open-drain model.
+-+ */
+-+
+-+struct gw_i2c_pld {
+-+	struct gpio_chip	chip;
+-+	struct i2c_client	*client;
+-+	unsigned		out;		/* software latch */
 -+};
 -+
--+static int __vlynq_set_clocks(struct vlynq_device *dev,
--+				enum vlynq_clk_src clk_dir,
--+				int lclk_div, int rclk_div)
+-+/*-------------------------------------------------------------------------*/
+-+
+-+/*
+-+ * The Gateworks I2C PLD chip does not properly send the acknowledge bit
+-+ * thus we cannot use standard i2c_smbus functions. We have recreated
+-+ * our own here, but we still use the rt_mutex_lock to lock the i2c_bus
+-+ * as the device still exists on the I2C bus.
+-+*/
+-+
+-+#define PLD_SCL_GPIO 6
+-+#define PLD_SDA_GPIO 7
+-+
+-+#define SCL_LO()  gpio_line_set(PLD_SCL_GPIO, IXP4XX_GPIO_LOW)
+-+#define SCL_HI()  gpio_line_set(PLD_SCL_GPIO, IXP4XX_GPIO_HIGH)
+-+#define SCL_EN()  gpio_line_config(PLD_SCL_GPIO, IXP4XX_GPIO_OUT)
+-+#define SDA_LO()  gpio_line_set(PLD_SDA_GPIO, IXP4XX_GPIO_LOW)
+-+#define SDA_HI()  gpio_line_set(PLD_SDA_GPIO, IXP4XX_GPIO_HIGH)
+-+#define SDA_EN()  gpio_line_config(PLD_SDA_GPIO, IXP4XX_GPIO_OUT)
+-+#define SDA_DIS() gpio_line_config(PLD_SDA_GPIO, IXP4XX_GPIO_IN)
+-+#define SDA_IN(x) gpio_line_get(PLD_SDA_GPIO, &x);
+-+
+-+static int i2c_pld_write_byte(int address, int byte)
 -+{
--+	u32 reg;
+-+	int i;
 -+
--+	if (clk_dir == vlynq_clk_invalid) {
--+		printk(KERN_ERR "%s: attempt to set invalid clocking\n",
--+				dev_name(&dev->dev));
--+		return -EINVAL;
--+	}
+-+	address = (address << 1) & ~0x1;
 -+
--+	reg = readl(&dev->local->control);
--+	if (readl(&dev->local->revision) < 0x00010205) {
--+		if (clk_dir & vlynq_clk_local)
--+			reg |= VLYNQ_CTRL_CLOCK_INT;
+-+	SDA_HI();
+-+	SDA_EN();
+-+	SCL_EN();
+-+	SCL_HI();
+-+	SDA_LO();
+-+	SCL_LO();
+-+
+-+	for (i = 7; i >= 0; i--)
+-+	{
+-+		if (address & (1 << i))
+-+			SDA_HI();
 -+		else
--+			reg &= ~VLYNQ_CTRL_CLOCK_INT;
+-+			SDA_LO();
+-+
+-+		SCL_HI();
+-+		SCL_LO();
 -+	}
--+	reg &= ~VLYNQ_CTRL_CLOCK_MASK;
--+	reg |= VLYNQ_CTRL_CLOCK_DIV(lclk_div);
--+	writel(reg, &dev->local->control);
 -+
--+	if (!vlynq_linked(dev))
--+		return -ENODEV;
+-+	SDA_DIS();
+-+	SCL_HI();
+-+	SDA_IN(i);
+-+	SCL_LO();
+-+	SDA_EN();
 -+
--+	printk(KERN_INFO "%s: local VLYNQ protocol rev. is 0x%08x\n",
--+			dev_name(&dev->dev), readl(&dev->local->revision));
--+	printk(KERN_INFO "%s: remote VLYNQ protocol rev. is 0x%08x\n",
--+			dev_name(&dev->dev), readl(&dev->remote->revision));
--+
--+	reg = readl(&dev->remote->control);
--+	if (readl(&dev->remote->revision) < 0x00010205) {
--+		if (clk_dir & vlynq_clk_remote)
--+			reg |= VLYNQ_CTRL_CLOCK_INT;
+-+	for (i = 7; i >= 0; i--)
+-+	{
+-+		if (byte & (1 << i))
+-+      SDA_HI();
 -+		else
--+			reg &= ~VLYNQ_CTRL_CLOCK_INT;
+-+			SDA_LO();
+-+		SCL_HI();
+-+		SCL_LO();
 -+	}
--+	reg &= ~VLYNQ_CTRL_CLOCK_MASK;
--+	reg |= VLYNQ_CTRL_CLOCK_DIV(rclk_div);
--+	writel(reg, &dev->remote->control);
 -+
--+	if (!vlynq_linked(dev))
--+		return -ENODEV;
+-+	SDA_DIS();
+-+	SCL_HI();
+-+	SDA_IN(i);
+-+	SCL_LO();
+-+
+-+	SDA_HI();
+-+	SDA_EN();
+-+
+-+	SDA_LO();
+-+	SCL_HI();
+-+	SDA_HI();
+-+	SCL_LO();
+-+	SCL_HI();
 -+
 -+	return 0;
 -+}
 -+
+-+static unsigned int i2c_pld_read_byte(int address)
+-+{
+-+	int i = 0, byte = 0;
+-+	int bit;
+-+
+-+	address = (address << 1) | 0x1;
+-+
+-+	SDA_HI();
+-+	SDA_EN();
+-+	SCL_EN();
+-+	SCL_HI();
+-+	SDA_LO();
+-+	SCL_LO();
+-+
+-+	for (i = 7; i >= 0; i--)
+-+	{
+-+		if (address & (1 << i))
+-+			SDA_HI();
+-+		else
+-+			SDA_LO();
+-+
+-+		SCL_HI();
+-+		SCL_LO();
+-+	}
+-+
+-+	SDA_DIS();
+-+	SCL_HI();
+-+	SDA_IN(i);
+-+	SCL_LO();
+-+	SDA_EN();
+-+
+-+	SDA_DIS();
+-+	for (i = 7; i >= 0; i--)
+-+	{
+-+		SCL_HI();
+-+		SDA_IN(bit);
+-+		byte |= bit << i;
+-+		SCL_LO();
+-+	}
+-+
+-+	SDA_LO();
+-+	SCL_HI();
+-+	SDA_HI();
+-+	SCL_LO();
+-+	SCL_HI();
+-+
+-+	return byte;
+-+}
+-+
+-+
+-+static int gw_i2c_pld_input8(struct gpio_chip *chip, unsigned offset)
+-+{
+-+	int ret;
+-+	struct gw_i2c_pld *gpio = container_of(chip, struct gw_i2c_pld, chip);
+-+	struct i2c_adapter *adap = gpio->client->adapter;
+-+
+-+	if (in_atomic() || irqs_disabled()) {
+-+		ret = rt_mutex_trylock(&adap->bus_lock);
+-+		if (!ret)
+-+			/* I2C activity is ongoing. */
+-+			return -EAGAIN;
+-+	} else {
+-+		rt_mutex_lock(&adap->bus_lock);
+-+	}
+-+
+-+	gpio->out |= (1 << offset);
+-+
+-+	ret = i2c_pld_write_byte(gpio->client->addr, gpio->out);
+-+
+-+	rt_mutex_unlock(&adap->bus_lock);
+-+
+-+	return ret;
+-+}
+-+
+-+static int gw_i2c_pld_get8(struct gpio_chip *chip, unsigned offset)
+-+{
+-+	int ret;
+-+	s32	value;
+-+	struct gw_i2c_pld *gpio = container_of(chip, struct gw_i2c_pld, chip);
+-+	struct i2c_adapter *adap = gpio->client->adapter;
+-+
+-+	if (in_atomic() || irqs_disabled()) {
+-+		ret = rt_mutex_trylock(&adap->bus_lock);
+-+		if (!ret)
+-+			/* I2C activity is ongoing. */
+-+			return -EAGAIN;
+-+	} else {
+-+		rt_mutex_lock(&adap->bus_lock);
+-+	}
+-+
+-+	value = i2c_pld_read_byte(gpio->client->addr);
+-+
+-+	rt_mutex_unlock(&adap->bus_lock);
+-+
+-+	return (value < 0) ? 0 : (value & (1 << offset));
+-+}
+-+
+-+static int gw_i2c_pld_output8(struct gpio_chip *chip, unsigned offset, int value)
+-+{
+-+	int ret;
+-+
+-+	struct gw_i2c_pld *gpio = container_of(chip, struct gw_i2c_pld, chip);
+-+	struct i2c_adapter *adap = gpio->client->adapter;
+-+
+-+	unsigned bit = 1 << offset;
+-+
+-+	if (in_atomic() || irqs_disabled()) {
+-+		ret = rt_mutex_trylock(&adap->bus_lock);
+-+		if (!ret)
+-+			/* I2C activity is ongoing. */
+-+			return -EAGAIN;
+-+	} else {
+-+		rt_mutex_lock(&adap->bus_lock);
+-+	}
+-+
+-+
+-+	if (value)
+-+		gpio->out |= bit;
+-+	else
+-+		gpio->out &= ~bit;
+-+
+-+	ret = i2c_pld_write_byte(gpio->client->addr, gpio->out);
+-+
+-+	rt_mutex_unlock(&adap->bus_lock);
+-+
+-+	return ret;
+-+}
+-+
+-+static void gw_i2c_pld_set8(struct gpio_chip *chip, unsigned offset, int value)
+-+{
+-+	gw_i2c_pld_output8(chip, offset, value);
+-+}
+-+
+-+/*-------------------------------------------------------------------------*/
+-+
+-+static int gw_i2c_pld_probe(struct i2c_client *client,
+-+			 const struct i2c_device_id *id)
+-+{
+-+	struct gw_i2c_pld_platform_data	*pdata;
+-+	struct gw_i2c_pld *gpio;
+-+	int status;
+-+
+-+	pdata = client->dev.platform_data;
+-+	if (!pdata)
+-+		return -ENODEV;
+-+
+-+	/* Allocate, initialize, and register this gpio_chip. */
+-+	gpio = kzalloc(sizeof *gpio, GFP_KERNEL);
+-+	if (!gpio)
+-+		return -ENOMEM;
+-+
+-+	gpio->chip.base = pdata->gpio_base;
+-+	gpio->chip.can_sleep = 1;
+-+	gpio->chip.dev = &client->dev;
+-+	gpio->chip.owner = THIS_MODULE;
+-+
+-+	gpio->chip.ngpio = pdata->nr_gpio;
+-+	gpio->chip.direction_input = gw_i2c_pld_input8;
+-+	gpio->chip.get = gw_i2c_pld_get8;
+-+	gpio->chip.direction_output = gw_i2c_pld_output8;
+-+	gpio->chip.set = gw_i2c_pld_set8;
+-+
+-+	gpio->chip.label = client->name;
+-+
+-+	gpio->client = client;
+-+	i2c_set_clientdata(client, gpio);
+-+
+-+	gpio->out = 0xFF;
+-+
+-+	status = gpiochip_add(&gpio->chip);
+-+	if (status < 0)
+-+		goto fail;
+-+
+-+	dev_info(&client->dev, "gpios %d..%d on a %s%s\n",
+-+			gpio->chip.base,
+-+			gpio->chip.base + gpio->chip.ngpio - 1,
+-+			client->name,
+-+			client->irq ? " (irq ignored)" : "");
+-+
+-+	/* Let platform code set up the GPIOs and their users.
+-+	 * Now is the first time anyone could use them.
+-+	 */
+-+	if (pdata->setup) {
+-+		status = pdata->setup(client,
+-+				gpio->chip.base, gpio->chip.ngpio,
+-+				pdata->context);
+-+		if (status < 0)
+-+			dev_warn(&client->dev, "setup --> %d\n", status);
+-+	}
+-+
+-+	return 0;
+-+
+-+fail:
+-+	dev_dbg(&client->dev, "probe error %d for '%s'\n",
+-+			status, client->name);
+-+	kfree(gpio);
+-+	return status;
+-+}
+-+
+-+static int gw_i2c_pld_remove(struct i2c_client *client)
+-+{
+-+	struct gw_i2c_pld_platform_data	*pdata = client->dev.platform_data;
+-+	struct gw_i2c_pld *gpio = i2c_get_clientdata(client);
+-+	int				status = 0;
+-+
+-+	if (pdata->teardown) {
+-+		status = pdata->teardown(client,
+-+				gpio->chip.base, gpio->chip.ngpio,
+-+				pdata->context);
+-+		if (status < 0) {
+-+			dev_err(&client->dev, "%s --> %d\n",
+-+					"teardown", status);
+-+			return status;
+-+		}
+-+	}
+-+
+-+	gpiochip_remove(&gpio->chip);
+-+	kfree(gpio);
+-+	return 0;
+-+}
+-+
+-+static struct i2c_driver gw_i2c_pld_driver = {
+-+	.driver = {
+-+		.name	= "gw_i2c_pld",
+-+		.owner	= THIS_MODULE,
+-+	},
+-+	.probe	= gw_i2c_pld_probe,
+-+	.remove	= gw_i2c_pld_remove,
+-+	.id_table = gw_i2c_pld_id,
+-+};
+-+
+-+static int __init gw_i2c_pld_init(void)
+-+{
+-+	return i2c_add_driver(&gw_i2c_pld_driver);
+-+}
+-+module_init(gw_i2c_pld_init);
+-+
+-+static void __exit gw_i2c_pld_exit(void)
+-+{
+-+	i2c_del_driver(&gw_i2c_pld_driver);
+-+}
+-+module_exit(gw_i2c_pld_exit);
+-+
+-+MODULE_LICENSE("GPL");
+-+MODULE_AUTHOR("Chris Lang");
+---- /dev/null
+-+++ b/include/linux/i2c/gw_i2c_pld.h
+-@@ -0,0 +1,20 @@
+-+#ifndef __LINUX_GW_I2C_PLD_H
+-+#define __LINUX_GW_I2C_PLD_H
+-+
+-+/**
+-+ * The Gateworks I2C PLD Implements an additional 8 bits of GPIO through the PLD
+-+ */
+-+
+-+struct gw_i2c_pld_platform_data {
+-+	unsigned gpio_base;
+-+	unsigned nr_gpio;
+-+	int		(*setup)(struct i2c_client *client,
+-+					int gpio, unsigned ngpio,
+-+					void *context);
+-+	int		(*teardown)(struct i2c_client *client,
+-+					int gpio, unsigned ngpio,
+-+					void *context);
+-+	void		*context;
+-+};
+-+
+-+#endif /* __LINUX_GW_I2C_PLD_H */
+diff --git a/target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch b/target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch
+deleted file mode 100644
+index 0e51793273..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/030-gpio_line_config.patch
++++ /dev/null
+@@ -1,73 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/common.c
+-+++ b/arch/arm/mach-ixp4xx/common.c
+-@@ -93,22 +93,7 @@ void __init ixp4xx_map_io(void)
 - /*
--  * A VLYNQ remote device can clock the VLYNQ bus master
--  * using a dedicated clock line. In that case, both the
--@@ -392,29 +467,16 @@ static int __vlynq_try_remote(struct vly
-- 	int i;
+-  * GPIO-functions
+-  */
+--/*
+-- * The following converted to the real HW bits the gpio_line_config
+-- */
+--/* GPIO pin types */
+--#define IXP4XX_GPIO_OUT 		0x1
+--#define IXP4XX_GPIO_IN  		0x2
+--
+--/* GPIO signal types */
+--#define IXP4XX_GPIO_LOW			0
+--#define IXP4XX_GPIO_HIGH		1
+--
+--/* GPIO Clocks */
+--#define IXP4XX_GPIO_CLK_0		14
+--#define IXP4XX_GPIO_CLK_1		15
+--
+--static void gpio_line_config(u8 line, u32 direction)
+-+void gpio_line_config(u8 line, u32 direction)
+- {
+- 	if (direction == IXP4XX_GPIO_IN)
+- 		*IXP4XX_GPIO_GPOER |= (1 << line);
+-@@ -116,17 +101,17 @@ static void gpio_line_config(u8 line, u3
+- 		*IXP4XX_GPIO_GPOER &= ~(1 << line);
+- }
 - 
-- 	vlynq_reset(dev);
---	for (i = dev->dev_id ? vlynq_rdiv2 : vlynq_rdiv8; dev->dev_id ?
---			i <= vlynq_rdiv8 : i >= vlynq_rdiv2;
---		dev->dev_id ? i++ : i--) {
--+	for (i = 0; i <= 7; i++) {
+--static void gpio_line_get(u8 line, int *value)
+-+void gpio_line_get(u8 line, int *value)
+- {
+- 	*value = (*IXP4XX_GPIO_GPINR >> line) & 0x1;
+- }
 - 
-- 		if (!vlynq_linked(dev))
+--static void gpio_line_set(u8 line, int value)
+-+void gpio_line_set(u8 line, int value)
+- {
+--	if (value == IXP4XX_GPIO_HIGH)
+--	    *IXP4XX_GPIO_GPOUTR |= (1 << line);
+--	else if (value == IXP4XX_GPIO_LOW)
+-+	if (value == IXP4XX_GPIO_LOW)
+- 	    *IXP4XX_GPIO_GPOUTR &= ~(1 << line);
+-+	else
+-+	    *IXP4XX_GPIO_GPOUTR |= (1 << line);
+- }
+- 
+- /*************************************************************************
+---- a/arch/arm/mach-ixp4xx/include/mach/platform.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/platform.h
+-@@ -131,5 +131,21 @@ struct pci_sys_data;
+- extern int ixp4xx_setup(int nr, struct pci_sys_data *sys);
+- extern struct pci_ops ixp4xx_ops;
+- 
+-+/* GPIO pin types */
+-+#define IXP4XX_GPIO_OUT 		0x1
+-+#define IXP4XX_GPIO_IN  		0x2
+-+
+-+/* GPIO signal types */
+-+#define IXP4XX_GPIO_LOW			0
+-+#define IXP4XX_GPIO_HIGH		1
+-+
+-+/* GPIO Clocks */
+-+#define IXP4XX_GPIO_CLK_0		14
+-+#define IXP4XX_GPIO_CLK_1		15
+-+
+-+void gpio_line_config(u8 line, u32 direction);
+-+void gpio_line_get(u8 line, int *value);
+-+void gpio_line_set(u8 line, int value);
+-+
+- #endif // __ASSEMBLY__
+- 
+diff --git a/target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch b/target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch
+deleted file mode 100644
+index c6392ef2f8..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/040-arm_mach_types.patch
++++ /dev/null
+@@ -1,18 +0,0 @@
+---- a/arch/arm/tools/mach-types
+-+++ b/arch/arm/tools/mach-types
+-@@ -1006,3 +1006,15 @@ eco5_bx2		MACH_ECO5_BX2		ECO5_BX2		4572
+- eukrea_cpuimx28sd	MACH_EUKREA_CPUIMX28SD	EUKREA_CPUIMX28SD	4573
+- domotab			MACH_DOMOTAB		DOMOTAB			4574
+- pfla03			MACH_PFLA03		PFLA03			4575
+-+wg302v1			MACH_WG302V1		WG302V1			889
+-+pronghorn		MACH_PRONGHORN		PRONGHORN		928
+-+pronghorn_metro		MACH_PRONGHORNMETRO	PRONGHORNMETRO		1040
+-+sidewinder		MACH_SIDEWINDER		SIDEWINDER		1041
+-+wrt300nv2		MACH_WRT300NV2		WRT300NV2		1077
+-+compex42x		MACH_COMPEXWP18		COMPEXWP18		1273
+-+cambria			MACH_CAMBRIA		CAMBRIA			1468
+-+ap1000			MACH_AP1000		AP1000			1543
+-+tw2662			MACH_TW2662		TW2662			1658
+-+tw5334			MACH_TW5334		TW5334			1664
+-+usr8200			MACH_USR8200		USR8200			1762
+-+mi424wr			MACH_MI424WR		MI424WR			1778
+diff --git a/target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch b/target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch
+deleted file mode 100644
+index 9da213911e..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/090-increase_entropy_pools.patch
++++ /dev/null
+@@ -1,17 +0,0 @@
+---- a/drivers/char/random.c
+-+++ b/drivers/char/random.c
+-@@ -279,11 +279,11 @@
+- /*
+-  * Configuration information
+-  */
+--#define INPUT_POOL_SHIFT	12
+-+#define INPUT_POOL_SHIFT	13
+- #define INPUT_POOL_WORDS	(1 << (INPUT_POOL_SHIFT-5))
+--#define OUTPUT_POOL_SHIFT	10
+-+#define OUTPUT_POOL_SHIFT	11
+- #define OUTPUT_POOL_WORDS	(1 << (OUTPUT_POOL_SHIFT-5))
+--#define SEC_XFER_SIZE		512
+-+#define SEC_XFER_SIZE		1024
+- #define EXTRACT_SIZE		10
+- 
+- #define DEBUG_RANDOM_BOOT 0
+diff --git a/target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch
+deleted file mode 100644
+index 317103fdab..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/100-wg302v2_gateway7001_mac_plat_info.patch
++++ /dev/null
+@@ -1,78 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/gateway7001-setup.c
+-+++ b/arch/arm/mach-ixp4xx/gateway7001-setup.c
+-@@ -17,6 +17,7 @@
+- #include <linux/serial.h>
+- #include <linux/tty.h>
+- #include <linux/serial_8250.h>
+-+#include <linux/dma-mapping.h>
+- 
+- #include <asm/types.h>
+- #include <asm/setup.h>
+-@@ -75,9 +76,37 @@ static struct platform_device gateway700
+- 	.resource	= &gateway7001_uart_resource,
+- };
+- 
+-+static struct eth_plat_info gateway7001_plat_eth[] = {
+-+	{
+-+		.phy		= 1,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= 2,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device gateway7001_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= gateway7001_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= gateway7001_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+- static struct platform_device *gateway7001_devices[] __initdata = {
+- 	&gateway7001_flash,
+--	&gateway7001_uart
+-+	&gateway7001_uart,
+-+	&gateway7001_eth[0],
+-+	&gateway7001_eth[1],
+- };
+- 
+- static void __init gateway7001_init(void)
+---- a/arch/arm/mach-ixp4xx/wg302v2-setup.c
+-+++ b/arch/arm/mach-ixp4xx/wg302v2-setup.c
+-@@ -76,9 +76,26 @@ static struct platform_device wg302v2_ua
+- 	.resource	= &wg302v2_uart_resource,
+- };
+- 
+-+static struct eth_plat_info wg302v2_plat_eth[] = {
+-+	{
+-+		.phy		= 8,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}
+-+};
+-+
+-+static struct platform_device wg302v2_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= wg302v2_plat_eth,
+-+	}
+-+};
+-+
+- static struct platform_device *wg302v2_devices[] __initdata = {
+- 	&wg302v2_flash,
+- 	&wg302v2_uart,
+-+	&wg302v2_eth[0],
+- };
+- 
+- static void __init wg302v2_init(void)
+diff --git a/target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch b/target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch
+deleted file mode 100644
+index 8793549c64..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/105-wg302v1_support.patch
++++ /dev/null
+@@ -1,261 +0,0 @@
+---- a/arch/arm/configs/ixp4xx_defconfig
+-+++ b/arch/arm/configs/ixp4xx_defconfig
+-@@ -13,6 +13,7 @@ CONFIG_MACH_AVILA=y
+- CONFIG_MACH_LOFT=y
+- CONFIG_ARCH_ADI_COYOTE=y
+- CONFIG_MACH_GATEWAY7001=y
+-+CONFIG_MACH_WG302V1=y
+- CONFIG_MACH_WG302V2=y
+- CONFIG_ARCH_IXDP425=y
+- CONFIG_MACH_IXDPG425=y
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -45,6 +45,14 @@ config MACH_GATEWAY7001
+- 	  7001 Access Point. For more information on this platform,
+- 	  see http://openwrt.org
+- 
+-+config MACH_WG302V1
+-+	bool "Netgear WG302 v1 / WAG302 v1"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support Netgear's
+-+	  WG302 v1 or WAG302 v1 Access Points. For more information
+-+	  on this platform, see http://openwrt.org
+-+
+- config MACH_WG302V2
+- 	bool "Netgear WG302 v2 / WAG302 v2"
+- 	select PCI
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -15,6 +15,7 @@ obj-pci-$(CONFIG_MACH_NSLU2)		+= nslu2-p
+- obj-pci-$(CONFIG_MACH_NAS100D)		+= nas100d-pci.o
+- obj-pci-$(CONFIG_MACH_DSMG600)		+= dsmg600-pci.o
+- obj-pci-$(CONFIG_MACH_GATEWAY7001)	+= gateway7001-pci.o
+-+obj-pci-$(CONFIG_MACH_WG302V1)		+= wg302v1-pci.o
+- obj-pci-$(CONFIG_MACH_WG302V2)		+= wg302v2-pci.o
+- obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
+- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
+-@@ -33,6 +34,7 @@ obj-$(CONFIG_MACH_NSLU2)	+= nslu2-setup.
+- obj-$(CONFIG_MACH_NAS100D)	+= nas100d-setup.o
+- obj-$(CONFIG_MACH_DSMG600)      += dsmg600-setup.o
+- obj-$(CONFIG_MACH_GATEWAY7001)	+= gateway7001-setup.o
+-+obj-$(CONFIG_MACH_WG302V1)	+= wg302v1-setup.o
+- obj-$(CONFIG_MACH_WG302V2)	+= wg302v2-setup.o
+- obj-$(CONFIG_MACH_FSG)		+= fsg-setup.o
+- obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_mlr.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/wg302v1-pci.c
+-@@ -0,0 +1,63 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/wg302v1-pci.c
+-+ *
+-+ * PCI setup routines for the Netgear WG302 v1 and WAG302 v1
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Software, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+void __init wg302v1_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init wg302v1_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 1)
+-+		return IRQ_IXP4XX_GPIO8;
+-+	else if (slot == 2)
+-+		return IRQ_IXP4XX_GPIO10;
+-+	else
+-+		return -1;
+-+}
+-+
+-+struct hw_pci wg302v1_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit =        wg302v1_pci_preinit,
+-+	.ops =            &ixp4xx_ops,
+-+	.setup =          ixp4xx_setup,
+-+	.map_irq =        wg302v1_map_irq,
+-+};
+-+
+-+int __init wg302v1_pci_init(void)
+-+{
+-+	if (machine_is_wg302v1())
+-+		pci_common_init(&wg302v1_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(wg302v1_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/wg302v1-setup.c
+-@@ -0,0 +1,147 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/wg302v1-setup.c
+-+ *
+-+ * Board setup for the Netgear WG302 v1 and WAG302 v1
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+#include <linux/types.h>
+-+#include <linux/memory.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/setup.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data wg302v1_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource wg302v1_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device wg302v1_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &wg302v1_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &wg302v1_flash_resource,
+-+};
+-+
+-+static struct resource wg302v1_uart_resources[] = {
+-+	{
+-+		.start	= IXP4XX_UART1_BASE_PHYS,
+-+		.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags	= IORESOURCE_MEM,
+-+	},
+-+	{
+-+		.start	= IXP4XX_UART2_BASE_PHYS,
+-+		.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags	= IORESOURCE_MEM,
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port wg302v1_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device wg302v1_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev			= {
+-+		.platform_data	= wg302v1_uart_data,
+-+	},
+-+	.num_resources	= 2,
+-+	.resource	= wg302v1_uart_resources,
+-+};
+-+
+-+static struct eth_plat_info wg302v1_plat_eth[] = {
+-+	{
+-+		.phy		= 30,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}
+-+};
+-+
+-+static struct platform_device wg302v1_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= wg302v1_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *wg302v1_devices[] __initdata = {
+-+	&wg302v1_flash,
+-+	&wg302v1_uart,
+-+	&wg302v1_eth[0],
+-+};
+-+
+-+static void __init wg302v1_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	wg302v1_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	wg302v1_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(wg302v1_devices, ARRAY_SIZE(wg302v1_devices));
+-+}
+-+
+-+#ifdef CONFIG_MACH_WG302V1
+-+MACHINE_START(WG302V1, "Netgear WG302 v1 / WAG302 v1")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.fixup		= wg302v1_fixup,
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= wg302v1_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+#endif
+diff --git a/target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch b/target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch
+deleted file mode 100644
+index d1fdfcba49..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/110-pronghorn_series_support.patch
++++ /dev/null
+@@ -1,393 +0,0 @@
+---- a/arch/arm/configs/ixp4xx_defconfig
+-+++ b/arch/arm/configs/ixp4xx_defconfig
+-@@ -15,6 +15,8 @@ CONFIG_ARCH_ADI_COYOTE=y
+- CONFIG_MACH_GATEWAY7001=y
+- CONFIG_MACH_WG302V1=y
+- CONFIG_MACH_WG302V2=y
+-+CONFIG_MACH_PRONGHORN=y
+-+CONFIG_MACH_PRONGHORNMETRO=y
+- CONFIG_ARCH_IXDP425=y
+- CONFIG_MACH_IXDPG425=y
+- CONFIG_MACH_IXDP465=y
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -61,6 +61,22 @@ config MACH_WG302V2
+- 	  WG302 v2 or WAG302 v2 Access Points. For more information
+- 	  on this platform, see http://openwrt.org
+- 
+-+config MACH_PRONGHORN
+-+	bool "ADI Pronghorn series"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support the ADI
+-+	  Engineering Pronghorn series. For more
+-+	  information on this platform, see http://www.adiengineering.com
+-+
+-+#
+-+# There're only minimal differences kernel-wise between the Pronghorn and
+-+# Pronghorn Metro boards - they use different chip selects to drive the
+-+# CF slot connected to the expansion bus, so we just enable them together.
+-+#
+-+config MACH_PRONGHORNMETRO
+-+	def_bool MACH_PRONGHORN
+-+
+- config ARCH_IXDP425
+- 	bool "IXDP425"
+- 	help
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -19,6 +19,7 @@ obj-pci-$(CONFIG_MACH_WG302V1)		+= wg302
+- obj-pci-$(CONFIG_MACH_WG302V2)		+= wg302v2-pci.o
+- obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
+- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
+-+obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -39,6 +40,7 @@ obj-$(CONFIG_MACH_WG302V2)	+= wg302v2-se
+- obj-$(CONFIG_MACH_FSG)		+= fsg-setup.o
+- obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_mlr.o
+- obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-setup.o
+-+obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-@@ -42,7 +42,8 @@ static __inline__ void __arch_decomp_set
+- 	 */
+- 	if (machine_is_adi_coyote() || machine_is_gtwx5715() ||
+- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
+--	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256())
+-+	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
+-+	    machine_is_pronghorn() || machine_is_pronghorn_metro())
+- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
+- 	else
+- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/pronghorn-pci.c
+-@@ -0,0 +1,69 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/pronghorn-pci.c
+-+ *
+-+ * PCI setup routines for ADI Engineering Pronghorn series
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+void __init pronghorn_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO6, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO1, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init pronghorn_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 13)
+-+		return IRQ_IXP4XX_GPIO4;
+-+	else if (slot == 14)
+-+		return IRQ_IXP4XX_GPIO6;
+-+	else if (slot == 15)
+-+		return IRQ_IXP4XX_GPIO11;
+-+	else if (slot == 16)
+-+		return IRQ_IXP4XX_GPIO1;
+-+	else
+-+		return -1;
+-+}
+-+
+-+struct hw_pci pronghorn_pci __initdata = {
+-+	.nr_controllers	= 1,
+-+	.preinit	= pronghorn_pci_preinit,
+-+	.ops		= &ixp4xx_ops,
+-+	.setup		= ixp4xx_setup,
+-+	.map_irq	= pronghorn_map_irq,
+-+};
+-+
+-+int __init pronghorn_pci_init(void)
+-+{
+-+	if (machine_is_pronghorn() || machine_is_pronghorn_metro())
+-+		pci_common_init(&pronghorn_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(pronghorn_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/pronghorn-setup.c
+-@@ -0,0 +1,252 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/pronghorn-setup.c
+-+ *
+-+ * Board setup for the ADI Engineering Pronghorn series
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <Kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+#include <linux/types.h>
+-+#include <linux/memory.h>
+-+#include <linux/i2c-gpio.h>
+-+#include <linux/leds.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/setup.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data pronghorn_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource pronghorn_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device pronghorn_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data	= &pronghorn_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &pronghorn_flash_resource,
+-+};
+-+
+-+static struct resource pronghorn_uart_resources [] = {
+-+	{
+-+		.start		= IXP4XX_UART1_BASE_PHYS,
+-+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start		= IXP4XX_UART2_BASE_PHYS,
+-+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port pronghorn_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device pronghorn_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev		= {
+-+		.platform_data	= pronghorn_uart_data,
+-+	},
+-+	.num_resources	= 2,
+-+	.resource	= pronghorn_uart_resources,
+-+};
+-+
+-+static struct i2c_gpio_platform_data pronghorn_i2c_gpio_data = {
+-+	.sda_pin	= 9,
+-+	.scl_pin	= 10,
+-+};
+-+
+-+static struct platform_device pronghorn_i2c_gpio = {
+-+	.name		= "i2c-gpio",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data	= &pronghorn_i2c_gpio_data,
+-+	},
+-+};
+-+
+-+static struct gpio_led pronghorn_led_pin[] = {
+-+	{
+-+		.name		= "pronghorn:green:status",
+-+		.gpio		= 7,
+-+	}
+-+};
+-+
+-+static struct gpio_led_platform_data pronghorn_led_data = {
+-+	.num_leds		= 1,
+-+	.leds			= pronghorn_led_pin,
+-+};
+-+
+-+static struct platform_device pronghorn_led = {
+-+	.name			= "leds-gpio",
+-+	.id			= -1,
+-+	.dev.platform_data	= &pronghorn_led_data,
+-+};
+-+
+-+static struct resource pronghorn_pata_resources[] = {
+-+	{
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.flags	= IORESOURCE_MEM,
+-+	},
+-+	{
+-+		.name	= "intrq",
+-+		.start	= IRQ_IXP4XX_GPIO0,
+-+		.end	= IRQ_IXP4XX_GPIO0,
+-+		.flags	= IORESOURCE_IRQ,
+-+	},
+-+};
+-+
+-+static struct ixp4xx_pata_data pronghorn_pata_data = {
+-+	.cs0_bits	= 0xbfff0043,
+-+	.cs1_bits	= 0xbfff0043,
+-+};
+-+
+-+static struct platform_device pronghorn_pata = {
+-+	.name			= "pata_ixp4xx_cf",
+-+	.id			= 0,
+-+	.dev.platform_data      = &pronghorn_pata_data,
+-+	.num_resources		= ARRAY_SIZE(pronghorn_pata_resources),
+-+	.resource		= pronghorn_pata_resources,
+-+};
+-+
+-+static struct eth_plat_info pronghorn_plat_eth[] = {
+-+	{
+-+		.phy		= 0,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= 1,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device pronghorn_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= pronghorn_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= pronghorn_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *pronghorn_devices[] __initdata = {
+-+	&pronghorn_flash,
+-+	&pronghorn_uart,
+-+	&pronghorn_led,
+-+	&pronghorn_eth[0],
+-+	&pronghorn_eth[1],
+-+};
+-+
+-+static void __init pronghorn_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	pronghorn_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	pronghorn_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(pronghorn_devices, ARRAY_SIZE(pronghorn_devices));
+-+
+-+	if (machine_is_pronghorn()) {
+-+		pronghorn_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(2);
+-+		pronghorn_pata_resources[0].end = IXP4XX_EXP_BUS_END(2);
+-+
+-+		pronghorn_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(3);
+-+		pronghorn_pata_resources[1].end = IXP4XX_EXP_BUS_END(3);
+-+
+-+		pronghorn_pata_data.cs0_cfg = IXP4XX_EXP_CS2;
+-+		pronghorn_pata_data.cs1_cfg = IXP4XX_EXP_CS3;
+-+	} else {
+-+		pronghorn_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(3);
+-+		pronghorn_pata_resources[0].end = IXP4XX_EXP_BUS_END(3);
+-+
+-+		pronghorn_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(4);
+-+		pronghorn_pata_resources[1].end = IXP4XX_EXP_BUS_END(4);
+-+
+-+		pronghorn_pata_data.cs0_cfg = IXP4XX_EXP_CS3;
+-+		pronghorn_pata_data.cs1_cfg = IXP4XX_EXP_CS4;
+-+
+-+		platform_device_register(&pronghorn_i2c_gpio);
+-+	}
+-+
+-+	platform_device_register(&pronghorn_pata);
+-+}
+-+
+-+MACHINE_START(PRONGHORN, "ADI Engineering Pronghorn")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= pronghorn_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+
+-+MACHINE_START(PRONGHORNMETRO, "ADI Engineering Pronghorn Metro")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= pronghorn_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+diff --git a/target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch b/target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch
+deleted file mode 100644
+index ed9f7a785d..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/111-pronghorn_swap_uarts.patch
++++ /dev/null
+@@ -1,44 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/pronghorn-setup.c
+-+++ b/arch/arm/mach-ixp4xx/pronghorn-setup.c
+-@@ -52,31 +52,31 @@ static struct platform_device pronghorn_
+- 
+- static struct resource pronghorn_uart_resources [] = {
+- 	{
+--		.start		= IXP4XX_UART1_BASE_PHYS,
+--		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.start		= IXP4XX_UART2_BASE_PHYS,
+-+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+- 		.flags		= IORESOURCE_MEM
+- 	},
+- 	{
+--		.start		= IXP4XX_UART2_BASE_PHYS,
+--		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.start		= IXP4XX_UART1_BASE_PHYS,
+-+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+- 		.flags		= IORESOURCE_MEM
+- 	}
+- };
+- 
+- static struct plat_serial8250_port pronghorn_uart_data[] = {
+- 	{
+--		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+--		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+--		.irq		= IRQ_IXP4XX_UART1,
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+- 		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+- 		.iotype		= UPIO_MEM,
+- 		.regshift	= 2,
+- 		.uartclk	= IXP4XX_UART_XTAL,
+- 	},
+- 	{
+--		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+--		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+--		.irq		= IRQ_IXP4XX_UART2,
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+- 		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+- 		.iotype		= UPIO_MEM,
+- 		.regshift	= 2,
+diff --git a/target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch b/target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch
+deleted file mode 100644
+index 20adbb5c04..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/115-sidewinder_support.patch
++++ /dev/null
+@@ -1,286 +0,0 @@
+-From 95dac4a842a3c66f69f949b48f9075e16275f77b Mon Sep 17 00:00:00 2001
+-From: Jonas Gorski <jogo@openwrt.org>
+-Date: Sun, 30 Jun 2013 15:48:47 +0200
+-Subject: [PATCH 07/36] 115-sidewinder_support.patch
+-
+----
+- arch/arm/mach-ixp4xx/Kconfig            |   10 +-
+- arch/arm/mach-ixp4xx/Makefile           |    2 +
+- arch/arm/mach-ixp4xx/sidewinder-pci.c   |   68 ++++++++++++++
+- arch/arm/mach-ixp4xx/sidewinder-setup.c |  151 +++++++++++++++++++++++++++++++
+- 4 files changed, 230 insertions(+), 1 deletion(-)
+- create mode 100644 arch/arm/mach-ixp4xx/sidewinder-pci.c
+- create mode 100644 arch/arm/mach-ixp4xx/sidewinder-setup.c
+-
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -77,6 +77,14 @@ config MACH_PRONGHORN
+- config MACH_PRONGHORNMETRO
+- 	def_bool MACH_PRONGHORN
+- 
+-+config MACH_SIDEWINDER
+-+	bool "ADI Sidewinder"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support the ADI 
+-+	  Engineering Sidewinder board. For more information on this
+-+	  platform, see http://www.adiengineering.com
+-+
+- config ARCH_IXDP425
+- 	bool "IXDP425"
+- 	help
+-@@ -173,7 +181,7 @@ config MACH_ARCOM_VULCAN
+- #
+- config CPU_IXP46X
+- 	bool
+--	depends on MACH_IXDP465
+-+	depends on MACH_IXDP465 || MACH_SIDEWINDER
+- 	default y
+- 
+- config CPU_IXP43X
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -20,6 +20,7 @@ obj-pci-$(CONFIG_MACH_WG302V2)		+= wg302
+- obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
+- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
+- obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
+-+obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -41,6 +42,7 @@ obj-$(CONFIG_MACH_FSG)		+= fsg-setup.o
+- obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_mlr.o
+- obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-setup.o
+- obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
+-+obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/sidewinder-pci.c
+-@@ -0,0 +1,67 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/pronghornmetro-pci.c
+-+ *
+-+ * PCI setup routines for ADI Engineering Sidewinder
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+void __init sidewinder_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init sidewinder_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 1)
+-+		return IRQ_IXP4XX_GPIO11;
+-+	else if (slot == 2)
+-+		return IRQ_IXP4XX_GPIO10;
+-+	else if (slot == 3)
+-+		return IRQ_IXP4XX_GPIO9;
+-+	else
+-+		return -1;
+-+}
+-+
+-+struct hw_pci sidewinder_pci __initdata = {
+-+	.nr_controllers	= 1,
+-+	.preinit	= sidewinder_pci_preinit,
+-+	.ops		= &ixp4xx_ops,
+-+	.setup		= ixp4xx_setup,
+-+	.map_irq	= sidewinder_map_irq,
+-+};
+-+
+-+int __init sidewinder_pci_init(void)
+-+{
+-+	if (machine_is_sidewinder())
+-+		pci_common_init(&sidewinder_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(sidewinder_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/sidewinder-setup.c
+-@@ -0,0 +1,155 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/sidewinder-setup.c
+-+ *
+-+ * Board setup for the ADI Engineering Sidewinder
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <Kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/serial.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data sidewinder_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource sidewinder_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device sidewinder_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &sidewinder_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &sidewinder_flash_resource,
+-+};
+-+
+-+static struct resource sidewinder_uart_resources[] = {
+-+	{
+-+		.start	= IXP4XX_UART1_BASE_PHYS,
+-+		.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags	= IORESOURCE_MEM,
+-+	},
+-+	{
+-+		.start	= IXP4XX_UART2_BASE_PHYS,
+-+		.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags	= IORESOURCE_MEM,
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port sidewinder_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device sidewinder_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev		= {
+-+		.platform_data	= sidewinder_uart_data,
+-+	},
+-+	.num_resources	= ARRAY_SIZE(sidewinder_uart_resources),
+-+	.resource	= sidewinder_uart_resources,
+-+};
+-+
+-+static struct eth_plat_info sidewinder_plat_eth[] = {
+-+	{
+-+		.phy		= 5,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+		.phy_mask	= 0x1e,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}, {
+-+		.phy		= 31,
+-+		.rxq		= 2,
+-+		.txreadyq	= 19,
+-+	}
+-+};
+-+
+-+static struct platform_device sidewinder_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= sidewinder_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= sidewinder_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEA,
+-+		.dev.platform_data	= sidewinder_plat_eth + 2,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *sidewinder_devices[] __initdata = {
+-+	&sidewinder_flash,
+-+	&sidewinder_uart,
+-+	&sidewinder_eth[0],
+-+	&sidewinder_eth[1],
+-+	&sidewinder_eth[2],
+-+};
+-+
+-+static void __init sidewinder_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	sidewinder_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	sidewinder_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_64M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(sidewinder_devices, ARRAY_SIZE(sidewinder_devices));
+-+}
+-+
+-+MACHINE_START(SIDEWINDER, "ADI Engineering Sidewinder")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= sidewinder_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+diff --git a/target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch b/target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch
+deleted file mode 100644
+index 8a28eb0a7a..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/116-sidewinder_fis_location.patch
++++ /dev/null
+@@ -1,30 +0,0 @@
+---- a/drivers/mtd/redboot.c
+-+++ b/drivers/mtd/redboot.c
+-@@ -31,6 +31,8 @@
+- #include <linux/module.h>
+- #include <linux/mod_devicetable.h>
+- 
+-+#include <asm/mach-types.h>
+-+
+- struct fis_image_desc {
+-     unsigned char name[16];      // Null terminated name
+-     uint32_t	  flash_base;    // Address within FLASH of image
+-@@ -48,7 +50,8 @@ struct fis_list {
+- 	struct fis_list *next;
+- };
+- 
+--static int directory = CONFIG_MTD_REDBOOT_DIRECTORY_BLOCK;
+-+int directory = CONFIG_MTD_REDBOOT_DIRECTORY_BLOCK;
+-+
+- module_param(directory, int, 0);
+- 
+- static inline int redboot_checksum(struct fis_image_desc *img)
+-@@ -76,6 +79,8 @@ static int parse_redboot_partitions(stru
+- #ifdef CONFIG_MTD_REDBOOT_PARTS_UNALLOCATED
+- 	static char nullstring[] = "unallocated";
+- #endif
+-+	if (machine_is_sidewinder())
+-+		directory = -5;
+- 
+- 	if ( directory < 0 ) {
+- 		offset = master->size + directory * master->erasesize;
+diff --git a/target/linux/ixp4xx/patches-4.9/120-compex_support.patch b/target/linux/ixp4xx/patches-4.9/120-compex_support.patch
+deleted file mode 100644
+index 2abc159f04..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/120-compex_support.patch
++++ /dev/null
+@@ -1,199 +0,0 @@
+-From 24025a2dcf1248079dd3019fac6ed955252d277f Mon Sep 17 00:00:00 2001
+-From: Imre Kaloz <kaloz@openwrt.org>
+-Date: Mon, 14 Jul 2008 21:56:34 +0200
+-Subject: [PATCH] Add support for the Compex WP18 / NP18A boards
+-
+-Signed-off-by: Imre Kaloz <kaloz@openwrt.org>
+----
+-
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -85,6 +85,14 @@ config MACH_SIDEWINDER
+- 	  Engineering Sidewinder board. For more information on this
+- 	  platform, see http://www.adiengineering.com
+- 
+-+config MACH_COMPEXWP18
+-+	bool "Compex WP18 / NP18A"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support Compex' 
+-+	  WP18 or NP18A boards. For more information on this
+-+	  platform, see http://www.compex.com.sg/home/OEM/product_ap.htm
+-+
+- config ARCH_IXDP425
+- 	bool "IXDP425"
+- 	help
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -21,6 +21,7 @@ obj-pci-$(CONFIG_MACH_FSG)		+= fsg-pci.o
+- obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-pci.o
+- obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
+- obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
+-+obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -43,6 +44,7 @@ obj-$(CONFIG_MACH_GORAMO_MLR)	+= goramo_
+- obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulcan-setup.o
+- obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
+- obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
+-+obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/compex42x-setup.c
+-@@ -0,0 +1,141 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/compex-setup.c
+-+ *
+-+ * Compex WP18 / NP18A board-setup
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <Kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *	Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/serial.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data compex42x_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource compex42x_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device compex42x_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &compex42x_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &compex42x_flash_resource,
+-+};
+-+
+-+static struct resource compex42x_uart_resources[] = {
+-+	{
+-+		.start		= IXP4XX_UART1_BASE_PHYS,
+-+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start		= IXP4XX_UART2_BASE_PHYS,
+-+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port compex42x_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device compex42x_uart = {
+-+	.name			= "serial8250",
+-+	.id			= PLAT8250_DEV_PLATFORM,
+-+	.dev.platform_data	= compex42x_uart_data,
+-+	.num_resources		= 2,
+-+	.resource		= compex42x_uart_resources,
+-+};
+-+
+-+static struct eth_plat_info compex42x_plat_eth[] = {
+-+	{
+-+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+		.phy_mask	= 0xf0000,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= 3,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device compex42x_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= compex42x_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= compex42x_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *compex42x_devices[] __initdata = {
+-+	&compex42x_flash,
+-+	&compex42x_uart,
+-+	&compex42x_eth[0],
+-+	&compex42x_eth[1],
+-+};
+-+
+-+static void __init compex42x_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	compex42x_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	compex42x_flash_resource.end =
+-+		IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	platform_add_devices(compex42x_devices, ARRAY_SIZE(compex42x_devices));
+-+}
+-+
+-+MACHINE_START(COMPEXWP18, "Compex WP18 / NP18A")
+-+	/* Maintainer: Imre Kaloz <Kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= compex42x_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+---- a/arch/arm/mach-ixp4xx/ixdp425-pci.c
+-+++ b/arch/arm/mach-ixp4xx/ixdp425-pci.c
+-@@ -69,7 +69,8 @@ struct hw_pci ixdp425_pci __initdata = {
+- int __init ixdp425_pci_init(void)
+- {
+- 	if (machine_is_ixdp425() || machine_is_ixcdp1100() ||
+--			machine_is_ixdp465() || machine_is_kixrp435())
+-+			machine_is_ixdp465() || machine_is_kixrp435() ||
+-+			machine_is_compex42x())
+- 		pci_common_init(&ixdp425_pci);
+- 	return 0;
+- }
+diff --git a/target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch b/target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch
+deleted file mode 100644
+index 49359be447..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/130-wrt300nv2_support.patch
++++ /dev/null
+@@ -1,227 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -93,6 +93,14 @@ config MACH_COMPEXWP18
+- 	  WP18 or NP18A boards. For more information on this
+- 	  platform, see http://www.compex.com.sg/home/OEM/product_ap.htm
+- 
+-+config MACH_WRT300NV2
+-+	bool "Linksys WRT300N v2"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support Linksys'
+-+	  WRT300N v2 router. For more information on this
+-+	  platform, see http://openwrt.org
+-+
+- config ARCH_IXDP425
+- 	bool "IXDP425"
+- 	help
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -22,6 +22,7 @@ obj-pci-$(CONFIG_MACH_ARCOM_VULCAN)	+= v
+- obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-pci.o
+- obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
+- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
+-+obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -45,6 +46,7 @@ obj-$(CONFIG_MACH_ARCOM_VULCAN)	+= vulca
+- obj-$(CONFIG_MACH_PRONGHORN)	+= pronghorn-setup.o
+- obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
+- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
+-+obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-@@ -43,7 +43,8 @@ static __inline__ void __arch_decomp_set
+- 	if (machine_is_adi_coyote() || machine_is_gtwx5715() ||
+- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
+- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
+--	    machine_is_pronghorn() || machine_is_pronghorn_metro())
+-+	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
+-+	    machine_is_wrt300nv2())
+- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
+- 	else
+- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/wrt300nv2-pci.c
+-@@ -0,0 +1,64 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/wrt300nv2-pci.c
+-+ *
+-+ * PCI setup routines for Linksys WRT300N v2
+-+ *
+-+ * Copyright (C) 2007 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+extern void ixp4xx_pci_preinit(void);
+-+extern int ixp4xx_setup(int nr, struct pci_sys_data *sys);
+-+extern struct pci_bus *ixp4xx_scan_bus(int nr, struct pci_sys_data *sys);
+-+
+-+void __init wrt300nv2_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init wrt300nv2_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 1)
+-+		return IRQ_IXP4XX_GPIO8;
+-+	else return -1;
+-+}
+-+
+-+struct hw_pci wrt300nv2_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit	= wrt300nv2_pci_preinit,
+-+	.ops		= &ixp4xx_ops,
+-+	.setup		= ixp4xx_setup,
+-+	.map_irq	= wrt300nv2_map_irq,
+-+};
+-+
+-+int __init wrt300nv2_pci_init(void)
+-+{
+-+	if (machine_is_wrt300nv2())
+-+		pci_common_init(&wrt300nv2_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(wrt300nv2_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
+-@@ -0,0 +1,110 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/wrt300nv2-setup.c
+-+ *
+-+ * Board setup for the Linksys WRT300N v2
+-+ *
+-+ * Copyright (C) 2007 Imre Kaloz <Kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+
+-+#include <asm/types.h>
+-+#include <asm/setup.h>
+-+#include <asm/memory.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data wrt300nv2_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource wrt300nv2_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device wrt300nv2_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &wrt300nv2_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &wrt300nv2_flash_resource,
+-+};
+-+
+-+static struct resource wrt300nv2_uart_resource = {
+-+	.start	= IXP4XX_UART2_BASE_PHYS,
+-+	.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+	.flags	= IORESOURCE_MEM,
+-+};
+-+
+-+static struct plat_serial8250_port wrt300nv2_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device wrt300nv2_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev			= {
+-+		.platform_data	= wrt300nv2_uart_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &wrt300nv2_uart_resource,
+-+};
+-+
+-+static struct platform_device *wrt300nv2_devices[] __initdata = {
+-+	&wrt300nv2_flash,
+-+	&wrt300nv2_uart
+-+};
+-+
+-+static void __init wrt300nv2_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	wrt300nv2_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	wrt300nv2_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(wrt300nv2_devices, ARRAY_SIZE(wrt300nv2_devices));
+-+}
+-+
+-+#ifdef CONFIG_MACH_WRT300NV2
+-+MACHINE_START(WRT300NV2, "Linksys WRT300N v2")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= wrt300nv2_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+#endif
+diff --git a/target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch
+deleted file mode 100644
+index 5debbf1072..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/131-wrt300nv2_mac_plat_info.patch
++++ /dev/null
+@@ -1,42 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
+-+++ b/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
+-@@ -76,9 +76,38 @@ static struct platform_device wrt300nv2_
+- 	.resource	= &wrt300nv2_uart_resource,
+- };
+- 
+-+/* Built-in 10/100 Ethernet MAC interfaces */
+-+static struct eth_plat_info wrt300nv2_plat_eth[] = {
+-+	{
+-+		.phy		= -1,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= 1,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device wrt300nv2_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= wrt300nv2_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= wrt300nv2_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+- static struct platform_device *wrt300nv2_devices[] __initdata = {
+- 	&wrt300nv2_flash,
+--	&wrt300nv2_uart
+-+	&wrt300nv2_uart,
+-+	&wrt300nv2_eth[0],
+-+	&wrt300nv2_eth[1],
+- };
+- 
+- static void __init wrt300nv2_init(void)
+diff --git a/target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch b/target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch
+deleted file mode 100644
+index 99db2673d0..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/132-wrt300nv2_mac_fix.patch
++++ /dev/null
+@@ -1,72 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
+-+++ b/arch/arm/mach-ixp4xx/wrt300nv2-setup.c
+-@@ -3,6 +3,7 @@
+-  *
+-  * Board setup for the Linksys WRT300N v2
+-  *
+-+ * Copyright (C) 2010 Alexandros C. Couloumbis <alex@ozo.com>
+-  * Copyright (C) 2007 Imre Kaloz <Kaloz@openwrt.org>
+-  *
+-  * based on coyote-setup.c:
+-@@ -18,6 +19,7 @@
+- #include <linux/tty.h>
+- #include <linux/serial_8250.h>
+- #include <linux/slab.h>
+-+#include <linux/etherdevice.h>
+- 
+- #include <asm/types.h>
+- #include <asm/setup.h>
+-@@ -79,7 +81,8 @@ static struct platform_device wrt300nv2_
+- /* Built-in 10/100 Ethernet MAC interfaces */
+- static struct eth_plat_info wrt300nv2_plat_eth[] = {
+- 	{
+--		.phy		= -1,
+-+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+		.phy_mask	= 0x0F0000,
+- 		.rxq		= 3,
+- 		.txreadyq	= 20,
+- 	}, {
+-@@ -112,6 +115,10 @@ static struct platform_device *wrt300nv2
+- 
+- static void __init wrt300nv2_init(void)
+- {
+-+	uint8_t __iomem *f;
+-+	int offset = 0;
+-+	int i;
+-+
+- 	ixp4xx_sys_init();
+- 
+- 	wrt300nv2_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-@@ -121,6 +128,32 @@ static void __init wrt300nv2_init(void)
+- 	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+- 
+- 	platform_add_devices(wrt300nv2_devices, ARRAY_SIZE(wrt300nv2_devices));
+-+
+-+	f = ioremap(IXP4XX_EXP_BUS_BASE(0), 0x60000);
+-+
+-+	if (f) {
+-+		for (i = 0; i < 6; i++) {
+-+#ifdef __ARMEB__
+-+			wrt300nv2_plat_eth[0].hwaddr[i] = readb(f + 0x5FFA0 + i);
+-+			if (i == 5)
+-+				offset = 1;
+-+			wrt300nv2_plat_eth[1].hwaddr[i] = (wrt300nv2_plat_eth[0].hwaddr[i] + offset);
+-+#else
+-+			wrt300nv2_plat_eth[0].hwaddr[i] = readb(f + 0x5FFA0 + (i^3));
+-+			if (i == 5)
+-+				offset = 1;
+-+			wrt300nv2_plat_eth[1].hwaddr[i] = (wrt300nv2_plat_eth[0].hwaddr[i] + offset);
+-+#endif
+-+		}
+-+		iounmap(f);
+-+	}
+-+
+-+	if (!(is_valid_ether_addr(wrt300nv2_plat_eth[0].hwaddr)))
+-+		random_ether_addr(wrt300nv2_plat_eth[0].hwaddr);
+-+	if (!(is_valid_ether_addr(wrt300nv2_plat_eth[1].hwaddr))) {
+-+		memcpy(wrt300nv2_plat_eth[1].hwaddr, wrt300nv2_plat_eth[0].hwaddr, ETH_ALEN);
+-+		wrt300nv2_plat_eth[1].hwaddr[5] = (wrt300nv2_plat_eth[0].hwaddr[5] + 1);
+-+	}
+- }
+- 
+- #ifdef CONFIG_MACH_WRT300NV2
+diff --git a/target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch b/target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch
+deleted file mode 100644
+index fb5c3adb76..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/150-lanready_ap1000_support.patch
++++ /dev/null
+@@ -1,201 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -101,6 +101,14 @@ config MACH_WRT300NV2
+- 	  WRT300N v2 router. For more information on this
+- 	  platform, see http://openwrt.org
+- 
+-+config MACH_AP1000
+-+	bool "Lanready AP-1000"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support Lanready's
+-+	  AP1000 board. For more information on this
+-+	  platform, see http://openwrt.org
+-+
+- config ARCH_IXDP425
+- 	bool "IXDP425"
+- 	help
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -23,6 +23,7 @@ obj-pci-$(CONFIG_MACH_PRONGHORN)	+= pron
+- obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-pci.o
+- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
+-+obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -47,6 +48,7 @@ obj-$(CONFIG_MACH_PRONGHORN)	+= pronghor
+- obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewinder-setup.o
+- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
+- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
+-+obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/ap1000-setup.c
+-@@ -0,0 +1,152 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/ap1000-setup.c
+-+ *
+-+ * Lanready AP-1000
+-+ *
+-+ * Copyright (C) 2007 Imre Kaloz <Kaloz@openwrt.org>
+-+ *
+-+ * based on ixdp425-setup.c:
+-+ *	Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/types.h>
+-+#include <asm/setup.h>
+-+#include <asm/memory.h>
+-+#include <mach/hardware.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data ap1000_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource ap1000_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device ap1000_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &ap1000_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &ap1000_flash_resource,
+-+};
+-+
+-+static struct resource ap1000_uart_resources[] = {
+-+	{
+-+		.start		= IXP4XX_UART1_BASE_PHYS,
+-+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start		= IXP4XX_UART2_BASE_PHYS,
+-+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port ap1000_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device ap1000_uart = {
+-+	.name			= "serial8250",
+-+	.id			= PLAT8250_DEV_PLATFORM,
+-+	.dev.platform_data	= ap1000_uart_data,
+-+	.num_resources		= 2,
+-+	.resource		= ap1000_uart_resources
+-+};
+-+
+-+static struct platform_device *ap1000_devices[] __initdata = {
+-+	&ap1000_flash,
+-+	&ap1000_uart
+-+};
+-+
+-+static char ap1000_mem_fixup[] __initdata = "mem=64M ";
+-+
+-+static void __init ap1000_fixup(struct tag *tags, char **cmdline)
+-+{
+-+	struct tag *t = tags;
+-+	char *p = *cmdline;
+-+
+-+	/* Find the end of the tags table, taking note of any cmdline tag. */
+-+	for (; t->hdr.size; t = tag_next(t)) {
+-+		if (t->hdr.tag == ATAG_CMDLINE) {
+-+			p = t->u.cmdline.cmdline;
+-+		}
+-+	}
+-+
+-+	/* Overwrite the end of the table with a new cmdline tag. */
+-+	t->hdr.tag = ATAG_CMDLINE;
+-+	t->hdr.size = (sizeof (struct tag_header) +
+-+		strlen(ap1000_mem_fixup) + strlen(p) + 1 + 4) >> 2;
+-+	strlcpy(t->u.cmdline.cmdline, ap1000_mem_fixup, COMMAND_LINE_SIZE);
+-+	strlcpy(t->u.cmdline.cmdline + strlen(ap1000_mem_fixup), p,
+-+		COMMAND_LINE_SIZE - strlen(ap1000_mem_fixup));
+-+
+-+	/* Terminate the table. */
+-+	t = tag_next(t);
+-+	t->hdr.tag = ATAG_NONE;
+-+	t->hdr.size = 0;
+-+}
+-+
+-+static void __init ap1000_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	ap1000_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	ap1000_flash_resource.end =
+-+		IXP4XX_EXP_BUS_BASE(0) + ixp4xx_exp_bus_size - 1;
+-+
+-+	platform_add_devices(ap1000_devices, ARRAY_SIZE(ap1000_devices));
+-+}
+-+
+-+#ifdef CONFIG_MACH_AP1000
+-+MACHINE_START(AP1000, "Lanready AP-1000")
+-+	/* Maintainer: Imre Kaloz <Kaloz@openwrt.org> */
+-+	.fixup		= ap1000_fixup,
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= ap1000_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+#endif
+---- a/arch/arm/mach-ixp4xx/ixdp425-pci.c
+-+++ b/arch/arm/mach-ixp4xx/ixdp425-pci.c
+-@@ -70,7 +70,7 @@ int __init ixdp425_pci_init(void)
+- {
+- 	if (machine_is_ixdp425() || machine_is_ixcdp1100() ||
+- 			machine_is_ixdp465() || machine_is_kixrp435() ||
+--			machine_is_compex42x())
+-+			machine_is_compex42x() || machine_is_ap1000())
+- 		pci_common_init(&ixdp425_pci);
+- 	return 0;
+- }
+diff --git a/target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch
+deleted file mode 100644
+index a3ed2d066e..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/151-lanready_ap1000_mac_plat_info.patch
++++ /dev/null
+@@ -1,44 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/ap1000-setup.c
+-+++ b/arch/arm/mach-ixp4xx/ap1000-setup.c
+-@@ -91,9 +91,39 @@ static struct platform_device ap1000_uar
+- 	.resource		= ap1000_uart_resources
+- };
+- 
+-+/* Built-in 10/100 Ethernet MAC interfaces */
+-+static struct eth_plat_info ap1000_plat_eth[] = {
+-+	{
+-+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+		.phy_mask	= 0x1e,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= 5,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device ap1000_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= ap1000_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= ap1000_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+- static struct platform_device *ap1000_devices[] __initdata = {
+--	&ap1000_flash,
+--	&ap1000_uart
+-+ 	&ap1000_flash,
+-+	&ap1000_uart,
+-+	&ap1000_eth[0],
+-+	&ap1000_eth[1],
+- };
+- 
+- static char ap1000_mem_fixup[] __initdata = "mem=64M ";
+diff --git a/target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch b/target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch
+deleted file mode 100644
+index 95cc5680cd..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/160-delayed_uart_io.patch
++++ /dev/null
+@@ -1,133 +0,0 @@
+---- a/drivers/tty/serial/8250/8250_core.c
+-+++ b/drivers/tty/serial/8250/8250_core.c
+-@@ -833,6 +833,7 @@ static int serial8250_probe(struct platf
+- 		uart.port.get_mctrl	= p->get_mctrl;
+- 		uart.port.pm		= p->pm;
+- 		uart.port.dev		= &dev->dev;
+-+		uart.port.rw_delay	= p->rw_delay;
+- 		uart.port.irqflags	|= irqflag;
+- 		ret = serial8250_register_8250_port(&uart);
+- 		if (ret < 0) {
+-@@ -989,6 +990,7 @@ int serial8250_register_8250_port(struct
+- 		uart->bugs		= up->bugs;
+- 		uart->port.mapbase      = up->port.mapbase;
+- 		uart->port.mapsize      = up->port.mapsize;
+-+		uart->port.rw_delay	= up->port.rw_delay;
+- 		uart->port.private_data = up->port.private_data;
+- 		uart->tx_loadsz		= up->tx_loadsz;
+- 		uart->capabilities	= up->capabilities;
+---- a/drivers/tty/serial/serial_core.c
+-+++ b/drivers/tty/serial/serial_core.c
+-@@ -2259,6 +2259,7 @@ uart_report_port(struct uart_driver *drv
+- 		snprintf(address, sizeof(address),
+- 			 "I/O 0x%lx offset 0x%x", port->iobase, port->hub6);
+- 		break;
+-+	case UPIO_MEM_DELAY:
+- 	case UPIO_MEM:
+- 	case UPIO_MEM16:
+- 	case UPIO_MEM32:
+-@@ -2931,6 +2932,7 @@ int uart_match_port(struct uart_port *po
+- 	case UPIO_HUB6:
+- 		return (port1->iobase == port2->iobase) &&
+- 		       (port1->hub6   == port2->hub6);
+-+	case UPIO_MEM_DELAY:
+- 	case UPIO_MEM:
+- 	case UPIO_MEM16:
+- 	case UPIO_MEM32:
+---- a/include/linux/serial_8250.h
+-+++ b/include/linux/serial_8250.h
+-@@ -28,6 +28,7 @@ struct plat_serial8250_port {
+- 	void            *private_data;
+- 	unsigned char	regshift;	/* register shift */
+- 	unsigned char	iotype;		/* UPIO_* */
+-+	unsigned int rw_delay;	/* udelay for slower busses IXP4XX Expansion Bus */
+- 	unsigned char	hub6;
+- 	upf_t		flags;		/* UPF_* flags */
+- 	unsigned int	type;		/* If UPF_FIXED_TYPE */
+---- a/include/linux/serial_core.h
+-+++ b/include/linux/serial_core.h
+-@@ -152,6 +152,7 @@ struct uart_port {
+- #define UPIO_TSI		(SERIAL_IO_TSI)		/* Tsi108/109 type IO */
+- #define UPIO_MEM32BE		(SERIAL_IO_MEM32BE)	/* 32b big endian */
+- #define UPIO_MEM16		(SERIAL_IO_MEM16)	/* 16b little endian */
+-+#define UPIO_MEM_DELAY		(SERIAL_IO_MEM_DELAY)
+- 
+- 	unsigned int		read_status_mask;	/* driver specific */
+- 	unsigned int		ignore_status_mask;	/* driver specific */
+-@@ -234,6 +235,7 @@ struct uart_port {
+- 	int			hw_stopped;		/* sw-assisted CTS flow state */
+- 	unsigned int		mctrl;			/* current modem ctrl settings */
+- 	unsigned int		timeout;		/* character-based timeout */
+-+	unsigned int		rw_delay;		/* udelay for slow busses, IXP4XX Expansion Bus */
+- 	unsigned int		type;			/* port type */
+- 	const struct uart_ops	*ops;
+- 	unsigned int		custom_divisor;
+---- a/drivers/tty/serial/8250/8250_port.c
+-+++ b/drivers/tty/serial/8250/8250_port.c
+-@@ -383,6 +383,20 @@ static unsigned int mem16_serial_in(stru
+- 	return readw(p->membase + offset);
+- }
+- 
+-+static unsigned int memdelay_serial_in(struct uart_port *p, int offset)
+-+{
+-+	struct uart_8250_port *up = (struct uart_8250_port *)p;
+-+	udelay(up->port.rw_delay);
+-+	return mem_serial_in(p, offset);
+-+}
+-+
+-+static void memdelay_serial_out(struct uart_port *p, int offset, int value)
+-+{
+-+	struct uart_8250_port *up = (struct uart_8250_port *)p;
+-+	udelay(up->port.rw_delay);
+-+	mem_serial_out(p, offset, value);
+-+}
+-+
+- static void mem32_serial_out(struct uart_port *p, int offset, int value)
+- {
+- 	offset = offset << p->regshift;
+-@@ -455,6 +469,11 @@ static void set_io_from_upio(struct uart
+- 		p->serial_out = mem32be_serial_out;
+- 		break;
+- 
+-+	case UPIO_MEM_DELAY:
+-+		p->serial_in = memdelay_serial_in;
+-+		p->serial_out = memdelay_serial_out;
+-+		break;
+-+
+- #ifdef CONFIG_SERIAL_8250_RT288X
+- 	case UPIO_AU:
+- 		p->serial_in = au_serial_in;
+-@@ -482,6 +501,7 @@ serial_port_out_sync(struct uart_port *p
+- 	case UPIO_MEM16:
+- 	case UPIO_MEM32:
+- 	case UPIO_MEM32BE:
+-+	case UPIO_MEM_DELAY:
+- 	case UPIO_AU:
+- 		p->serial_out(p, offset, value);
+- 		p->serial_in(p, UART_LCR);	/* safe, no side-effects */
+-@@ -2759,6 +2779,7 @@ static int serial8250_request_std_resour
+- 	case UPIO_MEM32BE:
+- 	case UPIO_MEM16:
+- 	case UPIO_MEM:
+-+	case UPIO_MEM_DELAY:
+- 		if (!port->mapbase)
 - 			break;
 - 
---		writel((readl(&dev->remote->control) &
---				~VLYNQ_CTRL_CLOCK_MASK) |
---				VLYNQ_CTRL_CLOCK_INT |
---				VLYNQ_CTRL_CLOCK_DIV(i - vlynq_rdiv1),
---				&dev->remote->control);
---		writel((readl(&dev->local->control)
---				& ~(VLYNQ_CTRL_CLOCK_INT |
---				VLYNQ_CTRL_CLOCK_MASK)) |
---				VLYNQ_CTRL_CLOCK_DIV(i - vlynq_rdiv1),
---				&dev->local->control);
---
---		if (vlynq_linked(dev)) {
---			printk(KERN_DEBUG
---				"%s: using remote clock divisor %d\n",
---				dev_name(&dev->dev), i - vlynq_rdiv1 + 1);
---			dev->divisor = i;
--+		if (!__vlynq_set_clocks(dev, vlynq_clk_remote, i, i)) {
--+			printk(KERN_INFO
--+					"%s: using remote clock divisor %d\n",
--+					dev_name(&dev->dev), i + 1);
--+			dev->divisor = i + vlynq_rdiv1;
-- 			return 0;
-- 		} else {
-- 			vlynq_reset(dev);
--@@ -433,25 +495,17 @@ static int __vlynq_try_remote(struct vly
--  */
-- static int __vlynq_try_local(struct vlynq_device *dev)
-- {
---	int i;
--+	int i, dir = !dev->dev_id;
+-@@ -2797,6 +2818,7 @@ static void serial8250_release_std_resou
+- 	case UPIO_MEM32BE:
+- 	case UPIO_MEM16:
+- 	case UPIO_MEM:
+-+	case UPIO_MEM_DELAY:
+- 		if (!port->mapbase)
+- 			break;
 - 
-- 	vlynq_reset(dev);
+---- a/include/uapi/linux/serial.h
+-+++ b/include/uapi/linux/serial.h
+-@@ -70,6 +70,7 @@ struct serial_struct {
+- #define SERIAL_IO_TSI	  5
+- #define SERIAL_IO_MEM32BE 6
+- #define SERIAL_IO_MEM16	7
+-+#define SERIAL_IO_MEM_DELAY 10
 - 
---	for (i = dev->dev_id ? vlynq_ldiv2 : vlynq_ldiv8; dev->dev_id ?
---			i <= vlynq_ldiv8 : i >= vlynq_ldiv2;
---		dev->dev_id ? i++ : i--) {
---
---		writel((readl(&dev->local->control) &
---				~VLYNQ_CTRL_CLOCK_MASK) |
---				VLYNQ_CTRL_CLOCK_INT |
---				VLYNQ_CTRL_CLOCK_DIV(i - vlynq_ldiv1),
---				&dev->local->control);
---
---		if (vlynq_linked(dev)) {
---			printk(KERN_DEBUG
---				"%s: using local clock divisor %d\n",
---				dev_name(&dev->dev), i - vlynq_ldiv1 + 1);
---			dev->divisor = i;
--+	for (i = dir ? 7 : 0; dir ? i >= 0 : i <= 7; dir ? i-- : i++) {
--+
--+		if (!__vlynq_set_clocks(dev, vlynq_clk_local, i, 0)) {
--+			printk(KERN_INFO
--+					"%s: using local clock divisor %d\n",
--+					dev_name(&dev->dev), i + 1);
--+			dev->divisor = i + vlynq_ldiv1;
-- 			return 0;
-- 		} else {
-- 			vlynq_reset(dev);
--@@ -473,18 +527,10 @@ static int __vlynq_try_external(struct v
-- 	if (!vlynq_linked(dev))
-- 		return -ENODEV;
-- 
---	writel((readl(&dev->remote->control) &
---			~VLYNQ_CTRL_CLOCK_INT),
---			&dev->remote->control);
---
---	writel((readl(&dev->local->control) &
---			~VLYNQ_CTRL_CLOCK_INT),
---			&dev->local->control);
---
---	if (vlynq_linked(dev)) {
---		printk(KERN_DEBUG "%s: using external clock\n",
---			dev_name(&dev->dev));
---			dev->divisor = vlynq_div_external;
--+	if (!__vlynq_set_clocks(dev, vlynq_clk_external, 0, 0)) {
--+		printk(KERN_INFO "%s: using external clock\n",
--+				dev_name(&dev->dev));
--+				dev->divisor = vlynq_div_external;
-- 		return 0;
-- 	}
-- 
--@@ -501,24 +547,16 @@ static int __vlynq_enable_device(struct
-- 		return result;
-- 
-- 	switch (dev->divisor) {
---	case vlynq_div_external:
-- 	case vlynq_div_auto:
-- 		/* When the device is brought from reset it should have clock
-- 		 * generation negotiated by hardware.
-- 		 * Check which device is generating clocks and perform setup
-- 		 * accordingly */
---		if (vlynq_linked(dev) && readl(&dev->remote->control) &
---		   VLYNQ_CTRL_CLOCK_INT) {
---			if (!__vlynq_try_remote(dev) ||
---				!__vlynq_try_local(dev)  ||
---				!__vlynq_try_external(dev))
---				return 0;
---		} else {
---			if (!__vlynq_try_external(dev) ||
---				!__vlynq_try_local(dev)    ||
---				!__vlynq_try_remote(dev))
---				return 0;
---		}
--+		if (!__vlynq_try_remote(dev) || !__vlynq_try_local(dev))
--+			return 0;
--+	case vlynq_div_external:
--+		if (!__vlynq_try_external(dev))
--+			return 0;
-- 		break;
-- 	case vlynq_ldiv1:
-- 	case vlynq_ldiv2:
--@@ -528,15 +566,12 @@ static int __vlynq_enable_device(struct
-- 	case vlynq_ldiv6:
-- 	case vlynq_ldiv7:
-- 	case vlynq_ldiv8:
---		writel(VLYNQ_CTRL_CLOCK_INT |
---			VLYNQ_CTRL_CLOCK_DIV(dev->divisor -
---			vlynq_ldiv1), &dev->local->control);
---		writel(0, &dev->remote->control);
---		if (vlynq_linked(dev)) {
---			printk(KERN_DEBUG
---				"%s: using local clock divisor %d\n",
---				dev_name(&dev->dev),
---				dev->divisor - vlynq_ldiv1 + 1);
--+		if (!__vlynq_set_clocks(dev, vlynq_clk_local, dev->divisor -
--+				vlynq_ldiv1, 0)) {
--+			printk(KERN_INFO
--+					"%s: using local clock divisor %d\n",
--+					dev_name(&dev->dev),
--+					dev->divisor - vlynq_ldiv1 + 1);
-- 			return 0;
-- 		}
-- 		break;
--@@ -548,20 +583,17 @@ static int __vlynq_enable_device(struct
-- 	case vlynq_rdiv6:
-- 	case vlynq_rdiv7:
-- 	case vlynq_rdiv8:
---		writel(0, &dev->local->control);
---		writel(VLYNQ_CTRL_CLOCK_INT |
---			VLYNQ_CTRL_CLOCK_DIV(dev->divisor -
---			vlynq_rdiv1), &dev->remote->control);
---		if (vlynq_linked(dev)) {
---			printk(KERN_DEBUG
---				"%s: using remote clock divisor %d\n",
---				dev_name(&dev->dev),
---				dev->divisor - vlynq_rdiv1 + 1);
--+		if (!__vlynq_set_clocks(dev, vlynq_clk_remote, 0,
--+				dev->divisor - vlynq_rdiv1)) {
--+			printk(KERN_INFO
--+					"%s: using remote clock divisor %d\n",
--+					dev_name(&dev->dev),
--+					dev->divisor - vlynq_rdiv1 + 1);
-- 			return 0;
-- 		}
-- 		break;
-- 	}
---
--+	vlynq_reset(dev);
-- 	ops->off(dev);
-- 	return -ENODEV;
-- }
--@@ -732,14 +764,14 @@ static int vlynq_probe(struct platform_d
-- 	platform_set_drvdata(pdev, dev);
-- 
-- 	printk(KERN_INFO "%s: regs 0x%p, irq %d, mem 0x%p\n",
---	       dev_name(&dev->dev), (void *)dev->regs_start, dev->irq,
---	       (void *)dev->mem_start);
--+			dev_name(&dev->dev), (void *)dev->regs_start,
--+			dev->irq, (void *)dev->mem_start);
-- 
-- 	dev->dev_id = 0;
-- 	dev->divisor = vlynq_div_auto;
---	result = __vlynq_enable_device(dev);
---	if (result == 0) {
--+	if (!__vlynq_enable_device(dev)) {
-- 		dev->dev_id = readl(&dev->remote->chip);
--+		vlynq_reset(dev);
-- 		((struct plat_vlynq_ops *)(dev->dev.platform_data))->off(dev);
-- 	}
-- 	if (dev->dev_id)
-diff --git a/target/linux/ar7/patches-4.9/200-free-mem-below-kernel-offset.patch b/target/linux/ar7/patches-4.9/200-free-mem-below-kernel-offset.patch
+- #define UART_CLEAR_FIFO		0x01
+- #define UART_USE_FIFO		0x02
+diff --git a/target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch b/target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch
 deleted file mode 100644
-index 4011942d79..0000000000
---- a/target/linux/ar7/patches-4.9/200-free-mem-below-kernel-offset.patch
+index efa389d786..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/162-wg302v1_mem_fixup.patch
 +++ /dev/null
-@@ -1,15 +0,0 @@
----- a/arch/mips/ar7/memory.c
--+++ b/arch/mips/ar7/memory.c
--@@ -66,5 +66,11 @@ void __init prom_meminit(void)
-- 
-- void __init prom_free_prom_memory(void)
-- {
---	/* Nothing to free */
--+	/* adapted from arch/mips/txx9/generic/setup.c */
--+	unsigned long saddr = PHYS_OFFSET + PAGE_SIZE;
--+	unsigned long eaddr = __pa_symbol(&_text);
--+
--+	/* free memory between prom-record and kernel _text base */
--+	if (saddr < eaddr)
--+		free_init_pages("prom memory", saddr, eaddr);
-- }
-diff --git a/target/linux/ar7/patches-4.9/300-add-ac49x-platform.patch b/target/linux/ar7/patches-4.9/300-add-ac49x-platform.patch
-deleted file mode 100644
-index 49c2cfbe6a..0000000000
---- a/target/linux/ar7/patches-4.9/300-add-ac49x-platform.patch
-+++ /dev/null
-@@ -1,85 +0,0 @@
----- a/arch/mips/ar7/Platform
--+++ b/arch/mips/ar7/Platform
--@@ -3,4 +3,9 @@
-- #
-- platform-$(CONFIG_AR7)		+= ar7/
-- cflags-$(CONFIG_AR7)		+= -I$(srctree)/arch/mips/include/asm/mach-ar7
---load-$(CONFIG_AR7)		+= 0xffffffff94100000
--+load-$(CONFIG_AR7_TI)		+= 0xffffffff94100000
--+
--+#
--+# AudioCodes AC49x
--+#
--+load-$(CONFIG_AR7_AC49X)	+= 0xffffffff945ca000
----- a/arch/mips/ar7/setup.c
--+++ b/arch/mips/ar7/setup.c
--@@ -68,6 +68,10 @@ const char *get_system_type(void)
-- 			return "TI AR7 (TNETV1056)";
-- 		case TITAN_CHIP_1060:
-- 			return "TI AR7 (TNETV1060)";
--+		case TITAN_CHIP_AC495:
--+			return "AudioCodes AC495";
--+		case TITAN_CHIP_AC496:
--+			return "AudioCodes AC496";
-- 		}
-- 	default:
-- 		return "TI AR7 (unknown)";
----- a/arch/mips/include/asm/mach-ar7/ar7.h
--+++ b/arch/mips/include/asm/mach-ar7/ar7.h
--@@ -92,6 +92,8 @@
-- #define TITAN_CHIP_1055 0x0e
-- #define TITAN_CHIP_1056 0x0d
-- #define TITAN_CHIP_1060 0x07
--+#define TITAN_CHIP_AC495	0x00
--+#define TITAN_CHIP_AC496	0x02
-- 
-- /* Interrupts */
-- #define AR7_IRQ_UART0	15
----- a/arch/mips/Kconfig
--+++ b/arch/mips/Kconfig
--@@ -162,7 +162,7 @@ config AR7
-- 	select HAVE_CLK
-- 	help
-- 	  Support for the Texas Instruments AR7 System-on-a-Chip
---	  family: TNETD7100, 7200 and 7300.
--+	  family: TI TNETD7100, 7200, 7300 and AudioCodes AC49x.
-- 
-- config ATH25
-- 	bool "Atheros AR231x/AR531x SoC support"
--@@ -1007,6 +1007,7 @@ config MIPS_PARAVIRT
-- endchoice
-- 
-- source "arch/mips/alchemy/Kconfig"
--+source "arch/mips/ar7/Kconfig"
-- source "arch/mips/ath25/Kconfig"
-- source "arch/mips/ath79/Kconfig"
-- source "arch/mips/bcm47xx/Kconfig"
----- /dev/null
--+++ b/arch/mips/ar7/Kconfig
--@@ -0,0 +1,26 @@
--+if AR7
--+
--+config AR7_TI
--+	bool
--+
--+config AR7_AC49X
--+	bool
--+
--+choice
--+	prompt "AR7 SoC family selection"
--+	default AR7_TYPE_TI
--+	depends on AR7
--+	help
--+	  Select AR7 MIPS SoC implementation.
--+
--+	config AR7_TYPE_TI
--+		bool "Texas Instruments AR7"
--+		select AR7_TI
--+
--+	config AR7_TYPE_AC49X
--+		bool "AudioCodes AC49X"
--+		select AR7_AC49X
--+
--+endchoice
--+
--+endif
-diff --git a/target/linux/ar7/patches-4.9/310-ac49x-prom-support.patch b/target/linux/ar7/patches-4.9/310-ac49x-prom-support.patch
-deleted file mode 100644
-index dddf22106a..0000000000
---- a/target/linux/ar7/patches-4.9/310-ac49x-prom-support.patch
-+++ /dev/null
-@@ -1,20 +0,0 @@
----- a/arch/mips/ar7/prom.c
--+++ b/arch/mips/ar7/prom.c
--@@ -70,6 +70,7 @@ struct psbl_rec {
+@@ -1,37 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/wg302v1-setup.c
+-+++ b/arch/arm/mach-ixp4xx/wg302v1-setup.c
+-@@ -117,6 +117,34 @@ static struct platform_device *wg302v1_d
+- 	&wg302v1_eth[0],
 - };
 - 
-- static const char psp_env_version[] __initconst = "TIENV0.8";
--+static const char psp_env_version_ac49x[] __initconst = "MaxENV0.2";
-- 
-- struct psp_env_chunk {
-- 	u8	num;
--@@ -186,7 +187,8 @@ static void __init ar7_init_env(struct e
-- 	struct psbl_rec *psbl = (struct psbl_rec *)(KSEG1ADDR(0x14000300));
-- 	void *psp_env = (void *)KSEG1ADDR(psbl->env_base);
-- 
---	if (strcmp(psp_env, psp_env_version) == 0) {
--+	if (strcmp(psp_env, psp_env_version) == 0 ||
--+	    strcmp(psp_env, psp_env_version_ac49x) == 0) {
-- 		parse_psp_env(psp_env);
-- 	} else {
-- 		for (i = 0; i < MAX_ENTRY; i++, env++)
-diff --git a/target/linux/ar7/patches-4.9/320-ac49x-mtd-partitions.patch b/target/linux/ar7/patches-4.9/320-ac49x-mtd-partitions.patch
-deleted file mode 100644
-index fafa8c77eb..0000000000
---- a/target/linux/ar7/patches-4.9/320-ac49x-mtd-partitions.patch
-+++ /dev/null
-@@ -1,35 +0,0 @@
----- a/drivers/mtd/Kconfig
--+++ b/drivers/mtd/Kconfig
--@@ -154,6 +154,11 @@ config MTD_OF_PARTS
-- 	  the partition map from the children of the flash node,
-- 	  as described in Documentation/devicetree/bindings/mtd/partition.txt.
-- 
--+config MTD_AC49X_PARTS
--+	tristate "AudioCodes AC49X partitioning support"
--+	---help---
--+	  AudioCodes AC49X partitioning support
+-+static char wg302v1_mem_fixup[] __initdata = " mem=32M";
 -+
-- config MTD_AR7_PARTS
-- 	tristate "TI AR7 partitioning support"
-- 	---help---
----- a/drivers/mtd/Makefile
--+++ b/drivers/mtd/Makefile
--@@ -11,6 +11,7 @@ obj-$(CONFIG_MTD_SPLIT)		+= mtdsplit/
-- obj-$(CONFIG_MTD_OF_PARTS)	+= ofpart.o
-- obj-$(CONFIG_MTD_REDBOOT_PARTS) += redboot.o
-- obj-$(CONFIG_MTD_CMDLINE_PARTS) += cmdlinepart.o
--+obj-$(CONFIG_MTD_AC49X_PARTS)	+= ac49xpart.o
-- obj-$(CONFIG_MTD_AFS_PARTS)	+= afs.o
-- obj-$(CONFIG_MTD_AR7_PARTS)	+= ar7part.o titanpart.o
-- obj-$(CONFIG_MTD_BCM63XX_PARTS)	+= bcm63xxpart.o
----- a/arch/mips/ar7/platform.c
--+++ b/arch/mips/ar7/platform.c
--@@ -201,7 +201,7 @@ static struct resource physmap_flash_res
-- 	.end	= 0x11ffffff,
-- };
-- 
---static const char *ar7_probe_types[] = { "ar7part", NULL };
--+static const char *ar7_probe_types[] = { "ac49xpart", "ar7part", NULL };
-- 
-- static struct physmap_flash_data physmap_flash_data = {
-- 	.width	= 2,
-diff --git a/target/linux/ar7/patches-4.9/920-ar7part.patch b/target/linux/ar7/patches-4.9/920-ar7part.patch
-deleted file mode 100644
-index e520af2083..0000000000
---- a/target/linux/ar7/patches-4.9/920-ar7part.patch
-+++ /dev/null
-@@ -1,120 +0,0 @@
----- a/drivers/mtd/ar7part.c
--+++ b/drivers/mtd/ar7part.c
--@@ -30,11 +30,14 @@
-- 
-- #include <uapi/linux/magic.h>
-- 
--+#include <asm/mach-ar7/prom.h>
+-+static void __init wg302v1_fixup(struct tag *tags, char **cmdline)
+-+{
+-+	struct tag *t = tags;
+-+	char *p = *cmdline;
+-+	size_t fixlen, cmdlen;
 -+
-- #define AR7_PARTS	4
-- #define ROOT_OFFSET	0xe0000
-- 
-- #define LOADER_MAGIC1	le32_to_cpu(0xfeedfa42)
-- #define LOADER_MAGIC2	le32_to_cpu(0xfeed1281)
--+#define LOADER_MAGIC3	le32_to_cpu(0x434d4d4c)
-- 
-- struct ar7_bin_rec {
-- 	unsigned int checksum;
--@@ -42,12 +45,16 @@ struct ar7_bin_rec {
-- 	unsigned int address;
-- };
-- 
--+int create_titan_partitions(struct mtd_info *master,
--+        const struct mtd_partition **pparts,
--+        struct mtd_part_parser_data *data);
--+
-- static int create_mtd_partitions(struct mtd_info *master,
-- 				 const struct mtd_partition **pparts,
-- 				 struct mtd_part_parser_data *data)
-- {
-- 	struct ar7_bin_rec header;
---	unsigned int offset;
--+	unsigned int offset, mtd_start, mtd_end;
-- 	size_t len;
-- 	unsigned int pre_size = master->erasesize, post_size = 0;
-- 	unsigned int root_offset = ROOT_OFFSET;
--@@ -55,6 +62,16 @@ static int create_mtd_partitions(struct
-- 	int retries = 10;
-- 	struct mtd_partition *ar7_parts;
-- 
--+	const char *prom_str = prom_getenv("ProductID");
--+	char mtd_name[] = "mtd1";
--+	if(prom_str &&
--+		(strcmp(prom_str, "CYWL")==0 ||
--+		strcmp(prom_str, "CYWM")==0 ||
--+		strcmp(prom_str, "CYLM")==0 ||
--+		strcmp(prom_str, "CYLL")==0)){
--+		return create_titan_partitions(master, pparts, data);
+-+	/* Find the end of the tags table, taking note of any cmdline tag. */
+-+	for (; t->hdr.size; t = tag_next(t)) {
+-+		if (t->hdr.tag == ATAG_CMDLINE) {
+-+			p = t->u.cmdline.cmdline;
+-+		}
 -+	}
 -+
-- 	ar7_parts = kzalloc(sizeof(*ar7_parts) * AR7_PARTS, GFP_KERNEL);
-- 	if (!ar7_parts)
-- 		return -ENOMEM;
--@@ -83,34 +100,39 @@ static int create_mtd_partitions(struct
+-+	fixlen = strlen(wg302v1_mem_fixup);
+-+	cmdlen = strlen(p);
+-+	if (fixlen + cmdlen >= COMMAND_LINE_SIZE)
+-+		return;
+-+
+-+	/* append the fixup to the cmdline */
+-+	memmove(p + cmdlen, wg302v1_mem_fixup, fixlen + 1);
+-+
+-+	/* Adjust the size of the atag if there was one */
+-+	if (t->hdr.size)
+-+		t->hdr.size += fixlen;
+-+}
+-+
+- static void __init wg302v1_init(void)
+- {
+- 	ixp4xx_sys_init();
+diff --git a/target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch
+deleted file mode 100644
+index f7090cd1b4..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/170-ixdpg425_mac_plat_info.patch
++++ /dev/null
+@@ -1,51 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/coyote-setup.c
+-+++ b/arch/arm/mach-ixp4xx/coyote-setup.c
+-@@ -14,6 +14,7 @@
+- #include <linux/serial.h>
+- #include <linux/tty.h>
+- #include <linux/serial_8250.h>
+-+#include <linux/dma-mapping.h>
 - 
-- 	pre_size = offset;
+- #include <asm/types.h>
+- #include <asm/setup.h>
+-@@ -81,9 +82,39 @@ static struct platform_device coyote_uar
+- 	.resource	= &coyote_uart_resource,
+- };
 - 
---	if (!ar7_parts[1].offset) {
---		ar7_parts[1].offset = master->size - master->erasesize;
---		post_size = master->erasesize;
---	}
---
-- 	switch (header.checksum) {
---	case LOADER_MAGIC1:
---		while (header.length) {
---			offset += sizeof(header) + header.length;
---			mtd_read(master, offset, sizeof(header), &len,
---				 (uint8_t *)&header);
---		}
---		root_offset = offset + sizeof(header) + 4;
---		break;
-- 	case LOADER_MAGIC2:
--+		for (retries = 0; retries <= 9; retries++) {
--+			mtd_name[3] = '0' + retries;
--+			prom_str = prom_getenv(mtd_name);
--+			if (prom_str == NULL)
+-+/* Built-in 10/100 Ethernet MAC interfaces */
+-+static struct eth_plat_info ixdpg425_plat_eth[] = {
+-+        {
+-+                .phy            = 5,
+-+                .rxq            = 3,
+-+                .txreadyq       = 20,
+-+        }, {
+-+                .phy            = 4,
+-+                .rxq            = 4,
+-+                .txreadyq       = 21,
+-+        }
+-+};
+-+
+-+static struct platform_device ixdpg425_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= ixdpg425_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= ixdpg425_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+
+- static struct platform_device *coyote_devices[] __initdata = {
+- 	&coyote_flash,
+--	&coyote_uart
+-+	&coyote_uart,
+-+	&ixdpg425_eth[0],
+-+	&ixdpg425_eth[1],
+- };
+- 
+- static void __init coyote_init(void)
+diff --git a/target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch b/target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch
+deleted file mode 100644
+index 398344d188..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/175-avila_hss_audio_support.patch
++++ /dev/null
+@@ -1,2093 +0,0 @@
+---- a/sound/soc/Kconfig
+-+++ b/sound/soc/Kconfig
+-@@ -47,6 +47,7 @@ source "sound/soc/cirrus/Kconfig"
+- source "sound/soc/davinci/Kconfig"
+- source "sound/soc/dwc/Kconfig"
+- source "sound/soc/fsl/Kconfig"
+-+source "sound/soc/gw-avila/Kconfig"
+- source "sound/soc/jz4740/Kconfig"
+- source "sound/soc/nuc900/Kconfig"
+- source "sound/soc/omap/Kconfig"
+---- a/sound/soc/Makefile
+-+++ b/sound/soc/Makefile
+-@@ -27,6 +27,7 @@ obj-$(CONFIG_SND_SOC)	+= cirrus/
+- obj-$(CONFIG_SND_SOC)	+= davinci/
+- obj-$(CONFIG_SND_SOC)	+= dwc/
+- obj-$(CONFIG_SND_SOC)	+= fsl/
+-+obj-$(CONFIG_SND_SOC)	+= gw-avila/
+- obj-$(CONFIG_SND_SOC)	+= jz4740/
+- obj-$(CONFIG_SND_SOC)	+= img/
+- obj-$(CONFIG_SND_SOC)	+= intel/
+---- /dev/null
+-+++ b/sound/soc/gw-avila/Kconfig
+-@@ -0,0 +1,17 @@
+-+config SND_GW_AVILA_SOC_PCM
+-+	tristate
+-+
+-+config SND_GW_AVILA_SOC_HSS
+-+	tristate
+-+
+-+config SND_GW_AVILA_SOC
+-+	tristate "SoC Audio for the Gateworks AVILA Family"
+-+	depends on ARCH_IXP4XX && SND_SOC
+-+	select SND_GW_AVILA_SOC_PCM
+-+	select SND_GW_AVILA_SOC_HSS
+-+	select SND_SOC_TLV320AIC3X
+-+	help
+-+	  Say Y or M if you want to add support for codecs attached to
+-+	  the Gateworks HSS interface. You will also need
+-+	  to select the audio interfaces to support below.
+-+
+---- /dev/null
+-+++ b/sound/soc/gw-avila/Makefile
+-@@ -0,0 +1,8 @@
+-+# Gateworks Avila HSS Platform Support
+-+snd-soc-gw-avila-objs := gw-avila.o ixp4xx_hss.o
+-+snd-soc-gw-avila-pcm-objs := gw-avila-pcm.o
+-+snd-soc-gw-avila-hss-objs := gw-avila-hss.o
+-+
+-+obj-$(CONFIG_SND_GW_AVILA_SOC) += snd-soc-gw-avila.o
+-+obj-$(CONFIG_SND_GW_AVILA_SOC_PCM) += snd-soc-gw-avila-pcm.o
+-+obj-$(CONFIG_SND_GW_AVILA_SOC_HSS) += snd-soc-gw-avila-hss.o
+---- /dev/null
+-+++ b/sound/soc/gw-avila/gw-avila-hss.c
+-@@ -0,0 +1,103 @@
+-+/*
+-+ * gw-avila-hss.c -- HSS Audio Support for Gateworks Avila
+-+ *
+-+ * Author:	Chris Lang	<clang@gateworks.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ */
+-+
+-+#include <linux/init.h>
+-+#include <linux/module.h>
+-+#include <linux/platform_device.h>
+-+#include <linux/interrupt.h>
+-+#include <linux/wait.h>
+-+#include <linux/delay.h>
+-+
+-+#include <sound/core.h>
+-+#include <sound/pcm.h>
+-+#include <sound/ac97_codec.h>
+-+#include <sound/initval.h>
+-+#include <sound/soc.h>
+-+
+-+#include <asm/irq.h>
+-+#include <linux/mutex.h>
+-+#include <linux/gpio.h>
+-+
+-+#include "ixp4xx_hss.h"
+-+#include "gw-avila-hss.h"
+-+
+-+#define gw_avila_hss_suspend	NULL
+-+#define gw_avila_hss_resume	NULL
+-+
+-+struct snd_soc_dai_driver gw_avila_hss_dai = {
+-+	.playback = {
+-+		.channels_min = 2,
+-+		.channels_max = 2,
+-+		.rates = (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |
+-+			SNDRV_PCM_RATE_22050 | SNDRV_PCM_RATE_32000 |
+-+			SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 |
+-+			SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 |
+-+			SNDRV_PCM_RATE_KNOT),
+-+		.formats = SNDRV_PCM_FMTBIT_S16_LE, },
+-+	.capture = {
+-+		.channels_min = 2,
+-+		.channels_max = 2,
+-+		.rates = (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |
+-+			SNDRV_PCM_RATE_22050 | SNDRV_PCM_RATE_32000 |
+-+			SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 |
+-+			SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 |
+-+			SNDRV_PCM_RATE_KNOT),
+-+		.formats = SNDRV_PCM_FMTBIT_S16_LE, },
+-+};
+-+
+-+static const struct snd_soc_component_driver gw_avila_hss_component = {
+-+	.name   = "gw_avila_hss",
+-+};
+-+
+-+static int gw_avila_hss_probe(struct platform_device *pdev)
+-+{
+-+	int port = (pdev->id < 2) ? 0 : 1;
+-+	int channel = (pdev->id % 2);
+-+
+-+	hss_handle[pdev->id] = hss_init(port, channel);
+-+	if (!hss_handle[pdev->id]) {
+-+		return -ENODEV;
+-+	}
+-+
+-+	return snd_soc_register_component(&pdev->dev, &gw_avila_hss_component,
+-+					  &gw_avila_hss_dai, 1);
+-+}
+-+
+-+static int gw_avila_hss_remove(struct platform_device *pdev)
+-+{
+-+	snd_soc_unregister_component(&pdev->dev);
+-+
+-+	return 0;
+-+}
+-+
+-+static struct platform_driver gw_avila_hss_driver = {
+-+	.probe    = gw_avila_hss_probe,
+-+	.remove   = gw_avila_hss_remove,
+-+	.driver   = {
+-+		.name = "gw_avila_hss",
+-+		.owner  = THIS_MODULE,
+-+	}
+-+};
+-+
+-+static int __init gw_avila_hss_init(void)
+-+{
+-+	return platform_driver_register(&gw_avila_hss_driver);
+-+}
+-+module_init(gw_avila_hss_init);
+-+
+-+static void __exit gw_avila_hss_exit(void)
+-+{
+-+	platform_driver_unregister(&gw_avila_hss_driver);
+-+}
+-+module_exit(gw_avila_hss_exit);
+-+
+-+MODULE_AUTHOR("Chris Lang");
+-+MODULE_DESCRIPTION("HSS Audio Driver for Gateworks Avila");
+-+MODULE_LICENSE("GPL");
+---- /dev/null
+-+++ b/sound/soc/gw-avila/gw-avila-hss.h
+-@@ -0,0 +1,12 @@
+-+/*
+-+ * Author: Chris Lang <clang@gateworks.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ */
+-+
+-+#ifndef _GW_AVILA_HSS_H
+-+#define _GW_AVILA_HSS_H
+-+
+-+#endif
+---- /dev/null
+-+++ b/sound/soc/gw-avila/gw-avila-pcm.c
+-@@ -0,0 +1,327 @@
+-+/*
+-+ * ALSA PCM interface for the TI DAVINCI processor
+-+ *
+-+ * Author:      Chris Lang, <clang@gateworks.com>
+-+ * Copyright:   (C) 2009 Gateworks Corporation
+-+ *
+-+ * Based On:    davinci-evm.c, Author: Vladimir Barinov, <vbarinov@ru.mvista.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ */
+-+
+-+#include <linux/module.h>
+-+#include <linux/init.h>
+-+#include <linux/platform_device.h>
+-+#include <linux/slab.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <sound/core.h>
+-+#include <sound/pcm.h>
+-+#include <sound/pcm_params.h>
+-+#include <sound/soc.h>
+-+
+-+#include <asm/dma.h>
+-+
+-+#include "gw-avila-pcm.h"
+-+#include "gw-avila-hss.h"
+-+#include "ixp4xx_hss.h"
+-+
+-+#define GW_AVILA_PCM_DEBUG 0
+-+#if GW_AVILA_PCM_DEBUG
+-+#define DPRINTK(x...) printk(KERN_DEBUG x)
+-+#else
+-+#define DPRINTK(x...)
+-+#endif
+-+
+-+static struct snd_pcm_hardware gw_avila_pcm_hardware = {
+-+	.info = (SNDRV_PCM_INFO_INTERLEAVED | SNDRV_PCM_INFO_BLOCK_TRANSFER |
+-+		 SNDRV_PCM_INFO_MMAP | SNDRV_PCM_INFO_MMAP_VALID),
+-+/*		 SNDRV_PCM_INFO_PAUSE),*/
+-+	.formats = (SNDRV_PCM_FMTBIT_S16_LE),
+-+	.rates = (SNDRV_PCM_RATE_8000 | SNDRV_PCM_RATE_16000 |
+-+		  SNDRV_PCM_RATE_22050 | SNDRV_PCM_RATE_32000 |
+-+		  SNDRV_PCM_RATE_44100 | SNDRV_PCM_RATE_48000 |
+-+		  SNDRV_PCM_RATE_88200 | SNDRV_PCM_RATE_96000 |
+-+		  SNDRV_PCM_RATE_KNOT),
+-+	.rate_min = 8000,
+-+	.rate_max = 8000,
+-+	.channels_min = 2,
+-+	.channels_max = 2,
+-+	.buffer_bytes_max = 64 * 1024, // All of the lines below may need to be changed
+-+	.period_bytes_min = 128,
+-+	.period_bytes_max = 4 * 1024,
+-+	.periods_min = 16,
+-+	.periods_max = 32,
+-+	.fifo_size = 0,
+-+};
+-+
+-+struct gw_avila_runtime_data {
+-+	spinlock_t lock;
+-+	int period;		/* current DMA period */
+-+	int master_lch;		/* Master DMA channel */
+-+	int slave_lch;		/* Slave DMA channel */
+-+	struct gw_avila_pcm_dma_params *params;	/* DMA params */
+-+};
+-+
+-+static void gw_avila_dma_irq(void *data)
+-+{
+-+	struct snd_pcm_substream *substream = data;
+-+	snd_pcm_period_elapsed(substream);
+-+}
+-+
+-+static int gw_avila_pcm_trigger(struct snd_pcm_substream *substream, int cmd)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+	struct hss_device *hdev = runtime->private_data;
+-+	int ret = 0;
+-+
+-+	switch (cmd) {
+-+	case SNDRV_PCM_TRIGGER_START:
+-+	case SNDRV_PCM_TRIGGER_RESUME:
+-+	case SNDRV_PCM_TRIGGER_PAUSE_RELEASE:
+-+		if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
+-+			hss_tx_start(hdev);
+-+		else
+-+			hss_rx_start(hdev);
+-+		break;
+-+	case SNDRV_PCM_TRIGGER_STOP:
+-+	case SNDRV_PCM_TRIGGER_SUSPEND:
+-+	case SNDRV_PCM_TRIGGER_PAUSE_PUSH:
+-+		if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
+-+			hss_tx_stop(hdev);
+-+		else
+-+			hss_rx_stop(hdev);
+-+		break;
+-+	default:
+-+		ret = -EINVAL;
+-+		break;
+-+	}
+-+	return ret;
+-+}
+-+
+-+static int gw_avila_pcm_prepare(struct snd_pcm_substream *substream)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+	struct hss_device *hdev = runtime->private_data;
+-+
+-+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
+-+		hss_set_tx_callback(hdev, gw_avila_dma_irq, substream);
+-+		hss_config_tx_dma(hdev, runtime->dma_area, runtime->buffer_size, runtime->period_size);
+-+	} else {
+-+		hss_set_rx_callback(hdev, gw_avila_dma_irq, substream);
+-+		hss_config_rx_dma(hdev, runtime->dma_area, runtime->buffer_size, runtime->period_size);
+-+	}
+-+
+-+	return 0;
+-+}
+-+
+-+static snd_pcm_uframes_t
+-+gw_avila_pcm_pointer(struct snd_pcm_substream *substream)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+	struct hss_device *hdev = runtime->private_data;
+-+
+-+	unsigned int curr = 0;
+-+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
+-+		curr = hss_curr_offset_tx(hdev);
+-+	else
+-+		curr = hss_curr_offset_rx(hdev);
+-+  return curr;
+-+}
+-+
+-+static int gw_avila_pcm_open(struct snd_pcm_substream *substream)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+	struct snd_soc_pcm_runtime *rtd = substream->private_data;
+-+	struct snd_soc_dai *cpu_dai = rtd->cpu_dai;
+-+
+-+	snd_soc_set_runtime_hwparams(substream, &gw_avila_pcm_hardware);
+-+
+-+	if (hss_handle[cpu_dai->id] != NULL)
+-+		runtime->private_data = hss_handle[cpu_dai->id];
+-+	else {
+-+		pr_err("hss_handle is NULL\n");
+-+		return -1;
+-+	}
+-+
+-+	hss_chan_open(hss_handle[cpu_dai->id]);
+-+
+-+	return 0;
+-+}
+-+
+-+static int gw_avila_pcm_close(struct snd_pcm_substream *substream)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+	struct hss_device *hdev = runtime->private_data;
+-+
+-+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
+-+		memset(hdev->tx_buf, 0, runtime->buffer_size);
+-+	} else
+-+		memset(hdev->rx_buf, 0, runtime->buffer_size);
+-+
+-+	hss_chan_close(hdev);
+-+
+-+	return 0;
+-+}
+-+
+-+static int gw_avila_pcm_hw_params(struct snd_pcm_substream *substream,
+-+				 struct snd_pcm_hw_params *hw_params)
+-+{
+-+	return snd_pcm_lib_malloc_pages(substream,
+-+					params_buffer_bytes(hw_params));
+-+}
+-+
+-+static int gw_avila_pcm_hw_free(struct snd_pcm_substream *substream)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+
+-+	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK)
+-+	  memset(runtime->dma_area, 0, runtime->buffer_size);
+-+
+-+	return snd_pcm_lib_free_pages(substream);
+-+}
+-+
+-+static int gw_avila_pcm_mmap(struct snd_pcm_substream *substream,
+-+          struct vm_area_struct *vma)
+-+{
+-+	struct snd_pcm_runtime *runtime = substream->runtime;
+-+
+-+	return dma_mmap_writecombine(substream->pcm->card->dev, vma,
+-+						runtime->dma_area,
+-+						runtime->dma_addr,
+-+						runtime->dma_bytes);
+-+}
+-+
+-+struct snd_pcm_ops gw_avila_pcm_ops = {
+-+	.open = 	gw_avila_pcm_open,
+-+	.close = 	gw_avila_pcm_close,
+-+	.ioctl = 	snd_pcm_lib_ioctl,
+-+	.hw_params = 	gw_avila_pcm_hw_params,
+-+	.hw_free = 	gw_avila_pcm_hw_free,
+-+	.prepare = 	gw_avila_pcm_prepare,
+-+	.trigger = 	gw_avila_pcm_trigger,
+-+	.pointer = 	gw_avila_pcm_pointer,
+-+	.mmap = gw_avila_pcm_mmap,
+-+};
+-+
+-+static int gw_avila_pcm_preallocate_dma_buffer(struct snd_pcm *pcm, int stream)
+-+{
+-+	struct snd_pcm_substream *substream = pcm->streams[stream].substream;
+-+	struct snd_dma_buffer *buf = &substream->dma_buffer;
+-+	size_t size = gw_avila_pcm_hardware.buffer_bytes_max;
+-+
+-+	buf->dev.type = SNDRV_DMA_TYPE_DEV;
+-+	buf->dev.dev = pcm->card->dev;
+-+	buf->private_data = NULL;
+-+
+-+	buf->area = dma_alloc_coherent(pcm->card->dev, size,
+-+					   &buf->addr, GFP_KERNEL);
+-+
+-+	if (!buf->area) {
+-+		return -ENOMEM;
+-+	}
+-+
+-+	memset(buf->area, 0xff, size);
+-+
+-+	DPRINTK("preallocate_dma_buffer: area=%p, addr=%p, size=%d\n",
+-+		(void *) buf->area, (void *) buf->addr, size);
+-+
+-+	buf->bytes = size;
+-+
+-+	return 0;
+-+}
+-+
+-+static void gw_avila_pcm_free(struct snd_pcm *pcm)
+-+{
+-+	struct snd_pcm_substream *substream;
+-+	struct snd_dma_buffer *buf;
+-+	int stream;
+-+
+-+	for (stream = 0; stream < 2; stream++) {
+-+		substream = pcm->streams[stream].substream;
+-+		if (!substream)
+-+			continue;
+-+
+-+		buf = &substream->dma_buffer;
+-+		if (!buf->area)
+-+			continue;
+-+
+-+		dma_free_coherent(NULL, buf->bytes, buf->area, 0);
+-+		buf->area = NULL;
+-+	}
+-+}
+-+
+-+static u64 gw_avila_pcm_dmamask = 0xFFFFFFFF;
+-+
+-+static int gw_avila_pcm_new(struct snd_soc_pcm_runtime *rtd)
+-+{
+-+        struct snd_card *card = rtd->card->snd_card;
+-+        struct snd_pcm *pcm = rtd->pcm;
+-+        struct snd_soc_dai *dai = rtd->codec_dai;
+-+	int ret;
+-+
+-+	if (!card->dev->dma_mask)
+-+		card->dev->dma_mask = &gw_avila_pcm_dmamask;
+-+	if (!card->dev->coherent_dma_mask)
+-+		card->dev->coherent_dma_mask = 0xFFFFFFFF;
+-+
+-+	if (dai->driver->playback.channels_min) {
+-+		ret = gw_avila_pcm_preallocate_dma_buffer(pcm,
+-+			SNDRV_PCM_STREAM_PLAYBACK);
+-+		if (ret)
+-+			return ret;
+-+	}
+-+
+-+	if (dai->driver->capture.channels_min) {
+-+		ret = gw_avila_pcm_preallocate_dma_buffer(pcm,
+-+			SNDRV_PCM_STREAM_CAPTURE);
+-+		if (ret)
+-+			return ret;
+-+	}
+-+
+-+	return 0;
+-+}
+-+
+-+struct snd_soc_platform_driver gw_avila_soc_platform = {
+-+	.ops = 	&gw_avila_pcm_ops,
+-+	.pcm_new = 	gw_avila_pcm_new,
+-+	.pcm_free = 	gw_avila_pcm_free,
+-+};
+-+
+-+static int gw_avila_pcm_platform_probe(struct platform_device *pdev)
+-+{
+-+	return snd_soc_register_platform(&pdev->dev, &gw_avila_soc_platform);
+-+}
+-+
+-+static int gw_avila_pcm_platform_remove(struct platform_device *pdev)
+-+{
+-+	snd_soc_unregister_platform(&pdev->dev);
+-+	return 0;
+-+}
+-+
+-+static struct platform_driver gw_avila_pcm_driver = {
+-+	.driver = {
+-+		.name = "gw_avila-audio",
+-+		.owner = THIS_MODULE,
+-+	},
+-+	.probe = gw_avila_pcm_platform_probe,
+-+	.remove = gw_avila_pcm_platform_remove,
+-+};
+-+
+-+static int __init gw_avila_soc_platform_init(void)
+-+{
+-+	return platform_driver_register(&gw_avila_pcm_driver);
+-+}
+-+module_init(gw_avila_soc_platform_init);
+-+
+-+static void __exit gw_avila_soc_platform_exit(void)
+-+{
+-+	platform_driver_unregister(&gw_avila_pcm_driver);
+-+}
+-+module_exit(gw_avila_soc_platform_exit);
+-+
+-+MODULE_AUTHOR("Chris Lang");
+-+MODULE_DESCRIPTION("Gateworks Avila PCM DMA module");
+-+MODULE_LICENSE("GPL");
+---- /dev/null
+-+++ b/sound/soc/gw-avila/gw-avila-pcm.h
+-@@ -0,0 +1,32 @@
+-+/*
+-+ * ALSA PCM interface for the Gateworks Avila platform
+-+ *
+-+ * Author:      Chris Lang, <clang@gateworks.com>
+-+ * Copyright:   (C) 2009 Gateworks Corporation
+-+ *
+-+ * Based On:    davinci-evm.c, Author: Vladimir Barinov, <vbarinov@ru.mvista.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ */
+-+
+-+#ifndef _GW_AVILA_PCM_H
+-+#define _GW_AVILA_PCM_H
+-+
+-+#if 0
+-+struct gw_avila_pcm_dma_params {
+-+	char *name;		/* stream identifier */
+-+	int channel;		/* sync dma channel ID */
+-+	dma_addr_t dma_addr;	/* device physical address for DMA */
+-+	unsigned int data_type;	/* xfer data type */
+-+};
+-+
+-+struct gw_avila_snd_platform_data {
+-+	int tx_dma_ch; // XXX Do we need this?
+-+	int rx_dma_ch; // XXX Do we need this
+-+};
+-+extern struct snd_soc_platform gw_avila_soc_platform[];
+-+#endif
+-+
+-+#endif
+---- /dev/null
+-+++ b/sound/soc/gw-avila/gw-avila.c
+-@@ -0,0 +1,244 @@
+-+/*
+-+ * File:         sound/soc/gw-avila/gw_avila.c
+-+ * Author:       Chris Lang <clang@gateworks.com>
+-+ *
+-+ * Created:      Tue June 06 2008
+-+ * Description:  Board driver for Gateworks Avila
+-+ *
+-+ * Modified:
+-+ *               Copyright 2009 Gateworks Corporation
+-+ *
+-+ * Bugs:         What Bugs?
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License as published by
+-+ * the Free Software Foundation; either version 2 of the License, or
+-+ * (at your option) any later version.
+-+ *
+-+ * This program is distributed in the hope that it will be useful,
+-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-+ * GNU General Public License for more details.
+-+ *
+-+ * You should have received a copy of the GNU General Public License
+-+ * along with this program; if not, see the file COPYING, or write
+-+ * to the Free Software Foundation, Inc.,
+-+ * 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+-+ */
+-+
+-+#include <linux/module.h>
+-+#include <linux/moduleparam.h>
+-+#include <linux/device.h>
+-+#include <asm/dma.h>
+-+#include <linux/platform_device.h>
+-+#include <sound/core.h>
+-+#include <sound/pcm.h>
+-+#include <sound/soc.h>
+-+#include <linux/slab.h>
+-+#include <linux/gpio.h>
+-+
+-+#include "ixp4xx_hss.h"
+-+#include "gw-avila-hss.h"
+-+#include "gw-avila-pcm.h"
+-+
+-+#define CODEC_FREQ 33333000
+-+
+-+static int gw_avila_board_startup(struct snd_pcm_substream *substream)
+-+{
+-+	pr_debug("%s enter\n", __func__);
+-+	return 0;
+-+}
+-+
+-+static int gw_avila_hw_params(struct snd_pcm_substream *substream,
+-+		struct snd_pcm_hw_params *params)
+-+{
+-+	struct snd_soc_pcm_runtime *rtd = substream->private_data;
+-+	struct snd_soc_dai *codec_dai = rtd->codec_dai;
+-+	struct snd_soc_dai *cpu_dai = rtd->cpu_dai;
+-+
+-+	int ret = 0;
+-+
+-+	/* set codec DAI configuration */
+-+	if (cpu_dai->id % 2) {
+-+  		ret = snd_soc_dai_set_fmt(codec_dai, SND_SOC_DAIFMT_DSP_B | SND_SOC_DAIFMT_IB_NF | SND_SOC_DAIFMT_CBS_CFS);
+-+			snd_soc_dai_set_tdm_slot(codec_dai, 0, 0, 1, 32);
+-+	} else {
+-+	  	ret = snd_soc_dai_set_fmt(codec_dai, SND_SOC_DAIFMT_DSP_B | SND_SOC_DAIFMT_IB_NF | SND_SOC_DAIFMT_CBM_CFM);
+-+			snd_soc_dai_set_tdm_slot(codec_dai, 0, 0, 0, 32);
+-+	}
+-+
+-+	if (ret < 0)
+-+	    return ret;
+-+
+-+	/* set the codec system clock */
+-+	ret = snd_soc_dai_set_sysclk(codec_dai, 0, CODEC_FREQ, SND_SOC_CLOCK_OUT);
+-+	if (ret < 0)
+-+	    return ret;
+-+
+-+	return 0;
+-+}
+-+
+-+static const struct snd_soc_dapm_widget aic3x_dapm_widgets[] = {
+-+  SND_SOC_DAPM_HP("Headphone Jack", NULL),
+-+  SND_SOC_DAPM_LINE("Line Out", NULL),
+-+  SND_SOC_DAPM_LINE("Line In", NULL),
+-+};
+-+
+-+static const struct snd_soc_dapm_route audio_map[] = {
+-+  {"Headphone Jack", NULL, "HPLOUT"},
+-+  {"Headphone Jack", NULL, "HPROUT"},
+-+
+-+  /* Line Out connected to LLOUT, RLOUT */
+-+  {"Line Out", NULL, "LLOUT"},
+-+  {"Line Out", NULL, "RLOUT"},
+-+
+-+  /* Line In connected to (LINE1L | LINE2L), (LINE1R | LINE2R) */
+-+  {"LINE1L", NULL, "Line In"},
+-+  {"LINE1R", NULL, "Line In"},
+-+};
+-+
+-+/* Logic for a aic3x as connected on a davinci-evm */
+-+static int avila_aic3x_init(struct snd_soc_pcm_runtime *rtd)
+-+{
+-+	struct snd_soc_codec *codec = rtd->codec;
+-+	struct snd_soc_dapm_context *dapm = snd_soc_codec_get_dapm(codec);
+-+
+-+  /* Add davinci-evm specific widgets */
+-+  snd_soc_dapm_new_controls(dapm, aic3x_dapm_widgets,
+-+          ARRAY_SIZE(aic3x_dapm_widgets));
+-+
+-+  /* Set up davinci-evm specific audio path audio_map */
+-+  snd_soc_dapm_add_routes(dapm, audio_map, ARRAY_SIZE(audio_map));
+-+
+-+  /* not connected */
+-+  snd_soc_dapm_disable_pin(dapm, "MONO_LOUT");
+-+  //snd_soc_dapm_disable_pin(dapm, "HPLCOM");
+-+  //snd_soc_dapm_disable_pin(dapm, "HPRCOM");
+-+  snd_soc_dapm_disable_pin(dapm, "MIC3L");
+-+  snd_soc_dapm_disable_pin(dapm, "MIC3R");
+-+  snd_soc_dapm_disable_pin(dapm, "LINE2L");
+-+  snd_soc_dapm_disable_pin(dapm, "LINE2R");
+-+
+-+  /* always connected */
+-+	snd_soc_dapm_enable_pin(dapm, "Headphone Jack");
+-+  snd_soc_dapm_enable_pin(dapm, "Line Out");
+-+  snd_soc_dapm_enable_pin(dapm, "Line In");
+-+
+-+  snd_soc_dapm_sync(dapm);
+-+
+-+	return 0;
+-+}
+-+
+-+static struct snd_soc_ops gw_avila_board_ops = {
+-+	.startup = gw_avila_board_startup,
+-+	.hw_params = gw_avila_hw_params,
+-+};
+-+
+-+static struct snd_soc_dai_link gw_avila_board_dai[] = {
+-+	{
+-+		.name = "HSS-0",
+-+		.stream_name = "HSS-0",
+-+		.cpu_dai_name = "gw_avila_hss.0",
+-+		.codec_dai_name = "tlv320aic3x-hifi",
+-+		.codec_name = "tlv320aic3x-codec.0-001b",
+-+		.platform_name = "gw_avila-audio.0",
+-+		.init = avila_aic3x_init,
+-+		.ops = &gw_avila_board_ops,
+-+	},{
+-+		.name = "HSS-1",
+-+		.stream_name = "HSS-1",
+-+		.cpu_dai_name = "gw_avila_hss.1",
+-+		.codec_dai_name = "tlv320aic3x-hifi",
+-+		.codec_name = "tlv320aic3x-codec.0-001a",
+-+		.platform_name = "gw_avila-audio.1",
+-+		.init = avila_aic3x_init,
+-+		.ops = &gw_avila_board_ops,
+-+	},{
+-+		.name = "HSS-2",
+-+		.stream_name = "HSS-2",
+-+		.cpu_dai_name = "gw_avila_hss.2",
+-+		.codec_dai_name = "tlv320aic3x-hifi",
+-+		.codec_name = "tlv320aic3x-codec.0-0019",
+-+		.platform_name = "gw_avila-audio.2",
+-+		.init = avila_aic3x_init,
+-+		.ops = &gw_avila_board_ops,
+-+	},{
+-+		.name = "HSS-3",
+-+		.stream_name = "HSS-3",
+-+		.cpu_dai_name = "gw_avila_hss.3",
+-+		.codec_dai_name = "tlv320aic3x-hifi",
+-+		.codec_name = "tlv320aic3x-codec.0-0018",
+-+		.platform_name = "gw_avila-audio.3",
+-+		.init = avila_aic3x_init,
+-+		.ops = &gw_avila_board_ops,
+-+	},
+-+};
+-+
+-+static struct snd_soc_card gw_avila_board[] = {
+-+	{
+-+		.name = "gw_avila-board.0",
+-+		.owner = THIS_MODULE,
+-+		.dai_link = &gw_avila_board_dai[0],
+-+		.num_links = 1,
+-+	},{
+-+		.name = "gw_avila-board.1",
+-+		.owner = THIS_MODULE,
+-+		.dai_link = &gw_avila_board_dai[1],
+-+		.num_links = 1,
+-+	},{
+-+		.name = "gw_avila-board.2",
+-+		.owner = THIS_MODULE,
+-+		.dai_link = &gw_avila_board_dai[2],
+-+		.num_links = 1,
+-+	},{
+-+		.name = "gw_avila-board.3",
+-+		.owner = THIS_MODULE,
+-+		.dai_link = &gw_avila_board_dai[3],
+-+		.num_links = 1,
+-+	}
+-+};
+-+
+-+static struct platform_device *gw_avila_board_snd_device[4];
+-+
+-+static int __init gw_avila_board_init(void)
+-+{
+-+	int ret;
+-+	struct port *port;
+-+	int i;
+-+
+-+	if ((hss_port[0] = kzalloc(sizeof(*port), GFP_KERNEL)) == NULL)
+-+		return -ENOMEM;
+-+
+-+	if ((hss_port[1] = kzalloc(sizeof(*port), GFP_KERNEL)) == NULL)
+-+		return -ENOMEM;
+-+
+-+	for (i = 0; i < 4; i++) {
+-+		gw_avila_board_snd_device[i] = platform_device_alloc("soc-audio", i);
+-+		if (!gw_avila_board_snd_device[i]) {
+-+			return -ENOMEM;
+-+		}
+-+
+-+		platform_set_drvdata(gw_avila_board_snd_device[i], &gw_avila_board[i]);
+-+		ret = platform_device_add(gw_avila_board_snd_device[i]);
+-+
+-+		if (ret) {
+-+			platform_device_put(gw_avila_board_snd_device[i]);
+-+		}
+-+	}
+-+	return ret;
+-+}
+-+
+-+static void __exit gw_avila_board_exit(void)
+-+{
+-+	int i;
+-+	for (i = 0; i < 4; i++)
+-+		platform_device_unregister(gw_avila_board_snd_device[i]);
+-+}
+-+
+-+module_init(gw_avila_board_init);
+-+module_exit(gw_avila_board_exit);
+-+
+-+/* Module information */
+-+MODULE_AUTHOR("Chris Lang");
+-+MODULE_DESCRIPTION("ALSA SoC HSS Audio gw_avila board");
+-+MODULE_LICENSE("GPL");
+---- /dev/null
+-+++ b/sound/soc/gw-avila/ixp4xx_hss.c
+-@@ -0,0 +1,902 @@
+-+/*
+-+ * Intel IXP4xx HSS (synchronous serial port) driver for Linux
+-+ *
+-+ * Copyright (C) 2009 Chris Lang <clang@gateworks.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify it
+-+ * under the terms of version 2 of the GNU General Public License
+-+ * as published by the Free Software Foundation.
+-+ */
+-+
+-+#include <linux/module.h>
+-+#include <linux/bitops.h>
+-+#include <linux/cdev.h>
+-+#include <linux/dma-mapping.h>
+-+#include <linux/dmapool.h>
+-+#include <linux/fs.h>
+-+#include <linux/io.h>
+-+#include <linux/kernel.h>
+-+#include <linux/platform_device.h>
+-+#include <linux/poll.h>
+-+#include <linux/slab.h>
+-+#include <linux/delay.h>
+-+
+-+#include <mach/npe.h>
+-+#include <mach/qmgr.h>
+-+
+-+#include "ixp4xx_hss.h"
+-+
+-+/*****************************************************************************
+-+ * global variables
+-+ ****************************************************************************/
+-+
+-+void hss_chan_read(unsigned long data);
+-+static char lock_init = 0;
+-+static spinlock_t npe_lock;
+-+static struct npe *npe;
+-+
+-+static const struct {
+-+	int tx, txdone, rx, rxfree, chan;
+-+}queue_ids[2] = {{HSS0_PKT_TX0_QUEUE, HSS0_PKT_TXDONE_QUEUE, HSS0_PKT_RX_QUEUE,
+-+		  HSS0_PKT_RXFREE0_QUEUE, HSS0_CHL_RXTRIG_QUEUE},
+-+		 {HSS1_PKT_TX0_QUEUE, HSS1_PKT_TXDONE_QUEUE, HSS1_PKT_RX_QUEUE,
+-+		  HSS1_PKT_RXFREE0_QUEUE, HSS1_CHL_RXTRIG_QUEUE},
+-+};
+-+
+-+struct port *hss_port[2];
+-+struct hss_device *hss_handle[32];
+-+EXPORT_SYMBOL(hss_handle);
+-+
+-+/*****************************************************************************
+-+ * utility functions
+-+ ****************************************************************************/
+-+
+-+#ifndef __ARMEB__
+-+static inline void memcpy_swab32(u32 *dest, u32 *src, int cnt)
+-+{
+-+	int i;
+-+	for (i = 0; i < cnt; i++)
+-+		dest[i] = swab32(src[i]);
+-+}
+-+#endif
+-+
+-+static inline unsigned int sub_offset(unsigned int a, unsigned int b,
+-+				      unsigned int modulo)
+-+{
+-+	return (modulo /* make sure the result >= 0 */ + a - b) % modulo;
+-+}
+-+
+-+/*****************************************************************************
+-+ * HSS access
+-+ ****************************************************************************/
+-+
+-+static void hss_config_load(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	do {
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = PORT_CONFIG_LOAD;
+-+		msg.hss_port = port->id;
+-+		if (npe_send_message(npe, &msg, "HSS_LOAD_CONFIG"))
+-+			break;
+-+		if (npe_recv_message(npe, &msg, "HSS_LOAD_CONFIG"))
+-+			break;
+-+
+-+		/* HSS_LOAD_CONFIG for port #1 returns port_id = #4 */
+-+		if (msg.cmd != PORT_CONFIG_LOAD || msg.data32)
+-+			break;
+-+
+-+		/* HDLC may stop working without this */
+-+		npe_recv_message(npe, &msg, "FLUSH_IT");
+-+		return;
+-+	} while (0);
+-+
+-+	printk(KERN_CRIT "HSS-%i: unable to reload HSS configuration\n",
+-+	       port->id);
+-+	BUG();
+-+}
+-+
+-+static void hss_config_set_pcr(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	do {
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = PORT_CONFIG_WRITE;
+-+		msg.hss_port = port->id;
+-+		msg.index = HSS_CONFIG_TX_PCR;
+-+#if 0
+-+		msg.data32 = PCR_FRM_SYNC_RISINGEDGE | PCR_MSB_ENDIAN |
+-+			PCR_TX_DATA_ENABLE | PCR_TX_UNASS_HIGH_IMP | PCR_TX_V56K_HIGH_IMP | PCR_TX_FB_HIGH_IMP;
+-+#else
+-+		msg.data32 = PCR_FRM_SYNC_RISINGEDGE | PCR_MSB_ENDIAN |
+-+			PCR_TX_DATA_ENABLE | PCR_TX_FB_HIGH_IMP | PCR_DCLK_EDGE_RISING;
+-+#endif
+-+		if (port->frame_size % 8 == 0)
+-+			msg.data32 |= PCR_SOF_NO_FBIT;
+-+
+-+		if (npe_send_message(npe, &msg, "HSS_SET_TX_PCR"))
+-+			break;
+-+
+-+		msg.index = HSS_CONFIG_RX_PCR;
+-+		msg.data32 &= ~ (PCR_DCLK_EDGE_RISING | PCR_FCLK_EDGE_RISING | PCR_TX_DATA_ENABLE);
+-+
+-+		if (npe_send_message(npe, &msg, "HSS_SET_RX_PCR"))
+-+			break;
+-+		return;
+-+	} while (0);
+-+
+-+	printk(KERN_CRIT "HSS-%i: unable to set HSS PCR registers\n", port->id);
+-+	BUG();
+-+}
+-+
+-+static void hss_config_set_core(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = PORT_CONFIG_WRITE;
+-+	msg.hss_port = port->id;
+-+	msg.index = HSS_CONFIG_CORE_CR;
+-+#if 0
+-+	msg.data32 = 0 | CCR_LOOPBACK |
+-+		(port->id ? CCR_SECOND_HSS : 0);
+-+#else
+-+	msg.data32 = 0 |
+-+		(port->id ? CCR_SECOND_HSS : 0);
+-+#endif
+-+	if (npe_send_message(npe, &msg, "HSS_SET_CORE_CR")) {
+-+		printk(KERN_CRIT "HSS-%i: unable to set HSS core control"
+-+		       " register\n", port->id);
+-+		BUG();
+-+	}
+-+}
+-+
+-+static void hss_config_set_line(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	hss_config_set_pcr(port);
+-+	hss_config_set_core(port);
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = PORT_CONFIG_WRITE;
+-+	msg.hss_port = port->id;
+-+	msg.index = HSS_CONFIG_CLOCK_CR;
+-+	msg.data32 = CLK42X_SPEED_8192KHZ /* FIXME */;
+-+	if (npe_send_message(npe, &msg, "HSS_SET_CLOCK_CR")) {
+-+		printk(KERN_CRIT "HSS-%i: unable to set HSS clock control"
+-+		       " register\n", port->id);
+-+		BUG();
+-+	}
+-+}
+-+
+-+static void hss_config_set_rx_frame(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = PORT_CONFIG_WRITE;
+-+	msg.hss_port = port->id;
+-+	msg.index = HSS_CONFIG_RX_FCR;
+-+	msg.data16a = port->frame_sync_offset;
+-+	msg.data16b = port->frame_size - 1;
+-+	if (npe_send_message(npe, &msg, "HSS_SET_RX_FCR")) {
+-+		printk(KERN_CRIT "HSS-%i: unable to set HSS RX frame size"
+-+		       " and offset\n", port->id);
+-+		BUG();
+-+	}
+-+}
+-+
+-+static void hss_config_set_frame(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = PORT_CONFIG_WRITE;
+-+	msg.hss_port = port->id;
+-+	msg.index = HSS_CONFIG_TX_FCR;
+-+	msg.data16a = TX_FRAME_SYNC_OFFSET;
+-+	msg.data16b = port->frame_size - 1;
+-+	if (npe_send_message(npe, &msg, "HSS_SET_TX_FCR")) {
+-+		printk(KERN_CRIT "HSS-%i: unable to set HSS TX frame size"
+-+		       " and offset\n", port->id);
+-+		BUG();
+-+	}
+-+	hss_config_set_rx_frame(port);
+-+}
+-+
+-+static void hss_config_set_lut(struct port *port)
+-+{
+-+	struct msg msg;
+-+	int chan_count = 32;
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = PORT_CONFIG_WRITE;
+-+	msg.hss_port = port->id;
+-+
+-+	msg.index = HSS_CONFIG_TX_LUT;
+-+	msg.data32 = 0xffffffff;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.data32 = 0x0;
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_TX_LUT");
+-+
+-+	msg.index = HSS_CONFIG_RX_LUT;
+-+	msg.data32 = 0xffffffff;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.data32 = 0x0;
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+	msg.index += 4;
+-+	npe_send_message(npe, &msg, "HSS_SET_RX_LUT");
+-+
+-+	hss_config_set_frame(port);
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = CHAN_NUM_CHANS_WRITE;
+-+	msg.hss_port = port->id;
+-+	msg.data8a = chan_count;
+-+	if (npe_send_message(npe, &msg, "CHAN_NUM_CHANS_WRITE")) {
+-+		printk(KERN_CRIT "HSS-%i: unable to set HSS channel count\n",
+-+		       port->id);
+-+		BUG();
+-+	}
+-+}
+-+
+-+static u32 hss_config_get_status(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	do {
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = PORT_ERROR_READ;
+-+		msg.hss_port = port->id;
+-+		if (npe_send_message(npe, &msg, "PORT_ERROR_READ"))
+-+			break;
+-+		if (npe_recv_message(npe, &msg, "PORT_ERROR_READ"))
+-+			break;
+-+
+-+		return msg.data32;
+-+	} while (0);
+-+
+-+	printk(KERN_CRIT "HSS-%i: unable to read HSS status\n", port->id);
+-+	BUG();
+-+}
+-+
+-+static void hss_config_start_chan(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	port->chan_last_tx = 0;
+-+	port->chan_last_rx = 0;
+-+
+-+	do {
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = CHAN_RX_BUF_ADDR_WRITE;
+-+		msg.hss_port = port->id;
+-+		msg.data32 = port->chan_rx_buf_phys;
+-+		if (npe_send_message(npe, &msg, "CHAN_RX_BUF_ADDR_WRITE"))
+-+			break;
+-+
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = CHAN_TX_BUF_ADDR_WRITE;
+-+		msg.hss_port = port->id;
+-+		msg.data32 = port->chan_tx_pointers_phys;
+-+		if (npe_send_message(npe, &msg, "CHAN_TX_BUF_ADDR_WRITE"))
+-+			break;
+-+
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = CHAN_FLOW_ENABLE;
+-+		msg.hss_port = port->id;
+-+		if (npe_send_message(npe, &msg, "CHAN_FLOW_ENABLE"))
+-+			break;
+-+		port->chan_started = 1;
+-+		return;
+-+	} while (0);
+-+
+-+	printk(KERN_CRIT "HSS-%i: unable to start channelized flow\n",
+-+	       port->id);
+-+	BUG();
+-+}
+-+
+-+static void hss_config_stop_chan(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	if (!port->chan_started)
+-+		return;
+-+
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = CHAN_FLOW_DISABLE;
+-+	msg.hss_port = port->id;
+-+	if (npe_send_message(npe, &msg, "CHAN_FLOW_DISABLE")) {
+-+		printk(KERN_CRIT "HSS-%i: unable to stop channelized flow\n",
+-+		       port->id);
+-+		BUG();
+-+	}
+-+	hss_config_get_status(port); /* make sure it's halted */
+-+	port->chan_started = 0;
+-+}
+-+
+-+static int hss_config_load_firmware(struct port *port)
+-+{
+-+	struct msg msg;
+-+
+-+	if (port->initialized)
+-+		return 0;
+-+
+-+	if (!npe_running(npe)) {
+-+		int err;
+-+		if ((err = npe_load_firmware(npe, "NPE-A-HSS",
+-+					     port->dev)))
+-+			return err;
+-+	}
+-+
+-+	do {
+-+		/* HSS main configuration */
+-+		hss_config_set_line(port);
+-+
+-+		hss_config_set_frame(port);
+-+
+-+		/* Channelized operation settings */
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = CHAN_TX_BLK_CFG_WRITE;
+-+		msg.hss_port = port->id;
+-+		msg.data8b = (CHAN_TX_LIST_FRAMES & ~7) / 2;
+-+		msg.data8a = msg.data8b / 4;
+-+		msg.data8d = CHAN_TX_LIST_FRAMES - msg.data8b;
+-+		msg.data8c = msg.data8d / 4;
+-+		if (npe_send_message(npe, &msg, "CHAN_TX_BLK_CFG_WRITE"))
+-+			break;
+-+
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = CHAN_RX_BUF_CFG_WRITE;
+-+		msg.hss_port = port->id;
+-+		msg.data8a = CHAN_RX_TRIGGER / 8;
+-+		msg.data8b = CHAN_RX_FRAMES;
+-+		if (npe_send_message(npe, &msg, "CHAN_RX_BUF_CFG_WRITE"))
+-+			break;
+-+
+-+		memset(&msg, 0, sizeof(msg));
+-+		msg.cmd = CHAN_TX_BUF_SIZE_WRITE;
+-+		msg.hss_port = port->id;
+-+		msg.data8a = CHAN_TX_LISTS;
+-+		if (npe_send_message(npe, &msg, "CHAN_TX_BUF_SIZE_WRITE"))
+-+			break;
+-+
+-+		port->initialized = 1;
+-+		return 0;
+-+	} while (0);
+-+
+-+	printk(KERN_CRIT "HSS-%i: unable to start HSS operation\n", port->id);
+-+	BUG();
+-+}
+-+
+-+void hss_chan_irq(void *pdev)
+-+{
+-+	struct port *port = pdev;
+-+
+-+	qmgr_disable_irq(queue_ids[port->id].chan);
+-+
+-+	tasklet_hi_schedule(&port->task);
+-+}
+-+
+-+
+-+int hss_prepare_chan(struct port *port)
+-+{
+-+	int err, i, j;
+-+	u32 *temp;
+-+	u32 temp2;
+-+	u8 *temp3;
+-+
+-+	if (port->initialized)
+-+		return 0;
+-+
+-+	if ((err = hss_config_load_firmware(port)))
+-+		return err;
+-+
+-+	if ((err = qmgr_request_queue(queue_ids[port->id].chan,
+-+				      CHAN_QUEUE_LEN, 0, 0, "%s:hss", "hss")))
+-+		return err;
+-+
+-+	port->chan_tx_buf = dma_alloc_coherent(port->dev, chan_tx_buf_len(port), &port->chan_tx_buf_phys, GFP_DMA);
+-+	memset(port->chan_tx_buf, 0, chan_tx_buf_len(port));
+-+
+-+	port->chan_tx_pointers = dma_alloc_coherent(port->dev, chan_tx_buf_len(port) / CHAN_TX_LIST_FRAMES * 4, &port->chan_tx_pointers_phys, GFP_DMA);
+-+
+-+	temp3 = port->chan_tx_buf;
+-+	for (i = 0; i < CHAN_TX_LISTS; i++) {
+-+		for (j = 0; j < 8; j++) {
+-+			port->tx_lists[i][j] = temp3;
+-+			temp3 += CHAN_TX_LIST_FRAMES * 4;
+-+		}
+-+	}
+-+
+-+	temp = port->chan_tx_pointers;
+-+	temp2 = port->chan_tx_buf_phys;
+-+	for (i = 0; i < CHAN_TX_LISTS; i++)
+-+	{
+-+		for (j = 0; j < 32; j++)
+-+		{
+-+			*temp = temp2;
+-+			temp2 += CHAN_TX_LIST_FRAMES;
+-+			temp++;
+-+		}
+-+	}
+-+
+-+	port->chan_rx_buf = dma_alloc_coherent(port->dev, chan_rx_buf_len(port), &port->chan_rx_buf_phys, GFP_DMA);
+-+
+-+	for (i = 0; i < 8; i++) {
+-+		temp3 = port->chan_rx_buf + (i * 4 * 128);
+-+		for (j = 0; j < 8; j++) {
+-+			port->rx_frames[i][j] = temp3;
+-+			temp3 += CHAN_RX_TRIGGER;
+-+		}
+-+	}
+-+
+-+	qmgr_set_irq(queue_ids[port->id].chan, QUEUE_IRQ_SRC_NOT_EMPTY,
+-+		     hss_chan_irq, port);
+-+
+-+	return 0;
+-+
+-+}
+-+
+-+int hss_tx_start(struct hss_device *hdev)
+-+{
+-+	unsigned long flags;
+-+	struct port *port = hdev->port;
+-+
+-+	hdev->tx_loc = 0;
+-+	hdev->tx_frame = 0;
+-+
+-+	set_bit((1 << hdev->id), &port->chan_tx_bitmap);
+-+
+-+	if (!port->chan_started)
+-+	{
+-+		qmgr_enable_irq(queue_ids[port->id].chan);
+-+		spin_lock_irqsave(&npe_lock, flags);
+-+		hss_config_start_chan(port);
+-+		spin_unlock_irqrestore(&npe_lock, flags);
+-+		hss_chan_irq(port);
+-+	}
+-+
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_tx_start);
+-+
+-+int hss_rx_start(struct hss_device *hdev)
+-+{
+-+	unsigned long flags;
+-+	struct port *port = hdev->port;
+-+
+-+	hdev->rx_loc = 0;
+-+	hdev->rx_frame = 0;
+-+
+-+	set_bit((1 << hdev->id), &port->chan_rx_bitmap);
+-+
+-+	if (!port->chan_started)
+-+	{
+-+		qmgr_enable_irq(queue_ids[port->id].chan);
+-+		spin_lock_irqsave(&npe_lock, flags);
+-+		hss_config_start_chan(port);
+-+		spin_unlock_irqrestore(&npe_lock, flags);
+-+		hss_chan_irq(port);
+-+	}
+-+
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_rx_start);
+-+
+-+int hss_tx_stop(struct hss_device *hdev)
+-+{
+-+	struct port *port = hdev->port;
+-+
+-+	clear_bit((1 << hdev->id), &port->chan_tx_bitmap);
+-+
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_tx_stop);
+-+
+-+int hss_rx_stop(struct hss_device *hdev)
+-+{
+-+	struct port *port = hdev->port;
+-+
+-+	clear_bit((1 << hdev->id), &port->chan_rx_bitmap);
+-+
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_rx_stop);
+-+
+-+int hss_chan_open(struct hss_device *hdev)
+-+{
+-+	struct port *port = hdev->port;
+-+	int i, err = 0;
+-+
+-+	if (port->chan_open)
+-+		return 0;
+-+
+-+	if (port->mode == MODE_HDLC) {
+-+		err = -ENOSYS;
+-+		goto out;
+-+	}
+-+
+-+	if (port->mode == MODE_G704 && port->channels[0] == hdev->id) {
+-+		err = -EBUSY; /* channel #0 is used for G.704 signaling */
+-+		goto out;
+-+	}
+-+
+-+	for (i = MAX_CHANNELS; i > port->frame_size / 8; i--)
+-+		if (port->channels[i - 1] == hdev->id) {
+-+			err = -ECHRNG; /* frame too short */
+-+			goto out;
+-+		}
+-+
+-+	hdev->rx_loc = hdev->tx_loc = 0;
+-+	hdev->rx_frame = hdev->tx_frame = 0;
+-+
+-+	//clear_bit((1 << hdev->id), &port->chan_rx_bitmap);
+-+	//clear_bit((1 << hdev->id), &port->chan_tx_bitmap);
+-+
+-+	if (!port->initialized) {
+-+		hss_prepare_chan(port);
+-+
+-+		hss_config_stop_chan(port);
+-+		hdev->open_count++;
+-+		port->chan_open_count++;
+-+
+-+		hss_config_set_lut(port);
+-+		hss_config_load(port);
+-+
+-+	}
+-+	port->chan_open = 1;
+-+
+-+out:
+-+	return err;
+-+}
+-+EXPORT_SYMBOL(hss_chan_open);
+-+
+-+int hss_chan_close(struct hss_device *hdev)
+-+{
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_chan_close);
+-+
+-+void hss_chan_read(unsigned long data)
+-+{
+-+	struct port *port = (void *)data;
+-+	struct hss_device *hdev;
+-+	u8 *hw_buf, *save_buf;
+-+	u8 *buf;
+-+	u32 v;
+-+  unsigned int tx_list, rx_frame;
+-+	int i, j, channel;
+-+	u8 more_work = 0;
+-+
+-+/*
+-+	My Data in the hardware buffer is scattered by channels into 4 trunks
+-+	as follows for rx
+-+
+-+					channel 0					channel 1					channel 2					channel 3
+-+Trunk 1	=	0			-> 	127			128		->	255			256		->	383			384		->	512
+-+Trunk 2 =	513		->	639			640		->	768			769		->	895			896		->	1023
+-+Trunk 3 =	1024	->	1151		1152	->	1207		1208	->	1407		1408	->	1535
+-+Trunk 4 = 1535	->	1663		1664	->	1791		1792	->	1920		1921	->	2047
+-+
+-+	I will get CHAN_RX_TRIGGER worth of bytes out of each channel on each trunk
+-+	with each IRQ
+-+
+-+	For TX Data, it is split into 8 lists with each list containing 16 bytes per
+-+	channel
+-+
+-+Trunk 1 = 0		->	16				17		->	32			33		->	48			49		->	64
+-+Trunk 2 = 65	->	80				81		->	96			97		->	112			113		->	128
+-+Trunk	3	=	129	->	144				145		->	160			161		->	176			177		->	192
+-+Trunk	4	=	193	->	208				209		->	224			225		->	240			241		->	256
+-+
+-+*/
+-+
+-+
+-+	while ((v = qmgr_get_entry(queue_ids[port->id].chan)))
+-+	{
+-+		tx_list = (v >> 8) & 0xFF;
+-+		rx_frame = v & 0xFF;
+-+
+-+		if (tx_list == 7)
+-+			tx_list = 0;
+-+		else
+-+			tx_list++;
+-+		for (channel = 0; channel < 8; channel++) {
+-+
+-+			hdev = port->chan_devices[channel];
+-+			if (!hdev)
 -+				continue;
--+			sscanf(prom_str, "%i,%i", &mtd_start, &mtd_end);
--+			if (pre_size == (mtd_start & 0x1ffffff)) {
--+				ar7_parts[1].offset = mtd_end &= 0x1ffffff;
--+				ar7_parts[1].size = post_size = master->size - mtd_end;
--+				break;
+-+
+-+			if (test_bit(1 << channel, &port->chan_tx_bitmap)) {
+-+				buf = (u8 *)hdev->tx_buf + hdev->tx_loc;
+-+#if 0
+-+				hw_buf = (u8 *)port->chan_tx_buf;
+-+				hw_buf += (tx_list * CHAN_TX_LIST_FRAMES * 32);
+-+				hw_buf += (4 * CHAN_TX_LIST_FRAMES * channel);
+-+				save_buf = hw_buf;
+-+#else
+-+				save_buf = port->tx_lists[tx_list][channel];
+-+#endif
+-+				for (i = 0; i < CHAN_TX_LIST_FRAMES; i++) {
+-+					hw_buf = save_buf + i;
+-+					for (j = 0; j < 4; j++) {
+-+						*hw_buf = *(buf++);
+-+						hw_buf += CHAN_TX_LIST_FRAMES;
+-+					}
+-+
+-+					hdev->tx_loc += 4;
+-+					hdev->tx_frame++;
+-+					if (hdev->tx_loc >= hdev->tx_buffer_size) {
+-+						hdev->tx_loc = 0;
+-+						buf = (u8 *)hdev->tx_buf;
+-+					}
+-+				}
+-+			} else {
+-+#if 0
+-+				hw_buf = (u8 *)port->chan_tx_buf;
+-+				hw_buf += (tx_list * CHAN_TX_LIST_FRAMES * 32);
+-+				hw_buf += (4 * CHAN_TX_LIST_FRAMES * channel);
+-+#else
+-+				hw_buf = port->tx_lists[tx_list][channel];
+-+#endif
+-+				memset(hw_buf, 0, 64);
+-+			}
+-+
+-+			if (hdev->tx_frame >= hdev->tx_period_size && test_bit(1 << channel, &port->chan_tx_bitmap))
+-+			{
+-+				hdev->tx_frame %= hdev->tx_period_size;
+-+				if (hdev->tx_callback)
+-+					hdev->tx_callback(hdev->tx_data);
+-+				more_work = 1;
+-+			}
+-+
+-+			if (test_bit(1 << channel, &port->chan_rx_bitmap)) {
+-+				buf = (u8 *)hdev->rx_buf + hdev->rx_loc;
+-+#if 0
+-+				hw_buf = (u8 *)port->chan_rx_buf;
+-+				hw_buf += (4 * CHAN_RX_FRAMES * channel);
+-+				hw_buf += rx_frame;
+-+				save_buf = hw_buf;
+-+#else
+-+				save_buf = port->rx_frames[channel][rx_frame >> 4];
+-+#endif
+-+				for (i = 0; i < CHAN_RX_TRIGGER; i++) {
+-+					hw_buf = save_buf + i;
+-+					for (j = 0; j < 4; j++) {
+-+						*(buf++) = *hw_buf;
+-+						hw_buf += CHAN_RX_FRAMES;
+-+					}
+-+					hdev->rx_loc += 4;
+-+					hdev->rx_frame++;
+-+					if (hdev->rx_loc >= hdev->rx_buffer_size) {
+-+						hdev->rx_loc = 0;
+-+						buf = (u8 *)hdev->rx_buf;
+-+					}
+-+				}
+-+			}
+-+
+-+			if (hdev->rx_frame >= hdev->rx_period_size && test_bit(1 << channel, &port->chan_rx_bitmap))
+-+			{
+-+				hdev->rx_frame %= hdev->rx_period_size;
+-+				if (hdev->rx_callback)
+-+					hdev->rx_callback(hdev->rx_data);
+-+				more_work = 1;
 -+			}
 -+		}
--+	case LOADER_MAGIC1:
--+		root_offset = (header.checksum == LOADER_MAGIC1) ? 4 : 0;
-- 		while (header.length) {
-- 			offset += sizeof(header) + header.length;
-- 			mtd_read(master, offset, sizeof(header), &len,
-- 				 (uint8_t *)&header);
-- 		}
---		root_offset = offset + sizeof(header) + 4 + 0xff;
---		root_offset &= ~(uint32_t)0xff;
--+		root_offset += offset + sizeof(header);
-- 		break;
-- 	default:
-- 		printk(KERN_WARNING "Unknown magic: %08x\n", header.checksum);
-- 		break;
-- 	}
-- 
--+	if (!ar7_parts[1].offset) {
--+		post_size = master->erasesize;
--+		ar7_parts[1].offset = master->size - post_size;
+-+#if 0
+-+		if (more_work)
+-+		{
+-+			tasklet_hi_schedule(&port->task);
+-+			return;
+-+		}
+-+#endif
 -+	}
 -+
-- 	mtd_read(master, root_offset, sizeof(header), &len, (u8 *)&header);
-- 	if (header.checksum != SQUASHFS_MAGIC) {
-- 		root_offset += master->erasesize - 1;
----- a/drivers/mtd/titanpart.c
--+++ b/drivers/mtd/titanpart.c
--@@ -148,8 +148,8 @@ static void titan_add_partition(char * e
-- 
-- }
-- int create_titan_partitions(struct mtd_info *master,
---	struct mtd_partition **pparts,
---	unsigned long origin)
--+	const struct mtd_partition **pparts,
--+	struct mtd_part_parser_data *data)
-- {
-- 	struct nsp_img_hdr_head		hdr;
-- 	struct nsp_img_hdr_section_info	sect_info;
-diff --git a/target/linux/ar7/patches-4.9/925-actiontec_leds.patch b/target/linux/ar7/patches-4.9/925-actiontec_leds.patch
+-+	qmgr_enable_irq(queue_ids[port->id].chan);
+-+
+-+	return;
+-+
+-+}
+-+
+-+struct hss_device *hss_chan_create(struct port *port, unsigned int channel)
+-+{
+-+	struct hss_device *chan_dev;
+-+	unsigned long flags;
+-+
+-+	chan_dev = kzalloc(sizeof(struct hss_device), GFP_KERNEL);
+-+
+-+	spin_lock_irqsave(&npe_lock, flags);
+-+
+-+	chan_dev->id = channel;
+-+	chan_dev->port = port;
+-+
+-+	port->channels[channel] = channel;
+-+
+-+	port->chan_devices[channel] = chan_dev;
+-+
+-+	spin_unlock_irqrestore(&npe_lock, flags);
+-+
+-+	return chan_dev;
+-+}
+-+
+-+/*****************************************************************************
+-+ * initialization
+-+ ****************************************************************************/
+-+
+-+static struct platform_device gw_avila_hss_device_0 = {
+-+  .name     = "ixp4xx_hss",
+-+  .id       = 0,
+-+};
+-+
+-+static struct platform_device gw_avila_hss_device_1 = {
+-+  .name     = "ixp4xx_hss",
+-+  .id       = 1,
+-+};
+-+
+-+static struct platform_device *gw_avila_hss_port_0;
+-+static struct platform_device *gw_avila_hss_port_1;
+-+static u64 hss_dmamask = 0xFFFFFFFF;
+-+
+-+struct hss_device *hss_init(int id, int channel)
+-+{
+-+	struct port *port = hss_port[id];
+-+	struct hss_device *hdev;
+-+	int ret;
+-+
+-+	if (!lock_init)
+-+	{
+-+		spin_lock_init(&npe_lock);
+-+		lock_init = 1;
+-+		npe = npe_request(0);
+-+	}
+-+
+-+	if (!port->init) {
+-+		if (id == 0) {
+-+			gw_avila_hss_port_0 = platform_device_alloc("hss-port", 0);
+-+
+-+			platform_set_drvdata(gw_avila_hss_port_0, &gw_avila_hss_device_0);
+-+			port->dev = &gw_avila_hss_port_0->dev;
+-+
+-+			if (!port->dev->dma_mask)
+-+		    port->dev->dma_mask = &hss_dmamask;
+-+		  if (!port->dev->coherent_dma_mask)
+-+	    	port->dev->coherent_dma_mask = 0xFFFFFFFF;
+-+
+-+			ret = platform_device_add(gw_avila_hss_port_0);
+-+
+-+		  if (ret)
+-+	  	  platform_device_put(gw_avila_hss_port_0);
+-+
+-+			tasklet_init(&port->task, hss_chan_read, (unsigned long) port);
+-+		}
+-+		else
+-+		{
+-+			gw_avila_hss_port_1 = platform_device_alloc("hss-port", 1);
+-+
+-+			platform_set_drvdata(gw_avila_hss_port_1, &gw_avila_hss_device_1);
+-+			port->dev = &gw_avila_hss_port_1->dev;
+-+
+-+			if (!port->dev->dma_mask)
+-+		    port->dev->dma_mask = &hss_dmamask;
+-+		  if (!port->dev->coherent_dma_mask)
+-+	    	port->dev->coherent_dma_mask = 0xFFFFFFFF;
+-+
+-+			ret = platform_device_add(gw_avila_hss_port_1);
+-+
+-+		  if (ret)
+-+	  	  platform_device_put(gw_avila_hss_port_1);
+-+
+-+			tasklet_init(&port->task, hss_chan_read, (unsigned long) port);
+-+		}
+-+
+-+		port->init = 1;
+-+		port->id = id;
+-+		port->clock_type = CLOCK_EXT;
+-+		port->clock_rate = 8192000;
+-+		port->frame_size = 256; /* E1 */
+-+		port->mode = MODE_RAW;
+-+		port->next_rx_frame = 0;
+-+		memset(port->channels, CHANNEL_UNUSED, sizeof(port->channels));
+-+	}
+-+
+-+	hdev = hss_chan_create(port, channel);
+-+
+-+	return hdev;
+-+}
+-+EXPORT_SYMBOL(hss_init);
+-+
+-+int hss_set_tx_callback(struct hss_device *hdev, void (*tx_callback)(void *), void *tx_data)
+-+{
+-+  BUG_ON(tx_callback == NULL);
+-+  hdev->tx_callback = tx_callback;
+-+  hdev->tx_data = tx_data;
+-+
+-+  return 0;
+-+}
+-+EXPORT_SYMBOL(hss_set_tx_callback);
+-+
+-+int hss_set_rx_callback(struct hss_device *hdev, void (*rx_callback)(void *), void *rx_data)
+-+{
+-+  BUG_ON(rx_callback == NULL);
+-+  hdev->rx_callback = rx_callback;
+-+  hdev->rx_data = rx_data;
+-+
+-+  return 0;
+-+}
+-+EXPORT_SYMBOL(hss_set_rx_callback);
+-+
+-+int hss_config_rx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size)
+-+{
+-+	/*
+-+	 * Period Size and Buffer Size are in Frames which are u32
+-+	 * We convert the u32 *buf to u8 in order to make channel reads
+-+	 * and rx_loc easier
+-+	 */
+-+
+-+	hdev->rx_buf = (u8 *)buf;
+-+	hdev->rx_buffer_size = buffer_size << 2;
+-+	hdev->rx_period_size = period_size;
+-+
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_config_rx_dma);
+-+
+-+int hss_config_tx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size)
+-+{
+-+	/*
+-+	 * Period Size and Buffer Size are in Frames which are u32
+-+	 * We convert the u32 *buf to u8 in order to make channel reads
+-+	 * and rx_loc easier
+-+	 */
+-+
+-+	hdev->tx_buf = (u8 *)buf;
+-+	hdev->tx_buffer_size = buffer_size << 2;
+-+	hdev->tx_period_size = period_size;
+-+
+-+	return 0;
+-+}
+-+EXPORT_SYMBOL(hss_config_tx_dma);
+-+
+-+unsigned long hss_curr_offset_rx(struct hss_device *hdev)
+-+{
+-+	return hdev->rx_loc >> 2;
+-+}
+-+EXPORT_SYMBOL(hss_curr_offset_rx);
+-+
+-+unsigned long hss_curr_offset_tx(struct hss_device *hdev)
+-+{
+-+	return hdev->tx_loc >> 2;
+-+}
+-+EXPORT_SYMBOL(hss_curr_offset_tx);
+-+
+-+MODULE_AUTHOR("Chris Lang");
+-+MODULE_DESCRIPTION("Intel IXP4xx HSS Audio driver");
+-+MODULE_LICENSE("GPL v2");
+---- /dev/null
+-+++ b/sound/soc/gw-avila/ixp4xx_hss.h
+-@@ -0,0 +1,401 @@
+-+/*
+-+ *
+-+ *
+-+ * Copyright (C) 2009 Gateworks Corporation
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify it
+-+ * under the terms of version 2 of the GNU General Public License
+-+ * as published by the Free Software Foundation.
+-+ */
+-+
+-+#include <linux/types.h>
+-+#include <linux/bitops.h>
+-+#include <linux/dma-mapping.h>
+-+#include <linux/dmapool.h>
+-+#include <linux/fs.h>
+-+#include <linux/io.h>
+-+#include <linux/kernel.h>
+-+#include <linux/platform_device.h>
+-+#include <linux/poll.h>
+-+#include <mach/npe.h>
+-+#include <mach/qmgr.h>
+-+#include <linux/interrupt.h>
+-+
+-+//#include <linux/hdlc.h> XXX We aren't HDLC
+-+
+-+#define DEBUG_QUEUES		0
+-+#define DEBUG_DESC		0
+-+#define DEBUG_RX		0
+-+#define DEBUG_TX		0
+-+#define DEBUG_PKT_BYTES		0
+-+#define DEBUG_CLOSE		0
+-+#define DEBUG_FRAMER		0
+-+
+-+#define DRV_NAME		"ixp4xx_hss"
+-+
+-+#define PKT_EXTRA_FLAGS		0 /* orig 1 */
+-+#define TX_FRAME_SYNC_OFFSET	0 /* channelized */
+-+#define PKT_NUM_PIPES		1 /* 1, 2 or 4 */
+-+#define PKT_PIPE_FIFO_SIZEW	4 /* total 4 dwords per HSS */
+-+
+-+#define RX_DESCS		512 /* also length of all RX queues */
+-+#define TX_DESCS		512 /* also length of all TX queues */
+-+
+-+//#define POOL_ALLOC_SIZE		(sizeof(struct desc) * (RX_DESCS + TX_DESCS))
+-+#define RX_SIZE			(HDLC_MAX_MRU + 4) /* NPE needs more space */
+-+#define MAX_CLOSE_WAIT		1000 /* microseconds */
+-+#define HSS_COUNT		2
+-+#define MIN_FRAME_SIZE		16   /* bits */
+-+#define MAX_FRAME_SIZE		257  /* 256 bits + framing bit */
+-+#define MAX_CHANNELS		(MAX_FRAME_SIZE / 8)
+-+#define MAX_CHAN_DEVICES	32
+-+#define CHANNEL_HDLC		0xFE
+-+#define CHANNEL_UNUSED		0xFF
+-+
+-+#define NAPI_WEIGHT		16
+-+#define CHAN_RX_TRIGGER		16 /* 8 RX frames = 1 ms @ E1 */
+-+#define CHAN_RX_FRAMES		128
+-+#define CHAN_RX_TRUNKS		1
+-+#define MAX_CHAN_RX_BAD_SYNC	(CHAN_RX_TRIGGER / 2 /* pairs */ - 3)
+-+
+-+#define CHAN_TX_LIST_FRAMES	CHAN_RX_TRIGGER /* bytes/channel per list, 16 - 48 */
+-+#define CHAN_TX_LISTS		8
+-+#define CHAN_TX_TRUNKS CHAN_RX_TRUNKS
+-+#define CHAN_TX_FRAMES		(CHAN_TX_LIST_FRAMES * CHAN_TX_LISTS)
+-+
+-+#define CHAN_QUEUE_LEN		32 /* minimum possible */
+-+
+-+#define chan_rx_buf_len(port)	(port->frame_size / 8 * CHAN_RX_FRAMES * CHAN_RX_TRUNKS)
+-+#define chan_tx_buf_len(port) (port->frame_size / 8 * CHAN_TX_FRAMES * CHAN_TX_TRUNKS)
+-+
+-+/* Queue IDs */
+-+#define HSS0_CHL_RXTRIG_QUEUE	12	/* orig size = 32 dwords */
+-+#define HSS0_PKT_RX_QUEUE	13	/* orig size = 32 dwords */
+-+#define HSS0_PKT_TX0_QUEUE	14	/* orig size = 16 dwords */
+-+#define HSS0_PKT_TX1_QUEUE	15
+-+#define HSS0_PKT_TX2_QUEUE	16
+-+#define HSS0_PKT_TX3_QUEUE	17
+-+#define HSS0_PKT_RXFREE0_QUEUE	18	/* orig size = 16 dwords */
+-+#define HSS0_PKT_RXFREE1_QUEUE	19
+-+#define HSS0_PKT_RXFREE2_QUEUE	20
+-+#define HSS0_PKT_RXFREE3_QUEUE	21
+-+#define HSS0_PKT_TXDONE_QUEUE	22	/* orig size = 64 dwords */
+-+
+-+#define HSS1_CHL_RXTRIG_QUEUE	10
+-+#define HSS1_PKT_RX_QUEUE	0
+-+#define HSS1_PKT_TX0_QUEUE	5
+-+#define HSS1_PKT_TX1_QUEUE	6
+-+#define HSS1_PKT_TX2_QUEUE	7
+-+#define HSS1_PKT_TX3_QUEUE	8
+-+#define HSS1_PKT_RXFREE0_QUEUE	1
+-+#define HSS1_PKT_RXFREE1_QUEUE	2
+-+#define HSS1_PKT_RXFREE2_QUEUE	3
+-+#define HSS1_PKT_RXFREE3_QUEUE	4
+-+#define HSS1_PKT_TXDONE_QUEUE	9
+-+
+-+#define NPE_PKT_MODE_HDLC		0
+-+#define NPE_PKT_MODE_RAW		1
+-+#define NPE_PKT_MODE_56KMODE		2
+-+#define NPE_PKT_MODE_56KENDIAN_MSB	4
+-+
+-+/* PKT_PIPE_HDLC_CFG_WRITE flags */
+-+#define PKT_HDLC_IDLE_ONES		0x1 /* default = flags */
+-+#define PKT_HDLC_CRC_32			0x2 /* default = CRC-16 */
+-+#define PKT_HDLC_MSB_ENDIAN		0x4 /* default = LE */
+-+
+-+
+-+/* hss_config, PCRs */
+-+/* Frame sync sampling, default = active low */
+-+#define PCR_FRM_SYNC_ACTIVE_HIGH	0x40000000
+-+#define PCR_FRM_SYNC_FALLINGEDGE	0x80000000
+-+#define PCR_FRM_SYNC_RISINGEDGE		0xC0000000
+-+
+-+/* Frame sync pin: input (default) or output generated off a given clk edge */
+-+#define PCR_FRM_SYNC_OUTPUT_FALLING	0x20000000
+-+#define PCR_FRM_SYNC_OUTPUT_RISING	0x30000000
+-+
+-+/* Frame and data clock sampling on edge, default = falling */
+-+#define PCR_FCLK_EDGE_RISING		0x08000000
+-+#define PCR_DCLK_EDGE_RISING		0x04000000
+-+
+-+/* Clock direction, default = input */
+-+#define PCR_SYNC_CLK_DIR_OUTPUT		0x02000000
+-+
+-+/* Generate/Receive frame pulses, default = enabled */
+-+#define PCR_FRM_PULSE_DISABLED		0x01000000
+-+
+-+ /* Data rate is full (default) or half the configured clk speed */
+-+#define PCR_HALF_CLK_RATE		0x00200000
+-+
+-+/* Invert data between NPE and HSS FIFOs? (default = no) */
+-+#define PCR_DATA_POLARITY_INVERT	0x00100000
+-+
+-+/* TX/RX endianness, default = LSB */
+-+#define PCR_MSB_ENDIAN			0x00080000
+-+
+-+/* Normal (default) / open drain mode (TX only) */
+-+#define PCR_TX_PINS_OPEN_DRAIN		0x00040000
+-+
+-+/* No framing bit transmitted and expected on RX? (default = framing bit) */
+-+#define PCR_SOF_NO_FBIT			0x00020000
+-+
+-+/* Drive data pins? */
+-+#define PCR_TX_DATA_ENABLE		0x00010000
+-+
+-+/* Voice 56k type: drive the data pins low (default), high, high Z */
+-+#define PCR_TX_V56K_HIGH		0x00002000
+-+#define PCR_TX_V56K_HIGH_IMP		0x00004000
+-+
+-+/* Unassigned type: drive the data pins low (default), high, high Z */
+-+#define PCR_TX_UNASS_HIGH		0x00000800
+-+#define PCR_TX_UNASS_HIGH_IMP		0x00001000
+-+
+-+/* T1 @ 1.544MHz only: Fbit dictated in FIFO (default) or high Z */
+-+#define PCR_TX_FB_HIGH_IMP		0x00000400
+-+
+-+/* 56k data endiannes - which bit unused: high (default) or low */
+-+#define PCR_TX_56KE_BIT_0_UNUSED	0x00000200
+-+
+-+/* 56k data transmission type: 32/8 bit data (default) or 56K data */
+-+#define PCR_TX_56KS_56K_DATA		0x00000100
+-+
+-+/* hss_config, cCR */
+-+/* Number of packetized clients, default = 1 */
+-+#define CCR_NPE_HFIFO_2_HDLC		0x04000000
+-+#define CCR_NPE_HFIFO_3_OR_4HDLC	0x08000000
+-+
+-+/* default = no loopback */
+-+#define CCR_LOOPBACK			0x02000000
+-+
+-+/* HSS number, default = 0 (first) */
+-+#define CCR_SECOND_HSS			0x01000000
+-+
+-+
+-+/* hss_config, clkCR: main:10, num:10, denom:12 */
+-+#define CLK42X_SPEED_EXP	((0x3FF << 22) | (  2 << 12) |   15) /*65 KHz*/
+-+
+-+#define CLK42X_SPEED_512KHZ	((  130 << 22) | (  2 << 12) |   15)
+-+#define CLK42X_SPEED_1536KHZ	((   43 << 22) | ( 18 << 12) |   47)
+-+#define CLK42X_SPEED_1544KHZ	((   43 << 22) | ( 33 << 12) |  192)
+-+#define CLK42X_SPEED_2048KHZ	((   32 << 22) | ( 34 << 12) |   63)
+-+#define CLK42X_SPEED_4096KHZ	((   16 << 22) | ( 34 << 12) |  127)
+-+#define CLK42X_SPEED_8192KHZ	((    8 << 22) | ( 34 << 12) |  255)
+-+
+-+#define CLK46X_SPEED_512KHZ	((  130 << 22) | ( 24 << 12) |  127)
+-+#define CLK46X_SPEED_1536KHZ	((   43 << 22) | (152 << 12) |  383)
+-+#define CLK46X_SPEED_1544KHZ	((   43 << 22) | ( 66 << 12) |  385)
+-+#define CLK46X_SPEED_2048KHZ	((   32 << 22) | (280 << 12) |  511)
+-+#define CLK46X_SPEED_4096KHZ	((   16 << 22) | (280 << 12) | 1023)
+-+#define CLK46X_SPEED_8192KHZ	((    8 << 22) | (280 << 12) | 2047)
+-+
+-+
+-+/* hss_config, LUT entries */
+-+#define TDMMAP_UNASSIGNED	0
+-+#define TDMMAP_HDLC		1	/* HDLC - packetized */
+-+#define TDMMAP_VOICE56K		2	/* Voice56K - 7-bit channelized */
+-+#define TDMMAP_VOICE64K		3	/* Voice64K - 8-bit channelized */
+-+
+-+/* offsets into HSS config */
+-+#define HSS_CONFIG_TX_PCR	0x00 /* port configuration registers */
+-+#define HSS_CONFIG_RX_PCR	0x04
+-+#define HSS_CONFIG_CORE_CR	0x08 /* loopback control, HSS# */
+-+#define HSS_CONFIG_CLOCK_CR	0x0C /* clock generator control */
+-+#define HSS_CONFIG_TX_FCR	0x10 /* frame configuration registers */
+-+#define HSS_CONFIG_RX_FCR	0x14
+-+#define HSS_CONFIG_TX_LUT	0x18 /* channel look-up tables */
+-+#define HSS_CONFIG_RX_LUT	0x38
+-+
+-+
+-+/* NPE command codes */
+-+/* writes the ConfigWord value to the location specified by offset */
+-+#define PORT_CONFIG_WRITE		0x40
+-+
+-+/* triggers the NPE to load the contents of the configuration table */
+-+#define PORT_CONFIG_LOAD		0x41
+-+
+-+/* triggers the NPE to return an HssErrorReadResponse message */
+-+#define PORT_ERROR_READ			0x42
+-+
+-+/* reset NPE internal status and enable the HssChannelized operation */
+-+#define CHAN_FLOW_ENABLE		0x43
+-+#define CHAN_FLOW_DISABLE		0x44
+-+#define CHAN_IDLE_PATTERN_WRITE		0x45
+-+#define CHAN_NUM_CHANS_WRITE		0x46
+-+#define CHAN_RX_BUF_ADDR_WRITE		0x47
+-+#define CHAN_RX_BUF_CFG_WRITE		0x48
+-+#define CHAN_TX_BLK_CFG_WRITE		0x49
+-+#define CHAN_TX_BUF_ADDR_WRITE		0x4A
+-+#define CHAN_TX_BUF_SIZE_WRITE		0x4B
+-+#define CHAN_TSLOTSWITCH_ENABLE		0x4C
+-+#define CHAN_TSLOTSWITCH_DISABLE	0x4D
+-+
+-+/* downloads the gainWord value for a timeslot switching channel associated
+-+   with bypassNum */
+-+#define CHAN_TSLOTSWITCH_GCT_DOWNLOAD	0x4E
+-+
+-+/* triggers the NPE to reset internal status and enable the HssPacketized
+-+   operation for the flow specified by pPipe */
+-+#define PKT_PIPE_FLOW_ENABLE		0x50
+-+#define PKT_PIPE_FLOW_DISABLE		0x51
+-+#define PKT_NUM_PIPES_WRITE		0x52
+-+#define PKT_PIPE_FIFO_SIZEW_WRITE	0x53
+-+#define PKT_PIPE_HDLC_CFG_WRITE		0x54
+-+#define PKT_PIPE_IDLE_PATTERN_WRITE	0x55
+-+#define PKT_PIPE_RX_SIZE_WRITE		0x56
+-+#define PKT_PIPE_MODE_WRITE		0x57
+-+
+-+/* HDLC packet status values - desc->status */
+-+#define ERR_SHUTDOWN		1 /* stop or shutdown occurrance */
+-+#define ERR_HDLC_ALIGN		2 /* HDLC alignment error */
+-+#define ERR_HDLC_FCS		3 /* HDLC Frame Check Sum error */
+-+#define ERR_RXFREE_Q_EMPTY	4 /* RX-free queue became empty while receiving
+-+				     this packet (if buf_len < pkt_len) */
+-+#define ERR_HDLC_TOO_LONG	5 /* HDLC frame size too long */
+-+#define ERR_HDLC_ABORT		6 /* abort sequence received */
+-+#define ERR_DISCONNECTING	7 /* disconnect is in progress */
+-+
+-+#define CLOCK_EXT 0
+-+#define CLOCK_INT 1
+-+
+-+enum mode {MODE_HDLC = 0, MODE_RAW, MODE_G704};
+-+enum rx_tx_bit {
+-+	TX_BIT = 0,
+-+	RX_BIT = 1
+-+};
+-+enum chan_bit {
+-+	CHAN_0 = (1 << 0),
+-+	CHAN_1 = (1 << 1),
+-+	CHAN_2 = (1 << 2),
+-+	CHAN_3 = (1 << 3),
+-+	CHAN_4 = (1 << 4),
+-+	CHAN_5 = (1 << 5),
+-+	CHAN_6 = (1 << 6),
+-+	CHAN_7 = (1 << 7),
+-+	CHAN_8 = (1 << 8),
+-+	CHAN_9 = (1 << 9),
+-+	CHAN_10 = (1 << 10),
+-+	CHAN_11 = (1 << 11),
+-+	CHAN_12 = (1 << 12),
+-+	CHAN_13 = (1 << 13),
+-+	CHAN_14 = (1 << 14),
+-+	CHAN_15 = (1 << 15)
+-+};
+-+
+-+enum alignment { NOT_ALIGNED = 0, EVEN_FIRST, ODD_FIRST };
+-+
+-+#ifdef __ARMEB__
+-+typedef struct sk_buff buffer_t;
+-+#define free_buffer dev_kfree_skb
+-+#define free_buffer_irq dev_kfree_skb_irq
+-+#else
+-+typedef void buffer_t;
+-+#define free_buffer kfree
+-+#define free_buffer_irq kfree
+-+#endif
+-+
+-+struct hss_device {
+-+	struct port *port;
+-+	unsigned int open_count, excl_open;
+-+	unsigned long tx_loc, rx_loc; /* bytes */
+-+	unsigned long tx_frame, rx_frame; /* Frames */
+-+	u8 id, chan_count;
+-+	u8 log_channels[MAX_CHANNELS];
+-+
+-+  u8 *rx_buf;
+-+  u8 *tx_buf;
+-+
+-+	size_t rx_buffer_size;
+-+	size_t rx_period_size;
+-+	size_t tx_buffer_size;
+-+	size_t tx_period_size;
+-+
+-+  void (*rx_callback)(void *data);
+-+  void *rx_data;
+-+  void (*tx_callback)(void *data);
+-+  void *tx_data;
+-+  void *private_data;
+-+};
+-+
+-+extern struct hss_device *hss_handle[32];
+-+extern struct port *hss_port[2];
+-+
+-+struct port {
+-+	unsigned char init;
+-+
+-+	struct device *dev;
+-+
+-+	struct tasklet_struct task;
+-+	unsigned int id;
+-+	unsigned long chan_rx_bitmap;
+-+	unsigned long chan_tx_bitmap;
+-+	unsigned char chan_open;
+-+
+-+	/* the following fields must be protected by npe_lock */
+-+	enum mode mode;
+-+	unsigned int clock_type, clock_rate, loopback;
+-+	unsigned int frame_size, frame_sync_offset;
+-+	unsigned int next_rx_frame;
+-+
+-+	struct hss_device *chan_devices[MAX_CHAN_DEVICES];
+-+	u32 chan_tx_buf_phys, chan_rx_buf_phys;
+-+	u32	chan_tx_pointers_phys;
+-+	u32 *chan_tx_pointers;
+-+	u8 *chan_rx_buf;
+-+	u8 *chan_tx_buf;
+-+	u8 *tx_lists[CHAN_TX_LISTS][8];
+-+	u8 *rx_frames[8][CHAN_TX_LISTS];
+-+	unsigned int chan_open_count, hdlc_open;
+-+	unsigned int chan_started, initialized, just_set_offset;
+-+	unsigned int chan_last_rx, chan_last_tx;
+-+
+-+	/* assigned channels, may be invalid with given frame length or mode */
+-+	u8 channels[MAX_CHANNELS];
+-+	int msg_count;
+-+};
+-+
+-+/* NPE message structure */
+-+struct msg {
+-+#ifdef __ARMEB__
+-+	u8 cmd, unused, hss_port, index;
+-+	union {
+-+		struct { u8 data8a, data8b, data8c, data8d; };
+-+		struct { u16 data16a, data16b; };
+-+		struct { u32 data32; };
+-+	};
+-+#else
+-+	u8 index, hss_port, unused, cmd;
+-+	union {
+-+		struct { u8 data8d, data8c, data8b, data8a; };
+-+		struct { u16 data16b, data16a; };
+-+		struct { u32 data32; };
+-+	};
+-+#endif
+-+};
+-+
+-+#define rx_desc_phys(port, n)	((port)->desc_tab_phys +		\
+-+				 (n) * sizeof(struct desc))
+-+#define rx_desc_ptr(port, n)	(&(port)->desc_tab[n])
+-+
+-+#define tx_desc_phys(port, n)	((port)->desc_tab_phys +		\
+-+				 ((n) + RX_DESCS) * sizeof(struct desc))
+-+#define tx_desc_ptr(port, n)	(&(port)->desc_tab[(n) + RX_DESCS])
+-+
+-+int hss_prepare_chan(struct port *port);
+-+void hss_chan_stop(struct port *port);
+-+
+-+struct hss_device *hss_init(int id, int channel);
+-+int hss_chan_open(struct hss_device *hdev);
+-+int hss_chan_close(struct hss_device *hdev);
+-+
+-+int hss_set_tx_callback(struct hss_device *hdev, void (*tx_callback)(void *), void *tx_data);
+-+int hss_set_rx_callback(struct hss_device *hdev, void (*rx_callback)(void *), void *rx_data);
+-+int hss_tx_start(struct hss_device *hdev);
+-+int hss_tx_stop(struct hss_device *hdev);
+-+int hss_rx_start(struct hss_device *hdev);
+-+int hss_rx_stop(struct hss_device *hdev);
+-+
+-+int hss_config_rx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size);
+-+int hss_config_tx_dma(struct hss_device *hdev, void *buf, size_t buffer_size, size_t period_size);
+-+unsigned long hss_curr_offset_rx(struct hss_device *hdev);
+-+unsigned long hss_curr_offset_tx(struct hss_device *hdev);
+-+
+diff --git a/target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch b/target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch
 deleted file mode 100644
-index 804dbf5c3c..0000000000
---- a/target/linux/ar7/patches-4.9/925-actiontec_leds.patch
+index b56fbb732d..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/180-tw5334_support.patch
 +++ /dev/null
-@@ -1,95 +0,0 @@
----- a/arch/mips/ar7/platform.c
--+++ b/arch/mips/ar7/platform.c
--@@ -460,31 +460,22 @@ static struct gpio_led fb_fon_leds[] = {
-- 	},
-- };
+@@ -1,287 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -160,6 +160,14 @@ config ARCH_PRPMC1100
+- 	  PrPCM1100 Processor Mezanine Module. For more information on
+- 	  this platform, see <file:Documentation/arm/IXP4xx>.
 - 
---static struct gpio_led gt701_leds[] = {
--+static struct gpio_led actiontec_leds[] = {
-- 	{
-- 		.name			= "inet:green",
-- 		.gpio			= 13,
---		.active_low		= 1,
---	},
---	{
---		.name			= "usb",
---		.gpio			= 12,
---		.active_low		= 1,
-- 	},
-- 	{
-- 		.name			= "inet:red",
-- 		.gpio			= 9,
---		.active_low		= 1,
-- 	},
-- 	{
---		.name			= "power:red",
--+		.name			= "power:green",
-- 		.gpio			= 7,
---		.active_low		= 1,
-- 	},
-- 	{
---		.name			= "power:green",
--+		.name			= "power:red",
-- 		.gpio			= 8,
---		.active_low		= 1,
-- 		.default_trigger	= "default-on",
-- 	},
-- 	{
--@@ -492,6 +483,44 @@ static struct gpio_led gt701_leds[] = {
-- 		.gpio			= 10,
-- 		.active_low		= 1,
-- 	},
--+	{
--+		.name			= "wifi",
--+		.gpio			= 6,
--+		.active_low		= 1,
+-+config MACH_TW5334
+-+	bool "Titan Wireless TW-533-4"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support the Titan
+-+	  Wireless TW533-4. For more information on this platform,
+-+	  see http://openwrt.org
+-+
+- config MACH_NAS100D
+- 	bool
+- 	prompt "NAS100D"
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -24,6 +24,7 @@ obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sid
+- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
+- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
+-+obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -49,6 +50,7 @@ obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewin
+- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
+- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
+- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
+-+obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-@@ -44,7 +44,7 @@ static __inline__ void __arch_decomp_set
+- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
+- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
+- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
+--	    machine_is_wrt300nv2())
+-+	    machine_is_wrt300nv2() || machine_is_tw5334())
+- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
+- 	else
+- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/tw5334-pci.c
+-@@ -0,0 +1,68 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/tw5334-pci.c
+-+ *
+-+ * PCI setup routines for the Titan Wireless TW-533-4
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+void __init tw5334_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO6, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO1, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO0, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init tw5334_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 12)
+-+		return IRQ_IXP4XX_GPIO6;
+-+	else if (slot == 13)
+-+		return IRQ_IXP4XX_GPIO2;
+-+	else if (slot == 14)
+-+		return IRQ_IXP4XX_GPIO1;
+-+	else if (slot == 15)
+-+		return IRQ_IXP4XX_GPIO0;
+-+	else return -1;
+-+}
+-+
+-+struct hw_pci tw5334_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit =        tw5334_pci_preinit,
+-+	.ops =            &ixp4xx_ops,
+-+	.setup =          ixp4xx_setup,
+-+	.map_irq =        tw5334_map_irq,
+-+};
+-+
+-+int __init tw5334_pci_init(void)
+-+{
+-+	if (machine_is_tw5334())
+-+		pci_common_init(&tw5334_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(tw5334_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/tw5334-setup.c
+-@@ -0,0 +1,167 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/tw5334-setup.c
+-+ *
+-+ * Board setup for the Titan Wireless TW-533-4
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/if_ether.h>
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+
+-+#include <asm/types.h>
+-+#include <asm/setup.h>
+-+#include <asm/memory.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data tw5334_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource tw5334_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device tw5334_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &tw5334_flash_data,
 -+	},
+-+	.num_resources	= 1,
+-+	.resource	= &tw5334_flash_resource,
+-+};
+-+
+-+static struct resource tw5334_uart_resource = {
+-+	.start	= IXP4XX_UART2_BASE_PHYS,
+-+	.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+	.flags	= IORESOURCE_MEM,
+-+};
+-+
+-+static struct plat_serial8250_port tw5334_uart_data[] = {
 -+	{
--+		.name			= "wifi:red",
--+		.gpio			= 3,
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
 -+	},
--+	{
--+		.name			= "standby",
--+		.gpio			= 4,
+-+	{ },
+-+};
+-+
+-+static struct platform_device tw5334_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev			= {
+-+		.platform_data	= tw5334_uart_data,
 -+	},
--+	{
--+		.name			= "wps",
--+		.gpio			= 16,
--+		.active_low		= 1,
--+	},
--+	{
--+		.name			= "usb",
--+		.gpio			= 12,
--+		.active_low		= 1,
--+	},
--+	{
--+		.name			= "voip",
--+		.gpio			= 15,
--+		.active_low		= 1,
--+        },
+-+	.num_resources	= 1,
+-+	.resource	= &tw5334_uart_resource,
+-+};
+-+
+-+/* Built-in 10/100 Ethernet MAC interfaces */
+-+static struct eth_plat_info tw5334_plat_eth[] = {
 -+        {
--+                .name			= "line1",
--+                .gpio			= 23,
--+                .active_low		= 1,
+-+                .phy            = 0,
+-+                .rxq            = 3,
+-+		.txreadyq	= 20,
+-+        }, {
+-+                .phy            = 1,
+-+                .rxq            = 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device tw5334_eth[] = {
+-+        {
+-+                .name                   = "ixp4xx_eth",
+-+                .id                     = IXP4XX_ETH_NPEB,
+-+                .dev.platform_data      = tw5334_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+        }, {
+-+                .name                   = "ixp4xx_eth",
+-+                .id                     = IXP4XX_ETH_NPEC,
+-+                .dev.platform_data      = tw5334_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *tw5334_devices[] __initdata = {
+-+	&tw5334_flash,
+-+	&tw5334_uart,
+-+	&tw5334_eth[0],
+-+	&tw5334_eth[1],
+-+};
+-+
+-+static void __init tw5334_init(void)
+-+{
+-+	uint8_t __iomem *f;
+-+	int i;
+-+
+-+	ixp4xx_sys_init();
+-+
+-+	tw5334_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	tw5334_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(tw5334_devices, ARRAY_SIZE(tw5334_devices));
+-+
+-+	/*
+-+	 * Map in a portion of the flash and read the MAC addresses.
+-+	 * Since it is stored in BE in the flash itself, we need to
+-+	 * byteswap it if we're in LE mode.
+-+	 */
+-+	f = ioremap(IXP4XX_EXP_BUS_BASE(0), 0x1000000);
+-+	if (f) {
+-+		for (i = 0; i < 6; i++) {
+-+#ifdef __ARMEB__
+-+			tw5334_plat_eth[0].hwaddr[i] = readb(f + 0xFC0422 + i);
+-+			tw5334_plat_eth[1].hwaddr[i] = readb(f + 0xFC043B + i);
+-+#else
+-+			tw5334_plat_eth[0].hwaddr[i] = readb(f + 0xFC0422 + (i^3));
+-+			tw5334_plat_eth[1].hwaddr[i] = readb(f + 0xFC043B + (i^3));
+-+#endif
+-+		}
+-+		iounmap(f);
+-+	}
+-+
+-+	printk(KERN_INFO "TW-533-4: Using MAC address %pM for port 0\n",
+-+		tw5334_plat_eth[0].hwaddr);
+-+	printk(KERN_INFO "TW-533-4: Using MAC address %pM for port 1\n",
+-+		tw5334_plat_eth[1].hwaddr);
+-+}
+-+
+-+#ifdef CONFIG_MACH_TW5334
+-+MACHINE_START(TW5334, "Titan Wireless TW-533-4")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= tw5334_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+#endif
+diff --git a/target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch b/target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch
+deleted file mode 100644
+index 7c229276fc..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/185-mi424wr_support.patch
++++ /dev/null
+@@ -1,504 +0,0 @@
+---- a/arch/arm/configs/ixp4xx_defconfig
+-+++ b/arch/arm/configs/ixp4xx_defconfig
+-@@ -26,6 +26,7 @@ CONFIG_MACH_NAS100D=y
+- CONFIG_MACH_DSMG600=y
+- CONFIG_MACH_FSG=y
+- CONFIG_MACH_GTWX5715=y
+-+CONFIG_MACH_MI424WR=y
+- CONFIG_IXP4XX_QMGR=y
+- CONFIG_IXP4XX_NPE=y
+- # CONFIG_ARM_THUMB is not set
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -258,6 +258,13 @@ config MACH_MIC256
+- 	  Say 'Y' here if you want your kernel to support the MIC256
+- 	  board from OMICRON electronics GmbH.
+- 
+-+config MACH_MI424WR
+-+	bool "Actiontec MI424WR"
+-+	depends on ARCH_IXP4XX
+-+	select PCI
+-+	help
+-+		Add support for the Actiontec MI424-WR.
+-+
+- comment "IXP4xx Options"
+- 
+- config IXP4XX_INDIRECT_PCI
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -25,6 +25,7 @@ obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixd
+- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
+- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
+-+obj-pci-$(CONFIG_MACH_MI424WR)		+= mi424wr-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -51,6 +52,7 @@ obj-$(CONFIG_MACH_COMPEXWP18)	+= compex4
+- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
+- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
+- obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
+-+obj-$(CONFIG_MACH_MI424WR)	+= mi424wr-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/mi424wr-pci.c
+-@@ -0,0 +1,70 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/mi424wr-pci.c
+-+ *
+-+ * Actiontec MI424WR board-level PCI initialization
+-+ *
+-+ * Copyright (C) 2008 Jose Vasconcellos
+-+ *
+-+ * Maintainer: Jose Vasconcellos <jvasco@verizon.net>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/pci.h>
+-+
+-+/* PCI controller GPIO to IRQ pin mappings
+-+ * This information was obtained from Actiontec's GPL release.
+-+ *
+-+ *		INTA		INTB
+-+ * SLOT 13	8		6
+-+ * SLOT 14	7		8
+-+ * SLOT 15	6		7
+-+ */
+-+
+-+void __init mi424wr_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO6, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO7, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init mi424wr_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 13)
+-+		return IRQ_IXP4XX_GPIO8;
+-+	if (slot == 14)
+-+		return IRQ_IXP4XX_GPIO7;
+-+	if (slot == 15)
+-+		return IRQ_IXP4XX_GPIO6;
+-+
+-+	return -1;
+-+}
+-+
+-+struct hw_pci mi424wr_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit	= mi424wr_pci_preinit,
+-+	.ops		= &ixp4xx_ops,
+-+	.setup		= ixp4xx_setup,
+-+	.map_irq	= mi424wr_map_irq,
+-+};
+-+
+-+int __init mi424wr_pci_init(void)
+-+{
+-+	if (machine_is_mi424wr())
+-+		pci_common_init(&mi424wr_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(mi424wr_pci_init);
+-+
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/mi424wr-setup.c
+-@@ -0,0 +1,384 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/mi424wr-setup.c
+-+ *
+-+ * Actiontec MI424-WR board setup
+-+ * Copyright (c) 2008 Jose Vasconcellos
+-+ *
+-+ * Based on Gemtek GTWX5715 by
+-+ * Copyright (C) 2004 George T. Joseph
+-+ * Derived from Coyote
+-+ *
+-+ * This program is free software; you can redistribute it and/or
+-+ * modify it under the terms of the GNU General Public License
+-+ * as published by the Free Software Foundation; either version 2
+-+ * of the License, or (at your option) any later version.
+-+ *
+-+ * This program is distributed in the hope that it will be useful,
+-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-+ * GNU General Public License for more details.
+-+ *
+-+ * You should have received a copy of the GNU General Public License
+-+ * along with this program; if not, write to the Free Software
+-+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-+ *
+-+ */
+-+
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/types.h>
+-+#include <linux/memory.h>
+-+#include <linux/leds.h>
+-+#include <linux/spi/spi.h>
+-+#include <linux/spi/spi_gpio.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/setup.h>
+-+#include <asm/system_info.h>
+-+#include <asm/irq.h>
+-+#include <asm/io.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+/*
+-+ * GPIO 2,3,4 and 9 are hard wired to the Micrel/Kendin KS8995M Switch
+-+ * and operate as an SPI type interface.  The details of the interface
+-+ * are available on Kendin/Micrel's web site.
+-+ */
+-+
+-+#define MI424WR_KSSPI_SELECT		9
+-+#define MI424WR_KSSPI_TXD		4
+-+#define MI424WR_KSSPI_CLOCK		2
+-+#define MI424WR_KSSPI_RXD		3
+-+
+-+/*
+-+ * The "reset" button is wired to GPIO 10.
+-+ * The GPIO is brought "low" when the button is pushed.
+-+ */
+-+
+-+#define MI424WR_BUTTON_GPIO	10
+-+#define MI424WR_BUTTON_IRQ	IRQ_IXP4XX_GPIO10
+-+
+-+#define MI424WR_MOCA_WAN_LED	11
+-+
+-+/* Latch on CS1 - taken from Actiontec's 2.4 source code
+-+ *
+-+ * default latch value
+-+ * 0  - power alarm led (red)           0 (off)
+-+ * 1  - power led (green)               0 (off)
+-+ * 2  - wireless led    (green)         1 (off)
+-+ * 3  - no internet led (red)           0 (off)
+-+ * 4  - internet ok led (green)         0 (off)
+-+ * 5  - moca LAN                        0 (off)
+-+ * 6  - WAN alarm led (red)		0 (off)
+-+ * 7  - PCI reset                       1 (not reset)
+-+ * 8  - IP phone 1 led (green)          1 (off)
+-+ * 9  - IP phone 2 led (green)          1 (off)
+-+ * 10 - VOIP ready led (green)          1 (off)
+-+ * 11 - PSTN relay 1 control            0 (PSTN)
+-+ * 12 - PSTN relay 1 control            0 (PSTN)
+-+ * 13 - N/A
+-+ * 14 - N/A
+-+ * 15 - N/A
+-+ */
+-+
+-+#define MI424WR_LATCH_MASK              0x04
+-+#define MI424WR_LATCH_DEFAULT           0x1f86
+-+
+-+#define MI424WR_LATCH_ALARM_LED         0x00
+-+#define MI424WR_LATCH_POWER_LED         0x01
+-+#define MI424WR_LATCH_WIRELESS_LED      0x02
+-+#define MI424WR_LATCH_INET_DOWN_LED     0x03
+-+#define MI424WR_LATCH_INET_OK_LED       0x04
+-+#define MI424WR_LATCH_MOCA_LAN_LED      0x05
+-+#define MI424WR_LATCH_WAN_ALARM_LED     0x06
+-+#define MI424WR_LATCH_PCI_RESET         0x07
+-+#define MI424WR_LATCH_PHONE1_LED        0x08
+-+#define MI424WR_LATCH_PHONE2_LED        0x09
+-+#define MI424WR_LATCH_VOIP_LED          0x10
+-+#define MI424WR_LATCH_PSTN_RELAY1       0x11
+-+#define MI424WR_LATCH_PSTN_RELAY2       0x12
+-+
+-+/* initialize CS1 to default timings, Intel style, 16-bit bus */
+-+#define MI424WR_CS1_CONFIG	0x80000002
+-+
+-+/* Define both UARTs but they are not easily accessible.
+-+ */
+-+
+-+static struct resource mi424wr_uart_resources[] = {
+-+	{
+-+		.start	= IXP4XX_UART1_BASE_PHYS,
+-+		.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags	= IORESOURCE_MEM,
 -+	},
 -+	{
--+		.name			= "line2",
--+		.gpio			= 25,
--+		.active_low		= 1,
+-+		.start	= IXP4XX_UART2_BASE_PHYS,
+-+		.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags	= IORESOURCE_MEM,
+-+	}
+-+};
+-+
+-+
+-+static struct plat_serial8250_port mi424wr_uart_platform_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
 -+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device mi424wr_uart_device = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev.platform_data	= mi424wr_uart_platform_data,
+-+	.num_resources	= ARRAY_SIZE(mi424wr_uart_resources),
+-+	.resource	= mi424wr_uart_resources,
+-+};
+-+
+-+static struct flash_platform_data mi424wr_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource mi424wr_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device mi424wr_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev.platform_data = &mi424wr_flash_data,
+-+	.num_resources	= 1,
+-+	.resource	= &mi424wr_flash_resource,
+-+};
+-+
+-+static struct spi_gpio_platform_data mi424wr_spi_platform_data = {
+-+        .sck            = MI424WR_KSSPI_CLOCK,
+-+        .mosi           = MI424WR_KSSPI_TXD,
+-+        .miso           = MI424WR_KSSPI_RXD,
+-+        .num_chipselect = 1,
+-+};
+-+
+-+static struct platform_device mi424wr_spi_device = {
+-+        .name   = "spi-gpio",
+-+        .id     = 1,
+-+        .dev.platform_data  = &mi424wr_spi_platform_data,
+-+};
+-+
+-+static struct spi_board_info mi424wr_spi_devices[] __initdata = {
+-+       {
+-+		.modalias               = "spi-ks8995",
+-+		.max_speed_hz           = 500000,
+-+		.mode			= SPI_MODE_0,
+-+		.bus_num		= 1,
+-+		.chip_select            = 0,
+-+		.controller_data        = (void *)MI424WR_KSSPI_SELECT,
+-+	}
+-+};
+-+
+-+static struct gpio_led mi424wr_gpio_led[] = {
+-+	{
+-+		.name		= "moca-wan",	/* green led */
+-+		.gpio		= MI424WR_MOCA_WAN_LED,
+-+		.active_low	= 0,
+-+	}
+-+};
+-+
+-+static struct gpio_led_platform_data mi424wr_gpio_leds_data = {
+-+	.num_leds	= 1,
+-+	.leds		= mi424wr_gpio_led,
+-+};
+-+
+-+static struct platform_device mi424wr_gpio_leds = {
+-+	.name		= "leds-gpio",
+-+	.id		= -1,
+-+	.dev.platform_data = &mi424wr_gpio_leds_data,
+-+};
+-+
+-+static uint16_t latch_value = MI424WR_LATCH_DEFAULT;
+-+static uint16_t __iomem *iobase;
+-+
+-+static void mi424wr_latch_set_led(u8 bit, enum led_brightness value)
+-+{
+-+
+-+	if (((MI424WR_LATCH_MASK >> bit) & 1) ^ (value == LED_OFF))
+-+		latch_value &= ~(0x1 << bit);
+-+	else
+-+		latch_value |= (0x1 << bit);
+-+
+-+	__raw_writew(latch_value, iobase);
+-+
+-+}
+-+
+-+static struct latch_led mi424wr_latch_led[] = {
+-+	{
+-+		.name	= "power-alarm",
+-+		.bit	= MI424WR_LATCH_ALARM_LED,
+-+	},
+-+	{
+-+		.name	= "power-ok",
+-+		.bit	= MI424WR_LATCH_POWER_LED,
+-+	},
+-+	{
+-+		.name	= "wireless",	/* green led */
+-+		.bit	= MI424WR_LATCH_WIRELESS_LED,
+-+	},
+-+	{
+-+		.name	= "inet-down",	/* red led */
+-+		.bit	= MI424WR_LATCH_INET_DOWN_LED,
+-+	},
+-+	{
+-+		.name	= "inet-up",	/* green led */
+-+		.bit	= MI424WR_LATCH_INET_OK_LED,
+-+	},
+-+	{
+-+		.name	= "moca-lan",	/* green led */
+-+		.bit	= MI424WR_LATCH_MOCA_LAN_LED,
+-+	},
+-+	{
+-+		.name	= "wan-alarm",	/* red led */
+-+		.bit	= MI424WR_LATCH_WAN_ALARM_LED,
+-+	}
+-+};
+-+
+-+static struct latch_led_platform_data mi424wr_latch_leds_data = {
+-+	.num_leds	= ARRAY_SIZE(mi424wr_latch_led),
+-+	.mem		= 0x51000000,
+-+	.leds		= mi424wr_latch_led,
+-+	.set_led        = mi424wr_latch_set_led,
+-+};
+-+
+-+static struct platform_device mi424wr_latch_leds = {
+-+	.name		= "leds-latch",
+-+	.id		= -1,
+-+	.dev.platform_data = &mi424wr_latch_leds_data,
+-+};
+-+
+-+static struct eth_plat_info mi424wr_wan_data = {
+-+	.phy		= 17,	/* KS8721 */
+-+	.rxq		= 3,
+-+	.txreadyq	= 20,
+-+};
+-+
+-+static struct eth_plat_info mi424wr_lan_data = {
+-+	.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+	.phy_mask	= 0x1e, /* ports 1-4 of the KS8995 switch */
+-+	.rxq		= 4,
+-+	.txreadyq	= 21,
+-+};
+-+
+-+static struct platform_device mi424wr_npe_devices[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= &mi424wr_lan_data,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= &mi424wr_wan_data,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct eth_plat_info mi424wr_wanD_data = {
+-+	.phy		= 5,
+-+	.rxq		= 4,
+-+	.txreadyq	= 21,
+-+};
+-+
+-+static struct eth_plat_info mi424wr_lanD_data = {
+-+	.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+	.phy_mask	= 0x1e, /* ports 1-4 of the KS8995 switch */
+-+	.rxq		= 3,
+-+	.txreadyq	= 20,
+-+};
+-+
+-+static struct platform_device mi424wr_npeD_devices[] = {
+-+	{
+-+		.name                   = "ixp4xx_eth",
+-+		.id                     = IXP4XX_ETH_NPEB,
+-+		.dev.platform_data      = &mi424wr_lanD_data,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name                   = "ixp4xx_eth",
+-+		.id                     = IXP4XX_ETH_NPEC,
+-+		.dev.platform_data      = &mi424wr_wanD_data,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *mi424wr_devices[] __initdata = {
+-+	&mi424wr_uart_device,
+-+	&mi424wr_flash,
+-+	&mi424wr_spi_device,
+-+	&mi424wr_gpio_leds,
+-+	&mi424wr_latch_leds,
+-+};
+-+
+-+static void __init mi424wr_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	mi424wr_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	mi424wr_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_8M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = MI424WR_CS1_CONFIG;
+-+
+-+	/* configure button as input
+-+	 */
+-+	gpio_line_config(MI424WR_BUTTON_GPIO, IXP4XX_GPIO_IN);
+-+
+-+	/* Initialize LEDs and enables PCI bus.
+-+	 */
+-+	iobase = ioremap_nocache(IXP4XX_EXP_BUS_BASE(1), 0x1000);
+-+	__raw_writew(latch_value, iobase);
+-+
+-+	spi_register_board_info(mi424wr_spi_devices, ARRAY_SIZE(mi424wr_spi_devices));
+-+	platform_add_devices(mi424wr_devices, ARRAY_SIZE(mi424wr_devices));
+-+
+-+	/* Need to figure out how to detect revD.
+-+	 * Look for a revision argument sent by redboot.
+-+	 */
+-+#define revD 4
+-+	if (system_rev == revD) {
+-+		platform_device_register(&mi424wr_npeD_devices[0]);
+-+		platform_device_register(&mi424wr_npeD_devices[1]);
+-+	} else {
+-+		platform_device_register(&mi424wr_npe_devices[0]);
+-+		platform_device_register(&mi424wr_npe_devices[1]);
+-+	}
+-+}
+-+
+-+
+-+MACHINE_START(MI424WR, "Actiontec MI424WR")
+-+	/* Maintainer: Jose Vasconcellos */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= mi424wr_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+
+diff --git a/target/linux/ixp4xx/patches-4.9/190-cambria_support.patch b/target/linux/ixp4xx/patches-4.9/190-cambria_support.patch
+deleted file mode 100644
+index 83a3319261..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/190-cambria_support.patch
++++ /dev/null
+@@ -1,1131 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -21,6 +21,14 @@ config MACH_AVILA
+- 	  Avila Network Platform. For more information on this platform,
+- 	  see <file:Documentation/arm/IXP4xx>.
+- 
+-+config MACH_CAMBRIA
+-+	bool "Cambria"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support the Gateworks
+-+	  Cambria series. For more information on this platform,
+-+	  see <file:Documentation/arm/IXP4xx>.
+-+
+- config MACH_LOFT
+-     bool "Loft"
+-     depends on MACH_AVILA
+-@@ -218,7 +226,7 @@ config CPU_IXP46X
+- 
+- config CPU_IXP43X
+- 	bool
+--	depends on MACH_KIXRP435
+-+	depends on MACH_KIXRP435 || MACH_CAMBRIA
+- 	default y
+- 
+- config MACH_GTWX5715
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -7,6 +7,7 @@ obj-pci-n	:=
+- 
+- obj-pci-$(CONFIG_ARCH_IXDP4XX)		+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_AVILA)		+= avila-pci.o
+-+obj-pci-$(CONFIG_MACH_CAMBRIA)		+= cambria-pci.o
+- obj-pci-$(CONFIG_MACH_IXDPG425)		+= ixdpg425-pci.o
+- obj-pci-$(CONFIG_ARCH_ADI_COYOTE)	+= coyote-pci.o
+- obj-pci-$(CONFIG_MACH_GTWX5715)		+= gtwx5715-pci.o
+-@@ -31,6 +32,7 @@ obj-y	+= common.o
+- 
+- obj-$(CONFIG_ARCH_IXDP4XX)	+= ixdp425-setup.o
+- obj-$(CONFIG_MACH_AVILA)	+= avila-setup.o
+-+obj-$(CONFIG_MACH_CAMBRIA)	+= cambria-setup.o
+- obj-$(CONFIG_MACH_IXDPG425)	+= coyote-setup.o
+- obj-$(CONFIG_ARCH_ADI_COYOTE)	+= coyote-setup.o
+- obj-$(CONFIG_MACH_GTWX5715)	+= gtwx5715-setup.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/cambria-pci.c
+-@@ -0,0 +1,78 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/cambria-pci.c
+-+ *
+-+ * PCI setup routines for Gateworks Cambria series
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+extern void ixp4xx_pci_preinit(void);
+-+extern int ixp4xx_setup(int nr, struct pci_sys_data *sys);
+-+extern struct pci_bus *ixp4xx_scan_bus(int nr, struct pci_sys_data *sys);
+-+
+-+void __init cambria_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init cambria_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 1)
+-+		return IRQ_IXP4XX_GPIO11;
+-+	else if (slot == 2)
+-+		return IRQ_IXP4XX_GPIO10;
+-+	else if (slot == 3)
+-+		return IRQ_IXP4XX_GPIO9;
+-+	else if (slot == 4)
+-+		return IRQ_IXP4XX_GPIO8;
+-+	else if (slot == 6)
+-+		return IRQ_IXP4XX_GPIO10;
+-+	else if (slot == 15)
+-+		return IRQ_IXP4XX_GPIO8;
+-+
+-+	else return -1;
+-+}
+-+
+-+struct hw_pci cambria_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit =        cambria_pci_preinit,
+-+	.ops =            &ixp4xx_ops,
+-+	.setup =          ixp4xx_setup,
+-+	.map_irq =        cambria_map_irq,
+-+};
+-+
+-+int __init cambria_pci_init(void)
+-+{
+-+	if (machine_is_cambria())
+-+		pci_common_init(&cambria_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(cambria_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/cambria-setup.c
+-@@ -0,0 +1,1003 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/cambria-setup.c
+-+ *
+-+ * Board setup for the Gateworks Cambria series
+-+ *
+-+ * Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ * Copyright (C) 2012 Gateworks Corporation <support@gateworks.com>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <kaloz@openwrt.org>
+-+ *         Tim Harvey <tharvey@gateworks.com>
+-+ */
+-+
+-+#include <linux/device.h>
+-+#include <linux/gpio_keys.h>
+-+#include <linux/gpio.h>
+-+#include <linux/i2c.h>
+-+#include <linux/i2c-gpio.h>
+-+#include <linux/platform_data/at24.h>
+-+#include <linux/i2c/gw_i2c_pld.h>
+-+#include <linux/platform_data/pca953x.h>
+-+#include <linux/if_ether.h>
+-+#include <linux/init.h>
+-+#include <linux/input.h>
+-+#include <linux/kernel.h>
+-+#include <linux/leds.h>
+-+#include <linux/memory.h>
+-+#include <linux/netdevice.h>
+-+#include <linux/serial.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+#include <linux/socket.h>
+-+#include <linux/types.h>
+-+#include <linux/tty.h>
+-+#include <linux/irq.h>
+-+#include <linux/usb/ehci_pdriver.h>
+-+
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+#include <asm/setup.h>
+-+
+-+#define ARRAY_AND_SIZE(x)       (x), ARRAY_SIZE(x)
+-+
+-+struct cambria_board_info {
+-+	unsigned char	*model;
+-+	void		(*setup)(void);
+-+};
+-+
+-+static struct cambria_board_info *cambria_info __initdata;
+-+
+-+static struct flash_platform_data cambria_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource cambria_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device cambria_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &cambria_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &cambria_flash_resource,
+-+};
+-+
+-+static struct i2c_gpio_platform_data cambria_i2c_gpio_data = {
+-+	.sda_pin	= 7,
+-+	.scl_pin	= 6,
+-+};
+-+
+-+static struct platform_device cambria_i2c_gpio = {
+-+	.name		= "i2c-gpio",
+-+	.id		= 0,
+-+	.dev = {
+-+		.platform_data	= &cambria_i2c_gpio_data,
+-+	},
+-+};
+-+
+-+#ifdef SFP_SERIALID
+-+static struct i2c_gpio_platform_data cambria_i2c_gpio_sfpa_data = {
+-+	.sda_pin	= 113,
+-+	.scl_pin	= 112,
+-+	.sda_is_open_drain = 0,
+-+	.scl_is_open_drain = 0,
+-+};
+-+
+-+static struct platform_device cambria_i2c_gpio_sfpa = {
+-+	.name		= "i2c-gpio",
+-+	.id		= 1,
+-+	.dev = {
+-+		.platform_data	= &cambria_i2c_gpio_sfpa_data,
+-+	},
+-+};
+-+
+-+static struct i2c_gpio_platform_data cambria_i2c_gpio_sfpb_data = {
+-+	.sda_pin	= 115,
+-+	.scl_pin	= 114,
+-+	.sda_is_open_drain = 0,
+-+	.scl_is_open_drain = 0,
+-+};
+-+
+-+static struct platform_device cambria_i2c_gpio_sfpb = {
+-+	.name		= "i2c-gpio",
+-+	.id		= 2,
+-+	.dev = {
+-+		.platform_data	= &cambria_i2c_gpio_sfpb_data,
+-+	},
+-+};
+-+#endif // #ifdef SFP_SERIALID
+-+
+-+static struct eth_plat_info cambria_npec_data = {
+-+	.phy		= 1,
+-+	.rxq		= 4,
+-+	.txreadyq	= 21,
+-+};
+-+
+-+static struct eth_plat_info cambria_npea_data = {
+-+	.phy		= 2,
+-+	.rxq		= 2,
+-+	.txreadyq	= 19,
+-+};
+-+
+-+static struct platform_device cambria_npec_device = {
+-+	.name			= "ixp4xx_eth",
+-+	.id			= IXP4XX_ETH_NPEC,
+-+	.dev.platform_data	= &cambria_npec_data,
+-+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+};
+-+
+-+static struct platform_device cambria_npea_device = {
+-+	.name			= "ixp4xx_eth",
+-+	.id			= IXP4XX_ETH_NPEA,
+-+	.dev.platform_data	= &cambria_npea_data,
+-+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+};
+-+
+-+static struct resource cambria_uart_resource = {
+-+	.start	= IXP4XX_UART1_BASE_PHYS,
+-+	.end	= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+	.flags	= IORESOURCE_MEM,
+-+};
+-+
+-+static struct plat_serial8250_port cambria_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device cambria_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev = {
+-+		.platform_data	= cambria_uart_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &cambria_uart_resource,
+-+};
+-+
+-+static struct resource cambria_optional_uart_resources[] = {
+-+	{
+-+		.start	= 0x52000000,
+-+		.end	= 0x52000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x53000000,
+-+		.end	= 0x53000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x52000000,
+-+		.end	= 0x52000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x52000000,
+-+		.end	= 0x52000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x52000000,
+-+		.end	= 0x52000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x52000000,
+-+		.end	= 0x52000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x52000000,
+-+		.end	= 0x52000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start	= 0x53000000,
+-+		.end	= 0x53000fff,
+-+		.flags	= IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port cambria_optional_uart_data[] = {
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM_DELAY,
+-+		.regshift	= 0,
+-+		.uartclk	= 1843200,
+-+		.rw_delay	= 10,
+-+	},
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM_DELAY,
+-+		.regshift	= 0,
+-+		.uartclk	= 1843200,
+-+		.rw_delay	= 10,
+-+	},
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 0,
+-+		.uartclk	= 18432000,
+-+	},
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 0,
+-+		.uartclk	= 18432000,
+-+	},
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 0,
+-+		.uartclk	= 18432000,
+-+	},
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 0,
+-+		.uartclk	= 18432000,
+-+	},
+-+	{
+-+		.flags		= UPF_BOOT_AUTOCONF,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 0,
+-+		.uartclk	= 18432000,
+-+	},
+-+  { },
+-+};
+-+
+-+static struct platform_device cambria_optional_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM1,
+-+	.dev.platform_data	= cambria_optional_uart_data,
+-+	.num_resources	= 2,
+-+	.resource	= cambria_optional_uart_resources,
+-+};
+-+
+-+static struct resource cambria_pata_resources[] = {
+-+	{
+-+		.flags	= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.flags	= IORESOURCE_MEM,
+-+	},
+-+	{
+-+		.name	= "intrq",
+-+		.start	= IRQ_IXP4XX_GPIO12,
+-+		.end	= IRQ_IXP4XX_GPIO12,
+-+		.flags	= IORESOURCE_IRQ,
+-+	},
+-+};
+-+
+-+static struct ixp4xx_pata_data cambria_pata_data = {
+-+	.cs0_bits	= 0xbfff3c03,
+-+	.cs1_bits	= 0xbfff3c03,
+-+};
+-+
+-+static struct platform_device cambria_pata = {
+-+	.name			= "pata_ixp4xx_cf",
+-+	.id			= 0,
+-+	.dev.platform_data      = &cambria_pata_data,
+-+	.num_resources		= ARRAY_SIZE(cambria_pata_resources),
+-+	.resource		= cambria_pata_resources,
+-+};
+-+
+-+static struct gpio_led cambria_gpio_leds[] = {
+-+	{
+-+		.name		= "user",
+-+		.gpio		= 5,
+-+		.active_low 	= 1,
+-+	},
+-+	{
+-+		.name		= "user2",
+-+		.gpio		= 0,
+-+		.active_low 	= 1,
+-+	},
+-+	{
+-+		.name		= "user3",
+-+		.gpio		= 0,
+-+		.active_low 	= 1,
+-+	},
+-+	{
+-+		.name		= "user4",
+-+		.gpio		= 0,
+-+		.active_low 	= 1,
+-+	}
+-+};
+-+
+-+static struct gpio_led_platform_data cambria_gpio_leds_data = {
+-+	.num_leds	= 1,
+-+	.leds		= cambria_gpio_leds,
+-+};
+-+
+-+static struct platform_device cambria_gpio_leds_device = {
+-+	.name		= "leds-gpio",
+-+	.id		= -1,
+-+	.dev.platform_data = &cambria_gpio_leds_data,
+-+};
+-+
+-+static struct resource cambria_gpio_resources[] = {
+-+	{
+-+		.name = "gpio",
+-+		.flags  = 0,
+-+	},
+-+};
+-+
+-+static struct gpio cambria_gpios_gw2350[] = {
+-+	// ARM GPIO
+-+#if 0 // configured from bootloader
+-+	{  0, GPIOF_IN,            "ARM_DIO0" },
+-+	{  1, GPIOF_IN,            "ARM_DIO1" },
+-+	{  2, GPIOF_IN,            "ARM_DIO2" },
+-+	{  3, GPIOF_IN,            "ARM_DIO3" },
+-+	{  4, GPIOF_IN,            "ARM_DIO4" },
+-+	{  5, GPIOF_IN,            "ARM_DIO5" },
+-+	{ 12, GPIOF_OUT_INIT_HIGH, "WDOGEN#" },
+-+#endif
+-+	{  8, GPIOF_IN,            "ARM_DIO8" },
+-+	{  9, GPIOF_IN,            "ARM_DIO9" },
+-+};
+-+
+-+static struct gpio cambria_gpios_gw2358[] = {
+-+	// ARM GPIO
+-+#if 0 // configured from bootloader
+-+	{  0, GPIOF_IN,            "*VINLOW#" },
+-+	{  2, GPIOF_IN,            "*GPS_PPS" },
+-+	{  3, GPIOF_IN,            "*GPS_IRQ#" },
+-+	{  4, GPIOF_IN,            "*RS485_IRQ#" },
+-+	{  5, GPIOF_IN,            "*SER_EN#" },
+-+	{ 14, GPIOF_OUT_INIT_HIGH, "*WDOGEN#" },
+-+#endif
+-+};
+-+
+-+static struct gpio cambria_gpios_gw2359[] = {
+-+	// ARM GPIO
+-+#if 0 // configured from bootloader
+-+	{  0, GPIOF_IN,            "*PCA_IRQ#" },
+-+	{  1, GPIOF_IN,            "ARM_DIO1" },
+-+	{  2, GPIOF_IN,            "ARM_DIO2" },
+-+	{  3, GPIOF_IN,            "ARM_DIO3" },
+-+	{  4, GPIOF_IN,            "ARM_DIO4" },
+-+	{  5, GPIOF_IN,            "ARM_DIO5" },
+-+	{  8, GPIOF_OUT_INIT_HIGH, "*WDOGEN#" },
+-+#endif
+-+	{ 11, GPIOF_OUT_INIT_HIGH, "*SER_EN"   },       // console serial enable
+-+	{ 12, GPIOF_IN,            "*GSC_IRQ#" },
+-+	{ 13, GPIOF_OUT_INIT_HIGH, "*PCIE_RST#"},
+-+	// GSC GPIO
+-+#if !(IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
+-+	{100, GPIOF_IN,            "*USER_PB#" },
+-+#endif
+-+	{103, GPIOF_OUT_INIT_HIGH, "*5V_EN" },         // 5V aux supply enable
+-+	{108, GPIOF_IN,            "*SMUXDA0" },
+-+	{109, GPIOF_IN,            "*SMUXDA1" },
+-+	{110, GPIOF_IN,            "*SMUXDA2" },
+-+	{111, GPIOF_IN,            "*SMUXDB0" },
+-+	{112, GPIOF_IN,            "*SMUXDB1" },
+-+	{113, GPIOF_IN,            "*SMUXDB2" },
+-+	// PCA GPIO
+-+	{118, GPIOF_IN,            "*USIM2_DET#"},     // USIM2 Detect
+-+	{120, GPIOF_OUT_INIT_LOW,  "*USB1_PCI_SEL"},   // USB1  Select (1=PCI, 0=FP)
+-+	{121, GPIOF_OUT_INIT_LOW,  "*USB2_PCI_SEL"},   // USB2  Select (1=PCI, 0=FP)
+-+	{122, GPIOF_IN,            "*USIM1_DET#"},     // USIM1 Detect
+-+	{123, GPIOF_OUT_INIT_HIGH, "*COM1_DTR#" },     // J21/J10
+-+	{124, GPIOF_IN,            "*COM1_DSR#" },     // J21/J10
+-+	{127, GPIOF_IN,            "PCA_DIO0" },
+-+	{128, GPIOF_IN,            "PCA_DIO1" },
+-+	{129, GPIOF_IN,            "PCA_DIO2" },
+-+	{130, GPIOF_IN,            "PCA_DIO3" },
+-+	{131, GPIOF_IN,            "PCA_DIO4" },
+-+};
+-+
+-+static struct gpio cambria_gpios_gw2360[] = {
+-+	// ARM GPIO
+-+	{  0, GPIOF_IN,            "*PCA_IRQ#" },
+-+	{ 11, GPIOF_OUT_INIT_LOW, "*SER0_EN#" },
+-+	{ 12, GPIOF_IN,            "*GSC_IRQ#" },
+-+	{ 13, GPIOF_OUT_INIT_HIGH, "*PCIE_RST#"},
+-+	// GSC GPIO
+-+#if !(IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
+-+	{100, GPIOF_IN,            "*USER_PB#" },
+-+#endif
+-+	{108, GPIOF_OUT_INIT_LOW,  "*ENET1_EN#" },     // ENET1 TX Enable
+-+	{109, GPIOF_IN,            "*ENET1_PRES#" },   // ENET1 Detect (0=SFP present)
+-+	{110, GPIOF_OUT_INIT_LOW,  "*ENET2_EN#" },     // ENET2 TX Enable
+-+	{111, GPIOF_IN,            "*ENET2_PRES#"},    // ENET2 Detect (0=SFP present)
+-+	// PCA GPIO
+-+	{116, GPIOF_OUT_INIT_HIGH, "*USIM2_LOC"},      // USIM2 Select (1=Loc, 0=Rem)
+-+	{117, GPIOF_IN,            "*USIM2_DET_LOC#" },// USIM2 Detect (Local Slot)
+-+	{118, GPIOF_IN,            "*USIM2_DET_REM#" },// USIM2 Detect (Remote Slot)
+-+	{120, GPIOF_OUT_INIT_LOW,  "*USB1_PCI_SEL"},   // USB1  Select (1=PCIe1, 0=J1)
+-+	{121, GPIOF_OUT_INIT_LOW,  "*USB2_PCI_SEL"},   // USB2  Select (1=PCIe2, 0=J1)
+-+	{122, GPIOF_IN,            "*USIM1_DET#"},     // USIM1 Detect
+-+	{127, GPIOF_IN,            "DIO0" },
+-+	{128, GPIOF_IN,            "DIO1" },
+-+	{129, GPIOF_IN,            "DIO2" },
+-+	{130, GPIOF_IN,            "DIO3" },
+-+	{131, GPIOF_IN,            "DIO4" },
+-+};
+-+
+-+static struct latch_led cambria_latch_leds[] = {
+-+	{
+-+		.name	= "ledA",  /* green led */
+-+		.bit	= 0,
+-+	},
+-+	{
+-+		.name	= "ledB",  /* green led */
+-+		.bit	= 1,
+-+	},
+-+	{
+-+		.name	= "ledC",  /* green led */
+-+		.bit	= 2,
+-+	},
+-+	{
+-+		.name	= "ledD",  /* green led */
+-+		.bit	= 3,
+-+	},
+-+	{
+-+		.name	= "ledE",  /* green led */
+-+		.bit	= 4,
+-+	},
+-+	{
+-+		.name	= "ledF",  /* green led */
+-+		.bit	= 5,
+-+	},
+-+	{
+-+		.name	= "ledG",  /* green led */
+-+		.bit	= 6,
+-+	},
+-+	{
+-+		.name	= "ledH",  /* green led */
+-+		.bit	= 7,
+-+	}
+-+};
+-+
+-+static struct latch_led_platform_data cambria_latch_leds_data = {
+-+	.num_leds	= 8,
+-+	.leds		= cambria_latch_leds,
+-+	.mem		= 0x53F40000,
+-+};
+-+
+-+static struct platform_device cambria_latch_leds_device = {
+-+	.name		= "leds-latch",
+-+	.id		= -1,
+-+	.dev.platform_data = &cambria_latch_leds_data,
+-+};
+-+
+-+static struct resource cambria_usb0_resources[] = {
+-+	{
+-+		.start	= 0xCD000000,
+-+		.end	= 0xCD000300,
+-+		.flags	= IORESOURCE_MEM,
+-+	},
+-+	{
+-+		.start	= 32,
+-+		.flags	= IORESOURCE_IRQ,
+-+	},
+-+};
+-+
+-+static struct resource cambria_usb1_resources[] = {
+-+	{
+-+		.start	= 0xCE000000,
+-+		.end	= 0xCE000300,
+-+		.flags	= IORESOURCE_MEM,
+-+	},
+-+	{
+-+		.start	= 33,
+-+		.flags	= IORESOURCE_IRQ,
+-+	},
+-+};
+-+
+-+static u64 ehci_dma_mask = ~(u32)0;
+-+
+-+static struct usb_ehci_pdata cambria_usb_pdata = {
+-+	.big_endian_desc = 1,
+-+	.big_endian_mmio = 1,
+-+	.has_tt = 1,
+-+	.caps_offset = 0x100,
+-+};
+-+
+-+static struct platform_device cambria_usb0_device =  {
+-+	.name		= "ehci-platform",
+-+	.id		= 0,
+-+	.resource	= cambria_usb0_resources,
+-+	.num_resources	= ARRAY_SIZE(cambria_usb0_resources),
+-+	.dev = {
+-+		.dma_mask		= &ehci_dma_mask,
+-+		.coherent_dma_mask	= 0xffffffff,
+-+		.platform_data = &cambria_usb_pdata,
+-+	},
+-+};
+-+
+-+static struct platform_device cambria_usb1_device = {
+-+	.name		= "ehci-platform",
+-+	.id		= 1,
+-+	.resource	= cambria_usb1_resources,
+-+	.num_resources	= ARRAY_SIZE(cambria_usb1_resources),
+-+	.dev = {
+-+		.dma_mask		= &ehci_dma_mask,
+-+		.coherent_dma_mask	= 0xffffffff,
+-+		.platform_data = &cambria_usb_pdata,
+-+	},
+-+};
+-+
+-+static struct gw_i2c_pld_platform_data gw_i2c_pld_data0 = {
+-+	.gpio_base	= 16,
+-+	.nr_gpio	= 8,
+-+};
+-+
+-+static struct gw_i2c_pld_platform_data gw_i2c_pld_data1 = {
+-+	.gpio_base	= 24,
+-+	.nr_gpio	= 2,
+-+};
+-+
+-+
+-+static struct gpio_keys_button cambria_gpio_buttons[] = {
+-+	{
+-+		.desc		= "user",
+-+		.type		= EV_KEY,
+-+		.code		= BTN_0,
+-+		.debounce_interval = 6,
+-+		.gpio		= 25,
+-+	}
+-+};
+-+
+-+static struct gpio_keys_platform_data cambria_gpio_buttons_data = {
+-+	.poll_interval	= 500,
+-+	.nbuttons	= 1,
+-+	.buttons	= cambria_gpio_buttons,
+-+};
+-+
+-+static struct platform_device cambria_gpio_buttons_device = {
+-+	.name			= "gpio-keys-polled",
+-+	.id			= -1,
+-+	.dev.platform_data	= &cambria_gpio_buttons_data,
+-+};
+-+
+-+static struct platform_device *cambria_devices[] __initdata = {
+-+	&cambria_i2c_gpio,
+-+	&cambria_flash,
+-+	&cambria_uart,
+-+};
+-+
+-+static int cambria_register_gpio(struct gpio *array, size_t num)
+-+{
+-+	int i, err, ret;
+-+
+-+	ret = 0;
+-+	for (i = 0; i < num; i++, array++) {
+-+		const char *label = array->label;
+-+		if (label[0] == '*')
+-+			label++;
+-+		err = gpio_request_one(array->gpio, array->flags, label);
+-+		if (err)
+-+			ret = err;
+-+		else {
+-+			err = gpio_export(array->gpio, array->label[0] != '*');
+-+		}
+-+	}
+-+	return ret;
+-+}
+-+
+-+static void __init cambria_gw23xx_setup(void)
+-+{
+-+	cambria_gpio_resources[0].start = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) |\
+-+																		(1 << 5) | (1 << 8) | (1 << 9) | (1 << 12);
+-+	cambria_gpio_resources[0].end = cambria_gpio_resources[0].start;
+-+
+-+	platform_device_register(&cambria_npec_device);
+-+	platform_device_register(&cambria_npea_device);
+-+}
+-+
+-+static void __init cambria_gw2350_setup(void)
+-+{
+-+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
+-+	cambria_optional_uart_data[0].mapbase	= 0x52FF0000;
+-+	cambria_optional_uart_data[0].membase	= (void __iomem *)ioremap(0x52FF0000, 0x0fff);
+-+	cambria_optional_uart_data[0].irq		= IRQ_IXP4XX_GPIO3;
+-+
+-+	*IXP4XX_EXP_CS3 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_EDGE_RISING);
+-+	cambria_optional_uart_data[1].mapbase	= 0x53FF0000;
+-+	cambria_optional_uart_data[1].membase	= (void __iomem *)ioremap(0x53FF0000, 0x0fff);
+-+	cambria_optional_uart_data[1].irq		= IRQ_IXP4XX_GPIO4;
+-+
+-+	cambria_gpio_resources[0].start = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) |\
+-+																		(1 << 5) | (1 << 8) | (1 << 9) | (1 << 12);
+-+	cambria_gpio_resources[0].end = cambria_gpio_resources[0].start;
+-+
+-+	platform_device_register(&cambria_optional_uart);
+-+	platform_device_register(&cambria_npec_device);
+-+	platform_device_register(&cambria_npea_device);
+-+
+-+	platform_device_register(&cambria_usb0_device);
+-+	platform_device_register(&cambria_usb1_device);
+-+
+-+	platform_device_register(&cambria_gpio_leds_device);
+-+
+-+	/* gpio config (/sys/class/gpio) */
+-+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2350));
+-+}
+-+
+-+static void __init cambria_gw2358_setup(void)
+-+{
+-+	*IXP4XX_EXP_CS3 = 0xBFFF3C43; // bit0 = 16bit vs 8bit bus
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
+-+	cambria_optional_uart_data[0].mapbase	= 0x53FC0000;
+-+	cambria_optional_uart_data[0].membase	= (void __iomem *)ioremap(0x53FC0000, 0x0fff);
+-+	cambria_optional_uart_data[0].irq		= IRQ_IXP4XX_GPIO3;
+-+
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_EDGE_RISING);
+-+	cambria_optional_uart_data[1].mapbase	= 0x53F80000;
+-+	cambria_optional_uart_data[1].membase	= (void __iomem *)ioremap(0x53F80000, 0x0fff);
+-+	cambria_optional_uart_data[1].irq		= IRQ_IXP4XX_GPIO4;
+-+
+-+	cambria_gpio_resources[0].start = (1 << 14) | (1 << 16) | (1 << 17) | (1 << 18) |\
+-+																		(1 << 19) | (1 << 20) | (1 << 24) | (1 << 25);
+-+	cambria_gpio_resources[0].end = cambria_gpio_resources[0].start;
+-+
+-+	platform_device_register(&cambria_optional_uart);
+-+
+-+	platform_device_register(&cambria_npec_device);
+-+	platform_device_register(&cambria_npea_device);
+-+
+-+	platform_device_register(&cambria_usb0_device);
+-+	platform_device_register(&cambria_usb1_device);
+-+
+-+	platform_device_register(&cambria_pata);
+-+
+-+	cambria_gpio_leds[0].gpio = 24;
+-+	platform_device_register(&cambria_gpio_leds_device);
+-+
+-+	platform_device_register(&cambria_latch_leds_device);
+-+
+-+	platform_device_register(&cambria_gpio_buttons_device);
+-+
+-+	/* gpio config (/sys/class/gpio) */
+-+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2358));
+-+}
+-+
+-+static void __init cambria_gw2359_setup(void)
+-+{
+-+#if defined(CONFIG_MVSWITCH_PHY) || defined(CONFIG_MVSWITCH_PHY_MODULE)
+-+	/* The mvswitch driver has some hard-coded values which could
+-+	 * easily be turned into a platform resource if needed.  For now they
+-+	 * match our hardware configuration:
+-+	 *  MV_BASE    0x10 - phy base address
+-+	 *  MV_WANPORT 0 - Port0 (ENET2) is WAN (SFP module)
+-+	 *  MV_CPUPORT 5 - Port5 is CPU NPEA (eth1)
+-+	 *
+-+	 * The mvswitch driver registers a fixup which forces a driver match
+-+	 * if phy_addr matches MV_BASE
+-+	 *
+-+	 * Two static defautl VLAN's are created: WAN port in 1, and all other ports
+-+	 * in the other.
+-+	 */
+-+	cambria_npea_data.phy = 0x10; // mvswitch driver catches this
+-+#else
+-+	// Switch Port5 to CPU is MII<->MII (no PHY) - this disables the genphy driver
+-+	cambria_npea_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
+-+	// CPU NPE-C is in bridge bypass mode to Port4 PHY@0x14
+-+	cambria_npec_data.phy = 0x14;
+-+#endif
+-+	platform_device_register(&cambria_npec_device);
+-+	platform_device_register(&cambria_npea_device);
+-+
+-+	platform_device_register(&cambria_usb0_device);
+-+	platform_device_register(&cambria_usb1_device);
+-+
+-+	cambria_gpio_leds_data.num_leds = 3;
+-+	cambria_gpio_leds[0].name = "user1";
+-+	cambria_gpio_leds[0].gpio = 125; // PNLLED1#
+-+	cambria_gpio_leds[1].gpio = 126; // PNLLED3#
+-+	cambria_gpio_leds[2].gpio = 119; // PNLLED4#
+-+	platform_device_register(&cambria_gpio_leds_device);
+-+
+-+#if (IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
+-+	cambria_gpio_buttons[0].gpio = 100;
+-+	platform_device_register(&cambria_gpio_buttons_device);
+-+#endif
+-+
+-+	/* gpio config (/sys/class/gpio) */
+-+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2359));
+-+}
+-+
+-+static void __init cambria_gw2360_setup(void)
+-+{
+-+	/* The GW2360 has 8 UARTs in addition to the 1 IXP4xxx UART.
+-+	 * The chip-selects are expanded via a 3-to-8 decoder and CS2
+-+	 * and they are 8bit devices
+-+	 */
+-+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
+-+	cambria_optional_uart_data[0].mapbase = 0x52000000;
+-+	cambria_optional_uart_data[0].membase = (void __iomem *)ioremap(0x52000000, 0x0fff);
+-+	cambria_optional_uart_data[0].uartclk = 18432000;
+-+	cambria_optional_uart_data[0].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[0].irq     = IRQ_IXP4XX_GPIO2;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart_data[1].mapbase = 0x52000008;
+-+	cambria_optional_uart_data[1].membase = (void __iomem *)ioremap(0x52000008, 0x0fff);
+-+	cambria_optional_uart_data[1].uartclk = 18432000;
+-+	cambria_optional_uart_data[1].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[1].irq     = IRQ_IXP4XX_GPIO3;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart_data[2].mapbase = 0x52000010;
+-+	cambria_optional_uart_data[2].membase = (void __iomem *)ioremap(0x52000010, 0x0fff);
+-+	cambria_optional_uart_data[2].uartclk = 18432000;
+-+	cambria_optional_uart_data[2].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[2].irq     = IRQ_IXP4XX_GPIO4;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO4, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart_data[3].mapbase = 0x52000018;
+-+	cambria_optional_uart_data[3].membase = (void __iomem *)ioremap(0x52000018, 0x0fff);
+-+	cambria_optional_uart_data[3].uartclk = 18432000;
+-+	cambria_optional_uart_data[3].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[3].irq     = IRQ_IXP4XX_GPIO5;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO5, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart_data[4].mapbase = 0x52000020;
+-+	cambria_optional_uart_data[4].membase = (void __iomem *)ioremap(0x52000020, 0x0fff);
+-+	cambria_optional_uart_data[4].uartclk = 18432000;
+-+	cambria_optional_uart_data[4].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[4].irq     = IRQ_IXP4XX_GPIO8;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart_data[5].mapbase = 0x52000028;
+-+	cambria_optional_uart_data[5].membase = (void __iomem *)ioremap(0x52000028, 0x0fff);
+-+	cambria_optional_uart_data[5].uartclk = 18432000;
+-+	cambria_optional_uart_data[5].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[5].irq     = IRQ_IXP4XX_GPIO9;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart_data[6].mapbase = 0x52000030;
+-+	cambria_optional_uart_data[6].membase = (void __iomem *)ioremap(0x52000030, 0x0fff);
+-+	cambria_optional_uart_data[6].uartclk = 18432000;
+-+	cambria_optional_uart_data[6].iotype  = UPIO_MEM;
+-+	cambria_optional_uart_data[6].irq     = IRQ_IXP4XX_GPIO10;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_EDGE_RISING);
+-+
+-+	cambria_optional_uart.num_resources   = 7,
+-+	platform_device_register(&cambria_optional_uart);
+-+
+-+#if defined(CONFIG_MVSWITCH_PHY) || defined(CONFIG_MVSWITCH_PHY_MODULE)
+-+	/* The mvswitch driver has some hard-coded values which could
+-+	 * easily be turned into a platform resource if needed.  For now they
+-+	 * match our hardware configuration:
+-+	 *  MV_BASE    0x10 - phy base address
+-+	 *  MV_WANPORT 0 - Port0 (ENET2) is WAN (SFP module)
+-+	 *  MV_CPUPORT 5 - Port5 is CPU NPEA (eth1)
+-+	 *
+-+	 * The mvswitch driver registers a fixup which forces a driver match
+-+	 * if phy_addr matches MV_BASE
+-+	 *
+-+	 * Two static defautl VLAN's are created: WAN port in 1, and all other ports
+-+	 * in the other.
+-+	 */
+-+	cambria_npea_data.phy = 0x10; // mvswitch driver catches this
+-+#else
+-+	// Switch Port5 to CPU is MII<->MII (no PHY) - this disables the generic PHY driver
+-+	cambria_npea_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
+-+#endif
+-+
+-+	// disable genphy autonegotiation on NPE-C PHY (eth1) as its 100BaseFX
+-+	//cambria_npec_data.noautoneg = 1;   // disable autoneg
+-+	cambria_npec_data.speed_10 = 0;    // 100mbps
+-+	cambria_npec_data.half_duplex = 0; // full-duplex
+-+	platform_device_register(&cambria_npec_device);
+-+	platform_device_register(&cambria_npea_device);
+-+
+-+	platform_device_register(&cambria_usb0_device);
+-+	platform_device_register(&cambria_usb1_device);
+-+
+-+	cambria_gpio_leds_data.num_leds = 3;
+-+	cambria_gpio_leds[0].name = "user1";
+-+	cambria_gpio_leds[0].gpio = 125;
+-+	cambria_gpio_leds[1].gpio = 126;
+-+	cambria_gpio_leds[2].gpio = 119;
+-+	platform_device_register(&cambria_gpio_leds_device);
+-+
+-+#if (IS_ENABLED(CONFIG_KEYBOARD_GPIO_POLLED))
+-+	cambria_gpio_buttons[0].gpio = 100;
+-+	platform_device_register(&cambria_gpio_buttons_device);
+-+#endif
+-+
+-+#ifdef SFP_SERIALID
+-+	/* the SFP modules each have an i2c bus for serial ident via GSC GPIO
+-+	 * To use these the i2c-gpio driver must be changed to use the _cansleep
+-+	 * varients of gpio_get_value/gpio_set_value (I don't know why it doesn't
+-+	 * use that anyway as it doesn't operate in an IRQ context).
+-+	 * Additionally the i2c-gpio module must set the gpio to output-high prior
+-+	 * to changing direction to an input to enable internal Pullups
+-+	 */
+-+	platform_device_register(&cambria_i2c_gpio_sfpa);
+-+	platform_device_register(&cambria_i2c_gpio_sfpb);
+-+#endif
+-+
+-+	/* gpio config (/sys/class/gpio) */
+-+	cambria_register_gpio(ARRAY_AND_SIZE(cambria_gpios_gw2360));
+-+}
+-+
+-+static struct cambria_board_info cambria_boards[] __initdata = {
+-+	{
+-+		.model	= "GW2350",
+-+		.setup	= cambria_gw2350_setup,
+-+	}, {
+-+		.model	= "GW2351",
+-+		.setup	= cambria_gw2350_setup,
+-+	}, {
+-+		.model	= "GW2358",
+-+		.setup	= cambria_gw2358_setup,
+-+	}, {
+-+		.model	= "GW2359",
+-+		.setup	= cambria_gw2359_setup,
+-+	}, {
+-+		.model	= "GW2360",
+-+		.setup	= cambria_gw2360_setup,
+-+	}, {
+-+		.model	= "GW2371",
+-+		.setup	= cambria_gw2358_setup,
+-+	}
+-+};
+-+
+-+static struct cambria_board_info * __init cambria_find_board_info(char *model)
+-+{
+-+	int i;
+-+	model[6] = '\0';
+-+
+-+	for (i = 0; i < ARRAY_SIZE(cambria_boards); i++) {
+-+		struct cambria_board_info *info = &cambria_boards[i];
+-+		if (strcmp(info->model, model) == 0)
+-+			return info;
+-+	}
+-+
+-+	return NULL;
+-+}
+-+
+-+static struct nvmem_device *at24_nvmem;
+-+
+-+static void at24_setup(struct nvmem_device *mem_acc, void *context)
+-+{
+-+	char mac_addr[ETH_ALEN];
+-+	char model[7];
+-+
+-+	at24_nvmem = mem_acc;
+-+
+-+	/* Read MAC addresses */
+-+	if (nvmem_device_read(at24_nvmem, 0x0, 6, mac_addr) == 6) {
+-+		memcpy(&cambria_npec_data.hwaddr, mac_addr, ETH_ALEN);
+-+	}
+-+	if (nvmem_device_read(at24_nvmem, 0x6, 6, mac_addr) == 6) {
+-+		memcpy(&cambria_npea_data.hwaddr, mac_addr, ETH_ALEN);
+-+	}
+-+
+-+	/* Read the first 6 bytes of the model number */
+-+	if (nvmem_device_read(at24_nvmem, 0x20, 6, model) == 6) {
+-+		cambria_info = cambria_find_board_info(model);
+-+	}
+-+
+-+}
+-+
+-+static struct at24_platform_data cambria_eeprom_info = {
+-+	.byte_len	= 1024,
+-+	.page_size	= 16,
+-+	.flags		= AT24_FLAG_READONLY,
+-+	.setup		= at24_setup,
+-+};
+-+
+-+static struct pca953x_platform_data cambria_pca_data = {
+-+	.gpio_base = 100,
+-+	.irq_base = -1,
+-+};
+-+
+-+static struct pca953x_platform_data cambria_pca2_data = {
+-+	.gpio_base = 116,
+-+	.irq_base = -1,
+-+};
+-+
+-+static struct i2c_board_info __initdata cambria_i2c_board_info[] = {
+-+	{
+-+		I2C_BOARD_INFO("pca9555", 0x23),
+-+		.platform_data = &cambria_pca_data,
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("pca9555", 0x27),
+-+		.platform_data = &cambria_pca2_data,
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("ds1672", 0x68),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("gsp", 0x29),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("ad7418", 0x28),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("24c08", 0x51),
+-+		.platform_data	= &cambria_eeprom_info
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("gw_i2c_pld", 0x56),
+-+		.platform_data	= &gw_i2c_pld_data0,
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("gw_i2c_pld", 0x57),
+-+		.platform_data	= &gw_i2c_pld_data1,
+-+	},
+-+};
+-+
+-+static void __init cambria_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	cambria_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	cambria_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE; // make sure window is writable
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(ARRAY_AND_SIZE(cambria_devices));
+-+
+-+	cambria_pata_resources[0].start = 0x53e00000;
+-+	cambria_pata_resources[0].end = 0x53e3ffff;
+-+
+-+	cambria_pata_resources[1].start = 0x53e40000;
+-+	cambria_pata_resources[1].end = 0x53e7ffff;
+-+
+-+	cambria_pata_data.cs0_cfg = IXP4XX_EXP_CS3;
+-+	cambria_pata_data.cs1_cfg = IXP4XX_EXP_CS3;
+-+
+-+	i2c_register_board_info(0, ARRAY_AND_SIZE(cambria_i2c_board_info));
+-+}
+-+
+-+static int __init cambria_model_setup(void)
+-+{
+-+	if (!machine_is_cambria())
+-+		return 0;
+-+
+-+	if (cambria_info) {
+-+		printk(KERN_DEBUG "Running on Gateworks Cambria %s\n",
+-+				cambria_info->model);
+-+		cambria_info->setup();
+-+	} else {
+-+		printk(KERN_INFO "Unknown/missing Cambria model number"
+-+				" -- defaults will be used\n");
+-+		cambria_gw23xx_setup();
+-+	}
+-+
+-+	return 0;
+-+}
+-+late_initcall(cambria_model_setup);
+-+
+-+MACHINE_START(CAMBRIA, "Gateworks Cambria series")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= cambria_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+diff --git a/target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch b/target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch
+deleted file mode 100644
+index f46b9c61bf..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/201-npe_driver_print_license_location.patch
++++ /dev/null
+@@ -1,11 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/ixp4xx_npe.c
+-+++ b/arch/arm/mach-ixp4xx/ixp4xx_npe.c
+-@@ -586,6 +586,8 @@ int npe_load_firmware(struct npe *npe, c
+- 	npe_reset(npe);
+- #endif
+- 
+-+	print_npe(KERN_INFO, npe, "firmware's license can be found in /usr/share/doc/LICENSE.IPL\n");
+-+
+- 	print_npe(KERN_INFO, npe, "firmware functionality 0x%X, "
+- 		  "revision 0x%X:%X\n", (image->id >> 16) & 0xFF,
+- 		  (image->id >> 8) & 0xFF, image->id & 0xFF);
+diff --git a/target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch b/target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch
+deleted file mode 100644
+index cc77c5dddc..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/205-npe_driver_separate_phy_functions.patch
++++ /dev/null
+@@ -1,127 +0,0 @@
+-From e3eab80fb5d0a7d7fdb0f2f231b27161d5ec3804 Mon Sep 17 00:00:00 2001
+-From: Jonas Gorski <jogo@openwrt.org>
+-Date: Sun, 30 Jun 2013 15:52:53 +0200
+-Subject: [PATCH 23/36] 205-npe_driver_separate_phy_functions.patch
+-
+----
+- drivers/net/ethernet/xscale/ixp4xx_eth.c |   70 ++++++++++++++++++++++--------
+- 1 file changed, 51 insertions(+), 19 deletions(-)
+-
+---- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-@@ -588,6 +588,51 @@ static void ixp4xx_adjust_link(struct ne
+- 	       dev->name, port->speed, port->duplex ? "full" : "half");
+- }
+- 
+-+static int ixp4xx_phy_connect(struct net_device *dev)
+-+{
+-+	struct port *port = netdev_priv(dev);
+-+	struct eth_plat_info *plat = port->plat;
+-+	char phy_id[MII_BUS_ID_SIZE + 3];
+-+
+-+	snprintf(phy_id, MII_BUS_ID_SIZE + 3, PHY_ID_FMT,
+-+		mdio_bus->id, plat->phy);
+-+	port->phydev = phy_connect(dev, phy_id, &ixp4xx_adjust_link,
+-+				   PHY_INTERFACE_MODE_MII);
+-+	if (IS_ERR(port->phydev)) {
+-+		printk(KERN_ERR "%s: Could not attach to PHY\n", dev->name);
+-+		return PTR_ERR(port->phydev);
+-+	}
+-+
+-+	/* mask with MAC supported features */
+-+	port->phydev->supported &= PHY_BASIC_FEATURES;
+-+	port->phydev->advertising = port->phydev->supported;
+-+
+-+	port->phydev->irq = PHY_POLL;
+-+
+-+	return 0;
+-+}
+-+
+-+static void ixp4xx_phy_disconnect(struct net_device *dev)
+-+{
+-+	struct port *port = netdev_priv(dev);
+-+
+-+	phy_disconnect(port->phydev);
+-+}
+-+
+-+static void ixp4xx_phy_start(struct net_device *dev)
+-+{
+-+	struct port *port = netdev_priv(dev);
+-+
+-+	port->speed = 0;	/* force "link up" message */
+-+	phy_start(port->phydev);
+-+}
+-+
+-+static void ixp4xx_phy_stop(struct net_device *dev)
+-+{
+-+	struct port *port = netdev_priv(dev);
+-+
+-+	phy_stop(port->phydev);
+-+}
+- 
+- static inline void debug_pkt(struct net_device *dev, const char *func,
+- 			     u8 *data, int len)
+-@@ -1242,8 +1287,7 @@ static int eth_open(struct net_device *d
+- 		return err;
+- 	}
+- 
+--	port->speed = 0;	/* force "link up" message */
+--	phy_start(dev->phydev);
+-+	ixp4xx_phy_start(dev);
+- 
+- 	for (i = 0; i < ETH_ALEN; i++)
+- 		__raw_writel(dev->dev_addr[i], &port->regs->hw_addr[i]);
+-@@ -1364,7 +1408,7 @@ static int eth_close(struct net_device *
+- 		printk(KERN_CRIT "%s: unable to disable loopback\n",
+- 		       dev->name);
+- 
+--	phy_stop(dev->phydev);
+-+	ixp4xx_phy_stop(dev);
+- 
+- 	if (!ports_open)
+- 		qmgr_disable_irq(TXDONE_QUEUE);
+-@@ -1391,7 +1435,6 @@ static int eth_init_one(struct platform_
+- 	struct eth_plat_info *plat = dev_get_platdata(&pdev->dev);
+- 	struct phy_device *phydev = NULL;
+- 	u32 regs_phys;
+--	char phy_id[MII_BUS_ID_SIZE + 3];
+- 	int err;
+- 
+- 	if (!(dev = alloc_etherdev(sizeof(struct port))))
+-@@ -1449,16 +1492,9 @@ static int eth_init_one(struct platform_
+- 	__raw_writel(DEFAULT_CORE_CNTRL, &port->regs->core_control);
+- 	udelay(50);
+- 
+--	snprintf(phy_id, MII_BUS_ID_SIZE + 3, PHY_ID_FMT,
+--		mdio_bus->id, plat->phy);
+--	phydev = phy_connect(dev, phy_id, &ixp4xx_adjust_link,
+--			     PHY_INTERFACE_MODE_MII);
+--	if (IS_ERR(phydev)) {
+--		err = PTR_ERR(phydev);
+-+	err = ixp4xx_phy_connect(dev);
+-+	if (err)
+- 		goto err_free_mem;
+--	}
+--
+--	phydev->irq = PHY_POLL;
+- 
+- 	if ((err = register_netdev(dev)))
+- 		goto err_phy_dis;
+-@@ -1469,7 +1505,7 @@ static int eth_init_one(struct platform_
+- 	return 0;
+- 
+- err_phy_dis:
+--	phy_disconnect(phydev);
+-+	ixp4xx_phy_disconnect(phydev);
+- err_free_mem:
+- 	npe_port_tab[NPE_ID(port->id)] = NULL;
+- 	release_resource(port->mem_res);
+-@@ -1487,7 +1523,7 @@ static int eth_remove_one(struct platfor
+- 	struct port *port = netdev_priv(dev);
+- 
+- 	unregister_netdev(dev);
+--	phy_disconnect(phydev);
+-+	ixp4xx_phy_disconnect(phydev);
+- 	npe_port_tab[NPE_ID(port->id)] = NULL;
+- 	npe_release(port->npe);
+- 	release_resource(port->mem_res);
+diff --git a/target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch b/target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch
+deleted file mode 100644
+index e12764e053..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/206-npe_driver_add_update_link_function.patch
++++ /dev/null
+@@ -1,100 +0,0 @@
+---- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-@@ -171,12 +171,13 @@ struct port {
+- 	struct npe *npe;
+- 	struct net_device *netdev;
+- 	struct napi_struct napi;
+-+	struct phy_device *phydev;
+- 	struct eth_plat_info *plat;
+- 	buffer_t *rx_buff_tab[RX_DESCS], *tx_buff_tab[TX_DESCS];
+- 	struct desc *desc_tab;	/* coherent */
+- 	u32 desc_tab_phys;
+- 	int id;			/* logical port ID */
+--	int speed, duplex;
+-+	int link, speed, duplex;
+- 	u8 firmware[4];
+- 	int hwts_tx_en;
+- 	int hwts_rx_en;
+-@@ -558,36 +559,46 @@ static void ixp4xx_mdio_remove(void)
+- }
+- 
+- 
+--static void ixp4xx_adjust_link(struct net_device *dev)
+-+static void ixp4xx_update_link(struct net_device *dev)
+- {
+- 	struct port *port = netdev_priv(dev);
+--	struct phy_device *phydev = dev->phydev;
+--
+--	if (!phydev->link) {
+--		if (port->speed) {
+--			port->speed = 0;
+--			printk(KERN_INFO "%s: link down\n", dev->name);
+--		}
+--		return;
+--	}
+--
+--	if (port->speed == phydev->speed && port->duplex == phydev->duplex)
+--		return;
+--
+--	port->speed = phydev->speed;
+--	port->duplex = phydev->duplex;
+- 
+--	if (port->duplex)
+-+	if (port->duplex == DUPLEX_FULL)
+- 		__raw_writel(DEFAULT_TX_CNTRL0 & ~TX_CNTRL0_HALFDUPLEX,
+- 			     &port->regs->tx_control[0]);
+- 	else
+- 		__raw_writel(DEFAULT_TX_CNTRL0 | TX_CNTRL0_HALFDUPLEX,
+- 			     &port->regs->tx_control[0]);
+- 
+-+	netif_carrier_on(dev);
+- 	printk(KERN_INFO "%s: link up, speed %u Mb/s, %s duplex\n",
+- 	       dev->name, port->speed, port->duplex ? "full" : "half");
+- }
+- 
+-+static void ixp4xx_adjust_link(struct net_device *dev)
+-+{
+-+	struct port *port = netdev_priv(dev);
+-+	struct phy_device *phydev = port->phydev;
+-+	int status_change = 0;
+-+
+-+	if (phydev->link) {
+-+		if (port->duplex != phydev->duplex
+-+		    || port->speed != phydev->speed) {
+-+			status_change = 1;
+-+		}
+-+	}
+-+
+-+	if (phydev->link != port->link)
+-+		status_change = 1;
+-+
+-+	port->link = phydev->link;
+-+	port->speed = phydev->speed;
+-+	port->duplex = phydev->duplex;
+-+
+-+	if (status_change)
+-+		ixp4xx_update_link(dev);
+-+}
+-+
+- static int ixp4xx_phy_connect(struct net_device *dev)
+- {
+- 	struct port *port = netdev_priv(dev);
+-@@ -623,7 +634,6 @@ static void ixp4xx_phy_start(struct net_
+- {
+- 	struct port *port = netdev_priv(dev);
+- 
+--	port->speed = 0;	/* force "link up" message */
+- 	phy_start(port->phydev);
+- }
+- 
+-@@ -1499,6 +1509,10 @@ static int eth_init_one(struct platform_
+- 	if ((err = register_netdev(dev)))
+- 		goto err_phy_dis;
+- 
+-+	port->link = 0;
+-+	port->speed = 0;
+-+	port->duplex = -1;
+-+
+- 	printk(KERN_INFO "%s: MII PHY %i on %s\n", dev->name, plat->phy,
+- 	       npe_name(port->npe));
+- 
+diff --git a/target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch b/target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch
+deleted file mode 100644
+index a23644a167..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/207-npe_driver_multiphy_support.patch
++++ /dev/null
+@@ -1,153 +0,0 @@
+-TODO: take care of additional PHYs through the PHY abstraction layer
+-
+---- a/arch/arm/mach-ixp4xx/include/mach/platform.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/platform.h
+-@@ -95,12 +95,23 @@ struct ixp4xx_pata_data {
+- #define IXP4XX_ETH_NPEB		0x10
+- #define IXP4XX_ETH_NPEC		0x20
+- 
+-+#define IXP4XX_ETH_PHY_MAX_ADDR	32
+-+
+- /* Information about built-in Ethernet MAC interfaces */
+- struct eth_plat_info {
+- 	u8 phy;		/* MII PHY ID, 0 - 31 */
+- 	u8 rxq;		/* configurable, currently 0 - 31 only */
+- 	u8 txreadyq;
+- 	u8 hwaddr[6];
+-+
+-+	u32 phy_mask;
+-+#if 0
+-+	int speed;
+-+	int duplex;
+-+#else
+-+	int speed_10;
+-+	int half_duplex;
+-+#endif
 - };
 - 
-- static struct gpio_led_platform_data ar7_led_data;
--@@ -535,9 +564,9 @@ static void __init detect_leds(void)
-- 	} else if (strstr(prid, "CYWM") || strstr(prid, "CYWL")) {
-- 		ar7_led_data.num_leds = ARRAY_SIZE(titan_leds);
-- 		ar7_led_data.leds = titan_leds;
---	} else if (strstr(prid, "GT701")) {
---		ar7_led_data.num_leds = ARRAY_SIZE(gt701_leds);
---		ar7_led_data.leds = gt701_leds;
--+	} else if (strstr(prid, "GT7") || strstr(prid, "PK5000")) {
--+		ar7_led_data.num_leds = ARRAY_SIZE(actiontec_leds);
--+		ar7_led_data.leds = actiontec_leds;
+- /* Information about built-in HSS (synchronous serial) interfaces */
+---- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-@@ -605,6 +605,37 @@ static int ixp4xx_phy_connect(struct net
+- 	struct eth_plat_info *plat = port->plat;
+- 	char phy_id[MII_BUS_ID_SIZE + 3];
+- 
+-+	if (plat->phy == IXP4XX_ETH_PHY_MAX_ADDR) {
+-+#if 0
+-+		switch (plat->speed) {
+-+		case SPEED_10:
+-+		case SPEED_100:
+-+			break;
+-+		default:
+-+			printk(KERN_ERR "%s: invalid speed (%d)\n",
+-+					dev->name, plat->speed);
+-+			return -EINVAL;
+-+		}
+-+
+-+		switch (plat->duplex) {
+-+		case DUPLEX_HALF:
+-+		case DUPLEX_FULL:
+-+			break;
+-+		default:
+-+			printk(KERN_ERR "%s: invalid duplex mode (%d)\n",
+-+					dev->name, plat->duplex);
+-+			return -EINVAL;
+-+		}
+-+		port->speed = plat->speed;
+-+		port->duplex = plat->duplex;
+-+#else
+-+		port->speed = plat->speed_10 ? SPEED_10 : SPEED_100;
+-+		port->duplex = plat->half_duplex ? DUPLEX_HALF : DUPLEX_FULL;
+-+#endif
+-+
+-+		return 0;
+-+	}
+-+
+- 	snprintf(phy_id, MII_BUS_ID_SIZE + 3, PHY_ID_FMT,
+- 		mdio_bus->id, plat->phy);
+- 	port->phydev = phy_connect(dev, phy_id, &ixp4xx_adjust_link,
+-@@ -627,21 +658,32 @@ static void ixp4xx_phy_disconnect(struct
+- {
+- 	struct port *port = netdev_priv(dev);
+- 
+--	phy_disconnect(port->phydev);
+-+	if (port->phydev)
+-+		phy_disconnect(port->phydev);
+- }
+- 
+- static void ixp4xx_phy_start(struct net_device *dev)
+- {
+- 	struct port *port = netdev_priv(dev);
+- 
+--	phy_start(port->phydev);
+-+	if (port->phydev) {
+-+		phy_start(port->phydev);
+-+	} else {
+-+		port->link = 1;
+-+		ixp4xx_update_link(dev);
+-+	}
+- }
+- 
+- static void ixp4xx_phy_stop(struct net_device *dev)
+- {
+- 	struct port *port = netdev_priv(dev);
+- 
+--	phy_stop(port->phydev);
+-+	if (port->phydev) {
+-+		phy_stop(port->phydev);
+-+	} else {
+-+		port->link = 0;
+-+		ixp4xx_update_link(dev);
+-+	}
+- }
+- 
+- static inline void debug_pkt(struct net_device *dev, const char *func,
+-@@ -1030,6 +1072,8 @@ static void eth_set_mcast_list(struct ne
+- 
+- static int eth_ioctl(struct net_device *dev, struct ifreq *req, int cmd)
+- {
+-+	struct port *port = netdev_priv(dev);
+-+
+- 	if (!netif_running(dev))
+- 		return -EINVAL;
+- 
+-@@ -1040,6 +1084,9 @@ static int eth_ioctl(struct net_device *
+- 			return hwtstamp_get(dev, req);
+- 	}
+- 
+-+	if (!port->phydev)
+-+		return -EOPNOTSUPP;
+-+
+- 	return phy_mii_ioctl(dev->phydev, req, cmd);
+- }
+- 
+-@@ -1059,6 +1106,11 @@ static void ixp4xx_get_drvinfo(struct ne
+- 
+- static int ixp4xx_nway_reset(struct net_device *dev)
+- {
+-+	struct port *port = netdev_priv(dev);
+-+
+-+	if (!port->phydev)
+-+		return -EOPNOTSUPP;
+-+
+- 	return phy_start_aneg(dev->phydev);
+- }
+- 
+-@@ -1519,7 +1571,7 @@ static int eth_init_one(struct platform_
+- 	return 0;
+- 
+- err_phy_dis:
+--	ixp4xx_phy_disconnect(phydev);
+-+	ixp4xx_phy_disconnect(port->netdev);
+- err_free_mem:
+- 	npe_port_tab[NPE_ID(port->id)] = NULL;
+- 	release_resource(port->mem_res);
+-@@ -1537,7 +1589,7 @@ static int eth_remove_one(struct platfor
+- 	struct port *port = netdev_priv(dev);
+- 
+- 	unregister_netdev(dev);
+--	ixp4xx_phy_disconnect(phydev);
+-+	ixp4xx_phy_disconnect(port->netdev);
+- 	npe_port_tab[NPE_ID(port->id)] = NULL;
+- 	npe_release(port->npe);
+- 	release_resource(port->mem_res);
+diff --git a/target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch b/target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch
+deleted file mode 100644
+index 66bc3e86b0..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/295-latch_led_driver.patch
++++ /dev/null
+@@ -1,201 +0,0 @@
+---- a/drivers/leds/Kconfig
+-+++ b/drivers/leds/Kconfig
+-@@ -312,6 +312,12 @@ config LEDS_LP8860
+- 	  on the LP8860 4 channel LED driver using the I2C communication
+- 	  bus.
+- 
+-+config LEDS_LATCH
+-+	tristate "LED Support for Memory Latched LEDs"
+-+	depends on LEDS_CLASS
+-+	help
+-+		-- To Do --
+-+
+- config LEDS_CLEVO_MAIL
+- 	tristate "Mail LED on Clevo notebook"
+- 	depends on LEDS_CLASS
+---- a/drivers/leds/Makefile
+-+++ b/drivers/leds/Makefile
+-@@ -25,6 +25,7 @@ obj-$(CONFIG_LEDS_SUNFIRE)		+= leds-sunf
+- obj-$(CONFIG_LEDS_PCA9532)		+= leds-pca9532.o
+- obj-$(CONFIG_LEDS_GPIO_REGISTER)	+= leds-gpio-register.o
+- obj-$(CONFIG_LEDS_GPIO)			+= leds-gpio.o
+-+obj-$(CONFIG_LEDS_LATCH)		+= leds-latch.o
+- obj-$(CONFIG_LEDS_LP3944)		+= leds-lp3944.o
+- obj-$(CONFIG_LEDS_LP3952)		+= leds-lp3952.o
+- obj-$(CONFIG_LEDS_LP55XX_COMMON)	+= leds-lp55xx-common.o
+---- /dev/null
+-+++ b/drivers/leds/leds-latch.c
+-@@ -0,0 +1,152 @@
+-+/*
+-+ * LEDs driver for Memory Latched Devices
+-+ *
+-+ * Copyright (C) 2008 Gateworks Corp.
+-+ * Chris Lang <clang@gateworks.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+#include <linux/kernel.h>
+-+#include <linux/slab.h>
+-+#include <linux/init.h>
+-+#include <linux/platform_device.h>
+-+#include <linux/leds.h>
+-+#include <linux/workqueue.h>
+-+#include <asm/io.h>
+-+#include <linux/spinlock.h>
+-+#include <linux/slab.h>
+-+#include <linux/module.h>
+-+#include <linux/export.h>
+-+
+-+static unsigned int mem_keep = 0xFF;
+-+static spinlock_t mem_lock;
+-+static unsigned char *iobase;
+-+
+-+struct latch_led_data {
+-+	struct led_classdev cdev;
+-+	struct work_struct work;
+-+	u8 new_level;
+-+	u8 bit;
+-+	void (*set_led)(u8 bit, enum led_brightness value);
+-+};
+-+
+-+static void latch_set_led(u8 bit, enum led_brightness value)
+-+{
+-+	if (value == LED_OFF)
+-+		mem_keep |= (0x1 << bit);
+-+	else
+-+		mem_keep &= ~(0x1 << bit);
+-+
+-+	writeb(mem_keep, iobase);
+-+}
+-+
+-+static void latch_led_set(struct led_classdev *led_cdev,
+-+	enum led_brightness value)
+-+{
+-+	struct latch_led_data *led_dat =
+-+		container_of(led_cdev, struct latch_led_data, cdev);
+-+
+-+	raw_spin_lock(mem_lock);
+-+
+-+	led_dat->set_led(led_dat->bit, value);
+-+
+-+	raw_spin_unlock(mem_lock);
+-+}
+-+
+-+static int latch_led_probe(struct platform_device *pdev)
+-+{
+-+	struct latch_led_platform_data *pdata = pdev->dev.platform_data;
+-+	struct latch_led *cur_led;
+-+	struct latch_led_data *leds_data, *led_dat;
+-+	int i, ret = 0;
+-+
+-+	if (!pdata)
+-+		return -EBUSY;
+-+
+-+	leds_data = kzalloc(sizeof(struct latch_led_data) * pdata->num_leds,
+-+				GFP_KERNEL);
+-+	if (!leds_data)
+-+		return -ENOMEM;
+-+
+-+	for (i = 0; i < pdata->num_leds; i++) {
+-+		cur_led = &pdata->leds[i];
+-+		led_dat = &leds_data[i];
+-+
+-+		led_dat->cdev.name = cur_led->name;
+-+		led_dat->cdev.default_trigger = cur_led->default_trigger;
+-+		led_dat->cdev.brightness_set = latch_led_set;
+-+		led_dat->cdev.brightness = LED_OFF;
+-+		led_dat->bit = cur_led->bit;
+-+		led_dat->set_led = pdata->set_led ? pdata->set_led : latch_set_led;
+-+
+-+		ret = led_classdev_register(&pdev->dev, &led_dat->cdev);
+-+		if (ret < 0) {
+-+			goto err;
+-+		}
+-+	}
+-+
+-+	if (!pdata->set_led) {
+-+		iobase = ioremap_nocache(pdata->mem, 0x1000);
+-+		writeb(0xFF, iobase);
+-+	}
+-+	platform_set_drvdata(pdev, leds_data);
+-+
+-+	return 0;
+-+
+-+err:
+-+	if (i > 0) {
+-+		for (i = i - 1; i >= 0; i--) {
+-+			led_classdev_unregister(&leds_data[i].cdev);
+-+		}
+-+	}
+-+
+-+	kfree(leds_data);
+-+
+-+	return ret;
+-+}
+-+
+-+static int latch_led_remove(struct platform_device *pdev)
+-+{
+-+	int i;
+-+	struct latch_led_platform_data *pdata = pdev->dev.platform_data;
+-+	struct latch_led_data *leds_data;
+-+
+-+	leds_data = platform_get_drvdata(pdev);
+-+
+-+	for (i = 0; i < pdata->num_leds; i++) {
+-+		led_classdev_unregister(&leds_data[i].cdev);
+-+		cancel_work_sync(&leds_data[i].work);
+-+	}
+-+
+-+	kfree(leds_data);
+-+
+-+	return 0;
+-+}
+-+
+-+static struct platform_driver latch_led_driver = {
+-+	.probe		= latch_led_probe,
+-+	.remove		= latch_led_remove,
+-+	.driver		= {
+-+		.name	= "leds-latch",
+-+		.owner	= THIS_MODULE,
+-+	},
+-+};
+-+
+-+static int __init latch_led_init(void)
+-+{
+-+	return platform_driver_register(&latch_led_driver);
+-+}
+-+
+-+static void __exit latch_led_exit(void)
+-+{
+-+	platform_driver_unregister(&latch_led_driver);
+-+}
+-+
+-+module_init(latch_led_init);
+-+module_exit(latch_led_exit);
+-+
+-+MODULE_AUTHOR("Chris Lang <clang@gateworks.com>");
+-+MODULE_DESCRIPTION("Latch LED driver");
+---- a/include/linux/leds.h
+-+++ b/include/linux/leds.h
+-@@ -423,4 +423,18 @@ static inline void ledtrig_cpu(enum cpu_
+- }
+- #endif
+- 
+-+/* For the leds-latch driver */
+-+struct latch_led {
+-+	const char *name;
+-+	char *default_trigger;
+-+	unsigned  bit;
+-+};
+-+
+-+struct latch_led_platform_data {
+-+	int     num_leds;
+-+	u32     mem;
+-+	struct latch_led *leds;
+-+	void	(*set_led)(u8 bit, enum led_brightness value);
+-+};
+-+
+- #endif		/* __LINUX_LEDS_H_INCLUDED */
+diff --git a/target/linux/ixp4xx/patches-4.9/300-avila_support.patch b/target/linux/ixp4xx/patches-4.9/300-avila_support.patch
+deleted file mode 100644
+index c801607f4b..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/300-avila_support.patch
++++ /dev/null
+@@ -1,726 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/avila-pci.c
+-+++ b/arch/arm/mach-ixp4xx/avila-pci.c
+-@@ -27,8 +27,8 @@
+- #include <mach/hardware.h>
+- #include <asm/mach-types.h>
+- 
+--#define AVILA_MAX_DEV	4
+--#define LOFT_MAX_DEV	6
+-+#define AVILA_MAX_DEV	6
+-+
+- #define IRQ_LINES	4
+- 
+- /* PCI controller GPIO to IRQ pin mappings */
+-@@ -55,10 +55,8 @@ static int __init avila_map_irq(const st
+- 		IXP4XX_GPIO_IRQ(INTD)
+- 	};
+- 
+--	if (slot >= 1 &&
+--	    slot <= (machine_is_loft() ? LOFT_MAX_DEV : AVILA_MAX_DEV) &&
+--	    pin >= 1 && pin <= IRQ_LINES)
+--		return pci_irq_table[(slot + pin - 2) % 4];
+-+	if (slot >= 1 && slot <= AVILA_MAX_DEV && pin >= 1 && pin <= IRQ_LINES)
+-+		return pci_irq_table[(slot + pin - 2) % IRQ_LINES];
+- 
+- 	return -1;
+- }
+---- a/arch/arm/mach-ixp4xx/avila-setup.c
+-+++ b/arch/arm/mach-ixp4xx/avila-setup.c
+-@@ -14,9 +14,16 @@
+- #include <linux/kernel.h>
+- #include <linux/init.h>
+- #include <linux/device.h>
+-+#include <linux/if_ether.h>
+-+#include <linux/socket.h>
+-+#include <linux/netdevice.h>
+- #include <linux/serial.h>
+- #include <linux/tty.h>
+- #include <linux/serial_8250.h>
+-+#include <linux/i2c.h>
+-+#include <linux/platform_data/at24.h>
+-+#include <linux/leds.h>
+-+#include <linux/platform_data/pca953x.h>
+- #include <linux/i2c-gpio.h>
+- #include <asm/types.h>
+- #include <asm/setup.h>
+-@@ -26,10 +33,25 @@
+- #include <asm/irq.h>
+- #include <asm/mach/arch.h>
+- #include <asm/mach/flash.h>
+-+#include <linux/irq.h>
+- 
+- #define AVILA_SDA_PIN	7
+- #define AVILA_SCL_PIN	6
+- 
+-+/* User LEDs */
+-+#define AVILA_GW23XX_LED_USER_GPIO     3
+-+#define AVILA_GW23X7_LED_USER_GPIO     4
+-+
+-+/* gpio mask used by platform device */
+-+#define AVILA_GPIO_MASK        (1 << 1) | (1 << 3) | (1 << 5) | (1 << 7) | (1 << 9)
+-+
+-+struct avila_board_info {
+-+	unsigned char	*model;
+-+	void		(*setup)(void);
+-+};
+-+
+-+static struct avila_board_info *avila_info __initdata;
+-+
+- static struct flash_platform_data avila_flash_data = {
+- 	.map_name	= "cfi_probe",
+- 	.width		= 2,
+-@@ -105,14 +127,69 @@ static struct platform_device avila_uart
+- 	.resource		= avila_uart_resources
+- };
+- 
+--static struct resource avila_pata_resources[] = {
+-+static struct resource avila_optional_uart_resources[] = {
+- 	{
+--		.flags	= IORESOURCE_MEM
+--	},
+-+		.start  = 0x54000000,
+-+		.end  = 0x54000fff,
+-+		.flags  = IORESOURCE_MEM
+-+	},{
+-+		.start  = 0x55000000,
+-+		.end  = 0x55000fff,
+-+		.flags  = IORESOURCE_MEM
+-+	},{
+-+		.start  = 0x56000000,
+-+		.end  = 0x56000fff,
+-+		.flags  = IORESOURCE_MEM
+-+	},{
+-+		.start  = 0x57000000,
+-+		.end  = 0x57000fff,
+-+		.flags  = IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port avila_optional_uart_data[] = {
+- 	{
+--		.flags	= IORESOURCE_MEM,
+-+		.flags    = UPF_BOOT_AUTOCONF,
+-+		.iotype   = UPIO_MEM,
+-+		.regshift = 0,
+-+		.uartclk  = 18432000,
+-+		.rw_delay = 2,
+-+	},{
+-+		.flags    = UPF_BOOT_AUTOCONF,
+-+		.iotype   = UPIO_MEM,
+-+		.regshift = 0,
+-+		.uartclk  = 18432000,
+-+		.rw_delay = 2,
+-+	},{
+-+		.flags    = UPF_BOOT_AUTOCONF,
+-+		.iotype   = UPIO_MEM,
+-+		.regshift = 0,
+-+		.uartclk  = 18432000,
+-+		.rw_delay = 2,
+-+	},{
+-+		.flags    = UPF_BOOT_AUTOCONF,
+-+		.iotype   = UPIO_MEM,
+-+		.regshift = 0,
+-+		.uartclk  = 18432000,
+-+		.rw_delay = 2,
+- 	},
+-+	{ }
+-+};
+-+
+-+static struct platform_device avila_optional_uart = {
+-+  .name   = "serial8250",
+-+  .id   = PLAT8250_DEV_PLATFORM1,
+-+  .dev.platform_data  = avila_optional_uart_data,
+-+  .num_resources  = 4,
+-+  .resource = avila_optional_uart_resources,
+-+};
+-+
+-+static struct resource avila_pata_resources[] = {
+- 	{
+-+		.flags	= IORESOURCE_MEM
+-+	},{
+-+		.flags	= IORESOURCE_MEM,
+-+	},{
+- 		.name	= "intrq",
+- 		.start	= IRQ_IXP4XX_GPIO12,
+- 		.end	= IRQ_IXP4XX_GPIO12,
+-@@ -133,21 +210,237 @@ static struct platform_device avila_pata
+- 	.resource		= avila_pata_resources,
+- };
+- 
+-+/* Built-in 10/100 Ethernet MAC interfaces */
+-+static struct eth_plat_info avila_npeb_data = {
+-+	.phy		= 0,
+-+	.rxq		= 3,
+-+	.txreadyq	= 20,
+-+};
+-+
+-+static struct eth_plat_info avila_npec_data = {
+-+	.phy		= 1,
+-+	.rxq		= 4,
+-+	.txreadyq	= 21,
+-+};
+-+
+-+static struct platform_device avila_npeb_device = {
+-+	.name			= "ixp4xx_eth",
+-+	.id			= IXP4XX_ETH_NPEB,
+-+	.dev.platform_data	= &avila_npeb_data,
+-+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+};
+-+
+-+static struct platform_device avila_npec_device = {
+-+	.name			= "ixp4xx_eth",
+-+	.id			= IXP4XX_ETH_NPEC,
+-+	.dev.platform_data	= &avila_npec_data,
+-+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+};
+-+
+-+static struct gpio_led avila_gpio_leds[] = {
+-+	{
+-+		.name		= "user",  /* green led */
+-+		.gpio		= AVILA_GW23XX_LED_USER_GPIO,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "radio1",  /* green led */
+-+		.gpio		= 104,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "radio2",  /* green led */
+-+		.gpio		= 105,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "radio3",  /* green led */
+-+		.gpio		= 106,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "radio4",  /* green led */
+-+		.gpio		= 107,
+-+		.active_low	= 1,
+-+	},
+-+
+-+};
+-+
+-+static struct gpio_led_platform_data avila_gpio_leds_data = {
+-+	.num_leds		= 1,
+-+	.leds			= avila_gpio_leds,
+-+};
+-+
+-+static struct platform_device avila_gpio_leds_device = {
+-+	.name			= "leds-gpio",
+-+	.id			= -1,
+-+	.dev.platform_data	= &avila_gpio_leds_data,
+-+};
+-+
+-+static struct latch_led avila_latch_leds[] = {
+-+	{
+-+		.name	= "led0",  /* green led */
+-+		.bit	= 0,
+-+	},
+-+	{
+-+		.name	= "led1",  /* green led */
+-+		.bit	= 1,
+-+	},
+-+	{
+-+		.name	= "led2",  /* green led */
+-+		.bit	= 2,
+-+	},
+-+	{
+-+		.name	= "led3",  /* green led */
+-+		.bit	= 3,
+-+	},
+-+	{
+-+		.name	= "led4",  /* green led */
+-+		.bit	= 4,
+-+	},
+-+	{
+-+		.name	= "led5",  /* green led */
+-+		.bit	= 5,
+-+	},
+-+	{
+-+		.name	= "led6",  /* green led */
+-+		.bit	= 6,
+-+	},
+-+	{
+-+		.name	= "led7",  /* green led */
+-+		.bit	= 7,
+-+	}
+-+};
+-+
+-+static struct latch_led_platform_data avila_latch_leds_data = {
+-+	.num_leds	= 8,
+-+	.leds		= avila_latch_leds,
+-+	.mem		= 0x51000000,
+-+};
+-+
+-+static struct platform_device avila_latch_leds_device = {
+-+	.name			= "leds-latch",
+-+	.id			= -1,
+-+	.dev.platform_data	= &avila_latch_leds_data,
+-+};
+-+
+- static struct platform_device *avila_devices[] __initdata = {
+- 	&avila_i2c_gpio,
+--	&avila_flash,
+- 	&avila_uart
+- };
+- 
+--static void __init avila_init(void)
+-+/*
+-+ * Audio Devices
+-+ */
+-+
+-+static struct platform_device avila_hss_device[] = {
+-+	{
+-+		.name = "gw_avila_hss",
+-+		.id = 0,
+-+	},{
+-+		.name = "gw_avila_hss",
+-+		.id = 1,
+-+	},{
+-+		.name = "gw_avila_hss",
+-+		.id = 2,
+-+	},{
+-+		.name = "gw_avila_hss",
+-+		.id = 3,
+-+	},
+-+};
+-+
+-+static struct platform_device avila_pcm_device[] = {
+-+	{
+-+		.name = "gw_avila-audio",
+-+		.id = 0,
+-+	},{
+-+		.name = "gw_avila-audio",
+-+		.id = 1,
+-+	},{
+-+		.name = "gw_avila-audio",
+-+		.id = 2,
+-+	},{
+-+		.name = "gw_avila-audio",
+-+		.id = 3,
+-+	}
+-+};
+-+
+-+static void setup_audio_devices(void) {
+-+	platform_device_register(&avila_hss_device[0]);
+-+	platform_device_register(&avila_hss_device[1]);
+-+	platform_device_register(&avila_hss_device[2]);
+-+	platform_device_register(&avila_hss_device[3]);
+-+
+-+	platform_device_register(&avila_pcm_device[0]);
+-+	platform_device_register(&avila_pcm_device[1]);
+-+	platform_device_register(&avila_pcm_device[2]);
+-+	platform_device_register(&avila_pcm_device[3]);
+-+}
+-+
+-+static void __init avila_gw23xx_setup(void)
+- {
+--	ixp4xx_sys_init();
+-+	platform_device_register(&avila_npeb_device);
+-+	platform_device_register(&avila_npec_device);
+- 
+--	avila_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+--	avila_flash_resource.end =
+--		IXP4XX_EXP_BUS_BASE(0) + ixp4xx_exp_bus_size - 1;
+-+	platform_device_register(&avila_gpio_leds_device);
+-+}
+- 
+--	platform_add_devices(avila_devices, ARRAY_SIZE(avila_devices));
+-+static void __init avila_gw2342_setup(void)
+-+{
+-+	platform_device_register(&avila_npeb_device);
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	platform_device_register(&avila_gpio_leds_device);
+-+
+-+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
+-+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
+-+
+-+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(2);
+-+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(2);
+-+
+-+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS1;
+-+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
+-+
+-+	platform_device_register(&avila_pata);
+-+}
+-+
+-+static void __init avila_gw2345_setup(void)
+-+{
+-+	avila_npeb_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
+-+	avila_npeb_data.phy_mask = 0x1e; /* ports 1-4 of the KS8995 switch */
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_npec_data.phy = 5; /* port 5 of the KS8995 switch */
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	platform_device_register(&avila_gpio_leds_device);
+-+
+-+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
+-+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
+-+
+-+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(2);
+-+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(2);
+-+
+-+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS1;
+-+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
+-+
+-+	platform_device_register(&avila_pata);
+-+}
+-+
+-+static void __init avila_gw2347_setup(void)
+-+{
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_gpio_leds[0].gpio = AVILA_GW23X7_LED_USER_GPIO;
+-+	platform_device_register(&avila_gpio_leds_device);
+-+}
+-+
+-+static void __init avila_gw2348_setup(void)
+-+{
+-+	platform_device_register(&avila_npeb_device);
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	platform_device_register(&avila_gpio_leds_device);
+- 
+- 	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
+- 	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
+-@@ -159,8 +452,335 @@ static void __init avila_init(void)
+- 	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
+- 
+- 	platform_device_register(&avila_pata);
+-+}
+-+
+-+static void __init avila_gw2353_setup(void)
+-+{
+-+	platform_device_register(&avila_npeb_device);
+-+	platform_device_register(&avila_gpio_leds_device);
+-+}
+-+
+-+static void __init avila_gw2355_setup(void)
+-+{
+-+	avila_npeb_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
+-+	avila_npeb_data.phy_mask = 0x1e; /* ports 1-4 of the KS8995 switch */
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_npec_data.phy = 16;
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	avila_gpio_leds[0].gpio = AVILA_GW23X7_LED_USER_GPIO;
+-+	platform_device_register(&avila_gpio_leds_device);
+-+
+-+	*IXP4XX_EXP_CS4 |= 0xbfff3c03;
+-+	avila_latch_leds[0].name = "RXD";
+-+	avila_latch_leds[1].name = "TXD";
+-+	avila_latch_leds[2].name = "POL";
+-+	avila_latch_leds[3].name = "LNK";
+-+	avila_latch_leds[4].name = "ERR";
+-+	avila_latch_leds_data.num_leds = 5;
+-+	avila_latch_leds_data.mem = 0x54000000;
+-+	platform_device_register(&avila_latch_leds_device);
+-+
+-+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(1);
+-+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(1);
+-+
+-+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(2);
+-+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(2);
+-+
+-+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS1;
+-+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS2;
+-+
+-+	platform_device_register(&avila_pata);
+-+}
+-+
+-+static void __init avila_gw2357_setup(void)
+-+{
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_gpio_leds[0].gpio = AVILA_GW23X7_LED_USER_GPIO;
+-+	platform_device_register(&avila_gpio_leds_device);
+-+
+-+	*IXP4XX_EXP_CS1 |= 0xbfff3c03;
+-+	platform_device_register(&avila_latch_leds_device);
+-+}
+-+
+-+static void __init avila_gw2365_setup(void)
+-+{
+-+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS4 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO0, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[0].mapbase = 0x54000000;
+-+	avila_optional_uart_data[0].membase = (void __iomem *)ioremap(0x54000000, 0x0fff);
+-+	avila_optional_uart_data[0].irq   = IRQ_IXP4XX_GPIO0;
+-+
+-+	*IXP4XX_EXP_CS5 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO1, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[1].mapbase = 0x55000000;
+-+	avila_optional_uart_data[1].membase = (void __iomem *)ioremap(0x55000000, 0x0fff);
+-+	avila_optional_uart_data[1].irq   = IRQ_IXP4XX_GPIO1;
+-+
+-+	*IXP4XX_EXP_CS6 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[2].mapbase = 0x56000000;
+-+	avila_optional_uart_data[2].membase = (void __iomem *)ioremap(0x56000000, 0x0fff);
+-+	avila_optional_uart_data[2].irq   = IRQ_IXP4XX_GPIO2;
+-+
+-+	*IXP4XX_EXP_CS7 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[3].mapbase = 0x57000000;
+-+	avila_optional_uart_data[3].membase = (void __iomem *)ioremap(0x57000000, 0x0fff);
+-+	avila_optional_uart_data[3].irq   = IRQ_IXP4XX_GPIO3;
+-+
+-+	platform_device_register(&avila_optional_uart);
+-+
+-+	avila_npeb_data.phy = 1;
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_npec_data.phy = 2;
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	avila_pata_resources[0].start = IXP4XX_EXP_BUS_BASE(2);
+-+	avila_pata_resources[0].end = IXP4XX_EXP_BUS_END(2);
+-+
+-+	avila_pata_resources[1].start = IXP4XX_EXP_BUS_BASE(3);
+-+	avila_pata_resources[1].end = IXP4XX_EXP_BUS_END(3);
+-+
+-+	avila_pata_data.cs0_cfg = IXP4XX_EXP_CS2;
+-+	avila_pata_data.cs1_cfg = IXP4XX_EXP_CS3;
+-+
+-+	platform_device_register(&avila_pata);
+-+
+-+	avila_gpio_leds[0].gpio = 109;
+-+	avila_gpio_leds_data.num_leds = 5;
+-+	platform_device_register(&avila_gpio_leds_device);
+-+
+-+	setup_audio_devices();
+-+}
+-+
+-+static void __init avila_gw2369_setup(void)
+-+{
+-+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	avila_npeb_data.phy = 1;
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_npec_data.phy = 2;
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	setup_audio_devices();
+-+}
+-+
+-+static void __init avila_gw2370_setup(void)
+-+{
+-+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	avila_npeb_data.phy = 5;
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_npec_data.phy = IXP4XX_ETH_PHY_MAX_ADDR;
+-+	avila_npec_data.phy_mask = 0x1e; /* ports 1-4 of the KS8995 switch */
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO2, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[0].mapbase = 0x52000000;
+-+	avila_optional_uart_data[0].membase = (void __iomem *)ioremap(0x52000000, 0x0fff);
+-+	avila_optional_uart_data[0].irq   = IRQ_IXP4XX_GPIO2;
+-+
+-+	*IXP4XX_EXP_CS3 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO3, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[1].mapbase = 0x53000000;
+-+	avila_optional_uart_data[1].membase = (void __iomem *)ioremap(0x53000000, 0x0fff);
+-+	avila_optional_uart_data[1].irq   = IRQ_IXP4XX_GPIO3;
+-+
+-+	avila_optional_uart.num_resources = 2;
+-+
+-+	platform_device_register(&avila_optional_uart);
+-+
+-+	avila_gpio_leds[0].gpio = 101;
+-+	platform_device_register(&avila_gpio_leds_device);
+-+
+-+	setup_audio_devices();
+-+}
+-+
+-+static void __init avila_gw2375_setup(void)
+-+{
+-+	avila_npeb_data.phy = 1;
+-+	platform_device_register(&avila_npeb_device);
+-+
+-+	avila_npec_data.phy = 2;
+-+	platform_device_register(&avila_npec_device);
+-+
+-+	*IXP4XX_EXP_CS2 = 0xBFFF3C43;
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_EDGE_RISING);
+-+	avila_optional_uart_data[0].mapbase = 0x52000000;
+-+	avila_optional_uart_data[0].membase = (void __iomem *)ioremap(0x52000000, 0x0fff);
+-+	avila_optional_uart_data[0].irq   = IRQ_IXP4XX_GPIO10;
+-+
+-+	avila_optional_uart.num_resources = 1;
+-+
+-+	platform_device_register(&avila_optional_uart);
+-+
+-+	setup_audio_devices();
+-+}
+-+
+-+
+-+static struct avila_board_info avila_boards[] __initdata = {
+-+	{
+-+		.model		= "GW2342",
+-+		.setup		= avila_gw2342_setup,
+-+	}, {
+-+		.model		= "GW2345",
+-+		.setup		= avila_gw2345_setup,
+-+	}, {
+-+		.model		= "GW2347",
+-+		.setup		= avila_gw2347_setup,
+-+	}, {
+-+		.model		= "GW2348",
+-+		.setup		= avila_gw2348_setup,
+-+	}, {
+-+		.model		= "GW2353",
+-+		.setup		= avila_gw2353_setup,
+-+	}, {
+-+		.model		= "GW2355",
+-+		.setup		= avila_gw2355_setup,
+-+	}, {
+-+		.model		= "GW2357",
+-+		.setup		= avila_gw2357_setup,
+-+	}, {
+-+		.model		= "GW2365",
+-+		.setup		= avila_gw2365_setup,
+-+	}, {
+-+		.model		= "GW2369",
+-+		.setup		= avila_gw2369_setup,
+-+	}, {
+-+		.model		= "GW2370",
+-+		.setup		= avila_gw2370_setup,
+-+	}, {
+-+		.model		= "GW2373",
+-+		.setup		= avila_gw2369_setup,
+-+	}, {
+-+		.model		= "GW2375",
+-+		.setup		= avila_gw2375_setup,
+-+	}
+-+};
+-+
+-+static struct avila_board_info * __init avila_find_board_info(char *model)
+-+{
+-+	int i;
+-+	model[6] = '\0';
+-+
+-+	for (i = 0; i < ARRAY_SIZE(avila_boards); i++) {
+-+		struct avila_board_info *info = &avila_boards[i];
+-+		if (strcmp(info->model, model) == 0)
+-+			return info;
+-+	}
+-+
+-+	return NULL;
+-+}
+-+
+-+static struct nvmem_device *at24_nvmem;
+-+
+-+static void at24_setup(struct nvmem_device *mem_acc, void *context)
+-+{
+-+	char mac_addr[ETH_ALEN];
+-+	char model[7];
+-+
+-+	at24_nvmem = mem_acc;
+-+
+-+	/* Read MAC addresses */
+-+	if (nvmem_device_read(at24_nvmem, 0x0, 6, mac_addr) == 6) {
+-+		memcpy(&avila_npeb_data.hwaddr, mac_addr, ETH_ALEN);
+-+	}
+-+	if (nvmem_device_read(at24_nvmem, 0x6, 6, mac_addr) == 6) {
+-+		memcpy(&avila_npec_data.hwaddr, mac_addr, ETH_ALEN);
+-+	}
+-+
+-+	/* Read the first 6 bytes of the model number */
+-+	if (nvmem_device_read(at24_nvmem, 0x20, 6, model) == 6) {
+-+		avila_info = avila_find_board_info(model);
+-+	}
+-+
+-+}
+-+
+-+static struct at24_platform_data avila_eeprom_info = {
+-+	.byte_len	= 1024,
+-+	.page_size	= 16,
+-+//	.flags		= AT24_FLAG_READONLY,
+-+	.setup		= at24_setup,
+-+};
+-+
+-+static struct pca953x_platform_data avila_pca_data = {
+-+	.gpio_base  = 100,
+-+};
+-+
+-+static struct i2c_board_info __initdata avila_i2c_board_info[] = {
+-+	{
+-+		I2C_BOARD_INFO("ds1672", 0x68),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("gsp", 0x29),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("pca9555", 0x23),
+-+		.platform_data = &avila_pca_data,
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("ad7418", 0x28),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("24c08", 0x51),
+-+		.platform_data	= &avila_eeprom_info
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("tlv320aic33", 0x1b),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("tlv320aic33", 0x1a),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("tlv320aic33", 0x19),
+-+	},
+-+	{
+-+		I2C_BOARD_INFO("tlv320aic33", 0x18),
+-+	},
+-+};
+-+
+-+static void __init avila_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	platform_add_devices(avila_devices, ARRAY_SIZE(avila_devices));
+-+
+-+	i2c_register_board_info(0, avila_i2c_board_info,
+-+			ARRAY_SIZE(avila_i2c_board_info));
+-+}
+-+
+-+static int __init avila_model_setup(void)
+-+{
+-+	if (!machine_is_avila())
+-+		return 0;
+-+
+-+	/* default 16MB flash */
+-+	avila_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	avila_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_16M - 1;
+-+
+-+	if (avila_info) {
+-+		printk(KERN_DEBUG "Running on Gateworks Avila %s\n",
+-+							avila_info->model);
+-+		avila_info->setup();
+-+	} else {
+-+		printk(KERN_INFO "Unknown/missing Avila model number"
+-+						" -- defaults will be used\n");
+-+		avila_gw23xx_setup();
+-+	}
+-+	platform_device_register(&avila_flash);
+- 
+-+	return 0;
+- }
+-+late_initcall(avila_model_setup);
+- 
+- MACHINE_START(AVILA, "Gateworks Avila Network Platform")
+- 	/* Maintainer: Deepak Saxena <dsaxena@plexity.net> */
+diff --git a/target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch b/target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch
+deleted file mode 100644
+index 108fbcb37a..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/304-ixp4xx_eth_jumboframe.patch
++++ /dev/null
+@@ -1,80 +0,0 @@
+---- a/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-+++ b/drivers/net/ethernet/xscale/ixp4xx_eth.c
+-@@ -57,7 +57,7 @@
+- 
+- #define POOL_ALLOC_SIZE		(sizeof(struct desc) * (RX_DESCS + TX_DESCS))
+- #define REGS_SIZE		0x1000
+--#define MAX_MRU			1536 /* 0x600 */
+-+#define MAX_MRU			(14320 - ETH_HLEN - ETH_FCS_LEN)
+- #define RX_BUFF_SIZE		ALIGN((NET_IP_ALIGN) + MAX_MRU, 4)
+- 
+- #define NAPI_WEIGHT		16
+-@@ -1289,6 +1289,32 @@ static void destroy_queues(struct port *
 - 	}
 - }
 - 
-diff --git a/target/linux/ar7/patches-4.9/950-cpmac_titan.patch b/target/linux/ar7/patches-4.9/950-cpmac_titan.patch
-deleted file mode 100644
-index 158b689c98..0000000000
---- a/target/linux/ar7/patches-4.9/950-cpmac_titan.patch
-+++ /dev/null
-@@ -1,52 +0,0 @@
----- a/drivers/net/ethernet/ti/cpmac.c
--+++ b/drivers/net/ethernet/ti/cpmac.c
--@@ -1124,6 +1124,8 @@ static int cpmac_probe(struct platform_d
-- 		goto fail;
-- 	}
-- 
--+	ar7_device_reset(pdata->reset_bit);
+-+static int eth_do_change_mtu(struct net_device *dev, int mtu)
+-+{
+-+	struct port *port;
+-+	struct msg msg;
+-+	/* adjust for ethernet headers */
+-+	int framesize = mtu + ETH_HLEN + ETH_FCS_LEN;
 -+
-- 	dev->irq = platform_get_irq_byname(pdev, "irq");
-- 
-- 	dev->netdev_ops = &cpmac_netdev_ops;
--@@ -1203,7 +1205,7 @@ int cpmac_init(void)
-- 	cpmac_mii->write = cpmac_mdio_write;
-- 	cpmac_mii->reset = cpmac_mdio_reset;
-- 
---	cpmac_mii->priv = ioremap(AR7_REGS_MDIO, 256);
--+	cpmac_mii->priv = ioremap(ar7_is_titan() ? TITAN_REGS_MDIO : AR7_REGS_MDIO, 256);
-- 
-- 	if (!cpmac_mii->priv) {
-- 		pr_err("Can't ioremap mdio registers\n");
--@@ -1214,10 +1216,16 @@ int cpmac_init(void)
-- 	/* FIXME: unhardcode gpio&reset bits */
-- 	ar7_gpio_disable(26);
-- 	ar7_gpio_disable(27);
---	ar7_device_reset(AR7_RESET_BIT_CPMAC_LO);
---	ar7_device_reset(AR7_RESET_BIT_CPMAC_HI);
+-+	port = netdev_priv(dev);
 -+
--+	if (!ar7_is_titan()) {
--+		ar7_device_reset(AR7_RESET_BIT_CPMAC_LO);
--+		ar7_device_reset(AR7_RESET_BIT_CPMAC_HI);
+-+	memset(&msg, 0, sizeof(msg));
+-+	msg.cmd = NPE_SETMAXFRAMELENGTHS;
+-+	msg.eth_id = port->id;
+-+
+-+	/* max rx/tx 64 byte blocks */
+-+	msg.byte2 = ((framesize + 63) / 64) << 8;
+-+	msg.byte3 = ((framesize + 63) / 64) << 8;
+-+
+-+	msg.byte4 = msg.byte6 = framesize >> 8;
+-+	msg.byte5 = msg.byte7 = framesize & 0xff;
+-+
+-+	if (npe_send_recv_message(port->npe, &msg, "ETH_SET_MAX_FRAME_LENGTH"))
+-+		return -EIO;
+-+
+-+	return 0;
+-+}
+-+
+- static int eth_open(struct net_device *dev)
+- {
+- 	struct port *port = netdev_priv(dev);
+-@@ -1340,6 +1366,8 @@ static int eth_open(struct net_device *d
+- 	if (npe_send_recv_message(port->npe, &msg, "ETH_SET_FIREWALL_MODE"))
+- 		return -EIO;
+- 
+-+	eth_do_change_mtu(dev, dev->mtu);
+-+
+- 	if ((err = request_queues(port)) != 0)
+- 		return err;
+- 
+-@@ -1479,7 +1507,26 @@ static int eth_close(struct net_device *
+- 	return 0;
+- }
+- 
+-+static int ixp_eth_change_mtu(struct net_device *dev, int mtu)
+-+{
+-+	int ret;
+-+
+-+	if (mtu > MAX_MRU)
+-+		return -EINVAL;
+-+
+-+	if (dev->flags & IFF_UP) {
+-+		ret = eth_do_change_mtu(dev, mtu);
+-+		if (ret < 0)
+-+			return ret;
 -+	}
-- 	ar7_device_reset(AR7_RESET_BIT_EPHY);
-- 
--+	if (ar7_is_titan())
--+		ar7_device_reset(TITAN_RESET_BIT_EPHY1);
 -+
-- 	cpmac_mii->reset(cpmac_mii);
+-+	dev->mtu = mtu;
+-+
+-+	return 0;
+-+}
+-+
+- static const struct net_device_ops ixp4xx_netdev_ops = {
+-+	.ndo_change_mtu = ixp_eth_change_mtu,
+- 	.ndo_open = eth_open,
+- 	.ndo_stop = eth_close,
+- 	.ndo_start_xmit = eth_xmit,
+diff --git a/target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch b/target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch
+deleted file mode 100644
+index 51f3f14510..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/310-gtwx5717_spi_bus.patch
++++ /dev/null
+@@ -1,57 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/gtwx5715-setup.c
+-+++ b/arch/arm/mach-ixp4xx/gtwx5715-setup.c
+-@@ -27,6 +27,8 @@
+- #include <linux/serial.h>
+- #include <linux/tty.h>
+- #include <linux/serial_8250.h>
+-+#include <linux/spi/spi.h>
+-+#include <linux/spi/spi_gpio.h>
+- #include <asm/types.h>
+- #include <asm/setup.h>
+- #include <asm/memory.h>
+-@@ -146,9 +148,37 @@ static struct platform_device gtwx5715_f
+- 	.resource	= &gtwx5715_flash_resource,
+- };
 - 
-- 	for (i = 0; i < 300; i++) {
--@@ -1234,7 +1242,11 @@ int cpmac_init(void)
-- 		mask = 0;
+-+static struct spi_gpio_platform_data gtwx5715_spi_platform_data = {
+-+        .sck            = GTWX5715_KSSPI_CLOCK,
+-+        .mosi           = GTWX5715_KSSPI_TXD,
+-+        .miso           = GTWX5715_KSSPI_RXD,
+-+        .num_chipselect = 1,
+-+};
+-+
+-+static struct platform_device gtwx5715_spi_device = {
+-+        .name   = "spi_gpio",
+-+        .id     = 1,
+-+        .dev    = {
+-+                .platform_data  = &gtwx5715_spi_platform_data,
+-+	}
+-+};
+-+
+-+static struct spi_board_info gtwx5715_spi_devices[] __initdata = {
+-+        {
+-+                .modalias               = "spi-ks8995",
+-+                .max_speed_hz           = 5000000,
+-+                .mode                   = SPI_MODE_0,
+-+                .bus_num                = 1,
+-+                .chip_select            = 0,
+-+                .controller_data        = (void *)GTWX5715_KSSPI_SELECT,
+-+	}
+-+};
+-+
+-+
+- static struct platform_device *gtwx5715_devices[] __initdata = {
+- 	&gtwx5715_uart_device,
+- 	&gtwx5715_flash,
+-+	&gtwx5715_spi_device,
+- };
+- 
+- static void __init gtwx5715_init(void)
+-@@ -158,6 +188,7 @@ static void __init gtwx5715_init(void)
+- 	gtwx5715_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+- 	gtwx5715_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_8M - 1;
+- 
+-+	spi_register_board_info(gtwx5715_spi_devices, ARRAY_SIZE(gtwx5715_spi_devices));
+- 	platform_add_devices(gtwx5715_devices, ARRAY_SIZE(gtwx5715_devices));
+- }
+- 
+diff --git a/target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch b/target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch
+deleted file mode 100644
+index 85a8f162c6..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/311-gtwx5717_mac_plat_info.patch
++++ /dev/null
+@@ -1,50 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/gtwx5715-setup.c
+-+++ b/arch/arm/mach-ixp4xx/gtwx5715-setup.c
+-@@ -29,6 +29,7 @@
+- #include <linux/serial_8250.h>
+- #include <linux/spi/spi.h>
+- #include <linux/spi/spi_gpio.h>
+-+#include <linux/dma-mapping.h>
+- #include <asm/types.h>
+- #include <asm/setup.h>
+- #include <asm/memory.h>
+-@@ -174,11 +175,39 @@ static struct spi_board_info gtwx5715_sp
+- 	}
+- };
+- 
+-+static struct eth_plat_info gtwx5715_npeb_data = {
+-+	.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+	.phy_mask	= 0x1e, /* ports 1-4 of the KS8995 switch */
+-+	.rxq		= 3,
+-+	.txreadyq	= 20,
+-+};
+-+
+-+static struct eth_plat_info gtwx5715_npec_data = {
+-+	.phy		= 5,	/* port 5 of the KS8995 switch */
+-+	.rxq		= 4,
+-+	.txreadyq	= 21,
+-+};
+-+
+-+static struct platform_device gtwx5715_npeb_device = {
+-+	.name			= "ixp4xx_eth",
+-+	.id			= IXP4XX_ETH_NPEB,
+-+	.dev.platform_data	= &gtwx5715_npeb_data,
+-+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+};
+-+
+-+static struct platform_device gtwx5715_npec_device = {
+-+	.name			= "ixp4xx_eth",
+-+	.id			= IXP4XX_ETH_NPEC,
+-+	.dev.platform_data	= &gtwx5715_npec_data,
+-+	.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+};
+- 
+- static struct platform_device *gtwx5715_devices[] __initdata = {
+- 	&gtwx5715_uart_device,
+- 	&gtwx5715_flash,
+- 	&gtwx5715_spi_device,
+-+	&gtwx5715_npeb_device,
+-+	&gtwx5715_npec_device,
+- };
+- 
+- static void __init gtwx5715_init(void)
+diff --git a/target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch b/target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch
+deleted file mode 100644
+index 59c2837f0c..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/312-ixp4xx_pata_optimization.patch
++++ /dev/null
+@@ -1,137 +0,0 @@
+---- a/drivers/ata/pata_ixp4xx_cf.c
+-+++ b/drivers/ata/pata_ixp4xx_cf.c
+-@@ -24,16 +24,58 @@
+- #include <scsi/scsi_host.h>
+- 
+- #define DRV_NAME	"pata_ixp4xx_cf"
+--#define DRV_VERSION	"0.2"
+-+#define DRV_VERSION	"0.3"
+- 
+- static int ixp4xx_set_mode(struct ata_link *link, struct ata_device **error)
+- {
+-+	struct ixp4xx_pata_data *data = link->ap->host->dev->platform_data;
+-+	unsigned int pio_mask;
+- 	struct ata_device *dev;
+- 
+- 	ata_for_each_dev(dev, link, ENABLED) {
+--		ata_dev_info(dev, "configured for PIO0\n");
+--		dev->pio_mode = XFER_PIO_0;
+--		dev->xfer_mode = XFER_PIO_0;
+-+		if (dev->id[ATA_ID_FIELD_VALID] & (1 << 1)) {
+-+			pio_mask = dev->id[ATA_ID_PIO_MODES] & 0x03;
+-+			if (pio_mask & (1 << 1)) {
+-+				pio_mask = 4;
+-+			} else {
+-+				pio_mask = 3;
+-+			}
+-+		} else {
+-+			pio_mask = (dev->id[ATA_ID_OLD_PIO_MODES] >> 8);
+-+		}
+-+
+-+		switch (pio_mask){
+-+			case 0:
+-+				ata_dev_printk(dev, KERN_INFO, "configured for PIO0\n");
+-+				dev->pio_mode = XFER_PIO_0;
+-+				dev->xfer_mode = XFER_PIO_0;
+-+				*data->cs0_cfg = 0x8a473c03;
+-+				break;
+-+			case 1:
+-+				ata_dev_printk(dev, KERN_INFO, "configured for PIO1\n");
+-+				dev->pio_mode = XFER_PIO_1;
+-+				dev->xfer_mode = XFER_PIO_1;
+-+				*data->cs0_cfg = 0x86433c03;
+-+				break;
+-+			case 2:
+-+				ata_dev_printk(dev, KERN_INFO, "configured for PIO2\n");
+-+				dev->pio_mode = XFER_PIO_2;
+-+				dev->xfer_mode = XFER_PIO_2;
+-+				*data->cs0_cfg = 0x82413c03;
+-+				break;
+-+			case 3:
+-+				ata_dev_printk(dev, KERN_INFO, "configured for PIO3\n");
+-+				dev->pio_mode = XFER_PIO_3;
+-+				dev->xfer_mode = XFER_PIO_3;
+-+				*data->cs0_cfg = 0x80823c03;
+-+				break;
+-+			case 4:
+-+				ata_dev_printk(dev, KERN_INFO, "configured for PIO4\n");
+-+				dev->pio_mode = XFER_PIO_4;
+-+				dev->xfer_mode = XFER_PIO_4;
+-+				*data->cs0_cfg = 0x80403c03;
+-+				break;
+-+		}
+- 		dev->xfer_shift = ATA_SHIFT_PIO;
+- 		dev->flags |= ATA_DFLAG_PIO;
+- 	}
+-@@ -46,6 +88,7 @@ static unsigned int ixp4xx_mmio_data_xfe
+- 	unsigned int i;
+- 	unsigned int words = buflen >> 1;
+- 	u16 *buf16 = (u16 *) buf;
+-+	unsigned int pio_mask;
+- 	struct ata_port *ap = dev->link->ap;
+- 	void __iomem *mmio = ap->ioaddr.data_addr;
+- 	struct ixp4xx_pata_data *data = dev_get_platdata(ap->host->dev);
+-@@ -53,8 +96,34 @@ static unsigned int ixp4xx_mmio_data_xfe
+- 	/* set the expansion bus in 16bit mode and restore
+- 	 * 8 bit mode after the transaction.
+- 	 */
+--	*data->cs0_cfg &= ~(0x01);
+--	udelay(100);
+-+	if (dev->id[ATA_ID_FIELD_VALID] & (1 << 1)){
+-+		pio_mask = dev->id[ATA_ID_PIO_MODES] & 0x03;
+-+		if (pio_mask & (1 << 1)){
+-+			pio_mask = 4;
+-+		}else{
+-+			pio_mask = 3;
+-+		}
+-+	}else{
+-+		pio_mask = (dev->id[ATA_ID_OLD_PIO_MODES] >> 8);
+-+	}
+-+	switch (pio_mask){
+-+		case 0:
+-+			*data->cs0_cfg = 0xa9643c42;
+-+		break;
+-+		case 1:
+-+			*data->cs0_cfg = 0x85033c42;
+-+		break;
+-+		case 2:
+-+			*data->cs0_cfg = 0x80b23c42;
+-+		break;
+-+		case 3:
+-+			*data->cs0_cfg = 0x80823c42;
+-+		break;
+-+		case 4:
+-+			*data->cs0_cfg = 0x80403c42;
+-+		break;
+-+	}
+-+	udelay(5);
+- 
+- 	/* Transfer multiple of 2 bytes */
+- 	if (rw == READ)
+-@@ -79,8 +148,24 @@ static unsigned int ixp4xx_mmio_data_xfe
+- 		words++;
 - 	}
 - 
---	cpmac_mii->phy_mask = ~(mask | 0x80000000);
--+	if (ar7_is_titan())
--+		cpmac_mii->phy_mask = ~(mask | 0x80000000 | 0x40000000);
--+	else
--+		cpmac_mii->phy_mask = ~(mask | 0x80000000);
--+
-- 	snprintf(cpmac_mii->id, MII_BUS_ID_SIZE, "cpmac-1");
+--	udelay(100);
+--	*data->cs0_cfg |= 0x01;
+-+	udelay(5);
+-+	switch (pio_mask){
+-+		case 0:
+-+			*data->cs0_cfg = 0x8a473c03;
+-+		break;
+-+		case 1:
+-+			*data->cs0_cfg = 0x86433c03;
+-+		break;
+-+		case 2:
+-+			*data->cs0_cfg = 0x82413c03;
+-+		break;
+-+		case 3:
+-+			*data->cs0_cfg = 0x80823c03;
+-+		break;
+-+		case 4:
+-+			*data->cs0_cfg = 0x80403c03;
+-+		break;
+-+	}
 - 
-- 	res = mdiobus_register(cpmac_mii);
-diff --git a/target/linux/ar7/src/adam2patcher.c b/target/linux/ar7/src/adam2patcher.c
+- 	return words << 1;
+- }
+diff --git a/target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch b/target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch
 deleted file mode 100644
-index 25a78074a6..0000000000
---- a/target/linux/ar7/src/adam2patcher.c
+index fb7f03ee1a..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/500-usr8200_support.patch
 +++ /dev/null
-@@ -1,59 +0,0 @@
--/*
-- * patcher.c - ADAM2 patcher for Netgear DG834 (and compatible)
-- *
-- * Copyright (C) 2006 Felix Fietkau
-- *
-- * This program is free software; you can redistribute it and/or
-- * modify it under the terms of the GNU General Public License
-- * as published by the Free Software Foundation; either version 2
-- * of the License, or (at your option) any later version.
-- *
-- * This program is distributed in the hope that it will be useful,
-- * but WITHOUT ANY WARRANTY; without even the implied warranty of
-- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-- * GNU General Public License for more details.
-- */
--
--#include <stdio.h>
--#include <stdlib.h>
--#include <stddef.h>
--#include <unistd.h>
--#include <fcntl.h>
--#include <stdint.h>
--#include <sys/mman.h>
--#include <sys/stat.h>
--#include <string.h>
--
--#include <sys/ioctl.h>
--
--int main(int argc, char **argv)
--{
--	int fd;
--	char *ptr;
--	uint32_t *i;
--
--	if (argc != 2) {
--		fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
--		exit(1);
--	}
--
--	if (((fd = open(argv[1], O_RDWR)) < 0)
--			|| ((ptr = mmap(0, 128 * 1024, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0)) == (void *) (-1))) {
--		fprintf(stderr, "Can't open file\n");
--		exit(1);
--	}
--
--	i = (uint32_t *) &ptr[0x3944];
--	if (*i == 0x0c000944) {
--		fprintf(stderr, "Unpatched ADAM2 detected. Patching... ");
--		*i = 0x00000000;
--		msync(i, sizeof(*i), MS_SYNC|MS_INVALIDATE);
--		fprintf(stderr, "done!\n");
--	} else if (*i == 0x00000000) {
--		fprintf(stderr, "Patched ADAM2 detected.\n");
--	} else {
--		fprintf(stderr, "Unknown ADAM2 detected. Can't patch!\n");
--	}
--
--	close(fd);		
--}
+@@ -1,347 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -93,6 +93,14 @@ config MACH_SIDEWINDER
+- 	  Engineering Sidewinder board. For more information on this
+- 	  platform, see http://www.adiengineering.com
+- 
+-+config MACH_USR8200
+-+	bool "USRobotics USR8200"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support the USRobotics
+-+	  USR8200 router board. For more information on this platform, see
+-+	  http://openwrt.org
+-+
+- config MACH_COMPEXWP18
+- 	bool "Compex WP18 / NP18A"
+- 	select PCI
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -27,6 +27,7 @@ obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt
+- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
+- obj-pci-$(CONFIG_MACH_MI424WR)		+= mi424wr-pci.o
+-+obj-pci-$(CONFIG_MACH_USR8200)		+= usr8200-pci.o
+- 
+- obj-y	+= common.o
+- 
+-@@ -55,6 +56,7 @@ obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv
+- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
+- obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
+- obj-$(CONFIG_MACH_MI424WR)	+= mi424wr-setup.o
+-+obj-$(CONFIG_MACH_USR8200)	+= usr8200-setup.o
+- 
+- obj-$(CONFIG_PCI)		+= $(obj-pci-$(CONFIG_PCI)) common-pci.o
+- obj-$(CONFIG_IXP4XX_QMGR)	+= ixp4xx_qmgr.o
+---- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-@@ -44,7 +44,8 @@ static __inline__ void __arch_decomp_set
+- 	    machine_is_gateway7001() || machine_is_wg302v2() ||
+- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
+- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
+--	    machine_is_wrt300nv2() || machine_is_tw5334())
+-+	    machine_is_wrt300nv2() || machine_is_tw5334() ||
+-+	    machine_is_usr8200())
+- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
+- 	else
+- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/usr8200-pci.c
+-@@ -0,0 +1,77 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/usr8200-pci.c
+-+ *
+-+ * PCI setup routines for USRobotics USR8200
+-+ *
+-+ * Copyright (C) 2008 Peter Denison <openwrt@marshadder.org>
+-+ *
+-+ * based on pronghorn-pci.c
+-+ * 	Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Peter Denison <openwrt@marshadder.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+void __init usr8200_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO7, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO8, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO9, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init usr8200_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == 14)
+-+		return IRQ_IXP4XX_GPIO7;
+-+	else if (slot == 15)
+-+		return IRQ_IXP4XX_GPIO8;
+-+	else if (slot == 16) {
+-+		if (pin == 1)
+-+			return IRQ_IXP4XX_GPIO11;
+-+		else if (pin == 2)
+-+			return IRQ_IXP4XX_GPIO10;
+-+		else if (pin == 3)
+-+			return IRQ_IXP4XX_GPIO9;
+-+		else
+-+			return -1;
+-+	} else
+-+		return -1;
+-+}
+-+
+-+struct hw_pci usr8200_pci __initdata = {
+-+	.nr_controllers	= 1,
+-+	.preinit	= usr8200_pci_preinit,
+-+	.ops		= &ixp4xx_ops,
+-+	.setup		= ixp4xx_setup,
+-+	.map_irq	= usr8200_map_irq,
+-+};
+-+
+-+int __init usr8200_pci_init(void)
+-+{
+-+	if (machine_is_usr8200())
+-+		pci_common_init(&usr8200_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(usr8200_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/usr8200-setup.c
+-@@ -0,0 +1,217 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/usr8200-setup.c
+-+ *
+-+ * Board setup for the USRobotics USR8200
+-+ *
+-+ * Copyright (C) 2008 Peter Denison <openwrt@marshadder.org>
+-+ *
+-+ * based on pronghorn-setup.c:
+-+ * 	Copyright (C) 2008 Imre Kaloz <kaloz@openwrt.org>
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Peter Denison <openwrt@marshadder.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+#include <linux/types.h>
+-+#include <linux/memory.h>
+-+#include <linux/i2c-gpio.h>
+-+#include <linux/leds.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/setup.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct flash_platform_data usr8200_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource usr8200_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device usr8200_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data	= &usr8200_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &usr8200_flash_resource,
+-+};
+-+
+-+static struct resource usr8200_uart_resources [] = {
+-+	{
+-+		.start		= IXP4XX_UART2_BASE_PHYS,
+-+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start		= IXP4XX_UART1_BASE_PHYS,
+-+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port usr8200_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device usr8200_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev		= {
+-+		.platform_data	= usr8200_uart_data,
+-+	},
+-+	.num_resources	= 2,
+-+	.resource	= usr8200_uart_resources,
+-+};
+-+
+-+static struct gpio_led usr8200_led_pin[] = {
+-+	{
+-+		.name		= "usr8200:usb1",
+-+		.gpio		= 0,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "usr8200:usb2",
+-+		.gpio		= 1,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "usr8200:ieee1394",
+-+		.gpio		= 2,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "usr8200:internal",
+-+		.gpio		= 3,
+-+		.active_low	= 1,
+-+	},
+-+	{
+-+		.name		= "usr8200:power",
+-+		.gpio		= 14,
+-+	}
+-+};
+-+
+-+static struct gpio_led_platform_data usr8200_led_data = {
+-+	.num_leds		= ARRAY_SIZE(usr8200_led_pin),
+-+	.leds			= usr8200_led_pin,
+-+};
+-+
+-+static struct platform_device usr8200_led = {
+-+	.name			= "leds-gpio",
+-+	.id			= -1,
+-+	.dev.platform_data	= &usr8200_led_data,
+-+};
+-+
+-+static struct eth_plat_info usr8200_plat_eth[] = {
+-+	{ /* NPEC - LAN with Marvell 88E6060 switch */
+-+		.phy		= IXP4XX_ETH_PHY_MAX_ADDR,
+-+		.phy_mask	= 0x0F0000,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}, { /* NPEB - WAN */
+-+		.phy		= 9,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}
+-+};
+-+
+-+static struct platform_device usr8200_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= usr8200_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= usr8200_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct resource usr8200_rtc_resources = {
+-+	.flags		= IORESOURCE_MEM
+-+};
+-+
+-+static struct platform_device usr8200_rtc = {
+-+	.name		= "rtc7301",
+-+	.id		= 0,
+-+	.num_resources	= 1,
+-+	.resource	= &usr8200_rtc_resources,
+-+};
+-+
+-+static struct platform_device *usr8200_devices[] __initdata = {
+-+	&usr8200_flash,
+-+	&usr8200_uart,
+-+	&usr8200_led,
+-+	&usr8200_eth[0],
+-+	&usr8200_eth[1],
+-+	&usr8200_rtc,
+-+};
+-+
+-+static void __init usr8200_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	usr8200_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	usr8200_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_16M - 1;
+-+
+-+	usr8200_rtc_resources.start = IXP4XX_EXP_BUS_BASE(2);
+-+	usr8200_rtc_resources.end = IXP4XX_EXP_BUS_BASE(2) + 0x01ff;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS2 = 0x3fff000 | IXP4XX_EXP_BUS_SIZE(0) | IXP4XX_EXP_BUS_WR_EN |
+-+	                  IXP4XX_EXP_BUS_CS_EN | IXP4XX_EXP_BUS_BYTE_EN;
+-+	*IXP4XX_GPIO_GPCLKR = 0x01100000;
+-+
+-+	/* configure button as input */
+-+	gpio_line_config(12, IXP4XX_GPIO_IN);
+-+
+-+	platform_add_devices(usr8200_devices, ARRAY_SIZE(usr8200_devices));
+-+}
+-+
+-+MACHINE_START(USR8200, "USRobotics USR8200")
+-+	/* Maintainer: Peter Denison <openwrt@marshadder.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= usr8200_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+diff --git a/target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch b/target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch
+deleted file mode 100644
+index 39a261b8e0..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/520-tw2662_support.patch
++++ /dev/null
+@@ -1,316 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -176,6 +176,15 @@ config ARCH_PRPMC1100
+- 	  PrPCM1100 Processor Mezanine Module. For more information on
+- 	  this platform, see <file:Documentation/arm/IXP4xx>.
+- 
+-+config MACH_TW2662
+-+        bool "Titan Wireless TW-266-2"
+-+        select PCI
+-+        help
+-+          Say 'Y' here if you want your kernel to support the Titan
+-+          Wireless TW266-2. For more information on this platform,
+-+          see http://openwrt.org
+-+
+-+
+- config MACH_TW5334
+- 	bool "Titan Wireless TW-533-4"
+- 	select PCI
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -25,6 +25,7 @@ obj-pci-$(CONFIG_MACH_SIDEWINDER)	+= sid
+- obj-pci-$(CONFIG_MACH_COMPEXWP18)	+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_WRT300NV2)		+= wrt300nv2-pci.o
+- obj-pci-$(CONFIG_MACH_AP1000)		+= ixdp425-pci.o
+-+obj-pci-$(CONFIG_MACH_TW2662)		+= tw2662-pci.o
+- obj-pci-$(CONFIG_MACH_TW5334)		+= tw5334-pci.o
+- obj-pci-$(CONFIG_MACH_MI424WR)		+= mi424wr-pci.o
+- obj-pci-$(CONFIG_MACH_USR8200)		+= usr8200-pci.o
+-@@ -54,6 +55,7 @@ obj-$(CONFIG_MACH_SIDEWINDER)	+= sidewin
+- obj-$(CONFIG_MACH_COMPEXWP18)	+= compex42x-setup.o
+- obj-$(CONFIG_MACH_WRT300NV2)	+= wrt300nv2-setup.o
+- obj-$(CONFIG_MACH_AP1000)	+= ap1000-setup.o
+-+obj-$(CONFIG_MACH_TW2662)	+= tw2662-setup.o
+- obj-$(CONFIG_MACH_TW5334)	+= tw5334-setup.o
+- obj-$(CONFIG_MACH_MI424WR)	+= mi424wr-setup.o
+- obj-$(CONFIG_MACH_USR8200)	+= usr8200-setup.o
+---- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-@@ -45,7 +45,7 @@ static __inline__ void __arch_decomp_set
+- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
+- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
+- 	    machine_is_wrt300nv2() || machine_is_tw5334() ||
+--	    machine_is_usr8200())
+-+	    machine_is_usr8200() || machine_is_tw2662())
+- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
+- 	else
+- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/tw2662-pci.c
+-@@ -0,0 +1,67 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/tw2662-pci.c
+-+ *
+-+ * PCI setup routines for Tiran Wireless TW-266-2 platform
+-+ *
+-+ * Copyright (C) 2002 Jungo Software Technologies.
+-+ * Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ * Copyright (C) 2010 Alexandros C. Couloumbis <alex@ozo.com>
+-+ * Copyright (C) 2010 Gabor Juhos <juhosg@openwrt.org>
+-+ *
+-+ * Maintainer: Deepak Saxena <dsaxena@mvista.com>
+-+ * Maintainer: Alexandros C. Couloumbis <alex@ozo.com>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach/pci.h>
+-+
+-+#define SLOT0_DEVID	1
+-+#define SLOT1_DEVID	3
+-+
+-+/* PCI controller GPIO to IRQ pin mappings */
+-+#define SLOT0_INTA	11
+-+#define SLOT1_INTA	9
+-+
+-+void __init tw2662_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IXP4XX_GPIO_IRQ(SLOT0_INTA), IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IXP4XX_GPIO_IRQ(SLOT1_INTA), IRQ_TYPE_LEVEL_LOW);
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init tw2662_map_irq(const struct pci_dev *dev, u8 slot, u8 pin)
+-+{
+-+	if (slot == SLOT0_DEVID)
+-+		return IXP4XX_GPIO_IRQ(SLOT0_INTA);
+-+	else if (slot == SLOT1_DEVID)
+-+		return IXP4XX_GPIO_IRQ(SLOT1_INTA);
+-+	else return -1;
+-+}
+-+
+-+struct hw_pci tw2662_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit =        tw2662_pci_preinit,
+-+	.ops =            &ixp4xx_ops,
+-+	.setup =          ixp4xx_setup,
+-+	.map_irq =        tw2662_map_irq,
+-+};
+-+
+-+int __init tw2662_pci_init(void)
+-+{
+-+        if (machine_is_tw2662())
+-+		pci_common_init(&tw2662_pci);
+-+        return 0;
+-+}
+-+
+-+subsys_initcall(tw2662_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/tw2662-setup.c
+-@@ -0,0 +1,196 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/tw2662-setup.c
+-+ *
+-+ * Titan Wireless TW-266-2
+-+ *
+-+ * Copyright (C) 2010 Gabor Juhos <juhosg@openwrt.org>
+-+ * Copyright (C) 2010 Alexandros C. Couloumbis <alex@ozo.com>
+-+ *
+-+ * based on ap1000-setup.c:
+-+ * 	Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/if_ether.h>
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/slab.h>
+-+#include <linux/netdevice.h>
+-+#include <linux/etherdevice.h>
+-+#include <linux/platform_device.h>
+-+
+-+#include <asm/io.h>
+-+#include <asm/types.h>
+-+#include <asm/setup.h>
+-+#include <asm/memory.h>
+-+#include <mach/hardware.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+/* gpio mask used by platform device */
+-+#define TW2662_GPIO_MASK        (1 << 1) | (1 << 3) | (1 << 5) | (1 << 7)
+-+
+-+static struct flash_platform_data tw2662_flash_data = {
+-+	.map_name	= "cfi_probe",
+-+	.width		= 2,
+-+};
+-+
+-+static struct resource tw2662_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+};
+-+
+-+static struct platform_device tw2662_flash = {
+-+	.name		= "IXP4XX-Flash",
+-+	.id		= 0,
+-+	.dev		= {
+-+		.platform_data = &tw2662_flash_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &tw2662_flash_resource,
+-+};
+-+
+-+static struct resource tw2662_uart_resources[] = {
+-+	{
+-+		.start		= IXP4XX_UART1_BASE_PHYS,
+-+		.end		= IXP4XX_UART1_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	},
+-+	{
+-+		.start		= IXP4XX_UART2_BASE_PHYS,
+-+		.end		= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+		.flags		= IORESOURCE_MEM
+-+	}
+-+};
+-+
+-+static struct plat_serial8250_port tw2662_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART1_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART1_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART1,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device tw2662_uart = {
+-+	.name			= "serial8250",
+-+	.id			= PLAT8250_DEV_PLATFORM,
+-+	.dev.platform_data	= tw2662_uart_data,
+-+	.num_resources		= 2,
+-+	.resource		= tw2662_uart_resources
+-+};
+-+
+-+/* Built-in 10/100 Ethernet MAC interfaces */
+-+static struct eth_plat_info tw2662_plat_eth[] = {
+-+        {
+-+                .phy            = 3,
+-+                .rxq            = 3,
+-+                .txreadyq       = 20,
+-+        }, {
+-+                .phy            = 1,
+-+                .rxq            = 4,
+-+                .txreadyq       = 21,
+-+        }
+-+};
+-+
+-+static struct platform_device tw2662_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= tw2662_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= tw2662_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+
+-+static struct platform_device *tw2662_devices[] __initdata = {
+-+	&tw2662_flash,
+-+	&tw2662_uart,
+-+	&tw2662_eth[0],
+-+	&tw2662_eth[1],
+-+};
+-+
+-+static char tw2662_mem_fixup[] __initdata = "mem=64M ";
+-+
+-+static void __init tw2662_fixup(struct tag *tags, char **cmdline)
+-+{
+-+	struct tag *t = tags;
+-+	char *p = *cmdline;
+-+
+-+	/* Find the end of the tags table, taking note of any cmdline tag. */
+-+	for (; t->hdr.size; t = tag_next(t)) {
+-+		if (t->hdr.tag == ATAG_CMDLINE) {
+-+			p = t->u.cmdline.cmdline;
+-+		}
+-+	}
+-+
+-+	/* Overwrite the end of the table with a new cmdline tag. */
+-+	t->hdr.tag = ATAG_CMDLINE;
+-+	t->hdr.size = (sizeof (struct tag_header) +
+-+		strlen(tw2662_mem_fixup) + strlen(p) + 1 + 4) >> 2;
+-+	strlcpy(t->u.cmdline.cmdline, tw2662_mem_fixup, COMMAND_LINE_SIZE);
+-+	strlcpy(t->u.cmdline.cmdline + strlen(tw2662_mem_fixup), p,
+-+		COMMAND_LINE_SIZE - strlen(tw2662_mem_fixup));
+-+
+-+	/* Terminate the table. */
+-+	t = tag_next(t);
+-+	t->hdr.tag = ATAG_NONE;
+-+	t->hdr.size = 0;
+-+}
+-+
+-+static void __init tw2662_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	tw2662_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	tw2662_flash_resource.end =
+-+		IXP4XX_EXP_BUS_BASE(0) + ixp4xx_exp_bus_size - 1;
+-+
+-+	platform_add_devices(tw2662_devices, ARRAY_SIZE(tw2662_devices));
+-+
+-+	if (!(is_valid_ether_addr(tw2662_plat_eth[0].hwaddr)))
+-+		random_ether_addr(tw2662_plat_eth[0].hwaddr);
+-+	if (!(is_valid_ether_addr(tw2662_plat_eth[1].hwaddr))) {
+-+		memcpy(tw2662_plat_eth[1].hwaddr, tw2662_plat_eth[0].hwaddr, ETH_ALEN);
+-+		tw2662_plat_eth[1].hwaddr[5] = (tw2662_plat_eth[0].hwaddr[5] + 1);
+-+	}
+-+
+-+}
+-+
+-+#ifdef CONFIG_MACH_TW2662
+-+MACHINE_START(TW2662, "Titan Wireless TW-266-2")
+-+	/* Maintainer: Alexandros C. Couloumbis <alex@ozo.com> */
+-+	.fixup		= tw2662_fixup,
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x0100,
+-+	.init_machine	= tw2662_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+#endif
+diff --git a/target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch b/target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch
+deleted file mode 100644
+index 1afbe3d61e..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/530-ap42x_support.patch
++++ /dev/null
+@@ -1,282 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/Kconfig
+-+++ b/arch/arm/mach-ixp4xx/Kconfig
+-@@ -4,6 +4,14 @@ menu "Intel IXP4xx Implementation Option
+- 
+- comment "IXP4xx Platforms"
+- 
+-+config MACH_AP42X
+-+	bool "Tonze AP-422/425"
+-+	select PCI
+-+	help
+-+	  Say 'Y' here if you want your kernel to support Tonze's
+-+	  AP-422/425 boards. For more information on this platform,
+-+	  see http://tonze.com.tw
+-+
+- config MACH_NSLU2
+- 	bool
+- 	prompt "Linksys NSLU2"
+---- a/arch/arm/mach-ixp4xx/Makefile
+-+++ b/arch/arm/mach-ixp4xx/Makefile
+-@@ -5,6 +5,7 @@
+- obj-pci-y	:=
+- obj-pci-n	:=
+- 
+-+obj-pci-$(CONFIG_MACH_AP42X)		+= ap42x-pci.o
+- obj-pci-$(CONFIG_ARCH_IXDP4XX)		+= ixdp425-pci.o
+- obj-pci-$(CONFIG_MACH_AVILA)		+= avila-pci.o
+- obj-pci-$(CONFIG_MACH_CAMBRIA)		+= cambria-pci.o
+-@@ -32,6 +33,7 @@ obj-pci-$(CONFIG_MACH_USR8200)		+= usr82
+- 
+- obj-y	+= common.o
+- 
+-+obj-$(CONFIG_MACH_AP42X)	+= ap42x-setup.o
+- obj-$(CONFIG_ARCH_IXDP4XX)	+= ixdp425-setup.o
+- obj-$(CONFIG_MACH_AVILA)	+= avila-setup.o
+- obj-$(CONFIG_MACH_CAMBRIA)	+= cambria-setup.o
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/ap42x-pci.c
+-@@ -0,0 +1,63 @@
+-+/*
+-+ * arch/arch/mach-ixp4xx/ap42x-pci.c
+-+ *
+-+ * PCI setup routines for Tonze AP-422/425
+-+ *
+-+ * Copyright (C) 2012 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-pci.c:
+-+ *	Copyright (C) 2002 Jungo Software Technologies.
+-+ *	Copyright (C) 2003 MontaVista Softwrae, Inc.
+-+ *
+-+ * Maintainer: Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * This program is free software; you can redistribute it and/or modify
+-+ * it under the terms of the GNU General Public License version 2 as
+-+ * published by the Free Software Foundation.
+-+ *
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/pci.h>
+-+#include <linux/init.h>
+-+#include <linux/irq.h>
+-+
+-+#include <asm/mach-types.h>
+-+#include <mach/hardware.h>
+-+
+-+#include <asm/mach/pci.h>
+-+
+-+void __init ap42x_pci_preinit(void)
+-+{
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO10, IRQ_TYPE_LEVEL_LOW);
+-+	irq_set_irq_type(IRQ_IXP4XX_GPIO11, IRQ_TYPE_LEVEL_LOW);
+-+
+-+	ixp4xx_pci_preinit();
+-+}
+-+
+-+static int __init ap42x_map_irq(const struct pci_dev *dev, u8 slot,
+-+	u8 pin)
+-+{
+-+	if (slot == 1)
+-+		return IRQ_IXP4XX_GPIO11;
+-+	else if (slot == 2)
+-+		return IRQ_IXP4XX_GPIO10;
+-+	else return -1;
+-+}
+-+
+-+struct hw_pci ap42x_pci __initdata = {
+-+	.nr_controllers = 1,
+-+	.preinit	= ap42x_pci_preinit,
+-+	.ops		= &ixp4xx_ops,
+-+	.setup		= ixp4xx_setup,
+-+	.map_irq	= ap42x_map_irq,
+-+};
+-+
+-+int __init ap42x_pci_init(void)
+-+{
+-+	if (machine_is_ap42x())
+-+		pci_common_init(&ap42x_pci);
+-+	return 0;
+-+}
+-+
+-+subsys_initcall(ap42x_pci_init);
+---- /dev/null
+-+++ b/arch/arm/mach-ixp4xx/ap42x-setup.c
+-@@ -0,0 +1,166 @@
+-+/*
+-+ * arch/arm/mach-ixp4xx/ap42x-setup.c
+-+ *
+-+ * Board setup for the Tonze AP-42x boards
+-+ *
+-+ * Copyright (C) 2012 Imre Kaloz <kaloz@openwrt.org>
+-+ *
+-+ * based on coyote-setup.c:
+-+ *      Copyright (C) 2003-2005 MontaVista Software, Inc.
+-+ *
+-+ * Author: Imre Kaloz <Kaloz@openwrt.org>
+-+ */
+-+
+-+#include <linux/kernel.h>
+-+#include <linux/init.h>
+-+#include <linux/device.h>
+-+#include <linux/serial.h>
+-+#include <linux/tty.h>
+-+#include <linux/serial_8250.h>
+-+#include <linux/mtd/physmap.h>
+-+#include <linux/dma-mapping.h>
+-+
+-+#include <asm/types.h>
+-+#include <asm/setup.h>
+-+#include <asm/memory.h>
+-+#include <mach/hardware.h>
+-+#include <asm/irq.h>
+-+#include <asm/mach-types.h>
+-+#include <asm/mach/arch.h>
+-+#include <asm/mach/flash.h>
+-+
+-+static struct mtd_partition ap42x_flash_partitions[] = {
+-+	{
+-+		.name		= "RedBoot",
+-+		.offset		= 0x00000000,
+-+		.size		= 0x00080000,
+-+	}, {
+-+		.name		= "linux",
+-+		.offset		= 0x00080000,
+-+		.size		= 0x00100000,
+-+	}, {
+-+		.name		= "rootfs",
+-+		.offset		= 0x00180000,
+-+		.size		= 0x00660000,
+-+	}, {
+-+		.name		= "FIS directory",
+-+		.offset		= 0x007f8000,
+-+		.size		= 0x00007000,
+-+	}, {
+-+		.name		= "RedBoot config",
+-+		.offset		= 0x007ff000,
+-+		.size		= 0x00001000,
+-+	},
+-+};
+-+
+-+static struct physmap_flash_data ap42x_flash_data = {
+-+	.width		= 2,
+-+	.parts		= ap42x_flash_partitions,
+-+	.nr_parts	= ARRAY_SIZE(ap42x_flash_partitions),
+-+};
+-+
+-+static struct resource ap42x_flash_resource = {
+-+	.flags		= IORESOURCE_MEM,
+-+	.start		= IXP4XX_EXP_BUS_BASE_PHYS,
+-+	.end		= IXP4XX_EXP_BUS_BASE_PHYS + SZ_8M - 1,
+-+};
+-+
+-+static struct platform_device ap42x_flash = {
+-+	.name			= "physmap-flash",
+-+	.id			= 0,
+-+	.dev		= {
+-+		.platform_data	= &ap42x_flash_data,
+-+	},
+-+	.num_resources		= 1,
+-+	.resource		= &ap42x_flash_resource,
+-+};
+-+
+-+static struct resource ap42x_uart_resource = {
+-+	.start	= IXP4XX_UART2_BASE_PHYS,
+-+	.end	= IXP4XX_UART2_BASE_PHYS + 0x0fff,
+-+	.flags	= IORESOURCE_MEM,
+-+};
+-+
+-+static struct plat_serial8250_port ap42x_uart_data[] = {
+-+	{
+-+		.mapbase	= IXP4XX_UART2_BASE_PHYS,
+-+		.membase	= (char *)IXP4XX_UART2_BASE_VIRT + REG_OFFSET,
+-+		.irq		= IRQ_IXP4XX_UART2,
+-+		.flags		= UPF_BOOT_AUTOCONF | UPF_SKIP_TEST,
+-+		.iotype		= UPIO_MEM,
+-+		.regshift	= 2,
+-+		.uartclk	= IXP4XX_UART_XTAL,
+-+	},
+-+	{ },
+-+};
+-+
+-+static struct platform_device ap42x_uart = {
+-+	.name		= "serial8250",
+-+	.id		= PLAT8250_DEV_PLATFORM,
+-+	.dev			= {
+-+		.platform_data	= ap42x_uart_data,
+-+	},
+-+	.num_resources	= 1,
+-+	.resource	= &ap42x_uart_resource,
+-+};
+-+
+-+static struct eth_plat_info ap42x_plat_eth[] = {
+-+	{
+-+		.phy		= 2,
+-+		.rxq		= 3,
+-+		.txreadyq	= 20,
+-+	}, {
+-+		.phy		= 1,
+-+		.rxq		= 4,
+-+		.txreadyq	= 21,
+-+	}
+-+};
+-+
+-+static struct platform_device ap42x_eth[] = {
+-+	{
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEB,
+-+		.dev.platform_data	= ap42x_plat_eth,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}, {
+-+		.name			= "ixp4xx_eth",
+-+		.id			= IXP4XX_ETH_NPEC,
+-+		.dev.platform_data	= ap42x_plat_eth + 1,
+-+		.dev.coherent_dma_mask	= DMA_BIT_MASK(32),
+-+	}
+-+};
+-+
+-+static struct platform_device *ap42x_devices[] __initdata = {
+-+	&ap42x_flash,
+-+	&ap42x_uart,
+-+	&ap42x_eth[0],
+-+	&ap42x_eth[1],
+-+};
+-+
+-+static void __init ap42x_init(void)
+-+{
+-+	ixp4xx_sys_init();
+-+
+-+	ap42x_flash_resource.start = IXP4XX_EXP_BUS_BASE(0);
+-+	ap42x_flash_resource.end = IXP4XX_EXP_BUS_BASE(0) + SZ_32M - 1;
+-+
+-+	*IXP4XX_EXP_CS0 |= IXP4XX_FLASH_WRITABLE;
+-+	*IXP4XX_EXP_CS1 = *IXP4XX_EXP_CS0;
+-+
+-+	platform_add_devices(ap42x_devices, ARRAY_SIZE(ap42x_devices));
+-+}
+-+
+-+#ifdef CONFIG_MACH_AP42X
+-+MACHINE_START(AP42X, "Tonze AP-422/425")
+-+	/* Maintainer: Imre Kaloz <kaloz@openwrt.org> */
+-+	.map_io		= ixp4xx_map_io,
+-+	.init_irq	= ixp4xx_init_irq,
+-+	.init_time	= ixp4xx_timer_init,
+-+	.atag_offset	= 0x100,
+-+	.init_machine	= ap42x_init,
+-+#if defined(CONFIG_PCI)
+-+	.dma_zone_size	= SZ_64M,
+-+#endif
+-+	.restart	= ixp4xx_restart,
+-+MACHINE_END
+-+#endif
+---- a/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-+++ b/arch/arm/mach-ixp4xx/include/mach/uncompress.h
+-@@ -45,7 +45,8 @@ static __inline__ void __arch_decomp_set
+- 	    machine_is_devixp() || machine_is_miccpt() || machine_is_mic256() ||
+- 	    machine_is_pronghorn() || machine_is_pronghorn_metro() ||
+- 	    machine_is_wrt300nv2() || machine_is_tw5334() ||
+--	    machine_is_usr8200() || machine_is_tw2662())
+-+	    machine_is_usr8200() || machine_is_tw2662() ||
+-+	    machine_is_ap42x())
+- 		uart_base = (volatile u32*) IXP4XX_UART2_BASE_PHYS;
+- 	else
+- 		uart_base = (volatile u32*) IXP4XX_UART1_BASE_PHYS;
+diff --git a/target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch b/target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch
+deleted file mode 100644
+index cdd9fde8f0..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/600-skb_avoid_dmabounce.patch
++++ /dev/null
+@@ -1,23 +0,0 @@
+---- a/net/core/skbuff.c
+-+++ b/net/core/skbuff.c
+-@@ -215,6 +215,9 @@ struct sk_buff *__alloc_skb(unsigned int
+- 
+- 	if (sk_memalloc_socks() && (flags & SKB_ALLOC_RX))
+- 		gfp_mask |= __GFP_MEMALLOC;
+-+#ifdef CONFIG_ARCH_IXP4XX
+-+	gfp_mask |= GFP_DMA;
+-+#endif
+- 
+- 	/* Get the HEAD */
+- 	skb = kmem_cache_alloc_node(cache, gfp_mask & ~__GFP_DMA, node);
+-@@ -1228,6 +1231,10 @@ int pskb_expand_head(struct sk_buff *skb
+- 	if (skb_shared(skb))
+- 		BUG();
+- 
+-+#ifdef CONFIG_ARCH_IXP4XX
+-+	gfp_mask |= GFP_DMA;
+-+#endif
+-+
+- 	size = SKB_DATA_ALIGN(size);
+- 
+- 	if (skb_pfmemalloc(skb))
+diff --git a/target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch b/target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch
+deleted file mode 100644
+index 24c93dc741..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/900-ixp4xx-crypto-include-module.h.patch
++++ /dev/null
+@@ -1,10 +0,0 @@
+---- a/drivers/crypto/ixp4xx_crypto.c
+-+++ b/drivers/crypto/ixp4xx_crypto.c
+-@@ -14,6 +14,7 @@
+- #include <linux/dmapool.h>
+- #include <linux/crypto.h>
+- #include <linux/kernel.h>
+-+#include <linux/module.h>
+- #include <linux/rtnetlink.h>
+- #include <linux/interrupt.h>
+- #include <linux/spinlock.h>
+diff --git a/target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch b/target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch
+deleted file mode 100644
+index 06e09f469d..0000000000
+--- a/target/linux/ixp4xx/patches-4.9/910-ixp4xx-nr_irq_lines.patch
++++ /dev/null
+@@ -1,22 +0,0 @@
+---- a/arch/arm/mach-ixp4xx/ixdp425-pci.c
+-+++ b/arch/arm/mach-ixp4xx/ixdp425-pci.c
+-@@ -53,7 +53,7 @@ static int __init ixdp425_map_irq(const
+- 	};
+- 
+- 	if (slot >= 1 && slot <= MAX_DEV && pin >= 1 && pin <= IRQ_LINES)
+--		return pci_irq_table[(slot + pin - 2) % 4];
+-+		return pci_irq_table[(slot + pin - 2) % IRQ_LINES];
+- 
+- 	return -1;
+- }
+---- a/arch/arm/mach-ixp4xx/miccpt-pci.c
+-+++ b/arch/arm/mach-ixp4xx/miccpt-pci.c
+-@@ -54,7 +54,7 @@ static int __init miccpt_map_irq(const s
+- 	};
+- 
+- 	if (slot >= 1 && slot <= MAX_DEV && pin >= 1 && pin <= IRQ_LINES)
+--		return pci_irq_table[(slot + pin - 2) % 4];
+-+		return pci_irq_table[(slot + pin - 2) % IRQ_LINES];
+- 
+- 	return -1;
+- }
 -- 
 2.20.1
 

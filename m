@@ -2,101 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5675D130920
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 17:37:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 408D2130923
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 17:38:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=z2PeUi8UMLh8d2rM4SIKy8Dpwle64Bhj9AXyPwvQHIA=; b=BDx6HxKBogz2kI6kwTHuY0m//
-	5wTh4/FWMizKKEyz39FJSDn5e3UXypCFyHCwUjfVbaEuqKQO5z+SgHxuizegLM3J7maX8EJY6+OCU
-	QHqOkJEYQjmojv/GT1++l1jIVib+uIwuP3nlsYALGV5t8JGQ4Xx2kcwN/Wmj7875sSyAbWQ+x8te0
-	1qvu8fW1ZSTN+4wFoit54VeRw1KncO8UJyh6euUp+qDIDtlJH+zoR3nNEL5jxybSfZPfVIt++hFNU
-	NcH+8LYbXZbrfNPbAqUwhYYCzmVn93Ixcm2cOzab7jgm+Wak3sNWYqn+K9I0fqMUra3hZJcKrxHcE
-	Z1FlkJgmA==;
+	 bh=XKd9jNptonAGAMUc0D1s2O8MK38f4n2VdCVrcwQisvI=; b=WgH/uu2AIyZAqeCqJ/HTbVBw+
+	sPGDC/yYaeZQLSHRzZvuOwlSMWBFFRDjqCtOgSZGNJd7tBFxzIUHqlmm4HWZ+XrnVofWGpt41ygMC
+	+zslbL7wE7+hRfhB/gSE7bF9/tIedqJ0ELp/PG1kD1Jl7KFVafHBGxAy+ULqte2llvcYedFixzkuM
+	ybW88ETb02afXTwPwYxUt80OwE/wWOMgz5HbJQDzHmcTpMDqakbG5yIVtK7AvxSn4WY0GQyNPcqgW
+	CjOBv9AG3c11N0A6GnKTa1eksk8mlzJx/Ai+xrkmY6d+o6aOafaeyBQyYO6Z7q3vEASV78KaFXMYX
+	Pg2TnsyfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io8uD-0000Zx-44; Sun, 05 Jan 2020 16:37:33 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1io8uf-0000tC-38; Sun, 05 Jan 2020 16:38:01 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io8u6-0000YT-Nr
- for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 16:37:28 +0000
-Received: by mail-lf1-x131.google.com with SMTP id i23so34883618lfo.7
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 Jan 2020 08:37:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=sFRgeVhRtG49OAgxEbpYSM2M9lS9km67EoMooFyFgwk=;
- b=tvyA7/h87bt2qZmjQvNLmnJtKC+4sqlKcoRqqKAEa1DRMVFg7amp7zpvYN0n8Nn3x9
- NeenwxI7zZ6MDbTfIwajZc5JhuBVU8juw+8dojt/SvBeT2936SGDWPA7Fz0c8pSy+sUS
- 3lw2h+tmsXSuykBm8wmUcVaAhwpaTd5+OXCF4s0F2Wlz8LLFwz6bFLg8i0r0nMFo7uh0
- V+juo9/zSrxzhVCoLpWT0NJcRIqNjlKDxAx2iFcS250yQZ9TC2in+HDMy9eZ6n7ObwgG
- Q8kHNFDqjqnVDLwzszDcwi08vf52AP5TefVuN5tychqgebqtH2ThEB2oggNLFDUibomy
- Dffw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=sFRgeVhRtG49OAgxEbpYSM2M9lS9km67EoMooFyFgwk=;
- b=Z02JEFnjF0Z1L8yOC5c39mDFNaSifacMFW7A7bu290mLtUdUi010SD0JPaJW0FWfsD
- ZtFE/B2KvIFgCtk/pTXlPJOIfy08gCCvzGfm4LAI/UsHNci4tKQCg1m0HKRY+U8LNV26
- MsFiSvpgqToNrrq/rz0nsC+awgVW8dIz+J5au+Tj2qzBIGWlV9Luzd6koYyWN2xUBS7r
- yNDkjdnPQ0ozJB07CaCZxn4SJ/gI1UL1/OT+EE2gVrYV7kaHPheknLz9FI6PKBlSHLkZ
- BBWw/NMUfZuKaKQF12Zbl+G8gY4u5I2K8/7RqLUsybak0QUOTUrDWqyykFWmFHwGDpDm
- 5S1Q==
-X-Gm-Message-State: APjAAAXoSXZuLSggOSMQHYKeMDthbXsy7ZrGCSp1bzgNv3SziV7TBIQX
- pppEJNtz194JLO/WVXK/MIc=
-X-Google-Smtp-Source: APXvYqz3nqi99L34UtgSrTH9zmSBcQxZ240xNEYDASXQYaq+sKM0WaRwun9NJT/UcCFsBFMqIZBtlg==
-X-Received: by 2002:a19:c80a:: with SMTP id y10mr53418136lff.177.1578242244314; 
- Sun, 05 Jan 2020 08:37:24 -0800 (PST)
-Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
- [31.11.201.135])
- by smtp.gmail.com with ESMTPSA id f30sm23042283ljp.31.2020.01.05.08.37.23
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 05 Jan 2020 08:37:23 -0800 (PST)
-To: mail@adrianschmutzler.de, 'Tom Psyborg' <pozega.tomislav@gmail.com>
-References: <3a6109f9-07db-7670-5a57-9a801d7c4dfc@hauke-m.de>
- <019d01d5a617$53e76570$fbb63050$@adrianschmutzler.de>
- <9ab7f0b2-d122-222a-6d8b-4c330fe3935b@hauke-m.de>
- <009201d5c234$d1045e30$730d1a90$@adrianschmutzler.de>
- <50e1561a-a48e-6b82-0b2f-52bfd90e747e@hauke-m.de>
- <005f01d5c3c5$d420a320$7c61e960$@adrianschmutzler.de>
- <CAKR_QVJiA+kwuENABz=QLjBxVui-mVRTdNXCR+GmaaMf1Q26aw@mail.gmail.com>
- <009501d5c3e0$d4951b90$7dbf52b0$@adrianschmutzler.de>
-From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <e9c2738f-98a9-da78-5280-d09d08fa8e8f@gmail.com>
-Date: Sun, 5 Jan 2020 17:37:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1io8uT-0000rV-Iy
+ for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 16:37:51 +0000
+Received: from desktop ([188.194.105.26]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MwQCb-1jgWc93FAr-00sQHc; Sun, 05 Jan 2020 17:37:44 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Hauke Mehrtens'" <hauke@hauke-m.de>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20200105141756.23473-1-hauke@hauke-m.de>
+In-Reply-To: <20200105141756.23473-1-hauke@hauke-m.de>
+Date: Sun, 5 Jan 2020 17:37:44 +0100
+Message-ID: <00b701d5c3e6$74e07860$5ea16920$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-In-Reply-To: <009501d5c3e0$d4951b90$7dbf52b0$@adrianschmutzler.de>
-Content-Language: en-US
+Content-Language: de
+Thread-Index: AQIuF+HeIBVU/ZlJzrne0jxHuiAM+Kcrm33A
+X-Provags-ID: V03:K1:rlWc+BjQga0X7bubqGmNZIfvfsxDu56JlXrmSXMKYhPe1Agb8ZV
+ mX015ZBUGmcUZP1ubKQKZIutzvoBjJKbUrgaUIBoYkqpPWrMG66uVBIlMUEEhSpe4hY2qgF
+ aIGO9K1muRW9J1BS6dPv/8IKj0rwAZP1R8muk62iKVqL79aYzXy/vn6NlWY0tV5fW773YHU
+ BYXeMq2nbEbiraQkcazgw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:16Z1VSYT+4g=:lHGywSSBnpII6Pl+HFzVMD
+ 3BvQLtpD/z6wBUBiwbA7Zx19X3n/2iaddGzrcdVnEt2KMF1qZU54PPG5oFKHhth3xxkdm6LOa
+ t8VxXrJXIG+a8jmlNHfuJU2zr1jAMoalBB+mxYhb9OOWv7tWExxbYZN9YW0Naq98++QDN2sFw
+ EvGYTtTtSLlRtByaC99SI+VNK9vOMcMJ8NcURBqHjlpYO0DGRINewr+wB5yc9rt0Tn9QMeph9
+ b921CbEN8fp9uWqTLakqYx1erftkWNxplivH9gLHDhYMCJhIwI+5OyLZaVvXYf1nrziHFVMsa
+ 16ZMUdn+q/LWwn2kFJLSauLhlrZ8cOb7Kk3cIQG6WE7adZhq4mQpW5gZzpDVUePzVzlgssDxX
+ LJNY5E6YG94KUHItGPAGCO2v8tL0uXlea76uLMcHwA2z3ZniPhcSr9lCrLoqI7m8J3rQncVMl
+ oKCbEyHr0zkio7LkQbqWaMygkeQ3L2naFsAaE3bsZhtuWF5LtTjuKYSCMXgzGlSWi9INQm7ld
+ QuANyMb0TE6KEhp5CUx9ZvaAbYOpnZijbGMyOwUIewxP1NHKx+elMj98a+wkEVFOz39UXcMpZ
+ WzTFrQjd9gipBxqeKcXybclSvu+zaUmb7mrhuEhl3orMZ37OswZ2dz0YWxK+UaggOqvKc9ORE
+ WGp3F3zesByKG+aOCDa4MwBQ1t4Sox1KFSgqEc8h8viG/dCjClWVjmUaxGfdBXWXY00kIqh8c
+ 03djCQvNjerM9hlBy0uc7G097GjwNWhfjd4Zb8bWhyVKsR37HR6HCPGQGJQUlrgKpcZmML4oz
+ emRzETSo5UNumpc0yeYSMABGaf4DmCxM2MeMFFTws38nxMSqKPOCqwK86G7sQuZzleS8ljQHS
+ 3FUUMCssch7grP7J4Cd6vsQ2p4KLbI0L+15X85MuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_083726_808712_B3327909 
-X-CRM114-Status: GOOD (  19.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200105_083749_918317_92B3D56F 
+X-CRM114-Status: GOOD (  17.53  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:131 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.187 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pepe2k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: Fix sysupgrade for Xiaomi mir3g
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,120 +82,139 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'Hauke Mehrtens' <hauke@hauke-m.de>,
- 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>,
- 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: dev@kresin.me
+Content-Type: multipart/mixed; boundary="===============3616465480157256933=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Adrian, Tom,
+This is a multipart message in MIME format.
 
-On 05.01.2020 16:57, mail@adrianschmutzler.de wrote:
->> -----Original Message-----
->> From: Tom Psyborg [mailto:pozega.tomislav@gmail.com]
->> Sent: Sonntag, 5. Januar 2020 16:33
->> To: mail@adrianschmutzler.de
->> Cc: Hauke Mehrtens <hauke@hauke-m.de>; OpenWrt Development List
->> <openwrt-devel@lists.openwrt.org>; Koen Vandeputte
->> <koen.vandeputte@ncentric.com>
->> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
->> 
->> On 05/01/2020, mail@adrianschmutzler.de <mail@adrianschmutzler.de>
->> wrote:
->> > Hi,
->> >
->> >> -----Original Message-----
->> >> From: openwrt-devel [mailto:openwrt-devel-
->> bounces@lists.openwrt.org]
->> >> On Behalf Of Hauke Mehrtens
->> >> Sent: Samstag, 4. Januar 2020 18:26
->> >> To: mail@adrianschmutzler.de; 'OpenWrt Development List' <openwrt-
->> >> devel@lists.openwrt.org>
->> >> Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
->> >> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
->> >>
->> >> On 1/3/20 1:53 PM, mail@adrianschmutzler.de wrote:
->> >> > Hi Hauke,
->> >> >
->> >> >> -----Original Message-----
->> >> >> From: openwrt-devel [mailto:openwrt-devel-
->> >> bounces@lists.openwrt.org]
->> >> >> On Behalf Of Hauke Mehrtens
->> >> >> Sent: Donnerstag, 28. November 2019 19:42
->> >> >> To: Adrian Schmutzler <mail@adrianschmutzler.de>; 'OpenWrt
->> >> >> Development List' <openwrt-devel@lists.openwrt.org>
->> >> >> Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
->> >> >> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
->> >> >>
->> >> >> On 11/28/19 7:11 PM, Adrian Schmutzler wrote:
->> >> >>> Hi Hauke,
->> >> >>>
->> >> >>>> The following are still on kernel 4.9:
->> >> >>>>  * ar7
->> >> >>>>  * ixp4xx
->> >> >>>>  * orion
->> >> >>>
->> >> >>> There are patches (actually from you, May 2019) on the list which
->> >> >>> claim to bump ar7 and orion to 4.14:
->> >> >>>
->> >> >>> https://patchwork.ozlabs.org/project/openwrt/list/?series=107337
->> >> >>> https://patchwork.ozlabs.org/project/openwrt/list/?series=107339
->> >> >>>
->> >> >>> I haven't looked closer, just in case you forgot about them ;-)
->> >> >>
->> >> >> Nobody reported that they are working so I never applied them. I
->> >> >> do not have the hardware, I just made them compile.
->> >> >
->> >> > Since there was no response of any kind from a third party, I've
->> >> > just
->> >> marked the two patchsets as "Deferred" in the patchwork, so we get a
->> >> little more overview there. I hope that's okay for you.
->> >>
->> >> Yes fine with me, we should probably drop these targets soon.
->> >>
->> >> Hauke
->> >
->> > I think it's time to remove the three targets and kernel 4.9 support
->> > as well after the release has been made. Or does keeping kernel 4.9 in
->> > master (even without targets) make it easier to support 18.06 branch?
->> >
->> > Best
->> >
->> > Adrian
->> >
->> 
->> This LTS version will receive updates for another 3 years, why do you want to
->> remove it?
-> 
-> Next release will be kernel 4.19 or 5.4 only, and the respective targets are still at 4.9. So, they haven't been included in 19.07 (4.14 only) and won't be included in future releases unless someone updates them. At the moment, it looks like nobody will update them.
-> 
-> So, we plan to remove these targets now, as they are effectively unmaintained. Those who still want to use them can have the 4.9 version in 18.06 stable branch until that one is EOL.
-> 
-> In both cases, updating or removing the targets, there will be no need to keep kernel support if no targets are left. Thus, we can save time for maintaining that kernel version.
+--===============3616465480157256933==
+Content-Language: de
+Content-Type: multipart/signed;
+	boundary="=-=JApy0JsNBPXWGb=-=";
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature"
 
-They can also be moved here:
-https://github.com/openwrt/targets
+This is a multipart message in MIME format.
 
--- 
-Cheers,
-Piotr
+--=-=JApy0JsNBPXWGb=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-> 
-> Best
-> 
-> Adrian
-> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
+Hi Hauke,
 
+> -----Original Message-----
+> From: Hauke Mehrtens [mailto:hauke@hauke-m.de]
+> Sent: Sonntag, 5. Januar 2020 15:18
+> To: openwrt-devel@lists.openwrt.org
+> Cc: mail@adrianschmutzler.de; dev@kresin.me; Hauke Mehrtens
+> <hauke@hauke-m.de>
+> Subject: [PATCH] ramips: Fix sysupgrade for Xiaomi mir3g
+>=20
+> Without this change sysupgrade from 18.06 to 19.07 is only possible with =
+the -
+> F option.
+> In OpenWrt 18.06 the nand_do_platform_check() function is called with the
+> board name mir3g only, if the tar does not use mir3g it will fail.
+> OpenWrt 19.07 and later support the metadata with the supported_devices
+> attribute to allow renaming. Do the renaming of the target between 19.07
+> and master like it is done for some other boards.
+>=20
+> I tested the following sysupgrades successfully without -F
+> 18.06 -> 19.07
+> 19.07 -> master
+> master -> 19.07
+>=20
+> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+> ---
+>  target/linux/ramips/image/mt7621.mk | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+>=20
+> diff --git a/target/linux/ramips/image/mt7621.mk
+> b/target/linux/ramips/image/mt7621.mk
+> index 7eb59188fb..39017a48e1 100644
+> --- a/target/linux/ramips/image/mt7621.mk
+> +++ b/target/linux/ramips/image/mt7621.mk
+> @@ -269,7 +269,7 @@ define Device/xiaomi_mir3p  endef  TARGET_DEVICES
+> +=3D xiaomi_mir3p
+>=20
+> -define Device/xiaomi_mir3g
+> +define Device/mir3g
+>    DTS :=3D MIR3G
+>    BLOCKSIZE :=3D 128k
+>    PAGESIZE :=3D 2048
+> @@ -282,12 +282,12 @@ define Device/xiaomi_mir3g
+>    IMAGE/sysupgrade.bin :=3D sysupgrade-tar | append-metadata
+>    DEVICE_TITLE :=3D Xiaomi Mi Router 3G
+>    SUPPORTED_DEVICES +=3D R3G
+> -  SUPPORTED_DEVICES +=3D mir3g
+> +  SUPPORTED_DEVICES +=3D xiaomi,mir3g
+
+I do not really understand this patch, as still the names will be the same,=
+ but just the order will change. If you really rely on the first name to be=
+ mir3g, you could achieve this much easier by just using:
+
+SUPPORTED_DEVICES :=3D mir3g R3G xiaomi,mir3g
+
+With that, you would not have to change the device node name at all.
+
+Best
+
+Adrian
+
+>    DEVICE_PACKAGES :=3D \
+>  	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport
+> wpad-basic \
+>  	uboot-envtools
+>  endef
+> -TARGET_DEVICES +=3D xiaomi_mir3g
+> +TARGET_DEVICES +=3D mir3g
+>=20
+>  define Device/mt7621
+>    DTS :=3D MT7621
+> --
+> 2.20.1
+
+--=-=JApy0JsNBPXWGb=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4SENEACgkQoNyKO7qx
+AnB6ow/+LxwcuNZUL+KAhzz4/bM6cu22mgO9UwSFLYTx8wPCfaZGUrNqOwyst4yf
+52dOD45V4f8R898ItgjZgfcWoZ3PMLHpAbZMl6vUsbnVEJXukQ3ewkRCpa6tZKY/
+Hz46ByTUxdeVR9SH7fb96V+8MT5vVoxaXNprFQmVYKI5/g179DwEX5Q7p5XetP2J
+RFyNEY8IeiQkj0WiWTuiv9WiI65uhIGwfQT9SHPEak4nHN+0FqmU8O9UIHdTVymU
+QYxvR9lWi9KcRilRLHA5NBLnS1DvyX5bjR/YOsVEEiHENxcnk/2/2770u/Xr6PTq
+6tWrwmDsl2hryw49heogGnMrC8VLPIg/HEmjAA8j2Z/MydfAPJ9roLrs4Oez874m
+mn5XL0SjjOuUBoZQOxsrhtBWRAR/4sYnND9drEvA62itRoy++iSKDLwe0uogZ2Pj
+pcXmXa8ISal09LFjwVRieqg4EBkmYgyIr3LzdghtGK4+bBuvhhN8nd/oEW56dDou
+F8vAPKNzV/XKaR1KemxV7NmTQ0un+ylWM8p/B11FNiuoyyLl927tDuw1PbBrgO7u
+n+vI3VGrOxsfGFjZkgv9H64psMK6rQ9omr8poWMpP9ePuI0uv0kundZmrIni/HBx
+fiUBW9bo3vdNAM2YaW81BVhsg63JmO5J28p+mLQpM3/02xvSlw4=
+=aXbn
+-----END PGP SIGNATURE-----
+
+
+--=-=JApy0JsNBPXWGb=-=--
+
+
+
+--===============3616465480157256933==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3616465480157256933==--
+
+

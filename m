@@ -2,46 +2,109 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B398130865
-	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 15:18:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 071BF130867
+	for <lists+openwrt-devel@lfdr.de>; Sun,  5 Jan 2020 15:19:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IwW4CZ61E+0yDn8nzebYvq2hNsJ7BO4fIB6mJ/BsRCg=; b=EWsBcAkp/Ha67J
-	5vliN8+srz7/icmQfhx3BSc0qqj2gPXWCV4T+IGQPlPI8lf2SoINXH5wPlUcHLIjhRvF+rAG/Xci0
-	z3F2QSA8uCI6QSaVcFHeFAVGbqurUFhIBoZpKDTxDLWLSe2kZZuDMyCV/zwvmw2XmHCWCI1NdC2Bt
-	BROnLnXCoIBzWuoCS4FRE+3Awf8QoVGZzY1zq2jDqRdd1O7ZfgklLI6138uGcN15eWR7836enYAmj
-	IHeC56qOgeGEy03Yc7Dhv1MenN4ECtRAi5NImimIgudBX2vxWNYOAXGHM5QYljaFW70AYdYyZtvLR
-	gOVBLs0s1nywpxGJCkJw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YTOzxFgtk2WSpkeDqmd9UTG6Nz7v/WMcLIszF7Lxwa8=; b=JWtCSLN6Ox/ZQL
+	A16JKhbDOiQCBbBL1HFRchz2r24J0ISl8ijhqQ4vmQXoMNnPuxTJ2bFkb5rEt8tmQIr1fP7ZmmdFm
+	orDYYSi+WzuDO4Cc07xK3ihDUbmv9GZPOzoJBqC57MJrwk+x44uk1dddS8ezpHfVKVSROEIhkW+Gu
+	BxAHYIZ8BEAqkU9+PJIiPmGXc2vlRrtMVzHzlBQCTzumKD4pNYGc1BFEc2cw8L2uUBEW4RrF6Zmef
+	OoI+RVbQOydH2PrBtrH9ObfUUH3ecoBQOGk6n5tLyOlBzaUyeNaIHRnxryzU46fCIFCZhSUPmgFW/
+	wW/VbIYAQoVCUE26pJaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1io6jk-00052i-4j; Sun, 05 Jan 2020 14:18:36 +0000
-Received: from mout-p-202.mailbox.org ([2001:67c:2050::465:202])
+	id 1io6kS-0005Ly-Tf; Sun, 05 Jan 2020 14:19:20 +0000
+Received: from mout-p-202.mailbox.org ([80.241.56.172])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1io6ja-000522-IQ
- for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 14:18:30 +0000
+ id 1io6kI-0005LL-GG
+ for openwrt-devel@lists.openwrt.org; Sun, 05 Jan 2020 14:19:12 +0000
 Received: from smtp2.mailbox.org (smtp2.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-202.mailbox.org (Postfix) with ESMTPS id 47rLMw46KmzQlCQ;
- Sun,  5 Jan 2020 15:18:20 +0100 (CET)
+ by mout-p-202.mailbox.org (Postfix) with ESMTPS id 47rLNp2wQhzQlCQ;
+ Sun,  5 Jan 2020 15:19:06 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id 7yNZocAKYsHs; Sun,  5 Jan 2020 15:18:14 +0100 (CET)
-From: Hauke Mehrtens <hauke@hauke-m.de>
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id 487QvBg6osi8; Sun,  5 Jan 2020 15:18:59 +0100 (CET)
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 Jan 2020 15:17:56 +0100
-Message-Id: <20200105141756.23473-1-hauke@hauke-m.de>
+References: <20200105141756.23473-1-hauke@hauke-m.de>
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Autocrypt: addr=hauke@hauke-m.de; keydata=
+ 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
+Message-ID: <a7a22f06-5abe-888e-c44c-7b1c28b54f21@hauke-m.de>
+Date: Sun, 5 Jan 2020 15:18:59 +0100
 MIME-Version: 1.0
+In-Reply-To: <20200105141756.23473-1-hauke@hauke-m.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_061826_758107_4569D94F 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20200105_061910_848682_EB980ED6 
+X-CRM114-Status: GOOD (  14.34  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -49,7 +112,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH] ramips: Fix sysupgrade for Xiaomi mir3g
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.241.56.172 listed in list.dnswl.org]
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: Fix sysupgrade for Xiaomi mir3g
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,61 +126,35 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>, mail@adrianschmutzler.de, dev@kresin.me
+Cc: mail@adrianschmutzler.de, dev@kresin.me
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Without this change sysupgrade from 18.06 to 19.07 is only possible with
-the -F option.
-In OpenWrt 18.06 the nand_do_platform_check() function is called with
-the board name mir3g only, if the tar does not use mir3g it will fail.
-OpenWrt 19.07 and later support the metadata with the supported_devices
-attribute to allow renaming. Do the renaming of the target between 19.07
-and master like it is done for some other boards.
+On 1/5/20 3:17 PM, Hauke Mehrtens wrote:
+> Without this change sysupgrade from 18.06 to 19.07 is only possible with
+> the -F option.
+> In OpenWrt 18.06 the nand_do_platform_check() function is called with
+> the board name mir3g only, if the tar does not use mir3g it will fail.
+> OpenWrt 19.07 and later support the metadata with the supported_devices
+> attribute to allow renaming. Do the renaming of the target between 19.07
+> and master like it is done for some other boards.
+> 
+> I tested the following sysupgrades successfully without -F
+> 18.06 -> 19.07
+> 19.07 -> master
+> master -> 19.07
+> 
+> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+> ---
+>  target/linux/ramips/image/mt7621.mk | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
 
-I tested the following sysupgrades successfully without -F
-18.06 -> 19.07
-19.07 -> master
-master -> 19.07
+This should only go into 19.07 and not into master.
 
-Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
----
- target/linux/ramips/image/mt7621.mk | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index 7eb59188fb..39017a48e1 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -269,7 +269,7 @@ define Device/xiaomi_mir3p
- endef
- TARGET_DEVICES += xiaomi_mir3p
- 
--define Device/xiaomi_mir3g
-+define Device/mir3g
-   DTS := MIR3G
-   BLOCKSIZE := 128k
-   PAGESIZE := 2048
-@@ -282,12 +282,12 @@ define Device/xiaomi_mir3g
-   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-   DEVICE_TITLE := Xiaomi Mi Router 3G
-   SUPPORTED_DEVICES += R3G
--  SUPPORTED_DEVICES += mir3g
-+  SUPPORTED_DEVICES += xiaomi,mir3g
-   DEVICE_PACKAGES := \
- 	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic \
- 	uboot-envtools
- endef
--TARGET_DEVICES += xiaomi_mir3g
-+TARGET_DEVICES += mir3g
- 
- define Device/mt7621
-   DTS := MT7621
--- 
-2.20.1
-
+Hauke
 
 _______________________________________________
 openwrt-devel mailing list

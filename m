@@ -2,42 +2,42 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE74513166A
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 17:59:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFD861316B1
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 18:23:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JN/+iPbSkzHKtGR2Ryqb9Etp7GhS8WMUWWxxVZvR2Hc=; b=Hpv5Och2R0OUNkmSac2KDhpZ6
-	r3o2Psv1SirQSwRLyEMTadUTLIerJ1JIlDoJsiVGHtXOdRVn2FXmt0cwbbQhDPrpkjOvo6yA6BKTA
-	msfSsjGfzeGwgFznvFz4qG1cuOvaw3DrNDXMBJClMWpvpxh024Gm5h8aGEmSBCevA2reAlIIRTDb2
-	EV+JToMqzDJSaDUKEun3PnDPLEoPeGN9N2uy2geJVuB29Rq+BOIouWR6e212ZwXUtwGoaP9oUA7At
-	BJ59EaTq+SgR3X3qPuq52ZXNiJiLUmVvoxPY3VPsrPlsAMSoehrYZ6EuIlCZmTQkqblHHmoLeEltk
-	ym9UnQeqA==;
+	 bh=JpVGpoWwS6oZhidA3blo24H9ZwY+iRVEKwLvTvjorz4=; b=rBnuMZABhS1zWhmGJR2oYhhQj
+	MPoAKjWY39yiakot1bT9J1h1lLsQBNIVFlMMEEAzwgqGS0trnXdvbwz63U9rAFvAF96ZSGiHeU92z
+	eF1rOANUhtPXRb09kY72wc0Kr0blCM+iLa2KTZDVrKclySByhxSfxyvH8fc8U3LMp8XrromQYfIwT
+	T8Q2qlsmM2cKjh/GdKHIGvNgiNkul0kIXEFddXFmFGYbHHkCM7mCyhwZUGFiX8zqBATTyjV97CqQo
+	9CQu0pR6WF1R028PJXZ9ip4FW+9sAJWNaNxz7J78kzDzO96AUrUQvWRfzC4HnDeqMjx23F1H1O67b
+	mdN7uQyKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioVjB-0000Lh-Uv; Mon, 06 Jan 2020 16:59:42 +0000
-Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
+	id 1ioW6R-0002DZ-9y; Mon, 06 Jan 2020 17:23:43 +0000
+Received: from mout-p-101.mailbox.org ([2001:67c:2050::465:101])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioVj0-0000L1-Ja
- for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 16:59:36 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
+ id 1ioW69-00026a-Kb
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 17:23:28 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47s1vM2jzJzQlBw;
- Mon,  6 Jan 2020 17:59:27 +0100 (CET)
+ by mout-p-101.mailbox.org (Postfix) with ESMTPS id 47s2Qy4NWyzKmbN;
+ Mon,  6 Jan 2020 18:23:22 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id DqM0bpw_0qZG; Mon,  6 Jan 2020 17:59:09 +0100 (CET)
-To: Eneas Queiroz <cotequeiroz@gmail.com>
-References: <a42e0ef1-b2b8-4f77-624d-2a8831fe073d@hauke-m.de>
- <58c97e81-f7bc-f12b-9f1e-d59a086fafc7@hauke-m.de>
- <CAPxccB2+SKHwpZ53pvJZGzCXxBvpMokzGoK-ZzkCA8CnJfLm8Q@mail.gmail.com>
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id 5oBmalyrwqRO; Mon,  6 Jan 2020 18:23:19 +0100 (CET)
+To: e9hack <e9hack@gmail.com>
+References: <b9a184d2-a2bc-5b53-8daa-f939eb9915c4@gmail.com>
+ <20200106162058.GA86978@meh.true.cz>
+ <ea2a62b2-04bd-ccab-1658-049c30f2635b@gmail.com>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -99,13 +99,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <29aceaca-e9af-8327-7e52-dbed8d550d32@hauke-m.de>
-Date: Mon, 6 Jan 2020 17:58:55 +0100
+Message-ID: <a8930dd7-a4f3-d241-9bd1-e2580ca2cea3@hauke-m.de>
+Date: Mon, 6 Jan 2020 18:23:13 +0100
 MIME-Version: 1.0
-In-Reply-To: <CAPxccB2+SKHwpZ53pvJZGzCXxBvpMokzGoK-ZzkCA8CnJfLm8Q@mail.gmail.com>
+In-Reply-To: <ea2a62b2-04bd-ccab-1658-049c30f2635b@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_085933_996482_9939C055 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20200106_092326_008514_71B29F05 
+X-CRM114-Status: GOOD (  16.24  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -113,7 +113,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 final timeline
+Subject: Re: [OpenWrt-Devel] uhttpd/luci/rpcd is broken?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,74 +125,117 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jow@openwrt.org>,
- LEDE Development List <openwrt-devel@lists.openwrt.org>,
- =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
-Content-Type: multipart/mixed; boundary="===============1030112276417708594=="
+Cc: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
+ openwrt-devel@lists.openwrt.org, Daniel Danzberger <daniel@dd-wrt.com>
+Content-Type: multipart/mixed; boundary="===============5916372977996494180=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============1030112276417708594==
+--===============5916372977996494180==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="Dyg05lzkKa9hEUw0VbiZPi76QIpdGbBZT"
+ boundary="VLB5Ez5YNZMsmoUOAV5XbCpPKaffKkDII"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Dyg05lzkKa9hEUw0VbiZPi76QIpdGbBZT
-Content-Type: multipart/mixed; boundary="gXJFqpAaUQv2bC8ZQwWap5BQxkDxAf9qr"
+--VLB5Ez5YNZMsmoUOAV5XbCpPKaffKkDII
+Content-Type: multipart/mixed; boundary="EzaMg2AZviboZUSv2Zc5rWSUqSQnhXU0F"
 
---gXJFqpAaUQv2bC8ZQwWap5BQxkDxAf9qr
+--EzaMg2AZviboZUSv2Zc5rWSUqSQnhXU0F
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 1/2/20 1:04 AM, Eneas Queiroz wrote:
+On 1/6/20 5:39 PM, e9hack wrote:
+> Am 06.01.2020 um 17:20 schrieb Petr =C5=A0tetiar:
+>> e9hack <e9hack@gmail.com> [2020-01-06 16:59:47]:
+>>
+>>> it looks like that uhttpd/luci/rpcd is broken again. The call 'ubus c=
+all
+>>> luci-rpc getWirelessDevices' does fail 'Command failed: Request timed=
+ out'.
+>>
+>> can you provide little bit more details?  I don't see any problems wit=
+h
+>> `OpenWrt 19.07-SNAPSHOT, r10857-abb0665bec` running on TP-Link Archer =
+C7 v5.
 >=20
-> On Wed, Jan 1, 2020 at 6:54 PM Hauke Mehrtens <hauke@hauke-m.de
-> <mailto:hauke@hauke-m.de>> wrote:
+> Router is a TP-Link Archer C7 v2. I'm using the last main revision: Ope=
+nWrt SNAPSHOT r11924-99dd2709b8. After login in uhttpd/luci, the first pa=
+ge times out and forces new login. From my last experience with a uhttp/l=
+uci crash, I checked all used ubus calls in a shell. 'ubus call luci-rpc =
+getWirelessDevices' does time out and generates a page fault:=20
 >=20
->     I will shift both releases (18.06.6 and 19.07.0 final) to Monday 6.=
+> Mon Jan  6 17:21:32 2020 kern.info kernel: [ 2361.197629] do_page_fault=
+(): sending SIGSEGV to rpcd for invalid write access to 00000000
+> Mon Jan  6 17:21:32 2020 kern.info kernel: [ 2361.206094] epc =3D 77f25=
+588 in libc.so[77f08000+9b000]
+> Mon Jan  6 17:21:32 2020 kern.info kernel: [ 2361.211275] ra  =3D 77df5=
+9d5 in luci.so[77df4000+15000]
+> =20
+> Regards,
+> Hartmut
 
->     January to get some security fixes in, please get your changes in t=
-ill
->     Saturday so we have some testing before.
->=20
-> <snip>
-> I would suggest a cherry-pick from=C2=A0d5ede68f8b (wolfssl: bump to
-> 4.3.0-stable)
->=20
-> It's a security update, and appears to make WPA3 Personal work using
-> wpad-wolfssl (mesh is still failing).
+I saw some strange behavior of "ubus call luci-rpc getWirelessDevices"
+in master, it did not crash but showed wrong values or mixed some up
+like the BSSID contains the SSID. I did a clean build and now it is
+working fine for me. I haven't seen this in 19.07.
 
-I cherry-picked it, but WPA3 still does not work for me.
+I assume this is related to the changes:
+https://git.openwrt.org/?p=3Dproject/iwinfo.git;a=3Dcommitdiff;h=3Dbf2c10=
+69a7f14d1af1e02c8edd2b7338f0355ac8
+https://git.openwrt.org/?p=3Dproject/rpcd.git;a=3Dcommitdiff;h=3Defe51f41=
+d6288fa8503cc4f2efb37a777767d505
+
+https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommitdiff;h=3D8fb6b=
+e73b552618567dcfcb1eee3ffbb7deadb7e
+https://git.openwrt.org/?p=3Dopenwrt/openwrt.git;a=3Dcommitdiff;h=3D2d80f=
+7e836b5a04b214cc7f00c73517b959712ca
+
+I saw this:
+-------
+                                "iwinfo": {
+                                        "noise": 0,
+                                        "channel": 36,
+                                        "country": "40:31:3C:02:8F:BA",
+                                        "phy":
+"\u0001\u0004\u0010\u0010\b\u0001",
+                                        "txpower": 20,
+                                        "txpower_offset": 0,
+                                        "frequency": 5180,
+                                        "frequency_offset": 0,
+                                        "hwmodes": [
+                                                "ac",
+                                                "n"
+                                        ],
+---------
 
 Hauke
 
 
---gXJFqpAaUQv2bC8ZQwWap5BQxkDxAf9qr--
+--EzaMg2AZviboZUSv2Zc5rWSUqSQnhXU0F--
 
---Dyg05lzkKa9hEUw0VbiZPi76QIpdGbBZT
+--VLB5Ez5YNZMsmoUOAV5XbCpPKaffKkDII
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4TZ08ACgkQ8bdnhZyy
-68ccBwgA2R8+NzSSa263lO5QO8Ii9m8fMEHzjg78UwMrXomS/8V+9D/w+2bqZGRz
-VjS7aaz/b00lPiKhwbw1Z63HOG8lEiYD05deFcliNZctwUwWYnz8dvk31msXB9I+
-Fn07aHLX4aI6NFdYAXyqgPnQTlQdrfQVSQfafsPcwYXSiOITLRPKj18/OrgUZjIS
-2nzMB3Wo8u9L2xVjWK4o4GYVWP1zbOwsDo2AoSrx4osVG2rfFXKCvfB3amcSD23v
-sXtkkqAnnkhTdRWhvN0HLqeLxh/QSTKbzGhUizhWMRwehYO1XYzoXqgxWrZCNQ2d
-QaKvICnXMWK4Zni4P71F7ZYhu8DeRA==
-=cAc3
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4TbQEACgkQ8bdnhZyy
+68dzcgf8DfQiSyPwpG2+NslRGEg2DfwXKzxxW4hY1r4c4YPCnbkvYG3vWYE9narz
+NXQPUiXxDXPwuI70S1M58aCS6oZCjQ+XfkEvNeiDboCK8Vcqa8tjivZ0lnSgDwvw
+mlFEGETY74RrH+iDEWpWlYc2LtWOXB9NIQtdtn/kD81KcIjxNP8EG1pUBfOTtfP4
+HH73FBL8hObM5rI9C6paoduxmekq9H1P/SEq+P68ZD59FMcq9DBGpT3NaWzz3D3V
+YNbCTV5y7gBwt9zJylrClIKZrh7DYGTMd2HbOiiTTg5VFMVuResNWyXi8BQuyZjb
+WK48GYKIm3PZfw16pbC0sRCaO+wa9Q==
+=MlET
 -----END PGP SIGNATURE-----
 
---Dyg05lzkKa9hEUw0VbiZPi76QIpdGbBZT--
+--VLB5Ez5YNZMsmoUOAV5XbCpPKaffKkDII--
 
 
---===============1030112276417708594==
+--===============5916372977996494180==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -203,5 +246,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============1030112276417708594==--
+--===============5916372977996494180==--
 

@@ -2,115 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D21711316EC
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 18:40:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B935131715
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 18:51:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Z9MwSX/xLeDGVhPSOOuS2xmlM9MKm2AQUdq+4vwKtz8=; b=HlZl8E0CzN00/L89uirWTVKdd
-	U1WZeP/DncBdMqbjfumn/diF9vGUSkcXl/ZAvo41+8tIvl9iEbEqJ3T92fUeERfNii9kisjeEUcM/
-	RXuaazLIZslbB40X0W6TP1waN3jM5YM7x7//c5vY9gibDaNinRhdL20AMwLOAKUmlGX4sz9LKdbAj
-	zId4FLjlsP6LqNmEfplxtY3ZW+0/4Cmp/p082aegpowmnm/QgaHeBez07sU/HCitJlZ+56j6vPEeI
-	5rRdtRG0duxP91SWyxxdULxZ9AVcuk3tZY3opJRnwvrX/zFp1uzz2dGMGFJkTYth4v6BUCWB6Xrx6
-	UH11PUqIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EuGZpfFawkZyfXxeq1K+GGqMiC1B8WbZJ3F1hJUNGtk=; b=HJ4Hq9k0Xfl8WY
+	4Gk57K5QHIrTjEO15Yo6pWQcQe4naDZiD4h8gflRw4v5pU5xvzBk7UtOJgpj+ZKKioMi8L6GJsWEo
+	y5hBG9/pZXRRnkzK1XbZe0sTyduIeWDn2PTiHZ2nxeAmEs3yT/Qd5MfSK1+hQkQB0kdPq7rqk+Raz
+	2QY1ueHYjLMWU8DNxKTzVye0QyE490T0TOKubpqA00aaenPwbw6tkVSSkUbVlX/k98exotORSm15o
+	DEp3HnutIxnNaPHCyfMp8Huw8F0WcQrsjw32Xy4f43gOKWq8R9JF/3Sl1DiscJTv4AAVot+78T7oy
+	8Bu/4HKFRIuXfoOdKkWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioWMa-0002Zd-Nv; Mon, 06 Jan 2020 17:40:24 +0000
-Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
+	id 1ioWWw-0007Dq-UG; Mon, 06 Jan 2020 17:51:06 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioWMA-0001CP-RG
- for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 17:40:00 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47s2p01ywRzQlBw;
- Mon,  6 Jan 2020 18:39:52 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
- [80.241.56.123]) (amavisd-new, port 10030)
- with ESMTP id 7g2epNzUiUEv; Mon,  6 Jan 2020 18:39:46 +0100 (CET)
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: LEDE Development List <openwrt-devel@lists.openwrt.org>
-References: <a42e0ef1-b2b8-4f77-624d-2a8831fe073d@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
- BgkEMZVK9YogfMyVHFEcy0RqfO7gIYBYvFp0z32btJhjkjBm9hZ6eonjFnG9XmqDKg/aZI+u
- d9KGUh0DeaHT9FY96qdUsxIsdCodowf1eTNTJn+hdCudjLWjDf9FlBV0XKTN+ETY3pbPL2yi
- h8Uem7tC3pmU7oN7Z0OpKev5E2hLhhx+Lpcro4ikeclxdAg7g3XZWQLqfvKsjiOJsCWNXpy7
- hhru9PQE8oNFgSNzzx2tMouhmXIlzEX4xFnJghprn+8EA/sCaczhdna+LVjICHxTO36ytOv7
- L3q6xDxIkdF6vyeEtVm1OfRzfGSgKdrvxc+FRJjp3TIRPFqvYUADDPh5Az7xa1LRy3YcvKYx
- psDDKpJ8nCxNaYs6hqTbz4loHpv1hQLrPXFVpoFUApfvH/q7bb+eXVjRW1m2Ahvp7QipLEAK
- GbiV7uvALuIjnlVtfBZSxI+Xg7SBETxgK1YHxV7PhlzMdTIKY9GL0Rtl6CMir/zMFJkxTMeO
- 1P8wzt+WOvpxF9TixOhUtmfv0X7ay93HWOdddAzov7eCKp4Ju1ZQj8QqROqsc/Ba87OH8cnG
- /QX9pHXpO9efHcZYIIwx1nquXnXyjJ/sMdS7jGiEOfGlp6N9IwARAQABtCFIYXVrZSBNZWhy
- dGVucyA8aGF1a2VAaGF1a2UtbS5kZT6JAlQEEwEIAD4CGwEFCwkIBwIGFQgJCgsCBBYCAwEC
- HgECF4AWIQS4+/Pwq1ZO6E9/sdOT3SBjCRC1FQUCXQTYzQUJA5qXpgAKCRCT3SBjCRC1FT6c
- D/9gD0CtAPElKwhNGzZ/KNQL39+Q4GOXDAOxyP797gegyykvaqU/p0MOKdx8F2DHJCGlrkBW
- qiEtYUARnUJOgftoTLalidwEp6eiZM9Eqin5rRR6B5NIYUIjHApxjPHSmfws5pnaBdI6NV8t
- 5RpOTANIlBfP6bTBEpVGbC0BwvBFadGovcKLrnANZ4vL56zg0ykRogtD8reoNvJrNDK7XCrC
- 2S0EYcGD5cXueJbpf6JRcusInYjMm/g2sRCH4cQs/VOjj3C66sNEMvvZdKExZgh/9l9RmW0X
- 6y7A0SDtR3APYWGIwV0bhTS2usuOAAZQvFhc+idSG0YrHqRiOTnWxOnXkFFaOdmfk99eWaqp
- XOIgxHr6WpVromVI+wKWVNEXumLdbEAvy1vxCtpaGQpun5mRces5GB2lkZzRjm90uS9PgWB1
- IYj1ehReuj0jmkpan0XdEhwFjQ3+KfyzX7Ygt0gbzviGbtSB2s1Mh0nAdto9RdIYi3gCLQh3
- abtwk6zqsHRBp1IHjyNq60nsUSte4o1+mRBoB6I7uTkxqJPmynwpmAoaYkN2MRO8C1O09Yd4
- H3AgFGZBXpoVbph8Q7hE33Y9UrElfiDsvdj4+JVu1sdPPGFWtpjpe5LeoXzLANAbJ2T+Y68U
- gtsNFCbSKjXsRJlLIHR1yHQbq2VdUDmsUZaRbLkBDQRbS3sDAQgA4DtYzB73BUYxMaU2gbFT
- rPwXuDba+NgLpaF80PPXJXacdYoKklVyD23vTk5vw1AvMYe32Y16qgLkmr8+bS9KlLmpgNn5
- rMWzOqKr/N+m2DG7emWAg3kVjRRkJENs1aQZoUIFJFBxlVZ2OuUSYHvWujej11CLFkxQo9Ef
- a35QAEeizEGtjhjEd4OUT5iPuxxr5yQ/7IB98oTT17UBs62bDIyiG8Dhus+tG8JZAvPvh9pM
- MAgcWf+Bsu4A00r+Xyojq06pnBMa748elV1Bo48Bg0pEVncFyQ9YSEiLtdgwnq6W8E00kATG
- VpN1fafvxGRLVPfQbfrKTiTkC210L7nv2wARAQABiQI8BBgBCAAmAhsMFiEEuPvz8KtWTuhP
- f7HTk90gYwkQtRUFAl0E2QUFCQOakYIACgkQk90gYwkQtRUEfQ//SxFjktcASBIl8TZO9a5C
- cCKtwO3EvyS667D6S1bg3dFonqILXoMGJLM0z4kQa6VsVhtw2JGOIwbMnDeHtxuxLkxYvcPP
- 6+GwQMkQmOsU0g8iT7EldKvjlW2ESaIVQFKAmXS8re36eQqj73Ap5lzbsZ6thw1gK9ZcMr1F
- t1Eigw02ckkY+BFetR5XGO4GaSBhRBYY7y4Xy0WuZCenY7Ev58tZr72DZJVd1Gi4YjavmCUH
- BaTv9lLPBS84C3fObxy5OvNFmKRg1NARMLqjoQeqLBwBFOUPcL9xr0//Yv5+p1SLDoEyVBhS
- 0M9KSM0n9RcOiCeHVwadsmfo8sFXnfDy6tWSpGi0rUPzh9xSh5bU7htRKsGNCv1N4mUmpKro
- PLKjUsfHqytT4VGwdTDFS5E+2/ls2xi4Nj23MRh6vvocIxotJ6uNHX1kYu+1iOvsIjty700P
- 3IveQoXxjQ0dfvq3Ud/Sl/5bUelft21g4Qwqp+cJGy34fSWD4PzOCEe6UgmZeKzd/w78+tWP
- vzrTXNLatbb2OpYV8gpoaeNcLlO2DHg3tRbe/3nHoU8//OciZ0Aqjs97Wq0ZaC6Cdq82QNw1
- dZixSEWAcwBw0ej3Ujdh7TUAl6tx5AcVxEAmzkgDEuoJBI4vyA1eSgMwdqpdFJW2V9Lbgjg5
- 2H6vOq/ZDai29hi5AQ0EW0t7cQEIAOZqnCTnoFeTFoJU2mHdEMAhsfh7X4wTPFRy48O70y4P
- FDgingwETq8njvABMDGjN++00F8cZ45HNNB5eUKDcW9bBmxrtCK+F0yPu5fy+0M4Ntow3PyH
- MNItOWIKd//EazOKiuHarhc6f1OgErMShe/9rTmlToqxwVmfnHi1aK6wvVbTiNgGyt+2FgA6
- BQIoChkPGNQ6pgV5QlCEWvxbeyiobOSAx1dirsfogJwcTvsCU/QaTufAI9QO8dne6SKsp5z5
- 8yigWPwDnOF/LvQ26eDrYHjnk7kVuBVIWjKlpiAQ00hfLU7vwQH0oncfB5HT/fL1b2461hmw
- XxeV+jEzQkkAEQEAAYkDcgQYAQgAJgIbAhYhBLj78/CrVk7oT3+x05PdIGMJELUVBQJdBNkF
- BQkDmpEUAUDAdCAEGQEIAB0WIQTLPT+4Bx34nBebC0Pxt2eFnLLrxwUCW0t7cQAKCRDxt2eF
- nLLrx3VaB/wNpvH28qjW6xuAMeXgtnOsmF9GbYjf4nkVNugsmwV7yOlE1x/p4YmkYt5bez/C
- pZ3xxiwu1vMlrXOejPcTA+EdogebBfDhOBib41W7YKb12DZos1CPyFo184+Egaqvm6e+GeXC
- tsb5iOXR6vawB0HnNeUjHyEiMeh8wkihbjIHv1Ph5mx4XKvAD454jqklOBDV1peU6mHbpka6
- UzL76m+Ig/8Bvns8nzX8NNI9ZeqYR7vactbmNYpd4dtMxof0pU13EkIiXxlmCrjM3aayemWI
- n4Sg1WAY6AqJFyR4aWRa1x7NDQivnIFoAGRVVkJLJ1h8RNIntOsXBjXBDDIIVwvvCRCT3SBj
- CRC1FZFcD/9fJY57XXQBDU9IoqTxXvr6T0XjPg7anYNTCyw3aXCW/MrHAV2/MAK9W2xbXWmM
- yvhidzdGHg80V3eJuc4XvQtrvK3HjDxh7ZpF9jUVQ39jKNYRg2lHg61gxYN3xc/J73Dw8kun
- esvZS2fHHzG1Hrj2oWv3xUbh+vvR1Kyapd5he8R07r3vmG7iCQojNYBrfVD3ZgenEmbGs9fM
- 1h+n1O+YhWOgxPXWyfIMIf7WTOeY0in4CDq2ygJfWaSn6Fgd4F/UVZjRGX0JTR/TwE5S2yyr
- 1Q/8vUqUO8whgCdummpC85ITZvgI8IOWMykP+HZSoqUKybsFlrX7q93ykkWNZKck7U7GFe/x
- CiaxvxyPg7vAuMLDOykqNZ1wJYzoQka1kJi6RmBFpDQUg7+/PS6lCFoEppWp7eUSSNPm8VFb
- jwa1D3MgS3+VSKOMmFWGRCY99bWnl2Zd2jfdETmBFNXA94mg2N2vI/THju79u1dR9gzpjH7R
- 3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
- 8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
- 5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <419e6c10-b330-300b-7912-cc67de5a02fa@hauke-m.de>
-Date: Mon, 6 Jan 2020 18:39:41 +0100
+ id 1ioWWp-0007DM-NO
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 17:51:00 +0000
+Received: by mail-wr1-x430.google.com with SMTP id y11so50633986wrt.6
+ for <openwrt-devel@lists.openwrt.org>; Mon, 06 Jan 2020 09:50:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=l7wW2YR2xJLusyBJi//WMjhGQ0d1J77HNypFiIB2RHU=;
+ b=UOOlqcVStaiwsOufsNv4M++o9iKo1F261QJ8ZFuXirucXMLwmjU5sWEk0X//OrtGTq
+ CYF86tR2Eo0Gqym6dyX1hFqF60PLGVhKxRMyIkZBbaBNh/RItGIYixq2WhXPD24a/1Cx
+ VktRU/zXcfdxZ7/viLdnkQTaGhAkbSmc3qqJi7+xGR4RSwLKxAfBjH8q0x+rffskkg5T
+ ZqkztEGoyYaaUpZpO5xq50NxYPT6vfhX6U98h9JczZE5xCdzWE5zhbIdSFpM5gt+IHYf
+ mrHcCBXCNY7Q7re2ZVFZ6jqxPcbreHO07OD2xDPIhLgnRR7bYS4xlO3AsVed4Wwj7tDJ
+ l3Og==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=l7wW2YR2xJLusyBJi//WMjhGQ0d1J77HNypFiIB2RHU=;
+ b=rbzUTPiWV1RCud6FUB7o/kUROvq5192z//Y4UCjgAyaf4iV4wHkq/JdJiclzSRYR+S
+ L/nM/gCiGhqCPd0eUD69h9hqNKL4vFlBipjkxomRi2KNDwP8Z/sFoFYgsYYDiz1oLtXv
+ ws1SbC0UnE98HY8OGJ9xs+zZaPGXUoujBvBes5HzAMS/wK8axiX80XgmNvGu5HrAEcli
+ WgV+B40ENNDRif1tscC6mG5nW9uPExKE1IFST01mcmIOzdi23Xwvq0vXccixpCyQNfia
+ c7KzqjF3MYZWjUxwXC62g39sOBog190zkgKzOh0FsbRpRGqtosXv/Yq6woN639dGDFkC
+ 2ktQ==
+X-Gm-Message-State: APjAAAU67Iis2dQzBD1XS/PomgwOE4kEEyMyycwNFbRPOosicQT00CzO
+ sXXgmI1mddyFs7H9yH6aBykVQ0Qi
+X-Google-Smtp-Source: APXvYqzdPW7VHhWrPTFg8TudwhxicbJiZOxVlyj8BiT+aQbGZo8VgkQetL0R23U4VPgyDoqWbjO+4g==
+X-Received: by 2002:a5d:43c7:: with SMTP id v7mr98161247wrr.32.1578333057409; 
+ Mon, 06 Jan 2020 09:50:57 -0800 (PST)
+Received: from localhost.localdomain (37-48-59-101.nat.epc.tmcz.cz.
+ [37.48.59.101])
+ by smtp.gmail.com with ESMTPSA id p5sm74268224wrt.79.2020.01.06.09.50.56
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 06 Jan 2020 09:50:56 -0800 (PST)
+From: Josef Schlehofer <pepe.schlehofer@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Mon,  6 Jan 2020 18:50:39 +0100
+Message-Id: <20200106175038.22485-1-pepe.schlehofer@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <a42e0ef1-b2b8-4f77-624d-2a8831fe073d@hauke-m.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_093959_178953_C2D86544 
-X-CRM114-Status: GOOD (  16.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200106_095059_786183_6F8D98BB 
+X-CRM114-Status: UNSURE (   7.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:430 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (pepe.schlehofer[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 final timeline
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH] [18.06] tools/expat: Update to version 2.2.9
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,94 +98,42 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jow@openwrt.org>
-Content-Type: multipart/mixed; boundary="===============6734569768697696374=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============6734569768697696374==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="gmPLbmm7Kk38dduDQ5OdYmAsYtsu3h39B"
+Fixes two CVEs:
+- CVE-2019-15903 (Fix heap overflow triggered by XML_GetCurrentLineNumber)
+- CVE-2018-20843 (Fix extraction of namespace prefixes from XML names)
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---gmPLbmm7Kk38dduDQ5OdYmAsYtsu3h39B
-Content-Type: multipart/mixed; boundary="OfKo6lpXITzdpqycYgzl8K2GQndxYS8fD"
+Signed-off-by: Josef Schlehofer <pepe.schlehofer@gmail.com>
+---
+ tools/expat/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
---OfKo6lpXITzdpqycYgzl8K2GQndxYS8fD
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+diff --git a/tools/expat/Makefile b/tools/expat/Makefile
+index 54527a7d0a..de7f2a0deb 100644
+--- a/tools/expat/Makefile
++++ b/tools/expat/Makefile
+@@ -9,10 +9,10 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=expat
+ PKG_CPE_ID:=cpe:/a:libexpat:expat
+-PKG_VERSION:=2.2.5
++PKG_VERSION:=2.2.9
+ 
+ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+-PKG_HASH:=d9dc32efba7e74f788fcc4f212a43216fc37cf5f23f4c2339664d473353aedf6
++PKG_HASH:=f1063084dc4302a427dabcca499c8312b3a32a29b7d2506653ecc8f950a9a237
+ PKG_SOURCE_URL:=@SF/expat
+ 
+ HOST_BUILD_PARALLEL:=1
+-- 
+2.24.1
 
-On 12/24/19 4:48 PM, Hauke Mehrtens wrote:
-> Hi,
->=20
-> I would like to tag 18.06.6 release in the evening of Wednesday 1.
-> January and then start the builders.
->=20
-> I would like to tag 19.07 final release on Friday 3. January and the
-> start the builders on Saturday or Sunday.
->=20
-> Are there any objections to these dates?
->=20
-> Both releases should fix all known security problems, this is release
-> gating, but I think everything is fixed now.
->=20
->=20
-> We now have the ath10k-ct small buffers version in master and 19.07, fo=
-r
-> the 19.07 branch it has to be selected, but Paul Fertser already
-> proposed a patch.
->=20
-> Here some people are complaining about bad 5GHz performance:
-> https://bugs.openwrt.org/index.php?do=3Ddetails&task_id=3D2682
-> https://forum.openwrt.org/t/openwrt-19-07-0-second-release-candidate/49=
-593/41
-> This should be related to the hostapd update from 2.7 to 2.9.
-> Does someone have time to debug this? It would be interesting which
-> commit exactly causes this, we also have hostapd 2.8 in between.
-
-Hi,
-
-I still plan to tag v19.07.0 final and v18.06.6 today.
-=46rom my side everything needed is in these releases.
-
-Hauke
-
-
---OfKo6lpXITzdpqycYgzl8K2GQndxYS8fD--
-
---gmPLbmm7Kk38dduDQ5OdYmAsYtsu3h39B
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4TcN0ACgkQ8bdnhZyy
-68ekgQgAiJYLKSDiURRI/YbIWmzVPN4uZZBO37PnDYmdJtezMi5TOXqp2riD3Cnj
-uJJ2FUTWMwTY1gFcntnvtAZ2gvI4bWhbdZSuEyOFm7edNkD+IdO+om6Y9GvYvF/3
-47RiZWuAapAXfwBupQjRBvhOefhQxJ3KLOoLDsU2tIDtw7k1OMLbRJ3kAwCQ8j/p
-E0yxhPhuKlwJfPSZPajIcQTizJgeV51nc4vjgRUUHA9Bo4qqtO0jNppnT/J1mGAy
-6yfwSwBKb8QCKN+8mofYT++7MHpI2aTM5A3jobSmYzfT1VULOC157HAfbNTj+nEw
-teSOK51HdeIcEN+X6KdeO9zVC3IG0g==
-=YC+q
------END PGP SIGNATURE-----
-
---gmPLbmm7Kk38dduDQ5OdYmAsYtsu3h39B--
-
-
---===============6734569768697696374==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============6734569768697696374==--
-

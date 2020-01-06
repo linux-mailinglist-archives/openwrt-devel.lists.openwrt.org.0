@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAADD130C1C
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 03:32:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15924130C1D
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 03:32:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,63 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=flOsxyKUZKZgCtCsQnAy+gcvs10wlxRkWfRbzs0pl1Q=; b=pM4ae9MCvIAUcVOVrwl727weqQ
-	OTebO2FsroabLhYqXgvcHa/97Q2YffSDrrv6+RiJFEk78hAOi92fbrFpUVaS/Kse4OhXh4JH48JaL
-	vhp+ma9Y2td5tFXXrCJvf49z4ne/gVklXviybvwyg2oRqrXtX0pMi76okL2BGzQZTX7VrCoAuqv8g
-	Dfbov+5dnCaxktLbMYX8hTRNMQUTcY+j7uOa3SLfGgbaEUCsR/GcxjsuJ6m2veq/4TUu0ZKN4si4A
-	jRpS6atB9zXpwy7GXshDCOPXbVX5pu37s9k1fcvQf4EF0a7BKKXS4nGgHadZ8UlHaQKyt8RQj8qbU
-	kFcJTWrQ==;
+	bh=5F7MgdyvrgplgCxeBs98h6qF0CBoAYqokDCJWEUX6E0=; b=DvEFnk7x1VIXmj1U78XUVuIbHH
+	pfLrwz3FVu7Nkc8JoVD6Tt1bOwk2kB99jG6PoEEVRqr9ewT7fmcLVogKHpiOXrHTAHxitT3atslwO
+	BnNO8oD4Z+pvssGr79QYQBJhF9PBKh4LaCPmsr4yK4VQXNGOpGqWIfXVE1kZb57JNupNjqwgnLOR2
+	SmBR6NVwVZ/jBrmLo7gG6tXpVbSXg4t+1JrPTyPva/mrYlCb9nI4GFjpCSiIAkHUmArJSJE9WD5K2
+	xNpVM7UxDdi0CVRXvktW1g3u5pECrJVFxNjfqts2iQ1dm9ZhNxuqQWBQgGPap01vJXjYmFvXDHfIf
+	zFDgzwDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioIBP-0001qf-2a; Mon, 06 Jan 2020 02:31:55 +0000
-Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
+	id 1ioIBa-00028d-8m; Mon, 06 Jan 2020 02:32:06 +0000
+Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioIAw-0001Qc-Da
- for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 02:31:27 +0000
-Received: by mail-pg1-x536.google.com with SMTP id x7so26153230pgl.11
- for <openwrt-devel@lists.openwrt.org>; Sun, 05 Jan 2020 18:31:24 -0800 (PST)
+ id 1ioIAy-0001Qh-5E
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 02:31:29 +0000
+Received: by mail-pg1-x52c.google.com with SMTP id x8so26155939pgk.8
+ for <openwrt-devel@lists.openwrt.org>; Sun, 05 Jan 2020 18:31:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=4UbFv+NdbiZ9F2Xo1g5YQOdHAXpc9sKL97aPfZ6oaQw=;
- b=aE5x1iysEMVu4IZo29HWTXdlaJrHRc4LB4qGCa8CmbOKKxTV7RZVKg5bjvSHhE2mTN
- yM/aedb+GgQ4Pyv/KspgCpiuSDwzPlgRky4TJjJMGUtgHon8ioe7n7Ci1Paa6dpnAvD4
- 1wRekPptMf+xhe3KDYKPVGPmo/xLATtfk7g5YrypaNvMVjkD1uVoWr0hKD8/jMm+kv+/
- ktues9EWTU9U1WJVRYtqh7n4dFPKlLcJv5FypZOf5c3g5L2qKsDxzkdTUAW95C62+LF4
- zxQcql2Reuj3V02uXVCEDypiOevHPFJ9ZG5/mFyIzYP4FpZ9m/n0JODVPucpLtGgA5ZD
- 3+lA==
+ bh=c+lBwgrZnoCVlywnYcqoEkMaHK0voBnmxueIkUuCJg8=;
+ b=Ha76gi/EKzEdcs6m4yTKatNM+YNzquFC1DwIpUuu1Nq2d9PmMe3VQwWB2lEJu8flcW
+ HPz+RURfTxhKxgQGR1YsWzJO8r1Q9hQmc7Kbq8/pR3+KSwVisOfd8c9orjkAx1eI1lTN
+ QAR5+Y91SZ316hG0QaNAyzL0+MYaJ5AfxdclAIoEpWHgWko7LnxGbRA17/vC1ISlYUnl
+ IkdY9TXmBy9b4qDoBYW4+jN3yvykCt/MkVbZroe9IkMj8P7xEP52dkRrzF7kOl2tRcRi
+ AM7nPwpexsYEnpZN6NhAlQsYEQedvjjN/7yeHV0BeX/SAbilN4cGTz/cw2QCj8zksNyM
+ 9kkQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=4UbFv+NdbiZ9F2Xo1g5YQOdHAXpc9sKL97aPfZ6oaQw=;
- b=AXq2FylqV2akhviY9iW7qOMWd+uMnamDgPL7QwEzWr52+DDPJF6/q5/oS6zJVlJUXI
- sHG9zFjdOSEsTTnVqWWATLKiC84xivo/e+YanFfnLIAqsKRwc8ccOoLtjyS62ty/gE+b
- zGDqMIm2g9wpX5STnDAT8fv/ZvR9QCuikgaR00sBJgR3/UCl05yPQ92xhBtUJnQPaiZE
- SdGPvmjkS+tVlM+Urq9hk/g0WaND9fjHmsn/P7quPgp9HyX/DsiQ4ulwTXXqJuHRhbzr
- 15iv+hIaYmn/OYd50muygjDbY9KvdHxnplbb8f93yG2ceDIPqw/oe82zs0oBBCJOh6cP
- KqpQ==
-X-Gm-Message-State: APjAAAVxQnLU+3FuLdygHI6m/sI5ymSatLSnr18N5rOWwnaQYblPIZvs
- KwNmWa+cP01Ut1JL8LvmHbd+8RZ1Okk=
-X-Google-Smtp-Source: APXvYqy/9TQ1EXUtxbt9Q008axoO4aAehdT0LRBO6E5HM1XviF0sR2LHL8N/JeQH69HB6FvP0goyBw==
-X-Received: by 2002:aa7:9315:: with SMTP id 21mr93038184pfj.162.1578277883410; 
- Sun, 05 Jan 2020 18:31:23 -0800 (PST)
+ bh=c+lBwgrZnoCVlywnYcqoEkMaHK0voBnmxueIkUuCJg8=;
+ b=ZtmdQVEVQqltDiKywKtfNJT+m3dnuw0GyE+oiTIgeEsDaXUfpIwlSW7tuu3/U0Z+HL
+ sHGGenlNEJbC0eMsQ4JrtKk63eD+wbB1qGPSy5P+uWfOllvZ9ZQCOvu+zHEeFaQMRixn
+ rrgU2XZmSxuVEGACx8MNYcXOYmkKKYBux7BCPIz/u5vsN1500NGKykn2qUONV5kEnUKJ
+ EpMG273TQ0TY+tEkJaDIwGbWgeNHO6+v5tdm5B0CX0aS44CLMtX+DcR/fx+wqzYGwV7m
+ 8I0lTbrz70HuwbGoE6LvPoBNEcG1gObxiBjYARi0b9CLvhoIh38MSEVij8V/xQDy9AXL
+ p34Q==
+X-Gm-Message-State: APjAAAXHDzRUEfHX5s3ggu1Ud0xZsiQ3bgetUri9z0bo8xEqVrdkNifa
+ GjbBZOsQEUbc9gcLwqlMqWfVNgHtzNw=
+X-Google-Smtp-Source: APXvYqwVHiFxgpv8IjuFLEzlHz3uEEkPe8IaDvxIATygsokZLU4XYk3/rIFv17lyHKYE4+QnHmeIJQ==
+X-Received: by 2002:a63:5964:: with SMTP id
+ j36mr109936495pgm.225.1578277884470; 
+ Sun, 05 Jan 2020 18:31:24 -0800 (PST)
 Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id q21sm73960609pff.105.2020.01.05.18.31.22
+ by smtp.gmail.com with ESMTPSA id q21sm73960609pff.105.2020.01.05.18.31.23
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Sun, 05 Jan 2020 18:31:23 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Sun,  5 Jan 2020 18:31:18 -0800
-Message-Id: <20200106023120.170525-2-rosenp@gmail.com>
+Date: Sun,  5 Jan 2020 18:31:19 -0800
+Message-Id: <20200106023120.170525-3-rosenp@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200106023120.170525-1-rosenp@gmail.com>
 References: <20200106023120.170525-1-rosenp@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200105_183126_484715_71AD57EF 
-X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-CacheID: sfid-20200105_183128_215166_A832BBF2 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:536 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:52c listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -88,7 +89,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 2/4] scripts/mkits.sh: add missing quotes
+Subject: [OpenWrt-Devel] [PATCH 3/4] scripts/mkits.sh: fix improper string
+ and array concatenation
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,28 +111,22 @@ Found with shellcheck.
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- scripts/mkits.sh | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ scripts/mkits.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/scripts/mkits.sh b/scripts/mkits.sh
-index def3d3c7c2..53b9ec5f20 100755
+index 53b9ec5f20..c09e537dbd 100755
 --- a/scripts/mkits.sh
 +++ b/scripts/mkits.sh
-@@ -55,7 +55,7 @@ if [ -z "${ARCH}" ] || [ -z "${COMPRESS}" ] || [ -z "${LOAD_ADDR}" ] || \
- 	usage
- fi
- 
--ARCH_UPPER=$(echo $ARCH | tr '[:lower:]' '[:upper:]')
-+ARCH_UPPER=$(echo "$ARCH" | tr '[:lower:]' '[:upper:]')
- 
- # Conditionally create fdt information
- if [ -n "${DTB}" ]; then
-@@ -115,4 +115,4 @@ ${FDT_NODE}
- };"
- 
- # Write .its file to disk
--echo "$DATA" > ${OUTPUT}
-+echo "$DATA" > "${OUTPUT}"
+@@ -43,7 +43,7 @@ do
+ 		k ) KERNEL=$OPTARG;;
+ 		o ) OUTPUT=$OPTARG;;
+ 		v ) VERSION=$OPTARG;;
+-		* ) echo "Invalid option passed to '$0' (options:$@)"
++		* ) echo "Invalid option passed to '$0' (options:$*)"
+ 		usage;;
+ 	esac
+ done
 -- 
 2.24.1
 

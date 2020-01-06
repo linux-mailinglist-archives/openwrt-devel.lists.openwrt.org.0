@@ -2,86 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51D2D131C14
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 00:08:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE5C4131C20
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 00:11:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gapeGZU5McHbXoYSRNny4wU/fz70h3Ss2UqyT1yUK+w=; b=d31HHgL+0xuoS/
-	J6O3fsZppwXDzOh8EVMKe9fKEkRVnUklA0IubChMk41ntdRmK58NjZ1xYvSZWQCXh+ReZHSkKQsxK
-	/4Q98AneScAgGiwoPg3NbSo5nqAWgYW4sDx8srlR7R0ys3ymYBNfYXFU0u9AvlIsPz2Bt2Kyb6Ljf
-	fQ3fGG8Wuy1ekUyStxW7NJFJlixLWkIft0Ev/TxddKYXerfIviRzB6ttTRzDr//TovPhSu6CwgHlc
-	W3a5jAq4uC5LE2SqCcppI8aO705fCPph235XK+djqxiao2hM0VkqaK+0BYduZMbEOviVsll1RibOO
-	q5NArlUEBMZWbjV+lVPA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vUap5qQuOCNfP8i1J+PijPQgMdngImXHQjOFt/5BI8M=; b=G2DPR5g+HHIWwK
+	YVgdwg6gXCB1OxTvg88l8saexvxO4Hzs0V4ldciBz32VlGLhRpj7Ettjne8LFb+++knX5Bxh1UkLy
+	Juf6ahMIw7j4i+z78WCi7/J6ABde5HEZtKLmW/bPMQNemHD1rV/G3kcAwm1mz/cDViWoXQ0TO4y5G
+	oLJhigmdO3/S8T1eR/r/YH2kVWz16WmRj6JMp/HBf11MUTqRFYN/Mwec0hf+A4t37I6y+JQSCGofJ
+	HSIrKkAU2zT4Zq+53ukjLIU5WwUKR/0GZ0JdYZEpTvezUVL0+35nqpj86WjoNo524iH66kxu5bkiW
+	j4ARXJReV9lRg4w+utdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iobTL-0000Pb-LS; Mon, 06 Jan 2020 23:07:43 +0000
-Received: from mail-il1-x12e.google.com ([2607:f8b0:4864:20::12e])
+	id 1iobXG-0002LL-TH; Mon, 06 Jan 2020 23:11:46 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iobTC-0000OU-U7
- for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 23:07:36 +0000
-Received: by mail-il1-x12e.google.com with SMTP id b15so44098723iln.3
- for <openwrt-devel@lists.openwrt.org>; Mon, 06 Jan 2020 15:07:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=iABTqZIJgnA0ifcomE1luCswzVpHdZg9q7+80UT+qoQ=;
- b=WYCVetmxv10nSY0+W5iZyinlr83PA/ACzMgwMzziCPeL1DfykvYdgcxTNjEXNAZV1H
- 0Jd2F3aLHzxeyLb8t6gd7KTkKd26wQCE26+CsKEU+6MxlaEQEGxx+S5TDL9sdkFzyhEC
- YQctE+c5l43Q9WLTs1V++05neXI5UKkZoRMBD6tw75ulJfcK03XwSBkypvxrxsEo7hR+
- Ikd3fobWa1GFAiFXSrOmGuxtb3nNL7N7Bv5SmhAdb3RmHax0kRGqnXmlh9UuT5DphtXY
- zewDNWUJe9N+am/UaEeB7jVKJ0F4i6Fiq8Jel4Q13hkJrqPiGUda+Z1KxdfF3Mmg+VOY
- G7tg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=iABTqZIJgnA0ifcomE1luCswzVpHdZg9q7+80UT+qoQ=;
- b=Kfp+lfC0pIXGzYJjluKKOVZnkQREXq55subV24t9AJ5ZYoLBiKaa/pMli4AYJVgtSO
- +45KB/XN2wAbITumk4WeHar0DCBDhgoKlpAKmSMaLtFgmFXRENIOuW2J7vulR8MSQvSH
- bG3SEDJNCJnTOTQG/eJUUSiOJsnxArk+L/k7abtTWtn7veLXRixdj4oGpgFkqXJYxWRv
- 9cZTcr6FzsmxIwFCk7fldFiCRg30QjWVMqQI4a3vPtLR3lC48NBfM2qzQB8FH8py1MmM
- 6SfnOAQ+2mrXrJmFPgDuBBDQe9G/hkwdW4EKYHcre6vOu1T2lB80Pg0sGNdExQsZNUjr
- t6Jg==
-X-Gm-Message-State: APjAAAUnZv/OJ2Ap+zELAd5JKOGXGrQYFH31+udGKvR96LoNdvp2j2J+
- 3LNTmgvgzsvjWUb8x1Dh2PHhEv/jsC8Tpj1Rpi0=
-X-Google-Smtp-Source: APXvYqxfDdX1Te4QqM8Nv3IieUWB/DRu8/nvFoN7VM6iX4fdBF3Y+NcGcDJmQR6xxEtni1Rh7ZL/zBbaN7uNnDFS5ZA=
-X-Received: by 2002:a92:c648:: with SMTP id 8mr90724730ill.208.1578352049663; 
- Mon, 06 Jan 2020 15:07:29 -0800 (PST)
+ id 1iobWy-000293-5z
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 23:11:30 +0000
+Received: from buildfff.adridolf.com ([188.194.105.26]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MEFnP-1iyBv22IGD-00AFP2 for <openwrt-devel@lists.openwrt.org>; Tue, 07
+ Jan 2020 00:11:21 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue,  7 Jan 2020 00:10:36 +0100
+Message-Id: <20200106231037.22460-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <a42e0ef1-b2b8-4f77-624d-2a8831fe073d@hauke-m.de>
- <419e6c10-b330-300b-7912-cc67de5a02fa@hauke-m.de>
-In-Reply-To: <419e6c10-b330-300b-7912-cc67de5a02fa@hauke-m.de>
-From: Dmitry Tunin <hanipouspilot@gmail.com>
-Date: Tue, 7 Jan 2020 02:07:18 +0300
-Message-ID: <CANoib0H92u+9pgO=TVdkoAjiZbdq78x5jA79SX-Y8Zu2+W8veQ@mail.gmail.com>
-To: Hauke Mehrtens <hauke@hauke-m.de>
+X-Provags-ID: V03:K1:ID8gf8iG5lgVkg8sXtyjPLY0oFJhqN/Ul90UEpKVDUZwI2U0FjS
+ smj+Tq7egLVrXxJV8Bvv0PKdGX+/Hx9zLx0Lqmu+2D8p9fd6jaYC4OFOeBXRgspVGstWFrz
+ 699FgB/H/7Oa02GHs+41Amzd6Xb4FatE6Gtii4L4XWUO9wnLbPs+ALXHnwOiV1KmGUITGo9
+ wKn6dysKogFqkdCGwEp5Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:lzFjqns4SR8=:Ocf8Yx6tjAKISENVm5RK0/
+ OEF+/kVWzG0lsVS3XjfNFkt+RSYXLJdPWynRs3AKkpc5yQ6rj/RLZfvdwUDucq8yYymb9V6bo
+ Cz8lRGMGYdPuhSh/FLRkycNMonehTCpMqzOc1i/eHFVXiKxrq8ZiX64odbPku1w8bDBIYerZQ
+ dj67ELXcRgIeFt97JQYwggGaEP3Ylf8v0okdq9HQIX+OdPKBJ2hQm704zStBL77aE7/xC9Y90
+ Ol2+18xowIw+ycAu9Jbq6JrpHfKQTm0CkwusseygODUx/fj3/yo145uyP0IwjA9ho/a7H0AIZ
+ +1irz2TaWlAyb8DePCleOwN+vknVXRMMpJ6yxLnq/K693zDeqT0z+M3DUIhI99IV/5TnpSwD1
+ o6ieyKbtgq6hrUKQanyx5hTbh5/N/DIaJcgJ4OnQuREcBMBU9xhn6IyHnIhEALiHd+hJrcySr
+ nS9P9c3iGBfIOYkjZomZVcqXtcHi8l9HPjlMe2A5u4BCo2W6DfMRXdtitiA/KqY15cJKaxNOP
+ jTLR4uiNTJZmAuD8GLkTBS+VzuKRw/ti4lEHE9WFRhjnMBI+1Gj2phOk7E67FRvBcZlO2x4MM
+ +U61ugxwRKryNmdyS4b0ckJahPCkxmkU/4CLYl+Xu23K4x987Pj+GvUeqIQlrTZi7NzcQPYXG
+ /UAWW0XA3AnrVvqYP33ziDt7A+9TBJ7MA8tQIdyvkZ9bOaXOpewRSn5hUgLax2HLT10533bII
+ v5HDnW8sx0CC5wM8sTFGlWuycto6+1XB75xvbnn1qyIAwtA88u4zBx+ytWID5LBhwurqXLset
+ 1kC9P2F4h4ysFi7bFR7GNHNVSIeTQprndFD1NsERo3XnGSb0F4y5NIqMt8HUHxiwQMKGg4ZzL
+ Le3lO0auY2tVBzhB3WvtB1uNWyrC6dkNJFdgzn6Ug=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_150735_003384_256C1D9A 
-X-CRM114-Status: GOOD (  15.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_151128_516855_E7104C9D 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hanipouspilot[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12e listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 final timeline
+Subject: [OpenWrt-Devel] [PATCH v2 1/2] treewide: move mktplinkfw to
+ tplink-v1-image in image-commands.mk
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,49 +78,292 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Jo-Philipp Wich <jow@openwrt.org>,
- LEDE Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-TmljZSByZWxlYXNlIHRhZyApKSBFdmVyIHRyaWVkIGEgYnVpbGQgdGVzdCBiZWZvcmUgdGhlIHRh
-Zz8KClRyaWVkIHRvIGJ1aWxkCgpDb2xsZWN0ZWQgZXJyb3JzOgogKiBzYXRpc2Z5X2RlcGVuZGVu
-Y2llc19mb3I6IENhbm5vdCBzYXRpc2Z5IHRoZSBmb2xsb3dpbmcgZGVwZW5kZW5jaWVzCmZvciBi
-YXNlLWZpbGVzOgogKiBsaWJ1Ym94MjAxNzA2MDEKICogb3BrZ19pbnN0YWxsX2NtZDogQ2Fubm90
-IGluc3RhbGwgcGFja2FnZSBiYXNlLWZpbGVzLgogKiBzYXRpc2Z5X2RlcGVuZGVuY2llc19mb3I6
-IENhbm5vdCBzYXRpc2Z5IHRoZSBmb2xsb3dpbmcgZGVwZW5kZW5jaWVzCmZvciBvZGhjcDZjOgog
-KiBsaWJ1Ym94MjAxNzA2MDEKICogb3BrZ19pbnN0YWxsX2NtZDogQ2Fubm90IGluc3RhbGwgcGFj
-a2FnZSBvZGhjcDZjLgogKiBzYXRpc2Z5X2RlcGVuZGVuY2llc19mb3I6IENhbm5vdCBzYXRpc2Z5
-IHRoZSBmb2xsb3dpbmcgZGVwZW5kZW5jaWVzCmZvciB1cm5nZDoKICogbGlidWJveDIwMTcwNjAx
-CiAqIG9wa2dfaW5zdGFsbF9jbWQ6IENhbm5vdCBpbnN0YWxsIHBhY2thZ2UgdXJuZ2QuCgrQv9C9
-LCA2INGP0L3Qsi4gMjAyMCDQsy4g0LIgMjA6NDAsIEhhdWtlIE1laHJ0ZW5zIDxoYXVrZUBoYXVr
-ZS1tLmRlPjoKPgo+IE9uIDEyLzI0LzE5IDQ6NDggUE0sIEhhdWtlIE1laHJ0ZW5zIHdyb3RlOgo+
-ID4gSGksCj4gPgo+ID4gSSB3b3VsZCBsaWtlIHRvIHRhZyAxOC4wNi42IHJlbGVhc2UgaW4gdGhl
-IGV2ZW5pbmcgb2YgV2VkbmVzZGF5IDEuCj4gPiBKYW51YXJ5IGFuZCB0aGVuIHN0YXJ0IHRoZSBi
-dWlsZGVycy4KPiA+Cj4gPiBJIHdvdWxkIGxpa2UgdG8gdGFnIDE5LjA3IGZpbmFsIHJlbGVhc2Ug
-b24gRnJpZGF5IDMuIEphbnVhcnkgYW5kIHRoZQo+ID4gc3RhcnQgdGhlIGJ1aWxkZXJzIG9uIFNh
-dHVyZGF5IG9yIFN1bmRheS4KPiA+Cj4gPiBBcmUgdGhlcmUgYW55IG9iamVjdGlvbnMgdG8gdGhl
-c2UgZGF0ZXM/Cj4gPgo+ID4gQm90aCByZWxlYXNlcyBzaG91bGQgZml4IGFsbCBrbm93biBzZWN1
-cml0eSBwcm9ibGVtcywgdGhpcyBpcyByZWxlYXNlCj4gPiBnYXRpbmcsIGJ1dCBJIHRoaW5rIGV2
-ZXJ5dGhpbmcgaXMgZml4ZWQgbm93Lgo+ID4KPiA+Cj4gPiBXZSBub3cgaGF2ZSB0aGUgYXRoMTBr
-LWN0IHNtYWxsIGJ1ZmZlcnMgdmVyc2lvbiBpbiBtYXN0ZXIgYW5kIDE5LjA3LCBmb3IKPiA+IHRo
-ZSAxOS4wNyBicmFuY2ggaXQgaGFzIHRvIGJlIHNlbGVjdGVkLCBidXQgUGF1bCBGZXJ0c2VyIGFs
-cmVhZHkKPiA+IHByb3Bvc2VkIGEgcGF0Y2guCj4gPgo+ID4gSGVyZSBzb21lIHBlb3BsZSBhcmUg
-Y29tcGxhaW5pbmcgYWJvdXQgYmFkIDVHSHogcGVyZm9ybWFuY2U6Cj4gPiBodHRwczovL2J1Z3Mu
-b3BlbndydC5vcmcvaW5kZXgucGhwP2RvPWRldGFpbHMmdGFza19pZD0yNjgyCj4gPiBodHRwczov
-L2ZvcnVtLm9wZW53cnQub3JnL3Qvb3BlbndydC0xOS0wNy0wLXNlY29uZC1yZWxlYXNlLWNhbmRp
-ZGF0ZS80OTU5My80MQo+ID4gVGhpcyBzaG91bGQgYmUgcmVsYXRlZCB0byB0aGUgaG9zdGFwZCB1
-cGRhdGUgZnJvbSAyLjcgdG8gMi45Lgo+ID4gRG9lcyBzb21lb25lIGhhdmUgdGltZSB0byBkZWJ1
-ZyB0aGlzPyBJdCB3b3VsZCBiZSBpbnRlcmVzdGluZyB3aGljaAo+ID4gY29tbWl0IGV4YWN0bHkg
-Y2F1c2VzIHRoaXMsIHdlIGFsc28gaGF2ZSBob3N0YXBkIDIuOCBpbiBiZXR3ZWVuLgo+Cj4gSGks
-Cj4KPiBJIHN0aWxsIHBsYW4gdG8gdGFnIHYxOS4wNy4wIGZpbmFsIGFuZCB2MTguMDYuNiB0b2Rh
-eS4KPiBGcm9tIG15IHNpZGUgZXZlcnl0aGluZyBuZWVkZWQgaXMgaW4gdGhlc2UgcmVsZWFzZXMu
-Cj4KPiBIYXVrZQo+Cj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KPiBvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMu
-b3BlbndydC5vcmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8v
-b3BlbndydC1kZXZlbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVu
-d3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Blbndy
-dC1kZXZlbAo=
+This move the slightly different target-specific implementations of
+mktplinkfw from the targets to include/image-commands.mk and renames
+it to tplink-v1-image. Having a common version will increase
+consistency between implementation and will complete the
+tplink build command already present in the new location.
+
+Due to the slight differences of the original implementations, this
+also does some adjustments to the device build commands/variables.
+
+This also moves rootfs_align as this is required as dependency.
+
+Tested on:
+- TL-WDR4300 v1 (ath79, factory)
+- TL-WDR4900 v1 (mpc85xx, sysupgrade)
+
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+---
+ include/image-commands.mk                   | 22 +++++++++++++++
+ target/linux/ath79/image/common-tp-link.mk  | 27 ++----------------
+ target/linux/ath79/image/generic-tp-link.mk |  8 +++---
+ target/linux/ath79/image/tiny-tp-link.mk    | 14 +++++-----
+ target/linux/mpc85xx/image/Makefile         | 31 +++------------------
+ target/linux/ramips/image/mt7620.mk         | 21 ++------------
+ 6 files changed, 41 insertions(+), 82 deletions(-)
+
+diff --git a/include/image-commands.mk b/include/image-commands.mk
+index 5dfd6a2c2f..3b091f26ac 100644
+--- a/include/image-commands.mk
++++ b/include/image-commands.mk
+@@ -3,6 +3,10 @@
+ IMAGE_KERNEL = $(word 1,$^)
+ IMAGE_ROOTFS = $(word 2,$^)
+ 
++define rootfs_align
++$(patsubst %-256k,0x40000,$(patsubst %-128k,0x20000,$(patsubst %-64k,0x10000,$(patsubst squashfs%,0x4,$(patsubst root.%,%,$(1))))))
++endef
++
+ define Build/uImage
+ 	mkimage -A $(LINUX_KARCH) \
+ 		-O linux -T kernel \
+@@ -335,6 +339,24 @@ define Build/tplink-v1-header
+ 	@mv $@.new $@
+ endef
+ 
++# combine kernel and rootfs into one image
++# mktplinkfw <type> <optional extra arguments to mktplinkfw binary>
++# <type> is "sysupgrade" or "factory"
++#
++# -a align the rootfs start on an <align> bytes boundary
++# -j add jffs2 end-of-filesystem markers
++# -s strip padding from end of the image
++# -X reserve <size> bytes in the firmware image (hexval prefixed with 0x)
++define Build/tplink-v1-image
++	-$(STAGING_DIR_HOST)/bin/mktplinkfw \
++		-H $(TPLINK_HWID) -W $(TPLINK_HWREV) -F $(TPLINK_FLASHLAYOUT) \
++		-N "$(VERSION_DIST)" -V $(REVISION) -m $(TPLINK_HEADER_VERSION) \
++		-k $(IMAGE_KERNEL) -r $(IMAGE_ROOTFS) -o $@.new -j -X 0x40000 \
++		-a $(call rootfs_align,$(FILESYSTEM)) \
++		$(wordlist 2,$(words $(1)),$(1)) \
++		$(if $(findstring sysupgrade,$(word 1,$(1))),-s) && mv $@.new $@ || rm -f $@
++endef
++
+ define Build/tplink-v2-header
+ 	$(STAGING_DIR_HOST)/bin/mktplinkfw2 \
+ 		-c -H $(TPLINK_HWID) -W $(TPLINK_HWREV) -L $(KERNEL_LOADADDR) \
+diff --git a/target/linux/ath79/image/common-tp-link.mk b/target/linux/ath79/image/common-tp-link.mk
+index 0dc58191a8..1c7ff0e567 100644
+--- a/target/linux/ath79/image/common-tp-link.mk
++++ b/target/linux/ath79/image/common-tp-link.mk
+@@ -1,28 +1,6 @@
+ DEVICE_VARS += TPLINK_HWID TPLINK_HWREV TPLINK_FLASHLAYOUT TPLINK_HEADER_VERSION
+ DEVICE_VARS += TPLINK_BOARD_NAME TPLINK_BOARD_ID
+ 
+-define rootfs_align
+-$(patsubst %-256k,0x40000,$(patsubst %-128k,0x20000,$(patsubst %-64k,0x10000,$(patsubst squashfs%,0x4,$(patsubst root.%,%,$(1))))))
+-endef
+-
+-# combine kernel and rootfs into one image
+-# mktplinkfw <type> <optional extra arguments to mktplinkfw binary>
+-# <type> is "sysupgrade" or "factory"
+-#
+-# -a align the rootfs start on an <align> bytes boundary
+-# -j add jffs2 end-of-filesystem markers
+-# -s strip padding from end of the image
+-# -X reserve <size> bytes in the firmware image (hexval prefixed with 0x)
+-define Build/mktplinkfw
+-	-$(STAGING_DIR_HOST)/bin/mktplinkfw \
+-		-H $(TPLINK_HWID) -W $(TPLINK_HWREV) -F $(TPLINK_FLASHLAYOUT) \
+-		-N OpenWrt -V $(REVISION) -m $(TPLINK_HEADER_VERSION) \
+-		-k $(IMAGE_KERNEL) -r $@ -o $@.new -j -X 0x40000 \
+-		-a $(call rootfs_align,$(FILESYSTEM)) \
+-		$(wordlist 2,$(words $(1)),$(1)) \
+-		$(if $(findstring sysupgrade,$(word 1,$(1))),-s) && mv $@.new $@ || rm -f $@
+-endef
+-
+ # mktplinkfw-combined
+ #
+ # -c combined image
+@@ -50,9 +28,8 @@ define Device/tplink
+   KERNEL := kernel-bin | append-dtb | lzma
+   KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | tplink-v1-header
+   IMAGES += factory.bin
+-  IMAGE/sysupgrade.bin := append-rootfs | mktplinkfw sysupgrade | \
+-	append-metadata
+-  IMAGE/factory.bin := append-rootfs | mktplinkfw factory
++  IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade | append-metadata
++  IMAGE/factory.bin := tplink-v1-image factory
+ endef
+ 
+ define Device/tplink-nolzma
+diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
+index 603cacdaf2..a7266f05a9 100644
+--- a/target/linux/ath79/image/generic-tp-link.mk
++++ b/target/linux/ath79/image/generic-tp-link.mk
+@@ -157,8 +157,8 @@ define Device/tplink_archer-c7-v2
+   TPLINK_HWID := 0xc7000002
+   SUPPORTED_DEVICES += archer-c7
+   IMAGES += factory-us.bin factory-eu.bin
+-  IMAGE/factory-us.bin := append-rootfs | mktplinkfw factory -C US
+-  IMAGE/factory-eu.bin := append-rootfs | mktplinkfw factory -C EU
++  IMAGE/factory-us.bin := tplink-v1-image factory -C US
++  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
+ endef
+ TARGET_DEVICES += tplink_archer-c7-v2
+ 
+@@ -502,9 +502,9 @@ define Device/tplink_tl-wr2543-v1
+   DEVICE_VARIANT := v1
+   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ledtrig-usbport
+   TPLINK_HWID := 0x25430001
+-  IMAGE/sysupgrade.bin := append-rootfs | mktplinkfw sysupgrade -v 3.13.99 | \
++  IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade -v 3.13.99 | \
+ 	append-metadata | check-size $$$$(IMAGE_SIZE)
+-  IMAGE/factory.bin := append-rootfs | mktplinkfw factory -v 3.13.99
++  IMAGE/factory.bin := tplink-v1-image factory -v 3.13.99
+   SUPPORTED_DEVICES += tl-wr2543-v1
+ endef
+ TARGET_DEVICES += tplink_tl-wr2543-v1
+diff --git a/target/linux/ath79/image/tiny-tp-link.mk b/target/linux/ath79/image/tiny-tp-link.mk
+index 172f22f320..070ede9721 100644
+--- a/target/linux/ath79/image/tiny-tp-link.mk
++++ b/target/linux/ath79/image/tiny-tp-link.mk
+@@ -198,8 +198,8 @@ define Device/tplink_tl-wr841-v11
+   TPLINK_HWID := 0x08410011
+   SUPPORTED_DEVICES += tl-wr841n-v11
+   IMAGES += factory-us.bin factory-eu.bin
+-  IMAGE/factory-us.bin := append-rootfs | mktplinkfw factory -C US
+-  IMAGE/factory-eu.bin := append-rootfs | mktplinkfw factory -C EU
++  IMAGE/factory-us.bin := tplink-v1-image factory -C US
++  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
+ endef
+ TARGET_DEVICES += tplink_tl-wr841-v11
+ 
+@@ -211,8 +211,8 @@ define Device/tplink_tl-wr841-v12
+   TPLINK_HWID := 0x08410012
+   SUPPORTED_DEVICES += tl-wr841n-v11
+   IMAGES += factory-us.bin factory-eu.bin
+-  IMAGE/factory-us.bin := append-rootfs | mktplinkfw factory -C US
+-  IMAGE/factory-eu.bin := append-rootfs | mktplinkfw factory -C EU
++  IMAGE/factory-us.bin := tplink-v1-image factory -C US
++  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
+ endef
+ TARGET_DEVICES += tplink_tl-wr841-v12
+ 
+@@ -234,9 +234,9 @@ define Device/tplink_tl-wr940n-v4
+   TPLINK_HWID := 0x09400004
+   SUPPORTED_DEVICES += tl-wr940n-v4
+   IMAGES += factory-us.bin factory-eu.bin factory-br.bin
+-  IMAGE/factory-us.bin := append-rootfs | mktplinkfw factory -C US
+-  IMAGE/factory-eu.bin := append-rootfs | mktplinkfw factory -C EU
+-  IMAGE/factory-br.bin := append-rootfs | mktplinkfw factory -C BR
++  IMAGE/factory-us.bin := tplink-v1-image factory -C US
++  IMAGE/factory-eu.bin := tplink-v1-image factory -C EU
++  IMAGE/factory-br.bin := tplink-v1-image factory -C BR
+ endef
+ TARGET_DEVICES += tplink_tl-wr940n-v4
+ 
+diff --git a/target/linux/mpc85xx/image/Makefile b/target/linux/mpc85xx/image/Makefile
+index 5ca16909e7..98fe51c7e9 100644
+--- a/target/linux/mpc85xx/image/Makefile
++++ b/target/linux/mpc85xx/image/Makefile
+@@ -5,36 +5,12 @@
+ include $(TOPDIR)/rules.mk
+ include $(INCLUDE_DIR)/image.mk
+ 
+-DEVICE_VARS += TPLINK_HWID TPLINK_HWREV TPLINK_FLASHLAYOUT
+-
+-define rootfs_align
+-$(patsubst %-256k,0x40000,$(patsubst %-128k,0x20000,$(patsubst %-64k,0x10000,$(patsubst squashfs%,0x4,$(patsubst root.%,%,$(1))))))
+-endef
++DEVICE_VARS += TPLINK_HWID TPLINK_HWREV TPLINK_FLASHLAYOUT TPLINK_HEADER_VERSION
+ 
+ define Build/copy-file
+ 	cat "$(1)" > "$@"
+ endef
+ 
+-# combine kernel and rootfs into one image
+-# mktplinkfw <type> <optional extra arguments to mktplinkfw binary>
+-# <type> is "sysupgrade" or "factory"
+-#
+-# -a align the rootfs start on an <align> bytes boundary
+-# -j add jffs2 end-of-filesystem markers
+-# -s strip padding from end of the image
+-# -X reserve <size> bytes in the firmware image (hexval prefixed with 0x)
+-define Build/mktplinkfw
+-	-$(STAGING_DIR_HOST)/bin/mktplinkfw \
+-		-H $(TPLINK_HWID) -W $(TPLINK_HWREV) -F $(TPLINK_FLASHLAYOUT) -N OpenWrt -V $(REVISION) \
+-		-k $(IMAGE_KERNEL) \
+-		-r $@ \
+-		-o $@.new \
+-		-j -X 0x40000 \
+-		-a $(call rootfs_align,$(FILESYSTEM)) \
+-		$(wordlist 2,$(words $(1)),$(1)) \
+-		$(if $(findstring sysupgrade,$(word 1,$(1))),-s) && mv $@.new $@ || rm -f $@
+-endef
+-
+ define Device/Default
+   PROFILES := Default
+   DEVICE_DTS := $(lastword $(subst _, ,$(1)))
+@@ -51,6 +27,7 @@ define Device/tplink_tl-wdr4900-v1
+   DEVICE_VENDOR := TP-Link
+   DEVICE_MODEL := TL-WDR4900
+   DEVICE_VARIANT := v1
++  TPLINK_HEADER_VERSION := 1
+   TPLINK_HWID := 0x49000001
+   TPLINK_HWREV := 1
+   TPLINK_FLASHLAYOUT := 16Mppc
+@@ -64,8 +41,8 @@ define Device/tplink_tl-wdr4900-v1
+   ARTIFACTS := fdt.bin
+   ARTIFACT/fdt.bin := append-dtb
+   IMAGES := fdt.bin factory.bin sysupgrade.bin
+-  IMAGE/sysupgrade.bin := append-rootfs | mktplinkfw sysupgrade | append-metadata
+-  IMAGE/factory.bin := append-rootfs | mktplinkfw factory
++  IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade | append-metadata
++  IMAGE/factory.bin := tplink-v1-image factory
+ endef
+ TARGET_DEVICES += tplink_tl-wdr4900-v1
+ 
+diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
+index 698d1b5da2..72310f9e7e 100644
+--- a/target/linux/ramips/image/mt7620.mk
++++ b/target/linux/ramips/image/mt7620.mk
+@@ -16,23 +16,6 @@ define Build/elecom-header
+ 		--owner=0 --group=0 -f $@ -C $(KDIR) v_0.0.0.bin v_0.0.0.md5
+ endef
+ 
+-# combine kernel and rootfs into one image
+-# mktplinkfw <type> <optional extra arguments to mktplinkfw binary>
+-# <type> is "sysupgrade" or "factory"
+-#
+-# -a align the rootfs start on an <align> bytes boundary
+-# -j add jffs2 end-of-filesystem markers
+-# -s strip padding from end of the image
+-# -X reserve <size> bytes in the firmware image (hexval prefixed with 0x)
+-define Build/mktplinkfw
+-	-$(STAGING_DIR_HOST)/bin/mktplinkfw \
+-		-H $(TPLINK_HWID) -W $(TPLINK_HWREV) -F $(TPLINK_FLASHLAYOUT) \
+-		-N OpenWrt -V $(REVISION) -m $(TPLINK_HEADER_VERSION) \
+-		-k $(IMAGE_KERNEL) -r $(IMAGE_ROOTFS) -o $@.new -j -X 0x40000 -a 0x4 \
+-		$(wordlist 2,$(words $(1)),$(1)) \
+-		$(if $(findstring sysupgrade,$(word 1,$(1))),-s) && mv $@.new $@ || rm -f $@
+-endef
+-
+ define Device/aigale_ai-br100
+   SOC := mt7620a
+   IMAGE_SIZE := 7936k
+@@ -962,8 +945,8 @@ define Device/tplink_re200-v1
+   DEVICE_VARIANT := v1
+   DEVICE_PACKAGES := kmod-mt76x0e
+   IMAGES += factory.bin
+-  IMAGE/sysupgrade.bin := mktplinkfw sysupgrade -e -O | append-metadata
+-  IMAGE/factory.bin := mktplinkfw factory -e -O
++  IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade -e -O | append-metadata
++  IMAGE/factory.bin := tplink-v1-image factory -e -O
+   IMAGE_SIZE := 7936k
+   KERNEL := $(KERNEL_DTB)
+   KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v1-header -e -O
+-- 
+2.20.1
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

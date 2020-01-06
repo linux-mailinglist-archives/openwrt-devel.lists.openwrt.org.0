@@ -2,59 +2,85 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BB7113132D
-	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 14:43:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B23D131350
+	for <lists+openwrt-devel@lfdr.de>; Mon,  6 Jan 2020 15:04:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZokYAVqCgY9EGNZy/LtuLi2hKbbMXhhjXEpWxGpO+xY=; b=NtHeJMvLrY6fRd
-	plVfNeLalWhM+Id1LClGa225f51UxHYW8W4JrfeEaAxEWQSHnxKrefrEopurWtPrA+yp6yzesTkMz
-	ye3UP9tJ+e5Xm0CRBt1v/DcCqLhGV4Rdqh5qI661F9icCgUEmMZwwuvHlO+AnkqGGO7C7PT97C1bZ
-	d/fY7UfVvih82nf5OTex4K3Oc1mtuASBsIBtFMrqlzfESm9f53VVXlI1Kbegd65UwHF8xG6p/UMu2
-	Kiif03zjGW/kuOEPjJXCP2XRocxqzY15MKjFXPRj3VmTdToAB3oyhGMJ3fKkyzBuOb1Q76IefCxiK
-	7/l/3ch+tc55KHts2f2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GEj36PGtZwWy4N3gmKAYvf6Kf08x9VsYUCEI9lL9ijk=; b=JcQUdpHdgWNLlRDffh5mJUfOw
+	XJJ4Yw20NQKpJGK2s/ECBUTQQ6WMypVV/3bzXrc321DXQsEdU1Kde1WHCuD8BSeb9eLLSWwWXx0Kh
+	eFgsgzGCUZE9UaQSQiSm6L9BURmtgMH5X1Uz440gjrnwSWEXiUzTMiFR2YO+nS71wvFPBXZjziwcy
+	YV957am3Pt/Q53n09LO4tndWMXksu61jYdTJPrD3qmJeNgQEwq834TZJRv2/e7QX7JOCtLrrbv9S9
+	80J//I456F8QMrjhjTG6tVCiUeTu7KO/zz4++x7cWXl7/P7I/yZzhYFsyqJdlcVOzASyIYVVJRwPN
+	0myHlmqpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioSez-0002BN-8S; Mon, 06 Jan 2020 13:43:09 +0000
-Received: from so254-38.mailgun.net ([198.61.254.38])
+	id 1ioSzB-0002Qy-Vy; Mon, 06 Jan 2020 14:04:02 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioSdx-0001hB-KW
- for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 13:42:13 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=gorani.run; q=dns/txt; 
- s=mailo; t=1578318126;
- h=Content-Transfer-Encoding: MIME-Version:
- References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=zrXPQ6lak9G8MVil/LtdL4NBbnFpQbyFltVVzLXwcVI=;
- b=GZWSx9MWqzLDCDPfPocEyavVKtf0MoJD7Lt2oxqzMIeCrqOT8r7bt0qrmXp57+Yji4U+kouv
- ChPfSVcbQj+34eaNkhsVEY3FyRjpl9/8LJEhze5VYjFE+UmTLqnI+lLq8Zo1G3wVKlJZIPSZ
- AiZBhIKYhVrfQ4be1tcKab6yVWo=
-X-Mailgun-Sending-Ip: 198.61.254.38
-X-Mailgun-Sid: WyI5NGQ3YSIsICJvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQub3JnIiwgImNmYmM2YiJd
-Received: from ms-arch.localdomain (Unknown [219.255.228.122])
- by mxa.mailgun.org with ESMTP id 5e13392a.7fc080c6c6c0-smtp-out-n01;
- Mon, 06 Jan 2020 13:42:02 -0000 (UTC)
-From: Sungbo Eo <mans0n@gorani.run>
+ id 1ioSz5-0002Qb-EI
+ for openwrt-devel@lists.openwrt.org; Mon, 06 Jan 2020 14:03:56 +0000
+Received: by mail-wr1-x429.google.com with SMTP id g17so49703686wro.2
+ for <openwrt-devel@lists.openwrt.org>; Mon, 06 Jan 2020 06:03:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=Rm24gUWzIB6tjVbNcynG0XjLgS4d3QDHXFY9gkyz9uk=;
+ b=nq+FnSrHzgoBEtcuENQaXBwTSfJlefSKMuslsVPpPCnTJG+hQ9orXo8w+Q9c0TbhMQ
+ 7MOXNuZRNvsqb1ARLd0Julg5N7cW3Wnpk+HZhz+xMje34XprVbETZXHxmUNIq62Pml+5
+ CIctcQnVsAolz3JI9ru88awWHfd+oaRFKPX0yYde4dW3o3GLEo1WjmLHz3YX84G1cj+P
+ LdpT43rx4qFqvuQ7uarAX0I309tc5jzX5O2IZ7nAWo4GmzXNN88FUYQStqiQAazv4ya0
+ 0HOgp4pRboorOZHVSG3fzBKc5yuIDZ2dmdPA4lFlvG7f1qaXSf3osvPD/lVKM2TnmlS/
+ gL0A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Rm24gUWzIB6tjVbNcynG0XjLgS4d3QDHXFY9gkyz9uk=;
+ b=Wp9AA0e8JJ+RzPu0UTy0yIWN5Y00dGWgLMBEvzenShq07wHxnqPi1xCj/3A6jzAtjP
+ WcgW4lcVi5T8ikLIvxzTQPfI0cON56079I2N3vVQERejeA4p7ra99c/LcAmJrWIE6oYL
+ yPbIB1VMp6rqk1m6TZV3VfzWlaEiAvgOy5Pvo7sknvbeu7NCXyeWHCCV7Vn87fwoyChj
+ sLaznfl3C9W/mnDgpQ7bAwyXraiRzIPaqzJpMbTyfFPFCtzUwPOOvsZFo+Ul5SG3+Ljy
+ nEVbnPXUx34VOpjpp53ihs+45P6GAKx0pHZ/Z2Hy+0RHeM1AWG+mvdUVuxk5QPc6GM1c
+ lOZA==
+X-Gm-Message-State: APjAAAVtGVIgEr+G/qTps9Z4wlRgG/0Qdp0HkTBPygtp2eqLslQ8fGKX
+ t3D19AcmY5H/aUFv7P7gdpKMTM5eoxqZTg==
+X-Google-Smtp-Source: APXvYqykgfINOUFFNabK82SysBAuC28Qzr0R6DoisBkhaokRmNr+hk2b5btAS4DpdhxFgxX3Z686RA==
+X-Received: by 2002:a5d:62d0:: with SMTP id
+ o16mr101157575wrv.197.1578319433149; 
+ Mon, 06 Jan 2020 06:03:53 -0800 (PST)
+Received: from [192.168.1.230] ([213.152.162.94])
+ by smtp.gmail.com with ESMTPSA id p15sm22896943wma.40.2020.01.06.06.03.52
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 06 Jan 2020 06:03:52 -0800 (PST)
 To: openwrt-devel@lists.openwrt.org
-Date: Mon,  6 Jan 2020 22:40:16 +0900
-Message-Id: <20200106134016.11354-2-mans0n@gorani.run>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200106134016.11354-1-mans0n@gorani.run>
-References: <20200106134016.11354-1-mans0n@gorani.run>
+References: <aa86bd41-26df-841d-2735-5eac553e676d@web.de>
+From: Alberto Bursi <bobafetthotmail@gmail.com>
+Message-ID: <f0d00601-d226-079f-7fba-5bba07e331a1@gmail.com>
+Date: Mon, 6 Jan 2020 15:03:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
+In-Reply-To: <aa86bd41-26df-841d-2735-5eac553e676d@web.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_054206_474516_BBA9D560 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200106_060355_479590_D1786ECA 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [198.61.254.38 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:429 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bobafetthotmail[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -64,8 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH uclient 2/2] uclient-fetch: use HEAD method
- in spider mode
+Subject: Re: [OpenWrt-Devel] time for OJ 1.15 everyone?
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,35 +102,32 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Sungbo Eo <mans0n@gorani.run>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-HEAD method does not request response body, so it is suitable for spider
-mode. This also matches wget's behavior.
 
-Signed-off-by: Sungbo Eo <mans0n@gorani.run>
----
- uclient-fetch.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/uclient-fetch.c b/uclient-fetch.c
-index 3718197..db5faee 100644
---- a/uclient-fetch.c
-+++ b/uclient-fetch.c
-@@ -336,7 +336,7 @@ static int init_request(struct uclient *cl)
- 
- 	msg_connecting(cl);
- 
--	rc = uclient_http_set_request_type(cl, post_data ? "POST" : "GET");
-+	rc = uclient_http_set_request_type(cl, post_data ? "POST" : no_output ? "HEAD" : "GET");
- 	if (rc)
- 		return rc;
- 
--- 
-2.24.1
+On 06/01/20 13:58, edgar.soldin@web.de wrote:
+> new year, new OJ.
+> 
+> start of the year is OJ release time traditionally by now. are we in agreement?
+> 
+> a snappy new NY to one and all ..ede
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> 
+
+Happy new year to you too,
+
+this is the OpenWrt mailing list, I don't think it's the best place to 
+ask questions about OpenJump release schedule.
+
+-Alberto
 
 _______________________________________________
 openwrt-devel mailing list

@@ -2,75 +2,88 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29B3813250A
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 12:40:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AA2A13305A
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 21:10:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4fyUd1bq4HLLnQEjgnv6hyfru1ppie4jJaMb+D6Yz2M=; b=Xqfaa67EvH+cG9nSA+CDsiA63
-	ZjlI++3DBKO/oXgPVORDKFiu71rIEpYFknIPtngCoGfpTRS/7F8w/9M0XP7IDuAVkUCi9DtTKOpjn
-	GV3bAUoWBmF89REJ9NDhZmBzpr4G4Z9t2vXxeFZRQABOn9llmEqTQeNMJuVgSQuekgQk0XD7sZQAq
-	DcBrmT8irlbT8B9ISLLz1r0TQyYG9YWd5+O2olt4zIo3xsdfFZs9SIRVUrtysHP2DB3UfdvJcgZib
-	Q1/vWYKG67Y1gZFcybxsqI2ogTrAIqrwbIB8RVpyxuphA7enLvZ2uwdrdLkRjrK12kei/VVMTsG8g
-	nSHWz3yeQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q7twu0vo0B71WF23csxCP4TqyvhB7d7PVArBougM2Lk=; b=Z2YT+rOdbAbi5K
+	7QjZXGEzu2vtAupc492mpnNbA9nGU0MFS3wMr4glrFnGSkLMarUMPWlLj/a2Hiap6rzVW9sf4BUma
+	iMROctxSoGKGzl+oNl7u/aTKQkoS0JLgPnEbt5KTofQkoTY3oIYvTRzZttj34fzNkz4EGMYbrKJ8U
+	5laJ0nD1el5rMORyk8PS2u5OHBwV7jnBxJ5QD3x0QCKhbjSkWhRk2UfiSclNz0054hUNb6X/X9SD1
+	YveWUMQlNpUPFEL2wKjbTqZSmpZPwSDQEcqjoLTTQruksu9sX+fRJKZYnIeK/oaGVbjjHBMfA2oBS
+	V5hpuZpbag0BErF2hSPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ionDL-00015H-5P; Tue, 07 Jan 2020 11:39:59 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1iovBD-0007sb-1b; Tue, 07 Jan 2020 20:10:19 +0000
+Received: from mail-qt1-x829.google.com ([2607:f8b0:4864:20::829])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ionDE-00014i-7v
- for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 11:39:53 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1N336J-1jpms30ok1-013MSG; Tue, 07
- Jan 2020 12:39:46 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Hauke Mehrtens'" <hauke@hauke-m.de>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20200105141756.23473-1-hauke@hauke-m.de>
- <93c68973-35b9-2dd1-70fb-2d15c12fa8ec@kresin.me>
-In-Reply-To: <93c68973-35b9-2dd1-70fb-2d15c12fa8ec@kresin.me>
-Date: Tue, 7 Jan 2020 12:39:46 +0100
-Message-ID: <0b2501d5c54f$2939cdc0$7bad6940$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQIuF+HeIBVU/ZlJzrne0jxHuiAM+AIWn2Tgpx23gLA=
+ id 1iovAw-0007V7-4B
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 20:10:03 +0000
+Received: by mail-qt1-x829.google.com with SMTP id n15so833929qtp.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 07 Jan 2020 12:09:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=SSGNfnCxvj1AdVdxKKTj622X9RY0irA9/wyWjzJjLsg=;
+ b=mnLQpV/BvT931C4QhpGRxGSuQdL7n/GpjP8jLriRPK/IPUg+u0m/Mdm0Y3Rf8hVa3h
+ O7Q2jPCCZzDh/ObclhP9rPWg/GVbYeqlhnohXlqcCqvWIBNWiJPLbJoYSjxn96CUNKxQ
+ RSx37/c9AHh0rRLejvPWyLB+UOO+4buHQBkzn9TLUS2kxm+JbrEVW4kG5ODQx57rCpHj
+ oNJH3YT9H7WSivyFWmza+4F0gOUCQmzsndplcXndImhJ3YdFhnVLGOQyi42EI1yDodyB
+ yBOxnLzrvZi53l9GL9HGQ3QRRi7+fb26gLgPVmOwRusqITpmxwL8NvuM85HoOLoxzh/7
+ 312A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SSGNfnCxvj1AdVdxKKTj622X9RY0irA9/wyWjzJjLsg=;
+ b=mQjIanKH4paPVGhxGHeGikT8hd+TeGRwaHQYH0rYmbeAKmzaNWV5w2aLSqoRGTv+YQ
+ CZX7Py1rcUYh3cTNFZW3DsFhml0/UfZdTxxLrsdz1CnpmfFvWdstzD7Np+1RaS94TzXa
+ bPfAG2AaPaEHmCf/spZ4Vr8lo8Hgq5MLOcnK32/DZPxwpwgir1RUCiT0UmoQtzB0ABMN
+ mpLe6ZmaUauYqQHQh1XjsFDKaQdlG08SJvdFGI8YVn9Xji/LgUD+jy3X5ak6Rgogz9gd
+ pkDBkpzWbB93nsBjbJ8HJLXD9Yv6r/bg5G91p9cKkqmfub+tp76xoCipMpanAq4HJdEh
+ P5ZA==
+X-Gm-Message-State: APjAAAUr8abXVB+zkhxnitXb9y1JogGRvc7Me/7oAjDEcpih/z2jdxII
+ fzWT5qVPi0K7q9MtpAzYzU9c0dgCtQ8GoEUaLnU=
+X-Google-Smtp-Source: APXvYqxWQ33prz1Jl0BiZMAt10vKg0OD/B9QS1D4GIuK6jYj0iK+DiEsZoSfsdQHcBsvo2q64G2DuzHokNSF10CTa/M=
+X-Received: by 2002:ac8:24c1:: with SMTP id t1mr599913qtt.257.1578427795781;
+ Tue, 07 Jan 2020 12:09:55 -0800 (PST)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:38DMEHqODFtVuY89YCbdsC75kL3lFcA+Bb+svOR7kdVnlPnxWTQ
- SqWzrHCEzaFHlBj3m+zIQ1lTpgB+k9rjw2QTHiQV92p3H8nO/lQxF835P+8l4I+EY5GRSnG
- ENHnXE8YiDUhxdbweWMvStGZnjYmvHmMVQCbwdDJC/1NjreHhs4x0jZwfDNEYNakd7hoR91
- KaOEdr1gvWvQwdqL+YmlA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:hAull8Il7uI=:g2SgDrV6PdbVDdAohGruP5
- ow590f8X5qv+2j45teSuczT3h087x7fxkE6+YHDuoJWWNb16y4APEDJzJR26E44etG8b7taCt
- VZ/zbmqFsOmuSyqdn1koVhnSvt4EOzzSR5dR8ovGQXoq8oeSNALuLxnNZzgzPSu0Kl559Oxos
- 8LGjt6QLodZ6bioSCVWWv0XkS4HwdL0Wh9CRu7rWhhKnxaETwWK3naGHCIjiXxh2OgYZjEGFp
- cSQ81/aDKgTEr3gYq8XdVeLSYGg6PQq6yB+wJKeg7DOpxus+XkUI9dO5r7J/r6QMWUy4VsCwI
- uXZDVkgpCVyGEKMAEjJuSbfk/W35zmbNhP9Pm183mtYPZmqL2nS9eXXOVcUBBUw72wnp6v/gB
- Ym0gAaueRukCBR4BvH/AIe9Q11heyOU2fXI9BJ0bST5EEMCbKfYyJpuS24FN/2Grb7ovcGKzr
- 2xiz6Gvuj6qHbIse28uprJMhHXR/LUh9B5yBQunjoUs1/8wQMGbng5VTRbr9azvWzK/iR5dFl
- Fhd8Jv4A67frfF/UdIfLI4qIb5sZaPnsxh89dApSoUykrF+GyYEGbTw5vlzW2S5wc8vYgG7qB
- Z79usERQclxPew0GOQvujAACAFQNWfxs/u1SeCOWZVI4maKjBgeQWFmpDA4z3Iodgj8xoK3jy
- r5ULRDJFgIbv/vRJpe/ZrSWL02fxxZmWUt6B1RGX9XuqIOJkYIF4E0za5U0sbcRVtd33KROkl
- p+8+OWbgw6PD9Po1jFfHqn6p9d2xno6Nkq1ChtMaknL6WnqvjnWmYlRZbtVNwKb9H3ihY876A
- YsaAITcsrU3csDK9wS8zSQGO1RoLx4YpSkxhv55w/z15jxifNUCIFhwelrAAHubgArLzbWA9v
- MJRqbcgahh5hIM+BY23aiCfmCf8SQdOeJJSQgAQCk=
+References: <a42e0ef1-b2b8-4f77-624d-2a8831fe073d@hauke-m.de>
+ <58c97e81-f7bc-f12b-9f1e-d59a086fafc7@hauke-m.de>
+ <CAPxccB2+SKHwpZ53pvJZGzCXxBvpMokzGoK-ZzkCA8CnJfLm8Q@mail.gmail.com>
+ <29aceaca-e9af-8327-7e52-dbed8d550d32@hauke-m.de>
+In-Reply-To: <29aceaca-e9af-8327-7e52-dbed8d550d32@hauke-m.de>
+From: Eneas Queiroz <cotequeiroz@gmail.com>
+Date: Tue, 7 Jan 2020 17:09:23 -0300
+Message-ID: <CAPxccB3mcM1JKJ5FG38GPpOB7wwZ6DfeisTwZbK+F4z11rAG1w@mail.gmail.com>
+To: Hauke Mehrtens <hauke@hauke-m.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_033952_572873_24ECD0F4 
-X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-CacheID: sfid-20200107_121002_223424_6CB74F21 
+X-CRM114-Status: UNSURE (   9.15  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:829 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (cotequeiroz[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: Fix sysupgrade for Xiaomi mir3g
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: Re: [OpenWrt-Devel] OpenWrt 19.07 final timeline
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,87 +95,42 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1258238635301114953=="
+Cc: Jo-Philipp Wich <jow@openwrt.org>,
+ LEDE Development List <openwrt-devel@lists.openwrt.org>,
+ =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+On Mon, Jan 6, 2020 at 1:59 PM Hauke Mehrtens <hauke@hauke-m.de> wrote:
+>
+> I cherry-picked it, but WPA3 still does not work for me.
+>
+> Hauke
 
---===============1258238635301114953==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=+yrx/gQ71GM+H4=-="
+TLDR: WPA3 support with wolfssl is still not ideal.
 
-This is a multipart message in MIME format.
+WPA3 success was reported to me here:
+https://forum.openwrt.org/t/wpa3-wolfssl-fail-openssl-success/50161/7
 
---=-=+yrx/gQ71GM+H4=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+Another user reports that it "feels a bit wonky with WolfSSL 4.3.0",
+that it takes several tries to connect to the network with a Nokia
+8.1, and his laptop does not connect at all.
 
-Hi Hauke,
+I'm not using WPA3, and haven't got around to see if I can test this
+myself.  I know WolfSSL deliberately fails to perform some actions
+that it deems insecure, while openssl succeeds.  I've tried to spot
+some of these situations just by looking at the hostapd code, but I
+couldn't find anything extremely obvious.  Judging by the partial
+success, it may not be the case.  I'm short on time right now, but
+I'll open an issue with wolfssl as soon as I can.
 
-since you seem to have a mir3g, maybe you can look into the following MAC a=
-ddress issue/question when you find some time:
+Cheers,
 
-For the mir3g, 02_network sets the lan_mac to factory 0xe006, while the add=
-ress from 0xe000 set to &ethernet is (thus) used for wan:
-https://github.com/openwrt/openwrt/blob/master/target/linux/ramips/mt7621/b=
-ase-files/etc/board.d/02_network#L262
-
-That's the opposite of what's usual for mt7621 (lan: 0xe000, wan: 0xe006). =
-Therefore, if you happen to have some spare time, it would be interesting t=
-o check which assignment is correct (with vendor OS). When dealing with thi=
-s anyway, it would also be interesting whether the device has a label MAC a=
-ddress.
-
-However, this is not really a pressing issue, so if you're short on time ju=
-st ignore me.
-
-Best
-
-Adrian
-
---=-=+yrx/gQ71GM+H4=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4UbgEACgkQoNyKO7qx
-AnDZPg/+K2cBQzpVi4cdFc33lNQGBPENElLj24JbE36TA2rFKHrtPxjDXOtnGoUM
-+4JAlKXW5Uch6iO7JTMAPu3fR7Xpeb38I+LRGu2QyL7vziq9HqCWgSRDU6KLQTg/
-yA8omn4qI4UbCnkiXXlVS0cBauikPkApEZNfL4DNX8xfGn76/Nz72AdlL9cI/6lG
-S3gBoQEAPjb4370cS3TvU5OGL/DfVdEbRrQ958rZs66AnGZrgGIj6a914KtDMnQQ
-CS+Pm7zX4iS8PiAoadOp3WqEwO2yVUtU6yoDPQLoEyz69ARtVqu23K79IGbYiZtz
-NhPsOZ4HZJVY479On0q6k5To6+OwrFyC0nW9W0pIYh4vWhEMkh0j32mP3AaFsT1F
-K1LSoDpy99oj7qtVCDh0IyRMf6N5viGpHcvT2skw0fv5MJEqOGKzcYtpxylevVrT
-+gm/p4CBV+bgvOtkyuDH55bziAjpdfzaIx39M5Yr1alkiNiNXr7JHKfslivegJSD
-pZgVl+YiikOKRJN71Pex08s8c/lwtSdi7YyDNUHtvXv9/xMKhRDhxmqj2q8pXeRU
-jQcYn6ot0w70jGymg+1y9CZ1Fgr4wnby1Ry3VxgSmNANNtO7DW/hePo6TmNl4ykB
-20cjEdgu/o7epKlNannQ8CehZvG31DQEGvbWo2SML8zm7NEUOWs=
-=zPID
------END PGP SIGNATURE-----
-
-
---=-=+yrx/gQ71GM+H4=-=--
-
-
-
---===============1258238635301114953==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Eneas
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1258238635301114953==--
-
-

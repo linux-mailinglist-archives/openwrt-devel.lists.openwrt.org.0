@@ -2,49 +2,40 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A11C913358F
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 23:14:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B65113359F
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 23:21:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fZMmh9mM/9uvt9T3uhctbW5P7PNplrC54AVNYz36fvc=; b=lyCd+P6AnGTESoCs+g5IadPDh
-	nbdf7FL0I9krR3r/R2JQuh8AdRGCfTiIZv3KxgIz8s/4e8kdMadsg/fchNahHP4HpDTBdBmrSrSpy
-	SVb6Ek14qQvC8/M5HbWgpzW7Q8xURWIJJoh+vKxtqy0gg5KrzF1b58GPsoIpbSauUaPR0jqIbEafQ
-	SHJFABF6i+HU85b/NIu9rHgsZ4S7VU1HeEZKvfFytfuhU86BWMRb4195lfpmeCV3Xr2WdVea5vB5c
-	IZkSF4L6piouGkQwQzzSoeKrZK47r+bhwY0KpgtozXuQwfWRPzT6Jv65qbpxwsqq/Lp9NH+aZKLYV
-	TCLKZYXIA==;
+	 bh=Rvv4Izhy8Y1w8orOBr3WJSgPH8l2moLNVI0CKZxt+bU=; b=NwAfYmHex8VlvXjQe/JTTydt8
+	VoPwggaCZCjBJgZevjQDs7rBezrWpJHWOlAwfCxgWdqz1oOt+CYQ6/wsFz2MfN67PpzOADUlzcZkB
+	9AYS8TFjiuoTXxcQOVn2IZA0YyRxV48IZKhYEOQk5e/mSVYFV6R1J3ijTsisz3yNGkYYeOCMrTvp3
+	autX7dx6FXx+Zx9DfbSa1tFilGR/lNQd9ZyHUo5uiqs48TX2rJ8gInc6+KnSKCuE+MdAWB2Jt/28X
+	BVkjboBkW90jjjTALT+Ua74r03LrHDQnJjyn39Wq8zG1cynMHTJBvcRQZVxoNZxdEHRTtKVCgyF6Q
+	vn12GZY7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iox6w-00005p-Dw; Tue, 07 Jan 2020 22:14:02 +0000
-Received: from mout-p-102.mailbox.org ([2001:67c:2050::465:102])
+	id 1ioxEO-0003Gh-NT; Tue, 07 Jan 2020 22:21:44 +0000
+Received: from mout-p-101.mailbox.org ([2001:67c:2050::465:101])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iox6p-00005B-Fl
- for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 22:13:57 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
+ id 1ioxEG-0003GH-JP
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 22:21:38 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:2:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-102.mailbox.org (Postfix) with ESMTPS id 47smqj0mSBzKmQS;
- Tue,  7 Jan 2020 23:13:53 +0100 (CET)
+ by mout-p-101.mailbox.org (Postfix) with ESMTPS id 47sn0Y2wNKzKmVC;
+ Tue,  7 Jan 2020 23:21:33 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id vMaFOrIhPhzY; Tue,  7 Jan 2020 23:13:49 +0100 (CET)
-To: Piotr Dymacz <pepe2k@gmail.com>, mail@adrianschmutzler.de,
- 'Tom Psyborg' <pozega.tomislav@gmail.com>
-References: <3a6109f9-07db-7670-5a57-9a801d7c4dfc@hauke-m.de>
- <019d01d5a617$53e76570$fbb63050$@adrianschmutzler.de>
- <9ab7f0b2-d122-222a-6d8b-4c330fe3935b@hauke-m.de>
- <009201d5c234$d1045e30$730d1a90$@adrianschmutzler.de>
- <50e1561a-a48e-6b82-0b2f-52bfd90e747e@hauke-m.de>
- <005f01d5c3c5$d420a320$7c61e960$@adrianschmutzler.de>
- <CAKR_QVJiA+kwuENABz=QLjBxVui-mVRTdNXCR+GmaaMf1Q26aw@mail.gmail.com>
- <009501d5c3e0$d4951b90$7dbf52b0$@adrianschmutzler.de>
- <e9c2738f-98a9-da78-5280-d09d08fa8e8f@gmail.com>
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id zKRi2_dDSV2p; Tue,  7 Jan 2020 23:21:25 +0100 (CET)
+To: openwrt-devel@lists.openwrt.org
+References: <20191027174438.25795-1-hauke@hauke-m.de>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -106,13 +97,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <72b4d1a1-e8a6-9d2b-f871-d87e1d16911a@hauke-m.de>
-Date: Tue, 7 Jan 2020 23:13:44 +0100
+Message-ID: <94437c48-7467-97e0-d47c-2c825ac73742@hauke-m.de>
+Date: Tue, 7 Jan 2020 23:21:19 +0100
 MIME-Version: 1.0
-In-Reply-To: <e9c2738f-98a9-da78-5280-d09d08fa8e8f@gmail.com>
+In-Reply-To: <20191027174438.25795-1-hauke@hauke-m.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_141355_829127_A2EEA0AE 
-X-CRM114-Status: GOOD (  21.40  )
+X-CRM114-CacheID: sfid-20200107_142136_939928_BBA67A52 
+X-CRM114-Status: GOOD (  14.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -120,7 +111,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
+Subject: Re: [OpenWrt-Devel] [PATCH 0/6] buildsystem: Activate PIE ASLR for
+ some packages
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,168 +124,93 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>,
- 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
-Content-Type: multipart/mixed; boundary="===============8983298066171293727=="
+Cc: Rosen Penev <rosenp@gmail.com>, daniel.engberg.lists@pyret.net,
+ lynxis@fe80.eu, dave@taht.net, nbd@nbd.name
+Content-Type: multipart/mixed; boundary="===============8841978606905641265=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============8983298066171293727==
+--===============8841978606905641265==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="KDXsqROBcYd5OdM1Don1BGBxOnCIKwnVZ"
+ boundary="7XaNRMqmsqR6owJnRW4nUlWgMX3uiktbq"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---KDXsqROBcYd5OdM1Don1BGBxOnCIKwnVZ
-Content-Type: multipart/mixed; boundary="7ORTWWn8QEWtDrT2pPVfUqHUjx1anyKkj"
+--7XaNRMqmsqR6owJnRW4nUlWgMX3uiktbq
+Content-Type: multipart/mixed; boundary="ploz8If2ydh4iQJYQJbJLNxX4jhdzKtpO"
 
---7ORTWWn8QEWtDrT2pPVfUqHUjx1anyKkj
+--ploz8If2ydh4iQJYQJbJLNxX4jhdzKtpO
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 1/5/20 5:37 PM, Piotr Dymacz wrote:
-> Hi Adrian, Tom,
+On 10/27/19 6:44 PM, Hauke Mehrtens wrote:
+> This is a follow up patch on this discussion on the mailing list:
+> https://patchwork.ozlabs.org/patch/1041647/
 >=20
-> On 05.01.2020 16:57, mail@adrianschmutzler.de wrote:
->>> -----Original Message-----
->>> From: Tom Psyborg [mailto:pozega.tomislav@gmail.com]
->>> Sent: Sonntag, 5. Januar 2020 16:33
->>> To: mail@adrianschmutzler.de
->>> Cc: Hauke Mehrtens <hauke@hauke-m.de>; OpenWrt Development List
->>> <openwrt-devel@lists.openwrt.org>; Koen Vandeputte
->>> <koen.vandeputte@ncentric.com>
->>> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
->>>
->>> On 05/01/2020, mail@adrianschmutzler.de <mail@adrianschmutzler.de>
->>> wrote:
->>> > Hi,
->>> >
->>> >> -----Original Message-----
->>> >> From: openwrt-devel [mailto:openwrt-devel-
->>> bounces@lists.openwrt.org]
->>> >> On Behalf Of Hauke Mehrtens
->>> >> Sent: Samstag, 4. Januar 2020 18:26
->>> >> To: mail@adrianschmutzler.de; 'OpenWrt Development List' <openwrt-=
-
->>> >> devel@lists.openwrt.org>
->>> >> Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
->>> >> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
->>> >>
->>> >> On 1/3/20 1:53 PM, mail@adrianschmutzler.de wrote:
->>> >> > Hi Hauke,
->>> >> >
->>> >> >> -----Original Message-----
->>> >> >> From: openwrt-devel [mailto:openwrt-devel-
->>> >> bounces@lists.openwrt.org]
->>> >> >> On Behalf Of Hauke Mehrtens
->>> >> >> Sent: Donnerstag, 28. November 2019 19:42
->>> >> >> To: Adrian Schmutzler <mail@adrianschmutzler.de>; 'OpenWrt
->>> >> >> Development List' <openwrt-devel@lists.openwrt.org>
->>> >> >> Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
->>> >> >> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
->>> >> >>
->>> >> >> On 11/28/19 7:11 PM, Adrian Schmutzler wrote:
->>> >> >>> Hi Hauke,
->>> >> >>>
->>> >> >>>> The following are still on kernel 4.9:
->>> >> >>>>=C2=A0 * ar7
->>> >> >>>>=C2=A0 * ixp4xx
->>> >> >>>>=C2=A0 * orion
->>> >> >>>
->>> >> >>> There are patches (actually from you, May 2019) on the list wh=
-ich
->>> >> >>> claim to bump ar7 and orion to 4.14:
->>> >> >>>
->>> >> >>> https://patchwork.ozlabs.org/project/openwrt/list/?series=3D10=
-7337
->>> >> >>> https://patchwork.ozlabs.org/project/openwrt/list/?series=3D10=
-7339
->>> >> >>>
->>> >> >>> I haven't looked closer, just in case you forgot about them ;-=
-)
->>> >> >>
->>> >> >> Nobody reported that they are working so I never applied them. =
-I
->>> >> >> do not have the hardware, I just made them compile.
->>> >> >
->>> >> > Since there was no response of any kind from a third party, I've=
-
->>> >> > just
->>> >> marked the two patchsets as "Deferred" in the patchwork, so we get=
- a
->>> >> little more overview there. I hope that's okay for you.
->>> >>
->>> >> Yes fine with me, we should probably drop these targets soon.
->>> >>
->>> >> Hauke
->>> >
->>> > I think it's time to remove the three targets and kernel 4.9 suppor=
-t
->>> > as well after the release has been made. Or does keeping kernel 4.9=
- in
->>> > master (even without targets) make it easier to support 18.06 branc=
-h?
->>> >
->>> > Best
->>> >
->>> > Adrian
->>> >
->>>
->>> This LTS version will receive updates for another 3 years, why do you=
-
->>> want to
->>> remove it?
->>
->> Next release will be kernel 4.19 or 5.4 only, and the respective
->> targets are still at 4.9. So, they haven't been included in 19.07
->> (4.14 only) and won't be included in future releases unless someone
->> updates them. At the moment, it looks like nobody will update them.
->>
->> So, we plan to remove these targets now, as they are effectively
->> unmaintained. Those who still want to use them can have the 4.9
->> version in 18.06 stable branch until that one is EOL.
->>
->> In both cases, updating or removing the targets, there will be no need=
-
->> to keep kernel support if no targets are left. Thus, we can save time
->> for maintaining that kernel version.
+> This allows to activate PIE only for some packages where we thing it is=
+=20
+> necessary and not only globally for all of them.
 >=20
-> They can also be moved here:
-> https://github.com/openwrt/targets
+> Hauke Mehrtens (6):
+>   buildsystem: Make PIE ASLR option tristate
+>   dnsmasq: Activate PIE by default
+>   dropbear: Activate PIE by default
+>   hostapd: Activate PIE by default
+>   uhttpd: Activate PIE by default
+>   lantiq: Allow PKG_ASLR_PIE for DSL and voice drivers
+>=20
+>  config/Config-build.in                       | 22 ++++++++++++++++----=
+
+>  include/hardening.mk                         |  9 +++++++-
+>  package/kernel/lantiq/ltq-adsl/Makefile      |  1 -
+>  package/kernel/lantiq/ltq-ifxos/Makefile     |  1 -
+>  package/kernel/lantiq/ltq-tapi/Makefile      |  1 -
+>  package/kernel/lantiq/ltq-vdsl-mei/Makefile  |  2 --
+>  package/kernel/lantiq/ltq-vdsl/Makefile      |  1 -
+>  package/kernel/lantiq/ltq-vmmc/Makefile      |  1 -
+>  package/network/config/ltq-vdsl-app/Makefile |  1 -
+>  package/network/services/dnsmasq/Makefile    |  1 +
+>  package/network/services/dropbear/Makefile   |  1 +
+>  package/network/services/hostapd/Makefile    |  1 +
+>  package/network/services/uhttpd/Makefile     |  1 +
+>  13 files changed, 30 insertions(+), 13 deletions(-)
 >=20
 
-As we will remove generic kernel 4.9 support from master this feed will
-anyway not work out of the box. If someone wants to add the targets
-again, he can revert the commit which removed it and start from there.
+Hi,
+
+I would like to apply these patches to master?
+
+Are there any objections to this? I already activated LTO to reduce the
+size for all these components and the lantiq patch is already applied.
 
 Hauke
 
 
---7ORTWWn8QEWtDrT2pPVfUqHUjx1anyKkj--
+--ploz8If2ydh4iQJYQJbJLNxX4jhdzKtpO--
 
---KDXsqROBcYd5OdM1Don1BGBxOnCIKwnVZ
+--7XaNRMqmsqR6owJnRW4nUlWgMX3uiktbq
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4VApgACgkQ8bdnhZyy
-68dtXAgAv/kf6+PmQWt+PQLwI+b1105VM5g7ktS+9Ul/oUv+H+4eChL2m2QEeW80
-yHmzywRzrSb5xG+E5YSG1TzAD7UYkJr64p96egR70zLJL2aTpwSpAFugI7WR8Ypy
-PUJUammzPekI0n1Rkz0HZqPyksA82IS2yn6bCgREy3W+tBtY+sEZLr0+sIOc/oQ3
-WN6Bqd3GLK3hPszcoX0ukxEHf2/dHpRPde7amy0so8/bKa7sOdSfpSppx9cHT+Hf
-bJkpuEA/I60Dwn5jqeMxH6QO9uSUxBPkDum9GwvTZ0qHF7IISx0EpvMMbLC329Xg
-tjin6fmolb0s3KRrIbvoCT8eM45OyA==
-=QMFK
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4VBF8ACgkQ8bdnhZyy
+68fpUAf/Y8fKf9xXeEwWXezAy9P+coodtR0+XzI7FvdxpwJ8FtiYcAshIeuvANtQ
+1wX6jDl/rYO1KRlWO73B+Tfn24LttWz4qC/cl7/Mrzar59C/EggiGnhqmHiBFz7Y
+JqNDSkBv/LKLXM8ajZdRWBmRol56xdOYc9N6aWeC8AgUoB79KaljRD4jBcxszW+X
+EbFQNQUmKzn4Qyx7GP7+lVJZEs790aHCnZ4haSYFHm1QPEQId74JgPZJw7qVIXLk
+4MdqL19MQuhmKonCM+/hSLsur9SLTutjcBrGtwm8CtEic7kzra++LbBFdOpcgKHm
+uf86KaD/WP2WJK4ueEsQ9spVhp5sOQ==
+=YtjU
 -----END PGP SIGNATURE-----
 
---KDXsqROBcYd5OdM1Don1BGBxOnCIKwnVZ--
+--7XaNRMqmsqR6owJnRW4nUlWgMX3uiktbq--
 
 
---===============8983298066171293727==
+--===============8841978606905641265==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -304,5 +221,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8983298066171293727==--
+--===============8841978606905641265==--
 

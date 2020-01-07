@@ -2,43 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDAE5133574
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 23:04:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87A72133580
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 23:09:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QGPeEqV5WZs+8r/ea3/kFHKw4wt4OcdhhxJt7HyTx18=; b=ExQY53TaDtCVEbu/IzNSvZpFF
-	YVNAGR+XGL6hqAJq7nKUO+PQGqk1MzjFrweHmnsdBlqi4UTt2Kg+iQtwTdHLsi4zBHWHkJvjZvU45
-	/g3SIhLTFBhMGLeJ57+cYWnDOzJ1dqpEUiEsc6d8B/O4LXylYEbys5p49KWYGAkyKxXbJDByS84CT
-	tAGC7IWzjrf31Qlg0CuEZVZRr/zErNw3vWbFXffgkzKBGkLPPnVbEMehYyw8B7zJSKAXHtX6ak98H
-	CJgGfl+f7Bgolwx79yGDM3Cw8qsGCKdurr6WjaV32wkeAzX+Dw3LHT5V7frpXEqITYsZC7qYuGlNW
-	ZzoIqCzYg==;
+	 bh=YjjBQnikchWgDUZbrwHq4hJVujxaJop4/8UAELcLgD4=; b=IIwRshgydDPfNu1khAj44uN1i
+	SztUF6fIdKzXTP+pmMKNvzMNiL8bYdJOObV/O22IfOEZ+mYeK3Qqu0FxKWDXu9Olm7rYCb2OTKxhx
+	eb8Hfw9t/OlkgIp2+7hCJY1j6PYJ4Nk+L5lKwtyvBIpXyFxx6gU9ao5fgz0qTyH7wZXfB5tuWSGQe
+	1zxLHdp5Sb7nRl33/q/TWGXnXPH9HkdElFnvvheyI1ex4rkVH0ilMXT+MIq3lKqi8vrw4mOiVZWG8
+	iNl8YtAvkASXkmOpO5zdaytU/IPVmb+DwBPsRZdcxVSogtQq9BPwt5kKpqEgFUZmbKLI7VyMtEi2b
+	AJS56/sUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iowy5-0004UA-3e; Tue, 07 Jan 2020 22:04:53 +0000
-Received: from mout-p-202.mailbox.org ([80.241.56.172])
+	id 1iox2y-0006Mi-BS; Tue, 07 Jan 2020 22:09:56 +0000
+Received: from mout-p-201.mailbox.org ([80.241.56.171])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iowxx-0004Tg-JU
- for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 22:04:47 +0000
+ id 1iox2p-0006Lz-TO
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 22:09:50 +0000
 Received: from smtp1.mailbox.org (smtp1.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-202.mailbox.org (Postfix) with ESMTPS id 47smd62vlPzQlCh;
- Tue,  7 Jan 2020 23:04:42 +0100 (CET)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 47smkt4z0SzQlC6;
+ Tue,  7 Jan 2020 23:09:42 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
- [80.241.56.115]) (amavisd-new, port 10030)
- with ESMTP id 7_xt-FeCUNop; Tue,  7 Jan 2020 23:04:38 +0100 (CET)
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id P8yRRIR9qfJG; Tue,  7 Jan 2020 23:09:36 +0100 (CET)
 To: Adrian Schmutzler <mail@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-References: <20200105141756.23473-1-hauke@hauke-m.de>
- <93c68973-35b9-2dd1-70fb-2d15c12fa8ec@kresin.me>
- <0b2501d5c54f$2939cdc0$7bad6940$@adrianschmutzler.de>
+ 'OpenWrt Development List' <openwrt-devel@lists.openwrt.org>
+References: <3a6109f9-07db-7670-5a57-9a801d7c4dfc@hauke-m.de>
+ <019d01d5a617$53e76570$fbb63050$@adrianschmutzler.de>
+ <9ab7f0b2-d122-222a-6d8b-4c330fe3935b@hauke-m.de>
+ <009201d5c234$d1045e30$730d1a90$@adrianschmutzler.de>
+ <50e1561a-a48e-6b82-0b2f-52bfd90e747e@hauke-m.de>
+ <005f01d5c3c5$d420a320$7c61e960$@adrianschmutzler.de>
+ <007901d5c3ce$21ea2510$65be6f30$@adrianschmutzler.de>
+ <64da65c7-0827-3dfc-2b8c-2ad42ab62a3e@hauke-m.de>
+ <0b1a01d5c54e$15b0d8d0$41128a70$@adrianschmutzler.de>
 From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
@@ -100,23 +106,23 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <f4c7b327-6efc-7135-a4ab-95d2b0283756@hauke-m.de>
-Date: Tue, 7 Jan 2020 23:04:32 +0100
+Message-ID: <c529238c-ad18-7ab5-9aa7-597c22104381@hauke-m.de>
+Date: Tue, 7 Jan 2020 23:09:31 +0100
 MIME-Version: 1.0
-In-Reply-To: <0b2501d5c54f$2939cdc0$7bad6940$@adrianschmutzler.de>
+In-Reply-To: <0b1a01d5c54e$15b0d8d0$41128a70$@adrianschmutzler.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200107_140445_942979_65982976 
-X-CRM114-Status: GOOD (  18.57  )
+X-CRM114-CacheID: sfid-20200107_140948_263680_203831E0 
+X-CRM114-Status: GOOD (  21.72  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.241.56.172 listed in list.dnswl.org]
+ no trust [80.241.56.171 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: Fix sysupgrade for Xiaomi mir3g
+Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -128,94 +134,160 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3260585674043656972=="
+Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
+Content-Type: multipart/mixed; boundary="===============0928244261171032642=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============3260585674043656972==
+--===============0928244261171032642==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="iTjoOy9pQsRNrzPB36P1AuesLIUm0FKoT"
+ boundary="BLUY8CymJ6piVfGQNxdeOlyyM3RE8h97T"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---iTjoOy9pQsRNrzPB36P1AuesLIUm0FKoT
-Content-Type: multipart/mixed; boundary="QXM4XaZz5YBwtRxZYghSL6hYdZZR4Fn1Z"
+--BLUY8CymJ6piVfGQNxdeOlyyM3RE8h97T
+Content-Type: multipart/mixed; boundary="oMkYsa52E7cEqlEQiklhGAOzORDPlxsHX"
 
---QXM4XaZz5YBwtRxZYghSL6hYdZZR4Fn1Z
+--oMkYsa52E7cEqlEQiklhGAOzORDPlxsHX
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 1/7/20 12:39 PM, Adrian Schmutzler wrote:
+On 1/7/20 12:32 PM, Adrian Schmutzler wrote:
 > Hi Hauke,
 >=20
-> since you seem to have a mir3g, maybe you can look into the following M=
-AC address issue/question when you find some time:
+>> -----Original Message-----
+>> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] O=
+n
+>> Behalf Of Hauke Mehrtens
+>> Sent: Sonntag, 5. Januar 2020 14:54
+>> To: mail@adrianschmutzler.de; 'OpenWrt Development List' <openwrt-
+>> devel@lists.openwrt.org>
+>> Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
+>> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
+>>
+>> On 1/5/20 2:43 PM, mail@adrianschmutzler.de wrote:
+>>>>>>> On 11/28/19 7:11 PM, Adrian Schmutzler wrote:
+>>>>>>>> Hi Hauke,
+>>>>>>>>
+>>>>>>>>> The following are still on kernel 4.9:
+>>>>>>>>>  * ar7
+>>>>>>>>>  * ixp4xx
+>>>>>>>>>  * orion
+>>>>>>>>
+>>>>>>>> There are patches (actually from you, May 2019) on the list whic=
+h
+>>>>>>>> claim to bump ar7 and orion to 4.14:
+>>>>>>>>
+>>>>>>>> https://patchwork.ozlabs.org/project/openwrt/list/?series=3D1073=
+37
+>>>>>>>> https://patchwork.ozlabs.org/project/openwrt/list/?series=3D1073=
+39
+>>>>>>>>
+>>>>>>>> I haven't looked closer, just in case you forgot about them ;-)
+>>>>>>>
+>>>>>>> Nobody reported that they are working so I never applied them. I =
+do
+>>>>>>> not have the hardware, I just made them compile.
+>>>>>>
+>>>>>> Since there was no response of any kind from a third party, I've
+>>>>>> just
+>>>>> marked the two patchsets as "Deferred" in the patchwork, so we get =
+a
+>>>>> little more overview there. I hope that's okay for you.
+>>>>>
+>>>>> Yes fine with me, we should probably drop these targets soon.
+>>>>>
+>>>>> Hauke
+>>>>
+>>>> I think it's time to remove the three targets and kernel 4.9 support=
+ as
+>>>> well
+>>>> after the release has been made. Or does keeping kernel 4.9 in maste=
+r
+>>>> (even
+>>>> without targets) make it easier to support 18.06 branch?
+>>
+>> No, it does not help me to have kernel 4.9 is master for maintaining 1=
+8.06.
+>>
+>>> I've prepared a staging branch for that (completely untested at the
+>>> moment):
+>>>
+>> https://git.openwrt.org/?p=3Dopenwrt/staging/adrian.git;a=3Dshortlog;h=
+=3Drefs/heads
+>> /remove49
+>>
+>> Thank you.
+>>
+>> Before applying this please send this to the public mailing list.
+>>
+>>> For orion, I have some grep matches in uboot-kirkwood and
+>>> kernel/linux/modules/usb.mk I'm not sure about, so I haven't touched =
+those
+>>> yet.
+>>
+>> The orion part in usb.mk is also used by mvebu:
+>> https://cateee.net/lkddb/web-lkddb/USB_EHCI_HCD_ORION.html
+>>
+>> uboot-kirkwood probably also uses some orion parts in the kirkwood tar=
+get.
+>>
+>> I think kmod-crypto-iv is empty now.
+>>
+>> There are also some checks in include/netfilter.mk which can be remove=
+d now.
+>>
+>> This file can also be removed:
+>> package/kernel/linux/files/sysctl-tcp-bbr-k4_9.conf
+>>
+>>
+>> Hauke
 >=20
-> For the mir3g, 02_network sets the lan_mac to factory 0xe006, while the=
- address from 0xe000 set to &ethernet is (thus) used for wan:
-> https://github.com/openwrt/openwrt/blob/master/target/linux/ramips/mt76=
-21/base-files/etc/board.d/02_network#L262
+> If we remove the targets anyway, I wonder whether we shouldn't add your=
+ two 4.14 patchsets to master directly beforehand.
+> That way, we would have them in master history, where they would be eas=
+ier to find for someone wanting to use the target for whatever reason. (I=
+'d add an explanation of the situation to the commit message.) Still, hav=
+ing removed the target afterwards, no harm would be caused by the patches=
+ being untested. This would preserve your work there to someone looking f=
+or it, while not affecting working master in any way and without much add=
+itional work.
 >=20
-> That's the opposite of what's usual for mt7621 (lan: 0xe000, wan: 0xe00=
-6). Therefore, if you happen to have some spare time, it would be interes=
-ting to check which assignment is correct (with vendor OS). When dealing =
-with this anyway, it would also be interesting whether the device has a l=
-abel MAC address.
->=20
-> However, this is not really a pressing issue, so if you're short on tim=
-e just ignore me.
->=20
-> Best
->=20
-> Adrian
->=20
+> What do you think?
 
-Hi,
+Sounds good.
 
-I haven't checked the vendor FW, I only have OpenWrt on it and would
-have to flash somehow back.
-
-The LAN MAC in OpenWrt is: 40:31:3c:02:8f:b8
-The WAN MAC in OpenWrt is: 40:31:3c:02:8f:b7
-
-The label says: 40:31:3C:02:8F:B8
-
-In the bootlog of the vendor FW I see this:
-[    7.520000] set LAN/WAN LWLLL
-[    7.530000] GMAC1_MAC_ADRH -- : 0x00004031
-[    7.530000] GMAC1_MAC_ADRL -- : 0x3c028fb7
-[    7.530000] GDMA2_MAC_ADRH -- : 0x00004031
-[    7.540000] GDMA2_MAC_ADRL -- : 0x3c028fb8
-[    7.540000] eth1: =3D=3D=3D> VirtualIF_open
+I do not think they will be added again because the hardware is very
+only now.
 
 Hauke
 
 
---QXM4XaZz5YBwtRxZYghSL6hYdZZR4Fn1Z--
+--oMkYsa52E7cEqlEQiklhGAOzORDPlxsHX--
 
---iTjoOy9pQsRNrzPB36P1AuesLIUm0FKoT
+--BLUY8CymJ6piVfGQNxdeOlyyM3RE8h97T
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4VAHAACgkQ8bdnhZyy
-68fPWQf/eYdAona1oR3ajM04H4IbZA7HNRR0ucxPZJx9xRVkfT3C0mvaewk4IYp5
-G+aI1E5mpWMbRujzz4hpGHthbWti9CjrvOhFN6wYKLxQPFbiN8uk01ST0J/uimMV
-4TmZwJ48oSfMMEQRDef1ktuDhVH2j3K3Komx61VNQdb0aarrRz0P8CHs6RuvjcDv
-bG2hQHsRNUHcGrst0edeTjLUZesLhdQC12mrJKqTbKdH4YirwCIoSP0yPxFEwfM3
-VBO++xKUy2T1z5fKjV8IqEzAj0ScHVIg9WCq0+oKMB81bGy7GFdTdyk+SND1KYdl
-nb3Doxo0sAamHA2jINrPmHN+jqb6zA==
-=SFYx
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4VAZsACgkQ8bdnhZyy
+68e0TAf7BnaLwQ2AVEbk9I3QJZ6e5k0zPyAXL7K6515EFTHObwjO2U7HL5EujLYz
+YCy7NGo3ddz5nZkkgBKVjWNaZML7xfHCvmYzAPcJYzJUMm/iZQKyA0ELAGSRheXU
+tOf/y/us+gp7xTEpfkL0PS9lvZ1a+rjHcOc1gpEfiKOTfO3zAyghkDF8tcarvpLh
+VfnqliuGk+4LccZjZrBlibIWBQ/ILuOmVsUixzARLYH1C9LYChNGf9Fq4HIzNDEl
++ZaDX1JwHwyxLUviUdoW8v5ffTu2YKthiIopTIeP3EaKrmxrOTVkbjRCkomJ8sm/
+kHWAfMrHPcnU7leqiINWmLCRTMqwEw==
+=IPNu
 -----END PGP SIGNATURE-----
 
---iTjoOy9pQsRNrzPB36P1AuesLIUm0FKoT--
+--BLUY8CymJ6piVfGQNxdeOlyyM3RE8h97T--
 
 
---===============3260585674043656972==
+--===============0928244261171032642==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -226,5 +298,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============3260585674043656972==--
+--===============0928244261171032642==--
 

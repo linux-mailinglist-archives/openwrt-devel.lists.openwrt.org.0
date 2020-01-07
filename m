@@ -2,91 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03DC9131CAB
-	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 01:12:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E2971324E8
+	for <lists+openwrt-devel@lfdr.de>; Tue,  7 Jan 2020 12:32:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+dbbhbC4HzW11DKtDruC8aNAJkVVUeAFzuPPljQ+lh0=; b=QB1bZvW3zyNCje
-	aFJMLhOWwF7U8qh674N8Rv8d0O8AmrKaN+xPZjYIXBVqZE0fhxX0YHVdUW+5A6wG0kh1lapDy299g
-	kq6rahHvv8VgB3J9eUdhRLOKTqFOV2l94DLePKVbUBmFQf6+HPwYE6u9L7JeXB+KGisd/Bqe/JHP9
-	jf8EFvv5CiO1xTre5TVGtRJ5ng+pDSxn72pYbAKNMMr4em9QhR82oS3GcmhcOcqfJP2Y5Cn/Pzc/c
-	LCtyCq7HFJ4b2XHkMppg24g448lXAYFGpLA6FByzeVBYJYTIGnvSNTUwl1aJqDJgf1EVaXdIzxKn8
-	kTZt3LqtHFXmqUJQrQNQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yke0dBJunD8JhzXvOdDcLgiC1E6EswJpcSDo3/BIqWE=; b=LueKZFRnUBEMTKD6BNp3EvTUw
+	R1UjfYO7Bp2eSlCAEsrh25aDv0hevBFPjyfGV8OqbHpNVSD3AgEqf5AVBwxrHGIqHvI2Y2hpcrSV5
+	gJdcek19wWtd3H++vltKmYvtK2RbEMBKZoCj9Y+vJMBS3CAddXX1qxXqUEdSumDwoG9zBMk18D++H
+	O9ZOlzK4ur0jLPQYLpKX0+3F9PztzUNt4SfoHdLaGFM/NP2ftShNR3ykkEqej2H1pmH4yHvJlqyCR
+	OepAf8t5rCCjPtuWrtlSdJbV4hOewSbfg6nfqfSUt3U9kSdeSe1GWjLDtWgaPwIQbcJQ02JKxkr8j
+	DsRm9trPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iocTn-0007ij-MG; Tue, 07 Jan 2020 00:12:15 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ion5v-0006Az-3v; Tue, 07 Jan 2020 11:32:19 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iocTf-0007iQ-0a
- for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 00:12:08 +0000
-Received: by mail-pf1-x441.google.com with SMTP id p14so27679031pfn.4
- for <openwrt-devel@lists.openwrt.org>; Mon, 06 Jan 2020 16:12:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5SWgIZrY276J5XZXc8l1iNViGzCqI4HJbsg6CQo2rx4=;
- b=bw9lgyHdwGWev99nCRGMmfBqaowj8pAc+CQYz7Jehcu4yi9eyklPp+cQ0glyfmtb3k
- iHyEcAuDuy8YzfVRKRpYz+4+Zp75DsdAMXJoYhUhiH4YSUaBg519c1l1hoE4HNZ7FiOu
- HDX9rbuhDDkknyrkZycakGbiiXUeLezRKtWaAecA9CL/dU2KcNFOacw+8ltJsWTRUoK8
- TXT8vbyFWeXuocbH2XbvN4j6XKuWloZnCP5ju0JOsX7qTmrtAjkC4DTTfusHA0tYkiVf
- 4Q82v/lyZeNj9Y7/zhNgR4XScFjD9B0bhaTqJRpjpqEQ8pPAqWh4sC+9CyuH0JQs5pgl
- UKRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5SWgIZrY276J5XZXc8l1iNViGzCqI4HJbsg6CQo2rx4=;
- b=igPQkxc9O/lNbJOoT2f9rtog40NwZOJJnqh3GADmWtPXMbGfSrfm8gIz/N7voWdOvA
- g4QyIODQjVoGwfUnTslzxmbki14t7HXAxuoMFQ3Be0yBDgmaZED67S0C0MPGQvTTipoA
- A0qDyADOJ2BoGp5MndAlI6EuvrZXmY9U5DegDm4VVFw5Kz+bnSopAXXR0DpGlQTHCPZe
- 0JlYjsOTvu19FQ8/XToa4U3/8WQAr1wtG4cshWnyZ8n/iy3F/rD1ogbmrpbU88JRWC78
- rc3ejG2NBLDf6sNVA+wjxdErk+xI3XSVRjISrINEuHl3qDxA/y8JdXiBx7JLziS+9W2N
- BEBA==
-X-Gm-Message-State: APjAAAX5WInWyfAFvHFclK+cZMtHjq5gfiFtQ5Vczb7Z5c+CWCcrPhKK
- twLWfJ2IwBmDmoxJb+DkmobUCqU5lRI=
-X-Google-Smtp-Source: APXvYqxjdlmN+VopGtb1Kqc338v/GneuqGqaRNPPeqj2tKI33H1DMcj/TU49v9OERMo3U0qT/rr0wA==
-X-Received: by 2002:a63:770c:: with SMTP id s12mr117612821pgc.25.1578355925736; 
- Mon, 06 Jan 2020 16:12:05 -0800 (PST)
-Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id u3sm75900279pga.72.2020.01.06.16.12.04
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 16:12:04 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon,  6 Jan 2020 16:12:03 -0800
-Message-Id: <20200107001203.22342-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.24.1
+ id 1ion5k-0006AO-0D
+ for openwrt-devel@lists.openwrt.org; Tue, 07 Jan 2020 11:32:10 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1Mg6mG-1jLNoj3r3e-00hiOF; Tue, 07
+ Jan 2020 12:32:03 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Hauke Mehrtens'" <hauke@hauke-m.de>,
+ "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
+References: <3a6109f9-07db-7670-5a57-9a801d7c4dfc@hauke-m.de>
+ <019d01d5a617$53e76570$fbb63050$@adrianschmutzler.de>
+ <9ab7f0b2-d122-222a-6d8b-4c330fe3935b@hauke-m.de>
+ <009201d5c234$d1045e30$730d1a90$@adrianschmutzler.de>
+ <50e1561a-a48e-6b82-0b2f-52bfd90e747e@hauke-m.de>
+ <005f01d5c3c5$d420a320$7c61e960$@adrianschmutzler.de>
+ <007901d5c3ce$21ea2510$65be6f30$@adrianschmutzler.de>
+ <64da65c7-0827-3dfc-2b8c-2ad42ab62a3e@hauke-m.de>
+In-Reply-To: <64da65c7-0827-3dfc-2b8c-2ad42ab62a3e@hauke-m.de>
+Date: Tue, 7 Jan 2020 12:32:03 +0100
+Message-ID: <0b1a01d5c54e$15b0d8d0$41128a70$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
+Content-Language: de
+Thread-Index: AQKHHZl+c6tYe6NxV90oTdPoalDB0gKX3rv8AN9zaFkBVuaE5QBtT/prArzE7GEByW0orAIai//vph18xBA=
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:vLbZGpAFXd/N/gvBp6PqwazVtrFSMK6600uGV333+IsK/sudRiu
+ XMKRHq4a7L0QcWZA5jQyP6Ei6U8ZGbXyxIBZAM40D+X28p6jqmkzPpE1zjWyks0D+6Jm1ui
+ R9Z4rlJGw+MKIbdW7OS3ttAeRpPqaE5BnZ8MmcY12kOore6RRzL8+HzAL/JlAqvO3lbeV0i
+ jjTqnDw96fdyHykSR62qQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:aKBDvT4zAII=:+oH13PBTrdmgsV/pjRWHc2
+ pM/+C42xs/z9TzZHLUXpeFCY928FuDo9phEBLCicTZI1J4P6gDDSja6G/5bntCMBqdkzubsp4
+ sth/MD5AeU71UklcVImdKnKC6IeNqrWTohLYppns+6YaA7+MknhCzLDtiLBzVXRCt7ApRxMRT
+ gftXR3jueuK3nw4sMV1ocX30KSPaDm3izjsmFGZyJy1C6btYqgQw/VLBsEV8CaRAKnGvGi1z4
+ 0ZBOvNbSZ8IKd7Q66lra5xuNgcXhDlwotosKHIm1s833cdhLaE+fzyWJ120I41RLiMkCjGeIW
+ p8ZWegJ2KPOM4G7l7hUn0aHtXabMi+p8Hr4FXMdJuv9QqAy5EdQtl7V/cNt2lT4HBMCd+EvJF
+ NpA6skSMOaKiFeOQ8xgDGKKUie5X9rduZGBQN0VxUYRT6YefhDiVno11FimIDaKgL/qsVwRV3
+ u2pGO2BJkrtXY0sdbctGy9g1v1nl4hVxRBC7PlIQ54eBFrpJAfUx5FK6YSFtyE1rL1TBzMTBB
+ EcD/SrNBE4pLI1jXXKprzqMP3Pj0x1kqmLCyYBPmOpRS+o1dE89RGr+nJ0QZ41UBGZ2sY6M/J
+ oTl533BebY4T3L6ABduf91DrN3XiIc7I9jGG9SlbujRn4Wm1mEPPJomfVGl1+k8MCDCtLpMS4
+ y0NIVz24APQB+eaFk0u1VtxDr6IklVzk8SN6mRFEjGQJX1yzy7hOjAPKbVwbomaVuakdwwqOZ
+ J4v4oW1uSOzzn5I5MqYLqv6MzOKqtmyQiNLsO592hb3CGhWt2tFcqy+ArJkX4XSp9snaZrQpu
+ o+zZ2bKYVO04gcsIa9xSE19u8L3SrDvO/XieAQNp4VIN3yANrvylPmyTIdRsB96N9dxhJ+NQN
+ S4SZHS4yhFRXDcngKPV0CQHlXFUrImyrc+EpVvpas=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_161207_053991_2137D15B 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200107_033208_337106_7507FD0C 
+X-CRM114-Status: GOOD (  24.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [217.72.192.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH] ath79: ag71xx: use netif_receive_skb_list
- on 4.19
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,85 +87,161 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
+Content-Type: multipart/mixed; boundary="===============1846535324430562439=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Chuanhong Guo <gch981213@gmail.com>
+This is a multipart message in MIME format.
 
-This new function make batch processing of network packets possible,
-which slightly improves performance.
+--===============1846535324430562439==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=S0/5m/JextOjso=-="
 
-Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
-Tested-by: Rosen Penev <rosenp@gmail.com>
----
- around a 20mbps improvement is measured on a TP-LINK Archer C7v2
- .../net/ethernet/atheros/ag71xx/ag71xx_main.c | 20 ++++++++++++++++++-
- 1 file changed, 19 insertions(+), 1 deletion(-)
+This is a multipart message in MIME format.
 
-diff --git a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-index 0924b81b92..8831a51acc 100644
---- a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-+++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-@@ -1106,14 +1106,22 @@ static int ag71xx_rx_packets(struct ag71xx *ag, int limit)
- 	unsigned int offset = ag->rx_buf_offset;
- 	int ring_mask = BIT(ring->order) - 1;
- 	int ring_size = BIT(ring->order);
-+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4,19,0))
-+	struct list_head rx_list;
-+	struct sk_buff *next;
-+#else
- 	struct sk_buff_head queue;
-+#endif
- 	struct sk_buff *skb;
- 	int done = 0;
- 
- 	DBG("%s: rx packets, limit=%d, curr=%u, dirty=%u\n",
- 			dev->name, limit, ring->curr, ring->dirty);
--
-+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4,19,0))
-+	INIT_LIST_HEAD(&rx_list);
-+#else
- 	skb_queue_head_init(&queue);
-+#endif
- 
- 	while (done < limit) {
- 		unsigned int i = ring->curr & ring_mask;
-@@ -1155,7 +1163,11 @@ static int ag71xx_rx_packets(struct ag71xx *ag, int limit)
- 		} else {
- 			skb->dev = dev;
- 			skb->ip_summed = CHECKSUM_NONE;
-+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4,19,0))
-+			list_add_tail(&skb->list, &rx_list);
-+#else
- 			__skb_queue_tail(&queue, skb);
-+#endif
- 		}
- 
- next:
-@@ -1167,10 +1179,16 @@ next:
- 
- 	ag71xx_ring_rx_refill(ag);
- 
-+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4,19,0))
-+	list_for_each_entry_safe(skb, next, &rx_list, list)
-+		skb->protocol = eth_type_trans(skb, dev);
-+	netif_receive_skb_list(&rx_list);
-+#else
- 	while ((skb = __skb_dequeue(&queue)) != NULL) {
- 		skb->protocol = eth_type_trans(skb, dev);
- 		netif_receive_skb(skb);
- 	}
-+#endif
- 
- 	DBG("%s: rx finish, curr=%u, dirty=%u, done=%d\n",
- 		dev->name, ring->curr, ring->dirty, done);
--- 
-2.24.1
+--=-=S0/5m/JextOjso=-=
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
+Hi Hauke,
+
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Hauke Mehrtens
+> Sent: Sonntag, 5. Januar 2020 14:54
+> To: mail@adrianschmutzler.de; 'OpenWrt Development List' <openwrt-
+> devel@lists.openwrt.org>
+> Cc: 'Koen Vandeputte' <koen.vandeputte@ncentric.com>
+> Subject: Re: [OpenWrt-Devel] Kernel version for OpenWrt 20.X
+>=20
+> On 1/5/20 2:43 PM, mail@adrianschmutzler.de wrote:
+> >>>>> On 11/28/19 7:11 PM, Adrian Schmutzler wrote:
+> >>>>>> Hi Hauke,
+> >>>>>>
+> >>>>>>> The following are still on kernel 4.9:
+> >>>>>>>  * ar7
+> >>>>>>>  * ixp4xx
+> >>>>>>>  * orion
+> >>>>>>
+> >>>>>> There are patches (actually from you, May 2019) on the list which
+> >>>>>> claim to bump ar7 and orion to 4.14:
+> >>>>>>
+> >>>>>> https://patchwork.ozlabs.org/project/openwrt/list/?series=3D107337
+> >>>>>> https://patchwork.ozlabs.org/project/openwrt/list/?series=3D107339
+> >>>>>>
+> >>>>>> I haven't looked closer, just in case you forgot about them ;-)
+> >>>>>
+> >>>>> Nobody reported that they are working so I never applied them. I do
+> >>>>> not have the hardware, I just made them compile.
+> >>>>
+> >>>> Since there was no response of any kind from a third party, I've
+> >>>> just
+> >>> marked the two patchsets as "Deferred" in the patchwork, so we get a
+> >>> little more overview there. I hope that's okay for you.
+> >>>
+> >>> Yes fine with me, we should probably drop these targets soon.
+> >>>
+> >>> Hauke
+> >>
+> >> I think it's time to remove the three targets and kernel 4.9 support as
+> >> well
+> >> after the release has been made. Or does keeping kernel 4.9 in master
+> >> (even
+> >> without targets) make it easier to support 18.06 branch?
+>=20
+> No, it does not help me to have kernel 4.9 is master for maintaining 18.0=
+6.
+>=20
+> > I've prepared a staging branch for that (completely untested at the
+> > moment):
+> >
+> https://git.openwrt.org/?p=3Dopenwrt/staging/adrian.git;a=3Dshortlog;h=3D=
+refs/heads
+> /remove49
+>=20
+> Thank you.
+>=20
+> Before applying this please send this to the public mailing list.
+>=20
+> > For orion, I have some grep matches in uboot-kirkwood and
+> > kernel/linux/modules/usb.mk I'm not sure about, so I haven't touched th=
+ose
+> > yet.
+>=20
+> The orion part in usb.mk is also used by mvebu:
+> https://cateee.net/lkddb/web-lkddb/USB_EHCI_HCD_ORION.html
+>=20
+> uboot-kirkwood probably also uses some orion parts in the kirkwood target.
+>=20
+> I think kmod-crypto-iv is empty now.
+>=20
+> There are also some checks in include/netfilter.mk which can be removed n=
+ow.
+>=20
+> This file can also be removed:
+> package/kernel/linux/files/sysctl-tcp-bbr-k4_9.conf
+>=20
+>=20
+> Hauke
+
+If we remove the targets anyway, I wonder whether we shouldn't add your two=
+ 4.14 patchsets to master directly beforehand.
+That way, we would have them in master history, where they would be easier =
+to find for someone wanting to use the target for whatever reason. (I'd add=
+ an explanation of the situation to the commit message.) Still, having remo=
+ved the target afterwards, no harm would be caused by the patches being unt=
+ested. This would preserve your work there to someone looking for it, while=
+ not affecting working master in any way and without much additional work.
+
+What do you think?
+
+Best
+
+Adrian
+
+--=-=S0/5m/JextOjso=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4UbC8ACgkQoNyKO7qx
+AnBq0BAArKSZdg/9KdL6k4KrAR2nCnQlsB3tdveawftx0iAAzGsPv5I8P30itbjC
+hJKzgxqs1uJnoBMyBUsr4rneZzGACrmve2kyERXu95x3F170RqCRiiNS5og8wA7y
+A9fwW4Crt1K4ETOtgE2ehcc5tOJYtmWpb0qtGf3m/DDnoykvam8o8rziynMpxI5b
+qrEY/V9LA3L9wn0uJ/LQZfkcnzzPc5muRTH8Z89I29/xxzOnGCgXmm/sBZNfftTj
+F9GyHMhWY7rTlweW5wCTEHwfGNO0QzfNQ1AvVYhv7KHLs3lx+OwwM4HeoEjl6NcR
+lt2SvuD9iO0TjB1atk6TFzWVWSzMieU7rOLFhbRibn4NWnlGEKtkWNIm5sdAc2iL
+uEoGwDHZ6cf7FcNyY2SdhjnGvAvrLhbomWExXFjJfOvpcfqWRh4vHsbeeN1Z+YBH
+KnS0Ziz4MOq0+wJcdov7Xm0+8W/ZWHD4eC7wjRSoS06e58BHJ77HzO2aUqY5kRa0
+jUcs21UBo7ga2axFbD6z04lULbA/3FFTTce8TJmm+S4HiT7LNxcMAIFPv1unGujg
+fjO3DC0e1ZdWTNwPihL12qvJdhfh2SzF/wR9euFwTUk4jIcnD44npFzIXOhDIsRF
+KDhvAsBLkz+uTlbo9yYLaQQCUvhp4pHttyulQVvnEhGLo8n5Us8=
+=pCSQ
+-----END PGP SIGNATURE-----
+
+
+--=-=S0/5m/JextOjso=-=--
+
+
+
+--===============1846535324430562439==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1846535324430562439==--
+
+

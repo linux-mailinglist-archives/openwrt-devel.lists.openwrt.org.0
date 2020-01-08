@@ -2,59 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D55CB134F76
-	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Jan 2020 23:38:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F392134F78
+	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Jan 2020 23:38:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bQvOy9U0jfZN9yYsudiG5cQBwJtopeN7QsUrERGoRAc=; b=OeEQ37pd8sPgmw
-	8dOXW3thDeQjjrgKvqtFnadQqxZjs6YQEv9QvDKqPZQ0ZW/aRQUct07b/s0bZ5FY527RIVcP5O53d
-	up61qV02BbYc1KIzMh2usJSC76a29OCDTwZA+ERaZGpBjcEFdiVRm0lXUkJwXV6W4i0AdazGVmaNp
-	GjYKlns/QiHtqwLH80kmGIQulWzK25kuI3WANta9R0m0DeW46VRg+QVTGDbAWFqLtJu771LT+I6+G
-	5gIe0WXbbMiyoI8cnqtnzqlWuJaPmn8nk4Q6V01VKEJV6yxmBPdkEb3gldhAl3vXjU0E24+L8l0Qg
-	Ut3h/zb/7K5ZjcfUn4GQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=nQMGhIyn4M87V8KrwR51b59sf5iigRJyEukXZve6tDI=; b=PUTfP2Sg2Xx2IQBdKWt1jQlgFS
+	ubHGZ5bdILTRw2rowDOpRLTnZrwr4sm+WQEzXqjbt2B+dcdbgHGSwtxpxuOHtKsIn3xqTTNbr/Sos
+	tu2xoewijQfCrx7lfeMZmSrpARcSWsAd+6YLjvbebUNa4RjIc6tCma7Wy1J2nVTKrpaUVm0MSGIza
+	HnrsnKK9viiqKmLgu2MRinpG5MkrWYlWCbsQByIHjWIIfN6tFFZF+n1gjrli7snv8iQufyVA3oRyC
+	M4S6EHyRWdbUtIa+oB7VR5Wa9NoTA63UtGrsqTonBaMrWMWmAvbjpW0Q0nf2aY2/nLt9eEdpfWKhE
+	4m9vb2aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipJxm-0002Wn-O7; Wed, 08 Jan 2020 22:38:06 +0000
-Received: from frisell.zx2c4.com ([192.95.5.64])
+	id 1ipJyM-00038V-48; Wed, 08 Jan 2020 22:38:42 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipJxV-0002Bx-Ep
- for openwrt-devel@lists.openwrt.org; Wed, 08 Jan 2020 22:37:50 +0000
-Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id 51867d37;
- Wed, 8 Jan 2020 21:38:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
- :subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding; s=mail; bh=vbuKHE4sJHPnKPqkcfLwOoq0N
- 8E=; b=xnm8VZKWRNcYq4V1jymzU8w3+x3xycac0aryPposEogcOSURCvfCoLMYN
- Kimb7onj+bNoMMQS+bX7H2K3uW/f3gOlCMIHVHujjIrlUZKmi3MZMmXJPctv7OXj
- q31nQlGCl7SYpg7GvVeVPiltLJjFsmARWpH5c1VJLZzVVN5ESJZIBMAtUEwVp9ff
- gzVkTuZKUS7PFjseoHOXRvgZMU6nKE0WRmV+MgCstr3VZ70HniV96BBGmDCuGE/I
- JGpiUZijJe1z6Da77R1n+mDvt8MzBZ6hjegRNCXbUveV4WVfU6GAn1Ymld1KLIji
- FYbPYiQ8FyRy2xwI95l4Ralo9zwJQ==
-Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id c04cad12
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
- Wed, 8 Jan 2020 21:38:24 +0000 (UTC)
-From: "Jason A. Donenfeld" <Jason@zx2c4.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Wed,  8 Jan 2020 17:37:41 -0500
-Message-Id: <20200108223741.487861-2-Jason@zx2c4.com>
-In-Reply-To: <20200108223741.487861-1-Jason@zx2c4.com>
-References: <20200108223741.487861-1-Jason@zx2c4.com>
+ id 1ipJyE-00037Q-RT
+ for openwrt-devel@lists.openwrt.org; Wed, 08 Jan 2020 22:38:36 +0000
+Received: by mail-oi1-x243.google.com with SMTP id z64so4195969oia.4
+ for <openwrt-devel@lists.openwrt.org>; Wed, 08 Jan 2020 14:38:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=cxDXgH35Z55tXcvLAW8OlN7DefmiIAgbMeUxIC9jkXw=;
+ b=vD4udCFmnZDHwBxNaBR1uCkCd18JyKzC+YtqpVX7/0aGCBMOuTTH+HdQ2xgQaI27yC
+ dy51SL9q8aViB2hN+FoFKOobtyYp92LfSJs34Tx2MGHeZSlXChFsz4UR0FKfCnNCh/6t
+ ghO9vUOk1mHO3qBIi2ZhPnYra8riwnc1LO5KnkY9lVFQ1ETS7AnNAQogarlP/PrjVQyM
+ axq3col2mrBTIrxQRkDPxenpIthUqxTuZyVQBux8VKJYiRtCgvnIEM0nEgC2RSw7QcYZ
+ b5OpmdACQyt+05qIAkVQjJWgZx0vZEE/WIlcuKhWATG08mWjaJiQxJ0aOGGXBfCcpWl6
+ OAmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=cxDXgH35Z55tXcvLAW8OlN7DefmiIAgbMeUxIC9jkXw=;
+ b=XP2SuOsZpMBzZXCsyImg4RDhZfz3nkJ7VRpZvUdtqkPjfwhN4sPPGaXvu29L6NxZQf
+ VmzMf5aIRv7gT8GEB/sKcorLeF6IHad1lmS8FDIqvI+np7655jwTYUXKKMIrbhvHSkXi
+ AmlkX4++2zJ0ZzWih9AzWyvW3exBN0V5uE4x0PNWE9AjbGRsZvZbw5qE2GV7dEeXpu9Z
+ H1AqS9OeT5QgPEM7iKuwgSNIhNkB2akDzbSPKBfBLzDPbzrXjFqW5SgLmuywpgvZ5+6B
+ MuyTRdR/Vb1+4kxAqsbbfrgMUswE7B6KYYnpw6vZ5jeHjq28Gp0ri3yQQSey4m+oadFE
+ ArlQ==
+X-Gm-Message-State: APjAAAVS/8wwyYMIRfwwzb8eQ5hEnAp7ijokjxBveGRRB0AvtLaN3PZc
+ S+v4MOwFQbiJRUMew4yjEUhwniIR0g3zkY4rBsge3tnR2Bc=
+X-Google-Smtp-Source: APXvYqyQuZbfFN/mlXBXE9WbJZSLRSCQmeKI1eB6Ot3GybtevM6lZzxRhY7twXKW0ggMz+FfeB6T9e5lz1/DxaVeogA=
+X-Received: by 2002:aca:72d0:: with SMTP id p199mr814367oic.40.1578523113675; 
+ Wed, 08 Jan 2020 14:38:33 -0800 (PST)
 MIME-Version: 1.0
+References: <20200108223542.599823-1-rosenp@gmail.com>
+In-Reply-To: <20200108223542.599823-1-rosenp@gmail.com>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Wed, 8 Jan 2020 14:38:22 -0800
+Message-ID: <CAKxU2N-FxV4FEo2Sf4F_8ez0iCu1O+E2E9rc1GP8ENdpmZJdgQ@mail.gmail.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_143749_568431_97E20427 
-X-CRM114-Status: UNSURE (   8.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200108_143834_910499_4C39E63A 
+X-CRM114-Status: GOOD (  15.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.95.5.64 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -64,7 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH 2/2] wireguard-tools: bump to 1.0.20200102
+Subject: Re: [OpenWrt-Devel] [PATCH] toolchain/nasm: Do not build for
+ pentium targets
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,66 +93,58 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-* systemd: update documentation URL
-* global: bump copyright
+On Wed, Jan 8, 2020 at 2:35 PM Rosen Penev <rosenp@gmail.com> wrote:
+>
+> NASM builds completely broken files with pentium targets. This causes
+> ffmpeg to fail compilation. Instead of working around the problem in the
+> ffmpeg Makefile, it's easier to just not build for broken platforms.
+>
+> Not even objdump can figure out what the generated files are.
+Another way to fix this is the following patch:
 
-Usual house keeping.
+--- a/include/target.mk
++++ b/include/target.mk
+@@ -177,8 +177,8 @@ ifeq ($(DUMP),1)
+     CPU_CFLAGS_octeonplus = -march=octeon+ -mabi=64
+   endif
+   ifeq ($(ARCH),i386)
+-    CPU_TYPE ?= pentium
+-    CPU_CFLAGS_pentium = -march=pentium-mmx
++    CPU_TYPE ?= pentium2
++    CPU_CFLAGS_pentium2 = -march=pentium-mmx
+     CPU_CFLAGS_pentium4 = -march=pentium4
+   endif
+   ifneq ($(findstring arm,$(ARCH)),)
 
-* Makefile: DEBUG_TOOLS -> DEBUG and document
-* Makefile: port static analysis check
-* dns-hatchet: adjust path for new repo layout
-* Makefile: rework automatic version.h mangling
-
-These are some important-ish cleanups for downstream package maintainers that
-should make packaging this a lot smoother.
-
-* man: add documentation about removing explicit listen-port
-
-Documentation improvement.
-
-* wg-quick: linux: quote ifname for nft
-
-This should fix issues with weirdly named ifnames and odd versions of nft(8).
-
-* fuzz: find bugs in the config syntax parser
-* fuzz: find bugs when parsing uapi input
-
-These are two fuzzers that have been laying around without a repo for a while.
-Perhaps somebody with enough compute power will find bugs with them.
-
-Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
----
- package/network/utils/wireguard-tools/Makefile | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/package/network/utils/wireguard-tools/Makefile b/package/network/utils/wireguard-tools/Makefile
-index 2f6d307..afde98a 100644
---- a/package/network/utils/wireguard-tools/Makefile
-+++ b/package/network/utils/wireguard-tools/Makefile
-@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
- 
- PKG_NAME:=wireguard-tools
- 
--PKG_VERSION:=1.0.20191226
-+PKG_VERSION:=1.0.20200102
- PKG_RELEASE:=1
- 
- PKG_SOURCE:=wireguard-tools-$(PKG_VERSION).tar.xz
- PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-tools/snapshot/
--PKG_HASH:=aa8af0fdc9872d369d8c890a84dbc2a2466b55795dccd5b47721b2d97644b04f
-+PKG_HASH:=547cd1c2f8dca904faac9e8d3964f1ef956c24bb12e3498da88dde95243c7f08
- 
- PKG_LICENSE:=GPL-2.0
- PKG_LICENSE_FILES:=COPYING
--- 
-2.24.1
-
+The problem with that one is that I have no hardware to test it on. In
+theory it should work as mtune is identical.
+>
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> ---
+>  toolchain/Config.in | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/toolchain/Config.in b/toolchain/Config.in
+> index 762f4e10d7..f55e756877 100644
+> --- a/toolchain/Config.in
+> +++ b/toolchain/Config.in
+> @@ -226,7 +226,7 @@ source "toolchain/gcc/Config.in"
+>
+>  config NASM
+>         bool
+> -       depends on ( i386 || x86_64 )
+> +       depends on (x86_64 || (i386 && !(TARGET_x86_geode || TARGET_x86_legacy)))
+>         prompt "Build nasm" if TOOLCHAINOPTS
+>         default y
+>         help
+> --
+> 2.24.1
+>
 
 _______________________________________________
 openwrt-devel mailing list

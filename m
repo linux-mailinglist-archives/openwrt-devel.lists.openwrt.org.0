@@ -2,78 +2,57 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BC30134F73
-	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Jan 2020 23:36:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02272134F75
+	for <lists+openwrt-devel@lfdr.de>; Wed,  8 Jan 2020 23:38:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IpKDfDFeXWx3LyMxWHtnRFSMiLdLgDVwje+M4c9zNfE=; b=TKN10JPgo6T+4U
-	Xyv2J2mUvT55e1hZiiHhD1l19ApZbAV0u3+w86N43C2u3xhxvMxOnDa/FeWIZVOBi7W4L0I+XQGq8
-	/Gubc9QjrIAwCY62p1uG+w4I5vBWv5hMHK9maEy5WfRVevKzO7qJGeoEmFJrklvwP11Ze+dYSULqy
-	qI8GRlMUP51LMDsCjaCFBf79Q5Aldi7pgXdVNA+s0UleTljMFB/h6/OW/Pd2WBr+JQki8GRLm9K3h
-	4QDwlHVnU6N3hL5rQ4YzFYRWxmBdL1u/FOmpszTSEt9v/eEyOYKitUXYIltOJ/Xq6rh8rsJxqG8lz
-	YcYmTi6BRhfFx1HWgkrg==;
+	List-Owner; bh=Q3AG62F59npqZqY0p+pqgIjcbvLVmXlo5DBCnohOa0g=; b=eOD7qNHLE2VMsA
+	rZYTunW5Qmr+52rXDP5WWbxhDC1jPDnZxfBmr90ZCrY2WrYqZxbIkdX0kDT/np5JSXmSNpgEMkWUI
+	lu5X1ecc5BU3h0Zt9M+VSe4Fu5uopKBdX19fjE3Rs3xFbpO5NCeeShClnBZAQBeQ3KHnLi3cTJCk4
+	Jqbwdl8zwthjm7Mgz57sjTeIZdNNvDTTgM8ATfPzodSuqH6PCGvc1Woht4Hb0r5hxtIt4cf7lGdMn
+	Wn4St/dJ6GAcU3z49CA+2map3jmCQ+/Nd3VI6xoWEoBH2o/Tmbagk5GOasW82pL4Vnemjg6Hdahy+
+	EPtw6CvbBIZ7JvlAaSHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipJvd-0001nx-2l; Wed, 08 Jan 2020 22:35:53 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1ipJxc-0002M1-1b; Wed, 08 Jan 2020 22:37:56 +0000
+Received: from frisell.zx2c4.com ([192.95.5.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipJvU-0001nR-U1
- for openwrt-devel@lists.openwrt.org; Wed, 08 Jan 2020 22:35:46 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id j11so239241pjs.1
- for <openwrt-devel@lists.openwrt.org>; Wed, 08 Jan 2020 14:35:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GMH4vHBCGK7mUcnV83BCiXXBSBDoFFK0/Ssjpu9YjHM=;
- b=OnrwUJYZFNGpajnI+wyGmUolHBBoOndYwwTWQORCbCutFtar29iq8LIHTJEcqWrjzy
- fMX1h+caNcEJ+25mWEbyb7JzU6q6iUKx/evDI2VzeHsJ+w4SsVt8YgbnSNirisVJRwl2
- Z+MXbREr2pUx7S0RM1lN2ghm5mYJf4rN7ULeuQP6PvUPzEm5EYchIpR7IuvpnF8gD0WF
- VN9PkITiiHRNHvXxiBcXK6E/mGqY4PZ/fGe37qqWi3MDoGTnxy+UFeR54yMFM/hnoH8F
- 1ammwNnMYuSCXBxXAhv2VP6F8HdrP+ouSdStI4PMYvseCLUHTrs4FAqgIZafFyUZW/YT
- kezg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GMH4vHBCGK7mUcnV83BCiXXBSBDoFFK0/Ssjpu9YjHM=;
- b=LGsouRSD4xFe7v8n97Mn9tdFWnMRsXSaircXp0RrfxNRiFBANZV5tkBOXIjauj/SuY
- Kf4svrvCnt8hNv5vmGLD5t04BTcPknm5DZXV9b49T4idOB0Il1P1OTKaJxAQ63JL5rW0
- r49sfljkOpj99+vj4jEvq+dvUtu6W3V7Gy2wtc01vAPa4htcw4D6CTvTnfluIoz3elfP
- FK1iDmbSbZqwiUZoLDQhigP9pLVbVXpKded2T5iZRFncI7fsns5zyYxPnylQgg9ng82W
- jmu/5Zkj1RQqStxJc9HJuZfNhnky5L0cI6x9TT8JrfZGCCHbfnwIAFIclO7mYf3boH+t
- c+kA==
-X-Gm-Message-State: APjAAAVrS1RRNc7PNA+vEDZ1GipOyUFP6BUdh11q02CChKNAiwCeeBhC
- 3BHhzp4OTApNKYgT42r2nA0kSQL7Zhw=
-X-Google-Smtp-Source: APXvYqxmKt9vSPZ7X+FXy/4lcBK9aW3l3w2l5xPqADqMDi4PzL9Vo0gn3Wq7rq7s2hiJ/4X/a9NY3w==
-X-Received: by 2002:a17:90b:f06:: with SMTP id
- br6mr1114198pjb.125.1578522943941; 
- Wed, 08 Jan 2020 14:35:43 -0800 (PST)
-Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id a23sm5040783pfg.82.2020.01.08.14.35.43
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 08 Jan 2020 14:35:43 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1ipJxT-0002Bx-IG
+ for openwrt-devel@lists.openwrt.org; Wed, 08 Jan 2020 22:37:49 +0000
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTP id d7fc94bb;
+ Wed, 8 Jan 2020 21:38:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=zx2c4.com; h=from:to:cc
+ :subject:date:message-id:mime-version:content-transfer-encoding;
+ s=mail; bh=W9LifhIW6C64rUANPJCxbWYMtms=; b=iL7f5lL9/X5SjlAlIJIL
+ mdSpC8syW222+ZPDN1Qw81fXHBQBbd4ovy3KIOlL+Olfo4KflvRbD5SBGbmEdBJw
+ KMsXWld6pi+wYVFYKW30o4nxRTbARhsCMOtYgPPdhU8tYT2wE6rCzM5bfI9jcx/9
+ C++a0Nv6YX55SEl11ptPKx4lYOErlEbMKefzwIMTA2R/S3FIRQGvUpxej2Lro5sR
+ DI0eVb3iIC2SzUnJg5OmJ4KdLNLA2sBkXSHOQvGKDsqp0jh9eJhrPcgwqM6dsaHg
+ EsAsfalRoWexM2Vn8yGPRZKr3gPU0x+F60+/Zs0dAvzwV+CeZG4LFnGoR9VpYKT5
+ hw==
+Received: by frisell.zx2c4.com (ZX2C4 Mail Server) with ESMTPSA id 0b324eb7
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
+ Wed, 8 Jan 2020 21:38:24 +0000 (UTC)
+From: "Jason A. Donenfeld" <Jason@zx2c4.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Wed,  8 Jan 2020 14:35:42 -0800
-Message-Id: <20200108223542.599823-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.24.1
+Date: Wed,  8 Jan 2020 17:37:40 -0500
+Message-Id: <20200108223741.487861-1-Jason@zx2c4.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_143544_969082_0150E4CE 
-X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-CacheID: sfid-20200108_143747_675841_7676F3C8 
+X-CRM114-Status: UNSURE (   9.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.95.5.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,8 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH] toolchain/nasm: Do not build for pentium
- targets
+Subject: [OpenWrt-Devel] [PATCH 1/2] wireguard: bump to 0.0.20200105
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,35 +74,51 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: "Jason A. Donenfeld" <Jason@zx2c4.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-NASM builds completely broken files with pentium targets. This causes
-ffmpeg to fail compilation. Instead of working around the problem in the
-ffmpeg Makefile, it's easier to just not build for broken platforms.
+* socket: mark skbs as not on list when receiving via gro
 
-Not even objdump can figure out what the generated files are.
+Certain drivers will pass gro skbs to udp, at which point the udp driver
+simply iterates through them and passes them off to encap_rcv, which is
+where we pick up. At the moment, we're not attempting to coalesce these
+into bundles, but we also don't want to wind up having cascaded lists of
+skbs treated separately. The right behavior here, then, is to just mark
+each incoming one as not on a list. This can be seen in practice, for
+example, with Qualcomm's rmnet_perf driver. This lead to crashes on
+OnePlus devices and possibly other Qualcomm 4.14 devices. But I fear
+that it could lead to issues on other drivers on weird OpenWRT routers.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
+This commit is upstream in net-next as:
+https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git/commit/?id=736775d06bac60d7a353e405398b48b2bd8b1e54
+
+Signed-off-by: Jason A. Donenfeld <Jason@zx2c4.com>
 ---
- toolchain/Config.in | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ package/network/services/wireguard/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/toolchain/Config.in b/toolchain/Config.in
-index 762f4e10d7..f55e756877 100644
---- a/toolchain/Config.in
-+++ b/toolchain/Config.in
-@@ -226,7 +226,7 @@ source "toolchain/gcc/Config.in"
+diff --git a/package/network/services/wireguard/Makefile b/package/network/services/wireguard/Makefile
+index c379b71..9593c1d 100644
+--- a/package/network/services/wireguard/Makefile
++++ b/package/network/services/wireguard/Makefile
+@@ -11,12 +11,12 @@ include $(INCLUDE_DIR)/kernel.mk
  
- config NASM
- 	bool
--	depends on ( i386 || x86_64 )
-+	depends on (x86_64 || (i386 && !(TARGET_x86_geode || TARGET_x86_legacy)))
- 	prompt "Build nasm" if TOOLCHAINOPTS
- 	default y
- 	help
+ PKG_NAME:=wireguard
+ 
+-PKG_VERSION:=0.0.20191226
++PKG_VERSION:=0.0.20200105
+ PKG_RELEASE:=1
+ 
+ PKG_SOURCE:=wireguard-linux-compat-$(PKG_VERSION).tar.xz
+ PKG_SOURCE_URL:=https://git.zx2c4.com/wireguard-linux-compat/snapshot/
+-PKG_HASH:=7c0e576459c6337bcdea692bdbec561719a15da207dc739e0e3e60ff821a5491
++PKG_HASH:=9f12f68e96f6865325995c38213e09b05751cd1ef03e0bbc9f1bdc3e5680b337
+ 
+ PKG_LICENSE:=GPL-2.0
+ PKG_LICENSE_FILES:=COPYING
 -- 
 2.24.1
 

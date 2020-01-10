@@ -2,115 +2,71 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4439E136915
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Jan 2020 09:43:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 294B0136A3C
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Jan 2020 10:50:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:
+	Subject:MIME-Version:Message-ID:Date:To:From:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Um1o0NeszMZlXCP8S9oHCItybqKIlQRVP94eOOYzNOE=; b=gIs
-	CSLB1hvBoWdSICXAyaxX5EMMvWuI2hAAh82sl3VioZQMlUOSG00DYMioDpQ7zkfcazMuopDs81XAI
-	ewIC7VNaN87c4qrM45jGSznDzvaOVnfg6c0dBo38tZ6mEUHkNMvOOA7KrhMm3T0c9bN20uD7bxzTU
-	AGN5+1KNDmjif+6hw+1biIF+6xUzBnfH0AYbEdrT3bYNKDaS+D0gFStr4wyopix+mQWG47iVXK0qC
-	n6DJD2JR7fVoooMETEfnWPNx3Jv0W5BtcyG+4KFv3wc9H+57ZX9FEmAffyb6Zi38o9d6Q89xFTgbd
-	lnV22shcoHklAoP1s0QGA8VHvhUY4MA==;
+	References:List-Owner; bh=ww8ZY/qTBWi2lqbu45Q6YUOjCYIR4JaItklXpN/OC+Q=; b=eFM
+	+FwRw8wxk1Akj9ZqkuThqyMvDhhvtQeHe1cEnhazYC4rH2/SYKsv2f19Fht3p4LQuU54+/Jguyilk
+	GZIH1EAtSm9bzfqtHqevkWprYnY7zr0fTBVCVM2x3mOofHVjqjiCy5WzVT4f1K+X2lASFfaGbZIUe
+	OifAG9gqIBRw5VGUVAahdUTI+TwuXAwFweh5XyHPwytAQSbxlfwqCtFsGmqoyhNjvmLmyPYSy07gR
+	3hiy5njPKa90V3d0oSHvsDuHvAaBLvGDu8KktlbKFEuuwVU1Bpfr4n362GFQcURLLTu/XR6lubKWn
+	6uxkwnew0xFPV3ueVSv2Qbn+AJp41iA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipptG-0002KY-Ve; Fri, 10 Jan 2020 08:43:34 +0000
-Received: from mout-p-102.mailbox.org ([2001:67c:2050::465:102])
+	id 1ipqvl-0004o1-Pe; Fri, 10 Jan 2020 09:50:13 +0000
+Received: from mgw1.skoda-auto.cz ([193.108.106.128])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ippt9-0002KB-OC
- for openwrt-devel@lists.openwrt.org; Fri, 10 Jan 2020 08:43:30 +0000
-Received: from smtp1.mailbox.org (smtp1.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:1:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-102.mailbox.org (Postfix) with ESMTPS id 47vGj64n0PzKmhZ
- for <openwrt-devel@lists.openwrt.org>; Fri, 10 Jan 2020 09:43:22 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp1.mailbox.org ([80.241.60.240])
- by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
- [80.241.56.116]) (amavisd-new, port 10030)
- with ESMTP id 5KMIL00PBntW for <openwrt-devel@lists.openwrt.org>;
- Fri, 10 Jan 2020 09:43:18 +0100 (CET)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-Message-ID: <8384f7c8-a999-a46f-9f7c-9117ca1771b4@hauke-m.de>
-Date: Fri, 10 Jan 2020 09:43:13 +0100
+ id 1ipqvW-0004iw-J2
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Jan 2020 09:50:00 +0000
+X-AuditID: 0ad97bd3-133ff7000000715e-27-5e1848bb44b4
+From: "Pumr, Ondrej (EEK)" <Ondrej.Pumr@skoda-auto.cz>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Thread-Topic: Question:  Migration from ar71xx to ath79
+Thread-Index: AdXHmhrVZoS8W2UhQBKDEKt+t/Yniw==
+Date: Fri, 10 Jan 2020 09:49:46 +0000
+Message-ID: <C02EF912F243ED4F9D4C4104F769FA4869CC52A2@SKDAMBXM02.mb.skoda.vwg>
+Accept-Language: cs-CZ, en-US
+Content-Language: cs-CZ
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.217.137.187]
 MIME-Version: 1.0
+X-OriginalArrivalTime: 10 Jan 2020 09:49:46.0885 (UTC)
+ FILETIME=[4AF6E350:01D5C79B]
+X-EEG-SA-PASSED: outgoing
+X-EEG-SA-LOOP-COUNT: 1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprGIsWRmVeSWpSXmKPExsXCdbNSVHe3h0ScwewJ/BaXjj9ndmD02Hz2
+ B3MAYxS3TVJiSVlwZnqevl0Cd0bDtqMsBWsNK940hzUwztTpYuTkEBJQk5h6roe5i5GDQ0LA
+ ROLOdbAwm4CZRNuE08wgtoiAu8TbvSfZQGxhASOJldv3MUHEzSUmfe5ghLD1JB79OM4KYrMI
+ qEosuXAIzOYV8JM48nsiWD2jgKzEns7PYPXMAuIS755/AYtLCAhILNlznhnCFpV4+fgfK4St
+ JNG6v4cNoj5f4nnDGSaImYISJ2c+YYGoCZZY9e8IVK+kxM01s9khbDGJh9N+sU9gFJ6FZN0s
+ JKNmIRkFEdeTeHZqFpStLbFs4WtmCFtX4tLDdazI4gsY2VcxihTnJuWmlxvqpZXrFWfnpyTq
+ lZWnb2IER0n15R2M7xYZHGIU4GBU4uHtU5GIE2JNLCuuzD3EKMHBrCTCe/SGWJwQb0piZVVq
+ UX58UWlOavEhRmkOFiVxXid9kTghgfTEktTs1NSC1CKYLBMHJ0g3l5RIcWpeSmpRYmlJRjwo
+ guOLgTEs1cD4jmFfhWa2zJru5UL2vscffmTf1BSzo4c9yuS1oyCH/E5xe6lm88Ite+L0NLJu
+ XJm8u/ixuJXHLcZs35PLz0yt+vplYq6h+BvuJxrd+9VXzpibX1Aj/5bJxiTd4VOgzTv25F/a
+ Mh+O2exbm3mxM2HitOMqb+JKivji2jI4jv25fkD+yJ0YlXlKLMUZiYZazEXFiQCLgrK7qQIA
+ AA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_004328_081865_E1D301E5 
-X-CRM114-Status: GOOD (  13.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_014958_782027_54A918F4 
+X-CRM114-Status: UNSURE (   0.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [193.108.106.128 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] OpenWrt 18.06.6 service release
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+Subject: [OpenWrt-Devel] Question:  Migration from ar71xx to ath79
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,97 +78,172 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0799339668781560583=="
+Content-Type: multipart/mixed; boundary="===============5283244958310084691=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0799339668781560583==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="HwD2nSrpgDwepBY6VZ3DaPA1d7apocIE3"
+--===============5283244958310084691==
+Content-Language: cs-CZ
+Content-Type: multipart/alternative;
+	boundary="_000_C02EF912F243ED4F9D4C4104F769FA4869CC52A2SKDAMBXM02mbsko_"
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---HwD2nSrpgDwepBY6VZ3DaPA1d7apocIE3
-Content-Type: multipart/mixed; boundary="emExoxGRkMjJdhaSlHQzwHf6DzfpUKSjG"
-
---emExoxGRkMjJdhaSlHQzwHf6DzfpUKSjG
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
+--_000_C02EF912F243ED4F9D4C4104F769FA4869CC52A2SKDAMBXM02mbsko_
+Content-Type: text/plain; charset="iso-8859-2"
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
-
-The OpenWrt Community is proud to announce the sixth service release of
-the stable OpenWrt 18.06 series. OpenWrt 18.06.6 incorporates security
-updates for base packages, new versions of the Linux kernel, a bug fix
-related to signature verification, and fixes for various devices.
-
-----
-Some selected highlights of this service release are:
-
- * Linux kernel updated from 4.9.198 to 4.9.208 and
-   from 4.14.151 to 4.14.162
- * Security fixes for the following base packages: e2fsprogs, openssl,
-   uhttpd
- * LXC and netns fixes for an issue that could cause kernel panics
- * PCIe reset crash fix on brcmfmac
- * Device detection fix for all Mikrotik devices, fixing sysupgrade
-   for newer devices
- * Device support fixes for several devices: lantiq, Archer C20i,
-   Mikrotik RBM33G, TL-WDR3320 v2, TL-WDR3600, TL-WDR4300, TL-WDR4310,
-   TL-WDR4900 v2, Archer C5, Archer C7, MW4530R, WeVO 11AC NAS, WeVO
-   W2914NS v2, ASUS WL-330N, Asus WL-330N3G, Samsung CY-SWR1100,
-   Ravpower WD03
-
-For a detailed list of changes since 18.06.5 refer to
-https://openwrt.org/releases/18.06/changelog-18.06.6
-
-----
-
-For latest information about the 18.06 series, refer to
-the wiki at:
-https://openwrt.org/releases/18.06/
-
-To download the v18.06.6 images, navigate to:
-https://downloads.openwrt.org/releases/18.06.6/
-
-Note that updates to the package feeds are available immediately to all
-minor releases of OpenWrt: there is no need to upgrade to a new OpenWrt
-image to install newer versions of a package. This applies to core
-OpenWrt packages as well as community-maintained packages.
-
-As always, a big thank you goes to all our active package maintainers,
-testers, documenters, and supporters.
-
-Have fun!
-
-The OpenWrt Community
+Hello,
 
 
---emExoxGRkMjJdhaSlHQzwHf6DzfpUKSjG--
 
---HwD2nSrpgDwepBY6VZ3DaPA1d7apocIE3
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4YOSEACgkQ8bdnhZyy
-68d3tgf/cvk+0l7ouf7qzRBuhZMeHYtddU3ZExIrTd9t1oH5FDwvfxMXUql/Z1T9
-zF26oTIMyMXCopG5lfuY0uhZCzuLtFrS++XBmJ60jI716sV2D+LOXIEtU8pddXQN
-J4D9U4qQvzJLZ7rK7NwoX3Zz4DQBy3K8Kso4l8S2WkcXxZyj/d63joPJLoKR0H1r
-Ypqp7PmbssnFrVwtRwUj1tqR6ppMbqW4MtHjqrnyK4mulybPsXZWLeWIc4Yx4Xni
-5KI11llRDSH91rHRy+xLezTg39fay34CClmNtavbdqUdSORCHHvF2BiTJGBDCwHt
-27BbAvpjoNST/xBjJ+d1dK7S9iaK7A==
-=5IT7
------END PGP SIGNATURE-----
-
---HwD2nSrpgDwepBY6VZ3DaPA1d7apocIE3--
+I have TP-LINK TL-WR842N-V3 running OpenWrt 18.06 with ar71xx and I want to=
+ migrate to  OpenWrt 19.07 with ath79.
 
 
---===============0799339668781560583==
+
+In the list of known issues it is written, that "Sysupgrade from ar71xx to =
+ath79 and vice versa is not officially supported, a full manual reinstall i=
+s recommended...".
+
+
+
+I don't understand the meaning of "full manual reinstall", but I thing, tha=
+t instead of upgrading the firmware via web interface with image "openwrt-1=
+9.07.0-ath79-generic-tplink_tl-wr842n-v3-squashfs-sysupgrade.bin" (size abo=
+ut 4 MB), it is recommended the upgrading via bootloader + TFTP with image =
+"openwrt-19.07.0-ath79-generic-tplink_tl-wr842n-v3-squashfs-factory.bin" (s=
+ize about 16 MB).
+
+
+
+I am right or does the "full manual reinstall" means another special proced=
+ure?
+
+
+
+Thank you
+
+
+
+Best regards
+
+
+
+Ond=F8ej Pumr
+
+
+--_000_C02EF912F243ED4F9D4C4104F769FA4869CC52A2SKDAMBXM02mbsko_
+Content-Type: text/html; charset="iso-8859-2"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+2">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Verdana",sans-serif;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:black;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:black;
+	text-decoration:underline;}
+span.StylE-mailovZprvy17
+	{mso-style-type:personal-compose;
+	font-family:"Arial",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Verdana",sans-serif;
+	mso-fareast-language:EN-US;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"CS" link=3D"black" vlink=3D"black">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">Hello,<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">I have TP-LINK TL-WR842N-V3 running Op=
+enWrt
+<span style=3D"color:blue">18.06</span> with <span style=3D"color:blue">ar7=
+1xx</span> and I want to migrate to &nbsp;OpenWrt
+<span style=3D"color:blue">19.07</span> with <span style=3D"color:blue">ath=
+79</span>.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">In the list of known issues it is writ=
+ten, that &#8220;Sysupgrade from ar71xx to ath79 and vice versa is not offi=
+cially supported, a full manual reinstall is recommended&#8230;&#8221;.<o:p=
+></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">I don&#8217;t understand the meaning o=
+f &#8221;full manual reinstall&#8221;, but I thing, that instead of upgradi=
+ng the firmware via web interface with image &#8220;openwrt-19.07.0-ath79-g=
+eneric-tplink_tl-wr842n-v3-squashfs-<span style=3D"color:blue">sysupgrade</=
+span>.bin&#8221;
+ (size about <span style=3D"color:blue">4 MB</span>), it is recommended the=
+ upgrading via bootloader &#43; TFTP with image &#8220;openwrt-19.07.0-ath7=
+9-generic-tplink_tl-wr842n-v3-squashfs-<span style=3D"color:blue">factory</=
+span>.bin&#8221; (size about
+<span style=3D"color:blue">16 MB</span>).<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">I am right or does the &#8220;full man=
+ual reinstall&#8221; means another special procedure?<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">Thank you<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">Best regards<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:10.0pt;font-=
+family:&quot;Arial&quot;,sans-serif">Ond=F8ej Pumr</span><o:p></o:p></p>
+</div>
+</body>
+</html>
+
+--_000_C02EF912F243ED4F9D4C4104F769FA4869CC52A2SKDAMBXM02mbsko_--
+
+
+--===============5283244958310084691==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -223,5 +254,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0799339668781560583==--
+--===============5283244958310084691==--
 

@@ -2,50 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5F1F136EE9
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Jan 2020 15:03:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 517DA136F50
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Jan 2020 15:28:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=owH6Pc3xX+r33oX/K05YLCQg1UgXqPctmJTbhmlFuLs=; b=OE1P4HQgujTZeVPCfJahVq9Pp
-	oCH/V5hIm3MDxglndALAMRV/J7HR2Bxeg2ji4+hUA3xvHSvHJj0XXDT3gzst+LTnqfEpjqwq2/KsF
-	LoMKKNkB9KY2JQQyzxuQXLAyO22l6ixY2MLip9r39Qvkkv3idI3goNMhpfWN9sFBPKDORV5FbXUNj
-	dcmlnB+p5wt1ZpEmbXYbOjaVeZBShL8okirG7XlRQ0LWmCT5BQQEOqWuvKeaZ7kl3LlYQy9UlIhL/
-	eRbHjb5LTWHKqvGka1p6sjTTljjEM6z3w0mHZToc+EyGOEaUrkUwhqmw8DpccFtb8/JPAtpJkH/GG
-	nKlUvyBhw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YY03sSA4qYoj5NtjWTsqSFhtpA8R9sXm7SN4IMhHyTE=; b=Ek0xBDZF59rRJl
+	yRaRb27EUkq9kpurwPYe11pQsuaLypGS/G2tl6srDL9uEpbtp7kQuXS0pzSdRYQrrChvP+l3kPoUE
+	zwZXbty92IVvzF/MXre6C6MTUwZ+j/UgcHgSiG3slX9mvkxUphOWEClqpq2whrkAWD3hkSsZ6+fzd
+	y5IxT5ZnFHs5XnT4Bq5bMNH5hrvgPpHo/9xxNROsOUgvuM3sGpINNloRRmHZHr2u1ZQh/92I9SxGh
+	Wfz9skeEvEHli9EjSkj4fUcRqpm+LUEWnRxkaEI7ucOxmcVH6J5b+8gELBAHn2RHFiQlbAmIkuFvr
+	F9RDBTSLDnnwwMWjwH0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipus9-0003jP-Ow; Fri, 10 Jan 2020 14:02:45 +0000
-Received: from mails.bitsofnetworks.org ([2001:912:1800:ff::131])
+	id 1ipvGd-0006ii-1A; Fri, 10 Jan 2020 14:28:03 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipus3-0003iM-7n
- for openwrt-devel@lists.openwrt.org; Fri, 10 Jan 2020 14:02:41 +0000
-Received: from [2001:912:1800:0:2bb9:b551:caa7:dfa9] (helo=lud.localdomain)
- by mails.bitsofnetworks.org with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <baptiste@bitsofnetworks.org>)
- id 1ipurt-0004cd-Ec; Fri, 10 Jan 2020 15:02:29 +0100
-Date: Fri, 10 Jan 2020 15:02:24 +0100
-From: Baptiste Jonglez <baptiste@bitsofnetworks.org>
-To: "Pumr, Ondrej (EEK)" <Ondrej.Pumr@skoda-auto.cz>
-Message-ID: <20200110140224.GA209673@lud.localdomain>
-References: <C02EF912F243ED4F9D4C4104F769FA4869CC52A2@SKDAMBXM02.mb.skoda.vwg>
+ id 1ipvGU-0006i8-RG
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Jan 2020 14:27:56 +0000
+Received: by mail-lf1-x141.google.com with SMTP id n12so1623681lfe.3
+ for <openwrt-devel@lists.openwrt.org>; Fri, 10 Jan 2020 06:27:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5fKtXXbqczjGcTCF1Al7MSOhugvNutUY1M5VIFUkEJo=;
+ b=UzgMjr3HmDvnxhVCdzrAmVX/2oI4VePvfABPt8fFQNkIB0Q4mue75DSFm3QzhL50Gc
+ PjWL1N+Ki3Nx+Bb51lG7WkHYjOpEMtpl1VbXfWSdEOx3TI2zw1wop5YO4F7hAAoodLr9
+ AYJXNhQQHsTzRwwwfOYtzJeb3j2+HcNXL5CFatqkMxNxeOPJqutk+Zt60RjmxP07tsr8
+ 0dWeVzw7QdPbm0W9XNcjJLMKEl40QbHNTMkRlPy/hO8zh3cBNYUw/CeZh0KnGqAMMelt
+ f2WhALGzwG5COeZLpB77OZJXk2exGiVx2byHQCwLGMOQKczDlvEO777h72jDQaCndXcx
+ +YAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=5fKtXXbqczjGcTCF1Al7MSOhugvNutUY1M5VIFUkEJo=;
+ b=C2Z5QmBXI22X1ULspQ6OwoG2hHEqFJyVUG6jG9Ge3sAILL4cSrc3U/angaiecXzbSH
+ GRwT3iWJGsVph+q7PsJ77Pn6Vmu580sI7R7FwhfkYlaI9wFxWxzfX3nrPLrHU8wTXBlF
+ Qicx+2HN9KsWdboMLh4wa073Gq/s472H+vWlnt3UbBckhfHvAxUz+Vuv4n8UBNb8Wgsy
+ hNKEu69BQcmjKsrmEpAuYYkg5y/v1Ekb7BHQyJCNwGOMAp2GD9upDFzJR3Q54foRrrEG
+ 2J8XZPuiMddpHbZ2lA5L05BtxcUKJnRGSVbBXmz4AhsMSlSXMzML1B3/V7PfsnzT5c5u
+ /VaQ==
+X-Gm-Message-State: APjAAAUMEte0s2YVyz0CdrapE0VpsntaDqdAQqJlW6N5j3ruFWoElppe
+ uyOFp5tVbnqdjSFpYIyHbKinTxR/
+X-Google-Smtp-Source: APXvYqzqv0qcEHyDeSjsnRXaVILCcc7iTbKxR54PxbLA7W2cl6FHrlu0oLmbc5wOzhicOM/JZEj4qA==
+X-Received: by 2002:a05:6512:3ab:: with SMTP id
+ v11mr596576lfp.203.1578666472275; 
+ Fri, 10 Jan 2020 06:27:52 -0800 (PST)
+Received: from DJ-Precision.corp.ubnt.com
+ ([2a02:2880:3:1ff:34f6:2eba:7a3:8599])
+ by smtp.gmail.com with ESMTPSA id y8sm1060206lji.56.2020.01.10.06.27.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 10 Jan 2020 06:27:51 -0800 (PST)
+From: Dainis Jonitis <jonitis@gmail.com>
+X-Google-Original-From: Dainis Jonitis <dainis.jonitis@ubnt.com>
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Date: Fri, 10 Jan 2020 16:27:26 +0200
+Message-Id: <20200110142726.25148-1-dainis.jonitis@ubnt.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-In-Reply-To: <C02EF912F243ED4F9D4C4104F769FA4869CC52A2@SKDAMBXM02.mb.skoda.vwg>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_060239_494869_24DF8F58 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200110_062754_882033_CF178CFD 
+X-CRM114-Status: GOOD (  10.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jonitis[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] Question:  Migration from ar71xx to ath79
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] iwinfo: 64-bit byte counters for assoclist
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,125 +98,94 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>,
- Thomas Endt <tmo26@gmx.de>
-Content-Type: multipart/mixed; boundary="===============7976890404960548380=="
+Cc: Jo-Philipp Wich <jo@mein.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+When available, use 64-bit byte counters rx/tx_bytes64. New 32-bit
+counters rx/tx_bytes32 are guaranteed to clamp to max 32-bit value
+and never wrap around. For compatibility with legacy clients the old
+values rx/tx_bytes are just aliases of new rx/tx_bytes32.
 
---===============7976890404960548380==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="IJpNTDwzlM2Ie8A6"
-Content-Disposition: inline
+Signed-off-by: Dainis Jonitis <dainis.jonitis@ubnt.com>
+---
+ include/iwinfo.h | 12 ++++++++++--
+ iwinfo_nl80211.c | 24 ++++++++++++++++++++----
+ 2 files changed, 30 insertions(+), 6 deletions(-)
 
+diff --git a/include/iwinfo.h b/include/iwinfo.h
+index 5e64294..8610fcb 100644
+--- a/include/iwinfo.h
++++ b/include/iwinfo.h
+@@ -119,8 +119,16 @@ struct iwinfo_assoclist_entry {
+ 	uint64_t rx_drop_misc;
+ 	struct iwinfo_rate_entry rx_rate;
+ 	struct iwinfo_rate_entry tx_rate;
+-	uint32_t rx_bytes;
+-	uint32_t tx_bytes;
++	uint64_t rx_bytes64;
++	uint64_t tx_bytes64;
++	union {
++		uint32_t rx_bytes32;    /* clamped to max uint32_t */
++		uint32_t rx_bytes;      /* OBSOLETED: alias for legacy clients*/
++	};
++	union {
++		uint32_t tx_bytes32;    /* clamped to max uint32_t */
++		uint32_t tx_bytes;      /* OBSOLETED: alias for legacy clients*/
++	};
+ 	uint32_t tx_retries;
+ 	uint32_t tx_failed;
+ 	uint64_t t_offset;
+diff --git a/iwinfo_nl80211.c b/iwinfo_nl80211.c
+index 2b2a043..6b35888 100644
+--- a/iwinfo_nl80211.c
++++ b/iwinfo_nl80211.c
+@@ -1953,6 +1953,8 @@ static int nl80211_get_assoclist_cb(struct nl_msg *msg, void *arg)
+ 		[NL80211_STA_INFO_SIGNAL_AVG]    = { .type = NLA_U8     },
+ 		[NL80211_STA_INFO_RX_BYTES]      = { .type = NLA_U32    },
+ 		[NL80211_STA_INFO_TX_BYTES]      = { .type = NLA_U32    },
++		[NL80211_STA_INFO_RX_BYTES64]    = { .type = NLA_U64    },
++		[NL80211_STA_INFO_TX_BYTES64]    = { .type = NLA_U64    },
+ 		[NL80211_STA_INFO_TX_RETRIES]    = { .type = NLA_U32    },
+ 		[NL80211_STA_INFO_TX_FAILED]     = { .type = NLA_U32    },
+ 		[NL80211_STA_INFO_CONNECTED_TIME]= { .type = NLA_U32    },
+@@ -2016,11 +2018,25 @@ static int nl80211_get_assoclist_cb(struct nl_msg *msg, void *arg)
+ 		                      sinfo[NL80211_STA_INFO_TX_BITRATE], rate_policy))
+ 			nl80211_parse_rateinfo(rinfo, &e->tx_rate);
+ 
+-		if (sinfo[NL80211_STA_INFO_RX_BYTES])
+-			e->rx_bytes = nla_get_u32(sinfo[NL80211_STA_INFO_RX_BYTES]);
++		if (sinfo[NL80211_STA_INFO_RX_BYTES64]) {
++			uint64_t u64 = nla_get_u64(sinfo[NL80211_STA_INFO_RX_BYTES64]);
++			e->rx_bytes64 = u64;
++			e->rx_bytes32 = (u64 <= UINT32_MAX) ? (uint32_t)u64 : UINT32_MAX;
++		} else if (sinfo[NL80211_STA_INFO_RX_BYTES]) {
++			uint32_t u32 = nla_get_u32(sinfo[NL80211_STA_INFO_RX_BYTES]);
++			e->rx_bytes32 = u32;
++			e->rx_bytes64 = u32;
++		}
+ 
+-		if (sinfo[NL80211_STA_INFO_TX_BYTES])
+-			e->tx_bytes = nla_get_u32(sinfo[NL80211_STA_INFO_TX_BYTES]);
++		if (sinfo[NL80211_STA_INFO_TX_BYTES64]) {
++			uint64_t u64 = nla_get_u64(sinfo[NL80211_STA_INFO_TX_BYTES64]);
++			e->tx_bytes64 = u64;
++			e->tx_bytes32 = (u64 <= UINT32_MAX) ? (uint32_t)u64 : UINT32_MAX;
++		} else if (sinfo[NL80211_STA_INFO_TX_BYTES]) {
++			uint32_t u32 = nla_get_u32(sinfo[NL80211_STA_INFO_TX_BYTES]);
++			e->tx_bytes32 = u32;
++			e->tx_bytes64 = u32;
++		}
+ 
+ 		if (sinfo[NL80211_STA_INFO_TX_RETRIES])
+ 			e->tx_retries = nla_get_u32(sinfo[NL80211_STA_INFO_TX_RETRIES]);
+-- 
+2.19.1
 
---IJpNTDwzlM2Ie8A6
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Good point, the ar71xx - ath79 migration needs more documentation.
-
-I have just created https://openwrt.org/docs/guide-user/installation/ar71xx=
-=2Eto.ath79
-but it needs some work: is sysupgrade supposed to work in some cases?
-With/without saving the configuration? Is there any danger when forcing
-upgrade with "sysupgrade -F"?
-
-@Thomas: I saw that there are auto-generated pages listing ath79 devices,
-it's very helpful:
-
-  https://openwrt.org/docs/techref/targets/ath79
-  https://openwrt.org/docs/techref/targets/ar71xx-ath79
-
-What is the source used to generate them?  Where could people add
-important information about upgrading for a specific device?  Would it be
-better on the device pages themselves, or in a column of this table?
-
-Thanks!
-Baptiste
-
-On 10-01-20, Pumr, Ondrej (EEK) wrote:
-> Hello,
->=20
->=20
->=20
-> I have TP-LINK TL-WR842N-V3 running OpenWrt 18.06 with ar71xx and I want =
-to migrate to  OpenWrt 19.07 with ath79.
->=20
->=20
->=20
-> In the list of known issues it is written, that "Sysupgrade from ar71xx t=
-o ath79 and vice versa is not officially supported, a full manual reinstall=
- is recommended...".
->=20
->=20
->=20
-> I don't understand the meaning of "full manual reinstall", but I thing, t=
-hat instead of upgrading the firmware via web interface with image "openwrt=
--19.07.0-ath79-generic-tplink_tl-wr842n-v3-squashfs-sysupgrade.bin" (size a=
-bout 4 MB), it is recommended the upgrading via bootloader + TFTP with imag=
-e "openwrt-19.07.0-ath79-generic-tplink_tl-wr842n-v3-squashfs-factory.bin" =
-(size about 16 MB).
->=20
->=20
->=20
-> I am right or does the "full manual reinstall" means another special proc=
-edure?
->=20
->=20
->=20
-> Thank you
->=20
->=20
->=20
-> Best regards
->=20
->=20
->=20
-> Ond=C5=99ej Pumr
->=20
-
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
-
---IJpNTDwzlM2Ie8A6
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEEjVflzZuxNlVFbt5QvgHsIqBOLkYFAl4Yg+sACgkQvgHsIqBO
-LkYDKA//drzDJtaoa+xUWKX+rk87rivgJ/nsXBo0q8Tjpzj2QdZlkJPCADR0i5zz
-mLTbNxQyiAhzUo1sIVbKceTltt9OE3Ucnsl5SIs9MUzEpwDViC9pdEnMwxxBuGh+
-zvq5670DbV4QIj4+HrQVlFVtQUg//8UFWUx/m6FPtRgNRnPxA7ZS0dvRb+CYwKUD
-kTYL8u5MVETABMhgSCIKptYrgo6OGJsE/995wnLRyNLIMlVdqPh73xmJ8gOKwsVh
-e/CqBPaWyyKn9btN7CnHJe/juJsiOH6vpdDUdKhJW71TbPrrMd6pfi+6gluL5fOT
-LxFq9haPUyB/Gn1AQo1OsZnGHWVfqhAz+7qNd5aZ1kzFSf4mRH8igXKQa44AnKFF
-velQaJA3WixViWJ3i7THAR/iJx+slU7fg0LdS+IX2tdmQDIxtztgk9SaUe4aRarL
-I5Fo7jqi2p85OXa3MtlpZwD23cxx1tuMDv+r4IHF5DF1FE9JyVi9+kTrvI8nHrwM
-1xJxsuiS3dV8HmkmGVQ/+l4oYJbAVFtvGgbqwa4KHT0niFdLc43ww8GgPN1c9+dN
-skVVE3/4RAvqCowkJ9Q+VximSQBrRbT/oMqD50NydNsGV+wPrCobGnew5gIOl10Z
-sC0ss1bV982rjhilMkALkIXG1K4Ku/nsch+uC+ohaOBsFEL9WTg=
-=+r8T
------END PGP SIGNATURE-----
-
---IJpNTDwzlM2Ie8A6--
-
-
---===============7976890404960548380==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============7976890404960548380==--
-

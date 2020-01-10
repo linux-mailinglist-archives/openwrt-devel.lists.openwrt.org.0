@@ -2,92 +2,50 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0A76136FA3
-	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Jan 2020 15:41:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8814A1370A7
+	for <lists+openwrt-devel@lfdr.de>; Fri, 10 Jan 2020 16:05:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NvPhZ1xb6z+6AndFiHuyL/N2bBukf+91Qa7uCcDcvKM=; b=lhpm3rcKRUVE7i
-	SprjFwOXnLM7STtvrPg5Uikw9RzVjQ/KRUy8vgJSO0PbTrs7R5dFOqceV1hETd4zqr6bMywvHqaA/
-	wkbk0jvmYfLyXKByD6AUyGpskrVuwnje5YQbDh9P7BAH8rtZLgjWBTmAyZ8s1d+CZAb3JICAGp200
-	sQ2om7/DMK+XvT/oc9QZnkTvIJikRpd7fLjBqF4KZGNqy0T23FN/EUakSuXRopQ41L4/xwXea1tmb
-	dBjVVcT7LLn9pxq0TbgRe73IGZDY9/zPlQQQCxj8cOVf4QsjuE/A3bhvE0ZV7/EdNeysWEiy5VKIl
-	RTFvqx8hm0I7Ok8NGarA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aLDP3aGLk41qgnVW+kXYRcD2aqPcE9LHXSGs/cLhIK4=; b=I60/Hl95bmv1mdqRi7Jvq79FA
+	ZxmjQv1ZSPdMhsM9ohToDCJigOyzqASK2RTP7P1SQJ3YdsfgdEzNZKbWesJBklmj9ir0JRSnnFwP9
+	0NmaSYMpgbDC8mVpe5W1MH3Oup7QpKKvE2rB7/kDjwbSf9lEOHGwcZtz7baLT4hxFarOdVxkcy6bp
+	eQjhb+sjU7rLGh22xPrI+pRwkuH8M7zBaeLIHHd9CO8FMCmJ09lHBXld/SPXxuWKz7uQDGGPnTw+1
+	/T5Im6syUPF0RYT6zeqqrMsmYn4ByOlHK2KwjDCLc8U/b9AG5CBQPFST7Xn1q4flRsWsM8YiRZ3rY
+	qoOmHGN+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipvTf-0006eF-22; Fri, 10 Jan 2020 14:41:31 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1ipvqt-0005IT-F0; Fri, 10 Jan 2020 15:05:31 +0000
+Received: from mails.bitsofnetworks.org ([2001:912:1800:ff::131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipvTS-0006co-Dr
- for openwrt-devel@lists.openwrt.org; Fri, 10 Jan 2020 14:41:20 +0000
-Received: by mail-lf1-x142.google.com with SMTP id r14so1659114lfm.5
- for <openwrt-devel@lists.openwrt.org>; Fri, 10 Jan 2020 06:41:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=jGhv78kts75B8y77Sp5qjdKEVp/5j8toZ7SE8bx7WQk=;
- b=LGsagPaTQTW1NpMXbqFmbkkUsv9rechx2rfvqo31SZCRQKiOPlemsxG7S4sNCKr2KA
- qRkhQTuwl91RG5aUFD6kmZUnXEnjkUNf539j+I6ZdEjb6aJn/K2pR52Gpx+mxis55p5T
- Keg2pi4VDHfF8F5Di0yffElHOfSNXFUDVKdwC+uEseccRj11VusZVomz5J1AGZnoQG57
- 2F46yvG43DuDJ12/Ii4RsjaKN2d3UCU+Or+SA+Ff5VuYn0jtMgYovgMG6DMLqf8UOOqJ
- RLHEWgTKOfSrNmIWa6V7B4SaTDyyrXdYSq5naqNGtN6+9h4b1O+s+POlFKYRm9BI18lf
- wlaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=jGhv78kts75B8y77Sp5qjdKEVp/5j8toZ7SE8bx7WQk=;
- b=UdFBR9cCK0XVToC6oJ17gntN1/SDO5C7gE6uljlQBFyGDIuXvflTcBigHMlWibbyey
- +m+ENUn2deGddoT/vNyLklHkqMpw7R4aFa3znJtVmDaRJnRFjoZ02MWUP3MNMtvOK4Yk
- aTi4ZLqonFmWvaundY9v2b9vzouqkTtQb6xHeINjWjgANnmEGnRfCsotk3DWK9Yh97ML
- OlSiPtuRXHqoraEUnZxHbk/iKwZdtJeM/DxTwsZYWu0h3FXfxp+O4jBBR+PORDtYL4DC
- dV5LjG8w8A1JjgNg0qPUVpKFVQ9iiUjmQyEkovniUzMxOwuobtJ9AJ+FYraFgZP+US7Y
- bP9Q==
-X-Gm-Message-State: APjAAAU+jZTDQ7HX05ddin+5W/u11lcFwVKWYnd7MJ6vrZVJusXVSks0
- WbnP75Koi3ZhteUx1pXtXKn3HoNDBuw=
-X-Google-Smtp-Source: APXvYqxJWhvgPWQcHqMh0WVg54v53K7WwAtFkUfu7mgDI5EI8yKX47LjwPdIEK5wG0Q8qb/ysQwVNg==
-X-Received: by 2002:a19:f716:: with SMTP id z22mr2739706lfe.14.1578667276370; 
- Fri, 10 Jan 2020 06:41:16 -0800 (PST)
-Received: from DJ-Precision.corp.ubnt.com
- ([2a02:2880:3:1ff:34f6:2eba:7a3:8599])
- by smtp.gmail.com with ESMTPSA id e9sm1087510ljp.75.2020.01.10.06.41.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 10 Jan 2020 06:41:15 -0800 (PST)
-From: Dainis Jonitis <jonitis@gmail.com>
-X-Google-Original-From: Dainis Jonitis <dainis.jonitis@ubnt.com>
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Date: Fri, 10 Jan 2020 16:41:04 +0200
-Message-Id: <20200110144104.25291-1-dainis.jonitis@ubnt.com>
-X-Mailer: git-send-email 2.19.1
+ id 1ipvqA-0003gT-ME
+ for openwrt-devel@lists.openwrt.org; Fri, 10 Jan 2020 15:04:49 +0000
+Received: from [2001:912:1800:0:2bb9:b551:caa7:dfa9] (helo=lud.localdomain)
+ by mails.bitsofnetworks.org with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <baptiste@bitsofnetworks.org>)
+ id 1ipvq6-0005BK-Li; Fri, 10 Jan 2020 16:04:42 +0100
+Date: Fri, 10 Jan 2020 16:04:38 +0100
+From: Baptiste Jonglez <baptiste@bitsofnetworks.org>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <20200110150438.GB209673@lud.localdomain>
+References: <20191203091805.GA741856@tuxmachine.localdomain>
 MIME-Version: 1.0
+In-Reply-To: <20191203091805.GA741856@tuxmachine.localdomain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_064119_059024_D093CFF4 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200110_070446_952870_722D13B3 
+X-CRM114-Status: GOOD (  11.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jonitis[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH] blobmsg: blobmsg_add_json_element() 64-bit
- values
+Subject: Re: [OpenWrt-Devel] High-level process for releases
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,48 +57,101 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Felix Fietkau <nbd@nbd.name>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Thomas Endt <tmo26@gmx.de>
+Content-Type: multipart/mixed; boundary="===============1049663153934953248=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-libjson-c json_type_int values are stored as int64_t. Use
-json_object_get_int64() instead of json_object_get_int()
-to avoid clamping to INT32_MAX.
 
-Signed-off-by: Dainis Jonitis <dainis.jonitis@ubnt.com>
----
- blobmsg_json.c | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
+--===============1049663153934953248==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="+pHx0qQiF2pBVqBT"
+Content-Disposition: inline
 
-diff --git a/blobmsg_json.c b/blobmsg_json.c
-index 1859211..394861a 100644
---- a/blobmsg_json.c
-+++ b/blobmsg_json.c
-@@ -66,9 +66,15 @@ bool blobmsg_add_json_element(struct blob_buf *b, const char *name, json_object
- 	case json_type_boolean:
- 		blobmsg_add_u8(b, name, json_object_get_boolean(obj));
- 		break;
--	case json_type_int:
--		blobmsg_add_u32(b, name, json_object_get_int(obj));
-+	case json_type_int: {
-+		int64_t i64 = json_object_get_int64(obj);
-+		if (i64 >= INT32_MIN && i64 <= INT32_MAX) {
-+			blobmsg_add_u32(b, name, (uint32_t)i64);
-+		} else {
-+			blobmsg_add_u64(b, name, (uint64_t)i64);
-+		}
- 		break;
-+	}
- 	case json_type_double:
- 		blobmsg_add_double(b, name, json_object_get_double(obj));
- 		break;
--- 
-2.19.1
 
+--+pHx0qQiF2pBVqBT
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Following the 19.07.0 release, I have updated the "release process" page a =
+bit:
+
+  https://openwrt.org/docs/guide-developer/releases/release-process
+
+It is supposed to reflect the current release process and link to the
+relevant documentation: feel free to signal missing steps and add links as
+needed.
+
+Thomas, regarding the step "Update the ToH to work with the new release",
+do you have documentation on how to do that, and an estimation of how much
+time it takes?
+
+Thanks,
+Baptiste
+
+On 03-12-19, Baptiste Jonglez wrote:
+> Hi,
+>=20
+> Following some discussion [1] that started with a focus on communication,
+> it turns out that we are missing a high-level process for releases in
+> general.  Such a process would have several uses:
+>=20
+> - make sure everyone agrees on the steps towards a release
+> - identify which tasks need help, and who can help with them
+> - use this process as a checklist when making a new release
+>=20
+> Here is a first draft: https://openwrt.org/inbox/release_process
+>=20
+> Discussion is very welcome to converge to a process that everybody feels
+> comfortable with.  The most difficult parts are obviously the ones
+> involving decision-making.
+>=20
+> Baptiste
+>=20
+> [1] https://openwrt.org/meetings/20191121
+
+
+
+> _______________________________________________
+> openwrt-adm mailing list
+> openwrt-adm@lists.openwrt.org
+> http://lists.infradead.org/mailman/listinfo/openwrt-adm
+
+
+--+pHx0qQiF2pBVqBT
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEjVflzZuxNlVFbt5QvgHsIqBOLkYFAl4YkoIACgkQvgHsIqBO
+LkbEnQ/+JTiIi8ElWb/F0yjy/JIV+7RDxslXU/tIOcsU+c+OACKS+uz0bOF6/1R5
+ORRY7MGvl768scdDToj52F/TLN3ERqTy4H+nTy/cXNfkW+DcEIq6D/mBr/MrlipY
+Fp+aoFSRbfUyOfaNJq5xatD7Gvtf0S6Q+ay3REtV77g9JRmsY/478jTlAclcOP76
+pMt4JvwLHC8sqpdVqwxzQqtHLDClBQDAHB5qziylsX9x6MnTEQX7JqlkI3tGpfhe
+RvBsGdoD5fucoSeDKwBvlpyzG8UPHTXZMQUxBT03P6a9EO6epjYmoCWWgBdwtvAM
+Lz8zMllLhyooBSTWlCHzyI/ihkNku2VLR+b6Zlh8Lip4IYByPnuObGxhwT41uHvl
+kYNpzCZaIdIyq8gMwREbp9TEOrqGHppaRXoVqWJmFcjJJPdKtG+D3oVIN9Q7LAVi
+EwVC87Ao/3ViB0ixnRjl/2fW3hL7iPh2G18H5siZOzcjivvnzxu4Py3w9IddPP+O
+3nPIkWsKfhqkUfiPzCbcpmJbjv4QpXNee1yvrRRGeHwGR5E4xIKb+SFjlmyYsLPp
+9hQYD0ecxuOTGn2j9XnhxAcfT70Kar2hDVcmCSRMgLUB2sAB7mFLy4IEtnxwWUrp
+A1KAtA7wRUJAMw6vHIJZVDa5Jh+vxizgraFSMf9Tx+zfx+xivFs=
+=DT7z
+-----END PGP SIGNATURE-----
+
+--+pHx0qQiF2pBVqBT--
+
+
+--===============1049663153934953248==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1049663153934953248==--
+

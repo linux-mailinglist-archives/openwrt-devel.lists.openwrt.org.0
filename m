@@ -2,144 +2,175 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEE0B1388A4
-	for <lists+openwrt-devel@lfdr.de>; Sun, 12 Jan 2020 23:56:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D576C1388AC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Jan 2020 00:06:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0a3bKCo6ejd3EEKPNLSHe29ehq7sQXfC/CsUuDpsx+U=; b=WMdfqLYX4NaqbL
-	5oZXFzAagSD11PchzuNcRNN7oCxHqbRcJdBFHrYVDIO1UBc16Jqo0rs3S3/Tuim5GYpkgfIdWBwT+
-	kQ5KcCZtEReV4aqNEkM1SDN3xM/IvprQi3Twb5IbH0Q0t1lFwH2r53rbja22zNwYde8nDnfGnnr1a
-	e4GqprQOF1drf0qh4wxHmLbycIxsM2um+SkCo6UYUsdNCQN9b+COebnCQgACtIrIsuNOIp9C8Q53j
-	0hjrcyvApaYOduyxrKo2Jjfe29sWAyopxaax7iEbMytuHtF0bt21IylTupQpzDgBO1FP0s1F72Aix
-	c105Rw3ViMrH/MnkFsDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:To:Date:In-Reply-To:References:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oCLFm0w1WWfgV3sollC53pEIMg+EW9+xq1hX787Rlkk=; b=rc2jhF6Bn7HEIwYgne3rsFPvk
+	HDOn3gs678TEsh+JaPpOyb+SB9VMlCK2v8WpZ+aqqxnyHhFQRmjyugFqDfzijuochdAK2Mriy68T0
+	5vU1JZo5+coNj3/mCfCbvEu40uWv+/JUGvSFyywa8yccsojnSblKjtQ02NrZ/7+RsDVJp42vWlbSD
+	T29fdGK8K08JwDiI1BrYqMETBydX5DglTcxwRcdWKO8L4kxvaagmrVRfONPVwPNt2wmxAHJjGCP6I
+	gnUy1p6nCRIeY/y3aWDkfJVOKCYNmaOvuPj9pdBp55T9En/XnLEwlbC2sNUeQIG4dhzP4m0GEuduW
+	MtrUQy0Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqm9H-0001d6-6D; Sun, 12 Jan 2020 22:55:59 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqm8m-0001Cl-LC
- for openwrt-devel@lists.openwrt.org; Sun, 12 Jan 2020 22:55:31 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id F2995378D;
- Sun, 12 Jan 2020 23:55:22 +0100 (CET)
-Received: by meh.true.cz (OpenSMTPD) with ESMTP id fa2145ee;
- Sun, 12 Jan 2020 23:55:12 +0100 (CET)
-From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-To: openwrt-devel@lists.openwrt.org
-Date: Sun, 12 Jan 2020 23:55:15 +0100
-Message-Id: <20200112225515.11654-5-ynezz@true.cz>
-In-Reply-To: <20200112225515.11654-1-ynezz@true.cz>
-References: <20200112225515.11654-1-ynezz@true.cz>
+	id 1iqmJ2-0005Ou-AZ; Sun, 12 Jan 2020 23:06:04 +0000
+References: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
+In-Reply-To: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
+Date: Mon, 13 Jan 2020 00:05:44 +0100
+To: Paul Spooren <mail@aparcar.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_145529_006085_46FB7DF1 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH libubox 4/4] blobmsg:
- blobmsg_add_json_element() 64-bit values
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.23954.1578870359.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Martin Blumenstingl via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Dainis Jonitis <dainis.jonitis@ubnt.com>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Subject: Re: [OpenWrt-Devel] [RFC] commit message in YAML format for new
+ devices
+Content-Type: multipart/mixed; boundary="===============8782809372851773356=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-RnJvbTogRGFpbmlzIEpvbml0aXMgPGRhaW5pcy5qb25pdGlzQHVibnQuY29tPgoKbGlianNvbi1j
-IGpzb25fdHlwZV9pbnQgdmFsdWVzIGFyZSBzdG9yZWQgYXMgaW50NjRfdC4gVXNlCmpzb25fb2Jq
-ZWN0X2dldF9pbnQ2NCgpIGluc3RlYWQgb2YganNvbl9vYmplY3RfZ2V0X2ludCgpCnRvIGF2b2lk
-IGNsYW1waW5nIHRvIElOVDMyX01BWC4KClNpZ25lZC1vZmYtYnk6IERhaW5pcyBKb25pdGlzIDxk
-YWluaXMuam9uaXRpc0B1Ym50LmNvbT4KW2ZpeGVkIGF1dGhvciB0byBtYXRjaCBTb0IsIGFkZGVk
-IHVuaXQgdGVzdCByZXN1bHRzXQpTaWduZWQtb2ZmLWJ5OiBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0
-cnVlLmN6PgotLS0KIGJsb2Jtc2dfanNvbi5jICAgICAgICAgICAgfCAxMCArKysrKysrKy0tCiB0
-ZXN0cy9jcmFtL3Rlc3RfYmxvYm1zZy50IHwgMzIgKysrKysrKysrKysrKysrKy0tLS0tLS0tLS0t
-LS0tLS0KIDIgZmlsZXMgY2hhbmdlZCwgMjQgaW5zZXJ0aW9ucygrKSwgMTggZGVsZXRpb25zKC0p
-CgpkaWZmIC0tZ2l0IGEvYmxvYm1zZ19qc29uLmMgYi9ibG9ibXNnX2pzb24uYwppbmRleCBhZWU3
-YTY0ZmJjYTcuLmFlZGMyZGEyMmViYyAxMDA2NDQKLS0tIGEvYmxvYm1zZ19qc29uLmMKKysrIGIv
-YmxvYm1zZ19qc29uLmMKQEAgLTY2LDkgKzY2LDE1IEBAIGJvb2wgYmxvYm1zZ19hZGRfanNvbl9l
-bGVtZW50KHN0cnVjdCBibG9iX2J1ZiAqYiwgY29uc3QgY2hhciAqbmFtZSwganNvbl9vYmplY3QK
-IAljYXNlIGpzb25fdHlwZV9ib29sZWFuOgogCQlibG9ibXNnX2FkZF91OChiLCBuYW1lLCBqc29u
-X29iamVjdF9nZXRfYm9vbGVhbihvYmopKTsKIAkJYnJlYWs7Ci0JY2FzZSBqc29uX3R5cGVfaW50
-OgotCQlibG9ibXNnX2FkZF91MzIoYiwgbmFtZSwganNvbl9vYmplY3RfZ2V0X2ludChvYmopKTsK
-KwljYXNlIGpzb25fdHlwZV9pbnQ6IHsKKwkJaW50NjRfdCBpNjQgPSBqc29uX29iamVjdF9nZXRf
-aW50NjQob2JqKTsKKwkJaWYgKGk2NCA+PSBJTlQzMl9NSU4gJiYgaTY0IDw9IElOVDMyX01BWCkg
-eworCQkJYmxvYm1zZ19hZGRfdTMyKGIsIG5hbWUsICh1aW50MzJfdClpNjQpOworCQl9IGVsc2Ug
-eworCQkJYmxvYm1zZ19hZGRfdTY0KGIsIG5hbWUsICh1aW50NjRfdClpNjQpOworCQl9CiAJCWJy
-ZWFrOworCX0KIAljYXNlIGpzb25fdHlwZV9kb3VibGU6CiAJCWJsb2Jtc2dfYWRkX2RvdWJsZShi
-LCBuYW1lLCBqc29uX29iamVjdF9nZXRfZG91YmxlKG9iaikpOwogCQlicmVhazsKZGlmZiAtLWdp
-dCBhL3Rlc3RzL2NyYW0vdGVzdF9ibG9ibXNnLnQgYi90ZXN0cy9jcmFtL3Rlc3RfYmxvYm1zZy50
-CmluZGV4IDg0ZWMxNDNkNmZmMS4uNzRhZDMyNjkzMWZlIDEwMDY0NAotLS0gYS90ZXN0cy9jcmFt
-L3Rlc3RfYmxvYm1zZy50CisrKyBiL3Rlc3RzL2NyYW0vdGVzdF9ibG9ibXNnLnQKQEAgLTQ2LDgg
-KzQ2LDggQEAgY2hlY2sgdGhhdCBibG9ibXNnIGlzIHByb2R1Y2luZyBleHBlY3RlZCByZXN1bHRz
-OgogICAzMjc2NyAoaTMyKQogICAtMjE0NzQ4MzY0OCAoaTMyKQogICAyMTQ3NDgzNjQ3IChpMzIp
-Ci0gIC0yMTQ3NDgzNjQ4IChpMzIpCi0gIDIxNDc0ODM2NDcgKGkzMikKKyAgLTkyMjMzNzIwMzY4
-NTQ3NzU4MDggKGk2NCkKKyAgOTIyMzM3MjAzNjg1NDc3NTgwNyAoaTY0KQogICAxMzMuNzAwMDAw
-IChkYmwpCiAgIH0KICAgVGVzdGRhdGE6IHsKQEAgLTYwLDggKzYwLDggQEAgY2hlY2sgdGhhdCBi
-bG9ibXNnIGlzIHByb2R1Y2luZyBleHBlY3RlZCByZXN1bHRzOgogICBcdGJhci1tYXggOiAzMjc2
-NyAoaTMyKSAoZXNjKQogICBcdGJhei1taW4gOiAtMjE0NzQ4MzY0OCAoaTMyKSAoZXNjKQogICBc
-dGJhei1tYXggOiAyMTQ3NDgzNjQ3IChpMzIpIChlc2MpCi0gIFx0dGF6LW1pbiA6IC0yMTQ3NDgz
-NjQ4IChpMzIpIChlc2MpCi0gIFx0dGF6LW1heCA6IDIxNDc0ODM2NDcgKGkzMikgKGVzYykKKyAg
-XHR0YXotbWluIDogLTkyMjMzNzIwMzY4NTQ3NzU4MDggKGk2NCkgKGVzYykKKyAgXHR0YXotbWF4
-IDogOTIyMzM3MjAzNjg1NDc3NTgwNyAoaTY0KSAoZXNjKQogICBcdHdvcmxkIDogMiAoc3RyKSAo
-ZXNjKQogICB9CiAKQEAgLTEwOSw4ICsxMDksOCBAQCBjaGVjayB0aGF0IGJsb2Jtc2cgaXMgcHJv
-ZHVjaW5nIGV4cGVjdGVkIHJlc3VsdHM6CiAgIDMyNzY3IChpMzIpCiAgIC0yMTQ3NDgzNjQ4IChp
-MzIpCiAgIDIxNDc0ODM2NDcgKGkzMikKLSAgLTIxNDc0ODM2NDggKGkzMikKLSAgMjE0NzQ4MzY0
-NyAoaTMyKQorICAtOTIyMzM3MjAzNjg1NDc3NTgwOCAoaTY0KQorICA5MjIzMzcyMDM2ODU0Nzc1
-ODA3IChpNjQpCiAgIDEzMy43MDAwMDAgKGRibCkKICAgfQogICBUZXN0ZGF0YTogewpAQCAtMTIz
-LDggKzEyMyw4IEBAIGNoZWNrIHRoYXQgYmxvYm1zZyBpcyBwcm9kdWNpbmcgZXhwZWN0ZWQgcmVz
-dWx0czoKICAgXHRiYXItbWF4IDogMzI3NjcgKGkzMikgKGVzYykKICAgXHRiYXotbWluIDogLTIx
-NDc0ODM2NDggKGkzMikgKGVzYykKICAgXHRiYXotbWF4IDogMjE0NzQ4MzY0NyAoaTMyKSAoZXNj
-KQotICBcdHRhei1taW4gOiAtMjE0NzQ4MzY0OCAoaTMyKSAoZXNjKQotICBcdHRhei1tYXggOiAy
-MTQ3NDgzNjQ3IChpMzIpIChlc2MpCisgIFx0dGF6LW1pbiA6IC05MjIzMzcyMDM2ODU0Nzc1ODA4
-IChpNjQpIChlc2MpCisgIFx0dGF6LW1heCA6IDkyMjMzNzIwMzY4NTQ3NzU4MDcgKGk2NCkgKGVz
-YykKICAgXHR3b3JsZCA6IDIgKHN0cikgKGVzYykKICAgfQogCkBAIC0xNzIsOCArMTcyLDggQEAg
-Y2hlY2sgdGhhdCBibG9ibXNnIGlzIHByb2R1Y2luZyBleHBlY3RlZCByZXN1bHRzOgogICAzMjc2
-NyAoaTMyKQogICAtMjE0NzQ4MzY0OCAoaTMyKQogICAyMTQ3NDgzNjQ3IChpMzIpCi0gIC0yMTQ3
-NDgzNjQ4IChpMzIpCi0gIDIxNDc0ODM2NDcgKGkzMikKKyAgLTkyMjMzNzIwMzY4NTQ3NzU4MDgg
-KGk2NCkKKyAgOTIyMzM3MjAzNjg1NDc3NTgwNyAoaTY0KQogICAxMzMuNzAwMDAwIChkYmwpCiAg
-IH0KICAgVGVzdGRhdGE6IHsKQEAgLTE4Niw4ICsxODYsOCBAQCBjaGVjayB0aGF0IGJsb2Jtc2cg
-aXMgcHJvZHVjaW5nIGV4cGVjdGVkIHJlc3VsdHM6CiAgIFx0YmFyLW1heCA6IDMyNzY3IChpMzIp
-IChlc2MpCiAgIFx0YmF6LW1pbiA6IC0yMTQ3NDgzNjQ4IChpMzIpIChlc2MpCiAgIFx0YmF6LW1h
-eCA6IDIxNDc0ODM2NDcgKGkzMikgKGVzYykKLSAgXHR0YXotbWluIDogLTIxNDc0ODM2NDggKGkz
-MikgKGVzYykKLSAgXHR0YXotbWF4IDogMjE0NzQ4MzY0NyAoaTMyKSAoZXNjKQorICBcdHRhei1t
-aW4gOiAtOTIyMzM3MjAzNjg1NDc3NTgwOCAoaTY0KSAoZXNjKQorICBcdHRhei1tYXggOiA5MjIz
-MzcyMDM2ODU0Nzc1ODA3IChpNjQpIChlc2MpCiAgIFx0d29ybGQgOiAyIChzdHIpIChlc2MpCiAg
-IH0KIApAQCAtMjM1LDggKzIzNSw4IEBAIGNoZWNrIHRoYXQgYmxvYm1zZyBpcyBwcm9kdWNpbmcg
-ZXhwZWN0ZWQgcmVzdWx0czoKICAgMzI3NjcgKGkzMikKICAgLTIxNDc0ODM2NDggKGkzMikKICAg
-MjE0NzQ4MzY0NyAoaTMyKQotICAtMjE0NzQ4MzY0OCAoaTMyKQotICAyMTQ3NDgzNjQ3IChpMzIp
-CisgIC05MjIzMzcyMDM2ODU0Nzc1ODA4IChpNjQpCisgIDkyMjMzNzIwMzY4NTQ3NzU4MDcgKGk2
-NCkKICAgMTMzLjcwMDAwMCAoZGJsKQogICB9CiAgIFRlc3RkYXRhOiB7CkBAIC0yNDksNyArMjQ5
-LDcgQEAgY2hlY2sgdGhhdCBibG9ibXNnIGlzIHByb2R1Y2luZyBleHBlY3RlZCByZXN1bHRzOgog
-ICBcdGJhci1tYXggOiAzMjc2NyAoaTMyKSAoZXNjKQogICBcdGJhei1taW4gOiAtMjE0NzQ4MzY0
-OCAoaTMyKSAoZXNjKQogICBcdGJhei1tYXggOiAyMTQ3NDgzNjQ3IChpMzIpIChlc2MpCi0gIFx0
-dGF6LW1pbiA6IC0yMTQ3NDgzNjQ4IChpMzIpIChlc2MpCi0gIFx0dGF6LW1heCA6IDIxNDc0ODM2
-NDcgKGkzMikgKGVzYykKKyAgXHR0YXotbWluIDogLTkyMjMzNzIwMzY4NTQ3NzU4MDggKGk2NCkg
-KGVzYykKKyAgXHR0YXotbWF4IDogOTIyMzM3MjAzNjg1NDc3NTgwNyAoaTY0KSAoZXNjKQogICBc
-dHdvcmxkIDogMiAoc3RyKSAoZXNjKQogICB9CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRl
-dmVsQGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9vcGVud3J0LWRldmVsCg==
+--===============8782809372851773356==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============8782809372851773356==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1iqmIw-0005OG-0I
+	for openwrt-devel@lists.openwrt.org; Sun, 12 Jan 2020 23:05:59 +0000
+Received: by mail-ed1-x542.google.com with SMTP id l8so6894240edw.1
+        for <openwrt-devel@lists.openwrt.org>; Sun, 12 Jan 2020 15:05:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=CFSQ8SZ1m+p0udv/ET/wBVoAq2tD2c2fsAlnPGm8le0=;
+        b=ukIIngnWPFCGAE2p8ik1iss70x7Ftzy4cxJ/z1WxCMjRwc0bS9nGdY76HEycDHk5aF
+         oRHDL3EQCvnqG2txIClIdJ/4KJ+ZP+oOl4tspyKXVw/aFH9Hw2+h6DmNiascfmLNra7s
+         7o71lwHYZh2ibv6fXjzGYNK8C9cvbk2p0dZKLHxCu4X33gy8yh97lropgO0MT4mBNurX
+         bWAvkXBqx50UadahY4/FNfTC7rwiSLfbVkcpjEc+AkdJvnf2nbutVtN6tDlcKjK2mMSI
+         4TfIcYpVRK4+RKSqKBxnEZ3aA+AIMfMyc9XG73b0pJ+v8ynLuvhtizk3KuwAvgqsb6iG
+         yDHA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=CFSQ8SZ1m+p0udv/ET/wBVoAq2tD2c2fsAlnPGm8le0=;
+        b=L0XbriYdHahKW32HwQ4ic7gbyRXq8nz8LMUEG4AydcjWy9yDzeug/QrJEBWeayKl2n
+         ZR/9XvUpl/7He0ZopxC81ZF/UyD4LurYfTsxIoZngYtGS2v2MBgxOamI3+3lJJY9hECy
+         yaLJxS7EewLHwj3YUOAVo+Obm/SVoRXTIGRS+LQQSe88GJet6BEfCgIRZw3Sbl/qmvT2
+         M/gFlbCrlSk9c2OUCM7h1hK+1BoeM6mucRBZnaE94E49W2YOlSuee9KlzyieYxjqzp0y
+         HgcsOizTelq7rpnjTTZ/gGtSMii021LFjfvrp++FHTT9MuiEgcWk4Vl6ZKq0v7j6+djf
+         bS5g==
+X-Gm-Message-State: APjAAAWMuG9wJIb4r+05HVIMDFatC4udTobxgww4opBNFlV3nSytXvgp
+	6CZJ9jaJH/dYhHJgY0ziiCZDNStaW2QmEo6SfTk=
+X-Google-Smtp-Source: APXvYqwoDIEV/UFbnDpbOEogE5AQ+qkBGlxrWHHUrT30jEZxs4wic2hHwXHii7kYiYKopUqsYCnLpdMY+cO40pmrzZ8=
+X-Received: by 2002:a17:906:2cd6:: with SMTP id r22mr13914860ejr.313.1578870354875;
+ Sun, 12 Jan 2020 15:05:54 -0800 (PST)
+MIME-Version: 1.0
+References: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
+In-Reply-To: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Mon, 13 Jan 2020 00:05:44 +0100
+Message-ID: <CAFBinCByt2Jukn5ZgtrABF2OtqduT733LEvvZLqd97j60Vj9dQ@mail.gmail.com>
+Subject: Re: [OpenWrt-Devel] [RFC] commit message in YAML format for new devices
+To: Paul Spooren <mail@aparcar.org>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="UTF-8"
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200112_150558_071363_556D8B06 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [2a00:1450:4864:20:0:0:0:542 listed in]
+                             [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             (martin.blumenstingl[at]googlemail.com)
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+
+Hi Paul,
+
+On Sun, Jan 12, 2020 at 10:47 PM Paul Spooren <mail@aparcar.org> wrote:
+>
+> Hi all,
+>
+> some time ago I created a (now outdated) device overview[0] based on
+> YAML meta data. This approach could simplify maintaining an device
+> overview and device specific pages[1].
+>
+> All commits adding new devices already include most relevant information
+> for creating the overview. However it would be convenient if developers
+> would format their commit messages in a generic format, therefore I'd
+> propose the following:
+>
+> Every commit message for newly added devices must contain a number of
+> hardware information and steps for an initial installation.
+> The hardware information should contain at least the following
+> information, maybe more:
+>
+> SoC, flash, ram, wifi, LEDs, buttons, USB, serial, vendor, model, device
+> tree ID, Ethernet ports
+can we automate this somehow?
+the device tree files already contain most of that information.
+
+(I'm all for providing good data for the TOH but I'm challenging the
+idea of doing this manually)
+
+
+Martin
+
+
+--===============8782809372851773356==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============8782809372851773356==--

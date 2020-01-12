@@ -2,62 +2,66 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E29EB1386A3
-	for <lists+openwrt-devel@lfdr.de>; Sun, 12 Jan 2020 14:23:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DFF213870D
+	for <lists+openwrt-devel@lfdr.de>; Sun, 12 Jan 2020 17:30:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cm1N+AIzON/QWfTEIFAwEWgLeXbmO5MZuTird5yoA3Q=; b=tHdFRxZ9AVVCzf8LyzSdlO4w/2
-	FJqeYv+FH7zrVf2HiUlppKRmY6fzToO/ceL7HqU7gLxjFMGeTbSkP3hWfAS6CrwB5k+oS4m7sz/KP
-	vMGyTV5IkMh9iFuLj478f+dfQHK7FlQVg2mRiXdO19V7KWxM0nC1reh7WK3VULhDW8BkO+2feECbQ
-	b6fu4jnOlQlsPs0eOVyr932zV/iUFI6DY0iR9Cho2k7tRvCkzll1+NSJjUn9P93zaA8RgDg14sXuK
-	3PAB+fyLlh0zJWA0EtEeydny9oili+HVX/c1OMdxFZipjlRnZcASv+O79ZRkVe0VqOUbsxOixvSGy
-	DEeln2sA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:Message-ID:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=92SmRFpF6CQaGWIXTba5zmIxKl+aj72223k/9XfwN7Y=; b=LhvbOIYlTDlcAJ
+	2VOvSyTaR6rIZrEey32Biabu1kC10AjRKhIF/uLMWYFHgjzNICn55xvv2km8o9ZIdGhO5XJUShErd
+	tXFlAcGDbCnDy+ALYn1pF7Luv1iO+ytKKDUu13gPqNVWgp4o1sbJZTLdz9uSMPb3aAmWoPSqzHO4u
+	fxWSgXIdItS+PzziY0GV8hyx5dWsWmO5nKMkXwmjPlq4+XrUAzg00xhWa6IuvKB+XprZDCTx2t6TT
+	OjslGDA5zNTIbAfmJt+FGCgNgRMwlzPy072MNcm/IaPxVd36Fr2Ug9BogAPqKzTx4R5QdBheue5ov
+	1tdSmL8TNEXbK4qIZ4MA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqdCy-0004hh-MK; Sun, 12 Jan 2020 13:23:12 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1iqg7h-0006TM-HO; Sun, 12 Jan 2020 16:29:57 +0000
+Received: from out-23.smtp.github.com ([192.30.252.206])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqdCs-0004gI-QM
- for openwrt-devel@lists.openwrt.org; Sun, 12 Jan 2020 13:23:08 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 7C4E04D97;
- Sun, 12 Jan 2020 14:23:04 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id da403006;
- Sun, 12 Jan 2020 14:22:53 +0100 (CET)
-Date: Sun, 12 Jan 2020 14:22:53 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: juraj.vijtiuk@sartura.hr
-Message-ID: <20200112132253.GG86978@meh.true.cz>
-References: <20200112112618.2951-1-juraj.vijtiuk@sartura.hr>
- <20200112114307.GE86978@meh.true.cz>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200112114307.GE86978@meh.true.cz>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+ id 1iqg7a-0006Se-U2
+ for lede-dev@lists.infradead.org; Sun, 12 Jan 2020 16:29:52 +0000
+Received: from github-lowworker-edec459.ac4-iad.github.net
+ (github-lowworker-edec459.ac4-iad.github.net [10.52.18.32])
+ by smtp.github.com (Postfix) with ESMTP id 259D4660069;
+ Sun, 12 Jan 2020 08:29:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+ s=pf2014; t=1578846588;
+ bh=ffqZy9tD0lxJZ10HJ3XgdBx98KZwoH/sqwii8Gknslc=;
+ h=Date:From:To:Subject:From;
+ b=Mfe3z79zllwU1U05J8KI/gCqbCI7ET8PZgwGgASaWQzguhW474CxJdM+YCsjyUd3N
+ PfgpWveDSRRJvFPKeqoEqHS3j35om3J7F3e583LkkcvzKOSvCOyxEGKNXy33KxxGGB
+ ejhtHIerpLsaF2pRfyMjI74ksy3GMa8AABucC+EM=
+Date: Sun, 12 Jan 2020 08:29:48 -0800
+From: Stephen Walker <noreply@github.com>
+To: stephendwalker+github@gmail.com, 
+ openwrt-devel@lists.openwrt.org
+Message-ID: <sdwalker/sdwalker.github.io/push/refs/heads/master/9a4ea2-38772e@github.com>
+Mime-Version: 1.0
+X-GitHub-Recipient-Address: stephendwalker+github@gmail.com,
+ lede-dev@lists.infradead.org
+X-Auto-Response-Suppress: All
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200112_052307_005800_81CB1D17 
-X-CRM114-Status: UNSURE (   3.13  )
+X-CRM114-CacheID: sfid-20200112_082951_035452_8B49D2BD 
+X-CRM114-Status: UNSURE (   2.29  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.30.252.206 listed in list.dnswl.org]
+ 2.5 HEADER_SPAM            Bulk email fingerprint (header-based) found
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH][libubox] blobmsg: blobmsg_parse and
- blobmsg_parse_array oob read fixes
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 38772e: This week's
+ update
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,20 +73,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org, Luka Perkov <luka.perkov@sartura.hr>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-UGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gWzIwMjAtMDEtMTIgMTI6NDM6MDddOgoKPiBU
-aG9zZSBjaGVja3MgYXJlIHJ1biBub3cgYXV0b21hdGljYWxseSBieSBDSSBhZnRlciBlYWNoIEdp
-dCBwdXNoLgoKSSBkb24ndCBrbm93IGlmIGl0J3Mgb2J2aW91cyBob3cgdG8gdXNlIHRoZSB0ZXN0
-cy9mdXp6aW5nIGluc2lkZSBsaWJ1Ym94IChhbmQKb3RoZXIgQyBwcm9qZWN0cyksIHNvIEkndmUg
-d3JpdHRlbiBzb21ldGhpbmcgc21hbGxbMV0gYWJvdXQgdGhlIENJIGNoZWNrcyBhbmQKdXNlZCBs
-aWJ1Ym94IGFzIGV4YW1wbGUuCgoxLiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9waXBlcm1h
-aWwvb3BlbndydC1kZXZlbC8yMDE5LURlY2VtYmVyLzAyMDgzMS5odG1sCgotLSB5bmV6egoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kb3BlbndydC1kZXZl
-bCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xp
-c3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1kZXZlbAo=
+  Branch: refs/heads/master
+  Home:   https://github.com/sdwalker/sdwalker.github.io
+  Commit: 38772eae5e58f5b777a6981ce52618a20211de5c
+      https://github.com/sdwalker/sdwalker.github.io/commit/38772eae5e58f5b777a6981ce52618a20211de5c
+  Author: Stephen Walker <stephendwalker+github@gmail.com>
+  Date:   2020-01-12 (Sun, 12 Jan 2020)
+
+  Changed paths:
+    M uscan/index-18.06.html
+    M uscan/index-19.07.html
+    M uscan/index.html
+
+  Log Message:
+  -----------
+  This week's update
+
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

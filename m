@@ -2,76 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EA9C1391C1
-	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Jan 2020 14:05:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83C061391CD
+	for <lists+openwrt-devel@lfdr.de>; Mon, 13 Jan 2020 14:09:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QdhUJ4e6BgEYj6MHLOqm1lLrlMuj1t3XmIjuHgr+HI0=; b=jzNzYAT42bkFsl
-	OMFf19wfOvGa4yNAy5mccffEyIIcTAJzGFFB+gNyVG5RpZqquOg/K16Cf7dSP4wpWNhJTf4vnXLtJ
-	OaVsuc91UJImBF7y+XvGIZGfwa4rqdEhdzy14LYWglF+NRy/LIrEvklbkNRTrObxTW+vYfDu6L4Fs
-	XQ3RVxo2+KIlUp/ImQeIHaldNUt90QNabOpi/e0qIBcj90swCzbixKijW2YMvGawSfvRLD4teULI7
-	j8/SCiaOQ0MEzNBZaBlLVrSTyYGm1d0S5iaFmFVEjYx51Ga+NMMeFZy2+GG1v+FPTQLgU8mfqw+kX
-	55RmU4VLrw8/J2blp6xQ==;
+	List-Owner; bh=XLGVhrXGuvou0T7sGhmmLoQ0KLLCymoKBWKkHQIN9As=; b=W+jW4gkwDKeXUL
+	WY1o/cLbCDjRmeagoR9MmmW2k0myPwO8CCl1Gr2MNkIwGsXZ4RhBLF9z8edWeqZS9roYKyCPgFIwZ
+	PmL/1xYcnKTJTAvf9PamsJfStLEwWrlT1x/wFSE/GK3naNbzil55EAmw5KQSBec/2o/l1vtqPpa+R
+	moU74wDUtOXHT7+Pp8z7Q9A086RKViUJgNfLFj6W4vcex18yQIQ8jztpYwN6qPsimEIfVqP1E4NMd
+	kNcpS9i1V4ThYPtSvFdXxRw7iPBy23pPmDp2EXHtiKsiJrE7zoSAKmxOOiclnyvg8giZ9qa6yPl9u
+	jRHpgQ08pSFMoaup/KqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqzPk-00045y-8i; Mon, 13 Jan 2020 13:05:52 +0000
+	id 1iqzSu-0004hR-PE; Mon, 13 Jan 2020 13:09:08 +0000
 Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqzND-0000p9-Pe
- for openwrt-devel@lists.openwrt.org; Mon, 13 Jan 2020 13:03:18 +0000
+ id 1iqzSj-0004gp-KO
+ for openwrt-devel@lists.openwrt.org; Mon, 13 Jan 2020 13:08:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1578920589;
- bh=uye6/uGzZQVGuVudKKuRGL/VnnHTz1+PaV8Pxsy5Njw=;
- h=X-UI-Sender-Class:From:To:References:In-Reply-To:Subject:Date;
- b=PrSgSqjvqfOlyVrMbtMNZdwxIzB+TaCnyZRv8WIx4To2RoEiMyzQ9GXu1q4qeXlwK
- GeptZ2mQUQ/q//pH4UKaOiruS2MMU9Huk8aK7lDrRCv1IDkFZj1cfV1ebldyiynZxB
- PzzpECwlulyL5CuvChJ1oJelPN9FYjZqFPpS5iko=
+ s=badeba3b8450; t=1578920927;
+ bh=9Q0dkxxI5TdcABxoC8ow2SL8fei5VOTyCuosEH4GBUk=;
+ h=X-UI-Sender-Class:From:To:Cc:References:In-Reply-To:Subject:Date;
+ b=lmdgNuFzQ4mlujm1Wnulin1m+zagEryYhFkCxvmr84lTXoWJjnpEotDIACkNO6/e0
+ trRNf6WUkKye0zke/Ifs3zrImr3BhHlnw3j9sAforsTHGXA3I0I8YJpJ1zSo27QFhG
+ Rb8pUSqfXgKq3Bwp7rXZw8OeHLIzXLQvFXmFSDwU=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from Gasman2 ([95.223.73.239]) by mail.gmx.com (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1M8hZJ-1imsm40kkr-004kkm; Mon, 13
- Jan 2020 14:03:09 +0100
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MLR1f-1j9LG13I0J-00IRhX; Mon, 13
+ Jan 2020 14:08:46 +0100
 From: "Thomas Endt" <tmo26@gmx.de>
-To: "'Paul Spooren'" <mail@aparcar.org>,
- "'OpenWrt Development List'" <openwrt-devel@lists.openwrt.org>
-References: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
-In-Reply-To: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
-Date: Mon, 13 Jan 2020 14:03:09 +0100
-Message-ID: <002001d5ca11$ce0e0de0$6a2a29a0$@gmx.de>
+To: "'Baptiste Jonglez'" <baptiste@bitsofnetworks.org>,
+ "'Pumr, Ondrej \(EEK\)'" <Ondrej.Pumr@skoda-auto.cz>
+References: <C02EF912F243ED4F9D4C4104F769FA4869CC52A2@SKDAMBXM02.mb.skoda.vwg>
+ <20200110140224.GA209673@lud.localdomain>
+In-Reply-To: <20200110140224.GA209673@lud.localdomain>
+Date: Mon, 13 Jan 2020 14:08:45 +0100
+Message-ID: <002701d5ca12$97482f10$c5d88d30$@gmx.de>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQHwFKFlyfH99uJSkQj1itctKDZCZ6ez+GLw
+Thread-Index: AQKD11gIW/js3Ue7WLWV5aPW2z2F+AGxwWC4pn7n1MA=
 Content-Language: de
-X-Provags-ID: V03:K1:mps0FQyKEzsfJvlx9huW3lyZECsjfA2+EoFrx3pDLr/AdtTiHU8
- xkQpNvkMOTNANzRtKuOmjAdNxIcuUbA/1pj44jidVQH35G1HQGoSquIenk35LOTo4K/m8iv
- +p9w130lUWxtajXUzGoT7NLTOOycmmkChl4HRCfqxIq1WWUIBiZgLrKY4bm4Hi7Gpvmii3e
- FXv45+482uhiyI1vUiZKg==
+X-Provags-ID: V03:K1:gBNLbtXVkoS3eEtT0Ji+kYZhbs2pCTgMsied5uxOG8M0+nZ1rS/
+ H9u0XiSvlukqadCkx7+DlGOzy4MteOBfPyDRgLX8sV9yrBg/5cBfACXP3dgQ75FiiXYNfbk
+ RbzmduSpSej34tTyg689TyUy/hQznuJVfhf6MViQMgTYuGzeSVjbpjjeSnpZIAbUcu/aRZw
+ eIKJ7QZmGwZMyufe2ulvg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Vac4jmAGvIc=:CWwU3fCNTaisakzzjWnVwI
- GoNMEdVzI9Oy3wOafOVVnVIEMv41K3Z9Lnt1N29mIjVNOCE2gHXr9l3NYia9MMBCj8FBUxv3y
- 9JU9cerIllNpT++/vJyg4v8CLiIQ7x7DV3S2Mr11PpFREHsy23kzXuVaiMky27yeWHSg/evud
- qKGQNwiKy/maDu/dOCZAHWQ+plGVcH4jagK1nS/yugD5MF6aVOKo/Cjc0k7KJSD555sLm7xvw
- pM/18V2YJBzqib6gqzY2Tqd+gRMX6O0VM9gRD5JFH6Kbdys0Bpqk5Lc5REmp6c0qNmvUh+uxe
- 6Z8ap8uLUPEbbqMWHwQu/x4412C1c27rlJKNSbYsXpu7mdYnuAUErCTkxU/YX8I4Z6DSZYUA1
- jfYFjd/YWjXDqfaZARUFDHmrGSSIy8WWxr/OHEgwiMr0Ttg8+NJRboAZlTASzqmKn4CmMNDKE
- jDs9F7NE6wrwf4BF+Wm0/YgGnJx/MMRioD5QGzkrnJnuNGmjW9JXqO60XNJwJJsYQKX7rwhl8
- R/y/3Yv7lc8EtPtv5PxG4B9XsPw9FsLHQpJOMckqu4PasKQAdI9//5Dhe3hDj/lvfTjdLOEff
- rsc0bplrg83mXRzd4jHbgQ16chQpeIXuLtsEnxvHlTQPpKt1u30Oqs2vgSZ72Xvn4hmILqJgh
- ZgeeFzfdZOUVksqDzXlFUIsLRjQVtcpf2YOO8cvQqiLzxsGw87jNaxr3qZgqKGjwd9yykaHPg
- ZlhPTzpAQXZIzszQK7oklBQj4vLMnoG8l0T4j5oKOhgyK4jYwx0U5ZzXPS5sUgupwVp0uEC1F
- NOnl6bji3JRseLbAx4AOfmseNd9/EIHEPCxdES4y5vkaOCWp6zzKIlMOjjIFq/iVypFJEHKc3
- AQsf8onyHaMGzHBGCWJhERwnHY+tsApEhMI+kZu1C4rl9UDGslZkzp6o8x+gdsf7znuQ9pDGK
- Cpqrm1to/5Zm8WnVbFnHDKrZuCSCEnHyryd4Ldre47PzieTEq9TkfSJ9vAp73yrwtHfCRX+Ks
- phOkp6thJPSW4ROBQeRFO5N1A7MajnGv09YiRGS4GEgAWkx/a8ttDE+LazkwjhERxTSzVJQi5
- 2lxYAfQE1Zf2TgXt7iGUr6cqAr9T0QgwWfyFHmZ60F1kJkQ04zcHLQMhapwVPefYypEAXJo1C
- nee7Wnkx1t+sO+7HZWh6h8mSXoPLV6rw6OMaPg71Tdo/FYsvEf1zv/l0kFRLBMMXrVLJqXmfs
- l0XFUoU9eiCXUpbdA8W8bnk8ZnvbIQiXE1V6JZw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:jNoyBUAmmXg=:TdjUx/HCdfaYVA7JHxZUZr
+ ULFNJah8MLWlLi+HMCsXKtmp4DtT+RjgnONOxRRV4gdqpIDrfjslaKPVq9pUsmChATVjWGk/5
+ o0bCkU0HEhnVCyzkp7PfMMYcNgYQOk/63IHcLl8h5C28hBUhmINDxY1IZ5j5d11PJP0tYfhAB
+ 7NqU8OxzFceA1c2xlSuwTzcG999lPAZS4H3n6/mw62A/m/gQDDTN2NkPzqoHZiC19mFOZK0xh
+ dlsPb8MK/A8CTaKmETIUXOQPfpjMfx4KsJkn5J+OuQgN3H4jI3oL/VuJnWkem13gCiRle8Ofa
+ MS7leMdf7ze6buIRUutjNeNbEGFiBcN6sWflbnYlb/BqgfvDXintMXAue2i8a1LHm19epnRCj
+ o2RjilZkckhcF7C9KW+W1ZKxhVkx5ISfRBoAdy3BkZkikRnYVkkrPrFEAZo/7AcEfe2ajqctQ
+ rVKva6Z7YMZkKY6+Q8uffoRZg3Uzfb1kkcoY8lwXGZb8KdqmrTQzlKriuzVdK7KoA207HWCSf
+ 7uAzcycigsgxuLT4s+toGbWIrm21drdhHWqMPbQlQRTjSWevFVlQ4EUt61Roi7nZfQSDPJEkR
+ 3EgseNpHVFRcqaaR/jqx0h4FgJcGUMIgR9uIFpKwZE87TJcjNWTrJy1U8veC4E2vhL/U6YTG1
+ sLjtMGwTHSR+sEoGtVJ+LUNEanODJvZUZxUHTSj9T1S4Fr0CExo3YqFXiQvi3EqdTd+Uj35wP
+ HUy8tFcnpkOODLH4P855++deBuJtiKv3L7rTBoOMiauz/ExTbvk0k8OIwW6+tzOcwDjgngclr
+ oVQwy8cx2SRxy5FkM9DL84MSUw2yWxYuDkjuSmMMM1G5Qck7sFNsa1W3mB3W1Gh08zRz704Qj
+ RPalRAlbDovkaohTftVIPQbbyAJDY6BKCW0jFlvTWAiwKVplVYN51Wo9dh3Pw5W5fkfZ2MP+I
+ lKE+LQiboinuuOygF+idhuLLpaHiAw6Fz2q0Rdsc3CQmoB3QxFmfIUSQq7qhIMlCRUlZK3ST+
+ PahDmKXLu8QfLSZAJmVucCNmsd0TcsTzWInfvh7Y3QL+IreU7aaPZBsCWvsvf843tebBZn0mG
+ yi7OZO133qx1kYWHrGSm4H9JpLnh5x1iXaTi6lO/Dx7o8eV/zzEMYYtgsDFCCBcWZVE7TTi28
+ J851P+nA/GDxSplKJN0u+AxFOkavpeoZz8wfTT7CqMJCXQZIY3VH23i6Se13o3/RpARHXITzi
+ PPSrScbo5k621CcVjPv214FnLNtLHx/mgVC+dkA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_050316_265122_E8B034D4 
-X-CRM114-Status: UNSURE (   4.45  )
+X-CRM114-CacheID: sfid-20200113_050857_961385_7183D68A 
+X-CRM114-Status: UNSURE (   6.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -89,8 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [RFC] commit message in YAML format for new
- devices
+Subject: Re: [OpenWrt-Devel] Question:  Migration from ar71xx to ath79
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,30 +102,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: openwrt-devel@lists.openwrt.org, 'Thomas Endt' <tmo26@gmx.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-PiAtLS0tLVVyc3Byw7xuZ2xpY2hlIE5hY2hyaWNodC0tLS0tCj4gVm9uOiBvcGVud3J0LWRldmVs
-IDxvcGVud3J0LWRldmVsLWJvdW5jZXNAbGlzdHMub3BlbndydC5vcmc+IEltCj4gQXVmdHJhZyB2
-b24gUGF1bCBTcG9vcmVuCj4gR2VzZW5kZXQ6IFNvbm50YWcsIDEyLiBKYW51YXIgMjAyMCAyMjo0
-Nwo+IEFuOiAnT3BlbldydCBEZXZlbG9wbWVudCBMaXN0JyA8b3BlbndydC1kZXZlbEBsaXN0cy5v
-cGVud3J0Lm9yZz4KPiBCZXRyZWZmOiBbT3BlbldydC1EZXZlbF0gW1JGQ10gY29tbWl0IG1lc3Nh
-Z2UgaW4gWUFNTCBmb3JtYXQgZm9yIG5ldwo+IGRldmljZXMKPiBBbiBpbGx1c3RyYXRpdmUgY29t
-bWl0IHRoZXJlZm9yZToKPiAKPiBzb2M6IFF1YWxjb21tIElQUTQwMjkKPiByYW1fbWI6IDUxMgo+
-IGZsYXNoOgoKSWYgdGhlcmUgaXMgbWFudWFsIHVzZXIgaW5wdXQsIHlvdSBuZWVkIHRvIHZhbGlk
-YXRlIGFuZCBub3JtYWxpemUgdGhlIGlucHV0IGRhdGEuCgpFeGFtcGxlOgoKLSBzb2M6IFF1YWxj
-b21tIElQUTQwMjkKLSBzb2M6IElQUTQwMjkKLSBzb2M6IHFVYUxjT21NbSBJUFE0MDI5CgpXZSB3
-YW50IHVuaWZvcm0gbmFtaW5nIGFuZCBzcGVsbGluZy4KCklmIGFsbCB0aGlzIGlzIGNyZWF0ZWQg
-dmlhIHNjcmlwdCwgb2ssIG5vIHByb2JsZW0sIHRoZSBzY3JpcHQgY2FuIGhhbmRsZSB0aGF0LgpJ
-ZiB5b3Ugd2FudCB1c2VycyB0byBkZWxpdmVyIGFjY2VwdGFibGUgeWFtbCBmaWxlcywgeW91IHNo
-b3VsZCBjcmVhdGUgYSAieWFtbC1nZW5lcmF0b3IiIHdoZXJlIHlvdSBjYW4gZWFzaWx5IGNob3Nl
-IGluIGRyb3Bkb3duIGxpc3RzIHdoaWNoIFNvQywgd2hhdCBSQU0gY2hpcCwgLi4uLi4KVGhlIGN1
-cnJlbnQgZGF0YWVudHJpZXMgZG8gYWxyZWFkeSBoYXZlIGRyb3Bkb3ducyBmb3Igc2V2ZXJhbCBm
-ZWF0dXJlcywgaG93ZXZlciwgU29DICsgV2lyZWxlc3MgaGFyZHdhcmUgYXJlIGZyZWV0ZXh0LCBu
-byBkcm9wZG93bnMuIEhhdmluZyB0aGF0IGF1dG9tYXRlZCB3b3VsZCBiZSBhIGdhaW4uCgpSZWdh
-cmRzLAoKVGhvbWFzCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVu
-d3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Blbndy
-dC1kZXZlbAo=
+> @Thomas: I saw that there are auto-generated pages listing ath79 devices,
+> it's very helpful:
+> 
+>   https://openwrt.org/docs/techref/targets/ath79
+>   https://openwrt.org/docs/techref/targets/ar71xx-ath79
+> 
+> What is the source used to generate them?
+
+Source = the dataentries of the respective devices
+
+>  Where could people add
+> important information about upgrading for a specific device?  Would it be
+> better on the device pages themselves, or in a column of this table?
+
+It depends.
+The dataentries should be used only for very short instructions (like "change imagename to xyz.bin before flashing).
+Everything that needs more explanation should be put on the devicepages, simply because there is much more space available.
+
+Thomas
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

@@ -2,38 +2,38 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AE1913D609
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 09:41:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2B8913D60E
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 09:43:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CkC1Vp1j2FsLtkFvc2D9LUMhvI/P7yCGewA6PyyohMU=; b=nRh8fR0s8DcPsIsNeWBX1YnD0
-	a5SojaqnQzdEr9FhfdfmF+lmRULApb58Dn/FGRPD3/ImaVcsZBfmyccG8uc7K5PoAEpRpJ6iroUkv
-	L+ZyUznpBeK/jC6PX74YV/tjKZDd7g7iu4SEvjkRU7GYpjaTIIDquSWpFrTqY95CR3plKsgB1++8b
-	4n0+fATO6AW+baE5mrMmnj4g2aTks/NFUkL1sQ7C/Iqqokpm1ZlI4M0GF7maFeLKWhh7FmRtOx6Ir
-	UpozzHF9WYcPAYwYu/3v+EvPEalei9mRofjiAZ4PKsRUqaMoL04nxPDmcIMI1n4RtwqmWd8CeGErt
-	JVtsLpK7Q==;
+	 bh=ldJMTPxBETFFucqv1GAjL+L3KA1wYDIGFHcMq+BQTLk=; b=jk7PPP8lGibCjIEKFVG1kjWSI
+	sPWaF7R5tdMMTDZYKs91hXVH8qsfRiQFFF8jSjRG/kT0+28+ACWcezPaGG9qPMqZxg82aODWcs7fr
+	Ftj9jAOWa0MeZOsucWcAJazct3k2jHXfFOCZLAZX6bg6q/sc5X5bdPNIdgL3xNgoMULTLVHt1LMQZ
+	COffrryGP+hkdKFnNA4COeAAkNbFIGQbYlRuhzGqPF8JkO/81xIFbG8WfGLQhSV2rH1BD8RG0QY5n
+	sYSKaUYP6m2/NoDZaz3gONNEOiE0dLiS9BLSU2+jmwtkTFgX2JCIAijs4Wo9SQmIA9GaxvhfGNOWH
+	yTPs9D4cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is0iS-0003Cy-Lb; Thu, 16 Jan 2020 08:41:24 +0000
+	id 1is0k9-0003na-2e; Thu, 16 Jan 2020 08:43:09 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is0iL-0003C9-5x
- for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 08:41:19 +0000
+ id 1is0jw-0003mi-Eb
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 08:43:01 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 5D305561F0; Thu, 16 Jan 2020 09:41:14 +0100 (CET)
+ id 3F98756256; Thu, 16 Jan 2020 09:42:55 +0100 (CET)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 3E67C561EE
- for <openwrt-devel@lists.openwrt.org>; Thu, 16 Jan 2020 09:41:14 +0100 (CET)
-Received: (qmail 1032 invoked from network); 16 Jan 2020 09:41:14 +0100
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 0836456254
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 Jan 2020 09:42:55 +0100 (CET)
+Received: (qmail 6050 invoked from network); 16 Jan 2020 09:42:54 +0100
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.41.162)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 16 Jan 2020 09:41:14 +0100
+ 16 Jan 2020 09:42:54 +0100
 To: openwrt-devel@lists.openwrt.org
-References: <20191205105805.29869-1-fe@dev.tdt.de>
+References: <20191205103338.28355-1-fe@dev.tdt.de>
 From: Jo-Philipp Wich <jo@mein.io>
 Openpgp: preference=signencrypt
 Autocrypt: addr=jo@mein.io; keydata=
@@ -110,15 +110,15 @@ Autocrypt: addr=jo@mein.io; keydata=
  E0odeH3CEEPqpxyE7v4aaKiih4BniILMu+ZVVX++/eS9DqtZzMGVeyMYN5nFfGSfnSc/0P2W
  +Ce3rRZbH40Q3GKVn1h19BWj2kBXJBWFpYSO5ZkCjLwwXozDMKJS08h3/7Y8FW+GngDqKgmW
  y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
-Date: Thu, 16 Jan 2020 09:41:09 +0100
+Message-ID: <8f8ddb6f-f9e7-67a4-185a-090e566bc3be@wwsnet.net>
+Date: Thu, 16 Jan 2020 09:42:54 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <20191205105805.29869-1-fe@dev.tdt.de>
+In-Reply-To: <20191205103338.28355-1-fe@dev.tdt.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_004117_529529_019C1940 
-X-CRM114-Status: GOOD (  10.57  )
+X-CRM114-CacheID: sfid-20200116_004256_798767_F0084D7A 
+X-CRM114-Status: GOOD (  10.12  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -128,8 +128,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
- lonely peers
+Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: skip peer config if
+ public key of the peer is not defined
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,79 +141,76 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0885431774045418917=="
+Content-Type: multipart/mixed; boundary="===============7836801096323953666=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0885431774045418917==
+--===============7836801096323953666==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF"
+ boundary="wfz0j3LMRucK0ZvdZKmUEr97krCaFN9tG"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF
-Content-Type: multipart/mixed; boundary="ZsSRAgnOF2N6UebeNEF9mDqYERxduDaWE";
+--wfz0j3LMRucK0ZvdZKmUEr97krCaFN9tG
+Content-Type: multipart/mixed; boundary="eQylC1S1JTn3aOBeUY2OLqgN0jCPcFkw4";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
 To: openwrt-devel@lists.openwrt.org
-Message-ID: <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
-Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
- lonely peers
-References: <20191205105805.29869-1-fe@dev.tdt.de>
-In-Reply-To: <20191205105805.29869-1-fe@dev.tdt.de>
+Message-ID: <8f8ddb6f-f9e7-67a4-185a-090e566bc3be@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: skip peer config if public
+ key of the peer is not defined
+References: <20191205103338.28355-1-fe@dev.tdt.de>
+In-Reply-To: <20191205103338.28355-1-fe@dev.tdt.de>
 
---ZsSRAgnOF2N6UebeNEF9mDqYERxduDaWE
+--eQylC1S1JTn3aOBeUY2OLqgN0jCPcFkw4
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 Hi,
 
-I think this behavior is not really acceptable. Programs, init scripts,
-hotplug events etc. should not automatically modify (and commit) uci
-configurations, especially not such vital ones like the network config.
+> +	if [ -z "$public_key" ]; then
+> +		echo "Skipping peer config $peer_config because public key is not de=
+fined."
+> +		return 0
+> +	fi
 
-The main problem I see is that you do not know what state the config is
-in at any point in time, whether there are other (intentionally!)
-uncommitted user changes etc.
-
-Wouldn't it be better to modify the code deleting the wireguard
-interface to delete the peer sections as well? Or to remodel the
-wireguard configuration model to cope with orphaned peer sections?
-
+I guess there will be other error conditions that could cause the wg
+setup to fail... is there any more robust way to check the config for
+validity? Could some `wg` sub command be used for that?
 
 ~ Jo
 
 
---ZsSRAgnOF2N6UebeNEF9mDqYERxduDaWE--
+--eQylC1S1JTn3aOBeUY2OLqgN0jCPcFkw4--
 
---rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF
+--wfz0j3LMRucK0ZvdZKmUEr97krCaFN9tG
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl4gIakACgkQQuLLvzou
-ZtNidw//VZCsFfcxt5SR4DkNb0JIOxyQAKEtyoUEi5DLOjn+aX4/FQcWQG28V7fz
-hHPvEycKjndTVDJreHAkpfa8ckrcQvLakM2a2XVSZXjXWN0i1g20lvp2y8HkI9Rt
-WHRcKvnuVFP0gUP9p7s1ThjJfIMP22ilNeDCQ9pxPpgzusbYVYpFoMZ1J99SSPwZ
-ouKFiddcmqZOd7oIMI8igYnyKu0dMackxGfSXqpdLhOS9cdp/a8WkX4oCEF1IR0R
-Qp5J99KhNJBgHuBZtrkpDwsCeDskKdoBdKMNeSZ1oguevLf87E58HkVfvDDu8qtU
-8wYnjH/1O9P0fa1rLsoKVKsT78Z4l6xzdnlYwbRWpMX/nwGM3hu7StQ2BWRIFXmI
-2rodjtIT1bOA3sExA+zMmVM+lHGtlp86ZdJ4BGtKfhnWFdNKy0o0F1WEtmvib74L
-Ct3sexDV2NrJndyx8KoiF4F1ycg17qnFFX9H7sEEeUPF/amySYcxzfysTSHa92hS
-QGQP1vvDSCt7+RGMny/nHJBZfWB2XiUPnhCBMM/t1mhYaUbdmIZGJLoaFIWBfv2/
-Bh40I0v6d7QYc91bpg0CJHVfeR5SdbAI15IcTpK3dE5d+TssTbiLY5BqVrK2iafZ
-u1Mtul4U3gya7l5iusKqAUxngkkXG7vnwkl8en9F+HYbHF2xaYM=
-=vfIf
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl4gIg4ACgkQQuLLvzou
+ZtPsPw//TIxV8A+b+sRuA42HirPYCAMkOegdFysfAYROll4iRDSD7iKacHi+vhIj
+PZQwzojvXeJeTL3rzTVR6J2fbPI/tc3yUK+XTpJVzOiXkHJNB+zHAaTmIJRGclX9
+KkL6gUsWzS3dBMu8AQhGl2kGikEg+bZuDPb+ruhX9pKuF7ecJggsd23SnPhdHM2Q
+0kVEBILzw8Xul4fAVevlSVmCrCIvmKVKvJzDJmyVXnUqi3YsN/Bi2L6x/IvZSC/9
+8uR1BZqB03hUEP4CI4xkhi6/itkdmwQtsLedBvq5s+mMFfSWKzUPLQ+HoZncXL22
+tLTViEb37WhTDGEO/nlH50LLFcWztLnZWE7aC7cBXIsj4owy+nBHPsvxD5yz4QPQ
+m8575tln1KCU14+ANvXEPK+pEhT8MJjiUAXmw0PRv2WeCdYOQbHsMpghpDVjBnLu
+s5fMIpuEtw7kWEFHHrOfYZcQ2zBGaiHOG9JdrI3Hhny1CIjhLb7aCFBb92qol2Bs
+OClSJBGEeMrsdDyv/xbv9BJfL2Tj8g679v1UAKowdAfRAuIeQjA3s4Zt/gKNwGYR
+Gd7LC3ql1FxfnCJHwAVzrmwROoRnl16tEpI6u74Zi2lzV5I/jiFqf1ppPrT2mMsg
+Bmo1YnAR3GN/VF1LuhKQ0w8+U6/iZ76ApkiahenojRUYSSLMcG4=
+=URbl
 -----END PGP SIGNATURE-----
 
---rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF--
+--wfz0j3LMRucK0ZvdZKmUEr97krCaFN9tG--
 
 
---===============0885431774045418917==
+--===============7836801096323953666==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -224,5 +221,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============0885431774045418917==--
+--===============7836801096323953666==--
 

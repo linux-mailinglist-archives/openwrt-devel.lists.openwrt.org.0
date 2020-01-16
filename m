@@ -2,189 +2,218 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CA8113D5F5
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 09:31:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AE1913D609
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 09:41:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
-	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
-	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:References:To:Date:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SKHTI49L7EmDrPkx5yoU+9JppTfvf5JYyxne34cO1V8=; b=Tzkt1go9qm43kCfL60LvrK9w4
-	mPnAxpXwERtnGdjOGAdaxyX3JiaoD3HnC75636JoxqqbVQJefN+6MPf6M7469fI9E9LV7xe28cBuc
-	oezYIfGnGRrN+4uHW9D7VrBd+8C1xQpDAIZiikJ71QsiuHWRYYe8kq5tCLTOuvGIKXPifZbrAwDlK
-	TpYW4+rWbveRMLNYhg9wrVrCrtFhBxj+wLqtiwBnFu403ht+kLMvvgvjJwK9kOyc251UM4fXH2e09
-	1PMno8+oVYl3BOu7ZNwBygpdgd7JECqPz/ozIyIAOHeNsT2Q93jRt8d27F6mowZvErNBU7nXPb1kX
-	tsoeuq9Sw==;
+	 bh=CkC1Vp1j2FsLtkFvc2D9LUMhvI/P7yCGewA6PyyohMU=; b=nRh8fR0s8DcPsIsNeWBX1YnD0
+	a5SojaqnQzdEr9FhfdfmF+lmRULApb58Dn/FGRPD3/ImaVcsZBfmyccG8uc7K5PoAEpRpJ6iroUkv
+	L+ZyUznpBeK/jC6PX74YV/tjKZDd7g7iu4SEvjkRU7GYpjaTIIDquSWpFrTqY95CR3plKsgB1++8b
+	4n0+fATO6AW+baE5mrMmnj4g2aTks/NFUkL1sQ7C/Iqqokpm1ZlI4M0GF7maFeLKWhh7FmRtOx6Ir
+	UpozzHF9WYcPAYwYu/3v+EvPEalei9mRofjiAZ4PKsRUqaMoL04nxPDmcIMI1n4RtwqmWd8CeGErt
+	JVtsLpK7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is0Ye-0007bG-Oa; Thu, 16 Jan 2020 08:31:16 +0000
-Date: Thu, 16 Jan 2020 09:30:48 +0100
-To: mail@adrianschmutzler.de
-References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
- <003c01d56d3f$b216bee0$16443ca0$@adrianschmutzler.de>
- <20190917111452.GA9795@moc6.cz>
- <mailman.25352.1568730047.19300.openwrt-devel@lists.openwrt.org>
- <alpine.LNX.2.21.99999.353.1909171854080.1267560@mStation.localdomain>
- <012e01d56d79$a67cba00$f3762e00$@adrianschmutzler.de>
- <alpine.LNX.2.21.99999.353.1909171908150.1267595@mStation.localdomain>
- <007b01d56d7f$a787b2a0$f69717e0$@adrianschmutzler.de>
- <alpine.LNX.2.21.99999.353.1909171958450.1301929@mStation.localdomain>
- <045d01d5c427$81c41e60$854c5b20$@adrianschmutzler.de>
-In-Reply-To: <045d01d5c427$81c41e60$854c5b20$@adrianschmutzler.de>
+	id 1is0iS-0003Cy-Lb; Thu, 16 Jan 2020 08:41:24 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is0iL-0003C9-5x
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 08:41:19 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 5D305561F0; Thu, 16 Jan 2020 09:41:14 +0100 (CET)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 3E67C561EE
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 Jan 2020 09:41:14 +0100 (CET)
+Received: (qmail 1032 invoked from network); 16 Jan 2020 09:41:14 +0100
+Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.41.162)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 16 Jan 2020 09:41:14 +0100
+To: openwrt-devel@lists.openwrt.org
+References: <20191205105805.29869-1-fe@dev.tdt.de>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; keydata=
+ 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
+ y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
+Message-ID: <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
+Date: Thu, 16 Jan 2020 09:41:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Message-ID: <mailman.25070.1579163468.2486.openwrt-devel@lists.openwrt.org>
-List-Id: <openwrt-devel.lists.openwrt.org>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
-From: Filip Moc via openwrt-devel <openwrt-devel@lists.openwrt.org>
-Precedence: list
-Cc: openwrt-devel@lists.openwrt.org, 'Enrico Mioso' <mrkiko.rs@gmail.com>
-X-Mailman-Version: 2.1.29
+In-Reply-To: <20191205105805.29869-1-fe@dev.tdt.de>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200116_004117_529529_019C1940 
+X-CRM114-Status: GOOD (  10.57  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
+ lonely peers
 X-BeenThere: openwrt-devel@lists.openwrt.org
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: <openwrt-devel.lists.openwrt.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-Reply-To: Filip Moc <lede@moc6.cz>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
-Content-Type: multipart/mixed; boundary="===============8185491869030682388=="
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============0885431774045418917=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============8185491869030682388==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============0885431774045418917==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF"
 
-The sender domain has a DMARC Reject/Quarantine policy which disallows
-sending mailing list messages using the original "From" header.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF
+Content-Type: multipart/mixed; boundary="ZsSRAgnOF2N6UebeNEF9mDqYERxduDaWE";
+ protected-headers="v1"
+From: Jo-Philipp Wich <jo@mein.io>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <4d87ee2e-eb66-2747-3220-2e1398fa96fd@wwsnet.net>
+Subject: Re: [OpenWrt-Devel] [PATCH v2] wireguard: fix interface remove for
+ lonely peers
+References: <20191205105805.29869-1-fe@dev.tdt.de>
+In-Reply-To: <20191205105805.29869-1-fe@dev.tdt.de>
 
-To mitigate this problem, the original message has been wrapped
-automatically by the mailing list software.
---===============8185491869030682388==
-Content-Type: message/rfc822
-MIME-Version: 1.0
-Content-Disposition: inline
+--ZsSRAgnOF2N6UebeNEF9mDqYERxduDaWE
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-Received: from hosting.moc6.cz ([2a02:c60:c70:8900::1] helo=moc6.cz)
-	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is0YR-0007Zt-SP
-	for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 08:31:08 +0000
-Received: by moc6.cz (Postfix, from userid 1025)
-	id E81D92320020; Thu, 16 Jan 2020 09:30:48 +0100 (CET)
-Date: Thu, 16 Jan 2020 09:30:48 +0100
-From: Filip Moc <lede@moc6.cz>
-To: mail@adrianschmutzler.de
-Cc: 'Enrico Mioso' <mrkiko.rs@gmail.com>, openwrt-devel@lists.openwrt.org
-Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
-Message-ID: <20200116083048.GA27998@moc6.cz>
-References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
- <003c01d56d3f$b216bee0$16443ca0$@adrianschmutzler.de>
- <20190917111452.GA9795@moc6.cz>
- <mailman.25352.1568730047.19300.openwrt-devel@lists.openwrt.org>
- <alpine.LNX.2.21.99999.353.1909171854080.1267560@mStation.localdomain>
- <012e01d56d79$a67cba00$f3762e00$@adrianschmutzler.de>
- <alpine.LNX.2.21.99999.353.1909171908150.1267595@mStation.localdomain>
- <007b01d56d7f$a787b2a0$f69717e0$@adrianschmutzler.de>
- <alpine.LNX.2.21.99999.353.1909171958450.1301929@mStation.localdomain>
- <045d01d5c427$81c41e60$854c5b20$@adrianschmutzler.de>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <045d01d5c427$81c41e60$854c5b20$@adrianschmutzler.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_003104_071619_C9FEE28A 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: -0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+Hi,
 
-Hi Adrian,
+I think this behavior is not really acceptable. Programs, init scripts,
+hotplug events etc. should not automatically modify (and commit) uci
+configurations, especially not such vital ones like the network config.
 
-thanks a lot for patch.
+The main problem I see is that you do not know what state the config is
+in at any point in time, whether there are other (intentionally!)
+uncommitted user changes etc.
 
-I tested it on current trunk (bda6b6144d) and I can confirm that:
-1. Works as expected, LTE can be turned off/on and value works as expected (0=off,1=on).
-2. Works as expected. LTE module's httpd is started after boot and LTE module's web interface is available.
-3. Seems to be working just fine. eth0 is still connected to switch (ports LAN1 to LAN3) while eth1 is connected to LAN4/WAN.
-4. Interfaces are working just fine. Except for obvious problem with eth0 which has no link status detection.
-5. Seems to be working just right. Even LAN LED turns off when I manually set eth0 interface down from shell.
-
-I also tested buttons which still work fine.
-
-Problem with link detection on eth0 which always reports interface as UP with
-carrier even when there's nothing connected to switch remains unresolved.
-I'd be willing to help with link detection but there already seems to be some
-specific solution expected and I don't know what exactly is the expected way to
-solve it.
-So far ucidef_set_led_switch with port mask 0x0E can at least be used as a
-workaround to make LAN LED show link detection on LAN ports (though this also
-has negative impact on link activity visualisation).
-
-Also the problem with unreliable boot causing LTE module to not always work
-after boot is still present. This can be workarounded by turning LTE module off
-and on again. I don't have this problem on ar71xx where LTE module always
-realiably works just fine after boot. Though Enrico reported that he has this
-problem even on ar71xx.
-
-Anyway good progress, thanks for your work.
-
-Filip
+Wouldn't it be better to modify the code deleting the wireguard
+interface to delete the peer sections as well? Or to remodel the
+wireguard configuration model to cope with orphaned peer sections?
 
 
-On Mon, Jan 06, 2020 at 01:23:22AM +0100, mail@adrianschmutzler.de wrote:
-> Hi Enrico,
-> 
-> > -----Original Message-----
-> > From: Enrico Mioso [mailto:mrkiko.rs@gmail.com]
-> > Sent: Dienstag, 17. September 2019 19:59
-> > To: mail@adrianschmutzler.de
-> > Cc: Filip Moc <lede@moc6.cz>; openwrt-devel@lists.openwrt.org
-> > Subject: RE: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-
-> > MR6400
-> > 
-> > Thanks! I'll take a look now.
-> > Still, something should be interestingly wrong here:
-> > 
-> > root@OpenWrt:/# swconfig dev switch0 show|grep -i link
-> >          link: port:0 link:up speed:1000baseT full-duplex txflow rxflow
-> >          link: port:1 link:up speed:100baseT full-duplex auto
-> >          link: port:2 link:down
-> >          link: port:3 link:down
-> >          link: port:4 link:down
-> > root@OpenWrt:/#
-> 
-> I've just unearthed this topic in my mailbox and tried a port myself based on your V2 patch.
-> 
-> You will find the updated version in a branch of my staging repo here:
-> https://git.openwrt.org/?p=openwrt/staging/adrian.git;a=shortlog;h=refs/heads/mr6400
-> 
-> (Most recent patch there.)
-> 
-> Despite several minor issues (sorting, rebase, etc.) I've also addressed the following major issues:
-> 1. Use gpio-export again instead of gpio-hog, so LTE can be switched on/off
-> 2. Added adb-enablemodem
-> 3. Removed the phy-swap in DTS. This is not present in the mach-file for mr6400, only in the one for the fritzbox 4020 you took as blueprint.
-> 4. Adjusted ports 2 vs. 3 in 02_network based on your assessment. This will most probably be wrong again now, as this might be influenced by the phy-swap.
-> 5. LAN/WAN LEDs still won't work properly, as at least one will need to be changed to ucidef_set_led_switch, and I cannot check that without the device.
-> 
-> Best
-> 
-> Adrian
+~ Jo
 
 
+--ZsSRAgnOF2N6UebeNEF9mDqYERxduDaWE--
+
+--rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl4gIakACgkQQuLLvzou
+ZtNidw//VZCsFfcxt5SR4DkNb0JIOxyQAKEtyoUEi5DLOjn+aX4/FQcWQG28V7fz
+hHPvEycKjndTVDJreHAkpfa8ckrcQvLakM2a2XVSZXjXWN0i1g20lvp2y8HkI9Rt
+WHRcKvnuVFP0gUP9p7s1ThjJfIMP22ilNeDCQ9pxPpgzusbYVYpFoMZ1J99SSPwZ
+ouKFiddcmqZOd7oIMI8igYnyKu0dMackxGfSXqpdLhOS9cdp/a8WkX4oCEF1IR0R
+Qp5J99KhNJBgHuBZtrkpDwsCeDskKdoBdKMNeSZ1oguevLf87E58HkVfvDDu8qtU
+8wYnjH/1O9P0fa1rLsoKVKsT78Z4l6xzdnlYwbRWpMX/nwGM3hu7StQ2BWRIFXmI
+2rodjtIT1bOA3sExA+zMmVM+lHGtlp86ZdJ4BGtKfhnWFdNKy0o0F1WEtmvib74L
+Ct3sexDV2NrJndyx8KoiF4F1ycg17qnFFX9H7sEEeUPF/amySYcxzfysTSHa92hS
+QGQP1vvDSCt7+RGMny/nHJBZfWB2XiUPnhCBMM/t1mhYaUbdmIZGJLoaFIWBfv2/
+Bh40I0v6d7QYc91bpg0CJHVfeR5SdbAI15IcTpK3dE5d+TssTbiLY5BqVrK2iafZ
+u1Mtul4U3gya7l5iusKqAUxngkkXG7vnwkl8en9F+HYbHF2xaYM=
+=vfIf
+-----END PGP SIGNATURE-----
+
+--rHdqu55UAOEBQr75e2gZUAaV9taWKo1fF--
 
 
---===============8185491869030682388==
+--===============0885431774045418917==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -195,4 +224,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8185491869030682388==--
+--===============0885431774045418917==--
+

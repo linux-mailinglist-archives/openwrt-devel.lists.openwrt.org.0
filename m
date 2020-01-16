@@ -2,74 +2,137 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05DE113D960
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 12:56:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11F8C13D98B
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 13:04:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=B4lTJczoJKe4BwqS/XkuOdEWVyGNB1xZ9mMXPaRd7bM=; b=heDo6VA4tpVJrlKbDZAGn9k5x
-	/kIjICKskYc4/erkWCUqdBMfaMFWLZGbj13nJp+zSfWb6JWzIJjyopw28RMc+plUSTjMpjcllgudb
-	iQuz+qgXHSyAcoWbRlnqNcvjgEwZUCyvcnkxWTD2ds508XwjbEI8NohLZ8tQeGziKqFRmgGT7kTc4
-	ABnHnFe43br9ajfkFhuYUUnAq7rYz+sQ0ilfiPwAOF/fpAD8Pru3BCBdFeMlfrxVjKecZGjgtJQB/
-	nztPBRZ2f5w4EYsc/czhGyTO+xcfqank58T6OqWLML6tXOb9fNbQS3OHghFHVR7/TaAqWX7Fum/iG
-	Azxu7azTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yJLJNW9ccswHhNjlX/fETPqO8ElVfLCLypDgc/CpgHc=; b=r8+/qJEdIT6TsN
+	UOAjP20LKnVyqAWbDQGVzlGBxMrvxlDWasazDAgZCiR7kd5OhmUkqR3Q4TaQdRBNfv+ZJ1Q4LmoqP
+	0b7/qumjIbWspYIW54faIcDw+8Qw3x9YRuj6DvcoXxPhZcrtYhYay6+6B28FpT00pXMk1/nGCtbt/
+	RPuWuH82S/fcQkyA/HaLIHsO2uMer1dan14RBUDB9ZfMtIiEnBh0C9D4t+ih2W+n85vAujgaiWwOo
+	16VQ10ET/8neEszZ+Kx51f1qkkEYSTL50fqPH83CIaEt1Gt6YTn4/gMhg9+Dnvs46xNHKv7WmrxCc
+	3P8kkOBfn1i653CNQQSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3kx-0002NO-Qg; Thu, 16 Jan 2020 11:56:11 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1is3st-0004mg-J4; Thu, 16 Jan 2020 12:04:23 +0000
+Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3kn-0002Mf-R6
- for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 11:56:06 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MoOty-1jPEqz2R9k-00oqDc; Thu, 16
- Jan 2020 12:55:57 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Daniel Golle'" <daniel@makrotopia.org>, "'Nick'" <vincent@systemli.org>
-References: <20191108181408.18272-1-freifunk@adrianschmutzler.de>
- <627b0350-dd09-018f-bfed-60c895c75ae2@systemli.org>
- <20200116090404.GA1404@makrotopia.org>
-In-Reply-To: <20200116090404.GA1404@makrotopia.org>
-Date: Thu, 16 Jan 2020 12:55:55 +0100
-Message-ID: <014401d5cc63$e9ef4b60$bdcde220$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1is3si-0004mC-1v
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 12:04:17 +0000
+Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
+ id 4CCD953469; Thu, 16 Jan 2020 13:04:10 +0100 (CET)
+Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
+ by mxout01.bytecamp.net (Postfix) with ESMTP id 304B453467
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 Jan 2020 13:04:10 +0100 (CET)
+Received: (qmail 96695 invoked from network); 16 Jan 2020 13:04:10 +0100
+Received: from unknown (HELO ?10.42.0.249?) (jo%wwsnet.net@24.134.185.161)
+ by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
+ 16 Jan 2020 13:04:10 +0100
+To: openwrt-devel@lists.openwrt.org
+References: <20200116115100.1906-1-freifunk@adrianschmutzler.de>
+ <20200116115100.1906-5-freifunk@adrianschmutzler.de>
+From: Jo-Philipp Wich <jo@mein.io>
+Openpgp: preference=signencrypt
+Autocrypt: addr=jo@mein.io; prefer-encrypt=mutual; keydata=
+ mQINBFU/gqoBEADOH7rJT9/cMjuHsUqHn38uxtIEPMsaI0zg1t4nU+sraS5aatIjWVouDdUB
+ TBvYK6bVgef74Rh4zlnhNxOAQyWmTW1BApe4/et3F69wUpUW38mWYiwXJ1IoXFiK+74G3dix
+ yvTl7zabyUzNqjP3MyEXFO0w0mQQqXWqncjD192mTZeN+AldCjIyNpKl3iTQ6mZUGydjPs53
+ OBizq+gHOAa0tmxeYbMP5nI9dvgBFunycs2X8MNvAGCOLg24SqTTO0yxmwHlJEKDcxH+H1hN
+ v3HkZGfBYtbdEBCiA7Y5trDYD9yjHaVf/u+U9BKnKX8RWQicoSiWT8ZoO9WSmAfwSaTl43W9
+ X73QMnsDUQZTwox4c6ApnnhCU8KSAJeg1ghVKp7rH5W9I3YWMDXCVETS2NZYBuzRaGGzoc6X
+ g8kAHAEBIJV3eodw+EAi8JOEBfAck8/DHKbX/3Z+1vmT8oU+P16sm9wXRbDF8sAsdu49Tdnf
+ aRlVtSDU2sRT6jWms54+Mz0mLdU5UNQZZmC+/H8L8Km+aIpmEsMk0BPSSTs0RlD3+rtbsX+Z
+ cbnD4QUU2fHjqmxbuyBxBjDrrbQFiai7iXkJnPxmrX8M7NAQtKsgCaBhL1Vr+Wf+kQ8iOO7o
+ HqwmLINZ/ibA/fqq0WK1zbJIXFFFF1spYPobs+pyIhE/F2/UKwARAQABtCpKby1QaGlsaXBw
+ IFdpY2ggKERldmVsb3BtZW50KSA8am9AbWVpbi5pbz6JAlcEEwEIAEECGyMFCwkIBwIGFQgJ
+ CgsCBBYCAwECHgECF4ACGQEWIQRlmIU8XC7ES/NiIks6ofWzR9lAhgUCXTfqXgUJC7rOtAAK
+ CRA6ofWzR9lAhh2CD/9FMgm1kYqjG685ZVv7naXIgfoJQG85zGJgE6CNj6furJSvx0MqQRIN
+ +dZ5pOmV8C2eYwdJUvxyIYINjxc0epioK7X8aMXZp57t8y6CfC2SDITvrE7FG+aRlHDp0/WB
+ dBZrqfV90v6TM9OLyXvhzk0VYUN8Fhncdnfi+haHfzRMkndjlG4C1QV3Ayro1alpZTkVS8Cz
+ Lt0Iv1Q8NP1yue4Qk6gPV6hetlVotrpQcOwvHqffQfC5mjf55AFo+APIWF4UknDi73T56fTJ
+ fedu0MK44+iJl7CpK9ESaX96y1BEtDF8eOXjg4v8SXhTlF7RGxCjSxqjqvufjVprLWAy/lI2
+ RvTFskr/k4i7V+pxrjnNcw1gj8GbH6SbgLt1hv1XFFw3dIbFQoJESGGQnvJ+sHIjiqY4TjBR
+ SER+8pM9OAQ8CMVqoGjFxuAGyyoj4npLGY9tAu5RudgQnev3msn+LiZqycwyr3b9q8jUme51
+ 8bnumCZeNQVLY7RCocM43BnHA04I3jsFqXgHd/ZzsRyrN5nP3reNGMYVghkGLmD5ET4aLc35
+ S2Zy54FF8KMIg6n+/H+mraBJ9AuVHQ/0Tb59rlQCgW5Y81uopF/pZWDMzhJAs26LrVyqb5bb
+ LQFRDs7RFm4QAAR3z8zgzPzhvIVT/ML/DOmN9nZmA5reAmNveov3m7kCDQRVP4KqARAAu0n+
+ LOANYoZBw6h/aHjDRYiufOFr3mrRr0R1z/29r9G3CgYAR+wREG3d+Eof6Gihbci03SabInFM
+ fp7B0AZ9Y2byEoauLG1GprTD9qIh1KJbnxFCrHTKTERtblh14OI0KUzqXOsxIKq0yI4xUg57
+ 49eRwEeCtBIoy4z37TXCu+v3TVVJva7Gy8ij1LB/xBVPCmoTzVHnOl8DKsdPQ4POX/TqL02t
+ A2PBpQPklpAfkxrmpeQbVrm8EMGQdPOfaFCUfcFnj/8/qauZhFgIrMJrxoXzQeW+9AP3K+Be
+ U7yNNvzDNPpLQQ3wp5XmVLmJ0xurqoVbheZiQBtF4MbQxIT+9YiLv514oGK9UG+syBj/nE49
+ AymL6OcBR3/ZfBk5VABKynUtP5LDP0vPErvcKsE9b2Q/AqoGiPV3fJ9fhrFivoS56fxLd+sl
+ 4le/uuENMDnEg8fjoGoGJ0UQMeEGg87bcI1V5D6YXtJy1v5g0Ro8mJ+/yh4RSifn587Juetv
+ ub2w6TGqsnASaYZvaoN6udnUu9T90U2zW0yGu/mIrm2JjJJYqTpjBLZb5yEd9DKITozQQPlU
+ oy01wldpTgaZZh8nRw20C+UJMUK0JisFBAB0RtPNwCMC7ci6H6IoOxZOTkPEedFQ0Gq/W6Pt
+ Aj4kFBHHoj+oqXzu+USp1fZnyV461q0AEQEAAYkCPAQYAQIAJgIbDBYhBGWYhTxcLsRL82Ii
+ Szqh9bNH2UCGBQJdN+pPBQkLus6lAAoJEDqh9bNH2UCGkMYP/jdJmeAn9qDzcSP8vlVEvVAq
+ l0Prdhv9+EKKOVTCpEhFrMm9ecCgjJ7GH6C0SY9eRFOd5Xz7F2HzR0RYdqE0wndvsu14nGMT
+ wsiBlVks/KAYHClTliH5Ai/l6iMReZ2/E18GsfqAEadVv3c8ixDCHbFjUeePZXl6bzyGE2xY
+ 2svs4xZxv/jKmgrv+utHN75Ks4NaaxObUO0BfM8yPyiX6CDUuoSoEBTeQpIaEnmFcKmeW18X
+ FgtxYBUhy3v/WI5FtBMqSx80znmlloo/ci7YschP0YiR25BO5/Lqtep3L4hz6vjbXFEbzWSx
+ TJbBuk/Je+Jd/H9w5CI58GThGXcFaIjmys3TBtxDjgh+/e6OmYOCoRu1DVtz/9xP5egmuTLo
+ 4ihKW8Snc78gN1U1nxxlR9wHyRU1HKSgtEsF/jXawjoUiHSAJJ5ipPRSHeCRAHqShy8yH0BO
+ q3b0oydKYcIjKmpHEGqz2X1t1hOsFwCoB2SJtOxQAe5qi/CFfpM189GP0qiXxsMwlldPTsqi
+ hhK2kdJtQsFuoFQsAddGk4feyWCToDPkIwk4TImNj3UbZvAjtNGL63iaNIJCJ0P+Wj6mKvJa
+ DcYJHy6jT4Khs/iTyTUt0ocgZskwNr0aKsr0J6uGjLjg1Rd3wDOZleDfnH8OIcuyN0KBaruo
+ yxsOKc06fSVmuQINBFbUU4kBEADWr/vCGzsQmXqHzHLnTfTlx0nq18tB/Ws3JJxHKihD/CST
+ CnYpsWz+Ce7QS5mV8q8zIUSYaCSkzn91zQkKe0la72vIKyS963b7wFNC27QZ20v6wuAFEfnK
+ 7rr4TRLMLXRd18B+mcwy99b1qySbc34jwPPhEkaQ+F+/2Ur7V1ZWhfyBOpVbOJrt4awaqC2j
+ Q76AwFrAyHN6cAAoyrIjiG/ERARumriCbYunZjTBHAAYw5RL/M6JvtIeuCtUBvn0RniENUHU
+ wYQEZVVQM9QdY8xStddsRWVQ4+8jIIZk3TfyBTM/djap5qqXr7VbrMle85DpV/wCbiIWkjVR
+ 1/OWU112GFklrXMoYGBYZqVuSLU0irq/o01mfHq4mfFm8XL0Wd7dV+da0UaTggigGumEiEO8
+ 9Z601m/2gVlXMrhxfDVffeoU8YurrLCZOxlRKV7+P6aB8aeMtE7Q3U+bCDyOlMSXO+0J92OF
+ LEVr+7jq299R0s7sM3bPU/0IhtkI2yqknCXQL6Br7on3lRa/yCxx1B0y3XcAMYm7WWqiTuEf
+ kLmhj2uIFx2hOk8WlKUjrjoLCD94Wr16GurtKCCNPpPB9qrTBmKbeCMqV6PsDkW7rgPGGT7b
+ k9yv4eebSHjV2p2eQqbZz5w1d5LYK4PjwgxT3/d4WrdM8eNMCBQlhZ48PAAO/wARAQABiQRb
+ BBgBAgAmAhsCFiEEZZiFPFwuxEvzYiJLOqH1s0fZQIYFAl036jgFCQol/a8CKcFdIAQZAQIA
+ BgUCVtRTiQAKCRBC4su/Oi5m0zjMEACx67a8Y6vNVApEmRR4yopZGz44J2P4XEF6ef9jryw4
+ tnd9Gow057M2syesHI0f2DqmTG9GL6H7mWA66oNNbP+UWcd9XArPh4UUF6he32Xt12qLF0Ch
+ FF6nxh281/lj3scqem2lbIjXNoK6Av+OCgS3MSdW8gP1MU3WyDdYcmoHHotFB3jgaUy891DR
+ K7NAs2ak03uINxvmi/8JbDwPTSaOkvwi8cbpCbN1Jp7cKA/AI1VNMB8SXPdmcaCKo++aZc22
+ 9IYdSGgJ30OJruID83SfdYFjZLAAw/JWUjYPmKJDeI+r0gyI6rz8So/yiUDNL+1R4wSplmWW
+ +wqmI4vfgzc/HljqUY8282tikqmhIOQThlcwexNDqWv4D1TEAUNUn9QXIbqPp4gbJBSWoWAC
+ 3cEhkvsptPfD+G0EEZdvJCdPDRCd0tH8ErG3POTsQS9/e+j1VmX5tpHHzDHhU2p8ee0eZ0v0
+ WAFUi1QAE13vNmjAwgxWj3GC3cOjGeZEz/6jfeKOTzWCqgAYS1uLHkeBxA4O9m4kh3k/6/Oh
+ Rp3qMwv2AqDf+e+guDFOEVVWtRB/R9yHxTM/cuPJ8GWVCEf789J7KjSrPkyRvu6U7KlwCaG8
+ VTXMyNxUKbzNlwLIIYXE9RD7URFRaZNErKa7csokEG1YgWEQCkprvbXopleShFigAQkQOqH1
+ s0fZQIY1FA/9Fed9OLGavChmwXKLnJpu0BjkJIVbrJaBFaKCF8MWaDP1SCilL5q1jPtuekPO
+ Bw1ZNm6wTIXxnte5SLhxhAGjvD0Wvz1kGUbCKPJ+TT0VPqkIfhNG5VMxdNeneLdJ90TZKPlm
+ msH1CcZJq+qJkNIGU9roL4MenkOdjpD9ENCNllEcY1cvDSO+rKLgx5wJW5c4uvPsagkW1YGO
+ yW0oAbLMdsWy3wyhYmqwD6BJzCz/y+KgjM5yG1arHWVNp5IEwD4nmjhQ0dFUN1pAEZYN1qJv
+ rrBhccW/ft3rI2HQ02o+52GuNR6Qt1Rl4idVSft3SCtMCbtgJo9Aobr5l80pnronetpn/Lkz
+ 42TCAQnZ2KHBfhteI6VNaBNTb7QYH+GClVJS157ElvY0dTYeL20qDAlStt9TK1/XqsZGxnwF
+ sp9HLi38G/enVih9r3omPl2LKWbLHKaRL/PRwjNzF6JfxnsEmx3jWwVgY6aHAgmlMsQI4H2n
+ uMQDDldblmzRzTwmjhNKHXh9whBD6qcchO7+GmioooeAZ4iCzLvmVVV/vv3kvQ6rWczBlXsj
+ GDeZxXxkn50nP9D9lvgnt60WWx+NENxilZ9YdfQVo9pAVyQVhaWEjuWZAoy8MF6MwzCiUtPI
+ d/+2PBVvhp4A6ioJlsvV2WvflP0mSVuNJwczN4VMvhFZLxY=
+Message-ID: <5e48e5df-f8ea-526e-ca1c-db2d9b7a7f79@mein.io>
+Date: Thu, 16 Jan 2020 13:04:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Language: de
-Thread-Index: AQHi+TcdZk4plJbeb8nDOZGF6DxQhwL9fb/iAXcAVKKnrzDdUA==
-X-Provags-ID: V03:K1:TTGCZkydc7c2WQmw/0VmfVl7DNnZqIeQJvLuom0v3hgRSwW9Kyu
- +O9vnpNloNAhAzJ22FuQSuB9ri4jrEQ7N8bHi6moju9yz/G9riYqZErKkB+S1B7TCpRJhzd
- AMy5WK4CHfake8CoWPD/x5IaLv492RXy7V7bfT0PjT2rhlD4v1fU4l6ZCEUjjcg4rCHY39e
- BGQaTT166miodadA46Iyg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:U/255QtIfQY=:YPT0lilS4PB3okkKJ/92IS
- AiTtjHHCzvOd8BXkDjiOwj+0tLGFOBp3uMz1WOGbceuSaC4e3alNPg9zAl4e+nB4OWytzCpI6
- hSrBSJ7NpVxoEKkWA853OOGMz1uajHHsSdfP28/vffSR0y98aqgZVyHodXziN5KL52NdRfZZB
- CTmp15+wBReoz69r/OKHU/4Fk1zcs3j4N7FyI1hYJk1Af26ZGhcdf/w7c2Nr5huVYy7m+2WMh
- Q81x0NnvLredCTH6BDoGZetB3jzIW2GKf4qeuuQvSWSqg3XcL6lIrRnjdpZ/y9MXScOQsvlAp
- KWrbCranrRxksW1RgYbrWgAV6qY7oIIIp10B7F8px8XUJP/hcrGHy0lV9wtVyVugUH9Dn96pO
- IdI0hGj29dse8KZnhFgGgt0wYZvDttNDtW5sDKU8PrgbyCm8rbqDnNsSpi9EhgX2y8NrmMss3
- eQ/YAllJh+oz9YeOgcqqQ8ZeDauaPa01jbwGBwFUVd8cB1WXUwqEfNkOhJjci60KUUq+cizDm
- y1NGR4BUQdfIx+qAAhh1KBwO4pmYho2tpU+qQ7L9lpTYfz33YPWzaAbtrFYXKB2jQlaOS2Ro/
- Iz9RzKofYg3ha0tDulWKVal9wSsfwLzuZwF6asxLIVl65lgZoLC84qhy6vY8/9QcsTI06/jBm
- KzD6iCsq/q73ZeggYyjOXNrW5PxwUD5VRekKltmVlFkDVzaBf4sPYGu4x1ncCovxUo6zdd7Se
- FT24GmRKaM6ODgand2vm20qM79T7cq3oUgHEeIHaMgV5NDNpGQQ3AnyjS4CvzbrH/MaclLuT7
- 1lI/MaSnTG2+R2hfXERK1UNLAzQqiMbyO+ir4ygTc5MwTQeWeA3sD5j/jCEcJ9M46THKJa/iF
- SegeFZB17k4YZmDZaPvMbwzCUmARc0ZfDqdIWhcEk=
+In-Reply-To: <20200116115100.1906-5-freifunk@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_035602_170824_B60758F7 
-X-CRM114-Status: GOOD (  26.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200116_040412_253671_1BB889BD 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.204.60.217 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 0/5] Add 802.11ad support
+Subject: Re: [OpenWrt-Devel] [PATCH v2 5/5] hostapd: wpa_supplicant: enable
+ proper GCMP cipher support
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,166 +144,33 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: multipart/mixed; boundary="===============6161059354497062871=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============6161059354497062871==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=6P341wVX1fAstN=-="
-
-This is a multipart message in MIME format.
-
---=-=6P341wVX1fAstN=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
 Hi,
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of Daniel Golle
-> Sent: Donnerstag, 16. Januar 2020 10:04
-> To: Nick <vincent@systemli.org>
-> Cc: openwrt-devel@lists.openwrt.org
-> Subject: Re: [OpenWrt-Devel] [PATCH 0/5] Add 802.11ad support
->=20
-> Hi Nick,
->=20
-> On Thu, Jan 16, 2020 at 09:08:01AM +0100, Nick wrote:
-> > Why are this patches not merged upstream?
->=20
-> Probably because nobody suitable hardware at hand could review and test
-> the patches. Probably it'd be better to first add the basic device
-> bring-up and then add 11ad support.
->=20
-> > You always have to rebase and solve merge conflicts if you work on 60
-> > GHz. :/
->=20
-> I'd also love to see this getting merged!
->=20
-> >
-> > I would really appreciate it if this is merged. And if there is a reason
-> > why this stuff is not getting upstream, I volunteer to work on it.
->=20
-> Please resend the patches rebased on master and add your Tested-by:
-> tag and I will merge them.
+> +	case "$wpa_cipher" in
+> +		GCMP)
+> +			append network_data "pairwise=GCMP" "$N$T"
+> +			append network_data "group=GCMP" "$N$T"
+> +		;;
+> +	esac
+> +
 
-Since I've rebased it recently anyway, I've just sent a rebased v2.
+how is this supposed to work and look like in uci? I couldn't find any
+other references to `$wpa_cipher` in hostapd.sh
 
-Please add your Tested-by to those.
-
-Best
-
-Adrian
-
-> Imho review doesn't need to be done by core developers, but without
-> any public review/testing nobody will dare to blindly merge.
-> Maybe we should establish more of a culture to encourage also people
-> without commit rights to reply to patches adding Acked-by and Tested-by
-> tags...
->=20
->=20
-> Cheers
->=20
->=20
-> Daniel
->=20
->=20
->=20
-> >
-> > Best,
-> > Nick
-> >
-> > On 08.11.19 19:14, Adrian Schmutzler wrote:
-> > > Cc: Robert Marko <robimarko@gmail.com>
-> > >
-> > > This is a pick of commits from device support PR #2417:
-> > > https://github.com/openwrt/openwrt/pull/2417
-> > >
-> > > There has been a request to merge those particular commits,
-> > > as they are required for any 60 GHz capable device, so
-> > > merging them will obviously make things easier for other
-> > > developers.
-> > >
-> > > The credit for writing them goes to robimarko, I'm just
-> > > bringing them to the list to speed things up a little.
-> > >
-> > > I'd be happy to receive comments, Acked-by or Reviewed-by
-> > > feedback, as I cannot properly review them on my own.
-> > >
-> > > Robert Marko (5):
-> > >   linux-firmware: add wil6210 firmware
-> > >   mac80211: add wil6210 driver
-> > >   mac80211: add 802.11ad support
-> > >   base-files: wifi: add 802.11ad support
-> > >   hostapd: wpa_supplicant: enable proper GCMP cipher support
-> > >
-> > >  package/base-files/files/sbin/wifi             |  1 +
-> > >  package/firmware/linux-firmware/qca.mk         |  8 ++++++++
-> > >  package/kernel/mac80211/ath.mk                 | 18 +++++++++++++++-=
---
-> > >  .../kernel/mac80211/files/lib/wifi/mac80211.sh | 18 +++++++++++-----=
---
-> > >  .../network/services/hostapd/files/hostapd.sh  |  7 +++++++
-> > >  5 files changed, 42 insertions(+), 10 deletions(-)
-> > >
-> >
-> > _______________________________________________
-> > openwrt-devel mailing list
-> > openwrt-devel@lists.openwrt.org
-> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=6P341wVX1fAstN=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4gT0gACgkQoNyKO7qx
-AnC+xhAAw6Rd98dd3DLYRRQ6MovLjYcYaOUJngIYajm+mLO9LQJhXNypSYCuINrP
-/qM1ep7MvtlhVr92jtHQAGFv1p7+oSCC14TERx1neiyiXqHZS36seB1MBee9TmIl
-keHInuBCbVNxQTQh/tH5J6d6sc24Uu5Qf7GrFIcOcbUv5S/m6FJopCUQ8upZbn07
-pr+cDcDO9ZkWLMHaR/fkiXTa4YfLgNrwjjrTUtXic47HjM0OFPAPW5b5RDDJUy1m
-KXmNP5ADfHRZTrXkua0Yr6nJjaOfFYIcAskI4Piy8YORaPA80oYbEVvNrcu5oNmt
-gomo1ampAIX+dhCqwiaaksbeR+pg4PCjSC32QOAyas2h2evSk9jYglToffc8NBrT
-5Y5usQ2Dh1F59sHtO+I97cDFOVi6bSPEF8/2coo3d8gFo3bGf0zH2yHu832998/4
-AlRAELH56CguF9Q/PyRwcxZr4iIfoudWajk+c47jCkByJN3wKBUjShQDmdGcklB5
-Op4ojSz+j1tvXrAKoDWkuyzywkF/mwlLUZ//EqVGFIlMyICtegTq2L2OHP+EBPJ3
-rwLF1VHu6zYjzgCpFenoTmY0oj2c+ksjjsRNCHF2W/oM6WObifIRPjtIjTqKncpt
-93rF2TSIWNsg3MjRu03n/UYww+51gIkuQma4C2payl+meX5kDS0=
-=qY2M
------END PGP SIGNATURE-----
+>  	[ "$mode" = mesh ] || {
+>  		case "$wpa" in
+>  			1)
+> 
 
 
---=-=6P341wVX1fAstN=-=--
-
-
-
---===============6161059354497062871==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+~ Jo
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============6161059354497062871==--
-
-

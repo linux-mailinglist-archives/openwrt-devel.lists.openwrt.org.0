@@ -2,30 +2,30 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEB9E13D8E8
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 12:26:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C686413D906
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 12:30:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xFgMoGUHCXzz0kYCjIe8MiSOyhUzco/HHyisyV9vF84=; b=dOW5faFT7gHJJLJ7u1XjXFHGz
-	+k1z2bN8uGs+tNnZdTFtj4zreaUVACIekstozkhNE7jIgdaBbPrQrgFU03tYtkXfBg2w4Sh6EFmfE
-	a8clI9XMzbRUSnZ1XwwKgUWOCpdKm9Re8e0dxrh5xoxVMtID3MivEG8OhHNDBwEIAha2uTzaH5OQ6
-	Ao+2IzNyUVlyJjJSHQ1C5dfOi0VmsM5JtmBe0YlBDvdn9q1DZDLRjtbO8dC6CjPnqWOavSoMQQRsl
-	A93+XAIIHXXGro8DGXH7G7h67NqSAgUImucRKy4ZX2KMA8pVHvlPohs6JjC/+XH4n6QIeDj1GrqZQ
-	A6AICVnIQ==;
+	 bh=6ds6h2s8k6ldo8OvSf+9fJOLB526rjYq1YwLXv7ZtDQ=; b=EnIwrQfmxIy7syqUoEfnLyoZa
+	BZmCaBkcZQUfEicuv2KjLM1FJ5ZKlb7XS7dGuBP0Rd4mGRJPwcHpeDdF+VGcfT5vSwnBS4uxSBUql
+	VxeRCECCkgqwIqQzIlRpZxzx4R2G+yLba6Piro12kq/Z6Au17BY0NVqT6GVFt4Mns5E1j8i6IlKmY
+	f2ceoOsiuRWMxaAR2BxSjDIsPAsU8xYE3N6A8U53hGrW3v3inJ7EIPl/kgmM/LF+x3XqB+D6dvBCA
+	LyILBMTiW8jHEFacGg0ewjS/PS9XG3kULOvkNNNtnssm4GEOAo3HWFsmbOU3TMpSw+Ag8QF5IsTNG
+	MCTBtVUfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3Hy-0003jo-M6; Thu, 16 Jan 2020 11:26:14 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1is3MJ-0006TM-Ja; Thu, 16 Jan 2020 11:30:43 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3Hm-0003jE-NX
- for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 11:26:07 +0000
+ id 1is3M8-0006S2-VJ
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 11:30:37 +0000
 Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue107
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1MowbA-1jQt561Pl0-00qUM1; Thu, 16
- Jan 2020 12:25:58 +0100
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MYvLi-1j5Ecl3CHw-00UqI7; Thu, 16
+ Jan 2020 12:30:27 +0100
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
 To: "'Filip Moc'" <lede@moc6.cz>
 References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
@@ -40,41 +40,41 @@ References: <20190917002048.1062539-1-mrkiko.rs@gmail.com>
  <045d01d5c427$81c41e60$854c5b20$@adrianschmutzler.de>
  <20200116083048.GA27998@moc6.cz>
 In-Reply-To: <20200116083048.GA27998@moc6.cz>
-Date: Thu, 16 Jan 2020 12:25:58 +0100
-Message-ID: <00ef01d5cc5f$b9850680$2c8f1380$@adrianschmutzler.de>
+Date: Thu, 16 Jan 2020 12:30:27 +0100
+Message-ID: <010901d5cc60$5a146370$0e3d2a50$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
 Content-Language: de
-Thread-Index: AQHPCZHinJawK2ESMIjVbhdD0BHTvgENk/fbAjCsNHICNRzL5QEz+4ZZAglc0CwB1SBFaQHjxa05AgMP88cCD0cQRgIdlTymp2Xda+A=
-X-Provags-ID: V03:K1:p0budh4bV3bfDPeiouWo8EuhmgDrr9jgSEJ1COx5fti1AXIKXCG
- 9YitLOcmIeDFxZYNZIVij8tLbAlTbYiU3rbph6hL13NHlWySOrvVD45hfzNLnDs08Psksps
- nULcrwUYNB7gzqI5Sps6dtrTLfHV2A867U9nONzvbNlTLEYKwdHGb/KxHelPSXwgscWK07j
- wf2U4c2GvufKqvLpMstZQ==
+Thread-Index: AQHPCZHinJawK2ESMIjVbhdD0BHTvgENk/fbAjCsNHICNRzL5QEz+4ZZAglc0CwB1SBFaQHjxa05AgMP88cCD0cQRgIdlTymp2XhNxA=
+X-Provags-ID: V03:K1:3ZQP1HXeIbYRM6E9uEdWpkWAPZrR/GaRZHz0kqmn4FdAjENzoaq
+ 6O6VZSEA7XBCabZbfJDY47/ntRZr16PtGXovY3I7JEuq4Hea/xZSpq+nKGa+MgpShRxvPYF
+ PNJgfPLPveVSmRwV/CsZeA+h842dGt/3QEXycZ2ljsgYePSMbQYkPvHGzKnPGHmltX0qZNc
+ FJeLeT5Ryy60NwXnyUDHg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Z5umSuLuW/A=:TCC+9ogkkSdnf2gjdUvioB
- 4Jegnu3quQp3fadwiF8eHFVefdxupAJHy7yUyThFVgTf1M3kLfj7BdxtBndmzWCZbkpJRM2GQ
- 45kHA8pZPxPwzzeqeNJY0o5moUFKMKPb/USBVdcRcU9Tl15x7TRUPYXkRP6Sz4y+jCKT4d59o
- Cm/2J0ruGN4OcNTbjA1rxrh8npyqzV+OlfX0sQpt0iLmhtLglst3JuluS67sxHtJLmUmFOVac
- jWtNtbij7+B27EdqNMW7g2UGknodzTd9coU2pHWlB75DZ5A6DAufmr1mQ0p6NA7mo3sNaWBaE
- inehlye6fnnm2mJwjlSr7oS3L8+zxNBIJyPhWnYtkZzm0oTfg87o0HDIB0QYwP/MD0df9ZV75
- vRZ1hZp52az0r/TlAbUmAHNPltNHM9QD/0qw00Awj06vi7cCjIjl3Ca5223AD0lLePOvvGdAP
- mYGq9ZO/x4XJocV0nKQK8ozs53KkUoIGWGTcxM43kfhTS28v6DZws5YYN+WhJmBmwODn1gtus
- fkAnvuyhUDl/wYDxXGypg/jxe0e0+BiuaV9oNOmjOj/eK2FQhKLiVaKOfHjrmMcayzghQ1MJx
- qlW201G2zaSmJX6vNQtFWf0vwkEirs74BS08WSBAkjQOWzweMe1dxG6XcXoVNUlxVarx0sCLo
- SUHhRuR6jR78bq1lLX6CBr/egB8VjgaDmVO5by7yi8tdhCYn7UzMoPOOOYwbYIBq95J5Q/ejG
- GI7iftreRBMXwFVrsXNxH9qt6XmRCdIM3Z0e648rLcV2asoQTjLC5etaMG2Km7paVbrGuDput
- joDhBSveGgUk6Sc9cWQCbC77xx5+TU2Mi9ZGdTulHEoF/ibiYL8cPFhFA++x3a8qaPufm5hd1
- lxjpCS8amJ0qLJFVLqvjMyB13a/JPrjx2x45mhgvs=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:4JOIeVHmzyc=:XxMdimAqM1rz08OlfNfXLe
+ 1p7z2baWVuoW65Ilzq3K90QM1DFQUEpudrM/jpQp2t1T5Khe9x+DRGvPs8rjSRR+mM+GR/uvD
+ HgHhQ0TIfKTja+SpGvd9S8n6VyrMgf/NHX0jlJMWj0ClNWMfCNzzgA0tWm3QF/EpzfrcTr07i
+ mB/594lP7EJ9Q7xXoqe3QD9V0xY3ChaxCzXpqcFAjbUBhsuusrcvYJ9FdJsLUodszLx7XmS0V
+ 43ROewlja99KX3gf9xi5kEmfjO2Xn0r6FPcxEKv2DKBnRBk5jsinD/SHnkIoZCd0vifBvb7/q
+ +lnE7QfMqElxZD6Bmm8LA49veEyBFsVwhyWDeUTS/uX9kBnc1uFyJf+Bza8+Jrd/yqs1CuHh2
+ PNHAtoLUrZcxBq3MBckZX6AE1jVRlK386WozPKq2jGocZrZzC7GiiutUR91BvU5w9aOK2MlLU
+ b00sJ7klcN3s7tCsk3jJBgRlgQgLhvdXv3PAbPYXnoQE3KUcIrOvrUltt/68N/pXdpx7jBMj6
+ /t0pU1TqL87KrE+HnHdSEutwVYaRwSJJFnj0sCy2dJbbYQ2bowZh5nXSPJA6wUnYfq+gLFxIi
+ Sm5RGSBtLoKHNItkeBsAceOYAb2nOLroI8L4nmMKIGGnQ3Fhapgb5EZOZnvj60CXkL5TWAUjn
+ cltG6KpkX5p5JP8z7wfPWJsgR651KxlsL/h9XoK0idhZ+d1FFpob7e7R4FAAdzAaXUZv/diGL
+ z/QYCVT057hnPPyvZOpVzRHlDarxv4TtK3sFniNiJzmtxFEZ5MXk9+j98OavYI9IhXUQtecIa
+ lBM3Ihu6ZgJqBNdUhC30z+zUc25pzl0lhm77zlEX2zBGvmr18Ri+9Sjuzp96taMUBemQOF4mJ
+ ZJInu1mcDuQmwONEtBAL3HIHwQJ8HRDJIItb5FcSU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_032603_060199_01D883A7 
-X-CRM114-Status: GOOD (  25.14  )
+X-CRM114-CacheID: sfid-20200116_033033_304105_9BA502BB 
+X-CRM114-Status: GOOD (  22.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [212.227.17.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 Subject: Re: [OpenWrt-Devel] [PATCH] ath79: add support for TP-Link TL-MR6400
@@ -90,35 +90,28 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org, 'Enrico Mioso' <mrkiko.rs@gmail.com>
-Content-Type: multipart/mixed; boundary="===============4831639173833001198=="
+Content-Type: multipart/mixed; boundary="===============6353155694776034702=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============4831639173833001198==
+--===============6353155694776034702==
 Content-Language: de
 Content-Type: multipart/signed;
 	protocol="application/pgp-signature";
 	micalg=pgp-sha256;
-	boundary="=-=2IczoN++yrx/gQ=-="
+	boundary="=-=PVwKn/YdUN05nZ=-="
 
 This is a multipart message in MIME format.
 
---=-=2IczoN++yrx/gQ=-=
+--=-=PVwKn/YdUN05nZ=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi,
-
-thanks for your feedback.
-
-I currently consider merging this (considering your reply on my questions b=
-elow) and would include the few minor remaining issues as "Known issues" in=
- the commit message.
-
-Would you provide a proper Tested-by?
+And does the device have a MAC address printed on it? I would assume the on=
+e from WiFi?
 
 > -----Original Message-----
 > From: Filip Moc [mailto:lede@moc6.cz]
@@ -141,18 +134,9 @@ dule's
 > 3. Seems to be working just fine. eth0 is still connected to switch (port=
 s LAN1 to
 > LAN3) while eth1 is connected to LAN4/WAN.
-
-What about the port order? Can you please verify the assignment of external=
- port number vs. internal ports (just stupidly connect a cable and check wi=
-th swconfig which port it is attached to)?
-
 > 4. Interfaces are working just fine. Except for obvious problem with eth0=
  which
 > has no link status detection.
-
-Can you provide a detailed explanation of what you observe (what do you use=
- for visualization of "link status detection")?
-
 > 5. Seems to be working just right. Even LAN LED turns off when I manually=
  set
 > eth0 interface down from shell.
@@ -171,12 +155,6 @@ way to
 > workaround to make LAN LED show link detection on LAN ports (though this =
 also
 > has negative impact on link activity visualisation).
-
-We will definitely have to use ucidef_set_led_switch here. Are you sure abo=
-ut the port mask?
-
-I will update my staging tree with the current value.
-
 >=20
 > Also the problem with unreliable boot causing LTE module to not always wo=
 rk
@@ -186,17 +164,6 @@ le off
 > realiably works just fine after boot. Though Enrico reported that he has =
 this
 > problem even on ar71xx.
-
-Do you refer to something specific in the boot process when you say "unreli=
-able boot", or is this just backed up by the observation of the non-working=
- LTE module? At the moment, this sounds to me like we could just put it in =
-"Known issues". Can you provide a short piece of text for that (to be put i=
-n the commit message)? Are there bug report/discussions to link?
-
-Best
-
-Adrian
-
 >=20
 > Anyway good progress, thanks for your work.
 >=20
@@ -261,34 +228,34 @@ ice.
 > > Adrian
 >=20
 
---=-=2IczoN++yrx/gQ=-=
+--=-=PVwKn/YdUN05nZ=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4gSEMACgkQoNyKO7qx
-AnChNQ//YAKy5OEK9bXdXCPjaYZgT52H8WDbvf8yB5jeH90Fd7zzD91jSOhVM2YN
-EFnEC4deHEy6bmgw8Gxp4N2VEtfmp7Id4LV9yZaw5I4MQy8fT+waDX5tvpdh+1BB
-5u7oGsF2SaxQnqZwDZssz9US87Xj/hJ2i1ZTtqgS/Y5p2hZHPHvhZiAxkLO55D5P
-JzNGAgd3nkc8dzuFfQoNNy+44RzYTyLwQlEiE15qKFTij3Qwg7JvPck/7Sg5ilfs
-uzhCODseXYx9eyHikChAgdMmMyMGb4S2D8eLyN1H8WHVSRnMrvjmLsLnM2tSMsLL
-VSkF9BcZyFQMuVoqBA7Ps73Z0fUJv1Ny75NqtW6r/kmcnYw1B0e4/0i8JW23bhNj
-UbUWCXSDtpqETPuTulxSCEG0fr1x4VVUkePyV0GTvxvOq+EGSW/bQCIaNddh4Yc+
-Q3BLJW8AWagB2O7GMqW5C2EBLEv8CsnjnjgqmCMXgUM7axJROducflpDEDyBn7hH
-TudivP7R5oa7BMSAPQsqmqQNhx3MuBATWbOLPLPaYLPaUW7ztTjQ6m0pOAw7jz70
-kziVHrSIQDx8JZw/pv86RifhDdby35ZUHGaJoM9DpPK+FTKRYW7YYsv4sYX53mBF
-QJSf/rNiVGgNEvyvvBhUGdi2nBSSQ5Ib4JNM7TI1G5PzsWUOg3w=
-=nQD9
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4gSVIACgkQoNyKO7qx
+AnCPPQ//UcPrCCDHQ5XcXh63n1LC31pqUr78e4UN1kzcHe4TUWM60x7dny4sSq0O
+1pnJ1MM24twaI/agFAxk3S+9LIc+IND4F4+pW0MoFN8ljqMAE4uD3AL94CiPBBJW
+ID+1cDuiY0Z5b7NSddXulQqCk6GKm6kKkIk8AoZWGiBxSfwBkPEXZM1nJmzMClIv
+Ci0we3GzXSj3SQU0H2G61Eo+AG32stPbzJI677KTGTs25fzEkl8LGei58CNB0DzV
+6cGgWKV8b1mFMU10bOX4krtHkauyCrldO2DwJjS1mahIvhy8UE0GCG/9w8f2DDfg
+zyCHp0Pq391h2nUFkfWXBWKLdyScA+TnPHQgj57vootqjIhjPbJJ547mF3KN6Sbm
+N90BYJDlNtf/RhTUn32Dh2m2qrgCmsDrIMsjAGpNlRaMpsPlpJMMWjEKEzyuL5IY
+I8hye5Pt4szgRUZ1wS0iVBxqKXX/JuRQT/E3dMw1JbjDXgg0JDIWHrkSsILC1RA8
+jkIXnIBPOfbxmSWtk48pZpq+N8v4/VEET2c+dQJxTakW3jNNQ786rOKJ9KKa6WoQ
+/5PpPbdIP5Wvp2pptV9KdEogfsF/qP4XVNAfuFilT6QUWNr54OFpchGdz77Y5Fve
+WHU+yQkBly4wzhgHGQ3P1IhOp7QIdhy6727lDhY3QSQpSi2onws=
+=KixU
 -----END PGP SIGNATURE-----
 
 
---=-=2IczoN++yrx/gQ=-=--
+--=-=PVwKn/YdUN05nZ=-=--
 
 
 
---===============4831639173833001198==
+--===============6353155694776034702==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -299,6 +266,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4831639173833001198==--
+--===============6353155694776034702==--
 
 

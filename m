@@ -2,60 +2,69 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18EF213D949
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 12:48:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 558F613D951
+	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 12:52:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oK8pEBO3bAu9GIdZFGwdRxHW1wxGIRiNQOiRUtXBzF0=; b=XffkTf6TS5MLE1rko5SMK8CcBx
-	EfbXDaJmQK4YWzM99y5KJTxTUTiFhCTlop139g66+C1aQugn/fpIF4+RTgW53PJrYrx91lS8lCyjJ
-	5CNzCoET0j5qqkKzDHVhB7Qd5n8dhxKn6hFDeaRoCJhfTk86jNjEqYHFIQrsb4ZaA8Q6w/58YP8wx
-	xW++86lEII1EeY0zLKtXTw5BMJ1R7I/cof2fUZ5C0HvBa+ZM7xuXw+acPpKsUyA4q8GdHKPmxYxml
-	GYoMI5pmEI+GTzP2DFTLU02Xbe4CKwrSmCmIWlUU9JAFXr3J1FTl9OEbtMI1jQi6JHtuwNqE3+1y7
-	En6FH/UA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZTB6DQSWewx410f8e79zXbvNLC9DViJ45mfr8+TQjBQ=; b=dxJ5lB2cG2KL3Z
+	r39U/NR3ncW9N+KqMs+DAACaT+8jOY2FhleQJprWO4W9/5NmVjdPMwuWW046mquB6Pbfkm/aCt/uL
+	blrcyLw8Bt51eaRbQCG61b1dloWUcD2116kMPTyJNKMNM+ejtsTf524BUFgV9kJT0EIrOBqJO1TcI
+	2nJ1DsIhM/XgoVlg2bWnKEuYo2lj5ocK+ZAhymuzR45KtrUhQx9QLOq4h/0PPjq6S2SgBbRVhlbtE
+	Js8pR/gO86GfWojD5dIUKSrdM820GF262V5fOTCDQ2jr3kxGe0FmD3Yxu3HioJhHJ2P93VCnrNAFx
+	SYcv76/0Raww5YOzRyHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is3di-0006Gl-8q; Thu, 16 Jan 2020 11:48:42 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
+	id 1is3h4-000834-TW; Thu, 16 Jan 2020 11:52:10 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is3dS-0006GC-S9
- for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 11:48:31 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 10DE265C6;
- Thu, 16 Jan 2020 12:48:24 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 67758a12;
- Thu, 16 Jan 2020 12:48:13 +0100 (CET)
-Date: Thu, 16 Jan 2020 12:48:13 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Peter Geis <pgwipeout@gmail.com>
-Message-ID: <20200116114813.GC84286@meh.true.cz>
-References: <c0dd994d-fb68-1845-60cb-2dfcc3d5455a@hauke-m.de>
- <CAMdYzYqL3-6s4vcjyT7=UDDQTN85RNQTRQ77ixvRnBk2EaBDHQ@mail.gmail.com>
+ id 1is3gk-0007qn-MG
+ for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 11:51:56 +0000
+Received: from buildfff.adridolf.com ([188.194.105.26]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1MfYHW-1jY0D428hU-00g0Sg; Thu, 16 Jan 2020 12:51:46 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Thu, 16 Jan 2020 12:50:56 +0100
+Message-Id: <20200116115100.1906-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMdYzYqL3-6s4vcjyT7=UDDQTN85RNQTRQ77ixvRnBk2EaBDHQ@mail.gmail.com>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+X-Provags-ID: V03:K1:sri5TgrZ2sTDGlsUmDjVdqjSQ0UGwCuaeLdSR8iUjxkUXqf3hK1
+ vYn9ju+FHlMxMDDqyF/i8JeF3h0aMZF0JVX/6TSO1f4ZHhhQqUfVE61vOs1vXb6pVhyy9XW
+ a0pIZT9QX7iZZ0HvMor8BmreLV8SKabvJo9+gZORZVyKTq+W5QBQTTckDk6ekzbCh50wILQ
+ 32LSdguSIHtPLUD71IIqw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:AEbqclmcxCY=:kOYiEIu9sJObGkY8St7iaz
+ StCztGHgykyuHQCZos/ZpV4FSeENOYLYZWxia5NNwcdMYEBO37GIBH/W8qd9hLL+8z43ZSjcF
+ yKmKNjLMVDhDyZQe/t/D8ibU5sVH7rkbc+75Tp/d+PtDn/6ikGT8SDE2f2lNTI/eWELUQ2tFg
+ zcIw6VoC+D5bMY83mJGw75qQr6zJwysg6uSNb805Ht+eTj5CcO+tGcxsjb4upjdB8IHQYls55
+ hhy1U+UguyTK7ATileu4253fqZM1n/HKcDgQUW4906u0qERwYArcBATZbdYoP6d8yGl/RIT4N
+ yJTBQRSQuTg14x4wj6zhR9WpzOqQcNHWTuuRc20tVheUfnDda/3jR0hYPyM37HqRRCmR3PNmp
+ EV7Dj85yNG3+FTTfbd3MbBLhYkxSEfkUbNqlGQ9WaTyedQ8ByGU5qCalL47dJRdIDatelAx14
+ lW8dcrYrhxMsLtF94FKp+YOq8YT/2NLCB75TWllELgWRLqKBowAtZ9xMK4VUlr4ttYbV3jfhM
+ 3PHh1cC+DeCZUyHSyzVCEDvPHRnRH5bJUAeTZD7WBeu+i6QGcEBhw+majbWBnzoAIeBj3o+nB
+ pNqcgEE07esKwn9rhmuo4s8363hqHbkcgguMVtNhEPYor2P3T49qoHeqWlqgyN4RgGqgq66PC
+ pcBOgpyQorMA283LREjS57RDBGWt/aeBdxX3W4lcknStuoUheiv/dSucQhVr7XaXLzMytWkXo
+ x7y/9XcJU3zl5PanB6YnDVPErsOKzmkh9TP24xwGtwdfXzBhH8LY5aIHvXThttyb8Pnt1NxXM
+ 2r8e2Auydn5C/4OBPb4SvQElzRBMbvtLzdtzdveB7m6eingfqEBjSeMd44cp0bVrcu/S1aezm
+ OabQllrDs/5e/wDd+vEAG2m0DxO0GlqO3YpbMPS9c=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_034827_061095_1900118B 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20200116_035151_019519_D8B40D84 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] OpenWrt 20.X release plans
+Subject: [OpenWrt-Devel] [PATCH v2 1/5] linux-firmware: add wil6210 firmware
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,65 +76,44 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: Hauke Mehrtens <hauke@hauke-m.de>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Cc: Robert Marko <robimarko@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Peter Geis <pgwipeout@gmail.com> [2020-01-15 21:15:41]:
+From: Robert Marko <robimarko@gmail.com>
 
-Hi,
+This patch adds wil6210 firmware and board files.
+Firmware version is not up to date but is only freely
+redistributable one I found.
+Board file is a generic one so most devices and especially those
+for long distance PtP links will require so in a ipq-wifi like way.
 
-tl;dr I'm going to vote in favor of skipping release with 4.19 and focus on
-5.4 kernel.
+Signed-off-by: Robert Marko <robimarko@gmail.com>
+---
+ package/firmware/linux-firmware/qca.mk | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-The 19.07 release was delayed by a few months, so this has affected the
-subsequent release as well. The plan is to have stable release every 6 months
-as it is easier to support, allows us iterating faster and breaking stuff more
-often :-)
+diff --git a/package/firmware/linux-firmware/qca.mk b/package/firmware/linux-firmware/qca.mk
+index 23fcc0905a..71b484d5c7 100644
+--- a/package/firmware/linux-firmware/qca.mk
++++ b/package/firmware/linux-firmware/qca.mk
+@@ -37,3 +37,11 @@ define Package/carl9170-firmware/install
+ 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/carl9170-1.fw $(1)/lib/firmware
+ endef
+ $(eval $(call BuildPackage,carl9170-firmware))
++
++Package/wil6210-firmware = $(call Package/firmware-default,wil6210 firmware)
++define Package/wil6210-firmware/install
++	$(INSTALL_DIR) $(1)/lib/firmware
++	$(INSTALL_DATA) $(PKG_BUILD_DIR)/wil6210.fw $(1)/lib/firmware
++	$(INSTALL_DATA) $(PKG_BUILD_DIR)/wil6210.brd $(1)/lib/firmware
++endef
++$(eval $(call BuildPackage,wil6210-firmware))
+-- 
+2.20.1
 
-It's clear, that this fast release cycle needs some time to settle, but I
-believe, that in the end everybody is going to benefit from that. Users by
-having modern kernel and userland, developers less backports to maintain and
-everybody predictable releases (to some extent).
-
-Once mastered, this faster release pace might be one more very good reason for
-the vendors/companies to adopt (or at least strongly consider) "upstream
-first" workflow :-) If that's not doable for various obstacles, then let's
-hope, that they will hopefully engage and consider sponsoring some kind of
-OpenWrt (Long Term Support) LTS release effort.
-
-> I think it is wise to target 4.19 as it has been in the nightly
-> releases, and as such has been in testing.
-
-Yeah, we're all aware about that. If we decide to skip 4.19, we're partialy
-throwing away a lot of work, but on the other hand there was a lot of stuff
-upstreamed/fixed, so making the 5.4 better. It's more then clear, that staying
-closer to the upstream brings mostly only benefits.
-
-So I'm going to support focus on 5.4 with my vote, thus suggest, that we skip
-release with 4.19.  Even that I know, that we're going to violate our 6 month
-release cycle goal one more time, but hopefully for the last time :-) Lets
-bite the bullet and move forward in that 5.4 direction ASAP.
-
-BTW people doing the kernel development are essential element for this
-project, so we should try to make their work easier as much as possible. Or at
-least don't put any obstacles in their development direction.
-
-In other words, if I've to choose where to spend the finite and scarce amount
-of resources, whether it should go into the development of 5.4 or into the
-maintenance of 4.19, I'm wholeheartedly selecting 5.4. 
-
-> It would be nice to have lxd support in the full release, instead of
-> needing to custom build to enable support.
-
-Feel free to follow https://openwrt.org/submitting-patches and make it reality
-:-) Thanks!
-
--- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

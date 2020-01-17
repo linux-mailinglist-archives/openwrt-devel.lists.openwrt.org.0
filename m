@@ -2,60 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C475413FBA6
-	for <lists+openwrt-devel@lfdr.de>; Thu, 16 Jan 2020 22:41:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02CE114030F
+	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 05:44:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
-	Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VuAttw+k7yKERe/VI1Zk0YofUK+458CegcOysaIBbRI=; b=u5fVy04yoCSUEm
-	nG1RhQvvZgeOrUsTBI+QqaS3X8bvX3mgTm1pR2JdNXYAoWZcKdkHCwquUYeA1VkYkzNAl54a1Omyj
-	oAkTx5fXJrL8EqfmXxpg3YDfxYzqhP1JN79C0o2pmxPFFRwgRHWGZ920Dh9S/GLhgS0926hZw0rvo
-	fRvCOHNniMig4Zes7+KudYQU4Nyjxij2vRNdHanai1jSSzeW/FUrx6QuZN8YDdvSTH92YNxkHTa3o
-	AEwbGdvXDl389us6IJtkaPj93MoLovHMdTkxnn0LvAamnHf3yerJH1JWsBvn5AQ6SucttL2zZOJyG
-	+t8/Md2QZuxx7iYbAlow==;
+	List-Owner; bh=9quBK+0H19r1ODO8YTo3JizKm5+nQ+lTnWEJ/qslD+U=; b=DICeB6QyaN85Hf
+	ffsu0LAcGejSWWFQDrwbjkLHe8nsppz9dAuB57KTddcW3RcibYxsZTD/X8f8qd4grqkw+NKy5RB2Q
+	Rs0gwHaPQEuq1oCEOOzWhpkPQXibjVQycR6sBljww8OlwlRC8xELP70P8oVeaccAahxzCAVlLtNfV
+	rp/gcdSWwZPwEHCanjDYGmXyswrZa1/JBrVarmqrrjfKKvEVO0IbZ63vykc+KOL2Hx9iRtGs4gAo1
+	zmNLNynj35ZNi9HnPI/IjC7IlOWNJkZmWDtrbIe+OAsBqAnCEC8FvDovBhZpsFOFYBSrZ1hPEv6ZF
+	g92fpv5iatf5yW47lDEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isCtR-0006Zg-Gk; Thu, 16 Jan 2020 21:41:33 +0000
-Received: from li825-139.members.linode.com ([104.237.157.139]
- helo=mail.factglobal.ca)
+	id 1isJUX-0001sq-Kz; Fri, 17 Jan 2020 04:44:17 +0000
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isCtF-0006Yo-Mb
- for openwrt-devel@lists.openwrt.org; Thu, 16 Jan 2020 21:41:23 +0000
-Received: by mail.factglobal.ca (Postfix, from userid 1000)
- id C608178B4D; Thu, 16 Jan 2020 21:35:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kryma.net; s=mail;
- t=1579210519; bh=DPyVWo7j/JUed2Vlkvsnbjv5M/Eca1j1tzbWGZHk8EY=;
- h=From:To:Cc:Subject:Date:From;
- b=BnYXMUkWqOtj1mGCJG4+XK5b6Ep9Hxnf0kWE/X+qL7zEzWoMHYSjdBuLjUzcYzI+c
- Bc4a6le3xYy5ckdAFg7H2PsTxUibV9EDCUW6lMtPYkCCnADogLeWfDI80XYdO3Ari6
- 4fg6hu8fp966uLVKWcza6mFpjWIvgmO2A2LHaMqM=
-From: admin@kryma.net
+ id 1isJUK-0001rf-S1
+ for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 04:44:06 +0000
+Received: by mail-pl1-x629.google.com with SMTP id ay11so9339636plb.0
+ for <openwrt-devel@lists.openwrt.org>; Thu, 16 Jan 2020 20:44:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PDSUeUNW/XQRAaWRAewnt/nQXx53TwmsdfnT5DnqCuI=;
+ b=qaJUKPtj6heTaxfhsOo9UhqcEPUdgqacMP9xtRxBzKUYf7/2PXHfzApUo0+aopOVtZ
+ PnQiIfhOlsj1rIUxGQ4tayTFndOs9xehfOwzLSGNgx1+Dlo0uSt4s2vVCPFMVKRqxqje
+ t9QMCnRACHiI0dKl5QuMlsmI1w1rQTu2lfBxcmmw7ihpYuvtO2eMjP+b9+BJvCaPrfMM
+ jm5s7bFYZsvdCDGsjQj7hg8Bk72AUNPIIp35WeyXlZSOj3WMZzagXC0OaZGwHgeXDTNt
+ eYfj97GvnvB7VpDgmUL/VozoCYI1vLi/kwJCvqlAl1tM3PjZCfqopcsktJDB0PLqDaZ1
+ OnFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=PDSUeUNW/XQRAaWRAewnt/nQXx53TwmsdfnT5DnqCuI=;
+ b=cYjKvA0KNoBjIcAGCGCBTJD9Fjl2SBpMYaYSq+BYJI7m79lEdMogvjrny3nAtnbClU
+ 3EF/jhzXaav14piHYpNLMhrYUlWd2BzVOlLuVTZgXQg9C0pq5qS44/n5+RMY/c8Yyals
+ ny21vXicdFD2xFHpLNSrpkT5sZqjTJ8jKvm7XF2T0QYkstktW9tUy+pFz7Ivk/TvdFJJ
+ SfemPwYWk8IJaBkbXv+IIjniLQQscyldOmcT8iYx3CdggcVl9Jlac1yjv3rd7G8d6F52
+ PtIZ/VPWh/jWtoiyce02yEFWLlJINQHWeM5gFTQ1yLmF83CZ2gdlRD6s2XiP1gr/gAUg
+ 5BDQ==
+X-Gm-Message-State: APjAAAVnRWN5zB9BRNWNu/F4BaiN2QeOm3ao2zsJHB5X/5N3sH4E7C+9
+ M7QR2Y6Q4abOlcX4676oqs8pF5GQ
+X-Google-Smtp-Source: APXvYqwohHK27cZ4SCP5M61gCB8qH/p8TIfePKjPhQZThHLsOSu4+GaO1fg65MTr3EZSo/bXvZR/Qg==
+X-Received: by 2002:a17:902:8eca:: with SMTP id
+ x10mr36423169plo.248.1579236242091; 
+ Thu, 16 Jan 2020 20:44:02 -0800 (PST)
+Received: from localhost.localdomain ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id c184sm26790055pfa.39.2020.01.16.20.44.00
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 16 Jan 2020 20:44:01 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 16 Jan 2020 21:35:01 +0000
-Message-Id: <20200116213501.9820-1-admin@kryma.net>
-X-Mailer: git-send-email 2.11.0
+Date: Thu, 16 Jan 2020 20:43:53 -0800
+Message-Id: <20200117044359.1923979-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_134121_742946_891472A8 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200116_204404_909997_3F362E7A 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:629 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH v4] ath79: add support for COMFAST CF-E130N
- v2
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH 1/7] base-files/functions.sh: don't use $var
+ in $(())
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,268 +99,53 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Pavel Balan <admin@kryma.net>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Pavel Balan <admin@kryma.net>
+It's not needed. It can also lead to subtle bugs.
 
-This patch adds support for the COMFAST CF-E130N v2, an outdoor wireless
-CPE with a single Ethernet port and a 802.11bgn radio.
+https://github.com/koalaman/shellcheck/wiki/Sc2004
 
-Specifications:
-
- - QCA9531 SoC
- - 1x 10/100 Mbps Ethernet with PoE-in support
- - 64 MB of RAM (DDR2)
- - 16 MB of FLASH
- - 5 dBi built-in antenna
- - POWER/LAN/WLAN green LEDs
- - 4x RSSI LEDs (2x red, 2x green)
- - UART (115200 8N1) and GPIO (J9) headers on PCB
-
-Flashing instructions:
-
- The original firmware is based on OpenWrt so a sysupgrade image can be
- installed via the stock web GUI.
-
- The U-boot bootloader also contains a backup TFTP client to upload the
- firmware from. Upon boot, it checks its ethernet network for the IP
- 192.168.1.10. Host a TFTP server and provide the image to be flashed as
- file firmware_auto.bin.
-
-Signed-off-by: Pavel Balan <admin@kryma.net>
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
-Run-tested on hardware.
+ package/base-files/files/lib/functions.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Changes since v3:
-
- -Formatting fixes
- -Made steps towards disabling the non-existent eth0 port
-
-Responses to Adrian's questions:
- -Re unused led: the led is blocked by a mostly
-    opaque plate in the shell. It can still be
-    controlled, though.
-
- -Re verifying addresses: I don't think I did.
-    How would I do that?
----
- .../ath79/dts/qca9531_comfast_cf-e130n-v2.dts | 143 ++++++++++++++++++
- .../generic/base-files/etc/board.d/01_leds    |   9 ++
- .../generic/base-files/etc/board.d/02_network |   2 +
- target/linux/ath79/image/generic.mk           |  10 ++
- 4 files changed, 164 insertions(+)
- create mode 100644 target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-
-diff --git a/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-new file mode 100644
-index 0000000000..1f5326c9d8
---- /dev/null
-+++ b/target/linux/ath79/dts/qca9531_comfast_cf-e130n-v2.dts
-@@ -0,0 +1,143 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "qca953x.dtsi"
-+
-+/ {
-+	compatible = "comfast,cf-e130n-v2", "qca,qca9531";
-+	model = "COMFAST CF-E130N v2";
-+
-+	aliases {
-+		serial0 = &uart;
-+		led-boot = &led_rssihigh;
-+		led-failsafe = &led_rssihigh;
-+		led-upgrade = &led_rssihigh;
-+		label-mac-device = &eth1;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		pinctrl-names = "default";
-+
-+		wlan {
-+			label = "cf-e130n-v2:green:wlan";
-+			gpios = <&gpio 0 GPIO_ACTIVE_LOW>;
-+			linux,default-trigger = "phy0tpt";
-+		};
-+
-+		lan {
-+			label = "cf-e130n-v2:green:lan";
-+			gpios = <&gpio 2 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		unused {
-+			label = "cf-e130n-v2:green:unused";
-+			gpios = <&gpio 3 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssilow {
-+			label = "cf-e130n-v2:red:rssilow";
-+			gpios = <&gpio 11 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssimediumlow {
-+			label = "cf-e130n-v2:red:rssimediumlow";
-+			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		rssimediumhigh {
-+			label = "cf-e130n-v2:green:rssimediumhigh";
-+			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
-+		};
-+
-+		led_rssihigh: rssihigh {
-+			label = "cf-e130n-v2:green:rssihigh";
-+			gpios = <&gpio 16 GPIO_ACTIVE_LOW>;
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			label = "reset";
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&gpio 17 GPIO_ACTIVE_LOW>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+};
-+
-+&spi {
-+	status = "okay";
-+
-+	num-cs = <1>;
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x000000 0x010000>;
-+				read-only;
-+			};
-+
-+			art: partition@10000 {
-+				label = "art";
-+				reg = <0x010000 0x010000>;
-+				read-only;
-+			};
-+
-+			partition@20000 {
-+				compatible = "denx,uimage";
-+				label = "firmware";
-+				reg = <0x020000 0x7d0000>;
-+			};
-+
-+			partition@7f0000 {
-+				label = "nvram";
-+				reg = <0x7f0000 0x010000>;
-+				read-only;
-+			};
-+		};
-+	};
-+};
-+
-+&uart {
-+	status = "okay";
-+
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	phy-handle = <&swphy0>;
-+
-+	mtd-mac-address = <&art 0x0>;
-+
-+	gmac-config {
-+		device = <&gmac>;
-+		switch-phy-swap = <1>;
-+	};
-+};
-+
-+&eth0 {
-+	compatible = "syscon", "simple-mfd";
-+};
-+
-+&wmac {
-+	status = "okay";
-+
-+	mtd-cal-data = <&art 0x1000>;
-+};
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-index fbb0d0ea03..7521e435a1 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-@@ -47,6 +47,15 @@ comfast,cf-e120a-v3)
- 	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
- 	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
- 	;;
-+comfast,cf-e130n-v2)
-+	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
-+	ucidef_set_led_wlan "wlan" "WLAN" "$boardname:green:wlan"
-+	ucidef_set_rssimon "wlan0" "200000" "1"
-+	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow" "wlan0" "1" "100"
-+	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW" "$boardname:red:rssimediumlow" "wlan0" "26" "100"
-+	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH" "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
-+	ucidef_set_led_rssi "rssihigh" "RSSIHIGH" "$boardname:green:rssihigh" "wlan0" "76" "100"
-+	;;
- comfast,cf-e313ac)
- 	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan" "switch0" "0x02"
- 	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan" "eth1"
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index 10ca213e70..5840b90bf6 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -86,6 +86,8 @@ ath79_setup_interfaces()
- 		;;
- 	comfast,cf-e110n-v2|\
- 	comfast,cf-e120a-v3|\
-+	comfast,cf-e130n-v2|\
-+		ucidef_set_interface_lan "eth1"
- 	comfast,cf-e314n-v2|\
- 	tplink,cpe210-v1|\
- 	tplink,cpe220-v2|\
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 70631c20d0..256481ece3 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -258,6 +258,16 @@ define Device/comfast_cf-e120a-v3
- endef
- TARGET_DEVICES += comfast_cf-e120a-v3
+diff --git a/package/base-files/files/lib/functions.sh b/package/base-files/files/lib/functions.sh
+index 81176431d1..b118c8368c 100755
+--- a/package/base-files/files/lib/functions.sh
++++ b/package/base-files/files/lib/functions.sh
+@@ -70,7 +70,7 @@ config () {
+ 	local cfgtype="$1"
+ 	local name="$2"
  
-+define Device/comfast_cf-e130n-v2
-+  ATH_SOC := qca9531
-+  DEVICE_VENDOR := COMFAST
-+  DEVICE_MODEL := CF-E130N
-+  DEVICE_VARIANT := v2
-+  DEVICE_PACKAGES := rssileds kmod-leds-gpio -swconfig -uboot-envtools
-+  IMAGE_SIZE := 8000k
-+endef
-+TARGET_DEVICES += comfast_cf-e130n-v2
-+
- define Device/comfast_cf-e313ac
-   ATH_SOC := qca9531
-   DEVICE_VENDOR := COMFAST
+-	export ${NO_EXPORT:+-n} CONFIG_NUM_SECTIONS=$(($CONFIG_NUM_SECTIONS + 1))
++	export ${NO_EXPORT:+-n} CONFIG_NUM_SECTIONS=$((CONFIG_NUM_SECTIONS + 1))
+ 	name="${name:-cfg$CONFIG_NUM_SECTIONS}"
+ 	append CONFIG_SECTIONS "$name"
+ 	export ${NO_EXPORT:+-n} CONFIG_SECTION="$name"
+@@ -93,7 +93,7 @@ list() {
+ 
+ 	config_get len "$CONFIG_SECTION" "${varname}_LENGTH" 0
+ 	[ $len = 0 ] && append CONFIG_LIST_STATE "${CONFIG_SECTION}_${varname}"
+-	len=$(($len + 1))
++	len=$((len + 1))
+ 	config_set "$CONFIG_SECTION" "${varname}_ITEM$len" "$value"
+ 	config_set "$CONFIG_SECTION" "${varname}_LENGTH" "$len"
+ 	append "CONFIG_${CONFIG_SECTION}_${varname}" "$value" "$LIST_SEP"
+@@ -162,7 +162,7 @@ config_list_foreach() {
+ 	while [ $c -le "$len" ]; do
+ 		config_get val "${section}" "${option}_ITEM$c"
+ 		eval "$function \"\$val\" \"\$@\""
+-		c="$(($c + 1))"
++		c="$((c + 1))"
+ 	done
+ }
+ 
 -- 
-2.17.1
+2.24.1
 
 
 _______________________________________________

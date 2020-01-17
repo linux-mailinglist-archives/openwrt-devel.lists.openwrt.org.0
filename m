@@ -2,79 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14A56141437
-	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 23:36:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CAC714143C
+	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 23:38:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rkW639zopZsmWoZPnWhX6GES/UNEkBBeZc2gB9nZ+90=; b=tCdOLyZLTWFcJU
-	VTQxVHP716xSI+PKjGupc9BZiy4rNjc19nxHQsFBrLvZ7Nm+gacJqGwk0MtbS+Uuu4RcQsTC9L1h5
-	8SBLCGquzmjGS9uF36pLhAGJyUIkhI5+HESkw2beb/Ro3A7EjtQGazhZuxIhdJqFWGfJEBufpouLw
-	OcGPc0OfdUGfkcQKqpHft+DwAI1FXs1z6ZTDkdS932o4qWfz9A3c18VgCOmBP8QiT3UeCMvFUK8bA
-	tWuoajGBPrHoK7QTVGqnhwxDvPQ3nlnJfhC129+iYDm9JQvFd0RI1xtyRvaoXGBcjqGJ4Nz5wHmq/
-	uIZuW43XYLYwZIQY7ZEg==;
+	List-Owner; bh=WWYt2tkPPp73oDHTL1hgK4oSfToK2SmWZF9TZqJQfb0=; b=FYf126W0OnZHs8
+	E4b1CDs1KBDfUeJTKSW9OBubJEoPY9fYmuU1wbvexhT7n6BpLlbEIyQpLPPRqMMLJ4613xS5GpIWu
+	rH7TufvKc6fZOJblTMhvSsPuoY+hEBnV2iWnBBbOlaNHbITNLMevXbW7ViDmdqj6w9KcMhvz+zjMf
+	C9ETfPz1ptTNB7ufm1JfjcgZUx/NKQYspmfWzBs39gnbRJ4HWSw7bnasFjWemF2JDoxzJYeDrlPAF
+	Z8xxhiWEtFDJvsNVvK2hvlAaRg3sgRJWhQnJGJMQKEOS1vgb92P3leiuUmMJsVf8xxVwMSSB6IKrF
+	haNg49kLT98fLns3ZJog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isaEL-0001U5-S8; Fri, 17 Jan 2020 22:36:41 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1isaG5-0002wl-Ew; Fri, 17 Jan 2020 22:38:29 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isaEC-0001TP-PA
- for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 22:36:34 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y8so10410045pll.13
- for <openwrt-devel@lists.openwrt.org>; Fri, 17 Jan 2020 14:36:32 -0800 (PST)
+ id 1isaFx-0002wQ-HY
+ for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 22:38:22 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id d5so3758080pjz.5
+ for <openwrt-devel@lists.openwrt.org>; Fri, 17 Jan 2020 14:38:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=e1axjNtd7gFeL5q60rNGhJvmj3eJpK6vlyR6oEKvXO0=;
- b=Puz1IzUITxvvi3W4Sv79af+f/rxG0xVcM3ydSeZBEkY3UcOVP7ZCugU9ya4NhP+vj+
- 3VVOYY2Wiz/x0ahIk1llhND9fmh2Fx+Jwhi4H0Uw9ujrQwkXxt/CtTmU6/He1DwqB7BJ
- pCbxnZJMR3SCbCaAa6E9Fvct3HMEknAcEnyxMI5y1qD5WtpNlH1ZRNXBzLA2GaMlB6oL
- Q01GLKeyn0oMxWmlCU8hK1Opm24LRnubnWt40EtO6W5GyjbxQYMx7XiJJ+o5jw7xhG5U
- xqYuvgPtLxirVU2DaWwm31NYIQT3ljwD+P9kU/JPQDP6BQch7TRn9c7LlMkRCEpDoMxk
- jVIg==
+ bh=VUMulhz6TsDy5coagttb/8NQWlkW1x+dLXhoSfZJjgg=;
+ b=DNBTK8EuUz4bpv+4/vSH7fumh8I5cUQ9TC+qzdK7MUxJfp1nI+yigk07F8lGhDXGV7
+ 8rWcjF9TTrBScMfVj2b99vlSurQNL5WQYI8habj/v4fMtf02F+9ahjgobVWafeyVNtrk
+ MGDVcowQpGpuwCtYoVMcnc9U4P4lRapKdYcvhiHuEx3LSTXdhBzniqqiM2r6Eu2Uj/48
+ vUiTSPtGJRV4z7+nJjLKzMREzyGtwUhvKs/fxh/BwLKoGFvrSZNO4j7ccgw0BvOpkEzO
+ hvUfoyY8121PG+Klf1qQsMfetHzX5U9137B9ma2ltfFlq2U4ENT/xJs8UgrSIP8cQiyI
+ KcJQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=e1axjNtd7gFeL5q60rNGhJvmj3eJpK6vlyR6oEKvXO0=;
- b=OWLrvdgzA0SdS22DiyZx/cSRtCHxuLNGyoZAvem6HWcfjI5bg2DGOqiK2+ldjmrY0g
- O+CHKibdYwhA99fjiXZtpKICognpFbYJTWZCoIjkEKJ2p0H3CGBOZe02cvj92jqCyeN0
- jtD5g/nVneSSFpLutOqK7IIq/A/XUUF8AXMFhnQhXUP+WO3qZar0Vz3Piog+3aUQc1aY
- NwUObKHx4jAkym5wIbmsz0FvBTrmpPGYLBm1eTj4msvDkKMYycTMZStfIaJk15hGRVgD
- yjlsQsSRdhxzQ7Mvb0Nv2cIZTA655zdmERm9c2CYB0MHMWV36iGq0hJtSjm9uyEc8VZ4
- BYGg==
-X-Gm-Message-State: APjAAAUFM1hDa7ytdZJESr1inahtIGd3M0rL6kFXZnks6BZA/1JUNqRG
- JQ/ufy/L4N7QrFhjxmyeiGlXQRsZ
-X-Google-Smtp-Source: APXvYqw/71DrkRVrMjjJOnzAfzOS/35Nc0clcqxRXb1VNoxS3Ooj59wiROmZtsu7RV67xcmb6N2hPQ==
-X-Received: by 2002:a17:902:264:: with SMTP id
- 91mr1536335plc.271.1579300591967; 
- Fri, 17 Jan 2020 14:36:31 -0800 (PST)
+ bh=VUMulhz6TsDy5coagttb/8NQWlkW1x+dLXhoSfZJjgg=;
+ b=brmgCwrPHvx65A7I8MMBBYJXTffuycQEBX677jQqVwLU47qYKLyrMsTiqOkQY+/czL
+ 83LCDA0V/IYgePcIl2Gbew4DCR2TuYhXSBaRSk9mYtVzNUbbzuzq00x1N59iW/oTc1l8
+ f+8vXUlleYfQrWfRbA6sfozIbPyqC8GGKQa/UeM84zhEPdyt/qU8+ukMUUA/lcWEJycC
+ ZwHP2GgOoFMunUCSvKYWAQT2REDeIScO4xEH1t5qMuKuD4kFFRPMsEIN+mD4W1LwwpH1
+ EHZIduNZ846RxkaNLfgF2Lpj8DEfTdK3EQ7Y+Xb0fP3ZtYyU5fTSS+UBtkNANWeUfBnO
+ aVMg==
+X-Gm-Message-State: APjAAAUJrlgP+dTcp7+hRlxflrz/YxEFoUFc8urjgwqoWf0auFSHOdba
+ zLcTGK26172JQwVBX1JkxHJVXliP
+X-Google-Smtp-Source: APXvYqwOsBSesaOR5E4QI0IuudgeMp3bfCGeJfbrM8IK6XEuIBN/zSuWxw2R31sqBei1keBOY9WdLw==
+X-Received: by 2002:a17:90a:3747:: with SMTP id
+ u65mr8389733pjb.25.1579300700505; 
+ Fri, 17 Jan 2020 14:38:20 -0800 (PST)
 Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id o6sm29172400pgg.37.2020.01.17.14.36.30
+ by smtp.gmail.com with ESMTPSA id j8sm30047038pfe.182.2020.01.17.14.38.19
  for <openwrt-devel@lists.openwrt.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Jan 2020 14:36:31 -0800 (PST)
+ Fri, 17 Jan 2020 14:38:20 -0800 (PST)
 From: Rosen Penev <rosenp@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 17 Jan 2020 14:36:29 -0800
-Message-Id: <20200117223629.22902-1-rosenp@gmail.com>
+Date: Fri, 17 Jan 2020 14:38:19 -0800
+Message-Id: <20200117223819.23058-1-rosenp@gmail.com>
 X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_143632_814453_702C1471 
-X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-CacheID: sfid-20200117_143821_579225_DF0E26CE 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -86,8 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCHv2] base-files/functions.sh: use grep -q
- instead of []
+Subject: [OpenWrt-Devel] [PATCHv2] base-files/functions.sh: use command -v
+ instead of which
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,51 +101,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-It's cleaner and faster as it does not need to do extra work.
+which must be executed. command -v is a shell builtin.
 
-Also removed $() to avoid executing the output. The shell can handle it.
-
-https://github.com/koalaman/shellcheck/wiki/SC2143
+https://github.com/koalaman/shellcheck/wiki/SC2230
 
 Signed-off-by: Rosen Penev <rosenp@gmail.com>
 ---
- v2: Fixed &&/|| typo.
- package/base-files/files/lib/functions.sh | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ v2: enclose command -v in $().
+ package/base-files/files/lib/functions.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/package/base-files/files/lib/functions.sh b/package/base-files/files/lib/functions.sh
-index 8e189e4f4d..207fe96ce6 100755
+index 207fe96ce6..bc67e65edc 100755
 --- a/package/base-files/files/lib/functions.sh
 +++ b/package/base-files/files/lib/functions.sh
-@@ -326,7 +326,7 @@ group_add_next() {
+@@ -176,7 +176,7 @@ default_prerm() {
+ 		ret=$?
  	fi
- 	gids=$(cut -d: -f3 ${IPKG_INSTROOT}/etc/group)
- 	gid=65536
--	while [ -n "$(echo "$gids" | grep "^$gid$")" ] ; do
-+	while echo "$gids" | grep -q "^$gid$"; do
- 	        gid=$((gid + 1))
- 	done
- 	group_add $1 $gid
-@@ -336,8 +336,8 @@ group_add_next() {
- group_add_user() {
- 	local grp delim=","
- 	grp=$(grep -s "^${1}:" ${IPKG_INSTROOT}/etc/group)
--	[ -z "$(echo $grp | cut -d: -f4 | grep $2)" ] || return
--	[ -n "$(echo $grp | grep ":$")" ] && delim=""
-+	echo "$grp" | cut -d: -f4 | grep -q $2 || return
-+	echo "$grp" | grep -q ":$" && delim=""
- 	[ -n "$IPKG_INSTROOT" ] || lock /var/lock/passwd
- 	sed -i "s/$grp/$grp$delim$2/g" ${IPKG_INSTROOT}/etc/group
- 	[ -n "$IPKG_INSTROOT" ] || lock -u /var/lock/passwd
-@@ -354,7 +354,7 @@ user_add() {
- 	[ -z "$uid" ] && {
- 		uids=$(cut -d: -f3 ${IPKG_INSTROOT}/etc/passwd)
- 		uid=65536
--		while [ -n "$(echo "$uids" | grep "^$uid$")" ] ; do
-+		while echo "$uids" | grep -q "^$uid$"; do
- 		        uid=$((uid + 1))
- 		done
- 	}
+ 
+-	local shell="$(which bash)"
++	local shell="$(command -v bash)"
+ 	for i in $(grep -s "^/etc/init.d/" "$root/usr/lib/opkg/info/${pkgname}.list"); do
+ 		if [ -n "$root" ]; then
+ 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" disable
+@@ -265,7 +265,7 @@ default_postinst() {
+ 		rm -f /tmp/luci-indexcache
+ 	fi
+ 
+-	local shell="$(which bash)"
++	local shell="$(command -v bash)"
+ 	for i in $(grep -s "^/etc/init.d/" "$root$filelist"); do
+ 		if [ -n "$root" ]; then
+ 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" enable
 -- 
 2.24.1
 

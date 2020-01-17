@@ -2,84 +2,92 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C4C31411F1
-	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 20:46:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14A56141437
+	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 23:36:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AdUnyYETvi5bht2+ZbzRiVrE06/39OET1efl1T0JpxA=; b=Eb7rI2VMQUxYD4
-	rM25ibC4qO7FQPD58ouA0GS5BWJW9PWDC1lykKwXbV5ZVPM79G7hhfet4AuK8LG3QKHFrlGeiUQcv
-	lN+51dnMdUkOmqYiNyZs+BEQQj1UwZ3xWGFk1xpFmC0polcaFCk58q0yZB7M4cdc1NxiRGkezNovl
-	YgBhZ40cUx4G5QNID1jtVTQruQKmuV9R+DN+pvcLC38eg5+UaUUXiojbvW9ic6Asvp/OwVRzbfvfL
-	njQPRdTjbJ2sfqFRzJkE6oKqpj7bJWuAZLN5TPnpBZ655NquEpT9DDVJZ0erm0q/w0ojDmSlrjHs7
-	ionfcoiNZ4+ET6BgpVYg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rkW639zopZsmWoZPnWhX6GES/UNEkBBeZc2gB9nZ+90=; b=tCdOLyZLTWFcJU
+	VTQxVHP716xSI+PKjGupc9BZiy4rNjc19nxHQsFBrLvZ7Nm+gacJqGwk0MtbS+Uuu4RcQsTC9L1h5
+	8SBLCGquzmjGS9uF36pLhAGJyUIkhI5+HESkw2beb/Ro3A7EjtQGazhZuxIhdJqFWGfJEBufpouLw
+	OcGPc0OfdUGfkcQKqpHft+DwAI1FXs1z6ZTDkdS932o4qWfz9A3c18VgCOmBP8QiT3UeCMvFUK8bA
+	tWuoajGBPrHoK7QTVGqnhwxDvPQ3nlnJfhC129+iYDm9JQvFd0RI1xtyRvaoXGBcjqGJ4Nz5wHmq/
+	uIZuW43XYLYwZIQY7ZEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isXZu-00026m-4t; Fri, 17 Jan 2020 19:46:46 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1isaEL-0001U5-S8; Fri, 17 Jan 2020 22:36:41 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isXZk-000269-Ip
- for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 19:46:40 +0000
-Received: from [192.168.43.216] (ip-109-40-131-92.web.vodafone.de
- [109.40.131.92])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 29FDC22E9C;
- Fri, 17 Jan 2020 20:46:31 +0100 (CET)
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-References: <c0dd994d-fb68-1845-60cb-2dfcc3d5455a@hauke-m.de>
- <CAMdYzYqL3-6s4vcjyT7=UDDQTN85RNQTRQ77ixvRnBk2EaBDHQ@mail.gmail.com>
- <20200116114813.GC84286@meh.true.cz>
- <20200116194359.775fffdd@kosmio.komorska>
- <05299fe0-e929-df32-ac96-50b967203e1e@andreas-ziegler.de>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <ae70a653-4510-1f8b-95ac-ffb2812c629f@david-bauer.net>
-Date: Fri, 17 Jan 2020 20:46:29 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1isaEC-0001TP-PA
+ for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 22:36:34 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y8so10410045pll.13
+ for <openwrt-devel@lists.openwrt.org>; Fri, 17 Jan 2020 14:36:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e1axjNtd7gFeL5q60rNGhJvmj3eJpK6vlyR6oEKvXO0=;
+ b=Puz1IzUITxvvi3W4Sv79af+f/rxG0xVcM3ydSeZBEkY3UcOVP7ZCugU9ya4NhP+vj+
+ 3VVOYY2Wiz/x0ahIk1llhND9fmh2Fx+Jwhi4H0Uw9ujrQwkXxt/CtTmU6/He1DwqB7BJ
+ pCbxnZJMR3SCbCaAa6E9Fvct3HMEknAcEnyxMI5y1qD5WtpNlH1ZRNXBzLA2GaMlB6oL
+ Q01GLKeyn0oMxWmlCU8hK1Opm24LRnubnWt40EtO6W5GyjbxQYMx7XiJJ+o5jw7xhG5U
+ xqYuvgPtLxirVU2DaWwm31NYIQT3ljwD+P9kU/JPQDP6BQch7TRn9c7LlMkRCEpDoMxk
+ jVIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=e1axjNtd7gFeL5q60rNGhJvmj3eJpK6vlyR6oEKvXO0=;
+ b=OWLrvdgzA0SdS22DiyZx/cSRtCHxuLNGyoZAvem6HWcfjI5bg2DGOqiK2+ldjmrY0g
+ O+CHKibdYwhA99fjiXZtpKICognpFbYJTWZCoIjkEKJ2p0H3CGBOZe02cvj92jqCyeN0
+ jtD5g/nVneSSFpLutOqK7IIq/A/XUUF8AXMFhnQhXUP+WO3qZar0Vz3Piog+3aUQc1aY
+ NwUObKHx4jAkym5wIbmsz0FvBTrmpPGYLBm1eTj4msvDkKMYycTMZStfIaJk15hGRVgD
+ yjlsQsSRdhxzQ7Mvb0Nv2cIZTA655zdmERm9c2CYB0MHMWV36iGq0hJtSjm9uyEc8VZ4
+ BYGg==
+X-Gm-Message-State: APjAAAUFM1hDa7ytdZJESr1inahtIGd3M0rL6kFXZnks6BZA/1JUNqRG
+ JQ/ufy/L4N7QrFhjxmyeiGlXQRsZ
+X-Google-Smtp-Source: APXvYqw/71DrkRVrMjjJOnzAfzOS/35Nc0clcqxRXb1VNoxS3Ooj59wiROmZtsu7RV67xcmb6N2hPQ==
+X-Received: by 2002:a17:902:264:: with SMTP id
+ 91mr1536335plc.271.1579300591967; 
+ Fri, 17 Jan 2020 14:36:31 -0800 (PST)
+Received: from localhost.localdomain ([69.42.0.214])
+ by smtp.gmail.com with ESMTPSA id o6sm29172400pgg.37.2020.01.17.14.36.30
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 17 Jan 2020 14:36:31 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Fri, 17 Jan 2020 14:36:29 -0800
+Message-Id: <20200117223629.22902-1-rosenp@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <05299fe0-e929-df32-ac96-50b967203e1e@andreas-ziegler.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_114636_919983_EE89F4F1 
-X-CRM114-Status: GOOD (  15.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200117_143632_814453_702C1471 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] OpenWrt 20.X release plans
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rosenp[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCHv2] base-files/functions.sh: use grep -q
+ instead of []
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,74 +99,59 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Andreas Ziegler <dev@andreas-ziegler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello,
+It's cleaner and faster as it does not need to do extra work.
 
-On 1/17/20 11:14 AM, Andreas Ziegler wrote:
-> Hi,
-> 
-> although i'm more a user than a developer, i would also prefer a sooner
-> release based on 4.19 over a later release based on 5.4.
+Also removed $() to avoid executing the output. The shell can handle it.
 
-I have the same feeling. The state of many targets on 4.19 is pretty good IMHO.
-So i think a timely release somewhere around march/april is possible (as soon as
-the ramips situation is sorted out). I think we can aim for a 5.4 release somewhere
-in late autumn / winter, as targets will be gradually migrated.
+https://github.com/koalaman/shellcheck/wiki/SC2143
 
-Best wishes
-David
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ v2: Fixed &&/|| typo.
+ package/base-files/files/lib/functions.sh | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-> Maybe it's the same problem, too atheros-centric ;-)
-> 
-> Regards
-> 
-> Andreas
-> 
-> Michal Cieslakiewicz wrote on 16.01.20 19:43:
->> Hi!
->>
->> Speaking as a small part-time contributor of some Netgear WN(D)R routers
->> code, please reconsider if jumping over 4.19 straight to 5.4 is not a
->> too big leap. I'm sure kernel devs here knows better than me how many
->> OpenWrt drivers, quirks and enhancements can be ported without too much
->> effort from 4.14 to 5.4 that will really benefit from newer 5.x code,
->> but here are my 5 cents.
->>
->> I was able to port ar934x-nand code from ar71xx 4.4 kernels to ath79 &
->> device-tree 4.19 without going too deep into low-level NAND operations
->> thanks to only minor changes in kernel code. 5.4 apparently deprecates
->> some functions in that area providing 'legacy' knobs for
->> who-knows-how-long. If this particular flash driver won't work with 5.4
->> at the time of 20.x, routers using it (like WNDR4300 and
->> other AR9344-based) effectively will not have any stable OpenWrt
->> release supporting it even though they were in master since the end of
->> 2019.
->>
->> IMHO OpenWrt should have an one final, rock-stable release based on
->> latest 4.x LTS kernel (4.19 that is) with ath79 replacing ar71xx
->> whenever possible.
->>
->> Apologies for being so Atheros-centric :-)
->>
->> Cheers
->> Michal
->>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
->>
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
+diff --git a/package/base-files/files/lib/functions.sh b/package/base-files/files/lib/functions.sh
+index 8e189e4f4d..207fe96ce6 100755
+--- a/package/base-files/files/lib/functions.sh
++++ b/package/base-files/files/lib/functions.sh
+@@ -326,7 +326,7 @@ group_add_next() {
+ 	fi
+ 	gids=$(cut -d: -f3 ${IPKG_INSTROOT}/etc/group)
+ 	gid=65536
+-	while [ -n "$(echo "$gids" | grep "^$gid$")" ] ; do
++	while echo "$gids" | grep -q "^$gid$"; do
+ 	        gid=$((gid + 1))
+ 	done
+ 	group_add $1 $gid
+@@ -336,8 +336,8 @@ group_add_next() {
+ group_add_user() {
+ 	local grp delim=","
+ 	grp=$(grep -s "^${1}:" ${IPKG_INSTROOT}/etc/group)
+-	[ -z "$(echo $grp | cut -d: -f4 | grep $2)" ] || return
+-	[ -n "$(echo $grp | grep ":$")" ] && delim=""
++	echo "$grp" | cut -d: -f4 | grep -q $2 || return
++	echo "$grp" | grep -q ":$" && delim=""
+ 	[ -n "$IPKG_INSTROOT" ] || lock /var/lock/passwd
+ 	sed -i "s/$grp/$grp$delim$2/g" ${IPKG_INSTROOT}/etc/group
+ 	[ -n "$IPKG_INSTROOT" ] || lock -u /var/lock/passwd
+@@ -354,7 +354,7 @@ user_add() {
+ 	[ -z "$uid" ] && {
+ 		uids=$(cut -d: -f3 ${IPKG_INSTROOT}/etc/passwd)
+ 		uid=65536
+-		while [ -n "$(echo "$uids" | grep "^$uid$")" ] ; do
++		while echo "$uids" | grep -q "^$uid$"; do
+ 		        uid=$((uid + 1))
+ 		done
+ 	}
+-- 
+2.24.1
+
 
 _______________________________________________
 openwrt-devel mailing list

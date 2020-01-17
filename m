@@ -2,130 +2,387 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BED051409FB
-	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 13:50:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C43A6140A36
+	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 13:53:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fMQlI+fm//QpnMTqT4pB7JJQO4XGnkDT6TgYpYrzICc=; b=LXUGq1Z98MTELW
-	fZtGHFk+Dtxdpl4C7DELCexrc2Hjqlw9Ay1dPfl4kLVW8V0bWRhMtiLxR1JnKDMeIwZuHkS+Ibwa+
-	aLWebrOto4K1u+L6kugaoIpH1NeyhwbAWFjgyzoEmTuPVgDhU3Q7yXl9+PjPthzT/h52O51hxculv
-	QCe5CYxI30eU2XNuiTV7qyIvsnvuyRE4J3f50mD8Eopt2V49O1tZR39cFfs8MWV4tIfoVYSFgHqa1
-	so4mLjqR2d7JAhKQx3W0txY2OytEYLQwLpJtzaWD7urUE0gGjoVbVwWaL28AZ96y+pwrv7srC/Pw2
-	zSlT5StKMuf/p2FY+g6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:References:To:Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VBEPsygJjmpaHgrAAypEb376K8GapDFfSnvH7Zhyt9I=; b=HfegFne8kCerUx9Lo7Fc3DUqG
+	4rGwo53Gyxj61czUyuqnLTB6RWbAF5ZnYYsO5/UITp6NrOWWwuMMHkQ18tAp1mMo5UyC4bJuxbca5
+	zT1fjdt4DRo8ADm+SAyotNFAAnP7he4t+WONsQYdZDGR8MuXvnCbRRodlAGovZfUWcRSnBQwJm6Og
+	w2+exRQCDDEPXni6lrtrb7PmqJBGNU3AZ1uVdJiUeDNYKv5SwYmGWwlkof2S2BowxKp6NbOoXD1L2
+	lsMWdIV9WFdNkaLlDFaTGxKnp7bRidJbMmjAcVL342pZQWnp1dmLDwJEC3cu2jMjKeQ45f4sKqtAw
+	xPHEg02Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isR4m-0001DB-Up; Fri, 17 Jan 2020 12:50:12 +0000
-Received: from mail-il1-x136.google.com ([2607:f8b0:4864:20::136])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isR4T-0001Ch-NE
- for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 12:49:58 +0000
-Received: by mail-il1-x136.google.com with SMTP id f10so21167173ils.8
- for <openwrt-devel@lists.openwrt.org>; Fri, 17 Jan 2020 04:49:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=T//XbnYl2zCRYKVIoKqWohsCgjpZ6kYhdyak2aAaE0U=;
- b=F+ngviGEJfZvTKyNAJpNMFjchE5+68D1ERWR6XnmclFKP56Pt1RVl1aV1Sx1ckFkIw
- dFrhhSrL5t2QTfk4uyPbcXBWhkimuAjtyLyBLkofM5WqqhXdqhi/6zlX9FilZNmqDkcx
- Sb9+bAgQGcHux1fxULuCfNPTRATG7V85FEwhTQjg0+GI3rNbFHzVnuKiqbxY5P7fOqDd
- a7rcXygGCCE590RZIEjM5OiZU8tf5CaL80OAfuPJUDrH5DkgzzdBuIulvsb6DuXCcJQl
- YLMRzPpxPIUf1LDTlpL/oSqR+YGK434H0iXS7F3WB/JE4wL+ThdjhF6n9zPFoduG5tjd
- 7r9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:in-reply-to:references:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=T//XbnYl2zCRYKVIoKqWohsCgjpZ6kYhdyak2aAaE0U=;
- b=dRXys1wGefbjR9VRRVTXEVoPe3BzDtT+HdZNM0JGlOZDO6qMQ8nrBMwCxnEI2+Teiu
- zuWvJc95fohwoT1Gd6ng8HRP6uX7g55KwHHLh9T2SZAvrzKGGkR/sUX4VzKT2DBmXnbY
- M8KPUlRWbRT8m4lHXuaRFvbV24mWjCAjBcvGa1/kMiQNAI1Ans0XF4d2NwU6CITcLAhj
- CIY5k+KQpIuc+Cw4L632ju6yD2Rz5Wmx3ZcC0tgdkVmG0agubEE2vFPNUqbBuaAeZXV3
- mrQtQsyyCGF3nuy9Vt6CWtOlL64LGtDMIiNQRgtzpqcp87Y58xPjrybPxqs880zIJt6K
- HPeA==
-X-Gm-Message-State: APjAAAVrDIWSiuxeAF/3ZdJkHiubjUbx+MZfzZ5AU4iVec9NV+8dfz8f
- iRnI8AqSAZot4nVGGr6wvqJsX0ZkYktsyqIxIJ8niA==
-X-Google-Smtp-Source: APXvYqyNLjHIwOJyxK0aajqyoOj+XJFj14LaVSA2JlgWV+OFJ3ywRIdmcI2IshoqS1xoYuXXJhSd2MuF9oSXW5VLcq0=
-X-Received: by 2002:a92:9107:: with SMTP id t7mr2843019ild.51.1579265392142;
- Fri, 17 Jan 2020 04:49:52 -0800 (PST)
+	id 1isR85-0003fO-U5; Fri, 17 Jan 2020 12:53:37 +0000
+Date: Fri, 17 Jan 2020 13:53:12 +0100
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+References: <20200117121552.2225-1-freifunk@adrianschmutzler.de>
+In-Reply-To: <20200117121552.2225-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-Received: by 2002:a6b:a0b:0:0:0:0:0 with HTTP;
- Fri, 17 Jan 2020 04:49:51 -0800 (PST)
-In-Reply-To: <c0dd994d-fb68-1845-60cb-2dfcc3d5455a@hauke-m.de>
-References: <c0dd994d-fb68-1845-60cb-2dfcc3d5455a@hauke-m.de>
-From: Tom Psyborg <pozega.tomislav@gmail.com>
-Date: Fri, 17 Jan 2020 13:49:51 +0100
-Message-ID: <CAKR_QVKTqZ5jUXyduYh=tPp2sOs_xeHWmt9-YD2xEZmF3ffdPw@mail.gmail.com>
-To: openwrt-devel@lists.openwrt.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_044953_787946_C528E772 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:136 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pozega.tomislav[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: Re: [OpenWrt-Devel] OpenWrt 20.X release plans
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.25518.1579265608.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: Filip Moc via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org, Enrico Mioso <mrkiko.rs@gmail.com>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: Filip Moc <lede@moc6.cz>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: michal.cieslakiewicz@wp.pl, hauke@hauke-m.de, ynezz@true.cz,
- pgwipeout@gmail.com, dev@andreas-ziegler.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Subject: Re: [OpenWrt-Devel] [PATCH v4] ath79: add support for TP-Link
+ TL-MR6400
+Content-Type: multipart/mixed; boundary="===============5286563987152119438=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-T24gMTYvMDEvMjAyMCwgSGF1a2UgTWVocnRlbnMgPGhhdWtlQGhhdWtlLW0uZGU+IHdyb3RlOgo+
-IEhpLAo+Cj4gSSBtZWV0IHdpdGggam93IGFib3V0IDIgd2Vla3MgYWdvIGFuZCB3ZSB0YWxrZWQg
-YWJvdXQgYSBsb3Qgb2YgT3BlbldydAo+IHJlbGF0ZWQgc3R1ZmYsIG9uZSBvZiB0aGUgdG9waWNz
-IHdhcyB0aGUgcmVsZWFzZSBhZnRlciAxOS4wNy4KPgo+IEFzIHRoZSAxOS4wNyByZWxlYXNlIGlz
-IG5vdyBkb25lLCBJIHdvdWxkIGxpa2UgdG8gZm9sbG93IHVwIG9uIHRoaXMgdG9waWMuCj4KPiBX
-ZSB0aG91Z2h0IHRoYXQgdGhlIHRpbWUgYmV0d2VlbiB0aGUgMTkuMDcgYnJhbmNoIGFuZCB0aGUg
-ZmluYWwgcmVsZWFzZQo+IHdhcyB3YXkgdG9vIGxvbmcsIHRoaXMgc2hvdWxkIGJlIG11Y2ggc2hv
-cnRlciBpbiB0aGUgbmV4dCByZWxlYXNlLCB3ZQo+IHNob3VsZCB0YXJnZXQgOCB3ZWVrcyBmb3Ig
-dGhhdC4KPgo+IE15IHByZWZlcnJlZCB0aW1lbGluZSB3b3VsZCB0aGUgdGhlIGZvbGxvd2luZzoK
-PiAqIEJlZ2lubmluZyBvZiBGZWJydWFyeTogZnJlZXplIG1hc3RlciBmb3IgYmlnIGNoYW5nZXMg
-KGFkZGluZyBuZXcKPiBib2FyZHMgaXMgbm8gcHJvYmxlbSkKPiAqIEJlZ2lubmluZyBvZiBNYXJj
-aDogYnJhbmNoIG9mZiAyMC4zIHJlbGVhc2UgYnJhbmNoCj4gKiAxIHdlZWsgYWZ0ZXIgdGhlIGJy
-YW5jaCB3YXMgY3JlYXRlZDogdGFnIGFuZCBidWlsZCAyMC4zLXJjMQo+ICogMyB3ZWVrcyBsYXRl
-ciB0YWcgYW5kIGJ1aWxkIDIwLjMtcmMyCj4gKiAzIHdlZWtzIGxhdGVyIHRhZyBhbmQgYnVpbGQg
-MjAuMyBmaW5hbAo+Cj4gVGhlbiB3ZSB3b3VsZCBkbyB0aGUgbmV4dCBmaW5hbCByZWxlYXNlIGlu
-IE1heSAyMDIwLgo+Cj4gVGhpcyBwbGFuIGlzIGJhc2VkIG9uIHVzaW5nIGtlcm5lbCA0LjE5LCBp
-ZiB3ZSB1c2Uga2VybmVsIDUuNCBJIHdvdWxkCj4gYXNzdW1lIHdlIGhhdmUgdG8gc2hpZnQgYWxs
-IGRhdGVzIGJ5IDMgbW9udGhzLCBzbyBicmFuY2ggb2ZmIGluCj4gYmVnaW5uaW5nIG9mIEp1bmUg
-YW5kIGZpbmFsIHJlbGVhc2UgaW4gQXVndXN0Lgo+CgpBbmQgdGhlbiBjb21lIHN1bW1lciB2YWNh
-dGlvbnMgYW5kIG90aGVyIHJlYXNvbnMgdG8gbm90IGJlIGFibGUgdG8KZmluaXNoIGl0IG9uIHRp
-bWUgc28gaXQgd291bGQgYmUgZGVsYXllZCBwcm9iYWJseSBldmVuIGZldyBtb3JlCm1vbnRocy4u
-LgoKT24gMTYvMDEvMjAyMCwgUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3JvdGU6Cj4K
-PiBZZWFoLCB3ZSdyZSBhbGwgYXdhcmUgYWJvdXQgdGhhdC4gSWYgd2UgZGVjaWRlIHRvIHNraXAg
-NC4xOSwgd2UncmUgcGFydGlhbHkKPiB0aHJvd2luZyBhd2F5IGEgbG90IG9mIHdvcmssCgpZb3Ug
-c2FpZCBpdC4gVGh1cyBpdCdzIGJldHRlciB0byByZWxlYXNlIGJhc2VkIG9uIDQuMTkKCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwg
-bWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0
-cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+--===============5286563987152119438==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
+
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============5286563987152119438==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from hosting.moc6.cz ([2a02:c60:c70:8900::1] helo=moc6.cz)
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1isR7t-0003Y7-Hi
+	for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 12:53:27 +0000
+Received: by moc6.cz (Postfix, from userid 1025)
+	id 14A492320020; Fri, 17 Jan 2020 13:53:12 +0100 (CET)
+Date: Fri, 17 Jan 2020 13:53:12 +0100
+From: Filip Moc <lede@moc6.cz>
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+Cc: openwrt-devel@lists.openwrt.org, Enrico Mioso <mrkiko.rs@gmail.com>
+Subject: Re: [PATCH v4] ath79: add support for TP-Link TL-MR6400
+Message-ID: <20200117125312.GA17767@moc6.cz>
+References: <20200117121552.2225-1-freifunk@adrianschmutzler.de>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20200117121552.2225-1-freifunk@adrianschmutzler.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200117_045325_742849_926709ED 
+X-CRM114-Status: GOOD (  19.44  )
+X-Spam-Score: -0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.0 points)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+
+Hi, 
+
+thanks for patch. Good to see support for MR6400 possibly going to ath79.
+
+Just to clarify known issues.
+The first two issues are both just the same thing.
+Problem with interface showing always as up with carrier is with eth0, not eth1
+(eth0 is LAN1 to LAN3, eth1 is LAN4/WAN).
+
+Filip
+
+
+On Fri, Jan 17, 2020 at 01:15:52PM +0100, Adrian Schmutzler wrote:
+> From: Enrico Mioso <mrkiko.rs@gmail.com>
+> 
+> This device is an LTE router supported in ar71xx so far.
+> As per original commit, hardware specifications (v1.0 EU):
+> - SoC: QCA9531
+> - Flash: Winbond W25Q64FV (8MiB)
+> - RAM: EtronTech EM6AB160TSE-5G (64MiB)
+> - Wireless: SoC platform only (2.4GHz b/g/n, 2x internal antenna)
+> - Ethernet: 2NIC (3x100M + 1x100M)
+> - WWAN: TP-LINK LTE MODULE (2x external detachable antenna)
+> - Power: DC 12V 1A
+> 
+> Flashing instructions:
+> You can flash via tftp recovery (serve factory image as /mr6400_tp_recovery.bin
+> on 192.168.0.66/24, connect to any ethernet port and power on device while
+> holding the reset button). Flashing via OEM web interface does not work.
+> 
+> Known issues:
+> - LTE module does not always come up during boot. This can be fixed by turning
+>   it off and on again.
+> - As it happened occasionally in ar71xx, during bursty flash activity, LTE
+>   module init will fail, with USB enumeration errors.
+> - eth1 (LAN) always shows carrier as 1 even if no cable is plugged in (this
+>   works "correctly" on ar71xx)
+> 
+> Signed-off-by: Enrico Mioso <mrkiko.rs@gmail.com>
+> [rebase and several adjustments]
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> Tested-by: Filip Moc <lede@moc6.cz>
+> ---
+>  .../ath79/dts/qca9531_tplink_tl-mr6400-v1.dts | 167 ++++++++++++++++++
+>  .../generic/base-files/etc/board.d/01_leds    |   5 +
+>  .../generic/base-files/etc/board.d/02_network |   5 +
+>  target/linux/ath79/image/generic-tp-link.mk   |  12 ++
+>  4 files changed, 189 insertions(+)
+>  create mode 100644 target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
+> 
+> diff --git a/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
+> new file mode 100644
+> index 0000000000..7299257cda
+> --- /dev/null
+> +++ b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
+> @@ -0,0 +1,167 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/dts-v1/;
+> +
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/input.h>
+> +
+> +#include "qca953x.dtsi"
+> +
+> +/ {
+> +	compatible = "tplink,tl-mr6400-v1", "qca,qca9531";
+> +	model = "TP-Link TL-MR6400 v1";
+> +
+> +	aliases {
+> +		led-boot = &led_power;
+> +		led-failsafe = &led_power;
+> +		led-running = &led_power;
+> +		led-upgrade = &led_power;
+> +		label-mac-device = &wmac;
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +
+> +		/* D12 */
+> +		wan {
+> +			label = "tp-link:white:wan";
+> +			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		/* D11 */
+> +		4g {
+> +			label = "tp-link:white:4g";
+> +			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		/* D5 */
+> +		wps {
+> +			label = "tp-link:white:wps";
+> +			gpios = <&gpio 3 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		/* D3 */
+> +		wlan {
+> +			label = "tp-link:white:wlan";
+> +			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "phy0tpt";
+> +		};
+> +
+> +		/* D2 */
+> +		led_power: power {
+> +			label = "tp-link:white:power";
+> +			gpios = <&gpio 13 GPIO_ACTIVE_HIGH>;
+> +		};
+> +
+> +		/* D4 */
+> +		lan {
+> +			label = "tp-link:white:lan";
+> +			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
+> +		};
+> +	};
+> +
+> +	keys {
+> +		compatible = "gpio-keys";
+> +
+> +		/* SW2 */
+> +		reset {
+> +			label = "Reset button";
+> +			linux,code = <KEY_RESTART>;
+> +			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
+> +			debounce-interval = <60>;
+> +		};
+> +
+> +		/* SW3 */
+> +		rfkill {
+> +			label = "RF kill button";
+> +			linux,code = <KEY_RFKILL>;
+> +			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
+> +			debounce-interval = <60>;
+> +		};
+> +	};
+> +
+> +	gpio-export {
+> +		compatible = "gpio-export";
+> +
+> +		gpio_usb_power {
+> +			gpio-export,name = "tp-link:power:lte";
+> +			gpio-export,output = <0>;
+> +			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+> +		};
+> +	};
+> +};
+> +
+> +&uart {
+> +	status = "okay";
+> +};
+> +
+> +&spi {
+> +	status = "okay";
+> +
+> +	num-cs = <1>;
+> +
+> +	flash@0 {
+> +		compatible = "jedec,spi-nor";
+> +		reg = <0>;
+> +		spi-max-frequency = <25000000>;
+> +
+> +		partitions {
+> +			compatible = "fixed-partitions";
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +
+> +			uboot: partition@0 {
+> +				label = "u-boot";
+> +				reg = <0x000000 0x020000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@20000 {
+> +				compatible = "tplink,firmware";
+> +				label = "firmware";
+> +				reg = <0x020000 0x7d0000>;
+> +			};
+> +
+> +			art: partition@7f0000 {
+> +				label = "art";
+> +				reg = <0x7f0000 0x010000>;
+> +				read-only;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&eth0 {
+> +	status = "okay";
+> +
+> +	phy-handle = <&swphy0>;
+> +
+> +	mtd-mac-address = <&uboot 0x1fc00>;
+> +	mtd-mac-address-increment = <1>;
+> +};
+> +
+> +&eth1 {
+> +	mtd-mac-address = <&uboot 0x1fc00>;
+> +	mtd-mac-address-increment = <(-1)>;
+> +};
+> +
+> +&wmac {
+> +	status = "okay";
+> +
+> +	mtd-cal-data = <&art 0x1000>;
+> +	mtd-mac-address = <&uboot 0x1fc00>;
+> +};
+> +
+> +&usb0 {
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	status = "okay";
+> +
+> +	hub_port: port@1 {
+> +		reg = <1>;
+> +		#trigger-source-cells = <0>;
+> +	};
+> +};
+> +
+> +&usb_phy {
+> +	status = "okay";
+> +};
+> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> index de4e8b4a7f..1023ba7a39 100755
+> --- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> +++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
+> @@ -215,6 +215,11 @@ tplink,re450-v2)
+>  	ucidef_set_led_netdev "lan_data" "LAN Data" "tp-link:green:lan_data" "eth0" "tx rx"
+>  	ucidef_set_led_netdev "lan_link" "LAN Link" "tp-link:green:lan_link" "eth0" "link"
+>  	;;
+> +tplink,tl-mr6400-v1)
+> +	ucidef_set_led_switch "lan" "LAN" "tp-link:white:lan" "switch0" "0x0e"
+> +	ucidef_set_led_netdev "wan" "WAN" "tp-link:white:wan" "eth1"
+> +	ucidef_set_led_netdev "4g" "4G" "tp-link:white:4g" "usb0"
+> +	;;
+>  tplink,tl-wr842n-v2)
+>  	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
+>  	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x04"
+> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> index a96b504d5a..0bae9dc384 100755
+> --- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> +++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
+> @@ -236,6 +236,11 @@ ath79_setup_interfaces()
+>  		ucidef_add_switch "switch0" \
+>  			"0@eth0" "2:lan:3" "3:lan:2" "4:lan:1" "1:wan"
+>  		;;
+> +	tplink,tl-mr6400-v1)
+> +		ucidef_set_interfaces_lan_wan "eth0.1 eth1" "usb0"
+> +		ucidef_add_switch "switch0" \
+> +			"0@eth0" "1:lan:1" "2:lan:3" "3:lan:2"
+> +		;;
+>  	tplink,tl-wr842n-v2)
+>  		ucidef_set_interface_wan "eth1"
+>  		ucidef_add_switch "switch0" \
+> diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
+> index a7266f05a9..53138e343b 100644
+> --- a/target/linux/ath79/image/generic-tp-link.mk
+> +++ b/target/linux/ath79/image/generic-tp-link.mk
+> @@ -374,6 +374,18 @@ define Device/tplink_re450-v2
+>  endef
+>  TARGET_DEVICES += tplink_re450-v2
+>  
+> +define Device/tplink_tl-mr6400-v1
+> +  $(Device/tplink-8mlzma)
+> +  SOC := qca9531
+> +  DEVICE_MODEL := TL-MR6400
+> +  DEVICE_VARIANT := v1
+> +  TPLINK_HWID := 0x64000001
+> +  DEVICE_PACKAGES := kmod-usb2 kmod-usb-net kmod-usb-net-rndis kmod-usb-serial \
+> +	kmod-usb-serial-option adb-enablemodem
+> +  SUPPORTED_DEVICES += tl-mr6400
+> +endef
+> +TARGET_DEVICES += tplink_tl-mr6400-v1
+> +
+>  define Device/tplink_tl-wdr3500-v1
+>    $(Device/tplink-8mlzma)
+>    SOC := ar9344
+> -- 
+> 2.20.1
+> 
+
+
+--===============5286563987152119438==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============5286563987152119438==--

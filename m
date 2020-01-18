@@ -1,90 +1,71 @@
 Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org>
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
-Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CAC714143C
-	for <lists+openwrt-devel@lfdr.de>; Fri, 17 Jan 2020 23:38:31 +0100 (CET)
+Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
+	by mail.lfdr.de (Postfix) with ESMTPS id 232D1141564
+	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Jan 2020 02:19:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WWYt2tkPPp73oDHTL1hgK4oSfToK2SmWZF9TZqJQfb0=; b=FYf126W0OnZHs8
-	E4b1CDs1KBDfUeJTKSW9OBubJEoPY9fYmuU1wbvexhT7n6BpLlbEIyQpLPPRqMMLJ4613xS5GpIWu
-	rH7TufvKc6fZOJblTMhvSsPuoY+hEBnV2iWnBBbOlaNHbITNLMevXbW7ViDmdqj6w9KcMhvz+zjMf
-	C9ETfPz1ptTNB7ufm1JfjcgZUx/NKQYspmfWzBs39gnbRJ4HWSw7bnasFjWemF2JDoxzJYeDrlPAF
-	Z8xxhiWEtFDJvsNVvK2hvlAaRg3sgRJWhQnJGJMQKEOS1vgb92P3leiuUmMJsVf8xxVwMSSB6IKrF
-	haNg49kLT98fLns3ZJog==;
+	List-Owner; bh=nIM2VWwhgdA/bH2EKC+X0GbH+eOHkbaLAAJgHhak8Hs=; b=fD96PRCc83EJx5
+	i8YgMsUOFJx8RB64/M9Dz4NGzjZu2ylNAR2qF1piyV40KzDKAi/TZ0jdEenmYCJK5Mbve+XWmiPOf
+	GYuNipK7XQFZp2krxcTseDXGw0YV/iujcnrW3hiBEJGAPvJDLPSSqe9DMsY1Rl05yYGmv0fi3N0Kk
+	xOEwU//kBxQDg7N0bN6g3E5OpE9JclNRhh+gyFYwQXA9/DE1qQU16QiwlUwgpOG60g+pKFJRd/nwU
+	iMBpvyW5mJNAAq9tW1o82lSoQW5XPPUHGhfTkkNBfiQrhqq5AOX6pISzcCx+tuMKqx/3w+AXNm9Pq
+	VfNNcbbcLl67n7//4HPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isaG5-0002wl-Ew; Fri, 17 Jan 2020 22:38:29 +0000
-Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
+	id 1iscko-0004kL-8Z; Sat, 18 Jan 2020 01:18:22 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isaFx-0002wQ-HY
- for openwrt-devel@lists.openwrt.org; Fri, 17 Jan 2020 22:38:22 +0000
-Received: by mail-pj1-x1036.google.com with SMTP id d5so3758080pjz.5
- for <openwrt-devel@lists.openwrt.org>; Fri, 17 Jan 2020 14:38:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VUMulhz6TsDy5coagttb/8NQWlkW1x+dLXhoSfZJjgg=;
- b=DNBTK8EuUz4bpv+4/vSH7fumh8I5cUQ9TC+qzdK7MUxJfp1nI+yigk07F8lGhDXGV7
- 8rWcjF9TTrBScMfVj2b99vlSurQNL5WQYI8habj/v4fMtf02F+9ahjgobVWafeyVNtrk
- MGDVcowQpGpuwCtYoVMcnc9U4P4lRapKdYcvhiHuEx3LSTXdhBzniqqiM2r6Eu2Uj/48
- vUiTSPtGJRV4z7+nJjLKzMREzyGtwUhvKs/fxh/BwLKoGFvrSZNO4j7ccgw0BvOpkEzO
- hvUfoyY8121PG+Klf1qQsMfetHzX5U9137B9ma2ltfFlq2U4ENT/xJs8UgrSIP8cQiyI
- KcJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VUMulhz6TsDy5coagttb/8NQWlkW1x+dLXhoSfZJjgg=;
- b=brmgCwrPHvx65A7I8MMBBYJXTffuycQEBX677jQqVwLU47qYKLyrMsTiqOkQY+/czL
- 83LCDA0V/IYgePcIl2Gbew4DCR2TuYhXSBaRSk9mYtVzNUbbzuzq00x1N59iW/oTc1l8
- f+8vXUlleYfQrWfRbA6sfozIbPyqC8GGKQa/UeM84zhEPdyt/qU8+ukMUUA/lcWEJycC
- ZwHP2GgOoFMunUCSvKYWAQT2REDeIScO4xEH1t5qMuKuD4kFFRPMsEIN+mD4W1LwwpH1
- EHZIduNZ846RxkaNLfgF2Lpj8DEfTdK3EQ7Y+Xb0fP3ZtYyU5fTSS+UBtkNANWeUfBnO
- aVMg==
-X-Gm-Message-State: APjAAAUJrlgP+dTcp7+hRlxflrz/YxEFoUFc8urjgwqoWf0auFSHOdba
- zLcTGK26172JQwVBX1JkxHJVXliP
-X-Google-Smtp-Source: APXvYqwOsBSesaOR5E4QI0IuudgeMp3bfCGeJfbrM8IK6XEuIBN/zSuWxw2R31sqBei1keBOY9WdLw==
-X-Received: by 2002:a17:90a:3747:: with SMTP id
- u65mr8389733pjb.25.1579300700505; 
- Fri, 17 Jan 2020 14:38:20 -0800 (PST)
-Received: from localhost.localdomain ([69.42.0.214])
- by smtp.gmail.com with ESMTPSA id j8sm30047038pfe.182.2020.01.17.14.38.19
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 17 Jan 2020 14:38:20 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
+ id 1isckh-0004jM-Rp
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 01:18:17 +0000
+Received: from buildfff.adridolf.com ([188.194.105.26]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis)
+ id 1My3Mv-1jqt0U18Jj-00zWz0 for <openwrt-devel@lists.openwrt.org>; Sat, 18
+ Jan 2020 02:18:13 +0100
+From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 17 Jan 2020 14:38:19 -0800
-Message-Id: <20200117223819.23058-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.24.1
+Date: Sat, 18 Jan 2020 02:17:28 +0100
+Message-Id: <20200118011728.45701-1-freifunk@adrianschmutzler.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Provags-ID: V03:K1:PsnAY+09hxA19VhgjYEiE4ueumOF/S5SMiQh4yucUYoJBcKZFS9
+ KgFB2/WMvtk62muG3MUVp7OXHmf49BTy7ZBcoaC0nhprqYPD7LTqVYWkelhkitc+mymd87V
+ 3O1UzlKmIDItuy3Lx7SzVh2+xEUCUe73/+LGcS/hlnvJeK2XYVU/l+qxyAuXITO/HXKiksm
+ ewbbTxvwnv8DpQi/omm6g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:wSxy3L2gM1Y=:Hwt4YloWJnegPBW4q3eNx3
+ P+arLCl0WMp/BZocEC4I4Ibeh435m6OQ8rjNGEjSh1jfVw7ErHCcTGKE6DtbxydoBEvi/CilS
+ 1c/0my1Q67MpHeGQ1lIUoq3fhduRyScp9tDH6b2j2HbocUdLNW0QrLNBcbj0K1Nw5G3mYMUH6
+ ztYgD6yWOP0EyIEEWVUiYWoAAFOWb1GtrC5tkjvCFCOTdXfFEcRh87K1/pXQCMIGfsxW3gjJK
+ N2Febui1LjuPmjm+7HhMHRWtfPVNMedEmhu5SNIvkeVKGflPJRp8fZCYYjUJduUXaPYH88ApA
+ Qf0+O1RHolONfqucgk4ULKsEwaXaNpHYrxcQyZrpHYfF6sUgV0gz9z5gqP2EXKCOJ0KAxod4z
+ X4nvgGhGM04xNSSNL6/RN6gSAb9XnoS51NmBFOWRPrK45lPskj7aGOg5q3mVfCVIHphHYTm42
+ ApVCcYjigSc3NtI/fqX9yPRth/wP7RF6XIDlTN/J+/AA/nj+PDGgU6joeUn5sASVihq8/YAdD
+ Yc7O4OcAEEn6JKL5FIvp/6Rn0aqiwJ1JcIuQB3eKuP/lIagd70ZHeG64J5BvykOtMziIu8MIB
+ wX1eiJb5yFlZup5PSqex3YyWtF+nozm9ngnLjMxfIKPoiLknaCZtCI9gqcrZeXlcAaVOFKRMr
+ 6ASMARLSKerYvfQfiQy5fYeFKo3v+GtvCL5t5ha2eg6E+Es72qqdNChpl/VF5+Gs4EvTB3UOF
+ dlpQBN5Nx8ztYOgBDRSpMJDFVVWw5Sz7dAR6NTepzvKmVc9ur4YEBMC0EDcd1qr84W+tgU7Qk
+ I1Cqln/sWxtJeZUxmDSTFWHgCmCPCdzfV32fSHRrZ2sNTD7dRjjqZKr4FmQ4hKuYhHv0Q6zT/
+ p63nq0ubhmw8Jb3iZI5fKMSmgntoauK2s/s9zvoP0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_143821_579225_DF0E26CE 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20200117_171816_197313_B9C8C8C0 
+X-CRM114-Status: UNSURE (   6.47  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rosenp[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCHv2] base-files/functions.sh: use command -v
- instead of which
+Subject: [OpenWrt-Devel] [PATCH] octeon: remove redundant network setup
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,40 +82,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-which must be executed. command -v is a shell builtin.
+No need to have specific setup when default case does the same.
 
-https://github.com/koalaman/shellcheck/wiki/SC2230
-
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
+Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- v2: enclose command -v in $().
- package/base-files/files/lib/functions.sh | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ target/linux/octeon/base-files/etc/board.d/01_network | 4 ----
+ 1 file changed, 4 deletions(-)
 
-diff --git a/package/base-files/files/lib/functions.sh b/package/base-files/files/lib/functions.sh
-index 207fe96ce6..bc67e65edc 100755
---- a/package/base-files/files/lib/functions.sh
-+++ b/package/base-files/files/lib/functions.sh
-@@ -176,7 +176,7 @@ default_prerm() {
- 		ret=$?
- 	fi
+diff --git a/target/linux/octeon/base-files/etc/board.d/01_network b/target/linux/octeon/base-files/etc/board.d/01_network
+index 79e508955e..f5c8175c54 100755
+--- a/target/linux/octeon/base-files/etc/board.d/01_network
++++ b/target/linux/octeon/base-files/etc/board.d/01_network
+@@ -8,10 +8,6 @@
+ board_config_update
  
--	local shell="$(which bash)"
-+	local shell="$(command -v bash)"
- 	for i in $(grep -s "^/etc/init.d/" "$root/usr/lib/opkg/info/${pkgname}.list"); do
- 		if [ -n "$root" ]; then
- 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" disable
-@@ -265,7 +265,7 @@ default_postinst() {
- 		rm -f /tmp/luci-indexcache
- 	fi
- 
--	local shell="$(which bash)"
-+	local shell="$(command -v bash)"
- 	for i in $(grep -s "^/etc/init.d/" "$root$filelist"); do
- 		if [ -n "$root" ]; then
- 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" enable
+ case "$(board_name)" in
+-erlite)
+-	ucidef_set_interfaces_lan_wan "eth0" "eth1"
+-	;;
+-
+ *)
+ 	ucidef_set_interfaces_lan_wan "eth0" "eth1"
+ 	;;
 -- 
-2.24.1
+2.20.1
 
 
 _______________________________________________

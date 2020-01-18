@@ -2,60 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 251EC14156A
-	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Jan 2020 02:23:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CC04141568
+	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Jan 2020 02:22:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M51/6YGXkZAQtbWPdIMcEUHC3tFcTHDbO8hIXUIrqy4=; b=a0F5lx3BIbYPnv
-	MprdOmLWQDw7gcDqwFjkhEFN0FVpw1uR6O49qcwjpBVep/tZ20hqptqSEbYWivsh4nZiV06lP4xli
-	9tZyXJXdC3Tu7QzoKOiJQgIXsi4x4a00MP8nMG2c75BZ9NjI7eP3NrFIhNaqLMwfr7QCAoP+/3jGB
-	uPZ6aSr/1XR55pYIfGqDOFm7oOtnA0HkX4nYE14H7M83jcB7I0/w3xiTSEH2SRGA33zOM3LILbNio
-	wMLEjyyHBalWDP/1zJPf+0F7AQHs+x+ZliIdlb1hbomjIyNpx1L04FK6+GWS/6iCnjtaMldswPwSM
-	/Lguxkh5CwitmSU4Ef5g==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=78Is1L0Tut34GoOvetd9iEB0DrjgqqL0wkOL+kjlwWo=; b=R0S2aWRvGXmNLOQ/Knu3Ec0Av+
+	Aw3THfG+lMdwFqTBxgrFn1R2FkzS6PUjcKR5vEdIpo9PWZ9e2O819hIgWFjXBQ9re9itVYCStddCo
+	AZ+E+eE0ekgAVG2sHzOoBzaCkns9SZwc8sTJ6zWV1d+w2Fw8Oeqm1woBxeYS9p4qCwhRycJdY8xNV
+	maRwVPR9ofvRQEbjKZTCsHLYxi1O5ntc6xCppzHEBCePMmA3rJdjxUEYc0kI+fV4Klog42cDidgWU
+	5V/kqB0Jsqxsfgq9SfZAjzk4Lovs2C7cnfgCpNPtUSXtQTL4pW3gXHTXA0DURZ0wKqGloAvHrgqC2
+	broyr8UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iscoW-0006kF-9y; Sat, 18 Jan 2020 01:22:12 +0000
+	id 1iscog-0006tp-Fh; Sat, 18 Jan 2020 01:22:22 +0000
 Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iscoO-0006ir-8x
- for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 01:22:05 +0000
+ id 1iscoO-0006iq-8w
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 01:22:06 +0000
 Received: from buildfff.adridolf.com ([188.194.105.26]) by
  mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1MGi6m-1inh7L0Bvu-00Drp6 for <openwrt-devel@lists.openwrt.org>; Sat, 18
+ id 1MkHEN-1jLexU0zNZ-00kjbT for <openwrt-devel@lists.openwrt.org>; Sat, 18
  Jan 2020 02:22:01 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 18 Jan 2020 02:21:11 +0100
-Message-Id: <20200118012115.46148-1-freifunk@adrianschmutzler.de>
+Date: Sat, 18 Jan 2020 02:21:12 +0100
+Message-Id: <20200118012115.46148-2-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200118012115.46148-1-freifunk@adrianschmutzler.de>
+References: <20200118012115.46148-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:+ArqT8i8y2DZI/3srupZ/4r8eTTdlZNDqlWL5QLYYs8Vd0uhu4P
- KpwghkYtpudX5++UxnKXqubUsVC704Z07ETh+5vNJu1QVJKwdiyvpl8vdJpwpABaZ2Xqyjm
- CBIqDIcncvKB4VEc8Qg9NaD6rwVI6ML+ohRoVwtrrO6yibBEm6MGz3cv9zAYbaF3aLYv8Uq
- F8dYN16vYYlLE2f/YhfZQ==
+X-Provags-ID: V03:K1:4HqUZsaf6RrFhlZVjZmDqRvLhypPYZttXL/5NnIY2SwOKJFJuBm
+ rkW2I6z3iYmDErERlFWE6BwR+6tSyrzWVY1e4mu5aKuhB9s/Ubam0IVZscQ069hm7/ck3XB
+ nl6gV/k7YCXcM73NFmArVh2ere3YigwJFDauwSVdcsNb4uP8EeTM4cbqbWDMJTuZLXJxqlt
+ 0/5Qv/YN79GGt8RFm8vXg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:gaU5F/VVCV4=:buzsqYZXX9y8SV4GtCftTX
- LzPk9MuNO0PtdlHND7HjUpjAzij0Jml1F64GFSTEOdm9F2wk6f6gZ+N84q88fCCN1GItEG5LT
- 7+hF+b2q9PISLQR8RYAv7V6uh8ey1VcRHthA6O52oFjRkTDG78gfd7VR0NEK5ZH6WzGT4g5Lj
- iL9m03HpqNqKgtEWe6wLxaKDWcusgyCMMY0wDe3bRuFe07LmLA1hda7ttJzou1g/Iek+lSo+X
- 93wl8VD+GF/Hma0f3A/H7z4ZMWWvrTTQb4ePmXq2/JwkfZ+Sz/d9NC/CFU1kMSQou5kqnzS/6
- ro3d95JhPI4D/OI1t3PJqNMiiRwkHqA95Da+qVSs6UYrDRv6ofo5HeicxAY5x2axazGVdCcHv
- yBnYBk+N2qLCNH9Dcb01KXKMZEt8jirGaY6CwGDxvOXW6qzDYyMcz36An0SqpKK6IKO2t7wiu
- +rBdUTlw37vXuNCCvRBreVSqiBQM7z4sYFjGaiK5+wlvEuM9HA0ZXVJlQQCpjyxFkg5lbB+wX
- dsmMLJEmUI6QZN8EyW8DOWqkRFnOmbOORhPbBvtok0rCPKPwCbwsqJKqBArCwt2OhIh5C+gh7
- UMtPUAkIixzfol4Ac8kgFA9aQsZazG+v8CSB8CAK7OJadKiwb03g2MKL86asy/2GOp+DHBxVC
- VN7AbxgsWHvmMHYP8IugHblQJ7hd5Ujqj170u1Afi2Jzzw0SacSCCf5TD414LM5B/e315ppR9
- uONhRWjniv3C9gFWoZczgkZfEyKcQBsHqhaRYxDpsKR5c4EpO093adhPFLejBHk86r5A3R7vW
- +fWzZT4i4oFnCTfuY4XHyhSWHc28ldn3NOHzzcMFWUEVeyPd1KkRI8WczP2PQWJn0FRnVGbR8
- A0aCQYSxH8+uXKT5SKRXPOXmDvfH3hL7qcMczUsqk=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:C2WitC4d4QQ=:hUIckvUiKag5aGcTRHriC/
+ z3KkINlhvUjzCt6pXaPqb4HvqfN99N9MBa8GUtjl/jq5rEvPSRv2MkQ84hWl95ZCE9So6pOSb
+ +wggJUEZ+5unybofxNg33cNNaf8jxpecV86FwFv5C8zNI9Thr/8Kxc4ZCE/IN9s+kiPJOghWd
+ 7QAwiXXNhVspflDG9nKxwNOA0XoVkKk5CTJiCWQ158XbGr9zbNnLgZibFt7HXT0aZbS5djgE4
+ MQ6scFqaPXSUuOKRd28CJIC/PLWj1vZ2O48kSn4b6lzcdaT45L8n+32lAZ4o1ydYYZT+ll4+U
+ 8LhYN9mU6b48Hy3JnkLbKLvNIpve0xoCFTkqDnFDHmDG+3sd6/FYY2qXOyLJXuI0rZF4uUycS
+ c38VoGevu09I2Yd0lGno0PJsLtwv3F52wZMobKKrZHdZ/TQ/uWYnzOTVkSiCn1igBxnJy1HRm
+ p4Jww2PAt7ELpV4scsJUbLcD9JSOzZf8zFpjwDdADJoNf+yO0htN4qW/wQiLsFt5Rq1sGiT//
+ qk50TFEVdPNpDVFb60DC1elqT1nEZb/3I2pY1KU89EU9gDpxNevKhl3Yi2Kn6pW9Wk4+z+4Qy
+ K0S+UhfEZHAHsWoYxEHkJaLAwt3ODRM/9imfkzRx9pCb0PAkRjrBPIRgDsXm4z9ddDt+rAu7u
+ 7YtARYgAH2Qu7JDMyA82ShpxEXCzRYTxJ/tsCZ5QYrzGM1wuBDJztErCqzzNdiyojmmnAPflT
+ zOC17KzB0FakQLpk/BlVX3jtuWLJceblrxIt7Txrh7NwsMwEc/4+jUulefl/IkFgTCFyLKbkY
+ DlJ7rZNKOEcp/KivG9cSWkbWd2XKVNUgqdlwQFSoYfyRC7s444FIZ18EJh9yiLaDKUiTL5MlA
+ SUFrF5fTW/QrLmxFYdZDD8S/28xlsa5nyYaBBKE/4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_172204_610950_1FD01CB7 
-X-CRM114-Status: UNSURE (   8.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200117_172204_610137_1F9F3F13 
+X-CRM114-Status: GOOD (  10.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,8 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH 1/2] mvebu: move subtarget image Makefile
- switch to parent Makefile
+Subject: [OpenWrt-Devel] [PATCH 2/2] mvebu: use SOC to derive DEVICE_DTS
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,91 +84,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This moves the if conditions for choosing which image Makefiles
-are used to the parent image/Makefile. It seems more convenient
-to have "codeflow" in the parent while the subtarget-specific
-files only contain the definitions.
+This introduces the SOC variable to mvebu target to derive some of
+the DEVICE_DTS variables based on the SOC prefix and the device
+definition name.
+
+Since DTS names and compatible are inconsistent also in the kernel
+for this target, the scheme cannot be applied to all devices, though.
+
+While at it, change the DTS name of the armada-3720-udpu to lower-case,
+which is the common practice for DTS file names.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- target/linux/mvebu/image/Makefile      | 8 ++++++++
- target/linux/mvebu/image/cortex-a53.mk | 4 ----
- target/linux/mvebu/image/cortex-a72.mk | 4 ----
- target/linux/mvebu/image/cortex-a9.mk  | 4 ----
- 4 files changed, 8 insertions(+), 12 deletions(-)
+ .../{armada-3720-uDPU.dts => armada-3720-udpu.dts}     |  0
+ target/linux/mvebu/image/Makefile                      |  1 +
+ target/linux/mvebu/image/cortex-a53.mk                 | 10 +++++-----
+ target/linux/mvebu/image/cortex-a9.mk                  |  6 +++---
+ .../patches-4.19/530-add_armada-3820-uDPU-dts.patch    |  2 +-
+ 5 files changed, 10 insertions(+), 9 deletions(-)
+ rename target/linux/mvebu/files-4.19/arch/arm64/boot/dts/marvell/{armada-3720-uDPU.dts => armada-3720-udpu.dts} (100%)
 
+diff --git a/target/linux/mvebu/files-4.19/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/target/linux/mvebu/files-4.19/arch/arm64/boot/dts/marvell/armada-3720-udpu.dts
+similarity index 100%
+rename from target/linux/mvebu/files-4.19/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
+rename to target/linux/mvebu/files-4.19/arch/arm64/boot/dts/marvell/armada-3720-udpu.dts
 diff --git a/target/linux/mvebu/image/Makefile b/target/linux/mvebu/image/Makefile
-index ce1344a547..6dd7bde7ae 100644
+index 6dd7bde7ae..c08b113b36 100644
 --- a/target/linux/mvebu/image/Makefile
 +++ b/target/linux/mvebu/image/Makefile
-@@ -116,8 +116,16 @@ define Device/NAND-512K
-   PAGESIZE := 4096
- endef
+@@ -77,6 +77,7 @@ endef
  
-+ifeq ($(SUBTARGET),cortexa9)
- include cortex-a9.mk
-+endif
-+
-+ifeq ($(SUBTARGET),cortexa53)
- include cortex-a53.mk
-+endif
-+
-+ifeq ($(SUBTARGET),cortexa72)
- include cortex-a72.mk
-+endif
- 
- $(eval $(call BuildImage))
+ define Device/Default
+   PROFILES := Default
++  DEVICE_DTS = $$(SOC)-$(lastword $(subst _, ,$(1)))
+   BOARD_NAME = $$(DEVICE_DTS)
+   KERNEL_NAME := zImage
+   KERNEL := kernel-bin | append-dtb | uImage none
 diff --git a/target/linux/mvebu/image/cortex-a53.mk b/target/linux/mvebu/image/cortex-a53.mk
-index f5313429af..e58a3c42b9 100644
+index e58a3c42b9..c9d06ddbad 100644
 --- a/target/linux/mvebu/image/cortex-a53.mk
 +++ b/target/linux/mvebu/image/cortex-a53.mk
-@@ -1,5 +1,3 @@
--ifeq ($(SUBTARGET),cortexa53)
--
- define Device/globalscale_espressobin
-   $(call Device/Default-arm64)
-   DEVICE_VENDOR := Marvell
-@@ -73,5 +71,3 @@ define Device/methode_udpu
-   BOOT_SCRIPT := udpu
+@@ -6,7 +6,7 @@ define Device/globalscale_espressobin
+   DEVICE_ALT0_VENDOR := Marvell
+   DEVICE_ALT0_MODEL := Armada 3700 Community Board
+   DEVICE_ALT0_VARIANT := Non-eMMC
+-  DEVICE_DTS := armada-3720-espressobin
++  SOC := armada-3720
  endef
- TARGET_DEVICES += methode_udpu
--
--endif
-diff --git a/target/linux/mvebu/image/cortex-a72.mk b/target/linux/mvebu/image/cortex-a72.mk
-index 5e619804e8..6abee2d8b9 100644
---- a/target/linux/mvebu/image/cortex-a72.mk
-+++ b/target/linux/mvebu/image/cortex-a72.mk
-@@ -1,5 +1,3 @@
--ifeq ($(SUBTARGET),cortexa72)
--
- define Device/marvell_macchiatobin
-   $(call Device/Default-arm64)
-   DEVICE_VENDOR := SolidRun
-@@ -29,5 +27,3 @@ define Device/marvell_armada7040-db
-   IMAGE/sdcard.img.gz := boot-img-ext4 | sdcard-img-ext4 | gzip | append-metadata
+ TARGET_DEVICES += globalscale_espressobin
+ 
+@@ -18,7 +18,7 @@ define Device/globalscale_espressobin-emmc
+   DEVICE_ALT0_VENDOR := Marvell
+   DEVICE_ALT0_MODEL := Armada 3700 Community Board
+   DEVICE_ALT0_VARIANT := eMMC
+-  DEVICE_DTS := armada-3720-espressobin-emmc
++  SOC := armada-3720
  endef
- TARGET_DEVICES += marvell_armada7040-db
--
--endif
+ TARGET_DEVICES += globalscale_espressobin-emmc
+ 
+@@ -30,7 +30,7 @@ define Device/globalscale_espressobin-v7
+   DEVICE_ALT0_VENDOR := Marvell
+   DEVICE_ALT0_MODEL := Armada 3700 Community Board
+   DEVICE_ALT0_VARIANT := V7 Non-eMMC
+-  DEVICE_DTS := armada-3720-espressobin-v7
++  SOC := armada-3720
+ endef
+ TARGET_DEVICES += globalscale_espressobin-v7
+ 
+@@ -42,7 +42,7 @@ define Device/globalscale_espressobin-v7-emmc
+   DEVICE_ALT0_VENDOR := Marvell
+   DEVICE_ALT0_MODEL := Armada 3700 Community Board
+   DEVICE_ALT0_VARIANT := V7 eMMC
+-  DEVICE_DTS := armada-3720-espressobin-v7-emmc
++  SOC := armada-3720
+ endef
+ TARGET_DEVICES += globalscale_espressobin-v7-emmc
+ 
+@@ -58,7 +58,7 @@ define Device/methode_udpu
+   $(call Device/Default-arm64)
+   DEVICE_VENDOR := Methode
+   DEVICE_MODEL := micro-DPU (uDPU)
+-  DEVICE_DTS := armada-3720-uDPU
++  SOC := armada-3720
+   KERNEL_LOADADDR := 0x00080000
+   KERNEL_INITRAMFS := kernel-bin | gzip | fit gzip $$(DTS_DIR)/$$(DEVICE_DTS).dtb
+   KERNEL_INITRAMFS_SUFFIX := .itb
 diff --git a/target/linux/mvebu/image/cortex-a9.mk b/target/linux/mvebu/image/cortex-a9.mk
-index c2ada75c2d..389082e426 100644
+index 389082e426..79253049c7 100644
 --- a/target/linux/mvebu/image/cortex-a9.mk
 +++ b/target/linux/mvebu/image/cortex-a9.mk
-@@ -6,8 +6,6 @@
- # See /LICENSE for more information.
- #
- 
--ifeq ($(SUBTARGET),cortexa9)
--
- define Device/linksys
-   $(Device/NAND-128K)
-   DEVICE_VENDOR := Linksys
-@@ -218,5 +216,3 @@ define Device/cznic_turris-omnia
+@@ -93,7 +93,7 @@ define Device/plathome_openblocks-ax3-4
+   DEVICE_VENDOR := Plat'Home
+   DEVICE_MODEL := OpenBlocks AX3
+   DEVICE_VARIANT := 4 ports
+-  DEVICE_DTS := armada-xp-openblocks-ax3-4
++  SOC := armada-xp
+   SUPPORTED_DEVICES += openblocks-ax3-4
+   BLOCKSIZE := 128k
+   PAGESIZE := 1
+@@ -193,7 +193,7 @@ define Device/globalscale_mirabox
+   $(Device/NAND-512K)
+   DEVICE_VENDOR := Globalscale
+   DEVICE_MODEL := Mirabox
+-  DEVICE_DTS := armada-370-mirabox
++  SOC := armada-370
+   SUPPORTED_DEVICES += mirabox
+ endef
+ TARGET_DEVICES += globalscale_mirabox
+@@ -212,7 +212,7 @@ define Device/cznic_turris-omnia
+   IMAGE/$$(IMAGE_PREFIX)-sysupgrade.img.gz := boot-img | sdcard-img | gzip | append-metadata
+   IMAGE/omnia-medkit-$$(IMAGE_PREFIX)-initramfs.tar.gz := omnia-medkit-initramfs | gzip
+   IMAGE_NAME = $$(2)
+-  DEVICE_DTS := armada-385-turris-omnia
++  SOC := armada-385
    SUPPORTED_DEVICES += armada-385-turris-omnia
  endef
  TARGET_DEVICES += cznic_turris-omnia
--
--endif
+diff --git a/target/linux/mvebu/patches-4.19/530-add_armada-3820-uDPU-dts.patch b/target/linux/mvebu/patches-4.19/530-add_armada-3820-uDPU-dts.patch
+index bd4f0aef9a..635e141c69 100644
+--- a/target/linux/mvebu/patches-4.19/530-add_armada-3820-uDPU-dts.patch
++++ b/target/linux/mvebu/patches-4.19/530-add_armada-3820-uDPU-dts.patch
+@@ -4,7 +4,7 @@
+  # Mvebu SoC Family
+  dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-db.dtb
+  dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-espressobin.dtb
+-+dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-uDPU.dtb
+++dtb-$(CONFIG_ARCH_MVEBU) += armada-3720-udpu.dtb
+  dtb-$(CONFIG_ARCH_MVEBU) += armada-7040-db.dtb
+  dtb-$(CONFIG_ARCH_MVEBU) += armada-8040-db.dtb
+  dtb-$(CONFIG_ARCH_MVEBU) += armada-8040-mcbin.dtb
 -- 
 2.20.1
 

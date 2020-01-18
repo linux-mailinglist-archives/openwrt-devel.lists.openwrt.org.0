@@ -2,7 +2,7 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D51214156C
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A8BC14156B
 	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Jan 2020 02:23:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,67 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2JsrYyhi3qZcqnUwndvd6C6Iw7PnAY9Q0TLr1YIWITs=; b=QwuRSK7QpOmGC44lL342IzhBta
-	RYm+gjHTe9p8l16sCyBtEVclL2kA16CKMs5oqvy49BUyIAa7y5Teo9wrUufDVkb6eqVsDyPPcGuJr
-	swCVrTah3Cw5hVMhtpSRppfJ7bQZkc4nntK4NpmIYxmKfbyRBOn+D0lodRfDF+TWCjjO+TjtyO7aS
-	zP1MFWkE5VyiX7W1NzQnE+MgqQpVa91uDngXdGfv27bW4WZqjQ/A4qWW+9DrJDGtHkgVekUDM3bRU
-	7WdQzsg+xrBGuk6MOnR+Fi4LF7Pyo1IKlyRCGfBRuXmLqeEqPhGyhlkfdB9F+8qG2nwmN9l488GF/
-	SQE05lLg==;
+	bh=KHapcmHd0F9EKanSnKHnKQl0o7+Q2Ql3e/zcdpM+pUs=; b=CVmtjXAzvGmrZWfA2Nr65EwFc8
+	nsXhBu+GXtlifK7hOdvKFfV43I/1TP/yMgqm1q2MLxHK6EVhzZVaFIsHeLMjZUf59EA0HuEAcmW/A
+	T1YMeP0IYBlps/7K6eNUcqnjKKhfZ3OCzCXfxBbz8CHm/RrGu5vZVgSioyufGhaTVqiynxeDrWyjO
+	VpvkelHAKrTvqDhzC9wy7V7/Zbq6ixAFfKdDZmuPHSeFC1LUlNPdHe3bhwinv11DLJ/fT2WJU9GXL
+	2zNnacIppDuo2YOmdy0jTnpM7FWn6iW9lz8pE+c5+M7LCVXlRoE/aIfOXWXe3AKVBqGh/K8XGC6lz
+	kliaQ8qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iscot-00076r-Le; Sat, 18 Jan 2020 01:22:35 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iscp2-0007LE-Tj; Sat, 18 Jan 2020 01:22:44 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iscoP-0006iu-7a
- for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 01:22:07 +0000
+ id 1iscoQ-0006iy-Dl
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 01:22:08 +0000
 Received: from buildfff.adridolf.com ([188.194.105.26]) by
  mrelayeu.kundenserver.de (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1N9MlG-1jgCeD3EJw-015H7i for <openwrt-devel@lists.openwrt.org>; Sat, 18
- Jan 2020 02:22:01 +0100
+ id 1MNssA-1jGjGT47tA-00OCc2 for <openwrt-devel@lists.openwrt.org>; Sat, 18
+ Jan 2020 02:22:02 +0100
 From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 To: openwrt-devel@lists.openwrt.org
-Date: Sat, 18 Jan 2020 02:21:14 +0100
-Message-Id: <20200118012115.46148-4-freifunk@adrianschmutzler.de>
+Date: Sat, 18 Jan 2020 02:21:15 +0100
+Message-Id: <20200118012115.46148-5-freifunk@adrianschmutzler.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200118012115.46148-1-freifunk@adrianschmutzler.de>
 References: <20200118012115.46148-1-freifunk@adrianschmutzler.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:rpl6g5c4OQGPMgCwwibjJrbcPjUPN/VYCWwd0brqFnsijVc2/3x
- rPDCckvNPGoT0lMd7a+TnN/AUb5aCuxqAst62SQe4KgTpW6GAQu0wUmKj+KppXN8+KLK7/9
- bpt6vkehebJjq83rlYsuVN+DxcXlITdEEfuWjiOnIbBZRQ5R9LPEXxt6/iDbMWjmZjHdyPO
- ZIHF0bXRdSFgsD8YLHTAg==
+X-Provags-ID: V03:K1:uJT2WNWeo1JZmgL7NMjo/P4ATrXXRa+RlVpM15SHm+RmBY8sD7l
+ GaKC2AT5/DOnQzqh+gRwE/fGgyTbyAOEAvbBFULPMqtreeDp9Bi8tB+2Th8lGt8VUH59P8z
+ yFd3WFiv975dtSALcmdnd/9vrekvTuM1hcNAkMtnz2P4U5pBQGGkoOp5qBIMlQZ8LOIDsHw
+ beQIGCRHYg98tiZE821MQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:l7OYnx7QW1w=:VOJyasswLypJp5OWEykzA0
- pvlly/GWi6ZFRmfyGsWq2k2UFYyzZwHRCRsj6QQrykwZB4CZV9QMcMdvf3lx679GxbE/fEQnL
- Y9YWi4RiGgZAPVJpmvPMoN/dPUdH3OV5VgGrUsOHX5lA2Wr4oAZIE23cL0T9ETT4uXUU3Rrjx
- 6+zmCIbhxZlHzbmM/r2Qm6LT7ILq8fTVrW8B9LlGG/vBXDAAYIcnL18eGNb8Wl6nBtYxNrYCR
- rK72znLcpttJuovmmhqNIiHVgvt3IFMxevj+gU6FRhlsh0PV43tezZCqVx13SLV0sQx0rCZvu
- v31dXCIIiE6l2GIVawVr1hOPx2VbYGpPyOxoZ2nXoOvnt5g9iXnJnYYcDGZ2JK5EPshWOkO15
- R6bczzBf/AcIjYjg/vxDrAJGGQJd1xDdIG6+P1kjkPi/1k1kTQ5iixlNGEdrp+qNjGvG763WB
- /bMc5hWtkcC5zxffCvH9s69tricp27m3jD4Qld5iD/mmuwT4BcIc+LKS6NAQY5W4DqydtAHcw
- Wf/ipjIE4kvj2N8oZExG7KYubtiA1mmnMg88I7KBJVP9iic3pQB7Nk0+ZhnefVkKJVKshEeB0
- PpNTXveMEJd0FvQChdzYUOnmBD21S09idxUAA9+XOZWTLNr7oVcRszkL+GEKxAH7834/QRadd
- WXnWzTBDli66gOQrUdhvVCKZkgDJjc2SfWve2nMd3xW39i3Ov3FwXDVmpbGYWt3t9i8bCdGLj
- U0LaVvuzpjuI1Nt/i4oX7TsCytWxXzQkIHI6GmhU9JgpQKskAu1O4VuLYRWXxdXSggUZTX3py
- PfnPHG6d0TlXngIzJOqjpeSY5TJBwMQpZ+ShEObRPGeTN5j3abvqj8vao/pDkchQE/KGMNTr8
- IDyt6yq4Ju1l/w1KoXdv0yy0C8/Z15DkP2OEowN4c=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:5nc4SLKDcxc=:LbqyEL1qUmHqOzOW5N6xhD
+ 26mMG+RMycUVNhwGGgCcY5pDoA0OlkMWVEfGKprxIqFvb2sQc1O40tWFvFCIF/2rYBTZ8l7vC
+ Vm9MtpZCURuXhtNA9ArWitFyogu2thVxjobK/YhX6SNzjLyY+pK0DDAkGyDRNIwwjE5jzSGRk
+ U0vpeLhXkIvmXAclxGHOzC3gZtbOg8Fqz23rHX//bIvegj4VSU9r2AXliMqY0sYR6Ggbv2bq9
+ dwhLS2IiVYN/POqGTxK+2CEY0WZPrwF73boGrX5WjOatEAuiS0DYT0n0x/SlWd9BNb547AGi7
+ RLyDkxYoOnyisqzOFV8GBqbXUaYLCecJlmDadO0lq6iia8mUK/Jm+xgA5omqKPLdj2gtVUtQ5
+ pE+FnInTuZMbCsvsW4iBjfl4pvFdPxicHWrpFha6hBhz2tKiQ3WFssDjtZ6fIBXa26Rrz7yoT
+ exwuU2MTFQ/sxld5bNGCezNeLlXaQmv0XF3c6MjsEmDOr1FmIOpzGH0tpHBCnZCoZX5ENAV2r
+ eY3YjNTLa6WDVUq6VHudUuZnaUv8FohRuQgkMQHlM8hfRYr8X9uBbG99bnoYbKn/+v4W0cZyy
+ GcksqhNQ76D5bMnz+PSn1qMD/US5ZMlye9P1LZ2Txbi1Y/U+Pi03N6/E/Df0ei59WWsn51LfZ
+ ZBYGIrPDszK3VRtoU1c5AWGUVmqpHZFWChmudPGkjFA/y/X9DnCLBMukBRdXZDP/Ts1li2Du2
+ PciQv10uyx6SZVuwjzzAKia3xxQP5yfp88L6h+CxPlPrKVkia7r/wnUEaJkYqSZ633sBzT/1p
+ AlgGbLEzx3Lj+5X7f5QeGh9/1Y6DiVk2UKwr0F/2Jdu3O1VjHIeRuwKL0Wx/KW6kBstLKU8pQ
+ fJIf6eJgWatD+uvArebmkfyIgMGQeecGRcyqabJjM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_172205_565559_0AB14A67 
-X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-CacheID: sfid-20200117_172206_758428_C75A0017 
+X-CRM114-Status: UNSURE (   7.42  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] zynq: derive DEVICE_DTS from device
- definition name
+Subject: [OpenWrt-Devel] [PATCH] kirkwood: exploit BOARD_NAME to set
+ DEVICE_DTS and SUPPORTED_DEVICES
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,61 +86,150 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-In zynq target, the DEVICE_DTS variable is always set consistent
-with the model part of the device definition name.
+Due to the history of the target, all devices added before a certain
+point have the same device string in BOARD_NAME, DEVICE_DTS and added
+to SUPPORTED_DEVICES.
 
-This patch replaces the redundant definitions for the individual
-devices with a common recipe.
+Thus, we can set this one automatically for all devices where
+BOARD_NAME is specified, removing the explicit DEVICE_DTS and
+SUPPORTED_DEVICES addition there.
+
+For new devices, nothing has changed, and just DEVICE_DTS has to
+be set manually.
 
 Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
 ---
- target/linux/zynq/image/Makefile | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ target/linux/kirkwood/image/Makefile | 22 ++--------------------
+ 1 file changed, 2 insertions(+), 20 deletions(-)
 
-diff --git a/target/linux/zynq/image/Makefile b/target/linux/zynq/image/Makefile
-index 39305a6d54..7cec38ca68 100644
---- a/target/linux/zynq/image/Makefile
-+++ b/target/linux/zynq/image/Makefile
-@@ -31,6 +31,7 @@ endef
+diff --git a/target/linux/kirkwood/image/Makefile b/target/linux/kirkwood/image/Makefile
+index 7b59b69c1d..9c5681901c 100644
+--- a/target/linux/kirkwood/image/Makefile
++++ b/target/linux/kirkwood/image/Makefile
+@@ -12,6 +12,7 @@ KERNEL_LOADADDR:=0x8000
  
  define Device/Default
- 	PROFILES := Default
-+	DEVICE_DTS := $(lastword $(subst _, ,$(1)))
- 	KERNEL_DEPENDS = $$(wildcard $(DTS_DIR)/$$(DEVICE_DTS).dts)
- 	KERNEL_INITRAMFS_PREFIX := $$(IMG_PREFIX)-$(1)-initramfs
- 	KERNEL_PREFIX := $$(IMAGE_PREFIX)
-@@ -53,7 +54,6 @@ define Device/avnet_zynq-zed
- 	$(call Device/FitImageGzip)
- 	DEVICE_VENDOR := Avnet
- 	DEVICE_MODEL := ZedBoard
--	DEVICE_DTS := zynq-zed
+   PROFILES := Default
++  DEVICE_DTS = $$(if $$(BOARD_NAME),kirkwood-$$(BOARD_NAME),)
+   KERNEL_DEPENDS = $$(wildcard $(DTS_DIR)/$$(DEVICE_DTS).dts)
+   KERNEL := kernel-bin | append-dtb | uImage none
+   KERNEL_NAME := zImage
+@@ -24,13 +25,12 @@ define Device/Default
+   IMAGES := sysupgrade.bin factory.bin
+   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+   IMAGE/factory.bin := append-ubi
+-  SUPPORTED_DEVICES := $(subst _,$(comma),$(1))
++  SUPPORTED_DEVICES = $(subst _,$(comma),$(1)) $$(BOARD_NAME)
  endef
- TARGET_DEVICES += avnet_zynq-zed
  
-@@ -61,7 +61,6 @@ define Device/digilent_zynq-zybo
- 	$(call Device/FitImageGzip)
- 	DEVICE_VENDOR := Digilent
- 	DEVICE_MODEL := Zybo
--	DEVICE_DTS := zynq-zybo
+ define Device/cisco_on100
+   DEVICE_VENDOR := Cisco Systems
+   DEVICE_MODEL := ON100
+-  DEVICE_DTS := kirkwood-on100
+   DEVICE_PACKAGES := kmod-i2c-mv64xxx
+   KERNEL_SIZE := 5376k
+   KERNEL_IN_UBI :=
+@@ -43,9 +43,7 @@ TARGET_DEVICES += cisco_on100
+ define Device/cloudengines_pogoe02
+   DEVICE_VENDOR := Cloud Engines
+   DEVICE_MODEL := Pogoplug E02
+-  DEVICE_DTS := kirkwood-pogo_e02
+   BOARD_NAME := pogo_e02
+-  SUPPORTED_DEVICES += pogo_e02
  endef
- TARGET_DEVICES += digilent_zynq-zybo
+ TARGET_DEVICES += cloudengines_pogoe02
  
-@@ -69,7 +68,6 @@ define Device/digilent_zynq-zybo-z7
- 	$(call Device/FitImageGzip)
- 	DEVICE_VENDOR := Digilent
- 	DEVICE_MODEL := Zybo Z7
--	DEVICE_DTS := zynq-zybo-z7
+@@ -60,9 +58,7 @@ TARGET_DEVICES += cloudengines_pogoplugv4
+ define Device/iom_iconnect-1.1
+   DEVICE_VENDOR := Iomega
+   DEVICE_MODEL := Iconnect
+-  DEVICE_DTS := kirkwood-iconnect
+   BOARD_NAME := iconnect
+-  SUPPORTED_DEVICES += iconnect
  endef
- TARGET_DEVICES += digilent_zynq-zybo-z7
+ TARGET_DEVICES += iom_iconnect-1.1
  
-@@ -77,7 +75,6 @@ define Device/xlnx_zynq-zc702
- 	$(call Device/FitImageGzip)
- 	DEVICE_VENDOR := Xilinx
- 	DEVICE_MODEL := ZC702
--	DEVICE_DTS := zynq-zc702
- 	DEVICE_PACKAGES:=kmod-can kmod-can-xilinx-can
+@@ -87,7 +83,6 @@ define Device/linksys_audi
+   DEVICE_VENDOR := Linksys
+   DEVICE_MODEL := EA3500 (Audi)
+   DEVICE_PACKAGES := kmod-mwl8k swconfig wpad-basic kmod-gpio-button-hotplug
+-  DEVICE_DTS := kirkwood-linksys-audi
+   PAGESIZE := 512
+   SUBPAGESIZE := 256
+   BLOCKSIZE := 16KiB
+@@ -96,7 +91,6 @@ define Device/linksys_audi
+   UBINIZE_OPTS := -E 5
+   IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
+   BOARD_NAME := linksys-audi
+-  SUPPORTED_DEVICES += linksys-audi
  endef
- TARGET_DEVICES += xlnx_zynq-zc702
+ TARGET_DEVICES += linksys_audi
+ 
+@@ -104,56 +98,45 @@ define Device/linksys_viper
+   DEVICE_VENDOR := Linksys
+   DEVICE_MODEL := E4200v2 / EA4500 (Viper)
+   DEVICE_PACKAGES := kmod-mwl8k swconfig wpad-basic kmod-gpio-button-hotplug
+-  DEVICE_DTS := kirkwood-linksys-viper
+   KERNEL_SIZE := 2688k
+   KERNEL_IN_UBI :=
+   UBINIZE_OPTS := -E 5
+   IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
+   BOARD_NAME := linksys-viper
+-  SUPPORTED_DEVICES += linksys-viper
+ endef
+ TARGET_DEVICES += linksys_viper
+ 
+ define Device/raidsonic_ib-nas62x0
+   DEVICE_VENDOR := RaidSonic
+   DEVICE_MODEL := ICY BOX IB-NAS62x0
+-  DEVICE_DTS := kirkwood-ib62x0
+   BOARD_NAME := ib62x0
+-  SUPPORTED_DEVICES += ib62x0
+ endef
+ TARGET_DEVICES += raidsonic_ib-nas62x0
+ 
+ define Device/seagate_dockstar
+   DEVICE_VENDOR := Seagate
+   DEVICE_MODEL := FreeAgent Dockstar
+-  DEVICE_DTS := kirkwood-dockstar
+   BOARD_NAME := dockstar
+-  SUPPORTED_DEVICES += dockstar
+ endef
+ TARGET_DEVICES += seagate_dockstar
+ 
+ define Device/seagate_goflexnet
+   DEVICE_VENDOR := Seagate
+   DEVICE_MODEL := GoFlexNet
+-  DEVICE_DTS := kirkwood-goflexnet
+   BOARD_NAME := goflexnet
+-  SUPPORTED_DEVICES += goflexnet
+ endef
+ TARGET_DEVICES += seagate_goflexnet
+ 
+ define Device/seagate_goflexhome
+   DEVICE_VENDOR := Seagate
+   DEVICE_MODEL := GoFlexHome
+-  DEVICE_DTS := kirkwood-goflexhome
+   BOARD_NAME := goflexhome
+-  SUPPORTED_DEVICES += goflexhome
+ endef
+ TARGET_DEVICES += seagate_goflexhome
+ 
+ define Device/zyxel_nsa310b
+   DEVICE_VENDOR := ZyXEL
+   DEVICE_MODEL := NSA310b
+-  DEVICE_DTS := kirkwood-nsa310b
+   DEVICE_PACKAGES := kmod-r8169 kmod-gpio-button-hotplug kmod-hwmon-lm85
+   BOARD_NAME := nsa310b
+ endef
+@@ -163,7 +146,6 @@ define Device/zyxel_nsa325
+   DEVICE_VENDOR := ZyXEL
+   DEVICE_MODEL := NSA325
+   DEVICE_VARIANT := v1/v2
+-  DEVICE_DTS := kirkwood-nsa325
+   DEVICE_PACKAGES := kmod-gpio-button-hotplug kmod-rtc-pcf8563 kmod-usb3
+   BOARD_NAME := nsa325
+ endef
 -- 
 2.20.1
 

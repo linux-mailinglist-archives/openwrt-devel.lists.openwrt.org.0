@@ -2,90 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (unknown [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75C771418CA
-	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Jan 2020 18:40:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29FB2141902
+	for <lists+openwrt-devel@lfdr.de>; Sat, 18 Jan 2020 19:46:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OiqIh+GvVSUObupwNfLZeGqZMFWifPWZnn1aO7dmyGM=; b=EzZwkQFxE3kh7hEbsElWZS0/q
-	1LJL4mAZcRtNClF1Ilj0xOS/sIECxDYXAx/pVK9ZhBWN5OPwQmOY7WVW17a9ID2uGlUdtSpR+28qb
-	5zSd4IL73n9qsDPolVw7GfGnhUUKpNIX4zovyJwQag9UX0BRb0LGxxzZdiAoi/rRs2nW77s6wMpTE
-	JJJPFamR/zuVUQNjFXGni+rMB3WaXVf7lxKtnZ2vNgqSej1b4e+heD8+2Hm6k83aXezwt6PWX9rYS
-	beINZlNmOFwx3eyPzm+SQhSAp1DTNJcseL+TZe8MJxuC4G2MuhjKUFCcXfIbZ/DPv1+JIZ5Wqv2yI
-	lzQCHY8YQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZGgATZA9ZSKRVa4NspIgUYpMYgJgehzp62LnaU29OcI=; b=k7eMNqrVJiZlYw
+	Y5OhWxF0okId4im8FXi07O1IF42oms5WOOVZfQp3gIAzGEYEALPZq/L0Do2jKBH3DEJ2Z15eJ/ygG
+	Z3+eL8imnyYE6kj8uTZH06Fep3tOPiuWYYWkJI8fk6jBZgBofs8jWPrMZQ9or264lLXJjqMyOcGdx
+	E6Md+ScRH4Vk3rM55plgmCaKUWzXruxhqBAv3mPE+MHQmtsItwwaovQMc/LOvyGoXRL++SMPgg2FF
+	/vuGYHjenRO8wC3IVQ2T7bXNlnmX7WbI/h20lH5QOp9WwL+1uwHA7MWIL4B5F8917JAJTJnMmo9mQ
+	1XAcOyXXud7zEtPcy/RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iss4C-0001SN-Ve; Sat, 18 Jan 2020 17:39:24 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1ist6q-0000s4-Gw; Sat, 18 Jan 2020 18:46:12 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iss3y-0001SG-K7
- for openwrt-devel@bombadil.infradead.org; Sat, 18 Jan 2020 17:39:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Type:MIME-Version:Message-ID:
- Date:Subject:In-Reply-To:References:To:From:Sender:Reply-To:Cc:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UmM+ub/KPSotyxk6RDajTEzLh8/9/AvKBc6yFAq6S28=; b=LhPkN+4XQZzf/4lUXqQd99yvk
- OGhuu5k5dyhEd84yGD2eww0EcPLCnmTJbtfj+liZePNXNr8gnDiR9Ch4zr2rOo7Mc5zSZbLZjL2i0
- tj8GaH2ZVIDS+BaZ3q//xO80iFPZwEGQ4GroJPHBe+KQhGdQyB558P4cgQ3bw/r4Vf6Im59i2UaN4
- slF9gYKhYvfs6xzz8aY7dO1C0B7Z4EPHQDBf6uNpbNudgwniji6bX1HvKXqZ+0OfBZ4X+A3DgNblf
- bwdXPjbv1Rgw+YRy0M7lKDXIBRrQbmqVvgEFqzLSmZK6euDp33KgMCkrZD09n6mZDo/zraBTsReVW
- s3PV/buSw==;
-Received: from mout.kundenserver.de ([212.227.126.130])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iss4K-0004IM-Mo
- for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 17:39:35 +0000
-Received: from desktop ([188.194.105.26]) by mrelayeu.kundenserver.de
- (mreue012 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MHVWT-1ioFTm2P7h-00DZGF; Sat, 18 Jan 2020 18:38:59 +0100
-From: <mail@adrianschmutzler.de>
-To: <admin@kryma.net>,
-	<openwrt-devel@lists.openwrt.org>
-References: <20200116213501.9820-1-admin@kryma.net>
-In-Reply-To: <20200116213501.9820-1-admin@kryma.net>
-Date: Sat, 18 Jan 2020 18:38:55 +0100
-Message-ID: <008801d5ce26$2a993360$7fcb9a20$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
+ id 1ist6i-0000rg-HQ
+ for openwrt-devel@lists.openwrt.org; Sat, 18 Jan 2020 18:46:06 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a5so10527133wmb.0
+ for <openwrt-devel@lists.openwrt.org>; Sat, 18 Jan 2020 10:46:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=oNqrtm+tIk2/jzyamY7L+/cCfTmFfEAJcxu7eBh094A=;
+ b=V4qb1Ga+lVKyrCEpFbI8kVGq2w1ruDoBzc1UAVMOd9C4t/1bKpA3pNCtunaxhUPRvc
+ F0i/xztV/HzzuuN1rDnx72GGcZph6wlg8znd8r9nWOLF1UuBMTJelvj3TNzC+b505Svi
+ RFqCDg7rwy/hv99Hr2rxIijEyrTqt+8JP+4H0PezukLbKzFLnEBHqmihEDE9rO7HcY6v
+ x1QEi/KyT3b6wiJqDvkwuUfG1P1ZE0th3bSY9Q94FtC4ZBvzdYgXk4x6Cgk4Kr0xMV5P
+ EipsLI4Qf7G7/NdzySH1n7pzWVZvY28ZRh7S53q2ika9xCpbJ3MCHcPqWxz8gPrD97qg
+ d/GQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=oNqrtm+tIk2/jzyamY7L+/cCfTmFfEAJcxu7eBh094A=;
+ b=InsG01G0Db5JVkKoXhINFvCAHXMmDtc79acMiW4z6Ijz2ylTzz2BtySe2KnK3xk+Nv
+ AZBhHLYpfSGXfiQ1cRcdrcheHRJyA5xDeyp5ZQjBQFdUh5ua62FQXfylIlmV+izhWi1v
+ yy5OJZ+uH6+ItDNuyX09XIoGnIHtQ4/tuLNW+x/2QPT8PX0Ghld5/YgYmv9tnk20vwft
+ uZfvOejdWJVY2hoJ+b1ticNtJS1Mq1q5IHeyN05+Y0Mv7ZNopNuDAjUjWAnwwdxBYJCs
+ qGtAwOJ8bPSR8vZvsoGUjI52mqubeWKV2DHgCxw2n18kM8N0zcWS6jXGJ8JoCbYGJ+4x
+ UzpA==
+X-Gm-Message-State: APjAAAWjrkphBjZ11iMlBjzsCHRBnWxZwKUV6QqTP/1F+r4lES6VbfvY
+ g4nF7Y/DnOYaW3revLGVL1hEQz10Yw==
+X-Google-Smtp-Source: APXvYqykOxo1gh9ZMU9WCgU0VsAV8dXVJfuPErvM7sDMl5ALYFJGh8Qsjcd8hPQkKzsNyqZj6I0wZA==
+X-Received: by 2002:a1c:964f:: with SMTP id y76mr10572372wmd.62.1579373158939; 
+ Sat, 18 Jan 2020 10:45:58 -0800 (PST)
+Received: from localhost.localdomain (a109-49-10-77.cpe.netcabo.pt.
+ [109.49.10.77])
+ by smtp.gmail.com with ESMTPSA id z124sm16866260wmc.20.2020.01.18.10.45.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 18 Jan 2020 10:45:57 -0800 (PST)
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat, 18 Jan 2020 18:44:47 +0000
+Message-Id: <20200118184447.22048-1-rsalvaterra@gmail.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Thread-Index: AQHjCgfxpppnxi5nRytrIqOXWU+hXafWMmeg
-Content-Language: de
-X-Provags-ID: V03:K1:SA6K6q55bhiBKtC5ByqTgrlh+wE3WvZzIDQMSzOtrcTUh+POY66
- d5w5Vr0QC7p4JezjVZiNerHSYgF+l1ePOfnlzBtAR7zjFB4VOco+/A3/7y8q9qPD3IkPJIW
- e9Zlj1MCPKlQbCDVuK2RpBHg7zTQNsgtRGf3hWLT3NaR/LwIoBVJUZ7uXVrFXszurnuSN0Z
- 0xAHOFkG7q+FryHqv+uvQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ZuOsMIzQzuE=:au8/ew1ZwtAMs2hgZKumSh
- zsmnTdCDMtlNxv+96v9Cv0FafQFjVeAchq5QjYIVF8G9Lfuk2A8bY1TFiHH7t4JQy0La3E17h
- O1TbxcVLeQWXH2ag0YpgP/bUTL1H5DCfX04ozmacC+zEsJAB/0kNtcAeGkSTD9DzkQ7C0YUuL
- EmYz8WgrqNqIa1//JVOFUAL86hxhe4GWLv9Hp3w+x+dRnNhqInXF9pSwW560DB6QkRQUrzfLp
- BuPXCVHNc2rvSht3Bhm3NcqIBQI5+AFko6FDh25e/qiQK4pWXzMPVzglYk5+etNW6iw7mVZ56
- /9UTMZdQ+4UrOvERaBbXJmm72IYjoeQL89jwY0GkSKj/WlQhKcjWfcqtMgx5qq86fxgLIgGSS
- 8CUlBiUh1WCBdQHqkFbLgKgfsbBLnhYAgcg100D6MDrhzyR5XtkY+vezOqi7X+yUJmIDPy7os
- R6y6bdAkdWFUG0Qy2zOc8RbOCpSIExqFJ6q+kwwQ8ML2COt+MAv266t3wpB2yGnytETNWgSma
- 0ZKvP2u5rWIiZqfAvEJsk3oPL6xd/6aAc1GgJZO+D41Nr74sGTmkA5ZIxgWdDcF94v+Td1uhC
- vkWzUimAM1N9AYlhHuNWYzCa+NNSb1HYuG/0fQL6OVI+t9+tiKdoU0sjonrF/jm9PC7fcckIN
- W/+VSDAmsVEN6jZPBUhu5sD2XbA6SIQyjJJJwp8cs44VtaO9Bnd+aA9p/qkmt4nv559rymrEy
- In0WSyniztcNGMOxj/QSOruZVjzi8Jeq8IHqFwHsGYWueEx30GX7H6EQypEaZYyRVez6ilTFu
- Hj78EBjdYT9026S7U9WPIU0fMgkvGN2Zjt3lcswUVilpoirH0adKgYXtPIID1L6Bmn65E5x45
- 8Sk0NX77YK1XKiaE14h/Wv1DDfohNZw4WyRiNrclM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200118_173932_812020_6F772299 
-X-CRM114-Status: GOOD (  19.80  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200118_104604_601988_9F2AA83A 
+X-CRM114-Status: GOOD (  11.83  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH v4] ath79: add support for COMFAST
- CF-E130N v2
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rsalvaterra[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+Subject: [OpenWrt-Devel] [PATCH v2] fw3: robustify flow table detection.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,202 +96,68 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1460092981478370570=="
+Cc: ynezz@true.cz, jo@mein.io, Rui Salvaterra <rsalvaterra@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
-
---===============1460092981478370570==
-Content-Language: de
-Content-Type: multipart/signed;
-	protocol="application/pgp-signature";
-	micalg=pgp-sha256;
-	boundary="=-=I4NSpdGpZyb0c6=-="
-
-This is a multipart message in MIME format.
-
---=-=I4NSpdGpZyb0c6=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of admin@kryma.net
-> Sent: Donnerstag, 16. Januar 2020 22:35
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Pavel Balan <admin@kryma.net>
-> Subject: [OpenWrt-Devel] [PATCH v4] ath79: add support for COMFAST CF-
-> E130N v2
->=20
-> From: Pavel Balan <admin@kryma.net>
->=20
-
-[...]
-
-> -Re unused led: the led is blocked by a mostly
->     opaque plate in the shell. It can still be
->     controlled, though.
-
-So now we know where it is. But what is it for? Any idea?
-
->  -Re verifying addresses: I don't think I did.
->     How would I do that?
-
-https://openwrt.org/docs/guide-developer/mac.address
-
-Install vendor firmware and check what MAC addresses are used there for eth=
-0/WiFi.
-
-Add a table of MAC address assignment (and label MAC address) to the commit=
- message after that, so your research results are conserved.
-
-> +			partition@20000 {
-> +				compatible =3D "denx,uimage";
-> +				label =3D "firmware";
-> +				reg =3D <0x020000 0x7d0000>;
-> +			};
-
-Some Comfast devices have a config partition <0x7e0000 0x010000>. Is that m=
-issing for your device or should we add it?
-
-> +
-> +			partition@7f0000 {
-> +				label =3D "nvram";
-> +				reg =3D <0x7f0000 0x010000>;
-> +				read-only;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&uart {
-> +	status =3D "okay";
-> +
-> +};
-> +
-> +&eth1 {
-> +	status =3D "okay";
-> +
-> +	phy-handle =3D <&swphy0>;
-> +
-> +	mtd-mac-address =3D <&art 0x0>;
-> +
-> +	gmac-config {
-> +		device =3D <&gmac>;
-> +		switch-phy-swap =3D <1>;
-> +	};
-> +};
-> +
-> +&eth0 {
-> +	compatible =3D "syscon", "simple-mfd";
-> +};
-
-The network setup looks wrong to me. I think you just need to make eth1->et=
-h0 and eth0->eth1. If that's not helping, play with switch-phy-swap and set=
-ting phy-handle to swphy0 or swphy4. Have a look at the other qca9531 comfa=
-st devices.
-
-> +
-> +&wmac {
-> +	status =3D "okay";
-> +
-> +	mtd-cal-data =3D <&art 0x1000>;
-> +};
-> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> index fbb0d0ea03..7521e435a1 100755
-> --- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> +++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
-> @@ -47,6 +47,15 @@ comfast,cf-e120a-v3)
->  	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH"
-> "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
->  	ucidef_set_led_rssi "rssihigh" "RSSIHIGH"
-> "$boardname:green:rssihigh" "wlan0" "76" "100"
->  	;;
-> +comfast,cf-e130n-v2)
-> +	ucidef_set_led_netdev "lan" "LAN" "$boardname:green:lan" "eth0"
-> +	ucidef_set_led_wlan "wlan" "WLAN" "$boardname:green:wlan"
-
-You do not need this line since you have a trigger in DTS.
-
-> +	ucidef_set_rssimon "wlan0" "200000" "1"
-> +	ucidef_set_led_rssi "rssilow" "RSSILOW" "$boardname:red:rssilow"
-> "wlan0" "1" "100"
-> +	ucidef_set_led_rssi "rssimediumlow" "RSSIMEDIUMLOW"
-> "$boardname:red:rssimediumlow" "wlan0" "26" "100"
-> +	ucidef_set_led_rssi "rssimediumhigh" "RSSIMEDIUMHIGH"
-> "$boardname:green:rssimediumhigh" "wlan0" "51" "100"
-> +	ucidef_set_led_rssi "rssihigh" "RSSIHIGH"
-> "$boardname:green:rssihigh" "wlan0" "76" "100"
-> +	;;
->  comfast,cf-e313ac)
->  	ucidef_set_led_switch "lan" "LAN" "$boardname:green:lan"
-> "switch0" "0x02"
->  	ucidef_set_led_netdev "wan" "WAN" "$boardname:green:wan"
-> "eth1"
-> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> index 10ca213e70..5840b90bf6 100755
-> --- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> +++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> @@ -86,6 +86,8 @@ ath79_setup_interfaces()
->  		;;
->  	comfast,cf-e110n-v2|\
->  	comfast,cf-e120a-v3|\
-> +	comfast,cf-e130n-v2|\
-> +		ucidef_set_interface_lan "eth1"
-
-This is not only very unlikely to be correct, it will also change the devic=
-es above to a wrong setup.
-You will need to add your device to the case where ' ucidef_set_interface_l=
-an "eth0"' is set. Then you will need to adjust DTS to make that work.
-
-Best
-
-Adrian=20
-
---=-=I4NSpdGpZyb0c6=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4jQqoACgkQoNyKO7qx
-AnCGJxAAn67ruHR6Bi8P2/lWdRnsZnzhD/tsG4ouxCYVYh06zxmuGSnUhOOdSZxB
-DDT1pcEKEbJ6UQak9QqvYgP87Xt9iX3AKC0iDtLnoQZ6G//KxjjVuH7h8OROHCt6
-+GrFJv83WHPtb7KvC/ZtRn9+ulhVdeq7Gcx2dVqMysIeUrvZvierchwUqbN4l5pL
-KuWz9ypeGV3xEQadfL9VNC3jOf46P+y5SH3XzPuwrk0eaigONlMknn9hBy8+Ye+e
-y++/S2OF6Wav3wcY7nWvHQFf9qQPbpwN/h7yvK7DMsXaoCeYjRI7xTO8FbFAyZr6
-Rj+RVNfaWkNjvh2GUGrYsRvTZXy0aUqDDfVtJhpBZ0LWBgwW2KFNZ+T9JzOcGlRt
-SMtkU+lxNdl8eJLmL2yoLY4FAc9Y8tcGXz4u8ttKuhGgeswNdDjt7ejUUSOfrf1Q
-G/u9eo0ZZ7Yq460p9RmIbCMKWTRzFXcQSBF7bcSwnqtmcNiXkzEeDKMSJxED1/8x
-9i9dRcrRJyWEA8/eLkYu3FDN6QeZry2Q9kwwGvbUNV7Lgfzswi3NDU/LLmfeskGp
-ofmjbDbBbi2F6tNuQBgJGXCQWLmTMiKACKJGeTGqkne60boXH0CQfnfpY3dW+Xtd
-euoSoeOtKlaZjz/+SV7gko2LaEnU/A+g/Q7JypEW3JiuBKLS5ls=
-=mRnI
------END PGP SIGNATURE-----
-
-
---=-=I4NSpdGpZyb0c6=-=--
-
-
-
---===============1460092981478370570==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============1460092981478370570==--
-
-
+djI6IGFkZHJlc3NlZCBQZXRyIMWgdGV0aWFyJ3MgY29uY2VybnMgYW5kIGFsc28gY2hhbmdlZCB0
+aGUgZ2VuZXJpYyBoZWxwZXIKdG8gY2hlY2sgZm9yIHRoZSBhdmFpbGFiaWxpdHkgb2YgSVB2NCBv
+ciBJUHY2IHRhcmdldHMsIGFzIG5lZWRlZC4KClRoZSBmbG93dGFibGUgZGV0ZWN0aW9uIGZhaWxz
+IGlmIHRoZSByZXNwZWN0aXZlIHRhcmdldCBtb2R1bGUgaXMgYnVpbHQtaW4sCnNpbmNlIGl0J3Mg
+bG9va2luZyBmb3IgdGhlIG1vZHVsZSBpdHNlbGYuIENyZWF0ZSBhIGdlbmVyaWMgaGVscGVyIGFu
+ZAppbnN0ZWFkIGNoZWNrIGZvciBleGlzdGVuY2Ugb2YgdGhlIEZMT1dPRkZMT0FEIHRhcmdldCBp
+bgovcHJvYy9uZXQvaXBfdGFibGVzX3RhcmdldHMuCgpTaWduZWQtb2ZmLWJ5OiBSdWkgU2FsdmF0
+ZXJyYSA8cnNhbHZhdGVycmFAZ21haWwuY29tPgotLS0KIGRlZmF1bHRzLmMgfCAyNSArKysrKysr
+LS0tLS0tLS0tLS0tLS0tLS0tCiB1dGlscy5jICAgIHwgMjcgKysrKysrKysrKysrKysrKysrKysr
+KysrKysrCiB1dGlscy5oICAgIHwgIDYgKysrKysrCiAzIGZpbGVzIGNoYW5nZWQsIDQwIGluc2Vy
+dGlvbnMoKyksIDE4IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RlZmF1bHRzLmMgYi9kZWZh
+dWx0cy5jCmluZGV4IGYwMzc2NWMuLmM3OGFiNTEgMTAwNjQ0Ci0tLSBhL2RlZmF1bHRzLmMKKysr
+IGIvZGVmYXVsdHMuYwpAQCAtODUsMjYgKzg1LDE0IEBAIGNoZWNrX3BvbGljeShzdHJ1Y3QgdWNp
+X2VsZW1lbnQgKmUsIGVudW0gZnczX2ZsYWcgKnBvbCwgY29uc3QgY2hhciAqbmFtZSkKIH0KIAog
+c3RhdGljIHZvaWQKLWNoZWNrX2ttb2Qoc3RydWN0IHVjaV9lbGVtZW50ICplLCBib29sICptb2R1
+bGUsIGNvbnN0IGNoYXIgKm5hbWUpCitjaGVja190YXJnZXQoc3RydWN0IHVjaV9lbGVtZW50ICpl
+LCBib29sICphdmFpbGFibGUsIGNvbnN0IGNoYXIgKnRhcmdldCwgY29uc3QgYm9vbCBpcHY2KQog
+ewotCUZJTEUgKmY7Ci0JY2hhciBidWZbMTI4XTsKLQotCWlmICghKm1vZHVsZSkKLQkJcmV0dXJu
+OwotCi0Jc25wcmludGYoYnVmLCBzaXplb2YoYnVmKSwgIi9zeXMvbW9kdWxlLyVzL3JlZmNudCIs
+IG5hbWUpOwotCi0JZiA9IGZvcGVuKGJ1ZiwgInIiKTsKLQotCWlmIChmKQorCWNvbnN0IGJvb2wg
+YiA9IGZ3M19oYXNfdGFyZ2V0KGlwdjYsIHRhcmdldCk7CisJaWYgKCFiKQogCXsKLQkJZmNsb3Nl
+KGYpOwotCQlyZXR1cm47CisJCXdhcm5fZWxlbShlLCAicmVxdWlyZXMgdW5hdmFpbGFibGUgdGFy
+Z2V0IGV4dGVuc2lvbiAlcywgZGlzYWJsaW5nIiwgdGFyZ2V0KTsKIAl9Ci0KLQl3YXJuX2VsZW0o
+ZSwgInJlcXVpcmVzIG5vdCBhdmFpbGFibGUga2VybmVsIG1vZHVsZSAlcywgZGlzYWJsaW5nIiwg
+bmFtZSk7Ci0JKm1vZHVsZSA9IGZhbHNlOworCSphdmFpbGFibGUgPSBiOwogfQogCiBzdGF0aWMg
+dm9pZApAQCAtMTcxLDcgKzE1OSw4IEBAIGZ3M19sb2FkX2RlZmF1bHRzKHN0cnVjdCBmdzNfc3Rh
+dGUgKnN0YXRlLCBzdHJ1Y3QgdWNpX3BhY2thZ2UgKnApCiAKIAkJY2hlY2tfYW55X3JlamVjdF9j
+b2RlKGUsICZkZWZzLT5hbnlfcmVqZWN0X2NvZGUpOwogCi0JCWNoZWNrX2ttb2QoZSwgJmRlZnMt
+PmZsb3dfb2ZmbG9hZGluZywgInh0X0ZMT1dPRkZMT0FEIik7CisJCS8qIGV4aXN0cyBpbiBib3Ro
+IGlwdjQgYW5kIGlwdjYsIGlmIGF0IGFsbCwgc28gb25seSBjaGVjayBpcHY0ICovCisJCWNoZWNr
+X3RhcmdldChlLCAmZGVmcy0+Zmxvd19vZmZsb2FkaW5nLCAiRkxPV09GRkxPQUQiLCBmYWxzZSk7
+CiAJfQogfQogCmRpZmYgLS1naXQgYS91dGlscy5jIGIvdXRpbHMuYwppbmRleCA0NDFkYmQyLi5m
+NjhhNjBhIDEwMDY0NAotLS0gYS91dGlscy5jCisrKyBiL3V0aWxzLmMKQEAgLTM0NCw2ICszNDQs
+MzMgQEAgZnczX2hhc190YWJsZShib29sIGlwdjYsIGNvbnN0IGNoYXIgKnRhYmxlKQogCXJldHVy
+biBzZWVuOwogfQogCitib29sCitmdzNfaGFzX3RhcmdldChjb25zdCBib29sIGlwdjYsIGNvbnN0
+IGNoYXIgKnRhcmdldCkKK3sKKwlGSUxFICpmOworCisJY2hhciBsaW5lWzEyXTsKKwlib29sIHNl
+ZW4gPSBmYWxzZTsKKworCWNvbnN0IGNoYXIgKnBhdGggPSBpcHY2CisJCT8gIi9wcm9jL25ldC9p
+cDZfdGFibGVzX3RhcmdldHMiIDogIi9wcm9jL25ldC9pcF90YWJsZXNfdGFyZ2V0cyI7CisKKwlp
+ZiAoIShmID0gZm9wZW4ocGF0aCwgInIiKSkpCisJCXJldHVybiBmYWxzZTsKKworCXdoaWxlIChm
+Z2V0cyhsaW5lLCBzaXplb2YobGluZSksIGYpKQorCXsKKwkJaWYgKCFzdHJuY21wKGxpbmUsIHRh
+cmdldCwgTUlOKHNpemVvZihsaW5lKSwgc3RybGVuKHRhcmdldCkpKSkKKwkJeworCQkJc2VlbiA9
+IHRydWU7CisJCQlicmVhazsKKwkJfQorCX0KKworCWZjbG9zZShmKTsKKworCXJldHVybiBzZWVu
+OworfQogCiBib29sCiBmdzNfbG9ja19wYXRoKGludCAqZmQsIGNvbnN0IGNoYXIgKnBhdGgpCmRp
+ZmYgLS1naXQgYS91dGlscy5oIGIvdXRpbHMuaAppbmRleCBjOGNmNjlhLi41NThiYjRmIDEwMDY0
+NAotLS0gYS91dGlscy5oCisrKyBiL3V0aWxzLmgKQEAgLTg5LDYgKzg5LDEwIEBAIHZvaWQgaW5m
+byhjb25zdCBjaGFyICpmb3JtYXQsIC4uLikKICAgICAoIShmbGFncyAmICgoMTw8RlczX1RBQkxF
+X0ZJTFRFUil8KDE8PEZXM19UQUJMRV9OQVQpfCAgICAgICAgICAgICAgICAgIFwKICAgICAgICAg
+ICAgICAgICAoMTw8RlczX1RBQkxFX01BTkdMRSl8KDE8PEZXM19UQUJMRV9SQVcpKSkpCiAKKyNk
+ZWZpbmUgTUlOKGEsYikJCQkJXAorCSh7IF9fdHlwZW9mX18gKGEpIF9hID0gKGEpOwkJXAorCQlf
+X3R5cGVvZl9fIChiKSBfYiA9IChiKTsJXAorCQlfYSA8IF9iID8gX2EgOiBfYjsgfSkKIAogdm9p
+ZCAqIGZ3M19hbGxvYyhzaXplX3Qgc2l6ZSk7CiBjaGFyICogZnczX3N0cmR1cChjb25zdCBjaGFy
+ICpzKTsKQEAgLTEwNSw2ICsxMDksOCBAQCB2b2lkIGZ3M19wcihjb25zdCBjaGFyICpmbXQsIC4u
+LikKIAogYm9vbCBmdzNfaGFzX3RhYmxlKGJvb2wgaXB2NiwgY29uc3QgY2hhciAqdGFibGUpOwog
+Citib29sIGZ3M19oYXNfdGFyZ2V0KGNvbnN0IGJvb2wgaXB2NiwgY29uc3QgY2hhciAqdGFyZ2V0
+KTsKKwogYm9vbCBmdzNfbG9jayh2b2lkKTsKIHZvaWQgZnczX3VubG9jayh2b2lkKTsKIGJvb2wg
+ZnczX2xvY2tfcGF0aChpbnQgKmZ3M19sb2NrX2ZkLCBjb25zdCBjaGFyICpwYXRoKTsKLS0gCjIu
+MjUuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
+ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
+aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

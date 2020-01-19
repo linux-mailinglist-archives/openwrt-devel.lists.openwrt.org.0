@@ -2,42 +2,44 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09226141F2C
-	for <lists+openwrt-devel@lfdr.de>; Sun, 19 Jan 2020 18:17:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2F02141F3A
+	for <lists+openwrt-devel@lfdr.de>; Sun, 19 Jan 2020 18:44:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:Date:Message-ID:References:To:From:Reply-To:
+	Subject:In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JFiLZ4TX9lvTE7h92OH4nvB+i3pZQyEKodEUL9VsqII=; b=LZrbcT3zoZBEj3UiM5QkLIYFB
-	SftpeRADM+wSIKIKcsucGymyK7asqlOvWjw2ZhVCtu8gIxi8z9yJNGD6N7M6Ku68LYfgZADkoE8Wt
-	YAqslx6Wef4XFdSA5E2AzOLxNPQdr8I+W0wi8vcN1yt3PBY0N6vAQNkVU740iK6Ttm5C+D4GJX3gz
-	QTfSJ0Il8j+lp91G95YwIxH1OqbZyrJji4y9YiuS1KLooX2feMJCoUnFpJ9DwoZguICezo5RaQpqF
-	LA43M8m5017nme6vYz9j/ABLSq+M6zsYDu0r4LOEQBKanJjBxIvXW3ckzKzbOSCVJhB/fIYm2y0Z6
-	yj+ocipwg==;
+	 bh=Gp6BExq/qxwl9mgMmxWeMv5mB3oyoMthmxDj43ecbd4=; b=DFLZ/g/4KxqrZyONETTX0UAHo
+	qn/ozgZFqpMY8Ib3PS2wKTO74VRoBWvVBETpUYRFbYjBZcXSxgaiAZx6r3kN5NEXwJ5rjq+kPdK0x
+	bnIU6puwAejBotUnjkOMuF6DA8Zb/EIhnjrVl5SSFxzm4kfbqJz+VlpB/JUNUuDW2SejwxU/RzY/k
+	HAJv6bdWnU2OZ+rRtqBFoUmo8F18uPfZxbjgzkmvJbNZ6DGG+dLii3nYgcSOkk5Cw5k2xuP+5sC4M
+	i7x1OfFBbxNtX8FL38NURWldLesJaECngJ+p58dLQlYktEpQ9NNC4zhdn8kPCCbqnaqCR+Vrm/DVk
+	oU0bLywdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itECs-0003pP-74; Sun, 19 Jan 2020 17:17:50 +0000
+	id 1itEcu-0003bn-QF; Sun, 19 Jan 2020 17:44:44 +0000
 Received: from mout-p-201.mailbox.org ([80.241.56.171])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itECi-0003cd-VN
- for openwrt-devel@lists.openwrt.org; Sun, 19 Jan 2020 17:17:44 +0000
+ id 1itEcm-0003bG-Nb
+ for openwrt-devel@lists.openwrt.org; Sun, 19 Jan 2020 17:44:38 +0000
 Received: from smtp1.mailbox.org (smtp1.mailbox.org
  [IPv6:2001:67c:2050:105:465:1:1:0])
  (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
  (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 4811h53mMjzQl9c;
- Sun, 19 Jan 2020 18:17:25 +0100 (CET)
+ by mout-p-201.mailbox.org (Postfix) with ESMTPS id 4812HP5JnJzQlC0;
+ Sun, 19 Jan 2020 18:44:33 +0100 (CET)
 X-Virus-Scanned: amavisd-new at heinlein-support.de
 Received: from smtp1.mailbox.org ([80.241.60.240])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id TWnIexPMEJBz; Sun, 19 Jan 2020 18:17:18 +0100 (CET)
-From: Hauke Mehrtens <hauke@hauke-m.de>
-To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id HVv-hr6jn11o; Sun, 19 Jan 2020 18:44:30 +0100 (CET)
+To: =?UTF-8?Q?Petr_=c5=a0tetiar?= <ynezz@true.cz>,
+ Peter Geis <pgwipeout@gmail.com>
 References: <c0dd994d-fb68-1845-60cb-2dfcc3d5455a@hauke-m.de>
- <20200116100514.GB84286@meh.true.cz>
+ <CAMdYzYqL3-6s4vcjyT7=UDDQTN85RNQTRQ77ixvRnBk2EaBDHQ@mail.gmail.com>
+ <20200116114813.GC84286@meh.true.cz>
+From: Hauke Mehrtens <hauke@hauke-m.de>
 Autocrypt: addr=hauke@hauke-m.de; keydata=
  mQINBFtLdKcBEADFOTNUys8TnhpEdE5e1wO1vC+a62dPtuZgxYG83+9iVpsAyaSrCGGz5tmu
  BgkEMZVK9YogfMyVHFEcy0RqfO7gIYBYvFp0z32btJhjkjBm9hZ6eonjFnG9XmqDKg/aZI+u
@@ -98,13 +100,13 @@ Autocrypt: addr=hauke@hauke-m.de; keydata=
  3jmPvpEc2WCU5uJfaVoAEqh9kI2D7NlQCG80UkXDHGmcoHBnsiEZGjzm5zYOYinjTUeoy3F0
  8aTZ+e/sj+r4VTOUB/b0jy+JPnxn23FktGIYnQ+lLsAkmcbcDwCop4V59weR2eqwBqedNRUX
  5OTP93lUIhrRIy3cZT/A5nNcUeCYRS8bCRFKrQKEn92RFg==
-Message-ID: <c252d8df-d0af-b0ec-ea21-7ade8e02da50@hauke-m.de>
-Date: Sun, 19 Jan 2020 18:17:10 +0100
+Message-ID: <031151f7-c236-5aaf-9113-c7ebf1f8cc05@hauke-m.de>
+Date: Sun, 19 Jan 2020 18:44:25 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200116100514.GB84286@meh.true.cz>
+In-Reply-To: <20200116114813.GC84286@meh.true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_091741_339194_7D4E01F9 
-X-CRM114-Status: GOOD (  36.01  )
+X-CRM114-CacheID: sfid-20200119_094437_085127_BB574651 
+X-CRM114-Status: GOOD (  28.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -127,225 +129,159 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Content-Type: multipart/mixed; boundary="===============2207392650809394210=="
+Content-Type: multipart/mixed; boundary="===============9052469780331538417=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============2207392650809394210==
+--===============9052469780331538417==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="uXebYwrauYLKeReHmHcl5dbpp9mJHDMjS"
+ boundary="k66MWx8NtMuBSSJN13B9foIhoGPW15JJJ"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---uXebYwrauYLKeReHmHcl5dbpp9mJHDMjS
-Content-Type: multipart/mixed; boundary="I6C6EYw5YFSGYakbbUP9uu4F9Isy7LVsY"
+--k66MWx8NtMuBSSJN13B9foIhoGPW15JJJ
+Content-Type: multipart/mixed; boundary="JjKBADUSKI9FNmHwazSAlqrpYPLtdgl0T"
 
---I6C6EYw5YFSGYakbbUP9uu4F9Isy7LVsY
+--JjKBADUSKI9FNmHwazSAlqrpYPLtdgl0T
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
-On 1/16/20 11:05 AM, Petr =C5=A0tetiar wrote:
-> Hauke Mehrtens <hauke@hauke-m.de> [2020-01-16 00:00:33]:
+On 1/16/20 12:48 PM, Petr =C5=A0tetiar wrote:
+> Peter Geis <pgwipeout@gmail.com> [2020-01-15 21:15:41]:
 >=20
 > Hi,
+
 Hi,
 
-Sorry for answering so late, was busy with other stuff.
-
->> My preferred timeline would the the following:
->> * Beginning of February: freeze master for big changes (adding new
->> boards is no problem)
->> * Beginning of March: branch off 20.3 release branch
->> * 1 week after the branch was created: tag and build 20.3-rc1
->> * 3 weeks later tag and build 20.3-rc2
->> * 3 weeks later tag and build 20.3 final
+> tl;dr I'm going to vote in favor of skipping release with 4.19 and focu=
+s on
+> 5.4 kernel.
 >=20
-> Amazing!
+> The 19.07 release was delayed by a few months, so this has affected the=
+
+> subsequent release as well. The plan is to have stable release every 6 =
+months
+> as it is easier to support, allows us iterating faster and breaking stu=
+ff more
+> often :-)
+
+The biggest disadvantage of using kernel 5.4 is that we would do the
+next release probably 3 months later compared to a release with kernel
+4.19, but I am fine with that.
+
+> It's clear, that this fast release cycle needs some time to settle, but=
+ I
+> believe, that in the end everybody is going to benefit from that. Users=
+ by
+> having modern kernel and userland, developers less backports to maintai=
+n and
+> everybody predictable releases (to some extent).
+
+Yes especially when you want to get your kernel patches also into
+upstream Linux it is much easier when OpenWrt uses a recent Linux kernel
+as there is less stuff to backport. So this would reduce the workload.
+
+> Once mastered, this faster release pace might be one more very good rea=
+son for
+> the vendors/companies to adopt (or at least strongly consider) "upstrea=
+m
+> first" workflow :-)
+
+For my experience there are a lot of factors out of our control. A more
+predictable release scheduled should help companies doing upstream work
+to plan when they will see this in a production release.
+
+The SoC vendors normally update the kernel major version only every few
+years, so there is some patching to OpenWrt needed to add support for
+more recent or older version anyway, like it is currently the case for
+prplWrt using OpenWrt 19.07 with kernel 4.9.
+If a company targets to get their stuff into upstream kernel, they
+anyway have to support recent kernel versions.
+
+> If that's not doable for various obstacles, then let's
+> hope, that they will hopefully engage and consider sponsoring some kind=
+ of
+> OpenWrt (Long Term Support) LTS release effort.
+
+Often the time to market for a product takes over a year, so if a
+product uses OpenWrt it is normally shipped with a version which is end
+of life already. I would support it, if some companies sponsor a long
+term support of OpenWrt, I think the community can live with the current
+support times.
+
+>> I think it is wise to target 4.19 as it has been in the nightly
+>> releases, and as such has been in testing.
 >=20
-> Is this fixed or relaxed timeline? :-) I mean, are those steps going to=
- happen
-> as they're defined or they can slip by some days/weeks/months?
+> Yeah, we're all aware about that. If we decide to skip 4.19, we're part=
+ialy
+> throwing away a lot of work, but on the other hand there was a lot of s=
+tuff
+> upstreamed/fixed, so making the 5.4 better. It's more then clear, that =
+staying
+> closer to the upstream brings mostly only benefits.
 
-This is just my proposal and I would see the dates relaxed, it also
-depends if people have time to do it and so on. We can also do two weeks
-between the RCs and do one more like you suggested a month ago.
+I think most of this work will be reused for kernel 5.4, we just will
+get more challenges with 5.4. ;-) I would not consider the integration
+of kernel 4.19 a wast.
 
-The week between the branch and the RC1 is just to setup the build bots
-for the branch.
-
-Someone has to take care of the release and this person would then
-announce that he wants to tag and build the next RC some days before so
-that people can prepare. The person can change in the release process.
-
-Does someone else other than jow know how to setup built bot for a new
-branch? Is this documented somewhere?
-
-> Looking at the recent past, and I think, that we should learn from that=
-
-> experience, it would be nice to define who/what can delay this proposed=
-
-> timeline, release blockers so to speak.=20
+> So I'm going to support focus on 5.4 with my vote, thus suggest, that w=
+e skip
+> release with 4.19.  Even that I know, that we're going to violate our 6=
+ month
+> release cycle goal one more time, but hopefully for the last time :-) L=
+ets
+> bite the bullet and move forward in that 5.4 direction ASAP.
 >=20
-> Thinking about it, just this two points came to my mind:
+> BTW people doing the kernel development are essential element for this
+> project, so we should try to make their work easier as much as possible=
+=2E Or at
+> least don't put any obstacles in their development direction.
 >=20
->  - unfixed security issues we're aware of
->  - unfixed bug which could lead to:
+> In other words, if I've to choose where to spend the finite and scarce =
+amount
+> of resources, whether it should go into the development of 5.4 or into =
+the
+> maintenance of 4.19, I'm wholeheartedly selecting 5.4.=20
 >=20
->    * bricked device
->    * preventing access to the device over SSH or LuCI
+>> It would be nice to have lxd support in the full release, instead of
+>> needing to custom build to enable support.
 >=20
->    Those issues needs to be properly reported at respective bug trackin=
-g
->    system and confirmed/reproducible by at least one more person.
->=20
-> From my point of view anything else shouldn't delay .0 release, as the =
-other
-> issues could be fixed in subsequent .1 even a week later if needed to b=
-e.
->=20
-> Any delay in this timeline should be properly communicated to the devel=
-opment
-> mailing list at the time we discover such release blocker.
+> Feel free to follow https://openwrt.org/submitting-patches and make it =
+reality
+> :-) Thanks!
 
-=46rom my point of view the delays were not caused by someone saying that=
-
-we should wait till something is fixed, but that nobody did the next
-step and nothing happened.
-
-If there is something important which should be fixed in the RC or final
-release this should be mentioned on the mailing list if we do not have a
-fix yet.
-
-I would also only list the big problems you listed as real showstoppers,
-but it would be nice if more people also get informed about the other
-bugs too.
-
-> BTW it's still master + 2 stable releases which will receive the suppor=
-t? Once
-> the 20.y is out, the 18.06 is EOL?
-
-I think this is not really clarified yet. I assume that 15.05 and 17.01
-are now officially fully end of life. I do not know when we put 18.06
-into this mode, but it will definitely get less patches after 19.07 is
-out, because people care now less.
-
-I added some support status to this wiki page:
-https://openwrt.org/docs/guide-developer/security#support_status
-I hope this is ok, I put some minimum dates there and they should be
-extended if we think we will support something longer. I am fine with
-changes.
-
-I think the latest release branch is better support than the previous
-one, how do we paraphrase this? Name it extended support like some
-companies do it?
-
->> I am fine with kernel 4.19 or 5.4, but we should decide and not stay i=
-n
->> a limbo for log, so we can work io the right direction.
->=20
-> There is going to be a vote about this topic soon, probably tomorrow, s=
-ee
-> bellow.
->=20
->> It would be nice to have jails activated by default, but there are sti=
-ll
->> problems when using an initramfs, I will probably not have the time to=
-
->> investigate into this problem in the next 4 weeks.
->=20
-> I would like to have jails as well, but it should be probably first ena=
-bled in
-> master for some time. Is this[1] the issue you're having?
-
-Yes this is the issue I am talking about.
-
->> Should wpad-openssl or better wpad-wolfssl (after it works with WPA3) =
-be
->> added as default wpad version now? If we do this we can also activate
->> https support for luci by default https support should not cost much
->> space when we already have an ssl library.
->=20
-> I agree.
->=20
-> Is there anything we can do in LuCI UI to make the errors caused by
-> self-signed certs in the browsers less stressful? Perhaps adding one mo=
-re step
-> (until there's password set or just for the first time) while redirecti=
-ng from
-> 80 to 443, some kind of special page, where we could entertain the user=
- about
-> the next possible browser certificate error (show the certificate
-> details/fingerprint for additional verification) ?
->=20
-> Simply something which could improve the UX. I know, it's very hard.
-
-I am not aware of anything.
-
->> Are there any other bigger changes planned you would like to get into
->> the next release?
->=20
-> Sysupgrade image signature validation enabled by default.
-
-Someone told me that we often changed the signature key in the past is
-this true?
-
->> Should we do a vote on the kernel version and release plan in the end?=
-
->=20
-> We've somehow agreed about the kernel voting on IRC. If we can formaliz=
-e the
-> release plan/rules/timeline soon, lets add it to the next combined vote=
- as
-> well (it doesn't matter if it's 4in1 or 5in1 voting, we're saving time)=
-, so
-> far it looks like:
->=20
->  - 4.19 Vs 5.4 for next release (Jow is preparing the text)
->  - new project logo/colors (ynezz)
->  - openwrt-announce mailing list (ynezz if needed be)
->  - GitHub Vs self-hosted GitLab Vs whatever else (ynezz if needed be)
->  - release timeline/rules definition (Hauke/Baptiste?)
->=20
-> Does anyone else see any other topic which should be included in this c=
-ombined
-> vote? If so, let us know ASAP and ideally prepare the text/voting optio=
-ns as
-> well.
-
-I would prefer if we make separate votes at least for the topics which
-are separate, you can start them at the same time, but I think it is
-easier to have separate discussions.
-
-> 1. https://patchwork.ozlabs.org/patch/1179527/
+I think Daniel already did this:
+https://git.openwrt.org/fcb41decf6c622482b20af45a77e62db8d95046e
+https://git.openwrt.org/7cc22d72e96093c816292e1b640adff770c7fe77
 
 Hauke
 
 
---I6C6EYw5YFSGYakbbUP9uu4F9Isy7LVsY--
+--JjKBADUSKI9FNmHwazSAlqrpYPLtdgl0T--
 
---uXebYwrauYLKeReHmHcl5dbpp9mJHDMjS
+--k66MWx8NtMuBSSJN13B9foIhoGPW15JJJ
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4kjxoACgkQ8bdnhZyy
-68cZTwgA2oOuavWG0MwSwfhazl0b7UxxruWUJAOoSpcKQhxtAGMl38RFhKWCjek6
-qvyALVwsFyWqgUC7702qilPwpX2UzeCKuoJUVcmJnjA64NNozRHdiJ08itkC8v5i
-bXGCMpBt/TjJNoVaybODusSljXGj4U94eLDSARcc0kHVgxlk2pJYftnTVTypMPEv
-bJxiZr3tecri4JeX/zHJvkx2tXskJGRmko0QGpD7PA2UB8UGQxArjjXUUDAk9HAm
-wKrFiq7BREn9yZu8E5LcM9bhhY0zYSNeU1padDUPU8fn4T0yd/VzJyF/Pr92iYnt
-95j2aXdZHJIbGC6m7TzHSBGtbHt6/A==
-=MPzm
+iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl4klXkACgkQ8bdnhZyy
+68cECgf9GLLcZpLyHg3Zg7b+uGWwXNW/Kr3ghe1WbpomBODDxwEFZmUGS23fGM9Y
+z/f3ddOpLgGA0rkY4VjveqO/EF/7yFN70rZhUB/SriulbcxAjD7QaoWiyf9wkbrk
+/RIEpP9Hdeq5OrxEcXgGpGUUcSJAj9H4tQLGyPTFO6Mpikg63AGxzwov942UCUlG
+msV1i6dK+h0shRYM8Mstqe2bmReZpl8I95gl1+WIUv7rJ4zY4LolgVAhxz2WnMwP
+Y+wmCCS0SmBAaiCc+/OlqJXxFGGtRlwEGajc9NnRmYs7LnSKOhOJaK0+07R56aGf
+xpMPk+cPNYrJzxe0S2ITOXT71xY7rw==
+=gxEk
 -----END PGP SIGNATURE-----
 
---uXebYwrauYLKeReHmHcl5dbpp9mJHDMjS--
+--k66MWx8NtMuBSSJN13B9foIhoGPW15JJJ--
 
 
---===============2207392650809394210==
+--===============9052469780331538417==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -356,5 +292,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2207392650809394210==--
+--===============9052469780331538417==--
 

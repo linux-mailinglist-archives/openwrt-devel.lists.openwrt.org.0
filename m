@@ -2,63 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9C4C141D2B
-	for <lists+openwrt-devel@lfdr.de>; Sun, 19 Jan 2020 10:56:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66102141DA6
+	for <lists+openwrt-devel@lfdr.de>; Sun, 19 Jan 2020 12:39:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BzRIHtMS7VtMvgydnq1q9wlIOPjG1mEYpii/BTwuW9s=; b=Yo5OTpBN4Boc9L
-	tpT/rUrzxe2zPQcwdzhLjcojeeek4Eq/Xzs1cS68fGvKpkmJSptRxsesCWBNQy3k1kzKDPBbhNAvt
-	v2UP7JUa3AJsdWLaLfHh6bgP5MSPykdnWNWqyRXrQ9oG88SAtyv5Z0+uFWlckqNpWz4Tt2V5hoP5Q
-	9vAEiprc3nQ3+FYDq2Ux/IqKds3XirtWj+oZ/U84Nk1/NWYoKOJ353wT7xOJis5rnMdca7QdcEl7H
-	ZblGaDC6KALMIHCE2VhJBcOnWRCAPd0sY6En3/QDsuD8BJY0aLc95KKgpKDe8KRDyxTHEexza4WiZ
-	RE966HStknxBpNeIx0og==;
+	List-Owner; bh=9o+AOW6vAT2eWRBFrnepavuD0ypvYNSZT+XC1VB0ATA=; b=gQdJ1BX6R/gu71
+	q4zMbhuVbLge+7Txa2LTEWV/LXMgEIwQysemtBkEHPB9yJ7er7pM6O9RzUGXLaD3xHKQNIxmQXOua
+	Q4v8lDoBs/3ufnfXKYaT+pCoT8+cYiocNmX8zjwGRoNwobcgyjvyPfowiyMdXSurP8mwhLIeWH8fM
+	50Sg5DRuKJpCtxnC55G5B5Yo+DMOljy0KF4gObtqQC3gyoWvzhoIKU/vCcKS5bM4erNFfVQwSDdYC
+	zZdB6lPJbwvNGGUFEKNa/NJS2EOtZHeZtg1+Bd1x6hS6gPX0ltXT5Jyb2xuhLL3tHOjYkT+SLiPt4
+	fyuXcR24ucD0ftqPhvKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1it7Jc-0000c9-G5; Sun, 19 Jan 2020 09:56:20 +0000
-Received: from welho-filter2.welho.com ([83.102.41.24])
+	id 1it8vG-0005cV-VH; Sun, 19 Jan 2020 11:39:18 +0000
+Received: from mx4.wp.pl ([212.77.101.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1it7JP-0000bW-OY
- for openwrt-devel@lists.openwrt.org; Sun, 19 Jan 2020 09:56:10 +0000
-Received: from localhost (localhost [127.0.0.1])
- by welho-filter2.welho.com (Postfix) with ESMTP id 073E021301;
- Sun, 19 Jan 2020 11:55:58 +0200 (EET)
-X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
-Received: from welho-smtp1.welho.com ([IPv6:::ffff:83.102.41.84])
- by localhost (welho-filter2.welho.com [::ffff:83.102.41.24]) (amavisd-new,
- port 10024)
- with ESMTP id EIRDfToflN8M; Sun, 19 Jan 2020 11:55:54 +0200 (EET)
-Received: from [192.168.1.180] (87-100-240-191.bb.dnainternet.fi
- [87.100.240.191])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by welho-smtp1.welho.com (Postfix) with ESMTPS id 54B5D7A;
- Sun, 19 Jan 2020 11:55:52 +0200 (EET)
-To: Christian Lamparter <chunkeey@gmail.com>,
- OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <1901679f-8a8c-809f-e9a4-072831c4ba49@iki.fi>
-Date: Sun, 19 Jan 2020 11:55:51 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101
- Thunderbird/73.0
+ id 1it8v9-0005bR-IR
+ for openwrt-devel@lists.openwrt.org; Sun, 19 Jan 2020 11:39:13 +0000
+Received: (wp-smtpd smtp.wp.pl 35983 invoked from network);
+ 19 Jan 2020 12:39:04 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1579433944; bh=tpsFrXy2defspKKRdbiwzRtZdMQm4v1iPPiuEVm+D/4=;
+ h=From:To:Cc:Subject;
+ b=NbG/iXiTdn/TUy1Hk//LruV1HP4f5QZPRwzZT1Om0REDLEMjVhRhxw4GklMVvbYCE
+ vnCgiQhzEGtHIdPsFwiQjMjgB247mDflWhhPt71GRcl6oz0sIcGs5jmoPzlxSFPrYy
+ A/+3BX1mspuxggoDBWi4vWCGGvXyF1wac45cwUFc=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <openwrt-devel@lists.openwrt.org>; 19 Jan 2020 12:39:04 +0100
+Date: Sun, 19 Jan 2020 12:08:16 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Message-ID: <20200119120816.44406149@kosmio.komorska>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
+X-WP-MailID: 68e5dd6663ac422e3a947680c1df0bfe
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [gTPg]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_015607_962376_B70400F5 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20200119_033911_969219_CBC5AF0C 
+X-CRM114-Status: UNSURE (   5.44  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [83.102.41.24 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.11 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [michal.cieslakiewicz[at]wp.pl]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] GNU libtool 2.4.0 bump to 2.4.2 ?
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH 0/2] ath79: update device naming for Netgear
+ WNDR3700v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,36 +80,30 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-I have noticed that Christian has had the libtool 2.4.2 version bump in his 
-staging repo since March 2019. I assume that it has caused no trouble for him 
-so far, so I just wonder if it should be pushed to the main repo at some point?
+This patchset changes device string to 'wndr3700-v2' (adds dash before
+variant) making it compatible with naming convention for ath79 target.
+Then board, under its new name, is added to uboot-envtools.
 
-https://git.openwrt.org/?p=openwrt/staging/chunkeey.git;a=commitdiff;h=a0e022309d0fcf8e7f47f4044bf3ae79d5cdd6eb;hp=7bfd053e004dde870fc531ff70018bc1c14dca20
+Patch list (2):
+  ath79: WNDR3700v2: add dash before version in device name
+  ath79: uboot-envtools: add Netgear WNDR3700v2
 
+ package/boot/uboot-envtools/files/ath79                     | 3 ++-
+ ...etgear_wndr3700v2.dts => ar7161_netgear_wndr3700-v2.dts} | 4 ++--
+ .../linux/ath79/generic/base-files/etc/board.d/02_network   | 4 ++--
+ .../base-files/etc/hotplug.d/firmware/10-ath9k-eeprom       | 4 ++--
+ target/linux/ath79/image/generic.mk                         | 6 +++---
+ 5 files changed, 11 insertions(+), 10 deletions(-)
+ rename target/linux/ath79/dts/{ar7161_netgear_wndr3700v2.dts => ar7161_netgear_wndr3700-v2.dts} (85%)
 
-Of the build tools we use, our version of GNU libtool (= "autoreconf" in our 
-Makefiles) is by far the most antiqued tool that we still use. The currently 
-used version 2.4.0 dates back to 2010. Bumping it up to 2.4.2 would advance 
-it by one year to 2011, but it would still be quite antique.
-
-I looked into the version bump work myself three years ago, but as there has 
-been a major structure change after 2.4.2, I threw the towel in. Bumping it 
-further from 2.4.2 to 2.4.6(?) requires some actual understanding of the 
-Linux library environment and the intention of our OpenWrt specific 
-cross-compile targeting patches for libtool.
-
-I just fear that we will sooner of later get hit by the usage of a decade old 
-tool as the related build tools and paradigms evolve. Bumping it up to 2.4.2 
-might be the first step, but sooner or later somebody with relevant skills 
-should look into getting the version modernized.
-
-
-
+-- 
+2.25.0
 
 _______________________________________________
 openwrt-devel mailing list

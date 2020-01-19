@@ -2,65 +2,76 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7938B141E65
-	for <lists+openwrt-devel@lfdr.de>; Sun, 19 Jan 2020 15:05:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EF72141EE5
+	for <lists+openwrt-devel@lfdr.de>; Sun, 19 Jan 2020 16:42:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X/WWaipmk1F+MipVcNmFmInxxrGHkMtyVG6j78M4R+8=; b=Npw1NFtQZgY+kpunK6p8KC1Ni
-	vrsU1vwi5Gv4Cr3SaiXK1OZV8GkepcjGpJ6tMxmCjvHZ839JuhZq8gwFyuAUliGIwjBgxsFshufzf
-	WybKUT7XHcZf4Mr9vEhok+iN8wHeYR1AQEv7+mOjP27Z7AxZVo0fmqc7H9AKWBO1o7BrysbzTySxy
-	Y5TJ12ANvBFUwYXkSR9DkO+YrmoZps1SH16QnhsIpJbM2ZFnD9PYjlDdHnOUw8jduS+ItCfTex2Uh
-	2YOMdp4sXJLuFH7FIK0kjEG0NzjL1qOBWbTEOkeTBaAjbW7pRwOwj4ZzMte9l97ymEI9uIwyYzR0p
-	GdltXIJSg==;
+	 bh=2vf4D/gm5qH7sr4AH7UVhzRl5mW8Y2LbrDdnvU5i+M8=; b=KAT5Mw3RTY6VvjLDbuEvRF2fE
+	qQbvB59I9w9iVfFQ3wX9PdFe26zdmc0xf678mqR0oD2kOtZIW2FRO37gvUau3cYdUZ5AuxlGkE7Cn
+	cUHdRhmvG7mh78hIMtCNiCW8cJQTND5qAx7E8Fy9h/2b4NTsl6hNeE2ctaoEh8WcnKNyZFUjwVpuI
+	MALYWN5usMbSy/Hw5cGhdijK7Fd2IDcwxunN1HKFA9FJV9azEhhfwzaXNi4cg25OhAoIGHQnEm9h+
+	uCjN2U0OYcRUHJkbqpdnwkmo0fU3Fw7b98ecj7e7Rp95r1cZLCm9ENnggVANtFLvpVMfB3kRCsFgL
+	s3lAWG8yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itBCl-0001pZ-Ag; Sun, 19 Jan 2020 14:05:31 +0000
-Received: from welho-filter3.welho.com ([83.102.41.25])
+	id 1itCid-0007i6-VE; Sun, 19 Jan 2020 15:42:32 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itBCc-0001ou-N4
- for openwrt-devel@lists.openwrt.org; Sun, 19 Jan 2020 14:05:26 +0000
-Received: from localhost (localhost [127.0.0.1])
- by welho-filter3.welho.com (Postfix) with ESMTP id C2594C12B;
- Sun, 19 Jan 2020 16:05:15 +0200 (EET)
-X-Virus-Scanned: Debian amavisd-new at pp.htv.fi
-Received: from welho-smtp3.welho.com ([IPv6:::ffff:83.102.41.86])
- by localhost (welho-filter3.welho.com [::ffff:83.102.41.25]) (amavisd-new,
- port 10024)
- with ESMTP id ig-KYK5qaTTO; Sun, 19 Jan 2020 16:05:13 +0200 (EET)
-Received: from [192.168.1.180] (87-100-240-191.bb.dnainternet.fi
- [87.100.240.191])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by welho-smtp3.welho.com (Postfix) with ESMTPS id 560972308;
- Sun, 19 Jan 2020 16:05:11 +0200 (EET)
-To: openwrt-devel@lists.openwrt.org, michal.cieslakiewicz@wp.pl
+ id 1itCiU-0007hZ-4J
+ for openwrt-devel@lists.openwrt.org; Sun, 19 Jan 2020 15:42:25 +0000
+Received: from desktop ([188.194.105.26]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MQvL7-1jEqh81QCF-00NvdP; Sun, 19 Jan 2020 16:42:13 +0100
+From: <mail@adrianschmutzler.de>
+To: "'Michal Cieslakiewicz'" <michal.cieslakiewicz@wp.pl>,
+ <openwrt-devel@lists.openwrt.org>
 References: <20200119120816.44406149@kosmio.komorska>
-From: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <ed20fdff-e7f7-9423-1680-9a2caee7b740@iki.fi>
-Date: Sun, 19 Jan 2020 16:05:11 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101
- Thunderbird/73.0
+ <20200119121001.71dd8822@kosmio.komorska>
+In-Reply-To: <20200119121001.71dd8822@kosmio.komorska>
+Date: Sun, 19 Jan 2020 16:42:12 +0100
+Message-ID: <002601d5cedf$04f87bc0$0ee97340$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-In-Reply-To: <20200119120816.44406149@kosmio.komorska>
+Thread-Index: AQITlEtO2KKapdCkBxMYY4pO7XxT5QJ2eOh3p2LhQjA=
+Content-Language: de
+X-Provags-ID: V03:K1:RkgdzLRRAOip+DXvjY3yBr5/7Oh1ORdXZxh88B4sk5qmzwCpLFd
+ OTPlmagwx7ldjZgJSU0DqzTNViXYBOnIzuvFZFWtmkThe1hhm+tcbqhT/GGvKyz/+EN+n4t
+ Fi5nALV31nNJzazmexkWfg7kPTc8JsghPDmA39Jnk4tD8DMBTuSAibouTb+5x/U83L6xeQJ
+ 7Pf+tAw5psiYQ4QhZ/chg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:cgFEHcgvTA8=:0/oeljgW3dDHrfgFov1pfC
+ 48eHPe8JJJ19tqTZLfA+kQnK4c+umnGKdn+y6zNXAnlUoRL3N5q0YMYYCDfVujDBPfVyXr/im
+ 4Hb3tJwHXjihMsF2sI5BoXeNOkMaLGPnYVbqd5Y0CeCFnzuH3pwpYwLqZFee2gzzv9BFuBS8a
+ l99SRDlbTx391c3479AeVHOm5Aqs5P83xBSXBHmCl0dBwRlSjiapHD0Cg3g8PeG+engGtDBRn
+ 84wwzbCWUdWi0lFWq+tCnlc9xsMvAXFzGPeEcdKO+zRYCp8vKRMJZDF89fmmc8/X3/oQldNb5
+ CyJZGY9Ekl2XZKmuKbkfLVOC67lyVSRF8jAUV50F09fu9qR/R3OlybRrkc0v3mPz26twkdKBL
+ xqkkzPY0RsSEd6+xY+vE0IxwHkFYbiIIHKygQ3KIn7s64zJZj8xP++aKDEXyxMCZxA7WZJUGJ
+ 0wGdh8CH/pdI7YlrkhqNaylWR2Gz+mSuwzqQ2HEWgVX5Jd8X2afx/pM854DEOeW3mIIWwuAo9
+ hYYpJXS8CL419RCby9CEP0lMBSDhCD90t273wrR0cJqEvgASDnzWtJveKdtV0snJz55vie5zF
+ yoQKDozmLDODfmfPL29IsNUtogJQXniYmfKR1WlolXLThgysTC7hiVQQuAz8odRAPfloqgPYA
+ vQt8TQoN06jAupsJvUNoCfmho6uRJE2TQo15XMJsXVli4TzuDGafi+FEGBKKrYqRHC92x/e7k
+ cJEluCiWi3zPrApTGceQOyrU2rWl/3v1LONByuXN9Vw9Vs25B+PsQ3UeBQuIsP+WWoPHfWKMZ
+ L9me9m6Y4ly+/LjfpVVYXMJ48GswnWAqiIMCxd16eIheV7C+OP9ECsTIRD3PmN6vs1mpgTMP8
+ JjSf+jnDZtWxnY3PruB2g0rSOcR8cncDgeJhS+sv8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_060522_918674_01BA2303 
-X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-CacheID: sfid-20200119_074222_467327_8C536463 
+X-CRM114-Status: UNSURE (   5.34  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [83.102.41.25 listed in list.dnswl.org]
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.73 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 0/2] ath79: update device naming for
- Netgear WNDR3700v2
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] ath79: WNDR3700v2: add dash before
+ version in device name
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,38 +83,77 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============7963553844062194488=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Michal Cieslakiewicz wrote on Sun Jan 19 03:08:16 PST 2020:
+This is a multipart message in MIME format.
 
- > This patchset changes device string to 'wndr3700-v2' (adds dash before 
-variant) making it compatible with naming convention for ath79 target. Then 
-board, under its new name, is added to uboot-envtools.
+--===============7963553844062194488==
+Content-Language: de
+Content-Type: multipart/signed;
+	protocol="application/pgp-signature";
+	micalg=pgp-sha256;
+	boundary="=-=PUyEAmQrEw3y7h=-="
+
+This is a multipart message in MIME format.
+
+--=-=PUyEAmQrEw3y7h=-=
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Hi,
+
+> -  SUPPORTED_DEVICES += wndr3700
+> +  SUPPORTED_DEVICES += wndr3700 wndr3700v2
+
+That would have to be
+
+SUPPORTED_DEVICES += wndr3700 netgear,wndr3700v2
+
+Best
+
+Adrian 
+
+--=-=PUyEAmQrEw3y7h=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4keNAACgkQoNyKO7qx
+AnBXWg//UET1hdjWs+VSb/EU3M8LuvMZXj81egVbeB3YCn5tfXmRHv3Od0UPMj37
+pnRtbD7MdMt7MhgRCuVyaVHGZgo+kF+jZ7QRAJqlajHx//3X1ccQaIYJ4KRnG1Kk
+y3956x846kMxxgGkp4YVeYuMNsiDXOUmZYGeDEDOFtbru7U461PmjmFuOFhPF964
+PdBnwDLvbdq3G9FqKKRsJdGZ60uJR27hy8A5mVxeiO+VWfwqrycHAMJJ+jrG/pJq
+wQ8p0tZ6ah5r4gAkbx3z2z5pgIKDGxIGS3htibbwRVtuE1tWafvHn0ZRGuqgcCQM
+vfq+0oAs06a7jr0So+ifYUIPWPJ9QhkZv29l62MyDuWyS2DQQRbpDRYXBzTwAbAa
+gs3gBhIcYnIxFf5MnL43Kzcp7qKexAJq6Akh8u8/ZAoYekD6nNcZipKDHbTZzURq
+4mX5LYPJKYiUZXH+AQwrvvmoU54LEJwhVaez7iJO3hONh2XFMZCl2VPzIzA/NjXZ
+BkI/KPUcyZ84CudQ8d9nO8a7T1LLAW5Ym1+6FmfX3i5T8QR/shHFuJv2FsmL3/g4
+4hc4rFe6RoEwARwrwxFVEHsDZyV64a5RtA1Lq5IYfW/IJcz1pqUQfqRu8z6Xpz8r
+OolTH/NUX2ceYDE5j6KtvgliFP7mkqWBc/cK7uitq1E7TdBaWdw=
+=vqHp
+-----END PGP SIGNATURE-----
 
 
-What is the motivation for this?
-
-The router was originally marketed as "WNDR3700v2" and that is both in the 
-packaging and also in the printed label in the router itself. The "v2" is not 
-a typical separate version number like many 6.1, 3.21 type of revisions next 
-to the serial number, but it has been part of the device name.
-
-Clear image of my WNDR3700v2 here:
-
-https://forum.openwrt.org/t/wndr3700-or-wndr3800-or-what-did-i-just-buy/8166/9
+--=-=PUyEAmQrEw3y7h=-=--
 
 
-To my knowledge the current naming enables pretty smooth 
-upgrading/downgrading between 19.07 and master, as well as with ar71xx and 
-ath79. Changing the name in one place might cause bumps to those sysupgrade 
-paths.
 
-
+--===============7963553844062194488==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============7963553844062194488==--
+
+

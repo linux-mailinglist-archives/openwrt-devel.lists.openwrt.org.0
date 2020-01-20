@@ -2,73 +2,68 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DADA21431EE
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 20:03:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66D45143275
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 20:34:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-Id:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5ZANIdOT633drStO6TX+Bh0iFhujCWGbJtv3UHOL7Q0=; b=Cu3aBkULm7ffaXG5Or+R03mUY
-	8UecohImGfgcOSDaK8htq9vfH2DOghkuA2c7sfuTFSNd9kpA3n0M9+1/WYaO+Vj9LMVsTE8qcfu/1
-	dvstUHWLpDDF2L0E92svTkyGNbqNUYADKQFnLgyBJwwiCcFupRLWWX5m0+2rFyK6FozX1okh6Ym+F
-	rxzex4RbOtW3QtRz3mQEXwShn7Cj7QVdGBl1tcd0EJ6Qlmz//ZklvGdCZQZFGLv7ZqiTy65ywPQxZ
-	OTOV/sIwQIKsZhtxJ9APwpZtPtgGCKXxsgOGV3vKUNR/keoijxWrQ0/MQU9+uJSuZNYetjwHpg7oH
-	Rq7gWxz6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=84HcsbXSFhCUggicy54H/mGb5PIk6EdSuTNlXrW0yQA=; b=fPUVT1Du5elYzZ
+	Gd2CUX0BYuPsY1rpmXpjDT/xCHIf9KBVY4m5LGet1gbiRle6D+bu75hlkJtL7Hbg3WLVRHWAtkmv5
+	fTkowhlwF+LPtC6b7W20cBev+Qv1X2kHrYRv/f1jNqGxqx7rzU6sF4/lF+VBu6ptA+gumW7fiUk38
+	atBH/tgKqlaNbedbHBNj+r0T/mezsYfDwOI1i65Aj51j4CbipNAVAQTZlw1TOuaxGkGHMbBF7vQU3
+	d0Qv00WLoK++qEUPvTxudy1JshO7TamWAZgJEXYOSOQMQy2tRmdfiK9ah1VRywyWp6XnmlmfBuJfB
+	kAVAN3GLgl6r+SrGxiyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itcKl-0000Zv-3J; Mon, 20 Jan 2020 19:03:35 +0000
-Received: from volatilesystems.org ([51.91.248.52])
+	id 1itcog-00034M-N7; Mon, 20 Jan 2020 19:34:30 +0000
+Received: from mx3.wp.pl ([212.77.101.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itcKa-0000ZC-PI
- for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 19:03:29 +0000
-Received: by volatilesystems.org (Postfix, from userid 112)
- id 06697FAA2C; Mon, 20 Jan 2020 20:03:20 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1579547000;
- bh=IMA3TOdo9eMRSGKsHYY4PUhWW1KyRI7IhkAU7hwjwZ4=;
- h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
- b=XzrdJwme1o8BPAOCyjPsTlsAOXpqnjLeGe20rzA9Fam0Q2bN39TcrITb7tYSk1fgW
- xMLi6bbe/uvtWk8gHqeZ90pX9S6pv2fxtjUIEB/fVx5nqYOhhOd7TFkhGDoV+xTVn6
- yQEGunJKNcYXGKyZwGDKsOd5l7fgiJe0cDUzh1IE=
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=unavailable
- autolearn_force=no version=3.4.2
-Received: from [10.0.0.10] (213.219.161.238.adsl.dyn.edpnet.net
- [213.219.161.238])
- by volatilesystems.org (Postfix) with ESMTPSA id 903BAFAA2A;
- Mon, 20 Jan 2020 20:03:14 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
- s=mail; t=1579546994;
- bh=IMA3TOdo9eMRSGKsHYY4PUhWW1KyRI7IhkAU7hwjwZ4=;
- h=Date:From:Subject:To:Cc:In-Reply-To:References:From;
- b=V8UwGvDyoiUERVrBsWSR7XdUNOE3sP3+B5M5WgovYyJoSfwYObVPwmn8Fhh3DSZAK
- Cxk9J/a/BtNnpOsnXba4gbqVpGLsZ++9ah1kmNcAtIcbnXDqHCztaK3pJ5TIfE0eQ9
- aBJTl9PRyYbyM9/K6vu1V2MGQI5vu2YSqCUTbLYA=
-Date: Mon, 20 Jan 2020 20:03:13 +0100
-From: Stijn Segers <foss@volatilesystems.org>
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-Message-Id: <1579546993.12306.0@mail.volatilesystems.org>
-In-Reply-To: <02c001d5cfc3$e1fc7a50$a5f56ef0$@adrianschmutzler.de>
-References: <20200120184931.4202-1-foss@volatilesystems.org>
- <02c001d5cfc3$e1fc7a50$a5f56ef0$@adrianschmutzler.de>
-X-Mailer: geary/0.12.4
+ id 1itcoX-00033s-Lw
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 19:34:23 +0000
+Received: (wp-smtpd smtp.wp.pl 29618 invoked from network);
+ 20 Jan 2020 20:34:16 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
+ t=1579548856; bh=5kI28opI63kJgBlvN1JZOXjUuRP0MPv7hXS0T4j0Pjk=;
+ h=From:To:Cc:Subject;
+ b=AdqfLztgUIRJbtQvdFpeZDRgTt55vksmWty0gz9/uQYCKf4/eyviD6TTCQCI6vRhy
+ VcC112FeOajuiGZPnMfnBsEe+CE6k/Xn47Isls8uofI3KBuO9q+hWxkftER1AtT0ap
+ RlzFq9eUCdgMtXHkDpqW8GbK8zsXq/qNFrtGH9W4=
+Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
+ (michal.cieslakiewicz@wp.pl@[89.79.49.72])
+ (envelope-sender <michal.cieslakiewicz@wp.pl>)
+ by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
+ for <mail@adrianschmutzler.de>; 20 Jan 2020 20:34:16 +0100
+Date: Mon, 20 Jan 2020 20:34:15 +0100
+From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
+To: <mail@adrianschmutzler.de>
+Message-ID: <20200120203406.6d2dd40d@kosmio.komorska>
+In-Reply-To: <002601d5cedf$04f87bc0$0ee97340$@adrianschmutzler.de>
+References: <20200119120816.44406149@kosmio.komorska>
+ <20200119121001.71dd8822@kosmio.komorska>
+ <002601d5cedf$04f87bc0$0ee97340$@adrianschmutzler.de>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-X-Virus-Scanned: clamav-milter 0.101.4 at atalanta
-X-Virus-Status: Clean
+X-WP-MailID: a17ea809a347b29df1bd422f2338ebd6
+X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
+X-WP-SPAM: NO 0000000 [0bM0]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_110324_967425_D4CD9CDD 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20200120_113422_246514_14CFB932 
+X-CRM114-Status: UNSURE (   5.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.77.101.10 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [michal.cieslakiewicz[at]wp.pl]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,8 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH] [19.07] ramips: add kmod-mt7615e module
- to Netgear R6350 image
+Subject: Re: [OpenWrt-Devel] [PATCH 1/2] ath79: WNDR3700v2: add dash before
+ version in device name
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,79 +85,31 @@ List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Cc: openwrt-devel@lists.openwrt.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
+On Sun, 19 Jan 2020 16:42:12 +0100
+<mail@adrianschmutzler.de> wrote:
 
-
-Op maandag 20 januari 2020 om 20:00 schreef Adrian Schmutzler 
-<mail@adrianschmutzler.de>:
 > Hi,
 > 
->>  -----Original Message-----
->>  From: openwrt-devel 
->> [mailto:openwrt-devel-bounces@lists.openwrt.org] On
->>  Behalf Of Stijn Segers
->>  Sent: Montag, 20. Januar 2020 19:50
->>  To: openwrt-devel@lists.openwrt.org
->>  Subject: [OpenWrt-Devel] [PATCH] [19.07] ramips: add kmod-mt7615e 
->> module to
->>  Netgear R6350 image
->> 
->>  MT7615E support wasn't present in OpenWrt's mt76 version prior to 
->> 19.07
->>  release, but it is now, so add the module to the image.
+> > -  SUPPORTED_DEVICES += wndr3700
+> > +  SUPPORTED_DEVICES += wndr3700 wndr3700v2  
 > 
-> what about cherry-picking 
-> https://github.com/openwrt/openwrt/commit/9861fa7abab97cb928aaa6cd5732a413d973ac95 
-> instead?
+> That would have to be
 > 
-Bah! Just like with the Xiaomi, you're all too right about that. Should 
-have checked master first...
-
-Stijn
-
-
+> SUPPORTED_DEVICES += wndr3700 netgear,wndr3700v2
+> 
 > Best
 > 
-> Adrian
-> 
->> 
->>  Signed-off-by: Stijn Segers <foss@volatilesystems.org>
->>  ---
->>   target/linux/ramips/image/mt7621.mk | 2 +-
->>   1 file changed, 1 insertion(+), 1 deletion(-)
->> 
->>  diff --git a/target/linux/ramips/image/mt7621.mk
->>  b/target/linux/ramips/image/mt7621.mk
->>  index 53a264f527..fd3a8e558e 100644
->>  --- a/target/linux/ramips/image/mt7621.mk
->>  +++ b/target/linux/ramips/image/mt7621.mk
->>  @@ -374,7 +374,7 @@ define Device/netgear_r6350
->>     IMAGE/rootfs.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
->>     DEVICE_TITLE := Netgear R6350
->>     DEVICE_PACKAGES := \
->>  -	kmod-mt7603 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
->>  +	kmod-mt7603 kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport
->>  wpad-basic
->>   endef
->>   TARGET_DEVICES += netgear_r6350
->> 
->>  --
->>  2.20.1
->> 
->> 
->>  _______________________________________________
->>  openwrt-devel mailing list
->>  openwrt-devel@lists.openwrt.org
->>  https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> Adrian 
 
+Thanks! I'll issue v2 soon with that one fixed.
+
+Best regards
+Michal
 
 _______________________________________________
 openwrt-devel mailing list

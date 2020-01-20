@@ -2,55 +2,52 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9A1B1432C4
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 21:10:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 710401432FC
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 21:42:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HcYphKwnSR+0Eoxtt4Fg1vF1u49iNIoB92l9ZRPaNak=; b=owKGPOvwHfCpO7
-	kVZtr8I70GZ9wvG3mcDNAKv7P20wD0mm6LT8mXu95Oe0X6h/unmUyDv4PGC8K78ie4HoQc45weYS2
-	3PQJCuhY1Dd9BXoFybfVcEnIGb70hfE3CUsmA7jSYnlPztDGnnrrZojgNeby4IDZhvL53y5cbd9D1
-	Ai1QBA+tuunYfw4T0g7Tn59GoCb3tqKifOMuaTYyD0JUssqmQWLzrThla/VGtyrTT2GFQcuFa0Y4E
-	gsl2jG+Oykj6TOLCuog/BiKYY11Yq//vBAPVDtiwx3FrLI/ew6vZbBlfs4NILDcTlg0xK/BhKFTD4
-	7rbCGXRJMlusc9YXclbg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uhCrP95q0BCMUBjnolkS0IJQTiGClm4Q/Xh4La+7wLE=; b=fez5hr8t0y9RsX
+	tM+8/gv2O1rof2ipQlgVIYnpQEUzj7SVQgQ+mKuJcRcdrr7NhX/7x/VPFiz6jcsea7zBnhAUp6pJY
+	dhNsxIBg0QZ1SObiXPv+tsfIOKRizWvDmk1VMeHRPwRFM2PxhkWdiRhtbMgQ1YF1AW/SGaIXLXo4t
+	qWwYq712cb8v/Qfbi1kvzxOb5bnfdQVT6GqHrQzNKcfUBOCxQ2eX7Lj/nmPjfjytYHrN6yKK5pnxR
+	277OS2ch9qDfNLTz1vec00XZV+viJ2x2YR3UpTqwKHI5W9LLXGdtJhhRsQXZuwtxhwxT9oJs4ZdvZ
+	lGkBpa+iKeh1j25q29XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itdMy-0001fZ-Iy; Mon, 20 Jan 2020 20:09:56 +0000
+	id 1itdsq-0004us-RJ; Mon, 20 Jan 2020 20:42:52 +0000
 Received: from mx4.wp.pl ([212.77.101.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itdMq-0001f8-9s
- for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 20:09:49 +0000
-Received: (wp-smtpd smtp.wp.pl 22957 invoked from network);
- 20 Jan 2020 21:09:43 +0100
+ id 1itdsK-0004R3-Hf
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 20:42:21 +0000
+Received: (wp-smtpd smtp.wp.pl 13319 invoked from network);
+ 20 Jan 2020 21:42:18 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wp.pl; s=1024a;
- t=1579550983; bh=fk2lEdF0EMhjonme8bk/OmnPN+RCxhJDUfMEpzDg4Fs=;
+ t=1579552938; bh=QiwO5K3TQjIoGCMGRVLrd2jl5sPDo6IfmZU23pv74rE=;
  h=From:To:Cc:Subject;
- b=WMTs7OeUMfsb7+sn+mT1jzDwyeR1mM+kkb59FWaSDxhS2PY7Fm94zMWCrCBjkDnIC
- l0fZV+Sj9vZ4hlqSVQ8S39RUi8oTlz5AujHHveJ410OvZPcCtl4uS9dTt6o5n5XH9n
- /rW2nx98SeBxs9nwjqnyOLvyMPbfLVnT0ItHy/JM=
+ b=wN4XeXTQng+VjKWIFsgMpyi3Og77irixh8pcfYa0ej0SjYGqkrGVnH082K+N+fS0S
+ ORc6yagCZzioetVqXdzNauw7pmo7mioxg1vPnh9wv4g0hyWpJmelR8hosU4EO8a7ET
+ 2QR8BDe/+eQfRNnpQxSfKyBKtbA8EdDDMWMTyctk=
 Received: from 89-79-49-72.dynamic.chello.pl (HELO kosmio.komorska)
  (michal.cieslakiewicz@wp.pl@[89.79.49.72])
  (envelope-sender <michal.cieslakiewicz@wp.pl>)
  by smtp.wp.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <hannu.nyman@iki.fi>; 20 Jan 2020 21:09:43 +0100
-Date: Mon, 20 Jan 2020 21:09:41 +0100
+ for <openwrt-devel@lists.openwrt.org>; 20 Jan 2020 21:42:18 +0100
+Date: Mon, 20 Jan 2020 21:18:11 +0100
 From: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-To: Hannu Nyman <hannu.nyman@iki.fi>
-Message-ID: <20200120210941.06875168@kosmio.komorska>
-In-Reply-To: <ed20fdff-e7f7-9423-1680-9a2caee7b740@iki.fi>
-References: <20200119120816.44406149@kosmio.komorska>
- <ed20fdff-e7f7-9423-1680-9a2caee7b740@iki.fi>
+To: "openwrt-devel@lists.openwrt.org" <openwrt-devel@lists.openwrt.org>
+Message-ID: <20200120211811.22199957@kosmio.komorska>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-X-WP-MailID: c34ddeb62d86193bc8761e84a2f3abf9
+X-WP-MailID: b8b9edd16765394e8ebce8dea6007cbf
 X-WP-AV: skaner antywirusowy Poczty Wirtualnej Polski
-X-WP-SPAM: NO 0000000 [wbNU]                               
+X-WP-SPAM: NO 0000000 [0SMx]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_120948_519079_B830B34D 
-X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-CacheID: sfid-20200120_124220_761999_072331E0 
+X-CRM114-Status: UNSURE (   5.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -70,7 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH 0/2] ath79: update device naming for
+Subject: [OpenWrt-Devel] [PATCH v2 0/2] ath79: update device naming for
  Netgear WNDR3700v2
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -83,33 +80,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-> 
-> What is the motivation for this?
-> 
-> The router was originally marketed as "WNDR3700v2" and that is both
-> in the packaging and also in the printed label in the router itself.
-> The "v2" is not a typical separate version number like many 6.1, 3.21
-> type of revisions next to the serial number, but it has been part of
-> the device name.
-> 
+This patch changes device string to 'wndr3700-v2' (adds dash before
+variant) making it compatible with naming convention for ath79 target.
+Then board, under its new name, is added to uboot-envtools.
 
-Hello Hannu,
+Changes v1->v2:
+ * SUPPORTED_DEVICES fixed to allow sysupgrading from older ath79 builds
 
-My patch changes the way it is defined in OpenWrt - 'wndr3700v2' is a
-sort of naming artifact, all other routers in ath79 target use dash for
-version separation - even Netgear ones like WNR612v2, WNDR4300v2 and so
-on. And yes, it 'breaks' smooth downgrade path to ar71xx, but please be
-aware that when changing branches it is always better to begin with
-clean/default device configuration.
+Patch list (2):
+  ath79: WNDR3700v2: add dash before version in device name
+  ath79: uboot-envtools: add Netgear WNDR3700v2
 
-Best regards
-Michal
+ package/boot/uboot-envtools/files/ath79                     | 3 ++-
+ ...etgear_wndr3700v2.dts => ar7161_netgear_wndr3700-v2.dts} | 4 ++--
+ .../linux/ath79/generic/base-files/etc/board.d/02_network   | 4 ++--
+ .../base-files/etc/hotplug.d/firmware/10-ath9k-eeprom       | 4 ++--
+ target/linux/ath79/image/generic.mk                         | 6 +++---
+ 5 files changed, 11 insertions(+), 10 deletions(-)
+ rename target/linux/ath79/dts/{ar7161_netgear_wndr3700v2.dts => ar7161_netgear_wndr3700-v2.dts} (85%)
+
+-- 
+2.25.0
+
 
 _______________________________________________
 openwrt-devel mailing list

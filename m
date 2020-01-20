@@ -2,82 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7331143186
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 19:35:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67FF01431D4
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 19:50:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DhCdahbGqxobygVGIW1PtRFuynZXpgwDXMAWLNa9148=; b=bui2GyPjhWsxqT
-	5ObLxJmunQdd9Bh2Qx08GnYZuyJ/JyK63aSy0aOePv2ouU/Yx3M6f33wtMB0GtFwVGnCNmrPPUW0r
-	ZUbc9Zi1tHJaTySJduzQgZNTESve6AL07LwL3EGROiGy15xKcTPvoMyyB2NXRZlJ2+YoqrDrUcG7o
-	iD+Paf2X2CIc3kguejzjNiXEtpl8FcNsQP9erYzFYjIHw+DCiPR0fLu8z3CkMc6GpwzwTvE8LRg5I
-	c8o4MMSvl3mQ1qkI5DMGiyqEoeH1FtdB/RJ/IfbXyivYQC5+CiEnNtAzIYlkjuyRQOzxnuC3LhVuw
-	wnY77NKwSsrl9BL3MImg==;
+	List-Owner; bh=WVj7gNrjxqnoIJVwgfpwMRZ2SH5uWljFI8D9j4VEJBg=; b=XmQg/vymC1SRPm
+	DmGw1Vv4ydaz2+MsQmwYpubBuzvme+zfCa5LfyLY6eq3JOAvMYoiMdligD8OikowbDppz/E1/zuGg
+	xJr+oToHOoXgVgO1XWSei8tgbMcB7A3fX6iNBpKSiZUMbvmlDx5tb9zRoa85LS1I0bSY4C2EED5gV
+	Bgg5toen/u3uYiPawzRGKRPPMOr7VtwezobzJ3j3zJW+pemeKrk1bHaf9oR0mrOKHjgp8M4xdNSDq
+	L3oPzjP1tLlw3h7DhRSlyxzigZpRA6fpHFArNTUkNeGmnU3w1DSoemAh0eoP26CAZNbyVzkjOePAD
+	TbGjFFxq3ySV5WqCqwqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itbtk-0007pe-9Q; Mon, 20 Jan 2020 18:35:40 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1itc83-0004kL-JW; Mon, 20 Jan 2020 18:50:27 +0000
+Received: from volatilesystems.org ([51.91.248.52])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itbtZ-0007od-Ii
- for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 18:35:33 +0000
-Received: by mail-lf1-x142.google.com with SMTP id m30so35228lfp.8
- for <openwrt-devel@lists.openwrt.org>; Mon, 20 Jan 2020 10:35:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=OrrkozWuzTfU9xwaRNDmIUaKXj4eB2ilvKZQ3LwMNpI=;
- b=ry/gNQvPNLUiH5Izja6RLLOPQABsy0Qd8m0c22n8ConIN+km3x85/LBJoCCa4X6OdB
- nFmAM55C+cvU3TgiA2sRYpQvfyp+RzMvmJ80DMJXkjOQwa4JaciBj2wnG7iLsgF6SbuM
- u+g/RpMLtHsN1w02zgq8H7P9sKZ+aGHXCxPf2cYthj9nOU1vwZ3FPkwZx1F9xRc5wbzT
- na1uBs62YP9Jdrv8S0lEQLq4QRHS5XpcBQopPv0CkDPoKJKduNCyO8XsM/AROt9jyUfQ
- CZL4nZb+KD9ZLS8O+l20nJE+PvoLe3A9aUhKqdel3UhAzZs1xSk3pNivTjaq9RLlmmQF
- haQQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=OrrkozWuzTfU9xwaRNDmIUaKXj4eB2ilvKZQ3LwMNpI=;
- b=InMho9EQ9izZT7IfAaM9CNLj17k1PzAM3NA4rEmM7oQtKF/QljenY1cqQHB59yVna0
- i2PyxnCDO9qHeMNGU3pMHJb7MN729qwn5vbGkoJ29l8XGU5qjFxhUD6AbzyJfcefTuZS
- Dbi8DF0t0/KPJjZKDDGiinJw40CiofSw2cBXujt3FWlExDRTOGpAwswQJRzsimoAdKOx
- nNTpKNp/nNVlu91+G6g/tIjCFS78vDdfNtVjSwS1RBwkFsrkdTK6DTjRjI6vz6rvzfKi
- 37u9xAIAqegCJ3K+npCnxYYXiqJXUVk7j5Y1A+ac1YhAVEbhNo/0GsUGamgocpJ0NOZS
- uSLA==
-X-Gm-Message-State: APjAAAUXQWqQABp7DRFENPEQ3vKnY9VtKAQYv7RNVs7FL3OmKK9Ykw7G
- ejpfCeKV/U7AbdTEn50RD0Ln43Qk
-X-Google-Smtp-Source: APXvYqxXoNFyh5J7uq5MHXkD3wFKhRau0YM1m53OQy7ZkxMlfVIUwyu6MVHG3jZw5FERnW21yY1afA==
-X-Received: by 2002:a19:ee05:: with SMTP id g5mr340747lfb.113.1579545323735;
- Mon, 20 Jan 2020 10:35:23 -0800 (PST)
-Received: from localhost.localdomain (031011201135.warszawa.vectranet.pl.
- [31.11.201.135])
- by smtp.gmail.com with ESMTPSA id s4sm17604161ljd.94.2020.01.20.10.35.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 20 Jan 2020 10:35:22 -0800 (PST)
-From: Piotr Dymacz <pepe2k@gmail.com>
+ id 1itc7r-0003XH-OX
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 18:50:20 +0000
+Received: by volatilesystems.org (Postfix, from userid 112)
+ id 7C55AFAA2A; Mon, 20 Jan 2020 19:49:37 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1579546177;
+ bh=m9t6wzEE0SA6ZbokdxLH5LDBt+cRN5C2Am+55roANAE=;
+ h=From:To:Subject:Date:From;
+ b=EuHJpPWhOyzJSQB76HwuHj35I+eUVTZs911+ozOT9k1R8pIb3RTyMLxx8111hi8Zp
+ lMXUBQztroSKLsI/nPEoZ59ThIr152wdIly9vB9z0wmzd5atnmeZTiuTMeJev3JT4P
+ imYEpzMWG023LQQS7jZ8ZCWy6xu9TP4OJU4kf0/s=
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on atalanta
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.1 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+ DKIM_VALID,DKIM_VALID_AU,URIBL_BLOCKED autolearn=ham
+ autolearn_force=no version=3.4.2
+Received: from okeanos.lan (213.219.161.238.adsl.dyn.edpnet.net
+ [213.219.161.238])
+ by volatilesystems.org (Postfix) with ESMTPSA id 58904FAA28
+ for <openwrt-devel@lists.openwrt.org>; Mon, 20 Jan 2020 19:49:36 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=volatilesystems.org;
+ s=mail; t=1579546176;
+ bh=m9t6wzEE0SA6ZbokdxLH5LDBt+cRN5C2Am+55roANAE=;
+ h=From:To:Subject:Date:From;
+ b=Ms6QhQiOA9CwEZR9BZQEDHD0xSPnbTDFWhrv3FiVIUkHaoSsbFBQ/6M5zET1tmkOB
+ q6rbykYDjXBz4q/HpxzXLpQcnHzV1s9ZBWUs0jcPwNaLfDicfoLRQxRd44jii29SnY
+ mhera5tdcT7q3oYKW6CZz/KP3Hu1Fr9u7hELoiEE=
+From: Stijn Segers <foss@volatilesystems.org>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 20 Jan 2020 19:35:01 +0100
-Message-Id: <20200120183501.29372-1-pepe2k@gmail.com>
+Date: Mon, 20 Jan 2020 19:49:31 +0100
+Message-Id: <20200120184931.4202-1-foss@volatilesystems.org>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
+X-Virus-Scanned: clamav-milter 0.101.4 at atalanta
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_103529_643353_0F03AAD7 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200120_105015_946140_A0A6D3AD 
+X-CRM114-Status: GOOD (  10.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [pepe2k[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,8 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] hostapd: start hostapd/wpa_supplicant for
- all wiphy devices
+Subject: [OpenWrt-Devel] [PATCH] [19.07] ramips: add kmod-mt7615e module to
+ Netgear R6350 image
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,54 +86,31 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Daniel Golle <daniel@makrotopia.org>, Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-c888e17e06 ("hostapd: manage instances via procd instead of pidfile")
-added procd support for managing hostapd and wpa_supplicant daemons
-but at the same time limited wiphy names to 'phy*'.
+MT7615E support wasn't present in OpenWrt's mt76 version prior to 19.07 release, but it is now, so add the module to the image.
 
-This brings back initial behaviour (introduced in 60fb4c92b6 ("hostapd:
-add ubus reload") and makes procd manage daemons for any wiphy device
-found in '/sys/class/ieee80211'.
-
-CC: Felix Fietkau <nbd@nbd.name>
-CC: Daniel Golle <daniel@makrotopia.org>
-Signed-off-by: Piotr Dymacz <pepe2k@gmail.com>
+Signed-off-by: Stijn Segers <foss@volatilesystems.org>
 ---
- package/network/services/hostapd/Makefile              | 2 +-
- package/network/services/hostapd/files/hostapd.hotplug | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ target/linux/ramips/image/mt7621.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/package/network/services/hostapd/Makefile b/package/network/services/hostapd/Makefile
-index 2642a263dc..1b6434674a 100644
---- a/package/network/services/hostapd/Makefile
-+++ b/package/network/services/hostapd/Makefile
-@@ -7,7 +7,7 @@
- include $(TOPDIR)/rules.mk
+diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
+index 53a264f527..fd3a8e558e 100644
+--- a/target/linux/ramips/image/mt7621.mk
++++ b/target/linux/ramips/image/mt7621.mk
+@@ -374,7 +374,7 @@ define Device/netgear_r6350
+   IMAGE/rootfs.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+   DEVICE_TITLE := Netgear R6350
+   DEVICE_PACKAGES := \
+-	kmod-mt7603 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
++	kmod-mt7603 kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
+ endef
+ TARGET_DEVICES += netgear_r6350
  
- PKG_NAME:=hostapd
--PKG_RELEASE:=6
-+PKG_RELEASE:=7
- 
- PKG_SOURCE_URL:=http://w1.fi/hostap.git
- PKG_SOURCE_PROTO:=git
-diff --git a/package/network/services/hostapd/files/hostapd.hotplug b/package/network/services/hostapd/files/hostapd.hotplug
-index c319d42c1a..2c936fde75 100644
---- a/package/network/services/hostapd/files/hostapd.hotplug
-+++ b/package/network/services/hostapd/files/hostapd.hotplug
-@@ -21,7 +21,7 @@ service_data() {
- 
- procd_open_service hostapd
- 
--for phy in phy*; do
-+for phy in *; do
- 	[ -d "$phy" ] || continue
- 
- 	mkdir -p /var/run/wpa_supplicant-$phy /var/run/hostapd-$phy
 -- 
 2.20.1
 

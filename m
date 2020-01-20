@@ -2,74 +2,97 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52FB514346C
-	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 00:27:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EEE614347A
+	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 00:34:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=L3zPGEbB8OaevkfjOMB7Nm48b4hTK1/bPRiYo51IbzM=; b=hG1GRQqbejncsrawRYFT/lOz9
-	YSuQR80xFltKrLho53m7SyFvWLRzZA1SGd10WI3fxFaDmRgocup/gPHiAAfJ0/k2GlDclIfx8XMTI
-	6nXwkyGV9FA/o2CKDowbnww+T5A3LNamvV73wQXpNatNHeWbpKhrT+ngQ9cqNkFYCehex1w5LR9aX
-	76wAnAP9wJAGYHq02lUW109jJx4WiXl1497ajVr35UFEzBdidgh/2DXIT2hYpAyB5FvOhYuUqDLve
-	4GZE3WfLFecGV68YPgZ3FV7wdIULQZGHc15xypN3IbPoyoQekdT2RJePawvSx+PKeuN5wqdikcchX
-	YxhpxervA==;
+	 bh=aPp3fPzuYfSGrmsjekHDRIAZdaJtOi7i1Ur1QbSvXhI=; b=K0MfM7Q0dbjQISbBvfX1bi7/4
+	V7j15j+muwbdvGdS4sM2GtDlU67ni5lfj4yC2i3ERFNBKHSG7kj77Uw0hopND9ws6Q7ZT8SsofAeu
+	ifOHjN50w+2ZzyFRtPTkI2YAzinSMJ4oeCHBbKnRt09+hg3ANdCMohFJ9QHN4HmR/Ev6PEsp/GCEj
+	6jEIkIVnVDuMOvo9lW708Mg8n1Za2eatk44TERKTPoIqtswCpgKNca59YS8y6Zui2ov+/Lt+ZNE8c
+	D2VZERAdSLTf1e5cbmobzBBZUcq6BItH7ymdWm3/w71kx52q+KKHxH8knguYZE38cIMXTNKSpsMhw
+	Ux0+pxRIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itgRh-0000pW-6M; Mon, 20 Jan 2020 23:27:01 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1itgZ6-0003A2-Ue; Mon, 20 Jan 2020 23:34:40 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itgRX-0000oy-7V
- for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 23:26:53 +0000
-Received: from desktop ([188.194.105.26]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1N64FC-1jiRbO07OC-016RFy; Tue, 21 Jan 2020 00:26:42 +0100
-From: <mail@adrianschmutzler.de>
-To: =?UTF-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>,
- <openwrt-devel@lists.openwrt.org>
-References: <20200120194024.25841-1-ynezz@true.cz>
-In-Reply-To: <20200120194024.25841-1-ynezz@true.cz>
-Date: Tue, 21 Jan 2020 00:26:41 +0100
-Message-ID: <00d101d5cfe9$126a1790$373e46b0$@adrianschmutzler.de>
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQIVsuySktPfIYJohjynWu/DYjCzOKd0amBg
-Content-Language: de
+ id 1itgYy-00039T-4w
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 23:34:33 +0000
+Received: by mail-lf1-x141.google.com with SMTP id n25so669236lfl.0
+ for <openwrt-devel@lists.openwrt.org>; Mon, 20 Jan 2020 15:34:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=RbiG8Fd1VXA4Q6Gsb+f4oMGdmZiFf/tj6NUHaTvpieA=;
+ b=UtQ15LmMtBHm2uNG3brLlKKIj9uAffjGKX6ucaIbtApPLmreHJnU0YXAsjl8Tlxsew
+ /pdqx3G5ZTNDglOEG3EzsFYTxJNyb3re3oJetTV7kymlQOx/b8vr35+n6y7K41vpUbiJ
+ hNzEy9kdUI6mWwruhYxZ1H+Evc2PJJwZPnl2UR4YowxcOi7DL9dU6F8eGlmGY7WPtuQ5
+ iNBwIK9kSx/dDK24njeWvZjfT0yWj0ud4Qe31rMI6V7NPkGAPy9e6Q/Jr9s6RaJwQ7bu
+ EMjGmxbYOiB5YKjzXrNSY0XaTaTYxzA5MpGicKwQC/muS2WQopWsGOlBDapwEnLVDmxq
+ n0dw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=RbiG8Fd1VXA4Q6Gsb+f4oMGdmZiFf/tj6NUHaTvpieA=;
+ b=kyaS32lNhcpWEErUiPXnoKp8zjmRCfw2FVnygjB7NDs/bX+uddmm6l/0K2r4CvkEEU
+ M7CPg5/G8IqcOA3X4nVxm+PL27KqpdXnY/VNIkXyVyU8mIspYZ720+hoqQpJ/P7YjoYo
+ Gl+s6k+G3kLd/TJQoM8olFYk+LXfnJ152mC8LWVnZcquUhpA6JW5NvLgdr0ckjkIycXc
+ xew18PDgMZXsSf3k/7h2W8bAiTF/kapFkAi49viFf2fknbSOhjkAj2yp0RpJ4NeXvJYB
+ GO0LeogqmvOBrDsvgAvC8GGoPVzmrZP5SR5Tmp1ffxaeGr3PLBtnqQO9WF4QDuEpodzi
+ aS5w==
+X-Gm-Message-State: APjAAAX3014c38qayUviy1aiXU/xQPyMhX5/yOP/XUEMD0M1MXXHivh+
+ ruYXsYD4ZYUmrXCjNxVkGXcAnsJS
+X-Google-Smtp-Source: APXvYqyjQUUtlFXU/n/o8R+mHKusiv/tPnBlX28exMz5O2bbxwm7XSjQTRzpVUDruIRbwcVorKzA4A==
+X-Received: by 2002:a19:84d:: with SMTP id 74mr924705lfi.122.1579563269866;
+ Mon, 20 Jan 2020 15:34:29 -0800 (PST)
+Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
+ [31.11.201.135])
+ by smtp.gmail.com with ESMTPSA id h24sm17660488ljc.84.2020.01.20.15.34.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 20 Jan 2020 15:34:29 -0800 (PST)
+To: mail@adrianschmutzler.de, 'David Bauer' <mail@david-bauer.net>,
+ gch981213@gmail.com
+References: <020101d563fa$a14539a0$e3cface0$@adrianschmutzler.de>
+ <b46a0006-a510-0a59-600c-c31d94093caf@david-bauer.net>
+ <003201d56565$33a9b580$9afd2080$@adrianschmutzler.de>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <d1100196-b9cc-22cb-55d3-5dd6937a9b38@gmail.com>
+Date: Tue, 21 Jan 2020 00:34:28 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:YLhl7wq8gn+VZ1Df3BigdABGcw2t7YJlZA3ttYX8763CpxCIyfj
- anF2bYeicPmGe63ZX3l7DsoGNXrIWILvWAS9ncHKzAxQfNx/aWwhQWislwmWY17kSTMHyrj
- lCB8awHhQqM9bebDly0Bvlw3vcJQH2pt7LdVMEOefxZO97OapeNRhvLGJGn5QRshbwsDvfC
- f30ML8yVjywZTfQtigpOA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:WiGsSPdaGU4=:+Io5yyuCsMPVKz4UtS+mGc
- QjLs8Vug5PmRInw8vlGAe2lxw6ZGLWxY2faBjl2vLCxCUQnTCMDrKoZPfjI+fybV/O8rotPUF
- NWN7qTffzfJToZE0C+tbZS8Z4yYZYVBM9/3uczn8/5nNyj4In+zGLATZwXLOJhumWnloP5wXu
- PGxpB8uR3WVeA+QWcz3a9CBeir33TJCC7apdoqQWfLyvjfadbGeOIeQNvgGF9LYYKLWPd8c0O
- JEHBAwQaYlAyDcVEPuXCOKM+JPHpK+3sZGCfzfJ3aeVrW+thThYkGjsxgHQnWk1nq6FGsH79a
- 4LABj3q6vYmoxHsxHeZVKgLGX5dVzIoqZyBKtiVxV13MYdmlLcacY8Y5QCfkAOX3sAC778nm4
- SalPmFrHf5EnCKnerKfnQ/QCQclvo3Yh6hNJajWPYQOuOyQ8RhWqul+7ePJIjcLoUmspFp44W
- /2yqLtdlIIgNBuCLHwMwQ6dMkpxHQJEhc8g00DRSKpdzqWoOprfekPrm3fYIRIVkg1y4h5vDn
- F2HtUdow/JlWyWvPftQiw+rdoBiMxTNLYmEJk4W4FQT/1ou2rYrMDxzd+ebVwaFWo+VwZC0Jf
- eVEBHBHbRadXGj4KbiAyFDLXigRwqfEyR2Zb3wB35E6rT/PKwuFjMeGFigGk2Vxk3i4oSvMgu
- s8s3qZLkZjss0i418lYRF/07Sq2eQ9Z2npIYKGo3cq2rMu6O3HY/jeJcTtw1nWONkchL0ybsO
- fzCvD6rh+4ia6YWgwGic4n5D+O+kg7c5rIWWxkl7sZUnNeFkusOku5URE9zcLRJdjveL3u0dE
- UyPSoI7ZvoOgorGrz3PLSW6hdFSCZOJq4Qoj14iCTh2vW0k5PITU1Zn4ZgEoL7wLuDlrcxodL
- p5CxoVn2rF108c3ICLuAjDmL5WwrdxevxFP3MRTBk=
+In-Reply-To: <003201d56565$33a9b580$9afd2080$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_152651_565886_E9F80B94 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200120_153432_211139_901E1814 
+X-CRM114-Status: GOOD (  25.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pepe2k[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 19.07] ramips: mt7621: ubnt-erx: allow
- sysupgrade from master
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: Re: [OpenWrt-Devel] Migration in ath79 for swapped ethernet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,132 +104,90 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4598874652422586997=="
+Cc: openwrt-devel@lists.openwrt.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is a multipart message in MIME format.
+Hi Adrian, David, Chuanhong,
 
---===============4598874652422586997==
-Content-Language: de
-Content-Type: multipart/signed;
-	micalg=pgp-sha256;
-	protocol="application/pgp-signature";
-	boundary="=-=gaQuA429SJy2e9=-="
+On 07.09.2019 12:15, mail@adrianschmutzler.de wrote:
+> Hi,
+> 
+>> > However, this will obviously swap eth0/eth1 on EVERY upgrade, not just
+>> when coming from ar71xx.
+>> > So, does anyone have an idea how to limit this to run only when updated
+>> from ar71xx?
+>> 
+>> I was thinking about the same. As we have no information about the
+>> previously installed platform, i was thinking about abusing the wmac path we
+>> already use to migrate the WiFi configuration.
+>> However, i think this is not the most elegant way to solve this issue.
+> 
+> I have to think about that. I recently thought one could just check whether the lan/wan assignment matches the one expected for ar71xx, but that would obviously also catch cases were the user modified it to be like this.
+> 
+>> 
+>> > Despite, while having the abstraction of "rename_all_eth", I wonder
+>> whether it would be possible and desirable to do all renames in one step:
+>> > sed -i -e 's/eth0/ethX/' -e 's/eth1/eth0/' -e 's/ethX/eth1/' $file or
+>> > even sed -i -e 's/eth0/eth1/' -e  's/eth0/eth1/' $file depending on
+>> > how sed handles this internally. These options would mean less flash writes
+>> (although this might not be too important here).
+>> 
+>> A rewrite with sed is not sufficient, as we will possible rewrite uci section
+>> names, possibly referenced elsewhere. We have to loop thru all interface
+>> values and lists, rewriting each occurrence.
+> 
+> Actually, I could well live with that. What kind of references are you referring to?
+> If just someone really named a section with ethX, it will be renamed consistently throught all uci files (unless they are stored in another location).
+> Only in case someone uses a section name with ethX and refers to it e.g. in a custom script, this will be a problem.
+> And this is where I think we do not have to account for every tiny possibility. If someone upgrades to another architecture, I think it's fair to expect him to check whether his custom scripts still work. We do not have to overdo it.
+> But that's just my point of view at the moment.
 
-This is a multipart message in MIME format.
+I'm in the middle of migrating some devices from soon-to-be-obsolete 
+ar71xx to ath79 target and was wondering about status of the eth0/eth1 
+vs. LAN/WAN assignment issue.
 
---=-=gaQuA429SJy2e9=-=
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+I'm aware of the 8dde11d521 ("ath79: dts: drop "simple-mfd" for gmacs in 
+SoC dtsi") [0] and following changes but that "fixed" the problem only 
+for devices which were following already reversed (I wouldn't call it 
+wrong or incorrect, I also prefer to have LAN on eth0 interface) SOC's 
+GMACx <> ethx assignment/register under ar71xx target - e.g. LAN on eth0 
+which is in fact SOC's GMAC1 and WAN on eth1 which is SOC's GMAC0. Good 
+explanation of that inverted assignment can be found in Jeff's patch 
+here: [1].
 
-Hi Petr,
+I have a feeling that the idea with migration script got abandoned 
+(Adrian?), so I was wondering if there is any other way we could 
+preserve ar71xx LAN/WAN <> ethX assignment in ath79?
 
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Petr =C5=A0tetiar
-> Sent: Montag, 20. Januar 2020 20:40
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Petr =C5=A0tetiar <ynezz@true.cz>
-> Subject: [OpenWrt-Devel] [PATCH 19.07] ramips: mt7621: ubnt-erx: allow
-> sysupgrade from master
->=20
-> Currently it's not possible to downgrade from master:
->=20
->  Device ubiquiti,edgerouterx not supported by this image  Supported
-> devices: ubnt-erx
->=20
-> So fix it by adding a DTS based device name from master into
-> SUPPORTED_DEVICES list.
+For example, I have a QCA9531 based device with PHY4 (connected directly 
+to GMAC0) labeled as LAN (and registered as eth0 in kernel) and PHY3 
+(connected to GMAC1 over internal switch) labeled as WAN. On ath79, due 
+to change introduced in 8dde11d521, LAN and WAN order gets swapped (as 
+expected) but partially reverting above change (adding back "simple-mfd" 
+to eth1 in device's DTS, see below) brings back the "old" order of 
+interfaces.
 
-Note that I changed somewhat between 100 and 150 devices when reorganizing =
-board names in ramips between master and 19.07.
+&eth1 {
+	compatible = "qca,ar9330-eth", "syscon", "simple-mfd";
+	mtd-mac-address = <&art 0x6>;
+};
 
-So, unless you have a specific reason to deal with this particular device, =
-there are more to come. ;-)
+But it doesn't seem as a proper fix to me (maybe I'm wrong?) thus the 
+question about any other, better approach?
 
-I thus personally would not start to actively support "downgrading". On the=
- other side, there is no downside to adding downgrade support for this part=
-icular device, so feel free to go ...
+[0] https://github.com/openwrt/openwrt/commit/8dde11d521
+[1] 
+https://www.mail-archive.com/openwrt-devel@lists.openwrt.org/msg48526.html
 
-Best
+-- 
+Cheers,
+Piotr
 
-Adrian
-
->=20
-> Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
-> ---
->  target/linux/ramips/image/mt7621.mk | 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/target/linux/ramips/image/mt7621.mk
-> b/target/linux/ramips/image/mt7621.mk
-> index 53a264f527a6..a8999974731a 100644
-> --- a/target/linux/ramips/image/mt7621.mk
-> +++ b/target/linux/ramips/image/mt7621.mk
-> @@ -483,6 +483,7 @@ define Device/ubnt-erx
->    KERNEL_INITRAMFS :=3D $$(KERNEL) | ubnt-erx-factory-image
-> $(KDIR)/tmp/$$(KERNEL_INITRAMFS_PREFIX)-factory.tar
->    IMAGE/sysupgrade.bin :=3D sysupgrade-tar | append-metadata
->    DEVICE_TITLE :=3D Ubiquiti EdgeRouter X
-> +  SUPPORTED_DEVICES +=3D ubiquiti_edgerouterx
->  endef
->  TARGET_DEVICES +=3D ubnt-erx
->=20
-> @@ -491,6 +492,7 @@ define Device/ubnt-erx-sfp
->    DTS :=3D UBNT-ERX-SFP
->    DEVICE_TITLE :=3D Ubiquiti EdgeRouter X-SFP
->    DEVICE_PACKAGES +=3D kmod-i2c-algo-pca kmod-gpio-pca953x kmod-i2c-
-> gpio-custom
-> +  SUPPORTED_DEVICES +=3D ubiquiti_edgerouterx-sfp
->  endef
->  TARGET_DEVICES +=3D ubnt-erx-sfp
->=20
->=20
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---=-=gaQuA429SJy2e9=-=
-Content-Type: application/pgp-signature;
-	name="openpgp-digital-signature.asc"
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4mNy0ACgkQoNyKO7qx
-AnDacBAAmFySJ0nAGt8h3AyLWihUUqL1axdW7WgNIEEhjGNUvDRhnnBNPfcFdnfk
-5UB25KCls9cTcjFMpV6QwY/C7dXzBtUTnc6vboIPD0JoJ0yrJX4CftdOd3g6se1m
-P7wq+L+qH41K+0/HajXBjzedhkP9gK/YWVyF4QW0NyOG4o2rnxpfk/r9jm6RcxjO
-zEoFxH4s14Cc4OJD8KCv7YbtjpKkdkhOt4KRadlHbh3scL/4JKGgkBAK6aCl7zNp
-qnzDv+g6h31dQByfrkCrUedRlZySt31yEqQyDttjK/7CZpsRHeKeK5V4nGGUzG4q
-JTBTFOMoERG6nXvm1gINyyZHj12cqMnUKc9d7vNS4NpdKIFvcqDT2lY4RakyM7bm
-WNd7ePzmbzv+PeZbizfni6zKaXLoIttaBp/cs7xvVvNMR0y0cfjJKH2eEtngsluZ
-1N/sRKoFNBK62rqZgRBpKpjVsQUS9ss6yZ62KOFmtjUrGIeeW1iaVDz6BE0W70Yb
-asmCiGvxa76plEsN0yJhBFCRkSTxsUpN/Fjk/9BesVQPoQNzRdwc0Cfk3whsZMnn
-g2S4ryBEFpVn+BYejwHW7wArc3/LLJa7MLoTA4aml2Q5iqZH/PPhyrvFT38ZG5Na
-/Fta0TC9zdmMGOsr0QUpjEgvFQ6IScDPsTH7hmf7A/cX6K0kaR8=
-=86Uc
------END PGP SIGNATURE-----
-
-
---=-=gaQuA429SJy2e9=-=--
-
-
-
---===============4598874652422586997==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============4598874652422586997==--
-
-

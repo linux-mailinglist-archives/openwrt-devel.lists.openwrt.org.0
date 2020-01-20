@@ -2,74 +2,53 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7BC6142E62
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 16:08:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0953142EAF
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 16:22:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5qx0puNR9T9I/TsCKdnhAAf3h2Giv3xn1D4MKuMh6Nk=; b=JSpSNnh0B27TdB
-	VXbxRVyCnAY0/teYkgFvqNbccSqA21X30poxH900azObSvb9sst5XJtS0Vwdq8AiVcZyW/aCM8buP
-	f1tQ0V9HPOBwMAKoQsvYt1MIIc2MgxzljkM1G9ZvHNvJBBo98SALBXqrv+1bi6H38tb61ViqSL2+o
-	p5sJHAehA07KXKmXt7v81YAViXhlyAsuLbVCr1x3XmpFtE76cir7CJsICP+vK9qXQPx9S+NaJw3qO
-	Eyil2wYbJm/i7hLyJaDjVA/weh2b5gVIRR837SK78TK6gWs4xi997NZ9dnMJRk45WOLUG535C1XDO
-	FMNLWX971Jsyi1WGexgQ==;
+	List-Owner; bh=YZDcWZOkUiHgOJqh1Wl3FJbSxgtfSg8JN3nfrhq+7M0=; b=L849ER62oFZ7XI
+	TYbTR8QmXoxpmRRnQ+pXAGQAckApZTNOoV0s1Du3ZIgAkS93eZix7vcLLfYLu5FaZepcq9BcXtuww
+	7A/TX1IupjQQcFZvpO6rLPMAtq9MATMLpdmbHwe8BrWoq/7onPGqd2mUIz3O5902HVlLRJZiTLICB
+	SALDyoCUU90R9UcA2cNdcknR8ZN1d9XkhkcXsVddmFTyL1Gm83Wj4OD6viLMcwxvxThWHBpAyUfDd
+	2Qu+u7BJahJdPLls9sFSitbyvtFEuuMDTEhi2lM89wUsPjgxIcGVDq4+SKJ7/eCGNj6G8G0iYDtEx
+	T8BBB+ETg2Jrk8knBBCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itYep-0005Du-6U; Mon, 20 Jan 2020 15:08:03 +0000
-Received: from mx-out.tlen.pl ([193.222.135.148])
+	id 1itYsv-0002j4-4p; Mon, 20 Jan 2020 15:22:37 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itYeb-0005DO-Jw
- for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 15:07:54 +0000
-Received: (wp-smtpd smtp.tlen.pl 19934 invoked from network);
- 20 Jan 2020 16:07:46 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1579532866; bh=AxszOtsKMsdFsG8YENdMp59twplFDqympFJAtpdPrzY=;
- h=Subject:To:From;
- b=kFr7AhDTYJ7jID0+5Z4b1hGzRJ4Q1VNd2OXQoE8ggy9Kd3s32CYRacUyu4B0mGJlp
- DLmAwTyBMnDl8oxwrLp1gYHyf7Q9/OkbRlQU3MddpUgZPxhDOecurN1QsvYHa/aNQA
- 7ccZsB8s9HhkoOP9zyWVtzm4xzkFIpgNIE8ylTJQ=
-Received: from 131.ip-164-132-48.eu (HELO [10.8.0.6])
- (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 20 Jan 2020 16:07:46 +0100
-To: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-References: <20200118012115.46148-1-freifunk@adrianschmutzler.de>
- <20200118012115.46148-2-freifunk@adrianschmutzler.de>
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-Message-ID: <e7d275e5-3565-6c5b-df76-3a44321063a3@o2.pl>
-Date: Mon, 20 Jan 2020 16:07:44 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1itYsj-0002iH-CX
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 15:22:30 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1itYse-0006Te-8t; Mon, 20 Jan 2020 16:22:21 +0100
+Date: Mon, 20 Jan 2020 17:22:09 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: Paul Spooren <mail@aparcar.org>
+Message-ID: <20200120151327.GA468137@makrotopia.org>
+References: <90038f66-81fc-6b34-1b85-b47aab83368a@aparcar.org>
+ <CAFBinCByt2Jukn5ZgtrABF2OtqduT733LEvvZLqd97j60Vj9dQ@mail.gmail.com>
+ <4f4382fd-ab37-cccb-5bca-b20ab13c1f96@aparcar.org>
 MIME-Version: 1.0
-In-Reply-To: <20200118012115.46148-2-freifunk@adrianschmutzler.de>
-Content-Language: en-US
-X-WP-MailID: bfff06be9a61fd84e2932053b033a149
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [IaOk]                               
+Content-Disposition: inline
+In-Reply-To: <4f4382fd-ab37-cccb-5bca-b20ab13c1f96@aparcar.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_070749_812035_D02A2CBB 
-X-CRM114-Status: GOOD (  15.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200120_072225_424838_8538E347 
+X-CRM114-Status: GOOD (  17.83  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tomek_n[at]o2.pl]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH 2/2] mvebu: use SOC to derive DEVICE_DTS
+Subject: Re: [OpenWrt-Devel] [RFC] commit message in YAML format for new
+ devices
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,117 +60,75 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-VyBkbml1IDE4LjAxLjIwMjAgb8KgMDI6MjEsIEFkcmlhbiBTY2htdXR6bGVyIHBpc3plOgo+IFRo
-aXMgaW50cm9kdWNlcyB0aGUgU09DIHZhcmlhYmxlIHRvIG12ZWJ1IHRhcmdldCB0byBkZXJpdmUg
-c29tZSBvZgo+IHRoZSBERVZJQ0VfRFRTIHZhcmlhYmxlcyBiYXNlZCBvbiB0aGUgU09DIHByZWZp
-eCBhbmQgdGhlIGRldmljZQo+IGRlZmluaXRpb24gbmFtZS4KPiAKPiBTaW5jZSBEVFMgbmFtZXMg
-YW5kIGNvbXBhdGlibGUgYXJlIGluY29uc2lzdGVudCBhbHNvIGluIHRoZSBrZXJuZWwKPiBmb3Ig
-dGhpcyB0YXJnZXQsIHRoZSBzY2hlbWUgY2Fubm90IGJlIGFwcGxpZWQgdG8gYWxsIGRldmljZXMs
-IHRob3VnaC4KPiAKPiBXaGlsZSBhdCBpdCwgY2hhbmdlIHRoZSBEVFMgbmFtZSBvZiB0aGUgYXJt
-YWRhLTM3MjAtdWRwdSB0byBsb3dlci1jYXNlLAo+IHdoaWNoIGlzIHRoZSBjb21tb24gcHJhY3Rp
-Y2UgZm9yIERUUyBmaWxlIG5hbWVzLgoKV2VsbCwgdGhpcyAodURQVSBjaGFuZ2UpIHdpbGwgYmUg
-cmV2ZXJ0ZWQgYW55d2F5LCB3aGVuIGtlcm5lbCA1LjQgd2lsbCBiZQppbnRyb2R1Y2VkLCBzaW5j
-ZSBpbiB1cHN0cmVhbSBpdCdzIHVwcGVyIGNhc2UuIFNvIGl0IG1ha2VzIG5vIHNlbnNlLgoKRm9y
-IHRoZSByZXN0CkFja2VkLWJ5OiBUb21hc3ogTWFjaWVqIE5vd2FrIDx0b21la19uQG8yLnBsPgoK
-PiAKPiBTaWduZWQtb2ZmLWJ5OiBBZHJpYW4gU2NobXV0emxlciA8ZnJlaWZ1bmtAYWRyaWFuc2No
-bXV0emxlci5kZT4KPiAtLS0KPiAgLi4uL3thcm1hZGEtMzcyMC11RFBVLmR0cyA9PiBhcm1hZGEt
-MzcyMC11ZHB1LmR0c30gICAgIHwgIDAKPiAgdGFyZ2V0L2xpbnV4L212ZWJ1L2ltYWdlL01ha2Vm
-aWxlICAgICAgICAgICAgICAgICAgICAgIHwgIDEgKwo+ICB0YXJnZXQvbGludXgvbXZlYnUvaW1h
-Z2UvY29ydGV4LWE1My5tayAgICAgICAgICAgICAgICAgfCAxMCArKysrKy0tLS0tCj4gIHRhcmdl
-dC9saW51eC9tdmVidS9pbWFnZS9jb3J0ZXgtYTkubWsgICAgICAgICAgICAgICAgICB8ICA2ICsr
-Ky0tLQo+ICAuLi4vcGF0Y2hlcy00LjE5LzUzMC1hZGRfYXJtYWRhLTM4MjAtdURQVS1kdHMucGF0
-Y2ggICAgfCAgMiArLQo+ICA1IGZpbGVzIGNoYW5nZWQsIDEwIGluc2VydGlvbnMoKyksIDkgZGVs
-ZXRpb25zKC0pCj4gIHJlbmFtZSB0YXJnZXQvbGludXgvbXZlYnUvZmlsZXMtNC4xOS9hcmNoL2Fy
-bTY0L2Jvb3QvZHRzL21hcnZlbGwve2FybWFkYS0zNzIwLXVEUFUuZHRzID0+IGFybWFkYS0zNzIw
-LXVkcHUuZHRzfSAoMTAwJSkKPiAKPiBkaWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L212ZWJ1L2Zp
-bGVzLTQuMTkvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2FybWFkYS0zNzIwLXVEUFUuZHRz
-IGIvdGFyZ2V0L2xpbnV4L212ZWJ1L2ZpbGVzLTQuMTkvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2
-ZWxsL2FybWFkYS0zNzIwLXVkcHUuZHRzCj4gc2ltaWxhcml0eSBpbmRleCAxMDAlCj4gcmVuYW1l
-IGZyb20gdGFyZ2V0L2xpbnV4L212ZWJ1L2ZpbGVzLTQuMTkvYXJjaC9hcm02NC9ib290L2R0cy9t
-YXJ2ZWxsL2FybWFkYS0zNzIwLXVEUFUuZHRzCj4gcmVuYW1lIHRvIHRhcmdldC9saW51eC9tdmVi
-dS9maWxlcy00LjE5L2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzcyMC11ZHB1
-LmR0cwo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvbXZlYnUvaW1hZ2UvTWFrZWZpbGUgYi90
-YXJnZXQvbGludXgvbXZlYnUvaW1hZ2UvTWFrZWZpbGUKPiBpbmRleCA2ZGQ3YmRlN2FlLi5jMDhi
-MTEzYjM2IDEwMDY0NAo+IC0tLSBhL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9NYWtlZmlsZQo+
-ICsrKyBiL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9NYWtlZmlsZQo+IEBAIC03Nyw2ICs3Nyw3
-IEBAIGVuZGVmCj4gIAo+ICBkZWZpbmUgRGV2aWNlL0RlZmF1bHQKPiAgICBQUk9GSUxFUyA6PSBE
-ZWZhdWx0Cj4gKyAgREVWSUNFX0RUUyA9ICQkKFNPQyktJChsYXN0d29yZCAkKHN1YnN0IF8sICwk
-KDEpKSkKPiAgICBCT0FSRF9OQU1FID0gJCQoREVWSUNFX0RUUykKPiAgICBLRVJORUxfTkFNRSA6
-PSB6SW1hZ2UKPiAgICBLRVJORUwgOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCB1SW1hZ2Ug
-bm9uZQo+IGRpZmYgLS1naXQgYS90YXJnZXQvbGludXgvbXZlYnUvaW1hZ2UvY29ydGV4LWE1My5t
-ayBiL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9jb3J0ZXgtYTUzLm1rCj4gaW5kZXggZTU4YTNj
-NDJiOS4uYzlkMDZkZGJhZCAxMDA2NDQKPiAtLS0gYS90YXJnZXQvbGludXgvbXZlYnUvaW1hZ2Uv
-Y29ydGV4LWE1My5tawo+ICsrKyBiL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9jb3J0ZXgtYTUz
-Lm1rCj4gQEAgLTYsNyArNiw3IEBAIGRlZmluZSBEZXZpY2UvZ2xvYmFsc2NhbGVfZXNwcmVzc29i
-aW4KPiAgICBERVZJQ0VfQUxUMF9WRU5ET1IgOj0gTWFydmVsbAo+ICAgIERFVklDRV9BTFQwX01P
-REVMIDo9IEFybWFkYSAzNzAwIENvbW11bml0eSBCb2FyZAo+ICAgIERFVklDRV9BTFQwX1ZBUklB
-TlQgOj0gTm9uLWVNTUMKPiAtICBERVZJQ0VfRFRTIDo9IGFybWFkYS0zNzIwLWVzcHJlc3NvYmlu
-Cj4gKyAgU09DIDo9IGFybWFkYS0zNzIwCj4gIGVuZGVmCj4gIFRBUkdFVF9ERVZJQ0VTICs9IGds
-b2JhbHNjYWxlX2VzcHJlc3NvYmluCj4gIAo+IEBAIC0xOCw3ICsxOCw3IEBAIGRlZmluZSBEZXZp
-Y2UvZ2xvYmFsc2NhbGVfZXNwcmVzc29iaW4tZW1tYwo+ICAgIERFVklDRV9BTFQwX1ZFTkRPUiA6
-PSBNYXJ2ZWxsCj4gICAgREVWSUNFX0FMVDBfTU9ERUwgOj0gQXJtYWRhIDM3MDAgQ29tbXVuaXR5
-IEJvYXJkCj4gICAgREVWSUNFX0FMVDBfVkFSSUFOVCA6PSBlTU1DCj4gLSAgREVWSUNFX0RUUyA6
-PSBhcm1hZGEtMzcyMC1lc3ByZXNzb2Jpbi1lbW1jCj4gKyAgU09DIDo9IGFybWFkYS0zNzIwCj4g
-IGVuZGVmCj4gIFRBUkdFVF9ERVZJQ0VTICs9IGdsb2JhbHNjYWxlX2VzcHJlc3NvYmluLWVtbWMK
-PiAgCj4gQEAgLTMwLDcgKzMwLDcgQEAgZGVmaW5lIERldmljZS9nbG9iYWxzY2FsZV9lc3ByZXNz
-b2Jpbi12Nwo+ICAgIERFVklDRV9BTFQwX1ZFTkRPUiA6PSBNYXJ2ZWxsCj4gICAgREVWSUNFX0FM
-VDBfTU9ERUwgOj0gQXJtYWRhIDM3MDAgQ29tbXVuaXR5IEJvYXJkCj4gICAgREVWSUNFX0FMVDBf
-VkFSSUFOVCA6PSBWNyBOb24tZU1NQwo+IC0gIERFVklDRV9EVFMgOj0gYXJtYWRhLTM3MjAtZXNw
-cmVzc29iaW4tdjcKPiArICBTT0MgOj0gYXJtYWRhLTM3MjAKPiAgZW5kZWYKPiAgVEFSR0VUX0RF
-VklDRVMgKz0gZ2xvYmFsc2NhbGVfZXNwcmVzc29iaW4tdjcKPiAgCj4gQEAgLTQyLDcgKzQyLDcg
-QEAgZGVmaW5lIERldmljZS9nbG9iYWxzY2FsZV9lc3ByZXNzb2Jpbi12Ny1lbW1jCj4gICAgREVW
-SUNFX0FMVDBfVkVORE9SIDo9IE1hcnZlbGwKPiAgICBERVZJQ0VfQUxUMF9NT0RFTCA6PSBBcm1h
-ZGEgMzcwMCBDb21tdW5pdHkgQm9hcmQKPiAgICBERVZJQ0VfQUxUMF9WQVJJQU5UIDo9IFY3IGVN
-TUMKPiAtICBERVZJQ0VfRFRTIDo9IGFybWFkYS0zNzIwLWVzcHJlc3NvYmluLXY3LWVtbWMKPiAr
-ICBTT0MgOj0gYXJtYWRhLTM3MjAKPiAgZW5kZWYKPiAgVEFSR0VUX0RFVklDRVMgKz0gZ2xvYmFs
-c2NhbGVfZXNwcmVzc29iaW4tdjctZW1tYwo+ICAKPiBAQCAtNTgsNyArNTgsNyBAQCBkZWZpbmUg
-RGV2aWNlL21ldGhvZGVfdWRwdQo+ICAgICQoY2FsbCBEZXZpY2UvRGVmYXVsdC1hcm02NCkKPiAg
-ICBERVZJQ0VfVkVORE9SIDo9IE1ldGhvZGUKPiAgICBERVZJQ0VfTU9ERUwgOj0gbWljcm8tRFBV
-ICh1RFBVKQo+IC0gIERFVklDRV9EVFMgOj0gYXJtYWRhLTM3MjAtdURQVQo+ICsgIFNPQyA6PSBh
-cm1hZGEtMzcyMAo+ICAgIEtFUk5FTF9MT0FEQUREUiA6PSAweDAwMDgwMDAwCj4gICAgS0VSTkVM
-X0lOSVRSQU1GUyA6PSBrZXJuZWwtYmluIHwgZ3ppcCB8IGZpdCBnemlwICQkKERUU19ESVIpLyQk
-KERFVklDRV9EVFMpLmR0Ygo+ICAgIEtFUk5FTF9JTklUUkFNRlNfU1VGRklYIDo9IC5pdGIKPiBk
-aWZmIC0tZ2l0IGEvdGFyZ2V0L2xpbnV4L212ZWJ1L2ltYWdlL2NvcnRleC1hOS5tayBiL3Rhcmdl
-dC9saW51eC9tdmVidS9pbWFnZS9jb3J0ZXgtYTkubWsKPiBpbmRleCAzODkwODJlNDI2Li43OTI1
-MzA0OWM3IDEwMDY0NAo+IC0tLSBhL3RhcmdldC9saW51eC9tdmVidS9pbWFnZS9jb3J0ZXgtYTku
-bWsKPiArKysgYi90YXJnZXQvbGludXgvbXZlYnUvaW1hZ2UvY29ydGV4LWE5Lm1rCj4gQEAgLTkz
-LDcgKzkzLDcgQEAgZGVmaW5lIERldmljZS9wbGF0aG9tZV9vcGVuYmxvY2tzLWF4My00Cj4gICAg
-REVWSUNFX1ZFTkRPUiA6PSBQbGF0J0hvbWUKPiAgICBERVZJQ0VfTU9ERUwgOj0gT3BlbkJsb2Nr
-cyBBWDMKPiAgICBERVZJQ0VfVkFSSUFOVCA6PSA0IHBvcnRzCj4gLSAgREVWSUNFX0RUUyA6PSBh
-cm1hZGEteHAtb3BlbmJsb2Nrcy1heDMtNAo+ICsgIFNPQyA6PSBhcm1hZGEteHAKPiAgICBTVVBQ
-T1JURURfREVWSUNFUyArPSBvcGVuYmxvY2tzLWF4My00Cj4gICAgQkxPQ0tTSVpFIDo9IDEyOGsK
-PiAgICBQQUdFU0laRSA6PSAxCj4gQEAgLTE5Myw3ICsxOTMsNyBAQCBkZWZpbmUgRGV2aWNlL2ds
-b2JhbHNjYWxlX21pcmFib3gKPiAgICAkKERldmljZS9OQU5ELTUxMkspCj4gICAgREVWSUNFX1ZF
-TkRPUiA6PSBHbG9iYWxzY2FsZQo+ICAgIERFVklDRV9NT0RFTCA6PSBNaXJhYm94Cj4gLSAgREVW
-SUNFX0RUUyA6PSBhcm1hZGEtMzcwLW1pcmFib3gKPiArICBTT0MgOj0gYXJtYWRhLTM3MAo+ICAg
-IFNVUFBPUlRFRF9ERVZJQ0VTICs9IG1pcmFib3gKPiAgZW5kZWYKPiAgVEFSR0VUX0RFVklDRVMg
-Kz0gZ2xvYmFsc2NhbGVfbWlyYWJveAo+IEBAIC0yMTIsNyArMjEyLDcgQEAgZGVmaW5lIERldmlj
-ZS9jem5pY190dXJyaXMtb21uaWEKPiAgICBJTUFHRS8kJChJTUFHRV9QUkVGSVgpLXN5c3VwZ3Jh
-ZGUuaW1nLmd6IDo9IGJvb3QtaW1nIHwgc2RjYXJkLWltZyB8IGd6aXAgfCBhcHBlbmQtbWV0YWRh
-dGEKPiAgICBJTUFHRS9vbW5pYS1tZWRraXQtJCQoSU1BR0VfUFJFRklYKS1pbml0cmFtZnMudGFy
-Lmd6IDo9IG9tbmlhLW1lZGtpdC1pbml0cmFtZnMgfCBnemlwCj4gICAgSU1BR0VfTkFNRSA9ICQk
-KDIpCj4gLSAgREVWSUNFX0RUUyA6PSBhcm1hZGEtMzg1LXR1cnJpcy1vbW5pYQo+ICsgIFNPQyA6
-PSBhcm1hZGEtMzg1Cj4gICAgU1VQUE9SVEVEX0RFVklDRVMgKz0gYXJtYWRhLTM4NS10dXJyaXMt
-b21uaWEKPiAgZW5kZWYKPiAgVEFSR0VUX0RFVklDRVMgKz0gY3puaWNfdHVycmlzLW9tbmlhCj4g
-ZGlmZiAtLWdpdCBhL3RhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkvNTMwLWFkZF9hcm1h
-ZGEtMzgyMC11RFBVLWR0cy5wYXRjaCBiL3RhcmdldC9saW51eC9tdmVidS9wYXRjaGVzLTQuMTkv
-NTMwLWFkZF9hcm1hZGEtMzgyMC11RFBVLWR0cy5wYXRjaAo+IGluZGV4IGJkNGYwYWVmOWEuLjYz
-NWUxNDFjNjkgMTAwNjQ0Cj4gLS0tIGEvdGFyZ2V0L2xpbnV4L212ZWJ1L3BhdGNoZXMtNC4xOS81
-MzAtYWRkX2FybWFkYS0zODIwLXVEUFUtZHRzLnBhdGNoCj4gKysrIGIvdGFyZ2V0L2xpbnV4L212
-ZWJ1L3BhdGNoZXMtNC4xOS81MzAtYWRkX2FybWFkYS0zODIwLXVEUFUtZHRzLnBhdGNoCj4gQEAg
-LTQsNyArNCw3IEBACj4gICAjIE12ZWJ1IFNvQyBGYW1pbHkKPiAgIGR0Yi0kKENPTkZJR19BUkNI
-X01WRUJVKSArPSBhcm1hZGEtMzcyMC1kYi5kdGIKPiAgIGR0Yi0kKENPTkZJR19BUkNIX01WRUJV
-KSArPSBhcm1hZGEtMzcyMC1lc3ByZXNzb2Jpbi5kdGIKPiAtK2R0Yi0kKENPTkZJR19BUkNIX01W
-RUJVKSArPSBhcm1hZGEtMzcyMC11RFBVLmR0Ygo+ICsrZHRiLSQoQ09ORklHX0FSQ0hfTVZFQlUp
-ICs9IGFybWFkYS0zNzIwLXVkcHUuZHRiCj4gICBkdGItJChDT05GSUdfQVJDSF9NVkVCVSkgKz0g
-YXJtYWRhLTcwNDAtZGIuZHRiCj4gICBkdGItJChDT05GSUdfQVJDSF9NVkVCVSkgKz0gYXJtYWRh
-LTgwNDAtZGIuZHRiCj4gICBkdGItJChDT05GSUdfQVJDSF9NVkVCVSkgKz0gYXJtYWRhLTgwNDAt
-bWNiaW4uZHRiCj4gCgoKLS0gClRNTgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBs
-aXN0cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vb3BlbndydC1kZXZlbAo=
+Hi Paul,
+Hi Martin,
+
+On Sun, Jan 12, 2020 at 10:13:42PM -1000, Paul Spooren wrote:
+> Hi,
+> 
+> On 1/12/20 1:05 PM, Martin Blumenstingl wrote:
+> > Hi Paul,
+> > 
+> > On Sun, Jan 12, 2020 at 10:47 PM Paul Spooren <mail@aparcar.org> wrote:
+> > > Hi all,
+> > > 
+> > > some time ago I created a (now outdated) device overview[0] based on
+> > > YAML meta data. This approach could simplify maintaining an device
+> > > overview and device specific pages[1].
+> > > 
+> > > All commits adding new devices already include most relevant information
+> > > for creating the overview. However it would be convenient if developers
+> > > would format their commit messages in a generic format, therefore I'd
+> > > propose the following:
+> > > 
+> > > Every commit message for newly added devices must contain a number of
+> > > hardware information and steps for an initial installation.
+> > > The hardware information should contain at least the following
+> > > information, maybe more:
+> > > 
+> > > SoC, flash, ram, wifi, LEDs, buttons, USB, serial, vendor, model, device
+> > > tree ID, Ethernet ports
+> > can we automate this somehow?
+> > the device tree files already contain most of that information.
+> 
+> If you have a tool to extract such data or ideas on how to create such,
+> that'd be great.
+> 
+> As an alternative I could also create a shell script that extracts data on a
+> running machine, but that might miss some details.
+
+I think that's the better idea, because device-tree doesn't necessarily
+cover everything. at runtime we can access /sys/devices/... to get most
+relevant info. some things (like the type of the flash chip) are more
+tricky apparently, I do this to extract (NOR) flash-chip from dmesg for
+example:
+
+for fc in $(for fp in /sys/class/mtd/mtd*/device; do basename $(readlink $fp); done | grep -v mtd | sort -u); do dmesg | grep -o "${fc}:.*bytes.*"; done
+
+(works only straight after boot, once the logbuffer run full this info
+is no longer available)
+
+some things, such as the number of USB ports is really tricky, because
+many times there are USB hub chips involved and simply not all ports of
+the hub are exposed...
+
+
+Just my 2 cents...
+
+
+Cheers
+
+
+Daniel
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

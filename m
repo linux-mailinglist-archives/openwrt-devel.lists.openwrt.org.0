@@ -2,51 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9848C142DBA
-	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 15:37:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05F3B142DD5
+	for <lists+openwrt-devel@lfdr.de>; Mon, 20 Jan 2020 15:42:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S4f1vptlmcWszxehAxuhT4fnMnzJrFrgS9YhYUaZnN4=; b=tiIiOz2iolJXeM
-	XVHXYjvA32gVVG/QqaUhSFhYLs0DP+O9hgqPGnzHw4SAzwXFeJsy9qmlg62Q/umuMdxfiS14CeROz
-	2z1T18HD0PKA9rWzC6gLbLkhsnAC9JymWIcTORAxC7IoiQB8hpT5z+u3WEE8PYIX5dEZo1QLaxrRN
-	NQkuePQF9b3ozsfSdc/74FJIcBtaT4vZa3wiZQVMT95NsS0YL6XD64uyvHYNvAdx4Hz60PmlXZKOq
-	O+2CZBA/s0OiDW1rM0opEKqOVKt/F0OMtasqJbLBSj13flJoMRv1tfEPKWdAMQIhN1Ryqtr4xVEcA
-	bH66uPfo182WNps3NdVA==;
+	List-Owner; bh=wjfYhMXjMvoRr0rD8NuIrAN3s/rOPm03IojWIphdksc=; b=rUqhB8Wl5mRSiM
+	apmwsrPJREg+PXqK+E2VR118nMxots6sSOMf6JBRpqvOkwfADj2AcrF41g9Xu3pQZU9+Avx1EqsWf
+	PsMNzM+1IyBq48NqOVdpQZm9P7uSghvG8GvXZkZdHHJFvWDVvUXJyzWFpr+SJnDyhjL37eHbOlUdU
+	66EXcCrCEsT3vd0dRiSpC+/ocg0wJm78inJ8fKwaxJzJ9Yfwy3BV1ECH2iMUudbj5gXWa+daAT+4y
+	SEEy+DYSb0FOePzqIk64P30JLMOWYkM0doYuoEDdNprWhPsGVPa+EcGclFtr/zcp6hO/GzzZ4hSUR
+	LnLCNsmC294efCJcLrTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itYB7-0007qw-Nr; Mon, 20 Jan 2020 14:37:21 +0000
-Received: from mx-out.tlen.pl ([193.222.135.142])
+	id 1itYFz-0001IK-Dr; Mon, 20 Jan 2020 14:42:23 +0000
+Received: from mx-out.tlen.pl ([193.222.135.148])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itYAv-0007q4-9M
- for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 14:37:14 +0000
-Received: (wp-smtpd smtp.tlen.pl 31395 invoked from network);
- 20 Jan 2020 15:37:01 +0100
+ id 1itYFm-0001HI-Jy
+ for openwrt-devel@lists.openwrt.org; Mon, 20 Jan 2020 14:42:15 +0000
+Received: (wp-smtpd smtp.tlen.pl 27748 invoked from network);
+ 20 Jan 2020 15:42:08 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1579531021; bh=fu94z6PeIKjDil1gvt0DP1osjgmNcfsyRsTJWdnCjqk=;
+ t=1579531328; bh=fNRchE3aGJx7pXBkMpWqaFAxwCO09QT0N5mRfXmL0AY=;
  h=From:To:Subject;
- b=RA10Gkdvblp+YDZeV/WRyz88fLgeYxAWQOxLSXBdaQUt/ViXOf6CD9Ge1J8RgtpVr
- DZahiyICbogjiq13IeDqQg9M8YI3QuVe5oySrb7nyxiRKU/J805Q34K4PJjdOIXAiJ
- WccJfwijhvpiYA3J9AGmG+CvLrYKfgqmcBuF/AiI=
+ b=GoRWY85OXa0PLwTXcXyZm1H6xPcXG6Bob5odw2be6YNeyS+5yy0H2AOkd+/Hhwugp
+ Z1Ik7YwrdhhvQUZ+QFL1Ced8wch13uoiQg8848FfkbkWWZFoSQVCQYnsdx/KI68tKN
+ mgPQGHqRe89G5M6VA/R0Fa4Y4EQL+X7DpfG64ovA=
 Received: from 131.ip-164-132-48.eu (HELO localhost.localdomain)
  (tomek_n@o2.pl@[164.132.48.131]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 20 Jan 2020 15:37:01 +0100
+ for <openwrt-devel@lists.openwrt.org>; 20 Jan 2020 15:42:08 +0100
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Mon, 20 Jan 2020 15:36:53 +0100
-Message-Id: <20200120143653.27628-1-tomek_n@o2.pl>
+Date: Mon, 20 Jan 2020 15:42:00 +0100
+Message-Id: <20200120144200.27795-1-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-WP-MailID: d42175f39e12f8bbb424d3fcdc8e7415
+X-WP-MailID: 2e1ecb72f9e203ebb351ddacbe843eae
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000001 [ERJh]                               
+X-WP-SPAM: NO 0000001 [seJR]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_063709_656872_923FE323 
-X-CRM114-Status: UNSURE (   6.41  )
+X-CRM114-CacheID: sfid-20200120_064210_820480_60E105F4 
+X-CRM114-Status: UNSURE (   6.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -64,8 +64,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH] kernel: replace SUBDIRS wih M in package
- recipes
+Subject: [OpenWrt-Devel] [PATCH v2] kernel: replace SUBDIRS with M in
+ package recipes
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,6 +87,10 @@ since the beginnig of kernel git history in favour of M or KBUILD_EXTMOD.
 
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
+
+v1 -> v2
+fix commit title
+
  package/kernel/acx-mac80211/Makefile        | 2 +-
  package/kernel/ath10k-ct/Makefile           | 2 +-
  package/kernel/broadcom-wl/Makefile         | 8 ++++----

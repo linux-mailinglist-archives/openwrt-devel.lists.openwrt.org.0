@@ -2,48 +2,41 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3DB81437DE
-	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 08:49:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DF6B14385F
+	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 09:36:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=iRO2+h/rB83dvkK8TcgQlX2/QHEj4YT/awODSZVzeNA=; b=oEKXZK5qxsr6y02dntGts1Stkj
-	55fAzRr19jb+ZR30wt9F56s3TerBMDh/2vLzimvlNHaHMTEwven8tWEBR7wRavbS80itHltyCLcXH
-	on+MygnQZBdsdT/zpw3r+4srJzyPCuM0fW+wjgO6BRIbJsUhCDmu7GMNl5IMwI2mXaOfBGhbGGcS5
-	TDAFQ2YwgRo+y9AE9WdCd2+B5/uXy9PW9Zy8gOxmL4wnsp32USGwHrXQCOTYlWVdIsVMrBIhkJJtQ
-	2xeUnsKh4BeXVEDp6Dh97LE6djfLi6ZDgiCwDGNiwOIuKMi694PZDrNT5WyvtYRUAo845UC0D4yPy
-	/IdcrFSQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h1+Fb1gNjzy4ABOCUqScxrnR0IzapbjhCwAMB76EJ+I=; b=MG2XpFEbHUqqCt
+	8ZSvVwnzCDnvgaHXp/TRsL9A2JIpDLMQ7OlObcmAiKUkt5dNJvfOdkyxO4HOg42+HXsgn7WWNjxuG
+	Uq5/RqjDbxk1LDLADns6mWybW+6Zz1lWrCZEdZdAnGiH1VBEGUohrSdmEYeAC6CAjglbN8vs4sONf
+	AcNixdkWe+EOcPIV4ESVVtFvkVvvrapW9GuChUZfO+Wn2IcN4EFop5qi8CIU7VIZhfZI6fUZKiQUY
+	M89mZig71+JEALPPL6sJ3odjcwM6afmihKFCWldXa7low+vw3fsOmejgnvrFeCyRwFSft2vuAY+LY
+	GG89GqHYh8aH5GMH5WVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itoHg-0006QY-AY; Tue, 21 Jan 2020 07:49:12 +0000
+	id 1itp1D-0006iB-VG; Tue, 21 Jan 2020 08:36:15 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itoHU-0006Ou-Lz
- for openwrt-devel@lists.openwrt.org; Tue, 21 Jan 2020 07:49:06 +0000
+ id 1itp0y-0006hH-Ha
+ for openwrt-devel@lists.openwrt.org; Tue, 21 Jan 2020 08:36:06 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id B763149DE;
- Tue, 21 Jan 2020 08:48:57 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id 389cacf7;
- Tue, 21 Jan 2020 08:48:47 +0100 (CET)
-Date: Tue, 21 Jan 2020 08:48:47 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: mail@adrianschmutzler.de
-Message-ID: <20200121074847.GI69327@meh.true.cz>
-References: <20200120194024.25841-1-ynezz@true.cz>
- <00d101d5cfe9$126a1790$373e46b0$@adrianschmutzler.de>
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 7D1C04CB0;
+ Tue, 21 Jan 2020 09:35:58 +0100 (CET)
+Received: by meh.true.cz (OpenSMTPD) with ESMTP id 713bc491;
+ Tue, 21 Jan 2020 09:35:48 +0100 (CET)
+From: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 21 Jan 2020 09:35:08 +0100
+Message-Id: <20200121083509.24067-1-ynezz@true.cz>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <00d101d5cfe9$126a1790$373e46b0$@adrianschmutzler.de>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_234900_869718_CED4F0ED 
-X-CRM114-Status: UNSURE (   4.78  )
+X-CRM114-CacheID: sfid-20200121_003600_733623_BD0392C9 
+X-CRM114-Status: UNSURE (   9.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -54,10 +47,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH 19.07] ramips: mt7621: ubnt-erx: allow
- sysupgrade from master
+Subject: [OpenWrt-Devel] [PATCH procd 1/2] instance: provide error feedback
+ if ujail binary is missing
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,33 +60,34 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-mail@adrianschmutzler.de <mail@adrianschmutzler.de> [2020-01-21 00:26:41]:
-
-Hi,
-
-> Note that I changed somewhat between 100 and 150 devices when reorganizing
-> board names in ramips between master and 19.07.
-
-and I thank you for that, it names makes more sense now.
-
-> So, unless you have a specific reason to deal with this particular device,
-
-It's one of my testing devices, and I sometimes check master -> 19.07 -> master
-sysupgrade, to probe different codepaths and to check, that the upgrade to the
-next release still works.
-
-Thanks for review.
-
--- ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T3RoZXJ3aXNlIGl0J3MgcXVpdGUgaGFyZCB0byB0cmFjayBzdWNoIGlzc3Vlcy4gIFdoaWxlIGF0
+IGl0LCBiZSBEUlkgYW5kCnVzZSBVSkFJTF9CSU5fUEFUSCBjb25zdGFudCBmb3IgdWphaWwgYmlu
+YXJ5LgoKU2lnbmVkLW9mZi1ieTogUGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4KLS0tCiBz
+ZXJ2aWNlL2luc3RhbmNlLmMgfCA5ICsrKysrKystLQogMSBmaWxlIGNoYW5nZWQsIDcgaW5zZXJ0
+aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9zZXJ2aWNlL2luc3RhbmNlLmMg
+Yi9zZXJ2aWNlL2luc3RhbmNlLmMKaW5kZXggMTRkYTg2MjQ3YzcwLi5lNTYxNWQ1YzJmMDIgMTAw
+NjQ0Ci0tLSBhL3NlcnZpY2UvaW5zdGFuY2UuYworKysgYi9zZXJ2aWNlL2luc3RhbmNlLmMKQEAg
+LTM2LDYgKzM2LDcgQEAKICNpbmNsdWRlICJzZXJ2aWNlLmgiCiAjaW5jbHVkZSAiaW5zdGFuY2Uu
+aCIKIAorI2RlZmluZSBVSkFJTF9CSU5fUEFUSCAiL3NiaW4vdWphaWwiCiAKIGVudW0gewogCUlO
+U1RBTkNFX0FUVFJfQ09NTUFORCwKQEAgLTIwNSw3ICsyMDYsNyBAQCBqYWlsX3J1bihzdHJ1Y3Qg
+c2VydmljZV9pbnN0YW5jZSAqaW4sIGNoYXIgKiphcmd2KQogCXN0cnVjdCBqYWlsICpqYWlsID0g
+JmluLT5qYWlsOwogCWludCBhcmdjID0gMDsKIAotCWFyZ3ZbYXJnYysrXSA9ICIvc2Jpbi91amFp
+bCI7CisJYXJndlthcmdjKytdID0gVUpBSUxfQklOX1BBVEg7CiAKIAlpZiAoamFpbC0+bmFtZSkg
+ewogCQlhcmd2W2FyZ2MrK10gPSAiLW4iOwpAQCAtNzk1LDkgKzc5NiwxMyBAQCBpbnN0YW5jZV9q
+YWlsX3BhcnNlKHN0cnVjdCBzZXJ2aWNlX2luc3RhbmNlICppbiwgc3RydWN0IGJsb2JfYXR0ciAq
+YXR0cikKIAlzdHJ1Y3QgYmxvYl9hdHRyICp0YltfX0pBSUxfQVRUUl9NQVhdOwogCXN0cnVjdCBq
+YWlsICpqYWlsID0gJmluLT5qYWlsOwogCXN0cnVjdCBzdGF0IHM7CisJaW50IHI7CiAKLQlpZiAo
+c3RhdCgiL3NiaW4vdWphaWwiLCAmcykpCisJciA9IHN0YXQoVUpBSUxfQklOX1BBVEgsICZzKTsK
+KwlpZiAociA8IDApIHsKKwkJRVJST1IoInVuYWJsZSB0byBmaW5kICVzOiAlbSAoJWQpXG4iLCBV
+SkFJTF9CSU5fUEFUSCwgcik7CiAJCXJldHVybiAwOworCX0KIAogCWJsb2Jtc2dfcGFyc2UoamFp
+bF9hdHRyLCBfX0pBSUxfQVRUUl9NQVgsIHRiLAogCQlibG9ibXNnX2RhdGEoYXR0ciksIGJsb2Jt
+c2dfZGF0YV9sZW4oYXR0cikpOwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0
+cy5vcGVud3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8v
+b3BlbndydC1kZXZlbAo=

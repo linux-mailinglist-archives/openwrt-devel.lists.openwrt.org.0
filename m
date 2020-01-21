@@ -2,93 +2,78 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5A4A1444EB
-	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 20:16:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C76F21444F6
+	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 20:19:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=n6XdJPV57bkzhA1IDNhQo9gCN7zl2pfHfKToh98cork=; b=jZ8Dc4DYjCv/Y6cZMiJAn4jMf
-	fPHYM8+nkvAHkPdBVFAZemgVyNqa4IaixXsu/Ayj0F87gM3U35rYSxM4uhmt66aPk0u4YLBvsKNT6
-	3ZAPGWL2EuWDSdNsccwqVOH2mlRar2OGZcf13eNERHWaV4FyZZNXyo5rRXQELg9JNQdiMwSLETuGJ
-	D/AMaTIdw7bJF7DwbMKuD5yNAePi7K5xDiLt69yZhaAx2XGvNWFlC4ch3S9MTC6w1l7V8cZabeMn3
-	4YVAqqccNzpMkj2RncW9vVw7lA05i6QbGQMAwjTMmJWK2752q1+nSHWb/XOlQt5+MZ1zz9stWoZPm
-	lL3km2w/A==;
+	 bh=Gvtmmn2iatIcwx3oJWsOhDLfOSyCSM5AtRKNZOR1mcA=; b=AHbHBkpW82g1fvoAPbHBfj26b
+	b1PL+GtDPhkxrchzDwS0UCOUdVguv++oM17Rfclp6Z4XlPdBPNoc50oknpBo5OJOILgxs+qJR7fxs
+	ROxxxnW5oj3CuzNRg6abxaVEarV8gnwekcVQGcCOjiUYADsqqDFs96xu24KNDfpKBGPSmZHl3rTqu
+	4jGm01qC/1BpzApX8yNdAxZpqujveB5ynBRfDV+5zCkLdhw39RJqH4lYuh8kxAOq4jh+A4RpBih9O
+	PvW+vE4qSWYocXqgwsVvgDfp1N0XLtMiW7X1ALQgB8wMCxOrd/cASwivJNasD2xTAGRWWNfdQmks5
+	bHhxS79JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itz1D-0001yC-LH; Tue, 21 Jan 2020 19:16:55 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1itz3k-0002Oo-PS; Tue, 21 Jan 2020 19:19:32 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itz0u-0001w4-CS
- for openwrt-devel@lists.openwrt.org; Tue, 21 Jan 2020 19:16:42 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id t12so2584749vso.13
- for <openwrt-devel@lists.openwrt.org>; Tue, 21 Jan 2020 11:16:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=C5nZ3Yb65vRvi5j/CY8dKbd49oHsEaxIcVzT7XEtBLk=;
- b=IN5NbRNJqqQK3AoqecbIUKSVbimxiQeDsiSA9R/CNJkCYf8Kxh4pH7FAQuBNZM3N83
- 8nii/liqFF06/xYXvBG6ZLapzw0PpSKm2o5Lz41SaHw94HNjAZ9W1Aoo2lINqddCJnKB
- JbYsGiMlMFAK78nQ4dmIOU32KM1IMTu/lmn/FEpSMxhxD0gbsg2hiu9fsJb3/jsVWQ9/
- 2+JHvGW36LpNmTWyA7jyIbz4qUoTV2kqhHRYlMc4mTF5k/sGr1IuRGU+DhlzpHcoJtro
- 8vwVMfAOI48tpT2EFASpCLpd51hqWU6mMosz3bqYPkZhf/1b7gBRRXB20PwNbkzsXCq/
- nXeg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=C5nZ3Yb65vRvi5j/CY8dKbd49oHsEaxIcVzT7XEtBLk=;
- b=GtpOxyF/2fxddu9ks7S0Z6NMOJ9VggVGG/YQUZ/EjSOvRFoAZIxB6fsYAVVjeGUjlq
- Ju596IVi20L18MM/SlzxnjPg4u7yueELX7lPLVUUWegC7RJbx2B5yhdEWA3Eq7ft7Bmn
- WuQQtTpgmXjUiWOLdNpNcDDfeAMHR51uzTnCf9IY7Dpwk1N+L544tr3lmMV0Q3X0EQ6w
- k5ZmLYcXWg3XqdCVyk4k+UpkDVgrUEnmCk57Mb8MHiwH88PZgNzjP+d8dj05edQyoCkG
- 9yW7yZKh3Se5Vax1SjSE9cNkJGsKVjS89TWJ/oJ/tcwiYJ/12eyH/WjNqiaPmcREncPX
- i8iw==
-X-Gm-Message-State: APjAAAWq0ANq7v0iAoShaQ/ahivvEIs23AnpDoSRC2MuICWPCpu20U+l
- t+iZhOpgzm/aNyXfLyzB68B/aa685TG8V1jeL8M=
-X-Google-Smtp-Source: APXvYqxT1HRTqdE1FOkxqJn9B4xWWGpjcyozNVc3lfGSGePrUiSQ04hxRUrnzMruEPL0kLK4B4A5HWX4aBUPh77Enug=
-X-Received: by 2002:a05:6102:a10:: with SMTP id
- t16mr219884vsa.130.1579634191345; 
- Tue, 21 Jan 2020 11:16:31 -0800 (PST)
+ id 1itz3a-0002Nj-MM
+ for openwrt-devel@lists.openwrt.org; Tue, 21 Jan 2020 19:19:27 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MmkfQ-1jItfh0rBe-00jqZj; Tue, 21
+ Jan 2020 20:19:15 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
+ =?UTF-8?Q?'Petr_=C5=A0tetiar'?= <ynezz@true.cz>,
+ <openwrt-devel@lists.openwrt.org>
+References: <20200120194024.25841-1-ynezz@true.cz>
+ <cf4c98bc-af17-0c67-08ef-3094466c608b@gmail.com>
+In-Reply-To: <cf4c98bc-af17-0c67-08ef-3094466c608b@gmail.com>
+Date: Tue, 21 Jan 2020 20:19:14 +0100
+Message-ID: <025701d5d08f$ab6b14c0$02413e40$@adrianschmutzler.de>
+X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-References: <1578138728-1256-1-git-send-email-brunompena@gmail.com>
- <0cf18b56d78d859f8d7bf30bccc6ce0762d35302.camel@ewol.com>
- <CADwgkMUhZ4TrqhiJJPHLL0aVyxxvKfABwDz-4wv_QZ_cyZvj9A@mail.gmail.com>
- <CADwgkMWzviYbcOcbY1R5C9gyY_WAwQpyyYW0eWptm369k-d7-Q@mail.gmail.com>
- <20200121104934.GA2465@makrotopia.org>
- <CADwgkMWQxN5WLeG9oyR0RdeahC+ZHeykLNGj0PfKtCvG81Qxxw@mail.gmail.com>
- <20200121185716.GL69327@meh.true.cz>
-In-Reply-To: <20200121185716.GL69327@meh.true.cz>
-From: Bruno Pena <brunompena@gmail.com>
-Date: Tue, 21 Jan 2020 20:15:55 +0100
-Message-ID: <CADwgkMVVX_kX8w18AtGwhvwoY=MOW=_7chPScey-7T32+g1uDA@mail.gmail.com>
-To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+Content-Language: de
+Thread-Index: AQIVsuySktPfIYJohjynWu/DYjCzOAKCNTDjp2Gnm/A=
+X-Provags-ID: V03:K1:PGL/uD4/n8HQnklSdRKEHql5jEJTiYJn1kNPoioHzNIzgHd+if0
+ yHbLvvNhw2+5QpLgykdTeOXC4wOo5xKOaZpXGL5lQoHF1PhLj69ermLQ9oiHT9cCtxxJW3j
+ 0atA2WJVUdYZw+biaOEO27nWJsVPa7d8jTiEBK+6BLuSzr02DZ+WGulcs2f5pOSJIwuFs5P
+ yl5bk1c1ezry7tYSCs3jQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:SXQQkuCqIRA=:XyFZ3RPcINOuShlM+ig60o
+ cqcQThQDWR18lEN3rZRKU0/nINYcAyCDmgxnyt5dpew2X+Y1/3K0Rt/2UtwEFyhlvdtyB6GTr
+ YNyAu0RDUIBlub4LnUujxOJBRtoI5IakuJEd11r3jF6/qLUBzTYZ9Hh6jRQFJ5Bphw7ggXp0l
+ Ghwtu3v17Q1sNKia9MbTlEvPV6BsYK2VYTolsR6XipZONYVikNTfvDFBpbU+e9dDIEOKTtTya
+ DDjtmipce+YjyjJd25Q1ipj5GhIbG3bM5oGMqhq+mcpBModXRKcS+IfQtpGKgdPgt6qzN0Yaa
+ J2p0WLYcJSpwNOB9NIkb+W1iZQxvGMCyawtSP2/uNDQawatwPcwr6D3h5Pex5fhqz9KnlsDxh
+ uMkLJrAoQeDv0Z1+n+ark4qNJkYEcGd+3xCX34V6ShDYPjzyKtzr6HPNiKzZ9x3rusc9/n9tg
+ vIhtVmRLGnTpLdXc9UJfbHEGQEbw5Abl2PB2Z0H54YDD07+JB8LFupn5mEyzhnOxRnHGk+K6C
+ k+BiIRhFLvs5JBF8lJh8UIQoa7tqqjugjmJS/YmtWpcylsZe8UvzBG94qTfEmD2fX25Psrvsj
+ gihQSKmRmq4XD1xlqBiPIsQrzsZSfotgkMA95w2Lm49pOz3JFCHVKzyV30EF3eajRu3W5oN3P
+ C4JKSqxqNAlH96vTB/tzGMv0A/03RAOrXGjXfhEzBQROCJ7zMPx8kmJRdPoLATW9o79yBNNID
+ iTTqaeDJPub1OkHR1LGYrMNlqQWPv5hoWYHnGp9zJhVMIWXCctF+BaJSpC6Kc03xolHH0cWI0
+ 5RGFGZIZruhrRhPJptZA3vT8NQpsX8MoY0WZCTBETYgZhMv0gRFxJwumLsO7dzFKa7oZtQHRF
+ OTEA69jtBRHyLRAHuTMLr3naOEw5Qe2paA9Fxtzys=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_111636_427629_B0692BB6 
-X-CRM114-Status: GOOD (  18.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200121_111923_030036_3561089B 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [brunompena[at]gmail.com]
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: Re: [OpenWrt-Devel] [PATCH v2] fstools: Add support to read-only
- MTD partitions (eg. recovery images)
+Subject: Re: [OpenWrt-Devel] [PATCH 19.07] ramips: mt7621: ubnt-erx: allow
+ sysupgrade from master
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,130 +85,131 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, Steve Brown <sbrown@ewol.com>,
- Daniel Golle <daniel@makrotopia.org>
-Content-Type: multipart/mixed; boundary="===============2045244080707373150=="
+Content-Type: multipart/mixed; boundary="===============0932457876856015966=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============2045244080707373150==
-Content-Type: multipart/alternative; boundary="000000000000d9adf5059cab3e88"
+This is a multipart message in MIME format.
 
---000000000000d9adf5059cab3e88
-Content-Type: text/plain; charset="UTF-8"
+--===============0932457876856015966==
+Content-Language: de
+Content-Type: multipart/signed;
+	micalg=pgp-sha256;
+	protocol="application/pgp-signature";
+	boundary="=-=Dy0xj9M7L1bptN=-="
+
+This is a multipart message in MIME format.
+
+--=-=Dy0xj9M7L1bptN=-=
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi Petr,
+Hi,
 
-Thank you for reverting the patches.
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Piotr Dymacz
+> Sent: Dienstag, 21. Januar 2020 20:13
+> To: Petr =C5=A0tetiar <ynezz@true.cz>; openwrt-devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH 19.07] ramips: mt7621: ubnt-erx: allow
+> sysupgrade from master
+>=20
+> Hi Petr,
+>=20
+> On 20.01.2020 20:40, Petr =C5=A0tetiar wrote:
+> > Currently it's not possible to downgrade from master:
+> >
+> >   Device ubiquiti,edgerouterx not supported by this image
+> >   Supported devices: ubnt-erx
+> >
+> > So fix it by adding a DTS based device name from master into
+> > SUPPORTED_DEVICES list.
+> >
+> > Signed-off-by: Petr =C5=A0tetiar <ynezz@true.cz>
+> > ---
+> >   target/linux/ramips/image/mt7621.mk | 2 ++
+> >   1 file changed, 2 insertions(+)
+> >
+> > diff --git a/target/linux/ramips/image/mt7621.mk
+> b/target/linux/ramips/image/mt7621.mk
+> > index 53a264f527a6..a8999974731a 100644
+> > --- a/target/linux/ramips/image/mt7621.mk
+> > +++ b/target/linux/ramips/image/mt7621.mk
+> > @@ -483,6 +483,7 @@ define Device/ubnt-erx
+> >     KERNEL_INITRAMFS :=3D $$(KERNEL) | ubnt-erx-factory-image
+> $(KDIR)/tmp/$$(KERNEL_INITRAMFS_PREFIX)-factory.tar
+> >     IMAGE/sysupgrade.bin :=3D sysupgrade-tar | append-metadata
+> >     DEVICE_TITLE :=3D Ubiquiti EdgeRouter X
+> > +  SUPPORTED_DEVICES +=3D ubiquiti_edgerouterx
+>=20
+> Shouldn't that be: 'ubiquiti,edgerouterx' (',' vs. '_')?
 
-I'm trying to replicate the issue but so far I haven't had any luck, and
-just by looking at the code I'm not seeing where/what is could be breaking.
+indeed, '_' needs to be changed to ',' in both cases.
 
-Regarding the upstream patch, that one is just an enabler (read: it only
-extends the "mtd_add_partition" function but it does not add any code to
-force the access mode on sub-partitions).
-The reason for this is because this enforcement is done on the mtd parser
-code that is OpenWrt specific and implemented via kernel patches (not
-present on upstream).
+Best
 
-Best regards,
-Bruno Pena
+Adrian
 
-On Tue, Jan 21, 2020 at 7:57 PM Petr =C5=A0tetiar <ynezz@true.cz> wrote:
+>=20
+> --
+> Cheers,
+> Piotr
+>=20
+> >   endef
+> >   TARGET_DEVICES +=3D ubnt-erx
+> >
+> > @@ -491,6 +492,7 @@ define Device/ubnt-erx-sfp
+> >     DTS :=3D UBNT-ERX-SFP
+> >     DEVICE_TITLE :=3D Ubiquiti EdgeRouter X-SFP
+> >     DEVICE_PACKAGES +=3D kmod-i2c-algo-pca kmod-gpio-pca953x kmod-i2c-g=
+pio-
+> custom
+> > +  SUPPORTED_DEVICES +=3D ubiquiti_edgerouterx-sfp
+> >   endef
+> >   TARGET_DEVICES +=3D ubnt-erx-sfp
+> >
+> >
+> > _______________________________________________
+> > openwrt-devel mailing list
+> > openwrt-devel@lists.openwrt.org
+> > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> >
+>=20
+>=20
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
-> Bruno Pena <brunompena@gmail.com> [2020-01-21 14:53:54]:
->
-> Hi,
->
-> > Based on the last comment from Steve (fstools patch was not reverted),
-> I'm
-> > not sure if that's the root cause.
->
-> you need to find out, but that Daniel's remark seems legit to me, your
-> patch
-> likely changed the mtd device open order/flags.
->
-> > The kernel patch (which when reverted makes rootfs_data writable again)
-> > only enforces the parent mtd access mode on the sub-partitions.
->
-> FYI I currently dont have time to fix that regression myself and since it=
-s
-> likely affecting a lot of users, so I've reverted those changes. I think,
-> that
-> this change is useful, so I'm still willing to merge it once fixed, no
-> worries. Having some upstream feedback beforehand would be a plus.
->
-> BTW it would be fair to inform upstream about this possible issue as well=
-,
-> so
-> the patch wont get merged in its current state, unless its double checked
-> (or
-> just write them, that you're planning v2, so the patch is removed from
-> their
-> Patchwork).
->
-> -- ynezz
->
+--=-=Dy0xj9M7L1bptN=-=
+Content-Type: application/pgp-signature;
+	name="openpgp-digital-signature.asc"
+Content-Transfer-Encoding: 7bit
 
---000000000000d9adf5059cab3e88
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+-----BEGIN PGP SIGNATURE-----
 
-<div dir=3D"ltr">Hi Petr,<div><br></div><div>Thank you for reverting the pa=
-tches.</div><div><br></div><div>I&#39;m trying to replicate the issue but s=
-o far I haven&#39;t had any luck, and just by looking at the code I&#39;m n=
-ot seeing where/what is could be breaking.</div><div><br></div><div>Regardi=
-ng the upstream patch, that one is just an enabler (read: it only extends t=
-he &quot;mtd_add_partition&quot; function but it does not add any code to f=
-orce the access=C2=A0mode on sub-partitions).</div><div>The reason for this=
- is because this enforcement is done on the mtd parser code that is OpenWrt=
- specific and implemented via kernel patches (not present on upstream).</di=
-v><div><br></div><div>Best regards,</div><div>Bruno Pena</div></div><br><di=
-v class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, Jan 2=
-1, 2020 at 7:57 PM Petr =C5=A0tetiar &lt;<a href=3D"mailto:ynezz@true.cz">y=
-nezz@true.cz</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" styl=
-e=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);paddin=
-g-left:1ex">Bruno Pena &lt;<a href=3D"mailto:brunompena@gmail.com" target=
-=3D"_blank">brunompena@gmail.com</a>&gt; [2020-01-21 14:53:54]:<br>
-<br>
-Hi,<br>
-<br>
-&gt; Based on the last comment from Steve (fstools patch was not reverted),=
- I&#39;m<br>
-&gt; not sure if that&#39;s the root cause.<br>
-<br>
-you need to find out, but that Daniel&#39;s remark seems legit to me, your =
-patch<br>
-likely changed the mtd device open order/flags.<br>
-<br>
-&gt; The kernel patch (which when reverted makes rootfs_data writable again=
-)<br>
-&gt; only enforces the parent mtd access mode on the sub-partitions.<br>
-<br>
-FYI I currently dont have time to fix that regression myself and since its<=
-br>
-likely affecting a lot of users, so I&#39;ve reverted those changes. I thin=
-k, that<br>
-this change is useful, so I&#39;m still willing to merge it once fixed, no<=
-br>
-worries. Having some upstream feedback beforehand would be a plus.<br>
-<br>
-BTW it would be fair to inform upstream about this possible issue as well, =
-so<br>
-the patch wont get merged in its current state, unless its double checked (=
-or<br>
-just write them, that you&#39;re planning v2, so the patch is removed from =
-their<br>
-Patchwork).<br>
-<br>
--- ynezz<br>
-</blockquote></div>
-
---000000000000d9adf5059cab3e88--
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl4nTq8ACgkQoNyKO7qx
+AnBTJg//YCmhTk4EzJAS9Jjki61OyOdcNLPRQlwL9YpE1mli7TGJJUVmBbY51cW/
+jMs04hiXNi1qGJ7lr+3qSQiV112euzNgfoZHDHyos9X0UZfkjeTLTmA/b/HaOHT0
+JPeclUm00mPTy8PK0KKWIyEBFrgAbNgwlk6sLwcmGXMjIIIUvBv7sCe3JVCqEtMD
+nrtJxlNOMZw048Kf3bjCqUgN9QGa6CT6vP70AKjkJLirswpBblcAbjK4TH8F5WGN
+xH+F5W4CYksfIBUugRhRJcLwjxoxWE+TmEqH7uqfzN8zixLSp7uGK8rTgtisaOjN
+KPucHXWqijDtRyO3zzyELbWcSwPuTx6+dHr26tLzRoWQ0fyPlf17TuybVifKVK7y
+Q2BLsYu1fsqY8j6nVb3YCp5mekBS7uNI05JZzh+v8mnj10xh0tK85yqNUhYFaYNb
+g3TXjAsBb5DtHSB8INDeIdEqYJv71fUGpoETR+fWcAlFRj6ii0THBtWDYnGegSGy
+hnMM+XmIBNuYXXRKXURUN/hla6G1KUUn4/RuJ/dBHRkZUGAjjfmlTij3iaqk3XRG
+uwYXwY0vdhYjnhtOa/qe5uNX1zRNWSD2n0nHHTXbkqQAv5w+wAByR2BC4oaXA2tV
+Ilp6bQitYBPMN0tja1xBhdVnJNtvl54/L/S4Nv10U7/fWiQMnRo=
+=++YB
+-----END PGP SIGNATURE-----
 
 
---===============2045244080707373150==
+--=-=Dy0xj9M7L1bptN=-=--
+
+
+
+--===============0932457876856015966==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -234,5 +220,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============2045244080707373150==--
+--===============0932457876856015966==--
+
 

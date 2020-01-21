@@ -2,43 +2,43 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0C63144500
-	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 20:22:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3568A1445AA
+	for <lists+openwrt-devel@lfdr.de>; Tue, 21 Jan 2020 21:11:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
-	References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kGDX/Rr8KPRFGJql+moq98yD9WjZpRpUfCCZekj69V0=; b=UeRmtDzIanjPZ+
-	h6Uz7tZgJfF7+JI9Bw3yB+w+Dmz8O26QDq806S+w3BBumYOs/zkpd+ZWyKfI5aKyDudF9A/g1rtCA
-	h0e7pYegPErFAbp7MzP2lYrYwHUR7RIBNKQeiV7FUX6O2qA1t/SSp070mYLCFdfX/7gvvkIhJyILX
-	a8dnzZWvT+wdivVcAUwHZSkEAuaj8J2/KvzcoUpXrFMiGLdEI20xlbYrMlysWYx7sgzTiTChAKRhI
-	IH+TiU9eJsG4yM9hm+EJvm7DkwbPfSOL22SiX5eFCsbLeEHZvnv1JxEvomjsmpgjfs/tlvjJv1k1D
-	Y+9lE5GduuPoXIWNyeBQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=p4GH0L1Z+k7Ib+h6yzvzGsQCESSVLnuH4/pJgbkR2H4=; b=KESutrtd6jh8j9
+	MIbad9ihDrqfkEZFIeGfG30j0/iRwBFl+3PVPaPLogNVBLbim1auoqKhgqpOn1Nr0SkI5Sj5GspFK
+	3nciOndiFFcIZbx/Xq+gcjUvG/9Qw70ys8wIZZ1fCykSP6x1YMC74f6vgUC1s9aYRFtGxaKefJp6v
+	Tmx6/xDTvZRqRfIMLGBZCzwB5d/x2+WCNPhQkpnZvU1jD8TRbrtaYuRTgceGCTaKpxaV3V5NojyVG
+	SnhdKv/ENSyzTZwR1cgWe6UO5+ls7I9K+9maZpScWE1qCMMACnNdTY4gAScpYY3c3ei0lvY+RuU2J
+	YvU0WVzMZGNW/oqqcHKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itz6u-0004H1-Pu; Tue, 21 Jan 2020 19:22:48 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itz6M-00044m-9z
- for openwrt-devel@lists.openwrt.org; Tue, 21 Jan 2020 19:22:20 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1itz6J-0004VM-Ii; Tue, 21 Jan 2020 20:22:12 +0100
-Date: Tue, 21 Jan 2020 21:22:00 +0200
-From: Daniel Golle <daniel@makrotopia.org>
-To: =?iso-8859-1?Q?Bj=F8rn?= Mork <bjorn@mork.no>
-Message-ID: <20200121192200.GB34748@makrotopia.org>
-References: <20200121181933.GA34748@makrotopia.org>
- <87blqwirf9.fsf@miraculix.mork.no>
+	id 1itzsJ-0007w9-2E; Tue, 21 Jan 2020 20:11:47 +0000
+Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1itzs8-0007v8-8R
+ for openwrt-devel@lists.openwrt.org; Tue, 21 Jan 2020 20:11:42 +0000
+Received: from dbauer-t470.home.david-bauer.net
+ (p200300E53F0CC50095A36D6416EB1E82.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f0c:c500:95a3:6d64:16eb:1e82])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id DFE8F22ED1
+ for <openwrt-devel@lists.openwrt.org>; Tue, 21 Jan 2020 21:11:31 +0100 (CET)
+From: David Bauer <mail@david-bauer.net>
+To: openwrt-devel@lists.openwrt.org
+Date: Tue, 21 Jan 2020 21:11:19 +0100
+Message-Id: <20200121201120.23516-1-mail@david-bauer.net>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87blqwirf9.fsf@miraculix.mork.no>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_112214_417588_A2D99688 
-X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-CacheID: sfid-20200121_121136_453035_B77C184C 
+X-CRM114-Status: UNSURE (   9.08  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -47,7 +47,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] hostapd and Linux bridges
+Subject: [OpenWrt-Devel] [PATCH 1/2] ath79: use upstream properties to
+ disable EEE
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,50 +60,87 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: hostap@lists.infradead.org, openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On Tue, Jan 21, 2020 at 07:40:42PM +0100, Bj=F8rn Mork wrote:
-> Daniel Golle <daniel@makrotopia.org> writes:
-> =
+The hack-patch which introduced the "at803x-disable-smarteee" for
+disabling SmartEEE did in fact not disable SmartEEE but rather disabled
+802.3az "standard" EEE.
 
-> > On proprietary APs it looks like port isolation is enabled or disabled
-> > globally in Linux' bridge code using sysctl or other methods, an
-> > approach which is unlikely to get accepted into the Kernel, also given
-> > that the netlink interface already exists and allows doing the same
-> > thing in a more granular fashion.
-> =
+This can be done by using the upstream properties "eee-broken-100tx" and
+"eee-broken-1000t". EEE is then disabled by the PHY subsystem.
 
-> Huh?
-> =
+Tested on devolo WiFi pro 1200e.
 
-> Won't this sysfs attribute set the same flag IFLA_BRPORT_ISOLATED sets?
-> =
+Signed-off-by: David Bauer <mail@david-bauer.net>
+---
+ target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi  | 3 ++-
+ target/linux/ath79/dts/qca9558_engenius_ecb1750.dts | 3 ++-
+ target/linux/ath79/dts/qca9558_ocedo_koala.dts      | 3 ++-
+ target/linux/ath79/dts/qca9558_tplink_re350k-v1.dts | 3 ++-
+ 4 files changed, 8 insertions(+), 4 deletions(-)
 
-> =
+diff --git a/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi b/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
+index 2cdb1b8373..42b45c5900 100644
+--- a/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
++++ b/target/linux/ath79/dts/qca9558_devolo_dvl1xxx.dtsi
+@@ -105,7 +105,8 @@
+ 
+ 	phy4: ethernet-phy@4 {
+ 		reg = <4>;
+-		at803x-disable-smarteee;
++		eee-broken-100tx;
++		eee-broken-1000t;
+ 	};
+ };
+ 
+diff --git a/target/linux/ath79/dts/qca9558_engenius_ecb1750.dts b/target/linux/ath79/dts/qca9558_engenius_ecb1750.dts
+index 7953ed1325..3ccf92a9f7 100644
+--- a/target/linux/ath79/dts/qca9558_engenius_ecb1750.dts
++++ b/target/linux/ath79/dts/qca9558_engenius_ecb1750.dts
+@@ -125,7 +125,8 @@
+ 
+ 	phy5: ethernet-phy@5 {
+ 		reg = <5>;
+-		at803x-disable-smarteee;
++		eee-broken-100tx;
++		eee-broken-1000t;
+ 	};
+ };
+ 
+diff --git a/target/linux/ath79/dts/qca9558_ocedo_koala.dts b/target/linux/ath79/dts/qca9558_ocedo_koala.dts
+index 5e3abdbbb8..77c332cc4e 100644
+--- a/target/linux/ath79/dts/qca9558_ocedo_koala.dts
++++ b/target/linux/ath79/dts/qca9558_ocedo_koala.dts
+@@ -142,7 +142,8 @@
+ 
+ 	phy5: ethernet-phy@5 {
+ 		reg = <5>;
+-		at803x-disable-smarteee;
++		eee-broken-100tx;
++		eee-broken-1000t;
+ 	};
+ };
+ 
+diff --git a/target/linux/ath79/dts/qca9558_tplink_re350k-v1.dts b/target/linux/ath79/dts/qca9558_tplink_re350k-v1.dts
+index a78a9d5be1..a797750e7e 100644
+--- a/target/linux/ath79/dts/qca9558_tplink_re350k-v1.dts
++++ b/target/linux/ath79/dts/qca9558_tplink_re350k-v1.dts
+@@ -92,7 +92,8 @@
+ 			reg = <4>;
+ 
+ 			phy-mode = "rgmii-rxid";
+-			at803x-disable-smarteee;
++			eee-broken-100tx;
++			eee-broken-1000t;
+ 		};
+ 	};
+ };
+-- 
+2.25.0
 
-> root@wrt1900ac-1:~# grep . /sys/class/net/br-lan/brif/*/isolated =
-
-> /sys/class/net/br-lan/brif/eth0.7/isolated:0
-> /sys/class/net/br-lan/brif/wlan0/isolated:0
-> /sys/class/net/br-lan/brif/wlan1/isolated:0
-
-Looks like that's the thing I may have missed ;)
-Yet we do need a way to set this to '1' once hostapd adds the AP
-interface to the bridge. I'm not sure whether setting this via
-sysfs is actually more simple than using netlink given that some
-general purpose netlink code is already part of hostap.
-In the end, either approach would be fine with me and I would
-implement whatever is more likely to be merged into hostap.git.
-
-
-Cheers
-
-
-Daniel
 
 _______________________________________________
 openwrt-devel mailing list

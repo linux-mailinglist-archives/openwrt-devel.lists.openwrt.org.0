@@ -2,58 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 871E11453A8
-	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Jan 2020 12:21:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16D23145404
+	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Jan 2020 12:47:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ph7k4H+M/JbehQRmvrHps2jDrDl32FbTrSDsOpB/hDw=; b=n7K8uiYDEgRvVy
-	doyj+XOUBwVzLqKp7HLLUJImMVK14VxvDFPlhEgA8zMA9fwa7yx0f2AoTHhFAfSiRKlzKHTQnkZSM
-	M64Qr+XeF2ETec7yvpo58/uir6u7USRgxq0Dn0QeJCCP04kA14R6B8DA1B71+0s2V/vUjRGm3/I/V
-	ixTb97ieqoJnmxtu3Hr8mqoX3vtpA/JYVT/6/sLWwpkxHfY9+nWX4su7EjfPH3Sa02iSThCOQtcl3
-	tqeHDiVXSCZ0iATx5WNv2HZ1Nd4KHGrfTIIOqkG87mKbHmaDKldEnz+ddDA8t/T8VQDSBE8jzrIiA
-	GsFjvFjRAnk4zZIKUXMg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jgOiqdl5Lf44E6gAolyt9xQqBOGgWs0s0OlGxbs4dc0=; b=ndij0s9B041xtVXEdr2uzGklg
+	ZDOcuCCJSMC1iITfraLsj7sfc+g+7P11nQR4YGmHiq9swfMw1K3KdEhOeHzqlXHAE/kYRaTETkXZl
+	oaDkypNoTErwxkiCzLgCXb57oF+C/V/BeTK6G0HErMYgX0H1u71hRYKirdOdGPd50QhGI9fqAdbg/
+	YCLqMEXzrAozxcpSiOk5fgrHU4ALJBi1zZjGEFP8sKK0OB8KQZ6AUyry8BdrrkpCgExSqMUs3VcwE
+	fNewzqzxwLiSlsDWVJ4QMR7YFRC3MUfFGJjHEynqcSnoW4mCEdvaGq76oAv1Kp0dJMiwe0oV1+9sk
+	k/JTN8U0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuE4j-0003hj-4t; Wed, 22 Jan 2020 11:21:33 +0000
-Received: from jax4mhob11.myregisteredsite.com ([64.69.218.91])
+	id 1iuETM-0004zO-0T; Wed, 22 Jan 2020 11:47:00 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuE4Y-0003Vi-Ga
- for openwrt-devel@lists.openwrt.org; Wed, 22 Jan 2020 11:21:25 +0000
-Received: from mailpod.hostingplatform.com ([10.30.71.85])
- by jax4mhob11.myregisteredsite.com (8.14.4/8.14.4) with ESMTP id
- 00MBLGmd003739
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
- for <openwrt-devel@lists.openwrt.org>; Wed, 22 Jan 2020 06:21:18 -0500
-Received: (qmail 123935 invoked by uid 0); 22 Jan 2020 11:21:15 -0000
-X-TCPREMOTEIP: 208.85.15.155
-X-Authenticated-UID: sbrown@opensat.com
-Received: from unknown (HELO 155-15-85-208.altiusbb.net)
- (sbrown@opensat.com@208.85.15.155)
- by 0 with ESMTPA; 22 Jan 2020 11:21:15 -0000
-Received: from localhost (localhost [127.0.0.1])
- by 155-15-85-208.altiusbb.net (Postfix) with ESMTP id CF95215404DA;
- Wed, 22 Jan 2020 06:21:14 -0500 (EST)
-X-Virus-Scanned: Debian amavisd-new at ewol.com
-X-Spam-Flag: NO
-X-Spam-Score: -2.9
-X-Spam-Level: 
-X-Spam-Status: No, score=-2.9 tagged_above=-999 required=6.31
- tests=[ALL_TRUSTED=-1, BAYES_00=-1.9] autolearn=ham autolearn_force=no
-Received: from 155-15-85-208.altiusbb.net ([127.0.0.1])
- by localhost (fl-server.ewol.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 9Q7aIwjWh_IT; Wed, 22 Jan 2020 06:21:12 -0500 (EST)
-Received: from w7.lan (w7.lan [192.168.1.9])
- by 155-15-85-208.altiusbb.net (Postfix) with ESMTP id 2EB3D15402E6;
- Wed, 22 Jan 2020 06:21:12 -0500 (EST)
-Message-ID: <b9f82911320645af42a7806237025e2f49967566.camel@ewol.com>
-From: Steve Brown <sbrown@ewol.com>
-To: Bruno Pena <brunompena@gmail.com>
-Date: Wed, 22 Jan 2020 06:21:12 -0500
-In-Reply-To: <CADwgkMXf2q3uuyTFrce2NL_Z3EGVW8OC9tVeh6MRxdiAMu7CvQ@mail.gmail.com>
+ id 1iuETA-0004yn-3a
+ for openwrt-devel@lists.openwrt.org; Wed, 22 Jan 2020 11:46:51 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id n27so3991728vsa.0
+ for <openwrt-devel@lists.openwrt.org>; Wed, 22 Jan 2020 03:46:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CYpSjyBuIK0o9IXTCGO9QnNaF0EckF22vqSyxSqG6FE=;
+ b=nKJOiVSG7Q9V+49ZOexVuGQKuqGfWZwdLL2CllwrMGT6zYL5JlRq2nn7SE+ZoqFuhy
+ MUotZy+3iLCLkDuYEYFmOwHCW3z2nzGP5AereudsjZdgSsuxmaAXPUoGpnexT8hwfdNU
+ 6s1qYSI7bCpyAa9rIvVd6Jf58yl7vj7MPHyDm4xxPfDZpz4P+UxhP/r90fTMOuBCaxRD
+ UFAHTTobJHz1EABgm4DxpIKCz5fGU+hcJ6vmjiO0UPWBSeOgv5YpkIlOgMT7tLzDIBRF
+ KgivVKvcwGweUZirVZEUt+eyS+X3foGamthIIaClovrx4rBoEjbmuu1V37ZKzC7IGX9X
+ bldQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CYpSjyBuIK0o9IXTCGO9QnNaF0EckF22vqSyxSqG6FE=;
+ b=NZE1ypGnT+2+UrlUI0/hO27Oy9iPhSHRUt0qDqjYMMyJjFgRf3skKXZpJokrh5uQiC
+ qbcBRKQRWP6sh0AUtab4DnLyYgTRAbtyWKTU79Q4cl9MCkNivlc8UpUVwfgIctC0YIAW
+ up6C5czhPXDdfELpUskCacOcNbtbuBjoJbpP0sK5rbBJiu7WUGa4EKyIpawleST0c2vm
+ ce6/7ejDOpIJNwpubPOMB5LIVllCcUhy6cQg1rx0aAfnOXaTXM0p5f/qZtINHlIn0ldb
+ YS/RJ8jXM9s2LMXxdNiwolvO02V95SnVdPPydolTbNIAV7pv9bmm2gvpt9BpjNJ0ZpgB
+ F/1A==
+X-Gm-Message-State: APjAAAVheyjf6LEP9135n/jG31zyQS4qOAq3eOPcJ3jUnOlGVAefTDGx
+ HG92esIiSF2t5S+WI+vn/sYipS2MoGKaUDGaUfA=
+X-Google-Smtp-Source: APXvYqz2Y5rgsrQrmhfHJP5iBZy83Mm3zUyGYWOWncaHNgMVIAvCk9zAEmsIG85WMNv1ydOWCp9rYqXgMxSVwUKkbCk=
+X-Received: by 2002:a67:7a03:: with SMTP id v3mr2490787vsc.66.1579693606743;
+ Wed, 22 Jan 2020 03:46:46 -0800 (PST)
+MIME-Version: 1.0
 References: <1578138728-1256-1-git-send-email-brunompena@gmail.com>
  <0cf18b56d78d859f8d7bf30bccc6ce0762d35302.camel@ewol.com>
  <CADwgkMUhZ4TrqhiJJPHLL0aVyxxvKfABwDz-4wv_QZ_cyZvj9A@mail.gmail.com>
@@ -66,22 +63,35 @@ References: <1578138728-1256-1-git-send-email-brunompena@gmail.com>
  <989a2a224ceac0368c713ecc537af005eb45f035.camel@ewol.com>
  <CADwgkMXLgcnJ0_KBCto+oS3o4PpQeQThH7qp=DwE0JWYAoz7eQ@mail.gmail.com>
  <CADwgkMXf2q3uuyTFrce2NL_Z3EGVW8OC9tVeh6MRxdiAMu7CvQ@mail.gmail.com>
-User-Agent: Evolution 3.34.1-2 
-MIME-Version: 1.0
+ <b9f82911320645af42a7806237025e2f49967566.camel@ewol.com>
+In-Reply-To: <b9f82911320645af42a7806237025e2f49967566.camel@ewol.com>
+From: Bruno Pena <brunompena@gmail.com>
+Date: Wed, 22 Jan 2020 12:46:34 +0100
+Message-ID: <CADwgkMXrzBp0-cCN1Vpjd_wMHWDrCX4Et_3px3UaDcZj3qg4gg@mail.gmail.com>
+To: Steve Brown <sbrown@ewol.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_032122_710497_EF37626D 
-X-CRM114-Status: GOOD (  49.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200122_034648_194566_429B3808 
+X-CRM114-Status: GOOD (  43.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [64.69.218.91 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [64.69.218.91 listed in wl.mailspike.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [brunompena[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 Subject: Re: [OpenWrt-Devel] [PATCH v2] fstools: Add support to read-only
  MTD partitions (eg. recovery images)
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -95,246 +105,897 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Petr =?UTF-8?Q?=C5=A0tetiar?= <ynezz@true.cz>,
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org, Daniel Golle <daniel@makrotopia.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============1554565198556205998=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-SGkgQnJ1bm8sCgpUaGF0IGZpeGVkIGl0LgoKWyAgICAwLjQwMzgyNl0gbTI1cDgwIHNwaTAuMDog
-dzI1cTEyOCAoMTYzODQgS2J5dGVzKQpbICAgIDAuNDA4NzcwXSA3IGZpeGVkLXBhcnRpdGlvbnMg
-cGFydGl0aW9ucyBmb3VuZCBvbiBNVEQgZGV2aWNlIHNwaTAuMApbICAgIDAuNDE1MzMzXSBDcmVh
-dGluZyA3IE1URCBwYXJ0aXRpb25zIG9uICJzcGkwLjAiOgpbICAgIDAuNDIwMzEwXSAweDAwMDAw
-MDAwMDAwMC0weDAwMDAwMDAyMDAwMCA6ICJmYWN0b3J5LXVib290IgpbICAgIDAuNDI2NzM5XSAw
-eDAwMDAwMDAyMDAwMC0weDAwMDAwMDA0MDAwMCA6ICJ1LWJvb3QiClsgICAgMC40MzI1NjZdIDB4
-MDAwMDAwMDQwMDAwLTB4MDAwMDAwZjAwMDAwIDogImZpcm13YXJlIgpbICAgIDAuNDQwNDc3XSAy
-IHVpbWFnZS1mdyBwYXJ0aXRpb25zIGZvdW5kIG9uIE1URCBkZXZpY2UgZmlybXdhcmUKWyAgICAw
-LjQ0NjU5NV0gQ3JlYXRpbmcgMiBNVEQgcGFydGl0aW9ucyBvbiAiZmlybXdhcmUiOgpbICAgIDAu
-NDUxNzcxXSAweDAwMDAwMDAwMDAwMC0weDAwMDAwMDFiMDAwMCA6ICJrZXJuZWwiClsgICAgMC40
-NTc1NTRdIDB4MDAwMDAwMWIwMDAwLTB4MDAwMDAwZWMwMDAwIDogInJvb3RmcyIKWyAgICAwLjQ2
-MzM1NV0gbXRkOiBkZXZpY2UgNCAocm9vdGZzKSBzZXQgdG8gYmUgcm9vdCBmaWxlc3lzdGVtClsg
-ICAgMC40NzA0NzddIDEgc3F1YXNoZnMtc3BsaXQgcGFydGl0aW9ucyBmb3VuZCBvbiBNVEQgZGV2
-aWNlIHJvb3RmcwpbICAgIDAuNDc2ODc1XSAweDAwMDAwMDRlMDAwMC0weDAwMDAwMGVjMDAwMCA6
-ICJyb290ZnNfZGF0YSIKWyAgICAwLjQ4MzE4Ml0gMHgwMDAwMDBmNDAwMDAtMHgwMDAwMDBmNjAw
-MDAgOiAiaW5mbyIKWyAgICAwLjQ4ODg1M10gMHgwMDAwMDBmNjAwMDAtMHgwMDAwMDBmYjAwMDAg
-OiAiY29uZmlnIgpbICAgIDAuNDk0NjE5XSAweDAwMDAwMGZjMDAwMC0weDAwMDAwMGZkMDAwMCA6
-ICJwYXJ0aXRpb24tdGFibGUiClsgICAgMC41MDEyNTZdIDB4MDAwMDAwZmYwMDAwLTB4MDAwMDAx
-MDAwMDAwIDogImFydCIKCmRldjogICAgc2l6ZSAgIGVyYXNlc2l6ZSAgbmFtZQptdGQwOiAwMDAy
-MDAwMCAwMDAxMDAwMCAiZmFjdG9yeS11Ym9vdCIKbXRkMTogMDAwMjAwMDAgMDAwMTAwMDAgInUt
-Ym9vdCIKbXRkMjogMDBlYzAwMDAgMDAwMTAwMDAgImZpcm13YXJlIgptdGQzOiAwMDFiMDAwMCAw
-MDAxMDAwMCAia2VybmVsIgptdGQ0OiAwMGQxMDAwMCAwMDAxMDAwMCAicm9vdGZzIgptdGQ1OiAw
-MDllMDAwMCAwMDAxMDAwMCAicm9vdGZzX2RhdGEiCm10ZDY6IDAwMDIwMDAwIDAwMDEwMDAwICJp
-bmZvIgptdGQ3OiAwMDA1MDAwMCAwMDAxMDAwMCAiY29uZmlnIgptdGQ4OiAwMDAxMDAwMCAwMDAx
-MDAwMCAicGFydGl0aW9uLXRhYmxlIgptdGQ5OiAwMDAxMDAwMCAwMDAxMDAwMCAiYXJ0IgoKaW5k
-ZXggOGFhNmE1YTJiZS4uOTA0OGU4MzQwYyAxMDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L2F0aDc5
-L2ltYWdlL2NvbW1vbi10cC1saW5rLm1rCisrKyBiL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9j
-b21tb24tdHAtbGluay5tawpAQCAtNzEsNyArNzEsNyBAQCBlbmRlZgogCiBkZWZpbmUgRGV2aWNl
-L3RwbGluay1zYWZlbG9hZGVyLXVpbWFnZQogICAkKERldmljZS90cGxpbmstc2FmZWxvYWRlcikK
-LSAgS0VSTkVMIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgbHptYSB8IHVJbWFnZUFyY2hl
-ciBsem1hCisgIEtFUk5FTCA6PSBrZXJuZWwtYmluIHwgYXBwZW5kLWR0YiB8IGx6bWEgfCB1SW1h
-Z2VBcmNoZXIgbHptYSB8IHBhZC10byA2NGsKIGVuZGVmCgpTdGV2ZQoKT24gV2VkLCAyMDIwLTAx
-LTIyIGF0IDEwOjIyICswMTAwLCBCcnVubyBQZW5hIHdyb3RlOgo+IEhpIFN0ZXZlLAo+IAo+IEkg
-anVzdCBub3RpY2VkIHRoYXQgSSBoYXZlIGp1c3Qgc3VnZ2VzdGVkIHlvdSB0byBjaGFuZ2UgdGhl
-IHdyb25nCj4gc2VjdGlvbi4uLiBzb3JyeSEKPiBJdCdzIGNsZWFybHkgc3RhdGVkIG9uIHRhcmdl
-dC9saW51eC9hdGg3OS9pbWFnZS9nZW5lcmljLXRwLWxpbmsubWsKPiB0aGF0IHRoZSBBNy12NSB1
-c2VzIHRoZSB0cGxpbmstc2FmZWxvYWRlci11aW1hZ2Ugc2VjdGlvbiBidXQgSQo+IHNvbWVob3cg
-bWFuYWdlZCB0byBjb3B5IHRoZSB3cm9uZyBvbmUgKGRvaCEpLgo+ICAgICBkZWZpbmUgRGV2aWNl
-L3RwbGlua19hcmNoZXItYTctdjUKPiAgICAgICAkKERldmljZS90cGxpbmstc2FmZWxvYWRlci11
-aW1hZ2UpCj4gICAgICAgU09DIDo9IHFjYTk1NjMKPiAgICAgICBbLi4uXQo+IAo+IE9uIHRoZSBi
-cmlnaHQgc2lkZSwgdG9kYXkgSSBhY3R1YWxseSBnb3Qgc29tZSBmcmVlIG1pbnV0ZXMgdG8gc3Bh
-cmUKPiBhbmQgSSB1c2VkIHRoZW0gdG8gdGVzdCBzb21lIGNoYW5nZXMgdG8gdGhlIG1ha2VmaWxl
-cy4KPiBJIGhhdmUgYWRkZWQgdGhlIGZvbGxvd2luZyBlbnRyaWVzIHRvIGdldCBhbiBvdmVydmll
-dyBvZiBmaW5hbAo+IHBhcnRpdGlvbiBzaXplOgo+ICAgICBJTUFHRVMgKz0ga2VybmVsXzEuYmlu
-IGtlcm5lbF8yLmJpbiBrZXJuZWxfMy5iaW4ga2VybmVsXzQuYmluCj4ga2VybmVsXzUuYmluIGtl
-cm5lbF82LmJpbgo+ICAgICBJTUFHRS9rZXJuZWxfMS5iaW4gOj0ga2VybmVsLWJpbgo+ICAgICBJ
-TUFHRS9rZXJuZWxfMi5iaW4gOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIKPiAgICAgSU1BR0Uv
-a2VybmVsXzMuYmluIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgbHptYQo+ICAgICBJTUFH
-RS9rZXJuZWxfNC5iaW4gOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCBsem1hIHwKPiB1SW1h
-Z2VBcmNoZXIgbHptYQo+ICAgICBJTUFHRS9rZXJuZWxfNS5iaW4gOj0ga2VybmVsLWJpbiB8IGFw
-cGVuZC1kdGIgfCBsem1hIHwgcGFkLXRvIDY0awo+IHwgdUltYWdlQXJjaGVyIGx6bWEKPiAgICAg
-SU1BR0Uva2VybmVsXzYuYmluIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgbHptYSB8Cj4g
-dUltYWdlQXJjaGVyIGx6bWEgfCBwYWQtdG8gNjRrCj4gCj4gQW5kIHRoZXNlIHdlcmUgdGhlIHJl
-c3VsdHM6Cj4gICAgIGtlcm5lbF8xLmJpbiA6IDE4MDQ3MTkgYnl0ZXMgWzB4MWI4OWFmXQo+ICAg
-ICBrZXJuZWxfMi5iaW4gOiAxODEzNDg3IGJ5dGVzIFsweDFiYWJlZl0KPiAgICAga2VybmVsXzMu
-YmluIDogMTgzMTU0OCBieXRlcyBbMHgxYmYyN2NdCj4gICAgIGtlcm5lbF80LmJpbiA6IDE4MzE2
-MTIgYnl0ZXMgWzB4MWJmMmJjXQo+ICAgICBrZXJuZWxfNS5iaW4gOiAxODM1MDcyIGJ5dGVzIFsw
-eDFjMDA0MF0KPiAgICAga2VybmVsXzYuYmluIDogMTgzNTAwOCBieXRlcyBbMHgxYzAwMDBdCj4g
-Cj4gSSBoYXZlIHRoZW4gcHJvY2VlZGVkIHRvIGdlbmVyYXRlIHRoZSBjb3JyZXNwb25kaW5nIHN5
-c3VwZ3JhZGUuYmluCj4gaW1hZ2Ugd2l0aCB0aGUgc2V0dGluZ3Mgb2Yga2VybmVsXzUgYW5kIGtl
-cm5lbF82IHNvIEkgY291bGQgbWFudWFsbHkKPiBpbnNwZWN0IHRoZSByZXN1bHRpbmcgZmlsZXMu
-Cj4gCj4gT3JpZ2luYWwgc3lzdXBncmFkZS5iaW4gKHJvb3RmcyBzdGFydHMgYXQgMHgwMDFiODlh
-Zik6Cj4gICAgIDAwMWI4OWEwICA2OCA4MSA5ZCAzYiBiZCBjOSA4NiA5OCAgNzYgYzQgZjAgMWUg
-MGUgOTQgZTAgNjggCj4gfGguLjsuLi4udi4uLi4uLmh8Cj4gICAgIDAwMWI4OWIwICA3MyA3MSA3
-MyA1NyAwMyAwMCAwMCAwMCAgNmUgMjcgNWUgMDAgMDAgMDQgMDAgMGYgCj4gfHNxc1cuLi4ubide
-Li4uLi58Cj4gICAgIDAwMWI4OWMwICAwMCAwMCAwMCAwNCAwMCAxMiAwMCBjMCAgMDYgMDEgMDAg
-MDQgMDAgMDAgMDAgZmYgCj4gfC4uLi4uLi4uLi4uLi4uLi58Cj4gCj4gU2V0dGluZ3MgZnJvbSBr
-ZXJuZWxfNSBzeXN1cGdyYWRlLmJpbiAocm9vdGZzIHN0YXJ0cyBhdCAweDAwMWMwMDQwKToKPiAg
-ICAgMDAxYjg5YjAgIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwICAwMCAwMCAwMCAwMCAwMCAwMCAw
-MCAwMCAKPiB8Li4uLi4uLi4uLi4uLi4uLnwKPiAgICAgKgo+ICAgICAwMDFjMDA0MCAgNjggNzMg
-NzEgNzMgNTcgMDMgMDAgMDAgIDAwIDZlIDI3IDVlIDAwIDAwIDA0IDAwIAo+IHxoc3FzVy4uLi5u
-J14uLi4ufAo+IAo+IFNldHRpbmdzIGZyb20ga2VybmVsXzYgc3lzdXBncmFkZS5iaW4gKHJvb3Rm
-cyBzdGFydHMgYXQgMHgwMDFjMDAwMCk6Cj4gICAgIDAwMWI4OWIwICAwMCAwMCAwMCAwMCAwMCAw
-MCAwMCAwMCAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgCj4gfC4uLi4uLi4uLi4uLi4uLi58Cj4g
-ICAgICoKPiAgICAgMDAxYzAwMDAgIDY4IDczIDcxIDczIDU3IDAzIDAwIDAwICAwMCA2ZSAyNyA1
-ZSAwMCAwMCAwNCAwMCAKPiB8aHNxc1cuLi4ubideLi4uLnwKPiAKPiBCYXNlZCBvbiB0aGVzZSBJ
-IHdvdWxkIGFzayBpZiB5b3UgY291bGQgdGVzdCBhZ2FpbiB3aXRoIHRoZSBmb2xsb3dpbmcKPiBj
-aGFuZ2UgdG8gdGFyZ2V0L2xpbnV4L2F0aDc5L2ltYWdlL2NvbW1vbi10cC1saW5rLm1rIChhcHBl
-bmQgInwgcGFkLQo+IHRvIDY0ayIgdG8gdGhlIEtFUk5FTCBsaW5lKToKPiAgICAgZGVmaW5lIERl
-dmljZS90cGxpbmstc2FmZWxvYWRlci11aW1hZ2UKPiAgICAgICAkKERldmljZS90cGxpbmstc2Fm
-ZWxvYWRlcikKPiAgICAgICBLRVJORUwgOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCBsem1h
-IHwgdUltYWdlQXJjaGVyIGx6bWEgfAo+IHBhZC10byA2NGsKPiAgICAgZW5kZWYKPiAKPiBJIHdv
-dWxkIGFsc28gbGlrZSB0byB0YWtlIHRoZSBvcHBvcnR1bml0eSB0byBhc2sgaWYgaXQncyB3b3J0
-aAo+IHB1cnN1aW5nIHRoaXMgcGF0Y2ggaWYgaXQgbWVhbnMgdGhhdCBhbGwgZGV2aWNlcyAodXNp
-bmcgbXRkKSB3aWxsCj4gcmVxdWlyZSB0aGVpciBwYXJ0aXRpb25zIHRvIGJlIHBhZGRlZCB0byB0
-aGUgYmxvY2tzaXplPwo+IAo+IFRoYW5rIHlvdSBhbmQgYmVzdCByZWdhcmRzLAo+IEJydW5vIFBl
-bmEKPiAKPiBPbiBXZWQsIEphbiAyMiwgMjAyMCwgMDc6MTMgQnJ1bm8gUGVuYSA8YnJ1bm9tcGVu
-YUBnbWFpbC5jb20+IHdyb3RlOgo+ID4gSGkgU3RldmUsCj4gPiAKPiA+IFRoYW5rIHlvdSBmb3Ig
-dGVzdGluZy4KPiA+IFlvdSBpbXBsZW1lbnRlZCBteSBzdWdnZXN0aW9uIGNvcnJlY3RseSBidXQg
-aXQgc2VlbXMgdGhhdCBpdCBkaWRuJ3QKPiA+IGFjdHVhbGx5IHBhZCBhbnl0aGluZyAodGhlIHNp
-emVzIG9mIHRoZSBwYXJ0aXRpb25zIHNob3VsZCBiZQo+ID4gcm91bmRlZCB0byB0aGUgbmV4dCAw
-eDEwMDAwIGJsb2NrKS4KPiA+IFBsZWFzZSBhbGxvdyBtZSBhIGZldyBkYXlzIChyZWFsLWxpZmUg
-Y29uc3RyYWludHMpIHRvIHRlc3Qgc29tZQo+ID4gY2hhbmdlcyB0byB0aGUgY29tbW9uLXRwLWxp
-bmsubWsgYmVmb3JlIEkgd2FzdGUgbW9yZSBvZiB5b3VyIHRpbWUKPiA+IHdpdGggdGhlc2UgdGVz
-dHMuCj4gPiAKPiA+IEJlc3QgcmVnYXJkcywKPiA+IEJydW5vIFBlbmEKPiA+IAo+ID4gT24gV2Vk
-LCBKYW4gMjIsIDIwMjAgYXQgMTI6MTYgQU0gU3RldmUgQnJvd24gPHNicm93bkBld29sLmNvbT4K
-PiA+IHdyb3RlOgo+ID4gPiBIaSBCcnVubywKPiA+ID4gCj4gPiA+IFRoYXQgZGlkbid0IHNlZW0g
-dG8gc29sdmUgdGhlIHByb2JsZW0uIFRoZSBwYWRkaW5nIGRpZG4ndCBzZWVtIHRvCj4gPiA+IHRh
-a2UKPiA+ID4gZWZmZWN0Lgo+ID4gPiAKPiA+ID4gSSByZXZlcnRlZCAwZjgxYTA5NzkgYW5kIDBj
-NzA3ZDM3Yi4KPiA+ID4gCj4gPiA+IGRldjogICAgc2l6ZSAgIGVyYXNlc2l6ZSAgbmFtZQo+ID4g
-PiBtdGQwOiAwMDAyMDAwMCAwMDAxMDAwMCAiZmFjdG9yeS11Ym9vdCIKPiA+ID4gbXRkMTogMDAw
-MjAwMDAgMDAwMTAwMDAgInUtYm9vdCIKPiA+ID4gbXRkMjogMDBlYzAwMDAgMDAwMTAwMDAgImZp
-cm13YXJlIgo+ID4gPiBtdGQzOiAwMDFhM2EwNyAwMDAxMDAwMCAia2VybmVsIgo+ID4gPiBtdGQ0
-OiAwMGQxYzVmOSAwMDAxMDAwMCAicm9vdGZzIgo+ID4gPiBtdGQ1OiAwMDlmMDAwMCAwMDAxMDAw
-MCAicm9vdGZzX2RhdGEiCj4gPiA+IG10ZDY6IDAwMDIwMDAwIDAwMDEwMDAwICJpbmZvIgo+ID4g
-PiBtdGQ3OiAwMDA1MDAwMCAwMDAxMDAwMCAiY29uZmlnIgo+ID4gPiBtdGQ4OiAwMDAxMDAwMCAw
-MDAxMDAwMCAicGFydGl0aW9uLXRhYmxlIgo+ID4gPiBtdGQ5OiAwMDAxMDAwMCAwMDAxMDAwMCAi
-YXJ0Igo+ID4gPiAKPiA+ID4gWyAgICAwLjQxNDY3N10gQ3JlYXRpbmcgNyBNVEQgcGFydGl0aW9u
-cyBvbiAic3BpMC4wIjoKPiA+ID4gWyAgICAwLjQxOTY1NV0gMHgwMDAwMDAwMDAwMDAtMHgwMDAw
-MDAwMjAwMDAgOiAiZmFjdG9yeS11Ym9vdCIKPiA+ID4gWyAgICAwLjQyNjA5Ml0gMHgwMDAwMDAw
-MjAwMDAtMHgwMDAwMDAwNDAwMDAgOiAidS1ib290Igo+ID4gPiBbICAgIDAuNDMxOTA2XSAweDAw
-MDAwMDA0MDAwMC0weDAwMDAwMGYwMDAwMCA6ICJmaXJtd2FyZSIKPiA+ID4gWyAgICAwLjQzOTc3
-Ml0gMiB1aW1hZ2UtZncgcGFydGl0aW9ucyBmb3VuZCBvbiBNVEQgZGV2aWNlCj4gPiA+IGZpcm13
-YXJlCj4gPiA+IFsgICAgMC40NDU4OTFdIENyZWF0aW5nIDIgTVREIHBhcnRpdGlvbnMgb24gImZp
-cm13YXJlIjoKPiA+ID4gWyAgICAwLjQ1MTA2NV0gMHgwMDAwMDAwMDAwMDAtMHgwMDAwMDAxYTNh
-MDcgOiAia2VybmVsIgo+ID4gPiBbICAgIDAuNDU2ODQwXSAweDAwMDAwMDFhM2EwNy0weDAwMDAw
-MGVjMDAwMCA6ICJyb290ZnMiCj4gPiA+IFsgICAgMC40NjI2NDNdIG10ZDogZGV2aWNlIDQgKHJv
-b3Rmcykgc2V0IHRvIGJlIHJvb3QgZmlsZXN5c3RlbQo+ID4gPiBbICAgIDAuNDY5NzQ2XSAxIHNx
-dWFzaGZzLXNwbGl0IHBhcnRpdGlvbnMgZm91bmQgb24gTVREIGRldmljZQo+ID4gPiByb290ZnMK
-PiA+ID4gWyAgICAwLjQ3NjE0Ml0gMHgwMDAwMDA0ZDAwMDAtMHgwMDAwMDBlYzAwMDAgOiAicm9v
-dGZzX2RhdGEiCj4gPiA+IFsgICAgMC40ODI0NDFdIDB4MDAwMDAwZjQwMDAwLTB4MDAwMDAwZjYw
-MDAwIDogImluZm8iCj4gPiA+IFsgICAgMC40ODgwMzNdIDB4MDAwMDAwZjYwMDAwLTB4MDAwMDAw
-ZmIwMDAwIDogImNvbmZpZyIKPiA+ID4gWyAgICAwLjQ5Mzg1Nl0gMHgwMDAwMDBmYzAwMDAtMHgw
-MDAwMDBmZDAwMDAgOiAicGFydGl0aW9uLXRhYmxlIgo+ID4gPiBbICAgIDAuNTAwNDk0XSAweDAw
-MDAwMGZmMDAwMC0weDAwMDAwMTAwMDAwMCA6ICJhcnQiCj4gPiA+IAo+ID4gPiAKPiA+ID4gZGlm
-ZiAtLWdpdCBhL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9jb21tb24tdHAtbGluay5tawo+ID4g
-PiBiL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9jb21tb24tdHAtbGluay5tawo+ID4gPiBpbmRl
-eCA4YWE2YTVhMmJlLi44OWU3M2E4NWYzIDEwMDY0NAo+ID4gPiAtLS0gYS90YXJnZXQvbGludXgv
-YXRoNzkvaW1hZ2UvY29tbW9uLXRwLWxpbmsubWsKPiA+ID4gKysrIGIvdGFyZ2V0L2xpbnV4L2F0
-aDc5L2ltYWdlL2NvbW1vbi10cC1saW5rLm1rCj4gPiA+IEBAIC02Myw3ICs2Myw3IEBAIGVuZGVm
-Cj4gPiA+IAo+ID4gPiAgZGVmaW5lIERldmljZS90cGxpbmstc2FmZWxvYWRlcgo+ID4gPiAgICAk
-KERldmljZS90cGxpbmspCj4gPiA+IC0gIEtFUk5FTCA6PSBrZXJuZWwtYmluIHwgYXBwZW5kLWR0
-YiB8IGx6bWEgfCB0cGxpbmstdjEtaGVhZGVyIC1PCj4gPiA+ICsgIEtFUk5FTCA6PSBrZXJuZWwt
-YmluIHwgYXBwZW5kLWR0YiB8IGx6bWEgfCBwYWQtdG8KPiA+ID4gJCQkJChCTE9DS1NJWkUpIHwg
-dHBsaW5rLXYxLWhlYWRlciAtTwo+ID4gPiAgICBJTUFHRS9zeXN1cGdyYWRlLmJpbiA6PSBhcHBl
-bmQtcm9vdGZzIHwgdHBsaW5rLXNhZmVsb2FkZXIKPiA+ID4gc3lzdXBncmFkZSB8IFwKPiA+ID4g
-ICAgICBhcHBlbmQtbWV0YWRhdGEgfCBjaGVjay1zaXplICQkJCQoSU1BR0VfU0laRSkKPiA+ID4g
-ICAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gYXBwZW5kLXJvb3RmcyB8IHRwbGluay1zYWZlbG9hZGVy
-IGZhY3RvcnkKPiA+ID4gCj4gPiA+IENhbiB5b3UgdmVyaWZ5IHRoYXQgSSBkaWQgdGhpcyByaWdo
-dD8KPiA+ID4gCj4gPiA+IFN0ZXZlCj4gPiA+IAo+ID4gPiAKPiA+ID4gT24gVHVlLCAyMDIwLTAx
-LTIxIGF0IDIyOjEwICswMTAwLCBCcnVubyBQZW5hIHdyb3RlOgo+ID4gPiA+IEhpIGV2ZXJ5b25l
-LAo+ID4gPiA+IAo+ID4gPiA+IEkgd2FzIGZpbmFsbHkgYWJsZSB0byByZXBsaWNhdGUgdGhlIGlz
-c3VlIHlvdSBhcmUgb2JzZXJ2aW5nLgo+ID4gPiA+IAo+ID4gPiA+IFRoZSBwcm9ibGVtIGNvbWVz
-IGZyb20gdGhlIGZhY3QgdGhhdCB0aGUga2VybmVsIHBhcnRpdGlvbiBvbgo+ID4gPiB0aGUgVFAt
-Cj4gPiA+ID4gTGluayBpbWFnZXMgaXMgbm90IHBhZGRlZCB0byB0aGUgd3JpdGUgYmxvY2tzaXpl
-IC0gd2hpY2ggY2FuIGJlCj4gPiA+ID4gb2JzZXJ2ZWQgb24gdGhlIGRtZXNnIGZyb20gU3RldmU6
-Cj4gPiA+ID4gWyAgICAwLjQ1MDk4N10gMHgwMDAwMDAwMDAwMDAtMHgwMDAwMDAxYTM5ZWEgOiAi
-a2VybmVsIgo+ID4gPiA+IFsgICAgMC40NTY3NzJdIDB4MDAwMDAwMWEzOWVhLTB4MDAwMDAwZWMw
-MDAwIDogInJvb3RmcyIKPiA+ID4gPiBUaGUgYmxvY2tzaXplIGNhbiBiZSBzZWVuIG9ic2VydmVk
-IG9uIHRoZSAvcHJvYy9tdGQgYW5kIGZvcgo+ID4gPiB0aGF0Cj4gPiA+ID4gZGV2aWNlIGlzIDB4
-MTAwMDA6Cj4gPiA+ID4gbXRkMzogMDAxYTM4ZGUgMDAwMTAwMDAgImtlcm5lbCIKPiA+ID4gPiBt
-dGQ0OiAwMGQxYzcyMiAwMDAxMDAwMCAicm9vdGZzIgo+ID4gPiA+IFRoaXMgdHJpZ2dlcnMgdGhl
-IGZvbGxvd2luZyBjb2RlIG9uIGRyaXZlcnMvbXRkL210ZHBhcnQuYyB0aGF0Cj4gPiA+ID4gcmVt
-b3ZlcyB0aGUgd3JpdGUgZmxhZyBmcm9tIHRoZSByb290ZnMgcGFydGl0aW9uOgo+ID4gPiA+ICAg
-ICAgICAgdG1wID0gcGFydF9hYnNvbHV0ZV9vZmZzZXQocGFyZW50KSArIHNsYXZlLT5vZmZzZXQ7
-Cj4gPiA+ID4gICAgICAgICByZW1haW5kZXIgPSBkb19kaXYodG1wLCB3cl9hbGlnbm1lbnQpOwo+
-ID4gPiA+ICAgICAgICAgaWYgKChzbGF2ZS0+bXRkLmZsYWdzICYgTVREX1dSSVRFQUJMRSkgJiYg
-cmVtYWluZGVyKSB7Cj4gPiA+ID4gICAgICAgICAgICAgICAgIC8qIERvZXNuJ3Qgc3RhcnQgb24g
-YSBib3VuZGFyeSBvZiBtYWpvciBlcmFzZQo+ID4gPiBzaXplICovCj4gPiA+ID4gICAgICAgICAg
-ICAgICAgIHNsYXZlLT5tdGQuZmxhZ3MgfD0gTVREX0VSQVNFX1BBUlRJQUw7Cj4gPiA+ID4gICAg
-ICAgICAgICAgICAgIGlmICgoKHUzMilzbGF2ZS0+bXRkLnNpemUpID4gcGFyZW50LT5lcmFzZXNp
-emUpCj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAgc2xhdmUtPm10ZC5mbGFncyAmPSB+
-TVREX1dSSVRFQUJMRTsKPiA+ID4gPiAgICAgICAgICAgICAgICAgZWxzZQo+ID4gPiA+ICAgICAg
-ICAgICAgICAgICAgICAgICAgIHNsYXZlLT5tdGQuZXJhc2VzaXplID0gc2xhdmUtPm10ZC5zaXpl
-Owo+ID4gPiA+ICAgICAgICAgfQo+ID4gPiA+IAo+ID4gPiA+ICAgICAgICAgdG1wID0gcGFydF9h
-YnNvbHV0ZV9vZmZzZXQocGFyZW50KSArIHNsYXZlLT5vZmZzZXQgKwo+ID4gPiBzbGF2ZS0KPiA+
-ID4gPiA+bXRkLnNpemU7Cj4gPiA+ID4gICAgICAgICByZW1haW5kZXIgPSBkb19kaXYodG1wLCB3
-cl9hbGlnbm1lbnQpOwo+ID4gPiA+ICAgICAgICAgaWYgKChzbGF2ZS0+bXRkLmZsYWdzICYgTVRE
-X1dSSVRFQUJMRSkgJiYgcmVtYWluZGVyKSB7Cj4gPiA+ID4gICAgICAgICAgICAgICAgIHNsYXZl
-LT5tdGQuZmxhZ3MgfD0gTVREX0VSQVNFX1BBUlRJQUw7Cj4gPiA+ID4gCj4gPiA+ID4gICAgICAg
-ICAgICAgICAgIGlmICgodTMyKXNsYXZlLT5tdGQuc2l6ZSA+IHBhcmVudC0+ZXJhc2VzaXplKQo+
-ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICAgIHNsYXZlLT5tdGQuZmxhZ3MgJj0gfk1URF9X
-UklURUFCTEU7Cj4gPiA+ID4gICAgICAgICAgICAgICAgIGVsc2UKPiA+ID4gPiAgICAgICAgICAg
-ICAgICAgICAgICAgICBzbGF2ZS0+bXRkLmVyYXNlc2l6ZSA9IHNsYXZlLT5tdGQuc2l6ZTsKPiA+
-ID4gPiAgICAgICAgIH0KPiA+ID4gPiBOb3cgd2UgaGF2ZSBhIHJvb3RmcyBwYXJ0aXRpb24gdGhh
-dCBpcyBzZXQgdG8gcmVhZC1vbmx5LCBhbmQKPiA+ID4gd2l0aCB0aGUKPiA+ID4gPiBrZXJuZWwg
-cGF0Y2ggdGhhdCBmb3JjZXMgc3ViLXBhcnRpdGlvbnMgdG8gbWF0Y2ggdGhlIGFjY2Vzcwo+ID4g
-PiBtb2RlIG9mCj4gPiA+ID4gdGhlIHBhcmVudCwgd2hlbiB0aGUgc3BsaXQgcnVucyBpdCB3aWxs
-IGZvcmNlIHRoZSByb290ZnNfZGF0YQo+ID4gPiA+IHBhcnRpdGlvbiB0byBtYXRjaCB0aGUgcGFy
-ZW50IGFjY2VzcyBtb2RlIChyZWFkLW9ubHkpLgo+ID4gPiA+IAo+ID4gPiA+IE15IHN1Z2dlc3Rp
-b24gaXMgdG8gY2hhbmdlIHRoZSB0YXJnZXQvbGludXgvYXRoNzkvaW1hZ2UvY29tbW9uLQo+ID4g
-PiB0cC0KPiA+ID4gPiBsaW5rLm1rIHNvIGl0IHBhZHMgdGhlIGtlcm5lbCBwYXJ0aXRpb24gdG8g
-dGhlIGJsb2Nrc2l6ZQo+ID4gPiAodW50ZXN0ZWQKPiA+ID4gPiBzdWdnZXN0aW9uIGJlbG93KToK
-PiA+ID4gPiBkZWZpbmUgRGV2aWNlL3RwbGluay1zYWZlbG9hZGVyCj4gPiA+ID4gICAkKERldmlj
-ZS90cGxpbmspCj4gPiA+ID4gICBLRVJORUwgOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCBs
-em1hIHwgcGFkLXRvCj4gPiA+ICQkJCQoQkxPQ0tTSVpFKSB8Cj4gPiA+ID4gdHBsaW5rLXYxLWhl
-YWRlciAtTwo+ID4gPiA+IFsuLi5dCj4gPiA+ID4gV291bGQgYW55IG9mIHlvdSBiZSB3aWxsaW5n
-IHRvIHNwZW5kIHNvbWUgdGltZSB0ZXN0aW5nIHRoaXMKPiA+ID4gY2hhbmdlIG9uCj4gPiA+ID4g
-eW91ciBUUC1MaW5rPwo+ID4gPiA+IAo+ID4gPiA+IFRoYW5rIHlvdSBhbmQgYmVzdCByZWdhcmRz
-LAo+ID4gPiA+IEJydW5vIFBlbmEKPiA+ID4gPiAKPiA+ID4gPiBPbiBUdWUsIEphbiAyMSwgMjAy
-MCBhdCA4OjE1IFBNIEJydW5vIFBlbmEgPAo+ID4gPiBicnVub21wZW5hQGdtYWlsLmNvbT4KPiA+
-ID4gPiB3cm90ZToKPiA+ID4gPiA+IEhpIFBldHIsCj4gPiA+ID4gPiAKPiA+ID4gPiA+IFRoYW5r
-IHlvdSBmb3IgcmV2ZXJ0aW5nIHRoZSBwYXRjaGVzLgo+ID4gPiA+ID4gCj4gPiA+ID4gPiBJJ20g
-dHJ5aW5nIHRvIHJlcGxpY2F0ZSB0aGUgaXNzdWUgYnV0IHNvIGZhciBJIGhhdmVuJ3QgaGFkCj4g
-PiA+IGFueQo+ID4gPiA+ID4gbHVjaywgYW5kIGp1c3QgYnkgbG9va2luZyBhdCB0aGUgY29kZSBJ
-J20gbm90IHNlZWluZwo+ID4gPiB3aGVyZS93aGF0IGlzCj4gPiA+ID4gPiBjb3VsZCBiZSBicmVh
-a2luZy4KPiA+ID4gPiA+IAo+ID4gPiA+ID4gUmVnYXJkaW5nIHRoZSB1cHN0cmVhbSBwYXRjaCwg
-dGhhdCBvbmUgaXMganVzdCBhbiBlbmFibGVyCj4gPiA+IChyZWFkOiBpdAo+ID4gPiA+ID4gb25s
-eSBleHRlbmRzIHRoZSAibXRkX2FkZF9wYXJ0aXRpb24iIGZ1bmN0aW9uIGJ1dCBpdCBkb2VzIG5v
-dAo+ID4gPiBhZGQKPiA+ID4gPiA+IGFueSBjb2RlIHRvIGZvcmNlIHRoZSBhY2Nlc3MgbW9kZSBv
-biBzdWItcGFydGl0aW9ucykuCj4gPiA+ID4gPiBUaGUgcmVhc29uIGZvciB0aGlzIGlzIGJlY2F1
-c2UgdGhpcyBlbmZvcmNlbWVudCBpcyBkb25lIG9uCj4gPiA+IHRoZSBtdGQKPiA+ID4gPiA+IHBh
-cnNlciBjb2RlIHRoYXQgaXMgT3BlbldydCBzcGVjaWZpYyBhbmQgaW1wbGVtZW50ZWQgdmlhCj4g
-PiA+IGtlcm5lbAo+ID4gPiA+ID4gcGF0Y2hlcyAobm90IHByZXNlbnQgb24gdXBzdHJlYW0pLgo+
-ID4gPiA+ID4gCj4gPiA+ID4gPiBCZXN0IHJlZ2FyZHMsCj4gPiA+ID4gPiBCcnVubyBQZW5hCj4g
-PiA+ID4gPiAKPiA+ID4gPiA+IE9uIFR1ZSwgSmFuIDIxLCAyMDIwIGF0IDc6NTcgUE0gUGV0ciDF
-oHRldGlhciA8eW5lenpAdHJ1ZS5jej4KPiA+ID4gd3JvdGU6Cj4gPiA+ID4gPiA+IEJydW5vIFBl
-bmEgPGJydW5vbXBlbmFAZ21haWwuY29tPiBbMjAyMC0wMS0yMSAxNDo1Mzo1NF06Cj4gPiA+ID4g
-PiA+IAo+ID4gPiA+ID4gPiBIaSwKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+ID4gQmFzZWQgb24g
-dGhlIGxhc3QgY29tbWVudCBmcm9tIFN0ZXZlIChmc3Rvb2xzIHBhdGNoIHdhcwo+ID4gPiBub3QK
-PiA+ID4gPiA+ID4gcmV2ZXJ0ZWQpLCBJJ20KPiA+ID4gPiA+ID4gPiBub3Qgc3VyZSBpZiB0aGF0
-J3MgdGhlIHJvb3QgY2F1c2UuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiB5b3UgbmVlZCB0byBm
-aW5kIG91dCwgYnV0IHRoYXQgRGFuaWVsJ3MgcmVtYXJrIHNlZW1zIGxlZ2l0Cj4gPiA+IHRvIG1l
-LAo+ID4gPiA+ID4gPiB5b3VyIHBhdGNoCj4gPiA+ID4gPiA+IGxpa2VseSBjaGFuZ2VkIHRoZSBt
-dGQgZGV2aWNlIG9wZW4gb3JkZXIvZmxhZ3MuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IFRo
-ZSBrZXJuZWwgcGF0Y2ggKHdoaWNoIHdoZW4gcmV2ZXJ0ZWQgbWFrZXMgcm9vdGZzX2RhdGEKPiA+
-ID4gPiA+ID4gd3JpdGFibGUgYWdhaW4pCj4gPiA+ID4gPiA+ID4gb25seSBlbmZvcmNlcyB0aGUg
-cGFyZW50IG10ZCBhY2Nlc3MgbW9kZSBvbiB0aGUgc3ViLQo+ID4gPiBwYXJ0aXRpb25zLgo+ID4g
-PiA+ID4gPiAKPiA+ID4gPiA+ID4gRllJIEkgY3VycmVudGx5IGRvbnQgaGF2ZSB0aW1lIHRvIGZp
-eCB0aGF0IHJlZ3Jlc3Npb24KPiA+ID4gbXlzZWxmIGFuZAo+ID4gPiA+ID4gPiBzaW5jZSBpdHMK
-PiA+ID4gPiA+ID4gbGlrZWx5IGFmZmVjdGluZyBhIGxvdCBvZiB1c2Vycywgc28gSSd2ZSByZXZl
-cnRlZCB0aG9zZQo+ID4gPiBjaGFuZ2VzLgo+ID4gPiA+ID4gPiBJIHRoaW5rLCB0aGF0Cj4gPiA+
-ID4gPiA+IHRoaXMgY2hhbmdlIGlzIHVzZWZ1bCwgc28gSSdtIHN0aWxsIHdpbGxpbmcgdG8gbWVy
-Z2UgaXQKPiA+ID4gb25jZQo+ID4gPiA+ID4gPiBmaXhlZCwgbm8KPiA+ID4gPiA+ID4gd29ycmll
-cy4gSGF2aW5nIHNvbWUgdXBzdHJlYW0gZmVlZGJhY2sgYmVmb3JlaGFuZCB3b3VsZCBiZQo+ID4g
-PiBhCj4gPiA+ID4gPiA+IHBsdXMuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiBCVFcgaXQgd291
-bGQgYmUgZmFpciB0byBpbmZvcm0gdXBzdHJlYW0gYWJvdXQgdGhpcyBwb3NzaWJsZQo+ID4gPiBp
-c3N1ZQo+ID4gPiA+ID4gPiBhcyB3ZWxsLCBzbwo+ID4gPiA+ID4gPiB0aGUgcGF0Y2ggd29udCBn
-ZXQgbWVyZ2VkIGluIGl0cyBjdXJyZW50IHN0YXRlLCB1bmxlc3MgaXRzCj4gPiA+IGRvdWJsZQo+
-ID4gPiA+ID4gPiBjaGVja2VkIChvcgo+ID4gPiA+ID4gPiBqdXN0IHdyaXRlIHRoZW0sIHRoYXQg
-eW91J3JlIHBsYW5uaW5nIHYyLCBzbyB0aGUgcGF0Y2ggaXMKPiA+ID4gcmVtb3ZlZAo+ID4gPiA+
-ID4gPiBmcm9tIHRoZWlyCj4gPiA+ID4gPiA+IFBhdGNod29yaykuCj4gPiA+ID4gPiA+IAo+ID4g
-PiA+ID4gPiAtLSB5bmV6ego+ID4gPiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
-QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9vcGVud3J0LWRldmVsCg==
+--===============1554565198556205998==
+Content-Type: multipart/alternative; boundary="00000000000048b215059cb914c6"
+
+--00000000000048b215059cb914c6
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Steve,
+
+Glad to hear that and thank you for testing it!
+
+I will probably ask you to do one additional test to see if we're able to
+remove the padding requirement (as mentioned on the previous emails).
+But let me test it first so I can confirm that it actually works.
+
+Best regards,
+Bruno Pena
+
+On Wed, Jan 22, 2020, 12:21 Steve Brown <sbrown@ewol.com> wrote:
+
+> Hi Bruno,
+>
+> That fixed it.
+>
+> [    0.403826] m25p80 spi0.0: w25q128 (16384 Kbytes)
+> [    0.408770] 7 fixed-partitions partitions found on MTD device spi0.0
+> [    0.415333] Creating 7 MTD partitions on "spi0.0":
+> [    0.420310] 0x000000000000-0x000000020000 : "factory-uboot"
+> [    0.426739] 0x000000020000-0x000000040000 : "u-boot"
+> [    0.432566] 0x000000040000-0x000000f00000 : "firmware"
+> [    0.440477] 2 uimage-fw partitions found on MTD device firmware
+> [    0.446595] Creating 2 MTD partitions on "firmware":
+> [    0.451771] 0x000000000000-0x0000001b0000 : "kernel"
+> [    0.457554] 0x0000001b0000-0x000000ec0000 : "rootfs"
+> [    0.463355] mtd: device 4 (rootfs) set to be root filesystem
+> [    0.470477] 1 squashfs-split partitions found on MTD device rootfs
+> [    0.476875] 0x0000004e0000-0x000000ec0000 : "rootfs_data"
+> [    0.483182] 0x000000f40000-0x000000f60000 : "info"
+> [    0.488853] 0x000000f60000-0x000000fb0000 : "config"
+> [    0.494619] 0x000000fc0000-0x000000fd0000 : "partition-table"
+> [    0.501256] 0x000000ff0000-0x000001000000 : "art"
+>
+> dev:    size   erasesize  name
+> mtd0: 00020000 00010000 "factory-uboot"
+> mtd1: 00020000 00010000 "u-boot"
+> mtd2: 00ec0000 00010000 "firmware"
+> mtd3: 001b0000 00010000 "kernel"
+> mtd4: 00d10000 00010000 "rootfs"
+> mtd5: 009e0000 00010000 "rootfs_data"
+> mtd6: 00020000 00010000 "info"
+> mtd7: 00050000 00010000 "config"
+> mtd8: 00010000 00010000 "partition-table"
+> mtd9: 00010000 00010000 "art"
+>
+> index 8aa6a5a2be..9048e8340c 100644
+> --- a/target/linux/ath79/image/common-tp-link.mk
+> +++ b/target/linux/ath79/image/common-tp-link.mk
+> @@ -71,7 +71,7 @@ endef
+>
+>  define Device/tplink-safeloader-uimage
+>    $(Device/tplink-safeloader)
+> -  KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma
+> +  KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma | pad-t=
+o
+> 64k
+>  endef
+>
+> Steve
+>
+> On Wed, 2020-01-22 at 10:22 +0100, Bruno Pena wrote:
+> > Hi Steve,
+> >
+> > I just noticed that I have just suggested you to change the wrong
+> > section... sorry!
+> > It's clearly stated on target/linux/ath79/image/generic-tp-link.mk
+> > that the A7-v5 uses the tplink-safeloader-uimage section but I
+> > somehow managed to copy the wrong one (doh!).
+> >     define Device/tplink_archer-a7-v5
+> >       $(Device/tplink-safeloader-uimage)
+> >       SOC :=3D qca9563
+> >       [...]
+> >
+> > On the bright side, today I actually got some free minutes to spare
+> > and I used them to test some changes to the makefiles.
+> > I have added the following entries to get an overview of final
+> > partition size:
+> >     IMAGES +=3D kernel_1.bin kernel_2.bin kernel_3.bin kernel_4.bin
+> > kernel_5.bin kernel_6.bin
+> >     IMAGE/kernel_1.bin :=3D kernel-bin
+> >     IMAGE/kernel_2.bin :=3D kernel-bin | append-dtb
+> >     IMAGE/kernel_3.bin :=3D kernel-bin | append-dtb | lzma
+> >     IMAGE/kernel_4.bin :=3D kernel-bin | append-dtb | lzma |
+> > uImageArcher lzma
+> >     IMAGE/kernel_5.bin :=3D kernel-bin | append-dtb | lzma | pad-to 64k
+> > | uImageArcher lzma
+> >     IMAGE/kernel_6.bin :=3D kernel-bin | append-dtb | lzma |
+> > uImageArcher lzma | pad-to 64k
+> >
+> > And these were the results:
+> >     kernel_1.bin : 1804719 bytes [0x1b89af]
+> >     kernel_2.bin : 1813487 bytes [0x1babef]
+> >     kernel_3.bin : 1831548 bytes [0x1bf27c]
+> >     kernel_4.bin : 1831612 bytes [0x1bf2bc]
+> >     kernel_5.bin : 1835072 bytes [0x1c0040]
+> >     kernel_6.bin : 1835008 bytes [0x1c0000]
+> >
+> > I have then proceeded to generate the corresponding sysupgrade.bin
+> > image with the settings of kernel_5 and kernel_6 so I could manually
+> > inspect the resulting files.
+> >
+> > Original sysupgrade.bin (rootfs starts at 0x001b89af):
+> >     001b89a0  68 81 9d 3b bd c9 86 98  76 c4 f0 1e 0e 94 e0 68
+> > |h..;....v......h|
+> >     001b89b0  73 71 73 57 03 00 00 00  6e 27 5e 00 00 04 00 0f
+> > |sqsW....n'^.....|
+> >     001b89c0  00 00 00 04 00 12 00 c0  06 01 00 04 00 00 00 ff
+> > |................|
+> >
+> > Settings from kernel_5 sysupgrade.bin (rootfs starts at 0x001c0040):
+> >     001b89b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+> > |................|
+> >     *
+> >     001c0040  68 73 71 73 57 03 00 00  00 6e 27 5e 00 00 04 00
+> > |hsqsW....n'^....|
+> >
+> > Settings from kernel_6 sysupgrade.bin (rootfs starts at 0x001c0000):
+> >     001b89b0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+> > |................|
+> >     *
+> >     001c0000  68 73 71 73 57 03 00 00  00 6e 27 5e 00 00 04 00
+> > |hsqsW....n'^....|
+> >
+> > Based on these I would ask if you could test again with the following
+> > change to target/linux/ath79/image/common-tp-link.mk (append "| pad-
+> > to 64k" to the KERNEL line):
+> >     define Device/tplink-safeloader-uimage
+> >       $(Device/tplink-safeloader)
+> >       KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma |
+> > pad-to 64k
+> >     endef
+> >
+> > I would also like to take the opportunity to ask if it's worth
+> > pursuing this patch if it means that all devices (using mtd) will
+> > require their partitions to be padded to the blocksize?
+> >
+> > Thank you and best regards,
+> > Bruno Pena
+> >
+> > On Wed, Jan 22, 2020, 07:13 Bruno Pena <brunompena@gmail.com> wrote:
+> > > Hi Steve,
+> > >
+> > > Thank you for testing.
+> > > You implemented my suggestion correctly but it seems that it didn't
+> > > actually pad anything (the sizes of the partitions should be
+> > > rounded to the next 0x10000 block).
+> > > Please allow me a few days (real-life constraints) to test some
+> > > changes to the common-tp-link.mk before I waste more of your time
+> > > with these tests.
+> > >
+> > > Best regards,
+> > > Bruno Pena
+> > >
+> > > On Wed, Jan 22, 2020 at 12:16 AM Steve Brown <sbrown@ewol.com>
+> > > wrote:
+> > > > Hi Bruno,
+> > > >
+> > > > That didn't seem to solve the problem. The padding didn't seem to
+> > > > take
+> > > > effect.
+> > > >
+> > > > I reverted 0f81a0979 and 0c707d37b.
+> > > >
+> > > > dev:    size   erasesize  name
+> > > > mtd0: 00020000 00010000 "factory-uboot"
+> > > > mtd1: 00020000 00010000 "u-boot"
+> > > > mtd2: 00ec0000 00010000 "firmware"
+> > > > mtd3: 001a3a07 00010000 "kernel"
+> > > > mtd4: 00d1c5f9 00010000 "rootfs"
+> > > > mtd5: 009f0000 00010000 "rootfs_data"
+> > > > mtd6: 00020000 00010000 "info"
+> > > > mtd7: 00050000 00010000 "config"
+> > > > mtd8: 00010000 00010000 "partition-table"
+> > > > mtd9: 00010000 00010000 "art"
+> > > >
+> > > > [    0.414677] Creating 7 MTD partitions on "spi0.0":
+> > > > [    0.419655] 0x000000000000-0x000000020000 : "factory-uboot"
+> > > > [    0.426092] 0x000000020000-0x000000040000 : "u-boot"
+> > > > [    0.431906] 0x000000040000-0x000000f00000 : "firmware"
+> > > > [    0.439772] 2 uimage-fw partitions found on MTD device
+> > > > firmware
+> > > > [    0.445891] Creating 2 MTD partitions on "firmware":
+> > > > [    0.451065] 0x000000000000-0x0000001a3a07 : "kernel"
+> > > > [    0.456840] 0x0000001a3a07-0x000000ec0000 : "rootfs"
+> > > > [    0.462643] mtd: device 4 (rootfs) set to be root filesystem
+> > > > [    0.469746] 1 squashfs-split partitions found on MTD device
+> > > > rootfs
+> > > > [    0.476142] 0x0000004d0000-0x000000ec0000 : "rootfs_data"
+> > > > [    0.482441] 0x000000f40000-0x000000f60000 : "info"
+> > > > [    0.488033] 0x000000f60000-0x000000fb0000 : "config"
+> > > > [    0.493856] 0x000000fc0000-0x000000fd0000 : "partition-table"
+> > > > [    0.500494] 0x000000ff0000-0x000001000000 : "art"
+> > > >
+> > > >
+> > > > diff --git a/target/linux/ath79/image/common-tp-link.mk
+> > > > b/target/linux/ath79/image/common-tp-link.mk
+> > > > index 8aa6a5a2be..89e73a85f3 100644
+> > > > --- a/target/linux/ath79/image/common-tp-link.mk
+> > > > +++ b/target/linux/ath79/image/common-tp-link.mk
+> > > > @@ -63,7 +63,7 @@ endef
+> > > >
+> > > >  define Device/tplink-safeloader
+> > > >    $(Device/tplink)
+> > > > -  KERNEL :=3D kernel-bin | append-dtb | lzma | tplink-v1-header -O
+> > > > +  KERNEL :=3D kernel-bin | append-dtb | lzma | pad-to
+> > > > $$$$(BLOCKSIZE) | tplink-v1-header -O
+> > > >    IMAGE/sysupgrade.bin :=3D append-rootfs | tplink-safeloader
+> > > > sysupgrade | \
+> > > >      append-metadata | check-size $$$$(IMAGE_SIZE)
+> > > >    IMAGE/factory.bin :=3D append-rootfs | tplink-safeloader factory
+> > > >
+> > > > Can you verify that I did this right?
+> > > >
+> > > > Steve
+> > > >
+> > > >
+> > > > On Tue, 2020-01-21 at 22:10 +0100, Bruno Pena wrote:
+> > > > > Hi everyone,
+> > > > >
+> > > > > I was finally able to replicate the issue you are observing.
+> > > > >
+> > > > > The problem comes from the fact that the kernel partition on
+> > > > the TP-
+> > > > > Link images is not padded to the write blocksize - which can be
+> > > > > observed on the dmesg from Steve:
+> > > > > [    0.450987] 0x000000000000-0x0000001a39ea : "kernel"
+> > > > > [    0.456772] 0x0000001a39ea-0x000000ec0000 : "rootfs"
+> > > > > The blocksize can be seen observed on the /proc/mtd and for
+> > > > that
+> > > > > device is 0x10000:
+> > > > > mtd3: 001a38de 00010000 "kernel"
+> > > > > mtd4: 00d1c722 00010000 "rootfs"
+> > > > > This triggers the following code on drivers/mtd/mtdpart.c that
+> > > > > removes the write flag from the rootfs partition:
+> > > > >         tmp =3D part_absolute_offset(parent) + slave->offset;
+> > > > >         remainder =3D do_div(tmp, wr_alignment);
+> > > > >         if ((slave->mtd.flags & MTD_WRITEABLE) && remainder) {
+> > > > >                 /* Doesn't start on a boundary of major erase
+> > > > size */
+> > > > >                 slave->mtd.flags |=3D MTD_ERASE_PARTIAL;
+> > > > >                 if (((u32)slave->mtd.size) > parent->erasesize)
+> > > > >                         slave->mtd.flags &=3D ~MTD_WRITEABLE;
+> > > > >                 else
+> > > > >                         slave->mtd.erasesize =3D slave->mtd.size;
+> > > > >         }
+> > > > >
+> > > > >         tmp =3D part_absolute_offset(parent) + slave->offset +
+> > > > slave-
+> > > > > >mtd.size;
+> > > > >         remainder =3D do_div(tmp, wr_alignment);
+> > > > >         if ((slave->mtd.flags & MTD_WRITEABLE) && remainder) {
+> > > > >                 slave->mtd.flags |=3D MTD_ERASE_PARTIAL;
+> > > > >
+> > > > >                 if ((u32)slave->mtd.size > parent->erasesize)
+> > > > >                         slave->mtd.flags &=3D ~MTD_WRITEABLE;
+> > > > >                 else
+> > > > >                         slave->mtd.erasesize =3D slave->mtd.size;
+> > > > >         }
+> > > > > Now we have a rootfs partition that is set to read-only, and
+> > > > with the
+> > > > > kernel patch that forces sub-partitions to match the access
+> > > > mode of
+> > > > > the parent, when the split runs it will force the rootfs_data
+> > > > > partition to match the parent access mode (read-only).
+> > > > >
+> > > > > My suggestion is to change the target/linux/ath79/image/common-
+> > > > tp-
+> > > > > link.mk so it pads the kernel partition to the blocksize
+> > > > (untested
+> > > > > suggestion below):
+> > > > > define Device/tplink-safeloader
+> > > > >   $(Device/tplink)
+> > > > >   KERNEL :=3D kernel-bin | append-dtb | lzma | pad-to
+> > > > $$$$(BLOCKSIZE) |
+> > > > > tplink-v1-header -O
+> > > > > [...]
+> > > > > Would any of you be willing to spend some time testing this
+> > > > change on
+> > > > > your TP-Link?
+> > > > >
+> > > > > Thank you and best regards,
+> > > > > Bruno Pena
+> > > > >
+> > > > > On Tue, Jan 21, 2020 at 8:15 PM Bruno Pena <
+> > > > brunompena@gmail.com>
+> > > > > wrote:
+> > > > > > Hi Petr,
+> > > > > >
+> > > > > > Thank you for reverting the patches.
+> > > > > >
+> > > > > > I'm trying to replicate the issue but so far I haven't had
+> > > > any
+> > > > > > luck, and just by looking at the code I'm not seeing
+> > > > where/what is
+> > > > > > could be breaking.
+> > > > > >
+> > > > > > Regarding the upstream patch, that one is just an enabler
+> > > > (read: it
+> > > > > > only extends the "mtd_add_partition" function but it does not
+> > > > add
+> > > > > > any code to force the access mode on sub-partitions).
+> > > > > > The reason for this is because this enforcement is done on
+> > > > the mtd
+> > > > > > parser code that is OpenWrt specific and implemented via
+> > > > kernel
+> > > > > > patches (not present on upstream).
+> > > > > >
+> > > > > > Best regards,
+> > > > > > Bruno Pena
+> > > > > >
+> > > > > > On Tue, Jan 21, 2020 at 7:57 PM Petr =C5=A0tetiar <ynezz@true.c=
+z>
+> > > > wrote:
+> > > > > > > Bruno Pena <brunompena@gmail.com> [2020-01-21 14:53:54]:
+> > > > > > >
+> > > > > > > Hi,
+> > > > > > >
+> > > > > > > > Based on the last comment from Steve (fstools patch was
+> > > > not
+> > > > > > > reverted), I'm
+> > > > > > > > not sure if that's the root cause.
+> > > > > > >
+> > > > > > > you need to find out, but that Daniel's remark seems legit
+> > > > to me,
+> > > > > > > your patch
+> > > > > > > likely changed the mtd device open order/flags.
+> > > > > > >
+> > > > > > > > The kernel patch (which when reverted makes rootfs_data
+> > > > > > > writable again)
+> > > > > > > > only enforces the parent mtd access mode on the sub-
+> > > > partitions.
+> > > > > > >
+> > > > > > > FYI I currently dont have time to fix that regression
+> > > > myself and
+> > > > > > > since its
+> > > > > > > likely affecting a lot of users, so I've reverted those
+> > > > changes.
+> > > > > > > I think, that
+> > > > > > > this change is useful, so I'm still willing to merge it
+> > > > once
+> > > > > > > fixed, no
+> > > > > > > worries. Having some upstream feedback beforehand would be
+> > > > a
+> > > > > > > plus.
+> > > > > > >
+> > > > > > > BTW it would be fair to inform upstream about this possible
+> > > > issue
+> > > > > > > as well, so
+> > > > > > > the patch wont get merged in its current state, unless its
+> > > > double
+> > > > > > > checked (or
+> > > > > > > just write them, that you're planning v2, so the patch is
+> > > > removed
+> > > > > > > from their
+> > > > > > > Patchwork).
+> > > > > > >
+> > > > > > > -- ynezz
+> > > >
+>
+>
+
+--00000000000048b215059cb914c6
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div dir=3D"auto">Hi Steve,</div><div dir=3D"auto"><br></=
+div>Glad=C2=A0to hear that and thank you for testing it!<div dir=3D"auto"><=
+div dir=3D"auto"><br><div dir=3D"auto">I will probably ask you to do one ad=
+ditional test to see if we&#39;re able to remove the padding requirement (a=
+s mentioned on the previous emails).</div><div dir=3D"auto">But let me test=
+ it first so I can confirm that it actually works.</div><div dir=3D"auto"><=
+br></div><div dir=3D"auto">Best regards,</div><div dir=3D"auto">Bruno Pena<=
+/div></div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" clas=
+s=3D"gmail_attr">On Wed, Jan 22, 2020, 12:21 Steve Brown &lt;<a href=3D"mai=
+lto:sbrown@ewol.com">sbrown@ewol.com</a>&gt; wrote:<br></div><blockquote cl=
+ass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;p=
+adding-left:1ex">Hi Bruno,<br>
+<br>
+That fixed it.<br>
+<br>
+[=C2=A0 =C2=A0 0.403826] m25p80 spi0.0: w25q128 (16384 Kbytes)<br>
+[=C2=A0 =C2=A0 0.408770] 7 fixed-partitions partitions found on MTD device =
+spi0.0<br>
+[=C2=A0 =C2=A0 0.415333] Creating 7 MTD partitions on &quot;spi0.0&quot;:<b=
+r>
+[=C2=A0 =C2=A0 0.420310] 0x000000000000-0x000000020000 : &quot;factory-uboo=
+t&quot;<br>
+[=C2=A0 =C2=A0 0.426739] 0x000000020000-0x000000040000 : &quot;u-boot&quot;=
+<br>
+[=C2=A0 =C2=A0 0.432566] 0x000000040000-0x000000f00000 : &quot;firmware&quo=
+t;<br>
+[=C2=A0 =C2=A0 0.440477] 2 uimage-fw partitions found on MTD device firmwar=
+e<br>
+[=C2=A0 =C2=A0 0.446595] Creating 2 MTD partitions on &quot;firmware&quot;:=
+<br>
+[=C2=A0 =C2=A0 0.451771] 0x000000000000-0x0000001b0000 : &quot;kernel&quot;=
+<br>
+[=C2=A0 =C2=A0 0.457554] 0x0000001b0000-0x000000ec0000 : &quot;rootfs&quot;=
+<br>
+[=C2=A0 =C2=A0 0.463355] mtd: device 4 (rootfs) set to be root filesystem<b=
+r>
+[=C2=A0 =C2=A0 0.470477] 1 squashfs-split partitions found on MTD device ro=
+otfs<br>
+[=C2=A0 =C2=A0 0.476875] 0x0000004e0000-0x000000ec0000 : &quot;rootfs_data&=
+quot;<br>
+[=C2=A0 =C2=A0 0.483182] 0x000000f40000-0x000000f60000 : &quot;info&quot;<b=
+r>
+[=C2=A0 =C2=A0 0.488853] 0x000000f60000-0x000000fb0000 : &quot;config&quot;=
+<br>
+[=C2=A0 =C2=A0 0.494619] 0x000000fc0000-0x000000fd0000 : &quot;partition-ta=
+ble&quot;<br>
+[=C2=A0 =C2=A0 0.501256] 0x000000ff0000-0x000001000000 : &quot;art&quot;<br=
+>
+<br>
+dev:=C2=A0 =C2=A0 size=C2=A0 =C2=A0erasesize=C2=A0 name<br>
+mtd0: 00020000 00010000 &quot;factory-uboot&quot;<br>
+mtd1: 00020000 00010000 &quot;u-boot&quot;<br>
+mtd2: 00ec0000 00010000 &quot;firmware&quot;<br>
+mtd3: 001b0000 00010000 &quot;kernel&quot;<br>
+mtd4: 00d10000 00010000 &quot;rootfs&quot;<br>
+mtd5: 009e0000 00010000 &quot;rootfs_data&quot;<br>
+mtd6: 00020000 00010000 &quot;info&quot;<br>
+mtd7: 00050000 00010000 &quot;config&quot;<br>
+mtd8: 00010000 00010000 &quot;partition-table&quot;<br>
+mtd9: 00010000 00010000 &quot;art&quot;<br>
+<br>
+index 8aa6a5a2be..9048e8340c 100644<br>
+--- a/target/linux/ath79/image/<a href=3D"http://common-tp-link.mk" rel=3D"=
+noreferrer noreferrer" target=3D"_blank">common-tp-link.mk</a><br>
++++ b/target/linux/ath79/image/<a href=3D"http://common-tp-link.mk" rel=3D"=
+noreferrer noreferrer" target=3D"_blank">common-tp-link.mk</a><br>
+@@ -71,7 +71,7 @@ endef<br>
+<br>
+=C2=A0define Device/tplink-safeloader-uimage<br>
+=C2=A0 =C2=A0$(Device/tplink-safeloader)<br>
+-=C2=A0 KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma<br>
++=C2=A0 KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma | pa=
+d-to 64k<br>
+=C2=A0endef<br>
+<br>
+Steve<br>
+<br>
+On Wed, 2020-01-22 at 10:22 +0100, Bruno Pena wrote:<br>
+&gt; Hi Steve,<br>
+&gt; <br>
+&gt; I just noticed that I have just suggested you to change the wrong<br>
+&gt; section... sorry!<br>
+&gt; It&#39;s clearly stated on target/linux/ath79/image/<a href=3D"http://=
+generic-tp-link.mk" rel=3D"noreferrer noreferrer" target=3D"_blank">generic=
+-tp-link.mk</a><br>
+&gt; that the A7-v5 uses the tplink-safeloader-uimage section but I<br>
+&gt; somehow managed to copy the wrong one (doh!).<br>
+&gt;=C2=A0 =C2=A0 =C2=A0define Device/tplink_archer-a7-v5<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0$(Device/tplink-safeloader-uimage)<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0SOC :=3D qca9563<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0[...]<br>
+&gt; <br>
+&gt; On the bright side, today I actually got some free minutes to spare<br=
+>
+&gt; and I used them to test some changes to the makefiles.<br>
+&gt; I have added the following entries to get an overview of final<br>
+&gt; partition size:<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGES +=3D kernel_1.bin kernel_2.bin kernel_3.bin =
+kernel_4.bin<br>
+&gt; kernel_5.bin kernel_6.bin<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGE/kernel_1.bin :=3D kernel-bin<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGE/kernel_2.bin :=3D kernel-bin | append-dtb<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGE/kernel_3.bin :=3D kernel-bin | append-dtb | l=
+zma<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGE/kernel_4.bin :=3D kernel-bin | append-dtb | l=
+zma |<br>
+&gt; uImageArcher lzma<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGE/kernel_5.bin :=3D kernel-bin | append-dtb | l=
+zma | pad-to 64k<br>
+&gt; | uImageArcher lzma<br>
+&gt;=C2=A0 =C2=A0 =C2=A0IMAGE/kernel_6.bin :=3D kernel-bin | append-dtb | l=
+zma |<br>
+&gt; uImageArcher lzma | pad-to 64k<br>
+&gt; <br>
+&gt; And these were the results:<br>
+&gt;=C2=A0 =C2=A0 =C2=A0kernel_1.bin : 1804719 bytes [0x1b89af]<br>
+&gt;=C2=A0 =C2=A0 =C2=A0kernel_2.bin : 1813487 bytes [0x1babef]<br>
+&gt;=C2=A0 =C2=A0 =C2=A0kernel_3.bin : 1831548 bytes [0x1bf27c]<br>
+&gt;=C2=A0 =C2=A0 =C2=A0kernel_4.bin : 1831612 bytes [0x1bf2bc]<br>
+&gt;=C2=A0 =C2=A0 =C2=A0kernel_5.bin : 1835072 bytes [0x1c0040]<br>
+&gt;=C2=A0 =C2=A0 =C2=A0kernel_6.bin : 1835008 bytes [0x1c0000]<br>
+&gt; <br>
+&gt; I have then proceeded to generate the corresponding sysupgrade.bin<br>
+&gt; image with the settings of kernel_5 and kernel_6 so I could manually<b=
+r>
+&gt; inspect the resulting files.<br>
+&gt; <br>
+&gt; Original sysupgrade.bin (rootfs starts at 0x001b89af):<br>
+&gt;=C2=A0 =C2=A0 =C2=A0001b89a0=C2=A0 68 81 9d 3b bd c9 86 98=C2=A0 76 c4 =
+f0 1e 0e 94 e0 68 <br>
+&gt; |h..;....v......h|<br>
+&gt;=C2=A0 =C2=A0 =C2=A0001b89b0=C2=A0 73 71 73 57 03 00 00 00=C2=A0 6e 27 =
+5e 00 00 04 00 0f <br>
+&gt; |sqsW....n&#39;^.....|<br>
+&gt;=C2=A0 =C2=A0 =C2=A0001b89c0=C2=A0 00 00 00 04 00 12 00 c0=C2=A0 06 01 =
+00 04 00 00 00 ff <br>
+&gt; |................|<br>
+&gt; <br>
+&gt; Settings from kernel_5 sysupgrade.bin (rootfs starts at 0x001c0040):<b=
+r>
+&gt;=C2=A0 =C2=A0 =C2=A0001b89b0=C2=A0 00 00 00 00 00 00 00 00=C2=A0 00 00 =
+00 00 00 00 00 00 <br>
+&gt; |................|<br>
+&gt;=C2=A0 =C2=A0 =C2=A0*<br>
+&gt;=C2=A0 =C2=A0 =C2=A0001c0040=C2=A0 68 73 71 73 57 03 00 00=C2=A0 00 6e =
+27 5e 00 00 04 00 <br>
+&gt; |hsqsW....n&#39;^....|<br>
+&gt; <br>
+&gt; Settings from kernel_6 sysupgrade.bin (rootfs starts at 0x001c0000):<b=
+r>
+&gt;=C2=A0 =C2=A0 =C2=A0001b89b0=C2=A0 00 00 00 00 00 00 00 00=C2=A0 00 00 =
+00 00 00 00 00 00 <br>
+&gt; |................|<br>
+&gt;=C2=A0 =C2=A0 =C2=A0*<br>
+&gt;=C2=A0 =C2=A0 =C2=A0001c0000=C2=A0 68 73 71 73 57 03 00 00=C2=A0 00 6e =
+27 5e 00 00 04 00 <br>
+&gt; |hsqsW....n&#39;^....|<br>
+&gt; <br>
+&gt; Based on these I would ask if you could test again with the following<=
+br>
+&gt; change to target/linux/ath79/image/<a href=3D"http://common-tp-link.mk=
+" rel=3D"noreferrer noreferrer" target=3D"_blank">common-tp-link.mk</a> (ap=
+pend &quot;| pad-<br>
+&gt; to 64k&quot; to the KERNEL line):<br>
+&gt;=C2=A0 =C2=A0 =C2=A0define Device/tplink-safeloader-uimage<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0$(Device/tplink-safeloader)<br>
+&gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0KERNEL :=3D kernel-bin | append-dtb | lzma |=
+ uImageArcher lzma |<br>
+&gt; pad-to 64k<br>
+&gt;=C2=A0 =C2=A0 =C2=A0endef<br>
+&gt; <br>
+&gt; I would also like to take the opportunity to ask if it&#39;s worth<br>
+&gt; pursuing this patch if it means that all devices (using mtd) will<br>
+&gt; require their partitions to be padded to the blocksize?<br>
+&gt; <br>
+&gt; Thank you and best regards,<br>
+&gt; Bruno Pena<br>
+&gt; <br>
+&gt; On Wed, Jan 22, 2020, 07:13 Bruno Pena &lt;<a href=3D"mailto:brunompen=
+a@gmail.com" target=3D"_blank" rel=3D"noreferrer">brunompena@gmail.com</a>&=
+gt; wrote:<br>
+&gt; &gt; Hi Steve,<br>
+&gt; &gt; <br>
+&gt; &gt; Thank you for testing.<br>
+&gt; &gt; You implemented my suggestion correctly but it seems that it didn=
+&#39;t<br>
+&gt; &gt; actually pad anything (the sizes of the partitions should be<br>
+&gt; &gt; rounded to the next 0x10000 block).<br>
+&gt; &gt; Please allow me a few days (real-life constraints) to test some<b=
+r>
+&gt; &gt; changes to the <a href=3D"http://common-tp-link.mk" rel=3D"norefe=
+rrer noreferrer" target=3D"_blank">common-tp-link.mk</a> before I waste mor=
+e of your time<br>
+&gt; &gt; with these tests.<br>
+&gt; &gt; <br>
+&gt; &gt; Best regards,<br>
+&gt; &gt; Bruno Pena<br>
+&gt; &gt; <br>
+&gt; &gt; On Wed, Jan 22, 2020 at 12:16 AM Steve Brown &lt;<a href=3D"mailt=
+o:sbrown@ewol.com" target=3D"_blank" rel=3D"noreferrer">sbrown@ewol.com</a>=
+&gt;<br>
+&gt; &gt; wrote:<br>
+&gt; &gt; &gt; Hi Bruno,<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; That didn&#39;t seem to solve the problem. The padding didn&=
+#39;t seem to<br>
+&gt; &gt; &gt; take<br>
+&gt; &gt; &gt; effect.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; I reverted 0f81a0979 and 0c707d37b.<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; dev:=C2=A0 =C2=A0 size=C2=A0 =C2=A0erasesize=C2=A0 name<br>
+&gt; &gt; &gt; mtd0: 00020000 00010000 &quot;factory-uboot&quot;<br>
+&gt; &gt; &gt; mtd1: 00020000 00010000 &quot;u-boot&quot;<br>
+&gt; &gt; &gt; mtd2: 00ec0000 00010000 &quot;firmware&quot;<br>
+&gt; &gt; &gt; mtd3: 001a3a07 00010000 &quot;kernel&quot;<br>
+&gt; &gt; &gt; mtd4: 00d1c5f9 00010000 &quot;rootfs&quot;<br>
+&gt; &gt; &gt; mtd5: 009f0000 00010000 &quot;rootfs_data&quot;<br>
+&gt; &gt; &gt; mtd6: 00020000 00010000 &quot;info&quot;<br>
+&gt; &gt; &gt; mtd7: 00050000 00010000 &quot;config&quot;<br>
+&gt; &gt; &gt; mtd8: 00010000 00010000 &quot;partition-table&quot;<br>
+&gt; &gt; &gt; mtd9: 00010000 00010000 &quot;art&quot;<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.414677] Creating 7 MTD partitions on &quot;=
+spi0.0&quot;:<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.419655] 0x000000000000-0x000000020000 : &qu=
+ot;factory-uboot&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.426092] 0x000000020000-0x000000040000 : &qu=
+ot;u-boot&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.431906] 0x000000040000-0x000000f00000 : &qu=
+ot;firmware&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.439772] 2 uimage-fw partitions found on MTD=
+ device<br>
+&gt; &gt; &gt; firmware<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.445891] Creating 2 MTD partitions on &quot;=
+firmware&quot;:<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.451065] 0x000000000000-0x0000001a3a07 : &qu=
+ot;kernel&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.456840] 0x0000001a3a07-0x000000ec0000 : &qu=
+ot;rootfs&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.462643] mtd: device 4 (rootfs) set to be ro=
+ot filesystem<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.469746] 1 squashfs-split partitions found o=
+n MTD device<br>
+&gt; &gt; &gt; rootfs<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.476142] 0x0000004d0000-0x000000ec0000 : &qu=
+ot;rootfs_data&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.482441] 0x000000f40000-0x000000f60000 : &qu=
+ot;info&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.488033] 0x000000f60000-0x000000fb0000 : &qu=
+ot;config&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.493856] 0x000000fc0000-0x000000fd0000 : &qu=
+ot;partition-table&quot;<br>
+&gt; &gt; &gt; [=C2=A0 =C2=A0 0.500494] 0x000000ff0000-0x000001000000 : &qu=
+ot;art&quot;<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; diff --git a/target/linux/ath79/image/<a href=3D"http://comm=
+on-tp-link.mk" rel=3D"noreferrer noreferrer" target=3D"_blank">common-tp-li=
+nk.mk</a><br>
+&gt; &gt; &gt; b/target/linux/ath79/image/<a href=3D"http://common-tp-link.=
+mk" rel=3D"noreferrer noreferrer" target=3D"_blank">common-tp-link.mk</a><b=
+r>
+&gt; &gt; &gt; index 8aa6a5a2be..89e73a85f3 100644<br>
+&gt; &gt; &gt; --- a/target/linux/ath79/image/<a href=3D"http://common-tp-l=
+ink.mk" rel=3D"noreferrer noreferrer" target=3D"_blank">common-tp-link.mk</=
+a><br>
+&gt; &gt; &gt; +++ b/target/linux/ath79/image/<a href=3D"http://common-tp-l=
+ink.mk" rel=3D"noreferrer noreferrer" target=3D"_blank">common-tp-link.mk</=
+a><br>
+&gt; &gt; &gt; @@ -63,7 +63,7 @@ endef<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt;=C2=A0 define Device/tplink-safeloader<br>
+&gt; &gt; &gt;=C2=A0 =C2=A0 $(Device/tplink)<br>
+&gt; &gt; &gt; -=C2=A0 KERNEL :=3D kernel-bin | append-dtb | lzma | tplink-=
+v1-header -O<br>
+&gt; &gt; &gt; +=C2=A0 KERNEL :=3D kernel-bin | append-dtb | lzma | pad-to<=
+br>
+&gt; &gt; &gt; $$$$(BLOCKSIZE) | tplink-v1-header -O<br>
+&gt; &gt; &gt;=C2=A0 =C2=A0 IMAGE/sysupgrade.bin :=3D append-rootfs | tplin=
+k-safeloader<br>
+&gt; &gt; &gt; sysupgrade | \<br>
+&gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 append-metadata | check-size $$$$(IMAGE_=
+SIZE)<br>
+&gt; &gt; &gt;=C2=A0 =C2=A0 IMAGE/factory.bin :=3D append-rootfs | tplink-s=
+afeloader factory<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Can you verify that I did this right?<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; Steve<br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; <br>
+&gt; &gt; &gt; On Tue, 2020-01-21 at 22:10 +0100, Bruno Pena wrote:<br>
+&gt; &gt; &gt; &gt; Hi everyone,<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; I was finally able to replicate the issue you are obser=
+ving.<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; The problem comes from the fact that the kernel partiti=
+on on<br>
+&gt; &gt; &gt; the TP-<br>
+&gt; &gt; &gt; &gt; Link images is not padded to the write blocksize - whic=
+h can be<br>
+&gt; &gt; &gt; &gt; observed on the dmesg from Steve:<br>
+&gt; &gt; &gt; &gt; [=C2=A0 =C2=A0 0.450987] 0x000000000000-0x0000001a39ea =
+: &quot;kernel&quot;<br>
+&gt; &gt; &gt; &gt; [=C2=A0 =C2=A0 0.456772] 0x0000001a39ea-0x000000ec0000 =
+: &quot;rootfs&quot;<br>
+&gt; &gt; &gt; &gt; The blocksize can be seen observed on the /proc/mtd and=
+ for<br>
+&gt; &gt; &gt; that<br>
+&gt; &gt; &gt; &gt; device is 0x10000:<br>
+&gt; &gt; &gt; &gt; mtd3: 001a38de 00010000 &quot;kernel&quot;<br>
+&gt; &gt; &gt; &gt; mtd4: 00d1c722 00010000 &quot;rootfs&quot;<br>
+&gt; &gt; &gt; &gt; This triggers the following code on drivers/mtd/mtdpart=
+.c that<br>
+&gt; &gt; &gt; &gt; removes the write flag from the rootfs partition:<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0tmp =3D part_absolute_=
+offset(parent) + slave-&gt;offset;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0remainder =3D do_div(t=
+mp, wr_alignment);<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0if ((slave-&gt;mtd.fla=
+gs &amp; MTD_WRITEABLE) &amp;&amp; remainder) {<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0/* Doesn&#39;t start on a boundary of major erase<br>
+&gt; &gt; &gt; size */<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0slave-&gt;mtd.flags |=3D MTD_ERASE_PARTIAL;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0if (((u32)slave-&gt;mtd.size) &gt; parent-&gt;erasesize)<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0slave-&gt;mtd.flags &amp;=3D ~MTD_WRITEAB=
+LE;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0else<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0slave-&gt;mtd.erasesize =3D slave-&gt;mtd=
+.size;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0tmp =3D part_absolute_=
+offset(parent) + slave-&gt;offset +<br>
+&gt; &gt; &gt; slave-<br>
+&gt; &gt; &gt; &gt; &gt;mtd.size;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0remainder =3D do_div(t=
+mp, wr_alignment);<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0if ((slave-&gt;mtd.fla=
+gs &amp; MTD_WRITEABLE) &amp;&amp; remainder) {<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0slave-&gt;mtd.flags |=3D MTD_ERASE_PARTIAL;<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0if ((u32)slave-&gt;mtd.size &gt; parent-&gt;erasesize)<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0slave-&gt;mtd.flags &amp;=3D ~MTD_WRITEAB=
+LE;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0else<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0slave-&gt;mtd.erasesize =3D slave-&gt;mtd=
+.size;<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
+&gt; &gt; &gt; &gt; Now we have a rootfs partition that is set to read-only=
+, and<br>
+&gt; &gt; &gt; with the<br>
+&gt; &gt; &gt; &gt; kernel patch that forces sub-partitions to match the ac=
+cess<br>
+&gt; &gt; &gt; mode of<br>
+&gt; &gt; &gt; &gt; the parent, when the split runs it will force the rootf=
+s_data<br>
+&gt; &gt; &gt; &gt; partition to match the parent access mode (read-only).<=
+br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; My suggestion is to change the target/linux/ath79/image=
+/common-<br>
+&gt; &gt; &gt; tp-<br>
+&gt; &gt; &gt; &gt; <a href=3D"http://link.mk" rel=3D"noreferrer noreferrer=
+" target=3D"_blank">link.mk</a> so it pads the kernel partition to the bloc=
+ksize<br>
+&gt; &gt; &gt; (untested<br>
+&gt; &gt; &gt; &gt; suggestion below):<br>
+&gt; &gt; &gt; &gt; define Device/tplink-safeloader<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0$(Device/tplink)<br>
+&gt; &gt; &gt; &gt;=C2=A0 =C2=A0KERNEL :=3D kernel-bin | append-dtb | lzma =
+| pad-to<br>
+&gt; &gt; &gt; $$$$(BLOCKSIZE) |<br>
+&gt; &gt; &gt; &gt; tplink-v1-header -O<br>
+&gt; &gt; &gt; &gt; [...]<br>
+&gt; &gt; &gt; &gt; Would any of you be willing to spend some time testing =
+this<br>
+&gt; &gt; &gt; change on<br>
+&gt; &gt; &gt; &gt; your TP-Link?<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; Thank you and best regards,<br>
+&gt; &gt; &gt; &gt; Bruno Pena<br>
+&gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; On Tue, Jan 21, 2020 at 8:15 PM Bruno Pena &lt;<br>
+&gt; &gt; &gt; <a href=3D"mailto:brunompena@gmail.com" target=3D"_blank" re=
+l=3D"noreferrer">brunompena@gmail.com</a>&gt;<br>
+&gt; &gt; &gt; &gt; wrote:<br>
+&gt; &gt; &gt; &gt; &gt; Hi Petr,<br>
+&gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; Thank you for reverting the patches.<br>
+&gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; I&#39;m trying to replicate the issue but so far I=
+ haven&#39;t had<br>
+&gt; &gt; &gt; any<br>
+&gt; &gt; &gt; &gt; &gt; luck, and just by looking at the code I&#39;m not =
+seeing<br>
+&gt; &gt; &gt; where/what is<br>
+&gt; &gt; &gt; &gt; &gt; could be breaking.<br>
+&gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; Regarding the upstream patch, that one is just an =
+enabler<br>
+&gt; &gt; &gt; (read: it<br>
+&gt; &gt; &gt; &gt; &gt; only extends the &quot;mtd_add_partition&quot; fun=
+ction but it does not<br>
+&gt; &gt; &gt; add<br>
+&gt; &gt; &gt; &gt; &gt; any code to force the access mode on sub-partition=
+s).<br>
+&gt; &gt; &gt; &gt; &gt; The reason for this is because this enforcement is=
+ done on<br>
+&gt; &gt; &gt; the mtd<br>
+&gt; &gt; &gt; &gt; &gt; parser code that is OpenWrt specific and implement=
+ed via<br>
+&gt; &gt; &gt; kernel<br>
+&gt; &gt; &gt; &gt; &gt; patches (not present on upstream).<br>
+&gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; Best regards,<br>
+&gt; &gt; &gt; &gt; &gt; Bruno Pena<br>
+&gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; On Tue, Jan 21, 2020 at 7:57 PM Petr =C5=A0tetiar =
+&lt;<a href=3D"mailto:ynezz@true.cz" target=3D"_blank" rel=3D"noreferrer">y=
+nezz@true.cz</a>&gt;<br>
+&gt; &gt; &gt; wrote:<br>
+&gt; &gt; &gt; &gt; &gt; &gt; Bruno Pena &lt;<a href=3D"mailto:brunompena@g=
+mail.com" target=3D"_blank" rel=3D"noreferrer">brunompena@gmail.com</a>&gt;=
+ [2020-01-21 14:53:54]:<br>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; Hi,<br>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; &gt; Based on the last comment from Steve (fs=
+tools patch was<br>
+&gt; &gt; &gt; not<br>
+&gt; &gt; &gt; &gt; &gt; &gt; reverted), I&#39;m<br>
+&gt; &gt; &gt; &gt; &gt; &gt; &gt; not sure if that&#39;s the root cause.<b=
+r>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; you need to find out, but that Daniel&#39;s r=
+emark seems legit<br>
+&gt; &gt; &gt; to me,<br>
+&gt; &gt; &gt; &gt; &gt; &gt; your patch<br>
+&gt; &gt; &gt; &gt; &gt; &gt; likely changed the mtd device open order/flag=
+s.<br>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; &gt; The kernel patch (which when reverted ma=
+kes rootfs_data<br>
+&gt; &gt; &gt; &gt; &gt; &gt; writable again)<br>
+&gt; &gt; &gt; &gt; &gt; &gt; &gt; only enforces the parent mtd access mode=
+ on the sub-<br>
+&gt; &gt; &gt; partitions.<br>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; FYI I currently dont have time to fix that re=
+gression<br>
+&gt; &gt; &gt; myself and<br>
+&gt; &gt; &gt; &gt; &gt; &gt; since its<br>
+&gt; &gt; &gt; &gt; &gt; &gt; likely affecting a lot of users, so I&#39;ve =
+reverted those<br>
+&gt; &gt; &gt; changes.<br>
+&gt; &gt; &gt; &gt; &gt; &gt; I think, that<br>
+&gt; &gt; &gt; &gt; &gt; &gt; this change is useful, so I&#39;m still willi=
+ng to merge it<br>
+&gt; &gt; &gt; once<br>
+&gt; &gt; &gt; &gt; &gt; &gt; fixed, no<br>
+&gt; &gt; &gt; &gt; &gt; &gt; worries. Having some upstream feedback before=
+hand would be<br>
+&gt; &gt; &gt; a<br>
+&gt; &gt; &gt; &gt; &gt; &gt; plus.<br>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; BTW it would be fair to inform upstream about=
+ this possible<br>
+&gt; &gt; &gt; issue<br>
+&gt; &gt; &gt; &gt; &gt; &gt; as well, so<br>
+&gt; &gt; &gt; &gt; &gt; &gt; the patch wont get merged in its current stat=
+e, unless its<br>
+&gt; &gt; &gt; double<br>
+&gt; &gt; &gt; &gt; &gt; &gt; checked (or<br>
+&gt; &gt; &gt; &gt; &gt; &gt; just write them, that you&#39;re planning v2,=
+ so the patch is<br>
+&gt; &gt; &gt; removed<br>
+&gt; &gt; &gt; &gt; &gt; &gt; from their<br>
+&gt; &gt; &gt; &gt; &gt; &gt; Patchwork).<br>
+&gt; &gt; &gt; &gt; &gt; &gt; <br>
+&gt; &gt; &gt; &gt; &gt; &gt; -- ynezz<br>
+&gt; &gt; &gt; <br>
+<br>
+</blockquote></div>
+
+--00000000000048b215059cb914c6--
+
+
+--===============1554565198556205998==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============1554565198556205998==--
+

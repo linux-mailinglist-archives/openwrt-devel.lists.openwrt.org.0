@@ -2,56 +2,61 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF1D31453A1
-	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Jan 2020 12:19:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 871E11453A8
+	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Jan 2020 12:21:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=n4JcJNEzUPWr5jF31U/+eLtFCxZHLcywQyENAph0Peg=; b=q+QtZ+RPWbnAuHE3JRWjzqSbz
-	UERoJ3pv0r75y+9xr00S/drXjqDZn/dbY131djBLN8b1SXAUTCtwzcpvYA6TAa+z9nxJmph6qB5rS
-	6Cl8/IiRQK0Dvwzk1VRQJOd/QkBWJ8Po0lBsqnZPXqXfiNLMEwCA24qE4ida7B2eZpv4cG+E1xdDD
-	wFFOkF+Etiy/hahjUEKvFSO4i4QwPmW1U2DYlEgvaKcj+pFYnKHQCCMbW4R/sa773CZm8aCnM/Sse
-	dxqO08B0ShqxGaYe+n8AWdktAs9AILpU6v7fC/1LCunl+jPo5w2TbjEXObqwRs1TRC//73gjTKK8p
-	LLzKGP/3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+	In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ph7k4H+M/JbehQRmvrHps2jDrDl32FbTrSDsOpB/hDw=; b=n7K8uiYDEgRvVy
+	doyj+XOUBwVzLqKp7HLLUJImMVK14VxvDFPlhEgA8zMA9fwa7yx0f2AoTHhFAfSiRKlzKHTQnkZSM
+	M64Qr+XeF2ETec7yvpo58/uir6u7USRgxq0Dn0QeJCCP04kA14R6B8DA1B71+0s2V/vUjRGm3/I/V
+	ixTb97ieqoJnmxtu3Hr8mqoX3vtpA/JYVT/6/sLWwpkxHfY9+nWX4su7EjfPH3Sa02iSThCOQtcl3
+	tqeHDiVXSCZ0iATx5WNv2HZ1Nd4KHGrfTIIOqkG87mKbHmaDKldEnz+ddDA8t/T8VQDSBE8jzrIiA
+	GsFjvFjRAnk4zZIKUXMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuE2S-0001TS-0r; Wed, 22 Jan 2020 11:19:12 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1iuE4j-0003hj-4t; Wed, 22 Jan 2020 11:21:33 +0000
+Received: from jax4mhob11.myregisteredsite.com ([64.69.218.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuE2H-0001Sx-6j
- for openwrt-devel@lists.openwrt.org; Wed, 22 Jan 2020 11:19:02 +0000
-Received: by mail-ua1-x944.google.com with SMTP id l6so2234616uap.13
- for <openwrt-devel@lists.openwrt.org>; Wed, 22 Jan 2020 03:19:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Q3m/fWX0i8iw4Rn7fEd/VXGBaizgVMJ9p/5sJml7Q+o=;
- b=Oh31x591KYgRPG00lPWgSMJ8u7TLOwO8y1SIYfBpGhuBMMUe57VX+PiGOLY2xkNahw
- WcK+SVwyN3yY7mWdzoSeX9QD5hGB9JdiU5N4QLoZ9NMjrZQLsIg2S6dC52/PvbABorZK
- /MClJP4d6uX4D2b+QtlAAzA2KdCJ4A2Z2Q9uf8Z5RfBlovxkM3nVOLGmfcb5pDfnNqNY
- KKIklzVzu2RTuZhDcC6b9QNgQEf8ekK97j+BOsilax8w9vK69uKuwDOiKhZK9LfFDzRL
- gUxxRqDQsdvPf4QzPYK+6huoRji+9nr+n7IlIkGSnYyvhGSY3klj1MkMnp1zkos4837l
- JJ0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Q3m/fWX0i8iw4Rn7fEd/VXGBaizgVMJ9p/5sJml7Q+o=;
- b=uIkvDv8Zr2XJ8aPlAgRNPNPUhDeClPuWQ7GBetP2h7pNGOiymvwJB7s0Z7sJCvgXEF
- +cCjwyMQTSvSqRHSqZ61F7CERtvHLLsTmxr8YREdnRYq3SIQpcH7e4HRyVDlhhlpQhau
- K36uMuhry9ZTFlahEB+0pGvjx9pBxh7HehkGDTLfPqdJV+bdFI18LGdJLHtizbTjOdEZ
- /Exe1R9vDLdDTI/F/o0B+HFu8Yi/SmZgra987uI06zIsrBQqTu5kNTbkI+7TXSLJ8Sv8
- WtXjYzcd7VCDKP6pR/J6li5UEzXrHmTC0eSD1TjcqICZGciu2ZFWBWG+1++E4zHPmULW
- JZdA==
-X-Gm-Message-State: APjAAAUKxFrEZD3XUJmCepvglqV8N2aDTyGop1JA4t2Uwg1Fd+H5xIZZ
- FnZz7usbVABE2Bhu4lf9rCMY5puMVkv+wsUeYAQ=
-X-Google-Smtp-Source: APXvYqyB8gI6862feaXR5HOQdgfTd9t1om0dbuSCuhopCiAf7tF9iJENe48yX2t1xIt0Eea1Zgmq90BoLAx8sAuJiCw=
-X-Received: by 2002:ab0:1051:: with SMTP id g17mr6296180uab.52.1579691939622; 
- Wed, 22 Jan 2020 03:18:59 -0800 (PST)
-MIME-Version: 1.0
-References: <CADwgkMUhZ4TrqhiJJPHLL0aVyxxvKfABwDz-4wv_QZ_cyZvj9A@mail.gmail.com>
+ id 1iuE4Y-0003Vi-Ga
+ for openwrt-devel@lists.openwrt.org; Wed, 22 Jan 2020 11:21:25 +0000
+Received: from mailpod.hostingplatform.com ([10.30.71.85])
+ by jax4mhob11.myregisteredsite.com (8.14.4/8.14.4) with ESMTP id
+ 00MBLGmd003739
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
+ for <openwrt-devel@lists.openwrt.org>; Wed, 22 Jan 2020 06:21:18 -0500
+Received: (qmail 123935 invoked by uid 0); 22 Jan 2020 11:21:15 -0000
+X-TCPREMOTEIP: 208.85.15.155
+X-Authenticated-UID: sbrown@opensat.com
+Received: from unknown (HELO 155-15-85-208.altiusbb.net)
+ (sbrown@opensat.com@208.85.15.155)
+ by 0 with ESMTPA; 22 Jan 2020 11:21:15 -0000
+Received: from localhost (localhost [127.0.0.1])
+ by 155-15-85-208.altiusbb.net (Postfix) with ESMTP id CF95215404DA;
+ Wed, 22 Jan 2020 06:21:14 -0500 (EST)
+X-Virus-Scanned: Debian amavisd-new at ewol.com
+X-Spam-Flag: NO
+X-Spam-Score: -2.9
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.9 tagged_above=-999 required=6.31
+ tests=[ALL_TRUSTED=-1, BAYES_00=-1.9] autolearn=ham autolearn_force=no
+Received: from 155-15-85-208.altiusbb.net ([127.0.0.1])
+ by localhost (fl-server.ewol.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 9Q7aIwjWh_IT; Wed, 22 Jan 2020 06:21:12 -0500 (EST)
+Received: from w7.lan (w7.lan [192.168.1.9])
+ by 155-15-85-208.altiusbb.net (Postfix) with ESMTP id 2EB3D15402E6;
+ Wed, 22 Jan 2020 06:21:12 -0500 (EST)
+Message-ID: <b9f82911320645af42a7806237025e2f49967566.camel@ewol.com>
+From: Steve Brown <sbrown@ewol.com>
+To: Bruno Pena <brunompena@gmail.com>
+Date: Wed, 22 Jan 2020 06:21:12 -0500
+In-Reply-To: <CADwgkMXf2q3uuyTFrce2NL_Z3EGVW8OC9tVeh6MRxdiAMu7CvQ@mail.gmail.com>
+References: <1578138728-1256-1-git-send-email-brunompena@gmail.com>
+ <0cf18b56d78d859f8d7bf30bccc6ce0762d35302.camel@ewol.com>
+ <CADwgkMUhZ4TrqhiJJPHLL0aVyxxvKfABwDz-4wv_QZ_cyZvj9A@mail.gmail.com>
  <CADwgkMWzviYbcOcbY1R5C9gyY_WAwQpyyYW0eWptm369k-d7-Q@mail.gmail.com>
  <20200121104934.GA2465@makrotopia.org>
  <CADwgkMWQxN5WLeG9oyR0RdeahC+ZHeykLNGj0PfKtCvG81Qxxw@mail.gmail.com>
@@ -61,37 +66,22 @@ References: <CADwgkMUhZ4TrqhiJJPHLL0aVyxxvKfABwDz-4wv_QZ_cyZvj9A@mail.gmail.com>
  <989a2a224ceac0368c713ecc537af005eb45f035.camel@ewol.com>
  <CADwgkMXLgcnJ0_KBCto+oS3o4PpQeQThH7qp=DwE0JWYAoz7eQ@mail.gmail.com>
  <CADwgkMXf2q3uuyTFrce2NL_Z3EGVW8OC9tVeh6MRxdiAMu7CvQ@mail.gmail.com>
- <20200122094051.GC1406@makrotopia.org>
- <CADwgkMWVL6g_=xkGyMbK4Xj-EEfx10tQYwtF1ZgFq6x-QnhhfA@mail.gmail.com>
- <CADwgkMXayQZ5f7sLiz0dEBv4CigJS=Gchsa2xw3OTSuUf7B7dQ@mail.gmail.com>
-In-Reply-To: <CADwgkMXayQZ5f7sLiz0dEBv4CigJS=Gchsa2xw3OTSuUf7B7dQ@mail.gmail.com>
-From: Bruno Pena <brunompena@gmail.com>
-Date: Wed, 22 Jan 2020 12:18:47 +0100
-Message-ID: <CADwgkMVz=EkUrD+55u4QqGw2b3tLH8ePh5nQPrrbnngnGwE3RQ@mail.gmail.com>
-To: Steve Brown <sbrown@ewol.com>
+User-Agent: Evolution 3.34.1-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_031901_252074_751264BB 
-X-CRM114-Status: GOOD (  16.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200122_032122_710497_EF37626D 
+X-CRM114-Status: GOOD (  49.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [brunompena[at]gmail.com]
+ no trust [64.69.218.91 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [64.69.218.91 listed in wl.mailspike.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 Subject: Re: [OpenWrt-Devel] [PATCH v2] fstools: Add support to read-only
  MTD partitions (eg. recovery images)
 X-BeenThere: openwrt-devel@lists.openwrt.org
@@ -105,207 +95,246 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+Cc: Petr =?UTF-8?Q?=C5=A0tetiar?= <ynezz@true.cz>,
  openwrt-devel@lists.openwrt.org, Daniel Golle <daniel@makrotopia.org>
-Content-Type: multipart/mixed; boundary="===============5463566400133905870=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
---===============5463566400133905870==
-Content-Type: multipart/alternative; boundary="000000000000ea72ad059cb8b0d0"
-
---000000000000ea72ad059cb8b0d0
-Content-Type: text/plain; charset="UTF-8"
-
-Hi Steve,
-
-Don't waste your time with the previous test request.
-I'll try to test either today/tomorrow the "mtd.orig_flags" approach on my
-device and - if successful - I'll then ask if you can try it on your
-TP-Link.
-
-Thank you and best regards,
-Bruno Pena
-
-On Wed, Jan 22, 2020, 11:34 Bruno Pena <brunompena@gmail.com> wrote:
-
-> Just a small correction on the previous email, there's actually no padding
-> requirement since everything will be read-only!
->
-> On Wed, Jan 22, 2020, 11:25 Bruno Pena <brunompena@gmail.com> wrote:
->
->> Hi Daniel,
->>
->> I was looking at the code and I think it's possible to relax the
->> enforcement of the parent access mode.
->> We can switch from a strict enforcement of the resulting mtd access mode,
->> to only enforcing the configured access mode (from the DTS file).
->>
->> This can be achieved by changing from using mtd.flags to mtd.orig_flags:
->>     parts[i].mask_flags = !(slave->mtd.orig_flags & MTD_WRITEABLE) ?
->> MTD_WRITEABLE : 0;
->>
->> With this change we no longer impact builds that do not have a read-only
->> firmware partition, but we can still enforce it for those that need it.
->> One thing to keep in mind is that the padding is still a requirement for
->> those devices which are building a read-only firmware partition!
->>
->> Also please note this is not tested, these conclusions are only based on
->> the analysis of the kernel source code.
->>
->> Best regards,
->> Bruno Pena
->>
->>
->> On Wed, Jan 22, 2020, 10:40 Daniel Golle <daniel@makrotopia.org> wrote:
->>
->>> Hi Bruno,
->>>
->>> On Wed, Jan 22, 2020 at 10:22:01AM +0100, Bruno Pena wrote:
->>> > I would also like to take the opportunity to ask if it's worth pursuing
->>> > this patch if it means that all devices (using mtd) will require their
->>> > partitions to be padded to the blocksize?
->>>
->>> Please try not to introduce that padding, it's quite a big impact on
->>> all devices while only very few (wifi-only device) really need that
->>> change. Instead of wasting flash space by additional padding I'd rather
->>> want to see an OpenWrt-specific kernel-patch to allow a rw subpartition
->>> sitting inside an ro partition or just flatten the mtd partitioning.
->>> What I mean by flatteing is this:
->>>
->>> yout current approach:
->>> +-----------------------------+
->>> |          firmware           |
->>> +--------+--------------------+
->>> |        $       rootfs       |
->>> | kernel +------+-------------+
->>> |        $ rom  | rootfs_data |
->>> +--------+------+-------------+
->>>
->>> here rootfs_data inherigs the read-only from rootfs not being block-
->>> aligned. a better/flat approach would be:
->>> +-----------------------------+
->>> |          firmware           |
->>> +--------+------+-------------+
->>> | kernel $ rom  | rootfs_data |
->>> +--------+------+-------------+
->>>
->>> Now this would require major changes to our mtd-splitting subsystem
->>> which is quite a big amount of work...
->>>
->>>
->>> Cheers
->>>
->>>
->>> Daniel
->>>
->>
-
---000000000000ea72ad059cb8b0d0
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"auto">Hi Steve,<div dir=3D"auto"><br></div><div dir=3D"auto">Do=
-n&#39;t waste=C2=A0your time with the previous test request.</div><div dir=
-=3D"auto">I&#39;ll try to test either today/tomorrow the &quot;mtd.orig_fla=
-gs&quot; approach on my device and - if successful - I&#39;ll then ask if y=
-ou can try it on your TP-Link.</div><div dir=3D"auto"><br></div><div dir=3D=
-"auto">Thank you and best regards,</div><div dir=3D"auto">Bruno Pena</div><=
-/div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">O=
-n Wed, Jan 22, 2020, 11:34 Bruno Pena &lt;<a href=3D"mailto:brunompena@gmai=
-l.com">brunompena@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gm=
-ail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-le=
-ft:1ex"><div dir=3D"auto">Just a small correction on the previous email, th=
-ere&#39;s actually no padding requirement since everything will be read-onl=
-y!</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr=
-">On Wed, Jan 22, 2020, 11:25 Bruno Pena &lt;<a href=3D"mailto:brunompena@g=
-mail.com" target=3D"_blank" rel=3D"noreferrer">brunompena@gmail.com</a>&gt;=
- wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8=
-ex;border-left:1px #ccc solid;padding-left:1ex"><div dir=3D"auto"><div dir=
-=3D"auto">Hi Daniel,</div><div dir=3D"auto"><br></div><div dir=3D"auto">I w=
-as looking at the code and I think it&#39;s possible to relax the enforceme=
-nt of the parent access mode.</div><div dir=3D"auto">We can switch from a s=
-trict enforcement of the resulting mtd access mode, to only enforcing the c=
-onfigured access mode (from the DTS file).</div><div dir=3D"auto"><br></div=
-><div dir=3D"auto">This can be achieved by changing from using mtd.flags to=
- mtd.orig_flags:</div><div dir=3D"auto">=C2=A0 =C2=A0 parts[i].mask_flags =
-=3D !(slave-&gt;mtd.orig_flags &amp; MTD_WRITEABLE) ? MTD_WRITEABLE : 0;</d=
-iv><div dir=3D"auto"><br></div><div dir=3D"auto">With this change we no lon=
-ger impact builds that do not have a read-only firmware partition, but we c=
-an still enforce it for those that need it.</div><div dir=3D"auto">One thin=
-g to keep in mind is that the padding is still a requirement for those devi=
-ces which are building a read-only firmware partition!</div><div dir=3D"aut=
-o"><br></div><div dir=3D"auto">Also please note this is not tested, these c=
-onclusions are only based on the analysis of the kernel source code.</div><=
-div dir=3D"auto"><br></div><div dir=3D"auto">Best regards,</div><div dir=3D=
-"auto">Bruno Pena</div><div dir=3D"auto"><br></div></div><br><div class=3D"=
-gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Jan 22, 2020, 10=
-:40 Daniel Golle &lt;<a href=3D"mailto:daniel@makrotopia.org" rel=3D"norefe=
-rrer noreferrer" target=3D"_blank">daniel@makrotopia.org</a>&gt; wrote:<br>=
-</div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-l=
-eft:1px #ccc solid;padding-left:1ex">Hi Bruno,<br>
-<br>
-On Wed, Jan 22, 2020 at 10:22:01AM +0100, Bruno Pena wrote:<br>
-&gt; I would also like to take the opportunity to ask if it&#39;s worth pur=
-suing<br>
-&gt; this patch if it means that all devices (using mtd) will require their=
-<br>
-&gt; partitions to be padded to the blocksize?<br>
-<br>
-Please try not to introduce that padding, it&#39;s quite a big impact on<br=
->
-all devices while only very few (wifi-only device) really need that<br>
-change. Instead of wasting flash space by additional padding I&#39;d rather=
-<br>
-want to see an OpenWrt-specific kernel-patch to allow a rw subpartition<br>
-sitting inside an ro partition or just flatten the mtd partitioning.<br>
-What I mean by flatteing is this:<br>
-<br>
-yout current approach:<br>
-+-----------------------------+<br>
-|=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 firmware=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0|<br>
-+--------+--------------------+ <br>
-|=C2=A0 =C2=A0 =C2=A0 =C2=A0 $=C2=A0 =C2=A0 =C2=A0 =C2=A0rootfs=C2=A0 =C2=
-=A0 =C2=A0 =C2=A0|<br>
-| kernel +------+-------------+<br>
-|=C2=A0 =C2=A0 =C2=A0 =C2=A0 $ rom=C2=A0 | rootfs_data |<br>
-+--------+------+-------------+<br>
-<br>
-here rootfs_data inherigs the read-only from rootfs not being block-<br>
-aligned. a better/flat approach would be:<br>
-+-----------------------------+<br>
-|=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 firmware=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0|<br>
-+--------+------+-------------+ <br>
-| kernel $ rom=C2=A0 | rootfs_data |<br>
-+--------+------+-------------+<br>
-<br>
-Now this would require major changes to our mtd-splitting subsystem<br>
-which is quite a big amount of work...<br>
-<br>
-<br>
-Cheers<br>
-<br>
-<br>
-Daniel<br>
-</blockquote></div>
-</blockquote></div>
-</blockquote></div>
-
---000000000000ea72ad059cb8b0d0--
-
-
---===============5463566400133905870==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============5463566400133905870==--
-
+SGkgQnJ1bm8sCgpUaGF0IGZpeGVkIGl0LgoKWyAgICAwLjQwMzgyNl0gbTI1cDgwIHNwaTAuMDog
+dzI1cTEyOCAoMTYzODQgS2J5dGVzKQpbICAgIDAuNDA4NzcwXSA3IGZpeGVkLXBhcnRpdGlvbnMg
+cGFydGl0aW9ucyBmb3VuZCBvbiBNVEQgZGV2aWNlIHNwaTAuMApbICAgIDAuNDE1MzMzXSBDcmVh
+dGluZyA3IE1URCBwYXJ0aXRpb25zIG9uICJzcGkwLjAiOgpbICAgIDAuNDIwMzEwXSAweDAwMDAw
+MDAwMDAwMC0weDAwMDAwMDAyMDAwMCA6ICJmYWN0b3J5LXVib290IgpbICAgIDAuNDI2NzM5XSAw
+eDAwMDAwMDAyMDAwMC0weDAwMDAwMDA0MDAwMCA6ICJ1LWJvb3QiClsgICAgMC40MzI1NjZdIDB4
+MDAwMDAwMDQwMDAwLTB4MDAwMDAwZjAwMDAwIDogImZpcm13YXJlIgpbICAgIDAuNDQwNDc3XSAy
+IHVpbWFnZS1mdyBwYXJ0aXRpb25zIGZvdW5kIG9uIE1URCBkZXZpY2UgZmlybXdhcmUKWyAgICAw
+LjQ0NjU5NV0gQ3JlYXRpbmcgMiBNVEQgcGFydGl0aW9ucyBvbiAiZmlybXdhcmUiOgpbICAgIDAu
+NDUxNzcxXSAweDAwMDAwMDAwMDAwMC0weDAwMDAwMDFiMDAwMCA6ICJrZXJuZWwiClsgICAgMC40
+NTc1NTRdIDB4MDAwMDAwMWIwMDAwLTB4MDAwMDAwZWMwMDAwIDogInJvb3RmcyIKWyAgICAwLjQ2
+MzM1NV0gbXRkOiBkZXZpY2UgNCAocm9vdGZzKSBzZXQgdG8gYmUgcm9vdCBmaWxlc3lzdGVtClsg
+ICAgMC40NzA0NzddIDEgc3F1YXNoZnMtc3BsaXQgcGFydGl0aW9ucyBmb3VuZCBvbiBNVEQgZGV2
+aWNlIHJvb3RmcwpbICAgIDAuNDc2ODc1XSAweDAwMDAwMDRlMDAwMC0weDAwMDAwMGVjMDAwMCA6
+ICJyb290ZnNfZGF0YSIKWyAgICAwLjQ4MzE4Ml0gMHgwMDAwMDBmNDAwMDAtMHgwMDAwMDBmNjAw
+MDAgOiAiaW5mbyIKWyAgICAwLjQ4ODg1M10gMHgwMDAwMDBmNjAwMDAtMHgwMDAwMDBmYjAwMDAg
+OiAiY29uZmlnIgpbICAgIDAuNDk0NjE5XSAweDAwMDAwMGZjMDAwMC0weDAwMDAwMGZkMDAwMCA6
+ICJwYXJ0aXRpb24tdGFibGUiClsgICAgMC41MDEyNTZdIDB4MDAwMDAwZmYwMDAwLTB4MDAwMDAx
+MDAwMDAwIDogImFydCIKCmRldjogICAgc2l6ZSAgIGVyYXNlc2l6ZSAgbmFtZQptdGQwOiAwMDAy
+MDAwMCAwMDAxMDAwMCAiZmFjdG9yeS11Ym9vdCIKbXRkMTogMDAwMjAwMDAgMDAwMTAwMDAgInUt
+Ym9vdCIKbXRkMjogMDBlYzAwMDAgMDAwMTAwMDAgImZpcm13YXJlIgptdGQzOiAwMDFiMDAwMCAw
+MDAxMDAwMCAia2VybmVsIgptdGQ0OiAwMGQxMDAwMCAwMDAxMDAwMCAicm9vdGZzIgptdGQ1OiAw
+MDllMDAwMCAwMDAxMDAwMCAicm9vdGZzX2RhdGEiCm10ZDY6IDAwMDIwMDAwIDAwMDEwMDAwICJp
+bmZvIgptdGQ3OiAwMDA1MDAwMCAwMDAxMDAwMCAiY29uZmlnIgptdGQ4OiAwMDAxMDAwMCAwMDAx
+MDAwMCAicGFydGl0aW9uLXRhYmxlIgptdGQ5OiAwMDAxMDAwMCAwMDAxMDAwMCAiYXJ0IgoKaW5k
+ZXggOGFhNmE1YTJiZS4uOTA0OGU4MzQwYyAxMDA2NDQKLS0tIGEvdGFyZ2V0L2xpbnV4L2F0aDc5
+L2ltYWdlL2NvbW1vbi10cC1saW5rLm1rCisrKyBiL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9j
+b21tb24tdHAtbGluay5tawpAQCAtNzEsNyArNzEsNyBAQCBlbmRlZgogCiBkZWZpbmUgRGV2aWNl
+L3RwbGluay1zYWZlbG9hZGVyLXVpbWFnZQogICAkKERldmljZS90cGxpbmstc2FmZWxvYWRlcikK
+LSAgS0VSTkVMIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgbHptYSB8IHVJbWFnZUFyY2hl
+ciBsem1hCisgIEtFUk5FTCA6PSBrZXJuZWwtYmluIHwgYXBwZW5kLWR0YiB8IGx6bWEgfCB1SW1h
+Z2VBcmNoZXIgbHptYSB8IHBhZC10byA2NGsKIGVuZGVmCgpTdGV2ZQoKT24gV2VkLCAyMDIwLTAx
+LTIyIGF0IDEwOjIyICswMTAwLCBCcnVubyBQZW5hIHdyb3RlOgo+IEhpIFN0ZXZlLAo+IAo+IEkg
+anVzdCBub3RpY2VkIHRoYXQgSSBoYXZlIGp1c3Qgc3VnZ2VzdGVkIHlvdSB0byBjaGFuZ2UgdGhl
+IHdyb25nCj4gc2VjdGlvbi4uLiBzb3JyeSEKPiBJdCdzIGNsZWFybHkgc3RhdGVkIG9uIHRhcmdl
+dC9saW51eC9hdGg3OS9pbWFnZS9nZW5lcmljLXRwLWxpbmsubWsKPiB0aGF0IHRoZSBBNy12NSB1
+c2VzIHRoZSB0cGxpbmstc2FmZWxvYWRlci11aW1hZ2Ugc2VjdGlvbiBidXQgSQo+IHNvbWVob3cg
+bWFuYWdlZCB0byBjb3B5IHRoZSB3cm9uZyBvbmUgKGRvaCEpLgo+ICAgICBkZWZpbmUgRGV2aWNl
+L3RwbGlua19hcmNoZXItYTctdjUKPiAgICAgICAkKERldmljZS90cGxpbmstc2FmZWxvYWRlci11
+aW1hZ2UpCj4gICAgICAgU09DIDo9IHFjYTk1NjMKPiAgICAgICBbLi4uXQo+IAo+IE9uIHRoZSBi
+cmlnaHQgc2lkZSwgdG9kYXkgSSBhY3R1YWxseSBnb3Qgc29tZSBmcmVlIG1pbnV0ZXMgdG8gc3Bh
+cmUKPiBhbmQgSSB1c2VkIHRoZW0gdG8gdGVzdCBzb21lIGNoYW5nZXMgdG8gdGhlIG1ha2VmaWxl
+cy4KPiBJIGhhdmUgYWRkZWQgdGhlIGZvbGxvd2luZyBlbnRyaWVzIHRvIGdldCBhbiBvdmVydmll
+dyBvZiBmaW5hbAo+IHBhcnRpdGlvbiBzaXplOgo+ICAgICBJTUFHRVMgKz0ga2VybmVsXzEuYmlu
+IGtlcm5lbF8yLmJpbiBrZXJuZWxfMy5iaW4ga2VybmVsXzQuYmluCj4ga2VybmVsXzUuYmluIGtl
+cm5lbF82LmJpbgo+ICAgICBJTUFHRS9rZXJuZWxfMS5iaW4gOj0ga2VybmVsLWJpbgo+ICAgICBJ
+TUFHRS9rZXJuZWxfMi5iaW4gOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIKPiAgICAgSU1BR0Uv
+a2VybmVsXzMuYmluIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgbHptYQo+ICAgICBJTUFH
+RS9rZXJuZWxfNC5iaW4gOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCBsem1hIHwKPiB1SW1h
+Z2VBcmNoZXIgbHptYQo+ICAgICBJTUFHRS9rZXJuZWxfNS5iaW4gOj0ga2VybmVsLWJpbiB8IGFw
+cGVuZC1kdGIgfCBsem1hIHwgcGFkLXRvIDY0awo+IHwgdUltYWdlQXJjaGVyIGx6bWEKPiAgICAg
+SU1BR0Uva2VybmVsXzYuYmluIDo9IGtlcm5lbC1iaW4gfCBhcHBlbmQtZHRiIHwgbHptYSB8Cj4g
+dUltYWdlQXJjaGVyIGx6bWEgfCBwYWQtdG8gNjRrCj4gCj4gQW5kIHRoZXNlIHdlcmUgdGhlIHJl
+c3VsdHM6Cj4gICAgIGtlcm5lbF8xLmJpbiA6IDE4MDQ3MTkgYnl0ZXMgWzB4MWI4OWFmXQo+ICAg
+ICBrZXJuZWxfMi5iaW4gOiAxODEzNDg3IGJ5dGVzIFsweDFiYWJlZl0KPiAgICAga2VybmVsXzMu
+YmluIDogMTgzMTU0OCBieXRlcyBbMHgxYmYyN2NdCj4gICAgIGtlcm5lbF80LmJpbiA6IDE4MzE2
+MTIgYnl0ZXMgWzB4MWJmMmJjXQo+ICAgICBrZXJuZWxfNS5iaW4gOiAxODM1MDcyIGJ5dGVzIFsw
+eDFjMDA0MF0KPiAgICAga2VybmVsXzYuYmluIDogMTgzNTAwOCBieXRlcyBbMHgxYzAwMDBdCj4g
+Cj4gSSBoYXZlIHRoZW4gcHJvY2VlZGVkIHRvIGdlbmVyYXRlIHRoZSBjb3JyZXNwb25kaW5nIHN5
+c3VwZ3JhZGUuYmluCj4gaW1hZ2Ugd2l0aCB0aGUgc2V0dGluZ3Mgb2Yga2VybmVsXzUgYW5kIGtl
+cm5lbF82IHNvIEkgY291bGQgbWFudWFsbHkKPiBpbnNwZWN0IHRoZSByZXN1bHRpbmcgZmlsZXMu
+Cj4gCj4gT3JpZ2luYWwgc3lzdXBncmFkZS5iaW4gKHJvb3RmcyBzdGFydHMgYXQgMHgwMDFiODlh
+Zik6Cj4gICAgIDAwMWI4OWEwICA2OCA4MSA5ZCAzYiBiZCBjOSA4NiA5OCAgNzYgYzQgZjAgMWUg
+MGUgOTQgZTAgNjggCj4gfGguLjsuLi4udi4uLi4uLmh8Cj4gICAgIDAwMWI4OWIwICA3MyA3MSA3
+MyA1NyAwMyAwMCAwMCAwMCAgNmUgMjcgNWUgMDAgMDAgMDQgMDAgMGYgCj4gfHNxc1cuLi4ubide
+Li4uLi58Cj4gICAgIDAwMWI4OWMwICAwMCAwMCAwMCAwNCAwMCAxMiAwMCBjMCAgMDYgMDEgMDAg
+MDQgMDAgMDAgMDAgZmYgCj4gfC4uLi4uLi4uLi4uLi4uLi58Cj4gCj4gU2V0dGluZ3MgZnJvbSBr
+ZXJuZWxfNSBzeXN1cGdyYWRlLmJpbiAocm9vdGZzIHN0YXJ0cyBhdCAweDAwMWMwMDQwKToKPiAg
+ICAgMDAxYjg5YjAgIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwICAwMCAwMCAwMCAwMCAwMCAwMCAw
+MCAwMCAKPiB8Li4uLi4uLi4uLi4uLi4uLnwKPiAgICAgKgo+ICAgICAwMDFjMDA0MCAgNjggNzMg
+NzEgNzMgNTcgMDMgMDAgMDAgIDAwIDZlIDI3IDVlIDAwIDAwIDA0IDAwIAo+IHxoc3FzVy4uLi5u
+J14uLi4ufAo+IAo+IFNldHRpbmdzIGZyb20ga2VybmVsXzYgc3lzdXBncmFkZS5iaW4gKHJvb3Rm
+cyBzdGFydHMgYXQgMHgwMDFjMDAwMCk6Cj4gICAgIDAwMWI4OWIwICAwMCAwMCAwMCAwMCAwMCAw
+MCAwMCAwMCAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgCj4gfC4uLi4uLi4uLi4uLi4uLi58Cj4g
+ICAgICoKPiAgICAgMDAxYzAwMDAgIDY4IDczIDcxIDczIDU3IDAzIDAwIDAwICAwMCA2ZSAyNyA1
+ZSAwMCAwMCAwNCAwMCAKPiB8aHNxc1cuLi4ubideLi4uLnwKPiAKPiBCYXNlZCBvbiB0aGVzZSBJ
+IHdvdWxkIGFzayBpZiB5b3UgY291bGQgdGVzdCBhZ2FpbiB3aXRoIHRoZSBmb2xsb3dpbmcKPiBj
+aGFuZ2UgdG8gdGFyZ2V0L2xpbnV4L2F0aDc5L2ltYWdlL2NvbW1vbi10cC1saW5rLm1rIChhcHBl
+bmQgInwgcGFkLQo+IHRvIDY0ayIgdG8gdGhlIEtFUk5FTCBsaW5lKToKPiAgICAgZGVmaW5lIERl
+dmljZS90cGxpbmstc2FmZWxvYWRlci11aW1hZ2UKPiAgICAgICAkKERldmljZS90cGxpbmstc2Fm
+ZWxvYWRlcikKPiAgICAgICBLRVJORUwgOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCBsem1h
+IHwgdUltYWdlQXJjaGVyIGx6bWEgfAo+IHBhZC10byA2NGsKPiAgICAgZW5kZWYKPiAKPiBJIHdv
+dWxkIGFsc28gbGlrZSB0byB0YWtlIHRoZSBvcHBvcnR1bml0eSB0byBhc2sgaWYgaXQncyB3b3J0
+aAo+IHB1cnN1aW5nIHRoaXMgcGF0Y2ggaWYgaXQgbWVhbnMgdGhhdCBhbGwgZGV2aWNlcyAodXNp
+bmcgbXRkKSB3aWxsCj4gcmVxdWlyZSB0aGVpciBwYXJ0aXRpb25zIHRvIGJlIHBhZGRlZCB0byB0
+aGUgYmxvY2tzaXplPwo+IAo+IFRoYW5rIHlvdSBhbmQgYmVzdCByZWdhcmRzLAo+IEJydW5vIFBl
+bmEKPiAKPiBPbiBXZWQsIEphbiAyMiwgMjAyMCwgMDc6MTMgQnJ1bm8gUGVuYSA8YnJ1bm9tcGVu
+YUBnbWFpbC5jb20+IHdyb3RlOgo+ID4gSGkgU3RldmUsCj4gPiAKPiA+IFRoYW5rIHlvdSBmb3Ig
+dGVzdGluZy4KPiA+IFlvdSBpbXBsZW1lbnRlZCBteSBzdWdnZXN0aW9uIGNvcnJlY3RseSBidXQg
+aXQgc2VlbXMgdGhhdCBpdCBkaWRuJ3QKPiA+IGFjdHVhbGx5IHBhZCBhbnl0aGluZyAodGhlIHNp
+emVzIG9mIHRoZSBwYXJ0aXRpb25zIHNob3VsZCBiZQo+ID4gcm91bmRlZCB0byB0aGUgbmV4dCAw
+eDEwMDAwIGJsb2NrKS4KPiA+IFBsZWFzZSBhbGxvdyBtZSBhIGZldyBkYXlzIChyZWFsLWxpZmUg
+Y29uc3RyYWludHMpIHRvIHRlc3Qgc29tZQo+ID4gY2hhbmdlcyB0byB0aGUgY29tbW9uLXRwLWxp
+bmsubWsgYmVmb3JlIEkgd2FzdGUgbW9yZSBvZiB5b3VyIHRpbWUKPiA+IHdpdGggdGhlc2UgdGVz
+dHMuCj4gPiAKPiA+IEJlc3QgcmVnYXJkcywKPiA+IEJydW5vIFBlbmEKPiA+IAo+ID4gT24gV2Vk
+LCBKYW4gMjIsIDIwMjAgYXQgMTI6MTYgQU0gU3RldmUgQnJvd24gPHNicm93bkBld29sLmNvbT4K
+PiA+IHdyb3RlOgo+ID4gPiBIaSBCcnVubywKPiA+ID4gCj4gPiA+IFRoYXQgZGlkbid0IHNlZW0g
+dG8gc29sdmUgdGhlIHByb2JsZW0uIFRoZSBwYWRkaW5nIGRpZG4ndCBzZWVtIHRvCj4gPiA+IHRh
+a2UKPiA+ID4gZWZmZWN0Lgo+ID4gPiAKPiA+ID4gSSByZXZlcnRlZCAwZjgxYTA5NzkgYW5kIDBj
+NzA3ZDM3Yi4KPiA+ID4gCj4gPiA+IGRldjogICAgc2l6ZSAgIGVyYXNlc2l6ZSAgbmFtZQo+ID4g
+PiBtdGQwOiAwMDAyMDAwMCAwMDAxMDAwMCAiZmFjdG9yeS11Ym9vdCIKPiA+ID4gbXRkMTogMDAw
+MjAwMDAgMDAwMTAwMDAgInUtYm9vdCIKPiA+ID4gbXRkMjogMDBlYzAwMDAgMDAwMTAwMDAgImZp
+cm13YXJlIgo+ID4gPiBtdGQzOiAwMDFhM2EwNyAwMDAxMDAwMCAia2VybmVsIgo+ID4gPiBtdGQ0
+OiAwMGQxYzVmOSAwMDAxMDAwMCAicm9vdGZzIgo+ID4gPiBtdGQ1OiAwMDlmMDAwMCAwMDAxMDAw
+MCAicm9vdGZzX2RhdGEiCj4gPiA+IG10ZDY6IDAwMDIwMDAwIDAwMDEwMDAwICJpbmZvIgo+ID4g
+PiBtdGQ3OiAwMDA1MDAwMCAwMDAxMDAwMCAiY29uZmlnIgo+ID4gPiBtdGQ4OiAwMDAxMDAwMCAw
+MDAxMDAwMCAicGFydGl0aW9uLXRhYmxlIgo+ID4gPiBtdGQ5OiAwMDAxMDAwMCAwMDAxMDAwMCAi
+YXJ0Igo+ID4gPiAKPiA+ID4gWyAgICAwLjQxNDY3N10gQ3JlYXRpbmcgNyBNVEQgcGFydGl0aW9u
+cyBvbiAic3BpMC4wIjoKPiA+ID4gWyAgICAwLjQxOTY1NV0gMHgwMDAwMDAwMDAwMDAtMHgwMDAw
+MDAwMjAwMDAgOiAiZmFjdG9yeS11Ym9vdCIKPiA+ID4gWyAgICAwLjQyNjA5Ml0gMHgwMDAwMDAw
+MjAwMDAtMHgwMDAwMDAwNDAwMDAgOiAidS1ib290Igo+ID4gPiBbICAgIDAuNDMxOTA2XSAweDAw
+MDAwMDA0MDAwMC0weDAwMDAwMGYwMDAwMCA6ICJmaXJtd2FyZSIKPiA+ID4gWyAgICAwLjQzOTc3
+Ml0gMiB1aW1hZ2UtZncgcGFydGl0aW9ucyBmb3VuZCBvbiBNVEQgZGV2aWNlCj4gPiA+IGZpcm13
+YXJlCj4gPiA+IFsgICAgMC40NDU4OTFdIENyZWF0aW5nIDIgTVREIHBhcnRpdGlvbnMgb24gImZp
+cm13YXJlIjoKPiA+ID4gWyAgICAwLjQ1MTA2NV0gMHgwMDAwMDAwMDAwMDAtMHgwMDAwMDAxYTNh
+MDcgOiAia2VybmVsIgo+ID4gPiBbICAgIDAuNDU2ODQwXSAweDAwMDAwMDFhM2EwNy0weDAwMDAw
+MGVjMDAwMCA6ICJyb290ZnMiCj4gPiA+IFsgICAgMC40NjI2NDNdIG10ZDogZGV2aWNlIDQgKHJv
+b3Rmcykgc2V0IHRvIGJlIHJvb3QgZmlsZXN5c3RlbQo+ID4gPiBbICAgIDAuNDY5NzQ2XSAxIHNx
+dWFzaGZzLXNwbGl0IHBhcnRpdGlvbnMgZm91bmQgb24gTVREIGRldmljZQo+ID4gPiByb290ZnMK
+PiA+ID4gWyAgICAwLjQ3NjE0Ml0gMHgwMDAwMDA0ZDAwMDAtMHgwMDAwMDBlYzAwMDAgOiAicm9v
+dGZzX2RhdGEiCj4gPiA+IFsgICAgMC40ODI0NDFdIDB4MDAwMDAwZjQwMDAwLTB4MDAwMDAwZjYw
+MDAwIDogImluZm8iCj4gPiA+IFsgICAgMC40ODgwMzNdIDB4MDAwMDAwZjYwMDAwLTB4MDAwMDAw
+ZmIwMDAwIDogImNvbmZpZyIKPiA+ID4gWyAgICAwLjQ5Mzg1Nl0gMHgwMDAwMDBmYzAwMDAtMHgw
+MDAwMDBmZDAwMDAgOiAicGFydGl0aW9uLXRhYmxlIgo+ID4gPiBbICAgIDAuNTAwNDk0XSAweDAw
+MDAwMGZmMDAwMC0weDAwMDAwMTAwMDAwMCA6ICJhcnQiCj4gPiA+IAo+ID4gPiAKPiA+ID4gZGlm
+ZiAtLWdpdCBhL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9jb21tb24tdHAtbGluay5tawo+ID4g
+PiBiL3RhcmdldC9saW51eC9hdGg3OS9pbWFnZS9jb21tb24tdHAtbGluay5tawo+ID4gPiBpbmRl
+eCA4YWE2YTVhMmJlLi44OWU3M2E4NWYzIDEwMDY0NAo+ID4gPiAtLS0gYS90YXJnZXQvbGludXgv
+YXRoNzkvaW1hZ2UvY29tbW9uLXRwLWxpbmsubWsKPiA+ID4gKysrIGIvdGFyZ2V0L2xpbnV4L2F0
+aDc5L2ltYWdlL2NvbW1vbi10cC1saW5rLm1rCj4gPiA+IEBAIC02Myw3ICs2Myw3IEBAIGVuZGVm
+Cj4gPiA+IAo+ID4gPiAgZGVmaW5lIERldmljZS90cGxpbmstc2FmZWxvYWRlcgo+ID4gPiAgICAk
+KERldmljZS90cGxpbmspCj4gPiA+IC0gIEtFUk5FTCA6PSBrZXJuZWwtYmluIHwgYXBwZW5kLWR0
+YiB8IGx6bWEgfCB0cGxpbmstdjEtaGVhZGVyIC1PCj4gPiA+ICsgIEtFUk5FTCA6PSBrZXJuZWwt
+YmluIHwgYXBwZW5kLWR0YiB8IGx6bWEgfCBwYWQtdG8KPiA+ID4gJCQkJChCTE9DS1NJWkUpIHwg
+dHBsaW5rLXYxLWhlYWRlciAtTwo+ID4gPiAgICBJTUFHRS9zeXN1cGdyYWRlLmJpbiA6PSBhcHBl
+bmQtcm9vdGZzIHwgdHBsaW5rLXNhZmVsb2FkZXIKPiA+ID4gc3lzdXBncmFkZSB8IFwKPiA+ID4g
+ICAgICBhcHBlbmQtbWV0YWRhdGEgfCBjaGVjay1zaXplICQkJCQoSU1BR0VfU0laRSkKPiA+ID4g
+ICAgSU1BR0UvZmFjdG9yeS5iaW4gOj0gYXBwZW5kLXJvb3RmcyB8IHRwbGluay1zYWZlbG9hZGVy
+IGZhY3RvcnkKPiA+ID4gCj4gPiA+IENhbiB5b3UgdmVyaWZ5IHRoYXQgSSBkaWQgdGhpcyByaWdo
+dD8KPiA+ID4gCj4gPiA+IFN0ZXZlCj4gPiA+IAo+ID4gPiAKPiA+ID4gT24gVHVlLCAyMDIwLTAx
+LTIxIGF0IDIyOjEwICswMTAwLCBCcnVubyBQZW5hIHdyb3RlOgo+ID4gPiA+IEhpIGV2ZXJ5b25l
+LAo+ID4gPiA+IAo+ID4gPiA+IEkgd2FzIGZpbmFsbHkgYWJsZSB0byByZXBsaWNhdGUgdGhlIGlz
+c3VlIHlvdSBhcmUgb2JzZXJ2aW5nLgo+ID4gPiA+IAo+ID4gPiA+IFRoZSBwcm9ibGVtIGNvbWVz
+IGZyb20gdGhlIGZhY3QgdGhhdCB0aGUga2VybmVsIHBhcnRpdGlvbiBvbgo+ID4gPiB0aGUgVFAt
+Cj4gPiA+ID4gTGluayBpbWFnZXMgaXMgbm90IHBhZGRlZCB0byB0aGUgd3JpdGUgYmxvY2tzaXpl
+IC0gd2hpY2ggY2FuIGJlCj4gPiA+ID4gb2JzZXJ2ZWQgb24gdGhlIGRtZXNnIGZyb20gU3RldmU6
+Cj4gPiA+ID4gWyAgICAwLjQ1MDk4N10gMHgwMDAwMDAwMDAwMDAtMHgwMDAwMDAxYTM5ZWEgOiAi
+a2VybmVsIgo+ID4gPiA+IFsgICAgMC40NTY3NzJdIDB4MDAwMDAwMWEzOWVhLTB4MDAwMDAwZWMw
+MDAwIDogInJvb3RmcyIKPiA+ID4gPiBUaGUgYmxvY2tzaXplIGNhbiBiZSBzZWVuIG9ic2VydmVk
+IG9uIHRoZSAvcHJvYy9tdGQgYW5kIGZvcgo+ID4gPiB0aGF0Cj4gPiA+ID4gZGV2aWNlIGlzIDB4
+MTAwMDA6Cj4gPiA+ID4gbXRkMzogMDAxYTM4ZGUgMDAwMTAwMDAgImtlcm5lbCIKPiA+ID4gPiBt
+dGQ0OiAwMGQxYzcyMiAwMDAxMDAwMCAicm9vdGZzIgo+ID4gPiA+IFRoaXMgdHJpZ2dlcnMgdGhl
+IGZvbGxvd2luZyBjb2RlIG9uIGRyaXZlcnMvbXRkL210ZHBhcnQuYyB0aGF0Cj4gPiA+ID4gcmVt
+b3ZlcyB0aGUgd3JpdGUgZmxhZyBmcm9tIHRoZSByb290ZnMgcGFydGl0aW9uOgo+ID4gPiA+ICAg
+ICAgICAgdG1wID0gcGFydF9hYnNvbHV0ZV9vZmZzZXQocGFyZW50KSArIHNsYXZlLT5vZmZzZXQ7
+Cj4gPiA+ID4gICAgICAgICByZW1haW5kZXIgPSBkb19kaXYodG1wLCB3cl9hbGlnbm1lbnQpOwo+
+ID4gPiA+ICAgICAgICAgaWYgKChzbGF2ZS0+bXRkLmZsYWdzICYgTVREX1dSSVRFQUJMRSkgJiYg
+cmVtYWluZGVyKSB7Cj4gPiA+ID4gICAgICAgICAgICAgICAgIC8qIERvZXNuJ3Qgc3RhcnQgb24g
+YSBib3VuZGFyeSBvZiBtYWpvciBlcmFzZQo+ID4gPiBzaXplICovCj4gPiA+ID4gICAgICAgICAg
+ICAgICAgIHNsYXZlLT5tdGQuZmxhZ3MgfD0gTVREX0VSQVNFX1BBUlRJQUw7Cj4gPiA+ID4gICAg
+ICAgICAgICAgICAgIGlmICgoKHUzMilzbGF2ZS0+bXRkLnNpemUpID4gcGFyZW50LT5lcmFzZXNp
+emUpCj4gPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAgc2xhdmUtPm10ZC5mbGFncyAmPSB+
+TVREX1dSSVRFQUJMRTsKPiA+ID4gPiAgICAgICAgICAgICAgICAgZWxzZQo+ID4gPiA+ICAgICAg
+ICAgICAgICAgICAgICAgICAgIHNsYXZlLT5tdGQuZXJhc2VzaXplID0gc2xhdmUtPm10ZC5zaXpl
+Owo+ID4gPiA+ICAgICAgICAgfQo+ID4gPiA+IAo+ID4gPiA+ICAgICAgICAgdG1wID0gcGFydF9h
+YnNvbHV0ZV9vZmZzZXQocGFyZW50KSArIHNsYXZlLT5vZmZzZXQgKwo+ID4gPiBzbGF2ZS0KPiA+
+ID4gPiA+bXRkLnNpemU7Cj4gPiA+ID4gICAgICAgICByZW1haW5kZXIgPSBkb19kaXYodG1wLCB3
+cl9hbGlnbm1lbnQpOwo+ID4gPiA+ICAgICAgICAgaWYgKChzbGF2ZS0+bXRkLmZsYWdzICYgTVRE
+X1dSSVRFQUJMRSkgJiYgcmVtYWluZGVyKSB7Cj4gPiA+ID4gICAgICAgICAgICAgICAgIHNsYXZl
+LT5tdGQuZmxhZ3MgfD0gTVREX0VSQVNFX1BBUlRJQUw7Cj4gPiA+ID4gCj4gPiA+ID4gICAgICAg
+ICAgICAgICAgIGlmICgodTMyKXNsYXZlLT5tdGQuc2l6ZSA+IHBhcmVudC0+ZXJhc2VzaXplKQo+
+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICAgIHNsYXZlLT5tdGQuZmxhZ3MgJj0gfk1URF9X
+UklURUFCTEU7Cj4gPiA+ID4gICAgICAgICAgICAgICAgIGVsc2UKPiA+ID4gPiAgICAgICAgICAg
+ICAgICAgICAgICAgICBzbGF2ZS0+bXRkLmVyYXNlc2l6ZSA9IHNsYXZlLT5tdGQuc2l6ZTsKPiA+
+ID4gPiAgICAgICAgIH0KPiA+ID4gPiBOb3cgd2UgaGF2ZSBhIHJvb3RmcyBwYXJ0aXRpb24gdGhh
+dCBpcyBzZXQgdG8gcmVhZC1vbmx5LCBhbmQKPiA+ID4gd2l0aCB0aGUKPiA+ID4gPiBrZXJuZWwg
+cGF0Y2ggdGhhdCBmb3JjZXMgc3ViLXBhcnRpdGlvbnMgdG8gbWF0Y2ggdGhlIGFjY2Vzcwo+ID4g
+PiBtb2RlIG9mCj4gPiA+ID4gdGhlIHBhcmVudCwgd2hlbiB0aGUgc3BsaXQgcnVucyBpdCB3aWxs
+IGZvcmNlIHRoZSByb290ZnNfZGF0YQo+ID4gPiA+IHBhcnRpdGlvbiB0byBtYXRjaCB0aGUgcGFy
+ZW50IGFjY2VzcyBtb2RlIChyZWFkLW9ubHkpLgo+ID4gPiA+IAo+ID4gPiA+IE15IHN1Z2dlc3Rp
+b24gaXMgdG8gY2hhbmdlIHRoZSB0YXJnZXQvbGludXgvYXRoNzkvaW1hZ2UvY29tbW9uLQo+ID4g
+PiB0cC0KPiA+ID4gPiBsaW5rLm1rIHNvIGl0IHBhZHMgdGhlIGtlcm5lbCBwYXJ0aXRpb24gdG8g
+dGhlIGJsb2Nrc2l6ZQo+ID4gPiAodW50ZXN0ZWQKPiA+ID4gPiBzdWdnZXN0aW9uIGJlbG93KToK
+PiA+ID4gPiBkZWZpbmUgRGV2aWNlL3RwbGluay1zYWZlbG9hZGVyCj4gPiA+ID4gICAkKERldmlj
+ZS90cGxpbmspCj4gPiA+ID4gICBLRVJORUwgOj0ga2VybmVsLWJpbiB8IGFwcGVuZC1kdGIgfCBs
+em1hIHwgcGFkLXRvCj4gPiA+ICQkJCQoQkxPQ0tTSVpFKSB8Cj4gPiA+ID4gdHBsaW5rLXYxLWhl
+YWRlciAtTwo+ID4gPiA+IFsuLi5dCj4gPiA+ID4gV291bGQgYW55IG9mIHlvdSBiZSB3aWxsaW5n
+IHRvIHNwZW5kIHNvbWUgdGltZSB0ZXN0aW5nIHRoaXMKPiA+ID4gY2hhbmdlIG9uCj4gPiA+ID4g
+eW91ciBUUC1MaW5rPwo+ID4gPiA+IAo+ID4gPiA+IFRoYW5rIHlvdSBhbmQgYmVzdCByZWdhcmRz
+LAo+ID4gPiA+IEJydW5vIFBlbmEKPiA+ID4gPiAKPiA+ID4gPiBPbiBUdWUsIEphbiAyMSwgMjAy
+MCBhdCA4OjE1IFBNIEJydW5vIFBlbmEgPAo+ID4gPiBicnVub21wZW5hQGdtYWlsLmNvbT4KPiA+
+ID4gPiB3cm90ZToKPiA+ID4gPiA+IEhpIFBldHIsCj4gPiA+ID4gPiAKPiA+ID4gPiA+IFRoYW5r
+IHlvdSBmb3IgcmV2ZXJ0aW5nIHRoZSBwYXRjaGVzLgo+ID4gPiA+ID4gCj4gPiA+ID4gPiBJJ20g
+dHJ5aW5nIHRvIHJlcGxpY2F0ZSB0aGUgaXNzdWUgYnV0IHNvIGZhciBJIGhhdmVuJ3QgaGFkCj4g
+PiA+IGFueQo+ID4gPiA+ID4gbHVjaywgYW5kIGp1c3QgYnkgbG9va2luZyBhdCB0aGUgY29kZSBJ
+J20gbm90IHNlZWluZwo+ID4gPiB3aGVyZS93aGF0IGlzCj4gPiA+ID4gPiBjb3VsZCBiZSBicmVh
+a2luZy4KPiA+ID4gPiA+IAo+ID4gPiA+ID4gUmVnYXJkaW5nIHRoZSB1cHN0cmVhbSBwYXRjaCwg
+dGhhdCBvbmUgaXMganVzdCBhbiBlbmFibGVyCj4gPiA+IChyZWFkOiBpdAo+ID4gPiA+ID4gb25s
+eSBleHRlbmRzIHRoZSAibXRkX2FkZF9wYXJ0aXRpb24iIGZ1bmN0aW9uIGJ1dCBpdCBkb2VzIG5v
+dAo+ID4gPiBhZGQKPiA+ID4gPiA+IGFueSBjb2RlIHRvIGZvcmNlIHRoZSBhY2Nlc3MgbW9kZSBv
+biBzdWItcGFydGl0aW9ucykuCj4gPiA+ID4gPiBUaGUgcmVhc29uIGZvciB0aGlzIGlzIGJlY2F1
+c2UgdGhpcyBlbmZvcmNlbWVudCBpcyBkb25lIG9uCj4gPiA+IHRoZSBtdGQKPiA+ID4gPiA+IHBh
+cnNlciBjb2RlIHRoYXQgaXMgT3BlbldydCBzcGVjaWZpYyBhbmQgaW1wbGVtZW50ZWQgdmlhCj4g
+PiA+IGtlcm5lbAo+ID4gPiA+ID4gcGF0Y2hlcyAobm90IHByZXNlbnQgb24gdXBzdHJlYW0pLgo+
+ID4gPiA+ID4gCj4gPiA+ID4gPiBCZXN0IHJlZ2FyZHMsCj4gPiA+ID4gPiBCcnVubyBQZW5hCj4g
+PiA+ID4gPiAKPiA+ID4gPiA+IE9uIFR1ZSwgSmFuIDIxLCAyMDIwIGF0IDc6NTcgUE0gUGV0ciDF
+oHRldGlhciA8eW5lenpAdHJ1ZS5jej4KPiA+ID4gd3JvdGU6Cj4gPiA+ID4gPiA+IEJydW5vIFBl
+bmEgPGJydW5vbXBlbmFAZ21haWwuY29tPiBbMjAyMC0wMS0yMSAxNDo1Mzo1NF06Cj4gPiA+ID4g
+PiA+IAo+ID4gPiA+ID4gPiBIaSwKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+ID4gQmFzZWQgb24g
+dGhlIGxhc3QgY29tbWVudCBmcm9tIFN0ZXZlIChmc3Rvb2xzIHBhdGNoIHdhcwo+ID4gPiBub3QK
+PiA+ID4gPiA+ID4gcmV2ZXJ0ZWQpLCBJJ20KPiA+ID4gPiA+ID4gPiBub3Qgc3VyZSBpZiB0aGF0
+J3MgdGhlIHJvb3QgY2F1c2UuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiB5b3UgbmVlZCB0byBm
+aW5kIG91dCwgYnV0IHRoYXQgRGFuaWVsJ3MgcmVtYXJrIHNlZW1zIGxlZ2l0Cj4gPiA+IHRvIG1l
+LAo+ID4gPiA+ID4gPiB5b3VyIHBhdGNoCj4gPiA+ID4gPiA+IGxpa2VseSBjaGFuZ2VkIHRoZSBt
+dGQgZGV2aWNlIG9wZW4gb3JkZXIvZmxhZ3MuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IFRo
+ZSBrZXJuZWwgcGF0Y2ggKHdoaWNoIHdoZW4gcmV2ZXJ0ZWQgbWFrZXMgcm9vdGZzX2RhdGEKPiA+
+ID4gPiA+ID4gd3JpdGFibGUgYWdhaW4pCj4gPiA+ID4gPiA+ID4gb25seSBlbmZvcmNlcyB0aGUg
+cGFyZW50IG10ZCBhY2Nlc3MgbW9kZSBvbiB0aGUgc3ViLQo+ID4gPiBwYXJ0aXRpb25zLgo+ID4g
+PiA+ID4gPiAKPiA+ID4gPiA+ID4gRllJIEkgY3VycmVudGx5IGRvbnQgaGF2ZSB0aW1lIHRvIGZp
+eCB0aGF0IHJlZ3Jlc3Npb24KPiA+ID4gbXlzZWxmIGFuZAo+ID4gPiA+ID4gPiBzaW5jZSBpdHMK
+PiA+ID4gPiA+ID4gbGlrZWx5IGFmZmVjdGluZyBhIGxvdCBvZiB1c2Vycywgc28gSSd2ZSByZXZl
+cnRlZCB0aG9zZQo+ID4gPiBjaGFuZ2VzLgo+ID4gPiA+ID4gPiBJIHRoaW5rLCB0aGF0Cj4gPiA+
+ID4gPiA+IHRoaXMgY2hhbmdlIGlzIHVzZWZ1bCwgc28gSSdtIHN0aWxsIHdpbGxpbmcgdG8gbWVy
+Z2UgaXQKPiA+ID4gb25jZQo+ID4gPiA+ID4gPiBmaXhlZCwgbm8KPiA+ID4gPiA+ID4gd29ycmll
+cy4gSGF2aW5nIHNvbWUgdXBzdHJlYW0gZmVlZGJhY2sgYmVmb3JlaGFuZCB3b3VsZCBiZQo+ID4g
+PiBhCj4gPiA+ID4gPiA+IHBsdXMuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiBCVFcgaXQgd291
+bGQgYmUgZmFpciB0byBpbmZvcm0gdXBzdHJlYW0gYWJvdXQgdGhpcyBwb3NzaWJsZQo+ID4gPiBp
+c3N1ZQo+ID4gPiA+ID4gPiBhcyB3ZWxsLCBzbwo+ID4gPiA+ID4gPiB0aGUgcGF0Y2ggd29udCBn
+ZXQgbWVyZ2VkIGluIGl0cyBjdXJyZW50IHN0YXRlLCB1bmxlc3MgaXRzCj4gPiA+IGRvdWJsZQo+
+ID4gPiA+ID4gPiBjaGVja2VkIChvcgo+ID4gPiA+ID4gPiBqdXN0IHdyaXRlIHRoZW0sIHRoYXQg
+eW91J3JlIHBsYW5uaW5nIHYyLCBzbyB0aGUgcGF0Y2ggaXMKPiA+ID4gcmVtb3ZlZAo+ID4gPiA+
+ID4gPiBmcm9tIHRoZWlyCj4gPiA+ID4gPiA+IFBhdGNod29yaykuCj4gPiA+ID4gPiA+IAo+ID4g
+PiA+ID4gPiAtLSB5bmV6ego+ID4gPiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVs
+QGxpc3RzLm9wZW53cnQub3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9vcGVud3J0LWRldmVsCg==

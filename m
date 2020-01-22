@@ -2,64 +2,87 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CD32145227
-	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Jan 2020 11:10:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D5E3145287
+	for <lists+openwrt-devel@lfdr.de>; Wed, 22 Jan 2020 11:25:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=44xPZPzfmZ/uc+TfxiTRUc0WW+4yUISIwmWRvQKO6x8=; b=B6wLYkDSsBFwtV
-	Oh789crpigjufWg9pPwBtaCl1xgNFVEiMuVkk+UCLRUSNHCsG9+0V8ElhPbLKlRMsR3F3BxjCeL4M
-	NpSL2c1ektci5/KyVE15yLrWrilGn488HgKnij7RxBxboEIGJDf/jVFplDKjgV359ZAVTzSmAHONl
-	p8EFQXljdr6i8JWjf2DiM67bYEvIXjc0Lp1jvpp6AQnsPm/ILbxw1pmRmu3DegH1hEGKQmePoaxgC
-	HYoXKjtAKBWYCpLyjvoGMbmoetvO+BmmXqNTGDMZC085mKU8tKQxw8OjYjqbwpgP3CRijOow5zo83
-	+8hihVHgonhiY3sJf9AA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:To:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZoNag3H8Eg5tkOgBEpTZYPH79LP09NV+heGTE2XSsk8=; b=rr19qzTip6sszrafJBJXj78v1
+	TASpnA3Gqu+LuLkat3brRWjItlu0seHnhAVj7TvCsXz0R3dJihsDGQW7nRKqFPWq7ZNTKeitBadzb
+	4iRRMZ1zeJ0kcDQae7gNuflIqTv+ty7r+JqF1AmzMW3tvworcF+PKz0TU3nAz3uAok7zWkdkM2w43
+	KihOa9JCl1kM/9Oyt4KkbWMbb9NK72IWpcpxkB8MwdmNEO/MuKkzEZwZ1hy7FxovEU9H6/H41Zv88
+	gwPx6DmFbttncNMrE0++VjNp1KCdcR/5UXkK68I8/0Xy4Fqfo3iGY/IqYamtXgMfG++u2DbR0stKf
+	FWNikarNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuCxQ-0006YQ-Nz; Wed, 22 Jan 2020 10:09:56 +0000
-Received: from web0119.zxcs.nl ([2a06:2ec0:1::119])
+	id 1iuDCn-0005IS-1U; Wed, 22 Jan 2020 10:25:49 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuCxG-0006XW-44
- for openwrt-devel@lists.openwrt.org; Wed, 22 Jan 2020 10:09:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=oranjevos.nl; s=x; h=To:References:Message-Id:Content-Transfer-Encoding:Cc:
- Date:In-Reply-To:From:Subject:Mime-Version:Content-Type:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=aPuEZzI5ynLwlfdRMuCRmxtgdC4HThiiH2fQ//0b1GA=; b=o38fyqFpO6MsdUZedtBd1C4Lzk
- jItkrkOonFTDfd4LqRdYA0ryRFdB9Aw1k5dGyAoIoXjUVTd9prRRHd6UsvOY7lnLGTV8iCf47TTCx
- Ba/UpZnz40b1GKehrEqejrdrYHdvPb/XP3H77IYPOfzIZVaqiABoDWy+unGaqML8iudCAtOhdCrr+
- VS8hIBtMmlODGex4Sy0uGP1eO2Ye8NUrmXaoKaa1Nypsm1kfj4EgOP7RLCWEBLbhBY+13z4uyLzxx
- DUcSFisEGhytCpgEiigO547awuzyTHIvsPbFU6wnFr9KBJcmM2r3GkLsfCGMPCvefAshVXmbn6PU0
- 7Ql5YmzQ==;
-Received: from dhcp-077-248-110-239.chello.nl ([77.248.110.239]:49956
- helo=boekje.achterlaan)
- by web0119.zxcs.nl with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92.3) (envelope-from <por@oranjevos.nl>)
- id 1iuCxE-000X26-Kb; Wed, 22 Jan 2020 11:09:44 +0100
-Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.40.2.2.4\))
-From: Paul Oranje <por@oranjevos.nl>
-In-Reply-To: <20200121083509.24067-2-ynezz@true.cz>
-Date: Wed, 22 Jan 2020 11:09:22 +0100
-Message-Id: <A627DEFC-1F41-43D2-B93F-8B0EB917303B@oranjevos.nl>
-References: <20200121083509.24067-1-ynezz@true.cz>
- <20200121083509.24067-2-ynezz@true.cz>
-To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
-X-Mailer: Apple Mail (2.3608.40.2.2.4)
-X-Authenticated-Id: paul@oranjevos.nl
+ id 1iuDCV-0005Af-Mr
+ for openwrt-devel@lists.openwrt.org; Wed, 22 Jan 2020 10:25:33 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id v12so3839421vsv.5
+ for <openwrt-devel@lists.openwrt.org>; Wed, 22 Jan 2020 02:25:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0PMz96DT5mxap+QTJnSlR1HF9fAjwh7rPq6xz90OX28=;
+ b=WJfrUxawg50auR3/WKF7kR3UFjE2zE3ji2/dRnx4h+/VEhSL9q1RlQH8UunQPMkSxa
+ DOSmAeNuXnkfH9dmddHfwHcL786hRKEqK5Fzar1KQM7gG5SAh3r9pZX9AvthWudKwgUx
+ 30hbariiVZIwNX5k/aJWFzFxa8WhhRtrscyOFZFPJ9oFuOAL1Daf/pke/CR13RICgoA9
+ 8yfmxRunO67zUCIHKYMclQpPJ8AESd/JJOLuDlAHK/Gh1iJdf5/Aeub2ymy0j/JmF/xX
+ DVujGjZcgNhEXcGa0DZEfFp+f6gynQYR9uyUR80XkRbtdxofeo9sqC/dqDm8N2Wcr9xC
+ wRJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0PMz96DT5mxap+QTJnSlR1HF9fAjwh7rPq6xz90OX28=;
+ b=uhV6XPsyLcDdhnD0aBmVbGUcI9+aqvLFmAG1Ytu9/INDud/Gwg+aqdrF5PqdTfMlDC
+ tDpbqtzXXYOiG8p/PKEq/XFGQt4oco+c0zZjhbwm9mblFItqESeRcfEJsgkEJWQrzHBa
+ l/VhUSbgJBE+ftFrczpf0jKJdSWHlhh063cV+d5bKKrpqIwU1pWG1KeHGRGH59E2URwn
+ LEZO/iJ6Dank2DYUXHrtGO973Rp/vRu7Saf+Inkj9mCUWL59Vuk8Ob9LWbH8Hpie7NYK
+ sTNgxDtQc4Wwc6myp2YLRsQKh556eRthLwVrteEJz3ice7thvqKbAhSAInhQPT9iMVmb
+ 8T1g==
+X-Gm-Message-State: APjAAAVu2OE1SgBcV7GdqxaXCg+1m25lc94aMEgfNmjtPoAofqRqw2ov
+ 3iH+tNZa23xKH1hPJ1LDidpLzOMy8Ve1WWA5Ydc=
+X-Google-Smtp-Source: APXvYqwBj/bCjklziyMXluSqsNX+Jgghxyv7vP9XlvAwLFbsx3Q+kKX2YmQH0qVMmxgrTNo2zIttQ3fBAI1rwS6sBIk=
+X-Received: by 2002:a67:fd56:: with SMTP id g22mr2004662vsr.67.1579688729010; 
+ Wed, 22 Jan 2020 02:25:29 -0800 (PST)
+MIME-Version: 1.0
+References: <CADwgkMUhZ4TrqhiJJPHLL0aVyxxvKfABwDz-4wv_QZ_cyZvj9A@mail.gmail.com>
+ <CADwgkMWzviYbcOcbY1R5C9gyY_WAwQpyyYW0eWptm369k-d7-Q@mail.gmail.com>
+ <20200121104934.GA2465@makrotopia.org>
+ <CADwgkMWQxN5WLeG9oyR0RdeahC+ZHeykLNGj0PfKtCvG81Qxxw@mail.gmail.com>
+ <20200121185716.GL69327@meh.true.cz>
+ <CADwgkMVVX_kX8w18AtGwhvwoY=MOW=_7chPScey-7T32+g1uDA@mail.gmail.com>
+ <CADwgkMUy5--GR3du_-qj+m0Ag=fTA9pfOhDJO0DCbWcDtvHjZg@mail.gmail.com>
+ <989a2a224ceac0368c713ecc537af005eb45f035.camel@ewol.com>
+ <CADwgkMXLgcnJ0_KBCto+oS3o4PpQeQThH7qp=DwE0JWYAoz7eQ@mail.gmail.com>
+ <CADwgkMXf2q3uuyTFrce2NL_Z3EGVW8OC9tVeh6MRxdiAMu7CvQ@mail.gmail.com>
+ <20200122094051.GC1406@makrotopia.org>
+In-Reply-To: <20200122094051.GC1406@makrotopia.org>
+From: Bruno Pena <brunompena@gmail.com>
+Date: Wed, 22 Jan 2020 11:25:16 +0100
+Message-ID: <CADwgkMWVL6g_=xkGyMbK4Xj-EEfx10tQYwtF1ZgFq6x-QnhhfA@mail.gmail.com>
+To: Daniel Golle <daniel@makrotopia.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_020946_455023_CE0568D8 
-X-CRM114-Status: GOOD (  18.01  )
+X-CRM114-CacheID: sfid-20200122_022531_785655_D3784619 
+X-CRM114-Status: GOOD (  17.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [brunompena[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -67,8 +90,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: Re: [OpenWrt-Devel] [PATCH procd 2/2] state: fix reboot causing
- shutdown inside LXC container
+Subject: Re: [OpenWrt-Devel] [PATCH v2] fstools: Add support to read-only
+ MTD partitions (eg. recovery images)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,68 +103,170 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>,
+ openwrt-devel@lists.openwrt.org, Steve Brown <sbrown@ewol.com>
+Content-Type: multipart/mixed; boundary="===============3827815626719194339=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-QSBmZXcgc21hbGwgcmVtYXJrcywgc2VlIGluLWxpbmUsIHJlZ2FyZHMsClBhdWwKCj4gT3AgMjEg
-amFuLiAyMDIwLCBvbSAwOTozNSBoZWVmdCBQZXRyIMWgdGV0aWFyIDx5bmV6ekB0cnVlLmN6PiBo
-ZXQgdm9sZ2VuZGUgZ2VzY2hyZXZlbjoKPiAKPiBFeGVjdXRpbmcgYHJlYm9vdGAgY29tbWFuZCBp
-biBPcGVuV3J0IHN5c3RlbSBydW5pbmcgaW5zaWRlIExYQyBjb250YWluZXIKPiByZXN1bHRzIGlu
-IGEgc2h1dGRvd24gb2YgdGhlIGNvbnRhaW5lciBpbnN0ZWFkIG9mIHJlYm9vdGluZyB0aGUKPiBj
-b250YWluZXIuCj4gCj4gVGhpcyBhcHBlYXJzIHRvIGhhdmUgYmVlbiBjYXVzZWQgYnkgY29tbWl0
-IDgzMjM2OTA3OGQ4MSAoInN0YXRlOiBmaXgKPiBzaHV0ZG93biB3aGVuIHJ1bm5pbmcgaW4gYSBj
-b250YWluZXIgKEZTIzI0MjUpIiksIHdoaWNoIGV4aXRzIHRoZSBwaWQKPiBlaW56IGluc3RlYWQg
-b2YgdGhlIHJlYm9vdCgpLgo+IAo+IFdoaWxlIGF0IGl0LCByZWZhY3RvciB0aGUgaGFsdGluZyBj
-b2RlIGludG8gc2VwYXJhdGUgZnVuY3Rpb24gdG8gc2hvcnRlbgo+IHRoZSBzd2l0Y2gvY2FzZSBi
-bG9jayBhbmQgbWFrZSBpdCBjbGVhcmVyLCBkZWNyZWFzZSB0aGUgaW5kZW50YXRpb24KPiBsZXZl
-bCBieSByZXZlcnNpbmcgdGhlIGNvbnRhaW5lciBpZiBjb25kaXRpb24sIHJlcGxhY2UgbWFnaWMg
-MCB3aXRoCj4gRVhJVF9TVUNDRVNTIGNvbnN0YW50IGluIGV4aXQoKSBhbmQgbWFrZSBpdCB3YWl0
-IDFzIGZvciByZWJvb3QgbWVzc2FnZQo+IGRlbGl2ZXJ5IGluIGJvdGggY29udGFpbmVyL2hvc3Qg
-Y2FzZXMgYXMgd2VsbC4KPiAKPiBSZWY6IEZTIzI2NjYKPiBDYzogUGF1bCBTcG9vcmVuIDxtYWls
-QGFwYXJjYXIub3JnPgo+IEZpeGVzOiA4MzIzNjkwNzhkODEgKCJzdGF0ZTogZml4IHNodXRkb3du
-IHdoZW4gcnVubmluZyBpbiBhIGNvbnRhaW5lciAoRlMjMjQyNSkiKQo+IFRlc3RlZC1ieTogQmFw
-dGlzdGUgSm9uZ2xleiA8bGVkZUBiaXRzb2ZuZXR3b3Jrcy5vcmc+Cj4gU2lnbmVkLW9mZi1ieTog
-UGV0ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4KPiAtLS0KPiBzdGF0ZS5jIHwgNTIgKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+IDEgZmlsZSBj
-aGFuZ2VkLCAzMCBpbnNlcnRpb25zKCspLCAyMiBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0
-IGEvc3RhdGUuYyBiL3N0YXRlLmMKPiBpbmRleCA0NzM3ZDAxMjFhZDAuLmUxMTdlYTMwMmY5MyAx
-MDA2NDQKPiAtLS0gYS9zdGF0ZS5jCj4gKysrIGIvc3RhdGUuYwo+IEBAIC05NCw2ICs5NCwzNCBA
-QCBzdGF0aWMgdm9pZCBzZXRfY29uc29sZSh2b2lkKQo+IAkJc2V0X3N0ZGlvKHR0eSk7Cj4gfQo+
-IAo+ICtzdGF0aWMgdm9pZCBwZXJmb3JtX2hhbHQoKQo+ICt7Cj4gKwlpZiAocmVib290X2V2ZW50
-ID09IFJCX1BPV0VSX09GRikKPiArCQlMT0coIi0gcG93ZXIgZG93biAtXG4iKTsKPiArCWVsc2UK
-PiArCQlMT0coIi0gcmVib290IC1cbiIpOwo+ICsKPiArCS8qIEFsbG93IHRpbWUgZm9yIGxhc3Qg
-bWVzc2FnZSB0byByZWFjaCBzZXJpYWwgY29uc29sZSwgZXRjICovCj4gKwlzbGVlcCgxKTsKPiAr
-Cj4gKwlpZiAoaXNfY29udGFpbmVyKCkpIHsKPiArCQlyZWJvb3QocmVib290X2V2ZW50KTsKV2hl
-biByZWJvb3QgcmV0dXJucywgaGFzbid0IHNvbWV0aGluZyBnb25lIHdyb25nIHRoZW4gPwo+ICsJ
-CWV4aXQoRVhJVF9TVUNDRVNTKTsKVGhlIHJldHVybiBiZWxvdyBhZnRlciBleGl0KCkgY2FuIG5l
-dmVyIGJlIHJlYWNoZWQuCj4gKwkJcmV0dXJuOwo+ICsJfQo+ICsKPiArCS8qIFdlIGhhdmUgdG8g
-Zm9yayBoZXJlLCBzaW5jZSB0aGUga2VybmVsIGNhbGxzIGRvX2V4aXQoRVhJVF9TVUNDRVNTKQo+
-ICsJICogaW4gbGludXgva2VybmVsL3N5cy5jLCB3aGljaCBjYW4gY2F1c2UgdGhlIG1hY2hpbmUg
-dG8gcGFuaWMgd2hlbgo+ICsJICogdGhlIGluaXQgcHJvY2VzcyBleGl0cy4uLiAqLwo+ICsJaWYg
-KCF2Zm9yaygpKSB7IC8qIGNoaWxkICovCj4gKwkJcmVib290KHJlYm9vdF9ldmVudCk7CldoZW4g
-cmVib290IHJldHVybnMsIGhhc24ndCBzb21ldGhpbmcgZ29uZSB3cm9uZyB0aGVuID8KPiArCQlf
-ZXhpdChFWElUX1NVQ0NFU1MpOwo+ICsJfQo+ICsKPiArCXdoaWxlICgxKQo+ICsJCXNsZWVwKDEp
-Owo+ICt9Cj4gKwo+IHN0YXRpYyB2b2lkIHN0YXRlX2VudGVyKHZvaWQpCj4gewo+IAljaGFyIHVi
-dXNfY21kW10gPSAiL3NiaW4vdWJ1c2QiOwo+IEBAIC0xNTMsMjkgKzE4MSw5IEBAIHN0YXRpYyB2
-b2lkIHN0YXRlX2VudGVyKHZvaWQpCj4gCQlzeW5jKCk7Cj4gCQlzbGVlcCgxKTsKPiAjaWZuZGVm
-IERJU0FCTEVfSU5JVAo+IC0JCWlmIChyZWJvb3RfZXZlbnQgPT0gUkJfUE9XRVJfT0ZGKQo+IC0J
-CQlMT0coIi0gcG93ZXIgZG93biAtXG4iKTsKPiAtCQllbHNlCj4gLQkJCUxPRygiLSByZWJvb3Qg
-LVxuIik7Cj4gLQo+IC0JCWlmICghaXNfY29udGFpbmVyKCkpIHsKPiAtCQkJLyogQWxsb3cgdGlt
-ZSBmb3IgbGFzdCBtZXNzYWdlIHRvIHJlYWNoIHNlcmlhbCBjb25zb2xlLCBldGMgKi8KPiAtCQkJ
-c2xlZXAoMSk7Cj4gLQo+IC0JCQkvKiBXZSBoYXZlIHRvIGZvcmsgaGVyZSwgc2luY2UgdGhlIGtl
-cm5lbCBjYWxscyBkb19leGl0KEVYSVRfU1VDQ0VTUykKPiAtCQkJICogaW4gbGludXgva2VybmVs
-L3N5cy5jLCB3aGljaCBjYW4gY2F1c2UgdGhlIG1hY2hpbmUgdG8gcGFuaWMgd2hlbgo+IC0JCQkg
-KiB0aGUgaW5pdCBwcm9jZXNzIGV4aXRzLi4uICovCj4gLQkJCWlmICghdmZvcmsoICkpIHsgLyog
-Y2hpbGQgKi8KPiAtCQkJCXJlYm9vdChyZWJvb3RfZXZlbnQpOwo+IC0JCQkJX2V4aXQoRVhJVF9T
-VUNDRVNTKTsKPiAtCQkJfQo+IC0KPiAtCQkJd2hpbGUgKDEpCj4gLQkJCQlzbGVlcCgxKTsKPiAt
-CQl9IGVsc2UKPiAtCQkJZXhpdCgwKTsKPiArCQlwZXJmb3JtX2hhbHQoKTsKPiAjZWxzZQo+IC0J
-CWV4aXQoMCk7Cj4gKwkJZXhpdChFWElUX1NVQ0NFU1MpOwo+ICNlbmRpZgo+IAkJYnJlYWs7Cj4g
-Cj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBv
-cGVud3J0LWRldmVsIG1haWxpbmcgbGlzdAo+IG9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5v
-cmcKPiBodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3BlbndydC1k
-ZXZlbAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9w
-ZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcK
-aHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK
+--===============3827815626719194339==
+Content-Type: multipart/alternative; boundary="0000000000008c65e2059cb7f141"
+
+--0000000000008c65e2059cb7f141
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Daniel,
+
+I was looking at the code and I think it's possible to relax the
+enforcement of the parent access mode.
+We can switch from a strict enforcement of the resulting mtd access mode,
+to only enforcing the configured access mode (from the DTS file).
+
+This can be achieved by changing from using mtd.flags to mtd.orig_flags:
+    parts[i].mask_flags = !(slave->mtd.orig_flags & MTD_WRITEABLE) ?
+MTD_WRITEABLE : 0;
+
+With this change we no longer impact builds that do not have a read-only
+firmware partition, but we can still enforce it for those that need it.
+One thing to keep in mind is that the padding is still a requirement for
+those devices which are building a read-only firmware partition!
+
+Also please note this is not tested, these conclusions are only based on
+the analysis of the kernel source code.
+
+Best regards,
+Bruno Pena
+
+
+On Wed, Jan 22, 2020, 10:40 Daniel Golle <daniel@makrotopia.org> wrote:
+
+> Hi Bruno,
+>
+> On Wed, Jan 22, 2020 at 10:22:01AM +0100, Bruno Pena wrote:
+> > I would also like to take the opportunity to ask if it's worth pursuing
+> > this patch if it means that all devices (using mtd) will require their
+> > partitions to be padded to the blocksize?
+>
+> Please try not to introduce that padding, it's quite a big impact on
+> all devices while only very few (wifi-only device) really need that
+> change. Instead of wasting flash space by additional padding I'd rather
+> want to see an OpenWrt-specific kernel-patch to allow a rw subpartition
+> sitting inside an ro partition or just flatten the mtd partitioning.
+> What I mean by flatteing is this:
+>
+> yout current approach:
+> +-----------------------------+
+> |          firmware           |
+> +--------+--------------------+
+> |        $       rootfs       |
+> | kernel +------+-------------+
+> |        $ rom  | rootfs_data |
+> +--------+------+-------------+
+>
+> here rootfs_data inherigs the read-only from rootfs not being block-
+> aligned. a better/flat approach would be:
+> +-----------------------------+
+> |          firmware           |
+> +--------+------+-------------+
+> | kernel $ rom  | rootfs_data |
+> +--------+------+-------------+
+>
+> Now this would require major changes to our mtd-splitting subsystem
+> which is quite a big amount of work...
+>
+>
+> Cheers
+>
+>
+> Daniel
+>
+
+--0000000000008c65e2059cb7f141
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div dir=3D"auto">Hi Daniel,</div><div dir=3D"auto"><br><=
+/div><div dir=3D"auto">I was looking at the code and I think it&#39;s possi=
+ble to relax the enforcement of the parent access mode.</div><div dir=3D"au=
+to">We can switch from a strict enforcement of the resulting mtd access mod=
+e, to only enforcing the configured access mode (from the DTS file).</div><=
+div dir=3D"auto"><br></div><div dir=3D"auto">This can be achieved by changi=
+ng from using mtd.flags to mtd.orig_flags:</div><div dir=3D"auto">=C2=A0 =
+=C2=A0 parts[i].mask_flags =3D !(slave-&gt;mtd.orig_flags &amp; MTD_WRITEAB=
+LE) ? MTD_WRITEABLE : 0;</div><div dir=3D"auto"><br></div><div dir=3D"auto"=
+>With this change we no longer impact builds that do not have a read-only f=
+irmware partition, but we can still enforce it for those that need it.</div=
+><div dir=3D"auto">One thing to keep in mind is that the padding is still a=
+ requirement for those devices which are building a read-only firmware part=
+ition!</div><div dir=3D"auto"><br></div><div dir=3D"auto">Also please note =
+this is not tested, these conclusions are only based on the analysis of the=
+ kernel source code.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Bes=
+t regards,</div><div dir=3D"auto">Bruno Pena</div><div dir=3D"auto"><br></d=
+iv></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_att=
+r">On Wed, Jan 22, 2020, 10:40 Daniel Golle &lt;<a href=3D"mailto:daniel@ma=
+krotopia.org">daniel@makrotopia.org</a>&gt; wrote:<br></div><blockquote cla=
+ss=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;pa=
+dding-left:1ex">Hi Bruno,<br>
+<br>
+On Wed, Jan 22, 2020 at 10:22:01AM +0100, Bruno Pena wrote:<br>
+&gt; I would also like to take the opportunity to ask if it&#39;s worth pur=
+suing<br>
+&gt; this patch if it means that all devices (using mtd) will require their=
+<br>
+&gt; partitions to be padded to the blocksize?<br>
+<br>
+Please try not to introduce that padding, it&#39;s quite a big impact on<br=
+>
+all devices while only very few (wifi-only device) really need that<br>
+change. Instead of wasting flash space by additional padding I&#39;d rather=
+<br>
+want to see an OpenWrt-specific kernel-patch to allow a rw subpartition<br>
+sitting inside an ro partition or just flatten the mtd partitioning.<br>
+What I mean by flatteing is this:<br>
+<br>
+yout current approach:<br>
++-----------------------------+<br>
+|=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 firmware=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0|<br>
++--------+--------------------+ <br>
+|=C2=A0 =C2=A0 =C2=A0 =C2=A0 $=C2=A0 =C2=A0 =C2=A0 =C2=A0rootfs=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0|<br>
+| kernel +------+-------------+<br>
+|=C2=A0 =C2=A0 =C2=A0 =C2=A0 $ rom=C2=A0 | rootfs_data |<br>
++--------+------+-------------+<br>
+<br>
+here rootfs_data inherigs the read-only from rootfs not being block-<br>
+aligned. a better/flat approach would be:<br>
++-----------------------------+<br>
+|=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 firmware=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0|<br>
++--------+------+-------------+ <br>
+| kernel $ rom=C2=A0 | rootfs_data |<br>
++--------+------+-------------+<br>
+<br>
+Now this would require major changes to our mtd-splitting subsystem<br>
+which is quite a big amount of work...<br>
+<br>
+<br>
+Cheers<br>
+<br>
+<br>
+Daniel<br>
+</blockquote></div>
+
+--0000000000008c65e2059cb7f141--
+
+
+--===============3827815626719194339==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============3827815626719194339==--
+

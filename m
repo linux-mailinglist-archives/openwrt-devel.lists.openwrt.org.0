@@ -2,49 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B553D146B19
-	for <lists+openwrt-devel@lfdr.de>; Thu, 23 Jan 2020 15:21:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB27146B53
+	for <lists+openwrt-devel@lfdr.de>; Thu, 23 Jan 2020 15:30:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HTej6AGbKiafLjRlNJiIpuKrYuohZOPDlgw/MRLRAak=; b=VTUjNIzkjMsuy7
-	jJcfJ4vQ0ce4LsEnHvXD0P8LRiG7KRtfdyu/nhA/G3DKQvig1yVoXpzcOEmfVFtzcn4arDzpeThb6
-	VyO2F2D36i48NggQGYgDT4ZisH+nC5q7edqrkfIt92REHzNB0+E3tqnIIUkHnGQDaQ1pwdQFxJkwR
-	jllIyvGcLTELKGps0kdDgLZTaOy19h6ZNJ0qT1w91kTHDpuWkrb7KHczGSEdnkEGXcjOMnvxZFw+G
-	avhyv1wLZnz65slR66A4wJTeX29t2Qu2A4aZkHqU0SQjT64YZ8TPQprx1tHp3NvcTR3WVNQ8sJfSO
-	rDTABvhpx9KIC6YjtDtw==;
+	List-Owner; bh=HTej6AGbKiafLjRlNJiIpuKrYuohZOPDlgw/MRLRAak=; b=jeX3e82Vx7vWj0
+	/kTntgn6lmWovP8oo9W6r7IBPo3M/4s9GIkYUYV8PYmrG8Ig6+FaJAFtmYuUM0buXrb6KsEE6AwwV
+	dTbhUSIiKVNtHX6xdxVGcjFqnGcqmVOZXpOxEtoi+TyaetyM+mUi/mJKgTDPYj9IWTxMU3EGZU4RG
+	HVNaLGxsoXslmLdJePqq5LTMe/Gq/RzCfN2T9yXD279JYzmErII7mXIbtIR3GiQudBH1YTokY5Ezm
+	D+qyHj9+4aR+b/1ZqVPOyzi6EVGRx0Zzdol0aafgXGFAm4RzzKkuUUq2aQa1m/0jX8NvDhPlR77Do
+	TyQv1z+VE4jtuFCQyoMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iudLj-000668-34; Thu, 23 Jan 2020 14:20:47 +0000
+	id 1iudUw-0001R1-92; Thu, 23 Jan 2020 14:30:18 +0000
 Received: from max.feld.cvut.cz ([147.32.192.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iudLX-00065U-6d
- for openwrt-devel@lists.openwrt.org; Thu, 23 Jan 2020 14:20:36 +0000
+ id 1iudUn-00018j-L6
+ for openwrt-devel@lists.openwrt.org; Thu, 23 Jan 2020 14:30:11 +0000
 Received: from localhost (unknown [192.168.200.7])
- by max.feld.cvut.cz (Postfix) with ESMTP id BC78919F448D;
- Thu, 23 Jan 2020 15:20:32 +0100 (CET)
+ by max.feld.cvut.cz (Postfix) with ESMTP id 5683619F4498;
+ Thu, 23 Jan 2020 15:30:08 +0100 (CET)
 X-Virus-Scanned: IMAP STYX AMAVIS
 Received: from max.feld.cvut.cz ([192.168.200.1])
  by localhost (styx.feld.cvut.cz [192.168.200.7]) (amavisd-new, port 10044)
- with ESMTP id LXX8MPRGfwaf; Thu, 23 Jan 2020 15:20:30 +0100 (CET)
+ with ESMTP id Ar5q7t98_XZr; Thu, 23 Jan 2020 15:30:05 +0100 (CET)
 Received: from localhost.localdomain (labsitronics.feld.cvut.cz
  [147.32.211.25])
- by max.feld.cvut.cz (Postfix) with ESMTP id 6117919F446D;
- Thu, 23 Jan 2020 15:20:30 +0100 (CET)
+ by max.feld.cvut.cz (Postfix) with ESMTP id C346419F4474;
+ Thu, 23 Jan 2020 15:30:05 +0100 (CET)
 From: =?UTF-8?q?Ond=C5=99ej=20Votava?= <ondrej.votava@cvut.cz>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 23 Jan 2020 15:20:04 +0100
-Message-Id: <20200123142004.23483-1-ondrej.votava@cvut.cz>
+Date: Thu, 23 Jan 2020 15:29:57 +0100
+Message-Id: <20200123142957.23546-1-ondrej.votava@cvut.cz>
 X-Mailer: git-send-email 2.21.0 (Apple Git-122.2)
 In-Reply-To: <20200120230504.GH69327@meh.true.cz>
 References: <20200120230504.GH69327@meh.true.cz>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_062035_393247_D1FCABB0 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20200123_063009_845599_826C41B3 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:

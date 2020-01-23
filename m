@@ -2,49 +2,49 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CB27146B53
-	for <lists+openwrt-devel@lfdr.de>; Thu, 23 Jan 2020 15:30:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 503BF146B5F
+	for <lists+openwrt-devel@lfdr.de>; Thu, 23 Jan 2020 15:31:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HTej6AGbKiafLjRlNJiIpuKrYuohZOPDlgw/MRLRAak=; b=jeX3e82Vx7vWj0
-	/kTntgn6lmWovP8oo9W6r7IBPo3M/4s9GIkYUYV8PYmrG8Ig6+FaJAFtmYuUM0buXrb6KsEE6AwwV
-	dTbhUSIiKVNtHX6xdxVGcjFqnGcqmVOZXpOxEtoi+TyaetyM+mUi/mJKgTDPYj9IWTxMU3EGZU4RG
-	HVNaLGxsoXslmLdJePqq5LTMe/Gq/RzCfN2T9yXD279JYzmErII7mXIbtIR3GiQudBH1YTokY5Ezm
-	D+qyHj9+4aR+b/1ZqVPOyzi6EVGRx0Zzdol0aafgXGFAm4RzzKkuUUq2aQa1m/0jX8NvDhPlR77Do
-	TyQv1z+VE4jtuFCQyoMQ==;
+	List-Owner; bh=HTej6AGbKiafLjRlNJiIpuKrYuohZOPDlgw/MRLRAak=; b=mIgcFTyEYRn9gd
+	4vGGrKrl2Q4NS6UrUEo2MGSLqWShMWlonBUtujjXITGK5CQq/inYFwpGseDck/ZY6Qa/OW/FaZ5ar
+	K6kp4IQYGxdTu8QuBQ9aKM7fnqih1uaGFhwbR7fnMiHGmLg9F4rGK8YphyTN/4oKouhcoQ3tuT+Bc
+	1k71/dw9vplWbL6J0o8AMx9DMcF60q+odMGKQNe6pGUjq+FwxMZlW8qns/NM4zV3JXYFVwL2Ybq+z
+	WWjZziMCbDc15xZGBxgETAYfVeXYMuUQj1cH936wxJQ/kx8tiNM5UM7yPjUIyMIsEMA2/n0x6Kpq7
+	Qq592d9ShIf99kYoIMFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iudUw-0001R1-92; Thu, 23 Jan 2020 14:30:18 +0000
+	id 1iudWQ-0001vu-P3; Thu, 23 Jan 2020 14:31:50 +0000
 Received: from max.feld.cvut.cz ([147.32.192.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iudUn-00018j-L6
- for openwrt-devel@lists.openwrt.org; Thu, 23 Jan 2020 14:30:11 +0000
+ id 1iudWI-0001vF-M1
+ for openwrt-devel@lists.openwrt.org; Thu, 23 Jan 2020 14:31:44 +0000
 Received: from localhost (unknown [192.168.200.7])
- by max.feld.cvut.cz (Postfix) with ESMTP id 5683619F4498;
- Thu, 23 Jan 2020 15:30:08 +0100 (CET)
+ by max.feld.cvut.cz (Postfix) with ESMTP id 5E41A19F441B;
+ Thu, 23 Jan 2020 15:31:41 +0100 (CET)
 X-Virus-Scanned: IMAP STYX AMAVIS
 Received: from max.feld.cvut.cz ([192.168.200.1])
  by localhost (styx.feld.cvut.cz [192.168.200.7]) (amavisd-new, port 10044)
- with ESMTP id Ar5q7t98_XZr; Thu, 23 Jan 2020 15:30:05 +0100 (CET)
+ with ESMTP id LL9a7stAtgn8; Thu, 23 Jan 2020 15:31:39 +0100 (CET)
 Received: from localhost.localdomain (labsitronics.feld.cvut.cz
  [147.32.211.25])
- by max.feld.cvut.cz (Postfix) with ESMTP id C346419F4474;
- Thu, 23 Jan 2020 15:30:05 +0100 (CET)
+ by max.feld.cvut.cz (Postfix) with ESMTP id 001F119F4478;
+ Thu, 23 Jan 2020 15:31:38 +0100 (CET)
 From: =?UTF-8?q?Ond=C5=99ej=20Votava?= <ondrej.votava@cvut.cz>
 To: openwrt-devel@lists.openwrt.org
-Date: Thu, 23 Jan 2020 15:29:57 +0100
-Message-Id: <20200123142957.23546-1-ondrej.votava@cvut.cz>
+Date: Thu, 23 Jan 2020 15:31:31 +0100
+Message-Id: <20200123143131.23596-1-ondrej.votava@cvut.cz>
 X-Mailer: git-send-email 2.21.0 (Apple Git-122.2)
 In-Reply-To: <20200120230504.GH69327@meh.true.cz>
 References: <20200120230504.GH69327@meh.true.cz>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_063009_845599_826C41B3 
-X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-CacheID: sfid-20200123_063142_871756_A88FF09C 
+X-CRM114-Status: UNSURE (   7.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -58,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
  [147.32.192.36 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-Subject: [OpenWrt-Devel] [PATCH] procd: show process's exit code
+Subject: [OpenWrt-Devel] [PATCH v2] procd: show process's exit code
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list

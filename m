@@ -2,52 +2,55 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70E25149A8B
-	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Jan 2020 13:29:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E45E8149B56
+	for <lists+openwrt-devel@lfdr.de>; Sun, 26 Jan 2020 16:15:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rSvN4DBzk4TPk/iKer7/W/9EJOls1xpET5cT0Qakd1U=; b=is1O4D7ol1g+cL
-	b/Nk9gi25h/jFRkwmyxahN2y5p9ERva6GlROXoQSiq6r+YS5F69b3lBTHmLlSS9mrQ0VygotiHt/V
-	ByrWYzYHLDyNigF0hXgdSOlcqiRJWtZLnujfMod0qvgzQQTrQt/P5CwyJ5I0+QW77QsbjmtRqritM
-	Zf2CwPL7xzSXqcHiSVmWBArfPJxOwuNbWpjH+o/1fyBthLMS4aI/2dw1YiI7lplwhCqnjpvqFK4Ig
-	vioK3W70XS/T5d0LgETqK1v50ahT9yGZvuCCup1SbyAxQg4jJ8deYIdYyBO9+tzIc8RPi8Vk58qbr
-	eM8XDe64+6BJoyInzOog==;
+	List-Owner; bh=jViYBuc+O4uZ9WOat11tPXwnFCrTsPUTGW9UNJdFTY0=; b=cfAJxwLW6KG7fb
+	uZKQWIlFI9y36mr7etg1NthtPyFjpJwCOuNK2dYMPgodhhNEpI5DSQzPtn98cEkQD5LYvws17cHEL
+	NIKNBTQaDK/RqE06IvGey6XHE/yZF8+bMAcaz8bpEFSGkvZTSq9nrWaR7KYPm8oOv7x9sdapNFFFH
+	1kdrCktoWxOMdnPQIiWRs4JvwTpToHioDVdMl3O2jhO4G0PQSIEVPzD86yG9u3RMPku3uRew9B5mn
+	T1lSHj32UyFRolPlBwq55WRw0jY4lMKgdK7XefSnVGXlT3Mxle8zCF1pbS+jr7H9hefcZyZvWxtse
+	cUcLWh7oS7/nbGEEPhrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivh2t-0005CN-GM; Sun, 26 Jan 2020 12:29:43 +0000
-Received: from mail.astim.si ([93.103.6.239])
+	id 1ivjdE-0006Up-A6; Sun, 26 Jan 2020 15:15:24 +0000
+Received: from mout-p-202.mailbox.org ([2001:67c:2050::465:202])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivh2l-0005By-62
- for openwrt-devel@lists.openwrt.org; Sun, 26 Jan 2020 12:29:37 +0000
-Received: from PCSaso ([192.168.10.2])
- by mail.astim.si (8.14.4/8.14.4) with ESMTP id 00QCTQUH028782
- for <openwrt-devel@lists.openwrt.org>; Sun, 26 Jan 2020 13:29:26 +0100
-From: "Saso Slavicic" <saso.linux@astim.si>
-To: <openwrt-devel@lists.openwrt.org>
-Date: Sun, 26 Jan 2020 13:29:27 +0100
-Message-ID: <000301d5d444$3fccd1f0$bf6675d0$@astim.si>
+ id 1ivjd4-0006TB-9k
+ for openwrt-devel@lists.openwrt.org; Sun, 26 Jan 2020 15:15:16 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mout-p-202.mailbox.org (Postfix) with ESMTPS id 485Gdd3pgFzQjjL;
+ Sun, 26 Jan 2020 16:15:01 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
+ (amavisd-new, port 10030)
+ with ESMTP id urWoI74_pmJw; Sun, 26 Jan 2020 16:14:55 +0100 (CET)
+From: Hauke Mehrtens <hauke@hauke-m.de>
+To: openwrt-devel@lists.openwrt.org
+Date: Sun, 26 Jan 2020 16:14:39 +0100
+Message-Id: <20200126151439.26720-1-hauke@hauke-m.de>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 14.0
-Thread-Index: AdXUQ1R2nAl3d918SzWxU7wvXJWYag==
-Content-Language: sl
-X-Scanned-By: MIMEDefang 2.84
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200126_042935_548861_E538773D 
-X-CRM114-Status: UNSURE (   5.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200126_071514_483787_12510910 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] umdns Command failed: Invalid argument after
- libubox commit 43a103ff17ee
+Subject: [OpenWrt-Devel] [PATCH libubox] blob: Check remaining size in
+ blob_parse()
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,62 +62,39 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Hauke Mehrtens <hauke@hauke-m.de>, ynezz@true.cz, jo@mein.io
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+This extends the blob_parse() function to check that no inner attribute
+is bigger than the outside attribute. The blob_parse_untrusted() should
+be used when we know the size of blob_attr *attr, in some other way.
 
+Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+---
+ blob.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-After the "blobmsg: blobmsg_parse and blobmsg_parse_array oob read fixes"
-update in libubox, umdns will fail to start with error printed in log:
-
-procd: /etc/rc.d/S80umdns: Command failed: Invalid argument
-
-The startup script sends this command to ubus and the command fails:
-
-# ubus call umdns set_config '{ "interfaces": [ "br-lan" ] }'
-Command failed: Invalid argument
-
-In umdns, the command fails in function umdns_set_config() after doing:
-
-if (!blobmsg_check_attr_list(data[CFG_INTERFACES], BLOBMSG_TYPE_STRING))
-	return UBUS_STATUS_INVALID_ARGUMENT;
-
-
-I've done some debugging and command will fail if the name of the interface
-is shorter than 8 characters, which br-lan is.
-
-After doing some digging around the sources of libubox, the check fail in
-blobmsg_check_name() on the line:
-
-if ((char *) hdr->name + blobmsg_namelen(hdr) + 1 > limit)
-	return false;
-
-I've added the printf statement just above:
-
-printf("hdr->name: %s, namelen: %d, attr: %s (%d)\n", hdr->name,
-blobmsg_namelen(hdr), (char *)attr, len);
-printf("hdr->name: %p, attr: %p (%d), limit: %p\n", hdr->name, attr, len,
-limit);
-
-and the result (of the failed attempt) is:
-
-hdr->name: interfaces, namelen: 10, attr: - (16)
-hdr->name: 0x95404e, attr: 0x954048 (16), limit: 0x954058
-
-It would seem as if the code is trying to compare the length of the
-attribute (br-lan I would assume) with the length of the name of the data
-section.
-If the attribute is too short, the 'interfaces' string is longer and the
-check fails...
-
-I'm sorry I don't know that much about the ubus code to see where exactly
-this logic fails.
-
-
-Regards, Saso
+diff --git a/blob.c b/blob.c
+index 528e717..0ed6c80 100644
+--- a/blob.c
++++ b/blob.c
+@@ -295,9 +295,10 @@ blob_parse(struct blob_attr *attr, struct blob_attr **data, const struct blob_at
+ 	struct blob_attr *pos;
+ 	int found = 0;
+ 	size_t rem;
++	size_t len = blob_raw_len(attr);
+ 
+ 	memset(data, 0, sizeof(struct blob_attr *) * max);
+-	blob_for_each_attr(pos, attr, rem) {
++	blob_for_each_attr_len(pos, attr, len, rem) {
+ 		found += blob_parse_attr(pos, rem, data, info, max);
+ 	}
+ 
+-- 
+2.20.1
 
 
 _______________________________________________

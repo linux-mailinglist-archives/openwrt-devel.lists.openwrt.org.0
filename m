@@ -2,80 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F77914A9BB
-	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Jan 2020 19:20:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85CD914A9BD
+	for <lists+openwrt-devel@lfdr.de>; Mon, 27 Jan 2020 19:21:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vFwiV1o3GquW0IruCe/szX2VWrcB9MxhofRktzrxLxs=; b=K41SPA8Anbq4HV
-	zSu8HfsNZ0+z/dLYYXXHjMBze6WIOAF91DjXem5kqXnjIIVBHGlCxOtS9hKqdQbQHhtzj6Og/30V0
-	FfPWyCOb8feCMV6qpQ85A5YQP6hgMr/Yhlvtt0UqD/Bu2ZwtzSNR1q3Tsn+eHZkKVNqMATOibpqa3
-	CElQPXIAFpg/2o0eohiU5HzQhrCYTQQQ9CZlI1s34waGaodXtQLY6iKXFD2KMpCtZTNDmIAG74BtS
-	dPCofGxpQlmAepJK9jVwJTbVb9N3kN2aqnF+w5i/jljsgak17q7J/jAxKbJlirnaaOrh9X8mfo1GN
-	RvzvUcKQb+TqQ0LB8UPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6x3144msqi/LY4HFp31V24DMZcfgy9/N9wsOeA0p6zg=; b=V80+0DwMj5AU6RqA8kCTkwRnG
+	tDhrzVPlflGnDk06uLGhFVpEMNwb5GSHI+a9omtXcVr6p7CU4HLCxjV+s2u4mn3w06IkRwRsXFDgV
+	5KBUVTO9fVZvceX71hyMkmSBZVlE37CGebWI2TlTGce1ns8zCKqtuTtXUireiQDPxeHtslj/M3aA2
+	8AnWxptt4EWzOL+bq3VAaRKg79lQuXVoCgtEknK24BHVkio6avw+vZdArjTuAS3o0q43yOyybiq8n
+	FuYzQwrBhkae68v3ZxEBvPKnsfpofW78rSEeGUaf1L6tThEmjoC5K4eOCt35PSMOc9SCIiLUuB4sH
+	MRyy5qMFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw8zc-0001He-4k; Mon, 27 Jan 2020 18:20:12 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iw91I-0002tQ-W4; Mon, 27 Jan 2020 18:21:57 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw8zK-0001H8-8S
- for openwrt-devel@lists.openwrt.org; Mon, 27 Jan 2020 18:19:55 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b6so12655301wrq.0
- for <openwrt-devel@lists.openwrt.org>; Mon, 27 Jan 2020 10:19:52 -0800 (PST)
+ id 1iw91A-0002sn-IY
+ for openwrt-devel@lists.openwrt.org; Mon, 27 Jan 2020 18:21:50 +0000
+Received: by mail-lf1-x142.google.com with SMTP id m30so6915580lfp.8
+ for <openwrt-devel@lists.openwrt.org>; Mon, 27 Jan 2020 10:21:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Vh4hNPKiwR9bZZ/IOHGZpr//2nwOSq7XZJfWp8uZF14=;
- b=VZpmiejmRcCTuPeaG78i4MX474Fpc6H1NG87eImDrnFE0sdOF/Knk1P7xSS+MZbsmr
- bRboR9iU/0Te26NwizehQ3nOCuohAO04cOo/WUQguo83ijwvfOeZhOkEiAJjVZwtxnd0
- s29Iq+vwbNuZh+l0JZGF+hYwSGKvV3eNijv4oYa8XF0+t4CJaBR0FFFwiibxF3FfxRV8
- fWCGNRvNScz2AecsBcsTDcDzYxqbujhsOFOeOWVbWc8fLYf5byTvvhlVCJzC9eKSOf7N
- HYNYrb/97DdpVhfk97F50o4OPMIkuJvz6ayJH5QzwM9dO4E1d6LXA9mzdBnf7POKJbNU
- VMnA==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=j18MeTntjI4j/DSOMtgUICpfyHOVVH0UgbZCYUOW/Ds=;
+ b=ULfHDoKMy/BekXQqsZvXAVQfEPw7QK7SCp0pTbD2UPrYKWkUrIl3Q+V8EF4oFZ4zj+
+ L7nHW2aXn53e06A7zK5XZknoqS4q/TCFW4udDX6pZtgLMTzVW+LsgEwneURgPBCTkHhi
+ GtSKrzrLG+WK0mlFeFDF+Bw+7FEDJNKQkkVJ20L+JRYNQoa+uZ3XCHtZK3pzQbmLJW8j
+ L52+R7c142m8UZEyZrLUgcgWquvY9c+lNNq0HaZXNh/wbgQV5BzwR6YObQRoPclj72VU
+ okeEYod0UBo68MW2UV2uMqwkpbiO6aYYxuPIjCpMam3RxPWD7mF+0Fccao499C+mNaBC
+ uViQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Vh4hNPKiwR9bZZ/IOHGZpr//2nwOSq7XZJfWp8uZF14=;
- b=G6Qi8v4UWS9h/SJcxQi6UuxFMgg/Vq55JXRJ6OWF9Y2lzFuRLWOUk0P00RNOro4y09
- sp3vAoO+zFfKLpFlrYcre5I0h9+Z/GxW9uG/Kiai2jjgs4RehUYOyuHOyURhQ6tBY1Ey
- zc7xvWFXsemRcfCKEwjeCOYVHUQcWbVDaJQAZ7aqZeJhzrkl2Q/wRSZ8jZcDeagrRzHb
- /o5X0SQ6NJrCbSAgLKdHyDOuj60oNELncz21nV3nWkC1prQMTPPZ+orwxo8PId1rm1B+
- Vq6bx0sE/mpwLj1u6BeXn2XfXcq6xQDl0ex0bNBJ41CTk7Qxqoz4ZYHioNrkx2z7rUkZ
- l35Q==
-X-Gm-Message-State: APjAAAUpXYBGwmK7vqZZFOIjXmqkJXwmMiuP7kjAx7zHbiGqm4I4/hM7
- MwxytnjOT4Gby9FZ6qBk0aCDbVo=
-X-Google-Smtp-Source: APXvYqxfnH6H3cHvrLz2BPSnV/hlAhV9fp6RE3R+cIzaEaSbUondQmXDo0ZvURfE0jkEbrCTLUcBpw==
-X-Received: by 2002:adf:f311:: with SMTP id i17mr24889488wro.81.1580149191083; 
- Mon, 27 Jan 2020 10:19:51 -0800 (PST)
-Received: from presler.lan (a109-49-10-77.cpe.netcabo.pt. [109.49.10.77])
- by smtp.gmail.com with ESMTPSA id x132sm27803wmg.0.2020.01.27.10.19.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 27 Jan 2020 10:19:50 -0800 (PST)
-From: Rui Salvaterra <rsalvaterra@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Mon, 27 Jan 2020 18:19:46 +0000
-Message-Id: <20200127181946.11978-1-rsalvaterra@gmail.com>
-X-Mailer: git-send-email 2.25.0
+ bh=j18MeTntjI4j/DSOMtgUICpfyHOVVH0UgbZCYUOW/Ds=;
+ b=it99LSCWDPncDOfeXkEjg6o+E2fFXK810feabg+9fPaZlZzWfLGyGGc8ICHpAfmPbN
+ eK2uKZ7J9btNqP63ODAkJMZmtXPdO9efU9BGXgHeHRyWJilxqaYawbgSRuVgCSMKkD/V
+ ok25VcM+p147fovI/jfkRxvp+w7LiKAsiBUgKuYkExkyhqV6S9OXRQP+hTu93S9hU/jQ
+ KdNWSpy76Sc57k9GJhRHED4wFRns3fBDtR/p9TwGmPcQxlNwPMcUQ8nZLgjdhxXUjc5s
+ nlNhimyn6W1pyVp/dlzUEaR06FJ+Qi4OC7yP/O1PCkmlPWIqROCHCeUSMXqXdvPzTF23
+ FKog==
+X-Gm-Message-State: APjAAAX+G2jB2fwpAZjSPEwbaUIB1v8yXziR05tg2+TdNCZLrPSUB18N
+ zy7GMCw6oqgZnMIRPpKJkQw=
+X-Google-Smtp-Source: APXvYqy5OIfokeYrXO/spMCluoqE3R1hHizeiNO7LwXXED66eL5s+ZsEXz24sTAdi0o5W/qveZYW+A==
+X-Received: by 2002:a05:6512:15d:: with SMTP id
+ m29mr8994668lfo.51.1580149303608; 
+ Mon, 27 Jan 2020 10:21:43 -0800 (PST)
+Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
+ [31.11.201.135])
+ by smtp.gmail.com with ESMTPSA id m13sm8560925lfo.40.2020.01.27.10.21.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 27 Jan 2020 10:21:42 -0800 (PST)
+To: Adrian Schmutzler <mail@adrianschmutzler.de>, gch981213@gmail.com
+References: <020101d563fa$a14539a0$e3cface0$@adrianschmutzler.de>
+ <b46a0006-a510-0a59-600c-c31d94093caf@david-bauer.net>
+ <003201d56565$33a9b580$9afd2080$@adrianschmutzler.de>
+ <d1100196-b9cc-22cb-55d3-5dd6937a9b38@gmail.com>
+ <015201d5d064$8f5d96c0$ae18c440$@adrianschmutzler.de>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <81df4caf-8f04-74a1-dd1c-0beea3fca222@gmail.com>
+Date: Mon, 27 Jan 2020 19:21:41 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <015201d5d064$8f5d96c0$ae18c440$@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_101954_302108_2694119D 
-X-CRM114-Status: GOOD (  12.81  )
+X-CRM114-CacheID: sfid-20200127_102148_640065_56B9384B 
+X-CRM114-Status: GOOD (  31.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rsalvaterra[at]gmail.com]
+ provider [pepe2k[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,8 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-Subject: [OpenWrt-Devel] [RFC PATCH] ath9k: enable hardware random number
- generator.
+Subject: Re: [OpenWrt-Devel] Migration in ath79 for swapped ethernet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,267 +106,163 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Rui Salvaterra <rsalvaterra@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: openwrt-devel@lists.openwrt.org, ansuelsmth@gmail.com,
+ 'David Bauer' <mail@david-bauer.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The ath9k driver is able to leverage the PHY ADC in order to provide a
-generic hardware random number generator to the kernel, filling up the
-entropy pool as required. Expose this feature in the build system and
-remove the old entropy patch, which only obtains entropy from the ADC
-once, when the ath9k driver is initialised.
+Hi Adrian,
 
-Signed-off-by: Rui Salvaterra <rsalvaterra@gmail.com>
----
- config/Config-kernel.in                       |   4 +
- package/kernel/mac80211/ath.mk                |   7 +
- .../ath/543-ath9k_entropy_from_adc.patch      | 186 ------------------
- 3 files changed, 11 insertions(+), 186 deletions(-)
- delete mode 100644 package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch
+On 21.01.2020 15:10, Adrian Schmutzler wrote:
 
-diff --git a/config/Config-kernel.in b/config/Config-kernel.in
-index 20930326ca..2f4cda4275 100644
---- a/config/Config-kernel.in
-+++ b/config/Config-kernel.in
-@@ -220,6 +220,10 @@ config KERNEL_AIO
- 	bool "Compile the kernel with asynchronous IO support"
- 	default y if !SMALL_FLASH
- 
-+config KERNEL_HW_RANDOM
-+	bool "Compile the kernel with support for hardware random number generators"
-+	default n
-+
- config KERNEL_FHANDLE
- 	bool "Compile the kernel with support for fhandle syscalls"
- 	default y if !SMALL_FLASH
-diff --git a/package/kernel/mac80211/ath.mk b/package/kernel/mac80211/ath.mk
-index 788131b751..56859cd3c1 100644
---- a/package/kernel/mac80211/ath.mk
-+++ b/package/kernel/mac80211/ath.mk
-@@ -8,6 +8,7 @@ PKG_CONFIG_DEPENDS += \
- 	CONFIG_PACKAGE_ATH_SPECTRAL \
- 	CONFIG_PACKAGE_ATH_DYNACK \
- 	CONFIG_ATH9K_SUPPORT_PCOEM \
-+	CONFIG_ATH9K_HWRNG \
- 	CONFIG_ATH9K_TX99 \
- 	CONFIG_ATH10K_LEDS \
- 	CONFIG_ATH10K_THERMAL \
-@@ -45,6 +46,7 @@ config-$(CONFIG_TARGET_ipq40xx) += ATH10K_AHB
- config-$(CONFIG_PCI) += ATH9K_PCI
- config-$(CONFIG_ATH_USER_REGD) += ATH_USER_REGD
- config-$(CONFIG_ATH9K_SUPPORT_PCOEM) += ATH9K_PCOEM
-+config-$(CONFIG_ATH9K_HWRNG) += ATH9K_HWRNG
- config-$(CONFIG_ATH9K_TX99) += ATH9K_TX99
- config-$(CONFIG_ATH9K_UBNTHSR) += ATH9K_UBNTHSR
- config-$(CONFIG_ATH10K_LEDS) += ATH10K_LEDS
-@@ -211,6 +213,11 @@ define KernelPackage/ath9k/config
- 		bool "Support chips used in PC OEM cards"
- 		depends on PACKAGE_kmod-ath9k
- 
-+	config ATH9K_HWRNG
-+		bool "Random number generator support"
-+		depends on PACKAGE_kmod-ath9k
-+		select KERNEL_HW_RANDOM
-+
-        config ATH9K_TX99
-                bool "Enable TX99 support (WARNING: testing only, breaks normal operation!)"
-                depends on PACKAGE_kmod-ath9k
-diff --git a/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch b/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch
-deleted file mode 100644
-index 64bd6cacfd..0000000000
---- a/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch
-+++ /dev/null
-@@ -1,186 +0,0 @@
----- a/drivers/net/wireless/ath/ath9k/hw.h
--+++ b/drivers/net/wireless/ath/ath9k/hw.h
--@@ -722,6 +722,7 @@ struct ath_spec_scan {
--  * @config_pci_powersave:
--  * @calibrate: periodic calibration for NF, ANI, IQ, ADC gain, ADC-DC
--  *
--+ * @get_adc_entropy: get entropy from the raw ADC I/Q output
--  * @spectral_scan_config: set parameters for spectral scan and enable/disable it
--  * @spectral_scan_trigger: trigger a spectral scan run
--  * @spectral_scan_wait: wait for a spectral scan run to finish
--@@ -744,6 +745,7 @@ struct ath_hw_ops {
-- 			struct ath_hw_antcomb_conf *antconf);
-- 	void (*antdiv_comb_conf_set)(struct ath_hw *ah,
-- 			struct ath_hw_antcomb_conf *antconf);
--+	void (*get_adc_entropy)(struct ath_hw *ah, u8 *buf, size_t len);
-- 	void (*spectral_scan_config)(struct ath_hw *ah,
-- 				     struct ath_spec_scan *param);
-- 	void (*spectral_scan_trigger)(struct ath_hw *ah);
----- a/drivers/net/wireless/ath/ath9k/ar9003_phy.c
--+++ b/drivers/net/wireless/ath/ath9k/ar9003_phy.c
--@@ -1927,6 +1927,26 @@ void ar9003_hw_init_rate_txpower(struct
-- 	}
-- }
-- 
--+static void ar9003_hw_get_adc_entropy(struct ath_hw *ah, u8 *buf, size_t len)
--+{
--+	int i, j;
--+
--+	REG_RMW_FIELD(ah, AR_PHY_TEST, AR_PHY_TEST_BBB_OBS_SEL, 1);
--+	REG_CLR_BIT(ah, AR_PHY_TEST, AR_PHY_TEST_RX_OBS_SEL_BIT5);
--+	REG_RMW_FIELD(ah, AR_PHY_TEST_CTL_STATUS, AR_PHY_TEST_CTL_RX_OBS_SEL, 0);
--+
--+	memset(buf, 0, len);
--+	for (i = 0; i < len; i++) {
--+		for (j = 0; j < 4; j++) {
--+			u32 regval = REG_READ(ah, AR_PHY_TST_ADC);
--+
--+			buf[i] <<= 2;
--+			buf[i] |= (regval & 1) | ((regval & BIT(10)) >> 9);
--+			udelay(1);
--+		}
--+	}
--+}
--+
-- void ar9003_hw_attach_phy_ops(struct ath_hw *ah)
-- {
-- 	struct ath_hw_private_ops *priv_ops = ath9k_hw_private_ops(ah);
--@@ -1963,6 +1983,7 @@ void ar9003_hw_attach_phy_ops(struct ath
-- 	priv_ops->set_radar_params = ar9003_hw_set_radar_params;
-- 	priv_ops->fast_chan_change = ar9003_hw_fast_chan_change;
-- 
--+	ops->get_adc_entropy = ar9003_hw_get_adc_entropy;
-- 	ops->antdiv_comb_conf_get = ar9003_hw_antdiv_comb_conf_get;
-- 	ops->antdiv_comb_conf_set = ar9003_hw_antdiv_comb_conf_set;
-- 	ops->spectral_scan_config = ar9003_hw_spectral_scan_config;
----- a/drivers/net/wireless/ath/ath9k/init.c
--+++ b/drivers/net/wireless/ath/ath9k/init.c
--@@ -819,7 +819,8 @@ static void ath9k_init_txpower_limits(st
-- 	if (ah->caps.hw_caps & ATH9K_HW_CAP_5GHZ)
-- 		ath9k_init_band_txpower(sc, NL80211_BAND_5GHZ);
-- 
---	ah->curchan = curchan;
--+	if (curchan)
--+		ah->curchan = curchan;
-- }
-- 
-- static const struct ieee80211_iface_limit if_limits[] = {
--@@ -1015,6 +1016,18 @@ static void ath9k_set_hw_capab(struct at
-- 	wiphy_ext_feature_set(hw->wiphy, NL80211_EXT_FEATURE_AIRTIME_FAIRNESS);
-- }
-- 
--+static void ath_get_initial_entropy(struct ath_softc *sc)
--+{
--+	struct ath_hw *ah = sc->sc_ah;
--+	char buf[256];
--+
--+	/* reuse last channel initialized by the tx power test */
--+	ath9k_hw_reset(ah, ah->curchan, NULL, false);
--+
--+	ath9k_hw_get_adc_entropy(ah, buf, sizeof(buf));
--+	add_device_randomness(buf, sizeof(buf));
--+}
--+
-- int ath9k_init_device(u16 devid, struct ath_softc *sc,
-- 		    const struct ath_bus_ops *bus_ops)
-- {
--@@ -1060,6 +1073,8 @@ int ath9k_init_device(u16 devid, struct
-- 		ARRAY_SIZE(ath9k_tpt_blink));
-- #endif
-- 
--+	ath_get_initial_entropy(sc);
--+
-- 	/* Register with mac80211 */
-- 	error = ieee80211_register_hw(hw);
-- 	if (error)
----- a/drivers/net/wireless/ath/ath9k/hw-ops.h
--+++ b/drivers/net/wireless/ath/ath9k/hw-ops.h
--@@ -100,6 +100,12 @@ static inline void ath9k_hw_tx99_set_txp
-- 		ath9k_hw_ops(ah)->tx99_set_txpower(ah, power);
-- }
-- 
--+static inline void ath9k_hw_get_adc_entropy(struct ath_hw *ah,
--+		u8 *buf, size_t len)
--+{
--+	ath9k_hw_ops(ah)->get_adc_entropy(ah, buf, len);
--+}
--+
-- #ifdef CPTCFG_ATH9K_BTCOEX_SUPPORT
-- 
-- static inline void ath9k_hw_set_bt_ant_diversity(struct ath_hw *ah, bool enable)
----- a/drivers/net/wireless/ath/ath9k/ar5008_phy.c
--+++ b/drivers/net/wireless/ath/ath9k/ar5008_phy.c
--@@ -1320,9 +1320,30 @@ void ar5008_hw_init_rate_txpower(struct
-- 	}
-- }
-- 
--+static void ar5008_hw_get_adc_entropy(struct ath_hw *ah, u8 *buf, size_t len)
--+{
--+	int i, j;
--+
--+	REG_RMW_FIELD(ah, AR_PHY_TEST, AR_PHY_TEST_BBB_OBS_SEL, 1);
--+	REG_CLR_BIT(ah, AR_PHY_TEST, AR_PHY_TEST_RX_OBS_SEL_BIT5);
--+	REG_RMW_FIELD(ah, AR_PHY_TEST2, AR_PHY_TEST2_RX_OBS_SEL, 0);
--+
--+	memset(buf, 0, len);
--+	for (i = 0; i < len; i++) {
--+		for (j = 0; j < 4; j++) {
--+			u32 regval = REG_READ(ah, AR_PHY_TST_ADC);
--+
--+			buf[i] <<= 2;
--+			buf[i] |= (regval & 1) | ((regval & BIT(9)) >> 8);
--+			udelay(1);
--+		}
--+	}
--+}
--+
-- int ar5008_hw_attach_phy_ops(struct ath_hw *ah)
-- {
-- 	struct ath_hw_private_ops *priv_ops = ath9k_hw_private_ops(ah);
--+	struct ath_hw_ops *ops = ath9k_hw_ops(ah);
-- 	static const u32 ar5416_cca_regs[6] = {
-- 		AR_PHY_CCA,
-- 		AR_PHY_CH1_CCA,
--@@ -1337,6 +1358,8 @@ int ar5008_hw_attach_phy_ops(struct ath_
-- 	if (ret)
-- 	    return ret;
-- 
--+	ops->get_adc_entropy = ar5008_hw_get_adc_entropy;
--+
-- 	priv_ops->rf_set_freq = ar5008_hw_set_channel;
-- 	priv_ops->spur_mitigate_freq = ar5008_hw_spur_mitigate;
-- 
----- a/drivers/net/wireless/ath/ath9k/ar9002_phy.h
--+++ b/drivers/net/wireless/ath/ath9k/ar9002_phy.h
--@@ -20,6 +20,12 @@
-- #define PHY_AGC_CLR             0x10000000
-- #define RFSILENT_BB             0x00002000
-- 
--+#define AR_PHY_TEST_BBB_OBS_SEL       0x780000
--+#define AR_PHY_TEST_BBB_OBS_SEL_S     19
--+
--+#define AR_PHY_TEST_RX_OBS_SEL_BIT5_S 23
--+#define AR_PHY_TEST_RX_OBS_SEL_BIT5   (1 << AR_PHY_TEST_RX_OBS_SEL_BIT5_S)
--+
-- #define AR_PHY_TURBO                0x9804
-- #define AR_PHY_FC_TURBO_MODE        0x00000001
-- #define AR_PHY_FC_TURBO_SHORT       0x00000002
--@@ -36,6 +42,9 @@
-- 
-- #define AR_PHY_TEST2			0x9808
-- 
--+#define AR_PHY_TEST2_RX_OBS_SEL        0x3C00
--+#define AR_PHY_TEST2_RX_OBS_SEL_S      10
--+
-- #define AR_PHY_TIMING2           0x9810
-- #define AR_PHY_TIMING3           0x9814
-- #define AR_PHY_TIMING3_DSC_MAN   0xFFFE0000
--@@ -393,6 +402,8 @@
-- #define AR_PHY_RFBUS_GRANT       0x9C20
-- #define AR_PHY_RFBUS_GRANT_EN    0x00000001
-- 
--+#define AR_PHY_TST_ADC      0x9C24
--+
-- #define AR_PHY_CHAN_INFO_GAIN_DIFF             0x9CF4
-- #define AR_PHY_CHAN_INFO_GAIN_DIFF_UPPER_LIMIT 320
-- 
+[...]
+
+>> I'm in the middle of migrating some devices from soon-to-be-obsolete
+>> ar71xx to ath79 target and was wondering about status of the eth0/eth1
+>> vs. LAN/WAN assignment issue.
+> 
+> To start with the end: I've decided to stop working on this.
+> 
+> The two major problems are obvious:
+> 1. How to make sure we find every possible location of eth0/eth1 in user code
+> 
+> This is a problem which can be solved, and if it does not cover every single special case I could live with it.
+> 
+> 2. How to find out whether we are updating from ar71xx or not.
+> 
+> This is a hard one: We cannot rely on the ethernet setup itself, as the user might have changed it for whatever reason. We could rely on some other parameters as suggested (wmac path etc.), but that would not be generally applicable and still would impose some boundary conditions (e.g. start before the wmac migration, as then config would be "old" and paths on the device would already be "new", making identification of the update possible).
+> 
+> An alternative way would be to exploit /etc/board.json for that, given that it is not updated during sysupgrade (I'm not sure what's happening here). If it is not updated, it would give us access to the configuration when the user installed the device, and without the changes the user would have made to /etc/config/network. One could then parse and compare /etc/board.json to some (device-specific) reference (e.g. wan=eth0) and base the decision to apply migration on that. Afterwards, a new /etc/board.json is generated, so the condition is not met anymore. Despite for the device-specific condition, this would also be a generally applicable concept.
+
+IMHO, that would never look like a clean and nice solution and we would 
+need to carry it in code for who knows how long (imagine some ar71xx 
+board will get migrated after 20.x release).
+
+> All in all, this second problem (when to migrate) is the bigger problem. We also have a similar case in https://github.com/openwrt/openwrt/pull/2649
+> 
+> So far for the technical aspects. From the organizational point of view, for a long time I thought I'm the only one caring about this topic. Since there was not much interest in bringing this to 19.07 before the release, I do not see much use of adding it afterwards now.
+
+As the 19.07 was released with ar71xx I didn't consider that important 
+at the time. Now it's time to consider it as a problem and prepare 
+solution _before_ the next release which won't include ar71xx.
+
+> In any case, the migration script will be a complicated task and will certainly introduce cornercases as well. All in all, I do not think it's worth it, and we should keep to advise people to flash with "-n" that single time when upgrading from ar71xx to ath79. For the pros that will change their Ethernet setup by hand later without using "-n", I'd still provide the "easy" migrations like e.g. LED names.
+
+At the very beginning, ath79 was considered as a brand new target 
+without _any_ concerns about migration path from ar71xx. But then, 
+things got complicated (broken).
+
+Either we support seamless ar71xx -> ath79 migration for _all_ devices 
+supported in both targets or we just... don't. There shouldn't be cases 
+where user has to check or ask whether owned device can be upgraded with 
+preserving settings.
+
+And I really don't consider LED naming migration as important as network 
+interfaces naming swap (LED naming convention in upstream got changed 
+anyway so we are expecting another change/migration at some point in 
+future). Also, LEDs names isn't the only problem, in some cases type of 
+trigger has to be changed (e.g. netdev vs. switch).
+>> I'm aware of the 8dde11d521 ("ath79: dts: drop "simple-mfd" for gmacs in
+>> SoC dtsi") [0] and following changes but that "fixed" the problem only
+>> for devices which were following already reversed (I wouldn't call it
+>> wrong or incorrect, I also prefer to have LAN on eth0 interface) SOC's
+>> GMACx <> ethx assignment/register under ar71xx target - e.g. LAN on eth0
+>> which is in fact SOC's GMAC1 and WAN on eth1 which is SOC's GMAC0. Good
+>> explanation of that inverted assignment can be found in Jeff's patch
+>> here: [1].
+> 
+> Well, effectively a lot of devices match ar71xx order again, but also several do not match anymore after that.
+> 
+> For the underlying logic, I think Chuanhong will be the best person to discuss with.
+
+Chuanhong, could you join the discussion?
+
+> I've tried to start a list of devices where eth0/eth1 are swapped compared to ar71xx _now_ here:
+> https://openwrt.org/docs/guide-user/installation/ar71xx.to.ath79#devices_with_known_config_changes_without_migration_available
+
+There is easy way to check GMACx <> ethX assignment order in mach-*.c 
+files. Just check order of ath79_register_eth() calls:
+
+ath79_register_eth(0);
+ath79_register_eth(1);
+
+Will register GMAC0 as eth0, GMAC1 as eth1
+
+ath79_register_eth(1);
+ath79_register_eth(0);
+
+Will register GMAC1 as eth0, GMAC0 as eth1 (current ath79 "order")
+
+>> I have a feeling that the idea with migration script got abandoned
+>> (Adrian?), so I was wondering if there is any other way we could
+>> preserve ar71xx LAN/WAN <> ethX assignment in ath79?
+> 
+> See above, yes, I effectively abandoned that.
+
+Got it, so alternative solution is required.
+
+>> For example, I have a QCA9531 based device with PHY4 (connected directly
+>> to GMAC0) labeled as LAN (and registered as eth0 in kernel) and PHY3
+>> (connected to GMAC1 over internal switch) labeled as WAN. On ath79, due
+>> to change introduced in 8dde11d521, LAN and WAN order gets swapped (as
+>> expected) but partially reverting above change (adding back "simple-mfd"
+>> to eth1 in device's DTS, see below) brings back the "old" order of
+>> interfaces.
+>> 
+>> &eth1 {
+>> 	compatible = "qca,ar9330-eth", "syscon", "simple-mfd";
+>> 	mtd-mac-address = <&art 0x6>;
+>> };
+>> 
+>> But it doesn't seem as a proper fix to me (maybe I'm wrong?) thus the
+>> question about any other, better approach?
+> 
+> That's how I feel. For me, this always looked like a hack to me (based on my shallow level of understanding, though).
+> There might be special cases where this is necessary (e.g. force a device to be eth0 due to failsafe), but I still do not like it.
+
+I was considering also aliases in DTSes.
+
+> With the first device where I observed the swapped eth0/eth1, the GLinet AR150, Chuanhong explained me that the setup in ath79 would be more correct than the one in ar71xx.
+> After all, if we advise to flash with -n anyway, I would prefer to have the "more correct" setup in ath79 compared to having to stick to the setup from ar71xx where that applies.
+
+It's just semantics. I don't think there is a "more correct" setup here. 
+And what's more, there is no single "correct" setup in ar71xx either as 
+you could register GMACs in two different orders (see above comment 
+about mach-*.c files).
+
+> So, no matter what we do, there is no easy way forward.
+
+We could remove all ar71xx -> ath79 migration helper scripts, ar71xx 
+board names from supported devices lists in ath79 images and make the 
+target a brand new, without any concerns about soon-to-be obsolete ar71xx ;)
+
 -- 
-2.25.0
+Cheers,
+Piotr
+
+> 
+> Best
+> 
+> Adrian
+> 
+>> 
+>> [0] https://github.com/openwrt/openwrt/commit/8dde11d521
+>> [1]
+>> https://www.mail-archive.com/openwrt-
+>> devel@lists.openwrt.org/msg48526.html
+>> 
+>> --
+>> Cheers,
+>> Piotr
+>> 
+>> 
+>> _______________________________________________
+>> openwrt-devel mailing list
+>> openwrt-devel@lists.openwrt.org
+>> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+> 
 
 
 _______________________________________________

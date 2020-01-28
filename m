@@ -2,77 +2,72 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 813AB14BD62
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Jan 2020 16:59:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBF9214BDD6
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Jan 2020 17:35:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ymQlKJQgt/jgL1+0pPO9zO9KGdCX1g11J6eYq8GOSvc=; b=mQ7E52gLfVCSD4
-	ARFh4WBsm9WH7N8VO3efrvSF5YLJZ7yIVYv9j+3oNoOtFWmmUEnegaIMyaplpqSkjA04PSu1TCnx7
-	n0HeIqhJnYngw3OKkZnH7/YzU9s08iXhLoezMm/UWtjzKIiZhz2hTTFqp8GzIFre7xXUwsmpJAdYi
-	3BEXmtDD4AdTQeguvE4SCWC4a2/SAXtJWR6BCf+lPHLOvCj7smmuu11ZIe9rSxTLgImO5PknKJiVF
-	EqFCGavT+oKOjQKe/+Y3HDosF92PJggPzZcybjLgO8R7oqCRh81BkEEGX8TbTgNvBurIuhCagvvdf
-	JEwgpBVW6uB/9nRSYByg==;
+	List-Owner; bh=WcoDUCoNV2Auq9JGYHlL8r65ndV4Zw3BJUDvTWRDEek=; b=aJINcn923Z0+Z3
+	Ky1mYDttNaqAWJrRhc/W7Dkz4LpFiY6jcB2VS/nM45C8MjNz6zu85UUzAxNH52kqjRe7IXTrbvbzI
+	wKBwdFfM37aOuMlz6z+MmN0pR+kGhyQC5A5pApQN3NnQNC26rgzDaEDV6e6KNRxJ754eQ81crSMEZ
+	ea55Vi2tFAjqAnTUNEh8XDfKXOVgUsxR0N8ClY7EV8UYN0AMRIz7/iJtL0MYtjv0CTQ3pCx5pFnU1
+	3IJ18KwChpadluOiqc7jaLCbuii5jFFpEWKY/3xogDKSjo94MoDllptbHe+fyrxLRuQuodHoQrUR5
+	sMTJ9JCEIIU/9XeX9XXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwTHC-0006UJ-QW; Tue, 28 Jan 2020 15:59:42 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1iwTpc-0002Wz-HW; Tue, 28 Jan 2020 16:35:16 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwTH4-0006Tm-Kd
- for openwrt-devel@lists.openwrt.org; Tue, 28 Jan 2020 15:59:36 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1N1xdf-1jh2Tb0BBJ-012KWH; Tue, 28
- Jan 2020 16:59:30 +0100
+ id 1iwTpI-0002WL-FM
+ for openwrt-devel@lists.openwrt.org; Tue, 28 Jan 2020 16:34:58 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue109
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MYeV3-1j1cNB13pL-00Vfji; Tue, 28
+ Jan 2020 17:34:54 +0100
 From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
-	<gch981213@gmail.com>
-References: <020101d563fa$a14539a0$e3cface0$@adrianschmutzler.de>
- <b46a0006-a510-0a59-600c-c31d94093caf@david-bauer.net>
- <003201d56565$33a9b580$9afd2080$@adrianschmutzler.de>
- <d1100196-b9cc-22cb-55d3-5dd6937a9b38@gmail.com>
- <015201d5d064$8f5d96c0$ae18c440$@adrianschmutzler.de>
- <81df4caf-8f04-74a1-dd1c-0beea3fca222@gmail.com>
-In-Reply-To: <81df4caf-8f04-74a1-dd1c-0beea3fca222@gmail.com>
-Date: Tue, 28 Jan 2020 16:59:29 +0100
-Message-ID: <00c201d5d5f3$ec9b5630$c5d20290$@adrianschmutzler.de>
+To: "'David Bauer'" <mail@david-bauer.net>, <openwrt-devel@lists.openwrt.org>
+References: <20200126222605.152990-1-mail@david-bauer.net>
+In-Reply-To: <20200126222605.152990-1-mail@david-bauer.net>
+Date: Tue, 28 Jan 2020 17:34:53 +0100
+Message-ID: <00cb01d5d5f8$debbe840$9c33b8c0$@adrianschmutzler.de>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQGe0uH3YMoujDnAXodp5C7FQpVSGgH5MCOhAdXATn4CkcEaigGcwTU9ArqxLZCoGH4m4A==
+Thread-Index: AQJpW0yFKgz3ydTO/z1BBRqerXr2oabZNydw
 Content-Language: de
-X-Provags-ID: V03:K1:niTsQcrfP37K24riy3E4hMKOdvRFQ3/2oQHyzwblg202odMgOvz
- 2SCWkXlY8uHvSIQ1Mvpxi0y+cuIrmEFMeW9801VMJTCv+s7EvLp61409Hkv5WIM550+U58u
- UxaBYoRcciVqd/EXUBCovOr4rMSwncsoEBNsPdErijTIZlvfzizrSATimumJ4jGJ1Avct+K
- EjSdCFbobrgnShwC8jP5g==
+X-Provags-ID: V03:K1:X/SRmwLQ/qdRbWy3TqLZ4FgZgU5NIUMsCKGtJkklabNjLgS0se4
+ IJzsnjXv7a4xHEB7y4ogW6obbzxBBYNFBA+4f8yraEXtE/5/MMpwa0Sw2z6zTqtX7E+ZB+W
+ ahmSl7vdASGkwdk2RWmr7p7NHrEGZEP7ch3LHncYzODGb9PBpwci1xnExRa6FODGEKWkY+4
+ Tdo9vRl+pE6AKnlnnHKuw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pIRWSem1XiI=:KFFaaj0uAEMghOqkwddPvR
- yld2MqTiRpaH0JWIgjP9kn9hVhEvZ893j2DSrK55sMk4nhE/jtGlAkpsUhjbQRIvmqoAf2Mgu
- GEYOoZ8zZyyyEMmNsU9EuhpWwvhA8eqnVrftsHgXVspSKjD9YQcYZ4d7TmceEPI7unX4WTIOR
- PbkhDJ3akusGAHCDuRkc7hFKYgROzT7/VrWqdYHNA7zI4neqOYoILLrJqOMF4pMaocz0ZxN+0
- XP2XmiYxmhqWt0okJVbI/TjOMci+e2RTMLc/DMs54jiOxd8+Gryzs/gidEvSQX1QolRtLkxIm
- HyLlABVO9ZH+/xHACwxABAl8d6QsNVSJHTi8BGEijXMmlRbAYPU4SolCJ0nBpjNKDKTqQPCUO
- yTFMZx6NAptP5Fbc16fnTib6Wncz3ijQod+oiar7h2o+X9SclHCz0bTtNeIQoyD3BL0Bos6H0
- ZSb8gtactE8BxoqyAkUIyYV/1J9CUzj8VfK+6zAOleEW5ju3+5NUgbp36GFG1j0OFKIVv1E82
- YK8VpJ100/F7nzDkXbiE2ug4F++zwbMWoc1ki+Gtm2/gsLSFzhO2BbzZ8xGYEzZSJL4niTjJL
- xthAR7pyjWdl96CAkRiBY7IM9psY17wXSU0F/ohC5JTf53aq9QSc8b94kjhepSCHNwpn9yFzA
- 8uCquxoIQGidYYYdGnXjIEj9o+84mY5NoG3dGAYNXF4Qy3BelxRCR5YFbT5aveV3YZuK7tg1r
- U0rqBtiYF77neXNyUX2S+ff90qHubi9UKiezu80qL54lGFbeVaTs6shDajLr0he7BlaCr3oKU
- gB/sHBwInsKnzVUG1kQZHS8tuc+8gBeAOOjhArvK+h5y9i2095rTvoGpS+H/Bk+KQwBJicz
+X-UI-Out-Filterresults: notjunk:1;V03:K0:jP9wrnnd6hY=:xHaQB1aiFo5r2etWKnMSQe
+ 5c/FltrrMDBC5lwgT3+xJkhHKn6Dx7+9HLIkucrUlL4mce7HpQqCox/wTQngZILw0qzQDb57E
+ aN4Av+MvNXYnXSaoiH42T1MV0m8Jvk9NUPK2yNJeLV+MN733UQ5UYplTRDblA/lEdGa42ZNe3
+ WBKhnBXnH7tineo0q/TEfuVQs8xdB6oDSOZiadcLV3SJinb7nAOaK6jsP/tZYuzPBdRpHoP2H
+ bhnAoKjt0W6KBw574uTALE1m5cmwm/21YQtpH16zoMNl6q0fQxsGOMaeE1UqKta2AsVIcM8HF
+ f5hE7WSyJ4f5HOQB2A1LUgvVus13R5GNLUh3nlJoqaCBsOIsr9fce3+t6uD3guUK+7jP2C2DQ
+ MIS0mZaVSj449mm7aJKQh6SheC2SrbYc+706fFMVviZ/VXL8fDn917UcNaNwnLOsCAegJKwaM
+ 5O6Gjx4oYaCvYSCmk6/KwjjRhv9ObjmNgwj1RmOhhvBfNAu6PuO8kV5VUCMosPny0l6kVJ50v
+ 1UIkUl+0GBXqm2QFxpUN3ZEy9uWgJsAi8FtHv+ImDsudpc4UDGhoRDVrgT/efGtYNoi+mXcwK
+ cerJBM0uDT6AZImnHd0L0vClfZMpAIFqzLD2b5QhK9S7W9hE7eVMXB4eTAweqXp/8oct4CVM6
+ QvlBWrOmOQ3Q6rGGF7XnTalWv6GARPQvqFyS79pXRnrVfCVHQhiBqWvIZWlUEXUivUzMYvAI/
+ UPX/192rWHtYaUniyE5PVTjvPcp9LSfAlFzR+fsmN46ZHpE82wiVF7hS2rqYBG+J6R1wyjNeF
+ 7SC5vmdfIrzDPrIQ6jt6Uoh5A/dOpc7/bqvdHgycqNd4t+AmsQI2MZjO0WlMFU1ZhgpxUMe
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_075934_973743_A04934D6 
-X-CRM114-Status: GOOD (  18.35  )
+X-CRM114-CacheID: sfid-20200128_083456_814697_CCEA40AD 
+X-CRM114-Status: GOOD (  23.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Migration in ath79 for swapped ethernet
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: add support for GL.iNet
+ microuter-N300
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,78 +79,402 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, ansuelsmth@gmail.com,
- 'David Bauer' <mail@david-bauer.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Hi David,
 
-> There is easy way to check GMACx <> ethX assignment order in mach-*.c
-> files. Just check order of ath79_register_eth() calls:
-> 
-> ath79_register_eth(0);
-> ath79_register_eth(1);
-> 
-> Will register GMAC0 as eth0, GMAC1 as eth1
-> 
-> ath79_register_eth(1);
-> ath79_register_eth(0);
-> 
-> Will register GMAC1 as eth0, GMAC0 as eth1 (current ath79 "order")
+some nitpick comments below.
 
-I thought that once as well, but then found several cases where I couldn't rely
-on it for eth0/eth1 order on running device. (But it's too long ago for me to be
-more specific.)
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of David Bauer
+> Sent: Sonntag, 26. Januar 2020 23:26
+> To: openwrt-devel@lists.openwrt.org
+> Subject: [OpenWrt-Devel] [PATCH] ramips: add support for GL.iNet microuter-
+> N300
+> 
+> The GL.iNet microuter-N300 (internally referred as MT300N-v4) is a
+> pocket-size travel router. It is essentially identical to the VIXMINI
+> (internally referred as MT300N-v3) but with double the RAM and
+> SPI-flash.
 
-Despite, from what I understand our current problem is the driver implementation
-in ath79, which needs to skip/delay initialization in certain cases.
-So, it's not so much about finding out the situation on ar71xx, but
-understanding the situation in ath79 as well. All-in-all, I think this will come
-down to having to check each device manually.
+One could consider adding the v3/v4 names with the DEVICE_ALT0 syntax.
 
 > 
-> >> I have a feeling that the idea with migration script got abandoned
-> >> (Adrian?), so I was wondering if there is any other way we could
-> >> preserve ar71xx LAN/WAN <> ethX assignment in ath79?
-> >
-> > See above, yes, I effectively abandoned that.
+> Hardware
+> --------
+> SoC:   MediaTek MT7628NN
+> RAM:   128M DDR2
+> FLASH: 16M
+> LED:   Power - WLAN
+> BTN:   Reset
+> UART:  115200 8N1
+>        TX and RX are labled on the board as pads next to the SoC
 > 
-> Got it, so alternative solution is required.
+> Installation via web-interface
+> ------------------------------
+> 1. Visit the web-interface at 192.168.8.1
+>    Note: The ethernet port is by default WAN. So you need to connect to
+>    the router via WiFi
 > 
-> >> For example, I have a QCA9531 based device with PHY4 (connected directly
-> >> to GMAC0) labeled as LAN (and registered as eth0 in kernel) and PHY3
-> >> (connected to GMAC1 over internal switch) labeled as WAN. On ath79, due
-> >> to change introduced in 8dde11d521, LAN and WAN order gets swapped (as
-> >> expected) but partially reverting above change (adding back "simple-mfd"
-> >> to eth1 in device's DTS, see below) brings back the "old" order of
-> >> interfaces.
-> >>
-> >> &eth1 {
-> >> 	compatible = "qca,ar9330-eth", "syscon", "simple-mfd";
-> >> 	mtd-mac-address = <&art 0x6>;
-> >> };
-> >>
-> >> But it doesn't seem as a proper fix to me (maybe I'm wrong?) thus the
-> >> question about any other, better approach?
-> >
-> > That's how I feel. For me, this always looked like a hack to me (based on my
-> shallow level of understanding, though).
-> > There might be special cases where this is necessary (e.g. force a device to
-be
-> eth0 due to failsafe), but I still do not like it.
+> 2. Navigate to the Update tab on the left side.
 > 
-> I was considering also aliases in DTSes.
+> 3. Select "Local Update"
+> 
+> 4. Upload the OpenWrt sysupgrade image.
+>    Note: Make sure you select not to preserve the configuration.
+> 
+> Installation via U-Boot
+> -----------------------
+> 1. Hold down the reset button while powering on the device.
+>    Wait for the LED to flash 5 times.
+> 
+> 2. Assign yourself a static IPv4 in 192.168.1.0/24
+> 
+> 3. Upload the OpenWrt sysupgrade image at 192.168.1.1.
+> 
+> Signed-off-by: David Bauer <mail@david-bauer.net>
+> ---
+>  .../dts/mt7628an_glinet_microuter-n300.dts    |  21 ++++
+>  .../ramips/dts/mt7628an_glinet_vixmini.dts    |  97 ++--------------
+>  .../mt7628an_glinet_vixmini_microuter.dtsi    | 104 ++++++++++++++++++
+>  target/linux/ramips/image/mt76x8.mk           |   8 ++
+>  .../mt76x8/base-files/etc/board.d/02_network  |   1 +
+>  5 files changed, 141 insertions(+), 90 deletions(-)
+>  create mode 100644 target/linux/ramips/dts/mt7628an_glinet_microuter-
+> n300.dts
+>  create mode 100644
+> target/linux/ramips/dts/mt7628an_glinet_vixmini_microuter.dtsi
+> 
+> diff --git a/target/linux/ramips/dts/mt7628an_glinet_microuter-n300.dts
+> b/target/linux/ramips/dts/mt7628an_glinet_microuter-n300.dts
+> new file mode 100644
+> index 0000000000..742cd6a8ef
+> --- /dev/null
+> +++ b/target/linux/ramips/dts/mt7628an_glinet_microuter-n300.dts
+> @@ -0,0 +1,21 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> +/dts-v1/;
+> +
+> +#include "mt7628an_glinet_vixmini_microuter.dtsi"
+> +
+> +/{
 
-One could use that for failsafe (actually quite an interesting idea) and for
-specifying the corresponding ethX in ar71xx. However, this still won't help us
-with the migration script itself.
+Typically we have a space in-between here "/{" -> "/ {", but looks like it's
+missing for vixmini as well.
+
+> +	compatible = "glinet,microuter-n300", "mediatek,mt7628an-soc";
+> +	model = "GL.iNet microuter-N300";
+> +};
+> +
+> +&led_power_blue {
+
+If there is only one color per type, I'd personally remove the color from the
+label (-> led_power for this case).
+
+> +	label = "microuter-n300:blue:power";
+> +};
+> +
+> +&led_wlan_white {
+> +	label = "microuter-n300:white:wlan";
+> +};
+> +
+> +&firmware_part {
+> +		reg = <0x50000 0xfb0000>;
+> +};
+> diff --git a/target/linux/ramips/dts/mt7628an_glinet_vixmini.dts
+> b/target/linux/ramips/dts/mt7628an_glinet_vixmini.dts
+> index 0935ec869b..9cdd9a0e14 100644
+> --- a/target/linux/ramips/dts/mt7628an_glinet_vixmini.dts
+> +++ b/target/linux/ramips/dts/mt7628an_glinet_vixmini.dts
+> @@ -1,104 +1,21 @@
+>  // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+>  /dts-v1/;
+> 
+> -#include "mt7628an.dtsi"
+> -
+> -#include <dt-bindings/gpio/gpio.h>
+> -#include <dt-bindings/input/input.h>
+> +#include "mt7628an_glinet_vixmini_microuter.dtsi"
+> 
+>  /{
+
+Space?
+
+>  	compatible = "glinet,vixmini", "mediatek,mt7628an-soc";
+>  	model = "GL.iNet VIXMINI";
+> -
+> -	aliases {
+> -		led-boot = &led_power;
+> -		led-failsafe = &led_power;
+> -		led-running = &led_power;
+> -		led-upgrade = &led_power;
+> -	};
+> -
+> -	chosen {
+> -		bootargs = "console=ttyS0,115200";
+> -	};
+> -
+> -	leds {
+> -		compatible = "gpio-leds";
+> -
+> -		led_power: power {
+> -			label = "vixmini:blue:power";
+> -			default-state = "on";
+> -			gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;
+> -		};
+> -
+> -		wlan {
+> -			label = "vixmini:white:wlan";
+> -			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+> -			linux,default-trigger = "phy0tpt";
+> -		};
+> -	};
+> -
+> -	keys {
+> -		compatible = "gpio-keys";
+> -
+> -		reset {
+> -			label = "reset";
+> -			gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+> -			linux,code = <KEY_RESTART>;
+> -		};
+> -	};
+>  };
+> 
+> -&state_default {
+> -	gpio {
+> -		ralink,group = "wdt", "wled_an", "p1led_an";
+> -		ralink,function = "gpio";
+> -	};
+> +&led_power_blue {
+> +	label = "vixmini:blue:power";
+>  };
+> 
+> -&ethernet {
+> -	mtd-mac-address = <&factory 0x4>;
+> +&led_wlan_white {
+> +	label = "vixmini:white:wlan";
+>  };
+> 
+> -&wmac {
+> -	status = "okay";
+> -};
+> -
+> -&spi0 {
+> -	status = "okay";
+> -
+> -	flash@0 {
+> -		compatible = "jedec,spi-nor";
+> -		reg = <0>;
+> -		spi-max-frequency = <10000000>;
+> -
+> -		partitions {
+> -			compatible = "fixed-partitions";
+> -			#address-cells = <1>;
+> -			#size-cells = <1>;
+> -
+> -			partition@0 {
+> -				label = "u-boot";
+> -				reg = <0x0 0x30000>;
+> -				read-only;
+> -			};
+> -
+> -			partition@30000 {
+> -				label = "u-boot-env";
+> -				reg = <0x30000 0x10000>;
+> -				read-only;
+> -			};
+> -
+> -			factory: partition@40000 {
+> -				label = "factory";
+> -				reg = <0x40000 0x10000>;
+> -				read-only;
+> -			};
+> -
+> -			partition@50000 {
+> -				compatible = "denx,uimage";
+> -				label = "firmware";
+> -				reg = <0x50000 0x7b0000>;
+> -			};
+> -		};
+> -	};
+> +&firmware_part {
+> +		reg = <0x50000 0x7b0000>;
+>  };
+> diff --git a/target/linux/ramips/dts/mt7628an_glinet_vixmini_microuter.dtsi
+> b/target/linux/ramips/dts/mt7628an_glinet_vixmini_microuter.dtsi
+> new file mode 100644
+> index 0000000000..b5611ac11e
+> --- /dev/null
+> +++ b/target/linux/ramips/dts/mt7628an_glinet_vixmini_microuter.dtsi
+> @@ -0,0 +1,104 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+> +
+> +#include "mt7628an.dtsi"
+> +
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/input.h>
+> +
+> +/{
+
+Space missing here again (see above).
+
+> +	aliases {
+> +		led-boot = &led_power_blue;
+> +		led-failsafe = &led_power_blue;
+> +		led-running = &led_power_blue;
+> +		led-upgrade = &led_power_blue;
+> +
+> +		label-mac-device = &ethernet;
+
+I'd have done this in a separate commit, or at least added a comment to the
+commit message.
+
+> +	};
+> +
+> +	chosen {
+> +		bootargs = "console=ttyS0,115200";
+> +	};
+> +
+> +	leds {
+> +		compatible = "gpio-leds";
+> +
+> +		led_power_blue: power {
+> +			/* Name is set device-specific */
+> +			gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;
+> +		};
+> +
+> +		led_wlan_white: wlan {
+> +			/* Name is set device-specific */
+> +			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+> +			linux,default-trigger = "phy0tpt";
+> +		};
+> +	};
+> +
+> +	keys {
+> +		compatible = "gpio-keys";
+> +
+> +		reset {
+> +			label = "reset";
+> +			gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+> +			linux,code = <KEY_RESTART>;
+> +		};
+> +	};
+> +};
+> +
+> +&state_default {
+> +	gpio {
+> +		ralink,group = "wdt", "wled_an", "p1led_an";
+> +		ralink,function = "gpio";
+> +	};
+> +};
+> +
+> +&ethernet {
+> +	mtd-mac-address = <&factory 0x4>;
+> +};
+> +
+> +&wmac {
+> +	status = "okay";
+> +};
+> +
+> +&spi0 {
+> +	status = "okay";
+> +
+> +	flash@0 {
+> +		compatible = "jedec,spi-nor";
+> +		reg = <0>;
+> +		spi-max-frequency = <10000000>;
+> +
+> +		partitions: partitions {
+> +			compatible = "fixed-partitions";
+> +			#address-cells = <1>;
+> +			#size-cells = <1>;
+> +
+> +			partition@0 {
+> +				label = "u-boot";
+> +				reg = <0x0 0x30000>;
+> +				read-only;
+> +			};
+> +
+> +			partition@30000 {
+> +				label = "u-boot-env";
+> +				reg = <0x30000 0x10000>;
+> +				read-only;
+> +			};
+> +
+> +			factory: partition@40000 {
+> +				label = "factory";
+> +				reg = <0x40000 0x10000>;
+> +				read-only;
+> +			};
+> +
+> +			/*
+> +			 * Firmware-partition size is model-specific
+> +			 * due to different flash sizes.
+> +			 */
+> +			firmware_part: partition@50000 {
+
+Why not just call it "firmware" corresponding to the label and how we do it with
+factory?
+
+> +				compatible = "denx,uimage";
+> +				label = "firmware";
+> +			};
+> +		};
+> +	};
+> +};
+> diff --git a/target/linux/ramips/image/mt76x8.mk
+> b/target/linux/ramips/image/mt76x8.mk
+> index 5ddeec14d5..37cac84229 100644
+> --- a/target/linux/ramips/image/mt76x8.mk
+> +++ b/target/linux/ramips/image/mt76x8.mk
+> @@ -70,6 +70,14 @@ define Device/glinet_gl-mt300n-v2
+>  endef
+>  TARGET_DEVICES += glinet_gl-mt300n-v2
+> 
+> +define Device/glinet_microuter-n300
+> +  IMAGE_SIZE := 16064k
+> +  DEVICE_VENDOR := GL.iNet
+> +  DEVICE_MODEL := microuter-N300
+> +  SUPPORTED_DEVICES += microuter-n300
+
+That's needed for GLinet's OpenWrt?
 
 Best
 
-Adrian 
+Adrian
+
+> +endef
+> +TARGET_DEVICES += glinet_microuter-n300
+> +
+>  define Device/glinet_vixmini
+>    IMAGE_SIZE := 7872k
+>    DEVICE_VENDOR := GL.iNet
+> diff --git a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+> b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+> index b036eb76e6..259a257f16 100755
+> --- a/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+> +++ b/target/linux/ramips/mt76x8/base-files/etc/board.d/02_network
+> @@ -33,6 +33,7 @@ ramips_setup_interfaces()
+>  		ucidef_add_switch "switch0" \
+>  			"1:lan" "0:wan" "6@eth0"
+>  		;;
+> +	glinet,microuter-n300|\
+>  	glinet,vixmini)
+>  		ucidef_add_switch "switch0" \
+>  			"0:lan" "6@eth0"
+> --
+> 2.25.0
+> 
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 _______________________________________________

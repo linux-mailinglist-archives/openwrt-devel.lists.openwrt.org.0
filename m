@@ -2,90 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B12E14B496
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Jan 2020 13:59:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DA0614BD39
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Jan 2020 16:48:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cs7qc16tBF+wJqfi/06rqzd/nVjflRJ4Ejl+lmRvd2A=; b=DK66Bs12EMr8Qe
-	/aijM7X+rWOS/j5YFRDz6hboNBeBELYcAYIKpJTjzU8mVKgeT660XWFmhvhxo/ttZ1AWzmbrC+o85
-	xOqNzjPfmIJ/IdOo2N9UGX8oKZv0WSbwaPNZoAPGvtSsvFyTpdjS0DJP2Kgslp7PpPzgZFG+6fn73
-	tuVAn91IYzWu7X9ZzamVQZpV9oMYWciQ/72orhvuUHFyoOUut9VI27tcmj3EgzXNVlznf+nji/xkt
-	dtsKBgOtCXVOTx62Wgf+/obiyAPwQwvB0ANvsugjW0sEAywExmVEOx+GxZMxsHBpmT5iXqg0N0uuy
-	gkslpDU3TiAXKRkEOT3Q==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k6JTpaFoIpWqRCJqq0qxjM09X6GPo2rLsp/88axNGMY=; b=aasTPE6UZFpnau
+	yjhqX29AYTGi8isFmuqHRDSqD6jd1s07ghqxjk3oCZ9/Z8qhQfNG0zC2jfRtoYbDYoqoJbkjy+3ia
+	XTo0khHy0IdEaKDSeUIJkTRQMUOy17QTsCp9mMRU2Rls9GEKyb5Yok4sXuViuTDq8qu7YTfUslwSQ
+	pGFjmanL77mI9H75TJNVtHEqq2Iaf0giIE4FJj44xkAo2yxk6OqykemRTgbQ6dUGfD2E8+lhSocu/
+	IGZLk2ZoSpVdy91HyywNEvRuiTOA3ueslucrJLwKAolKJDeDcV5uzoeyAG2yBsqcyrXIYi68P/aYD
+	pdTK4Qv2kHaEyTDRuZmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwQSl-0002it-Ly; Tue, 28 Jan 2020 12:59:27 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iwT6n-0001Lm-69; Tue, 28 Jan 2020 15:48:57 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwQRX-0001mi-VD
- for openwrt-devel@lists.openwrt.org; Tue, 28 Jan 2020 12:58:13 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f129so2429538wmf.2
- for <openwrt-devel@lists.openwrt.org>; Tue, 28 Jan 2020 04:58:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ZShd272+xSa+BLVzB0AGA5yJ7mHb+iRzG5QlL5mjLSo=;
- b=NsXhV05X7bTF1MQwim0JMuexHDmXR+YAE1La6aLx3SU4t+58K2oc0r+9PxCSY2bDYU
- AghUxEustbpEkuQd+542z+dw9LN/SM8VbLMka50/yBICfFqUM5dkbqiQazIXW3mDMDUQ
- 8trEZqgXyKcqLTzBwJA8hZHurXD54+7hzSNVaY+axWO5osLX8WgfF5zHQ/+0dprYXejp
- SAqPabITXnTfrZ1lX4M6eZTLWdiWIJJVcQSR3QxwSAhLe6oq1r3rYHJNJJ/Wt+JmkT/z
- xcarMWOJfEUnVI43ACsEjeHL4qL9ndUmkdRPCTg0PTKFLZC7Ku1OX5kJELhapDsMJvgl
- aHiQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ZShd272+xSa+BLVzB0AGA5yJ7mHb+iRzG5QlL5mjLSo=;
- b=Nwflz9eAW1foNozy4CeLW4IwDoTOsr6MNOkPB+6BKKeF/2qBUp7um+ZPf6lS+01+jn
- +afrLmrDfCaqC0Dl/iNcFbnTRtPv52cUMP3uy2QoY1yAjSJsE5JDVe/HGe4LdySzw+99
- mkUNUd52xX0w2eN456qd8aCHY9KAKy+Baebnic3OQBULgknZ0beth9jferbTHpmx8vb4
- bZXXiaj0W9aFXo6eMnFPh68HRvijF3ZxwYDSA14SC0pozJKcEDNaausqVgpE/cBsqh10
- pAWzWqmz83jGZJ14XoTj8qETm3R7m9xuDac/d/prtVB/FOcAF9+b9uoEq7akEbQQcwtn
- eKBA==
-X-Gm-Message-State: APjAAAWKUKIgq/hRlFeNFB6xyYsV7haiidF/dGoHWOl/aH5NVO2DrmkN
- XNNziMZ3IP/bCMBWWridU7/2R+0=
-X-Google-Smtp-Source: APXvYqy6v7ZfAZstFUfcJo1CQoBY7StQhK0awzuYV8w64YTxdYHSpgIjXYiNBKAn7563p1v4KhaeOA==
-X-Received: by 2002:a1c:1fc5:: with SMTP id f188mr5186718wmf.55.1580216289473; 
- Tue, 28 Jan 2020 04:58:09 -0800 (PST)
-Received: from presler.lan (a109-49-10-77.cpe.netcabo.pt. [109.49.10.77])
- by smtp.gmail.com with ESMTPSA id q10sm2975417wme.16.2020.01.28.04.58.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Jan 2020 04:58:09 -0800 (PST)
-From: Rui Salvaterra <rsalvaterra@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Tue, 28 Jan 2020 12:57:44 +0000
-Message-Id: <20200128125744.2378-1-rsalvaterra@gmail.com>
-X-Mailer: git-send-email 2.25.0
+ id 1iwT6Q-0001Al-GF
+ for openwrt-devel@lists.openwrt.org; Tue, 28 Jan 2020 15:48:36 +0000
+Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue106
+ [212.227.15.183]) with ESMTPSA (Nemesis) id 1MEVmm-1im2ic3GP4-00FzTS; Tue, 28
+ Jan 2020 16:48:28 +0100
+From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
+To: "'Piotr Dymacz'" <pepe2k@gmail.com>
+References: <020101d563fa$a14539a0$e3cface0$@adrianschmutzler.de>
+ <b46a0006-a510-0a59-600c-c31d94093caf@david-bauer.net>
+ <003201d56565$33a9b580$9afd2080$@adrianschmutzler.de>
+ <d1100196-b9cc-22cb-55d3-5dd6937a9b38@gmail.com>
+ <015201d5d064$8f5d96c0$ae18c440$@adrianschmutzler.de>
+ <81df4caf-8f04-74a1-dd1c-0beea3fca222@gmail.com>
+ <02b701d5d540$8eee1ad0$acca5070$@adrianschmutzler.de>
+ <fcbe4834-b61a-c3a6-99fa-77058773c59d@gmail.com>
+In-Reply-To: <fcbe4834-b61a-c3a6-99fa-77058773c59d@gmail.com>
+Date: Tue, 28 Jan 2020 16:48:28 +0100
+Message-ID: <00c001d5d5f2$62758ad0$2760a070$@adrianschmutzler.de>
 MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQGe0uH3YMoujDnAXodp5C7FQpVSGgH5MCOhAdXATn4CkcEaigGcwTU9ArqxLZABTM2NBgI0xCSNp/xqLdA=
+Content-Language: de
+X-Provags-ID: V03:K1:EKWTyH+ypVoBFTpzFBNdND9XG1LGw3QLLe49g4qB/Wyc5mvfM07
+ Dk1Pvvbh8Vf0sHy9lFvhlKCm4DrLPHn608xL1QGYQIrhviNZIKinK2uGM/A04J5cTGuQoTJ
+ zH6Xon3wfwNFmr5HQei+nMS1Vc0Uva5cUpwGrg7jgcFBDZ8sfNogoUmTcypaX4wTXRLBsDm
+ 55WS0/zqPZxKnlkdj97wA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:421j8kzoLRQ=:wE/8zN7lfhxmH9XG75/URB
+ o7r6xaRD+pHWMUPu/u4FFtKOQZQqQsdVK2kCxlO1Qmqu0Y6CRZZKR2QGNpO8B9OHq1UPng3Be
+ tNuxwtO7+V2U5jOGUfqx2asvGgKUp1s1caa8OLZmxociHZrqLGdeizR/gAmHzl/XRDFjkXKcS
+ xPIZ6R5EI8ygMUqdaJ7jG3MdJDpKZZ+a3R2bixKKbbRBL0fzpVg8t4b10n3yS6ous6zqB7PJh
+ /BpJ1FOmmZtjY/aNOrapBOxZrOd1/q7e9ic49sOSp1GSe5q7c8RcAXAwiH7+HfKwmmPjI7x18
+ yWW5slNE/pOZ7nz3WTnJec0LpjxrGRWZ+honhQNA1kPHDc6UXlaCMY2invStfSqolY0PaQUb0
+ bEixuTDBDEZkRULxA2r5gW+NLq1gWeI4FQAmUSmVeteC7UKxQ3QbIanxOIrScCrrq09BgH08r
+ G4Z8i7baf5lXW0zlDHCDULXkl0OBMJFNmobnkqRSD/HaW1NED5kONyAHlsDaosV8pmbZ+HmSr
+ 6cVeWDe1YxW+NlCnooK+/Qi+nnQimF59tOv+BN2BC0xonwlsS0QaN+YFB0wl92+gYvaqT9AhM
+ kaMBj3hmxz8cmCxzWUxaWuURtSRwIsY+Wk38RnX/ZqM1lVfXF8m0n57CBReVfyWurDHp2+rbm
+ VMHp4UMyq6F5CW3BOSbL4nDT/++JYR91UjOoSjNksGxPVvA2OG49UkVoehvm0r53wUA+Qw03G
+ RBUy2xfBkd7O/rMVA76LLjjqPzkqgOUbGWo02SfDsjPq5y8ASYhr760r2d+rTHREaMM72bk+7
+ XwS2L9CnRiIiSDJafw90Lbc20COO5CroS4Z2vCVhMYjuSsI4BomCOhS44hjCMfgXuOXcelT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_045812_062316_B09501AC 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200128_074834_837250_5303C7CE 
+X-CRM114-Status: GOOD (  22.53  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rsalvaterra[at]gmail.com]
+ no trust [217.72.192.75 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.72.192.75 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH] ath9k: allow enabling hardware random
- number generator support.
+Subject: Re: [OpenWrt-Devel] Migration in ath79 for swapped ethernet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,74 +87,111 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Rui Salvaterra <rsalvaterra@gmail.com>
+Cc: openwrt-devel@lists.openwrt.org, gch981213@gmail.com, ansuelsmth@gmail.com,
+ 'David Bauer' <mail@david-bauer.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Changes since RFC: keep the current entropy patch untouched. It will be
-modified in order to support older (AR5008 and AR9002) hardware.
+Hi Piotr,
 
-The ath9k driver is able to leverage the PHY ADC in order to provide a
-generic hardware random number generator to the kernel, filling up the
-entropy pool as required. Expose this feature in the build system.
+> -----Original Message-----
+> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
+> Behalf Of Piotr Dymacz
+> Sent: Montag, 27. Januar 2020 21:45
+> To: Adrian Schmutzler <mail@adrianschmutzler.de>
+> Cc: openwrt-devel@lists.openwrt.org; gch981213@gmail.com;
+> ansuelsmth@gmail.com; 'David Bauer' <mail@david-bauer.net>
+> Subject: Re: [OpenWrt-Devel] Migration in ath79 for swapped ethernet
+> 
+> Hi Adrian,
+> 
+> On 27.01.2020 19:35, Adrian Schmutzler wrote:
+> > Just a quick one:
+> >
+> >> > So, no matter what we do, there is no easy way forward.
+> >>
+> >> We could remove all ar71xx -> ath79 migration helper scripts, ar71xx
+> >> board names from supported devices lists in ath79 images and make the
+> >> target a brand new, without any concerns about soon-to-be obsolete ar71xx
+;)
+> >
+> > At the moment, I'm actually mostly inclined towards this solution.
+> 
+> I'm afraid it's a bit late for that as 19.07 is already out and it
+> supports (at least partially) ar71xx -> ath79 migration path/s.
+> Wouldn't that look unprofessional? Am I overreacting here?
 
-Signed-off-by: Rui Salvaterra <rsalvaterra@gmail.com>
----
- config/Config-kernel.in        | 4 ++++
- package/kernel/mac80211/ath.mk | 7 +++++++
- 2 files changed, 11 insertions(+)
+One didn't have to use -F during sysupgrade, but the release notes gave the
+clear advice to upgrade without keeping settings.
+So, IMO we actually didn't "support" any migration in 19.07.0.
 
-diff --git a/config/Config-kernel.in b/config/Config-kernel.in
-index 20930326ca..2f4cda4275 100644
---- a/config/Config-kernel.in
-+++ b/config/Config-kernel.in
-@@ -220,6 +220,10 @@ config KERNEL_AIO
- 	bool "Compile the kernel with asynchronous IO support"
- 	default y if !SMALL_FLASH
- 
-+config KERNEL_HW_RANDOM
-+	bool "Compile the kernel with support for hardware random number generators"
-+	default n
-+
- config KERNEL_FHANDLE
- 	bool "Compile the kernel with support for fhandle syscalls"
- 	default y if !SMALL_FLASH
-diff --git a/package/kernel/mac80211/ath.mk b/package/kernel/mac80211/ath.mk
-index 788131b751..56859cd3c1 100644
---- a/package/kernel/mac80211/ath.mk
-+++ b/package/kernel/mac80211/ath.mk
-@@ -8,6 +8,7 @@ PKG_CONFIG_DEPENDS += \
- 	CONFIG_PACKAGE_ATH_SPECTRAL \
- 	CONFIG_PACKAGE_ATH_DYNACK \
- 	CONFIG_ATH9K_SUPPORT_PCOEM \
-+	CONFIG_ATH9K_HWRNG \
- 	CONFIG_ATH9K_TX99 \
- 	CONFIG_ATH10K_LEDS \
- 	CONFIG_ATH10K_THERMAL \
-@@ -45,6 +46,7 @@ config-$(CONFIG_TARGET_ipq40xx) += ATH10K_AHB
- config-$(CONFIG_PCI) += ATH9K_PCI
- config-$(CONFIG_ATH_USER_REGD) += ATH_USER_REGD
- config-$(CONFIG_ATH9K_SUPPORT_PCOEM) += ATH9K_PCOEM
-+config-$(CONFIG_ATH9K_HWRNG) += ATH9K_HWRNG
- config-$(CONFIG_ATH9K_TX99) += ATH9K_TX99
- config-$(CONFIG_ATH9K_UBNTHSR) += ATH9K_UBNTHSR
- config-$(CONFIG_ATH10K_LEDS) += ATH10K_LEDS
-@@ -211,6 +213,11 @@ define KernelPackage/ath9k/config
- 		bool "Support chips used in PC OEM cards"
- 		depends on PACKAGE_kmod-ath9k
- 
-+	config ATH9K_HWRNG
-+		bool "Random number generator support"
-+		depends on PACKAGE_kmod-ath9k
-+		select KERNEL_HW_RANDOM
-+
-        config ATH9K_TX99
-                bool "Enable TX99 support (WARNING: testing only, breaks normal operation!)"
-                depends on PACKAGE_kmod-ath9k
--- 
-2.25.0
+> 
+> > However, for me personally SUPPORTED_DEVICES was always more a "don't
+> brick entirely" flag, so I never expected it to ensure 100 % config
+compatibility.
+> More like preventing me from flashing ubnt,unifi image onto
+tplink,wdr-4300-v1.
+> This impression might have been wrong, though.
+> 
+> I think device to image matching was the main reason behind the idea.
+> IIRC, mismatched image doesn't prevent you against upgrading with
+> preserved settings.
+> 
+> > But as mentioned by Ansuel, there are other incompatible switches to come
+> (and some are already waiting), and unless we want to create new targets or
+> rename devices in these cases, we have to think about different "levels" of
+> compatibility anyway beyond ar71xx->ath79.
+> 
+> I believe ar71xx -> ath79 is a special case here. First of all, that's a
+> new DTS-enabled target and it was suppose to _replace_ ar71xx but 19.07
+> went out with both of them and I'm pretty sure there are users who got
+> confused with that (some devices are supported only in one of the
+> targets, some in both, some with seamless migration possible). On the
+> other hand, when ar71xx gets abandoned, we (as a project) should make it
+> clear if ath79 is a replacement (thus providing seamless upgrade from
+> ar71xx) or a new target, without any relationship with ar71xx (thus a
+> clean sysupgrade is required). Keeping anything in between would just
+> confuse people.
+
+I do not really see a viable/desirable option to support eth migration at the
+moment. And I'm not really a fan of adding lots of migration stuff which spoils
+the new ath79 target already, so after all I think I also do not _want_ to add
+eth migration either.
+
+So, I'd prefer to see the ath79 new and clean.
+
+However, from the wording perspective, I do not think that a "replacement" means
+seamless upgrade. I'd thus keep the SUPPORTED_DEVICES just as a device-matching
+measure, but wouldn't implement any sophisticated migration despite that. Having
+SUPPORTED_DEVICES might actually be valuable for certain third parties, like I'm
+involved in a downstream project that regenerates the system/network config at
+each upgrade, but still exploits SUPPORTED_DEVICES for having the correct image.
+
+And I could well live with keeping the already present migration scripts, as
+having them as "undocumented feature" won't hurt. If we do not advertise it, it
+won't confuse people ...
+
+Best
+
+Adrian
+
+
+
+> 
+> DSA is slightly different topic as it will touch many different targets
+> (also ath79, think about qca8k) so probably a project-wide solution
+> would be required.
+> 
+> --
+> Cheers,
+> Piotr
+> 
+> _______________________________________________
+> openwrt-devel mailing list
+> openwrt-devel@lists.openwrt.org
+> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 _______________________________________________

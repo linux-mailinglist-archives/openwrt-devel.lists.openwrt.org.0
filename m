@@ -2,82 +2,90 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F386114C15D
-	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Jan 2020 21:05:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7821214C1FB
+	for <lists+openwrt-devel@lfdr.de>; Tue, 28 Jan 2020 22:17:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:
-	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1zjIXflwDPFIzk9mNDukcvQjvEa4D80WWGMeO/vvAeg=; b=ncv/jWBXyIIPeb
-	I+2LfnVgDptLIgjmOv1Y4APrfI0sHyPg8BuMzUHIJSuRm+t7sWc6oGpHShc80HJYXQ3SxTpLls8xb
-	7hFWRXEJWhMICnO3/mAhykUCfI5rBRQsypf9sXtv2sYWr8e6n2/DHWN1vVUNBju0AIbatEYwUUDgC
-	aJLBcwKdwjmmUbJx98kvj0GFXKaRYgkUzy43KBPge4ETQz94fVSdpiAPMonEXXYtI+ZPjehYx6srH
-	Y20blh7ZmtwvdYdO5dzO1sM7KWi2/N+Iju2FDSvCzd/U9e4yosmyTs66dzj3YyJQJkpJz08cCcWm5
-	Qex2whB2fbNsLcvolcWg==;
+	List-Owner; bh=ZsZCPDlYwJWLeuBH46mnaT9BTPRp6bwdilQVae9k7kw=; b=f4rBMBBj5XPRaE
+	FlV7+u8q0DAcVZ/49koGzVtFyl2Z9kJ8DAnXndhL66kPtMgx4BCKFvTFCsUMB03LKy0Jw07G54/JE
+	J7u3Sa5wexTBBWo2pyZdQZcGW2cUD7yLB/ReM5E+OjaOvosRFz998qPuiB3Lq2agYq/1GgES43moc
+	jX3l/XGtHotXGWFINhA+jfMnKHvaguR9IIjK0GBMm1dk3t4a+o/sHAgMCNe8IeVDbSfSJx8oxVypN
+	wkSH/owocygtn09lVAeC+4QW0kN7YIbVp4sp/zlqKbdGoeloaR/s4FRhR2LpiOL8Vt6OspBaRyWQP
+	A178Ad0eC3iaj3mVLweQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwX76-0005qT-3x; Tue, 28 Jan 2020 20:05:32 +0000
-Received: from mars.blocktrron.ovh ([2001:41d0:401:3000::cbd]
- helo=mail.blocktrron.ovh)
+	id 1iwYEV-0003GS-GH; Tue, 28 Jan 2020 21:17:15 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwX6y-0005pl-73
- for openwrt-devel@lists.openwrt.org; Tue, 28 Jan 2020 20:05:26 +0000
-Received: from [IPv6:2003:e5:3f17:4300:9ae5:2e36:1940:ad09]
- (p200300E53F1743009AE52E361940AD09.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f17:4300:9ae5:2e36:1940:ad09])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 9AF0222F46;
- Tue, 28 Jan 2020 21:05:21 +0100 (CET)
-To: drvlabo@gmail.com, achterin@googlemail.com,
- openwrt-devel <openwrt-devel@lists.openwrt.org>
-From: David Bauer <mail@david-bauer.net>
-Openpgp: id=D70432697B7C4C27380FCDA3BAB39714B4A4B878
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <ff0f9266-0fa9-1bf5-66f3-dfd76699a136@david-bauer.net>
-Date: Tue, 28 Jan 2020 21:05:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iwYEL-0003Fl-GW
+ for openwrt-devel@lists.openwrt.org; Tue, 28 Jan 2020 21:17:07 +0000
+Received: by mail-lf1-x143.google.com with SMTP id z26so10215337lfg.13
+ for <openwrt-devel@lists.openwrt.org>; Tue, 28 Jan 2020 13:17:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nmBguVe8+ftBpAZSnlVKGrTrvVlh+5PVrcxAX0N/tk0=;
+ b=X3PveYGbG0kq/zL41b+NTLIDNr88GofCz86mqskrGnMVR9xA7rApG+v0V3EJubsIn5
+ Aq36Jh76c3h7Pw8F1zuKuujIYFKaPIef7gdJ4alRL8J+t49G5Y0HzGPgSBNLGYRRowd5
+ pwIw6B+iCqcmE2Rbxy1BcmLVgQc8+8ib4HwwnnEeP5JzklIoYAW6t6AqhFJ2lvz/cJ3g
+ bcFF54PjKjP7VIf6r8SAD3weHB05k5JF5UMwj5CZ9PMO6nO15iBGYTmraKdi8lo8oJPb
+ GaKtfeBafBY0nQ2+CKifkjrHSCaZi2GBNQmZ8Sy788FoFdSSAhd0QoC8YUp9x3AM1FxP
+ 7j2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nmBguVe8+ftBpAZSnlVKGrTrvVlh+5PVrcxAX0N/tk0=;
+ b=HVP7++a/0H2fBoSUEZni1DQU4CSs09S0/Qb3yAdYmVC5I8ou+myfd/5JEuW/OHweXW
+ bSh1p7AVVt0LtP/Igbm0BZFQt5ojbWGOymoQPEqakdyPwM1rgGZ2fdbUK1eyGdI0jFPa
+ 0L3T/hiCOhjrlswmf81efJdOtAdLS1tIIEdQwoybJIru/A4Nv/NUP+v53SIC1VpPC1A+
+ W/9ndd1RNBpgXQ/W1X3V02M7CRxQyAFh5cZ+NTZgVCG9E/zAr+KiWMmU3d63PROdwaNn
+ jPnVadEce6T6PWHE7K9s/6xkiDTmnQSopKsZl4Bb8E6ts7PxV3Lw0o2fUHKTy/MkeKPA
+ tVQQ==
+X-Gm-Message-State: APjAAAWYJbhXyQlttrEKKmOCtr63Tw8VK/9YL2lXDi8XI5ryscaD/Hs/
+ d87ZkXP1je/3DK/FypOaDc1KAP8+
+X-Google-Smtp-Source: APXvYqwHJA3b6F8gKRTt2kECq2Hnfs39ro7ksJIC1a7m1tHLLAqZzbaE70nDQbJGjm0N8jlJPrm/gQ==
+X-Received: by 2002:a19:740a:: with SMTP id v10mr3448079lfe.65.1580246223075; 
+ Tue, 28 Jan 2020 13:17:03 -0800 (PST)
+Received: from krolik-desktop.lan ([185.188.71.122])
+ by smtp.gmail.com with ESMTPSA id w3sm6776104ljo.66.2020.01.28.13.17.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Jan 2020 13:17:02 -0800 (PST)
+From: Pawel Dembicki <paweldembicki@gmail.com>
+To: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Date: Tue, 28 Jan 2020 22:16:43 +0100
+Message-Id: <20200128211644.14161-1-paweldembicki@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_120524_404457_A7070DF0 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20200128_131705_579658_2382C2EE 
+X-CRM114-Status: UNSURE (   7.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [paweldembicki[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] Netgear R6260 EEPROM location
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+Subject: [OpenWrt-Devel] [PATCH 1/2] iwinfo: add device id for MediaTek
+ MT7615E
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,25 +97,32 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Pawel Dembicki <paweldembicki@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Signed-off-by: Pawel Dembicki <paweldembicki@gmail.com>
+---
+ hardware.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-while testing my shiny  new NETGEAR R6260 with OpenWrt, i was experiencing very bad
-reception as well as throughput. Upon closer inspection, it turns out that the EEPROM
-is read from an incorrect offset. The Offset positions here are:
+diff --git a/hardware.txt b/hardware.txt
+index 6029fb8..cb66b6e 100644
+--- a/hardware.txt
++++ b/hardware.txt
+@@ -175,6 +175,7 @@
+ 0x14c3 0x7603 0x14c3 0x7603    0      0  "MediaTek" "MT7603E"
+ 0x14c3 0x7610 0x14c3 0x7610    0      0  "MediaTek" "MT7610E"
+ 0x14c3 0x7612 0x14c3 0x7612    0      0  "MediaTek" "MT7612E"
++0x14c3 0x7615 0x7615 0x14c3    0      0  "MediaTek" "MT7615E"
+ 0x14c3 0x7620 0x14c3 0x000c    0      0  "MediaTek" "MT7620"
+ 0x14c3 0x7628 0x14c3 0x0004    0      0  "MediaTek" "MT76x8"
+ 0x14c3 0x7650 0x14c3 0x7650    0      0  "MediaTek" "MT7610E"
+-- 
+2.20.1
 
- - 0x28000 for 5GHz 
- - 0x20000 for 2.4GHz
-
-Can someone confirm these offsets on their boards? Maybe this is wrong not only on
-the R6260, but also on the R6350 and R6850.
-
-Best wishes
-David
 
 _______________________________________________
 openwrt-devel mailing list

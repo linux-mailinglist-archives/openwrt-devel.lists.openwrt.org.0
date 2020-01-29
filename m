@@ -2,32 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2C4814CBFE
-	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 15:03:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6D4A14CC81
+	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 15:33:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EVgrJd3Hg1t3O9U8Fcu+MZVav7BqSk8QVJdkCUYkqJE=; b=CJQBZ+KQBgmCcZ
-	k2HKyhG9/jTyIuz3XsgQyhlTlhfhcSTe7f5QDGY/PAbR3+ON6xlPxB7+bP/z6nSeQhzEmiUKMm9Jh
-	GXUVvZNl0RlRRYiGkGAgqsnyc4cko+x7R5B6dQ2HzICmbZopeyGYhCc5ZpYnwgGRyBfIC5b+oIEg5
-	UYcypeFGg7Ynunnds4zYskIocsG9IBdV0Db342y5nLECSxFLObiAvihyqG8ybanKUYuP8q22yuQwL
-	1czaY4O/7FLZrzoVAKI9VbLbgsdBRsEoQTxvMuwfLeA+pCUZACIQo0LzrFVL143iKQWKRypFIhk1y
-	jrZvusYqq0GCNlDV5INA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=XvvkNylKV+ySPovPiDhCd+PJZ6gSLTgAy+qHq45m0hE=; b=oyHgnNZEoOA+7M3PKlUor2odw
+	d1QuPSazl8uLw5NhrAnHSVXVfmqO8esiPcdffjG6GYSWukwbvxdhstYgxheOUkqc0yIhOMTCGKzFY
+	buMTKEtLGiNJj0iHmstLP86iCFu+EqO2epqUQZF4XTWOXZik/B9PgXq/g6QBKYiF81+lYMIkepmu9
+	Rl9qK5Rb3M9wSynUUzkpz237Xjqr9gsCzsMCBn4oQxQ+SNgj9jbXkxsc0Kh09cvBwYtQWgSjI3Hdf
+	6wmHhZJ56233kZMT2bas0uFT7tWmxyMtkM266bI6WEgGDWyXqPVRkUPixJbvxJHAyH+wygiwqS6Rb
+	JVNsMUE3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwnwA-0004lj-Ka; Wed, 29 Jan 2020 14:03:22 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1iwoP6-0006w9-Hi; Wed, 29 Jan 2020 14:33:16 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwnw3-0004lP-G4
- for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 14:03:17 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue010
- [212.227.15.167]) with ESMTPSA (Nemesis) id 1Mw99Y-1jodVR2dgC-00s5JD; Wed, 29
- Jan 2020 15:03:09 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Jeffery To'" <jeffery.to@gmail.com>
+ id 1iwoOz-0006ve-6f
+ for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 14:33:10 +0000
+Received: by mail-lj1-x242.google.com with SMTP id r19so18702639ljg.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 29 Jan 2020 06:33:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=0DfbhzmLhrlORrwkyIAw5FgaMu1D6Sf981uTF3HT6gg=;
+ b=VCZnZrhDrmpF1KKsPByfbdL6yoTe9Lru3/8cm2UsmUfXbgRaV3uxpILWXDgDwZqYHU
+ fEgnqw4LEIMjmgzsBIcg+LsGo5a+umrRIApMTbDjCgWzp6rl8Y0TOoqjWq/f/2MRKjQd
+ yfwHow7boXeUQWOUotJWOrktg8EUHt5A6H6AeF23Ug+jSf44Loom77lWwxfCDdNvBE1g
+ nAjn76VZ29SO0yDTg3XJ/f3QR2CHOPwNIdL/lKtUK7uKvwvL9YgO+qhJQ+2EkN67DItN
+ KImF8KFFpjRpsBMeV3p2oer2WPRinRTxuZfd+LRxibLBkwFNNpilt+1knPt8Kp/J5BjR
+ EUgQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=0DfbhzmLhrlORrwkyIAw5FgaMu1D6Sf981uTF3HT6gg=;
+ b=m4p8mvKPEegLHUZ3xri2itni7xOmm1iDL4keR0mfBobYXPVYgHKH2RK91pYniktuQ0
+ EvlPPylvL6NIq9kInv3jdCbFmkBNeZCu9J0QtNdDYhFgjPJjBn7IwbAt4zpvZPMiZEZS
+ 5zuUobGoanXS7pddm9VfLzaTJcOKos1zmkmeZsdOhSiPj30gD6COfyeQpVDSedsqjqZ0
+ 9GNJEMtdenrcG5y2PoyDLChP7/enlbd4FH3ZHCnuX7+KDAhg5/S6qTnA51mPqYfKxtiY
+ Eh95fJ69qhNS20zLKEI+eJOukVZmoCkmLdxHxOiNmpxcqPz+lnhE5RHyaWIs+2KbFoXF
+ zfwA==
+X-Gm-Message-State: APjAAAW+HR9btIJdu1d9OfcxUI/Ev1+mIQ4Wfq61GLbACEUnhbIa5iDI
+ 5TT25sL4fgsjm8rojsBSAezqUGF5
+X-Google-Smtp-Source: APXvYqx496qNtNfPWFVWbdh8JezaCPocMNSJBezcWxfFTAZMdg7wN8QlBxZGSou86l/95v0y2/pNPA==
+X-Received: by 2002:a2e:8758:: with SMTP id q24mr16943084ljj.157.1580308026655; 
+ Wed, 29 Jan 2020 06:27:06 -0800 (PST)
+Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
+ [31.11.201.135])
+ by smtp.gmail.com with ESMTPSA id q17sm1067831ljg.23.2020.01.29.06.27.05
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 29 Jan 2020 06:27:05 -0800 (PST)
+To: Peter Geis <pgwipeout@gmail.com>
 References: <020101d563fa$a14539a0$e3cface0$@adrianschmutzler.de>
  <b46a0006-a510-0a59-600c-c31d94093caf@david-bauer.net>
  <003201d56565$33a9b580$9afd2080$@adrianschmutzler.de>
@@ -35,47 +65,39 @@ References: <020101d563fa$a14539a0$e3cface0$@adrianschmutzler.de>
  <015201d5d064$8f5d96c0$ae18c440$@adrianschmutzler.de>
  <81df4caf-8f04-74a1-dd1c-0beea3fca222@gmail.com>
  <02b701d5d540$8eee1ad0$acca5070$@adrianschmutzler.de>
- <fcbe4834-b61a-c3a6-99fa-77058773c59d@gmail.com>
- <00c001d5d5f2$62758ad0$2760a070$@adrianschmutzler.de>
- <CAJXyS=jbdMLn8wzoGuVxY9HBf+R+s29W0pofgDdaOHfSZ-Ut3w@mail.gmail.com>
-In-Reply-To: <CAJXyS=jbdMLn8wzoGuVxY9HBf+R+s29W0pofgDdaOHfSZ-Ut3w@mail.gmail.com>
-Date: Wed, 29 Jan 2020 15:03:09 +0100
-Message-ID: <003701d5d6ac$d65bd840$831388c0$@adrianschmutzler.de>
+ <CAMdYzYrWaxjP_UMASDjw1Y-PbdHgVzWWfRc9o3cBiiOLWa=+5w@mail.gmail.com>
+ <d963c081-fd20-db13-09db-434c30404389@gmail.com>
+ <CAMdYzYoeXOunh+QmG_CY-DyBXHQhoW9D0MZqcw9DyJGad_AP5A@mail.gmail.com>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <4809893f-8ec4-5961-c68d-643d468b4347@gmail.com>
+Date: Wed, 29 Jan 2020 15:27:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Content-Language: de
-Thread-Index: AQGe0uH3YMoujDnAXodp5C7FQpVSGgH5MCOhAdXATn4CkcEaigGcwTU9ArqxLZABTM2NBgI0xCSNAr3GPjsCcN7yuafUb5mw
-X-Provags-ID: V03:K1:dB6EKsxgHVXnxnQyjdljS8dKvYy0Sk4t1sFt4R/qLDIU0r0GDOe
- 2NJ6IQen0nmsq9qFAgCfkNA/E1wBEhJ04W3XwVQ/FGnF+9zNVALlWR2ViqvK2jMW0bKbCdT
- TPOUU84u7Zto5c+74Pa9Z5OR78iIalnTuCiNNDUYKRmL5iP5rCoVz20N586vzekfmjPHw0S
- ilT9JSTqTuXXLJpfH9n0g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:z4mDkAbrASU=:IIZdxIbsYO9cG91ko3GwZU
- iM4f00XcnBdHIUfjRlEkjyMadOsYphxVPMRlv5M4lOdBae5fje0bkT1qKiki0eWL06YCPuT6J
- 9TwU7sNCJ3yyXPtrTmoS6KR+b0NxVISi3r6itOtucClVZdxbvkfDnLukhAONw7ilmGu5vWDfd
- iCoBpAMearkDGcOwbxF53cOabegg4Me10wKP7GbSmSS0sehYTzRkxA4sof7X4VerFacEKThAo
- Ej34lqVsRXp9A6YLku58nOk62q5LDoW2qRydAgaRydugFeqDG9mVk20XV4Uyw0eEn3ux5Jv36
- rFbQS/dUcgpyci38ecRgP4x83mI6fiO0CUC/S2ppbbBXhYOlxpnZm6mqe+4eEVItcWqvuyEuP
- dJkW2TCQx3R7MenYC4FbngBafdD5/2l6T4QMD+r5+QBQvz/IneObP797UHTTZ0/G40Ow6eyDI
- 3SUZjco8p0e8Qh5vOALFtjIvZNCvkPV1bVxz5YsidcyhV6rGrCfQJgAWZu04u9jBIcC6uI6uq
- qq9fkfrXJyObMIqFq4yzapOYc6M5sB0EMUroVIbXsN8JttvcseqTd/sHvGQSb7JhlAGG7JE1U
- eSLD4MhZBv0dHWAXUVGqTW2qRQRB9EbIDeHcEBCQ4/pKzzppMdX5pUinD3W9m4Xs+QllFeM0S
- BUAne+Xa+RvphpH+rrkL01vbBcPBy4Sf+ueKPD/2Rp/E6NVL/qEDlOQ0XCBlI9+yEcpQNfYZ4
- pz41m4KvCIaBe+KaYwj5fHq/j/C02JfQ+7baVUKu4JjR2vP5CS2XiWG+RI2SlyueT+WyCG2Cf
- 8HACE0inwZbQy56Q+uLArEU2DD8+R8wGyU0HUbyZDXYH+ljvNsh3HErf0jR8JJYD4f+AM/G
+In-Reply-To: <CAMdYzYoeXOunh+QmG_CY-DyBXHQhoW9D0MZqcw9DyJGad_AP5A@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_060315_833443_4227C91B 
-X-CRM114-Status: UNSURE (   8.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200129_063309_241434_7E760AF4 
+X-CRM114-Status: GOOD (  14.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pepe2k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 Subject: Re: [OpenWrt-Devel] Migration in ath79 for swapped ethernet
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
@@ -88,28 +110,52 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: openwrt-devel@lists.openwrt.org, gch981213@gmail.com, ansuelsmth@gmail.com,
- 'Piotr Dymacz' <pepe2k@gmail.com>, 'David Bauer' <mail@david-bauer.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Adrian Schmutzler <mail@adrianschmutzler.de>,
+ OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ gch981213@gmail.com, ansuelsmth@gmail.com, David Bauer <mail@david-bauer.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+Hi Peter,
 
-> (I should first say that I don't know enough about the ar71xx-ath79 migration to know if this idea will work, but I don't recall seeing it mentioned before.)
->
-> What if we add a migration package for 18.06 that ar71xx users can opt-in and install, which (when the user initiates the process) will migrate their config and perform an upgrade to 19.07 (ath79)? Their config would > be broken for 18.06 after the first step, but if the sysupgrade completes successfully then their config works for 19.07 after the reboot. (Would be nice if there is a way to roll back the config changes if the sysupgrade fails.)
->
-> This is perhaps a variation of the transition image idea from Peter Geis, but this would be less intrusive to the overall upgrade process (at least for me).
+On 27.01.2020 22:05, Peter Geis wrote:
+> On Mon, Jan 27, 2020 at 4:00 PM Piotr Dymacz <pepe2k@gmail.com> wrote:
 
-I like that idea in general, because it will spare us from determining whether the system needs to be updated (we will outsource that to the user for this particular case). Disadvantages are obviously that the user has to be (made) aware of that solution, so it's still not a "seamless" upgrade. And we still would have to prepare a suitable upgrade script, which we do not have at all ATM (though this might make it easier to write one).
+[...]
 
-Best
+>> But it's not a general rule and, at least in case of generic/basic
+>> settings, user shouldn't be worried about upgrading between major
+>> versions with preserving settings. Otherwise, the whole idea doesn't
+>> make much sense and we should just prevent settings backup during major
+>> versions switch.
+> 
+> Excellent point!
+> Here's an odd possibility, just to throw at the wall.
+> What about building a special transition image, specifically for
+> moving from ar71xx to ath79.
+> If you want to retain the ability to return to ar71xx have an image to
+> go the opposite way.
 
-Adrian
+Simply, no.
+Please don't make it way more complicated that it truly is.
 
+> Or a metadata package to do the conversion post flash.
 
+My goal is to solve the problem without re-inventing the wheel. I prefer 
+to solve the problem with what we already have.
+
+> Because the option (which seems pretty drastic, unless the size could
+> be minimized) of having a near permanent conversion script built into
+> the firmware seems rather costly.
+
+Conversion scripts would be my last solution. I prefer to deal with the 
+problem without too much overhead.
+
+-- 
+Cheers,
+Piotr
 
 _______________________________________________
 openwrt-devel mailing list

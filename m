@@ -2,61 +2,70 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D025E14CE2B
-	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 17:22:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A387114CE5B
+	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 17:24:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
-	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JYqY9qRVUIXx+wzJiLa7r3fype80856uJCigtHuNIhg=; b=lYZiAn9T1FirK8DnsPkA/2nbup
-	AC5yOCm83ghsZLIu5ZrT1PzwZswIqAmm5BmuZSYrSj3Z9H8JO9FSoVJFa15P4E6R7rdiIjrq1JzcS
-	1mWWhuHrmbNbVTpBqxBxDzKweRBKQoarBf1jvAorgX3oewnpFwWWdSnWLyCy/ZkwQJUcnQs11LXwM
-	9FlXTDx+QjG2EYpQcpTolUN/oXpKFvP3XGdUs3GrwhkY27tK9mb4Jg7F7kgxzqHAtdYtV1ElP7zTi
-	7ATkkUvpfFhr/C9fVTo9aeAm97VZ/MY6xAUeT9IyCNamyVd5Slo66scDA1jNPMmST4DFILF1ILtij
-	iG/EmoeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DnYJv5jhU0QITfy34S2qve0vtmVUWC87sahdEDDDNVc=; b=P+mUtbm536XDyk
+	65W/m8UAuNgOVPdKGqraO9V2keSJsM4LgXXXWuhRXxxFzlm9MoNcUIWYun9J8+nScwH3aVN93XEkW
+	z9D9N5zB6MZdJ1pUJieuwHo1QgYbwYWFK0i/yonIJOMrHd+WahFUkKArCfuLhMXWYJ3yNbQ/+jIwh
+	UpwUD2AERgSooM6sZsZHcJp9lUjMuU3KFRjHJzHBumYtRKcmMvVXARQithk/mJ6lCnWL+0rrVTV9m
+	EjOBmW/sTBkIa2Cso0hl2XJ1l2RvYXLiWakHgcPm5H8AfXXNBiDVokaqGk1MteDOXXp6DbxqAXV41
+	KvhTmjX0faUCgrHiLemg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwq77-0007Qj-1t; Wed, 29 Jan 2020 16:22:49 +0000
-Received: from smtp-out.xnet.cz ([178.217.244.18])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwq6i-0007I0-Mc
- for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 16:22:26 +0000
-Received: from meh.true.cz (meh.true.cz [108.61.167.218])
- (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 7E5E937D2;
- Wed, 29 Jan 2020 17:22:22 +0100 (CET)
-Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id b79e8dd2;
- Wed, 29 Jan 2020 17:22:10 +0100 (CET)
-Date: Wed, 29 Jan 2020 17:22:10 +0100
-From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Rosen Penev <rosenp@gmail.com>
-Message-ID: <20200129162210.GA78186@meh.true.cz>
-References: <20200122230022.16876-1-rosenp@gmail.com>
- <87h80mfukb.fsf@miraculix.mork.no>
- <CAKxU2N-BcqJp6jiKz7mjFN0BujjQOMEv39jSffxCEKuKhZg2Qw@mail.gmail.com>
+	id 1iwq8p-0008PB-O8; Wed, 29 Jan 2020 16:24:35 +0000
+Received: from mail2.candelatech.com ([208.74.158.173]
+ helo=mail3.candelatech.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwq8h-0008Ou-D4
+ for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 16:24:28 +0000
+Received: from [192.168.100.195] (50-251-239-81-static.hfc.comcastbusiness.net
+ [50.251.239.81])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail3.candelatech.com (Postfix) with ESMTPSA id E88F1137585
+ for <openwrt-devel@lists.openwrt.org>; Wed, 29 Jan 2020 08:24:26 -0800 (PST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail3.candelatech.com E88F1137585
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=candelatech.com;
+ s=default; t=1580315067;
+ bh=OOzTDgLWfIg7QT8rYa0PD87XHP/evIIJPGDnVfQGAJ0=;
+ h=To:From:Subject:Date:From;
+ b=lLZ7OJ0bkk9xk1ogwB5EJoAm0uozoLpFaaH96E+48ERaiG63hAx66Qy2O7xMHvGhf
+ Dp8SxCsmWMqA/V5EKmbEGpvi5TEN08yURlRXUywQdJbykLLzu3Wn6jB/OGUpmn3ybe
+ fVyS9cCG7xaUOzMR2VH2ddlAb9hKwxCjssQBxO28=
+To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
+From: Ben Greear <greearb@candelatech.com>
+Organization: Candela Technologies
+Message-ID: <0ca9d820-8ae1-045f-4cc1-b8872dd12213@candelatech.com>
+Date: Wed, 29 Jan 2020 08:24:26 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKxU2N-BcqJp6jiKz7mjFN0BujjQOMEv39jSffxCEKuKhZg2Qw@mail.gmail.com>
-X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_082224_886038_FDBDEFC2 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200129_082427_464485_265E20E5 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.217.244.18 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
-Subject: Re: [OpenWrt-Devel] [PATCH] ramips: ethernet: turn off flow control
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] New ath10k-ct firmware available.
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,44 +77,56 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Um9zZW4gUGVuZXYgPHJvc2VucEBnbWFpbC5jb20+IFsyMDIwLTAxLTI1IDE1OjA0OjAzXToKCkhp
-IEJqw7hybiBhbmQgUm9zZW4sCgo+IE9uIFRodSwgSmFuIDIzLCAyMDIwIGF0IDEyOjI1IEFNIEJq
-w7hybiBNb3JrIDxiam9ybkBtb3JrLm5vPiB3cm90ZToKPiA+ID4KPiA+ID4gLSAgICAgaWYgKChy
-dF9zeXNjX3IzMihTWVNDX1JFR19DSElQX1JFVl9JRCkgJiAweEZGRkYpID09IDB4MDEwMSkgewo+
-ID4gPiAtICAgICAgICAgICAgIC8qIChHRTEsIEZvcmNlIDEwMDBNL0ZELCBGQyBPTiwgTUFYX1JY
-X0xFTkdUSCAxNTM2KSAqLwo+ID4gPiArICAgICBpZiAoKHJ0X3N5c2NfcjMyKFNZU0NfUkVHX0NI
-SVBfUkVWX0lEKSAmIDB4RkZGRikgPj0gMHgwMTAxKSB7Cj4gPiA+ICsgICAgICAgICAgICAgLyog
-KEdFMSwgRm9yY2UgMTAwME0vRkQsIEZDIE9GRiwgTUFYX1JYX0xFTkdUSCAxNTM2KSAqLwo+ID4g
-PiAgICAgICAgICAgICAgIG10a19zd2l0Y2hfdzMyKGdzdywgMHgyMzA1ZTMwYiwgR1NXX1JFR19N
-QUNfUDBfTUNSKTsKPiA+ID4gICAgICAgICAgICAgICBtdDc1MzBfbWRpb193MzIoZ3N3LCAweDM2
-MDAsIDB4NWUzMGIpOwo+ID4gPiAgICAgICB9IGVsc2Ugewo+ID4KPiA+IElmIHRoYXQncyByZWFs
-bHkgaGVscGluZyB0aGVuIEkgYmVsaWV2ZSBpdCB3b3VsZCBiZSB1c2VmdWwgdG8gYWRkIHNvbWUK
-PiA+IHNvcnQgb2YgY2hpcF9yZXZfaWQgcHJpbnRrIGhlcmUuICBXb3VsZCBiZSBnb29kIHRvIGtu
-b3cgd2hvIGhpdHMgdGhpcwo+ID4gYW5kIHdoeS4uLgoKSSBqdXN0IHF1aWNrbHkgc2tpbW1lZCB0
-aHJvdWdoIHRoZSBjb2RlIGFuZCBpdCBzZWVtcyBsaWtlIHdlJ3ZlIHRoYXQKaW5mb3JtYXRpb24g
-YWxyZWFkeSBpbiBkbWVzZzoKCiBTb0MgVHlwZTogTWVkaWFUZWsgTVQ3Njg4IHZlcjoxIGVjbzoy
-ICAgID0gMHgwMTAyCiBTb0MgVHlwZTogTWVkaWFUZWsgTVQ3NjI4QU4gdmVyOjEgZWNvOjIgID0g
-MHgwMTAyCiBTb0MgVHlwZTogTWVkaWFUZWsgTVQ3NjIxIHZlcjoxIGVjbzozICAgID0gMHgwMTAz
-CiBTb0MgVHlwZTogTWVkaWFUZWsgTVQ3NjIwQSB2ZXI6MiBlY286MyAgID0gMHgwMjAzCiBTb0Mg
-VHlwZTogTWVkaWFUZWsgTVQ3NjIwTiB2ZXI6MiBlY286NiAgID0gMHgwMjA2Cgo+IFRoYXQncyBq
-dXN0IGNvc21ldGljLgoKIGN1cnJlbnQ6ID09IDB4MDEwMQogbmV3OiAgICAgPj0gMHgwMTAxCgpE
-b2Vzbid0IGxvb2sgbGlrZSBhIGNvc21ldGljIGNoYW5nZSBub3IgY29ycmVjdCwgc2VlIGFib3Zl
-IGxpc3QuIFdoYXQgYWJvdXQKZm9sbG93aW5nPwoKICBpZiAocmFsaW5rX3NvYyA9PSBNVDc2Mlhf
-U09DX01UNzYyMUFUKSB7CiAgICAgICAvKiAoR0UxLCBGb3JjZSAxMDAwTS9GRCwgRkMgT0ZGLCBN
-QVhfUlhfTEVOR1RIIDE1MzYpICovCiAgICAgICBtdGtfc3dpdGNoX3czMihnc3csIDB4MjMwNWUz
-MGIsIEdTV19SRUdfTUFDX1AwX01DUik7CiAgICAgICBtdDc1MzBfbWRpb193MzIoZ3N3LCAweDM2
-MDAsIDB4NWUzMGIpOwogIH0gZWxzZSB7CiAgICAgICAuLi4KICB9CgpJIGp1c3QgZG9uJ3Qga25v
-dyB3aGljaCBNZWRpYVRlayBTb0MgaXMgMHgwMTAxICh2ZXI6MSBlY286MSksIGJ1dCBJIGFzc3Vt
-ZSwKdGhhdCB0aGlzIGNvbmRpdGlvbiBpcyBqdXN0IGJvZ3VzIGZyb20gdGhlIGJlZ2lubmluZy4K
-Ci0tIHluZXp6CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpvcGVud3J0LWRldmVsIG1haWxpbmcgbGlzdApvcGVud3J0LWRldmVsQGxpc3RzLm9wZW53cnQu
-b3JnCmh0dHBzOi8vbGlzdHMub3BlbndydC5vcmcvbWFpbG1hbi9saXN0aW5mby9vcGVud3J0LWRl
-dmVsCg==
+This supports better per-chain noise floor reporting, which in turn allows for
+better RSSI reporting in the driver.
+
+Wave-2 fixes a long-standing rate-ctrl problem when connected to xbox (and probably other devices).
+
+Wave-2 has fix for crash likely related to rekeying.
+
+Wave-1 has some debugging code added where a user reported a crash.
+
+If someone can test and push to upstream OpenWRT I'd appreciate it.
+
+988x
+a3a760d0d72707feffa496b6d2266bd9195f09806553b36420b60c0f12b8b87e  firmware-2-ct-full-community-22.bin.lede.015
+3114a54103d2b492fa1ef903769721f59953c829020d62502a1ec411ab4146d5  firmware-2-ct-full-htt-mgt-community-22.bin.lede.015
+/home/greearb/candela_html/downloads
+9887
+71e8b76dfd7c786d2f57bb7df207dcd13a91d3b492cfbd28916f084d0d1bb5e7  firmware-2-ct-full-community-22.bin.lede.015
+b085e5d2239727b72bc647a76864431b8ac48438e6a33b1d55edc2222468f6ff  firmware-2-ct-full-htt-mgt-community-22.bin.lede.015
+/home/greearb/candela_html/downloads
+9980
+edebe2f6f169cdd05c81a8a78156fb3426a66f415e7946af2ae4b7310fca5fe3  firmware-5-ct-full-community-12.bin-lede.015
+1ef67fb07da9082886e4dd554dfc19256e10b500faf9e4b2a5774d0238130bae  firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
+/home/greearb/candela_html/downloads
+9984
+c2f04da3285aad37baef9c37c9905a31927175dd234cd4378fd56c106e5c9379  firmware-5-ct-full-community-12.bin-lede.015
+0c9ede1036750d68885e6481fa84f3cb72192b8440b47719344f7327a030f05d  firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
+/home/greearb/candela_html/downloads
+4019
+1acbb7e7a6300091715a3dfe1b248c7833734961de52cc3465c1ed231a4d84f1  firmware-5-ct-full-community-12.bin-lede.015
+1065e4d3e55da84ec9e69268a4c5dba55ea33827c48a7c14bb8f0c167eb11b4c  firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
+/home/greearb/candela_html/downloads
+9888
+559ebd16872a8b43443c51bb4b7d021e5b75e65893d333d9393f3f6012f4ac79  firmware-5-ct-full-community-12.bin-lede.015
+4feaf5e7c4c1745f499ba8c3125db41675800ebedaea455c418c117805c5b372  firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
+/home/greearb/candela_html/downloads
+
+Thanks,
+Ben
+
+-- 
+Ben Greear <greearb@candelatech.com>
+Candela Technologies Inc  http://www.candelatech.com
+
+
+_______________________________________________
+openwrt-devel mailing list
+openwrt-devel@lists.openwrt.org
+https://lists.openwrt.org/mailman/listinfo/openwrt-devel

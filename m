@@ -2,71 +2,89 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9362C14D13D
-	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 20:37:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E29B14D307
+	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 23:22:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MRBZnGOCntNcvaTlm5XYEq625xxwYpkRW4c1t1bTs60=; b=bsWD1N0AjrWp0C
-	tI9A149eYwEkqMuHmp8ske+r2IEAQnN7vsJIvJ8KTMU0GEtSKQXtZlSI2CObKoHYMPhTYpLqAcvEt
-	PC2r5a+05mcXgrTUJ5k3vOli901bEFQzepL0lOEixO094AXL5r+soEbBeRFpad2qchsq+w/1BcdFh
-	9rcHC42f+OQ0TDsoZGoi+V7NwqYxVEha81Z9TwELKLMsPoXTYJo3CBJqIEwvQuDfOohkxXIxvcr1K
-	Os85FbGTmNgx8haDWnJrZMgrrfY5hzGZxf/vWEehQi0WrtJNc8OeUHLgBTefIhhd1ck7xx/UAt/zj
-	3TfgdiFmSdpfCKRR67VA==;
+	List-Owner; bh=T0ef6Qg+SMvDY5kmJ/LEek4VmRMJHD974mcURXU1xak=; b=arcrOPgtdOwPdp
+	/yJcFRyMcyWT1a8UbAaORHC0R9J/ma4/nZVWWw03mNmuhuReeLqDV4aMOFBlafU//SerBv7piUhqW
+	sfR6FXKHgQsjbifr/2iYC/PwXmDef1DvIANuLXiY5sOFa9NmqM8nKyDfEpmeDmws2R0nPmAd7HyLo
+	AtFiYuuS2MsAKOunGDxaniKocLHPlUhwrV5hpdFMHvpTmnonqMKwlWDoy7os0aEjMdXkFCopE48CN
+	OFFSsr6fuifBuf8Pw1oY+MLotmMZJhhanAnefHRJUBeKv0AkXz9IT/JKNU6lOf2GKX7BouLin3vcH
+	xymCBENgYH/nDdjSqkiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwt9C-0005PB-3U; Wed, 29 Jan 2020 19:37:10 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1iwviY-0005Xe-FG; Wed, 29 Jan 2020 22:21:50 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwt91-0005Oi-8b
- for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 19:37:01 +0000
-Received: from buildfff.adridolf.com ([188.195.207.249]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.167]) with ESMTPSA (Nemesis)
- id 1N2Unv-1jiH2e3zbT-013sxE for <openwrt-devel@lists.openwrt.org>; Wed, 29
- Jan 2020 20:36:56 +0100
-From: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ id 1iwviN-0005XF-1C
+ for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 22:21:41 +0000
+Received: by mail-lf1-x141.google.com with SMTP id f24so845698lfh.3
+ for <openwrt-devel@lists.openwrt.org>; Wed, 29 Jan 2020 14:21:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/7HnO815kqKGeDP3sv4scReusKzuFstLnAr+5i/RSjw=;
+ b=ZUyxWtgArdjDj39/QCVGI64WdtvUJstVZkLKEFESYGyQddU5tVbaaJ1pY+WNC9YyQu
+ I+RmLRjK/mNWySELRkm6n1bddh8IcgEkICOlrNePufQp9vXfoR1PS1M10Ww2tuKkL+pD
+ LPlliC1I2ogqc6+92Wtq+iNcdpWdzT19ZLdAmRuZxyoskenQdm0vCfDewtGeQVVH4ejx
+ O+Cnva9TyhM6B4o4iZ8+4zE0bQEcAtBSyQCYx6LPHjkZpQKcbX7vLPZcTxqPLbRPAomz
+ R68CrJWTb2oR+KrT3P/K1Zs+K2YPitSa5qtRFyZwNpg2YOg7GGFaPwkGU991I3dfjt5F
+ PvwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/7HnO815kqKGeDP3sv4scReusKzuFstLnAr+5i/RSjw=;
+ b=WvsGVFT/S0GGTVXBiaSRSQQKHf9lYhVsghxAbuUhRTnplpdonMeHAdna7ZKGzi3C3I
+ v9F7Os0E6FYmKZzGAABmZoOhjxNCk4MBRaQtLf4Ay04shEzI+joHsFE58gIDqozVgplH
+ ImKPeDtS0VP7MCcU6H6VhytTL8pAaJRowYnu4xVuQU5Uayan1YNDWn8Vkx70KDawGndb
+ q/W+WQRqp27qPMmYxBKIz0grx8m8nDq/Z21BT3QjxRKuTrbdkG3tw7rdgNa7peQVfmZW
+ dEOIM2gceX6xYpPRGOCeuNuwv8Vn4FkCfQzfDp+PWrG5/LwWlS7OyH+mh1Q922vKvWwF
+ ggDw==
+X-Gm-Message-State: APjAAAV97Pz0StEo7/73GVfTWo9F1slM6jhMgkptjK0Gxp4yFrEe/A+0
+ n2aAKV8iQAM3IJHTPVYRYUocawuL
+X-Google-Smtp-Source: APXvYqzQB/j+m0RgHlBIy/rKHpava9V0P/SzDoTnwprShjj2RmbExzc5R85a191qdFgdLSZN/xAPMw==
+X-Received: by 2002:ac2:5f74:: with SMTP id c20mr786353lfc.15.1580336495959;
+ Wed, 29 Jan 2020 14:21:35 -0800 (PST)
+Received: from frog.lan ([2a01:79c:cebd:585c::bd2])
+ by smtp.gmail.com with ESMTPSA id g13sm1672238ljj.38.2020.01.29.14.21.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Jan 2020 14:21:35 -0800 (PST)
+From: michael.yartys@gmail.com
+X-Google-Original-From: michael.yartys@protonmail.com
 To: openwrt-devel@lists.openwrt.org
-Date: Wed, 29 Jan 2020 20:35:16 +0100
-Message-Id: <20200129193516.43475-1-freifunk@adrianschmutzler.de>
-X-Mailer: git-send-email 2.20.1
+Date: Wed, 29 Jan 2020 23:19:30 +0100
+Message-Id: <20200129221930.312216-1-michael.yartys@protonmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:7xrroP12+DVwlrm1VVzSeAfaHGWCnxFkcbbv/0fi5N17n51fuSa
- 55nizjiHoP+nvi2YGpHEdu+3PEALppn7xjB3zPO+M23OqqtExTbCI3Vy+M/2lxFe6F9cQZY
- Yr3qOe609aSku/6C2CR7WDmtaac8kckFITjImsGG8pnM2dpjfbVHf8Sp0FInmO5XwwpqMP9
- 6TS62WogFoaBTXAczKXCg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ypb7zlPZPR8=:AjiNz4Hv+c91j3vemPCGQ0
- YI7juPZtLQskagXdMLKJkDOtZLNrGpUjzOm/CPDCHfyN/qusSvkv0BYBpkc+6Km+ZbNNH43gj
- E1M0HYHu+V/bsqc/K89FB6f4fWAlni8vTHNBsyAU2S0APeYViwDUnWGtR9cyAlatUqFc28LkJ
- Bs6v98l4FkJY+HBuCOAL2777R6CB7DMHKIauhCCkTGzM2IcteCHU5w8aSs5uX9kQglBFStdNg
- Cequ3F1IwhaNVww/Pu1xCe98hfY7yrI903YzD/A/klxZbi8mQ5/30Rp0CecsixcX3OMWI5r0S
- 5EroobkNeKcOqtIsYxhWmfm7ZcK7lc8vtr9N6WQJlK6hyRhRsf9zHvVa9LygiOpHC0WnxwWSl
- EDqI+IFIwkqHTq/PFpK04mWF/9BpQf5iMOWoQUi2eaFqk5V3G4NTWhDva/K1/OCU3PEC1vZ9+
- Vx/lQdRgLlGel6tBJ9qthtSUCcdIHsiqB0Ww8WWkbDpJOD2QNZ/YOxa6rlYO+l87Ky/0g4W62
- wTn938xCUeQTP70t/C7A4U0ZVV20c7vv5gl/FN9ouvr4lQ/5+0F7hNoBpcWsCYaNTWYVvykpD
- Vug7cCvtnBUJj4bruxCMXMbzeqhN4VcUGFt51sQ9oBz804Ba8AXy34QOaxdFlwf1PbmW/n/uQ
- WWkF2Pdv7Hw9YsGvkaAWkgBQNgrlRau/muuXzT819mNVZunyvsLZDgKhTIpT6bTcsNYeC1Vjh
- hzjLkdFMsVZCaCJHQkMd4z06iJylk3qZENHR9vLeZid+kvBrIN7r+LB4gfae4wZ0Y+9bsHkwt
- FSgRucsOqw0MY6xZ1DoRik6TiExFpCOGYKHPuRijWZCcTN5KqbMAXVgWz4qQxiT890DOZnf
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_113659_603633_357A7C5B 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200129_142139_080480_76C2CF6D 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [michael.yartys[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH v2] ramips: collect and harmonize TP-Link
- image variants in common file
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: [OpenWrt-Devel] [PATCH 1/2] ath10k-ct: update to 2020-01-29
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,543 +96,437 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: Michael Yartys <michael.yartys@protonmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This moves the various variants of common device definitions for
-TP-Link devices to a common Makefile common-tp-link.mk. This
-provides the opportunity to reorganize and move parameters between
-individual device definitions and the common ones.
+From: Michael Yartys <michael.yartys@protonmail.com>
 
-While at it, also use the common definitions for previously
-independent definitions where appropriate.
+Changes:
 
-Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ath10k-ct: Support better RSSI measurements.
 
+When used with recent firmware, these changes allow the driver to
+query per-chain noise-floor from the radio to better calculate the
+per-chain RSSI. The per-chain RSSI is then summed to provide the
+'combined RSSI'. This gives better per-chain RSSI as well as combined
+RSSI, especially when running with more than 20Mhz bandwidths.
+
+Refresh patches.
+
+Signed-off-by: Michael Yartys <michael.yartys@protonmail.com>
 ---
+ package/kernel/ath10k-ct/Makefile             |  6 +--
+ ...rt-for-configuring-management-packet.patch |  4 +-
+ ...ble-out-of-bound-access-of-ath10k_ra.patch |  2 +-
+ ...rect-multicast-broadcast-rate-settin.patch |  4 +-
+ ...64-ath10k-commit-rates-from-mac80211.patch | 12 +++---
+ ...-the-vif-to-cancel_remain_on_channel.patch |  4 +-
+ ...rolling-support-for-various-chipsets.patch | 38 +++++++++----------
+ ...h10k-4.16-use-tpt-trigger-by-default.patch |  8 ++--
+ ...ilable-channels-via-DT-ieee80211-fre.patch |  2 +-
+ ...station-exists-before-forwarding-tx-.patch |  2 +-
+ 10 files changed, 41 insertions(+), 41 deletions(-)
 
-I'd be happy about some Tested-by!
-
-Changes in v2:
-- Rebased due to removed DEVICE_PACKAGES for Archer C20i
-
----
- target/linux/ramips/image/common-tp-link.mk |  39 +++++++
- target/linux/ramips/image/mt7620.mk         |  46 +++------
- target/linux/ramips/image/mt7621.mk         |  16 +--
- target/linux/ramips/image/mt76x8.mk         | 108 +++++++-------------
- 4 files changed, 95 insertions(+), 114 deletions(-)
- create mode 100644 target/linux/ramips/image/common-tp-link.mk
-
-diff --git a/target/linux/ramips/image/common-tp-link.mk b/target/linux/ramips/image/common-tp-link.mk
-new file mode 100644
-index 0000000000..bd35e5bcef
---- /dev/null
-+++ b/target/linux/ramips/image/common-tp-link.mk
-@@ -0,0 +1,39 @@
-+DEVICE_VARS += TPLINK_FLASHLAYOUT TPLINK_HWID TPLINK_HWREV TPLINK_HWREVADD
-+DEVICE_VARS += TPLINK_HVERSION TPLINK_BOARD_ID TPLINK_HEADER_VERSION
-+
-+define Device/tplink-v1
-+  DEVICE_VENDOR := TP-Link
-+  TPLINK_HWREV := 0x1
-+  TPLINK_HEADER_VERSION := 1
-+  KERNEL := $(KERNEL_DTB)
-+  KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v1-header -e -O
-+  IMAGES += factory.bin
-+  IMAGE/factory.bin := tplink-v1-image factory -e -O
-+  IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade -e -O | append-metadata | \
-+	check-size $$$$(IMAGE_SIZE)
-+endef
-+
-+define Device/tplink-v2
-+  DEVICE_VENDOR := TP-Link
-+  TPLINK_HWREV := 0x1
-+  TPLINK_HWREVADD := 0x0
-+  TPLINK_HVERSION := 3
-+  KERNEL := $(KERNEL_DTB)
-+  KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v2-header -e
-+  IMAGES += factory.bin
-+  IMAGE/factory.bin := tplink-v2-image -e
-+  IMAGE/sysupgrade.bin := tplink-v2-image -s -e | append-metadata | \
-+	check-size $$$$(IMAGE_SIZE)
-+endef
-+
-+define Device/tplink-safeloader
-+  DEVICE_VENDOR := TP-Link
-+  TPLINK_HWID := 0x0
-+  TPLINK_HWREV := 0x0
-+  TPLINK_HEADER_VERSION := 1
-+  KERNEL := $(KERNEL_DTB) | tplink-v1-header -e -O
-+  IMAGES += factory.bin
-+  IMAGE/sysupgrade.bin := append-rootfs | tplink-safeloader sysupgrade | \
-+	append-metadata | check-size $$$$(IMAGE_SIZE)
-+  IMAGE/factory.bin := append-rootfs | tplink-safeloader factory
-+endef
-diff --git a/target/linux/ramips/image/mt7620.mk b/target/linux/ramips/image/mt7620.mk
-index 61f2c898f5..3512a1c55a 100644
---- a/target/linux/ramips/image/mt7620.mk
-+++ b/target/linux/ramips/image/mt7620.mk
-@@ -2,8 +2,9 @@
- # MT7620A Profiles
- #
+diff --git a/package/kernel/ath10k-ct/Makefile b/package/kernel/ath10k-ct/Makefile
+index c29d28f41a..02df930729 100644
+--- a/package/kernel/ath10k-ct/Makefile
++++ b/package/kernel/ath10k-ct/Makefile
+@@ -8,9 +8,9 @@ PKG_LICENSE_FILES:=
  
--DEVICE_VARS += TPLINK_FLASHLAYOUT TPLINK_HWID TPLINK_HWREV TPLINK_HWREVADD TPLINK_HVERSION \
--	DLINK_ROM_ID DLINK_FAMILY_MEMBER DLINK_FIRMWARE_SIZE DLINK_IMAGE_OFFSET
-+include ./common-tp-link.mk
-+
-+DEVICE_VARS += DLINK_ROM_ID DLINK_FAMILY_MEMBER DLINK_FIRMWARE_SIZE DLINK_IMAGE_OFFSET
+ PKG_SOURCE_URL:=https://github.com/greearb/ath10k-ct.git
+ PKG_SOURCE_PROTO:=git
+-PKG_SOURCE_DATE:=2019-09-09
+-PKG_SOURCE_VERSION:=5e8cd86f90dac966d12df6ece84ac41458d0e95f
+-PKG_MIRROR_HASH:=dc1097f3a7b4b7e346918f206746d00a0b7df07ae3be9b89be55dfaef3cbbe45
++PKG_SOURCE_DATE:=2020-01-29
++PKG_SOURCE_VERSION:=3e3d0adb3cc6c6cf56a05ff661796948f09c5aa8
++PKG_MIRROR_HASH:=6341de2d3b19b2a32205a1633bf9556815943a2cff38acbbe5f61c6c0164fdcc
  
- define Build/elecom-header
- 	cp $@ $(KDIR)/v_0.0.0.bin
-@@ -64,17 +65,6 @@ define Device/amit_jboot
-   DEVICE_PACKAGES := jboot-tools kmod-usb2 kmod-usb-ohci
- endef
+ # Build the 5.2 ath10k-ct driver version.  Other option is "-4.19".
+ # Probably this should match as closely as
+diff --git a/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch b/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
+index e67003c5a7..f18afae327 100644
+--- a/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
++++ b/package/kernel/ath10k-ct/patches/161-ath10k-add-support-for-configuring-management-packet.patch
+@@ -43,7 +43,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  static int ath10k_mac_get_max_vht_mcs_map(u16 mcs_map, int nss)
+  {
+  	switch ((mcs_map >> (2 * nss)) & 0x3) {
+-@@ -6405,9 +6421,10 @@ static void ath10k_bss_info_changed(stru
++@@ -6413,9 +6429,10 @@ static void ath10k_bss_info_changed(stru
+  	struct cfg80211_chan_def def;
+  	u32 vdev_param, pdev_param, slottime, preamble;
+  	u16 bitrate, hw_value;
+@@ -56,7 +56,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  
+  	mutex_lock(&ar->conf_mutex);
+  
+-@@ -6613,6 +6630,30 @@ static void ath10k_bss_info_changed(stru
++@@ -6621,6 +6638,30 @@ static void ath10k_bss_info_changed(stru
+  				    arvif->vdev_id,  ret);
+  	}
+  
+diff --git a/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch b/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
+index a24029983c..aa473e8fea 100644
+--- a/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
++++ b/package/kernel/ath10k-ct/patches/162-ath10k-fix-possible-out-of-bound-access-of-ath10k_ra.patch
+@@ -26,7 +26,7 @@ Origin: backport, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux
+  		if (ath10k_rates[i].bitrate == bitrate)
+  			return hw_value_prefix | ath10k_rates[i].hw_value;
+  	}
+-@@ -6636,22 +6636,22 @@ static void ath10k_bss_info_changed(stru
++@@ -6644,22 +6644,22 @@ static void ath10k_bss_info_changed(stru
+  			return;
+  		}
+  
+diff --git a/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch b/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
+index f6fd75b7e5..fc866f49b5 100644
+--- a/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
++++ b/package/kernel/ath10k-ct/patches/163-ath10k-fix-incorrect-multicast-broadcast-rate-settin.patch
+@@ -17,7 +17,7 @@ Origin: other, https://patchwork.kernel.org/patch/10723033/
  
--define Device/Archer
--  SOC := mt7620a
--  DEVICE_VENDOR := TP-Link
--  TPLINK_HWREVADD := 0
--  TPLINK_HVERSION := 3
--  KERNEL := $(KERNEL_DTB)
--  KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v2-header -e
--  IMAGE/factory.bin := tplink-v2-image -e
--  IMAGE/sysupgrade.bin := tplink-v2-image -s -e | append-metadata
--endef
--
- define Device/asus_rp-n53
-   SOC := mt7620a
-   IMAGE_SIZE := 7872k
-@@ -865,12 +855,12 @@ endef
- TARGET_DEVICES += sercomm_na930
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -6421,8 +6421,8 @@ static void ath10k_bss_info_changed(stru
++@@ -6429,8 +6429,8 @@ static void ath10k_bss_info_changed(stru
+  	struct cfg80211_chan_def def;
+  	u32 vdev_param, pdev_param, slottime, preamble;
+  	u16 bitrate, hw_value;
+@@ -28,7 +28,7 @@ Origin: other, https://patchwork.kernel.org/patch/10723033/
+  	enum nl80211_band band;
+  	const struct ieee80211_supported_band *sband;
+  
+-@@ -6595,7 +6595,11 @@ static void ath10k_bss_info_changed(stru
++@@ -6603,7 +6603,11 @@ static void ath10k_bss_info_changed(stru
+  	if (changed & BSS_CHANGED_MCAST_RATE &&
+  	    !WARN_ON(ath10k_mac_vif_chan(arvif->vif, &def))) {
+  		band = def.chan->band;
+diff --git a/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch b/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
+index aab435bccd..9a31164fcc 100644
+--- a/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
++++ b/package/kernel/ath10k-ct/patches/164-ath10k-commit-rates-from-mac80211.patch
+@@ -11,7 +11,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
  
- define Device/tplink_archer-c20i
--  $(Device/Archer)
-+  $(Device/tplink-v2)
-+  SOC := mt7620a
-   IMAGE_SIZE := 7808k
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0xc2000001
-   TPLINK_HWREV := 58
--  IMAGES += factory.bin
-   DEVICE_MODEL := Archer C20i
-   DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-ohci
-   SUPPORTED_DEVICES += c20i
-@@ -878,14 +868,14 @@ endef
- TARGET_DEVICES += tplink_archer-c20i
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -6617,6 +6617,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6625,6 +6625,7 @@ static void ath10k_bss_info_changed(stru
+  			   "mac vdev %d mcast_rate %x\n",
+  			   arvif->vdev_id, rate);
+  
+@@ -19,7 +19,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  		vdev_param = ar->wmi.vdev_param->mcast_data_rate;
+  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
+  						vdev_param, rate);
+-@@ -6625,6 +6626,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6633,6 +6634,7 @@ static void ath10k_bss_info_changed(stru
+  				    "failed to set mcast rate on vdev %i: %d\n",
+  				    arvif->vdev_id,  ret);
+  
+@@ -27,7 +27,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  		vdev_param = ar->wmi.vdev_param->bcast_data_rate;
+  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
+  						vdev_param, rate);
+-@@ -6651,6 +6653,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6659,6 +6661,7 @@ static void ath10k_bss_info_changed(stru
+  			return;
+  		}
+  
+@@ -37,7 +37,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  						hw_rate_code);
+ --- a/ath10k-5.2/mac.c
+ +++ b/ath10k-5.2/mac.c
+-@@ -6732,6 +6732,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6742,6 +6742,7 @@ static void ath10k_bss_info_changed(stru
+  			   "mac vdev %d mcast_rate %x\n",
+  			   arvif->vdev_id, rate);
+  
+@@ -45,7 +45,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  		vdev_param = ar->wmi.vdev_param->mcast_data_rate;
+  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
+  						vdev_param, rate);
+-@@ -6740,6 +6741,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6750,6 +6751,7 @@ static void ath10k_bss_info_changed(stru
+  				    "failed to set mcast rate on vdev %i: %d\n",
+  				    arvif->vdev_id,  ret);
+  
+@@ -53,7 +53,7 @@ Signed-off-by: Sven Eckelmann <sven@narfation.org>
+  		vdev_param = ar->wmi.vdev_param->bcast_data_rate;
+  		ret = ath10k_wmi_vdev_set_param(ar, arvif->vdev_id,
+  						vdev_param, rate);
+-@@ -6766,6 +6768,7 @@ static void ath10k_bss_info_changed(stru
++@@ -6776,6 +6778,7 @@ static void ath10k_bss_info_changed(stru
+  			return;
+  		}
+  
+diff --git a/package/kernel/ath10k-ct/patches/170-mac80211-pass-the-vif-to-cancel_remain_on_channel.patch b/package/kernel/ath10k-ct/patches/170-mac80211-pass-the-vif-to-cancel_remain_on_channel.patch
+index ee9667ccb0..180b0d5bf7 100644
+--- a/package/kernel/ath10k-ct/patches/170-mac80211-pass-the-vif-to-cancel_remain_on_channel.patch
++++ b/package/kernel/ath10k-ct/patches/170-mac80211-pass-the-vif-to-cancel_remain_on_channel.patch
+@@ -17,7 +17,7 @@ Signed-off-by: Johannes Berg <johannes.berg@intel.com>
  
- define Device/tplink_archer-c20-v1
--  $(Device/Archer)
-+  $(Device/tplink-v2)
-+  SOC := mt7620a
-   IMAGE_SIZE := 7808k
-   SUPPORTED_DEVICES += tplink,c20-v1
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0xc2000001
-   TPLINK_HWREV := 0x44
-   TPLINK_HWREVADD := 0x1
--  IMAGES += factory.bin
-   DEVICE_MODEL := Archer C20
-   DEVICE_VARIANT := v1
-   DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-ohci \
-@@ -894,13 +884,13 @@ endef
- TARGET_DEVICES += tplink_archer-c20-v1
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -7775,7 +7775,8 @@ exit:
++@@ -7783,7 +7783,8 @@ exit:
+  	return ret;
+  }
+  
+@@ -29,7 +29,7 @@ Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+  
+ --- a/ath10k-5.2/mac.c
+ +++ b/ath10k-5.2/mac.c
+-@@ -7883,7 +7883,8 @@ exit:
++@@ -7893,7 +7893,8 @@ exit:
+  	return ret;
+  }
+  
+diff --git a/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch b/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
+index ba42fc1d2d..d526e2795b 100644
+--- a/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
++++ b/package/kernel/ath10k-ct/patches/201-ath10k-4.16_add-LED-and-GPIO-controlling-support-for-various-chipsets.patch
+@@ -161,7 +161,7 @@ v13:
+  		.patch_load_addr = QCA9888_HW_2_0_PATCH_LOAD_ADDR,
+  		.uart_pin = 7,
+  		.cc_wraparound_type = ATH10K_HW_CC_WRAP_SHIFTED_EACH,
+-@@ -3167,6 +3173,10 @@ int ath10k_core_start(struct ath10k *ar,
++@@ -3170,6 +3176,10 @@ int ath10k_core_start(struct ath10k *ar,
+  			ath10k_wmi_check_apply_board_power_ctl_table(ar);
+  	}
+  
+@@ -172,7 +172,7 @@ v13:
+  	return 0;
+  
+  err_hif_stop:
+-@@ -3421,9 +3431,18 @@ static void ath10k_core_register_work(st
++@@ -3424,9 +3434,18 @@ static void ath10k_core_register_work(st
+  		goto err_spectral_destroy;
+  	}
+  
+@@ -191,7 +191,7 @@ v13:
+  err_spectral_destroy:
+  	ath10k_spectral_destroy(ar);
+  err_debug_destroy:
+-@@ -3481,6 +3500,8 @@ void ath10k_core_unregister(struct ath10
++@@ -3484,6 +3503,8 @@ void ath10k_core_unregister(struct ath10
+  	if (!test_bit(ATH10K_FLAG_CORE_REGISTERED, &ar->dev_flags))
+  		return;
+  
+@@ -464,7 +464,7 @@ v13:
+  static const struct wmi_peer_flags_map wmi_tlv_peer_flags_map = {
+ --- a/ath10k-4.19/wmi.c
+ +++ b/ath10k-4.19/wmi.c
+-@@ -8070,6 +8070,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
++@@ -8071,6 +8071,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
+  	return skb;
+  }
+  
+@@ -514,7 +514,7 @@ v13:
+  static struct sk_buff *
+  ath10k_wmi_op_gen_set_psmode(struct ath10k *ar, u32 vdev_id,
+  			     enum wmi_sta_ps_mode psmode)
+-@@ -9821,6 +9864,9 @@ static const struct wmi_ops wmi_ops = {
++@@ -9822,6 +9865,9 @@ static const struct wmi_ops wmi_ops = {
+  	.fw_stats_fill = ath10k_wmi_main_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -524,7 +524,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9891,6 +9937,8 @@ static const struct wmi_ops wmi_10_1_ops
++@@ -9892,6 +9938,8 @@ static const struct wmi_ops wmi_10_1_ops
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -533,7 +533,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -9969,6 +10017,8 @@ static const struct wmi_ops wmi_10_2_ops
++@@ -9970,6 +10018,8 @@ static const struct wmi_ops wmi_10_2_ops
+  	.gen_delba_send = ath10k_wmi_op_gen_delba_send,
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+@@ -542,7 +542,7 @@ v13:
+  	/* .gen_pdev_enable_adaptive_cca not implemented */
+  };
+  
+-@@ -10039,6 +10089,8 @@ static const struct wmi_ops wmi_10_2_4_o
++@@ -10040,6 +10090,8 @@ static const struct wmi_ops wmi_10_2_4_o
+  	.gen_pdev_enable_adaptive_cca =
+  		ath10k_wmi_op_gen_pdev_enable_adaptive_cca,
+  	.get_vdev_subtype = ath10k_wmi_10_2_4_op_get_vdev_subtype,
+@@ -551,7 +551,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -10119,6 +10171,8 @@ static const struct wmi_ops wmi_10_4_ops
++@@ -10120,6 +10172,8 @@ static const struct wmi_ops wmi_10_4_ops
+  	.gen_pdev_bss_chan_info_req = ath10k_wmi_10_2_op_gen_pdev_bss_chan_info,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+  	.gen_pdev_get_tpc_config = ath10k_wmi_10_2_4_op_gen_pdev_get_tpc_config,
+@@ -683,7 +683,7 @@ v13:
+  		.patch_load_addr = QCA9888_HW_2_0_PATCH_LOAD_ADDR,
+  		.uart_pin = 7,
+  		.cc_wraparound_type = ATH10K_HW_CC_WRAP_SHIFTED_EACH,
+-@@ -3452,6 +3458,10 @@ int ath10k_core_start(struct ath10k *ar,
++@@ -3497,6 +3503,10 @@ int ath10k_core_start(struct ath10k *ar,
+  			ath10k_wmi_check_apply_board_power_ctl_table(ar);
+  	}
+  
+@@ -694,7 +694,7 @@ v13:
+  	return 0;
+  
+  err_hif_stop:
+-@@ -3708,9 +3718,18 @@ static void ath10k_core_register_work(st
++@@ -3753,9 +3763,18 @@ static void ath10k_core_register_work(st
+  		goto err_spectral_destroy;
+  	}
+  
+@@ -713,7 +713,7 @@ v13:
+  err_spectral_destroy:
+  	ath10k_spectral_destroy(ar);
+  err_debug_destroy:
+-@@ -3770,6 +3789,8 @@ void ath10k_core_unregister(struct ath10
++@@ -3815,6 +3834,8 @@ void ath10k_core_unregister(struct ath10
+  	if (!test_bit(ATH10K_FLAG_CORE_REGISTERED, &ar->dev_flags))
+  		return;
+  
+@@ -732,7 +732,7 @@ v13:
+  
+  #include "htt.h"
+  #include "htc.h"
+-@@ -1441,6 +1442,13 @@ struct ath10k {
++@@ -1447,6 +1448,13 @@ struct ath10k {
+  	} testmode;
+  
+  	struct {
+@@ -978,7 +978,7 @@ v13:
+  static const struct wmi_peer_flags_map wmi_tlv_peer_flags_map = {
+ --- a/ath10k-5.2/wmi.c
+ +++ b/ath10k-5.2/wmi.c
+-@@ -8286,6 +8286,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
++@@ -8295,6 +8295,49 @@ ath10k_wmi_op_gen_peer_set_param(struct
+  	return skb;
+  }
+  
+@@ -1028,7 +1028,7 @@ v13:
+  static struct sk_buff *
+  ath10k_wmi_op_gen_set_psmode(struct ath10k *ar, u32 vdev_id,
+  			     enum wmi_sta_ps_mode psmode)
+-@@ -10058,6 +10101,9 @@ static const struct wmi_ops wmi_ops = {
++@@ -10067,6 +10110,9 @@ static const struct wmi_ops wmi_ops = {
+  	.fw_stats_fill = ath10k_wmi_main_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -1038,7 +1038,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -10128,6 +10174,8 @@ static const struct wmi_ops wmi_10_1_ops
++@@ -10137,6 +10183,8 @@ static const struct wmi_ops wmi_10_1_ops
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+@@ -1047,7 +1047,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -10207,6 +10255,8 @@ static const struct wmi_ops wmi_10_2_ops
++@@ -10216,6 +10264,8 @@ static const struct wmi_ops wmi_10_2_ops
+  	.gen_delba_send = ath10k_wmi_op_gen_delba_send,
+  	.fw_stats_fill = ath10k_wmi_10x_op_fw_stats_fill,
+  	.get_vdev_subtype = ath10k_wmi_op_get_vdev_subtype,
+@@ -1056,7 +1056,7 @@ v13:
+  	/* .gen_pdev_enable_adaptive_cca not implemented */
+  };
+  
+-@@ -10278,6 +10328,8 @@ static const struct wmi_ops wmi_10_2_4_o
++@@ -10287,6 +10337,8 @@ static const struct wmi_ops wmi_10_2_4_o
+  		ath10k_wmi_op_gen_pdev_enable_adaptive_cca,
+  	.get_vdev_subtype = ath10k_wmi_10_2_4_op_get_vdev_subtype,
+  	.gen_bb_timing = ath10k_wmi_10_2_4_op_gen_bb_timing,
+@@ -1065,7 +1065,7 @@ v13:
+  	/* .gen_bcn_tmpl not implemented */
+  	/* .gen_prb_tmpl not implemented */
+  	/* .gen_p2p_go_bcn_ie not implemented */
+-@@ -10359,6 +10411,8 @@ static const struct wmi_ops wmi_10_4_ops
++@@ -10368,6 +10420,8 @@ static const struct wmi_ops wmi_10_4_ops
+  	.gen_pdev_bss_chan_info_req = ath10k_wmi_10_2_op_gen_pdev_bss_chan_info,
+  	.gen_echo = ath10k_wmi_op_gen_echo,
+  	.gen_pdev_get_tpc_config = ath10k_wmi_10_2_4_op_gen_pdev_get_tpc_config,
+diff --git a/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch b/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
+index d730f9931f..db62631dfd 100644
+--- a/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
++++ b/package/kernel/ath10k-ct/patches/202-ath10k-4.16-use-tpt-trigger-by-default.patch
+@@ -16,7 +16,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
  
- define Device/tplink_archer-c2-v1
--  $(Device/Archer)
-+  $(Device/tplink-v2)
-+  SOC := mt7620a
-   IMAGE_SIZE := 7808k
-   SUPPORTED_DEVICES += tplink,c2-v1
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0xc7500001
-   TPLINK_HWREV := 50
--  IMAGES += factory.bin
-   DEVICE_MODEL := Archer C2
-   DEVICE_VARIANT := v1
-   DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-ohci \
-@@ -909,12 +899,13 @@ endef
- TARGET_DEVICES += tplink_archer-c2-v1
+ --- a/ath10k-4.19/core.h
+ +++ b/ath10k-4.19/core.h
+-@@ -1488,6 +1488,10 @@ struct ath10k {
++@@ -1489,6 +1489,10 @@ struct ath10k {
+  	u8 csi_data[4096];
+  	u16 csi_data_len;
+  
+@@ -42,7 +42,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
+  	if (ret)
+ --- a/ath10k-4.19/mac.c
+ +++ b/ath10k-4.19/mac.c
+-@@ -9983,7 +9983,7 @@ int ath10k_mac_register(struct ath10k *a
++@@ -9987,7 +9987,7 @@ int ath10k_mac_register(struct ath10k *a
+  	wiphy_ext_feature_set(ar->hw->wiphy, NL80211_EXT_FEATURE_CQM_RSSI_LIST);
+  
+  #ifdef CPTCFG_MAC80211_LEDS
+@@ -53,7 +53,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
+  #endif
+ --- a/ath10k-5.2/core.h
+ +++ b/ath10k-5.2/core.h
+-@@ -1543,6 +1543,10 @@ struct ath10k {
++@@ -1550,6 +1550,10 @@ struct ath10k {
+  	u8 csi_data[4096];
+  	u16 csi_data_len;
+  
+@@ -79,7 +79,7 @@ Signed-off-by: Mathias Kresin <dev@kresin.me>
+  	if (ret)
+ --- a/ath10k-5.2/mac.c
+ +++ b/ath10k-5.2/mac.c
+-@@ -10179,7 +10179,7 @@ int ath10k_mac_register(struct ath10k *a
++@@ -10187,7 +10187,7 @@ int ath10k_mac_register(struct ath10k *a
+  	ar->hw->weight_multiplier = ATH10K_AIRTIME_WEIGHT_MULTIPLIER;
+  
+  #ifdef CPTCFG_MAC80211_LEDS
+diff --git a/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch b/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
+index 8fe1fb8f97..f47e9d64c0 100644
+--- a/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
++++ b/package/kernel/ath10k-ct/patches/203-ath10k-Limit-available-channels-via-DT-ieee80211-fre.patch
+@@ -29,7 +29,7 @@ Forwarded: https://patchwork.kernel.org/patch/10549245/
+  #include <net/mac80211.h>
+  #include <linux/etherdevice.h>
+  #include <linux/acpi.h>
+-@@ -9707,6 +9708,7 @@ int ath10k_mac_register(struct ath10k *a
++@@ -9711,6 +9712,7 @@ int ath10k_mac_register(struct ath10k *a
+  		ar->hw->wiphy->bands[NL80211_BAND_5GHZ] = band;
+  	}
+  
+diff --git a/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch b/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch
+index cd8967cb93..0ff885d95a 100644
+--- a/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch
++++ b/package/kernel/ath10k-ct/patches/976-ath10k-Check-if-station-exists-before-forwarding-tx-.patch
+@@ -70,7 +70,7 @@ Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
  
- define Device/tplink_archer-c50-v1
--  $(Device/Archer)
-+  $(Device/tplink-v2)
-+  SOC := mt7620a
-   IMAGE_SIZE := 7808k
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0xc7500001
-   TPLINK_HWREV := 69
--  IMAGES += factory-us.bin factory-eu.bin
-+  IMAGES := sysupgrade.bin factory-us.bin factory-eu.bin
-   IMAGE/factory-us.bin := tplink-v2-image -e -w 0
-   IMAGE/factory-eu.bin := tplink-v2-image -e -w 2
-   DEVICE_MODEL := Archer C50
-@@ -925,11 +916,13 @@ endef
- TARGET_DEVICES += tplink_archer-c50-v1
- 
- define Device/tplink_archer-mr200
--  $(Device/Archer)
-+  $(Device/tplink-v2)
-+  SOC := mt7620a
-   IMAGE_SIZE := 7872k
-   TPLINK_FLASHLAYOUT := 8MLmtk
-   TPLINK_HWID := 0xd7500001
-   TPLINK_HWREV := 0x4a
-+  IMAGES := sysupgrade.bin
-   DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-net kmod-usb-net-rndis \
- 	kmod-usb-serial kmod-usb-serial-option adb-enablemodem
-   DEVICE_MODEL := Archer MR200
-@@ -938,20 +931,13 @@ endef
- TARGET_DEVICES += tplink_archer-mr200
- 
- define Device/tplink_re200-v1
-+  $(Device/tplink-v1)
-   SOC := mt7620a
--  DEVICE_VENDOR := TP-Link
-   DEVICE_MODEL := RE200
-   DEVICE_VARIANT := v1
-   DEVICE_PACKAGES := kmod-mt76x0e
--  IMAGES += factory.bin
--  IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade -e -O | append-metadata
--  IMAGE/factory.bin := tplink-v1-image factory -e -O
-   IMAGE_SIZE := 7936k
--  KERNEL := $(KERNEL_DTB)
--  KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v1-header -e -O
-   TPLINK_HWID := 0x02000001
--  TPLINK_HWREV := 0x1
--  TPLINK_HEADER_VERSION := 1
-   TPLINK_FLASHLAYOUT := 8Mmtk
- endef
- TARGET_DEVICES += tplink_re200-v1
-diff --git a/target/linux/ramips/image/mt7621.mk b/target/linux/ramips/image/mt7621.mk
-index be2a329524..6d0af9d994 100644
---- a/target/linux/ramips/image/mt7621.mk
-+++ b/target/linux/ramips/image/mt7621.mk
-@@ -2,10 +2,11 @@
- # MT7621 Profiles
- #
- 
-+include ./common-tp-link.mk
-+
- DEFAULT_SOC := mt7621
- 
- KERNEL_DTB += -d21
--DEVICE_VARS += TPLINK_BOARD_ID TPLINK_HEADER_VERSION TPLINK_HWID TPLINK_HWREV
- 
- define Build/elecom-gst-factory
-   $(eval product=$(word 1,$(1)))
-@@ -662,19 +663,6 @@ define Device/adslr_g7
- endef
- TARGET_DEVICES += adslr_g7
- 
--define Device/tplink-safeloader
--  DEVICE_VENDOR := TP-Link
--  TPLINK_BOARD_ID :=
--  TPLINK_HWID := 0x0
--  TPLINK_HWREV := 0
--  TPLINK_HEADER_VERSION := 1
--  KERNEL := $(KERNEL_DTB) | tplink-v1-header -e -O
--  IMAGES += factory.bin
--  IMAGE/sysupgrade.bin := append-rootfs | tplink-safeloader sysupgrade | \
--	append-metadata | check-size $$$$(IMAGE_SIZE)
--  IMAGE/factory.bin := append-rootfs | tplink-safeloader factory
--endef
--
- define Device/tplink_re350-v1
-   $(Device/tplink-safeloader)
-   DEVICE_MODEL := RE350
-diff --git a/target/linux/ramips/image/mt76x8.mk b/target/linux/ramips/image/mt76x8.mk
-index 37cac84229..fef5a5a733 100644
---- a/target/linux/ramips/image/mt76x8.mk
-+++ b/target/linux/ramips/image/mt76x8.mk
-@@ -2,6 +2,8 @@
- # MT76x8 Profiles
- #
- 
-+include ./common-tp-link.mk
-+
- DEFAULT_SOC := mt7628an
- 
- define Device/alfa-network_awusfree1
-@@ -235,69 +237,36 @@ define Device/totolink_lr1200
- endef
- TARGET_DEVICES += totolink_lr1200
- 
--define Device/tplink
--  DEVICE_VENDOR := TP-Link
--  TPLINK_FLASHLAYOUT :=
--  TPLINK_HWID :=
--  TPLINK_HWREV :=
--  TPLINK_HWREVADD :=
--  TPLINK_HVERSION :=
--  KERNEL := $(KERNEL_DTB)
--  KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v2-header -e
--  IMAGES += tftp-recovery.bin
--  IMAGE/factory.bin := tplink-v2-image -e
--  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
--  IMAGE/sysupgrade.bin := tplink-v2-image -s -e | append-metadata | \
--	check-size $$$$(IMAGE_SIZE)
--endef
--DEVICE_VARS += TPLINK_FLASHLAYOUT TPLINK_HWID TPLINK_HWREV TPLINK_HWREVADD
--DEVICE_VARS += TPLINK_HVERSION
--
--define Device/tplink-safeloader
--  DEVICE_VENDOR := TP-Link
--  TPLINK_BOARD_ID :=
--  TPLINK_HWID := 0x0
--  TPLINK_HWREV := 0
--  TPLINK_HEADER_VERSION := 1
--  KERNEL := $(KERNEL_DTB) | tplink-v1-header -e -O
--  IMAGES += factory.bin
--  IMAGE/sysupgrade.bin := append-rootfs | tplink-safeloader sysupgrade | \
--	append-metadata | check-size $$$$(IMAGE_SIZE)
--  IMAGE/factory.bin := append-rootfs | tplink-safeloader factory
--endef
--
- define Device/tplink_archer-c20-v4
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := Archer C20
-   DEVICE_VARIANT := v4
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0xc200004
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x4
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-mt76x0e
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
-   SUPPORTED_DEVICES += tplink,c20-v4
- endef
- TARGET_DEVICES += tplink_archer-c20-v4
- 
- define Device/tplink_archer-c20-v5
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7616k
-   DEVICE_MODEL := Archer C20
-   DEVICE_VARIANT := v5
-   TPLINK_FLASHLAYOUT := 8MSUmtk
-   TPLINK_HWID := 0xc200005
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x5
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-mt76x0e
-   IMAGES := sysupgrade.bin
- endef
- TARGET_DEVICES += tplink_archer-c20-v5
- 
- define Device/tplink_archer-c50-v3
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := Archer C50
-   DEVICE_VARIANT := v3
-@@ -305,14 +274,15 @@ define Device/tplink_archer-c50-v3
-   TPLINK_HWID := 0x001D9BA4
-   TPLINK_HWREV := 0x79
-   TPLINK_HWREVADD := 0x1
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-mt76x2
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
-   SUPPORTED_DEVICES += tplink,c50-v3
- endef
- TARGET_DEVICES += tplink_archer-c50-v3
- 
- define Device/tplink_archer-c50-v4
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7616k
-   DEVICE_MODEL := Archer C50
-   DEVICE_VARIANT := v4
-@@ -320,7 +290,6 @@ define Device/tplink_archer-c50-v4
-   TPLINK_HWID := 0x001D589B
-   TPLINK_HWREV := 0x93
-   TPLINK_HWREVADD := 0x2
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-mt76x2
-   IMAGES := sysupgrade.bin
-   SUPPORTED_DEVICES += tplink,c50-v4
-@@ -338,7 +307,7 @@ endef
- TARGET_DEVICES += tplink_re305-v1
- 
- define Device/tplink_tl-mr3020-v3
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-MR3020
-   DEVICE_VARIANT := v3
-@@ -346,13 +315,14 @@ define Device/tplink_tl-mr3020-v3
-   TPLINK_HWID := 0x30200003
-   TPLINK_HWREV := 0x3
-   TPLINK_HWREVADD := 0x3
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-mr3020-v3
- 
- define Device/tplink_tl-mr3420-v5
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-MR3420
-   DEVICE_VARIANT := v5
-@@ -360,71 +330,67 @@ define Device/tplink_tl-mr3420-v5
-   TPLINK_HWID := 0x34200005
-   TPLINK_HWREV := 0x5
-   TPLINK_HWREVADD := 0x5
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-mr3420-v5
- 
- define Device/tplink_tl-wa801nd-v5
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-WA801ND
-   DEVICE_VARIANT := v5
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0x08010005
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x5
--  TPLINK_HVERSION := 3
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-wa801nd-v5
- 
- define Device/tplink_tl-wr802n-v4
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-WR802N
-   DEVICE_VARIANT := v4
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0x08020004
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x4
--  TPLINK_HVERSION := 3
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-wr802n-v4
- 
- define Device/tplink_tl-wr840n-v4
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-WR840N
-   DEVICE_VARIANT := v4
-   TPLINK_FLASHLAYOUT := 8Mmtk
-   TPLINK_HWID := 0x08400004
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x4
--  TPLINK_HVERSION := 3
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
-   SUPPORTED_DEVICES += tl-wr840n-v4
- endef
- TARGET_DEVICES += tplink_tl-wr840n-v4
- 
- define Device/tplink_tl-wr840n-v5
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 3904k
--  DEVICE_VENDOR := TP-Link
-   DEVICE_MODEL := TL-WR840N
-   DEVICE_VARIANT := v5
-   TPLINK_FLASHLAYOUT := 4Mmtk
-   TPLINK_HWID := 0x08400005
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x5
--  TPLINK_HVERSION := 3
--  KERNEL := $(KERNEL_DTB)
--  KERNEL_INITRAMFS := $(KERNEL_DTB) | tplink-v2-header -e
--  IMAGE/sysupgrade.bin := tplink-v2-image -s -e | append-metadata | \
--	check-size $$$$(IMAGE_SIZE)
-+  IMAGES := sysupgrade.bin
-   SUPPORTED_DEVICES += tl-wr840n-v5
- endef
- TARGET_DEVICES += tplink_tl-wr840n-v5
- 
- define Device/tplink_tl-wr841n-v13
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-WR841N
-   DEVICE_VARIANT := v13
-@@ -432,27 +398,27 @@ define Device/tplink_tl-wr841n-v13
-   TPLINK_HWID := 0x08410013
-   TPLINK_HWREV := 0x268
-   TPLINK_HWREVADD := 0x13
--  TPLINK_HVERSION := 3
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
-   SUPPORTED_DEVICES += tl-wr841n-v13
- endef
- TARGET_DEVICES += tplink_tl-wr841n-v13
- 
- define Device/tplink_tl-wr841n-v14
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 3968k
-   DEVICE_MODEL := TL-WR841N
-   DEVICE_VARIANT := v14
-   TPLINK_FLASHLAYOUT := 4Mmtk
-   TPLINK_HWID := 0x08410014
--  TPLINK_HWREV := 0x1
-   TPLINK_HWREVADD := 0x14
--  TPLINK_HVERSION := 3
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-   IMAGE/tftp-recovery.bin := pad-extra 64k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-wr841n-v14
- 
- define Device/tplink_tl-wr842n-v5
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-WR842N
-   DEVICE_VARIANT := v5
-@@ -460,13 +426,14 @@ define Device/tplink_tl-wr842n-v5
-   TPLINK_HWID := 0x08420005
-   TPLINK_HWREV := 0x5
-   TPLINK_HWREVADD := 0x5
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci kmod-usb-ledtrig-usbport
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-wr842n-v5
- 
- define Device/tplink_tl-wr902ac-v3
--  $(Device/tplink)
-+  $(Device/tplink-v2)
-   IMAGE_SIZE := 7808k
-   DEVICE_MODEL := TL-WR902AC
-   DEVICE_VARIANT := v3
-@@ -474,9 +441,10 @@ define Device/tplink_tl-wr902ac-v3
-   TPLINK_HWID := 0x000dc88f
-   TPLINK_HWREV := 0x89
-   TPLINK_HWREVADD := 0x1
--  TPLINK_HVERSION := 3
-   DEVICE_PACKAGES := kmod-mt76x0e kmod-usb2 kmod-usb-ohci \
- 	kmod-usb-ledtrig-usbport
-+  IMAGES := sysupgrade.bin tftp-recovery.bin
-+  IMAGE/tftp-recovery.bin := pad-extra 128k | $$(IMAGE/factory.bin)
- endef
- TARGET_DEVICES += tplink_tl-wr902ac-v3
- 
+ --- a/ath10k-5.2/htt_rx.c
+ +++ b/ath10k-5.2/htt_rx.c
+-@@ -2507,7 +2507,7 @@ do_generic:
++@@ -2568,7 +2568,7 @@ do_generic:
+  		spin_lock_bh(&ar->data_lock);
+  
+  		peer = ath10k_peer_find_by_id(ar, peer_id);
 -- 
-2.20.1
+2.24.1
 
 
 _______________________________________________

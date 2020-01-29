@@ -2,81 +2,80 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A01214D309
-	for <lists+openwrt-devel@lfdr.de>; Wed, 29 Jan 2020 23:22:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 223D714D363
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 00:14:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bNwEPk+tPk9d3Nk5l41xLwMYhQEd7Sf7y5RShUAh+oI=; b=M2mrlCiYm7FFJa
-	4tG3wgUhUNVFlj0414iu2Q8D7EGM658h/Oj3dbWLGsFqbc8SwqZvJOS7j2g1etE4gBz/sEU2OZmiC
-	vFoBNp2E0lgzoJ9mW8/d1nkHTzNYwAarpztcsrjEUqIPSKb4IhtC47wFhVR+8rcF9nH7Wydf0+sj7
-	aaJlURiNedDH7hjDcW/sM32vmd8ljTmN+N0+Rjw3U8td/n1gNu96W7YSoSeLq9Qkzk+/vOefGv6uK
-	SPo5I6kqjjHrsj1jlu1P3p/XJL87gFmkKIh1nvHYV7mBhFaZaDzZa6wel05j8pturRIjmfX6PhdRs
-	1a0tmX7/BmPaUjSQBVOg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:In-Reply-To:References:
+	Message-Id:Date:Mime-Version:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WHMkGF4dYjvhPjWci02lD7B10GAHqwk6WEsaQG18m1A=; b=kXMDM5DAuQbyLy
+	/KQwz72QoUKwPzi9eJ/Md7alFwGRSuFxUGpcQmqyZ+IewBVQpyKKM6ElUckvC/q/Kdbm/U/8dXaWU
+	tLcFxOAKnbilO8OgzgqPVIvcvnfRX8K05Q4E/81njhUGvtShaMEgVx5M29nK6G1MhItGQquuYh8Hk
+	DmsLwviJZrbQnw0dEMpXxakOJhhza7luQZER/bMQw6UeWQm9ihdqy5PLiazh1gOIL4y7v0JpaSOXk
+	2X6wwSHDfkXXiXjbVsFZuOWIk2b4/A7sMBmICDGAf7644J3S8lIQu4kFV6rKfsJQ2lo1IQUfv4UAR
+	PC4wAAy2l+W9H6Mno7Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwvj4-0005on-RQ; Wed, 29 Jan 2020 22:22:22 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1iwwXo-0005nZ-Fx; Wed, 29 Jan 2020 23:14:48 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwviv-0005o6-KD
- for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 22:22:15 +0000
-Received: by mail-lf1-x142.google.com with SMTP id t23so829557lfk.6
- for <openwrt-devel@lists.openwrt.org>; Wed, 29 Jan 2020 14:22:13 -0800 (PST)
+ id 1iwwXg-0005mf-7l
+ for openwrt-devel@lists.openwrt.org; Wed, 29 Jan 2020 23:14:41 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id e9so486164pjr.4
+ for <openwrt-devel@lists.openwrt.org>; Wed, 29 Jan 2020 15:14:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8WLDHxZop4smvRi5rIRvClaJD4+x+rIjMAchOAOvuns=;
- b=HzuMV9iGl8l2XR3bgIvvm2lRcMWDTFO/EQt7YSYn9hYL+PDm5ghhbUTosZEmf2coOh
- jjUGnamW7H5gdWyoBywe9cRKrIeMdUsefdmZhyEOfgys+d0ZO8G2FZ4TvZ4T6P9ZLBxC
- MAJSciPgGKo+eMSPEk7fI9VZ3GtVah6kyJuRSIrASPWEazpx73IaHRHyLzDbtfuGI5yk
- P+EnwdSG5cuJMpDznTPoGJ8S4HELJzMAXF37sQr1M/X+Je88CcMlcghlNep5dqxuGThb
- 84gwJftpb2Rsm1Tu28fZ7AvxlRASCMzephzjolQGthzIsxuAJzrloWYT6s9yOHqRqN4r
- Fdhg==
+ h=content-transfer-encoding:from:mime-version:subject:date:message-id
+ :references:cc:in-reply-to:to;
+ bh=M1CB0nXKAbm/Cpoz26PDvoJOYzPhs3CnXVycfmspNSc=;
+ b=Ic09z5XDhwhuB4PHPBzLr6wci1VAEbmaDu8nH70ZdfAXZxyceSOaUl3/rMIFLjUFWS
+ 9JBBQKLrgcd9nIQRfZneaRZrGxTNf0wT3SGragA8E6PTZFrUT5a3eanhhVb13KRmzlHu
+ gWduWB36VcZGXdBAAL3q91EYAdzTI2G6WZiyCGHJVR0nYxRE2O+NHiff/3PhHO2l2d8b
+ tercgpwafriRqyGkcYLVazDRDPzUeqeuPb6H8qM29W9PPS+TqW+Lcq+nWvn73qBj9y9Z
+ +Va1egyILxByOY+b3kN7dd1XUGgk1MdTyVDYGD66js6fptg49bNVq+h/yK0P+qN8+PrM
+ DAmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8WLDHxZop4smvRi5rIRvClaJD4+x+rIjMAchOAOvuns=;
- b=tGtmJXG8yGNccPbXHOxlX7cPNn87CZNLIC7fzHVNsEDjW8miDq79tvXwzSS/wsLYep
- X4iukSrMUUzRdh1Ibj6+pGZXph6pQlvxs02wKQUpTuwBoUthwkOnNqa4t2R1D3Z8fdPr
- 3OHzREcmLbZHAGbP3tOHaMBpsoxnWK++YTy6sEl0DE9qQREtNA9TKCdsKBDxMOBMM97G
- 2gfqhM8t1WFmAPuZRMtarBh4yEpK0k/OtXD7VkF82Egfp9vM6T6ZKc5r9sYjUWsb0ZOK
- bGY+x637aydS6EvzEin/hlpezdvvUhRwOfRjYPjh3Caas5z0EHfSDQW/fi3J7jT54bMz
- PC5Q==
-X-Gm-Message-State: APjAAAVtbraz2QCY2WqOps42cyYLa78Kmfjks+ObHioeLxXBnSe6ZqlU
- WG+qsP1dsOHKQXZOwCvVCzkq1JFU
-X-Google-Smtp-Source: APXvYqzGDU3I3+jyqiTqv+yL5LrPRaCXQhWrQzkKdyT/hN9/v8kasbRCXYraK2RwsBx0J8Gx9hnyMA==
-X-Received: by 2002:a19:6509:: with SMTP id z9mr749241lfb.97.1580336531405;
- Wed, 29 Jan 2020 14:22:11 -0800 (PST)
-Received: from frog.lan ([2a01:79c:cebd:585c::bd2])
- by smtp.gmail.com with ESMTPSA id x23sm1748587lff.24.2020.01.29.14.22.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Jan 2020 14:22:10 -0800 (PST)
-From: michael.yartys@gmail.com
-X-Google-Original-From: michael.yartys@protonmail.com
-To: openwrt-devel@lists.openwrt.org
-Date: Wed, 29 Jan 2020 23:22:02 +0100
-Message-Id: <20200129222202.312973-1-michael.yartys@protonmail.com>
-X-Mailer: git-send-email 2.24.1
-MIME-Version: 1.0
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=M1CB0nXKAbm/Cpoz26PDvoJOYzPhs3CnXVycfmspNSc=;
+ b=nqPZpTnYf1ifJ2hXHR5UD4/S90NR7HQ3ClchgGoAHd5/bga1ZsaQzFqdx56tQPJQi3
+ DeSszeOJb/z/nGKxwQb5w2rlnkfZQ0pafQZ0j1UnRKaq+y9fyZJqmH9I8KkTzI5haFkg
+ khBaf/1waR1FJWPKB4CpzAAQx6w9pXcjmaVfvQaXodykQMMIn8EBfhXkxbuw3NmfERu7
+ gQl1cDpS/PHM5UPpt5prMNKcwTsFBW8IUaVlKczkV57Ub0KQjo4Iqg1s51nlVDv2QPZT
+ vg/wVRU51/+T9XlEfRV6vKP/Ic2E0ILWzb5EcfcmZYjjvcr6MxSN7xrqsoIWDYjyXRub
+ u4RQ==
+X-Gm-Message-State: APjAAAWwCBI8N+rWrNW7Fe2PAB+SGj3qFlNlMs/btsfVnCzI+f5syudR
+ 5zRv04FTPaswAuv1gLWr2Yo7kwqU
+X-Google-Smtp-Source: APXvYqzRvccAYo8vBZtaYmOQmWJ1l1jc80H59I4xUzTpyeU7UIows2FrPXknDJZuk2nDldajzLjWhA==
+X-Received: by 2002:a17:90a:8545:: with SMTP id
+ a5mr2345623pjw.43.1580339673643; 
+ Wed, 29 Jan 2020 15:14:33 -0800 (PST)
+Received: from ?IPv6:2002:452a:d6:0:5479:8b96:e269:85ca?
+ ([2002:452a:d6:0:5479:8b96:e269:85ca])
+ by smtp.gmail.com with ESMTPSA id q21sm3789060pff.105.2020.01.29.15.14.32
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 29 Jan 2020 15:14:32 -0800 (PST)
+From: Rosen Penev <rosenp@gmail.com>
+Mime-Version: 1.0 (1.0)
+Date: Wed, 29 Jan 2020 15:14:30 -0800
+Message-Id: <81451FC6-CB4C-4A43-87B0-50BCF581678E@gmail.com>
+References: <20200129162210.GA78186@meh.true.cz>
+In-Reply-To: <20200129162210.GA78186@meh.true.cz>
+To: =?utf-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
+X-Mailer: iPhone Mail (17C54)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_142213_670927_C517970B 
-X-CRM114-Status: UNSURE (   7.05  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200129_151440_307569_358EEEEE 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [michael.yartys[at]gmail.com]
+ provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,8 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: [OpenWrt-Devel] [PATCH 2/2] ath10k-firmware: update ath10k-ct
- firmware
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: ethernet: turn off flow control
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,154 +96,48 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Michael Yartys <michael.yartys@protonmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Michael Yartys <michael.yartys@protonmail.com>
-
-This supports better per-chain noise floor reporting, which in turn allows for
-better RSSI reporting in the driver.
-
-Wave-2 fixes a long-standing rate-ctrl problem when connected to xbox (and probably other devices).
-
-Wave-2 has fix for crash likely related to rekeying.
-
-Wave-1 has some debugging code added where a user reported a crash.
-
-Signed-off-by: Michael Yartys <michael.yartys@protonmail.com>
----
- package/firmware/ath10k-firmware/Makefile | 48 +++++++++++------------
- 1 file changed, 24 insertions(+), 24 deletions(-)
-
-diff --git a/package/firmware/ath10k-firmware/Makefile b/package/firmware/ath10k-firmware/Makefile
-index 9f1e7e676b..af883e6f03 100644
---- a/package/firmware/ath10k-firmware/Makefile
-+++ b/package/firmware/ath10k-firmware/Makefile
-@@ -64,92 +64,92 @@ define Download/ct-firmware-htt
-   URL_FILE:=$($(1)_FIRMWARE_FILE_CT_HTT)
- endef
- 
--QCA988X_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.014
-+QCA988X_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.015
- define Download/ath10k-firmware-qca988x-ct
-   $(call Download/ct-firmware,QCA988X,)
--  HASH:=19db86003509dedb8ace339c183813ca637d65af24d00666411d1590efe33e13
-+  HASH:=a3a760d0d72707feffa496b6d2266bd9195f09806553b36420b60c0f12b8b87e
- endef
- $(eval $(call Download,ath10k-firmware-qca988x-ct))
- 
--QCA988X_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.014
-+QCA988X_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.015
- define Download/ath10k-firmware-qca988x-ct-htt
-   $(call Download/ct-firmware-htt,QCA988X,)
--  HASH:=454e67dab545e720369a07be2fee16de008c76db4ab3119e7760bf9f7504c066
-+  HASH:=3114a54103d2b492fa1ef903769721f59953c829020d62502a1ec411ab4146d5
- endef
- $(eval $(call Download,ath10k-firmware-qca988x-ct-htt))
- 
- 
--QCA9887_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.014
-+QCA9887_FIRMWARE_FILE_CT:=firmware-2-ct-full-community-22.bin.lede.015
- define Download/ath10k-firmware-qca9887-ct
-   $(call Download/ct-firmware,QCA9887,ath10k-9887)
--  HASH:=b3c738328427e124701a5735d65cde0f60e4172ae5bc23b00e5b16df7995dbd4
-+  HASH:=71e8b76dfd7c786d2f57bb7df207dcd13a91d3b492cfbd28916f084d0d1bb5e7
- endef
- $(eval $(call Download,ath10k-firmware-qca9887-ct))
- 
--QCA9887_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.014
-+QCA9887_FIRMWARE_FILE_CT_HTT:=firmware-2-ct-full-htt-mgt-community-22.bin.lede.015
- define Download/ath10k-firmware-qca9887-ct-htt
-   $(call Download/ct-firmware-htt,QCA9887,ath10k-9887)
--  HASH:=4432ccee23133bbaa4a5552e50a1e7e889b257362603e05530e751b67c29b7b5
-+  HASH:=b085e5d2239727b72bc647a76864431b8ac48438e6a33b1d55edc2222468f6ff
- endef
- $(eval $(call Download,ath10k-firmware-qca9887-ct-htt))
- 
- 
--QCA99X0_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.014
-+QCA99X0_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.015
- define Download/ath10k-firmware-qca99x0-ct
-   $(call Download/ct-firmware,QCA99X0,ath10k-10-4b)
--  HASH:=9a908f743604a468b651a5f73c49e6b0ba11a05c677b9726fbf041b849d88b25
-+  HASH:=edebe2f6f169cdd05c81a8a78156fb3426a66f415e7946af2ae4b7310fca5fe3
- endef
- $(eval $(call Download,ath10k-firmware-qca99x0-ct))
- 
--QCA99X0_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.014
-+QCA99X0_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
- define Download/ath10k-firmware-qca99x0-ct-htt
-   $(call Download/ct-firmware-htt,QCA99X0,ath10k-10-4b)
--  HASH:=800dd0816702aaca75f3eb5436c2ea724a6c24833838cd54399b9286b4d4fbe8
-+  HASH:=1ef67fb07da9082886e4dd554dfc19256e10b500faf9e4b2a5774d0238130bae
- endef
- $(eval $(call Download,ath10k-firmware-qca99x0-ct-htt))
- 
- 
--QCA9984_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.014
-+QCA9984_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.015
- define Download/ath10k-firmware-qca9984-ct
-   $(call Download/ct-firmware,QCA9984,ath10k-9984-10-4b)
--  HASH:=a8b12dba478e8c9d4a215f82324382c7554a900e83c31775f8511af84e59fef7
-+  HASH:=c2f04da3285aad37baef9c37c9905a31927175dd234cd4378fd56c106e5c9379
- endef
- $(eval $(call Download,ath10k-firmware-qca9984-ct))
- 
--QCA9984_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.014
-+QCA9984_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
- define Download/ath10k-firmware-qca9984-ct-htt
-   $(call Download/ct-firmware-htt,QCA9984,ath10k-9984-10-4b)
--  HASH:=d185651b5d3d1f0082720bc6c2bbe43b2a00cdb6333403fac9336a720b1d93ae
-+  HASH:=0c9ede1036750d68885e6481fa84f3cb72192b8440b47719344f7327a030f05d
- endef
- $(eval $(call Download,ath10k-firmware-qca9984-ct-htt))
- 
- 
--QCA4019_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.014
-+QCA4019_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.015
- define Download/ath10k-firmware-qca4019-ct
-   $(call Download/ct-firmware,QCA4019,ath10k-4019-10-4b)
--  HASH:=4c2e48835219f420b18dc58e31d1387dae0da70d8170c3fc5e7bce39c06cf355
-+  HASH:=1acbb7e7a6300091715a3dfe1b248c7833734961de52cc3465c1ed231a4d84f1
- endef
- $(eval $(call Download,ath10k-firmware-qca4019-ct))
- 
--QCA4019_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.014
-+QCA4019_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
- define Download/ath10k-firmware-qca4019-ct-htt
-   $(call Download/ct-firmware-htt,QCA4019,ath10k-4019-10-4b)
--  HASH:=743da4d537d094a7839bd8e1f792e4cb8b517101f66777c84fd84585f0b85e64
-+  HASH:=1065e4d3e55da84ec9e69268a4c5dba55ea33827c48a7c14bb8f0c167eb11b4c
- endef
- $(eval $(call Download,ath10k-firmware-qca4019-ct-htt))
- 
- 
--QCA9888_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.014
-+QCA9888_FIRMWARE_FILE_CT:=firmware-5-ct-full-community-12.bin-lede.015
- define Download/ath10k-firmware-qca9888-ct
-   $(call Download/ct-firmware,QCA9888,ath10k-9888-10-4b)
--  HASH:=5809c8a6b3bd81cbc829b5e90af3c0a3300488fe194524a90e260448158016b6
-+  HASH:=559ebd16872a8b43443c51bb4b7d021e5b75e65893d333d9393f3f6012f4ac79
- endef
- $(eval $(call Download,ath10k-firmware-qca9888-ct))
- 
--QCA9888_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.014
-+QCA9888_FIRMWARE_FILE_CT_HTT:=firmware-5-ct-full-htt-mgt-community-12.bin-lede.015
- define Download/ath10k-firmware-qca9888-ct-htt
-   $(call Download/ct-firmware-htt,QCA9888,ath10k-9888-10-4b)
--  HASH:=a284943c203ff66ec2e865f20ae2d2aa049b450801d7205b53c9163862228f15
-+  HASH:=4feaf5e7c4c1745f499ba8c3125db41675800ebedaea455c418c117805c5b372
- endef
- $(eval $(call Download,ath10k-firmware-qca9888-ct-htt))
- 
--- 
-2.24.1
-
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+CgpTZW50IGZyb20gbXkgaVBob25lCgo+IE9uIEphbiAyOSwgMjAyMCwgYXQgODoyMiBBTSwgUGV0
+ciDFoHRldGlhciA8eW5lenpAdHJ1ZS5jej4gd3JvdGU6Cj4gCj4g77u/Um9zZW4gUGVuZXYgPHJv
+c2VucEBnbWFpbC5jb20+IFsyMDIwLTAxLTI1IDE1OjA0OjAzXToKPiAKPiBIaSBCasO4cm4gYW5k
+IFJvc2VuLAo+IAo+Pj4gT24gVGh1LCBKYW4gMjMsIDIwMjAgYXQgMTI6MjUgQU0gQmrDuHJuIE1v
+cmsgPGJqb3JuQG1vcmsubm8+IHdyb3RlOgo+Pj4+PiAKPj4+Pj4gLSAgICAgaWYgKChydF9zeXNj
+X3IzMihTWVNDX1JFR19DSElQX1JFVl9JRCkgJiAweEZGRkYpID09IDB4MDEwMSkgewo+Pj4+PiAt
+ICAgICAgICAgICAgIC8qIChHRTEsIEZvcmNlIDEwMDBNL0ZELCBGQyBPTiwgTUFYX1JYX0xFTkdU
+SCAxNTM2KSAqLwo+Pj4+PiArICAgICBpZiAoKHJ0X3N5c2NfcjMyKFNZU0NfUkVHX0NISVBfUkVW
+X0lEKSAmIDB4RkZGRikgPj0gMHgwMTAxKSB7Cj4+Pj4+ICsgICAgICAgICAgICAgLyogKEdFMSwg
+Rm9yY2UgMTAwME0vRkQsIEZDIE9GRiwgTUFYX1JYX0xFTkdUSCAxNTM2KSAqLwo+Pj4+PiAgICAg
+ICAgICAgICAgbXRrX3N3aXRjaF93MzIoZ3N3LCAweDIzMDVlMzBiLCBHU1dfUkVHX01BQ19QMF9N
+Q1IpOwo+Pj4+PiAgICAgICAgICAgICAgbXQ3NTMwX21kaW9fdzMyKGdzdywgMHgzNjAwLCAweDVl
+MzBiKTsKPj4+Pj4gICAgICB9IGVsc2Ugewo+Pj4gCj4+PiBJZiB0aGF0J3MgcmVhbGx5IGhlbHBp
+bmcgdGhlbiBJIGJlbGlldmUgaXQgd291bGQgYmUgdXNlZnVsIHRvIGFkZCBzb21lCj4+PiBzb3J0
+IG9mIGNoaXBfcmV2X2lkIHByaW50ayBoZXJlLiAgV291bGQgYmUgZ29vZCB0byBrbm93IHdobyBo
+aXRzIHRoaXMKPj4+IGFuZCB3aHkuLi4KPiAKPiBJIGp1c3QgcXVpY2tseSBza2ltbWVkIHRocm91
+Z2ggdGhlIGNvZGUgYW5kIGl0IHNlZW1zIGxpa2Ugd2UndmUgdGhhdAo+IGluZm9ybWF0aW9uIGFs
+cmVhZHkgaW4gZG1lc2c6Cj4gCj4gU29DIFR5cGU6IE1lZGlhVGVrIE1UNzY4OCB2ZXI6MSBlY286
+MiAgICA9IDB4MDEwMgo+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2MjhBTiB2ZXI6MSBlY286MiAg
+PSAweDAxMDIKPiBTb0MgVHlwZTogTWVkaWFUZWsgTVQ3NjIxIHZlcjoxIGVjbzozICAgID0gMHgw
+MTAzCj4gU29DIFR5cGU6IE1lZGlhVGVrIE1UNzYyMEEgdmVyOjIgZWNvOjMgICA9IDB4MDIwMwo+
+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2MjBOIHZlcjoyIGVjbzo2ICAgPSAweDAyMDYKPiAKPj4g
+VGhhdCdzIGp1c3QgY29zbWV0aWMuCj4gCj4gY3VycmVudDogPT0gMHgwMTAxCj4gbmV3OiAgICAg
+Pj0gMHgwMTAxCkkgbWVhbnQgdGhlIGNvbW1lbnQgdG8gcHJpbnQgdGhlIFNvQyBJRC4KPiAKPiBE
+b2Vzbid0IGxvb2sgbGlrZSBhIGNvc21ldGljIGNoYW5nZSBub3IgY29ycmVjdCwgc2VlIGFib3Zl
+IGxpc3QuIFdoYXQgYWJvdXQKPiBmb2xsb3dpbmc/Cj4gCj4gIGlmIChyYWxpbmtfc29jID09IE1U
+NzYyWF9TT0NfTVQ3NjIxQVQpIHsKPiAgICAgICAvKiAoR0UxLCBGb3JjZSAxMDAwTS9GRCwgRkMg
+T0ZGLCBNQVhfUlhfTEVOR1RIIDE1MzYpICovCj4gICAgICAgbXRrX3N3aXRjaF93MzIoZ3N3LCAw
+eDIzMDVlMzBiLCBHU1dfUkVHX01BQ19QMF9NQ1IpOwo+ICAgICAgIG10NzUzMF9tZGlvX3czMihn
+c3csIDB4MzYwMCwgMHg1ZTMwYik7Cj4gIH0gZWxzZSB7Cj4gICAgICAgLi4uCj4gIH0KTWF5YmUu
+IEFsbCBJIGtub3cgaXMgdGhhdCB0aGUgcGF0Y2ggYXMgSSBwb3N0ZWQgaXQgd29ya3Mgd2VsbCBh
+Y2NvcmRpbmcgdG8gcGVvcGxlIG9uIHRoZSBmb3J1bXMuCj4gCj4gSSBqdXN0IGRvbid0IGtub3cg
+d2hpY2ggTWVkaWFUZWsgU29DIGlzIDB4MDEwMSAodmVyOjEgZWNvOjEpLCBidXQgSSBhc3N1bWUs
+Cj4gdGhhdCB0aGlzIGNvbmRpdGlvbiBpcyBqdXN0IGJvZ3VzIGZyb20gdGhlIGJlZ2lubmluZy4K
+PiAKPiAtLSB5bmV6egoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVu
+d3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Blbndy
+dC1kZXZlbAo=

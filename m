@@ -2,88 +2,84 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A00814E511
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 22:47:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1FF914E540
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 23:00:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Em5cTtaEqfE0fxghCsi3m2GWTS09OTiUjoRfnAZGlX4=; b=ZNcV8Y5gkDOO5b
-	SGWHyqYOynCHwFkpH425osmFBWIRF4IPtZrp1GrvFBEKnTqRWLq3X6w8oFYayot+dyY+fF1AuX2MS
-	n1YLkbyFU+lOLqNfeRqwvUzT7COFMSAGVwDFUlXm9vvYmejXWN52W8TCFZs1RYCIVe15scW9c8mbY
-	BIGKJlfX+ZMnQrV6BBfpT4E6KqZaccN5NeyUv/rH5QQGeAHuT29Lf4hhC0Pt9481Lz8c+vGsNifw8
-	a2DgMVRZOaC52eXEnXimjL+kE65jcqWUMcE+q0rM3uqWF9f0OyKjQXW/z5t2RA0TzF0NTY43AdmG1
-	CuphC+BCHzluOocZFMZg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5CA5YK/kZrSlNJRHYVbCQ5Fs4DALM9wEddzPe9gN7I8=; b=hw8pFKnX+HplXm
+	iANiUlUxFjCgHOr/eG1FkwoTDDJRkEjq4eDdnFG25f0xlE8hLhUBdoO1OMK44R/EbvTvJV6m8aT2M
+	X2cEqap2A/1b9Ij7t+mRGDoF4bGC0eopGEcp/+8nCW8nMZy20dD9z/r2PftMj1HaPGeql3PPsszcA
+	h0Awcyd0bSWiP6y48AuNlXxeG1x1mg8ZLJ1lOT2cn5U6zV3M39WvE18BOXnktRNrH7MpBZX1HpAxE
+	+xCjXVQWMw9d2VZA7sexv3a9C1G/ukDe3JkB+oDJUWBfiNF+lcpOMTtMA51j6Z8dDwGgMzHxSo0tF
+	0qT2D90pgJYpZy5aBpLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixHfC-00017M-3w; Thu, 30 Jan 2020 21:47:50 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixHf6-00016u-GK
- for openwrt-devel@lists.openwrt.org; Thu, 30 Jan 2020 21:47:45 +0000
-Received: by mail-wr1-x441.google.com with SMTP id d16so6002196wre.10
- for <openwrt-devel@lists.openwrt.org>; Thu, 30 Jan 2020 13:47:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sartura-hr.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=N/+Ek7g9qExaFvSyEonwXPK1+dDZZIkSQp7OUoI5j7Q=;
- b=oG8HXfQEj0I3XLlsVtyHBPq9yOS2pvN3E7djTicGm1Rg/4TWiwZ9sVzRACokQchoFd
- 1bsVKk6TO85NhPyvmftwVDHupgECQcPHsDBtR2EGhZJtU/Md17yzVMXzb4dJn8YzGLZO
- 4jGTNpSU8oSzVlpnsQvJxaWozpS9K/cPmZjnr3ri1CyqISouJvuXxUmHylbkEaPR6BWX
- v0fLu//x5/c3lmzHTMFiTfunZtVOXKlig6GgaBFx7JbXxAKPnmmvdFy0dw3iuuhqlHZ6
- BWkXTMmyzcmeMrXPyQVDuuxPemY04PXTHD5uwzGBGhozAH8e5jMRrZGSAy2d4OdW3AdD
- gkjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=N/+Ek7g9qExaFvSyEonwXPK1+dDZZIkSQp7OUoI5j7Q=;
- b=pFScLmlqG3ZN61sRqgMkmz5UErFPjUnEoI5H/vGH0FDv4l+/p61oxZ729QapFV5cwP
- H0WuhiB9uMK6jZ/JjXxY0QnAwJ10RlstgChxn7CQW8+61fXxvNDwcZPGKvWmGXa1QMn+
- FrQNB4vrb013PLLRr03ybdShzxPGmFsOzRmXrM6/Iz6mXWOqhSO3Tc0MUbavyJ2Ae4ox
- 2apTfkFiM4lBhK1og8tQ1yBHgHZyKo5o4PSQDNsk/2RIzNA0QEziSrGRndjjn0HfXInG
- V7b76R6hhj8attoksFcs2l9EluLcpf7pZEJ35c7JQkVQ0s0uT1AYUJ4Xa2hRB/mCAVjo
- xDEg==
-X-Gm-Message-State: APjAAAWH75fgtItH4kipeohMHC4fmyTcsenbTBnM6mjp5Va0axMOB52L
- S8vuaJWoVyJWU/syRH7jd3l62AIkZ3gj8uPnC30Rdu+QEXKl9VnmI4an3uHs/NQEeODQ4qVrPTC
- gaHS4eLVeclVHSSrhAQGMsf5oKEzBy272ZofWUQ43G8Co5My3khApfzFSFkgL9Pala48lZpw9MY
- Vhy5m236c/5pM=
-X-Google-Smtp-Source: APXvYqxBEYPKjLeaUmu7bNbXSB3W0ZhhgvXtLDE13W6aj1xosgL/nG6D9LpYAEZVCAJbyYAaIbVfzg==
-X-Received: by 2002:adf:e88f:: with SMTP id d15mr7382211wrm.186.1580420861954; 
- Thu, 30 Jan 2020 13:47:41 -0800 (PST)
-Received: from localhost.localdomain ([188.252.202.221])
- by smtp.googlemail.com with ESMTPSA id y8sm7666433wma.10.2020.01.30.13.47.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Jan 2020 13:47:41 -0800 (PST)
-From: Robert Marko <robert.marko@sartura.hr>
-X-Google-Original-From: Robert Marko <robimarko@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 30 Jan 2020 22:47:29 +0100
-Message-Id: <20200130214729.838597-1-robimarko@gmail.com>
-X-Mailer: git-send-email 2.24.1
+	id 1ixHrX-0007Dr-Qe; Thu, 30 Jan 2020 22:00:35 +0000
+Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1ixHrR-0006xK-55
+ for openwrt-devel@lists.openwrt.org; Thu, 30 Jan 2020 22:00:31 +0000
+Received: from [IPv6:2003:e5:3f0b:9f00:6ced:46b7:d126:e2]
+ (p200300E53F0B9F006CED46B7D12600E2.dip0.t-ipconnect.de
+ [IPv6:2003:e5:3f0b:9f00:6ced:46b7:d126:e2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.blocktrron.ovh (Postfix) with ESMTPSA id B5C5B22ECE;
+ Thu, 30 Jan 2020 23:00:24 +0100 (CET)
+To: Piotr Dymacz <pepe2k@gmail.com>
+References: <ff0f9266-0fa9-1bf5-66f3-dfd76699a136@david-bauer.net>
+ <003401d5d6ab$fd4532e0$f7cf98a0$@adrianschmutzler.de>
+ <9c9d3030-6cf1-3107-3de0-9adb920e75d0@david-bauer.net>
+ <cb333805-1ef0-dcb5-7345-d4e2325c7118@david-bauer.net>
+ <07a233ae-5c76-8319-1b1b-9dde65f23ef0@gmail.com>
+From: David Bauer <mail@david-bauer.net>
+Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
+ mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
+ hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
+ A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
+ ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
+ 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
+ AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
+ BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
+ BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
+ rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
+ JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
+ i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
+ aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
+ imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
+ bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
+ cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
+ hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
+ GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
+ vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
+ y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
+ q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
+ c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
+ S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
+ tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
+ z03IzJQ=
+Message-ID: <993ee10a-9108-271d-072f-8f4420be7dde@david-bauer.net>
+Date: Thu, 30 Jan 2020 23:00:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
+In-Reply-To: <07a233ae-5c76-8319-1b1b-9dde65f23ef0@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_134744_600166_C2DE0E31 
-X-CRM114-Status: UNSURE (   7.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200130_140029_508787_23424F87 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-Subject: [OpenWrt-Devel] [PATCH] iwinfo: add device id for Qualcomm Atheros
- QCA9990
+Subject: Re: [OpenWrt-Devel] Netgear R6260 EEPROM location
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,36 +91,57 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Robert Marko <robert.marko@sartura.hr>
+Cc: Robert <piotr_pan@o2.pl>, drvlabo@gmail.com,
+ Adrian Schmutzler <mail@adrianschmutzler.de>, achterin@googlemail.com,
+ Mathias Kresin <dev@kresin.me>,
+ 'openwrt-devel' <openwrt-devel@lists.openwrt.org>,
+ Chuanhong Guo <gch981213@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-From: Robert Marko <robert.marko@sartura.hr>
+Hello Piotr,
 
-Lets add the PCI ID for QCA9990
+On 1/30/20 12:57 PM, Piotr Dymacz wrote:
+>> I'm still waiting for him to send ma a photo of the routers backside, but it seems
+>> we have to dynamically detect the partition map of the devices. I'll look into the
+>> SC_PART_MAP partition and the routers GPL code to find a possible solution for this
+>> problem.
+> 
+> There was some work with custom 'SC_PART_MAP' mtd parser back in 2018 but mapping used in vendor firmware didn't match what was in flash, see: [0] and also [1] about 'different' R6220 models.
+Yup, I've vaguely remembered following this discussion back then. I've just tried to catch
+up on this topic and it seems my problem is connected with bad NAND blocks.
 
-Signed-off-by: Robert Marko <robert.marko@sartura.hr>
----
- hardware.txt | 1 +
- 1 file changed, 1 insertion(+)
+My OpenWrt bootlog shows this:
 
-diff --git a/hardware.txt b/hardware.txt
-index c1fe8f3..4c6f3fe 100644
---- a/hardware.txt
-+++ b/hardware.txt
-@@ -159,6 +159,7 @@
- 0x168c 0x003c 0x168c 0x3223    0      0  "Qualcomm Atheros" "QCA9880"
- 0x168c 0x003c 0x1a56 0x1420    0      0  "Qualcomm Atheros" "QCA9862"
- 0x168c 0x003c 0x19b6 0xd03c    0      0  "Mikrotik" "R11e-5HacT"
-+0x168c 0x0040 0x168c 0x0002    0      0  "Qualcomm Atheros" "QCA9990"
- 0x168c 0x0046 0x168c 0xcafe    0      0  "Qualcomm Atheros" "QCA9984"
- 0x168c 0x0050 0x0000 0x0000    0      0  "Qualcomm Atheros" "QCA9887"
- 0x168c 0x0056 0x0000 0x0000    0      0  "Qualcomm Atheros" "QCA9886"
--- 
-2.24.1
+[    3.153100] Bad eraseblock 396 at 0x000003180000
+[    3.204465] Bad eraseblock 578 at 0x000004840000
 
+Which would explain, why the "SC Private Data" and "ML1" partitions have different sizes.
+However, this would somewhat match the remap misbehavior, which we previously had issues
+with on the R6220. This got eventually fixed, as it's not the NAND drivers job to shift
+on bad blocks.
+
+The factory firmware did not remap partitions on the R6220, while it
+seems it does so on the R6260. Correct me if i got this wrong here.
+
+Also, this would mean Netgear takes bad blocks into account when writing the calibration
+data to NAND, correct?
+
+What i do not understand: Blocks can go bad in operation (not common, but possible) -
+for the R6260, this would mean the blocks are shifted once more, thus the factory
+partition is not at the same offset?
+
+I assume, if we want to fix this we need to do this from userspace, as either place
+in the kernel seems wrong. Implementing it on the mtd layer is obviously wrong,
+as it would mean breaking the wireless as soon as a block preceding the factory
+partition goes bad.
+
+If I'm wrong in any of my assumptions, please correct me ;)
+
+Best wishes
+David
 
 _______________________________________________
 openwrt-devel mailing list

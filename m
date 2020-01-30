@@ -2,81 +2,86 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E422414D480
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 01:12:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3292714D5A6
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 05:40:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PqqCyTvul+aT5RfnIn87Gfsr8qmSseZ0IEIqjJaCKws=; b=GZo+bx29gJXIbp
-	uGEoHFZ4HpRtZZq9V+SGIrlR1Uj7enfmTF5SRVLRnYvGSYs8Rf2wyM+BKQmN2x2fwgMqoh8Zkgdi/
-	mJe33YK+Tcl3RwJ77K8931ijyQzrRlxc+KMtnlyjHttoxIEQYVJbcpe6mzQkIkGtb+Y3tINtHxrcR
-	/RPUJ88Y4ajN3/ZfbFaL27ExWwus1ckaEywqWaSk2gcUidz1ZS34qGwmh6t2JPboB2M9iDbZ5lA0g
-	/ObWBDIUVQQ/jhjvknOEkEDH0spoCfe7VyjkSc2dousTo4Llg1MiToNDasThNn62Jj3lGbPWyjqa1
-	gWVzuCaH3Z4jyk7eFH7A==;
+	List-Owner; bh=bFGSatr5kAEZz+so+2N2+KBwko4qgJ5HNGhjxySuliE=; b=J5PxdEFfHURiEs
+	2AhIQKoUKhnW//LrFzYFP/lBIMfDUETzuH7suj+T26T4bLjyDGimzzKaoSxMDrDLNVIiCt6unEG18
+	MjB2duej7ARQji7NEVDPmo4TEmuXRJD7db+XebyS49q26gdRfhdQkyfutOJy4yLWbHwCzK6YjpVm5
+	34A8umNmjaVFyc4lzj4j9mFgWte5Htz5CMK0Dg2EkSz6/XIH/QOJCCYj0ynaH/DYUT2tPXGnhgZRb
+	fx+7kQr080AvP3Wq8DUySSWzJqMRo7pak8NxtocJOgBOihmRRU8HknEqPrjc3CCVwS7Xf2q31phQh
+	vFpy3MfloKK57qyr3IUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwxRW-0004Ay-2u; Thu, 30 Jan 2020 00:12:22 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1iwxRE-0003zv-5R
- for openwrt-devel@lists.openwrt.org; Thu, 30 Jan 2020 00:12:07 +0000
-Received: from [IPv6:2003:e5:3f16:8100:6ced:46b7:d126:e2]
- (p200300E53F1681006CED46B7D12600E2.dip0.t-ipconnect.de
- [IPv6:2003:e5:3f16:8100:6ced:46b7:d126:e2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 1045C22F46;
- Thu, 30 Jan 2020 01:11:59 +0100 (CET)
-To: Adrian Schmutzler <mail@adrianschmutzler.de>
-References: <ff0f9266-0fa9-1bf5-66f3-dfd76699a136@david-bauer.net>
- <003401d5d6ab$fd4532e0$f7cf98a0$@adrianschmutzler.de>
-From: David Bauer <mail@david-bauer.net>
-Autocrypt: addr=mail@david-bauer.net; prefer-encrypt=mutual; keydata=
- mQENBFYkGEcBCADbRMHdOXmszxrmE9G/gWUD4/HXklOfn+hyBpEcOul+GKAet0oFxznkchJe
- hO5MbEFYsnM8TZVxjnEi70c3luF1m4JycjgQ91GJ52+xvLV0dVz+L99JBgVJNRDvvt68rLVq
- A8/LCdkXctZ+GBfrtTYQ6dOeuQf/qWuwlNTvuG92uWVZjncyWOmQX73gv+1MTRsCmIGNYQu1
- ZDVyhr3YsTgJIXTHUCxBHQBDglkb3L5lK9WHPf1puQ2grNbUg9VSmo4a9IzUpRauNtCDUFxi
- 1m1e5VnmU5O5/xZyDzwmpWog9tUfScS7X9pdVNQ+2W3zCRrotFEn6FKdD01mhIsLnczjABEB
- AAG0IkRhdmlkIEJhdWVyIDxtYWlsQGRhdmlkLWJhdWVyLm5ldD6JAVkEEwEIAEMCGwMHCwkI
- BwMCAQYVCAIJCgsEFgIDAQIeAQIXgAIZARYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRhu
- BQkIy2cnAAoJELqzlxS0pLh4It8IALb1ea/ezwy8v65zmTeIepeuO5umWzWIy7fLaAsxzJbH
- rO6rCTnRN5ZLyzuxNlhYMyvXAJL7kmPuEOOzHk5xh3soV24VZLSryzGeB6TG3g8L6D0guJ72
- JMM/2HGP8g1zu/IfIM94DZJk7WEuRKG5sndZp49s/voKhrMqAvAU4G03knpEN5SbJx5RA/Wf
- i5stipz2vqS87jHgOVTL1m67Wg9jhKuzJbSlt+m8rHZCQ9dCQQLtqbHugnyOrFhKxwfGFEMB
- aV0sKwoBfjtWP/g3kb9L5wOvRj8UnDRLTB/fVnOsMD18ILEiNqc6FCh4hIb4y2QQEc0nb68f
- imjr4Hz7TOe5AQ0EViQYRwEIALqz1V6kWIvCTVN/6QN9fepVSwSw+5IiiVBGtf2rtdqujCRD
- bGi96a2ZLYRQzlSQvCZ51skgoZFmIW2YhPP90qiZssSEQxgY1rf+DEYnjWmFSgi3iHqYXRk2
- cY7OI3ZT8D2tAFu9pIAxZpD5FdQznJmUhljeTJw+lGOoxctf1xjHZcRcU6GUFMpFBc4xaLC0
- hUN24HT5pDpklxskPFH91VncDaOsLesqszGaUHWx3hogRfogdADvycUp/bQB80kZO/XqexWN
- GUNJYS4axWM2ND25bWV1h9aFjPpOwFM7FwAyra0VihnnNn7dTL5vBpFztY0IFPlvqyc1Vw8y
- vgtShA0AEQEAAYkBPAQYAQgAJgIbDBYhBNcEMml7fEwnOA/No7qzlxS0pLh4BQJbLRiFBQkI
- y2c+AAoJELqzlxS0pLh4LIcH/jnL+ytxRSAh8VX3U2xrMOhBFOkJbW9fj6UgE2iFfZUEOBZl
- q6fZTYn1LOTOECrnLC6eNUQsnZ2u+/N93I5Fmof0MIICUbVabEVmbF/jCFkKjrTPFv/DbNZy
- c+X2ugyX7LsJT+CdvtPT9fObTLCS1nQc3G49syEGVEIzPNyIFzJbFLyh1AfRxmnzAwlal6xK
- S82CsKe+n2lwWg2dyyoJYqwM2G6hAg/ZFqRBZ1RH6TsACGMnwvmsfW/871mPt/mOTCDoH1s1
- tcsgxxtD87UnEqA4zL8dqi5uRA82ZznWaq3mzOGKcBkgEcxi8nnQWW+EyTiZWC+wJ9xT4kLh
- z03IzJQ=
-Message-ID: <9c9d3030-6cf1-3107-3de0-9adb920e75d0@david-bauer.net>
-Date: Thu, 30 Jan 2020 01:11:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+	id 1ix1cn-0002kW-RF; Thu, 30 Jan 2020 04:40:17 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ix1ch-0002Xu-1A
+ for openwrt-devel@lists.openwrt.org; Thu, 30 Jan 2020 04:40:12 +0000
+Received: by mail-oi1-x241.google.com with SMTP id v19so2205771oic.12
+ for <openwrt-devel@lists.openwrt.org>; Wed, 29 Jan 2020 20:40:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=kz4YDyTe24huWTfNnS3ffdzdg5QWVnuBjsDW+rS/qMo=;
+ b=mo6UbAZ/Pop0LIgns0+nVNnYQnPoA/nXXCYRCvQEIcgCeW3guJuUYpZD0QyAPpqPTZ
+ Y0WP2xFYKmQqMOg6qLx/1ckcJhrKI7R4G9MN4MwraJ1X1vTD0B3qX03KT8tZNlZREAZM
+ clgLkhXPUNvdeIPgBxKu70ueDjXPnC8GIZjdm21omWnzkG/jFCFqagtzkCh6dNDxl3vQ
+ qjhYp0u0CTORCRZ8pIOYVCDFfmbSxC9iPkBYwV243hRnAHaJVQIiNQd8DkIWa5BK4TEH
+ RkmO8l7UByPzksHSVInNlCG2WgJ++VNHGOJwSkyBxDjsqTtjo9s7IQDkxN8cKrW0caIx
+ tRXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=kz4YDyTe24huWTfNnS3ffdzdg5QWVnuBjsDW+rS/qMo=;
+ b=a7PdF50R/B2YXCd3pBOU5roK5rujEwj9zomPyFjgz6B5gJNYyoIMynM9qMA9i+uBC0
+ jsD4OPknjjsXrLRk1Ix5fh63RJwmnD+BQofQbD3an27yoaXVoBPIgaYGs2qNKIw/eycv
+ BgDaSv62I4+KSsnAo9LQ6ynWPcqJM2uf/xN2G5qCgsq+/bzkad20JlIBMwE2ThRrr70m
+ 4gbY691AHAJqwOYpKXxlsW5XCeybpHUuwYAl4aGVOurRyDHw8AUNe8DAVrnBHUuuguze
+ 4NUK7Okk5+3q6vppaEeaTCgJhgGqbt1qs1KSyL+tm3r8IHQ8sKtparaZADfifzaKdCeK
+ JJjg==
+X-Gm-Message-State: APjAAAVspt3fSlSgcyxNGPjdH3Dihsc68qwtERlype+07y7Xd5ejuiXf
+ vcZ1K7sW8eAyTIzNRvcBOqAriDmgBspDS/pNVHKpqf4D
+X-Google-Smtp-Source: APXvYqxsfkWO2eBO1gsSWyUR/7Z/OCY2++NgtEyYSk7PVoicpUjhKvoj92xuv8LP7cdC63d3JRlikctwzQcl/xFvI3g=
+X-Received: by 2002:aca:b703:: with SMTP id h3mr1697067oif.148.1580359207957; 
+ Wed, 29 Jan 2020 20:40:07 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <003401d5d6ab$fd4532e0$f7cf98a0$@adrianschmutzler.de>
-Content-Language: en-US
+References: <20200129162210.GA78186@meh.true.cz>
+ <81451FC6-CB4C-4A43-87B0-50BCF581678E@gmail.com>
+In-Reply-To: <81451FC6-CB4C-4A43-87B0-50BCF581678E@gmail.com>
+From: Rosen Penev <rosenp@gmail.com>
+Date: Wed, 29 Jan 2020 20:39:57 -0800
+Message-ID: <CAKxU2N87DQ-Zat0vmSU4iKgcR32t2L-v0_4WLQSvjyg9ZoFySA@mail.gmail.com>
+To: =?UTF-8?Q?Petr_=C5=A0tetiar?= <ynezz@true.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_161204_547510_891623C1 
-X-CRM114-Status: GOOD (  15.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200129_204011_112445_7867E722 
+X-CRM114-Status: GOOD (  17.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rosenp[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] Netgear R6260 EEPROM location
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: ethernet: turn off flow control
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,110 +93,54 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: drvlabo@gmail.com, 'openwrt-devel' <openwrt-devel@lists.openwrt.org>,
- achterin@googlemail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Adrian,
-
-On 1/29/20 2:57 PM, Adrian Schmutzler wrote:
-> Hi,
-> 
->> -----Original Message-----
->> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
->> Behalf Of David Bauer
->> Sent: Dienstag, 28. Januar 2020 21:05
->> To: drvlabo@gmail.com; achterin@googlemail.com; openwrt-devel <openwrt-
->> devel@lists.openwrt.org>
->> Subject: [OpenWrt-Devel] Netgear R6260 EEPROM location
->>
->> Hi,
->>
->> while testing my shiny  new NETGEAR R6260 with OpenWrt, i was experiencing
->> very bad
->> reception as well as throughput. Upon closer inspection, it turns out that the
->> EEPROM
->> is read from an incorrect offset. The Offset positions here are:
->>
->>  - 0x28000 for 5GHz
->>  - 0x20000 for 2.4GHz
-> 
-> Have you checked partitioning? This might just be a wrong position for the
-> factory partition as well.
-
-Yes, I've checked the partitioning (and it is off). However, I still opted to push the
-other fix, as I'm unsure whether or not the partition mapping is off for all boards or only
-my specific R6260, as the partition map seems to stored on the device in the SC_PART_MAP
-partition instead of the kernel. So it could be entirely possible, that this differs between
-different models, thus we would never have a "correct" partition mapping.
-
-However, in this case WiFi would have been broken for the beginning. But as the R6260 was introduced
-as "Same board, different labling", i count the chance of WiFi being broken from the beginning as
-high, especially as the Radio transmits, but VHT modes are nonsense and throughput is abysmal.
-
-See /proc/mtd below - partitions are in order:
-
-# cat /proc/mtd
-dev:    size   erasesize  name
-mtd0: 00100000 00020000 "Bootloader"
-mtd1: 00100000 00020000 "SC_PART_MAP"
-mtd2: 00400000 00020000 "Kernel"
-mtd3: 02800000 00020000 "Rootfs"
-mtd4: 00200000 00020000 "English UI"
-mtd5: 00220000 00020000 "ML1"
-mtd6: 00200000 00020000 "ML2"
-mtd7: 00200000 00020000 "ML3"
-mtd8: 00200000 00020000 "ML4"
-mtd9: 00200000 00020000 "ML5"
-mtd10: 00200000 00020000 "ML6"
-mtd11: 00200000 00020000 "ML7"
-mtd12: 00200000 00020000 "ML8"
-mtd13: 00200000 00020000 "ML9"
-mtd14: 00200000 00020000 "ML10"
-mtd15: 00200000 00020000 "ML11"
-mtd16: 00200000 00020000 "Factory"
-mtd17: 00220000 00020000 "SC Private Data"
-mtd18: 00200000 00020000 "POT"
-mtd19: 00200000 00020000 "Traffic Meter"
-mtd20: 00200000 00020000 "SC PID"
-mtd21: 00200000 00020000 "SC Nvram"
-mtd22: 00200000 00020000 "Ralink Nvram"
-mtd23: 00200000 00020000 "Reserved Block1"
-mtd24: 00200000 00020000 "Reserved Block2"
-mtd25: 00200000 00020000 "Reserved Block3"
-mtd26: 00200000 00020000 "Reserved Block4"
-mtd27: 00200000 00020000 "Reserved Block5"
-mtd28: 02140000 00020000 "Reserved Block6"
-
-So I'm waiting on feedback from other owners of these boards and using this
-(more or less) strange fix in the meantime.
-
-Best wishes
-David
-
-> 
-> Best
-> 
-> Adrian
-> 
->>
->> Can someone confirm these offsets on their boards? Maybe this is wrong not
->> only on
->> the R6260, but also on the R6350 and R6850.
->>
->> Best wishes
->> David
->>
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+T24gV2VkLCBKYW4gMjksIDIwMjAgYXQgMzoxNCBQTSBSb3NlbiBQZW5ldiA8cm9zZW5wQGdtYWls
+LmNvbT4gd3JvdGU6Cj4KPgo+Cj4gU2VudCBmcm9tIG15IGlQaG9uZQo+Cj4gPiBPbiBKYW4gMjks
+IDIwMjAsIGF0IDg6MjIgQU0sIFBldHIgxaB0ZXRpYXIgPHluZXp6QHRydWUuY3o+IHdyb3RlOgo+
+ID4KPiA+IO+7v1Jvc2VuIFBlbmV2IDxyb3NlbnBAZ21haWwuY29tPiBbMjAyMC0wMS0yNSAxNTow
+NDowM106Cj4gPgo+ID4gSGkgQmrDuHJuIGFuZCBSb3NlbiwKPiA+Cj4gPj4+IE9uIFRodSwgSmFu
+IDIzLCAyMDIwIGF0IDEyOjI1IEFNIEJqw7hybiBNb3JrIDxiam9ybkBtb3JrLm5vPiB3cm90ZToK
+PiA+Pj4+Pgo+ID4+Pj4+IC0gICAgIGlmICgocnRfc3lzY19yMzIoU1lTQ19SRUdfQ0hJUF9SRVZf
+SUQpICYgMHhGRkZGKSA9PSAweDAxMDEpIHsKPiA+Pj4+PiAtICAgICAgICAgICAgIC8qIChHRTEs
+IEZvcmNlIDEwMDBNL0ZELCBGQyBPTiwgTUFYX1JYX0xFTkdUSCAxNTM2KSAqLwo+ID4+Pj4+ICsg
+ICAgIGlmICgocnRfc3lzY19yMzIoU1lTQ19SRUdfQ0hJUF9SRVZfSUQpICYgMHhGRkZGKSA+PSAw
+eDAxMDEpIHsKPiA+Pj4+PiArICAgICAgICAgICAgIC8qIChHRTEsIEZvcmNlIDEwMDBNL0ZELCBG
+QyBPRkYsIE1BWF9SWF9MRU5HVEggMTUzNikgKi8KPiA+Pj4+PiAgICAgICAgICAgICAgbXRrX3N3
+aXRjaF93MzIoZ3N3LCAweDIzMDVlMzBiLCBHU1dfUkVHX01BQ19QMF9NQ1IpOwo+ID4+Pj4+ICAg
+ICAgICAgICAgICBtdDc1MzBfbWRpb193MzIoZ3N3LCAweDM2MDAsIDB4NWUzMGIpOwo+ID4+Pj4+
+ICAgICAgfSBlbHNlIHsKPiA+Pj4KPiA+Pj4gSWYgdGhhdCdzIHJlYWxseSBoZWxwaW5nIHRoZW4g
+SSBiZWxpZXZlIGl0IHdvdWxkIGJlIHVzZWZ1bCB0byBhZGQgc29tZQo+ID4+PiBzb3J0IG9mIGNo
+aXBfcmV2X2lkIHByaW50ayBoZXJlLiAgV291bGQgYmUgZ29vZCB0byBrbm93IHdobyBoaXRzIHRo
+aXMKPiA+Pj4gYW5kIHdoeS4uLgo+ID4KPiA+IEkganVzdCBxdWlja2x5IHNraW1tZWQgdGhyb3Vn
+aCB0aGUgY29kZSBhbmQgaXQgc2VlbXMgbGlrZSB3ZSd2ZSB0aGF0Cj4gPiBpbmZvcm1hdGlvbiBh
+bHJlYWR5IGluIGRtZXNnOgo+ID4KPiA+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2ODggdmVyOjEg
+ZWNvOjIgICAgPSAweDAxMDIKPiA+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2MjhBTiB2ZXI6MSBl
+Y286MiAgPSAweDAxMDIKPiA+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2MjEgdmVyOjEgZWNvOjMg
+ICAgPSAweDAxMDMKPiA+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2MjBBIHZlcjoyIGVjbzozICAg
+PSAweDAyMDMKPiA+IFNvQyBUeXBlOiBNZWRpYVRlayBNVDc2MjBOIHZlcjoyIGVjbzo2ICAgPSAw
+eDAyMDYKPiA+Cj4gPj4gVGhhdCdzIGp1c3QgY29zbWV0aWMuCj4gPgo+ID4gY3VycmVudDogPT0g
+MHgwMTAxCj4gPiBuZXc6ICAgICA+PSAweDAxMDEKPiBJIG1lYW50IHRoZSBjb21tZW50IHRvIHBy
+aW50IHRoZSBTb0MgSUQuCj4gPgo+ID4gRG9lc24ndCBsb29rIGxpa2UgYSBjb3NtZXRpYyBjaGFu
+Z2Ugbm9yIGNvcnJlY3QsIHNlZSBhYm92ZSBsaXN0LiBXaGF0IGFib3V0Cj4gPiBmb2xsb3dpbmc/
+Cj4gPgo+ID4gIGlmIChyYWxpbmtfc29jID09IE1UNzYyWF9TT0NfTVQ3NjIxQVQpIHsKPiA+ICAg
+ICAgIC8qIChHRTEsIEZvcmNlIDEwMDBNL0ZELCBGQyBPRkYsIE1BWF9SWF9MRU5HVEggMTUzNikg
+Ki8KPiA+ICAgICAgIG10a19zd2l0Y2hfdzMyKGdzdywgMHgyMzA1ZTMwYiwgR1NXX1JFR19NQUNf
+UDBfTUNSKTsKPiA+ICAgICAgIG10NzUzMF9tZGlvX3czMihnc3csIDB4MzYwMCwgMHg1ZTMwYik7
+Cj4gPiAgfSBlbHNlIHsKPiA+ICAgICAgIC4uLgo+ID4gIH0KPiBNYXliZS4gQWxsIEkga25vdyBp
+cyB0aGF0IHRoZSBwYXRjaCBhcyBJIHBvc3RlZCBpdCB3b3JrcyB3ZWxsIGFjY29yZGluZyB0byBw
+ZW9wbGUgb24gdGhlIGZvcnVtcy4KT24gYSBzZWNvbmQgbG9vayB0aGlzIGlzIHRvdGFsbHkgYm9n
+dXMuCgpPbiBrZXJuZWwub3JnLCB0aGUgcmFsaW5rX3NvYyB2YXJpYWJsZSBpcyBvbmx5IHVzZWQg
+aW4gYXJjaC9taXBzICwKbWFpbmx5IHVuZGVyIHRoZSByYWxpbmsgc3ViZGlyZWN0b3J5LiBJIGRv
+bid0IHRoaW5rIGl0IHNob3VsZCBiZSB1c2VkCmZvciB0aGUgc3dpdGNoIGRyaXZlci4KPiA+Cj4g
+PiBJIGp1c3QgZG9uJ3Qga25vdyB3aGljaCBNZWRpYVRlayBTb0MgaXMgMHgwMTAxICh2ZXI6MSBl
+Y286MSksIGJ1dCBJIGFzc3VtZSwKPiA+IHRoYXQgdGhpcyBjb25kaXRpb24gaXMganVzdCBib2d1
+cyBmcm9tIHRoZSBiZWdpbm5pbmcuCj4gPgo+ID4gLS0geW5lenoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCm9wZW53cnQtZGV2ZWwgbWFpbGluZyBsaXN0
+Cm9wZW53cnQtZGV2ZWxAbGlzdHMub3BlbndydC5vcmcKaHR0cHM6Ly9saXN0cy5vcGVud3J0Lm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL29wZW53cnQtZGV2ZWwK

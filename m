@@ -2,444 +2,236 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A343714E384
-	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 21:04:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94FCE14E424
+	for <lists+openwrt-devel@lfdr.de>; Thu, 30 Jan 2020 21:41:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S4F4f5fHRsBlaOwTloRC9HI9XL3RK/k9CO3FFzeQU7I=; b=J+sOkgzqcTrXmO
-	K/GaRNmHeesm0IJ7BBKDeStybxqhmvBYwNkXGaE8O2IDZYosSsbf8ItxKzvEHAtd4d/n5gwUe6rZe
-	VByRmG/zwc92Owm1rZVzh46a2HdG5l7YF8rSgzMI0k63CGsWbSSbRVrfkg1IwyVzZHzhlxTEAcWi2
-	GsMxnCl/UF4C+RTHDbRMqeGt9DdYhiKwz4H0+bRhzSd3Fj8M/GLP0Q8jwChE5PKUEVKBRJB4kRT1O
-	2u2XIS0YaDbD5NqR+8ok7bigqPopTyrlJhrB5SE1ZqrIfysbUuT23sjftqh+WFUyTfOhgv009FO08
-	Cqm/1WviLoL7O2TDIcOg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:Date:References:To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f+WkSu/sbZzAQjn1AnLQgB2JBBIaWvhwJpD5UL9U9nI=; b=lSJh2K127qeTxCKMh0hmlHFAz
+	Ku2AGxLkeoPbCON3Ju6SvvwF2ukQR3hSMzbjScIPYdsQ0M/TvLlKaDooV1acLDbpyuOrt4wgbTykk
+	XII7s9BGjFIrAON8YaUPFlOaNG2rsQlRSixUb42mLqpKv2qB7CHL99YTkY88eZXk5larggZRGu/zL
+	ZuSmSNX6dh5K0ysdrq/UmS3CeaCEtXaCRdat17MSZRGxy/c66M0ZZW7QElyUz7ryHHreZH5Scqy6E
+	V25nctWUjAwvi56MCgxL5ixIrLsUrFgkJ+B4o/xGbqjVVYXaubYXebRyxciZGQxc3h2otFiaOm6Fx
+	fWg6EXiVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixG2p-00025J-Gw; Thu, 30 Jan 2020 20:04:07 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixG2f-00024s-6A
- for openwrt-devel@lists.openwrt.org; Thu, 30 Jan 2020 20:03:59 +0000
-Received: by mail-wr1-x444.google.com with SMTP id a6so5625749wrx.12
- for <openwrt-devel@lists.openwrt.org>; Thu, 30 Jan 2020 12:03:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YbA+urC4UyK1u0BGPpFGMRzpMjXppQUaBLllM1223SE=;
- b=i4v3YklXJR7Zv39zYFqpS9tx5YeE53Z4Lghg3fsN25BnNFU570IMeIEbJv68wbdXgc
- 1wugh3fPol3YlfRkgHjtAT0aN0vGKW3EmB/+6Tf0THGecvi0UQ/aCvka8YVPrnlxfLOv
- 7O5EJWJhNPyGHtbadq40XMiiegYBsGLLh/mqmAyiV8IMPlbYiBLYQgMMuLJxFanHyy1V
- Uuu2eBa+xOWl5hZbl1GBQ9DTzhXV4g207UZTD61Et1Syam4xNVZ7/roQO/xFoKcAtcXt
- QYUuVgRPnZQi2qCDqU4dDmXZIxaVeQDmtwcHXr07YT3jVylKlpOutRmidLVjyTqjGySy
- BeyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YbA+urC4UyK1u0BGPpFGMRzpMjXppQUaBLllM1223SE=;
- b=mVMB4VyY5maxYW9K/awVhafyIkEUR7n6WCeCJVXvmf5sig0apO6q2Kb6TllhGKdPsq
- 0Pl1xGBt9q6ulpALLnReDQSL3NvR3WTsLpGBQhht5202jBwqPYVpSiI2L1AC+LqFbEMG
- kjHpWUfM8uOlWNeDRCEUjnet065fKuMDM3peui8ceUJ1Ei2MYKFdBrnfhZVi3vgnzOdj
- Vf9CIXjcPLYo1Tj+dFe9ddE1L0k15/20Tr6H1M7ZrbHQ257D09NahYwUDsX2lhllk1H3
- xk5o0IQ3XtVso65nw5P8NFWqrf++xEOCSRBIG61jdYDPsANgwn0Dx+9LRKubPugkgelA
- mcqg==
-X-Gm-Message-State: APjAAAXcOU5RJn+TWek3nfAvBfH7bZsl0OKdJhTNpGLAZXGC0SmKWZAz
- QJgK4Lc2zbHNW0i9qAW0S8m+Ock=
-X-Google-Smtp-Source: APXvYqwGXc25mgN+O5wVOPoMve8BN/JW64mbnUkLyKSA8MP36J7wpjFZ/jnN33GsTXO75qUSedR4ig==
-X-Received: by 2002:a5d:608e:: with SMTP id w14mr7260830wrt.256.1580414635230; 
- Thu, 30 Jan 2020 12:03:55 -0800 (PST)
-Received: from presler.lan (a109-49-10-77.cpe.netcabo.pt. [109.49.10.77])
- by smtp.gmail.com with ESMTPSA id i16sm8258302wmb.36.2020.01.30.12.03.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Jan 2020 12:03:54 -0800 (PST)
-From: Rui Salvaterra <rsalvaterra@gmail.com>
-To: openwrt-devel@lists.openwrt.org
-Date: Thu, 30 Jan 2020 20:03:45 +0000
-Message-Id: <20200130200345.31741-1-rsalvaterra@gmail.com>
-X-Mailer: git-send-email 2.25.0
+	id 1ixGcW-0001xP-Np; Thu, 30 Jan 2020 20:41:00 +0000
+To: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>,
+ openwrt-devel@lists.openwrt.org
+References: <mailman.27217.1580134584.2486.openwrt-devel@lists.openwrt.org>
+ <ed6f8dd3-fe44-62e1-f631-4842ff33d373@ncentric.com>
+ <bbbdb47a-a1f1-9dd0-1a53-05ab93f218c2@guifi.net>
+ <mailman.27646.1580316070.2486.openwrt-devel@lists.openwrt.org>
+ <20200129200716.44ef140a@kosmio.komorska>
+Date: Thu, 30 Jan 2020 21:40:43 +0100
+In-Reply-To: <20200129200716.44ef140a@kosmio.komorska>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_120357_256597_EBC56C06 
-X-CRM114-Status: GOOD (  16.25  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rsalvaterra[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: [OpenWrt-Devel] [RFC/RFT PATCH] ath9k: implement kthread entropy
- collection for AR5008 and AR9002 PHYs.
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+Message-ID: <mailman.27833.1580416855.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: "Roger Pueyo Centelles | Guifi.net via openwrt-devel"
+ <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: Koen Vandeputte <koen.vandeputte@ncentric.com>
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Rui Salvaterra <rsalvaterra@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: Re: [OpenWrt-Devel] ath79: NAND bad eraseblocks in MikroTik
+ RouterBOARD 922UAGS-5HPacD
+Content-Type: multipart/mixed; boundary="===============9050171898216164863=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The mainline ath9k driver is able to provide a hardware random number
-generator by collecting radio noise from the PHY ADC (using a kthread
-to fill up the entropy pool as needed). Nevertheless, this feature has
-only been implemented for the more recent AR9003 PHYs.
+--===============9050171898216164863==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-Meanwhile, OpenWrt has been carrying a patch to provide entropy from the
-ADC for the three supported PHYs for a long time, but this patch only
-collects entropy once per existing PHY, at the driver initialisation
-time.
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-This patch enables kconfig support for this feature and updates the
-OpenWrt patch, in order to add ADC entropy collection support to both
-AR5008 and AR9002 PHYs.
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============9050171898216164863==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
 
-Signed-off-by: Rui Salvaterra <rsalvaterra@gmail.com>
----
- package/kernel/mac80211/ath.mk                |   7 +
- .../ath/543-ath9k_entropy_from_adc.patch      | 216 ++++++++++--------
- 2 files changed, 134 insertions(+), 89 deletions(-)
-
-diff --git a/package/kernel/mac80211/ath.mk b/package/kernel/mac80211/ath.mk
-index 788131b751..fb6e893494 100644
---- a/package/kernel/mac80211/ath.mk
-+++ b/package/kernel/mac80211/ath.mk
-@@ -8,6 +8,7 @@ PKG_CONFIG_DEPENDS += \
- 	CONFIG_PACKAGE_ATH_SPECTRAL \
- 	CONFIG_PACKAGE_ATH_DYNACK \
- 	CONFIG_ATH9K_SUPPORT_PCOEM \
-+	CONFIG_ATH9K_HWRNG \
- 	CONFIG_ATH9K_TX99 \
- 	CONFIG_ATH10K_LEDS \
- 	CONFIG_ATH10K_THERMAL \
-@@ -45,6 +46,7 @@ config-$(CONFIG_TARGET_ipq40xx) += ATH10K_AHB
- config-$(CONFIG_PCI) += ATH9K_PCI
- config-$(CONFIG_ATH_USER_REGD) += ATH_USER_REGD
- config-$(CONFIG_ATH9K_SUPPORT_PCOEM) += ATH9K_PCOEM
-+config-$(CONFIG_ATH9K_HWRNG) += ATH9K_HWRNG
- config-$(CONFIG_ATH9K_TX99) += ATH9K_TX99
- config-$(CONFIG_ATH9K_UBNTHSR) += ATH9K_UBNTHSR
- config-$(CONFIG_ATH10K_LEDS) += ATH10K_LEDS
-@@ -211,6 +213,11 @@ define KernelPackage/ath9k/config
- 		bool "Support chips used in PC OEM cards"
- 		depends on PACKAGE_kmod-ath9k
+Received: from smtp1.guifi.net ([109.69.9.53])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1ixGcO-0001ws-Uj
+	for openwrt-devel@lists.openwrt.org; Thu, 30 Jan 2020 20:40:55 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by smtp1.guifi.net (Postfix) with ESMTP id 487sgc3R8Fz3w36;
+	Thu, 30 Jan 2020 21:40:44 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=guifi.net; h=
+	content-language:content-transfer-encoding:content-type
+	:content-type:in-reply-to:mime-version:user-agent:date:date
+	:message-id:from:from:references:subject:subject:received
+	:received:received; s=dkim; t=1580416844; x=1582231245; bh=Wa53Z
+	Vmm926S5FpQuorA0NTqxmjautIDaYObdvJJXhI=; b=y/0z2qDGgBQaqmq7lt6Sc
+	SZsGwlcvQ7I6yXpaXtTOZ9RHCaVwU864zvtmC9MqYubIVHjcV3TfjVCLw+FGD/ba
+	EbaKIDNv8+ZepwN0+qoIHu8Blh2lvVKSiTIxIL6YLqBRBQJmTQSc8WJAoth/cg+s
+	1w93iGVx3kcnQw1qt5eXxIz7TL0iokOFLYZ30yrYpizgy83jSNpH/mAbMWdQiUvK
+	ENqNpZyYulmX/0Cq5WMtXaVT9whdX4l0z5QkQ23gDumP2iSIamH7sK+5ZzdHnR6k
+	8ZgbcZreFmRDsAQFIX5efIMQZJ3uVYGzCDfG2b85J3T3WUvwgW1LU602zKuh0OEE
+	g==
+X-Amavis-Modified: Mail body modified (using disclaimer) - smtp1.guifi.net
+X-Virus-Scanned: Scrollout F1 at guifi.net
+Received: from smtp1.guifi.net ([127.0.0.1])
+	by localhost (smtp1.guifi.net [127.0.0.1]) (amavisd-new, port 10024)
+	with LMTP id mJH7_SuJy0aZ; Thu, 30 Jan 2020 21:40:44 +0100 (CET)
+Received: from mail.guifi.net (mail.guifi.net [109.69.9.9])
+	by smtp1.guifi.net (Postfix) with ESMTP id 487sgc08vcz3w1j;
+	Thu, 30 Jan 2020 21:40:43 +0100 (CET)
+Received: from [147.83.42.157] (dync-42-157.ac.upc.es [147.83.42.157])
+	by mail.guifi.net (Postfix) with ESMTPSA id AE87A6A8F88;
+	Thu, 30 Jan 2020 21:40:43 +0100 (CET)
+Subject: Re: [OpenWrt-Devel] ath79: NAND bad eraseblocks in MikroTik
+ RouterBOARD 922UAGS-5HPacD
+To: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>,
+ openwrt-devel@lists.openwrt.org
+Cc: Koen Vandeputte <koen.vandeputte@ncentric.com>
+References: <mailman.27217.1580134584.2486.openwrt-devel@lists.openwrt.org>
+ <ed6f8dd3-fe44-62e1-f631-4842ff33d373@ncentric.com>
+ <bbbdb47a-a1f1-9dd0-1a53-05ab93f218c2@guifi.net>
+ <mailman.27646.1580316070.2486.openwrt-devel@lists.openwrt.org>
+ <20200129200716.44ef140a@kosmio.komorska>
+From: "Roger Pueyo Centelles | Guifi.net" <roger.pueyo@guifi.net>
+Autocrypt: addr=roger.pueyo@guifi.net; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <bfed731f-4a06-b3c9-3292-f3a7506ffb63@guifi.net>
+Date: Thu, 30 Jan 2020 21:40:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+MIME-Version: 1.0
+In-Reply-To: <20200129200716.44ef140a@kosmio.komorska>
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200130_124053_570315_74803403 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  
-+	config ATH9K_HWRNG
-+		bool "Use the PHY ADC as a hardware random number generator"
-+		depends on PACKAGE_kmod-ath9k
-+		select PACKAGE_kmod-random-core
-+
-        config ATH9K_TX99
-                bool "Enable TX99 support (WARNING: testing only, breaks normal operation!)"
-                depends on PACKAGE_kmod-ath9k
-diff --git a/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch b/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch
-index 64bd6cacfd..8b92fbcb0b 100644
---- a/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch
-+++ b/package/kernel/mac80211/patches/ath/543-ath9k_entropy_from_adc.patch
-@@ -8,145 +8,113 @@
-   * @spectral_scan_config: set parameters for spectral scan and enable/disable it
-   * @spectral_scan_trigger: trigger a spectral scan run
-   * @spectral_scan_wait: wait for a spectral scan run to finish
--@@ -744,6 +745,7 @@ struct ath_hw_ops {
-- 			struct ath_hw_antcomb_conf *antconf);
-- 	void (*antdiv_comb_conf_set)(struct ath_hw *ah,
-- 			struct ath_hw_antcomb_conf *antconf);
--+	void (*get_adc_entropy)(struct ath_hw *ah, u8 *buf, size_t len);
-- 	void (*spectral_scan_config)(struct ath_hw *ah,
-- 				     struct ath_spec_scan *param);
-- 	void (*spectral_scan_trigger)(struct ath_hw *ah);
-+@@ -756,6 +757,10 @@ struct ath_hw_ops {
-+ #ifdef CPTCFG_ATH9K_BTCOEX_SUPPORT
-+ 	void (*set_bt_ant_diversity)(struct ath_hw *hw, bool enable);
-+ #endif
-++
-++#ifdef CPTCFG_ATH9K_HWRNG
-++	int (*get_adc_entropy)(struct ath_hw *ah, u32 *buf, const u32 buf_size, u32 *rng_last);
-++#endif
-+ };
-+ 
-+ struct ath_nf_limits {
- --- a/drivers/net/wireless/ath/ath9k/ar9003_phy.c
- +++ b/drivers/net/wireless/ath/ath9k/ar9003_phy.c
--@@ -1927,6 +1927,26 @@ void ar9003_hw_init_rate_txpower(struct
-+@@ -1927,6 +1927,33 @@ void ar9003_hw_init_rate_txpower(struct
-  	}
-  }
-  
--+static void ar9003_hw_get_adc_entropy(struct ath_hw *ah, u8 *buf, size_t len)
-++static int __maybe_unused
-++ar9003_hw_get_adc_entropy(struct ath_hw *ah, u32 *buf, const u32 buf_size, u32 *rng_last)
- +{
- +	int i, j;
-++	u32  v1, v2, last = *rng_last;
- +
- +	REG_RMW_FIELD(ah, AR_PHY_TEST, AR_PHY_TEST_BBB_OBS_SEL, 1);
- +	REG_CLR_BIT(ah, AR_PHY_TEST, AR_PHY_TEST_RX_OBS_SEL_BIT5);
- +	REG_RMW_FIELD(ah, AR_PHY_TEST_CTL_STATUS, AR_PHY_TEST_CTL_RX_OBS_SEL, 0);
- +
--+	memset(buf, 0, len);
--+	for (i = 0; i < len; i++) {
--+		for (j = 0; j < 4; j++) {
--+			u32 regval = REG_READ(ah, AR_PHY_TST_ADC);
-++	for (i = 0, j = 0; i < buf_size; i++) {
-++		v1 = REG_READ(ah, AR_PHY_TST_ADC) & 0xffff;
-++		v2 = REG_READ(ah, AR_PHY_TST_ADC) & 0xffff;
-++
-++		/* wait for data ready */
-++		if (v1 && v2 && last != v1 && v1 != v2 && v1 != 0xffff &&
-++		    v2 != 0xffff)
-++			buf[j++] = (v1 << 16) | v2;
- +
--+			buf[i] <<= 2;
--+			buf[i] |= (regval & 1) | ((regval & BIT(10)) >> 9);
--+			udelay(1);
--+		}
-++		last = v2;
- +	}
-++
-++	*rng_last = last;
-++
-++	return j << 2;
- +}
- +
-  void ar9003_hw_attach_phy_ops(struct ath_hw *ah)
-  {
-  	struct ath_hw_private_ops *priv_ops = ath9k_hw_private_ops(ah);
--@@ -1963,6 +1983,7 @@ void ar9003_hw_attach_phy_ops(struct ath
-+@@ -1962,7 +1989,9 @@ void ar9003_hw_attach_phy_ops(struct ath
-+ 	priv_ops->ani_cache_ini_regs = ar9003_hw_ani_cache_ini_regs;
-  	priv_ops->set_radar_params = ar9003_hw_set_radar_params;
-  	priv_ops->fast_chan_change = ar9003_hw_fast_chan_change;
-- 
-+-
-++#ifdef CPTCFG_ATH9K_HWRNG
- +	ops->get_adc_entropy = ar9003_hw_get_adc_entropy;
-++#endif
-  	ops->antdiv_comb_conf_get = ar9003_hw_antdiv_comb_conf_get;
-  	ops->antdiv_comb_conf_set = ar9003_hw_antdiv_comb_conf_set;
-  	ops->spectral_scan_config = ar9003_hw_spectral_scan_config;
----- a/drivers/net/wireless/ath/ath9k/init.c
--+++ b/drivers/net/wireless/ath/ath9k/init.c
--@@ -819,7 +819,8 @@ static void ath9k_init_txpower_limits(st
-- 	if (ah->caps.hw_caps & ATH9K_HW_CAP_5GHZ)
-- 		ath9k_init_band_txpower(sc, NL80211_BAND_5GHZ);
-- 
---	ah->curchan = curchan;
--+	if (curchan)
--+		ah->curchan = curchan;
-- }
-- 
-- static const struct ieee80211_iface_limit if_limits[] = {
--@@ -1015,6 +1016,18 @@ static void ath9k_set_hw_capab(struct at
-- 	wiphy_ext_feature_set(hw->wiphy, NL80211_EXT_FEATURE_AIRTIME_FAIRNESS);
-- }
-- 
--+static void ath_get_initial_entropy(struct ath_softc *sc)
--+{
--+	struct ath_hw *ah = sc->sc_ah;
--+	char buf[256];
--+
--+	/* reuse last channel initialized by the tx power test */
--+	ath9k_hw_reset(ah, ah->curchan, NULL, false);
--+
--+	ath9k_hw_get_adc_entropy(ah, buf, sizeof(buf));
--+	add_device_randomness(buf, sizeof(buf));
--+}
--+
-- int ath9k_init_device(u16 devid, struct ath_softc *sc,
-- 		    const struct ath_bus_ops *bus_ops)
-- {
--@@ -1060,6 +1073,8 @@ int ath9k_init_device(u16 devid, struct
-- 		ARRAY_SIZE(ath9k_tpt_blink));
-- #endif
-- 
--+	ath_get_initial_entropy(sc);
--+
-- 	/* Register with mac80211 */
-- 	error = ieee80211_register_hw(hw);
-- 	if (error)
----- a/drivers/net/wireless/ath/ath9k/hw-ops.h
--+++ b/drivers/net/wireless/ath/ath9k/hw-ops.h
--@@ -100,6 +100,12 @@ static inline void ath9k_hw_tx99_set_txp
-- 		ath9k_hw_ops(ah)->tx99_set_txpower(ah, power);
-- }
-- 
--+static inline void ath9k_hw_get_adc_entropy(struct ath_hw *ah,
--+		u8 *buf, size_t len)
--+{
--+	ath9k_hw_ops(ah)->get_adc_entropy(ah, buf, len);
--+}
--+
-- #ifdef CPTCFG_ATH9K_BTCOEX_SUPPORT
-- 
-- static inline void ath9k_hw_set_bt_ant_diversity(struct ath_hw *ah, bool enable)
- --- a/drivers/net/wireless/ath/ath9k/ar5008_phy.c
- +++ b/drivers/net/wireless/ath/ath9k/ar5008_phy.c
--@@ -1320,9 +1320,30 @@ void ar5008_hw_init_rate_txpower(struct
-+@@ -1320,9 +1320,37 @@ void ar5008_hw_init_rate_txpower(struct
-  	}
-  }
-  
--+static void ar5008_hw_get_adc_entropy(struct ath_hw *ah, u8 *buf, size_t len)
-++static int __maybe_unused
-++ar5008_hw_get_adc_entropy(struct ath_hw *ah, u32 *buf, const u32 buf_size, u32 *rng_last)
- +{
- +	int i, j;
-++	u32 v1, v2, last = *rng_last;
- +
- +	REG_RMW_FIELD(ah, AR_PHY_TEST, AR_PHY_TEST_BBB_OBS_SEL, 1);
- +	REG_CLR_BIT(ah, AR_PHY_TEST, AR_PHY_TEST_RX_OBS_SEL_BIT5);
- +	REG_RMW_FIELD(ah, AR_PHY_TEST2, AR_PHY_TEST2_RX_OBS_SEL, 0);
- +
--+	memset(buf, 0, len);
--+	for (i = 0; i < len; i++) {
--+		for (j = 0; j < 4; j++) {
--+			u32 regval = REG_READ(ah, AR_PHY_TST_ADC);
-++	for (i = 0, j = 0; i < buf_size; i++) {
-++		v1 = REG_READ(ah, AR_PHY_TST_ADC) & 0xffff;
-++		v2 = REG_READ(ah, AR_PHY_TST_ADC) & 0xffff;
-++
-++		/* wait for data ready */
-++		if (v1 && v2 && last != v1 && v1 != v2 && v1 != 0xffff &&
-++		    v2 != 0xffff)
-++			buf[j++] = (v1 << 16) | v2;
- +
--+			buf[i] <<= 2;
--+			buf[i] |= (regval & 1) | ((regval & BIT(9)) >> 8);
--+			udelay(1);
--+		}
-++		last = v2;
- +	}
-++
-++	*rng_last = last;
-++
-++	return j << 2;
- +}
- +
-  int ar5008_hw_attach_phy_ops(struct ath_hw *ah)
-  {
-  	struct ath_hw_private_ops *priv_ops = ath9k_hw_private_ops(ah);
--+	struct ath_hw_ops *ops = ath9k_hw_ops(ah);
-++	struct ath_hw_ops *ops __maybe_unused;
-  	static const u32 ar5416_cca_regs[6] = {
-  		AR_PHY_CCA,
-  		AR_PHY_CH1_CCA,
--@@ -1337,6 +1358,8 @@ int ar5008_hw_attach_phy_ops(struct ath_
-+@@ -1336,7 +1364,10 @@ int ar5008_hw_attach_phy_ops(struct ath_
-+ 	ret = ar5008_hw_rf_alloc_ext_banks(ah);
-  	if (ret)
-  	    return ret;
-- 
-+-
-++#ifdef CPTCFG_ATH9K_HWRNG
-++	*ops = ath9k_hw_ops(ah);
- +	ops->get_adc_entropy = ar5008_hw_get_adc_entropy;
--+
-++#endif
-  	priv_ops->rf_set_freq = ar5008_hw_set_channel;
-  	priv_ops->spur_mitigate_freq = ar5008_hw_spur_mitigate;
-  
-@@ -184,3 +152,73 @@
-  #define AR_PHY_CHAN_INFO_GAIN_DIFF             0x9CF4
-  #define AR_PHY_CHAN_INFO_GAIN_DIFF_UPPER_LIMIT 320
-  
-+--- a/drivers/net/wireless/ath/ath9k/rng.c
-++++ b/drivers/net/wireless/ath/ath9k/rng.c
-+@@ -19,42 +19,30 @@
-+ 
-+ #include "ath9k.h"
-+ #include "hw.h"
-+-#include "ar9003_phy.h"
-+ 
-+ #define ATH9K_RNG_BUF_SIZE	320
-+ #define ATH9K_RNG_ENTROPY(x)	(((x) * 8 * 10) >> 5) /* quality: 10/32 */
-+ 
-+ static DECLARE_WAIT_QUEUE_HEAD(rng_queue);
-+ 
-+-static int ath9k_rng_data_read(struct ath_softc *sc, u32 *buf, u32 buf_size)
-++static inline int ath9k_hw_get_adc_entropy(struct ath_hw *ah,
-++	u32 *buf, const u32 buf_size, u32 *rng_last)
-++{
-++	return ath9k_hw_ops(ah)->get_adc_entropy(ah, buf, buf_size, rng_last);
-++}
-++
-++static int ath9k_rng_data_read(struct ath_softc *sc, u32 *buf, const u32 buf_size)
-+ {
-+-	int i, j;
-+-	u32  v1, v2, rng_last = sc->rng_last;
-+ 	struct ath_hw *ah = sc->sc_ah;
-++	int bytes_read;
-+ 
-+ 	ath9k_ps_wakeup(sc);
-+ 
-+-	REG_RMW_FIELD(ah, AR_PHY_TEST, AR_PHY_TEST_BBB_OBS_SEL, 1);
-+-	REG_CLR_BIT(ah, AR_PHY_TEST, AR_PHY_TEST_RX_OBS_SEL_BIT5);
-+-	REG_RMW_FIELD(ah, AR_PHY_TEST_CTL_STATUS, AR_PHY_TEST_CTL_RX_OBS_SEL, 0);
-+-
-+-	for (i = 0, j = 0; i < buf_size; i++) {
-+-		v1 = REG_READ(ah, AR_PHY_TST_ADC) & 0xffff;
-+-		v2 = REG_READ(ah, AR_PHY_TST_ADC) & 0xffff;
-+-
-+-		/* wait for data ready */
-+-		if (v1 && v2 && rng_last != v1 && v1 != v2 && v1 != 0xffff &&
-+-		    v2 != 0xffff)
-+-			buf[j++] = (v1 << 16) | v2;
-+-
-+-		rng_last = v2;
-+-	}
-++	bytes_read = ath9k_hw_get_adc_entropy(ah, buf, buf_size, &sc->rng_last);
-+ 
-+ 	ath9k_ps_restore(sc);
-+ 
-+-	sc->rng_last = rng_last;
-+-
-+-	return j << 2;
-++	return bytes_read;
-+ }
-+ 
-+ static u32 ath9k_rng_delay_get(u32 fail_stats)
-+@@ -109,14 +97,9 @@ out:
-+ 
-+ void ath9k_rng_start(struct ath_softc *sc)
-+ {
-+-	struct ath_hw *ah = sc->sc_ah;
-+-
-+ 	if (sc->rng_task)
-+ 		return;
-+ 
-+-	if (!AR_SREV_9300_20_OR_LATER(ah))
-+-		return;
-+-
-+ 	sc->rng_task = kthread_run(ath9k_rng_kthread, sc, "ath9k-hwrng");
-+ 	if (IS_ERR(sc->rng_task))
-+ 		sc->rng_task = NULL;
--- 
-2.25.0
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [109.69.9.53 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
 
+Hi Michal,
+
+El 29/1/20 a les 20:07, Michal Cieslakiewicz ha escrit:
+> Please try adding 'qca,nand-swap-dma;' to '&nand' section in
+> router dts file. This in theory should fix endianness problem.
+Yes, that worked! I also had to set nand-ecc-mode =3D "soft";, as two-byt=
+e
+blocks were still swapped.
+> By looking at C file, I have also found that this router uses
+> model-specific ath79_nfc_set_scan_fixup() routine - a functionality
+> that is not implemented in ath79, because there was no need for such
+> quirks, at least not until now.
+
+Could this be related to the fact that the detected chip has 128 MiB,
+but it is only usable up to 64 MiB?
+
+[=C2=A0=C2=A0=C2=A0 0.774760] nand: Samsung NAND 128MiB 3,3V 8-bit
+[=C2=A0=C2=A0=C2=A0 0.779480] nand: 128 MiB, SLC, erase size: 128 KiB, pa=
+ge size: 2048,
+OOB size: 64
+[=C2=A0=C2=A0=C2=A0 0.787178] Scanning device for bad blocks
+[=C2=A0=C2=A0=C2=A0 0.797061] random: fast init done
+[=C2=A0=C2=A0=C2=A0 0.927117] 3 fixed-partitions partitions found on MTD =
+device ar934x-nand
+[=C2=A0=C2=A0=C2=A0 0.934024] Creating 3 MTD partitions on "ar934x-nand":=
+
+[=C2=A0=C2=A0=C2=A0 0.939338] 0x000000000000-0x000000040000 : "booter"
+[=C2=A0=C2=A0=C2=A0 0.945095] 0x000000040000-0x000000400000 : "kernel"
+[=C2=A0=C2=A0=C2=A0 0.950898] 0x000004000000-0x00000bc00000 : "ubi"
+[=C2=A0=C2=A0=C2=A0 0.955673] mtd: partition "ubi" extends beyond the end=
+ of device
+"ar934x-nand" -- size truncated to 0x4000000
+
+Kind regards,
+
+Roger
+
+
+
+
+--===============9050171898216164863==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============9050171898216164863==--

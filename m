@@ -2,92 +2,60 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4FD314E974
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 09:12:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D35D014E980
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 09:21:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jKpfVh9fHiFRYOi8SvRssIOIP8lxy1b/RLdR2OQTJuY=; b=FRaLr2j9Ds3hDr
-	wLMkdnX3+K4geE0Q/jKjwLNkrMlBBHVuAH14reiqdrYAwLlUj3WcXuKZM60C6X+seygTaWBUdesDW
-	9oq7C+D8mLYHiw1nXtTckHTmjW03jcH1yYAjz5Slf3wEnR86kdEbvuDSf7hdMy5aEVl6t+ns34lea
-	tk6lUld5gwcs83BOgXAzDOpES4LkqqpxIsfBluAjw9HB2bd4g0hTSI9EDBYMmAA/TAXiKdSdSn7Ms
-	xdEWoUZb971d5WCkkkSZCzcfV6ybCWBM1pjvdWbFCZLFCQKhCzQDGsz7NCx31FzLpXfj8eWbrLez/
-	R+nS0nBY/xiAxS6oPyOQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=4JQ6bkzqdjOzE2a12X1EFAD7vYlLyRKgLBs7BxYhFR8=; b=NGfgc9ACpT4i/e02MlbfwYy/l9
+	lb8b2bYsdQywBjli8F0qe4ZEt1TMbCLKgHolJ8PKfD/RxbmDETX0dnvugr9bciF/vB5eRnhZ0HkgO
+	4D2ZXNcQSrVs5zljsDIJ0kXjhnMVCNFsnzABcfyNhQ+F3G8WHSUWrl0MaHDHeaYqAFtjuqZDEVd7f
+	9NwziJqPqoripLPefbUbDcJqsTUIyNGrDv63q5N+W4pPbRlweChtJcWQAnJd5mCVw3y5cs6zbhvly
+	RGgPAWEl8QvEUTPJTJzA8pnyozTeXXTUQccEUsNFVzbzdERxLTVRpPjibIuNIW3aDNhYlC5LV5G19
+	hdCyl0Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixRPr-0004Fz-QY; Fri, 31 Jan 2020 08:12:39 +0000
-Received: from nbd.name ([2a01:4f8:221:3d45::2])
+	id 1ixRYX-0007WL-E0; Fri, 31 Jan 2020 08:21:37 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixRPi-0004F0-GT
- for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 08:12:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=nbd.name;
- s=20160729; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=96PXAFHjE1xUqvz6Qx+Wb2BwVxOwi5CXrtOxbsR07e8=; b=tRuQj5FzfGB1T7azavamMBxQ28
- OIxOSLrjipUafR+zUqYUiURj1xtjrQrbqc7IvDr96c0M7CWxZplsRlGFH7Ekd7DC/WsPvo1cuMDzk
- l45HGyZ+KX7ggWcpKced/+NIHdLsYJ4Qi9bwHq9Uc9efykAIA5lTMUj2BqnZ5M0zJqb8=;
-Received: from [80.255.7.125] (helo=nf.local)
- by ds12 with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <nbd@nbd.name>)
- id 1ixRPb-0006Jh-Q2; Fri, 31 Jan 2020 09:12:23 +0100
-To: Rui Salvaterra <rsalvaterra@gmail.com>, openwrt-devel@lists.openwrt.org
-References: <20200130200345.31741-1-rsalvaterra@gmail.com>
-From: Felix Fietkau <nbd@nbd.name>
-Autocrypt: addr=nbd@nbd.name; prefer-encrypt=mutual; keydata=
- xsDiBEah5CcRBADIY7pu4LIv3jBlyQ/2u87iIZGe6f0f8pyB4UjzfJNXhJb8JylYYRzIOSxh
- ExKsdLCnJqsG1PY1mqTtoG8sONpwsHr2oJ4itjcGHfn5NJSUGTbtbbxLro13tHkGFCoCr4Z5
- Pv+XRgiANSpYlIigiMbOkide6wbggQK32tC20QxUIwCg4k6dtV/4kwEeiOUfErq00TVqIiEE
- AKcUi4taOuh/PQWx/Ujjl/P1LfJXqLKRPa8PwD4j2yjoc9l+7LptSxJThL9KSu6gtXQjcoR2
- vCK0OeYJhgO4kYMI78h1TSaxmtImEAnjFPYJYVsxrhay92jisYc7z5R/76AaELfF6RCjjGeP
- wdalulG+erWju710Bif7E1yjYVWeA/9Wd1lsOmx6uwwYgNqoFtcAunDaMKi9xVQW18FsUusM
- TdRvTZLBpoUAy+MajAL+R73TwLq3LnKpIcCwftyQXK5pEDKq57OhxJVv1Q8XkA9Dn1SBOjNB
- l25vJDFAT9ntp9THeDD2fv15yk4EKpWhu4H00/YX8KkhFsrtUs69+vZQwc0cRmVsaXggRmll
- dGthdSA8bmJkQG5iZC5uYW1lPsJgBBMRAgAgBQJGoeQnAhsjBgsJCAcDAgQVAggDBBYCAwEC
- HgECF4AACgkQ130UHQKnbvXsvgCgjsAIIOsY7xZ8VcSm7NABpi91yTMAniMMmH7FRenEAYMa
- VrwYTIThkTlQzsFNBEah5FQQCACMIep/hTzgPZ9HbCTKm9xN4bZX0JjrqjFem1Nxf3MBM5vN
- CYGBn8F4sGIzPmLhl4xFeq3k5irVg/YvxSDbQN6NJv8o+tP6zsMeWX2JjtV0P4aDIN1pK2/w
- VxcicArw0VYdv2ZCarccFBgH2a6GjswqlCqVM3gNIMI8ikzenKcso8YErGGiKYeMEZLwHaxE
- Y7mTPuOTrWL8uWWRL5mVjhZEVvDez6em/OYvzBwbkhImrryF29e3Po2cfY2n7EKjjr3/141K
- DHBBdgXlPNfDwROnA5ugjjEBjwkwBQqPpDA7AYPvpHh5vLbZnVGu5CwG7NAsrb2isRmjYoqk
- wu++3117AAMFB/9S0Sj7qFFQcD4laADVsabTpNNpaV4wAgVTRHKV/kC9luItzwDnUcsZUPdQ
- f3MueRJ3jIHU0UmRBG3uQftqbZJj3ikhnfvyLmkCNe+/hXhPu9sGvXyi2D4vszICvc1KL4RD
- aLSrOsROx22eZ26KqcW4ny7+va2FnvjsZgI8h4sDmaLzKczVRIiLITiMpLFEU/VoSv0m1F4B
- FtRgoiyjFzigWG0MsTdAN6FJzGh4mWWGIlE7o5JraNhnTd+yTUIPtw3ym6l8P+gbvfoZida0
- TspgwBWLnXQvP5EDvlZnNaKa/3oBes6z0QdaSOwZCRA3QSLHBwtgUsrT6RxRSweLrcabwkkE
- GBECAAkFAkah5FQCGwwACgkQ130UHQKnbvW2GgCfTKx80VvCR/PvsUlrvdOLsIgeRGAAn1ee
- RjMaxwtSdaCKMw3j33ZbsWS4
-Message-ID: <c9cd9283-7a06-72a5-692a-6a88da7110c9@nbd.name>
-Date: Fri, 31 Jan 2020 09:12:23 +0100
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
- Gecko/20100101 Thunderbird/68.4.2
+ id 1ixRYM-0007Vz-9S
+ for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 08:21:28 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 797504189;
+ Fri, 31 Jan 2020 09:21:20 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id 5929e0d4;
+ Fri, 31 Jan 2020 09:21:08 +0100 (CET)
+Date: Fri, 31 Jan 2020 09:21:08 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+Message-ID: <20200131082108.GB78186@meh.true.cz>
+References: <20200130173722.75554-1-ldir@darbyshire-bryant.me.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200130200345.31741-1-rsalvaterra@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200130173722.75554-1-ldir@darbyshire-bryant.me.uk>
+X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_001230_851249_6392D13B 
-X-CRM114-Status: GOOD (  12.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200131_002126_480759_79182AC8 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [RFC/RFT PATCH] ath9k: implement kthread
- entropy collection for AR5008 and AR9002 PHYs.
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH procd] instance: Improve missing jail
+ binary message
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,37 +67,62 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: openwrt-devel@lists.openwrt.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-On 2020-01-30 21:03, Rui Salvaterra wrote:
-> The mainline ath9k driver is able to provide a hardware random number
-> generator by collecting radio noise from the PHY ADC (using a kthread
-> to fill up the entropy pool as needed). Nevertheless, this feature has
-> only been implemented for the more recent AR9003 PHYs.
-> 
-> Meanwhile, OpenWrt has been carrying a patch to provide entropy from the
-> ADC for the three supported PHYs for a long time, but this patch only
-> collects entropy once per existing PHY, at the driver initialisation
-> time.
-> 
-> This patch enables kconfig support for this feature and updates the
-> OpenWrt patch, in order to add ADC entropy collection support to both
-> AR5008 and AR9002 PHYs.
-> 
-> Signed-off-by: Rui Salvaterra <rsalvaterra@gmail.com>
-For at least AR5008 and AR9002, but probably also for AR9003 I would
-like to keep the behavior of collecting entropy only once at driver
-initialization.
-Last time I worked on this I noticed that on several chips, sampling
-entropy during normal operation caused stability issues that were hard
-to pin down but quite noticeable.
-I think the benefit of continuous entropy collection is simply not worth
-the extra cost of potential stability issues and debugging time.
+Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk> [2020-01-30 17:37:23]:
 
-- Felix
+Hi Kevin,
+
+thanks for looking into that.
+
+> Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+> ---
+>  service/instance.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/service/instance.c b/service/instance.c
+> index e872ba0..b78a65f 100644
+> --- a/service/instance.c
+> +++ b/service/instance.c
+> @@ -824,7 +824,8 @@ instance_jail_parse(struct service_instance *in, struct blob_attr *attr)
+>  
+>  	r = stat(UJAIL_BIN_PATH, &s);
+>  	if (r < 0) {
+> -		ERROR("unable to find %s: %m (%d)\n", UJAIL_BIN_PATH, r);
+> +		ULOG_WARN("Cannot jail service %s::%s. %s: %m (%d) Are jails enabled?\n",
+> +				in->srv->name, in->name, UJAIL_BIN_PATH, r);
+
+I added this message in commit 557f11b3a20f ("instance: provide error feedback
+if ujail binary is missing") because I've spent non trivial amount of time on
+finding this, but back then I actually didn't realized, that this code path is
+probed every time, leading to this error messages in cases where the ujail
+binary is absent (most of the time as of now).
+
+This change with service name/instance is indeed helpful, but it doesn't solve
+current issue, that we produce this perhaps misleading error/warning every
+time when procd (re)starts service which contains jails features in its init
+script.
+
+I'm not sure if it makes sense to waste more time on this as there is a plan
+to make jails enabled by default soon. If there is a will to make the UX
+better, then I see following solutions:
+
+ 1. turn that ULOG_WARN into DEBUG, because I think, that most of us increases
+    procd's debug level while debugging the init foo issues, we wont pollute
+    logs anymore
+
+ 2. move the ujail detection logic into procd's init library and send service jail
+    params to procd only if it makes sense and adjust procd code accordingly
+    if necessary
+
+Just my two cents.
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

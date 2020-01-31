@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1E3F14F009
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 16:47:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74DE214F00C
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 16:47:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OShknzq5SN4naedkcL4U3ND8imgsherF0Y9AFRYMmKI=; b=Csjx3HPE14lwPdiw+a4Azjrpbi
-	V02dMWEDPcIMtWAwAIAEaqCMHfY9z558kOjUjGrGwBNE/ikTBza5527r/OxWvC/QT67m7pS/hd2RZ
-	zxQu0ydPDNOvAphHS40eFYqgkWX1CGkE3pymqoEXhraHeU0P9hqx7hoauceAeSzNzQ3+783KkqiQu
-	43tQnRWm+jn1U9qL8cZKOE9VF451JH8azc2YqepdZHqXFXqA4cHIwZI4uksOS8NfQFYWSmHR0Vq0y
-	8XVNia9QDt3vpSr2dVSjUuCo7Pt1qnaKS79jGobbKyqHdJfV4mZtvz6vhJp9u3R1i0JrLjCTeHFpX
-	AlSnhBaQ==;
+	bh=A+UCihGspFVL1halU+4uCNysf6+Oovwjoj2FMb9/BfM=; b=TCi/pJMOHkZoXkPc5s5DjXPMB2
+	6hHPEZECY4tfRoNXtItei8LVpn4ieotIq0yXZct2Sn4w2SmHWZXz8b+EOqKE8QVaSU70w5tcaQTSx
+	vfVHVtrqKjqtpuVd9ZkfuyB0EHu4g7T1r+jSOpbTywdv4Dvu0622IU3IOSjJULV21e4uSS2x/tRtq
+	Y4WYiPbumWIFXygkdNmq2oRvlHPsAtNFZVrE1IdkiFEKl+jBMGgMWtuCan8W8/kBU+tnqFR22A0Au
+	atdjKrmsf8kb1C8lXfOE0QpIei28N3WIw+74QlKX7zebehwuOnhkB1C1iBtmCl9iWdSpDHEGdcELs
+	PnNn/FJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixYVr-0006PG-L9; Fri, 31 Jan 2020 15:47:19 +0000
+	id 1ixYWJ-00070i-6i; Fri, 31 Jan 2020 15:47:47 +0000
 Received: from mx-out.tlen.pl ([193.222.135.175])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixYVQ-0006D0-Pl
- for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 15:46:55 +0000
-Received: (wp-smtpd smtp.tlen.pl 2467 invoked from network);
- 31 Jan 2020 16:46:47 +0100
+ id 1ixYVR-0006D2-Sr
+ for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 15:46:56 +0000
+Received: (wp-smtpd smtp.tlen.pl 9129 invoked from network);
+ 31 Jan 2020 16:46:50 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1580485607; bh=S7mNWxYlVmeLZXKPDcpAcJBbjEj6jHmN5Heo/2K3o5c=;
+ t=1580485610; bh=Ool/hS0xYMJf7SlVVXx7qSl7TbMg41xve5r6FQc3DLk=;
  h=From:To:Subject;
- b=EGYpHEYzSkwWnGF7VLuMnvf0GWVZlIporpwwztiWNvfIihAmoGzhlyHsmOjGVoPuH
- S4rjuTokqbD7ijhBN02zxk/U/ekOV4Ez8fqYnBh2SmlyCqKEeJsz6JdKv07MttEPIh
- mIczEE6AUFHtrrhtsvP26d+sZWUrnt6KTRad1JkM=
+ b=Heg0NwGQBB5zKB530wfZXUFPenI5fIezWFh7eIOKvVX7hn+j0RmrHqN2OsSd1fJOM
+ +NVpZYSdOEFbLYOWqiSzWuUmmfEakBwFDcCw1mByCOMp5r4UCTb9XvZGGDuUSD19P6
+ OXZh1bBwC7DT1Q98Wetk0Vzw5bs7ErjrvpbKV/FY=
 Received: from unknown (HELO localhost.localdomain)
  (tomek_n@o2.pl@[5.2.67.190]) (envelope-sender <tomek_n@o2.pl>)
  by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 31 Jan 2020 16:46:47 +0100
+ for <openwrt-devel@lists.openwrt.org>; 31 Jan 2020 16:46:50 +0100
 From: Tomasz Maciej Nowak <tomek_n@o2.pl>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 31 Jan 2020 16:46:14 +0100
-Message-Id: <20200131154620.25773-3-tomek_n@o2.pl>
+Date: Fri, 31 Jan 2020 16:46:15 +0100
+Message-Id: <20200131154620.25773-4-tomek_n@o2.pl>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200131154620.25773-1-tomek_n@o2.pl>
 References: <20200131154620.25773-1-tomek_n@o2.pl>
 MIME-Version: 1.0
-X-WP-MailID: 606a3726aef51117a1377d6f6cac32dd
+X-WP-MailID: d5f2967d13fa57a70f7b0ef08a110a98
 X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [IcOy]                               
+X-WP-SPAM: NO 0000000 [kdPS]                               
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_074653_156538_E31C619A 
-X-CRM114-Status: UNSURE (   4.93  )
+X-CRM114-CacheID: sfid-20200131_074654_102004_104BB40C 
+X-CRM114-Status: UNSURE (   6.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -67,8 +67,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-Subject: [OpenWrt-Devel] [PATCH 2/8] mvebu: image: align subtargets makefile
- names
+Subject: [OpenWrt-Devel] [PATCH 3/8] mvebu: image: drop empty variables from
+ default profile
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,54 +85,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Align subtargets makefiles names to actual subtargets.
+These variables are already initialized within DEVICE_VARS. Just move
+DEVICE_VARS to make sure they are set before default profile.
 
 Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
 ---
- target/linux/mvebu/image/Makefile                        | 6 +++---
- target/linux/mvebu/image/{cortex-a53.mk => cortexa53.mk} | 0
- target/linux/mvebu/image/{cortex-a72.mk => cortexa72.mk} | 0
- target/linux/mvebu/image/{cortex-a9.mk => cortexa9.mk}   | 0
- 4 files changed, 3 insertions(+), 3 deletions(-)
- rename target/linux/mvebu/image/{cortex-a53.mk => cortexa53.mk} (100%)
- rename target/linux/mvebu/image/{cortex-a72.mk => cortexa72.mk} (100%)
- rename target/linux/mvebu/image/{cortex-a9.mk => cortexa9.mk} (100%)
+ target/linux/mvebu/image/Makefile | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
 diff --git a/target/linux/mvebu/image/Makefile b/target/linux/mvebu/image/Makefile
-index c08b113b36..aeabffdca2 100644
+index aeabffdca2..d9e4b1acce 100644
 --- a/target/linux/mvebu/image/Makefile
 +++ b/target/linux/mvebu/image/Makefile
-@@ -118,15 +118,15 @@ define Device/NAND-512K
+@@ -75,6 +75,7 @@ define Build/uDPU-firmware
+ 	(cd $@-fw; $(TAR) -cvzf $(KDIR_TMP)/$(IMAGE_PREFIX)-firmware.tgz .)
  endef
  
- ifeq ($(SUBTARGET),cortexa9)
--include cortex-a9.mk
-+include cortexa9.mk
- endif
++DEVICE_VARS += BOOT_SCRIPT UBOOT
+ define Device/Default
+   PROFILES := Default
+   DEVICE_DTS = $$(SOC)-$(lastword $(subst _, ,$(1)))
+@@ -86,10 +87,7 @@ define Device/Default
+   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+   SUPPORTED_DEVICES = $(subst _,$(comma),$(1))
+   UBINIZE_OPTS := -E 5
+-  UBOOT :=
+-  BOOT_SCRIPT :=
+ endef
+-DEVICE_VARS += BOOT_SCRIPT UBOOT
  
- ifeq ($(SUBTARGET),cortexa53)
--include cortex-a53.mk
-+include cortexa53.mk
- endif
- 
- ifeq ($(SUBTARGET),cortexa72)
--include cortex-a72.mk
-+include cortexa72.mk
- endif
- 
- $(eval $(call BuildImage))
-diff --git a/target/linux/mvebu/image/cortex-a53.mk b/target/linux/mvebu/image/cortexa53.mk
-similarity index 100%
-rename from target/linux/mvebu/image/cortex-a53.mk
-rename to target/linux/mvebu/image/cortexa53.mk
-diff --git a/target/linux/mvebu/image/cortex-a72.mk b/target/linux/mvebu/image/cortexa72.mk
-similarity index 100%
-rename from target/linux/mvebu/image/cortex-a72.mk
-rename to target/linux/mvebu/image/cortexa72.mk
-diff --git a/target/linux/mvebu/image/cortex-a9.mk b/target/linux/mvebu/image/cortexa9.mk
-similarity index 100%
-rename from target/linux/mvebu/image/cortex-a9.mk
-rename to target/linux/mvebu/image/cortexa9.mk
+ define Device/Default-arm64
+   BOOT_SCRIPT := generic-arm64
 -- 
 2.25.0
 

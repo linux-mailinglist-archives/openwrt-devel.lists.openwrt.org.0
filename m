@@ -2,73 +2,62 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C882614F018
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 16:48:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9401714F028
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 16:52:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
-	In-Reply-To:Message-Id:Date:To:From:Reply-To:Cc:Content-ID:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:
+	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pxirthpyrcHU6u6wLYV8EM9lPFBp43CFNF+KuHMvY7A=; b=GKXeb9aRkSJyy8Ws6sNJDx4lQF
-	OaeZbdIVLgR0BoOFtCtsG0ctSimgiG+pW4q1zQOTg6iHKk+u7n3+21Bp1XRdagZgFF7WfxhzNhPAq
-	/2YpMLuimf3t5Txn5GSEwNwhgFnZxIomwBO6rqeneuOKmNV2QtSLOhbEx5/aq5XcWW2Y/PKOK2tuO
-	PQRUqCq3OekmpqIhRIYvQatHcU6Fn5oFk5mdc5iYRtn5fNOKz4t+rTcGMFYVrHlQUIlIt8HqfToko
-	C3+Tqoy7JaMBcXSAiaM+Owg25EGmfAcq5y8mvHoEg7mdx4QF2AF/2prFbfiLdrG2/z6yGulfRWhlp
-	G1U6CLiw==;
+	bh=b8pA+CkyG71kB+N+D9iRv3N/a6KZhomwV+L89tU6tN8=; b=BRouIKdUNuMc7wApqpMQNK7ZzD
+	Wky92zhIoM3YRfhAnoDR5hCEpkQVFgkhphve/sqhXEe9gK1IQtKS21ld/bEJYtGLWDmhWMygYcXoy
+	l+9x9wsclgAz4aTG+jS7sf0Sjs3Dq64p1KLovPOmvdqWLd+icthFoTJGmImKEkHMIKrn8DnLqfH76
+	OUKXo23qblyVCo5XFfKjV/8NYzoePaxjJu/sV1MjqvdDQV3KmwhesdPXYcxzccZYuvui89CS4yyK+
+	uDdPg/NbjwznEx0ReEHNDJCvYUGpyrPhhdgvZrbZ8d8FVtlgeRBhzPSTc2glE1tsaLa8YSQTUiSDK
+	dB+rtBUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixYXL-0008SN-UR; Fri, 31 Jan 2020 15:48:51 +0000
-Received: from mx-out.tlen.pl ([193.222.135.175])
+	id 1ixYah-0001ki-PB; Fri, 31 Jan 2020 15:52:19 +0000
+Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixYVg-0006Ts-IV
- for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 15:47:11 +0000
-Received: (wp-smtpd smtp.tlen.pl 10835 invoked from network);
- 31 Jan 2020 16:47:06 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=o2.pl; s=1024a;
- t=1580485626; bh=s65kXwid8zCxOuqTVJlX3eRj0HaEXM8ewqx4l79KZOs=;
- h=From:To:Subject;
- b=WaJOWQ1v+W0SwQ/bnmw8sEx4TZEXA1NcmJRtMF8lbOO9TDRcUFpwv5F5VE3OGraTe
- TFBs9uL9cgVjP8XhZ8aJ9wadgCQFN4SPBuMus8ZMU9MlY7BG8+A9OWbK1seB94jond
- 0Diof0/DgZAmo4jLjzK829Z+GTqyZntlzDlO7I50=
-Received: from unknown (HELO localhost.localdomain)
- (tomek_n@o2.pl@[5.2.67.190]) (envelope-sender <tomek_n@o2.pl>)
- by smtp.tlen.pl (WP-SMTPD) with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP
- for <openwrt-devel@lists.openwrt.org>; 31 Jan 2020 16:47:06 +0100
-From: Tomasz Maciej Nowak <tomek_n@o2.pl>
-To: openwrt-devel@lists.openwrt.org
-Date: Fri, 31 Jan 2020 16:46:20 +0100
-Message-Id: <20200131154620.25773-9-tomek_n@o2.pl>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200131154620.25773-1-tomek_n@o2.pl>
-References: <20200131154620.25773-1-tomek_n@o2.pl>
+ id 1ixYaX-0001kO-QQ
+ for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 15:52:11 +0000
+Received: from meh.true.cz (meh.true.cz [108.61.167.218])
+ (Authenticated sender: petr@true.cz)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id 587F037B8;
+ Fri, 31 Jan 2020 16:52:07 +0100 (CET)
+Received: from localhost (meh.true.cz [local])
+ by meh.true.cz (OpenSMTPD) with ESMTPA id e2953483;
+ Fri, 31 Jan 2020 16:51:55 +0100 (CET)
+Date: Fri, 31 Jan 2020 16:51:54 +0100
+From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+To: Rosen Penev <rosenp@gmail.com>
+Message-ID: <20200131155154.GA85707@meh.true.cz>
+References: <20200129162210.GA78186@meh.true.cz>
+ <81451FC6-CB4C-4A43-87B0-50BCF581678E@gmail.com>
+ <CAKxU2N87DQ-Zat0vmSU4iKgcR32t2L-v0_4WLQSvjyg9ZoFySA@mail.gmail.com>
 MIME-Version: 1.0
-X-WP-MailID: e4db8a7011ab864b278e5b4cb08a1986
-X-WP-AV: skaner antywirusowy Poczty o2
-X-WP-SPAM: NO 0000000 [oaOi]                               
+Content-Disposition: inline
+In-Reply-To: <CAKxU2N87DQ-Zat0vmSU4iKgcR32t2L-v0_4WLQSvjyg9ZoFySA@mail.gmail.com>
+X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_074708_795685_598456CF 
-X-CRM114-Status: UNSURE (   6.04  )
+X-CRM114-CacheID: sfid-20200131_075210_006743_75EB87A2 
+X-CRM114-Status: UNSURE (   8.24  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.217.244.18 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tomek_n[at]o2.pl]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-Subject: [OpenWrt-Devel] [PATCH 8/8] uboot-mvebu: point to UBOOT_CONFIG when
- setting options
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+Subject: Re: [OpenWrt-Devel] [PATCH] ramips: ethernet: turn off flow control
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,44 +69,38 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
+Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
+ =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The BUILD_VARIANT might differ from UBOOT_CONFIG, so point to a file we
-are actually changing. Being here let's call 'Build/Configure/U-Boot'
-definition, instead of definig the same command. This'll be more future
-proof, if U-Boot configuration procedure will change.
+Rosen Penev <rosenp@gmail.com> [2020-01-29 20:39:57]:
 
-Signed-off-by: Tomasz Maciej Nowak <tomek_n@o2.pl>
----
- package/boot/uboot-mvebu/Makefile | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+Hi,
 
-diff --git a/package/boot/uboot-mvebu/Makefile b/package/boot/uboot-mvebu/Makefile
-index d171daa717..029018b414 100644
---- a/package/boot/uboot-mvebu/Makefile
-+++ b/package/boot/uboot-mvebu/Makefile
-@@ -42,11 +42,11 @@ UBOOT_TARGETS:= \
- Build/Exports:=$(Host/Exports)
- 
- define Build/Configure
--	# enable additional options beyond clearfog_defconfig
--	echo CONFIG_NET_RANDOM_ETHADDR=y >> $(PKG_BUILD_DIR)/configs/$(BUILD_VARIANT)_defconfig
--	echo CONFIG_CMD_SETEXPR=y >> $(PKG_BUILD_DIR)/configs/$(BUILD_VARIANT)_defconfig
-+	# enable additional options beyond <device>_defconfig
-+	echo CONFIG_NET_RANDOM_ETHADDR=y >> $(PKG_BUILD_DIR)/configs/$(UBOOT_CONFIG)_defconfig
-+	echo CONFIG_CMD_SETEXPR=y >> $(PKG_BUILD_DIR)/configs/$(UBOOT_CONFIG)_defconfig
- 
--	+$(MAKE) $(PKG_JOBS) -C $(PKG_BUILD_DIR) $(UBOOT_CONFIGURE_VARS) $(UBOOT_CONFIG)_config
-+	$(call Build/Configure/U-Boot)
- endef
- 
- define Build/InstallDev
--- 
-2.25.0
+> On kernel.org, the ralink_soc variable is only used in arch/mips ,
+> mainly under the ralink subdirectory.
 
+correct, but your proposed patch can't be accepted as it is. You need to
+handle only 0x0101 and 0x0103 cases, thus putting content of the register into
+some variable and use switch/case to make the decision.
+
+Then you're going to replace the 0x0101 and 0x0103 magic numbers with some
+meaningful constants which would be perhaps very similar to the ralink_soc
+ones, so in the end doing the same, but differently.
+
+Anyway, both approaches are fine with me, do whatever you prefer.
+
+> I don't think it should be used for the switch driver.
+
+FYI we're talking here about a source file under ramips target, it's not in
+the generic directory so it's unlikely, that it would be used in other
+targets, that's why I've suggested ralink_soc as the simplest solution.
+
+-- ynezz
 
 _______________________________________________
 openwrt-devel mailing list

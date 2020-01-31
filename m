@@ -2,8 +2,8 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9401714F028
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 16:52:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD69314F033
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 16:55:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
@@ -11,40 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	MIME-Version:References:Message-ID:To:From:Date:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=b8pA+CkyG71kB+N+D9iRv3N/a6KZhomwV+L89tU6tN8=; b=BRouIKdUNuMc7wApqpMQNK7ZzD
-	Wky92zhIoM3YRfhAnoDR5hCEpkQVFgkhphve/sqhXEe9gK1IQtKS21ld/bEJYtGLWDmhWMygYcXoy
-	l+9x9wsclgAz4aTG+jS7sf0Sjs3Dq64p1KLovPOmvdqWLd+icthFoTJGmImKEkHMIKrn8DnLqfH76
-	OUKXo23qblyVCo5XFfKjV/8NYzoePaxjJu/sV1MjqvdDQV3KmwhesdPXYcxzccZYuvui89CS4yyK+
-	uDdPg/NbjwznEx0ReEHNDJCvYUGpyrPhhdgvZrbZ8d8FVtlgeRBhzPSTc2glE1tsaLa8YSQTUiSDK
-	dB+rtBUw==;
+	bh=J/LVg7/OF53svqYmcC3U1UUsn8hpIFC5l+YyuwWo6JU=; b=JN8LqUey7VVkI3uFDkMlNR0J2V
+	w0zsTj8FuEFuH2eHJU/fuYWOI/ZZyGKtr/ucPHYzdtaeZWIxKH9LjDlWqk6r0Dv/6i6Yry9q7PU1t
+	HtuIBR/5qnHh+JFH2yx1nw8khbn4DvNwvRKhBE+xhoxWf+3GPn1vGtr+3FwCsZBQpdvrvJCnKsgLC
+	2mS854EL+mZyKIC3iALh+RKO28xUHTO5CKOMMipAP8bk97BsjskeWMXbT8AAiU1r86RniGJczK0pz
+	Hw60EiG22uTARg+YKCmq9nwvcEd3t9XRTC1tpdCNUFyCz1+Zzl08fdJOSO9c6UCibLu1W8Qwzk5pC
+	ZK74luBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixYah-0001ki-PB; Fri, 31 Jan 2020 15:52:19 +0000
+	id 1ixYdB-00025W-Fe; Fri, 31 Jan 2020 15:54:53 +0000
 Received: from smtp-out.xnet.cz ([178.217.244.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixYaX-0001kO-QQ
- for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 15:52:11 +0000
+ id 1ixYd4-00025F-3e
+ for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 15:54:47 +0000
 Received: from meh.true.cz (meh.true.cz [108.61.167.218])
  (Authenticated sender: petr@true.cz)
- by smtp-out.xnet.cz (Postfix) with ESMTPSA id 587F037B8;
- Fri, 31 Jan 2020 16:52:07 +0100 (CET)
+ by smtp-out.xnet.cz (Postfix) with ESMTPSA id A592537C1;
+ Fri, 31 Jan 2020 16:54:44 +0100 (CET)
 Received: from localhost (meh.true.cz [local])
- by meh.true.cz (OpenSMTPD) with ESMTPA id e2953483;
- Fri, 31 Jan 2020 16:51:55 +0100 (CET)
-Date: Fri, 31 Jan 2020 16:51:54 +0100
+ by meh.true.cz (OpenSMTPD) with ESMTPA id fd11c0f8;
+ Fri, 31 Jan 2020 16:54:33 +0100 (CET)
+Date: Fri, 31 Jan 2020 16:54:33 +0100
 From: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
-To: Rosen Penev <rosenp@gmail.com>
-Message-ID: <20200131155154.GA85707@meh.true.cz>
+To: =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
+Message-ID: <20200131155433.GB85707@meh.true.cz>
 References: <20200129162210.GA78186@meh.true.cz>
  <81451FC6-CB4C-4A43-87B0-50BCF581678E@gmail.com>
  <CAKxU2N87DQ-Zat0vmSU4iKgcR32t2L-v0_4WLQSvjyg9ZoFySA@mail.gmail.com>
+ <87v9ot5kxi.fsf@miraculix.mork.no>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKxU2N87DQ-Zat0vmSU4iKgcR32t2L-v0_4WLQSvjyg9ZoFySA@mail.gmail.com>
+In-Reply-To: <87v9ot5kxi.fsf@miraculix.mork.no>
 X-PGP-Key: http://ynezz.true.cz/EC796FB2DC69CEF9.asc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_075210_006743_75EB87A2 
-X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-CacheID: sfid-20200131_075446_300970_2F77B9EE 
+X-CRM114-Status: UNSURE (   3.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -71,38 +72,16 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 Reply-To: Petr =?utf-8?Q?=C5=A0tetiar?= <ynezz@true.cz>
 Cc: OpenWrt Development List <openwrt-devel@lists.openwrt.org>,
- =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Rosen Penev <rosenp@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Rosen Penev <rosenp@gmail.com> [2020-01-29 20:39:57]:
-
-Hi,
-
-> On kernel.org, the ralink_soc variable is only used in arch/mips ,
-> mainly under the ralink subdirectory.
-
-correct, but your proposed patch can't be accepted as it is. You need to
-handle only 0x0101 and 0x0103 cases, thus putting content of the register into
-some variable and use switch/case to make the decision.
-
-Then you're going to replace the 0x0101 and 0x0103 magic numbers with some
-meaningful constants which would be perhaps very similar to the ralink_soc
-ones, so in the end doing the same, but differently.
-
-Anyway, both approaches are fine with me, do whatever you prefer.
-
-> I don't think it should be used for the switch driver.
-
-FYI we're talking here about a source file under ramips target, it's not in
-the generic directory so it's unlikely, that it would be used in other
-targets, that's why I've suggested ralink_soc as the simplest solution.
-
--- ynezz
-
-_______________________________________________
-openwrt-devel mailing list
-openwrt-devel@lists.openwrt.org
-https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+QmrDuHJuIE1vcmsgPGJqb3JuQG1vcmsubm8+IFsyMDIwLTAxLTMwIDEwOjU0OjE3XToKCj4gQXJl
+IHlvdSBzdXJlIHRoZSByZXZpc2lvbiBzYXlzIGFueXRoaW5nIGFib3V0IHdoaWNoIFNvQyB0aGlz
+IGlzPyAKCk5vcGUgIDotKSBJdCdzIGJhc2VkIG9ubHkgb24gc291cmNlIGNvZGUgb2JzZXJ2YXRp
+b24uCgotLSB5bmV6egoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18Kb3BlbndydC1kZXZlbCBtYWlsaW5nIGxpc3QKb3BlbndydC1kZXZlbEBsaXN0cy5vcGVu
+d3J0Lm9yZwpodHRwczovL2xpc3RzLm9wZW53cnQub3JnL21haWxtYW4vbGlzdGluZm8vb3Blbndy
+dC1kZXZlbAo=

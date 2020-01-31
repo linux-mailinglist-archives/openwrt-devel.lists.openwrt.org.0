@@ -2,49 +2,91 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E38414EDB1
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 14:45:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5D5614EE4F
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 15:23:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
 	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3p8i7qgkuRD8IUkLhCt1Nm/pEe0RY5dqIR/X1WnoJzU=; b=uY8CGQ8LetL/ZL
-	XifUU89nl7lPGQQkmlo9+1xd7/LzH8PFHHcr7icL2MoNsaP3sMw42vDAvuONRJQ0U0i7UgHvuCqMg
-	lIRs6dKqV/+1R4qzbi7LqKg+B9+3+W7lMn3FDM/hOr/fyp15zd8X3RG04wbryJQ7XdR+Dr8kcDEGz
-	2yaA2gxucKTql+bG426lwtlUVx3yOg+Q+hTkXaU+DUQNqiXI4ANZs6TK/d4fn7cBuENNMhXQOQlXJ
-	Qj73e9oSadV86/yQdeZWW33mdzs3Jsvut4CffSkZoYXNPmvTfNbdq9+SqdDW+U11Hhi3Y0oa0B/sJ
-	58B15ui77m+oyyR6T96w==;
+	List-Owner; bh=irzMBLmtUpTuE5GKRhzrhbTKeKc5ICiA1NYCHjlzIdY=; b=q3NeuusDr/SJy9
+	x6gNZhmrDaDBxKu06I1bQzmZ2kgpBMpBoCrms/MIg/pPE2Sr9z5dXVcYt+hskPnUPG/tgbs+o8P2q
+	xuYrO6CO07BR8cmpuEw+1/TlCC2YqFbP26Xb27FrKIoHapjqtVxHbhvCNuUML0jgvCfXaSN87OzWB
+	IwYUNIYZW4d3eb2XHSRYyP64erZihwQG/4BzXIuKvrEo60N65cgXu41kINuUXrZLd/U2iSoaeB03r
+	npwMdXwOfVNFCkwhCl9xABTXstx1CawsTbt+zSQ3Wm0ZCfqBo6C+PSohDuW7N4+LD7+Y8M2T9ZTTC
+	3BKHqWYXy8WXVaYWm/2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixWbw-0005ZL-3y; Fri, 31 Jan 2020 13:45:28 +0000
-Received: from mars.blocktrron.ovh ([51.254.112.43] helo=mail.blocktrron.ovh)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1ixWbl-0005Xa-NT
- for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 13:45:20 +0000
-Received: from localhost.localdomain (unknown [46.183.103.8])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.blocktrron.ovh (Postfix) with ESMTPSA id 5C15422ECE
- for <openwrt-devel@lists.openwrt.org>; Fri, 31 Jan 2020 14:45:12 +0100 (CET)
-From: David Bauer <mail@david-bauer.net>
+	id 1ixXCb-0001lH-PN; Fri, 31 Jan 2020 14:23:21 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixXCV-0001ko-T8
+ for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 14:23:17 +0000
+Received: by mail-lj1-x243.google.com with SMTP id x7so7319180ljc.1
+ for <openwrt-devel@lists.openwrt.org>; Fri, 31 Jan 2020 06:23:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Iefm1ROidVM2U/MmGKZkJFLHTF+56bVjEfn2c1J/vnE=;
+ b=gUJ7KBhZZDspmi7ZWq3WfLcA8dSdhzQ3QSF3lam8LlBydfH4SU8H5jly+NJz17p7Jr
+ X7rHc0nxW8Wvc5a91JSvtl5xO250rRd4CxyXOvCO+gquTvCh9uBRSsFxgnPm3goBl1I1
+ vWOjNz2RDQYMu55hxsAjjZviY52zS3V4I0d4mP/eLomidYUgQKIKaO+l3QWFETF5tX92
+ q3yGDG4JW8s4w0/MKCqLF212c1RPOyVHU3QUDoRVJcQrvqoF793f0qGhqYi5Du2CN++z
+ SItJriJA+t5keZy7tfg1RWjB2B7ctxp9OX0hn2qMshubgSpe7Eor9dCcCIs+d83uIufy
+ LoEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Iefm1ROidVM2U/MmGKZkJFLHTF+56bVjEfn2c1J/vnE=;
+ b=oiHboEolNbVAoV0/1KJUXaO1Rk37rpXYbOg8L8JoD420pnWjvXoVhAUHF94akr4s+i
+ LpShDsrpJa8CeRK1w1BhGI7ygyMjnbPlSxwioGYIQghozupRzPqpLb4jTsveyh1A4wCx
+ VBta2T655Nvv6vs4o6Dv4VSKS8F8+sTcBbv+HDBt1HbH9fYcYKoqmci1glRdI28abLOO
+ 0caez6BKWk+QL2tVBIyCgAXRrGzYUT+n/q7tDx8pnAJ4kj+tb+1LyCICOGfvgHkTFrNN
+ WHvuAjY4soFj6RE3O57VVriQI9jJh+VgHn/j06S3UK9+m/TJPtN+d8ExWlQzQwb6dfxl
+ jNbg==
+X-Gm-Message-State: APjAAAXbjopFbIaIUJ+v7mVxmVuHDODNvsk46FMoMhfzJ7Pp5E1fpzJn
+ yTVlw5LshBNNlTD0Sm35ryEFPOgY
+X-Google-Smtp-Source: APXvYqw5a4dG+i5uR/kEhkjnhG6b2OJ9dkniW58Ww1F1OrsbytUIx1jdqa25SDNYdmwaFs484AaVMQ==
+X-Received: by 2002:a2e:880a:: with SMTP id x10mr6256259ljh.211.1580480591779; 
+ Fri, 31 Jan 2020 06:23:11 -0800 (PST)
+Received: from localhost.localdomain (031011201135.warszawa.vectranet.pl.
+ [31.11.201.135])
+ by smtp.gmail.com with ESMTPSA id g25sm4685785ljn.107.2020.01.31.06.23.09
+ for <openwrt-devel@lists.openwrt.org>
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 31 Jan 2020 06:23:09 -0800 (PST)
+From: Piotr Dymacz <pepe2k@gmail.com>
 To: openwrt-devel@lists.openwrt.org
-Date: Fri, 31 Jan 2020 14:45:03 +0100
-Message-Id: <20200131134503.10855-1-mail@david-bauer.net>
-X-Mailer: git-send-email 2.24.1
+Date: Fri, 31 Jan 2020 15:22:54 +0100
+Message-Id: <20200131142254.24953-1-pepe2k@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_054518_073141_DA21E98E 
-X-CRM114-Status: GOOD (  13.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200131_062315_966499_D81A0E6C 
+X-CRM114-Status: GOOD (  10.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pepe2k[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: [OpenWrt-Devel] [PATCH] iwinfo: add BSS load element to scan result
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+Subject: [OpenWrt-Devel] [PATCH] base-files: diag: restore default trigger
+ for 'boot' LED
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,132 +103,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This adds support for the BSS load information element. With this patch,
-the BSS load information is visible when using the CLI as well as when
-accessing scan results using the LUA binding.
+For devices without a dedicated 'diag' LED, we use sometimes one of
+other LEDs for indicating at least 'boot', 'failsafe' and 'upgrade'
+stages. In some cases, at the same time these LEDs have defined default
+triggers in DTS using 'linux,default-trigger' property. Current 'diag'
+setup removes the trigger and turns off 'boot' LED after bootup.
 
-Signed-off-by: David Bauer <mail@david-bauer.net>
+One of the examples of such device is TP-Link TL-WR841N v14 (ramips)
+which uses 'wlan' LED with defined 'linux,default-trigger' for 'diag':
+
+aliases {
+	led-boot = &led_wlan;
+	led-failsafe = &led_wlan;
+	led-upgrade = &led_wlan;
+};
+
+[...]
+
+led_wlan: wlan {
+	label = "tl-wr841n-v14:green:wlan";
+	gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+	linux,default-trigger = "phy0tpt";
+};
+
+This patch extends 'diag.sh' and 'leds.sh' scripts to make sure default
+trigger defined in DTS is restored for 'diag' LED which isn't used for
+indicating 'running' stage.
+
+Signed-off-by: Piotr Dymacz <pepe2k@gmail.com>
 ---
- include/iwinfo.h       |  6 ++++++
- include/iwinfo/utils.h |  2 ++
- iwinfo_cli.c           | 11 ++++++++++-
- iwinfo_lua.c           | 12 ++++++++++++
- iwinfo_nl80211.c       |  4 ++++
- iwinfo_utils.c         |  8 ++++++++
- 6 files changed, 42 insertions(+), 1 deletion(-)
+ package/base-files/Makefile                   |  2 +-
+ package/base-files/files/etc/diag.sh          |  2 ++
+ .../base-files/files/lib/functions/leds.sh    | 27 ++++++++++++++++---
+ 3 files changed, 26 insertions(+), 5 deletions(-)
 
-diff --git a/include/iwinfo.h b/include/iwinfo.h
-index 5e64294..b07820d 100644
---- a/include/iwinfo.h
-+++ b/include/iwinfo.h
-@@ -179,6 +179,12 @@ struct iwinfo_scanlist_entry {
- 	uint8_t quality;
- 	uint8_t quality_max;
- 	struct iwinfo_crypto_entry crypto;
+diff --git a/package/base-files/Makefile b/package/base-files/Makefile
+index e389148d47..18325564dc 100644
+--- a/package/base-files/Makefile
++++ b/package/base-files/Makefile
+@@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/version.mk
+ include $(INCLUDE_DIR)/feeds.mk
+ 
+ PKG_NAME:=base-files
+-PKG_RELEASE:=213
++PKG_RELEASE:=214
+ PKG_FLAGS:=nonshared
+ 
+ PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/base-files/
+diff --git a/package/base-files/files/etc/diag.sh b/package/base-files/files/etc/diag.sh
+index 8eb36c6feb..37a8ec758e 100644
+--- a/package/base-files/files/etc/diag.sh
++++ b/package/base-files/files/etc/diag.sh
+@@ -37,6 +37,8 @@ set_led_state() {
+ 		;;
+ 	done)
+ 		status_led_off
++		[ "$status_led" != "$running" ] && \
++			status_led_restore_trigger "boot"
+ 		[ -n "$running" ] && {
+ 			status_led="$running"
+ 			status_led_on
+diff --git a/package/base-files/files/lib/functions/leds.sh b/package/base-files/files/lib/functions/leds.sh
+index 8a1d21caef..43b2fe02ed 100644
+--- a/package/base-files/files/lib/functions/leds.sh
++++ b/package/base-files/files/lib/functions/leds.sh
+@@ -1,16 +1,24 @@
+ #!/bin/sh
+ # Copyright (C) 2013 OpenWrt.org
+ 
+-get_dt_led() {
+-	local label
++get_dt_led_path() {
+ 	local ledpath
+ 	local basepath="/proc/device-tree"
+ 	local nodepath="$basepath/aliases/led-$1"
+ 
+ 	[ -f "$nodepath" ] && ledpath=$(cat "$nodepath")
++	[ -n "$ledpath" ] && ledpath="$basepath$ledpath"
 +
-+	/* BSS Load */
-+	uint8_t has_bss_load;
-+	uint8_t station_count;
-+	uint8_t channel_utilization;
-+	uint8_t admission_capacity;
- };
- 
- struct iwinfo_country_entry {
-diff --git a/include/iwinfo/utils.h b/include/iwinfo/utils.h
-index 98b9c89..a71bc9b 100644
---- a/include/iwinfo/utils.h
-+++ b/include/iwinfo/utils.h
-@@ -53,6 +53,8 @@ struct iwinfo_hardware_entry * iwinfo_hardware(struct iwinfo_hardware_id *id);
- 
- int iwinfo_hardware_id_from_mtd(struct iwinfo_hardware_id *id);
- 
-+void iwinfo_parse_bss_load(struct iwinfo_scanlist_entry *e, uint8_t *data);
-+
- void iwinfo_parse_rsn(struct iwinfo_crypto_entry *c, uint8_t *data, uint8_t len,
- 					  uint8_t defcipher, uint8_t defauth);
- 
-diff --git a/iwinfo_cli.c b/iwinfo_cli.c
-index 0332bc2..5949004 100644
---- a/iwinfo_cli.c
-+++ b/iwinfo_cli.c
-@@ -612,8 +612,17 @@ static void print_scanlist(const struct iwinfo_ops *iw, const char *ifname)
- 			format_signal(e->signal - 0x100),
- 			format_quality(e->quality),
- 			format_quality_max(e->quality_max));
--		printf("          Encryption: %s\n\n",
-+		printf("          Encryption: %s\n",
- 			format_encryption(&e->crypto));
-+		if (e->has_bss_load) {
-+			printf("          Station count: %u\n",
-+				e->station_count);
-+			printf("          Channel utilization: %u/255\n",
-+				e->channel_utilization);
-+			printf("          Available admission capacity: %u (*32us)\n",
-+				e->admission_capacity);
-+		}
-+		printf("\n");
- 	}
- }
- 
-diff --git a/iwinfo_lua.c b/iwinfo_lua.c
-index 58a5537..76160b6 100644
---- a/iwinfo_lua.c
-+++ b/iwinfo_lua.c
-@@ -434,6 +434,18 @@ static int iwinfo_L_scanlist(lua_State *L, int (*func)(const char *, char *, int
- 			lua_pushnumber(L, (e->signal - 0x100));
- 			lua_setfield(L, -2, "signal");
- 
-+			/* BSS load */
-+			if (e->has_bss_load) {
-+				lua_pushnumber(L, e->station_count);
-+				lua_setfield(L, -2, "station_count");
-+
-+				lua_pushnumber(L, e->channel_utilization);
-+				lua_setfield(L, -2, "channel_utilization");
-+
-+				lua_pushnumber(L, e->admission_capacity);
-+				lua_setfield(L, -2, "admission_capacity");
-+			}
-+
- 			/* Crypto */
- 			iwinfo_L_cryptotable(L, &e->crypto);
- 			lua_setfield(L, -2, "encryption");
-diff --git a/iwinfo_nl80211.c b/iwinfo_nl80211.c
-index 2b2a043..7463fc7 100644
---- a/iwinfo_nl80211.c
-+++ b/iwinfo_nl80211.c
-@@ -2296,6 +2296,10 @@ static void nl80211_get_scanlist_ie(struct nlattr **bss,
- 			}
- 			break;
- 
-+		case 11: /* BSS Load */
-+			iwinfo_parse_bss_load(e, ie + 2);
-+			break;
-+
- 		case 48: /* RSN */
- 			iwinfo_parse_rsn(&e->crypto, ie + 2, ie[1],
- 			                 IWINFO_CIPHER_CCMP, IWINFO_KMGMT_8021x);
-diff --git a/iwinfo_utils.c b/iwinfo_utils.c
-index b4f98a9..425492e 100644
---- a/iwinfo_utils.c
-+++ b/iwinfo_utils.c
-@@ -324,6 +324,14 @@ static void iwinfo_parse_rsn_cipher(uint8_t idx, uint8_t *ciphers)
- 	}
- }
- 
-+void iwinfo_parse_bss_load(struct iwinfo_scanlist_entry *e, uint8_t *data)
-+{
-+	e->has_bss_load = 1;
-+	e->station_count = ((data[1] << 8) | data[0]);
-+	e->channel_utilization = data[2];
-+	e->admission_capacity = ((data[4] << 8) | data[3]);
++	echo "$ledpath"
 +}
 +
- void iwinfo_parse_rsn(struct iwinfo_crypto_entry *c, uint8_t *data, uint8_t len,
- 					  uint8_t defcipher, uint8_t defauth)
- {
++get_dt_led() {
++	local label
++	local ledpath=$(get_dt_led_path $1)
++
+ 	[ -n "$ledpath" ] && \
+-		label=$(cat "$basepath$ledpath/label" 2>/dev/null) || \
+-		label=$(cat "$basepath$ledpath/chan-name" 2>/dev/null)
++		label=$(cat "$ledpath/label" 2>/dev/null) || \
++		label=$(cat "$ledpath/chan-name" 2>/dev/null)
+ 
+ 	echo "$label"
+ }
+@@ -35,6 +43,17 @@ led_off() {
+ 	led_set_attr $1 "brightness" 0
+ }
+ 
++status_led_restore_trigger() {
++	local trigger
++	local ledpath=$(get_dt_led_path $1)
++
++	[ -n "$ledpath" ] && \
++		trigger=$(cat "$ledpath/linux,default-trigger" 2>/dev/null)
++
++	[ -n "$trigger" ] && \
++		led_set_attr "$(get_dt_led $1)" "trigger" "$trigger"
++}
++
+ status_led_set_timer() {
+ 	led_timer $status_led "$1" "$2"
+ 	[ -n "$status_led2" ] && led_timer $status_led2 "$1" "$2"
 -- 
-2.24.1
+2.20.1
 
 
 _______________________________________________

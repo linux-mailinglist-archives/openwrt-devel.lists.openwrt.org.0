@@ -2,36 +2,36 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B87A14F430
-	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 22:54:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD16114F438
+	for <lists+openwrt-devel@lfdr.de>; Fri, 31 Jan 2020 23:00:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Date:Message-ID:To:From:Reply-To:Cc:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3Tl6O22ygSKpFEmCdEMiiQSVH5+izxSZx7iISQAj1bw=; b=ITR
-	j9XVjoDrFQeTCrtuYf8DsRc2/Fb6/ck0wVYzFQdTVF6sWSbWgLQEPek1oAbmPvyc9P1X2xyeymRVP
-	K+rI6dRc9F7/egJninS6LJ1dmggEcGw6L1iJxP2f6iN/9kqrgF73exap4B2LB7klpo5bo93ue1bxh
-	HYTlIppAU23yjucbR9Aph4BC7sQsHpyLCcWsdyq8xhlqef1gOtlJ5MpZAubq1BGcSmbDzpRuuWz7X
-	+Xx2zpHu9DWe0Fw/2sM1GqWUceuQatn77X2EvakzT9acNK/Oo0kFQXw3Xjzze1w8e3b68yVBByazc
-	VzxFqhOgzvBzL6gYyaBvwpbtK7aOTAw==;
+	References:List-Owner; bh=PkSJEU9bYWYokcYQx8vAODnphX4iBa7bVAH3sJtmjpE=; b=Sun
+	LwnIHWcuV367ztjAWibUEs9+dOOFoeBstSsvbnVvr1gp00YlwLYVi6xFKIk76bx5bBhHghUOOaObb
+	FVRwDJRs85Td4Y2MyYiYR3Nmsk6yBHMUw8cBC/Md37GCh68HAglwPj4glEM0ss0EQQ7nrPJlyBQ2H
+	EUpamRSPd1VS0m0ie8ijO6QA8nnWkFKLu3r1u5/Mi8KyQMBG/ViLova7zruMBB0sQF1WJbnyVwNCb
+	OBmRAyNqAM4LqGQuVHw0suxk+fEjtfWTmk2zBnvuBiDZQY/JNMxr+HaBVBN4lR3ZQTxLshcXYLrfy
+	OpuUnWNg3QFMzPrcSrcAX5R09NJ7pfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixeF5-0000yK-MU; Fri, 31 Jan 2020 21:54:23 +0000
+	id 1ixeKk-00039P-V3; Fri, 31 Jan 2020 22:00:15 +0000
 Received: from mxout01.bytecamp.net ([212.204.60.217])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixeEx-0000y1-7D
- for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 21:54:16 +0000
+ id 1ixeKW-0002wM-7H
+ for openwrt-devel@lists.openwrt.org; Fri, 31 Jan 2020 22:00:01 +0000
 Received: by mxout01.bytecamp.net (Postfix, from userid 1001)
- id 9B1275614C; Fri, 31 Jan 2020 22:54:13 +0100 (CET)
+ id 023D9565C3; Fri, 31 Jan 2020 22:59:59 +0100 (CET)
 Received: from mail.bytecamp.net (mail.bytecamp.net [212.204.60.9])
- by mxout01.bytecamp.net (Postfix) with ESMTP id 6261D5614A
- for <openwrt-devel@lists.openwrt.org>; Fri, 31 Jan 2020 22:54:12 +0100 (CET)
-Received: (qmail 32713 invoked from network); 31 Jan 2020 22:54:12 +0100
+ by mxout01.bytecamp.net (Postfix) with ESMTP id D9546565C1
+ for <openwrt-devel@lists.openwrt.org>; Fri, 31 Jan 2020 22:59:58 +0100 (CET)
+Received: (qmail 46858 invoked from network); 31 Jan 2020 22:59:58 +0100
 Received: from unknown (HELO ?10.11.12.7?) (jo%wwsnet.net@95.90.41.162)
  by mail.bytecamp.net with ESMTPS (AES128-SHA encrypted);
- 31 Jan 2020 22:54:12 +0100
+ 31 Jan 2020 22:59:58 +0100
 From: Jo-Philipp Wich <jo@mein.io>
 To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
 Openpgp: preference=signencrypt
@@ -109,14 +109,15 @@ Autocrypt: addr=jo@mein.io; keydata=
  E0odeH3CEEPqpxyE7v4aaKiih4BniILMu+ZVVX++/eS9DqtZzMGVeyMYN5nFfGSfnSc/0P2W
  +Ce3rRZbH40Q3GKVn1h19BWj2kBXJBWFpYSO5ZkCjLwwXozDMKJS08h3/7Y8FW+GngDqKgmW
  y9XZa9+U/SZJW40nBzM3hUy+EVkvFg==
-Message-ID: <f44cc4eb-5e77-ec3d-f22b-2292cc133376@wwsnet.net>
-Date: Fri, 31 Jan 2020 22:54:07 +0100
+Message-ID: <308013da-61b1-e8ab-0094-3a990c300fff@wwsnet.net>
+Date: Fri, 31 Jan 2020 22:59:53 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_135415_420566_099FEC1B 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20200131_140000_422329_81853F29 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -126,8 +127,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  low trust [212.204.60.217 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] Security Advisory 2020-01-31-1 - Opkg susceptible
- to MITM (CVE-2020-7982)
+Subject: [OpenWrt-Devel] Security Advisory 2020-01-31-2 - libubox tagged
+ binary data JSON serialization vulnerability (CVE-2020-7248)
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,148 +140,150 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4494546003487847582=="
+Content-Type: multipart/mixed; boundary="===============1134874700689161873=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4494546003487847582==
+--===============1134874700689161873==
 Content-Type: multipart/signed; micalg=pgp-sha512;
  protocol="application/pgp-signature";
- boundary="Ff9YJi1P8ItDWDIla3gDbI5LiAzqVYTDt"
+ boundary="BDhiaQAMs7SzXpJKou9NCjdjCXq8vAtbw"
 
 This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---Ff9YJi1P8ItDWDIla3gDbI5LiAzqVYTDt
-Content-Type: multipart/mixed; boundary="NHInY1XyYLrQ5p6vSm231riFIiCVyYFQT";
+--BDhiaQAMs7SzXpJKou9NCjdjCXq8vAtbw
+Content-Type: multipart/mixed; boundary="rn5uE8XYz37kfr0hqpfFJXfnBlvbFP1yp";
  protected-headers="v1"
 From: Jo-Philipp Wich <jo@mein.io>
 To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Message-ID: <f44cc4eb-5e77-ec3d-f22b-2292cc133376@wwsnet.net>
-Subject: Security Advisory 2020-01-31-1 - Opkg susceptible to MITM
- (CVE-2020-7982)
+Message-ID: <308013da-61b1-e8ab-0094-3a990c300fff@wwsnet.net>
+Subject: Security Advisory 2020-01-31-2 - libubox tagged binary data JSON
+ serialization vulnerability (CVE-2020-7248)
 
---NHInY1XyYLrQ5p6vSm231riFIiCVyYFQT
+--rn5uE8XYz37kfr0hqpfFJXfnBlvbFP1yp
 Content-Type: text/plain; charset=utf-8
 Content-Language: en-US
 Content-Transfer-Encoding: quoted-printable
 
 DESCRIPTION
 
-A bug in the package list parse logic of OpenWrt's opkg fork caused the
-package manager to ignore SHA-256 checksums embedded in the signed reposi=
-tory
-index, effectively bypassing integrity checking of downloaded .ipk artifa=
-cts.
+Possibly exploitable vulnerability exists in the libubox library of OpenW=
+rt,
+specifically in the parts related to JSON conversion of tagged binary dat=
+a,
+so called blobs.  An attacker could possibly exploit this behavior by
+providing specially crafted binary blob or JSON which would then be trans=
+lated
+into blob internally.
 
-The bug has been introduced with commit https://git.openwrt.org/54cc7e3 w=
-hich
-failed to advance the proper string pointer when skipping the leading whi=
-te-
-space portition of the checksum string, causing the subsequent hex decodi=
-ng
-loop to return early with a zero length checksum.
+This malicious blobmsg input would contain blob attribute holding large e=
+nough
+numeric value of type double which then processed by blobmsg_format_json =
+would
+overflow the buffer array designated for JSON output allocated on the sta=
+ck.
 
-Due to the fact that opkg on OpenWrt runs as root and has write access to=
- the
-entire filesystem, arbitrary code could be injected by the means of forge=
-d
-=2Eipk packages with malicious payload.
+The libubox library is a core component in the OpenWrt project and utiliz=
+ed in
+other parts of the project. Those interdependencies are visible by lookin=
+g up
+of the above mentioned vulnerable blobmsg_format_json function in the
+project's LXR[1], which reveals references in netifd, procd, ubus, rpcd,
+uhttpd.
 
-CVE-2020-7982 has been assigned to this issue.
+Apart from this core components, there is also auc[2] package providing
+Attended sysUpgrade CLI in the packages feeds repository, which seems to =
+be
+using this vulnerable function.
+
+CVE-2020-7248 has been assigned to this issue.
 
 
 REQUIREMENTS
 
-In order to exploit this vulnerability, a malicious actor needs to pose a=
-s
-MITM, serving a valid and signed package index - e.g. one obtained from
-downloads.openwrt.org - and one or more forged .ipk packages having the s=
-ame
-size as specified in the repository index while an `opkg install` command=
+In order to exploit this vulnerability, a malicious attacker would need t=
+o
+provide specially crafted binary blobs or JSON input to blobmsg_format_js=
+on,
+thus creating stack based overflow condition during serialization of the
+double value into the JSON buffer.
 
-is invoked on the victim system.
+It was verified, that its possible to crash rpcd by following shell comma=
+nd:
+
+  $ ubus call luci getFeatures \
+      '{ "banik": 00192200197600198000198100200400.1922 }'
 
 
 MITIGATIONS
 
-To fix this issue, upgrade to the latest OpenWrt version. The fix is cont=
-ained
-in the following and later OpenWrt releases:
+To fix this issue, update the affected libubox using the command below.
 
-  * OpenWrt master: 2020-01-29 reboot-12146-gc69c20c667
-  * OpenWrt 19.07:  2019-01-29 v19.07.1-1-g4668ae3bed
-  * OpenWrt 18.06:  2019-01-29 v18.06.7-1-g6bfde67581
+   opkg update; opkg upgrade libubox
 
-The fixed opkg package will carry the version 2020-01-25.
+The fix is contained in the following and later versions:
 
+ - OpenWrt master: 2020-01-20 reboot-12063-g5c73bb12c82c
+ - OpenWrt 19.07:  2019-01-29 v19.07.1-1-g4668ae3bed
+ - OpenWrt 18.06:  2019-01-29 v18.06.7-1-g6bfde67581
 
-Alternatively, to update the opkg package itself without upgrading the en=
-tire
-firmware, the following commands may be used once all repositories have b=
-een
-updated:
-
-   cd /tmp
-   opkg update
-   opkg download opkg
-   zcat ./opkg-lists/openwrt_base | grep -A10 "Package: opkg" | grep SHA2=
-56sum
-   sha256sum ./opkg_2020-01-25-c09fe209-1_*.ipk
-
-Compare both checksums and, if matching, proceed with installing the pack=
-age:
-
-   opkg install ./opkg_2020-01-25-c09fe209-1_*.ipk
 
 
 AFFECTED VERSIONS
 
-To our knowledge, OpenWrt versions 18.06.0 to 18.06.6 and 19.07.0 as well=
- as
-LEDE 17.01.0 to 17.01.7 are affected. The fixed packages are integrated i=
-n
-the OpenWrt 18.06.7, OpenWrt 19.07.1 and subsequent releases.
+To our knowledge, OpenWrt versions 18.06.0 to 18.06.6 and versions 19.07.=
+0-rc1
+to 19.07.0 are affected. The fixed packages will be integrated in the Ope=
+nWrt
+19.07.1, 18.06.7 and subsequent releases. Older versions of OpenWrt (e.g.=
 
-Older versions of OpenWrt (e.g. OpenWrt 15.05 and LEDE 17.01) are end of =
-life
-and not supported any more.
+OpenWrt 15.05 and LEDE 17.01) are end of life and not supported any more.=
+
+
+Other users of libubox should update to the latest version ASAP.
 
 
 CREDITS
 
-The issue was discovered by Guido Vranken for ForAllSecure, Inc.
+The issues were discovered and fixed by Petr =C5=A0tetiar and Jo-Philipp =
+Wich.
 
 
+REFERENCES
+
+1. https://lxr.openwrt.org/ident?i=3Dblobmsg_format_json
+2. https://github.com/openwrt/packages/blob/master/utils/auc/src/auc.c#L6=
+76
 
 
---NHInY1XyYLrQ5p6vSm231riFIiCVyYFQT--
+--rn5uE8XYz37kfr0hqpfFJXfnBlvbFP1yp--
 
---Ff9YJi1P8ItDWDIla3gDbI5LiAzqVYTDt
+--BDhiaQAMs7SzXpJKou9NCjdjCXq8vAtbw
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: OpenPGP digital signature
 Content-Disposition: attachment; filename="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIyBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl40ogAACgkQQuLLvzou
-ZtPK7Q/0C+FoPuL7iMYH9CzbKhUdbPjdDIGjbkCnecyLoBZoSUfmM6LStnA2M79l
-TUE8RBNPrEbIkHVJhut/YGYyS/et/SPJ+Pl5bOv0CTLAxR05pyUB8H9Sh+SYU8s1
-boCkUuLMhdshKlNSm1r7yGpRroW1fDMeR5dJmYsoF55tHQx3ss+YxSgvkuQHNQG0
-WsuSGWIKCyg2VwvPPxlMO3QgQVqu8vysfnTcdti2iF7kjFTJA3L9xgkMZsKNhJ4Q
-f9Rohq7MYmGPggUSU0YT8obLb00q5l4AIDaM3z9jv0JASSxo1bNbUTQ4OgxXM1+W
-7PStnuIX9vAidRIxfTMYv0Ae+FkQTUVvIw4LTffgSSXYAijxmybg8EREprk0/fn0
-aiSSQlTIRCez2F0Zcz5zddA62ua6/3tJwepUx/uqhlqM191MCr+0VRsgSYVGfLxY
-WTrE5CDO8xEFz8QiCvUnt63oKwkF7NFUmjWDZp5MeLbDMD+6DD6d2pAQmbzcvKXu
-cUBo1NMWifyqXRcuIF5Lin+PfSNXXyKtr4/ZCyDla0ioCgAAs9+8LemWzAuxG2OF
-3n0J29YePL1BHHO3mST/nVesTBBoEmPoZkFhO+hfpNW2pKlerlFZrULLdIskLEFd
-M5SamPtE2E3nwVL9TNAfar9TwoAlUkzmx96cem7zaYCVuGiH3A==
-=2bIa
+iQIzBAEBCgAdFiEEoEDjaXEsZv/z0WDyQuLLvzouZtMFAl40o1kACgkQQuLLvzou
+ZtMNiA/+IIf9tjlcmoC7R1KyswYePDklS5i5z5uT51NriUuA9K+6avuPlHXZpy0a
+uiLdVAVErQOWh4Nppxb8QTESQXCjnlhOcI/YSITmNUL22snaU4wEfjlvDSFxqVW7
+i0Z1XMRAHdDYRa7kdfuAwYhzkLnaCE2UeREb+4Kw8ZANDE2umn80DxrMMxYrn3qw
+DJZxW2jtsWKa8ak7M4lXXF15rjdGWePXviJJ+XhmryNMvSmFch7vjYjNL1sXh91P
+Re4T7CsCRg5np5IgHJSWlvHEk90bJxgxbTY0physxTG8sdQCoztncTEvaOONJV0i
+QHYW6kT9k+jf0RmX9whmVJLKDgmqCFmFTTWAQTyIgmFSREjc6yUzE5eCfpWujZgV
+8fCiZhVqTOlc/s9FAzquAoG9zbLDMg4wNvk3Sj1nB0GM1RJJT1gSvfELfZvN9IVu
+h5v7oUUH0/x/DKXUrwKcccxCdAhIX7Hul5amGPKDP8B2C65PjofN+woKrw7hmfAk
+wYeijxpgKTJB/VJeSAjKEzNi7of1HzK3eWZBhx9uFf0nLYtFMvubTQ63XKGWhM+P
+Jxq4KqSCtaIDFMFRkmDRXoFQ5fQ5fOPHFq90KHB5Nug0usgw+FMCJl9Re9kAbxHy
+6/1d7fjpIuD6ONQ2xCnnQRuncNZ8aiJS3SvSWz1tskU+kcGWh4M=
+=TVUg
 -----END PGP SIGNATURE-----
 
---Ff9YJi1P8ItDWDIla3gDbI5LiAzqVYTDt--
+--BDhiaQAMs7SzXpJKou9NCjdjCXq8vAtbw--
 
 
---===============4494546003487847582==
+--===============1134874700689161873==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -291,5 +294,5 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============4494546003487847582==--
+--===============1134874700689161873==--
 

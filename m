@@ -2,80 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 512F714F77E
-	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Feb 2020 11:13:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0FA714F8D8
+	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Feb 2020 17:26:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:Message-ID:
-	In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MTevdb9weXFWk0yL6WWCHg5It0jUJPiVlW9183muOfY=; b=amEvcBPwhIGU/0XH2GIishQUV
-	6mW+3zJfc48cArnk5b6ahpfc3zM9+9q/mkU7s/t5l7+pa7WkSGVp4kbJEyaIy8pW3GFUyGZjN1MJV
-	pM8pixj8HvY4c7C016jqn12UvW393jo1weQ/0t9eZWnJr41vOsNm//uXG1wUE2MWAB0De2PF8YFaS
-	kIJ3RsVxU6hj9XdqTmK1LGHEYNc8wDYcfvodK+ELBnHSAIBBqwk6byYYkSiu1A0rc1OETXktIO09Z
-	QcHNT/37cdid+kGOb6Lci2B/4CJM7qfHqbrYxy8G8sSeIcbVjTPrsNXAqLsElg1Bl94HZXsOGkXaA
-	ZDXAmfpJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LaoAQhQab95TtmBlsvWAi8kvl7BTp1bi6AWTwjrWL7w=; b=TwZkWozgvWUSM0
+	aH2wj3Ji267ILyMb+NX95OCCw5ycfBR5qy/8+fszTPCDb2B7okzpl+tefBFcbAuIJPTKPRvJS5vJl
+	n3LILRrqn3b7eqnBHdkjHyj5ktgjDgR18eBOYlBwp9PWMdAHPGctN5akDOJJ4SsUps2mcrYUQHorV
+	V+bRC6NzVmMkLjDNUdzwD9M+mWmR8ehtj0+2bUMmygfftTX/qMIF9vgJhL/EK86wC/gQ1JO0xXvOk
+	huw1G5/JptXvzSJBtIZAXs7Cq7cWTGmvtfG1IGNk3T1UHC9Nxj7RvCCMNh5BiS0vzfVDW1i+hdmOY
+	s1JpDjda5SyeiOFGSOCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixplh-0004Sr-2R; Sat, 01 Feb 2020 10:12:49 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1ixvay-00050D-K0; Sat, 01 Feb 2020 16:26:08 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixpla-0004SP-AC
- for openwrt-devel@lists.openwrt.org; Sat, 01 Feb 2020 10:12:44 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y17so11583367wrh.5
- for <openwrt-devel@lists.openwrt.org>; Sat, 01 Feb 2020 02:12:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :mime-version; bh=z++ZS7AI60UHaGoPgtsKaluSQr39QXy/8NuUAZK9XUE=;
- b=SG+QMuPvGskty1vdrABvQSncjX9RYI78ODGMpxm1alTxXWJHTiZfvhwcbPOyqNemeJ
- vshYXuc4FPzBJrqBJnpVd8F34umudxjwkEveNyWy4XOrgMz9KQBrpjXXTAFmZ9+JVEiL
- PK61PqxPUBzvmIYqqanIOI7iNijn3qrQ3A4EPdF1BAj12AUXtkct0RCIDscuHB4vEeT+
- pbNtQYWhAkRV56IFnfGgBhpfQ4CqpW2T9J/jTe2ajXcaTZvoNlK/6WVrYDQuEfYxYvVc
- OCSCrJBenG09nC1eEisTOonG5lUcLindYN/w76WvZkJOlNIDftgysAjApkT4j8I3Y5qK
- +uZw==
+ id 1ixvaq-0004zY-IL
+ for openwrt-devel@lists.openwrt.org; Sat, 01 Feb 2020 16:26:02 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t14so12145208wmi.5
+ for <openwrt-devel@lists.openwrt.org>; Sat, 01 Feb 2020 08:25:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=darbyshire-bryant.me.uk; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lfRsgoCJeiTQgGszcW/aT5BQuN4eLRthkmJwbWzOEZ8=;
+ b=LUR1MWmpRDo+FLA9wNyii+c8cn3UznugsxEkBr07PFewdPy1GhkPRmkK93vRWt0Ntc
+ 8IGv7K9kv4ImsqdQ3/qDs82txctaVQSy80ojvPsSjUEIvbTlquKW506MV0sJMnzPFovl
+ mkugWpI2R/mqdze/RNdOBz1mWQZUpLHVHgyEA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:mime-version;
- bh=z++ZS7AI60UHaGoPgtsKaluSQr39QXy/8NuUAZK9XUE=;
- b=s8xALaClPDdzaDjwHzt294Px/LhkBymWowr1XtGZ4//LeJDUPYahgIulBs3h1FQMLp
- qRXR7VTIrjP9yEfU6Dzfhp1uRYJPDzT6QMXICT4rB2LiM9a1htfmEREipriBawJpVPai
- brkujpYC6wwPabfbUfhDiI9DDuzdpe5Sn5AF+cHWPHmvMgD4OXTwpd6baGE4mxYT6uPH
- xhxdaJjdQzG1kOcyCuBNZMREH3lccN1/R7kPNeIZ6B/NTG42614vJgcHK1qCJ1xO8Db9
- GTEJ8tsfe4ykFnWZVP32KNXmfkj4cDXPCQ0j3+/ax3y6pffoQ5Wx+eaJjVPoC/V21R67
- a2pw==
-X-Gm-Message-State: APjAAAVhmBGhgEFwnRd36VvU5BmynwmmadV+kytqccHaop1zrzZ6PG49
- x/Ygz/tanhi1Xwns7spnttw=
-X-Google-Smtp-Source: APXvYqzz80wtWKfyHqSbnveWmbgtxE0TtOEPMeFKUi2poQ42L22LR/xWpPucnDIzpyj2UeFQw8N9+Q==
-X-Received: by 2002:a5d:68cf:: with SMTP id p15mr3866794wrw.31.1580551957094; 
- Sat, 01 Feb 2020 02:12:37 -0800 (PST)
-Received: from gatosaldo ([95.234.185.69])
- by smtp.gmail.com with ESMTPSA id l15sm15597894wrv.39.2020.02.01.02.12.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 01 Feb 2020 02:12:36 -0800 (PST)
-Date: Sat, 1 Feb 2020 11:12:34 +0100 (CET)
-From: Enrico Mioso <mrkiko.rs@gmail.com>
-X-X-Sender: mrkiko@localhost.localdomain
-To: Filip Moc <lede@moc6.cz>
-In-Reply-To: <20200131213333.GA441@moc6.cz>
-Message-ID: <alpine.LNX.2.21.99999.382.2002011109110.19430@localhost.localdomain>
-References: <20200117121552.2225-1-freifunk@adrianschmutzler.de>
- <20200131213333.GA441@moc6.cz>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lfRsgoCJeiTQgGszcW/aT5BQuN4eLRthkmJwbWzOEZ8=;
+ b=Z4lmnaTZoMe2koISSwG9FV7oDPaO6fIDiWe7QxU+dBfsf1Jacin866+j9bNEYmh6zl
+ b2Ou+olKxjo+xcrJB7Qt6DbDA4jT+agXPOZip0TPkqBYFYU8geNu29eugxEmVovh8zbC
+ uAWlfh8X4AAqs/YMODjv2JNa76HKMtmNAiLzRrY2TL9OUZ8N9d1cweJOWD0H2vKX2eFW
+ AJ6aYwipqCe6MNz00QE+KctzJy0fkuElSEzapjk8bkhUjcttm80Z1itwPvso+ZetYM5X
+ mTJvHW9Ws/QHEll0wLwVPyI435vrzaZWhgDaVxocn3eC5ReUI3W1IVfPAbjaw+jJtSWc
+ ZxSA==
+X-Gm-Message-State: APjAAAU2RQ+g5azkRTsAB87Y3JY2xephNZC6DSK2Zr2a9X5/Hw2N3gAM
+ 7dpHB+vdwwsohhP2KZim6yAN5GfSsOM=
+X-Google-Smtp-Source: APXvYqxW572CLE1InLtvkPJCWU6gXi1Ob8FmlEqhjC/kls3SBP5/zB+1FwSfwMDAKzlxBsPlJSEGlg==
+X-Received: by 2002:a7b:cf08:: with SMTP id l8mr18208682wmg.169.1580574356523; 
+ Sat, 01 Feb 2020 08:25:56 -0800 (PST)
+Received: from localhost.localdomain ([193.240.142.132])
+ by smtp.gmail.com with ESMTPSA id m3sm17315591wrs.53.2020.02.01.08.25.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 01 Feb 2020 08:25:55 -0800 (PST)
+From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+To: openwrt-devel@lists.openwrt.org
+Date: Sat,  1 Feb 2020 16:25:01 +0000
+Message-Id: <20200201162500.35499-1-ldir@darbyshire-bryant.me.uk>
+X-Mailer: git-send-email 2.21.1 (Apple Git-122.3)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200201_021242_381950_FBADE7D3 
-X-CRM114-Status: GOOD (  19.94  )
-X-Spam-Score: 0.9 (/)
+X-CRM114-CacheID: sfid-20200201_082600_610766_F7D4F37D 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mrkiko.rs[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,10 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.1 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
-Subject: Re: [OpenWrt-Devel] [PATCH v4] ath79: add support for TP-Link
- TL-MR6400
+Subject: [OpenWrt-Devel] [PATCH procd] instance: Add 'mustjail' attribute
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,314 +91,141 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
+Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hello Filip, and all.
+Since commit b44417c instance: provide error feedback if ujail binary is
+missing, worrying log spam of the form "unable to find /sbin/jail ..."
+may be encountered.
 
-Thank you very very much for bringing this on. Sorry for my disappearing lately, been a little bit busy moving home.
-Unfortunately I don't think I have particular findings to reveal regarding stock FW - I probably would run the original firmware and look at console to try to have an idea on what's goin' on.
-Maybe:
-1 - changing flash SPI frequency may impact power usage and hence modem init success rate? maybe this is completely wrong hypotetis but ...
-2 - Original Firmware may init modem later on?
+On systems not configured with jail capabilities the lack of jail binary
+is not an error, whilst on systems with jail capabilities the warning
+will be issued and the process is started outside of a jail.
 
-I think we should merge this in any case. this is a nice device after all, and having support for it in OpenWRt is worth, even with those known issues.
+This commit adds a new procd jail parameter 'mustjail' which if set
+issues an error and does NOT start the process outside of a jailed
+environment.
 
-big big thanks to you Adrian and Filip.
+The original 'unable to find jail binary' warning is output in DEBUG
+mode, thus processes started in a 'may jail' but non-jail capable
+environment do not spam the log.
 
+Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
+---
+ service/instance.c | 33 +++++++++++++++++++++++----------
+ service/instance.h |  1 +
+ 2 files changed, 24 insertions(+), 10 deletions(-)
 
+diff --git a/service/instance.c b/service/instance.c
+index e872ba0..5dc23e2 100644
+--- a/service/instance.c
++++ b/service/instance.c
+@@ -101,6 +101,7 @@ enum {
+ 	JAIL_ATTR_RONLY,
+ 	JAIL_ATTR_MOUNT,
+ 	JAIL_ATTR_NETNS,
++	JAIL_ATTR_MUSTJAIL,
+ 	__JAIL_ATTR_MAX,
+ };
+ 
+@@ -114,6 +115,7 @@ static const struct blobmsg_policy jail_attr[__JAIL_ATTR_MAX] = {
+ 	[JAIL_ATTR_RONLY] = { "ronly", BLOBMSG_TYPE_BOOL },
+ 	[JAIL_ATTR_MOUNT] = { "mount", BLOBMSG_TYPE_TABLE },
+ 	[JAIL_ATTR_NETNS] = { "netns", BLOBMSG_TYPE_BOOL },
++	[JAIL_ATTR_MUSTJAIL] = { "mustjail", BLOBMSG_TYPE_BOOL },
+ };
+ 
+ struct instance_netdev {
+@@ -819,20 +821,16 @@ instance_jail_parse(struct service_instance *in, struct blob_attr *attr)
+ {
+ 	struct blob_attr *tb[__JAIL_ATTR_MAX];
+ 	struct jail *jail = &in->jail;
+-	struct stat s;
+-	int r;
+-
+-	r = stat(UJAIL_BIN_PATH, &s);
+-	if (r < 0) {
+-		ERROR("unable to find %s: %m (%d)\n", UJAIL_BIN_PATH, r);
+-		return 0;
+-	}
+ 
+ 	blobmsg_parse(jail_attr, __JAIL_ATTR_MAX, tb,
+ 		blobmsg_data(attr), blobmsg_data_len(attr));
+ 
+ 	jail->argc = 2;
+ 
++	if (tb[JAIL_ATTR_MUSTJAIL]) {
++		in->must_jail = true;
++		jail->argc++;
++	}
+ 	if (tb[JAIL_ATTR_NAME]) {
+ 		jail->name = strdup(blobmsg_get_string(tb[JAIL_ATTR_NAME]));
+ 		jail->argc += 2;
+@@ -885,7 +883,7 @@ instance_jail_parse(struct service_instance *in, struct blob_attr *attr)
+ 	if (in->no_new_privs)
+ 		jail->argc++;
+ 
+-	return 1;
++	return true;
+ }
+ 
+ static bool
+@@ -918,7 +916,8 @@ instance_config_parse(struct service_instance *in)
+ {
+ 	struct blob_attr *tb[__INSTANCE_ATTR_MAX];
+ 	struct blob_attr *cur, *cur2;
+-	int rem;
++	struct stat s;
++	int rem, r;
+ 
+ 	blobmsg_parse(instance_attr, __INSTANCE_ATTR_MAX, tb,
+ 		blobmsg_data(in->config), blobmsg_data_len(in->config));
+@@ -1004,6 +1003,19 @@ instance_config_parse(struct service_instance *in)
+ 	if (!in->trace && tb[INSTANCE_ATTR_JAIL])
+ 		in->has_jail = instance_jail_parse(in, tb[INSTANCE_ATTR_JAIL]);
+ 
++	if (in->has_jail) {
++		r = stat(UJAIL_BIN_PATH, &s);
++		if (r < 0) {
++			if (in->must_jail) {
++				ERROR("Cannot jail service %s::%s. %s: %m (%d)\n",
++						in->srv->name, in->name, UJAIL_BIN_PATH, r);
++				return false;
++			}
++			DEBUG(2, "unable to find %s: %m (%d)\n", UJAIL_BIN_PATH, r);
++			in->has_jail = false;
++		}
++	}
++
+ 	if (tb[INSTANCE_ATTR_STDOUT] && blobmsg_get_bool(tb[INSTANCE_ATTR_STDOUT]))
+ 		in->_stdout.fd.fd = -1;
+ 
+@@ -1146,6 +1158,7 @@ instance_init(struct service_instance *in, struct service *s, struct blob_attr *
+ 	in->term_timeout = 5;
+ 	in->syslog_facility = LOG_DAEMON;
+ 	in->exit_code = 0;
++	in->must_jail = false;
+ 
+ 	in->_stdout.fd.fd = -2;
+ 	in->_stdout.stream.string_data = true;
+diff --git a/service/instance.h b/service/instance.h
+index 7d91b51..abd91ad 100644
+--- a/service/instance.h
++++ b/service/instance.h
+@@ -59,6 +59,7 @@ struct service_instance {
+ 
+ 	bool trace;
+ 	bool has_jail;
++	bool must_jail;
+ 	bool no_new_privs;
+ 	struct jail jail;
+ 	char *seccomp;
+-- 
+2.21.1 (Apple Git-122.3)
 
-
-On Fri, 31 Jan 2020, Filip Moc wrote:
-
-> Date: Fri, 31 Jan 2020 22:33:33
-> From: Filip Moc <lede@moc6.cz>
-> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> Cc: openwrt-devel@lists.openwrt.org, Enrico Mioso <mrkiko.rs@gmail.com>
-> Subject: Re: [PATCH v4] ath79: add support for TP-Link TL-MR6400
-> 
-> Hi,
->
-> I tested snapshot build from "Fri Jan 31 00:17:40 2020" and except for problems
-> mentioned in known issues it seems to be working fine.
->
-> Filip
->
->
-> On Fri, Jan 17, 2020 at 01:15:52PM +0100, Adrian Schmutzler wrote:
->> From: Enrico Mioso <mrkiko.rs@gmail.com>
->>
->> This device is an LTE router supported in ar71xx so far.
->> As per original commit, hardware specifications (v1.0 EU):
->> - SoC: QCA9531
->> - Flash: Winbond W25Q64FV (8MiB)
->> - RAM: EtronTech EM6AB160TSE-5G (64MiB)
->> - Wireless: SoC platform only (2.4GHz b/g/n, 2x internal antenna)
->> - Ethernet: 2NIC (3x100M + 1x100M)
->> - WWAN: TP-LINK LTE MODULE (2x external detachable antenna)
->> - Power: DC 12V 1A
->>
->> Flashing instructions:
->> You can flash via tftp recovery (serve factory image as /mr6400_tp_recovery.bin
->> on 192.168.0.66/24, connect to any ethernet port and power on device while
->> holding the reset button). Flashing via OEM web interface does not work.
->>
->> Known issues:
->> - LTE module does not always come up during boot. This can be fixed by turning
->>   it off and on again.
->> - As it happened occasionally in ar71xx, during bursty flash activity, LTE
->>   module init will fail, with USB enumeration errors.
->> - eth1 (LAN) always shows carrier as 1 even if no cable is plugged in (this
->>   works "correctly" on ar71xx)
->>
->> Signed-off-by: Enrico Mioso <mrkiko.rs@gmail.com>
->> [rebase and several adjustments]
->> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
->> Tested-by: Filip Moc <lede@moc6.cz>
->> ---
->>  .../ath79/dts/qca9531_tplink_tl-mr6400-v1.dts | 167 ++++++++++++++++++
->>  .../generic/base-files/etc/board.d/01_leds    |   5 +
->>  .../generic/base-files/etc/board.d/02_network |   5 +
->>  target/linux/ath79/image/generic-tp-link.mk   |  12 ++
->>  4 files changed, 189 insertions(+)
->>  create mode 100644 target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
->>
->> diff --git a/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
->> new file mode 100644
->> index 0000000000..7299257cda
->> --- /dev/null
->> +++ b/target/linux/ath79/dts/qca9531_tplink_tl-mr6400-v1.dts
->> @@ -0,0 +1,167 @@
->> +// SPDX-License-Identifier: GPL-2.0-or-later
->> +/dts-v1/;
->> +
->> +#include <dt-bindings/gpio/gpio.h>
->> +#include <dt-bindings/input/input.h>
->> +
->> +#include "qca953x.dtsi"
->> +
->> +/ {
->> +	compatible = "tplink,tl-mr6400-v1", "qca,qca9531";
->> +	model = "TP-Link TL-MR6400 v1";
->> +
->> +	aliases {
->> +		led-boot = &led_power;
->> +		led-failsafe = &led_power;
->> +		led-running = &led_power;
->> +		led-upgrade = &led_power;
->> +		label-mac-device = &wmac;
->> +	};
->> +
->> +	leds {
->> +		compatible = "gpio-leds";
->> +
->> +		/* D12 */
->> +		wan {
->> +			label = "tp-link:white:wan";
->> +			gpios = <&gpio 0 GPIO_ACTIVE_HIGH>;
->> +		};
->> +
->> +		/* D11 */
->> +		4g {
->> +			label = "tp-link:white:4g";
->> +			gpios = <&gpio 1 GPIO_ACTIVE_HIGH>;
->> +		};
->> +
->> +		/* D5 */
->> +		wps {
->> +			label = "tp-link:white:wps";
->> +			gpios = <&gpio 3 GPIO_ACTIVE_HIGH>;
->> +		};
->> +
->> +		/* D3 */
->> +		wlan {
->> +			label = "tp-link:white:wlan";
->> +			gpios = <&gpio 11 GPIO_ACTIVE_HIGH>;
->> +			linux,default-trigger = "phy0tpt";
->> +		};
->> +
->> +		/* D2 */
->> +		led_power: power {
->> +			label = "tp-link:white:power";
->> +			gpios = <&gpio 13 GPIO_ACTIVE_HIGH>;
->> +		};
->> +
->> +		/* D4 */
->> +		lan {
->> +			label = "tp-link:white:lan";
->> +			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
->> +		};
->> +	};
->> +
->> +	keys {
->> +		compatible = "gpio-keys";
->> +
->> +		/* SW2 */
->> +		reset {
->> +			label = "Reset button";
->> +			linux,code = <KEY_RESTART>;
->> +			gpios = <&gpio 12 GPIO_ACTIVE_LOW>;
->> +			debounce-interval = <60>;
->> +		};
->> +
->> +		/* SW3 */
->> +		rfkill {
->> +			label = "RF kill button";
->> +			linux,code = <KEY_RFKILL>;
->> +			gpios = <&gpio 14 GPIO_ACTIVE_LOW>;
->> +			debounce-interval = <60>;
->> +		};
->> +	};
->> +
->> +	gpio-export {
->> +		compatible = "gpio-export";
->> +
->> +		gpio_usb_power {
->> +			gpio-export,name = "tp-link:power:lte";
->> +			gpio-export,output = <0>;
->> +			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
->> +		};
->> +	};
->> +};
->> +
->> +&uart {
->> +	status = "okay";
->> +};
->> +
->> +&spi {
->> +	status = "okay";
->> +
->> +	num-cs = <1>;
->> +
->> +	flash@0 {
->> +		compatible = "jedec,spi-nor";
->> +		reg = <0>;
->> +		spi-max-frequency = <25000000>;
->> +
->> +		partitions {
->> +			compatible = "fixed-partitions";
->> +			#address-cells = <1>;
->> +			#size-cells = <1>;
->> +
->> +			uboot: partition@0 {
->> +				label = "u-boot";
->> +				reg = <0x000000 0x020000>;
->> +				read-only;
->> +			};
->> +
->> +			partition@20000 {
->> +				compatible = "tplink,firmware";
->> +				label = "firmware";
->> +				reg = <0x020000 0x7d0000>;
->> +			};
->> +
->> +			art: partition@7f0000 {
->> +				label = "art";
->> +				reg = <0x7f0000 0x010000>;
->> +				read-only;
->> +			};
->> +		};
->> +	};
->> +};
->> +
->> +&eth0 {
->> +	status = "okay";
->> +
->> +	phy-handle = <&swphy0>;
->> +
->> +	mtd-mac-address = <&uboot 0x1fc00>;
->> +	mtd-mac-address-increment = <1>;
->> +};
->> +
->> +&eth1 {
->> +	mtd-mac-address = <&uboot 0x1fc00>;
->> +	mtd-mac-address-increment = <(-1)>;
->> +};
->> +
->> +&wmac {
->> +	status = "okay";
->> +
->> +	mtd-cal-data = <&art 0x1000>;
->> +	mtd-mac-address = <&uboot 0x1fc00>;
->> +};
->> +
->> +&usb0 {
->> +	#address-cells = <1>;
->> +	#size-cells = <0>;
->> +	status = "okay";
->> +
->> +	hub_port: port@1 {
->> +		reg = <1>;
->> +		#trigger-source-cells = <0>;
->> +	};
->> +};
->> +
->> +&usb_phy {
->> +	status = "okay";
->> +};
->> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/01_leds b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
->> index de4e8b4a7f..1023ba7a39 100755
->> --- a/target/linux/ath79/generic/base-files/etc/board.d/01_leds
->> +++ b/target/linux/ath79/generic/base-files/etc/board.d/01_leds
->> @@ -215,6 +215,11 @@ tplink,re450-v2)
->>  	ucidef_set_led_netdev "lan_data" "LAN Data" "tp-link:green:lan_data" "eth0" "tx rx"
->>  	ucidef_set_led_netdev "lan_link" "LAN Link" "tp-link:green:lan_link" "eth0" "link"
->>  	;;
->> +tplink,tl-mr6400-v1)
->> +	ucidef_set_led_switch "lan" "LAN" "tp-link:white:lan" "switch0" "0x0e"
->> +	ucidef_set_led_netdev "wan" "WAN" "tp-link:white:wan" "eth1"
->> +	ucidef_set_led_netdev "4g" "4G" "tp-link:white:4g" "usb0"
->> +	;;
->>  tplink,tl-wr842n-v2)
->>  	ucidef_set_led_netdev "wan" "WAN" "tp-link:green:wan" "eth1"
->>  	ucidef_set_led_switch "lan1" "LAN1" "tp-link:green:lan1" "switch0" "0x04"
->> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
->> index a96b504d5a..0bae9dc384 100755
->> --- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
->> +++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
->> @@ -236,6 +236,11 @@ ath79_setup_interfaces()
->>  		ucidef_add_switch "switch0" \
->>  			"0@eth0" "2:lan:3" "3:lan:2" "4:lan:1" "1:wan"
->>  		;;
->> +	tplink,tl-mr6400-v1)
->> +		ucidef_set_interfaces_lan_wan "eth0.1 eth1" "usb0"
->> +		ucidef_add_switch "switch0" \
->> +			"0@eth0" "1:lan:1" "2:lan:3" "3:lan:2"
->> +		;;
->>  	tplink,tl-wr842n-v2)
->>  		ucidef_set_interface_wan "eth1"
->>  		ucidef_add_switch "switch0" \
->> diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
->> index a7266f05a9..53138e343b 100644
->> --- a/target/linux/ath79/image/generic-tp-link.mk
->> +++ b/target/linux/ath79/image/generic-tp-link.mk
->> @@ -374,6 +374,18 @@ define Device/tplink_re450-v2
->>  endef
->>  TARGET_DEVICES += tplink_re450-v2
->>
->> +define Device/tplink_tl-mr6400-v1
->> +  $(Device/tplink-8mlzma)
->> +  SOC := qca9531
->> +  DEVICE_MODEL := TL-MR6400
->> +  DEVICE_VARIANT := v1
->> +  TPLINK_HWID := 0x64000001
->> +  DEVICE_PACKAGES := kmod-usb2 kmod-usb-net kmod-usb-net-rndis kmod-usb-serial \
->> +	kmod-usb-serial-option adb-enablemodem
->> +  SUPPORTED_DEVICES += tl-mr6400
->> +endef
->> +TARGET_DEVICES += tplink_tl-mr6400-v1
->> +
->>  define Device/tplink_tl-wdr3500-v1
->>    $(Device/tplink-8mlzma)
->>    SOC := ar9344
->> --
->> 2.20.1
->>
->
 
 _______________________________________________
 openwrt-devel mailing list

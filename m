@@ -2,74 +2,77 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0FA714F8D8
-	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Feb 2020 17:26:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C622A14F8F7
+	for <lists+openwrt-devel@lfdr.de>; Sat,  1 Feb 2020 17:40:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LaoAQhQab95TtmBlsvWAi8kvl7BTp1bi6AWTwjrWL7w=; b=TwZkWozgvWUSM0
-	aH2wj3Ji267ILyMb+NX95OCCw5ycfBR5qy/8+fszTPCDb2B7okzpl+tefBFcbAuIJPTKPRvJS5vJl
-	n3LILRrqn3b7eqnBHdkjHyj5ktgjDgR18eBOYlBwp9PWMdAHPGctN5akDOJJ4SsUps2mcrYUQHorV
-	V+bRC6NzVmMkLjDNUdzwD9M+mWmR8ehtj0+2bUMmygfftTX/qMIF9vgJhL/EK86wC/gQ1JO0xXvOk
-	huw1G5/JptXvzSJBtIZAXs7Cq7cWTGmvtfG1IGNk3T1UHC9Nxj7RvCCMNh5BiS0vzfVDW1i+hdmOY
-	s1JpDjda5SyeiOFGSOCQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=IApJigQlBJqUjCkyLixLVLdtVIPcLmrRyAUQBJ+Rfrc=; b=cgU3tjMSOBA3vTM/9vloibSTMl
+	MUcHewqL1btXJP1xzEO7+6iMyjjcRniRn6b6Q3gWly3H4hjm1/tSwmUTQycQJfFAcx6Fk6cslJVGR
+	rEB3ShmO6bbE2N2UuBOFQQWvDILH3NKGV+9MnePnhfQMogzQgexlsc57uMC0ICRew+iD1i6dJ7QfJ
+	yy//tWGzSnvnjYiFzMXnlPz7HWwgpMMDVj9LbbMUgHl6kBur7Ut3Q7oMLP9fI4vR/ycZaO/KrO6J9
+	v6LE09ettePYuthsRDRGFUcBsEzCZocRFJJnX5kX8IGTR1NOQhRfsrXyqXuDxW74Xo0+YJVAIEc1Q
+	ZUxIsAaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixvay-00050D-K0; Sat, 01 Feb 2020 16:26:08 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ixvod-0000FB-AS; Sat, 01 Feb 2020 16:40:15 +0000
+Received: from mail-qt1-x833.google.com ([2607:f8b0:4864:20::833])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixvaq-0004zY-IL
- for openwrt-devel@lists.openwrt.org; Sat, 01 Feb 2020 16:26:02 +0000
-Received: by mail-wm1-x343.google.com with SMTP id t14so12145208wmi.5
- for <openwrt-devel@lists.openwrt.org>; Sat, 01 Feb 2020 08:25:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=darbyshire-bryant.me.uk; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lfRsgoCJeiTQgGszcW/aT5BQuN4eLRthkmJwbWzOEZ8=;
- b=LUR1MWmpRDo+FLA9wNyii+c8cn3UznugsxEkBr07PFewdPy1GhkPRmkK93vRWt0Ntc
- 8IGv7K9kv4ImsqdQ3/qDs82txctaVQSy80ojvPsSjUEIvbTlquKW506MV0sJMnzPFovl
- mkugWpI2R/mqdze/RNdOBz1mWQZUpLHVHgyEA=
+ id 1ixvoQ-00088T-0a
+ for openwrt-devel@lists.openwrt.org; Sat, 01 Feb 2020 16:40:03 +0000
+Received: by mail-qt1-x833.google.com with SMTP id v25so8001565qto.7
+ for <openwrt-devel@lists.openwrt.org>; Sat, 01 Feb 2020 08:40:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=uJMobnsdcv72YShbb8JbbV0zz/Ob5+KpHaGrHIRLRmg=;
+ b=vL3PN1ym+zDO73GF+56jTcwVFZnM1FhGtR+yiAB6N7yIwz9PfrznINFAMFCcWR4Tcr
+ 1pXvTZ9vwfgTM6qXyKkporjLcWsPGYGJq3gPNImTi7sULplD71vs4yC42v34SscD8M8e
+ FMkrvFj3szlSdeNFFmZbB9no1yFMkLjfd97pG4a6PlKiqWHOfoM7NyqHDNchvE0IQKJR
+ EwMkOpDW59LsoXSCzSqBB4H6CB+9geBkkJ6y8OEI/nriEz5Y1qqmAh7CfNdnX/7Wp6os
+ ZLg5TywOP6Nk9iqB2ZujQMK4z+nocZYwT1lx/vUAmm2c3nJWwqmBYvj37fMXMc44jMEW
+ omZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lfRsgoCJeiTQgGszcW/aT5BQuN4eLRthkmJwbWzOEZ8=;
- b=Z4lmnaTZoMe2koISSwG9FV7oDPaO6fIDiWe7QxU+dBfsf1Jacin866+j9bNEYmh6zl
- b2Ou+olKxjo+xcrJB7Qt6DbDA4jT+agXPOZip0TPkqBYFYU8geNu29eugxEmVovh8zbC
- uAWlfh8X4AAqs/YMODjv2JNa76HKMtmNAiLzRrY2TL9OUZ8N9d1cweJOWD0H2vKX2eFW
- AJ6aYwipqCe6MNz00QE+KctzJy0fkuElSEzapjk8bkhUjcttm80Z1itwPvso+ZetYM5X
- mTJvHW9Ws/QHEll0wLwVPyI435vrzaZWhgDaVxocn3eC5ReUI3W1IVfPAbjaw+jJtSWc
- ZxSA==
-X-Gm-Message-State: APjAAAU2RQ+g5azkRTsAB87Y3JY2xephNZC6DSK2Zr2a9X5/Hw2N3gAM
- 7dpHB+vdwwsohhP2KZim6yAN5GfSsOM=
-X-Google-Smtp-Source: APXvYqxW572CLE1InLtvkPJCWU6gXi1Ob8FmlEqhjC/kls3SBP5/zB+1FwSfwMDAKzlxBsPlJSEGlg==
-X-Received: by 2002:a7b:cf08:: with SMTP id l8mr18208682wmg.169.1580574356523; 
- Sat, 01 Feb 2020 08:25:56 -0800 (PST)
-Received: from localhost.localdomain ([193.240.142.132])
- by smtp.gmail.com with ESMTPSA id m3sm17315591wrs.53.2020.02.01.08.25.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 01 Feb 2020 08:25:55 -0800 (PST)
-From: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
-To: openwrt-devel@lists.openwrt.org
-Date: Sat,  1 Feb 2020 16:25:01 +0000
-Message-Id: <20200201162500.35499-1-ldir@darbyshire-bryant.me.uk>
-X-Mailer: git-send-email 2.21.1 (Apple Git-122.3)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=uJMobnsdcv72YShbb8JbbV0zz/Ob5+KpHaGrHIRLRmg=;
+ b=SovVBB/jFwrqPhotTanJmrZll2HEgW1OnZaERmoqnmGnyCt7x1TxDbUNiBmDf/3qRN
+ 4/eP1WQ36Sl5f5KhLxUx4rds+aPST5OC0wHU1SgBuYstCRyUSUWPj1txRHruF7vSe3du
+ OOIM6ZhSd433HmjyIVNpmx3xa+rzRJW1LxrzUateiLUf9xb7al/jUiEoB2zQU3thAMZo
+ 1vMO/3VRvpDpDWQlwoopBzPIac7OBxx7+G+1VYA5EebhwOO/53ojxFKAjlEHF7KGSsbt
+ xS/wxCBItajZgUNp88yn0JAdpwdsPlnsT1Oej5SXwTGZsdgO4aGdGuOKj8XkFLZfxXDh
+ PPmQ==
+X-Gm-Message-State: APjAAAW5S+FlU98UZXn+J/wd5J1cadnOj1mD8AefI7wkfU419/q1r2Bq
+ AJ5s17sFXEW5ZBNrq9Vgz5tB5dRY7YABuuEJ25xiRO9V
+X-Google-Smtp-Source: APXvYqx6kZsM1NTf8CAZHavjdphbf89b9kxK1bOv9KjtkXZNRBhHnX9kxPVHCPBthyu+BROHaK+e9PBdkNHJ5v86vU0=
+X-Received: by 2002:aed:218f:: with SMTP id l15mr15969630qtc.247.1580575196941; 
+ Sat, 01 Feb 2020 08:39:56 -0800 (PST)
 MIME-Version: 1.0
+References: <CACfEFw8s5k30Zp+u_o=qbXqeRBAHa7uEGQ9mzqRsd8TvbXYXaw@mail.gmail.com>
+In-Reply-To: <CACfEFw8s5k30Zp+u_o=qbXqeRBAHa7uEGQ9mzqRsd8TvbXYXaw@mail.gmail.com>
+From: Wes Turner <wes.turner@gmail.com>
+Date: Sat, 1 Feb 2020 11:39:45 -0500
+Message-ID: <CACfEFw-pWFiSpumGYb81_7GEN0QLB7smWriSWrYX5yYGizAfCA@mail.gmail.com>
+To: openwrt-devel@lists.openwrt.org
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200201_082600_610766_F7D4F37D 
-X-CRM114-Status: GOOD (  16.03  )
+X-CRM114-CacheID: sfid-20200201_084002_092165_AFBE7B55 
+X-CRM114-Status: UNSURE (   5.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:833 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wes.turner[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,7 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-Subject: [OpenWrt-Devel] [PATCH procd] instance: Add 'mustjail' attribute
+Subject: [OpenWrt-Devel] RFI: OpenWRT Upgrade System; ENH,SEC suggestions
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,141 +94,70 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Cc: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Since commit b44417c instance: provide error feedback if ujail binary is
-missing, worrying log spam of the form "unable to find /sbin/jail ..."
-may be encountered.
+Saw this post and thought I'd forward it along here.
+https://news.ycombinator.com/item?id=22208557
 
-On systems not configured with jail capabilities the lack of jail binary
-is not an error, whilst on systems with jail capabilities the warning
-will be issued and the process is started outside of a jail.
+"""
+It's definitely an issue that the sha256 checksum check was broken.
+But, can someone explain why a person who is MITM'ing ipk downloads
+would change the package and not the checksum?
+Are there GPG signatures of the package checksums signed with a key
+that ships with the release?
+Are package repos downloaded over HTTPS? Is there a CA bundle in the
+release with which repo x.509 certs are validated?
+"""
+"""
+I installed newest version OpenWRT on a popular brand, recently
+manufactured wireless router last week.
 
-This commit adds a new procd jail parameter 'mustjail' which if set
-issues an error and does NOT start the process outside of a jailed
-environment.
+The OpenWRT firmware couldn't access https sites without installing
+multiple packages first. Then they had me install all the root certs
+over an unencrypted connection. The opkg repos and install files are
+all downloaded over http.
 
-The original 'unable to find jail binary' warning is output in DEBUG
-mode, thus processes started in a 'may jail' but non-jail capable
-environment do not spam the log.
+With full seriousness, I really hope nobody expects operational
+security using these routers.
+"""
 
-Signed-off-by: Kevin Darbyshire-Bryant <ldir@darbyshire-bryant.me.uk>
----
- service/instance.c | 33 +++++++++++++++++++++++----------
- service/instance.h |  1 +
- 2 files changed, 24 insertions(+), 10 deletions(-)
+There's likely some misunderstanding here.
+Is there a wiki page or similar describing how package repo catalogs,
+packages, and firmware image updates are
+built,
+checksummed,
+signed,
+distributed,
+and
+signed-checksum-checked?
 
-diff --git a/service/instance.c b/service/instance.c
-index e872ba0..5dc23e2 100644
---- a/service/instance.c
-+++ b/service/instance.c
-@@ -101,6 +101,7 @@ enum {
- 	JAIL_ATTR_RONLY,
- 	JAIL_ATTR_MOUNT,
- 	JAIL_ATTR_NETNS,
-+	JAIL_ATTR_MUSTJAIL,
- 	__JAIL_ATTR_MAX,
- };
- 
-@@ -114,6 +115,7 @@ static const struct blobmsg_policy jail_attr[__JAIL_ATTR_MAX] = {
- 	[JAIL_ATTR_RONLY] = { "ronly", BLOBMSG_TYPE_BOOL },
- 	[JAIL_ATTR_MOUNT] = { "mount", BLOBMSG_TYPE_TABLE },
- 	[JAIL_ATTR_NETNS] = { "netns", BLOBMSG_TYPE_BOOL },
-+	[JAIL_ATTR_MUSTJAIL] = { "mustjail", BLOBMSG_TYPE_BOOL },
- };
- 
- struct instance_netdev {
-@@ -819,20 +821,16 @@ instance_jail_parse(struct service_instance *in, struct blob_attr *attr)
- {
- 	struct blob_attr *tb[__JAIL_ATTR_MAX];
- 	struct jail *jail = &in->jail;
--	struct stat s;
--	int r;
--
--	r = stat(UJAIL_BIN_PATH, &s);
--	if (r < 0) {
--		ERROR("unable to find %s: %m (%d)\n", UJAIL_BIN_PATH, r);
--		return 0;
--	}
- 
- 	blobmsg_parse(jail_attr, __JAIL_ATTR_MAX, tb,
- 		blobmsg_data(attr), blobmsg_data_len(attr));
- 
- 	jail->argc = 2;
- 
-+	if (tb[JAIL_ATTR_MUSTJAIL]) {
-+		in->must_jail = true;
-+		jail->argc++;
-+	}
- 	if (tb[JAIL_ATTR_NAME]) {
- 		jail->name = strdup(blobmsg_get_string(tb[JAIL_ATTR_NAME]));
- 		jail->argc += 2;
-@@ -885,7 +883,7 @@ instance_jail_parse(struct service_instance *in, struct blob_attr *attr)
- 	if (in->no_new_privs)
- 		jail->argc++;
- 
--	return 1;
-+	return true;
- }
- 
- static bool
-@@ -918,7 +916,8 @@ instance_config_parse(struct service_instance *in)
- {
- 	struct blob_attr *tb[__INSTANCE_ATTR_MAX];
- 	struct blob_attr *cur, *cur2;
--	int rem;
-+	struct stat s;
-+	int rem, r;
- 
- 	blobmsg_parse(instance_attr, __INSTANCE_ATTR_MAX, tb,
- 		blobmsg_data(in->config), blobmsg_data_len(in->config));
-@@ -1004,6 +1003,19 @@ instance_config_parse(struct service_instance *in)
- 	if (!in->trace && tb[INSTANCE_ATTR_JAIL])
- 		in->has_jail = instance_jail_parse(in, tb[INSTANCE_ATTR_JAIL]);
- 
-+	if (in->has_jail) {
-+		r = stat(UJAIL_BIN_PATH, &s);
-+		if (r < 0) {
-+			if (in->must_jail) {
-+				ERROR("Cannot jail service %s::%s. %s: %m (%d)\n",
-+						in->srv->name, in->name, UJAIL_BIN_PATH, r);
-+				return false;
-+			}
-+			DEBUG(2, "unable to find %s: %m (%d)\n", UJAIL_BIN_PATH, r);
-+			in->has_jail = false;
-+		}
-+	}
-+
- 	if (tb[INSTANCE_ATTR_STDOUT] && blobmsg_get_bool(tb[INSTANCE_ATTR_STDOUT]))
- 		in->_stdout.fd.fd = -1;
- 
-@@ -1146,6 +1158,7 @@ instance_init(struct service_instance *in, struct service *s, struct blob_attr *
- 	in->term_timeout = 5;
- 	in->syslog_facility = LOG_DAEMON;
- 	in->exit_code = 0;
-+	in->must_jail = false;
- 
- 	in->_stdout.fd.fd = -2;
- 	in->_stdout.stream.string_data = true;
-diff --git a/service/instance.h b/service/instance.h
-index 7d91b51..abd91ad 100644
---- a/service/instance.h
-+++ b/service/instance.h
-@@ -59,6 +59,7 @@ struct service_instance {
- 
- 	bool trace;
- 	bool has_jail;
-+	bool must_jail;
- 	bool no_new_privs;
- 	struct jail jail;
- 	char *seccomp;
--- 
-2.21.1 (Apple Git-122.3)
+- https://en.wikipedia.org/wiki/The_Update_Framework_(TUF) is a great read.
+  - https://theupdateframework.io/
+  - https://github.com/theupdateframework/specification/blob/master/tuf-spec.md
+re: "Thandy"
+- "PEP 458 -- Secure PyPI downloads with package signing"
+  https://www.python.org/dev/peps/pep-0480/
+- "PEP 480 -- Surviving a Compromise of PyPI: The Maximum Security Model"
+  https://www.python.org/dev/peps/pep-0458/
 
+Side note: something like these would be great to have; IDK which
+repos are appropriate for possible new issues to be owned by someone
+who knows what is going on:
+
+ENH: CDN for package repos and latest version file
+ENH,SEC: firmware update check script
+ENH,SEC: send an email when the firmware is out of date
+ENH,SEC: luci: display firmware update check result and link to latest firmware
+
+ENH,SEC: add package repo (and firmware?) signing key to keyring
+
+ENH,SEC: include ca-certificates and/or openwrt-certificates in builds?
+
+Thought I'd forward this along,
+It seemed deserving of review for something with time to review
 
 _______________________________________________
 openwrt-devel mailing list

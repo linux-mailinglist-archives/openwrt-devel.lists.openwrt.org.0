@@ -2,116 +2,51 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 904DE14FE40
-	for <lists+openwrt-devel@lfdr.de>; Sun,  2 Feb 2020 17:20:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A44D314FE59
+	for <lists+openwrt-devel@lfdr.de>; Sun,  2 Feb 2020 17:41:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:Date:Message-ID:To:From:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UHU0qSshwvuLqJyjzoW5Lx1BEo0bJmDIkG6QZgst+Ms=; b=dnp
-	5XzTkmo7/QviCRhCZkrVihIUrY23jZjJlo0fBgo31mnXjkKBGe27xBAfa7L+/XsNYgZbXwoizWbaW
-	rNjnlOdTH3+KKi5FRxd5OLNK8Tc0DQ/0BZtMR91nD5xcl6Rf7sRLVvuErW6jiVETh4huj+TyTw9z6
-	Vt52eU7iq2HxfuaKFqIFVZoV4xu5Wys1rwtAOtp/erM1hgN1B8uyCJ50syvGTDIyw+iOMc0lHHWax
-	nddhj/+f4q4fhyA7PYgZ+xA9x/yZoKtCgLqtVHowhOHj17cylydxmCssHTH320lWKN6BAnVIHeI4q
-	T337vjRIr6efHOft9iOOuDaqFz5hHsw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ru8itVLARmDlBn4syzKSMcRmzpOp7+xAMwCwJMzZfBs=; b=noz3ESkCS9uwX6
+	vGkdoG3RxDQVyp8JlOpFv9j1+vY44nMwzt66QlQv5qNYnMbz6BLqhdt6baKbElW6cR4OEvc0RLAZV
+	8cOa9UW06P2OZu67VagF0VUSFQURKyoCLqZIk2tMrmOAptTEX0VCk+ojUEiRfCSZm10TypPCfNB44
+	312rP7NyE/ddXh0S2OTgi3CaVDt7DnVkvs4TbqekOM/8gTMQgjxVb9JCk+ar03Eqt1OWDEzVXDZL6
+	My+XCLJI3UoWab72x8XeX5+jfCT9qkDPEHgRJD4P4U3nFA2tR/CvFKwoJeWJqtBL2egDiCmaKGy5Y
+	Ipu3PNUzUnmIvQMW2V8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyHz3-0002hU-R8; Sun, 02 Feb 2020 16:20:29 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+	id 1iyIIp-0001ka-Sb; Sun, 02 Feb 2020 16:40:55 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyHyv-0002gZ-Ot
- for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 16:20:24 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mout-p-201.mailbox.org (Postfix) with ESMTPS id 489blc0WBLzQlC6
- for <openwrt-devel@lists.openwrt.org>; Sun,  2 Feb 2020 17:20:12 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id ozRZpSGRuuNe for <openwrt-devel@lists.openwrt.org>;
- Sun,  2 Feb 2020 17:20:05 +0100 (CET)
-From: Hauke Mehrtens <hauke@hauke-m.de>
-Autocrypt: addr=hauke@hauke-m.de; keydata=
- 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
-To: OpenWrt Development List <openwrt-devel@lists.openwrt.org>
-Message-ID: <e0ebd558-6109-8ef2-f575-c5baff3c47e8@hauke-m.de>
-Date: Sun, 2 Feb 2020 17:19:06 +0100
+ id 1iyIIk-0001jJ-2r
+ for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 16:40:51 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1iyIIg-0003Od-9t
+ for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 17:40:46 +0100
+Date: Sun, 2 Feb 2020 18:40:33 +0200
+From: Daniel Golle <daniel@makrotopia.org>
+To: openwrt-devel@lists.openwrt.org
+Message-ID: <20200202163128.GA9861@makrotopia.org>
 MIME-Version: 1.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_082022_124243_EC75D8D8 
-X-CRM114-Status: GOOD (  11.34  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200202_084050_119989_26528E0B 
+X-CRM114-Status: UNSURE (   5.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.56.171 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] OpenWrt developer meeting at Battlemesh
+Subject: [OpenWrt-Devel] [PATCH 1/3] ath79: enable i2c-gpio and spi-gpio in
+ generic subtarget
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,107 +58,47 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3021821175323767996=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============3021821175323767996==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="GumZA3pxxvqE4LWkIXXOxGzx3qckOGTzF"
+For devices having LEDs or buttons connected via I2C or SPI connected
+GPIO chips it is desireable to access these busses early during boot
+in order to signal progress and failsafe-mode. Hence have support for
+i2c-gpio and spi-gpio built-into the kernel on generic (ie. non-tiny)
+systems.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---GumZA3pxxvqE4LWkIXXOxGzx3qckOGTzF
-Content-Type: multipart/mixed; boundary="wBaP7CWxEqFfXovg9xesKG4yJZRxDtrF3"
+Signed-off-by: Daniel Golle <daniel@makrotopia.org>
+---
+ target/linux/ath79/generic/config-default | 3 +++
+ 1 file changed, 3 insertions(+)
 
---wBaP7CWxEqFfXovg9xesKG4yJZRxDtrF3
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+diff --git a/target/linux/ath79/generic/config-default b/target/linux/ath79/generic/config-default
+index 2d8f7f20c2..8c3ed13fb5 100644
+--- a/target/linux/ath79/generic/config-default
++++ b/target/linux/ath79/generic/config-default
+@@ -1,6 +1,8 @@
+ CONFIG_AT803X_PHY=y
+ CONFIG_GPIO_WATCHDOG=y
+ CONFIG_GPIO_WATCHDOG_ARCH_INITCALL=y
++CONFIG_I2C=y
++CONFIG_I2C_GPIO=y
+ CONFIG_INTEL_XWAY_PHY=y
+ CONFIG_IP17XX_PHY=y
+ CONFIG_LEDS_RESET=y
+@@ -18,5 +20,6 @@ CONFIG_RTL8366RB_PHY=y
+ CONFIG_RTL8366S_PHY=y
+ CONFIG_RTL8366_SMI=y
+ CONFIG_RTL8367_PHY=y
++CONFIG_SPI_GPIO=y
+ CONFIG_VITESSE_PHY=y
+ CONFIG_WATCHDOG_CORE=y
+-- 
+2.25.0
 
-Hi,
-
-We would like to organize a public, free of charge OpenWrt developer
-meeting at the Battlemesh this year. The Wireless Battle of the Mesh
-(Battlemesh) is an event that aims at bringing together people from
-across the world to test the performance of different routing protocols
-for ad-hoc networks, like Babel, B.A.T.M.A.N., BMX6, OLSR, 802.11s and
-Static Routing. It normally takes place once a year each time in a
-different location in Europe and goes from Monday till Sunday.
-https://www.battlemesh.org/
-Schedule with Links to videos from last year:
-https://www.battlemesh.org/BattleMeshV12#Talk_Schedule_and_Workshops
-
-We plan to have an OpenWrt developer meeting for 2 days at the
-Battlemesh and everyone who is interested is invited to participate. The
-talks will be integrated into the normal Battlemesh schedule, this will
-not be a separate event, but it will be fully integrated in Battlemesh.
-We will also try to connect both communities closer. There will be one
-track with both the Battlemesh and the OpenWrt related talks.
-
-The OpenWrt part should focus on technical topics and we should have
-time and space for just hacking on devices or talking.
-
-The Battlemesh community selected Calafou which is located near
-Barcelona as the most likely location and is now planning the dates of
-the event.
-Battlemesh v13 location announcement:
-https://ml.ninux.org/pipermail/battlemesh/2020-February/011933.html
-Details about Calafou:
-http://web.archive.org/web/20191006130201/https://wiki.calafou.org/index.=
-php/INFO_B%C3%81SICA
-
-We need your help in finding the best date for Battlemesh to happen.
-Please vote on your preferred date by the end of Feb 7th on
-https://framadate.org/7iCyhWLatTtF5jwg
-(The OpenWrt developer meeting will be for 2 days inside this week,
-which days exactly is not decided yet, but I think Thursday and Friday
-would work best)
-
-If we do not have a different meeting to talk about the OpenWrt project
-organization, like we did in Hamburg last year, I would suggest to have
-an additional day for an OpenWrt project organization meeting which is
-then invite only to talk about the release schedules, and so on.
-
-
-Have fun!
-
-The OpenWrt Community
-
-
---wBaP7CWxEqFfXovg9xesKG4yJZRxDtrF3--
-
---GumZA3pxxvqE4LWkIXXOxGzx3qckOGTzF
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEyz0/uAcd+JwXmwtD8bdnhZyy68cFAl429noACgkQ8bdnhZyy
-68f9dAgAmfMq8QwTk8A3FSk20PJWBJ89co9qDnQBnrfwE9M08DAwTQHCDEQTTr2+
-a51s+zAXDne8Gq8Dp2yE2FFgXcuXQpJfc31YVbbENqRxgvI4nXhykrgNZiRYgejv
-9HaWEZiMel3Omx4PgwEa4Gg5Prq0sVeLMaw5D+6yAPZbPCdF1oWZHlWLMea7LaA9
-6zi8nJ/IS0Ax5XMtFFPV020CYJHowQmICo9jefZagSgMualBFJtxI8JRLvssJ50R
-BFqJoE+SZs76yui8rwI0fTefilJ9LWV4WitHDjCIpMi1nd4ZzH7bxA7KUBvIVoAB
-0Z164N23HapED9rt6ZpzGYNjLQkqOw==
-=2alQ
------END PGP SIGNATURE-----
-
---GumZA3pxxvqE4LWkIXXOxGzx3qckOGTzF--
-
-
---===============3021821175323767996==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-
---===============3021821175323767996==--
-

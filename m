@@ -2,49 +2,96 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA83E14FE5D
-	for <lists+openwrt-devel@lfdr.de>; Sun,  2 Feb 2020 17:42:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 389C414FE6D
+	for <lists+openwrt-devel@lfdr.de>; Sun,  2 Feb 2020 18:02:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ddptctIrEfszmNnxEnjZlxLD//UVpoB52r7ZruMtDzo=; b=YfrWuRrZ9fAz+X
-	7RgbHBQjMBjwvhRIwASymBoFPe8ucVp6itf/K2e0q61xuEbgbi7FOIEzTbrm+mVVPIhIHR6z8Ohg0
-	wLPu1PqXSsmF8fDyjhH4UthwUOr+49cyoEVnVf6G/VvJgVxIgo/aCOvGoZIzQEG4e0nQjUqtJSpkt
-	pwAzqBU72bOzQGlpg8KIEaKAPblsA/iq/ixRIhALvIFUCPgqZeM0FOt4mfk06TGWVn88cAcCTXPbH
-	jKyitzs9Rgbk08Q3TCVnMIpjjN8oa+3HddhsUziIUtij9gd/n1c+jPFXA3TvIdB/H+e6T9zu67QgH
-	J4cmFk1eKJTMtfNXsS3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
+	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SxlKUIpxd7QoqBC2EdMI9/AaVRjOA/SdPpZHNunC1DQ=; b=ukLuL+4qBTAU2abOUhg0aZQWS
+	PmCW3MBfqUIBfgRvk0m05VGb0TDcmV47lOOS3PcBZRR8rq8FkUUtbvDLzxYlEPuRapnhAdx5NYcBv
+	k9xwQZXqDhqEuYZeUe4OXOXMzw6vYjQDtlcQBNhx9lksbIH5sgpOZiiyqUDesAe3gnLUBVRUpvgvZ
+	dHuJOrLy2CYtifK9lLJTH5Mqy0+RT39OCZjcIiqd3ARpX2jvEFFMyp5BYa31JnoWF9cK26Z/tSnd5
+	Pg+gdWOkABd+lE2iiSUCWhIsHJun3M4iSsR52xTSs81+VdtoX/fs/k299FjETQ89925E4o3/+KlJs
+	zoe3gUixg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyIJz-0002N8-SC; Sun, 02 Feb 2020 16:42:07 +0000
-Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+	id 1iyIdW-0000kH-2g; Sun, 02 Feb 2020 17:02:18 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyIJt-0002MO-0f
- for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 16:42:02 +0000
-Received: from local
- by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
- (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
- id 1iyIJq-0003Pb-1Z
- for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 17:41:59 +0100
-Date: Sun, 2 Feb 2020 18:41:48 +0200
-From: Daniel Golle <daniel@makrotopia.org>
-To: openwrt-devel@lists.openwrt.org
-Message-ID: <20200202163756.GA9941@makrotopia.org>
+ id 1iyIdL-0000jr-KH
+ for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 17:02:09 +0000
+Received: by mail-lj1-x243.google.com with SMTP id x7so12175404ljc.1
+ for <openwrt-devel@lists.openwrt.org>; Sun, 02 Feb 2020 09:02:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=v+B/WuTPQ5I0OybdHRW4EfFovy16YyWylhGMahyPKTA=;
+ b=Rd9joTxoFSXmhtTGt6/GuOpjFxwevteeVAvENaKoMqQoHepIZcHMnqJXfWL6BFvt7h
+ Bv7w7rnGfTxsHX70xSP/f/a8tI2z1PUR8PMzOAakQ6hSIk7hzvEl4T+N7Aax9PIzox/m
+ 0jJMN/S+B6NMEoZoVRx1o4uWQx13vyQ+Hw3Akre31LXOW/sW3LNJ44Of7wObcBChhn5u
+ SCEr90gt7c200xor2XeYz2z7eDzXucKd29n5zxAlSB/nvX7FnSUz/e52E1v3oHeGaSYi
+ GrVPDgzAoiqFvfNf28yvqif8RBn8xNKquA/hEUDbsXHsm9oU9Y/1y01/zk7OFbPfZXSZ
+ vhnQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=v+B/WuTPQ5I0OybdHRW4EfFovy16YyWylhGMahyPKTA=;
+ b=k7OCKM5LVZkXqj9e5lShUWcnNVosDzNC5fIN4i/Q/z+t96hdJgJ/9cRye55spABf36
+ EMyNaiVdRo5TAWnVEjlM1CUrtPdyKlbjJpsI494I11vxFcPct+HbGJAj6LyC1Jq9jgPr
+ AQh8nuSNAyevryFZ6oESSoiVb+BVTKo6ii/sRAGxycWwoldvgx7/rzIMuJbRizi9SaAb
+ BV5hK9TFjeNPbefFQ5F3BSIuFfC1Oek0a1N+NWH77VCa0+fII8jZ6/XwWp9VFSciF2HS
+ KZNOtiX511Hp5CTi1dFjBUjAHcupjqdp4CUhLhnuc5H6tL/jEXxsGPXYA600wQQfE3np
+ 58Jw==
+X-Gm-Message-State: APjAAAUA2I/hPenYULBhj8viBT4pTBfbaxmexQd3RTg2H4LhTP9jB/Ny
+ HheZII8KLvMw580FpZT9wfhSLwCu
+X-Google-Smtp-Source: APXvYqytYnW4r6GHoIXZoUJvGYVyBtY/beDckkMNfySuPS/yRNYp0SIZlG1S1pqpecXc9yPmKKQC4Q==
+X-Received: by 2002:a2e:8952:: with SMTP id b18mr11064478ljk.280.1580662924673; 
+ Sun, 02 Feb 2020 09:02:04 -0800 (PST)
+Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
+ [31.11.201.135])
+ by smtp.gmail.com with ESMTPSA id t21sm8164536ljh.14.2020.02.02.09.02.03
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 02 Feb 2020 09:02:04 -0800 (PST)
+To: Adrian Schmutzler <freifunk@adrianschmutzler.de>,
+ openwrt-devel@lists.openwrt.org
+References: <20200202124828.2100-1-freifunk@adrianschmutzler.de>
+From: Piotr Dymacz <pepe2k@gmail.com>
+Message-ID: <a49ff1f2-a4ac-df8d-14be-4e9d3e111eee@gmail.com>
+Date: Sun, 2 Feb 2020 18:02:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
+In-Reply-To: <20200202124828.2100-1-freifunk@adrianschmutzler.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_084201_223673_D6A53748 
-X-CRM114-Status: GOOD (  13.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200202_090207_692874_291C771A 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pepe2k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: [OpenWrt-Devel] [PATCH 3/3] ath79: add support for Teltonika RUT955
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: introduces KERNEL_LZMA variable
+ for common build sequence
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,442 +103,207 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-The Teltonika RUT955 is an industrial 2G/3G/4G WiFi router with
-various additional inputs and outputs.
+Hi Adrian,
 
-Specification:
+On 02.02.2020 13:48, Adrian Schmutzler wrote:
+> This introduce a variable KERNEL_LZMA to replace the frequently
+> used sequence "kernel-bin | append-dtb | lzma", similar to the
+> KERNEL_DTB variable in ramips target.
 
-- 550/400/200 MHz (CPU/DDR/AHB)
-- 128 MB of RAM (DDR2)
-- 16 MB of FLASH (SPI NOR)
-- 4x 10/100 Mbps Ethernet, with passive PoE support on LAN1
-- 2T2R 2,4 GHz (AR9344)
-- built-in 3G module (example: Qutectel EC-25EU)
-- RS232 on D-Sub9 port (Cypress ACM via USB, /dev/ttyACM0)
-- RS422/RS485 (AR934x high speed UART, /dev/ttyATH1)
-- analog 0-9V input (MCP3221)
-- various digital inputs and outputs incl. a relay
-- 2x miniSIM slot (can be swapped via GPIO)
-- 2x RP-SMA/F (Wi-Fi), 2x SMA/F (3G), 1x GPS
-- 2x 74HC595 shift registers providing 16 GPOs
-- 12x LED (4 are driven by AR9344, 7 by 74HC595)
-- 1x button (reset)
-- DC jack for main power input (9-30 V)
-- debugging UART available on PCB edge connector
+So in results we will have:
 
-Serial console (/dev/ttyS0) pinout:
+ramips: KERNEL_DTB   = kernel-bin | append-dtb | lzma
+  ath79: KERNEL_LZMA := kernel-bin | append-dtb | lzma
 
-- RX: pin1 (square) on top side of the main PCB (AR9344 is on top)
-- TX: pin1 (square) on bottom side
+Is there any reason to use different var name in ath79?
 
-Flash instruction:
+Also, see: https://chris.beams.io/posts/git-commit/#imperative
 
-Vendor firmware is based on OpenWrt CC release. Use the "factory" image
-directly in GUI (make sure to uncheck "keep settings") or in U-Boot web
-based recovery. To avoid any problems, make sure to first update vendor
-firmware to latest version - "factory" image was successfully tested on
-device running "RUT9XX_R_00.06.051" firmware and U-Boot "3.0.2".
-
-Signed-off-by: Daniel Golle <daniel@makrotopia.org>
----
- target/linux/ath79/dts/ar9344_tlt_rut955.dts  | 301 ++++++++++++++++++
- .../generic/base-files/etc/board.d/02_network |   5 +
- target/linux/ath79/image/generic.mk           |  37 +++
- 3 files changed, 343 insertions(+)
- create mode 100644 target/linux/ath79/dts/ar9344_tlt_rut955.dts
-
-diff --git a/target/linux/ath79/dts/ar9344_tlt_rut955.dts b/target/linux/ath79/dts/ar9344_tlt_rut955.dts
-new file mode 100644
-index 0000000000..06d18f8d26
---- /dev/null
-+++ b/target/linux/ath79/dts/ar9344_tlt_rut955.dts
-@@ -0,0 +1,301 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later OR MIT
-+/dts-v1/;
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+
-+#include "ar9344.dtsi"
-+
-+/ {
-+	model = "Teltonika RUT955";
-+	compatible = "tlt,rut955", "qca,ar9344";
-+
-+	aliases {
-+		serial0 = &uart;
-+		serial1 = &hs_uart;
-+		led-boot = &led_system_green;
-+		led-failsafe = &led_system_red;
-+		led-running = &led_system_green;
-+		led-upgrade = &led_system_red;
-+		label-mac-device = &eth1;
-+	};
-+
-+	i2c {
-+		compatible = "i2c-gpio";
-+		scl-gpios = <&gpio 16 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-+		sda-gpios = <&gpio 17 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		hwmon@4d {
-+			compatible = "microchip,mcp3221";
-+			reg = <0x4d>;
-+		};
-+	};
-+
-+	gpio_ext_spi {
-+		compatible = "spi-gpio";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pmx_led_spi_gpio>;
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		sck-gpios = <&gpio 4 GPIO_ACTIVE_HIGH>;     // 74HC595 SRCLK (Serial Clock)
-+		mosi-gpios = <&gpio 12 GPIO_ACTIVE_HIGH>;   // 74HC595 SER (Serial)
-+		cs-gpios = <&gpio 20 GPIO_ACTIVE_HIGH>;     // 74HC595 RCLK (Register Clock)
-+		num-chipselects = <1>;
-+
-+		gpio_ext: gpio_ext@0 {
-+			compatible = "fairchild,74hc595";
-+			reg = <0>;
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			registers-number = <2>;
-+			spi-max-frequency = <10000000>;
-+			gpio-line-names = "signal_bar0", "signal_bar1", "signal_bar2", "signal_bar3",
-+				"signal_bar4", "status_red", "status_green", "sim_sel",
-+				"", "relay", "modem_vbus", "modem_rst",
-+				"", "", "", "";
-+		};
-+	};
-+
-+	reg_usb_modem_vbus: reg_usb_modem_vbus {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb_modem_vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		gpio = <&gpio_ext 10 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		signal0 {
-+			label = "rut955:green:signal1";
-+			gpios = <&gpio_ext 0 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		signal1 {
-+			label = "rut955:green:signal2";
-+			gpios = <&gpio_ext 1 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		signal2 {
-+			label = "rut955:green:signal3";
-+			gpios = <&gpio_ext 2 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		signal3 {
-+			label = "rut955:green:signal4";
-+			gpios = <&gpio_ext 3 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		signal4 {
-+			label = "rut955:green:signal5";
-+			gpios = <&gpio_ext 4 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		led_system_red: systemred {
-+			label = "rut955:green:red";
-+			gpios = <&gpio_ext 5 GPIO_ACTIVE_HIGH>;
-+			default-state = "off";
-+		};
-+
-+		led_system_green: systemgreen {
-+			label = "rut955:green:system";
-+			gpios = <&gpio_ext 6 GPIO_ACTIVE_HIGH>;
-+			default-state = "on";
-+		};
-+	};
-+
-+	keys {
-+		compatible = "gpio-keys";
-+
-+		reset {
-+			linux,code = <KEY_RESTART>;
-+			gpios = <&gpio 15 GPIO_ACTIVE_HIGH>;
-+			debounce-interval = <60>;
-+		};
-+	};
-+};
-+
-+&gpio {
-+	gpio-line-names = "", "wan_led", "input", "mmc_cs",
-+		"leds_sck", "", "", "",
-+		"", "", "", "",
-+		"leds_mosi", "lan2_led", "lan1_led", "",
-+		"i2c_scl", "i2c_sda", "", "DIN2",
-+		"spi?", "DIN1", "lan3_led";
-+};
-+
-+&ref {
-+	clock-frequency = <40000000>;
-+};
-+
-+&uart {
-+	status = "okay";
-+};
-+
-+&hs_uart {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pmx_uart2>;
-+};
-+
-+&spi {
-+	cs-gpios = <0>, <0>;
-+	num-cs = <2>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&jtag_disable_pins>, <&pmx_spi_cs1>;
-+
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <25000000>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "u-boot";
-+				reg = <0x0 0x20000>;
-+				read-only;
-+			};
-+
-+			config: partition@20000 {
-+				label = "config";
-+				reg = <0x20000 0x10000>;
-+				read-only;
-+			};
-+
-+			art: partition@30000 {
-+				label = "art";
-+				reg = <0x30000 0x10000>;
-+				read-only;
-+			};
-+
-+			partition@40000 {
-+				label = "firmware";
-+				reg = <0x40000 0xf30000>;
-+				compatible = "tplink,firmware";
-+			};
-+
-+			partition@f70000 {
-+				label = "event-log";
-+				reg = <0xf70000 0x80000>;
-+			};
-+		};
-+	};
-+
-+	microsd@1 {
-+		compatible = "mmc-spi-slot";
-+		spi-max-frequency = <25000000>;
-+		reg = <1>;
-+		voltage-ranges = <3200 3400>;
-+		broken-cd;
-+		status = "disabled";
-+	};
-+};
-+
-+&usb {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	status = "okay";
-+
-+	port@1 {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		reg = <1>;
-+
-+		hub_port1: port@1 { // user USB port
-+			compatible = "usb-a-connector";
-+			reg = <1>;
-+		};
-+
-+		hub_port2: port@2 { // N/C
-+			reg = <2>;
-+		};
-+
-+		hub_port3: port@3 { // Cypress CDC-ACM serial (RS-232 D-Sub9)
-+			reg = <3>;
-+		};
-+
-+		hub_port4: port@4 { // Quectel EC-25 modem
-+			reg = <4>;
-+			vbus-supply = <&reg_usb_modem_vbus>;
-+		};
-+	};
-+};
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&wmac {
-+	status = "okay";
-+
-+	mtd-cal-data = <&art 0x1000>;
-+	mtd-mac-address = <&config 0x0>;
-+	mtd-mac-address-increment = <2>;
-+};
-+
-+&eth1 {
-+	status = "okay";
-+
-+	mtd-mac-address = <&config 0x0>;
-+
-+	gmac-config {
-+		device = <&gmac>;
-+		switch-phy-swap = <0>;
-+		switch-only-mode = <1>;
-+	};
-+};
-+
-+&eth0 {
-+	status = "okay";
-+
-+	phy-handle = <&swphy4>;
-+
-+	mtd-mac-address = <&config 0x0>;
-+	mtd-mac-address-increment = <1>;
-+};
-+
-+&builtin_switch {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pmx_leds_switch>;
-+};
-+
-+&pinmux {
-+	pmx_spi_cs1: pinmux_spi_cs1 {
-+		pinctrl-single,bits = <0x0 0x07000000 0xff000000>;
-+	};
-+
-+	pmx_led_spi_gpio: pinmux_led_spi_gpio {
-+		pinctrl-single,bits = <0x4 0x0 0xff>,
-+					<0xc 0x0 0xff>,
-+					<0x14 0x0 0xff>;
-+	};
-+
-+	pmx_leds_switch: pinmux_leds_switch {
-+		pinctrl-single,bits =  <0x0 0x00002d00 0x0000ff00>,
-+					<0xc 0x002c2b00 0x00ffff00>,
-+					<0x14 0x002a0000 0x00ff0000>;
-+	};
-+
-+	pmx_uart2: pinmux_uart2 {
-+		pinctrl-single,bits = <0x10 0x4f000000 0xff000000>,
-+				<0x3c 0x000b0000 0x00ff0000>;
-+	};
-+};
-diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-index 4630cf8447..4b75dc0359 100755
---- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-+++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-@@ -210,6 +210,11 @@ ath79_setup_interfaces()
- 		ucidef_add_switch "switch0" \
- 			"0@eth0" "1:lan" "2:lan" "3:wan"
- 		;;
-+	tlt,rut955)
-+		ucidef_set_interface_wan "eth1"
-+		ucidef_add_switch "switch0" \
-+			"0@eth0" "2:lan:3" "3:lan:2" "4:lan:1"
-+		;;
- 	tplink,archer-a7-v5|\
- 	tplink,archer-c6-v2|\
- 	tplink,archer-c6-v2-us|\
-diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
-index 1bc7b2d68e..ab11120da8 100644
---- a/target/linux/ath79/image/generic.mk
-+++ b/target/linux/ath79/image/generic.mk
-@@ -36,6 +36,11 @@ define Build/addpattern
- 	-mv "$@.new" "$@"
- endef
- 
-+define Build/append-md5sum-bin
-+	$(STAGING_DIR_HOST)/bin/mkhash md5 $@ | sed 's/../\\\\x&/g' |\
-+		xargs echo -ne >> $@
-+endef
-+
- define Build/cybertan-trx
- 	@echo -n '' > $@-empty.bin
- 	-$(STAGING_DIR_HOST)/bin/trx -o $@.new \
-@@ -73,6 +78,17 @@ define Build/pisen_wmb001n-factory
-   rm -rf "$@.tmp"
- endef
- 
-+define Build/teltonika-fw-fake-checksum
-+	# Teltonika U-Boot web based firmware upgrade/recovery routine compares
-+	# 16 bytes from md5sum1[16] field in TP-Link v1 header (offset: 76 bytes
-+	# from begin of the firmware file) with 16 bytes stored just before
-+	# 0xdeadc0de marker. Values are only compared, MD5 sum is not verified.
-+	let \
-+		offs="$$(stat -c%s $@) - 20"; \
-+		dd if=$@ bs=1 count=16 skip=76 |\
-+		dd of=$@ bs=1 count=16 seek=$$offs conv=notrunc
-+endef
-+
- define Device/seama
-   KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma
-   KERNEL_INITRAMFS := $$(KERNEL) | seama
-@@ -1044,6 +1060,27 @@ define Device/sitecom_wlr-7100
- endef
- TARGET_DEVICES += sitecom_wlr-7100
- 
-+define Device/tlt_rut955
-+  SOC := ar9344
-+  DEVICE_TITLE := Teltonika RUT955
-+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-acm  kmod-usb-net-qmi-wwan kmod-usb-serial-option kmod-hwmon-mcp3021 uqmi -uboot-envtools
-+  IMAGE_SIZE := 15552k
-+  TPLINK_HWID := 0x35000001
-+  TPLINK_HWREV := 0x1
-+  TPLINK_HEADER_VERSION := 1
-+  KERNEL := kernel-bin | append-dtb | lzma | tplink-v1-header
-+  KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | uImage lzma
-+  IMAGES := sysupgrade.bin factory.bin
-+  IMAGE/factory.bin := append-kernel | pad-to $$$$(BLOCKSIZE) | append-rootfs |\
-+	pad-rootfs | teltonika-fw-fake-checksum | append-string master |\
-+	append-md5sum-bin | check-size $$$$(IMAGE_SIZE)
-+  IMAGE/sysupgrade.bin := append-kernel | pad-to $$$$(BLOCKSIZE) |\
-+	append-rootfs | pad-rootfs | append-metadata |\
-+	check-size $$$$(IMAGE_SIZE)
-+  SUPPORTED_DEVICES += rut900
-+endef
-+TARGET_DEVICES += tlt_rut955
-+
- define Device/trendnet_tew-823dru
-   SOC := qca9558
-   DEVICE_VENDOR := Trendnet
 -- 
-2.25.0
+Cheers,
+Piotr
+
+> Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> ---
+>   target/linux/ath79/image/Makefile           |  5 +++--
+>   target/linux/ath79/image/common-mikrotik.mk |  4 ++--
+>   target/linux/ath79/image/common-tp-link.mk  | 14 ++++++--------
+>   target/linux/ath79/image/generic-tp-link.mk |  5 ++---
+>   target/linux/ath79/image/generic-ubnt.mk    |  2 +-
+>   target/linux/ath79/image/generic.mk         | 10 +++++-----
+>   6 files changed, 19 insertions(+), 21 deletions(-)
+> 
+> diff --git a/target/linux/ath79/image/Makefile b/target/linux/ath79/image/Makefile
+> index a28658ec0b..71ffa4b429 100644
+> --- a/target/linux/ath79/image/Makefile
+> +++ b/target/linux/ath79/image/Makefile
+> @@ -52,6 +52,7 @@ define Build/relocate-kernel
+>   	rm -rf $@.relocate
+>   endef
+>   
+> +KERNEL_LZMA := kernel-bin | append-dtb | lzma
+>   
+>   define Device/Default
+>     DEVICE_DTS_DIR := ../dts
+> @@ -59,8 +60,8 @@ define Device/Default
+>     PROFILES = Default
+>     MTDPARTS :=
+>     BLOCKSIZE := 64k
+> -  KERNEL := kernel-bin | append-dtb | lzma | uImage lzma
+> -  KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | uImage lzma
+> +  KERNEL := $(KERNEL_LZMA) | uImage lzma
+> +  KERNEL_INITRAMFS := $(KERNEL_LZMA) | uImage lzma
+>     COMPILE :=
+>     SUPPORTED_DEVICES := $(subst _,$(comma),$(1))
+>     IMAGES := sysupgrade.bin
+> diff --git a/target/linux/ath79/image/common-mikrotik.mk b/target/linux/ath79/image/common-mikrotik.mk
+> index 292237c76a..6531619fe9 100644
+> --- a/target/linux/ath79/image/common-mikrotik.mk
+> +++ b/target/linux/ath79/image/common-mikrotik.mk
+> @@ -2,6 +2,6 @@ define Device/mikrotik
+>   	DEVICE_VENDOR := MikroTik
+>   	DEVICE_PACKAGES := rbextract rbcfg
+>   	LOADER_TYPE := elf
+> -	KERNEL := kernel-bin | append-dtb | lzma | loader-kernel
+> -	KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | loader-kernel
+> +	KERNEL := $(KERNEL_LZMA) | loader-kernel
+> +	KERNEL_INITRAMFS := $(KERNEL_LZMA) | loader-kernel
+>   endef
+> diff --git a/target/linux/ath79/image/common-tp-link.mk b/target/linux/ath79/image/common-tp-link.mk
+> index a9fccd0fe6..abce4095c4 100644
+> --- a/target/linux/ath79/image/common-tp-link.mk
+> +++ b/target/linux/ath79/image/common-tp-link.mk
+> @@ -14,8 +14,8 @@ define Device/tplink-v1
+>     TPLINK_HWREV := 0x1
+>     TPLINK_HEADER_VERSION := 1
+>     LOADER_TYPE := gz
+> -  KERNEL := kernel-bin | append-dtb | lzma
+> -  KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | tplink-v1-header
+> +  KERNEL := $(KERNEL_LZMA)
+> +  KERNEL_INITRAMFS := $(KERNEL_LZMA) | tplink-v1-header
+>     IMAGES += factory.bin
+>     IMAGE/sysupgrade.bin := tplink-v1-image sysupgrade | append-metadata
+>     IMAGE/factory.bin := tplink-v1-image factory
+> @@ -26,8 +26,7 @@ define Device/tplink-nolzma
+>     LOADER_FLASH_OFFS := 0x22000
+>     COMPILE := loader-$(1).gz
+>     COMPILE/loader-$(1).gz := loader-okli-compile
+> -  KERNEL := kernel-bin | append-dtb | lzma | uImage lzma -M 0x4f4b4c49 | \
+> -	loader-okli $(1) 7680
+> +  KERNEL := $(KERNEL_LZMA) | uImage lzma -M 0x4f4b4c49 | loader-okli $(1) 7680
+>     KERNEL_INITRAMFS := kernel-bin | append-dtb | gzip | tplink-v1-header
+>   endef
+>   
+> @@ -63,7 +62,7 @@ endef
+>   
+>   define Device/tplink-safeloader
+>     $(Device/tplink-v1)
+> -  KERNEL := kernel-bin | append-dtb | lzma | tplink-v1-header -O
+> +  KERNEL := $(KERNEL_LZMA) | tplink-v1-header -O
+>     IMAGE/sysupgrade.bin := append-rootfs | tplink-safeloader sysupgrade | \
+>       append-metadata | check-size $$$$(IMAGE_SIZE)
+>     IMAGE/factory.bin := append-rootfs | tplink-safeloader factory
+> @@ -71,7 +70,7 @@ endef
+>   
+>   define Device/tplink-safeloader-uimage
+>     $(Device/tplink-safeloader)
+> -  KERNEL := kernel-bin | append-dtb | lzma | uImageArcher lzma
+> +  KERNEL := $(KERNEL_LZMA) | uImageArcher lzma
+>   endef
+>   
+>   define Device/tplink-safeloader-okli
+> @@ -80,6 +79,5 @@ define Device/tplink-safeloader-okli
+>     LOADER_FLASH_OFFS := 0x43000
+>     COMPILE := loader-$(1).elf
+>     COMPILE/loader-$(1).elf := loader-okli-compile
+> -  KERNEL := kernel-bin | append-dtb | lzma | uImage lzma -M 0x4f4b4c49 | \
+> -	loader-okli $(1) 12288
+> +  KERNEL := $(KERNEL_LZMA) | uImage lzma -M 0x4f4b4c49 | loader-okli $(1) 12288
+>   endef
+> diff --git a/target/linux/ath79/image/generic-tp-link.mk b/target/linux/ath79/image/generic-tp-link.mk
+> index f1a603dc6d..30e6f979c4 100644
+> --- a/target/linux/ath79/image/generic-tp-link.mk
+> +++ b/target/linux/ath79/image/generic-tp-link.mk
+> @@ -203,9 +203,8 @@ define Device/tplink_archer-d50-v1
+>     TPLINK_FLASHLAYOUT := 8Mqca
+>     TPLINK_HWREVADD := 0x00000000
+>     TPLINK_HVERSION := 3
+> -  KERNEL := kernel-bin | append-dtb | lzma
+> -  KERNEL_INITRAMFS := kernel-bin | append-dtb | lzma | \
+> -	tplink-v2-header -s -V "ver. 1.0"
+> +  KERNEL := $(KERNEL_LZMA)
+> +  KERNEL_INITRAMFS := $(KERNEL_LZMA) | tplink-v2-header -s -V "ver. 1.0"
+>     IMAGES := sysupgrade.bin
+>     IMAGE/sysupgrade.bin := tplink-v2-image -s -V "ver. 2.0" | append-metadata | \
+>   	check-size $$$$(IMAGE_SIZE)
+> diff --git a/target/linux/ath79/image/generic-ubnt.mk b/target/linux/ath79/image/generic-ubnt.mk
+> index ffae83eda5..bbacd393cb 100644
+> --- a/target/linux/ath79/image/generic-ubnt.mk
+> +++ b/target/linux/ath79/image/generic-ubnt.mk
+> @@ -220,7 +220,7 @@ define Device/ubnt_routerstation_common
+>     IMAGES := factory.bin
+>     IMAGE/factory.bin := append-rootfs | pad-rootfs | mkubntimage | \
+>   	check-size $$$$(IMAGE_SIZE)
+> -  KERNEL := kernel-bin | append-dtb | lzma | pad-to $$(BLOCKSIZE)
+> +  KERNEL := $(KERNEL_LZMA) | pad-to $$(BLOCKSIZE)
+>     KERNEL_INITRAMFS := kernel-bin | append-dtb
+>   endef
+>   
+> diff --git a/target/linux/ath79/image/generic.mk b/target/linux/ath79/image/generic.mk
+> index 1bc7b2d68e..7555ce4024 100644
+> --- a/target/linux/ath79/image/generic.mk
+> +++ b/target/linux/ath79/image/generic.mk
+> @@ -105,7 +105,7 @@ define Device/adtran_bsap1880
+>     SOC := ar7161
+>     DEVICE_VENDOR := Adtran/Bluesocket
+>     DEVICE_PACKAGES += -swconfig -uboot-envtools fconfig
+> -  KERNEL := kernel-bin | append-dtb | lzma | pad-to $$(BLOCKSIZE)
+> +  KERNEL := $(KERNEL_LZMA) | pad-to $$(BLOCKSIZE)
+>     KERNEL_INITRAMFS := kernel-bin | append-dtb
+>     IMAGE_SIZE := 11200k
+>     IMAGES += kernel.bin rootfs.bin
+> @@ -151,7 +151,7 @@ define Device/avm_fritz300e
+>     SOC := ar7242
+>     DEVICE_VENDOR := AVM
+>     DEVICE_MODEL := FRITZ!WLAN Repeater 300E
+> -  KERNEL := kernel-bin | append-dtb | lzma | eva-image
+> +  KERNEL := $(KERNEL_LZMA) | eva-image
+>     KERNEL_INITRAMFS := $$(KERNEL)
+>     IMAGE_SIZE := 15232k
+>     IMAGE/sysupgrade.bin := append-kernel | pad-to 64k | \
+> @@ -166,7 +166,7 @@ define Device/avm_fritz4020
+>     DEVICE_VENDOR := AVM
+>     DEVICE_MODEL := FRITZ!Box 4020
+>     IMAGE_SIZE := 15232k
+> -  KERNEL := kernel-bin | append-dtb | lzma | eva-image
+> +  KERNEL := $(KERNEL_LZMA) | eva-image
+>     KERNEL_INITRAMFS := $$(KERNEL)
+>     IMAGE/sysupgrade.bin := append-kernel | pad-to 64k | \
+>   	append-squashfs-fakeroot-be | pad-to 256 | append-rootfs | pad-rootfs | \
+> @@ -712,7 +712,7 @@ define Device/jjplus_ja76pf2
+>     IMAGES := kernel.bin rootfs.bin
+>     IMAGE/kernel.bin := append-kernel
+>     IMAGE/rootfs.bin := append-rootfs | pad-rootfs
+> -  KERNEL := kernel-bin | append-dtb | lzma | pad-to $$(BLOCKSIZE)
+> +  KERNEL := $(KERNEL_LZMA) | pad-to $$(BLOCKSIZE)
+>     KERNEL_INITRAMFS := kernel-bin | append-dtb
+>     IMAGE_SIZE := 16000k
+>     SUPPORTED_DEVICES += ja76pf2
+> @@ -992,7 +992,7 @@ define Device/pisen_wmb001n
+>     COMPILE/loader-$(1).bin := loader-okli-compile
+>     COMPILE/loader-$(1).uImage := append-loader-okli $(1) | pad-to 64k | lzma | \
+>   	uImage lzma
+> -  KERNEL := kernel-bin | append-dtb | lzma | uImage lzma -M 0x4f4b4c49
+> +  KERNEL := $(KERNEL_LZMA) | uImage lzma -M 0x4f4b4c49
+>     IMAGES += factory.bin
+>     IMAGE/factory.bin := $$(IMAGE/sysupgrade.bin) | pisen_wmb001n-factory $(1)
+>   endef
+> 
 
 
 _______________________________________________

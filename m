@@ -2,72 +2,74 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C5A214FE83
-	for <lists+openwrt-devel@lfdr.de>; Sun,  2 Feb 2020 18:15:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA4BE14FE96
+	for <lists+openwrt-devel@lfdr.de>; Sun,  2 Feb 2020 18:21:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:Message-ID:Date:In-Reply-To:References:To:From:Reply-To:
 	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=K29z37wC7USY99JrgcXHjVMt1a+n/xQrfgZrmMfCas4=; b=BflTCUGl7BVg6Jn8S5yplwzBf
-	yBUpUmJjc8N0NiSU5qp/7vcrVqkUcXkiwV4cyzBShNHKTBlVAzdkKe/2uEfW3S/ekxAkeX24+0ca2
-	vK3CL/QL4wQONoEIKJ6xcqPmBH5H7acTtAxx51IiJWaBn08tBFt6LdaYlILpDjkpAYbOOzad/ga1n
-	eRwsXWUEpc9A2CEqauPErAlTckNY6P8RKUsUCu+O1HBqdrcwkNC+pLTMxfhKHJFrtH+2Nqkf01jN/
-	kUhZtMgzztNxOCbK2x1cgBLu/91SYlQWeHrBR7KSMiGYWxnYHwCpJIWJzsjKT/9I9eHtgwklbslEQ
-	UXvyWBSqw==;
+	 bh=i4DCGx/ljbnU8bucOW+OxdOjjlfSERVF+cRXbad2zdE=; b=riC3iIzgp8Y76aObod2hB5C+9
+	F+4KoBnPE7Vxq0ec5a2MF+POFmwCXmsWpcf5N4xdsYPQmjKKhGAPzWxICSBisdRt0sz1KHsuMxl2S
+	DhG09TfKLvug2RkSjMYKFW/NKccajV5CqriZBhjU6f4/fWQOEHx3trOhz1G8j1wXFjEzfF11jHIvU
+	nx3uSGAlHCGLZgMjaLuIVQEfLP6Z5+crg9qNRekXfR+Ala5RbQi/R17lrdFZwmJ7nk85ceaBTyJt1
+	sogEWBuKEbz2HcsJPblak8tgo4bhm14n9z53Dgp22jXLzgRd8LUiBqZCpd4n/JTjiyj4fYDwGFa/n
+	oLT9fbNuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyIqe-0005Jt-2E; Sun, 02 Feb 2020 17:15:52 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1iyIvT-0006y3-QZ; Sun, 02 Feb 2020 17:20:51 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyIqW-0005JM-Cw
- for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 17:15:46 +0000
+ id 1iyIvM-0006xc-8s
+ for openwrt-devel@lists.openwrt.org; Sun, 02 Feb 2020 17:20:46 +0000
 Received: from desktop ([188.195.207.249]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MG9wg-1imGfq0stI-00GXNz; Sun, 02 Feb 2020 18:15:42 +0100
+ (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MUGNZ-1j6NuO2JsJ-00RHk5; Sun, 02 Feb 2020 18:20:39 +0100
 From: <mail@adrianschmutzler.de>
-To: "'Daniel Golle'" <daniel@makrotopia.org>, <openwrt-devel@lists.openwrt.org>
-References: <20200202163756.GA9941@makrotopia.org>
-In-Reply-To: <20200202163756.GA9941@makrotopia.org>
-Date: Sun, 2 Feb 2020 18:15:41 +0100
-Message-ID: <00f301d5d9ec$65e67910$31b36b30$@adrianschmutzler.de>
+To: "'Piotr Dymacz'" <pepe2k@gmail.com>,
+	<openwrt-devel@lists.openwrt.org>
+References: <20200202124828.2100-1-freifunk@adrianschmutzler.de>
+ <a49ff1f2-a4ac-df8d-14be-4e9d3e111eee@gmail.com>
+In-Reply-To: <a49ff1f2-a4ac-df8d-14be-4e9d3e111eee@gmail.com>
+Date: Sun, 2 Feb 2020 18:20:38 +0100
+Message-ID: <00fe01d5d9ed$171fe360$455faa20$@adrianschmutzler.de>
 X-Mailer: Microsoft Outlook 15.0
 MIME-Version: 1.0
-Thread-Index: AQGt1ZgpsoE16kOmY1b3vE05omGwXqhYKomA
+Thread-Index: AQIXiMytygonP3R5G0DMOzc5KfUG+QLr8toFp21n+9A=
 Content-Language: de
-X-Provags-ID: V03:K1:e9cKW6wAsBPSK0zIqaJqF7oq+zddJ3TVcV2o9Vyn3VtV0rqrmSY
- 4d5Ygbf3eQW40NHdt7B43jGKgjEs9PBNs9vC/nslmT+e+LNZmf2MhzU9/l9ZtEb7T3pkNmM
- caqpEm5tlHv0GU8hOfJBB/yjq/F2sn5AoTtVuyka7/JDK2kc5DHf5o/037ix0vbY4v0YJGa
- HoSu51NzN6iuDRcs4J45A==
+X-Provags-ID: V03:K1:W2/hKsmjCgsgYDwwZ8NUBn3UJTzGRjn5nucx8Lu2MCD9w2OWs9t
+ OWNzBEAj19pQbhQvNK4uOtC5pY0J89qD5g0ZcrPWr7JPU3epC3cgR6oKjqyvIvAjuMXB/z2
+ pH9cc1CeQlhdD9iXPr5qqjQCkHxF13aRDh+kfglMdlK3rTrcxrRmxFVYzCk6F1EwF3E1Lkz
+ NT0dreaD2TaTkdY/XrUJQ==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3zHiKXs621I=:jfoo7vMyhHWt8K9RjKSpyD
- T2sFNRE99hEPH/Qf7Zp5uGPqrY4DXog6TggoTmn1gmb/v6iSSDPREXV3IAglN4Ihssa06tYyR
- 0gLSH0ctDvqwWpuGmE4EcGuXOCF7o7FV3OAyGjACLBErOkJhYqDAPdtApXjh7pC9X5R6QQN8b
- P1SAZkkFPMoWtwE9eM9QIn5GZUlzYYayF5kcFaNz/7k2JIdSaD4kHjTbNygt7DA6boIHqH4C/
- /edNrMYFQW06X/n1i/lR2cNXun1c7dqBJSHy3Xc5uZLhouzD+pDbz8XWMHXbnueGLv/2Pwtl7
- FT2JZcuUPWUYnRo2O7NsQTm57LvWa3XQ2wZJrBcUjHTEICVOej1diukkDZeFAYCaLfHKBTLEj
- bu1tu4vwjoMtmPOAgtU5zBcrLTgS7EgGK0uAJCoNrelqRQ6ExoLwa7p9h+DYF22Zm+3gQTSR7
- NvqmzrX+qTtBywfPHd2+oeB11EXPD3HGbrrSvXt1qEsF9hoVwQcl5OKPnz3y01mt0Fon0uBcJ
- U/pmt6aAWclPdZ3qCLq6Z8zCgoVCovHa+2jCEqEF9dFCwgyLDJjlSIFfi4tZo+I0lFgxs5ZeV
- D8DmGajZ5ng1icV5PcXqJ20bwBNp69ohD5YFI0LAW3hOwBnF6O4iw/laxrw4hPEQcu5vNl3oW
- 7qjzU1nzLypz8HDOQ/TqQHCL4S8crZ5+WOnOJKygJGfZkUOzpS9503WRFE4ECVM/Elzpydqt7
- A8yUONlfNRsY1pgZ3aeJLBbKzsSLYJ79C4UWoSZZWo/qz6JzHbGQeyrR4LVLr3tjqai6RxTCi
- zDbYYw4gAhfurF8lQvofEunqNkjv4OznKLnBZLQY5ZDwJm2AjAmuXzHLW2dqCPhMQX1OCEc
+X-UI-Out-Filterresults: notjunk:1;V03:K0:awOvXi4FW0I=:X4eaLC/5TI7kjfNS3Ti5HB
+ RlhOZVuzODooeZtBOulm3h1EdimTZRYaLTwnTpSdF7zEaEPMN1Il1rvvzRyLE/PEVgGGg/JhT
+ c/oMR7eJNvY3nR5RgVRlTnRfK0OnvGcXkl8Z7E4SmGURjqRWenM2SDjrnW2hnPhWoXZOtp8L5
+ ycw9MWjw7zHFadqTwTFRyZlT47ecPm/q29ymeTGeHS3eR3HDEfdyWyeLZ/hvtXMDPKm/pa6aV
+ FDZ6xzny9t43Y2pbKq18F/WPVuWRLM2+IgULZnzr4D2bhb8HYblDfnAlfLJyRXiLsacGHzerB
+ 81cm2X1bboV7fH538nkfMQNJ5YgKxZNtR58GEBapl06CEf26WWTQh2hdQVEl7z+O5vfHhvdXs
+ 8slw/6HmO02dCyHeqk3TuShLS5Ra5CbUJzMGz4pkC9osoPURyt62q1uGwcXUiny8PNlOx5a1X
+ yGccGwWim5KM0GeLwQU9fVc3UN/q+XAUK5dL7snhqAgHHjnQB4PBBaAk0o0cILQwao4Ssc6nV
+ c7uSgKCmOJ5G4zc1TTBDuccvTIOuSLEEkRSm9qLSOyTqMPgvUlvSEVFtfo5csy+iaQUI2z9yJ
+ 03lJlqm5M9M7saJi4N29m/yGDhi+P91Zh6CSGBcmN/C5NfykFMNeMArUEas5kGUd6fLucRrAN
+ NnflFzSdI9glQcSO3/wlyDbAIkgcDptwLg9EXZ87UDp72fT5Jwd9ED75Qtp7FZR7Gw4vPo/km
+ cq18FjNxj4fZrHZA7CxxVxAvqcTpFnGKfAERiEYrZL0tgXpKKNUX/DDipRh0YYvNoXBDER3W6
+ Ai3QnGyngWKchZl2PNCZtxOG5KSrVQHrlSSX+QCLKaMxn+n3IiPluXWBNwIREV/qJPNI+EL
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_091544_735984_5F7ABF84 
-X-CRM114-Status: GOOD (  25.00  )
+X-CRM114-CacheID: sfid-20200202_092044_650618_F16C9CAA 
+X-CRM114-Status: GOOD (  19.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ no trust [212.227.17.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-Subject: Re: [OpenWrt-Devel] [PATCH 3/3] ath79: add support for Teltonika
- RUT955
+Subject: Re: [OpenWrt-Devel] [PATCH] ath79: introduces KERNEL_LZMA variable
+ for common build sequence
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,531 +81,275 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8921701935858865067=="
+Content-Type: multipart/mixed; boundary="===============5241954153471271480=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
 This is a multipart message in MIME format.
 
---===============8921701935858865067==
+--===============5241954153471271480==
 Content-Language: de
 Content-Type: multipart/signed;
 	micalg=pgp-sha256;
 	protocol="application/pgp-signature";
-	boundary="=-=LhQeMsDMzmF0xO=-="
+	boundary="=-=Hgjk4mHVMwaNOt=-="
 
 This is a multipart message in MIME format.
 
---=-=LhQeMsDMzmF0xO=-=
+--=-=Hgjk4mHVMwaNOt=-=
 Content-Type: text/plain;
 	charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi Daniel,
-
-several comments inline below.
+Hi Piotr,
 
 > -----Original Message-----
 > From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org]
-> On Behalf Of Daniel Golle
-> Sent: Sonntag, 2. Februar 2020 17:42
-> To: openwrt-devel@lists.openwrt.org
-> Subject: [OpenWrt-Devel] [PATCH 3/3] ath79: add support for Teltonika
-> RUT955
+> On Behalf Of Piotr Dymacz
+> Sent: Sonntag, 2. Februar 2020 18:02
+> To: Adrian Schmutzler <freifunk@adrianschmutzler.de>; openwrt-
+> devel@lists.openwrt.org
+> Subject: Re: [OpenWrt-Devel] [PATCH] ath79: introduces KERNEL_LZMA
+> variable for common build sequence
 >=20
-> The Teltonika RUT955 is an industrial 2G/3G/4G WiFi router with various
-> additional inputs and outputs.
+> Hi Adrian,
 >=20
-> Specification:
+> On 02.02.2020 13:48, Adrian Schmutzler wrote:
+> > This introduce a variable KERNEL_LZMA to replace the frequently used
+> > sequence "kernel-bin | append-dtb | lzma", similar to the KERNEL_DTB
+> > variable in ramips target.
 >=20
-> - 550/400/200 MHz (CPU/DDR/AHB)
-> - 128 MB of RAM (DDR2)
-> - 16 MB of FLASH (SPI NOR)
-> - 4x 10/100 Mbps Ethernet, with passive PoE support on LAN1
-> - 2T2R 2,4 GHz (AR9344)
-> - built-in 3G module (example: Qutectel EC-25EU)
-> - RS232 on D-Sub9 port (Cypress ACM via USB, /dev/ttyACM0)
-> - RS422/RS485 (AR934x high speed UART, /dev/ttyATH1)
-> - analog 0-9V input (MCP3221)
-> - various digital inputs and outputs incl. a relay
-> - 2x miniSIM slot (can be swapped via GPIO)
-> - 2x RP-SMA/F (Wi-Fi), 2x SMA/F (3G), 1x GPS
-> - 2x 74HC595 shift registers providing 16 GPOs
-> - 12x LED (4 are driven by AR9344, 7 by 74HC595)
-> - 1x button (reset)
-> - DC jack for main power input (9-30 V)
-> - debugging UART available on PCB edge connector
+> So in results we will have:
 >=20
-> Serial console (/dev/ttyS0) pinout:
+> ramips: KERNEL_DTB   =3D kernel-bin | append-dtb | lzma
+>   ath79: KERNEL_LZMA :=3D kernel-bin | append-dtb | lzma
 >=20
-> - RX: pin1 (square) on top side of the main PCB (AR9344 is on top)
-> - TX: pin1 (square) on bottom side
->=20
-> Flash instruction:
->=20
-> Vendor firmware is based on OpenWrt CC release. Use the "factory" image
-> directly in GUI (make sure to uncheck "keep settings") or in U-Boot web
-> based recovery. To avoid any problems, make sure to first update vendor
-> firmware to latest version - "factory" image was successfully tested on d=
-evice
-> running "RUT9XX_R_00.06.051" firmware and U-Boot "3.0.2".
->=20
-> Signed-off-by: Daniel Golle <daniel@makrotopia.org>
-> ---
->  target/linux/ath79/dts/ar9344_tlt_rut955.dts  | 301 ++++++++++++++++++
->  .../generic/base-files/etc/board.d/02_network |   5 +
->  target/linux/ath79/image/generic.mk           |  37 +++
->  3 files changed, 343 insertions(+)
->  create mode 100644 target/linux/ath79/dts/ar9344_tlt_rut955.dts
->=20
-> diff --git a/target/linux/ath79/dts/ar9344_tlt_rut955.dts
-> b/target/linux/ath79/dts/ar9344_tlt_rut955.dts
-> new file mode 100644
-> index 0000000000..06d18f8d26
-> --- /dev/null
-> +++ b/target/linux/ath79/dts/ar9344_tlt_rut955.dts
-> @@ -0,0 +1,301 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later OR MIT /dts-v1/;
-> +
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +
-> +#include "ar9344.dtsi"
-> +
-> +/ {
-> +	model =3D "Teltonika RUT955";
-> +	compatible =3D "tlt,rut955", "qca,ar9344";
+> Is there any reason to use different var name in ath79?
 
-I would prefer having the full vendor name here (teltonika,rut955), as we t=
-ried to avoid abbreviations in names for ath79 wherever possible (with the =
-exception of ubnt).
+In ath79 we have some cases where gzip is used instead of lzma, e.g.
+https://github.com/openwrt/openwrt/blob/master/target/linux/ath79/image/com=
+mon-tp-link.mk#L42
 
-> +
-> +	aliases {
-> +		serial0 =3D &uart;
-> +		serial1 =3D &hs_uart;
-> +		led-boot =3D &led_system_green;
-> +		led-failsafe =3D &led_system_red;
-> +		led-running =3D &led_system_green;
-> +		led-upgrade =3D &led_system_red;
-> +		label-mac-device =3D &eth1;
-> +	};
-> +
-> +	i2c {
-> +		compatible =3D "i2c-gpio";
-> +		scl-gpios =3D <&gpio 16
-> (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-> +		sda-gpios =3D <&gpio 17
-> (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-> +		#address-cells =3D <1>;
-> +		#size-cells =3D <0>;
-> +
-> +		hwmon@4d {
-> +			compatible =3D "microchip,mcp3221";
-> +			reg =3D <0x4d>;
-> +		};
-> +	};
-> +
-> +	gpio_ext_spi {
-> +		compatible =3D "spi-gpio";
-> +		pinctrl-names =3D "default";
-> +		pinctrl-0 =3D <&pmx_led_spi_gpio>;
-> +		#address-cells =3D <1>;
-> +		#size-cells =3D <0>;
-> +
-> +		sck-gpios =3D <&gpio 4 GPIO_ACTIVE_HIGH>;     // 74HC595
-> SRCLK (Serial Clock)
-> +		mosi-gpios =3D <&gpio 12 GPIO_ACTIVE_HIGH>;   // 74HC595
-> SER (Serial)
-> +		cs-gpios =3D <&gpio 20 GPIO_ACTIVE_HIGH>;     // 74HC595
-> RCLK (Register Clock)
-> +		num-chipselects =3D <1>;
-> +
-> +		gpio_ext: gpio_ext@0 {
-> +			compatible =3D "fairchild,74hc595";
-> +			reg =3D <0>;
-> +			gpio-controller;
-> +			#gpio-cells =3D <2>;
-> +			registers-number =3D <2>;
-> +			spi-max-frequency =3D <10000000>;
-> +			gpio-line-names =3D "signal_bar0", "signal_bar1",
-> "signal_bar2", "signal_bar3",
-> +				"signal_bar4", "status_red", "status_green",
-> "sim_sel",
-> +				"", "relay", "modem_vbus", "modem_rst",
-> +				"", "", "", "";
-> +		};
-> +	};
-> +
-> +	reg_usb_modem_vbus: reg_usb_modem_vbus {
-> +		compatible =3D "regulator-fixed";
-> +		regulator-name =3D "usb_modem_vbus";
-> +		regulator-min-microvolt =3D <5000000>;
-> +		regulator-max-microvolt =3D <5000000>;
-> +		gpio =3D <&gpio_ext 10 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +		regulator-always-on;
-> +		regulator-boot-on;
-> +	};
-> +
-> +	leds {
-> +		compatible =3D "gpio-leds";
-> +
-> +		signal0 {
-> +			label =3D "rut955:green:signal1";
-
-I'd prefer having the same numbering for node and label here (signal0<>sign=
-al1).
-
-> +			gpios =3D <&gpio_ext 0 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "off";
-> +		};
-> +
-> +		signal1 {
-> +			label =3D "rut955:green:signal2";
-> +			gpios =3D <&gpio_ext 1 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "off";
-> +		};
-> +
-> +		signal2 {
-> +			label =3D "rut955:green:signal3";
-> +			gpios =3D <&gpio_ext 2 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "off";
-> +		};
-> +
-> +		signal3 {
-> +			label =3D "rut955:green:signal4";
-> +			gpios =3D <&gpio_ext 3 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "off";
-> +		};
-> +
-> +		signal4 {
-> +			label =3D "rut955:green:signal5";
-> +			gpios =3D <&gpio_ext 4 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "off";
-> +		};
-> +
-> +		led_system_red: systemred {
-
-Please add an underscore: system_red
-
-> +			label =3D "rut955:green:red";
-
-This should be rut955:red:system ?
-
-> +			gpios =3D <&gpio_ext 5 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "off";
-
-Default-state "off" is default, so I think this is not needed (also above).
-
-> +		};
-> +
-> +		led_system_green: systemgreen {
-> +			label =3D "rut955:green:system";
-> +			gpios =3D <&gpio_ext 6 GPIO_ACTIVE_HIGH>;
-> +			default-state =3D "on";
-> +		};
-> +	};
-> +
-> +	keys {
-> +		compatible =3D "gpio-keys";
-> +
-> +		reset {
-> +			linux,code =3D <KEY_RESTART>;
-> +			gpios =3D <&gpio 15 GPIO_ACTIVE_HIGH>;
-> +			debounce-interval =3D <60>;
-> +		};
-> +	};
-> +};
-> +
-> +&gpio {
-> +	gpio-line-names =3D "", "wan_led", "input", "mmc_cs",
-> +		"leds_sck", "", "", "",
-> +		"", "", "", "",
-> +		"leds_mosi", "lan2_led", "lan1_led", "",
-> +		"i2c_scl", "i2c_sda", "", "DIN2",
-> +		"spi?", "DIN1", "lan3_led";
-> +};
-> +
-> +&ref {
-> +	clock-frequency =3D <40000000>;
-> +};
-> +
-> +&uart {
-> +	status =3D "okay";
-> +};
-> +
-> +&hs_uart {
-> +	status =3D "okay";
-
-Style nitpick: Typically we have an empty line after status.
-
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&pmx_uart2>;
-> +};
-> +
-> +&spi {
-> +	cs-gpios =3D <0>, <0>;
-> +	num-cs =3D <2>;
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&jtag_disable_pins>, <&pmx_spi_cs1>;
-> +
-> +	status =3D "okay";
-> +
-
-Style nitpick: Typically, status comes first.
-
-> +	flash@0 {
-> +		compatible =3D "jedec,spi-nor";
-> +		reg =3D <0>;
-> +		spi-max-frequency =3D <25000000>;
-> +
-> +		partitions {
-> +			compatible =3D "fixed-partitions";
-> +			#address-cells =3D <1>;
-> +			#size-cells =3D <1>;
-> +
-> +			partition@0 {
-> +				label =3D "u-boot";
-> +				reg =3D <0x0 0x20000>;
-> +				read-only;
-> +			};
-> +
-> +			config: partition@20000 {
-> +				label =3D "config";
-> +				reg =3D <0x20000 0x10000>;
-> +				read-only;
-> +			};
-> +
-> +			art: partition@30000 {
-> +				label =3D "art";
-> +				reg =3D <0x30000 0x10000>;
-> +				read-only;
-> +			};
-> +
-> +			partition@40000 {
-> +				label =3D "firmware";
-> +				reg =3D <0x40000 0xf30000>;
-> +				compatible =3D "tplink,firmware";
-> +			};
-> +
-> +			partition@f70000 {
-> +				label =3D "event-log";
-> +				reg =3D <0xf70000 0x80000>;
-> +			};
-
-There are 0x10000 left empty at the end?
-Is this writeable by intention?
-
-> +		};
-> +	};
-> +
-> +	microsd@1 {
-> +		compatible =3D "mmc-spi-slot";
-> +		spi-max-frequency =3D <25000000>;
-> +		reg =3D <1>;
-> +		voltage-ranges =3D <3200 3400>;
-> +		broken-cd;
-> +		status =3D "disabled";
-> +	};
-> +};
-> +
-> +&usb {
-> +	#address-cells =3D <1>;
-> +	#size-cells =3D <0>;
-> +	status =3D "okay";
-> +
-> +	port@1 {
-> +		#address-cells =3D <1>;
-> +		#size-cells =3D <0>;
-> +		reg =3D <1>;
-> +
-> +		hub_port1: port@1 { // user USB port
-> +			compatible =3D "usb-a-connector";
-> +			reg =3D <1>;
-> +		};
-> +
-> +		hub_port2: port@2 { // N/C
-> +			reg =3D <2>;
-> +		};
-> +
-> +		hub_port3: port@3 { // Cypress CDC-ACM serial (RS-232 D-
-> Sub9)
-> +			reg =3D <3>;
-> +		};
-> +
-> +		hub_port4: port@4 { // Quectel EC-25 modem
-> +			reg =3D <4>;
-> +			vbus-supply =3D <&reg_usb_modem_vbus>;
-> +		};
-> +	};
-> +};
-> +
-> +&usb_phy {
-> +	status =3D "okay";
-> +};
-> +
-> +&wmac {
-> +	status =3D "okay";
-> +
-> +	mtd-cal-data =3D <&art 0x1000>;
-> +	mtd-mac-address =3D <&config 0x0>;
-> +	mtd-mac-address-increment =3D <2>;
-
-No other addresses available in flash? art 0x1002 not usable?
-
-> +};
-> +
-> +&eth1 {
-> +	status =3D "okay";
-> +
-> +	mtd-mac-address =3D <&config 0x0>;
-> +
-> +	gmac-config {
-> +		device =3D <&gmac>;
-> +		switch-phy-swap =3D <0>;
-> +		switch-only-mode =3D <1>;
-> +	};
-> +};
-> +
-> +&eth0 {
-> +	status =3D "okay";
-> +
-> +	phy-handle =3D <&swphy4>;
-> +
-> +	mtd-mac-address =3D <&config 0x0>;
-> +	mtd-mac-address-increment =3D <1>;
-> +};
-> +
-> +&builtin_switch {
-> +	pinctrl-names =3D "default";
-> +	pinctrl-0 =3D <&pmx_leds_switch>;
-> +};
-> +
-> +&pinmux {
-> +	pmx_spi_cs1: pinmux_spi_cs1 {
-> +		pinctrl-single,bits =3D <0x0 0x07000000 0xff000000>;
-> +	};
-> +
-> +	pmx_led_spi_gpio: pinmux_led_spi_gpio {
-> +		pinctrl-single,bits =3D <0x4 0x0 0xff>,
-> +					<0xc 0x0 0xff>,
-> +					<0x14 0x0 0xff>;
-> +	};
-> +
-> +	pmx_leds_switch: pinmux_leds_switch {
-> +		pinctrl-single,bits =3D  <0x0 0x00002d00 0x0000ff00>,
-> +					<0xc 0x002c2b00 0x00ffff00>,
-> +					<0x14 0x002a0000 0x00ff0000>;
-> +	};
-> +
-> +	pmx_uart2: pinmux_uart2 {
-> +		pinctrl-single,bits =3D <0x10 0x4f000000 0xff000000>,
-> +				<0x3c 0x000b0000 0x00ff0000>;
-> +	};
-> +};
-> diff --git a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> index 4630cf8447..4b75dc0359 100755
-> --- a/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> +++ b/target/linux/ath79/generic/base-files/etc/board.d/02_network
-> @@ -210,6 +210,11 @@ ath79_setup_interfaces()
->  		ucidef_add_switch "switch0" \
->  			"0@eth0" "1:lan" "2:lan" "3:wan"
->  		;;
-> +	tlt,rut955)
-> +		ucidef_set_interface_wan "eth1"
-> +		ucidef_add_switch "switch0" \
-> +			"0@eth0" "2:lan:3" "3:lan:2" "4:lan:1"
-> +		;;
->  	tplink,archer-a7-v5|\
->  	tplink,archer-c6-v2|\
->  	tplink,archer-c6-v2-us|\
-> diff --git a/target/linux/ath79/image/generic.mk
-> b/target/linux/ath79/image/generic.mk
-> index 1bc7b2d68e..ab11120da8 100644
-> --- a/target/linux/ath79/image/generic.mk
-> +++ b/target/linux/ath79/image/generic.mk
-> @@ -36,6 +36,11 @@ define Build/addpattern
->  	-mv "$@.new" "$@"
->  endef
->=20
-> +define Build/append-md5sum-bin
-> +	$(STAGING_DIR_HOST)/bin/mkhash md5 $@ | sed 's/../\\\\x&/g' |\
-> +		xargs echo -ne >> $@
-> +endef
-> +
->  define Build/cybertan-trx
->  	@echo -n '' > $@-empty.bin
->  	-$(STAGING_DIR_HOST)/bin/trx -o $@.new \ @@ -73,6 +78,17 @@
-> define Build/pisen_wmb001n-factory
->    rm -rf "$@.tmp"
->  endef
->=20
-> +define Build/teltonika-fw-fake-checksum
-> +	# Teltonika U-Boot web based firmware upgrade/recovery routine
-> compares
-> +	# 16 bytes from md5sum1[16] field in TP-Link v1 header (offset: 76
-> bytes
-> +	# from begin of the firmware file) with 16 bytes stored just before
-> +	# 0xdeadc0de marker. Values are only compared, MD5 sum is not
-> verified.
-> +	let \
-> +		offs=3D"$$(stat -c%s $@) - 20"; \
-> +		dd if=3D$@ bs=3D1 count=3D16 skip=3D76 |\
-> +		dd of=3D$@ bs=3D1 count=3D16 seek=3D$$offs conv=3Dnotrunc endef
-> +
->  define Device/seama
->    KERNEL :=3D kernel-bin | append-dtb | relocate-kernel | lzma
->    KERNEL_INITRAMFS :=3D $$(KERNEL) | seama @@ -1044,6 +1060,27 @@
-> define Device/sitecom_wlr-7100  endef  TARGET_DEVICES +=3D sitecom_wlr-
-> 7100
->=20
-> +define Device/tlt_rut955
-> +  SOC :=3D ar9344
-> +  DEVICE_TITLE :=3D Teltonika RUT955
-
-Please use newer syntax:
-
-DEVICE_VENDOR :=3D Teltonika
-DEVICE_MODEL :=3D RUT955
-
-> +  DEVICE_PACKAGES :=3D kmod-usb2 kmod-usb-acm  kmod-usb-net-qmi-
-> wwan
-
-Double space after -acm; I'd like a line break here.
-
-> +kmod-usb-serial-option kmod-hwmon-mcp3021 uqmi -uboot-envtools
-> +  IMAGE_SIZE :=3D 15552k
-> +  TPLINK_HWID :=3D 0x35000001
-> +  TPLINK_HWREV :=3D 0x1
-> +  TPLINK_HEADER_VERSION :=3D 1
-> +  KERNEL :=3D kernel-bin | append-dtb | lzma | tplink-v1-header
-> +  KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma | uImage lzma
-> +  IMAGES :=3D sysupgrade.bin factory.bin
-
-Could also use "IMAGES +=3D factory.bin" here.
+Thus, if we use KERNEL_DTB for the case with lzma, it would be misleading, =
+as the name only tells us about the DTB.
+So, we could either just use " KERNEL_DTB  :=3D kernel-bin | append-dtb ", =
+which is too short to be helpful IMO, or use a more indicative name for the=
+ VARIABLE, which I thought I found. Actually, I would consider it more corr=
+ect to change the name for ramips, too.
+We could also use KERNEL_DTB_LZMA of course, but I do not think this will r=
+eally bring a benefit.
 
 Best
 
 Adrian
 
-> +  IMAGE/factory.bin :=3D append-kernel | pad-to $$$$(BLOCKSIZE) | append-
-> rootfs |\
-> +	pad-rootfs | teltonika-fw-fake-checksum | append-string master |\
-> +	append-md5sum-bin | check-size $$$$(IMAGE_SIZE)
-> +  IMAGE/sysupgrade.bin :=3D append-kernel | pad-to $$$$(BLOCKSIZE) |\
-> +	append-rootfs | pad-rootfs | append-metadata |\
-> +	check-size $$$$(IMAGE_SIZE)
-> +  SUPPORTED_DEVICES +=3D rut900
-> +endef
-> +TARGET_DEVICES +=3D tlt_rut955
-> +
->  define Device/trendnet_tew-823dru
->    SOC :=3D qca9558
->    DEVICE_VENDOR :=3D Trendnet
+>=20
+> Also, see: https://chris.beams.io/posts/git-commit/#imperative
+>=20
 > --
-> 2.25.0
+> Cheers,
+> Piotr
+>=20
+> > Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+> > ---
+> >   target/linux/ath79/image/Makefile           |  5 +++--
+> >   target/linux/ath79/image/common-mikrotik.mk |  4 ++--
+> >   target/linux/ath79/image/common-tp-link.mk  | 14 ++++++--------
+> >   target/linux/ath79/image/generic-tp-link.mk |  5 ++---
+> >   target/linux/ath79/image/generic-ubnt.mk    |  2 +-
+> >   target/linux/ath79/image/generic.mk         | 10 +++++-----
+> >   6 files changed, 19 insertions(+), 21 deletions(-)
+> >
+> > diff --git a/target/linux/ath79/image/Makefile
+> > b/target/linux/ath79/image/Makefile
+> > index a28658ec0b..71ffa4b429 100644
+> > --- a/target/linux/ath79/image/Makefile
+> > +++ b/target/linux/ath79/image/Makefile
+> > @@ -52,6 +52,7 @@ define Build/relocate-kernel
+> >   	rm -rf $@.relocate
+> >   endef
+> >
+> > +KERNEL_LZMA :=3D kernel-bin | append-dtb | lzma
+> >
+> >   define Device/Default
+> >     DEVICE_DTS_DIR :=3D ../dts
+> > @@ -59,8 +60,8 @@ define Device/Default
+> >     PROFILES =3D Default
+> >     MTDPARTS :=3D
+> >     BLOCKSIZE :=3D 64k
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | uImage lzma
+> > -  KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma | uImage lzma
+> > +  KERNEL :=3D $(KERNEL_LZMA) | uImage lzma  KERNEL_INITRAMFS :=3D
+> > + $(KERNEL_LZMA) | uImage lzma
+> >     COMPILE :=3D
+> >     SUPPORTED_DEVICES :=3D $(subst _,$(comma),$(1))
+> >     IMAGES :=3D sysupgrade.bin
+> > diff --git a/target/linux/ath79/image/common-mikrotik.mk
+> > b/target/linux/ath79/image/common-mikrotik.mk
+> > index 292237c76a..6531619fe9 100644
+> > --- a/target/linux/ath79/image/common-mikrotik.mk
+> > +++ b/target/linux/ath79/image/common-mikrotik.mk
+> > @@ -2,6 +2,6 @@ define Device/mikrotik
+> >   	DEVICE_VENDOR :=3D MikroTik
+> >   	DEVICE_PACKAGES :=3D rbextract rbcfg
+> >   	LOADER_TYPE :=3D elf
+> > -	KERNEL :=3D kernel-bin | append-dtb | lzma | loader-kernel
+> > -	KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma | loader-
+> kernel
+> > +	KERNEL :=3D $(KERNEL_LZMA) | loader-kernel
+> > +	KERNEL_INITRAMFS :=3D $(KERNEL_LZMA) | loader-kernel
+> >   endef
+> > diff --git a/target/linux/ath79/image/common-tp-link.mk
+> > b/target/linux/ath79/image/common-tp-link.mk
+> > index a9fccd0fe6..abce4095c4 100644
+> > --- a/target/linux/ath79/image/common-tp-link.mk
+> > +++ b/target/linux/ath79/image/common-tp-link.mk
+> > @@ -14,8 +14,8 @@ define Device/tplink-v1
+> >     TPLINK_HWREV :=3D 0x1
+> >     TPLINK_HEADER_VERSION :=3D 1
+> >     LOADER_TYPE :=3D gz
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma
+> > -  KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma |
+> > tplink-v1-header
+> > +  KERNEL :=3D $(KERNEL_LZMA)
+> > +  KERNEL_INITRAMFS :=3D $(KERNEL_LZMA) | tplink-v1-header
+> >     IMAGES +=3D factory.bin
+> >     IMAGE/sysupgrade.bin :=3D tplink-v1-image sysupgrade | append-
+> metadata
+> >     IMAGE/factory.bin :=3D tplink-v1-image factory @@ -26,8 +26,7 @@
+> > define Device/tplink-nolzma
+> >     LOADER_FLASH_OFFS :=3D 0x22000
+> >     COMPILE :=3D loader-$(1).gz
+> >     COMPILE/loader-$(1).gz :=3D loader-okli-compile
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | uImage lzma -M 0x4f4b4c=
+49 |
+> \
+> > -	loader-okli $(1) 7680
+> > +  KERNEL :=3D $(KERNEL_LZMA) | uImage lzma -M 0x4f4b4c49 | loader-okli
+> > + $(1) 7680
+> >     KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | gzip | tplink-v1-he=
+ader
+> >   endef
+> >
+> > @@ -63,7 +62,7 @@ endef
+> >
+> >   define Device/tplink-safeloader
+> >     $(Device/tplink-v1)
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | tplink-v1-header -O
+> > +  KERNEL :=3D $(KERNEL_LZMA) | tplink-v1-header -O
+> >     IMAGE/sysupgrade.bin :=3D append-rootfs | tplink-safeloader sysupgr=
+ade
+> | \
+> >       append-metadata | check-size $$$$(IMAGE_SIZE)
+> >     IMAGE/factory.bin :=3D append-rootfs | tplink-safeloader factory @@
+> > -71,7 +70,7 @@ endef
+> >
+> >   define Device/tplink-safeloader-uimage
+> >     $(Device/tplink-safeloader)
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | uImageArcher lzma
+> > +  KERNEL :=3D $(KERNEL_LZMA) | uImageArcher lzma
+> >   endef
+> >
+> >   define Device/tplink-safeloader-okli @@ -80,6 +79,5 @@ define
+> > Device/tplink-safeloader-okli
+> >     LOADER_FLASH_OFFS :=3D 0x43000
+> >     COMPILE :=3D loader-$(1).elf
+> >     COMPILE/loader-$(1).elf :=3D loader-okli-compile
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | uImage lzma -M 0x4f4b4c=
+49 |
+> \
+> > -	loader-okli $(1) 12288
+> > +  KERNEL :=3D $(KERNEL_LZMA) | uImage lzma -M 0x4f4b4c49 | loader-okli
+> > + $(1) 12288
+> >   endef
+> > diff --git a/target/linux/ath79/image/generic-tp-link.mk
+> > b/target/linux/ath79/image/generic-tp-link.mk
+> > index f1a603dc6d..30e6f979c4 100644
+> > --- a/target/linux/ath79/image/generic-tp-link.mk
+> > +++ b/target/linux/ath79/image/generic-tp-link.mk
+> > @@ -203,9 +203,8 @@ define Device/tplink_archer-d50-v1
+> >     TPLINK_FLASHLAYOUT :=3D 8Mqca
+> >     TPLINK_HWREVADD :=3D 0x00000000
+> >     TPLINK_HVERSION :=3D 3
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma
+> > -  KERNEL_INITRAMFS :=3D kernel-bin | append-dtb | lzma | \
+> > -	tplink-v2-header -s -V "ver. 1.0"
+> > +  KERNEL :=3D $(KERNEL_LZMA)
+> > +  KERNEL_INITRAMFS :=3D $(KERNEL_LZMA) | tplink-v2-header -s -V "ver.
+> 1.0"
+> >     IMAGES :=3D sysupgrade.bin
+> >     IMAGE/sysupgrade.bin :=3D tplink-v2-image -s -V "ver. 2.0" | append-
+> metadata | \
+> >   	check-size $$$$(IMAGE_SIZE)
+> > diff --git a/target/linux/ath79/image/generic-ubnt.mk
+> > b/target/linux/ath79/image/generic-ubnt.mk
+> > index ffae83eda5..bbacd393cb 100644
+> > --- a/target/linux/ath79/image/generic-ubnt.mk
+> > +++ b/target/linux/ath79/image/generic-ubnt.mk
+> > @@ -220,7 +220,7 @@ define Device/ubnt_routerstation_common
+> >     IMAGES :=3D factory.bin
+> >     IMAGE/factory.bin :=3D append-rootfs | pad-rootfs | mkubntimage | \
+> >   	check-size $$$$(IMAGE_SIZE)
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | pad-to $$(BLOCKSIZE)
+> > +  KERNEL :=3D $(KERNEL_LZMA) | pad-to $$(BLOCKSIZE)
+> >     KERNEL_INITRAMFS :=3D kernel-bin | append-dtb
+> >   endef
+> >
+> > diff --git a/target/linux/ath79/image/generic.mk
+> > b/target/linux/ath79/image/generic.mk
+> > index 1bc7b2d68e..7555ce4024 100644
+> > --- a/target/linux/ath79/image/generic.mk
+> > +++ b/target/linux/ath79/image/generic.mk
+> > @@ -105,7 +105,7 @@ define Device/adtran_bsap1880
+> >     SOC :=3D ar7161
+> >     DEVICE_VENDOR :=3D Adtran/Bluesocket
+> >     DEVICE_PACKAGES +=3D -swconfig -uboot-envtools fconfig
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | pad-to $$(BLOCKSIZE)
+> > +  KERNEL :=3D $(KERNEL_LZMA) | pad-to $$(BLOCKSIZE)
+> >     KERNEL_INITRAMFS :=3D kernel-bin | append-dtb
+> >     IMAGE_SIZE :=3D 11200k
+> >     IMAGES +=3D kernel.bin rootfs.bin
+> > @@ -151,7 +151,7 @@ define Device/avm_fritz300e
+> >     SOC :=3D ar7242
+> >     DEVICE_VENDOR :=3D AVM
+> >     DEVICE_MODEL :=3D FRITZ!WLAN Repeater 300E
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | eva-image
+> > +  KERNEL :=3D $(KERNEL_LZMA) | eva-image
+> >     KERNEL_INITRAMFS :=3D $$(KERNEL)
+> >     IMAGE_SIZE :=3D 15232k
+> >     IMAGE/sysupgrade.bin :=3D append-kernel | pad-to 64k | \ @@ -166,7
+> > +166,7 @@ define Device/avm_fritz4020
+> >     DEVICE_VENDOR :=3D AVM
+> >     DEVICE_MODEL :=3D FRITZ!Box 4020
+> >     IMAGE_SIZE :=3D 15232k
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | eva-image
+> > +  KERNEL :=3D $(KERNEL_LZMA) | eva-image
+> >     KERNEL_INITRAMFS :=3D $$(KERNEL)
+> >     IMAGE/sysupgrade.bin :=3D append-kernel | pad-to 64k | \
+> >   	append-squashfs-fakeroot-be | pad-to 256 | append-rootfs |
+> > pad-rootfs | \ @@ -712,7 +712,7 @@ define Device/jjplus_ja76pf2
+> >     IMAGES :=3D kernel.bin rootfs.bin
+> >     IMAGE/kernel.bin :=3D append-kernel
+> >     IMAGE/rootfs.bin :=3D append-rootfs | pad-rootfs
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | pad-to $$(BLOCKSIZE)
+> > +  KERNEL :=3D $(KERNEL_LZMA) | pad-to $$(BLOCKSIZE)
+> >     KERNEL_INITRAMFS :=3D kernel-bin | append-dtb
+> >     IMAGE_SIZE :=3D 16000k
+> >     SUPPORTED_DEVICES +=3D ja76pf2
+> > @@ -992,7 +992,7 @@ define Device/pisen_wmb001n
+> >     COMPILE/loader-$(1).bin :=3D loader-okli-compile
+> >     COMPILE/loader-$(1).uImage :=3D append-loader-okli $(1) | pad-to 64=
+k |
+> lzma | \
+> >   	uImage lzma
+> > -  KERNEL :=3D kernel-bin | append-dtb | lzma | uImage lzma -M
+> > 0x4f4b4c49
+> > +  KERNEL :=3D $(KERNEL_LZMA) | uImage lzma -M 0x4f4b4c49
+> >     IMAGES +=3D factory.bin
+> >     IMAGE/factory.bin :=3D $$(IMAGE/sysupgrade.bin) | pisen_wmb001n-
+> factory $(1)
+> >   endef
+> >
 >=20
 >=20
 > _______________________________________________
@@ -611,34 +357,34 @@ Adrian
 > openwrt-devel@lists.openwrt.org
 > https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---=-=LhQeMsDMzmF0xO=-=
+--=-=Hgjk4mHVMwaNOt=-=
 Content-Type: application/pgp-signature;
 	name="openpgp-digital-signature.asc"
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl43A7gACgkQoNyKO7qx
-AnDU5w/6Ar62yckW2w3XOwxkoAqEfCRhbklW/RMYAJRzNWwKjDy899mV+Jo/ol62
-VQ+1elaFgzTtACEKp+e2cgwHaRIePjXJqFGtd76oqzckI1xr2hm1VrOXMWwiHfpU
-P+21H+Bo98fju9G5aCcfPLORJHKaA9PRuUAcuC2p5rAcwSBELtwbj9YcJoBmmVvt
-1wVDBsdAHo5mxv7gvUIzH1WOciAGONo0O46VclbPI9EcLUJDBK7SHdoQsFgnhkOA
-rxPRo0ICxFnKkjom6OMyf1ElRwf1BcrxmmjPh3UlmP2na4i3sjenOsYtTDa9MeJZ
-4YBUJpzf/L7ZlNEoDXSO2FITvVRmUj4MyTFqMQITO85O0f4owhkgxK9ANH0dkIFK
-8y2dhjn+p4DFxa961fyiPedcppvFtTATBnf4ddPzS5wO9TwfpTrHztxBovPFHuX1
-DwdXY8tD/NbjoDvtCVcKERidJcOyafAZbWj/IT9/TUNJSACKdi+Nk4HQhqcAvyMc
-mxr1IHVaSITsGarb4/sODvZB4wcgJSDY/up3mnBaAkQvuCmMMpDf9AzjyUXeOg+a
-mxbLr6pKUc9kP163P/YZ7rx2u0TY5nURrNbSWC4k7icGSDb1zeTE1WuAXcDZO7DI
-I+aH83hEH5UdOHTO4JiTgMWZR+IDScPeoKi2EsJyBBDlgpS7iNQ=
-=z5KM
+iQIzBAEBCAAdFiEESgN6p2H3WoMOAf81oNyKO7qxAnAFAl43BOYACgkQoNyKO7qx
+AnAdYBAAwYWopMYQb7rEwZMV1Dx0i3S5lV8B7j53SSot69Ygly6arP9TWrhobnVu
+inYp1vitTLy+scabqj719cs96dBKY1jiLcxDM+8r7CxJRfcb5WvkfjceWbM/3Iq1
+sG1Z0ZwGh+MgHI3GnyjUTE8Xs6tp8jyzb2Ee+qCCytbjlXvBuKtnY2+87yFL2dmO
+gVRloitp3rehu3li3SX01cTkX9mmVRaNEjMe4JFNmYvBXgjP4EO3OqYxxtLTz6QL
+ytsp69FyHRBpnOZD27e6F1d+YW/YKv5LBJMx3SnImC+PMW5GrkNBPhHbHyPwyhCx
+Fwh7+gUp0FMzehlA8ahj3oiW+7k+2T9wQbTakmAIZGRChVA8HphRmNgitqFLtPWK
+BbcLGKRjZDpiS3BLQC2cOoEJxvNzIwkf/joXbikUzPTa3y3sKjZ6vLeSBYvS2cwa
+q8s+oKmtyLh3BuTyheHAABdj/2NtnzGu0+dK0pgiz7IP6XUCZfs4ZAhrgXuMfBzz
+QWdRKRxPwoGfUrqoC+H9lr6jRCTZwrR00iHxi2LIzma+AicSCy5MU7k2bxbWL1f5
+KA5cD32W67HCniPfgOI4xWS5772D9yHzm60lQ8ncxJln4dy+AyvZjWZShk9kx5ob
+NXkTE56uJEjpAzBhUcvS5m3460duQnsyd1aeZ/voUuiVAeZBHvY=
+=Txwr
 -----END PGP SIGNATURE-----
 
 
---=-=LhQeMsDMzmF0xO=-=--
+--=-=Hgjk4mHVMwaNOt=-=--
 
 
 
---===============8921701935858865067==
+--===============5241954153471271480==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -649,6 +395,6 @@ openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
---===============8921701935858865067==--
+--===============5241954153471271480==--
 
 

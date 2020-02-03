@@ -2,76 +2,73 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27E93150450
-	for <lists+openwrt-devel@lfdr.de>; Mon,  3 Feb 2020 11:33:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E31AB150564
+	for <lists+openwrt-devel@lfdr.de>; Mon,  3 Feb 2020 12:39:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X0+ejbHj7ZcEmlFaczI2uXo9uEjAlsU1S9Sh1a1YxVo=; b=njSeEL65m248ZT
-	ehZy/c3JuhsfsqTjUrEHTR0Q8DWR8hPL4fj50blr/5nt++MN3DOzkXoM0yM+l7a/8ZkSCtnRE4iet
-	l2r486NM3v1rfryTrdK4bii6ciBqLs9KzW6UHpA2nqxPBiSAxi332yE/q5B/L5b4xEYN8zsUs4ZgD
-	mDsYyMiCVThodfAa5a8KF0CtvD9nOYV5jCAAAZm7TuDc5qoQLu01wxI0bt8Fnhqo1d3DDjxoBqeml
-	jgAcC9ukvKXwuRMe1GHef4xCOuD8yt79PJWbCaFv8GwP9wwdVUI8WHlEKbSdZsYp8g7uIn2PrJ0dK
-	oFVA0X81dSFqaVlBj+ng==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:Message-ID:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vDzUEHJTAP0roziUNnLn1hfE7EmbLzwMYozLtCoJJXE=; b=kMs/MBq9dsSnM6
+	dL6zhCe+6277Wum6UoXFFJGeRWnvGYlAarubimEF2TGcbsKiiwBNNmOO0+wQd40GPmzkjMN/MgIAm
+	Bsh74YYhPxXSx6ygDYiUsBKxxc1crt56WNQCSsMUUPibj9milMhhaOMlR5jYs+MCszQd37Pthhdxb
+	D+dw8WnJ5kn5WBhB9tg14KJ7o0jbnqeX3nNu4UD2+XGPhMpXGMub5hbM7dJvNnmTxdnCQVUxUtZH/
+	mEQErrEQQfsAdPFM0NchoZGqwYBNWHEiMPtTmxaXLn+lGOWHJmomK9DDzGnrjAPOhcZ7gYHIwwadJ
+	itn7Nnpp10bUyr4Y7pLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyZ2e-0006fe-83; Mon, 03 Feb 2020 10:33:20 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1iya4E-0004mW-Pd; Mon, 03 Feb 2020 11:39:02 +0000
+Received: from o7.sgmail.github.com ([167.89.101.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyZ2U-0006f7-Cb
- for openwrt-devel@lists.openwrt.org; Mon, 03 Feb 2020 10:33:12 +0000
-Received: from btcskp ([132.180.49.42]) by mrelayeu.kundenserver.de (mreue108
- [212.227.15.183]) with ESMTPSA (Nemesis) id 1N9Mh8-1jana42ngK-015Gct; Mon, 03
- Feb 2020 11:33:08 +0100
-From: "Adrian Schmutzler" <mail@adrianschmutzler.de>
-To: "'Michal Cieslakiewicz'" <michal.cieslakiewicz@wp.pl>,
- <openwrt-devel@lists.openwrt.org>
-References: <20200120211811.22199957@kosmio.komorska>
- <20200120212009.32569366@kosmio.komorska>
-In-Reply-To: <20200120212009.32569366@kosmio.komorska>
-Date: Mon, 3 Feb 2020 11:33:08 +0100
-Message-ID: <01d001d5da7d$53a61c60$faf25520$@adrianschmutzler.de>
-MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 15.0
-Thread-Index: AQIubI8M5ymnK4beDv5+ZHTahfzPXQKoBnaxp0Lg4KA=
-Content-Language: de
-X-Provags-ID: V03:K1:yZPw+RJ84vKqeAvJmbLH36SgasR4yFhbKDb6QFreoQ4QMYJRs/J
- 9i+H5MbeD1ao4XezKLlt0RuvQ/O51B5a/p2/LQIHBhyMkiLE4Zo36FSiRmPevJhofBvilU1
- HLLQuZg0wQh+TNXj0XroEfqwGKAI5X1NweLz8SsPThdCOE/pKk3gxiobquc05OnMDBz5WlT
- E90q2Aadlypo9vqIEOG4A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:JSnSPoHXZiQ=:41rR8w8CtKhDPsSaaeatAG
- 2Cc+hrX69E+UbM6yLCIcNDoSYDkXr0nROHY1zqTH/gCoV4ta4vpLvSBb/6zxeFQ7TTXbD6YtG
- 080o1SZNySbveXpcrsX85xm0vqMyfgu4oMcNxiEMEjKMSvWRKocSDqElFiA5taF6enJ15aCeu
- li0UJp7X56kqPfvDxQGg6cLG1SyVsobDY2LPOvR1Ew1gJnq+5BnOI/MNWVuJzBY9RrA1jjsEJ
- wKbE9BdJadk0OMA3bm57mE5HGWBFJpH5OE6kDo7yXEzqqj6JXI0p/hMNnSoSkuBRpFHog7qDp
- oa87Zt9LXFGjZwG1JXi+c/NSszvq+Tswe/BPDsXrAPCH8YNrYjcfItOAm2Rm9xH0sNzTFuqmL
- uwbOoLRz7aTcZfmTvfC6qunjNEUmaIYtpQiLOS6JJjNWeK8IR6rVdBqE7qw8Fo71NgRYWhG7n
- kZu01x5fOzZx08JPE+1bFtTupR4C/c9PyiWPyJcgfyYkAQxqGpaKVNx/wLNSyYbbS5BMyXfl6
- LNOCCd3SNPKjgio/sZhDGtBU0xK446WvXVif7QPZ52QtfySgvwIfFzTu58XJoiqgacyF89pPL
- CIOq1/rEM8JwdOjSCeZ36JhSaujPWjXiXuph3W51WqKaWIJbaq+3MeVE6KFGNQFmCHTzaIR7W
- eErUCmZ+gs0jwUI16o6+BHDQsBKL4BxsqG+KMryFikE+UV5SH8j0mLGKmdCe6/TOwXuAwlWKp
- csrSPcOqpUtvYUSO6hHNlmfO51uXGEOi/APIaaxQp9zrojR1EGNfrqi8UicTIOfsbQBX3lXos
- Z0RNlmP8flDGJ/6LQizkdQUGWuoEKuuhXOM92+0iLmS2PAtWaqF9E9CEhrGpE/4bLaN69mC
+ id 1iya47-0004m0-Og
+ for lede-dev@lists.infradead.org; Mon, 03 Feb 2020 11:38:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com; 
+ h=from:to:subject:mime-version:content-type:content-transfer-encoding; 
+ s=s20150108; bh=3BD2EOIHYOGYPmRMc/MApzQWVjkxz4ADa1s1zEkkwpc=; b=
+ K/5PF3ANuEnyOEQoJONvmHUkdZNkN4BQV+mGoMNCyAqIwBkw3yZxbt/hmCnw3ivY
+ cn0HXfsnljPyEh9WBjcHE/fdU75yiiCoXQyOjP75HXdY94xBDna326po7trQ86CD
+ ZuaY76WLJ2ses2RkWWvr4ky/ThUt9LNmKy3RVJcY2VU=
+Received: by filter0371p1iad2.sendgrid.net with SMTP id
+ filter0371p1iad2-32203-5E38064D-10
+ 2020-02-03 11:38:53.551777185 +0000 UTC m=+597856.154221981
+Received: from out-24.smtp.github.com (out-24.smtp.github.com [192.30.252.207])
+ by ismtpd0020p1iad2.sendgrid.net (SG) with ESMTP id sKSpSZfoQTi8FKxRPDF4yA
+ for <lede-dev@lists.infradead.org>; Mon, 03 Feb 2020 11:38:53.535 +0000 (UTC)
+Date: Mon, 03 Feb 2020 11:38:53 +0000 (UTC)
+From: Stephen Walker <noreply@github.com>
+To: stephendwalker+github@gmail.com, 
+ openwrt-devel@lists.openwrt.org
+Message-ID: <sdwalker/sdwalker.github.io/push/refs/heads/master/fdb67b-70670f@github.com>
+Mime-Version: 1.0
+X-GitHub-Recipient-Address: stephendwalker+github@gmail.com,
+ lede-dev@lists.infradead.org
+X-Auto-Response-Suppress: All
+X-SG-EID: AaZRcYDd1kbUYxcdbhY+GJT9jhw7cfeYxJFlayk/Y2R5ws3jcF2HvRnXdzXjNqgTZU8MarYlc6aiZ2
+ tcgViM5jm7XwPambMJmFpeZf5eJ16OkYYuztXqq9w5fer9Ux05uZ5kWaTWSp+OAmpDdiJFnirwtPg+
+ EmUWjVcWA8OHy/tdv1Sc++wqPGLJnawlgsvbj6lr7N7EGYDU1oZsxSbXEIlam3VZWA9nBKIs0xuxSx
+ 4=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_023310_718992_0ECB1987 
-X-CRM114-Status: GOOD (  12.47  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200203_033855_961596_FD158BAF 
+X-CRM114-Status: UNSURE (   3.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.7 (++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ no trust [167.89.101.198 listed in list.dnswl.org]
+ 2.5 HEADER_SPAM            Bulk email fingerprint (header-based) found
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-Subject: Re: [OpenWrt-Devel] [PATCH v2 2/2] ath79: uboot-envtools: add
- Netgear WNDR3700v2
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [167.89.101.198 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+Subject: [OpenWrt-Devel] [sdwalker/sdwalker.github.io] 70670f: This week's
+ update
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,54 +85,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi,
+  Branch: refs/heads/master
+  Home:   https://github.com/sdwalker/sdwalker.github.io
+  Commit: 70670f30aeb73e2441c7cc54e9043b23b8de80fa
+      https://github.com/sdwalker/sdwalker.github.io/commit/70670f30aeb73e2441c7cc54e9043b23b8de80fa
+  Author: Stephen Walker <stephendwalker+github@gmail.com>
+  Date:   2020-02-03 (Mon, 03 Feb 2020)
 
-I've just merged 1/2, but when looking at this patch I found that u-boot-env
-partition is read-only for both v1/v2?
+  Changed paths:
+    M uscan/index-18.06.html
+    M uscan/index-19.07.html
+    M uscan/index.html
 
-Best
+  Log Message:
+  -----------
+  This week's update
 
-Adrian
-
-> -----Original Message-----
-> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
-> Behalf Of Michal Cieslakiewicz
-> Sent: Montag, 20. Januar 2020 21:20
-> To: openwrt-devel@lists.openwrt.org
-> Cc: Adrian Schmutzler <mail@adrianschmutzler.de>
-> Subject: [OpenWrt-Devel] [PATCH v2 2/2] ath79: uboot-envtools: add Netgear
-> WNDR3700v2
-> 
-> Add Netgear WNDR3700v2 to the list of supported boards.
-> 
-> Signed-off-by: Michal Cieslakiewicz <michal.cieslakiewicz@wp.pl>
-> ---
->  package/boot/uboot-envtools/files/ath79 | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/package/boot/uboot-envtools/files/ath79 b/package/boot/uboot-
-> envtools/files/ath79
-> index aafced98db..66f7dc6a64 100644
-> --- a/package/boot/uboot-envtools/files/ath79
-> +++ b/package/boot/uboot-envtools/files/ath79
-> @@ -44,7 +44,8 @@ yuncore,xd4200)
->  buffalo,wzr-hp-ag300h)
->  	ubootenv_add_uci_config "/dev/mtd3" "0x0" "0x10000" "0x10000"
->  	;;
-> -netgear,wndr3700)
-> +netgear,wndr3700|\
-> +netgear,wndr3700-v2)
->  	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x20000" "0x10000"
->  	;;
->  netgear,wndr3700-v4|\
-> --
-> 2.25.0
-> 
-> 
-> _______________________________________________
-> openwrt-devel mailing list
-> openwrt-devel@lists.openwrt.org
-> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
 
 
 _______________________________________________

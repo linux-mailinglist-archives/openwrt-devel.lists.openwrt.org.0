@@ -2,135 +2,253 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6733C150678
-	for <lists+openwrt-devel@lfdr.de>; Mon,  3 Feb 2020 13:58:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AAD41508E8
+	for <lists+openwrt-devel@lfdr.de>; Mon,  3 Feb 2020 15:59:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:Date:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nMQq/Y+uTPDUp+4gE1rzZSeVvccnT/nHctEH+j8cbOk=; b=HotVcV1EE2WEqU
-	uZVhNdTMaKLcHdg16spiz7W3Fj4/hcnx1r/5Uuk7VKDlwnWLsJ8edrVc/q8B0Xi4ajo6G5ESqBwcy
-	PkwYN6gvKgLZwXR10tobBo/fMe/07vT4OVLyEk+9veNim754xbQCUiDoXuikutngThdIUSA2+XT/D
-	hyJXnPNdS7uMeUQALuoc2UWO3G4EVw5entkG4Vvk2k9/r9+/N06bVzqbDdBirV3mDqnUjCYo1fL6Q
-	oT3RgzMo5sr3Yjy7r2HUZZmSHvXM1jRSdfTSwybZ90P7JGtBTcMwUPfY/lldrfg1IaugSwjYOwjL1
-	CAaZl/SO99jl6PjM4DLw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Subject:
+	List-Help:Reply-To:List-Archive:List-Unsubscribe:List-Subscribe:Cc:From:
+	List-Post:List-Id:Message-ID:MIME-Version:In-Reply-To:References:To:Date:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZCXagRA7ltocQDAMrKDbPAAykuGHzyYOmTghmf0GyGY=; b=HUI5Q3QaaaTDef5fwYL5mfDMA
+	iSzdML1kQESde6MHFBKxxi0+i0LkYHfJCSSOnt1t8YfPwxOe/R5rrHPfcJR3mHfD+gTyj+N/T63K/
+	zBny6bwi+82+OAxVf8CKF0kdPK2GNWUEx9xCBEPYn/aqpYDRPMVmEHqHcDkk7ChqzUqunLOcaAK3z
+	XrTgoTab20TEBux40tJl7b8iFOkqdaS+TAIbyUoomS9DX+n9++mcdRPkbT60v/UsxLHU8EVG7hXwK
+	1knK9J+cvuc/Kw+ya69Kn59WFVh9bYJXPVHO5CEwoUs1ezfnIDm9srOtN74cRHJ3LkdL8sN/DMNKT
+	1X04jcxFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iybJ0-00088N-Q6; Mon, 03 Feb 2020 12:58:22 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iybIr-00087f-Ju
- for openwrt-devel@lists.openwrt.org; Mon, 03 Feb 2020 12:58:14 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z3so18011425wru.3
- for <openwrt-devel@lists.openwrt.org>; Mon, 03 Feb 2020 04:58:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id;
- bh=+gEo0h180+oHMqsG+RmTmUe9zLn0+PLFI9g763FK8Ks=;
- b=ABihb9wjt9/8S9O6COM4YNlDJU2AY4DKJPQN0kw1nqaPxCCTLMwqAgW03CaEMwZrIj
- jpBpLReeXt0Uwcqqu40JHgJToTdOJzRhZHe+KPM+CP4+bmaSLbxrsuPszS6pWwQQPB1m
- TpMGPjHYrMP3TfbaIqmk/VfBX7qbQoT0oKopUPN3R9SQmHNrjjYeM6HL37Ft/KDw2ndb
- co8+fXe771Ab8beIEf/stScNxU+BqZfAQxYlxBFwDjfmaCBly/t1ocqdRGHvRgNCwexD
- TkklRDfYrqmhps3XrNTm/K/lwD35X9AdLFrUVEvkcd0eKGGZojRZyMW790PCbYsrobPI
- tvHg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id;
- bh=+gEo0h180+oHMqsG+RmTmUe9zLn0+PLFI9g763FK8Ks=;
- b=bsnE8es/lBSw4k1BCjKjF7Z5ZpDZ3JlrPAJOhGoZTOMuxHGDDCxnKP2voaOgDsCSta
- mCl2IGPqTnMe2mGEhnf+TynG78e6L7nryjJX3Poai1klTX6WXUjBKMEc7IveuCd1Nyym
- qTY0yGah/bXOzVCpRfoUJsHJLeBqbRjL4aa6GepM/hwwtkkv1xTX84KXFroA2m6So0GW
- mEmDBs8RcPHwn368Ik02IzyPQRhGh2CqGs/VJyUoNWWVf6hn5RXNu9Bq6UXU3afGx0bc
- 4Ojhej2wMMG9Y+4PRvXLIq9acdEO5oa0kRvzw7F4D4XdycT92GAw2/JEq2IbM2326ytq
- mJ3A==
-X-Gm-Message-State: APjAAAXmIrAnEB9099riFP1t8LrJbILJSiUBgvxoaSgmEafjPKVcFrXt
- QYRJRX6+1AsfSxCOUdw17B0=
-X-Google-Smtp-Source: APXvYqxAJTkSAt1iO4LOxdXQwIKMqg8SngKUkbF79bhbEx5KNvhyHFykK52moEAD71TWXDTfVcRvZw==
-X-Received: by 2002:a5d:4cc9:: with SMTP id c9mr15302519wrt.70.1580734690130; 
- Mon, 03 Feb 2020 04:58:10 -0800 (PST)
-Received: from cplx1037.edegem.eu.thmulti.com
- ([2001:4158:f012:e40:2a10:7bff:fec5:6f08])
- by smtp.gmail.com with ESMTPSA id r3sm25863179wrn.34.2020.02.03.04.58.09
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 03 Feb 2020 04:58:09 -0800 (PST)
-From: Alin Nastac <alin.nastac@gmail.com>
-To: Felix Fietkau <nbd@nbd.name>,
-	openwrt-devel@lists.openwrt.org
-Date: Mon,  3 Feb 2020 13:58:04 +0100
-Message-Id: <1580734684-16319-1-git-send-email-alin.nastac@gmail.com>
-X-Mailer: git-send-email 2.7.4
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_045813_656277_05844F88 
-X-CRM114-Status: UNSURE (   8.49  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alin.nastac[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
-Subject: [OpenWrt-Devel] [PATCH] ubus: lua binding does not allow a reply
- with 64 bit numbers
-X-BeenThere: openwrt-devel@lists.openwrt.org
-X-Mailman-Version: 2.1.29
-Precedence: list
+	id 1iydCB-0004v1-JR; Mon, 03 Feb 2020 14:59:27 +0000
+Date: Mon, 03 Feb 2020 15:59:03 +0100
+To: =?UTF-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
+References: <mailman.28108.1580636942.2486.openwrt-devel@lists.openwrt.org>
+ <87pnew2git.fsf@miraculix.mork.no>
+In-Reply-To: <87pnew2git.fsf@miraculix.mork.no>
+MIME-Version: 1.0
+Message-ID: <mailman.28332.1580741959.2486.openwrt-devel@lists.openwrt.org>
 List-Id: <openwrt-devel.lists.openwrt.org>
+List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+From: JORDI PALET MARTINEZ via openwrt-devel <openwrt-devel@lists.openwrt.org>
+Precedence: list
+Cc: openwrt-devel@lists.openwrt.org
+X-Mailman-Version: 2.1.29
+X-BeenThere: openwrt-devel@lists.openwrt.org
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
+ <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/openwrt-devel>, 
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/openwrt-devel/>
-List-Post: <mailto:openwrt-devel@lists.openwrt.org>
+Reply-To: JORDI PALET MARTINEZ <jordi.palet@consulintel.es>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
-List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
- <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Subject: Re: [OpenWrt-Devel] support of IETF v6ops draft
+ draft-ietf-v6ops-464xlat-optimization
+Content-Type: multipart/mixed; boundary="===============6322349103754879982=="
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Numbers originated from lua bindings get explicitly truncated to 32 bit.
+--===============6322349103754879982==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
-Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
----
- lua/ubus.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+The sender domain has a DMARC Reject/Quarantine policy which disallows
+sending mailing list messages using the original "From" header.
 
-diff --git a/lua/ubus.c b/lua/ubus.c
-index 86dcc50..aa01ac9 100644
---- a/lua/ubus.c
-+++ b/lua/ubus.c
-@@ -196,7 +196,11 @@ ubus_lua_format_blob(lua_State *L, struct blob_buf *b, bool table)
- 	case LUA_TINT:
- #endif
- 	case LUA_TNUMBER:
--		blobmsg_add_u32(b, key, (uint32_t)lua_tointeger(L, -1));
-+		if((uint64_t)lua_tonumber(L, -1) > INT_MAX) {
-+			blobmsg_add_u64(b, key, (uint64_t)lua_tonumber(L, -1));
-+		} else {
-+			blobmsg_add_u32(b, key, (uint32_t)lua_tointeger(L, -1));
-+		}
- 		break;
+To mitigate this problem, the original message has been wrapped
+automatically by the mailing list software.
+--===============6322349103754879982==
+Content-Type: message/rfc822
+MIME-Version: 1.0
+Content-Disposition: inline
+
+Received: from mail.consulintel.es ([2001:470:1f09:495::5])
+	by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+	id 1iydBy-0004r9-3l
+	for openwrt-devel@lists.openwrt.org; Mon, 03 Feb 2020 14:59:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple; d=consulintel.es;
+	s=MDaemon; t=1580741946; x=1581346746;
+	i=jordi.palet@consulintel.es; q=dns/txt; h=User-Agent:Date:
+	Subject:From:To:CC:Message-ID:Thread-Topic:References:
+	In-Reply-To:Mime-version:Content-type:Content-transfer-encoding;
+	bh=+LrS4iBZ2jyflI6h5Xxs5VxL6ofv2X4dNeJXJZ3rBXE=; b=NP7kwIR329y0Y
+	jtr5JFDtH7XKv1Go1OCXQcNbV59Y+gEHL0a6BImqTqDZVbhTWWPuq+JhSxIQwzaE
+	sm85befoTvs23Ekv2U6jmfhG3/DhyLrl4gXrs9Av8iJ4gOZwSHrG31jAomXYA8fz
+	ZIziHjTha9QurlQvMODSCc18W/RmL8=
+X-MDAV-Result: clean
+X-MDAV-Processed: mail.consulintel.es, Mon, 03 Feb 2020 15:59:06 +0100
+X-Spam-Processed: mail.consulintel.es, Mon, 03 Feb 2020 15:59:05 +0100
+X-Spam-Checker-Version: SpamAssassin 3.4.1 (2015-04-28) on DNS1.novagnet.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.7 required=14.0 tests=BAYES_00,URIBL_BLOCKED
+	shortcircuit=no autolearn=no autolearn_force=no version=3.4.1
+Received: from [10.10.10.144] by mail.consulintel.es (MDaemon PRO v16.5.2) 
+	with ESMTPA id md50000048285.msg for <openwrt-devel@lists.openwrt.org>;
+	Mon, 03 Feb 2020 15:59:04 +0100
+X-MDRemoteIP: 2001:470:1f09:495:a432:9579:266e:8687
+X-MDHelo: [10.10.10.144]
+X-MDArrival-Date: Mon, 03 Feb 2020 15:59:04 +0100
+X-Authenticated-Sender: jordi.palet@consulintel.es
+X-Return-Path: prvs=1302d244b6=jordi.palet@consulintel.es
+X-Envelope-From: jordi.palet@consulintel.es
+X-MDaemon-Deliver-To: openwrt-devel@lists.openwrt.org
+User-Agent: Microsoft-MacOutlook/10.21.0.200113
+Date: Mon, 03 Feb 2020 15:59:03 +0100
+Subject: Re: [OpenWrt-Devel] support of IETF v6ops draft
+ draft-ietf-v6ops-464xlat-optimization
+From: JORDI PALET MARTINEZ <jordi.palet@consulintel.es>
+To: =?UTF-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
+CC: <openwrt-devel@lists.openwrt.org>
+Message-ID: <209245BB-FEAD-4EA4-9AA6-CEDEF2303917@consulintel.es>
+Thread-Topic: [OpenWrt-Devel] support of IETF v6ops draft
+ draft-ietf-v6ops-464xlat-optimization
+References: <mailman.28108.1580636942.2486.openwrt-devel@lists.openwrt.org>
+ <87pnew2git.fsf@miraculix.mork.no>
+In-Reply-To: <87pnew2git.fsf@miraculix.mork.no>
+Mime-version: 1.0
+Content-type: text/plain;
+	charset="UTF-8"
+Content-transfer-encoding: quoted-printable
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200203_065914_677785_ACC47B54 
+X-CRM114-Status: GOOD (  13.97  )
+X-Spam-Score: -0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.1 points)
  
- 	case LUA_TSTRING:
--- 
-2.7.4
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+                             author's domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
 
+Hi Bj=C3=B8rn,
+
+Thanks a lot for reading the document!
+
+Responding below, in-line as ->.
+=20
+=20
+
+=EF=BB=BFEl 3/2/20 15:28, "Bj=C3=B8rn Mork" <bjorn@mork.no> escribi=C3=B3:
+
+    JORDI PALET MARTINEZ via openwrt-devel <openwrt-devel@lists.openwrt.org=
+>
+    writes:
+   =20
+    > We are working in a possible optimization to 464XLAT, in order to
+    > support old IPv4-only devices such as SmartTVs, STBs, etc., with
+    > 464XLAT, avoiding double translation (CLAT and PLAT) when the content=
+s
+    > are already dual-stacked in the CDN/caches.
+    >
+    > The document has recently been accepted as v6ops WG item:
+    >
+    > https://datatracker.ietf.org/doc/draft-ietf-v6ops-464xlat-optimizatio=
+n/?include_text=3D1
+    >
+    > I suggest, in addition to read the intro, possible optimization and
+    > problem statement (sections 1, 3, 4), to concentrate in the section
+    > 5.2, as it seems the best approach, as it doesn't need any change in
+    > the operators neither CDNs/caches, infrastructures. Only requires an
+    > internal CPE "coordination" between the CLAT/NAT and the DNS proxy.
+   =20
+   =20
+    Hello Jordi!
+   =20
+    This does look like an interesting approach.  But I do worry about the
+    lack of "Security Considerations"...
+
+-> Remember that this is an ID, we had 5 previous versions as "individual" =
+document, and now 1 more as WG item. So, it will clearly evolve, and I thin=
+k it makes sense to work on the security considerations once we have a clea=
+rer view about the best approach, just to avoid wasting time in a security =
+section that may be referring to text that is changed across the draft deve=
+lopment.
+   =20
+    IIUC, you are adding IPv4 <=3D> IPv6 protocol translation rules dynamic=
+ally
+    based on forward DNS names having both A and AAAA records.  This sounds
+    very risky to me. There is no way to validate the association between
+    the A and AAAA records.  All you need to do to redirect traffic destine=
+d
+    for 192.0.2.42 to your evil MITM server at 2001:db8::42 is to create a
+    FQDN with both addresses and provoke a client to look up that name.  Yo=
+u
+    have now added a rule mapping 192.0.2.42 to 2001:db8::42.
+
+
+-> I see your point, but if you have a MITM server, then even if the transl=
+ation rules aren't being created as described by this document, it means th=
+at the MITM server is still able to redirect your IPv4 or IPv6 traffic. So,=
+ from that perspective, unless I'm missing something else, the translation =
+rule doesn't "increase" the security issues, right?
+
+-> For example, if your CPE has been intruded, and is using an alternative =
+DNS server, "all" your traffic is already being redirected.
+
+
+   =20
+    Dynamic mappings seems impossible to me without some way to validate
+    that two address records belong to the same entity.  This is hard
+    ("impossible").
+   =20
+
+-> We could improve it using DNSSEC. This will mean that the dynamic rules =
+only work if we have DNSSEC. This will be fine for me, except because I bel=
+ieve most of the CDNs/cache, which is what we try to optimize (as this is t=
+he major % of the non-optimized traffic), aren't very happy using DNSSEC. I=
+ need to re-check if that's still true with some of the CDN guys that I kno=
+w ... by chance I just read an article on that a couple of days ago:
+
+https://blog.apnic.net/2020/01/31/why-dynamic-dns-mapping-prevents-dnssec-d=
+eployment/
+
+
+-> Anyone has additional ideas for verifying that both addresses belong to =
+the same "owner"? Actually, is not that the same problem for dual-stack? I =
+think if you have a MITM, anything can be done with your traffic ... but ag=
+ain, I may be missing something!
+   =20
+   =20
+    Bj=C3=B8rn
+   =20
+
+
+
+**********************************************
+IPv4 is over
+Are you ready for the new Internet ?
+http://www.theipv6company.com
+The IPv6 Company
+
+This electronic message contains information which may be privileged or con=
+fidential. The information is intended to be for the exclusive use of the i=
+ndividual(s) named above and further non-explicilty authorized disclosure, =
+copying, distribution or use of the contents of this information, even if p=
+artially, including attached files, is strictly prohibited and will be cons=
+idered a criminal offense. If you are not the intended recipient be aware t=
+hat any disclosure, copying, distribution or use of the contents of this in=
+formation, even if partially, including attached files, is strictly prohibi=
+ted, will be considered a criminal offense, so you must reply to the origin=
+al sender to inform about this communication and delete it.
+
+
+
+
+
+--===============6322349103754879982==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--===============6322349103754879982==--

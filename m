@@ -2,97 +2,99 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEF37151B53
-	for <lists+openwrt-devel@lfdr.de>; Tue,  4 Feb 2020 14:32:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AB20151BB1
+	for <lists+openwrt-devel@lfdr.de>; Tue,  4 Feb 2020 14:55:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yRornIJpdi9HTUX9MmdmEzJX9y5R8SEVHqLMzZKOTHs=; b=hpN/M5DQR7lSgOcqm1K0ej9wD
-	gwHsZKRa5HSGFYvzB/fYnM4upDdyPLaFv59uxZQ+boeFZttu2IMtdXtnrvTmDaX1ylC21Na9vLEQ/
-	CmVlQeonTpsYNToilv1NYiyVRNILkjkdlALnJs8uGhCgA/OWKYMuRfn51Y/rFjTvvXE+O7tfWLPUp
-	Z0MIeNnFmUrPoEhYIFoWbiSmkMfdt89C9gYxGys/f6zjjLyLnxMoqIswt1TlKYTcPe4llpZDxMz1l
-	vAZ0sm4dtU6i80o1spIOIGXpB86jXjYDct/uhE6JLQmYrYZlOiXGNnlt6JWxkaifiBDG+WuLlIWUg
-	/kRVbmwbA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Content-Type:
+	MIME-Version:Date:Message-ID:From:To:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=BOddU1E6X9Ytb/yYn4PoJenTC7Gv3CwYkUo04wBAIbU=; b=dfkXeY13zoMsl15Cxd5//pm6UW
+	Dd+3VS4uefLtHsGUBTcv1x/4daArNoGO15UNM5166cFvbpQJX6bhAHILWgo3ZNiVjN0ORNiTscKCj
+	i+nT4lfzgkHSiQG//veQFPfrtR3w14rR1OOJcxhHbe9t4jF9POESOwtD0VeoaHfm2xDsULKHFUDY6
+	N66wEN1895/r96A88Mjj9UZ6sv7WhRvafGjfQoKGeEVuEzR1Q+sFQU4SjoIR0HSk/XRvZb9xGIl1m
+	eDOkEy5Dk0zSKThowiHW7g7sSXp54Jdw+rE/4OLuApd6IehLWVLfy/KKXIMsNIQpiVsGqnpLuZ33q
+	ZM3+c+bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyyJU-0001k7-De; Tue, 04 Feb 2020 13:32:24 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1iyyfd-0004Cw-0Z; Tue, 04 Feb 2020 13:55:17 +0000
+Received: from rauberhaus.de ([178.254.39.111] helo=viisauksena.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyyJP-0001jg-Pd
- for openwrt-devel@lists.openwrt.org; Tue, 04 Feb 2020 13:32:21 +0000
-Received: by mail-lj1-x243.google.com with SMTP id a13so18584526ljm.10
- for <openwrt-devel@lists.openwrt.org>; Tue, 04 Feb 2020 05:32:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=ZoKRTBz1iu9ALws82pnxEvAzODkN6IQkPvSwD6faZ+E=;
- b=HWDe4x4nspbDbYBxGHJmY6E66c9Eara6ezzHCK6YsZLMayxrkVZK4NVrnxNWIMNbXM
- pOAyWWGxaF4clUNS21BtMvJqLyGNN0Kdh3x73QpmH4xkl1gFnOVy1HECXUz8esC2BtD1
- +dmlEvRI4SZzZLGDowOEDNYynQ6TmdLsPvbDCh6nfN7ljAYqgm0OkkvONhkbn8QSHomg
- OsuTCNt/VG/VSDizB+hw8xSm1H1TWwB8SGRlP1uX/Dl5r7ERT7uL/sg7hdelj+BvmQgs
- BMrnyXKLkdo4EMX1q87jbuCDU699fvF29DO8D9oTIec7vpnfzz44dewJ2/bMMsDdrimG
- DNwA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=ZoKRTBz1iu9ALws82pnxEvAzODkN6IQkPvSwD6faZ+E=;
- b=msjibmmkzsbgPUtOTzeP4SjC/3P61JkV7c9/yBBmG1QHXzCRJhQdYlbyshyudDiYV8
- izYZwHvPW8eEvZccT/1/EGukygqFsjBeHigjZYdyPTqI8mRnVuLWss2zM2CYaCM+U7vE
- PUyE/8M0kj4u55kpd1w3ZUhP9qg2/V3OYQgz1YCHBFuy77rQCUuYnkE1w2dry6gGwMhu
- L4+pStsW/2vukW32hPJTaoTXi2f5c9ts6K/bqTWGUlE/Sf9HMOK9Qj8C2N4v8JRxth61
- 7dtogeSBmG/D7bvhmA0Iz05hf6Uw4ddBEnTPAh8gX9dyy93+ZGzaqruNqx6Q6+gNYoco
- rllQ==
-X-Gm-Message-State: APjAAAUF17LqP93O6p8wygHQpK0UEJNFbfvy2d3/EBC+zC1JPoPrNEPG
- kEX0x/MV8XtSPTlJB7Bdd7a4kD+y
-X-Google-Smtp-Source: APXvYqwZLsqBU3QlcaUfgR0kXpYJDhCqEuH55fUvH0ZfReBSgGJbkAO3u5ZpkGH5P9bHV4GW3WgvQA==
-X-Received: by 2002:a2e:9213:: with SMTP id k19mr16149188ljg.141.1580823136664; 
- Tue, 04 Feb 2020 05:32:16 -0800 (PST)
-Received: from [192.168.55.103] (031011201135.warszawa.vectranet.pl.
- [31.11.201.135])
- by smtp.gmail.com with ESMTPSA id z3sm11594354ljh.83.2020.02.04.05.32.15
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 04 Feb 2020 05:32:15 -0800 (PST)
-To: Adrian Schmutzler <mail@adrianschmutzler.de>,
- openwrt-devel@lists.openwrt.org
-References: <20200131142254.24953-1-pepe2k@gmail.com>
- <00c301d5db57$2e4ccb00$8ae66100$@adrianschmutzler.de>
-From: Piotr Dymacz <pepe2k@gmail.com>
-Message-ID: <f510a285-3f6b-e442-259e-8a32c4af8747@gmail.com>
-Date: Tue, 4 Feb 2020 14:32:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iyyfV-0003pU-Sf
+ for openwrt-devel@lists.openwrt.org; Tue, 04 Feb 2020 13:55:11 +0000
+Received: from [10.23.42.44] (pD95F629E.dip0.t-ipconnect.de [217.95.98.158])
+ by rauberhaus.de (Postfix) with ESMTPSA id 1382A205D7
+ for <openwrt-devel@lists.openwrt.org>; Tue,  4 Feb 2020 14:55:06 +0100 (CET)
+Authentication-Results: v32412.1blu.de;
+ spf=pass (sender IP is 217.95.98.158) smtp.mailfrom=lede@viisauksena.de
+ smtp.helo=[10.23.42.44]
+Received-SPF: pass (v32412.1blu.de: connection is authenticated)
+To: openwrt-devel@lists.openwrt.org
+From: lede@viisauksena.de
+Openpgp: id=AB0F97125ABF0FAEDEFBDB8B507EB93F6F6DEE01
+Autocrypt: addr=lede@viisauksena.de; prefer-encrypt=mutual; keydata=
+ mQINBF0HyboBEADbiNvRzJyJWbjgiYZ2xj7fL/c1c7FFV2XHjj7Z+QcKDYvcJa1cZtrxluHT
+ c2M0ApBcoCEt3dSVosgmNeQBt/VnsaGXJnaqHgYnwFrbiOczPYxW0dyzlA0pLPGwFCP+rNuU
+ uIJyzMR9ek7KXU0tlOCGl/GFGpmfjLatbZC9DB6P2PGPEkkeZRME49bgMDF++aDN/erNc6t/
+ PfrncQPeZ9xc42j2M9FjKNDrH1GlWn+OaQ2SBDQYdHM8ojDcNQlA3WhKjynIRZZDp8J/Jud9
+ ND3fu+dHlqygcnqwqyd/75FcajPAV6wzpa1QyJTJL/hTIDwsRR1ExHm3QkwqRkR6yZDVjt+y
+ iERjEIlFw73lAeRZR6YCgtJdDg6rMpD+qLECpuZ2XXst7CkkZFVTDlrlEvnTueXF265o6vHt
+ dsR/095VbMXJoeI5p8EQ+tfMKfbWhiXaUtoD06HhL6zFGotSjK2eNyNYBRZVOjGv1MDBtTla
+ JUR/pKGuPlAts3h8Qr/Zzv9culNJxC0ab9eBG0UDBJv6vfqBlbk8cYyTgYeQJBcxxFHK+Nwj
+ 7ZA8KAXlELzb8ndG72gF+1pAqMnvtkXhJah+6R9H+B4i6q+0AMXcx7yl/eJrASF8EAWR9/mD
+ WIRmjqKCW+CzOpPsBupK/WFfd2CmuxyMx9JORbxWhk7aseaM6wARAQABtBpqZW5zIDxqZW5z
+ QHZpaXNhdWtzZW5hLmRlPokCTgQTAQoAOBYhBKsPlxJavw+u3vvbi1B+uT9vbe4BBQJdB8m6
+ AhsjBQsJCAcCBhUKCQgLAgQWAgMBAh4BAheAAAoJEFB+uT9vbe4Bp0MP/RHISu579obeH2Gh
+ 5fmP1QcTmBtu5Kr58lj3WVVvgdslgztDhjy3ohSfrDWjGm9lIYW7QsozHVrhBRqVjj7Wuo9e
+ 9lSnna4QviwbASXHm6JW0Mcs7aYMkpXzE8yQh4UtS07LLp1LJvYwEfTprZ5iTvbLllNLqAqr
+ 5Bk9J8Ncaqoliny68sv9jFzfS4ZqKZaWOp+4MpT+3odXxr5XJdN8xIaySPoKX4aHl6mkEtrD
+ i+u594lfKy8+wk14JCWSLQGlSjxubG+5O0VVnNzAgiWzqWyOADRXk0gY9OpyelNOkd6MOYWj
+ K4yMvA0HPy83+zw9lp2bMxWC+cIKGHCH5dHxjUW5DoY8T0nMKlB3FXQs0/qLHTYAITJF9IZt
+ PRF5Ls0SmG6s/FznvSSSCq2tQ8szhXWdXQDzFysdWhZMUE4pwJbXzyrzN8ppaZfWlDpM//K4
+ 8fe3G/0PTLjK182wB/NWGj0wniSckAn29cvqGYevIkZcVrIbrjHB5cPQh/TWkUkHvINedyhH
+ TZDvm6qupEJSk2qC27DmBnvikmbLADqwA5oDZTdBehCeZtUU/k3xu5Xp7z1fWlbLJ0dFwPz3
+ ERmckW64svxO0WuHWazo5/EdAcyDLEH/xe7tMejxq+gccxyYq62ayqui1t3b34TPUUdq0yvI
+ XgTfGwkalrRDDFgKQgTEuQINBF0HyboBEAD1Ayj1TmJbHSEoGINyyi7ktP1fuA+mAh236ECb
+ 0mwYfo8+B4LZHfLQoNIQ/WNRJk8u43SSj+i6KyKRg6ci86VLPOelnY2ENw9WgvuW7mdwAKtW
+ Zsu78KXBp8kwc2wD0ig86uoYBdysbM/P17LUMiHj4v/UoPNhX7uGcvW5Gs8jCezI2NfAw4gh
+ DT50XjtGAl3N1T/6dvnJXaq0uvzDucOimkucDjJpZruA0eT6gMY8jY+Ps0Kzi2+0VqgJ5UQ6
+ 0vsuCl8WFASyvJj4tpqD3vTSb5RsKl3ppoVfdYs9/n6r4lP5AXZ1iafnxsJjyxnzhQwE9y+2
+ fF8ja76qLNVbzoq6pkGBTFiyIaA363BxrSgFZ44ImUdCqgj9lKR8ZnsaPW8mnCnlK/LCWmWm
+ BFv5b1vbRA8p8ILFesAGFec8BLYZl2ALnm1Ju5s3vG4/jKDKBEpPO4W1p1EcVJ748F3VSQPq
+ imip+3ncVHwub+YdVS4JvaVGn0pzFvFlHEoR8Wy49PxwC2PfP+mSM/E6ZK1Crn/f5UDy54R/
+ VOBblhpH5QZDy2HsSyTcfE5Uony8eTvWxXzwvwOvx9Veo6UwEDHwgzpZ29ytXoC+d4Pf1EFY
+ Y7Ea0/TD7OaaXtdOydpn2zocDSeHz7OO4bc1jMyjrOZlrrGir4wqaXrnY2QzBGYFd9yHcwAR
+ AQABiQI2BBgBCgAgFiEEqw+XElq/D67e+9uLUH65P29t7gEFAl0HyboCGwwACgkQUH65P29t
+ 7gEcHw/9H3kNYDDjngqa2AletOZA0BmWchiIDWzIst0Qa3HE6zfw2L5T98SkF8bmSZqUxoIU
+ Fy5VPYFUYtGwiuZPiuejL8xX87nHuhQrm/axighsU6Wq0uOfwUX1Th3DuuppzjdIjOQjlwnH
+ tKN6PeWF6Ui+4oGs/ZeW3fHdkgGMH9qlMFwHNzHQzbNK//5q0qDonQQHoQRN15VlK8mPinEC
+ 2XALUqfh6OzkB5wFLNaaT5rnUS5bocsYaALzmSytUhFr6kvoBDxA4ijktcuzXYIsDO+ZWMT8
+ YhFiWz1Y4ojLZvXdldHJYYITPYFVeIuamG+2rZUpkCNqsB3M/fFZim27cClyZVEXh5zXRmOS
+ IqhbV3ZYRfi4/Q/ud2AGxEW2cGjUP4cpL3Tj6WGzJuJ3h2dOEwGz4IotPAnrVHcddWY6vAER
+ sIMgNE2HvrFARUANGqtfhSdMhzH5/LEE/exllhOs9aO6eFziHT88diM/O9T1SaulsKz4qb9i
+ TgTT0EJtpvbZjI0i39ygB5+EJDgmdk65wwrc5HQuJdAVV1udX290IHHLnGi8J9G1kTihZWhb
+ Cxd/3HM067JsFvALoaflFAOhx2DtV9jQuTwTMV2MQIstJXMEHh7A7yRS3lM+Qo61GrFoWB3d
+ jcLkPr9ha2YSiXtyCkOBEYkoIJ2ELB+9daS/3jsotyo=
+Message-ID: <13479067-774c-dc91-3ff9-45e12f8449cc@viisauksena.de>
+Date: Tue, 4 Feb 2020 14:56:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <00c301d5db57$2e4ccb00$8ae66100$@adrianschmutzler.de>
+Content-Type: multipart/mixed; boundary="------------B63CCC174A2F5152064EDD69"
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_053219_861161_3FDAE1C5 
-X-CRM114-Status: GOOD (  19.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200204_055510_224650_6831A079 
+X-CRM114-Status: UNSURE (   5.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [pepe2k[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] base-files: diag: restore default
- trigger for 'boot' LED
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Subject: [OpenWrt-Devel] mptcp in openwrt
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,172 +106,99 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-Hi Adrian,
+This is a multi-part message in MIME format.
+--------------B63CCC174A2F5152064EDD69
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
 
-On 04.02.2020 13:32, Adrian Schmutzler wrote:
-> Hi,
-> 
->> -----Original Message-----
->> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
->> Behalf Of Piotr Dymacz
->> Sent: Freitag, 31. Januar 2020 15:23
->> To: openwrt-devel@lists.openwrt.org
->> Subject: [OpenWrt-Devel] [PATCH] base-files: diag: restore default trigger for
->> 'boot' LED
->> 
->> For devices without a dedicated 'diag' LED, we use sometimes one of
->> other LEDs for indicating at least 'boot', 'failsafe' and 'upgrade'
->> stages. In some cases, at the same time these LEDs have defined default
->> triggers in DTS using 'linux,default-trigger' property. Current 'diag'
->> setup removes the trigger and turns off 'boot' LED after bootup.
->> 
->> One of the examples of such device is TP-Link TL-WR841N v14 (ramips)
->> which uses 'wlan' LED with defined 'linux,default-trigger' for 'diag':
->> 
->> aliases {
->> 	led-boot = &led_wlan;
->> 	led-failsafe = &led_wlan;
->> 	led-upgrade = &led_wlan;
->> };
->> 
->> [...]
->> 
->> led_wlan: wlan {
->> 	label = "tl-wr841n-v14:green:wlan";
->> 	gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
->> 	linux,default-trigger = "phy0tpt";
->> };
->> 
->> This patch extends 'diag.sh' and 'leds.sh' scripts to make sure default
->> trigger defined in DTS is restored for 'diag' LED which isn't used for
->> indicating 'running' stage.
-> 
-> I'm not really a fan of using LEDs for diag in that case at all, and I'd
-> actually prefer to have the aliases removed there (unless vendor also used
-> multiple purpose LEDs the same way).
+hoi
 
-Without any LED defined at least for 'boot' and 'failsafe', users might 
-have problems entering failsafe and knowing whether device boots at all.
+somebody could say some words about
+Multipath TCP in Openwrt, since this will be in mainline Kernel - will
+it be nativly in OpenWRT soon?
 
+i thought it will be in 4.19 kernel, but it is not.
+
+thx for some insight
+
+https://multipath-tcp.org/
+https://en.wikipedia.org/wiki/Multipath_TCP
+https://github.com/torvalds/linux/tree/master/net
 -- 
-Cheers,
-Piotr
+make the world nicer, please use PGP encryption
 
-> 
-> But since we have these case in our code right now, I think this workaround is
-> necessary ATM.
-> 
-> Acked-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
-> 
-> Best
-> 
-> Adrian
-> 
->> 
->> Signed-off-by: Piotr Dymacz <pepe2k@gmail.com>
->> ---
->>  package/base-files/Makefile                   |  2 +-
->>  package/base-files/files/etc/diag.sh          |  2 ++
->>  .../base-files/files/lib/functions/leds.sh    | 27 ++++++++++++++++---
->>  3 files changed, 26 insertions(+), 5 deletions(-)
->> 
->> diff --git a/package/base-files/Makefile b/package/base-files/Makefile
->> index e389148d47..18325564dc 100644
->> --- a/package/base-files/Makefile
->> +++ b/package/base-files/Makefile
->> @@ -12,7 +12,7 @@ include $(INCLUDE_DIR)/version.mk
->>  include $(INCLUDE_DIR)/feeds.mk
->> 
->>  PKG_NAME:=base-files
->> -PKG_RELEASE:=213
->> +PKG_RELEASE:=214
->>  PKG_FLAGS:=nonshared
->> 
->>  PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/base-
->> files/
->> diff --git a/package/base-files/files/etc/diag.sh b/package/base-
->> files/files/etc/diag.sh
->> index 8eb36c6feb..37a8ec758e 100644
->> --- a/package/base-files/files/etc/diag.sh
->> +++ b/package/base-files/files/etc/diag.sh
->> @@ -37,6 +37,8 @@ set_led_state() {
->>  		;;
->>  	done)
->>  		status_led_off
->> +		[ "$status_led" != "$running" ] && \
->> +			status_led_restore_trigger "boot"
->>  		[ -n "$running" ] && {
->>  			status_led="$running"
->>  			status_led_on
->> diff --git a/package/base-files/files/lib/functions/leds.sh b/package/base-
->> files/files/lib/functions/leds.sh
->> index 8a1d21caef..43b2fe02ed 100644
->> --- a/package/base-files/files/lib/functions/leds.sh
->> +++ b/package/base-files/files/lib/functions/leds.sh
->> @@ -1,16 +1,24 @@
->>  #!/bin/sh
->>  # Copyright (C) 2013 OpenWrt.org
->> 
->> -get_dt_led() {
->> -	local label
->> +get_dt_led_path() {
->>  	local ledpath
->>  	local basepath="/proc/device-tree"
->>  	local nodepath="$basepath/aliases/led-$1"
->> 
->>  	[ -f "$nodepath" ] && ledpath=$(cat "$nodepath")
->> +	[ -n "$ledpath" ] && ledpath="$basepath$ledpath"
->> +
->> +	echo "$ledpath"
->> +}
->> +
->> +get_dt_led() {
->> +	local label
->> +	local ledpath=$(get_dt_led_path $1)
->> +
->>  	[ -n "$ledpath" ] && \
->> -		label=$(cat "$basepath$ledpath/label" 2>/dev/null) || \
->> -		label=$(cat "$basepath$ledpath/chan-name" 2>/dev/null)
->> +		label=$(cat "$ledpath/label" 2>/dev/null) || \
->> +		label=$(cat "$ledpath/chan-name" 2>/dev/null)
->> 
->>  	echo "$label"
->>  }
->> @@ -35,6 +43,17 @@ led_off() {
->>  	led_set_attr $1 "brightness" 0
->>  }
->> 
->> +status_led_restore_trigger() {
->> +	local trigger
->> +	local ledpath=$(get_dt_led_path $1)
->> +
->> +	[ -n "$ledpath" ] && \
->> +		trigger=$(cat "$ledpath/linux,default-trigger" 2>/dev/null)
->> +
->> +	[ -n "$trigger" ] && \
->> +		led_set_attr "$(get_dt_led $1)" "trigger" "$trigger"
->> +}
->> +
->>  status_led_set_timer() {
->>  	led_timer $status_led "$1" "$2"
->>  	[ -n "$status_led2" ] && led_timer $status_led2 "$1" "$2"
->> --
->> 2.20.1
->> 
->> 
->> _______________________________________________
->> openwrt-devel mailing list
->> openwrt-devel@lists.openwrt.org
->> https://lists.openwrt.org/mailman/listinfo/openwrt-devel
-> 
+--------------B63CCC174A2F5152064EDD69
+Content-Type: application/pgp-keys;
+ name="0x507EB93F6F6DEE01.asc"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="0x507EB93F6F6DEE01.asc"
 
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=tOCZ
+-----END PGP PUBLIC KEY BLOCK-----
+
+--------------B63CCC174A2F5152064EDD69
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 openwrt-devel mailing list
 openwrt-devel@lists.openwrt.org
 https://lists.openwrt.org/mailman/listinfo/openwrt-devel
+
+--------------B63CCC174A2F5152064EDD69--
+

@@ -2,86 +2,75 @@ Return-Path: <openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.or
 X-Original-To: lists+openwrt-devel@lfdr.de
 Delivered-To: lists+openwrt-devel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69C2E151D1F
-	for <lists+openwrt-devel@lfdr.de>; Tue,  4 Feb 2020 16:23:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72DDA152213
+	for <lists+openwrt-devel@lfdr.de>; Tue,  4 Feb 2020 22:50:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
-	From:References:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OS1+W35179ztzNLBphREDPuqb5hQF/YJk6Qzi/1pqeY=; b=eWc9xFZy8q2xIiHEVH+lUvIaK
-	Znurn6xQ7ghajj+d7r7m5SP7y5EBNuZVw6tAePaaXecOoYoZQhjpDc+e11yzPQ0u90ni/fGIyDA9+
-	aqIwovYjV30+KWVgDz/kwbL2tioFyy1okTEqiG0MdK9idXp2AO2kyKz1wHBd9dKsJQBEnQDVJ+qLr
-	OHETjGVsEedjRQRJSB3c6JLuYxe1YCXWgfKGjuInZoo4dSVcWon/q3amm+GN6sSEq1bGajw+JUAnn
-	73gfzjb2sV5JhgUWU/3y0mnEW+mUMwr9rbPUcgR2OAF7g2ARHIl3ZkoehZrIU2IPsBzi5N3H992dz
-	f183fljiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nyt7G0iaU8nthHKjRYP907XQ+97JuXHyv3KrM2E3ft0=; b=MWUDnaCcBMvNbo
+	RO8jFpozItmtC76JRh4hvShbAUDqVqOJTPMcb+v7KxudcbWNzj0Hcv1Izr3pdB9XvNKFOCELXh5MM
+	7nTum5JuJXGj1c3KbX32HCQ8657fNkwnv7MHvp12a6gHPjx0RsV7gmjBYES1xcjxBAjqpvaT630zv
+	GsprtTcHN2Vg8ZSXlL3J9kwvSnXArfj7fSI8i2zjgMC6qjQvDBAkwIy7zgaT2BESi23PpxY/lTso+
+	BTW0jL+jtjJqUFjovDqmYyOYzTLCjdhV1q6PQWVMDipBR8uVPI7WSGQkCXMgFrMrgdUkEUfnzxXI5
+	8GeqloaEo3vUKVEGrR9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz02q-0002IB-2k; Tue, 04 Feb 2020 15:23:20 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iz658-0004tT-K0; Tue, 04 Feb 2020 21:50:06 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz02j-000270-8X
- for openwrt-devel@lists.openwrt.org; Tue, 04 Feb 2020 15:23:14 +0000
-Received: by mail-lf1-x144.google.com with SMTP id n25so12514908lfl.0
- for <openwrt-devel@lists.openwrt.org>; Tue, 04 Feb 2020 07:23:12 -0800 (PST)
+ id 1iz64t-0004sJ-78
+ for openwrt-devel@lists.openwrt.org; Tue, 04 Feb 2020 21:49:52 +0000
+Received: by mail-qk1-x742.google.com with SMTP id 21so2532469qki.5
+ for <openwrt-devel@lists.openwrt.org>; Tue, 04 Feb 2020 13:49:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=blK/qcCVHg5q9qpZ9Gle4vJesuz5jhAU5cDB4wKY7w8=;
- b=IWwlp2MHqAMu4mwSIEMg47EYU0MMibdTisR72roY8MQzAN1xvOyfhPI5q8Zn2s1Gwr
- qdwvB9lCQbgRCsDItOlXiudu++UZGGOqNlM3RJdN/E3FYLrngfMAlESrRe53L+Ojnyva
- 0VFJlBKDjivdr9fUfXNoEv8KQrlK/WY7XgEAR/ZOC/EMwReButk48rfVfzZnklafeiqr
- fAw/sudWfPtSiF3yOesU1Y6/rVCDp3jtdrOC7a58MELXfn6ylV1FWap8vm/cYcVLneg6
- g8evn5DOO5W6lPcsxN6Nk7mTPKBuQ9ngF9b/0wBF4HFXe64T+UeX0dxX1rYIygou/n3M
- e5jQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=s9RX5LdW4pC1bV162MDIpom7/xxJL8/4kDUjrD+kN2U=;
+ b=p+yQ5Igy+NsUTzmmIeuPSTp4Fx35JtsWN494m06wSZXnJb8WXVMftfdMczerzticX1
+ iJMOUUAOZ9/44MrH4WZ2wwDTUHH7oYJIeoWsurg6+VQ8J4xqIMg8vy4OnDGwYcG1nqdF
+ 8pVEq/6PcTfY7Lil/57xeCbhFht83iZbd6uMgjdin1lO/zeoZ4emoJAK6WY4mQd0E+yS
+ PCrwCTcgYJ9Seo0GePW+MJzyFsqOBCZGiMhA/ftzineMkIGeXeTM4fD2e6LsEIdHlujB
+ QiEqYfL14/of//bY2bGe94Tuy9PatVEptfCS5F50cNDGW0vLSGRZDQqpDrn6TdjQJFaD
+ djBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=blK/qcCVHg5q9qpZ9Gle4vJesuz5jhAU5cDB4wKY7w8=;
- b=QkRngMvarxVshOXBDJUhrPnPxBxgAUoHrPZE6/O7Mjp+smcDIJe0klLvyi2UBsNPdx
- /IDJs/CLkCNtg9je6RGvAVtXLF1CafWfZLMvZCpHOAHwIRCfKJnm01qypttMDUHf+sz3
- EPaVMNMUvEQzSfklqENP60yRHrrb9Og78eVSfOHkPrWzPBuisArUHc/adYahxc45+L/P
- 5wbx1yqnz/ECgle3CsbKGHKN1KwGRFwdEp+bmZtN5HD1LKLzaTcFcDIeSh4kdaZwFQvw
- yp5+wjoDGGBGjih0sKZUOg1CdD9zqcc/5pw4p2uJVXU9+m/UxdeXfLhBNWVdgJIVU1/K
- thEw==
-X-Gm-Message-State: APjAAAW/OGFvaGRu1yAs75PtsQm9WisGRKGYU4lkvMRrrks4hWfqUrDX
- zV/kEvy9ouKNX//wQLjcz4AwDPr2
-X-Google-Smtp-Source: APXvYqyRiSfDSh+fMywdqcdbEFhm4dO2xT3VnXg7Fhq8zNuRMjjR7V1K6a3L6qtXY7ZwL0enagzzTQ==
-X-Received: by 2002:ac2:44a3:: with SMTP id c3mr15132383lfm.1.1580829790782;
- Tue, 04 Feb 2020 07:23:10 -0800 (PST)
-Received: from [192.168.1.118] ([188.14.113.33])
- by smtp.gmail.com with ESMTPSA id s22sm11942442ljm.41.2020.02.04.07.23.09
- for <openwrt-devel@lists.openwrt.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 04 Feb 2020 07:23:10 -0800 (PST)
-To: openwrt-devel@lists.openwrt.org
-References: <20200131142254.24953-1-pepe2k@gmail.com>
- <00c301d5db57$2e4ccb00$8ae66100$@adrianschmutzler.de>
-From: Alberto Bursi <bobafetthotmail@gmail.com>
-Message-ID: <d8e3a894-dcec-c0d3-be87-c1562999e262@gmail.com>
-Date: Tue, 4 Feb 2020 16:23:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=s9RX5LdW4pC1bV162MDIpom7/xxJL8/4kDUjrD+kN2U=;
+ b=qN1G2HaVPYEhFMekblfitmqCUJh0lDfpkUk18/IXWEkkS3ea0W8fjMxQqCLTE0+aIK
+ itu/7/waD3+It8xxLTIuif7WPKoXisF7nVNJriIUph6DkehMGOX9/9ufOn1eXGJsQMqp
+ dQik6dHpL9aQDVLu9qyIytqsGTYQJowD8mAlBDJIXRv9p+o+2YRDc0ZmOlYCh6tk6zqq
+ njtLX8UPZAQK1srxNLp68liEyBWuyjghnV+krf58OjpgU1VMMOr1KarhtlToFig1W8sn
+ qBdt+t6FR8n8Ig1YsTdD4ksYXT541DXi6zF6zA3sT4qY/Q15/9H5WkS+n18TqrmI9Bmw
+ Um5g==
+X-Gm-Message-State: APjAAAUyLuvFr3z2EC2V2tHvqfxbU3jkQIQseRSj8DtkTX4wVmXSjDFb
+ IBgmAnDMz+CkAeb+6itfO5Vcst92tB59qIBorPw=
+X-Google-Smtp-Source: APXvYqzb+XemI8clDkUUImXIhJgCoknlgoF9Gmy0R3notHFziZD7nPBySgRvAZLQJG/jDqkQK/VidobPzqD+rxJAJso=
+X-Received: by 2002:a37:8683:: with SMTP id i125mr5884744qkd.491.1580852988252; 
+ Tue, 04 Feb 2020 13:49:48 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <00c301d5db57$2e4ccb00$8ae66100$@adrianschmutzler.de>
-Content-Language: en-US
+References: <1580743613-29482-1-git-send-email-alin.nastac@technicolor.com>
+In-Reply-To: <1580743613-29482-1-git-send-email-alin.nastac@technicolor.com>
+From: Hans Dedecker <dedeckeh@gmail.com>
+Date: Tue, 4 Feb 2020 22:49:37 +0100
+Message-ID: <CAJLcKsEWM3RBQQqGU9ESRAd=N7ObvdSSgAgNpewr52gmx+JD=A@mail.gmail.com>
+To: Alin Nastac <alin.nastac@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_072313_305826_7A8F6CCB 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20200204_134951_286553_59EAC40C 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [bobafetthotmail[at]gmail.com]
+ provider [dedeckeh[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -90,8 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-Subject: Re: [OpenWrt-Devel] [PATCH] base-files: diag: restore default
- trigger for 'boot' LED
+Subject: Re: [OpenWrt-Devel] [netifd][PATCH] interface-ip: transfer prefix
+ route ownership to kernel when IPv6 address becomes deprecated
 X-BeenThere: openwrt-devel@lists.openwrt.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,66 +92,62 @@ List-Post: <mailto:openwrt-devel@lists.openwrt.org>
 List-Help: <mailto:openwrt-devel-request@lists.openwrt.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/openwrt-devel>,
  <mailto:openwrt-devel-request@lists.openwrt.org?subject=subscribe>
+Cc: openwrt-devel <openwrt-devel@lists.openwrt.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "openwrt-devel" <openwrt-devel-bounces@lists.openwrt.org>
 Errors-To: openwrt-devel-bounces+lists+openwrt-devel=lfdr.de@lists.openwrt.org
 
-
-On 04/02/20 13:32, Adrian Schmutzler wrote:
-> Hi,
+Hi Alin,
+On Mon, Feb 3, 2020 at 4:27 PM Alin Nastac <alin.nastac@gmail.com> wrote:
 >
->> -----Original Message-----
->> From: openwrt-devel [mailto:openwrt-devel-bounces@lists.openwrt.org] On
->> Behalf Of Piotr Dymacz
->> Sent: Freitag, 31. Januar 2020 15:23
->> To: openwrt-devel@lists.openwrt.org
->> Subject: [OpenWrt-Devel] [PATCH] base-files: diag: restore default trigger for
->> 'boot' LED
->>
->> For devices without a dedicated 'diag' LED, we use sometimes one of
->> other LEDs for indicating at least 'boot', 'failsafe' and 'upgrade'
->> stages. In some cases, at the same time these LEDs have defined default
->> triggers in DTS using 'linux,default-trigger' property. Current 'diag'
->> setup removes the trigger and turns off 'boot' LED after bootup.
->>
->> One of the examples of such device is TP-Link TL-WR841N v14 (ramips)
->> which uses 'wlan' LED with defined 'linux,default-trigger' for 'diag':
->>
->> aliases {
->> 	led-boot = &led_wlan;
->> 	led-failsafe = &led_wlan;
->> 	led-upgrade = &led_wlan;
->> };
->>
->> [...]
->>
->> led_wlan: wlan {
->> 	label = "tl-wr841n-v14:green:wlan";
->> 	gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
->> 	linux,default-trigger = "phy0tpt";
->> };
->>
->> This patch extends 'diag.sh' and 'leds.sh' scripts to make sure default
->> trigger defined in DTS is restored for 'diag' LED which isn't used for
->> indicating 'running' stage.
-> I'm not really a fan of using LEDs for diag in that case at all, and I'd
-> actually prefer to have the aliases removed there (unless vendor also used
-> multiple purpose LEDs the same way).
+> From: Alin Nastac <alin.nastac@gmail.com>
 >
-I don't like this either, but I think functionality always wins over 
-esthetics.
+> When netifd manages the prefix route directly, it will remove it
+> the moment prefix gets deprecated. This will make it impossible
+> for the target to send ICMPv6 errors back to LAN devices still
+> using the deprecated prefix, thus breaking the L-14 requirement
+> of RFC 7084.
+>
+> Signed-off-by: Alin Nastac <alin.nastac@gmail.com>
+The patch fails to apply with the following error message :
 
-Showing boot status and the moment to press the reset button to enter 
-failsafe is
-more important than the "uglyness" of hijacking a LED.
+Applying: interface-ip: transfer prefix route ownership to kernel when
+IPv6 address becomes deprecated
+error: sha1 information is lacking or useless (interface-ip.c).
+error: could not build fake ancestor
+Patch failed at 0001 interface-ip: transfer prefix route ownership to
+kernel when IPv6 address becomes deprecated
 
-Besides, in many cases (wifi led for example) the device won't be using 
-that led during boot anyway.
-
-
--Alberto
-
+Hans
+> ---
+>  interface-ip.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/interface-ip.c b/interface-ip.c
+> index 91c305b..ff8f219 100644
+> --- a/interface-ip.c
+> +++ b/interface-ip.c
+> @@ -913,7 +913,7 @@ interface_set_prefix_address(struct device_prefix_assignment *assignment,
+>
+>         addr.addr.in6 = assignment->addr;
+>         addr.mask = assignment->length;
+> -       addr.flags = DEVADDR_INET6 | DEVADDR_OFFLINK;
+> +       addr.flags = DEVADDR_INET6;
+>         addr.preferred_until = prefix->preferred_until;
+>         addr.valid_until = prefix->valid_until;
+>
+> @@ -960,6 +960,7 @@ interface_set_prefix_address(struct device_prefix_assignment *assignment,
+>                         route.addr = addr.addr;
+>                 }
+>
+> +               addr.flags |= DEVADDR_OFFLINK;
+>                 if (system_add_address(l3_downlink, &addr))
+>                         return;
+>
+> --
+> 2.7.4
+>
 
 _______________________________________________
 openwrt-devel mailing list
